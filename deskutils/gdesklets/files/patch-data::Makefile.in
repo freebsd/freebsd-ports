@@ -1,12 +1,17 @@
---- data/Makefile.in.orig	Mon Feb 23 09:58:01 2004
-+++ data/Makefile.in	Mon Feb 23 09:59:27 2004
-@@ -213,7 +213,8 @@
- @USERINST_TRUE@mimedir = ~/.gnome/mime-info
- mime_in_files = gdesklets.keys.in
- mime_DATA = $(mime_in_files:.keys.in=.keys) gdesklets.mime
--@USERINST_FALSE@mimeicondir = $(datadir)/icons/gnome/48x48/mimetypes
-+@USERINST_FALSE@mimeicondir = $(prefix)/share/icons/gnome/48x48/mimetypes
-+
+--- data/Makefile.in.orig	Mon Nov 15 01:17:16 2004
++++ data/Makefile.in	Mon Nov 15 01:18:12 2004
+@@ -165,12 +165,12 @@
+ desktop_in_files = gdesklets.desktop.in
+ desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
  
- @USERINST_TRUE@mimeicondir = ~/.icons/gnome/48x48/mimetypes
- mimeicon_DATA = x-gdesklets-display.png
+-sharedmimedir = $(datadir)/mime
++sharedmimedir = $(prefix)/share/mime
+ sharedmimepackagedir = $(sharedmimedir)/packages
+ sharedmimepackage_in_files = gdesklets.xml.in
+ sharedmimepackage_DATA = $(sharedmimepackage_in_files:.xml.in=.xml)
+ 
+-mimeicondir = $(datadir)/icons/gnome/48x48/mimetypes
++mimeicondir = $(prefix)/share/icons/gnome/48x48/mimetypes
+ mimeicon_DATA = gnome-mime-application-x-gdesklets-display.png
+ 
+ pixmapdir = $(PIXMAPDIR)

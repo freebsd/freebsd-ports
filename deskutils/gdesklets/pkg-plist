@@ -1,32 +1,54 @@
 bin/gdesklets
 bin/gdesklets-display-thumbnailer
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gdesklets-display-thumbnail.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/gdesklets-display-thumbnail.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gdesklets-display-thumbnail.schemas > /dev/null || /usr/bin/true
-libdata/pkgconfig/gdesklets-core.pc
-share/gnome/application-registry/gdesklets.applications
 share/gnome/applications/gdesklets.desktop
+share/gnome/gdesklets/Controls/Calendar/ICalendar.py
+share/gnome/gdesklets/Controls/Calendar/__init__.py
+share/gnome/gdesklets/Controls/Sensors/ISensor.py
+share/gnome/gdesklets/Controls/Sensors/__init__.py
+share/gnome/gdesklets/Controls/System/ISystem.py
+share/gnome/gdesklets/Controls/System/__init__.py
+share/gnome/gdesklets/Controls/Time/ITime.py
+share/gnome/gdesklets/Controls/Time/__init__.py
+share/gnome/gdesklets/Controls/URI/IURI.py
+share/gnome/gdesklets/Controls/URI/__init__.py
+share/gnome/gdesklets/Controls/__init__.py
+share/gnome/gdesklets/NullObject.py
 share/gnome/gdesklets/Sensors/External/__init__.py
 share/gnome/gdesklets/Sensors/FontSelector/__init__.py
+share/gnome/gdesklets/config/ConfigBoolean.py
+share/gnome/gdesklets/config/ConfigBoolean.pyc
+share/gnome/gdesklets/config/ConfigColor.py
+share/gnome/gdesklets/config/ConfigColor.pyc
+share/gnome/gdesklets/config/ConfigDialog.py
+share/gnome/gdesklets/config/ConfigDialog.pyc
+share/gnome/gdesklets/config/ConfigEnum.py
+share/gnome/gdesklets/config/ConfigEnum.pyc
+share/gnome/gdesklets/config/ConfigFloat.py
+share/gnome/gdesklets/config/ConfigFloat.pyc
+share/gnome/gdesklets/config/ConfigFont.py
+share/gnome/gdesklets/config/ConfigFont.pyc
+share/gnome/gdesklets/config/ConfigInteger.py
+share/gnome/gdesklets/config/ConfigInteger.pyc
 share/gnome/gdesklets/config/ConfigManager.py
 share/gnome/gdesklets/config/ConfigManager.pyc
-share/gnome/gdesklets/config/DummyBackend.py
-share/gnome/gdesklets/config/DummyBackend.pyc
+share/gnome/gdesklets/config/ConfigSettings.py
+share/gnome/gdesklets/config/ConfigSettings.pyc
+share/gnome/gdesklets/config/ConfigString.py
+share/gnome/gdesklets/config/ConfigString.pyc
+share/gnome/gdesklets/config/ConfigTitle.py
+share/gnome/gdesklets/config/ConfigTitle.pyc
+share/gnome/gdesklets/config/ConfigURI.py
+share/gnome/gdesklets/config/ConfigURI.pyc
+share/gnome/gdesklets/config/ConfigWidget.py
+share/gnome/gdesklets/config/ConfigWidget.pyc
 share/gnome/gdesklets/config/GConfBackend.py
 share/gnome/gdesklets/config/GConfBackend.pyc
 share/gnome/gdesklets/config/__init__.py
 share/gnome/gdesklets/config/__init__.pyc
-share/gnome/gdesklets/config/migration.py
-share/gnome/gdesklets/config/migration.pyc
 share/gnome/gdesklets/config/settings.py
 share/gnome/gdesklets/config/settings.pyc
+share/gnome/gdesklets/data/about.png
 share/gnome/gdesklets/data/gdesklets.png
-share/gnome/gdesklets/desktop/BGWatcher.py
-share/gnome/gdesklets/desktop/BGWatcher.pyc
-share/gnome/gdesklets/desktop/GlassWindow.py
-share/gnome/gdesklets/desktop/GlassWindow.pyc
-share/gnome/gdesklets/desktop/__init__.py
-share/gnome/gdesklets/desktop/__init__.pyc
 share/gnome/gdesklets/display/ContainerTarget.py
 share/gnome/gdesklets/display/ContainerTarget.pyc
 share/gnome/gdesklets/display/DataTarget.py
@@ -39,6 +61,8 @@ share/gnome/gdesklets/display/DisplayContainer.py
 share/gnome/gdesklets/display/DisplayContainer.pyc
 share/gnome/gdesklets/display/DisplayTarget.py
 share/gnome/gdesklets/display/DisplayTarget.pyc
+share/gnome/gdesklets/display/GlassWindow.py
+share/gnome/gdesklets/display/GlassWindow.pyc
 share/gnome/gdesklets/display/Plug.py
 share/gnome/gdesklets/display/Plug.pyc
 share/gnome/gdesklets/display/TargetAlignment.py
@@ -49,6 +73,8 @@ share/gnome/gdesklets/display/TargetBonoboControl.py
 share/gnome/gdesklets/display/TargetBonoboControl.pyc
 share/gnome/gdesklets/display/TargetCanvas.py
 share/gnome/gdesklets/display/TargetCanvas.pyc
+share/gnome/gdesklets/display/TargetEntry.py
+share/gnome/gdesklets/display/TargetEntry.pyc
 share/gnome/gdesklets/display/TargetExpander.py
 share/gnome/gdesklets/display/TargetExpander.pyc
 share/gnome/gdesklets/display/TargetFrame.py
@@ -63,20 +89,22 @@ share/gnome/gdesklets/display/TargetImage.py
 share/gnome/gdesklets/display/TargetImage.pyc
 share/gnome/gdesklets/display/TargetLabel.py
 share/gnome/gdesklets/display/TargetLabel.pyc
+share/gnome/gdesklets/display/TargetMenu.py
+share/gnome/gdesklets/display/TargetMenu.pyc
+share/gnome/gdesklets/display/TargetMenuItem.py
+share/gnome/gdesklets/display/TargetMenuItem.pyc
 share/gnome/gdesklets/display/TargetPlotter.py
 share/gnome/gdesklets/display/TargetPlotter.pyc
-share/gnome/gdesklets/display/TargetPopup.py
-share/gnome/gdesklets/display/TargetPopup.pyc
 share/gnome/gdesklets/display/Window.py
 share/gnome/gdesklets/display/Window.pyc
-share/gnome/gdesklets/display/WindowSnapper.py
-share/gnome/gdesklets/display/WindowSnapper.pyc
 share/gnome/gdesklets/display/__init__.py
 share/gnome/gdesklets/display/__init__.pyc
 share/gnome/gdesklets/display/layouters.py
 share/gnome/gdesklets/display/layouters.pyc
 share/gnome/gdesklets/display/targetregistry.py
 share/gnome/gdesklets/display/targetregistry.pyc
+share/gnome/gdesklets/factory/ControlFactory.py
+share/gnome/gdesklets/factory/ControlFactory.pyc
 share/gnome/gdesklets/factory/DisplayFactory.py
 share/gnome/gdesklets/factory/DisplayFactory.pyc
 share/gnome/gdesklets/factory/SensorFactory.py
@@ -84,10 +112,10 @@ share/gnome/gdesklets/factory/SensorFactory.pyc
 share/gnome/gdesklets/factory/__init__.py
 share/gnome/gdesklets/factory/__init__.pyc
 share/gnome/gdesklets/gdesklets
+share/gnome/gdesklets/gdesklets-daemon
+share/gnome/gdesklets/gdesklets-shell
 share/gnome/gdesklets/libdesklets/CPU.py
 share/gnome/gdesklets/libdesklets/CPU.pyc
-share/gnome/gdesklets/libdesklets/Convert.py
-share/gnome/gdesklets/libdesklets/Convert.pyc
 share/gnome/gdesklets/libdesklets/Disk.py
 share/gnome/gdesklets/libdesklets/Disk.pyc
 share/gnome/gdesklets/libdesklets/Memory.py
@@ -98,22 +126,69 @@ share/gnome/gdesklets/libdesklets/Sys.py
 share/gnome/gdesklets/libdesklets/Sys.pyc
 share/gnome/gdesklets/libdesklets/__init__.py
 share/gnome/gdesklets/libdesklets/__init__.pyc
-share/gnome/gdesklets/libdesklets/_glibtopmodule.so
-share/gnome/gdesklets/libdesklets/glibtop.py
-share/gnome/gdesklets/libdesklets/glibtop.pyc
+share/gnome/gdesklets/libdesklets/controls/__init__.py
+share/gnome/gdesklets/libdesklets/controls/__init__.pyc
+share/gnome/gdesklets/libdesklets/convert.py
+share/gnome/gdesklets/libdesklets/convert.pyc
 share/gnome/gdesklets/libdesklets/polling.py
 share/gnome/gdesklets/libdesklets/polling.pyc
+share/gnome/gdesklets/libdesklets/system/Arch.py
+share/gnome/gdesklets/libdesklets/system/Arch.pyc
+share/gnome/gdesklets/libdesklets/system/ArchFactory.py
+share/gnome/gdesklets/libdesklets/system/ArchFactory.pyc
+share/gnome/gdesklets/libdesklets/system/CPU.py
+share/gnome/gdesklets/libdesklets/system/CPU.pyc
+share/gnome/gdesklets/libdesklets/system/Device.py
+share/gnome/gdesklets/libdesklets/system/Device.pyc
+share/gnome/gdesklets/libdesklets/system/FreeBSD/Generic.py
+share/gnome/gdesklets/libdesklets/system/FreeBSD/Generic.pyc
+share/gnome/gdesklets/libdesklets/system/FreeBSD/__init__.py
+share/gnome/gdesklets/libdesklets/system/FreeBSD/__init__.pyc
+share/gnome/gdesklets/libdesklets/system/Linux/Generic.py
+share/gnome/gdesklets/libdesklets/system/Linux/Generic.pyc
+share/gnome/gdesklets/libdesklets/system/Linux/PPC.py
+share/gnome/gdesklets/libdesklets/system/Linux/PPC.pyc
+share/gnome/gdesklets/libdesklets/system/Linux/Sparc.py
+share/gnome/gdesklets/libdesklets/system/Linux/Sparc.pyc
+share/gnome/gdesklets/libdesklets/system/Linux/X86.py
+share/gnome/gdesklets/libdesklets/system/Linux/X86.pyc
+share/gnome/gdesklets/libdesklets/system/Linux/__init__.py
+share/gnome/gdesklets/libdesklets/system/Linux/__init__.pyc
+share/gnome/gdesklets/libdesklets/system/Net.py
+share/gnome/gdesklets/libdesklets/system/Net.pyc
+share/gnome/gdesklets/libdesklets/system/NetBSD/Generic.py
+share/gnome/gdesklets/libdesklets/system/NetBSD/Generic.pyc
+share/gnome/gdesklets/libdesklets/system/NetBSD/__init__.py
+share/gnome/gdesklets/libdesklets/system/NetBSD/__init__.pyc
+share/gnome/gdesklets/libdesklets/system/OpenBSD/Generic.py
+share/gnome/gdesklets/libdesklets/system/OpenBSD/Generic.pyc
+share/gnome/gdesklets/libdesklets/system/OpenBSD/__init__.py
+share/gnome/gdesklets/libdesklets/system/OpenBSD/__init__.pyc
+share/gnome/gdesklets/libdesklets/system/Swap.py
+share/gnome/gdesklets/libdesklets/system/Swap.pyc
+share/gnome/gdesklets/libdesklets/system/__init__.py
+share/gnome/gdesklets/libdesklets/system/__init__.pyc
+share/gnome/gdesklets/libdesklets/system/_glibtopmodule.so
+share/gnome/gdesklets/libdesklets/system/glibtop.py
+share/gnome/gdesklets/libdesklets/system/glibtop.pyc
+share/gnome/gdesklets/libdesklets/system/libgtop.py
+share/gnome/gdesklets/libdesklets/system/libgtop.pyc
 share/gnome/gdesklets/locale/ar/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/az/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/locale/bg/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/ca/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/cs/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/de/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/el/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/locale/en_CA/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/locale/en_GB/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/es/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/eu/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/fr/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/he/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/hr/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/locale/hu/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/locale/is/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/it/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/ja/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/ko/LC_MESSAGES/gdesklets.mo
@@ -130,69 +205,171 @@ share/gnome/gdesklets/locale/sr/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/sr@Latn/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/sv/LC_MESSAGES/gdesklets.mo
 share/gnome/gdesklets/locale/tr/LC_MESSAGES/gdesklets.mo
-share/gnome/gdesklets/main/CmdLineParser.py
-share/gnome/gdesklets/main/CmdLineParser.pyc
+share/gnome/gdesklets/locale/uk/LC_MESSAGES/gdesklets.mo
+share/gnome/gdesklets/main/AboutDialog.py
+share/gnome/gdesklets/main/AboutDialog.pyc
+share/gnome/gdesklets/main/Control.py
+share/gnome/gdesklets/main/Control.pyc
+share/gnome/gdesklets/main/DisplayList.py
+share/gnome/gdesklets/main/DisplayList.pyc
+share/gnome/gdesklets/main/LogViewer.py
+share/gnome/gdesklets/main/LogViewer.pyc
+share/gnome/gdesklets/main/MetaData.py
+share/gnome/gdesklets/main/MetaData.pyc
+share/gnome/gdesklets/main/RemoteSocket.py
+share/gnome/gdesklets/main/RemoteSocket.pyc
 share/gnome/gdesklets/main/Starter.py
 share/gnome/gdesklets/main/Starter.pyc
+share/gnome/gdesklets/main/TrayIcon.py
+share/gnome/gdesklets/main/TrayIcon.pyc
 share/gnome/gdesklets/main/__init__.py
 share/gnome/gdesklets/main/__init__.pyc
-share/gnome/gdesklets/main/admin.py
-share/gnome/gdesklets/main/admin.pyc
-share/gnome/gdesklets/sensor/DefaultSensor.py
-share/gnome/gdesklets/sensor/DefaultSensor.pyc
-share/gnome/gdesklets/sensor/Menu.py
-share/gnome/gdesklets/sensor/Menu.pyc
+share/gnome/gdesklets/main/client.py
+share/gnome/gdesklets/main/client.pyc
+share/gnome/gdesklets/main/remotecommands.py
+share/gnome/gdesklets/main/remotecommands.pyc
+share/gnome/gdesklets/plugin/Interface.py
+share/gnome/gdesklets/plugin/Permission.py
+share/gnome/gdesklets/plugin/PluginRegistry.py
+share/gnome/gdesklets/plugin/__init__.py
+share/gnome/gdesklets/scripting/ControlWrapper.py
+share/gnome/gdesklets/scripting/Script.py
+share/gnome/gdesklets/scripting/TargetWrapper.py
+share/gnome/gdesklets/scripting/Vault.py
+share/gnome/gdesklets/scripting/__init__.py
+share/gnome/gdesklets/sensor/MetaSensor.py
+share/gnome/gdesklets/sensor/MetaSensor.pyc
 share/gnome/gdesklets/sensor/Sensor.py
 share/gnome/gdesklets/sensor/Sensor.pyc
 share/gnome/gdesklets/sensor/SensorConfigurator.py
 share/gnome/gdesklets/sensor/SensorConfigurator.pyc
 share/gnome/gdesklets/sensor/__init__.py
 share/gnome/gdesklets/sensor/__init__.pyc
+share/gnome/gdesklets/shell/BookmarkList.py
+share/gnome/gdesklets/shell/ItemBrowser.py
+share/gnome/gdesklets/shell/ListView.py
+share/gnome/gdesklets/shell/Plugin.py
+share/gnome/gdesklets/shell/PluginRegistry.py
+share/gnome/gdesklets/shell/PluginWrapper.py
+share/gnome/gdesklets/shell/SearchBar.py
+share/gnome/gdesklets/shell/__init__.py
+share/gnome/gdesklets/shell/interfaces/Browser.py
+share/gnome/gdesklets/shell/interfaces/Collection.py
+share/gnome/gdesklets/shell/interfaces/Installer.py
+share/gnome/gdesklets/shell/interfaces/Menu.py
+share/gnome/gdesklets/shell/interfaces/Shell.py
+share/gnome/gdesklets/shell/interfaces/Status.py
+share/gnome/gdesklets/shell/interfaces/View.py
+share/gnome/gdesklets/shell/interfaces/Widget.py
+share/gnome/gdesklets/shell/interfaces/__init__.py
+share/gnome/gdesklets/shell/interfaces/gDeskletsClient.py
+share/gnome/gdesklets/shell/plugins/ControlBrowser/ControlInspector.py
+share/gnome/gdesklets/shell/plugins/ControlBrowser/__init__.py
+share/gnome/gdesklets/shell/plugins/ControlBrowser/author.png
+share/gnome/gdesklets/shell/plugins/ControlBrowser/control.png
+share/gnome/gdesklets/shell/plugins/ControlBrowser/folder.png
+share/gnome/gdesklets/shell/plugins/ControlBrowser/interface.png
+share/gnome/gdesklets/shell/plugins/ControlCollection/__init__.py
+share/gnome/gdesklets/shell/plugins/ControlsView/__init__.py
+share/gnome/gdesklets/shell/plugins/DisplayBrowser/__init__.py
+share/gnome/gdesklets/shell/plugins/DisplayBrowser/author.png
+share/gnome/gdesklets/shell/plugins/DisplayBrowser/folder.png
+share/gnome/gdesklets/shell/plugins/DisplayCollection/__init__.py
+share/gnome/gdesklets/shell/plugins/DisplayView/__init__.py
+share/gnome/gdesklets/shell/plugins/Help/TipOfTheDay.py
+share/gnome/gdesklets/shell/plugins/Help/__init__.py
+share/gnome/gdesklets/shell/plugins/Help/tips.py
+share/gnome/gdesklets/shell/plugins/Menu/__init__.py
+share/gnome/gdesklets/shell/plugins/PackageInstaller/Downloader.py
+share/gnome/gdesklets/shell/plugins/PackageInstaller/Package.py
+share/gnome/gdesklets/shell/plugins/PackageInstaller/__init__.py
+share/gnome/gdesklets/shell/plugins/PackageInstaller/download.png
+share/gnome/gdesklets/shell/plugins/Profiles/__init__.py
+share/gnome/gdesklets/shell/plugins/Shell/__init__.py
+share/gnome/gdesklets/shell/plugins/StatusBar/__init__.py
+share/gnome/gdesklets/shell/plugins/ViewSwitch/__init__.py
+share/gnome/gdesklets/shell/plugins/gDeskletsClient/__init__.py
+share/gnome/gdesklets/test-control.py
+share/gnome/gdesklets/utils/BGWatcher.py
+share/gnome/gdesklets/utils/BGWatcher.pyc
 share/gnome/gdesklets/utils/BinTree.py
 share/gnome/gdesklets/utils/BinTree.pyc
 share/gnome/gdesklets/utils/FileWatcher.py
 share/gnome/gdesklets/utils/FileWatcher.pyc
 share/gnome/gdesklets/utils/GConfWatcher.py
 share/gnome/gdesklets/utils/GConfWatcher.pyc
-share/gnome/gdesklets/utils/Hash2D.py
-share/gnome/gdesklets/utils/Hash2D.pyc
 share/gnome/gdesklets/utils/Observable.py
 share/gnome/gdesklets/utils/Observable.pyc
+share/gnome/gdesklets/utils/QueryParser.py
+share/gnome/gdesklets/utils/QueryParser.pyc
+share/gnome/gdesklets/utils/Struct.py
+share/gnome/gdesklets/utils/Struct.pyc
 share/gnome/gdesklets/utils/TargetSettings.py
 share/gnome/gdesklets/utils/TargetSettings.pyc
 share/gnome/gdesklets/utils/TilingImage.py
 share/gnome/gdesklets/utils/TilingImage.pyc
+share/gnome/gdesklets/utils/Trie.py
+share/gnome/gdesklets/utils/Trie.pyc
 share/gnome/gdesklets/utils/TypeConverter.py
 share/gnome/gdesklets/utils/TypeConverter.pyc
+share/gnome/gdesklets/utils/Unit.py
+share/gnome/gdesklets/utils/Unit.pyc
+share/gnome/gdesklets/utils/WindowSnapper.py
+share/gnome/gdesklets/utils/WindowSnapper.pyc
 share/gnome/gdesklets/utils/__init__.py
 share/gnome/gdesklets/utils/__init__.pyc
-share/gnome/gdesklets/utils/_ewmhmodule.so
-share/gnome/gdesklets/utils/_systraymodule.so
 share/gnome/gdesklets/utils/actionparser.py
 share/gnome/gdesklets/utils/actionparser.pyc
 share/gnome/gdesklets/utils/datatypes.py
 share/gnome/gdesklets/utils/datatypes.pyc
 share/gnome/gdesklets/utils/dialog.py
 share/gnome/gdesklets/utils/dialog.pyc
+share/gnome/gdesklets/utils/ewmh.so
 share/gnome/gdesklets/utils/i18n.py
 share/gnome/gdesklets/utils/i18n.pyc
-share/gnome/gdesklets/utils/installer.py
-share/gnome/gdesklets/utils/installer.pyc
+share/gnome/gdesklets/utils/libutils.a
+share/gnome/gdesklets/utils/libutils.so
 share/gnome/gdesklets/utils/pwstore.py
 share/gnome/gdesklets/utils/pwstore.pyc
 share/gnome/gdesklets/utils/singleton.py
 share/gnome/gdesklets/utils/singleton.pyc
-share/gnome/gdesklets/utils/systray.py
-share/gnome/gdesklets/utils/systray.pyc
+share/gnome/gdesklets/utils/svg.so
+share/gnome/gdesklets/utils/systray.so
+share/gnome/gdesklets/utils/tiling.so
 share/gnome/gdesklets/utils/vfs.py
 share/gnome/gdesklets/utils/vfs.pyc
-share/gnome/mime-info/gdesklets.keys
-share/gnome/mime-info/gdesklets.mime
+share/gnome/gdesklets/utils/wallpaper.py
+share/gnome/gdesklets/utils/wallpaper.pyc
+share/gnome/gdesklets/utils/xdr.py
+share/gnome/gdesklets/utils/xdr.pyc
 share/gnome/pixmaps/gdesklets.png
-share/icons/gnome/48x48/mimetypes/x-gdesklets-display.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-gdesklets-display.png
+share/mime/application/x-gdesklets-display.xml
+share/mime/packages/gdesklets.xml
 @dirrm share/gnome/gdesklets/utils
+@dirrm share/gnome/gdesklets/shell/plugins/gDeskletsClient
+@dirrm share/gnome/gdesklets/shell/plugins/ViewSwitch
+@dirrm share/gnome/gdesklets/shell/plugins/StatusBar
+@dirrm share/gnome/gdesklets/shell/plugins/Shell
+@dirrm share/gnome/gdesklets/shell/plugins/Profiles
+@dirrm share/gnome/gdesklets/shell/plugins/PackageInstaller
+@dirrm share/gnome/gdesklets/shell/plugins/Menu
+@dirrm share/gnome/gdesklets/shell/plugins/Help
+@dirrm share/gnome/gdesklets/shell/plugins/DisplayView
+@dirrm share/gnome/gdesklets/shell/plugins/DisplayCollection
+@dirrm share/gnome/gdesklets/shell/plugins/DisplayBrowser
+@dirrm share/gnome/gdesklets/shell/plugins/ControlsView
+@dirrm share/gnome/gdesklets/shell/plugins/ControlCollection
+@dirrm share/gnome/gdesklets/shell/plugins/ControlBrowser
+@dirrm share/gnome/gdesklets/shell/plugins
+@dirrm share/gnome/gdesklets/shell/interfaces
+@dirrm share/gnome/gdesklets/shell
 @dirrm share/gnome/gdesklets/sensor
+@dirrm share/gnome/gdesklets/scripting
+@dirrm share/gnome/gdesklets/plugin
 @dirrm share/gnome/gdesklets/main
+@dirrm share/gnome/gdesklets/locale/uk/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/uk
 @dirrm share/gnome/gdesklets/locale/tr/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/tr
 @dirrm share/gnome/gdesklets/locale/sv/LC_MESSAGES
@@ -225,6 +402,10 @@ share/icons/gnome/48x48/mimetypes/x-gdesklets-display.png
 @dirrm share/gnome/gdesklets/locale/ja
 @dirrm share/gnome/gdesklets/locale/it/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/it
+@dirrm share/gnome/gdesklets/locale/is/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/is
+@dirrm share/gnome/gdesklets/locale/hu/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/hu
 @dirrm share/gnome/gdesklets/locale/hr/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/hr
 @dirrm share/gnome/gdesklets/locale/he/LC_MESSAGES
@@ -235,6 +416,10 @@ share/icons/gnome/48x48/mimetypes/x-gdesklets-display.png
 @dirrm share/gnome/gdesklets/locale/eu
 @dirrm share/gnome/gdesklets/locale/es/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/es
+@dirrm share/gnome/gdesklets/locale/en_GB/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/en_GB
+@dirrm share/gnome/gdesklets/locale/en_CA/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/en_CA
 @dirrm share/gnome/gdesklets/locale/el/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/el
 @dirrm share/gnome/gdesklets/locale/de/LC_MESSAGES
@@ -243,19 +428,34 @@ share/icons/gnome/48x48/mimetypes/x-gdesklets-display.png
 @dirrm share/gnome/gdesklets/locale/cs
 @dirrm share/gnome/gdesklets/locale/ca/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/ca
+@dirrm share/gnome/gdesklets/locale/bg/LC_MESSAGES
+@dirrm share/gnome/gdesklets/locale/bg
 @dirrm share/gnome/gdesklets/locale/az/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/az
 @dirrm share/gnome/gdesklets/locale/ar/LC_MESSAGES
 @dirrm share/gnome/gdesklets/locale/ar
 @dirrm share/gnome/gdesklets/locale
+@dirrm share/gnome/gdesklets/libdesklets/system/OpenBSD
+@dirrm share/gnome/gdesklets/libdesklets/system/NetBSD
+@dirrm share/gnome/gdesklets/libdesklets/system/Linux
+@dirrm share/gnome/gdesklets/libdesklets/system/FreeBSD
+@dirrm share/gnome/gdesklets/libdesklets/system
+@dirrm share/gnome/gdesklets/libdesklets/controls
 @dirrm share/gnome/gdesklets/libdesklets
 @dirrm share/gnome/gdesklets/factory
 @dirrm share/gnome/gdesklets/display
-@dirrm share/gnome/gdesklets/desktop
 @dirrm share/gnome/gdesklets/data
 @dirrm share/gnome/gdesklets/config
 @dirrm share/gnome/gdesklets/Sensors/FontSelector
 @dirrm share/gnome/gdesklets/Sensors/External
 @dirrm share/gnome/gdesklets/Sensors
 @dirrm share/gnome/gdesklets/Displays
-@dirrm share/gnome/gdesklets
+@dirrm share/gnome/gdesklets/Controls/URI
+@dirrm share/gnome/gdesklets/Controls/Time
+@dirrm share/gnome/gdesklets/Controls/System
+@dirrm share/gnome/gdesklets/Controls/Sensors
+@dirrm share/gnome/gdesklets/Controls/Calendar
+@dirrm share/gnome/gdesklets/Controls
+@dirrm share/gnome/gdesklets/
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime
