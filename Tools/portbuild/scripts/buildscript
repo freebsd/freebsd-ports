@@ -3,36 +3,97 @@
 # usage: $0 DIRNAME PHASE
 #   PHASE is 1 (checksum) or 2 (package)
 
+cleanup() {
+  status=$1
+
+  if [ -e ${dir}/.keep ]; then
+    cd ${dir}
+    objdir=$(make -V WRKDIR)
+    tar cfjC /tmp/work.tbz ${objdir}/.. work
+  fi
+
+  cat /tmp/make.log${status}
+  echo 1 > /tmp/status
+  echo "================================================================"
+  echo -n "build ended at "
+  date
+
+  exit 0
+}
+
+add_pkg() {
+  pkgs=$*
+
+  echo add_pkg $pkgs
+  cd /tmp/depends
+  export PKG_PATH=/tmp/depends
+  if [ ! -z "${pkgs}" ]; then
+    echo "adding dependencies"
+    for i in $pkgs; do
+      echo "pkg_add $i"
+      base=$(basename $i .tgz)
+      base=$(basename $base .tbz)
+      if pkg_info -q -e $base; then
+        echo "skipping $base, already added"
+      else
+        if ! pkg_add $i; then
+          echo "error in dependency $i, exiting"
+          echo "1" > /tmp/status
+          exit 1
+        fi
+      fi
+    done
+  fi
+}
+
+del_pkg() {
+  pkgs=$*
+
+  cd /tmp/depends
+  export PKG_PATH=/tmp/depends
+  if [ ! -z "${pkgs}" ]; then
+    unset delpkg
+    for i in $pkgs; do
+      base=$(basename $i .tgz)
+      base=$(basename $base .tbz)
+      if ! pkg_info -q -e $base; then
+        echo "skipping $base, already deleted"
+      else
+	delpkg="${base} ${delpkg}"
+      fi
+    done
+    echo "Deleting $delpkg"
+    if ! (echo ${delpkg} | xargs pkg_delete -f); then
+      echo "error in pkg_delete, exiting"
+      echo "1" > /tmp/status
+      exit 1
+    fi
+  fi
+}
+
 dir=$1
 phase=$2
+
+ED=$3
+PD=$4
+FD=$5
+BD=$6
+RD=$7
 
 if [ $phase = 1 ]; then
 
   cd $dir || exit 1
   echo "maintained by: $(make maintainer)"
+  echo "port directory: ${dir}"
   echo "build started at $(date)"
 
-  cd /tmp/depends
-  export PKG_PATH=/tmp/depends
-  if [ "$(echo $(/bin/ls | wc -c))" != 0 ]; then
-    echo "adding dependencies"
-    for i in *.t[bg]z; do
-      echo "pkg_add $i"
-      base=$(basename $i .tgz)
-      base=$(basename $base .tbz)
-      if pkg_info -q -e $base; then
-	echo "skipping $base, already added"
-      else
-	if ! pkg_add $i; then
-	  echo "error in dependency $i, exiting"
-	  echo "1" > /tmp/status
-	  exit 1
-	fi
-      fi
-    done
-  fi
+  echo "FETCH_DEPENDS=${FD}"
+  echo "PATCH_DEPENDS=${PD}"
+  echo "EXTRACT_DEPENDS=${ED}"
+  echo "BUILD_DEPENDS=${BD}"
+  echo "RUN_DEPENDS=${RD}"
 
-  mtree -xcn -k uid,gid,mode -p / > /tmp/mtree
+  add_pkg $FD
 
   #Allow ports to notice they're being run on bento
   export PACKAGE_BUILDING=1
@@ -46,16 +107,11 @@ if [ $phase = 1 ]; then
     cat /tmp/make.log1
     echo "0" > /tmp/status
   else
-    cat /tmp/make.log1
-    echo "1" > /tmp/status
-    echo "================================================================"
-    echo -n "build ended at "
-    date
+    cleanup 1
   fi
 
 else
 
-  echo "====================<phase 2: make package>====================="
   xvfb=0
   if which -s Xvfb; then
     xvfb=1
@@ -68,65 +124,67 @@ else
 
   cd $dir || exit 1
   pkgname=$(make package-name)
-  if /pnohang $TIMEOUT /tmp/make.log2 ${pkgname} make package; then
-    cat /tmp/make.log2
+
+  echo "================================================================"
+  echo "====================<phase 2: make extract>===================="
+  add_pkg ${ED}
+  cd $dir
+  /pnohang $TIMEOUT /tmp/make.log2 ${pkgname} make extract || cleanup 2
+  cat /tmp/make.log2
+  del_pkg ${ED}
+
+  echo "================================================================"
+  echo "====================<phase 3: make patch>===================="
+  add_pkg ${PD}
+  cd $dir
+  /pnohang $TIMEOUT /tmp/make.log3 ${pkgname} make patch || cleanup 3
+  cat /tmp/make.log3
+  del_pkg ${PD}
+
+  echo "================================================================"
+  echo "====================<phase 4: make build>===================="
+  add_pkg ${BD}
+  cd $dir
+  /pnohang $TIMEOUT /tmp/make.log4 ${pkgname} make build || cleanup 4
+  cat /tmp/make.log4
+
+  echo "================================================================"
+  echo "====================<phase 5: make package>===================="
+  add_pkg ${RD}
+  cat > /tmp/mtree.exclude <<EOF
+./var/*
+./tmp/*
+EOF
+  mtree -X /tmp/mtree.exclude -xcn -k uid,gid,mode -p / > /tmp/mtree
+  cd $dir
+  if /pnohang $TIMEOUT /tmp/make.log5 ${pkgname} make package; then
+    cat /tmp/make.log5
     echo "0" > /tmp/status
     prefix=$(make -V PREFIX)
-    echo "================================================================"
-    echo "checking installed files"
-    find ${prefix} \( \( -perm -4000 -o -perm -2000 -a \! -type d \) -o \( -perm -0002 -o -perm -0020 \) \) -a \! -type l -ls | sort > /tmp/list1
-    echo "pkg_delete ${pkgname}"
-    pkg_delete ${pkgname}
-    find ${prefix} \( \( -perm -4000 -o -perm -2000 -a \! -type d \) -o \( -perm -0002 -o -perm -0020 \) \) -a \! -type l -ls | sort > /tmp/list2
-    if ! diff -qb /tmp/list1 /tmp/list2 2>/dev/null; then
-      echo "================================================================"
-      echo "found set[ug]id or world-writable files and directories"
-      diff -b /tmp/list2 /tmp/list1 | grep '^>'
-    fi
+    del_pkg ${pkgname}
 
-    mtree -x -f /tmp/mtree -p / | egrep -v '^(var/|tmp/|etc/shells.bak$|etc/services|compat$|etc/manpath.config|usr/local/share/nls/POSIX|usr/local/share/nls/en_US.US-ASCII)' > /tmp/list3
+    mtree -X /tmp/mtree.exclude -x -f /tmp/mtree -p / | egrep -v '^(usr/local/share/nls/POSIX|usr/local/share/nls/en_US.US-ASCII|etc/shells.bak|etc/services|compat |usr/X11R6 |etc/manpath.config|usr/local/info/dir)' > /tmp/list3
 
+    # BUILD_DEPENDS need to be present at install-time, e.g. gmake
+    # Concatenate and remove duplicates
+    BRD=$(echo $BD $RD | tr ' ' '\n' | sort -u | tr '\n' ' ')
+    del_pkg ${BRD}
     cd /var/db/pkg
     if [ $(echo $(echo * | wc -c)) != 2 ]; then
-      echo "================================================================"
-      echo "deleting dependencies"
-      prevlist=""
-      count=1
-      while [ $(echo $(echo * | wc -c)) != 2 -a $(echo $(echo * | wc -c)) != $(echo $(echo $prevlist | wc -c)) ]; do
-	echo "== phase $count =="
-	prevlist="$(echo *)"
-	for i in *; do
-	  echo "pkg_delete $i"
-	  pkg_delete $i
-	done
-	count=$(($count + 1))
-      done
-#      if [ $(echo $(echo * | wc -c)) != 2 ]; then
-#	echo "leftover packages:" *
-#	for i in *; do
-#	  echo "pkg_delete -f $i"
-#	  pkg_delete -f $i
-#	done
-#      fi
+      echo "leftover packages:" *
+      del_pkg *
     fi
 
     if [ -s /tmp/list3 ]; then
       echo "================================================================"
       echo "list of extra files and directories in /"
       cat /tmp/list3
-#      echo "list of all files and directories in ${prefix}"
-#      cd ${prefix}
-#      find . -exec echo -n 'path: ' \; -exec ls -1d \{} \; | sort
-#      echo "ls -alR ${prefix}"
-#      ls -alR ${prefix}
       if [ "x${PLISTCHECK}" != "x" ]; then
         echo "1" > /tmp/status
       fi
     fi
-
   else
-    cat /tmp/make.log2
-    echo "1" > /tmp/status
+    cleanup 5
   fi
 
   if [ ${xvfb} = 1 ]; then
@@ -136,12 +194,8 @@ else
   if [ -e ${dir}/.keep ]; then
     cd ${dir}
     objdir=$(make -V WRKDIR)
-    tar cvfjC /tmp/work.tbz ${objdir}/.. work
+    tar cfjC /tmp/work.tbz ${objdir}/.. work
   fi
-
-  echo "================================================================"
-  echo -n "build ended at "
-  date
 
 fi
 
