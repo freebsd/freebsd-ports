@@ -1,0 +1,437 @@
+*** Makefile.in.orig	Fri Nov  4 09:53:23 1994
+--- Makefile.in	Sun Jan  7 10:14:02 1996
+***************
+*** 37,43 ****
+  mkdir mkfifo mknod mv rm rmdir sync touch vdir @PROGS@
+  
+  # Subdirectories to run make in for the primary targets.
+! SUBDIRS = lib src man doc
+  
+  .SUFFIXES:
+  
+--- 37,43 ----
+  mkdir mkfifo mknod mv rm rmdir sync touch vdir @PROGS@
+  
+  # Subdirectories to run make in for the primary targets.
+! SUBDIRS = lib src man
+  
+  .SUFFIXES:
+  
+*** src/Makefile.in.orig	Sun Jan  7 10:13:58 1996
+--- src/Makefile.in	Sun Jan  7 10:25:08 1996
+***************
+*** 1,4 ****
+--- 1,7 ----
+  # Makefile for GNU file utilities.
++ #
++ # Modified by bmc@WillsCreek.COM to build only `ls' and `dircolors'
++ #
+  # Copyright (C) 1990, 1991, 1992, 1993, 1994 Free Software Foundation, Inc.
+  
+  # This program is free software; you can redistribute it and/or modify
+***************
+*** 37,50 ****
+  LN = @LN@
+  MV = @MV@
+  
+! SOURCES = chmod.c chgrp.c chown.c cp-aux.c cp-hash.c cp.c \
+! dd.c df.c du.c install.c ln.c ls.c mkdir.c mkfifo.c mknod.c mv.c mvdir.c \
+! rm.c rmdir.c sync.c touch.c version.c ls-ls.c ls-dir.c ls-vdir.c \
+  dircolors.c
+  
+! OBJECTS = chmod.o chgrp.o chown.o cp-aux.o cp-hash.o cp.o \
+! dd.o df.o du.o install.o ln.o ls.o mkdir.o mkfifo.o mknod.o mv.o mvdir.o \
+! rm.o rmdir.o sync.o touch.o version.o ls-ls.o ls-dir.o ls-vdir.o \
+  dircolors.o
+  
+  DISTFILES = Makefile.in cp.h ls.h version.h $(SOURCES) \
+--- 40,49 ----
+  LN = @LN@
+  MV = @MV@
+  
+! SOURCES = ls.c ls-ls.c \
+  dircolors.c
+  
+! OBJECTS = ls.o ls-ls.o \
+  dircolors.o
+  
+  DISTFILES = Makefile.in cp.h ls.h version.h $(SOURCES) \
+***************
+*** 54,61 ****
+  # confusion with the `install' target.  The install rule transforms `ginstall'
+  # to install before applying any user-specified name transformations.
+  
+! PROGS = chgrp chown chmod cp dd du ginstall ln ls mkdir \
+! mkfifo mknod mv rm rmdir sync touch dircolors @PROGS@
+  
+  LIBPROGS = @LIBPROGS@
+  
+--- 53,59 ----
+  # confusion with the `install' target.  The install rule transforms `ginstall'
+  # to install before applying any user-specified name transformations.
+  
+! PROGS = linuxls dircolors dir vdir
+  
+  LIBPROGS = @LIBPROGS@
+  
+***************
+*** 83,92 ****
+  	done
+  	if [ "x$(LIBPROGS)" = x ]; then : ; else \
+  	  $(INSTALL_PROGRAM) -o root -m 4755 $(LIBPROGS) $(libdir); fi
+! 	cd $(bindir) && \
+! 	  $(RM) -f d v && \
+! 	  $(LN) `echo dir|sed '$(transform)'` d && \
+! 	  $(LN) `echo vdir|sed '$(transform)'` v
+  
+  uninstall:
+  	for f in $(LIBPROGS); do \
+--- 81,92 ----
+  	done
+  	if [ "x$(LIBPROGS)" = x ]; then : ; else \
+  	  $(INSTALL_PROGRAM) -o root -m 4755 $(LIBPROGS) $(libdir); fi
+! #
+! # NOTE: `dircolors' defines `d' and `v' aliases.  - bmc@WillsCreek.COM
+! #	cd $(bindir) && \
+! #	  $(RM) -f d v && \
+! #	  $(LN) `echo dir|sed '$(transform)'` d && \
+! #	  $(LN) `echo vdir|sed '$(transform)'` v
+  
+  uninstall:
+  	for f in $(LIBPROGS); do \
+***************
+*** 145,152 ****
+  #dir: ls.o ls-dir.o
+  #	$(link_command) ls.o ls-dir.o ../lib/libfu.a version.o $(LIBS)
+  
+! dir: ls ln
+! 	./ln ls dir
+  
+  dircolors: dircolors.o
+  	$(link_command) dircolors.o ../lib/libfu.a version.o $(LIBS)
+--- 145,152 ----
+  #dir: ls.o ls-dir.o
+  #	$(link_command) ls.o ls-dir.o ../lib/libfu.a version.o $(LIBS)
+  
+! dir: linuxls
+! 	ln linuxls dir
+  
+  dircolors: dircolors.o
+  	$(link_command) dircolors.o ../lib/libfu.a version.o $(LIBS)
+***************
+*** 160,166 ****
+  ln: ln.o
+  	$(link_command) ln.o ../lib/libfu.a version.o $(LIBS)
+  
+! ls: ls.o ls-ls.o
+  	$(link_command) ls.o ls-ls.o ../lib/libfu.a version.o $(LIBS)
+  
+  mkdir: mkdir.o
+--- 160,166 ----
+  ln: ln.o
+  	$(link_command) ln.o ../lib/libfu.a version.o $(LIBS)
+  
+! linuxls: ls.o ls-ls.o
+  	$(link_command) ls.o ls-ls.o ../lib/libfu.a version.o $(LIBS)
+  
+  mkdir: mkdir.o
+***************
+*** 193,200 ****
+  #vdir: ls.o ls-vdir.o
+  #	$(link_command) ls.o ls-vdir.o ../lib/libfu.a version.o $(LIBS)
+  
+! vdir: ls ln
+! 	./ln vdir ls
+  
+  $(PROGS) $(LIBPROGS): ../lib/libfu.a version.o
+  $(OBJECTS): ../lib/pathmax.h
+--- 193,200 ----
+  #vdir: ls.o ls-vdir.o
+  #	$(link_command) ls.o ls-vdir.o ../lib/libfu.a version.o $(LIBS)
+  
+! vdir: linuxls
+! 	ln linuxls vdir
+  
+  $(PROGS) $(LIBPROGS): ../lib/libfu.a version.o
+  $(OBJECTS): ../lib/pathmax.h
+*** man/Makefile.in.orig	Sun Jan  7 10:13:57 1996
+--- man/Makefile.in	Sun Jan  7 10:14:02 1996
+***************
+*** 1,4 ****
+--- 1,7 ----
+  # Makefile for GNU file utilities documentation.
++ #
++ # Modified by bmc@WillsCreek.COM to build only `ls' and `dircolors' man pages
++ #
+  # Copyright (C) 1991, 1992, 1993, 1994 Free Software Foundation, Inc.
+  
+  # This program is free software; you can redistribute it and/or modify
+***************
+*** 28,39 ****
+  INSTALL_DATA = @INSTALL_DATA@
+  RM = @RM@
+  
+! MANFILES = chgrp.1 chown.1 chmod.1 cp.1 dd.1 df.1 du.1 install.1 \
+! ln.1 ls.1 mkdir.1 mkfifo.1 mknod.1 mv.1 rm.1 rmdir.1 touch.1 dircolors.1
+  
+  DISTFILES = Makefile.in $(MANFILES)
+  
+! all: dircolors.1
+  
+  .SUFFIXES:
+  
+--- 31,41 ----
+  INSTALL_DATA = @INSTALL_DATA@
+  RM = @RM@
+  
+! MANFILES = linuxls.1 dircolors.1
+  
+  DISTFILES = Makefile.in $(MANFILES)
+  
+! all: dircolors.1 linuxls.1 
+  
+  .SUFFIXES:
+  
+***************
+*** 85,90 ****
+--- 87,95 ----
+  dircolors.1:  dircolors.1.in
+  	sed -e "s:XXX_PREFIX_XXX:$(prefix):g" < dircolors.1.in | \
+  	  sed -e 's:///*:/:g' > dircolors.1
++ 
++ linuxls.1: ls.1
++ 	ln ls.1 linuxls.1
+  
+  # Tell versions [3.59,3.63) of GNU make not to export all variables.
+  # Otherwise a system limit (for SysV at least) may be exceeded.
+*** src/dircolors.c.orig	Sun Jan  7 10:14:00 1996
+--- src/dircolors.c	Sun Jan  7 10:14:03 1996
+***************
+*** 12,17 ****
+--- 12,23 ----
+  #include <string.h>
+  #include "version.h"
+  
++ #ifdef linux
++ #define LS_COMMAND_NAME	"ls"
++ #else
++ #define LS_COMMAND_NAME	"linuxls"
++ #endif
++ 
+  #define USER_FILE ".dir_colors"	/* Versus user's home directory */
+  #define SYSTEM_FILE "//DIR_COLORS" /* System-wide file in directory SYSTEM_DIR
+  				    (defined on the cc command line) */
+***************
+*** 436,442 ****
+  		  if ( *(q-1) != '/' )
+  		    *(q++) = '/';
+  
+! 		  strcpy(q, "ls");
+  		  if ( access(line, X_OK) == 0 )
+  		    {
+  		      no_path = 0; /* Found it */
+--- 442,448 ----
+  		  if ( *(q-1) != '/' )
+  		    *(q++) = '/';
+  
+! 		  strcpy(q, LS_COMMAND_NAME);
+  		  if ( access(line, X_OK) == 0 )
+  		    {
+  		      no_path = 0; /* Found it */
+*** man/dircolors.1.in.orig	Sun Jan  7 10:13:57 1996
+--- man/dircolors.1.in	Sun Jan  7 10:14:03 1996
+***************
+*** 1,7 ****
+  .TH DIRCOLORS 1L \" -*- nroff -*-
+  .SH NAME
+  dircolors \- Set color parameters for 
+! .BR ls (1)
+  .SH SYNOPSIS
+  .TP
+  \fBeval `dircolors\fR [\-abckstzPS] [filename]\fB`\fR
+--- 1,7 ----
+  .TH DIRCOLORS 1L \" -*- nroff -*-
+  .SH NAME
+  dircolors \- Set color parameters for 
+! .BR linuxls (1)
+  .SH SYNOPSIS
+  .TP
+  \fBeval `dircolors\fR [\-abckstzPS] [filename]\fB`\fR
+***************
+*** 71,81 ****
+  .TP
+  .I "\-P"
+  Do not seek the path to find the location of the
+! .B ls
+  binary.  By default,
+  .B dircolors
+  will find the location of the
+! .B ls
+  binary at the time it is run, and include it in the shell function or
+  alias, which for most shells results in a significant speed
+  improvement.
+--- 71,81 ----
+  .TP
+  .I "\-P"
+  Do not seek the path to find the location of the
+! .B linuxls
+  binary.  By default,
+  .B dircolors
+  will find the location of the
+! .B linuxls
+  binary at the time it is run, and include it in the shell function or
+  alias, which for most shells results in a significant speed
+  improvement.
+***************
+*** 88,94 ****
+  statement, even if there is a
+  .B COLOR
+  statement in the global section of the file.  This is for
+! compatibility with Slackware GNU
+  .B ls
+  for which the order of the statements did not matter.
+  .TP
+--- 88,94 ----
+  statement, even if there is a
+  .B COLOR
+  statement in the global section of the file.  This is for
+! compatibility with Slackware Linux GNU
+  .B ls
+  for which the order of the statements did not matter.
+  .TP
+***************
+*** 146,154 ****
+  .TP
+  .B OPTIONS \fIoptions\fR
+  Adds command line options to the default
+! .B ls
+  command line.  The options can be any valid
+! .B ls
+  command line options, and should include the leading minus sign.
+  Please note that
+  .B dircolors
+--- 146,154 ----
+  .TP
+  .B OPTIONS \fIoptions\fR
+  Adds command line options to the default
+! .B linuxls
+  command line.  The options can be any valid
+! .B linuxls
+  command line options, and should include the leading minus sign.
+  Please note that
+  .B dircolors
+***************
+*** 169,175 ****
+  .B ORPHAN \fIcolor-sequence\fR
+  Specifies the color used for an orphanned symbolic link (one which
+  points to a nonexistent file).  If this is unspecified,
+! .B ls
+  will use the
+  .B LINK
+  color instead.
+--- 169,175 ----
+  .B ORPHAN \fIcolor-sequence\fR
+  Specifies the color used for an orphanned symbolic link (one which
+  points to a nonexistent file).  If this is unspecified,
+! .B linuxls
+  will use the
+  .B LINK
+  color instead.
+***************
+*** 177,183 ****
+  .B MISSING \fIcolor-sequence\fR
+  Specifies the color used for a missing file (a nonexistent file which
+  nevertheless has a symbolic link pointing to it).  If this is unspecified,
+! .B ls
+  will use the
+  .B FILE
+  color instead.
+--- 177,183 ----
+  .B MISSING \fIcolor-sequence\fR
+  Specifies the color used for a missing file (a nonexistent file which
+  nevertheless has a symbolic link pointing to it).  If this is unspecified,
+! .B linuxls
+  will use the
+  .B FILE
+  color instead.
+***************
+*** 230,236 ****
+  .B xterm
+  and the widely used and cloned DEC VT100, will recognize ISO 6429 color
+  codes and harmlessly eliminate them from the output or emulate them.
+! .B ls
+  uses ISO 6429 codes by default, assuming colorization is enabled.
+  
+  ISO 6429 color sequences are composed of sequences of numbers
+--- 230,236 ----
+  .B xterm
+  and the widely used and cloned DEC VT100, will recognize ISO 6429 color
+  codes and harmlessly eliminate them from the output or emulate them.
+! .B linuxls
+  uses ISO 6429 codes by default, assuming colorization is enabled.
+  
+  ISO 6429 color sequences are composed of sequences of numbers
+***************
+*** 264,270 ****
+  .sp
+  Not all commands will work on all systems or display devices.
+  .PP
+! .B ls
+  uses the following defaults:
+  .sp
+  .RS +.2i
+--- 264,270 ----
+  .sp
+  Not all commands will work on all systems or display devices.
+  .PP
+! .B linuxls
+  uses the following defaults:
+  .sp
+  .RS +.2i
+***************
+*** 303,309 ****
+  definitions.
+  .PP
+  When writing out a filename,
+! .B ls
+  generates the following output sequence:
+  .B LEFTCODE
+  .I typecode
+--- 303,309 ----
+  definitions.
+  .PP
+  When writing out a filename,
+! .B linuxls
+  generates the following output sequence:
+  .B LEFTCODE
+  .I typecode
+***************
+*** 385,390 ****
+--- 385,391 ----
+  .SH AUTHOR
+  H. Peter Anvin <hpa@nwu.edu> with input from Patrick Volkerding,
+  creator of the Slackware Linux distribution.
++ Ported to FreeBSD by Brian Clapper <bmc@willscreek.com>.
+  .SH BUGS
+  Currently is somewhat poorly integrated into the GNU fileutils
+  package.  For example, it does not support long options and is
+*** man/ls.1.orig	Sun Jan  7 10:13:57 1996
+--- man/ls.1	Sun Jan  7 10:14:03 1996
+***************
+*** 18,24 ****
+  This manual page
+  documents the GNU version of
+  .BR ls ,
+! with color extensions.
+  .B dir
+  and
+  .B vdir
+--- 18,25 ----
+  This manual page
+  documents the GNU version of
+  .BR ls ,
+! with color extensions (installed on this machine as
+! .BR linuxls ).
+  .B dir
+  and
+  .B vdir
