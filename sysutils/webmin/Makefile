@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.180
-PORTREVISION=	1
+PORTVERSION=	1.190
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -26,8 +25,11 @@ USE_PERL5=	yes
 USE_RC_SUBR=    yes
 USE_REINPLACE=	yes
 
-WEBMIN_MODULES=	ldap-useradmin-1.180-1.wbm.gz \
-		sendmail-1.180-1.wbm.gz
+WEBMIN_MODULES=	bind8-1.190-1.wbm.gz \
+		dhcpd-1.190-1.wbm.gz \
+		postgresql-1.190-1.wbm.gz \
+		status-1.190-1.wbm.gz \
+		usermin-1.190-1.wbm.gz
 WEBMIN_THEMES=
 
 post-extract:
