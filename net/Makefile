@@ -676,6 +676,7 @@
     SUBDIR += scand
     SUBDIR += scr_ipfm
     SUBDIR += sdl_net
+    SUBDIR += seda
     SUBDIR += sendfile
     SUBDIR += ser
     SUBDIR += serveez
