@@ -5,7 +5,7 @@
      if TK_GetVar("isscipadinterp")=='0' then   
        TK_EvalStr("interp create scipad")
 -      TK_EvalStr("load {libtk8.3.so} Tk scipad")
-+      TK_EvalStr("load {libtk83.so} Tk scipad")
++      TK_EvalStr("load {libtk84.so} Tk scipad")
        TK_EvalStr("scipad eval {wm withdraw .}")
        TK_EvalStr("scipad alias ScilabEval ScilabEval")
      end

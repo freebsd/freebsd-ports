@@ -1,0 +1,11 @@
+--- examples/callsci/callsciC++/config/Makefile.incl.orig	Sun Oct 19 19:25:21 2003
++++ examples/callsci/callsciC++/config/Makefile.incl	Sun Oct 19 19:25:33 2003
+@@ -75,7 +75,7 @@
+ #####################
+ TK_INC_PATH = -I/usr/include
+ TCL_INC_PATH = -I/usr/include
+-TCLTK_LIBS =  -L/usr/lib -ltk8.3   -L/usr/lib -ltcl8.3  -ldl
++TCLTK_LIBS =  -L/usr/lib -ltk8.4   -L/usr/lib -ltcl8.4  -ldl
+ 
+ #####################
+ # for WIN32 version 

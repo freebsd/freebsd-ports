@@ -1,0 +1,18 @@
+--- routines/graphics/Math.h.orig	Sun Nov 23 20:22:11 2003
++++ routines/graphics/Math.h	Sun Nov 23 20:22:10 2003
+@@ -88,11 +88,15 @@
+ #if defined(THINK_C)|| defined(WIN32)
+ #define M_PI	3.14159265358979323846
+ #else
++#if defined(HAVE_LIMITS_H)
++#include <limits.h>
++#else
+ #if defined(HAVE_VALUES_H)
+ #include <values.h>
+ #else
+ #ifndef M_PI
+ #define M_PI    3.14159265358979323846 
++#endif
+ #endif
+ #endif
+ #endif
