@@ -1,7 +1,7 @@
 Firewalk  is  a  network  auditing  tool  that attempts to
 determine what transport protocols a  given  gateway  will
 pass.   Firewalk  works  by sending out TCP or UDP packets
-with a TTL one greater then the targeted gateway.  If  the
+with a TTL one greater than the targeted gateway.  If  the
 gateway allows the traffic, it will forward the packets to
 the  next  hop  where  they  will  expire  and  elicit  an
 ICMP_TIME_EXCEEDED  message.  If the gateway host does not

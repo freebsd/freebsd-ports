@@ -18,4 +18,3 @@
 +LIBS        =   -L$(PREFIX)/lib @FW_GTK_CONFIG@ `$(LIBNET_CONFIG) --libs` -lpcap
  OBJECTS     =   main.o firewalk.o watcher.o p_cap.o signal.o \
  		packet.o udptcpwalk.o port_list.o util.o @FW_GTK_OBJS@
- 
