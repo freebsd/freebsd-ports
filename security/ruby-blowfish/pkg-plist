@@ -1,0 +1,5 @@
+%%RUBY_SITEARCHLIBDIR%%/Blowfish.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/blowfish/testbf.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/blowfish
+%%PORTDOCS%%%%RUBY_DOCDIR%%/blowfish/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/blowfish
