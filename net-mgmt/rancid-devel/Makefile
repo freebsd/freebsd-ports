@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	rancid
-PORTVERSION=	2.3.r1
-PORTREVISION=	1
+PORTVERSION=	2.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
-DISTNAME=	${PORTNAME}-2.3.rc1
+#DISTNAME=	${PORTNAME}-2.3.rc1
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Really Awesome New Cisco confIg Differ
