@@ -1,0 +1,23 @@
+****  To enable start/stop of the seti@home client, please run "setiathome"
+      as your login name.
+      If you installed "setiathome" by ports or package, add, change or
+      uncomment the seti_user variable in %%LOCALBASE%%/etc/rc.setiathome.conf
+      (or %%LOCALBASE%%/etc/setiathome.conf depending on the version currently
+      installed on your computer)
+            seti_user=nobody
+                      ^^^^^^
+      to your login name before setting up working directory, such as :
+            seti_user=<your_login_name>
+      If you already done this as nobody, do
+            %%LOCALBASE%%/etc/rc.d/setiathome.sh stop
+            chown -Rh <your_login_name> /var/db/setiathome
+            %%LOCALBASE%%/etc/rc.d/setiathome.sh start
+****  Known Bugs
+      For instance, default values have to be set manually using the panel
+      preferences (right-click):
+	set the value of "Basic->Directory containing the seti@home executable"
+	to /var/db/setiathome
+	check "Advanced->Use seti@home exe in a different directory"
+	and set it's value to %%LOCALBASE%%/sbin
+      Also, running xsetiathome by double-clicking the radar icon isn't
+      possible right now.
