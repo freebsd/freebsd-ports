@@ -5071,6 +5071,7 @@ omi		ports/ftp/omi
 omniORB		ports/devel/omniORB
 oneko		ports/games/oneko
 oneko-sakura	ports/games/oneko-sakura
+oniguruma	ports/devel/oniguruma
 onyx		ports/lang/onyx
 oo2c		ports/lang/oo2c
 oonsoo		ports/games/oonsoo
