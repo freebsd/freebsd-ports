@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	1.8
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
@@ -16,40 +15,41 @@ DISTFILES=	\
 		apel-1.20-pkg.tar.gz \
 		auctex-1.24-pkg.tar.gz \
 		c-support-1.16-pkg.tar.gz \
-		cc-mode-1.23-pkg.tar.gz \
+		cc-mode-1.24-pkg.tar.gz \
 		debug-1.14-pkg.tar.gz \
 		dired-1.09-pkg.tar.gz \
-		edit-utils-1.55-pkg.tar.gz \
+		edit-utils-1.57-pkg.tar.gz \
 		efs-1.22-pkg.tar.gz \
 		fsf-compat-1.08-pkg.tar.gz \
 		hm--html-menus-1.16-pkg.tar.gz \
 		ispell-1.22-pkg.tar.gz \
-		mail-lib-1.35-pkg.tar.gz \
+		mail-lib-1.36-pkg.tar.gz \
 		mailcrypt-2.07-pkg.tar.gz \
 		net-utils-1.15-pkg.tar.gz \
 		os-utils-1.25-pkg.tar.gz \
-		pcl-cvs-1.51-pkg.tar.gz \
-		prog-modes-1.32-pkg.tar.gz \
+		pcl-cvs-1.53-pkg.tar.gz \
+		prog-modes-1.35-pkg.tar.gz \
 		ps-print-nomule-1.05-pkg.tar.gz \
-		psgml-1.22-pkg.tar.gz \
+		psgml-1.23-pkg.tar.gz \
 		sgml-1.08-pkg.tar.gz \
 		sh-script-1.13-pkg.tar.gz \
 		texinfo-1.20-pkg.tar.gz \
 		text-modes-1.29-pkg.tar.gz \
 		time-1.11-pkg.tar.gz \
 		vc-1.26-pkg.tar.gz \
-		viper-1.24-pkg.tar.gz \
+		viper-1.25-pkg.tar.gz \
 		w3-1.18-pkg.tar.gz \
-		xemacs-base-1.49-pkg.tar.gz \
+		xemacs-base-1.51-pkg.tar.gz \
 		xemacs-devel-1.31-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/xemacs-packages
+WRKSRC=		${WRKDIR}/${PACKAGES_SUBDIR}
 
 XEMACSDIR=	${PREFIX}/lib/xemacs
+PACKAGES_SUBDIR=	xemacs-packages
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -60,9 +60,15 @@ do-extract:
 
 do-install:
 	${MKDIR} ${XEMACSDIR}
-	${CP} -Rp ${WRKDIR}/xemacs-packages ${XEMACSDIR}
+	${CP} -R ${WRKSRC} ${XEMACSDIR}
 
 post-install:
+	@cd ${WRKDIR} && \
+	find ${PACKAGES_SUBDIR} -type f|sort|${SED} 's:^:lib/xemacs/:' >> ${TMPPLIST}; \
+	find ${PACKAGES_SUBDIR}/*/* -type d|sort -r|${SED} 's:^:@dirrm lib/xemacs/:'>> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR}/* 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR} 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_MSG} "    This is the basic package for XEmacs(version over 21). You might be enough"
 	@${ECHO_MSG} "only with this package for working at XEmacs but if you think it"
 	@${ECHO_MSG} "insufficient,you can install other packages provided by XEmacs.org with"
