@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		streamtuner
-PORTVERSION=		0.12.4
+PORTVERSION=		0.12.5
 CATEGORIES=		audio www
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ COMMENT=		A GTK+ stream directory browser
 
 BUILD_DEPENDS=		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS=		curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=		${X11BASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_X_PREFIX=		yes
 USE_GNOME=		gtk20 gnomehack gnomeprefix
