@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xine_d5d_plugin
-PORTVERSION=	0.2.4
-PORTREVISION=	2
+PORTVERSION=	0.2.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://worldzone.net/technology/captaincss/ \
-		http://debianlinux.net/
-DISTNAME=	d5d024
-EXTRACT_SUFX=	.txt
+MASTER_SITES=	http://debianlinux.net/ \
+		http://hermes.homelinux.net/xine/
+DISTNAME=	xine-d5d-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
@@ -25,14 +24,6 @@ CONFIGURE_ENV=	THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}"
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-
-WRKSRC=		${WRKDIR}/xine-d5d-${PORTVERSION}
-
-do-extract:
-	(${MKDIR} ${WRKDIR}; \
-	 cd ${WRKDIR}; \
-	 ${SH} ${DISTDIR}/${DISTFILES}; \
-	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} xine-d5d-${PORTVERSION}.tar.gz ${EXTRACT_AFTER_ARGS})
 
 post-patch:
 	@${PERL} -pi -e \
