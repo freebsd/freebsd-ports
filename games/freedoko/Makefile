@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	freedoko
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.6.5
+#PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	free-doko
@@ -23,8 +23,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 USE_GMAKE=	yes
 MAKE_ENV=	OSTYPE=linux-gnu DATADIR=${DATADIR}
 
-CPIOFLAGS=	--quiet -pdum
-DATASUBDIRS=	ai backgrounds cardsets help.icons rules translations
+CPIOFLAGS=	--quiet -pdum -R ${SHAREOWN}:${SHAREGRP}
+DATASUBDIRS=	ai backgrounds cardsets rules translations
 
 .include <bsd.port.pre.mk>
 
@@ -38,10 +38,9 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/../data && \
 	 ${FIND} ${DATASUBDIRS} ! -name Makefile\* \
-	 | ${CPIO} ${CPIOFLAGS} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
+	 | ${CPIO} ${CPIOFLAGS} ${DATADIR}
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/../doc && \
-	 ${FIND} . ! -name Makefile\* \
-	 | ${CPIO} ${CPIOFLAGS} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	 ${FIND} . ! -name Makefile\* | ${CPIO} ${CPIOFLAGS} ${DOCSDIR}
 
 .include <bsd.port.post.mk>
