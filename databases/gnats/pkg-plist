@@ -32,16 +32,6 @@ libexec/gnats/pr-mail
 libexec/gnats/queue-pr
 libexec/gnats/rmcat
 @dirrm libexec/gnats
-man/man1/edit-pr.1.gz
-man/man1/query-pr.1.gz
-man/man1/send-pr.1.gz
-man/man7/gnats.7.gz
-man/man8/file-pr.8.gz
-man/man8/gen-index.8.gz
-man/man8/mkcat.8.gz
-man/man8/mkdist.8.gz
-man/man8/queue-pr.8.gz
-man/man8/rmcat.8.gz
 share/emacs/site-lisp/gnats.el
 share/emacs/site-lisp/send-pr.el
 share/gnats/cygnus
@@ -61,10 +51,13 @@ share/gnats/dist/send-pr.texi
 share/gnats/dist/states.texi
 share/gnats/dist/texinfo.tex
 share/gnats/dist/version.texi
+share/gnats/gnats-db/gnats-adm/addresses
 share/gnats/gnats-db/gnats-adm/categories
+share/gnats/gnats-db/gnats-adm/classes
 share/gnats/gnats-db/gnats-adm/config
 share/gnats/gnats-db/gnats-adm/gnatsd.conf
 share/gnats/gnats-db/gnats-adm/responsible
+share/gnats/gnats-db/gnats-adm/states
 share/gnats/gnats-db/gnats-adm/submitters
 @exec mkdir %D/share/gnats/gnats-db/gnats-queue
 @exec mkdir %D/share/gnats/gnats-db/pending
