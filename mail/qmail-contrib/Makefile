@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.qmail.org/pub/software/ \
 DISTFILES=	dot-forward-${DF_VER}.tar.gz \
 		fastforward-${FF_VER}.tar.gz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	nbm@FreeBSD.org
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
