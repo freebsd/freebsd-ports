@@ -242,7 +242,6 @@
     SUBDIR += mozilla-headers-vendor
     SUBDIR += mozilla-vendor
     SUBDIR += mplayer-plugin
-    SUBDIR += nautilus-gtkhtml
     SUBDIR += nd
     SUBDIR += neon
     SUBDIR += neowebscript
