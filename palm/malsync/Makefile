@@ -9,9 +9,9 @@ PORTNAME=	malsync
 PORTVERSION=	2.06
 PORTREVISION=	1
 CATEGORIES=	palm
-MASTER_SITES=	http://www.tomw.org/%SUBDIR%/ \
+MASTER_SITES=	http://www.tomw.org/malsync/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	malsync
+MASTER_SITE_SUBDIR=	dirk
 DISTNAME=	malsync_2.0.6.src
 
 MAINTAINER=	dirk@FreeBSD.org
