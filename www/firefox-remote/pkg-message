@@ -1,0 +1,7 @@
+========================================================================
+
+To enable mailto: in firefox the easiest way is to install the MozEx
+navigation extension and use "${X11BASE}/bin/thunderbird-remote %r"
+(without quotes) as the Mailer command.
+
+========================================================================
