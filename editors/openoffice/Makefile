@@ -407,7 +407,7 @@ extract-mozilla:
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/Makefile ${WRKDIR}/mozilla
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/distinfo ${WRKDIR}/mozilla
 	
-if exists(${PORTSDIR}/www/mozilla-vendor/pkg-comment)
+.if exists(${PORTSDIR}/www/mozilla-vendor/pkg-comment)
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/pkg-comment ${WRKDIR}/mozilla
 .endif
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/pkg-descr ${WRKDIR}/mozilla
