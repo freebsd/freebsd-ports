@@ -1,0 +1,25 @@
+54c54
+< transform = @program_transform_name@
+---
+> transform = s,^,$(target_alias)-,
+344,363d343
+< 	@$(NORMAL_INSTALL)
+< 	$(mkinstalldirs) $(DESTDIR)$(infodir)
+< 	@list='$(INFO_DEPS)'; \
+< 	for file in $$list; do \
+< 	  d=$(srcdir); \
+< 	  for ifile in `cd $$d && echo $$file $$file-[0-9] $$file-[0-9][0-9]`; do \
+< 	    if test -f $$d/$$ifile; then \
+< 	      echo " $(INSTALL_DATA) $$d/$$ifile $(DESTDIR)$(infodir)/$$ifile"; \
+< 	      $(INSTALL_DATA) $$d/$$ifile $(DESTDIR)$(infodir)/$$ifile; \
+< 	    else : ; fi; \
+< 	  done; \
+< 	done
+< 	@$(POST_INSTALL)
+< 	@if $(SHELL) -c 'install-info --version | sed 1q | fgrep -s -v -i debian' >/dev/null 2>&1; then \
+< 	  list='$(INFO_DEPS)'; \
+< 	  for file in $$list; do \
+< 	    echo " install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file";\
+< 	    install-info --info-dir=$(DESTDIR)$(infodir) $(DESTDIR)$(infodir)/$$file || :;\
+< 	  done; \
+< 	else : ; fi
