@@ -1,0 +1,39 @@
+--- setup.sh.orig	Sat Nov 14 09:00:02 1998
++++ setup.sh	Thu Nov 19 21:33:18 1998
+@@ -35,10 +35,10 @@
+ echo "Unless you want to run multiple versions of Webmin at the same time"
+ echo "you can just accept the defaults."
+ echo ""
+-printf "Config file directory [/etc/webmin]: "
++printf "Config file directory [!!PREFIX!!/etc/webmin]: "
+ read config_dir
+ if [ "$config_dir" = "" ]; then
+-	config_dir=/etc/webmin
++	config_dir=!!PREFIX!!/etc/webmin
+ fi
+ if [ ! -d $config_dir ]; then
+ 	mkdir $config_dir;
+@@ -88,10 +88,10 @@
+ 	
+ else
+ 	# Ask for log directory
+-	printf "Log file directory [/var/webmin]: "
++	printf "Log file directory [/var/log/webmin]: "
+ 	read var_dir
+ 	if [ "$var_dir" = "" ]; then
+-		var_dir=/var/webmin
++		var_dir=/var/log/webmin
+ 	fi
+ 	if [ ! -d $var_dir ]; then
+ 		mkdir $var_dir
+@@ -109,7 +109,9 @@
+ 	echo "Webmin is written entirely in Perl. Please enter the full path to the"
+ 	echo "Perl 5 interpreter on your system."
+ 	echo ""
+-	if [ -x /usr/bin/perl ]; then
++	if [ -x !!PERL5!! ]; then
++		perldef=!!PERL5!!
++	elif [ -x /usr/bin/perl ]; then
+ 		perldef=/usr/bin/perl
+ 	elif [ -x /usr/local/bin/perl ]; then
+ 		perldef=/usr/local/bin/perl
