@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	gnucash
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Quicken-like money and finance manager
 
+BROKEN=		"Does not run with the new slib"
+
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile \
 		guppi.16:${PORTSDIR}/math/guppi \
 		popt.0:${PORTSDIR}/devel/popt \
