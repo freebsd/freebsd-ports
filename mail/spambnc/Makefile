@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20031106
+PORTVERSION=	20031128
 CATEGORIES=	mail
-MASTER_SITES=	http://www.spambouncer.org/
+MASTER_SITES=	http://www.spambouncer.org/	\
+		ftp://ftp.spambouncer.org/
 DISTFILES=	sb.tar.Z index.shtml
 DIST_SUBDIR=	spambnc-${PORTVERSION}
 EXTRACT_ONLY=	sb.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of procmail recipies which handle known/suspected spam
+MAINTAINER=	thierry@pompo.net
+COMMENT=	Set of procmail recipies which handle known/suspected spam
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
@@ -27,17 +28,19 @@ pre-install:
 	@${RM} -f ${PLIST}
 	@(cd ${WRKDIR} && ${FIND} -s . -type f | ${GREP} -v "^\.\/\." | \
 		${SED} -e 's,.,share/spambnc,1' >> ${PLIST})
-	@echo "%%PORTDOCS%%share/doc/spambnc/documentation.html" >> ${PLIST}
-	@echo "@dirrm share/spambnc" >> ${PLIST}
-	@echo "%%PORTDOCS%%@dirrm share/doc/spambnc" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm share/spambnc" >> ${PLIST}
+.if !defined(NOPORTDOCS)
+	@${ECHO_CMD} "%%DOCSDIR%%/documentation.html" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >> ${PLIST}
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/share/spambnc/
 	cd ${WRKDIR} && ${CP} -Rv * ${PREFIX}/share/spambnc
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/spambnc/
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/index.shtml \
-		${PREFIX}/share/doc/spambnc/documentation.html
+		${DOCSDIR}/documentation.html
 .endif
 
 post-install:
