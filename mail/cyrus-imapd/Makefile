@@ -62,6 +62,13 @@ HTDOCS=		anoncvs bugs changes faq feedback index install-admin-mb \
 		install-testing install-upgrade install mailing-list man \
 		notes os overview questions readme sieve-protocol sieve specs
 
+.include <bsd.port.pre.mk>
+
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+.if !defined(WITH_OPENSSL_BASE)
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.endif
+
 post-patch:
 		@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 			${WRKSRC}/tools/mkimap
@@ -110,4 +117,4 @@ post-install:
 		@PKG_PREFIX=${PREFIX} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 		@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
