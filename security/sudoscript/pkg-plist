@@ -28,6 +28,7 @@ share/doc/sudoscript-2.1.1/sudoshell-src.html
 share/doc/sudoscript-2.1.1/sudoshell.1.html
 share/doc/sudoscript-2.1.1/xsl/egbokdoc.xsl
 share/doc/sudoscript-2.1.1/xsl/egbokdoc2fop.xsl
+@dirrm lib/sudoscript
 @dirrm share/doc/sudoscript-2.1.1/xsl
 @dirrm share/doc/sudoscript-2.1.1/dtd
 @dirrm share/doc/sudoscript-2.1.1
