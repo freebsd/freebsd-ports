@@ -7,8 +7,8 @@
 -.IF "$(OS)"=="MACOSX"
 +.IF "$(OS)"=="MACOSX" || "$(OS)"=="FREEBSD"
  #SHL1VERSIONMAP=$(ADABAS_TARGET).$(DLLPOSTFIX).map
--.ELSE
-+.ELSE      
+-.ELSE      
++.ELSE
  SHL1VERSIONMAP=$(ADABAS_TARGET).map
  .ENDIF
  
