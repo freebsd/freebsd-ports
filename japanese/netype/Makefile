@@ -17,7 +17,7 @@ PATCHFILES=	${PORTNAME}.${PORTVERSION}.patch.gz
 PATCH_DIST_STRIP=	-p1
 #PATH_WRKSRC=	${WRKSRC}
 
-MAINTAINER=	utoh@openedu.org
+MAINTAINER=	mutoh@openedu.org
 COMMENT=	Network Type Trainer client program
 
 USE_GNOME=	imlib
