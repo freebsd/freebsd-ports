@@ -1,0 +1,19 @@
+DB=${PLUGIN:T}
+
+SHLIB_NAME=	libqsql${DB}.so
+
+VPATH=		${PLUGIN}:${DRIVER}
+CXXFLAGS+=	-I${PLUGIN} -I${DRIVER} \
+		-I${LOCALBASE}/include/mysql \
+		-I${LOCALBASE}/include/postgresql/server \
+		-I${LOCALBASE}/include -I${X11BASE}/include
+
+SRCS=		qsql_${DB}.cpp main.cpp
+LIBDIR=		${PREFIX}/lib/plugins/sqldrivers
+
+${LIBDIR}:
+	mkdir -p ${LIBDIR}
+
+beforeinstall:	${LIBDIR}
+
+.include <bsd.lib.mk>

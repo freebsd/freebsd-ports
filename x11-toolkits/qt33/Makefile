@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	qt
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.3
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\
@@ -19,6 +19,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT?=	A C++ X GUI toolkit
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
@@ -26,20 +28,50 @@ LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
 CONFLICTS=	linguist-0.* qt-2.* qt-designer-2.* xfmail-1.5.*
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 NO_FILTER_SHLIBS=yes
+
 CONFIGURE_ARGS+=	-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
 		-system-zlib -no-nas-sound -sm -qt-gif -thread	\
 		-fast -xinerama -no-g++-exceptions -no-stl	\
 		${CUPS} -shared -prefix ${PREFIX} -datadir ${DATADIR} \
-		-docdir ${DOCSDIR} -plugindir ${PREFIX}/lib/plugins
+		-verbose -docdir ${DOCSDIR} \
+		-plugindir ${PREFIX}/lib/plugins
+
+CONFIGURE_ENV?=	${ECHO} yes | QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
+MAKE_ENV?=	QTDIR=${WRKSRC} \
+		LD_LIBRARY_PATH=${WRKSRC}/lib \
+		PATH=${WRKSRC}/bin:$$PATH
+ALL_TARGET=	sub-tools
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - \
+	 --exclude '${DISTNAME}/mkspecs' --exclude '${DISTNAME}/qmake' \
+        --exclude '${DISTNAME}/examples' --exclude '${DISTNAME}/tutorial' \
+	--exclude '${DISTNAME}/extensions/nsplugin/src/[^q]*' \
+        --exclude '${DISTNAME}/include/jri*' \
+        --exclude '${DISTNAME}/include/np*'
 
 .include <bsd.port.pre.mk>
+
+# The previous Qt port versions installed qmake and qmake's specs under X11BASE
+# The new devel/qmake port installs them under LOCALBASE. We can use
+# either one here, but we prefer the newer:
+.for d in ${X11BASE} ${LOCALBASE}
+.	if exists($d/share/qt/mkspecs/freebsd-g++)
+QTBASE=$d
+PLATFORM=${QTBASE}/share/qt/mkspecs/freebsd-g++
+.	endif
+.endfor
+
+.if defined(PLATFORM)
+CONFIGURE_ARGS+= -platform ${PLATFORM}
+.else
+CONFIGURE_ARGS+= -platform ${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+.endif
 
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/Xft
@@ -51,10 +83,9 @@ CONFIGURE_ARGS+=-no-xft
 CONFIGURE_ARGS+=-debug
 .endif
 
-.if !defined(BUILD_PLUGIN_ONLY)
 .if !defined(WITHOUT_OPENGL)
-USE_MESA=	yes
-.else
+USE_GL=		yes
+.	else
 CONFIGURE_ARGS+=-disable-opengl
 .endif # WITHOUT_OPENGL
 
@@ -65,28 +96,10 @@ CUPS=	-cups -L${LOCALBASE}/lib -I${LOCALBASE}/include
 CUPS=
 .endif
 
-CONFIGURE_ENV=	${ECHO} yes | QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
-MAKE_ENV?=	QTDIR=${WRKSRC} \
-		LD_LIBRARY_PATH=${WRKSRC}/lib \
-		PATH=${WRKSRC}/bin:$$PATH
-ALL_TARGET=	sub-tools
-.endif # !defined(BUILD_PLUGIN_ONLY)
-
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
 
-.if !defined(BUILD_PLUGIN_ONLY)
-.if !defined(WITHOUT_OPENGL)
-# Display WITH_OPENGL advisory.
-pre-everything::
-	@${ECHO_MSG} '===> **************************************************'
-	@${ECHO_MSG} '===> NOTE: Use of WITH_OPENGL is not recommended with'
-	@${ECHO_MSG} '===> the NVidia drivers provided by the x11/nvidia port'
-	@${ECHO_MSG} '===> If you use these drivers, we recommend you press'
-	@${ECHO_MSG} '===> Ctrl-C now and set WITHOUT_OPENGL'
-	@${ECHO_MSG} '===> **************************************************'
-.endif
 .if !defined(WITHOUT_XFT)
 pre-everything::
 	@${ECHO_MSG}
@@ -104,62 +117,34 @@ BROKEN=	"The QT ${PORTVERSION} port does not support any XFree86 < 4.x"
 BROKEN=	"You have QT2 headers installed!  Installing this port"
 BROKEN+="will result in conflicts between QT3 and QT2!"
 .endif
-.endif # !defined(BUILD_PLUGIN_ONLY)
 
 post-patch:
-.if !defined(BUILD_PLUGIN_ONLY)
-	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -fr
-	@cd ${WRKSRC}/include; \
-		${RM} -f jri.h jri_md.h jritypes.h npapi.h npupp.h
-	@cd ${WRKSRC}/extensions/nsplugin/src; \
-		${RM} -f jri.h jri_md.h jritypes.h npapi.h npupp.h \
-		npunix.c npwin.cpp
+.if defined(PLATFORM)
+	@${REINPLACE_CMD} -e 's|$$outpath/bin/qmake|${QTBASE}/bin/qmake|g' \
+		${WRKSRC}/configure
 .else
-	${REINPLACE_CMD} -e \
-		"s,-lmysqlclient,-L${LOCALBASE}/lib/mysql -lmysqlclient," \
-		${WRKSRC}/plugins/src/sqldrivers/mysql/mysql.pro
-	@${RM} -fr ${WRKSRC}/extensions ${WRKSRC}/tools \
-		${WRKSRC}/plugins/src/styles \
-		${WRKSRC}/plugins/src/codecs \
-		${WRKSRC}/plugins/src/accessible \
-		${WRKSRC}/plugins/src/imageformats
-	${LN} -s ${X11BASE}/bin/qmake ${WRKSRC}/bin/qmake
-	${ECHO_CMD} "qmake:" > ${WRKSRC}/qmake/GNUmakefile.in
+	@${REINPLACE_CMD} -e 's|$$outpath/bin/qmake|${LOCALBASE}/bin/qmake|g' \
+		${WRKSRC}/configure
 .endif
-	@${RM} -fr ${WRKSRC}/examples ${WRKSRC}/tutorial
-	@${REINPLACE_CMD} -e 's,-O2,${CXXFLAGS},' \
-		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-	@${REINPLACE_CMD} -e 's,gcc,${CC},' \
-		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-	@${REINPLACE_CMD} -e 's,g++,${CXX},' \
-		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-	@${REINPLACE_CMD} -e  's,/usr/local,${LOCALBASE},' \
-		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-	@${REINPLACE_CMD} -e  's,/usr/X11R6,${X11BASE},' \
-		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-	@${REINPLACE_CMD} -e 's,release,release thread,' \
-		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-.if ${OSVERSION} > 500016
-	@${REINPLACE_CMD} -e 's,-pthread -D_THREAD_SAFE,${PTHREAD_CFLAGS},' \
-		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},' \
-		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
-.endif
-.if !defined(BUILD_PLUGIN_ONLY)
-	@${RM} ${WRKSRC}/mkspecs/freebsd-g++/qmake.conf.bak
+	@${REINPLACE_CMD} -e 's|^	cd qmake.*||' ${WRKSRC}/Makefile
 
 post-build:
 .for tool in makeqpf mergetr msg2qm qembed qvfb
-	cd ${WRKSRC}/tools/${tool}; ${SETENV} ${MAKE_ENV} ${MAKE}
+	@cd ${WRKSRC}/tools/${tool}; ${SETENV} ${MAKE_ENV} ${MAKE}
 .endfor
+	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${GREP} --mmap -F -l -- \
+		"${PLATFORM}" | ${XARGS} ${REINPLACE_CMD} -e "s,${PLATFORM}/qmake.conf,," \
+		-e "s,${PLATFORM},,"
 
 # Work around qmake generated dependencies
 pre-install:
-	@${INSTALL_DATA} ${WRKSRC}/lib/*.prl ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lib/*.prl ${PREFIX}/lib
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/findtr ${PREFIX}/bin
 .for tool in makeqpf mergetr msg2qm qembed qvfb
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/${tool}/${tool} ${PREFIX}/bin
 .endfor
-.endif # !defined(BUILD_PLUGIN_ONLY)
+
+post-install:
+	${RM} -f ${PREFIX}/lib/libqt-mt.la
 
 .include <bsd.port.post.mk>
