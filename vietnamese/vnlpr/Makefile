@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:  vnlpr
 # Version required:	2.0
 # Date created:		Sat Dec 7, 1996
