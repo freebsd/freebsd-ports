@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://mirror.crc.net.nz/pub/srg/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	lslarry@gmail.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Squid Report Generator
 
 USE_GMAKE=	yes
@@ -30,6 +30,12 @@ PLIST_FILES+=	share/examples/srg/${i}
 .endfor
 PLIST_DIRS=	share/examples/srg
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Fails self-tests on sparc64"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|-g |${CFLAGS} ${CPPFLAGS} |' ${WRKSRC}/Makefile \
 		${WRKSRC}/lib/Makefile
@@ -40,4 +46,4 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
