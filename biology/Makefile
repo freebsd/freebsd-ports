@@ -8,6 +8,7 @@
     SUBDIR += deft
     SUBDIR += emboss
     SUBDIR += fasta
+    SUBDIR += fasta3
     SUBDIR += fastdnaml
     SUBDIR += gaussian98
     SUBDIR += gperiodic

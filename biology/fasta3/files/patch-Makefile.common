@@ -1,0 +1,20 @@
+--- Makefile.common.orig	Mon Jan 29 12:42:32 2001
++++ Makefile.common	Mon Jan 29 13:44:06 2001
+@@ -46,7 +46,7 @@
+ XTPROGS = fastx33_t tfastx33_t fasty33_t tfasty33_t
+ XPROGS = fastx33 tfastx33  fasty33 tfasty33
+ 
+-PROGS = $(SPROGS) $(TPROGS)
++PROGS = $(SPROGS) $(TPROGS) $(APROGS) $(XTPROGS) $(XPROGS)
+ 
+ all : $(PROGS)
+ 
+@@ -60,7 +60,7 @@
+ 	rm -f *.o $(PROGS)
+ 
+ install:
+-	cp $(PROGS) $(XDIR)
++	$(BSD_INSTALL_PROGRAM) $(PROGS) $(XDIR)
+ 
+ sinstall:
+ 	cp $(SPROGS) $(XDIR)

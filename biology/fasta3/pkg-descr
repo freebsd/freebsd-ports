@@ -1,0 +1,20 @@
+Version 3 of the FASTA packages contains many programs for searching DNA and
+protein databases and one program (prss3) for evaluating statistical
+significance from randomly shuffled sequences.  Several additional analysis
+programs, including programs that produce local alignments, are available as
+part of version 2 of the FASTA package, which is available as the port
+biology/fasta.
+
+FASTA is described in:  W. R. Pearson and D. J. Lipman (1988), "Improved
+Tools for Biological Sequence Analysis", PNAS 85:2444-2448; W. R.  Pearson
+(1996) "Effective protein sequence comparison" Meth. Enzymol.  266:227-258;
+Pearson et. al.  (1997) Genomics 46:24-36;  Pearson, (1999) Meth. in
+Molecular Biology 132:185-219.
+
+The FASTA3 suite is distributed freely subject to the condition that it may
+not be sold or incorporated into a commercial product.
+
+Author: William R Pearson <wrp@virginia.edu>
+WWW:    http://fasta.bioch.virginia.edu/
+
+-- Johann Visagie <johann@egenetics.com>
