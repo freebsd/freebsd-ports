@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_Socket
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	net www pear
 
 MAINTAINER=	antonio@php.net
