@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	foomatic-db-engine
-PORTVERSION=	20031120
+PORTVERSION=	20031213
 CATEGORIES=	print
 MASTER_SITES=	#
 
@@ -33,7 +33,8 @@ CVS_SITES?=	pserver:anonymous@cvs.linuxprinting.org:/usr/local/cvs
 CVS_MODULE=	foomatic-db-engine
 
 MAN1=		foomatic-printjob.1 foomatic-ppdfile.1 foomatic-perl-data.1 \
-		foomatic-configure.1 foomatic-compiledb.1 foomatic-combo-xml.1
+		foomatic-configure.1 foomatic-compiledb.1 foomatic-combo-xml.1 \
+		foomatic-ppd-options.1
 MAN8=		foomatic-preferred-driver.8 \
 		foomatic-kitload.8 foomatic-getpjloptions.8 \
 		foomatic-addpjloptions.8
@@ -69,5 +70,8 @@ do-fetch:
 
 pre-configure:
 	@cd ${WRKSRC} && ./make_configure
+
+post-build:
+	@${CHMOD} +x ${WRKSRC}/mkinstalldirs
 
 .include <bsd.port.post.mk>

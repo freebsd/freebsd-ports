@@ -3,6 +3,7 @@ bin/foomatic-compiledb
 bin/foomatic-configure
 bin/foomatic-datafile
 bin/foomatic-perl-data
+bin/foomatic-ppd-options
 bin/foomatic-ppdfile
 bin/foomatic-printjob
 %%SITE_PERL%%/Foomatic/DB.pm
