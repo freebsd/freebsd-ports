@@ -1,0 +1,12 @@
+This package contains the binary release of Japanized Tcl8.0, 
+an embeddable tool command language.
+
+Many thanks to Mr. Nishinaka and tcl-jp team.
+
+The best way to get started with Tcl is to read ``Tcl and the Tk
+Toolkit'' by John K. Ousterhout, Addison-Wesley, ISBN 0-201-63337-X. 
+And Japanized version of this document is available. 
+`` Tcl and Tk Toolkit'', SOFTBANK, ISBN4-89052-819-9.
+
+NOTE: A full set of manual pages is provided by the package "tcl-8.0".
+This package does NOT contain it.
