@@ -4,6 +4,12 @@ bin/powerpc-rtems-cpp
 bin/powerpc-rtems-g++
 bin/powerpc-rtems-gcc
 bin/powerpc-rtems-gccbug
+bin/grepjar
+bin/powerpc-rtems-gcj
+bin/powerpc-rtems-gcjh
+bin/powerpc-rtems-jv-scan
+bin/powerpc-rtems-jcf-dump
+bin/jar
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
 include/c++/%%GCCVERSION%%/bits/basic_string.h
@@ -537,6 +543,8 @@ lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/ecrti.o
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/ecrtn.o
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/ncrtn.o
 lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/crtsavres.o
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/powerpc-rtems/%%GCCVERSION%%/jvgenmain
 lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo

@@ -4,6 +4,12 @@ bin/sparc-rtems-cpp
 bin/sparc-rtems-g++
 bin/sparc-rtems-gcc
 bin/sparc-rtems-gccbug
+bin/grepjar
+bin/sparc-rtems-gcj
+bin/sparc-rtems-gcjh
+bin/sparc-rtems-jv-scan
+bin/sparc-rtems-jcf-dump
+bin/jar
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
 include/c++/%%GCCVERSION%%/bits/basic_string.h
@@ -214,6 +220,8 @@ lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/soft/v8/libgcc.a
 lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/soft/libgcc.a
 lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/libgcc.a
 lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/v8/libgcc.a
+lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/sparc-rtems/%%GCCVERSION%%/jvgenmain
 lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo

@@ -4,6 +4,12 @@ bin/m68k-rtems-g++
 bin/m68k-rtems-gcc
 bin/m68k-rtems-gccbug
 bin/m68k-rtems-cpp
+bin/grepjar
+bin/m68k-rtems-gcj
+bin/m68k-rtems-gcjh
+bin/m68k-rtems-jv-scan
+bin/m68k-rtems-jcf-dump
+bin/jar
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
 include/c++/%%GCCVERSION%%/bits/basic_string.h
@@ -251,6 +257,8 @@ lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/msoft-float/crtend.o
 lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/msoft-float/crti.o
 lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/msoft-float/crtn.o
 lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/msoft-float/libgcc.a
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/m68k-rtems/%%GCCVERSION%%/jvgenmain
 lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo

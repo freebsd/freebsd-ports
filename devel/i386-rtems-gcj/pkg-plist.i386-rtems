@@ -1,8 +1,0 @@
-bin/grepjar
-bin/i386-rtems-gcj
-bin/i386-rtems-gcjh
-bin/i386-rtems-jv-scan
-bin/i386-rtems-jcf-dump
-bin/jar
-lib/gcc-lib/i386-rtems/%%GCCVERSION%%/jc1
-lib/gcc-lib/i386-rtems/%%GCCVERSION%%/jvgenmain

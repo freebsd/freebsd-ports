@@ -4,6 +4,12 @@ bin/arm-rtems-g++
 bin/arm-rtems-gcc
 bin/arm-rtems-gccbug
 bin/arm-rtems-cpp
+bin/grepjar
+bin/arm-rtems-gcj
+bin/arm-rtems-gcjh
+bin/arm-rtems-jv-scan
+bin/arm-rtems-jcf-dump
+bin/jar
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
 include/c++/%%GCCVERSION%%/bits/basic_string.h
@@ -225,6 +231,8 @@ lib/gcc-lib/arm-rtems/%%GCCVERSION%%/thumb/fpu/crtbegin.o
 lib/gcc-lib/arm-rtems/%%GCCVERSION%%/thumb/fpu/crtend.o
 lib/gcc-lib/arm-rtems/%%GCCVERSION%%/thumb/fpu/crti.o
 lib/gcc-lib/arm-rtems/%%GCCVERSION%%/thumb/fpu/crtn.o
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/arm-rtems/%%GCCVERSION%%/jvgenmain
 lib/charset.alias
 share/locale/fr/LC_MESSAGES/gcc.mo
 share/locale/tr/LC_MESSAGES/gcc.mo

@@ -4,6 +4,12 @@ bin/i960-rtems-gccbug
 bin/i960-rtems-c++
 bin/i960-rtems-g++
 bin/i960-rtems-cpp
+bin/grepjar
+bin/i960-rtems-gcj
+bin/i960-rtems-gcjh
+bin/i960-rtems-jv-scan
+bin/i960-rtems-jcf-dump
+bin/jar
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
 include/c++/%%GCCVERSION%%/bits/basic_string.h
@@ -208,6 +214,9 @@ lib/gcc-lib/i960-rtems/%%GCCVERSION%%/soft-float/libgcc.a
 lib/gcc-lib/i960-rtems/%%GCCVERSION%%/ld64/libgcc.a
 lib/gcc-lib/i960-rtems/%%GCCVERSION%%/soft-float/ld64/libgcc.a
 lib/gcc-lib/i960-rtems/%%GCCVERSION%%/cc1plus
+lib/gcc-lib/i960-rtems/%%GCCVERSION%%/tradcpp0
+lib/gcc-lib/i960-rtems/%%GCCVERSION%%/jc1
+lib/gcc-lib/i960-rtems/%%GCCVERSION%%/jvgenmain
 i960-rtems/bin/gcc
 i960-rtems/bin/c++
 i960-rtems/bin/g++
@@ -220,7 +229,6 @@ i960-rtems/lib/soft-float/libc.a
 i960-rtems/lib/soft-float/crt0.o
 i960-rtems/lib/soft-float/libg.a
 i960-rtems/lib/libiberty.a
-lib/gcc-lib/i960-rtems/%%GCCVERSION%%/tradcpp0
 i960-rtems/lib/ld64/crt0.o
 i960-rtems/lib/ld64/libc.a
 i960-rtems/lib/ld64/libg.a
