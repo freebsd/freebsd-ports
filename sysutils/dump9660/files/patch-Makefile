@@ -1,0 +1,20 @@
+--- Makefile.orig	Sun Jun  2 06:32:39 2002
++++ Makefile	Sat Jan 18 16:46:15 2003
+@@ -51,14 +51,9 @@
+ # Plan 9 section two corresponds to Unix sections two and three
+ 
+ install: $(BINARIES)
+-	cp $(BINARIES) $(HOME)/bin/$$systype/$$objtype
+-	cp mk9660.man $(HOME)/etc/man/man8/mk9660.8
+-	cp proto.man $(HOME)/etc/man/man3/proto.3
+-
+-install-sys: $(BINARIES)
+-	cp $(BINARIES) /usr/local/bin
+-	cp mk9660.man /usr/local/man/man8/mk9660.8
+-	cp proto.man /usr/local/man/man3/proto.3
++	cp $(BINARIES) ${PREFIX}/bin
++	cp mk9660.man ${PREFIX}/man/man8/mk9660.8
++	cp proto.man ${PREFIX}/man/man5/proto.5
+ 
+ dump9660: $(OFILES) $(LIBS)
+ 	$(CC) -o $@ $(OFILES) $(LDFLAGS)
