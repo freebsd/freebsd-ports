@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	omniORB
-PORTVERSION=	4.0.3
-PORTREVISION=	3
+PORTVERSION=	4.0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
@@ -16,6 +15,7 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	A robust high performance CORBA ORB for C++ and Python
 
 CONFIGURE_WRKSRC=	${WRKSRC}/build
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 USE_GMAKE=	yes
@@ -41,28 +41,22 @@ PLIST_SUB+=	STATIC=""
 
 MAN1=		catior.1 genior.1 nameclt.1 omniNames.1 omniidl.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 600000
-BROKEN=		"Does not compile on FreeBSD >= 6.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#' \
 		${WRKSRC}/mk/beforeauto.mk.in
 
 pre-configure:
-	@ ${MKDIR} ${CONFIGURE_WRKSRC}
+	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 post-install:
 .for manpage in ${MAN1}
-	@ ${INSTALL_MAN} ${WRKSRC}/man/man1/${manpage} ${MANPREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/man/man1/${manpage} ${MANPREFIX}/man/man1
 .endfor
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-	@ cd ${WRKSRC} && ${INSTALL_DATA} COPYING README.FIRST README.unix \
-	  ReleaseNotes_${PORTVERSION}.txt ${DOCSDIR}
-	@ ${TAR} cCf ${WRKSRC}/doc - . | ${TAR} xUCf ${DOCSDIR} -
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} COPYING README.FIRST.txt README.unix \
+	 ReleaseNotes_${PORTVERSION}.txt ${DOCSDIR}
+	@${TAR} cCf ${WRKSRC}/doc - . | ${TAR} xUCf ${DOCSDIR} -
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
