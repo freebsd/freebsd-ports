@@ -1,0 +1,68 @@
+# Makefile for knobs
+# Whom:         Maho Nakata <maho@FreeBSD.org>
+# $FreeBSD$
+
+.if defined(WITHOUT_JAVA)
+CONFIGURE_ARGS+=	--disable-java
+.else
+CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
+.endif
+
+.if defined(WITHOUT_MOZILLA)
+CONFIGURE_ARGS+=	--disable-mozilla
+.endif
+
+.if defined(ALL_LOCALIZED_LANGS)
+CONFIGURE_ARGS+=	--with-lang=ALL
+.else
+CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG}
+.endif
+
+.if defined(WITH_DEBUG)
+.if ${WITH_DEBUG} == 2
+CONFIGURE_ARGS+=	--enable-debug
+.else
+CONFIGURE_ARGS+=	--enable-symbols
+.endif
+.endif
+
+pre-fetch:
+.if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} < 492000)
+	@${ECHO}
+	@${ECHO} "WARNING"
+	@${ECHO} "Your rtld seems to be old."
+	@${ECHO} "Please remake your rtld by:"
+	@${ECHO} "# fetch http://people.freebsd.org/~maho/ooo/patch-rtld.c"
+	@${ECHO} "# cd /usr/src/libexec/rtld-elf ; patch < patch-rtld.c"
+	@${ECHO} "# make ; make depend ; make install"
+	@${ECHO} "AT YOUR OWN RISK!"
+.endif
+	@${ECHO} "OPTIONS:"
+.if !defined(WITH_DEBUG)
+	@${ECHO}
+	@${ECHO} "You can compile OOo with debug symbols with WITH_DEBUG=1"
+	@${ECHO}
+	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
+	@${ECHO} "OOo debug support."
+.endif
+.if !defined(WITHOUT_MOZILLA)
+	@${ECHO}
+	@${ECHO} "You can compile OOo without Mozilla connectivity by"
+	@${ECHO} "make -DWITHOUT_MOZILLA"
+.endif
+.if !defined(WITHOUT_JAVA)
+	@${ECHO}
+	@${ECHO} "You can compile OOo without Java support by"
+	@${ECHO} "make -DWITHOUT_JAVA"
+.endif
+	@${ECHO}
+	@${ECHO} "NOTICE:"
+	@${ECHO}
+	@${ECHO} "To build Openoffice, you should have a lot"
+.if defined(WITH_DEBUG)
+	@${ECHO} "of free diskspace (~ 8GB)."
+.else
+	@${ECHO} "of free diskspace (~ 4GB)."
+.endif
+	@${ECHO} "If you want SDK and/or solver, please type make sdk and/or make solver"
+

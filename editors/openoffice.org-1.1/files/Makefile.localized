@@ -102,7 +102,6 @@ LANG_EXT=	49
 L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_CONFIGURE_ARG=	GER
 COMMENT=	Office-Suite mit Textverarbeitung, Tabellenkalkulation, Datenbank und Praesentationsprogramm
-PKGMESSAGE=     ${FILESDIR}/pkg-message.de
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "el"

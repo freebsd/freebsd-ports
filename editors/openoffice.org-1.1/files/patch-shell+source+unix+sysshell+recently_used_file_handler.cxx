@@ -1,3 +1,13 @@
+In solver/645/unxfbsd.pro/inc/rtl/string.hxx,
+even though there is a descrioptin like
+static OString valueOf( sal_Int32 i, sal_Int16 radix = 10 ) SAL_THROW(())
+and In /usr/include/machine/_types.h, 
+typedef int                     __int32_t;
+typedef __int32_t       __time_t;               /* time()... */
+and
+/usr/include/time.h:typedef     __time_t        time_t;
+this cast seems to be mandatory. Why??
+
 --- shell/source/unix/sysshell/recently_used_file_handler.cxx.orig	Tue Jan 13 00:56:37 2004
 +++ shell/source/unix/sysshell/recently_used_file_handler.cxx	Tue Jan 13 00:57:26 2004
 @@ -188,9 +188,12 @@

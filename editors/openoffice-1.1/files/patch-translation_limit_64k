@@ -1,5 +1,7 @@
 #iZ 33228#
 #iZ 34210#
+Kannada doesn't build since some resources are limited to 64k.
+it won't fix for 1.1.x
 
 Index: inc/sc.hrc
 ===================================================================

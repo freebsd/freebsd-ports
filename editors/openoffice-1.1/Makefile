@@ -6,30 +6,33 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.4
 CATEGORIES+=	editors
-MASTER_SITES+=  ${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
+MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
+		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:moz \
+		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla1.0/src/&,}:mozsrc \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/%SUBDIR%/ \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/%SUBDIR%/ \
 		ftp://ftp.tu-chemnitz.de/pub/openoffice/%SUBDIR%/ \
 		http://ftp.stardiv.de/pub/OpenOffice.org/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		http://people.freebsd.org/~mbr/ooo/:moz \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/contrib/helpcontent/&,}:help \
 		ftp://ftp.kddlabs.co.jp/office/openoffice/contrib/helpcontent/:help \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}
-DISTFILES+=	OOo_${PORTVERSION}-1_source.tar.gz gpc231.tar.Z:gpc
-EXTRACT_ONLY=	OOo_${PORTVERSION}-1_source.tar.gz
+MASTER_SITE_SUBDIR=     stable/${PORTVERSION}
+DISTFILES+=	OOo_${PORTVERSION}_source.tar.gz gpc231.tar.Z:gpc
+EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.gz
 
 MAINTAINER=	openoffice@FreeBSD.org
+COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 
 USE_GNOME=	gtk20
+MOZILLA_PROJECT=	cws_srx645_mozooo.20040203.tar.gz
+MOZILLA_SOURCE=		mozilla-source-1.0.tar.gz
 .if !defined(WITHOUT_MOZILLA)
-DISTFILES+=	patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
+DISTFILES+=	${MOZILLA_PROJECT}:moz ${MOZILLA_SOURCE}:mozsrc
 USE_GNOME+=	orbit gtk12
 .endif
 
@@ -46,6 +49,10 @@ JAVA_BUILD=	jdk
 
 .include <bsd.port.pre.mk>
 .include <${FILESDIR}/Makefile.localized>
+
+.if (${OSVERSION} < 503001 && ${OSVERSION} >= 500000) || (${OSVERSION} < 492000)
+BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade your rtld"
+.endif
 
 LANG_EXT?=	01
 LANG_CONFIGURE_ARG?=	ENUS
@@ -70,12 +77,13 @@ L10NHELPS=	helpcontent_31_unix.tgz helpcontent_33_unix.tgz \
 		helpcontent_90_unix.tgz
 .endif
 
-COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
-BUILD_NR=		645
+CODELINE=		645
 RELEASE_NR=		${PORTVERSION}
 INSTALLATION_BASEDIR=	OpenOffice.org${RELEASE_NR}
+EXECBASE=		openoffice.org-${RELEASE_NR}
 DIST_SUBDIR=		openoffice1.1
 SIMPLEOSVER!=		${UNAME} -r | ${SED} -e 's/\.//g' | ${SED} -e 's/-.*//'
+PACKAGE_BASENAME=       OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel
 
 # FIXME (Somehow INDEX build fails)
 .if defined(LANG_PKGNAME)
@@ -86,7 +94,6 @@ PKGNAMESUFFIX?=         -${LANG_SUFFIX}
 .endif
 
 BUILD_DEPENDS+=	gcc32:${PORTSDIR}/lang/gcc32
-
 # FIXME (correctly add ccache before gcc and g++)
 .if defined(WITH_CCACHE)
 BUILD_DEPENDS+=	ccache:${PORTSDIR}/devel/ccache
@@ -101,6 +108,7 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
 		xmkmf:${X_IMAKE_PORT} \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
+
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
 .endif
@@ -116,83 +124,24 @@ BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 GNU_CONFIGURE=	yes
 USE_AUTOCONF_VER=	259
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/OOo_${RELEASE_NR}_src
-CONFIGURE_WRKSRC=	${WRKDIR}/OOo_${RELEASE_NR}_src/config_office
+WRKSRC=		${WRKDIR}
+CONFIGURE_WRKSRC=	${WRKSRC}/config_office
 ANT?=		${LOCALBASE}/bin/ant
 TCSH?=		/bin/tcsh
 ZIP?=		${PREFIX}/bin/zip
 UNZIP?=		${PREFIX}/bin/unzip
-BUILD=		dmake
+PKGMESSAGE=	${WRKDIR}/pkg-message
+NUMOFPROCESSES?=	8
 
 .if !defined(DISPLAY)
 DISPLAYHACK=localhost:1001
 .endif
-
-CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
-			PTHREAD_LIBS=${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp
 
-.if defined(WITHOUT_JAVA)
-CONFIGURE_ARGS+=	--disable-java
-.else
-CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
-.endif
-
-.if defined(WITHOUT_MOZILLA)
-CONFIGURE_ARGS+=	--disable-mozilla
-.endif
-
-.if defined(ALL_LOCALIZED_LANGS)
-CONFIGURE_ARGS+=	--with-lang=ALL
-.else
-CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG}
-.endif
-
-.if defined(WITH_DEBUG)
-.if ${WITH_DEBUG} == 2
-CONFIGURE_ARGS+=	--enable-debug
-.else
-CONFIGURE_ARGS+=	--enable-symbols
-.endif
-.endif
-
-pre-fetch:
-	@${ECHO} "OPTIONS:"
-.if !defined(WITH_DEBUG)
-	@${ECHO}
-	@${ECHO} "You can compile OOo with debug symbols"
-	@${ECHO} "if you call make with WITH_DEBUG=1"
-	@${ECHO}
-	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
-	@${ECHO} "OOo debug support."
-	@${ECHO}
-.endif
-.if !defined(WITH_TTF_BYTECODE_ENABLED)
-	@${ECHO}
-	@${ECHO} "You may set WITH_TTF_BYTECODE_ENABLED=YES"
-	@${ECHO} "if you like to use the Freetype library to"
-	@${ECHO} "render TTF fonts. Normally the TTF lib is"
-	@${ECHO} "not used to render fonts."
-	@${ECHO}
-	@${ECHO} "If you have licensed the Apple patents"
-	@${ECHO} "US05155805 US05159668 and US05325479"
-	@${ECHO} "you can enable this option to get better"
-	@${ECHO} "quality of glyphs at small bitmap sizes."
-	@${ECHO}
-.endif
-	@${ECHO}
-	@${ECHO} "NOTICE:"
-	@${ECHO}
-	@${ECHO} "To build Openoffice, you should have a lot"
-.if defined(WITH_DEBUG)
-	@${ECHO} "of free diskspace (~ 8GB)."
-.else
-	@${ECHO} "of free diskspace (~ 4GB)."
-.endif
-	@${ECHO} "If you want SDK and/or solver, please type make sdk and/or make solver"
+.include <${FILESDIR}/Makefile.knobs>
 
 pre-everything::
-# really tewak, extremely useful when you build all localized language versions
+# really tweak, extremely useful when you build all localized language versions
 # needed after when you build with ALL_LOCALIZED_LANGS.
 .if defined(TWEAK_L10N)
 	@${RM} -f ${WRKDIR}/.PLIST*
@@ -222,36 +171,29 @@ post-extract:
 	@${ECHO_MSG} "===>  Extracting All available L10NHELPs"
 	@${MKDIR} ${WRKDIR}/L10NHELP
 	@cd ${WRKDIR}/L10NHELP ; \
-	for file in ${L10NHELPS}; do \
-		${CAT} ${DISTDIR}/${DIST_SUBDIR}/$$file | ${GZIP_CMD} -d | ${TAR} xf - ; \
+	for helpfile in ${L10NHELPS}; do \
+		${CAT} ${DISTDIR}/${DIST_SUBDIR}/$$helpfile | ${GZIP_CMD} -d | ${TAR} xf - ; \
 	done
+.endif
+.if !defined(WITHOUT_MOZILLA)
+	@cd ${WRKSRC} ; ${MV} moz moz.old ; ${TAR} xfz ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_PROJECT} ; ${PATCH} < ${FILESDIR}/moz-patch
+	@${MKDIR} ${WRKSRC}/moz/download
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${MOZILLA_SOURCE} ${WRKSRC}/moz/download
+	@cd ${WRKSRC} ; ${MV} moz moz.runtime ; ${MV} moz.old moz
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g;' ${WRKSRC}/odk/settings/settings.mk
 	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+g' ${WRKSRC}/odk/settings/settings.mk
-.if defined(WITH_TTF_BYTECODE_ENABLED)
-	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
-		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
-		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
-			${ECHO_MSG} "===>   Applying ${OPSYS} patch ${PATCHDIR}/optpatch-freetype::patch" ; \
-		fi; \
-		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/optpatch-freetype+patch ; \
-	fi
-.endif
 
-.if !defined(WITHOUT_MOZILLA) && ( \
-	!exists(${WRKSRC}/moz/zipped/FREEBSDGCCIruntime.zip) || \
-	!exists(${WRKSRC}/moz/zipped/FREEBSDGCCIlib.zip) || \
-	!exists(${WRKSRC}/moz/zipped/FREEBSDGCCIinc.zip) )
-.include <${FILESDIR}/Makefile.mozilla>
-do-build: mozilla
-.else
 do-build:
+	@cd ${WRKSRC} ; ./bootstrap
+.if !defined(WITHOUT_MOZILLA)
+	@cd ${WRKSRC}/moz.runtime ; ${SETENV} "BUILD_MOZAB=TRUE" ${TCSH} -c 'source ../FreeBSDEnv.Set ; build.pl ; dmake zip' ; ${CP} unxfbsd.pro/zipped/FREEBSD*.zip ../moz/zipped
 .endif
-.if exists(${WRKDIR}/.Xvfb.pid)
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.if defined(L10NHELP) || defined(ALL_LOCALIZED_LANGS)
+	@${MKDIR} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
+	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/pck
 .endif
 .if !defined(DISPLAY)
 	#
@@ -259,66 +201,54 @@ do-build:
 	#
 	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
 	@sleep 5
-.endif
-	@cd ${WRKSRC} ; PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
-.if defined(L10NHELP) || defined(ALL_LOCALIZED_LANGS)
-	@${MKDIR} ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
-	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/pck
-.endif
-.if !defined(DISPLAY)
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; ${BUILD}'
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAYHACK} ; ${TCSH} -c 'source FreeBSDEnv.Set ; dmake -P${NUMOFPROCESSES}'
 	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; ${BUILD}'
-.endif
-do-install:
-.if !defined(DISPLAY)
-	#
-	# UGLY hack to not have to specify a X-Display.
-	#
-	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
-	@sleep 5
-	@cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal/ ; \
-	SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} ./install --prefix=${PREFIX}
-	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
-	@${RM} -f ${WRKDIR}/.Xvfb.pid
-.else
-	@cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal/ ; \
-	SAL_IGNOREXERRORS=1 TEMP=${WRKDIR} DISPLAY=${DISPLAY} ./install --prefix=${PREFIX}
+	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} ; ${TCSH} -c 'source FreeBSDEnv.Set ; dmake -P${NUMOFPROCESSES}'
 .endif
 
+do-install:
+	@cd ${WRKSRC}/instsetoo/*.pro/${LANG_EXT}/normal/ ; ./install --prefix=${PREFIX}
+
 install-user:
-	@SAL_IGNOREXERRORS=1 ${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
+	@${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
 	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/
 	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
-			-e 's#%%LANG%%#${USE_LANG}#g' \
-			-e 's#%%BUILD_NR%%#${BUILD_NR}#g' \
 			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
+			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
 			${WRKDIR}/openoffice-wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
-		${PREFIX}/bin/openoffice-${RELEASE_NR}
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sagenda
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-scalc
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sdraw
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-setup
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sfax
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-smath
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-simpress
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-spadmin
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sweb
-	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-swriter
-	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} openoffice-${RELEASE_NR} > ${TMPPLIST}
-	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} openoffice-${RELEASE_NR} >> ${TMPPLIST}
+		${PREFIX}/bin/${EXECBASE}
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sagenda
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-scalc
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sdraw
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-setup
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sfax
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-smath
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-simpress
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-spadmin
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-sweb
+	@${LN} -fs ${PREFIX}/bin/${EXECBASE} ${PREFIX}/bin/${EXECBASE}-swriter
+	@cd ${PREFIX} ; ${FIND} -s bin -type f | ${GREP} ${EXECBASE} > ${TMPPLIST}
+	@cd ${PREFIX} ; ${FIND} -s bin -type l | ${GREP} ${EXECBASE} >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type l >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s ${INSTALLATION_BASEDIR} -type d > ${WRKDIR}/dir.tmp
 	@${SORT} -r ${WRKDIR}/dir.tmp | ${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
+	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
+	@${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
+			-e 's#%%INSTALLATION_BASEDIR%%#${INSTALLATION_BASEDIR}#g' \
+			-e 's#%%EXECBASE%%#${EXECBASE}#g' \
+			-e 's#%%MILESTONE%%#${MILESTONE}#g' \
+			-e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' \
+			${PKGMESSAGE}
+	@${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD}
 
 package-rename:
 	@${ECHO_MSG} "===>   Rename package for OOo mirror upload";
@@ -334,13 +264,12 @@ package-rename:
 .endif
 
 sdk:
-	@${ECHO_MSG} "===>   Make SDK of OOo"
-	@cd ${WRKSRC} ; DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ; \
-		${TCSH} -c 'source FreeBSDEnv.Set ; unsetenv TOP ; cd sdk_oo ; build.pl ; deliver.pl'
-	@${MV} ${WRKSRC}/solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz
+	@${ECHO_MSG} "===>   Make SDK of OpenOffice.org"
+	@cd ${WRKSRC} ; ${TCSH} -c 'source FreeBSDEnv.Set ; cd sdk_oo ; build.pl ; deliver.pl'
+	@${MV} ${WRKSRC}/solver/${CODELINE}/unxfbsd.pro/bin/OpenOffice.org${RELEASE_NR}_SDK.tar.gz ${WRKDIR}/../${PACKAGE_BASENAME}_sdk.tar.gz
 
 solver:
-	@${ECHO_MSG} "===>   Make Solver of OOo"
-	@cd ${WRKSRC} ; ${TAR} cfz ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}${SIMPLEOSVER}Intel_solver.tar.gz solver
+	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"
+	@cd ${WRKSRC} ; ${TAR} cfz ${WRKDIR}/../${PACKAGE_BASENAME}_solver.tar.gz solver
 
 .include <bsd.port.post.mk>
