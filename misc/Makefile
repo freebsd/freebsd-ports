@@ -27,6 +27,7 @@
     SUBDIR += birthday
     SUBDIR += bogosort
     SUBDIR += bottlerocket
+    SUBDIR += bookcase
     SUBDIR += boxes
     SUBDIR += brs
     SUBDIR += buffer
