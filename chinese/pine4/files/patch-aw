@@ -1,0 +1,24 @@
+--- pico/pico.c.orig	Sat Jan 17 20:21:35 1998
++++ pico/pico.c	Sat Jan 17 20:23:21 1998
+@@ -585,17 +585,17 @@
+ 	}
+     }
+     else switch(mlyesno(Pmaster->headents
+-	 ? "Cancel message (answering \"Yes\" will abandon your mail message)"
++	 ? "\"取消\"這個動作將會放棄你目前的信件.  取消嗎 ?"
+ 	 : (anycb() == FALSE)
+-	     ? "Cancel Edit (and abandon changes)"
+-	     : "Cancel Edit",
++	     ? "取消編輯(並放棄所有的改變)"
++	     : "取消編輯",
+ 	 FALSE)){
+       case TRUE:
+ 	pico_all_done = COMP_CANCEL;
+ 	return(TRUE);
+ 
+       case ABORT:
+-	emlwrite("\007Cancel Cancelled", NULL);
++	emlwrite("\007取消", NULL);
+ 	break;
+ 
+       default:

@@ -1,0 +1,71 @@
+--- pine/mailpart.c.orig	Thu May 30 05:47:17 1996
++++ pine/mailpart.c	Sat Jan 17 21:06:54 1998
+@@ -74,12 +74,12 @@
+ 
+ 
+ static struct key att_index_keys[] = 
+-       {{"?","Help",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
+-	{"E","Exit Index",KS_EXITMODE},	{"V","[View]",KS_VIEW},
+-	{"P","PrevAttch",KS_NONE},	{"N","NextAttch",KS_NONE},
+-	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
+-	{"A","AboutAttch",KS_NONE},	{"S","Save",KS_SAVE},
+-	{"|","Pipe",KS_NONE},		{"W","WhereIs",KS_WHEREIS}};
++       {{"?","輔助說明",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
++	{"E","離開索引",KS_EXITMODE},	{"V","[檢視]",KS_VIEW},
++	{"P","前一附件",KS_NONE},	{"N","後一附件",KS_NONE},
++	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
++	{"A","附件資料",KS_NONE},	{"S","儲存",KS_SAVE},
++	{"|","Pipe",KS_NONE},		{"W","搜尋",KS_WHEREIS}};
+ INST_KEY_MENU(att_index_keymenu, att_index_keys);
+ #define	ATT_PIPE_KEY	10
+ 
+@@ -354,6 +354,7 @@
+ 	    ps->mangled_screen = 1;
+ 	    break;
+ 
++	  case KEY_LEFT :
+ 	  case 'e' :				/* exit attachment screen */
+ 	  case PF3 :
+ 	    done++;
+@@ -362,7 +363,6 @@
+ 	  case 'n' :				/* next list element */
+ 	  case '\t' :
+ 	  case ctrl('F') :
+-	  case KEY_RIGHT :
+ 	  case ctrl('N'):			/* down arrow */
+ 	  case KEY_DOWN :
+ 	  case PF6 :
+@@ -377,7 +377,6 @@
+ 
+ 	  case 'p' :				/* previous list element */
+ 	  case ctrl('B') :
+-	  case KEY_LEFT :
+ 	  case ctrl('P') :			/* up arrow */
+ 	  case KEY_UP :
+ 	  case PF5 :
+@@ -506,7 +505,7 @@
+ 		 }
+ 	     }
+ 	     else
+-	       result = "WhereIs cancelled";
++	       result = "搜尋指令已取消";
+ 
+ 	     if(found && ctmp){
+ 		 strcpy(last, buf);
+@@ -530,6 +529,7 @@
+ 	    ps->mangled_screen = 1;
+ 	    break;
+ 
++	  case KEY_RIGHT:
+ 	  case 'v':				/* View command */
+ 	  case ctrl('M'):
+ 	  case PF4 :
+@@ -855,7 +855,7 @@
+     char       *err;
+     struct variable *vars = ps_global->vars;
+     static ESCKEY_S att_save_opts[] = {
+-	{ctrl('T'), 10, "^T", "To Files"},
++	{ctrl('T'), 10, "^T", "信夾列表"},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL}};

@@ -1,0 +1,20 @@
+--- pine/signals.c.orig	Wed Jun  5 12:47:21 1996
++++ pine/signals.c	Sat Jan 17 21:23:52 1998
+@@ -493,7 +493,7 @@
+     int retval = 1;
+ 
+     dprint(9,(debugfile, "busy_alarm(%d, %s, %p, %d)\n",
+-	seconds, msg ? msg : "Busy", pc_func, init_msg));
++	seconds, msg ? msg : "請稍後", pc_func, init_msg));
+ 
+     /*
+      * If we're already busy'ing, and we don't have something special,
+@@ -517,7 +517,7 @@
+ 	    final_message = 1;
+ 	}
+ 	else{
+-	    strcpy(busy_message, "Busy");
++	    strcpy(busy_message, "請稍後");
+ 	    final_message = 0;
+ 	}
+ 

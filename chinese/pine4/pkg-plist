@@ -7,6 +7,7 @@ bin/pgpencrypt
 bin/pgpdecode
 bin/pgpsign
 etc/dot.pinerc.pgp.sample
+etc/pine.conf.fixed
 man/man1/pico.1.gz
 man/man1/pilot.1.gz
 man/man1/pine.1.gz

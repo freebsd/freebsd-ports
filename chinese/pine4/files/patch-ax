@@ -1,0 +1,16 @@
+--- pico/search.c.orig	Sat Jan 17 20:23:39 1998
++++ pico/search.c	Sat Jan 17 20:24:28 1998
+@@ -222,11 +222,11 @@
+ 	EXTRAKEYS    menu_pat[3];
+ 
+ 	menu_pat[0].name  = "^Y";
+-	menu_pat[0].label = "FirstLine";
++	menu_pat[0].label = "第一行";
+ 	menu_pat[0].key   = (CTRL|'Y');
+ 	KS_OSDATASET(&menu_pat[0], KS_NONE);
+ 	menu_pat[1].name  = "^V";
+-	menu_pat[1].label = "LastLine";
++	menu_pat[1].label = "最後一行";
+ 	menu_pat[1].key   = (CTRL|'V');
+ 	KS_OSDATASET(&menu_pat[1], KS_NONE);
+ 	menu_pat[2].name  = NULL;
