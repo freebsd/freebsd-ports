@@ -15,9 +15,9 @@
   PROGRAMS	= tgif prtgif XCOMM frontend11.o testdrive
   XCOMM CDEBUGFLAGS= -g
   XCOMM INSTPGMFLAGS= -s
-! XCOMM BINDIR	= /usr/X11R6/bin
-! XCOMM MANPATH	= /usr/X11R6/man
-! XCOMM TGIFDIR	= /usr/X11R6/lib/X11/tgif
+! XCOMM BINDIR	= $(X11BASE)
+! XCOMM MANPATH	= $(X11BASE)
+! XCOMM TGIFDIR	= $(X11BASE)
   TGIFDIR		= $(LIBDIR)/tgif
   DEFINES		= -DTGIF_PATH=\"$(TGIFDIR)\" -DPSFILE_MOD=0664 \@@\
                     -DEPSF_FILE_EXT=\"eps\" -DPS_FILE_EXT=\"ps\" \@@\
