@@ -1,6 +1,6 @@
---- contrib/Makefile.in.orig	Thu Feb 22 12:56:40 2001
-+++ contrib/Makefile.in	Thu Feb 22 12:56:57 2001
-@@ -87,7 +87,7 @@
+--- contrib/Makefile.in.orig Sun Apr 14 11:51:05 2002
++++ contrib/Makefile.in	Wed May  1 16:08:10 2002
+@@ -88,7 +88,7 @@
  ZLIB_LIB_DIR = @ZLIB_LIB_DIR@
  
  SUBDIRS = trytime
