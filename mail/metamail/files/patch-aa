@@ -13,7 +13,7 @@
   
   STATICFLAG=FOOBAR${HOST_ARCH}
   
-! CFLAGS = -g -O -I.  ${$(STATICFLAG)} 
+! CFLAGS = -O -I.  ${$(STATICFLAG)} 
   # The following is better if you want to make sure you run with SYSV defined
   # CFLAGS = -g -I.  ${$(STATICFLAG)}  -DSYSV
   # Also, for SGI Irix, compile in K&R mode
