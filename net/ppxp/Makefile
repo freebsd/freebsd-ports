@@ -1,19 +1,21 @@
 # New ports collection makefile for: ppxp
-# Version required:	0.98112523
-# Date created:		16 June 1998
+# Version required:	0.99030108
+# Date created:		8 May 1999
 # Whom:			Norio Suzuki
 #			KUNISHIMA Takeo <kunishi@c.oka-pu.ac.jp>
+#			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.3 1999/01/07 08:19:47 simokawa Exp $
+# $Id: Makefile,v 1.4 1999/01/10 15:56:35 sada Exp $
 #
 
-DISTNAME=	ppxp-0.98112523
+DISTNAME=	ppxp-0.99030108
 CATEGORIES=	net tk80
 .if defined(USE_TCLJP)
 CATEGORIES+=	japanese
 .endif
-MASTER_SITES=	http://www.dsl.ics.tut.ac.jp/~manabe/PPxP/packages/	\
-		http://www.dsl.gr.jp/~manabe/PPxP/packages/
+MASTER_SITES=	http://www.dsl.gr.jp/~manabe/PPxP/packages/	\
+		http://www.linet.gr.jp/~manabe/PPxP/packages/	\
+		http://www.dsl.ics.tut.ac.jp/~manabe/PPxP/packages/
 
 MAINTAINER=	nosuzuki@e-mail.ne.jp
 

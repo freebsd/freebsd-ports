@@ -26,8 +26,6 @@ etc/ppxp/ip/hroutedown
 etc/ppxp/ip/hrouteup
 etc/ppxp/keybind
 etc/ppxp/modem/3c563
-etc/ppxp/modem/MC-6500@isdn
-etc/ppxp/modem/MC-6500@modem
 etc/ppxp/modem/aterm
 etc/ppxp/modem/default
 etc/ppxp/modem/dn1280
@@ -43,6 +41,7 @@ etc/ppxp/modem/rta50i
 etc/ppxp/modem/sta128
 etc/ppxp/modem/standard
 etc/ppxp/modem/ta777
+etc/ppxp/modem/td503a
 etc/ppxp/modem/tmad1280@128
 etc/ppxp/modem/tmad1280@64
 etc/ppxp/modem/v34es2
@@ -72,6 +71,7 @@ lib/ppxp/tkppxp/images/up.xbm
 lib/ppxp/tkppxp/resources/default
 lib/ppxp/tkppxp/resources/qdial_message
 lib/ppxp/tkppxp/resources/qdial_message.ja
+lib/ppxp/tkppxp/scripts/command.tcl
 lib/ppxp/tkppxp/scripts/conf.tcl
 lib/ppxp/tkppxp/scripts/icon.tcl
 lib/ppxp/tkppxp/scripts/indicator.tcl
@@ -150,6 +150,7 @@ share/ppxp/label/xaxon.xpm
 @dirrm share/doc/ppxp/ja
 @dirrm share/doc/ppxp/C
 @dirrm share/doc/ppxp
+@dirrm etc/ppxp/rc
 @dirrm lib/ppxp/tkppxp/widgets
 @dirrm lib/ppxp/tkppxp/scripts
 @dirrm lib/ppxp/tkppxp/resources
@@ -157,7 +158,6 @@ share/ppxp/label/xaxon.xpm
 @dirrm lib/ppxp/tkppxp
 @dirrm lib/ppxp/tcl
 @dirrm lib/ppxp
-@dirrm etc/ppxp/rc
 @dirrm etc/ppxp/modem
 @dirrm etc/ppxp/ip
 @dirrm etc/ppxp/conf
