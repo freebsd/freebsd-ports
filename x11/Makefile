@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.250 1999/01/18 04:47:08 steve Exp $
+# $Id: Makefile,v 1.251 1999/01/18 10:02:38 steve Exp $
 #
 
     SUBDIR += 9term
@@ -71,6 +71,7 @@
     SUBDIR += xaniroc
     SUBDIR += xantfarm
     SUBDIR += xautolock
+    SUBDIR += xbanner
     SUBDIR += xcb
     SUBDIR += xco
     SUBDIR += xcoloredit
