@@ -1,0 +1,22 @@
+diff -ur hercules.h.orig hercules.h
+--- hercules.h.orig Wed Dec  4 16:53:55 2002
++++ hercules.h	Wed Dec  4 10:09:08 2002
+@@ -49,6 +49,7 @@
+  #include "hbyteswp.h"
+ #endif
+ #include <sys/types.h>
++#include <sys/time.h>
+ #include <sys/resource.h>
+ #include <sys/stat.h>
+ #include <sys/socket.h>
+@@ -289,8 +290,10 @@
+ #endif // !defined(WIN32)
+ #define thread_id() \
+         pthread_self()
++#if 0
+ #define exit_thread(exitvar_ptr) \
+         pthread_exit((exitvar_ptr))
++#endif
+ #endif // defined(OPTION_FTHREADS)
+ #else
+ typedef int                             TID;
