@@ -7,7 +7,7 @@
 
 PORTNAME=	vfghostscript
 PORTVERSION=	5.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/ \
@@ -32,7 +32,7 @@ EXTRACT_ONLY=	${GS_SOURCES}
 MAINTAINER=	mita@jp.FreeBSD.org
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		VFlib2.24:${PORTSDIR}/japanese/vflib
 
 WRKSRC=		${WRKDIR}/gs${PORTVERSION}
