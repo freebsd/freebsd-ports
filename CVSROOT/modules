@@ -380,6 +380,7 @@ astrolog	ports/misc/astrolog
 astyle		ports/devel/astyle
 aswedit		ports/www/aswedit
 at		src/usr.bin/at
+at-spi		ports/x11-toolkits/at-spi
 atacontrol	src/sbin/atacontrol
 atari800	ports/emulators/atari800
 atc		src/games/atc
