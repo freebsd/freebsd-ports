@@ -1,5 +1,5 @@
---- src/imapd/Makefile.orig	Mon Nov 18 08:48:25 2002
-+++ src/imapd/Makefile	Tue Nov 26 02:07:06 2002
+--- src/imapd/Makefile.orig	Mon Nov 18 17:48:25 2002
++++ src/imapd/Makefile	Wed Nov 27 02:28:00 2002
 @@ -18,10 +18,10 @@
  # CPYRIGHT, included with this Distribution.
  
@@ -24,7 +24,16 @@
  
  
  
-@@ -44,22 +46,21 @@
+@@ -38,28 +40,29 @@
+ # broken program does a STATUS on the selected mailbox.  This shouldn't be
+ # necessary, and it's been reported that Entourage works without having to
+ # un-comment this.
+-#ENBD= -DENTOURAGE_BRAIN_DAMAGE
++.if defined(WITH_ENTOURAGE_BRAIN_DAMAGE)
++ENBD= -DENTOURAGE_BRAIN_DAMAGE
++.endif
+ 
+ 
  # Get local definitions from c-client directory
  
  C = ../c-client
@@ -43,7 +52,7 @@
 +CFLAGS+=	-DETC_DIR=\"$(PREFIX)/etc\" -DDRAC_AUTH
 +LDFLAGS+=	-ldrac
 +.endif
-+CFLAGS+= $(RFC1730) $(NSBD) $(MSBD)
++CFLAGS+= $(NSBD) $(ENBD)
  
  all:	imapd
  

@@ -1,5 +1,5 @@
---- src/mailutil/Makefile.Dist	Mon Nov 18 16:41:46 2002
-+++ src/mailutil/Makefile	Tue Nov 26 02:36:10 2002
+--- src/mailutil/Makefile.orig	Tue Nov 19 01:41:46 2002
++++ src/mailutil/Makefile	Wed Nov 27 03:51:27 2002
 @@ -19,22 +19,15 @@
  
  
