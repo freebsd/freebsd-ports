@@ -183,6 +183,7 @@ share/postgresql/post-install-notes
 %%SERVER%%%%GETTEXT%%share/locale/cs/LC_MESSAGES/postgres.mo
 %%SERVER%%%%GETTEXT%%share/locale/de/LC_MESSAGES/postgres.mo
 %%SERVER%%%%GETTEXT%%share/locale/es/LC_MESSAGES/postgres.mo
+%%SERVER%%%%GETTEXT%%share/locale/fr/LC_MESSAGES/postgres.mo
 %%SERVER%%%%GETTEXT%%share/locale/hr/LC_MESSAGES/postgres.mo
 %%SERVER%%%%GETTEXT%%share/locale/hu/LC_MESSAGES/postgres.mo
 %%SERVER%%%%GETTEXT%%share/locale/it/LC_MESSAGES/postgres.mo
