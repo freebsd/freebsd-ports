@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	saint
-PORTVERSION=	3.4.11
+PORTVERSION=	3.5.8
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
-		http://www.wwdsi.com/saint/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Security Administrator's Integrated Network Tool
 
 BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+.if defined(WITH_SAMBA)
+BUILD_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
+.endif
 
 USE_PERL5=	yes
 MANCOMPRESSED=	no
@@ -23,11 +24,16 @@ GNU_CONFIGURE=	yes
 MAKE_ENV=	"LIBS=-lrpcsvc" "XFLAGS=-g -O2   -DSTDC_HEADERS=1 -DGETGROUPS_T=gid_t -DSYS_ERRLIST_DECLARED=1 " "RPCGEN=/usr/bin/rpcgen"
 INSTALL_TARGET=	all
 
+DOWNLOAD_URL?=	http://www.wwdsi.com/products/download.html
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=		The source (${DISTFILES}is not available anymore. If you still have a copy, copy it to ${DISTDIR} and run make again. See http://www.wwdsi.com/products/download.html for more details regarding the next versions of Saint.
+IGNORE=		You must manually fetch the source distribution (${DISTFILES}) \
+	from ${DOWNLOAD_URL}, choose SAINT - Free Trial, place it in \
+	${DISTDIR} and then run make again
 .endif
+NO_CDROM=	yes
 
 pre-install:
 		${MKDIR} ${PREFIX}/saint
