@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS/ZoneFile/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/ZoneFile.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS/ZoneFile
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net/DNS 2>/dev/null || true
