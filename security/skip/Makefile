@@ -64,4 +64,10 @@ post-patch:
 	  ${MV} $$FILE.new $$FILE; \
 	done
 
+# This is for port maintenance, uncomment to regenerate patch set
+#diffs:
+#	rm -rf patches/patch-*
+#	diff -ur --unidirectional-new-file skipsrc-1.0.orig work.new \
+#		| split -p ^diff - patches/patch-
+
 .include <bsd.port.mk>
