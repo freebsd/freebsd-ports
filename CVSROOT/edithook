@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-#	$Id$
+#	$Id: edithook,v 1.1 1995/03/28 07:57:13 pst Exp $
 #
 
 # Perl filter to handle cvs editinfo preparation of log messge
@@ -276,7 +276,7 @@ sub abort {
 
 sub create_timestamps {
     ($sec,$min,$hour,$mday,$mon,$year) = localtime;
-    $today	= sprintf("%02d/%02d/%02d", $mon+1, $mday, $year);
+    $today	= sprintf("%d/%02d/%02d", $year+1900, $mon+1, $mday);
     $nowtime	= sprintf("%02d:%02d:%02d", $hour, $min, $sec);
     $date	= $today . ' ' . $nowtime;
 }
