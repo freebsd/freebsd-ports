@@ -3,7 +3,7 @@
 # Date created:		2 May 1998
 # Whom:			Ian Struble <ian@broken.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/03 20:51:37 mph Exp $
+# $Id: Makefile,v 1.2 1999/01/10 18:16:34 steve Exp $
 
 DISTNAME=	ijb20
 PKGNAME=	ijb-2.0.2
@@ -13,7 +13,13 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ian@broken.net
 
-FETCH_BEFORE_ARGS=	-b
+USE_GMAKE=	yes
+ALL_TARGET=	# yes, an empty target.
+
+# You need to delete the old distfile if you are upgrading, as the tar ball
+# for ijb has not been changing names between minor revisions(ie 2.0->2.0.1).
+# I have contacted the author about this though so we may see something new
+# in the next revision.
 
 MAN1=		junkbuster.1
 
