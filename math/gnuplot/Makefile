@@ -14,49 +14,42 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	chuckr@FreeBSD.org
 COMMENT=	A command-driven interactive function plotting program
 
-LIB_DPEENDS=
-.if !defined(WITHOUT_PNG)
-LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
-.endif
-.if !defined(WITHOUT_PDF)
-LIB_DEPENDS+=	pdf.4:${PORTSDIR}/print/pdflib4
-.endif
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share \
+		--without-linux-vga --without-gd \
+		--with-readline=gnu --with-lasergnu
+
+MAN1=		gnuplot.1 lasergnu.1
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
-.endif
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX} \
-		--includedir=${LOCALBASE}/include/ \
-		--libdir=${LOCALBASE}/lib \
-		--without-linux-vga --without-gd \
-		--with-readline=gnu --with-lasergnu 
-.if !defined(WITHOUT_PNG)
-CONFIGURE_ARGS+=--with-png=${LOCALBASE}
+PLIST_SUB+=		X11:=""
 .else
-CONFIGURE_ARGS+=--without-png
-.endif
-.if !defined(WITHOUT_PDF)
-CONFIGURE_ARGS+=--with-pdf=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--without-pdf
-.endif
-
-.if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		X11:="@comment "
+.endif
+
+.if !defined(WITHOUT_PNG)
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
+CONFIGURE_ARGS+=	--with-png=${LOCALBASE}
 .else
-CONFIGURE_ARGS+=	--with-x
-PLIST_SUB+=		X11:=""
+CONFIGURE_ARGS+=	--without-png
+.endif
+
+.if !defined(WITHOUT_PDF)
+LIB_DEPENDS+=	pdf.4:${PORTSDIR}/print/pdflib
+CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=	--without-pdf
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/gnuplot
-	(cd ${WRKSRC}/demo;for EXAMPLES in ${WRKSRC}/demo/*; do ${INSTALL_DATA} $${EXAMPLES} ${PREFIX}/share/doc/gnuplot;done)
-	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/doc/gnuplot
-
-MAN1=		gnuplot.1 lasergnu.1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/README ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/demo/* ${EXAMPLESDIR}
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/gnuplot.gih ${DATADIR}
+.endif
 
 .include <bsd.port.mk>
