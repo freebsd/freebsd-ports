@@ -1,0 +1,19 @@
+--- ../dist/Makefile.in.bak	Mon Dec  7 22:05:59 1998
++++ ../dist/Makefile.in	Sun Mar 28 18:15:28 1999
+@@ -141,11 +141,11 @@
+ 	$(rm) -f confdefs.h db.h db_int.h db_185.h include.tcl
+ 
+ prefix=	@prefix@
+-bindir=	$(prefix)/BerkeleyDB/bin
+-datadir=$(prefix)/BerkeleyDB/share
+-includedir=$(prefix)/BerkeleyDB/include
+-libdir=	$(prefix)/BerkeleyDB/lib
+-mandir=	$(prefix)/BerkeleyDB/docs
++bindir= $(prefix)/bin
++datadir=$(prefix)/share/BerkeleyDB
++includedir=$(prefix)/include/BerkeleyDB
++libdir= $(prefix)/lib
++mandir= $(prefix)/share/doc/BerkeleyDB
+ 
+ dmode=	755
+ emode=	555
