@@ -1,0 +1,10 @@
+This little program lets you change your Gtk+ 2.0 theme. The aim is to
+make theme preview and selection as slick as possible. Themes installed
+on the system are presented for selection and previewed on the fly. For
+a comprehensive demonstration there's a large variety of widgets.
+
+It was originally derived from Gtk Theme Switch, but what started out as
+a hack to remove various nuisances now shares no code whatsoever anymore
+with the original.
+
+WWW: http://plasmasturm.org/programs/gtk-chtheme/

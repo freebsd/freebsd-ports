@@ -69,6 +69,7 @@
     SUBDIR += gromit
     SUBDIR += gtk-theme-switch
     SUBDIR += gtk2-theme-switch
+    SUBDIR += gtkchtheme
     SUBDIR += gtkterm2
     SUBDIR += gtstarter
     SUBDIR += gxset
