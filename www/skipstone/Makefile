@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	skipstone
-PORTVERSION=	0.7.5
+PORTVERSION=	0.7.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.muhri.net/skipstone/
 
 MAINTAINER=	eric@FreeBSD.org
 
-BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
+BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkembedmoz/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
 		${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded
 RUN_DEPENDS=	${X11BASE}/lib/mozilla-embedded/libgtkembedmoz.so:${PORTSDIR}/www/mozilla-embedded \
 		wget:${PORTSDIR}/ftp/wget

@@ -1,6 +1,6 @@
---- src/skipstone.orig	Tue Apr 17 00:32:07 2001
-+++ src/skipstone	Tue Apr 17 00:24:57 2001
-@@ -1,26 +1,6 @@
+--- src/skipstone.orig	Thu Nov  8 14:39:36 2001
++++ src/skipstone	Thu Nov  8 14:40:26 2001
+@@ -1,29 +1,6 @@
 -#!/bin/bash
 -if test -n "$MOZILLA_FIVE_HOME"; then
 -	LD_LIBRARY_PATH=$MOZILLA_FIVE_HOME:$LD_LIBRARY_PATH
@@ -16,6 +16,9 @@
 -elif [ -f /usr/local/lib/mozilla/libgtkembedmoz.so ]; then
 -	export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/mozilla
 -	export MOZILLA_FIVE_HOME=/usr/local/lib/mozilla
+-elif [ -f /opt/mozilla/libgtkembedmoz.so ]; then
+-        export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/mozilla
+-        export MOZILLA_FIVE_HOME=/opt/mozilla
 -else 
 +#!/bin/sh
  

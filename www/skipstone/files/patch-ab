@@ -1,24 +1,13 @@
---- config.mk.orig	Fri Jul 13 12:25:24 2001
-+++ config.mk	Tue Jul 24 06:15:59 2001
-@@ -1,26 +1,21 @@
+--- config.mk.orig	Thu Nov  8 14:35:29 2001
++++ config.mk	Thu Nov  8 14:36:53 2001
+@@ -1,4 +1,4 @@
 -PREFIX=/usr/local
 +PREFIX=$(X11BASE)
  PLUGINDIR=$(HOME)/.skipstone/plugins
  
  MOZILLA_INCLUDES = \
--	-I/usr/include/mozilla \
--	-I/usr/local/include/mozilla \
--	-I/usr/include/nspr \
--	-I/usr/local/include/nspr \
--	-I/usr/include/mozilla/nspr \
--	-I/usr/local/include/mozilla/nspr
-+	-I$(PREFIX)/include/mozilla \
-+	-I$(PREFIX)/include/mozilla/nspr
- 
- MOZILLA_LIBS = \
--	-L/usr/lib/mozilla \
--	-L/usr/local/lib/mozilla \
-+	-L$(PREFIX)/lib/mozilla-embedded \
+@@ -71,13 +71,13 @@
+ 	-L$(PREFIX)/lib/mozilla \
  	-lgtkembedmoz -lplds4 -lplc4 -lnspr4 -lgtksuperwin -lxpcom
  
 -GTK_LIBS = $(shell gtk-config --libs)
