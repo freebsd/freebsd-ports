@@ -76,7 +76,7 @@ drweb/russian.dwl
 drweb/update/readme.update
 drweb/update/readme.update.rus
 drweb/update/update.pl
-etc/rc.d/drwebd.sh
+etc/rc.d/drwebd.sh-dist
 @dirrm drweb/clients/demo
 @dirrm drweb/clients/drwebdc/include
 @dirrm drweb/clients/drwebdc/lib

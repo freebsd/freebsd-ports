@@ -27,6 +27,6 @@ do-install:
 	${TAR} -xzOf ${WRKSRC}/${DISTNAME}.tar.gz drweb32.ini >${DRWEB_PREFIX}/drweb32.ini.sample
 	${SED} 's#!!PREFIX!!#${DRWEB_PREFIX}#' < ${FILESDIR}/drwebd.sh >${WRKSRC}/drwebd.sh
 	cd ${DRWEB_PREFIX}/update; patch -s < ${FILESDIR}/update-patch && ${RM} update.pl.orig
-	${INSTALL_SCRIPT} ${WRKSRC}/drwebd.sh ${PREFIX}/etc/rc.d
+	${INSTALL_DATA} ${WRKSRC}/drwebd.sh ${PREFIX}/etc/rc.d/drwebd.sh-dist
 
 .include <bsd.port.mk>
