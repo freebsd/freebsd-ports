@@ -142,6 +142,7 @@
     SUBDIR += libjcode
     SUBDIR += libjconv
     SUBDIR += libslang
+    SUBDIR += linux-JM
     SUBDIR += linux-netscape47-communicator
     SUBDIR += linux-netscape47-navigator
     SUBDIR += linux_locale

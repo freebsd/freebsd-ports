@@ -1,0 +1,47 @@
+exec /usr/bin/perl -Sx "$0" ${1+"$@"}
+#! perl
+
+$WRKSRC = $ENV{'WRKSRC'};
+@MANSECS = split(/\s+/, $ENV{'MANSECS'});
+
+for $sec (@MANSECS) {
+    print "===> Creating Makefile in man${sec}\n";
+
+    chdir "$WRKSRC/man$sec";
+    @manpages = ();
+    @mlinks = ();
+
+    for $manpage (<*.${sec}>) {
+	open(F, $manpage) || die "cannot open $manpage: $!\n";
+	$_ = <F>;
+	chop;
+	close(F);
+	if (/^\.so /) {
+	    ($real = $') =~ s!^man./!!;
+	    push(@mlinks, "$real\t$manpage");
+	}
+	else {
+	    push(@manpages, $manpage);
+	}
+    }
+
+    open(MAKEFILE, '>Makefile');
+
+    if (@manpages) {
+	print MAKEFILE join("\t\\\n\t", "MAN${sec} =", sort @manpages);
+	print MAKEFILE "\n\n";
+    }
+    if (@mlinks) {
+	print MAKEFILE join("\t\\\n\t", "MLINKS =", sort @mlinks);
+	print MAKEFILE "\n\n";
+    }
+
+    print MAKEFILE <<EOF;
+pages-list:
+	@\${ECHO} \${MAN${sec}} \${MLINKS}
+
+.include <bsd.prog.mk>
+EOF
+
+    close(MAKEFILE);
+}
