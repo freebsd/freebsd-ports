@@ -2,8 +2,6 @@
 %%SITE_PERL%%/Class/Fields/Attribs.pm
 %%SITE_PERL%%/Class/Fields/Fuxor.pm
 %%SITE_PERL%%/Class/Fields/Inherit.pm
-%%SITE_PERL%%/base.pm
-%%SITE_PERL%%/fields.pm
 %%SITE_PERL%%/private.pm
 %%SITE_PERL%%/protected.pm
 %%SITE_PERL%%/public.pm
