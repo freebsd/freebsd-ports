@@ -27,10 +27,10 @@ MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG"
 SLAVEDIRS=	sysutils/mkisofs
 WRKSRC=		${WRKDIR}/cdrtools-1.11
 
-.if ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "sparc64"
 post-extract:
 	${LN} -s ${WRKSRC}/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/RULES/alpha-freebsd-cc.rul
+		${WRKSRC}/RULES/${MACHINE_ARCH}-freebsd-cc.rul
 .endif
 
 do-install:
