@@ -4265,6 +4265,7 @@ kde3-i18n-fi	ports/misc/kde3-i18n-fi
 kde3-i18n-gl	ports/misc/kde3-i18n-gl
 kde3-i18n-hi	ports/misc/kde3-i18n-hi
 kde3-i18n-hr	ports/misc/kde3-i18n-hr
+kde3-i18n-hsb	ports/misc/kde3-i18n-hsb
 kde3-i18n-id	ports/misc/kde3-i18n-id
 kde3-i18n-is	ports/misc/kde3-i18n-is
 kde3-i18n-it	ports/misc/kde3-i18n-it
@@ -4279,6 +4280,7 @@ kde3-i18n-nds	ports/misc/kde3-i18n-nds
 kde3-i18n-nl	ports/misc/kde3-i18n-nl
 kde3-i18n-nn	ports/misc/kde3-i18n-nn
 kde3-i18n-nso	ports/misc/kde3-i18n-nso
+kde3-i18n-pa	ports/misc/kde3-i18n-pa
 kde3-i18n-pl	ports/polish/kde3-i18n
 kde3-i18n-ro	ports/misc/kde3-i18n-ro
 kde3-i18n-se	ports/misc/kde3-i18n-se
@@ -4305,6 +4307,7 @@ kdebase3	ports/x11/kdebase3
 kdeedu3		ports/misc/kdeedu3
 kdegames3	ports/games/kdegames3
 kdegraphics3	ports/graphics/kdegraphics3
+kdehier		ports/misc/kdehier
 kdelibs3	ports/x11/kdelibs3
 kdemultimedia3	ports/multimedia/kdemultimedia3
 kdenetwork3	ports/net/kdenetwork3
@@ -4446,9 +4449,11 @@ kodos		ports/devel/kodos
 koffice-i18n	ports/misc/koffice-i18n
 koffice-i18n-af	ports/misc/koffice-i18n-af
 koffice-i18n-bg	ports/misc/koffice-i18n-bg
+koffice-i18n-br	ports/misc/koffice-i18n-br
 koffice-i18n-bs	ports/misc/koffice-i18n-bs
 koffice-i18n-ca	ports/misc/koffice-i18n-ca
 koffice-i18n-cs	ports/misc/koffice-i18n-cs
+koffice-i18n-cy	ports/misc/koffice-i18n-cy
 koffice-i18n-da	ports/misc/koffice-i18n-da
 koffice-i18n-el	ports/misc/koffice-i18n-el
 koffice-i18n-en_GB	ports/misc/koffice-i18n-en_GB
