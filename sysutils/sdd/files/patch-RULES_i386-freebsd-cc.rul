@@ -1,0 +1,33 @@
+
+$FreeBSD$
+
+--- RULES/i386-freebsd-cc.rul.orig	Sun Jul 21 02:46:53 2002
++++ RULES/i386-freebsd-cc.rul	Sun Jul 21 02:48:18 2002
+@@ -30,7 +30,7 @@
+ COPTS=
+ CWOPTS=		-Wall -Wtraditional \
+ 		-Wshadow -Wmissing-prototypes -Wstrict-prototypes
+-COPTOPT=	-O
++COPTOPT=
+ KDEFINES=	-DKERNEL -D_KERNEL
+ COPTDYN=	-fpic
+ COPTGPROF=	-pg
+@@ -57,14 +57,14 @@
+ 
+ FLOAT_OPTIONS=	
+ 
+-CC=		@echo "	==> COMPILING \"$@\""; gcc
+-LDCC=		@echo "	==> LINKING \"$@\""; gcc
+-DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; gcc
++CC=		@echo "	==> COMPILING \"$@\""; $(CCOM)
++LDCC=		@echo "	==> LINKING \"$@\""; $(CCOM)
++DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; $(CCOM)
+ RANLIB=		@echo "	==> RANDOMIZING ARCHIVE \"$@\""; ranlib
+ ARFLAGS=	cr
+ LORDER=		lorder
+ TSORT=		tsort
+ 
+ RMDEP=		:
+-MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
++MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); $(CCOM) -M
+ MKDEP_OUT=

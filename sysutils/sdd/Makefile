@@ -3,7 +3,6 @@
 # Whom:			Christian Weisgerber <naddy@mips.rhein-neckar.de>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	sdd
 PORTVERSION=	1.31
@@ -13,7 +12,7 @@ MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
 MAINTAINER=	naddy@FreeBSD.org
 
 USE_GMAKE=	yes
-MAKE_ENV=	MAKEPROG=gmake CCOM=${CC}
+MAKE_ENV=	MAKEPROG="${GMAKE}" CCOM="${CC}" COPTX="${CFLAGS}"
 MAN1=		sdd.1
 
 .include <bsd.port.pre.mk>
