@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uri
-PORTVERSION=	3.54
+PORTVERSION=	4.22
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www02.so-net.ne.jp/%7Egreentea/ruby/uri/
 PKGNAMEPREFIX=	ruby-
