@@ -3,7 +3,7 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.11 1997/05/31 00:52:03 jfitz Exp $
+# $Id: Makefile,v 1.12 1997/06/02 00:16:36 jfitz Exp $
 #
 
 PKGNAME=	quakeserver-1.0
@@ -43,6 +43,7 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/readme.port ${PREFIX}/quakeserver
 		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/qserver.sh ${PREFIX}/quakeserver
 		${INSTALL} -c -o nobody -g nobody -m 0500 ${WRKSRC}/stopserver.sh ${PREFIX}/quakeserver
+		@ ${RM} -f ${PREFIX}/quakeserver/quakeserver.in
 		/usr/bin/mkfifo ${PREFIX}/quakeserver/quakeserver.in
 		/usr/bin/touch ${PREFIX}/quakeserver/quakeserver.log
 		@ /bin/chmod 700 ${PREFIX}/quakeserver/quakeserver.in ${PREFIX}/quakeserver/quakeserver.log
