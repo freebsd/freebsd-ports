@@ -1,0 +1,20 @@
+--- src/dbase/irr_parser.y.orig	Sat Nov 27 18:23:53 1999
++++ src/dbase/irr_parser.y	Sat Nov 27 18:25:00 1999
+@@ -90,7 +90,7 @@
+ char *error_while_expecting = NULL;
+ 
+ static regexp_symbol *re_symbol;
+-static insert_or_update_filter_action(ListHead<Filter_Action> &l, 
++static void insert_or_update_filter_action(ListHead<Filter_Action> &l, 
+ 			    ActionNode *action, FilterNode *filter);
+ static ASPolicy *find_or_insert_peer_as(Pix peer);
+ static InterASPolicy *find_or_insert_peering(ASPolicy *p, Pix laddr, Pix raddr);
+@@ -635,7 +635,7 @@
+    return(0);
+ }
+ 
+-static insert_or_update_filter_action(ListHead<Filter_Action> &l, 
++static void insert_or_update_filter_action(ListHead<Filter_Action> &l, 
+ 				      ActionNode *action, FilterNode *filter) {
+    Filter_Action *fap, *fap2;
+ 

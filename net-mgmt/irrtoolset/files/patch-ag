@@ -1,0 +1,11 @@
+--- src/dbase/irr_lexer.y.orig	Sat Nov 27 18:22:22 1999
++++ src/dbase/irr_lexer.y	Sat Nov 27 18:22:44 1999
+@@ -73,7 +73,7 @@
+ 
+ #include <cctype>
+ 
+-static inline strtoupper(char *c) {
++static inline void strtoupper(char *c) {
+    for (; *c; c++)
+       if (isascii(*c) && isalpha(*c))
+ 	 *c = toupper(*c);
