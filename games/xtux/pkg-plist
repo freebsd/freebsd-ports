@@ -23,6 +23,7 @@ share/xtux/images/entities/duke_die.xpm
 share/xtux/images/entities/fireball.xpm
 share/xtux/images/entities/fireball_die.xpm
 share/xtux/images/entities/flamer.xpm
+share/xtux/images/entities/flamer_die.xpm
 share/xtux/images/entities/gnome.xpm
 share/xtux/images/entities/gnome_die.xpm
 share/xtux/images/entities/gnu.xpm
@@ -33,6 +34,7 @@ share/xtux/images/entities/kde_die.xpm
 share/xtux/images/entities/linus.xpm
 share/xtux/images/entities/linus_die.xpm
 share/xtux/images/entities/mscp.xpm
+share/xtux/images/entities/mscp_die.xpm
 share/xtux/images/entities/rms.xpm
 share/xtux/images/entities/rocket_small.xpm
 share/xtux/images/entities/shadowman.xpm
@@ -42,6 +44,7 @@ share/xtux/images/entities/suse_die.xpm
 share/xtux/images/entities/tie.xpm
 share/xtux/images/entities/tie_die.xpm
 share/xtux/images/entities/troll.xpm
+share/xtux/images/entities/troll_die.xpm
 share/xtux/images/entities/tux.xpm
 share/xtux/images/entities/tux_die.xpm
 share/xtux/images/entities/vi.xpm
@@ -155,9 +158,9 @@ share/xtux/images/tiles/border_ssw.xpm
 share/xtux/images/tiles/border_sw.xpm
 share/xtux/images/tiles/border_w.xpm
 share/xtux/images/tiles/border_w_bar.xpm
+share/xtux/images/tiles/fan.xpm
 share/xtux/images/tiles/box_grey_n.xpm
 share/xtux/images/tiles/box_grey_v.xpm
-share/xtux/images/tiles/fan.xpm
 share/xtux/images/tiles/brick.xpm
 share/xtux/images/tiles/button_power.xpm
 share/xtux/images/tiles/cabinet_double.xpm
@@ -200,10 +203,10 @@ share/xtux/images/tiles/cubicle_ne.xpm
 share/xtux/images/tiles/cubicle_nw.xpm
 share/xtux/images/tiles/cubicle_sw.xpm
 share/xtux/images/tiles/cubicle_w.xpm
-share/xtux/images/tiles/desk.xpm
 share/xtux/images/tiles/cupboard_electric.xpm
 share/xtux/images/tiles/cupboard_electric_n.xpm
 share/xtux/images/tiles/cupboard_electric_s.xpm
+share/xtux/images/tiles/desk.xpm
 share/xtux/images/tiles/desk_b.xpm
 share/xtux/images/tiles/desk_makeup.xpm
 share/xtux/images/tiles/desk_vip_b.xpm
@@ -235,8 +238,8 @@ share/xtux/images/tiles/fridge1_b.xpm
 share/xtux/images/tiles/future_knight_0.xpm
 share/xtux/images/tiles/future_knight_1.xpm
 share/xtux/images/tiles/future_knight_2.xpm
-share/xtux/images/tiles/future_knight_3.xpm
 share/xtux/images/tiles/gb_bott.xpm
+share/xtux/images/tiles/future_knight_3.xpm
 share/xtux/images/tiles/gb_top.xpm
 share/xtux/images/tiles/gpathh.xpm
 share/xtux/images/tiles/gpathv.xpm
@@ -257,8 +260,8 @@ share/xtux/images/tiles/h2o.xpm
 share/xtux/images/tiles/h2o1.xpm
 share/xtux/images/tiles/handle_grey.xpm
 share/xtux/images/tiles/hilight_n.xpm
-share/xtux/images/tiles/hilight_s.xpm
 share/xtux/images/tiles/ice.xpm
+share/xtux/images/tiles/hilight_s.xpm
 share/xtux/images/tiles/jack0.xpm
 share/xtux/images/tiles/jack1.xpm
 share/xtux/images/tiles/jack2.xpm
@@ -368,8 +371,8 @@ share/xtux/images/tiles/sd_menu_1.xpm
 share/xtux/images/tiles/sd_menu_2.xpm
 share/xtux/images/tiles/sd_titlebar_green.xpm
 share/xtux/images/tiles/sd_titlebar_green_e.xpm
-share/xtux/images/tiles/sd_titlebar_green_w.xpm
 share/xtux/images/tiles/sd_topicbsd.xpm
+share/xtux/images/tiles/sd_titlebar_green_w.xpm
 share/xtux/images/tiles/sd_topiccrypt.xpm
 share/xtux/images/tiles/sd_topicgames.xpm
 share/xtux/images/tiles/sd_topicgnu.xpm
@@ -409,6 +412,7 @@ share/xtux/images/tiles/streetlight_top_right.xpm
 share/xtux/images/tiles/table.xpm
 share/xtux/images/tiles/table1.xpm
 share/xtux/images/tiles/table_b.xpm
+share/xtux/images/tiles/time.xpm
 share/xtux/images/tiles/table_base.xpm
 share/xtux/images/tiles/table_grey_e.xpm
 share/xtux/images/tiles/table_grey_h.xpm
@@ -420,7 +424,6 @@ share/xtux/images/tiles/table_marble_e.xpm
 share/xtux/images/tiles/table_marble_h.xpm
 share/xtux/images/tiles/table_marble_w.xpm
 share/xtux/images/tiles/teleporter.xpm
-share/xtux/images/tiles/time.xpm
 share/xtux/images/tiles/title_emacs.xpm
 share/xtux/images/tiles/title_xtux.xpm
 share/xtux/images/tiles/title_xv.xpm
@@ -430,8 +433,8 @@ share/xtux/images/tiles/toilet_b.xpm
 share/xtux/images/tiles/towel.xpm
 share/xtux/images/tiles/trash.xpm
 share/xtux/images/tiles/tree_l.xpm
-share/xtux/images/tiles/tree_u.xpm
 share/xtux/images/tiles/tv.xpm
+share/xtux/images/tiles/tree_u.xpm
 share/xtux/images/tiles/tv_b.xpm
 share/xtux/images/tiles/wall_black_toplevel.xpm
 share/xtux/images/tiles/wall_grey_n_gap.xpm
