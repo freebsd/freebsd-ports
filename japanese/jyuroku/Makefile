@@ -12,7 +12,7 @@ MASTER_SITES=	http://member.nifty.ne.jp/seto-yoneji/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
+MAINTAINER=	yoichi@FreeBSD.org
 
 ALL_TARGET=
 USE_X_PREFIX=	yes

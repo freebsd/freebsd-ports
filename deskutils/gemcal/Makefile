@@ -11,7 +11,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.quickhack.net/mhc/arc/
 DISTNAME=	mhc-current-snap${PORTVERSION}
 
-MAINTAINER?=	yoichi@eken.phys.nagoya-u.ac.jp
+MAINTAINER?=	yoichi@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 
