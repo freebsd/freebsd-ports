@@ -62,8 +62,12 @@ share/doc/HTML/en/geheimnis/keymanagement.xpm
 share/doc/HTML/en/geheimnis/mainwindow.xpm
 share/doc/HTML/en/geheimnis/pgp5profile.xpm
 share/doc/HTML/en/geheimnis/profileedit.xpm
+share/icons/hi16-app-geheimnis.xpm
+share/icons/hi22-app-geheimnis.xpm
+share/icons/hi32-app-geheimnis.xpm
 @dirrm share/doc/HTML/en/geheimnis
 @dirrm share/apps/geheimnis/toolbar
 @dirrm share/apps/geheimnis/icons
 @dirrm share/apps/geheimnis/pics
 @dirrm share/apps/geheimnis
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
