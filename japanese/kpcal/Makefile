@@ -9,7 +9,8 @@ PORTNAME=	kpcal
 PORTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.eken.phys.nagoya-u.ac.jp/~yoichi/FreeBSD/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	yoichi
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 PATCH_SITES=	http://www.tamaru.kuee.kyoto-u.ac.jp/~tsuchiya/misc/kpcal/
