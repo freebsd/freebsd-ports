@@ -1,7 +1,8 @@
 bin/vlc
+bin/gvlc
 include/videolan/dvdcss.h
 lib/libdvdcss.a
-lib/libdvdcss.so.0.0.1
+lib/libdvdcss.so.0.0.2
 lib/videolan/vlc/dsp.so
 lib/videolan/vlc/gtk.so
 lib/videolan/vlc/sdl.so
