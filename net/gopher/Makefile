@@ -8,7 +8,8 @@
 PORTNAME=	gopher
 PORTVERSION=	3.0.5
 CATEGORIES=	net
-MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/
+MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/ \
+		http://dl.droso.net/ports/
 
 MAINTAINER=	erwin@lansing.dk
 
