@@ -26,6 +26,8 @@ share/gtkcomm/script/down.ascii
 share/gtkcomm/script/down.xdm
 share/gtkcomm/script/flash.scr
 share/gtkcomm/script/hitel-login.scr
+share/gtkcomm/script/kldp-login.scr
+share/gtkcomm/script/kldp-logout.scr
 share/gtkcomm/script/local-login.scr
 share/gtkcomm/script/local-logout.scr
 share/gtkcomm/script/monitor.scr
