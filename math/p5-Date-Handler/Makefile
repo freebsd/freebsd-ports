@@ -8,7 +8,7 @@
 # I putted it into 'math' and not 'devel' or other
 
 PORTNAME=	Date-Handler
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	math perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Date
