@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	micq
-PORTVERSION=	0.4.8.pl3
+PORTVERSION=	0.4.8.3
 PORTREVISION=	0
 CATEGORIES=	net
-MASTER_SITES=   ftp://micq.ukeer.de/pub/micq/source/
+MASTER_SITES=	http://micq.org/source/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/3/pl3/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		micq.1
 MAN5=		micqrc.5

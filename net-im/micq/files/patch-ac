@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/server.c	2002/04/05 09:53:54	1.1
++++ src/server.c	2002/04/05 09:54:20
+@@ -134,7 +134,7 @@
+ {
+     char buf[450];
+ 
+-    sprintf (buf, "%s\xFE%s", url, description);
++    snprintf (buf, sizeof(buf), "%s\xFE%s", url, description);
+     icq_sendmsg (sess, uin, buf, URL_MESS);
+ }
+ 

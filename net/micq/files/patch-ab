@@ -1,0 +1,17 @@
+
+$FreeBSD$
+
+--- src/mreadline.c.orig	Fri Feb  8 01:02:42 2002
++++ src/mreadline.c	Fri Apr  5 12:51:45 2002
+@@ -174,9 +174,9 @@
+     }
+ 
+     if ((uin = TabGetNext ()))
+-        sprintf (s, "%s %s/", msgcmd, ContactFindName (uin));
++        snprintf (s, sizeof(s), "%s %s/", msgcmd, ContactFindName (uin));
+     else
+-        sprintf (s, "%s ", msgcmd);
++        snprintf (s, sizeof(s), "%s ", msgcmd);
+ 
+     clen = cpos = strlen (s);
+     R_undraw ();
