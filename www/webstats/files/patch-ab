@@ -1,0 +1,8 @@
+--- configfiles/vhosts/analog.cfg	Mon Jul  2 16:29:54 2001
++++ configfiles/vhosts/analog.cfg	Sun Feb 16 18:09:00 2003
+@@ -14,4 +14,4 @@
+ 
+ #don't touch this line! it tells analog where the main configuration 
+ #file is located
+-CONFIGFILE /etc/webstats/default.cfg
++CONFIGFILE %%PREFIX%%/etc/webstats/default.cfg
