@@ -1,40 +1,41 @@
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-setup.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-setup.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/signature.el
-%%EMACS_LIBDIR%%/site-lisp/semi/signature.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/semi-def.el
-%%EMACS_LIBDIR%%/site-lisp/semi/semi-def.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-image.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-image.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-view.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-view.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-play.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-play.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-partial.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-partial.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-edit.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-edit.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/semi-setup.el
-%%EMACS_LIBDIR%%/site-lisp/semi/semi-setup.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/mail-mime-setup.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mail-mime-setup.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-pgp.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-pgp.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-mc.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-mc.elc
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-bbdb.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-w3.el
-%%EMACS_LIBDIR%%/site-lisp/semi/mime-w3.elc
-@dirrm %%EMACS_LIBDIR%%/site-lisp/semi
-%%WEMIDOCDIR%%/ChangeLog
-%%WEMIDOCDIR%%/NEWS
-%%WEMIDOCDIR%%/README.en
-%%WEMIDOCDIR%%/TODO
-%%WEMIDOCDIR%%/VERSION
-@dirrm %%WEMIDOCDIR%%
-@unexec install-info --delete %D/info/mime-ui-en.info %D/info/dir
-@unexec install-info --delete %D/info/mime-ui-ja.info %D/info/dir
-info/mime-ui-en.info
-info/mime-ui-ja.info
-@exec install-info %D/info/mime-ui-en.info %D/info/dir
-@exec install-info %D/info/mime-ui-ja.info %D/info/dir
+%%EMACS_PACKAGESDIR%%/lisp/semi/ChangeLog
+%%EMACS_PACKAGESDIR%%/lisp/semi/NEWS
+%%EMACS_PACKAGESDIR%%/lisp/semi/README.en
+%%EMACS_PACKAGESDIR%%/lisp/semi/TODO
+%%EMACS_PACKAGESDIR%%/lisp/semi/VERSION
+%%EMACS_PACKAGESDIR%%/lisp/semi/auto-autoloads.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/auto-autoloads.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/custom-load.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/custom-load.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/mail-mime-setup.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/mail-mime-setup.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-bbdb.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-edit.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-edit.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-image.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-image.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-mc.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-mc.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-partial.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-partial.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-pgp.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-pgp.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-play.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-play.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-setup.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-setup.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-view.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-view.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/mime-w3.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/semi-def.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/semi-def.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/semi-setup.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/semi-setup.elc
+%%EMACS_PACKAGESDIR%%/lisp/semi/signature.el
+%%EMACS_PACKAGESDIR%%/lisp/semi/signature.elc
+@dirrm %%EMACS_PACKAGESDIR%%/lisp/semi
+%%EMACS_PACKAGESDIR%%/info/mime-ui-en.info
+%%EMACS_PACKAGESDIR%%/info/mime-ui-ja.info
+%%EMACS_PACKAGESDIR%%/man/semi/mime-ui-en.texi
+%%EMACS_PACKAGESDIR%%/man/semi/mime-ui-ja.texi
+@dirrm %%EMACS_PACKAGESDIR%%/man/semi

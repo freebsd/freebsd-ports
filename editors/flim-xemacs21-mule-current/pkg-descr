@@ -8,6 +8,6 @@ FLIM, message representation or encoding emacs lisp library for xemacs-mule.
     - mailcap parser and utility
 
   FLIM is installed the following directory tree:
-	${PREFIX}/lib/xemacs-20.4/site-lisp/flim/	--- FLIM
+	${PREFIX}/lib/xemacs/xemacs-packages/lisp/flim/	--- FLIM
 
 --- Porting by shige <shige@FreeBSD.ORG>
