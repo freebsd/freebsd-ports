@@ -13,6 +13,8 @@ MASTER_SITES=	http://pficheux.free.fr/xtel/download/
 
 MAINTAINER=	thierry@thomas.as
 
+.include <bsd.port.pre.mk>
+
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
@@ -25,8 +27,6 @@ RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 
 USE_IMAKE=	yes
 USE_XPM=	yes
-
-.include <bsd.port.pre.mk>
 
 MAN1=	xtel.1 xteld.1
 
