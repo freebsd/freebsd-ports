@@ -272,6 +272,7 @@
     SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += nc
+    SUBDIR += nc6
     SUBDIR += ncplib
     SUBDIR += nemesis
     SUBDIR += net-http
