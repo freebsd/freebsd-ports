@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osg
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openscenegraph.org/download/snapshots/
 DISTNAME=	OpenSceneGraph-${PORTVERSION}
