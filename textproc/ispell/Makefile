@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
@@ -31,7 +31,7 @@ UNSQ?=		${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2$==}/bin/unsq.pl
 MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
 
-.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI))
+.if (!defined(ISPELL_IT) && !defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF) && !defined(ISPELL_FI))
 pre-everything::
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
@@ -39,14 +39,15 @@ pre-everything::
 	@${ECHO_MSG} '*  - Afrikaans                 ISPELL_AF=yes            *'
 	@${ECHO_MSG} '*  - British                   ISPELL_BRITISH=yes       *'
 	@${ECHO_MSG} '*    (replaces the American dictionary)                 *'
+	@${ECHO_MSG} '*  - Brasilian                 ISPELL_BR=yes            *'
 	@${ECHO_MSG} '*  - Dutch                     ISPELL_NL=yes            *'
 	@${ECHO_MSG} '*  - Danish                    ISPELL_DA=yes            *'
 	@${ECHO_MSG} '*  - Finnish                   ISPELL_FI=yes            *'
 	@${ECHO_MSG} '*    (or ISPELL_FI=[small|large] (medium is default)    *'
 	@${ECHO_MSG} '*  - French                    ISPELL_FR=yes            *'
-	@${ECHO_MSG} '*  - Brasilian                 ISPELL_BR=yes            *'
 	@${ECHO_MSG} '*  - German (old spelling)     ISPELL_DEALT=yes         *'
 	@${ECHO_MSG} '*  - German (new spelling)     ISPELL_DENEU=yes         *'
+	@${ECHO_MSG} '*  - Italian                   ISPELL_IT=yes            *'
 	@${ECHO_MSG} '*  - Swedish                   ISPELL_SE=yes            *'
 	@${ECHO_MSG} '*  - Norwegian                 ISPELL_NO=yes            *'
 	@${ECHO_MSG} '* Example: "make ISPELL_FR=yes ISPELL_SE=yes install"   *'
@@ -54,6 +55,11 @@ pre-everything::
 .else
 .if defined(ISPELL_BRITISH)
 SCRIPTS_ENV+=	ISPELL_BRITISH=${ISPELL_BRITISH}
+.endif
+.if defined(ISPELL_IT)
+ITDISTFILE=	ispell-it2001.tgz
+MASTER_SITES+=	http://members.xoom.virgilio.it/trasforma/ispell/
+EXTRA_DICT+=	${ITDISTFILE}
 .endif
 .if defined(ISPELL_FR)
 FRDISTFILE=	francais-IREQ-1.4.tar.gz
@@ -133,6 +139,9 @@ DISTFILES+=	${EXTRA_DICT}
 .endif
 
 post-extract:
+.if defined(ISPELL_IT)
+	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/${ITDISTFILE}
+.endif
 .if defined(ISPELL_FR)
 	@${MKDIR} ${WRKDIR}/francais-IREQ
 	@${TAR} -C ${WRKDIR}/francais-IREQ -zxf ${PORTSDIR}/distfiles/${FRDISTFILE}
@@ -153,6 +162,11 @@ post-extract:
 .endif
 
 post-patch:
+.if defined(ISPELL_IT)
+	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/IT.patch 2>/dev/null
+	@${PERL} -pi -e "s|%%BH%%|${BUILDHASH}|g;s|%%MH%%|${MUNCHLIST}|g" \
+		${WRKDIR}/ispell-it/Makefile
+.endif
 .if defined(ISPELL_FR)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/FR.patch 2>/dev/null
 .endif
@@ -185,6 +199,9 @@ post-configure:
 .endif
 
 post-build:
+.if defined(ISPELL_IT)
+	@cd ${WRKDIR}/ispell-it && ${MAKE} all
+.endif
 .if defined(ISPELL_DENEU)
 	@cd ${WRKDIR}/${DENEUDISTFILE:S=.tar.bz2==} && \
 		${MAKE} ${MAKEFLAGS} UNSQ=${UNSQ} BUILDHASH=${BUILDHASH} \
@@ -248,6 +265,9 @@ post-install:
 		${DATADIR}/english.dict
 .endif
 	@-${INSTALL_DATA} ${WRKDIR}/*/*.aff ${WRKDIR}/*/*.hash ${DATADIR}
+.if defined(ISPELL_IT)
+	@${CAT} ${MASTERDIR}/pkg-plist.it >> ${TMPPLIST}
+.endif
 .if defined(ISPELL_FR)
 	@${CAT} ${MASTERDIR}/pkg-plist.fr >> ${TMPPLIST}
 .endif
