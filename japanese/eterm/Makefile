@@ -3,7 +3,7 @@
 # Date created:        11th December 1998
 # Whom:                MANTANI Nobutaka <nobutaka@nobutaka.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/16 18:48:20 sada Exp $
 #
 
 DISTNAME=	Eterm-0.8.7
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/Eterm/ \
 
 MAINTAINER=	nobutaka@nobutaka.com
 
-LIB_DEPENDS=	Imlib.1:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.2:${PORTSDIR}/graphics/imlib
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
