@@ -1,0 +1,6 @@
+bin/gdkxft_sysinstall
+lib/libgdkxft.so
+share/doc/gdkxft/README
+share/gdkxft/gdkxft.conf
+@dirrm share/gdkxft
+@dirrm share/doc/gdkxft
