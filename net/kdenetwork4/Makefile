@@ -8,6 +8,7 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE_VERSION}
+PORTREVISION=	1
 CATEGORIES?=	net news kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -16,7 +17,7 @@ DIST_SUBDIR=	KDE
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT=	Network-related programs and modules for KDE
 
-LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
 
 CONFLICTS=	mimelib-1.1.*
 
