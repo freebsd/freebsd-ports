@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mtr
-PORTVERSION=	0.54
-PORTREVISION=	4
+PORTVERSION=	0.58
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.netsw.org/net/ip/audit/packets/ \
@@ -19,7 +18,7 @@ COMMENT=	Traceroute and ping in a single graphical network diagnostic tool
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
-WANT_IPV6=	yes
+#WANT_IPV6=	yes
 
 MAN8=		mtr.8
 PLIST_FILES=	sbin/mtr
