@@ -1,13 +1,10 @@
-
-$FreeBSD$
-
---- lib/Makefile.in.orig	Thu Jun 28 01:37:49 2001
-+++ lib/Makefile.in	Sun Mar 17 11:34:57 2002
+--- lib/Makefile.in.orig	Sat Jun 15 14:42:20 2002
++++ lib/Makefile.in	Sat Jun 15 14:42:27 2002
 @@ -39,7 +39,7 @@
  
  # Before making a release, change this according to the libtool documentation,
  # section "Library interface versions".
--LIBICONV_VERSION_INFO = 2:4:0
+-LIBICONV_VERSION_INFO = 3:0:1
 +LIBICONV_VERSION_INFO = 3
  
  # Needed by $(LIBTOOL).

@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- include/iconv.h.in.orig	Mon Jun 25 15:06:22 2001
-+++ include/iconv.h.in	Sun Mar 17 15:41:14 2002
-@@ -21,6 +21,10 @@
+--- include/iconv.h.in.orig	Thu May 23 07:48:42 2002
++++ include/iconv.h.in	Sat Jun 15 14:04:11 2002
+@@ -21,6 +21,11 @@
  #ifndef _LIBICONV_H
  #define _LIBICONV_H
  
@@ -11,10 +11,11 @@ $FreeBSD$
 +#define LIBICONV_PLUG
 +#endif
 +
- #define _LIBICONV_VERSION 0x0107    /* version number: (major<<8) + minor */
++
+ #define _LIBICONV_VERSION 0x0108    /* version number: (major<<8) + minor */
  extern int _libiconv_version;       /* Likewise */
  
-@@ -68,6 +72,8 @@
+@@ -68,6 +73,8 @@
     encoding `tocode'. */
  #ifndef LIBICONV_PLUG
  #define iconv_open libiconv_open
@@ -23,7 +24,7 @@ $FreeBSD$
  #endif
  extern iconv_t iconv_open (const char* tocode, const char* fromcode);
  
-@@ -78,17 +84,21 @@
+@@ -78,17 +85,21 @@
     Decrements `*outbytesleft' and increments `*outbuf' by the same amount. */
  #ifndef LIBICONV_PLUG
  #define iconv libiconv

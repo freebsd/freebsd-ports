@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Jun 15 14:25:55 2002
++++ src/Makefile.in	Sat Jun 15 14:26:05 2002
+@@ -77,7 +77,7 @@
+ 	if [ ! -d $(DESTDIR)$(exec_prefix) ] ; then mkdir $(DESTDIR)$(exec_prefix) ; fi
+ 	if [ ! -d $(DESTDIR)$(bindir) ] ; then mkdir $(DESTDIR)$(bindir) ; fi
+ 	case "@host_os@" in \
+-	  hpux*) $(CC) $(LDFLAGS) iconv.@OBJEXT@ -L$(libdir) -liconv @LIBINTL@ -o iconv;; \
++	  hpux*|freebsd*) $(CC) $(LDFLAGS) iconv.@OBJEXT@ -L$(libdir) -liconv @LIBINTL@ -o iconv;; \
+ 	  *) $(LIBTOOL_LINK) $(CC) $(LDFLAGS) iconv.@OBJEXT@ $(libdir)/libiconv.la @LTLIBINTL@ -o iconv;; \
+ 	esac
+ 	$(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) iconv $(DESTDIR)$(bindir)/iconv
