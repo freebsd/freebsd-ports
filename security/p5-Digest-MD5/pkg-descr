@@ -1,22 +1,14 @@
-Digest:: MD5, MD2, SHA1 and HMAC
----------------------------------
+The Digest::MD5 module allows you to use the RSA Data Security Inc.
+MD5 Message Digest algorithm from within Perl programs.  The
+algorithm takes as input a message of arbitrary length and produces
+as output a 128-bit "fingerprint" or "message digest" of the input.
 
-This is a Perl extension interface to the RSA Data Security Inc. MD5,
-MD2, as well as NIST SHA-1, Message Digest algorithms.  This package
-also provide modules which calculate HMAC digests.
+The Digest::MD5 module provide a procedural interface for simple
+use, as well as an object oriented interface that can handle messages
+of arbitrary length and which can read files directly.
 
-To build the extensions, unpack this distribution somewhere, create
-the Makefile by running 'perl Makefile.PL' and do a 'make', 'make
-test', and if successful 'make install'.
-
-You will need perl version 5.004 or better to install these modules.
 Further documentation is embedded in the individual modules.
 
-Copyright 1998-1999 Gisle Aas.
-Copyright 1998 Graham Barr.
-Copyright 1997 Uwe Hollerbach.
-Copyright 1995-1996 Neil Winton.
-Copyright 1990-1992 RSA Data Security, Inc.
-
-This library is free software; you can redistribute it and/or
-modify it under the same terms as Perl itself.
+WWW: http://search.cpan.org/search?dist=Digest-MD5
+- Pete
+petef@databits.net
