@@ -10,7 +10,6 @@ PORTVERSION=	1.4
 PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.dons.net.au/~darius/ \
-		http://www.csociety.org/~will/ \
 		http://soupnazi.org/FreeBSD/ports/distfiles/
 
 EXTRACT_SUFX=	.tgz
