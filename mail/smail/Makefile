@@ -3,7 +3,7 @@
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.5 1995/04/11 20:28:32 asami Exp $
+# $Id: Makefile,v 1.6 1995/04/23 12:47:29 asami Exp $
 #
 
 DISTNAME=	smail-3.1.29.1
@@ -16,11 +16,22 @@ DEPENDS=	${PORTSDIR}/shells/bash
 
 MAKE_FLAGS=	"SHELL=/usr/local/bin/bash"
 
-pre-install:
-	@mkdir -p ${PREFIX}/lib/smail
+post-install:
 	@cp ${WRKSRC}/samples/generic/config ${PREFIX}/lib/smail/config.sample
-	@cp ${WRKSRC}/samples/generic/directors ${PREFIX}/lib/smail/directorys.sample
+	@cp ${WRKSRC}/samples/generic/directors ${PREFIX}/lib/smail/directors.sample
 	@cp ${WRKSRC}/samples/generic/routers ${PREFIX}/lib/smail/routers.sample
 	@cp ${WRKSRC}/samples/generic/transports ${PREFIX}/lib/smail/transports.sample
+	gzip -9nf ${PREFIX}/man/man1/pathto.1 ${PREFIX}/man/man1/uuwho.1 \
+	${PREFIX}/man/man1/uupath.1 ${PREFIX}/man/man5/smail.5 \
+	${PREFIX}/man/man8/pathalias.8 ${PREFIX}/man/man8/mkdbm.8 \
+	${PREFIX}/man/man8/mkline.8 ${PREFIX}/man/man8/mksort.8 \
+	${PREFIX}/man/man8/mkaliases.8 ${PREFIX}/man/man8/smail.8 \
+	${PREFIX}/man/man8/mkpath.8 ${PREFIX}/man/man8/pathmerge.8 \
+	${PREFIX}/man/man8/checkerr.8 ${PREFIX}/man/man8/getmap.8 \
+	${PREFIX}/man/man8/mkhpath.8 ${PREFIX}/man/man8/savelog.8 \
+	${PREFIX}/man/man8/mkuuwho.8 ${PREFIX}/man/man8/mailq.8 \
+	${PREFIX}/man/man8/sendmail.8 ${PREFIX}/man/man8/runq.8 \
+	${PREFIX}/man/man8/rmail.8 ${PREFIX}/man/man8/rsmtp.8 \
+	${PREFIX}/man/man8/smtpd.8
 
 .include <bsd.port.mk>
