@@ -15,14 +15,9 @@ MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	Allows users to use MySQL databases for user authentication
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
-LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
-.else
-LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.endif
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/www/${AP_PORT}
+
+USE_MYSQL=	yes
 
 .include <bsd.port.pre.mk>
 
