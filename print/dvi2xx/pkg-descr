@@ -1,0 +1,22 @@
+Dvilj2 converts TeX-output .dvi files into HP PCL (i.e. HP Printer
+Control Language) commands suitable for printing on a HP LaserJet+, HP
+LaserJet II and fully compatible printers.
+
+Dvilj2p converts TeX-output .dvi files into HP PCL commands suitable
+for printing on a HP LaserJet IIp, HP LaserJet III or HP Laserjet 2000
+and fully compatible printers. This version uses a newer PCL command
+set and provides landscape printing.
+
+Dviljp and dvilj are similar to dvilj2p and dvilj2 but they support
+only 128 character fonts. They may be used for Laserjet clones which
+do not support 256 character fonts.
+
+Dvilj4 is for the HP LasterJet IV printer familiy and fully compatible
+clones. It implements a superset of the commands available for dvilj2p
+and prints with an resolution of 600 dpi. In addition it provides
+support for the printers builtin fonts using Karl Berry's coding
+scheme.
+
+Dvi3812 converts TeX-output .dvi files into PMP files, the native
+command language of the IBM 3812 page printer.
+

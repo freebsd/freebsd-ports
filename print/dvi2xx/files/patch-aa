@@ -1,0 +1,19 @@
+*** dvi2xx.c.orig	Mon Apr 25 06:50:00 1994
+--- dvi2xx.c	Wed Oct 12 16:43:09 1994
+***************
+*** 606,612 ****
+      extern noshare int errno;
+      extern noshare char *sys_errlist[];
+  #else
+!     extern  char *sys_errlist[];
+      extern  int     errno;
+  #endif
+  
+--- 606,612 ----
+      extern noshare int errno;
+      extern noshare char *sys_errlist[];
+  #else
+! /*    extern  char *sys_errlist[];*/
+      extern  int     errno;
+  #endif
+  
