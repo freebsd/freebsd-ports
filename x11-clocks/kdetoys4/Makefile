@@ -1,18 +1,28 @@
-# New ports collection makefile for:	kdetoys-i18n
-# Date created:		18 may 1999
-# Whom:			imura@cs.titech.ac.jp
+# New ports collection makefile for:	kdetoys2
+# Date created:				14 May 2000 02:45:53
+# Whom:					Will Andrews <will@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../../audio/kdemultimedia11-i18n
 PORTNAME=	kdetoys
+PORTVERSION=	1.90
 CATEGORIES=	x11-clocks kde
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	unstable/distribution/tar/src
 
-MAINTAINER=	imura@FreeBSD.org
+MAINTAINER=	will@FreeBSD.org
 
-BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2
 
-.include "${MASTERDIR}/Makefile"
+MOC?=		${X11BASE}/bin/moc2
+USE_QT2=	yes
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
+		--with-qt-includes=${X11BASE}/include/qt2 \
+		--with-qt-libraries=${X11BASE}/lib
+CONFIGURE_ENV+=	DO_NOT_COMPILE=mouse MOC="${MOC}"
+USE_GMAKE=	yes
 
-CONFIGURE_ENV+=	DO_NOT_COMPILE=mouse
+.include <bsd.port.mk>

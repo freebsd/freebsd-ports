@@ -1,1 +1,6 @@
-KDE provides an integrated X11 based environment, much like CDE.
+This port contains a set of KDE2-based applications for
+miscellaneous use, like clocks.
+
+WWW: http://www.kde.org/
+
+--Will <andrews@technologist.com>
