@@ -15,11 +15,12 @@ COMMENT=	Modular RfC1423 (identd) server sending encrypted audit tokens.
 
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
+USE_REINPLACE=	yes
 ALL_TARGET=	all
 INSTALL_TARGET=	install
 
 post-patch:
-	${PERL} -pi -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
