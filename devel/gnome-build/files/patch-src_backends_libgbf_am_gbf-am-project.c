@@ -5,7 +5,7 @@
  		switch (status) {
  		    case G_IO_STATUS_NORMAL:
 -			    DEBUG (g_message ("wrote %d bytes", bytes_written));
-+			    DEBUG (g_message ("wrote %uld bytes", bytes_written));
++			    DEBUG (g_message ("wrote %zu bytes", bytes_written));
  			    
  			    if (data->input.length < data->input.size) {
  				    /* don't remove the source */
