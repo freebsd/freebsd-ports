@@ -210,6 +210,8 @@ java/bin/i386/green_threads/.extract_args
 java/bin/i386/green_threads/jar
 java/bin/i386/green_threads/jre
 java/bin/i386/green_threads/jre_g
+java/bin/i386/green_threads/jre_X
+java/bin/i386/green_threads/jre_g_X
 java/bin/i386/green_threads/javaverify
 java/bin/i386/green_threads/javaverify_g
 java/bin/i386/green_threads/javac_g
@@ -218,6 +220,8 @@ java/bin/i386/green_threads/java
 java/bin/i386/green_threads/java_g
 java/bin/i386/green_threads/javah
 java/bin/i386/green_threads/javah_g
+java/bin/i386/green_threads/java_X
+java/bin/i386/green_threads/java_g_X
 java/include/java_lang_ThreadGroup.h
 java/include/java_lang_Thread.h
 java/include/java_lang_ClassLoader.h

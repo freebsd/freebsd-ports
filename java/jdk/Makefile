@@ -3,10 +3,10 @@
 # Date created:		Feb, 8, 1998
 # Whom:			Martin Cracauer <cracauer@cons.org>
 #
-# $Id: Makefile,v 1.8 1997/05/30 14:16:27 asami Exp $
+# $Id: Makefile,v 1.9 1998/02/11 08:58:53 cracauer Exp $
 #
 
-DISTNAME=	jdk1.1.5.V98-2-8
+DISTNAME=	jdk1.1.5.V98-2-25
 PKGNAME=	jdk-1.1.5
 WRKSRC=		${WRKDIR}/jdk1.1.5
 CATEGORIES=	lang devel
