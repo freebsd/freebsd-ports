@@ -1,6 +1,6 @@
---- dialects/freebsd/machine.h.orig	Mon Jul 29 11:32:54 1996
-+++ dialects/freebsd/machine.h	Tue Aug  6 18:55:07 1996
-@@ -274,7 +274,7 @@
+--- dialects/freebsd/machine.h.orig	Fri Jan 17 23:15:41 1997
++++ dialects/freebsd/machine.h	Tue Feb  4 17:23:58 1997
+@@ -291,7 +291,7 @@
   * (the one that its user logged on with) of the lsof process.
   */
  
