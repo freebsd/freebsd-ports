@@ -1,23 +1,21 @@
-*** Makefile.in.orig	Thu Jul 11 10:36:16 2002
---- Makefile.in	Thu Jul 11 10:36:38 2002
-*************** install-lib:: $(INSTALLLIBSUBDIRS:%=%/__
-*** 87,104 ****
-  install-dev:: $(INSTALLDEVSUBDIRS:%=%/__install__)
-  
-  install::
-- 	-$(LDCONFIG)
-- 	@if test -n "`LANG=C $(LDD) $(bindir)/wine|grep not.found`";	\
-- 	then								\
-- 		echo "*************************************************" ; \
-- 		echo "*************************************************" ; \
-- 		echo "The installed Wine libraries will not be found!" ; \
-- 		echo "You can either:" ; 				\
-- 		echo "   Add the line '$(libdir)' to /etc/ld.so.conf" ;	\
-- 		echo '   export LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:$(libdir)' ; \
-- 		echo "*************************************************" ; \
-- 		echo "*************************************************" ; \
-- 	fi
-  
-  .PHONY: install-lib install-dev
-  
---- 87,92 ----
+--- Makefile.in.orig	Fri Aug  2 21:34:21 2002
++++ Makefile.in	Mon Aug  5 13:10:16 2002
+@@ -91,18 +91,6 @@ install-lib:: $(INSTALLLIBSUBDIRS:%=%/__
+ install-dev:: $(INSTALLDEVSUBDIRS:%=%/__install__) install-aclocal
+ 
+ install:: install-aclocal
+-	-$(LDCONFIG)
+-	@if test -n "`LANG=C $(LDD) $(bindir)/wine|grep not.found`";	\
+-	then								\
+-		echo "*************************************************" ; \
+-		echo "*************************************************" ; \
+-		echo "The installed Wine libraries will not be found!" ; \
+-		echo "You can either:" ; 				\
+-		echo "   Add the line '$(libdir)' to /etc/ld.so.conf" ;	\
+-		echo '   export LD_LIBRARY_PATH=$$LD_LIBRARY_PATH:$(libdir)' ; \
+-		echo "*************************************************" ; \
+-		echo "*************************************************" ; \
+-	fi
+ 
+ uninstall::
+ 	$(RM) $(datadir)/aclocal/wine.m4
