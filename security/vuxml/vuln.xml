@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0d3a5148-f512-11d8-9837-000c41e2cdad">
+    <topic>SpamAssassin -- denial-of-service in tokenize_headers</topic>
+    <affects>
+      <package>
+	<name>p5-Mail-SpamAssassin</name>
+	<range><lt>2.64</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>According to the SpamAssassin 2.64 release announcement:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=spamassassin-announce&amp;m=109168121628767">
+          <p>Security fix prevents a denial of service attack open
+            to certain malformed messages; this DoS affects all
+            SpamAssassin 2.5x and 2.6x versions to date.</p>
+	</blockquote>
+	<p>The issue appears to be triggered by overly long message
+	  headers.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://marc.theaimsgroup.com/?l=spamassassin-announce&amp;m=109168121628767</url>
+      <url>http://search.cpan.org/src/JMASON/Mail-SpamAssassin-2.64/Changes</url>
+    </references>
+    <dates>
+      <discovery>2004-08-04</discovery>
+      <entry>2004-08-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ebffe27a-f48c-11d8-9837-000c41e2cdad">
     <topic>qt -- image loader vulnerabilities</topic>
     <affects>
