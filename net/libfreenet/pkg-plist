@@ -6,14 +6,16 @@ include/libfreenet/client.h
 include/libfreenet/client_util.h
 include/libfreenet/config.h
 include/libfreenet/endtoend.h
+include/libfreenet/message.h
 include/libfreenet/protocol.h
 include/libfreenet/rijndael-alg-fst.h
 include/libfreenet/rijndael-api-fst.h
+include/libfreenet/status.h
 include/libfreenet/stream.h
 include/libfreenet/twofish.h
 include/libfreenet/uri.h
 include/libfreenet/util.h
-@dirrm include/libfreenet
 lib/libfreenet.a
 lib/libfreenet.so
-lib/libfreenet.so.0
+lib/libfreenet.so.1
+@dirrm include/libfreenet
