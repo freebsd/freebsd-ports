@@ -3946,6 +3946,7 @@ mdk		ports/lang/mdk
 mdw		ports/www/mdw
 medusa		ports/sysutils/medusa
 mei		ports/sysutils/mei
+meld		ports/textproc/meld
 memcheck	ports/devel/memcheck
 memtest		ports/sysutils/memtest
 mencal		ports/deskutils/mencal
