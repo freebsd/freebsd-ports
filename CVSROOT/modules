@@ -7940,6 +7940,7 @@ vertex		ports/graphics/vertex
 vgb		ports/emulators/vgb
 vgb-bin		ports/emulators/vgb-bin
 vgba-bin	ports/emulators/vgba-bin
+vi-kde3-i18n	ports/vietnamese/kde3-i18n
 vi-libviet	ports/vietnamese/libviet
 vi-unicode-uhoai	ports/vietnamese/unicode-uhoai
 vi-vi2vn	ports/vietnamese/vi2vn
