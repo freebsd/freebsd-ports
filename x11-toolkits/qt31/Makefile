@@ -18,7 +18,7 @@ DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
 MAINTAINER?=	kde@FreeBSD.org
-COMMENT=	A C++ X GUI toolkit
+COMMENT?=	A C++ X GUI toolkit
 
 LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
