@@ -1,0 +1,21 @@
+bin/ctrlproxy
+include/ctrlproxy.h
+lib/ctrlproxy/libadmin.so
+lib/ctrlproxy/libantiflood.so
+lib/ctrlproxy/libauto-away.so
+lib/ctrlproxy/libctcp.so
+lib/ctrlproxy/liblog_custom.so
+lib/ctrlproxy/liblog_irssi.so
+lib/ctrlproxy/libnickserv.so
+lib/ctrlproxy/libnoticelog.so
+lib/ctrlproxy/librepl_memory.so
+lib/ctrlproxy/libsocket.so
+lib/ctrlproxy/libstats.so
+lib/ctrlproxy/libstrip.so
+@dirrm lib/ctrlproxy
+%%DOCSDIR%%/AUTHORS
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/ctrlproxy.html
+%%DOCSDIR%%/ctrlproxy.pdf
+@dirrm %%DOCSDIR%%

@@ -1,0 +1,8 @@
+CtrlProxy runs on a computer with a 24/7 internet connection and allows you to
+transparently connect to IRC from anywhere on the world to your nick. It
+connects to one or more IRC servers and then allows you to connect to it with
+any number of clients, providing access to these servers. This is very useful
+if you don't want to leave IRC but still want to be able to use it from home,
+school or work.
+
+WWW: http://jelmer.vernstok.nl/ctrlproxy/

@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Tue Oct 14 02:15:45 2003
++++ Makefile.in	Wed Oct 22 22:47:20 2003
+@@ -5,7 +5,7 @@
+ CFLAGS = @CFLAGS@ @PKG_CFLAGS@
+ INSTALL = @INSTALL@
+ bindir = @bindir@
+-docdir = @prefix@/doc/ctrlproxy
++docdir = @prefix@/share/doc/ctrlproxy
+ modulesdir = @libdir@/ctrlproxy
+ includedir = @includedir@
+ man1dir = @mandir@/man1
+@@ -23,7 +23,7 @@
+ 	$(CC) $(LIBS) -rdynamic -o $@ $(OBJS)
+ 
+ printstats: printstats.o
+-	$(CC) -ltdb -o $@ $<
++	$(CC) ${LDFLAGS} -ltdb -o $@ $<
+ 
+ %.o: %.c
+ 	$(CC) $(CFLAGS) -c $<
