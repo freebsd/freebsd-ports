@@ -81,6 +81,7 @@
     SUBDIR += jfc
     SUBDIR += jflex
     SUBDIR += jfreechart
+    SUBDIR += jgrapht
     SUBDIR += jikes
     SUBDIR += jlex
     SUBDIR += jlint
