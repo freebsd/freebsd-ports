@@ -1232,6 +1232,7 @@
     SUBDIR += py-parsing
     SUBDIR += py-period
     SUBDIR += py-plex
+    SUBDIR += py-pmock
     SUBDIR += py-pqueue
     SUBDIR += py-psyco
     SUBDIR += py-px
