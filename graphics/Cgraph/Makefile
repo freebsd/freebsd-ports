@@ -7,6 +7,7 @@
 
 PORTNAME=	Cgraph
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.tobez.org/download/port-mirrors/graphics/Cgraph/
 DISTNAME=	${PORTNAME}${PORTVERSION}
