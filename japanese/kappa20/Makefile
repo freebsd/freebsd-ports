@@ -7,6 +7,7 @@
 
 PORTNAME=	k20fonts
 PORTVERSION=	0.396
+PORTREVISION=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://khdd.net/20dot.fonts/:kappa20 \
 		http://downloads.sourceforge.jp/x-tt/5194/:ayu20
