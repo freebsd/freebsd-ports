@@ -28,11 +28,11 @@ share/locale/sv/LC_MESSAGES/dc_gui.mo
 @unexec %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
 @unexec %D/share/locale/de 2>/dev/null || true
 @dirrm share/gnome/pixmaps/dc_gui
-@dirrm share/gnome/help/dc_gui/nl/images
+@unexec rmdir %D/share/gnome/help/dc_gui/nl/images 2>/dev/null || true
 @dirrm share/gnome/help/dc_gui/nl
-@dirrm share/gnome/help/dc_gui/es/images
+@unexec rmdir %D/share/gnome/help/dc_gui/es/images 2>/dev/null || true
 @dirrm share/gnome/help/dc_gui/es
-@dirrm share/gnome/help/dc_gui/C/images
+@unexec rmdir %D/share/gnome/help/dc_gui/C/images 2>/dev/null || true
 @dirrm share/gnome/help/dc_gui/C
 @dirrm share/gnome/help/dc_gui
 %%PORTDOCS%%@dirrm share/doc/dctc-gui
