@@ -20,7 +20,7 @@ restart)
 	$0 stop
 	$0 start
 	;;
-status)
+status|stat)
 	ps -auxww | egrep '(conserver|console)' | egrep -v "($0|egrep)"
 	;;
 *)
