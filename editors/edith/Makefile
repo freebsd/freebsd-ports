@@ -15,6 +15,7 @@ DISTFILES=	edith1.55.common.tar.gz \
 MAINTAINER=	chris@unixpages.org
 
 USE_LINUX=	yes
+USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	"Redistribution not allowed"
