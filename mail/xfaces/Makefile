@@ -14,6 +14,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.indiana.edu/pub/faces/xfaces/ \
 		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
 		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTFILES=	${DISTNAME}.tar.Z xfaces-sounds.tar.gz
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE

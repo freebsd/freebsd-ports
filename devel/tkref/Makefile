@@ -10,6 +10,7 @@ PORTVERSION=	1.01
 CATEGORIES=	devel tk82
 MASTER_SITES=	http://gtcs.com/softdist/ \
 		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 
 MAINTAINER=	bgingery@gtcs.com
 

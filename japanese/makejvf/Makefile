@@ -11,6 +11,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.tooyoo.l.u-tokyo.ac.jp/pub/TeX/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/ \
 		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	makejvf-${PORTVERSION}-fkr
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		standard${EXTRACT_SUFX} nmin-ngoth${EXTRACT_SUFX} \
