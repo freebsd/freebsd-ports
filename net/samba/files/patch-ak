@@ -1,0 +1,10 @@
+--- include/proto.h.orig	Sun Feb 25 14:52:21 2001
++++ include/proto.h	Sun Feb 25 14:52:42 2001
+@@ -1023,6 +1023,7 @@
+ char *lp_serverstring(void);
+ char *lp_printcapname(void);
+ char *lp_lockdir(void);
++char *lp_piddir(void);
+ char *lp_utmpdir(void);
+ char *lp_wtmpdir(void);
+ char *lp_utmp_hostname(void);
