@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	evg
-PORTVERSION=	1.01
+PORTVERSION=	1.0.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.uni-klu.ac.at/pub/projects/evg/	\
 		http://www.chg.ru/~dima/
+DISTNAME=	evg-1.01
 
 MAINTAINER=	dima@Chg.RU
 
