@@ -82,6 +82,7 @@
     SUBDIR += flog
     SUBDIR += fontedit
     SUBDIR += fortunelock
+    SUBDIR += freesbie
     SUBDIR += fsck_ext2fs
     SUBDIR += ftrace
     SUBDIR += fvcool
