@@ -4497,6 +4497,7 @@ moxftp		ports/ftp/moxftp
 mozart		ports/lang/mozart
 mozilla		ports/www/mozilla
 mozilla-devel	ports/www/mozilla-devel
+mozilla-devel-gtk2	ports/www/mozilla-devel-gtk2
 mozilla-embedded ports/www/mozilla-embedded
 mozilla-embedded-devel ports/www/mozilla-embedded-devel
 mozilla-embedded-vendor ports/www/mozilla-embedded-vendor
