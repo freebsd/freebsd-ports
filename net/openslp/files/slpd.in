@@ -11,6 +11,9 @@
 # slpd_enable="YES"
 #
 
+slpd_enable=${slpd_enable-"NO"}
+slpd_flags=${slpd_flags-"-p /var/run/slpd.pid"}
+
 . %%RC_SUBR%%
 
 name=slpd
@@ -18,9 +21,6 @@ rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/slpd
 pidfile="/var/run/${name}.pid"
-
-[ -z "$slpd_enable" ]	&& slpd_enable="NO"
-[ -z "$slpd_flags" ]	&& slpd_flags="-p /var/run/slpd.pid"
 
 load_rc_config ${name}
 run_rc_command "$1"
