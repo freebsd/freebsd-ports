@@ -1,0 +1,92 @@
+--- configure.orig	Wed May 17 23:43:36 2000
++++ configure	Thu Jun 15 13:32:11 2000
+@@ -1536,6 +1536,7 @@
+ 
+ 
+ STRETCHER_SRC=
++STRETCHER_OBJ=
+ # Extract the first word of "nasm", so it can be a program name with args.
+ set dummy nasm; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+@@ -1568,6 +1569,7 @@
+ 
+ if test "$have_nasm" = "yes"; then
+  STRETCHER_SRC="stretch.h stretch.c stretchblt.asm"
++ STRETCHER_OBJ="stretch.lo stretchblt.o"
+  cat >> confdefs.h <<\EOF
+ #define AS_STRETCHER 1
+ EOF
+@@ -2979,14 +2981,14 @@
+ { echo "configure: error: *** POSIX thread support not installed ***" 1>&2; exit 1; }
+ fi
+ 
+-echo $ac_n "checking for pthread_attr_init in -lpthread""... $ac_c" 1>&6
+-echo "configure:2984: checking for pthread_attr_init in -lpthread" >&5
++echo $ac_n "checking for pthread_attr_init in -pthread""... $ac_c" 1>&6
++echo "configure:2984: checking for pthread_attr_init in -pthread" >&5
+ ac_lib_var=`echo pthread'_'pthread_attr_init | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2992 "configure"
+ #include "confdefs.h"
+@@ -3020,7 +3022,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -4060,16 +4062,16 @@
+ { echo "configure: error: **** Cannot find stat.h ****" 1>&2; exit 1; }
+ fi
+ 
+-ac_safe=`echo "sys/dir.h" | sed 'y%./+-%__p_%'`
+-echo $ac_n "checking for sys/dir.h""... $ac_c" 1>&6
+-echo "configure:4066: checking for sys/dir.h" >&5
++ac_safe=`echo "dirent.h" | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for dirent.h""... $ac_c" 1>&6
++echo "configure:4066: checking for dirent.h" >&5
+ if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   cat > conftest.$ac_ext <<EOF
+ #line 4071 "configure"
+ #include "confdefs.h"
+-#include <sys/dir.h>
++#include <dirent.h>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:4076: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+@@ -4091,7 +4093,7 @@
+   :
+ else
+   echo "$ac_t""no" 1>&6
+-{ echo "configure: error: **** Cannot find dir.h ****" 1>&2; exit 1; }
++{ echo "configure: error: **** Cannot find dirent.h ****" 1>&2; exit 1; }
+ fi
+ 
+ 
+@@ -6001,7 +6003,7 @@
+ 	< $srcdir/po/POTFILES.in > po/POTFILES
+   
+ 
+-CFLAGS="$CFLAGS `gtk-config --cflags`"
++CFLAGS="$CFLAGS `$GTK_CONFIG --cflags`"
+ 
+ 
+ CODEC_PLUGINS_DIR=Codecs
+@@ -6188,6 +6190,7 @@
+ s%@LIBTOOL@%$LIBTOOL%g
+ s%@have_nasm@%$have_nasm%g
+ s%@STRETCHER_SRC@%$STRETCHER_SRC%g
++s%@STRETCHER_OBJ@%$STRETCHER_OBJ%g
+ s%@CPP@%$CPP%g
+ s%@X_CFLAGS@%$X_CFLAGS%g
+ s%@X_PRE_LIBS@%$X_PRE_LIBS%g

@@ -1,0 +1,11 @@
+--- Output/SDL/sdl_renderer.h.orig	Thu Jun 15 11:33:24 2000
++++ Output/SDL/sdl_renderer.h	Thu Jun 15 11:33:35 2000
+@@ -25,7 +25,7 @@
+ #ifndef _SDL_RENDERER_H
+ #define _SDL_RENDERER_H
+ 
+-#include <SDL/SDL.h>
++#include <SDL.h>
+ 
+ #include <src/types.h>
+ #include <src/xmps_utils.h>

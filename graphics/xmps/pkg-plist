@@ -1,0 +1,32 @@
+bin/xmps
+lib/xmps/Codecs/libsmpeg.so
+lib/xmps/Renderers/libSDL.so
+lib/xmps/Renderers/libX11.a
+share/gnome/apps/Multimedia/XMPS.desktop
+share/locale/fi/LC_MESSAGES/xmps.mo
+share/locale/fr/LC_MESSAGES/xmps.mo
+share/locale/pl/LC_MESSAGES/xmps.mo
+share/locale/sv/LC_MESSAGES/xmps.mo
+share/gnome/pixmaps/xmps.png
+share/xmps/skins/DarkDepth/buttons.xpm
+share/xmps/skins/DarkDepth/config
+share/xmps/skins/DarkDepth/controls.xpm
+share/xmps/skins/DarkDepth/digits.xpm
+share/xmps/skins/DarkDepth/main.xpm
+share/xmps/skins/DarkDepth/playlist.xpm
+share/xmps/skins/DarkDepth/titlebar.xpm
+share/xmps/skins/default/buttons.xpm
+share/xmps/skins/default/config
+share/xmps/skins/default/controls.xpm
+share/xmps/skins/default/digits.xpm
+share/xmps/skins/default/main.xpm
+share/xmps/skins/default/playlist.xpm
+share/xmps/skins/default/titlebar.xpm
+share/xmps/xmps_intro.xpm
+@dirrm share/xmps/skins/default
+@dirrm share/xmps/skins/DarkDepth
+@dirrm share/xmps/skins
+@dirrm share/xmps
+@dirrm lib/xmps/Renderers
+@dirrm lib/xmps/Codecs
+@dirrm lib/xmps

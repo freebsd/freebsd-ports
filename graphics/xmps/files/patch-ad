@@ -1,0 +1,43 @@
+--- Output/X11/Makefile.in.orig	Wed May 17 23:45:19 2000
++++ Output/X11/Makefile.in	Thu Jun 15 13:26:45 2000
+@@ -100,6 +100,7 @@
+ SDL_CONFIG = @SDL_CONFIG@
+ SDL_LIBS = @SDL_LIBS@
+ STRETCHER_SRC = @STRETCHER_SRC@
++STRETCHER_OBJ = @STRETCHER_OBJ@
+ USE_INCLUDED_LIBINTL = @USE_INCLUDED_LIBINTL@
+ USE_NLS = @USE_NLS@
+ VERSION = @VERSION@
+@@ -115,12 +116,12 @@
+ libdir = $(PLUGINS_DIR)/$(RENDERER_PLUGINS_DIR)
+ 
+ libX11_la_LDFLAGS = -module -avoid-version
+-libX11_la_LIBADD = @GTK_LIBS@  -ldl -lXi -lXext -lX11 -lm
++libX11_la_LIBADD = @GTK_LIBS@  -lXi -lXext -lX11 -lm
+ 
+ libX11_la_SOURCES =  x11_renderer.c x11_renderer.h @STRETCHER_SRC@
+ 
+ 
+-INCLUDES = @GTK_CFLAGS@ 
++INCLUDES = @GTK_CFLAGS@ @SDL_CFLAGS@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 
+@@ -132,7 +133,7 @@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ libX11_la_DEPENDENCIES = 
+-libX11_la_OBJECTS =  x11_renderer.lo
++libX11_la_OBJECTS =  x11_renderer.lo @STRETCHER_OBJ@
+ CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+@@ -346,6 +347,8 @@
+ distclean-generic clean-generic maintainer-clean-generic clean \
+ mostlyclean distclean maintainer-clean
+ 
++stretchblt.o:
++	nasm -f elf stretchblt.asm
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
