@@ -1,0 +1,18 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Query/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/Advanced.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/Build.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/Parse.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/BuildAdvancedString.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/BuildSimpleString.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/SolveAdvancedString.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/Solve.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/ParseAdvanced.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/SolveSimpleString.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/Optimize.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/Simple.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/Query/ParseSimple.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/Query
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Text/Query
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text 2>/dev/null || true
