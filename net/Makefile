@@ -81,6 +81,7 @@
     SUBDIR += icmpquery
     SUBDIR += icqlib
     SUBDIR += icqnix
+    SUBDIR += ipfm
     SUBDIR += iplog
     SUBDIR += ipw
     SUBDIR += isc-dhcp2
