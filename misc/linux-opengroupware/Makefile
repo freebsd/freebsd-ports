@@ -8,8 +8,8 @@ PORTNAME=	opengroupware
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	misc www linux
-MASTER_SITES=	http://www.opengroupware.org/packages/linux-opengroupware/RPMS/:ogo \
-		http://www.opengroupware.org/packages/linux-opengroupware/NGOBJWEB/:ngo \
+MASTER_SITES=	http://download.opengroupware.org/packages/freebsd/linux-opengroupware/RPMS/:ogo \
+		http://download.opengroupware.org/packages/freebsd/linux-opengroupware/NGOBJWEB/:ngo \
 		${MASTER_SITE_REDHAT_LINUX}
 MASTER_SITE_SUBDIR= updates/8.0/en/os/${MACHINE_ARCH}
 PKGNAMEPREFIX=	linux-
@@ -20,8 +20,6 @@ EXTRACT_ONLY=	${NGOBJWEB_ADAPTOR}
 
 MAINTAINER=	frank@opengroupware.org
 COMMENT=	Groupware package including mail, calendar, palm sync and much more
-
-BROKEN=		Unfetchable
 
 INSTALL_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2 \
 		${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7 \
