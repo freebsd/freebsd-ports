@@ -7,6 +7,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.3.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wikipedia
@@ -15,7 +16,7 @@ MAINTAINER=	tux@pinguru.net
 COMMENT=	The wiki enginge used by Wikipedia
 
 NO_BUILD=	yes
-USE_PHP=	mysql
+USE_PHP=	mysql session zlib
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/data-dist/mediawiki
 
