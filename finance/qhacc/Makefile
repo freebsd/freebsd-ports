@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	2.9.4
+PORTVERSION=	2.9.6
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -104,7 +104,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-.for file in accounts memorized preferences transactions
+.for file in accounts accounttypes jobs journals namedtrans preferences \
+	splits transactions
 	${INSTALL_DATA} ${WRKSRC}/contrib/easysetup/${file} ${EXAMPLESDIR}
 .endfor
 .endif
