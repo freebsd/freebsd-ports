@@ -1,28 +1,30 @@
---- Makefile.in.orig	Mon Aug 25 09:39:58 2003
-+++ Makefile.in	Sat Oct 11 12:31:29 2003
-@@ -176,6 +176,7 @@
+--- Makefile.in.orig	Thu Oct  7 00:30:27 2004
++++ Makefile.in	Fri Nov  5 21:57:51 2004
+@@ -243,6 +243,7 @@
+ 	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
  uninstall-info-am:
- docDATA_INSTALL = $(INSTALL_DATA)
  install-docDATA: $(doc_DATA)
 +ifndef NOPORTDOCS
  	@$(NORMAL_INSTALL)
- 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
  	@list='$(doc_DATA)'; for p in $$list; do \
-@@ -184,6 +185,7 @@
- 	  echo " $(docDATA_INSTALL) $$d$$p $(DESTDIR)$(docdir)/$$f"; \
- 	  $(docDATA_INSTALL) $$d$$p $(DESTDIR)$(docdir)/$$f; \
+@@ -251,6 +252,7 @@
+ 	  echo " $(docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+ 	  $(docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
  	done
 +endif
  
  uninstall-docDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -399,7 +401,9 @@
+@@ -524,9 +526,11 @@
  all-am: Makefile $(DATA) all-local
  installdirs: installdirs-recursive
  installdirs-am:
 +ifndef NOPORTDOCS
- 	$(mkinstalldirs) $(DESTDIR)$(docdir)
+ 	for dir in "$(DESTDIR)$(docdir)"; do \
+ 	  test -z "$$dir" || $(mkdir_p) "$$dir"; \
+ 	done
 +endif
- 
  install: install-recursive
  install-exec: install-exec-recursive
+ install-data: install-data-recursive

@@ -37,6 +37,7 @@ bin/slrnpull
 %%NLS%%share/locale/nl/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/slrn.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/slrn.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/slrn.mo
 share/slrn/macros/color.sl
 share/slrn/macros/gsort.sl
