@@ -1,13 +1,12 @@
---- doc/Makefile.in.orig	Tue Oct 16 16:07:40 2001
-+++ doc/Makefile.in	Mon Oct 29 05:33:38 2001
-@@ -247,9 +247,11 @@
- mostlyclean distclean maintainer-clean
+--- doc/Makefile.in.orig	Sun Feb  3 22:53:46 2002
++++ doc/Makefile.in	Mon Feb 18 21:34:47 2002
+@@ -253,8 +253,10 @@
  
  
-+ifndef NOPORTDOCS
  install-data-local:
- 	${INSTALL} -d -o root -g 0 -m 0755 ${DOCPATH}
- 	${INSTALL} -o root -g 0 -m 0644 ${DOCS} ${DOCPATH}
++ifndef NOPORTDOCS
+ 	${INSTALL} -d -m 0755 ${DOCPATH}
+ 	${INSTALL} -m 0644 ${DOCS} ${DOCPATH}
 +endif
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
