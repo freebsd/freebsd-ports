@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	eukleides
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	math
 MASTER_SITES=	http://perso.wanadoo.fr/obrecht/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -28,7 +28,6 @@ MAN1=		eukleides.1
 MLINKS=		eukleides.1 euk2eps.1 \
 		eukleides.1 euk2edit.1
 INFO=		eukleides
-PLIST_FILES=	bin/euk2edit bin/euk2eps bin/eukleides
 
 post-patch:
 	${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -39,7 +38,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/euk2edit ${PREFIX}/bin/euk2edit
 	${INSTALL_SCRIPT} ${WRKSRC}/euk2eps ${PREFIX}/bin/euk2eps
 	${INSTALL_MAN} ${WRKSRC}/eukleides.man ${MANPREFIX}/man/man1/eukleides.1
-	${INSTALL_DATA} ${WRKSRC}/eukleides.info ${PREFIX}/info/eukleides.info
-	@install-info ${PREFIX}/info/eukleides.info ${PREFIX}/info/dir
+	${INSTALL_DATA} ${WRKSRC}/eukleides.info ${PREFIX}/${INFO_PATH}/eukleides.info
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.euk ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
