@@ -21,6 +21,7 @@ W3M_VERSION=	0.5.1
 
 CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-m17n-0.5.* w3m-img-0.5.* w3m-m17n-img-0.5.*
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gc=${LOCALBASE}
 USE_REINPLACE=	yes
 
 MAN1=		w3m.1 w3mman.1
