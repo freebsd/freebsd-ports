@@ -84,6 +84,14 @@ pre-fetch:
 	@${FALSE}
 .endif
 .endif
+.if exists(${X11BASE}/lib/libqt-mt.so.3)
+	@${ECHO}
+	@${ECHO} "                      NOTICE"
+	@${ECHO}
+	@${ECHO} "You have QT3 files installed!  Installing this port"
+	@${ECHO} "will result in conflicts between QT3 and QT2!"
+	@${FALSE}
+.endif
 
 qt-pre-configure:
 	@true
