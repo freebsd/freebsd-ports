@@ -3,7 +3,7 @@
 # Date created:         8 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.13 1998/06/27 05:19:29 asami Exp $
+# $Id: Makefile,v 1.14 1998/08/05 09:31:38 asami Exp $
 #
 
 PKGNAME=        ru-netscape-3.01
@@ -15,9 +15,9 @@ RUN_DEPENDS += ${X11BASE}/lib/X11/nls/ru_SU.KOI8-R:${PORTSDIR}/russian/X.languag
 RUN_DEPENDS += netscape:${PORTSDIR}/www/netscape3
 
 RESTRICTED=     "Includes a copyrighted file from Netscape"
-NO_EXTRACT=     YES
+EXTRACT_ONLY=   # empty
 NO_BUILD=       YES
-NO_WRKDIR=      YES
+NO_WRKSUBDIR=   YES
 USE_X_PREFIX=   YES
 
 APPDEF = ${X11BASE}/lib/X11/app-defaults
