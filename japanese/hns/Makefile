@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hns
-PORTVERSION=	2.00.4
+PORTVERSION=	2.10.0
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	http://www.h14m.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
@@ -16,7 +16,7 @@ MAINTAINER=	hnsmaster@h14m.org
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}-pl${PORTVERSION:E}
 
 do-install:
 	${MKDIR} ${PREFIX}/share/hns
