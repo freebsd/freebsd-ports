@@ -1,14 +1,17 @@
 # New ports collection makefile for:	ytalk
-# Version required:	3.1
+# Version required:	3.1.1
 # Date created:		18 March 1995
 # Whom:			dom@myrddin.demon.co.uk
 #
-# $Id: Makefile,v 1.7 1997/03/02 12:14:22 asami Exp $
+# $Id: Makefile,v 1.8 1998/11/25 22:48:06 billf Exp $
 #
 
-DISTNAME=	ytalk-3.1
+DISTNAME=	ytalk-3.1.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/ytalk/
+# This site is very slow, so we use sunsite instead.
+#MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/ytalk/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR= system/network/chat
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 
