@@ -13,10 +13,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 _DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}install
 DISTNAME=	${_DISTNAME:S/0pre/pre/}
 EXTRACT_SUFX=	.jar
-EXTRACT_ONLY=	
+EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Powerful programmer's text editor written in Java
+
+IGNORE=		"marked as IGNORE: editors/jedit is the latest version"
 
 USE_JAVA=	1.3+
 
