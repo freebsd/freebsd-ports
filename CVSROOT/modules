@@ -11550,6 +11550,7 @@ xnview		ports/graphics/xnview
 xoct		ports/games/xoct
 xoids		ports/games/xoids
 xoj		ports/games/xoj
+xom		ports/textproc/xom
 xonix		ports/games/xonix
 xopps		ports/deskutils/xopps
 xorg		ports/x11/xorg
