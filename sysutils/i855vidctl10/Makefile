@@ -1,0 +1,17 @@
+# New ports collection makefile for:	i855vidctl
+# Date created:				27 August 2004
+# Whom:					Oliver Bantke
+#
+# $FreeBSD$
+#
+
+PORTNAME=	i855vidctl
+PORTVERSION=	1.0
+CATEGORIES=	sysutils
+MASTER_SITES=	http://www.t-g-p.org/
+DISTNAME=	${PORTNAME}10
+
+MAINTAINER=	oliver.bantke@t-g-p.org
+COMMENT=	Reesolution Tool for Centrino based Laptops
+
+.include <bsd.port.mk>
