@@ -734,3 +734,4 @@ www/p5-HTML-MagicTemplate|textproc/p5-Text-MagicTemplate|2003-12-30|Integrated i
 games/steam|games/linux-steam|2004-01-02|Port renamed
 x11/gtk-smooth-engine|x11-toolkits/gtk-smooth-engine|2004-01-03|Re-import into correct category
 graphics/gthumb|graphics/gthumb2|2004-01-04|Old gtk1 version retired
+www/gnujsp||2004-01-05|Project abandoned, contain security compromise
