@@ -1994,6 +1994,7 @@ lib/modules/drivers/fbdev_drv.o
 lib/modules/drivers/glint_drv.o
 lib/modules/drivers/i740_drv.o
 lib/modules/drivers/mga_drv.o
+lib/modules/drivers/mouse_drv.o
 lib/modules/drivers/neomagic_drv.o
 lib/modules/drivers/nv_drv.o
 lib/modules/drivers/r128_drv.o
