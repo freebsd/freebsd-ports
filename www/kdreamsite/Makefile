@@ -8,7 +8,7 @@
 PORTNAME=	kdreamsite
 PORTVERSION=	0.2
 CATEGORIES=	www kde
-MASTER_SITES=	http://neptune.spaceports.com/%7Eatnet/files/
+MASTER_SITES=	ftp://ftp.kde.com/pub/Office/HTML/KDreamSite/
 
 MAINTAINER=	ports@FreeBSD.org
 
