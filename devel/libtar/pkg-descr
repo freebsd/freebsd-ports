@@ -1,0 +1,6 @@
+libtar is a C library for manipulating tar archives. It supports both
+the strict POSIX tar format and many of the commonly-used GNU
+extensions.
+
+- George Reid
+greid@ukug.uk.freebsd.org
