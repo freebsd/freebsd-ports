@@ -1,0 +1,39 @@
+$FreeBSD$
+
+--- gettext-tools/src/Makefile.in.orig	Thu May 22 09:41:24 2003
++++ gettext-tools/src/Makefile.in	Wed Jun 11 14:10:48 2003
+@@ -72,7 +72,7 @@
+   -DUSEJEXE=$(USEJEXE) \
+   -DGETTEXTJEXEDIR=\"$(pkglibdir)\" \
+   -DGETTEXTJAR=\"$(jardir)/gettext.jar\" \
+-  -DLIBDIR=\"$(libdir)\" \
++  -DLIBDIR=\"$(prefix)/libdata\" \
+   -DGETTEXTDATADIR=\"$(pkgdatadir)\" \
+   -DPROJECTSDIR=\"$(projectsdir)\" @DEFS@
+ 
+@@ -336,7 +336,7 @@
+ # use iconv().
+ libgettextsrc_la_LDFLAGS = \
+   -release @VERSION@ \
+-  ../lib/libgettextlib.la @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined
++  ../lib/libgettextlib.la @LTLIBINTL@ @LTLIBICONV@ -no-undefined
+ 
+ 
+ # How to build libgettextpo.la.
+@@ -1316,11 +1316,11 @@
+ # Special rules for installation of auxiliary programs.
+ 
+ install-exec-local:
+-	$(mkinstalldirs) $(DESTDIR)$(pkglibdir)
+-	$(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) hostname$(EXEEXT) $(DESTDIR)$(pkglibdir)/hostname$(EXEEXT)
+-	$(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) urlget$(EXEEXT) $(DESTDIR)$(pkglibdir)/urlget$(EXEEXT)
+-	$(INSTALL_SCRIPT) user-email $(DESTDIR)$(pkglibdir)/user-email
+-	$(INSTALL_SCRIPT) $(srcdir)/project-id $(DESTDIR)$(pkglibdir)/project-id
++	$(mkinstalldirs) $(DESTDIR)$(prefix)/libdata/$(PACKAGE)
++	$(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) hostname$(EXEEXT) $(DESTDIR)$(prefix)/libdata/$(PACKAGE)/hostname$(EXEEXT)
++	$(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) urlget$(EXEEXT) $(DESTDIR)$(prefix)/libdata/$(PACKAGE)/urlget$(EXEEXT)
++	$(INSTALL_SCRIPT) user-email $(DESTDIR)$(prefix)/libdata/$(PACKAGE)/user-email
++	$(INSTALL_SCRIPT) $(srcdir)/project-id $(DESTDIR)$(prefix)/libdata/$(PACKAGE)/project-id
+ 
+ installdirs-local:
+ 	$(mkinstalldirs) $(DESTDIR)$(pkglibdir)
