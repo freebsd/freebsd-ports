@@ -37,3 +37,5 @@ man/man1/edusers.1.gz
 man/man1/mailagent.1.gz
 man/man1/maildist.1.gz
 man/man1/maillist.1.gz
+@dirrm lib/mailagent/help
+@dirrm lib/mailagent
