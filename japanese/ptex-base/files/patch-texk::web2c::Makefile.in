@@ -1,0 +1,13 @@
+--- texk/web2c/Makefile.in.orig	Sun Feb  2 01:51:16 2003
++++ texk/web2c/Makefile.in	Wed Apr 16 18:46:31 2003
+@@ -137,8 +137,8 @@
+ @MFW@@MFN@mfn = mf-nowin
+ programs = bibtex ctangle cweave dvicopy dvitomp dvitype $(etex) gftodvi \
+ gftopk gftype $(mfn) $(mfw) mft mpost $(odvicopy) $(odvitype) $(omega) \
+-$(otangle) patgen $(pdftex) $(pdfetex) $(pdftosrc) pktogf pktype pltotf \
+-pooltype tangle $(tex) tftopl tie $(ttf2afm) vftovp vptovf weave
++$(otangle) patgen $(pdftex) $(pdfetex) $(pdftosrc) pktogf pktype \
++pooltype tangle $(tex) tie $(ttf2afm) vftovp vptovf weave
+ 
+ mpware = mpware/dmp mpware/makempx mpware/mpto mpware/newer
+ mpware_sources = mpware/dmp.c mpware/makempx.in mpware/mpto.c mpware/newer.c
