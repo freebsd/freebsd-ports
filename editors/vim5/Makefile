@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.36 1999/04/08 19:05:48 billf Exp $
+# $Id: Makefile,v 1.37 1999/04/22 00:16:55 scrappy Exp $
 #
 
 DISTNAME=	vim-5.3
@@ -22,10 +22,8 @@ MAINTAINER=     obrien@FreeBSD.org
 Y2K=		http://www.vim.org/y2k.html
 
 .if defined(PACKAGE_BUILDING)
-BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \
-		python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 USE_PERL5=	yes
 .endif
 
@@ -46,7 +44,7 @@ MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=athena" ${MAKE_FLAGS}
 .endif
 
 .if defined(PACKAGE_BUILDING)
-MAKE_FLAGS:=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tclinterp" ${MAKE_FLAGS}
+MAKE_FLAGS:=	CONF_OPT_PERL="--enable-perlinterp --enable-tclinterp" ${MAKE_FLAGS}
 .endif
 
 pre-build:
