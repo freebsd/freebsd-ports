@@ -7,7 +7,7 @@
 
 PORTNAME=	fbdesk
 PORTVERSION=	1.2.1
-CATEGORIES=	x11-wm
+CATEGORIES=	x11
 MASTER_SITES=	http://fluxbox.sourceforge.net/download/
 
 MAINTAINER=	hendrik@scholz.net
