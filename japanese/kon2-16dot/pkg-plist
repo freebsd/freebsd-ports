@@ -3,6 +3,5 @@ bin/kon
 etc/kon.cfg
 lib/fonts/7x14rk.bdf.gz
 lib/fonts/k14.bdf.gz
-man/ja/man1/kon.1.gz
 share/doc/kon2/README
 share/doc/kon2/README.FreeBSD

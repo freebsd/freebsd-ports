@@ -1,4 +1,3 @@
 bin/mendex
-man/ja/man1/mendex.1.gz
 share/doc/mendex/README
 @dirrm share/doc/mendex

@@ -18,7 +18,5 @@ lib/X11/tgif/3.0J0.12-p13/HISTORY.jp
 lib/X11/tgif/3.0J0.12-p13/HISTORY-3.0.jp
 lib/X11/tgif/3.0J0.12-p13/README.jp
 lib/X11/tgif/3.0J0.12-p13/README-3.0.jp
-man/man1/tgif.1.gz
-man/man1/prtgif.1.gz
 @dirrm lib/X11/tgif/3.0J0.12-p13
 @dirrm lib/X11/tgif
