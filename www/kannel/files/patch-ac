@@ -1,15 +1,24 @@
---- Makefile.in.old	Wed Jul 19 02:58:15 2000
-+++ Makefile.in	Wed Jul 19 02:58:29 2000
-@@ -90,7 +90,7 @@
+--- Makefile.in.orig	Thu Sep 14 17:35:51 2000
++++ Makefile.in	Wed Jan  3 20:19:31 2001
+@@ -87,7 +87,7 @@
  
  # Set this to something if you want all installed binaries to have a suffix.
- # Version number if common.
+ # Version number is common.
 -suffix = -$(VERSION)
 +# suffix = -$(VERSION)
  
  #
  # You probably don't need to touch anything below this, if you're just
-@@ -135,6 +135,8 @@
+@@ -104,7 +104,7 @@
+ 	wmlscript/wmlsdasm.c \
+ 	utils/seewbmp.c \
+ 	utils/run_kannel_box.c \
+-	$(STARTSTOPDAEMONSRC)
++
+ progobjs = $(progsrcs:.c=.o)
+ progs = $(progsrcs:.c=)
+ 
+@@ -137,6 +137,8 @@
  docs = $(docsrcs:.xml=.html) $(docsrcs:.xml=.ps)
  DOCSTARGET=@DOCSTARGET@
  
@@ -18,9 +27,9 @@
  figsrcs = $(shell echo doc/*/*.fig)
  figs = $(figsrcs:.fig=.png)  $(figsrcs:.fig=.ps)
  
-@@ -177,7 +179,9 @@
- no-docs:
- figs: $(figs)
+@@ -182,7 +184,9 @@
+ check: all
+ 	utils/run-checks $(checks)
  
 -install: all
 +install: install-main install-docs
@@ -29,7 +38,7 @@
  	$(INSTALL) -d $(bindir)
  	for prog in $(progs); do \
  		$(INSTALL) $$prog $(bindir)/`basename $$prog`$(suffix); \
-@@ -185,7 +189,7 @@
+@@ -190,7 +194,7 @@
  
  install-docs:
  	$(INSTALL) -d $(docdir)
@@ -37,4 +46,4 @@
 +	cp -r $(alldocs) $(docdir)
  
  clean:
- 	rm -f core $(progs) $(testprogs) $(objs) $(docs) *.a
+ 	rm -f core $(progs) $(testprogs) $(checkprogs) $(objs) $(docs) *.a

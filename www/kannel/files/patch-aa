@@ -1,21 +1,31 @@
---- configure.old	Wed Jul 19 02:40:15 2000
-+++ configure		Wed Jul 19 02:41:42 2000
-@@ -542,7 +542,7 @@
+--- configure.in.orig	Thu Dec  7 20:44:33 2000
++++ configure.in	Wed Jan  3 20:16:19 2001
+@@ -15,7 +15,7 @@
+ dnl Target installation directory for documentation
  
- 
- 
+ AC_SUBST(docdir)
 -docdir='${prefix}/doc/kannel'
 +docdir='${prefix}/share/doc/kannel'
  
+ dnl Checks for programs.
  
- # Extract the first word of "gcc", so it can be a program name with args.
-@@ -1380,6 +1380,9 @@
- EOF
-  ;; 
- 	*1.8.7) ;; 
-+	*1.8.8) ;; 
-+	*1.8.9) ;; 
-+	*1.8.??) ;; 
- 	*2.0.0) ;; 
- 	*) echo "Libxml is too old. You need at least 1.8.6." ; exit 1 ;; 
- 	esac
+@@ -26,10 +26,6 @@
+ AC_PROG_LEX
+ AC_PATH_PROG(PERL, perl)
+ 
+-AC_CHECK_FILE(/sbin/start-stop-daemon, , 
+-		STARTSTOPDAEMONSRC="utils/start-stop-daemon.c")
+-AC_SUBST(STARTSTOPDAEMONSRC)
+-
+ dnl Checks for libraries.
+ 
+ AC_CHECK_LIB(m, log)
+@@ -41,7 +37,7 @@
+ fi
+ 
+ AC_CHECK_LIB(z, gzopen)
+-AC_PATH_PROG(XML_CONFIG, xml-config, no)
++AC_PATH_PROG(XML_CONFIG, xml2-config, no)
+ if test "$XML_CONFIG" = "no"; then
+ 	echo "You MUST have the gnome-xml library installed"; exit 1
+ else
