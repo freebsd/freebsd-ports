@@ -3,7 +3,7 @@
 # Date created:				April 5th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1997/04/27 17:20:23 jfitz Exp $
+#   $Id: Makefile,v 1.4 1997/05/24 13:17:13 jfitz Exp $
 #
 
 DISTNAME=	Net-DNS-0.07
@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	Net
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/lib/perl5/IO/Socket.pm:${PORTSDIR}/net/p5-IO/
+BUILD_DEPENDS= 	perl5.004:${PORTSDIR}/lang/perl5
 RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
 
 MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
