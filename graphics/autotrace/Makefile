@@ -17,7 +17,7 @@ MAINTAINER=	kanou@mil.allnet.ne.jp
 LIB_DEPENDS=	jbig.1:${PORTSDIR}/graphics/jbigkit \
 		df.1:${PORTSDIR}/graphics/hdf \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype.6:${PORTSDIR}/print/freetype2 \
+		freetype.7:${PORTSDIR}/print/freetype2 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		bz2.1:${PORTSDIR}/archivers/bzip2 \
