@@ -7,6 +7,7 @@
 
 PORTNAME=	ana
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	http://ana.netart.eu.org/
 PKGNAMEPREFIX=	${TYPE}-
@@ -43,6 +44,8 @@ do-install:
 	cd ${WRKSRC} && ${FIND} gtk-2.0 -name '*[^~]' | \
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${THEME_DIR}
 	cd ${WRKSRC} && ${FIND} gtk  -name '*[^~]' | \
+		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${THEME_DIR}
+	cd ${WRKSRC} && ${FIND} icons -name '*[^~]' | \
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${THEME_DIR}
 	${INSTALL_DATA} ${WRKSRC}/index.theme ${THEME_DIR}
 .else
