@@ -13,7 +13,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Library for manipulating RDF files describing LADSPA plugins
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	raptor.1:${PORTSDIR}/textproc/raptor
+LIB_DEPENDS=	raptor.2:${PORTSDIR}/textproc/raptor
 
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
