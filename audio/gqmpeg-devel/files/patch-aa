@@ -1,10 +1,6 @@
 --- Makefile.orig	Sat Nov 14 04:59:10 1998
-+++ Makefile	Sat Nov 14 23:07:07 1998
-@@ -1,14 +1,14 @@
- # uncomment this if you are using > GTK 1.1.3
- #  (including any gtk after the 1.1.3 _release_)
--#DEFS = -DHAVE_GTK_1_1_4=1
-+DEFS = -DHAVE_GTK_1_1_4=1
++++ Makefile	Wed Nov 18 22:53:41 1998
+@@ -4,11 +4,11 @@
  
  PREFIX=/usr/local
  
