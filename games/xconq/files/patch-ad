@@ -1,19 +1,29 @@
-*** Makefile.in.orig	Sat Feb 21 19:26:25 1998
---- Makefile.in	Sat Jul  4 16:53:47 1998
-***************
-*** 44,50 ****
-  
-  CC = cc
-  
-! CFLAGS = -g
-  
-  RANLIB = ranlib
-  
---- 44,50 ----
-  
-  CC = cc
-  
-! CFLAGS ?= 
-  
-  RANLIB = ranlib
-  
+--- Makefile.in.orig	Sat Feb 21 16:26:25 1998
++++ Makefile.in	Sun Apr 30 18:36:42 2000
+@@ -25,12 +25,12 @@
+ 
+ srcdir = .
+ 
+-GAMEUID = games
+-GAMEGRP = bin
++GAMEUID = root
++GAMEGRP = games
+ 
+-GAMEPERM = 04755
+-DIRPERM  = 0755
+-FILEPERM = 0644
++GAMEPERM = 02755
++DIRPERM  = 0775
++FILEPERM = 0664
+ 
+ SHELL = /bin/sh
+ 
+@@ -44,7 +44,7 @@
+ 
+ CC = cc
+ 
+-CFLAGS = -g
++CFLAGS ?= -O
+ 
+ RANLIB = ranlib
+ 

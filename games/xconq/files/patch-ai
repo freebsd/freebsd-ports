@@ -1,0 +1,16 @@
+--- x11/Makefile.in.orig	Sun Apr 30 19:49:50 2000
++++ x11/Makefile.in	Sun Apr 30 19:50:36 2000
+@@ -25,10 +25,10 @@
+ 
+ krnsrcdir = $(srcdir)/../kernel
+ 
+-GAMEUID = games
+-GAMEGRP = bin
++GAMEUID = root
++GAMEGRP = games
+ 
+-GAMEPERM = 04755
++GAMEPERM = 02755
+ DIRPERM  = 0755
+ FILEPERM = 0644
+ 

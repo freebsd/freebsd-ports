@@ -1,0 +1,13 @@
+--- x11/xconq.c.orig	Sun Apr 30 20:34:14 2000
++++ x11/xconq.c	Sun Apr 30 20:34:50 2000
+@@ -119,8 +119,8 @@
+     extern uid_t games_uid;
+ 
+     /* Shift to being the user that started the game. */
+-    games_uid = geteuid();
+-    setuid(getuid());
++    games_uid = getegid();
++    setgid(getgid());
+     init_library_path(NULL);
+     printf("\n              Welcome to X11 Xconq version %s\n\n",
+ 	   version_string());
