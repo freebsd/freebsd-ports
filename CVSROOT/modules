@@ -3639,6 +3639,7 @@ libdnet		ports/net/libdnet
 libdockapp	ports/x11-wm/libdockapp
 libdsp		ports/devel/libdsp
 libdv		ports/graphics/libdv
+libdvbpsi	ports/graphics/libdvbpsi
 libdvdcss	ports/graphics/libdvdcss
 libdvdnav	ports/graphics/libdvdnav
 libdvdread	ports/graphics/libdvdread
