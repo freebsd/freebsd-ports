@@ -1,19 +1,11 @@
---- ./src/utmp.c.org	Thu Jan 23 10:46:02 1997
-+++ ./src/utmp.c	Thu Apr 24 15:20:49 1997
-@@ -80,6 +80,8 @@
- #include <stdio.h>
- #include <string.h>
+--- src/command.c.orig	Sun Mar  8 09:48:42 1998
++++ src/command.c	Sun Mar  8 09:49:08 1998
+@@ -505,7 +505,7 @@
+     ttydev = tty_name;
  
-+#include <sys/types.h>
-+
- #ifdef HAVE_UTMPX_H
- # include <utmpx.h>
- # define USE_SYSV_UTMP
-@@ -90,7 +92,6 @@
- # endif
- #endif
- 
--#include <sys/types.h>
- #include <sys/stat.h>
- 
- #ifdef TIME_WITH_SYS_TIME
+ #define	PTYCHAR1	"pqrstuvwxyz"
+-#define	PTYCHAR2	"0123456789abcdef"
++#define	PTYCHAR2	"0123456789abcdefghijklmnopqrstuv"
+     for (c1 = PTYCHAR1; *c1; c1++) {
+ 	ptydev[len - 2] = ttydev[len - 2] = *c1;
+ 	for (c2 = PTYCHAR2; *c2; c2++) {
