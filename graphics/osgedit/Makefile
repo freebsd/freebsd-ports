@@ -30,4 +30,11 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 
+post-extract:
+# This port has bogus config.{sub,guess} symlinks that point to where these
+# files presumably live on the author's machine.  It causes the automatic
+# replacement code to fail unless we replace them with files.
+	@${RM} ${WRKSRC}/config.guess ${WRKSRC}/config.sub; \
+	${TOUCH} ${WRKSRC}/config.guess ${WRKSRC}/config.sub
+
 .include <bsd.port.mk>
