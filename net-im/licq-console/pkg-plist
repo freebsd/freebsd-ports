@@ -1,2 +1,3 @@
 lib/licq/licq_console.la
 lib/licq/licq_console.so
+@dirrm lib/licq
