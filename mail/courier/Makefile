@@ -16,6 +16,8 @@ MAINTAINER=	yds@CoolRat.org
 RUN_DEPENDS=	${LOCALBASE}/share/sysconftool/sysconftool:${PORTSDIR}/devel/sysconftool \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/CIDR.pm:${PORTSDIR}/net/p5-Net-CIDR
 
+NO_PACKAGE=	"Goes into an infinite loop during the build"
+
 #
 # User-serviceable variables
 #
