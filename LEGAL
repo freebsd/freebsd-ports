@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.61 1997/02/22 13:24:57 andreas Exp $
+# $Id: LEGAL,v 1.62 1997/02/22 14:59:42 andreas Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -82,6 +82,7 @@ tkman-1.7.3.tar.Z	ports/x11/tkman		Restrictive copyright
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 vfrb101e.taz		ports/security/vscan	Commercial software
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
+xgs-*			ports/emulators/xgs	Contains ROM (C) by Apple
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
 xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
 xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
