@@ -170,6 +170,7 @@
     SUBDIR += ruby-erb
     SUBDIR += ruby-gdome
     SUBDIR += ruby-html-parser
+    SUBDIR += ruby-htmlcompact
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-mwdom
     SUBDIR += ruby-nqxml
