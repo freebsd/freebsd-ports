@@ -15,8 +15,11 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	abgoeree@wish.net
 COMMENT=	A database library for PHP4
 
+.if defined(WITH_APACHE2)
+RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
+.else
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-
+.endif
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 
