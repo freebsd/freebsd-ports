@@ -1,0 +1,52 @@
+$OpenBSD: patch-bing_c,v 1.1 2002/09/17 09:06:23 pvalchev Exp $
+--- bing.c.orig	Thu Jul 20 17:45:32 1995
++++ bing.c	Tue Sep 17 02:56:49 2002
+@@ -1228,17 +1228,30 @@ int main(argc, argv)
+ 	struct hoststats *hs1, *hs2;
+ 	int ntrans, nloops, bits;
+ 	int i;
+-	int ch, hold, recv_packlen, preload;
++	int ch, hold = 1, recv_packlen, preload;
+ 	u_char *datap, *recv_packet;
+ 	char *target1, *target2, *malloc();
+ 	u_char ttl, loop;
+ #ifdef IP_OPTIONS
+ 	char rspace[3 + 4 * NROUTES + 1];	/* record route space */
+ #endif
+-
+ 	hs1 = &hoststats1;
+ 	hs2 = &hoststats2;
+ 
++	if (!(proto = getprotobyname("icmp"))) {
++		(void)fprintf(stderr, "bing: unknown protocol icmp.\n");
++		exit(1);
++	}
++	if ((s = socket(AF_INET, SOCK_RAW, proto->p_proto)) < 0) {
++		perror("bing: socket");
++		exit(1);
++	}
++	/* Revoke privileges */
++	if (seteuid(getuid()) == -1 || setuid(getuid()) == -1) {
++		err(1, "unable to drop permissions");
++		exit(1);
++	}
++
+ 	preload = 0;
+ 	datap = &outpack[8 + sizeof(struct timeval)];
+ 	while ((ch = getopt(argc, argv, "I:LRc:dDe:fh:i:l:nPp:rS:s:t:vVwz")) != EOF)
+@@ -1395,15 +1408,6 @@ int main(argc, argv)
+ 
+ 	ident = getpid() & 0xFFFF;
+ 
+-	if (!(proto = getprotobyname("icmp"))) {
+-		(void)fprintf(stderr, "bing: unknown protocol icmp.\n");
+-		exit(1);
+-	}
+-	if ((s = socket(AF_INET, SOCK_RAW, proto->p_proto)) < 0) {
+-		perror("bing: socket");
+-		exit(1);
+-	}
+-	hold = 1;
+ 	if (options & F_SO_DEBUG)
+ 		(void)setsockopt(s, SOL_SOCKET, SO_DEBUG, (char *)&hold,
+ 		    sizeof(hold));

@@ -7,6 +7,7 @@
 
 PORTNAME=	bing
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://netsw.org/net/ip/audit/load/bing/
 
