@@ -4904,6 +4904,7 @@ port_texinfo	ports/print/texinfo
 port_tn3270	ports/net/tn3270
 port_traceroute	ports/net/traceroute
 port_truncate	ports/sysutils/truncate
+port_units	ports/math/units
 portal		src/sys/miscfs/portal
 portcheckout	ports/devel/portcheckout
 porteasy	ports/misc/porteasy
