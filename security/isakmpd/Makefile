@@ -24,11 +24,17 @@ BROKEN=		"requires IPsec support"
 .endif
 
 USE_OPENSSL=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/isakmpd
 MAKE_ENV+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
 MAN5=		isakmpd.conf.5 isakmpd.policy.5
 MAN8=		isakmpd.8
 MANCOMPRESSED=	yes
+
+post-patch:
+	@(cd ${WRKSRC}; ${REINPLACE_CMD} -e "s!/etc/!${PREFIX}/etc/!" \
+		conf.h ike_auth.c isakmpd.8 isakmpd.conf.5 \
+		isakmpd.policy.5 policy.h)
 
 .include <bsd.port.mk>
