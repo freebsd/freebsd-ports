@@ -24,12 +24,14 @@ DIR=		${PREFIX}/share/java
 
 do-build:
 	${SED} -e s,%%PREFIX%%,${PREFIX},g ${FILESDIR}/xt-xml4j.sh > ${WRKSRC}/xt-xml4j
+	${SED} -e s,%%PREFIX%%,${PREFIX},g ${FILESDIR}/xt-xp.sh > ${WRKSRC}/xt-xp
 
 do-install:
 	${MKDIR} ${DIR}/classes ${DIR}/xt
 	(cd ${WRKSRC};\
 	 ${INSTALL_DATA} xt.jar sax.jar ${DIR}/classes; \
 	 ${CP} -R copying.txt demo xt.htm ${DIR}/xt; \
-	 ${INSTALL_SCRIPT} ${WRKSRC}/xt-xml4j ${PREFIX}/bin)
+	 ${INSTALL_SCRIPT} ${WRKSRC}/xt-xml4j ${PREFIX}/bin; \
+	 ${INSTALL_SCRIPT} ${WRKSRC}/xt-xp ${PREFIX}/bin)
 
 .include <bsd.port.mk>
