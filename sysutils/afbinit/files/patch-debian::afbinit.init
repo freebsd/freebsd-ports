@@ -1,0 +1,44 @@
+--- debian/afbinit.init.orig	Mon Sep 15 17:41:40 2003
++++ debian/afbinit.init	Mon Sep 15 18:08:15 2003
+@@ -1,35 +1,28 @@
+ #!/bin/sh
+ 
+-PATH=/sbin:/bin:/usr/sbin:/usr/bin
+-set -e
+-
+ # This only applies to UltraSPARC's
+-[ `uname -m` = "sparc64" ] || exit 0
++[ `/usr/bin/uname -m` = "sparc64" ] || exit 0
+ 
+ # The microcode loader binary and the microcode itself must exist.
+ if [ ! -x /usr/sbin/afbinit -o ! -f /usr/lib/afb.ucode ]; then
+ 	exit
+ fi
+ 
+-# Need a better way to test this
+-[ `dmesg | grep -c "Elite 3D"` -ne 0 ] || exit
+-
+ case "$1" in
+   start)
+ 	# Make FB device list.
+-	afb_devs=`/bin/dmesg | /bin/egrep -i "Elite 3D" | /bin/sed 's/\:.*//'`
++	afb_devs=`/bin/ls /dev/fb[0-7]`
+ 
+ 	# Load microcode onto each card.
+ 	for AFB in ${afb_devs}; do
+-		echo -n "${AFB}: Loading Elite3D microcode... "
+-		/usr/sbin/afbinit /dev/${AFB} /usr/lib/afb.ucode
+-		echo "done."
++		/usr/sbin/afbinit ${AFB} /usr/lib/afb.ucode > /dev/null
+ 	done
++	echo -n ' afbinit'
+ 	;;
+-  stop|restart|force-reload) # Nothing
++  stop|restart) # Nothing
+ 	;;
+   *)
+-	echo "Usage: $0 start" >&2
++	echo "Usage: `basename $0` start" >&2
+ 	exit 1
+ 	;;
+ esac
