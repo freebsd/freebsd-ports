@@ -32,9 +32,13 @@ SEMI_LISPDIR=			${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 SEMI_VERSION_SPECIFIC_LISPDIR=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 .if (${PORTCLASS} == "master")
-# emacs port setup
-EMACS_PORT_NAME=	emacs20
+EMACS_PORT_NAME=	emacs21
+DEPPORT_SUFFIX=		
+.else
+DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
 .endif
+
+EMACS_MASTERDIR_PKGFILES=YES
 
 # target name for make build
 ALL_TARGET?=	elc
@@ -48,8 +52,8 @@ MAKE_ARGS+=	PREFIX="${LOCALBASE}" \
 
 .if defined(EMACS_PORT_NAME)
 # depends on flim
-BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${FLIM_TRUNK:S/.//}-${EMACS_PORT_NAME}
-RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${FLIM_TRUNK:S/.//}-${EMACS_PORT_NAME}
+BUILD_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX}
+RUN_DEPENDS+=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX}
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad port."

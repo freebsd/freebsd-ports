@@ -10,7 +10,7 @@ MAINTAINER=	shige@FreeBSD.org
 # This is a slave port.
 PORTCLASS=	slave
 
-MASTERDIR=	${.CURDIR}/../../editors/semi-emacs
+MASTERDIR=	${.CURDIR}/../../editors/semi
 
 # emacs port setup
 EMACS_PORT_NAME=	xemacs21-mule
@@ -36,15 +36,12 @@ BUILD_INFO_BY_EMACS=	YES
 # texinfo packages
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_PACKAGESDIR}/../xemacs-packages/lisp/texinfo/texinfmt.el:${PORTSDIR}/editors/xemacs-packages
 
-# use pkg-* files in ${.CURDIR}
-PKGDIR=		${.CURDIR}
-
 # package info manifest
 MANIFEST=	MANIFEST.semi
 
 # xemacs package
 XEMACS_PKGNAME=	semi
-XEMACS_PKGVER=	1.13
+XEMACS_PKGVER=	1.14
 #XEMACS_PKGVER!=	grep version ${.CURDIR}/../semi-emacs/files/_pkg.el | \
 #		sed 's/.*:version \([0-9.]*\).*/\1/'
 XEMACS_PKG_TARBALL=	${XEMACS_PKGNAME}-${XEMACS_PKGVER}-pkg.tar.gz
