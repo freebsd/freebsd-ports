@@ -3,7 +3,7 @@
 # Date created:		19 April 1999
 # Whom:			Dima Sivachenko	<dima@chg.ru>
 #
-# $Id $
+# $FreeBSD$
 #
 
 DISTNAME=	evg-1.01

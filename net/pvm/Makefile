@@ -3,7 +3,7 @@
 # Date created:				11 March 1999
 # Whom:					Dima Sivachenko <dima@chg.ru>
 #
-# $Id $
+# $FreeBSD$
 #
 
 DISTNAME=	pvm3.4.beta7
