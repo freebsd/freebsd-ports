@@ -11,3 +11,7 @@ The current version 1.43 of Moscow ML
     * includes several new libraries and a new type `char'
 
 THE MOSCOW ML HOME PAGE is at  http://www.dina.kvl.dk/~sestoft/mosml.html
+
+This is a good version of the ml language if you have limited space.
+If you have sufficient disk space to hold it all, the new smlnj port
+is much more complete and is a better choice.
