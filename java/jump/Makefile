@@ -7,20 +7,24 @@
 
 PORTNAME=	jump
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	java math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jump-math
-DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
+
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 
 MAINTAINER=	znerd@FreeBSD.org
-
-NO_BUILD=	yes
 
 USE_JAVA=	1.2+
 
 NO_WRKSUBDIR=	YES
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/share/java/${PORTNAME}-${PORTVERSION}
+ANT?=		${LOCALBASE}/bin/ant
+
+do-build:
+	@cd ${WRKDIR} && ${ANT}
 
 do-install:
 	@${ECHO} -n ">> Creating directory ${TARGET_DIR}..."
