@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ggv
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/ggv
@@ -17,10 +17,12 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
-USE_LIBTOOL=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \

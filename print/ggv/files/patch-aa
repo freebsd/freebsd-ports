@@ -1,9 +1,12 @@
---- configure.orig	Tue May  9 17:06:45 2000
-+++ configure	Fri Aug 25 11:04:07 2000
-@@ -4506,15 +4506,15 @@
+
+$FreeBSD$
+
+--- configure	2001/11/12 12:25:30	1.1
++++ configure	2001/11/12 12:25:34
+@@ -10454,15 +10454,15 @@
+ echo "${ECHO_T}no" >&6
  fi
  
-         
 -	USE_INCLUDED_LIBINTL=yes
 +#	USE_INCLUDED_LIBINTL=yes
          CATOBJEXT=.gmo
