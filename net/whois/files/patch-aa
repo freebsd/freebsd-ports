@@ -14,8 +14,8 @@
   #LDFLAGS=-lintl
   
   # FreeBSD
-! LDFLAGS=-L/usr/local/lib -lgnugetopt -lintl
-! CFLAGS=-I/usr/local/include
+! LDFLAGS+=-L%%LOCALBASE%%/lib -lintl
+! CFLAGS+=-I%%LOCALBASE%%/include
   
   # OS/2 EMX
   #LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
