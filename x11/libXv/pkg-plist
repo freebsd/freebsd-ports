@@ -1,0 +1,6 @@
+include/X11/extensions/Xvlib.h
+lib/libXv.a
+lib/libXv.la
+lib/libXv.so
+lib/libXv.so.2
+libdata/pkgconfig/xv.pc
