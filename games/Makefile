@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.166 1998/09/11 09:12:01 tg Exp $
+# $Id: Makefile,v 1.167 1998/10/02 01:01:08 vanilla Exp $
 #
 
     SUBDIR += 3dc
@@ -39,6 +39,7 @@
     SUBDIR += gnushogi
     SUBDIR += golddig
     SUBDIR += icbm3d
+    SUBDIR += ifm
     SUBDIR += imaze
     SUBDIR += inform
     SUBDIR += ishido
