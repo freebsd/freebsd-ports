@@ -1,0 +1,3 @@
+lib/kde3/kio_ldap.la
+lib/kde3/kio_ldap.so
+share/services/ldap.protocol

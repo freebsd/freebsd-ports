@@ -8,7 +8,7 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -33,15 +33,18 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 CONFIGURE_ENV+=	RUN_KAPPFINDER=no
-CONFIGURE_ARGS+=--disable-ltdl-install		\
-		--without-ldap			\
-		--disable-closure		\
-		--without-java			\
+CONFIGURE_ARGS+=--without-java			\
 		--with-qt-dir=${X11BASE}	\
 		--with-xdmdir=${X11BASE}/lib/X11/xdm
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+# This enables kio_ldap (needed by kaddresbook).
+.if defined(WITH_LDAP) || exists($(LOCALBASE)/lib/libldap.so)
+LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21
+PLIST_APPEND+=	plist.ldap
+.endif
 
 .if exists(${X11BASE}/include/Xm/Xm.h)
 WITH_MOTIF=	yes
