@@ -1,13 +1,13 @@
 # New ports collection makefile for: gIDE
-# Version required:    0.0.7
+# Version required:    0.0.8
 # Date created:        29 Jul 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.6 1998/09/22 22:55:50 asami Exp $
+# $Id: Makefile,v 1.7 1998/10/04 17:23:34 jseger Exp $
 #
 
-DISTNAME= 	gIDE-0.0.7
-PKGNAME= 	gide-0.0.7
+DISTNAME= 	gIDE-0.0.8
+PKGNAME= 	gide-0.0.8
 CATEGORIES=     devel
 MASTER_SITES=   http://gide.pn.org/
 
@@ -20,11 +20,9 @@ USE_X_PREFIX=   yes
 GNU_CONFIGURE=  yes
 USE_GMAKE= 	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GTK_CONFIG="${X11BASE}/bin/gtk11-config" \
 		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		gide.1
-
-post-install:
-	strip ${PREFIX}/bin/gide
 
 .include <bsd.port.mk>
