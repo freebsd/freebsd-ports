@@ -1,41 +1,31 @@
 # New ports collection makefile for:	gxditview (part of ja-groff)
-# Version required:	1.09+0.98
+# Version required:	1.10+0.99
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	groff-1.09
-PKGNAME=	ja-gxditview-0.98
+DISTNAME=	groff-1.10
+PKGNAME=	ja-gxditview-0.99
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
 
+PATCH_SITES=	ftp://ftp.ae.keio.ac.jp/pub/GNU/ \
+		ftp://ftp.hipecs.hokudai.ac.jp/pub/GNU/jp/
+PATCHFILES=	jgroff-0.99.diff.gz
+PATCH_DIST_ARGS=?	-d ${WRKSRC}/.. --forward --quiet -E -p1
+
 MAINTAINER=	ports@FreeBSD.org
 
-PATCH_SITES=	ftp://ftp.iij.ad.jp/pub/NetNews/fj.sources/volume95/Apr/
-PATCHFILES=	jgroff-0.98.diff.gz
-DISTPATCHES=	950414.01.Z 950414.02.Z
-PATCH_DIST_ARGS?=	-d ${WRKSRC}/.. --forward --quiet -E -p1
+RUN_DEPENDS=	groff:${PORTSDIR}/japanese/groff
 
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/work/${DISTNAME}/xditview
+WRKSRC=		${WRKDIR}/${DISTNAME}/xditview
+MAN1=		gxditview.1
 
-pre-fetch: 
-	@(cd ${DISTDIR}; \
-	 if [ ! -f ${PATCHFILES} ]; then \
-	    ${ECHO_MSG} ">> ${PATCHFILES} doesn't seem to exist on this system."; \
-	    for file in ${DISTPATCHES} ; do \
-		for site in ${PATCH_SITES} ; do \
-		    if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
-			break; \
-		    fi \
-		done; \
-	    done; \
-	    for file in ${DISTPATCHES} ; do zcat $${file}; done | \
-		${SED} '/^END -----/,/^BEGIN ----/d' | uudecode; \
-	    ${RM} -f ${DISTPATCHES};\
-	 fi)
+post-patch:
+	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>
