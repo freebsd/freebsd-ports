@@ -19,6 +19,7 @@ DISTNAME=	hlds_l3106
 
 MAINTAINER=	pat@databits.net
 
+ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
