@@ -23,13 +23,7 @@ PATCHFILES=		${UPDATES}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	The base set of packages needed in Linux mode
 
-
 DEPRECATED=	"obsolete and has a minor security bug:  see http://www.redhat.com/support/errata/archives/RHSA-2000-117.html"
-
-.if (${ARCH} == "alpha")
-FORBIDDEN=	"see <URL:http://rhn.redhat.com/errata/RHSA-2003-089.html> or\
- <URL:http://www.cert.org/advisories/CA-2003-10.html>"
-.endif
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
@@ -47,6 +41,11 @@ PLIST=			${PKGDIR}/pkg-plist.${ARCH}
 MD5_FILE=		${MASTERDIR}/distinfo.${ARCH}
 
 .include <bsd.port.pre.mk>
+
+.if (${ARCH} == "alpha")
+FORBIDDEN=	"see <URL:http://rhn.redhat.com/errata/RHSA-2003-089.html> or\
+ <URL:http://www.cert.org/advisories/CA-2003-10.html>"
+.endif
 
 RPM_GLIBC=		glibc-2.1.3-29.${ARCH}.rpm
 UPDATES=		${RPM_GLIBC} \
