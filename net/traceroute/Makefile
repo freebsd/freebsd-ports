@@ -8,8 +8,7 @@
 PORTNAME=	traceroute
 PORTVERSION=	${RELEASEDATE}	
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.nikhef.nl/pub/network/	\
-	  	http://www.chg.ru/~dima/
+MASTER_SITES=	http://mitya.pp.ru/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
