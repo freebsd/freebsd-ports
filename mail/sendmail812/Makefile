@@ -228,7 +228,7 @@ do-configure:
 post-build:
 	( cd ${WRKSRC}/doc/op && ${MAKE} op.txt )
 .if ! defined(SENDMAIL_WITHOUT_MILTER)
-	( cd ${WRKSRC}/libmilter && ${MAKE} )
+	@(cd ${BUILD_WRKSRC}/libmilter; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .endif
 
 pre-install:
