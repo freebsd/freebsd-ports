@@ -17,6 +17,8 @@ COMMENT=		Multitracking sound editor and utilities
 
 LIB_DEPENDS=		gsl.5:${PORTSDIR}/math/gsl
 
+BROKEN=			"Does not compile"
+
 .if !defined(WITHOUT_ESD)
 RUN_DEPENDS=		esd:${PORTSDIR}/audio/esound
 .endif
@@ -77,12 +79,6 @@ USE_XLIB=	yes
 .endif
 WRKSRC=		${WRKDIR}/snd-5
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
 post-configure:
 	@${MV} ${WRKSRC}/makefile ${WRKSRC}/makefile.orig
 	@${SED} -e "s: -ldl::g" < ${WRKSRC}/makefile.orig > ${WRKSRC}/makefile
@@ -142,4 +138,4 @@ do-install:
 post-build:
 	${MV} ${WRKSRC}/sndinfo ${WRKSRC}/snd-info
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
