@@ -667,6 +667,7 @@ cbb		ports/deskutils/cbb
 cbrowser	ports/devel/cbrowser
 cc		src/gnu/usr.bin/cc
 cc65		ports/devel/cc65
+ccache		ports/devel/ccache
 ccaudio		ports/audio/ccaudio
 cccc		ports/devel/cccc
 ccd		src/sys/dev/ccd
