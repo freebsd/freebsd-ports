@@ -129,6 +129,14 @@ Index: Makefile
  
  uninstall:
 Index: libdesk/dsk_ls.c
+@@ -57,6 +57,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <sys/types.h>
+ #include <dirent.h>
+ #include <time.h>		/* for ctime */
+ #include <unistd.h>		/* for readlink */
 @@ -382,7 +382,7 @@
  void write_element (fe)
      FILE_ENTRY *fe;
@@ -216,7 +224,7 @@ Index: malloc.c
 + * this stuff is worth it, you can buy me a beer in return.   Poul-Henning Kamp
 + * ----------------------------------------------------------------------------
 + *
-+ * $Id: malloc.c,v 1.12 1996/09/17 19:50:23 phk Exp $
++ * $Id: patch-aa,v 1.3 1996/11/12 04:54:09 max Exp $
 + *
 + */
 +
