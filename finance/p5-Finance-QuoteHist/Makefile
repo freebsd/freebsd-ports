@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/HTML/TableExtract.pm:${PORTSDIR}/www/p5-HTML-TableExtract
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=		yes
 
 MAN3=		Finance::QuoteHist::Yahoo.3 \

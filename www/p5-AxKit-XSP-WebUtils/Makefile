@@ -18,8 +18,6 @@ COMMENT=	Plugin for AxKit that provide utilities for building XSP web apps
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${SITE_PERL}
-
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		AxKit::XSP::WebUtils.3
 

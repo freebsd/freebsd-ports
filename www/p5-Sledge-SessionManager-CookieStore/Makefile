@@ -23,8 +23,6 @@ PM_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5
 PM_DEPENDS+=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC
 PM_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
 
-SITE_PERL=	${SITE_PERL}
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Sledge::SessionManager::CookieStore.3

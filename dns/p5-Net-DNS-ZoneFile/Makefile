@@ -22,7 +22,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-SITE_PERL=	${SITE_PERL}
 MAN3=		Net::DNS::ZoneFile.3
 
 post-patch:

@@ -18,7 +18,6 @@ COMMENT=	Perl module implementing an extensible string validation interface
 BUILD_DEPENDS=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=		String::Checker.3

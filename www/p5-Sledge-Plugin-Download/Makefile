@@ -20,8 +20,6 @@ RUN_DEPENDS=	${PM_DEPENDS}
 
 PM_DEPENDS=	${SITE_PERL}/Sledge.pm:${PORTSDIR}/www/p5-Sledge
 
-SITE_PERL=	${SITE_PERL}
-
 PERL_CONFIGURE=	yes
 
 MAN3=		Sledge::Plugin::Download.3

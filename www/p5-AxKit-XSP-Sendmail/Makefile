@@ -19,8 +19,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit \
 		${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${SITE_PERL}
-
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		AxKit::XSP::Sendmail.3
 

@@ -22,6 +22,5 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Date::Calc.3 Date::Calc::Object.3 Date::Calendar.3 \
 		Date::Calendar::Profiles.3 Date::Calendar::Year.3
-SITE_PERL=	${SITE_PERL}
 
 .include <bsd.port.mk>

@@ -18,7 +18,6 @@ COMMENT=	Perl module that provides a foundation for software agent developers
 BUILD_DEPENDS=	${SITE_PERL}/Class/Tom.pm:${PORTSDIR}/devel/p5-Class-Tom
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 
 MAN3=		Agent.3 Agent::Transport::TCP.3 \

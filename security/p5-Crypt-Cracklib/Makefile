@@ -18,7 +18,6 @@ COMMENT=	Perl interface to Alec Muffet's cracklib library
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcrack.a:${PORTSDIR}/security/cracklib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-SITE_PERL=	${SITE_PERL}
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=INC="-I${LOCALBASE}/include"
 

@@ -24,6 +24,5 @@ PERL_CONFIGURE=		yes
 MAN3=			Class::Hook.3
 
 ARCH_PERL=		${SITE_PERL}/${PERL_ARCH}
-SITE_PERL=		${SITE_PERL}
 
 .include <bsd.port.mk>

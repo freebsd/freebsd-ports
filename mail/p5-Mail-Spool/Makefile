@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${SITE_PERL}/File/NFSLock.pm:${PORTSDIR}/devel/p5-File-NFSLock \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-SITE_PERL=	${SITE_PERL}
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 MAN3=		Mail::Spool.3 Mail::Spool::Handle.3 Mail::Spool::Node.3

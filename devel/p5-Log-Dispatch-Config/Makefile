@@ -24,8 +24,6 @@ PM_DEPENDS+=	${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig
 PM_DEPENDS+=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy
 PM_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
-SITE_PERL=	${SITE_PERL}
-
 PERL_CONFIGURE=	yes
 
 #MAN3=		Log::Dispatch::Config.3 \
