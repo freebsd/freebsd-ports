@@ -28,4 +28,13 @@ PERL_CONFIGURE=	yes
 MAN1=		par.pl.1 parl.1 pp.1
 MAN3=		App::Packer::PAR.3 PAR.3 PAR::Heavy.3 PAR::Intro.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-everything::
+.if ${PERL_LEVEL} < 500601
+BROKEN=        p5-PAR only supports the ports versions of Perl.
+BROKEN+=If you have installed a Perl port, and are getting this message,
+BROKEN+=please make sure you have given the command \'use.perl port\'
+.endif # ${PERL_LEVEL} < 500601
+
+.include <bsd.port.post.mk>
