@@ -40,6 +40,7 @@ lib/gstreamer-%%VERSION%%/libgstac3parse.so
 lib/gstreamer-%%VERSION%%/libgstadder.so
 lib/gstreamer-%%VERSION%%/libgstalaw.so
 lib/gstreamer-%%VERSION%%/libgstalpha.so
+lib/gstreamer-%%VERSION%%/libgstalphacolor.so
 %%ARTS%%lib/gstreamer-%%VERSION%%/libgstartsdsink.so
 lib/gstreamer-%%VERSION%%/libgstasf.so
 lib/gstreamer-%%VERSION%%/libgstaudioconvert.so
@@ -58,6 +59,7 @@ lib/gstreamer-%%VERSION%%/libgstchart.so
 %%HERMES%%lib/gstreamer-%%VERSION%%/libgstcolorspace.so
 lib/gstreamer-%%VERSION%%/libgstcutter.so
 lib/gstreamer-%%VERSION%%/libgstdebug.so
+lib/gstreamer-%%VERSION%%/libgstdecodebin.so
 lib/gstreamer-%%VERSION%%/libgstdeinterlace.so
 %%DTS%%lib/gstreamer-%%VERSION%%/libgstdtsdec.so
 %%LIBDV%%lib/gstreamer-%%VERSION%%/libgstdvdec.so
@@ -66,6 +68,7 @@ lib/gstreamer-%%VERSION%%/libgstdeinterlace.so
 lib/gstreamer-%%VERSION%%/libgstefence.so
 lib/gstreamer-%%VERSION%%/libgsteffectv.so
 %%ESOUND%%lib/gstreamer-%%VERSION%%/libgstesd.so
+%%FAAC%%lib/gstreamer-%%VERSION%%/libgstfaac.so
 %%FAAD%%lib/gstreamer-%%VERSION%%/libgstfaad.so
 lib/gstreamer-%%VERSION%%/libgstfestival.so
 lib/gstreamer-%%VERSION%%/libgstffmpegcolorspace.so
@@ -104,6 +107,7 @@ lib/gstreamer-%%VERSION%%/libgstmpegaudio.so
 lib/gstreamer-%%VERSION%%/libgstmpegaudioparse.so
 lib/gstreamer-%%VERSION%%/libgstmpegstream.so
 lib/gstreamer-%%VERSION%%/libgstmulaw.so
+lib/gstreamer-%%VERSION%%/libgstmultifilesink.so
 lib/gstreamer-%%VERSION%%/libgstmultipart.so
 %%NAS%%lib/gstreamer-%%VERSION%%/libgstnassink.so
 lib/gstreamer-%%VERSION%%/libgstnavigationtest.so
@@ -111,6 +115,7 @@ lib/gstreamer-%%VERSION%%/libgstnavigationtest.so
 lib/gstreamer-%%VERSION%%/libgstoverlay.so
 %%OSS%%lib/gstreamer-%%VERSION%%/libgstossaudio.so
 lib/gstreamer-%%VERSION%%/libgstpassthrough.so
+lib/gstreamer-%%VERSION%%/libgstplaybin.so
 lib/gstreamer-%%VERSION%%/libgstplayondemand.so
 %%PNG%%lib/gstreamer-%%VERSION%%/libgstpng.so
 lib/gstreamer-%%VERSION%%/libgstqtdemux.so
@@ -189,7 +194,9 @@ libdata/pkgconfig/gstreamer-play-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-plugins-%%VERSION%%.pc
 share/locale/af/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/cs/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/hu/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
@@ -199,7 +206,6 @@ share/locale/uk/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/xoverlay
 @dirrm include/gstreamer-%%VERSION%%/gst/video
 @dirrm include/gstreamer-%%VERSION%%/gst/tuner
-@dirrm include/gstreamer-%%VERSION%%/gst/tag
 @dirrm include/gstreamer-%%VERSION%%/gst/riff
 @dirrm include/gstreamer-%%VERSION%%/gst/resample
 @dirrm include/gstreamer-%%VERSION%%/gst/propertyprobe
