@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	0.9.7
+PORTVERSION=	0.9.9
 PORTREVISION=	0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -18,7 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RDF Parser Toolkit for Redland
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xmlparse.1:${PORTSDIR}/www/libwww
+		xmlparse.1:${PORTSDIR}/www/libwww \
+		curl.2:${PORTSDIR}/ftp/curl
 
 LIBWWW_CONFIG=	${LOCALBASE}/bin/libwww-config
 
@@ -27,7 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-xml-parser=libxml
 INSTALLS_SHLIB=	yes
 
-MAN1=		rdfdump.1
+MAN1=		rapper.1 raptor-config.1
 MAN3=		libraptor.3
 
 CPPFLAGS=	-I${LOCALBASE}/include `${LIBWWW_CONFIG} --cflags`
