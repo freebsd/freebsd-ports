@@ -17,6 +17,7 @@ share/apps/knewmail/pics/knewmail_panel_7.xpm
 share/apps/knewmail/pics/knewmail_panel_8.xpm
 share/apps/knewmail/pics/knewmail_panel_normal.xpm
 share/apps/knewmail/pics/knewmail_splash.xpm
+share/applnk/Internet/knewmail.kdelnk
 share/doc/HTML/en/knewmail/3dletter.gif
 share/doc/HTML/en/knewmail/backward.gif
 share/doc/HTML/en/knewmail/bar.gif
@@ -38,6 +39,7 @@ share/doc/HTML/en/knewmail/knewmail_8.html
 share/doc/HTML/en/knewmail/knewmail_9.html
 share/doc/HTML/en/knewmail/knewmail_docs.gif
 share/icons/mini/knewmail.xpm
+share/icons/knewmail.xpm
 @dirrm share/doc/HTML/en/knewmail
 @dirrm share/apps/knewmail/pics
 @dirrm share/apps/knewmail
