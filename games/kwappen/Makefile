@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.lcs-chemie.de/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE board game
 
-BROKEN=		"Size mismatch"
-
 USE_KDELIBS_VER=	3
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
