@@ -26,10 +26,6 @@ NVVERSION=	4365
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502117
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 # XXX Should use ${PKG_INFO} XXX
 #
 XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | ${GREP} Server- || true
@@ -81,6 +77,11 @@ post-patch:
 . endif
 . if ${OSVERSION} > 501106
 	@${REINPLACE_CMD} 's/PCIR_HEADERTYPE/PCIR_HDRTYPE/' ${WRKSRC}/src/nvidia_sysctl.c
+. endif
+. if ${OSVERSION} > 502115 
+.  for f in nv-freebsd.h nvidia_ctl.c nvidia_dev.c nvidia_subr.c
+	@${REINPLACE_CMD} 's/dev_t/struct cdev \*/g' ${WRKSRC}/src/${f}
+.  endfor
 . endif
 .endif
 
