@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.1.25
+PORTVERSION=	0.1.27
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 
@@ -22,7 +22,7 @@ HTTP_PORT?=	80
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/nginx \
+CONFIGURE_ARGS+=--prefix=${PREFIX}/etc/nginx \
 		--with-cc-opt="-I ${LOCALBASE}/include" \
 		--with-ld-opt="-L ${LOCALBASE}/lib" \
 		--conf-path=${PREFIX}/etc/nginx/nginx.conf \
