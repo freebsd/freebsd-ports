@@ -1,11 +1,12 @@
---- script/installswat.sh.orig	Fri Nov 19 21:11:15 2004
-+++ script/installswat.sh	Fri Nov 19 21:11:45 2004
-@@ -103,7 +103,7 @@
-               fi
-           fi
-           for f in $SRCDIR../docs/$dir/images/*.png; do
--              FNAME=$INSTALLDIR/`basename $f`
-+              FNAME=$INSTALLDIR/images/`basename $f`
-               echo $FNAME
-               cp $f $FNAME || echo Cannot install $FNAME. Does $USER have privileges?
-               chmod 0644 $FNAME
+--- script/installswat.sh.orig	Fri Dec 17 03:59:34 2004
++++ script/installswat.sh	Fri Dec 17 04:01:34 2004
+@@ -8,8 +8,7 @@
+ echo Installing SWAT in $SWATDIR
+ echo Installing the Samba Web Administration Tool
+ 
+-LANGS=". `cd $SRCDIR../swat/; /bin/echo lang/??`"
+-echo Installing langs are `cd $SRCDIR../swat/lang/; /bin/echo ??`
++LANGS="."
+ 
+ for ln in $LANGS; do 
+  SWATLANGDIR=$SWATDIR/$ln
