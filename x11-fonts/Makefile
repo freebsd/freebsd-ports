@@ -31,6 +31,7 @@
     SUBDIR += p5-Font-AFM
     SUBDIR += p5-Font-TTF
     SUBDIR += p5-type1inst
+    SUBDIR += pcf2bdf
     SUBDIR += sgifonts
     SUBDIR += sharefonts
     SUBDIR += terminus-font

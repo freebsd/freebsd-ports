@@ -1,0 +1,7 @@
+Pcf2bdf is a font de-compiler. It converts X fonts from Portable
+Compiled Format (PCF) to Bitmap Distribution Format (BDF). It can
+also accept a compressed/gzipped PCF file as input, but gzip must
+be found in your PATH.
+
+FONTBOUNDINGBOX in a BDF file is not used by bdftopcf, so pcf2bdf
+generates irresponsible values.
