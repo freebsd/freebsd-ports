@@ -1,0 +1,32 @@
+       These subroutines tell you whether a credit card number is
+       self-consistent -- whether the last digit of the number is
+       a valid checksum for the preceding digits.
+
+       The validate() subroutine returns 1 if the card number
+       provided passes the checksum test, and 0 otherwise.
+
+       The cardtype() subroutine returns a string containing the
+       type of card: "MasterCard", "VISA", and so on.  My list is
+       not complete; I welcome additions.
+
+       The generate_last_digit() subroutine computes and returns
+       the last digit of the card given the preceding digits.
+       With a 16-digit card, you provide the first 15 digits; the
+       subroutine returns the sixteenth.
+
+       This module does not tell you whether the number is on an
+       actual card, only whether it might conceivably be on a
+       real card.  To verify whether a card is real, or whether
+       it's been stolen, or what its balance is, you need a
+       Merchant ID, which gives you access to credit card
+       databases.  The Perl Journal
+       (http://work.media.mit.edu/tpj) has a Merchant ID so that
+       I can accept MasterCard and VISA payments; it comes with
+       the little pushbutton/slide-your-card-through device
+       you've seen in restaurants and stores.  That device
+       calculates the checksum for you, so I don't actually use
+       this module.
+
+       These subroutines will also work if you provide the
+       arguments as numbers instead of strings, e.g.
+       validate(5276440065421319).
