@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1;
+
+cat >> Makefile << END
+
+PREFIX= $PREFIX
+
+END
+exit 0;
+
