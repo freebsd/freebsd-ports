@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	snack
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.7
 CATEGORIES=	audio tcl84 tk84
 MASTER_SITES=	http://www.speech.kth.se/~kare/
 DISTNAME=	${PORTNAME}${PORTVERSION}
