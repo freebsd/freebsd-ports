@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bookview
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.8
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/bookview/
 
