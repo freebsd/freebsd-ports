@@ -17,6 +17,9 @@ share/themes/Xfce-curve/gtk-2.0/gtkrc
 share/themes/Xfce-dawn/gtk-2.0/gtkrc
 share/themes/Xfce-dawn/ICON.png
 share/themes/Xfce-dawn/README.html
+share/themes/Xfce-dusk/gtk-2.0/gtkrc
+share/themes/Xfce-dusk/ICON.png
+share/themes/Xfce-dusk/README.html
 share/themes/Xfce-kde2/ICON.png
 share/themes/Xfce-kde2/README.html
 share/themes/Xfce-kde2/gtk-2.0/gtkrc
@@ -52,6 +55,8 @@ share/themes/Xfce/gtk-2.0/gtkrc
 @dirrm share/themes/Xfce-cadmium
 @dirrm share/themes/Xfce-dawn/gtk-2.0
 @dirrm share/themes/Xfce-dawn
+@dirrm share/themes/Xfce-dusk/gtk-2.0
+@dirrm share/themes/Xfce-dusk
 @dirrm share/themes/Xfce-winter/gtk-2.0
 @dirrm share/themes/Xfce-winter
 @dirrm share/themes/Xfce-stellar/gtk-2.0

@@ -3,11 +3,14 @@ etc/xdg/xfce4/panel/contents.xml
 etc/xdg/xfce4/panel/contents.xml.ar
 etc/xdg/xfce4/panel/contents.xml.az
 etc/xdg/xfce4/panel/contents.xml.ca
+etc/xdg/xfce4/panel/contents.xml.da
 etc/xdg/xfce4/panel/contents.xml.eu
+etc/xdg/xfce4/panel/contents.xml.fi
 etc/xdg/xfce4/panel/contents.xml.fr
 etc/xdg/xfce4/panel/contents.xml.he
 etc/xdg/xfce4/panel/contents.xml.hu
 etc/xdg/xfce4/panel/contents.xml.it
+etc/xdg/xfce4/panel/contents.xml.ja
 etc/xdg/xfce4/panel/contents.xml.ko
 etc/xdg/xfce4/panel/contents.xml.lt
 etc/xdg/xfce4/panel/contents.xml.ms
@@ -17,6 +20,7 @@ etc/xdg/xfce4/panel/contents.xml.ru
 etc/xdg/xfce4/panel/contents.xml.sk
 etc/xdg/xfce4/panel/contents.xml.tr
 etc/xdg/xfce4/panel/contents.xml.vi
+etc/xdg/xfce4/panel/contents.xml.zh_CN
 etc/xdg/xfce4/panel/contents.xml.zh_TW
 include/xfce4/panel/add-control-dialog.h
 include/xfce4/panel/controls.h
@@ -63,6 +67,7 @@ share/locale/be/LC_MESSAGES/xfce4-panel.mo
 share/locale/bg/LC_MESSAGES/xfce4-panel.mo
 share/locale/ca/LC_MESSAGES/xfce4-panel.mo
 share/locale/cs/LC_MESSAGES/xfce4-panel.mo
+share/locale/da/LC_MESSAGES/xfce4-panel.mo
 share/locale/de/LC_MESSAGES/xfce4-panel.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-panel.mo
 share/locale/es/LC_MESSAGES/xfce4-panel.mo
