@@ -1,6 +1,4 @@
-PHPUnit is a regression testing framework used by the developer
-who implements unit tests in PHP. It is based upon JUnit, which
-can be found at http://www.junit.org/.
+PHPUnit is a regression testing framework used by the developer who implements 
+unit tests in PHP. This is the version to be used with PHP 4.
 
-WWW: http://pear.php.net/package-info.php?package=PHPUnit
-WWW: http://www.sebastian-bergmann.de/PHPUnit/
+WWW: http://pear.php.net/package/PHPUnit/
