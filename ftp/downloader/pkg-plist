@@ -27,6 +27,14 @@ share/d4x/themes/old_theme/buttons/speedhigh.png
 share/d4x/themes/old_theme/buttons/speedlow.png
 share/d4x/themes/old_theme/buttons/speedmedium.png
 share/d4x/themes/old_theme/buttons/stop.png
+share/d4x/themes/old_theme/queue/complete.png
+share/d4x/themes/old_theme/queue/failed.png
+share/d4x/themes/old_theme/queue/paused.png
+share/d4x/themes/old_theme/queue/run.png
+share/d4x/themes/old_theme/queue/runbad.png
+share/d4x/themes/old_theme/queue/runpart.png
+share/d4x/themes/old_theme/queue/stopwait.png
+share/d4x/themes/old_theme/queue/wait.png
 share/d4x/themes/old_theme/dnd1.png
 share/d4x/themes/old_theme/dnd2.png
 share/d4x/themes/old_theme/dndmini.png
@@ -57,6 +65,7 @@ share/locale/ru/LC_MESSAGES/d4x.mo
 share/locale/uk/LC_MESSAGES/d4x.mo
 %%PORTDOCS%%@dirrm share/doc/d4x
 @dirrm share/d4x/themes/old_theme/buttons
+@dirrm share/d4x/themes/old_theme/queue
 @dirrm share/d4x/themes/old_theme
 @dirrm share/d4x/themes/glass
 @dirrm share/d4x/themes
