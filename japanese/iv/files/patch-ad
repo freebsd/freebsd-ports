@@ -69,7 +69,7 @@ diff -rc --exclude=Makefile --exclude=FREEBSD work-orig/iv/src/config/InterViews
   #undef CppCmd
   #define CppCmd cpp
   #undef CCDriver
-! #define CCDriver /usr/bin/c++
+! #define CCDriver %%CXX%%
   #undef DependCCFlags
   #define DependCCFlags $(CCDEFINES) $(CCINCLUDES) -I/usr/include/g++
   #undef ExtraCCLdLibs

@@ -24,6 +24,7 @@ COMMENT=	A toolkit from Stanford University and Silicon Graphics + Japanese patc
 # Warning: we cannot use USE_IMAKE.
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
+USE_GCC=	2.95
 USE_XLIB=	yes
 DIST_SUBDIR=	iv
 WRKSRC=		${WRKDIR}/iv
@@ -78,10 +79,14 @@ IV_LIB_VER=	3.1
 pre-patch:
 	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/diff-2.0gamma
 
-.if ${OSVERSION} >= 400002
 post-patch:
 	@(cd ${WRKSRC}/src/config/InterViews; ${MV} -f iv-freebsd.cf \
-	iv-freebsd.cf~; ${SED} -e 's/\-lg\+\+//' iv-freebsd.cf~ > iv-freebsd.cf)
+	iv-freebsd.cf~; ${SED} -e 's/%%CXX%%/${CXX}/' iv-freebsd.cf~ \
+	> iv-freebsd.cf)
+.if ${OSVERSION} >= 400002
+	@(cd ${WRKSRC}/src/config/InterViews; ${MV} -f iv-freebsd.cf \
+	iv-freebsd.cf~; ${SED} -e 's/\-lg\+\+//' iv-freebsd.cf~ \
+	> iv-freebsd.cf)
 .endif
 
 post-install:

@@ -1,5 +1,5 @@
-*** src/bin/iclass/dialogs.c	Wed Sep 23 09:45:09 1992
---- /usr/oports/x11/iv/src/bin/iclass/dialogs.c	Sat Sep 11 09:55:17 1999
+*** src/bin/iclass/dialogs.c.orig	Tue Jul  8 23:30:56 2003
+--- src/bin/iclass/dialogs.c	Wed Jul  9 00:14:41 2003
 ***************
 *** 40,51 ****
   
@@ -14,12 +14,15 @@
   }
   #endif
   
---- 40,53 ----
+--- 40,56 ----
   
   #include <stdlib.h>
   #include <string.h>
-+ #if __FreeBSD_cc_version < 400002
++ #if __FreeBSD__ >= 2
++ #include <osreldate.h>
++ #if (__FreeBSD_cc_version < 400002 && __FreeBSD_version < 500000)
   #include <osfcn.h>
++ #endif
 + #endif
   
   #if !defined(AIXV3) && !defined(hpux) && !(defined(sun) && OSMajorVersion >= 5) && !defined(__386BSD__) && !defined(linux)
@@ -238,16 +241,19 @@
   #define	DECLARE1(f,t1,a1)		f(t1 a1)
   #define	DECLARE2(f,t1,a1,t2,a2)		f(t1 a1, t2 a2)
   #define	DECLARE3(f,t1,a1,t2,a2,t3,a3)	f(t1 a1, t2 a2, t3 a3)
-*** src/bin/ibuild/ibcmds.c.old Fri Dec 11 20:33:25 1992
---- src/bin/ibuild/ibcmds.c	Sat Sep 11 09:52:51 1999
+*** ./src/bin/ibuild/ibcmds.c.orig	Sat Dec 12 13:33:25 1992
+--- ./src/bin/ibuild/ibcmds.c	Wed Jul  9 00:09:35 2003
 ***************
 *** 86,92 ****
---- 86,98 ----
+--- 86,101 ----
   #undef FileChooser
   #define FileChooser _lib_iv(FileChooser)
   
-+ #if __FreeBSD_cc_version < 400002
++ #if __FreeBSD__ >= 2
++ #include <osreldate.h>
++ #if (__FreeBSD_cc_version < 400002 && __FreeBSD_version < 500000)
   #include <osfcn.h>
++ #endif
 + #endif
 + #if __FreeBSD_cc_version >= 400003
 + #include <unistd.h>
@@ -256,6 +262,29 @@
   #include <stdio.h>
   #include <stdlib.h>
   #include <stream.h>
+***************
+*** 111,119 ****
+  #define  getwd(a) getcwd(a,MAXPATHLEN)
+  #endif
+  
+! #ifdef __DECCXX
+  extern "C" {
+      int getwd(char*);
+      int vfork();
+      int execlp(char*, ...);
+      int unlink(char*);
+--- 120,130 ----
+  #define  getwd(a) getcwd(a,MAXPATHLEN)
+  #endif
+  
+! #if (defined(__DECCXX) || (__FreeBSD_version > 500000))
+  extern "C" {
++ #if !defined(__FreeBSD__)
+      int getwd(char*);
++ #endif
+      int vfork();
+      int execlp(char*, ...);
+      int unlink(char*);
 ***************
 *** 2407,2421 ****
   	EditorInfo* installed = (EditorInfo*) toolsdialog.Installed();
@@ -273,7 +302,7 @@
                   itoolpanel->Uninstall(removed->GetName(i));
               }
               itoolpanel->Change();
---- 2413,2427 ----
+--- 2418,2432 ----
   	EditorInfo* installed = (EditorInfo*) toolsdialog.Installed();
           EditorInfo* removed = (EditorInfo*) toolsdialog.Removed();
   

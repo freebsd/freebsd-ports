@@ -1,20 +1,26 @@
 --- src/bin/iclass/direct.c.orig	Sat Dec 12 13:40:42 1992
-+++ src/bin/iclass/direct.c	Mon Jan  3 15:24:22 2000
-@@ -30,11 +30,17 @@
++++ src/bin/iclass/direct.c	Wed Jul  9 00:17:58 2003
+@@ -30,13 +30,22 @@
  #include <OS/string.h>
  #include <OS/types.h>
  #include <stddef.h>
-+#if __FreeBSD_cc_version < 400002
++#if __FreeBSD__ >= 2
++#include <osreldate.h>
++#if (__FreeBSD_cc_version < 400002 && __FreeBSD_version < 500000)
  #include <osfcn.h>
++#endif
 +#endif
  #include <pwd.h>
  #include <string.h>
  #include <stdlib.h>
  #include <sys/stat.h>
-+
+ 
+-#ifdef __DECCXX
 +#if __FreeBSD_cc_version >= 400003
 +#include <unistd.h>
 +#endif
- 
- #ifdef __DECCXX
++
++#if (defined(__DECCXX) || (__FreeBSD_version > 500000))
  extern "C" {
+     extern uid_t getuid();
+     extern struct passwd* getpwuid(uid_t);

@@ -1,0 +1,20 @@
+--- src/lib/Dispatch/dispatcher.c.orig	Thu Jul 10 00:04:15 2003
++++ src/lib/Dispatch/dispatcher.c	Thu Jul 10 00:05:36 2003
+@@ -43,12 +43,16 @@
+ #include <sys/time.h>
+ #include <time.h>
+ 
++#if __FreeBSD__ >= 2
++#include <osreldate.h>
++#endif
++
+ /* no standard place for this */
+ extern "C" {
+ #if defined(hpux)
+     extern int select(size_t, int*, int*, int*, const struct timeval*);
+ #else
+-#if !defined(AIXV3) && !defined(Solaris_2) && !defined(__lucid) && !defined(linux)
++#if !defined(AIXV3) && !defined(Solaris_2) && !defined(__lucid) && !defined(linux) && !(defined(__FreeBSD__) && (__FreeBSD_version > 500000))
+     extern int select(int, fd_set*, fd_set*, fd_set*, const struct timeval*);
+ #endif
+ #endif
