@@ -1,5 +1,14 @@
---- ./configure.ac.orig	Wed May 26 14:01:15 2004
-+++ ./configure.ac	Sun May 30 22:43:42 2004
+--- configure.ac.orig	Mon Sep  6 16:03:58 2004
++++ configure.ac	Tue Jan 25 23:16:00 2005
+@@ -14,7 +14,7 @@
+ AC_PROG_RANLIB
+ 
+ LDFLAGS="-L/usr/X11R6/lib -L/usr/X11R6"
+-CPPFLAGS="-I/usr/X11R6/include -I/usr/X11R6"
++CPPFLAGS="-I/usr/include -I/usr -I/usr/X11R6/include -I/usr/X11R6"
+ if test `uname` == Darwin; then
+ LDFLAGS="$LDFLAGS -lmx"
+ CPPFLAGS="$CPPFLAGS -D__DARWIN__"
 @@ -37,8 +37,8 @@
  have_SDLmixer=yes
  if test "x$enable_sdltest" = "xyes" ; then

@@ -1,5 +1,5 @@
---- ./src/common/Sound.h.orig	Fri Jan 23 17:59:04 2004
-+++ ./src/common/Sound.h	Fri Jan 23 18:02:01 2004
+--- ./src/common/Sound.h.orig	Mon Nov 29 19:08:51 2004
++++ ./src/common/Sound.h	Tue Jan 25 19:34:22 2005
 @@ -26,7 +26,7 @@
  //////////////////////////////////////////////////////////////////////
  

@@ -1,5 +1,5 @@
---- ./src/coms/NetMessageHandler.h.orig	Fri Jan 23 17:59:08 2004
-+++ ./src/coms/NetMessageHandler.h	Fri Jan 23 18:02:10 2004
+--- ./src/coms/NetMessageHandler.h.orig	Thu Sep 18 22:28:06 2003
++++ ./src/coms/NetMessageHandler.h	Tue Jan 25 19:34:24 2005
 @@ -23,7 +23,7 @@
  #define __INCLUDE_NetMessageHandlerh_INCLUDE__
  

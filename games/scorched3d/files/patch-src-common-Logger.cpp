@@ -1,5 +1,5 @@
---- ./src/common/Logger.cpp.orig	Fri Jan 23 17:59:04 2004
-+++ ./src/common/Logger.cpp	Fri Jan 23 18:01:58 2004
+--- ./src/common/Logger.cpp.orig	Tue Jul 13 23:02:56 2004
++++ ./src/common/Logger.cpp	Tue Jan 25 19:34:22 2005
 @@ -21,7 +21,7 @@
  #include <common/Defines.h>
  #include <common/Logger.h>
