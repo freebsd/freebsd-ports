@@ -127,6 +127,8 @@
     SUBDIR += ruby-ri
     SUBDIR += ruby-tcltklib
     SUBDIR += ruby-usersguide
+    SUBDIR += ruby_r
+    SUBDIR += ruby_r-devel
     SUBDIR += ruby_static
     SUBDIR += ruby_static-devel
     SUBDIR += scheme48
