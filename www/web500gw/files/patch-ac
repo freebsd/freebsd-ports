@@ -1,0 +1,154 @@
+*** util.c.orig	Thu Dec  2 18:07:10 1999
+--- util.c	Mon Jan 17 23:23:51 2000
+***************
+*** 14,20 ****
+   * software without specific prior written permission. This software
+   * is provided ``as is'' without express or implied warranty.
+   */
+! 
+  #include "web500gw.h"
+  
+  /* msg_?printf: formats (and prints out) a string contained in message file */
+--- 14,21 ----
+   * software without specific prior written permission. This software
+   * is provided ``as is'' without express or implied warranty.
+   */
+! #include <unistd.h>
+! #include <gnuregex.h>
+  #include "web500gw.h"
+  
+  /* msg_?printf: formats (and prints out) a string contained in message file */
+***************
+*** 437,443 ****
+          hour = 0;
+          mday++;
+      }
+!     year = YEAR (tm -> tm_year);
+      result = 0L;
+      for (i = 1970; i < year; i++)
+          result += dysize (i);
+--- 438,444 ----
+          hour = 0;
+          mday++;
+      }
+! 		year = (tm -> tm_year);
+      result = 0L;
+      for (i = 1970; i < year; i++)
+          result += dysize (i);
+***************
+*** 454,460 ****
+  
+  
+  /* returns a printable date string from LDAP's date format:
+!  *    s       should point to: YYMMDDHHmmSSZ
+   *    format  format string for strftime(3)
+   */
+  char *
+--- 455,461 ----
+  
+  
+  /* returns a printable date string from LDAP's date format:
+!  *    s       should point to: YYYYMMDDHHmmSSZ
+   *    format  format string for strftime(3)
+   */
+  char *
+***************
+*** 473,487 ****
+      if (!s)
+          return(NULL);
+  
+!     /* s should point to: YYMMDDHHmmSSZ */
+!     /* ... well 2 digits for year :-( */
+! 
+!     tm.tm_year = 10*(s[0] - '0') + (s[1] - '0');
+!     tm.tm_mon  = 10*(s[2] - '0') + (s[3] - '0') - 1;
+!     tm.tm_mday = 10*(s[4] - '0') + (s[5] - '0');
+!     tm.tm_hour = 10*(s[6] - '0') + (s[7] - '0');
+!     tm.tm_min  = 10*(s[8] - '0') + (s[9] - '0');
+!     tm.tm_sec  = 10*(s[10] - '0') + (s[11] - '0');
+      tm.tm_isdst = 0;
+  
+  #if ! (defined(__hpux) || defined(_AIX) || defined(sunos5) || defined(linux) || defined(unixware7))
+--- 474,487 ----
+      if (!s)
+          return(NULL);
+  
+!     /* s should point to: YYYYMMDDHHmmSSZ for OpenLDAP */
+! 		/* this change will probably cause problems for UMich LDAP-3.3 use */
+!     tm.tm_year = 1000*(s[0] - '0') + 100*(s[1] - '0') + 10*(s[2] - '0') + (s[3] - '0');
+!     tm.tm_mon  = 10*(s[4] - '0') + (s[5] - '0') - 1;
+!     tm.tm_mday = 10*(s[6] - '0') + (s[7] - '0');
+!     tm.tm_hour = 10*(s[8] - '0') + (s[9] - '0');
+!     tm.tm_min  = 10*(s[10] - '0') + (s[11] - '0');
+!     tm.tm_sec  = 10*(s[12] - '0') + (s[13] - '0');
+      tm.tm_isdst = 0;
+  
+  #if ! (defined(__hpux) || defined(_AIX) || defined(sunos5) || defined(linux) || defined(unixware7))
+***************
+*** 512,518 ****
+  }
+  
+  /* compares 2 dates:  
+!  *   ldap_date  should point to: YYMMDDHHmmSSZ
+   *   http_date   is a HTTP date (3 different formats ...)
+   * returns 1,0,-1 if first date is newer, equal, older to second
+   */
+--- 512,518 ----
+  }
+  
+  /* compares 2 dates:  
+!  *   ldap_date  should point to: YYYYMMDDHHmmSSZ
+   *   http_date   is a HTTP date (3 different formats ...)
+   * returns 1,0,-1 if first date is newer, equal, older to second
+   */
+***************
+*** 552,560 ****
+--- 552,562 ----
+                          /* RFC 850: dd-Mmm-yy hh:mm:ss */
+          sscanf(http_date, "%d-%3s-%d %d:%d:%d",
+              &day, month_name, &year, &hour, &min, &sec);
++ /* OpenLDAP uses and records 4 digit years - following code not needed
+          if (year < 70)
+              year += 100;
+          year += 1900;
++ */
+      } else {         /* normal HTTP date (RFC 822/1123): dd Mmm yyyy hh:mm:ss */
+          sscanf(http_date, "%d %s %d %d:%d:%d", 
+              &day, month_name, &year, &hour, &min, &sec);
+***************
+*** 568,584 ****
+          day, month, year, 0);
+      Web500gw_debug(WEB500GW_DEBUG_UTIL, "%d:%d:%d\n", hour, min, sec, 0);
+  #endif
+!     if ((i = ((10*(ldap_date[0] - '0') + (ldap_date[1] - '0') + 1900) - year)))
+          return i > 0;
+!     if ((i = ((10*(ldap_date[2] - '0') + (ldap_date[3] - '0')) - month)))
+          return i > 0;
+!     if ((i = ((10*(ldap_date[4] - '0') + (ldap_date[5] - '0')) - day)))
+          return i > 0;
+!     if ((i = ((10*(ldap_date[6] - '0') + (ldap_date[7] - '0')) - hour)))
+          return i > 0;
+!     if ((i = ((10*(ldap_date[8] - '0') + (ldap_date[9] - '0')) - min)))
+          return i > 0;
+!     if ((i = ((10*(ldap_date[10] - '0') + (ldap_date[11] - '0')) - sec)))
+          return i > 0;
+  
+      /* gone so far - dates are identical */
+--- 570,586 ----
+          day, month, year, 0);
+      Web500gw_debug(WEB500GW_DEBUG_UTIL, "%d:%d:%d\n", hour, min, sec, 0);
+  #endif
+!     if ((i = (1000*(ldap_date[0] -'0') + 100*(ldap_date[1] - '0') + (10*(ldap_date[2] - '0') + (ldap_date[3] - '0')) - year)))
+          return i > 0;
+!     if ((i = ((10*(ldap_date[4] - '0') + (ldap_date[5] - '0')) - month)))
+          return i > 0;
+!     if ((i = ((10*(ldap_date[6] - '0') + (ldap_date[7] - '0')) - day)))
+          return i > 0;
+!     if ((i = ((10*(ldap_date[8] - '0') + (ldap_date[9] - '0')) - hour)))
+          return i > 0;
+!     if ((i = ((10*(ldap_date[10] - '0') + (ldap_date[11] - '0')) - min)))
+          return i > 0;
+!     if ((i = ((10*(ldap_date[12] - '0') + (ldap_date[13] - '0')) - sec)))
+          return i > 0;
+  
+      /* gone so far - dates are identical */

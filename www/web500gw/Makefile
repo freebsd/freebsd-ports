@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.tu-chemnitz.de/pub/Local/urz/web500gw/ \
 		ftp://ftp.ntua.gr/pub/net/ldap/web500gw/ \
 		ftp://ftp.imms.de/pub/unix/networking/ldap/
 
+PATCH_SITES=	http://www.tu-chemnitz.de/~fri/web500gw/
+PATCHFILES=	modtmpl.patch
+
 MAINTAINER=	Karl.Dietz@frankfurt.netsurf.de
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap
