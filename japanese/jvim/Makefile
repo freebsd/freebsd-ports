@@ -3,7 +3,7 @@
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1998/09/09 16:07:12 max Exp $
+# $Id: Makefile,v 1.4 1998/09/21 22:33:23 steve Exp $
 #
 
 DISTNAME=	jvim2.0r+onew2.2.10
@@ -13,9 +13,6 @@ MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Japan/onew/ \
 		ftp://ftp.leo.chubu.ac.jp/pub/editor/jvim/
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
-
-LIB_DEPENDS=	${LIB_INPUT_METHOD}
-BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 
 PATCHDIR=	${.CURDIR}/../jvim/patches
 FILESDIR=	${.CURDIR}/../jvim/files
@@ -27,20 +24,22 @@ WRKSRC=		${WRKDIR}/jvim2.0r
 # Specifying a velue INPUT_METHOD, and seting values BUILD_DEPENDS,
 # LIB_DEPENDS, etc.
 .if defined(CANNA)
-INPUT_METHOD+=		canna
-LIB_INPUT_METHOD+=	canna.1:${PORTSDIR}/japanese/Canna
-JPLIB+=			-lcanna
+INPUT_METHOD+=	canna
+LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
+JPLIB+=		-lcanna
 .endif
 .if defined(WNN4)
-INPUT_METHOD+=		wnn4
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
-JPDEF+=			-DWNN_ISDIR
-JPLIB+=			-ljd -lcrypt
+INPUT_METHOD+=	wnn4
+BUILD_DEPENDS+=	${X11BASE}/lib/libjd.a:${PORTSDIR}/japanese/Wnn
+RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk/2B_ROMKANA:${PORTSDIR}/japanese/Wnn
+JPDEF+=		-DWNN_ISDIR
+JPLIB+=		-ljd -lcrypt
 .elif defined(WNN6)
-INPUT_METHOD+=		wnn6
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
-JPDEF+=			-DWNN_ISDIR
-JPLIB+=			-ljd -lcrypt
+INPUT_METHOD+=	wnn6
+BUILD_DEPENDS+=	${X11BASE}/lib/libjd.a:${PORTSDIR}/japanese/Wnn
+RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/2B_ROMKANA:${PORTSDIR}/japanese/onew${INPUT_METHOD}
+JPDEF+=		-DWNN_ISDIR
+JPLIB+=		-ljd -lcrypt
 .endif
 #
 # Make a value of INPUT_METHOD
@@ -50,7 +49,7 @@ INPUT_METHOD!=	${ECHO} ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
 #
 # For ONEW library
 .if defined(INPUT_METHOD)
-BUILD_INPUT_METHOD+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/onew${INPUT_METHOD}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/onew${INPUT_METHOD}
 JPDEF+=		-DONEW
 # If we use ONEW libray, then -lonew*.a should appear
 # before the other libraries.
