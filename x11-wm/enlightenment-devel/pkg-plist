@@ -1,5 +1,5 @@
 bin/enlightenment
-lib/X11/enlightenment/README
 lib/X11/enlightenment/themes/DEFAULT
 lib/X11/enlightenment/themes/DEFAULT_small
 @dirrm lib/X11/enlightenment/themes
+@dirrm lib/X11/enlightenment
