@@ -6,10 +6,17 @@
 #
 
 PORTNAME=	xbaby
-PORTVERSION=	pl2
+PORTVERSION=	1.2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.inria.fr/X/contrib-R5/games/
-EXTRACT_SUFX=	.tar.Z
+MASTER_SITES=	http://hpux.cs.utah.edu/ftp/hpux/X11/Misc/xbaby-1.2/ \
+		http://hpux.its.tudelft.nl/ftp/hpux/X11/Misc/xbaby-1.2/ \
+		http://hpux.connect.org.uk/ftp/hpux/X11/Misc/xbaby-1.2/ \
+		http://hpux.tn.tudelft.nl/ftp/hpux/X11/Misc/xbaby-1.2/ \
+		http://hpux.asknet.de/ftp/hpux/X11/Misc/xbaby-1.2/ \
+		http://hpux.ee.ualberta.ca/ftp/hpux/X11/Misc/xbaby-1.2/ \
+		http://hpux.cict.fr/ftp/hpux/X11/Misc/xbaby-1.2/ \
+		http://smokeping.planetmirror.com/pub/hpux/X11/Misc/xbaby-1.2/
+EXTRACT_SUFX=	-ss-10.20.tar.gz
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
 COMMENT=	Babies hide under your windows
