@@ -10,7 +10,7 @@ PORTVERSION=	20010408
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
+DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}-2
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -24,6 +24,7 @@ USE_XLIB=	yes
 
 TGIF_PORT=	graphics/tgif-nls
 
+WRKSRC=		${WRKDIR}/ruby-${PORTNAME}-${PORTVERSION}
 CONFIGURE_ARGS=	--with-x-dir="${X11BASE}" \
 		--with-ldflags=" `cd ${WRKSRC}/tgif && ${MAKE} -V LDOPTIONS -V LOCAL_LIBRARIES -V LDLIBS -V EXTRA_LOAD_FLAGS | paste -s -`"
 INSTALL_TARGET=	site-install
@@ -33,7 +34,6 @@ DOCS_JA=	ChangeLog.ja	README.ja
 
 post-extract:
 	${LN} -sf `cd ${PORTSDIR}/${TGIF_PORT} && ${MAKE} -V WRKSRC` ${WRKSRC}/tgif
-	${TOUCH} ${WRKSRC}/tgif_lib.h
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r|\.\./|, "tgif/"' ${WRKSRC}/extconf.rb ${WRKSRC}/*.c
