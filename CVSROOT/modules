@@ -201,7 +201,6 @@ acpicatools	ports/devel/acpicatools
 acrobatviewer	ports/print/acrobatviewer
 acron		ports/misc/acron
 acroread	ports/print/acroread
-acroread-commfont	ports/print/acroread-commfont
 acroread5	ports/print/acroread5
 acroread5-commfont	ports/print/acroread5-commfont
 act		ports/biology/act
@@ -2763,7 +2762,6 @@ ja-Wnn6-lib	ports/japanese/Wnn6-lib
 ja-Wnn7-lib	ports/japanese/Wnn7-lib
 ja-a2ps		ports/japanese/a2ps
 ja-ack		ports/japanese/ack
-ja-acroread-jpnfont	ports/japanese/acroread-jpnfont
 ja-acroread5-jpnfont	ports/japanese/acroread5-jpnfont
 ja-addttfont	ports/japanese/addttfont
 ja-alias-fonts	ports/japanese/alias-fonts
@@ -3447,7 +3445,6 @@ knutclient	ports/sysutils/knutclient
 ko-FreeWnn-lib	ports/korean/FreeWnn-lib
 ko-FreeWnn-server	ports/korean/FreeWnn-server
 ko-a2ps		ports/korean/a2ps
-ko-acroread-korfont	ports/korean/acroread-korfont
 ko-acroread5-korfont	ports/korean/acroread5-korfont
 ko-ami		ports/korean/ami
 ko-baekmukfonts-bdf	ports/korean/baekmukfonts-bdf
@@ -8997,8 +8994,6 @@ zh-CJK		ports/chinese/CJK
 zh-FreeWnn-lib	ports/chinese/FreeWnn-lib
 zh-FreeWnn-server	ports/chinese/FreeWnn-server
 zh-abiword		ports/chinese/abiword
-zh-acroread-chsfont	ports/chinese/acroread-chsfont
-zh-acroread-chtfont	ports/chinese/acroread-chtfont
 zh-acroread5-chsfont	ports/chinese/acroread5-chsfont
 zh-acroread5-chtfont	ports/chinese/acroread5-chtfont
 zh-arphicttf	ports/chinese/arphicttf
