@@ -16,10 +16,15 @@ lib/%%MOZILLA%%/defaults/messenger/JP/mailViews.dat
 lib/%%MOZILLA%%/defaults/pref/unix.js
 lib/%%MOZILLA%%/defaults/profile/JP/chrome/userChrome-example.css
 lib/%%MOZILLA%%/defaults/profile/JP/chrome/userContent-example.css
+lib/%%MOZILLA%%/defaults/profile/JP/chrome/userChrome-example-euc.css
+lib/%%MOZILLA%%/defaults/profile/JP/chrome/userChrome-example-sjis.css
+lib/%%MOZILLA%%/defaults/profile/JP/chrome/userContent-example-euc.css
+lib/%%MOZILLA%%/defaults/profile/JP/chrome/userContent-example-sjis.css
 lib/%%MOZILLA%%/defaults/profile/JP/bookmarks.html
 lib/%%MOZILLA%%/defaults/profile/JP/localstore.rdf
 lib/%%MOZILLA%%/defaults/profile/JP/mimeTypes.rdf
 lib/%%MOZILLA%%/defaults/profile/JP/panels.rdf
+lib/%%MOZILLA%%/defaults/profile/JP/prefs.js
 lib/%%MOZILLA%%/defaults/profile/JP/search.rdf
 lib/%%MOZILLA%%/searchplugins/AllAboutJapan.png
 lib/%%MOZILLA%%/searchplugins/AllAboutJapan.src
