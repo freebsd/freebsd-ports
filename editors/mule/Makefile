@@ -1,47 +1,115 @@
 # New ports collection makefile for:	mule
 # Version required:	2.3
-# Date created:		22 November 1994
-# Whom:			Satoshi Asami (asami)
+# Date created:		6 July 1997
+# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.28 1997/05/28 03:06:31 asami Exp $
+# $Id: Makefile,v 1.29 1997/06/08 12:54:52 asami Exp $
 #
 
 DISTNAME=	mule-2.3
-CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.cs.buffalo.edu/pub/mule/ \
-		ftp://etlport.etl.go.jp/pub/mule/ \
-		ftp://sh.wide.ad.jp/JAPAN/mule/ \
-		ftp://ftp.funet.fi/pub/gnu/emacs/mule/
+PKGNAME?=	mule-2.3
+CATEGORIES?=	editors
+MASTER_SITES=	ftp://etlport.etl.go.jp/pub/mule/ \
+		ftp://ftp.mei.co.jp/archive/free/gnu/emacs/Mule/ \
+		ftp://ftp.iij.ad.jp/pub/misc/mule/ \
+		ftp://ports.jp.FreeBSD.org/pub/incoming/distfiles/
+DISTFILES=	mule-2.3.tar.gz mule-2.3.patch-970819.tar.gz
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER?=	taoka@infonets.hiroshima-u.ac.jp
 
+RUN_DEPENDS=	${PREFIX}/lib/mule/19.28/lisp/mule.el:${PORTSDIR}/editors/mule-common
+LIB_DEPENDS=	${LIB_INPUT_METHOD}
+BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
+
+EXTRACT_ONLY=	mule-2.3.tar.gz
+WRKSRC=		${WRKDIR}/mule
+PATCHDIR=	${.CURDIR}/../../editors/mule-common/patches
+FILESDIR=	${.CURDIR}/../../editors/mule-common/files
+SCRIPTDIR=	${.CURDIR}/../../editors/mule-common/scripts
+PLIST=		${.CURDIR}/../../editors/mule/pkg/PLIST
+INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
+PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit \
-		--terminal-face \
-		--locallisppath=${PREFIX}/lib/mule/site-lisp:${PREFIX}/share/emacs/site-lisp
+CONFIGURE_ARGS=	i386--freebsd --terminal-face \
+		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \
+		--locallisppath=${PREFIX}/lib/mule/site-lisp:${PREFIX}/share/emacs/site-lisp \
+		${WITH_INPUT_METHOD} ${WITH_DIALOGS}
 STRIP=
-MAN1=		coco.1 ctags.1 etags.1 m2ps.1 mule.1
+
+INSTALL_TARGET=	install-arch-dep
+
+.if defined(CANNA)
+LIB_INPUT_METHOD+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+WITH_INPUT_METHOD+=	--canna --canna-libraries=${PREFIX}/lib \
+		--canna-includes=${PREFIX}/include
+.endif
+.if defined(SJ3)
+BUILD_INPUT_METHOD+=sj3serv:${PORTSDIR}/japanese/sj3
+WITH_INPUT_METHOD+= --sj3
+.endif
+.if defined(WNN4)
+BUILD_INPUT_METHOD+=${PREFIX}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
+WITH_INPUT_METHOD+=	--with-wnn4 --wnn-libraries=${X11BASE}/lib/libwnn.a \
+		--wnn-includes=${X11BASE}/include/wnn
+.elif defined(CWNN4)
+BUILD_INPUT_METHOD+=${PREFIX}/bin/cWnn4/cserver:${PORTSDIR}/chinese/Wnn
+WITH_INPUT_METHOD+=	--with-wnn4 --wnn-libraries=${X11BASE}/lib/libcwnn.a \
+		--wnn-includes=${X11BASE}/include/cwnn
+.elif defined(KWNN4)
+BUILD_INPUT_METHOD+=${PREFIX}/bin/kWnn4/kserver:${PORTSDIR}/korean/Wnn
+WITH_INPUT_METHOD+=	--with-wnn4 --wnn-libraries=${X11BASE}/lib/libkwnn.a \
+		--wnn-includes=${X11BASE}/include/kwnn
+.elif defined(WNN6)
+BUILD_INPUT_METHOD+=${PREFIX}/include/wnn/jlib.h:${PORTSDIR}/japanese/Wnn6-lib
+WITH_INPUT_METHOD+=	--with-wnn6 --wnn-libraries=${PREFIX}/lib/libwnn.a \
+		--wnn-includes=${PREFIX}/include/wnn
+.endif
+
+WITH_DIALOGS=	--with-x-toolkit
+
+SITE_START=${PREFIX}/lib/mule/site-lisp/site-start.el
+
+post-extract:
+	${EXTRACT_CMD} -C ${WRKSRC} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mule-2.3.patch-970819.tar.gz
+	cd ${WRKSRC}; ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ./takana.tar.gz
+
+pre-patch:
+	cd ${WRKSRC}; ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/patch
+
+post-patch:
+	cd ${WRKSRC}; ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/Mule-2.3.patch
 
 pre-build:
-	find ${WRKSRC} -name \*.orig -exec /bin/rm -f \{} \;
+	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
+	${RM} -f ${WRKSRC}/etc/DOC* ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-19.28.*
 
 post-install:
 # note that any2ps is a script
-.for file in b2m coco ctags etags m2ps mule-19.28
+.for file in b2m coco ctags emacsclient etags m2ps mule-19.28
 	strip ${PREFIX}/bin/${file}
 .endfor
-	if [ ! -f ${PREFIX}/info/dir ]; then \
-	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+# for wnn4+sj3 or wnn6+sj3
+	@if [ -e ${PKGDIR}/INSTALL ]; then \
+		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL; \
 	fi
-.for info in emacs vip forms gnus cl sc
-	install-info ${PREFIX}/info/${info} ${PREFIX}/info/dir
-.endfor
-# Our makeinfo can't handle files with Japanese characters. :<
-	install-info --section="The Emacs editor and associated tools" --entry="* Antenews-jp: (antenews-jp).	Version 19 Antenews. (Japanese)" ${PREFIX}/info/antenews-jp ${PREFIX}/info/dir
-	install-info --section="The Emacs editor and associated tools" --entry="* Mule: (mule).			Multilingual Enhancement to GNU Emacs." ${PREFIX}/info/mule ${PREFIX}/info/dir
-	install-info --section="The Emacs editor and associated tools" --entry="* Mule-jp: (mule-jp).		Multilingual Enhancement to GNU Emacs. (Japanese)" ${PREFIX}/info/mule-jp ${PREFIX}/info/dir
-	install-info --section="The Emacs editor and associated tools" --entry="* Egg-jp: (egg-jp).		Japanese/Chinese Inputting Method. (Japanese)" ${PREFIX}/info/egg-jp ${PREFIX}/info/dir
-	install-info --section="The Emacs editor and associated tools" --entry="* Canna-jp: (canna-jp).		Another Japanese Inputting Method. (Japanese)" ${PREFIX}/info/canna-jp ${PREFIX}/info/dir
+# Installing site-start.el
+#   (we redefun set-korean-environment etc)
+.if defined(CWNN4)
+	${SED} -e 's/;;\(.*\);;CHINESE$$/\1;;CHINESE/' \
+		-e 's/;;\(.*\);;not KOREAN$$/\1;;not KOREAN/' \
+		${FILESDIR}/site-start.el.tmpl >> ${SITE_START}
+.elif defined(KWNN4)
+	${SED} -e 's/;;\(.*\);;KOREAN$$/\1;;KOREAN/' \
+		${FILESDIR}/site-start.el.tmpl >> ${SITE_START}
+.else
+	${SED} -e 's/;;\(.*\);;not KOREAN$$/\1;;not KOREAN/' \
+		${FILESDIR}/site-start.el.tmpl >> ${SITE_START}
+.endif
+	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
+
+post-package:
+	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
 
 .include <bsd.port.mk>
+

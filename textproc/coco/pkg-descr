@@ -1,21 +1,29 @@
-This is mule-2.3, a multilingual editor based on emacs-19.28.
+This is emacs lisp files, info pages, and so on (except executables)
+for mule-2.3, a multilingual editor based on emacs-19.28.
 
-This package is not built with any particular language support.  If
-you want a built-in input method, look into the mule ports in language-
-specific directories.  Currently only Japanese (Wnn and Canna) is
-available.
+You must install one of packages, mule-2.3, jp-mule-*-2.3 (
+jp-mule-canna-2.3, jp-mule-canna+sj3-2.3, etc.), cn-mule-wnn4-2.3 and
+kr-mule-wnn4-2.3, each of which contains only the executables for
+mule-2.3.
 
-This package is designed *not* to clobber any existing emacs
-installation.  In particular, the executables and man pages of
-etags/ctags are not installed, and the info pages that come with the
-original emacs don't get installed too.  Remove the file
-patches/patch-ab if you want this package to stand on its own.
-The Japanese version is build to install everything, by the way.
+This package and the above package of the executables *will* clobber any
+existing emacs installation.  In particular, the executables and man
+pages of etags/ctags are installed, and the info pages that come with
+the original emacs get installed too.
 
-A "dir" file is supplied in the files/ subdirectory of the ports
-package.  Copy it into your /usr/local/info to read mule info pages,
-but also make sure you also add everything that may have been added to
-that file!
+Although this shouldn't cause any problems to run both mule and emacs,
+it may cause some confusion when one of them is pkg_delete'd.  If
+someone has a solution to this, please tell me.
 
-- Satoshi
-asami@cs.berkeley.edu
+A "dir" file is supplied in the ${PORTSDIR}/editors/mule-common/files/
+subdirectory of the ports package.  Copy it into your /usr/local/info
+to read mule info pages, but also make sure you also add everything
+that may have been added to that file!
+
+[Notice]
+Mr. Yoshio KATAYAMA <kate@pfu.co.jp> fixed many bugs for mule-2.3.
+Patches for those are in 'mule-2.3.patch.tar.gz' and are applied in
+this port.
+
+- S. Taoka
+taoka@infonets.hiroshima-u.ac.jp

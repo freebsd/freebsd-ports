@@ -1,19 +1,9 @@
 @exec mkdir -p %D/share/emacs/site-lisp
+@dirrm share/emacs/site-lisp
+@dirrm share/emacs
 @exec mkdir -p %D/lib/mule/site-lisp
 @exec mkdir -p %D/lib/mule/lock
 @exec chmod 777 %D/lib/mule/lock
-@unexec rmdir %D/lib/mule/site-lisp
-@unexec rmdir %D/lib/mule/lock
-bin/mule-19.28
-@exec ln -sf %D/%F %B/mule
-@unexec rm %B/mule
-bin/any2ps
-bin/b2m
-bin/coco
-bin/ctags
-bin/etags
-bin/m2ps
-bin/rcs-checkin
 man/man1/coco.1.gz
 man/man1/ctags.1.gz
 man/man1/etags.1.gz
@@ -205,22 +195,6 @@ lib/mule/19.28/etc/tom.xbm
 lib/mule/19.28/etc/ulimit.hack
 lib/mule/19.28/etc/vipcard.tex
 lib/mule/19.28/etc/yow.lines
-lib/mule/19.28/i386--freebsd/cvtmail
-lib/mule/19.28/i386--freebsd/digest-doc
-lib/mule/19.28/i386--freebsd/emacsserver
-lib/mule/19.28/i386--freebsd/fakemail
-lib/mule/19.28/i386--freebsd/hexl
-lib/mule/19.28/i386--freebsd/make-docfile
-lib/mule/19.28/i386--freebsd/make-path
-lib/mule/19.28/i386--freebsd/movemail
-lib/mule/19.28/i386--freebsd/profile
-lib/mule/19.28/i386--freebsd/rcs2log
-lib/mule/19.28/i386--freebsd/sorted-doc
-lib/mule/19.28/i386--freebsd/test-distrib
-lib/mule/19.28/i386--freebsd/timer
-lib/mule/19.28/i386--freebsd/vcdiff
-lib/mule/19.28/i386--freebsd/wakeup
-lib/mule/19.28/i386--freebsd/yow
 lib/mule/19.28/lisp/COPYING
 lib/mule/19.28/lisp/ChangeLog
 lib/mule/19.28/lisp/ChangeLog.1
@@ -568,6 +542,8 @@ lib/mule/19.28/lisp/lucid.el
 lib/mule/19.28/lisp/lucid.elc
 lib/mule/19.28/lisp/lunar.el
 lib/mule/19.28/lisp/lunar.elc
+lib/mule/19.28/lisp/m2ps-util.el
+lib/mule/19.28/lisp/m2ps-util.elc
 lib/mule/19.28/lisp/macros.el
 lib/mule/19.28/lisp/macros.elc
 lib/mule/19.28/lisp/mail-extr.el
@@ -641,6 +617,7 @@ lib/mule/19.28/lisp/mule-diag.el
 lib/mule/19.28/lisp/mule-diag.elc
 lib/mule/19.28/lisp/mule-init.el
 lib/mule/19.28/lisp/mule-init.elc
+lib/mule/19.28/lisp/mule-init.el.old
 lib/mule/19.28/lisp/mule-inst.el
 lib/mule/19.28/lisp/mule-util.el
 lib/mule/19.28/lisp/mule-util.elc
@@ -903,6 +880,13 @@ lib/mule/19.28/lisp/its/kata.el
 lib/mule/19.28/lisp/its/pinyin.el
 lib/mule/19.28/lisp/its/zenkaku.el
 lib/mule/19.28/lisp/its/zhuyin.el
+lib/mule/19.28/lisp/its/Chinese.el
+lib/mule/19.28/lisp/its/Japanese.el
+lib/mule/19.28/lisp/its/Korean.el
+lib/mule/19.28/lisp/its/erpin.el
+lib/mule/19.28/lisp/its/jeonkak.el
+lib/mule/19.28/lisp/its/quanjiao.el
+lib/mule/19.28/lisp/quail/4c-CNS.el
 lib/mule/19.28/lisp/quail/ccdospy.el
 lib/mule/19.28/lisp/quail/ccdospy.elc
 lib/mule/19.28/lisp/quail/ctlau.el
@@ -937,6 +921,8 @@ lib/mule/19.28/lisp/quail/punct-b5.el
 lib/mule/19.28/lisp/quail/punct-b5.elc
 lib/mule/19.28/lisp/quail/punct.el
 lib/mule/19.28/lisp/quail/punct.elc
+lib/mule/19.28/lisp/quail/py-CNS.el
+lib/mule/19.28/lisp/quail/py-CNS.elc
 lib/mule/19.28/lisp/quail/py-b5.el
 lib/mule/19.28/lisp/quail/py-b5.elc
 lib/mule/19.28/lisp/quail/py.el
@@ -945,6 +931,8 @@ lib/mule/19.28/lisp/quail/qj-b5.el
 lib/mule/19.28/lisp/quail/qj-b5.elc
 lib/mule/19.28/lisp/quail/qj.el
 lib/mule/19.28/lisp/quail/qj.elc
+lib/mule/19.28/lisp/quail/sisheng.el
+lib/mule/19.28/lisp/quail/sisheng.elc
 lib/mule/19.28/lisp/quail/sw.el
 lib/mule/19.28/lisp/quail/sw.elc
 lib/mule/19.28/lisp/quail/tcode.el
@@ -1002,3 +990,13 @@ lib/mule/19.28/lisp/term/wyse50.el
 lib/mule/19.28/lisp/term/wyse50.elc
 lib/mule/19.28/lisp/term/x-win.el
 lib/mule/19.28/lisp/term/x-win.elc
+@dirrm lib/mule/19.28/etc
+@dirrm lib/mule/19.28/lisp/term
+@dirrm lib/mule/19.28/lisp/its
+@dirrm lib/mule/19.28/lisp/quail
+@dirrm lib/mule/19.28/lisp
+@dirrm lib/mule/19.28/i386--freebsd
+@dirrm lib/mule/19.28
+@dirrm lib/mule/lock
+@dirrm lib/mule/site-lisp
+@dirrm lib/mule
