@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	romkan
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	japanese converters ruby
 MASTER_SITES=	http://namazu.org/~satoru/ruby-romkan/
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
