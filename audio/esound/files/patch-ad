@@ -1,6 +1,9 @@
---- esdlib.c.orig	Thu Jun 29 23:31:04 2000
-+++ esdlib.c	Thu Jun 29 23:31:21 2000
-@@ -19,6 +19,8 @@
+
+$FreeBSD$
+
+--- esdlib.c.orig	Sun Sep  9 21:56:36 2001
++++ esdlib.c	Mon Feb 18 12:00:57 2002
+@@ -20,6 +20,8 @@
  #include <arpa/inet.h>
  #include <errno.h>
  #include <sys/wait.h>
@@ -9,7 +12,16 @@
  
  #include <sys/un.h>
  
-@@ -1421,4 +1423,34 @@
+@@ -651,7 +653,7 @@
+ 		setsid();
+ 		cmd = malloc(sizeof("esd ") + esd_spawn_options?strlen(esd_spawn_options):0);
+ 
+-		sprintf(cmd, "esd %s -spawnfd %d", esd_spawn_options?esd_spawn_options:"", esd_pipe[1]);
++		sprintf(cmd, "exec esd %s -spawnfd %d", esd_spawn_options?esd_spawn_options:"", esd_pipe[1]);
+ 
+ 		execl("/bin/sh", "/bin/sh", "-c", cmd, NULL);
+ 		perror("execl");
+@@ -1411,4 +1413,34 @@
      */
  
      return close( esd );
