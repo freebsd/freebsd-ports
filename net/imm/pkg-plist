@@ -4,3 +4,4 @@ bin/lscomp
 share/doc/imm/README
 share/doc/imm/imm_readme.txt
 share/doc/imm/sdr2.plugin.S53.image.imm
+@dirrm share/doc/imm
