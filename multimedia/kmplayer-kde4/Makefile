@@ -9,7 +9,7 @@ PORTNAME=	kmplayer
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/-rc/}
-DISTVERSION=	0.8.4-rc4a
+DISTVERSION=	0.8.4-rc4b
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE frontend to mplayer
@@ -71,6 +71,7 @@ WITH_GSTREAMER=yes
 ## Support Activation
 ###
 # gstreamer
+.undef WITH_GSTREAMER
 .if defined(WITH_GSTREAMER)
 USE_GNOME+=	gstreamerplugins
 
