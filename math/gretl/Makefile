@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,11 +32,13 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-static --enable-shared --with-gmake
 INSTALLS_SHLIB=	yes
 
-NOT_FOR_ARCHS=	alpha
-
 MAN1=	gretl.1 gretl-config.1
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+BROKEN=		"math/lapack appears to be broken on alpha"
+.endif
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
