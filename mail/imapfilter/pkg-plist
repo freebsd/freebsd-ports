@@ -1,8 +1,0 @@
-@comment $FreeBSD$
-bin/imapfilter
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/sample.imapfilterrc
-@dirrm %%EXAMPLESDIR%%
