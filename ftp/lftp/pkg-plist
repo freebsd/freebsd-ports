@@ -1,6 +1,8 @@
 bin/lftp
 bin/lftpget
+@unexec if cmp -s %D/etc/lftp.conf %D/etc/lftp.conf.sample; then rm -f %D/etc/lftp.conf; fi
 etc/lftp.conf.sample
+@exec if [ ! -f %D/etc/lftp.conf ]; then cp %B/%f %D/etc/lftp.conf; fi
 %%PORTDOCS%%share/doc/lftp/COPYING
 %%PORTDOCS%%share/doc/lftp/FAQ
 %%PORTDOCS%%share/doc/lftp/NEWS
