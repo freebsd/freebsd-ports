@@ -1,5 +1,5 @@
 --- wireless/wireless-applet.c.orig	Sun Jan 26 12:40:10 2003
-+++ wireless/wireless-applet.c	Mon Feb 17 00:37:30 2003
++++ wireless/wireless-applet.c	Mon Feb 17 13:20:21 2003
 @@ -30,12 +30,24 @@
  #include <math.h>
  #include <dirent.h>
@@ -64,7 +64,7 @@
  
  	if (percent < 0) {
  		applet->state = BUSTED_LINK;
-@@ -387,22 +409,113 @@
+@@ -387,22 +409,115 @@
  	applet->show_dialogs = show;
  }
  
@@ -130,8 +130,10 @@
 +	    signal_strength = (long int)(an_rssimap.an_entries[
 +		    sts->an_normalized_strength].an_rss_pct);
 +	else
-+#endif
 +	    signal_strength = (long int)(sts->an_normalized_strength);
++#else
++	signal_strength = (long int)(sts->an_normalized_rssi);
++#endif
 +	
 +	memcpy(level, &signal_strength, sizeof(level));
 +}
@@ -180,7 +182,7 @@
  		char *ptr;
  
  		fgets (line, 256, applet->file);
-@@ -435,6 +548,7 @@
+@@ -435,6 +550,7 @@
  				wireless_applet_update_state (applet, device, link, level, noise);
  			}
  		}
@@ -188,7 +190,7 @@
  	} while (1);
  
  	if (g_list_length (applet->devices)==1) {
-@@ -446,15 +560,21 @@
+@@ -446,15 +562,21 @@
  	}
  
  	/* rewind the /proc/net/wireless file */
@@ -210,7 +212,7 @@
  
  	wireless_applet_read_device_state (applet);
  
-@@ -517,6 +637,7 @@
+@@ -517,6 +639,7 @@
  static void
  start_file_read (WirelessApplet *applet)
  {
@@ -218,7 +220,7 @@
  	applet->file = fopen ("/proc/net/wireless", "rt");
  	if (applet->file == NULL) {
  		gtk_tooltips_set_tip (applet->tips,
-@@ -525,6 +646,7 @@
+@@ -525,6 +648,7 @@
  				NULL);
  		show_error_dialog (_("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
  	}
@@ -226,7 +228,7 @@
  }
  
  static void
-@@ -766,7 +888,9 @@
+@@ -766,7 +890,9 @@
  		applet->prefs = NULL;
  	}
  
