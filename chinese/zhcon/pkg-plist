@@ -1,6 +1,10 @@
 bin/zhcon
 lib/zhcon/asc16
 lib/zhcon/big516
+%%BIG5IME%%lib/zhcon/big5-ary30.mb
+%%BIG5IME%%lib/zhcon/big5-cj.mb
+%%BIG5IME%%lib/zhcon/big5-liu5.mb
+%%BIG5IME%%lib/zhcon/big5-phone.mb
 lib/zhcon/cjf.mb
 lib/zhcon/cjj.mb
 lib/zhcon/dzm.mb
