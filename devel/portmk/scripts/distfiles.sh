@@ -263,7 +263,7 @@ fetch_curl()
   fi
 
   $SETENV $FETCH_ENV $FETCH_CMD $FETCH_BEFORE_ARGS$cksize \
-    $4 -o "$2" "$1" $FETCH_AFTER_ARGS
+    -o "$2" "$1" $FETCH_AFTER_ARGS
 }
 
 fetch_fetch()
@@ -286,12 +286,12 @@ fetch_fetch()
   fi
 
   $SETENV $FETCH_ENV $FETCH_CMD $FETCH_BEFORE_ARGS$symlink$cksize \
-    $4 -o "$2" "$1" $FETCH_AFTER_ARGS
+    -o "$2" "$1" $FETCH_AFTER_ARGS
 }
 
 fetch_wget()
 {
-  case "$4" in
+  case "$1" in
   file:*)
     fetch_fetch "$@" || return 1
     return 0;;
@@ -303,7 +303,7 @@ fetch_wget()
   esac
 
   $SETENV $FETCH_ENV $FETCH_CMD $FETCH_BEFORE_ARGS \
-    $4 -O "$2" "$1" $FETCH_AFTER_ARGS
+    -O "$2" "$1" $FETCH_AFTER_ARGS
 }
 
 ###
@@ -682,7 +682,10 @@ do_fetch_all()
         $ECHO_MSG ">> No checksum recorded for $DIR$file."
         return 1
       fi
-      CKSIZE=`extract_sum 'SIZE' "$DIR" "$file"`
+      CKSIZE=
+      if [ -z "$DISABLE_SIZE" ]; then
+        CKSIZE=`extract_sum 'SIZE' "$DIR" "$file"`
+      fi
 
       $ECHO_MSG ">> Verifying availability of file $file."
       MASTER_SITES_TMP=`get_master_sites "$fileset" "$select"`
@@ -718,7 +721,7 @@ do_fetch_all()
           done
         else
           if _FETCH_RESULT=`$SETENV $FETCH_ENV $FETCH -s "$url"`; then
-            if [ -z "$DISABLE_SIZE" -a -n "${CKSIZE#*=}" ]; then
+            if [ -n "${CKSIZE}" ]; then
               if [ "${CKSIZE#*=}" = "$_FETCH_RESULT" ]; then
                 $ECHO_MSG ">> Size OK (${CKSIZE#*=}) for $file."
               else
