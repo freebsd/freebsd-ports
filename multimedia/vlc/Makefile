@@ -15,7 +15,7 @@
 # WITH_LIBID3TAG=yes
 # WITH_LIBMATROSKA=yes
 # WITH_LIBMPEG2=yes
-# WITH_LIBTHEORA=yes	
+# WITH_LIBTHEORA=yes
 # WITH_LIVEMEDIA=yes
 # WITH_SPEEX=yes
 # WITH_SVGALIB=yes
@@ -27,6 +27,7 @@ PORTNAME=	vlc
 PORTVERSION=	0.7.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/
+PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An X11 video streaming client/server solution
@@ -131,7 +132,7 @@ WITH_XOSD=	yes
 .if defined(WITH_GNOME) && !defined(WITHOUT_GNOME)
 USE_GNOME+=	gnomelibs
 CONFIGURE_ARGS+=--enable-gnome
-PKGNAMESUFFIX=	-gnome
+GNOME_SUFFIX=	-gnome
 PLIST_FILES+=	bin/gnome-vlc \
 		lib/vlc/gui/libgnome_plugin.so \
 		lib/vlc/misc/libgnome_main_plugin.so
@@ -151,7 +152,7 @@ PKGNAMESUFFIX=	-esound
 .endif
 
 .if !defined(WITHOUT_LIBID3TAG)
-LIB_DEPENDS+=   id3tag.2:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS+=	id3tag.2:${PORTSDIR}/audio/libid3tag
 PLIST_FILES+=	lib/vlc/demux/libid3tag_plugin.so
 .endif
 
