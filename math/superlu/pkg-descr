@@ -17,10 +17,8 @@ version start with letter "c" (such as cgstrf.c); the file names
 for the double-precision complex version start with letter "z"
 (such as zgstrf.c).
 
-			===================
-			
 WWW: http://www.nersc.gov/~xiaoye/SuperLU/
-Authors:
-        Jim Demmel      demmel@cs.berkeley.edu
-        John Gilbert    gilbert@parc.xerox.com
-        Xiaoye S. Li    xiaoye@cs.berkeley.edu
+
+Authors:	Jim Demmel      demmel@cs.berkeley.edu
+		John Gilbert    gilbert@parc.xerox.com
+		Xiaoye S. Li    xiaoye@cs.berkeley.edu
