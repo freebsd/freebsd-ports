@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	5.0.25
+PORTVERSION=	5.0.27
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	tomcat-5/v${PORTVERSION}/bin
@@ -111,6 +111,10 @@ do-install:
 	@${ECHO_CMD} -n ">> Creating destination directory..."
 	@${MKDIR} ${APP_HOME}
 	@${MKDIR} ${LOG_DIR}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Backing up configuration files..."
+	@${MV} ${APP_HOME}/conf ${APP_HOME}/conf.orig 2>/dev/null || true
 	@${ECHO_CMD} " [ DONE ]"
 
 	@${ECHO_CMD} -n ">> Copying files to destination directory..."
