@@ -14,6 +14,8 @@ MAINTAINER=	oyvindmo@initio.no
 
 # See pkg-message about other dependencies.
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CDDB_get.pm:${PORTSDIR}/audio/p5-CDDB_get
+RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
+RUN_DEPENDS+=	dagrab:${PORTSDIR}/audio/dagrab
 
 NO_BUILD=	yes
 USE_PERL5=	yes
