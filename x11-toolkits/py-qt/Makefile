@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
-MAINTAINER=	osgene@web.de
+MAINTAINER=	eugos@gmx.net
 COMMENT=	Python Bindings for Qt
 
 LIB_DEPENDS=	sip.10:${PORTSDIR}/devel/sip
