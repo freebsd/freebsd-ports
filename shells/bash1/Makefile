@@ -1,19 +1,18 @@
 # New ports collection makefile for:	bash
-# Version required:     2.0
+# Version required:     1.14.7
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.19 1996/12/27 06:26:05 obrien Exp $
+# $Id: Makefile,v 1.20 1996/12/27 11:40:41 ache Exp $
 #
 
-DISTNAME=       bash-2.0
+DISTNAME=       bash-1.14.7
 CATEGORIES=	shells
 MASTER_SITES=   ftp://slc2.ins.cwru.edu/pub/dist/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-GNU_CONFIGURE=  Yes
-
-MAN1=           bash.1 bashbug.1
+WRKSRC=         ${WRKDIR}/${DISTNAME}
+# Don't compress manpages or .so not works.
 
 .include <bsd.port.mk>

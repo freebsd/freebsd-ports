@@ -1,133 +1,41 @@
-*** bashhist.c.bak	Mon Jul 22 22:36:24 1996
---- bashhist.c	Fri Dec 27 13:31:20 1996
+*** readline.c.orig	Wed May 24 18:43:28 1995
+--- lib/readline/readline.c	Wed Jul 19 20:26:53 1995
 ***************
-*** 39,45 ****
-  #include "pathexp.h"	/* for the struct ignorevar stuff */
-  #include "builtins/common.h"
-  #include <readline/history.h>
-! #include <glob/fnmatch.h>
+*** 958,964 ****
+  static void
+  readline_initialize_everything ()
+  {
+!   char *t;
   
-  #if defined (READLINE)
-  #  include "bashline.h"
---- 39,45 ----
-  #include "pathexp.h"	/* for the struct ignorevar stuff */
-  #include "builtins/common.h"
-  #include <readline/history.h>
-! #include <fnmatch.h>
+    /* Find out if we are running in Emacs. */
+    running_in_emacs = getenv ("EMACS") != (char *)0;
+--- 958,964 ----
+  static void
+  readline_initialize_everything ()
+  {
+!   char *t, *t1;
   
-  #if defined (READLINE)
-  #  include "bashline.h"
-*** execute_cmd.c.bak	Fri Dec 20 00:22:32 1996
---- execute_cmd.c	Fri Dec 27 13:31:20 1996
+    /* Find out if we are running in Emacs. */
+    running_in_emacs = getenv ("EMACS") != (char *)0;
 ***************
-*** 74,80 ****
-  #include "builtins/common.h"
-  #include "builtins/builtext.h"	/* list of builtins */
-  
-! #include <glob/fnmatch.h>
-  #include <tilde/tilde.h>
-  
-  #if defined (BUFFERED_INPUT)
---- 74,80 ----
-  #include "builtins/common.h"
-  #include "builtins/builtext.h"	/* list of builtins */
-  
-! #include <fnmatch.h>
-  #include <tilde/tilde.h>
-  
-  #if defined (BUFFERED_INPUT)
-*** pathexp.c.bak	Wed Oct 23 19:55:12 1996
---- pathexp.c	Fri Dec 27 13:31:20 1996
-***************
-*** 33,39 ****
-  #include "pathexp.h"
-  #include "flags.h"
-  
-! #include <glob/fnmatch.h>
-  #include <glob/glob.h>
-  
-  /* Control whether * matches .files in globbing. */
---- 33,39 ----
-  #include "pathexp.h"
-  #include "flags.h"
-  
-! #include <fnmatch.h>
-  #include <glob/glob.h>
-  
-  /* Control whether * matches .files in globbing. */
-*** shell.c.bak	Wed Dec 18 23:16:50 1996
---- shell.c	Fri Dec 27 13:31:20 1996
-***************
-*** 68,74 ****
-  #endif
-  
-  #include <tilde/tilde.h>
-! #include <glob/fnmatch.h>
-  
-  #if !defined (HAVE_GETPW_DECLS)
-  extern struct passwd *getpwuid ();
---- 68,74 ----
-  #endif
-  
-  #include <tilde/tilde.h>
-! #include <fnmatch.h>
-  
-  #if !defined (HAVE_GETPW_DECLS)
-  extern struct passwd *getpwuid ();
-*** subst.c.bak	Wed Dec 11 01:14:33 1996
---- subst.c	Fri Dec 27 13:31:20 1996
-***************
-*** 58,64 ****
-  #  include <readline/history.h>
-  #endif
-  
-! #include <glob/fnmatch.h>
-  
-  #if !defined (errno)
-  extern int errno;
---- 58,64 ----
-  #  include <readline/history.h>
-  #endif
-  
-! #include <fnmatch.h>
-  
-  #if !defined (errno)
-  extern int errno;
-*** lib/glob/glob.c.bak	Thu Jul 11 22:09:52 1996
---- lib/glob/glob.c	Fri Dec 27 13:33:32 1996
-***************
-*** 87,93 ****
-  #endif /* OPENDIR_NOT_ROBUST */
-  
-  #include "memalloc.h"
-! #include "fnmatch.h"
-  
-  #if !defined (HAVE_STDLIB_H) && !defined (SHELL)
-  extern char *malloc (), *realloc ();
---- 87,93 ----
-  #endif /* OPENDIR_NOT_ROBUST */
-  
-  #include "memalloc.h"
-! #include <fnmatch.h>
-  
-  #if !defined (HAVE_STDLIB_H) && !defined (SHELL)
-  extern char *malloc (), *realloc ();
-*** lib/glob/Makefile.in.bak	Fri Oct  4 19:02:34 1996
---- lib/glob/Makefile.in	Fri Dec 27 13:28:01 1996
-***************
-*** 45,51 ****
-  # The header files for this library.
-  HSOURCES = $(srcdir)/fnmatch.h
-  
-! OBJECTS = glob.o fnmatch.o
-  
-  # The texinfo files which document this library.
-  DOCSOURCE = doc/glob.texi
---- 45,51 ----
-  # The header files for this library.
-  HSOURCES = $(srcdir)/fnmatch.h
-  
-! OBJECTS = glob.o #fnmatch.o
-  
-  # The texinfo files which document this library.
-  DOCSOURCE = doc/glob.texi
+*** 993,1000 ****
+    /* Check for LC_CTYPE and use its value to decide the defaults for
+       8-bit character input and output. */
+    t = getenv ("LC_CTYPE");
+!   if (t && (strcmp (t, "iso-8859-1") == 0 || strcmp (t, "iso_8859_1") == 0 ||
+!   	    strcmp (t, "ISO-8859-1") == 0))
+      {
+        _rl_meta_flag = 1;
+        _rl_convert_meta_chars_to_ascii = 0;
+--- 993,1003 ----
+    /* Check for LC_CTYPE and use its value to decide the defaults for
+       8-bit character input and output. */
+    t = getenv ("LC_CTYPE");
+!   t1 = getenv ("LANG");
+!   if (t && (strstr (t, "8859-1") != NULL || strstr (t, "8859_1") != NULL ||
+! 	  strstr (t, "KOI8-R") != NULL || strstr (t, "koi8-r") != NULL) ||
+!       t1 && (strstr (t1, "8859-1") != NULL || strstr (t1, "8859_1") != NULL ||
+! 	   strstr (t1, "KOI8-R") != NULL || strstr (t1, "koi8-r") != NULL))
+      {
+        _rl_meta_flag = 1;
+        _rl_convert_meta_chars_to_ascii = 0;
