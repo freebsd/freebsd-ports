@@ -27,6 +27,8 @@ DISTFILES+=	postgresql-docs-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@partitur.se
 
+FORBIDDEN=	"buffer overruns acknowledged by authors--see <URL:http://www3.us.postgresql.org/news.html>"
+
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
