@@ -9,6 +9,7 @@ PORTNAME=	hat
 PORTVERSION=	2.00
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
+PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
 
@@ -25,7 +26,7 @@ BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 RUN_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 .else
 WITH_GHC=	yes
-BUILD_DEPENDS+= hmake:${PORTSDIR}/devel/hmake
+BUILD_DEPENDS+= hmake:${PORTSDIR}/devel/hs-hmake
 .endif
 .if defined(WITH_GHC)
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc

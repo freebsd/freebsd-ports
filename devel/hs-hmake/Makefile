@@ -11,6 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.haskell.org/hmake/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
 		http://www.cs.york.ac.uk/fp/hmake/
+PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	mwest@uct.ac.za
 

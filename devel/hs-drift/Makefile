@@ -9,6 +9,7 @@ PORTVERSION=	2.0.r3
 CATEGORIES=	devel
 MASTER_SITES=	http://repetae.net/john/computer/haskell/DrIFT/
 DISTNAME=	DrIFT-${PORTVERSION:S/.r/rc/}
+PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
 

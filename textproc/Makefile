@@ -77,8 +77,8 @@
     SUBDIR += gutenmark
     SUBDIR += gxditview
     SUBDIR += gxmlviewer
-    SUBDIR += haxml
     SUBDIR += hevea
+    SUBDIR += hs-haxml
     SUBDIR += htdig
     SUBDIR += html
     SUBDIR += html2fo

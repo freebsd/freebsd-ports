@@ -9,6 +9,7 @@ PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.haskell.org/haddock/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	obraun@FreeBSD.org
 

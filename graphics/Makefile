@@ -130,9 +130,9 @@
     SUBDIR += gxanim
     SUBDIR += hdf
     SUBDIR += hdf5
-    SUBDIR += hgl
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
+    SUBDIR += hs-hgl
     SUBDIR += icod
     SUBDIR += icontact
     SUBDIR += imagesort
