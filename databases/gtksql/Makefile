@@ -27,7 +27,7 @@ LIB_DEPENDS +=	pq.2:${PORTSDIR}/databases/postgresql
 
 USE_X_PREFIX=	yes
 
-fetch-depends:
+pre-patch:
 .if !defined(USE_MYSQL) && !defined(USE_PGSQL)
 	@ ${ECHO} "You must specify which database to use, possible are:"
 	@ ${ECHO}
