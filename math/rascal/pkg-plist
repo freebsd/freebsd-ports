@@ -1,19 +1,20 @@
+%%GNOME:%%bin/grascal
 bin/rascal
 etc/rascal.rc
-share/doc/rascal/rascal.pdf
-share/doc/rascal/rascal.ps
-share/doc/rascal/CHANGES
-share/doc/rascal/TEST
-share/doc/rascal/TOOLBOXTEST
-share/doc/rascal/html/img1.gif
-share/doc/rascal/html/img2.gif
-share/doc/rascal/html/img3.gif
-share/doc/rascal/html/img4.gif
-share/doc/rascal/html/img5.gif
-share/doc/rascal/html/img6.gif
-share/doc/rascal/html/img7.gif
-share/doc/rascal/html/index.html
-share/doc/rascal/html/rascal.css
-share/doc/rascal/html/rascal.html
-@dirrm share/doc/rascal/html
-@dirrm share/doc/rascal
+%%PORTDOCS%%%%DOCSDIR%%/rascal.pdf
+%%PORTDOCS%%%%DOCSDIR%%/rascal.ps
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/TEST
+%%PORTDOCS%%%%DOCSDIR%%/TOOLBOXTEST
+%%PORTDOCS%%%%DOCSDIR%%/html/img1.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img2.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img3.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img4.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img5.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img6.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/img7.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/rascal.css
+%%PORTDOCS%%%%DOCSDIR%%/html/rascal.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
