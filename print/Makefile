@@ -116,6 +116,7 @@
     SUBDIR += pcal
     SUBDIR += pclprint
     SUBDIR += pdflib
+    SUBDIR += pdflib-perl
     SUBDIR += pdflib3
     SUBDIR += pdq
     SUBDIR += perlftlib
