@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	slrnface
-PORTVERSION=	1.2
+PORTVERSION=	2.1.1
 CATEGORIES=	news
-MASTER_SITES=	http://fly.cc.fer.hr/~dave/slrnface/
+MASTER_SITES=	http://dave.willfork.com/slrnface/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 
 LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
 
 ALL_TARGET=	slrnface
 
 USE_XLIB=	yes
-USE_GMAKE=	yes
 
-post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
+MAN1=		slrnface.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slrnface ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/slrnface.1 ${MAN1PREFIX}/man/man1/slrnface.1
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/slrnface.sl ${EXAMPLESDIR}
 	@${CAT} ${PKGMESSAGE}
