@@ -2,6 +2,7 @@ etc/rc.d/apache.sh
 @exec mkdir -p %D/www/cgi-bin %D/www/data
 etc/apache/httpd.conf-dist
 etc/apache/srm.conf-dist
+etc/apache/srm.conf.php
 etc/apache/access.conf-dist
 etc/apache/mime.types-dist
 sbin/httpd
