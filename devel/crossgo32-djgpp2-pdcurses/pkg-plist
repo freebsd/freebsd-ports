@@ -1,0 +1,13 @@
+i386-go32/lib/libcurso.a
+i386-go32/lib/libcurses.a
+i386-go32/lib/libpano.a
+i386-go32/include/curses.h
+i386-go32/include/cursos2.h
+i386-go32/include/curspriv.h
+i386-go32/include/panel.h
+share/doc/pdcurses/readme.txt
+share/doc/pdcurses/intro.txt
+share/doc/pdcurses/overview.txt
+share/doc/pdcurses/xwindows.txt
+share/doc/pdcurses/Readme.FreeBSD
+@dirrm share/doc/pdcurses
