@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cstringbuffer
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.translator.cx/dist/libs/
 
@@ -15,5 +15,10 @@ COMMENT=	File-like IO for strings
 
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
+MAN3=		csb.3
+MANCOMPRESSED=	no
+
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
