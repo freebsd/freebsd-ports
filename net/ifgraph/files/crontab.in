@@ -1,0 +1,3 @@
+# crontab file for ifGraph
+#*/5 * * * * %%PREFIX%%/bin/ifgraph.pl -c %%PREFIX%%/etc/ifgraph.conf > /dev/null
+#*/5 * * * * %%PREFIX%%/bin/makegraph.pl -c %%PREFIX%%/etc/ifgraph.conf > /dev/null

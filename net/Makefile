@@ -218,6 +218,7 @@
     SUBDIR += icqlib
     SUBDIR += icqlib0
     SUBDIR += icqnix
+    SUBDIR += ifgraph
     SUBDIR += ifstat
     SUBDIR += iftop
     SUBDIR += imapproxy

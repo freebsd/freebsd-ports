@@ -1,0 +1,32 @@
+=================================================================
+
+ifGraph has now been installed in %%PREFIX%%/ifgraph/.
+
+NOTE: A sample configuration files has been placed at:
+
+  %%PREFIX%%/etc/ifgraph.conf.sample
+
+You need to copy this to
+
+  %%PREFIX%%/etc/ifgraph.conf
+
+and edit it to suit your requirements.
+
+A sample crontab(5) entry has been installed. You need to activate
+this to start measurements and graph generation. You can do this
+with
+
+  crontab -u ifgraph -e
+
+Documentation is installed in
+
+  %%DOCSDIR%%/
+
+To enable Apache web access, add the following to your
+%%PREFIX%%/etc/apache/httpd.conf:
+
+  Alias /ifgraph/ %%PREFIX%%/ifgraph/htdocs/
+
+Enjoy!
+
+=================================================================
