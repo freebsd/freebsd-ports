@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.win.ne.jp/pub/network/snmp/ucd-snmp/
 MASTER_SITE_SUBDIR= net-snmp
 
-MAINTAINER=	marcus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extendable SNMP implementation
 
 USE_AUTOCONF_VER=213
