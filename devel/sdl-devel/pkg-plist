@@ -26,7 +26,7 @@ include/SDL11/begin_code.h
 include/SDL11/close_code.h
 lib/libSDL-1.1.a
 lib/libSDL-1.1.so
-lib/libSDL-1.1.so.2
+lib/libSDL-1.1.so.3
 lib/libSDLmain-1.1.a
 share/aclocal/sdl11.m4
 share/doc/SDL11/BUGS
