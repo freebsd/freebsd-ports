@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 RESTRICTED=	"IDEA is Patented in the USA and many European countries"
 
 NO_WRKSUBDIR=	yes
-CFLAGS+=	-O2 -shared -fPIC -DIS_MODULE
+CFLAGS+=	-shared -fPIC -DIS_MODULE
 CFLAGS+=	-Wall -Wcast-align -Wshadow -Wstrict-prototypes
 PLIST=		${WRKDIR}/.PLIST.more
 
