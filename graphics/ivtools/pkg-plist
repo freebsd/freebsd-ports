@@ -6,6 +6,7 @@ bin/flipbook
 bin/graphdraw
 bin/iclass
 bin/idraw
+bin/ivdl
 bin/ivgetjpg
 bin/ivtext
 bin/ivtiftopnm
