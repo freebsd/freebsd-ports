@@ -2615,6 +2615,7 @@ gplbp		ports/misc/gplbp
 gplot		ports/graphics/gplot
 gpp		ports/textproc/gpp
 gpredict	ports/comms/gpredict
+gprename	ports/x11-fm/gprename
 gprolog		ports/lang/gprolog
 gps		ports/net-mgmt/gps
 gpsdrive	ports/astro/gpsdrive
