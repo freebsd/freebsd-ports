@@ -18,16 +18,19 @@ libexec/nut/belkin
 libexec/nut/bestfort
 libexec/nut/bestuferrups
 libexec/nut/bestups
+libexec/nut/cyberpower
 libexec/nut/engetron
 libexec/nut/everups
 libexec/nut/fentonups
 libexec/nut/genericups
 libexec/nut/ipt-anzen
+libexec/nut/masterguard
 libexec/nut/mge-ellipse
 libexec/nut/mgeups
 libexec/nut/multilink
 libexec/nut/mustekups
 libexec/nut/newapc
+libexec/nut/newpowercom
 libexec/nut/optiups
 libexec/nut/powercom
 libexec/nut/sec
@@ -73,6 +76,7 @@ sbin/upssched
 %%PORTDOCS%%share/doc/nut/upssched.txt
 %%PORTDOCS%%share/doc/nut/cables/powerware.txt
 %%PORTDOCS%%share/doc/nut/cables/repotec.txt
+%%PORTDOCS%%share/doc/nut/cables/sms.txt
 %%PORTDOCS%%share/doc/nut/cables/victron.txt
 %%CGIFILES%%multimon.cgi
 %%CGIFILES%%upsimage.cgi
