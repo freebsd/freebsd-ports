@@ -113,6 +113,10 @@ lib/RealPlayer/share/default/volume_popup_off.png
 %%NLS%%lib/RealPlayer/share/locale/fr/README
 %%NLS%%lib/RealPlayer/share/locale/fr/player.mo
 %%NLS%%lib/RealPlayer/share/locale/fr/widget.mo
+%%NLS%%lib/RealPlayer/share/locale/hi/LICENSE
+%%NLS%%lib/RealPlayer/share/locale/hi/README
+%%NLS%%lib/RealPlayer/share/locale/hi/player.mo
+%%NLS%%lib/RealPlayer/share/locale/hi/widget.mo
 %%NLS%%lib/RealPlayer/share/locale/it/LICENSE
 %%NLS%%lib/RealPlayer/share/locale/it/README
 %%NLS%%lib/RealPlayer/share/locale/it/player.mo
@@ -125,6 +129,10 @@ lib/RealPlayer/share/default/volume_popup_off.png
 %%NLS%%lib/RealPlayer/share/locale/ko/README
 %%NLS%%lib/RealPlayer/share/locale/ko/player.mo
 %%NLS%%lib/RealPlayer/share/locale/ko/widget.mo
+%%NLS%%lib/RealPlayer/share/locale/pl/LICENSE
+%%NLS%%lib/RealPlayer/share/locale/pl/README
+%%NLS%%lib/RealPlayer/share/locale/pl/player.mo
+%%NLS%%lib/RealPlayer/share/locale/pl/widget.mo
 %%NLS%%lib/RealPlayer/share/locale/pt_BR/LICENSE
 %%NLS%%lib/RealPlayer/share/locale/pt_BR/README
 %%NLS%%lib/RealPlayer/share/locale/pt_BR/player.mo
@@ -153,9 +161,11 @@ lib/linux-mozilla/plugins/nphelix.xpt
 @dirrm lib/RealPlayer/share/locale/de
 @dirrm lib/RealPlayer/share/locale/es
 @dirrm lib/RealPlayer/share/locale/fr
+@dirrm lib/RealPlayer/share/locale/hi
 @dirrm lib/RealPlayer/share/locale/it
 @dirrm lib/RealPlayer/share/locale/ja
 @dirrm lib/RealPlayer/share/locale/ko
+@dirrm lib/RealPlayer/share/locale/pl
 @dirrm lib/RealPlayer/share/locale/pt_BR
 @dirrm lib/RealPlayer/share/locale/zh_CN
 @dirrm lib/RealPlayer/share/locale/zh_TW
@@ -164,6 +174,7 @@ lib/linux-mozilla/plugins/nphelix.xpt
 @dirrm lib/RealPlayer/share
 @dirrm lib/RealPlayer
 @unexec rmdir %D/lib/linux-mozilla/plugins 2>/dev/null || true
+@unexec rmdir %D/lib/linux-mozilla 2>/dev/null || true
 %%X11%%@cwd %%X11BASE%%
 %%GNOME%%share/gnome/application-registry/realplay.applications
 %%GNOME%%share/gnome/applications/realplay.desktop
