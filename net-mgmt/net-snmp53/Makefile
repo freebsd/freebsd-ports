@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	net-snmp
-PORTVERSION=	5.0.3
-PORTREVISION=	2
+PORTVERSION=	5.0.6
 CATEGORIES=	net ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \

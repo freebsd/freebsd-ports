@@ -1,5 +1,16 @@
---- Makefile.top.orig	Sat Apr 20 16:29:56 2002
-+++ Makefile.top	Tue Apr 23 08:53:54 2002
+--- Makefile.top.orig	Sun Oct  6 06:09:32 2002
++++ Makefile.top	Sun Oct  6 18:09:19 2002
+@@ -37,8 +37,8 @@
+ LN_S		= @LN_S@
+ #AUTOCONF	= @AUTOCONF@
+ #AUTOHEADER	= @AUTOHEADER@
+-AUTOCONF	= autoconf
+-AUTOHEADER	= autoheader
++AUTOCONF	= autoconf213
++AUTOHEADER	= autoheader213
+ 
+ #
+ # Compiler arguments
 @@ -60,7 +60,7 @@
  # generally, LIBCURRENT should stay the same unless major changes occur.
  # Increment REVISION every release.  

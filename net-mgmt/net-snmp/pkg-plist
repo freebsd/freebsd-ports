@@ -171,6 +171,7 @@ share/snmp/mib2c.column_enums.conf
 share/snmp/mib2c.conf
 share/snmp/mib2c.create-dataset.conf
 share/snmp/mib2c.iterate.conf
+share/snmp/mib2c.old-api.conf
 share/snmp/mibs/AGENTX-MIB.txt
 share/snmp/mibs/DISMAN-SCHEDULE-MIB.txt
 share/snmp/mibs/DISMAN-SCRIPT-MIB.txt

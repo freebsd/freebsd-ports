@@ -1,12 +1,12 @@
---- snmplib/snmpTCPIPv6Domain.c.orig	Wed Jul 17 03:20:43 2002
-+++ snmplib/snmpTCPIPv6Domain.c	Thu Jul 25 19:55:47 2002
+--- snmplib/snmpTCPIPv6Domain.c.orig	Fri Aug  9 22:57:43 2002
++++ snmplib/snmpTCPIPv6Domain.c	Sun Oct  6 01:07:12 2002
 @@ -62,13 +62,21 @@
      if (to == NULL) {
          return strdup("TCP/IPv6: unknown");
      } else {
--        char            addr[INET6_ADDRSTRLEN];
--        char            tmp[INET6_ADDRSTRLEN + 8];
-+        char            tmp[NI_MAXHOST];
+-        char addr[INET6_ADDRSTRLEN];
+-        char tmp[INET6_ADDRSTRLEN + 8];
++        char tmp[NI_MAXHOST];
  
 -        sprintf(tmp, "[%s]:%hd",
 -                inet_ntop(AF_INET6, (void *) &(to->sin6_addr), addr,
