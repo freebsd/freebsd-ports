@@ -102,6 +102,7 @@
     SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pwgen
+    SUBDIR += pyfind
     SUBDIR += qtpkg
     SUBDIR += rdate
     SUBDIR += rotate
