@@ -5,38 +5,27 @@
 # $FreeBSD$
 
 PORTNAME=	phpgroupware
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.16.003
 CATEGORIES=	japanese deskutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		${PATCH_SITE}
-MASTER_SITE_SUBDIR=	phpgroupware
-DISTNAME=	phpGroupWare-${PORTVERSION}
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE_JP}
+MASTER_SITE_SUBDIR=     phpgwjp/12593
+DISTNAME=	phpgroupware-jp-${PORTVERSION}-pre1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${PATCHFILE}
+		phpgroupware-doc-jp-${PORTVERSION}-pre1${EXTRACT_SUFX}
 
 MAINTAINER=	mutoh@openedu.org
 COMMENT=	A web based GroupWare system
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
-
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phpgroupware
+INSTALLDIR=	${PREFIX}/www/data/phpgroupware
 
-PATCHFILE=	phpGroupWare-${PORTVERSION}jp.tar.gz
-PATCH_SITE=	http://www.itheart.com/en/phpgroupware/
-EXTRA_PATCHES=	${WRKDIR}/patch.txt
-PATCH_DIR=	${WRKDIR}/${PORTVERSION}jp
-PATCH_STRIP=	-p1
-
-post-extract:
-		${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -rf
-
-post-patch:
-		${FIND} ${WRKSRC} -name *.orig | ${XARGS} ${RM} -rf
-		@${CP} ${PATCH_DIR}/phpgwapi/inc/class.codecv* ${WRKSRC}/phpgwapi/inc/
-		@${CP} ${PATCH_DIR}/calendar/inc/class.holidaycalc* ${WRKSRC}/calendar/inc
+USE_PHP=	mbstring
+USE_BZIP2=	yes
 
 do-install:
 		@${CP} -r ${WRKSRC} ${PREFIX}/www/data/
+		@${CHOWN} -R www:www ${INSTALLDIR}
+		@${CHMOD} -R 770 ${INSTALLDIR}
 
 .include <bsd.port.mk>
