@@ -35,6 +35,11 @@ BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--enable-socks
 .endif
 
+.if defined(WITH_SSL)
+USE_OPENSSL=		YES
+CONFIGURE_ARGS+=	--enable-openssl
+.endif
+
 .if defined(HAVE_GNOME)
 USE_GNOME=		yes
 CONFIGURE_ARGS+=	--enable-gnome --enable-panel --enable-gdk-pixbuf
