@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--with-cn-locale=EUC
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501000
-BROKEN=         "Does not compile"
+BROKEN=		"Does not compile"
 .endif
 
 post-patch:
