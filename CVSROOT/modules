@@ -5918,6 +5918,7 @@ pks		ports/security/pks
 pktrace		ports/print/pktrace
 pktsuckers	ports/security/pktsuckers
 pkzip		ports/archivers/pkzip
+pl-aspell	ports/textproc/pl-aspell
 pl-ooodict-PL	ports/editors/ooodict-pl_PL
 pl-openoffice	ports/editors/openoffice-pl
 pl-sms		ports/misc/pl-sms
