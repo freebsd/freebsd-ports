@@ -28,6 +28,9 @@
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GCheckBoxes.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GCheckBoxes.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GCheckBoxes.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GClipComponents.py
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GClipComponents.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GClipComponents.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GColors.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GColors.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GColors.pyo
@@ -52,6 +55,9 @@
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GFonts.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GFonts.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GFonts.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GGLViews.py
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GGLViews.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GGLViews.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GGeometry.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GGeometry.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GGeometry.pyo
@@ -79,9 +85,15 @@
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GScrollBars.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GScrollBars.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GScrollBars.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GTasks.py
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GTasks.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GTasks.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GTextFields.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GTextFields.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GTextFields.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GViewBases.py
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GViewBases.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Generic/GViewBases.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GViews.py
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GViews.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Generic/GViews.pyo
@@ -127,6 +139,9 @@
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/CheckBoxes.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/CheckBoxes.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/CheckBoxes.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/ClipComponents.py
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/ClipComponents.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/ClipComponents.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Colors.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Colors.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Colors.pyo
@@ -154,12 +169,18 @@
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Fonts.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Fonts.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Fonts.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/GL.py
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/GL.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/GL.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Geometry.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Geometry.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Geometry.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/GtkImageScaling.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/GtkImageScaling.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/GtkImageScaling.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/GtkInput.py
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/GtkInput.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/GtkInput.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Images.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Images.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Images.pyo
@@ -184,9 +205,15 @@
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/StdFonts.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/StdFonts.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/StdFonts.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/Tasks.py
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/Tasks.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/Tasks.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/TextFields.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/TextFields.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/TextFields.pyo
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/ViewBases.py
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/ViewBases.pyc
+%%PYTHON_SITELIBDIR%%/GUI/Gtk/ViewBases.pyo
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Views.py
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Views.pyc
 %%PYTHON_SITELIBDIR%%/GUI/Gtk/Views.pyo
@@ -205,9 +232,6 @@
 %%PYTHON_SITELIBDIR%%/GUI/_where.py
 %%PYTHON_SITELIBDIR%%/GUI/_where.pyc
 %%PYTHON_SITELIBDIR%%/GUI/_where.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/GUI/Gtk
-@dirrm %%PYTHON_SITELIBDIR%%/GUI/Generic
-@dirrm %%PYTHON_SITELIBDIR%%/GUI
 %%PORTDOCS%%%%DOCSDIR%%/Application.html
 %%PORTDOCS%%%%DOCSDIR%%/Button.html
 %%PORTDOCS%%%%DOCSDIR%%/Canvas.html
@@ -222,6 +246,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/FileRef.html
 %%PORTDOCS%%%%DOCSDIR%%/Font.html
 %%PORTDOCS%%%%DOCSDIR%%/Frame.html
+%%PORTDOCS%%%%DOCSDIR%%/GLView.html
 %%PORTDOCS%%%%DOCSDIR%%/Geometry.html
 %%PORTDOCS%%%%DOCSDIR%%/Image.html
 %%PORTDOCS%%%%DOCSDIR%%/Label.html
@@ -239,6 +264,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ToDo/Picture.html
 %%PORTDOCS%%%%DOCSDIR%%/Tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/View.html
+%%PORTDOCS%%%%DOCSDIR%%/ViewBase.html
 %%PORTDOCS%%%%DOCSDIR%%/Window.html
 %%PORTDOCS%%%%DOCSDIR%%/actions.html
 %%PORTDOCS%%%%DOCSDIR%%/alert_funcs.html
@@ -247,6 +273,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/coordinates.html
 %%PORTDOCS%%%%DOCSDIR%%/coordinates.jpg
 %%PORTDOCS%%%%DOCSDIR%%/event_handling.html
+%%PORTDOCS%%%%DOCSDIR%%/extent.cwk
+%%PORTDOCS%%%%DOCSDIR%%/extent.jpg
 %%PORTDOCS%%%%DOCSDIR%%/file_dialogs.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/menu_setup.html
@@ -255,6 +283,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ownership.jpg
 %%PORTDOCS%%%%DOCSDIR%%/place.html
 %%PORTDOCS%%%%DOCSDIR%%/terminology.html
+%%PORTDOCS%%%%DOCSDIR%%/using_the_view_class.html
 %%PORTDOCS%%%%DOCSDIR%%/view-model.cwk
 %%PORTDOCS%%%%DOCSDIR%%/view-model.jpg
 %%PORTDOCS%%%%EXAMPLESDIR%%/blobedit.py
@@ -267,3 +296,6 @@
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ToDo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/GUI/Gtk
+@dirrm %%PYTHON_SITELIBDIR%%/GUI/Generic
+@dirrm %%PYTHON_SITELIBDIR%%/GUI
