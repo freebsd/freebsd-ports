@@ -7124,6 +7124,7 @@ sitecopy	ports/www/sitecopy
 sitescooper	ports/palm/sitescooper
 sixpack		ports/databases/sixpack
 size		src/usr.bin/size
+sk-aspell	ports/textproc/sk-aspell
 sk-ooodict-SK	ports/editors/ooodict-sk_SK
 skel		src/share/skel
 sketch		ports/graphics/sketch
