@@ -24,7 +24,6 @@ lib/libptypes.a
 %%PORTDOCS%%share/doc/ptypes/doc/cset.html
 %%PORTDOCS%%share/doc/ptypes/doc/cset.manipulation.html
 %%PORTDOCS%%share/doc/ptypes/doc/cset.operators.html
-%%PORTDOCS%%share/doc/ptypes/doc/default.css
 %%PORTDOCS%%share/doc/ptypes/doc/freshmeat-logo.gif
 %%PORTDOCS%%share/doc/ptypes/doc/index.html
 %%PORTDOCS%%share/doc/ptypes/doc/inet.examples.html
@@ -45,6 +44,9 @@ lib/libptypes.a
 %%PORTDOCS%%share/doc/ptypes/doc/lists.strmap.html
 %%PORTDOCS%%share/doc/ptypes/doc/lists.strmap.manipulation.html
 %%PORTDOCS%%share/doc/ptypes/doc/lists.strmap.search.html
+%%PORTDOCS%%share/doc/ptypes/doc/portability.html
+%%PORTDOCS%%share/doc/ptypes/doc/ref.html
+%%PORTDOCS%%share/doc/ptypes/doc/ref.tmpl.html
 %%PORTDOCS%%share/doc/ptypes/doc/source-forge-logo.gif
 %%PORTDOCS%%share/doc/ptypes/doc/streams.errors.html
 %%PORTDOCS%%share/doc/ptypes/doc/streams.examples.html
@@ -61,6 +63,7 @@ lib/libptypes.a
 %%PORTDOCS%%share/doc/ptypes/doc/string.manipulation.html
 %%PORTDOCS%%share/doc/ptypes/doc/string.operators.html
 %%PORTDOCS%%share/doc/ptypes/doc/string.typecasts.html
+%%PORTDOCS%%share/doc/ptypes/doc/styles.css
 %%PORTDOCS%%share/doc/ptypes/doc/time.calendar.html
 %%PORTDOCS%%share/doc/ptypes/doc/time.datetime.html
 %%PORTDOCS%%share/doc/ptypes/doc/time.html
