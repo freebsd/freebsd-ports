@@ -1,6 +1,6 @@
---- config.orig	Sun Jan 17 15:20:20 1999
-+++ config	Tue Mar 30 12:58:19 1999
-@@ -125,16 +125,12 @@
+--- config.orig	Sun May 23 18:04:11 1999
++++ config	Fri May 28 18:45:26 1999
+@@ -122,23 +122,12 @@
  	echo "${MACHINE}-whatever-bsdi"; exit 0
  	;;
  
@@ -8,8 +8,15 @@
 -	echo "${MACHINE}-whatever-freebsd3"; exit 0
 -	;;
 -
--    FreeBSD:*:*:*486*)
--	echo "i486-whatever-freebsd"; exit 0
+-    FreeBSD:*:*:*386*)
+-        case `sysctl -n hw.model` in
+-	    Pentium*)
+-                echo "i586-whatever-freebsd"; exit 0
+-                ;;
+-            *)
+-                echo "i386-whatever-freebsd"; exit 0
+-                ;;
+-            esac;
 +    FreeBSD:[12]*:*:*)
 +	echo "${MACHINE}-whatever-freebsd"; exit 0
  	;;
@@ -19,38 +26,47 @@
 +	echo "${MACHINE}-whatever-freebsd3"; exit 0
  	;;
  
-     NetBSD:*:*:*486*)
-@@ -282,15 +278,6 @@
+     NetBSD:*:*:*386*)
+@@ -276,23 +265,6 @@
  esac
  done
  
 -# figure out if gcc is available and if so we use it otherwise
 -# we fallback to whatever cc does on the system
--GCCVER=`gcc -v 2>&1`
+-GCCVER=`(gcc -v) 2>&1`
 -if [ $? = "0" ]; then
 -  CC=gcc
 -else
 -  CC=cc
+-  if [ "$SYSTEM" = "SunOS" ]
+-  then
+-   case `cc -V 2>&1` in
+-    *4*) CC=cc;;
+-    *5*) CC=cc;;
+-    *) CC=sc3;;
+-   esac
+-  fi
 -fi
 -
  # read the output of the embedded GuessOS 
  read GUESSOS
  
-@@ -334,7 +321,7 @@
- # run Configure to check to see if we need to specify the 
- # compiler for the platform ... in which case we add it on
- # the end ... otherwise we leave it off
--perl ./Configure 2>&1 | grep "$OUT-$CC" > /dev/null
-+${PERL} ./Configure 2>&1 | grep "$OUT-$CC" > /dev/null
- if [ $? = "0" ]; then
-   OUT="$OUT-$CC"
- fi
-@@ -349,7 +336,7 @@
- if [ "$TEST" = "true" ]; then
-   echo ./Configure $OUT $options
- else
--  perl ./Configure $OUT $options
-+  ${PERL} ./Configure $OUT $options
- fi
+@@ -331,18 +303,6 @@
+   # *-dgux) OUT="dgux" ;;
+   *) OUT=`echo $GUESSOS | awk -F- '{print $3}'`;;
+ esac
+-
+-# gcc < 2.8 does not support -mcpu=ultrasparc
+-if [ "$OUT" = solaris-usparc-gcc ]
+-then
+- GCCVERMAJOR="`echo $GCCVER | sed 's/.*version \([^.]*\).*/\1/`"
+- GCCVERMINOR="`echo $GCCVER | sed 's/.*version[^.]*\.\([^.]*\).*/\1/`"
+- echo "gcc version $GCCVERMAJOR.$GCCVERMINOR.x"
+- if [ $GCCVERMAJOR$GCCVERMINOR -lt 28 ]
+- then
+-  OUT=solaris-usparc-oldgcc
+- fi
+-fi
  
- )
+ case "$GUESSOS" in
+   i386-*) options="$options 386" ;;
