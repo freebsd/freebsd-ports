@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	multimedia python gnome
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/ \
 		${MASTER_SITE_LOCAL}
