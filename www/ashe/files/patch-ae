@@ -1,0 +1,42 @@
+--- libhtmlw-2.7b3/HTML-PSformat.c.orig	Mon May 20 16:35:47 1996
++++ libhtmlw-2.7b3/HTML-PSformat.c	Thu Aug 28 20:25:49 2003
+@@ -59,16 +59,16 @@
+  *
+  */
+ 
+-#include <varargs.h>
++#include <stdarg.h>
+ 
+ #include <string.h>
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <math.h>
+ #ifdef __bsdi__
+-#include <sys/malloc.h>
++#include <sys/stdlib.h>
+ #else
+-#include <malloc.h>
++#include <stdlib.h>
+ #endif
+ #include <time.h>
+ #include <sys/types.h>
+@@ -264,9 +264,7 @@
+ }
+ #else /* not BROKEN_SOLARIS_COMPILER_STDARG */
+ static int 
+-PSprintf(format, va_alist)
+-    char* format;
+-    va_dcl
++PSprintf(char *format, ...)
+ {
+     int 	len;
+     char 	*s;
+@@ -286,7 +284,7 @@
+ 	}
+ 	PS_string = s;
+     }
+-    va_start(args);
++    va_start(args, format);
+     len = vsprintf(PS_string+PS_len, format, args);
+     /* this is a hack to make it work on systems were vsprintf(s,...)
+      * returns s, instead of the len.

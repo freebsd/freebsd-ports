@@ -26,8 +26,6 @@ MAN1=		xhtml.1
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/XHTML.ad
-	@${REINPLACE_CMD} -e "s/malloc.h/stdlib.h/g" \
-		${WRKSRC}/libhtmlw-2.7b3/HTML-PSformat.c
 
 do-build:
 .for dir in libhtmlw-2.7b3 libcci src
