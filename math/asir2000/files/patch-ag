@@ -1,5 +1,5 @@
---- parse/glob.c.orig	Wed Apr  2 18:43:33 2003
-+++ parse/glob.c	Fri May  2 15:54:46 2003
+--- parse/glob.c.orig	Wed Nov 24 15:01:04 2004
++++ parse/glob.c	Sat Dec 18 03:00:03 2004
 @@ -51,6 +51,7 @@
  #include "al.h"
  #include "parse.h"
@@ -8,17 +8,15 @@
  #if defined(PARI)
  #include "genpari.h"
  #endif
-@@ -707,11 +708,8 @@
- 	printf("Copyright 2000-2003, Risa/Asir committers, http://www.openxm.org/.\n");
- 	printf("GC 6.1(alpha5) copyright 2001, H-J. Boehm, A. J. Demers, Xerox, SGI, HP.\n");
+@@ -791,10 +792,7 @@
+ char *get_pariversion() 
+ {
  #if PARI
 -#if 0
--	printf("PARI 2.2.4, copyright (C) 2002 The PARI Group.\n");
+-	return "PARI 2.2.4, copyright (C) 2002 The PARI Group.\nPARI 2.0.17, copyright 1989-1999, C. Batut, K. Belabas, D. Bernardi,\n   H. Cohen and M. Olivier.\n";
 -#endif
--	printf("PARI 2.0.17, copyright 1989-1999, C. Batut, K. Belabas, D. Bernardi,\n");
--	printf("   H. Cohen and M. Olivier.\n");
-+	printf("%s.\n",PARIVERSION);
-+	printf("copyright (C) 2002 The PARI Group.\n");
+-	return "PARI 2.0.17, copyright 1989-1999, C. Batut, K. Belabas, D. Bernardi,\n   H. Cohen and M. Olivier.\n";
++	return "PARI 2.2.9 (alpha), copyright 1989-1999, C. Batut, K. Belabas, D. Bernardi,\n   H. Cohen and M. Olivier.\n";
  #endif
+ 	return "";
  }
- 

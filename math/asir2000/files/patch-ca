@@ -1,0 +1,20 @@
+--- builtin/parif.c.orig	Sat Feb 15 07:29:07 2003
++++ builtin/parif.c	Fri Jan  7 01:38:45 2005
+@@ -95,7 +95,7 @@
+ { GEN _pt1_,_pt2_,_pt3_; CALLPARI2(pf,ARG0(ar),ARG1(ar),MKPREC(ar,3,ARG2(ar)),rp); }
+ 
+ #if defined(INTERVAL)
+-#define	PREC_CONV	pariK1
++#define	PREC_CONV	(0.103810253/(BYTES_IN_LONG/4))  /* log(10)/(SL*log(2)) */
+ #else
+ #if defined(LONG_IS_32BIT)
+ #define PREC_CONV		0.103810253
+@@ -243,7 +243,7 @@
+ 	GEN p1,p2,p3;
+ 
+ 	ritopa_i(a,1,&p1); ritopa_i(b,1,&p2);
+-	p3 = mppgcd(p1,p2);
++	p3 = gcdii(p1,p2);
+ 	patori_i(p3,r); asir_cgiv(p3); asir_cgiv(p2); asir_cgiv(p1);
+ }
+ 
