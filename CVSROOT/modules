@@ -7048,6 +7048,7 @@ radiusniff	ports/security/radiusniff
 radreport	ports/net/radreport
 radvd		ports/net/radvd
 ragel		ports/devel/ragel
+raggle		ports/net/raggle
 rain		ports/security/rain
 rancid		ports/net/rancid
 rand		ports/textproc/rand
