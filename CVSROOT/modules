@@ -4466,6 +4466,7 @@ net-snmp-tkmib	ports/net/net-snmp-tkmib
 net-snmp4	ports/net/net-snmp4
 netams		ports/net/netams
 netatalk	ports/net/netatalk
+netbeans	ports/java/netbeans
 netcat		ports/net/netcat
 netcdf		ports/math/netcdf
 netcomponents	ports/java/netcomponents
