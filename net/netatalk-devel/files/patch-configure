@@ -1,24 +1,11 @@
---- configure.orig	Thu Jun 24 18:53:29 2004
-+++ configure	Tue Jun 29 01:48:40 2004
-@@ -15048,7 +15048,7 @@
+--- configure.orig	Sat Aug 28 03:20:01 2004
++++ configure	Sat Aug 28 03:20:14 2004
+@@ -15118,7 +15118,7 @@
  	trybdbdir=""
  	dobdbsearch=yes
  	bdb_search_dirs="/usr/local/include /usr/include"
--	search_subdirs="/db4.2 /db4.1 /db4 /"
-+	search_subdirs="/db4.2 /db41 /db4 /"
+-	search_subdirs="/db4.2 /db42 /db4.1 /db41 /db4 /"
++	search_subdirs="/db4.1 /db41 /db4 /"
  
  	DB_MAJOR_REQ=4
  	DB_MINOR_REQ=1
-@@ -15178,10 +15178,10 @@
- 
- 			if test ${atalk_cv_bdbheader} != "no"; then
- 
--			  bdblibdir="`echo $bdbdir | sed 's/\/include\/db4\.*.*//'`"
-+			  bdblibdir="`echo $bdbdir | sed 's/\/include\/db4.*//'`"
- 			  bdblibdir="`echo $bdblibdir | sed 's/\/include$//'`"
- 			  bdblibdir="${bdblibdir}/${atalk_libname}"
--			  bdbbindir="`echo $bdbdir | sed 's/include\/db4\.*.*/bin/'`"
-+			  bdbbindir="`echo $bdbdir | sed 's/include\/db4.*/bin/'`"
- 			  bdbbindir="`echo $bdbbindir | sed 's/include$/bin/'`"
- 
- 			  CPPFLAGS="$CFLAGS -I${bdbdir}${subdir}"
