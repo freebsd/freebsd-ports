@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.2.9
-PORTREVISION=	1
+PORTVERSION=	1.2.10
 CATEGORIES+=	multimedia audio ipv6
-MASTER_SITES=	ftp://ftp.xmms.org/pub/xmms/1.2.x/ \
-		http://www.xmms.org/files/1.2.x/ \
+MASTER_SITES=	http://www.xmms.org/files/1.2.x/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/1.2.x/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -47,6 +45,7 @@ PLIST_SUB=	DATADIR="share"
 CONFIGURE_ARGS+=	--enable-ipv6
 
 .if defined(WITH_ENCODING_PATCH)
+BROKEN=		Patch does not build with xmms version 1.2.10
 ENC_PATCHLEVEL=	27
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-recode-csa${ENC_PATCHLEVEL}${EXTRACT_SUFX}:enc
 MASTER_SITES+=	${MASTER_SITE_SOURCEFORGE:S/$/:enc/}
