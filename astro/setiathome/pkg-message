@@ -1,3 +1,8 @@
-****  %%PREFIX%%/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf may be edited to
-      tune some startup variables such as `seti_nice' defaulted to 15
-      and `seti_maxprocs' defaulted to your number of processors.
+****  %%PREFIX%%/etc/rc.%%PREFX%%setiathome%%SUFX%%.conf may be edited
+      to tune some startup variables such as `seti_nice' defaulted to
+      15 and `seti_maxprocs' defaulted to your number of processors.
+****  NOTE: unlike previous versions, FreeBSD 5.x for i386 doesn't
+      support a.out binaries by default.  To run setiathome, you have
+      to add the following line to your kernel configuration file
+      (/sys/i386/conf/<YOUR_KERNEL>) :
+          options COMPAT_AOUT     # Enable i386 a.out binary support
