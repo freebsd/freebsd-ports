@@ -4,13 +4,13 @@
 #
 # Whom: Dima Ruban <dima@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1997/11/10 10:30:50 asami Exp $
+# $Id: Makefile,v 1.3 1998/03/04 10:03:36 tg Exp $
 #
 
 DISTNAME=	latest_xdir
 PKGNAME=	llnlxdir-2.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://k2.llnl.gov/pub/ia/llnlxdir/
+MASTER_SITES=	ftp://ftp-lc.llnl.gov/pub/ia/llnlxdir/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dima@FreeBSD.ORG
