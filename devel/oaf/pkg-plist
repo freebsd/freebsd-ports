@@ -60,7 +60,6 @@ share/locale/tr/LC_MESSAGES/oaf.mo
 share/locale/uk/LC_MESSAGES/oaf.mo
 share/locale/zh_CN/LC_MESSAGES/oaf.mo
 share/locale/zh_TW/LC_MESSAGES/oaf.mo
-@unexec rmdir %D/share/gnome 2>/dev/null || true
 @dirrm include/liboaf
 @dirrm etc/oaf
 @unexec ps gx | grep '[0-9]:[0-9][0-9]\.[0-9][0-9] oafd --ac-activate' | awk '{print $1}' | xargs kill 2>/dev/null || true
