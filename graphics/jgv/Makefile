@@ -14,6 +14,7 @@ DISTNAME=	JGV-${PORTVERSION}
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 RUN_DEPENDS=	${RUN_DEP_LIST}
+LIB_DEPENDS=	${LIB_DEP_LIST}
 
 EXTRACT_ONLY=	# extracted directly in install target
 NO_WRKSUBDIR=	yes
@@ -34,8 +35,8 @@ RUN_DEP_LIST=	${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/japanese/libimg 
 		${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
 .else
 CATEGORY_LIST=	graphics windowmaker tkstep80
-RUN_DEP_LIST=	${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/graphics/libimg \
-		${LOCALBASE}/share/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
+LIB_DEP_LIST=	img.1:${PORTSDIR}/graphics/libimg
+RUN_DEP_LIST=	${LOCALBASE}/lib/tkstep8.0/tkstep.tcl:${PORTSDIR}/x11-toolkits/tkstep80
 .endif
 
 do-install:
