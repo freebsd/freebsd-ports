@@ -30,6 +30,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+IGNORE=		"Main port has been upgraded to 1.6"
+
 MOZILLA?=	mozilla-devel
 MOZ_SUFX=	-devel
 
