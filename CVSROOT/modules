@@ -7371,6 +7371,7 @@ phpnuke		ports/www/phpnuke
 phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
 phpua-bf	ports/games/phpua-bf
+phpua-cod	ports/games/phpua-cod
 phpua-engine	ports/games/phpua-engine
 phpua-hl	ports/games/phpua-hl
 phpua-q3	ports/games/phpua-q3
