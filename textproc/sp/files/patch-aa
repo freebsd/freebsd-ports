@@ -6,7 +6,7 @@
   #define SP_INCLUDE_UNISTD_H
   #define SP_POSIX_FILENAMES
   
-+ #if (defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD))
++ #if (defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__))
 + #define SP_HAVE_LOCALE
 + #define SP_HAVE_SOCKET
 + #define SP_MULTI_BYTE

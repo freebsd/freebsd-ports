@@ -1,12 +1,12 @@
 # New ports collection makefile for:	sp
-# Version required:	1.1.1
+# Version required:	1.2
 # Date created:		April 26, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.3 1997/06/22 17:40:42 jfieber Exp $
+# $Id: Makefile,v 1.4 1997/07/06 19:27:30 jfieber Exp $
 #
 
-DISTNAME=	sp-1.1.1
+DISTNAME=	sp-1.2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 
