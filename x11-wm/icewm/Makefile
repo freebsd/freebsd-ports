@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
-USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnometarget
@@ -31,6 +30,14 @@ CONFIGURE_ARGS=	--enable-shaped-decorations \
 		--with-kdedatadir=${LOCALBASE}/share \
 		--with-docdir=${PREFIX}/share/doc \
 		--with-mkfontdir=${NONEXISTENT}
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 
