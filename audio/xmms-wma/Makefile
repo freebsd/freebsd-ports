@@ -16,6 +16,7 @@ COMMENT=	WMA plugin for xmms
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -23,5 +24,9 @@ USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 
 PLIST_FILES=	lib/xmms/Input/libwma.so
+
+post-extract:
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile.inc
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/ffmpeg-strip-wma/config.mak
 
 .include <bsd.port.mk>
