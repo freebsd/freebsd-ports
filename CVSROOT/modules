@@ -1250,6 +1250,7 @@ dataplot	ports/graphics/dataplot
 datedif		ports/misc/datedif
 db		ports/databases/db
 db2		ports/databases/db2
+db2latex	ports/textproc/db2latex
 db3		ports/databases/db3
 db4		ports/databases/db4
 db41		ports/databases/db41
