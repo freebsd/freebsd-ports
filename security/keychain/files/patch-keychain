@@ -1,0 +1,29 @@
+--- keychain.orig	Mon Sep 10 06:42:47 2001
++++ keychain	Mon Sep 10 08:54:24 2001
+@@ -59,7 +59,7 @@
+ 
+ EOHELP
+ echo -e "  ${CYAN}keychain ~/.ssh/id_rsa ~/.ssh/id_dsa"
+-echo -e "  source ~/.ssh-agent > /dev/null${OFF}"
++echo -e "  . ~/.ssh-agent > /dev/null${OFF}"
+ echo -e "  # the > /dev/null eliminates the redundant agent PID output"
+ echo
+ cat <<EOHELP
+@@ -109,7 +109,7 @@
+ 	chmod 0600 ~/.ssh-agent
+ 	SSH_AGENT_PID="NULL"
+ else
+-	source ~/.ssh-agent > /dev/null
++	. ~/.ssh-agent > /dev/null
+ fi
+ 
+ match="no"
+@@ -130,7 +130,7 @@
+ 	chmod 0600 ~/.ssh-agent
+ 	echo -e " ${GREEN}*${OFF} starting new ssh-agent"
+ 	nohup ssh-agent > ~/.ssh-agent
+-	source ~/.ssh-agent > /dev/null
++	. ~/.ssh-agent > /dev/null
+ fi
+ 
+ if [ -n "`echo $* | grep '\-\-clear'`" ]

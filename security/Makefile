@@ -65,6 +65,7 @@
     SUBDIR += isakmpd
     SUBDIR += its4
     SUBDIR += john
+    SUBDIR += keychain
     SUBDIR += keynote
     SUBDIR += keyprint
     SUBDIR += kmap
