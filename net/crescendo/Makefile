@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	crescendo
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	net gnome
 MASTER_SITES=	http://crescendo.lyrical.net/files/
 
