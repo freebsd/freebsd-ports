@@ -46,6 +46,7 @@ lib/gretl/lad.so
 lib/gretl/leverage.so
 lib/gretl/mp_ols.so
 lib/gretl/panel_data.so
+lib/gretl/pca.so
 lib/gretl/progress_bar.so
 lib/gretl/range-mean.so
 lib/gretl/stats_tables.so
