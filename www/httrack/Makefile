@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	httrack
-PORTVERSION=	3.20.b.6
+PORTVERSION=	3.20.b.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.httrack.com/
-DISTNAME=	httrack-3.20RC6E
+DISTNAME=	httrack-3.20RC7
 
 MAINTAINER=	dirk@FreeBSD.org
 
