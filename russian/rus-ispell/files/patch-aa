@@ -1,0 +1,9 @@
+--- sortkoi8.bak	Tue May 25 22:17:17 1999
++++ sortkoi8	Mon Jan 29 21:23:05 2001
+@@ -13,4 +13,5 @@
+ fi
+ TEMP='£³ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞ‗אבגדהוזחטיךכלםמןנסעףפץצקרשתûü‎‏ÿ'
+ 
+-tr $ALPH $TEMP | sort $FOLD | tr $TEMP $ALPH
++#tr $ALPH $TEMP | sort $FOLD | tr $TEMP $ALPH
++LANG=ru_RU.KOI8-R sort $FOLD

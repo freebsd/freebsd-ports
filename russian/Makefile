@@ -15,6 +15,7 @@
     SUBDIR += pgp.language
     SUBDIR += pine.language
     SUBDIR += rispell
+    SUBDIR += rus-ispell
     SUBDIR += wmcyrx
     SUBDIR += xcode
     SUBDIR += xruskb
