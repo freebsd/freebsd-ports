@@ -1,0 +1,19 @@
+*** src/device_config/stdx11/makefile.bak	Sun Feb 12 21:06:59 1995
+--- src/device_config/stdx11/makefile	Sun Feb 12 21:07:20 1995
+***************
+*** 15,21 ****
+  # EXPRESS OR IMPLIED.
+  
+  SHELL = /bin/sh
+! CCCOM = $(CC) $(CFLAGS) -DERRCHK -I${DORE_LOC}/dore/include -I${ROOT}/usr/include
+  LDCOM = $(LD) $(LDFLAGS)
+  ARCOM = $(AR) $(ARFLAGS)
+  SRC_PATH = $(DORE_LOC)/dore/src/device_config/stdx11
+--- 15,21 ----
+  # EXPRESS OR IMPLIED.
+  
+  SHELL = /bin/sh
+! CCCOM = $(CC) $(CFLAGS) -DERRCHK -I${ROOT}/usr/local/X11 -I${DORE_LOC}/dore/include -I${ROOT}/usr/include
+  LDCOM = $(LD) $(LDFLAGS)
+  ARCOM = $(AR) $(ARFLAGS)
+  SRC_PATH = $(DORE_LOC)/dore/src/device_config/stdx11
