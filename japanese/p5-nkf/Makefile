@@ -1,0 +1,31 @@
+# New ports collection makefile for:	p5-nkf
+# Version required:	0.01
+# Date created:		23 Feb 2000
+# Whom:			max
+#
+# $FreeBSD$
+#
+
+DISTNAME=	nkf171
+PKGNAME=	ja-p5-nkf-0.01
+CATEGORIES=	japanese
+MASTER_SITES=	ftp://ftp.ie.u-ryukyu.ac.jp/pub/software/kono/ \
+		ftp://ftp.win.ne.jp/pub/misc/ \
+		ftp://ftp.eos.hokudai.ac.jp/pub/tools/code-conv/nkf/
+EXTRACT_SUFX=	.shar
+
+MAINTAINER=	max@FreeBSD.org
+
+USE_PERL5=	YES
+
+EXTRACT_CMD=	${SH}
+EXTRACT_BEFORE_ARGS=	# Empty
+EXTRACT_AFTER_ARGS=	> /dev/null
+WRKSRC=	${WRKDIR}/NKF
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		NKF.3
+
+do-configure:
+	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+
+.include <bsd.port.mk>
