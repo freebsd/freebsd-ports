@@ -1,5 +1,18 @@
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/autoIndx.api
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/search.api
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/acrosrch.uid
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/vdk10.cmp
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/vdk10.lic
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/vdk10.std
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/vdk10.syx
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/acro20.lng
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/vdk10.rsd
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/vdk10.rst
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/vdk10.stc
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/vdk10.stp
+@comment ALPHA-ONLY:Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language/vdk10.syd
 Acrobat4/Browsers/netscape
-Acrobat4/Browsers/intellinux/nppdf.so
+Acrobat4/Browsers/%%ARCHDIR%%/nppdf.so
 Acrobat4/Resource/Font/Arial
 Acrobat4/Resource/Font/Arial-Bold
 Acrobat4/Resource/Font/Arial-BoldItalic
@@ -23,49 +36,52 @@ Acrobat4/Reader/AcroVersion
 Acrobat4/Reader/Acrobat.pdf
 Acrobat4/Reader/License.pdf
 Acrobat4/Reader/MapTypes.pdf
-Acrobat4/Reader/ReadMe
 Acrobat4/Reader/help/reader.pdf
-Acrobat4/Reader/intellinux/app-defaults/AcroRead
-Acrobat4/Reader/intellinux/bin/acroread
-Acrobat4/Reader/intellinux/lib/XKeysymDB
-Acrobat4/Reader/intellinux/lib/libAGM.so
-Acrobat4/Reader/intellinux/lib/libAGM.so.3.0
-Acrobat4/Reader/intellinux/lib/libCoolType.so
-Acrobat4/Reader/intellinux/lib/libCoolType.so.1.0
-Acrobat4/Reader/intellinux/lib/libICC.so
-Acrobat4/Reader/intellinux/lib/libICC.so.1.0
-Acrobat4/Reader/intellinux/lib/libreadcore.so
-Acrobat4/Reader/intellinux/lib/libreadcore.so.4.0
-Acrobat4/Reader/intellinux/plug_ins/JavaScripts/AFStrENU.js
-Acrobat4/Reader/intellinux/plug_ins/JavaScripts/AForm.js
-Acrobat4/Reader/intellinux/plug_ins/AcroForm.api
-Acrobat4/Reader/intellinux/plug_ins/Highlight.api
-Acrobat4/Reader/intellinux/plug_ins/ewh.api
-Acrobat4/Reader/intellinux/plug_ins/wwwlink.api
+@comment ALPHA-ONLY:Acrobat4/Reader/help/search.pdf
+Acrobat4/Reader/%%ARCHDIR%%/app-defaults/AcroRead
+Acrobat4/Reader/%%ARCHDIR%%/bin/acroread
+Acrobat4/Reader/%%ARCHDIR%%/lib/XKeysymDB
+Acrobat4/Reader/%%ARCHDIR%%/lib/libAGM.so
+Acrobat4/Reader/%%ARCHDIR%%/lib/libAGM.so.3.0
+Acrobat4/Reader/%%ARCHDIR%%/lib/libCoolType.so
+Acrobat4/Reader/%%ARCHDIR%%/lib/libCoolType.so.1.0
+Acrobat4/Reader/%%ARCHDIR%%/lib/libICC.so
+Acrobat4/Reader/%%ARCHDIR%%/lib/libICC.so.1.0
+Acrobat4/Reader/%%ARCHDIR%%/lib/libreadcore.so
+Acrobat4/Reader/%%ARCHDIR%%/lib/libreadcore.so.4.0
+Acrobat4/Reader/%%ARCHDIR%%/plug_ins/JavaScripts/AFStrENU.js
+Acrobat4/Reader/%%ARCHDIR%%/plug_ins/JavaScripts/AForm.js
+Acrobat4/Reader/%%ARCHDIR%%/plug_ins/AcroForm.api
+Acrobat4/Reader/%%ARCHDIR%%/plug_ins/Highlight.api
+Acrobat4/Reader/%%ARCHDIR%%/plug_ins/ewh.api
+Acrobat4/Reader/%%ARCHDIR%%/plug_ins/wwwlink.api
 Acrobat4/Reader/res/splashScreen11R.xbm
 Acrobat4/Reader/res/splashScreen18R.xpm
 Acrobat4/Reader/res/splashScreen21.xbm
 Acrobat4/Reader/res/splashScreen28.xpm
+Acrobat4/ReadMe
 Acrobat4/bin/acroread
 bin/acroread4
-@exec ln -sf ../../Resource/Font/ %D/Acrobat4/Reader/intellinux/fonts
-@unexec rm -f %D/Acrobat4/Reader/intellinux/fonts
-@exec ln -sf ../../res %D/Acrobat4/Reader/intellinux/res
-@unexec rm -f %D/Acrobat4/Reader/intellinux/res
+@exec ln -sf ../../Resource/Font/ %D/Acrobat4/Reader/%%ARCHDIR%%/fonts
+@unexec rm -f %D/Acrobat4/Reader/%%ARCHDIR%%/fonts
+@exec ln -sf ../../res %D/Acrobat4/Reader/%%ARCHDIR%%/res
+@unexec rm -f %D/Acrobat4/Reader/%%ARCHDIR%%/res
 @exec echo "Be sure to read the license agreement in"
 @exec echo "%D/Acrobat4/Reader/License.pdf"
 @dirrm Acrobat4/bin
 @dirrm Acrobat4/Reader/res
-@dirrm Acrobat4/Reader/intellinux/plug_ins/JavaScripts
-@dirrm Acrobat4/Reader/intellinux/plug_ins
-@dirrm Acrobat4/Reader/intellinux/lib
-@dirrm Acrobat4/Reader/intellinux/bin
-@dirrm Acrobat4/Reader/intellinux/app-defaults
-@dirrm Acrobat4/Reader/intellinux
+@comment ALPHA-ONLY:@dirrm Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome/language
+@comment ALPHA-ONLY:@dirrm Acrobat4/Reader/%%ARCHDIR%%/plug_ins/vdkHome
+@dirrm Acrobat4/Reader/%%ARCHDIR%%/plug_ins/JavaScripts
+@dirrm Acrobat4/Reader/%%ARCHDIR%%/plug_ins
+@dirrm Acrobat4/Reader/%%ARCHDIR%%/lib
+@dirrm Acrobat4/Reader/%%ARCHDIR%%/bin
+@dirrm Acrobat4/Reader/%%ARCHDIR%%/app-defaults
+@dirrm Acrobat4/Reader/%%ARCHDIR%%
 @dirrm Acrobat4/Reader/help
 @dirrm Acrobat4/Reader
 @dirrm Acrobat4/Resource/Font
 @dirrm Acrobat4/Resource
-@dirrm Acrobat4/Browsers/intellinux
+@dirrm Acrobat4/Browsers/%%ARCHDIR%%
 @dirrm Acrobat4/Browsers
 @dirrm Acrobat4

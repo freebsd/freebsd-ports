@@ -5,23 +5,47 @@
 #
 # $FreeBSD$
 #
+.include <bsd.port.pre.mk>
 
-DISTNAME=	linux-ar-40
-PKGNAME=	acroread-4.0
+.if ${ARCH} == "i386"
+DISTNAME=	linux-ar-405
+.elif ${ARCH} == "alpha"
+DISTNAME=	fdec-rs-405
+.endif
+PKGNAME=	acroread-4.05
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 
 MAINTAINER=	dima@FreeBSD.org
 
+.if ${ARCH} == "i386"
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+.elif ${ARCH} == "alpha"
+RUN_DEPENDS=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
+.endif
 
 NO_LATEST_LINK=	yes
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 alpha
 
 NO_FILTER_SHLIBS=	yes
 
+.if ${ARCH} == "i386"
 WRKSRC=		${WRKDIR}/ILINXR.install
+PLIST_SUB=	"ARCHDIR=intellinux"
+.elif ${ARCH} == "alpha"
+WRKSRC=		${WRKDIR}/AOSFRS.install
+PLIST=		${WRKDIR}/PLIST
+PLIST_SUB=	"ARCHDIR=alphaosf"
+.endif
+
+pre-configure:
+.if ${ARCH} == "i386"
+	@${PERL} -pi.fbsd -e 's:Linux\):FreeBSD|Linux):g' ${WRKSRC}/INSTALL
+.elif ${ARCH} == "alpha"
+	@${PERL} -pi.fbsd -e 's:OSF1\):FreeBSD|OSF1):g' ${WRKSRC}/INSTALL
+	${SED} -e 's/@comment ALPHA-ONLY://g' ${PKGDIR}/PLIST > ${PLIST}
+.endif
 
 do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
@@ -31,14 +55,20 @@ do-install:
 	@ReadInstallDir=${PREFIX}/Acrobat4 ${WRKSRC}/INSTALL
 
 post-install:
+.if ${ARCH} == "i386"
+	@${PERL} -pi -e 's:Linux\):FreeBSD|Linux):g' ${PREFIX}/Acrobat4/bin/acroread
+	@strip ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
+	@brandelf -t Linux ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
+.elif ${ARCH} == "alpha"
+	@${PERL} -pi -e 's:OSF1\):FreeBSD|OSF1):g' ${PREFIX}/Acrobat4/bin/acroread
+	@strip ${PREFIX}/Acrobat4/Reader/alphaosf/bin/acroread
+.endif
 	@cd ${PREFIX}/Acrobat4/bin && \
 	  ${PATCH} --quiet < ${FILESDIR}/acroread.diff && \
 	  ${INSTALL_SCRIPT} ${PREFIX}/Acrobat4/bin/acroread \
 	     ${PREFIX}/bin/acroread4 && ${RM} acroread.orig
-	@strip ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
-	@brandelf -t Linux ${PREFIX}/Acrobat4/Reader/intellinux/bin/acroread
 	@${CHMOD} +x ${PREFIX}/bin/acroread4
 	@${ECHO_MSG} "Be sure to read the license agreement in"
 	@${ECHO_MSG} "${PREFIX}/Acrobat4/Reader/License.pdf"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
