@@ -2,7 +2,21 @@ $FreeBSD$
 
 --- common/Defs-bsd.gmk.orig	Thu Dec 18 22:33:22 2003
 +++ common/Defs-bsd.gmk	Thu Dec 18 22:36:46 2003
-@@ -131,7 +131,7 @@
+@@ -32,9 +32,10 @@
+ AR             = $(USRBIN_PATH)ar
+ AS             = $(USRBIN_PATH)as
+ CAT            = $(UNIXCOMMAND_PATH)cat
+-CC             = $(COMPILER_PATH)gcc
+-CPP            = $(COMPILER_PATH)gcc -E
+-CXX            = $(COMPILER_PATH)g++
++# Allow ports/pkgsrc infrastructure to override CC, CPP and CXX.
++CC            ?= $(COMPILER_PATH)gcc
++CPP           ?= $(COMPILER_PATH)gcc -E
++CXX           ?= $(COMPILER_PATH)g++
+ CD             = cd # intrinsic unix command
+ CHMOD          = $(UNIXCOMMAND_PATH)chmod
+ CMP            = $(USRBIN_PATH)cmp
+@@ -131,7 +132,7 @@
  ifeq ($(TRUE_PLATFORM), NetBSD)
  DEVTOOLS_PATH = /usr/pkg/bin/
  else
@@ -11,7 +25,7 @@ $FreeBSD$
  endif
  # Allow the user to override the default value...
  ifdef ALT_DEVTOOLS_PATH
-@@ -266,9 +266,9 @@
+@@ -266,9 +267,9 @@
  CFLAGS_COMMON  += -fsigned-char
  CXXFLAGS_COMMON+= -fsigned-char
  endif
