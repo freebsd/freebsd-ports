@@ -1,9 +1,7 @@
-To use RipMIME...
+You have installed RipMIME, a utility to extract attachments from
+MIME-encoded email messages.
 
-        If you have an MIME encoded archive (say from sendmail's output)
-        called recvmail001.mime and you wish to unpack it to a directory
-        (which already exists) called "/var/tmp/unpack", then use ripMIME
-        as follows...
-
-                ripmime -i recvmail001.mime -d /var/tmp/unpack
-
+If you have an MIME encoded archive (say from sendmail's output)
+called recvmail001.mime and you wish to unpack it to a directory
+(which already exists) called "/var/tmp/unpack", then you would
+type: ripmime -i recvmail001.mime -d /var/tmp/unpack

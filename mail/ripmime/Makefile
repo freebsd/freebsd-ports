@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	ripmime
-PORTVERSION=	1.0.0pr4
+PORTVERSION=	1.0.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.pldaniels.com/ripmime/
 
 MAINTAINER=	jus@security.za.net
 
 pre-build:
-	${PERL} -pi -e "s@/usr/bin/gcc@${CC}@g; \
-			s@-Wall -O3 -m486@${CFLAGS}@g" ${WRKSRC}/Makefile
+	@${PERL} -pi -e 's!CC=!CC?=!; s!/usr/local!${PREFIX}!' ${WRKSRC}/Makefile
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
