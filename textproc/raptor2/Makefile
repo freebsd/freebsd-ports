@@ -8,6 +8,7 @@
 
 PORTNAME=	raptor
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
@@ -23,6 +24,7 @@ LIBWWW_CONFIG=	${LOCALBASE}/bin/libwww-config
 
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-xml-parser=libxml
 INSTALLS_SHLIB=	yes
 
 MAN1=		rdfdump.1
