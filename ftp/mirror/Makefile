@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://sunsite.org.uk/packages/mirror/ \
 		ftp://src.doc.ic.ac.uk/computing/archiving/mirror/ \
 		ftp://ftp.cs.columbia.edu/archives/perl/mirror/ \
 		ftp://giswitch.sggw.waw.pl/pub/unix/mirror/ \
-		ftp://SunSITE.sut.ac.jp/pub/archives/packages/mirror/
+		ftp://SunSITE.tus.ac.jp/pub/archives/packages/mirror/
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ftp.pl_wupatch
 

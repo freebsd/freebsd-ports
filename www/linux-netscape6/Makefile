@@ -32,7 +32,7 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSI
 		ftp://ftp.uniroma2.it/%7bC/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.ut.ee/pub/WWW/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
-		ftp://sunsite.sut.ac.jp/pub/archives/WWW/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://sunsite.tus.ac.jp/pub/archives/WWW/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.rediris.es/sites/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/ \
 		ftp://ftp.ntua.gr/pub/www/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/

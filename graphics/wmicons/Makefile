@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|sobomax/wmicons|} \
 		${MASTER_SITE_WINDOWMAKER} \
 		${MASTER_SITE_PORTS_JP} \
 		http://nether.tky.hut.fi/iconstore/ \
-		http://www.itlb.te.noda.sut.ac.jp/~manome/wmaker/archive/ \
+		http://www.itlb.te.noda.tus.ac.jp/~manome/wmaker/archive/ \
 		http://www.slip.net/~seto/images/ \
 		http://www.lab06.ee.u-tokai.ac.jp/~7jeem005/WindowMaker/Archives/
 MASTER_SITE_SUBDIR=	. contrib/icons beta/srcs

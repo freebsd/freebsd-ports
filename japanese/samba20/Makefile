@@ -11,7 +11,7 @@ PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
-		ftp://SunSITE.sut.ac.jp/pub/archives/packages/samba/samba-jp/%SUBDIR%/ \
+		ftp://SunSITE.tus.ac.jp/pub/archives/packages/samba/samba-jp/%SUBDIR%/ \
 		ftp://ftp.plathome.co.jp/pub/samba/samba-jp/%SUBDIR%/ \
 		ftp://ftp2.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.tutrp.tut.ac.jp/pub/mirror/samba-jp/%SUBDIR%/

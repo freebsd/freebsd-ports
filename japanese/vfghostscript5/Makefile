@@ -17,7 +17,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_PORTS_JP} \
 		http://www.bukka.p.chiba-u.ac.jp/~ohmori/gs/ \
 		http://www.rd.nacsis.ac.jp/~katayama/homepage/ghostscript/jpdf/ \
-		http://itohws03.ee.noda.sut.ac.jp/~matsuda/VFlib-FT/ \
+		http://itohws03.ee.noda.tus.ac.jp/~matsuda/VFlib-FT/ \
 		http://www6.vc-net.ne.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
 		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/ \

@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/
 MASTER_SITES+=	ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
 		ftp://ftp.cuhk.edu.hk/pub/www/netscape/${NETSCAPE_DIST_SUBDIR}/ \
 		ftp://ftp.spin.ad.jp/pub/WWW/netscape/${NETSCAPE_DIST_SUBDIR}/ \
-		ftp://sunsite.sut.ac.jp/pub/archives/WWW/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://sunsite.tus.ac.jp/pub/archives/WWW/netscape/${NETSCAPE_DIST_SUBDIR}/ \
 		ftp://ftp.kmitl.ac.th/pub/netscape/${NETSCAPE_DIST_SUBDIR}/ \
 		ftp://ftp.tuwien.ac.at/z134/infosys/browsers/netscape/pub/${NETSCAPE_DIST_SUBDIR}/ \
 		ftp://ftp.euronet.be/pub/mirror/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \

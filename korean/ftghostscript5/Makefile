@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.pdb.sni.de/pub/utilities/misc/	\
 		ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/	\
 		$(MASTER_SITE_GNU) \
 		http://www.ldl.jaist.ac.jp/~akr/nonresearch/free-software/ghostscript/ \
-		http://itohws03.ee.noda.sut.ac.jp/~matsuda/VFlib-FT/ \
+		http://itohws03.ee.noda.tus.ac.jp/~matsuda/VFlib-FT/ \
 		ftp://ftp.kr.freebsd.org/pub/users/cjh/gs-ko/ \
 		ftp://ftp.kr.freebsd.org/pub/users/cjh/gs-ko/misc/
 MASTER_SITE_SUBDIR=	ghostscript
