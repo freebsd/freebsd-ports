@@ -1,0 +1,5 @@
+GLOBAL is a source code tag system that works the same way across diverse
+environments.  Supported languages are C/Yacc and Java.
+You can locate a specified function in the source files and move there easily.
+It is useful for hacking a large project containing many subdirectories,
+many '#ifdef' and many main() functions, like MH, X or BSD kernel.
