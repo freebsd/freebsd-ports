@@ -17,4 +17,7 @@ GNU_CONFIGURE=	yes
 
 MAN1=		fuzz.1
 
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
 .include <bsd.port.mk>

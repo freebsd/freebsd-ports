@@ -1,0 +1,8 @@
+
+=========================================================================
+BEWARE!  This software bombards programs with signicant amounts of random
+input meant to cause failure.  Due to the potential havok some programs
+may cause when given untrusted input, it is recommended that programs be
+tested under a jail(8) environment.
+=========================================================================
+
