@@ -1,0 +1,15 @@
+From the aescrypt README.html:
+
+   This is a program for encrypting/decrypting streams of data using
+   Rijndael and Cipher Block Feedback mode (CFB-128).
+
+   ...
+
+   5. This program was deliberately kept extremely simple. It is not
+      intended to be a full encryption solution, it is intended to be
+      used within scripts as part of a complete solution. Keychain
+      management, public key signatures, etc. are all expected to be
+      done external to this program.
+
+Author:		Eric Lee Green <eric@estinc.com>
+WWW:		http://aescrypt.sourceforge.net/

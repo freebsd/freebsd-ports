@@ -1,0 +1,4 @@
+bin/aescrypt
+bin/aesget
+share/doc/aescrypt/README.html
+@dirrm share/doc/aescrypt

@@ -3,6 +3,7 @@
 
     SUBDIR += aafid2
     SUBDIR += acid
+    SUBDIR += aescrypt
     SUBDIR += aide
     SUBDIR += bjorb
     SUBDIR += bro
