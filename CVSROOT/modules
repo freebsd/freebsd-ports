@@ -2251,6 +2251,7 @@ gpa		ports/security/gpa
 gpaint		ports/graphics/gpaint
 gpart		ports/sysutils/gpart
 gpasman		ports/security/gpasman
+gpdf		ports/graphics/gpdf
 gperiodic	ports/biology/gperiodic
 gpgme		ports/security/gpgme
 gphoto2		ports/graphics/gphoto2
