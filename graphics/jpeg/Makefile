@@ -25,9 +25,9 @@ MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/jpeg
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jpeg
-	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/jpeg
+	@${MKDIR} ${PREFIX}/share/doc/jpeg
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jpeg
+	@${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/jpeg
 .endif
 
 .include <bsd.port.mk>
