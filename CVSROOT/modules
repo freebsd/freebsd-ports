@@ -8089,6 +8089,7 @@ pipsg800	ports/print/pipsg800
 pipsv500	ports/print/pipsv500
 pipsv600	ports/print/pipsv600
 pipsv700	ports/print/pipsv700
+pipsv700-cups	ports/print/pipsv700-cups
 pircbot		ports/irc/pircbot
 pisg		ports/irc/pisg
 pixelize	ports/graphics/pixelize
