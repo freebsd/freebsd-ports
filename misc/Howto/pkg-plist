@@ -1,0 +1,2 @@
+share/doc/Howto
+@unexec /bin/rm -rf %D/share/doc/Howto
