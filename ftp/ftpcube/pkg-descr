@@ -1,0 +1,14 @@
+FtpCube is a multi-platform, graphical FTP client written in python, using
+GTK bindings. FtpCube interface is based on LeechFTP by Jan Debis but its
+codebase has been developed from scratch. FtpCube aims to provide a high
+quality user interface, as well as a rich feature set.
+
+Ftpcube offers a myriad of features including:
+
+   - Threaded browsing and multi-threaded downloading
+   - Queuing of file transfers
+   - Site Management
+   - Recursive transfers
+   - ... and more
+
+WWW: http://ftpcube.sourceforge.net/
