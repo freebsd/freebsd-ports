@@ -7,21 +7,17 @@
 #
 
 PORTNAME=	doclifter
-PORTVERSION=	1.0.4
+PORTVERSION=	1.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.catb.org/~esr/doclifter/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translates documents written in troff macros to DocBook
 
-USE_REINPLACE=	yes
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
 MAN1=	doclifter.1
-
-post-patch:
-	@${REINPLACE_CMD} -e "s,python2,${PYTHON_CMD},g" ${WRKSRC}/doclifter
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/doclifter ${PREFIX}/bin
