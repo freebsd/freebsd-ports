@@ -1,0 +1,15 @@
+--- Makefile.in.orig	Sun May  7 23:13:49 2000
++++ Makefile.in	Tue Jun  6 16:54:30 2000
+@@ -486,9 +486,9 @@
+ 
+ install-data-local:
+ 	mkdir -p $(DESTDIR)$(includedir)/shout
+-	mkdir -p $(DESTDIR)$(prefix)/doc/$(PACKAGE)-$(VERSION)/example
+-	$(INSTALL) -m 0644 README AUTHORS COPYING CHANGES $(DESTDIR)$(prefix)/doc/$(PACKAGE)-$(VERSION)
+-	$(INSTALL) -m 0644 example/Makefile example/example.c $(DESTDIR)$(prefix)/doc/$(PACKAGE)-$(VERSION)/example
++	mkdir -p $(DESTDIR)$(prefix)/share/doc/$(PACKAGE)-$(VERSION)/example
++	$(INSTALL) -m 0644 README AUTHORS COPYING CHANGES $(DESTDIR)$(prefix)/share/doc/$(PACKAGE)-$(VERSION)
++	$(INSTALL) -m 0644 example/Makefile example/example.c $(DESTDIR)$(prefix)/share/doc/$(PACKAGE)-$(VERSION)/example
+ 	$(INSTALL) -m 0644 shout.h $(DESTDIR)$(includedir)/shout
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.

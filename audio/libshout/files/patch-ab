@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sun May  7 23:13:50 2000
++++ doc/Makefile.in	Tue Jun  6 16:56:33 2000
+@@ -78,7 +78,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(prefix)/share/doc/$(PACKAGE)-$(VERSION)
+ 
+ doc_DATA = index.html overview.html initialization.html 		connection.html datastreaming.html metadata.html 		datastructures.html shout_conn_t.html 		shout_connect.html shout_disconnect.html shout_sleep.html 		shout_init_connection.html shout_send_data.html 		shout_update_metadata.html style.css 		example.html example_c.html reference.html
+ 
