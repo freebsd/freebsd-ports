@@ -3,12 +3,13 @@
 # Date created:        4 June 1996
 # Whom:                jkoshy
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/04 07:16:47 jkoshy Exp $
+# $Id: Makefile,v 1.2 1999/06/07 04:47:06 jkoshy Exp $
 #
 
 DISTNAME=	ctags-3.2.2
 CATEGORIES=	devel
-MASTER_SITES=	http://fly.hiwaay.net/~darren/archives/ \
+MASTER_SITES=	${MASTER_SITE_SUNSITE}\
+		http://fly.hiwaay.net/~darren/archives/ \
 		http://www.freebsd.org/~jkoshy/PORTS/
 
 MAINTAINER=	jkoshy@FreeBSD.ORG
