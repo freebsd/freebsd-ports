@@ -3046,6 +3046,7 @@ hgrep		ports/textproc/hgrep
 hicolor-icon-theme	ports/misc/hicolor-icon-theme
 hidentd		ports/net/hidentd
 highlight	ports/textproc/highlight
+himenobench	ports/benchmarks/himenobench
 hinfo		ports/net/hinfo
 histring	ports/misc/histring
 hk_classes	ports/databases/hk_classes
