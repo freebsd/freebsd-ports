@@ -714,6 +714,7 @@
     SUBDIR += tcpdstat
     SUBDIR += tcpdump
     SUBDIR += tcpflow
+    SUBDIR += tcpick
     SUBDIR += tcpillust
     SUBDIR += tcping
     SUBDIR += tcpmssd
