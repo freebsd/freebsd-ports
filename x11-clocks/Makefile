@@ -28,6 +28,7 @@
     SUBDIR += wmclock
     SUBDIR += wmdate
     SUBDIR += wmfishtime
+    SUBDIR += wmfuzzy
     SUBDIR += wmitime
     SUBDIR += wmtime
     SUBDIR += wmtimer
