@@ -17,14 +17,17 @@ CSV=	ken_all.csv
 EUCCSV=	${CSV:%.csv=%.euc-csv}
 PERL?=	/usr/bin/perl
 NKF?=	${LOCALBASE}/bin/nkf
+DESTDIR=${PREFIX}/share/misc/jp-zipcodes
 
 all:	zipcodes.5digits zipcodes.7digits
 
-install: zipcodes.5digits zipcodes.7digits
+install: zipcodes.5digits zipcodes.7digits jigyosyo.euc-csv
 	mkdir -p ${PREFIX}/share/misc/jp-zipcodes
 	for i in zipcodes.5digits zipcodes.7digits; do \
-		${INSTALL_DATA} $$i ${PREFIX}/share/misc/jp-zipcodes; \
+		${INSTALL_DATA} $$i ${DESTDIR}; \
 	done
+	${INSTALL_DATA} ken_all.euc-csv ${DESTDIR}/ken_all-euc.csv
+	${INSTALL_DATA} jigyosyo.euc-csv ${DESTDIR}/jigyosyo-euc.csv
 
 zipcodes.5digits: ${EUCCSV}
 	cat ${EUCCSV} | ${PERL} ${SCRIPTDIR}/genold.pl > zipcodes.5digits
