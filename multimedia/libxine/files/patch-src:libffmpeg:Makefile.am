@@ -1,0 +1,25 @@
+--- src/libffmpeg/Makefile.am.orig	Fri Oct 19 21:19:47 2001
++++ src/libffmpeg/Makefile.am	Fri Oct 19 21:23:02 2001
+@@ -2,7 +2,6 @@
+ ## Process this file with automake to produce Makefile.in
+ ##
+ 
+-SUBDIRS = libavcodec 
+ 
+ CFLAGS = @GLOBAL_CFLAGS@
+ 
+@@ -13,12 +12,9 @@
+ lib_LTLIBRARIES = xineplug_decode_ff.la
+ 
+ xineplug_decode_ff_la_SOURCES = xine_decoder.c
++xineplug_decode_ff_la_LIBADD = -lavcodec
++xineplug_decode_ff_la_LDFLAGS = -avoid-version -module
+ 
+-xineplug_decode_ff_la_LDFLAGS = \
+-		$(top_builddir)/src/libffmpeg/libavcodec/libavcodec.la \
+-		-avoid-version -module
+-
+-noinst_HEADERS = config.h
+ 
+ debug:
+ 	@list='$(SUBDIRS)'; for subdir in $$list; do \

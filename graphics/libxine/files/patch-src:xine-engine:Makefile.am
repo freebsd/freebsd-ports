@@ -1,0 +1,12 @@
+--- src/xine-engine/Makefile.am.orig	Sun Oct 21 09:06:25 2001
++++ src/xine-engine/Makefile.am	Sun Oct 21 09:07:43 2001
+@@ -18,8 +18,7 @@
+ 	-lm 
+ 
+ libxine_la_LDFLAGS =  \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+-	-release $(LT_RELEASE)
++	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ include_HEADERS  = buffer.h metronom.h configfile.h \
+ 	monitor.h cpu_accel.h attributes.h utils.h \
