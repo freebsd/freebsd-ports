@@ -83,6 +83,7 @@ apps/ROX-Filer/ROX/MIME/mime-application:x-trash.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-troff-man-compressed.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-troff-man.png
 apps/ROX-Filer/ROX/MIME/mime-application:x-troff.png
+apps/ROX-Filer/ROX/MIME/mime-application:xhtml+xml.png
 apps/ROX-Filer/ROX/MIME/mime-application:zip.png
 apps/ROX-Filer/ROX/MIME/mime-audio.png
 apps/ROX-Filer/ROX/MIME/mime-audio:midi.png
@@ -125,6 +126,7 @@ apps/ROX-Filer/images/rox-mounted.png
 apps/ROX-Filer/images/rox-select.png
 apps/ROX-Filer/images/rox-show-details.png
 apps/ROX-Filer/images/rox-show-hidden.png
+apps/ROX-Filer/images/rox-xattr.png
 apps/ROX-Filer/images/symlink.png
 apps/ROX-Filer/style.css
 bin/rox
