@@ -42,13 +42,9 @@ GNU_CONFIGURE=	yes
 ONLY_FOR_ARCHS=	i386
 
 CONFIGURE_TARGET=	# Empty
-CONFIGURE_ARGS+=	--enable-threads --enable-hipe
+CONFIGURE_ARGS+=	--enable-threads
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 .if !exists(${JAVABINDIR}/java)
 WITHOUT_JAVA=	yes
