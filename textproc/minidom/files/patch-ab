@@ -1,0 +1,11 @@
+--- minidom.h.orig	Sat Mar 30 22:14:22 2002
++++ minidom.h	Sat Mar 30 22:14:08 2002
+@@ -25,7 +25,7 @@
+ #define minidom_h
+ 
+ #include <glib.h>
+-#include <parser.h>
++#include <libxml/parser.h>
+ 
+ #ifdef __cplusplus
+ extern "C" {
