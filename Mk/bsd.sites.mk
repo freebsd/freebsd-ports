@@ -74,8 +74,6 @@ MASTER_SITE_APACHE+=	\
 	ftp://apache.secsup.org/pub/apache/dist/%SUBDIR%/ \
 	ftp://ftp.apache.inetcosmos.org/pub/apache/dist/%SUBDIR%/ \
 	ftp://ftp.ccs.neu.edu/net/mirrors/Apache/dist/%SUBDIR%/ \
-	ftp://ftp.epix.net/pub/apache/%SUBDIR%/ \
-	ftp://ftp.rge.com/pub/infosystems/apache/%SUBDIR%/ \
 	ftp://ftp.tux.org/pub/net/apache/dist/%SUBDIR%/ \
 	ftp://ftp.saix.net/pub/apache/dist/%SUBDIR%/ \
 	http://nagoya.apache.org/mirror/%SUBDIR%/
