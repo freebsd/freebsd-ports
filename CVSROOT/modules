@@ -4285,6 +4285,7 @@ p5-AxKit-XSP-Cookie	ports/www/p5-AxKit-XSP-Cookie
 p5-AxKit-XSP-ESQL	ports/www/p5-AxKit-XSP-ESQL
 p5-AxKit-XSP-Exception	ports/www/p5-AxKit-XSP-Exception
 p5-AxKit-XSP-IfParam	ports/www/p5-AxKit-XSP-IfParam
+p5-AxKit-XSP-Param	ports/www/p5-AxKit-XSP-Param
 p5-B-Graph	ports/devel/p5-B-Graph
 p5-BSD-Resource	ports/devel/p5-BSD-Resource
 p5-BSD-stat	ports/devel/p5-BSD-stat
