@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.12 1999/05/06 14:30:03 taoka Exp $
+# $Id: Makefile,v 1.13 1999/06/22 23:42:27 sada Exp $
 #
 
     SUBDIR += abacus
     SUBDIR += cal
     SUBDIR += cbb
+    SUBDIR += gaddr
     SUBDIR += genius
     SUBDIR += gnomepim
     SUBDIR += gnucash
