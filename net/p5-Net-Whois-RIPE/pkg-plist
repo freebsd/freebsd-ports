@@ -1,0 +1,15 @@
+lib/perl5/site_perl/%%PERL_VER%%/Net/Whois/RIPE.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Whois/RIPE.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/Whois/RIPE/Iterator.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Whois/RIPE/Iterator.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/Whois/RIPE/Object.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Whois/RIPE/Object.pod
+lib/perl5/site_perl/%%PERL_VER%%/Net/Whois/RIPE/Object/Template.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Whois/RIPE/Object
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Whois/RIPE
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net/Whois 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Whois/RIPE/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Whois/RIPE
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Whois 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true

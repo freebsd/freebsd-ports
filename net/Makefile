@@ -382,6 +382,7 @@
     SUBDIR += p5-Net-Traceroute6
     SUBDIR += p5-Net-Wake
     SUBDIR += p5-Net-Whois
+    SUBDIR += p5-Net-Whois-RIPE
     SUBDIR += p5-Net-Whois-Raw
     SUBDIR += p5-Net-XWhois
     SUBDIR += p5-Net-Z3950
