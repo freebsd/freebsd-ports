@@ -17,8 +17,8 @@ MAINTAINER=	glewis@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
-		${JDK11DIR}/bin/javac:${PORTSDIR}/java/jdk \
-		${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-jdk \
+		${JDK11DIR}/bin/javac:${PORTSDIR}/java/jdk11 \
+		${JDK12DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk12 \
 		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif \
 		${NONEXISTENT}:${PORTSDIR}/java/jfc:extract
 LIB_DEPENDS=	odbc.1:${PORTSDIR}/databases/unixODBC
@@ -32,7 +32,7 @@ JDK_BETALEVEL=	10
 
 JDK11DIR?=	${LOCALBASE}/jdk1.1.8
 JFC11DIR?=	${WRKDIRPREFIX}${.CURDIR}/../../java/jfc/work/swing-1.1.1fcs
-JDK12DIR?=	${LOCALBASE}/linux-jdk${JDK_VERSION}
+JDK12DIR?=	${LOCALBASE}/linux-sun-jdk${JDK_VERSION}
 
 ONLY_FOR_ARCHS=	i386
 USE_GMAKE=	yes
@@ -54,6 +54,8 @@ PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 JDKIMAGEDIR=	${WRKSRC}/jdk-image-i386
 JDKIMAGEDIR_G=	${WRKSRC}/jdk-debug-image-i386
 JREIMAGEDIR=	${WRKSRC}/jre-image-i386
+
+CPIO?=		/usr/bin/cpio
 
 .if defined(NODEBUG)
 PLIST_SUB+=	DEBUG:="@comment "
@@ -89,7 +91,7 @@ pre-patch:
 
 post-build:
 	for dir in ${JDKIMAGEDIR} ${JDKIMAGEDIR_G} ${JREIMAGEDIR}; do \
-		for file in `find $${dir} -type  f -name "*.so"`; do \
+		for file in `${FIND} $${dir} -type  f -name "*.so"`; do \
 			if [ -f $${file}.${JDK_VERSION} ]; then \
 				${RM} $${file}.${JDK_VERSION}; \
 				${LN} -sf `${BASENAME} $${file}` $${file}.${JDK_VERSION}; \
@@ -111,11 +113,11 @@ pre-install:
 
 do-install:
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
-	cd ${JDKIMAGEDIR} && /usr/bin/find . \
-		|  /usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	cd ${JDKIMAGEDIR} && ${FIND} . \
+		| ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .if !defined(NODEBUG)
-	cd ${JDKIMAGEDIR_G} && /usr/bin/find . \
-		|  /usr/bin/cpio -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
+	cd ${JDKIMAGEDIR_G} && ${FIND} . \
+		| ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 .endif
 
 post-install:
