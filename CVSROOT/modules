@@ -382,9 +382,11 @@ aumix		ports/audio/aumix
 aureal-kmod	ports/audio/aureal-kmod
 auth_ldap	ports/www/auth_ldap
 autoconf	ports/devel/autoconf
+autoconf213	ports/devel/autoconf213
 autodia		ports/devel/autodia
 autogen		ports/devel/autogen
 automake	ports/devel/automake
+automake14	ports/devel/automake14
 autorespond	ports/mail/autorespond
 autosig		ports/mail/autosig
 autotrace	ports/graphics/autotrace
