@@ -47,7 +47,8 @@ post-install:
 	  tar -cf - -C ${WRKSRC} gnroot libexec bin etc | tar xpf - && \
 		(cd gnroot; ${WRKSRC}/bin/mkcache -r); \
 	  ${AWK} '$$1 ~ /#*gopher/ && $$6 == "${PREFIX}/libexec/gn" { exit 1 }' \
-		${INETD_CONF} || { \ ${ECHO_CMD} '#'gopher${CONF} >>${INETD_CONF}
+		${INETD_CONF} || { \
+		${ECHO_CMD} '#'gopher${CONF} >>${INETD_CONF}; \
 	  }
 
 .include <bsd.port.mk>
