@@ -1,0 +1,25 @@
+bin/foobillard
+share/foobillard/blende.png
+share/foobillard/bluebold.ttf
+share/foobillard/cue_shadow.png
+share/foobillard/foobillard.gif
+share/foobillard/foobillard.png
+share/foobillard/full_symbol.png
+share/foobillard/fullhalf_symbol.png
+share/foobillard/half_symbol.png
+share/foobillard/iomanoid.ttf
+share/foobillard/lightflare.png
+share/foobillard/place_cue_ball.png
+share/foobillard/queue.png
+share/foobillard/queue_shadow.png
+share/foobillard/shadow2.png
+share/foobillard/shadow3.png
+share/foobillard/shadow_alpha.png
+share/foobillard/sphere_map_128x128.png
+share/foobillard/sphere_map_128x128_light.png
+share/foobillard/sphere_map_64x64.png
+share/foobillard/table-frame.png
+share/foobillard/tabletex_fB_128x128.png
+share/foobillard/tabletex_fB_256x256.png
+share/foobillard/youregon.ttf
+@dirrm share/foobillard
