@@ -1,0 +1,9 @@
+share/xml/xhtml/1.1/VERSION
+share/xml/xhtml/1.1/xhtml11-flat.dtd
+share/xml/xhtml/1.1/xhtml11-model-1.mod
+share/xml/xhtml/1.1/xhtml11.cat
+share/xml/xhtml/1.1/xhtml11.dtd
+share/xml/xhtml/1.1/xml1.dcl
+share/xml/xhtml/1.1/xml1n.dcl
+@dirrm share/xml/xhtml/1.1
+@unexec rmdir %D/share/xml/xhtml 2>/dev/null || true
