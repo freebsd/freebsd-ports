@@ -1,0 +1,9 @@
+WaveLAN plugin for the XFce4 panel.
+
+Displays various information about a WaveLAN device:
+
+* Signal state (tells if a carrier signal was detected)
+* Signal quality (current quality of the carrier signal)
+* Network name (current SSID of the WaveLAN network)
+
+WWW: http://xfce-goodies.berlios.de/
