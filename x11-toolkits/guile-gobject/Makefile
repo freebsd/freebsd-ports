@@ -16,6 +16,8 @@ COMMENT=	Guile bindings for core GNOME 2 libraries
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
+IGNORE=		"Does not build with GNOME 2.4"
+
 USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_GNOME=	gtk20 libbonobo
