@@ -32,7 +32,7 @@ USE_LINUX=	yes
 DL_JDK_VERSION=	1.4.1_03
 INSTALL_JDK_VERSION=	1.4.1
 ONLY_FOR_ARCHS=	i386
-DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7547&Referer=http://java.sun.com/j2se/1.4.1/download.html
+DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=8230&Referer=http://java.sun.com/j2se/1.4.1/download.html
 PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${INSTALL_JDK_VERSION}
 CPIO?=		/usr/bin/cpio
