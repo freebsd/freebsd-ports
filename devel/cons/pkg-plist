@@ -5,5 +5,7 @@ share/doc/cons-%%CONS_VER%%/INSTALL
 share/doc/cons-%%CONS_VER%%/MANIFEST
 share/doc/cons-%%CONS_VER%%/README
 share/doc/cons-%%CONS_VER%%/RELEASE
+share/doc/cons-%%CONS_VER%%/TODO
 share/doc/cons-%%CONS_VER%%/cons.html
+share/doc/cons-%%CONS_VER%%/test.log
 @dirrm share/doc/cons-%%CONS_VER%%

@@ -1,18 +1,17 @@
 # New ports collection makefile for:	cons
 # Date created:		11 December 1998
-# Whom:			rv@fore.com
+# Whom:			rv@dsmit.com
 #
 # $FreeBSD$
 #
 
 PORTNAME=	cons
-PORTVERSION=	1.7
+PORTVERSION=	1.8-dev
 CATEGORIES=	devel
-MASTER_SITES=	http://www.dsmit.com/cons/ \
-		http://www.telerama.com/~bgarcia/cons/
+MASTER_SITES=	http://www.dsmit.com/cons/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rv@fore.com
+MAINTAINER=	rv@dsmit.com
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MD5.pm:${PORTSDIR}/security/p5-MD5
 
@@ -21,7 +20,8 @@ NO_BUILD=	yes
 PLIST_SUB=	CONS_VER=${PORTVERSION}
 
 MAN1=		cons.1
-DOCS=		CHANGES COPYRIGHT INSTALL MANIFEST README RELEASE cons.html
+DOCS=		CHANGES COPYRIGHT INSTALL MANIFEST README RELEASE cons.html \
+		TODO test.log
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cons ${PREFIX}/bin/cons
