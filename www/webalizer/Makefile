@@ -45,6 +45,7 @@ CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
 .endif
 
 pre-configure:
+	@${PERL5} -pi -e "s=/etc=${PREFIX}/etc=" ${WRKSRC}/webalizer.1
 .if !defined(WEBALIZER_LANG)
 	@${ECHO_MSG} "You can customize the language by typing"
 	@${ECHO_MSG} "       make WEBALIZER_LANG=<lang>"
