@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.52 1998/11/20 04:14:16 asami Exp $
+# $Id: Makefile,v 1.53 1998/12/12 22:18:32 jseger Exp $
 #
 
     SUBDIR += R-a4
@@ -47,5 +47,6 @@
     SUBDIR += xmgr
     SUBDIR += xplot
     SUBDIR += xspread
+    SUBDIR += xwpl
 
 .include <bsd.port.subdir.mk>
