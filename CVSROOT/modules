@@ -3415,6 +3415,7 @@ jpgtn		ports/graphics/jpgtn
 jpilot		ports/palm/jpilot
 jre		ports/java/jre
 jrefentry	ports/textproc/jrefentry
+jrtplib		ports/devel/jrtplib
 jruby		ports/lang/jruby
 jsdk		ports/java/jsdk
 jslice		ports/graphics/jslice
