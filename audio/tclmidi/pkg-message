@@ -1,0 +1,7 @@
+IMPORTANT:
+Now you should add /usr/local/lib/tclmidi to your
+TCLLIBPATH environment variable!
+
+For example (with [t]csh:
+setenv TCLLIBPATH "/usr/local/lib/tclmidi /usr/local/lib/tcl8.0"
+

@@ -1,0 +1,33 @@
+# New ports collection makefile for:    tclmidi
+# Version required:     3.1.0
+# Date created:         14 May 1999
+# Whom:                 shanee@augusta.de
+#
+# $Id $
+#
+
+DISTNAME=       tclmidi-3.1
+CATEGORIES=     audio
+MASTER_SITES=   ftp://ftp.unina.it/pub/Other/music/midi/PROGRAMS/ \
+		ftp://ftp.cs.ruu.nl/pub/MIDI/PROGRAMS/ \
+		ftp://sunsite.mff.cuni.cz/MultiMedia/Audio/MIDI/PROGRAMS/
+
+MAINTAINER=     shanee@augusta.de
+
+LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
+
+MAKE_ENV=	TCL_GENERIC_DIR=${LOCALBASE}/include/tcl8.0
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-tclsh=${LOCALBASE}/bin/tclsh8.0
+
+MAN1=		mplay.1 mrec.1 tclmidi.1 minfo.1 midtotcl.1
+MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \
+		midimake.n midimerg.n midiplay.n midiput.n midiread.n  \
+		midirec.n midirew.n midisplt.n midistop.n midiwait.n \
+		midiwrit.n midivers.n midimove.n midicopy.n mididel.n \
+		miditrck.n mididev.n miditime.n midifeat.n
+
+post-install:
+	@${CAT} ${PKGMESSAGE} | ${SED} s#/usr/local#${PREFIX}#g
+
+.include <bsd.port.mk>

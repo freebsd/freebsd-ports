@@ -1,0 +1,7 @@
+bin/midtotcl
+bin/minfo
+bin/mplay
+bin/mrec
+lib/tclmidi/pkgIndex.tcl
+lib/tclmidi/tclmidi31.so
+@dirrm lib/tclmidi
