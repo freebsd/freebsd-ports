@@ -3,7 +3,7 @@
 # Date created:		19 December 96
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id: Makefile,v 1.4 1998/09/17 00:32:28 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/26 23:18:02 steve Exp $
 #
 
 DISTNAME=	Xtuner-2.1
@@ -12,8 +12,6 @@ CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
-
-BROKEN_ELF=	xforms is a.out only
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		Xpm.4:${PORTSDIR}/graphics/xpm
