@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmtimer
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://home.dwave.net/~jking/wmtimer/
 
