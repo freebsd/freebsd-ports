@@ -4,7 +4,7 @@
 # Date created:         14 Feb 1998
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.7 1999/01/06 04:18:12 simokawa Exp $
+# $Id: Makefile,v 1.8 1999/01/13 04:00:08 scrappy Exp $
 #
 
 DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
@@ -27,6 +27,8 @@ WRKSRC=		${WRKDIR}/communicator-v407.x86-unknown-linux2.0
 NDIR=		${PREFIX}/lib/netscape.us
 BINDIR=		${PREFIX}/bin
 
+.include <bsd.port.pre.mk>
+
 # Need to define USA_RESIDENT to YES or NO
 .if !defined(USA_RESIDENT) || (${USA_RESIDENT} != YES && ${USA_RESIDENT} != yes && ${USA_RESIDENT} != NO && ${USA_RESIDENT} != no)
 pre-fetch:
@@ -39,13 +41,11 @@ pre-fetch:
 #
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == YES || ${USA_RESIDENT} == yes
-#
-pre-fetch:
-	@(if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
-	${ECHO} You must manually obtain ${DISTNAME}${EXTRACT_SUFX} ; \
-	${ECHO} distribution and place it in ${DISTDIR}. ; \
-	false ; \
-	fi )
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE='You must manually obtain ${DISTNAME}${EXTRACT_SUFX} distribution and place it in ${DISTDIR}.'
+.endif
+
 .else
 pre-fetch:
 	@${ECHO}
@@ -73,4 +73,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGDIR}/DESCR
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
