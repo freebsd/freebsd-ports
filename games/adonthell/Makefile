@@ -28,6 +28,12 @@ CONFIGURE_ARGS+=	--disable-py-debug
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-install:
 		cd ${WRKDIR}/wastesedge-${PORTVERSION} && \
 		${SETENV} ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS} \
@@ -36,4 +42,4 @@ post-install:
 		cd ${WRKDIR}/wastesedge-${PORTVERSION} && ${GMAKE}
 		cd ${WRKDIR}/wastesedge-${PORTVERSION} && ${GMAKE} install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
