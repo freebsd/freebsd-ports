@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	linux-
 DISTNAME=	j2sdk-${JDK_VERSION:S/./_/g}_${JDK_REVISION}-linux-${ARCH}
 EXTRACT_SUFX=	.bin
 
-MAINTAINER=	kevlo@FreeBSD.org
+MAINTAINER=	znerd@FreeBSD.org
 
 BUILD_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
