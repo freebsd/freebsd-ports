@@ -1,3 +1,8 @@
 %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary.pm
+%%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale.pm
+%%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale/en.pm
+%%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale/fr.pm
+@dirrm %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary/Locale
+@dirrm %%SITE_PERL%%/DateTime/Calendar/FrenchRevolutionary
 @unexec rmdir %D/%%SITE_PERL%%/DateTime/Calendar 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/DateTime 2>/dev/null || true
