@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	kmplayer
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3.r2
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/rc/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE frontend to mplayer
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
@@ -25,6 +26,12 @@ CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--with-x=${X11BASE} --disable-debug
 
+OPTIONS=	XINE "Enable support for video playback using libxine" off
+
+.if exists(${X11BASE}/lib/libxine.so)
+WITH_XINE=yes
+.endif
+
 post-patch:
 # remove -pedantic where possible to fix build errors on -CURRENT
 # remove optimizations
@@ -36,4 +43,12 @@ post-patch:
 		's|^(SUBDIRS.*)mimetypes|\1|' \
 		${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_XINE)
+LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
+
+PLIST_FILES=	bin/kxineplayer
+.endif
+
+.include <bsd.port.post.mk>
