@@ -6318,6 +6318,7 @@ ocaml-classes	ports/devel/ocaml-classes
 ocaml-cryptokit	ports/security/ocaml-cryptokit
 ocaml-doc	ports/lang/ocaml-doc
 ocaml-equeue	ports/devel/ocaml-equeue
+ocaml-expat	ports/textproc/ocaml-expat
 ocaml-extlib	ports/devel/ocaml-extlib
 ocaml-findlib	ports/devel/ocaml-findlib
 ocaml-images	ports/graphics/ocaml-images
