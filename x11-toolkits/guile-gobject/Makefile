@@ -7,6 +7,7 @@
 
 PORTNAME=	guile-gobject
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://savannah.nongnu.org/download/guile-gtk/
 
@@ -17,7 +18,7 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
 USE_BISON=	yes
-USE_GNOME=	libbonobo
+USE_GNOME=	gtk20 libbonobo
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
