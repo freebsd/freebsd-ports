@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Archive-Tar
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	archivers perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Archive
@@ -18,7 +18,7 @@ COMMENT=	Perl module for creation and manipulation of tar files
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-		
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Archive::Tar.3 Archive::Tar::File.3
