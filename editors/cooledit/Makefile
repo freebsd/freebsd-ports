@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cooledit
-PORTVERSION=	3.17.4
+PORTVERSION=	3.17.5
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/
@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	apps/editors/X/cooledit
 
 MAINTAINER=	brett@peloton.runet.edu
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+		vga.1:${PORTSDIR}/graphics/svgalib
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
@@ -22,8 +23,8 @@ USE_XLIB=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 
-CONFIGURE_ARGS=	--disable-mail-author --with-libs='-lcrypt -lreadline' \
-		--without-included-gettext
+CONFIGURE_ARGS=	--with-libs='-lcrypt -lreadline -lvga' \
+		--disable-mail-author --without-included-gettext
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
