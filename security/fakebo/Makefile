@@ -9,9 +9,9 @@
 DISTNAME=	fakebo-0.4.1
 CATEGORIES=	security
 MASTER_SITES=	http://yi.com/home/KosturjakVlatko/ \
-		ftp://ftp.c-com.net/pub/.10/LinuxBerg/files/console/ \
-		ftp://ftp.bitcon.no/.10/linux/linuxberg/files/console/ \
-		ftp://ftp.ist.utl.pt/pub/linuxberg/files/console/
+		ftp://ftp.bitcon.no/.4/console/adm/ \
+		ftp://ftp.iinet.net.au/mirrors1/berg/files/console/adm/ \
+		ftp://ftp.linux.hr/pub/fakebo/
 
 MAINTAINER=	kris@FreeBSD.org
 
