@@ -6,7 +6,11 @@
 #
 
 group|meisters|peter,jdp,markm,joe
-group|hack|imp
+# People that have abused the rules go in the penaltybox.
+# Put a comment here about when they get out of the box when you put them
+# into the box.
+# Pick up the list of bad users from ncs/CVSROOT/badcommitters
+group|penaltybox|!badcommitters
 
 unavail
 avail||CVSROOT
@@ -16,3 +20,4 @@ avail||ports
 avail||projects
 avail||src
 avail||www
+unavail|:penaltybox
