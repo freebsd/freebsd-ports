@@ -1,7 +1,9 @@
+bin/cdbdump
 bin/cdbget
 bin/cdbmake
-bin/cdbdump
+bin/cdbmake-12
+bin/cdbmake-sv
 bin/cdbstats
 bin/cdbtest
+include/cdb.h
 lib/libcdb.a
-lib/libcdbmake.a

@@ -1,19 +1,30 @@
 # ports collection makefile for:	Constant DataBase
-# Version required:			0.55
+# Version required:			0.75
 # Date created:				18th July 1998
 # Whom:					Gary Palmer <gpalmer@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cdb-0.55
+DISTNAME=	cdb-0.75
 CATEGORIES=	databases
-MASTER_SITES=	http://cr.yp.to/software/
+MASTER_SITES=	http://cr.yp.to/cdb/
 
 MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	it
-MAN1=		cdbget.1 cdbmake.1 cdbdump.1 cdbstats.1 cdbtest.1
-MAN3=		cdb.3
+INSTALL_TARGET=	setup
+
+do-configure:
+	@${MV} ${WRKSRC}/conf-home ${WRKSRC}/conf-home.orig
+	${ECHO} ${PREFIX} > ${WRKSRC}/conf-home
+	@${MV} ${WRKSRC}/conf-cc ${WRKSRC}/conf-cc.orig
+	${ECHO} ${CC} ${CFLAGS} > ${WRKSRC}/conf-cc
+	@${MV} ${WRKSRC}/conf-ld ${WRKSRC}/conf-ld.orig
+	${ECHO} ${CC} -s > ${WRKSRC}/conf-ld
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/cdb.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/cdb.a ${PREFIX}/lib/libcdb.a
 
 .include <bsd.port.mk>
