@@ -1,4 +1,5 @@
 bin/poedit
+share/locale/af_ZA/LC_MESSAGES/poedit.mo
 share/locale/bg/LC_MESSAGES/poedit.mo
 share/locale/ca/LC_MESSAGES/poedit.mo
 share/locale/cs/LC_MESSAGES/poedit.mo
@@ -7,12 +8,15 @@ share/locale/de/LC_MESSAGES/poedit.mo
 share/locale/el/LC_MESSAGES/poedit.mo
 share/locale/es/LC_MESSAGES/poedit.mo
 share/locale/et/LC_MESSAGES/poedit.mo
+share/locale/fa_IR/LC_MESSAGES/poedit.mo
 share/locale/fr/LC_MESSAGES/poedit.mo
 share/locale/hr/LC_MESSAGES/poedit.mo
+share/locale/hu/LC_MESSAGES/poedit.mo
 share/locale/is/LC_MESSAGES/poedit.mo
 share/locale/it/LC_MESSAGES/poedit.mo
 share/locale/ja/LC_MESSAGES/poedit.mo
 share/locale/ka/LC_MESSAGES/poedit.mo
+share/locale/lt/LC_MESSAGES/poedit.mo
 share/locale/lv/LC_MESSAGES/poedit.mo
 share/locale/nb/LC_MESSAGES/poedit.mo
 share/locale/nl/LC_MESSAGES/poedit.mo
@@ -22,11 +26,14 @@ share/locale/pt_BR/LC_MESSAGES/poedit.mo
 share/locale/ro/LC_MESSAGES/poedit.mo
 share/locale/ru/LC_MESSAGES/poedit.mo
 share/locale/sk/LC_MESSAGES/poedit.mo
+share/locale/sl/LC_MESSAGES/poedit.mo
+share/locale/sr/LC_MESSAGES/poedit.mo
 share/locale/sv_SE/LC_MESSAGES/poedit.mo
 share/locale/ta/LC_MESSAGES/poedit.mo
 share/locale/tr/LC_MESSAGES/poedit.mo
 share/locale/zh_CN/LC_MESSAGES/poedit.mo
 share/locale/zh_TW/LC_MESSAGES/poedit.mo
+share/locale/pt_PT/LC_MESSAGES/poedit.mo
 %%DATADIR%%/help-gettext.zip
 %%DATADIR%%/help-hr.zip
 %%DATADIR%%/help.zip
