@@ -282,6 +282,7 @@
     SUBDIR += linux_glx
     SUBDIR += linux_mesa3
     SUBDIR += lodju
+    SUBDIR += long-exposure-tools
     SUBDIR += lphoto
     SUBDIR += mapserver
     SUBDIR += maverik
