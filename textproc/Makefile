@@ -600,6 +600,7 @@
     SUBDIR += xmlpp
     SUBDIR += xmlppm
     SUBDIR += xmlpull
+    SUBDIR += xmlstarlet
     SUBDIR += xmlto
     SUBDIR += xmlwrapp
     SUBDIR += xp
