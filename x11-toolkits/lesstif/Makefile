@@ -81,4 +81,6 @@ post-install:
 		${LOCALBASE}/share/aclocal
 	@${CAT} ${PKGMESSAGE}
 
+FORBIDDEN=	internal libXpm has security problems
+
 .include <bsd.port.mk>
