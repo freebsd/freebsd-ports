@@ -37,6 +37,7 @@ MAN3=		Bundle::HTML::Mason.3 \
 		HTML::Mason::Compiler.3 \
 		HTML::Mason::Compiler::ToObject.3 \
 		HTML::Mason::Component.3 \
+		HTML::Mason::Component::Subcomponent.3 \
 		HTML::Mason::ComponentSource.3 \
 		HTML::Mason::Devel.3 \
 		HTML::Mason::Escapes.3 \
