@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- libnautilus-private/nautilus-volume-monitor.c.orig	Wed Aug 28 16:37:20 2002
-+++ libnautilus-private/nautilus-volume-monitor.c	Tue Sep 10 01:42:20 2002
+--- libnautilus-private/nautilus-volume-monitor.c.orig	Wed Aug 28 09:37:20 2002
++++ libnautilus-private/nautilus-volume-monitor.c	Tue Sep 10 16:37:32 2002
 @@ -59,6 +59,18 @@
  #include <sys/types.h>
  #include <unistd.h>
@@ -190,3 +187,23 @@ $FreeBSD$
  		/* These are set up by get_current_mount_list for Solaris. */
  		volume->is_removable = volume_is_removable (volume);
  #endif
+@@ -1794,7 +1850,7 @@
+ 		ok = mount_volume_auto_add (volume);
+ 	} else if (strcmp (file_system_type_name, "cdda") == 0) {
+ 		ok = mount_volume_cdda_add (volume);
+-	} else if (strcmp (file_system_type_name, "iso9660") == 0) {
++	} else if (strcmp (file_system_type_name, "cd9660") == 0) {
+ 		ok = mount_volume_iso9660_add (volume);
+ 	} else if (strcmp (file_system_type_name, "nfs") == 0) {
+ 		ok = mount_volume_nfs_add (volume);
+@@ -1823,8 +1879,8 @@
+ 	}
+ 
+ 	/* Identify device type */
+-	if (eel_str_has_prefix (volume->mount_path, "/mnt/")) {		
+-		name = volume->mount_path + strlen ("/mnt/");
++	if (eel_str_has_prefix (volume->mount_path, "/")) {		
++		name = volume->mount_path + strlen ("/");
+ 		
+ 		if (eel_str_has_prefix (name, "cdrom")
+ 				|| eel_str_has_prefix (name, "burn")) {
