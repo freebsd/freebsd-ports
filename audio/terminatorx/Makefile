@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	terminatorx
-PORTVERSION=	3.80
-PORTREVISION=	1
+PORTVERSION=	3.81
 CATEGORIES=	audio
 MASTER_SITES=	http://www.terminatorx.cx/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -21,14 +20,13 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehier libxml2 gtk20
-USE_REINPLACE=	yes
+USE_GNOME=	gnomehack gnomehier gnometarget gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-docdir="${PREFIX}/share/gnome"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--disable-alsa --disable-jack \
+		--with-docdir="${PREFIX}/share/gnome"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
@@ -77,10 +75,12 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|function option_info|option_info|g' ${WRKSRC}/configure
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
+	@${GREP} -lR "%%LOCALBASE%%" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|g'
+	@${GREP} -lR "%%X11BASE%%" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|%%X11BASE%%|${LOCALBASE}|g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/terminatorX ${PREFIX}/bin

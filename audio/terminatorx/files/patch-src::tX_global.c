@@ -1,34 +1,11 @@
---- src/tX_global.c.orig	Thu Apr 17 04:45:56 2003
-+++ src/tX_global.c	Thu Apr 24 21:21:59 2003
-@@ -230,7 +230,7 @@
- 	char indent[]="\t";
- 	FILE *rc=NULL;
- 	gzFile rz=NULL;
--	_store_compress_xml=0;
-+	int _store_compress_xml=0;
- 	char tmp_xml_buffer[4096];
- 	
- 	get_rc_name(rc_name);
-@@ -314,7 +314,7 @@
- }
- 
- char *encode_xml(char *dest, const char *src) {
--	int i, t, max;
-+	int i, t, max, inlen, outlen, res;
- 	char tmp[4096];
- 	
- 	tmp[0]=0;
-@@ -333,10 +333,10 @@
- 	}
- 	tmp[t]=0;
- 
--	int outlen=4096;
--	int inlen=t;
-+	outlen=4096;
-+	inlen=t;
- 	
--	int res=isolat1ToUTF8((unsigned char *) dest, &outlen, (unsigned char *) tmp, &inlen);
-+	res=isolat1ToUTF8((unsigned char *) dest, &outlen, (unsigned char *) tmp, &inlen);
- 	dest[outlen]=0;
- 	if (res<0) {
- 		tX_error("failed to encode string (%s) to UTF-8.", src);
+--- src/tX_global.c.orig	Thu Aug 21 06:41:24 2003
++++ src/tX_global.c	Sat Aug 23 04:34:16 2003
+@@ -127,7 +127,7 @@
+ #endif		
+ 	globals.use_stdout_cmdline=0;
+ 	strcpy(globals.current_path, "");
+-	strcpy(globals.lrdf_path, "/usr/share/ladspa/rdf:/usr/local/share/ladspa/rdf");
++	strcpy(globals.lrdf_path, "%%LOCALBASE%%/share/ladspa/rdf");
+ 	globals.fullscreen_enabled=0;
+ 	globals.confirm_events=0;
+ 	globals.compress_set_files=0;
