@@ -8080,6 +8080,7 @@ pear-XML_RPC	ports/devel/pear-XML_RPC
 pear-XML_RSS	ports/devel/pear-XML_RSS
 pear-XML_SVG	ports/devel/pear-XML_SVG
 pear-XML_Serializer	ports/devel/pear-XML_Serializer
+pear-XML_Transformer	ports/devel/pear-XML_Transformer
 pear-XML_Tree	ports/devel/pear-XML_Tree
 pear-XML_Util	ports/devel/pear-XML_Util
 pear-XML_XPath	ports/devel/pear-XML_XPath
