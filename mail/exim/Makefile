@@ -25,7 +25,7 @@ MAINTAINER=	eik@FreeBSD.org
 COMMENT?=	High performance MTA for Unix systems on the Internet
 
 EXIM_VERSION=	4.34
-EXISCAN_VERSION=21
+EXISCAN_VERSION=22
 
 .if !defined(EXIMON_ONLY)
 .if defined(PKGNAMESUFFIX)
@@ -194,6 +194,10 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 #
 # Include the unsupported patches in ${PATCHDIR}/wishlist-*.patch
 #WITH_WISHLIST=		yes
+#
+# Enable Sender Policy Framework (SPF) checking in exiscan-acl
+#
+#WITH_SPF=		yes
 
 # You should not need to fiddle with anything below this point.
 
@@ -389,6 +393,14 @@ SEDLIST+=	-e 's,^\# TRANSPORT_LMTP=,TRANSPORT_LMTP=,'
 
 .if defined(WITHOUT_ALT_CONFIG_PREFIX)
 SEDLIST+=	-e 's,^ALT_CONFIG_PREFIX=,\# ALT_CONFIG_PREFIX=,'
+.endif
+
+.if defined(WITH_SPF) && !defined(WITHOUT_EXISCAN)
+LIB_DEPENDS+=	spf_alt.1:${PORTSDIR}/mail/libspf-alt
+CFLAGS+=	-DSPF
+SEDLIST+=	-e 's,XX_SPF_LIBS_XX,-lspf_alt,'
+.else
+SEDLIST+=	-e 's,XX_SPF_LIBS_XX,,'
 .endif
 
 .include <bsd.port.pre.mk>
