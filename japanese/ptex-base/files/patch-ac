@@ -9,12 +9,23 @@
          $verbose "$0: replaced $old_ar with $cmdname."
        fi
        
-@@ -397,6 +397,9 @@
+@@ -397,6 +397,20 @@
                  lib_dir=.
                fi
                lib_basename=`basename $libname`
 +	      if test $ot = SHARED; then
++if [ -x /sbin/sysctl ]
++then
++   OSVERSION=`/sbin/sysctl -n kern.osreldate`
++else
++   OSVERSION=`/usr/sbin/sysctl -n kern.osreldate`
++fi
++if [ $OSVERSION -ge 300000 ]
++then
 +	        cmdname="$cmdname -Wl,-soname,$lib_basename -o"
++else
++	        cmdname="$cmdname -o"
++fi
 +		fi
                lib_base=`echo $lib_basename | sed 's/[.0-9]*$//'`
                
