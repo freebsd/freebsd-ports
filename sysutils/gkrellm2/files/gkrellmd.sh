@@ -10,16 +10,16 @@
 #
 # NOTE for FreeBSD 5.0+:
 # If you want this script to start with the base rc scripts
-# move imapd.sh to /etc/rc.d/gkrellmd
+# move gkrellmd.sh to /etc/rc.d/gkrellmd
 
 prefix=%%PREFIX%%
 
-# Define these imapd_* variables in one of these files:
+# Define these gkrellmd_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/gkrellmd
 #
-# DO NOT CHANGE THESE DEFAULT VALUES HERE 
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 [ -z "$gkrellmd_enable" ] && gkrellmd_enable="NO"	# Enable gkrellmd
 #gkrellmd_program="${prefix}/sbin/gkrellmd"	# Location of gkrellmd
