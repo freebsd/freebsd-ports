@@ -13,7 +13,6 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.${PLATFORM}/ 
 EXTRACT_SUFX=
 DISTFILES=	${BIN_FILES} ${SBIN_FILES}
-DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 EXTRACT_ONLY=	# none
 
 MAINTAINER=	lth@FreeBSD.org
@@ -26,21 +25,24 @@ COMMENT=	Perforce client and server
 ARCH!= /usr/bin/uname -p
 ARCH?= i386
 
-MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
-.if ${ARCH} == i386
+.if (${ARCH} == i386) || (${ARCH} == amd64)
+DIST_SUBDIR=	perforce/${VERSION}/i386
 VERSION=	04.2
-REVISION=	9
+REVISION=	10
 PLATFORM=	freebsd4
 BIN_FILES=	p4
 SBIN_FILES=	p4d p4ftpd p4p p4web
 REL_NOTES=	http://www.perforce.com/perforce/doc.042/user/relnotes.txt
+MD5_FILE=	${MASTERDIR}/distinfo.i386
 .elif ${ARCH} == alpha
+DIST_SUBDIR=	perforce/${VERSION}/${ARCH}
 VERSION=	99.1
 REVISION=	1
 PLATFORM=	freebsdaxp
 BIN_FILES=	p4
 SBIN_FILES=	p4d
 REL_NOTES=	http://www.perforce.com/perforce/doc.991/user/relnotes.txt
+MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 .else
 VERSION=	0
 IGNORE=		"Unsupported platform, sorry."
