@@ -3,13 +3,13 @@
 # Date created:		02 Oct 1998
 # Whom:			jkoshy
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/10/21 08:31:08 jkoshy Exp $
 #
 
 DISTNAME=		tet3.2c-unsup
 PKGNAME=		tet-3.2c
 CATEGORIES=		misc
-MASTER_SITES=		http://tetworks.opengroup.org/
+MASTER_SITES=		ftp://ftp.rdg.opengroup.org/pub/TET/TET3
 EXTRACT_SUFX=		.src.tgz
 
 MAINTAINER=		jkoshy@freebsd.org
@@ -20,9 +20,6 @@ HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		-t ${TET_CONFIG_TARGET}
 
 TET_CONFIG_TARGET?=	inet	# options are `lite', `xti' and `inet'
-
-# need to register with http://tetworks.opengroup.org/tet3download.html
-MANUAL_FETCH=		yes
 
 do-build:
 	cd ${WRKDIR}/src && ${MAKE} ${ALL_TARGET}
