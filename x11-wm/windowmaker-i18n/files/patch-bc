@@ -1,6 +1,6 @@
---- util/wsetfont.orig	Thu Jan  7 00:22:49 1999
-+++ util/wsetfont	Wed Oct 18 03:48:40 2000
-@@ -58,6 +58,9 @@
+--- util/wsetfont.orig	Fri Feb  9 07:43:01 2001
++++ util/wsetfont	Sun Feb 11 16:41:09 2001
+@@ -76,6 +76,9 @@
      exit
  fi
  
@@ -10,32 +10,31 @@
  case $1 in
     default)
  	SystemFont=\"-*-helvetica-medium-r-normal-*-%d-*-*-*-*-*-*-*\"
-@@ -118,6 +121,8 @@
- 	IconTitleFont=\"-*-helvetica-medium-r-normal-*-8-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-12-*,-*-*-medium-r-normal-*-*-*\"
+@@ -175,6 +178,7 @@
  	ClipTitleFont=\"-*-helvetica-bold-r-normal-*-10-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-12-*,-*-*-medium-r-normal-*-*-*\"
  	DisplayFont=\"-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-14-*,-*-*-medium-r-normal-*-*-*\"
-+	LargeDisplayFont=\"-*-helvetica-medium-r-*-*-24-*-*-*-*-*-*-*,-*-*-medium-r-*--24-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-*-*\"
+ 	LargeDisplayFont=\"-*-helvetica-bold-r-normal-*-24-*-*-*-*-*-*-*,-*-*-medium-r-normal-*-24-*,-*-*-medium-r-normal-*-*-*\"
 +	MultiByteText=\"YES\";
  	;;
     korean)
  	SystemFont=\"-*-helvetica-medium-r-normal-*-%d-*-*-*-*-*-*-*,-*-kodig-medium-r-normal--%d-*-*-*-*-*-*-*,*-*-medium-r-normal-*-%d-*-*-*-*-*-*-*,*-*-*-*-*--%d-*-*-*-*-*-*-*,*\"
-@@ -128,6 +133,7 @@
- 	IconTitleFont=\"-*-helvetica-medium-r-normal-*-8-*-*-*-*-*-*-*,-*-kodig-medium-r-normal--10-*-*-*-*-*-*-*,*-*-medium-r-normal--10-*-*-*-*-*-*-*,*-*-medium-r-normal--*-*-*-*-*-*-*-*,*-*-*-r-normal--*-*-*-*-*-*-*-*,*\"
+@@ -186,6 +190,7 @@
  	ClipTitleFont=\"-*-helvetica-bold-r-normal-*-10-*-*-*-*-*-*-*,-*-kodig-medium-r-normal--10-*-*-*-*-*-*-*,*-*-medium-r-normal--10-*-*-*-*-*-*-*,*-*-medium-r-normal--*-*-*-*-*-*-*-*,*-*-*-r-normal--*-*-*-*-*-*-*-*,*\"
  	DisplayFont=\"-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-*-*,-*-kodig-medium-r-normal--12-*-*-*-*-*-*-*,*-*-medium-r-normal--12-*-*-*-*-*-*-*,*-*-medium-r-normal--*-*-*-*-*-*-*-*,*-*-*-r-normal--*-*-*-*-*-*-*-*,*\"
+ 	LargeDisplayFont=\"-*-helvetica-bold-r-normal-*-24-*-*-*-*-*-*-*,-*-kodig-bold-r-normal--24-*-*-*-*-*-*-*,-*-*-medium-r-normal--24-*-*-*-*-*-*-*,*-*-bold-r-normal-*-24-*-*-*-*-*-*-*,*-*-*-*-*--24-*-*-*-*-*-*-*,*\"
 +	MultiByteText=\"YES\";
  	;;
     korean2)
  	SystemFont=\"-*-helvetica-medium-r-normal-*-%d-*-*-*-*-*-*-*,-*-medium-r-normal-*-%d-*,-*-medium-r-normal-*\"
-@@ -138,6 +144,7 @@
- 	IconTitleFont=\"-*-helvetica-medium-r-normal-*-10-*-*-*-*-*-*-*,-*-gothic-medium-r-normal-*-12-*-*-*-*-*-ksc5601.1987-*\"
+@@ -197,6 +202,7 @@
  	ClipTitleFont=\"-*-helvetica-bold-r-normal-*-10-*-*-*-*-*-*-*,-*-gothic-medium-r-normal-*-12-*-*-*-*-*-ksc5601.1987-*\"
  	DisplayFont=\"-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-*-*,-*-gothic-medium-r-normal-*-16-*-*-*-*-*-ksc5601.1987-*\"
+ 	LargeDisplayFont=\"-*-helvetica-bold-r-normal-*-24-*-*-*-*-*-*-*,-*-medium-r-normal-*-24-*,-*-medium-r-normal-*\"
 +	MultiByteText=\"YES\";
  	;;
     *)
  	echo "NOTICE:"
-@@ -162,10 +169,13 @@
+@@ -221,10 +227,13 @@
  
  $WDWRITE WMGLOBAL SystemFont "$SystemFont"
  $WDWRITE WMGLOBAL BoldSystemFont "$BoldSystemFont"
@@ -49,20 +48,18 @@
  echo
  echo "Setting up  ~/GNUstep/Defaults/WindowMaker..."
  
-@@ -175,6 +185,8 @@
- $WDWRITE WindowMaker IconTitleFont "$IconTitleFont"
+@@ -235,6 +244,7 @@
  $WDWRITE WindowMaker ClipTitleFont "$ClipTitleFont"
  $WDWRITE WindowMaker DisplayFont "$DisplayFont"
-+$WDWRITE WindowMaker LargeDisplayFont "$LargeDisplayFont"
+ $WDWRITE WindowMaker LargeDisplayFont "$LargeDisplayFont"
 +$WDWRITE WindowMaker MultiByteText "$MultiByteText"
  
  echo
  echo "WindowTitleFont=$WindowTitleFont"
-@@ -183,5 +195,7 @@
- echo "IconTitleFont=$IconTitleFont"
+@@ -244,5 +254,6 @@
  echo "ClipTitleFont=$ClipTitleFont"
  echo "DisplayFont=$DisplayFont"
-+echo "LargeDisplayFont=$LargeDisplayFont"
+ echo "LargeDisplayFont=$LargeDisplayFont"
 +echo "MultiByteText=$MultiByteText"
  echo
  echo "Done."

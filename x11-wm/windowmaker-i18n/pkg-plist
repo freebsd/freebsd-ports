@@ -72,12 +72,14 @@ bin/geticonset
 bin/getstyle
 bin/seticons
 bin/setstyle
+bin/wdread
 bin/wdwrite
 bin/wkdemenu.pl
 bin/wm-oldmenu2new
 bin/wmagnify
 bin/wmaker
 bin/wmaker.inst
+bin/wmchlocale
 bin/wmsetbg
 bin/wmsetup
 bin/wsetfont
@@ -241,6 +243,7 @@ share/WindowMaker/menu.pt
 share/WindowMaker/menu.ro
 share/WindowMaker/menu.ru
 share/WindowMaker/menu.se
+share/WindowMaker/menu.sk
 share/WindowMaker/menu.sl
 share/WindowMaker/menu.tr
 share/WindowMaker/menu.zh_CN
@@ -257,6 +260,7 @@ share/WindowMaker/plmenu.it
 share/WindowMaker/plmenu.ko
 share/WindowMaker/plmenu.pl
 share/WindowMaker/plmenu.ro
+share/WindowMaker/plmenu.sk
 share/WindowMaker/plmenu.zh_CN
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
@@ -278,6 +282,8 @@ share/locale/fr/LC_MESSAGES/WindowMaker.mo
 share/locale/gl/LC_MESSAGES/WindowMaker.mo
 share/locale/hr/LC_MESSAGES/WPrefs.mo
 share/locale/hr/LC_MESSAGES/WindowMaker.mo
+share/locale/hu/LC_MESSAGES/WPrefs.mo
+share/locale/hu/LC_MESSAGES/WindowMaker.mo
 share/locale/it/LC_MESSAGES/WPrefs.mo
 share/locale/it/LC_MESSAGES/WindowMaker.mo
 share/locale/ja_JP.EUC/LC_MESSAGES/WPrefs.mo
@@ -292,8 +298,9 @@ share/locale/pt/LC_MESSAGES/WindowMaker.mo
 share/locale/ro/LC_MESSAGES/WindowMaker.mo
 share/locale/ru/LC_MESSAGES/WPrefs.mo
 share/locale/ru/LC_MESSAGES/WindowMaker.mo
-share/locale/se/LC_MESSAGES/WindowMaker.mo
+share/locale/sk/LC_MESSAGES/WPrefs.mo
 share/locale/sk/LC_MESSAGES/WindowMaker.mo
+share/locale/sv/LC_MESSAGES/WindowMaker.mo
 share/locale/tr/LC_MESSAGES/WindowMaker.mo
 share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
 share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
