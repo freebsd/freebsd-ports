@@ -1384,6 +1384,7 @@ dgen-sdl	ports/emulators/dgen-sdl
 dgpsip		ports/astro/dgpsip
 dgs		ports/x11/dgs
 dhcp-agent	ports/net/dhcp-agent
+dhcp6		ports/net/dhcp6
 dhcpdump	ports/net/dhcpdump
 dhcping		ports/net/dhcping
 dhid		ports/dns/dhid
