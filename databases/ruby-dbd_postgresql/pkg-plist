@@ -1,0 +1,9 @@
+%%RUBY_SITELIBDIR%%/dbi/dbd_postgresql.rb
+%%RUBY_SITELIBDIR%%/dbi/sqlquote.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/dbd_postgresql/runtests.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/dbd_postgresql/testdbi.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/dbd_postgresql/testdbipostgres.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/dbi/dbd_postgresql/testsqlquote.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dbi/dbd_postgresql
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/dbd_postgresql/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dbi/dbd_postgresql
