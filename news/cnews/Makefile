@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.9 1995/04/24 09:15:30 asami Exp $
+# $Id: Makefile,v 1.10 1995/04/24 09:21:52 asami Exp $
 #
 
 DISTNAME=	cnews
@@ -21,6 +21,7 @@ NEWSLIB=	${PREFIX}/lib/news
 MANDIR=		${PREFIX}/man
 
 do-install:
+	rm -f ${PREFIX}/bin/inews
 	cp ${WRKSRC}/libdbz/dbz.h ${PREFIX}/include
 	cp ${WRKSRC}/libcnews.a ${PREFIX}/lib
 	mkdir -p ${NEWSSPOOL}
@@ -40,9 +41,9 @@ do-install:
 	chown news.news ${NEWSBIN}/input/newsspool
 	chmod 6755 ${NEWSBIN}/input/newsspool
 	mkdir -p ${MANDIR}/man1 ${MANDIR}/man5 ${MANDIR}/man8
-	install -o bin -g bin -m 444 ${WRKSRC}/man/*.1* ${MANDIR}/man1
-	install -o bin -g bin -m 444 ${WRKSRC}/man/*.5* ${MANDIR}/man5
-	install -o bin -g bin -m 444 ${WRKSRC}/man/*.8* ${MANDIR}/man8
+	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.1* ${MANDIR}/man1
+	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.5* ${MANDIR}/man5
+	install -c -o bin -g bin -m 444 ${WRKSRC}/man/*.8* ${MANDIR}/man8
 	@echo ""
 	@echo "!!!!!!!!"
 	@echo "you MUST change the configuration of this news setup:"
