@@ -9,6 +9,9 @@ share/doc/HTML/de/klogoturtle/index.docbook
 share/doc/HTML/en/klogoturtle/common
 share/doc/HTML/en/klogoturtle/index.cache.bz2
 share/doc/HTML/en/klogoturtle/index.docbook
+share/doc/HTML/it/klogoturtle/common
+share/doc/HTML/it/klogoturtle/index.cache.bz2
+share/doc/HTML/it/klogoturtle/index.docbook
 share/doc/HTML/pt_BR/klogoturtle/common
 share/doc/HTML/pt_BR/klogoturtle/index.cache.bz2
 share/doc/HTML/pt_BR/klogoturtle/index.docbook
@@ -17,6 +20,7 @@ share/icons/hicolor/32x32/apps/klogoturtle.png
 share/icons/locolor/16x16/apps/klogoturtle.png
 share/icons/locolor/32x32/apps/klogoturtle.png
 share/locale/de/LC_MESSAGES/klogoturtle.mo
+share/locale/it/LC_MESSAGES/klogoturtle.mo
 share/locale/pt_BR/LC_MESSAGES/klogoturtle.mo
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
@@ -30,6 +34,8 @@ share/locale/pt_BR/LC_MESSAGES/klogoturtle.mo
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @dirrm share/doc/HTML/pt_BR/klogoturtle
 @unexec rmdir %D/share/doc/HTML/pt_BR 2>/dev/null || true
+@dirrm share/doc/HTML/it/klogoturtle
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
 @dirrm share/doc/HTML/en/klogoturtle
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @dirrm share/doc/HTML/de/klogoturtle
