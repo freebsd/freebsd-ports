@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.4.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -77,20 +77,20 @@ MAN3=			XF86VidMode.3 \
 			XF86VidModeSwitchMode.3 \
 			XF86VidModeSwitchToMode.3 \
 			XF86VidModeValidateModeLine.3
-MAN4=			citron.4 \
-			dynapro.4 \
-			elographics.4 \
-			fbdevhw.4 \
-			kbd.4 \
-			keyboard.4 \
-			microtouch.4 \
-			mouse.4 \
-			mutouch.4 \
-			nv.4 \
-			r128.4 \
-			radeon.4 \
-			void.4 \
-			wacom.4
+MAN4=			citron.4x \
+			dynapro.4x \
+			elographics.4x \
+			fbdevhw.4x \
+			kbd.4x \
+			keyboard.4x \
+			microtouch.4x \
+			mouse.4x \
+			mutouch.4x \
+			nv.4x \
+			r128.4x \
+			radeon.4x \
+			void.4x \
+			wacom.4x
 MAN5=			XF86Config.5 \
 			getconfig.5
 PKGMESSAGE=		${WRKDIR}/.pkg-message
@@ -119,26 +119,28 @@ PLIST_SUB+=		DRI="@comment "
 
 .if ${ARCH} == alpha
 PLIST_SUB+=	ALPHA_NA="@comment "
-MAN4+=		cirrus.4
+MAN4+=		cirrus.4x
 .else
 PLIST_SUB+=	ALPHA_NA=""
 .endif
 
 .if ${ARCH} == amd64
 PLIST_SUB+=	AMD64_NA="@comment "
-MAN4+=		apm.4 \
-		chips.4 \
-		cirrus.4 \
-		cyrix.4 \
-		fbdev.4 \
-		i128.4 \
-		neomagic.4 \
-		sis.4 \
-		trident.4 \
-		tseng.4 \
-		vesa.4
+PLIST_SUB+=	AMD64=""
+MAN4+=		apm.4x \
+		chips.4x \
+		cirrus.4x \
+		cyrix.4x \
+		fbdev.4x \
+		i128.4x \
+		neomagic.4x \
+		sis.4x \
+		trident.4x \
+		tseng.4x \
+		vesa.4x
 .else
 PLIST_SUB+=	AMD64_NA=""
+PLIST_SUB+=	AMD64="@comment "
 .endif
 
 .if ${ARCH} == ia64
@@ -150,38 +152,38 @@ PLIST_SUB+=	IA64_NA=""
 .if ${ARCH} == sparc64
 PLIST_SUB+=	SPARC64_NA="@comment "
 PLIST_SUB+=	SPARC64=""
-MAN4+=		sunffb.4
+MAN4+=		sunffb.4x
 .else
 PLIST_SUB+=	SPARC64="@comment "
 PLIST_SUB+=	SPARC64_NA=""
-MAN4+=		glint.4 \
-		mga.4 \
-		rendition.4 \
-		s3virge.4 \
-		savage.4 \
-		siliconmotion.4 \
-		tdfx.4 \
-		vga.4
+MAN4+=		glint.4x \
+		mga.4x \
+		rendition.4x \
+		s3virge.4x \
+		savage.4x \
+		siliconmotion.4x \
+		tdfx.4x \
+		vga.4x
 .endif
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386=""
 MAN1+=		scanpci.1
-MAN4+=		apm.4 \
-		chips.4 \
-		cirrus.4 \
-		cyrix.4 \
-		i128.4 \
-		i740.4 \
-		i810.4 \
-		neomagic.4 \
-		nsc.4 \
-		sis.4 \
-		trident.4 \
-		tseng.4 \
-		vesa.4 \
-		via.4 \
-		vmware.4
+MAN4+=		apm.4x \
+		chips.4x \
+		cirrus.4x \
+		cyrix.4x \
+		i128.4x \
+		i740.4x \
+		i810.4x \
+		neomagic.4x \
+		nsc.4x \
+		sis.4x \
+		trident.4x \
+		tseng.4x \
+		vesa.4x \
+		via.4x \
+		vmware.4x
 .else
 PLIST_SUB+=	I386="@comment "
 .endif
