@@ -1,0 +1,10 @@
+============================================================
+You'll have to add /usr/X11R6/lib/X11/fonts/urwfonts-ttf
+to your X font path by either:
+
+$ xset fp+ /usr/X11R6/lib/X11/fonts/urwfonts-ttf
+$ xset fp rehash
+
+or by adding it to your X-server configuration file (usually
+/etc/X11/XF86Config) and restarting the X-server.
+============================================================
