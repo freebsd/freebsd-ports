@@ -7,7 +7,7 @@
 
 PORTNAME=	messagewall
 PORTVERSION=	1.0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.messagewall.org/download/
 DISTNAME=	messagewall-${PORTVERSION}
@@ -15,15 +15,15 @@ DISTNAME=	messagewall-${PORTVERSION}
 MAINTAINER=	opr@bsdaemon.be
 COMMENT=	Free SMTP PROXY with filtering
 
-BUILD_DEPENDS=  ${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
+BUILD_DEPENDS=	${LOCALBASE}/include/firestring.h:${PORTSDIR}/misc/firestring \
 		${LOCALBASE}/include/firedns.h:${PORTSDIR}/dns/firedns
 
 MAN1=		messagewall.1 messagewallctl.1 messagewallstats.1
 MAN5=		messagewall.conf.5 messagewall_profiles.5
 CONF1=		messagewall.conf
 
-WRKSRC=         ${WRKDIR}/messagewall
-GNU_CONFIGURE=  yes
+WRKSRC=		${WRKDIR}/messagewall
+GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 pre-fetch:
