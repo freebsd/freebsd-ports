@@ -10,12 +10,12 @@ info/zsh.info-4
 info/zsh.info-5
 info/zsh.info-6
 info/zsh.info-7
+man/man1/zsh.1.gz
+man/man1/zshall.1.gz
+man/man1/zshbuiltins.1.gz
 man/man1/zshcompctl.1.gz
 man/man1/zshexpn.1.gz
 man/man1/zshmisc.1.gz
 man/man1/zshoptions.1.gz
-man/man1/zshall.1.gz
-man/man1/zshzle.1.gz
-man/man1/zsh.1.gz
-man/man1/zshbuiltins.1.gz
 man/man1/zshparam.1.gz
+man/man1/zshzle.1.gz
