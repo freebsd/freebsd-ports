@@ -9022,6 +9022,7 @@ spamcalc	ports/misc/spamcalc
 spamd		ports/mail/spamd
 spamguard	ports/mail/spamguard
 spamoracle	ports/mail/spamoracle
+spampd		ports/mail/spampd
 spamprobe	ports/mail/spamprobe
 spamstats	ports/mail/spamstats
 spar		ports/math/spar
