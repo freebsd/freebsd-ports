@@ -70,7 +70,6 @@
     SUBDIR += libdnd
     SUBDIR += libgnome
     SUBDIR += libgnomemm
-    SUBDIR += libpanel
     SUBDIR += libsx
     SUBDIR += libxfce4mcs
     SUBDIR += libxfce4util
