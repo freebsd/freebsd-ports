@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Run just once.
+if [ "x$2" != "xDEINSTALL" ]; then
+  exit 0
+fi
+
+TEXMFMAIN=`kpsexpand '$TEXMFMAIN'`
+PSFONTSMAP=${TEXMFMAIN}/dvips/config/config.ps
+
+# Edit dvips/config/config.ps
+sed -e /%cwtex_begin/,/%cwtex_end/d $PSFONTSMAP > $PSFONTSMAP.tmp
+mv -f $PSFONTSMAP.tmp $PSFONTSMAP
+
+# Update ls-R.
+mktexlsr
