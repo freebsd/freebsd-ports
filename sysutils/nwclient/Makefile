@@ -13,7 +13,7 @@ ARCH!=		uname -m
 DISTNAME=	nwclient-${PORTVERSION}-freebsd-${ARCH}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network backup client to NetWorker servers
 
 NO_BUILD=	yes
