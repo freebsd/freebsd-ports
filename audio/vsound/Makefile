@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	vsound
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	audio
-MASTER_SITES=	http://rsidd.online.fr/
+MASTER_SITES=	http://rsidd.online.fr/ \
+		http://www.zorg.org/vsound/
 
 MAINTAINER=	rsidd@online.fr
 COMMENT=	Utility for capturing audio streams from programs with OSS output
