@@ -11,6 +11,7 @@ PKGNAMESUFFIX=	-${KONFONT}
 CATEGORIES=	japanese
 # note kon is only in first directory and fonts are only in second directory
 MASTER_SITES=	ftp://ftp.tut.ac.jp/Linux/Packages/Utils/ \
+		${MASTER_SITE_PORTS_JP} \
 		ftp://ftp.xfree86.org/pub/XFree86/3.3.3/untarred/xc/fonts/bdf/misc/ \
 		ftp://ftp.iij.ad.jp/pub/X/XFree86/3.3.3/untarred/xc/fonts/bdf/misc/
 DISTNAME=	kon2-${PORTVERSION}
