@@ -1,0 +1,13 @@
+--- ../picturebook.orig/Makefile	Mon Apr 23 23:33:16 2001
++++ Makefile	Mon Apr 23 23:35:31 2001
+@@ -1,5 +1,9 @@
+ CFLAGS = -DWITH_DISPLAY=1 -Wall -O2 -g -I/usr/X11R6/include -I/usr/local/include 
+-SRC = mchip.c capture.c dump.c sonypi.c pci.c yuv.c timer.c avi.c command.c display.c ptable.c jpeg.c
++SRCMI = mchip.c capture.c dump.c sonypi.c yuv.c timer.c avi.c command.c display.c ptable.c jpeg.c
++#LINUX
++#SRCMD = pci.c
++SRCMD = pci_freebsd.c
++SRC = ${SRCMI} ${SRCMD}   
+ OBJ = $(SRC:.c=.o)
+ LIBS = `imlib-config --libs`
+ 

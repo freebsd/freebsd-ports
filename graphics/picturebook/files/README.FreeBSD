@@ -1,0 +1,39 @@
+Work memo
+Modified File:
+sonypi.c: Add OUT[BW] function. the order of the argument of these function
+	  is different between in Linux and in FreeBSD.Replaced out[bw] into
+	 OUT[BW].
+	 Add iopl compatibility shim.(by open/close /dev/io)
+capture.c: Delete getopt_long and use getopt instead. 
+	   Change type of signal handler.
+ptable.c: Change memalign to malloc.Because memalign(PAGE_SIZE,size)==
+	valloc(size) and valloc is obsoleted in FreeBSD by malloc(3).
+
+Added File:
+pci.h:	From Linux kernel. and removed needless description.All I need is
+	register definition.
+pci_freebsd.c: Substantially rewrtten version of pci.c
+
+***************************IMPORTANT********************************
+*I don't recieve question about this code. All I can say is        *
+*that this can be compiled and pci device probe routine and 32 bit * 
+*configuration space reading routine is working.                   *
+*                                           Takanori Watanabe      *
+***************************IMPORTANT********************************
+----
+Original code was designed for Linux by Andrew Tridgell <tridge@linuxcare.com>.
+See README file for details.
+
+Port for FreeBSD was done by Takanori Watanabe of Kobe Univ, in July 2000,
+as described in README.fbsdport.  Since then, original Linux code has been
+revised. 
+
+I, Noriyuki Takahashi <nrt@exa.onlab.ntt.co.jp>, merged Watanabe's 
+modification for FreeBSD into newer code (of 30 Octover 2000 version or like)
+for Linux.  The merged code is O.K. on my VAIO PCS-C1VJ running
+FreeBSD 5.0-current.
+
+Noriyuki Takahashi <nrt@exa.onlab.ntt.co.jp>
+2 November 2000
+
+

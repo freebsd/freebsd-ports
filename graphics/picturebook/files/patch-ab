@@ -1,0 +1,49 @@
+--- ../picturebook.old/capture.c	Mon Dec 25 19:01:43 2000
++++ capture.c	Mon Dec 25 19:03:16 2000
+@@ -39,7 +39,7 @@
+ 	}
+ }
+ 
+-static void sigint(void)
++static void sigint(int dummy)
+ {
+ 	spic_shutdown(0);
+ 	_exit(1);
+@@ -81,6 +81,7 @@
+ 
+ static char *short_options = "to:hPV:4Odvr:sjq:";
+ 
++#ifdef HAVE_GETOPT_LONG_H
+ static struct option long_options[] = {
+   {"help",        0,     0,    'h'},
+   {"version",     0,     0,    OPT_VERSION},
+@@ -93,6 +94,7 @@
+   {"agc",         1,     0,    OPT_AGC},
+   {"explode",     1,     0,    OPT_EXPLODE},
+   {0, 0, 0, 0}};
++#endif
+ 
+ int main(int argc, char *argv[])
+ {
+@@ -108,15 +110,20 @@
+ 	int snap=0;
+ 	int subsample=0;
+ 	int test=0;
++#ifdef HAVE_GETOPT_LONG_H
+ 	int option_index;
++#endif
+ 	int spic_brightness=32, spic_contrast=32, spic_hue=32, spic_color=32, spic_sharpness=32;
+ 	int spic_agc=48, spic_picture=0;
+ 	double framerate=0;
+ 
+ 	setlinebuf(stdout);
+-
++#ifdef HAVE_GETOPT_LONG_H
+ 	while ((c = getopt_long(argc, argv, 
+ 				short_options, long_options, &option_index)) != -1) {
++#else
++	while ((c = getopt(argc, argv, short_options)) != -1) {
++#endif
+ 		switch (c) {
+ 		default:
+ 		case OPT_VERSION:

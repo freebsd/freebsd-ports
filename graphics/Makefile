@@ -166,6 +166,7 @@
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += photopc
+    SUBDIR += picturebook
     SUBDIR += piddle
     SUBDIR += pixmap
     SUBDIR += plasma-kmod
