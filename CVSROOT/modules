@@ -5957,7 +5957,6 @@ ruby-acl	ports/security/ruby-acl
 ruby-aes	ports/security/ruby-aes
 ruby-algebra	ports/math/ruby-algebra
 ruby-amstd	ports/devel/ruby-amstd
-ruby-application.rb	ports/sysutils/ruby-application.rb
 ruby-audiofile	ports/audio/ruby-audiofile
 ruby-avl	ports/devel/ruby-avl
 ruby-bdb	ports/databases/ruby-bdb
