@@ -22,12 +22,15 @@ share/micq/fr.i18n
 share/micq/hr.i18n
 share/micq/id.i18n
 share/micq/it.i18n
-share/micq/ja_JP.UTF-8.i18n
+share/micq/ja.UTF-8.i18n
+share/micq/ja.i18n
 share/micq/nl.i18n
 share/micq/pl.i18n
 share/micq/ro.i18n
 share/micq/ru.i18n
 share/micq/se.i18n
+share/micq/sr.UTF-8.i18n
+share/micq/sr.i18n
 share/micq/uk.i18n
 share/micq/yu.i18n
 share/micq/zh_CN.i18n
