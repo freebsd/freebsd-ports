@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://crl.nmsu.edu/pub/non-lexical/6811/
 DISTNAME=	sim
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jim@thehousleys.net
 
 NO_WRKSUBDIR=	yes
 
