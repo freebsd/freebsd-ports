@@ -1,0 +1,46 @@
+--- Imakefile.orig	Wed Feb 16 19:35:06 1994
++++ Imakefile	Fri Feb 11 13:57:31 2000
+@@ -1,11 +1,12 @@
+ # A little makeyfile edit up to the solid line...
+ 
+ # EDIT THE CDEBUGFLAGS IF -O GIVES A PROBLEM
+-CDEBUGFLAGS = -O  
++# CDEBUGFLAGS = -O  
+ 
+ # CHANGE HSCORE_FILE TO SUIT
+ #HSCORE_FILE=/usr/local/lib/xjewel.scores
+-HSCORE_FILE=xjewel.scores
++HSCORE_DIR=$(LIBDIR)/xjewel
++HSCORE_FILE=$(HSCORE_DIR)/xjewel.scores
+ 
+ # ADD YOUR ARCHITECTURE IF YOU USE SELECT INSTEAD OF POLL
+ #if defined(HPArchitecture) || defined(ApolloArchitecture) || \
+@@ -21,10 +22,10 @@
+ # DEFINE 'GETPWENT' if you dont have the cuserid ftn (hscore.c)
+ # DEFINE 'SLOW_FONTS=n' if your server is overly fast on fonts
+ # DEFINE 'SLOW_DRAW=n' if your server is overly fast on drawing
+-USERDEFS = -DICON_WINDOW
++USERDEFS = -DICON_WINDOW -DUSE_SELECT -DGETPWENT
+ 
+ # CHANGE FFILE TO REFLECT THE EXTENSION USED FOR COMPILED FONTS
+-FFILE = snf
++FFILE = pcf.gz
+ 
+ ##############################################################################
+ # X-STUFF...
+@@ -40,6 +41,8 @@
+ FONT   = bitmaps/seven_seg
+ CFONT   = bitmaps/seven_seg.$(FFILE)
+ 
++MANDIR = $(MANPATH)/man6
++MANSUFFIX = 6
+ 
+ # LETS GET TO IT...
+ ComplexProgramTarget(xjewel)
+@@ -52,5 +55,6 @@
+ all:: $(CFONT)
+ 
+ install::
++	MakeDir($(DESTDIR)$(HSCORE_DIR))
+ 	touch  $(HSCORE_FILE)
+ 	chmod a+w $(HSCORE_FILE)
