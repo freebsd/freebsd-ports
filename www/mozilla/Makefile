@@ -210,6 +210,10 @@ CFLAGS+=		-O2
 CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
 
+.if defined(WITH_MENU_ENTRY)
+USE_GNOME+=	gnomehier
+.endif
+
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
 IGNORE=	"core dumps on alpha during post-build"
 .endif
