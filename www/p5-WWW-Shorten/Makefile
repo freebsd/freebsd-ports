@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Shorten
-PORTVERSION=	1.87
+PORTVERSION=	1.88
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -28,6 +28,7 @@ MAN3=		WWW::Shorten.3 \
 		WWW::Shorten::MakeAShorterLink.3 \
 		WWW::Shorten::Metamark.3 \
 		WWW::Shorten::NotLong.3 \
+		WWW::Shorten::OneShortLink.3 \
 		WWW::Shorten::Shorl.3 \
 		WWW::Shorten::ShortLink.3 \
 		WWW::Shorten::SmLnk.3 \
