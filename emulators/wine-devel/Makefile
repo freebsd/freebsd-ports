@@ -35,6 +35,10 @@ USE_GCC=	3.4
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 503000
+BROKEN=		"Versions of FreeBSD before 5.3 lack sufficient threading support"
+.endif
+
 .if defined(DEBUG)
 STRIP=
 .else
