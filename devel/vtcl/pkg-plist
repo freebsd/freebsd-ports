@@ -179,6 +179,8 @@ lib/vtcl/lib/Help/PropManager
 lib/vtcl/lib/Help/Tips
 lib/vtcl/lib/Help/WidgetTree
 lib/vtcl/lib/Widgets/blt/Options.wgt
+lib/vtcl/lib/Widgets/blt/barchart.gif
+lib/vtcl/lib/Widgets/blt/barchart.wgt
 lib/vtcl/lib/Widgets/blt/busy.wgt
 lib/vtcl/lib/Widgets/blt/graph.wgt
 lib/vtcl/lib/Widgets/blt/hierbox.wgt
