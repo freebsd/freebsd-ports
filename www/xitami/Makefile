@@ -7,6 +7,7 @@
 
 PORTNAME=	xitami
 PORTVERSION= 	2.4d7
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://users.skynet.be/sky37432/
 DISTNAME=	suni24d7
@@ -18,10 +19,6 @@ COMMENT=	A fast, portable multithreaded web server
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "alpha"
-BROKEN=		"Does not compile on !i386 and !alpha"
-.endif
 
 do-build:
 	@${CHMOD} +x ${WRKSRC}/xibuild
