@@ -1,3 +1,54 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/Apache.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/Apache.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/User/User.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/User/User.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/User/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Apache/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Journal/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Search/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/Messages/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/XML/FZ.pm/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Slash/OurNet/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/wiki.pl/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Apache.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Display.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Install.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Test.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/XML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Apache/Banlist.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Apache/Log.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Apache/User.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Custom/Bulkmail.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/MySQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Oracle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/PostgreSQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Utility.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Static/MySQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Static/Oracle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/DB/Static/PostgreSQL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Display/Plugin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Display/Provider.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/Access.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/Anchor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/Data.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/Display.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/Environment.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/Utility/System.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Slash/XML/RSS.pm
+%%SITE_PERL%%/Slash/Journal.pm
+%%SITE_PERL%%/Slash/Search.pm
+%%SITE_PERL%%/Slash/Messages.pm
+%%SITE_PERL%%/Slash/Messages/DB/MySQL.pm
+%%SITE_PERL%%/Slash/XML/FZ.pm
+%%SITE_PERL%%/Slash/trapped.pl
+%%SITE_PERL%%/Slash/ournet.pl
+%%SITE_PERL%%/Slash/OurNet.pm
+%%SITE_PERL%%/Slash/OurNet/Standalone.pm
+%%SITE_PERL%%/wiki.pl
 slash/themes/slashcode/templates/yourPendingSubs;submit;default
 slash/themes/slashcode/templates/vote;pollBooth;default
 slash/themes/slashcode/templates/users;menu;default
@@ -713,12 +764,22 @@ slash/plugins/Search/Makefile.old
 slash/plugins/Search/Makefile.PL
 slash/plugins/Search/MANIFEST
 slash/plugins/Search/Changes
-slash/plugins/RSS2Story/sql/rss2story_schema.sql
-slash/plugins/RSS2Story/sql/rss2story_dump.sql
-slash/plugins/RSS2Story/tasks/rss2story.pl
-slash/plugins/RSS2Story/templates/category;rss2story;default
-slash/plugins/RSS2Story/templates/schedule;rss2story;default
-slash/plugins/RSS2Story/templates/source;rss2story;default
+slash/plugins/StylesSite/templates/common;styles-site;default
+slash/plugins/StylesSite/templates/default;styles-site;default
+slash/plugins/StylesSite/PLUGIN
+slash/plugins/StylesSite/TODO
+slash/plugins/StylesSite/styles-site.pl
+slash/plugins/RSS2Story/templates/main;rss2story;default
+slash/plugins/RSS2Story/templates/searchForm;rss2story;default
+slash/plugins/RSS2Story/templates/searchResult;rss2story;default
+slash/plugins/RSS2Story/INSTALL
+slash/plugins/RSS2Story/README
+slash/plugins/RSS2Story/RSS-import.pl
+slash/plugins/RSS2Story/install.pl
+slash/plugins/RSS2Story/mysql_dump
+slash/plugins/RSS2Story/mysql_schema
+slash/plugins/RSS2Story/IDEA
+slash/plugins/RSS2Story/topicrss.png
 slash/plugins/RSS2Story/RSS2Story.pm
 slash/plugins/RSS2Story/PLUGIN
 slash/plugins/RSS2Story/rss2story.pl
@@ -938,11 +999,11 @@ etc/rc.d/slash.sh
 @dirrm slash/plugins/Wiki/templates
 @dirrm slash/plugins/Wiki/sql
 @dirrm slash/plugins/Wiki
+@dirrm slash/plugins/StylesSite/templates
+@dirrm slash/plugins/StylesSite
 @dirrm slash/plugins/Search/templates
 @dirrm slash/plugins/Search
 @dirrm slash/plugins/RSS2Story/templates
-@dirrm slash/plugins/RSS2Story/tasks
-@dirrm slash/plugins/RSS2Story/sql
 @dirrm slash/plugins/RSS2Story
 @dirrm slash/plugins/OurNet/templates/music543
 @dirrm slash/plugins/OurNet/templates/elixus
