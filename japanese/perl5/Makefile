@@ -3,7 +3,7 @@
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.14 1999/03/01 09:38:14 shige Exp $
+# $Id: Makefile,v 1.16 1999/05/08 06:29:42 shige Exp $
 #
 
 DISTNAME=	perl5.005_03
@@ -60,9 +60,9 @@ MAN1= 	a2p.1 c2ph.1 h2ph.1 h2xs.1 perl.1 perl5004delta.1 \
 	perlfaq3.1 perlfaq4.1 perlfaq5.1 perlfaq6.1 perlfaq7.1 \
 	perlfaq8.1 perlfaq9.1 perlform.1 perlfunc.1 perlguts.1 \
 	perlhist.1 perlipc.1 perllocale.1 perllol.1 perlmod.1 \
-	perlmodinstall.1 perlmodlib.1 perlobj.1 perlop.1 \
-	perlpod.1 perlport.1 perlre.1 perlref.1 perlrun.1 \
-	perlsec.1 perlstyle.1 perlsub.1 perlsyn.1 perltie.1 \
+	perlmodinstall.1 perlmodlib.1 perlobj.1 perlop.1 perlopentut.1 \
+	perlpod.1 perlport.1 perlre.1 perlref.1 perlreftut.1 perlrun.1 \
+	perlsec.1 perlstyle.1 perlsub.1 perlsyn.1 perlthrtut.1 perltie.1 \
 	perltoc.1 perltoot.1 perltrap.1 perlvar.1 perlxs.1 \
 	perlxstut.1 pl2pm.1 pod2html.1 pod2man.1 pstruct.1 \
 	s2p.1 splain.1 xsubpp.1 jperl.1
@@ -75,7 +75,7 @@ MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 B.3 B::Asmdata.3 \
 	CGI::Fast.3 CGI::Push.3 CGI::Switch.3 CPAN.3 \
 	CPAN::FirstTime.3 CPAN::Nox.3 Carp.3 Class::Struct.3 \
 	Config.3 Cwd.3 DB_File.3 Data::Dumper.3 Devel::SelfStubber.3 \
-	DirHandle.3 DynaLoader.3 English.3 Env.3 Errno.3 \
+	DirHandle.3 Dumpvalue.3 DynaLoader.3 English.3 Env.3 Errno.3 \
 	Exporter.3 ExtUtils::Command.3 ExtUtils::Embed.3 \
 	ExtUtils::Install.3 ExtUtils::Installed.3 ExtUtils::Liblist.3 \
 	ExtUtils::MM_OS2.3 ExtUtils::MM_Unix.3 ExtUtils::MM_VMS.3 \
