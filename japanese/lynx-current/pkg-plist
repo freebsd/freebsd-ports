@@ -1,11 +1,6 @@
 bin/lynx
 etc/lynx.cfg
-lib/lynx_help/COPYHEADER
-lib/lynx_help/COPYING
-lib/lynx_help/CHANGES
 lib/lynx_help/Lynx_users_guide.html
-lib/lynx_help/PROBLEMS
-lib/lynx_help/README
 lib/lynx_help/about_lynx.html
 lib/lynx_help/keystrokes/bookmark_help.html
 lib/lynx_help/keystrokes/cookie_help.html
@@ -25,27 +20,33 @@ lib/lynx_help/keystrokes/xterm_help.html
 lib/lynx_help/lynx-dev.html
 lib/lynx_help/lynx_help_main.html
 lib/lynx_help/lynx_url_support.html
-lib/lynx_help/samples/jumpsUnix.html
-lib/lynx_help/samples/jumpsVMS.html
-lib/lynx_help/samples/lynx-keymaps
-lib/lynx_help/samples/lynx.com
-lib/lynx_help/samples/lynx.cfg
-lib/lynx_help/samples/lynx.lss
-lib/lynx_help/samples/mailcap
-lib/lynx_help/samples/mime.types
-lib/lynx_help/test/ALT88592.html
-lib/lynx_help/test/ISO_LATIN1_test.html
-lib/lynx_help/test/README.txt
-lib/lynx_help/test/TestComment.html
-lib/lynx_help/test/c1.html
-lib/lynx_help/test/iso8859-1.html
-lib/lynx_help/test/iso88592.html
-lib/lynx_help/test/raw8bit.html
-lib/lynx_help/test/spaces.html
-lib/lynx_help/test/sgml.html
-lib/lynx_help/test/tabtest.html
-lib/lynx_help/test/unicode.html
-@dirrm lib/lynx_help/test
-@dirrm lib/lynx_help/samples
+share/doc/lynx/CHANGES
+share/doc/lynx/COPYHEADER
+share/doc/lynx/COPYING
+share/doc/lynx/PROBLEMS
+share/doc/lynx/README
+share/doc/lynx/samples/jumpsUnix.html
+share/doc/lynx/samples/jumpsVMS.html
+share/doc/lynx/samples/lynx-keymaps
+share/doc/lynx/samples/lynx.cfg
+share/doc/lynx/samples/lynx.com
+share/doc/lynx/samples/lynx.lss
+share/doc/lynx/samples/mailcap
+share/doc/lynx/samples/mime.types
+share/doc/lynx/test/ALT88592.html
+share/doc/lynx/test/ISO_LATIN1_test.html
+share/doc/lynx/test/README.txt
+share/doc/lynx/test/TestComment.html
+share/doc/lynx/test/c1.html
+share/doc/lynx/test/iso8859-1.html
+share/doc/lynx/test/iso88592.html
+share/doc/lynx/test/raw8bit.html
+share/doc/lynx/test/sgml.html
+share/doc/lynx/test/spaces.html
+share/doc/lynx/test/tabtest.html
+share/doc/lynx/test/unicode.html
+@dirrm share/doc/lynx/test
+@dirrm share/doc/lynx/samples
+@dirrm share/doc/lynx
 @dirrm lib/lynx_help/keystrokes
 @dirrm lib/lynx_help
