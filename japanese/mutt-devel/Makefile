@@ -48,8 +48,8 @@ USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 USE_OPENSSL=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${VERSION}
-CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang" \
-		LDFLAGS=-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include -I${LOCALBASE}/include/slang"
 CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--without-wc-funcs \
