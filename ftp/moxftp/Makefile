@@ -3,12 +3,14 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.20 1998/10/13 23:04:41 jseger Exp $
+# $Id: Makefile,v 1.21 1998/12/12 01:48:39 jseger Exp $
 #
 
 DISTNAME=	moxftp-2.2
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.pacbell.com/X11/contrib/applications/
+MASTER_SITES=	ftp://metalab.unc.edu/pub/X11/contrib/applications/ \
+	  	ftp://ftp.inria.fr/X/contrib-R5/applications/ \
+		ftp://ftp.tk.mesh.ad.jp/pub/X/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.ORG
