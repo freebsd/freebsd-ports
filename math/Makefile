@@ -167,6 +167,7 @@
     SUBDIR += spooles-mpich
     SUBDIR += ss
     SUBDIR += superlu
+    SUBDIR += superlu_mt
     SUBDIR += surf
     SUBDIR += thx_1138
     SUBDIR += topaz
