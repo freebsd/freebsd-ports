@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freedb
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4
 CATEGORIES=	audio net ruby
 MASTER_SITES=	http://davedd.free.fr/%SUBDIR%/
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
@@ -21,8 +21,8 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		README
-EXAMPLES=	test.rb
+DOCS=		CHANGELOG	CONTRIBUTORS	README
+EXAMPLES=	examples/*.rb
 
 post-install:
 .if !defined(NOPORTDOCS)
