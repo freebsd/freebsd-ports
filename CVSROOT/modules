@@ -7771,6 +7771,7 @@ spacehulk	ports/games/spacehulk
 spamass-milter	ports/mail/spamass-milter
 spambnc		ports/mail/spambnc
 spamcalc	ports/misc/spamcalc
+spamd		ports/mail/spamd
 spamoracle	ports/mail/spamoracle
 spamprobe	ports/mail/spamprobe
 spamstats	ports/mail/spamstats
