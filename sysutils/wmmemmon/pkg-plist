@@ -1,3 +1,4 @@
 bin/wmmemmon
+%%PORTDOCS%%share/doc/wmmemmon/ChangeLog
 %%PORTDOCS%%share/doc/wmmemmon/README
 %%PORTDOCS%%@dirrm share/doc/wmmemmon

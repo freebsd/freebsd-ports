@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wmmemmon
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
-DISTNAME=	WMMemMon-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
 
@@ -17,14 +16,19 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
 
+MAN1=		wmmemmon.1
+
 pre-patch:
-	@${PERL} -pi.orig -e 's|WMMwmMon|WMMemMon|' \
-		${WRKSRC}/src/main.c
+.for dir in src doc .
+	@${PERL} -pi -e 's|\@program_transform_name\@||' \
+		${WRKSRC}/${dir}/Makefile.in
+.endfor
 
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/ChangeLog \
+		${DOCSDIR}
 .endif # !NOPORTDOCS
 
 .include <bsd.port.mk>
