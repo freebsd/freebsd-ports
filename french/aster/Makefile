@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	aster
-PORTVERSION=	7.2.0
-PORTREVISION=	1
+PORTVERSION=	7.3.0
 CATEGORIES=	french cad python tk84
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}-2
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}-8
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -39,7 +38,8 @@ PATCH_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}		\
 		wish${TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 BUILD_DEPENDS=	${opt_hdf}:${PORTSDIR}/science/hdf5				\
 		${opt_med}:${PORTSDIR}/french/med				\
-		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}
+		${SHELL_INSTALL_ASTER}:${PORTSDIR}/shells/${SHIADEP}		\
+		${PYNUMERIC}
 LIB_DEPENDS=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
 		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
@@ -53,11 +53,14 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
-EXTDIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-2.src
+EXTDIR=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 WRKSRC=		${EXTDIR}/${vaster}
 PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 .if defined(WITHOUT_ASTK) || defined(WITHOUT_ASTK_CLI)
-PKGMESSAGE=	${PKGDIR}/pkg-message.sans-astk
+PKGMESSIN=	pkg-message.sans-astk.in
+.else
+PKGMESSIN=	pkg-message.in
 .endif
 
 .include <bsd.port.pre.mk>
@@ -153,8 +156,8 @@ lib_blas=	-lblas
 .else
 lib_blas=	-lf77blas -latlas
 .endif
-home_ar!=	dirname `${WHICH} ${AR}`
-gzip!=		dirname `${WHICH} ${GZIP_CMD}`
+home_ar!=	${DIRNAME} `${WHICH} ${AR}`
+gzip!=		${DIRNAME} `${WHICH} ${GZIP_CMD}`
 LASTKDIR?=	ASTK/ASTK_CLIENT
 ASTKDIR=	${LOCALBASE}/${LASTKDIR}
 
@@ -233,6 +236,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tcl/run_aster ${inst_dir}/tcl
 
 post-install:
+	@${TOUCH} ${inst_dir}/etude/forma01a.17
 	${LN} -fs ${LOCALBASE}/bin/onmetis ${tools_dir}/
 	${LN} -fs ${LOCALBASE}/bin/gnuplot ${tools_dir}/
 .if !defined(WITHOUT_ASTK) && !defined(WITHOUT_ASTK_CLI)
@@ -249,7 +253,9 @@ post-install:
 	${LN} -fs ${X11BASE}/bin/xmgrace ${tools_dir}/
 .endif
 	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE} | ${SED} -e "s#%%inst_dir%%#${inst_dir}#"
+	@${SED} -e "s#%%inst_dir%%#${inst_dir}#"	\
+		${FILESDIR}/${PKGMESSIN} > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .if defined(MAINTAINER_MODE)
