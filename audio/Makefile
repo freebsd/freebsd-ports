@@ -349,6 +349,7 @@
     SUBDIR += traymp
     SUBDIR += trm
     SUBDIR += trommler
+    SUBDIR += tuneradio
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
     SUBDIR += vorbis-tools
