@@ -16,6 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danny@ricin.com
 COMMENT=	Python Bindings for KDE3
 
+BROKEN=		"Does not compile with KDE >= 3.3.1"
+
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
@@ -29,10 +31,6 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PKGBASE}
 NO_FILTER_SHLIBS=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Does not run on 4.x"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/bin/python#${PYTHON_CMD}#' ${WRKSRC}/postproc
