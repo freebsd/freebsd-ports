@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.83 1997/09/28 14:22:37 itojun Exp $
+# $Id: Makefile,v 1.84 1997/10/04 17:28:13 max Exp $
 #
 
     SUBDIR += Canna
@@ -76,6 +76,10 @@
     SUBDIR += plain2
     SUBDIR += platex
     SUBDIR += prn
+    SUBDIR += ptex-common
+    SUBDIR += ptex-euc
+    SUBDIR += ptex-jis
+    SUBDIR += ptex-sjis
     SUBDIR += qkc
     SUBDIR += recjis
     SUBDIR += sed
