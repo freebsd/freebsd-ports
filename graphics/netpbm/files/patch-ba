@@ -1,57 +1,12 @@
---- GNUmakefile.orig	Thu May 25 02:00:10 2000
-+++ GNUmakefile	Sat Jun  3 00:00:00 2000
-@@ -79,21 +79,21 @@
- 
- .PHONY: install.bin
- install.bin:
--	mkinstalldirs $(INSTALLBINARIES)
-+	-mkdir -p $(INSTALLBINARIES)
- 	for i in $(SUBDIRS) ; do \
- 	    ( echo install.bin.$$i ; cd $$i ; $(MAKE) install.bin ); \
- 	done
- 
- .PHONY: install-merge
- install.merge:
--	mkinstalldirs $(INSTALLBINARIES)
-+	-mkdir -p $(INSTALLBINARIES)
- 	for i in $(SUBDIRS) ; do \
- 	    ( echo install.merge.$$i ; cd $$i ; $(MAKE) install.merge ); \
- 	done
- 
- .PHONY: install.lib
- install.lib:
--	mkinstalldirs $(INSTALLLIBS)
-+	-mkdir -p $(INSTALLLIBS)
- 	for i in $(SUBDIRS) ; do \
- 	    ( echo install.lib.$$i ; cd $$i ; $(MAKE) install.lib ); \
- 	done
-@@ -104,7 +104,7 @@
- 
- .PHONY: install.man
- install.man:
--	mkinstalldirs \
-+	-mkdir -p \
- 	    $(INSTALLMANUALS1) $(INSTALLMANUALS3) $(INSTALLMANUALS5)
- 	for i in $(SUBDIRS) ; do \
- 	    ( echo install.man.$$i ; cd $$i ; $(MAKE) install.man ); \
-@@ -115,9 +115,8 @@
- 
+--- GNUmakefile.orig	Mon Jun  5 13:30:53 2000
++++ GNUmakefile	Sat Jun 10 00:00:00 2000
+@@ -116,8 +116,7 @@
  .PHONY: install.hdr
  install.hdr:
--	mkinstalldirs $(INSTALLHDRS)
+ 	./mkinstalldirs $(INSTALLHDRS)
 -	$(INSTALL) -c -m$(INSTALL_PERM_HDR) pbmplus.h $(INSTALLHDRS)
 -	$(INSTALL) -c -m$(INSTALL_PERM_HDR) shhopt/shhopt.h $(INSTALLHDRS)
-+	-mkdir -p $(INSTALLHDRS)
 +	${BSD_INSTALL_DATA} pbmplus.h $(INSTALLHDRS)
  	for i in $(SUBDIRS) ; do \
- 	    ( echo install.hdr.$$i ; cd $$i ; $(MAKE) install.hdr ); \
- 	done
-@@ -128,7 +127,7 @@
- 
- .PHONY: install.staticlib
- install.staticlib:
--	mkinstalldirs $(INSTALLLIBS)
-+	-mkdir -p $(INSTALLLIBS)
- 	for i in $(SUBDIRS) ; do \
- 	    (echo install.staticlib.$$i; cd $$i; $(MAKE) install.staticlib ); \
+ 	    $(MAKE) -C $$i install.hdr ; \
  	done

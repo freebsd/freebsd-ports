@@ -1,5 +1,5 @@
---- Makefile.config.orig	Fri Jun  2 02:17:32 2000
-+++ Makefile.config	Sat Jun  3 00:00:00 2000
+--- Makefile.config.orig	Mon Jun  5 08:08:43 2000
++++ Makefile.config	Sat Jun 10 00:00:00 2000
 @@ -39,7 +39,7 @@
  #Tru64:
  #CC =		cc
@@ -27,15 +27,15 @@
  # On DEC Tru64 4.0F (at least), you need -DLONG_32 for ppmtompeg.
  #Tru64:
  #CFLAGS = -O2 -std1 DLONG_32 $(CDEBUG)
-@@ -124,7 +124,7 @@
+@@ -123,7 +123,7 @@
+ # independent code, so you need -fpic or fPIC here.  (The rule is: if 
  # -fpic works, use it.  If it bombs, go to fPIC).
- # SunOS and NetBSD require this.
  
 -CFLAGS_SHLIB = 
 +CFLAGS_SHLIB = -fPIC -DPIC
+ # Solaris, SunOS, and NetBSD:
  #CFLAGS_SHLIB = -fpic
  #CFLAGS_SHLIB = -fPIC
- 
 @@ -142,8 +142,8 @@
  TIFFHDR_DIR = $(SRCDIR)/libtiff
  TIFFLIB_DIR = $(SRCDIR)/libtiff
