@@ -1,16 +1,28 @@
---- src/pm.c.orig	Sun Mar  2 01:43:27 1997
-+++ src/pm.c	Fri Dec  4 20:43:58 1998
-@@ -174,4 +174,4 @@
- 	*newv = exp (s * x) * c1 * (s * cos (t * x) - t * sin (t * x));
- 
--	if (_isnan(*newy) || _isnan (*newv)) {
-+	if (isnan(*newy) || isnan (*newv)) {
- 		printf ("Gotcha\n");
---- src/interpolate.c.orig	Sun Mar  2 01:43:26 1997
-+++ src/interpolate.c	Fri Dec  4 20:45:23 1998
-@@ -52,4 +52,4 @@
- 	    if (x <= table->entry[i].x) {
- 			result = table->entry[i].m * x + table->entry[i].b;
--			if (_isnan (result)) {
-+			if (isnan (result)) {
- 				fprintf (stderr, "interpolate: internal error\n");
+*** dis/test/Makefile.in~	Fri Aug 14 23:20:24 1998
+--- dis/test/Makefile.in	Mon Feb  1 18:48:38 1999
+***************
+*** 1,5 ****
+         srcdir = @srcdir@
+! 	    VPATH = @srcdir@
+! 	   CFLAGS = -I$(srcdir)/.. -I.. -I../lib -I$(srcdir)/../../V/lib @CFLAGS@
+             CC = @CC@
+           SRCS = disscope.c simxtest.c tglobe.c
+--- 1,5 ----
+         srcdir = @srcdir@
+!         VPATH = @srcdir@
+!        CFLAGS = -I$(srcdir)/.. -I.. -I../lib -I$(srcdir)/../../V/lib @CFLAGS@
+             CC = @CC@
+           SRCS = disscope.c simxtest.c tglobe.c
+***************
+*** 7,11 ****
+  SIMXTEST_OBJS = simxtest.o
+    TGLOBE_OBJS = tglobe.o
+! DECOY_OBJS = decoy.o
+           LIBS = -L../lib -ldis -L../../V/lib -lV @LIBS@
+  
+--- 7,11 ----
+  SIMXTEST_OBJS = simxtest.o
+    TGLOBE_OBJS = tglobe.o
+!    DECOY_OBJS = decoy.o
+           LIBS = -L../lib -ldis -L../../V/lib -lV @LIBS@
+  

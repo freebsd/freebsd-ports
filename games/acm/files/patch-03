@@ -1,16 +1,60 @@
---- configure.orig	Tue Sep 24 01:02:28 1996
-+++ configure	Fri Dec  4 20:39:15 1998
-@@ -872,4 +872,5 @@
- done
- 
-+if test $ac_cv_lib_elf = yes; then
- ac_safe=`echo "elf.h" | tr './\055' '___'`
- echo $ac_n "checking for elf.h""... $ac_c" 1>&6
-@@ -893,4 +894,7 @@
- fi
- rm -f conftest*
-+fi
-+else
-+    eval "ac_cv_header_$ac_safe=no"
- fi
- if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+*** configure~	Mon Aug 17 20:15:13 1998
+--- configure	Mon Feb  1 18:42:53 1999
+***************
+*** 529,535 ****
+  
+  if test -d /usr/lib/games ; then
+!     OBVDIR="/usr/lib/games/acm"
+  else
+!     OBVDIR=\$\(prefix\)/games/acm
+  fi
+  
+--- 529,535 ----
+  
+  if test -d /usr/lib/games ; then
+!     OBVDIR="/usr/lib/games/acm/"
+  else
+!     OBVDIR=\$\(prefix\)/games/acm/
+  fi
+  
+***************
+*** 557,560 ****
+--- 557,567 ----
+  fi 
+  
++ # *BSD
++ BSD=0
++ if uname -s | grep BSD > /dev/null ; then
++ 	BSD=1
++ 	OBVDIR=${prefix}/share/acm/
++ fi 
++ 
+  # Extract the first word of "gcc", so it can be a program name with args.
+  set dummy gcc; ac_word=$2
+***************
+*** 769,773 ****
+  
+  
+! if test "$LINUX" = "0" ; then
+  	echo $ac_n "checking for elf_end in -lelf""... $ac_c" 1>&6
+  echo "configure:774: checking for elf_end in -lelf" >&5
+--- 776,780 ----
+  
+  
+! if test "$LINUX" = "0" -a "$BSD" = "0"; then
+  	echo $ac_n "checking for elf_end in -lelf""... $ac_c" 1>&6
+  echo "configure:774: checking for elf_end in -lelf" >&5
+***************
+*** 1129,1133 ****
+  done
+  
+! if test "$LINUX" = "0" ; then
+  	ac_safe=`echo "elf.h" | sed 'y%./+-%__p_%'`
+  echo $ac_n "checking for elf.h""... $ac_c" 1>&6
+--- 1136,1141 ----
+  done
+  
+! 
+! if test "$LINUX" = "0" -a "$BSD" = "0" ; then
+  	ac_safe=`echo "elf.h" | sed 'y%./+-%__p_%'`
+  echo $ac_n "checking for elf.h""... $ac_c" 1>&6

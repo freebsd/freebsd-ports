@@ -3,16 +3,14 @@
 # Date created:		5 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.13 1998/12/06 21:09:26 se Exp $
+# $Id: Makefile,v 1.14 1999/02/01 00:56:38 obrien Exp $
 #
 
-DISTNAME=	acm-4.8
+DISTNAME=	acm-5.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.websimulations.com/download/
 
 MAINTAINER=	se@FreeBSD.org
-
-BROKEN='acm-5.0.tar.gz is all that is available' 
 
 GNU_CONFIGURE=	yes
 MAN6=		acm.6
