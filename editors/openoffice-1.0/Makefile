@@ -134,7 +134,7 @@ EXTRACT_CMD_R= ${GZIP_CMD}
 EXTRACT_REST=	gpc231.tar.Z
 
 .if !defined(WITH_BSD_JDK)
-JDK13DIR?=      ${LOCALBASE}/linux-jdk1.3.1
+JDK13DIR?=      ${LOCALBASE}/linux-sun-jdk1.3.1
 .else
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
 .endif
