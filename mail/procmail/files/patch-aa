@@ -1,86 +1,102 @@
-*** Makefile.1.old	Thu Sep  8 20:11:33 1994
---- Makefile.1	Fri Oct  7 04:15:50 1994
+*** initmake.bak	Mon Apr 10 23:28:00 1995
+--- initmake	Sun Apr 16 16:51:35 1995
+***************
+*** 336,343 ****
+  test -z "$MAKE" && echo "MAKE	= make"			>>_Makefile
+  test a"$cc" != a"$CC" && echo "CC	= $cc"		>>_Makefile
+  
+! echo "CFLAGS	= \$(CFLAGS1)$CFLAGS"			>>_Makefile
+! echo "LDFLAGS	= \$(LDFLAGS1)$LDFLAGS"			>>_Makefile
+  echo							>>_Makefile
+  
+  MANSS=""
+--- 336,343 ----
+  test -z "$MAKE" && echo "MAKE	= make"			>>_Makefile
+  test a"$cc" != a"$CC" && echo "CC	= $cc"		>>_Makefile
+  
+! echo "CFLAGS	+= \$(CFLAGS1)$CFLAGS"			>>_Makefile
+! echo "LDFLAGS	+= \$(LDFLAGS1)$LDFLAGS"			>>_Makefile
+  echo							>>_Makefile
+  
+  MANSS=""
+*** Makefile.bak	Sun Apr 16 16:53:15 1995
+--- Makefile	Sun Apr 16 16:53:33 1995
+***************
+*** 86,92 ****
+   -Waggregate-return #-Wuninitialized
+  
+  # The place to put your favourite extra cc flag
+! CFLAGS0 = -O #$(GCC_WARNINGS)
+  LDFLAGS0= -s
+  # Read my libs :-)
+  LIBS=
+--- 86,92 ----
+   -Waggregate-return #-Wuninitialized
+  
+  # The place to put your favourite extra cc flag
+! CFLAGS0 = #-O #$(GCC_WARNINGS)
+  LDFLAGS0= -s
+  # Read my libs :-)
+  LIBS=
+*** Makefile.1.bak	Fri Mar 31 21:30:24 1995
+--- Makefile.1	Sun Apr 16 17:09:42 1995
 ***************
 *** 93,105 ****
   	@for a in $(MANS1S); \
-  	  do $(INSTALL) new/$$a.1 $(MAN1DIR)/$$a.$(MAN1SUFFIX); \
-  	     if test "X$(MANCOMPRESS)" != "X"; \
-! 	     then $(MANCOMPRESS) <new/$$a.1 >$(MAN1DIR)/$$a.$(MAN1SUFFIX); \
-  	     else :; fi; \
-  	  done
+    do $(INSTALL) new/$$a.1 $(MAN1DIR)/$$a.$(MAN1SUFFIX); \
+       if test "X$(MANCOMPRESS)" != "X"; \
+!      then $(MANCOMPRESS) <new/$$a.1 >$(MAN1DIR)/$$a.$(MAN1SUFFIX); \
+       else :; fi; \
+    done
   	@for a in $(MANS5S); \
-  	  do $(INSTALL) new/$$a.5 $(MAN5DIR)/$$a.$(MAN5SUFFIX); \
-  	     if test "X$(MANCOMPRESS)" != "X"; \
-! 	     then $(MANCOMPRESS) <new/$$a.5 >$(MAN5DIR)/$$a.$(MAN5SUFFIX); \
-  	     else :; fi; \
-  	  done
+    do $(INSTALL) new/$$a.5 $(MAN5DIR)/$$a.$(MAN5SUFFIX); \
+       if test "X$(MANCOMPRESS)" != "X"; \
+!      then $(MANCOMPRESS) <new/$$a.5 >$(MAN5DIR)/$$a.$(MAN5SUFFIX); \
+       else :; fi; \
+    done
   	echo Housekeeping file >install.man
 --- 93,105 ----
   	@for a in $(MANS1S); \
-  	  do $(INSTALL) new/$$a.1 $(MAN1DIR)/$$a.$(MAN1SUFFIX); \
-  	     if test "X$(MANCOMPRESS)" != "X"; \
-! 	     then "$(MANCOMPRESS)" <new/$$a.1 >$(MAN1DIR)/$$a.$(MAN1SUFFIX); \
-  	     else :; fi; \
-  	  done
+    do $(INSTALL) new/$$a.1 $(MAN1DIR)/$$a.$(MAN1SUFFIX); \
+       if test "X$(MANCOMPRESS)" != "X"; \
+!      then "$(MANCOMPRESS)" <new/$$a.1 >$(MAN1DIR)/$$a.$(MAN1SUFFIX); \
+       else :; fi; \
+    done
   	@for a in $(MANS5S); \
-  	  do $(INSTALL) new/$$a.5 $(MAN5DIR)/$$a.$(MAN5SUFFIX); \
-  	     if test "X$(MANCOMPRESS)" != "X"; \
-! 	     then "$(MANCOMPRESS)" <new/$$a.5 >$(MAN5DIR)/$$a.$(MAN5SUFFIX); \
-  	     else :; fi; \
-  	  done
+    do $(INSTALL) new/$$a.5 $(MAN5DIR)/$$a.$(MAN5SUFFIX); \
+       if test "X$(MANCOMPRESS)" != "X"; \
+!      then "$(MANCOMPRESS)" <new/$$a.5 >$(MAN5DIR)/$$a.$(MAN5SUFFIX); \
+       else :; fi; \
+    done
   	echo Housekeeping file >install.man
-*** src/formail.c	Mon Oct 31 18:30:09 1994
---- src/formail.c	Sat Nov 19 13:09:22 1994
+*** src/recommend.c.bak	Thu Aug 18 17:45:20 1994
+--- src/recommend.c	Sun Apr 16 17:07:40 1995
 ***************
-*** 35,41 ****
-   x_[]=			"X-",				/* general extension */
-   old_[]=		OLD_PREFIX,			     /* my extension */
-   xloop[]=		"X-Loop:",				/* ditto ... */
-!  daemon[]="<>",unknown[]=UNKNOWN,re[]=" Re:",fmusage[]=FM_USAGE;
-  
-  static const struct {const char*hedr;int lnr;}cdigest[]=
-  {
---- 35,41 ----
-   x_[]=			"X-",				/* general extension */
-   old_[]=		OLD_PREFIX,			     /* my extension */
-   xloop[]=		"X-Loop:",				/* ditto ... */
-!  mdaemon[]="<>",unknown[]=UNKNOWN,re[]=" Re:",fmusage[]=FM_USAGE;
-  
-  static const struct {const char*hedr;int lnr;}cdigest[]=
-  {
-***************
-*** 275,281 ****
-  	      goto pnewname;
-  	 }
-  	else if(sest[i].head==returnpath)		/* nill Return-Path: */
-! 	 { saddr=(char*)daemon;nowm=maxindex(sest)+2;		 /* override */
-  pnewname:  lastm=nowm;saddr=strcpy(malloc(strlen(saddr)+1),saddr);
-  	   if(namep)
-  	      free(namep);
---- 275,281 ----
-  	      goto pnewname;
-  	 }
-  	else if(sest[i].head==returnpath)		/* nill Return-Path: */
-! 	 { saddr=(char*)mdaemon;nowm=maxindex(sest)+2;		 /* override */
-  pnewname:  lastm=nowm;saddr=strcpy(malloc(strlen(saddr)+1),saddr);
-  	   if(namep)
-  	      free(namep);
-*** src/misc.c.old	Wed Jan 11 18:11:02 1995
---- src/misc.c	Wed Jan 11 17:40:33 1995
-***************
-*** 290,296 ****
-  { if(sp->filled==sp->tspace)			    /* growth limit reached? */
-     { if(!sp->offs)
-  	sp->offs=malloc(1);
-!      sp->offs=realloc(sp->offs,(sp->tspace+=4)*sizeof sp->offs);   /* expand */
-     }
-    sp->offs[sp->filled++]=val;				     /* append to it */
+*** 52,59 ****
+--- 52,61 ----
+       printf("chmod %o %s\n",sgid|PERMIS,argv[2]);
+    else if(chmdir==1)
+       goto nogchmod;
++ #ifndef __FreeBSD__
+    if(chmdir)
+       printf("chmod %c+w %s.\n",chmdir==1?'g':'a',systm_mbox);
++ #endif
+  nogchmod:
+    return EXIT_SUCCESS;
   }
---- 290,296 ----
-  { if(sp->filled==sp->tspace)			    /* growth limit reached? */
-     { if(!sp->offs)
-  	sp->offs=malloc(1);
-!      sp->offs=realloc(sp->offs,(sp->tspace+=4)*sizeof(off_t));   /* expand */
-     }
-    sp->offs[sp->filled++]=val;				     /* append to it */
-  }
+*** src/autoconf.bak	Mon Apr 10 23:28:22 1995
+--- src/autoconf	Sun Apr 16 17:33:03 1995
+***************
+*** 959,964 ****
+--- 959,969 ----
+    grepfor setregid '#define NOsetregid' &&
+     grepfor setresgid '#define NOsetresgid'
+  fi
++ echo '#ifdef __FreeBSD___' >>$ACONF
++ echo '#define NOsetrgid' >>$ACONF
++ echo '#define NOsetregid' >>$ACONF
++ echo '#define NOsetresgid' >>$ACONF
++ echo '#endif' >>$ACONF
+  grepfor pow '#define NOpow'
+  grepfor mkdir '#define NOmkdir'
+  grepfor fstat '#define NOfstat'
