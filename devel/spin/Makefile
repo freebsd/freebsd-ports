@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	3.39
+PORTVERSION=	3.3.10
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/spin/ \
 		ftp://www.netlib.org/spin/ \
 		ftp://ftp.freesoftware.com/pub/netlib/spin/
-DISTFILES=	spin339.tar.gz html.tar.gz
+DISTFILES=	spin3310.tar.gz html.tar.gz
 
 MAINTAINER=	jhanna@home.com
 
@@ -28,9 +28,9 @@ pre-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/spin ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/Xspin3.3/xspin338.tcl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/Xspin3.3/xspin3310.tcl ${PREFIX}/bin
 	${RM} -f ${PREFIX}/bin/xspin
-	${LN} -s ${PREFIX}/bin/xspin338.tcl ${PREFIX}/bin/xspin
+	${LN} -s ${PREFIX}/bin/xspin3310.tcl ${PREFIX}/bin/xspin
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/spin/Doc

@@ -1,5 +1,5 @@
---- ../Xspin3.3/xspin338.tcl.orig	Wed Jun 23 18:29:29 1999
-+++ ../Xspin3.3/xspin338.tcl	Wed Jun 23 18:30:51 1999
+--- ../Xspin3.3/xspin3310.tcl.orig	Wed Jun 23 18:29:29 1999
++++ ../Xspin3.3/xspin3310.tcl	Wed Jun 23 18:30:51 1999
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/wish -f
 +#!/usr/local/bin/wish8.0 -f
