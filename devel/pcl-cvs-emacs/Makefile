@@ -18,6 +18,7 @@ PATCHFILES=	pcl-cvs-2.9.9-compat.patch
 
 MAINTAINER?=	okazaki@FreeBSD.org
 
+IGNORE=	"is broken until restructuring of the elib port finishes"
 # startup el filename
 PORT_SETUPEL=	pcl-cvs-setup.el
 # document install directory by install-doc target
