@@ -1,0 +1,26 @@
+--- Makefile.inc.orig	Thu Nov 29 07:19:45 2001
++++ Makefile.inc	Sun Dec 30 14:06:12 2001
+@@ -5,7 +5,11 @@
+ PREFIX?= /usr/pkg
+ 
+ BINDIR= ${PREFIX}/bin
++.if ${OPSYS} == FreeBSD
++MANDIR= ${PREFIX}/man/man
++.else
+ MANDIR= ${PREFIX}/man
++.endif
+ 
+ MKLINT=no
+ 
+--- src/obexformat.c.orig	Tue Oct 16 20:32:45 2001
++++ src/obexformat.c	Sat Dec 29 13:42:18 2001
+@@ -30,6 +30,9 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#endif
+ 
+ /**********************************************************************
+  * Internal functions

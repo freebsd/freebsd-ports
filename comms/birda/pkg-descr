@@ -1,0 +1,11 @@
+A set of utilities to communicate with IrDA devices over an IrDA port
+on a serial line.
+Covers IrComm for connecting via PPP over cell phones
+as well as several utilities to exchange data with PDAs.
+
+These programs were written by Tommy Bohlin <tommy@gatespace.com>.
+The port is more or less directly copied from Lennart Augustsson's
+<lennart@augustsson.net> NetBSD port.
+
+Brandon S. Allbery KF8NH
+allbery@ece.cmu.edu
