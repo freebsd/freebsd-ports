@@ -66,6 +66,7 @@ taginfo		CVSROOT taginfo
 44bsd-hunt	ports/games/44bsd-hunt
 44bsd-more	ports/misc/44bsd-more
 44bsd-rdist	ports/net/44bsd-rdist
+4stattack	ports/games/4stattack
 4va		ports/graphics/4va
 54321		ports/games/54321
 6tunnel		ports/net/6tunnel
