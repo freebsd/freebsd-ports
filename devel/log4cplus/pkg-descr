@@ -1,0 +1,10 @@
+This is a port of log4cplus, a simple-to-use C++ logging API providing
+thread-safe, flexible, and arbitrarily granular control over log management
+and configuration. It is modeled after the Java log4j API.
+
+Authors:
+Tad E. Smith, Michael CATANZARITI, Steighton Haley
+
+WWW: http://log4cplus.sourceforge.net
+
+-pbt
