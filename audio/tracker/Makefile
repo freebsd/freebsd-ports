@@ -11,7 +11,7 @@ CATEGORIES=     audio
 MASTER_SITES=   ftp://ftp.uni-trier.de/pub/unix/audio/tracker/
 EXTRACT_SUFX=   .tgz
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
 
 RESTRICTED=     "Non-redistributable beta"
 
