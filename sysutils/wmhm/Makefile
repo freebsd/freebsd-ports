@@ -23,7 +23,13 @@ MAN8=		wmhm.8
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/wmhm
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/wmhm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

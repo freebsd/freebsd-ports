@@ -24,7 +24,13 @@ USE_AUTOCONF=	yes
 MAN1=		xmixer.1
 MLINKS=		xmixer.1 xgmixer.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS}  ${REINPLACE_CMD} -e 's|rxvt -e|xterm -e|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
