@@ -8,8 +8,7 @@
 PORTNAME=	xferstats
 PORTVERSION=	2.16
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/support/	\
-		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/support/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Compiles information about file transfers from logfiles
