@@ -108,9 +108,9 @@ int argc; char **argv;
 	stopms = ti.tv_usec / 1000L;
 
 	expms = (stops-starts)*1000 + (stopms-startms);
-	printf("\n%d KB in %ld msec", nblocks, expms);
-	printf("  =  %.1f kbit/s", (double) (nblocks*BLKSIZE) / expms * 8000.0);
-	printf("  =  %.1f kByte/s", (double) (nblocks*BLKSIZE) / expms * 1000);
+	printf("\n%d %d-byte blocks in %ld msec.\n", nblocks, BLKSIZE, expms);
+	printf("Throughput  =  %.1f kbit/s", (double) (nblocks*BLKSIZE) / expms * 8000.0);
+	printf("  =  %.1f kByte/s", (double) (nblocks*BLKSIZE) / expms * 1000.0);
 	printf("  =  %.1f MByte/s\n", (double) (nblocks*BLKSIZE) / (double)(expms*1024.0));
 return(0);
 }
