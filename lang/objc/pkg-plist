@@ -1,28 +1,15 @@
 bin/objc
-bin/objc.exe
-bin/objc1
-bin/objcpls1
-bin/postlink
 bin/cvtimport
-lib/otbcrt.a
-lib/otbpak.a
-lib/objcrt.a
-lib/objpak.a
-lib/_prelink.o
-lib/_predll.o
-lib/objchelp.txt
-lib/objcdlso.ld
-lib/cakit.a
 lib/objcrtgc.a
 lib/objcrt_g.a
 lib/objpak_g.a
-lib/objcrt_p.a
-lib/objpak_p.a
-lib/objcrt.so.1.8
-lib/objpak.so.1.8
-include/cakit/ccomplex.h
+lib/objcrtr.a
+lib/objpakr.a
+lib/objchelp.txt
+lib/objcdlso.ld
 include/cakit/cakit.h
 include/cakit/ccltn.h
+include/cakit/ccomplex.h
 include/cakit/cfloat.h
 include/cakit/cobject.h
 include/cakit/cseq.h
@@ -35,31 +22,37 @@ include/cakit/polynom.h
 include/cakit/symbol.h
 include/cakit/term.h
 include/cakit/vector.h
-include/objcrt/Object.h
 include/objcrt/Block.h
+include/objcrt/Object.h
+include/objcrt/Message.h
 include/objcrt/objcrt.h
 include/objcrt/objc.h
 include/objpak/ascfiler.h
-include/objpak/array.h
 include/objpak/dictnary.h
-include/objpak/bag.h
-include/objpak/cltn.h
-include/objpak/idarray.h
-include/objpak/intarray.h
-include/objpak/objpak.h
 include/objpak/ocstring.h
+include/objpak/objpak.h
+include/objpak/cltn.h
 include/objpak/ordcltn.h
-include/objpak/point.h
-include/objpak/rectangl.h
-include/objpak/sequence.h
 include/objpak/set.h
+include/objpak/bag.h
 include/objpak/sortcltn.h
 include/objpak/stack.h
-include/ppi/ICpak101.h
+include/objpak/runarray.h
+include/objpak/array.h
+include/objpak/idarray.h
+include/objpak/intarray.h
+include/objpak/txtattr.h
+include/objpak/point.h
+include/objpak/rectangl.h
+include/objpak/octext.h
+include/objpak/paragrph.h
+include/objpak/txtstyle.h
+include/objpak/sequence.h
 include/ppi/Array.h
 include/ppi/Assoc.h
 include/ppi/Filer.h
 include/ppi/Graph.h
+include/ppi/ICpak101.h
 include/ppi/IPSequence.h
 include/ppi/IdArray.h
 include/ppi/IntArray.h
@@ -70,9 +63,80 @@ include/ppi/String.h
 include/ppi/StringCl.h
 include/ppi/mivarargs.h
 include/ppi/vectors.h
-share/doc/objc/manual.html
-@dirrm include/cakit/
-@dirrm include/objcrt/
-@dirrm include/objpak/
-@dirrm include/ppi/
+share/doc/objc/examples/Makefile.in
+share/doc/objc/examples/README
+share/doc/objc/examples/loop.m
+share/doc/objc/examples/all.m
+share/doc/objc/examples/assoc.m
+share/doc/objc/examples/become.m
+share/doc/objc/examples/block.m
+share/doc/objc/examples/blvar.m
+share/doc/objc/examples/classvars.m
+share/doc/objc/examples/blrefcnt.m
+share/doc/objc/examples/delegate.m
+share/doc/objc/examples/dlopen.m
+share/doc/objc/examples/during.h
+share/doc/objc/examples/during.m
+share/doc/objc/examples/dynclass.m
+share/doc/objc/examples/except.m
+share/doc/objc/examples/gdb.m
+share/doc/objc/examples/howmany.m
+share/doc/objc/examples/ifExcept.m
+share/doc/objc/examples/memory.m
+share/doc/objc/examples/nextinst.m
+share/doc/objc/examples/poseAs.m
+share/doc/objc/examples/problem3n1.m
+share/doc/objc/examples/shlload.m
+share/doc/objc/examples/signal.m
+share/doc/objc/examples/sumit.m
+share/doc/objc/examples/super.m
+share/doc/objc/examples/tail.m
+share/doc/objc/examples/timeblock.m
+share/doc/objc/examples/varscope.m
+share/doc/objc/examples/postlink.map
+share/doc/objc/examples/Makefile
+share/doc/objc/html/cakit/CAObject.html
+share/doc/objc/html/cakit/Complex.html
+share/doc/objc/html/cakit/Float.html
+share/doc/objc/html/cakit/Fraction.html
+share/doc/objc/html/cakit/Integer.html
+share/doc/objc/html/cakit/IntegerModp.html
+share/doc/objc/html/cakit/Matrix.html
+share/doc/objc/html/cakit/Monomial.html
+share/doc/objc/html/cakit/Polynomial.html
+share/doc/objc/html/cakit/Symbol.html
+share/doc/objc/html/cakit/Term.html
+share/doc/objc/html/cakit/Vector.html
+share/doc/objc/html/objcrt/Block.html
+share/doc/objc/html/objcrt/Message.html
+share/doc/objc/html/objcrt/Object.html
+share/doc/objc/html/objpak/Array.html
+share/doc/objc/html/objpak/AsciiFiler.html
+share/doc/objc/html/objpak/Bag.html
+share/doc/objc/html/objpak/Cltn.html
+share/doc/objc/html/objpak/Dictionary.html
+share/doc/objc/html/objpak/IdArray.html
+share/doc/objc/html/objpak/IntArray.html
+share/doc/objc/html/objpak/OrdCltn.html
+share/doc/objc/html/objpak/Paragraph.html
+share/doc/objc/html/objpak/Point.html
+share/doc/objc/html/objpak/Rectangle.html
+share/doc/objc/html/objpak/RunArray.html
+share/doc/objc/html/objpak/Sequence.html
+share/doc/objc/html/objpak/Set.html
+share/doc/objc/html/objpak/SortCltn.html
+share/doc/objc/html/objpak/Stack.html
+share/doc/objc/html/objpak/String.html
+share/doc/objc/html/objpak/Text.html
+share/doc/objc/html/objpak/TextAttribute.html
+share/doc/objc/html/objpak/TextStyle.html
+@dirrm share/doc/objc/examples
+@dirrm share/doc/objc/html/cakit
+@dirrm share/doc/objc/html/objcrt
+@dirrm share/doc/objc/html/objpak
+@dirrm share/doc/objc/html
 @dirrm share/doc/objc
+@dirrm include/cakit
+@dirrm include/objcrt
+@dirrm include/objpak
+@dirrm include/ppi
