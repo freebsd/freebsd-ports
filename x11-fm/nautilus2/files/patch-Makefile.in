@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- Makefile.in	2002/07/25 09:29:17	1.1
++++ Makefile.in	2002/07/25 09:29:26
+@@ -150,7 +150,6 @@
+ 	libnautilus-private 	\
+ 	libnautilus-adapter	\
+ 	src 			\
+-	test 			\
+ 	components		\
+ 	po 			\
+ 	data 			\
