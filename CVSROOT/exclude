@@ -21,7 +21,6 @@
 ^ports/.*(?<!/Makefile)$
 
 ^src/contrib/gdb/gdb/version.in
-^src/contrib/isc-dhcp/common/tables.c
 ^src/contrib/nvi/catalog
 ^src/etc/minfree
 ^src/etc/motd
