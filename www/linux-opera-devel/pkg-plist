@@ -158,6 +158,7 @@ share/opera/help/starter.htm
 share/opera/help/terms.htm
 share/opera/help/trouble.htm
 share/opera/icons/opera.xpm
+share/opera/images/background.gif
 share/opera/images/blank.gif
 share/opera/images/drive.gif
 share/opera/images/file.gif
@@ -173,6 +174,7 @@ share/opera/opera_22x22.png
 share/opera/opera_32x32.png
 share/opera/opera_48x48.png
 share/opera/pixmaps/opera.xpm
+share/opera/styles/OPF.CSS
 share/opera/styles/about.css
 share/opera/styles/cache.css
 share/opera/styles/csr.css
@@ -182,7 +184,7 @@ share/opera/styles/email.css
 share/opera/styles/history.css
 share/opera/styles/im.css
 share/opera/styles/mime.css
-share/opera/styles/opf.css
+share/opera/styles/mimehead.css
 share/opera/styles/plugins.css
 share/opera/styles/wml.css
 @dirrm share/opera/styles

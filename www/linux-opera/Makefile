@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	linux-opera
-PORTVERSION=	5.0b6
+PORTVERSION=	5.0b7
 CATEGORIES=	www linux
 MASTER_SITES=	http://opera.online.no/linux/tgz/
-DISTNAME=	opera-5.0-b6-20010212.017-static.i386
+DISTNAME=	opera-5.0-b7-20010320.018-static.i386
+WRKSRC=		${WRKDIR}/${DISTNAME:S/018/020/}
 
 MAINTAINER=	des@FreeBSD.org
 
