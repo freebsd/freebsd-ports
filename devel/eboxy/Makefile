@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	eboxy
-PORTVERSION=	0.3.9
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,11 +15,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create simple GUI interfaces for entertainment PC
 
-USE_SDL=	sdl gui
-USE_GNOME=	gnometarget libxml2
+USE_BZIP2=	yes
+USE_SDL=	sdl gui mixer
+USE_GNOME=	gnometarget libxml2 lthack
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-lirc
 
@@ -37,8 +37,10 @@ BROKEN=		"Configure fails on ia64"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2 $$CFLAGS|$$CFLAGS|g' ${WRKSRC}/configure
-	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|malloc\.h|stdlib.h|g'
+	@${REINPLACE_CMD} -e 's|-O2 $$CFLAGS|$$CFLAGS|g ; \
+		 s|-O2 $$CXXFLAGS|$$CXXFLAGS|g' ${WRKSRC}/configure
+
+pre-build:
+	@cd ${WRKSRC}/eboxy && ${SH} ./makeparser.sh
 
 .include <bsd.port.post.mk>

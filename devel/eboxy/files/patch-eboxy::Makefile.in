@@ -1,0 +1,11 @@
+--- eboxy/Makefile.in.orig	Thu May 20 16:46:56 2004
++++ eboxy/Makefile.in	Thu May 20 21:24:26 2004
+@@ -239,7 +239,7 @@
+ INCLUDES = $(all_includes)
+ 
+ # the library search path.
+-eboxy_LDFLAGS = $(all_libraries) -ldl $(XML_LIBS) $(LIRC_LIBS)
++eboxy_LDFLAGS = $(all_libraries) $(XML_LIBS) $(LIRC_LIBS)
+ 
+ eboxy_CXXFLAGS = $(XML_CFLAGS) $(LIRC_INCLUDE)
+ 
