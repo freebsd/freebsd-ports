@@ -8,7 +8,7 @@
 PORTNAME=	gctpc
 PORTVERSION=	1.3
 CATEGORIES=	misc
-MASTER_SITES=	http://edc.usgs.gov/pub/software/gctpc/
+MASTER_SITES=	http://edcftp.cr.usgs.gov/pub/software/gctpc/
 DISTNAME=	gctpc
 EXTRACT_SUFX=	.tar.Z
 
@@ -29,8 +29,10 @@ do-install:
 	${MKDIR} ${PREFIX}/include/gctpc
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/gctpc
 	${INSTALL_DATA} ${FILESDIR}/*.h ${PREFIX}/include/gctpc
-	${MKDIR} ${PREFIX}/share/doc/gctpc
-	${INSTALL_MAN} ${WRKSRC}/../doc/* ${PREFIX}/share/doc/gctpc
-	${INSTALL_MAN} ${WRKSRC}/../README ${PREFIX}/share/doc/gctpc/README.main
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/../doc/* ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/../README ${DOCSDIR}/README.main
+.endif
 
 .include <bsd.port.mk>
