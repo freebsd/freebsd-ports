@@ -1,7 +1,5 @@
-@unexec %D/etc/rc.d/pwcheck.sh stop ; echo "pwcheck stopped."
+@unexec [ -r /var/run/pwcheck.pid ] && %D/etc/rc.d/pwcheck.sh stop && echo " stopped."
 etc/rc.d/pwcheck.sh
-@comment remove ../etc/sasldb.db only if it exists and has a zero size.
-@unexec [ -f %D/etc/sasldb.db -a ! -s %D/etc/sasldb.db ] && rm %D/etc/sasldb.db
 include/sasl/hmac-md5.h
 include/sasl/md5.h
 include/sasl/md5global.h
@@ -33,10 +31,6 @@ lib/sasl/liblogin.so.0
 lib/sasl/libplain.a
 lib/sasl/libplain.so
 lib/sasl/libplain.so.1
-@comment Sendmail.conf should be installed/uninstalled by Sendmail 8.11.
-@comment We install it here because Sendmail 8.11 is in the base system.
-@unexec echo "pwcheck_method: pwcheck" > %B/Sendmail.conf.tmp
-@unexec if cmp -s %B/Sendmail.conf %B/Sendmail.conf.tmp; then rm -f %B/Sendmail.conf %B/Sendmail.conf.tmp; else rm -f %B/Sendmail.conf.tmp fi
 sbin/sasldblistusers
 sbin/saslpasswd
 sbin/pwcheck
@@ -62,11 +56,11 @@ sbin/pwcheck
 %%NOPORTDOCS%%@dirrm share/doc/SASL/html
 %%NOPORTDOCS%%@dirrm share/doc/SASL
 @dirrm lib/sasl
-@mode u=rwx,go=
+@mode u=rwx,g=rw,o=
 @cwd /var
 @exec mkdir pwcheck
 @exec chown cyrus:cyrus pwcheck
-@exec chmod go= pwcheck
+@exec chmod o= pwcheck
 @comment This file gets created by the pwcheck program
 @unexec rm -f /var/pwcheck/pwcheck
 @dirrm pwcheck

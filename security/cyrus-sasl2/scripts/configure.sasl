@@ -20,12 +20,12 @@ if [ "${BATCH}" ]; then
 	fi
 else
 
-	if [ "x${ENABLE_DB3}" = "xYES" -o -f ${PREFIX}/lib/libdb3.so ] ; then
+	if [ "x${ENABLE_DB3}" = "xYES" -o -f ${PREFIX}/lib/libdb3.so.1 ] ; then
 		SET_DB3="ON"
 	else
 		SET_DB3="OFF"
 	fi
-	if [ "x${ENABLE_MYSQL}" = "xYES" -o -f ${PREFIX}/lib/libmysqlclient.so ] ; then
+	if [ "x${ENABLE_MYSQL}" = "xYES" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so ] ; then
 		SET_MYSQL="ON"
 	else
 		SET_MYSQL="OFF"
@@ -71,10 +71,7 @@ echo "PREFIX=	${PREFIX}"
 while [ "$1" ]; do
 	case $1 in
 		\"DB3\")
-			#Can't use LIB_DEPENDS - no libdb3.so.1 in db3 port
-			#echo "LIB_DEPENDS+=	db3.1:\${PORTSDIR}/databases/db3"
-			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libdb3.1.so:\${PORTSDIR}/databases/db3"
-			echo "RUN_DEPENDS+=	\${LOCALBASE}/lib/libdb3.1.so:\${PORTSDIR}/databases/db3"
+			echo "LIB_DEPENDS+=	db3.1:\${PORTSDIR}/databases/db3"
 			echo "CONFIGURE_ARGS+=--with-dblib=berkeley"
 			;;
 		\"MySQL\")
