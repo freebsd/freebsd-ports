@@ -21,6 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 OPTIONS=	ARCHIVERCS		"Page Archival Using RCS" on \
 		ARCHIVESVK		"Page Archival Using SVK" off \
+		ATOM			"Atom Plugin" off \
 		GDGRAPHGENERATOR	"GD Graph Generator" off \
 		NEWPAGE			"New Page Plugin" on \
 		REVISIONS		"Revisions Plugin" on \
@@ -40,6 +41,10 @@ RUN_DEPENDS+=	${SITE_PERL}/Kwiki/Archive/Rcs.pm:${PORTSDIR}/www/p5-Kwiki-Archive
 
 .if defined(WITH_ARCHIVESVK)
 RUN_DEPENDS+=	${SITE_PERL}/Kwiki/Archive/SVK.pm:${PORTSDIR}/www/p5-Kwiki-Archive-SVK
+.endif
+
+.if defined(WITH_ATOM)
+RUN_DEPENDS+=	${SITE_PERL}/Kwiki/Atom.pm:${PORTSDIR}/www/p5-Kwiki-Atom
 .endif
 
 .if defined(WITH_GDGRAPHGENERATOR)
