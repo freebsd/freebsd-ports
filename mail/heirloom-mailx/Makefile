@@ -7,6 +7,7 @@
 
 PORTNAME=	nail
 PORTVERSION=	9.30
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://omnibus.ruf.uni-freiburg.de/~gritter/archive/nail/
 
@@ -15,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-rcfile="${PREFIX}/etc"
+CONFIGURE_ARGS=	--with-rcfile="${PREFIX}/etc/nail.rc"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-liconv"
 
