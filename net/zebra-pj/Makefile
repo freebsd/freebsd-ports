@@ -6,23 +6,28 @@
 #
 
 PORTNAME=	zebra-pj
-PORTVERSION=	20030526
+PORTVERSION=	20030716
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://zebra.dishone.st/snapshots/cvs/
+DISTNAME=	${PORTNAME}-${ZEBRAVER}-${PORTVERSION}
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=		Patched Zebra
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra --enable-vtysh
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/zebra-${ZEBRAVER}
+
+ZEBRAVER=	0.94
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
 
-pre-patch:
+pre-configure:
 	@( cd ${WRKSRC}; ${SH} update-autotools )
 
 .if !defined(BATCH)
