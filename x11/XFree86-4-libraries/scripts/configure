@@ -141,13 +141,17 @@ if [ -f $WRKDIR/.cdrom ]; then
     fi
   done
   if [ ! -f $X11FIXES/XFree86-3.1.2.diff.gz ]; then
-     echo "can't find $X11FIXES/XFree86-3.1.2.tar.gz !!!"
+     echo "can't find $X11FIXES/XFree86-3.1.2.diff.gz !!!"
      err=1
   fi
   if [ ! -f $X11FIXES/cfont312.tgz ]; then                          
      echo "can't find $X11FIXES/cfont312.tgz !!!"    
      err=1    
   fi    
+  if [ ! -f $X11FIXES/3.1.2-3.1.2-S.diff.gz ]; then
+     echo "can't find $X11FIXES/3.1.2-3.1.2-S.diff.gz !!!"
+     err=1
+  fi
   if [ $err = 1 ]; then exit 1; fi
   configure
   echo "==> building the tree"
@@ -172,17 +176,18 @@ for i in 01 02 03 04 05 06 07 08 09 10 11 12; do
       rm -rf $WRKDIR/xc/programs/Xserver/hw/xfree86
       (cd $WRKDIR; gunzip -c $X11FIXES/XFree86-3.1.1.tar.gz | tar xpf -)
     fi
-    #if [ $i = 12 ]; then
-    #  rm -f $WRKDIR/xc/lib/Xt/Shell.h
-    #  rm -f $WRKDIR/xc/lib/StringDefs.h
-    #  rm -f $WRKDIR/xc/lib/StringDefs.c
-    #fi
+    if [ $i = 12 ]; then
+      rm -f $WRKDIR/xc/lib/Xt/Shell.h
+      rm -f $WRKDIR/xc/lib/StringDefs.h
+      rm -f $WRKDIR/xc/lib/StringDefs.c
+    fi
   fi
 done
 echo 
 echo "==> applying XFree86 patches"
 zcat $X11FIXES/XFree86-3.1.2.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
 tar xzf $X11FIXES/cfont312.tgz -C $WRKDIR
+zcat $X11FIXES/3.1.2-3.1.2-S.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1 
 
 
 cat $F >>  $WRKSRC/config/cf/xf86site.def
@@ -201,4 +206,3 @@ sed -e "s/2.0.5/$version/"                       \
     <FreeBSD.cf.old >FreeBSD.cf
 
 exit 0
-
