@@ -1,0 +1,34 @@
+--- lib/mc.ext.in.orig	Tue Aug 14 10:27:12 2001
++++ lib/mc.ext.in	Sun Aug 11 17:05:06 2002
+@@ -237,11 +237,11 @@
+ 	View=sxpm %f
+ 
+ include/image-options
+-	Open=if [ "$DISPLAY" = "" ]; then zgv %f; else (ee %f &); fi
++	Open=if [ "$DISPLAY" = "" ]; then zgv %f; else (ElectricEyes %f &); fi
+ 	View=%view{ascii} identify %f
+ 	#View=%view{ascii} asciiview %f
+ 	Set root window to this image=background-properties --setwallpaper %f &
+-	Display this file=ee %f &
++	Display this file=ElectricEyes %f &
+ 
+ 
+ ### Sound files ###
+@@ -283,7 +283,7 @@
+ 
+ # Postscript
+ type/^PostScript
+-	Open=gv %f&
++	Open=ggv %f&
+ 	View=%view{ascii} ps2ascii %f
+ 	View with GhostView=gv %f
+ 
+@@ -389,7 +389,7 @@
+ 	# Open=%cd %p#utar
+ 	View=%view{ascii} bzip -dc %f 2>/dev/null | tar tvvf -
+ 	Extract=bzip -dc %f 2>/dev/null | tar xf -
+-regex/\.tar\.bz2$
++regex/\.t(ar\.bz2|bz)$
+ 	Open=%cd %p#utar
+ 	View=%view{ascii} bzip2 -dc %f 2>/dev/null | tar tvvf -
+ 	Extract=bzip2 -dc %f 2>/dev/null | tar xf -
