@@ -176,6 +176,7 @@ abcmidi		ports/audio/abcmidi
 abcselect	ports/audio/abcselect
 abntex		ports/print/abntex
 abook		ports/mail/abook
+abridge		ports/games/abridge
 abs		ports/math/abs
 abuse		ports/games/abuse
 abuse_sdl	ports/games/abuse_sdl
