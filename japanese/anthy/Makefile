@@ -29,12 +29,26 @@ PLIST_SUB=	ELISPDIR=${ELISPDIR}
 MASTER_SITES+=	http://omaemona.sourceforge.net/packages/Zisyo/:2chdic
 DISTFILES+=	2ch.t:2chdic
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-mkanthydic:Makefile.in
 .endif
 
-.if defined(WITH_2CHDIC)
+.if defined(WITH_ODIC)
+MASTER_SITES+=	http://www.ofug.net/~yamajun/files/:odic
+DISTFILES+=	okinawa-20041220.t:odic
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+.endif
+
 post-extract:
+.if defined(WITH_2CHDIC)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/2ch.t ${WRKSRC}/mkanthydic
+	@${REINPLACE_CMD} -e 's/base.t extra.t/base.t extra.t 2ch.t/' \
+		${WRKSRC}/mkanthydic/Makefile.in
+.endif
+
+.if defined(WITH_ODIC)
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/okinawa-20041220.t ${WRKSRC}/mkanthydic
+	@${REINPLACE_CMD} -e \
+		's/base.t extra.t/base.t extra.t okinawa-20041220.t/' \
+		${WRKSRC}/mkanthydic/Makefile.in
 .endif
 
 post-patch:
