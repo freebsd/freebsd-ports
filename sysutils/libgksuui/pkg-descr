@@ -1,0 +1,8 @@
+This library comes from the gksu program. It provides a Gtk+ dialog and
+X authentication facilities for running programs as root or another user
+in a X session.
+
+WWW: http://www.gnu.org/non-gnu/gksu/
+
+- Jesse van den Kieboom
+troplosti@orcaweb.cjb.net

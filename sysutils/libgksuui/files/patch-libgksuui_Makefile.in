@@ -1,0 +1,20 @@
+--- libgksuui/Makefile.in.orig	Sun Sep  5 17:44:12 2004
++++ libgksuui/Makefile.in	Fri Nov  5 00:34:39 2004
+@@ -167,7 +167,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-AM_CFLAGS = -g -O2 -Wall
++AM_CFLAGS = $(CFLAGS)
+ INCLUDES = `pkg-config --cflags gtk+-2.0`
+ AM_CPPFLAGS = -DLOCALEDIR=\"$(datadir)/locale\" -DDATA_DIR=\"$(datadir)\" -DPREFIX=\"$(prefix)\"
+ 
+@@ -183,7 +183,7 @@
+ 
+ include_HEADERS = gksuui.h gksuui-dialog.h gksuui-convenience.h
+ 
+-pkgconfigdir = ${libdir}/pkgconfig
++pkgconfigdir = $(prefix)/libdata//pkgconfig
+ pkgconfig_DATA = $(PACKAGE).pc
+ 
+ noinst_PROGRAMS = test-gksuui
