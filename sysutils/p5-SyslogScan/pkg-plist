@@ -20,3 +20,4 @@ lib/perl5/site_perl/%%PERL_VER%%/SyslogScan/WhereIs.pm
 lib/perl5/site_perl/%%PERL_VER%%/read_mail_log.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SyslogScan/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SyslogScan
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SyslogScan
