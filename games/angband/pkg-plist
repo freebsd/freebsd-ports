@@ -1,9 +1,9 @@
 bin/angband
 lib/X11/angband/apex/scores.raw
-lib/X11/angband/data/f_info.raw
-lib/X11/angband/data/k_info.raw
 lib/X11/angband/data/a_info.raw
 lib/X11/angband/data/e_info.raw
+lib/X11/angband/data/f_info.raw
+lib/X11/angband/data/k_info.raw
 lib/X11/angband/data/r_info.raw
 lib/X11/angband/data/v_info.raw
 lib/X11/angband/edit/a_info.txt
@@ -24,19 +24,22 @@ lib/X11/angband/help/option.txt
 lib/X11/angband/help/playing.txt
 lib/X11/angband/help/version.txt
 lib/X11/angband/user/font-ami.prf
+lib/X11/angband/user/font-dos.prf
 lib/X11/angband/user/font-ibm.prf
 lib/X11/angband/user/font-mac.prf
 lib/X11/angband/user/font-win.prf
-lib/X11/angband/user/font-dos.prf
 lib/X11/angband/user/font-x11.prf
 lib/X11/angband/user/font-xxx.prf
 lib/X11/angband/user/font.prf
 lib/X11/angband/user/graf-ami.prf
-lib/X11/angband/user/graf-mac.prf
-lib/X11/angband/user/graf-win.prf
-lib/X11/angband/user/graf-xxx.prf
+lib/X11/angband/user/graf-gcu.prf
 lib/X11/angband/user/graf-ibm.prf
+lib/X11/angband/user/graf-lsl.prf
+lib/X11/angband/user/graf-mac.prf
+lib/X11/angband/user/graf-new.prf
+lib/X11/angband/user/graf-win.prf
 lib/X11/angband/user/graf-x11.prf
+lib/X11/angband/user/graf-xxx.prf
 lib/X11/angband/user/graf.prf
 lib/X11/angband/user/pref-acn.prf
 lib/X11/angband/user/pref-ami.prf
@@ -48,17 +51,29 @@ lib/X11/angband/user/pref-x11.prf
 lib/X11/angband/user/pref.prf
 lib/X11/angband/user/user-mac.prf
 lib/X11/angband/user/user.prf
-lib/X11/angband/xtra/tiles.raw
+lib/X11/angband/user/xtra-new.prf
+lib/X11/angband/user/xtra-xxx.prf
+lib/X11/angband/xtra/graf/16x16.bmp
+lib/X11/angband/xtra/graf/8x13.bmp
+lib/X11/angband/xtra/graf/8x8.bmp
+lib/X11/angband/xtra/graf/backgrnd.bmp
+lib/X11/angband/xtra/graf/mask.bmp
+lib/X11/angband/xtra/graf/readme.txt
+lib/X11/angband/xtra/sound/sound.cfg
+@exec mkdir -p %D/lib/X11/angband/apex
 @exec mkdir -p %D/lib/X11/angband/bone
 @exec mkdir -p %D/lib/X11/angband/data
-@exec mkdir -p %D/lib/X11/angband/info
-@exec mkdir -p %D/lib/X11/angband/save
-@exec mkdir -p %D/lib/X11/angband/xtra
-@exec mkdir -p %D/lib/X11/angband/apex
 @exec mkdir -p %D/lib/X11/angband/edit
 @exec mkdir -p %D/lib/X11/angband/file
 @exec mkdir -p %D/lib/X11/angband/help
+@exec mkdir -p %D/lib/X11/angband/info
+@exec mkdir -p %D/lib/X11/angband/save
 @exec mkdir -p %D/lib/X11/angband/user
+@exec mkdir -p %D/lib/X11/angband/xtra
+@exec mkdir -p %D/lib/X11/angband/xtra/font
+@exec mkdir -p %D/lib/X11/angband/xtra/graf
+@exec mkdir -p %D/lib/X11/angband/xtra/music
+@exec mkdir -p %D/lib/X11/angband/xtra/sound
 @exec chmod 555 %D/lib/X11/angband/apex
 @exec chmod 555 %D/lib/X11/angband/bone
 @exec chmod 555 %D/lib/X11/angband/data
@@ -70,13 +85,17 @@ lib/X11/angband/xtra/tiles.raw
 @exec chmod 1777 %D/lib/X11/angband/save
 @exec chmod 1777 %D/lib/X11/angband/user
 @exec chmod 444 %D/lib/X11/angband/apex/scores.raw
+@dirrm lib/X11/angband/apex
 @dirrm lib/X11/angband/bone
 @dirrm lib/X11/angband/data
-@dirrm lib/X11/angband/info
-@dirrm lib/X11/angband/save
-@dirrm lib/X11/angband/xtra
-@dirrm lib/X11/angband/apex
 @dirrm lib/X11/angband/edit
 @dirrm lib/X11/angband/file
 @dirrm lib/X11/angband/help
+@dirrm lib/X11/angband/info
+@dirrm lib/X11/angband/save
 @dirrm lib/X11/angband/user
+@dirrm lib/X11/angband/xtra/font
+@dirrm lib/X11/angband/xtra/graf
+@dirrm lib/X11/angband/xtra/music
+@dirrm lib/X11/angband/xtra/sound
+@dirrm lib/X11/angband/xtra
