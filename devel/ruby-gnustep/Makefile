@@ -23,11 +23,17 @@ BUILD_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/${GNUST
 		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT} \
 		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT} \
 		${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/${GNUSTEP_BACK_PORT}
-LIB_DEPENDS+=	objc:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
 RUN_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/${GNUSTEP_MAKE_PORT} \
 		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT} \
 		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/${GNUSTEP_GUI_PORT} \
 		${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/${GNUSTEP_BACK_PORT}
+.if !defined(GNUSTEP_WITH_BASE_GCC)
+BUILD_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
+RUN_DEPENDS+=	${TARGLIB}/libobjc.so:${PORTSDIR}/${GNUSTEP_GCC_PORT}
+.else
+BUILD_DEPENDS+=	${COMBOLIBDIR}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
+RUN_DEPENDS+=	${COMBOLIBDIR}/libobjc.so:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
+.endif
 
 USE_RUBY=	yes
 RUBY_WITH_PTHREAD=	yes
@@ -35,6 +41,7 @@ USE_GMAKE=	yes
 CC=		gcc32
 CXX=		g++32
 
+GNUSTEP_GCC_PORT?=	lang/gcc-objc
 GNUSTEP_OBJC_PORT?=	lang/gnustep-objc
 GNUSTEP_MAKE_PORT?=	devel/gnustep-make
 GNUSTEP_BASE_PORT?=	lang/gnustep-base
@@ -89,6 +96,10 @@ post-install:
 .for f in ChangeLog NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
+.endif
+
+.if !defined(GNUSTEP_WITH_BASE_GCC)
+TARGLIB!=	(cd ${PORTSDIR}/${GNUSTEP_GCC_PORT} && make -V TARGLIB)
 .endif
 
 .include <bsd.port.post.mk>
