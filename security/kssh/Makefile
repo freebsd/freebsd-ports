@@ -7,6 +7,7 @@
 
 PORTNAME=	kssh
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.geocities.com/bilibao/
 
