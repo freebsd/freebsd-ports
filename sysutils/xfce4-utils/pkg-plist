@@ -1,0 +1,48 @@
+bin/startxfce4
+bin/xfce4-about
+bin/xfhelp4
+bin/xflock4
+bin/xfmountdev4
+bin/xfrun4
+bin/xftaskbar4
+bin/xfterm4
+etc/xfce4/xinitrc
+lib/xfce4/mcs-plugins/xftaskbar_plugin.a
+lib/xfce4/mcs-plugins/xftaskbar_plugin.la
+lib/xfce4/mcs-plugins/xftaskbar_plugin.so
+share/xfce4/AUTHORS
+share/xfce4/AUTHORS.ca
+share/xfce4/AUTHORS.de
+share/xfce4/AUTHORS.html
+share/xfce4/AUTHORS.html.ca
+share/xfce4/AUTHORS.html.de
+share/xfce4/COPYING
+share/xfce4/BSD
+share/xfce4/LGPL
+share/xfce4/GPL
+share/xfce4/INFO
+share/xfce4/INFO.html
+share/xfce4/INFO.html.ca
+share/xfce4/INFO.html.de
+share/xfce4/doc/xfce.css
+share/xfce4/doc/C/index.html
+share/xfce4/doc/C/images/about-dialog.png
+share/xfce4/doc/C/images/run-dialog.png
+share/xfce4/doc/C/images/default-session.png
+share/xfce4/doc/C/images/link_xfce.jpg
+share/xfce4/doc/C/BSD.html
+share/xfce4/doc/C/GPL.html
+share/xfce4/doc/C/LGPL.html
+share/xfce4/doc/C/xfce-utils.html
+share/xfce4/doc/C/xfce4-user-guide.html
+share/xfce4/doc/C/xfce4-intro.html
+share/xfce4/doc/C/xfce4-copyright.html
+share/xfce4/doc/C/xfce4-use.html
+share/xfce4/doc/C/xfce4-install.html
+@unexec rmdir %D/etc/xfce4 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4/mcs-plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C/images 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc/C 2>/dev/null || true
+@unexec rmdir %D/share/xfce4/doc 2>/dev/null || true
+@unexec rmdir %D/share/xfce4 2>/dev/null || true

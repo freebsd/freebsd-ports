@@ -335,6 +335,7 @@
     SUBDIR += xdu
     SUBDIR += xfce4-mcs-manager
     SUBDIR += xfce4-mcs-plugins
+    SUBDIR += xfce4-utils
     SUBDIR += xfsm
     SUBDIR += xin
     SUBDIR += xloadface
