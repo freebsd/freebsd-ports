@@ -133,7 +133,6 @@
     SUBDIR += sml-nj
     SUBDIR += sml-nj-devel
     SUBDIR += snobol
-    SUBDIR += squeak1
     SUBDIR += squeak2
     SUBDIR += sr
     SUBDIR += starlogo
