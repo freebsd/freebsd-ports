@@ -5811,6 +5811,7 @@ p5-type1inst	ports/x11-fonts/p5-type1inst
 p5-xmltv	ports/textproc/p5-xmltv
 p65		ports/devel/p65
 pad		ports/security/pad
+pager		ports/x11-wm/pager
 pagesize	src/usr.bin/pagesize
 paicc		ports/sysutils/paicc
 palmos-sdk	ports/palm/palmos-sdk
