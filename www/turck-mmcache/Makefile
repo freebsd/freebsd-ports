@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	turck-mmcache
-PORTVERSION=	2.3.9
+PORTVERSION=	2.3.10
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sysadmin@alexdupre.com
-COMMENT=	An opcode cache for PHP
+COMMENT=	An opcode cache for PHP with encoder and loader
 
 EXTRACT_DEPENDS=phpize:${PORTSDIR}/www/mod_php4
 BUILD_DEPENDS=	${LOCALBASE}/include/php/Zend/zend.h:${PORTSDIR}/www/mod_php4
@@ -45,11 +45,11 @@ APACHE_PORT?=	${PORTSDIR}/www/apache13
 
 post-extract:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/config.m4
-	@${REINPLACE_CMD} -e 's,[[:cntrl:]]$$,,g' ${WRKSRC}/mmcache.c
 	@${ECHO_MSG} "===>  PHPizing for ${DISTNAME}"
 	@cd ${WRKSRC} && ${LOCALBASE}/bin/phpize
 
 post-build:
+	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/encoder.php > ${WRKSRC}/encoder
 	@${SED} "s|%%LOCALBASE%%|${LOCALBASE}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%EXT_DIR%%|${EXT_DIR}|g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
@@ -57,6 +57,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/php/${EXT_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/modules/mmcache.so \
 	       ${PREFIX}/lib/php/${EXT_DIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/encoder ${PREFIX}/bin
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/mmcache.php ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}

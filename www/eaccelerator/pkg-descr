@@ -5,6 +5,12 @@ Also it uses some optimizations for speed up of PHP scripts execution.
 Turck MMCache typically reduces server load and increases
 the speed of your PHP code by 1-10 times.
 
+Turck MMCache contains PHP encoder and loader. You can encode any PHP
+scripts with encoder to distribute them without sources. Encoded files
+can be run on any site which runs PHP with Turck MMCache. The sources
+of encoded script can't be restored because they are stored in a compiled
+form and the encoded version doesn't contain the source. 
+
 WWW: http://www.turcksoft.com/en/e_mmc.htm
 
 - Alex Dupre
