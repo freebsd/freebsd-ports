@@ -21,9 +21,6 @@ GNUstep/Apps/WPrefs.app/tiff/menualign1.tiff
 GNUstep/Apps/WPrefs.app/tiff/menualign2.tiff
 GNUstep/Apps/WPrefs.app/tiff/menuprefs.tiff
 GNUstep/Apps/WPrefs.app/tiff/menus.tiff
-GNUstep/Apps/WPrefs.app/tiff/minimouseleft.tiff
-GNUstep/Apps/WPrefs.app/tiff/minimousemiddle.tiff
-GNUstep/Apps/WPrefs.app/tiff/minimouseright.tiff
 GNUstep/Apps/WPrefs.app/tiff/miscprefs2.tiff
 GNUstep/Apps/WPrefs.app/tiff/moreanim.tiff
 GNUstep/Apps/WPrefs.app/tiff/mousesettings.tiff
@@ -90,9 +87,6 @@ GNUstep/Apps/WPrefs.app/xpm/menualign1.xpm
 GNUstep/Apps/WPrefs.app/xpm/menualign2.xpm
 GNUstep/Apps/WPrefs.app/xpm/menuprefs.xpm
 GNUstep/Apps/WPrefs.app/xpm/menus.xpm
-GNUstep/Apps/WPrefs.app/xpm/minimouseleft.xpm
-GNUstep/Apps/WPrefs.app/xpm/minimousemiddle.xpm
-GNUstep/Apps/WPrefs.app/xpm/minimouseright.xpm
 GNUstep/Apps/WPrefs.app/xpm/miscprefs2.xpm
 GNUstep/Apps/WPrefs.app/xpm/moreanim.xpm
 GNUstep/Apps/WPrefs.app/xpm/mousesettings.xpm
@@ -165,6 +159,7 @@ include/WUtil.h
 include/wraster.h
 lib/libWINGs.a
 lib/libWMaker.a
+lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.so
 lib/libwraster.so.3
@@ -236,6 +231,7 @@ share/WindowMaker/Styles/Blue.style
 share/WindowMaker/Styles/BlueDawn.style
 share/WindowMaker/Styles/BlueishGreen.style
 share/WindowMaker/Styles/Brown.style
+share/WindowMaker/Styles/Brownish.style
 share/WindowMaker/Styles/Chumbo.style
 share/WindowMaker/Styles/Copper.style
 share/WindowMaker/Styles/DarkBlue.style
@@ -251,6 +247,7 @@ share/WindowMaker/Styles/Pastel.style
 share/WindowMaker/Styles/Pink.style
 share/WindowMaker/Styles/Pumpkin.style
 share/WindowMaker/Styles/Purple.style
+share/WindowMaker/Styles/Purplish.style
 share/WindowMaker/Styles/Red.style
 share/WindowMaker/Styles/RednBlue.style
 share/WindowMaker/Styles/Summer.style
@@ -289,6 +286,7 @@ share/WindowMaker/menu.zh_CN
 share/WindowMaker/menu.zh_TW.Big5
 share/WindowMaker/plmenu
 share/WindowMaker/plmenu.da
+share/WindowMaker/plmenu.de
 share/WindowMaker/plmenu.fr
 share/WindowMaker/plmenu.hr
 share/WindowMaker/plmenu.it
@@ -296,6 +294,7 @@ share/WindowMaker/plmenu.zh_CN
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
 @exec mkdir -p %B/Sounds
+share/locale/de/LC_MESSAGES/WPrefs.mo
 share/locale/de/LC_MESSAGES/WindowMaker.mo
 share/locale/es/LC_MESSAGES/WPrefs.mo
 share/locale/es/LC_MESSAGES/WindowMaker.mo
