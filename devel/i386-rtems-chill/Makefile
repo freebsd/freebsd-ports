@@ -43,17 +43,10 @@ CONFIGURE_ARGS?=	--with-gnu-as --with-gnu-ld --verbose \
 CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
 CONFIGURE_SCRIPT?=	../${CHILLNAME}/configure
 
-MAKE_FLAGS=	LANGUAGES="CHILL"
+PATCH_WRKSRC=		${WRKDIR}
+PATCH_STRIP=		-p
 
-.if defined(PATCH_DEBUG)
-PATCH_DEBUG_TMP=	yes
-PATCH_ARGS=		-d ${WRKDIR}/${CHILLNAME} -E ${PATCH_STRIP}
-PATCH_DIST_ARGS=	-d ${WRKDIR} -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DEBUG_TMP=	no
-PATCH_ARGS=		-d ${WRKDIR}/${CHILLNAME} --forward --quiet -E ${PATCH_STRIP}
-PATCH_DIST_ARGS=	-d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
+MAKE_FLAGS=	LANGUAGES="CHILL"
 
 pre-configure:
 	@(cd ${WRKDIR} ; \
