@@ -57,6 +57,10 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386" || ${OSVERSION} < 500000 || ${OSVERSION} > 600000
+BROKEN=		"Does not build except on i386 5.x"
+.endif
+
 # Undump and malloc do not behave on amd64 at the moment
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+= --with-system-malloc --pdump 
