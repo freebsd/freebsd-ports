@@ -5,13 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	kdelibdocs
-PORTVERSION?=	1.1
+PORTNAME=	kdelibdocs
+PORTVERSION=	1.1
 CATEGORIES=	devel kde
 MASTER_SITES=	ftp://129.187.206.68/pub/unix/ide/KDevelop/documentation/ \
 		ftp://gd.tuwien.ac.at/hci/KDevelop/documentation/ \
 		ftp://fara.cs.uni-potsdam.de/pub/kdevelop/documentation/
-DISTNAME=	kdelibdocs-1.1
 
 MAINTAINER=	imura@FreeBSD.org
 
