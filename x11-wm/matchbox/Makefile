@@ -25,21 +25,24 @@ pre-install:
 .for ii in minitime minisys minivol monolaunch mbcontrol mbdock
 	${ECHO_CMD} bin/${ii} >> ${PLIST}
 .endfor
-	cd ${WRKSRC}/data/themes && ${FIND} -s . -type f | \
+.for ii in defaults icon.xpm
+	${ECHO_CMD} share/matchbox/${ii} >> ${PLIST}
+.endfor
+.for ii in mbdock themes
+	cd ${WRKSRC}/data/${ii} && ${FIND} -s . -type f | \
 		${CUT} -c3-999 | \
-		${SED} -e 's:^:share/data/matchbox/:' >> ${PLIST} \
+		${SED} -e 's:^:share/matchbox/${ii}/:' >> ${PLIST} \
 		&& ${FIND} -d . -type d | \
 		${CUT} -c3-999 | \
-		${SED} -e 's:^:@dirrm share/data/matchbox/:' >> ${PLIST}
+		${SED} -e 's:^:@dirrm share/matchbox/${ii}/:' >> ${PLIST}
+.endfor
 .if !defined(NOPORTDOCS)
 .for ii in ${DOCS}
 	${ECHO_CMD} share/doc/matchbox/${ii} >> ${PLIST}
 .endfor
 	${ECHO_CMD} @dirrm share/doc/matchbox >> ${PLIST}
 .endif
-.for ii in share/matchbox/mbdock share/matchbox
-	${ECHO_CMD} @dirrm ${ii} >> ${PLIST}
-.endfor
+	${ECHO_CMD} @dirrm share/matchbox >> ${PLIST}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/matchbox ${PREFIX}/bin
