@@ -50,6 +50,7 @@
     SUBDIR += dvipdfmx
     SUBDIR += dvips
     SUBDIR += dvips2ascii
+    SUBDIR += dvipsk-tetex
     SUBDIR += dviselect
     SUBDIR += enscript-a4
     SUBDIR += enscript-letter
