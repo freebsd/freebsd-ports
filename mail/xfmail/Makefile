@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 
 MAINTAINER=	mikeh@FreeBSD.org
 
-BROKEN=		"Must manually install ports/devel/autoconf"
 BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
