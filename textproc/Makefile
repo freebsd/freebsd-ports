@@ -390,6 +390,7 @@
     SUBDIR += p5-XML-DifferenceMarkup
     SUBDIR += p5-XML-Directory
     SUBDIR += p5-XML-Dumper
+    SUBDIR += p5-XML-Elemental
     SUBDIR += p5-XML-Encoding
     SUBDIR += p5-XML-Feed
     SUBDIR += p5-XML-Filter-BufferText
