@@ -323,6 +323,7 @@
     SUBDIR += py-soap
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
+    SUBDIR += py-zsi
     SUBDIR += qtella
     SUBDIR += queso
     SUBDIR += radius
