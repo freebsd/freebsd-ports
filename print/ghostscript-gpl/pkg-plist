@@ -43,8 +43,8 @@ bin/wftopfa
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/gdevepag.txt
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/gsepagif.sh
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/epag/psprint
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/eplaser/readme-eplaser-652.euc
-%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/eplaser/readme-eplaser-652-jp.euc
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/eplaser/readme-eplaser-705.euc
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/eplaser/readme-eplaser-705-jp.euc
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/gdi/README
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lips/Gdevlips.htm
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lxm3200/README
