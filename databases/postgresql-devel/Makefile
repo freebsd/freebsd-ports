@@ -6,9 +6,10 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.4.2003.01.26
+PORTVERSION?=	7.4.2003.02.16
 CATEGORIES?=	databases
-MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/
+MASTER_SITES=	http://freebsd.sean.chittenden.org/ports/ \
+		http://people.freebsd.org/~seanc/ports/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER?=	seanc@FreeBSD.org
@@ -50,14 +51,11 @@ PLIST_SUB+=	GETTEXT="@comment "
 CFLAGS+= -O3 -funroll-loops
 .endif
 
-.if defined(WITH_DEBUG) && defined(WITH_STRIPBIN)
-	@${ECHO} "WITH_DEBUG and WITH_STRIPBIN are mutually exclusive tunables."
-	@${ECHO} "Please choose one or the other."
-	@exit ${FALSE}
-.endif
-
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
+INSTALL_TARGET=	install
+.else
+INSTALL_TARGET=	install-strip
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -71,12 +69,8 @@ PLIST_SUB+=	SERVER="@comment "
 PKGNAMESUFFIX=	-client
 .else
 PLIST_SUB+=	SERVER=""
-INSTALL_TARGET=	install-all-headers
-.if defined(WITH_STRIPBIN)
-INSTALL_TARGET+=	install-strip
-.else
-INSTALL_TARGET+=	install
-.endif
+INSTALL_TARGET+=	install-all-headers
+MAKEFILE=	GNUmakefile
 .endif
 
 .if defined(WITH_MIT_KRB5)
@@ -115,19 +109,18 @@ pre-everything::
 	@${ECHO} "	WITH_HEIMDAL_KRB5	Builds with Heimdal's kerberos support"
 	@${ECHO} "	WITH_OPTIMIZED_CFLAGS	Builds with compiler optimizations (-O3)"
 	@${ECHO} "	WITH_DEBUG		Builds with debugging symbols"
-	@${ECHO} "	WITH_STRIPBIN		Installs stripped binaries"
 	@${ECHO} ""
 .if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
 	@${ECHO} "WITH_MIT_KRB5 and WITH_HEIMDAL_KRB5 are mutually exclusive."
 	@${ECHO} "Please choose one or the other."
 	@exit 1
 .endif
-.if defined(WITH_MIT_KRB5) && !exists(${KRB5CONFIG})
+.if defined(WITH_MIT_KRB5) && !exists(${KRB5CONF})
 	@${ECHO} "Unable to find krb5-config in your local base, please verify that"
 	@${ECHO} "security/krb5 is installed or undefine the WITH_MIT_KRB5 tunable."
 	@exit 1
 .endif
-.if defined(WITH_HEIMDAL_KRB5) && !exists(${KRB5CONFIG})
+.if defined(WITH_HEIMDAL_KRB5) && !exists(${KRB5CONF})
 	@${ECHO} "Unable to find krb5-config in the base system.  Undefine"
 	@${ECHO} "WITH_HEIMDAL_KRB5 or add MAKE_KERBEROS5=yes to /etc/make.conf"
 	@${ECHO} "and remake world (or undefine the WITH_HEIMDAL_KRB5 tunable)."
@@ -141,7 +134,6 @@ do-install:
 	${GMAKE} -C src/include ${INSTALL_TARGET} ;\
 	${GMAKE} -C src/interfaces ${INSTALL_TARGET} ;\
 	${GMAKE} -C doc ${INSTALL_TARGET}
-
 pre-install:
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGDIR}/pkg-install ${PORTNAME} PRE-INSTALL
@@ -153,7 +145,6 @@ post-install:
 		${SED} "s|/usr/local|${PREFIX}|g" |\
 		tee ${PREFIX}/share/postgresql/post-install-notes
 .if !defined(WITHOUT_SERVER)
-# install shell defaults for pgsql user
 .for i in profile cshrc
 	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
 		< ${FILESDIR}/dot.$i.in \
@@ -175,8 +166,13 @@ post-install:
 .endif
 
 check:
-	@ cd ${WRKSRC}; \
-	${GMAKE} check
+	@if [ `id -u` != 0 ] ; then \
+		${ECHO} "Running postgresql regressions tests" ;\
+		cd ${WRKSRC}; ${GMAKE} check ;\
+	else \
+		${ECHO} "You cannot run regression tests when postgresql is built as user root." ; \
+		${ECHO} "Clean and rebuild the port as a regular user to run the tests." ;\
+	fi
 
 .include <bsd.port.mk>
 .endif
