@@ -1,73 +1,11 @@
---- configure.orig	Wed Aug 21 23:07:06 2002
-+++ configure	Mon Nov 11 21:54:28 2002
-@@ -5523,6 +5523,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10138,7 +10139,7 @@
- #include "confdefs.h"
- #include <libintl.h>
- extern int _nl_msg_cat_cntr;
--extern int *_nl_domain_bindings;
-+extern int *libintl_nl_domain_bindings;
- extern
- #ifdef __cplusplus
- "C"
-@@ -10146,7 +10147,7 @@
- const char *_nl_expand_alias ();
- int main() {
- bindtextdomain ("", "");
--return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_domain_bindings + *_nl_expand_alias (0)
-+return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings + *_nl_expand_alias (0)
- ; return 0; }
- EOF
- if { (eval echo configure:10153: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -10614,7 +10615,7 @@
-   withval="$with_help_prefix"
-   GNC_HELPDIR="$with_help_prefix/gnome/help/gnucash"
- else
--  GNC_HELPDIR="\${datadir}/gnome/help/gnucash"
-+  GNC_HELPDIR="\${datadir}/help/gnucash"
- fi
- 
- 
-@@ -11134,7 +11135,7 @@
- 
- 
- if test "$prefer_db1" = "yes"; then
--	for ac_hdr in db_185.h db1/db.h
-+	for ac_hdr in db_185.h db.h db1/db.h
- do
- ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
- echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -11174,7 +11175,7 @@
- fi
- done
- 
--	if test "$ac_cv_header_db_185_h$ac_cv_header_db1_db_h" = nono; then
-+	if test "$ac_cv_header_db_185_h$ac_cv_header_db_h" = nono; then
- 	  { echo "configure: error: Berkeley db library required for GnuCash" 1>&2; exit 1; }
- 	fi
- 	cat >> confdefs.h <<\EOF
-@@ -11329,14 +11330,14 @@
- 
- # check for gtkhtml and enable it via HAVE_LIBGTKHTML
- # if found
--echo $ac_n "checking for gtk_html_new in -lgtkhtml""... $ac_c" 1>&6
--echo "configure:11334: checking for gtk_html_new in -lgtkhtml" >&5
-+echo $ac_n "checking for gtk_html_new in -lgtkhtml-1.1""... $ac_c" 1>&6
-+echo "configure:11334: checking for gtk_html_new in -lgtkhtml-1.1" >&5
- ac_lib_var=`echo gtkhtml'_'gtk_html_new | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lgtkhtml $GTKHTML_LIBS $LIBS"
-+LIBS="-lgtkhtml-1.1 $GTKHTML_LIBS $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 11342 "configure"
- #include "confdefs.h"
+--- configure.orig	Mon Feb  3 02:20:35 2003
++++ configure	Tue Feb  4 22:00:37 2003
+@@ -13115,7 +13116,7 @@
+ echo "configure:13116: checking for gtkhtml < 1.1" >&5
+     GTKHTML_LIBS=`$GNOME_CONFIG --libs gtkhtml`
+     GTKHTML_CFLAGS=`$GNOME_CONFIG --cflags gtkhtml`
+-    if test "x$GTKHTML_LIBS" != x; then
++    if test "x$GTKHTML_LIBS" = "xNO"; then
+ 	# check for gtkhtml and enable it via HAVE_LIBGTKHTML
+ 	# if found
+ 	echo $ac_n "checking for gtk_html_new in -lgtkhtml""... $ac_c" 1>&6

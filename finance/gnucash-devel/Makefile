@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.6.8
-PORTREVISION=	1
+PORTVERSION=	1.8.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -20,7 +19,8 @@ MAINTAINER=	gnome@FreeBSD.org
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
 		guppi.16:${PORTSDIR}/math/guppi \
 		popt.0:${PORTSDIR}/devel/popt \
-		g-wrap-runtime-guile.2:${PORTSDIR}/devel/g-wrap
+		db4.0:${PORTSDIR}/databases/db4 \
+		gw-standard.0:${PORTSDIR}/devel/g-wrap
 RUN_DEPENDS=	${LOCALBASE}/share/slib/Template.scm:${PORTSDIR}/lang/slib \
 		${site_perl}/HTML/Base.pm:${PORTSDIR}/www/p5-HTML \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
@@ -36,9 +36,10 @@ USE_PERL5=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomeprint libglade gtkhtml libghttp
 USE_REINPLACE=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG}
+CONFIGURE_ARGS=	--with-glib-config=${GLIB_CONFIG} \
+		--disable-error-on-warning
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lintl"
 
@@ -47,5 +48,7 @@ MAN1=		gnc-prices.1 gnucash.1
 post-patch:
 	@${REINPLACE_CMD} -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|LDFLAGS = -module|LDFLAGS = -module -avoid-version|g'
 
 .include <bsd.port.mk>
