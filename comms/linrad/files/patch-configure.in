@@ -1,0 +1,31 @@
+--- configure.in.orig	Tue May 18 09:43:30 2004
++++ configure.in	Fri Jul  9 12:49:33 2004
+@@ -2,13 +2,13 @@
+ rm -f conf.h
+ AC_INIT(main.c)
+ AC_CHECK_FILE( /usr/lib/oss/soundcard.h, OSSN="1")
+-AC_CHECK_FILE( /usr/local/lib/oss/soundcard.h, OSSN="3")
++AC_CHECK_FILE( %%LOCALBASE%%/lib/oss/soundcard.h, OSSN="3")
+ AC_CHECK_FILE( /lib/oss/soundcard.h, OSSN="5")
+ AC_CHECK_FILE( /var/lib/oss/soundcard.h, OSSN="7")
+ AC_CHECK_FILE( /opt/oss/soundcard.h, OSSN="9")
+ AC_CHECK_FILE( /root/oss/soundcard.h, OSSN="11")
+ AC_CHECK_FILE( /usr/lib/oss/include/sys/soundcard.h, OSSN="2")
+-AC_CHECK_FILE( /usr/local/lib/oss/include/sys/soundcard.h, OSSN="4")
++AC_CHECK_FILE( %%LOCALBASE%%/lib/oss/include/sys/soundcard.h, OSSN="4")
+ AC_CHECK_FILE( /lib/oss/include/sys/soundcard.h, OSSN="6")
+ AC_CHECK_FILE( /var/lib/oss/include/sys/soundcard.h, OSSN="8")
+ AC_CHECK_FILE( /opt/oss/include/sys/soundcard.h, OSSN="10")
+@@ -25,10 +25,10 @@
+ AC_SUBST(USERHWDEF)
+ AC_CHECK_FILE( ./users_hwaredef.h, DEPS2="users_hwaredef.h")
+ AC_SUBST(DEPS2)
+-AC_CHECK_HEADER(vga.h,, AC_MSG_ERROR( 
++AC_CHECK_HEADER(%%LOCALBASE%%/include/vga.h,, AC_MSG_ERROR( 
+ Must have svgalib package installed to compile 
+ vga.h missing!!!))
+-AC_CHECK_HEADER(vgagl.h,, AC_MSG_ERROR( 
++AC_CHECK_HEADER(%%LOCALBASE%%/include/vgagl.h,, AC_MSG_ERROR( 
+ Must have svgalib package installed to compile 
+ vgagl.h missing!!!))
+ AC_CHECK_FILE( /usr/include/png.h, IMGFMT="1")

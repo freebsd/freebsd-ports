@@ -1,0 +1,57 @@
+--- Makefile.in.orig	Tue May 18 09:43:30 2004
++++ Makefile.in	Fri Jul  9 00:43:44 2004
+@@ -1,11 +1,14 @@
++INCLUDE=	/usr/local/include
++LIBS=		/usr/local/lib
++
+ 
+ .c.o:
+-#	gcc -I/usr/local/include -c -o $*.o $<
+-	gcc -O -W -Wimplicit -Wreturn-type -Wformat \
+--Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
+--Wparentheses -Wstrict-prototypes -Werror -ffast-math -fforce-mem \
+--fomit-frame-pointer -c -o $*.o \
+-$< 
++	${CC} -I${INCLUDE} -c -o $*.o $< 
++#	gcc -O -W -Wimplicit -Wreturn-type -Wformat \
++#-Wunused -Wcomment -Wchar-subscripts -Wshadow -Wuninitialized \
++#-Wparentheses -Wstrict-prototypes -Werror -ffast-math -fforce-mem \
++#-fomit-frame-pointer -c -o $*.o \
++#$< 
+ 
+ .s.o:
+ 	nasm -w-orphan-labels -felf -s $<
+@@ -23,7 +26,7 @@
+ tune.o txtest.o network.o mouse.o freq_control.o vgatest mousetest morse.o \
+ cwspeed.o coh_osc.o cw_carrier.o
+ 
+-	gcc -olinrad -lvgagl -lvga -lm \
++	${CC} -I${INCLUDE} -L${LIBS} -olinrad -lvgagl -lvga -lm \
+ -Wl,-s,-Map,linrad.map,-warn-common,--cref\
+ 	main.o ui.o setvga.o setad.o fft1.o buf.o mouse.o wide_graph.o \
+ getiq.o fft0.o rxtest.o hires_graph.o fftasm.o baseb_graph.o mix2.o \
+@@ -37,10 +40,10 @@
+ cw_carrier.o fft3.o 
+ 
+ vgatest: vgatest.o
+-	gcc -ovgatest -lvgagl -lvga -lm -Wl -s vgatest.o
++	${CC} -I${INCLUDE} -ovgatest -L${LIBS} -lvgagl -lvga -lm -Wl -s vgatest.o
+ 
+ mousetest: mousetest.o
+-	gcc -omousetest -lvgagl -lvga -lm -Wl -s mousetest.o
++	${CC} -I${INCLUDE} -omousetest -L${LIBS} -lvgagl -lvga -lm -Wl -s mousetest.o
+ 
+ afc_graph.o : globdef.h uidef.h fft1def.h fft2def.h screendef.h vernr.h \
+ 	seldef.h llsqdef.h sigdef.h
+@@ -126,3 +129,11 @@
+ configure : Makefile.in conf.h.in configure.in
+ 	rm -f configure        
+ 	autoconf
++
++all:	vgatest mousetest linrad
++
++clean:
++	rm -f vgatest mousetest linrad *.o
++
++install:
++	install -oroot -m04566 linrad ${PREFIX}/bin/linrad	
