@@ -8,8 +8,8 @@
 PORTNAME=	majorcool
 PORTVERSION= 	1.3.2
 CATEGORIES=	mail
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	andreas
+MASTER_SITES=	ftp://ftp.netsw.org/netsw/Network/Mail/Tools/ListManager/majordomo/ \
+		ftp://ftp.nhl.nl/pub/unix/MajorDomo/
 
 MAINTAINER=	ports@FreeBSD.org
 
