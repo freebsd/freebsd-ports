@@ -1,11 +1,29 @@
-
-$FreeBSD$
-
---- configure.orig	Sat Dec  6 22:40:13 2003
-+++ configure	Sun Dec  7 01:55:48 2003
-@@ -8766,13 +8766,6 @@
- 	;;
-     esac
+--- configure.orig	Sun Oct 17 18:26:52 2004
++++ configure	Mon Oct 18 21:30:05 2004
+@@ -1525,6 +1525,6 @@
+ # will get canonicalized.
+-test -n "$target_alias" &&
+-  test "$program_prefix$program_suffix$program_transform_name" = \
+-    NONENONEs,x,x, &&
+-  program_prefix=${target_alias}-
++# test -n "$target_alias" &&
++#   test "$program_prefix$program_suffix$program_transform_name" = \
++#     NONENONEs,x,x, &&
++#   program_prefix=${target_alias}-
+ 
+@@ -1657,7 +1657,7 @@
+ echo "${ECHO_T}yes" >&6
+-test "$program_prefix" != NONE &&
+-  program_transform_name="s,^,$program_prefix,;$program_transform_name"
++# test "$program_prefix" != NONE &&
++#   program_transform_name="s,^,$program_prefix,;$program_transform_name"
+ # Use a double $ so make ignores it.
+-test "$program_suffix" != NONE &&
+-  program_transform_name="s,\$,$program_suffix,;$program_transform_name"
++# test "$program_suffix" != NONE &&
++#   program_transform_name="s,\$,$program_suffix,;$program_transform_name"
+ # Double any \ or $.  echo might interpret backslashes.
+@@ -8831,9 +8831,2 @@
  
 -    if grep "^# ### BEGIN LIBTOOL TAG CONFIG: $tagname$" < "${ofile}" > /dev/null
 -    then
@@ -15,13 +33,7 @@ $FreeBSD$
 -    fi
 -
      # Update the list of available tags.
-     if test -n "$tagname"; then
-       echo appending configuration tag \"$tagname\" to $ofile
-@@ -17820,6 +17813,7 @@
- 
- # This can be used to rebuild libtool when needed
+@@ -18062,2 +18055,3 @@
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
 +$ac_aux_dir/ltconfig $LIBTOOL_DEPS
  
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
