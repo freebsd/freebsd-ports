@@ -4,18 +4,6 @@
 # Whom:				  Paul Marquis <pmarquis@pobox.com>
 #
 # $FreeBSD$
-#
-# This port has the following tunable options:
-#
-# option                | desscription                | default
-# ----------------------+-----------------------------+---------
-# WITH_PYTHON           | enable Python support       | off
-# WITH_DEBUG            | build debugging symbols     | off
-# WITHOUT_THREADS       | turn off threading support  | off
-# WITH_OPTIMIZED_CFLAGS | enable -O3 optimization     | off
-#                       | (otherwise CFLAGS are       |
-#                       |  respected)                 |
-# VERBOSE_BUILD         | show compiler messages      | off
 
 PORTNAME=	boost
 PORTVERSION=	1.31.0
@@ -46,9 +34,15 @@ MAKE_ENV+=	PYTHON_ROOT="${PREFIX}"\
 PLIST_SUB=	BOOST_PYTHON="@comment "
 .endif
 
+OPTIONS=	VERBOSE_BUILD	"Show compiler messages"	off \
+		DEBUG		"Build debugging symbols"	off \
+		THREADS		"Thread support"		on  \
+		OPTIMIZED_CFLAGS "Enable -O3 optimization"	off \
+		PYTHON		"Build Python bindings"		off
+
 .include <bsd.port.pre.mk>
 
-.if defined (VERBOSE_BUILD)
+.if defined (WITH_VERBOSE_BUILD)
 BJAM_OPTIONS=	-d2
 .endif
 
@@ -109,41 +103,6 @@ post-patch:
 		${WRKSRC}/tools/build/v1/gcc-tools.jam
 
 do-build:
-# Print configuration
-	@${ECHO_CMD}
-	@${ECHO_CMD} Selected options:
-	@${ECHO_CMD} \(see the Makefile for a description of available tunables\)
-	@${ECHO_CMD}
-	@${ECHO_CMD} -n o Debugging symbols....
-.if defined (WITH_DEBUG)
-	@${ECHO_CMD} yes
-.else
-	@${ECHO_CMD} no
-.endif
-
-	@${ECHO_CMD} -n o Thread support.......
-.if defined (WITHOUT_THREADS)
-	@${ECHO_CMD} no
-.else
-	@${ECHO_CMD} yes
-.endif
-
-	@${ECHO_CMD} -n o Extra optimization...
-.if defined (WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_CMD} yes
-.else
-	@${ECHO_CMD} no
-.endif
-
-	@${ECHO_CMD} -n o Python support.......
-.if defined (WITH_PYTHON)
-	@${ECHO_CMD} yes
-.else
-	@${RM} -rf ${WRKSRC}/libs/python
-	@${ECHO_CMD} no
-.endif
-	@${ECHO_CMD}
-
 # build the bjam project build tool
 	@cd ${WRKSRC}/tools/build/jam_src && ./build.sh gcc
 
