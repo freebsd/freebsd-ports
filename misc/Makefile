@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.222 1999/07/31 04:09:27 asami Exp $
+# $Id: Makefile,v 1.223 1999/08/01 02:57:07 cpiazza Exp $
 #
 
     SUBDIR += 221upgrade
@@ -72,6 +72,7 @@
     SUBDIR += quotes
     SUBDIR += rc5des
     SUBDIR += rpm
+    SUBDIR += rtfm
     SUBDIR += screen
     SUBDIR += scriptkit
     SUBDIR += seizedesktop
