@@ -2,12 +2,15 @@ bin/xgfe
 share/doc/xgfe/CHANGES
 share/doc/xgfe/features.html
 share/doc/xgfe/file-cols-formats.gif
+share/doc/xgfe/filelegendtitle.gif
 share/doc/xgfe/filemenu.gif
 share/doc/xgfe/fileplottypes.gif
 share/doc/xgfe/filestyles.gif
 share/doc/xgfe/latexterm.gif
 share/doc/xgfe/legend-options.gif
 share/doc/xgfe/mainwindow.gif
+share/doc/xgfe/multi-files.gif
+share/doc/xgfe/multi-funcs.gif
 share/doc/xgfe/open.gif
 share/doc/xgfe/optionsmenu.gif
 share/doc/xgfe/pbmterm.gif

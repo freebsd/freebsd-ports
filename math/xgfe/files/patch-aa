@@ -1,5 +1,5 @@
---- Makefile.freebsd.gcc.orig	Mon Feb 23 17:31:22 1998
-+++ Makefile.freebsd.gcc	Tue Mar 24 13:17:49 1998
+--- Makefile.freebsd-gcc.orig	Sat Mar 21 21:04:38 1998
++++ Makefile.freebsd-gcc	Fri Apr 10 13:28:16 1998
 @@ -7,12 +7,13 @@
  
  ####### Compiler, tools and options
@@ -19,7 +19,7 @@
  MOC	=	moc
  
  ####### Files
-@@ -115,16 +116,16 @@
+@@ -161,16 +162,16 @@
  .SUFFIXES: .cpp .cxx .cc .C .c
  
  .cpp.o:
