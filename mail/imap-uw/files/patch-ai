@@ -1,5 +1,5 @@
---- src/imapd/imapd.c.orig	Thu Apr  3 00:09:25 2003
-+++ src/imapd/imapd.c	Mon May 19 22:20:56 2003
+--- src/imapd/imapd.c.orig	Tue Apr 27 21:48:26 2004
++++ src/imapd/imapd.c	Fri Jun  4 07:49:07 2004
 @@ -29,6 +29,11 @@
  #include "c-client.h"
  #include <sys/stat.h>
@@ -12,7 +12,7 @@
  
  #define CRLF PSOUT ("\015\012")	/* primary output terpri */
  
-@@ -178,6 +183,12 @@
+@@ -183,6 +188,12 @@
  
  /* Global storage */
  
@@ -22,10 +22,10 @@
 +extern char *getenv ();
 +#endif /* DRAC_AUTH */
 +
- char *version = "2003.338";	/* version number of this server */
+ char *version = "2004.350";	/* version number of this server */
  time_t alerttime = 0;		/* time of last alert */
  time_t sysalerttime = 0;	/* time of last system alert */
-@@ -238,7 +249,50 @@
+@@ -245,7 +256,50 @@
    msg_string_next,		/* get next byte in string structure */
    msg_string_setpos		/* set position in string structure */
  };
@@ -77,7 +77,7 @@
  /* Main program */
  
  int main (int argc,char *argv[])
-@@ -1189,6 +1243,9 @@
+@@ -1227,6 +1281,9 @@
  	      lasterror ());
        return;
      }

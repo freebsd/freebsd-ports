@@ -1,5 +1,5 @@
---- src/ipopd/ipop3d.c.orig	Fri Jan 17 18:17:58 2003
-+++ src/ipopd/ipop3d.c	Mon Jun  2 02:47:10 2003
+--- src/ipopd/ipop3d.c.orig	Tue Apr 27 21:50:29 2004
++++ src/ipopd/ipop3d.c	Fri Jun  4 07:47:10 2004
 @@ -28,6 +28,11 @@
  #include <time.h>
  #include "c-client.h"
@@ -22,7 +22,7 @@
 +extern char *getenv ();
 +#endif /* DRAC_AUTH */
 +
- char *version = "2003.83";	/* server version */
+ char *version = "2004.87";	/* server version */
  short state = AUTHORIZATION;	/* server state */
  short critical = NIL;		/* non-zero if in critical code */
 @@ -88,7 +99,53 @@
@@ -89,7 +89,7 @@
  #include "linkage.c"
  				/* initialize server */
    server_init (pgmname,"pop3","pop3s",clkint,kodint,hupint,trmint);
-@@ -209,9 +266,13 @@
+@@ -201,9 +258,13 @@
  	      syslog (LOG_INFO,"AUTHENTICATE %s failure host=%.80s",s,
  		      tcp_clienthost ());
  	    }
@@ -104,7 +104,7 @@
  	    else syslog (LOG_INFO,"Auth user=%.80s host=%.80s no mailbox",
  			 user,tcp_clienthost ());
  	  }
-@@ -248,9 +309,13 @@
+@@ -231,9 +292,13 @@
  	      PSOUT ("-ERR Missing APOP argument\015\012");
  	    else if (!(user = apop_login (challenge,s,t,argc,argv)))
  	      PSOUT ("-ERR Bad APOP\015\012");
@@ -119,7 +119,7 @@
  	    else syslog (LOG_INFO,"APOP user=%.80s host=%.80s no mailbox",
  			 user,tcp_clienthost ());
  	  }
-@@ -580,6 +645,9 @@
+@@ -564,6 +629,9 @@
  				/* attempt the login */
      if (server_login (user,pass,t,argc,argv)) {
        int ret = mbxopen ("INBOX");

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	2002d
+PORTVERSION=	2004
 PORTEPOCH=	1
-CATEGORIES=	mail
+CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/ \
 		http://atreides.freenix.no/~anders/%SUBDIR%/ \
@@ -26,6 +26,7 @@ LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 MAN1=		dmail.1 mailutil.1 tmail.1
@@ -101,6 +102,11 @@ post-install:
 	@${ECHO} "pop3s   stream  tcp     nowait  root    ${PREFIX}/libexec/ipop3d       ipop3d"
 	@${ECHO} "imaps   stream  tcp     nowait  root    ${PREFIX}/libexec/imapd        imapd"
 	@${ECHO} "================================================================================"
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} -m 0755 -p ${DOCSDIR}
+	@${TAR} -C ${WRKSRC}/docs -cf - . | \
+		(umask 022; ${TAR} -C ${DOCSDIR} -xf -)
 .endif
 
 cert:
