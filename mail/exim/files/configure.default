@@ -1,0 +1,328 @@
+######################################################################
+#                  Runtime configuration file for Exim               #
+######################################################################
+
+
+# This is a default configuration file which will operate correctly in
+# uncomplicated installations. Please see the manual for a complete list
+# of all the runtime configuration options that can be included in a
+# configuration file.
+
+
+# This file is divided into several parts, all but the last of which are
+# terminated by a line containing the word "end". The parts must appear
+# in the correct order, and all must be present (even if some of them are
+# in fact empty). Blank lines, and lines starting with # are ignored.
+
+
+
+######################################################################
+#                    MAIN CONFIGURATION SETTINGS                     #
+######################################################################
+
+# Specify your host's canonical name here. If this option is not set, the
+# uname() function is called to obtain the name.
+
+# primary_hostname =
+
+
+# Specify the domain you want to be added to all unqualified addresses
+# here. Unqualified addresses are accepted only from local callers by
+# default. See the receiver_unqualified_{hosts,nets} options if you want
+# to permit unqualified addresses from remote sources. If this option is
+# not set, the primary_hostname value is used for qualification.
+
+# qualify_domain =
+
+
+# If you want unqualified recipient addresses to be qualified with a different
+# domain to unqualified sender addresses, specify the recipient domain here.
+# If this option is not set, the qualify_domain value is used.
+
+# qualify_recipient =
+
+
+# Specify your local domains as a colon-separated list here. If this option
+# is not set (i.e. not mentioned in the configuration file), the
+# qualify_recipient value is used as the only local domain. If you do not want
+# to do any local deliveries, uncomment the following line, but do not supply
+# any data for it. This sets local_domains to an empty string, which is not
+# the same as not mentioning it at all. An empty string specifies that there
+# are no local domains; not setting it at all causes the default value (the
+# setting of qualify_recipient) to be used.
+
+# local_domains =
+
+
+# If you want to accept mail addressed to your host's literal IP address, for
+# example, mail addressed to "user@[111.111.111.111]", then uncomment the
+# following line, or supply the literal domain(s) as part of "local_domains"
+# above.
+
+# local_domains_include_host_literals
+
+
+# No local deliveries will ever be run under the uids of these users (a colon-
+# separated list). An attempt to do so gets changed so that it runs under the
+# uid of "nobody" instead. This is a paranoic safety catch. Note the default
+# setting means you cannot deliver mail addressed to root as if it were a
+# normal user. This isn't usually a problem, as most sites have an alias for
+# root that redirects such mail to a human administrator.
+
+exim_user = bin
+exim_group = mail
+never_users = root
+
+
+# The setting below causes Exim to do a reverse DNS lookup on all incoming
+# IP calls, in order to get the true host name. If you feel this is too
+# expensive, you can specify the networks for which a lookup is done, or
+# remove the setting entirely.
+
+host_lookup_nets = 0.0.0.0/0
+
+
+# Exim contains support for the Realtime Blocking List (RBL) that is being
+# maintained as part of the DNS. See http://maps.vix.com/rbl/ for background.
+# Uncommenting the following line will make Exim reject mail from any
+# host whose IP address is blacklisted in the RBL at maps.vix.com.
+
+# rbl_domains = rbl.maps.vix.com
+
+
+# The setting below locks out the use of your host as a mail relay by any
+# other host. If you want to permit relaying through your host from certain
+# hosts or IP networks, you need to vary this option and/or make use of the
+# other three options in the set sender_{host,net}_{accept,reject}_relay.
+# See the section of the manual entitled "Control of relaying" for more info.
+# Removing this setting altogether is not recommended, because there are many
+# unscrupulous people out there who will make use of open relays to try to
+# disguise the source of unsolicited bulk mail.
+
+sender_host_accept_relay = localhost
+
+
+# If you want Exim to support the "percent hack" for all your local domains,
+# uncomment the following line. This is the feature by which mail addressed
+# to x%y@z (where z is one of your local domains) is locally rerouted to
+# x@y and sent on. Otherwise x%y is treated as an ordinary local part.
+
+# percent_hack_domains=*
+
+pid_file_path = /var/run/exim%s.pid
+
+
+end
+
+
+
+######################################################################
+#                      TRANSPORTS CONFIGURATION                      #
+######################################################################
+#                       ORDER DOES NOT MATTER                        #
+#     Only one appropriate transport is called for each delivery.    #
+######################################################################
+
+# A transport is used only when referenced from a director or a router that
+# successfully handles an address.
+
+
+# This transport is used for delivering messages over SMTP connections.
+
+remote_smtp:
+  driver = smtp
+
+
+# This transport is used for local delivery to user mailboxes. By default
+# it will be run under the uid and gid of the local user, and requires
+# the sticky bit to be set on the /var/mail directory. Some systems use
+# the alternative approach of running mail deliveries under a particular
+# group instead of using the sticky bit. The commented options below show
+# how this can be done.
+
+local_delivery:
+  driver = appendfile
+  file = /var/mail/${local_part}
+  delivery_date_add
+  envelope_to_add
+  return_path_add
+  group = mail
+  mode = 0660
+
+
+# This transport is used for handling pipe addresses generated by alias
+# or .forward files. It has a conventional name, since it is not actually
+# mentioned elsewhere in this configuration file. (A different name *can*
+# be specified via the "address_pipe_transport" option if you really want
+# to.) If the pipe generates any standard output, it is returned to the sender
+# of the message as a delivery error. Set return_fail_output instead if you
+# want this to happen only when the pipe fails to complete normally.
+
+address_pipe:
+  driver = pipe
+  return_output
+
+
+# This transport is used for handling file addresses generated by alias
+# or .forward files. It has a conventional name, since it is not actually
+# mentioned elsewhere in this configuration file.
+
+address_file:
+  driver = appendfile
+  delivery_date_add
+  envelope_to_add
+  return_path_add
+
+
+# This transport is used for handling file addresses generated by alias
+# or .forward files if the path ends in "/", which causes it to be treated
+# as a directory name rather than a file name. Each message is then delivered
+# to a unique file in the directory. If instead you want all such deliveries to
+# be in the "maildir" format that is used by some other mail software,
+# uncomment the final option below. If this is done, the directory specified
+# in the .forward or alias file is the base maildir directory.
+#
+# Should you want to be able to specify either maildir or non-maildir
+# directory-style deliveries, then you must set up yet another transport,
+# called address_directory2. This is used if the path ends in "//" so should
+# be the one used for maildir, as the double slash suggests another level
+# of directory. In the absence of address_directory2, paths ending in //
+# are passed to address_directory.
+
+address_directory:
+  driver = appendfile
+  delivery_date_add
+  envelope_to_add
+  return_path_add
+  no_from_hack
+  prefix = ""
+  suffix = ""
+# maildir_format
+
+
+# This transport is used for handling autoreplies generated by the filtering
+# option of the forwardfile director. It has a conventional name, since it
+# is not actually mentioned elsewhere in this configuration file.
+
+address_reply:
+  driver = autoreply
+
+
+end
+
+
+
+######################################################################
+#                      DIRECTORS CONFIGURATION                       #
+#             Specifies how local addresses are handled              #
+######################################################################
+#                          ORDER DOES MATTER                         #
+#   A local address is passed to each in turn until it is accepted.  #
+######################################################################
+
+# Local addresses are those with a domain that matches some item in the
+# "local_domains" setting above, or those which are passed back from the
+# routers because of a "self=local" setting (not used in this configuration).
+
+
+# This director handles aliasing using a traditional /etc/aliases file.
+# If any of your aliases expand to pipes or files, you will need to set
+# up a user and a group for these deliveries to run under. You can do
+# this by uncommenting the "user" option below (changing the user name
+# as appropriate) and adding a "group" option if necessary.
+
+system_aliases:
+  driver = aliasfile
+  file = /etc/aliases
+  search_type = lsearch
+# user = bin
+
+
+# This director handles forwarding using traditional .forward files.
+# If you want it also to allow mail filtering when a forward file
+# starts with the string "# Exim filter", uncomment the "filter" option.
+# The check_ancestor option means that if the forward file generates an
+# address that is an ancestor of the current one, the current one gets
+# passed on instead. This covers the case where A is aliased to B and B
+# has a .forward file pointing to A.
+
+userforward:
+  driver = forwardfile
+  file = .forward
+  no_verify
+  check_ancestor
+# filter
+
+
+# This director matches local user mailboxes.
+
+localuser:
+  driver = localuser
+  transport = local_delivery
+
+
+end
+
+
+
+######################################################################
+#                      ROUTERS CONFIGURATION                         #
+#            Specifies how remote addresses are handled              #
+######################################################################
+#                          ORDER DOES MATTER                         #
+#  A remote address is passed to each in turn until it is accepted.  #
+######################################################################
+
+# Remote addresses are those with a domain that does not match any item
+# in the "local_domains" setting above.
+
+
+# This router routes to remote hosts over SMTP using a DNS lookup with
+# default options.
+
+lookuphost:
+  driver = lookuphost
+  transport = remote_smtp
+
+
+# This router routes to remote hosts over SMTP by explicit IP address,
+# given as a "domain literal" in the form [nnn.nnn.nnn.nnn]. The RFCs
+# require this facility, which is why it is enabled by default in Exim.
+# If you want to lock it out, set forbid_domain_literals in the main
+# configuration section above.
+
+literal:
+  driver = ipliteral
+  transport = remote_smtp
+
+
+end
+
+
+
+######################################################################
+#                      RETRY CONFIGURATION                           #
+######################################################################
+
+# This single retry rule applies to all domains and all errors. It specifies
+# retries every 15 minutes for 2 hours, then increasing retry intervals,
+# starting at 2 hours and increasing each time by a factor of 1.5, up to 16
+# hours, then retries every 8 hours until 4 days have passed since the first
+# failed delivery.
+
+# Domain               Error       Retries
+# ------               -----       -------
+
+*                      *           F,2h,15m; G,16h,2h,1.5; F,4d,8h
+
+end
+
+
+
+######################################################################
+#                      REWRITE CONFIGURATION                         #
+######################################################################
+
+# There are no rewriting specifications in this default configuration file.
+
+# End of Exim configuration file
