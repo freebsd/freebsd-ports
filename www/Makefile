@@ -98,6 +98,7 @@
     SUBDIR += mod_ruby
     SUBDIR += momspider
     SUBDIR += mozilla
+    SUBDIR += mozilla-embedded
     SUBDIR += netscape-remote
     SUBDIR += netscape-wrapper
     SUBDIR += netscape3
