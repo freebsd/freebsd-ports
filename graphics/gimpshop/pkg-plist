@@ -1639,6 +1639,10 @@ share/locale/ms/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/ms/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/ms/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/ms/LC_MESSAGES/gimp20.mo
+share/locale/nb/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/nb/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/nb/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/nb/LC_MESSAGES/gimp20.mo
 share/locale/nl/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/nl/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/nl/LC_MESSAGES/gimp20-std-plug-ins.mo
@@ -1671,6 +1675,10 @@ share/locale/sk/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/sk/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/sk/LC_MESSAGES/gimp20-std-plug-ins.mo
 share/locale/sk/LC_MESSAGES/gimp20.mo
+share/locale/sq/LC_MESSAGES/gimp20-libgimp.mo
+share/locale/sq/LC_MESSAGES/gimp20-script-fu.mo
+share/locale/sq/LC_MESSAGES/gimp20-std-plug-ins.mo
+share/locale/sq/LC_MESSAGES/gimp20.mo
 share/locale/sr/LC_MESSAGES/gimp20-libgimp.mo
 share/locale/sr/LC_MESSAGES/gimp20-script-fu.mo
 share/locale/sr/LC_MESSAGES/gimp20-std-plug-ins.mo
