@@ -20,14 +20,8 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB= yes
+CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
