@@ -57,6 +57,7 @@ Unreal/help.conf
 Unreal/LICENSE
 Unreal/Donation
 Unreal/unreal
+Unreal/modules/cloak.so
 Unreal/modules/commands.so
 Unreal/modules/m_addline.so
 Unreal/modules/m_addomotd.so   
@@ -71,6 +72,7 @@ Unreal/modules/m_chgname.so
 Unreal/modules/m_close.so
 Unreal/modules/m_connect.so
 Unreal/modules/m_cycle.so
+Unreal/modules/m_dccallow.so
 Unreal/modules/m_dccdeny.so
 Unreal/modules/m_eos.so
 Unreal/modules/m_globops.so
@@ -144,6 +146,7 @@ Unreal/modules/m_wallops.so
 Unreal/modules/m_who.so
 Unreal/modules/m_whois.so
 Unreal/modules/m_whowas.so
+Unreal/modules/oldcloak.so
 @dirrm Unreal/networks
 @dirrm Unreal/modules
 @dirrm Unreal/doc

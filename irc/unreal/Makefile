@@ -8,17 +8,20 @@
 #
 
 PORTNAME=	Unreal
-PORTVERSION=	3.2
+PORTVERSION=	3.2.1
 CATEGORIES=	irc
 MASTER_SITES=	http://mirror.nimsay-networks.com/unrealircd/ \
 		http://unrealircd.za.net/ \
 		ftp://unrealircd.za.net/pub/UnrealIRCd/
 DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	tux@pinguru.net
 COMMENT=	Unreal - the next generation ircd
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}
+SQLMOD=		Unreal/SQLMod.tar.gz
+
+WRKSRC=		${WRKDIR}/${PORTNAME}3.2
 
 HAS_CONFIGURE=	yes
 
@@ -35,6 +38,17 @@ CONFIGURE_ARGS=	--enable-nospoof \
 		--with-fd-setsize=1024 \
 		--enable-dynamic-linking
 
+.include <bsd.port.pre.mk>
+
+.if exists(${DISTDIR}/${SQLMOD})
+USE_MYSQL=	yes
+WITH_SQLMOD=	yes
+MAKE_ARGS=	all custommodule MODULEFILE=m_sqlmod
+PLIST_FILES+=	Unreal/modules/m_sqlmod.so Unreal/m_sqlmod.conf \
+		Unreal/doc/Changes.sqlmod Unreal/doc/README.sqlmod \
+		Unreal/doc/LICENSE.sqlmod
+.endif
+
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-inet6
 .endif
@@ -44,4 +58,25 @@ CONFIGURE_ARGS+=	--enable-ssl
 USE_OPENSSL=	yes
 .endif
 
-.include <bsd.port.mk>
+post-extract:
+.if defined(WITH_SQLMOD)
+	@${TAR} xfz ${DISTDIR}/${SQLMOD} -C ${WRKSRC}
+	@${MV} ${WRKSRC}/SQLMod* ${WRKSRC}/SQLMod
+	@${CP} -r ${WRKSRC}/SQLMod/m_sqlmod.c ${WRKSRC}/src/modules
+.endif
+
+post-patch:
+.if defined(WITH_SQLMOD)
+	@${PATCH} -d ${WRKSRC} < ${WRKSRC}/SQLMod/patch
+.endif
+
+post-install:
+.if defined(WITH_SQLMOD)
+	@${CP} ${WRKSRC}/SQLMod/sample.conf ${PREFIX}/Unreal/m_sqlmod.conf
+	@${CP} ${WRKSRC}/SQLMod/Changes ${PREFIX}/Unreal/doc/Changes.sqlmod
+	@${CP} ${WRKSRC}/SQLMod/README ${PREFIX}/Unreal/doc/README.sqlmod
+	@${CP} ${WRKSRC}/SQLMod/LICENSE ${PREFIX}/Unreal/doc/LICENSE.sqlmod
+	@${INSTALL} ${WRKSRC}/src/modules/m_sqlmod.so ${PREFIX}/Unreal/modules/m_sqlmod.so
+.endif
+
+.include <bsd.port.post.mk>
