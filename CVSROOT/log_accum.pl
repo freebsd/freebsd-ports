@@ -22,6 +22,7 @@
 
 require 5.003;		# might work with older perl5
 
+###use strict;
 use Sys::Hostname;	# get hostname() function
 
 ############################################################
@@ -449,7 +450,7 @@ sub mail_notification {
 	# which branches were modified during the commit.
 	if ($X_BRANCH_HDR) {
 		my %tags = map { $_ => 1 } &read_logfile("$TAGS_FILE.$PID");
-		print  MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n";
+		print MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n";
 	}
 
 	print MAIL "\n";
@@ -609,7 +610,7 @@ while (<STDIN>) {
 		    /^Approved by:$/i) {
 			next;
 		}
-		push (@log_lines,     $_);
+		push (@log_lines, $_);
 	}
 }
 &append_line("$TAGS_FILE.$PID", $tag);
