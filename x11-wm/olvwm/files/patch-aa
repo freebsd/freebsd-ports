@@ -1,5 +1,5 @@
---- Imakefile.orig	Mon Oct 19 14:21:31 1998
-+++ Imakefile	Mon Oct 19 14:20:23 1998
+--- Imakefile.orig	Mon Oct 26 09:16:54 1998
++++ Imakefile	Mon Oct 26 09:27:43 1998
 @@ -48,8 +48,10 @@
  /**/#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DIDENT
  
@@ -73,7 +73,7 @@
  
  install.man:: $(MANPAGES)
  	@if [ -d $(DESTDIR)$(MANDIR) ]; then set +x; \
-@@ -142,7 +151,9 @@
+@@ -142,7 +151,11 @@
  	@for i in $(MANPAGES) ;\
  	do \
  	echo "installing $$i"; \
@@ -81,9 +81,10 @@
  	$(INSTALL) -c $(INSTMANFLAGS) $$i $(DESTDIR)$(MANDIR)/`basename $$i .man`.$(MANSUFFIX) ; \
 +	$(COMPRESSMANCMD) $(DESTDIR)$(MANDIR)/`basename $$i .man`.$(MANSUFFIX) ; \
  	done
- 
--#include <XView.prog>
++
 +depend:: olvwmrc.c
+ 
+ #include <XView.prog>
 --- defaults.c.orig	Thu Jan 13 15:36:03 1994
 +++ defaults.c	Mon Oct 19 12:52:39 1998
 @@ -30,9 +30,7 @@
