@@ -1,0 +1,28 @@
+--- configure.orig	Mon Feb  7 22:00:40 2000
++++ configure	Mon Feb  7 22:04:47 2000
+@@ -4835,16 +4835,16 @@
+ 
+ 	      DEF_FONT_IDX=0
+ 	      MULTICHAR_ENCODING="eucj"
+-	      FONT0="fixed"
+-              FONT1="8x16"
+-              FONT2="9x18"
+-              FONT3="12x24"
+-              FONT4="13x26"
++	      FONT0="7x14"
++              FONT1="a10"
++              FONT2="r12"
++              FONT3="8x16"
++              FONT4="12x24"
+ 	      MFONT0="k14"
+-              MFONT1="jiskan16"
+-              MFONT2="jiskan18"
+-              MFONT3="jiskan24"
+-              MFONT4="jiskan26"
++              MFONT1="k10"
++              MFONT2="k12"
++              MFONT3="kanji16"
++              MFONT4="kanji24"
+             elif test "$enableval" = "euc-kr" -o "$enableval" = "euckr"; then 
+               echo "$ac_t""euckr" 1>&6
+               cat >> confdefs.h <<\EOF

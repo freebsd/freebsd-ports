@@ -1,0 +1,10 @@
+--- themes/Makefile.in.orig	Wed Feb  2 05:36:43 2000
++++ themes/Makefile.in	Wed Feb  9 03:46:59 2000
+@@ -239,6 +239,7 @@
+ 	    $(CHMOD) 755 $(DESTDIR)$(pkgdatadir)/themes/$$i ; \
+ 	    $(CHMOD) 644 $(DESTDIR)$(pkgdatadir)/themes/$$i/???* ; \
+ 	    rm -f $(DESTDIR)$(pkgdatadir)/themes/$$i/theme.cfg.in ; \
++	    rm -f $(DESTDIR)$(pkgdatadir)/themes/$$i/theme.cfg.in.orig ; \
+ 	  else \
+ 	    echo "ALERT!  Not overwriting $$i theme in $(DESTDIR)$(pkgdatadir)/themes.  You will need to update this theme manually." ; \
+ 	  fi ; \

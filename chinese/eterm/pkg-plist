@@ -1,0 +1,98 @@
+bin/Esetroot
+bin/Etbg
+bin/Eterm
+@exec chmod 4711 %D/bin/Eterm
+bin/Ettable
+bin/Etcolors
+bin/Etwinop
+lib/libEterm.a
+lib/libEterm.so
+lib/libEterm.so.9
+lib/libmej.a
+lib/libmej.so
+lib/libmej.so.9
+share/Eterm/pix/014.jpg
+share/Eterm/pix/40.jpg
+share/Eterm/pix/backwave.jpg
+share/Eterm/pix/bar_horizontal_1.png
+share/Eterm/pix/bar_horizontal_2.png
+share/Eterm/pix/bar_horizontal_3.png
+share/Eterm/pix/bar_vertical_1.png
+share/Eterm/pix/bar_vertical_2.png
+share/Eterm/pix/bar_vertical_3.png
+share/Eterm/pix/blackstone.jpg
+share/Eterm/pix/button_arrow_down_1.png
+share/Eterm/pix/button_arrow_down_2.png
+share/Eterm/pix/button_arrow_down_3.png
+share/Eterm/pix/button_arrow_up_1.png
+share/Eterm/pix/button_arrow_up_2.png
+share/Eterm/pix/button_arrow_up_3.png
+share/Eterm/pix/circuit.jpg
+share/Eterm/pix/fourthday.jpg
+share/Eterm/pix/gaia.jpg
+share/Eterm/pix/galleon.jpg
+share/Eterm/pix/menu1.png
+share/Eterm/pix/menu2.png
+share/Eterm/pix/menu3.png
+share/Eterm/pix/nebula.jpg
+share/Eterm/pix/night_of_the_dragon.jpg
+share/Eterm/pix/pixmaps.list
+share/Eterm/pix/scaled-pixmaps.list
+share/Eterm/pix/tiled-pixmaps.list
+share/Eterm/themes/Eterm/menus.cfg
+share/Eterm/themes/Eterm/pixmaps.list
+share/Eterm/themes/Eterm/scaled-pixmaps.list
+share/Eterm/themes/Eterm/theme.cfg
+share/Eterm/themes/Eterm/tiled-pixmaps.list
+share/Eterm/themes/auto/menus.cfg
+share/Eterm/themes/auto/pixmaps.list
+share/Eterm/themes/auto/scaled-pixmaps.list
+share/Eterm/themes/auto/theme.cfg
+share/Eterm/themes/auto/tiled-pixmaps.list
+share/Eterm/themes/cEterm/menus.cfg
+share/Eterm/themes/cEterm/pixmaps.list
+share/Eterm/themes/cEterm/scaled-pixmaps.list
+share/Eterm/themes/cEterm/theme.cfg
+share/Eterm/themes/cEterm/tiled-pixmaps.list
+share/Eterm/themes/chooser/menus.cfg
+share/Eterm/themes/chooser/pixmaps.list
+share/Eterm/themes/chooser/scaled-pixmaps.list
+share/Eterm/themes/chooser/theme.cfg
+share/Eterm/themes/chooser/tiled-pixmaps.list
+share/Eterm/themes/emacs/menus.cfg
+share/Eterm/themes/emacs/pixmaps.list
+share/Eterm/themes/emacs/scaled-pixmaps.list
+share/Eterm/themes/emacs/theme.cfg
+share/Eterm/themes/emacs/tiled-pixmaps.list
+share/Eterm/themes/irc/menus.cfg
+share/Eterm/themes/irc/pixmaps.list
+share/Eterm/themes/irc/scaled-pixmaps.list
+share/Eterm/themes/irc/theme.cfg
+share/Eterm/themes/irc/tiled-pixmaps.list
+share/Eterm/themes/mutt/menus.cfg
+share/Eterm/themes/mutt/pixmaps.list
+share/Eterm/themes/mutt/scaled-pixmaps.list
+share/Eterm/themes/mutt/theme.cfg
+share/Eterm/themes/mutt/tiled-pixmaps.list
+share/Eterm/themes/trans/menus.cfg
+share/Eterm/themes/trans/pixmaps.list
+share/Eterm/themes/trans/scaled-pixmaps.list
+share/Eterm/themes/trans/theme.cfg
+share/Eterm/themes/trans/tiled-pixmaps.list
+share/doc/Eterm/Eterm.1.html
+share/doc/Eterm/Eterm_reference.html
+share/doc/Eterm/Eterm.tcap
+share/doc/Eterm/Eterm.ti
+share/doc/Eterm/ReleaseNotes
+@dirrm share/Eterm/themes/trans
+@dirrm share/Eterm/themes/mutt
+@dirrm share/Eterm/themes/irc
+@dirrm share/Eterm/themes/emacs
+@dirrm share/Eterm/themes/chooser
+@dirrm share/Eterm/themes/cEterm
+@dirrm share/Eterm/themes/auto
+@dirrm share/Eterm/themes/Eterm
+@dirrm share/Eterm/themes
+@dirrm share/Eterm/pix
+@dirrm share/Eterm
+@dirrm share/doc/Eterm

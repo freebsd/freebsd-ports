@@ -1,0 +1,17 @@
+--- themes/emacs/theme.cfg.in.orig	Mon Feb  7 22:12:28 2000
++++ themes/emacs/theme.cfg.in	Mon Feb  7 22:12:49 2000
+@@ -248,10 +248,10 @@
+ # The XIM support options.
+ # input_method: set the name of your favorate input method program
+ # preedit_type: OverTheSpot or OffTheSpot or Root
+-#  begin xim
+-#    input_method Ami
+-#    preedit_type OverTheSpot
+-#  end xim
++  begin xim
++    input_method kinput2
++    preedit_type OverTheSpot
++  end xim
+ 
+ # Boolean variables.  The values can be "1", "on", or "true" for TRUE, or "0",
+ # "off", or "false" for FALSE.
