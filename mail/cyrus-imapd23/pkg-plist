@@ -1,4 +1,3 @@
-bin/arbitron
 bin/cyradm
 bin/imtest
 bin/installsieve
@@ -9,6 +8,7 @@ bin/pop3test
 bin/sieveshell
 bin/sivtest
 bin/smtptest
+cyrus/bin/arbitron
 cyrus/bin/chk_cyrus
 cyrus/bin/ctl_cyrusdb
 cyrus/bin/ctl_deliver
