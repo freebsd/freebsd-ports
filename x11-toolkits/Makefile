@@ -69,6 +69,7 @@
     SUBDIR += libgail-gnome
     SUBDIR += libgnomeprintui
     SUBDIR += libgnomeui
+    SUBDIR += libgsf
     SUBDIR += libgtkeditor
     SUBDIR += libj2dplot
     SUBDIR += libjparser
