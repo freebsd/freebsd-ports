@@ -1,0 +1,10 @@
+--- server/socket.c.orig	Mon Oct  2 21:18:48 2000
++++ server/socket.c	Mon Oct  2 21:18:55 2000
+@@ -66,6 +66,7 @@
+ 		if (errno == EINTR) continue;
+ 	    case 0:
+ 		SigUnblock(set);
++		Signal(SIGCHLD, gravedigger);
+ 		errno = oerrno;
+ 		return;
+ 	    default:
