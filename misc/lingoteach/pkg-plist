@@ -1,0 +1,8 @@
+bin/lingoteach
+share/lingoteach/data/rules.en.txt
+share/lingoteach/data/lingoteach.dtd
+share/lingoteach/data/language.dtd
+share/lingoteach/data/language.xml
+share/lingoteach/data/basic.xml
+@dirrm share/lingoteach/data
+@dirrm share/lingoteach
