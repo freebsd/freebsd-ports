@@ -57,7 +57,6 @@ shift $(($OPTIND - 1))
 # Where we store class files
 #
 CLASSDIR=${WORKDIR}/classes
-mkdir -p ${CLASSDIR}
 
 #
 # Where the new "root" is linked from
@@ -110,6 +109,10 @@ conflictshow() {
     fi
 }
 
+if [ "$#" -lt 1 ]; then
+    usage
+    exit 1
+fi
 case "$1" in
     init)    ;;
     install)
@@ -176,6 +179,8 @@ esac
 
 
 echo "ETCMERGE: >>> Creating new etc data from ${USRSRC}"
+# Also creates our base work directory
+mkdir -p ${CLASSDIR}
 #
 # XXX Make sure we have all needed users and groups before this
 #

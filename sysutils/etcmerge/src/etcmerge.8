@@ -95,17 +95,29 @@ First, ensure you have a copy of the /etc distributed by FreeBSD (BEFORE you or
 .Xr sysinstall 8
 started modifying it) stored in
 .Pa /var/db/etc .
-There are two easy ways to do this: Either download a copy matching your
+There are two easy ways to do this:
+.Bl -enum -compact
+.It
+Download a copy matching your
 installation from
 .Pa http://people.freebsd.org/~eivind/etc/
 and extract this in
-.Pa /var/db/
-or run
+.Pa /var/db/ .
+.It
+Run
 .Xr mergemaster 8
-one last time, and copy
+one last time to get your /etc up to date.
+Then rerun
+.Xr mergemaster 8
+with the
+.Fl v
+option, exit after it creates
+.Pa /var/tmp/temproot ,
+and copy
 .Pa /var/tmp/temproot/etc
 to
 .Pa /var/db/etc .
+.El
 .Pp
 When you have
 .Pa /var/db/etc
