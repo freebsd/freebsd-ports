@@ -1,7 +1,7 @@
 
 Before you can use portsnap, you will have to create an update configuration
-file specifying the server from which to fetch snapshots and the sha1 hash
-of the RSA public key which is trusted to sign the snapshots.
+file specifying the server from which to fetch snapshots and the sha256 hash
+of the openssl public key which is trusted to sign the snapshots.
 
 A sample configuration file has been installed in
 
@@ -13,3 +13,8 @@ use these updates, copy that file to
 	%%PREFIX%%/etc/portsnap.conf
 
 otherwise, create that file as appropriate.
+
+NOTE TO USERS UPGRADING FROM PORTSNAP 0.3.1 OR EARLIER:  The structure
+of the portsnap configuration file has changed; you will have to replace
+your existing portsnap.conf with a new version.
+ 
