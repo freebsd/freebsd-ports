@@ -17,6 +17,7 @@ MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Netwib network programming library
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
 USE_REINPLACE=	yes
