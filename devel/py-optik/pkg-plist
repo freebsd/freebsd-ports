@@ -20,16 +20,26 @@
 %%PYTHON_SITELIBDIR%%/optik/textwrap.pyc
 %%PYTHON_SITELIBDIR%%/optik/textwrap.pyo
 %%EXAMPLES%%/caseless.py
+%%EXAMPLES%%/custom_source.py
+%%EXAMPLES%%/custom_type.py
+%%EXAMPLES%%/i18n.py
+%%EXAMPLES%%/no_help.py
+%%EXAMPLES%%/optional_arg_1.py
+%%EXAMPLES%%/optional_arg_2.py
+%%EXAMPLES%%/pass_through.py
 %%EXAMPLES%%/required_1.py
 %%EXAMPLES%%/required_2.py
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/advanced.txt
-%%PORTDOCS%%%%DOCSDIR%%/basic.txt
+%%PORTDOCS%%%%DOCSDIR%%/callbacks.html
 %%PORTDOCS%%%%DOCSDIR%%/callbacks.txt
+%%PORTDOCS%%%%DOCSDIR%%/extending.html
 %%PORTDOCS%%%%DOCSDIR%%/extending.txt
+%%PORTDOCS%%%%DOCSDIR%%/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/reference.txt
+%%PORTDOCS%%%%DOCSDIR%%/tao.html
 %%PORTDOCS%%%%DOCSDIR%%/tao.txt
 %%PORTDOCS%%%%DOCSDIR%%/test/test_optik.py
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/tutorial.txt
 @dirrm %%PYTHON_SITELIBDIR%%/optik
 @dirrm %%EXAMPLES%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/test
