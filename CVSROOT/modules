@@ -5745,6 +5745,7 @@ schemetoc	ports/lang/schemetoc
 scigraphica	ports/math/scigraphica
 scintilla	ports/x11-toolkits/scintilla
 scite		ports/editors/scite
+scli		ports/net/scli
 scm		ports/lang/scm
 scotty		ports/net/scotty
 scotty3		ports/net/scotty3
@@ -6105,7 +6106,6 @@ stmpclean	ports/sysutils/stmpclean
 stockticker_applet ports/x11/stockticker_applet
 stone		ports/net/stone
 stonx		ports/emulators/stonx
-stools		ports/net/stools
 stow		ports/sysutils/stow
 stowES		ports/sysutils/stowES
 str		ports/devel/str
