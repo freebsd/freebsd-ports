@@ -1,0 +1,10 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SQL/Eval.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SQL/Statement.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SQL/Statement/Hash.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SQL/Statement/Statement.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SQL/Statement/Statement.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SQL/Statement/.packlist
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SQL/Statement 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/SQL 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SQL/Statement
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SQL 2>/dev/null || true

@@ -1,0 +1,5 @@
+The SQL::Statement module implements a small, abstract SQL engine.  By
+parsing an SQL query you create an SQL::Statement instance. This instance
+offers methods for retrieving syntax, for WHERE clause and statement
+evaluation.  The implementation is designed to work with the DBI driver
+DBD::CSV, and should be easily extensible.
