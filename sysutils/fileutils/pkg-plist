@@ -1,0 +1,67 @@
+bin/gchgrp
+bin/gchmod
+bin/gchown
+bin/gcp
+bin/gdd
+bin/gdf
+bin/gdir
+bin/gdircolors
+bin/gdu
+bin/ginstall
+bin/gln
+bin/gls
+bin/gmkdir
+bin/gmkfifo
+bin/gmknod
+bin/gmv
+bin/grm
+bin/grmdir
+bin/gsync
+bin/gtouch
+bin/gvdir
+@unexec install-info --quiet --delete %D/info/fileutils.info %D/info/dir
+info/fileutils.info
+@exec install-info %D/info/fileutils.info %D/info/dir
+share/locale/cs/LC_MESSAGES/fileutils.mo
+share/locale/de/LC_MESSAGES/fileutils.mo
+share/locale/el/LC_MESSAGES/fileutils.mo
+share/locale/es/LC_MESSAGES/fileutils.mo
+share/locale/fr/LC_MESSAGES/fileutils.mo
+share/locale/ko/LC_MESSAGES/fileutils.mo
+share/locale/nl/LC_MESSAGES/fileutils.mo
+share/locale/no/LC_MESSAGES/fileutils.mo
+share/locale/pl/LC_MESSAGES/fileutils.mo
+share/locale/pt/LC_MESSAGES/fileutils.mo
+share/locale/ru/LC_MESSAGES/fileutils.mo
+share/locale/sk/LC_MESSAGES/fileutils.mo
+share/locale/sl/LC_MESSAGES/fileutils.mo
+share/locale/sv/LC_MESSAGES/fileutils.mo
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/el 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/ko/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ko 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/no 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sk 2>/dev/null || true
+@unexec rmdir %D/share/locale/sl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sl 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
