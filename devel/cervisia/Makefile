@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	cervisia
-PORTVERSION=	1.0.b2
+PORTVERSION=	1.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	cervisia-1.0beta2
 
 MAINTAINER=	andrey@novikov.com
 
@@ -18,20 +17,19 @@ LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 USE_QT=		yes
 QT_VER=		""
 .else
-EXTRA_PATCHES=	${PATCHDIR}/kde2-patch-aa \
-		${PATCHDIR}/kde2-patch-ab \
-		${PATCHDIR}/kde2-patch-ac
 LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2
 USE_QT2=	yes
 MOC?=		${X11BASE}/bin/moc2
 QT_VER=		2
 .endif
+LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext
 
-MAN1=		cervisia.1
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-pre-fetch:
+MAN1=		cervisia.1
+
+pre-everything:
 .if !defined(KDE_VERSION)
 	@${ECHO}
 	@${ECHO} "You may define KDE_VERSION=1 (make KDE_VERSION=1)"
@@ -42,10 +40,41 @@ pre-fetch:
 
 KDE_VERSION?=	2
 
+.include <bsd.port.pre.mk>
+
+# Hack to make pthread support work correctly.
+.if exists(${X11BASE}/lib/libqt2-mt.so)
+.if exists(${X11BASE}/lib/libXThrStub.so)
+QT_ADD=		-mt
+.if ${OSVERSION} >= 500016
+PTHREAD_CFLAGS=
+PTHREAD_LIBS=	-lc_r
+.else
+PTHREAD_CFLAGS=	-D_THREAD_SAFE
+PTHREAD_LIBS=	-pthread
+.endif
+.else
+QT_ADD=		""
+PTHREAD_CFLAGS=
+PTHREAD_LIBS=
+.endif
+.endif
+CFLAGS+=	${PTHREAD_CFLAGS} ${PTHREAD_LIBS}
+LDFLAGS+=	${PTHREAD_LIBS}
+
 CONFIGURE_ARGS+=--with-kde-version=${KDE_VERSION} \
 		--with-extra-includes="${LOCALBASE}/include" \
 		--with-extra-libs="${LOCALBASE}/lib" \
+		--with-qt-libraries=${X11BASE}/lib \
 		--with-qt-includes="${X11BASE}/include/qt${QT_VER}"
-CONFIGURE_ENV+=	MOC="${MOC}" LIBQTFILE="libqt2" KDEDIR="${LOCALBASE}/kde"
+CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-lqt${QT_VER}${QT_ADD}" LIBQTFILE="libqt${QT_VER}${QT_ADD}" KDEDIR="${LOCALBASE}/kde" \
+		CPPFLAGS="${PTHREAD_CFLAGS}" \
+		LIBS="${PTHREAD_LIBS}" \
+		USER_LDFLAGS="${PTHREAD_LIBS}"
 
-.include <bsd.port.mk>
+post-configure:
+	@${CP} ${WRKSRC}/libtool ${WRKSRC}/libtool.orig
+	@${SED} -e 's@\\\$$compiler_flags@\\\$$compiler_flags ${PTHREAD_LIBS}@g' ${WRKSRC}/libtool.orig \
+		> ${WRKSRC}/libtool
+
+.include <bsd.port.post.mk>
