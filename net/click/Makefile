@@ -54,7 +54,9 @@ MANN=	FTPPortMapper.n ARPFaker.n ARPQuerier.n ARPResponder.n \
 	DynamicUDPIPEncap.n IPRewriter.n SetTCPChecksum.n TCPRewriter.n \
 	UDPIPEncap.n ChatterSocket.n ControlSocket.n FromDevice.u.n \
 	FromDump.n KernelTap.n KernelHandlerProxy.n PrintOld.n \
-	ToDevice.u.n ToDump.n elements.n
+	ToDevice.u.n ToDump.n elements.n AdaptiveRED.n IPReassembler.n \
+	IPRouteTable.n StaticIPLookup.n LinuxIPLookup.n RadixIPLookup.n \
+	RandomSample.n SetPacketType.n StripToNetworkHeader.n ProgressBar.n
 
 CONFDIR=	${PREFIX}/etc/click/conf
 
