@@ -96,6 +96,7 @@ HVSC-Update	ports/audio/HVSC-Update
 Hermes		ports/graphics/Hermes
 HeroesOfMightAndMagic	ports/games/HeroesOfMightAndMagic
 Howto		ports/misc/Howto
+IMHear		ports/security/IMHear
 IPA		ports/graphics/IPA
 IglooFTP	ports/ftp/IglooFTP
 ImageMagick	ports/graphics/ImageMagick
