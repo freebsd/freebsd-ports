@@ -10,6 +10,10 @@ start)
 stop)
 	killall junkbuster && echo -n " junkbuster"
 	;;
+restart)
+	$0 stop
+	$0 start
+	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
 	exit 64
