@@ -28,14 +28,18 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}" \
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+NOT_FOR_ARCHS+=	alpha
+.endif
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.jigdo
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
-
-.include <bsd.port.pre.mk>
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/jigdo-file
