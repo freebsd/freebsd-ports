@@ -25,6 +25,13 @@ GNU_CONFIGURE=	yes
 MAN1=		flwm.1
 PLIST_FILES=	bin/flwm
 
-CONFIGURE_ARGS?=--includedir="-I/usr/local/include -I/usr/local/include/freetype2"
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+# could be a problem if both versions of freetype are installed
+.if exists(${LOCALBASE}/include/freetype1/freetype/freetype.h)
+CONFIGURE_ARGS= --includedir="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype1"
+.elif exists(${LOCALBASE}/include/freetype2/freetype/freetype.h)
+CONFIGURE_ARGS= --includedir="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
+.endif
+
+.include <bsd.port.post.mk>
