@@ -15,6 +15,8 @@ DISTNAME=	PHP-Nuke-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated website package to distribute and manage content
 
+FORBIDDEN=	"SQL injection vulnerability in Php-Nuke <= 7.1.0"
+
 .if defined(WITH_PHP3)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
 .else
