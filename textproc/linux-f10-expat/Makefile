@@ -25,7 +25,7 @@ pre-install:
 	${MKDIR} ${WRKSRC}/tmp
 	cd ${WRKSRC}/tmp; \
 		rpm2cpio < ${DISTDIR}/${DIST_SUBDIR}/${RPM_SET} | cpio -div; \
-		${FIND} * -type f -o -type l > ${PLIST}; \
-		${FIND} -d * -type d  | ${SED} -e 's:^:@dirrm :' >> ${PLIST}
+		${FIND} * -type f -o -type l > ${PLIST}
+	${ECHO_CMD} @dirrm usr/share/doc/expat-1.95.5 >> ${PLIST}
 
 .include "../../x11-toolkits/linux-gtk/Makefile"
