@@ -8,8 +8,11 @@
 PORTNAME=	fl_editor
 PORTVERSION=	0.4
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mirrors/mysql/Downloads/mysqlgui
+MASTER_SITES=	http://www.mysql.com/Downloads/%SUBDIR%/ \
+		ftp://mysql.nixc.net/pub/mysql/Downloads/%SUBDIR%/ \
+		ftp://sunsite.dk/ftp/mirrors/mysql/Downloads/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/%SUBDIR%/
+MASTER_SITE_SUBDIR=	mysqlgui
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 
