@@ -478,6 +478,7 @@
     SUBDIR += p5-ConfigReader
     SUBDIR += p5-Coro
     SUBDIR += p5-Curses
+    SUBDIR += p5-Curses-Forms
     SUBDIR += p5-Curses-Widgets
     SUBDIR += p5-DB_File-Lock
     SUBDIR += p5-Data-Compare
