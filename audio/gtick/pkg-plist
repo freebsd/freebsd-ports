@@ -1,0 +1,12 @@
+bin/gtick
+share/locale/de/LC_MESSAGES/gtick.mo
+share/locale/af/LC_MESSAGES/gtick.mo
+share/locale/en@boldquot/LC_MESSAGES/gtick.mo
+share/locale/en@quot/LC_MESSAGES/gtick.mo
+share/locale/es/LC_MESSAGES/gtick.mo
+share/locale/fi/LC_MESSAGES/gtick.mo
+share/locale/fr/LC_MESSAGES/gtick.mo
+share/locale/ga/LC_MESSAGES/gtick.mo
+share/locale/nl/LC_MESSAGES/gtick.mo
+share/locale/ro/LC_MESSAGES/gtick.mo
+share/locale/ru/LC_MESSAGES/gtick.mo

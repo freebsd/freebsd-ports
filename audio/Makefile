@@ -127,6 +127,7 @@
     SUBDIR += gsi
     SUBDIR += gsm
     SUBDIR += gspeakers
+    SUBDIR += gtick
     SUBDIR += gtkgep
     SUBDIR += gtkpod
     SUBDIR += holyshout
