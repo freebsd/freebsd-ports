@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zimg
-PORTVERSION=	4.2.2
+PORTVERSION=	4.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.zellner.org/zimg/download/
 
