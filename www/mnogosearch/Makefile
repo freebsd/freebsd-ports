@@ -28,6 +28,7 @@ CONFIGURE_ARGS+=--enable-phrase \
 		--enable-shared \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
 		--localstatedir=/var/mnogosearch
+CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}"
 
 OPTIONS=        MNOGO_THREADS "Enable pthreads"                   on  \
 		MNOGO_SSL     "Enable SSL"                        on  \
