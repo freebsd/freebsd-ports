@@ -1,0 +1,18 @@
+Washington University BLAST (WU BLAST) version 2.0 is a powerful
+software package for gene and protein identification, using sensitive,
+selective and rapid similarity searches of protein and nucleotide
+sequence databases. WU BLAST 2.0 builds upon WU BLAST 1.4, which in turn
+was based on the public domain NCBI BLAST version 1.4. While NCBI BLAST
+and WU BLAST 1.4 are in the public domain, WU BLAST 2.0 contains
+significant new features and extended capabilities, the development of
+which began in late 1994, at Washington University in Saint Louis. First
+released in May 1996, or more than a year ahead of the NCBI, WU BLAST
+2.0 is the original gapped BLAST with statistics and is known for
+setting higher standards for sensitivity, speed, correctness and
+accuracy, scalability and reliability than competing programs and
+implementations. WU BLAST is neither a re-hashed nor "Mac-ified" version
+of NCBI BLAST, although WU BLAST in many ways is easier to use. WU BLAST
+essentially shares no code with NCBI BLAST, except for portions that
+both packages derived from ungapped NCBI BLAST 1.4.
+
+WWW: http://blast.wustl.edu

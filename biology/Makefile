@@ -10,6 +10,7 @@
     SUBDIR += avida
     SUBDIR += babel
     SUBDIR += biojava
+    SUBDIR += blast
     SUBDIR += chemeq
     SUBDIR += clustalw
     SUBDIR += coalesce
