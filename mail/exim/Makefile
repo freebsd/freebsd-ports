@@ -355,6 +355,9 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/POST-INSTALL-NOTES ${DOCSDIR}
+.if !defined(WITHOUT_EXISCAN)
+	${INSTALL_DATA} ${FILESDIR}/POST-INSTALL-NOTES.clamd ${DOCSDIR}
+.endif
 .for file in ${PORTDOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
