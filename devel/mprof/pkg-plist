@@ -1,4 +1,4 @@
 @cwd /usr/local
 bin/mprof
 lib/libc_mp.a
-man/man1/mprof.1
+man/man1/mprof.1.gz
