@@ -44,10 +44,10 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/server.conf/gsi.conf.fbsd \
 		 ${PREFIX}/etc/gsi.conf.sample
 .for fileNdx in gsi_server gsifile gsiplay
-	@strip ${PREFIX}/bin/${fileNdx}
+	@${STRIP_CMD} ${PREFIX}/bin/${fileNdx}
 .endfor
 .for lib in "" cd f midi_pcm mixer pcm synth
-	@strip ${PREFIX}/lib/libgsi${lib}.so.[02]
+	@${STRIP_CMD} ${PREFIX}/lib/libgsi${lib}.so.[02]
 .endfor
 	@${ECHO} "A sample configuration file was installed as" \
 		${PREFIX}/etc/gsi.conf.sample.
