@@ -13,10 +13,14 @@ lib/libbeep.so
 lib/libbeep.so.1
 lib/beep/Input/libcdaudio.so
 lib/beep/Input/libmpg123.so
+%%VORBISPLUGIN:%%lib/beep/Input/libvorbis.so
 lib/beep/Output/libOSS.so
 %%ESDPLUGIN:%%lib/beep/Output/libesdout.so
 lib/beep/Visualization/libbscope.so
 share/aclocal/beep.m4
+@dirrm share/beep/Skins
+@dirrm share/beep
+@dirrm lib/beep/Visualization
 @dirrm lib/beep/Output
 @dirrm lib/beep/Input
 @dirrm lib/beep
