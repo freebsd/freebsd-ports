@@ -2,10 +2,6 @@
 
 cd $WRKDIR || exit 1
 
-mv tex-archive/fonts/cm .
-mv tex-archive/systems/knuth/lib .
-mv tex-archive/macros/plain .
-
 find . -name \*.gz |xargs gunzip -f
 
 cd $WRKSRC || exit 1;
@@ -13,9 +9,9 @@ cd $WRKSRC || exit 1;
 ./configure --prefix=$PREFIX
 
 cd web2c
-for i in ../../cm/tfm/*tfm; do ln -s $i; done
-for i in ../../plain/base/*tex; do ln -s $i; done
-for i in ../../cm/mf/*mf; do ln -s $i; done
+for i in ../../tfm/*tfm; do ln -s $i; done
+for i in ../../base/*tex; do ln -s $i; done
+for i in ../../mf/*mf; do ln -s $i; done
 for i in ../../lib/*mf; do ln -s $i; done
 cp $DISTDIR/modes.mf . || exit 1;
 
