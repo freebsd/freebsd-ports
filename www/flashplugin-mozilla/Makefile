@@ -23,6 +23,13 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/Plugin
 
 do-install:
+.if exists(${X11BASE}/lib/mozilla)
+	@${ECHO_MSG} "Installing flashplugin for mozilla"
 	@${INSTALL_PROGRAM} ${WRKSRC}/npflash.so ${X11BASE}/lib/mozilla/plugins
+.endif
+.if exists(${X11BASE}/lib/mozilla-devel)
+	@${ECHO_MSG} "Installing flashplugin for mozilla-devel"
+	@${INSTALL_PROGRAM} ${WRKSRC}/npflash.so ${X11BASE}/lib/mozilla-devel/plugins
+.endif
 
 .include <bsd.port.mk>
