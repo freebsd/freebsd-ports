@@ -43,7 +43,6 @@
     SUBDIR += emil
     SUBDIR += evolution
     SUBDIR += exim
-    SUBDIR += exim-devel
     SUBDIR += exim-doc-html
     SUBDIR += exim-doc-pdf
     SUBDIR += exim-doc-postscript
@@ -51,6 +50,7 @@
     SUBDIR += exim-ldap2
     SUBDIR += exim-monitor
     SUBDIR += exim-mysql
+    SUBDIR += exim-old
     SUBDIR += exim-postgresql
     SUBDIR += exmh2
     SUBDIR += ezmlm
