@@ -1,0 +1,24 @@
+--- Makefile.orig	Fri Sep 21 19:41:47 2001
++++ Makefile	Thu Nov  8 00:16:26 2001
+@@ -1,16 +1,16 @@
+-LIBDIR = -L/usr/X11R6/lib -L/usr/lib -L/opt/gnome/lib
+-LIBS   = -lXpm -lXext -lX11 -lm  -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl 
+-CFLAGS = -I/usr/X11R6/include -I/usr/lib/glib/include -I/opt/gnome/include/gtk-1.2 -I/opt/gnome/include/glib-1.2 -I/opt/gnome/lib/glib/include
++LIBDIR = -L${X11BASE}/lib
++LIBS   = `${GTK_CONFIG} --libs` -lXpm
++CFLAGS += `${GTK_CONFIG} --cflags`
+ OBJS =	washerDryer.o \
+ 		../wmgeneral/wmgeneral.o \
+ 		../wmgeneral/misc.o \
+ 		../wmgeneral/list.o
+ 
+ .c.o:
+-	cc -c -O2 -Wall $< -o $*.o $(CFLAGS)
++	$(CC) -c -Wall $< -o $*.o $(CFLAGS)
+ 
+ washerDryer: $(OBJS)
+-	cc -Wall -pedantic -g -o washerDryer $^ $(LIBDIR) $(LIBS)
++	$(CC) -o washerDryer $^ $(LIBDIR) $(LIBS)
+ 
+ all:: washerDryer
+ 

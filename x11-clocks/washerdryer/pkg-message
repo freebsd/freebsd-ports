@@ -1,0 +1,10 @@
+
+
+Check manpage washerDryer(1) for more information.
+
+Example configuration file is located at:
+%%EXAMPLE%%
+
+install the edited version of the config file as ~/.wdryerrc
+
+

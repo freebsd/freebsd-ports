@@ -21,6 +21,7 @@
     SUBDIR += swisswatch
     SUBDIR += t3d
     SUBDIR += tclock
+    SUBDIR += washerdryer
     SUBDIR += wmcalclock
     SUBDIR += wmclock
     SUBDIR += wmdate
