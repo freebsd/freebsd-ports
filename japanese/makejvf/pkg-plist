@@ -131,10 +131,16 @@ share/texmf/fonts/vf/makejvf/Jun101-Light-V.vf
 share/texmf/fonts/vf/makejvf/Ryumin-Light-H.vf
 share/texmf/fonts/vf/makejvf/Ryumin-Light-J.vf
 share/texmf/fonts/vf/makejvf/Ryumin-Light-V.vf
+@dirrm share/texmf/dvips/makejvf
+@unexec rmdir %D/share/texmf/dvips 2>/dev/null || true
 @dirrm share/texmf/fonts/tfm/makejvf/ptex
 @dirrm share/texmf/fonts/tfm/makejvf/dvips
 @dirrm share/texmf/fonts/tfm/makejvf
+@unexec rmdir %D/share/texmf/fonts/tfm 2>/dev/null || true
 @dirrm share/texmf/fonts/vf/makejvf
+@unexec rmdir %D/share/texmf/fonts/vf 2>/dev/null || true
+@unexec rmdir %D/share/texmf/fonts 2>/dev/null || true
+@unexec rmdir %D/share/texmf 2>/dev/null || true
 @dirrm share/doc/makejvf-fkr
 @exec if [ -x %D/bin/mktexlsr ]; then %D/bin/mktexlsr; fi
 @unexec if [ -x %D/bin/mktexlsr ]; then %D/bin/mktexlsr; fi
