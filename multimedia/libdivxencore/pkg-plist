@@ -2,5 +2,5 @@ include/divx/encore.h
 lib/libdivxencore.a
 lib/libdivxencore.so
 lib/libdivxencore.so.%%LIB_VERSION%%
-lib/libdivxencore_p.a
+%%NOPROFILE%%lib/libdivxencore_p.a
 @unexec rmdir %D/include/divx 2>/dev/null || true
