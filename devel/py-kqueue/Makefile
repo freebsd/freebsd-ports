@@ -8,7 +8,8 @@
 PORTNAME=		kqueue
 PORTVERSION=		1.1
 CATEGORIES=		devel python
-MASTER_SITES=		http://people.freebsd.org/~dwhite/PyKQueue/
+MASTER_SITES=		{$MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dwhite
 PKGNAMEPREFIX=		py-
 DISTNAME=		PyKQueue-${PORTVERSION}
 
