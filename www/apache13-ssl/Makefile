@@ -19,7 +19,7 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.flirble.org/pub/web/apache/dist/ \
 		ftp://ftp.replay.com/pub/crypto/apache/Apache-SSL/ \
 		ftp://ukug.uk.freebsd.org/pub/mirrors/apache/dist/ \
-		ftp://ftp.win.or.jp/pub/network/security/apache-ssl/Apache-SSL/ \
+		ftp://ftp.win.ne.jp/pub/network/security/apache-ssl/ \
 		ftp://ftp.sage-au.org.au/pub/network/security/apache-ssl/Apache-SSL/ \
 		ftp://ftp.vwv.com/pub/crypto/SSL/Apache-SSL/ \
 		ftp://mirror.aarnet.edu.au/www/servers/apache-ssl/ \
