@@ -1,0 +1,8 @@
+DBD::LDAP is a DBI extension module adding an SQL database interface to 
+standard LDAP databases to Perl's database-independent database interface.  
+You will need access to an existing LDAP database or set up your own using 
+an LDAP server, ie. "OpenLDAP".
+
+WWW: http://search.cpan.org/search?dist=DBD-LDAP
+
+Seamus Venasse <svenasse@polaris.ca>

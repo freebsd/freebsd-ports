@@ -73,6 +73,7 @@
     SUBDIR += p5-DBD-Excel
     SUBDIR += p5-DBD-InterBase
     SUBDIR += p5-DBD-mysql
+    SUBDIR += p5-DBD-LDAP
     SUBDIR += p5-DBD-ODBC
     SUBDIR += p5-DBD-Oracle
     SUBDIR += p5-DBD-Pg
