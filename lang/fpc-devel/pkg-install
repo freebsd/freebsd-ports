@@ -1,0 +1,31 @@
+#!/bin/sh
+# $FreeBSD$
+
+[ $# != 2 ] && exit 1
+PKGNAME=$1
+ACTION=$2
+
+LIBDIR=${PKG_PREFIX}/lib/fpc/${PKGNAME##fpc-}
+
+LN=/bin/ln
+SH=/bin/sh
+
+case "$ACTION" in
+
+POST-INSTALL)
+		@${LN} -sf ${LIBDIR}/ppc386 ${PKG_PREFIX}/bin/ppc386
+		@${SH} ${LIBDIR}/samplecfg ${LIBDIR} ${PKG_PREFIX}/etc
+	;;
+
+DEINSTALL)
+	;;
+
+PRE-INSTALL|POST-DEINSTALL)
+	;;
+
+*)
+	exit 1
+	;;
+esac
+
+exit
