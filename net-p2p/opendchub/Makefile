@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opendchub
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.9
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +17,7 @@ COMMENT=	Unofficial Unix version of the Direct Connect Hub software
 USE_PERL5=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
 .for file in src/fileio.c src/main.c
