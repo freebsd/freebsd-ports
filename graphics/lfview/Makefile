@@ -21,7 +21,8 @@ NO_INSTALL_MANPAGES=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (-fPIC missing)"
+CFLAGS+=	-fPIC
+MAKE_ENV=	"SHLIBGLOBALSFLAGS=-fPIC"
 .endif
 
 do-install:
