@@ -18,7 +18,6 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_AUTOCONF=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 

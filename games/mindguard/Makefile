@@ -15,7 +15,6 @@ MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Helpful utility for detecting and jamming harmful mind-control rays
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 ALL_TARGET=	# empty

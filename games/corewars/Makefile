@@ -15,7 +15,6 @@ MAINTAINER=	jim@FreeBSD.org
 COMMENT=	A simulation came where the goal is to crash each other's programs
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 MAKE_ENV=	FREEBSD_CFLAGS="${CFLAGS}"

@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://vampiro.rshb.com.ru/pub/warez/virt/ \
 MAINTAINER=	lg@rrf.ru
 COMMENT=	Game and keyboard teacher in one. Enjoy it!
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 MAN6=		virt.6
 MANCOMPRESSED=	no

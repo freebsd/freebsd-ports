@@ -15,7 +15,6 @@ COMMENT=	Arithmetic quiz program for X Window System
 
 ALL_TARGET=	# empty
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WRKSRC=		${WRKDIR}/garith
 

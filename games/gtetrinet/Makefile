@@ -18,7 +18,6 @@ LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix esound
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

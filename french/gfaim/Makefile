@@ -14,7 +14,6 @@ MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Gfaim est un logiciel de recherche de recettes de cuisine
 
 USE_X_PREFIX= 	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 DATADIR?=	${PREFIX}/lib/gfaim

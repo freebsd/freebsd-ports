@@ -23,7 +23,6 @@ COMMENT?=	UNIX/X11 port of the Multi Arcade Machine Emulator (MAME)
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 
 MAN6=		x${MAMEMESS}.6
 

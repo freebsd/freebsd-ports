@@ -15,7 +15,6 @@ COMMENT=	A game looking for the difference between two pictures
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 
 post-install:

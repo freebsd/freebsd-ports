@@ -16,7 +16,6 @@ MAINTAINER=	dom@happygiraffe.net
 COMMENT=	A simple GTK+ editor
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 ALL_TARGET=	gxedit

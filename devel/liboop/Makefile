@@ -18,7 +18,6 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/net/adns \
 		wwwcore.1:${PORTSDIR}/www/libwww
 
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

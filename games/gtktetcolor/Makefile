@@ -17,7 +17,6 @@ COMMENT=	A game for GNOME that resembles well-known tetris and columns
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -19,7 +19,6 @@ COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

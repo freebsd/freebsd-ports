@@ -17,7 +17,6 @@ COMMENT=	A source-level tracer for Haskell 98
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 
 .include <bsd.port.pre.mk>

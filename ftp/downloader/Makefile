@@ -21,7 +21,6 @@ COMMENT=	Program for downloading via ftp or http with GUI
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
-USE_GNOMENG=	yes
 USE_GNOME=	esound
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

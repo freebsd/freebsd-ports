@@ -16,7 +16,6 @@ COMMENT=	Find quake servers
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

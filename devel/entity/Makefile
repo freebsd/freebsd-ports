@@ -20,7 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-tcl=no
 
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 

@@ -24,7 +24,6 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 USE_GMAKE=	yes
 LATEST_LINK=	libsigc++12
 INSTALLS_SHLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 USE_LIBTOOL=	yes
 

@@ -17,7 +17,6 @@ COMMENT=	Bonobo configuration moniker
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo gconf
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

@@ -18,7 +18,6 @@ COMMENT=	GNOME glade library
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier gnomedb
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

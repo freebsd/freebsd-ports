@@ -16,7 +16,6 @@ COMMENT=	GRhino Othello/Reversi Program
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs gnomeprefix
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes

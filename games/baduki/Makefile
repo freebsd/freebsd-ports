@@ -15,7 +15,6 @@ COMMENT=	The game of Go
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -23,7 +23,6 @@ RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"

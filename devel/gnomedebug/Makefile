@@ -20,7 +20,6 @@ LIB_DEPENDS=	gdl.0:${PORTSDIR}/x11-toolkits/gdl
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo gnomevfs libglade gal
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

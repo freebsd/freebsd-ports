@@ -28,7 +28,6 @@ USE_XPM=	yes
 GNU_CONFIGURE=	yes
 
 .if defined(VICE_WITH_GNOME)
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 CONFIGURE_ARGS=	--enable-gnomeui
 .else

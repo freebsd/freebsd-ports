@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A networked Mah Jong program, together with a computer player
 
 USE_PERL5=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 MAKE_ENV=	CCLINK="${CC}" CDEBUGFLAGS="${CFLAGS}" \

@@ -23,7 +23,6 @@ LIB_DEPENDS=		gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_GNOMENG=		yes
 USE_GNOME=		gnomehack gnomeprefix
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=		PCRE_CONFIG="${PCRE_WRKDIR}/.install/bin/pcre-config"

@@ -38,7 +38,6 @@ WITH_CSCOPE=	yes
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
 PATCH_DIST_ARGS=	-d ${WRKSRC:S/src$//} --forward --quiet -E ${PATCH_DIST_STRIP}

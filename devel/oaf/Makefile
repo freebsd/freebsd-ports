@@ -21,7 +21,6 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gtk12 orbit libxml
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes

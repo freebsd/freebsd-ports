@@ -16,7 +16,6 @@ MAINTAINER=	blackend@FreeBSD.org
 COMMENT=	A chess-like strategy game with battle options
 
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	esound gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

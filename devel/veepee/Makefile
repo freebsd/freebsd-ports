@@ -17,7 +17,6 @@ COMMENT=	A user orientated scripting environment for embedding in applications
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 USE_XLIB=	yes
 USE_PYTHON=	yes

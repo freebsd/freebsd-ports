@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gnome.p
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		glade:${PORTSDIR}/devel/glade
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix
 PERL_CONFIGURE=	yes
 

@@ -23,7 +23,6 @@ LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack glib12 gtk12 oaf libxml orbit
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

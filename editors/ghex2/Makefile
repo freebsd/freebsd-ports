@@ -23,7 +23,6 @@ LIB_DEPENDS=	gailutil.17:${PORTSDIR}/x11-toolkits/gail \
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes

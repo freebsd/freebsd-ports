@@ -15,7 +15,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A user interface builder for GTK+/GNOME
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo gnomedb
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-bonobo --enable-gnome-db
