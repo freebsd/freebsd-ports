@@ -1,0 +1,11 @@
+--- bstring.cpp	2000/11/30 14:50:57	1.1
++++ bstring.cpp	2000/11/30 14:57:48
+@@ -150,7 +150,7 @@
+ 		if(strlen(str) < strlen(s))	// If more memory is needed
+ 			*this = s;			// Use assign function
+ 		else						// If stpcpy can be used
+-			stpcpy(str, s);		// Copy s into str
++			strcpy(str, s);		// Copy s into str
+ 	}
+ 
+ 	return *this;					// Return a refrence to this object
