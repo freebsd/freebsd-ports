@@ -14,7 +14,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_GCC30=	yes
+USE_GCC=	3.1
 CONFGARGS=	--prefix ${PREFIX}
 CONFGARGS+=	--xml2-config ${PREFIX}/bin/xml2-config
 
