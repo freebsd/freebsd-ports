@@ -1,0 +1,11 @@
+--- util/Makefile.orig	Mon Mar 15 04:47:13 2004
++++ util/Makefile	Mon Mar 15 04:47:19 2004
+@@ -14,7 +14,7 @@
+ #SunOS users (and others?) should consider static linking of their passwd binary
+ #CFLAGS= -O -I../cracklib '-DCRACKLIB_DICTPATH="$(DICTPATH)"' -Bstatic
+ 
+-CFLAGS= -O -I../cracklib '-DCRACKLIB_DICTPATH="$(DICTPATH)"'
++CFLAGS+=-I../cracklib '-DCRACKLIB_DICTPATH="$(DICTPATH)"'
+ LIBS=	../cracklib/libcrack.a
+ 
+ all:	packer unpacker testnum teststr testlib

@@ -7,7 +7,7 @@
 
 PORTNAME=	cracklib
 PORTVERSION=	2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.crypticide.org/users/alecm/security/
 DISTNAME=	${PORTNAME},${PORTVERSION}
@@ -17,9 +17,12 @@ COMMENT=	Password-checking library
 
 MAN3=		cracklib.3
 MLINKS=		cracklib.3 FascistCheck.3
+INSTALLS_SHLIB=	yes
 
 pre-install:
 	${INSTALL_DATA} ${WRKSRC}/cracklib/libcrack.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/cracklib/libcrack.so.1 ${PREFIX}/lib
+	${LN} -sf libcrack.so.1 ${PREFIX}/lib/libcrack.so
 	${INSTALL_DATA} ${WRKSRC}/cracklib/packer.h ${PREFIX}/include
 	${INSTALL_SCRIPT} ${WRKSRC}/util/mkdict ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/util/packer ${PREFIX}/bin
