@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitset
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	math ruby
 MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
