@@ -1,0 +1,53 @@
+--- gcc/Makefile.in.orig	Thu Aug 24 19:46:43 2000
++++ gcc/Makefile.in	Thu Aug 24 19:50:43 2000
+@@ -1407,12 +1407,12 @@
+ # Language-independent files.
+ 
+ DRIVER_DEFINES = \
+-  -DSTANDARD_STARTFILE_PREFIX=\"$(unlibsubdir)/\" \
++  -DSTANDARD_STARTFILE_PREFIX=\"$(libdir)/\" \
+   -DSTANDARD_EXEC_PREFIX=\"$(libdir)/gcc-lib/\" \
+   -DDEFAULT_TARGET_VERSION=\"$(version)\" \
+   -DDEFAULT_TARGET_MACHINE=\"$(target_alias)\" \
+   -DSTANDARD_BINDIR_PREFIX=\"$(bindir)/\" \
+-  -DTOOLDIR_BASE_PREFIX=\"$(unlibsubdir)/../\"
++  -DTOOLDIR_BASE_PREFIX=\"$(local_prefix)/\"
+ gcc.o: gcc.c $(CONFIG_H) system.h intl.h multilib.h \
+     Makefile $(lang_specs_files) prefix.h
+ 	$(CC) $(ALL_CFLAGS) $(ALL_CPPFLAGS) $(INCLUDES) \
+@@ -1972,7 +1972,7 @@
+ 	$(CC) $(ALL_CFLAGS) $(ALL_CPPFLAGS) $(INCLUDES) \
+ 	  -DGCC_INCLUDE_DIR=\"$(libsubdir)/include\" \
+ 	  -DGPLUSPLUS_INCLUDE_DIR=\"$(gcc_gxx_include_dir)\" \
+- 	  -DLOCAL_INCLUDE_DIR=\"$(libsubdir)/$(unlibsubdir)/..`echo $(exec_prefix) | sed -e 's|^$(prefix)||' -e 's|/[^/]*|/..|g'`/include\" \
++ 	  -DLOCAL_INCLUDE_DIR=\"$(local_prefix)`echo $(exec_prefix) | sed -e 's|^$(prefix)||' -e 's|/[^/]*|/..|g'`/include\" \
+ 	  -DCROSS_INCLUDE_DIR=\"$(gcc_tooldir)/sys-include\" \
+ 	  -DTOOL_INCLUDE_DIR=\"$(gcc_tooldir)/include\" \
+ 	  -c `echo $(srcdir)/cccp.c | sed 's,^\./,,'`
+@@ -2006,7 +2006,7 @@
+ 	$(CC) $(ALL_CFLAGS) $(ALL_CPPFLAGS) $(INCLUDES) \
+ 	  -DGCC_INCLUDE_DIR=\"$(libsubdir)/include\" \
+ 	  -DGPLUSPLUS_INCLUDE_DIR=\"$(gcc_gxx_include_dir)\" \
+- 	  -DLOCAL_INCLUDE_DIR=\"$(libsubdir)/$(unlibsubdir)/..`echo $(exec_prefix) | sed -e 's|^$(prefix)||' -e 's|/[^/]*|/..|g'`/include\" \
++ 	  -DLOCAL_INCLUDE_DIR=\"$(local_prefix)`echo $(exec_prefix) | sed -e 's|^$(prefix)||' -e 's|/[^/]*|/..|g'`/include\" \
+ 	  -DCROSS_INCLUDE_DIR=\"$(gcc_tooldir)/sys-include\" \
+ 	  -DTOOL_INCLUDE_DIR=\"$(gcc_tooldir)/include\" \
+ 	  -c `echo $(srcdir)/cppinit.c | sed 's,^\./,,'`
+@@ -2031,7 +2031,7 @@
+ 	  -DGPLUSPLUS_INCLUDE_DIR=\"$(gcc_gxx_include_dir)\" \
+ 	  -DCROSS_INCLUDE_DIR=\"$(gcc_tooldir)/sys-include\" \
+ 	  -DTOOL_INCLUDE_DIR=\"$(gcc_tooldir)/include\" \
+- 	  -DLOCAL_INCLUDE_DIR=\"$(libsubdir)/$(unlibsubdir)/..`echo $(exec_prefix) | sed -e 's|^$(prefix)||' -e 's|/[^/]*|/..|g'`/include\" \
++ 	  -DLOCAL_INCLUDE_DIR=\"$(local_prefix)`echo $(exec_prefix) | sed -e 's|^$(prefix)||' -e 's|/[^/]*|/..|g'`/include\" \
+ 	  -DSTD_PROTO_DIR=\"$(libsubdir)\" \
+ 	  $(srcdir)/protoize.c
+ 
+@@ -2042,7 +2042,7 @@
+ 	  -DGPLUSPLUS_INCLUDE_DIR=\"$(gcc_gxx_include_dir)\" \
+ 	  -DCROSS_INCLUDE_DIR=\"$(gcc_tooldir)/sys-include\" \
+ 	  -DTOOL_INCLUDE_DIR=\"$(gcc_tooldir)/include\" \
+- 	  -DLOCAL_INCLUDE_DIR=\"$(libsubdir)/$(unlibsubdir)/..`echo $(exec_prefix) | sed -e 's|^$(prefix)||' -e 's|/[^/]*|/..|g'`/include\" \
++ 	  -DLOCAL_INCLUDE_DIR=\"$(local_prefix)`echo $(exec_prefix) | sed -e 's|^$(prefix)||' -e 's|/[^/]*|/..|g'`/include\" \
+ 	  -DSTD_PROTO_DIR=\"$(libsubdir)\" \
+ 	  $(srcdir)/unprotoize.c
+ 

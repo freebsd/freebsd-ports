@@ -1,25 +1,24 @@
+bin/cpp
+bin/gcjh
+bin/gcov
 bin/i386-mingw32msvc-c++
+bin/i386-mingw32msvc-c++filt
 bin/i386-mingw32msvc-chill
-bin/i386-mingw32msvc-cpp
 bin/i386-mingw32msvc-g++
 bin/i386-mingw32msvc-g77
 bin/i386-mingw32msvc-gcc
 bin/i386-mingw32msvc-gcj
-bin/i386-mingw32msvc-gcjh
-bin/i386-mingw32msvc-gcov
-bin/i386-mingw32msvc-jcf-dump
-bin/i386-mingw32msvc-jv-scan
 bin/i386-mingw32msvc-protoize
 bin/i386-mingw32msvc-unprotoize
+bin/jcf-dump
+bin/jv-scan
 i386-mingw32msvc/bin/gcc
 i386-mingw32msvc/include/_G_config.h
 i386-mingw32msvc/lib/libiberty.a
 i386-mingw32msvc/lib/libstdc++.a.2.10.0
-@unexec install-info --delete %D/info/chill.info %D/info/dir
 @unexec install-info --delete %D/info/cpp.info %D/info/dir
 @unexec install-info --delete %D/info/g77.info %D/info/dir
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
-info/chill.info
 info/cpp.info
 info/cpp.info-1
 info/cpp.info-2
@@ -77,7 +76,6 @@ info/gcc.info-6
 info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
-@exec install-info %D/info/chill.info %D/info/dir
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
@@ -294,5 +292,5 @@ lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/libgcc.a
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/libobjc.a
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/libstdc++.a
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/specs
-@dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%
-@dirrm lib/gcc-lib/i386-mingw32msvc
+@unexec rmdir -p %D/lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%% 2>/dev/null || true
+lib/libiberty.a
