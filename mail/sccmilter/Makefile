@@ -18,6 +18,8 @@ COMMENT=	Sendmail spam control and canceling filter, based on Milter API
 IGNORE=		requires Sendmail 8.12; upgrade the base system
 .endif
 
+BROKEN=		Does not compile
+
 USE_BZIP2=		yes
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=		yes
