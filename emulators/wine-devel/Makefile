@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	20031118
+PORTVERSION=	20031212
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
 DISTNAME=	Wine-${PORTVERSION}
 
 MAINTAINER=	gerald@FreeBSD.org
-COMMENT=	Microsoft Windows 3.1/95/98/NT/2000 emulator for Unix
+COMMENT=	Microsoft Windows emulator for Unix
 
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION}
 GNU_CONFIGURE=	yes
@@ -56,10 +56,6 @@ post-extract:
 post-configure:
 	cd ${WRKSRC} && make depend
 
-post-build:
-	${SED} 's-\./\(reg.*\.pl\)-'${PREFIX}/lib/wine/reg/'\1-' \
-		${WRKSRC}/programs/regapi/regSet.sh > ${WRKDIR}/regSet.sh
-
 do-install:
 	cd ${WRKSRC} && ${GMAKE} install
 	${INSTALL_SCRIPT} ${WRKDIR}/regSet.sh ${PREFIX}/bin
@@ -73,21 +69,14 @@ do-install:
 .for i in README ANNOUNCE AUTHORS LICENSE
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
 .endfor
-.for i in regapi wcmd winedbg
+.for i in wcmd winedbg
 	${INSTALL_DATA} ${WRKSRC}/programs/${i}/README \
 		${PREFIX}/share/doc/${PORTNAME}/README.${i}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README \
 		${PREFIX}/share/doc/${PORTNAME}/README.winedump
 .endif
-	-@${MKDIR} ${PREFIX}/lib/wine/reg
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl \
-		${PREFIX}/lib/wine
-	${INSTALL_PROGRAM} ${WRKSRC}/programs/regapi/regapi.exe.so ${PREFIX}/lib/wine
-	${INSTALL_SCRIPT} \
-		${WRKSRC}/programs/regapi/regFixer.pl \
-		${WRKSRC}/programs/regapi/regRestorer.pl \
-		${PREFIX}/lib/wine/reg
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl ${PREFIX}/lib/wine
 	${INSTALL_DATA} ${WRKSRC}/winedefault.reg ${PREFIX}/lib/wine
 	${ECHO}
 	@${SED} s+%%PREFIX%%+${PREFIX}+g <${PKGMESSAGE}
