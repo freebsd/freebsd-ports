@@ -1,0 +1,12 @@
+--- src/image.cc.orig	Thu Feb 10 10:36:20 2000
++++ src/image.cc	Fri Feb 18 03:26:13 2000
+@@ -29,7 +29,9 @@
+ 
+ #include "sapphire.hh"
+ 
++#ifndef __STDC__
+ #include <malloc.h>
++#endif
+ 
+ #ifdef GradientHack
+ #  include <math.h>
