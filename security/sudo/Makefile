@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/ \
 		ftp://ftp.stikman.com/pub/sudo/ \
 		ftp://ftp.uu.net/pub/security/sudo/
-DISTNAME=	${PORTNAME}-1.6.5
 
 MAINTAINER=	mharo@FreeBSD.org
 
@@ -43,7 +42,7 @@ MAN5=		sudoers.5
 MAN8=		sudo.8 visudo.8
 
 post-patch:
-	perl -i -pe 's,^,#,g' ${WRKSRC}/sample.sudoers
+	@${PERL} -i -pe 's,^,#,g' ${WRKSRC}/sample.sudoers
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${PREFIX}/etc/sudoers.sample
