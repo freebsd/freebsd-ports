@@ -23,11 +23,11 @@ MAN4=		ng_netflow.4
 MAN8=		flowctl.8
 MANCOMPRESSED=	yes
 
-.if exists(/usr/sbin/flowctl)
-IGNORE=		"already exists in base"
-.endif
-
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600003
+IGNORE=		"already exists in base system"
+.endif
 
 pre-fetch:
 
