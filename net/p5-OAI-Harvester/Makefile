@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	OAI-Harvester
-PORTVERSION=	0.82
+PORTVERSION=	0.9
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -17,8 +17,7 @@ COMMENT=	A module to harvest using the OAI protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
+		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -42,7 +41,7 @@ MAN1=		oai-listsets.1 oai-listrecords.1
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
-IGNORE=		Port requires perl 5.8.x or later. Install lang/perl5.8then try again
+IGNORE=		Port requires perl 5.8.x or later. Install lang/perl5.8 then try again
 .endif
 
 .include <bsd.port.post.mk>
