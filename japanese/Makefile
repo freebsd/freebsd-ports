@@ -105,6 +105,7 @@
     SUBDIR += hns
     SUBDIR += ical
     SUBDIR += im-ja
+    SUBDIR += ipa-ttfonts
     SUBDIR += ipadic
     SUBDIR += ircII
     SUBDIR += iv
