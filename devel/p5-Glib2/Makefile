@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Glib2
-PORTVERSION=	1.040
-PORTREVISION=	1
+PORTVERSION=	1.042
+PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
@@ -29,30 +29,14 @@ CONFIGURE_ARGS+=	disable-threadsafe
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:S/2//}-${PORTVERSION}
 
-MAN3=		Glib.3 \
-		Glib::Boxed.3 \
-		Glib::Error.3 \
-		Glib::Flags.3 \
-		Glib::GenPod.3 \
-		Glib::Log.3 \
-		Glib::MainLoop.3 \
-		Glib::MakeHelper.3 \
-		Glib::Object.3 \
-		Glib::Object::Subclass.3 \
-		Glib::ParamSpec.3 \
-		Glib::ParseXSDoc.3 \
-		Glib::Signal.3 \
-		Glib::Type.3 \
-		Glib::Utils.3 \
-		Glib::devel.3 \
-		Glib::index.3 \
-		Glib::version.3 \
-		Glib::xsapi.3
-
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500800
 IGNORE=		This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
 .endif
+
+post-install:
+	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
+		's,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
