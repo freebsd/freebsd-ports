@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Oct 22 12:26:35 2001
-+++ configure	Mon Oct 22 13:58:39 2001
-@@ -1710,7 +1710,7 @@
+--- configure.orig	Tue Dec 11 12:50:51 2001
++++ configure	Tue Dec 11 12:52:36 2001
+@@ -1709,7 +1709,7 @@
  
  
  
@@ -12,53 +12,24 @@ $FreeBSD$
                  game_datadir=`(
                       test "x$prefix" = xNONE && prefix="$ac_default_prefix"
                       test "x$exec_prefix" = xNONE && exec_prefix="${prefix}"
-@@ -1722,16 +1722,16 @@
- EOF
+@@ -1729,16 +1729,16 @@
+ fi
  
  
 -ac_safe=`echo "SDL/SDL.h" | sed 'y%./+-%__p_%'`
 -echo $ac_n "checking for SDL/SDL.h""... $ac_c" 1>&6
--echo "configure:1728: checking for SDL/SDL.h" >&5
+-echo "configure:1735: checking for SDL/SDL.h" >&5
 +ac_safe=`echo "SDL.h" | sed 'y%./+-%__p_%'`
 +echo $ac_n "checking for SDL.h""... $ac_c" 1>&6
-+echo "configure:1728: checking for SDL.h" >&5
++echo "configure:1735: checking for SDL.h" >&5
  if eval "test \"`echo '$''{'ac_cv_header_$ac_safe'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    cat > conftest.$ac_ext <<EOF
- #line 1733 "configure"
+ #line 1740 "configure"
  #include "confdefs.h"
 -#include <SDL/SDL.h>
 +#include <SDL.h>
  EOF
  ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:1738: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
-@@ -2646,7 +2646,7 @@
- ac_given_srcdir=$srcdir
- ac_given_INSTALL="$INSTALL"
- 
--trap 'rm -fr `echo "Makefile source/Makefile source/docs/Makefile source/docs/en/Makefile source/sdl/Makefile source/libs/triangul/Makefile source/libs/Makefile source/ai/Makefile source/unix/Makefile  config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
-+trap 'rm -fr `echo "Makefile source/Makefile source/docs/Makefile source/docs/en/Makefile source/sdl/Makefile source/libs/triangul/Makefile source/libs/Makefile source/ai/Makefile source/unix/Makefile  doc/manpages/Makefile source/Makefile source/docs/Makefile source/clparser/Makefile source/docs/en/Makefile source/sdl/Makefile source/libs/triangul/Makefile source/libs/Makefile source/ai/Makefile source/unix/Makefile source/unix/mapeditor/Makefile source/tools/Makefile source/tools/linux/Makefile data/Makefile data/moredata/Makefile doc/Makefile config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
- EOF
- cat >> $CONFIG_STATUS <<EOF
- 
-@@ -2744,7 +2744,7 @@
- 
- cat >> $CONFIG_STATUS <<EOF
- 
--CONFIG_FILES=\${CONFIG_FILES-"Makefile source/Makefile source/docs/Makefile source/docs/en/Makefile source/sdl/Makefile source/libs/triangul/Makefile source/libs/Makefile source/ai/Makefile source/unix/Makefile "}
-+CONFIG_FILES=\${CONFIG_FILES-"Makefile source/Makefile source/docs/Makefile source/docs/en/Makefile source/sdl/Makefile source/libs/triangul/Makefile source/libs/Makefile source/ai/Makefile source/unix/Makefile doc/manpages/Makefile source/Makefile source/docs/Makefile source/clparser/Makefile source/docs/en/Makefile source/sdl/Makefile source/libs/triangul/Makefile source/libs/Makefile source/ai/Makefile source/unix/Makefile source/unix/mapeditor/Makefile source/tools/Makefile source/tools/linux/Makefile data/Makefile data/moredata/Makefile doc/Makefile"}
- EOF
- cat >> $CONFIG_STATUS <<\EOF
- for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then
-@@ -2923,10 +2923,4 @@
- chmod +x $CONFIG_STATUS
- rm -fr confdefs* $ac_clean_files
- test "$no_create" = yes || ${CONFIG_SHELL-/bin/sh} $CONFIG_STATUS || exit 1
--
--doc/manpages/Makefile \
--source/Makefile source/docs/Makefile source/clparser/Makefile \
--source/docs/en/Makefile source/sdl/Makefile source/libs/triangul/Makefile \
--source/libs/Makefile source/ai/Makefile source/unix/Makefile \
--source/unix/mapeditor/Makefile source/tools/Makefile source/tools/linux/Makefile)
- 
+ { (eval echo configure:1745: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }

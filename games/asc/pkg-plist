@@ -13,4 +13,5 @@ share/asc/buildings.con
 share/asc/main.con
 share/asc/mk1.con
 share/asc/trrobj.con
+share/asc/trrobj2.con
 @dirrm share/asc

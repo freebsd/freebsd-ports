@@ -1,12 +1,12 @@
 
 $FreeBSD$
 
---- source/Makefile.in.orig	Mon May 21 13:35:14 2001
-+++ source/Makefile.in	Tue May 22 22:28:23 2001
-@@ -68,7 +68,7 @@
- MAKEINFO = @MAKEINFO@
- PACKAGE = @PACKAGE@
- RANLIB = @RANLIB@
+--- source/Makefile.in.orig	Thu Nov 29 20:30:42 2001
++++ source/Makefile.in	Tue Dec 11 12:54:01 2001
+@@ -71,7 +71,7 @@
+ SDLMM_CONFIG = @SDLMM_CONFIG@
+ SDLMM_CXXFLAGS = @SDLMM_CXXFLAGS@
+ SDLMM_LIBS = @SDLMM_LIBS@
 -SDL_CFLAGS = @SDL_CFLAGS@
 +SDL_CFLAGS = @SDL_CFLAGS@ -DPREFIX=\"$(prefix)\"
  SDL_CONFIG = @SDL_CONFIG@
