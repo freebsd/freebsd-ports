@@ -9,7 +9,9 @@ PORTNAME=	ez-ipupdate
 PORTVERSION=	3.0.11b8
 PORTREVISION=	2
 CATEGORIES=	dns
-MASTER_SITES=	http://www.gusnet.cx:8080/proj/ez-ipupdate/dist/
+MASTER_SITES=	http://dyn.pl/client/UNIX/ez-ipupdate/ \
+		http://www.yi.org/help/software/ \
+		http://www.devil-linux.us/pub/devel/sources/1.3/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Update your host name on any dynamic DNS service
