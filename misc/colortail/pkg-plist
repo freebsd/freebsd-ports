@@ -1,7 +1,7 @@
 bin/colortail
-share/colortail/conf.daemon
-share/colortail/conf.kernel
-share/colortail/conf.messages
-share/colortail/conf.secure
-share/colortail/conf.xferlog
-@dirrm share/colortail
+%%PORTDOCS%%share/examples/colortail/conf.daemon
+%%PORTDOCS%%share/examples/colortail/conf.kernel
+%%PORTDOCS%%share/examples/colortail/conf.messages
+%%PORTDOCS%%share/examples/colortail/conf.secure
+%%PORTDOCS%%share/examples/colortail/conf.xferlog
+%%PORTDOCS%%@dirrm share/examples/colortail
