@@ -16,7 +16,7 @@ DISTFILES=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME:U}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of open source tools for genetic sequence analysis
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
