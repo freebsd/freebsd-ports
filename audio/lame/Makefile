@@ -14,7 +14,9 @@ MASTER_SITE_SUBDIR=	lame
 
 MAINTAINER=	yoshiaki@kt.rim.or.jp
 
+.if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+.endif
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -34,7 +36,7 @@ MAN1=		lame.1
 
 post-build:
 .if defined(HAVE_GTK) && !defined(WITHOUT_GTK)
-	(cd ${WRKSRC}/frontend && make mp3x)
+	cd ${WRKSRC}/frontend && make mp3x
 .endif
 
 post-install:
