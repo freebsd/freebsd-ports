@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.32 1998/08/07 23:56:41 asami Exp $
+# $Id: Makefile,v 1.33 1998/09/25 10:05:12 asami Exp $
 #
 
 DISTNAME=	tkman-2.1b1
@@ -19,10 +19,15 @@ RUN_DEPENDS=	rman:${PORTSDIR}/textproc/rman \
 
 NO_CDROM=	"License required"
 
-.if !defined(NOPORTDOCS)
+post-patch:
+	perl -pi -e "s;/usr/local/bin/wish;${PREFIX}/bin/wish8.0;" \
+		${WRKSRC}/contrib/tkmanclient
+
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tkman
 	${INSTALL_DATA} ${WRKSRC}/tkman-help.html ${PREFIX}/share/doc/tkman
 .endif
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/tkmanclient ${PREFIX}/bin
 
 .include <bsd.port.mk>

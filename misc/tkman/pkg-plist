@@ -1,4 +1,5 @@
 bin/tkman
+bin/tkmanclient
 bin/retkman
 share/doc/tkman/tkman-help.html
 @dirrm share/doc/tkman
