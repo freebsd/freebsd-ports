@@ -128,7 +128,6 @@ SoXt		ports/x11-toolkits/SoXt
 SpecTcl		ports/devel/SpecTcl
 Tee		ports/sysutils/Tee
 TenDRA		ports/lang/TenDRA
-WMxmms		ports/multimedia/WMxmms
 WWWdb		ports/databases/WWWdb
 WebMagick	ports/www/WebMagick
 XFree86		ports/x11/XFree86
@@ -960,7 +959,6 @@ clips		ports/lang/clips
 clisp		ports/lang/clisp
 clisp-hyperspec	ports/devel/clisp-hyperspec
 cln		ports/math/cln
-clo++		ports/devel/clo++
 clockspeed	ports/sysutils/clockspeed
 clockspeed-conf	ports/sysutils/clockspeed-conf
 clog		ports/net/clog
@@ -1681,7 +1679,6 @@ euler		ports/science/euler
 eval		ports/math/eval
 evas		ports/graphics/evas
 evg		ports/www/evg
-evilbar		ports/audio/evilbar
 evilfinder	ports/games/evilfinder
 evilwm		ports/x11-wm/evilwm
 evolution	ports/mail/evolution
@@ -7133,7 +7130,6 @@ plan		ports/deskutils/plan
 planets		ports/astro/planets
 planner		ports/deskutils/planner
 plasma-kmod	ports/graphics/plasma-kmod
-platero		ports/net/platero
 platon		ports/biology/platon
 play		ports/audio/play
 playmidi	ports/audio/playmidi
@@ -8133,7 +8129,6 @@ ruby-gnustep	ports/devel/ruby-gnustep
 ruby-google	ports/www/ruby-google
 ruby-gpgme	ports/security/ruby-gpgme
 ruby-graph	ports/graphics/ruby-graph
-ruby-gsl	ports/math/ruby-gsl
 ruby-gst	ports/multimedia/ruby-gst
 ruby-gtk	ports/x11-toolkits/ruby-gtk
 ruby-gtk2	ports/x11-toolkits/ruby-gtk2
@@ -9360,7 +9355,6 @@ vice		ports/emulators/vice
 vicq		ports/net/vicq
 vid		ports/graphics/vid
 vida		ports/security/vida
-vide		ports/x11-fm/vide
 videogen	ports/sysutils/videogen
 videotext	ports/misc/videotext
 view3ds		ports/graphics/view3ds
