@@ -42,6 +42,8 @@ share/locale/cs/LC_MESSAGES/gftp.mo
 share/locale/da/LC_MESSAGES/gftp.mo
 share/locale/de/LC_MESSAGES/gftp.mo
 share/locale/el/LC_MESSAGES/gftp.mo
+share/locale/en_CA/LC_MESSAGES/gftp.mo
+share/locale/en_GB/LC_MESSAGES/gftp.mo
 share/locale/es/LC_MESSAGES/gftp.mo
 share/locale/fi/LC_MESSAGES/gftp.mo
 share/locale/fr/LC_MESSAGES/gftp.mo
@@ -56,12 +58,14 @@ share/locale/ml/LC_MESSAGES/gftp.mo
 share/locale/ms/LC_MESSAGES/gftp.mo
 share/locale/nl/LC_MESSAGES/gftp.mo
 share/locale/no/LC_MESSAGES/gftp.mo
+share/locale/pa/LC_MESSAGES/gftp.mo
 share/locale/pl/LC_MESSAGES/gftp.mo
 share/locale/pt/LC_MESSAGES/gftp.mo
 share/locale/pt_BR/LC_MESSAGES/gftp.mo
 share/locale/ro/LC_MESSAGES/gftp.mo
 share/locale/ru/LC_MESSAGES/gftp.mo
 share/locale/sk/LC_MESSAGES/gftp.mo
+share/locale/sq/LC_MESSAGES/gftp.mo
 share/locale/sr/LC_MESSAGES/gftp.mo
 share/locale/sr@Latn/LC_MESSAGES/gftp.mo
 share/locale/sv/LC_MESSAGES/gftp.mo

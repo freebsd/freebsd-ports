@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	gftp
-PORTVERSION=	2.0.17
+PORTVERSION=	2.0.18.r1
 PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
 		ftp://gftp.seul.org/pub/gftp/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A free multithreaded GTK-based GUI ftp and sftp client
