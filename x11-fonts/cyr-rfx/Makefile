@@ -8,9 +8,9 @@
 PORTNAME=	cyr-rfx-${CYR_RFX_ENCODING}
 PORTVERSION=	1.1
 CATEGORIES=	x11-fonts ukrainian russian
-MASTER_SITES=	ftp://ftp.ptc.spbu.ru/mirror/%SUBDIR%/ \
-		ftp://%SUBDIR%/
-MASTER_SITE_SUBDIR=	ftp.inp.nsk.su/pub/BINP/X11/fonts/cyr-rfx/srctgz
+MASTER_SITES=	ftp://ftp.ptc.spbu.ru/mirror/ftp.inp.nsk.su/%SUBDIR%/ \
+		ftp://ftp.inp.nsk.su/%SUBDIR%/
+MASTER_SITE_SUBDIR=	pub/BINP/X11/fonts/cyr-rfx/srctgz
 EXTRACT_SUFX=	.bdfs.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
