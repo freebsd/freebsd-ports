@@ -7,8 +7,7 @@
 PORTNAME=	expect
 PORTVERSION=	5.32.1
 CATEGORIES=	lang tcl83 tk83
-MASTER_SITES=	http://expect.nist.gov/
-DISTNAME=	expect
+MASTER_SITES=	http://expect.nist.gov/src/
 
 MAINTAINER=	john@coastalgeology.org
 
