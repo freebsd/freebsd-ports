@@ -25,6 +25,7 @@
     SUBDIR += glens
     SUBDIR += gramps
     SUBDIR += gromacs
+    SUBDIR += gsystem
     SUBDIR += hdf
     SUBDIR += hdf5
     SUBDIR += kmovisto
