@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.0.11
+PORTVERSION=	2.0.12
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -82,7 +82,6 @@ pre-configure:
 post-configure:
 	@ ${SED} -e 's#%%USER%%#${MM_USERNAME}#g' \
 	  -e 's#%%GROUP%%#${MM_GROUPNAME}#g' \
-	  -e 's#%%PYTHON_CMD%%#${PYTHON_CMD}#g' \
 	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' pkg-deinstall > \
 	  ${PKGDEINSTALL}
 	@ ${SED} -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
