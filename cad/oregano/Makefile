@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oregano
-PORTVERSION=	0.22
-PORTREVISION=	1
+PORTVERSION=	0.23
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/CodeFactory/software/oregano/
 
@@ -16,14 +15,14 @@ MAINTAINER=	anders@hack.org
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
