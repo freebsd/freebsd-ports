@@ -18,6 +18,7 @@ PATCHFILES=	${PORTNAME}-${PORTVERSION}jp0.pat.gz
 PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	ukatsuta@mud.biglobe.ne.jp
+COMMENT=	A newsreader based by S-Lang
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 

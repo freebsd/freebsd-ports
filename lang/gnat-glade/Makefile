@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/glade/
 DISTNAME=	glade-${PORTVERSION}-src
 
 MAINTAINER=	sam@inf.enst.fr
+COMMENT=	GNU Ada distributed systems annex
 
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 

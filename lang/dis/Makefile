@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.mines.edu/students/b/bolmstea/malbolge/
 DISTNAME=	dis
 
 MAINTAINER=    simond@irrelevant.org
+COMMENT=	A moderately Infernal programming language
 
 USE_REINPLACE=	yes
 

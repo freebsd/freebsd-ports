@@ -11,7 +11,8 @@ CATEGORIES=	japanese editors
 MASTER_SITES=	http://tt.sakura.ne.jp/~amura/archives/ng/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ginga@athena.club.ne.jp
+MAINTAINER?=	ginga@athena.club.ne.jp
+COMMENT?=	A very light Emacs-clone with Japanese support
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LIBS="-ltermcap"

@@ -13,6 +13,7 @@ DISTNAME=	j${PORTVERSION}_linux
 DIST_SUBDIR=    ${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	js@jeannot.org
+COMMENT=	A general purpose programming language
 
 USE_LINUX=	yes
 USE_JAVA=	1.3+

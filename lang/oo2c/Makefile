@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}_32-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gc4.14.tar.gz
 
 MAINTAINER=	ob@breuninger.org
+COMMENT=	Optimizing Oberon-2 compiler of University of Kaiserslautern, Germany
 
 USE_LIBTOOL=	yes
 CONFIGURE_ENV+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"

@@ -16,6 +16,7 @@ PATCHFILES=		${DISTNAME}-jpatch-p1c.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		yasu@asuka.net
+COMMENT=	DVI to PDF converter (Japanese version)
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/japanese/ptex-common \
 			${LOCALBASE}/share/doc/cmpsfont/README:${PORTSDIR}/print/cmpsfont

@@ -15,6 +15,7 @@ DISTNAME=	yorick-doc
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	munro1@llnl.gov
+COMMENT=	Yorick interpreted language full documentation
 
 WRKSRC=		${WRKDIR}/doc
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=Parse
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	rse@engelschall.com
+COMMENT=	Perl Modules of ePerl package: Parse::ePerl, Apache::ePerl
 
 PERL_CONFIGURE=	yes
 

@@ -17,6 +17,7 @@ MASTER_SITES=	ftp://ftp.eterm.org/pub/Eterm/ \
 DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER=	hollywar@mail.holywar.net
+COMMENT=	X11 terminal emulator based on rxvt/xterm that supports korean
 
 RUN_DEPENDS=    ${PREFIX}/lib/X11/fonts/local/hmm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
 

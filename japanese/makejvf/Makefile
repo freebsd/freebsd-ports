@@ -19,6 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		jis${EXTRACT_SUFX} morisawa${EXTRACT_SUFX}
 
 MAINTAINER=	inagaki@tg.rim.or.jp
+COMMENT=	Japanese Virtual Font file maker + TFM and VF
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA013391/fonts/
 DISTNAME=	knj10-${PORTVERSION}
 
 MAINTAINER=	usagi@clave.gr.jp
+COMMENT=	X11 10-dot kanji font 'naga10 font'
 
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold \
 		mkitalic:${PORTSDIR}/x11-fonts/mkitalic

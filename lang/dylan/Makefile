@@ -25,6 +25,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} d2c-${PORTVERSION}-FreeBSD.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	housel@acm.org
+COMMENT=	CMU Gwydion project interpreter and compiler for the Dylan language
 
 RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 

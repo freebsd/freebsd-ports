@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.java
 EXTRACT_ONLY=	#
 
 MAINTAINER=	jake@checker.org
+COMMENT=	A lexical analyzer generator, written for Java, in Java
 
 BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	tcl
 DISTFILES=	tcl8.3.4.html.tar.gz tcl8.4a3.html.tar.gz
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	Documentation for TCL (Tool Command Language)
 
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes

@@ -15,6 +15,7 @@ EXTRACT_SUFX=
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
 
 MAINTAINER=	jhanna@home.com
+COMMENT=	Japanese-English dictionaries with access and maintenance utilities
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://kappa.allnet.ne.jp/20dot.fonts/
 DISTNAME=	Kappa20-${PORTVERSION}
 
 MAINTAINER=	ginga@athena.club.ne.jp
+COMMENT=	X11 20-dot kanji font 'kappa font'
 
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes

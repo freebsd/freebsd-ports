@@ -11,6 +11,7 @@ CATEGORIES=	japanese lang tk80
 MASTER_SITES=	ftp://ftp.nist.gov/mel/div826/subject/expect/old/
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
+COMMENT=	A sophisticated scripter based on Japanized tcl/tk
 
 LIB_DEPENDS=	tk80jp.1:${PORTSDIR}/japanese/tk80
 

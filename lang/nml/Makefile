@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://ropas.kaist.ac.kr/n/
 
 MAINTAINER=	netj@ropas.kaist.ac.kr
+COMMENT=	A dialect/harmony of Standard ML of New Jersey and Objective Caml.
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\

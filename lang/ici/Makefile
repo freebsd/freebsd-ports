@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.zeta.org.au/~atrn/ici/distfiles/
 
 MAINTAINER=	atrn@zeta.org.au
+COMMENT=	An interpretive language with C's overall feel combined with high level data types
 
 MAKEFILE=	Makefile.bsd
 MAN1=		ici3.1

@@ -12,6 +12,7 @@ MASTER_SITES=	http://downloads.sourceforge.jp/skkinput3/1504/
 DISTNAME=	skkinput-${SRCVERSION}_${PATCHLEVEL}
 
 MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
+COMMENT=	An SKK-like Japanese input method for X11
 
 USE_IMAKE=		yes
 

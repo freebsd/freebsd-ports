@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.sgi.com/tech/stl/
 DISTNAME=	STL_doc
 
 MAINTAINER=	corecode@corecode.ath.cx
+COMMENT=	The STL reference manual by SGI
 
 NO_BUILD=	yes
 

@@ -12,6 +12,7 @@ DISTNAME=	ib12
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	noway@nohow.demon.co.uk
+COMMENT=	Enables dynamic exchange of data between JavaBeans(TM)
 
 RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11 \
 		${PREFIX}/share/java/classes/collections.jar:${PORTSDIR}/java/collections

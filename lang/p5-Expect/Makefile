@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Expect
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl module inspired by the Tcl version of Expect
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/IO/Tty.pm:${PORTSDIR}/devel/p5-IO-Tty \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Stty.pm:${PORTSDIR}/devel/p5-IO-Stty

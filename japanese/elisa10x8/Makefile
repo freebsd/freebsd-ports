@@ -17,6 +17,7 @@ DISTFILES=	elisau10.tgz \
 EXTRACT_ONLY=	elisau10.tgz
 
 MAINTAINER=	ishijima@tri.pref.osaka.jp
+COMMENT=	X11 8-dot kanji font 'elisa font'
 
 USE_X_PREFIX=	yes
 

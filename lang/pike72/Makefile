@@ -19,6 +19,7 @@ MASTER_SITES=	ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
 DISTNAME=	pike-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
+COMMENT=	A dynamic programming language with a syntax similar to C++
 
 .if (${MACHINE} == "i386")
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm/

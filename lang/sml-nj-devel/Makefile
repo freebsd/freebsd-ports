@@ -27,6 +27,7 @@ DISTFILES+=	ml-burg.tgz \
 EXTRACT_ONLY=	config.tgz
 
 MAINTAINER=	joemann@beefree.free.de
+COMMENT=	A popular functional language from Bell Labs
 
 DIST_SUBDIR=	sml-nj/${PORTVERSION}
 NO_WRKSUBDIR=	yes

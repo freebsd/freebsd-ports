@@ -16,6 +16,7 @@ PATCHFILES=	tkdesk-${VERSION}-jmenu-${VERSION_PL}.diff
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
+COMMENT=	A graphical, highly configurable and powerful file manager
 
 LIB_DEPENDS=	tk42jp.1:${PORTSDIR}/japanese/tk42
 RUN_DEPENDS=	imali:${PORTSDIR}/mail/im \

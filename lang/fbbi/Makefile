@@ -13,6 +13,7 @@ DISTNAME=	fbbiv098
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	llwang@infor.org
+COMMENT=	An interpreter for the Befunge-98 language
 
 USE_ZIP=	yes
 USE_GMAKE=	yes

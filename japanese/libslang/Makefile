@@ -15,6 +15,7 @@ MASTER_SITES=	http://www.emaillab.org/mutt/tools/ \
 DISTNAME=	slang-${VERSION}jp${JP_VERSION}
 
 MAINTAINER=	iwashita@cqmail.net
+COMMENT=	A library permits a programmer to develop software
 
 VERSION=	1.4.5
 JP_VERSION=	2

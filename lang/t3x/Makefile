@@ -13,6 +13,7 @@ MASTER_SITES= 	http://www.not-compatible.org/files/ \
 DISTNAME=	t3x-${PORTVERSION:S/.//g}
 
 MAINTAINER=	nmh@t3x.org
+COMMENT=	A compiler for the minimum procedural language T3X
 
 MAN7=		t3x.7
 MANCOMPRESSED=	no

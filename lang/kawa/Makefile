@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	kawa
 
 MAINTAINER=		zach@neurosoft.org
+COMMENT=	Java-based Scheme implementation
 
 BUILD_DEPENDS= 	gsed:${PORTSDIR}/textproc/gsed
 

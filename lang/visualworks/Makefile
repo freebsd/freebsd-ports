@@ -19,6 +19,7 @@ DISTFILES=	BaseVisualWorks.tar.gz Image.tar.gz VM-Linux86.tar.gz \
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	js@jeannot.org
+COMMENT=	A high performance Smalltalk environment
 
 USE_LINUX=	yes
 

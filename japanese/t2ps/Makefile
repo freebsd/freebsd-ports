@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.uopmu.ees.osakafu-u.ac.jp/~yabu/soft/original/
 DISTNAME=	t2ps
 
 MAINTAINER=	yabu@uopmu.ees.osakafu-u.ac.jp
+COMMENT=	Converts text files to PostScript including Japanese
 
 RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 

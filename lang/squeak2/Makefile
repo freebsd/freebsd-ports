@@ -15,6 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
+COMMENT=	Full Smalltalk 80 with portability to UNIX, Mac, and Windows
 
 NO_WRKSUBDIR=	yes
 USE_XLIB=	yes

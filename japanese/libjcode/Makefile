@@ -12,6 +12,7 @@ MASTER_SITES=	http://keemun.soraneko.com/gtkicq/archives/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	stanaka@bb.mbn.or.jp
+COMMENT=	Japanese charset conversion library
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/misc/gn/
 DISTNAME=	gn-${PORTVERSION}
 
 MAINTAINER=	seiken@ARGV.AC
+COMMENT=	Simple Japanese Newsreader with Local Spool Support
 
 # The program ``configure'' sometimes issue questions and
 # batch-mode build would fail.

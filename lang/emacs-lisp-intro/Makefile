@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	amakawa@jp.FreeBSD.org
+COMMENT=	An introduction to Emacs Lisp programming
 
 USE_AUTOCONF=	yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.imasy.or.jp/pub/unix/net/www/ebw3/
 DISTNAME=	${PORTNAME}-${VERSION}
 
 MAINTAINER=	hikura@kaisei.org
+COMMENT=	Access to Japanese EPWING or Electric-Book based CD-ROM via HTTP
 
 VERSION=	0.2-b4
 

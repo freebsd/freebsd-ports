@@ -20,6 +20,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.freebsd4
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	coop9211@uidaho.edu
+COMMENT=	Free Pascal beta compiler with Turbo, Delphi and other extensions
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm

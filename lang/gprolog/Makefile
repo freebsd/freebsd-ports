@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	yotta@dougdidit.com
+COMMENT=	A free Prolog compiler developed by Daniel Diaz
 
 .include <bsd.port.pre.mk>
 

@@ -16,6 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} g772952b.zip
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	hdcho@geni.cemtlo.com
+COMMENT=	G2c libraries and compatibility for DJGPP V2 crossgo32 crosscompiler
 
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .if !defined(GNU_CPP)

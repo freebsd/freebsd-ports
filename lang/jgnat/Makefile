@@ -22,6 +22,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.([^\.]+)$/\1/}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	coop9211@uidaho.edu
+COMMENT=	An Ada to Java-Byte-Code compiler
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/adagcc:${PORTSDIR}/lang/gnat
 

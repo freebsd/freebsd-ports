@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cs.princeton.edu/~appel/modern/java/CUP/
 DISTNAME=	java_cup_v10g
 
 MAINTAINER=	nordwick@xcf.berkeley.edu
+COMMENT=	An LALR parser generator in Java
 
 BUILD_DEPENDS=	${JAVADIR}/bin/javac:${PORTSDIR}/java/jdk11
 RUN_DEPENDS=	${JAVADIR}/bin/java:${PORTSDIR}/java/jdk11

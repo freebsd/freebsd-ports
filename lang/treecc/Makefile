@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
 MAINTAINER=	ahze@rgv.net
+COMMENT=	Treecc program is designed to assist in the development of compilers
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

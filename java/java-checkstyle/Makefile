@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	java-
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	dglo@ssec.wisc.edu
+COMMENT=	Java style checker
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gforth
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	Fast and portable Forth system
 
 # Global variables
 #

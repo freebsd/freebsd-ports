@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/pgp/2.x/lang/ \
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}i-japanese
 
 MAINTAINER=	hikura@kaisei.org
+COMMENT=	Japanese language module for PGP
 
 RESTRICTED=	"Crypto"
 

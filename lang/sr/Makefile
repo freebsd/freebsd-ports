@@ -13,6 +13,7 @@ DISTNAME=	sr231
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	rssh@cki.ipri.kiev.ua
+COMMENT=	A parallel language "Synchronization Resources"
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	prefix

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=     cracauer
 DISTNAME=       cmucl-18d-x86-FreeBSD.extra
 
 MAINTAINER=     sf@dsinw.com
+COMMENT=	Optional extras for the CMU implementation of Common Lisp
 
 USE_BZIP2=	yes
 NO_WRKSUBDIR=   yes

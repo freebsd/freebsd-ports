@@ -14,6 +14,7 @@ DISTNAME=	screamer.tar
 EXTRACT_SUFX=	.Z
 
 MAINTAINER=	sf@dsinw.com
+COMMENT=	Extension of Common Lisp for nondeterministic programming
 
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
 RUN_DEPENDS=	${LOCALBASE}/bin/lisp:${PORTSDIR}/lang/cmucl

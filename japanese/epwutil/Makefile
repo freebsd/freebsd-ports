@@ -11,6 +11,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/epwutil/
 
 MAINTAINER=	takamune@avrl.mei.co.jp
+COMMENT=	Utilities to manage Japanese EPWING or Electric-Book based CD-ROM
 
 MAKEFILE=	makefile.unx
 MANLANG=	ja

@@ -15,6 +15,7 @@ MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	chris@unixpages.org
+COMMENT=	The New Scripting Language
 
 LIB_DEPENDS=	utils:${PORTSDIR}/lang/libutils
 

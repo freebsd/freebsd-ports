@@ -16,6 +16,7 @@ PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
 PATCHFILES=	${PORTNAME}${PORTVERSION}jp1.7.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
+COMMENT=	Graphical toolkit for Japanized TCL, version 8.0
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 

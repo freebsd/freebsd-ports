@@ -16,6 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	karlj000@unbc.ca
+COMMENT=	BlueJ is an integrated Java environment designed for introductory teaching
 
 IS_INTERACTIVE=	yes
 EXTRACT_ONLY=

@@ -11,6 +11,7 @@ CATEGORIES=	japanese print
 MASTER_SITES=	ftp://pine.kuee.kyoto-u.ac.jp/pub/e2ps/
 
 MAINTAINER=	kawahara@pine.kuee.kyoto-u.ac.jp
+COMMENT=	Text file to postscript converter (with Japanese support)
 
 WRKSRC=		${WRKDIR}/e2ps
 

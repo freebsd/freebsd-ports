@@ -13,6 +13,7 @@ DISTNAME=	clips6
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=    yotta@dougdidit.com
+COMMENT=	CLIPS is a productive development and delivery expert system tool
 
 USE_AUTOCONF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}

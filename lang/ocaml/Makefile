@@ -17,6 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-refman.html${EXTRACT_SUFX}
 
 MAINTAINER=	patrick@watson.org
+COMMENT=	An ML language based on a complete class-based objective system
 
 .if defined(WITHOUT_TK)
 PLIST_SUB+=	TK="@comment "

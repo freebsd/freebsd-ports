@@ -13,6 +13,7 @@ MASTER_SITES=	http://jakarta.apache.org/log4j/
 DIST_SUBDIR=	jakarta
 
 MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
+COMMENT=	Log4J, a fast and flexible logging library for Java
 
 USE_JAVA=	1.1+
 NO_BUILD=	YES

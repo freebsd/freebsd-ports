@@ -12,6 +12,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	seiken@ARGV.AC
+COMMENT=	Kanji code converter
 
 ALL_TARGET=	ack
 

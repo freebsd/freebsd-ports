@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.oav.net/pike/7.0/	\
 DISTNAME=	pike-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
+COMMENT=	A dynamic programming language with a syntax similar to C++
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison/
 
