@@ -54,6 +54,10 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc	\
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
+.if !defined(WITHOUT_UVSCAN)
+BUILD_DEPENDS+=	uvscan:${PORTSDIR}/security/vscan
+.endif
+
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-all
 .endif
@@ -74,6 +78,13 @@ STARTSCRIPT=	amavisd-milter.sh
 .else
 CONFIGURE_ARGS+=	--enable-sendmail
 MTA?=		sendmail
+.endif
+
+pre-fetch:
+.if !defined(WITHOUT_UVSCAN)
+	@${ECHO}
+	@${ECHO} "Type \"make WITHOUT_UVSCAN=yes\" if you DONT use UVSCAN."
+	@${ECHO}
 .endif
 
 post-patch:
