@@ -66,7 +66,9 @@ post-install:
 		done
 		@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/majordomo/doc
 .endif
-		@ ${INSTALL_DATA} ${WRKSRC}/aliases.majordomo ${PREFIX}/majordomo
+		@ if test -f ${PREFIX}/majordomo/aliases.majordomo; then :; \
+			else ${INSTALL_DATA} ${WRKSRC}/aliases.majordomo \
+			${PREFIX}/majordomo; fi
 		@ for file in test-l test-l-digest test-l.passwd test-l.info; do \
 			${INSTALL_DATA} ${FILESDIR}/$$file ${PREFIX}/majordomo/lists; \
 		done

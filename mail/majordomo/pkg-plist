@@ -42,14 +42,13 @@ majordomo/doc/majordomo-faq.html
 majordomo/doc/majordomo.lisa6.ps
 majordomo/doc/majordomo.ora
 majordomo/doc/post-install-notes
-majordomo/aliases.majordomo
 @dirrm majordomo/bin
 @dirrm majordomo/doc
 @dirrm majordomo/digests/test-l-digest
 @dirrm majordomo/digests
 @dirrm majordomo/lists/test-l-digest.archive
 @dirrm majordomo/lists/test-l.archive
-@dirrm majordomo/lists
+@unexec rmdir %D/majordomo/lists 2>/dev/null || true
 @dirrm majordomo/tmp
 @dirrm majordomo/Tools
-@dirrm majordomo
+@unexec rmdir %D/majordomo 2>/dev/null || true

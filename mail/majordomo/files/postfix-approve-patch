@@ -1,0 +1,10 @@
+--- approve.orig	Mon Jul 23 01:44:46 2001
++++ approve	Mon Jul 23 01:45:07 2001
+@@ -214,6 +214,7 @@
+ 	    $from_skipped = 1;
+ 	    next;
+ 	}
++	next if /^Delivered-To: /i;
+ 	s/^~/~~/;
+ 	print MAIL $_;
+     }

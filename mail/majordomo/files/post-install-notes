@@ -38,11 +38,11 @@ manually:
 	  added. The postfix port uses nobody by default, which should be
 	  changed to another user if your users can execute commands as user
 	  nobody (Apache/CGI comes to mind). Postfix does not do initgroups()
-	  properly, so you need to chgrp the wrapper script to the
-	  default_privs user (this may apply for other MTAs as well) for it
-	  to work. It is important that you do this and not just make wrapper
-	  executable for all; you are increasing the chances of it getting
-	  exploited if you do.
+	  properly, so you need to chgrp the wrapper script to the group of
+	  the default_privs user (this may apply for other MTAs as well) for
+	  it to work. It is important that you do this and not just make
+	  wrapper executable for all; you are increasing the chances of it
+	  getting exploited if you do.
 
 Enjoy Majordomo!
 
