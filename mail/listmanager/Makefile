@@ -8,7 +8,8 @@
 PORTNAME=	listmanager
 PORTVERSION=	2.109
 CATEGORIES=	mail
-MASTER_SITES=	http://www.listmanager.org/
+MASTER_SITES=	http://www.listmanager.org/v${PORTVERSION}/ \
+		http://www.listmanager.org/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}
 
