@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.lysator.liu.se/realtimebattle/Download/
 
-MAINTAINER=	draj@oceanfree.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot programming game for UNIX
 
 USE_X_PREFIX=	yes
