@@ -1,5 +1,5 @@
---- Makefile.linux	Fri Dec 29 20:49:53 2000
-+++ Makefile.linux.new	Fri Dec 29 20:50:36 2000
+--- Makefile.linux.orig	Fri Oct 14 00:57:43 1994
++++ Makefile.linux	Sun Mar 18 08:09:35 2001
 @@ -24,12 +24,12 @@
  #
  # Uncomment next line if you are using other compiler (e.g. gcc)
@@ -70,9 +70,10 @@
  #
 -VIEWINC = -I/usr/X11/include
 -VIEWLIB = -L/usr/X11/lib -lX11
+-VIEWDEF = -DiX11 -DiLINUX
 +VIEWINC = -I${X11BASE}/include
 +VIEWLIB = -L${X11BASE}/lib -lX11
- VIEWDEF = -DiX11 -DiLINUX
++VIEWDEF = -DiX11
  
  #
  # Final includes ( don't touch this ! ).
