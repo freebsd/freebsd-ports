@@ -14,6 +14,8 @@ MASTER_SITES=		http://www.witchspace.com/files/
 MAINTAINER=		jon@witchspace.com
 COMMENT=		A program for generating and rendering fractal landscapes
 
+BUILD_DEPENDS=		qmake:${PORTSDIR}/devel/qmake
+
 PLIST_FILES=		bin/landscape
 USE_MESA=		yes
 USE_KDELIBS_VER=	3
