@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/qmail-autoresponder
 %%MYSQL%%bin/qmail-autoresponder-mysql
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
