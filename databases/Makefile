@@ -213,6 +213,7 @@
     SUBDIR += php4-mssql
     SUBDIR += php4-mysql
     SUBDIR += php4-odbc
+    SUBDIR += php4-oracle
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
