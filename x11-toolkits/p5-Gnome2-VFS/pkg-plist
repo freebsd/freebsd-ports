@@ -8,6 +8,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/FileInfo.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Handle.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/Files.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/doctypes
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/vfs.typemap
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/vfs2perl-autogen.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Gnome2/VFS/Install/vfs2perl-gtypes.h
