@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scons
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,5 +15,6 @@ MAINTAINER=	perky@FreeBSD.org
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - 2>/dev/null || ${TRUE}
 
 .include <bsd.port.mk>
