@@ -1,0 +1,43 @@
+# ex:ts=8
+# Ports collection makefile for:  xwpe
+# Version required:     	  1.6.2
+# Date created:			  Fri Jan 24, 1997
+# Whom:				  David O'Brien (obrien@FreeBSD.org)
+#
+# $Id: Makefile,v 1.5 1996/12/01 01:23:12 obrien Exp $
+#
+
+DISTNAME=	xwpe-1.4.2
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
+		ftp://ftp.uni-hannover.de/pub/mirror/linux-distrib/apps/editors/
+MASTER_SITE_SUBDIR=	apps/editors
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=     obrien@NUXI.com
+
+# LD_LIBRARY_PATH is to deal with a braindead libX11.a search in configure
+# (once again author assumes too many Linux'isms)
+# it is not exptected to be set at runtime.
+MAKE_ENV+=	LD_LIBRARY_PATH="${X11BASE}/lib"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+=	LD_LIBRARY_PATH="${X11BASE}/lib"
+USE_GMAKE=	yes
+ALL_TARGET=
+.if defined(GERMAN_LANG)
+INSTALL_TARGET= install_german
+.endif
+MAN1=		xwpe.1 xwe.1 wpe.1 we.1
+
+post-install:
+	@strip ${PREFIX}/bin/xwpe
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/xwpe
+.if defined(GERMAN_LANG)
+	${INSTALL_DATA} ${WRKSRC}/xwpe_gr.doc ${PREFIX}/share/doc/xwpe/xwpe.doc
+.else
+	${INSTALL_DATA} ${WRKSRC}/xwpe_eng.doc ${PREFIX}/share/doc/xwpe/xwpe.doc
+.endif
+.endif
+
+.include <bsd.port.mk>

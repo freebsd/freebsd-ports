@@ -1,0 +1,18 @@
+xwpe is a X-window programming environment designed for UNIX systems.
+It is similar to 'Borland C++' MS-DOS programming IDE environment.
+
+xwpe supports man compilers, linkers, and debuggers, so you are not tied to
+any particular set of tools.  There is both a curses and X11 interface
+(the later with mouse support).
+
+Errors that occur while compiling and linking a program can be examined in
+the sources -- the cursor will jump to the corresponding line in the
+source file.   Programs composed of more than one source file, can be
+managed with the project-option.  Your program may be run and debugged from
+within xwpe -- allowing the user to set breakpoints and watch variables.
+
+Note:  there are both English and German language version of the manpages,
+and helpfiles.  The German language version will be installed if 
+"GERMAN_LANG" is set during ``make install'' of the port.
+
+-- David	(obrien@FreeBSD.org)
