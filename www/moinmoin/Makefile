@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A Python CGI clone of WikiWiki
 
+BROKEN=		"Uses unregistered uid/gid"
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PLIST_SUB+=	PYTHON_SITELIB=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||} \
