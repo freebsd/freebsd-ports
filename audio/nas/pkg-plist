@@ -1,4 +1,3 @@
-bin/au
 bin/auconvert
 bin/auctl
 bin/audemo
@@ -11,12 +10,13 @@ bin/auplay
 bin/aurecord
 bin/auscope
 bin/autool
-bin/auvoxware
 bin/auwave
 bin/checkmail
 bin/issndfile
+bin/nasd
 bin/playbucket
 bin/soundtoh
+etc/nasd.conf.eg
 include/audio/8svx.h
 include/audio/Afuncproto.h
 include/audio/Afuncs.h
@@ -38,7 +38,10 @@ include/audio/sound.h
 include/audio/soundlib.h
 include/audio/voc.h
 include/audio/wave.h
-lib/AUVoxConfig.eg
 lib/X11/AuErrorDB
 lib/libaudio.a
+lib/libaudio.so
+lib/libaudio.so.1
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 @dirrm include/audio

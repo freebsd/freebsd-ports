@@ -1,5 +1,7 @@
-        The Network Audio System is designed for playing,
-        recording, and manipulating audio data over a network.
-        Like the X Window System, it uses the client/server model to
-        separate applications from the specific drivers that control
-        audio input and output devices.                                       
+The Network Audio System is designed for playing,
+recording, and manipulating audio data over a network.
+Like the X Window System, it uses the client/server model to
+separate applications from the specific drivers that control
+audio input and output devices.                                       
+
+WWW: http://radscan.com/nas.html
