@@ -1520,6 +1520,7 @@ fastboot	src/sbin/fastboot
 fastcrc		ports/devel/fastcrc
 fastdb		ports/databases/fastdb
 fastdnaml	ports/biology/fastdnaml
+fastest_cvsup	ports/sysutils/fastest_cvsup
 fastjar		ports/archivers/fastjar
 fastresolve	ports/sysutils/fastresolve
 fb		ports/editors/fb
