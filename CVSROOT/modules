@@ -1485,7 +1485,6 @@ edith		ports/editors/edith
 editss		ports/games/editss
 edonkey-core	ports/net/edonkey-core
 edonkey-gui-gtk	ports/net/edonkey-gui-gtk
-edonkey-gui-gtk-kioslave	ports/net/edonkey-gui-gtk-kioslave
 edonkey-gui-gtk-urlslave	ports/net/edonkey-gui-gtk-urlslave
 edonkey-gui-java	ports/net/edonkey-gui-java
 edonkey-tool-hash	ports/misc/edonkey-tool-hash

@@ -170,3 +170,4 @@ x11-fm/gnomemc||2003-02-10|obsolete
 x11/wmshutdown|sysutils/wmshutdown|2003-02-13|fix category
 security/kgpgapplet||2003-02-19|merged into kgpg
 net/ip-tun||2003-02-19|obsoleted by gif interfaces
+net/edonkey-gui-gtk-kioslave||2003-02-19|merged into edonkey-gui-gtk

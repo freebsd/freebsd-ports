@@ -122,7 +122,6 @@
     SUBDIR += echoping
     SUBDIR += edonkey-core
     SUBDIR += edonkey-gui-gtk
-    SUBDIR += edonkey-gui-gtk-kioslave
     SUBDIR += edonkey-gui-gtk-urlslave
     SUBDIR += edonkey-gui-java
     SUBDIR += ehnt
