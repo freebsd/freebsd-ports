@@ -38,6 +38,9 @@ do-fetch:
 post-extract:
 	@cd ${WRKDIR} && tar xzf linuxdoom-1.10.src.tgz && tar xzf sndserv.tgz
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e "s@#include +<malloc.h>@#include <stdlib.h>@g"
+
 do-build:
 	@cd ${WRKDIR}/linuxdoom-1.10 && ${GMAKE}
 	@cd ${WRKDIR}/sndserv && ${GMAKE}
