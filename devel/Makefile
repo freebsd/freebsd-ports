@@ -467,6 +467,7 @@
     SUBDIR += libstrfunc
     SUBDIR += libstroke
     SUBDIR += libtai
+    SUBDIR += libtap
     SUBDIR += libtar
     SUBDIR += libtecla
     SUBDIR += libticalcs
