@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	naim
-PORTVERSION=	0.11.4p1
+PORTVERSION=	0.11.4.13
 CATEGORIES=	net
-MASTER_SITES=	http://www.acm.rpi.edu/~n/
+MASTER_SITES=	http://www.acm.rpi.edu/~n/naim/
 
 MAINTAINER=	rtdean@cytherianage.net
 
