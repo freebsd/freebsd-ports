@@ -5,27 +5,23 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	0.35.1
-PORTREVISION=	1
+PORTVERSION=	0.37.0
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
 MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
 
-LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
-		neon.24:${PORTSDIR}/www/neon \
+LIB_DEPENDS=	neon.24:${PORTSDIR}/www/neon \
 		expat.4:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
 
+USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-ssl \
-		--with-neon=${LOCALBASE} \
-		--with-berkeley-db=${LOCALBASE}/include/db4:${LOCALBASE}/lib \
-		--with-swig=no
+CONFIGURE_ARGS=		--with-ssl --with-neon=${LOCALBASE}
 
 MAN1=		svn.1 svnadmin.1 svnlook.1 svndumpfilter.1 svnversion.1
 MAN5=		svnserve.conf.5
@@ -35,6 +31,49 @@ MANCOMPRESSED=	no
 .include <bsd.port.pre.mk>
 
 SVNREPOS?=	/home/svn/repos
+
+.if defined(WITH_MAINTAINER_DEBUG)
+CONFIGURE_ARGS+=--enable-maintainer-mode \
+		--enable-debug
+CFLAGS+=	-g
+.endif
+
+.if defined(WITH_PERL)
+.if ${PERL_LEVEL} < 500800
+BROKEN=	"Subversion's Perl bindings need perl 5.8.0 or greater. Upgrade your perl and try again"
+.endif
+SWIG_BINDINGS+=		perl
+USE_PERL5=		yes
+PLIST_SUB+=		WITH_PERL=""
+MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=			SVN::Base.3 \
+			SVN::Client.3 \
+			SVN::Core.3 \
+			SVN::Delta.3 \
+			SVN::Ra.3 \
+			SVN::Repos.3 \
+			SVN::Wc.3
+.else
+PLIST_SUB+=		WITH_PERL="@comment "
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=		yes
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+SWIG_BINDINGS+=		python
+PLIST_SUB+=		WITH_PYTHON=""
+.else
+PLIST_SUB+=		WITH_PYTHON="@comment "
+.endif
+
+.if defined(SWIG_BINDINGS) && ${SWIG_BINDINGS} != ""
+BUILD_DEPENDS+=		swig1.3:${PORTSDIR}/devel/swig13
+DEPENDS_ARGS+=		SWIG_LANGUAGES='${SWIG_BINDINGS}'
+CONFIGURE_ARGS+=	--with-swig=${LOCALBASE} \
+			--enable-swig-bindings=${SWIG_BINDINGS:Q:S/ /,/g:S/\\//g}
+.else
+CONFIGURE_ARGS+=	--with-swig=no
+.endif
 
 .if defined(WITH_MOD_DAV_SVN)
 WITH_APACHE2_APR=	yes
@@ -51,17 +90,18 @@ SVNGROUP?=	svn
 APACHE2_PORT?=	www/apache2
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
+DEPENDS_ARGS+=	WITH_BERKELEYDB=db4
 CONFIGURE_ARGS+=--with-apr=${LOCALBASE}/lib/apache2/apr-config \
 		--with-apr-util=${LOCALBASE}/lib/apache2/apu-config
-APU_CONFIG=	${LOCALBASE}/lib/apache2/apu-config
-APU_PORT=	www/apache2
-OPT_NAME=	WITH_BERKELEYDB=db4
+APR_APU_DIR=	${LOCALBASE}/lib/apache2
+APR_PORT=	www/apache2
+OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
 .else
-LIB_DEPENDS+=	apr-0.9:${PORTSDIR}/devel/apr
+LIB_DEPENDS+=	apr-0.9:${PORTSDIR}/devel/apr-svn
 CONFIGURE_ARGS+=--with-apr=${LOCALBASE} \
 		--with-apr-util=${LOCALBASE}
-APU_CONFIG=	${LOCALBASE}/bin/apu-config
-APU_PORT=	devel/apr
+APR_APU_DIR=	${LOCALBASE}/bin
+APR_PORT=	devel/apr
 OPT_NAME=	APR_UTIL_WITH_BERKELEY_DB=yes
 .endif
 
@@ -73,11 +113,26 @@ PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 .endif
 
 pre-extract:
-.if !defined (BATCH)
-	@dialog --title "-- URGENT UPGRADE INFORMATION --" --clear --yesno \
-	 "If you upgrade Subversion from pre-0.34.0 version, please,\ndump you repository with old (pre-0.34.0) svnadmin command.\nAfter this, install new version, remove old repository, create new\none with svnadmin & load dump created from old repository\n\nVersions after 0.34.0 have different repository format and\nyour old repository could not be used with versions 0.34.0 and up.\n\nRead\nhttp://svn.collab.net/repos/svn/trunk/notes/repos_upgrade_HOWTO\nfor details.\n\nDid you dump you repository and ready to install new version?" \
-	 18 70
+	@${ECHO_MSG} ""
+.if defined(WITH_MAINTAINER_DEBUG)
+	@${ECHO_MSG} "Build debug version."
+.else
+	@${ECHO_MSG} "You can enable debug build by defining WITH_MAINTAINER_DEBUG."
 .endif
+	@${ECHO_MSG} ""
+.if defined(WITH_PERL)
+	@${ECHO_MSG} "Build with perl bindings."
+	@${ECHO_MSG} "Be sure, that apr library and perl both uses OR not uses threads in same time."
+.else
+	@${ECHO_MSG} "You can enable perl bindings by defining WITH_PERL"
+.endif
+	@${ECHO_MSG} ""
+.if defined(WITH_PYTHON)
+	@${ECHO_MSG} "Build with Python bindings."
+.else
+	@${ECHO_MSG} "You can enable Python bindings by defining WITH_PYTHON."
+.endif
+	@${ECHO_MSG} ""
 .if defined(WITH_MOD_DAV_SVN)
 	@${ECHO_MSG} "mod_dav_svn module for Apache 2.X enabled."
 .else
@@ -85,7 +140,7 @@ pre-extract:
 	@${ECHO_MSG} "by defining WITH_MOD_DAV_SVN.  This option implies"
 	@${ECHO_MSG} "the WITH_APACHE2_APR option."
 .endif
-	@${ECHO_MSG}
+	@${ECHO_MSG} ""
 .if defined(WITH_APACHE2_APR)
 	@${ECHO_MSG} "Using APR from www/apache2.  If you have the devel/apr"
 	@${ECHO_MSG} "port/package installed, you may need to remove it."
@@ -94,14 +149,14 @@ pre-extract:
 	@${ECHO_MSG} "the www/apache2 port, rather than the devel/apr port,"
 	@${ECHO_MSG} "by defining WITH_APACHE2_APR."
 .endif
-	@${ECHO_MSG}
+	@${ECHO_MSG} ""
 .if defined(WITH_SVNSERVE_WRAPPER)
 	@${ECHO_MSG} "svnserve wrapper enabled."
 .else
 	@${ECHO_MSG} "You can install the svnserve wrapper (sets umask 002)"
 	@${ECHO_MSG} "by defining WITH_SVNSERVE_WRAPPER."
 .endif
-	@${ECHO_MSG}
+	@${ECHO_MSG} ""
 .if defined(WITH_REPOSITORY_CREATION)
 	@${ECHO_MSG} "I will create (or use, if it exists) \"${SVNGROUP}\" group."
 	@${ECHO_MSG} "Make sure that all committers are its members."
@@ -119,11 +174,10 @@ pre-extract:
 	@${ECHO_MSG} "You could change these settings by defining SVNREPOS and SVNGROUP"
 	@${ECHO_MSG} ""
 .endif
-	@${ECHO_MSG}
+	@${ECHO_MSG} ""
 
 post-extract:
 	@${REINPLACE_CMD} 's/ldb/ldb4/g' ${WRKSRC}/configure
-
 	@${RM} -r ${WRKSRC}/neon
 	@${RM} -r ${WRKSRC}/apr
 	@${RM} -r ${WRKSRC}/apr-util
@@ -133,22 +187,40 @@ post-patch:
 	@${REINPLACE_CMD} "s#/etc/subversion#${PREFIX}/etc/subversion#g" ${WRKSRC}/subversion/libsvn_subr/config_file.c
 	@${REINPLACE_CMD} "s#/etc/subversion#${PREFIX}/etc/subversion#g" ${WRKSRC}/subversion/libsvn_subr/config_impl.h
 .endif
+	@${REINPLACE_CMD} "s#^swig_pydir =.*#swig_pydir = ${PYTHON_SITELIBDIR}/libsvn#" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} "s#^swig_pydir_extra =.*#swig_pydir_extra = ${PYTHON_SITELIBDIR}/svn#" ${WRKSRC}/Makefile.in
 
 pre-configure:
-	@if [ ! -x ${APU_CONFIG} ] ; then \
+	@if [ ! -x ${APR_APU_DIR}/apr-config -o ! -x ${APR_APU_DIR}/apu-config ] ; then \
 		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You select to use`'"${APU_PORT}' for apr library." ; \
-		${ECHO_MSG} 'It seems that `'"${APU_PORT}' is not properly installed." ; \
-		${ECHO_MSG} "" ; \
-		${FALSE} ; \
-	fi
-	@if [ `${APU_CONFIG} --db-version` != "4" ] ; then \
-		${ECHO_MSG} "" ; \
-		${ECHO_MSG} 'You should build `'"${APU_PORT}' with db4 support to use subversion with it." ; \
-		${ECHO_MSG} 'Please, rebuild `'"${APU_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
+		${ECHO_MSG} 'You select to use`'"${APR_PORT}' for apr library." ; \
+		${ECHO_MSG} 'It seems that `'"${APR_PORT}' is not properly installed." ; \
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \
 	fi
+	@if [ `${APR_APU_DIR}/apu-config --db-version` != "4" ] ; then \
+		${ECHO_MSG} "" ; \
+ 		${ECHO_MSG} 'You should build `'"${APR_PORT}' with db4 support to use subversion with it." ; \
+ 		${ECHO_MSG} 'Please, rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
+		${ECHO_MSG} "" ; \
+		${FALSE} ; \
+	fi
+
+post-build:
+.if defined(WITH_PERL)
+	cd ${WRKSRC} ; \
+	  ${MAKE} swig-pl-lib
+	cd ${WRKSRC}/subversion/bindings/swig/perl ; \
+	  ${SETENV} APR_CONFIG="${APR_APU_DIR}/apr-config" APU_CONFIG="${APR_APU_DIR}/apu-config" \
+	    CCFLAGS="${CCFLAGS}" CC="${CC}" \
+	    ${PERL} Makefile.PL PREFIX="${PREFIX}" \
+	    INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib" ; \
+	  ${MAKE} all test
+.endif
+.if defined(WITH_PYTHON)
+	cd ${WRKSRC} ; \
+	  ${MAKE} swig-py
+.endif
 
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
@@ -162,20 +234,30 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
 .endif
+.if defined(WITH_PERL)
+	cd ${WRKSRC} ; \
+	  ${MAKE} install-swig-pl-lib
+	cd ${WRKSRC}/subversion/bindings/swig/perl ; \
+	  ${MAKE} install
+.endif
+.if defined(WITH_PYTHON)
+	cd ${WRKSRC} ; \
+	  ${MAKE} install-swig-py
+.endif
 .if defined(WITH_SVNSERVE_WRAPPER)
 	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${PREFIX}/bin/svnserve
 .endif
 .if defined(WITH_REPOSITORY_CREATION) && !exists(${SVNREPOS})
 . if defined(WITH_SVNSERVE_WRAPPER)
 	@if /usr/sbin/pw groupshow "${SVNGROUP}" >/dev/null 2>&1; then \
-	    echo "You already have a group \"${SVNGROUP}\", so I will use it."; \
+	    ${ECHO_MSG} "You already have a group \"${SVNGROUP}\", so I will use it."; \
 	else \
 	    if /usr/sbin/pw groupadd ${SVNGROUP} -h -; \
 	    then \
-	        echo "Added group \"${SVNGROUP}\"."; \
+	        ${ECHO_MSG} "Added group \"${SVNGROUP}\"."; \
 	    else \
-	        echo "Adding group \"${SVNGROUP}\" failed..."; \
-	        echo "Please create it, and try again."; \
+	        ${ECHO_MSG} "Adding group \"${SVNGROUP}\" failed..."; \
+	        ${ECHO_MSG} "Please create it, and try again."; \
 	        ${FALSE}; \
 	    fi; \
 	fi
