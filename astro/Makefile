@@ -27,6 +27,7 @@
     SUBDIR += p5-Geo-METAR
     SUBDIR += p5-SETI-Stats
     SUBDIR += planets
+    SUBDIR += py-metar
     SUBDIR += pyweather
     SUBDIR += rmap
     SUBDIR += saoimage
