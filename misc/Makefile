@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.201 1999/04/27 03:26:52 taoka Exp $
+# $Id: Makefile,v 1.202 1999/04/27 12:33:35 taoka Exp $
 #
 
     SUBDIR += 221upgrade
@@ -85,8 +85,10 @@
     SUBDIR += uk-postcodes
     SUBDIR += unclutter
     SUBDIR += us-zipcodes
+    SUBDIR += vera
     SUBDIR += viz
     SUBDIR += wmcp
+    SUBDIR += wmmand
     SUBDIR += wmweather
     SUBDIR += xd
     SUBDIR += xdelta
