@@ -5,15 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=		lml
-PORTVERSION=		2.3.4
+PORTVERSION=		2.5.2
 CATEGORIES=		www textproc
 MASTER_SITES=		http://files.b9.com/lml/
 PKGNAMEPREFIX=		cl-
 
 MAINTAINER=		henrik.motakef@web.de
 COMMENT=		Lisp Markup Language
-
-BROKEN=			Does not fetch
 
 BUILD_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
 RUN_DEPENDS=		${LOCALBASE}/lib/common-lisp/asdf/asdf.lisp:${PORTSDIR}/devel/cl-asdf
