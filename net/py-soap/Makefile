@@ -8,7 +8,7 @@
 PORTNAME=	soap
 PORTVERSION=	0.8
 CATEGORIES=	net python
-MASTER_SITES=	http://www.pythonware.com/downloads/
+MASTER_SITES=	http://www.pythonware.net/storage/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}lib-${PORTVERSION}-${PORTRELDATE}
 
