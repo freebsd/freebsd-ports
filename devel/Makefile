@@ -122,7 +122,8 @@
     SUBDIR += eieio-emacs20
     SUBDIR += elfio
     SUBDIR += elftoaout
-    SUBDIR += elib-emacs
+    SUBDIR += elib
+    SUBDIR += elib-emacs19
     SUBDIR += elib-emacs20
     SUBDIR += entity
     SUBDIR += error

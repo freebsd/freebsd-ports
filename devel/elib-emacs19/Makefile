@@ -1,4 +1,4 @@
-# New ports collection makefile for:	Elib for GNU Emacs 20
+# New ports collection makefile for:	Elib for GNU Emacs 19
 # Date created:		24 Feb 2000
 # Whom:			OKAZAKI Tetsurou
 #
@@ -13,6 +13,6 @@ PORTCLASS=	slave
 MASTERDIR=	${.CURDIR}/../../devel/elib
 
 # emacs port setup
-EMACS_PORT_NAME=	emacs20
+EMACS_PORT_NAME=	emacs19
 
 .include <${MASTERDIR}/Makefile>
