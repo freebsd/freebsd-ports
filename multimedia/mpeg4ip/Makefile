@@ -17,9 +17,9 @@ COMMENT=	Standards-based system to encode, stream and play MPEG-4 audio/video
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		nasm:${PORTSDIR}/devel/nasm \
 		pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-USE_GETOPT_LONG=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
@@ -29,6 +29,8 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-glib-prefix=${LOCALBASE} \
 		--with-gtk-prefix=${X11BASE} \
 		--program-transform-name=''
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
@@ -110,13 +112,10 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's!SDL_(AudioDelayMsec|HasAudioDelayMsec).*;$$!0;!' \
 		${WRKSRC}/player/src/audio_sdl.cpp
-# -CURRENT after 500041 has getopt_long
 # use libgnugetopt
-.if ${OSVERSION} < 500041
 	@${REINPLACE_CMD} -E -e \
 		's|(-lm)|\1 -lgnugetopt|' \
 		${WRKSRC}/util/iptv/Makefile.in
-.endif
 # do not install manm man pages
 	@${REINPLACE_CMD} -E \
 		-e 's|api.mpt||' \
@@ -134,7 +133,7 @@ post-configure:
 # investigated by David Yeske <dyeske@yahoo.com>
 .if ${OSVERSION} >= 500000
 	@${REINPLACE_CMD} -E \
-		-e 's|(-lSDL)|${PTHREAD_LIBS} \1|' \
+		-e 's|(-lSDL-...)|"${PTHREAD_LIBS} \1"|' \
 		${WRKSRC}/player/src/Makefile \
 		${WRKSRC}/util/yuv/Makefile \
 		${WRKSRC}/util/iptv/Makefile
