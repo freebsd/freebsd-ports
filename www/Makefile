@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.110 1998/12/23 19:15:41 vanilla Exp $
+# $Id: Makefile,v 1.111 1998/12/26 15:56:21 peter Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -53,6 +53,7 @@
     SUBDIR += netscape4-communicator.us
     SUBDIR += netscape4-navigator
     SUBDIR += netscape45-communicator
+    SUBDIR += netscape45-communicator.us
     SUBDIR += netscape45-navigator
     SUBDIR += p5-Apache
     SUBDIR += p5-CGI
