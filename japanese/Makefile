@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.70 1997/06/23 12:35:33 max Exp $
+# $Id: Makefile,v 1.71 1997/06/23 14:34:57 max Exp $
 #
 
     SUBDIR += Canna
@@ -75,6 +75,7 @@
     SUBDIR += tgif
     SUBDIR += tk42
     SUBDIR += today
+    SUBDIR += typist
     SUBDIR += vfghostscript
     SUBDIR += vfghostscript4
     SUBDIR += vflib
