@@ -1,0 +1,34 @@
+# New ports collection makefile for:	cvs2p4
+# Date created:		2 September 2001
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cvs2p4
+PORTVERSION=	1.2.16
+CATEGORIES+=	devel
+MASTER_SITES=	ftp://ftp.perforce.com/perforce/utils/cvs2p4/
+EXTRACT_SUFX=	.tar
+
+MAINTAINER=	knu@FreeBSD.org
+
+NO_BUILD=	yes
+
+PERFORCE_PORT?=	1666
+
+post-patch:
+	${PERL} -pi \
+		-e 's,!!PREFIX!!,${PREFIX},g;' \
+		-e 's,!!PERFORCE_PORT!!,${PERFORCE_PORT},g;' \
+		${WRKSRC}/test/config
+	find ${WRKSRC} -name '*.orig' -delete
+
+do-install:
+	${MKDIR} ${PREFIX}/${PORTNAME}
+	${CP} -R ${WRKSRC}/* ${PREFIX}/${PORTNAME}/
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

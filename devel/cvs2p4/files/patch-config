@@ -1,0 +1,29 @@
+--- test/config.orig	Tue Aug 28 07:48:21 2001
++++ test/config	Sun Sep  2 07:07:23 2001
+@@ -6,7 +6,7 @@
+ 
+ # p4 command location (If other than "/usr/local/bin/p4")
+ #
+-$P4		= "/usr/local/bin/p4";
++$P4		= "!!PREFIX!!/bin/p4";
+ 
+ # path to the RCS "co" command
+ #
+@@ -14,7 +14,7 @@
+ 
+ # Perforce server we're using.
+ #
+-$P4PORT = "localhost:1678";
++$P4PORT = "localhost:!!PERFORCE_PORT!!";
+ 
+ # Perforce client name for the conversion client.
+ # I can't imagine why you'd want to change this, but maybe you can!
+@@ -71,7 +71,7 @@
+ 
+ # Name of the "head" codeline
+ #
+-$TRUNKLINE    	= "shemp";
++$TRUNKLINE    	= "head";
+ 
+ # Conventional branch tag name suffix to remove when importing to
+ # Perforce. (This is a netapp specific thing; our branch tags are

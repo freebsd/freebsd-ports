@@ -1,0 +1,25 @@
+cvs2p4/Artistic
+cvs2p4/MANIFEST
+cvs2p4/NEWS
+cvs2p4/README
+cvs2p4/bin/dochanges
+cvs2p4/bin/genchanges
+cvs2p4/bin/genmetadata
+cvs2p4/bin/revmap
+cvs2p4/lib/util.pl
+cvs2p4/test/changes.good
+cvs2p4/test/config
+cvs2p4/test/dollar$file,v
+cvs2p4/test/file,v
+cvs2p4/test/lines.good
+cvs2p4/test/metadata.good
+cvs2p4/test/norm
+cvs2p4/test/p4_changes_-l.good
+cvs2p4/test/p4_describe.good
+cvs2p4/test/p4_describe.good-r97.3
+cvs2p4/test/runtest
+cvs2p4/test/space file,v
+@dirrm cvs2p4/test
+@dirrm cvs2p4/lib
+@dirrm cvs2p4/bin
+@dirrm cvs2p4

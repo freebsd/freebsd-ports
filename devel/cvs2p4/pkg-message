@@ -1,0 +1,6 @@
+************************************************************************
+Go to /usr/local/cvs2p4, and follow the instructions described in the
+README file.
+
+(Replace /usr/local above with ${PREFIX} as appropriate)
+************************************************************************
