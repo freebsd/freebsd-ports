@@ -80,7 +80,7 @@ CONFLICTS+=	openssh-portable-*
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
 .else
 CONFLICTS+=	openssh-gssapi-*
-.if exists(/usr/include/krb5.h)
+.if !defined(WITHOUT_KERBEROS) && exists(/usr/include/krb5.h)
 CONFIGURE_ARGS+=	--with-kerberos5
 EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
 .endif
