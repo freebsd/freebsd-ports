@@ -1,0 +1,11 @@
+--- configure.orig	Sat Oct 16 00:07:44 2004
++++ configure	Sat Oct 16 00:08:24 2004
+@@ -339,7 +339,7 @@
+ bindir='${exec_prefix}/bin'
+ sbindir='${exec_prefix}/sbin'
+ libexecdir='${exec_prefix}/libexec'
+-datadir='${prefix}/share'
++datadir='${prefix}/share/gnome'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+ localstatedir='${prefix}/var'

@@ -1,10 +1,10 @@
 bin/mod
 bin/monodoc
-@unexec gacutil /u monodoc.dll /f /package monodoc /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll
-@exec gacutil /i monodoc.dll /f /package monodoc /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.config
+@unexec gacutil /u monodoc.dll /f /package monodoc /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/mono/gtk-sharp/monodoc.dll
+@exec gacutil /i monodoc.dll /f /package monodoc /root %D/lib /gacdir %D/lib > /dev/null || /usr/bin/true
 lib/monodoc/assembler.exe
 lib/monodoc/browser.exe
 lib/monodoc/mod.exe
@@ -38,9 +38,10 @@ lib/monodoc/sources/nunit-docs.source
 lib/monodoc/sources/nunit-docs.tree
 lib/monodoc/sources/nunit-docs.zip
 lib/monodoc/updater.exe
+lib/monodoc/validate.exe
 libdata/pkgconfig/monodoc.pc
-share/applications/monodoc.desktop
-share/pixmaps/monodoc.png
+share/gnome/applications/monodoc.desktop
+share/gnome/pixmaps/monodoc.png
 @dirrm lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/monodoc
 @dirrm lib/monodoc/sources
