@@ -7,7 +7,7 @@
 
 PORTNAME=	coldsync
 PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm comms
 MASTER_SITES=	http://www.ooblick.com/software/coldsync/
 
@@ -35,6 +35,12 @@ CONFIGURE_ARGS+=	--with-i18n
 # I don't know how to test for a version of {Net,Open}BSD that supports USB.
 .if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 400000
 CONFIGURE_ARGS+=	--with-usb
+.if ${OSVERSION} >= 450000
+post-patch:
+	${PERL} -pi -e 's,udi\.(\S+),udi.udi_\1,g;' \
+		-e 's,ur\.(\S+),ur.ucr_\1,g;' \
+		${WRKSRC}/configure ${WRKSRC}/libpconn/PConnection_usb.c
+.endif
 .endif
 
 post-install:
