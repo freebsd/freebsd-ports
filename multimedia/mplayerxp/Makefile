@@ -132,7 +132,7 @@ CONFIGURE_ARGS+=	--disable-cdparanoia
 .endif
 # dvd support
 .ifdef(WITH_DVD)
-LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS+=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 CONFIGURE_ARGS+=	--with-csslibdir=${LOCALBASE}/lib
 .endif

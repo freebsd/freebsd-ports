@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.theorie.physik.uni-goettingen.de/~ostreich/transcode/pr
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A text-console utility for video stream processing
 
-LIB_DEPENDS=	dvdread.2:${PORTSDIR}/multimedia/libdvdread \
+LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 

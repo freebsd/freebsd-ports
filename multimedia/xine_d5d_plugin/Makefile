@@ -20,7 +20,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A dvd input plugin for xine with menu support
 
 LIB_DEPENDS=	xine.4:${PORTSDIR}/multimedia/libxine \
-		dvdread.2:${PORTSDIR}/multimedia/libdvdread
+		dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_AUTOMAKE=	yes
 GNU_CONFIGURE=	yes

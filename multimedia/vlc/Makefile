@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 MAINTAINER=	brian@FreeBSD.org
 
 LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
-		dvdread.2:${PORTSDIR}/multimedia/libdvdread
+		dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}"
