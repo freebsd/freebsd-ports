@@ -6,6 +6,7 @@
     SUBDIR += ascd
     SUBDIR += aumix
     SUBDIR += bladeenc
+    SUBDIR += bwap
     SUBDIR += cam
     SUBDIR += cd-console
     SUBDIR += cd2mp3
