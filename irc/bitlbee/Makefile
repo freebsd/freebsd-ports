@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bitlbee
-PORTVERSION=	0.90a
+PORTVERSION=	0.91
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/
 
@@ -27,11 +27,11 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 LIB_DEPENDS+=	gnutls.12:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--msn=1
 pre-configure:
-	@${ECHO_CMD} "MSN support will be enabled."
+	@${ECHO_CMD} "MSN and Jabber/SSL support will be enabled."
 .else
-CONFIGURE_ARGS+=	--msn=0
+CONFIGURE_ARGS+=	--msn=0 --ssl=bogus
 pre-configure:
-	@${ECHO_CMD} "Type \"make -DWITH_MSN\" if you want to enable MSN support."
+	@${ECHO_CMD} "Type \"make -DWITH_MSN\" if you want to enable MSN and Jabber/SSL support."
 .endif
 
 .if defined(WITH_FLOOD)
