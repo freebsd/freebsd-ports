@@ -1,10 +1,11 @@
---- demos/programs/Makefile.in.orig	Thu Feb 14 23:15:54 2002
-+++ demos/programs/Makefile.in	Sat Sep  7 06:25:09 2002
-@@ -90,7 +90,6 @@
- YACC = @YACC@
+--- demos/programs/Makefile.in.orig	Tue Apr  6 13:50:30 2004
++++ demos/programs/Makefile.in	Thu Jul 29 21:19:05 2004
+@@ -93,7 +93,7 @@
  
- SUBDIRS = airport \
--         animate \
-          drag_and_drop \
-          draw \
-          earth \
+ MAINTAINERCLEANFILES = Makefile.in
+ 
+-SUBDIRS = airport          animate          drag_and_drop          draw          earth          filemanager          fileview          getsubres          hellomotif          i18ninput          panner          periodic          piano          popups          sampler2_0          setdate          Exm          todo          workspace          hellomotifi18n          tooltips          ButtonBox          Column          FontSel          Outline          TabStack          Tree          ColorSel          DropDown          MultiList          IconB          Paned          pixmaps
++SUBDIRS = airport          animate          drag_and_drop          draw          earth          filemanager          fileview          getsubres          hellomotif          i18ninput          panner          periodic          piano          popups          sampler2_0          setdate          todo          workspace          hellomotifi18n          tooltips          ButtonBox          Column          FontSel          Outline          TabStack          Tree          ColorSel          DropDown          MultiList          IconB          Paned          pixmaps
+ 
+ 
+ EXTRA_DIST = Imakefile

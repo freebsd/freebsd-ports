@@ -5,10 +5,9 @@
 %%MOTIF_DEMOS%%bin/bboxdemo
 %%MOTIF_DEMOS%%bin/colordemo
 %%MOTIF_DEMOS%%bin/column
-%%MOTIF_DEMOS%%bin/combo
 %%MOTIF_DEMOS%%bin/draw
+%%MOTIF_DEMOS%%bin/dropdown
 %%MOTIF_DEMOS%%bin/earth
-%%MOTIF_DEMOS%%bin/ext18list
 %%MOTIF_DEMOS%%bin/filemanager
 %%MOTIF_DEMOS%%bin/fileview
 %%MOTIF_DEMOS%%bin/fontsel
@@ -17,6 +16,7 @@
 %%MOTIF_DEMOS%%bin/hellomotif
 %%MOTIF_DEMOS%%bin/i18ninput
 %%MOTIF_DEMOS%%bin/iconbuttondemo
+%%MOTIF_DEMOS%%bin/multilist
 bin/mwm
 %%MOTIF_DEMOS%%bin/outline
 %%MOTIF_DEMOS%%bin/paned
@@ -32,6 +32,7 @@ bin/mwm
 %%MOTIF_DEMOS%%bin/tree
 bin/uil
 %%MOTIF_DEMOS%%bin/wsm
+%%MOTIF_DEMOS%%bin/xmanimate
 bin/xmbind
 include/Mrm/MrmAppl.h
 include/Mrm/MrmDecls.h
@@ -110,6 +111,8 @@ include/Xm/DrawingA.h
 include/Xm/DrawingAP.h
 include/Xm/DrawnB.h
 include/Xm/DrawnBP.h
+include/Xm/DropDown.h
+include/Xm/DropDownP.h
 include/Xm/DropSMgr.h
 include/Xm/DropSMgrP.h
 include/Xm/DropTrans.h
@@ -163,6 +166,8 @@ include/Xm/MenuT.h
 include/Xm/MenuUtilP.h
 include/Xm/MessageB.h
 include/Xm/MessageBP.h
+include/Xm/MultiList.h
+include/Xm/MultiListP.h
 include/Xm/MwmUtil.h
 include/Xm/NavigatorT.h
 include/Xm/Notebook.h
@@ -220,8 +225,6 @@ include/Xm/TabBoxP.h
 include/Xm/TabList.h
 include/Xm/TabStack.h
 include/Xm/TabStackP.h
-include/Xm/Table.h
-include/Xm/TableP.h
 include/Xm/TakesDefT.h
 include/Xm/TearOffBP.h
 include/Xm/TearOffP.h
@@ -260,8 +263,11 @@ include/Xm/XmAll.h
 include/Xm/XmIm.h
 include/Xm/XmP.h
 include/Xm/XmStrDefs.h
+include/Xm/XmStrDefs22.h
 include/Xm/Xmfuncs.h
 include/Xm/XmosP.h
+include/Xm/Xmos_r.h
+include/Xm/Xmpoll.h
 include/Xm/XpmP.h
 include/Xm/xmlist.h
 include/uil/Uil.h
@@ -270,10 +276,16 @@ include/uil/UilDef.h
 include/uil/UilSymDef.h
 include/uil/UilSymGl.h
 include/uil/XmAppl.uil
-%%MOTIF_DEMOS%%lib/X11/app-defaults/Combo
+%%MOTIF_DEMOS%%lib/X11/app-defaults/Column
+%%MOTIF_DEMOS%%lib/X11/app-defaults/DropDown
+%%MOTIF_DEMOS%%lib/X11/app-defaults/Fileview
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdAirport
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdAnimate
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdDraw
 %%MOTIF_DEMOS%%lib/X11/app-defaults/XmdFilemanager
 %%MOTIF_DEMOS%%lib/X11/app-defaults/XmdI18nInput
 %%MOTIF_DEMOS%%lib/X11/app-defaults/XmdPeriodic
+%%MOTIF_DEMOS%%lib/X11/app-defaults/XmdSampler2_0
 %%MOTIF_DEMOS%%lib/X11/app-defaults/XmdSetDate
 %%MOTIF_DEMOS%%lib/X11/app-defaults/XmdTodo
 lib/X11/bindings/acorn
@@ -302,6 +314,8 @@ lib/X11/bindings/sun
 lib/X11/bindings/sun_at
 lib/X11/bindings/tek
 lib/X11/bindings/xmbind.alias
+%%MOTIF_DEMOS%%lib/X11/help/animate.help
+%%MOTIF_DEMOS%%lib/X11/help/draw.help
 %%MOTIF_DEMOS%%lib/X11/help/filemanager.help
 %%MOTIF_DEMOS%%lib/X11/help/getsubres.help
 %%MOTIF_DEMOS%%lib/X11/help/i18ninput.help
@@ -309,9 +323,10 @@ lib/X11/bindings/xmbind.alias
 %%MOTIF_DEMOS%%lib/X11/help/todo.help
 lib/X11/system.mwmrc
 %%MOTIF_DEMOS%%lib/X11/uid/C/uid/l_strings.uid
+%%MOTIF_DEMOS%%lib/X11/uid/English.uid
 %%MOTIF_DEMOS%%lib/X11/uid/French.uid
 %%MOTIF_DEMOS%%lib/X11/uid/German.uid
-%%MOTIF_DEMOS%%lib/X11/uid/English.uid
+%%MOTIF_DEMOS%%lib/X11/uid/dog.uid
 %%MOTIF_DEMOS%%lib/X11/uid/english/uid/l_strings.uid
 %%MOTIF_DEMOS%%lib/X11/uid/french/uid/l_strings.uid
 %%MOTIF_DEMOS%%lib/X11/uid/hebrew/uid/l_strings.uid
@@ -319,7 +334,10 @@ lib/X11/system.mwmrc
 %%MOTIF_DEMOS%%lib/X11/uid/hellomotif.uid
 %%MOTIF_DEMOS%%lib/X11/uid/japanese/uid/l_strings.uid
 %%MOTIF_DEMOS%%lib/X11/uid/periodic.uid
+%%MOTIF_DEMOS%%lib/X11/uid/plane.uid
+%%MOTIF_DEMOS%%lib/X11/uid/superman.uid
 %%MOTIF_DEMOS%%lib/X11/uid/swedish/uid/l_strings.uid
+%%MOTIF_DEMOS%%lib/X11/uid/xmanimate.uid
 lib/libMrm.a
 lib/libMrm.so
 lib/libMrm.so.3
@@ -329,13 +347,11 @@ lib/libUil.so.3
 lib/libXm.a
 lib/libXm.so
 lib/libXm.so.3
-share/doc/open-motif/BUGREPORT
-%%PORTDOCS%%share/doc/open-motif/CLOSEDBUGS.gz
-share/doc/open-motif/COPYRIGHT.MOTIF
-%%PORTDOCS%%share/doc/open-motif/OPENBUGS.gz
-share/doc/open-motif/README
-share/doc/open-motif/RELNOTES
-@dirrm share/doc/open-motif
+%%DOCSDIR%%/BUGREPORT
+%%DOCSDIR%%/COPYRIGHT.MOTIF
+%%DOCSDIR%%/README
+%%DOCSDIR%%/RELNOTES
+@dirrm %%DOCSDIR%%
 %%MOTIF_DEMOS%%@dirrm lib/X11/uid/swedish/uid
 %%MOTIF_DEMOS%%@dirrm lib/X11/uid/swedish
 %%MOTIF_DEMOS%%@dirrm lib/X11/uid/japanese/uid
@@ -352,5 +368,5 @@ share/doc/open-motif/RELNOTES
 %%MOTIF_DEMOS%%@dirrm lib/X11/help
 @dirrm lib/X11/bindings
 @dirrm include/uil
-@dirrm include/Mrm
 @dirrm include/Xm
+@dirrm include/Mrm

@@ -1,12 +1,11 @@
---- doc/man/man5/Makefile.in.orig	Tue Sep  3 05:33:49 2002
-+++ doc/man/man5/Makefile.in	Tue Sep  3 22:58:47 2002
-@@ -94,7 +94,8 @@
- man_MANS = \
-     Traits.5 \
-     UIL.5 \
--    WML.5
-+    WML.5 \
-+    mwmrc.5
+--- doc/man/man5/Makefile.in.orig	Tue Apr  6 13:50:28 2004
++++ doc/man/man5/Makefile.in	Thu Jul 29 21:21:55 2004
+@@ -95,7 +95,7 @@
+ 
+ EXTRA_DIST = $(man_MANS)
+ 
+-man_MANS =      Traits.5     UIL.5     WML.5
++man_MANS =      Traits.5     UIL.5     WML.5      mwmrc.5
  
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../include/config.h
