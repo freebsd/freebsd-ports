@@ -10,9 +10,6 @@ PORTVERSION=	1.5.3
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.fct.unl.pt/.2/linuxberg/files/x11/dev/ \
-		ftp://ftp.chemo.tuniv.szczecin.pl/dsk2/www.linuxberg.com/files/x11/dev/ \
-		ftp://ftp.darenet.dk/mirrors/mirror.linuxberg.com/files/x11/dev/ \
-		ftp://ftp.uni-c.dk/mirrors/mirror.linuxberg.com/files/x11/dev/ \
 		ftp://ftp.cadvision.com/pub/linuxberg/files/x11/dev/ \
 		ftp://ftp.matrix.com.br/pub/linuxberg/files/x11/dev/ \
 		ftp://ftp.duth.gr/pub/linuxberg/files/x11/dev/ \

@@ -7,8 +7,7 @@
 
 PORTNAME=	opfor
 PORTVERSION=	1.1.0.8
-MASTER_SITES=	ftp://ftp.gearboxsoftware.com/pub/ \
-		http://downloads.planetmirror.com/pub/bluesnews/half-life/opfor/
+MASTER_SITES=	http://downloads.planetmirror.com/pub/bluesnews/half-life/opfor/
 DISTNAME=	opfor${PORTVERSION:S/.//g}
 
 MAINTAINER=	lioux@FreeBSD.org

@@ -10,11 +10,10 @@ PORTVERSION=	0.9.5
 CATEGORIES=	net security
 MASTER_SITES=	http://www.silcnet.org/download/server/sources/ \
 		ftp://ftp.silcnet.org/silc/server/sources/ \
-		http://www.planetmirror.com/pub/silcnet/server/sources/ \
+		http://public.www.planetmirror.com/pub/silcnet/server/sources/ \
 		ftp://ftp.au.silcnet.org/pub/silcnet/server/sources/ \
 		http://www.mirrors.wiretapped.net/security/network-security/silc/server/sources/ \
 		ftp://ftp.mirrors.wiretapped.net/pub/security/network-security/silc/server/sources/ \
-		http://munitions.vipul.net/software/mirrors/silc/ \
 		ftp://ftp.no.silcnet.org/pub/silc/server/sources/
 PKGNAMESUFFIX=	-doc
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}

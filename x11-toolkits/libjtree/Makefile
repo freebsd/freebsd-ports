@@ -10,8 +10,7 @@ PORTVERSION=	1.1.7
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.krasnodar.ru/pub/unix/IDE/CodeCrusader/ \
-		ftp://ftp.uniovi.es/pub/unix/mail/ \
-		ftp://ftp.tuwien.ac.at/z10/hci/jx/source-1.5.3/
+		ftp://ftp.uniovi.es/pub/unix/mail/
 DISTNAME=	JTree_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
