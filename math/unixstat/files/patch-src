@@ -1,0 +1,55 @@
+--- src/ff.c.orig	Sun Dec 12 22:56:48 2004
++++ src/ff.c	Sun Dec 12 22:59:17 2004
+@@ -911,7 +911,7 @@
+ 	
+ 	strcpy (numbuf, oldexpand (title, gpage, page, file));
+ 	if (Needfls)
+-		fls (file, numbuf, answer);
++		usfls (file, numbuf, answer);
+ 	else
+ 		strcpy (answer, numbuf);
+ 	return (answer);
+--- src/fls.c.orig	Sun Dec 12 22:59:31 2004
++++ src/fls.c	Sun Dec 12 23:00:12 2004
+@@ -183,7 +183,7 @@
+ statstdin (statptr)
+ struct	stat	*statptr;
+ 	{
+-	long 	clock, time ();
++	long 	clock ;
+ 	clock = time (0);
+ 	statptr->st_atime = clock;
+ 	statptr->st_mtime = clock;
+@@ -200,7 +200,7 @@
+ 
+ /*FUNCTION fls: formated listing of file */
+ Status
+-fls (file, format, bptr) /* put formatted file listing in buffer */
++usfls (file, format, bptr) /* put formatted file listing in buffer */
+ char	*file;           /* name of the file to print */
+ char	*format;         /* print format control string, like printf */
+ char	*bptr;           /* pointer to buffer in which to print stats */
+--- src/calc.c.orig	Sun Dec 12 23:08:23 2004
++++ src/calc.c	Sun Dec 12 23:11:21 2004
+@@ -1,4 +1,3 @@
+-extern char *malloc(), *realloc();
+ 
+ # line 2 "calc.y"
+ /*  Copyright 1981 Gary Perlman */
+@@ -79,7 +78,7 @@
+ double	eval (), Answer;
+ double	*Constant;
+ char	*getline ();
+-FILE	*Outfile = stdout;
++FILE	*Outfile;
+ 
+ # line 83 "calc.y"
+ typedef union 
+@@ -222,6 +221,7 @@
+ 	{
+ 	int 	i;
+ 	signal (SIGINT, SIG_IGN);
++	Outfile = stdout;
+ 	if (isatty (fileno (stdin)))
+ 		{
+ 		Interactive = 1;

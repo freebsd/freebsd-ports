@@ -7,6 +7,7 @@
 
 PORTNAME=	unixstat
 PORTVERSION=	5.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	# must fetch manually
 DISTNAME=	stat
@@ -17,13 +18,21 @@ COMMENT=	A statistics package designed for use with the Unix shell
 
 RESTRICTED=	"License does not allow redistribution of binaries"
 
+.include <bsd.port.pre.mk>
+
+.if ( ${OSVERSION} < 500000 )
+EXTRACT_DEPENDS=gtar:${PORTSDIR}/archivers/gtar
+.endif
+
+EXTRACT_CMD=	uncompress
+EXTRACT_BEFORE_ARGS=-c
+EXTRACT_AFTER_ARGS=| gtar -xf -
+
 MAN1=		abut.1 anova.1 calc.1 colex.1 contab.1 desc.1 dm.1 dprime.1 \
 		dsort.1 features.1 ff.1 fls.1 fpack.1 linex.1 maketrix.1 \
 		manstat.1 oneway.1 pair.1 perm.1 probdist.1 rankind.1 \
 		rankrel.1 ranksort.1 regress.1 repeat.1 reverse.1 series.1 \
 		stats.1 transpose.1 ts.1 unixstat.1 validata.1
-
-.include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE="Gary Perlman requires that users agree to his license"\
