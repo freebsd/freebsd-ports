@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 .if defined(WITH_BERKELEY_DB)
-LIB_DEPENDS+=	db3.2:${PORTSDIR}/databases/db
+LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 DB_INC=		-I${LOCALBASE}/include/db3
 CONFIGURE_ARGS=	--with-berkeley
 .else
