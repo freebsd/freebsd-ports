@@ -1,6 +1,6 @@
---- kadu/Makefile.in	Sun Aug 17 22:53:45 2003
-+++ kadu/Makefile.in	Thu Aug 21 23:16:59 2003
-@@ -538,22 +538,23 @@
+--- kadu/Makefile.in	Mon Sep  1 18:30:42 2003
++++ kadu/Makefile.in	Sat Oct  4 13:05:48 2003
+@@ -533,23 +533,24 @@
  	$(QTMOCDIR)/moc -o $@ $<
  
  install-data-local:
@@ -10,13 +10,17 @@
 -		echo "Type=Application" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
 -		echo "Exec=$(bindir)/kadu" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
 -		echo "Icon=kadu.png" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
--		echo "MiniIcon=kadu_mini.png" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
+-		echo "MiniIcon=kadu-16.png" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
 -		echo "Terminal=0" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
 -		echo "Name=Kadu" >> "$(DESTDIR)/usr/share/applnk/Internet/kadu.desktop"; \
 -		$(mkinstalldirs) "$(DESTDIR)/usr/share/pixmaps/"; \
--		$(INSTALL_DATA) hi48-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu_big.png"; \
+-		$(INSTALL_DATA) hi48-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu-48.png"; \
 -		$(INSTALL_DATA) hi32-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu.png"; \
--		$(INSTALL_DATA) hi16-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu_mini.png"; \
+-		$(INSTALL_DATA) hi16-app-kadu.png "$(DESTDIR)/usr/share/pixmaps/kadu-16.png"; \
+-		echo ""; \
+-		echo "Icons installed to $(DESTDIR)/usr/share/pixmaps"; \
+-		echo "Link(kadu.desktop) installed to $(DESTDIR)/usr/share/applnk/Internet"; \
+-		echo ""; \
 +	@if test -w "$(datadir)"; then \
 +		$(mkinstalldirs) "$(DESTDIR)$(datadir)/applnk/Internet/"; \
 +		echo "[Desktop Entry]" > "$(DESTDIR)$(datadir)/applnk/Internet/kadu.desktop"; \
@@ -31,11 +35,10 @@
 +		$(INSTALL_DATA) hi48-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/48x48/apps/kadu.png"; \
 +		$(INSTALL_DATA) hi32-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/32x32/apps/kadu.png"; \
 +		$(INSTALL_DATA) hi16-app-kadu.png "$(DESTDIR)$(datadir)/icons/hicolor/16x16/apps/kadu.png"; \
- 		echo ""; \
--		echo "Icons installed to $(DESTDIR)/usr/share/pixmaps"; \
--		echo "Link(kadu.desktop) installed to $(DESTDIR)/usr/share/applnk/Internet"; \
++		echo ""; \
 +		echo "Icons installed to $(DESTDIR)$(datadir)/icons"; \
 +		echo "Link(kadu.desktop) installed to $(DESTDIR)$(datadir)/applnk/Internet"; \
- 		echo ""; \
++		echo ""; \
  	else \
  		echo "";\
+ 		echo "         *******************************************************************"; \

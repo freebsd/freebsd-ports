@@ -6,10 +6,11 @@
 #
 
 PORTNAME=		kadu
-PORTVERSION=		0.3.4r4
+PORTVERSION=		0.3.4
+PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://kadu.net/releases/
-DISTNAME=		${PORTNAME}-0.3.4-rc4
+DISTNAME=		${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=		jacek@combit.com.pl
 COMMENT=		QT Gadu-Gadu client
