@@ -9,25 +9,24 @@ PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.28
 PORTREVISION=	2
 CATEGORIES=	security ipv6
+
+MAINTAINER=	freebsd-maintainer@westbend.net
+COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
+
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		sasl-${PORTVERSION}-ldap-ssl-filter-mysql-patch.tgz:ldap_mysql
+
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://www.surf.org.uk/downloads/:ldap_mysql \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/:ldap_mysql \
 		${MASTER_SITE_SOURCEFORGE:S/$/:ldap_mysql/} \
-
 MASTER_SITE_SUBDIR=	. OLD-VERSIONS/sasl cyrus-utils:ldap_mysql
-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		sasl-${PORTVERSION}-ldap-ssl-filter-mysql-patch.tgz:ldap_mysql
-
-PATCH_SITES=	ftp://ftp.westbend.net/pub/cyrus-mail/contrib/:apop \
-		http://www.imasy.or.jp/~ume/ipv6/
 PATCHFILES=	sasl_apop_patch.gz:apop \
 		${DISTNAME}-ipv6-${IPV6_VER}.diff.gz
-
-MAINTAINER=	hetzels@westbend.net
-COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
+PATCH_SITES=	ftp://ftp.westbend.net/pub/cyrus-mail/contrib/:apop \
+		http://www.imasy.or.jp/~ume/ipv6/
 
 USE_SUBMAKE=	yes
 USE_OPENSSL=	yes
@@ -136,8 +135,8 @@ EBONES=	"@comment "
 .elif exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4) && !defined(WITHOUT_KERBEROS4)
 CONFIGURE_ARGS+=	--enable-krb4
 .elif !exists(/usr/lib/libkrb.a) && defined(WITH_KERBEROS4)
-LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4  
-CONFIGURE_ARGS+=	--enable-krb4=${LOCALBASE}/krb4 
+LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
+CONFIGURE_ARGS+=	--enable-krb4=${LOCALBASE}/krb4
 .else
 CONFIGURE_ARGS+=	--disable-krb4
 EBONES=	"@comment "
@@ -171,9 +170,9 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if ${OSVERSION} < 450000
-FMT=    /usr/bin/fmt
+FMT=	/usr/bin/fmt
 .else
-FMT=    /usr/bin/fmt -w 67
+FMT=	/usr/bin/fmt -w 67
 .endif
 
 pre-fetch:
@@ -253,12 +252,12 @@ post-install:
 	${INSTALL} -d -m 770 -o ${CYRUS_USER} -g ${CYRUS_GROUP} /var/state/saslauthd1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for docfile in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 	(cd ${WRKSRC}/doc ; \
-	for file in `make -V EXTRA_DIST` ; do \
-		${INSTALL_DATA} ${WRKSRC}/doc/$${file} ${DOCSDIR} ; \
+	for extrafile in `make -V EXTRA_DIST` ; do \
+		${INSTALL_DATA} ${WRKSRC}/doc/$${extrafile} ${DOCSDIR} ; \
 	done)
 	@${INSTALL_DATA} ${WRKSRC}/java/doc/draft-weltman-java-sasl-02.txt ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
