@@ -1,1 +1,7 @@
+bin/gcd
 bin/grip
+share/doc/grip/CHANGES
+share/doc/grip/CREDITS
+share/doc/grip/README
+share/doc/grip/TODO
+@dirrm share/doc/grip
