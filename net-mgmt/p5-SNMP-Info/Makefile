@@ -9,6 +9,7 @@ PORTVERSION=	0.8
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	snmp-info
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A perl5 module for gathering information from network devices
