@@ -396,6 +396,7 @@ arpd		ports/net/arpd
 arping		ports/net/arping
 arprelease	ports/net/arprelease
 arpwatch	ports/net/arpwatch
+arpwatch-devel	ports/net/arpwatch-devel
 arrow		ports/mail/arrow
 artemis		ports/biology/artemis
 arts		ports/audio/arts
