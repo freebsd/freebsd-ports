@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $Id: configure,v 1.4 1995/06/27 00:13:24 torstenb Exp $
+#
+
+set >/tmp/footest
+
+if [ $ENABLE_NOTE ];
+then
+	mv ${WRKSRC}/include/config.h.dist ${WRKSRC}/include/config.h.dist.bak
+	sed <${WRKSRC}/include/config.h.dist.bak s/\#ifdef\ ENABLE_NOTE/\#ifdef\ DISABLE_NOTE/g >${WRKSRC}/include/config.h.dist
+
+fi
+
+mv ${WRKSRC}/include/config.h.dist ${WRKSRC}/include/config.h.dist.bak.2
+sed <${WRKSRC}/include/config.h.dist.bak.2 >${WRKSRC}/include/config.h.dist s+!!SYSLOGFACILITY!!+$SYSLOG_FACILITY+g
