@@ -7,7 +7,7 @@
 # $Id: Makefile,v 1.4 1998/03/06 05:54:19 obrien Exp $
 #
 
-DISTNAME=	gcc-2.8.0
+DISTNAME=	gcc-2.8.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 
@@ -17,7 +17,7 @@ GNUOSREL!=	uname -r | sed -e 's/[-(].*//'
 
 PLIST=          ${WRKDIR}/PLIST.fixedup
 GNUHOST=	i386-unknown-freebsd${GNUOSREL}
-CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.0/include/g++
+CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/include/g++
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	bootstrap
@@ -35,10 +35,10 @@ post-install:
 	(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ ${PREFIX}/bin/gcov \
 	${PREFIX}/bin/protoize ${PREFIX}/bin/unprotoize \
 	${PREFIX}/bin/${GNUHOST}-gcc \
-	${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.0/cc1 \
-	${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.0/cc1obj \
-	${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.0/cc1plus \
-	${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.0/cpp ; \
+	${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/cc1 \
+	${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/cc1obj \
+	${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/cc1plus \
+	${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/cpp ; \
 		do strip $$prog ; \
 		done)
 	ln -f ${PREFIX}/bin/gcc ${PREFIX}/bin/gcc28
