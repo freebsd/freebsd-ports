@@ -7,7 +7,7 @@
 
 PORTNAME=	quickml
 PORTVERSION=	0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://namazu.org/%7esatoru/quickml/
 
@@ -56,7 +56,7 @@ post-fetch:
 
 post-patch:
 .if !defined(WITHOUT_LIMIT)
-	${PATCH} ${PATCH_DIST_ARGS} < ${DISTDIR}/${PORTNAME}-${PORTVERSION}-limited.patch
+	@${PATCH} ${PATCH_DIST_ARGS} < ${DISTDIR}/${PORTNAME}-${PORTVERSION}-limited.patch
 .endif
 	@${SED} ${FILES_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/quickml.sh > ${WRKDIR}/quickml.sh

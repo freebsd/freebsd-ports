@@ -1,0 +1,74 @@
+*** quickml-analog.in.orig	2004-06-07 17:50:59.000000000 +0900
+--- quickml-analog.in	2005-01-07 19:11:59.000000000 +0900
+***************
+*** 15,20 ****
+--- 15,21 ----
+  require 'ftools'
+  require 'time'
+  require 'cgi'
++ require 'open3'
+  
+  class Array
+    def tail (n)
+***************
+*** 395,413 ****
+    end
+  
+    def add_basic (f)
+!     f.print '
+!     set grid
+!     set timefmt "%y%m%d%H"
+!     set xdata time
+!     set size ratio 0.76
+!     set linestyle 1 linetype 1 linewidth 5
+!     set linestyle 2 linetype 3 linewidth 5
+!     set linestyle 3 linetype 2 linewidth 5
+!     set linestyle 4 linetype 4 linewidth 5
+!     set linestyle 5 linetype 5 linewidth 5
+!     set linestyle 6 linetype 7 linewidth 5
+  
+!     '.gsub(/^    /, "")
+    end
+  
+    def add_chart (f, default, lang, chart_prefix, stat_files, type, 
+--- 396,435 ----
+    end
+  
+    def add_basic (f)
+!     Open3.popen3( "gnuplot" ) { |stdin, stdout, stderr|
+!       stdin.puts "show version"
+!       stdin.close
+!       stderr.read[/[Vv]ersion (\d+\.\d+)/]
+!     }
+!     if ( Float( $1 ) < 4.0 ) then
+!       f.print '
+!       set grid
+!       set timefmt "%y%m%d%H"
+!       set xdata time
+!       set size ratio 0.76
+!       set linestyle 1 linetype 1 linewidth 5
+!       set linestyle 2 linetype 3 linewidth 5
+!       set linestyle 3 linetype 2 linewidth 5
+!       set linestyle 4 linetype 4 linewidth 5
+!       set linestyle 5 linetype 5 linewidth 5
+!       set linestyle 6 linetype 7 linewidth 5
+  
+!       '.gsub(/^    /, "")
+!     else
+!        f.print '
+!        set grid
+!        set timefmt "%y%m%d%H"
+!        set xdata time
+!        set size ratio 0.76
+!        set style line 1 linetype 1 linewidth 5
+!        set style line 2 linetype 3 linewidth 5
+!        set style line 3 linetype 2 linewidth 5
+!        set style line 4 linetype 4 linewidth 5
+!        set style line 5 linetype 5 linewidth 5
+!        set style line 6 linetype 7 linewidth 5
+! 
+!        '.gsub(/^    /, "")
+!     end
+    end
+  
+    def add_chart (f, default, lang, chart_prefix, stat_files, type, 
