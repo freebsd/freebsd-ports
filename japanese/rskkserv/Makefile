@@ -13,19 +13,14 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
-		${RUBY_LIBDIR}/tcpwrap.so:${PORTSDIR}/security/ruby-tcpwrap \
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/tcpwrap.so:${PORTSDIR}/security/ruby-tcpwrap \
 		${LOCALBASE}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
+
+USE_RUBY=	yes
 
 SKKJISYO_SIZE?=	L
 SKKJISYO?=	SKK-JISYO.${SKKJISYO_SIZE}
 SKK_MASTERDIR=	${PORTSDIR}/japanese/skk-jisyo
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
-RUBY_LIBDIR=	${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/rskkserv.sh
 MAKE_ARGS=	prefix="${PREFIX}" \
@@ -56,4 +51,6 @@ do-install:
 		${CHMOD} ${BINMODE} ${STARTUP_SCRIPT}; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

@@ -13,18 +13,14 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
-		ruby:${PORTSDIR}/lang/ruby
-RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
-		ruby:${PORTSDIR}/lang/ruby
+BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
+
+USE_RUBY=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 APXS=		${LOCALBASE}/sbin/apxs
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 DOCS_EN=	ChangeLog README.en
 DOCS_JA=	README.ja
@@ -35,14 +31,16 @@ do-configure:
 do-install:
 	${APXS} -i -A -n ruby ${WRKSRC}/mod_ruby.so
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ruby/mod_ruby/ja
+	${MKDIR} ${RUBY_DOCDIR}/mod_ruby/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/mod_ruby/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/mod_ruby/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/mod_ruby/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/mod_ruby/ja/
 .endfor
 .endif
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

@@ -1,45 +1,45 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/tmail/mails.so
-@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/tmail
-lib/ruby/site_ruby/%%RUBY_VER%%/tmail/encode.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/tmail/info.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/tmail/mailp.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/tmail/port.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/tmail/field.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/tmail/loader.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/tmail/mails.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/tmail/tmail.rb
-@dirrm lib/ruby/site_ruby/%%RUBY_VER%%/tmail
-share/examples/ruby/tmail/from-check.rb
-share/examples/ruby/tmail/hf2class.rb
-share/examples/ruby/tmail/multipart.rb
-share/examples/ruby/tmail/parse-bench.rb
-share/examples/ruby/tmail/parse-test.rb
-share/examples/ruby/tmail/sendmail.rb
-share/examples/ruby/tmail/m/normal
-share/examples/ruby/tmail/m/simple
-share/examples/ruby/tmail/m/multipart
-share/examples/ruby/tmail/m/sendtest
-@dirrm share/examples/ruby/tmail/m
-@dirrm share/examples/ruby/tmail
-share/doc/ruby/tmail/README.en
-share/doc/ruby/tmail/bugs.html
-share/doc/ruby/tmail/changes.html
-share/doc/ruby/tmail/concept.html
-share/doc/ruby/tmail/field.html
-share/doc/ruby/tmail/index.html
-share/doc/ruby/tmail/item.html
-share/doc/ruby/tmail/loader.html
-share/doc/ruby/tmail/port.html
-share/doc/ruby/tmail/tmail.html
-share/doc/ruby/tmail/ja/README.ja
-share/doc/ruby/tmail/ja/bugs.html
-share/doc/ruby/tmail/ja/changes.html
-share/doc/ruby/tmail/ja/concept.html
-share/doc/ruby/tmail/ja/field.html
-share/doc/ruby/tmail/ja/index.html
-share/doc/ruby/tmail/ja/item.html
-share/doc/ruby/tmail/ja/loader.html
-share/doc/ruby/tmail/ja/port.html
-share/doc/ruby/tmail/ja/tmail.html
-@dirrm share/doc/ruby/tmail/ja
-@dirrm share/doc/ruby/tmail
+%%RUBY_SITEARCHLIBDIR%%/tmail/mails.so
+@dirrm %%RUBY_SITEARCHLIBDIR%%/tmail
+%%RUBY_SITELIBDIR%%/tmail/encode.rb
+%%RUBY_SITELIBDIR%%/tmail/info.rb
+%%RUBY_SITELIBDIR%%/tmail/mailp.rb
+%%RUBY_SITELIBDIR%%/tmail/port.rb
+%%RUBY_SITELIBDIR%%/tmail/field.rb
+%%RUBY_SITELIBDIR%%/tmail/loader.rb
+%%RUBY_SITELIBDIR%%/tmail/mails.rb
+%%RUBY_SITELIBDIR%%/tmail/tmail.rb
+@dirrm %%RUBY_SITELIBDIR%%/tmail
+%%RUBY_EXAMPLESDIR%%/tmail/from-check.rb
+%%RUBY_EXAMPLESDIR%%/tmail/hf2class.rb
+%%RUBY_EXAMPLESDIR%%/tmail/multipart.rb
+%%RUBY_EXAMPLESDIR%%/tmail/parse-bench.rb
+%%RUBY_EXAMPLESDIR%%/tmail/parse-test.rb
+%%RUBY_EXAMPLESDIR%%/tmail/sendmail.rb
+%%RUBY_EXAMPLESDIR%%/tmail/m/normal
+%%RUBY_EXAMPLESDIR%%/tmail/m/simple
+%%RUBY_EXAMPLESDIR%%/tmail/m/multipart
+%%RUBY_EXAMPLESDIR%%/tmail/m/sendtest
+@dirrm %%RUBY_EXAMPLESDIR%%/tmail/m
+@dirrm %%RUBY_EXAMPLESDIR%%/tmail
+%%RUBY_DOCDIR%%/tmail/README.en
+%%RUBY_DOCDIR%%/tmail/bugs.html
+%%RUBY_DOCDIR%%/tmail/changes.html
+%%RUBY_DOCDIR%%/tmail/concept.html
+%%RUBY_DOCDIR%%/tmail/field.html
+%%RUBY_DOCDIR%%/tmail/index.html
+%%RUBY_DOCDIR%%/tmail/item.html
+%%RUBY_DOCDIR%%/tmail/loader.html
+%%RUBY_DOCDIR%%/tmail/port.html
+%%RUBY_DOCDIR%%/tmail/tmail.html
+%%RUBY_DOCDIR%%/tmail/ja/README.ja
+%%RUBY_DOCDIR%%/tmail/ja/bugs.html
+%%RUBY_DOCDIR%%/tmail/ja/changes.html
+%%RUBY_DOCDIR%%/tmail/ja/concept.html
+%%RUBY_DOCDIR%%/tmail/ja/field.html
+%%RUBY_DOCDIR%%/tmail/ja/index.html
+%%RUBY_DOCDIR%%/tmail/ja/item.html
+%%RUBY_DOCDIR%%/tmail/ja/loader.html
+%%RUBY_DOCDIR%%/tmail/ja/port.html
+%%RUBY_DOCDIR%%/tmail/ja/tmail.html
+@dirrm %%RUBY_DOCDIR%%/tmail/ja
+@dirrm %%RUBY_DOCDIR%%/tmail
