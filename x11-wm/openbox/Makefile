@@ -8,6 +8,7 @@
 
 PORTNAME=	openbox
 PORTVERSION=	0.3.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/openbox/releases/
 DISTNAME=	openbox-3.0-beta1
@@ -55,6 +56,11 @@ pre-install:
 		| ${SED} -e 's:^:@dirrm share/openbox/:' >> ${PLIST}
 	cd ${WRKSRC}/data && ${FIND} -s * -type f \
 		| ${SED} -e 's:^:share/openbox/:' >> ${PLIST}
+	${ECHO_CMD} share/gnome/wm-properties/openbox.desktop >> ${PLIST}
+.for ii in la so so.0
+		${ECHO_CMD} lib/libobparser.${ii} >> ${PLIST}
+		${ECHO_CMD} lib/libobrender.${ii} >> ${PLIST}
+.endfor
 .if !defined(NOPORTDOCS)
 .for ii in ${DOCS}
 	${ECHO_CMD} share/doc/openbox/${ii} >> ${PLIST}
@@ -72,6 +78,13 @@ do-install:
 		${PREFIX}/bin
 	cd ${WRKSRC} && pax -r -w data themes ${PREFIX}/share/openbox/
 	cd ${WRKSRC} && ${INSTALL_DATA} data/* ${PREFIX}/share/openbox/
+	cd ${WRKSRC} && ${INSTALL_DATA} data/openbox.desktop \
+		${PREFIX}/share/gnome/wm-properties/
+.for ii in la so so.0
+	cd ${WRKSRC} && \
+		${INSTALL_DATA} parser/.libs/libobparser.${ii} ${PREFIX}/lib \
+		&& ${INSTALL_DATA} render/.libs/libobrender.${ii} ${PREFIX}/lib
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for ii in ${DOCS}
