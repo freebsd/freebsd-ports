@@ -29,6 +29,7 @@ SNMP		"SNMP support" OFF \
 XML		"XML support" OFF \
 FTP		"File Transfer Protocol support" OFF \
 gettext		"gettext library support" OFF \
+jstring		"jstring module" OFF \
 2> /tmp/checklist.tmp.$$
 
 	retval=$?
@@ -156,6 +157,22 @@ while [ "$1" ]; do
 		\"gettext\")
 			echo "LIB_DEPENDS+=	intl.1:\${PORTSDIR}/devel/gettext"
 			echo "CONFIGURE_ARGS+=--with-gettext=\${PREFIX}"
+			;;
+		\"jstring\")
+			${CAT} << EOF
+MASTER_SITES+=	ftp://night.fminn.nagano.nagano.jp/php4/
+DISTFILES=	\${DISTNAME}\${EXTRACT_SUFX} php-4.0RC2_jstring-1.0.tar.gz
+CONFIGURE_ARGS+=--enable-jstring
+BUILD_DEPENDS+=	automake:\${PORTSDIR}/devel/automake
+BUILD_DEPENDS+=	autoconf:\${PORTSDIR}/devel/autoconf
+
+post-extract:
+	[ -d \${WRKDIR}/jstring ] && \\
+	(cd \${WRKSRC}; \\
+	 \${MV} ${WRKDIR}/jstring ext; \\
+	 \${RM} configure; \\
+	 ./buildconf)
+EOF
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
