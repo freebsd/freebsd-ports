@@ -25,4 +25,10 @@ MAN3=		File::Spec.3 \
 		File::Spec::Win32.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} > 500600
+IGNORE=		This port is for perl 5.6.0 and under only.
+.endif
+
+.include <bsd.port.post.mk>
