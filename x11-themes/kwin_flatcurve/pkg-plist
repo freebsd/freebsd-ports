@@ -1,0 +1,3 @@
+share/apps/kwin/flatcurve.desktop
+lib/kde3/kwin_flatcurve.so
+lib/kde3/kwin_flatcurve.la
