@@ -1,0 +1,13 @@
+This is Q-Graph, a graph library and editor for the Q programming language.
+The package contains:
+
+- graph.q: a graph data structure implemented as a kind of asymmetric
+  adjacency list dictionary, and a collection of the usual graph operations
+
+- graphed.q: a full-featured graph editor, allows you to create and edit your
+  input graphs with ease (requires Tcl/Tk)
+
+WWW: http://q-lang.sourceforge.net
+
+- Albert Graef
+ag@muwiinfa.geschichte.uni-mainz.de
