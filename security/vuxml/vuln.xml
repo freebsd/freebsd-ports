@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8ecaaca2-cc07-11d8-858d-000d610a3b12">
+    <topic>Linux binary compatibility mode input validation error</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>4.9</ge><lt>4.9_10</lt></range>
+	<range><ge>4.8</ge><lt>4.8_23</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>A programming error in the handling of some Linux system
+          calls may result in memory locations being accessed without
+          proper validation.</p>
+	<p>It may be possible for a local attacker to read and/or
+	  overwrite portions of kernel memory, resulting in disclosure
+	  of sensitive information or potential privilege escalation.
+	  A local attacker can cause a system panic.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0602</cvename>
+      <freebsdsa>SA-04:13.linux</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-06-18</discovery>
+      <entry>2004-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ff00f2ce-c54c-11d8-b708-00061bc2ad93">
     <topic>XFree86 opens a chooserFd TCP socket even when DisplayManager.requestPort is 0</topic>
     <affects>
