@@ -1,38 +1,109 @@
---- pine/signals.c.orig	Tue Jul  7 07:42:45 1998
-+++ pine/signals.c	Tue Jul 28 08:35:07 1998
-@@ -386,7 +386,7 @@
- 	ps_global->inbox_stream->rdonly = 1;	/* and become read-only */
- 	mail_ping(ps_global->inbox_stream);
- 	q_status_message(SM_ASYNC, 3, 7,
--		   "Another Pine is accessing Inbox.  Session now Read-Only.");
-+		   "另外一份 Pine 正在存取 Inbox。這個 session 進入唯讀狀態。");
- 	dprint(1, (debugfile, "** INBOX went read-only **\n\n"));
-     }
+--- pine/screen.c.orig	Fri Jun  5 04:09:17 1998
++++ pine/screen.c	Tue Aug  4 12:42:21 1998
+@@ -433,7 +433,7 @@
  
-@@ -398,7 +398,7 @@
- 	ps_global->mail_stream->rdonly = 1;	/* and become read-only */
- 	mail_ping(ps_global->mail_stream);
- 	q_status_message(SM_ASYNC, 3, 7,
--		  "Another Pine is accessing folder.  Session now Read-Only.");
-+		  "另外一份 Pine 正在存取資料匣。這個 session 進入唯讀狀態。");
- 	dprint(1, (debugfile, "** secondary folder went read-only **\n\n"));
-     }
- }
-@@ -536,7 +536,7 @@
-     int retval = 1;
  
-     dprint(9,(debugfile, "busy_alarm(%d, %s, %p, %d)\n",
--	seconds, msg ? msg : "Busy", pc_func, init_msg));
-+	seconds, msg ? msg : "請稍後", pc_func, init_msg));
+ static struct key cancel_keys[] = 
+-     {{NULL,NULL,KS_NONE},            {"^C","Cancel",KS_NONE},
++     {{NULL,NULL,KS_NONE},            {"^C","取消",KS_NONE},
+       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
+       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
+       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
+@@ -1124,10 +1124,10 @@
+     as.page_column    = -1;
+     is_context        = strlen(as.context_name);
+     sprintf(version, "PINE %s", pine_version); 
+-    ss_string         = as.stream_status == Closed ? "(CLOSED)" :
++    ss_string         = as.stream_status == Closed ? "(已關閉)" :
+                         (as.stream_status == ReadOnly
+ 			 && !IS_NEWS(as.stream))
+-                           ? "(READONLY)" : "";
++                           ? "(唯讀)" : "";
+     ss_len            = strlen(ss_string);
  
-     /*
-      * If we're already busy'ing, and we don't have something special,
-@@ -560,7 +560,7 @@
- 	    final_message = 1;
+     tit_len = strlen(as.title);		/* fixed title field width   */
+@@ -1144,17 +1144,17 @@
+     /* 
+      * set location field's length and value based on requested style 
+      */
+-    loc_label = (is_context) ? "Msg" : "Message";
++    loc_label = (is_context) ? "信" : "信件";
+     loc_len   = strlen(loc_label);
+     if(!mn_get_total(as.msgmap)){
+-	sprintf(tmp_20k_buf, "No %ss", loc_label);
++	sprintf(tmp_20k_buf, "沒有%s", loc_label);
+ 	loc_len += 4;
+     }else{
+ 	switch(as.style){
+ 	  case FolderName :			/* "x,xxx <loc_label>s" */
+ 	    loc_len += digit_count(mn_get_total(as.msgmap)) + 3;
+-	    sprintf(tmp_20k_buf, "%s %s%s", comatose(mn_get_total(as.msgmap)),
+-		    loc_label, plural(mn_get_total(as.msgmap)));
++	    sprintf(tmp_20k_buf, "%s 封%s", comatose(mn_get_total(as.msgmap)),
++		    loc_label);
+ 	    break;
+ 	  case MessageNumber :	       	/* "<loc_label> xxx of xxx DEL"  */
+ 	    num_len	     = digit_count(mn_get_total(as.msgmap));
+@@ -1162,7 +1162,7 @@
+ 	    as.cur_mess_col  = sc - (2 * num_len) - 10;
+ 	    as.del_column    = as.cur_mess_col + num_len 
+ 	      + digit_count(as.current_msg) + 5;
+-	    sprintf(tmp_20k_buf, "%s %s of %s %s", loc_label,
++	    sprintf(tmp_20k_buf, "%s %s 之 %s %s", loc_label,
+ 		    strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
+ 		    strcpy(tmp_20k_buf + 1500, comatose(mn_get_total(as.msgmap))),
+ 		    BAR_STATUS(as.msg_state));
+@@ -1174,7 +1174,7 @@
+ 	    as.percent_column  = as.cur_mess_col + num_len
+ 	      + digit_count(as.current_msg) + 7;
+ 	    as.del_column      = as.percent_column + 4;
+-	    sprintf(tmp_20k_buf, "%s %s of %s %s %s", loc_label, 
++	    sprintf(tmp_20k_buf, "%s %s 之 %s %s %s", loc_label, 
+ 		    strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
+ 		    strcpy(tmp_20k_buf + 1500, comatose(mn_get_total(as.msgmap))),
+ 		    percentage(as.current_line, as.total_lines, 1),
+@@ -1185,7 +1185,7 @@
+ 	  case FileTextPercent :
+ 	    as.page_column = sc - (14 + 2*(num_len = digit_count(as.total_lines)));
+ 	    loc_len        = 17 + 2*num_len;
+-	    sprintf(tmp_20k_buf, "Line %*ld of %*ld %s    ",
++	    sprintf(tmp_20k_buf, "行 %*ld 之 %*ld %s    ",
+ 		    num_len, as.current_line, 
+ 		    num_len, as.total_lines,
+ 		    percentage(as.current_line, as.total_lines, 1));
+@@ -1259,7 +1259,7 @@
+ 		      ss_string);
  	}
  	else{
--	    strcpy(busy_message, "Busy");
-+	    strcpy(busy_message, "請稍後");
- 	    final_message = 0;
- 	}
+-	    char *fmt = "Folder: %s%s";
++	    char *fmt = "信件匣：%s%s";
+ 	    if(fold_len + ss_len + 8 < avail) 	/* all of folder fit? */
+ 	      sprintf(fold_tmp, fmt, as.folder_name, ss_string);
+ 	    else if((fold_len/2) + ss_len + 8 < avail)
+@@ -1307,7 +1307,7 @@
+ 	as.current_msg = mn_get_cur(as.msgmap);
  
+         if(as.style == MsgTextPercent){
+-            PutLine5(0, as.cur_mess_col, "%s of %s %s %s%s",
++            PutLine5(0, as.cur_mess_col, "%s 之 %s %s %s%s",
+ 		     strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
+ 		     strcpy(tmp_20k_buf + 1500,
+ 			    comatose(mn_get_total(as.msgmap))),
+@@ -1317,7 +1317,7 @@
+ 	    as.del_column     += delta;
+ 	    as.percent_column += delta;
+         } else {
+-            PutLine4(0, as.cur_mess_col, "%s of %s %s%s",
++            PutLine4(0, as.cur_mess_col, "%s 之 %s %s%s",
+ 		     strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
+ 		     strcpy(tmp_20k_buf + 1500,
+ 			    comatose(mn_get_total(as.msgmap))),
+@@ -1420,7 +1420,7 @@
+ 
+     as.current_line = new_line_number;
+ 
+-    sprintf(tmp_20k_buf, "%*ld of %*ld %s    ",
++    sprintf(tmp_20k_buf, "%*ld 之 %*ld %s    ",
+ 	    digit_count(as.total_lines), as.current_line, 
+ 	    digit_count(as.total_lines), as.total_lines,
+ 	    percentage(as.current_line, as.total_lines, 0));

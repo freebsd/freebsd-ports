@@ -1,52 +1,40 @@
---- build.orig	Tue Jun 16 01:35:10 1998
-+++ build	Tue Jul 28 08:34:58 1998
-@@ -256,11 +256,11 @@
+--- pine/status.c.orig	Sat Jun 27 07:36:34 1998
++++ pine/status.c	Tue Aug  4 12:42:22 1998
+@@ -72,7 +72,7 @@
+ static struct key modal_message_keys[] =
+        {NULL_MENU,
+ 	NULL_MENU,
+-	{"Ret","Finished",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
++	{"Ret","完畢",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -931,8 +931,8 @@
+  * want_to's array passed to radio_buttions...
+  */
+ static ESCKEY_S yorn[] = {
+-    {'y', 'y', "Y", "Yes"},
+-    {'n', 'n', "N", "No"},
++    {'y', 'y', "Y", "是"},
++    {'n', 'n', "N", "否"},
+     {-1, 0, NULL, NULL}
+ };
  
-         if [ -s c-client ] ; then rm -f c-client ; fi
-         ln -s imap/c-client c-client
--        if [ -s mtest    ] ; then rm -f mtest    ; fi
--        ln -s imap/mtest mtest
--        if [ -s imapd    ] ; then rm -f imapd    ; fi
--        ln -s imap/imapd imapd
--        echo "Making c-client library, mtest and imapd"
-+#       if [ -s mtest    ] ; then rm -f mtest    ; fi
-+#       ln -s imap/mtest mtest
-+#       if [ -s imapd    ] ; then rm -f imapd    ; fi
-+#       ln -s imap/imapd imapd
-+        echo "Making c-client library"
-         eval echo make "$makeargs" "$K1" "$K2" $ccltarg
-         cd $PHOME/imap
-         eval make "$makeargs" "$K1" "$K2" $ccltarg
-@@ -281,14 +281,16 @@
-         cd $PHOME/bin
-         rm -f pine mtest imapd pico pilot
-         if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
--        if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
--        if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
-+#       if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
-+#       if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
-         if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
-         if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
-+        if [ -s ../pico/libpico.so.1.3 ] ;
-+              then ln ../pico/libpico.so.1.3 libpico.so.1.3 ; fi
-         cd $PHOME
-         echo ''
-         echo "Links to executables are in bin directory:"
--        size bin/pine bin/mtest bin/imapd bin/pico bin/pilot
-+        size bin/pine bin/pico bin/pilot bin/libpico.so.1.3
-         echo "Done"
-         ;;
+@@ -1139,7 +1139,7 @@
+     memset(fkey_table, NO_OP_COMMAND, 12 * sizeof(int));
+     if(help_text != NO_HELP){		/* if shown, always at position 0 */
+ 	rb_keymenu.keys[0].name  = "?";
+-	rb_keymenu.keys[0].label = "Help";
++	rb_keymenu.keys[0].label = "輔助說明";
+ 	setbitn(0, bitmap);
+ 	fkey_table[0] = ctrl('G');
+ 	start++;
+@@ -1147,7 +1147,7 @@
  
-@@ -299,10 +301,10 @@
- 	make clean
-         echo "Cleaning Pine"
-         cd $PHOME/pine
--        make -f makefile.ult clean
-+        make -f makefile.bsf clean
-         echo "Cleaning pico"
-         cd $PHOME/pico
--        make $makeargs -f makefile.ult clean
-+        make $makeargs -f makefile.bsf clean
-         echo "Done"
-         cd $PHOME
-         ;;
+     if(on_ctrl_C){			/* if shown, always at position 1 */
+ 	rb_keymenu.keys[1].name  = "^C";
+-	rb_keymenu.keys[1].label = "Cancel";
++	rb_keymenu.keys[1].label = "取消";
+ 	setbitn(1, bitmap);
+ 	fkey_table[1] = ctrl('C');
+ 	start++;

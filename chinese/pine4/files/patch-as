@@ -1,31 +1,165 @@
---- pine/osdep/os-bsf.h.orig	Fri Jun 26 14:19:54 1998
-+++ pine/osdep/os-bsf.h	Tue Jul 28 08:35:05 1998
-@@ -87,7 +87,7 @@
-    NOTE: You'll also have to make sure the appropriate osdep/postreap.*
-          file is included in the os-*.ic file for your system.
-  ----*/
--/* #define BACKGROUND_POST  /* comment out to disable posting from child */
-+#define BACKGROUND_POST     /* comment out to disable posting from child */
+--- pico/search.c.orig	Fri Jun 26 05:48:14 1998
++++ pico/search.c	Tue Aug  4 12:42:15 1998
+@@ -165,7 +165,7 @@
+ 	        break;
+ 	      default:
+ 		if(status == ABORT)
+-		  emlwrite("Search Cancelled", NULL);
++		  emlwrite("取消搜尋", NULL);
+ 		else
+ 		  mlerase();
+ 		curwp->w_flag |= WFMODE;
+@@ -212,16 +212,16 @@
  
+     /* and complain if not there */
+     if (status == FALSE){
+-      emlwrite("\"%s\" not found", defpat);
++      emlwrite("找不到 \"%s\"", defpat);
+     }
+     else if((gmode & MDREPLACE) && repl_mode == TRUE){
+         status = replace_pat(defpat, &wrapt2);    /* replace pattern */
+ 	if (wrapt == TRUE || wrapt2 == TRUE)
+-	  emlwrite("Replacement %srapped",
+-		   (status == ABORT) ? "cancelled but w" : "W");
++	  emlwrite("取代%s由檔案起始從頭搜尋",
++		   (status == ABORT) ? "已取消，但" : "");
+     }
+     else if(wrapt == TRUE){
+-	emlwrite("Search Wrapped", NULL);
++	emlwrite("從頭搜尋", NULL);
+     }
+     else if(status == TRUE){
+ 	emlwrite("", NULL);
+@@ -251,7 +251,7 @@
+ 	/* additional 'replace all' menu option */
+         menu_pat[0].name  = "^X";
+         menu_pat[0].key   = (CTRL|'X');
+-        menu_pat[0].label = "Repl All";
++        menu_pat[0].label = "取代所有";
+         KS_OSDATASET(&menu_pat[0], KS_NONE);
+ 	menu_pat[1].name  = NULL;
  
+@@ -263,12 +263,12 @@
+            (*term.t_rev)(0);
  
-@@ -219,7 +219,9 @@
- /*----------------------------------------------------------------------
-    If no nntp-servers are defined, this program will be used to post news.
-  ----*/
--#define SENDNEWS	"/usr/local/news/inews -h"	/* news posting cmd */
-+#define SENDNEWS	"/usr/local/news/lib/inews -h"	/* For NN inews    */
-+/*#define SENDNEWS	"/usr/local/bin/inews -h"	/* For INN inews   */
-+/*#define SENDNEWS	"/usr/local/bin/inews -h"	/* For Cnews inews */
+ 	    if (repl_all)
+-	      strcpy(prompt, "Replace every \"");
++	      strcpy(prompt, "取代每一個 \"");
+ 	    else
+-	      strcpy(prompt, "Replace \"");
++	      strcpy(prompt, "取代 \"");
  
+ 	    expandp(&defpat[0], &prompt[strlen(prompt)], NPAT/2);
+-	    strcat(prompt, "\" with");
++	    strcat(prompt, "\" 為");
+ 	    if(rpat[0] != 0){
+ 		strcat(prompt, " [");
+ 		expandp(rpat, &prompt[strlen(prompt)], NPAT/2);
+@@ -286,9 +286,9 @@
+             case HELPCH:                      /* help requested */
+                 if(Pmaster)
+                   (*Pmaster->helper)(Pmaster->search_help,
+-                                     "Help for Searching", 1);
++                                     "搜尋的輔助說明", 1);
+                 else
+-                  pico_help(SearchHelpText, "Help for Searching", 1);
++                  pico_help(SearchHelpText, "搜尋的輔助說明", 1);
  
- /*--------- Program employed by users to change their password ---------*/
-@@ -268,7 +270,7 @@
-        8
-        9 logs gross details of command execution
-  ----*/
--#define DEFAULT_DEBUG 2
-+#define DEFAULT_DEBUG 0
+ 	    case (CTRL|'L'):			/* redraw requested */
+ 		refresh(FALSE, 1);
+@@ -298,10 +298,10 @@
+ 	    case (CTRL|'X'):        /* toggle replace all option */
+ 	        if (repl_all){
+ 		  repl_all = FALSE;
+-		  menu_pat[0].label = "Repl All";
++		  menu_pat[0].label = "取代所有";
+ 	        }else{
+ 		  repl_all = TRUE;
+-		  menu_pat[0].label = "Repl One";
++		  menu_pat[0].label = "取代一個";
+ 		}
+ 	        break;
  
+@@ -342,7 +342,7 @@
+ 		else
+ 		{
+ 		  if(status == ABORT)
+-		    emlwrite("Replacement Cancelled", NULL);
++		    emlwrite("取消取代", NULL);
+ 		  else
+ 		    mlerase();
+ 		  chword(defpat, defpat);
+@@ -352,7 +352,7 @@
  
+ 	    default:
+                 if(status == ABORT)
+-                  emlwrite("Replacement Cancelled", NULL);
++                  emlwrite("取消取代", NULL);
+                 else
+                   mlerase();
+ 		chword(defpat, defpat);
+@@ -384,9 +384,9 @@
+ 	(*term.t_rev)(0);
+ 	fflush(stdout);
  
+-	strcpy(prompt, "Replace \"");
++	strcpy(prompt, "取代 \"");
+ 	expandp(&orig[0], &prompt[strlen(prompt)], NPAT/2);
+-	strcat(prompt, "\" with \"");
++	strcat(prompt, "\" 為 \"");
+ 	expandp(&repl[0], &prompt[strlen(prompt)], NPAT/2);
+ 	strcat(prompt, "\"");
+ 
+@@ -400,13 +400,13 @@
+ 	    chword(orig, orig);			/* replace word by itself */
+ 	    update();
+ 	    if(status == ABORT){		/* if cancelled return */
+-		emlwrite("Replace All cancelled after %d changes", (char *) n);
++		emlwrite("在取消「取代所有」之前，已做過 %d 個改變", (char *) n);
+ 		return (ABORT);			/* ... else keep looking */
+ 	    }
+ 	}
+     }
+     else{
+-	emlwrite("No more matches for \"%s\"", orig);
++	emlwrite("沒有符合 \"%s\" 的字串了", orig);
+ 	return (FALSE);
+     }
+ }
+@@ -423,18 +423,18 @@
+ 	EXTRAKEYS    menu_pat[4];
+ 
+ 	menu_pat[0].name  = "^Y";
+-	menu_pat[0].label = "FirstLine";
++	menu_pat[0].label = "第一行";
+ 	menu_pat[0].key   = (CTRL|'Y');
+ 	KS_OSDATASET(&menu_pat[0], KS_NONE);
+ 	menu_pat[1].name  = "^V";
+-	menu_pat[1].label = "LastLine";
++	menu_pat[1].label = "最後一行";
+ 	menu_pat[1].key   = (CTRL|'V');
+ 	KS_OSDATASET(&menu_pat[1], KS_NONE);
+ 	menu_pat[2].name  = "^R";
+ 	if (repl_mode)
+-	  menu_pat[2].label = "Don't Replace";
++	  menu_pat[2].label = "不取代";
+ 	else
+-	  menu_pat[2].label = "Replace";
++	  menu_pat[2].label = "取代";
+ 	menu_pat[2].key   = (CTRL|'R');
+ 	KS_OSDATASET(&menu_pat[2], KS_NONE);
+ 	menu_pat[3].name  = NULL;
+@@ -485,11 +485,11 @@
+ 	EXTRAKEYS    menu_pat[3];
+ 
+ 	menu_pat[0].name  = "^Y";
+-	menu_pat[0].label = "FirstLine";
++	menu_pat[0].label = "第一行";
+ 	menu_pat[0].key   = (CTRL|'Y');
+ 	KS_OSDATASET(&menu_pat[0], KS_NONE);
+ 	menu_pat[1].name  = "^V";
+-	menu_pat[1].label = "LastLine";
++	menu_pat[1].label = "最後一行";
+ 	menu_pat[1].key   = (CTRL|'V');
+ 	KS_OSDATASET(&menu_pat[1], KS_NONE);
+ 	menu_pat[2].name  = NULL;

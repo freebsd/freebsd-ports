@@ -1,40 +1,935 @@
---- pine/status.c.orig	Sat Jun 27 07:36:34 1998
-+++ pine/status.c	Tue Jul 28 08:35:07 1998
-@@ -72,7 +72,7 @@
- static struct key modal_message_keys[] =
-        {NULL_MENU,
- 	NULL_MENU,
--	{"Ret","Finished",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
-+	{"Ret","完畢",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
- 	NULL_MENU,
- 	NULL_MENU,
- 	NULL_MENU,
-@@ -931,8 +931,8 @@
-  * want_to's array passed to radio_buttions...
-  */
- static ESCKEY_S yorn[] = {
--    {'y', 'y', "Y", "Yes"},
--    {'n', 'n', "N", "No"},
-+    {'y', 'y', "Y", "是"},
-+    {'n', 'n', "N", "否"},
-     {-1, 0, NULL, NULL}
- };
+--- pine/send.c.orig	Tue Jul 21 03:02:18 1998
++++ pine/send.c	Tue Aug  4 12:42:21 1998
+@@ -208,18 +208,18 @@
  
-@@ -1139,7 +1139,7 @@
-     memset(fkey_table, NO_OP_COMMAND, 12 * sizeof(int));
-     if(help_text != NO_HELP){		/* if shown, always at position 0 */
- 	rb_keymenu.keys[0].name  = "?";
--	rb_keymenu.keys[0].label = "Help";
-+	rb_keymenu.keys[0].label = "輔助說明";
- 	setbitn(0, bitmap);
- 	fkey_table[0] = ctrl('G');
- 	start++;
-@@ -1147,7 +1147,7 @@
  
-     if(on_ctrl_C){			/* if shown, always at position 1 */
- 	rb_keymenu.keys[1].name  = "^C";
--	rb_keymenu.keys[1].label = "Cancel";
-+	rb_keymenu.keys[1].label = "取消";
- 	setbitn(1, bitmap);
- 	fkey_table[1] = ctrl('C');
- 	start++;
+ #define	INTRPT_PMT \
+-	    "Continue INTERRUPTED composition (answering \"n\" won't erase it)"
++	    "繼續編輯上次中斷的文章嗎（回答 \"否\" 將不會刪除它）"
+ #define	PSTPND_PMT \
+-	    "Continue postponed composition (answering \"No\" won't erase it)"
++	    "繼續編輯遭暫緩的文章嗎（回答 \"否\" 將不會刪除它）"
+ #define	FORM_PMT \
+-	    "Start composition from Form Letter Folder"
++	    "開始自來源信件匣中編輯"
+ #define	PSTPN_FORM_PMT \
+-	    "Save to Postponed or Form letter folder? "
++	    "要存至「暫緩」或「來源」信件匣？"
+ #define	POST_PMT   \
+-	    "Posted message may go to thousands of readers. Really post"
++	    "這篇文章可能被數以千計的讀者閱\讀，確定要刊登嗎"
+ #define	INTR_DEL_FAIL	\
+ 	   "Undelete messages to remain postponed, and then continue message"
+-#define	INTR_DEL_PMT	"Deleted messages will be removed from folder.  Delete"
++#define	INTR_DEL_PMT	"刪除的信件將被移出檔案匣。確定刪除嗎"
+ 
+ /*
+  * Since c-client preallocates, it's necessary here to define a limit
+@@ -374,14 +374,14 @@
+ 		    mail_close(stream);
+ 		    if(ret == 'x'){
+ 			q_status_message(SM_ORDER, 0, 3,
+-					 "Composition cancelled");
++					 "取消編輯");
+ 			return;
+ 		    }
+ 		}
+ 	    }
+ 	    else{
+ 		q_status_message1(SM_ORDER | SM_DING, 3, 3,
+-				  "Can't open Interrupted mailbox: %s",
++				  "無法開被中斷的信箱：%s",
+ 				  file_path);
+ 		if(stream)
+ 		  mail_close(stream);
+@@ -450,14 +450,14 @@
+ 
+ 		    if(ret == 'x'){
+ 			q_status_message(SM_ORDER, 0, 3,
+-					 "Composition cancelled");
++					 "取消編輯");
+ 			done++;
+ 		    }
+ 		}
+ 	    }
+ 	    else{
+ 		q_status_message1(SM_ORDER | SM_DING, 3, 3,
+-				  "Can't open Postponed mailbox: %s", mbox);
++				  "無法開遭暫緩的信箱：%s", mbox);
+ 		if(stream)
+ 		  mail_close(stream);
+ 	    }
+@@ -532,7 +532,7 @@
+ 
+ 			if(ret == 'x'){
+ 			    q_status_message(SM_ORDER, 0, 3,
+-					     "Composition cancelled");
++					     "取消編輯");
+ 			    done++;
+ 			}
+ 		    }
+@@ -542,7 +542,7 @@
+ 	    }
+ 	    else{
+ 		q_status_message1(SM_ORDER | SM_DING, 3, 3,
+-				  "Can't open form letter folder: %s", mbox);
++				  "無法開啟來源信件匣： %s", mbox);
+ 		if(stream)
+ 		  mail_close(stream);
+ 	    }
+@@ -616,7 +616,7 @@
+ 	  fs_give((void **)&tmp_fcc);
+     }
+ 
+-    pine_send(outgoing, &body, "COMPOSE MESSAGE", fcc,
++    pine_send(outgoing, &body, "編輯信件", fcc,
+ 	      reply, redraft_pos, lcc, custom, fcc_is_sticky);
+ 
+     if(reply){
+@@ -683,7 +683,7 @@
+      */
+     if(!stream->nmsgs){
+ 	q_status_message(SM_ORDER | SM_DING, 3, 5,
+-			 "Empty folder.  No messages really postponed!");
++			 "空的信件匣。沒有信件真正被暫緩！");
+ 	return(redraft_cleanup(stream, TRUE));
+     }
+     else if(stream == ps_global->mail_stream){
+@@ -719,7 +719,7 @@
+ 	mn_give(&msgmap);
+ 
+ 	if(rv){
+-	    q_status_message(SM_ORDER, 0, 3, "Composition cancelled");
++	    q_status_message(SM_ORDER, 0, 3, "取消編輯");
+ 	    (void) redraft_cleanup(stream, FALSE);
+ 	    return(0);				/* special case */
+ 	}
+@@ -957,7 +957,7 @@
+ 	  if(b->type == TYPEMULTIPART){
+ 	      if(strucmp(b->subtype, "mixed")){
+ 		  q_status_message1(SM_INFO, 3, 4, 
+-				 "Converting Multipart/%s to Multipart/Mixed", 
++				 "轉換 Multipart/%s 至 Multipart/Mixed", 
+ 				 b->subtype);
+ 		  fs_give((void **)&b->subtype);
+ 		  b->subtype = cpystr("mixed");
+@@ -965,7 +965,7 @@
+ 	  }
+ 	  else{
+ 	      q_status_message2(SM_ORDER | SM_DING, 3, 4, 
+-				"Unable to resume type %s/%s message",
++				"無法繼續形態為 %s/%s 的信件",
+ 				body_types[b->type], b->subtype);
+ 	      return(redraft_cleanup(stream, TRUE));
+ 	  }
+@@ -979,7 +979,7 @@
+ 	    set_mime_type_by_grope(&part->body, NULL);
+ 	    if(part->body.type != TYPETEXT){
+ 		q_status_message2(SM_ORDER | SM_DING, 3, 4,
+-				  "Unable to resume; first part is non-text: %s/%s",
++				  "無法繼續；第一部份非純文字：%s/%s",
+ 				  body_types[part->body.type], 
+ 				  part->body.subtype);
+ 		return(redraft_cleanup(stream, TRUE));
+@@ -1040,7 +1040,7 @@
+ 
+ 	    if(stream == ps_global->mail_stream){
+ 		q_status_message1(SM_ORDER, 3, 7,
+-			     "No more postponed messages, returning to \"%s\"",
++			     "沒有遭暫緩的信件了，回到 \"%s\"",
+ 			     ps_global->inbox_name);
+ 		do_broach_folder(ps_global->inbox_name,
+ 				 ps_global->context_list);
+@@ -1061,7 +1061,7 @@
+ 
+ 	    if(!(rv = mail_delete(stream, mbox)))
+ 	      q_status_message1(SM_ORDER|SM_DING, 3, 3,
+-				"Can't delete: %s", mbox);
++				"無法刪除： %s", mbox);
+ 
+ 	    fs_give((void **) &mbox);
+ 	    success = rv > 0L;
+@@ -1084,7 +1084,7 @@
+ {
+     if(background_posting(FALSE)){
+ 	q_status_message1(SM_ORDER, 0, 3,
+-			  "%s folder unavailable while background posting",
++			  "%s 信件匣在背景刊登時無法使用",
+ 			  type);
+ 	return(failure);
+     }
+@@ -1307,7 +1307,7 @@
+ 
+ 	if(rc == 1 || (rc == 0 && !answer)) {
+ 	    q_status_message(SM_ORDER, 3, 4,
+-		   "Send cancelled (User-id must be provided before sending)");
++		   "取消寄件(寄件前必須提供使用者代號)");
+ 	    return(0);
+ 	}
+ 
+@@ -1396,7 +1396,7 @@
+ 
+ 	if(rc == 1 || (rc == 0 && !answer)) {
+ 	    q_status_message(SM_ORDER, 3, 4,
+-	  "Send cancelled (Host/domain name must be provided before sending)");
++	  "取消寄件(寄件前必須提供 主機/領域 名稱)");
+ 	    return(0);
+ 	}
+ 
+@@ -1452,7 +1452,7 @@
+ 
+         if(rc == 1 || (rc == 0 && answer[0] == '\0')) {
+             q_status_message(SM_ORDER, 3, 4,
+-	       "Send cancelled (SMTP server must be provided before sending)");
++	       "取消寄件(寄件前必須提供 SMTP 伺服器)");
+             return(0);
+         }
+ 
+@@ -1479,31 +1479,31 @@
+ */
+ static struct headerentry he_template[]={
+   {"From    : ",  "From",        h_composer_from,       10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK},
+   {"Reply-To: ",  "Reply To",    h_composer_reply_to,   10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK},
+   {"To      : ",  "To",          h_composer_to,         10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 0, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK},
+   {"Cc      : ",  "Cc",          h_composer_cc,         10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 0, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK},
+   {"Bcc     : ",  "Bcc",         h_composer_bcc,        10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK},
+   {"Newsgrps: ",  "Newsgroups",  h_composer_news,        10, 0, NULL,
+-   news_build,    NULL, NULL, news_group_selector,  "To NwsGrps",
++   news_build,    NULL, NULL, news_group_selector,  "新聞組群列表",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_NONE},
+   {"Fcc     : ",  "Fcc",         h_composer_fcc,        10, 0, NULL,
+-   NULL,          NULL, NULL, folders_for_fcc,      "To Fldrs",
++   NULL,          NULL, NULL, folders_for_fcc,      "資料匣列表",
+    0, 0, 0, 1, 1, 1, 0, 0, 0, 0, KS_NONE},
+   {"Lcc     : ",  "Lcc",         h_composer_lcc,        10, 0, NULL,
+-   build_addr_lcc, NULL, NULL, addr_book_compose_lcc,"To AddrBk",
++   build_addr_lcc, NULL, NULL, addr_book_compose_lcc,"地址簿",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_NONE},
+   {"Attchmnt: ",  "Attchmnt",    h_composer_attachment, 10, 0, NULL,
+-   NULL,          NULL, NULL, NULL,                 "To Files",
++   NULL,          NULL, NULL, NULL,                 "檔案列表",
+    0, 1, 1, 0, 0, 1, 0, 0, 0, 0, KS_NONE},
+   {"Subject : ",  "Subject",     h_composer_subject,    10, 0, NULL,
+    valid_subject, NULL, NULL, NULL,                 NULL,
+@@ -1538,7 +1538,7 @@
+ 
+ static struct headerentry he_custom_addr_templ={
+    NULL,          NULL,          h_composer_custom_addr,10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK};
+ static struct headerentry he_custom_free_templ={
+    NULL,          NULL,          h_composer_custom_free,10, 0, NULL,
+@@ -1821,7 +1821,7 @@
+ 
+           default:
+             q_status_message1(SM_ORDER,3,3,
+-		"Unknown header type %d in pine_simple_send", (void *)pf->type);
++		"在 pine_simple_send 中出現未知的標頭形態 %d", (void *)pf->type);
+             break;
+         }
+     }
+@@ -1831,7 +1831,7 @@
+     ekey[0].ch    = ctrl('T');
+     ekey[0].rval  = 2;
+     ekey[0].name  = "^T";
+-    ekey[0].label = "To AddrBk";
++    ekey[0].label = "地址簿";
+     ekey[1].ch    = -1;
+ 
+     /*----------------------------------------------------------------------
+@@ -1942,12 +1942,12 @@
+ 			opts[i].ch      = 'y';
+ 			opts[i].rval    = 'y';
+ 			opts[i].name    = "Y";
+-			opts[i++].label = "Yes";
++			opts[i++].label = "是";
+ 
+ 			opts[i].ch      = 'n';
+ 			opts[i].rval    = 'n';
+ 			opts[i].name    = "N";
+-			opts[i++].label = "No";
++			opts[i++].label = "否";
+ 
+ 			verbose_requested = 0;
+ 			if(F_ON(F_VERBOSE_POST, ps_global)){
+@@ -1994,7 +1994,7 @@
+ 			    dsn_show = (dsn_requested & DSN_SHOW);
+ 			    sprintf(tmp_20k_buf,
+ 				    "%s%s%s%s%s%sto \"%s\" ? ",
+-				    prmpt_cnf ? prmpt_cnf : "Send message ",
++				    prmpt_cnf ? prmpt_cnf : "送信 ",
+ 				    (verbose_requested || dsn_show)
+ 				      ? "(" : "",
+ 				    (verbose_requested)
+@@ -2131,7 +2131,7 @@
+ 			if(!(outgoing->to || outgoing->cc || outgoing->bcc
+ 			     || local_so)){
+ 			    q_status_message(SM_ORDER, 3, 5,
+-				"No recipients specified!");
++				"尚未指定收件人！");
+ 			    continue;
+ 			}
+ 
+@@ -2156,7 +2156,7 @@
+ 			    }
+ 			    else if(result == 0){
+ 				q_status_message(SM_ORDER,3,5,
+-				    "Fcc Failed!.  No message saved.");
++				    "Fcc 失敗！未存入任何信件。");
+ 				retval = -1;
+ 				dprint(1,
+ 				  (debugfile, "explicit fcc write failed!\n"));
+@@ -2174,7 +2174,7 @@
+ 			}
+ 		    }
+ 		    else{
+-			q_status_message(SM_ORDER, 0, 3, "Send cancelled");
++			q_status_message(SM_ORDER, 0, 3, "取消寄件");
+ 			retval = -1;
+ 		    }
+ 		}
+@@ -2202,7 +2202,7 @@
+ 	    break;
+ 
+ 	  case 1:
+-	    q_status_message(SM_ORDER, 0, 3, "Send cancelled");
++	    q_status_message(SM_ORDER, 0, 3, "取消寄件");
+ 	    done++;
+ 	    retval = -1;
+ 	    break;
+@@ -2446,7 +2446,7 @@
+ 		break;
+ 
+ 	      case 'x': /* ^C */
+-		q_status_message(SM_ORDER, 0, 3, "Message cancelled");
++		q_status_message(SM_ORDER, 0, 3, "取消信件");
+ 		dprint(4, (debugfile, "=== send: cancelled\n"));
+ 		return;
+ 
+@@ -2836,7 +2836,7 @@
+ 
+ 	  default:
+ 	    q_status_message1(SM_ORDER,3,7,
+-			      "Unknown header type %d in pine_send",
++			      "在 pine_send 中出現未知的標頭形態 %d",
+ 			      (void *)pf->type);
+ 	    break;
+ 	}
+@@ -2863,7 +2863,7 @@
+ #endif
+ 		if(pf->canedit || !he->rich_header)
+ 		  q_status_message(SM_ORDER, 3, 3,
+-			"Not allowed to change header \"From\"");
++			"不允許\改變標頭 \"From\"");
+ 
+ 		memset(he, 0, (size_t)sizeof(*he));
+ 		pf->he = NULL;
+@@ -3206,7 +3206,7 @@
+ 				   ? "CANCEL" : "HUH?"));
+ 	    if((editor_result & COMP_CANCEL)
+ 	       && F_ON(F_QUELL_DEAD_LETTER, ps_global)){
+-		q_status_message(SM_ORDER, 0, 3, "Message cancelled");
++		q_status_message(SM_ORDER, 0, 3, "取消信件");
+ 		break;
+ 	    }
+ 
+@@ -3230,7 +3230,7 @@
+ 	       && (check_addresses(&header) == CA_BAD)){
+ 		/*--- Addresses didn't check out---*/
+ 		q_status_message(SM_ORDER, 7, 7,
+-	      "Not allowed to postpone message until addresses are qualified");
++	      "直到地址合格之前不允許\暫緩信件");
+ 		continue;
+             }
+ 
+@@ -3287,7 +3287,7 @@
+ 		    if(!so_puts(local_so, tmp_20k_buf)){
+ 			if(editor_result & COMP_CANCEL)
+ 			  q_status_message2(SM_ORDER | SM_DING, 3, 3,
+-					    "Can't write \"%s\": %s",
++					    "無法寫入 \"%s\"：%s",
+ 					    folder, error_description(errno));
+ 			else
+ 			  dprint(1, (debugfile, "* * * CAN'T WRITE %s: %s\n",
+@@ -3299,7 +3299,7 @@
+ 		if(!ps_global->VAR_POSTPONED_FOLDER
+ 		   || !ps_global->VAR_POSTPONED_FOLDER[0]){
+ 		    q_status_message(SM_ORDER | SM_DING, 3, 3,
+-				     "No postponed file defined");
++				     "沒有已定義的暫緩檔");
+ 		    continue;
+ 		}
+ 
+@@ -3329,7 +3329,7 @@
+ 		}
+ 		else{
+ 		    strcpy(folder, ps_global->VAR_POSTPONED_FOLDER);
+-		    strcpy(label, "postponed message");
++		    strcpy(label, "暫緩信件");
+ 		}
+ 
+ 		local_so = open_fcc(folder,&fcc_cntxt, 1, NULL, NULL);
+@@ -3471,10 +3471,10 @@
+ 		   && ps_global->VAR_FORM_FOLDER[0]
+ 		   && !strcmp(folder, ps_global->VAR_FORM_FOLDER))
+ 		  q_status_message(SM_ORDER, 0, 3,
+-	   "Composition saved to Form Letter Folder. Select Compose to send.");
++	   "文章已被存至來源信件匣。選擇「編輯」送出。");
+ 		else
+ 		  q_status_message(SM_ORDER, 0, 3,
+-			 "Composition postponed. Select Compose to resume.");
++			 "文章已暫緩寄出。選擇「編輯」繼續編修。");
+ 
+                 break; /* postpone went OK, get out of here */
+ 	    }
+@@ -3484,15 +3484,15 @@
+ 		if(fcc_result && folder)
+ 		  lc = last_cmpnt(folder);
+ 
+-		q_status_message3(SM_ORDER, 0, 3, "Message cancelled%s%s%s",
+-				  (lc && *lc) ? " and copied to \"" : "",
++		q_status_message3(SM_ORDER, 0, 3, "取消信件%s%s%s",
++				  (lc && *lc) ? " 並複製到 \"" : "",
+ 				  (lc && *lc) ? lc : "",
+ 				  (lc && *lc) ? "\" file" : "");
+ 		break;
+             }
+ 	    else{
+ 		q_status_message(SM_ORDER, 0, 4,
+-		    "Continuing composition.  Message not postponed or sent");
++		    "繼續編輯。信件未被暫緩或送出");
+ 		body_start = 1;
+ 		continue; /* postpone failed, jump back in to composer */
+             }
+@@ -3508,14 +3508,14 @@
+             /* --- If posting, confirm with user ----*/
+ 	    if(outgoing->newsgroups && *outgoing->newsgroups
+ 	       && want_to(POST_PMT, 'n', 'n', NO_HELP, WT_NORM) == 'n'){
+-		q_status_message(SM_ORDER, 0, 3, "Message not posted");
++		q_status_message(SM_ORDER, 0, 3, "文章未被刊登");
+ 		dprint(4, (debugfile, "no post, continuing\n"));
+ 		continue;
+ 	    }
+ 
+ 	    if(!(outgoing->to || outgoing->cc || outgoing->bcc || lcc_addr
+ 		 || outgoing->newsgroups || (fcc && fcc[0]))){
+-		q_status_message(SM_ORDER, 3, 4, "No recipients specified!");
++		q_status_message(SM_ORDER, 3, 4, "尚未指定收件者！");
+ 		dprint(4, (debugfile, "no recip, continuing\n"));
+ 		continue;
+ 	    }
+@@ -3557,8 +3557,8 @@
+ 	       && !filter_message_text(sending_filter_requested, outgoing,
+ 				       *body, &orig_so)){
+ 		q_status_message1(SM_ORDER, 3, 3,
+-				 "Problem filtering!  Nothing sent%s.",
+-				 fcc ? " or saved to fcc" : "");
++				 "過濾器有問題！沒有東西被送出%s。",
++				 fcc ? "或存至 fcc" : "");
+ 		continue;
+ 	    }
+ 
+@@ -3649,7 +3649,7 @@
+ 			}
+ 			else if(!(result & (P_MAIL_BITS | P_NEWS_BITS))){
+ 			    q_status_message(SM_ORDER, 3, 5,
+-					    "Fcc Failed!.  No message saved.");
++					    "Fcc 失敗！未存入任何信件。");
+ 			    dprint(1, (debugfile,
+ 				       "explicit fcc write failed!\n"));
+ 			    result |= P_FCC_LOSE;
+@@ -3716,7 +3716,7 @@
+ 		}
+ 		else if(!(result & (P_MAIL_BITS | P_NEWS_BITS))){
+ 		    q_status_message(SM_ORDER,3,5,
+-			"Fcc Failed!.  No message saved.");
++			"Fcc 失敗！未存入任何信件。");
+ 		    dprint(1, (debugfile, "explicit fcc write failed!\n"));
+ 		    result |= P_FCC_LOSE;
+ 		}
+@@ -3800,8 +3800,8 @@
+ postpone_prompt()
+ {
+     int    ret = 1;
+-    static ESCKEY_S pstpn_form_opt[] = { {'p', 'p', "P", "Postponed Folder"},
+-					 {'f', 'f', "F", "Form Letter Folder"},
++    static ESCKEY_S pstpn_form_opt[] = { {'p', 'p', "P", "暫緩檔案匣"},
++					 {'f', 'f', "F", "來源信件匣"},
+ 					 {-1, 0, NULL, NULL} };
+ 
+     return(radio_buttons(PSTPN_FORM_PMT, -FOOTER_ROWS(ps_global),
+@@ -3948,23 +3948,23 @@
+     char *buf;
+     int  *goodorbad;
+ {
+-    sprintf(buf, "Message %s%s%s%s%s%s%s.",
++    sprintf(buf, "信件 %s%s%s%s%s%s%s.",
+ 	    (result & P_NEWS_WIN)
+-	       ? "posted" 
++	       ? "已刊登" 
+ 	       : (result & P_NEWS_LOSE)
+-	            ? "NOT posted" : "",
++	            ? "未被刊登" : "",
+ 	    ((result & P_NEWS_BITS) && (result & P_MAIL_BITS)
+ 	     && (result & P_FCC_BITS))
+ 	      ? ", "
+ 	      : ((result & P_NEWS_BITS) && (result & P_MAIL_BITS))
+-	          ? " and " : "",
++	          ? " 並 " : "",
+ 	    (result & P_MAIL_WIN)
+-	      ? "sent"
++	      ? "已寄出"
+ 	      : (result & P_MAIL_LOSE)
+-	          ? "NOT SENT" : "",
++	          ? "未寄出" : "",
+ 	    ((result & (P_MAIL_BITS | P_NEWS_BITS)) && (result & P_FCC_BITS))
+-	      ? " and copied to " 
+-	      : (result & P_FCC_WIN) ? "ONLY copied to " : "",
++	      ? " 並被複製到 " 
++	      : (result & P_FCC_WIN) ? "僅被複製到 " : "",
+ 	    (result & P_FCC_WIN) ? "\"" : "",
+ 	    (result & P_FCC_WIN) ? fcc_name  : "",
+ 	    (result & P_FCC_WIN) ? "\"" : "");
+@@ -4003,7 +4003,7 @@
+ 			   || (F_ON(F_COMPOSE_REJECTS_UNQUAL, ps_global)
+ 			       && a->host[0] == '@'))){
+ 		q_status_message2(SM_ORDER, 4, 7,
+-				  "Can't send to address %s: %s",
++				  "無法寄至 %s：%s",
+ 				  a->mailbox,
+ 				  (a->host[0] == '.')
+ 				    ? a->host
+@@ -4013,7 +4013,7 @@
+ 	    else if(ps_global->restricted
+ 		    && !address_is_us(*pf->addr, ps_global)){
+ 		q_status_message(SM_ORDER, 3, 3,
+-	"Restricted demo version of Pine. You may only send mail to yourself");
++	"這是 Pine 的展示版。僅能寄信給自己");
+ 		return(CA_BAD);
+ 	    }
+ 	    else if(a->mailbox && strucmp(a->mailbox, "mailer-daemon") == 0
+@@ -4163,7 +4163,7 @@
+     if(!(n > 0L && n <= mn_get_total(ps_global->msgmap)
+        && (e = mail_fetchstructure(ps_global->mail_stream,
+ 				   mn_m2raw(ps_global->msgmap, n), &b)))){
+-	q_status_message(SM_ORDER|SM_DING,3,3,"Error inserting Message");
++	q_status_message(SM_ORDER|SM_DING,3,3,"插入信件時發生錯誤");
+ 	flush_status_messages(0);
+ 	return(0L);
+     }
+@@ -4178,7 +4178,7 @@
+     /* actually write message text */
+     if(!format_message(mn_m2raw(ps_global->msgmap, n), e, b,
+ 		       FM_NEW_MESS | FM_DISPLAY, f)){
+-	q_status_message(SM_ORDER|SM_DING,3,3,"Error inserting Message");
++	q_status_message(SM_ORDER|SM_DING,3,3,"插入信件時發生錯誤");
+ 	flush_status_messages(0);
+ 	rv = 0L;
+     }
+@@ -4291,12 +4291,12 @@
+     opts[i].ch      = 'y';
+     opts[i].rval    = 'y';
+     opts[i].name    = "Y";
+-    opts[i++].label = "Yes";
++    opts[i++].label = "是";
+ 
+     opts[i].ch      = 'n';
+     opts[i].rval    = 'n';
+     opts[i].name    = "N";
+-    opts[i++].label = "No";
++    opts[i++].label = "否";
+ 
+     if(filters){
+ 	/* set global_filter_pointer to desired filter or NULL if none */
+@@ -4304,12 +4304,12 @@
+ 	opts[i].ch      = ctrl('P');
+ 	opts[i].rval    = 10;
+ 	opts[i].name    = "^P";
+-	opts[i++].label = "Prev Filter";
++	opts[i++].label = "前一個過濾器";
+ 
+ 	opts[i].ch      = ctrl('N');
+ 	opts[i].rval    = 11;
+ 	opts[i].name    = "^N";
+-	opts[i++].label = "Next Filter";
++	opts[i++].label = "下一個過濾器";
+ 
+ 	if(F_ON(F_FIRST_SEND_FILTER_DFLT, ps_global))
+ 	  filters = filters->next;
+@@ -4379,23 +4379,23 @@
+ 	  p = NULL;
+ 
+ 	dsn_show = (dsn_requested & DSN_SHOW);
+-	sprintf(tmp_20k_buf, "Send message%s%s%s%s%s%s%s%s%s%s%s%s? ",
++	sprintf(tmp_20k_buf, "送出信件%s%s%s%s%s%s%s%s%s%s%s%s? ",
+ 		(filters || verbose_requested || background_requested
+ 					      || dsn_show)
+ 		  ? " (" : "",
+-		(filters && filters->filter) ? "filtered thru \"" : "",
++		(filters && filters->filter) ? "經由過濾器 \"" : "",
+ 		(filters)
+ 		  ? (filters->filter
+ 		      ? filters->filter
+-		      : "unfiltered")
++		      : "未經過濾")
+ 		  : "",
+ 		(filters && filters->filter) ? "\"" : "",
+ 		(filters && (verbose_requested || background_requested))
+ 		  ? " " : "",
+ 		(verbose_requested || background_requested)
+ 		  ? "in " : "",
+-		(verbose_requested) ? "verbose " : "",
+-		(background_requested) ? "background " : "",
++		(verbose_requested) ? "顯示細節 " : "",
++		(background_requested) ? "背景送出 " : "",
+ 		(verbose_requested || background_requested)
+ 		  ? "mode" : "",
+ 		(dsn_show
+@@ -4410,11 +4410,11 @@
+ 	  *p = ' ';
+ 
+ 	if(verbose_label)
+-	  opts[verbose_label].label = verbose_requested ? "Normal" : "Verbose";
++	  opts[verbose_label].label = verbose_requested ? "通常" : "顯示細節";
+ 
+ 	if(bg_label)
+ 	  opts[bg_label].label = background_requested
+-				   ? "Foreground" : "Background";
++				   ? "前景" : "背景";
+ 
+ 	if(F_ON(F_DSN, ps_global)){
+ 	    if(dsn_requested & DSN_SHOW){
+@@ -4438,11 +4438,11 @@
+ 	    break;
+ 	}
+ 	else if(rv == 'n'){			/* Declined! */
+-	    rstr = "No Message Sent";
++	    rstr = "沒有任何信件被送出";
+ 	    break;
+ 	}
+ 	else if(rv == 'z'){			/* Cancelled! */
+-	    rstr = "Send Cancelled";
++	    rstr = "取消送件";
+ 	    break;
+ 	}
+ 	else if(rv == 10)			/* PREVIOUS filter */
+@@ -4624,7 +4624,7 @@
+     if(body->type != TYPEOTHER){
+ 	rv = 1;
+ 	q_status_message3(SM_ORDER, 0, 3,
+-	    "File %s attached as type %s/%s", file,
++	    "檔案 %s 附加為 %s/%s", file,
+ 	    body_types[body->type],
+ 	    body->subtype ? body->subtype : rfc822_default_subtype(body->type));
+     }
+@@ -4673,7 +4673,7 @@
+ 	(void) close_system_pipe(&syspipe);
+ 	if((l = name_file_size(fname)) < 0L){
+ 	    q_status_message2(SM_ORDER | SM_DING, 3, 4,
+-			      "Error determining size of %s: %s", fname,
++			      "決定檔案 %s 大小時發生錯誤：%s", fname,
+ 			      fnp = error_description(errno));
+ 	    dprint(1, (debugfile,
+ 		       "!!! Upload cmd \"%s\" failed for \"%s\": %s\n",
+@@ -4685,7 +4685,7 @@
+ 	return(l >= 0);
+     }
+     else
+-      q_status_message(SM_ORDER | SM_DING, 3, 4, "Error opening pipe");
++      q_status_message(SM_ORDER | SM_DING, 3, 4, "開啟管線時發生錯誤");
+ 
+     return(0);
+ }
+@@ -4738,7 +4738,7 @@
+ 	else if(reply->flags == REPLY_MSGNO)
+ 	  return;
+ 
+-	we_cancel = busy_alarm(1, "Updating \"Answered\" Flags", NULL, 1);
++	we_cancel = busy_alarm(1, "正在更新 \"已回覆\" 旗標", NULL, 1);
+ 	if(!stream){
+ 	    if(stream = mail_open(NULL, reply->mailbox, OP_SILENT)){
+ 		ourstream++;
+@@ -4816,7 +4816,7 @@
+ 		so_give(&tmpf_so);
+ 	    }
+ 	    else
+-	      errstr = "Can't create space for filter temporary file.";
++	      errstr = "無法建立過濾器的暫存檔。";
+ 	}
+ 
+ 	if(!errstr){
+@@ -4840,13 +4840,13 @@
+ 				so_give(&tmpf_so);
+ 			    }
+ 			    else
+-			      errstr = "Can't open temp file filter wrote.";
++			      errstr = "無法開啟過濾器的暫存檔。";
+ 			}
+ 			else
+-			  errstr = "Filter command returned error.";
++			  errstr = "過濾器指令傳回錯誤值。";
+ 		    }
+ 		    else
+-		      errstr = "Can't exec filter text.";
++		      errstr = "無法執行過濾器。";
+ 		}
+ 		else
+ 		  errstr = gf_filter(cmd, key ? filter_session_key() : NULL,
+@@ -4857,7 +4857,7 @@
+ 		if(errstr){
+ 		    int ch;
+ 
+-		    fprintf(stdout, "\r\n%s  Hit return to continue.", errstr);
++		    fprintf(stdout, "\r\n%s  鍵入 return 繼續。", errstr);
+ 		    fflush(stdout);
+ 		    while((ch = read_char(300)) != ctrl('M')
+ 			  && ch != NO_OP_IDLE)
+@@ -4950,7 +4950,7 @@
+ 	if(tmp_so)
+ 	  so_give(&tmp_so);
+ 
+-	q_status_message1(SM_ORDER | SM_DING, 3, 6, "Problem filtering: %s",
++	q_status_message1(SM_ORDER | SM_DING, 3, 6, "過濾過程有問題：%s",
+ 			  errstr);
+ 	dprint(1, (debugfile, "Filter FAILED: %s\n", errstr));
+     }
+@@ -5035,11 +5035,11 @@
+ 
+ 	loser = pine_simple_send(outgoing, &body, NULL, NULL, NULL, 0);
+ 
+-	q_status_message(SM_ORDER, 0, 3, "Thanks for being counted!");
++	q_status_message(SM_ORDER, 0, 3, "感謝您願意被計算為 Pine 的使用者！");
+     }
+     else
+       q_status_message(SM_ORDER | SM_DING, 3, 4,
+-		       "Problem creating space for message text.");
++		       "建立訊息文字空間時發生錯誤。");
+ 
+     mail_free_envelope(&outgoing);
+     pine_free_body(&body);
+@@ -5123,7 +5123,7 @@
+ 
+     if(!pf){
+ 	q_status_message(SM_ORDER,3,3,
+-	    "Can't send message. No recipients specified!");
++	    "無法送信。尚未指定收信人！");
+ 	return(0);
+     }
+ 
+@@ -5132,7 +5132,7 @@
+     gf_filter_init();				/* zero piped byte count, 'n */
+     send_bytes_to_send = send_body_size(body);	/* count body bytes	     */
+     ps_global->c_client_error[0] = error_buf[0] = '\0';
+-    we_cancel = busy_alarm(1, "Sending mail",
++    we_cancel = busy_alarm(1, "正在寄信",
+ 			   send_bytes_to_send ? sent_percent : NULL, 1);
+ 
+     /* try posting via local "<mta> <-t>" if specified */
+@@ -5317,7 +5317,7 @@
+ 	    struct headerentry *last_he = NULL;
+ 
+ 	    sprintf(error_buf,
+-		    "Mail not sent. Sending error%s%.40s",
++		    "信件未被寄出。寄件錯誤%s%.40s",
+ 		    (sending_stream && sending_stream->reply) ? ": ": ".",
+ 		    (sending_stream && sending_stream->reply)
+ 		      ? sending_stream->reply : "");
+@@ -5390,7 +5390,7 @@
+ 	TIME_STAMP("smtp done", 1);
+     }
+     else if(!error_mess)
+-      sprintf(error_mess = error_buf, "Error sending: %.60s",
++      sprintf(error_mess = error_buf, "寄信時發生錯誤：%.60s",
+ 	      ps_global->c_client_error);
+ 
+     if(verbose_file){
+@@ -5398,7 +5398,7 @@
+ 	    TIME_STAMP("verbose start", 1);
+ 	    fclose(verbose_send_output);
+ 	    verbose_send_output = NULL;
+-	    q_status_message(SM_ORDER, 0, 3, "Verbose SMTP output received");
++	    q_status_message(SM_ORDER, 0, 3, "收到詳細的 SMTP 輸出訊息");
+ 	    display_output_file(verbose_file, "Verbose SMTP Interaction",NULL, 1);
+ 	    TIME_STAMP("verbose end", 1);
+ 	}
+@@ -5487,12 +5487,12 @@
+         if(folder_index(fcc, *fcc_cntxt, FI_FOLDER) < 0){
+ 	    if(ps_global->context_list->next)
+ 	      sprintf(tmp_20k_buf,
+-		      "Folder \"%.20s\" in <%.30s> doesn't exist. Create",
++		      "信件匣 \"%.20s\" 在 <%.30s> 尚不存在。要新建",
+ 		      strsquish(tmp_20k_buf + 500, fcc, 20),
+ 		      strsquish(tmp_20k_buf + 1000,(*fcc_cntxt)->nickname,30));
+ 	    else
+ 	      sprintf(tmp_20k_buf,
+-		      "Folder \"%s\" doesn't exist.  Create",
++		      "信件匣 \"%s\" 尚不存在。要新建",
+ 		      strsquish(tmp_20k_buf + 500, fcc, 40));
+ 
+ 	    if(force || want_to(tmp_20k_buf,'y','n',NO_HELP,WT_NORM) == 'y'){
+@@ -5529,7 +5529,7 @@
+ 	    ok++;
+ 	}
+ 	else{
+-	    sprintf(tmp_20k_buf,"Folder \"%s\" doesn't exist.  Create",
++	    sprintf(tmp_20k_buf,"信件匣 \"%s\" 尚不存在。要新建",
+ 		    strsquish(tmp_20k_buf + 500, fcc, 40));
+ 	    if(force || want_to(tmp_20k_buf,'y','n',NO_HELP,WT_NORM) == 'y'){
+ 		/*
+@@ -5563,8 +5563,8 @@
+ 
+ 	if(ok == 0){
+ 	    if(ps_global->mm_log_error){
+-		s1 = err_prefix ? err_prefix : "Fcc Error: ";
+-		s2 = err_suffix ? err_suffix : " Message NOT sent or copied.";
++		s1 = err_prefix ? err_prefix : "Fcc 錯誤：";
++		s2 = err_suffix ? err_suffix : " 信件沒有被寄出或複製。";
+ 
+ 		l1 = strlen(s1);
+ 		l2 = strlen(s2);
+@@ -5582,10 +5582,10 @@
+ 
+ 	    }
+ 	    else
+-	      errstr = "Fcc creation error. Message NOT sent or copied.";
++	      errstr = "建立 Fcc 時發生錯誤。信件沒有被送出或複製。";
+ 	}
+ 	else
+-	  errstr = "Fcc creation rejected. Message NOT sent or copied.";
++	  errstr = "Fcc 之建立遭拒絕。信件沒有被送出或複製。";
+ 
+ 	q_status_message(SM_ORDER | SM_DING, 3, 3, errstr);
+     }
+@@ -5633,7 +5633,7 @@
+     if(label && *label){
+ 	char msg_buf[80];
+ 
+-	strncat(strcpy(msg_buf, "Writing "), label, 70);
++	strncat(strcpy(msg_buf, "正在寫入 "), label, 70);
+ 	we_cancel = busy_alarm(1, msg_buf, NULL, 1);
+     }
+     else
+@@ -5669,7 +5669,7 @@
+ 	we_cancel = 0;
+ 
+ 	q_status_message1(SM_ORDER | SM_DING, 3, 5,
+-			  "Write to \"%s\" FAILED!!!", fcc);
++			  "寫入 \"%s\" 失敗！！！", fcc);
+ 	dprint(1, (debugfile, "ERROR appending %s in \"%s\"",
+ 		   fcc, cntxt ? cntxt->context : "NULL"));
+ 	return(0);
+@@ -6145,7 +6145,7 @@
+ 	if((file_contents = (void *)so_get(FileStar, pa->filename,
+ 					   READ_ACCESS)) == NULL){
+             q_status_message2(SM_ORDER | SM_DING, 3, 4,
+-                              "Error \"%s\", couldn't attach file \"%s\"",
++                              "錯誤 \"%s\"，無法附加檔案 \"%s\"",
+                               error_description(errno), pa->filename);
+             display_message('x');
+             continue;
+@@ -6672,13 +6672,17 @@
+ 		body->subtype = cpystr("octet-stream");
+ 	    }
+ 
+-	    /*
+-	     * Apply maximal encoding regardless of previous
+-	     * setting.  This segment's either not text, or is 
+-	     * unlikely to be readable with > 30% of the
+-	     * text encoded anyway, so we might as well save space...
+-	     */
+-	    new_encoding = ENCBINARY;   /*  > 30% 8 bit chars */
++	    if(body->type == TYPETEXT)
++              /* Use ENC8BIT rather than ENCBINARY for TEXT */
++	      new_encoding = ENC8BIT;
++	    else
++	      /*
++	       * Apply maximal encoding regardless of previous
++	       * setting.  This segment's either not text, or is 
++	       * unlikely to be readable with > 30% of the
++	       * text encoded anyway, so we might as well save space...
++	       */
++	      new_encoding = ENCBINARY;   /*  > 30% 8 bit chars */
+ 	}
+     }
+ 
+@@ -6847,6 +6851,9 @@
+     value = rfc1522_encode(tmp_20k_buf, (unsigned char *) text,
+ 			   ps_global->VAR_CHAR_SET);
+     
++    if (!strcmp(field, "Subject"))
++	value = text;
++
+     if(value && value == text){	/* no encoding was done, have to fold */
+ 	int   fold_by, len;
+ 	char *actual_field;
+@@ -7180,7 +7187,7 @@
+ 	    break;
+ 
+ 	  default:
+-	    q_status_message1(SM_ORDER,3,7,"Unknown header type: %s",pf->name);
++	    q_status_message1(SM_ORDER,3,7,"未知的標頭形態：%s",pf->name);
+ 	    break;
+ 	}
+     }
+@@ -7508,7 +7515,8 @@
+ 
+ 	switch (body->encoding) {	/* all else needs filtering */
+ 	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
+-	    gf_link_filter(gf_8bit_qp, NULL);
++	    if(F_OFF(F_ENABLE_8BIT, ps_global)) /* unless 8BIT enabled */
++		gf_link_filter(gf_8bit_qp, NULL);
+ 	    break;
+ 
+ 	  case ENCBINARY:		/* encode binary into BASE64 */
+@@ -7522,7 +7530,7 @@
+ 
+     if(encode_error = gf_pipe(gc, l_putc)){ /* shove body part down pipe */
+ 	q_status_message1(SM_ORDER | SM_DING, 3, 4,
+-			  "Encoding Error \"%s\"", encode_error);
++			  "編碼時發生錯誤 \"%s\"", encode_error);
+ 	display_message('x');
+     }
+ 
+@@ -7575,7 +7583,7 @@
+       sprintf (*dst += strlen (*dst),"Content-Transfer-Encoding: %s\015\012",
+ 	       body_encodings[(body->encoding == ENCBINARY)
+ 				? ENCBASE64
+-				: (body->encoding == ENC8BIT)
++				: (body->encoding == ENC8BIT && F_OFF(F_ENABLE_8BIT, ps_global))
+ 				    ? ENCQUOTEDPRINTABLE
+ 				    : (body->encoding <= ENCMAX)
+ 					? body->encoding : ENCOTHER]);
+@@ -8137,7 +8145,7 @@
+ 		   || (forbid = pine_header_forbidden(name))){
+ 		    if(forbid)
+ 		      q_status_message1(SM_ORDER, 3, 3,
+-			    "Not allowed to change header \"%s\"", name);
++			    "不允許\改變標頭 \"%s\"", name);
+ 
+ 		    *t = save;
+ 		    continue;
+@@ -8254,7 +8262,7 @@
+     if(ps_global->post){
+ 	if(gripe)
+ 	  q_status_message(SM_ORDER|SM_DING, 3, 3,
+-			   "Can't post while posting!");
++			   "無法於正在刊登文章時再度刊登！");
+ 	return(1);
+     }
+ 

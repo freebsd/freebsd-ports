@@ -1,109 +1,141 @@
---- pine/screen.c.orig	Fri Jun  5 04:09:17 1998
-+++ pine/screen.c	Tue Jul 28 08:35:06 1998
-@@ -433,7 +433,7 @@
+--- pine/pine.h.orig	Wed Jul 22 06:02:49 1998
++++ pine/pine.h	Tue Aug  4 12:42:20 1998
+@@ -348,7 +348,7 @@
+ 			   && (s) && !strucmp((s),"X-VCARD")))
+ #define	MIME_VCARD_A(a)	MIME_VCARD((a)->body->type, (a)->body->subtype)
+ 
+-#define STYLE_NAME(a)   ((a)->text.desc ? (a)->text.desc : "text")
++#define STYLE_NAME(a)   ((a)->text.desc ? (a)->text.desc : "文字")
  
  
- static struct key cancel_keys[] = 
--     {{NULL,NULL,KS_NONE},            {"^C","Cancel",KS_NONE},
-+     {{NULL,NULL,KS_NONE},            {"^C","取消",KS_NONE},
-       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
-       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
-       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
-@@ -1124,10 +1124,10 @@
-     as.page_column    = -1;
-     is_context        = strlen(as.context_name);
-     sprintf(version, "PINE %s", pine_version); 
--    ss_string         = as.stream_status == Closed ? "(CLOSED)" :
-+    ss_string         = as.stream_status == Closed ? "(已關閉)" :
-                         (as.stream_status == ReadOnly
- 			 && !IS_NEWS(as.stream))
--                           ? "(READONLY)" : "";
-+                           ? "(唯讀)" : "";
-     ss_len            = strlen(ss_string);
+ /*
+@@ -1582,91 +1582,91 @@
+  * Some standard Key/Command Bindings 
+  */
+ #define	NULL_MENU	{NULL, NULL, {MC_NONE}, KS_NONE}
+-#define	HELP_MENU	{"?", "Help", \
++#define	HELP_MENU	{"?", "輔助說明", \
+ 			 {MC_HELP, 2, {'?',ctrl('G')}}, \
+ 			 KS_SCREENHELP}
+-#define	OTHER_MENU	{"O", "OTHER CMDS", \
++#define	OTHER_MENU	{"O", "其他命令", \
+ 			 {MC_OTHER, 1, {'o'}}, \
+ 			 KS_NONE}
+-#define	WHEREIS_MENU	{"W", "WhereIs", \
++#define	WHEREIS_MENU	{"W", "搜尋", \
+ 			 {MC_WHEREIS, 2, {'w',ctrl('W')}}, \
+ 			 KS_WHEREIS}
+-#define	MAIN_MENU	{"M", "Main Menu", \
++#define	MAIN_MENU	{"M", "主選單", \
+ 			 {MC_MAIN, 1, {'m'}}, \
+ 			 KS_MAINMENU}
+-#define	QUIT_MENU	{"Q", "Quit Pine", \
++#define	QUIT_MENU	{"Q", "離開 Pine", \
+ 			 {MC_QUIT, 1, {'q'}}, \
+ 			 KS_EXIT}
+-#define	PREVMSG_MENU	{"P", "PrevMsg", \
++#define	PREVMSG_MENU	{"P", "前一個", \
+ 			 {MC_PREVITEM, 1, {'p'}}, \
+ 			 KS_PREVMSG}
+-#define	NEXTMSG_MENU	{"N", "NextMsg", \
++#define	NEXTMSG_MENU	{"N", "下一個", \
+ 			 {MC_NEXTITEM, 1, {'n'}}, \
+ 			 KS_NEXTMSG}
+-#define	PREVPAGE_MENU	{"-", "PrevPage", \
++#define	PREVPAGE_MENU	{"-", "前一頁", \
+ 			 {MC_PAGEUP, 3, {'-',ctrl('Y'),KEY_PGUP}}, \
+ 			 KS_PREVPAGE}
+-#define	NEXTPAGE_MENU	{"Spc", "NextPage", \
++#define	NEXTPAGE_MENU	{"Spc", "下一頁", \
+ 			 {MC_PAGEDN, 4, {'+',' ',ctrl('V'),KEY_PGDN}}, \
+ 			 KS_NEXTPAGE}
+-#define	JUMP_MENU	{"J", "Jump", \
++#define	JUMP_MENU	{"J", "跳至", \
+ 			 {MC_JUMP, 1, {'j'}}, \
+ 			 KS_JUMPTOMSG}
+-#define	FWDEMAIL_MENU	{"F", "Fwd Email", \
++#define	FWDEMAIL_MENU	{"F", "信件轉寄", \
+ 			{MC_FWDTEXT,1,{'f'}}, \
+ 			 KS_FORWARD}
+-#define	PRYNTMSG_MENU	{"%", "Print", \
++#define	PRYNTMSG_MENU	{"%", "列印", \
+ 			 {MC_PRINTMSG,1,{'%'}}, \
+ 			 KS_PRINT}
+-#define	PRYNTTXT_MENU	{"%", "Print", \
++#define	PRYNTTXT_MENU	{"%", "列印", \
+ 			 {MC_PRINTTXT,1,{'%'}}, \
+ 			 KS_PRINT}
+-#define	SAVE_MENU	{"S", "Save", \
++#define	SAVE_MENU	{"S", "存檔", \
+ 			 {MC_SAVE,1,{'s'}}, \
+ 			 KS_SAVE}
+-#define	EXPORT_MENU	{"E", "Export", \
++#define	EXPORT_MENU	{"E", "匯出", \
+ 			 {MC_EXPORT, 1, {'e'}}, \
+ 			 KS_EXPORT}
+-#define	COMPOSE_MENU	{"C", "Compose", \
++#define	COMPOSE_MENU	{"C", "編修", \
+ 			 {MC_COMPOSE,1,{'c'}}, \
+ 			 KS_COMPOSER}
+-#define	DELETE_MENU	{"D", "Delete", \
++#define	DELETE_MENU	{"D", "刪除", \
+ 			 {MC_DELETE,2,{'d',KEY_DEL}}, \
+ 			 KS_DELETE}
+-#define	UNDELETE_MENU	{"U", "Undelete", \
++#define	UNDELETE_MENU	{"U", "復原刪除", \
+ 			 {MC_UNDELETE,1,{'u'}}, \
+ 			 KS_UNDELETE}
+-#define	REPLY_MENU	{"R", "Reply", \
++#define	REPLY_MENU	{"R", "回覆", \
+ 			 {MC_REPLY,1,{'r'}}, \
+ 			 KS_REPLY}
+-#define	FORWARD_MENU	{"F", "Forward", \
++#define	FORWARD_MENU	{"F", "轉寄", \
+ 			 {MC_FORWARD,1,{'f'}}, \
+ 			 KS_FORWARD}
+-#define	LISTFLD_MENU	{"L", "ListFldrs", \
++#define	LISTFLD_MENU	{"L", "資料匣列表", \
+ 			 {MC_COLLECTIONS,1,{'l'}}, \
+ 			 KS_FLDRLIST}
+-#define	INDEX_MENU	{"I", "Index", \
++#define	INDEX_MENU	{"I", "索引", \
+ 			 {MC_INDEX,1,{'i'}}, \
+ 			 KS_FLDRINDEX}
+-#define	GOTO_MENU	{"G", "GotoFldr", \
++#define	GOTO_MENU	{"G", "切換資料匣", \
+ 			 {MC_GOTO,1,{'g'}}, \
+ 			 KS_GOTOFLDR}
+-#define	TAKE_MENU	{"T", "TakeAddr", \
++#define	TAKE_MENU	{"T", "取得地址", \
+ 			 {MC_TAKE,1,{'t'}}, \
+ 			 KS_TAKEADDR}
+-#define	FLAG_MENU	{"*", "Flag", \
++#define	FLAG_MENU	{"*", "旗標", \
+ 			 {MC_FLAG,1,{'*'}}, \
+ 			 KS_FLAG}
+-#define	PIPE_MENU	{"|", "Pipe", \
++#define	PIPE_MENU	{"|", "轉向(Pipe)", \
+ 			 {MC_PIPE,1,{'|'}}, \
+ 			 KS_NONE}
+-#define	BOUNCE_MENU	{"B", "Bounce", \
++#define	BOUNCE_MENU	{"B", "退信", \
+ 			 {MC_BOUNCE,1,{'b'}}, \
+ 			 KS_BOUNCE}
+-#define	HDRMODE_MENU	{"H", "HdrMode", \
++#define	HDRMODE_MENU	{"H", "完整標頭", \
+ 			 {MC_FULLHDR,1,{'h'}}, \
+ 			 KS_HDRMODE}
+-#define	TAB_MENU	{"Tab", "NextNew", \
++#define	TAB_MENU	{"Tab", "下一個新的", \
+ 			 {MC_TAB,1,{TAB}}, \
+ 			 KS_NONE}
  
-     tit_len = strlen(as.title);		/* fixed title field width   */
-@@ -1144,17 +1144,17 @@
-     /* 
-      * set location field's length and value based on requested style 
-      */
--    loc_label = (is_context) ? "Msg" : "Message";
-+    loc_label = (is_context) ? "信" : "信件";
-     loc_len   = strlen(loc_label);
-     if(!mn_get_total(as.msgmap)){
--	sprintf(tmp_20k_buf, "No %ss", loc_label);
-+	sprintf(tmp_20k_buf, "沒有%s", loc_label);
- 	loc_len += 4;
-     }else{
- 	switch(as.style){
- 	  case FolderName :			/* "x,xxx <loc_label>s" */
- 	    loc_len += digit_count(mn_get_total(as.msgmap)) + 3;
--	    sprintf(tmp_20k_buf, "%s %s%s", comatose(mn_get_total(as.msgmap)),
--		    loc_label, plural(mn_get_total(as.msgmap)));
-+	    sprintf(tmp_20k_buf, "%s 封%s", comatose(mn_get_total(as.msgmap)),
-+		    loc_label);
- 	    break;
- 	  case MessageNumber :	       	/* "<loc_label> xxx of xxx DEL"  */
- 	    num_len	     = digit_count(mn_get_total(as.msgmap));
-@@ -1162,7 +1162,7 @@
- 	    as.cur_mess_col  = sc - (2 * num_len) - 10;
- 	    as.del_column    = as.cur_mess_col + num_len 
- 	      + digit_count(as.current_msg) + 5;
--	    sprintf(tmp_20k_buf, "%s %s of %s %s", loc_label,
-+	    sprintf(tmp_20k_buf, "%s %s 之 %s %s", loc_label,
- 		    strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
- 		    strcpy(tmp_20k_buf + 1500, comatose(mn_get_total(as.msgmap))),
- 		    BAR_STATUS(as.msg_state));
-@@ -1174,7 +1174,7 @@
- 	    as.percent_column  = as.cur_mess_col + num_len
- 	      + digit_count(as.current_msg) + 7;
- 	    as.del_column      = as.percent_column + 4;
--	    sprintf(tmp_20k_buf, "%s %s of %s %s %s", loc_label, 
-+	    sprintf(tmp_20k_buf, "%s %s 之 %s %s %s", loc_label, 
- 		    strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
- 		    strcpy(tmp_20k_buf + 1500, comatose(mn_get_total(as.msgmap))),
- 		    percentage(as.current_line, as.total_lines, 1),
-@@ -1185,7 +1185,7 @@
- 	  case FileTextPercent :
- 	    as.page_column = sc - (14 + 2*(num_len = digit_count(as.total_lines)));
- 	    loc_len        = 17 + 2*num_len;
--	    sprintf(tmp_20k_buf, "Line %*ld of %*ld %s    ",
-+	    sprintf(tmp_20k_buf, "行 %*ld 之 %*ld %s    ",
- 		    num_len, as.current_line, 
- 		    num_len, as.total_lines,
- 		    percentage(as.current_line, as.total_lines, 1));
-@@ -1259,7 +1259,7 @@
- 		      ss_string);
- 	}
- 	else{
--	    char *fmt = "Folder: %s%s";
-+	    char *fmt = "信件匣：%s%s";
- 	    if(fold_len + ss_len + 8 < avail) 	/* all of folder fit? */
- 	      sprintf(fold_tmp, fmt, as.folder_name, ss_string);
- 	    else if((fold_len/2) + ss_len + 8 < avail)
-@@ -1307,7 +1307,7 @@
- 	as.current_msg = mn_get_cur(as.msgmap);
+@@ -2304,7 +2304,7 @@
+ } ATABLE_S;
  
-         if(as.style == MsgTextPercent){
--            PutLine5(0, as.cur_mess_col, "%s of %s %s %s%s",
-+            PutLine5(0, as.cur_mess_col, "%s 之 %s %s %s%s",
- 		     strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
- 		     strcpy(tmp_20k_buf + 1500,
- 			    comatose(mn_get_total(as.msgmap))),
-@@ -1317,7 +1317,7 @@
- 	    as.del_column     += delta;
- 	    as.percent_column += delta;
-         } else {
--            PutLine4(0, as.cur_mess_col, "%s of %s %s%s",
-+            PutLine4(0, as.cur_mess_col, "%s 之 %s %s%s",
- 		     strcpy(tmp_20k_buf + 1000, comatose(as.current_msg)),
- 		     strcpy(tmp_20k_buf + 1500,
- 			    comatose(mn_get_total(as.msgmap))),
-@@ -1420,7 +1420,7 @@
  
-     as.current_line = new_line_number;
- 
--    sprintf(tmp_20k_buf, "%*ld of %*ld %s    ",
-+    sprintf(tmp_20k_buf, "%*ld 之 %*ld %s    ",
- 	    digit_count(as.total_lines), as.current_line, 
- 	    digit_count(as.total_lines), as.total_lines,
- 	    percentage(as.current_line, as.total_lines, 0));
+-#define TAG_EMBED	'\377'	/* Announces embedded data in text string */
++#define TAG_EMBED	'\001'	/* Announces embedded data in text string */
+ #define	TAG_INVON	'\001'	/* Supported character attributes	  */
+ #define	TAG_INVOFF	'\002'
+ #define	TAG_BOLDON	'\003'

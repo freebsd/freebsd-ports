@@ -1,11 +1,11 @@
---- pico/estruct.h.orig	Fri May 29 06:56:52 1998
-+++ pico/estruct.h	Tue Jul 28 08:35:00 1998
-@@ -125,7 +125,7 @@
- #define	LOBIT_CHAR(C)	((C) > 0x1f && (C) < 0x7f)
- #define	HIBIT_CHAR(C)	((C) > 0x7f && (C) <= 0xff)
- #define	HIBIT_OK(C)	(!(gmode & MDHBTIGN))
--#define	VALID_KEY(C)	(LOBIT_CHAR(C) || (HIBIT_OK(C) && HIBIT_CHAR(C)))
-+#define	VALID_KEY(C)	(((C) & 0x80) ? 1 : LOBIT_CHAR(C))
- #define ctrl(c)         ((c) & 0x1f)    /* control character mapping */
- 
- #define STDIN_FD	0
+--- pico/edef.h.orig	Thu Apr 23 07:53:44 1998
++++ pico/edef.h	Tue Aug  4 12:42:14 1998
+@@ -59,7 +59,7 @@
+ int	ComposerEditing = FALSE;	/* TRUE if message line is open */
+ int	revexist = FALSE;		/* does reverse video exist?	*/
+ char	modecode[] = "WCSEVO";		/* letters to represent modes	*/
+-long	gmode = MDWRAP;			/* global editor mode		*/
++long	gmode = MDWRAP | MDTCAPWINS;	/* global editor mode		*/
+ int     sgarbf  = TRUE;                 /* TRUE if screen is garbage	*/
+ int     mpresf  = FALSE;                /* TRUE if message in last line */
+ int	clexec	= FALSE;		/* command line execution flag	*/

@@ -1,56 +1,38 @@
---- pine/takeaddr.c.orig	Fri Jun 26 02:26:36 1998
-+++ pine/takeaddr.c	Tue Jul 28 08:35:08 1998
-@@ -785,7 +785,7 @@
-     return;
+--- pine/signals.c.orig	Tue Jul  7 07:42:45 1998
++++ pine/signals.c	Tue Aug  4 12:42:21 1998
+@@ -386,7 +386,7 @@
+ 	ps_global->inbox_stream->rdonly = 1;	/* and become read-only */
+ 	mail_ping(ps_global->inbox_stream);
+ 	q_status_message(SM_ASYNC, 3, 7,
+-		   "Another Pine is accessing Inbox.  Session now Read-Only.");
++		   "另外一份 Pine 正在存取 Inbox。這個 session 進入唯讀狀態。");
+ 	dprint(1, (debugfile, "** INBOX went read-only **\n\n"));
+     }
  
- take_to_addrbooks_cancel:
--    cancel_warning(NO_DING, "addition");
-+    cancel_warning(NO_DING, "新增");
-     if(tas && *tas){
- 	restore_state(&((*tas)->state));
- 	(*tas)->pab   = NULL;
-@@ -1267,7 +1267,7 @@
- 	    break;
+@@ -398,7 +398,7 @@
+ 	ps_global->mail_stream->rdonly = 1;	/* and become read-only */
+ 	mail_ping(ps_global->mail_stream);
+ 	q_status_message(SM_ASYNC, 3, 7,
+-		  "Another Pine is accessing folder.  Session now Read-Only.");
++		  "另外一份 Pine 正在存取資料匣。這個 session 進入唯讀狀態。");
+ 	dprint(1, (debugfile, "** secondary folder went read-only **\n\n"));
+     }
+ }
+@@ -536,7 +536,7 @@
+     int retval = 1;
  
- 	  case MC_EXIT:				/* exit takeaddr screen */
--	    cancel_warning(NO_DING, "addition");
-+	    cancel_warning(NO_DING, "新增");
- 	    ret = 1;
- 	    done++;
- 	    break;
-@@ -2698,7 +2698,7 @@
-     
-     switch(j){
-       case 'x':
--	cancel_warning(NO_DING, "save");
-+	cancel_warning(NO_DING, "存檔");
- 	return;
+     dprint(9,(debugfile, "busy_alarm(%d, %s, %p, %d)\n",
+-	seconds, msg ? msg : "Busy", pc_func, init_msg));
++	seconds, msg ? msg : "請稍後", pc_func, init_msg));
  
-       case 'e':
-@@ -2798,7 +2798,7 @@
+     /*
+      * If we're already busy'ing, and we don't have something special,
+@@ -560,7 +560,7 @@
+ 	    final_message = 1;
+ 	}
+ 	else{
+-	    strcpy(busy_message, "Busy");
++	    strcpy(busy_message, "請稍後");
+ 	    final_message = 0;
+ 	}
  
-     switch(i){
-       case 'x':
--	cancel_warning(NO_DING, "export");
-+	cancel_warning(NO_DING, "匯出");
- 	return;
-     
-       case 'a':
-@@ -4737,7 +4737,7 @@
- 	    
- 	    switch(j){
- 	      case 'x':
--		cancel_warning(NO_DING, "Save");
-+		cancel_warning(NO_DING, "存檔");
- 		break;
- 
- 	      case 'e':
-@@ -4957,7 +4957,7 @@
- 	
- 	switch(j){
- 	  case 'x':
--	    cancel_warning(NO_DING, "Export");
-+	    cancel_warning(NO_DING, "匯出");
- 	    break;
- 	
- 	  case 't':

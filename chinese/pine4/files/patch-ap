@@ -1,11 +1,20 @@
---- pico/pilot.c.orig	Thu Jul 16 16:30:46 1998
-+++ pico/pilot.c	Tue Jul 28 08:35:01 1998
-@@ -222,7 +222,7 @@
- 	    sup_keyhelp = !sup_keyhelp;
+--- pico/main.c.orig	Thu Jul 16 16:30:47 1998
++++ pico/main.c	Tue Aug  4 12:42:14 1998
+@@ -66,7 +66,7 @@
+     { F9,  (CTRL|'K')},
+     { F10, (CTRL|'U')},
+     { F11, (CTRL|'C')},
+-#ifdef	SPELLER
++#if defined(SPELLER) && !defined(__FreeBSD__)
+     { F12, (CTRL|'T')}
+ #else
+     { F12, (CTRL|'D')}
+@@ -424,7 +424,7 @@
+ 	    gmode ^= MDSSPD;
  	    break;
  	  case 'q':			/* -q for termcap takes precedence */
 -	    gmode ^= MDTCAPWINS;
 +	    gmode |= MDTCAPWINS;
  	    break;
- 	  case 'z':			/* -z to suspend */
- 	    gmode ^= MDSSPD;
+ 	  case 'w':			/* -w turn off word wrap */
+ 	    gmode ^= MDWRAP;

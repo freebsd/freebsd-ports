@@ -1,20 +1,11 @@
---- pico/main.c.orig	Thu Jul 16 16:30:47 1998
-+++ pico/main.c	Tue Jul 28 08:35:00 1998
-@@ -66,7 +66,7 @@
-     { F9,  (CTRL|'K')},
-     { F10, (CTRL|'U')},
-     { F11, (CTRL|'C')},
--#ifdef	SPELLER
-+#if defined(SPELLER) && !defined(__FreeBSD__)
-     { F12, (CTRL|'T')}
- #else
-     { F12, (CTRL|'D')}
-@@ -424,7 +424,7 @@
- 	    gmode ^= MDSSPD;
- 	    break;
- 	  case 'q':			/* -q for termcap takes precedence */
--	    gmode ^= MDTCAPWINS;
-+	    gmode |= MDTCAPWINS;
- 	    break;
- 	  case 'w':			/* -w turn off word wrap */
- 	    gmode ^= MDWRAP;
+--- pico/estruct.h.orig	Fri May 29 06:56:52 1998
++++ pico/estruct.h	Tue Aug  4 12:42:14 1998
+@@ -125,7 +125,7 @@
+ #define	LOBIT_CHAR(C)	((C) > 0x1f && (C) < 0x7f)
+ #define	HIBIT_CHAR(C)	((C) > 0x7f && (C) <= 0xff)
+ #define	HIBIT_OK(C)	(!(gmode & MDHBTIGN))
+-#define	VALID_KEY(C)	(LOBIT_CHAR(C) || (HIBIT_OK(C) && HIBIT_CHAR(C)))
++#define	VALID_KEY(C)	(((C) & 0x80) ? 1 : LOBIT_CHAR(C))
+ #define ctrl(c)         ((c) & 0x1f)    /* control character mapping */
+ 
+ #define STDIN_FD	0
