@@ -3,11 +3,11 @@
 # Date created:				1999/04/07
 # Whom:					ache
 #
-# $Id: Makefile,v 1.2 1999/04/07 20:59:45 ache Exp $
+# $Id: Makefile,v 1.3 1999/04/12 08:21:08 asami Exp $
 #
 
-DISTNAME=       URI-1.02
-PKGNAME=        p5-URI-1.02
+DISTNAME=       URI-1.03
+PKGNAME=        p5-URI-1.03
 CATEGORIES=     net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     URI
