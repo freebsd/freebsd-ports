@@ -2,12 +2,12 @@
 If this is a first installation (not an upgrade) do this:
 
 	cd ${PREFIX}/etc
-	cp commitlog2cvsweb.conf.sample commitlog2cvsweb.conf
+	cp cvsweb-converters.conf.sample cvsweb-converters.conf
 
-and edit commitlog2cvsweb.conf. Change $cvsweb to your nearest
+and edit cvsweb-converters.conf. Change cvsweb to your nearest
 cvsweb mirror. Check http://www.FreeBSD.org/support.html#cvs for
 cvsweb mirror sites.
 
 Documentation is included inside the scripts in POD format.
-Use "perldoc <script>" to read the documentation for <script>.
+Invoke a script with option --help to read its documentation.
 ******************************************************************
