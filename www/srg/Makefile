@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	srg
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://mirror.crc.net.nz/pub/srg/
@@ -25,12 +24,6 @@ NO_INSTALL_MANPAGES=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" \
 		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	bin/srg
-.for i in footer.php header.php ip2user.txt srg.conf
-PLIST_FILES+=	share/examples/srg/${i}
-.endfor
-PLIST_DIRS=	share/examples/srg
-
 post-patch:
 	${REINPLACE_CMD} -e 's|-g |${CFLAGS} ${CPPFLAGS} |' ${WRKSRC}/Makefile \
 		${WRKSRC}/lib/Makefile
@@ -38,7 +31,9 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/srg ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
