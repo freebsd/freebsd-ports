@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.277 1999/06/22 23:42:24 sada Exp $
+# $Id: Makefile,v 1.278 1999/06/23 00:45:09 cpiazza Exp $
 #
 
     SUBDIR += IglooFTP
@@ -10,7 +10,6 @@
     SUBDIR += ascend-radius
     SUBDIR += bb
     SUBDIR += beroftpd
-    SUBDIR += bind8
     SUBDIR += bing
     SUBDIR += binkd
     SUBDIR += bitchx
