@@ -1,0 +1,4 @@
+libexec/nagios/check_snmp_disk
+libexec/nagios/check_snmp_proc
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -70,6 +70,7 @@
     SUBDIR += mrtg
     SUBDIR += nagios
     SUBDIR += nagios-plugins
+    SUBDIR += nagios-snmp-plugins
     SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += nefu
