@@ -1,0 +1,9 @@
+This class may be used for sending email messages for Subversion repos-
+itory activity.  There are a number of different modes supported, and
+SVN::Notify is fully subclassable, to easily add new functionality.  By
+default, a list of all the files affected by the commit will be assem-
+bled and listed in a single message.  An additional option allows diffs
+to be calculated for the changes and either appended to the message or
+added as an attachment.
+
+WWW: http://search.cpan.org/dist/SVN-Notify/
