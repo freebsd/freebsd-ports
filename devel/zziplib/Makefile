@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zziplib
-PORTVERSION=	0.10.76
+PORTVERSION=	0.10.82
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,8 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A library to provide transparent read access to zipped files
 
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-transform-name="s/$$//"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

@@ -4,7 +4,6 @@ bin/zzip-config
 bin/zzxorcat
 bin/zzxorcopy
 bin/zzxordir
-include/zzip-file.h
 include/zzip-io.h
 include/zzip.h
 include/zzipformat.h
@@ -20,18 +19,14 @@ include/zzip/plugin.h
 include/zzip/stdint.h
 include/zzip/wrap.h
 include/zzip/zzip.h
-lib/libzzip-0.so
-lib/libzzip-0.so.10
 lib/libzzip.a
-lib/libzzip.la
 lib/libzzip.so
-lib/libzzipwrap-0.so
-lib/libzzipwrap-0.so.10
+lib/libzzip.so.10
 lib/libzzipwrap.a
-lib/libzzipwrap.la
 lib/libzzipwrap.so
-lib/pkgconfig/zzip-zlib-config.pc
-lib/pkgconfig/zziplib.pc
-lib/pkgconfig/zzipwrap.pc
+lib/libzzipwrap.so.10
+libdata/pkgconfig/zzip-zlib-config.pc
+libdata/pkgconfig/zziplib.pc
+libdata/pkgconfig/zzipwrap.pc
+share/aclocal/zziplib.m4
 @dirrm include/zzip
-@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
