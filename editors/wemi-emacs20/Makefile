@@ -1,75 +1,25 @@
 # New ports collection makefile for:	wemi for emacs20
-# Version required:	1.8.x
+# Version required:	1.8.6
 # Date created:		23 September 1998
-# Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
+# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.7 1999/03/09 04:41:46 shige Exp $
+# $Id: Makefile,v 1.8 1999/04/19 16:44:51 sada Exp $
 #
 
-DISTNAME=	wemi-${WEMI_VER}
-CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/semi/semi-1.08-for-flim-1.9/
+MAINTAINER=	shige@FreeBSD.ORG
 
-MAINTAINER?=	shige@FreeBSD.ORG
+# This is a slave port.
+PORTCLASS=	slave
 
-# distfile version
-FLIM_VER=	1.9.2
-WEMI_VER=	1.8.6
-WEMIDOCDIR=	share/doc/semi
+MASTERDIR=	${.CURDIR}/../../editors/wemi-emacs
 
-# emacs20
+# emacs port setup
 EMACS_NAME=	emacs
 EMACS_PORT=	emacs20
 EMACS_VER=	20.3
 EMACS_LIBDIR=	share/${EMACS_NAME}
 
-# target name for make build
-ALL_TARGET?=	elc
+# use pkg/* files in ${.CURDIR}
+PKGDIR=		${.CURDIR}/pkg
 
-PKGNAME=	wemi-${EMACS_PORT}-${WEMI_VER}
-EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
-BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
-SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER}
-PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		WEMIDOCDIR=${WEMIDOCDIR}
-MAKE_FLAGS=	EMACS=${EMACS_CMD}
-
-# depends on apel
-BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
-RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
-# depends on flim
-BUILD_DEPENDS+=	${PKG_DBDIR}/flim-${EMACS_PORT}-${FLIM_VER}:${PORTSDIR}/editors/flim-${EMACS_PORT}
-RUN_DEPENDS+=	${PKG_DBDIR}/flim-${EMACS_PORT}-${FLIM_VER}:${PORTSDIR}/editors/flim-${EMACS_PORT}
-
-# info files JIS to EUC
-BUILD_DEPENDS+=	nkf:${PORTSDIR}/japanese/nkf
-
-.include <bsd.port.pre.mk>
-
-MAKEINFO=	makeinfo --no-split --no-validate
-
-post-build:
-	@(cd ${WRKSRC} ; \
-	for i in mime-ui-en.texi mime-ui-ja.texi; do \
-		${MV} $${i} $${i}.jis ; \
-		${CAT} $${i}.jis | nkf -e > $${i} ; \
-		${ECHO_MSG} "===>   Please ignore the following errors." ; \
-		${MAKEINFO} $${i} || ${TRUE} ; \
-	done)
-
-post-install:
-	@(cd ${WRKSRC} ; \
-	for i in mime-ui-en.info mime-ui-ja.info; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/info ; \
-		install-info ${PREFIX}/info/$${i} ${PREFIX}/info/dir ; \
-	done)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/${WEMIDOCDIR}
-	@(cd ${WRKSRC} ; \
-	for i in ChangeLog NEWS README.* TODO VERSION ; do \
-		${INSTALL_DATA} $${i} ${PREFIX}/${WEMIDOCDIR}/ ; \
-	done)
-.endif
-
-.include <bsd.port.post.mk>
+.include <${MASTERDIR}/Makefile>
