@@ -1,6 +1,6 @@
---- configure.orig	Sun Sep 28 17:26:39 2003
-+++ configure	Sat Dec  6 03:41:29 2003
-@@ -22,7 +22,7 @@
+--- configure.orig	Mon Jul  5 15:05:54 2004
++++ configure	Sun Dec  5 15:49:57 2004
+@@ -88,7 +88,7 @@
  mandir=""
  bindir=""
  cross_prefix=""
@@ -9,47 +9,21 @@
  ar="ar"
  ranlib="ranlib"
  make="make"
-@@ -111,7 +111,7 @@
+@@ -187,7 +187,7 @@
  BeOS)
  prefix="/boot/home/config"
  # helps building libavcodec
 -CFLAGS="-DPIC -fomit-frame-pointer"
 +CFLAGS="$CFLAGS -DPIC -fomit-frame-pointer"
  # 3 gcc releases known for BeOS, each with ugly bugs
- gcc_version="$($cc -v 2>&1 | grep version | cut -d ' ' -f3-)"
+ gcc_version="`$cc -v 2>&1 | grep version | cut -d ' ' -f3-`"
  case "$gcc_version" in
-@@ -177,13 +177,13 @@
- gcc_version="$($cc -v 2>&1 | grep version | cut -d ' ' -f3-)"
- case "$gcc_version" in
- *2.95*) 
--CFLAGS="-no-cpp-precomp -pipe -fomit-frame-pointer"
-+CFLAGS="$CFLAGS -no-cpp-precomp -pipe -fomit-frame-pointer"
- ;;
- *3.3*) 
--CFLAGS="-no-cpp-precomp -pipe -fomit-frame-pointer -mdynamic-no-pic -force_cpusubtype_ALL"
-+CFLAGS="$CFLAGS -no-cpp-precomp -pipe -fomit-frame-pointer -mdynamic-no-pic -force_cpusubtype_ALL"
- ;;
- *) 
--CFLAGS="-no-cpp-precomp -pipe -fomit-frame-pointer -mdynamic-no-pic"
-+CFLAGS="$CFLAGS -no-cpp-precomp -pipe -fomit-frame-pointer -mdynamic-no-pic"
- ;;
- esac
- ;;
-@@ -276,7 +276,7 @@
-   ;;
-   --make=*) make=`echo $opt | cut -d '=' -f 2`
-   ;;
--  --extra-cflags=*) CFLAGS="${opt#--extra-cflags=}"
-+  --extra-cflags=*) CFLAGS="$CFLAGS ${opt#--extra-cflags=}"
-   ;;
-   --extra-ldflags=*) LDFLAGS=${opt#--extra-ldflags=}
-   ;;
-@@ -682,7 +682,7 @@
+@@ -857,7 +857,7 @@
  EOF
  
  imlib2=no
--if $cc -o $TMPE $TMPC -lImlib2 2> /dev/null  ; then
-+if $cc $CFLAGS $LDFLAGS -o $TMPE $TMPC -lImlib2 2> /dev/null  ; then
+-if $cc -o $TMPE $TMPC -lImlib2 -lm > /dev/null 2>&1  ; then
++if $cc $CFLAGS $LDFLAGS -o $TMPE $TMPC -lImlib2 -lm > /dev/null 2>&1  ; then
  imlib2=yes
  fi
  

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ffmpeg
-PORTVERSION=	0.4.8
-PORTREVISION=	5
 CATEGORIES=	multimedia audio net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	ffmpeg
+DISTVERSION=	0.4.9-pre1
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Hyper fast realtime audio/video encoder/converter, streaming server
@@ -19,32 +18,34 @@ USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 WANT_SDL=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" --enable-shared \
 		--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		--extra-libs"-lm" \
 		--disable-debug
-MAKE_ENV+=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
 INSTALLS_SHLIB=	yes
 
-SHLIB_VERSION=	0
+SHLIB_VERSION=	1
 #
 DOC_FILES=	COPYING Changelog README
 # under subdir doc
-DOC_DOCFILES=	TODO \
-		faq.html faq.texi \
-		ffmpeg-doc.html ffmpeg-doc.texi \
-		ffserver-doc.html ffserver-doc.texi
+DOC_DOCFILES=	TODO faq.html ffmpeg-doc.html \
+		ffplay-doc.html ffserver-doc.html \
+		hooks.html optimization.txt
+PORTDOCS=	${DOC_FILES} ${DOC_DOCFILES}
 HEADER_FILES=	libavcodec/avcodec.h libavcodec/common.h \
 		libavcodec/dsputil.h
 LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
-MAN1=		ffmpeg.1 ffplay.1 ffserver.1
+MAN1=		ffmpeg.1 ffplay.1
 
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libavformat.so.0)
+BROKEN=		Please remove previous version of ${PORTNAME} to continue build
+.endif
 
 ##
 ## arch detection
@@ -54,9 +55,10 @@ WITHOUT_MMX=	yes
 .else
 # only for i386
 EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
-. if ${OSVERSION} >= 502000 && !defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-fomit-frame-pointer
-. endif
+#. if ${OSVERSION} >= 502000 && !defined(WITH_OPTIMIZED_CFLAGS)
+#CFLAGS+=-fomit-frame-pointer
+#WITH_OPTIMIZED_CFLAGS=yes
+#. endif
 .endif
 
 ## lib detection
@@ -65,6 +67,10 @@ CFLAGS+=	-fomit-frame-pointer
 ## SDL
 .if ${HAVE_SDL:Msdl}
 WITH_SDL=yes
+.endif
+## faac
+.if exists(${LOCALBASE}/lib/libfaac.so.0)
+WITH_FAAC=yes
 .endif
 ## freetype2
 .if exists(${LOCALBASE}/lib/libfreetype.so)
@@ -88,16 +94,23 @@ WITH_FAAD=yes
 
 ## support activation
 ##
-## disable a52
-.ifndef(WITHOUT_LIBA52)
-LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
-
-CONFIGURE_ARGS+=	--enable-a52 \
-			--enable-a52bin
-.else
-CONFIGURE_ARGS+=	--enable-a52 \
-			--disable-a52bin
+## PORTDOCS
+.ifndef(NOPORTDOCS)
+BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .endif
+## disable a52
+#.ifndef(WITHOUT_LIBA52)
+#LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
+#
+#CONFIGURE_ARGS+=	--enable-a52 \
+#			--enable-a52bin
+#.else
+#CONFIGURE_ARGS+=	--enable-a52 \
+#			--disable-a52bin
+#.endif
+GPLLIBS=	yes
+# --enable-a52bin breaks build
+CONFIGURE_ARGS+=	--enable-a52
 ## enable freetype2
 .if defined(WITH_FREETYPE2)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
@@ -141,9 +154,10 @@ CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
 .	else
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
-			-I${X11BASE}/include -fno-unit-at-a-time" \
-			--disable-opts \
+			-I${X11BASE}/include \
+			-fomit-frame-pointer -fno-unit-at-a-time" \
 			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm "
+#			--disable-opts 
 .	endif
 .else
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
@@ -153,8 +167,7 @@ CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 .	else
 CONFIGURE_ARGS+=	--extra-cflags="-fPIC -DPIC -I${LOCALBASE}/include \
 			-I${X11BASE}/include" \
-			--disable-opts \
-			--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm "
+			--extra-ldflags="-L${WRKSRC}/libavcodec -L${LOCALBASE}/lib -L${X11BASE}/lib -lm "
 .endif
 
 ## vhook
@@ -171,17 +184,39 @@ LIB_DEPENDS+=		vorbisenc.2:${PORTSDIR}/audio/libvorbis
 
 CONFIGURE_ARGS+=	--enable-vorbis
 .endif
+## faac
+.ifdef(WITH_FAAC)
+LIB_DEPENDS+=		faac.0:${PORTSDIR}/audio/faac
+
+CONFIGURE_ARGS+=	--enable-faac
+.endif
 ## faad
 .ifdef(WITH_FAAD)
 LIB_DEPENDS+=		faad.0:${PORTSDIR}/audio/faad
 
-CONFIGURE_ARGS+=	--enable-faad
+CONFIGURE_ARGS+=	--enable-faad --enable-faadbin
+GPLLIBS=	yes
+.endif
+## GPLLIBS
+.ifdef(GPLLIBS)
+CONFIGURE_ARGS+=	--enable-gpl
 .endif
 ## post processing
 .ifndef(WITHOUT_POSTPROCESS)
 CONFIGURE_ARGS+=	--enable-shared-pp
 PLIST_FILES+=		include/ffmpeg/postproc/postprocess.h
 PLIST_DIRS+=		include/ffmpeg/postproc
+.endif
+## ffserver
+.ifdef(WITHOUT_FFMPEG_FFSERVER)
+CONFIGURE_ARGS+=	--disable-ffserver
+
+PLIST_SUB+=		FFSERVER="@comment "
+.else
+USE_RC_SUBR=		yes
+MAN1+=			ffserver.1
+
+PLIST_SUB+=		FFSERVER=""
 .endif
 PLIST_DIRS+=		include/ffmpeg
 
@@ -225,8 +260,16 @@ pre-everything::
 	@${ECHO_MSG} 'Define WITH_VORBIS to enable libvorbisenc VORBIS codec'
 	@${ECHO_MSG}
 .endif
+.ifndef(WITH_FAAC)
+	@${ECHO_MSG} 'Define WITH_FAAC to enable libfaac'
+	@${ECHO_MSG}
+.endif
 .ifndef(WITH_FAAD)
 	@${ECHO_MSG} 'Define WITH_FAAD to enable libfaad codec'
+	@${ECHO_MSG}
+.endif
+.ifndef(WITHOUT_FFMPEG_FFSERVER)
+	@${ECHO_MSG} 'Define WITHOUT_FFMPEG_FFSERVER to disable ffserver build'
 	@${ECHO_MSG}
 .endif
 .if ${ARCH} == "i386"
@@ -250,8 +293,14 @@ post-extract:
 .endif # ${ARCH} == i386
 
 post-patch:
+.ifndef(WITHOUT_FFMPEG_FFSERVER)
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|; s|%%RC_SUBR%%|${RC_SUBR}|' \
+		${FILESDIR}/ffserver.sh >${WRKDIR}/ffserver.sh
 	@${REINPLACE_CMD} -e "s!/etc/ffserver.conf!${PREFIX}/etc/ffserver.conf!g" \
-		${WRKSRC}/ffserver.c
+		${WRKSRC}/ffserver.c ${WRKSRC}/doc/ffserver-doc.texi
+	@${REINPLACE_CMD} -e 's!NoDaemon!# NoDaemon!g' \
+		${WRKSRC}/doc/ffserver.conf
+.endif
 .if ${ARCH} == "i386"
 # we support "v4l" per default through Steve O'Hara-Smith's bktr(4)
 # patch
@@ -296,8 +345,11 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
+.ifndef(WITHOUT_FFMPEG_FFSERVER)
 	@${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf \
 		${PREFIX}/etc/ffserver.conf.sample
+	@${INSTALL_SCRIPT} ${WRKDIR}/ffserver.sh ${PREFIX}/etc/rc.d
+.endif
 .for file in ${HEADER_FILES}
 # fix header references prior to installation
 	@${REINPLACE_CMD} -e 's|"common.h"|<ffmpeg/common.h>|; \

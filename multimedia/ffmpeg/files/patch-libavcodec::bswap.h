@@ -1,6 +1,6 @@
---- libavcodec/bswap.h.orig	Sun Nov  3 04:51:51 2002
-+++ libavcodec/bswap.h	Sun Nov  3 04:53:30 2002
-@@ -5,6 +5,14 @@
+--- libavcodec/bswap.h.orig	Sun Dec  5 16:03:35 2004
++++ libavcodec/bswap.h	Sun Dec  5 16:06:48 2004
+@@ -10,6 +10,14 @@
  #include <byteswap.h>
  #else
  
@@ -13,9 +13,9 @@
 +#endif
 +
  #ifdef ARCH_X86
- inline static unsigned short ByteSwap16(unsigned short x)
+ static inline unsigned short ByteSwap16(unsigned short x)
  {
-@@ -13,7 +21,11 @@
+@@ -18,7 +26,11 @@
          "0" (x));
      return x;
  }
@@ -25,9 +25,9 @@
  #define bswap_16(x) ByteSwap16(x)
 +#endif
  
- inline static unsigned int ByteSwap32(unsigned int x)
+ static inline unsigned int ByteSwap32(unsigned int x)
  {
-@@ -29,7 +41,11 @@
+@@ -34,7 +46,11 @@
        "0" (x));
    return x;
  }
@@ -37,5 +37,17 @@
  #define bswap_32(x) ByteSwap32(x)
 +#endif
  
- inline static unsigned long long int ByteSwap64(unsigned long long int x)
+ static inline unsigned long long int ByteSwap64(unsigned long long int x)
  {
+@@ -45,7 +61,11 @@
+       "0"(bswap_32((unsigned long)x)),"1"(bswap_32((unsigned long)(x>>32))));
+   return __x.__ll;
+ }
++#if defined(__FreeBSD__) && __FreeBSD_version >= 510000
++#define bswap_64(x) (be64toh(x))
++#else
+ #define bswap_64(x) ByteSwap64(x)
++#endif
+ 
+ #elif defined(ARCH_SH4)
+ 

@@ -1,12 +1,14 @@
 bin/ffmpeg
 %%SDL%%bin/ffplay
-bin/ffserver
-etc/ffserver.conf.sample
+%%FFSERVER%%bin/ffserver
+%%FFSERVER%%etc/ffserver.conf.sample
+%%FFSERVER%%etc/rc.d/ffserver.sh
 include/ffmpeg/avcodec.h
 include/ffmpeg/avformat.h
 include/ffmpeg/avio.h
 include/ffmpeg/common.h
 include/ffmpeg/dsputil.h
+include/ffmpeg/rational.h
 include/ffmpeg/rtp.h
 include/ffmpeg/rtsp.h
 include/ffmpeg/rtspcodes.h
@@ -20,15 +22,5 @@ lib/libavformat.so.%%SHLIB_VERSION%%
 %%VHOOK%%lib/vhook/fish.so
 %%VHOOK%%%%IMLIB2%%lib/vhook/imlib2.so
 %%VHOOK%%lib/vhook/null.so
-%%PORTDOCS%%share/doc/ffmpeg/COPYING
-%%PORTDOCS%%share/doc/ffmpeg/Changelog
-%%PORTDOCS%%share/doc/ffmpeg/README
-%%PORTDOCS%%share/doc/ffmpeg/TODO
-%%PORTDOCS%%share/doc/ffmpeg/faq.html
-%%PORTDOCS%%share/doc/ffmpeg/faq.texi
-%%PORTDOCS%%share/doc/ffmpeg/ffmpeg-doc.html
-%%PORTDOCS%%share/doc/ffmpeg/ffmpeg-doc.texi
-%%PORTDOCS%%share/doc/ffmpeg/ffserver-doc.html
-%%PORTDOCS%%share/doc/ffmpeg/ffserver-doc.texi
-%%PORTDOCS%%@dirrm share/doc/ffmpeg
+%%VHOOK%%lib/vhook/ppm.so
 %%VHOOK%%@dirrm lib/vhook
