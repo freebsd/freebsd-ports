@@ -7,7 +7,7 @@
 
 PORTNAME=	ldvd9to5
 PORTVERSION=	1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ldvd9to5.gff-clan.net/ldvd9to5/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -21,7 +21,6 @@ RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode \
 		mkisofs:${PORTSDIR}/sysutils/cdrtools \
 		ifo_dump:${PORTSDIR}/multimedia/ogle \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
-		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		buffer:${PORTSDIR}/misc/buffer \
 		lsdvd:${PORTSDIR}/multimedia/lsdvd \
 		${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
@@ -34,7 +33,7 @@ NO_BUILD=	yes
 DATA=		INSTALL.de INSTALL.en README.de README.en COPYING
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LSDVD=/opt|LSDVD=${LOCALBASE}/share|g' ${WRKSRC}/ldvd9to5.conf
+	@${REINPLACE_CMD} -e 's|LSDVD=/opt/ldvd9to5|LSDVD=${LOCALBASE}/bin|g' ${WRKSRC}/ldvd9to5.conf
 	@${REINPLACE_CMD} -e 's|/opt|${LOCALBASE}/share|g' -e 's|/etc|${LOCALBASE}/etc|g' ${WRKSRC}/ldvd9to5
 
 do-install:
