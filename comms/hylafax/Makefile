@@ -67,8 +67,9 @@ post-extract:
 	${RM} -rf ${WRKSRC}/zlib ${WRKSRC}/regex
 
 post-patch:
-	${REINPLACE_CMD} -Ee 's,^(DIR.*=.*)/usr/local,\1${PREFIX},g' \
-		-e 's,/usr/local/man,${PREFIX}/man,g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -E \
+		-e 's,/usr/local,${LOCALBASE},g' \
+		${WRKSRC}/configure
 
 pre-install:
 PLIST_SUB=	SPOOL="`${GREP} SPOOL ${WRKSRC}/defs | ${CUT} -c10-`"
