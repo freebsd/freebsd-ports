@@ -44,7 +44,7 @@ XINSTALL_DIRS=	include lib nls programs/Xserver/include \
 INSTALLS_SHLIB=	yes
 
 post-extract:
-	${GUNZIP_CMD} -c ${DISTDIR}/Wraphelp2.gz > ${WRKSRC}/lib/Xdmcp/Wraphelp.c
+	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > ${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
 post-patch:
 	${CP} ${FILESDIR}/nls-Compose-microsoft-cp1251 ${WRKSRC}/nls/Compose/microsoft-cp1251
