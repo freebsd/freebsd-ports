@@ -6291,6 +6291,7 @@ openoffice-1.1-sk	ports/editors/openoffice-1.1-sk
 openoffice-1.1-sl_SI	ports/editors/openoffice-1.1-sl_SI
 openoffice-1.1-tr	ports/editors/openoffice-1.1-tr
 openoffice-2.0-devel	ports/editors/openoffice-2.0-devel
+openorb		ports/devel/openorb
 openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
 openradius	ports/net/openradius
