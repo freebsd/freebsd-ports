@@ -76,6 +76,12 @@ post-configure:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 400000
+LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+.endif
+
 .if ${OSVERSION} >= 500000 && ${OSVERSION} < 500005
 CONFIGURE_ARGS+= --with-libs='-lxpg4'
 .endif
