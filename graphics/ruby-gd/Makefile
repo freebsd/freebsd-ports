@@ -7,7 +7,7 @@
 
 PORTNAME=	GD
 PORTVERSION=	0.7.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www.acc.ne.jp/~tam/GD/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -34,7 +34,7 @@ INSTALL_TARGET=	site-install
 CONFIGURE_ARGS+=	--with-gd-include="${LOCALBASE}/include/gd"
 LIB_DEPENDS+=	gd1.2:${PORTSDIR}/graphics/gd1
 .else
-CONFIGURE_ARGS+=	----enable-gd2_0 \
+CONFIGURE_ARGS+=	--enable-gd2_0 \
 		--with-gd-include="${LOCALBASE}/include"
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 .endif
