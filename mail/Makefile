@@ -91,6 +91,7 @@
     SUBDIR += imp3
     SUBDIR += isoqlog
     SUBDIR += isync
+    SUBDIR += jamlib
     SUBDIR += junkfilter
     SUBDIR += kbiff
     SUBDIR += kiltdown

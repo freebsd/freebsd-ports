@@ -1,0 +1,7 @@
+These are a collection of subroutines that encapsulate much of the
+format-specific and tedious details of the JAM message base format.
+The idea is that application programmers by using these routines can
+concentrate on the more high-level issues of their programs instead
+of worrying about their JAM routines.
+
+WWW: http://hell.binec.ru/crashecho
