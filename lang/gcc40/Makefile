@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.57 1999/04/22 00:17:01 scrappy Exp $
+# $Id: Makefile,v 1.58 1999/05/18 18:15:33 obrien Exp $
 #
 
 SNAPDATE=	1999-05-17
@@ -32,7 +32,7 @@ NO_CDROM=	'dated material'
 
 .include <bsd.port.pre.mk>
 
-EGCS_REV=	2.93.22
+EGCS_REV=	egcs-2.93.22
 LIBSTDCPP_REV=	4
 
 .if ${PORTOBJFORMAT} == "elf"
@@ -49,6 +49,10 @@ CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
 		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/include/g++
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
+.endif
+.if defined(WANT_THREADS)
+#	?is his an ObjC only thing?
+CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
 MAN1=		cccp.1 eg++.1 eg77.1 egcc.1
