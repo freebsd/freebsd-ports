@@ -14,7 +14,7 @@ PATCH_SITES=	http://ftp.debian.org/debian/dists/unstable/main/source/text/
 PATCHFILES=	jade_1.2.1-13.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	jfieber@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
