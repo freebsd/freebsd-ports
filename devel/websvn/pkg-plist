@@ -6,6 +6,7 @@ www/data/WebSVN/form.php
 www/data/WebSVN/include/command.inc
 www/data/WebSVN/include/configclass.inc
 www/data/WebSVN/include/distconfig.inc
+www/data/WebSVN/include/feedcreator.class.php
 www/data/WebSVN/include/setup.inc
 www/data/WebSVN/include/svnlook.inc
 www/data/WebSVN/include/template.inc
@@ -14,10 +15,13 @@ www/data/WebSVN/include/version.inc
 www/data/WebSVN/index.php
 www/data/WebSVN/install.txt
 www/data/WebSVN/languages/english.inc
+www/data/WebSVN/languages/french.inc
 www/data/WebSVN/languages/german.inc
+www/data/WebSVN/languages/portuguese.inc
 www/data/WebSVN/licence.txt
 www/data/WebSVN/listing.php
 www/data/WebSVN/log.php
+www/data/WebSVN/rss.php
 www/data/WebSVN/templates.txt
 www/data/WebSVN/templates/BlueGrey/diff.tmpl
 www/data/WebSVN/templates/BlueGrey/directory.tmpl
@@ -35,6 +39,7 @@ www/data/WebSVN/templates/BlueGrey/png.js
 www/data/WebSVN/templates/BlueGrey/repo.png
 www/data/WebSVN/templates/BlueGrey/styles.css
 www/data/WebSVN/templates/BlueGrey/subversion.png
+www/data/WebSVN/templates/BlueGrey/xml.gif
 www/data/WebSVN/templates/Standard/diff.tmpl
 www/data/WebSVN/templates/Standard/directory.tmpl
 www/data/WebSVN/templates/Standard/file.tmpl
@@ -43,6 +48,7 @@ www/data/WebSVN/templates/Standard/header.tmpl
 www/data/WebSVN/templates/Standard/index.tmpl
 www/data/WebSVN/templates/Standard/log.tmpl
 www/data/WebSVN/templates/Standard/styles.css
+www/data/WebSVN/templates/Standard/xml.gif
 www/data/WebSVN/wsvn.php
 @dirrm www/data/WebSVN/templates/Standard
 @dirrm www/data/WebSVN/templates/BlueGrey
