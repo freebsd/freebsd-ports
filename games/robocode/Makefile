@@ -29,10 +29,6 @@ NO_BUILD=	yes
 INSTFILES=	battles javadoc license.html robocode.ico \
 		robocode.jar robots templates versions.txt
 
-.if defined(BATCH) || defined(PACKAGE_BUILDING)
-IGNORE=		"You can not legally redistribute package"
-.endif
-
 post-extract:
 	@cd ${WRKSRC} && ${JAVAJAR} xf ${WRKSRC}/extract.jar
 
