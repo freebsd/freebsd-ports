@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/
 DISTNAME=	Quixote-${PORTVERSION}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	dryice@liu.com.cn
 COMMENT=	A framework for developing web applications in Python
 
 USE_PYTHON=	2.0+
