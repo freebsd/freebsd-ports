@@ -32,6 +32,45 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="84ab58cf-e4ac-11d8-9b0a-000347a4fa7d">
+    <topic>gnutls -- certificate chain verification DoS</topic>
+    <affects>
+      <package>
+        <name>gnutls</name>
+        <range><lt>1.0.17</lt></range>
+      </package>
+      <package>
+        <name>gnutls-devel</name>
+        <range><ge>1.1.*</ge><lt>1.1.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Patric Hornik reports on a problem in the certificate chain
+	  verification procedures of GnuTLS that may result in a
+	  denial-of-service vulnerability:</p>
+	<blockquote cite="http://www.hornik.sk/SA/SA-20040802.txt">
+          <p>The certificate chain should be verified from last root
+            certificate to the first certificate.  Otherwise a lot
+            of unauthorized CPU processing can be forced to check
+            certificate signatures signed with arbitrary RSA/DSA keys
+	    chosen by attacker.</p>
+          <p>In GnuTLS the signatures are checked from first to last
+            certificate, there is no limit on size of keys and no
+            limit on length of certificate chain.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.hornik.sk/SA/SA-20040802.txt</url>
+      <url>http://secunia.com/advisories/12156</url>
+    </references>
+    <dates>
+      <discovery>2004-08-02</discovery>
+      <entry>2004-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="562a3fdf-16d6-11d9-bc4a-000c41e2cdad">
     <topic>php -- vulnerability in RFC 1867 file upload processing</topic>
     <affects>
