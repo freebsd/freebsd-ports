@@ -1,0 +1,11 @@
+#!/bin/sh
+
+SCOREDIR="/var/games"
+SCOREFILE="/var/games/dd2-hiscore"
+
+[ "$2" != "POST-INSTALL" -o -f "$SCOREFILE" ] && exit 0
+
+mkdir -p $SCOREDIR
+touch $SCOREFILE
+chown root:games $SCOREFILE
+chmod 664 $SCOREFILE
