@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	malsync
-PORTVERSION=	1.8
+PORTVERSION=	2.04
 CATEGORIES=	palm
-MASTER_SITES=	http://www.tomw.org/ \
+MASTER_SITES=	http://www.tomw.org/%SUBDIR%/ \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dirk
-DISTNAME=	malsync_src_1_8
+MASTER_SITE_SUBDIR=	malsync
+DISTNAME=	malsync_2.0.4.src
 
 MAINTAINER=	dirk@FreeBSD.org
 
 LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link
 
 USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/malsync_src/mal/client/unix
-FETCH_BEFORE_ARGS=	-b
+WRKSRC=		${WRKDIR}/malsync/mal/client/unix
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/malsync ${PREFIX}/bin
