@@ -13,7 +13,7 @@ DISTFILES=	listar-1.0.0-snap20010225${EXTRACT_SUFX}
 
 MAINTAINER=	plosher@wwiv.com
 
-FORBIDDEN=	"Remotely exploitable buffer overflow by submitted mail"
+FORBIDDEN=	"Remotely exploitable buffer overflow by submitted mail; superceded by mail/ecartis"
 
 USE_GMAKE=	yes
 
