@@ -15,7 +15,7 @@ MAINTAINER=	ejc@bazzle.com
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400000
+.if ${OSVERSION} >= 400004
 LIBSTDC=	/usr/lib/libstdc++.a
 .else
 .if ${PORTOBJFORMAT} == "elf"
