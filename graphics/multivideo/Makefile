@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image sequence viewer
 
-LIB_DEPENDS=	wx_gtk-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk
+LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -26,11 +26,15 @@ USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 ALL_TARGET=	default
 
+WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|g++|\$$\(CXX)|g ; \
 		 s|-O2 -g -Wall -W|\$$\(CXXFLAGS\)|g ; \
 		 s|[(]CC[)]|\(CXX\)|g ; \
-		 s|gcc|\$$\(CXX\)|g' ${WRKSRC}/Makefile
+		 s|gcc|\$$\(CXX\)|g ; \
+		 s|wx-config|${WX_CONFIG}|g' \
+		 	${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multivideo ${PREFIX}/bin
