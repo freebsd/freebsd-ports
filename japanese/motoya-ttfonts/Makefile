@@ -22,6 +22,8 @@ COMMENT=	Free Japanese TrueType fonts named 'MOTOYA'
 
 BUILD_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 
+RESTRICTED=	Personal use only and some limitation.
+
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
