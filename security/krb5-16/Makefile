@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.2.3
+PORTVERSION=		1.2.4
 CATEGORIES=		security
 MASTER_SITES=		# manual download
 
