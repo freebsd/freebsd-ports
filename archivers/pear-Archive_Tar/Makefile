@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Archive_Tar
-PORTVERSION=	1.3.0
-CATEGORIES=	archivers www pear
+PORTVERSION=	1.3.1
+CATEGORIES=	archivers pear
 
 MAINTAINER=	antonio@php.net
 COMMENT=	PEAR tar file management class
@@ -15,8 +15,12 @@ COMMENT=	PEAR tar file management class
 USE_PHP=	yes
 WANT_PHP_PEAR=	yes
 
-FILES=		Archive/Tar.php
+CATEGORY=	Archive
+FILES=		Tar.php
 DOCS=		Archive_Tar.txt
+
+post-extract:
+	@${MV} ${WRKSRC}/Archive/* ${WRKSRC}
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
