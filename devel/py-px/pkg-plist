@@ -1,0 +1,4 @@
+bin/px
+%%PYTHON_SITELIBDIR%%/p4lib.py
+%%PYTHON_SITELIBDIR%%/p4lib.pyc
+%%PYTHON_SITELIBDIR%%/p4lib.pyo

@@ -1,0 +1,10 @@
+px is a wrapper around p4. It provides all the functionality of p4
+(defering work to it) plus it extends some standard p4 commands and
+adds a few new ones. If you are a Perforce user you might find these
+extensions useful.
+
+px uses p4lib.py, a Python interface to the Perforce client application.
+If you are a Python programmer and script Perforce you might find this
+module helpful. Currently, most common commands are supported.
+
+WWW: http://starship.python.net/~tmick/
