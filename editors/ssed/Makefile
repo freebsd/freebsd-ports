@@ -5,29 +5,30 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ssed
-PORTVERSION=	3.58
-PORTREVISION=	2
+PORTNAME=	sed
+PORTVERSION=	3.61a
 CATEGORIES=	editors textproc
-MASTER_SITES=	http://queen.rett.polimi.it/~paolob/seders/ssed/
-DISTNAME=	sed-${PORTVERSION}
+MASTER_SITES=	http://sed.sourceforge.net/grabbag/ssed/
+PKGNAMEPREFIX=	s
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Super-sed is a heavily enhanced version of sed
+COMMENT=	Super-sed - a heavily enhanced version of sed
 
-LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} --program-prefix=s
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--program-prefix=s
 
-MAN1=	ssed.1
+MAN1=		ssed.1
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+PLIST_SUB+=	NLS=""
 .endif
 
 .include <bsd.port.mk>
