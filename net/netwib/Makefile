@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netwib
-PORTVERSION=	5.21.0
+PORTVERSION=	5.22.0
 CATEGORIES=	net devel ipv6
 MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v5/ \
 		http://membres.lycos.fr/lauconstantin/common/netw/netwib/download/v5/ \
@@ -29,6 +29,7 @@ PLIST_SUB+=	SHORTPORTVERSION=${PORTVERSION:C/([0-9]*)\.([0-9]*)\.[0-9]*/\1\2/}
 do-configure:
 		@${REINPLACE_CMD} \
 		-e 's|%%PREFIX%%|${PREFIX}|' \
+		-e 's|%%CFLAGS%%|${CFLAGS}|' \
 		${WRKSRC}/config.dat
 		(cd ${WRKSRC} ; ${SH} ${WRKSRC}/genemake )
 

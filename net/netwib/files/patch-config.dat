@@ -1,20 +1,23 @@
 
 $FreeBSD$
 
---- config.dat.orig	Fri Jul 23 14:25:20 2004
-+++ config.dat	Fri Jul 23 14:26:07 2004
-@@ -15,12 +15,12 @@
+--- config.dat.orig	Sun Aug 15 21:04:46 2004
++++ config.dat	Tue Aug 17 11:15:37 2004
+@@ -7,7 +7,7 @@
  
  ##########################################################################
- ### directories
+ ### directories where netwib will be installed
 -NETWIBDEF_INSTPREFIX=/usr/local
 +NETWIBDEF_INSTPREFIX=%%PREFIX%%
  NETWIBDEF_INSTINCLUDE=${NETWIBDEF_INSTPREFIX}/include
  NETWIBDEF_INSTLIB=${NETWIBDEF_INSTPREFIX}/lib
  NETWIBDEF_INSTBIN=${NETWIBDEF_INSTPREFIX}/bin
- NETWIBDEF_INSTMAN=${NETWIBDEF_INSTPREFIX}/man
- NETWIBDEF_INSTMAN1=${NETWIBDEF_INSTMAN}/man1
- NETWIBDEF_INSTMAN3=${NETWIBDEF_INSTMAN}/man3
--NETWIBDEF_INSTDOC=${NETWIBDEF_INSTPREFIX}/doc
-+NETWIBDEF_INSTDOC=${NETWIBDEF_INSTPREFIX}/share/doc/netwib
+@@ -26,7 +26,7 @@
  
+ ##########################################################################
+ ### compiler options
+-NETWIBDEF_PROGCC_OPT="-Wall -O2"
++NETWIBDEF_PROGCC_OPT="%%CFLAGS%%"
+ NETWIBDEF_PROGCC_INC=""
+ NETWIBDEF_PROGCC_LIB=""
+ NETWIBDEF_PROGCC_OPTPIC=""
