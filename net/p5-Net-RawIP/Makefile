@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-RawIP
 PORTVERSION=	0.1
+PORTEPOCH=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.ic.al.lg.ua/~ksv/
