@@ -7999,7 +7999,7 @@ toppler		ports/games/toppler
 tora		ports/databases/tora
 tornado		ports/games/tornado
 tosha		ports/audio/tosha
-tosvcd		ports/graphics/tosvcd
+tosvcd		ports/multimedia/tosvcd
 totd		ports/net/totd
 totem		ports/graphics/totem
 touch		src/usr.bin/touch
@@ -8203,10 +8203,10 @@ vat		ports/mbone/vat
 vb2c		ports/devel/vb2c
 vbidecode	ports/misc/vbidecode
 vbsfilter	ports/mail/vbsfilter
-vcdgear		ports/graphics/vcdgear
-vcdimager	ports/graphics/vcdimager
-vcdpad		ports/graphics/vcdpad
-vcdtools	ports/graphics/vcdtools
+vcdgear		ports/multimedia/vcdgear
+vcdimager	ports/multimedia/vcdimager
+vcdpad		ports/multimedia/vcdpad
+vcdtools	ports/multimedia/vcdtools
 vcg		ports/graphics/vcg
 vchat		ports/net/vchat
 vcheck		ports/ftp/vcheck
