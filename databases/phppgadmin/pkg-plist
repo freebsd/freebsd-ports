@@ -7,6 +7,7 @@
 %%PGADMDIR%%/LICENSE
 %%PGADMDIR%%/TODO
 %%PGADMDIR%%/TRANSLATORS
+%%PGADMDIR%%/aggregates.php
 %%PGADMDIR%%/all_db.php
 %%PGADMDIR%%/bottombar.php
 %%PGADMDIR%%/browser.php
@@ -31,6 +32,7 @@
 %%PGADMDIR%%/classes/class.select.php
 %%PGADMDIR%%/classes/database/ADODB_base.php
 %%PGADMDIR%%/classes/database/BaseDB.php
+%%PGADMDIR%%/classes/database/Connection.php
 %%PGADMDIR%%/classes/database/Postgres.php
 %%PGADMDIR%%/classes/database/Postgres71.php
 %%PGADMDIR%%/classes/database/Postgres72.php
@@ -46,6 +48,7 @@
 %%PGADMDIR%%/database.php
 %%PGADMDIR%%/databases.php
 %%PGADMDIR%%/dataexport.php
+%%PGADMDIR%%/dbexport.php
 %%PGADMDIR%%/display.php
 %%PGADMDIR%%/domains.php
 %%PGADMDIR%%/functions.php
@@ -69,6 +72,7 @@
 %%PGADMDIR%%/lang/afrikaans.php
 %%PGADMDIR%%/lang/chinese-sim.php
 %%PGADMDIR%%/lang/chinese-tr.php
+%%PGADMDIR%%/lang/convert.awk
 %%PGADMDIR%%/lang/czech.php
 %%PGADMDIR%%/lang/dutch.php
 %%PGADMDIR%%/lang/english.php
@@ -163,8 +167,10 @@
 %%PGADMDIR%%/libraries/adodb/tohtml.inc.php
 %%PGADMDIR%%/libraries/errorhandler.inc.php
 %%PGADMDIR%%/libraries/lib.inc.php
+%%PGADMDIR%%/links.js
 %%PGADMDIR%%/login.php
 %%PGADMDIR%%/logout.php
+%%PGADMDIR%%/opclasses.php
 %%PGADMDIR%%/operators.php
 %%PGADMDIR%%/privileges.php
 %%PGADMDIR%%/reports.php
