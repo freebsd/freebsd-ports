@@ -1,9 +1,10 @@
 # New ports collection makefile for:   aftp
 # Version required:	1.0
 # Date created:		18th Febuary 1997
-# Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
+# Last updated:		2nd August, 1998
+# Whom:			Joel Sutton <jsutton@webnet.com.au>
 #
-# $Id$
+# $Id: Makefile,v 1.2 1997/06/30 11:01:08 max Exp $
 #
 
 DISTNAME=	aftp
@@ -12,7 +13,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.apple.asimov.net/pub/apple_II/incoming/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sutton@aardvark.apana.org.au
+MAINTAINER=	jsutton@webnet.com.au
 
 MAN1=		aftp.1
 
