@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portsnap
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://www.daemonology.net/portsnap/
 
