@@ -20,6 +20,9 @@ MAINTAINER=	ports@FreeBSD.org
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
+MAN1=		gsl-config.1
+MAN3=		gsl.3
+
 GSLREF=		gsl-ref.ps.gz
 
 post-install:
