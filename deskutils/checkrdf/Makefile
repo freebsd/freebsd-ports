@@ -16,6 +16,7 @@ COMMENT=	A tool for RDF site summaries based news-check
 
 BUILD_DEPENDS=	Xtract:${PORTSDIR}/textproc/hs-haxml
 
+USE_SIZE=	yes
 USE_BZIP2=	yes
 MAKE_ENV=	PREFIX=${PREFIX}
 

@@ -20,6 +20,7 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 BUILD_DEPENDS=	nhc98:${PORTSDIR}/lang/nhc98
 .endif
 
+USE_SIZE=	yes
 HAS_CONFIGURE=	yes
 
 INFO=	drift

@@ -26,6 +26,7 @@ ALL_TARGET=	all docs
 
 WRKSRC=	${WRKDIR}/HSQL
 
+USE_SIZE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}/lib --enable-postgres
 CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include/postgresql/server \

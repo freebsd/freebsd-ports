@@ -25,6 +25,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textpr
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//g}
+USE_SIZE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
+USE_SIZE=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

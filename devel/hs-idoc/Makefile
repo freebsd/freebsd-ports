@@ -15,6 +15,7 @@ COMMENT=	A No Frills Haskell Interface Documentation System
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
+USE_SIZE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 

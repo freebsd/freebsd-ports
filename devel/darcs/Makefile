@@ -16,6 +16,7 @@ COMMENT=	Yet another replacement for CVS, written in Haskell
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
+USE_SIZE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
