@@ -1,5 +1,37 @@
 #!/bin/sh
 
+kill_procs()
+{
+  dir=$1
+
+  pids="XXX"
+  while [ ! -z "${pids}" ]; do
+    pids=$(fstat -f "$dir" | tail +2 | awk '{print $3}' | sort -u)
+    if [ ! -z "${pids}" ]; then
+      echo "Killing off pids in ${dir}"
+      ps -p $pids
+      kill -KILL ${pids} 2> /dev/null
+      sleep 2
+    fi
+  done
+}
+
+cleanup_mount() {
+  chroot=$1
+  mount=$2
+
+  if [ -d ${chroot}${mount} ]; then
+    mdir=$(fstat -f ${chroot}${mount} | head -2 | tail -1 | awk '{print $5}')
+    if [ "${mdir}" = "MOUNT" ]; then
+      umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+    fi
+    if [ "${mdir}" = "${chroot}${mount}" ]; then
+      kill_procs ${chroot}${mount}
+      umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!" 
+    fi
+  fi
+}
+
 arch=$1
 branch=$2
 chroot=$3
@@ -7,6 +39,10 @@ noclean=$4
 
 # directories to clean
 cleandirs="/usr/local /usr/X11R6 /compat /var/db/pkg"
+
+if [ ! -d "${chroot}" ]; then
+  exit 0
+fi
 
 if [ `realpath ${chroot}` = "/" ]; then
   # Don't spam the root file system if something has gone wrong!
@@ -16,13 +52,14 @@ fi
 #umount ${chroot}/proc
 
 if [ ${arch} = "i386" ]; then
-  chroot ${chroot} umount -f /compat/linux/proc
+  cleanup_mount ${chroot} /compat/linux/proc
 fi
+  
+for i in /a/ports /usr/opt/doc /usr/src /dev; do
+  cleanup_mount ${chroot} ${i}
+done
 
-umount -f ${chroot}/a/ports 2> /dev/null
-umount -f ${chroot}/usr/opt/doc 2> /dev/null
-umount -f ${chroot}/usr/src 2> /dev/null
-umount -f ${chroot}/dev 2> /dev/null
+#kill_procs ${chroot}
 
 if [ $noclean = 0 ]; then
   rm -rf ${chroot}/tmp/*
@@ -32,9 +69,9 @@ if [ $noclean = 0 ]; then
       rm -rf ${chroot}${dir} >/dev/null 2>&1
     fi
   done
-  chroot ${chroot} /sbin/ldconfig -R
+  test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -R
   if [ ${arch} = "i386" ]; then
-	chroot ${chroot} /sbin/ldconfig -aout -R
+	test -x ${chroot}/sbin/ldconfig && chroot ${chroot} /sbin/ldconfig -aout -R
   fi
   rm -rf ${chroot}/var/db/pkg/*
   rm -rf ${chroot}/used
