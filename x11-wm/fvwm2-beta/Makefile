@@ -15,6 +15,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
 
+BROKEN=		"No development versions, go to the stable version"
+
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
