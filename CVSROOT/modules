@@ -2441,6 +2441,7 @@ hp48cc		ports/devel/hp48cc
 hpack.non-usa.only	ports/archivers/hpack.non-usa.only
 hpijs		ports/print/hpijs
 hping		ports/security/hping
+hpl		ports/devel/hpl
 hppsmtools	ports/graphics/hppsmtools
 hr-ooodict-HR	ports/editors/ooodict-hr_HR
 hsftp		ports/ftp/hsftp
