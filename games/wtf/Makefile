@@ -17,16 +17,12 @@ MAINTAINER=	mux@FreeBSD.org
 COMMENT=	Translates common Internet acronyms
 
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 MAN6=		wtf.6
 
 post-patch:
-	@${MV} ${WRKSRC}/wtf ${WRKSRC}/wtf.orig
-	@${SED} -e s#/usr/share/misc#${DATADIR}# \
-		${WRKSRC}/wtf.orig > ${WRKSRC}/wtf
-	@${MV} ${WRKSRC}/wtf.6 ${WRKSRC}/wtf.6.orig
-	@${SED} -e s#/usr/share/misc#${DATADIR}# \
-		${WRKSRC}/wtf.6.orig > ${WRKSRC}/wtf.6
+	@${REINPLACE_CMD} -e 's|/usr/share/misc|${DATADIR}|g' ${WRKSRC}/wtf*
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wtf ${PREFIX}/bin
