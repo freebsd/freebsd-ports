@@ -1,0 +1,4 @@
+bin/pgen
+share/pgen/procmail-defn.m4
+share/pgen/procmail.m4
+@dirrm share/pgen
