@@ -7,6 +7,7 @@
 
 PORTNAME=	par
 PORTVERSION=	1.52
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.nicemice.net/par/
 DISTNAME=	Par${PORTVERSION:S|.||}
