@@ -13,6 +13,8 @@ MASTER_SITES=	http://maclawran.ca/~sean/bb-dnld/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
+FORBIDDEN=	"Remote buffer overflow in bbd"
+
 # The FreeBSD Ports Team has permission to include this in our CDROM
 # from the author, but others who wish to do likewise will have to
 # contact Sean MacGuire <sean@iti.qc.ca>.
