@@ -3,7 +3,6 @@ bin/%%PKGNAMEPREFIX%%webalizer
 @unexec rm -f %B/%%PKGNAMEPREFIX%%webazolver
 etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/Copyright
 %%PORTDOCS%%%%DOCSDIR%%/DNS.README
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
