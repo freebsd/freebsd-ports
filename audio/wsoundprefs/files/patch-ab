@@ -1,0 +1,11 @@
+--- src/Imakefile.orig	Wed Dec 23 23:18:50 1998
++++ src/Imakefile	Wed Dec 23 23:19:30 1998
+@@ -5,7 +5,7 @@
+ 
+ ICONS = WSoundPrefs.xpm WSoundPrefs.tiff
+ 
+-CC = gcc
++XCOMM CC = gcc
+ 
+ BINDIR = /GNUstep/Apps/WSoundPrefs.app
+ 
