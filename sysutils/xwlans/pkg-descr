@@ -1,0 +1,7 @@
+This utility displays your current wlan (IEEE 802.11/wavelan) signal strength
+in a nice graph on your X11 root desktop.
+
+WWW: http://shapeshifter.se/code/xwlans/
+
+-- Fredrik Lindberg
+   fli@shapeshifter.se
