@@ -75,6 +75,7 @@
     SUBDIR += gindent
     SUBDIR += glade
     SUBDIR += glib12
+    SUBDIR += glib13
     SUBDIR += global
     SUBDIR += gmake
     SUBDIR += gnomedebug
