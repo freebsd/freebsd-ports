@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="72da8af6-7c75-11d9-8cc5-000854d03344">
+    <topic>enscript -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>enscript-a4</name>
+	<name>enscript-letter</name>
+	<name>enscript-letterdj</name>
+	<range><lt>1.6.4_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Erik Sj&ouml;lund discovered several issues in enscript:
+	  it suffers from several buffer overflows, quotes and shell
+	  escape characters are insufficiently sanitized in filenames,
+	  and it supported taking input from an arbitrary command
+	  pipe, with unwanted side effects.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1184</cvename>
+      <cvename>CAN-2004-1185</cvename>
+      <cvename>CAN-2004-1186</cvename>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200502-03.xml</url>
+    </references>
+    <dates>
+      <discovery>2005-02-02</discovery>
+      <entry>2005-02-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d425189-7a03-11d9-a9e7-0001020eed82">
     <topic>postgresql -- privilege escalation vulnerability</topic>
     <affects>
