@@ -4,7 +4,7 @@
  #define	__CPPU_ENV gcc2
  #elif (__GNUC__ == 2)
  #error "Tested gcc 2 versions are 2.91 and 2.95.  Patch uno/lbnames.h to try your gcc 2 version."
--#elif (__GNUC__ == 3 && __GNUC_MINOR__ == 1)
+-#elif (__GNUC__ == 3 && __GNUC_MINOR__ == 0)
 +#elif (__GNUC__ == 3 && (__GNUC_MINOR__ == 0 || __GNUC_MINOR__ == 1 || __GNUC_MINOR__ == 2))
  #define	__CPPU_ENV gcc3
  #elif (__GNUC__ == 3)
