@@ -1,0 +1,14 @@
+*** sshd.c.old	Sun Oct  1 11:16:22 1995
+--- sshd.c	Tue Nov 21 02:03:24 1995
+***************
+*** 1581,1586 ****
+--- 1581,1589 ----
+        log_init(av0, debug_flag && !inetd_flag, debug_flag, 
+  	       options.quiet_mode, options.log_facility);
+  
++ #ifdef HAVE_SETSID
++       setsid();
++ #endif
+  #ifdef USE_PIPES
+        /* Redirect stdin.  We close the parent side of the socket pair,
+           and make the child side the standard input. */
