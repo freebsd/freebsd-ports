@@ -1,0 +1,41 @@
+--- patch-texinfmt.el.orig	Fri Mar  3 21:26:16 2000
++++ patch-texinfmt.el	Thu Jul 13 18:17:38 2000
+@@ -1,5 +1,5 @@
+---- texinfmt.el-ORIG	Sun May 30 04:21:06 1999
+-+++ texinfmt.el	Thu Jan 13 10:52:58 2000
++--- texinfmt.el.orig	Thu Jul 13 18:12:19 2000
+++++ texinfmt.el	Thu Jul 13 18:17:28 2000
+ @@ -1111,6 +1111,78 @@
+  
+  ;;; @node, @menu, @detailmenu
+@@ -112,17 +112,18 @@
+      (texinfo-discard-command)
+      (setq texinfo-last-node name)
+      (let ((tem (if texinfo-fold-nodename-case (downcase name) name)))
+-@@ -1212,7 +1308,8 @@
++@@ -1212,7 +1308,9 @@
+          (insert (or fname (car args)) ": ")
+          (if (nth 3 args)
+              (insert "(" (nth 3 args) ")"))
+--        (insert (car args))))))
++-        (and (car args) (insert (car args)))))))
+ +        (insert (or (car args) ""))
+ +        (or (save-excursion (looking-at "[.,]")) (insert "."))))))
+++
+  
+  (put 'pxref 'texinfo-format 'texinfo-format-pxref)
+  (defun texinfo-format-pxref ()
+-@@ -1220,6 +1317,7 @@
++@@ -1220,6 +1318,7 @@
+    (or (save-excursion
+          (forward-char -2)
+          (looking-at "::"))
+@@ -130,7 +131,7 @@
+        (insert ".")))
+  
+  ;; @inforef{NODE, FNAME, FILE}
+-@@ -1230,7 +1328,8 @@
++@@ -1230,7 +1329,8 @@
+    (let ((args (texinfo-format-parse-args)))
+      (texinfo-discard-command)
+      (if (nth 1 args)
