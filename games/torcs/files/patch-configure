@@ -1,5 +1,5 @@
---- configure.orig	Sat Feb  7 20:50:14 2004
-+++ configure	Sun Feb  8 14:36:34 2004
+--- configure.orig	Tue Jun  1 22:10:38 2004
++++ configure	Tue Jun  1 22:13:20 2004
 @@ -2023,13 +2023,11 @@
  fi
  
@@ -25,3 +25,21 @@
  
  #include <unistd.h>
  #include <plib/ul.h>
+@@ -3369,7 +3364,7 @@
+ int main() {
+     int major, minor, micro;
+ 
+-    if ( PLIB_VERSION != MIN_PLIB_VERSION ) {
++    if ( PLIB_VERSION < MIN_PLIB_VERSION ) {
+ 	 return -1;
+     }
+ 
+@@ -3385,7 +3380,7 @@
+   echo "configure: failed program was:" >&5
+   cat conftest.$ac_ext >&5
+   rm -fr conftest*
+-  echo "$ac_t""PLIB 1.6.0 was not detected. TORCS can run only with PLIB 1.6.0, so verify that the PLIB 1.6.0 is really the version installed on your system." 1>&6
++  echo "$ac_t""PLIB 1.6.0 was not detected. TORCS can run only with PLIB > 1.6.0, so verify that the PLIB 1.6.0 is really the version installed on your system." 1>&6
+ fi
+ rm -fr conftest*
+ fi
