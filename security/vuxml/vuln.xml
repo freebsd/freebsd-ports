@@ -30,6 +30,46 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="df333ede-a8ce-11d8-9c6d-0020ed76ef5a">
+    <topic>URI handler vulnerabilities in several browsers</topic>
+    <affects>
+      <package>
+	<name>linux-opera</name>
+	<name>opera</name>
+	<range><lt>7.50</lt></range>
+      </package>
+      <package>
+	<name>kdelibs</name>
+	<range><lt>3.2.2_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Karol Wiesek and Greg MacManus reported via iDEFENSE that the
+	  Opera web browser contains a flaw in the handling of
+	  certain URIs.  When presented with these URIs, Opera would
+	  invoke external commands to process them after some
+	  validation.  However, if the hostname component of a URI
+	  begins with a `-', it may be treated as an option by an external
+	  command.  This could have undesirable side-effects, from
+	  denial-of-service to code execution.  The impact is very
+	  dependent on local configuration.</p>
+	<p>After the iDEFENSE advisory was published, the KDE team
+	  discovered similar problems in KDE's URI handlers.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0411</cvename>
+      <url>http://www.idefense.com/application/poi/display?id=104&amp;type=vulnerabilities</url>
+      <url>http://www.kde.org/info/security/advisory-20040517-1.txt</url>
+      <url>http://freebsd.kde.org/index.php#n20040517</url>
+    </references>
+    <dates>
+      <discovery>2004-05-12</discovery>
+      <entry>2004-05-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="700d43b4-a42a-11d8-9c6d-0020ed76ef5a">
     <topic>Cyrus IMSPd multiple vulnerabilities</topic>
     <affects>
