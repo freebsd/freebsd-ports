@@ -63,5 +63,7 @@ share/locale/ru/LC_MESSAGES/grip-2.2.mo
 share/locale/zh_CN/LC_MESSAGES/grip-2.2.mo
 share/locale/zh_HK/LC_MESSAGES/grip-2.2.mo
 share/locale/zh_TW/LC_MESSAGES/grip-2.2.mo
+@unexec rmdir %D/share/locale/zh_HK/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_HK 2>/dev/null || true
 @dirrm share/gnome/help/grip/C
 @dirrm share/gnome/help/grip
