@@ -8,8 +8,8 @@
 PORTNAME=       dillo
 PORTVERSION=	0.6.4
 CATEGORIES=     www
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=   http://dillo.cipsga.org.br/download/ \
+		ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	anders@FreeBSD.org
 
