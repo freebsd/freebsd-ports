@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.44 1996/10/29 02:27:53 asami Exp $
+# $Id: LEGAL,v 1.45 1996/10/30 20:51:52 jfitz Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -22,6 +22,18 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 						use could render you liable 
 						to unfriendly legal action.
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
+dgd/dgd-1.0.37.tar.gz	ports/net/dgd		License required for commercial
+						use as a server, and even for
+						distribution of sources and/or
+						binaries into a corporate
+						environment.
+dgd/1.0.*		ports/net/dgd		ditto
+dgd/2.4.5-for-1.0.37.tgz ports/net/dgd-lpmud	No monetary gain. No point in
+						distributing a package, since
+						it depends on dgd, which has
+						restrictions on distribution.
+						Source tarball may go on CDROM.
+dgd/net-*		ports/net/dgd-net	Same as dgd
 fwtk-*			ports/security/fwtk	No redistribution allowed
 glimpse-*		ports/misc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
