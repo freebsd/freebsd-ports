@@ -7,7 +7,7 @@ Language Enhancement to GNU Emacs), and latex on DOS.
 
 To use YaTeX, add the next line into your ~/.emacs;
 
-(require 'yatex-setup)
+(require 'yatex-startup)
 
 To get more setup information, see the info file of YaTeX;
 Installation::
