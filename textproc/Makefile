@@ -47,6 +47,7 @@
     SUBDIR += latte
     SUBDIR += latex2html
     SUBDIR += libxml
+    SUBDIR += libxode
     SUBDIR += linuxdoc
     SUBDIR += lotusxsl
     SUBDIR += man2html
@@ -79,6 +80,7 @@
     SUBDIR += urlview
     SUBDIR += wdiff
     SUBDIR += word2x
+    SUBDIR += wordnet
     SUBDIR += xlhtml
     SUBDIR += xls2xml
     SUBDIR += xml4j
