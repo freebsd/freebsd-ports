@@ -1,8 +1,11 @@
 #!/bin/sh
 #
-# FreeBSD-specific startup script for Jakarta Ant.
+#-*- mode: Fundamental; tab-width: 4; -*-
+# ex:ts=4
 #
-# See: http://jakarta.apache.org/ant/
+# FreeBSD-specific startup script for Apache Ant.
+#
+# See: http://ant.apache.org/
 #
 # $FreeBSD$
 #
@@ -81,17 +84,19 @@ for JAR_FILE in "${ANT_LIB}"/*.jar; do
 done
 
 # FreeBSD-specific: Add the .jar files from ${PREFIX}/share/java/classes
-for JAR_FILE in "%%PREFIX%%/share/java/classes"/*.jar; do
+if [ "${ANT_INCLUDE_SHARED_JARS}" = "YES" ]; then
+	for JAR_FILE in "%%PREFIX%%/share/java/classes"/*.jar; do
 
-	# If the directory is empty, then the input string is returned
-	if [ -f "${JAR_FILE}" ]; then
-		if [ -z "${LOCALCLASSPATH}" ]; then
-			LOCALCLASSPATH="${JAR_FILE}"
-		else
-			LOCALCLASSPATH="${JAR_FILE}":"${LOCALCLASSPATH}"
+		# If the directory is empty, then the input string is returned
+		if [ -f "${JAR_FILE}" ]; then
+			if [ -z "${LOCALCLASSPATH}" ]; then
+				LOCALCLASSPATH="${JAR_FILE}"
+			else
+				LOCALCLASSPATH="${JAR_FILE}":"${LOCALCLASSPATH}"
+			fi
 		fi
-	fi
-done
+	done
+fi
 
 # Add the JDK tools.jar or classes.zip file to the CLASSPATH
 if [ -n "${JAVA_HOME}" ]; then
