@@ -1,0 +1,21 @@
+This module provides  a simple but complete cron  like scheduler.  I.e
+this modules can be  used for periodically executing Perl subroutines.
+The  dates  and  parameters  for  the subroutines  to  be  called  are
+specified with a format known as crontab entry (see manpage crontab(5)
+or documentation of Schedule::Cron).
+
+The   philosophy  behind   Schedule::Cron  is   to   call  subroutines
+periodically from  within one single  Perl program instead  of letting
+cron  trigger several  (possibly different)  Perl  scripts. Everything
+under  one  roof.  Furthermore  Schedule::Cron  provides mechanism  to
+create crontab entries dynamically, which isn't that easy with cron.
+
+Schedule::Cron  knows  about  all   extensions  (well,  at  least  all
+extensions I'm aware of, i.e those  of the so called "Vixie" cron) for
+crontab entries like ranges  including 'steps', specification of month
+and days of the week by name or coexistence of lists and ranges in the
+same field. And  even a bit more (like lists  and ranges with symbolic
+names).
+
+-Anton
+<tobez@tobez.org>
