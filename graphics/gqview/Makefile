@@ -25,6 +25,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-gnome
 
+CONFLICTS=	gqview-devel-1.3.*
+
 MAN1=		gqview.1
 
 post-patch:

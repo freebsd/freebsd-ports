@@ -1,6 +1,5 @@
 bin/gqview
-%%PORTDOCS%%share/doc/gqview/README
-share/gqview/README
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/locale/bg/LC_MESSAGES/gqview.mo
 share/locale/cs/LC_MESSAGES/gqview.mo
 share/locale/da/LC_MESSAGES/gqview.mo
@@ -28,5 +27,4 @@ share/locale/uk/LC_MESSAGES/gqview.mo
 share/locale/vi/LC_MESSAGES/gqview.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 share/locale/zh_TW/LC_MESSAGES/gqview.mo
-%%PORTDOCS%%@dirrm share/doc/gqview
-@dirrm share/gqview
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
