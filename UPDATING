@@ -6,6 +6,28 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040305:
+  AFFECTS: users of security/antivir-milter
+
+  When updating from a previous version of security/antivir-milter you
+  have to do the following after deinstalling the old port:
+      rm <PREFIX>/AntiVir/antivir
+      rm <PREFIX>/AntiVir/antivir.vdf
+      chown root:wheel <PREFIX>/AntiVir
+      chown root:smmsp <PREFIX>/AntiVir/hbedv.key
+    In your SENDMAIL_MC change
+      `S=unix:<PREFIX>/AntiVir/avmilter.sock, F=T, T=S:10m;R:10m;E:5m'
+    to:
+      `S=unix:/var/spool/avmilter/avmilter.sock, F=T, T=S:10m;R:10m;E:10m'
+    and rebuild sendmail.cf.
+    If /var/spool/avmilter exist you have to:
+      chown -R smmsp:smmsp /var/spool/avmilter
+    If you are using a customized <PREFIX>/etc/avmilter.conf the port
+    won't remove it on deinstall and you have to manually change User
+    and Group to smmsp there.
+    Afterwards you can install the new version of this port. You then
+    should run antivirupdater to get a current VDF.
+
 20040226:
   AFFECTS: i386 users of ruby and portupgrade
 
