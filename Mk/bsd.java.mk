@@ -299,7 +299,7 @@ check-makevars::
 .		for variable in JAVA_HOME JAVA_PORT JAVA_PORT_VERSION JAVA_PORT_VENDOR JAVA_PORT_OS
 .			if defined(${variable})
 check-makevars::
-	@${ECHO_CMD} "${PKGNAME}: Environement error: \"${variable}\" should not be defined."
+	@${ECHO_CMD} "${PKGNAME}: Environment error: \"${variable}\" should not be defined."
 	@${FALSE}
 .			endif
 .		endfor
