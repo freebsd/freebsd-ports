@@ -8,11 +8,11 @@
 PORTNAME=	bogofilter
 PORTVERSION=	0.17.5
 PORTREVISION=	1
-CATEGORIES=	mail
+CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	matthias.andree@gmx.de
+MAINTAINER?=	matthias.andree@gmx.de
 COMMENT=	"Fast, teachable, learning spam detector"
 
 LIB_DEPENDS?=	db-4.2:${PORTSDIR}/databases/db42
@@ -23,7 +23,7 @@ LIB_DEPENDS+=	gsl.5:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 .endif
 
-CONFLICTS?=	bogofilter-tdb* bogofilter-qdbm*
+CONFLICTS?=	bogofilter-tdb* bogofilter-qdbm* [a-z][a-z]-bogofilter-0*
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes

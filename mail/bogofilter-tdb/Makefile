@@ -14,7 +14,7 @@ MASTERDIR=	${.CURDIR}/../bogofilter
 
 LIB_DEPENDS=	tdb.1:${PORTSDIR}/databases/tdb
 
-CONFLICTS=	bogofilter-0* bogofilter-qdbm*
+CONFLICTS=	bogofilter-0* bogofilter-qdbm* [a-z][a-z]-bogofilter-0*
 
 CONFIGURE_ARGS=	--with-database=tdb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
