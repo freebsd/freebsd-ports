@@ -1,0 +1,7 @@
+bin/desktop-file-install
+bin/desktop-file-validate
+bin/desktop-menu-tool
+%%GNOME_VFS%%etc/gnome-vfs-2.0/modules/menu-modules.conf
+%%GNOME_VFS%%lib/gnome-vfs-2.0/modules/libmenu.a
+%%GNOME_VFS%%lib/gnome-vfs-2.0/modules/libmenu.la
+%%GNOME_VFS%%lib/gnome-vfs-2.0/modules/libmenu.so
