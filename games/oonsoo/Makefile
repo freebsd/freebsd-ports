@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.eos.ncsu.edu/pub/bsvc/rohan/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jsutton@bbcon.com.au
+MAINTAINER=	ports@freebsd.org
 
 USE_XLIB=	yes
 

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.apple.asimov.net/pub/apple_II/utility/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jsutton@bbcon.com.au
+MAINTAINER=	ports@freebsd.org
 
 MAN1=		aftp.1
 

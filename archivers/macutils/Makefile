@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/compress
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	jsutton@bbcon.com.au
+MAINTAINER=	ports@freebsd.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	makefile

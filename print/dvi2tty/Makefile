@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ctan.unsw.edu.au/ctan/tex-archive/dviware/
 DISTNAME=	dvi2tty
 
-MAINTAINER=	jsutton@bbcon.com.au
+MAINTAINER=	ports@freebsd.org
 
 IGNOREFILES=	${DISTFILES}
 MAN1=		dvi2tty.1

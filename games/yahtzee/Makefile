@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 DISTFILES=		yahtzee-src.tar.Z
 
-MAINTAINER=	jsutton@bbcon.com.au
+MAINTAINER=	ports@freebsd.org
 
 WRKSRC=		${WRKDIR}/yahtzee
 

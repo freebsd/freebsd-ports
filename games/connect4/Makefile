@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.gu.kiev.ua/pub/cdrom5/games/volume6/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	""
 
-MAINTAINER=	jsutton@bbcon.com.au
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=		gunshar:${PORTSDIR}/archivers/gshar+gunshar
 
