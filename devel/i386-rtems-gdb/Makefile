@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	gdb
-PORTVERSION=	4.18
+PORTVERSION=	5.0
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=   ftp://ftp.oarcorp.com/pub/rtems/betas/rtems-4.5.0-beta/c_tools/source/ \
-		http://www.thehousleys.net/rtems-4.5.0b3/
-PATCHFILES=	${GDBNAME}-rtems-20000524.diff.gz
-PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/betas/rtems-4.5.0-beta/c_tools/source/ \
-		http://www.thehousleys.net/rtems-4.5.0b3/
+MASTER_SITES=   ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+		http://rtems.thehousleys.net/
+PATCHFILES=	${GDBNAME}-rtems-20000718.diff.gz
+PATCH_SITES=	ftp://ftp.oarcorp.com/pub/rtems/snapshots/c_tools/source/ \
+		http://rtems.thehousleys.net/
 
 MAINTAINER=	jim@thehousleys.net
 
@@ -20,7 +21,7 @@ DIST_SUBDIR=	rtems
 
 LCLTARGET?=	i386-rtems
 
-GDBNAME=	gdb-4.18
+GDBNAME=	gdb-5.0
 MASTERDIR=	${.CURDIR}/../i386-rtems-gdb
 PLIST=		${PKGDIR}/PLIST.${LCLTARGET}
 
@@ -40,7 +41,6 @@ CONFIGURE_WRKSRC?=	${WRKDIR}/build-${LCLTARGET}
 CONFIGURE_SCRIPT?=	../${GDBNAME}/configure
 
 MAN1=		${LCLTARGET}-gdb.1
-MAN3=		readline.3
 
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS=   -d ${WRKDIR} -E ${PATCH_DIST_STRIP}
@@ -58,9 +58,5 @@ do-build:
 do-install:
 	@(cd ${WRKDIR}/build-${LCLTARGET} && \
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-
-post-install:
-	@install-info ${PREFIX}/info/readline.info ${PREFIX}/info/dir
-	@install-info ${PREFIX}/info/history.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
