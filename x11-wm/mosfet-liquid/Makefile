@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	Michiel De Wilde <michiel.dewilde@rug.ac.be>
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
+BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14 \
 		autoconf:${PORTSDIR}/devel/autoconf
 
 GNU_CONFIGURE=	yes
