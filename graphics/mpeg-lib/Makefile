@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.bic.mni.mcgill.ca/pub/mpeg/ \
 		http://starship.python.net/~gward/mpeglib/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@geeksrus.net
 
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
