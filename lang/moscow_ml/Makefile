@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.dina.kvl.dk/~sestoft/mosml/
 DISTNAME=	mos201src
 
-MAINTAINER=	debois@diku.dk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Moscow ML, a lightweight implementation of Standard ML
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
