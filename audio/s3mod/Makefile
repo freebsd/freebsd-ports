@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-ONLY_FOR_ARCHS=	i386
-
 ALL_TARGET=	freebsd
 
 pre-patch:
