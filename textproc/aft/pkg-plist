@@ -12,10 +12,11 @@ share/aft/aft.pl
 share/aft/compile.pl
 share/aft/postrtf.pl
 %%DOCSDIR%%/ChangeLog.aft
-%%DOCSDIR%%/aft2rtf-doc.rtf
-%%DOCSDIR%%/aft-refman.html
-%%DOCSDIR%%/aft.gif
 %%DOCSDIR%%/aft.eps
+%%DOCSDIR%%/aft.gif
+%%DOCSDIR%%/aft.jpg
+%%DOCSDIR%%/aft-refman.html
+%%DOCSDIR%%/aft2rtf-doc.rtf
 %%DOCSDIR%%/backends/aft-dbarticle.dat
 %%DOCSDIR%%/backends/aft-fhtml.dat
 %%DOCSDIR%%/backends/aft-html.dat

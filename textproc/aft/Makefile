@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aft
-PORTVERSION=	5.0792
+PORTVERSION=	5.0793
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.maplefish.com/todd/
 
