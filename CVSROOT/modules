@@ -3821,6 +3821,7 @@ libgail-gnome	ports/x11-toolkits/libgail-gnome
 libgcrypt	ports/security/libgcrypt
 libgda		ports/databases/libgda
 libgda2		ports/databases/libgda2
+libgdamm	ports/databases/libgdamm
 libgdgeda	ports/graphics/libgdgeda
 libgeda		ports/cad/libgeda
 libgenome	ports/biology/libgenome
