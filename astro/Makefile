@@ -37,6 +37,7 @@
     SUBDIR += wmglobe
     SUBDIR += wmjupiter
     SUBDIR += wmmoonclock
+    SUBDIR += wmsolar
     SUBDIR += wmspaceweather
     SUBDIR += wmsun
     SUBDIR += x3arth
