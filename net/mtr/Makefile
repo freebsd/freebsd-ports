@@ -7,7 +7,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.42
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		http://www.giovannelli.it/~gmarco/files/
@@ -23,7 +23,7 @@ MAN8=	mtr.8
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014
-PATCHFILES=	mtr-042-v6-20000719.diff.gz
+PATCHFILES=	mtr-042-v6-20010508.diff.gz
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCH_DIST_STRIP=	-p1
 
