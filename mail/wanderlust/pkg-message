@@ -5,9 +5,6 @@
 * (require 'wanderlust-startup)                            *
 *                                                          *
 * Sample configuration files are installed into            *
-* ${PREFIX}/share/wanderlust.  Please copy to your home    *
-* directory and edit them.                                 *
-*                                                          *
-* If you are to use APOP authentication, Wanderlust will   *
-* require md5.el, which is included in Emacs/W3 package.   *
+* ${PREFIX}/share/examples/wanderlust.  Please copy to     *
+* your home directory and edit them.                       *
 ************************************************************

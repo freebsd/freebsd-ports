@@ -56,6 +56,7 @@
 %%EMACS_LIBDIR%%/etc/wl/wl-summary-reply-with-citation-up.xpm
 %%EMACS_LIBDIR%%/etc/wl/wl-summary-sync-force-update-up.xpm
 %%EMACS_LIBDIR%%/site-lisp/wl/bbdb-wl.el
+@unexec rm -f %D/%%EMACS_LIBDIR%%/site-lisp/wl/bbdb-wl.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/elmo-archive.el
 %%EMACS_LIBDIR%%/site-lisp/wl/elmo-archive.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/elmo-cache.el
@@ -95,17 +96,19 @@
 %%EMACS_LIBDIR%%/site-lisp/wl/elmo2.el
 %%EMACS_LIBDIR%%/site-lisp/wl/elmo2.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/im-wl.el
-%%EMACS_LIBDIR%%/site-lisp/wl/im-wl.elc
-%%EMACS_LIBDIR%%/site-lisp/wl/mmelmo-imap4.el
-%%EMACS_LIBDIR%%/site-lisp/wl/mmelmo-imap4.elc
-%%EMACS_LIBDIR%%/site-lisp/wl/mmelmo.el
-%%EMACS_LIBDIR%%/site-lisp/wl/mmelmo.elc
+@unexec rm -f %%EMACS_LIBDIR%%/site-lisp/wl/im-wl.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/mmelmo-2.el
 %%EMACS_LIBDIR%%/site-lisp/wl/mmelmo-2.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/mmelmo-imap4-2.el
 %%EMACS_LIBDIR%%/site-lisp/wl/mmelmo-imap4-2.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/mmelmo-imap4.el
+%%EMACS_LIBDIR%%/site-lisp/wl/mmelmo-imap4.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/mmelmo.el
+%%EMACS_LIBDIR%%/site-lisp/wl/mmelmo.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/rfc2368.el
+%%EMACS_LIBDIR%%/site-lisp/wl/rfc2368.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/ssl.el
+%%EMACS_LIBDIR%%/site-lisp/wl/ssl.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/utf7.el
 %%EMACS_LIBDIR%%/site-lisp/wl/utf7.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/wl-address.el
@@ -125,6 +128,7 @@
 %%EMACS_LIBDIR%%/site-lisp/wl/wl-highlight.el
 %%EMACS_LIBDIR%%/site-lisp/wl/wl-highlight.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/wl-mailto.el
+%%EMACS_LIBDIR%%/site-lisp/wl/wl-mailto.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/wl-message.el
 %%EMACS_LIBDIR%%/site-lisp/wl/wl-message.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/wl-mime.el
@@ -147,18 +151,55 @@
 %%EMACS_LIBDIR%%/site-lisp/wl/wl-xmas.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/wl.el
 %%EMACS_LIBDIR%%/site-lisp/wl/wl.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/hmac-def.el
+%%EMACS_LIBDIR%%/site-lisp/wl/hmac-def.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/hmac-md5.el
+%%EMACS_LIBDIR%%/site-lisp/wl/hmac-md5.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/hmac-sha1.el
+%%EMACS_LIBDIR%%/site-lisp/wl/hmac-sha1.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/hex-util.el
+%%EMACS_LIBDIR%%/site-lisp/wl/hex-util.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/md5-dl.el
+%%EMACS_LIBDIR%%/site-lisp/wl/md5-dl.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/md5-el.el
+%%EMACS_LIBDIR%%/site-lisp/wl/md5-el.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/md5.el
+%%EMACS_LIBDIR%%/site-lisp/wl/md5.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/sha1-dl.el
+%%EMACS_LIBDIR%%/site-lisp/wl/sha1-dl.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/sha1-el.el
+%%EMACS_LIBDIR%%/site-lisp/wl/sha1-el.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/sha1.el
+%%EMACS_LIBDIR%%/site-lisp/wl/sha1.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/sasl.el
+%%EMACS_LIBDIR%%/site-lisp/wl/sasl.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/digest-md5.el
+%%EMACS_LIBDIR%%/site-lisp/wl/digest-md5.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/scram-md5.el
+%%EMACS_LIBDIR%%/site-lisp/wl/scram-md5.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/unique-id.el
+%%EMACS_LIBDIR%%/site-lisp/wl/unique-id.elc
 %%EMACS_LIBDIR%%/site-lisp/wanderlust-startup.el
-share/doc/wanderlust/00README
-share/doc/wanderlust/00README.ja
+@unexec install-info --section="%%DIRSECTION%%" --delete %D/info/wl.info %D/info/dir
+info/wl.info
+@exec install-info --section="%%DIRSECTION%%" %D/info/wl.info %D/info/dir
+share/doc/wanderlust/BUGS
+share/doc/wanderlust/BUGS.ja
+share/doc/wanderlust/README
+share/doc/wanderlust/README.ja
 share/doc/wanderlust/ChangeLog
-share/doc/wanderlust/ChangeLog.ja
+share/doc/wanderlust/ChangeLog.elmo
+share/doc/wanderlust/ChangeLog.wl
+share/doc/wanderlust/NEWS
+share/doc/wanderlust/NEWS.ja
 share/doc/wanderlust/wl-ja.texi
+share/doc/wanderlust/wl.texi
 share/examples/wanderlust/en/dot.addresses
-share/examples/wanderlust/en/dot.wl
 share/examples/wanderlust/en/dot.folders
+share/examples/wanderlust/en/dot.wl
 share/examples/wanderlust/ja/dot.addresses
-share/examples/wanderlust/ja/dot.wl
 share/examples/wanderlust/ja/dot.folders
+share/examples/wanderlust/ja/dot.wl
 @dirrm %%EMACS_LIBDIR%%/etc/wl
 @dirrm %%EMACS_LIBDIR%%/site-lisp/wl
 @dirrm share/doc/wanderlust
