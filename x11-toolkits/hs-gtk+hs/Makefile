@@ -37,6 +37,12 @@ CONFIGURE_ARGS+=	--with-ih
 GHC_VERSION=	`${LOCALBASE}/bin/ghc --numeric-version`
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}" GHC_VERSION="${GHC_VERSION}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Configure fails"
+.endif
+
 pre-everything::
 .if !defined(WITHOUT_IHASKELL)
 	@${ECHO_CMD} "To build gtk+hs without iHaskell define WITHOUT_IHASKELL."
@@ -47,4 +53,4 @@ post-patch:
 			s/glib-config/glib12-config/g' ${WRKSRC}/configure
 	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
