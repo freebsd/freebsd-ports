@@ -14,7 +14,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:${.CURDIR}/../ruby-unit
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:${.CURDIR}/../ruby-testunit
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
