@@ -301,6 +301,7 @@
     SUBDIR += prboom
     SUBDIR += ptkei
     SUBDIR += pyching
+    SUBDIR += pydance
     SUBDIR += pysol
     SUBDIR += pysol-cardsets
     SUBDIR += pysol-music

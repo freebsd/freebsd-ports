@@ -1,0 +1,16 @@
+pydance is a dancing simulator, in which you must step on particular arrows
+on the floor in time with music playing in the background. pydance supports
+multiple difficulty levels for each song, background images and movies,
+lyrics, freeze arrows, BPM changes and stops, and many common modifiers like
+2x, drop, stealth, and so on.
+
+pydance is interoperable with other dancing games, and can play the
+popular DWI, SM, and KSF formats. It is capable of playing games similar
+to Dance Dance Revolution, Pump It Up, ParaParaParadise, Dance ManiaX,
+and Technomotion. It also implements several unique modes. You can also
+make your own steps for songs in the .dance format.
+
+WWW: http://pyddr.org/
+
+- FreeBSD port by Rudolf Polzer
+freebsd-dr@durchnull.de
