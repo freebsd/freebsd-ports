@@ -1,7 +1,6 @@
-diff -urN ../dap-2.1.1.orig/spkit/spkit/Makefile.linux ./spkit/spkit/Makefile.linux
---- ../dap-2.1.1.orig/spkit/spkit/Makefile.linux	Tue Feb 22 09:28:14 2000
-+++ ./spkit/spkit/Makefile.linux	Sun Jun 11 13:52:20 2000
-@@ -1,5 +1,5 @@
+--- spkit/spkit/Makefile.linux.orig	Sun Jul  1 13:36:58 2001
++++ spkit/spkit/Makefile.linux	Sun Jul  1 13:38:17 2001
+@@ -1,16 +1,16 @@
 -CC      = gcc
 -CXX     = g++
 +CC      ?= gcc
@@ -9,23 +8,17 @@ diff -urN ../dap-2.1.1.orig/spkit/spkit/Makefile.linux ./spkit/spkit/Makefile.li
  FORMS   = ../../../xforms/FORMS
  SOUND   = ../../sound
  TOOLTIP = ../../tooltips
-@@ -8,9 +8,9 @@
+ BACKDIR = ../../bak/spkit/spkit
+ MAINDIR = ../../main
  HOMEDIR = $(HOME)
- X11DIR  = /usr/X11R6
+-X11DIR  = /usr/X11R6
++X11DIR  = ${X11BASE}
  INCDIR  = -I. -I.. -I../.. -I$(SOUND) -I$(FORMS) -I$(MAINDIR) -I$(TOOLTIP) -I$(X11DIR)/include
 -CCFLAGS = $(INCDIR) $(DEBUG) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
-+CCFLAGS = $(INCDIR) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
++CCFLAGS += $(INCDIR) $(OPTIM) -DLINUX -DBIGENDIAN -DUSINGGCC -Wall -Wno-unused
  DEBUG   = -g3
 -OPTIM   = -O2
 +OPTIM   = ${CXXFLAGS}
  
  .c.o:
  	$(CC) $(CCFLAGS) -c $*.c -o $*.o
-@@ -65,6 +65,7 @@
- libdsp.a: $(OBJS)
- 	rm -f $(LIBNAME)
- 	ar ruv $(LIBNAME) $(OBJS)
-+	ranlib $(LIBNAME)
- 
- clean:
- 	rm -f $(OBJS)

@@ -1,6 +1,5 @@
-diff -urN ../dap-2.1.1.orig/libaudiofile/Makefile.linux ./libaudiofile/Makefile.linux
---- ../dap-2.1.1.orig/libaudiofile/Makefile.linux	Tue Feb 29 08:49:10 2000
-+++ ./libaudiofile/Makefile.linux	Sun Jun 11 14:27:36 2000
+--- libaudiofile/Makefile.linux.orig	Sun Jul  1 13:45:51 2001
++++ libaudiofile/Makefile.linux	Sun Jul  1 13:46:27 2001
 @@ -1,11 +1,11 @@
 -CC      = gcc
 -CXX     = g++
@@ -17,11 +16,3 @@ diff -urN ../dap-2.1.1.orig/libaudiofile/Makefile.linux ./libaudiofile/Makefile.
  
  LIBNAME = libaudiofile.a
  OBJS    = audiofile.o ieee.o macros.o raw.o wav.o
-@@ -21,6 +21,7 @@
- libaudiofile.a: $(OBJS)
- 	rm -f $(LIBNAME)
- 	ar ruv $(LIBNAME) $(OBJS)
-+	ranlib $(LIBNAME)
- 
- clean:
- 	-rm -f $(OBJS) core

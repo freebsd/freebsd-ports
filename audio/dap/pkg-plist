@@ -1,6 +1,6 @@
 bin/DAP
-share/doc/DAP/COPYING
-share/doc/DAP/README
-share/doc/DAP/THANKS
-share/doc/DAP/TODO
-@dirrm share/doc/DAP
+%%PORTDOCS%%share/doc/DAP/COPYING
+%%PORTDOCS%%share/doc/DAP/README
+%%PORTDOCS%%share/doc/DAP/THANKS
+%%PORTDOCS%%share/doc/DAP/TODO
+%%PORTDOCS%%@dirrm share/doc/DAP
