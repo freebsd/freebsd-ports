@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	0.9.2
+PORTVERSION=	1.0.3
 CATEGORIES=	chinese editors
 MASTER_SITES=	# none
 DISTFILES=	# none
 
 MAINTAINER=	keith@FreeBSD.org
-
-BROKEN=		"Incorrect pkg-plist"
 
 RUN_DEPENDS=	AbiWord:${PORTSDIR}/editors/AbiWord \
 		ttfm.sh:${PORTSDIR}/chinese/ttfm \
@@ -21,10 +19,11 @@ RUN_DEPENDS=	AbiWord:${PORTSDIR}/editors/AbiWord \
 		gs:${PORTSDIR}/print/ghostscript-gnu
 
 NO_BUILD=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${LOCALBASE} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
