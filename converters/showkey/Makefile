@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	showkey
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	converters
 MASTER_SITES=	http://catb.org/~esr/showkey/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prints its input, with escapes such as "<NUL>"
 
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 ALL_TARGET=	showkey
+
 MAN1=		showkey.1
 PLIST_FILES=	bin/showkey
 
