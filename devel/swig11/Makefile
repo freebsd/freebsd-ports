@@ -7,8 +7,8 @@
 
 PORTNAME=	swig
 PORTVERSION=	${VER}p5
-PORTREVISION=	8
-CATEGORIES=	devel perl5 python tcl83
+PORTREVISION=	9
+CATEGORIES=	devel perl5 python tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/languages/swig/${VER}/ \
 		ftp://ftp.mcc.ac.uk/pub/mvc/swig/
@@ -19,7 +19,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Simplified Wrapper and Interface Generator
 
 BUILD_DEPENDS=	${PYTHON_CMD}:${PYTHON_PORTSDIR} \
-		${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83
+		${LOCALBASE}/bin/tclsh8.4:${PORTSDIR}/lang/tcl84
 
 VER=		1.1
 
@@ -31,8 +31,8 @@ INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME:U}${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -fpic -DPIC" PYTHON_VERSION=${PYTHON_VERSION}
-CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.3/ \
-		--with-tcllib=${LOCALBASE}/lib/tcl8.3/ \
+CONFIGURE_ARGS=	--with-tclincl=${LOCALBASE}/include/tcl8.4/ \
+		--with-tcllib=${LOCALBASE}/lib/tcl8.4/ \
 		--with-pyincl=${PYTHONPREFIX_INCLUDEDIR} \
 		--with-pylib=${LOCALBASE}/lib
 ALL_TARGET=	all runtime
