@@ -1,15 +1,15 @@
---- src/xine-engine/audio_out.c.orig	Sun Aug 10 00:32:20 2003
-+++ src/xine-engine/audio_out.c	Sun Aug 10 00:43:36 2003
-@@ -425,7 +425,7 @@
+--- src/xine-engine/audio_out.c.orig	Thu Dec 25 09:24:36 2003
++++ src/xine-engine/audio_out.c	Wed Jan  7 21:19:54 2004
+@@ -429,7 +429,7 @@
    num_frames = pts_len * this->frames_per_kpts / 1024;
  
-   xprintf (this->xine, XINE_VERBOSITY_LOG,
--           "inserting %d 0-frames to fill a gap of %" PRId64 " pts\n",
-+           "inserting %d 0-frames to fill a gap of %lld pts\n",
-            num_frames, pts_len);
+   xprintf (this->xine, XINE_VERBOSITY_DEBUG,
+-           "inserting %d 0-frames to fill a gap of %" PRId64 " pts\n", num_frames, pts_len);
++           "inserting %d 0-frames to fill a gap of %lld pts\n", num_frames, pts_len);
  
    if ((this->output.mode == AO_CAP_MODE_A52) || (this->output.mode == AO_CAP_MODE_AC5)) {
-@@ -790,7 +790,7 @@
+     write_pause_burst(this,num_frames);
+@@ -792,7 +792,7 @@
      this->resample_sync_factor = (avg_gap < 0) ? 0.995 : 1.005;
  
      llprintf (LOG_RESAMPLE_SYNC,
@@ -18,7 +18,7 @@
      return 0;
  
    } else if (info->reduce_gap && abs(avg_gap) < 50) {
-@@ -824,7 +824,7 @@
+@@ -826,7 +826,7 @@
         * this during calculation */
        num_frames = (this->do_resample) ? (buf->num_frames * this->frame_rate_factor)
          : buf->num_frames;
@@ -27,7 +27,7 @@
               avg_gap, gap_diff, num_frames * info->window * info->last_factor,
               this->resample_sync_factor);
  #endif
-@@ -965,7 +965,7 @@
+@@ -981,7 +981,7 @@
       */
  
      hw_vpts = cur_time;
@@ -36,7 +36,7 @@
  
      /* External A52 decoder delay correction */
      if ((this->output.mode==AO_CAP_MODE_A52) || (this->output.mode==AO_CAP_MODE_AC5)) 
-@@ -978,7 +978,7 @@
+@@ -994,7 +994,7 @@
       * calculate gap:
       */
      gap = in_buf->vpts - hw_vpts;
@@ -45,7 +45,7 @@
               hw_vpts, in_buf->vpts, gap);
  
      if (this->resample_sync_method) {
-@@ -1003,7 +1003,7 @@
+@@ -1018,7 +1018,7 @@
        lprintf ("loop: drop package, next fifo\n");
        fifo_append (this->free_fifo, in_buf);
  
@@ -54,7 +54,7 @@
                 in_buf->vpts, gap);
        in_buf = NULL;
  
-@@ -1238,7 +1238,7 @@
+@@ -1252,7 +1252,7 @@
    this->frames_per_kpts   = (this->output.rate * 1024) / 90000;
    this->audio_step        = ((int64_t)90000 * (int64_t)32768) / (int64_t)this->input.rate;
    
@@ -63,8 +63,8 @@
    return this->output.rate;
  }
  
-@@ -1335,7 +1335,7 @@
- 						   buf->num_frames);
+@@ -1355,7 +1355,7 @@
+ 
    buf->extra_info->vpts = buf->vpts;
           
 -  lprintf ("ao_put_buffer, pts=%" PRId64 ", vpts=%" PRId64 ", flushmode=%d\n",

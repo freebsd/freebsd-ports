@@ -1,16 +1,10 @@
---- src/libmad/xine_decoder.c.orig	Sat Nov 30 11:56:16 2002
-+++ src/libmad/xine_decoder.c	Sat Nov 30 12:00:04 2002
-@@ -24,12 +24,11 @@
+--- src/libmad/xine_decoder.c.orig	Mon Dec 15 07:13:23 2003
++++ src/libmad/xine_decoder.c	Tue Jan  6 23:43:14 2004
+@@ -24,6 +24,7 @@
  
  #include <stdlib.h>
  #include <string.h>
 +#include <mad.h>
  
- #include "xine_internal.h"
- #include "audio_out.h"
- #include "buffer.h"
--#include "frame.h"
--#include "synth.h"
- #include "xineutils.h"
- 
- /*
+ #define LOG_MODULE "mad_decoder"
+ #define LOG_VERBOSE
