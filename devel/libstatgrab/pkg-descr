@@ -1,5 +1,5 @@
 The libstatgrab library provides an easy to use interface for
-accessing system statistics and information. Avaliable statistics
+accessing system statistics and information. Available statistics
 include CPU, Load, Memory, Swap, Disk I/O, and Network I/O.
 
 Also part of the package are two tools; saidar provides a curses-based
