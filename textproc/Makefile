@@ -196,6 +196,7 @@
     SUBDIR += mkcatalog
     SUBDIR += modlogan
     SUBDIR += ms-aspell
+    SUBDIR += mt-aspell
     SUBDIR += nfbtrans
     SUBDIR += nicetext
     SUBDIR += nl-aspell
