@@ -1,10 +1,14 @@
-nML is a dialect/harmony of Standard ML and OCaml. 
-nML is a higher-order and typed programming language. 
-nML compiler system drives the static analysis technologies to the limit. 
-nML compiler system will embody the result(s) of the LET project. 
-nML does not stand against the C programming convention. 
+- nML is a dialect/harmony of Standard ML of New Jersey and Objective Caml.
+- nML is a higher-order and typed programming language.
+- nML does not stand against the C programming convention.
 
-WWW: http://ropas.kaist.ac.kr/n/
+- nML compiler is a compiler of the nML language 
+  using the Objective Caml compiler:
+    nML parser + nML type-checker +
+        nML-to-OCaml translator + the OCaml compiler.
+
+- For more information of the nML, please visit
+  WWW: http://ropas.kaist.ac.kr/n
 
 - Jaeho Shin
 netj@ropas.kaist.ac.kr
