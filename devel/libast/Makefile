@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.eterm.org/download/
 
-MAINTAINER=	ishmael27x@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
 

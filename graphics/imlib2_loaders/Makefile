@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	enlightenment
 
-MAINTAINER=	ishmael27x@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
 		edb.1:${PORTSDIR}/databases/edb

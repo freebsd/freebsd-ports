@@ -10,7 +10,7 @@ PORTVERSION=	0.5.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ny.us.rasterman.com/files/
 
-MAINTAINER=	ishmael27x@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	ecore.0:${PORTSDIR}/x11/ecore \
 		evas.6:${PORTSDIR}/graphics/evas
