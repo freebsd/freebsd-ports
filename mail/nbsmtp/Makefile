@@ -12,7 +12,7 @@ MASTER_SITES=	http://physeeks.dyndns.org:8000/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 
