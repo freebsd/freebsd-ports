@@ -8,8 +8,7 @@
 PORTNAME=	projectcenter.app
 PORTVERSION=	0.3.5
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
-		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	dev-apps
 DISTNAME=	ProjectCenter-${PORTVERSION}
 

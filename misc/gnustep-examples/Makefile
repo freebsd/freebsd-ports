@@ -8,8 +8,7 @@
 PORTNAME=	gnustep-examples
 PORTVERSION=	0.9.7
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
-		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
 
 MAINTAINER=	dinoex@FreeBSD.org
