@@ -12,6 +12,7 @@
     SUBDIR += axe
     SUBDIR += beav
     SUBDIR += biew
+    SUBDIR += bitmap
     SUBDIR += bitmap-emacs20
     SUBDIR += bitmap-mule
     SUBDIR += boiling-egg
@@ -91,6 +92,7 @@
     SUBDIR += pico
     SUBDIR += poedit
     SUBDIR += psgml
+    SUBDIR += psgml-emacs
     SUBDIR += psgml-emacs19
     SUBDIR += psgml-emacs20
     SUBDIR += psgml-mule
