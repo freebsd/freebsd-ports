@@ -1,23 +1,5 @@
 --- configure.orig	Fri Feb 12 23:04:17 1999
 +++ configure	Sat May 22 21:45:25 1999
-@@ -2658,7 +2658,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  PTHREAD_LIB="-lc_r"
-+  PTHREAD_LIB=""
- else
-   echo "$ac_t""no" 1>&6
- echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
-@@ -4378,7 +4378,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
 @@ -4766,15 +4766,15 @@
  fi
  

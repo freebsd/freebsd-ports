@@ -1,11 +1,11 @@
---- ee.desktop.orig	Tue Sep 28 09:32:53 1999
-+++ ee.desktop	Mon Oct  4 17:02:16 1999
-@@ -21,7 +21,7 @@
+--- ee.desktop.orig	Mon Jul 17 16:38:16 2000
++++ ee.desktop	Wed Aug  2 11:33:00 2000
+@@ -34,7 +34,7 @@
  Comment[pt_BR]=Programa para visualizaГЦo de imagens
  Comment[ru]=Программа просмотра изображений
- Comment[pl]=Przegl╠darka graficzna
--Exec=ee
-+Exec=ElectricEyes
+ Comment[wa]=Programe po voer des imЕdjes
+-Exec=ee %f
++Exec=ElectricEyes %f
  Icon=gnome-ee.png
  Terminal=0
  Type=Application
