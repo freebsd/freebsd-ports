@@ -1,0 +1,20 @@
+ixlib is a small c++ tools library based upon the standard template
+library. It provides
+
+  - a javascript interperter
+  - an exception handling framework
+  - garbage collection
+  - automatic array management
+  - planar geometry (rectangles, regions)
+  - polygons (rasterization, convex hull, smoothing, removal of
+    crossings)
+  - rasterization primitives
+  - matrices (including linear system solver, Cholesky and LU
+    decomposition, determinants, inversion, Gauss and Gauss-Jordan
+    elimination)
+  - command line parsing
+  - versatile int <-> string conversions
+  - regular expressions
+  - xml parsing (non-DTD)
+
+WWW: http://ixlib.sourceforge.net/

@@ -188,6 +188,7 @@
     SUBDIR += imake
     SUBDIR += imake-4
     SUBDIR += inilib
+    SUBDIR += ixlib
     SUBDIR += jakarta-ant
     SUBDIR += jam
     SUBDIR += kdbg
