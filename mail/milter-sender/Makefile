@@ -24,10 +24,6 @@ MAKEFILE=	makefile
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
 .if ( ${OSVERSION} < 440000 )
 BUILD_DEPENDS=	gxargs:${PORTSBASE}/misc/findutils
 .endif
@@ -50,11 +46,12 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-db --localstatedir=/var/spool \
 		--enable-milter-cf="${PREFIX}/etc/milter-sender.cf"
 
-.if ( ${OSVERSION} < 440000 )
 post-patch:
+.if ( ${OSVERSION} < 440000 )
 	${REINPLACE_CMD} 's/xargs -J{}/gxargs -i{}/' ${WRKSRC}/../lib/configure
 	${REINPLACE_CMD} 's+/usr/sbin/daemon -f ++' ${WRKSRC}/milter-sender.sh.in
 .endif
+	${REINPLACE_CMD} "s,-fvolatile,," ${WRKSRC}/configure
 
 pre-configure:
 	@cd ${WRKSRC}/../lib && \
