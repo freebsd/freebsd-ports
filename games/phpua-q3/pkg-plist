@@ -1,0 +1,75 @@
+%%PHPUA%%/images/plugin_q3/maps/pro-q3dm13.jpg
+%%PHPUA%%/images/plugin_q3/maps/pro-q3dm6.jpg
+%%PHPUA%%/images/plugin_q3/maps/pro-q3tourney2.jpg
+%%PHPUA%%/images/plugin_q3/maps/pro-q3tourney4.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3ctf1.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3ctf2.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3ctf3.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3ctf4.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm0.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm1.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm10.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm11.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm12.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm13.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm14.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm15.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm16.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm17.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm18.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm19.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm2.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm3.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm4.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm5.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm6.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm7.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm8.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3dm9.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3tourney1.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3tourney2.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3tourney3.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3tourney4.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3tourney5.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3tourney6.jpg
+%%PHPUA%%/images/plugin_q3/maps/q3tourney6_ctf.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map1.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map10.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map11.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map12.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map13.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map14.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map15.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map16.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map17.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map18.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map19.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map2.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map3.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map4.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map5.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map6.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map7.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map8.jpg
+%%PHPUA%%/images/plugin_q3/maps/ra3map9.jpg
+%%PHPUA%%/images/templates/default/plugin_q3/unavailable.jpg
+%%PHPUA%%/images/templates/wap/plugin_q3/unavailable.jpg
+%%PHPUA%%/plugins/plugin_q3/plugin_q3.inc
+%%PHPUA%%/plugins/plugin_q3/plugin_q3_mode_info.inc
+%%PHPUA%%/plugins/plugin_q3/plugin_q3_mode_rules.inc
+%%PHPUA%%/plugins/plugin_q3/plugin_q3_mode_watch.inc
+%%PHPUA%%/templates/default/plugin_q3/info.tpl
+%%PHPUA%%/templates/default/plugin_q3/rules.tpl
+%%PHPUA%%/templates/default/plugin_q3/watch.js
+%%PHPUA%%/templates/default/plugin_q3/watch.tpl
+%%PHPUA%%/templates/default/plugin_q3/x.js
+%%PHPUA%%/templates/javascript/plugin_q3/info.tpl
+%%PHPUA%%/templates/wap/plugin_q3/info.tpl
+@dirrm %%PHPUA%%/templates/wap/plugin_q3
+@dirrm %%PHPUA%%/templates/javascript/plugin_q3
+@dirrm %%PHPUA%%/templates/default/plugin_q3
+@dirrm %%PHPUA%%/plugins/plugin_q3
+@dirrm %%PHPUA%%/images/templates/wap/plugin_q3
+@dirrm %%PHPUA%%/images/templates/default/plugin_q3
+@dirrm %%PHPUA%%/images/plugin_q3/maps
+@dirrm %%PHPUA%%/images/plugin_q3
