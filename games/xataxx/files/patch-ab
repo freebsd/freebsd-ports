@@ -1,0 +1,11 @@
+--- main.c	Sun May  5 06:53:44 1991
++++ /home/andy/tmp/wrk/main.c	Sat Jul  4 21:31:38 1998
+@@ -160,7 +160,7 @@
+ int x;
+ {     
+   int z1, z2, z3, z4, z=0;
+-  char nn[6];
++  static char nn[6];
+ 
+   z1 = (int) (x)/1000;
+   z2 = (int) (x)/100-(10*z1);
