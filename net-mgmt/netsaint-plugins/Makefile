@@ -16,8 +16,6 @@ DISTNAME=	${PORTNAME}-1.2.9-4
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for netsaint
 
-BROKEN=		Broken pkg-plist
-
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
