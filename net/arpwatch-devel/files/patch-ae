@@ -9,15 +9,6 @@
      V_INCLS=""
      if test "${srcdir}" != "." ; then
  	    V_INCLS="-I\$\(srcdir\)"
-@@ -1207,7 +1207,7 @@
- fi
- 
- 
--for ac_func in dn_skipname
-+for ac_func in dn_skipname mkstemp
- do
- echo $ac_n "checking for $ac_func""... $ac_c" 1>&6
- echo "configure:1214: checking for $ac_func" >&5
 @@ -2599,7 +2599,7 @@
  		    fi
  		    V_CCOPT="$V_CCOPT -Wall"
