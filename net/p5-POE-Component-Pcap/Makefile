@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	POE-Component-Pcap
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	devel perl5 net
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	POE component for non-blocking use of Net::Pcap
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/NetPacket/Ethernet.pm:${PORTSDIR}/net/p5-NetPacket
+BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
+		${SITE_PERL}/${PERL_ARCH}/Net/Pcap.pm:${PORTSDIR}/net/p5-Net-Pcap \
+		${SITE_PERL}/NetPacket/Ethernet.pm:${PORTSDIR}/net/p5-NetPacket
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		POE::Component::Pcap.3
 
 .include <bsd.port.mk>
