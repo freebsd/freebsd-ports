@@ -107,6 +107,7 @@
 %%CHORADIR%%/templates/log/header.inc
 %%CHORADIR%%/templates/log/request.inc
 %%CHORADIR%%/templates/log/rev.inc
+etc/horde/httpd.conf.chora
 %%PORTDOCS%%@dirrm share/doc/chora
 @dirrm %%CHORADIR%%/config
 @dirrm %%CHORADIR%%/graphics/mime
