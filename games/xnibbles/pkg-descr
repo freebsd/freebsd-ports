@@ -1,0 +1,21 @@
+   XNibbles is a game for X11R6.  It is conceptually  based on 
+nibbles, which was a program that came with qbasic for MS-DOS.
+
+   XNibbles is  actually  written  in C++, and  shares no code 
+with qbasic nibbles.  For  those of  you  who  have played the
+game before, you  can  attest to the fact that it is extremely
+fun and addictive.
+
+   The  goal  of  the  game  is  to  work your way through the
+levels, which become harder and harder. You do this by running
+your snake over the  blue  diamonds. For every 10 diamonds you
+acquire, you  move up  one  level.  Along the way, a number of
+other diamonds will be encountered.  Gold doubles your length,
+and  red  halves  your  length, both giving you points.  Green
+gives you an extra life. You die if you run into yourself or a
+wall. Question marks serve as warps.
+
+   The authors of XNibbles  are  Ian Peters (ipeters@acm.org),
+and Sean MacIsaac (sjm@acm.org).
+   XNibbles  is  Copyleft'd under the GNU Public License.  See
+the file COPYING for information.
