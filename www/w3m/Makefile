@@ -21,6 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 WRKSRC=		${WRKDIR}/w3m
 MAN1=		w3m.1
 MANLANG=	""
+CFLAGS=		-pipe
 
 TARGET=		${WRKSRC}/config.h
 DOCS=		FAQ.html HISTORY MANUAL.html README \
