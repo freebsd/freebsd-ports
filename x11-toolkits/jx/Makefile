@@ -9,7 +9,7 @@ PORTNAME=	JX
 PORTVERSION=	1.5.3
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=   ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
+MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
 		ftp://ftp.newplanetsoftware.com/pub/jcc/source/ \
 		ftp://ftp.newplanetsoftware.com/pub/medic/source/ \
 		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
