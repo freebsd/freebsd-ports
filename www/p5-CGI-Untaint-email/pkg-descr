@@ -1,0 +1,6 @@
+CGI::Untaint::email input handler verifies that it is a 
+valid RFC2822 mailbox format.
+
+The resulting value will be a Mail::Address instance.
+
+WWW: http://search.cpan.org/dist/CGI-Untaint-email/

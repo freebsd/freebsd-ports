@@ -1,0 +1,3 @@
+%%SITE_PERL%%/CGI/Untaint/email.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint/email/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Untaint/email
