@@ -2,3 +2,5 @@ bin/tin
 @exec ln -fs %f %B/rtin
 @unexec rm -f %B/rtin
 etc/tin.defaults.dist
+share/locale/de/LC_MESSAGES/tin.mo
+share/locale/et/LC_MESSAGES/tin.mo

@@ -1,11 +1,11 @@
---- src/Makefile.in.orig	Thu Sep 16 07:25:22 1999
-+++ src/Makefile.in	Tue Sep 28 08:05:51 1999
-@@ -28,7 +28,7 @@
+--- src/Makefile.in.orig	Tue May 16 19:45:39 2000
++++ src/Makefile.in	Tue May 23 23:52:52 2000
+@@ -58,7 +58,7 @@
  YACC	= @YACC@
  
  CANLIB	= # -L../libcanlock -lcanlock
--LIBS	= -L../pcre -lpcre $(CANLIB) @LIBS@ @INN_NNTPLIB@
-+LIBS	= ../pcre/libpcre.a $(CANLIB) @LIBS@ @INN_NNTPLIB@ ../pcre/libpcre.a
+-LIBS	= -L../pcre -lpcre $(CANLIB) @LIBS@ @INN_NNTPLIB@ @INTLDIR_MAKE@ @INTLLIBS@
++LIBS    = ../pcre/libpcre.a $(CANLIB) @LIBS@ @INN_NNTPLIB@ @INTLDIR_MAKE@ @INTLLIBS@
  
  # Where do you want the binary & manual page installed?
- INSTALL_PREFIX	= @INSTALL_PREFIX@
+ DESTDIR	= @DESTDIR@
