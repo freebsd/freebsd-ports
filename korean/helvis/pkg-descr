@@ -1,0 +1,10 @@
+helvis-1.8h2-
+-------------
+
+helvis is a clone of vi/ex, the standard UNIX editor.  helvis supports
+nearly all of the vi/ex commands, in both visual mode and colon mode.
+helvis also supports EUC codeset, including Hangul. Other EUC codeset
+is not tested.
+
+--
+Port by Choi Jun Ho <junker@jazz.snu.ac.kr>
