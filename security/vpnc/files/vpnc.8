@@ -30,7 +30,7 @@ network device for the local system. It uses the
 TUN/TAP driver in Linux kernel 2.4 and above and
 device 
 .BR tun (4)
-on BSD.
+on BSD. It runs completely in user space.
 
 The vpnc daemon by it self does not set any routes. The user
 has to do it on its own, e.g. for a full tunnel under FreeBSD
@@ -62,7 +62,10 @@ your user credentials
 .IP "--ifname name"
 name of the tun-interface to use
 .IP "--local-port port number"
-use this port for the connection <0-65535>, use 0 for random
+use this port for the connection <0-65535> to allow multiple instances of vpnc
+running, use 0 a for 
+.I random
+port
 .IP "--pid-file filename"
 store the pid of background process there
 .IP "--dh IKE DH group"
@@ -72,7 +75,8 @@ Perfect Forward Secrecy <nopfs/dh1/dh2/dh5>
 .IP "--non-inter"
 non interactive mode, don't ask any questions
 .IP "--debug nr"
-set debugging level <0/1/2/3/99>
+set debugging level: none(0), basic(1), control flow(2), packet dump(3),
+include username/password(99)
 .IP "--no-detach"
 do not send daemon to background
 .IP "--print-config"
@@ -103,7 +107,7 @@ IPSec secret mopsWLAN
 .P
 Xauth username abcdef
 .P
-Xauth passwort 123456
+Xauth password 123456
 .PD
 .RE
 

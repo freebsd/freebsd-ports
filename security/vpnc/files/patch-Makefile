@@ -14,8 +14,7 @@
  ifeq ($(shell uname -s), Linux)
  SYSDEP=sysdep-linux.o
  endif
--ifeq ($(shell uname -s), NetBSD)
-+ifeq ($(shell uname -s), FreeBSD)
+ ifeq ($(shell uname -s), NetBSD)
  CFLAGS += -DSOCKADDR_IN_SIN_LEN
  SYSDEP=sysdep-bsd.o
  endif
