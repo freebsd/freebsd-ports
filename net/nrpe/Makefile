@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nrpe
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -18,8 +18,13 @@ RUN_DEPENDS=    ${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-
 
 GNU_CONFIGURE=	yes
 
+pre-install:
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	${SED} -i bak -e "s=/usr/local/bin/nrpe=${PREFIX}/sbin/nrpe=" ${WRKSRC}/init-script.freebsd
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${PREFIX}/sbin/nrpe
 	${INSTALL_DATA} ${WRKSRC}/nrpe.cfg ${PREFIX}/etc/nrpe.cfg-sample
+	${INSTALL_SCRIPT} ${WRKSRC}/init-script.freebsd ${PREFIX}/etc/rc.d/nrpe.sh
 
 .include <bsd.port.mk>
