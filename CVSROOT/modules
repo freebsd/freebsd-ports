@@ -872,6 +872,7 @@ chora		ports/devel/chora
 chord		ports/misc/chord
 chord2html	ports/misc/chord2html
 chordpack	ports/audio/chordpack
+chpasswd	ports/www/chpasswd
 chpp		ports/textproc/chpp
 chromium	ports/games/chromium
 chrootuid	ports/security/chrootuid
