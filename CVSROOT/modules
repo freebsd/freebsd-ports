@@ -4108,6 +4108,7 @@ nickle		ports/lang/nickle
 nighthawk	ports/games/nighthawk
 nil		ports/games/nil
 ninja		ports/irc/ninja
+njs		ports/lang/njs
 nl		src/usr.bin/nl
 nl-ispell	ports/textproc/nl-ispell
 nm		src/usr.bin/nm
