@@ -6330,6 +6330,7 @@ py-cdb	ports/databases/py-cdb
 py-cddb		ports/audio/py-cddb
 py-chart	ports/graphics/py-chart
 py-ciphon	ports/devel/py-ciphon
+py-cjkcodecs	ports/converters/py-cjkcodecs
 py-compiler	ports/lang/py-compiler
 py-coro		ports/devel/py-coro
 py-cryptkit	ports/security/py-cryptkit
