@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xprobe
-PORTVERSION=	0.0.1p1
+PORTVERSION=	0.0.2
 CATEGORIES=    	net security
 MASTER_SITES=	http://www.sys-security.com/archive/tools/X/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ICMP active OS fingerprint scanner
 
 GNU_CONFIGURE=	yes
