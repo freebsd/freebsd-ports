@@ -50,6 +50,7 @@
     SUBDIR += dc3play
     SUBDIR += dcraw
     SUBDIR += deep_zoom
+    SUBDIR += demeter
     SUBDIR += dia
     SUBDIR += diacanvas
     SUBDIR += diacanvas2

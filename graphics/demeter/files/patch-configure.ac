@@ -1,0 +1,11 @@
+--- configure.ac.orig	Tue Jun 15 13:17:59 2004
++++ configure.ac	Tue Jun 15 13:18:18 2004
+@@ -56,7 +56,7 @@
+ AC_C_CONST
+ AC_C_INLINE
+ AC_STRUCT_TM
+-AC_HEADER_STDBOOL
++dnl AC_HEADER_STDBOOL
+ 
+ AC_OUTPUT(Makefile \
+ 	  src/Makefile \
