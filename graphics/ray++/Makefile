@@ -14,16 +14,16 @@ MASTER_SITES=	http://www.mpa-garching.mpg.de/~martin/ray++/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of C++ classes needed for ray tracing
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared --enable-fast-handles
+USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501000
 BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
 .endif
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --enable-fast-handles
-USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
 
 do-install:
 	@(cd ${WRKSRC} ; \
