@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Multitracking sound editor and utilities
 
-LIB_DEPENDS=		gsl.4:${PORTSDIR}/math/gsl \
+LIB_DEPENDS=		gsl.5:${PORTSDIR}/math/gsl \
 			intl.5:${PORTSDIR}/devel/gettext
 
 .if !defined(WITHOUT_ESD)
@@ -78,7 +78,8 @@ USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/snd-5
 
 post-configure:
-	@${PERL} -pi -e "s: -ldl::g" ${WRKSRC}/makefile
+	@${MV} ${WRKSRC}/makefile ${WRKSRC}/makefile.orig
+	@${SED} -e "s: -ldl::g" < ${WRKSRC}/makefile.orig > ${WRKSRC}/makefile
 
 pre-install:
 	${ECHO_CMD} bin/snd > ${PLIST}
@@ -93,14 +94,14 @@ pre-install:
 	${ECHO_CMD} share/doc/snd/${i} >> ${PLIST}
 .endfor
 	${FIND} ${WRKDIR} -name '*.html' | \
-		${PERL} -pi -e "s:^${WRKSRC}/:share/doc/snd/:g" >> ${PLIST}
+		${SED} -e "s:^${WRKSRC}/:share/doc/snd/:g" >> ${PLIST}
 	${FIND} ${WRKDIR} -name '*.png' | \
-		${PERL} -pi -e "s:^${WRKSRC}/:share/doc/snd/:g" >> ${PLIST}
+		${SED} -e "s:^${WRKSRC}/:share/doc/snd/:g" >> ${PLIST}
 	${ECHO_CMD} "@dirrm share/doc/snd" >> ${PLIST}
 .endif
 .if !defined(WITHOUT_GUILE)
 	${FIND} ${WRKSRC} -name '*.scm' | \
-		${PERL} -pi -e "s:^${WRKSRC}/:share/snd/:g" >> ${PLIST}
+		${SED} -e "s:^${WRKSRC}/:share/snd/:g" >> ${PLIST}
 	${ECHO_CMD} "share/snd/contrib/dlp/README" >> ${PLIST}
 	${ECHO_CMD} "@dirrm share/snd/contrib/dlp" >> ${PLIST}
 	${ECHO_CMD} "@dirrm share/snd/contrib" >> ${PLIST}
