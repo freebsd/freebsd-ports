@@ -20,8 +20,4 @@ MD5_FILE=	${.CURDIR}/distinfo
 PATCHDIR=	${.CURDIR}/files
 PKGDIR=		${.CURDIR}
 
-post-install:
-	@${MKDIR} ${PREFIX}/share/cvsup
-	@${INSTALL_DATA} ${WRKSRC}/License ${PREFIX}/share/cvsup/License
-
 .include "${MASTERDIR}/Makefile"
