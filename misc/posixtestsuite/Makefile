@@ -67,7 +67,7 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "  make QUIET=YES WITH_THRLIB= regression"
 	@${ECHO} "    - be quiet, run tests against libpthread (default"
-        @${ECHO} "      threading library), compare tests results"
+	@${ECHO} "      threading library), compare tests results"
 	@${ECHO} ""
 
 help:	pre-everything
