@@ -1,3 +1,4 @@
+bin/wx-config
 bin/wxgtk2-2.4-config
 include/wx/gtk2-2.4/wx/setup.h
 lib/libwx_gtk2-2.4.so
