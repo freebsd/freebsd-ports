@@ -13,6 +13,8 @@ MASTER_SITES=		http://www.polhode.com/
 
 MAINTAINER=		andy@icc.surw.chel.su
 
+FETCH_BEFORE_ARGS=	-b
+
 USE_ZIP=		yes
 WRKSRC=			${WRKDIR}/pccts
 ALL_TARGET=
