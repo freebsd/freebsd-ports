@@ -7,16 +7,16 @@
   LIBNAME=Im
 ! LIBREV=1.0
   
-  CONVERT_DIR=/usr/local/bin
-  NETPBM_DIR=/usr/local/bin
+! CONVERT_DIR=/usr/local/bin
+! NETPBM_DIR=/usr/local/bin
 --- 6,12 ----
   /* ---------------------------------------------------------------- */
   
   LIBNAME=Im
 ! LIBREV=2.0
   
-  CONVERT_DIR=/usr/local/bin
-  NETPBM_DIR=/usr/local/bin
+! CONVERT_DIR=/usr/X11R6/bin
+! NETPBM_DIR=/usr/X11R6/bin
 *************** NETPBM_DIR=/usr/local/bin
 *** 14,20 ****
   #ifdef UseEtcX11
