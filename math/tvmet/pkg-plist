@@ -26,6 +26,8 @@ include/tvmet/config/config-kcc.h
 include/tvmet/config/config-pgi.h
 include/tvmet/config.h
 include/tvmet/meta/Gemm.h
+include/tvmet/meta/Gemmt.h
+include/tvmet/meta/Gemtm.h
 include/tvmet/meta/Gemv.h
 include/tvmet/meta/Matrix.h
 include/tvmet/meta/Vector.h
@@ -38,14 +40,18 @@ include/tvmet/xpr/Eval.h
 include/tvmet/xpr/Functions.h
 include/tvmet/xpr/Literal.h
 include/tvmet/xpr/MMProduct.h
+include/tvmet/xpr/MMProductTransposed.h
+include/tvmet/xpr/MMtProduct.h
 include/tvmet/xpr/MVProduct.h
 include/tvmet/xpr/Matrix.h
 include/tvmet/xpr/MatrixFunctions.h
 include/tvmet/xpr/MatrixOperators.h
 include/tvmet/xpr/MatrixTranspose.h
+include/tvmet/xpr/MtMProduct.h
 include/tvmet/xpr/Null.h
 include/tvmet/xpr/UnOperator.h
 include/tvmet/xpr/Vector.h
+include/tvmet/xpr/VectorFunctions.h
 include/tvmet/xpr/VectorOperators.h
 include/tvmet/xpr/Xpr.h
 share/aclocal/tvmet.m4
