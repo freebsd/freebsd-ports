@@ -9983,6 +9983,7 @@ sim6811		ports/emulators/sim6811
 simage		ports/graphics/simage
 simgear		ports/devel/simgear
 simicq		ports/net/simicq
+simlib		ports/science/simlib
 simplemod	ports/audio/simplemod
 simplicity	ports/java/simplicity
 simplog		ports/www/simplog
