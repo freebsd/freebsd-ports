@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-Gtk
-# Version required:	0.2.2
+# Version required:	0.3
 # Date created:		28 Oct 1997
 # Whom:	      		Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.11 1998/08/07 23:08:38 asami Exp $
+# $Id: Makefile,v 1.12 1998/08/07 23:56:50 asami Exp $
 #
 
-DISTNAME=	Gtk-0.2.2
-PKGNAME=	p5-Gtk-0.2.2
+DISTNAME=	Gtk-0.3
+PKGNAME=	p5-Gtk-0.3
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Gtk
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11-toolkits/gtk
 USE_PERL5=	YES
 
 MAN3=		GtkColorSelectButton.3
-MANPREFIX=	${PREFIX}/lib/perl5/5.00501
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
