@@ -20,4 +20,6 @@ USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
+CONFIGURE_ENV=	MOC=${X11BASE}/bin/moc
+
 .include <bsd.port.mk>
