@@ -30,6 +30,8 @@ CONFIGURE_ARGS+=	--disable-fpo
 .if defined(WITH_QT)
 CONFIGURE_ARGS+=	--enable-gui=qt
 USE_QT_VER=	3
+QTDIR?=		${X11BASE}
+CONFIGURE_ENV+=	QTDIR="${QTDIR}"
 .else
 CONFIGURE_ARGS+=	--enable-gui=nogui
 .endif
