@@ -15,8 +15,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}:modssl
 
 .if defined(APACHE_WITH_MODSNMP) || make(makesum) || defined(FETCH_ALL)
-PATCH_SITES=	http://www.simpleweb.org/software/packages/mod-snmp/distr/
-PATCHFILES=	mod_snmp_${VERSION_MODSNMP}.tar.gz
+PATCH_SITES=	http://www.mod-snmp.com/distr/:snmp
+PATCHFILES=	mod_snmp_${VERSION_MODSNMP}.tar.gz:snmp
 EXTRA_PATCH=	${WRKSRC}/src/module/snmp_agt/mod_snmp.patch
 .endif
 .if defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
