@@ -7,7 +7,7 @@
 
 PORTNAME=	cactid
 PORTVERSION=	0.8.6.d
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cacti.net/downloads/cactid/
 DISTNAME=	cacti-${PORTNAME}-0.8.6d
@@ -16,8 +16,6 @@ MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A multithreaded poller for Cacti written in C
 
 LIB_DEPENDS=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
-
-BROKEN=		Incomplete pkg-plist
 
 GNU_CONFIGURE=	YES
 USE_MYSQL=	YES

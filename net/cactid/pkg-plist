@@ -11,4 +11,5 @@ include/cactid/poller.h
 include/cactid/snmp.h
 include/cactid/sql.h
 include/cactid/util.h
+@dirrm include/cactid
 @dirrm %%EXAMPLESDIR%%
