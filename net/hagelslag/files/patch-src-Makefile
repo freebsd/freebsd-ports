@@ -1,0 +1,26 @@
+--- src/Makefile.orig	Thu Feb  1 16:27:37 2001
++++ src/Makefile	Wed Feb 14 14:41:23 2001
+@@ -1,5 +1,4 @@
+ # Don't change this...
+-CXX=g++
+ LFLAGS=
+ COMMONFLAGS=-Wall -O2 -g
+ ROUTER_FLAGS=$(COMMONFLAGS) -DROUTER
+@@ -7,7 +6,7 @@
+ CONSOLE_FLAGS=$(COMMONFLAGS) -DCONSOLE
+ 
+ # Change this instead.
+-CXXFLAGS=$(CONSOLE_FLAGS)
++CXXFLAGS+=$(CONSOLE_FLAGS)
+ 
+ # Nothing below here should be changed
+ 
+@@ -70,7 +69,7 @@
+ 	cp hagelslagd ../bin
+ 
+ depend:
+-	makedepend -Y -- $(CPP_FILES)
++	makedepend -- $(CPP_FILES)
+ 
+ clean:
+ 	rm -f hagelslag hagelslagd hagelslagrouter *.o *~ core *.bak

@@ -1,0 +1,14 @@
+%%PORTDOCS%%share/doc/hagelslag/Hagelslag-design.txt
+%%PORTDOCS%%share/doc/hagelslag/HagelslagInternal.txt
+%%PORTDOCS%%share/doc/hagelslag/LICENSE
+%%PORTDOCS%%share/doc/hagelslag/ProgrammersManual.txt
+%%PORTDOCS%%share/doc/hagelslag/README
+%%PORTDOCS%%share/doc/hagelslag/TODO
+%%PORTDOCS%%share/doc/hagelslag/UsersManual.txt
+%%PORTDOCS%%share/doc/hagelslag/hagelslag-classes.fig
+%%PORTDOCS%%share/doc/hagelslag/hagelslag-classes.jpg
+%%PORTDOCS%%share/doc/hagelslag/hagelslag-structure.fig
+%%PORTDOCS%%share/doc/hagelslag/hagelslag-structure.jpg
+bin/hagelslag
+bin/testgui
+%%PORTDOCS%%@dirrm share/doc/hagelslag

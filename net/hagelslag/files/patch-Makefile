@@ -1,0 +1,14 @@
+--- Makefile.orig	Wed Jan 31 20:40:56 2001
++++ Makefile	Wed Feb 14 15:05:19 2001
+@@ -4,10 +4,7 @@
+ 	make -C gui all
+ 
+ install:
+-	cp bin/* /usr/local/bin
+-	mkdir ~/.hagelslag
+-	cp doc/hosts.txt ~/.hagelslag/hagelslag.hosts
+-	@echo remember to copy doc/hosts.txt to ~/.hagelslag/hagelslag.hosts
++	${BSD_INSTALL_PROGRAM} bin/* ${PREFIX}/bin
+ 
+ 
+ gui-all: 
