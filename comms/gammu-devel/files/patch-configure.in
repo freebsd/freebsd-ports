@@ -1,0 +1,66 @@
+--- cfg/autoconf/configure.in.orig	Thu Nov 25 13:02:35 2004
++++ cfg/autoconf/configure.in	Thu Nov 25 13:01:56 2004
+@@ -163,14 +163,14 @@
+ dnl Bluetooth stacks
+ gsm_blue_stack=unknown
+ AC_CHECK_HEADERS(bluetooth/bluetooth.h,
+-        [gsm_blue_stack=Bluez
++        [gsm_blue_stack=FreeBSD
+ 	 AC_DEFINE(GSM_ENABLE_BLUEZ)
+-         LDLIBS="$LDLIBS -lbluetooth -lsdp"])
++         LDLIBS="$LDLIBS -lbluetooth"])
+     
+-dnl Path for Bluez bluetooth library
++dnl Path for FreeBSD bluetooth library
+ gsm_bt_dir=""
+ AC_ARG_WITH(bluedir,
+-        [  --with-bluedir=DIR      Specifies the base libbluetooth from Bluez],
++        [  --with-bluedir=DIR      Specifies the base libbluetooth from FreeBSD],
+         [ if test x$withval = xyes; then
+                 AC_MSG_WARN(Usage is: --with-bluedir=DIR)
+           else
+@@ -261,7 +261,7 @@
+         [  --disable-bluefbus      Disable Nokia FBUS2 over Bluetooth stack
+                           (Nokia 6210)],
+         [gsm_enable_bluefbus2="no"],
+-        [if test $gsm_blue_stack = Bluez; then
++        [if test $gsm_blue_stack = FreeBSD; then
+                 AC_DEFINE(GSM_ENABLE_BLUEFBUS2)
+                 gsm_enable_bluefbus2="yes"
+           else
+@@ -271,7 +271,7 @@
+         [  --disable-bluephonet    Disable Nokia PHONET FBUS over Bluetooth
+                           stack (all new Nokias)],
+         [gsm_enable_bluephonet="no"],
+-        [if test $gsm_blue_stack = Bluez; then
++        [if test $gsm_blue_stack = FreeBSD; then
+                 AC_DEFINE(GSM_ENABLE_BLUEPHONET)
+                 gsm_enable_bluephonet="yes"
+           else
+@@ -280,7 +280,7 @@
+ AC_ARG_ENABLE(blueat,
+         [  --disable-blueat        Disable AT commands over Bluetooth stack],
+         [gsm_enable_blueat="no"],
+-        [if test $gsm_blue_stack = Bluez; then
++        [if test $gsm_blue_stack = FreeBSD; then
+                 AC_DEFINE(GSM_ENABLE_BLUEAT)
+                 gsm_enable_blueat="yes"
+           else
+@@ -289,7 +289,7 @@
+ AC_ARG_ENABLE(blueobex,
+         [  --disable-blueobex      Disable OBEX over Bluetooth stack],
+         [gsm_enable_blueobex="no"],
+-        [if test $gsm_blue_stack = Bluez; then
++        [if test $gsm_blue_stack = FreeBSD; then
+                 AC_DEFINE(GSM_ENABLE_BLUEOBEX)
+                 gsm_enable_blueobex="yes"
+           else
+@@ -408,7 +408,7 @@
+   Binaries                                      - $bindir
+   RPM making directory                          - $RPM_DIR
+   Temporary directory                           - $TEMP_DIR
+-  Bluez library path                            - $gsm_bt_dir
++  FreeBSD Bluetooth library path                - $gsm_bt_dir
+   
+   General options
+   ---------------
