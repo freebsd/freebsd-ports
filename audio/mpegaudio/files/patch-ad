@@ -1,0 +1,125 @@
+--- musicin.c.orig	Wed Jan  5 10:13:44 1994
++++ musicin.c	Tue Aug 22 02:40:40 2000
+@@ -101,6 +101,8 @@
+ #include "common.h"
+ #include "encoder.h"
+ 
++#include <stdlib.h>
++
+ /* Global variable definitions for "musicin.c" */
+ 
+ FILE               *musicin;
+@@ -144,7 +146,7 @@
+  
+     do  {
+        printf("Enter PCM input file name <required>: ");
+-       gets(original_file_name);
++       fgets(original_file_name,sizeof(original_file_name),stdin);
+        if (original_file_name[0] == NULL_CHAR)
+        printf("PCM input file name is required.\n");
+     } while (original_file_name[0] == NULL_CHAR);
+@@ -163,7 +165,7 @@
+            original_file_name, DFLT_EXT);
+ #endif
+  
+-    gets(encoded_file_name);
++    fgets(encoded_file_name,sizeof(encoded_file_name),stdin);
+     if (encoded_file_name[0] == NULL_CHAR) {
+ #ifdef  MS_DOS
+         /* replace old extension with new one, 92-08-19 shn */
+@@ -207,7 +209,7 @@
+     else {    /* Not using Audio IFF sound file headers. */
+ 
+        printf("What is the sampling frequency? <44100>[Hz]: ");
+-       gets(t);
++       fgets(t,sizeof(t),stdin);
+        freq = atol(t);
+        switch (freq) {
+           case 48000 : info->sampling_frequency = 1;
+@@ -236,7 +238,7 @@
+ 
+     printf("Which layer do you want to use?\n");
+     printf("Available: Layer (1), Layer (<2>): ");
+-    gets(t);
++    fgets(t,sizeof(t),stdin);
+     switch(*t){
+        case '1': info->lay = 1; printf(">>> Using Layer %s\n",t); break;
+        case '2': info->lay = 2; printf(">>> Using Layer %s\n",t); break;
+@@ -246,7 +248,7 @@
+     printf("Which mode do you want?\n");
+     printf("Available: (<s>)tereo, (j)oint stereo, ");
+     printf("(d)ual channel, s(i)ngle Channel: ");
+-    gets(t);
++    fgets(t,sizeof(t),stdin);
+     switch(*t){
+        case 's':
+        case 'S':
+@@ -275,7 +277,7 @@
+     }
+ 
+     printf("Which psychoacoustic model do you want to use? <2>: ");
+-    gets(t);
++    fgets(t,sizeof(t),stdin);
+     model = atoi(t);
+     if (model > 2 || model < 1) {
+        printf(">>> Default model 2 selected\n");
+@@ -287,7 +289,7 @@
+     }
+  
+     printf("What is the total bitrate? <%u>[kbps]: ", DFLT_BRT);
+-    gets(t);
++    fgets(t,sizeof(t),stdin);
+     brt = atoi(t);
+     if (brt == 0) brt = -10;
+     j=0;
+@@ -310,7 +312,7 @@
+  
+     printf("What type of de-emphasis should the decoder use?\n");
+     printf("Available: (<n>)one, (5)0/15 microseconds, (c)citt j.17: ");
+-    gets(t);
++    fgets(t,sizeof(t),stdin);
+     if (*t != 'n' && *t != '5' && *t != 'c') {
+        printf(">>> Using default no de-emphasis\n");
+        info->emphasis = 0;
+@@ -325,7 +327,7 @@
+ /*  Start 2. Part changes for CD Ver 3.2; jsp; 22-Aug-1991 */
+  
+     printf("Do you want to set the private bit? (y/<n>): ");
+-    gets(t);
++    fgets(t,sizeof(t),stdin);
+     if (*t == 'y' || *t == 'Y') info->extension = 1;
+     else                        info->extension = 0;
+     if(info->extension) printf(">>> Private bit set\n");
+@@ -334,28 +336,28 @@
+ /*  End changes for CD Ver 3.2; jsp; 22-Aug-1991 */
+  
+     printf("Do you want error protection? (y/<n>): ");
+-    gets(t);
++    fgets(t,sizeof(t),stdin);
+     if (*t == 'y' || *t == 'Y') info->error_protection = TRUE;
+     else                        info->error_protection = FALSE;
+     if(info->error_protection) printf(">>> Error protection used\n");
+     else printf(">>> Error protection not used\n");
+  
+     printf("Is the material copyrighted? (y/<n>): ");
+-    gets(t);
++    fgets(t,sizeof(t),stdin);
+     if (*t == 'y' || *t == 'Y') info->copyright = 1;
+     else                        info->copyright = 0;
+     if(info->copyright) printf(">>> Copyrighted material\n");
+     else                printf(">>> Material not copyrighted\n");
+  
+     printf("Is this the original? (y/<n>): ");
+-    gets(t);
++    fgets(t,sizeof(t),stdin);
+     if (*t == 'y' || *t == 'Y') info->original = 1;
+     else                        info->original = 0;
+     if(info->original) printf(">>> Original material\n");
+     else               printf(">>> Material not original\n");
+  
+     printf("Do you wish to exit (last chance before encoding)? (y/<n>): ");
+-    gets(t);
++    fgets(t,sizeof(t),stdin);
+     if (*t == 'y' || *t == 'Y') exit(0);
+ }
+ 
