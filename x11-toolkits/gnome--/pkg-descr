@@ -1,0 +1,9 @@
+Gnome-- is a powerful C++ binding for the GNOME libraries. It provides      
+additional functionality above Gtk-- when using the GNOME, and includes  
+bindings for all the popular GNOME interfaces like canvas and MDI as well
+as useful application templates for constructing good-looking apps.
+
+WWW: http://gtkmm.sourceforge.net/
+
+- Erich Zigler
+erich@tacni.net

@@ -9,6 +9,7 @@
     SUBDIR += clean-theme-gtk
     SUBDIR += fltk
     SUBDIR += fox
+    SUBDIR += gnome--
     SUBDIR += gnome-look
     SUBDIR += gob
     SUBDIR += gtk--
