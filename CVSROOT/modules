@@ -5915,6 +5915,15 @@ pdq		ports/print/pdq
 pdss		ports/lang/pdss
 pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
+pear		ports/devel/pear
+pear-Console_Getopt	ports/devel/pear-Console_Getopt
+pear-File	ports/sysutils/pear-File
+pear-Log	ports/sysutils/pear-Log
+pear-Mail_Mime	ports/mail/pear-Mail_Mime
+pear-Net_Sieve	ports/net/pear-Net_Sieve
+pear-Net_Socket	ports/net/pear-Net_Socket
+pear-PEAR	ports/devel/pear-PEAR
+pear-install	ports/devel/pear-install
 pedisassem	ports/devel/pedisassem
 peeper		ports/x11/peeper
 pekwm		ports/x11-wm/pekwm
