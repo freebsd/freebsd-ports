@@ -799,3 +799,6 @@ math/ruby-gsl||2004-02-01|Port broken for >2 months
 x11-fm/vide||2004-02-01|Port broken for >2 months
 devel/gettext-old|devel/gettext|2004-02-03|Switch to latest stable version of gettext
 x11/kgama|graphics/kdegraphics3|2004-02-05|Kgamma is now a part of kdegraphics
+devel/libgtop||2004-02-06|Obsolete and no longer maintained
+devel/ruby-libgtop||2004-02-06|Obsolete and no longer maintained
+devel/p5-GTop||2004-02-06|Obsolete and no longer maintained
