@@ -1,0 +1,7 @@
+lib/xmms/General/libinfopipe-1.3.so.1
+@exec ln -s %D/lib/xmms/General/libinfopipe-1.3.so.1 %D/lib/xmms/General/libinfopipe-1.3.so
+@exec ln -s %D/lib/xmms/General/libinfopipe-1.3.so.1 %D/lib/xmms/General/libinfopipe.so
+lib/xmms/General/libinfopipe.la
+lib/xmms/General/libinfopipe.a
+@unexec rm %D/lib/xmms/General/libinfopipe-1.3.so
+@unexec rm %D/lib/xmms/General/libinfopipe.so
