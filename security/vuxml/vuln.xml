@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="9fccad5a-7096-11d8-873f-0020ed76ef5a">
+    <topic>mpg123 vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mpg123</name>
+	<name>mpg123-esound</name>
+	<range><le>0.59r_12</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>In 2003, two vulnerabilities were discovered in mpg123
+	  that could result in remote code execution when using
+	  untrusted input or streaming from an untrusted server.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2003-0577</cvename>
+      <cvename>CAN-2003-0865</cvename>
+      <bid>6629</bid>
+      <bid>8680</bid>
+    </references>
+    <dates>
+      <discovery>2003-01-16</discovery>
+      <entry>2004-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3ca8dd7a-6fb3-11d8-873f-0020ed76ef5a">
     <topic>Adobe Acrobat Reader XFDF buffer overflow vulnerability</topic>
     <affects>
