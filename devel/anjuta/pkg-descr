@@ -1,0 +1,8 @@
+Anjuta is a very versatile Integrated development environment for 
+c and c++.  Written in GTK/GNOME and written for GTK/GNOME, 
+it features many advanced programming tools and utilities.  It is 
+basically a GUI interface for the bunch of command line programming 
+utilites and tools available for FreeBSD, which are usually run in console
+and are very user unfriendly.
+
+WWW: http://anjuta.sourceforge.net/
