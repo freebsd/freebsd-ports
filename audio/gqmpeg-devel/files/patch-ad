@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Dec 24 13:03:03 2000
++++ Makefile.in	Sun Dec 24 13:03:15 2000
+@@ -109,7 +109,7 @@
+ skindir = $(prefix)/share/gqmpeg/skins
+ skin_DATA = 
+ 
+-@HAVE_GNOME_TRUE@desktopdir = $(GNOME_DATADIR)/gnome/apps/Multimedia
++@HAVE_GNOME_TRUE@desktopdir = $(GNOME_DATADIR)/apps/Multimedia
+ @HAVE_GNOME_TRUE@desktop_DATA = gqmpeg.desktop
+ 
+ @HAVE_GNOME_TRUE@icondir = $(GNOME_DATADIR)/pixmaps

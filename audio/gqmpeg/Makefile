@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gqmpeg
-PORTVERSION=	0.6.3
+PORTVERSION=	0.8.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netpedia.net/hosting/gqview/packages/ \
 		http://www.geocities.com/SiliconValley/Haven/5235/packages/
-EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	nakai@FreeBSD.org
 
@@ -18,6 +17,8 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes
-ALL_TARGET=	gqmpeg
+USE_LIBTOOL=	yes
+
+MAN1=		gqmpeg.1
 
 .include <bsd.port.mk>
