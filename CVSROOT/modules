@@ -1954,6 +1954,7 @@ gkrellkam2	ports/graphics/gkrellkam2
 gkrellm		ports/sysutils/gkrellm
 gkrellm-gamma	ports/misc/gkrellm-gamma
 gkrellm-reminder	ports/misc/gkrellm-reminder
+gkrellm-xkb	ports/misc/gkrellm-xkb
 gkrellm2	ports/sysutils/gkrellm2
 gkrellm_snmp	ports/net/gkrellm_snmp
 gkrellmaflag	ports/misc/gkrellmaflag
