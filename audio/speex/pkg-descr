@@ -1,4 +1,4 @@
-The Speex project aims to build an open-source (LGPL) patent-free voice
+The Speex project aims to build an open-source patent-free voice
 codec. Unlike other codecs like MP3 and Ogg Vorbis, Speex is specially
 designed for compressing voice at low bit-rates for applications such as
 voice over IP (VoIP). In some sense, it is meant to be complementary to
