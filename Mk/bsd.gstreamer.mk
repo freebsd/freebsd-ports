@@ -122,6 +122,8 @@ polypaudio_PLIST=	libpolypaudio
 
 shout_DEPENDS=	audio/gstreamer-plugins-shout
 
+shout2_DEPENDS=	audio/gstreamer-plugins-shout2
+
 sidplay_DEPENDS=	audio/gstreamer-plugins-sidplay
 sidplay_PLIST=	libgstsid
 
