@@ -623,6 +623,7 @@
     SUBDIR += p5-Devel-Profiler
     SUBDIR += p5-Devel-StackTrace
     SUBDIR += p5-Devel-Symdump
+    SUBDIR += p5-Devel-Trace
     SUBDIR += p5-Devel-ptkdb
     SUBDIR += p5-Dialog
     SUBDIR += p5-Encode-compat
