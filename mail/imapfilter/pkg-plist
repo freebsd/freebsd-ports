@@ -1,7 +1,7 @@
 bin/imapfilter
-share/doc/imapfilter/README
-share/doc/imapfilter/LICENSE
-share/doc/imapfilter/NEWS
-share/examples/imapfilter/sample.imapfilterrc
-@dirrm share/doc/imapfilter
-@dirrm share/examples/imapfilter
+%%PORTDOCS%%share/doc/imapfilter/README
+%%PORTDOCS%%share/doc/imapfilter/LICENSE
+%%PORTDOCS%%share/doc/imapfilter/NEWS
+%%PORTDOCS%%share/examples/imapfilter/sample.imapfilterrc
+%%PORTDOCS%%@dirrm share/doc/imapfilter
+%%PORTDOCS%%@dirrm share/examples/imapfilter
