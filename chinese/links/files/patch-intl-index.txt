@@ -1,0 +1,10 @@
+--- intl/index.txt.orig     2002-12-26 22:54:22.000000000 +0800
++++ intl/index.txt	    2002-12-26 23:32:57.000000000 +0800
+@@ -3,6 +3,7 @@
+ brazilian_portuguese
+ bulgarian
+ catalan
++chinese_big5
+ croatian
+ czech
+ danish
