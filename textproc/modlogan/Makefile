@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	modlogan
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	textproc www
 MASTER_SITES=	http://jan.kneschke.de/projects/modlogan/download/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -34,10 +34,9 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 #LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
 USE_REINPLACE=	yes
-# XXX: remove PERL5 in next release, already fixed in modlogan-CVS.
-USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-ltdl-install=no --with-gd=${LOCALBASE}/include
+CONFIGURE_ARGS+=--enable-ltdl-install=no --with-gd=${LOCALBASE}/include \
+		--program-transform-name=\'\'
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=--with-mysql
 .endif
@@ -66,8 +65,6 @@ post-install:
 .endfor
 	@# remove .la
 	-${RM} ${PREFIX}/lib/libmla_*.la
-	${MV} ${PREFIX}/bin/${CONFIGURE_TARGET}-modlogan ${PREFIX}/bin/modlogan
-	${MV} ${PREFIX}/man/man1/${CONFIGURE_TARGET}-modlogan.1 ${PREFIX}/man/man1/modlogan.1
 .for i in css conf def.conf
 	[ -f ${PREFIX}/etc/modlogan/modlogan.${i} ] || ${INSTALL_DATA} ${PREFIX}/etc/modlogan/modlogan.${i}-dist ${PREFIX}/etc/modlogan/modlogan.${i}
 .endfor

@@ -36,6 +36,7 @@ lib/libmla_input_qmail.so
 lib/libmla_input_qmailscanner.so
 lib/libmla_input_qtss.so
 lib/libmla_input_realserver.so
+lib/libmla_input_rsync.so
 lib/libmla_input_sendmail.so
 lib/libmla_input_shoutcast.so
 lib/libmla_input_squid.so
@@ -43,6 +44,7 @@ lib/libmla_input_viruswall.so
 lib/libmla_input_wuftpd.so
 lib/libmla_mdata_brokenlink.so
 lib/libmla_mdata_count.so
+lib/libmla_mdata_location.so
 lib/libmla_mdata_match.so
 lib/libmla_mdata_mailhist.so
 lib/libmla_mdata_netmask.so
