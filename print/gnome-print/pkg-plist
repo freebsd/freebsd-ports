@@ -19,7 +19,7 @@ include/libgnomeprint/gnome-printer.h
 include/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
 lib/libgnomeprint.so
-lib/libgnomeprint.so.5
+lib/libgnomeprint.so.6
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/fonts/afms/adobe/pagd8a.afm
@@ -77,6 +77,7 @@ share/locale/hu/LC_MESSAGES/gnome-print.mo
 share/locale/it/LC_MESSAGES/gnome-print.mo
 share/locale/ja/LC_MESSAGES/gnome-print.mo
 share/locale/ko/LC_MESSAGES/gnome-print.mo
+share/locale/lt/LC_MESSAGES/gnome-print.mo
 share/locale/nl/LC_MESSAGES/gnome-print.mo
 share/locale/no/LC_MESSAGES/gnome-print.mo
 share/locale/pl/LC_MESSAGES/gnome-print.mo
