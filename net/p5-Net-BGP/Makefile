@@ -17,7 +17,7 @@ COMMENT=	Border Gateway Protocol version 4 speaker/listener library
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Net::BGP4.3 Net::BGP4::Notification.3 Net::BGP4::Peer.3 \
-		Net::BGP4::Process.3 Net::BGP4::RIB.3 Net::BGP4::Update.3
+MAN3=		Net::BGP.3 Net::BGP::Notification.3 Net::BGP::Peer.3 \
+		Net::BGP::Process.3 Net::BGP::RIB.3 Net::BGP::Update.3
 
 .include <bsd.port.mk>
