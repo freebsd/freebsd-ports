@@ -1,0 +1,27 @@
+*** Makefile.orig	Thu Jan 12 21:18:36 1995
+--- Makefile	Thu Jan 12 21:32:38 1995
+***************
+*** 20,24 ****
+  all:
+! 	@ echo ""; echo "You have not read the installation procedures.";\
+! 	echo "Please read the README file for build instructions.";\
+! 	echo
+  
+--- 20,27 ----
+  all:
+! 	cd targets/freebsd ;\
+! 	make all
+! 
+! install:
+! 	cd targets/freebsd ;\
+! 	make install
+  
+***************
+*** 34,36 ****
+  	echo ;\
+! 	TARG=`scripts/sys-arch`  ;\
+  	if test -d targets/$${TARG} ;\
+--- 37,39 ----
+  	echo ;\
+! 	TARG=freebsd;\
+  	if test -d targets/$${TARG} ;\
