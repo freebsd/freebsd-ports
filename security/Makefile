@@ -101,6 +101,7 @@
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnomekeyring
     SUBDIR += gnupg
+    SUBDIR += gnupg-devel
     SUBDIR += gnupg-idea
     SUBDIR += gnutls
     SUBDIR += gnutls-devel
@@ -191,7 +192,6 @@
     SUBDIR += nessus-plugins
     SUBDIR += nessus-plugins-devel
     SUBDIR += nettle
-    SUBDIR += newpg
     SUBDIR += nikto
     SUBDIR += nmap
     SUBDIR += nmapfe

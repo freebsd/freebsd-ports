@@ -2590,6 +2590,7 @@ gnumeric2	ports/math/gnumeric2
 gnump3d		ports/audio/gnump3d
 gnunet		ports/net/gnunet
 gnupg		ports/security/gnupg
+gnupg-devel	ports/security/gnupg-devel
 gnupg-idea	ports/security/gnupg-idea
 gnuplot		ports/math/gnuplot
 gnuplot+	ports/math/gnuplot+
@@ -5552,7 +5553,6 @@ neverball	ports/games/neverball
 newfile		ports/devel/newfile
 newmail		ports/mail/newmail
 newmat		ports/math/newmat
-newpg		ports/security/newpg
 newsbot		ports/net/newsbot
 newscache	ports/news/newscache
 newsfetch	ports/news/newsfetch
