@@ -13,8 +13,6 @@ MASTER_SITES=	http://monkeyd.sourceforge.net/versions/
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A small, powerful, and fast Web server written in C
 
-LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
-
 USE_GMAKE=	yes
 ALL_TARGET=	default
 HAS_CONFIGURE=	yes
