@@ -1,3 +1,4 @@
+$FreeBSD$
 --- configure.in.orig	Mon Feb 26 06:51:00 2001
 +++ configure.in	Sun Mar 18 23:21:51 2001
 @@ -67,7 +68,7 @@ dnl ------------------------------------

@@ -1,8 +1,0 @@
---- ogg123/ogg123.c.orig	Sat Feb 24 09:52:22 2001
-+++ ogg123/ogg123.c	Thu Mar  1 17:51:28 2001
-@@ -25,4 +25,5 @@
- #include <stdio.h>
- #include <netdb.h>
-+#include <sys/types.h>
- #include <netinet/in.h>
- #include <sys/socket.h>

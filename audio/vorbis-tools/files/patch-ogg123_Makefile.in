@@ -1,8 +1,12 @@
+$FreeBSD$
 --- ogg123/Makefile.in.orig	Mon Feb 26 12:02:14 2001
-+++ ogg123/Makefile.in	Tue Feb 27 15:02:56 2001
-@@ -85,7 +85,7 @@
++++ ogg123/Makefile.in	Wed Mar 21 16:04:22 2001
+@@ -83,9 +83,9 @@
+ AUTOMAKE_OPTIONS = foreign
+ 
  bin_PROGRAMS = ogg123
- docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
+-docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
++docdir = $(datadir)/doc/$(PACKAGE)
  doc_DATA = ogg123rc-example
 -mandir = $(datadir)/man
 +mandir = $(prefix)/man

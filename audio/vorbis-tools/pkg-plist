@@ -1,5 +1,6 @@
+@comment $FreeBSD$
 bin/ogg123
 bin/oggenc
 bin/vorbiscomment
-share/doc/vorbis-tools-1.0beta4/ogg123rc-example
-@dirrm share/doc/vorbis-tools-1.0beta4
+share/doc/vorbis-tools/ogg123rc-example
+@dirrm share/doc/vorbis-tools
