@@ -9,6 +9,14 @@ share/java/forte4j/bin/fastjavac/fastjavac.linux
 share/java/forte4j/bin/fastjavac/fastjavac.messages
 share/java/forte4j/bin/fastjavac/fastjavac.sun
 share/java/forte4j/bin/fastjavac/fastjavac.sun.intel
+share/java/forte4j/bin/fastjavac/fastjavac.unix.ja.messages
+share/java/forte4j/bin/fastjavac/fastjavac.unix.ja_JP.PCK.messages
+share/java/forte4j/bin/fastjavac/fastjavac.unix.ja_JP.UTF-8.messages
+share/java/forte4j/bin/fastjavac/fastjavac.unix.ja_JP.eucJP.messages
+share/java/forte4j/bin/fastjavac/fastjavac.unix.ja_JP.messages
+share/java/forte4j/bin/fastjavac/fastjavac.unix.ja_JP.ujis.messages
+share/java/forte4j/bin/fastjavac/fastjavac.unix.japanese.messages
+share/java/forte4j/bin/fastjavac/fastjavac.win32.ja_JP.932.messages
 share/java/forte4j/bin/forte.sh
 share/java/forte4j/bin/icons/ide.ico
 share/java/forte4j/bin/icons/readme.ico
@@ -26,9 +34,9 @@ share/java/forte4j/bin/unsupported/nbscript.bat
 share/java/forte4j/bin/unsupported/nbscript.sh
 share/java/forte4j/bin/unsupported/runide_nt.bat
 share/java/forte4j/bin/unsupported/runide_w98.bat
-share/java/forte4j/docs/EAP.html
 share/java/forte4j/docs/JdbcComponents.zip
 share/java/forte4j/docs/NetBeansWeb.html
+share/java/forte4j/docs/OpenAPI.html
 share/java/forte4j/docs/Persistence.zip
 share/java/forte4j/docs/ant-api.zip
 share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/META-INF/MANIFEST.MF
@@ -72,7 +80,89 @@ share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/images/websvrnode.gif
 share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/index.html
 share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/index.xml
 share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/iws.hs
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/iws_ja.hs
 share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/iwsmap.jhm
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/credits.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/general/about_engines.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/general/about_iws_plugin.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/general/cdshopcart.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/general/options.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/general/tips.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/glossary/deploymentdesc.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/glossary/tagelement.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/glossary/taglibrarydescriptor.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/ide.css
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/application.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/arrow.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/data.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/defaultj2eeappserver.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/defaultwebserver.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/depwebapp.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/ellipsisbutton.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/emdash.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/instance.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/iplanet.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/iplanet_logo.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/iws_instance-1.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/iws_instance-2.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/iws_instance.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/iws_reg-1.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/iws_reg-2.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/iws_ver-1.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/line.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/module.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/serverreg-allnodes.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/sessmgr.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/tip.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/toplevel.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/vsinstance.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/warn.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images/websvrnode.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/index.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/index.xml
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/iwsmap.jhm
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/javahelpsearch/DOCS
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/javahelpsearch/DOCS.TAB
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/javahelpsearch/OFFSETS
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/javahelpsearch/POSITIONS
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/javahelpsearch/SCHEMA
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/javahelpsearch/TMAP
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/server_instance/aboutinstance.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/server_instance/default.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/server_instance/instance.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/server_instance/instanceprop.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/server_instance/reg.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/server_instance/serverinstance.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/server_instance/type.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/toc.xml
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/tools_menu/options.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/tools_menu/ver.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/aboutvsinstance.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/default.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/formlogsess.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/sessmgredit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/tempdir.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/vclassloadedit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/virtual.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/virtualprop.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/vjspparamedit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/vnativedbedit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/vparamencodedit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/vrespbufedit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/vrespcookedit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/vrolemapedit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/vsesscookedit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/vsinstance.gif
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server/vtrackedit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/webapp/aboutwebapps.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/webapp/deployprop.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/webapp/depwebapp.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/webapp/filteredit.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/webapp/filtermap.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/webapp/filtermapval.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/webapp/filterval.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/webapp/lgicon.html
+share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/webapp/smicon.html
 share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/javahelpsearch/DOCS
 share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/javahelpsearch/DOCS.TAB
 share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/javahelpsearch/OFFSETS
@@ -117,6 +207,7 @@ share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/webapp/filterval.html
 share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/webapp/lgicon.html
 share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/webapp/smicon.html
 share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/HelpSet.hs
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/HelpSet_ja.hs
 share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/JavaHelpSearch/DOCS
 share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/JavaHelpSearch/DOCS.TAB
 share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/JavaHelpSearch/OFFSETS
@@ -131,6 +222,21 @@ share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/idx.xml
 share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/images/arrow.gif
 share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/images/dbschemanode.gif
 share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/images/tip.gif
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/JavaHelpSearch/DOCS
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/JavaHelpSearch/DOCS.TAB
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/JavaHelpSearch/OFFSETS
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/JavaHelpSearch/POSITIONS
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/JavaHelpSearch/SCHEMA
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/JavaHelpSearch/TMAP
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/Map.jhm
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/credits.html
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/dbschema.html
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/ide.css
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/idx.xml
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/images/arrow.gif
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/images/dbschemanode.gif
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/images/tip.gif
+share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/toc.xml
 share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/toc.xml
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/JavaHelpSearch/DOCS
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/JavaHelpSearch/DOCS.TAB
@@ -147,6 +253,94 @@ share/java/forte4j/docs/com/sun/forte4j/persistence/docs/images/node_PC_relation
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/images/node_database.gif
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/images/tip.gif
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/images/warn.gif
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/JavaHelpSearch/DOCS
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/JavaHelpSearch/DOCS.TAB
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/JavaHelpSearch/OFFSETS
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/JavaHelpSearch/POSITIONS
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/JavaHelpSearch/SCHEMA
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/JavaHelpSearch/TMAP
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/credits.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/ide.css
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/images/MakePersistent-1.gif
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/images/arrow.gif
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/images/dbschemanode.gif
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/images/node_PC_relationship_field.gif
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/images/node_database.gif
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/images/tip.gif
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/images/warn.gif
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen/GenerateJava.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen/GenerationOptions.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen/NamePropertyEditor.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen/gencombinations.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen/javagen.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen/javamapping.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen/javaoptions.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen/javasummary.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen/javatarget.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen/relationshipnaming.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/FieldMapping.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/JointoForeignKey.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/LocaltoForeign.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/LocaltoJoinKey.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/ManagedRelationships.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/MapClass.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/RelationshipMapping.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/RelationshipMappingWizard.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/SecondaryTable.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/fieldmappingproperties.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/fieldmappings.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/mapfieldtomultiple.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/mapoverview.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/mappingprereqs.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/mapselecttables.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/mapwizardoverview.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/relmapwizovrvw.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/secondarytablesetup.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/selectpcclass.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping/selectprimarytable.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/DevelopmentTasks.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/EJBBeans.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/EJBIPlanetconcepts.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/EJBJndi.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/EJBResource.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/EJBTransactions.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/EJBcmt.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/EJBconcepts1.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/J2EERIconcepts.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/JDBC.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/Mapping.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/OkUndo.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/Persistence.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/Relationships.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/Tables.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/TransparentPersistence.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview/settings.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/pc/FieldProperties.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/pc/MakePersistenceCapable.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/pc/MakePersistent.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/pc/Properties.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/pc/persistintro.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/TPConcurrencyControl.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/TPCreating.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/TPDeleting.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/TPInstanceIdentity.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/TPPM.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/TPPMF.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/TPQuerying.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/TPRuntime.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/TPTags.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/TPUpdating.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime/debugging.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/tasks/CaptureSchema.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/tasks/GenerateJava.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/tasks/GettingStarted.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/tasks/JarFile.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/tasks/Migration.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/tasks/Runapp.html
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/tp-idx.xml
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/tp-toc.xml
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/tp.map
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/welcome.html
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/javagen/GenerateJava.html
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/javagen/GenerationOptions.html
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/javagen/NamePropertyEditor.html
@@ -220,6 +414,7 @@ share/java/forte4j/docs/com/sun/forte4j/persistence/docs/tp-idx.xml
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/tp-toc.xml
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/tp.hs
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/tp.map
+share/java/forte4j/docs/com/sun/forte4j/persistence/docs/tp_ja.hs
 share/java/forte4j/docs/com/sun/forte4j/persistence/docs/welcome.html
 share/java/forte4j/docs/forteweb.html
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/JavaHelpSearch/DOCS
@@ -257,6 +452,7 @@ share/java/forte4j/docs/org/netbeans/modules/corba/docs/corba-toc.xml
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/corba.hs
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/corbaMap.jhm
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/corba_intro.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/corba_ja.hs
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/credits.html
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/debugging/corba_debugging.html
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/generating/arrow.gif
@@ -280,6 +476,77 @@ share/java/forte4j/docs/org/netbeans/modules/corba/docs/images/yellow-ball.gif
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/irbrowser/corba_irbrowser.html
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/irbrowser/corba_irbrowser_connecting.html
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/irbrowser/corba_irbrowser_using.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/JavaHelpSearch/DOCS
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/JavaHelpSearch/DOCS.TAB
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/JavaHelpSearch/OFFSETS
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/JavaHelpSearch/POSITIONS
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/JavaHelpSearch/SCHEMA
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/JavaHelpSearch/TMAP
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/POAintro.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/adapteractivator.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/changepol.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/displayprop.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/newchildpoa.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/policies.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/regpoactivator.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/regservant.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/servantactivator.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/servantlocator.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA/unregistering.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/completing/arrow.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/completing/corba_completing.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/completing/corba_completing_client.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/completing/corba_completing_server.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/completing/objcode.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/completing/resolvecode.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/concepts/CORBA1.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/concepts/CORBA1.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/concepts/corba_concepts.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/concepts/corba_concepts_basics.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/concepts/corba_concepts_files.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/concepts/corba_concepts_procs.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/configuringorb.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/corba-idx.xml
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/corba-toc.xml
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/corbaMap.jhm
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/corba_intro.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/credits.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/debugging/corba_debugging.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/generating/arrow.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/generating/corba_generating.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/generating/corba_generating_client.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/generating/corba_generating_idl.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/generating/corba_generating_server.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/generating/corba_generating_tmplclient.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/generating/corba_generating_tmplserver.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/ide.css
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images/arrow.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images/cswitch.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images/nb_spacer_t.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images/space_8pix.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images/spacer2_t.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images/spacer_4pix.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images/tip.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images/toplevel.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images/warn.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images/yellow-ball.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/irbrowser/corba_irbrowser.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/irbrowser/corba_irbrowser_connecting.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/irbrowser/corba_irbrowser_using.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/nsbrowser/corba_nsbrowser.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/nsbrowser/corba_nsbrowser_binding.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/nsbrowser/corba_nsbrowser_connecting.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/settings/arrow.gif
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/settings/corba_getsettings.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/settings/corba_settings.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/settings/corba_settings_orbnodes.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/setup/corba_setup.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/setup/corba_setup_ide.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/setup/corba_setup_idl.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/setup/corba_setup_irbrowser.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/setup/corba_setup_nsbrowser.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/setup/corba_setup_runtime.html
+share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/setup/corba_setup_supportedorbs.html
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/nsbrowser/corba_nsbrowser.html
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/nsbrowser/corba_nsbrowser_binding.html
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/nsbrowser/corba_nsbrowser_connecting.html
@@ -295,6 +562,7 @@ share/java/forte4j/docs/org/netbeans/modules/corba/docs/setup/corba_setup_nsbrow
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/setup/corba_setup_runtime.html
 share/java/forte4j/docs/org/netbeans/modules/corba/docs/setup/corba_setup_supportedorbs.html
 share/java/forte4j/docs/org/netbeans/modules/db/docs/HelpSet.hs
+share/java/forte4j/docs/org/netbeans/modules/db/docs/HelpSet_ja.hs
 share/java/forte4j/docs/org/netbeans/modules/db/docs/JavaHelpSearch/DOCS
 share/java/forte4j/docs/org/netbeans/modules/db/docs/JavaHelpSearch/DOCS.TAB
 share/java/forte4j/docs/org/netbeans/modules/db/docs/JavaHelpSearch/OFFSETS
@@ -328,6 +596,44 @@ share/java/forte4j/docs/org/netbeans/modules/db/docs/images/table.gif
 share/java/forte4j/docs/org/netbeans/modules/db/docs/images/tip.gif
 share/java/forte4j/docs/org/netbeans/modules/db/docs/images/view.gif
 share/java/forte4j/docs/org/netbeans/modules/db/docs/images/warn.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/JavaHelpSearch/DOCS
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/JavaHelpSearch/DOCS.TAB
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/JavaHelpSearch/OFFSETS
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/JavaHelpSearch/POSITIONS
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/JavaHelpSearch/SCHEMA
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/JavaHelpSearch/TMAP
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/Map.jhm
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/addcopycols.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/adddriver.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/browstruct.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/connectdb.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/connusupp.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/createtables.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/createviews.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/credits.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/db-idx.xml
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/dbadapt.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/dbconfig.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/dbexpovew.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/dbmod.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/delobj.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/ide.css
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/arrow.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/column.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/columnForeign.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/columnIndex.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/columnPrimary.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/foreignKeys.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/index.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/table.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/tip.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/view.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images/warn.gif
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/manipsql.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/misc.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/testdriver.html
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/toc.xml
+share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/viewdata.html
 share/java/forte4j/docs/org/netbeans/modules/db/docs/manipsql.html
 share/java/forte4j/docs/org/netbeans/modules/db/docs/misc.html
 share/java/forte4j/docs/org/netbeans/modules/db/docs/testdriver.html
@@ -362,7 +668,43 @@ share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/images/tip.gif
 share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/images/webappdefsrvnodeicon.gif
 share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/index.xml
 share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/j2eeserver.hs
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/j2eeserver_ja.hs
 share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/j2eeservermap.jhm
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/JavaHelpSearch/DOCS
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/JavaHelpSearch/DOCS.TAB
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/JavaHelpSearch/OFFSETS
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/JavaHelpSearch/POSITIONS
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/JavaHelpSearch/SCHEMA
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/JavaHelpSearch/TMAP
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/credits.html
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/general/about_the_j2eeserver_module.html
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/glossary/j2eeserverdef.html
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/glossary/j2eesrvrdef.html
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/glossary/webserverdef.html
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/ide.css
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/arrow.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/defaultj2eeappserver.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/defaultsrvrnodes.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/defaultwebserver.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/defsrvrnodeicon.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/installedejbsever.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/installedsrvnodes.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/installedwebserver.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/instldsrvrnodeicon.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/iplanet_logo.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/j2eeappdefsrvnodeicon.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/serverreg-allnodes.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/srvregnodeicon.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/tip.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images/webappdefsrvnodeicon.gif
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/index.xml
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/j2eeservermap.jhm
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/nodes/default_servers_node.html
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/nodes/installed_servers_node.html
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/nodes/j2ee_applications_defsrv_node.html
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/nodes/server_registry_node.html
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/nodes/web_applications_defsrv_node.html
+share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/toc.xml
 share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/nodes/default_servers_node.html
 share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/nodes/installed_servers_node.html
 share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/nodes/j2ee_applications_defsrv_node.html
@@ -370,6 +712,7 @@ share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/nodes/server_regis
 share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/nodes/web_applications_defsrv_node.html
 share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/toc.xml
 share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/HelpSet.hs
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/HelpSet_ja.hs
 share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/JavaHelpSearch/DOCS
 share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/JavaHelpSearch/DOCS.TAB
 share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/JavaHelpSearch/OFFSETS
@@ -385,6 +728,47 @@ share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/images/backgrnd.gif
 share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/images/logo.gif
 share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/images/tip.gif
 share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/images/warn.gif
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/JavaHelpSearch/DOCS
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/JavaHelpSearch/DOCS.TAB
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/JavaHelpSearch/OFFSETS
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/JavaHelpSearch/POSITIONS
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/JavaHelpSearch/SCHEMA
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/JavaHelpSearch/TMAP
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/Map.jhm
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/credits.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/db-idx.xml
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/ide.css
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/images/arrow.gif
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/images/backgrnd.gif
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/images/logo.gif
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/images/tip.gif
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/images/warn.gif
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/JDBCRowset.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/NBCachedRowSet.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/NBJDBCRowSet.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/NBWebRowSet.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/WebRowset.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/addcomp.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/colsel.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/datanav.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/rowset.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/rowsetcodegenprops.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/rowseteventprops.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/rowsetotherprops.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/rowsetprops.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/runapp.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/setconn.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/setdata.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/storeproc.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab/welcome.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbcwiz/jdbc0.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbcwiz/jdbc0a.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbcwiz/jdbc1.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbcwiz/jdbc2.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbcwiz/jdbc3.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbcwiz/jdbc4.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbcwiz/jdbc5.html
+share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/toc.xml
 share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/jdbctab/JDBCRowset.html
 share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/jdbctab/NBCachedRowSet.html
 share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/jdbctab/NBJDBCRowSet.html
@@ -694,6 +1078,7 @@ share/java/forte4j/docs/org/netbeans/modules/usersguide/ide-idx.xml
 share/java/forte4j/docs/org/netbeans/modules/usersguide/ide-toc.xml
 share/java/forte4j/docs/org/netbeans/modules/usersguide/ide.css
 share/java/forte4j/docs/org/netbeans/modules/usersguide/ide.hs
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ide_ja.hs
 share/java/forte4j/docs/org/netbeans/modules/usersguide/images/arrow.gif
 share/java/forte4j/docs/org/netbeans/modules/usersguide/images/contents.gif
 share/java/forte4j/docs/org/netbeans/modules/usersguide/images/cswitch.gif
@@ -712,6 +1097,652 @@ share/java/forte4j/docs/org/netbeans/modules/usersguide/internationalize/manuali
 share/java/forte4j/docs/org/netbeans/modules/usersguide/internationalize/replacingformat.html
 share/java/forte4j/docs/org/netbeans/modules/usersguide/internationalize/runninglocale.html
 share/java/forte4j/docs/org/netbeans/modules/usersguide/internationalize/testingwizard.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/JavaHelpSearch/DOCS
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/JavaHelpSearch/DOCS.TAB
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/JavaHelpSearch/OFFSETS
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/JavaHelpSearch/POSITIONS
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/JavaHelpSearch/SCHEMA
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/JavaHelpSearch/TMAP
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/Map.jhm
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/adv-comp-exec.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/building.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/compiling.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/compwith.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/custom-tasks.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/editing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/exec-proj.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/exec-targ.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/exp-classpath.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/ident.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/images/AntIcon.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/images/AntIconError.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/images/DataTypeIcon.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/images/ElementIcon.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/images/EmphasizedTargetIcon.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/images/TargetIcon.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/images/TaskIcon.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/running.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/settings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/adding.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/beanicon.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/container.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/creating.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/customizing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/deleting.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/eventsets.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/generating.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/getset.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/glossary_beanprop.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/glossary_bound.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/glossary_constrained.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/glossary_event.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/glossary_indexedprops.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/glossary_introspection.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/glossary_serialized.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/images/bean.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/images/check.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/images/red-x.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/nodes.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/properties.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/compile.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/compile_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/default.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/delete.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/disable.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/error.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/external.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/fastjavac.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/internal.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/new.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/output.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/remove.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/stop.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/template.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile/types_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/configure.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/menu.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/menu_commands.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/menu_create.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/menu_delete.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/module.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/output.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/popup.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/setup.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/system_settings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/tb_commands.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/tb_create.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/tb_delete.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/tb_move.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/tb_save.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure/toolbar.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/credits.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_class.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_enable.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_exception.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_line.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_method.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_remove.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_set.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_source.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_thread.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_variable.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/breakpoint_window.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/glossary_breakpoint.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/images/toggleBreakpoint.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debug.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debugger/applet.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debugger/configure.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debugger/debugger_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debugger/default.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debugger/jdk.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debugger/new.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debugger/project_default.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debugger/remove.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debugger/template.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/environment/attachvm_window.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/environment/callstacktab.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/environment/classestab.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/environment/debug_window.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/environment/images/current_session.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/environment/options.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/environment/toolbar.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/environment/workspace.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/jpda/jpda.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/running/attach.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/running/pause.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/running/running_cursor.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/running/running_debugger.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/running/running_end.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/running/running_first.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/running/running_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/running/running_resume.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/running/stepping.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/sessions/finishdialog.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/sessions/finishsession.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/sessions/persistent.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/sessions/restartsession.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/sessions/sessions.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/sessions/startsession.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/threads/callstack.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/threads/change.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/threads/resume.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/threads/source.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/threads/suspend.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/threads/threads_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/threads/variables.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/variables/modify.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/variables/value.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/variables/variables_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/watches/delete_watch.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/watches/fix.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/watches/modify.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/watches/watch.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/watches/watch_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/watches/watch_window.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/bookmarks.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/codecompletion/completing-exp.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/codecompletion/completing-tag.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/codecompletion/deleting-pdb.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/codecompletion/disabling.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/codecompletion/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/codecompletion/parserdatabase.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/codecompletion/settingdelay.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/codecompletion/settingshortcuts.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/configuring/configuring.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/configuring/indentation.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/configuring/javaeditor-props.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/configuring/keybindings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/configuring/settingkeybdshorts.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/editorwindow.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/fastimport.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/fastopen.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/find.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/formatting.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/goto.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/images/quickbrowse.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/imageview.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/jumplist.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/macros/abbreviations.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/macros/editing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/macros/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/macros/invoking.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/macros/recording.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/newcode.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/opening.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/othershortcuts.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/tabs.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/toolbar.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/wordmatch.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/filesystems_classpath.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/filesystems_disable-compile.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/filesystems_ignore-files.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/filesystems_jdk.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/filesystems_mounting.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/filesystems_openfile.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/filesystems_order.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/filesystems_removing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/filesystems_settings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/glossary_filesystem.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems/glossary_mounting.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/addingbutton.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/addingevt.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/addinglabel.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/chooselyout.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/addingbutton.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/addingevt.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/addinglabel.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/chooselyout.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/colorswitch.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/compandrun.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/createcontainer.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/images/cswitch.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/setupbutton.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/steppingcode.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/viewingclass.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/compandrun.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/createcontainer.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/ide.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/idetour.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/keyconcepts.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/setupbutton.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/steppingcode.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/tutorials.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/viewingclass.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/wkspcs.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/component-inspector.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/adding.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/designing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/editing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/images/addmode-menu.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/images/addmode.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/images/connectmode.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/images/selectmode.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/inplace-editing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/moving.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/palette.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/reordering.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/selecting.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/configuring.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/connecting/code.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/connecting/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/connecting/source.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/connecting/target.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/creatingforms.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/custompalette/creating.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/custompalette/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/custompalette/moving.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/custompalette/removing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/events/defining.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/events/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/events/multiple.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/events/removing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/events/renaming.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/formeditor.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/images/inspector.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/images/modes-notabs.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/images/testmode.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/custom_mgr.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/gbcustomizer.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/managers/absolute.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/managers/border.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/managers/box.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/managers/card.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/managers/flow.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/managers/grid.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/managers/gridbag.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/managers/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/managers/null.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/props.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/setting.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/mdi.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/menus/current.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/menus/events.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/menus/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/menus/item.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/menus/menu.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/menus/menubar.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/menus/popup.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/modes.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/source/external.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/source/guarded.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/source/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/source/modifying/component.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/source/modifying/form.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/source/modifying/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/source/modifying/property.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ide-idx.xml
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ide-toc.xml
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ide.css
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/images/arrow.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/images/contents.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/images/cswitch.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/images/index.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/images/search.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/images/space_8pix.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/images/tip.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/images/warn.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize/addparams.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize/autoinsert.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize/custominter.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize/formedstrings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize/i18nwizard.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize/international.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize/manualinsert.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize/replacingformat.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize/runninglocale.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize/testingwizard.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/images/rootFolder.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/images/upFolder.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/jarpackager.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/jarpackager_contentpane.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/jarpackager_creating.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/jarpackager_execute.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/jarpackager_filter.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/jarpackager_manifest.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/jarpackager_modifying.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/jarpackager_options.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/jarpackager_updating.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/imt/configuring.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/imt/create-imports.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/imt/import.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/imt/remove-unused.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/imt/resolve-ids.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/java_sources.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/override.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/synchronizing/intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/synchronizing/new-interface.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/synchronizing/properties.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/synchronizing/template.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/synchronizing/update-interface.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/addcomment.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/auto_comment_window.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/case_sensitive.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/comment.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/customize.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/doc_comment_window.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/doclet.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/executor.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/externaljavadoc.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/generate.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/glossary_doclet.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/back.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/forward.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/history.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/home.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/no_comment.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/ok.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/package.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/partial.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/private.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/protected.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/public.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/reload.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/sort_name.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/sort_package.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/sort_type.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/stop.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images/view_source.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/internaljavadoc.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/javadoc_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/jdkdocs.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/output.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/search.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/search_path.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/search_window.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/searchengine.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/stylesheet.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/concepts/JNDI1.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/concepts/jndi_concepts_basics.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/concepts/jndi_concepts_procs.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/jndi_intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/jndibrowser/jndi_jndibrowser_addprovider.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/jndibrowser/jndi_jndibrowser_commands.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/jndibrowser/jndi_jndibrowser_connect.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/jndibrowser/jndi_jndibrowser_generating.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/settings/jndi_settings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jsp/jsp_compile.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jsp/jsp_create.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jsp/jsp_edit.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jsp/jsp_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jsp/jsp_queryparams.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jsp/jsp_run.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/modules/autoupdate.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/modules/managingmods.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/modules/newmodule.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/browser.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/browser/browser_member.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/browser/browser_object.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/browser/browser_package.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/browser/browser_packagefilter.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/browser/images/expand.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/browser/images/tree.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/explorer.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/activationGroup.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/activationItem.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/activationItemOff.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/activationSystem.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/activationSystemErr.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/class.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/classError.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/classMain.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/class_source.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/constructor.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/constructorPackage.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/constructorPrivate.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/constructorProtected.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/constructorPublic.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/customizer.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/defaultFolder.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/disabled.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/disableddriver.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/driver.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/editable.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/error-badge.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/error.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/eventSetMulticast.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/eventSetUnicast.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/executable-badge.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/file.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/form.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/formError.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/formMain.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/formobje.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/groupShadow.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/htmlEdit.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/imageObject.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/initializer.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/initializerSt.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/instanceObject.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/interface.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/jarFS.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/jarObject.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/jndi.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/jspObject.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/localFS.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/method.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/methodPackage.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/methodPrivate.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/methodProtected.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/methodPublic.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/methodStPackage.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/methodStPrivate.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/methodStProtected.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/methodStPublic.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/methods.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/needs-compile.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/otherDOs.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/patternGroup.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/projectDesktop.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/propertiesKey.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/propertiesLocale.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/propertiesObject.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/propertyIndexedRO.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/propertyIndexedRW.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/propertyIndexedWO.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/propertyRO.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/propertyRW.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/propertyWO.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/providerfolder.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/repository.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/rmi.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/rmiError.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/rmiMain.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/rmiRegistry.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/rmiServer.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/rmiServerOff.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/rmiService.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/searchDoc.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/ser.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/serError.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/serMain.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/sort-by-name.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/sort-by-type.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/unsorted.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/urlObject.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/variable.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/variablePackage.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/variablePrivate.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/variableProtected.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/variablePublic.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/variableStPackage.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/variableStPrivate.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/variableStProtected.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/variableStPublic.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images/variables.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_clipboard-ops.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_elements.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_file-extensions.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_group.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_icons.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_new.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_opening.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_packages.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_properties.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_props-toolbar.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_refreshing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_runtime.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_saving.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/objects_show-extensions.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search/search.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search/search_combo.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search/search_date.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search/search_filetype.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search/search_modifying.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search/search_name.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search/search_predefining.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search/search_results-window.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search/search_status.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search/search_text.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/templates/template_group.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/templates/template_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/templates/template_macros.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/templates/template_modifying.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/templates/template_new.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/pending.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project_adding-existing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project_adding-new.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project_comp-run-debug.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project_creating.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project_delete-file.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project_deleting.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project_importing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project_save-options.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project_settings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project/project_switching.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/propfiles/addinglocale.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/propfiles/addingprops.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/propfiles/creatingprops.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/propfiles/editinglocale.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/propfiles/images/propertiesObject.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/propfiles/modifyprops.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/propfiles/propfile.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/propfiles/removingprops.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/activatebrowser/rmi_activatebrowser.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/activatebrowser/rmi_activatebrowser_starting.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/activatebrowser/rmi_activatebrowser_usinggroup.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/activatebrowser/rmi_activatebrowser_usingobject.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/activatebrowser/rmi_activatebrowser_usingsystem.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/completing/rmi_compiling_client.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/completing/rmi_compiling_server.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/completing/rmi_completing_client.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/completing/rmi_completing_server.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/concepts/RMI1.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/concepts/rmi_concepts.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/concepts/rmi_concepts_basics.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/concepts/rmi_concepts_files.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/concepts/rmi_concepts_procs.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/generating/rmi_generating.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/generating/rmi_generating_client.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/generating/rmi_generating_server.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/registrybrowser/rmi_registrybrowser.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/registrybrowser/rmi_registrybrowser_starting.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/registrybrowser/rmi_registrybrowser_using.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/registrybrowser/rmi_registrybrowser_viewing.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/rmi_intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/rmi_wizard.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/settings/rmi_settings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/settings/rmi_settings_compilernode.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/settings/rmi_settings_debuggernode.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/settings/rmi_settings_executionnode.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/applet.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/arguments.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/executors.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/external.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/images/clock_execution.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/internal.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/jsp.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/locale.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/mainclass.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/new.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/options.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/output_window.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/project.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/remove.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/run.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/run_applet.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/run_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/startup.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/template.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/vm_arguments.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/workspace.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/shortcuts/editorcuts.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/shortcuts/kybdshortcuts.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/shortcuts/menucuts.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/cvs-nb/cvs_calling.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/cvs-nb/cvs_commands.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/cvs-nb/cvs_create-fs.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/cvs-nb/cvs_fresh-checkout.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/cvs-nb/cvs_intro.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/cvs-nb/cvs_local.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/cvs-nb/cvs_mountpoint.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/cvs-nb/cvs_settings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/cvs-nb/cvs_wizard.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images/badgeError.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images/badgeLocModified.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images/badgeLocRemoved.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images/badgeMergeConflict.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images/badgeNeedsCheckout.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images/badgeRunning.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images/badgeUpToDate.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images/badgeWaiting.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images/next.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images/prev.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcs_binary.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcs_cygwin.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcs_diffs.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcs_filesystemsettings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcs_globalsettings.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcs_output.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcs_overview.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcs_refresh.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcs_revexplorer.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcs_status.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/images/class_source.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/images/form.gif
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcs_vcsgeneric.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_add-command.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_calling.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_command-props.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_custom-pvcs.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_custom-vss.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_list.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_modifying.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_mounting.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_newprofile.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_variables.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_vars-basic.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_vars-creating.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_vars-runtime.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_vars-subcode.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/vcsgeneric_vars-syntax.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/webbrowser/bookmark.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/webbrowser/configure.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/webbrowser/default.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/webbrowser/home_page.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/webbrowser/httpserver-options.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/webbrowser/proxy.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/webbrowser/swingbrowser.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/webbrowser/webbrowser.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/clone.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/docking.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/welcome.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/workspace.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/workspace_auto.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/workspace_create.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/workspace_customize.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/workspace_delete.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/workspace_jump.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/workspace_mdi.html
+share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace/workspace_rename.html
 share/java/forte4j/docs/org/netbeans/modules/usersguide/jarpackager/images/rootFolder.gif
 share/java/forte4j/docs/org/netbeans/modules/usersguide/jarpackager/images/upFolder.gif
 share/java/forte4j/docs/org/netbeans/modules/usersguide/jarpackager/jarpackager.html
@@ -1134,6 +2165,145 @@ share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/images/toplevel.gif
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/images/warn.gif
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/images/webmodule.gif
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/images/yellow-ball.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/JavaHelpSearch/DOCS
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/JavaHelpSearch/DOCS.TAB
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/JavaHelpSearch/OFFSETS
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/JavaHelpSearch/POSITIONS
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/JavaHelpSearch/SCHEMA
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/JavaHelpSearch/TMAP
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/concepts/concepts_war.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/concepts/deployd.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/concepts/jsp.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/concepts/jspsyntax.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/concepts/servlet.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/concepts/taglib.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/concepts/tldfile.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/concepts/webapp.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/concepts/webmod.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/credits.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/prop_ctxparam.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/prop_error.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/prop_jsp.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/prop_mime.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/prop_servlet.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/prop_servmap.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/prop_taglib.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/prop_welcome.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/ref_ejbrefs.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/ref_envent.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/ref_resref.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs/sec_secrole.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_properties.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_references.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_security.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/ide.css
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/condit/choose.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/condit/condtags_jump.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/condit/if.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/condit/switch.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/dbase/cleanup.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/dbase/connection.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/dbase/dbasetags_jump.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/dbase/query.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/dbase/transaction.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/jdo/jdoQuery.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/jdo/jdotags_jump.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/jdo/persistence.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/present/field.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/present/fielditer.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/present/iterator.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/present/paramet.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/present/prestags_jump.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/resultsapi/level0.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/resultsapi/level1.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/resultsapi/level2.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/resultsapi/reslevels.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/resultsapi/wrapintro.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/resultsapi/wrappers.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/tagintro.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ide.css
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/arrow.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/cswitch.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/emdash.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/image6.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/index.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/nb_spacer_t.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/reload.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/search.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/sort.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/sortasc.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/space_8pix.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/spacer2_t.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/spacer_4pix.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/time.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/tip.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/toplevel.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/warn.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/webmodule.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images/yellow-ball.gif
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/jsp-idx.xml
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/jsp-toc.xml
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/jsp/jsp_debug.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/jsp/jsp_debuggrprops.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/jsp/jsp_togglebreakpt.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/jspMap.jhm
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/monitor/ctx_monitorintro.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/monitor/delete.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/monitor/resend.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/monitor/sort.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/monitor/store.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/monitor/view.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/overvw/IEintro.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglib/createtaglib.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglib/ctx_scrvarcust.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglib/ctx_tagattcust.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglib/ctx_tagcust.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglib/ctx_taglibcust.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglib/generate.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglib/packlib.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglibUI/addfilesys.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglibUI/ctx_repaddto.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglibUI/repaddfrom.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglibUI/tsintro.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/tomcat/tomcat_contprop.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/tomcat/tomcat_delcont.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/tomcat/tomcat_editconfig.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/tomcat/tomcat_plugin.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/tomcat/tomcat_proped.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/tomcat/tomcat_servcont.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/tomcat/tomcat_setdef.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/tomcat/tomcat_start.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/tomcat/tomcat_stop.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/warpkg/war_delete.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/warpkg/war_editprop.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/warpkg/war_exclude.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/warpkg/war_extracttld.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/warpkg/war_import.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/warpkg/war_unpack.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/warpkg/war_viewcont.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/warpkg/war_xtrafiles.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_additems.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_addjar.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_addservlet.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_addtglb.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_chngdir.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_createnew.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_dbggrprops.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_deploy.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_editdd.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_enbldatab.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_installptbase.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_jump.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_loadexist.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_multipletest.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_newdir.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_packagewar.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_placefiles.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_reverse.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_servconfig.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_singletest.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_tpclasses.html
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod/mod_usetags.html
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/jsp-idx.xml
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/jsp-toc.xml
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/jsp.hs
@@ -1141,6 +2311,7 @@ share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/jsp/jsp_debug.html
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/jsp/jsp_debuggrprops.html
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/jsp/jsp_togglebreakpt.html
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/jspMap.jhm
+share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/jsp_ja.hs
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/monitor/ctx_monitorintro.html
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/monitor/delete.html
 share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/monitor/resend.html
@@ -1219,6 +2390,36 @@ share/java/forte4j/docs/org/netbeans/modules/xml/docs/JavaHelpSearch/TMAP
 share/java/forte4j/docs/org/netbeans/modules/xml/docs/credits.html
 share/java/forte4j/docs/org/netbeans/modules/xml/docs/ide.css
 share/java/forte4j/docs/org/netbeans/modules/xml/docs/index.xml
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/JavaHelpSearch/DOCS
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/JavaHelpSearch/DOCS.TAB
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/JavaHelpSearch/OFFSETS
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/JavaHelpSearch/POSITIONS
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/JavaHelpSearch/SCHEMA
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/JavaHelpSearch/TMAP
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/credits.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/ide.css
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/index.xml
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/toc.xml
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlMap.jhm
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/checkcss.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/copypastecss.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/createcss.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/createdtd.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/createxml.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/createxsl.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/editcss.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/editviewdtd.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/editxml.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/generatedom.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/generatesax.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/images/arrow.gif
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/images/tip.gif
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/nodeview.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/texteditor.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/treeeditor.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/validatexml.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/xmlcatalogs.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/xmlmodule.html
 share/java/forte4j/docs/org/netbeans/modules/xml/docs/toc.xml
 share/java/forte4j/docs/org/netbeans/modules/xml/docs/xmlMap.jhm
 share/java/forte4j/docs/org/netbeans/modules/xml/docs/xmlmodule.hs
@@ -1241,6 +2442,7 @@ share/java/forte4j/docs/org/netbeans/modules/xml/docs/xmlmodule/treeeditor.html
 share/java/forte4j/docs/org/netbeans/modules/xml/docs/xmlmodule/validatexml.html
 share/java/forte4j/docs/org/netbeans/modules/xml/docs/xmlmodule/xmlcatalogs.html
 share/java/forte4j/docs/org/netbeans/modules/xml/docs/xmlmodule/xmlmodule.html
+share/java/forte4j/docs/org/netbeans/modules/xml/docs/xmlmodule_ja.hs
 share/java/forte4j/lib/branding
 share/java/forte4j/lib/core.jar
 share/java/forte4j/lib/ext/bsh-1_0-fj.jar
@@ -1258,6 +2460,9 @@ share/java/forte4j/lib/ext/jh.jar
 share/java/forte4j/lib/ext/jndi.jar
 share/java/forte4j/lib/ext/ldap.jar
 share/java/forte4j/lib/ext/ldapbp.jar
+share/java/forte4j/lib/ext/locale/ddl_ja.jar
+share/java/forte4j/lib/ext/locale/logger_ja.jar
+share/java/forte4j/lib/ext/locale/rmi-ext_ja.jar
 share/java/forte4j/lib/ext/logger.jar
 share/java/forte4j/lib/ext/nis.jar
 share/java/forte4j/lib/ext/openorb-1.0.2.jar
@@ -1274,7 +2479,12 @@ share/java/forte4j/lib/ext/xerces.jar
 share/java/forte4j/lib/ide.ks
 share/java/forte4j/lib/locale/core_f4j.jar
 share/java/forte4j/lib/locale/core_f4j_ce.jar
+share/java/forte4j/lib/locale/core_f4j_ce_ja.jar
+share/java/forte4j/lib/locale/core_f4j_ja.jar
+share/java/forte4j/lib/locale/core_ja.jar
 share/java/forte4j/lib/locale/openide_f4j.jar
+share/java/forte4j/lib/locale/openide_ja.jar
+share/java/forte4j/lib/locale/updater_ja.jar
 share/java/forte4j/lib/openide-fs.jar
 share/java/forte4j/lib/openide-nodes.jar
 share/java/forte4j/lib/openide-util.jar
@@ -1309,6 +2519,12 @@ share/java/forte4j/modules/ext/iws_ffj.jar
 share/java/forte4j/modules/ext/jasper.jar
 share/java/forte4j/modules/ext/java-gj.jar
 share/java/forte4j/modules/ext/javac.jar
+share/java/forte4j/modules/ext/locale/cvslib_ja.jar
+share/java/forte4j/modules/ext/locale/iplanet-monitor_ja.jar
+share/java/forte4j/modules/ext/locale/iws_ffj_ja.jar
+share/java/forte4j/modules/ext/locale/nb-editor_ja.jar
+share/java/forte4j/modules/ext/locale/persistence-rt_ja.jar
+share/java/forte4j/modules/ext/locale/tomcat-monitor_ja.jar
 share/java/forte4j/modules/ext/nb-editor.jar
 share/java/forte4j/modules/ext/persistence-rt.jar
 share/java/forte4j/modules/ext/rowset.jar
@@ -1341,7 +2557,60 @@ share/java/forte4j/modules/jsp-syntax.jar
 share/java/forte4j/modules/jsp-tomcat.jar
 share/java/forte4j/modules/jsp.jar
 share/java/forte4j/modules/jspie.jar
+share/java/forte4j/modules/locale/ant_ja.jar
+share/java/forte4j/modules/locale/apisupport-lite_ja.jar
+share/java/forte4j/modules/locale/applet_ja.jar
+share/java/forte4j/modules/locale/autoupdate_ja.jar
+share/java/forte4j/modules/locale/beans_ja.jar
+share/java/forte4j/modules/locale/browser_ja.jar
+share/java/forte4j/modules/locale/classfile_ja.jar
+share/java/forte4j/modules/locale/clazz_ja.jar
+share/java/forte4j/modules/locale/corba_ja.jar
+share/java/forte4j/modules/locale/cvs_ja.jar
+share/java/forte4j/modules/locale/db_ja.jar
+share/java/forte4j/modules/locale/dbschema_ja.jar
+share/java/forte4j/modules/locale/dd2beans_ja.jar
+share/java/forte4j/modules/locale/debuggerCore_ja.jar
+share/java/forte4j/modules/locale/editor_ja.jar
+share/java/forte4j/modules/locale/extbrowser_ja.jar
+share/java/forte4j/modules/locale/filecopy_ja.jar
+share/java/forte4j/modules/locale/form_ja.jar
+share/java/forte4j/modules/locale/html_ja.jar
+share/java/forte4j/modules/locale/httpserver_ja.jar
+share/java/forte4j/modules/locale/i18n_ja.jar
+share/java/forte4j/modules/locale/idl-syntax_ja.jar
+share/java/forte4j/modules/locale/image_ja.jar
+share/java/forte4j/modules/locale/iplanet_wsae_ja.jar
+share/java/forte4j/modules/locale/j2eelib_ja.jar
+share/java/forte4j/modules/locale/j2eeserver_ja.jar
+share/java/forte4j/modules/locale/jarpackager_ja.jar
+share/java/forte4j/modules/locale/java_ja.jar
+share/java/forte4j/modules/locale/javacvs_ja.jar
+share/java/forte4j/modules/locale/javadoc_ja.jar
+share/java/forte4j/modules/locale/jdbc_ja.jar
+share/java/forte4j/modules/locale/jndi_ja.jar
+share/java/forte4j/modules/locale/jpdaDebugger_ja.jar
+share/java/forte4j/modules/locale/jsp-syntax_ja.jar
+share/java/forte4j/modules/locale/jsp-tomcat_ja.jar
+share/java/forte4j/modules/locale/jsp_ja.jar
+share/java/forte4j/modules/locale/jspie_ja.jar
+share/java/forte4j/modules/locale/loggerModule_ja.jar
+share/java/forte4j/modules/locale/openidex_ja.jar
+share/java/forte4j/modules/locale/persistence-ui_ja.jar
+share/java/forte4j/modules/locale/pointbase_ja.jar
+share/java/forte4j/modules/locale/projects_ja.jar
+share/java/forte4j/modules/locale/properties_ja.jar
+share/java/forte4j/modules/locale/registration_ja.jar
+share/java/forte4j/modules/locale/rmi_ja.jar
+share/java/forte4j/modules/locale/text_ja.jar
+share/java/forte4j/modules/locale/toolsDebugger_ja.jar
 share/java/forte4j/modules/locale/utilities_f4j.jar
+share/java/forte4j/modules/locale/utilities_f4j_ja.jar
+share/java/forte4j/modules/locale/utilities_ja.jar
+share/java/forte4j/modules/locale/vcscore_ja.jar
+share/java/forte4j/modules/locale/vcsgen_ja.jar
+share/java/forte4j/modules/locale/xml-syntax_ja.jar
+share/java/forte4j/modules/locale/xml_ja.jar
 share/java/forte4j/modules/loggerModule.jar
 share/java/forte4j/modules/openidex.jar
 share/java/forte4j/modules/persistence-ui.jar
@@ -1588,6 +2857,10 @@ share/java/forte4j/uninstall.class
 @dirrm share/java/forte4j/javadoc
 @dirrm share/java/forte4j/docs/org/netbeans/modules/xml/docs/xmlmodule/images
 @dirrm share/java/forte4j/docs/org/netbeans/modules/xml/docs/xmlmodule
+@dirrm share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/xmlmodule
+@dirrm share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja/JavaHelpSearch
+@dirrm share/java/forte4j/docs/org/netbeans/modules/xml/docs/ja
 @dirrm share/java/forte4j/docs/org/netbeans/modules/xml/docs/JavaHelpSearch
 @dirrm share/java/forte4j/docs/org/netbeans/modules/xml/docs
 @dirrm share/java/forte4j/docs/org/netbeans/modules/xml
@@ -1603,6 +2876,26 @@ share/java/forte4j/uninstall.class
 @dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/overvw
 @dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/monitor
 @dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/jsp
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/webmod
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/warpkg
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/tomcat
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglibUI
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/taglib
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/overvw
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/monitor
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/jsp
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/resultsapi
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/present
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/jdo
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/dbase
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags/condit
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/ffj_tags
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit/dd_dialogs
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/dd_edit
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/concepts
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja/JavaHelpSearch
+@dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ja
 @dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/images
 @dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ffj_tags/resultsapi
 @dirrm share/java/forte4j/docs/org/netbeans/modules/web/ie/docs/ffj_tags/present
@@ -1656,6 +2949,88 @@ share/java/forte4j/uninstall.class
 @dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/java
 @dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/jarpackager/images
 @dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/jarpackager
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/workspace
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/webbrowser
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/vcsgeneric
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb/cvs-nb
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/vcs-nb
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/shortcuts
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/run
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/settings
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/registrybrowser
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/generating
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/concepts
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/completing
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi/activatebrowser
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/rmi
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/propfiles/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/propfiles
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/project
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/templates
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/search
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/browser/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects/browser
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/objects
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/modules
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jsp
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/settings
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/jndibrowser
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi/concepts
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jndi
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/javadoc
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/synchronizing
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java/imt
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/java
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/jarpackager
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/internationalize
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/source/modifying
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/source
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/menus
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts/managers
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/layouts
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/events
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/custompalette
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/connecting
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui/components
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/gui
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart/colorswitch
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/getstart
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/filesystems
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/macros
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/configuring
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing/codecompletion
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/editing
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/watches
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/variables
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/threads
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/sessions
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/running
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/jpda
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/environment/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/environment
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/debugger
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug/breakpoint
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/debug
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/configure
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/compile
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/beans
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/ant
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja/JavaHelpSearch
+@dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/ja
 @dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/internationalize
 @dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/images
 @dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide/gui/source/modifying
@@ -1701,11 +3076,22 @@ share/java/forte4j/uninstall.class
 @dirrm share/java/forte4j/docs/org/netbeans/modules/usersguide
 @dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/jdbcwiz
 @dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/jdbctab
+@dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbcwiz
+@dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/jdbctab
+@dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja/JavaHelpSearch
+@dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/ja
 @dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/images
 @dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc/docs/JavaHelpSearch
 @dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc/docs
 @dirrm share/java/forte4j/docs/org/netbeans/modules/jdbc
 @dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/nodes
+@dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/nodes
+@dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/glossary
+@dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/general
+@dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja/JavaHelpSearch
+@dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/ja
 @dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/images
 @dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/glossary
 @dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs/general
@@ -1713,6 +3099,9 @@ share/java/forte4j/uninstall.class
 @dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server/docs
 @dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee/server
 @dirrm share/java/forte4j/docs/org/netbeans/modules/j2ee
+@dirrm share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/db/docs/ja/JavaHelpSearch
+@dirrm share/java/forte4j/docs/org/netbeans/modules/db/docs/ja
 @dirrm share/java/forte4j/docs/org/netbeans/modules/db/docs/images
 @dirrm share/java/forte4j/docs/org/netbeans/modules/db/docs/JavaHelpSearch
 @dirrm share/java/forte4j/docs/org/netbeans/modules/db/docs
@@ -1720,6 +3109,18 @@ share/java/forte4j/uninstall.class
 @dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/setup
 @dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/settings
 @dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/nsbrowser
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/setup
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/settings
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/nsbrowser
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/irbrowser
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/images
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/generating
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/debugging
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/concepts
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/completing
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/POA
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja/JavaHelpSearch
+@dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/ja
 @dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/irbrowser
 @dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/images
 @dirrm share/java/forte4j/docs/org/netbeans/modules/corba/docs/generating
@@ -1739,10 +3140,22 @@ share/java/forte4j/uninstall.class
 @dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/overview
 @dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/mapping
 @dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/javagen
+@dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/tasks
+@dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/runtime
+@dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/pc
+@dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/overview
+@dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/mapping
+@dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/javagen
+@dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/images
+@dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja/JavaHelpSearch
+@dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/ja
 @dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/images
 @dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs/JavaHelpSearch
 @dirrm share/java/forte4j/docs/com/sun/forte4j/persistence/docs
 @dirrm share/java/forte4j/docs/com/sun/forte4j/persistence
+@dirrm share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/images
+@dirrm share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja/JavaHelpSearch
+@dirrm share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/ja
 @dirrm share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/images
 @dirrm share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs/JavaHelpSearch
 @dirrm share/java/forte4j/docs/com/sun/forte4j/modules/dbmodel/docs
@@ -1755,6 +3168,15 @@ share/java/forte4j/uninstall.class
 @dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/tools_menu
 @dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/server_instance
 @dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/javahelpsearch
+@dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/webapp
+@dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/virtual_server
+@dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/tools_menu
+@dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/server_instance
+@dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/javahelpsearch
+@dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/images
+@dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/glossary
+@dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja/general
+@dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/ja
 @dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/images
 @dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/glossary
 @dirrm share/java/forte4j/docs/com/iplanet/iws/integ/forte/docs/general
