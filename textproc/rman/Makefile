@@ -4,9 +4,8 @@
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
 
-DISTNAME=       rman
+DISTNAME=       rman-2.0
 EXTRACT_SUFX=	.tar.Z
 MASTER_SITES=   ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
-WRKSRC=         ${WRKDIR}/rman-2.0
 
 .include <bsd.port.mk>
