@@ -1,0 +1,36 @@
+*** src/lib/var.c.orig	Sun Feb  8 18:38:44 2004
+--- src/lib/var.c	Sun Feb  8 18:39:48 2004
+***************
+*** 120,126 ****
+      int n;
+      int bytes;
+  
+!     if (format == NULL || ap == NULL)
+  	return -1;
+      bytes = 0;
+      while (*format != '\0') {
+--- 120,126 ----
+      int n;
+      int bytes;
+  
+!     if (format == NULL)
+  	return -1;
+      bytes = 0;
+      while (*format != '\0') {
+***************
+*** 204,210 ****
+      int n;
+      var_mvsnprintf_cb_t ctx;
+  
+!     if (format == NULL || ap == NULL)
+  	return -1;
+      if (buffer != NULL && bufsize == 0)
+  	return -1;
+--- 204,210 ----
+      int n;
+      var_mvsnprintf_cb_t ctx;
+  
+!     if (format == NULL)
+  	return -1;
+      if (buffer != NULL && bufsize == 0)
+  	return -1;
