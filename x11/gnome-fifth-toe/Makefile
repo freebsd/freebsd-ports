@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-fifth-toe
 PORTVERSION=	1.4.1b2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -35,7 +36,8 @@ RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
 		AbiWord:${PORTSDIR}/editors/AbiWord \
 		anjuta:${PORTSDIR}/devel/anjuta \
 		guppi-gnumeric:${PORTSDIR}/math/guppi \
-		gnomoku:${PORTSDIR}/games/gnomoku
+		gnomoku:${PORTSDIR}/games/gnomoku \
+		evolution:${PORTSDIR}/mail/evolution
 
 # We're still missing a few things from the "official" distribution
 # All can be found in stable/sources on MASTER_SITE_GNOME
