@@ -6,27 +6,31 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	20020630
+PORTVERSION=	2002.09.01
 CATEGORIES=	devel
+# There are currently no official master sites for it.  Everything is
+# in savannah.gnu.org's CVS only.
 #MASTER_SITES=	http://www.amelek.gda.pl/avr/libc/
-MASTER_SITES=	http://www.amelek.gda.pl/avr/test/ \
-		http://www.enteract.com/~rneswold/avr/:libdoc
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PDFDOC}:libdoc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://people.freebsd.org/~joerg/
 
 MAINTAINER=	joerg@freebsd.org
 
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc \
-		${GMAKE}:${PORTSDIR}/devel/gmake
+		${GMAKE}:${PORTSDIR}/devel/gmake \
+		doxygen:${PORTSDIR}/devel/doxygen \
+		latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
 
+USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 CONFIGURE_SCRIPT= doconf
+# get rid of that silly -mcpu=pentiumpro -current is so fond of. :-(
+MAKE_ENV=	CPUTYPE=foo
 
 PDFDOC=		avr-tools.pdf
 
@@ -49,6 +53,5 @@ do-install:
 			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/$$f \
 				${PREFIX}/share/doc/avr-libc/examples; \
 		done
-		${INSTALL_DATA} ${DISTDIR}/${PDFDOC} ${PREFIX}/share/doc/avr-libc/avr-tools.pdf
 
 .include <bsd.port.mk>

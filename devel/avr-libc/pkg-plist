@@ -19,7 +19,9 @@ avr/include/avr/ioat94k.h
 avr/include/avr/iom103.h
 avr/include/avr/iom128.h
 avr/include/avr/iom161.h
+avr/include/avr/iom162.h
 avr/include/avr/iom163.h
+avr/include/avr/iom169.h
 avr/include/avr/iom323.h
 avr/include/avr/iom8.h
 avr/include/avr/iotn11.h
@@ -60,7 +62,9 @@ avr/lib/avr4/libm.a
 avr/lib/avr5/crtat94k.o
 avr/lib/avr5/crtm128.o
 avr/lib/avr5/crtm161.o
+avr/lib/avr5/crtm162.o
 avr/lib/avr5/crtm163.o
+avr/lib/avr5/crtm169.o
 avr/lib/avr5/crtm323.o
 avr/lib/avr5/libc.a
 avr/lib/avr5/libm.a
@@ -85,7 +89,43 @@ avr/lib/libm.a
 share/doc/avr-libc/AUTHORS
 share/doc/avr-libc/LICENSE
 share/doc/avr-libc/avr-libc-reference.html
-share/doc/avr-libc/avr-tools.pdf
+share/doc/avr-libc/avr-libc-user-manual.pdf
+share/doc/avr-libc/avr-libc-user-manual.ps
+share/doc/avr-libc/avr-libc-user-manual/FAQ.html
+share/doc/avr-libc/avr-libc-user-manual/acks.html
+share/doc/avr-libc/avr-libc-user-manual/dox.css
+share/doc/avr-libc/avr-libc-user-manual/doxygen.png
+share/doc/avr-libc/avr-libc-user-manual/form_0.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2blank.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2doc.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2folderclosed.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2folderopen.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2lastnode.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2link.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2mlastnode.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2mnode.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2node.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2plastnode.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2pnode.png
+share/doc/avr-libc/avr-libc-user-manual/ftv2vertline.png
+share/doc/avr-libc/avr-libc-user-manual/group__avr__eeprom.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__interrupts.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__inttypes.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__io.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__pgmspace.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__sfr.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__sfr__notes.html
+share/doc/avr-libc/avr-libc-user-manual/group__avr__string.html
+share/doc/avr-libc/avr-libc-user-manual/index.html
+share/doc/avr-libc/avr-libc-user-manual/inline_asm.html
+share/doc/avr-libc/avr-libc-user-manual/install_tools.html
+share/doc/avr-libc/avr-libc-user-manual/main.html
+share/doc/avr-libc/avr-libc-user-manual/mem_sections.html
+share/doc/avr-libc/avr-libc-user-manual/modules.html
+share/doc/avr-libc/avr-libc-user-manual/pages.html
+share/doc/avr-libc/avr-libc-user-manual/tree.html
+share/doc/avr-libc/avr-libc-user-manual/tree.js
+share/doc/avr-libc/avr-libc-user-manual/treeview.js
 share/doc/avr-libc/examples/avr-recv.c
 share/doc/avr-libc/examples/io.c
 share/doc/avr-libc/examples/prg
@@ -98,5 +138,6 @@ share/doc/avr-libc/register-usage.txt
 @dirrm avr/lib/avr3
 @dirrm avr/lib/avr4
 @dirrm avr/lib/avr5
+@dirrm share/doc/avr-libc/avr-libc-user-manual
 @dirrm share/doc/avr-libc/examples
 @dirrm share/doc/avr-libc
