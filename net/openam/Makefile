@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	openam
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTNAME=	openam_1.1.3
+DISTNAME=	openam_1.1.4
 
 MAINTAINER=	roger@FreeBSD.org
 
@@ -31,5 +31,9 @@ MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/obj_${OPSYS}_${THE_MACHTYPE}_r/openam ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/share/doc/openh323/openam
+	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${PREFIX}/share/doc/openh323/openam
+	${INSTALL_DATA} ${WRKSRC}/sample_message.wav ${PREFIX}/share/doc/openh323/openam
+	${INSTALL_DATA} ${WRKSRC}/sample_message_g7231.wav ${PREFIX}/share/doc/openh323/openam
 
 .include <bsd.port.mk>
