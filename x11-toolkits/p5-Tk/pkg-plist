@@ -3,6 +3,7 @@ bin/ptksh
 bin/widget
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/fix_4_os2.pl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Adjuster.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/Adjuster.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Tk/After.pm
