@@ -1,0 +1,20 @@
+--- imap-4.5.BETA/src/osdep/unix/Makefile.orig	Sun Feb 21 10:27:22 1999
++++ imap-4.5.BETA/src/osdep/unix/Makefile	Sun Feb 21 10:29:24 1999
+@@ -100,7 +100,7 @@
+  dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+-CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
++CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
+ MAKE=make
+ MV=mv
+ RM=rm -rf
+@@ -190,7 +190,7 @@
+ 	 SPOOLDIR=/var \
+ 	 ACTIVEFILE=/usr/local/news/lib/active \
+ 	 RSHPATH=/usr/bin/rsh \
+-	 BASECFLAGS="-g -O -pipe -DNFSKLUDGE" \
++	 BASECFLAGS="-DNFSKLUDGE -DIGNORE_LOCK_EACCES_ERRORS" \
+ 	 BASELDFLAGS="-lcrypt"
+ 
+ bsi:	# BSD/i386
