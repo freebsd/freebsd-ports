@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0.a
 CATEGORIES=	net linux
-MASTER_SITES=	http://www.edonkey2000.com/files/
-DISTNAME=	ed2k_linux_gui_0.1alpha
+MASTER_SITES=	http://users.aber.ac.uk/tpm01/
 PKGNAMESUFFIX=	-gui-gtk
+DISTNAME=	linux_gui_alpha_unstable
+EXTRACT_SUFX=
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -19,13 +20,11 @@ RUN_DEPENDS=	donkey:${PORTSDIR}/net/edonkey-core \
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
-WRKSRC=		${WRKDIR}/linux_gui_alpha
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 STRIP=
 
 STRIP_CMD=	${LINUXBASE}/usr/bin/strip
-
-DATA_FILES=	gui_lookuplist gui_options
 
 .if exists(/usr/bin/brandelf)
 BRANDELF?=	/usr/bin/brandelf
@@ -35,22 +34,13 @@ BRANDELF?=	brandelf
 
 BINARY_NAME=	ed2k_gui
 
-post-patch:
-	@${SED} -e "s|%%PREFIX%%|${PREFIX}|;s|%%DATADIR%%|${DATADIR}|; \
-		s|%%DATAFILES%%|${DATA_FILES}|" \
-		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}
+	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/${BINARY_NAME}
 
 do-install:
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/todo.txt ${DOCSDIR}
-.endif
-	${MKDIR} ${DATADIR}
-.for file in ${DATA_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
-.endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/bin/${BINARY_NAME}-real
-	${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${BINARY_NAME}
+	@${INSTALL_PROGRAM} ${WRKSRC}/${BINARY_NAME} ${PREFIX}/bin
 
 .include <bsd.port.pre.mk>
 
