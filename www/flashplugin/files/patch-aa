@@ -1,10 +1,13 @@
---- Makefile.orig	Sun Oct  3 02:41:07 1999
-+++ Makefile	Sun Oct  3 02:41:43 1999
-@@ -1,6 +1,4 @@
+--- Makefile.orig	Fri Apr 21 11:47:57 2000
++++ Makefile	Fri Apr 21 11:59:25 2000
+@@ -1,8 +1,6 @@
 -CC=cc
 -CXX=/usr/bin/c++
 -CFLAGS=-I/usr/X11R6/include -I./Lib -I./Plugin -fpic -fno-rtti -DXP_UNIX
+-CFLAGS+=-O2
 +CFLAGS+=-I/usr/X11R6/include -I./Lib -I./Plugin -fpic -fno-rtti -DXP_UNIX
- CFLAGS+=-O2
  CFLAGS+=-DCHECK_TEXT_PLAIN
++CXXFLAGS+=${CFLAGS}
  
+ OBJS = adpcm.o bitmap.o button.o character.o cxform.o \
+ 	displaylist.o flash.o font.o graphic.o matrix.o \
