@@ -1,5 +1,5 @@
---- rio107/rio.cpp.orig	Fri Feb 18 11:07:32 2000
-+++ rio107/rio.cpp	Fri Feb 18 11:08:13 2000
+--- krio/rio.cpp.orig	Fri Feb 18 11:07:32 2000
++++ krio/rio.cpp	Fri Feb 18 11:08:13 2000
 @@ -79,6 +79,13 @@
  	#include	<fcntl.h>
  	#include	<unistd.h>

@@ -1,20 +1,14 @@
---- Makefile.orig	Wed Jul 21 21:39:27 1999
-+++ Makefile	Fri Feb 18 23:18:40 2000
-@@ -1,10 +1,13 @@
- # anyone waht to clean this up for me, and perhaps make it use autoconf?
- 
--CC	= g++
-+CC	= $(CXX)
- RIODIR  = rio107
--CFLAGS	= -Wall -O1 -I/usr/X11R6/include/qt -I/usr/include/kde -I/usr/include/qt -I$(RIODIR)
--# CFLAGS	= -DDEBUG_MESSAGES -Wall -O1 -I/usr/X11R6/include/qt -I/usr/include/kde -I/usr/include/qt -I$(RIODIR)
--LDFLAGS	= -L/usr/X11R6/lib -L/usr/lib -L/usr/include -lqt -lkdecore -lkdeui -lkfile -lkfm -lX11 -lXext
-+CFLAGS	+= -I${X11BASE}/include/X11/qt -I${LOCALBASE}/include -I${X11BASE}/include -I$(RIODIR)
-+LDFLAGS	= -L${X11BASE}/lib -L${LOCALBASE}/lib -lqt -lkdecore -lkdeui -lkfile -lkfm -lX11 -lXext
-+.if ${MACHINE_ARCH} == "alpha"
-+LDFLAGS += -lio
-+.endif
-+
- DEST	= krio
- OBJS	= Krio.o MainWin.o rio.o KRioListView.o
- SOURCES = Krio/Krio.cpp Krio/MainWin.cpp $(RIODIR)/rio.cpp Krio/KRioListView.cpp
+*** krio/Makefile.in.orig	Wed May 24 12:03:10 2000
+--- krio/Makefile.in	Sat Nov 11 09:40:10 2000
+***************
+*** 161,166 ****
+--- 161,169 ----
+  bin_PROGRAMS = krio 
+  krio_SOURCES = KRioQueue.cpp rio.cpp MainWin.cpp Krio.cpp KRioListView.cpp 
+  krio_LDADD = -lkfile -lkfm -lkdeui -lkdecore -lqt -lXext -lX11 $(LIBSOCKET)
++ .if ${MACHINE_ARCH} == "alpha"
++ krio_LDADD += -lio
++ .endif
+  
+  SUBDIRS = docs 
+  
