@@ -1,90 +1,30 @@
---- install_mplus_fonts.orig	Sat May 31 00:02:38 2003
-+++ install_mplus_fonts	Sat May 31 00:06:47 2003
-@@ -2,7 +2,7 @@
- 
- 
- # Install "mplus" directory [ /usr/X11R6/lib/X11/fonts ]
--PREFIX=/usr/X11R6/lib/X11/fonts
-+PREFIX=$1
- 
- # Install M+ bitmap fonts EURO (iso8859-15) [ YES or NO ]
- EURO15=YES
-@@ -20,19 +20,6 @@
+--- install_mplus_fonts.orig	Mon Aug 18 13:26:45 2003
++++ install_mplus_fonts	Mon Aug 18 13:32:03 2003
+@@ -29,18 +29,6 @@
  
  
  
--
 -# Backup/Create mplus directory
--if [ -d $PREFIX/mplus.BAK ]; then
--	echo "remove: '$PREFIX/mplus.BAK' directory"
--	rm -rf $PREFIX/mplus.BAK
+-if [ -d ${PREFIX}.BAK ]; then
+-	echo "remove: '${PREFIX}.BAK' directory"
+-	rm -rf ${PREFIX}.BAK
 -fi
--if [ -d $PREFIX/mplus ]; then
--	echo "backup: present 'mplus' directory to 'mplus.BAK'"
--	mv $PREFIX/mplus $PREFIX/mplus.BAK
+-if [ -d $PREFIX ]; then
+-	echo "backup: present '${PREFIX##/*/}' directory to '${PREFIX##/*/}.BAK'"
+-	mv ${PREFIX} ${PREFIX}.BAK
 -fi
--echo "create: new '$PREFIX/mplus' directory"
--mkdir -p $PREFIX/mplus
+-echo "create: new '$PREFIX' directory"
+-mkdir -p $PREFIX
 -
  # Install M+ bitmap fonts E
- echo ""
- echo "Install M+ bitmap fonts E (iso8859-1)..."
-@@ -45,10 +32,10 @@
- do
- 	b=`basename $f .bdf`
- 	echo "create: $b.pcf.gz"
--	bdftopcf $f | gzip > $PREFIX/mplus/$b.pcf.gz
-+	bdftopcf $f | gzip > $PREFIX/$b.pcf.gz
+ echo -e "\nInstall M+ bitmap fonts E (iso8859-1)..."
+ cd fonts_e
+@@ -55,7 +43,7 @@
+ 	bdftopcf $f | gzip > $PREFIX/$b.pcf.gz
  done
  echo "create: fonts.alias for M+ bitmap fonts E"
--cat fonts.alias > $PREFIX/mplus/fonts.alias
+-cat fonts.alias > $PREFIX/fonts.alias
 +cat fonts.alias >> $PREFIX/fonts.alias
  cd -
  
  # Install M+ bitmap fonts EURO
-@@ -63,18 +50,18 @@
- 		cp ../$b.bdf ./
- 		patch $b.bdf $b.diff
- 		mv $b.bdf $b-euro.bdf
--		bdftopcf $b-euro.bdf | gzip > $PREFIX/mplus/$b-euro.pcf.gz
-+		bdftopcf $b-euro.bdf | gzip > $PREFIX/$b-euro.pcf.gz
- 	done
- 
- 	echo "create: mplus_h12rw-euro.pcf.gz"
- 	awk '/^SWIDTH/{$2 += 80} /^DWIDTH/{$2 += 1} {print}' \
- 	mplus_h12r-euro.bdf | sed 's/hlv/hlvw/' > mplus_h12rw-euro.bdf
- 	bdftopcf mplus_h12rw-euro.bdf \
--	| gzip > $PREFIX/mplus/mplus_h12rw-euro.pcf.gz
-+	| gzip > $PREFIX/mplus_h12rw-euro.pcf.gz
- 
- #	rm $b-euro.bdf
- 	echo "create: fonts.alias for M+ bitmap fonts EURO"
--	cat fonts.alias >> $PREFIX/mplus/fonts.alias
-+	cat fonts.alias >> $PREFIX/fonts.alias
- 	cd -
- fi
- 
-@@ -128,12 +115,12 @@
- 	do
- 		b=`basename $f .bdf`
- 		echo "create: $b.pcf.gz"
--		bdftopcf $f | gzip > $PREFIX/mplus/$b.pcf.gz
-+		bdftopcf $f | gzip > $PREFIX/$b.pcf.gz
- 	done
- 
- #	rm mplus_j1*b.bdf
- 	echo "create: fonts.alias for M+ bitmap fonts J"
--	cat fonts.alias >> $PREFIX/mplus/fonts.alias
-+	cat fonts.alias >> $PREFIX/fonts.alias
- 	cd -
- fi
- 
-@@ -158,7 +145,5 @@
- # Finish
- echo ""
- echo "create: fonts.dir file"
--mkfontdir $PREFIX/mplus
--echo -n "xset fp rehash..."
--xset fp rehash &&
-+mkfontdir $PREFIX
- echo " done"
