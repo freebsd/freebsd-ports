@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	GTKtalog is a tool to make disk catalogs
 
+BROKEN=		Broken pkg-plist
+
 USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
