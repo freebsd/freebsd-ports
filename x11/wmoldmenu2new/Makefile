@@ -1,0 +1,27 @@
+# New ports collection makefile for:	wm-oldmenu2new
+# Date created:		6 September 2002
+# Whom:			Bruce M Simpson <bms@spc.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wmoldmenu2new
+PORTVERSION=	20020609
+CATEGORIES=	x11
+MASTER_SITES=	http://largo.windowmaker.org/files/
+DISTNAME=	wm-oldmenu2new
+EXTRACT_SUFX=	.gz
+
+MAINTAINER=	bms@spc.org
+
+USE_X_PREFIX=	yes
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+EXTRACT_AFTER_ARGS=	> ${PORTNAME}
+
+NOMAN=		# defined
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+
+.include <bsd.port.mk>

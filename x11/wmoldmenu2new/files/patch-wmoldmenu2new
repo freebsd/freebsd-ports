@@ -1,0 +1,11 @@
+--- wmoldmenu2new.orig	Fri Sep  6 12:07:25 2002
++++ wmoldmenu2new	Fri Sep  6 12:07:34 2002
+@@ -95,7 +95,7 @@
+ #
+ # Given the set -e, the exit 1 shouldn't be needed.  But it is, on my NeXT!
+ #
+-$CC -E -I. $T-c > $T+c || exit 1
++$CC -E -I. -x c $T-c > $T+c || exit 1
+ sed '/^#/d;/^[ 	]*$/d' $T+c > $T
+ rm $T-c $T+c
+ set +e

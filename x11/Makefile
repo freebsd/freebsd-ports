@@ -109,6 +109,7 @@
     SUBDIR += wmfstatus
     SUBDIR += wmmatrix
     SUBDIR += wmmenu
+    SUBDIR += wmoldmenu2new
     SUBDIR += wrapper
     SUBDIR += wscan
     SUBDIR += wterm
