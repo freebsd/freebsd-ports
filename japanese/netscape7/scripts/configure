@@ -1,0 +1,61 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/japanese/netscape7/scripts/Attic/configure,v 1.1 2002-03-04 11:27:29 trevor Exp $
+
+echo ${WRKSRC}/components.conf
+if [ -f ${WRKSRC}/components.conf ]; then
+	exit
+fi
+
+tempfile=`/usr/bin/mktemp -t checklist`
+
+if [ "${BATCH}" ]; then
+	if [ "${NETSCAPE6_OPTIONS}" ]; then
+		set ${NETSCAPE6_OPTIONS}
+	else
+		set \"zlib\" \"MySQL\"
+	fi
+else
+
+/usr/bin/dialog --title "Netscape 6 component selection" --clear \
+	--checklist "\n\
+Choose components of Netscape 6 to download and install. \n\
+Press the space bar to toggle selections." -1 -1 10 \
+"browser"	"Web browser (6592 kB)"				ON \
+"defljajp"	"Japanese/Japan profile defaults (26 kB)"	ON \
+"flash"		"Flash plugin (576 kB)"				ON \
+"jre"		"Java plugin (13808 kB)"			ON \
+"langjajp"	"Japanese/Japan language pack (624 kB)"		ON \
+"mail"		"e-mail and news (1824 kB)"			ON \
+"regjp"		"regional settings for Japan (54 kB)"		ON \
+"regus"		"regional settings for the USA (56 kB)"		ON \
+"spellchecker"	"spell-checker (544 kB)"			ON \
+"talkback"	"sends bug reports to Netscape staff (832 kB)"	ON \
+2> /tmp/checklist.tmp.$$
+
+retval=$?
+
+choice=`cat /tmp/checklist.tmp.$$`
+rm -f /tmp/checklist.tmp.$$
+
+case $retval in
+	0)	if [ -z "$choice" ]; then
+			echo "Nothing selected"
+			exit 1;
+	fi
+	;;
+	1)	echo "Cancel pressed."
+		exit 1
+	;;
+esac
+
+echo "$choice" \
+	| sed -e "s/\"//g" \
+	| sed -e "s/mail/mail browser/g" \
+	| sed -e "s/browser/browser psm xpcom/g" \
+	| sort -u \
+	| sed -e "s/ /.xpi /g" \
+	| sed -e "s/$/.xpi/g" \
+	| perl -pi -e "s/ /\n/g" \
+	> ${WRKSRC}/components.conf
+fi

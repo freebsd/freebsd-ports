@@ -1,0 +1,10 @@
+This is a Linux version of the Netscape suite (Web browser, HTML editor, mail
+user agent and news reader).  It is compatible with Linux versions of plugins.
+The Sun Java and Macromedia Flash plugins are available in this port, as are the
+Japanese and U.S.  regional packs, personal security manager, spell-checker, and
+talkback.  AOL Instant Messenger is omitted (see ports/net/aim).
+
+For use with the Java plugin, linux_base-61 or linux_base-62 are
+recommended (not linux_base-7).
+
+WWW: http://home.netscape.com/ja/browsers/6/
