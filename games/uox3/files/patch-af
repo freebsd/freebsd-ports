@@ -1,0 +1,59 @@
+--- work/dev/archive.cpp.orig	Tue Feb  9 00:14:28 1999
++++ work/dev/archive.cpp	Sun Feb 27 10:50:19 2000
+@@ -44,6 +44,11 @@
+ //
+ #include "uox3.h"
+ 
++void _itoa(char *a, int b, int c)
++{
++	sprintf(a, "%d", b);
++}
++
+ void fileArchive(char *pFile2Archive, char *pArchiveDir)
+ {
+ 	char ext[255] = "";
+@@ -98,7 +103,7 @@
+ 	ptime = localtime(&mytime);
+ 
+ // Create the 4 digit year date
+-	_itoa((ptime->tm_year + 1900), intdate, 10);
++	_itoa(intdate, (ptime->tm_year + 1900), 10);
+ 	strcpy(archiveid, intdate);
+ 
+ // Create the 3 digit day of the year date
+@@ -107,7 +112,7 @@
+ 		strcpy(temp, "0");
+ 	if (ptime->tm_yday < 100)
+ 		strcpy(temp, "00");
+-	_itoa(ptime->tm_yday, intdate, 10);
++	_itoa(intdate, ptime->tm_yday, 10);
+ 	strcat(temp, intdate);
+ 	strcat(archiveid, temp); 
+ 
+@@ -116,7 +121,7 @@
+ 	strcpy(temp, "");
+ 	if (ptime->tm_hour < 10)
+ 		strcpy(temp, "0");
+-	_itoa(ptime->tm_hour, intdate, 10);
++	_itoa(intdate, ptime->tm_hour, 10);
+ 	strcat(temp, intdate);
+ 	strcat(archiveid, temp); 
+ 
+@@ -124,7 +129,7 @@
+ 	strcpy(temp, "");
+ 	if (ptime->tm_min < 10)
+ 		strcpy(temp, "0");
+-	_itoa(ptime->tm_min, intdate, 10);
++	_itoa(intdate, ptime->tm_min, 10);
+ 	strcat(temp, intdate);
+ 	strcat(archiveid, temp); 
+ 
+@@ -132,7 +137,7 @@
+ 	strcpy(temp, "");
+ 	if (ptime->tm_sec < 10)
+ 		strcpy(temp, "0");
+-	_itoa(ptime->tm_sec, intdate, 10);
++	_itoa(intdate, ptime->tm_sec, 10);
+ 	strcat(temp, intdate);
+ 	strcat(archiveid, temp); 
+ 

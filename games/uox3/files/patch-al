@@ -1,0 +1,80 @@
+--- work/dev/uox3.h.orig	Sun Feb 14 18:56:03 1999
++++ work/dev/uox3.h	Sun Feb 27 11:28:45 2000
+@@ -3,10 +3,10 @@
+ //#define VER "0.69.02 (Test Build 03)"  //Increment to 01 when putting out official test build
+ #define PRODUCT "Ultima Offline eXperiment 3"
+ // Your timezone
+-#define TIMEZONE "GMT-7"
++#define TIMEZONE "GMT-8"
+ // Information about the person who compiled this (Put your info here!)
+-#define NAME "UOX3 Dev Team"
+-#define EMAIL "crwth@home.com"
++#define NAME "UOX3 FreeBSD Port User"
++#define EMAIL "ports@FreeBSD.ORG"
+ #ifdef _WIN32
+ #define __NT__
+ #define _MSVC
+@@ -16,7 +16,7 @@
+ #define _WIN32
+ #endif
+ #endif
+-#if defined _WIN32 && (!__MINGW32__)
++#if (defined _WIN32 && (!__MINGW32__)) || defined(__FreeBSD__)
+ #define PACK_NEEDED
+ #else
+ #define PACK_NEEDED __attribute__ ((packed))
+@@ -38,12 +38,18 @@
+ #include <sys/timeb.h>
+ #else
+ #include <ctype.h>
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#include <sys/param.h>
++#endif	// __FreeBSD__
+ #include <netinet/in.h>
+ #include <sys/socket.h>
+ #include <sys/types.h>
+ #include <sys/time.h>
++#include <arpa/inet.h>
+ #include <netdb.h>
+ #include <sys/signal.h>
++#include <unistd.h>
+ #endif
+ #include "im.h"
+ #include "uoxlist.h"
+@@ -349,7 +355,7 @@
+  unsigned long int regen, regen2, regen3;
+  int runenumb; // Used for naming runes
+  int attacker; // Character who attacked this character
+- int npcmovetime; // Next time npc will walk
++ unsigned long int npcmovetime; // Next time npc will walk
+  char npcWander; // NPC Wander Mode
+  char oldnpcWander;
+  int ftarg; // NPC Follow Target
+@@ -735,7 +741,7 @@
+ extern char noaccount[3];
+ extern char nopass[3];
+ extern char acctblock[3];
+-extern char pause[3];
++extern char xpause[3];
+ extern char restart[3];
+ extern char goxyz[20];
+ extern char wearitem[16];
+@@ -800,7 +806,7 @@
+ #ifdef _MSVC
+ extern long int oldtime, newtime;
+ #else
+-extern unsigned long int oldtime, newtime;      //for autosaving
++extern time_t oldtime, newtime;      //for autosaving
+ #endif
+ extern int autosaved, saveinterval, heartbeat;
+ extern char saveintervalstr[4];
+@@ -833,7 +839,7 @@
+ extern unsigned int acctcount;
+ extern unsigned int servcount;
+ extern unsigned int startcount;
+-extern char acct[MAXACCT][3][31]; // Account list
++extern char xacct[MAXACCT][3][31]; // Account list
+ extern char acctinuse[MAXACCT];
+ extern char serv[MAXSERV][2][30]; // Servers list
+ extern char start[MAXSTART][5][30]; // Startpoints list

@@ -1,0 +1,226 @@
+--- work/dev/uox3.cpp.orig	Sun Feb 14 02:14:34 1999
++++ work/dev/uox3.cpp	Sun Feb 27 11:29:33 2000
+@@ -2056,7 +2056,7 @@
+  count2=(count*19)+5;
+  bpopen2[1]=count2/256;
+  bpopen2[2]=count2%256;
+-// xsend(s, pause, 2, 0);
++// xsend(s, xpause, 2, 0);
+  xsend(s, bpopen2, 5, 0);
+  for (i=0;i<contsp[serhash].max;i++)
+  {
+@@ -2336,11 +2336,11 @@
+  for (i=0;i<acctcount;i++)
+  {
+   t=0;
+-  if (strlen(&buffer[s][1])==strlen(acct[i][0]))
++  if (strlen(&buffer[s][1])==strlen(xacct[i][0]))
+   {
+    t=1;
+    for (j=0;j<strlen(&buffer[s][1]);j++)
+-        if (toupper(buffer[s][j+1])!=toupper(acct[i][0][j])) t=0;
++        if (toupper(buffer[s][j+1])!=toupper(xacct[i][0][j])) t=0;
+    if (strlen(&buffer[s][1])==0) t=0;
+   }
+   if (t==1) acctno[s]=i;
+@@ -2349,15 +2349,15 @@
+  {
+   psplit(&buffer[s][31]);
+   t=0;
+-  if (strlen(pass1)==strlen(acct[acctno[s]][1]))
++  if (strlen(pass1)==strlen(xacct[acctno[s]][1]))
+   {
+    t=1;
+    for (j=0;j<strlen(pass1);j++)
+-        if (toupper(pass1[j])!=toupper(acct[acctno[s]][1][j])) t=0;
++        if (toupper(pass1[j])!=toupper(xacct[acctno[s]][1][j])) t=0;
+    if (strlen(pass1)==0) t=0;
+-   //if ((acct[acctno[s]][1][0]=='x')&&(acct[acctno[s]][1][1]=='x')&&(acct[acctno[s]][1][2]=='x'))
++   //if ((xacct[acctno[s]][1][0]=='x')&&(xacct[acctno[s]][1][1]=='x')&&(xacct[acctno[s]][1][2]=='x'))
+ 	 //account banning by Anthracks 1-3-99
+-		if (((acct[acctno[s]][1][0]=='x')&&(acct[acctno[s]][1][1]=='x')&&(acct[acctno[s]][1][2]=='x')) || acct[acctno[s]][2][0]=='1') // They are banned
++		if (((xacct[acctno[s]][1][0]=='x')&&(xacct[acctno[s]][1][1]=='x')&&(xacct[acctno[s]][1][2]=='x')) || xacct[acctno[s]][2][0]=='1') // They are banned
+         t=2;
+   }
+ 
+@@ -2521,11 +2521,11 @@
+  for (i=0;i<acctcount;i++)
+  {
+   t=0;
+-  if (strlen(&buffer[s][5])==strlen(acct[i][0]))
++  if (strlen(&buffer[s][5])==strlen(xacct[i][0]))
+   {
+    t=1;
+    for (j=0;j<strlen(&buffer[s][5]);j++)
+-        if (toupper(buffer[s][j+5])!=toupper(acct[i][0][j])) t=0;
++        if (toupper(buffer[s][j+5])!=toupper(xacct[i][0][j])) t=0;
+    if (strlen(&buffer[s][5])==0) t=0;
+   }
+   if (t==1) acctno[s]=i;
+@@ -2534,13 +2534,13 @@
+  {
+   psplit(&buffer[s][35]);
+   t=0;
+-  if (strlen(pass1)==strlen(acct[acctno[s]][1]))
++  if (strlen(pass1)==strlen(xacct[acctno[s]][1]))
+   {
+    t=1;
+    for (j=0;j<strlen(pass1);j++)
+-        if (toupper(pass1[j])!=toupper(acct[acctno[s]][1][j])) t=0;
++        if (toupper(pass1[j])!=toupper(xacct[acctno[s]][1][j])) t=0;
+    if (strlen(pass1)==0) t=0;
+-   if ((acct[acctno[s]][1][0]=='x')&&(acct[acctno[s]][1][1]=='x')&&(acct[acctno[s]][1][2]=='x'))
++   if ((xacct[acctno[s]][1][0]=='x')&&(xacct[acctno[s]][1][1]=='x')&&(xacct[acctno[s]][1][2]=='x'))
+         t=2;
+   }
+ 
+@@ -5228,7 +5228,7 @@
+           chars[t].summontimer=(getclock()+(CLOCKS_PER_SEC*20));    
+           chars[t].npcWander=2;
+           chars[t].npcaitype=0x04;
+-          chars[t].npcmovetime=(int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
++          chars[t].npcmovetime=(unsigned long int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
+           npctalkall(t,"Thou have suffered thy punishment, scoundrel.");
+         }
+         chars[t].targ=-1;
+@@ -6555,7 +6555,7 @@
+  updscroll[3]=2;
+  updscroll[8]=(y-10)/256;
+  updscroll[9]=(y-10)%256;
+-// xsend(s, pause, 2, 0);
++// xsend(s, xpause, 2, 0);
+  xsend(s, updscroll, 10, 0);
+  for (j=0;j<x;j++)
+  {
+@@ -6616,7 +6616,7 @@
+  updscroll[7]=i;
+  updscroll[8]=(y-10)/256;
+  updscroll[9]=(y-10)%256;
+-// xsend(s, pause, 2, 0);
++// xsend(s, xpause, 2, 0);
+  xsend(s, updscroll, 10, 0);
+  for (j=0;j<x;j++)
+  {
+@@ -6682,7 +6682,7 @@
+  bookpage[10]=p%256;
+  bookpage[11]=x/256;
+  bookpage[12]=x%256;
+-// xsend(s, pause, 2, 0);
++// xsend(s, xpause, 2, 0);
+  xsend(s, bookpage, 13, 0);
+  for (j=0;j<x;j++)
+  {
+@@ -6729,7 +6729,7 @@
+  }
+  while (strcmp(script1, "AUTHOR"));
+  sprintf(bookauthor, "%s", script2);
+-// xsend(s, pause, 2, 0);
++// xsend(s, xpause, 2, 0);
+  xsend(s, bookopen, 8, 0);
+  xsend(s, booktitle, 60, 0);
+  xsend(s, bookauthor, 30, 0);
+@@ -7739,7 +7739,7 @@
+  chars[currchar[s]].spiritspeaktimer=0;  // initially set spiritspeak timer to 0
+ 
+  xsend(s, startup, 37, 0);
+-// xsend(s, pause, 2, 0);
++// xsend(s, xpause, 2, 0);
+  chars[currchar[s]].war=0;
+  wornitems(s, currchar[s]);
+  teleport(currchar[s]);
+@@ -8186,7 +8186,7 @@
+     chars[s].hidden=0;
+    }
+ 
+-   if (chars[s].npc) chars[s].npcmovetime=(int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC)); //reset move timer
++   if (chars[s].npc) chars[s].npcmovetime=(unsigned long int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC)); //reset move timer
+ 
+    switch(dir&0x0F)
+    {
+@@ -12857,7 +12857,7 @@
+      if ((chars[i].npc)&&!(chars[i].npcaitype==0x40))
+        {
+         if (!(chars[i].war)) npcToggleCombat(i);
+-        chars[i].npcmovetime=(int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
++        chars[i].npcmovetime=(unsigned long int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
+        }
+        break;
+       }
+@@ -13071,7 +13071,11 @@
+   {
+         len=sizeof (struct sockaddr_in);
+ //   printf("Waiting at accept()\n");
++#if defined(__FreeBSD__) && (__FreeBSD_version >= 400013)
++   client[now]=accept(a_socket, (struct sockaddr *)&client_addr, (socklen_t*)&len);
++#else
+    client[now]=accept(a_socket, (struct sockaddr *)&client_addr, &len);
++#endif
+ //   printf("Done! :)\n");
+    if (client[now]<0)
+    {
+@@ -13411,7 +13415,7 @@
+   {
+    chars[i].oldnpcWander=chars[i].npcWander;
+    chars[i].npcWander=5;
+-   chars[i].npcmovetime=(int)(currenttime+(NPCSPEED*CLOCKS_PER_SEC));
++   chars[i].npcmovetime=(unsigned long int)(currenttime+(NPCSPEED*CLOCKS_PER_SEC));
+   }
+ 
+   if ((chars[i].npc)&&
+@@ -13419,7 +13423,7 @@
+           (chars[i].hp>chars[i].st*chars[i].reattackat/100))
+   {
+    chars[i].npcWander=chars[i].oldnpcWander;
+-   chars[i].npcmovetime=(int)(currenttime+(NPCSPEED*CLOCKS_PER_SEC));
++   chars[i].npcmovetime=(unsigned long int)(currenttime+(NPCSPEED*CLOCKS_PER_SEC));
+    chars[i].oldnpcWander=0; // so it won't save this at the wsc file
+   }
+   // end of flee code
+@@ -14614,7 +14618,7 @@
+                 //near the player character:
+ 
+           dnpctime=0;
+-          if (chars[i].npc && (chars[i].npcmovetime<=currenttime||(overflow)))
++          if (chars[i].npc && (chars[i].npcmovetime<=(unsigned long int)currenttime||(overflow)))
+           {
+ //kolours***************************************(09/19/98)
+ //fix for monsters to wander when within player's sphere
+@@ -14737,7 +14741,7 @@
+                          } break;
+                 }
+            }
+-           chars[i].npcmovetime=(int)(currenttime+(NPCSPEED*CLOCKS_PER_SEC*(1+dnpctime))); //reset move timer
++           chars[i].npcmovetime=(unsigned long int)(currenttime+(NPCSPEED*CLOCKS_PER_SEC*(1+dnpctime))); //reset move timer
+           }
+          }
+         }
+@@ -17537,12 +17541,12 @@
+  if (chars[target].npc)
+  {
+   if (!(chars[target].war)) npcToggleCombat(target);
+-  chars[target].npcmovetime=(int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
++  chars[target].npcmovetime=(unsigned long int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
+  }
+  if ((chars[target2].npc)&&!(chars[target2].npcaitype==0x40))
+  {
+   if (!(chars[target2].war)) npcToggleCombat(target2);
+-  chars[target2].npcmovetime=(int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
++  chars[target2].npcmovetime=(unsigned long int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
+  }
+  sprintf(temp, "* You see %s attacking %s *", chars[target].name, chars[target2].name);
+  for (i=0;i<now;i++)
+@@ -17586,12 +17590,12 @@
+  if (chars[target].npc)
+  {
+   if (!(chars[target].war)) npcToggleCombat(target);
+-  chars[target].npcmovetime=(int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
++  chars[target].npcmovetime=(unsigned long int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
+  }
+  if ((chars[target2].npc)&&!(chars[target2].npcaitype==0x40))
+  {
+   if (!(chars[target2].war)) npcToggleCombat(target2);
+-  chars[target2].npcmovetime=(int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
++  chars[target2].npcmovetime=(unsigned long int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
+  }
+ }
+ 

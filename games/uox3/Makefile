@@ -27,7 +27,7 @@ do-build:
 	cd ${WRKSRC}/dev && ${GMAKE} -f ${MAKEFILE} CFLAGS="${CFLAGS}" ${ALL_TARGET}
 
 do-install:
-	${RM} ${WRKDIR}/uox/uox3.ini.orig
+	-${RM} ${WRKDIR}/uox/uox3.ini.orig
 	${MKDIR} ${PREFIX}/uox3
 	for FILE in ${WRKDIR}/uox/* ; do \
 		${INSTALL_DATA} $${FILE} ${PREFIX}/uox3 ;\

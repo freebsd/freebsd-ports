@@ -1,0 +1,33 @@
+diff -ruN work.orig/dev/skills.cpp work/dev/skills.cpp
+--- work.orig/dev/skills.cpp	Mon Feb  8 22:14:30 1999
++++ work/dev/skills.cpp	Fri Sep 10 17:32:02 1999
+@@ -1302,12 +1302,12 @@
+    if (chars[target].npc)
+    {
+     if (!(chars[target].war)) npcToggleCombat(target);
+-    chars[target].npcmovetime=(int)((getclock()+(NPCSPEED*CLOCKS_PER_SEC)));
++    chars[target].npcmovetime=(unsigned long int)((getclock()+(NPCSPEED*CLOCKS_PER_SEC)));
+    }
+    if (chars[target2].npc)
+    {
+     if (!(chars[target2].war)) npcToggleCombat(target2);
+-    chars[target2].npcmovetime=(int)((getclock()+(NPCSPEED*CLOCKS_PER_SEC)));
++    chars[target2].npcmovetime=(unsigned long int)((getclock()+(NPCSPEED*CLOCKS_PER_SEC)));
+    }
+    sprintf(temp, "* You see %s attacking %s *", chars[target].name, chars[target2].name);
+    for (i=0;i<now;i++)
+@@ -1342,12 +1342,12 @@
+    if (chars[target].npc)
+    {
+     if (!(chars[target].war)) npcToggleCombat(target);
+-    chars[target].npcmovetime=(int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
++    chars[target].npcmovetime=(unsigned long int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
+    }
+    if (chars[target2].npc)
+    {
+     if (!(chars[target2].war)) npcToggleCombat(target2);
+-    chars[target2].npcmovetime=(int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
++    chars[target2].npcmovetime=(unsigned long int)(getclock()+(NPCSPEED*CLOCKS_PER_SEC));
+    }
+    sprintf(temp, "* You see %s attacking %s *", chars[target].name, chars[target2].name);
+    for (i=0;i<now;i++)

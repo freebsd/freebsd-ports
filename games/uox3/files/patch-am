@@ -1,0 +1,37 @@
+diff -ruN work.orig/uox/uox3.ini work/uox/uox3.ini
+--- work.orig/uox/uox3.ini	Thu Jan 14 19:19:52 1999
++++ work/uox/uox3.ini	Fri Sep 10 17:29:52 1999
+@@ -1,5 +1,5 @@
+-UOXScript 24
+-ip here
++Your Shard's Name
++Your Shard's IP Address
+ ###
+ Britain
+ Castle Britannia
+@@ -92,18 +92,15 @@
+ 501
+ 30
+ ###
+-c:\uo\map0.mul
+-c:\uo\staidx0.mul
+-c:\uo\statics0.mul
+-c:\uo\verdata.mul
+-c:\uo\tiledata.mul
+-c:\uo\multi.mul
+-c:\uo\multi.idx
++map0.mul
++staidx0.mul
++statics0.mul
++verdata.mul
++tiledata.mul
++multi.mul
++multi.idx
+ 600
+ 0 Heartbeat, 1=on 0=off
+ 100
+ 0
+ 0
+-
+-
+-
