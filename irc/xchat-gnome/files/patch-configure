@@ -1,14 +1,6 @@
---- configure.orig	Mon Apr 21 19:10:14 2003
-+++ configure	Wed Apr 23 09:39:19 2003
-@@ -7793,6 +7793,7 @@
- 
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10816,12 +10817,12 @@
+--- configure.orig	Sun Jun 29 18:53:35 2003
++++ configure	Sun Jun 29 19:01:02 2003
+@@ -10816,12 +10816,12 @@
  /* end confdefs.h.  */
  #include <libintl.h>
  extern int _nl_msg_cat_cntr;
@@ -23,3 +15,21 @@
    ;
    return 0;
  }
+@@ -12799,7 +12799,7 @@
+                 echo "$as_me:$LINENO: checking Python version" >&5
+ echo $ECHO_N "checking Python version... $ECHO_C" >&6
+                                 PY_VERSION=`$pythonpath -c 'import sys; print sys.version[:3]'`
+-                PY_PATH=`$pythonpath -c 'import sys ; print sys.path[1][5:]'`
++                PY_PATH=`$pythonpath -c 'import sys ; print sys.path[1][10:]'`
+                 $pythonpath -c "import sys; map(int,sys.version[:3].split('.')) >= [2,2] or sys.exit(1)"
+                                 echo "$as_me:$LINENO: result: $PY_VERSION" >&5
+ echo "${ECHO_T}$PY_VERSION" >&6
+@@ -12809,7 +12809,7 @@
+                         PY_PREFIX=`$pythonpath -c 'import sys; print sys.prefix'`
+                         PY_EXEC_PREFIX=`$pythonpath -c 'import sys; print sys.exec_prefix'`
+                         if test -f $PY_PREFIX/include/python$PY_VERSION/Python.h; then
+-                                PY_LIBS="-L$PY_EXEC_PREFIX/$PY_PATH/config -lpython$PY_VERSION -pthread -lutil"
++                                PY_LIBS="-L$PY_EXEC_PREFIX/lib/python$PY_VERSION/config -lpython$PY_VERSION -pthread -lutil"
+                                 PY_CFLAGS="-I$PY_PREFIX/include/python$PY_VERSION"
+                                 echo "$as_me:$LINENO: result: ok" >&5
+ echo "${ECHO_T}ok" >&6
