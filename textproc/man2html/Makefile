@@ -7,6 +7,7 @@
 
 PORTNAME=	man2html
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
