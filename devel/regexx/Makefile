@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Regexx is a complete regular expressions C++ solution
-
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_LIBTOOL=	yes

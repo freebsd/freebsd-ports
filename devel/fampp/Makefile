@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A C++ wrapper for fam from SGI
-
 LIB_DEPENDS=	fam.0:${PORTSDIR}/devel/fam
 
 # This isn't required to utilize full functionality

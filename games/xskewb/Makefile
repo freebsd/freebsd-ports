@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Skewb puzzle (similar to Rubik\'s Cube) for X Window
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 MAN1=		xskewb.1

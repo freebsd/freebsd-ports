@@ -18,8 +18,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libg++-2.7.2${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Base C/C++ compiler from FreeBSD 2.2.x & 3.x (for your old code)
-
 NO_CDROM=	'old version, not worth the cost in real estate'
 
 LATEST_LINK=	gcc27

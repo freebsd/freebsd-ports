@@ -12,8 +12,6 @@ MASTER_SITES=	http://sed.free.fr/rubix/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Another rubik\'s cube game with a rather interesting interface
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 

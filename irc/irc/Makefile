@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	The 'Internet Relay Chat' Server
+PORTCOMMENT=	The "Internet Relay Chat" Server
 
 # the NOTE command is disabled by default
 # ENABLE_NOTE=yes

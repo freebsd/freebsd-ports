@@ -14,7 +14,7 @@ DISTNAME=	pyWeather
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Python script that downloads weather data and can be cron'd
+PORTCOMMENT=	Python script that downloads weather data and can be cronned
 
 USE_REINPLACE=	yes
 USE_PYTHON=	yes

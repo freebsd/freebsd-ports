@@ -15,9 +15,9 @@ DISTNAME=	${PORTNAME:S/+/p/g}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Make++ (or makepp) is a drop-in replacement for GNU make
-
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+
+PORTCOMMENT=	A drop-in replacement for GNU make
 
 USE_PERL5=	yes
 DATADIR=	${PREFIX}/share/makepp

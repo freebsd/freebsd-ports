@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.sigala.it/sandro/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Miscellaneous C programmer\'s utilities
-
 GNU_CONFIGURE=	yes
 MAKE_ENV=	MAKEINFO=/usr/bin/makeinfo
 MAN1=		cdecl.1 chilight.1 cobfusc.1 cundecl.1 cunloop.1 yyextract.1 \

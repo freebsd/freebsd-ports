@@ -17,8 +17,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A portable, easy to use, and efficient C++ crypto library
-
 USE_REINPLACE=	yes
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes

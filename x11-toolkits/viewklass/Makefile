@@ -15,8 +15,6 @@ DISTNAME=	ViewKlass-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	C++ Framework for Motif
-
 USE_REINPLACE=	yes
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes

@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	zipios
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A java.util.zip-like C++ library for reading and writing Zip files
-
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

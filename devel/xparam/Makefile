@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A general-purpose tool for parameter handling in C++
-
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 USE_REINPLACE=	yes

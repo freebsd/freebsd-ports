@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	C/C++ reference manual for KDevelop
-
 RUN_DEPENDS=	kdevelop:${PORTSDIR}/devel/kdevelop
 
 EXTRACT_ONLY=	# none

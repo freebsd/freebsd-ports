@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.rygannon.com/pub/Korelib/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A cross-platform C++ library for developing modular applications
-
 USE_KDELIBS_VER=3
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes

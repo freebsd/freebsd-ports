@@ -13,8 +13,6 @@ MASTER_SITES=	http://clay.ll.pl/clarence/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Programmer\'s calculator
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GDK.py:${PORTSDIR}/x11-toolkits/py-gtk
 
 USE_REINPLACE=	yes

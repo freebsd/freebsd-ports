@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.ispras.ru/~knizhnik/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	ANSI/Turbo Pascal to C/C++ converter
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XLIB=	yes

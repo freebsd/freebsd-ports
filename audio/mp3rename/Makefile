@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A renaming program for mp3\'s based on their id3tag
+PORTCOMMENT=	A renaming program for mp3 files based on their id3tag
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 

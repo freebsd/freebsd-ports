@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	guile
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	GNU\'s Ubiquitous Intelligent Language for Extension
-
 LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
 USE_REINPLACE=	yes

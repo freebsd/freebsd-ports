@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A C++ matrix library
-
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

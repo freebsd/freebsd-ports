@@ -16,8 +16,6 @@ DISTNAME=	PyCXX-V${PORTVERSION:S/r/-rc/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Make it easier to extend Python with C++
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
