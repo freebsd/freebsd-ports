@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftpcopy
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
@@ -17,11 +17,15 @@ WRKSRC=		${WRKDIR}/web/${DISTNAME}
 MAN1=		ftpcopy.1 ftpcp.1 ftpls.1
 
 do-install:
-	${MKDIR} ${DATADIR}
 	cd ${WRKSRC}/compile && \
 		${INSTALL_PROGRAM} ftpcopy ftpls ${PREFIX}/bin && \
-		${INSTALL_SCRIPT} ftpcp ${PREFIX}/bin && \
 		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1 && \
-		${INSTALL_DATA} NEWS README ${DATADIR}
+		${INSTALL_SCRIPT} ftpcp ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR} && \
+	cd ${WRKSRC}/compile && \
+		${INSTALL_DATA} ChangeLog NEWS LICENSES LICENSES.LOCAL \
+			README THANKS ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
