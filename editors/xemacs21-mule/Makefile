@@ -23,7 +23,7 @@
 MULE_SLAVE=	yes
 .endif
 
-MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 .if defined(MULE_SLAVE)

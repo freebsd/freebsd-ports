@@ -21,7 +21,7 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 XEMACS_REL=	21.1
-XEMACS_VER=	21.1.12
+XEMACS_VER=	21.1.13
 XEMACS_ARCH=	${CONFIGURE_TARGET}
 
 SLAVEDIRS+=	editors/xemacs21-mule

@@ -14,7 +14,6 @@ bin/xemacs-%%XEMACS_VER%%
 etc/rc.d/xemacs21.sh
 @exec mkdir -p /var/run/emacs/lock ; chmod 1777 /var/run/emacs/lock
 @exec mkdir -p %D/lib/xemacs/site-lisp ; chmod 755 %D/lib/xemacs/site-lisp
-@exec mkdir -p %D/share/emacs/site-lisp ; chmod 755 %D/share/emacs/site-lisp
 lib/xemacs-%%XEMACS_VER%%/etc/BETA
 lib/xemacs-%%XEMACS_VER%%/etc/CHARSETS
 lib/xemacs-%%XEMACS_VER%%/etc/CODING-STANDARDS
@@ -942,8 +941,6 @@ lib/xemacs-%%XEMACS_VER%%/lisp/x-win-sun.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-sun.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.el
 lib/xemacs-%%XEMACS_VER%%/lisp/x-win-xfree86.elc
-lib/xemacs-%%XEMACS_VER%%/lisp/xpm-button.el
-lib/xemacs-%%XEMACS_VER%%/lisp/xpm-button.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/term
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp/mule
 @dirrm lib/xemacs-%%XEMACS_VER%%/lisp
@@ -959,7 +956,5 @@ lib/xemacs-%%XEMACS_VER%%/lisp/xpm-button.elc
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc/custom
 @dirrm lib/xemacs-%%XEMACS_VER%%/etc
 @dirrm lib/xemacs-%%XEMACS_VER%%
-@unexec rmdir %D/share/emacs/site-lisp 2>/dev/null || true
-@unexec rmdir %D/share/emacs 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs/site-lisp 2>/dev/null || true
 @unexec rmdir %D/lib/xemacs 2>/dev/null || true
