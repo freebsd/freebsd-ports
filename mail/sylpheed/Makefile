@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/$/:mime/} \
-		http://sylpheed.good-day.net/sylpheed/:source \
+		http://sylpheed.good-day.net/sylpheed/v1.0/:source \
 		${MASTER_SITE_SOURCEFORGE:S/$/:source/}
 MASTER_SITE_SUBDIR=	sylpheed-claws/:source oliver/:mime
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r.1/rc/}
