@@ -1,18 +1,17 @@
 #
 # $FreeBSD$
 #
-# The "loginfo" file is used to control where "cvs commit" log information
-# is sent.  The first entry on a line is a regular expression which is tested
-# against the directory that the change is being made to, relative to the
-# $CVSROOT.  For the first match that is found, then the remainder of the
-# line is a filter program that should expect log information on its standard
-# input.
+# The "loginfo" file controls where "cvs commit" log information
+# is sent.  The first entry on a line is a regular expression which must match
+# the directory that the change is being made to, relative to the
+# $CVSROOT.  If a match is found, then the remainder of the line is a filter
+# program that should expect log information on its standard input.
 #
-# If the repository name does not match any of the regular expressions in the
-# first field of this file, the "DEFAULT" line is used, if it is specified.
+# If the repository name does not match any of the regular expressions in this
+# file, the "DEFAULT" line is used, if it is specified.
 #
-# If the name "ALL" appears as a regular expression it is always used
-# in addition to the first matching regex or "DEFAULT".
+# If the name ALL appears as a regular expression it is always used
+# in addition to the first matching regex or DEFAULT.
 #
 # You may specify a format string as part of the
 # filter.  The string is composed of a `%' followed

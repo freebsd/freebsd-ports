@@ -19,8 +19,8 @@
 # Actions such as mailing a copy of the report to each reviewer are
 # better handled by an entry in the loginfo file.
 #
-# One thing that should be noted  is the the ALL keyword is not
-# supported. There can be only one entry that matches a given
+# One thing that should be noted is the the ALL keyword is not
+# supported.  There can be only one entry that matches a given
 # repository.
 #
 # Note there is no "edit" example script currently available....
