@@ -8,7 +8,7 @@
 
 DISTNAME=       py152
 PKGNAME=        python-1.5.2
-CATEGORIES=	lang python tk80
+CATEGORIES=	lang python tk82
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 EXTRACT_SUFX=	.tgz
@@ -36,7 +36,7 @@ SETUP_FILE=	Setup
 #
 WITH_TK?=	yes
 .if defined(WITH_TK) && $(WITH_TK) == yes
-TK_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+TK_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 SETUP_LOCAL=	Setup.tk
 PLIST_TK=	${PKGDIR}/PLIST.tk
 .endif

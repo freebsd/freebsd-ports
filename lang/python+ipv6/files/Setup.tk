@@ -15,7 +15,7 @@ TKPATH=:lib-tk
 # every system.
 
 # *** Always uncomment this (leave the leading underscore in!):
-_tkinter _tkinter.c tkappinit.c -DWITH_APPINIT -I${X11BASE}/include -I${PREFIX}/include/tcl8.0 -I${PREFIX}/include/tk8.0 -L${PREFIX}/lib -ltk80 -ltcl80 -L${X11BASE}/lib -lX11 -lc
+_tkinter _tkinter.c tkappinit.c -DWITH_APPINIT -I${X11BASE}/include -I${PREFIX}/include/tcl8.2 -I${PREFIX}/include/tk8.2 -L${PREFIX}/lib -ltk82 -ltcl82 -L${X11BASE}/lib -lX11 -lc
 
 # *** Uncommend and edit to reflect where your X11 header files are:
 #	-I/usr/X11R6/include \
