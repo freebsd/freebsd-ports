@@ -2,9 +2,9 @@ bin/mimedefang-multiplexor
 bin/mimedefang
 bin/mimedefang.pl
 etc/rc.d/mimedefang.sh-dist
-etc/mimedefang/mimedefang-filter
+@unexec if cmp -s %D/etc/mimedefang/mimedefang-filter %D/etc/mimedefang/mimedefang-filter.example; then rm -f %D/etc/mimedefang/mimedefang-filter; fi
 etc/mimedefang/mimedefang-filter.example
-etc/mimedefang/spamassassin/sa-mimedefang.cf
+@unexec if cmp -s %D/etc/mimedefang/spamassassin/sa-mimedefang.cf %D/etc/mimedefang/spamassassin/sa-mimedefang.cf.example; then rm -f %D/etc/mimedefang/spamassassin/sa-mimedefang.cf; fi
 etc/mimedefang/spamassassin/sa-mimedefang.cf.example
 %%PORTDOCS%%share/doc/mimedefang/README
 %%PORTDOCS%%share/doc/mimedefang/README.ANOMY
