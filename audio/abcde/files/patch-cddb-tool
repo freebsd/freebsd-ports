@@ -1,0 +1,69 @@
+--- cddb-tool.orig	Mon Jan 21 03:29:23 2002
++++ cddb-tool	Thu Oct 31 19:41:23 2002
+@@ -30,9 +30,9 @@
+ LOOKUP_ERR=13      # problem connecting to cddb server
+ EMPTY_QUERY_RESPONSE=14	# query response = "", (probably no net connection)
+ 
+-# assume a reasonable default if $WGET is undefined
+-if [ "$WGET" = "" ]; then
+-	WGET=wget
++# assume a reasonable default if $FETCH is undefined
++if [ "$FETCH" = "" ]; then
++	FETCH=fetch
+ fi
+ 
+ usage() {
+@@ -74,8 +74,8 @@
+   read server user host disc-id genre
+ 	CDDB file is dumped to stdout. File will contain an extra
+ 	#CATEGORY= line, which leaves it a valid CDDB file but which will
+-	be recognized by parse and send commands. Uses wget, so if you
+-	need to use a proxy then just configure wget to do so. user and
++	be recognized by parse and send commands. Uses fetch, so if you
++	need to use a proxy then just configure fetch to do so. user and
+ 	host will be used for identifying ourselves to the CDDB server.
+   help  
+ 	Display this.
+@@ -119,7 +119,7 @@
+ 	echo '#'
+ 	echo '# Track frame offsets:'
+ 	NUMTRACKS=$2
+-	for x in $(seq 3 $(expr $NUMTRACKS + 2))
++	for x in $(jot $NUMTRACKS 3 $(expr $NUMTRACKS + 2))
+ 	do
+ 		printf "#\t$(echo "$DISCID" | cut -f$x -d' ')\n"
+ 	done
+@@ -135,13 +135,13 @@
+ 	echo DISCID="$DISCNUM"
+ 	echo "DTITLE=Unknown Artist / Unknown Album"
+ 	# TTITLE0 -- TTITLEn
+-	for x in $(seq 1 $NUMTRACKS)
++	for x in $(jot $NUMTRACKS)
+ 	do
+ 		echo "TTITLE$(expr $x - 1)=Track $x"
+ 	done
+ 	echo "EXTD="
+ 	# EXTT0 -- EXTTn
+-	for x in $(seq 1 $NUMTRACKS)
++	for x in $(jot $NUMTRACKS)
+ 	do
+ 		echo "EXTT$(expr $x - 1)="
+ 	done
+@@ -164,7 +164,7 @@
+ 	shift 3
+ 	TRACKINFO="$@"
+ 	TRACKINFOPLUS=$(echo $TRACKINFO | tr ' ' '+')
+-	RESULTS=$($WGET -q -O - "$SERVER?cmd=cddb+query+$TRACKINFOPLUS\&hello=$HELLOINFO\&proto=3") || exit $LOOKUP_ERR
++	RESULTS=$($FETCH -q -o - "$SERVER?cmd=cddb+query+$TRACKINFOPLUS\&hello=$HELLOINFO\&proto=3") || exit $LOOKUP_ERR
+ 	echo $RESULTS | tr '\r' '\n' | tr -s '\n' | sed 's/^ //g'
+ 	;;
+ 
+@@ -175,7 +175,7 @@
+ 	CATEGORY="$4"
+ 	DISCID="$5"
+ 	HELLOINFO="$USER+$HOST+$NAME+$VERSION"
+-	$WGET -q -O - $CDDBDATA "$SERVER?cmd=cddb+read+$CATEGORY+$DISCID\&hello=$HELLOINFO\&proto=3" 2>/dev/null
++	$FETCH -q -o - $CDDBDATA "$SERVER?cmd=cddb+read+$CATEGORY+$DISCID\&hello=$HELLOINFO\&proto=3" 2>/dev/null
+ 	;;
+ 
+ 	help) help ;;

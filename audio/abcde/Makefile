@@ -7,7 +7,7 @@
 
 PORTNAME=	abcde
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://frantica.lly.org/~rcw/abcde/
 DISTNAME= 	abcde_2.0.3.orig
