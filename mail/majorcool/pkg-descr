@@ -1,0 +1,9 @@
+MajorCool is a CGI script written in Perl that provides a Web interface
+to Majordomo. It is intended to run co-located with the Majordomo
+program (ie, both mail and Web on the same host).
+
+MajorCool was originally designed as an administrative front-end to the
+popular mailing list manager, allowing novice list-owners to manage
+their list configuration and subscriber base.
+
+More infos:	http://ncrinfo.ncr.com/pub/contrib/unix/MajorCool/
