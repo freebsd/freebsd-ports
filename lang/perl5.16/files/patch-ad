@@ -1,6 +1,6 @@
 --- hints/freebsd.sh.orig	Mon Feb 12 21:52:51 1996
 +++ hints/freebsd.sh	Wed Oct 23 18:00:16 1996
-@@ -43,16 +43,38 @@
+@@ -43,16 +43,39 @@
  	d_setruid='undef'
  	;;
  #
@@ -38,6 +38,7 @@
 +# Guesses at what will be needed after 2.2
  *)	usevfork='true'
 +	usemymalloc='n'
++	d_dosuid='define'
  	;;
  esac
  
