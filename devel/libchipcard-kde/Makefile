@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libchipcard
 
 MAINTAINER=		martin@libchipcard.de
-COMMENT=		"KDE tools for LibChipCard"
+COMMENT=		KDE tools for LibChipCard
 
 LIB_DEPENDS=		chipcard.17:${PORTSDIR}/devel/libchipcard:install
 
@@ -29,7 +29,7 @@ USE_REINPLACE=		yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 502102
-FORBIDDEN=		"Links against conflicting thread libraries"
+BROKEN=		"Links against conflicting thread libraries"
 .endif
 
 post-patch:
