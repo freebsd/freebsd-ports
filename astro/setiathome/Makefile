@@ -3,12 +3,13 @@
 # Date created:         22 Apr 1999
 # Whom:                 stb@freebsd.org
 #
-# $Id: Makefile,v 1.7 1999/05/06 22:50:03 stb Exp $
+# $Id: Makefile,v 1.8 1999/05/17 08:18:01 stb Exp $
 #
 
 PKGNAME=	setiathome-1.1
 CATEGORIES=	astro
 MASTER_SITES=   http://setiathome.ssl.berkeley.edu/software/ \
+		ftp://ftp.cdrom.com/pub/setiathome/ \
 		http://www.freebsd.org/~stb/mirror/setiathome.ssl.berkeley.edu/software/
 
 MAINTAINER=	stb@freebsd.org
