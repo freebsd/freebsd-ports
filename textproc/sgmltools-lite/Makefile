@@ -1,0 +1,33 @@
+# New ports collection makefile for:	sgmltools
+# Date created:				7 Apr 2000
+# Whom:					Benno Rice <benno@netizen.com.au>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sgmltools
+PORTVERSION=	2.0.2
+CATEGORIES=	textproc
+MASTER_SITES=	ftp://ftp.us.sgmltools.org/pub/SGMLtools/v2.0/source/ \
+		ftp://ftp.nllgg.nl/pub/SGMLtools/v2.0/source/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.base
+
+MAINTAINER=	benno@netizen.com.au
+
+BUILD_DEPENDS+=	python:${PORTSDIR}/lang/python \
+		jade:${PORTSDIR}/textproc/jade \
+		${LOCALBASE}/share/texmf:${PORTSDIR}/print/teTeX
+RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook \
+		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular
+
+USE_BZIP2=	yes
+USE_PERL5=	yes
+WRKSRC=		${WRKDIR}/${PKGNAME}
+MAN1=		sgmltools.1
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-etcsgml=${PREFIX}/etc/sgml
+USE_GMAKE=	yes
+MAKEFILE=	GNUmakefile
+ALL_TARGET=	default
+
+.include <bsd.port.mk>
