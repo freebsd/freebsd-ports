@@ -52,8 +52,10 @@ share/gnome/gnome-print-2.0/vendors/GNOME.vendor
 share/gnome/gnome-print-2.0/vendors/HP.vendor
 share/gnome/libgnomeprint-2.0/fonts/adobe-urw.font
 share/gnome/libgnomeprint-2.0/fonts/defaults.fontmap
+share/locale/am/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/az/LC_MESSAGES/libgnomeprint-2.0.mo
+share/locale/be/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/bg/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/cs/LC_MESSAGES/libgnomeprint-2.0.mo
