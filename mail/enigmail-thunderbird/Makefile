@@ -18,6 +18,6 @@ PKGINSTALL=	${.CURDIR}/pkg-install
 PKGDEINSTALL=	${.CURDIR}/pkg-deinstall
 
 LOCAL_SRCDIR=	mail/thunderbird
-LOCAL_SUBDIR=	lib/thunderbird/lib/thunderbird-0.9
+LOCAL_SUBDIR=	lib/thunderbird/lib/thunderbird-1.0
 
 .include "${MASTERDIR}/Makefile"
