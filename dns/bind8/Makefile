@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bind
-PORTVERSION=	8.2.4.T2B
+PORTVERSION=	8.2.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/testing/t2b/
+MASTER_SITES=	ftp://ftp.isc.org/isc/bind/src/8.2.4/
 DISTFILES=	bind-src.tar.gz bind-doc.tar.gz
 
 MAINTAINER=	DougB@FreeBSD.org
@@ -29,6 +29,6 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}
 post-install:
 	@(cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} clean all ${INSTALL_TARGET})
 	${MKDIR} ${PREFIX}/share/doc/bind8
-	${INSTALL_DATA} ${WRKDIR}/doc/html/* ${PREFIX}/share/doc/bind8
+	${INSTALL_DATA} ${WRKDIR}/doc/html/*.html ${PREFIX}/share/doc/bind8
 
 .include <bsd.port.mk>
