@@ -283,6 +283,7 @@
     SUBDIR += xpacman
     SUBDIR += xpanex
     SUBDIR += xpat2
+    SUBDIR += xpenguins
     SUBDIR += xphotohunter
     SUBDIR += xpilot
     SUBDIR += xpipeman
