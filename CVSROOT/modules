@@ -109,8 +109,6 @@ SETIsupport	ports/astro/SETIsupport
 SN		ports/devel/SN
 SSLtelnet	ports/net/SSLtelnet
 STk		ports/lang/STk
-SWIG		ports/devel/SWIG
-SWIG-devel	ports/devel/SWIG-devel
 Sather		ports/lang/Sather
 SpecTcl		ports/devel/SpecTcl
 TenDRA		ports/lang/TenDRA
@@ -7500,6 +7498,8 @@ swatch		ports/security/swatch
 sweep		ports/audio/sweep
 swftools	ports/graphics/swftools
 swi-pl		ports/lang/swi-pl
+swig11		ports/devel/swig11
+swig13		ports/devel/swig13
 swigruby	ports/devel/swigruby
 swish++		ports/www/swish++
 swish-e		ports/www/swish-e
