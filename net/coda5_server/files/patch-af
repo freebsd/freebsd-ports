@@ -1,0 +1,14 @@
+--- tools/our-install.orig	Sun Mar  2 17:18:33 2003
++++ tools/our-install	Sun Mar  2 17:21:13 2003
+@@ -11,8 +11,10 @@
+ PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/ucb
+ export PATH
+ 
+-if [ $SYS = NetBSD -o $SYS = FreeBSD -o $SYS = OpenBSD ] ; then
++if [ $SYS = NetBSD -o $SYS = OpenBSD ] ; then
+ OWNGRP=root.wheel
++elif [ $SYS = FreeBSD ] ; then
++OWNGRP=root:wheel
+ else
+ OWNGRP=root:root
+ fi

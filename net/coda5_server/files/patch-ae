@@ -1,0 +1,16 @@
+--- coda-src/vice/srv.cc.orig	Sun Mar  2 17:49:12 2003
++++ coda-src/vice/srv.cc	Sun Mar  2 17:54:40 2003
+@@ -1270,8 +1270,13 @@
+     char buf[100], buf2[100]; /* can't believe there will be more logs! */
+     struct dirent **namelist = NULL;
+ 
++#if __FreeBSD__ >= 5
++    count = scandir(".", &namelist, (int (*)(dirent *)) xselect,
++		    (int (*)(const void *, const void *)) compar);
++#else
+     count = scandir(".", &namelist, (int (*)(const dirent *)) xselect,
+ 		    (int (*)(const void *, const void *)) compar);
++#endif
+     /* It is safe now to blindly rename */
+     for (i = 0; i < count; i++) {
+ 	sprintf(buf, "SrvLog-%d", count-i);

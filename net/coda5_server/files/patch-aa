@@ -1,0 +1,36 @@
+--- coda-src/update/updatesrv.cc.orig	Sun Mar  2 17:55:46 2003
++++ coda-src/update/updatesrv.cc	Sun Mar  2 17:57:50 2003
+@@ -184,6 +184,7 @@
+     long portmapid;
+     struct stat statbuf;
+     char *miscdir;
++    time_t tim;
+ 
+     /* process the command line arguments */
+     for (i = 1; i < argc; i++) {
+@@ -305,7 +306,7 @@
+     }
+     gettimeofday(&tp, &tsp);
+     LogMsg(0, SrvDebugLevel, stdout, 
+-	   "Update Server started %s", ctime(&tp.tv_sec));
++	   "Update Server started %s", ctime(&(tim = tp.tv_sec)));
+ 
+     CODA_ASSERT(LWP_WaitProcess((char *)&parentPid) == LWP_SUCCESS);
+ 
+@@ -455,6 +456,7 @@
+     char    name[MAXPATHLEN];	/* area to hold the name */
+     struct stat buff;		/* buffer for stat */
+     int     len;
++    time_t  tim;
+ 
+     rc = 0;
+ 
+@@ -518,7 +520,7 @@
+     *CurrentUsecs = tp.tv_usec;
+     LogMsg(2, SrvDebugLevel, stdout, 
+ 	   "UpdateFetch returns %s newtime is %d at %s",
+-	   ViceErrorMsg((int)rc), *NewTime, ctime(&tp.tv_sec));
++	   ViceErrorMsg((int)rc), *NewTime, ctime(&(tim = tp.tv_sec)));
+     return(rc);
+ }
+ 
