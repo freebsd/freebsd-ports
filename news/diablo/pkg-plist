@@ -21,6 +21,7 @@ news/dbin/doutq
 news/dbin/dclean
 news/dbin/diablo
 news/dbin/plock
+news/dbin/dspaminfo
 news/samples/dexpire.factor
 news/samples/dexpire.ctl
 news/samples/dnntpspool.ctl
@@ -35,7 +36,6 @@ news/dnntpspool.ctl
 news/rc.news
 share/doc/diablo/COPYRIGHT
 share/doc/diablo/INSTALL
-share/doc/diablo/KNOWN_PROBLEMS
 share/doc/diablo/README
 share/doc/diablo/RELEASE_NOTES
 share/doc/diablo/TODO
