@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.20 1998/09/30 02:07:26 jseger Exp $
+# $Id: Makefile,v 1.21 1998/10/01 18:35:34 brian Exp $
 #
 
 DISTNAME=	kdebase-1.0
@@ -20,7 +20,8 @@ LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jscript.0:${PORTSDIR}/x11/kdelibs \
 		khtmlw.1:${PORTSDIR}/x11/kdelibs \
 		kfm.1:${PORTSDIR}/x11/kdelibs \
-		mediatool.1:${PORTSDIR}/x11/kdelibs
+		mediatool.1:${PORTSDIR}/x11/kdelibs \
+		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes
