@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cdb
-PORTVERSION=	0.31.a
+PORTVERSION=	0.32
 CATEGORIES=	databases python
-MASTER_SITES=	http://pilcrow.madison.wi.us/sw/
+MASTER_SITES=	http://pilcrow.madison.wi.us/python-${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	python-${PORTNAME}-${PORTVERSION:S/.a/a/}
+DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jason@mastaler.com
 
