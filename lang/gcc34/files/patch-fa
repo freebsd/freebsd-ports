@@ -1,6 +1,6 @@
---- gcc/c-common.c.orig	Fri Aug 25 08:27:55 2000
-+++ gcc/c-common.c	Fri Sep 15 11:30:42 2000
-@@ -157,7 +157,7 @@
+--- gcc/c-common.c.orig	Mon Sep 25 10:04:45 2000
++++ gcc/c-common.c	Mon Oct  9 02:51:14 2000
+@@ -171,7 +171,7 @@
  						 int, int, int));
  static void init_attributes		PARAMS ((void));
  static void record_function_format	PARAMS ((tree, tree, enum format_type,
@@ -9,7 +9,7 @@
  static void record_international_format	PARAMS ((tree, tree, int));
  static int default_valid_lang_attribute PARAMS ((tree, tree, tree, tree));
  
-@@ -827,6 +827,7 @@
+@@ -862,6 +862,7 @@
  	    enum format_type format_type;
  	    tree argument;
  	    unsigned int arg_num;
@@ -17,7 +17,7 @@
  
  	    if (TREE_CODE (decl) != FUNCTION_DECL)
  	      {
-@@ -837,7 +838,7 @@
+@@ -872,7 +873,7 @@
  
  	    if (TREE_CODE (format_type_id) != IDENTIFIER_NODE)
  	      {
@@ -26,7 +26,7 @@
  		continue;
  	      }
  	    else
-@@ -845,12 +846,26 @@
+@@ -880,12 +881,26 @@
  		const char *p = IDENTIFIER_POINTER (format_type_id);
  
  		if (!strcmp (p, "printf") || !strcmp (p, "__printf__"))
@@ -52,8 +52,8 @@
 +		  }
  		else
  		  {
- 		    warning ("`%s' is an unrecognized format function type", p);
-@@ -923,7 +938,8 @@
+ 		    status_warning (status, "`%s' is an unrecognized format function type", p);
+@@ -958,7 +973,8 @@
  
  	    record_function_format (DECL_NAME (decl),
  				    DECL_ASSEMBLER_NAME (decl),
@@ -63,19 +63,21 @@
  	    break;
  	  }
  
-@@ -1242,6 +1258,11 @@
- } format_char_info;
+@@ -1441,6 +1457,13 @@
  
- static format_char_info print_char_table[] = {
+ static const format_char_info print_char_table[] =
+ {
++#ifdef XXX_NEED_TO_UPDATE_THIS_FOR_GCC297_CHANGES
 +/* FreeBSD kernel extensions.  */
 +  { "D",	1,	T_C,	T_C,	NULL,	NULL,	NULL,	NULL,	NULL,	"-wp"		},
 +  { "b",	1,	T_C,	T_C,	NULL,	NULL,	NULL,	NULL,	NULL,	"-wp"		},
 +  { "rz",	0,	NULL,	T_I,	T_I,	T_L,	NULL,	NULL,	NULL,	"-wp0 +#"	},
 +#define unextended_print_char_table	(print_char_table + 3)
-   { "di",	0,	T_I,	T_I,	T_I,	T_L,	T_LL,	T_LL,	T_SST,	T_PD,	T_IM,	"-wp0 +'I"	},
-   { "oxX",	0,	T_UI,	T_UI,	T_UI,	T_UL,	T_ULL,	T_ULL,	T_ST,	T_UPD,	T_UIM,	"-wp0#"		},
-   { "u",	0,	T_UI,	T_UI,	T_UI,	T_UL,	T_ULL,	T_ULL,	T_ST,	T_UPD,	T_UIM,	"-wp0'I"		},
-@@ -1314,6 +1335,7 @@
++#endif
+   /* C89 conversion specifiers.  */
+   { "di",  0, STD_C89, { T89_I,   T99_I,   T89_I,   T89_L,   T99_LL,  TEX_LL,  T99_SST, T99_PD,  T99_IM  }, "-wp0 +'I", "i" },
+   { "oxX", 0, STD_C89, { T89_UI,  T99_UI,  T89_UI,  T89_UL,  T99_ULL, TEX_ULL, T99_ST,  T99_UPD, T99_UIM }, "-wp0#",    "i" },
+@@ -1526,6 +1549,7 @@
    enum format_type format_type;	/* type of format (printf, scanf, etc.) */
    int format_num;		/* number of format argument */
    int first_arg_num;		/* number of first arg (zero for varargs) */
@@ -83,10 +85,13 @@
  } function_format_info;
  
  static function_format_info *function_format_list = NULL;
-@@ -1354,40 +1376,40 @@
+@@ -1570,42 +1594,42 @@
      {
        /* Functions from ISO/IEC 9899:1990.  */
        record_function_format (get_identifier ("printf"), NULL_TREE,
+-			      printf_format_type, 1, 2);
++			      printf_format_type, 1, 2, 0);
+       record_function_format (get_identifier ("__builtin_printf"), NULL_TREE,
 -			      printf_format_type, 1, 2);
 +			      printf_format_type, 1, 2, 0);
        record_function_format (get_identifier ("fprintf"), NULL_TREE,
@@ -139,7 +144,7 @@
      }
  
    if (flag_hosted && flag_noniso_default_format_attributes)
-@@ -1410,12 +1432,13 @@
+@@ -1630,12 +1654,13 @@
  
  static void
  record_function_format (name, assembler_name, format_type,
@@ -154,7 +159,7 @@
  {
    function_format_info *info;
  
-@@ -1439,6 +1462,7 @@
+@@ -1659,6 +1684,7 @@
    info->format_type = format_type;
    info->format_num = format_num;
    info->first_arg_num = first_arg_num;
@@ -162,32 +167,16 @@
  }
  
  /* Record information for the names of function that modify the format
-@@ -1755,7 +1779,8 @@
+@@ -2019,7 +2045,7 @@
  
    if (integer_zerop (format_tree))
      {
--      warning ("null format string");
-+      if (!info->null_format_ok)
-+	warning ("null format string");
+-      status_warning (status, "null format string");
++      if (!info->null_format_ok) status_warning (status, "null format string");
        return;
      }
    if (TREE_CODE (format_tree) != ADDR_EXPR)
-@@ -1981,12 +2006,13 @@
- 		     It will work on most machines, because size_t and int
- 		     have the same mode.  But might as well warn anyway,
- 		     since it will fail on other machines.  */
-+		  /* XXX should we allow unsigned ints here?  */
- 		  if ((TYPE_MAIN_VARIANT (TREE_TYPE (cur_param))
- 		       != integer_type_node)
- 		      &&
- 		      (TYPE_MAIN_VARIANT (TREE_TYPE (cur_param))
- 		       != unsigned_type_node))
--		    warning ("field width is not type int (arg %d)", arg_num);
-+		    warning ("precision is not type int (arg %d)", arg_num);
- 		}
- 	    }
- 	  else
-@@ -2046,6 +2072,53 @@
+@@ -2340,6 +2366,54 @@
  		}
  	    }
  	}
@@ -196,7 +185,7 @@
 +	  /* There should be an int arg to control the string arg.  */
 +	  if (params == 0)
 +	    {
-+	      tfaff ();
++	      status_warning (status, "too few arguments for format");
 +	      return;
 +	    }
 +	    if (info->first_arg_num != 0)
@@ -210,7 +199,7 @@
 +		  (TYPE_MAIN_VARIANT (TREE_TYPE (cur_param))
 +		   != unsigned_type_node))
 +		{
-+		  warning ("bitmap is not type int (arg %d)", arg_num);
++		  status_warning (status, "bitmap is not type int (arg %d)", arg_num);
 +		}
 +	    }
 +	}
@@ -219,11 +208,12 @@
 +	  /* There should be an unsigned char * arg before the string arg.  */
 +	  if (params == 0)
 +	    {
-+	      tfaff ();
++	      status_warning (status, "too few arguments for format");
 +	      return;
 +	    }
 +	    if (info->first_arg_num != 0)
 +	    {
++	      tree cur_type;
 +	      cur_param = TREE_VALUE (params);
 +	      params = TREE_CHAIN (params);
 +	      ++arg_num;
@@ -232,8 +222,8 @@
 +		  || TYPE_MAIN_VARIANT (TREE_TYPE (cur_type))
 +		     != unsigned_char_type_node)
 +		{
-+		  warning ("ethernet address is not type unsigned char *"
-+			   " (arg %d)",
++		  status_warning (status,
++			  "ethernet address is not type unsigned char * (arg %d)",
 +			   arg_num);
 +		}
 +	    }
@@ -241,22 +231,12 @@
  
        aflag = 0;
  
-@@ -2130,7 +2203,8 @@
-       switch (info->format_type)
- 	{
- 	case printf_format_type:
--	  fci = print_char_table;
-+	  fci = flag_format_extensions ? print_char_table
-+	  	: unextended_print_char_table;
- 	  break;
- 	case scanf_format_type:
- 	  fci = scan_char_table;
-@@ -2174,7 +2248,7 @@
- 	warning ("width used with `%c' format", format_char);
-       if (index (fci->flag_chars, '3') != 0
+@@ -2441,7 +2515,7 @@
+ 	status_warning (status, "width used with `%c' format", format_char);
+       if (index (fci->flags2, '3') != 0
  	  || (format_char == 'y' && index (flag_chars, 'E')))
--	warning ("`%%%c' yields only last 2 digits of year in some locales",
-+ 	warning ("`%%%c' yields only last 2 digits of year in some locales on non-BSD systems",
+-	status_warning (status, "`%%%c' yields only last 2 digits of year in some locales",
++	status_warning (status, "`%%%c' yields only last 2 digits of year in some locales on non-BSD systems",
  		 format_char);
-       else if (index (fci->flag_chars, '2') != 0)
- 	warning ("`%%%c' yields only last 2 digits of year", format_char);
+       else if (index (fci->flags2, '2') != 0)
+ 	status_warning (status, "`%%%c' yields only last 2 digits of year", format_char);

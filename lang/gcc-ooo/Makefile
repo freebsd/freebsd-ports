@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2000-08-28
+SNAPDATE=	2000-10-02
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gcc-devel
@@ -28,9 +28,15 @@ MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'dated material'
 
-EGCS_REV=	2.96
-LIBSTDCPP_REV=	2.10.0
-WRKSRC=		${WRKDIR}/egcs-${SNAPVER}
+EGCS_REV=	2.97
+LIBSTDCPP_REV=	4
+SRCDIR=		${WRKDIR}/egcs-${SNAPVER}
+WRKSRC=		${WRKDIR}/build
+PATCH_ARGS=	-d ${SRCDIR} -E ${PATCH_STRIP}
+.if !defined(PATCH_DEBUG)
+PATCH_ARGS+=	--forward --quiet
+.endif
+CONFIGURE_SCRIPT=	../egcs-${SNAPVER}/configure
 
 .include <bsd.port.pre.mk>
 
@@ -58,22 +64,19 @@ CONFIGURE_ARGS+= --enable-threads=posix
 ALL_TARGET=	bootstrap
 MAN1=		ecpp.1 eg++.1 eg77.1 egcc.1
 
-pre-patch:
-	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
-	@${MV} ${WRKSRC}/gcc/config/i386/freebsd-elf.h ${WRKSRC}/gcc/config/i386/freebsd.h
-
 pre-configure:
 	@(MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	    ${PERL} -pi.orig -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" \
-	    ${WRKSRC}/gcc/config/freebsd.h )
-	@${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
+	    ${SRCDIR}/gcc/config/freebsd.h )
+	@${CP} ${FILESDIR}/alpha-freebsd.h ${SRCDIR}/gcc/config/alpha/freebsd.h
 	@# Keep from running `autoconf' and `autoheader' since we modified
 	@# configure.in by patching it.
-	@touch ${WRKSRC}/gcc/configure
-	@touch ${WRKSRC}/gcc/cstamp-h.in
+	@touch ${SRCDIR}/gcc/configure
+	@touch ${SRCDIR}/gcc/cstamp-h.in
+	@${MKDIR} ${CONFIGURE_WRKSRC}
 
 pre-build:
-	cd ${WRKSRC} ; contrib/gcc_update --touch
+	cd ${SRCDIR} ; contrib/gcc_update --touch
 
 pre-install:
 	${MKDIR} ${PREFIX}/info
@@ -108,6 +111,8 @@ post-install:
 		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
 	cd ${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV} ; \
 		${LN} -sf libstdc++.a.${LIBSTDCPP_REV} libstdc++.a
+	${MV} -f ${PREFIX}/lib/libzgcj.*  \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
 	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/egcc.1
 	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/eg++.1
 	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/eg77.1
