@@ -47,7 +47,7 @@ post-patch:
 
 do-build:
 	cd ${WRKSRC} && \
-	${CC} -DPACKAGE=\"${PORTNAME}\" -DVERSION=\"${PORTVERSION}\" \
+	${CC} ${CFLAGS} -DPACKAGE=\"${PORTNAME}\" -DVERSION=\"${PORTVERSION}\" \
 	-DHAVE_LIBDVDREAD=1 -I. -I${LOCALBASE}/include -L${LOCALBASE}/lib \
 	-ldvdread lsdvd.c -o lsdvd
 
