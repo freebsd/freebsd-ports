@@ -1,0 +1,19 @@
+--- src/py_module.c.orig	Wed Nov  1 10:10:18 2000
++++ src/py_module.c	Tue Nov  7 15:14:32 2000
+@@ -1,7 +1,6 @@
+ #include <config.h>
+ 
+ #include <ctype.h>
+-#include <langinfo.h>
+ #include <stdio.h>
+ #include <time.h>
+ #include <unistd.h>
+@@ -100,6 +99,8 @@
+      strcpy(tmp, g_get_home_dir());
+      strcat(tmp, "/.emma.py");
+      py_module_include_file(tmp, FALSE);
++
++     py_module_include_file(PREFIX "/share/gnome/emma/emma.py", FALSE);
+ 
+      py_module_include_file("/usr/share/emma.py", FALSE);
+      py_module_include_file("/usr/local/share/emma.py", FALSE);

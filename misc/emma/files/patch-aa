@@ -1,0 +1,10 @@
+--- ./src/date_entry.c	2000/11/07 11:19:50	1.1
++++ ./src/date_entry.c	2000/11/07 11:19:59
+@@ -3,7 +3,6 @@
+ #include <gnome.h>
+ #include "gnome-ucombo.h"
+ 
+-#include <langinfo.h>
+ #include <time.h>
+ 
+ #include "misc.h"

@@ -45,6 +45,7 @@
     SUBDIR += dnetc
     SUBDIR += dog
     SUBDIR += dotfile
+    SUBDIR += emma
     SUBDIR += estic
     SUBDIR += ewipe
     SUBDIR += ezload

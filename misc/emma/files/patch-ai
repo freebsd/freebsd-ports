@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Tue Nov  7 15:25:26 2000
++++ src/Makefile.in	Tue Nov  7 15:19:32 2000
+@@ -140,7 +140,7 @@
+ 
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+-CPPFLAGS = @CPPFLAGS@
++CPPFLAGS = @CPPFLAGS@ -DPREFIX=\"@prefix@\"
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ emma_OBJECTS =  acc_entry.o account_dlg.o actions.o data.o date_entry.o \

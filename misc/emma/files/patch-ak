@@ -1,0 +1,20 @@
+--- data/date.py	2000/11/07 14:34:00	1.1
++++ data/date.py	2000/11/07 14:36:28
+@@ -57,7 +57,7 @@
+     return emma.date() >= this.ticks() and emma.date() < next.ticks()
+ 
+ emma.register_func("MonthExt",\
+-   "Args: numMonths, offset\n\n",\
++   "Args: numMonths, offset\n\n"\
+    "Returns True if the transaction happened\n"\
+    "in the next <numMonths> months offset by\n"\
+    "<offset> weeks.\n\n"\
+@@ -72,7 +72,7 @@
+     return emma.date() >= this.ticks() and emma.date() < next.ticks()
+ 
+ emma.register_func("YearExt",\
+-   "Args: numYears, offset\n\n",\
++   "Args: numYears, offset\n\n"\
+    "Returns True if the transaction happened in\n"\
+    "the next <numYears> year offset by <offset>\n"\
+    "years.\n\n"\

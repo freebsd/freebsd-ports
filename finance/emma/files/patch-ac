@@ -1,0 +1,11 @@
+--- ./src/limit_dlg.c	2000/11/07 11:23:56	1.1
++++ ./src/limit_dlg.c	2000/11/07 11:24:08
+@@ -2,8 +2,6 @@
+ 
+ #include <gnome.h>
+ 
+-#include <langinfo.h>
+-
+ #include "acc_entry.h"
+ #include "date_entry.h"
+ #include "py_module.h"

@@ -1,0 +1,41 @@
+--- src/report_druid.c.orig	Thu Nov  2 15:20:59 2000
++++ src/report_druid.c	Tue Nov  7 15:02:22 2000
+@@ -1,6 +1,5 @@
+ #include <config.h>
+ 
+-#include <langinfo.h>
+ #include <math.h>
+ 
+ #include "date_entry.h"
+@@ -12,6 +11,10 @@
+ 
+ #include "report_druid.h"
+ 
++char *daynames[]={"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
++char *monthnames[]={"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", \
++			"Aug", "Sep", "Oct", "Nov", "Dec"};
++
+ /*
+ 0123456789012345678901234567890123456789012345678901234567890123456789012345678
+ */
+@@ -693,9 +696,9 @@
+     rgd = g_new(ReportGroupData, 1);
+     
+     if (i == 6)
+-      strcpy(rgd->label, nl_langinfo(ABDAY_1));
++      strcpy(rgd->label, daynames[6]);
+     else
+-      strcpy(rgd->label, nl_langinfo(ABDAY_2 + i));
++      strcpy(rgd->label, daynames[i]);
+ 
+     snprintf(rgd->expr, PY_EXPRESSION_MAX_SIZE, "Weekday() == %d", i+1);
+ 
+@@ -711,7 +714,7 @@
+     ReportGroupData *rgd;
+     rgd = g_new(ReportGroupData, 1);
+     
+-    strcpy(rgd->label, nl_langinfo(ABMON_1+i));
++    strcpy(rgd->label, monthnames[i]);
+ 
+     snprintf(rgd->expr, PY_EXPRESSION_MAX_SIZE, "Month() == %d", i+1);
+ 

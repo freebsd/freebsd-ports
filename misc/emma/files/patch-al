@@ -1,0 +1,11 @@
+--- data/Makefile.in	2000/11/07 14:57:10	1.1
++++ data/Makefile.in	2000/11/07 14:57:34
+@@ -125,7 +125,7 @@
+ EXTRA_DIST =  	emma.py
+ 
+ 
+-pkgdata_DATA = $(LIMIT_EXTENSION) $(REPORT_FILTERS)
++pkgdata_DATA = $(LIMIT_EXTENSIONS) $(REPORT_FILTERS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
