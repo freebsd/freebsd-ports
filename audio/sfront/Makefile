@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	sfront
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/sa/
 DISTNAME=	${PORTNAME}
+DIST_SUBDIR=	${PKGNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
