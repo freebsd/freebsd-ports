@@ -11,6 +11,7 @@
     SUBDIR += cdif
     SUBDIR += cdiff
     SUBDIR += chpp
+    SUBDIR += clo++
     SUBDIR += cocoon
     SUBDIR += code2html
     SUBDIR += cole

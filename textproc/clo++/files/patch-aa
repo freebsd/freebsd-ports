@@ -1,0 +1,13 @@
+--- configure.orig	Tue Jan 30 17:09:05 2001
++++ configure	Tue Jan 30 17:12:33 2001
+@@ -1237,8 +1237,8 @@
+ *** variable to the full path to the xml-config program
+ *** that got installed with libxml2"
+ 
+-# Extract the first word of "xml-config", so it can be a program name with args.
+-set dummy xml-config; ac_word=$2
++# Extract the first word of "xml2-config", so it can be a program name with args.
++set dummy xml2-config; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:1244: checking for $ac_word" >&5
+ if eval "test \"`echo '$''{'ac_cv_path_XML_CONFIG'+set}'`\" = set"; then
