@@ -1,6 +1,6 @@
 bin/foomatic-gswrapper
 bin/foomatic-rip
-etc/foomatic/filter.conf
+@unexec if cmp -s %D/etc/foomatic/filter.conf %D/etc/foomatic/filter.conf.sample; then rm -f %D/etc/foomatic/filter.conf; fi
 etc/foomatic/filter.conf.sample
 lib/ppr/interfaces/foomatic-rip
 lib/ppr/lib/foomatic-rip
@@ -12,4 +12,4 @@ libexec/cups/filter/foomatic-rip
 @dirrm lib/ppr/lib
 @dirrm lib/ppr/interfaces
 @dirrm lib/ppr
-@dirrm etc/foomatic
+@unexec /bin/rmdir %D/etc/foomatic 2>/dev/null || true

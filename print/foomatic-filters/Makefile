@@ -7,7 +7,7 @@
 
 PORTNAME=	foomatic-filters
 PORTVERSION=	3.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/
 
