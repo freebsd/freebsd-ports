@@ -3,7 +3,7 @@
 # Date created:		6 February 1996
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.8 1996/09/24 18:14:41 markm Exp $
+# $Id: Makefile,v 1.9 1996/11/12 02:19:20 obrien Exp $
 #
 
 DISTNAME=	tclX7.5.2
@@ -19,6 +19,8 @@ LIB_DEPENDS=	tk41\\.1:${TK_DIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tk
+MAN3=		CmdWrite.3 Handles.3 Keylist.3 TclXInit.3
+MANN=		Memory.n TclX.n
 
 TCL_BASE=	/usr/libdata/tcl
 TCL_SRC=	/usr/src/contrib/tcl
@@ -47,14 +49,6 @@ post-install:
 	$(INSTALL_MAN) $(WRKSRC)/../doc/TclXInit.3 $(PREFIX)/man/man3
 	$(INSTALL_MAN) $(WRKSRC)/../doc/Memory.n $(PREFIX)/man/mann
 	$(INSTALL_MAN) $(WRKSRC)/../doc/TclX.n $(PREFIX)/man/mann
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf $(PREFIX)/man/man3/CmdWrite.3
-	gzip -9nf $(PREFIX)/man/man3/Handles.3
-	gzip -9nf $(PREFIX)/man/man3/Keylist.3
-	gzip -9nf $(PREFIX)/man/man3/TclXInit.3
-	gzip -9nf $(PREFIX)/man/mann/Memory.n
-	gzip -9nf $(PREFIX)/man/mann/TclX.n
-.endif
 	/sbin/ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		13th August 1995
 # Whom:			Julian Stacey <jhs@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1996/03/06 08:20:10 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/12 02:18:53 obrien Exp $
 #
 
 DISTNAME=	pbasic-2.0-950813
@@ -17,6 +17,7 @@ MAINTAINER=	asami@FreeBSD.ORG
 
 ALL_TARGET=	freebsd
 MAKEFILE=	makefile
+MAN1=		pbasic.1
 
 do-configure:
 	-cd ${WRKSRC} ; rm -rf termio m68000 msdos vax pyramid ns32000 \
@@ -25,8 +26,6 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/basic ${PREFIX}/bin/pbasic
 	${INSTALL_MAN} ${WRKSRC}/docs/basic.1 ${PREFIX}/man/man1/pbasic.1
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/pbasic.1
 .endif
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         Mon Oct 31 22:04:12 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.11 1996/03/07 13:00:53 asami Exp $
+# $Id: Makefile,v 1.12 1996/11/12 02:18:03 obrien Exp $
 #
 
 DISTNAME=       Sather-1.0.5
@@ -15,11 +15,11 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/Sather
 ALL_TARGET=	testall
+MAN1=		cs.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Compiler/cs ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/Doc/man/man1/cs.1 ${PREFIX}/man/man1
-	-gzip -9nf ${PREFIX}/man/man1/cs.1
 	${MKDIR} ${PREFIX}/share/doc/sather
 	${INSTALL_DATA} ${WRKSRC}/Doc/License ${PREFIX}/share/doc/sather
 .if !defined(NOPORTDOCS)
