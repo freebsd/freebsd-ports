@@ -11,7 +11,7 @@
 PORTNAME=	rxvt
 PORTVERSION=	2.7.8
 PORTREVISION=	1
-CATEGORIES=	x11
+CATEGORIES+=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/%SUBDIR%/ \
 		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/%SUBDIR%/
