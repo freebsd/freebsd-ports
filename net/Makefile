@@ -723,7 +723,6 @@
     SUBDIR += wais
     SUBDIR += wakeonlan
     SUBDIR += walker
-    SUBDIR += weedns_sc
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
     SUBDIR += wmlj

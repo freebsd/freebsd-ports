@@ -1,6 +1,0 @@
-bin/skeleton_client.pl
-bin/smtp_ip.pl
-%%SITE_PERL%%/WeedNS/Client.pm
-%%PORTDOCS%%%%DOCSDIR%%/skeleton_client.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%SITE_PERL%%/WeedNS
