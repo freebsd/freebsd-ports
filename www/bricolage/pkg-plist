@@ -8,6 +8,13 @@ bin/bric_clean_tmp
 bin/bric_dist_mon
 bin/bric_apachectl
 bin/bric_soap
+bin/bric_upgrade
+bricolage/upgrade/versions.txt
+bricolage/upgrade/lib/bric_upgrade.pm
+bricolage/upgrade/1.8.0/new_lang_pref_options.pl
+bricolage/upgrade/1.8.1/contrib_type_secret.pl
+bricolage/upgrade/1.8.1/fix_orphan_assets.pl
+bricolage/upgrade/1.8.1/grp_grp_name.pl
 bricolage/comp/admin/alerts/dhandler
 bricolage/comp/admin/alerts/recip
 bricolage/comp/admin/control/change_user/dhandler
@@ -203,6 +210,7 @@ bricolage/comp/help/de_de/workflow/trail/dhandler
 bricolage/comp/help/dhandler
 bricolage/comp/help/en_us/about.html
 bricolage/comp/help/en_us/admin/control/change_user.html
+bricolage/comp/help/en_us/admin/control/publish.html
 bricolage/comp/help/en_us/admin/events/dhandler
 bricolage/comp/help/en_us/admin/manager/alert_type.html
 bricolage/comp/help/en_us/admin/manager/category.html
@@ -980,6 +988,20 @@ bricolage/comp/lib/util/status_msg.mc
 bricolage/comp/login/dhandler
 bricolage/comp/login/welcome.html
 bricolage/comp/media/css/style.css
+bricolage/comp/media/css/bo.css
+bricolage/comp/media/css/de_de.css
+bricolage/comp/media/css/en_us.css
+bricolage/comp/media/css/it_it.css
+bricolage/comp/media/css/km.css
+bricolage/comp/media/css/ko_ko.css
+bricolage/comp/media/css/lo.css
+bricolage/comp/media/css/my.css
+bricolage/comp/media/css/pt_pt.css
+bricolage/comp/media/css/ug.css
+bricolage/comp/media/css/vi_vn.css
+bricolage/comp/media/css/zh_cn.css
+bricolage/comp/media/css/zh_hk.css
+bricolage/comp/media/css/zh_tw.css
 bricolage/comp/media/images/006666_curve_left.gif
 bricolage/comp/media/images/006666_curve_right.gif
 bricolage/comp/media/images/646430_arrow_open.gif
@@ -2749,6 +2771,10 @@ share/bricolage/Pg.sql
 @dirrm %%SITE_PERL%%/Bric
 @dirrm %%SITE_PERL%%/mach/auto/Bric
 @dirrm %%SITE_PERL%%/mach/auto/bric_bin
+@dirrm bricolage/upgrade/1.8.1
+@dirrm bricolage/upgrade/1.8.0
+@dirrm bricolage/upgrade/lib
+@dirrm bricolage/upgrade
 @dirrm bricolage/data/burn/comp/oc_1
 @dirrm bricolage/data/burn/comp
 @dirrm bricolage/data/burn
@@ -3112,6 +3138,7 @@ share/bricolage/Pg.sql
 @dirrm bricolage/comp/help/bo
 @dirrm bricolage/comp/help
 @dirrm bricolage/comp/errors
+@exec [ -d bricolage/comp/data ] || (mkdir -p bricolage/comp/data && chown www:www bricolage/comp/data)
 @dirrm bricolage/comp/data
 @dirrm bricolage/comp/admin/profile/workflow
 @dirrm bricolage/comp/admin/profile/user_pref

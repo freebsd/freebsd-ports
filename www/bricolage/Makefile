@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bricolage
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bricolage
@@ -48,6 +48,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 APXS?=		${LOCALBASE}/sbin/apxs
 
 MAKE_ENV+=	INSTALL_VERBOSITY="QUIET"
+
+# Used to determine which versions we can upgrade from
+PREVIOUS_VERSIONS=	1.8.0 1.8.1
 
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
@@ -123,7 +126,9 @@ MAN1=		bric_queued.1 bric_dbprof.1 bric_republish.1 bric_dev_sync.1 \
 MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::App::AccessHandler.3 Bric::App::ApacheConfig.3 \
 		Bric::App::ApacheHandler.3 Bric::App::ApacheStartup.3 Bric::App::Auth.3 \
-		Bric::App::Authz.3 Bric::App::Cache.3 Bric::App::CleanupHandler.3 \
+		Bric::App::Authz.3 Bric::App::Cache.3 Bric::App::Callback.3 \
+		Bric::App::Callback::Profile.3 Bric::App::Callback::Util::Contact.3 \
+		Bric::App::CleanupHandler.3 \
 		Bric::App::Event.3 Bric::App::Handler.3 Bric::App::MediaFunc.3 \
 		Bric::App::PreviewHandler.3 Bric::App::Session.3 Bric::App::Util.3 \
 		Bric::AssetEditing.3 Bric::Biz::ATType.3 Bric::Biz::Asset.3 \
@@ -212,20 +217,35 @@ MAN3=		Bric.3 Bric::Admin.3 Bric::AdvTemplates.3 Bric::Alert.3 \
 		Bric::Util::UserPref.3 Bric::Util::WebDav.3
 
 SQLDIR=		${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
+UPGRADEDIR=		${PREFIX}/bricolage/upgrade
 
-# Setup for $PREFIX
+# Setup for $PREFIX and $SQLDIR
 post-patch:
 	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" ${.CURDIR}/pkg-message > ${PKGMESSAGE}
+	@${SED} -e "s,%%PREFIX%%,${PREFIX},g" \
+		-e "s,%%PORTVERSION%%,${PORTVERSION},g" \
+		${FILESDIR}/bric_upgrade.sh > ${WRKSRC}/bric_upgrade
 	@${REINPLACE_CMD} -e "s,%%SQLDIR%%,${SQLDIR},g" ${WRKSRC}/bin/bric_pgimport
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" \
 		-e "s,%%SITE_PERL_REL%%,${SITE_PERL_REL},g" \
 		-e "s,%%MAN3PREFIX%%,${MAN3PREFIX},g" \
 		-e "s,%%MAN1PREFIX%%,${MAN1PREFIX},g" ${WRKSRC}/inst/config.pl
 
-# Install SQL file and display pkg-message
+# Install SQL file, upgrade files, and display pkg-message
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/bric_upgrade ${PREFIX}/bin
 	@${MKDIR} ${SQLDIR}
 	${INSTALL_DATA} ${WRKSRC}/inst/Pg.sql ${SQLDIR}
+	@${MKDIR} ${UPGRADEDIR}
+	${INSTALL_DATA} ${WRKSRC}/inst/versions.txt ${UPGRADEDIR}
+	@${MKDIR} ${UPGRADEDIR}/lib
+	${INSTALL_DATA} ${WRKSRC}/inst/upgrade/lib/bric_upgrade.pm ${UPGRADEDIR}/lib
+	@for ver in ${PREVIOUS_VERSIONS} ; do \
+		${MKDIR} ${UPGRADEDIR}/$${ver} ; \
+	done
+	for ver in ${PREVIOUS_VERSIONS} ; do \
+		${INSTALL_SCRIPT} ${WRKSRC}/inst/upgrade/$${ver}/*.pl ${UPGRADEDIR}/$${ver} ; \
+	done
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
