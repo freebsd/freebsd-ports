@@ -7,6 +7,7 @@
 
 PORTNAME=	jakarta-ant
 PORTVERSION=	1.5.0.b3
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${ANT_VERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/java/classes/crimson.jar:${PORTSDIR}/textproc/cr
 USE_JAVA=	1.2+
 
 NO_BUILD=	YES
-PORTDESTDIR=	${PREFIX}/${DISTNAME}
+PORTDESTDIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
 PLIST_SUB+=	T=${PORTDESTDIR:S/^${PREFIX}\///}
 
 READMES=	LICENSE README WHATSNEW
