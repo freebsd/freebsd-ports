@@ -1,14 +1,13 @@
 # ex:ts=8
 # New ports collection makefile for:	tin
-# Version required:     tinpre-1.4
 # Date created:		2 Dev 1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tin-1.4.2
-PKGNAME=	zh-tin-1.4.2
+PORTNAME=	tin
+PORTVERSION=	1.4.2
 CATEGORIES=	chinese news
 MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/v1.4/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/v1.4/ \

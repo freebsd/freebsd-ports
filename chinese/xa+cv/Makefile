@@ -1,13 +1,12 @@
 # New ports collection makefile for:	xa+cv
-# Version required:	0.6
 # Date created:		29 March 1999
 # Whom:			Clive Lin <clive@CirX.ORG>
 #
-# $FreeBSD: /tmp/pcvs/ports/chinese/xa+cv/Attic/Makefile,v 1.2 2000-04-01 21:34:44 mharo Exp $
+# $FreeBSD: /tmp/pcvs/ports/chinese/xa+cv/Attic/Makefile,v 1.3 2000-04-13 08:28:19 asami Exp $
 #
 
-DISTNAME=	xa+cv-0.6
-PKGNAME=	zh-xa+cv-0.6
+PORTNAME=	xa+cv
+PORTVERSION=	0.6
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/clive/
 

@@ -1,13 +1,12 @@
 # New ports collection Makefile for: rxvt
-# Version required:     2.6.0
 # Date created:         Nov 16 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rxvt-2.7.3
-PKGNAME=	zh-rxvt-2.7.3
+PORTNAME=	rxvt
+PORTVERSION=	2.7.3
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ \

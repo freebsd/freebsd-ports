@@ -1,13 +1,12 @@
 # New ports collection makefile for:	big5con
-# Version required:	0.92b
 # Date created:		07 Jan 1997
 # Whom:			Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	big5con-0.92e
-PKGNAME=	zh-big5con-0.92e
+PORTNAME=	big5con
+PORTVERSION=	0.92e
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://freebsd.ntu.edu.tw/freebsd/woju/source/ \
 		ftp://freebsd.ntu.edu.tw/freebsd/woju/binary/ \

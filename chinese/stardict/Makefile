@@ -1,5 +1,4 @@
 # Ports collection makefile for:	cdict
-# Version required:			1.0
 # Date created:                         Thu Oct 14, 1999
 # Whom:                                 Peng HaiJie   (phj@cn.FreeBSD.org)
 #                                       (phj@transfar.com)
@@ -7,9 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	zh-cdict-1.0
+PORTNAME=	cdict
+PORTVERSION=	1.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cn.FreeBSD.org/pub/ported/
+DISTNAME=	${PKGNAME}
 
 MAINTAINER=	phj@cn.FreeBSD.org
 

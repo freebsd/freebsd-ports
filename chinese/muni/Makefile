@@ -1,13 +1,12 @@
 # New ports collection makefile for:	muni
-# Version required:	1.0
 # Date created:		6 May 1999
 # Whom:			G. Adam Stanislav <adam@whizkidtech.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	muni-1.0
-PKGNAME=	zh-${DISTNAME}
+PORTNAME=	muni
+PORTVERSION=	1.0
 CATEGORIES=	chinese
 MASTER_SITES=	http://www.whizkidtech.net/i18n/muni/
 
