@@ -5052,6 +5052,7 @@ ocaml		ports/lang/ocaml
 ocaml-classes	ports/devel/ocaml-classes
 ocaml-cryptokit	ports/security/ocaml-cryptokit
 ocaml-findlib	ports/devel/ocaml-findlib
+ocaml-images	ports/graphics/ocaml-images
 ocaml-jabbr	ports/net/ocaml-jabbr
 ocaml-lablgl	ports/graphics/ocaml-lablgl
 ocaml-lablgtk	ports/x11-toolkits/ocaml-lablgtk
