@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base
 NO_BUILD=	yes
 
 USE_PERL5=	yes
-POD2MAN?=	/usr/bin/pod2man
+POD2MAN?=	pod2man
 MAN1=		demime.1
 
 do-extract:
