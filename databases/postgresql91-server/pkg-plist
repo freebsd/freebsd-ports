@@ -118,6 +118,8 @@ pgsql/lib/local1_template1.description
 pgsql/lib/pg_geqo.sample
 pgsql/lib/pg_hba.conf.sample
 pgsql/lib/plpgsql.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 pgsql/post-install-notes
 share/doc/pgsql/FAQ
 share/doc/pgsql/FAQ_CVS
@@ -299,8 +301,6 @@ share/doc/pgsql/tutorial.ps.gz
 share/doc/pgsql/tutorial.tar.gz
 share/doc/pgsql/user.ps.gz
 share/doc/pgsql/user.tar.gz
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm share/doc/pgsql/src/sgml/ref
 @dirrm share/doc/pgsql/src/sgml
 @dirrm share/doc/pgsql/src/graphics
