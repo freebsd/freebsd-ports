@@ -497,6 +497,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-media-2.0.mo
 @dirrm share/gnome/pixmaps/gnome-cd/themes/None
 @dirrm share/gnome/pixmaps/gnome-cd/themes
 @dirrm share/gnome/pixmaps/gnome-cd
+@dirrm share/gnome/omf/gnome-media
 @dirrm share/gnome/help/gstreamer-properties/C/figures
 @dirrm share/gnome/help/gstreamer-properties/C
 @dirrm share/gnome/help/gstreamer-properties

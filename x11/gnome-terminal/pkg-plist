@@ -165,6 +165,10 @@ share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
 @dirrm share/gnome/help/gnome-terminal/de/figures
 @dirrm share/gnome/help/gnome-terminal/de
 @dirrm share/gnome/help/gnome-terminal/C/figures
+@dirrm share/gnome/help/gnome-terminal/C
+@dirrm share/gnome/help/gnome-terminal
+@dirrm share/gnome/gnome-terminal/glade
+@dirrm share/gnome/gnome-terminal
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-de.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-terminal/gnome-terminal-es.omf 2>/dev/null || /usr/bin/true

@@ -639,6 +639,8 @@ share/sawfish/%%VERSION%%/themes/smaker/close_inv.png
 share/sawfish/%%VERSION%%/themes/smaker/min.png
 share/sawfish/%%VERSION%%/themes/smaker/min_inv.png
 share/sawfish/%%VERSION%%/themes/smaker/theme.jl
+@dirrm share/sawfish/themes
+@dirrm share/sawfish/sounds
 @dirrm share/sawfish/%%VERSION%%/themes/smaker
 @dirrm share/sawfish/%%VERSION%%/themes/simple
 @dirrm share/sawfish/%%VERSION%%/themes/mono
@@ -668,9 +670,11 @@ share/sawfish/%%VERSION%%/themes/smaker/theme.jl
 @dirrm share/sawfish/%%VERSION%%/lisp/sawfish
 @dirrm share/sawfish/%%VERSION%%/lisp
 @dirrm share/sawfish/%%VERSION%%
+@dirrm share/sawfish
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm/util
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish/wm
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%/sawfish
 @dirrm libexec/sawfish/%%VERSION%%/%%GNUHOST%%
 @dirrm libexec/sawfish/%%VERSION%%
+@dirrm libexec/sawfish
 @dirrm libexec/rep/%%GNUHOST%%/sawfish

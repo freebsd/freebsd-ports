@@ -224,9 +224,15 @@ share/locale/zh_TW/LC_MESSAGES/gdm-%%VERSION%%.mo
 @dirrm share/gnome/gdm/themes/circles
 @dirrm share/gnome/gdm/themes
 @dirrm share/gnome/gdm/BuiltInSessions
+@dirrm share/gnome/gdm
 @dirrm etc/pam.d
 @dirrm etc/gdm/modules
+@dirrm etc/gdm/Sessions
+@dirrm etc/gdm/PreSession
+@dirrm etc/gdm/PostSession
 @dirrm etc/gdm/PostLogin
+@dirrm etc/gdm/Init
+@dirrm etc/gdm
 @unexec /bin/rmdir %D/etc/dm/Sessions 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/etc/dm 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/gnome/log/gdm 2>/dev/null || /usr/bin/true
