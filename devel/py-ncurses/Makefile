@@ -19,5 +19,16 @@ COMMENT=	A ncurses binding for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_REINPLACE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${PYTHON_REL} >= 230
+.for f in _curses_wrap.c _panel_wrap.c _menu_wrap.c _form_wrap.c
+	@${REINPLACE_CMD} -e '45s,^.*$$,#include "py_curses.h",' \
+		${WRKSRC}/ncurses/${f}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>
