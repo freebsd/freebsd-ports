@@ -9,7 +9,7 @@
 DISTNAME=	IB_4.0_FreeBSD
 PKGNAME=	interbase-4.0
 CATEGORIES=	databases
-MASTER_SITES=	http://iblinux.rios.co.jp/intl/dloadfb/
+MASTER_SITES=	# manual fetch
 
 MAINTAINER=	berend@pobox.com
 
