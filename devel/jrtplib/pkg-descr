@@ -1,0 +1,11 @@
+JRTPLIB is an object-oriented RTP library written in C++ by Jori Liesenborgs. 
+It was partly developed for his thesis at the School for Knowledge Technology 
+(or 'School voor Kennistechnologie' in Dutch), a cooperation between the 
+'Limburgs Universitair Centrum' (LUC) and the 'Universiteit Maastricht' (UM). 
+
+The latest version of the library is 2.7 (December 12, 2002) 
+
+WWW: http://lumumba.luc.ac.be/jori/jrtplib/jrtplib.html
+
+- Petr
+hopet@ics.muni.cz

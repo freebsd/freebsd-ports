@@ -1,0 +1,21 @@
+# New ports collection makefile for:   jrtplib
+# Date created:        4 March 2003
+# Whom:                Petr Holub <hopet@ics.muni.cz>
+#
+# $FreeBSD$
+#
+
+PORTNAME=      jrtplib
+PORTVERSION=   2.7
+CATEGORIES=    devel
+MASTER_SITES=  http://lumumba.luc.ac.be/jori/jrtplib/
+
+MAINTAINER=    hopet@ics.muni.cz
+COMMENT=       Object-oriented RTP library written in C++
+
+GNU_CONFIGURE= yes
+USE_GMAKE=     yes
+INSTALLS_SHLIB= yes
+NO_FILTER_SHLIBS= yes
+
+.include <bsd.port.mk>
