@@ -29,6 +29,7 @@
     SUBDIR += gevas
     SUBDIR += gnome--
     SUBDIR += gnome-look
+    SUBDIR += gnome-themes
     SUBDIR += gnustep-gui
     SUBDIR += gnustep-xgps
     SUBDIR += gob
