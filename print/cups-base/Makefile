@@ -14,7 +14,7 @@ PORTEPOCH=	${CUPS_PORTEPOCH}
 CATEGORIES=	print
 MASTER_SITES=	${CUPS_MASTER_SITES}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	asa@gascom.ru
 COMMENT=	The Common UNIX Printing System: headers, libs, & daemons
 
 USE_REINPLACE=	yes
@@ -48,6 +48,7 @@ post-install:
 	${MKDIR} ${CUPS_SPOOLDIR} ${CUPS_SPOOLDIR}/tmp
 	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} ${CUPS_SPOOLDIR}
 	${CHMOD} -R g+w ${CUPS_SPOOLDIR}
+	@${CAT} ${PKGMESSAGE}
 
 .include "${.CURDIR}/../../print/cups/Makefile.common"
 .include <bsd.port.pre.mk>
