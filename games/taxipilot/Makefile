@@ -20,5 +20,14 @@ GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500028
+post-patch:
+	${REINPLACE_CMD} -e "s,#include <stdint.h>,," \
+		${WRKSRC}/taxipilot/timemanager.h
+.endif
+
+.include <bsd.port.post.mk>
