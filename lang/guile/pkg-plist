@@ -103,7 +103,7 @@ lib/libqthreads.a
 lib/libqthreads.so
 lib/libqthreads.so.0
 share/aclocal/guile.m4
-share/guile/%%GUILE_VER%%/ice-9/and-let\*.scm
+share/guile/%%GUILE_VER%%/ice-9/and-let*.scm
 share/guile/%%GUILE_VER%%/ice-9/and-let-star.scm
 share/guile/%%GUILE_VER%%/ice-9/arrays.scm
 share/guile/%%GUILE_VER%%/ice-9/boot-9.scm
