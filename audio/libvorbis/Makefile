@@ -6,28 +6,21 @@
 #
 
 PORTNAME=	libvorbis
-PORTVERSION=	20001018
+PORTVERSION=	1.0b4
+PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://home.student.utwente.nl/t.vanklaveren/distfiles/
-DISTNAME=	vorbis-${PORTVERSION}
+MASTER_SITES=	http://www.vorbis.com/files/beta4/unix/ \
+		http://home.student.utwente.nl/t.vanklaveren/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	t.vanklaveren@student.utwente.nl
 
-LIB_DEPENDS=	ogg.0:${PORTSDIR}/audio/libogg
-
-WRKSRC=		${WRKDIR}/vorbis
+LIB_DEPENDS=	ogg.1:${PORTSDIR}/audio/libogg
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_AUTOMAKE=	yes
 CONFIGURE_ARGS=	--with-ogg=${LOCALBASE}
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
-AUTOMAKE_ARGS=	--add-missing
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 AUTOCONF_ARGS=	; ${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
-
-AUTOHEADER?=	${LOCALBASE}/bin/autoheader
-
-pre-configre:
-	cd ${WRKSRC} && ${AUTOHEADER}
 
 .include <bsd.port.mk>
