@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.std.com/customers2/src/telcom/
 
 NO_WRKSUBDIR=	yes
-NO_PACKAGE=	yes # "no redistibution" copyright
+RESTRICTED=	"'No redistibution' copyright."
 
 post-install:
 	@cat ${PKGDIR}/DESCR
