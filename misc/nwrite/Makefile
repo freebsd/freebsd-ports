@@ -3,7 +3,7 @@
 # Date created:                	29 July 1997
 # Whom:                        	daveh
 #
-# $Id: Makefile,v 1.4 1999/03/29 02:17:30 billf Exp $
+# $Id: Makefile,v 1.5 1999/04/23 16:02:22 mharo Exp $
 #
 
 DISTNAME=	nwrite-1.9.2
@@ -21,7 +21,7 @@ BINGRP=		tty
 BINMODE=	2755
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/nwrite ${PREFIX}/bin
-		${INSTALL_MAN} ${WRKSRC}/nwrite.1.in ${PREFIX}/man/man1/nwrite.1
+	${INSTALL_PROGRAM} ${WRKSRC}/nwrite ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/nwrite.1.in ${PREFIX}/man/man1/nwrite.1
 
 .include <bsd.port.mk>
