@@ -317,27 +317,19 @@ share/gnome/evolution/views/mail/galview.xml
 share/gnome/evolution/views/tasks/Tasks.galview
 share/gnome/evolution/views/tasks/With_Category.galview
 share/gnome/evolution/views/tasks/galview.xml
-share/gnome/help/evolution/C/apx-authors.sgml
-share/gnome/help/evolution/C/apx-bugs.sgml
 share/gnome/help/evolution/C/apx-gloss.html
-share/gnome/help/evolution/C/apx-gloss.sgml
 share/gnome/help/evolution/C/authors.html
 share/gnome/help/evolution/C/bugs.html
 share/gnome/help/evolution/C/config-prefs-cal.html
 share/gnome/help/evolution/C/config-prefs-contact.html
-share/gnome/help/evolution/C/config-prefs-general.html
 share/gnome/help/evolution/C/config-prefs.html
-share/gnome/help/evolution/C/config-prefs.sgml
 share/gnome/help/evolution/C/config-sync.html
-share/gnome/help/evolution/C/config-sync.sgml
 share/gnome/help/evolution/C/config.html
 share/gnome/help/evolution/C/contact-automation-basic.html
-share/gnome/help/evolution/C/contact-automation-lists.html
 share/gnome/help/evolution/C/contact-search.html
 share/gnome/help/evolution/C/customizing-summary.html
+share/gnome/help/evolution/C/docbook.css
 share/gnome/help/evolution/C/encryption.html
-share/gnome/help/evolution/C/evolution-faq.sgml
-share/gnome/help/evolution/C/evolution.sgml
 share/gnome/help/evolution/C/figures/calendar.png
 share/gnome/help/evolution/C/figures/config-cal.png
 share/gnome/help/evolution/C/figures/config-mail.png
@@ -365,13 +357,40 @@ share/gnome/help/evolution/C/index.html
 share/gnome/help/evolution/C/introduction.html
 share/gnome/help/evolution/C/ln20.html
 share/gnome/help/evolution/C/menuref.html
-share/gnome/help/evolution/C/menuref.sgml
-share/gnome/help/evolution/C/preface.sgml
 share/gnome/help/evolution/C/print-destination.html
 share/gnome/help/evolution/C/quickref-cal.html
 share/gnome/help/evolution/C/quickref-contact.html
 share/gnome/help/evolution/C/quickref-mail.html
 share/gnome/help/evolution/C/rsvp-stuff.html
+share/gnome/help/evolution/C/sgml/apx-authors.sgml
+share/gnome/help/evolution/C/sgml/apx-bugs.sgml
+share/gnome/help/evolution/C/sgml/apx-gloss.sgml
+share/gnome/help/evolution/C/sgml/config-prefs.sgml
+share/gnome/help/evolution/C/sgml/config-sync.sgml
+share/gnome/help/evolution/C/sgml/evolution-faq.sgml
+share/gnome/help/evolution/C/sgml/evolution.sgml
+share/gnome/help/evolution/C/sgml/menuref.sgml
+share/gnome/help/evolution/C/sgml/preface.sgml
+share/gnome/help/evolution/C/sgml/usage-calendar.sgml
+share/gnome/help/evolution/C/sgml/usage-contact.sgml
+share/gnome/help/evolution/C/sgml/usage-exec-summary.sgml
+share/gnome/help/evolution/C/sgml/usage-mail-org.sgml
+share/gnome/help/evolution/C/sgml/usage-mail.sgml
+share/gnome/help/evolution/C/sgml/usage-mainwindow.sgml
+share/gnome/help/evolution/C/sgml/usage-print.sgml
+share/gnome/help/evolution/C/sgml/usage-sync.sgml
+share/gnome/help/evolution/C/stylesheet-images/caution.gif
+share/gnome/help/evolution/C/stylesheet-images/home.gif
+share/gnome/help/evolution/C/stylesheet-images/important.gif
+share/gnome/help/evolution/C/stylesheet-images/next.gif
+share/gnome/help/evolution/C/stylesheet-images/note.gif
+share/gnome/help/evolution/C/stylesheet-images/prev.gif
+share/gnome/help/evolution/C/stylesheet-images/tip.gif
+share/gnome/help/evolution/C/stylesheet-images/toc-blank.gif
+share/gnome/help/evolution/C/stylesheet-images/toc-minus.gif
+share/gnome/help/evolution/C/stylesheet-images/toc-plus.gif
+share/gnome/help/evolution/C/stylesheet-images/up.gif
+share/gnome/help/evolution/C/stylesheet-images/warning.gif
 share/gnome/help/evolution/C/topic.dat
 share/gnome/help/evolution/C/typography.html
 share/gnome/help/evolution/C/ui-intro.html
@@ -379,15 +398,11 @@ share/gnome/help/evolution/C/usage-calendar-apts.html
 share/gnome/help/evolution/C/usage-calendar-multiple.html
 share/gnome/help/evolution/C/usage-calendar-todo.html
 share/gnome/help/evolution/C/usage-calendar.html
-share/gnome/help/evolution/C/usage-calendar.sgml
 share/gnome/help/evolution/C/usage-contact-organize.html
 share/gnome/help/evolution/C/usage-contact-sharing.html
 share/gnome/help/evolution/C/usage-contact.html
-share/gnome/help/evolution/C/usage-contact.sgml
-share/gnome/help/evolution/C/usage-exec-summary.sgml
 share/gnome/help/evolution/C/usage-mail-getnsend-get.html
 share/gnome/help/evolution/C/usage-mail-getnsend-send.html
-share/gnome/help/evolution/C/usage-mail-org.sgml
 share/gnome/help/evolution/C/usage-mail-organize-columns.html
 share/gnome/help/evolution/C/usage-mail-organize-filters.html
 share/gnome/help/evolution/C/usage-mail-organize-folders.html
@@ -396,43 +411,25 @@ share/gnome/help/evolution/C/usage-mail-organize-vfolders.html
 share/gnome/help/evolution/C/usage-mail-organize.html
 share/gnome/help/evolution/C/usage-mail-subscriptions.html
 share/gnome/help/evolution/C/usage-mail.html
-share/gnome/help/evolution/C/usage-mail.sgml
 share/gnome/help/evolution/C/usage-mainwindow-starting.html
 share/gnome/help/evolution/C/usage-mainwindow.html
-share/gnome/help/evolution/C/usage-mainwindow.sgml
 share/gnome/help/evolution/C/usage-print.html
-share/gnome/help/evolution/C/usage-print.sgml
 share/gnome/help/evolution/C/usage-summary.html
 share/gnome/help/evolution/C/usage-sync.html
-share/gnome/help/evolution/C/usage-sync.sgml
 share/gnome/help/evolution/C/usage.html
-share/gnome/help/evolution/no/aboutbook.html
-share/gnome/help/evolution/no/apx-authors.sgml
-share/gnome/help/evolution/no/apx-bugs.sgml
 share/gnome/help/evolution/no/apx-gloss.html
-share/gnome/help/evolution/no/apx-gloss.sgml
 share/gnome/help/evolution/no/authors.html
 share/gnome/help/evolution/no/bugs.html
-share/gnome/help/evolution/no/config-encryption.sgml
 share/gnome/help/evolution/no/config-prefs-cal.html
 share/gnome/help/evolution/no/config-prefs-contact.html
-share/gnome/help/evolution/no/config-prefs-general.html
 share/gnome/help/evolution/no/config-prefs.html
-share/gnome/help/evolution/no/config-prefs.sgml
 share/gnome/help/evolution/no/config-sync.html
-share/gnome/help/evolution/no/config-sync.sgml
 share/gnome/help/evolution/no/config.html
 share/gnome/help/evolution/no/contact-automation-basic.html
-share/gnome/help/evolution/no/contact-automation-lists.html
 share/gnome/help/evolution/no/contact-search.html
 share/gnome/help/evolution/no/customizing-summary.html
+share/gnome/help/evolution/no/docbook.css
 share/gnome/help/evolution/no/encryption.html
-share/gnome/help/evolution/no/evolution-faq.html
-share/gnome/help/evolution/no/evolution-faq.sgml
-share/gnome/help/evolution/no/evolution.sgml
-share/gnome/help/evolution/no/faq-debugging.html
-share/gnome/help/evolution/no/faq-get-and-compile.html
-share/gnome/help/evolution/no/faq-trouble.html
 share/gnome/help/evolution/no/figures/calendar.png
 share/gnome/help/evolution/no/figures/config-cal.png
 share/gnome/help/evolution/no/figures/config-mail.png
@@ -460,15 +457,42 @@ share/gnome/help/evolution/no/index.html
 share/gnome/help/evolution/no/introduction.html
 share/gnome/help/evolution/no/ln20.html
 share/gnome/help/evolution/no/menuref.html
-share/gnome/help/evolution/no/menuref.sgml
-share/gnome/help/evolution/no/p2934.html
-share/gnome/help/evolution/no/preface.sgml
 share/gnome/help/evolution/no/print-destination.html
 share/gnome/help/evolution/no/quickref-cal.html
-share/gnome/help/evolution/no/quickref-commontasks.html
 share/gnome/help/evolution/no/quickref-contact.html
 share/gnome/help/evolution/no/quickref-mail.html
 share/gnome/help/evolution/no/rsvp-stuff.html
+share/gnome/help/evolution/no/sgml/apx-authors.sgml
+share/gnome/help/evolution/no/sgml/apx-bugs.sgml
+share/gnome/help/evolution/no/sgml/apx-gloss.sgml
+share/gnome/help/evolution/no/sgml/config-encryption.sgml
+share/gnome/help/evolution/no/sgml/config-prefs.sgml
+share/gnome/help/evolution/no/sgml/config-sync.sgml
+share/gnome/help/evolution/no/sgml/evolution-faq.sgml
+share/gnome/help/evolution/no/sgml/evolution.sgml
+share/gnome/help/evolution/no/sgml/menuref.sgml
+share/gnome/help/evolution/no/sgml/preface.sgml
+share/gnome/help/evolution/no/sgml/usage-calendar.sgml
+share/gnome/help/evolution/no/sgml/usage-contact.sgml
+share/gnome/help/evolution/no/sgml/usage-encryption.sgml
+share/gnome/help/evolution/no/sgml/usage-exec-summary.sgml
+share/gnome/help/evolution/no/sgml/usage-mail-org.sgml
+share/gnome/help/evolution/no/sgml/usage-mail.sgml
+share/gnome/help/evolution/no/sgml/usage-mainwindow.sgml
+share/gnome/help/evolution/no/sgml/usage-print.sgml
+share/gnome/help/evolution/no/sgml/usage-sync.sgml
+share/gnome/help/evolution/no/stylesheet-images/caution.gif
+share/gnome/help/evolution/no/stylesheet-images/home.gif
+share/gnome/help/evolution/no/stylesheet-images/important.gif
+share/gnome/help/evolution/no/stylesheet-images/next.gif
+share/gnome/help/evolution/no/stylesheet-images/note.gif
+share/gnome/help/evolution/no/stylesheet-images/prev.gif
+share/gnome/help/evolution/no/stylesheet-images/tip.gif
+share/gnome/help/evolution/no/stylesheet-images/toc-blank.gif
+share/gnome/help/evolution/no/stylesheet-images/toc-minus.gif
+share/gnome/help/evolution/no/stylesheet-images/toc-plus.gif
+share/gnome/help/evolution/no/stylesheet-images/up.gif
+share/gnome/help/evolution/no/stylesheet-images/warning.gif
 share/gnome/help/evolution/no/topic.dat
 share/gnome/help/evolution/no/typography.html
 share/gnome/help/evolution/no/ui-intro.html
@@ -476,16 +500,12 @@ share/gnome/help/evolution/no/usage-calendar-apts.html
 share/gnome/help/evolution/no/usage-calendar-multiple.html
 share/gnome/help/evolution/no/usage-calendar-todo.html
 share/gnome/help/evolution/no/usage-calendar.html
-share/gnome/help/evolution/no/usage-calendar.sgml
 share/gnome/help/evolution/no/usage-contact-organize.html
 share/gnome/help/evolution/no/usage-contact-sharing.html
 share/gnome/help/evolution/no/usage-contact.html
-share/gnome/help/evolution/no/usage-contact.sgml
-share/gnome/help/evolution/no/usage-encryption.sgml
-share/gnome/help/evolution/no/usage-exec-summary.sgml
 share/gnome/help/evolution/no/usage-mail-getnsend-get.html
 share/gnome/help/evolution/no/usage-mail-getnsend-send.html
-share/gnome/help/evolution/no/usage-mail-org.sgml
+share/gnome/help/evolution/no/usage-mail-organize-columns.html
 share/gnome/help/evolution/no/usage-mail-organize-filters.html
 share/gnome/help/evolution/no/usage-mail-organize-folders.html
 share/gnome/help/evolution/no/usage-mail-organize-search.html
@@ -493,15 +513,11 @@ share/gnome/help/evolution/no/usage-mail-organize-vfolders.html
 share/gnome/help/evolution/no/usage-mail-organize.html
 share/gnome/help/evolution/no/usage-mail-subscriptions.html
 share/gnome/help/evolution/no/usage-mail.html
-share/gnome/help/evolution/no/usage-mail.sgml
 share/gnome/help/evolution/no/usage-mainwindow-starting.html
 share/gnome/help/evolution/no/usage-mainwindow.html
-share/gnome/help/evolution/no/usage-mainwindow.sgml
 share/gnome/help/evolution/no/usage-print.html
-share/gnome/help/evolution/no/usage-print.sgml
 share/gnome/help/evolution/no/usage-summary.html
 share/gnome/help/evolution/no/usage-sync.html
-share/gnome/help/evolution/no/usage-sync.sgml
 share/gnome/help/evolution/no/usage.html
 share/gnome/idl/Composer.idl
 share/gnome/idl/Evolution-Activity.idl
@@ -1143,7 +1159,6 @@ share/locale/sl/LC_MESSAGES/evolution.mo
 share/locale/sv/LC_MESSAGES/evolution.mo
 share/locale/tr/LC_MESSAGES/evolution.mo
 share/locale/uk/LC_MESSAGES/evolution.mo
-share/locale/zh_CN/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/omf/evolution
 @dirrm share/gnome/libical-evolution/zoneinfo/Pacific
 @dirrm share/gnome/libical-evolution/zoneinfo/Indian
@@ -1168,9 +1183,11 @@ share/locale/zh_CN/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/html/evolution-cal-util
 @dirrm share/gnome/html/evolution-cal-client
 @dirrm share/gnome/help/evolution/no/stylesheet-images
+@dirrm share/gnome/help/evolution/no/sgml
 @dirrm share/gnome/help/evolution/no/figures
 @dirrm share/gnome/help/evolution/no
 @dirrm share/gnome/help/evolution/C/stylesheet-images
+@dirrm share/gnome/help/evolution/C/sgml
 @dirrm share/gnome/help/evolution/C/figures
 @dirrm share/gnome/help/evolution/C
 @dirrm share/gnome/help/evolution

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	0.99.0
-PORTREVISION=	1
+PORTVERSION=	0.99.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/evolution
@@ -24,9 +23,12 @@ USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
+USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db3-libs=${LOCALBASE}/lib \
-		--with-html-dir=${PREFIX}/share/gnome/html
+		--with-html-dir=${PREFIX}/share/gnome/html \
+		--with-openssl-includes=${OPENSSLBASE}/include \
+		--with-openssl-libs=${OPENSSLBASE}/lib
 # --with-pisock=${LOCALBASE}/pilot --enable-pilot-conduits=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
