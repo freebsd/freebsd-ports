@@ -3735,6 +3735,7 @@ lla		ports/net/lla
 llnlxdir	ports/ftp/llnlxdir
 llnlxftp	ports/ftp/llnlxftp
 lmbench		ports/benchmarks/lmbench
+lmd		ports/net/lmd
 lmmon		ports/sysutils/lmmon
 lmtp2nntp	ports/mail/lmtp2nntp
 ln		src/bin/ln
