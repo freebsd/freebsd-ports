@@ -342,14 +342,14 @@ Index: src/delay_pools.c
      ch.my_addr = r->my_addr;
      ch.my_port = r->my_port;
 Index: src/structs.h
-*** src/structs.h.orig	Thu Feb 26 20:32:47 2004
---- src/structs.h	Thu Feb 26 20:34:51 2004
+*** src/structs.h.orig	Wed Oct  6 00:56:14 2004
+--- src/structs.h	Mon Oct 18 20:23:13 2004
 ***************
-*** 594,599 ****
---- 594,604 ----
-  	int pipeline_prefetch;
+*** 606,611 ****
+--- 606,616 ----
   	int request_entities;
   	int detect_broken_server_pconns;
+  	int balance_on_multiple_ip;
 + #if FOLLOW_X_FORWARDED_FOR
 + 	int acl_uses_indirect_client;
 + 	int delay_pool_uses_indirect_client;
@@ -359,8 +359,8 @@ Index: src/structs.h
       acl *aclList;
       struct {
 ***************
-*** 615,620 ****
---- 620,628 ----
+*** 627,632 ****
+--- 632,640 ----
   	acl_access *reply;
   	acl_address *outgoing_address;
   	acl_tos *outgoing_tos;
@@ -371,8 +371,8 @@ Index: src/structs.h
       acl_deny_info_list *denyInfoList;
       struct _authConfig {
 ***************
-*** 1611,1616 ****
---- 1619,1629 ----
+*** 1623,1628 ****
+--- 1631,1641 ----
       unsigned int internal:1;
       unsigned int body_sent:1;
       unsigned int reset_tcp:1;
@@ -385,8 +385,8 @@ Index: src/structs.h
   
   struct _link_list {
 ***************
-*** 1657,1662 ****
---- 1670,1678 ----
+*** 1669,1674 ****
+--- 1682,1690 ----
       int max_forwards;
       /* these in_addr's could probably be sockaddr_in's */
       struct in_addr client_addr;
@@ -397,11 +397,11 @@ Index: src/structs.h
       unsigned short my_port;
       HttpHeader header;
 ***************
-*** 1667,1672 ****
---- 1683,1693 ----
-      char *peer_login;		/* Configured peer login:password */
-      time_t lastmod;		/* Used on refreshes */
+*** 1680,1685 ****
+--- 1696,1706 ----
       const char *vary_headers;	/* Used when varying entities are detected. Changes how the store key is calculated */
+      BODY_HANDLER *body_reader;
+      void *body_reader_data;
 + #if FOLLOW_X_FORWARDED_FOR
 +     /* XXX a list of IP addresses would be a better data structure
 +      * than this String */
