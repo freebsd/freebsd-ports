@@ -27,12 +27,12 @@ DOCS_EN=	ChangeLog \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
+.include <bsd.port.pre.mk>
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bsearch.rb ${RUBY_SITELIBDIR}/
 
 post-install: doc-install
-
-.include <bsd.port.mk>
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -44,3 +44,5 @@ doc-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>
