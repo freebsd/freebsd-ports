@@ -1,0 +1,52 @@
+--- apps/ssh/Makefile.in.orig	Wed Dec  3 14:17:48 2003
++++ apps/ssh/Makefile.in	Fri Jan  2 09:23:14 2004
+@@ -1019,36 +1019,20 @@
+ 	  fi
+ 
+ install-symlinks:
+-	-mv -f $(DESTDIR)$(bindir)/ssh $(DESTDIR)$(bindir)/ssh.old
+-	-mv -f $(DESTDIR)$(bindir)/ssh-agent $(DESTDIR)$(bindir)/ssh-agent.old
+-	-mv -f $(DESTDIR)$(bindir)/ssh-add $(DESTDIR)$(bindir)/ssh-add.old
+-	-mv -f $(DESTDIR)$(bindir)/ssh-askpass $(DESTDIR)$(bindir)/ssh-askpass.old
+-	-mv -f $(DESTDIR)$(bindir)/ssh-keygen $(DESTDIR)$(bindir)/ssh-keygen.old
+-	-mv -f $(DESTDIR)$(bindir)/scp $(DESTDIR)$(bindir)/scp.old
+-	-mv -f $(DESTDIR)$(bindir)/sftp $(DESTDIR)$(bindir)/sftp.old
+-	-mv -f $(DESTDIR)$(bindir)/sftp-server $(DESTDIR)$(bindir)/sftp-server.old
+-	-mv -f $(DESTDIR)$(bindir)/ssh-signer $(DESTDIR)$(bindir)/ssh-signer.old
+-	-mv -f $(DESTDIR)$(bindir)/ssh-probe $(DESTDIR)$(bindir)/ssh-probe.old
+-
+ 	(cd $(DESTDIR)$(bindir) && $(LN_S) ssh2 ssh)
+ 	(cd $(DESTDIR)$(bindir) && $(LN_S) ssh-agent2 ssh-agent)
+ 	(cd $(DESTDIR)$(bindir) && $(LN_S) ssh-add2 ssh-add)
+-	(cd $(DESTDIR)$(bindir) && $(LN_S) ssh-askpass2 ssh-askpass)
++	case x"@CONFPROGRAMS@" in 					\
++	x*askpass*)							\
++	(cd $(DESTDIR)$(bindir) && $(LN_S) ssh-askpass2 ssh-askpass) ;;	\
++	esac
+ 	(cd $(DESTDIR)$(bindir) && $(LN_S) ssh-keygen2 ssh-keygen)
+ 	(cd $(DESTDIR)$(bindir) && $(LN_S) scp2 scp)
+ 	(cd $(DESTDIR)$(bindir) && $(LN_S) sftp2 sftp)
+ 	(cd $(DESTDIR)$(bindir) && $(LN_S) sftp-server2 sftp-server)
+ 	(cd $(DESTDIR)$(bindir) && $(LN_S) ssh-signer2 ssh-signer)
+ 	(cd $(DESTDIR)$(bindir) && $(LN_S) ssh-probe2 ssh-probe)
+-	-mv -f $(DESTDIR)$(sbindir)/sshd $(DESTDIR)$(sbindir)/sshd.old
+ 	(cd $(DESTDIR)$(sbindir) && $(LN_S) sshd2 sshd)
+-	-mv -f $(DESTDIR)$(mandir)/man1/ssh.1 $(DESTDIR)$(mandir)/man1/ssh.old.1
+-	-mv -f $(DESTDIR)$(mandir)/man1/ssh-add.1 $(DESTDIR)$(mandir)/man1/ssh-add.old.1
+-	-mv -f $(DESTDIR)$(mandir)/man1/ssh-agent.1 $(DESTDIR)$(mandir)/man1/ssh-agent.old.1
+-	-mv -f $(DESTDIR)$(mandir)/man1/ssh-keygen.1 $(DESTDIR)$(mandir)/man1/ssh-keygen.old.1
+-	-mv -f $(DESTDIR)$(mandir)/man1/scp.1 $(DESTDIR)$(mandir)/man1/scp.old.1
+-	-mv -f $(DESTDIR)$(mandir)/man1/sftp.1 $(DESTDIR)$(mandir)/man1/sftp.old.1
+-	-mv -f $(DESTDIR)$(mandir)/man1/ssh-probe.1 $(DESTDIR)$(mandir)/man1/ssh-probe.old.1
+ 	(cd $(DESTDIR)$(mandir)/man1 && $(LN_S) ssh2.1 ssh.1)
+ 	(cd $(DESTDIR)$(mandir)/man1 && $(LN_S) ssh-add2.1 ssh-add.1)
+ 	(cd $(DESTDIR)$(mandir)/man1 && $(LN_S) ssh-agent2.1 ssh-agent.1)
+@@ -1056,7 +1040,6 @@
+ 	(cd $(DESTDIR)$(mandir)/man1 && $(LN_S) scp2.1 scp.1)
+ 	(cd $(DESTDIR)$(mandir)/man1 && $(LN_S) sftp2.1 sftp.1)
+ 	(cd $(DESTDIR)$(mandir)/man1 && $(LN_S) ssh-probe2.1 ssh-probe.1)
+-	-mv -f $(DESTDIR)$(mandir)/man8/sshd.8 $(DESTDIR)$(mandir)/man8/sshd.old.8
+ 	(cd $(DESTDIR)$(mandir)/man8 && $(LN_S) sshd2.8 sshd.8)
+ 
+ clean-up-old:
+

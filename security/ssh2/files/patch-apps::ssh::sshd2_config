@@ -1,0 +1,14 @@
+--- apps/ssh/sshd2_config.orig	Wed Dec  3 14:17:28 2003
++++ apps/ssh/sshd2_config	Thu Jan  1 19:33:35 2004
+@@ -188,9 +188,9 @@
+ ## subsystem definitions
+ 
+ # Subsystems don't have defaults, so this is needed here (uncommented).
+-	subsystem-sftp                  sftp-server
++#	subsystem-sftp                  sftp-server
+ # Also internal sftp-server subsystem can be used.
+-#	subsystem-sftp			internal://sftp-server
++	subsystem-sftp			internal://sftp-server
+ 
+ ## Subconfiguration
+ # There are no default subconfiguration files. When specified the last

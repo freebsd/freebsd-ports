@@ -1,0 +1,23 @@
+--- apps/ssh/sshd2_config.5.orig	Wed Dec  3 17:08:53 2003
++++ apps/ssh/sshd2_config.5	Wed Dec  3 17:09:35 2003
+@@ -288,20 +288,6 @@
+ .ne 3
+ 
+ .TP
+-.B Cert.RSA.Compat.HashScheme
+-Older SSH Secure Shell clients and servers used hashes in an incoherent
+-manner (sometimes MD5, sometimes SHA-1). With this option, you can set
+-what hash is used. This option can be set in 
+-.BR HostSpecificConfig ,
+-and then reset in 
+-.BR UserSpecificConfig ,
+-in which case the value set in host-specific configuration will apply to
+-the initial key exchange and during authentication the value in the
+-user-specific configuration will be used. Valid values are "\fBmd5\fR"
+-and "\fBsha1\fR". The default is "\fBmd5\fR" (works in most cases).
+-.ne 3
+-
+-.TP
+ .B CheckMail
+ Makes \fBsshd2\fR print information whether there is new mail or not
+ when a user logs in interactively.  (On some systems this information

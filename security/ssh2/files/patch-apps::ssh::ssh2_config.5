@@ -1,0 +1,17 @@
+--- apps/ssh/ssh2_config.5.orig	Wed Dec  3 17:05:48 2003
++++ apps/ssh/ssh2_config.5	Wed Dec  3 17:06:25 2003
+@@ -136,14 +136,6 @@
+ .ne 3
+ 
+ .TP
+-.B Cert.RSA.Compat.HashScheme
+-Older SSH Secure Shell clients and servers used hashes in an incoherent
+-manner (sometimes MD5, sometimes SHA-1). With this option, you can set
+-what hash is used. Valid values are "\fBmd5\fR" and "\fBsha1\fR". The
+-default is "\fBmd5\fR" (works in most cases).
+-.ne 3
+-
+-.TP
+ .B Ciphers
+ Specifies the ciphers to use for encrypting the
+ session.  Currently,

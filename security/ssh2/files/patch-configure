@@ -1,0 +1,29 @@
+--- configure.orig	Wed Dec  3 14:17:42 2003
++++ configure	Mon Dec 29 01:43:15 2003
+@@ -3773,7 +3773,7 @@
+ #
+ 
+ # So many systems seem to need this that it is better do it here automatically.
+-LIBS="-L/usr/local/lib $LIBS"
++#LIBS="-L/usr/local/lib $LIBS"
+ 
+ # Platform-specific stuff.
+ case "$target" in
+@@ -10994,7 +10994,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  X_PRE_LIBS="$X_PRE_LIBS -lSM -lICE"
++#  X_PRE_LIBS="$X_PRE_LIBS -lSM -lICE"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+@@ -11112,7 +11112,7 @@
+ #include "confdefs.h"
+ #include <$ac_hdr>
+ EOF
+-ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
++ac_try="$ac_cpp -I$x_includes conftest.$ac_ext >/dev/null 2>conftest.out"
+ { (eval echo configure:11117: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
+ ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
+ if test -z "$ac_err"; then

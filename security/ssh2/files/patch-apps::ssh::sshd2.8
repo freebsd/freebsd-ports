@@ -1,0 +1,24 @@
+--- apps/ssh/sshd2.8.orig	Wed Dec  3 14:17:23 2003
++++ apps/ssh/sshd2.8	Sun Dec 28 17:09:32 2003
+@@ -241,20 +241,11 @@
+ login time, message of the day and mailcheck.)
+ 
+ .TP
+-.I /etc/nologin
++.I /var/run/nologin
+ If this file exists, 
+ .B sshd2
+ refuses to let anyone except root log in.  The contents of the file
+ is displayed to anyone trying to log in.  The file should be world-readable.
+-
+-.TP
+-.I /etc/nologin_<hostname>
+-As above, but the filename is constructed from the name of the
+-host. Check output of 
+-.B hostname
+-to see what name you should use in the filename. This functionality is
+-supposed to be used by clustered machines (which share
+-.IR /etc ).
+ 
+ .TP
+ .I \&$HOME/\s+2.\s0rhosts

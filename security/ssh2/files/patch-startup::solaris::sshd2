@@ -1,0 +1,58 @@
+--- startup/solaris/sshd2.orig	Wed Dec  3 14:17:18 2003
++++ startup/solaris/sshd2	Tue Dec 30 12:38:16 2003
+@@ -22,9 +22,7 @@
+ SBINDIR=/usr/local/sbin
+ 
+ 
+-[ -f ${SBINDIR}/sshd2 ] || exit 0
+-
+-PORT=
++[ -x ${SBINDIR}/sshd2 ] || exit 0
+ 
+ PORT=`grep Port ${ETCDIR}/sshd2_config | awk '{ x = $2 } END {print x}' -`
+ if [ "X$PORT" = "X" ]
+@@ -37,31 +35,19 @@
+ case "$1" in
+   start)
+ 	# Start daemons.
+-	echo "Starting sshd2 on port $PORT... "
+-	${SBINDIR}/sshd2
++	${SBINDIR}/sshd2 2> /dev/null
++	echo -n ' sshd2'
+ 	;;
+   stop)
+ 	# Stop daemons.
+ 	
+-        if [ -f /var/run/sshd2_$PORT.pid ]
++        if [ -r /var/run/sshd2_$PORT.pid ]
+            
+            then
+   
+-              echo "1 Shutting down sshd2 on port ${PORT}... "
+               kill `cat /var/run/sshd2_${PORT}.pid`
+               rm -f /var/run/sshd2_${PORT}.pid 
+-
+-           elif [ -f ${ETCDIR}/sshd2_${PORT}.pid ]
+-           
+-           then
+-
+-              echo "Shutting down sshd2 on port ${PORT}... "
+-              kill `cat ${ETCDIR}/sshd2_${PORT}.pid`
+-              rm -f ${ETCDIR}/sshd2_${PORT}.pid
+-
+-           else
+-
+-              echo "sshd2 is not running"  
++              echo -n ' sshd2'
+ 
+         fi
+ 
+@@ -72,7 +58,7 @@
+ 	$0 start
+ 	;;
+   *)
+-	echo "Usage: sshd2 {start|stop|restart}"
++	echo "Usage: `basename $0` {start|stop|restart}"
+ 	exit 1
+ esac
+ 
