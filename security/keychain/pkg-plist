@@ -1,4 +1,4 @@
 bin/keychain
-%%PORTDOCS%%share/doc/keychain/ChangeLog
-%%PORTDOCS%%share/doc/keychain/README
-%%PORTDOCS%%@dirrm share/doc/keychain
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
