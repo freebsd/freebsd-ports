@@ -29,7 +29,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 CONFIGURE_ENV=	CFLAGS="-D_P1003_1B_VISIBLE -pthread -I${PREFIX}/include -L${PREFIX}/lib"
-.if defined(WITH_GNOMELIBS)
+.if defined(WITH_GNOMELIBS) || exists(${X11BASE}/include/gnome-1.0/libart_lgpl/art_misc.h)
 USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 PLIST=		${PKGDIR}/pkg-plist.gnome
