@@ -1,12 +1,12 @@
 # New ports collection makefile for:    prcs
-# Version required:     1.0.1
+# Version required:     1.0.9
 # Date created:         17 Sep 96
 # Whom:                 jmacd@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:23:34 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 13:57:40 asami Exp $
 #
 
-DISTNAME= 	prcs-1.0.1
+DISTNAME= 	prcs-1.0.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.xcf.berkeley.edu/pub/prcs/
 
