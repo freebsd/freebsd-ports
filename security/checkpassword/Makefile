@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	checkpassword
-PORTVERSION=	0.81
+PORTVERSION=	0.90
 CATEGORIES=	security
-MASTER_SITES=	http://cr.yp.to/software/ \
-		${MASTER_SITE_LOCAL} \
-		${MASTER_SITE_PORTS_JP}
+MASTER_SITES=	http://cr.yp.to/checkpwd/
 MASTER_SITE_SUBDIR=	sada
 
 MAINTAINER=	sada@FreeBSD.org
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup
-MAN8=		checkpassword.8
+#MAN8=		checkpassword.8
 RESTRICTED=	"Unsure of djb's license"
 
 DOCDIR=		${PREFIX}/share/doc/checkpassword
@@ -29,9 +27,9 @@ do-configure:
 	${ECHO} ${PREFIX} >${WRKSRC}/conf-home
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${PREFIX}/man/man8
+#	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${PREFIX}/man/man8
 	${MKDIR} ${DOCDIR}
-.for f in BLURB CHANGES FILES INSTALL README SYSDEPS TARGETS THANKS TODO
+.for f in CHANGES FILES README SYSDEPS TARGETS TODO VERSION
 	${INSTALL_DATA} ${WRKSRC}/$f ${DOCDIR}
 .endfor
 
