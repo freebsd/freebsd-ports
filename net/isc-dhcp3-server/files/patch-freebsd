@@ -1,6 +1,15 @@
---- client/scripts/freebsd.orig	Tue Feb 19 17:59:35 2002
-+++ client/scripts/freebsd	Mon Apr 15 15:31:21 2002
-@@ -20,17 +20,17 @@
+--- client/scripts/freebsd.orig	Sun Apr 27 21:44:01 2003
++++ client/scripts/freebsd	Wed Mar  3 02:28:29 2004
+@@ -16,7 +16,7 @@
+       ( echo search $new_domain_name >/etc/resolv.conf )
+       exit_status=$?
+     else
+-      rm /etc/resolv.conf
++      ( rm /etc/resolv.conf )
+       exit_status=$?
+     fi
+     if [ $exit_status -ne 0 ]; then
+@@ -32,17 +32,17 @@
  # Must be used on exit.   Invokes the local dhcp client exit hooks, if any.
  exit_with_hooks() {
    exit_status=$1
@@ -22,7 +31,7 @@
    # allow the local script to abort processing of this state
    # local script must set exit_status variable to nonzero.
    if [ $exit_status -ne 0 ]; then
-@@ -39,11 +39,11 @@
+@@ -51,11 +51,11 @@
  fi
  
  if [ x$new_network_number != x ]; then
@@ -36,3 +45,31 @@
    new_broadcast_arg="broadcast $new_broadcast_address"
  fi
  if [ x$old_broadcast_address != x ]; then
+@@ -71,6 +71,15 @@
+   alias_subnet_arg="netmask $alias_subnet_mask"
+ fi
+ 
++# Get the interface to which our default route is bound to.
++if [ -x /usr/bin/netstat ]; then
++	if_defaultroute=`/usr/bin/netstat -rn \
++		| /usr/bin/grep "^default" \
++		| /usr/bin/awk '{print $6}'`
++else
++	if_defaultroute=""
++fi
++
+ if [ x$reason = xMEDIUM ]; then
+   eval "ifconfig $interface $medium"
+   eval "ifconfig $interface inet -alias 0.0.0.0 $medium" >/dev/null 2>&1
+@@ -113,7 +122,10 @@
+     eval "ifconfig $interface inet -alias $old_ip_address $medium"
+     route delete $old_ip_address 127.1 >/dev/null 2>&1
+     for router in $old_routers; do
+-      route delete default $router >/dev/null 2>&1
++	if [ x$if_defaultroute = x ] || [ x$if_defaultroute = x$interface ]
++	 then
++	      route delete default $router >/dev/null 2>&1
++	fi
+     done
+     if [ -n "$old_static_routes" ]; then
+       set -- $old_static_routes
