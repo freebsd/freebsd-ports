@@ -1,0 +1,11 @@
+--- main.c~	Thu Mar  2 17:08:33 2000
++++ main.c	Sun Aug 27 00:10:09 2000
+@@ -2001,7 +2001,7 @@
+     int *pty;
+ {
+     static int devindex, letter = 0;
+-    printf("%s\n",__FUNCTION__);
++    /*printf("%s\n",__FUNCTION__);*/
+ 
+ #if defined(CRAY)
+     for (; devindex < MAXPTTYS; devindex++) {
