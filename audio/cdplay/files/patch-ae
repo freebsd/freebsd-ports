@@ -1,7 +1,18 @@
 diff -ur ../cdplay-0.92.orig/main.c ./main.c
 --- ../cdplay-0.92.orig/main.c	Mon Nov 17 04:26:26 1997
 +++ ./main.c	Sat Jun 27 00:29:34 1998
-@@ -77,10 +77,11 @@
+@@ -39,7 +39,9 @@
+   struct timeval stime;
+ 
+   /* Parse arguments */
+-  cd_device=DEVICE;
++  cd_device=getenv("CDROM");
++  if (cd_device==NULL)
++    cd_device=DEVICE;
+   if(argc>1 && !strcmp(argv[1],"-d"))
+     cd_device=argv[2];
+   else if(argc>1)
+@@ -77,10 +79,11 @@
        else if(cmd[0]=='r'){message="rew";rew();}
        else if(cmd[0]=='s'){message="stop";stop();}
        else if(cmd[0]=='e'){message="eject";eject();}
