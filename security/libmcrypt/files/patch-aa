@@ -1,0 +1,17 @@
+--- lib/Makefile.in.orig	Thu Feb  1 21:36:23 2001
++++ lib/Makefile.in	Fri Feb 16 05:55:45 2001
+@@ -87,12 +87,12 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-DEFS = @DEFS@ -DLIBDIR=\"$(libdir)/@PACKAGE@/\" -I. -I..
++DEFS = @DEFS@ -DLIBDIR=\"$(libdir)/@PACKAGE@/\" -I. -I.. $(INCLLTDL)
+ include_HEADERS = mcrypt.h 
+ EXTRA_DIST = libdefs.h mcrypt.h bzero.h xmemory.h mcrypt_modules.h mcrypt_internal.h libmcrypt.sym win32_comp.h
+ lib_LTLIBRARIES = libmcrypt.la
+ libmcrypt_la_SOURCES = mcrypt_extra.c mcrypt.c bzero.c xmemory.c mcrypt_modules.c win32_comp.c
+-libmcrypt_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -export-symbols libmcrypt.sym -no-undefined
++libmcrypt_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -export-symbols libmcrypt.sym -no-undefined $(LIBLTDL)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

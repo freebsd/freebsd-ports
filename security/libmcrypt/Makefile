@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	libmcrypt
-PORTVERSION=	2.2.7
+PORTVERSION=	2.4.9
 CATEGORIES=	security
-MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
-		ftp://argeas.cs-net.gr/pub/unix/mcrypt/old/ \
-		ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/
+MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 
-INSTALLS_SHLIB=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--disable-posix-threads
-
-MAN3=		mcrypt.3
+LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
 RESTRICTED=	"yes - cryptography"
+
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+MAN3=		mcrypt.3
 
 .include <bsd.port.mk>
