@@ -10,6 +10,9 @@ PORTVERSION= 	2.1.10
 CATEGORIES=	x11-toolkits
 DISTFILES=	# empty
 
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Motif dummy package
+
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
 NO_INSTALL=	yes

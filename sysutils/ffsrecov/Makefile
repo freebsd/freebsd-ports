@@ -10,6 +10,9 @@ PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/
 
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Recover files from a corrupt FFS
+
 MAN8=		ffsrecov.8
 
 .include <bsd.port.pre.mk>
