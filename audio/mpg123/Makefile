@@ -58,7 +58,7 @@ pre-fetch:
 .endif
 .if ${MACHINE_ARCH} == "i386"
 .if ${OSVERSION} >= 500018
-.if ${MACHINE_CPU:Mk6}
+.if ${MACHINE_CPU:M3dnow}
 OPT_ARCH=	3dnow
 .elif ${MACHINE_CPU:Mi586}
 OPT_ARCH=	i586
