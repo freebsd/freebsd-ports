@@ -1,1 +1,9 @@
 bin/unison
+%%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/unison-manual.dvi
+%%PORTDOCS%%%%DOCSDIR%%/unison-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/unison-manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/unison-manual.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
