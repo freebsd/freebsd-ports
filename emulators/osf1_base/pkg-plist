@@ -20,12 +20,12 @@ etc/sia/matrix.conf
 etc/sia/siainitgood
 sbin/loader
 @comment needed symlinks:
-usr/lib/X11
 usr/shlib/libc_r.so
 usr/shlib/libpthread.so
 usr/shlib/libpthreads.so
 sbin/sh
-@unexec rm -f %D/usr/lib/X11
+@exec mkdir -p %D/usr/lib && ln -sf %%X11BASE%%/lib/X11 %D/usr/lib
+@unexec rm -f %D/usr/lib/X11 2>&1 > /dev/null
 @dirrm sbin
 @dirrm etc/sia
 @dirrm etc
