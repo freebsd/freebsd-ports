@@ -7,8 +7,14 @@ LOCATION='new-tab'
 cd $MOZILLA_DIR                                     || exit 1
 
 case $1 in
+    -browser)
+    	REMOTE_COMMAND="xfeDoCommand (openBrowser)"
+	;;
     -mail)
     	REMOTE_COMMAND="xfeDoCommand (openInbox)"
+	;;
+    -compose)
+    	REMOTE_COMMAND="xfeDoCommand (composeMessage)"
 	;;
     -*)
     	exec ./$MOZILLA_EXEC "$@"
