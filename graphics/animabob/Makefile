@@ -22,6 +22,12 @@ ALL_TARGET=	build
 MAN1=		animabob.1 icol.1
 MANCOMPRESSED=	yes
 
+post-patch:
+	@${FIND} ${WRKSRC} -type f | \
+		${XARGS} -x -n 10 \
+		${REINPLACE_CMD} -E \
+			-e 's|malloc.h|stdlib.h|'
+
 post-build:
 # make the doc installation PREFIX safe
 	@${REINPLACE_CMD} -E \
