@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	t3x
-PORTVERSION=	8.0.3
+PORTVERSION=	8.0.4
 CATEGORIES=	lang devel
 MASTER_SITES=	http://t3x.dyndns.org/files/ \
 		http://www.t3x.org/files/
@@ -14,6 +14,8 @@ DISTNAME=	t3x-${PORTVERSION:S/.//g}
 
 MAINTAINER=	nmh@t3x.org
 COMMENT=	A compiler for the minimum procedural language T3X
+
+ONLY_FOR_ARCHS=	i386
 
 MAN7=		t3x.7
 MANCOMPRESSED=	no
