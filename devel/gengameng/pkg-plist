@@ -1,10 +1,12 @@
-lib/libgengameng.so.3
-lib/libgengameng.so
+bin/gengameng-config
 include/gengameng/Couple.h
 include/gengameng/GameEngine.h
 include/gengameng/Gengameng_LoadCompiledXPM.h
 include/gengameng/PixmapArray.h
 include/gengameng/PixmapLoadError.h
 include/gengameng/Sprite.h
-include/gengameng/goodies.h
+lib/libgengameng.la
+lib/libgengameng.so
+lib/libgengameng.so.4
+share/aclocal/gengameng.m4
 @dirrm include/gengameng
