@@ -1,39 +1,28 @@
---- configure.orig	Fri Jun 15 15:39:00 2001
-+++ configure	Tue Jun 19 02:24:00 2001
-@@ -5687,4 +5687,19 @@
+
+$FreeBSD$
+
+--- configure.orig	Thu Jul 26 16:38:59 2001
++++ configure	Thu Jul 26 16:50:40 2001
+@@ -8821,7 +8836,7 @@
  
--
--
-+# Actually configure libtool.  ac_aux_dir is where install-sh is found.
-+CC="$CC" CFLAGS="$CFLAGS" CPPFLAGS="$CPPFLAGS" \
-+LD="$LD" LDFLAGS="$LDFLAGS" LIBS="$LIBS" \
-+LN_S="$LN_S" NM="$NM" RANLIB="$RANLIB" \
-+DLLTOOL="$DLLTOOL" AS="$AS" OBJDUMP="$OBJDUMP" \
-+${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
-+$libtool_flags $ac_aux_dir/ltmain.sh $lt_target \
-+|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
-+
-+# Reload cache, that may have been modified by ltconfig
-+if test -r "$cache_file"; then
-+  echo "loading cache $cache_file"
-+  . $cache_file
-+else
-+  echo "creating cache $cache_file"
-+  > $cache_file
-+fi
  
-@@ -5692,3 +5707,3 @@
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh"
- 
-@@ -8823,3 +8838,3 @@
  
 -if test $perl_val == true; then
 +if [ $perl_val = true ]; then
    WITH_PERL_TRUE=
-@@ -8833,3 +8848,3 @@
+   WITH_PERL_FALSE='#'
+ else
+@@ -8831,11 +8846,11 @@
+ 
+ GNOMEDB_CFLAGS="`gda-config --cflags client` `gnome-config --cflags xml oaf bonobox print`"
  GNOMEDB_LIBS="`gda-config --libs client` `gnome-config --libs xml oaf bonobox print`"
 -GNOMEDB_CFLAGS="${GNOMEDB_CFLAGS} -DGNOMELOCALEDIR=\\\"${datadir}/locale\\\""
 +GNOMEDB_CFLAGS="${GNOMEDB_CFLAGS} -DGNOMELOCALEDIR=\\\"${prefix}/share/locale\\\""
+ 
+ 
+ 
+-GNOMEDB_oafdir=`oaf-config --prefix`/share/oaf
++GNOMEDB_oafdir=`oaf-config --prefix`/share/gnome/oaf
+ 
+ 
  

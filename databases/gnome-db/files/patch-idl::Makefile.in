@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- idl/Makefile.in	2001/07/26 14:06:24	1.1
++++ idl/Makefile.in	2001/07/26 14:06:37
+@@ -153,7 +153,7 @@
+ EXTRA_DIST =  	$(IDL_FILES)
+ 
+ 
+-idldir = $(prefix)/share/idl
++idldir = $(prefix)/share/gnome/idl
+ idl_DATA = $(IDL_FILES)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h

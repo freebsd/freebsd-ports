@@ -39,13 +39,73 @@ lib/bonobo/monikers/libdatabase_moniker.so.0
 lib/libgnomedb.a
 lib/libgnomedb.so
 lib/libgnomedb.so.0
+share/gnome/apps/Applications/gnomedb-fe.desktop
+share/gnome/help/gnome-db/C/comlib.html
+share/gnome/help/gnome-db/C/components.html
+share/gnome/help/gnome-db/C/docbook.css
+share/gnome/help/gnome-db/C/fdl-section1.html
+share/gnome/help/gnome-db/C/fdl-section10.html
+share/gnome/help/gnome-db/C/fdl-section2.html
+share/gnome/help/gnome-db/C/fdl-section3.html
+share/gnome/help/gnome-db/C/fdl-section4.html
+share/gnome/help/gnome-db/C/fdl-section5.html
+share/gnome/help/gnome-db/C/fdl-section6.html
+share/gnome/help/gnome-db/C/fdl-section7.html
+share/gnome/help/gnome-db/C/fdl-section8.html
+share/gnome/help/gnome-db/C/fdl-section9.html
+share/gnome/help/gnome-db/C/fdl-using.html
+share/gnome/help/gnome-db/C/fdl.html
+share/gnome/help/gnome-db/C/fe.html
+share/gnome/help/gnome-db/C/index.html
+share/gnome/help/gnome-db/C/introduction.html
+share/gnome/help/gnome-db/C/ln44.html
+share/gnome/help/gnome-db/C/manager-config-components.html
+share/gnome/help/gnome-db/C/manager.html
+share/gnome/help/gnome-db/C/topic.dat
+share/gnome/help/gnome-db/C/widgetlib-overview.html
+share/gnome/help/gnome-db/C/widgetlib.html
+share/gnome/help/gnome-db/es/comlib.html
+share/gnome/help/gnome-db/es/components.html
+share/gnome/help/gnome-db/es/docbook.css
+share/gnome/help/gnome-db/es/fe.html
+share/gnome/help/gnome-db/es/gnome-db.html
+share/gnome/help/gnome-db/es/index.html
+share/gnome/help/gnome-db/es/introduction.html
+share/gnome/help/gnome-db/es/ln50.html
+share/gnome/help/gnome-db/es/manager-config-components.html
+share/gnome/help/gnome-db/es/manager.html
+share/gnome/help/gnome-db/es/topic.dat
+share/gnome/help/gnome-db/es/widgetlib-overview.html
+share/gnome/help/gnome-db/es/widgetlib.html
+share/gnome/help/gnome-db/pt_BR/comlib.html
+share/gnome/help/gnome-db/pt_BR/components.html
+share/gnome/help/gnome-db/pt_BR/docbook.css
+share/gnome/help/gnome-db/pt_BR/fe.html
+share/gnome/help/gnome-db/pt_BR/gnome-db.html
+share/gnome/help/gnome-db/pt_BR/index.html
+share/gnome/help/gnome-db/pt_BR/introduction.html
+share/gnome/help/gnome-db/pt_BR/ln45.html
+share/gnome/help/gnome-db/pt_BR/manager-config-components.html
+share/gnome/help/gnome-db/pt_BR/manager.html
+share/gnome/help/gnome-db/pt_BR/topic.dat
+share/gnome/help/gnome-db/pt_BR/widgetlib-overview.html
+share/gnome/help/gnome-db/pt_BR/widgetlib.html
 share/gnome/html/libgnomedb-decl.txt
 share/gnome/html/libgnomedb-sections.txt
 share/gnome/html/libgnomedb.args
 share/gnome/html/libgnomedb.hierarchy
 share/gnome/html/libgnomedb.signals
 share/gnome/html/libgnomedb.types
-share/idl/GnomeDB.idl
+share/gnome/oaf/GNOME_DB_Builder.oaf
+share/gnome/oaf/GNOME_DB_ComponentFactory.oaf
+share/gnome/oaf/GNOME_DB_Connection.oaf
+share/gnome/oaf/GNOME_DB_Designer.oaf
+share/gnome/oaf/GNOME_DB_Export.oaf
+share/gnome/oaf/GNOME_DB_Log.oaf
+share/gnome/oaf/GNOME_DB_Manager.oaf
+share/gnome/oaf/GNOME_DB_Monikers.oaf
+share/gnome/pixmaps/gnome-db.png
+share/gnome/idl/GnomeDB.idl
 share/locale/ca/LC_MESSAGES/gnome-db.mo
 share/locale/da/LC_MESSAGES/gnome-db.mo
 share/locale/de/LC_MESSAGES/gnome-db.mo
@@ -69,4 +129,11 @@ share/locale/sl/LC_MESSAGES/gnome-db.mo
 share/locale/sv/LC_MESSAGES/gnome-db.mo
 share/locale/tr/LC_MESSAGES/gnome-db.mo
 share/locale/uk/LC_MESSAGES/gnome-db.mo
+@dirrm share/gnome/help/gnome-db/pt_BR/images
+@dirrm share/gnome/help/gnome-db/pt_BR
+@dirrm share/gnome/help/gnome-db/es/images
+@dirrm share/gnome/help/gnome-db/es
+@dirrm share/gnome/help/gnome-db/C/images
+@dirrm share/gnome/help/gnome-db/C
+@dirrm share/gnome/help/gnome-db
 @dirrm include/gnome-db
