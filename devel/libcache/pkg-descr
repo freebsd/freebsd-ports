@@ -1,0 +1,10 @@
+[ paraphrased from the README ]
+libcache is a high-level C library that allows a programmer
+to use the standard string manipulation functions (like
+strtok() and sscanf()) to parse and access deliminated sentences
+easier.
+
+WWW: http://www.afro-productions.com/libs.html
+Author: Matt Miller <mmiller@hick.org>
+
+--Will <andrews@technologist.com>
