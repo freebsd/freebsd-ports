@@ -8374,6 +8374,7 @@ zebedee		ports/security/zebedee
 zebra		ports/net/zebra
 zebra-server	ports/net/zebra-server
 zed		ports/editors/zed
+zenity		ports/x11/zenity
 zephyr		ports/net/zephyr
 zh-CJK		ports/chinese/CJK
 zh-FreeWnn-lib	ports/chinese/FreeWnn-lib
