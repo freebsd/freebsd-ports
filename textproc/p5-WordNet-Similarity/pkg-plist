@@ -5,14 +5,12 @@ bin/similarity.pl
 bin/wordVectors.pl
 bin/treebankFreq.pl
 bin/compounds.pl
-bin/readDB.pl
 bin/semCorRawFreq.pl
 bin/wnDepths.pl
 bin/semCorFreq.pl
-%%SITE_PERL%%/dbInterface.pm
 %%SITE_PERL%%/get_wn_info.pm
 %%SITE_PERL%%/stem.pm
-%%SITE_PERL%%/string_compare.pm
+%%SITE_PERL%%/vectorFile.pm
 %%SITE_PERL%%/WordNet/lesk-relation.dat
 %%SITE_PERL%%/WordNet/treedepths-2.0.dat
 %%SITE_PERL%%/WordNet/ic-semcor.dat
