@@ -12,8 +12,6 @@ MASTER_SITES=	http://www-2.cs.cmu.edu/~spot/cache/
 
 MAINTAINER=	dyeske@yahoo.com
 
-FORBIDDEN=	"domain is no longer under author's control <URL:http://draves.org/electricsheep/>"
-
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetbg:${PORTSDIR}/graphics/xli \
 		curl:${PORTSDIR}/ftp/curl
