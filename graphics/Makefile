@@ -403,6 +403,7 @@
     SUBDIR += xmps-opendivx-plugin
     SUBDIR += xmps-win32-plugin
     SUBDIR += xmrm
+    SUBDIR += xnview
     SUBDIR += xpaint
     SUBDIR += xpcd
     SUBDIR += xpdf
