@@ -24,8 +24,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	eik@FreeBSD.org
 COMMENT?=	High performance MTA for Unix systems on the Internet
 
-EXIM_VERSION=	4.32
-EXISCAN_VERSION=19
+EXIM_VERSION=	4.33
+EXISCAN_VERSION=20
 
 .if !defined(EXIMON_ONLY)
 .if defined(PKGNAMESUFFIX)
