@@ -1,5 +1,5 @@
 #!/bin/sh
-MWAVE_NAME="mwavem"
+MWAVEM_NAME="mwavem"
 MWAVEM_PATH="/usr/local/bin/"
 #
 # -- START --
@@ -19,8 +19,8 @@ case "$1" in
     stop  )
             ;;
     start )
-            echo -n ' modem'
-            kldstat -n mwavedd 2>/dev/null >/dev/null || kldload /usr/local/share/mwave/mwavedd
-            ${MWAVE_PATH}${MWAVE_NAME} > /dev/null &
+            echo -n ' internal modem'
+            kldstat -n mwave 2>/dev/null >/dev/null || kldload /usr/local/share/mwave/mwavedd
+            ${MWAVEM_PATH}${MWAVEM_NAME} > /dev/null &
             ;;
 esac
