@@ -1,0 +1,5 @@
+sbin/tcpsg
+etc/tcpsg.conf
+%%PORTDOCS%%share/doc/tcpsg/README
+%%PORTDOCS%%share/doc/tcpsg/tcpsg.ctl
+%%PORTDOCS%%@dirrm share/doc/tcpsg

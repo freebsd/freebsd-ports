@@ -561,6 +561,7 @@
     SUBDIR += tcpmssd
     SUBDIR += tcpreen
     SUBDIR += tcpreplay
+    SUBDIR += tcpsg
     SUBDIR += tcpshow
     SUBDIR += tcpslice
     SUBDIR += tcpstat
