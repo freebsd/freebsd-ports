@@ -1,3 +1,5 @@
 libexec/gkrellm2/plugins/volume.so
+share/locale/de/LC_MESSAGES/gkrellm-volume.mo
+share/locale/fr/LC_MESSAGES/gkrellm-volume.mo
 share/locale/nl/LC_MESSAGES/gkrellm-volume.mo
 share/locale/ru/LC_MESSAGES/gkrellm-volume.mo
