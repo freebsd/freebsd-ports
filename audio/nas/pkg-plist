@@ -33,6 +33,7 @@ include/audio/audio.h
 include/audio/audiolib.h
 include/audio/audioutil.h
 include/audio/fileutil.h
+include/audio/mutex.h
 include/audio/snd.h
 include/audio/sound.h
 include/audio/soundlib.h
@@ -41,5 +42,5 @@ include/audio/wave.h
 lib/X11/AuErrorDB
 lib/libaudio.a
 lib/libaudio.so
-lib/libaudio.so.1
+lib/libaudio.so.2
 @dirrm include/audio
