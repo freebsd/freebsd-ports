@@ -139,7 +139,8 @@ while [ "$1" ]; do
 			;;
 		\"modssl\")
 			cat << EOF
-PKGNAME=	apache+php+mod_ssl-\${VERSION_APACHE}+\${VERSION_PHP}+\${VERSION_MODSSL}
+PORTNAME=	apache+php+mod_ssl
+PORTVERSION=	\${VERSION_APACHE}+\${VERSION_PHP}+\${VERSION_MODSSL}
 DISTFILES+=	mod_ssl-\${VERSION_MODSSL}-\${VERSION_APACHE}\${EXTRACT_SUFX}
 
 USE_OPENSSL=	RSA
