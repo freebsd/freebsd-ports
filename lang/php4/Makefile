@@ -20,7 +20,7 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.3
+PORTVERSION=	4.3.4.r1
 PORTREVISION=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
@@ -45,7 +45,7 @@ PKGNAMESUFFIX=	-cli
 .endif
 .endif
 DISTNAME=	php-${PORTVERSION:S/.r/RC/}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:rc
 
 MAINTAINER?=	sysadmin@alexdupre.com
 COMMENT=	PHP Scripting Language (Apache Module and CLI)
@@ -65,7 +65,6 @@ USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
-USE_LIBTOOL_VER=14
 
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
@@ -112,6 +111,12 @@ PLIST_SUB+=	APACHE=""
 CONFIGURE_ARGS+=--disable-cli
 PLIST_SUB+=	CLI="@comment "
 .else
+.if !defined(WITHOUT_PEAR)
+CONFIGURE_ARGS+=--with-pear
+PLIST_SUB+=	PEAR=""
+.else
+PLIST_SUB+=	PEAR="@comment "
+.endif
 MAN1=		php.1
 PLIST_SUB+=	CLI=""
 .endif
@@ -119,13 +124,13 @@ PLIST_SUB+=	CLI=""
 SAPI_FILE=	"bin/php"
 .endif
 
-ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DBASE DBX DOMXML \
-		DOMXSLT EXIF FILEPRO FRIBIDI FTP GD GDBM GETTEXT GMP HYPERWAVE \
-		ICONV IMAP INTERBASE INIFILE MBSTRING MCAL MCVE MCRYPT MHASH \
-		MIME MING MYSQL NCURSES OPENLDAP OPENSSL ORACLE OVERLOAD PCNTL \
-		PCRE PDFLIB POSIX POSTGRESQL PSPELL READLINE RECODE SESSION \
-		SHMOP SNMP SOCKETS SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER \
-		UNIXODBC WDDX XML XMLRPC XSLT YAZ YP ZIP ZLIB
+ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX \
+		DOMXML DOMXSLT EXIF FILEPRO FRIBIDI FTP GD GDBM GETTEXT GMP \
+		HYPERWAVE ICONV IMAP INTERBASE INIFILE MBSTRING MCAL MCVE \
+		MCRYPT MHASH MIME MING MYSQL NCURSES OPENLDAP OPENSSL ORACLE \
+		OVERLOAD PCNTL PCRE PDFLIB POSIX POSTGRESQL PSPELL READLINE \
+		RECODE SESSION SHMOP SNMP SOCKETS SYBASEDB SYBASECT SYSVSEM \
+		SYSVSHM TOKENIZER UNIXODBC WDDX XML XMLRPC XSLT YAZ YP ZIP ZLIB
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt}) || defined(WITHOUT_${opt})
@@ -203,7 +208,7 @@ WITH_XML=	yes
 .include "${WRKDIR}/Makefile.inc"
 .endif
 
-.if defined(WITH_CDB) || defined(WITH_GDBM) || defined(WITH_INIFILE)
+.if defined(WITH_CDB) || defined(WITH_DB4) || defined(WITH_GDBM) || defined(WITH_INIFILE)
 WITH_DBA=	yes
 .endif
 
@@ -215,8 +220,8 @@ WITH_DOMXML=	yes
 WITH_ICONV_DEP=	yes
 .endif
 
-.if defined(WITH_SNMP)
-WITH_OPENSSL=	yes
+.if defined(WITH_MCVE) || defined(WITH_SNMP)
+WITH_OPENSSL_DEP=	yes
 .endif
 
 .if defined(WITH_XMLRPC) || defined(WITH_XSLT)
@@ -262,6 +267,11 @@ CONFIGURE_ARGS+=--enable-ctype
 .if defined(WITH_CURL)
 LIB_DEPENDS+=	curl.2:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-curl=${LOCALBASE}
+.endif
+
+.if defined(WITH_DB4)
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 .endif
 
 .if defined(WITH_DBA)
@@ -410,13 +420,7 @@ CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
 .endif
 
 .if defined(WITH_MYSQL)
-.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.10)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.14)
-LIB_DEPENDS+=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
-.else
-LIB_DEPENDS+=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
-.endif
+USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
 .endif
 
@@ -431,29 +435,13 @@ CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 .endif
 
 .if defined(WITH_OPENLDAP)
-.if exists(${LOCALBASE}/lib/libldap.so.1)
-LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
-.elif exists(${LOCALBASE}/lib/libldap.so.2)
-.if exists(${LOCALBASE}/include/srchpref.h)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
-.elif exists(${LOCALBASE}/include/slapi-plugin.h)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap22-client
-.else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
-.endif
-.else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap22-client
-.endif
+USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .endif
 
 .if defined(WITH_OPENSSL) || defined(WITH_OPENSSL_DEP)
-.if exists(${LOCALBASE}/lib/libcrypto.so.3)
-OPENSSLBASE=	${LOCALBASE}
-LIB_DEPENDS+=	crypto.3:${PORTSDIR}/security/openssl
-.else
-OPENSSLBASE=	/usr
-.endif
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-openssl-dir=${OPENSSLBASE}
 .endif
 
 .if defined(WITH_OPENSSL)
