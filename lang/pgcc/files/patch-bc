@@ -1,16 +1,16 @@
---- libstdc++/Makefile.in.orig	Sat Jul 11 19:20:49 1998
-+++ libstdc++/Makefile.in	Sun Mar 14 21:48:39 1999
+--- libstdc++/Makefile.in.orig	Sat Jul 17 22:50:47 1999
++++ libstdc++/Makefile.in	Tue Jul 20 07:56:00 1999
 @@ -14,7 +14,7 @@
  # along with this library; see the file COPYING.  If not, write to the Free
  # Software Foundation, 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  
--VERSION = 2.9.0
-+VERSION = 3
+-VERSION = 2.10.0
++VERSION = 4
+ INTERFACE = 3
  
- OBJS  = cstringi.o stdexcepti.o cstdlibi.o cmathi.o stlinst.o
- SUBLIBS = $(STAMP)-string $(STAMP)-complx
-@@ -98,7 +98,8 @@
- 	ln -f -s $(SHLIB) $(SHLINK)
+ gxx_include_dir=${includedir}/g++
+@@ -111,7 +111,8 @@
+ 	$(LN_S) $(SHLIB) $(SHLINK) || cp $(ARLIB) $(ARLINK)
  
  mshlink:
 -	@$(MAKE) $(MSHLINK) "SHLINK=$(MSHLINK)"
@@ -19,15 +19,16 @@
  
  $(IO_DIR)/iostream.list: force
  	cd $(IO_DIR) ; $(MAKE) $(FLAGS_TO_PASS) iostream.list
-@@ -281,10 +282,7 @@
- 	  if [ $$FILE = $(SHLINK) ] ; then \
- 	    ln -f -s $(SHLIB) $${INSTALLDIR}$(MULTISUBDIR)/$$FILE ; \
+@@ -336,11 +337,7 @@
+ 		|| cp $${RELINSTALLDIR}$(ARLIB) $${INSTALLLINKDIR}$(MULTISUBDIR)/$$FILE ; \
+ 	    fi; \
  	  elif [ $$FILE = mshlink ]; then \
 -	    for FILE in $(MSHLINK) ; do \
 -	      rm -f $${INSTALLDIR}$(MULTISUBDIR)/$$FILE ; \
--	      ln -f -s $(SHLIB) $${INSTALLDIR}$(MULTISUBDIR)/$$FILE ; \
+-	      $(LN_S) $(SHLIB) $${INSTALLDIR}$(MULTISUBDIR)/$$FILE \
+-		|| cp $(SHLIB) $${INSTALLDIR}$(MULTISUBDIR)/$$FILE ; \
 -	    done; \
 +	    true; \
- 	  elif [ $$FILE = $(SHLIB) ]; then \
- 	    $(INSTALL_PROGRAM) $$FILE $${INSTALLDIR}$(MULTISUBDIR)/$$FILE ; \
- 	    : On the HP, shared libraries must be mode 555. ;\
+ 	  elif [ $$FILE = marlink ]; then \
+ 	    for FILE in $(MARLINK) ; do \
+ 	      rm -f $${INSTALLDIR}$(MULTISUBDIR)/$$FILE ; \

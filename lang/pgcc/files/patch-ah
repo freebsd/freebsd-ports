@@ -1,6 +1,6 @@
---- gcc/config/i386/i386.c.orig	Wed May 12 17:51:23 1999
-+++ gcc/config/i386/i386.c	Wed May 12 17:54:30 1999
-@@ -54,6 +54,11 @@
+--- gcc/config/i386/i386.c.orig	Sat Apr 17 14:13:52 1999
++++ gcc/config/i386/i386.c	Sun Apr 18 15:52:52 1999
+@@ -51,6 +51,11 @@
  #define CHECK_STACK_LIMIT -1
  #endif
  
@@ -12,76 +12,43 @@
  /* Type of an operand for ix86_{binary,unary}_operator_ok */
  enum reg_mem
  {
-@@ -1987,13 +1992,11 @@
+@@ -1809,8 +1814,7 @@
       char *name ATTRIBUTE_UNUSED;
  {
    rtx xops[2];
 -  int pic_reg_used = flag_pic && (current_function_uses_pic_offset_table
 -				  || current_function_uses_const_pool);
++  int pic_reg_used = PIC_REG_USED;
    xops[0] = pic_offset_table_rtx;
    xops[1] = stack_pointer_rtx;
  
-   /* Deep branch prediction favors having a return for every call. */
--  if (pic_reg_used && TARGET_DEEP_BRANCH_PREDICTION)
-+  if (PIC_REG_USED && TARGET_DEEP_BRANCH_PREDICTION)
-     {
-       tree prologue_node;
- 
-@@ -2123,8 +2126,7 @@
+@@ -2006,8 +2010,7 @@
    register int regno;
    int limit;
    rtx xops[4];
 -  int pic_reg_used = flag_pic && (current_function_uses_pic_offset_table
 -				  || current_function_uses_const_pool);
 +  int pic_reg_used = PIC_REG_USED;
-   long tsize = ix86_frame_size ();
+   HOST_WIDE_INT tsize = ix86_compute_frame_size (get_frame_size (), (int *)0);
    rtx insn;
    int cfa_offset = INCOMING_FRAME_SP_OFFSET, cfa_store_offset = cfa_offset;
-@@ -2290,8 +2292,6 @@
+@@ -2177,8 +2180,7 @@
    int nregs = 0;
    int reglimit = (frame_pointer_needed
  		  ? FRAME_POINTER_REGNUM : STACK_POINTER_REGNUM);
 -  int pic_reg_used = flag_pic && (current_function_uses_pic_offset_table
 -				  || current_function_uses_const_pool);
++  int pic_reg_used = PIC_REG_USED;
  
  #ifdef NON_SAVING_SETJMP
    if (NON_SAVING_SETJMP && current_function_calls_setjmp)
-@@ -2303,7 +2303,7 @@
- 
-   for (regno = reglimit - 1; regno >= 0; regno--)
-     if ((regs_ever_live[regno] && ! call_used_regs[regno])
--	|| (regno == PIC_OFFSET_TABLE_REGNUM && pic_reg_used))
-+	|| (regno == PIC_OFFSET_TABLE_REGNUM && PIC_REG_USED))
-       nregs++;
- 
-   return nregs == 0 || ! frame_pointer_needed;
-@@ -2337,8 +2337,7 @@
-   register int nregs, limit;
-   int offset;
+@@ -2224,8 +2226,7 @@
+   register int limit;
+   int nregs;
    rtx xops[3];
 -  int pic_reg_used = flag_pic && (current_function_uses_pic_offset_table
 -				  || current_function_uses_const_pool);
 +  int pic_reg_used = PIC_REG_USED;
-   long tsize = ix86_frame_size ();
- 
-   /* Compute the number of registers to pop */
-@@ -5714,8 +5713,7 @@
- {
-   int regno;
-   int offset = 0;
--  int pic_reg_used = flag_pic && (current_function_uses_pic_offset_table
--				  || current_function_uses_const_pool);
-+  int pic_reg_used = PIC_REG_USED;
-   int tsize = get_frame_size ();
-   
-   for (regno = 0; regno < STACK_POINTER_REGNUM; regno++)
-@@ -5741,8 +5739,7 @@
- {
-   int regno;
-   int offset = 0;
--  int pic_reg_used = flag_pic && (current_function_uses_pic_offset_table
--				  || current_function_uses_const_pool);
-+  int pic_reg_used = PIC_REG_USED;
-   int limit = (frame_pointer_needed ? FRAME_POINTER_REGNUM : STACK_POINTER_REGNUM);
-   int tsize = get_frame_size ();
- 
+   int sp_valid = !frame_pointer_needed || current_function_sp_is_unchanging;
+   HOST_WIDE_INT offset;
+   HOST_WIDE_INT tsize = ix86_compute_frame_size (get_frame_size (), &nregs);

@@ -1,12 +1,7 @@
---- libstdc++/stl/stl_rope.h.orig	Fri Feb 20 03:13:44 1998
-+++ libstdc++/stl/stl_rope.h	Sun Feb 28 03:50:24 1999
-@@ -702,7 +702,8 @@
- 	__rope_iterator_base<charT,Alloc>(r.tree_ptr, pos) {}
-     __rope_const_iterator& operator= (const __rope_const_iterator & x) {
- 	if (0 != x.buf_ptr) {
--	    *this = x;
-+	    *(static_cast<__rope_iterator_base<charT,Alloc>*>(this)) = x; 
-+	    // bugfix by Kevin Atkinosn (kevina@clark.net) was *this = x;
- 	} else {
- 	    current_pos = x.current_pos;
- 	    root = x.root;
+--- gcc/config/t-freebsd.orig	Tue Jun  1 17:02:39 1999
++++ gcc/config/t-freebsd	Tue Jun 22 11:05:25 1999
+@@ -1,4 +1,2 @@
+ # Don't run fixproto
+ STMP_FIXPROTO =
+-# Use only native include files
+-USER_H = $(EXTRA_HEADERS) $(LANG_EXTRA_HEADERS)
