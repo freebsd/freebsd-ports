@@ -1,0 +1,8 @@
+Dirmngr is a client for managing and downloading certificate
+revocation lists (CRLs) for X509 certificates and for downloading the
+certificates themselves. Dirmngr is usually invoked by gpgsm and in
+general not used directly.
+
+WWW: http://www.gnupg.org/aegypten
+
+michaelnottebrock@gmx.net

@@ -1,0 +1,11 @@
+--- doc/dirmngr.info.orig	Wed Apr 30 16:09:38 2003
++++ doc/dirmngr.info	Wed Apr 30 16:10:07 2003
+@@ -3,7 +3,7 @@
+ 
+ INFO-DIR-SECTION GNU Utilities
+ START-INFO-DIR-ENTRY
+-* dirmngr: (gnupg). X509/LDAP certificate and revocation list client.
++* dirmngr: (dirmngr). X509/LDAP certificate and revocation list client.
+ END-INFO-DIR-ENTRY
+    This file documents the use of dirmngr.
+ 

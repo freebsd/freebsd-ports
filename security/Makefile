@@ -47,6 +47,7 @@
     SUBDIR += ddos_scan
     SUBDIR += didentd
     SUBDIR += digest
+    SUBDIR += dirmngr
     SUBDIR += donkey
     SUBDIR += drweb
     SUBDIR += drweb-postfix
