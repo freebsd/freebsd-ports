@@ -9,17 +9,15 @@
 DISTNAME=	uox3v6902-linux
 PKGNAME=	uox3-0.69.02
 CATEGORIES=	games
-MASTER_SITES=	ftp://provolone.dynip.com/pub/ \
-		http://users.1st.net/magda/
+MASTER_SITES=	ftp://ftp.Powered-By.AC/pub/uox3/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tqpsworld${EXTRACT_SUFX}
 
 MAINTAINER=	dburr@FreeBSD.org
 
-BROKEN=		"Floating exception (core dumped)"
-
 DIST_SUBDIR=	uox3
 USE_ZIP=	YES
 NO_WRKSUBDIR=	YES
+PATCH_STRIP=	-p1
 
 USE_GMAKE=	YES
 MAKEFILE=	makefile
