@@ -5,4 +5,4 @@
 # Change the paths after -I and -L to the directories where
 # the files netcdf.h and libnetcdf.* are located.
 
-Scientific_netcdf -I${PREFIX}/include -I${PREFIX}/include/python1.5/numerical -I../Scientific/Include Scientific_netcdf.c -L${PREFIX}/lib -lnetcdf
+Scientific_netcdf -I${PREFIX}/include -I${PREFIX}/include/python1.5/Numeric -I../Scientific/Include Scientific_netcdf.c -L${PREFIX}/lib -lnetcdf
