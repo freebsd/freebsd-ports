@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phppgadmin
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +17,11 @@ COMMENT=	Web Based Postgres Administration
 
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
+.if !defined(WITHOUT_PHP_DEPENDS)
 USE_PHP=	yes
+.endif
 WRKSRC=		${WRKDIR}/phpPgAdmin
 NO_BUILD=	YES
-
 PHP_PORT?=	${PORTSDIR}/www/mod_php4-twig
 PGADMDIR?=	www/data/phpPgAdmin
 PLIST_SUB+=	PGADMDIR=${PGADMDIR}

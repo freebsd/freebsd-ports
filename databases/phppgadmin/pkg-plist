@@ -39,7 +39,6 @@
 %%PGADMDIR%%/classes/database/Postgres73.php
 %%PGADMDIR%%/classes/database/Postgres74.php
 %%PGADMDIR%%/classes/database/Postgres75.php
-%%PGADMDIR%%/conf/.cvsignore
 @unexec if cmp -s %D/%%PGADMDIR%%/conf/config.inc.php %D/%%PGADMDIR%%/conf/config.inc.php-dist; then rm -f %D/%%PGADMDIR%%/conf/config.inc.php; fi
 %%PGADMDIR%%/conf/config.inc.php-dist
 @exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
@@ -70,6 +69,7 @@
 %%PGADMDIR%%/intro.php
 %%PGADMDIR%%/lang/Makefile
 %%PGADMDIR%%/lang/afrikaans.php
+%%PGADMDIR%%/lang/arabic.php
 %%PGADMDIR%%/lang/chinese-sim.php
 %%PGADMDIR%%/lang/chinese-tr.php
 %%PGADMDIR%%/lang/convert.awk
@@ -86,6 +86,7 @@
 %%PGADMDIR%%/lang/portuguese-br.php
 %%PGADMDIR%%/lang/recoded/README
 %%PGADMDIR%%/lang/recoded/afrikaans.php
+%%PGADMDIR%%/lang/recoded/arabic.php
 %%PGADMDIR%%/lang/recoded/chinese-sim.php
 %%PGADMDIR%%/lang/recoded/chinese-tr.php
 %%PGADMDIR%%/lang/recoded/czech.php
