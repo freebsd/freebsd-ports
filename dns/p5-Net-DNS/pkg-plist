@@ -43,7 +43,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/Recurse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/UNIX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Resolver/Win32.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Select.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/DNS/Update.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/DNS.bs
