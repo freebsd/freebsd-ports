@@ -153,6 +153,7 @@
     SUBDIR += tosha
     SUBDIR += tracker
     SUBDIR += vorbis
+    SUBDIR += vorbis-tools
     SUBDIR += waveplay
     SUBDIR += wavplay
     SUBDIR += wmcdplay
