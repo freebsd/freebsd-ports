@@ -3,6 +3,7 @@ bin/canlisp
 bin/cannacheck
 bin/cannastat
 bin/catdic
+bin/chkconc
 bin/chmoddic
 bin/cpdic
 bin/crfreq
@@ -33,6 +34,8 @@ include/canna/RK.h
 include/canna/jrkanji.h
 include/canna/keydef.h
 include/canna/mfdef.h
+include/canna/pubconf.h
+include/canna/sysdep.h
 share/canna/default.canna
 share/canna/dic/canna/bushu.cld
 share/canna/dic/canna/chimei.ctd
