@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.96 1999/07/03 19:37:42 cpiazza Exp $
+# $Id: Makefile,v 1.97 1999/07/11 20:49:35 cpiazza Exp $
 #
 
     SUBDIR += amp
@@ -17,6 +17,7 @@
     SUBDIR += gmixer
     SUBDIR += gnomeaudio
     SUBDIR += gnomemedia
+    SUBDIR += gogo
     SUBDIR += gqmpeg
     SUBDIR += gsm
     SUBDIR += icecast
