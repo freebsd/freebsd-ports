@@ -1,3 +1,5 @@
+# $FreeBSD$
+
 NOPROFILE=	yes
 LIB=		tcl80
 TCL_LIBRARY=	${PREFIX}/lib/tcl8.0
@@ -17,35 +19,37 @@ CFLAGS+=	-I. -I./../generic \
 GENERIC_DIR=	../generic
 UNIX_DIR=	.
 
+.PATH: ${GENERIC_DIR} ${UNIX_DIR}
+
 SRCS=	\
-		$(GENERIC_DIR)/panic.c $(GENERIC_DIR)/regexp.c\
-		$(GENERIC_DIR)/tclAsync.c $(GENERIC_DIR)/tclBasic.c \
-		$(GENERIC_DIR)/tclCkalloc.c $(GENERIC_DIR)/tclClock.c \
-		$(GENERIC_DIR)/tclCmdAH.c $(GENERIC_DIR)/tclCmdIL.c \
-		$(GENERIC_DIR)/tclCmdMZ.c $(GENERIC_DIR)/tclDate.c \
-		$(GENERIC_DIR)/tclEnv.c $(GENERIC_DIR)/tclEvent.c \
-		$(GENERIC_DIR)/tclFCmd.c \
-		$(GENERIC_DIR)/tclFileName.c \
-		$(GENERIC_DIR)/tclGet.c $(GENERIC_DIR)/tclHash.c \
-		$(GENERIC_DIR)/tclHistory.c $(GENERIC_DIR)/tclInterp.c \
-		$(GENERIC_DIR)/tclIO.c 	$(GENERIC_DIR)/tclIOCmd.c \
-		$(GENERIC_DIR)/tclIOSock.c $(GENERIC_DIR)/tclIOUtil.c \
-		$(GENERIC_DIR)/tclLink.c $(GENERIC_DIR)/tclLoad.c \
-		$(GENERIC_DIR)/tclMain.c $(GENERIC_DIR)/tclNotify.c \
-		$(GENERIC_DIR)/tclParse.c $(GENERIC_DIR)/tclPkg.c \
-		$(GENERIC_DIR)/tclPosixStr.c $(GENERIC_DIR)/tclPreserve.c \
-		$(GENERIC_DIR)/tclProc.c $(GENERIC_DIR)/tclUtil.c \
-		$(GENERIC_DIR)/tclVar.c $(UNIX_DIR)/tclMtherr.c \
-		$(GENERIC_DIR)/tclCompile.c $(GENERIC_DIR)/tclExecute.c\
-		$(GENERIC_DIR)/tclBinary.c $(GENERIC_DIR)/tclCompExpr.c\
-		$(GENERIC_DIR)/tclIndexObj.c $(GENERIC_DIR)/tclListObj.c\
-		$(GENERIC_DIR)/tclNamesp.c $(GENERIC_DIR)/tclResolve.c\
-		$(GENERIC_DIR)/tclObj.c $(GENERIC_DIR)/tclPipe.c\
-		$(GENERIC_DIR)/tclStringObj.c $(GENERIC_DIR)/tclTimer.c\
-		$(UNIX_DIR)/tclUnixChan.c $(UNIX_DIR)/tclUnixFCmd.c \
-		$(UNIX_DIR)/tclUnixFile.c $(UNIX_DIR)/tclUnixNotfy.c \
-		$(UNIX_DIR)/tclUnixPipe.c $(UNIX_DIR)/tclUnixSock.c \
-		$(UNIX_DIR)/tclUnixTime.c $(UNIX_DIR)/tclUnixInit.c \
-		$(UNIX_DIR)/tclLoadDl.c $(UNIX_DIR)/tclUnixEvent.c
+		panic.c regexp.c\
+		tclAsync.c tclBasic.c \
+		tclCkalloc.c tclClock.c \
+		tclCmdAH.c tclCmdIL.c \
+		tclCmdMZ.c tclDate.c \
+		tclEnv.c tclEvent.c \
+		tclFCmd.c \
+		tclFileName.c \
+		tclGet.c tclHash.c \
+		tclHistory.c tclInterp.c \
+		tclIO.c tclIOCmd.c \
+		tclIOSock.c tclIOUtil.c \
+		tclLink.c tclLoad.c \
+		tclMain.c tclNotify.c \
+		tclParse.c tclPkg.c \
+		tclPosixStr.c tclPreserve.c \
+		tclProc.c tclUtil.c \
+		tclVar.c tclMtherr.c \
+		tclCompile.c tclExecute.c\
+		tclBinary.c tclCompExpr.c\
+		tclIndexObj.c tclListObj.c\
+		tclNamesp.c tclResolve.c\
+		tclObj.c tclPipe.c\
+		tclStringObj.c tclTimer.c\
+		tclUnixChan.c tclUnixFCmd.c \
+		tclUnixFile.c tclUnixNotfy.c \
+		tclUnixPipe.c tclUnixSock.c \
+		tclUnixTime.c tclUnixInit.c \
+		tclLoadDl.c tclUnixEvent.c
 
 .include <bsd.lib.mk>
