@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- doc/l2tpd.conf.5	2002/10/23 13:39:50	1.1
++++ doc/l2tpd.conf.5	2002/10/23 13:40:38
+@@ -15,7 +15,7 @@
+ .TP 
+ .B auth file
+ Specify where to find the authentication file used to authenticate
+-l2tp tunnels. The default is /etc/l2tp/l2tp\-secrets.
++l2tp tunnels. The default is %%PREFIX%%/etc/l2tpd/l2tp\-secrets.
+ 
+ .TP 
+ .B Port
+@@ -141,7 +141,7 @@
+ 
+ .SH "FILES"
+ 
+-\fB\fR/etc/l2tp/l2tpd.conf \fB\fR/etc/l2tp/l2tp\-secrets 
++\fB\fR%%PREFIX%%/etc/l2tpd/l2tpd.conf \fB\fR%%PREFIX%%/etc/l2tpd/l2tp\-secrets 
+ \fB\fR/var/run/l2tp\-control
+ .SH "BUGS"
+ 
