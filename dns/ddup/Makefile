@@ -7,6 +7,7 @@
 
 PORTNAME=	ddup
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITES_LOCAL}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
@@ -25,23 +26,26 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAKE_ARGS=	DEBUG="${DEBUG}"
 
+.include <bsd.port.pre.mk>
+
 post-extract:
-	cd ${WRKSRC}; ${GUNZIP_CMD} ddup.1.gz
+	@${GUNZIP_CMD} ${WRKSRC}/ddup.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/ddupcron.sh
 	@${REINPLACE_CMD} -e 's,/etc\b,${PREFIX}$$&,' ${WRKSRC}/ddup.1
 
 pre-build:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
-	${ECHO_CMD} "#define file_name \"${PREFIX}/etc/ddup.conf\"" > ${WRKSRC}/options.h
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}/
+	@${ECHO_CMD} "#define file_name \"${PREFIX}/etc/ddup.conf\"" \
+		 > ${WRKSRC}/options.h
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ddupcron.sh ${PREFIX}/sbin/
+	${INSTALL_SCRIPT} ${WRKSRC}/ddupcron.sh ${PREFIX}/sbin
 .if !defined(NOPORTSDOC)
-	${MKDIR} ${PREFIX}/share/doc/ddup
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ddup/
+	@${MKDIR} ${PREFIX}/share/doc/ddup
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
