@@ -7,18 +7,18 @@
 
 PORTNAME=	gtk-doc
 PORTVERSION=	1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gtk.org/pub/gtk-doc/
 
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Code documentation system, originally for GTK+
 
-BROKEN=		"Does not configure (different errors on 4.x and 5.x)"
-
-BUILD_DEPENDS=	${LOCALBASE}/share/sk/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
+BUILD_DEPENDS=	jade:${PORTSDIR}/textproc/jade \
+		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 RUN_DEPENDS=	jade:${PORTSDIR}/textproc/jade \
+		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}/docbook.cat:${PORTSDIR}/textproc/docbook-sk \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
 
 DOCBOOK_VERSION=	4.1.2
@@ -26,6 +26,12 @@ DOCBOOK_VERSION=	4.1.2
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gnometarget libxslt
-CONFIGURE_ARGS=	--with-xml-catalog=${LOCALBASE}/share/sk/docbook/${DOCBOOK_VERSION}/docbook.cat
+CONFIGURE_ARGS=	--with-xml-catalog=${LOCALBASE}/share/xml/catalog
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		gtk-doc requires Perl 5.6.x or higher
+.endif
+
+.include <bsd.port.post.mk>
