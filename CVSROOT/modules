@@ -2218,6 +2218,7 @@ guppi		ports/math/guppi
 gupsc		ports/sysutils/gupsc
 gutenbook	ports/textproc/gutenbook
 gutenfetch	ports/net/gutenfetch
+gutenmark	ports/textproc/gutenmark
 gv		ports/print/gv
 gvd		ports/devel/gvd
 gvid		ports/x11/gvid
