@@ -5,3 +5,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/RawIP/libpcap.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/RawIP/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/RawIP/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/RawIP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net/RawIP
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Net 2>/dev/null || true

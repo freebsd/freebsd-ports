@@ -19,3 +19,5 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/libnet.cfg
 lib/perl5/site_perl/%%PERL_VER%%/Net/libnetFAQ.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/FTP
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
