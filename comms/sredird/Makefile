@@ -8,12 +8,13 @@
 PORTNAME=	sredird
 PORTVERSION=	1.1.7
 CATEGORIES=	comms
-MASTER_SITES=	http://metalab.unc.edu/pub/Linux/system/serial/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	system/serial
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 do-build:
-	${CC} ${CFLAGS} -g -Wall -o ${WRKSRC}/sredird ${WRKSRC}/sredird.c
+	${CC} ${CFLAGS} -Wall -o ${WRKSRC}/sredird ${WRKSRC}/sredird.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sredird ${PREFIX}/libexec

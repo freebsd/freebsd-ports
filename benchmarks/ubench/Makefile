@@ -8,8 +8,8 @@
 PORTNAME=	ubench
 PORTVERSION=	0.31
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://metalab.unc.edu/pub/Linux/system/benchmark/ \
-		http://linuxberg.concepts.nl/files/console/system/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	system/benchmark
 
 MAINTAINER=	leeym@cae.ce.ntu.edu.tw
 

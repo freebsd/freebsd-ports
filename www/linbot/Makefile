@@ -8,7 +8,8 @@
 PORTNAME=	linbot
 PORTVERSION= 	1.0
 CATEGORIES=	www python
-MASTER_SITES=	http://metalab.unc.edu/pub/Linux/apps/www/misc/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/www/misc
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	billf@FreeBSD.org
