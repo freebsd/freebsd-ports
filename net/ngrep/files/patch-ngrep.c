@@ -1,28 +1,19 @@
---- ngrep.c.orig	Mon Jun 26 12:52:50 2000
-+++ ngrep.c	Sat Aug 26 17:34:40 2000
-@@ -48,6 +48,7 @@
- #include "regex.h"
+--- ngrep.c.orig	Wed Aug  8 23:36:09 2001
++++ ngrep.c	Wed Aug  8 23:36:31 2001
+@@ -62,6 +62,7 @@
+ 
  #include "ngrep.h"
  
 +extern FILE *yyin;
  
- static char rcsver[] = "$Revision: 1.38 $";
+ static char rcsver[] = "$Revision: 1.18 $";
  
-@@ -196,7 +197,7 @@
-       free(filter); 
+@@ -232,7 +233,7 @@
        filter = get_filter(&argv[optind-1]); 
  
+ #ifdef NEED_RESTART
 -      PCAP_RESTART();
 +      PCAP_RESTART(yyin);
+ #endif
        if (pcap_compile(pd, &pcapfilter, filter, 0, mask.s_addr)) {
  	pcap_perror(pd, "pcap compile");
- 	clean_exit(-1);
-@@ -653,7 +654,7 @@
-   struct tm *t = localtime(&h->ts.tv_sec);
- 
-   printf("%02d/%02d/%02d %02d:%02d:%02d.%06d ",
--	 t->tm_year+1900, t->tm_mon, t->tm_mday, t->tm_hour,
-+	 t->tm_year+1900, t->tm_mon+1, t->tm_mday, t->tm_hour,
- 	 t->tm_min, t->tm_sec, h->ts.tv_usec);
- }
- 

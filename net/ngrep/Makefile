@@ -7,21 +7,25 @@
 #
 
 PORTNAME=	ngrep
-PORTVERSION=	1.38
+PORTVERSION=	1.40
 CATEGORIES=	net security
-MASTER_SITES=	http://www.packetfactory.net/Projects/ngrep/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/ngrep
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-pcre --with-restart
 ALL_TARGET=	ngrep
 MAN8=		ngrep.8
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/ngrep
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ngrep
+	@${MKDIR} ${DOCSDIR}
+.for file in BUGS CHANGES README README.pcre USAGE
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>

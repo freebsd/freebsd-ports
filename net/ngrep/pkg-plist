@@ -1,4 +1,8 @@
 @comment $FreeBSD$
 bin/ngrep
-share/doc/ngrep/README
-@dirrm share/doc/ngrep
+%%PORTDOCS%%share/doc/ngrep/BUGS
+%%PORTDOCS%%share/doc/ngrep/CHANGES
+%%PORTDOCS%%share/doc/ngrep/README
+%%PORTDOCS%%share/doc/ngrep/README.pcre
+%%PORTDOCS%%share/doc/ngrep/USAGE
+%%PORTDOCS%%@dirrm share/doc/ngrep
