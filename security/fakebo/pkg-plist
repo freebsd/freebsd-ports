@@ -1,0 +1,4 @@
+bin/fakebo
+etc/fakebo.conf
+share/doc/fakebo/custom.replies
+@dirrm share/doc/fakebo/
