@@ -1,0 +1,36 @@
+--- sysdeps/freebsd/procmap.c.orig	Fri May 28 02:56:48 1999
++++ sysdeps/freebsd/procmap.c	Sun Jan  2 16:24:43 2000
+@@ -33,7 +33,11 @@
+ #include <sys/proc.h>
+ #include <sys/resource.h>
+ #include <vm/vm_object.h>
++#if (__FreeBSD_version >= 400011)
++#include <vm/vm.h>
++#else
+ #include <vm/vm_prot.h>
++#endif
+ #include <vm/vm_map.h>
+ 
+ #include <sys/vnode.h>
+--- sysdeps/freebsd/sem_limits.c.orig	Sun Jan  2 16:32:20 2000
++++ sysdeps/freebsd/sem_limits.c	Sun Jan  2 16:35:00 2000
+@@ -46,7 +46,7 @@
+ 
+ /* #define KERNEL to get declaration of `struct seminfo'. */
+ 
+-#if defined(__FreeBSD__) || defined(__bsdi__)
++#if defined(__bsdi__) || (__FreeBSD_version < 400011)
+ #define KERNEL 1
+ #else
+ #define _KERNEL 1
+--- sysdeps/freebsd/shm_limits.c.orig	Sun Jan  2 16:27:59 2000
++++ sysdeps/freebsd/shm_limits.c	Sun Jan  2 16:35:18 2000
+@@ -46,7 +46,7 @@
+ 
+ /* #define KERNEL to get declaration of `struct shminfo'. */
+ 
+-#if defined(__FreeBSD__)  || defined(__bsdi__)
++#if defined(__bsdi__) || (__FreeBSD_version < 400011)
+ #define KERNEL 1
+ #else
+ #define _KERNEL 1
