@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	html2wml
-PORTVERSION=	0.4.6.p5
+PORTVERSION=	0.4.11
 CATEGORIES=	www
-MASTER_SITES=	http://maddingue.free.fr/techie/download/Html2Wml/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p5//}-pre5
+MASTER_SITES=	http://maddingue.free.fr/softwares/download/Html2Wml/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CGI that can do on-the-fly HTML to WML conversion
@@ -34,7 +33,7 @@ checkconfig:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/html2wml/t/samples
-.for D in ARTISTIC COPYING INSTALL NEWS NOTES README TODO ChangeLog
+.for D in INSTALL NEWS NOTES README TODO ChangeLog
 	${INSTALL_DATA} ${WRKSRC}/$D ${PREFIX}/share/doc/html2wml
 .endfor
 .for D in html pdf pod txt

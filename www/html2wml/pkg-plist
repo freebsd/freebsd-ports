@@ -1,34 +1,32 @@
 bin/html2wml
-%%PORTDOCS%%share/doc/html2wml/ARTISTIC
-%%PORTDOCS%%share/doc/html2wml/COPYING
-%%PORTDOCS%%share/doc/html2wml/ChangeLog
-%%PORTDOCS%%share/doc/html2wml/INSTALL
-%%PORTDOCS%%share/doc/html2wml/NEWS
-%%PORTDOCS%%share/doc/html2wml/NOTES
-%%PORTDOCS%%share/doc/html2wml/README
-%%PORTDOCS%%share/doc/html2wml/TODO
-%%PORTDOCS%%share/doc/html2wml/readme.html
-%%PORTDOCS%%share/doc/html2wml/readme.pdf
-%%PORTDOCS%%share/doc/html2wml/readme.pod
-%%PORTDOCS%%share/doc/html2wml/readme.txt
-%%PORTDOCS%%share/doc/html2wml/t/form.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/inc_para.wml
-%%PORTDOCS%%share/doc/html2wml/t/samples/inc_prev.wml
-%%PORTDOCS%%share/doc/html2wml/t/samples/mix1.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/mix2.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/struct.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-a.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-anchor.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-br.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-double-tags.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-extcharset.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-frames.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-img.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-include.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-nest.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-no-tag.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-special-chars.html
-%%PORTDOCS%%share/doc/html2wml/t/samples/t-urls.html
-%%PORTDOCS%%@dirrm share/doc/html2wml/t/samples
-%%PORTDOCS%%@dirrm share/doc/html2wml/t
-%%PORTDOCS%%@dirrm share/doc/html2wml
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/readme.html
+%%PORTDOCS%%%%DOCSDIR%%/readme.pdf
+%%PORTDOCS%%%%DOCSDIR%%/readme.pod
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/t/form.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/inc_para.wml
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/inc_prev.wml
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/mix1.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/mix2.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/struct.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-a.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-anchor.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-br.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-double-tags.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-extcharset.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-frames.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-img.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-include.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-nest.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-no-tag.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-special-chars.html
+%%PORTDOCS%%%%DOCSDIR%%/t/samples/t-urls.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/t/samples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/t
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
