@@ -109,4 +109,8 @@ This file is in the public domain.
   <vuln vid="f72ccf7c-e607-11d8-9b0a-000347a4fa7d">
     <cancelled superseded="6f955451-ba54-11d8-b88c-000d610a3b12"/>
   </vuln>
+
+  <vuln vid="9fb5bb32-d6fa-11d8-b479-02e0185c0b53">
+    <cancelled superseded="40800696-c3b0-11d8-864c-02e0185c0b53"/>
+  </vuln>
 </vuxml>
