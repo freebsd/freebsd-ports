@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	papercut
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	news python
 MASTER_SITES=	http://papercut.org/
 
