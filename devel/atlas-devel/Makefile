@@ -9,8 +9,8 @@ PORTNAME=	Atlas
 PORTVERSION=	0.4.94
 PORTREVISION=	0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.worldforge.org/libs/Atlas-C++/transitional/ \
-		http://purple.worldforge.org/wf/downloads/libs/Atlas-C++/transitional/
+MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	worldforge
 DISTNAME=	${PORTNAME}-C++-${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
