@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hsftp
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	ftp
 MASTER_SITES=	http://la-samhna.de/hsftp/ \
 		${MASTER_SITE_SUNSITE}
