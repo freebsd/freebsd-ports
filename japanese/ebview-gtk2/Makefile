@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ebview
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.3
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,16 +20,15 @@ LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb
 CONFLICTS=	ja-ebview-0*
 
 USE_GNOME=	gtk20 gnometarget
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-build:
-.for file in src/grep.c
-	@cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
-		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
-.endfor
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-pthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
