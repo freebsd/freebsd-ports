@@ -17,4 +17,7 @@ COMMENT=	A round, analog X11 clock with bezier curve hands
 USE_IMAKE=	yes
 MAN1=		bclock.1
 
+PLIST_FILES=	bin/bclock \
+		lib/X11/app-defaults/Clock-color
+
 .include <bsd.port.mk>

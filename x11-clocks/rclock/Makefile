@@ -30,6 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-DMAIL_SPOOL='\"/var/mail/\"'"
 ALL_TARGET=	clock
 MAN1=		rclock.1
 
+PLIST_FILES=	bin/rclock
+
 post-patch:
 	@${REINPLACE_CMD} \
 		's|^subdirs =.*$$|subdirs = rclock|g' ${WRKSRC}/Makefile.in
