@@ -1,0 +1,13 @@
+#!/bin/sh
+if [ $# != 2 ]; then
+   echo "usage: chopindex <indexfile> <pkgdir>"
+   return 1
+fi
+index=$1
+pkgdir=$2
+/usr/bin/awk -v FS="|" -v pkgdir=$pkgdir '{
+        if (system(sprintf("test ! -e %s/All/%s.tgz\n", pkgdir, $1)))
+        print $0 ;
+}' $index | \
+	sed -e 's/XFree86-3\.3\.4//g' -e 's/Motif-2\.1\.10//g' \
+	  -e 's/  */ /g' -e 's/| /|/g' -e 's/ |/|/g'
