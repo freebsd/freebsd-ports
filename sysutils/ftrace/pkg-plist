@@ -1,7 +1,7 @@
 bin/ftrace
 lib/libftrace.so
-share/doc/ftrace/COPYING
-share/doc/ftrace/README
-share/doc/ftrace/TODO
-share/doc/ftrace/ChangeLog
-@dirrm share/doc/ftrace
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
