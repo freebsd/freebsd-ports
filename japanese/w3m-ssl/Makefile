@@ -14,6 +14,6 @@ PKGDIR=        ${.CURDIR}/pkg
 PLIST=         ${MASTERDIR}/pkg/PLIST.ja
 
 JAPANESE=      Yes
-USE_SSL=       Yes
+USE_OPENSSL=   RSA
 
 .include "${MASTERDIR}/Makefile"

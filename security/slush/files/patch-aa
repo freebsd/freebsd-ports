@@ -1,38 +1,22 @@
-*** Makefile.in.orig	Tue Apr  6 03:05:04 1999
---- Makefile.in	Sun May 16 21:37:14 1999
-***************
-*** 9,16 ****
-  
-  CC=@CC@
-  INSTALL=@INSTALL@
-! CFLAGS=@CFLAGS@ -Wall -DVERSION=\"$(VERSION)\" -I/usr/local/ssl/include -I/usr/include/ssl
-! LIBS=@LIBS@ -L/usr/local/ssl/lib -lssl -lcrypto
-  
-  all: slush slushd
-  
---- 9,16 ----
-  
-  CC=@CC@
-  INSTALL=@INSTALL@
-! CFLAGS=@CFLAGS@ -Wall -DVERSION=\"$(VERSION)\" -I/usr/local/include -I/usr/local/include/openssl
-! LIBS=@LIBS@ -L/usr/local/lib -lssl -lcrypto $(EXTRA_SSL_LIBS) -lutil
-  
-  all: slush slushd
-  
-***************
-*** 38,44 ****
-  install: $(SBINDIR)/slushd $(MANDIR)/slush.8
-  
-  cert:
-! 	ssleay req -new -x509 -nodes \
-  		-out slushd.pem -days 365 -keyout slushd.pem
-  
-  clean:
---- 38,44 ----
-  install: $(SBINDIR)/slushd $(MANDIR)/slush.8
-  
-  cert:
-! 	openssl req -new -x509 -nodes \
-  		-out slushd.pem -days 365 -keyout slushd.pem
-  
-  clean:
+--- Makefile.in.orig	Tue Apr  6 01:05:04 1999
++++ Makefile.in	Sat Jan 29 16:23:51 2000
+@@ -9,8 +9,8 @@
+ 
+ CC=@CC@
+ INSTALL=@INSTALL@
+-CFLAGS=@CFLAGS@ -Wall -DVERSION=\"$(VERSION)\" -I/usr/local/ssl/include -I/usr/include/ssl
+-LIBS=@LIBS@ -L/usr/local/ssl/lib -lssl -lcrypto
++CFLAGS=@CFLAGS@ -Wall -DVERSION=\"$(VERSION)\" -I$(OPENSSLINC) -I$(OPENSSLINC)/openssl -I$(LOCALBASE)/include
++LIBS=@LIBS@ -L$(OPENSSLLIB) -lssl -lcrypto $(EXTRA_SSL_LIBS) -lutil
+ 
+ all: slush slushd
+ 
+@@ -38,7 +38,7 @@
+ install: $(SBINDIR)/slushd $(MANDIR)/slush.8
+ 
+ cert:
+-	ssleay req -new -x509 -nodes \
++	openssl req -new -x509 -nodes \
+ 		-out slushd.pem -days 365 -keyout slushd.pem
+ 
+ clean:
