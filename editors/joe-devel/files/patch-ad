@@ -1,18 +1,58 @@
---- b.c        Fri Jan 20 03:38:25 1995
-+++ b.c.new    Fri Jul 23 03:36:10 1999
-@@ -21,6 +21,7 @@
- #include <pwd.h>
+--- b.c.orig	Fri Jan 20 09:38:25 1995
++++ b.c	Tue Dec  7 13:35:11 1999
+@@ -22,4 +22,7 @@
  #endif
  #include <errno.h>
++#include <sys/file.h>
 +#include <sys/types.h>
-
++#include <sys/stat.h>
+ 
  #include "config.h"
- #include "blocks.h"
-@@ -1990,6 +1991,7 @@
-  {
-  long tim=time(0);
-  B *b;
-+ mode_t mask=umask(077); /* no access to DEADJOE for others */
-  FILE *f=fopen("DEADJOE","a");
-  fprintf(f,"\n*** Modified files in JOE when it aborted on %s",ctime(&tim));
-  if(sig) fprintf(f,"*** JOE was aborted by signal %d\n",sig);
+@@ -202,4 +205,5 @@
+  else b->o=pdefault;
+  mset(b->marks,0,sizeof(b->marks));
++ b->filehandle = -1;	/* initialize filehandle &&& ob */
+  b->rdonly=0;
+  b->orphan=0;
+@@ -256,4 +260,8 @@
+  if(b && !--b->count)
+   {
++  if (b->filehandle != -1) {
++    /* close filehandle, free lock &&& ob */
++    close (b->filehandle);
++    }
+   if(b->changed) abrerr(b->name);
+   if(b==errbuf) errbuf=0;
+@@ -1672,4 +1680,5 @@
+  long skip,amnt;
+  char *n;
++ struct stat sb;
+  int nowrite=0;
+ 
+@@ -1705,4 +1714,26 @@
+   fi=fopen(n,"r");
+   if(!fi) nowrite=0;
++/*printf ("nowrite open=%i\n", nowrite); */
++  
++  /* check file mod, if no write flags set, 
++     joe in read only mode. &&& ob */
++
++  if (!nowrite) { 
++    nowrite = (!stat (n, &sb)) && (!(sb.st_mode & (S_IWUSR | S_IWGRP | S_IWOTH)));
++    }
++/*printf ("nowrite stat=%i\n", nowrite); */
++
++  /* lock the file if writable, or go into read only mode if
++     already locked,      */
++  
++  if ((fi) && (!nowrite)) { 
++    b->filehandle = dup (fileno (fi));
++    nowrite = (flock (b->filehandle, LOCK_EX | LOCK_NB));
++    }
++/*printf ("nowrite flock=%i\n", nowrite); */
++
++/*nowrite = 1; */	/* for test purpose */
++/*printf ("nowrite=%i\n", nowrite); */
++
+   }
+  joesep(n);

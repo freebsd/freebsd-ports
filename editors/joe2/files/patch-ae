@@ -1,0 +1,8 @@
+--- b.h.orig	Wed Dec 21 13:04:46 1994
++++ b.h	Tue Dec  7 13:35:11 1999
+@@ -61,4 +61,5 @@
+  int internal;			/* Set for internal buffers */
+  int er;			/* Error code when file was loaded */
++ int filehandle;		/* File handle for locking */
+  };
+ 
