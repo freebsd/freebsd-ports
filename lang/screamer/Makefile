@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/ \
 DISTNAME=	screamer.tar
 EXTRACT_SUFX=	.Z
 
-MAINTAINER=	sf@dsinw.com
+MAINTAINER=	sf@slappy.org
 COMMENT=	Extension of Common Lisp for nondeterministic programming
 
 BUILD_DEPENDS=	lisp:${PORTSDIR}/lang/cmucl
