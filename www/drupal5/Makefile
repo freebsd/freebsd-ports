@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	drupal
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4.0
 CATEGORIES=	www
-MASTER_SITES=	http://drupal.org/drupal/${PORTVERSION}/drupal/
+MASTER_SITES=	http://drupal.org/drupal/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	esn@x123.info
 COMMENT=	CMS that supports pgsql and mysql
 
-RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-
-BROKEN=		"Checksum mismatch"
+RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 
 NO_BUILD=	yes
 DRUPDIR=	www/data/drupal
-DOCS=		CHANGELOG INSTALL LICENSE MAINTAINERS
+DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt
 
 do-install:
 
@@ -28,7 +27,6 @@ do-install:
 	${CP} ${WRKSRC}/.htaccess ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/cron.php ${PREFIX}/${DRUPDIR}
 	${CP} -R ${WRKSRC}/database ${PREFIX}/${DRUPDIR}
-	${CP} ${WRKSRC}/error.php ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/favicon.ico ${PREFIX}/${DRUPDIR}
 	${CP} -R ${WRKSRC}/includes ${PREFIX}/${DRUPDIR}
 	${CP} ${WRKSRC}/index.php ${PREFIX}/${DRUPDIR}
@@ -45,7 +43,7 @@ do-install:
 	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${DRUPDIR}
 
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " You now need to create the database"
+	@${ECHO_MSG} " You now need to create the DB"
 	@${ECHO_MSG} " where Drupal is going to live"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} " PostgreSQL::"
