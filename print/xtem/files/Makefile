@@ -9,8 +9,10 @@ install: all
 	@tar -cf - . | (cd ${PREFIX}/share/xtem; \
 	    tar -x --exclude *.orig --exclude *.bak --exclude changecode -f -)
 	@echo "Installing local files..."
-	@mv ${PREFIX}/share/xtem/locals_english.LRW ${PREFIX}/share/xtem_locals_english
-	@mv ${PREFIX}/share/xtem/locals_german.LRW ${PREFIX}/share/xtem_locals_german
+	@[ -d ${PREFIX}/share/xtem_locals_english ] && rm -rf ${PREFIX}/share/xtem_locals_english
+	@mv -f ${PREFIX}/share/xtem/locals_english.LRW ${PREFIX}/share/xtem_locals_english
+	@[ -d ${PREFIX}/share/xtem_locals_german ] && rm -rf ${PREFIX}/share/xtem_locals_german
+	@mv -f ${PREFIX}/share/xtem/locals_german.LRW ${PREFIX}/share/xtem_locals_german
 	@rm -f ${PREFIX}/share/xtem/locals_english
 	@ln -sf ../xtem_locals_english ${PREFIX}/share/xtem/locals_english
 	@rm -f ${PREFIX}/share/xtem/locals_german
