@@ -244,6 +244,7 @@
     SUBDIR += libmng
     SUBDIR += libmorph
     SUBDIR += libpcd
+    SUBDIR += libpixman
     SUBDIR += libqglviewer
     SUBDIR += librsvg
     SUBDIR += librsvg2
