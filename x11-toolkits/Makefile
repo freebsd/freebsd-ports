@@ -19,6 +19,7 @@
     SUBDIR += flvw
     SUBDIR += fox
     SUBDIR += fox-xunicode
+    SUBDIR += gail
     SUBDIR += gal
     SUBDIR += gdl
     SUBDIR += gevas
