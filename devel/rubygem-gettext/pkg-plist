@@ -6,19 +6,25 @@ share/locale/ja/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hellogtk.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello_noop.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hellotk.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hello.mo
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hello2.mo
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hello_noop.mo
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hellogtk.mo
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hellotk.mo
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/hello.pot
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/hello2.pot
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/hello_noop.pot
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/hellogtk.pot
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/ja/hello.po
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/ja/hello2.po
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/ja/hello_noop.po
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/ja/hellogtk.po
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/ja/hellotk.po
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/makemo.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gettext/po/ja
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gettext/po/ja_JP.eucJP
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gettext/po
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/gettext/locale/ja
