@@ -1,7 +1,7 @@
-# $Id: Makefile,v 1.44 1995/01/06 05:42:02 jkh Exp $
+# $Id: Makefile,v 1.45 1995/01/13 14:19:58 jkh Exp $
 #
 SUBDIR= Xaw3d color_xterm ctwm emu fvwm kterm olvwm piewm rxvt tk \
-	tkhfs tkman tvtwm x3270 xearth xfed xlockmore xsnow \
+	tkhfs tkman tvtwm x3270 xearth xfed xkeycaps xlockmore xsnow \
 	xview-config xview-lib xview-clients
 
 #
