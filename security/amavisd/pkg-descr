@@ -1,0 +1,7 @@
+amavisd is the daemonized version of amavis-perl 
+
+Note that the installation is different than the original package, and the
+integration into your MTA can be different, so please read the README and
+INSTALL files very carefully. 
+
+WWW: http://www.amavis.org/
