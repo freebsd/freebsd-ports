@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += cascade
     SUBDIR += chipmunk
     SUBDIR += cider
     SUBDIR += electric
