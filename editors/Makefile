@@ -79,6 +79,7 @@
     SUBDIR += leim20
     SUBDIR += leim21
     SUBDIR += leo
+    SUBDIR += leo-test
     SUBDIR += lfhex
     SUBDIR += lpe
     SUBDIR += manedit
