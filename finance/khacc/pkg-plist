@@ -1,0 +1,11 @@
+bin/khacc
+share/applnk/Applications/khacc.desktop
+share/icons/locolor/32x32/apps/khacc.png
+share/icons/locolor/16x16/apps/khacc.png
+share/apps/khacc/khaccui.rc
+share/doc/HTML/en/khacc/common
+share/doc/HTML/en/khacc/index.docbook
+share/doc/HTML/en/khacc/index.cache.bz2
+@dirrm share/applnk/Applications
+@dirrm share/doc/HTML/en/khacc
+@dirrm share/apps/khacc

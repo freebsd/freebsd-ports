@@ -1,0 +1,8 @@
+KHacc is simple financial management program similar to QHacc.
+
+In Difference to QHacc it does not have all command-line options 
+but is integrated into KDE, using its help and print system and 
+KDE i18n/l10n support.
+
+Author: Ryan F. Bobko <ryan@ostrich-emulators.cx>
+WWW:	http://qhacc.sourceforge.net/
