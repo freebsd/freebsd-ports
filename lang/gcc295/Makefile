@@ -9,15 +9,12 @@
 PORTNAME=	gcc
 PORTVERSION=	2.95.3.test3
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/gcc/releases/gcc-2.95.3-prerelease/  \
-		ftp://egcs.cygnus.com/pub/egcs/releases/gcc-2.95.3-prerelease/  \
-		ftp://ftp.freesoftware.com/pub/sourceware/gcc/releases/${DISTNAME}/  \
-		ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/  \
-		ftp://ftp.ninemoons.com/pub/mirrors/egcs/releases/${DISTNAME}/ \
-		ftp://ftp.iij.ad.jp/pub/egcs/releases/${DISTNAME}/  \
-		ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/  \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/${DISTNAME}/
-MASTER_SITE_SUBDIR=	gcc
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/gcc/releases/%SUBDIR%/  \
+		ftp://egcs.cygnus.com/pub/egcs/releases/%SUBDIR%/  \
+		${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	gcc-2.95.3-prerelease \
+			gcc/releases/gcc-2.95.3-prerelease \
+			${DISTNAME}
 DISTFILES=	gcc-core-${GCC_REV}.test3${EXTRACT_SUFX} \
 		gcc-g++-${GCC_REV}.test3${EXTRACT_SUFX} \
 		gcc-g77-${GCC_REV}.test3${EXTRACT_SUFX} \
