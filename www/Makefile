@@ -72,6 +72,7 @@
     SUBDIR += frontpage-es
     SUBDIR += frontpage-fr
     SUBDIR += frontpage-he
+    SUBDIR += frontpage-it
     SUBDIR += fxhtml
     SUBDIR += g-gcl
     SUBDIR += galeon
