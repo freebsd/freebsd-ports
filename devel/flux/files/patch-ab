@@ -1,0 +1,11 @@
+--- configure.in.orig  Thu Feb 10 08:02:07 2000
++++ configure.in       Sat Jul 22 02:14:02 2000
+@@ -120,8 +120,6 @@
+ 
+ dnl --- Set compiler flags ---
+ 
+-CFLAGS="$CFLAGS -O2 -Wall"
+-
+ if test "$debug" = yes; then
+   CFLAGS="$CFLAGS -g"
+ fi
