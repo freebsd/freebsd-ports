@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Filesys-Virtual-DAAP
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	audio perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Filesys
@@ -17,6 +17,7 @@ COMMENT=	Present a DAAP share as a VFS
 
 BUILD_DEPENDS=	${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
 		${SITE_PERL}/Filesys/Virtual.pm:${PORTSDIR}/devel/p5-Filesys-Virtual \
+		${SITE_PERL}/Filesys/Virtual/Plain.pm:${PORTSDIR}/devel/p5-Filesys-Virtual-Plain \
 		${SITE_PERL}/Net/DAAP/Client.pm:${PORTSDIR}/audio/p5-Net-DAAP-Client
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
