@@ -1,0 +1,11 @@
+--- script/boot-install.orig	Fri Jul 20 14:44:40 2001
++++ script/boot-install	Fri Jul 20 14:44:48 2001
+@@ -11,7 +11,7 @@
+ #                    the automatic answer
+ #                    the src dir
+ 
+-PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin"
++PATH="/sbin:/usr/sbin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/sbin"
+ if test -d /usr/ucb; then
+     PATH=/usr/ucb:$PATH
+ fi
