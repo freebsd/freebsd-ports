@@ -30,6 +30,7 @@ USE_XLIB=	yes
 USE_REINPLACE=	yes
 AUTOMAKE_ARGS=	-a -i
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+= --without-javadx
 CONFIGURE_ENV=	ARCH="" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${PREFIX}/include" \
 		CPPFLAGS="-I${PREFIX}/include" \
