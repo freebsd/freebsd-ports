@@ -1,0 +1,8 @@
+sbin/squall
+sbin/squallhub
+sbin/squallproxy
+sbin/squirt
+%%DOCSDIR%%/draft-arcieri-peer-distributed-transfer-protocol.txt
+%%DOCSDIR%%/transactions.txt
+%%DOCSDIR%%/transfer_specification.txt
+@dirrm %%DOCSDIR%%

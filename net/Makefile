@@ -659,6 +659,7 @@
     SUBDIR += socks5
     SUBDIR += spread
     SUBDIR += spread-j
+    SUBDIR += squall
     SUBDIR += ssldump
     SUBDIR += ssltunnel-client
     SUBDIR += ssltunnel-server
