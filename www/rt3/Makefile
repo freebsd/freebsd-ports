@@ -7,6 +7,7 @@
 
 PORTNAME=	rt
 PORTVERSION?=	3.0.11
+PORTREVISION?=	1
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
