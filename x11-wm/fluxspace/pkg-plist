@@ -1,0 +1,52 @@
+lib/libfluxspace-0.0.3.so
+lib/libfluxspace.so
+lib/libfluxspace.la
+lib/libfluxspace.a
+%%PYTHON_SITELIBDIR%%/fluxspace/__init__.py
+%%PYTHON_SITELIBDIR%%/fluxspace/ideskutil.py
+%%PYTHON_SITELIBDIR%%/fluxspace/config.py
+%%PYTHON_SITELIBDIR%%/fluxspace/process.py
+%%PYTHON_SITELIBDIR%%/fluxspace/ideskutil.pyc
+%%PYTHON_SITELIBDIR%%/fluxspace/config.pyc
+%%PYTHON_SITELIBDIR%%/fluxspace/process.pyc
+%%PYTHON_SITELIBDIR%%/fluxspace/ideskutil.pyo
+%%PYTHON_SITELIBDIR%%/fluxspace/config.pyo
+%%PYTHON_SITELIBDIR%%/fluxspace/process.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/fluxspace
+%%PYTHON_SITELIBDIR%%/_fluxspace.so
+%%PYTHON_SITELIBDIR%%/fluxspace.py
+%%PYTHON_SITELIBDIR%%/fluxspace.pyc
+%%PYTHON_SITELIBDIR%%/fluxspace.pyo
+%%PYTHON_SITELIBDIR%%/fluxlet/__init__.py
+%%PYTHON_SITELIBDIR%%/fluxlet/painter.py
+%%PYTHON_SITELIBDIR%%/fluxlet/runner.py
+%%PYTHON_SITELIBDIR%%/fluxlet/rox.py
+%%PYTHON_SITELIBDIR%%/fluxlet/tracer.py
+%%PYTHON_SITELIBDIR%%/fluxlet/idesk.py
+%%PYTHON_SITELIBDIR%%/fluxlet/__init__.pyc
+%%PYTHON_SITELIBDIR%%/fluxlet/painter.pyc
+%%PYTHON_SITELIBDIR%%/fluxlet/runner.pyc
+%%PYTHON_SITELIBDIR%%/fluxlet/rox.pyc
+%%PYTHON_SITELIBDIR%%/fluxlet/tracer.pyc
+%%PYTHON_SITELIBDIR%%/fluxlet/idesk.pyc
+%%PYTHON_SITELIBDIR%%/fluxlet/__init__.pyo
+%%PYTHON_SITELIBDIR%%/fluxlet/painter.pyo
+%%PYTHON_SITELIBDIR%%/fluxlet/runner.pyo
+%%PYTHON_SITELIBDIR%%/fluxlet/rox.pyo
+%%PYTHON_SITELIBDIR%%/fluxlet/tracer.pyo
+%%PYTHON_SITELIBDIR%%/fluxlet/idesk.pyo
+bin/fluxspacebg
+bin/fluxspace
+bin/fluxspace-add-idesk-icon
+bin/fluxspace-sync-idesk-with-appdirs
+bin/rox-add-app
+share/fluxspace/examples/fluxspace.xml
+@dirrm share/fluxspace/examples
+share/fluxspace/AUTHORS
+share/fluxspace/BUGS
+share/fluxspace/ChangeLog
+share/fluxspace/COPYING
+share/fluxspace/NEWS
+share/fluxspace/README
+@dirrm share/fluxspace
+@dirrm %%PYTHON_SITELIBDIR%%/fluxlet

@@ -1,0 +1,263 @@
+--- configure.old	Mon Jan 20 04:01:19 2003
++++ configure	Wed Mar 26 15:55:09 2003
+@@ -10505,260 +10505,6 @@
+ rm -f conftest.err conftest.$ac_ext
+ CPPFLAGS="$save_CPPFLAGS"
+ 
+-
+-
+-  # Extract the first word of "python-config", so it can be a program name with args.
+-set dummy python-config; ac_word=$2
+-echo "$as_me:$LINENO: checking for $ac_word" >&5
+-echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
+-if test "${ac_cv_path_PYTHON_CONFIG_PROG+set}" = set; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  case $PYTHON_CONFIG_PROG in
+-  [\\/]* | ?:[\\/]*)
+-  ac_cv_path_PYTHON_CONFIG_PROG="$PYTHON_CONFIG_PROG" # Let the user override the test with a path.
+-  ;;
+-  *)
+-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-  for ac_exec_ext in '' $ac_executable_extensions; do
+-  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_path_PYTHON_CONFIG_PROG="$as_dir/$ac_word$ac_exec_ext"
+-    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-done
+-
+-  ;;
+-esac
+-fi
+-PYTHON_CONFIG_PROG=$ac_cv_path_PYTHON_CONFIG_PROG
+-
+-if test -n "$PYTHON_CONFIG_PROG"; then
+-  echo "$as_me:$LINENO: result: $PYTHON_CONFIG_PROG" >&5
+-echo "${ECHO_T}$PYTHON_CONFIG_PROG" >&6
+-else
+-  echo "$as_me:$LINENO: result: no" >&5
+-echo "${ECHO_T}no" >&6
+-fi
+-
+-  PYTHON_FULL_NAME="python${PYTHON_VERSION}"
+-  if test -z "$PYTHON_CONFIG_PROG" ; then
+-    PYTHON_TRY_LDFLAGS="-l${PYTHON_FULL_NAME}"
+-  else
+-    PYTHON_TRY_LDFLAGS="`$PYTHON_CONFIG_PROG`"
+-  fi
+-
+-  if test -z "$PYTHON_LDFLAGS"; then
+-    try_link_python_save_LDFLAGS="$LDFLAGS"
+-    LDFLAGS="$LDFLAGS $PYTHON_TRY_LDFLAGS"
+-    as_ac_Lib=`echo "ac_cv_lib_$PYTHON_FULL_NAME''_Py_Initialize" | $as_tr_sh`
+-echo "$as_me:$LINENO: checking for Py_Initialize in -l$PYTHON_FULL_NAME" >&5
+-echo $ECHO_N "checking for Py_Initialize in -l$PYTHON_FULL_NAME... $ECHO_C" >&6
+-if eval "test \"\${$as_ac_Lib+set}\" = set"; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-l$PYTHON_FULL_NAME  $LIBS"
+-cat >conftest.$ac_ext <<_ACEOF
+-#line $LINENO "configure"
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
+-
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-/* We use char because int might match the return type of a gcc2
+-   builtin and then its argument prototype would still apply.  */
+-char Py_Initialize ();
+-int
+-main ()
+-{
+-Py_Initialize ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-rm -f conftest.$ac_objext conftest$ac_exeext
+-if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+-  (eval $ac_link) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); } &&
+-         { ac_try='test -s conftest$ac_exeext'
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; }; then
+-  eval "$as_ac_Lib=yes"
+-else
+-  echo "$as_me: failed program was:" >&5
+-sed 's/^/| /' conftest.$ac_ext >&5
+-
+-eval "$as_ac_Lib=no"
+-fi
+-rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Lib'}'`" >&5
+-echo "${ECHO_T}`eval echo '${'$as_ac_Lib'}'`" >&6
+-if test `eval echo '${'$as_ac_Lib'}'` = yes; then
+-  PYTHON_LDFLAGS="$PYTHON_TRY_LDFLAGS"
+-fi
+-
+-    LDFLAGS="$try_link_python_save_LDFLAGS"
+-  fi
+-
+-
+-  if test -z "$PYTHON_LDFLAGS"; then
+-    try_link_python_save_LDFLAGS="$LDFLAGS"
+-    LDFLAGS="$LDFLAGS $PYTHON_TRY_LDFLAGS -lutil"
+-    as_ac_Lib=`echo "ac_cv_lib_$PYTHON_FULL_NAME''_Py_Finalize" | $as_tr_sh`
+-echo "$as_me:$LINENO: checking for Py_Finalize in -l$PYTHON_FULL_NAME" >&5
+-echo $ECHO_N "checking for Py_Finalize in -l$PYTHON_FULL_NAME... $ECHO_C" >&6
+-if eval "test \"\${$as_ac_Lib+set}\" = set"; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-l$PYTHON_FULL_NAME  $LIBS"
+-cat >conftest.$ac_ext <<_ACEOF
+-#line $LINENO "configure"
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
+-
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-/* We use char because int might match the return type of a gcc2
+-   builtin and then its argument prototype would still apply.  */
+-char Py_Finalize ();
+-int
+-main ()
+-{
+-Py_Finalize ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-rm -f conftest.$ac_objext conftest$ac_exeext
+-if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+-  (eval $ac_link) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); } &&
+-         { ac_try='test -s conftest$ac_exeext'
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; }; then
+-  eval "$as_ac_Lib=yes"
+-else
+-  echo "$as_me: failed program was:" >&5
+-sed 's/^/| /' conftest.$ac_ext >&5
+-
+-eval "$as_ac_Lib=no"
+-fi
+-rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Lib'}'`" >&5
+-echo "${ECHO_T}`eval echo '${'$as_ac_Lib'}'`" >&6
+-if test `eval echo '${'$as_ac_Lib'}'` = yes; then
+-  PYTHON_LDFLAGS="$PYTHON_TRY_LDFLAGS -lutil"
+-fi
+-
+-    LDFLAGS="$try_link_python_save_LDFLAGS"
+-  fi
+-
+-
+-  if test -z "$PYTHON_LDFLAGS"; then
+-    try_link_python_save_LDFLAGS="$LDFLAGS"
+-    LDFLAGS="$LDFLAGS $PYTHON_TRY_LDFLAGS -lutil -lpthread"
+-    as_ac_Lib=`echo "ac_cv_lib_$PYTHON_FULL_NAME''_Py_IsInitialized" | $as_tr_sh`
+-echo "$as_me:$LINENO: checking for Py_IsInitialized in -l$PYTHON_FULL_NAME" >&5
+-echo $ECHO_N "checking for Py_IsInitialized in -l$PYTHON_FULL_NAME... $ECHO_C" >&6
+-if eval "test \"\${$as_ac_Lib+set}\" = set"; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  ac_check_lib_save_LIBS=$LIBS
+-LIBS="-l$PYTHON_FULL_NAME  $LIBS"
+-cat >conftest.$ac_ext <<_ACEOF
+-#line $LINENO "configure"
+-/* confdefs.h.  */
+-_ACEOF
+-cat confdefs.h >>conftest.$ac_ext
+-cat >>conftest.$ac_ext <<_ACEOF
+-/* end confdefs.h.  */
+-
+-/* Override any gcc2 internal prototype to avoid an error.  */
+-#ifdef __cplusplus
+-extern "C"
+-#endif
+-/* We use char because int might match the return type of a gcc2
+-   builtin and then its argument prototype would still apply.  */
+-char Py_IsInitialized ();
+-int
+-main ()
+-{
+-Py_IsInitialized ();
+-  ;
+-  return 0;
+-}
+-_ACEOF
+-rm -f conftest.$ac_objext conftest$ac_exeext
+-if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
+-  (eval $ac_link) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); } &&
+-         { ac_try='test -s conftest$ac_exeext'
+-  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
+-  (eval $ac_try) 2>&5
+-  ac_status=$?
+-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+-  (exit $ac_status); }; }; then
+-  eval "$as_ac_Lib=yes"
+-else
+-  echo "$as_me: failed program was:" >&5
+-sed 's/^/| /' conftest.$ac_ext >&5
+-
+-eval "$as_ac_Lib=no"
+-fi
+-rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+-LIBS=$ac_check_lib_save_LIBS
+-fi
+-echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Lib'}'`" >&5
+-echo "${ECHO_T}`eval echo '${'$as_ac_Lib'}'`" >&6
+-if test `eval echo '${'$as_ac_Lib'}'` = yes; then
+-  PYTHON_LDFLAGS="$PYTHON_TRY_LDFLAGS -lutil -lpthread"
+-fi
+-
+-    LDFLAGS="$try_link_python_save_LDFLAGS"
+-  fi
+-
+-  if test -z "$PYTHON_LDFLAGS" ; then
+-    { { echo "$as_me:$LINENO: error: Unable to determine proper Python link flags." >&5
+-echo "$as_me: error: Unable to determine proper Python link flags." >&2;}
+-   { (exit 1); exit 1; }; }
+-  else
+-    LDFLAGS="$LDFLAGS $PYTHON_LDFLAGS"
+-  fi
+-
+-
+ echo "$as_me:$LINENO: checking for ANSI C header files" >&5
+ echo $ECHO_N "checking for ANSI C header files... $ECHO_C" >&6
+ if test "${ac_cv_header_stdc+set}" = set; then
