@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	2.2.0
 #
-# $Id: Makefile,v 1.2 1997/11/22 01:15:58 asami Exp $
+# $Id: Makefile,v 1.3 1998/06/06 17:41:14 steve Exp $
 #
 
 DISTNAME=	omniORB_2.2.0
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.orl.co.uk/pub/omniORB/
 MAINTAINER=	ejc@bazzle.com
 
 MAN1=		omniidl2.1 nameclt.1 omniNames.1 catior.1 genior.1
+
+BROKEN_ELF=	yes
 
 pre-patch:
 	${TOUCH} ${WRKSRC}/mk/freebsd_3.0.mk
