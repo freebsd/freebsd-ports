@@ -5507,6 +5507,7 @@ ocaml-lablgl	ports/graphics/ocaml-lablgl
 ocaml-lablgtk	ports/x11-toolkits/ocaml-lablgtk
 ocaml-mode.el	ports/lang/ocaml-mode.el
 ocaml-net	ports/www/ocaml-net
+ocaml-nox11	ports/lang/ocaml-nox11
 ocaml-pcre	ports/devel/ocaml-pcre
 ocaml-pxp	ports/textproc/ocaml-pxp
 ocaml-wdialog	ports/www/ocaml-wdialog
