@@ -2522,6 +2522,7 @@ ifhp		ports/print/ifhp
 ifile		ports/mail/ifile
 ifm		ports/games/ifm
 ifmail		ports/news/ifmail
+ifstat		ports/net/ifstat
 iiimecf		ports/editors/iiimecf
 ija		ports/news/ija
 ilu		ports/devel/ilu
