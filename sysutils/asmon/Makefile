@@ -16,9 +16,6 @@ MAINTAINER=	jack@germanium.xtalwind.net
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 .include <bsd.port.pre.mk>
-.if ${OSVERSION} >= 400000
-BROKEN=	'Sorry, asmom can not yet handle 4.0+ new VM system interfaces'
-.endif
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
