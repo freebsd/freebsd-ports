@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	epoz
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	www zope
 MASTER_SITES=	http://mjablonski.zope.de/Epoz/releases/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	Epoz-${PORTVERSION}
 
 MAINTAINER=	kaeru@inigo-tech.com
-COMMENT=	Epoz product for Zope/CMF
+COMMENT=	A cross-browser-wysiwyg-editor for Zope/CMF
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
@@ -21,8 +21,6 @@ DIST_SUBDIR=	zope
 
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/Epoz
-
-RUN_DEPENDS+=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFCore/__init__.py:${PORTSDIR}/www/zope-cmf
 
 PRODUCTNAME=	Epoz
 
