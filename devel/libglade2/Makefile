@@ -3,7 +3,7 @@
 # Date created:				18 August 1999
 # Whom:					Ade Lovett <ade@lovett.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/22 03:54:24 steve Exp $
 #
 
 DISTNAME=	libglade-0.3
@@ -15,6 +15,8 @@ MAINTAINER=	ade@lovett.com
 
 LIB_DEPENDS=	gnome.2:${PORTSDIR}/x11/gnomelibs \
 		xml.4:${PORTSDIR}/textproc/libxml
+
+BROKEN=		problems with rpath handling in libtool
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
