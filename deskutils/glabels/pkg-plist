@@ -1,5 +1,14 @@
 bin/glabels
 bin/glabels-batch
+include/libglabels/libglabels.h
+include/libglabels/paper.h
+include/libglabels/template.h
+include/libglabels/xml-paper.h
+include/libglabels/xml-template.h
+include/libglabels/xml.h
+lib/libglabels.a
+lib/libglabels.so
+lib/libglabels.so.0
 share/gnome/application-registry/glabels.applications
 share/gnome/applications/glabels.desktop
 share/gnome/glabels/avery-iso-templates.xml
@@ -53,4 +62,5 @@ share/locale/zh_TW.Big5/LC_MESSAGES/glabels.mo
 @dirrm share/gnome/glabels/ui
 @dirrm share/gnome/glabels/glade
 @dirrm share/gnome/glabels
+@dirrm include/libglabels
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/glabels/glabels-C.omf 2>/dev/null || true
