@@ -9,8 +9,8 @@ Majordomo is a program which automates the management of Internet
      house". _
      
 
-Be sure to read Doc/post-install-notes for important configuration details
-after installation.
+Be sure to read /usr/local/majordomo/doc/post-install-notes for important
+configuration details after installation.
 
 --
 j.

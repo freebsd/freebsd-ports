@@ -1,31 +1,58 @@
-majordomo/aliases.majordomo
-majordomo/archive
-majordomo/bounce-remind
-majordomo/config_parse.pl
-majordomo/digest
-majordomo/majordomo
-majordomo/majordomo.cf
-majordomo/majordomo.pl
-majordomo/majordomo_version.pl
-majordomo/new-list
-majordomo/request-answer
-majordomo/resend
-majordomo/resend.README
-majordomo/shlock.pl
-majordomo/test
-majordomo/wrapper
-majordomo/Tools/archive2.pl
 majordomo/bin/approve
 majordomo/bin/bounce
 majordomo/bin/medit
+majordomo/bounce-remind
+majordomo/config_parse.pl
+majordomo/majordomo
+majordomo/majordomo.pl
+majordomo/majordomo_version.pl
+majordomo/request-answer
+majordomo/resend
+majordomo/shlock.pl
+majordomo/config-test
+majordomo/Tools/archive2.pl
+majordomo/Tools/archive.pl
+majordomo/Tools/archive_mh.pl
+majordomo/Tools/digest.send
+majordomo/Tools/makeindex.pl
+majordomo/Tools/logsummary.pl
+majordomo/Tools/new-list
+majordomo/Tools/sequencer
+majordomo/Tools/digest
+majordomo/majordomo.cf
+majordomo/sample.cf
+majordomo/wrapper
 majordomo/lists/test-l
-majordomo/lists/test-l.info
+majordomo/lists/test-l-digest
 majordomo/lists/test-l.passwd
-majordomo/Doc/FAQ
-majordomo/Doc/README
-majordomo/Doc/list-owner-info
-majordomo/Doc/majordomo.lisa6.ps
-majordomo/Doc/majordomo.ora
-majordomo/Doc/post-install-notes
+majordomo/lists/test-l.info
+majordomo/lists/test-l-digest.info
+majordomo/lists/test-l-digest.passwd
+majordomo/doc/Changelog
+majordomo/doc/FUTURE
+majordomo/doc/INSTALL
+majordomo/doc/LICENSE
+majordomo/doc/NEWLIST
+majordomo/doc/README
+majordomo/doc/FAQ
+majordomo/doc/README.sequencer
+majordomo/doc/list-owner-info
+majordomo/doc/majordomo-faq.html
+majordomo/doc/majordomo.lisa6.ps
+majordomo/doc/majordomo.ora
+majordomo/doc/post-install-notes
+majordomo/aliases.majordomo
+man/man1/digest.1.gz
 man/man1/approve.1.gz
+man/man1/bounce-remind.1.gz
 man/man8/majordomo.8.gz
+@dirrm majordomo/bin
+@dirrm majordomo/doc
+@dirrm majordomo/digests/test-l-digest
+@dirrm majordomo/digests
+@dirrm majordomo/lists/test-l-digest.archive
+@dirrm majordomo/lists/test-l.archive
+@dirrm majordomo/lists
+@dirrm majordomo/tmp
+@dirrm majordomo/Tools
+@dirrm majordomo

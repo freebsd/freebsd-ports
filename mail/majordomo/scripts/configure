@@ -5,11 +5,23 @@ eval '(exit $?0)' && eval 'exec /usr/bin/perl -S $0 ${1+"$@"}'
 & eval 'exec /usr/bin/perl -S $0 $argv:q'
 if 0;
 
-chop( $HOSTNAME=`hostname` );
-@files = ( "$ENV{'WRKSRC'}/Makefile", "$ENV{'WRKSRC'}/sample.cf", "$ENV{'FILESDIR'}/aliases.majordomo" );
+if( getpwnam( "majordom" ) ) {
+	( $null, $null, $mjUID ) = getpwnam( "majordom" );
+} else {
+	print "\nMajordomo user not found - aborting!\n\n";
+	exit 1;
+}
 
-( $null, $null, $mjUID, $mjGID ) = getpwnam( "majordom" );
-system( "perl -pi -e 's|@@PREFIX@@|$ENV{'PREFIX'}|g' @files" );
-system( "perl -pi -e 's|@@HOSTNAME@@|$HOSTNAME|g' @files" );
-system( "perl -pi -e 's|@@UID@@|$mjUID|g' @files" );
-system( "perl -pi -e 's|@@GID@@|$mjGID|g' @files" );
+if( getgrnam( "majordom" ) ) {
+	( $null, $null, $mjGID ) = getgrnam( "majordom" );
+} else {
+	print "\nMajordomo group not found - aborting!\n\n";
+	exit 1;
+}
+
+chop( $hostname = `hostname` );
+
+system( "/usr/bin/perl -pi -e 's|%%MJUID%%|$mjUID|g' $ENV{'WRKSRC'}/Makefile" );
+system( "/usr/bin/perl -pi -e 's|%%MJGID%%|$mjGID|g' $ENV{'WRKSRC'}/Makefile" );
+system( "/usr/bin/perl -pi -e 's|%%HOSTNAME%%|$hostname|g' $ENV{'WRKSRC'}/sample.cf $ENV{'WRKSRC'}/aliases.majordomo" );
+system( "/usr/bin/perl -pi -e 's|%%PREFIX%%|$ENV{'PREFIX'}|g' $ENV{'WRKSRC'}/sample.cf $ENV{'WRKSRC'}/contrib/digest" );

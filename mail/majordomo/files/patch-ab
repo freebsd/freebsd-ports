@@ -1,89 +1,59 @@
-*** sample.cf.orig	Tue Jul  9 09:32:19 1996
---- sample.cf	Tue Jul  9 09:35:46 1996
-***************
-*** 1,5 ****
-  # $whereami -- What machine am I running on?
-! $whereami = "foo.GreatCircle.COM";
-  
-  # $whoami -- Who do users send requests to me as?
-  $whoami = "Majordomo@$whereami";
---- 1,5 ----
-  # $whereami -- What machine am I running on?
-! $whereami = "@@HOSTNAME@@";
-  
-  # $whoami -- Who do users send requests to me as?
-  $whoami = "Majordomo@$whereami";
-***************
-*** 12,29 ****
-  if ( defined $ENV{"HOME"}) {
-       $homedir = $ENV{"HOME"};
-  } else {
-!      $homedir = "/usr/local/majordomo-1.92";
-  }
-  
-  # $listdir -- Where are the mailing lists?
-! $listdir = "/usr/local/mail/lists";
-  
-  # $digest_work_dir -- the parent directory for digest's queue area
-  # Each list must have a subdirectory under this directory in order for
-  # digest to work. E.G. The bblisa list would use:
-  # 	/usr/local/mail/digest/bblisa
-  # as its directory.
-! $digest_work_dir = '/usr/local/mail/digest';
-  
-  # $log -- Where do I write my log?
-  $log = "$homedir/Log";
---- 12,29 ----
-  if ( defined $ENV{"HOME"}) {
-       $homedir = $ENV{"HOME"};
-  } else {
-!      $homedir = "/usr/local/majordomo-1.93";
-  }
-  
-  # $listdir -- Where are the mailing lists?
-! $listdir = "@@PREFIX@@/majordomo/lists";
-  
-  # $digest_work_dir -- the parent directory for digest's queue area
-  # Each list must have a subdirectory under this directory in order for
-  # digest to work. E.G. The bblisa list would use:
-  # 	/usr/local/mail/digest/bblisa
-  # as its directory.
-! $digest_work_dir = "@@PREFIX@@/majordomo/digests";
-  
-  # $log -- Where do I write my log?
-  $log = "$homedir/Log";
-***************
-*** 33,39 ****
-  # however the $to variable is provided by the person sending mail,
-  # and much mischief can be had by playing with this variable.
-  # Use $to with care.
-! $mailer = "/usr/lib/sendmail -f\$sender -t";
-  
-  # Majordomo will look for "get" and "index" files related to $list in
-  # directory "$filedir/$list$filedir_suffix", so set $filedir and
---- 33,39 ----
-  # however the $to variable is provided by the person sending mail,
-  # and much mischief can be had by playing with this variable.
-  # Use $to with care.
-! $mailer = "/usr/sbin/sendmail -f\$sender -t";
-  
-  # Majordomo will look for "get" and "index" files related to $list in
-  # directory "$filedir/$list$filedir_suffix", so set $filedir and
-***************
-*** 73,79 ****
-  # the safe locations for archive directories. This should be defined as
-  # a series of root anchored directory paths as will be used as prefixes
-  # to the file names specified to the archive2.pl script.
-! @archive_dirs = ( "/spool/archive/bblisa", "/usr/spool/archive/firewalls" );
-  
-  
-  # Set this to 1 if you want to use the experimental mechanism for allowing
---- 73,80 ----
-  # the safe locations for archive directories. This should be defined as
-  # a series of root anchored directory paths as will be used as prefixes
-  # to the file names specified to the archive2.pl script.
-! @archive_dirs = ( "@@PREFIX@@/majordomo/lists/test-l.archive", 
-! 		);
-  
-  
-  # Set this to 1 if you want to use the experimental mechanism for allowing
+--- sample.cf.orig	Tue Oct  8 15:02:14 1996
++++ sample.cf	Sat Oct 26 13:19:04 1996
+@@ -1,23 +1,19 @@
+ # $whereami -- What machine am I running on?
+ #
+-$whereami = "foo.NOWHERE.COM";
++$whereami = "%%HOSTNAME%%";
+ 
+ # $whoami -- Who do users send requests to me as?
+ #
+-$whoami = "Majordomo\@$whereami";
++$whoami = "majordomo\@$whereami";
+ 
+ # $whoami_owner -- Who is the owner of the above, in case of problems?
+ #
+-$whoami_owner = "Majordomo-Owner\@$whereami";
++$whoami_owner = "majordomo-owner\@$whereami";
+ 
+ # $homedir -- Where can I find my extra .pl files, like majordomo.pl?
+ # the environment variable HOME is set by the wrapper
+ #
+-if ( defined $ENV{"HOME"}) {
+-     $homedir = $ENV{"HOME"};
+-} else {
+-     $homedir = "/usr/test/majordomo";
+-}
++$homedir = "%%PREFIX%%/majordomo";
+ 
+ # $listdir -- Where are the mailing lists?
+ #
+@@ -29,7 +25,7 @@
+ # 	/usr/local/mail/digest/bblisa
+ # as its directory.
+ #
+-$digest_work_dir = '/usr/local/mail/digest';
++$digest_work_dir = "%%PREFIX%%/majordomo/digests";
+ 
+ # $log -- Where do I write my log?
+ #
+@@ -39,8 +35,8 @@
+ #                      usually /usr/lib/sendmail, but some newer BSD systems
+ #                      seem to prefer /usr/sbin/sendmail
+ #
+-$sendmail_command = "/usr/lib/sendmail";
+-# $sendmail_command = "/usr/sbin/sendmail";
++# $sendmail_command = "/usr/lib/sendmail";
++$sendmail_command = "/usr/sbin/sendmail";
+ 
+ # $mailer -- What program and args do I use to send mail to the list?
+ # $bounce_mailer -- What is used to send mail anywhere else?
+@@ -152,7 +148,7 @@
+ # majordomo has r/w permission to.
+ # Uses the environment variable TMPDIR, since that's pretty common
+ #
+-$TMPDIR = $ENV{'TMPDIR'} || '/usr/tmp';
++$TMPDIR = '%%PREFIX%%/majordomo/tmp';
+ 
+ # Tune the number of retries that shlock does before aborting.
+ # This defaults to 600, with a random sleep from 1-10 seconds between
