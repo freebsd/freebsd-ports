@@ -11,7 +11,7 @@
 -OPTIMIZER  = -O
 -CFLAGS     =  $(OPTIMIZER) $(PLUGIN_DEFINES)
 +CC         ?= gcc
-+CFLAGS     +=  $(PLUGIN_DEFINES) -fPIC
++CFLAGS     +=  $(PLUGIN_DEFINES)
  
  SRC= sidplug.c npunix.c 
  OBJ= sidplug.o npunix.o

@@ -18,6 +18,12 @@ RUN_DEPENDS=	xsidplay:${PORTSDIR}/audio/xsidplay
 
 USE_X_PREFIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/lib/browser_plugins
 	@${INSTALL_PROGRAM} ${WRKSRC}/npsidplug.so ${PREFIX}/lib/browser_plugins
@@ -29,4 +35,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/sidplug.png ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
