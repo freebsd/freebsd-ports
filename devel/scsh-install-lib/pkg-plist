@@ -1,0 +1,12 @@
+lib/scsh/scsh-install-pkg
+lib/scsh/0.6/install-lib
+lib/scsh/0.6/install-lib-1.1.2/doc/pdf/install-lib.pdf
+lib/scsh/0.6/install-lib-1.1.2/load.scm
+lib/scsh/0.6/install-lib-1.1.2/scheme/install-lib-module.scm
+lib/scsh/0.6/install-lib-1.1.2/scheme/install-lib-version.scm
+lib/scsh/0.6/install-lib-1.1.2/scheme/install-lib.scm
+@dirrm lib/scsh/0.6/install-lib-1.1.2/doc/pdf
+@dirrm lib/scsh/0.6/install-lib-1.1.2/doc
+@dirrm lib/scsh/0.6/install-lib-1.1.2/scheme
+@dirrm lib/scsh/0.6/install-lib-1.1.2
+@dirrm lib/scsh/0.6

@@ -1197,6 +1197,7 @@
     SUBDIR += safestr
     SUBDIR += scandoc
     SUBDIR += scons
+    SUBDIR += scsh-install-lib
     SUBDIR += sdl12
     SUBDIR += sdl_ldbad
     SUBDIR += sdlmm
