@@ -24,7 +24,7 @@ ONLY_FOR_ARCHS=		i386
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@cd ${WRKDIR}; rpm2cpio ${_DISTDIR}/${DISTFILES} | ${CPIO} -id --quiet
+	@cd ${WRKDIR}; rpm2cpio.pl ${_DISTDIR}/${DISTFILES} | ${CPIO} -id --quiet
 
 do-install:
 	@${MKDIR} ${PREFIX}/usr/share/themes/Bluecurve && ${CHMOD} a+rx ${PREFIX}/usr/share/themes/Bluecurve
