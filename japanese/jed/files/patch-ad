@@ -1,0 +1,13 @@
+--- info/jed.info~	Wed Jul 14 06:01:25 1999
++++ info/jed.info	Fri Feb  4 02:11:19 2000
+@@ -1,6 +1,10 @@
+ This is Info file jed.info, produced by Makeinfo-1.55 from the input
+ file jed.ti.
+ 
++START-INFO-DIR-ENTRY
++* JED: (jed).			JED editor documentation.
++END-INFO-DIR-ENTRY
++
+ 
+ Indirect:
+ jed.1in: 83
