@@ -1274,7 +1274,6 @@ www/phpnuke||2004-10-17|security vulnerabilities and no longer maintained
 misc/bookcase|misc/tellico|2004-10-17|renamed
 audio/net-rhythmbox|audio/rhythmbox|2004-10-20|broken and audio/rhythmbox has more features
 audio/ruby-musicbrainz||2004-10-22|distfile did not keep up with libmusicbrainz
-devel/ruby-flex_rb||2004-10-22|did not compile
 devel/ruby-gconf|devel/ruby-gconf2|2004-10-22|did not install
 devel/whups||2004-10-22|not compatible with latest version of Horde
 french/abispell-fr-FR||2004-10-22|did not work with AbiWord-2.0
@@ -1288,6 +1287,5 @@ games/utserver-asu||2004-10-23|checksum failure
 graphics/giram||2004-10-23|build failure
 graphics/ruby-gdchart||2004-10-23|build failure
 hebrew/pine||2004-10-23|contained serious vulnerabilities
-japanese/edict-sdic||2004-10-23|checksum failure
 mail/cyrus|cyrus-imapd22|2004-10-23|contained serious vulnerabilities
 archivers/alz2zip||2004-10-23|no longer maintained
