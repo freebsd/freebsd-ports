@@ -11,9 +11,9 @@ share/phpbb/contrib/dbinformer.php
 share/phpbb/contrib/fixfiles.sh
 share/phpbb/contrib/template_db_cache.php
 share/phpbb/contrib/template_file_cache.php
-share/phpbb/contrib/visual_confirmation.tar.bz2
+share/phpbb/contrib/visual_confirmation.zip
 share/phpbb/install.php
-share/phpbb/update_to_207.php
+share/phpbb/update_to_208.php
 share/phpbb/upgrade.php
 %%PHPBBDIR%%/admin/admin_board.php
 %%PHPBBDIR%%/admin/admin_db_utilities.php
@@ -76,7 +76,6 @@ share/phpbb/upgrade.php
 %%PHPBBDIR%%/images/smiles/icon_twisted.gif
 %%PHPBBDIR%%/images/smiles/icon_wink.gif
 %%PHPBBDIR%%/images/spacer.gif
-@exec mkdir -p %B/avatars/upload
 %%PHPBBDIR%%/includes/auth.php
 %%PHPBBDIR%%/includes/bbcode.php
 %%PHPBBDIR%%/includes/constants.php
@@ -114,7 +113,7 @@ share/phpbb/upgrade.php
 %%PHPBBDIR%%/install/schemas/mysql_schema.sql
 %%PHPBBDIR%%/install/schemas/postgres_basic.sql
 %%PHPBBDIR%%/install/schemas/postgres_schema.sql
-%%PHPBBDIR%%/install/update_to_207.php
+%%PHPBBDIR%%/install/update_to_208.php
 %%PHPBBDIR%%/install/upgrade.php
 %%PHPBBDIR%%/language/index.htm
 %%PHPBBDIR%%/language/lang_english/email/admin_activate.tpl
