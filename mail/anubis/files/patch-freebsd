@@ -1,0 +1,38 @@
+diff -urN anubis-3.6.2/src/net.c anubis-3.6.2-fix/src/net.c
+--- anubis-3.6.2/src/net.c	Wed Dec 11 15:37:56 2002
++++ anubis-3.6.2-fix/src/net.c	Thu Jun  5 23:38:49 2003
+@@ -122,6 +122,7 @@
+ 	int sd = 0;
+ 	unsigned long inaddr;
+ 	struct sockaddr_in addr;
++	int true = 1;
+ 
+ 	memset(&addr, 0, sizeof(addr));
+ 	addr.sin_family = AF_INET;
+@@ -153,6 +154,8 @@
+ 	else
+ 		addr.sin_addr.s_addr = htonl(INADDR_ANY);
+ 
++	setsockopt (sd, SOL_SOCKET, SO_REUSEADDR, &true, sizeof(true));
++
+ 	if (bind(sd, (struct sockaddr *)&addr, sizeof(addr)))
+ 		anubis_error(HARD, _("bind() failed: %s."), strerror(errno));
+ 	info(VERBOSE, _("GNU Anubis bound to %s:%u"), inet_ntoa(addr.sin_addr),
+diff -urN anubis-3.6.2/src/tunnel.c anubis-3.6.2-fix/src/tunnel.c
+--- anubis-3.6.2/src/tunnel.c	Sun Dec  8 19:04:51 2002
++++ anubis-3.6.2-fix/src/tunnel.c	Tue Mar 11 11:04:10 2003
+@@ -554,9 +554,11 @@
+ 				ptr1 = strstr(boundary_buf, "boundary=");
+ 				if (ptr1 == 0) {
+ 					plist = plist->next;
+-					safe_strcpy(boundary_buf, plist->line);
+-					change_to_lower(boundary_buf);
+-					ptr1 = strstr(boundary_buf, "boundary=");
++					if (plist) {
++						safe_strcpy(boundary_buf, plist->line);
++						change_to_lower(boundary_buf);
++						ptr1 = strstr(boundary_buf, "boundary=");
++					}
+ 				}
+ 
+ 				if (ptr1) {
