@@ -1,13 +1,15 @@
---- setup.py.orig	Tue Oct 31 21:28:16 2000
-+++ setup.py	Wed Nov  1 13:51:41 2000
-@@ -32,8 +32,8 @@
+--- setup.py.orig	Wed Oct 17 05:17:30 2001
++++ setup.py	Tue Jan 22 00:33:59 2002
+@@ -24,9 +24,9 @@
+     libraries = [mysqlclient, "z"]
      runtime_library_dirs = []
-     extra_objects = [r'c:\mysql\lib\opt\mysqlclient.lib']
- elif os.name == "posix": # most Linux/UNIX platforms
--    include_dirs = ['/usr/include/mysql']
--    library_dirs = ['/usr/lib/mysql']
+     extra_objects = []
+-elif sys.platform in ("freebsd4", "openbsd2"): 
+-    include_dirs = ['/usr/local/include/mysql']
+-    library_dirs = ['/usr/local/lib/mysql']
++elif sys.platform[:7] in ("freebsd", "openbsd"): 
 +    include_dirs = ['%%LOCALBASE%%/include/mysql']
 +    library_dirs = ['%%LOCALBASE%%/lib/mysql']
-     # MySQL-3.23 seems to need libz
      libraries = [mysqlclient, "z"]
-     # On some platorms, this can be used to find the shared libraries
+     runtime_library_dirs = []
+     extra_objects = []
