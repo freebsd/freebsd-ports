@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Jun 18 19:43:21 2000
++++ src/Makefile.in	Sun Jun 18 19:43:35 2000
+@@ -101,7 +101,7 @@
+ 
+ bin_PROGRAMS = GSnes9x
+ 
+-INCLUDES = $(GNOME_INCLUDEDIR) -DG_LOG_DOMAIN=\"GSnes9x\" -I$(top_srcdir)/intl 	-DLOCALEDIR=\"$(datadir)/locale\" -DPIXMAPDIR=\"$(datadir)/pixmaps\"
++INCLUDES = $(GNOME_INCLUDEDIR) -DG_LOG_DOMAIN=\"GSnes9x\" -I$(top_srcdir)/intl 	-DLOCALEDIR=\"$(datadir)/locale\" -DPIXMAPDIR=\"$(datadir)/gnome/pixmaps\"
+ 
+ 
+ CFLAGS =  -Wall @CFLAGS@
