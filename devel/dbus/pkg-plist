@@ -1,6 +1,6 @@
+bin/dbus-binding-tool
 bin/dbus-cleanup-sockets
-bin/dbus-daemon-1
-bin/dbus-glib-tool
+bin/dbus-daemon
 bin/dbus-launch
 bin/dbus-monitor
 bin/dbus-send
@@ -12,6 +12,7 @@ include/dbus-%%VERSION%%/dbus/dbus-address.h
 include/dbus-%%VERSION%%/dbus/dbus-bus.h
 include/dbus-%%VERSION%%/dbus/dbus-connection.h
 include/dbus-%%VERSION%%/dbus/dbus-errors.h
+include/dbus-%%VERSION%%/dbus/dbus-glib-bindings.h
 include/dbus-%%VERSION%%/dbus/dbus-glib-error-enum.h
 include/dbus-%%VERSION%%/dbus/dbus-glib-lowlevel.h
 include/dbus-%%VERSION%%/dbus/dbus-glib.h
@@ -28,13 +29,13 @@ include/dbus-%%VERSION%%/dbus/dbus.h
 include/dbus-%%VERSION%%/include/dbus/dbus-arch-deps.h
 lib/libdbus-1.a
 lib/libdbus-1.so
-lib/libdbus-1.so.0
+lib/libdbus-1.so.1
 lib/libdbus-glib-1.a
 lib/libdbus-glib-1.so
-lib/libdbus-glib-1.so.0
+lib/libdbus-glib-1.so.1
 %%QT%%lib/libdbus-qt-1.a
 %%QT%%lib/libdbus-qt-1.so
-%%QT%%lib/libdbus-qt-1.so.0
+%%QT%%lib/libdbus-qt-1.so.1
 libdata/pkgconfig/dbus-1.pc
 libdata/pkgconfig/dbus-glib-1.pc
 @exec mkdir -p %D/share/dbus-1/services

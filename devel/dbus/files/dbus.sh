@@ -19,7 +19,7 @@ dbus_flags=${dbus_flags-"--system"}
 name=dbus
 rcvar=`set_rcvar`
 
-command="%%PREFIX%%/bin/dbus-daemon-1"
+command="%%PREFIX%%/bin/dbus-daemon"
 pidfile="/var/run/${name}.pid"
 
 stop_postcmd=stop_postcmd
