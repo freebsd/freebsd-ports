@@ -1,12 +1,12 @@
 # New ports collection makefile for:   ethereal
-# Version required:    0.3.16
+# Version required:    0.4.1
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.3 1998/09/29 01:32:40 jkoshy Exp $
+# $Id: Makefile,v 1.4 1998/10/19 15:51:24 vanilla Exp $
 #
 
-DISTNAME=	ethereal-0.4.0
+DISTNAME=	ethereal-0.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 		http://ethereal.boehm.org/distribution/
@@ -16,7 +16,7 @@ MAINTAINER=	billf@chc-chimes.com
 LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
 
 USE_X_PREFIX=	yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		ethereal.1
 
