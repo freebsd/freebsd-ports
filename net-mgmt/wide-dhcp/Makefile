@@ -3,7 +3,7 @@
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/05/04 02:43:33 asami Exp $
 #
 
 DISTNAME=       dhcp-1.3beta
@@ -15,6 +15,8 @@ DISTFILES=	dhcp-1.3beta.tar.gz tzfile.h
 EXTRACT_ONLY=	dhcp-1.3beta.tar.gz
 
 MAINTAINER=     sanpei@yy.cs.keio.ac.jp
+
+MAKE_ENV=	PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" CFLAGS="${CFLAGS}" OSTYPE=`uname`
 
 post-patch:
 	if [ ! -f ${WRKSRC}/server/tzfile.h ]; then \
