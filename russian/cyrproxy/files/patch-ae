@@ -1,0 +1,36 @@
+*** policy.h.bak	Mon May  5 20:47:06 1997
+--- policy.h	Thu Jun 19 15:31:36 1997
+***************
+*** 94,100 ****
+  
+  /* #define NO_VSNPRINTF */
+  
+! #if defined(_AIX) || !defined(NO_VSNPRINTF)
+  #define NO_VSNPRINTF
+  #endif
+  
+--- 94,100 ----
+  
+  /* #define NO_VSNPRINTF */
+  
+! #if defined(_AIX)
+  #define NO_VSNPRINTF
+  #endif
+  
+***************
+*** 105,111 ****
+   */
+  /* #define NO_HSTRERROR */
+  
+! #if defined(_AIX) || !defined(NO_HSTRERROR)
+  #define NO_HSTRERROR
+  #endif
+  
+--- 105,111 ----
+   */
+  /* #define NO_HSTRERROR */
+  
+! #if defined(_AIX)
+  #define NO_HSTRERROR
+  #endif
+  
