@@ -7,12 +7,13 @@
 
 PORTNAME=	vfxdvi
 PORTVERSION=	17
-PKGNAMESUFFIX=	${RESOLUTION}
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/news-archive/fj.comp.texhax/volume95/Sep/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/news-archive/fj.comp.texhax/volume95/Oct/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/news-archive/fj.comp.texhax/volume95/Nov/
+PKGNAMESUFFIX=	${RESOLUTION}
 DISTNAME=	xdvi-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		xdvi-${PORTVERSION}miyu.patch-beta6.gz \
@@ -21,6 +22,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		951007.02.Z \
 		951109.04.Z
 DIST_SUBDIR=	xdvi
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mita@FreeBSD.org
 
@@ -30,7 +32,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/fonts/pk${RESOLUTION}:${PORTSDIR}/print/pkfonts${R
 NO_WRKSUBDIR=	yes
 USE_IMAKE=      yes
 XMKMF=	xmkmf
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAN1=		xdvi.1
 
@@ -60,17 +61,17 @@ pre-patch:
 	  cd tmp; \
 	  ${PATCH} -f < ../xdvi18.vflib.patch >/dev/null 2>&1; \
 	  cd .. ; \
-	  ${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/xdvi-${PORTVERSION}miyu.patch-beta6.gz | patch -d . >/dev/null 2>&1; \
-	  ${GZCAT} xdvi-pl${PORTVERSION}+markpage+toc+printdvi+paper.patch.gz | patch -d . >/dev/null 2>&1 ; \
+	  ${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/xdvi-${PORTVERSION}miyu.patch-beta6.gz | ${PATCH} -d . >/dev/null 2>&1; \
+	  ${GZCAT} xdvi-pl${PORTVERSION}+markpage+toc+printdvi+paper.patch.gz | ${PATCH} -d . >/dev/null 2>&1 ; \
 	  ${PATCH} -d . < xdvi-${PORTVERSION}+ptex.fixed.patch >/dev/null 2>&1; \
 	  ${CP} tmp/dnpzeit.c tmp/zeit.c . ; \
 	)
 
 post-patch:
 .if defined(BATCH)
-	@(cd ${WRKDIR}; sh ${FILESDIR}/customize.sh ${RESOLUTION} BATCH)
+	@(cd ${WRKDIR}; ${SH} ${FILESDIR}/customize.sh ${RESOLUTION} BATCH)
 .else
-	@(cd ${WRKDIR}; sh ${FILESDIR}/customize.sh ${RESOLUTION})
+	@(cd ${WRKDIR}; ${SH} ${FILESDIR}/customize.sh ${RESOLUTION})
 .endif
 
 .include <bsd.port.mk>
