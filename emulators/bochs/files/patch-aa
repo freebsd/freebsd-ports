@@ -1,7 +1,7 @@
---- .bochsrc.orig	Mon Oct  4 08:31:35 1999
-+++ .bochsrc	Tue Oct  5 18:57:29 1999
+--- .bochsrc.orig	Sun Nov 14 16:01:27 1999
++++ .bochsrc	Mon Nov 22 17:33:48 1999
 @@ -3,7 +3,7 @@
- megs: 16
+ #megs: 16
  #megs: 8
  boot: c
 -vgaromimage: bios/VGABIOS-elpin-2.20
@@ -9,16 +9,16 @@
  
  # You many now use double quotes around pathnames, in case
  # your pathname includes spaces.
-@@ -64,7 +64,7 @@
- #romimage: file=../cbios961203
- #romimage: file=../r980820.rom, address=0xe0000
- #romimage: file=bios/BIOS-bochs-990907a, address=0xf0000
+@@ -68,7 +68,7 @@
+ #floppya: 1_2=../1.2
+ #floppyb: 1_44=../1.680
+ 
 -romimage: file=bios/BIOS-bochs-990925a, address=0xf0000
 +romimage: file=/usr/local/lib/bochs/bios/BIOS-bochs-990925a, address=0xf0000
  
- #romimage: file=/home/kpl/floating_point/bios/rombios.bin, address=0xf0000
- 
-@@ -75,8 +75,8 @@
+ #romimage: file=bios/rombios.bin, address=0xf0000
+ #romimage: file=../cbios961203
+@@ -82,8 +82,8 @@
  #vgaromimage: ../vgacbios961111
  #romimage: ../cbios961203
  
