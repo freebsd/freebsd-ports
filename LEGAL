@@ -182,6 +182,8 @@ mplayer			ports/graphics/mplayer	Restricted binary distribution
 msql-*			ports/databases/msql	Not free for commercial org.
 mupad/*			ports/math/mupad	unsure to sell for profit
 mypaedia		ports/japanese/mypaedia-fpw The original dictionary is not free
+mysqlman		ports/databases/mysqlman Not redistributable, license 
+						agreement required
 myth2_demo		ports/games/myth2_demo	Has no license.
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
 netshow-*		ports/graphics/netshow	Commercial software
