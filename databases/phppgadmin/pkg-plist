@@ -38,7 +38,7 @@ www/data.default/phpPgAdmin/classes/database/Postgres73.php
 www/data.default/phpPgAdmin/classes/database/Postgres74.php
 www/data.default/phpPgAdmin/conf/.cvsignore
 @unexec if cmp -s %D/www/data.default/phpPgAdmin/conf/config.inc.php %D/www/data.default/phpPgAdmin/conf/config.inc.php-dist; then rm -f %D/www/data.default/phpPgAdmin/conf/config.inc.php; fi
-www/data.default/phpPgAdmin3/conf/config.inc.php-dist
+www/data.default/phpPgAdmin/conf/config.inc.php-dist
 @exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
 www/data.default/phpPgAdmin/constraints.php
 www/data.default/phpPgAdmin/database.php
