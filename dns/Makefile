@@ -75,6 +75,7 @@
     SUBDIR += sheerdns
     SUBDIR += skadns
     SUBDIR += sleuth
+    SUBDIR += sqldjbdns
     SUBDIR += staticcharge
     SUBDIR += totd
     SUBDIR += updatedd
