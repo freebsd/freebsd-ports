@@ -1,0 +1,8 @@
+This port provides a PC/SC IFD handler implementation for GemPLUS serial
+card readers based on the GemCore chipset.  Supported readers include the
+GemPC 410, 413-SL and 415 serial smart card readers.  The GemPC 410 is also
+known as the IBM-410p which is part of the IBM Smart Card Security Kit.
+
+Note that older readers such as the GCR400 and GCR410 are not supported.
+
+WWW: http://ludovic.rousseau.free.fr/softwares/ifd-GemPC/ifd-GemPC.html
