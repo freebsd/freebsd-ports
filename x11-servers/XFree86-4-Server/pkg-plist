@@ -12,7 +12,7 @@ bin/mmapw
 %%SPARC64_NA%%bin/outl
 %%SPARC64_NA%%bin/outw
 bin/pcitweak
-%%SPARC64_NA%%%%ALPHA_NA%%bin/scanpci
+%%I386%%bin/scanpci
 bin/xf86cfg
 bin/xf86config
 include/X11/bitmaps/card.xbm
@@ -172,7 +172,7 @@ lib/modules/input/spaceorb_drv.o
 lib/modules/input/summa_drv.o
 lib/modules/input/void_drv.o
 lib/modules/input/wacom_drv.o
-%%SPARC64_NA%%%%ALPHA_NA%%lib/modules/libafb.a
+%%I386%%lib/modules/libafb.a
 lib/modules/libcfb.a
 lib/modules/libcfb16.a
 lib/modules/libcfb24.a
