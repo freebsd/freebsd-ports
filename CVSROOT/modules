@@ -4374,6 +4374,7 @@ p5-Devel-Peek	ports/devel/p5-Devel-Peek
 p5-Devel-StackTrace	ports/devel/p5-Devel-StackTrace
 p5-Devel-Symdump	ports/devel/p5-Devel-Symdump
 p5-Dialog	ports/devel/p5-Dialog
+p5-Digest-HMAC	ports/security/p5-Digest-HMAC
 p5-Digest-MD2	ports/security/p5-Digest-MD2
 p5-Digest-MD5	ports/security/p5-Digest-MD5
 p5-Digest-SHA1	ports/security/p5-Digest-SHA1
