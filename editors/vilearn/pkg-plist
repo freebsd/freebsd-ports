@@ -1,5 +1,4 @@
 bin/vilearn
-man/man1/vilearn.1.gz
 share/vilearn/1basics
 share/vilearn/2moving
 share/vilearn/3cutpaste

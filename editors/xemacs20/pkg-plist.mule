@@ -11,13 +11,6 @@ bin/xemacs-20.4
 @exec ln -s %D/%F %B/xemacs
 @unexec rm %B/xemacs
 etc/rc.d/xemacs.sh
-man/man1/ctags.1.gz
-man/man1/etags.1.gz
-man/man1/gnuattach.1.gz
-man/man1/gnuclient.1.gz
-man/man1/gnudoit.1.gz
-man/man1/gnuserv.1.gz
-man/man1/xemacs.1.gz
 @exec mkdir -p /var/run/xemacs/lock ; chmod 1777 /var/run/xemacs/lock
 @exec mkdir -p %D/lib/xemacs/site-lisp ; chmod 755 %D/lib/xemacs/site-lisp
 @exec mkdir -p %D/share/emacs/site-lisp ; chmod 755 %D/share/emacs/site-lisp

@@ -11,10 +11,7 @@ bin/rgvim
 bin/rview
 bin/rvim
 @comment bin/view
-man/man1/ctags.1.gz
 man/man1/etags.1.gz
-man/man1/vim.1.gz
-man/man1/xxd.1.gz
 share/vim/doc/autocmd.txt
 share/vim/doc/change.txt
 share/vim/doc/cmdline.txt

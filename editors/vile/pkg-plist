@@ -3,7 +3,6 @@ bin/vile-c-filt
 bin/vile-crypt
 bin/vile-manfilt
 bin/vile-pas-filt
-man/man1/vile.1.gz
 share/doc/vile/config.doc
 share/doc/vile/macros.doc
 share/doc/vile/menus.doc
