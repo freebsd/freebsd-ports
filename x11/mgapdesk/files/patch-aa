@@ -1,0 +1,19 @@
+--- src/io.h.orig	Sat Jun  2 12:57:44 2001
++++ src/io.h	Sat Jun  2 12:59:56 2001
+@@ -10,11 +10,16 @@
+ *  Last modified : March 2001.
+ *********************************************************/
+ 
++#include <sys/param.h> /* for BSD */
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
++#ifdef BSD
++#include <machine/cpufunc.h>
++#else
+ #include <sys/io.h>
++#endif
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>

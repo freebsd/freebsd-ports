@@ -1,0 +1,33 @@
+# New ports collection makefile for:    mgapdesk
+# Date created:		2001/06/02
+# Whom:			Nick Sayer
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mgapdesk
+PORTVERSION=	1.0.5
+CATEGORIES=	x11
+MASTER_SITES=	ftp://ftp.matrox.com/pub/mga/archive/linux/2001/powerdesk_1_3_0/
+DISTNAME=	${PORTNAME}-1_00-5beta
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	nsayer@freebsd.org
+
+BUILD_DEPENDS=	XFree86:${PORTSDIR}/x11/XFree86-4
+
+USE_X_PREFIX=	YES
+USE_GTK=	YES
+
+USE_GMAKE=	YES
+
+USE_AUTOCONF=	YES
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+post-extract:
+		@${RM} -f ${WRKSRC}/config.cache
+
+.include <bsd.port.post.mk>
