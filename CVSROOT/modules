@@ -4406,7 +4406,6 @@ mpack		ports/converters/mpack
 mpage		ports/print/mpage
 mpd		ports/net/mpd
 mpeg		ports/graphics/mpeg
-mpeg-lib	ports/graphics/mpeg-lib
 mpeg2codec	ports/graphics/mpeg2codec
 mpeg2play	ports/graphics/mpeg2play
 mpeg4ip		ports/graphics/mpeg4ip
