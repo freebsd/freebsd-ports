@@ -24,7 +24,7 @@ MAINTAINER=	j@pureftpd.org
 COMMENT=	A small, easy to set up, fast and very secure FTP server
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap20
 .endif
 
 .if defined(WITH_MYSQL)

@@ -19,7 +19,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 .if defined(WITH_OPENLDAP1)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
 .else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
 .endif
 
 .if !defined(WITHOUT_JPEGPHOTO)

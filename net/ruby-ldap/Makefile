@@ -21,7 +21,7 @@ WITH_LDAP?=	openldap2
 .if ${WITH_LDAP} == openldap1
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap12
 .elif ${WITH_LDAP} == openldap2
-LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap20
 .elif ${WITH_LDAP} == ldapsdk
 LIB_DEPENDS=	${LOCALBASE}/mozilla/directory/lib/libldap.so.1:${PORTSDIR}/net/ldapsdk
 .else

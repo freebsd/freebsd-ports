@@ -115,7 +115,7 @@ SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 .if (${LDAP_LIB_TYPE} == OPENLDAP1) || (${LDAP_LIB_TYPE} == UMICHIGAN)
 LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap12
 .elif ${LDAP_LIB_TYPE} == OPENLDAP2
-LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap20
 .else
 .error LDAP_LIB_TYPE must be either OPENLDAP1 or OPENLDAP2
 .endif
