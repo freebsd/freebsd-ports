@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.inria.fr/X/contrib-R5/games/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	th@cis.ibaraki.ac.jp
+MAINTAINER=	cbc06942@pop06.odn.ne.jp
 
 USE_IMAKE=	yes
 
