@@ -14,9 +14,7 @@ MAINTAINER=	trevor@FreeBSD.org
 
 DOCS=		ChangeLog README README-0.4
 DOCDIR=		share/doc/${PORTNAME}
-.if !defined(NOPORTDOCS)
-MAN1=	as86.1 ld86.1
-.endif
+MAN1=		as86.1 ld86.1
 ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -37,6 +35,7 @@ pre-install:
 .endif
 
 do-install:
+	${INSTALL_MAN} ${WRKSRC}/man/*1 ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} `find ${WRKSRC} -type f -perm 755 |grep -v encap` \
 		${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/as/as86_encap ${PREFIX}/bin
@@ -44,7 +43,6 @@ do-install:
 	${MKDIR} ${PREFIX}/${DOCDIR}
 .for i in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}
-	${INSTALL_MAN} ${WRKSRC}/man/*1 ${PREFIX}/man/man1
 .endfor
 .endif
 
