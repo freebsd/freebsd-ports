@@ -183,3 +183,4 @@ man/cat3/nsr_getdate.3
 @dirrm nsr/gls/lc/os
 @dirrm nsr/gls/lc
 @dirrm nsr/gls
+@dirrm nsr
