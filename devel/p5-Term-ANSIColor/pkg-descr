@@ -1,0 +1,16 @@
+While ANSI color escape codes are fairly simple, it can be hard to
+remember the codes for all of the attributes and the code resulting
+from hard-coding them into your script is definitely difficult to
+read. This module is designed to fix those problems, as well as
+provide a convenient interface to do a few things for you
+automatically (like resetting attributes after the text you print out
+so that you don't accidentally leave attributes set).
+
+Despite its name, this module can also handle non-color ANSI text
+attributes (bold, underline, reverse video, and blink). It uses either
+of two interfaces, one of which uses "constants" for each different
+attribute and the other of which uses two subs which take strings of
+attributes as arguments.
+
+-- Denis Shaposhnikov
+dsh@vlink.ru
