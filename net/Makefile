@@ -138,6 +138,7 @@
     SUBDIR += icqlib
     SUBDIR += icqlib0
     SUBDIR += icqnix
+    SUBDIR += icukrell
     SUBDIR += ip-tun
     SUBDIR += ipcad
     SUBDIR += ipcalc

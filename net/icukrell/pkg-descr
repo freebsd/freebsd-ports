@@ -1,0 +1,7 @@
+GKrellM plugin which shows status of gnomeICU
+
+A plugin for gkrellm, that keeps track of the status of gnomeICU,
+the gnome ICQ client.
+
+Author: drJeckyll <drJeckyll@hotmail.com>
+WWW: http://icukrell.sourceforge.net/

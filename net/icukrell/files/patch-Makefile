@@ -1,0 +1,56 @@
+--- Makefile.orig	Sun May  6 18:03:12 2001
++++ Makefile	Mon Jul  2 23:07:45 2001
+@@ -2,24 +2,25 @@
+ # Makefile for IcuKrell 0.1.3
+ #
+ 
+-GTK_INCLUDE = `gtk-config --cflags`
+-GTK_LIB = `gtk-config --libs`
++GTK_INCLUDE = `$(GTK_CONFIG) --cflags`
++GTK_LIB = `$(GTK_CONFIG) --libs`
+ 
+-GNOME_INCLUDE = `gnome-config --cflags gnorba gnomeui`
+-GNOME_LIB = `gnome-config --libs gnorba gnomeui`
++GNOME_INCLUDE = `$(GNOME_CONFIG) --cflags gnorba gnomeui`
++GNOME_LIB = `$(GNOME_CONFIG) --libs gnorba gnomeui`
+ 
+-IMLIB_INCLUDE = `imlib-config --cflags-gdk`
+-IMLIB_LIBS = `imlib-config --libs-gdk`
++IMLIB_INCLUDE = `$(IMLIB_CONFIG) --cflags-gdk`
++IMLIB_LIBS = `$(IMLIB_CONFIG) --libs-gdk`
+ 
+-CFLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(GNOME_INCLUDE) $(IMLIB_INCLUDE)
+-LIBS = $(GTK_LIB) $(GNOME_LIBS) $(IMLIB_LIBS)
+-LFLAGS = -shared -lpthread
++CFLAGS += -Wall -fPIC $(GTK_INCLUDE) $(GNOME_INCLUDE) $(IMLIB_INCLUDE) $(PTHREAD_CFLAGS)
++LIBS = $(GTK_LIB) $(GNOME_LIBS) $(IMLIB_LIBS) $(PTHREAD_LIBS)
++LFLAGS = -shared 
+ 
+-CC = gcc $(CFLAGS) $(FLAGS)
++CC += $(CFLAGS) $(FLAGS)
+ 
+-OBJS =  src/action.o src/options.o src/icukrell.o src/themes.o
++OBJS =  action.o options.o icukrell.o themes.o
+ CLIENT_OBJS = client/icukrell-client.c
+ 
++VPATH=src
+ ICUKRELL_PROGS = icukrell.so icukrell-client
+ 
+ all: $(ICUKRELL_PROGS)
+@@ -35,12 +36,12 @@
+ 	rm -f icukrell-client
+ 
+ install:
+-	install -c -s -m 755 icukrell.so /usr/share/gkrellm/plugins
+-	install -c -s -m 755 icukrell-client/icukrell-client /usr/local/bin
++	$(BSD_INSTALL_DATA) icukrell.so /usr/share/gkrellm/plugins
++	$(BSD_INSTALL_PROGRAM) icukrell-client/icukrell-client /usr/local/bin
+ 
+ install-user:
+-	install -c -s -m 755 icukrell.so $(HOME)/.gkrellm/plugins
+-	install -c -s -m 755 icukrell-client/icukrell-client /usr/local/bin
++	$(BSD_INSTALL_DATA) icukrell.so $(HOME)/.gkrellm/plugins
++	$(BSD_INSTALL_PROGRAM) icukrell-client/icukrell-client /usr/local/bin
+ 
+ icukrell.c.o: icukrell.c
+ options.c.o: options.c
