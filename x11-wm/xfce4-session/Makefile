@@ -7,10 +7,10 @@
 
 PORTNAME=	xfce4-session
 PORTVERSION=	0.1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm xfce
-MASTER_SITES=	ftp://ftp.unix-ag.org/user/bmeurer/xfce4/xfce4-session/ \
-		http://echobase.homeunix.net/~bmeurer/tmp/xfce4-session/
+MASTER_SITES=	http://echobase.homeunix.net/~bmeurer/tmp/xfce4-session/ \
+		http://www.bsd-blax.org/ports/mirrors/
 
 MAINTAINER=	matt@rimasec.net
 COMMENT=	XFce 4 Session Manager
