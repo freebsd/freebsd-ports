@@ -17,7 +17,6 @@ COMMENT=	"Milter plugin to sendmail for regular expression filtering"
 
 MAN8=		milter-regex.8
 PLIST=		${WRKDIR}/pkg-plist
-USE_PERL5=	yes
 
 pre-everything::
 .if !exists(/usr/lib/libmilter.a)
