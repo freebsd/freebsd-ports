@@ -1,0 +1,381 @@
+*** sup.1.orig	Sun Dec 10 14:50:16 1995
+--- sup.1	Sun Dec 10 15:53:08 1995
+***************
+*** 716,723 ****
+  .I list=<listname>
+  to specify the list of files in the release.
+  .I scan=<scanfile>
+! must be used in multi-release collections that are scanned to keep
+! the scan files for the different releases separate.
+  .I host=<hostfile>
+  to allow different host restrictions for this release.
+  .I next=<release>
+--- 716,725 ----
+  .I list=<listname>
+  to specify the list of files in the release.
+  .I scan=<scanfile>
+! tells supscan to generate 
+! .B scanfile
+! for this release.  Supscan will only generate scan files for releases that specify
+! a scanfile or for collections that do not have a releases file.
+  .I host=<hostfile>
+  to allow different host restrictions for this release.
+  .I next=<release>
+***************
+*** 725,731 ****
+  be a combination of serveral other releases. If the same file appears in
+  more than one chained release, the first one found will be used.
+  If these files are not specified for a release the default names:
+! prefix,list,scan and host will be used.
+  .TP
+  .B scan
+  This file, created by
+--- 727,733 ----
+  be a combination of serveral other releases. If the same file appears in
+  more than one chained release, the first one found will be used.
+  If these files are not specified for a release the default names:
+! prefix, list and host will be used.
+  .TP
+  .B scan
+  This file, created by
+***************
+*** 931,937 ****
+  for a collection
+  .TP
+  <\fIbase-directory\fR>\fB/sup/\fR<\fIcollection\fR>\fB/scan
+! scan file for a collection
+  .TP
+  \fB/usr/\fR<\fIcollection\fR>
+  default base directory for a file collection
+--- 933,939 ----
+  for a collection
+  .TP
+  <\fIbase-directory\fR>\fB/sup/\fR<\fIcollection\fR>\fB/scan
+! default scan file for a collection if no release file exists
+  .TP
+  \fB/usr/\fR<\fIcollection\fR>
+  default base directory for a file collection
+*** supservers.8.orig	Sun Dec 10 15:45:47 1995
+--- supservers.8	Sun Dec 10 15:48:15 1995
+***************
+*** 167,172 ****
+--- 167,180 ----
+  .I 
+  supscan
+  to produce output messages as it scans the files in the collection.
++ The "release" option
++ .I -r
++ causes
++ .I supscan
++ to only update the scan file for the specified release.  More than one
++ release may be specified by using
++ .I -r
++ multiple times.
+  The "system" flag
+  .I 
+  -s
+*** scan.c.orig	Sun Dec 10 14:45:57 1995
+--- scan.c	Sun Dec 10 14:46:26 1995
+***************
+*** 183,189 ****
+  static omitanyone();
+  static anyglob();
+  static int getscanfile();
+! static chkscanfile();
+  static makescanfile();
+  static recordone();
+  static recordexec();
+--- 183,189 ----
+  static omitanyone();
+  static anyglob();
+  static int getscanfile();
+! static int chkscanfile();
+  static makescanfile();
+  static recordone();
+  static recordexec();
+***************
+*** 322,334 ****
+  	return (TRUE);
+  }
+  
+! makescanlists ()
+  {
+  	TREELIST *tl;
+  	char buf[STRINGLENGTH];
+  	char *p,*q;
+  	FILE *f;
+  	char *saveprefix = prefix;
+  	int count = 0;
+  
+  	(void) sprintf (buf,FILERELEASES,collname);
+--- 322,336 ----
+  	return (TRUE);
+  }
+  
+! makescanlists (releases)
+! 	char **releases;
+  {
+  	TREELIST *tl;
+  	char buf[STRINGLENGTH];
+  	char *p,*q;
+  	FILE *f;
+  	char *saveprefix = prefix;
++ 	char **rel_index;
+  	int count = 0;
+  
+  	(void) sprintf (buf,FILERELEASES,collname);
+***************
+*** 347,360 ****
+  					goaway ("Can't chdir to %s",prefix);
+  				(void) chdir (basedir);
+  			}
+! 			makescan (tl->TLlist,tl->TLscan);
+  			free ((char *)tl);
+  			count++;
+  		}
+  		(void) fclose (f);
+  	}
+  	if (count == 0)
+! 		makescan ((char *)NULL,(char *)NULL);
+  }
+  
+  static
+--- 349,374 ----
+  					goaway ("Can't chdir to %s",prefix);
+  				(void) chdir (basedir);
+  			}
+! 			if (releases)
+! 			{
+! 				rel_index = releases;
+! 				while (*rel_index) {
+! 					if (!strcmp (*rel_index, tl->TLname)) {
+! 						makescan (tl->TLlist,tl->TLscan);
+! 						break;
+! 					}
+! 					rel_index++;
+! 				}
+! 			}
+! 			else
+! 				makescan (tl->TLlist,tl->TLscan);
+  			free ((char *)tl);
+  			count++;
+  		}
+  		(void) fclose (f);
+  	}
+  	if (count == 0)
+! 		makescan ((char *)NULL,FILESCANDEF);
+  }
+  
+  static
+***************
+*** 396,409 ****
+  }
+  
+  static
+! makescan (listfile,scanfile)
+  char *listfile,*scanfile;
+  {
+  	listT = NULL;
+! 	chkscanfile (scanfile);		/* can we can write a scan file? */
+! 	doscan (listfile);		/* read list file and scan disk */
+! 	makescanfile (scanfile);	/* record names in scan file */
+! 	Tfree (&listT);			/* free file list tree */
+  }
+  
+  static
+--- 410,424 ----
+  }
+  
+  static
+! int makescan (listfile,scanfile)
+  char *listfile,*scanfile;
+  {
+  	listT = NULL;
+! 	if(chkscanfile (scanfile)) {	/* can we can write a scan file? */
+! 		doscan (listfile);	/* read list file and scan disk */
+! 		makescanfile (scanfile);/* record names in scan file */
+! 		Tfree (&listT);		/* free file list tree */
+! 	}
+  }
+  
+  static
+***************
+*** 816,822 ****
+  	register TREELIST *tl;
+  
+  	if (scanfile == NULL)
+! 		scanfile = FILESCANDEF;
+  	(void) sprintf (buf,FILESCAN,collname,scanfile);
+  	if (stat(buf,&sbuf) < 0)
+  		return (FALSE);
+--- 831,837 ----
+  	register TREELIST *tl;
+  
+  	if (scanfile == NULL)
+! 		return(FALSE);
+  	(void) sprintf (buf,FILESCAN,collname,scanfile);
+  	if (stat(buf,&sbuf) < 0)
+  		return (FALSE);
+***************
+*** 924,930 ****
+  	FILE *f;
+  
+  	if (scanfile == NULL)
+! 		scanfile = FILESCANDEF;
+  	(void) sprintf (fname,FILESCAN,collname,scanfile);
+  	(void) sprintf (tname,"%s.temp",fname);
+  	if (NULL == (f = fopen (tname, "w")))
+--- 939,945 ----
+  	FILE *f;
+  
+  	if (scanfile == NULL)
+! 		return(FALSE);
+  	(void) sprintf (fname,FILESCAN,collname,scanfile);
+  	(void) sprintf (tname,"%s.temp",fname);
+  	if (NULL == (f = fopen (tname, "w")))
+***************
+*** 933,938 ****
+--- 948,954 ----
+  		(void) unlink (tname);
+  		(void) fclose (f);
+  	}
++ 	return(TRUE);
+  }
+  
+  static makescanfile (scanfile)
+***************
+*** 943,950 ****
+  	FILE *scanF;			/* output file for scanned file list */
+  	int recordone ();
+  
+- 	if (scanfile == NULL)
+- 		scanfile = FILESCANDEF;
+  	(void) sprintf (fname,FILESCAN,collname,scanfile);
+  	(void) sprintf (tname,"%s.temp",fname);
+  	scanF = fopen (tname,"w");
+--- 959,964 ----
+*** supscan.c.orig	Fri Aug 20 17:46:35 1993
+--- supscan.c	Sun Dec 10 15:44:22 1995
+***************
+*** 25,40 ****
+  /*
+   * supscan -- SUP Scan File Builder
+   *
+!  * Usage: supscan [ -v ] collection [ basedir ]
+   *	  supscan [ -v ] -f dirfile
+   *	  supscan [ -v ] -s
+!  *	-f	"file" -- use dirfile instead of system coll.dir
+!  *	-s	"system" -- perform scan for system supfile
+!  *	-v	"verbose" -- print messages as you go
+!  *	collection	-- name of the desired collection if not -s
+!  *	basedir		-- name of the base directory, if not
+!  *			   the default or recorded in coll.dir
+!  *	dirfile		-- name of replacement for system coll.dir.
+   *
+   **********************************************************************
+   * HISTORY
+--- 25,42 ----
+  /*
+   * supscan -- SUP Scan File Builder
+   *
+!  * Usage: supscan [ -v ] collection [ -r release ] [ basedir ]
+   *	  supscan [ -v ] -f dirfile
+   *	  supscan [ -v ] -s
+!  *	-f	"file"     -- use dirfile instead of system coll.dir
+!  *	-r	"release"  -- scan only the specified release. Multiple
+!  *			      releases can be specified.
+!  *	-s	"system"   -- perform scan for system supfile
+!  *	-v	"verbose"  -- print messages as you go
+!  *	collection	   -- name of the desired collection if not -s
+!  *	basedir		   -- name of the base directory, if not
+!  *			      the default or recorded in coll.dir
+!  *	dirfile		   -- name of replacement for system coll.dir.
+   *
+   **********************************************************************
+   * HISTORY
+***************
+*** 158,163 ****
+--- 160,167 ----
+  char *collname;				/* collection name */
+  char *basedir;				/* base directory name */
+  char *prefix;				/* collection pathname prefix */
++ char **releases = NULL;			/* releases to scan */
++ int  numreleases = 0;			/* size of releases  */
+  long lasttime = 0;			/* time of last upgrade */
+  long scantime;				/* time of this scan */
+  int newonly = FALSE;			/* new files only */
+***************
+*** 190,196 ****
+  			ctime (&scantime));
+  		(void) fflush (stdout);
+  		if (!setjmp (sjbuf)) {
+! 			makescanlists (); /* record names in scan files */
+  			scantime = time ((long *)NULL);
+  			printf ("SUP Scan for %s completed at %s",collname,
+  				ctime (&scantime));
+--- 194,201 ----
+  			ctime (&scantime));
+  		(void) fflush (stdout);
+  		if (!setjmp (sjbuf)) {
+! 			/* record names in scan files */
+! 			makescanlists (releases);
+  			scantime = time ((long *)NULL);
+  			printf ("SUP Scan for %s completed at %s",collname,
+  				ctime (&scantime));
+***************
+*** 215,223 ****
+  
+  usage ()
+  {
+! 	fprintf (stderr,"Usage: supscan [ -v ] collection [ basedir ]\n");
+! 	fprintf (stderr,"       supscan [ -v ] -f dirfile\n");
+! 	fprintf (stderr,"       supscan [ -v ] -s\n");
+  	exit (1);
+  }
+  
+--- 220,238 ----
+  
+  usage ()
+  {
+! 	fprintf(stderr,"Usage: supscan [ -v ] [ -r release ] collection [ basedir ]\n"
+! 		"       supscan [ -v ] [ -r release ] -f dirfile\n"
+! 		"       supscan [ -v ] [ -r release ] -s\n"
+! 		"       supscan [ -v ] [ -r release ] -s\n"
+! 		"        -f \"file\"    -- use dirfile instead of system coll.dir\n"
+! 		"        -r \"release\" -- scan only the specified release. Multiple\n"
+! 		"                        releases can be specified.\n"
+! 		"        -s \"system\"  -- perform scan for system supfile\n"
+! 		"        -v \"verbose\" -- print messages as you go\n" 
+! 		"        collection   -- name of the desired collection if not -s\n"
+! 		"        basedir      -- name of the base directory, if not\n"
+! 		"                        the default or recorded in coll.dir\n"
+! 		"        dirfile      -- name of replacement for system coll.dir.\n");
+  	exit (1);
+  }
+  
+***************
+*** 243,248 ****
+--- 258,280 ----
+  			--argc;
+  			argv++;
+  			filename = argv[1];
++ 			break;
++ 		case 'r':
++ 			if (argc == 2)
++ 				usage ();
++ 			--argc;
++ 			argv++;
++ 			if (argv[1][0] == '-')
++ 				usage ();
++ 			numreleases++;
++ 			releases = (char **)realloc(releases,
++ 					   sizeof(*releases) * (numreleases+1));
++ 			if (!releases) {
++ 				fprintf(stderr,"supscan: cannot malloc!\n");
++ 				exit(1);
++ 			}
++ 			releases[numreleases - 1] = argv[1];
++ 			releases[numreleases] = NULL;
+  			break;
+  		case 'v':
+  			trace = TRUE;
