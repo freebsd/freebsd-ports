@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	aewan
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	aewan
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based program for the creation and editing of ascii art
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-
-PLIST_FILES=	bin/aecat bin/aewan
-PORTDOCS=	README
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		aecat.1 aewan.1
 MAN5=		aewan.5
+PORTDOCS=	README
+PLIST_FILES=	bin/aecat bin/aewan
 
 post-install:
 .if !defined(NOPORTDOCS)
