@@ -1,0 +1,16 @@
+--- Makefile.in.orig	Mon Dec 20 20:41:46 2004
++++ Makefile.in	Wed Dec 22 08:02:37 2004
+@@ -302,13 +302,6 @@
+ uninstall-info-am:
+ install-dist_docDATA: $(dist_doc_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(docdir)" || $(mkdir_p) "$(DESTDIR)$(docdir)"
+-	@list='$(dist_doc_DATA)'; for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  f=$(am__strip_dir) \
+-	  echo " $(dist_docDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
+-	  $(dist_docDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
+-	done
+ 
+ uninstall-dist_docDATA:
+ 	@$(NORMAL_UNINSTALL)
