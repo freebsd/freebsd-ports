@@ -1,0 +1,6 @@
+bin/slsc
+share/slsc/slsc.hlp
+share/slsc/slsc.rc
+share/slsc/tutorial.sc
+share/slsc/vprint
+@dirrm share/slsc

@@ -1,0 +1,13 @@
+--- src/Makefile.in.orig	Thu Jan  6 14:05:10 2000
++++ src/Makefile.in	Thu Jan  6 14:06:54 2000
+@@ -39,8 +39,8 @@
+ # Root directory where slsc files are going to be kept. 
+ # MAKE SURE THAT THE '#'IMMEDIATELY FOLLOWS THE PATH.  THERE CAN BE NO 
+ # WHITESPACE HERE!  You might want to use the second form.
+-SLSC_ROOT = /usr/local/lib/slsc#  <--- Note location of the `#' !!!
+-SLSC_BIN = /usr/local/bin
++SLSC_ROOT = ${PREFIX}/share/slsc#  <--- Note location of the `#' !!!
++SLSC_BIN = ${PREFIX}/bin
+ #---------------------------------------------------------------------------
+ # 5. Misc
+ #---------------------------------------------------------------------------
