@@ -149,6 +149,10 @@ MAN3=	SoAction.3iv SoCallbackAction.3iv SoGLRenderAction.3iv \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g ;\
 			      s|%%CXX%%|${CXX}|g ; \
