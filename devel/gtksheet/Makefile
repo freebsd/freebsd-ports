@@ -8,7 +8,7 @@
 
 DISTNAME=	gtksheet-8.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ripley.ifir.edu.ar/pub/gtk/gtksheet/
+MASTER_SITES=	http://magnet.fsu.edu/~feiguin/gtk/src/
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw
 
