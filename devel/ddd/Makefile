@@ -42,6 +42,10 @@ LIBXMDIR=	${X11BASE}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 .if ${OSVERSION} >= 500113
 # XXX - configure is not detecting our streampos
 # provide better solution later
