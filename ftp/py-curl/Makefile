@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	ftp python
 MASTER_SITES=	http://pycurl.sourceforge.net/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,30 +18,23 @@ BUILD_DEPENDS=	${PYDISTUTILS}
 LIB_DEPENDS=	curl.2:${PORTSDIR}/ftp/curl
 
 USE_PYTHON=	yes
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
-		SHARE_SUBDIR=${SHARE_SUBDIR}
-SHARE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
+PLIST_SUB+=	PYTHON_SITELIBDIR="lib/${PYTHON_VERSION}/site-packages"
 PYDIST_SETUP=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
-
-REPATCH=	cd ${WRKSRC} && ${SED}
-REPATCHSUBST=	-e 's@"include"@"${LOCALBASE}/include"],library_dirs=["${LOCALBASE}/lib"@'
-REPATCHFILES=	setup.py
-TMPSUFFIX=	.temp
 
 post-patch:
 .for file in ${REPATCHFILES}
-	${REPATCH} ${REPATCHSUBST} ${file} > ${file}${TMPSUFFIX} && \
-		${CAT} ${file}${TMPSUFFIX} > ${file}
+	${PERL} -pi -e 's@"include"@"${LOCALBASE}/include"],library_dirs=["${LOCALBASE}/lib"@' \
+		${WRKSRC}/setup.py
 .endfor
 
 do-build:
 	${PYDIST_SETUP} build
 
 do-install:
-	${PYDIST_SETUP} install
+	${PYDIST_SETUP} install -c -O1 --prefix=${PREFIX}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/${SHARE_SUBDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} tests/* ${PREFIX}/share/examples/${SHARE_SUBDIR}
+	${MKDIR} ${PREFIX}/share/examples/py-curl
+	cd ${WRKSRC} && ${INSTALL_DATA} tests/* ${PREFIX}/share/examples/py-curl
 .endif
 
 .include <bsd.port.mk>
