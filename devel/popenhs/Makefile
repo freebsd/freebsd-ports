@@ -1,0 +1,21 @@
+# New ports collection makefile for:   popenhs
+# Date created:        09 April 2002
+# Whom:                Oliver Braun <obraun@informatik.unibw-muenchen.de>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	popenhs
+PORTVERSION=	1.00.0
+CATEGORIES=	devel
+MASTER_SITES=	http://www.01.246.ne.jp/~juhp/haskell/popenhs/
+
+MAINTAINER=	obraun@FreeBSD.org
+
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+
+USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+
+.include <bsd.port.mk>

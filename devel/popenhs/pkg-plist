@@ -1,0 +1,5 @@
+bin/popenhs-config
+lib/popenhs-1.00.0/libpopenHS.a
+lib/popenhs-1.00.0/imports/POpen.hi
+@dirrm lib/popenhs-1.00.0/imports
+@dirrm lib/popenhs-1.00.0/
