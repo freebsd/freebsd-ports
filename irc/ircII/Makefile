@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/old/ \
 		ftp://ircftp.au.eterna.com.au/pub/ircII/old/ \
 		ftp://ftp.sergei.cc/pub/ircII/old/
 
-MAINTAINER=	anders@andersa.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The 'Internet Relay Chat' and 'Internet Citizens Band' Client
 
 GNU_CONFIGURE=	yes
