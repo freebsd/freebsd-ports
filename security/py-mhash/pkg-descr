@@ -1,0 +1,5 @@
+The python mhash module provides an interface for the mhash library.
+The mhash library provides an easy way to access strong hashes such as
+MD5, SHA1 and other algorithms.
+
+WWW: http://mhash.sourceforge.net/

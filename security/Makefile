@@ -180,6 +180,7 @@
     SUBDIR += py-fchksum
     SUBDIR += py-gnupg
     SUBDIR += py-m2crypto
+    SUBDIR += py-mhash
     SUBDIR += py-rijndael
     SUBDIR += py-twofish
     SUBDIR += qident
