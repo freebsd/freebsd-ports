@@ -1,11 +1,13 @@
---- image/new.c.orig    Sun Dec 30 18:08:41 2001
-+++ image/new.c Sun Dec 30 18:08:58 2001
-@@ -11,7 +11,7 @@
- #include "copyright.h"
+diff -ru2 ../../work.orig/magicpoint-1.09a/image/new.c ./image/new.c
+--- ../../work.orig/magicpoint-1.09a/image/new.c	Sat Nov 17 23:06:01 2001
++++ ./image/new.c	Sat Nov 17 23:11:45 2001
+@@ -12,5 +12,9 @@
  #include "image.h"
  
--#include <malloc.h>
++#ifdef CSRG_BASED
 +#include <stdlib.h>
++#else
+ #include <malloc.h>
++#endif
  
  extern int _Xdebug;
- extern void memoryExhausted(void);
