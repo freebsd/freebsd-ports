@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU framework for 3D graphics production
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -22,29 +22,21 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
-BROKEN=		"Does not build"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_GNOME=	gnometarget gtk12
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
 INSTALLS_SHLIB=	yes
 
-CXX+=		${CPPFLAGS} ${LDFLAGS}
-
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-
-.include <bsd.port.pre.mk>
+IGNORE=		segfaults on startup (GUI only, render binary still works)
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-module -rpath|-module -avoid-version -rpath|g'
+	@${REINPLACE_CMD} -e 's,/etc/,/etc/panorama/,' ${WRKSRC}/programs/gui/main.cpp \
+		${WRKSRC}/programs/render/render.cpp ${WRKSRC}/doc/config.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
