@@ -23,6 +23,7 @@
     SUBDIR += gbscript
     SUBDIR += hc
     SUBDIR += hztty
+    SUBDIR += joe
     SUBDIR += kcfonts
     SUBDIR += libtabe
     SUBDIR += linux-gtk
