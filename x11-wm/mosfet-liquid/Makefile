@@ -25,6 +25,8 @@ USE_GMAKE=	yes
 USE_KDEBASE_VER=3
 INSTALLS_SHLIB=	yes
 
+BROKEN=		"This port is scheduled for termination"
+
 pre-configure:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} -f Makefile.cvs
 
