@@ -1,3 +1,6 @@
+bin/dbmmanage
+bin/htdigest
+bin/htpasswd
 etc/apache/access.conf.default
 etc/apache/httpd.conf.default
 etc/apache/magic.default
@@ -57,9 +60,6 @@ man/man8/rotatelogs.8.gz
 sbin/ab
 sbin/apachectl
 sbin/apxs
-sbin/dbmmanage
-sbin/htdigest
-sbin/htpasswd
 sbin/httpd
 sbin/logresolve
 sbin/rotatelogs
