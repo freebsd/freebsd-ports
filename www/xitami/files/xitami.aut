@@ -1,0 +1,9 @@
+#  Authorization file for XITAMI
+#  Each [Entry] defines a protected subdirectory
+#  The directory name is followed by user=password pairs
+#
+#  A sample entry to control access to the admin pages
+#  follows. CHANGE IT AS SOON AS POSSIBLE!
+#
+[admin]
+admin=letmein

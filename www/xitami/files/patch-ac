@@ -1,0 +1,40 @@
+--- src/sfl/sflproc.c.orig	Tue Sep 30 02:52:30 1997
++++ src/sfl/sflproc.c	Sun Oct 12 18:39:01 1997
+@@ -1021,8 +1021,6 @@
+         file_handle;
+     char
+         pid_buffer [10];
+-    struct flock
+-        lock_file;                      /*  flock() argument block           */
+ 
+     /*  We recreate our process as a child of init.  The process continues   */
+     /*  to exit in the background.  UNIX calls wait() for all children of    */
+@@ -1065,17 +1063,21 @@
+ 
+     if (lockfile && strused (lockfile))
+       {
+-        file_handle = open (lockfile, O_RDWR | O_CREAT, 0640);
+-        if (file_handle < 0)
++        if ((file_handle = (open (lockfile, O_RDONLY | O_CREAT, 0640))) == -1)
+             return (-1);                /*  We could not open lock file      */
+-        else
++        if (flock(file_handle, LOCK_EX | LOCK_NB) == -1 && errno == EWOULDBLOCK)
+           {
+-            lock_file.l_type = F_WRLCK;
+-            if (fcntl (file_handle, F_SETLK, &lock_file))
+-                return (-1);            /*  We could not obtain a lock       */
++            close (file_handle);
++            return (-1);                /*  The file is already locked       */
+           }
++        close (file_handle);
++
++        if ((file_handle = (open (lockfile, O_RDWR | O_TRUNC, 0640))) == -1)
++            return (-1);                /*  We could not open lock file      */
++        if (flock(file_handle, LOCK_EX | LOCK_NB) == -1)
++            return (-1);                /*  We could not obtain a lock       */
+         /*  We record the server's process id in the lock file               */
+-        sprintf (pid_buffer, "%6d\n", getpid ());
++        sprintf (pid_buffer, "%ld\n", (long)getpid ());
+         write   (file_handle, pid_buffer, strlen (pid_buffer));
+       }
+ 
