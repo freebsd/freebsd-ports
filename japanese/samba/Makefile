@@ -7,7 +7,6 @@
 
 PORTNAME=	samba
 PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
@@ -21,15 +20,12 @@ MAINTAINER=	nakaji@jp.FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 SAMBA_VERSION=		2.2.8a
-SAMBA_JA_VERSION=	1.0
+SAMBA_JA_VERSION=	1.1
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
-USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 USE_SUBMAKE=	yes
 
@@ -42,17 +38,23 @@ IS_INTERACTIVE=	yes
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
+.if defined(WITH_GNU_GETTEXT)
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
+.endif
+
 AUDIT?=		"@comment "
 RECYCLE?=	"@comment "
 LIBSAMBA?=	"@comment "
 BUILD_VFS?=	"@comment "
 LDAPSAM?=	"@comment "
 WINBIND?=	"@comment "
+SMBSH?=		"@comment "
 
 .if defined(WITH_AUDIT)
 AUDIT=		""
 LIBSAMBA=	""
 BUILD_VFS=	""
+USE_LIBTOOL=	yes
 .endif
 
 .if defined(WITH_RECYCLE)
@@ -84,8 +86,14 @@ CONFIGURE_ARGS=	--with-i18n-swat \
 		--with-logfilebase=${SAMBA_LOGDIR} \
 		--with-privatedir=${SAMBA_PRIVATE} \
 		--with-piddir=${VARDIR}/run \
-		--with-pam \
+		--with-pam --with-pam_smbpass \
 		--prefix=${PREFIX}
+
+.if defined(WITH_GNU_GETTEXT)
+CONFIGURE_ARGS+=	--with-included-gettext=no
+.else
+CONFIGURE_ARGS+=	--with-included-gettext
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -121,7 +129,7 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 LDAPSAM=	""
 .endif
 
-.if !defined(WITHOUT_CUPS)
+.if defined(WITH_CUPS)
 WITH_CUPS=	yes
 .endif
 
@@ -132,6 +140,11 @@ WINBIND=	""
 
 .if defined(WITH_WINBIND_AUTH_CHALLENGE)
 CONFIGURE_ARGS+=	--with-winbind-auth-challenge
+.endif
+
+.if defined(WITH_SMBSH)
+CONFIGURE_ARGS+=	--with-smbwrapper --with-libsmbclient
+SMBSH=		""
 .endif
 
 # malloc.h check is not needed.
@@ -183,17 +196,21 @@ PLIST_SUB=      AUDIT=${AUDIT} \
 		LIBSAMBA=${LIBSAMBA} \
 		BUILD_VFS=${BUILD_VFS} \
 		LDAPSAM=${LDAPSAM} \
-		WINBIND=${WINBIND}
+		WINBIND=${WINBIND} \
+		SMBSH=${SMBSH}
 
-pre-build:
-	${RM} -fr ${WRKSRC}/include/proto.h
-	(cd ${WRKSRC} && make proto)
+post-patch:
+	${FIND} ${WRKSRC}/.. -name '*.orig' -delete
+
+#pre-build:
+#	${RM} -fr ${WRKSRC}/include/proto.h
+#	(cd ${WRKSRC} && make proto)
 
 post-build:
 	${SED} 's:/usr/local:${PREFIX}:g' ${FILESDIR}/samba.sh.sample \
 		> ${WRKDIR}/samba.sh.sample
 .if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
-	cd ${WRKDIR}/${DISTNAME}/examples/VFS; \
+	cd ${WRKSRC}/../examples/VFS; \
 		${SETENV} LIBTOOL=${LIBTOOL} ./configure;${GMAKE}; \
 		${RM} -f config.cache config.log config.status
 .endif
@@ -202,29 +219,20 @@ post-install:
 .if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
 	@test -d ${SAMBA_VFSDIR} || ${MKDIR} ${SAMBA_VFSDIR}
 .if defined(WITH_AUDIT)
-	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/examples/VFS/audit.so ${SAMBA_VFSDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/../examples/VFS/audit.so ${SAMBA_VFSDIR}
 .endif
 .if defined(WITH_RECYCLE)
-	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/examples/VFS/recycle/recycle.so ${SAMBA_VFSDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/../examples/VFS/recycle/recycle.so ${SAMBA_VFSDIR}
 .endif
 .endif
-	${MKDIR} ${PREFIX}/share/examples/samba
-	-${RM} -f ${WRKDIR}/${DISTNAME}/examples/libsmbclient/*.o
-	${CP} -rp ${WRKDIR}/${DISTNAME}/examples/* ${PREFIX}/share/examples/samba
-.if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
-#	@${RM} -rf ${PREFIX}/share/examples/samba/VFS/.libs
-	${FIND} ${PREFIX}/share/examples/samba/VFS -type d -name ".libs" | ${XARGS} ${RM} -r
-	@for file in audit.o audit.so recycle/recycle.o recycle/recycle.so skel.o skel.so ; do \
-		${RM} ${PREFIX}/share/examples/samba/VFS/$${file} ; \
-	done
-.endif
+	@${MKDIR} ${PREFIX}/share/examples/samba
+	@-${RM} -f ${WRKSRC}/../examples/libsmbclient/*.o
+	@cd ${WRKSRC}/../examples; \
+		${TAR}  --exclude .cvsignore --exclude .libs --exclude '*.o' --exclude '*.lo' -cf - . | ${TAR} -xf - -C ${PREFIX}/share/examples/samba
 	@${STRIP_CMD} ${PREFIX}/sbin/smbd ${PREFIX}/sbin/nmbd ${PREFIX}/sbin/swat
 	@${STRIP_CMD} ${PREFIX}/bin/smbclient ${PREFIX}/bin/smbspool
 	@${STRIP_CMD} ${PREFIX}/bin/testparm ${PREFIX}/bin/testprns ${PREFIX}/bin/testprns ${PREFIX}/bin/smbstatus ${PREFIX}/bin/smbcontrol ${PREFIX}/bin/make_printerdef
-	@${STRIP_CMD} ${PREFIX}/bin/smbpasswd ${PREFIX}/bin/make_smbcodepage ${PREFIX}/bin/rpcclient ${PREFIX}/bin/make_unicodemap ${PREFIX}/bin/make_nftable ${PREFIX}/bin/smbcacls ${PREFIX}/bin/nmblookup
-	@${MKDIR} ${PREFIX}/share/examples/samba
-	@cd ${WRKDIR}/${DISTNAME}/examples; \
-		${TAR}  --exclude .cvsignore --exclude .libs -cf - . | ${TAR} -xf - -C ${PREFIX}/share/examples/samba
+	@${STRIP_CMD} ${PREFIX}/bin/smbpasswd ${PREFIX}/bin/make_smbcodepage ${PREFIX}/bin/rpcclient ${PREFIX}/bin/make_unicodemap ${PREFIX}/bin/smbcacls ${PREFIX}/bin/nmblookup
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file." ;	\
 		${INSTALL_SCRIPT} ${WRKDIR}/samba.sh.sample 		\
@@ -239,7 +247,7 @@ post-install:
 			${FILESDIR}/smb.conf.default			\
 			> ${SAMPLE_CONFIG} ;				\
 	fi
-	@${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/source/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
+	@${INSTALL_SCRIPT} ${WRKSRC}/../source/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
 
 	@${MKDIR} -m 500 ${SAMBA_PRIVATE}
 	@${CHOWN} root:wheel ${SAMBA_PRIVATE}
@@ -249,31 +257,31 @@ post-install:
 
 	@${CHOWN} root:wheel ${PREFIX}/bin/smbpasswd
 	@${CHMOD} 111 ${PREFIX}/bin/smbpasswd
-	${ECHO_CMD} "@exec ${TEST} -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 1777 ${SAMBA_SPOOL}" | ${SED_PLIST} >> ${TMPPLIST}
-	${ECHO_CMD} "@unexec ${RM} -rf ${SAMBA_SPOOL}" | ${SED_PLIST} >> ${TMPPLIST}
-	${ECHO_CMD} "@exec ${MKDIR} -m 500 ${SAMBA_PRIVATE}" | ${SED_PLIST} >> ${TMPPLIST}
-	${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_PRIVATE}" | ${SED_PLIST} >> ${TMPPLIST}
-	${ECHO_CMD} "@exec ${CAT} /etc/passwd | ${GREP} -v "^#" | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd.default" | ${SED_PLIST} >> ${TMPPLIST}
-	${ECHO_CMD} "@exec ${TEST} -e ${SAMBA_PRIVATE}/smbpasswd || ${CP} -p ${SAMBA_PRIVATE}/smbpasswd.default ${SAMBA_PRIVATE}/smbpasswd" | ${SED_PLIST} >> ${TMPPLIST}
-	${ECHO_CMD} "@exec ${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd*" | ${SED_PLIST} >> ${TMPPLIST}
-	${ECHO_CMD} "@unexec /usr/bin/cmp -s ${SAMBA_PRIVATE}/smbpasswd ${SAMBA_PRIVATE}/smbpasswd.default && ${RM} -f ${SAMBA_PRIVATE}/smbpasswd ${SAMBA_PRIVATE}/secrets.tdb || ${TRUE}" | ${SED_PLIST} >> ${TMPPLIST}
-	${ECHO_CMD} "@unexec ${RM} -f ${SAMBA_PRIVATE}/smbpasswd.default" | ${SED_PLIST} >> ${TMPPLIST}
-	${ECHO_CMD} "@unexec ${RMDIR} ${SAMBA_PRIVATE} || (${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore,\" && ${ECHO_CMD} \"         please remove ${SAMBA_PRIVATE} and its contents manually.\")" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${TEST} -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 1777 ${SAMBA_SPOOL}" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RM} -rf ${SAMBA_SPOOL}" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${MKDIR} -m 500 ${SAMBA_PRIVATE}" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHOWN} root:wheel ${SAMBA_PRIVATE}" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CAT} /etc/passwd | ${GREP} -v "^#" | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd.default" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${TEST} -e ${SAMBA_PRIVATE}/smbpasswd || ${CP} -p ${SAMBA_PRIVATE}/smbpasswd.default ${SAMBA_PRIVATE}/smbpasswd" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd*" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec /usr/bin/cmp -s ${SAMBA_PRIVATE}/smbpasswd ${SAMBA_PRIVATE}/smbpasswd.default && ${RM} -f ${SAMBA_PRIVATE}/smbpasswd ${SAMBA_PRIVATE}/secrets.tdb || ${TRUE}" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RM} -f ${SAMBA_PRIVATE}/smbpasswd.default" | ${SED_PLIST} >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} ${SAMBA_PRIVATE} || (${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore,\" && ${ECHO_CMD} \"         please remove ${SAMBA_PRIVATE} and its contents manually.\")" | ${SED_PLIST} >> ${TMPPLIST}
 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/samba
 	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${PREFIX}/share/doc/samba
-	@for i in ${WRKDIR}/${DISTNAME}/README				\
-			${WRKDIR}/${DISTNAME}/COPYING			\
-			${WRKDIR}/${DISTNAME}/Manifest			\
-			${WRKDIR}/${DISTNAME}/Read-Manifest-Now		\
-			${WRKDIR}/${DISTNAME}/Roadmap			\
-			${WRKDIR}/${DISTNAME}/WHATSNEW.txt; do		\
+	@for i in ${WRKSRC}/../README				\
+			${WRKSRC}/../COPYING			\
+			${WRKSRC}/../Manifest			\
+			${WRKSRC}/../Read-Manifest-Now		\
+			${WRKSRC}/../Roadmap			\
+			${WRKSRC}/../WHATSNEW.txt; do		\
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/samba ;		\
 	done
-	@cd ${WRKDIR}/${DISTNAME}/docs; \
+	@cd ${WRKSRC}/../docs; \
 		${TAR}  --exclude .cvsignore -cf - . | ${TAR} -xf - -C ${PREFIX}/share/doc/samba
-	@${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/swat/README ${PREFIX}/share/doc/samba/README.swat
+	@${INSTALL_DATA} ${WRKSRC}/../swat/README ${PREFIX}/share/doc/samba/README.swat
 .endif
 
 	@if [ -f ${VARDIR}/spool/lock/browse.dat ]; then \
