@@ -4,7 +4,7 @@
  EXTRA_DIST =  	$(SGML)						$(gtkrc_DATA)					AUTHORS						gnome.defs 					maketypes.awk					makeenums.pl					gnome-boxed.defs				gnometypebuiltins_vars.c			gnometypebuiltins_ids.c				gnometypebuiltins_evals.c
  
  
--libgnomeui_la_LDFLAGS = -version-info 43:2:11 -rpath $(libdir)
+-libgnomeui_la_LDFLAGS = -version-info 43:3:11 -rpath $(libdir)
 +libgnomeui_la_LDFLAGS = -version-info 4:0:0 -rpath $(libdir)
  libgnomeui_la_LIBADD = $(LIBGNOMEUI_LIBS)
  
