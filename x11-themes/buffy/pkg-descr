@@ -1,0 +1,5 @@
+GTK+ has a plugin model to allow the look and feel of the toolkit to be changed
+using either pixmaps or new drawing code. I've written an engine to look like
+the SGI enhanced Motif (aka Roxy).
+
+WWW: http://reality.sgi.com/offer/src/buffy/
