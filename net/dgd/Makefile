@@ -3,10 +3,10 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.60 1996/12/03 14:09:43 adam Exp $
+# $Id: Makefile,v 1.61 1996/12/08 09:48:55 max Exp $
 #
 
-DISTNAME=	dgd-1.0.95
+DISTNAME=	dgd-1.0.96
 DISTFILES=	dgd-1.0.91.tar.gz
 CATEGORIES=	net lang
 MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
@@ -16,7 +16,8 @@ PATCH_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/patches/ \
 PATCHFILES=	1.0.91-1.0.92.gz \
 		1.0.92-1.0.93.gz \
 		1.0.93-1.0.94.gz \
-		1.0.94-1.0.95.gz
+		1.0.94-1.0.95.gz \
+		1.0.95-1.0.96.gz
 
 MAINTAINER=	adam@veda.is
 
