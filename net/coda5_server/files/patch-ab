@@ -1,0 +1,39 @@
+--- coda-src/update/updateclnt.cc.orig	Sun Mar  2 17:58:32 2003
++++ coda-src/update/updateclnt.cc	Sun Mar  2 17:59:25 2003
+@@ -152,6 +152,7 @@
+     int     i, rc;
+     int     len;
+     char    errmsg[MAXPATHLEN];
++    time_t  tim;
+     
+     *host = '\0';
+ 
+@@ -226,7 +227,7 @@
+     gettimeofday(&tp, &tsp);
+     LogMsg(0, SrvDebugLevel, stdout, 
+ 	   "Update Client pid = %d started at %s", 
+-	   getpid(), ctime(&tp.tv_sec));
++	   getpid(), ctime(&(tim = tp.tv_sec)));
+ 
+     time.tv_sec = waitinterval;
+     time.tv_usec = 0;
+@@ -688,16 +689,17 @@
+ {
+     struct timeval tv;
+     struct timezone tz;
++    time_t tim;
+ 
+     if(rename("UpdateLog","UpdateLog.old")) {
+ 	LogMsg(0, SrvDebugLevel, stdout, "Rename for UpdateLog failed with a %s\n", ViceErrorMsg(errno));
+     }
+     else {
+ 	gettimeofday(&tv, &tz);
+-	LogMsg(0, SrvDebugLevel, stdout, "Moving UpdateLog to UpdateLog.old at %s", ctime(&tv.tv_sec));
++	LogMsg(0, SrvDebugLevel, stdout, "Moving UpdateLog to UpdateLog.old at %s", ctime(&(tim = tv.tv_sec)));
+ 	freopen("UpdateLog","a+",stdout);
+ 	freopen("UpdateLog","a+",stderr);
+-	LogMsg(0, SrvDebugLevel, stdout, "New UpdateLog started at %s", ctime(&tv.tv_sec));
++	LogMsg(0, SrvDebugLevel, stdout, "New UpdateLog started at %s", ctime(&(tim = tv.tv_sec)));
+     }
+ }
+ 

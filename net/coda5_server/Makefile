@@ -33,8 +33,4 @@ CODA_VERSION?=	5.3.19
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500037
-BROKEN=		"Does not build"
-.endif
-
 .include <bsd.port.post.mk>

@@ -1,0 +1,13 @@
+--- coda-src/venus/vproc.cc.orig	Sun Mar  2 17:42:30 2003
++++ coda-src/venus/vproc.cc	Sun Mar  2 17:43:34 2003
+@@ -784,8 +784,10 @@
+ #if !defined(NetBSD1_3) && !defined(__NetBSD_Version__)
+     sp->st_lspare = 0;
+ #endif
++#if __FreeBSD_version < 5
+     sp->st_qspare[0] = 0;
+     sp->st_qspare[1] = 0;
++#endif
+ #endif /* __BSD44__ */
+ }
+ 
