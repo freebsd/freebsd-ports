@@ -1,5 +1,5 @@
 *** Makefile.orig	Wed May 11 17:00:58 1994
---- Makefile	Mon Jun 23 23:15:39 1997
+--- Makefile	Tue Jul  1 17:44:49 1997
 ***************
 *** 25,35 ****
   #	@(#)Makefile 2.3 (Y.Tonooka) 5/11/94
@@ -51,8 +51,28 @@
                TAGS = ctags
               ETAGS = etags
 ***************
-*** 98,103 ****
---- 102,108 ----
+*** 91,103 ****
+  
+  $(BINPATH)/cprn: $(BINPATH)/prn
+  	if [ $@ ]; then $(RM) $@; fi
+! 	$(LN) $(BINPATH)/prn $@
+  
+  $(BINPATH)/cmt: cmt.c defs.c euc.c reg.y
+  	$(MAKE) cmt
+  	$(INSTALL) -s cmt $(BINPATH)
+  
+  $(LIBPATH)/cmtdefs: cmtdefs
+  	$(CP) cmtdefs $@; chmod 644 $@
+  
+  $(BINPATH)/psconv: psconv.c
+--- 95,108 ----
+  
+  $(BINPATH)/cprn: $(BINPATH)/prn
+  	if [ $@ ]; then $(RM) $@; fi
+! 	$(LN) prn $@
+  
+  $(BINPATH)/cmt: cmt.c defs.c euc.c reg.y
+  	$(MAKE) cmt
   	$(INSTALL) -s cmt $(BINPATH)
   
   $(LIBPATH)/cmtdefs: cmtdefs
