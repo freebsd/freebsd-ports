@@ -6,3 +6,12 @@
 +	set ::argv0 [pSet ::argv0]
  	set ::tcllibModule [pSet module]
  	set auto_path [pSet auto_path]
+--- modules/comm/comm.test	Mon Jun 10 19:14:56 2002
++++ modules/comm/comm.test	Sun Feb 23 11:25:48 2003
+@@ -29,5 +29,5 @@
+ 
+ makeFile {
+-    puts [set fh [open ~/foo w]] $argv ; close $fh
++    puts [set fh [open [pwd]/TemporaryFile w]] $argv ; close $fh
+ 
+     source [lindex $argv 0].tcl ; # load 'comm'
