@@ -21,11 +21,16 @@ LIB_DEPENDS=    gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 USE_GMAKE=	yes
-USE_GCC=	3.3
 MAKE_ENV=	OSTYPE=linux-gnu DATADIR=${DATADIR}
 
 CPIOFLAGS=	--quiet -pdum
 DATASUBDIRS=	ai backgrounds cardsets help.icons rules translations
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x (port and dependencies need recent C++ compiler)"
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/FreeDoko ${PREFIX}/bin
@@ -39,4 +44,4 @@ do-install:
 	 ${FIND} . ! -name Makefile\* \
 	 | ${CPIO} ${CPIOFLAGS} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
