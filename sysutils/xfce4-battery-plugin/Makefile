@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-battery-plugin
 PORTVERSION=	0.1.2
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4
 
