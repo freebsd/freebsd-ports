@@ -1,39 +1,41 @@
 
 $FreeBSD$
 
---- Makefile.orig	Thu Jan 25 13:55:15 2001
-+++ Makefile	Wed Feb  7 16:01:50 2001
-@@ -4,12 +4,13 @@
- # Edit the entries below for your system:
- # In most cases you don't have to
+--- Makefile.orig	Mon Apr  9 01:16:34 2001
++++ Makefile	Tue May 29 19:37:05 2001
+@@ -9,14 +9,15 @@
+ #FONTDIR	= /usr/lib/X11/fonts/local
  
--PREFIX		= `gtk-config --prefix`
--FONTDIR		= /usr/lib/X11/fonts/misc
-+#PREFIX		= `gtk-config --prefix`
-+FONTDIR		= $(PREFIX)/X11/fonts/misc
+ # Works on my Red Hat Linux system:
+-GTK-CONFIG	= gtk-config
+-PREFIX		= `$(GTK-CONFIG) --prefix`
++GTK-CONFIG	?= gtk-config
++PREFIX		?= `$(GTK-CONFIG) --prefix`
+ FONTDIR		= /usr/lib/X11/fonts/misc
  
--CC			= gcc -pipe -ansi
--CFLAGS		= -O2 `gtk-config --cflags` -DG_DISABLE_CHECKS
--LIBS		= `gtk-config --libs`
-+CC			?= gcc -pipe -ansi
-+GTK_CFLAGS	!= $(GTK_CONFIG) --cflags
-+CFLAGS		= $(GTK_CFLAGS) -DG_DISABLE_CHECKS
-+LIBS		!= $(GTK_CONFIG) --libs
+-CC		= gcc -pipe
+-CFLAGS		= -O2 -fomit-frame-pointer `$(GTK-CONFIG) --cflags` -DG_DISABLE_CHECKS
++CC		?= gcc -pipe
++GTK_CFLAGS	!= $(GTK-CONFIG) --cflags
++CFLAGS		+= $(GTK_CFLAGS) -DG_DISABLE_CHECKS
+ #CFLAGS		= `$(GTK-CONFIG) --cflags`
+-LIBS		= `$(GTK-CONFIG) --libs`
++LIBS		!= $(GTK-CONFIG) --libs
  
- #Use these for FreeBSD:
- #PREFIX		= `gtk12-config --prefix`
-@@ -28,8 +29,8 @@
  
- OBJECTS		= xeno_theme_main.o xeno_theme_patches.o xeno_theme_draw.o xeno_theme_color.o \
- 			  xeno_theme_images.o
--SONAME		= libxeno.so.0.6
--SHORTNAME	= libxeno.so.0
+ #-- End of Configuration --
+@@ -35,8 +36,8 @@
+ OBJECTS		= xeno_theme_main.o xeno_theme_rc.o xeno_theme_style.o xeno_theme_draw.o \
+ 		  xeno_theme_color.o xeno_theme_images.o xeno_theme_patches.o
+ 
+-SONAME		= libxeno.so.$(VERSION)
+-SHORTNAME	= libxeno.so.$(MAJOR)
 +SONAME		= libxeno.so
 +SHORTNAME	= libxeno.so
  TINYNAME	= libxeno.so
- OLDNAME		= libxeno.so.0.5
  
-@@ -38,19 +39,25 @@
+ #-- Targets ----------------------------------------
+@@ -44,19 +45,25 @@
  		$(LINK) $(GTKLIBS) $(OBJECTS) -shared -Wl,-soname,$(SHORTNAME) -o $(SONAME)
  
  install-libs:	$(SONAME)
