@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	flathill
 
 MAINTAINER=	flathill@FreeBSD.org
 
+BROKEN=		"Does not patch"
+
 LIB_DEPENDS=	icq.0:${PORTSDIR}/net/libicq
 
 USE_X_PREFIX=	yes
