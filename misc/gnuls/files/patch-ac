@@ -1,0 +1,50 @@
+*** src/Makefile.in.orig	Sun Aug 10 17:14:46 1997
+--- src/Makefile.in	Sun Aug 10 19:14:33 1997
+***************
+*** 49,57 ****
+  EXTRAdir = $(bindir)
+  EXTRA_PROGRAMS = df mvdir
+  
+! bin_PROGRAMS = chgrp chown chmod cp dd dircolors du \
+! ginstall ln dir vdir ls mkdir \
+! mkfifo mknod mv rm rmdir sync touch @DF_PROG@
+  
+  libexec_PROGRAMS = @MVDIR_PROG@
+  datadir = $(prefix)/@DATADIRNAME@
+--- 49,55 ----
+  EXTRAdir = $(bindir)
+  EXTRA_PROGRAMS = df mvdir
+  
+! bin_PROGRAMS = dircolors gnuls 
+  
+  libexec_PROGRAMS = @MVDIR_PROG@
+  datadir = $(prefix)/@DATADIRNAME@
+***************
+*** 247,252 ****
+--- 245,253 ----
+  	     $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
+  	  else :; fi; \
+  	done
++ 	ln -f $(bindir)/gnuls $(bindir)/linuxls
++ 	ln -f $(bindir)/gnuls $(bindir)/vdir
++ 	ln -f $(bindir)/gnuls $(bindir)/dir
+  
+  uninstall-binPROGRAMS:
+  	list="$(bin_PROGRAMS)"; for p in $$list; do \
+***************
+*** 392,398 ****
+  	$(LINK) $(vdir_LDFLAGS) $(vdir_OBJECTS) $(vdir_LDADD) $(LIBS)
+  $(ls_OBJECTS): ../config.h
+  
+! ls: $(ls_OBJECTS) $(ls_DEPENDENCIES)
+  	$(LINK) $(ls_LDFLAGS) $(ls_OBJECTS) $(ls_LDADD) $(LIBS)
+  $(mkdir_OBJECTS): ../config.h
+  
+--- 393,399 ----
+  	$(LINK) $(vdir_LDFLAGS) $(vdir_OBJECTS) $(vdir_LDADD) $(LIBS)
+  $(ls_OBJECTS): ../config.h
+  
+! gnuls: $(ls_OBJECTS) $(ls_DEPENDENCIES)
+  	$(LINK) $(ls_LDFLAGS) $(ls_OBJECTS) $(ls_LDADD) $(LIBS)
+  $(mkdir_OBJECTS): ../config.h
+  

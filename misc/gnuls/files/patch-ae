@@ -1,0 +1,90 @@
+*** man/ls.1.orig	Sun Aug 10 17:54:52 1997
+--- man/ls.1	Sun Aug 10 17:55:42 1997
+***************
+*** 1,8 ****
+! .TH LS 1 "GNU File Utilities" "FSF" \" -*- nroff -*-
+  .SH NAME
+! ls, dir, vdir \- list contents of directories
+  .SH SYNOPSIS
+! .B ls
+  [\-abcdfgiklmnpqrstuxABCFGLNQRSUX1] [\-w cols] [\-T cols] [\-I pattern]
+  [\-\-all] [\-\-escape] [\-\-directory] [\-\-inode] [\-\-kilobytes]
+  [\-\-numeric-uid-gid] [--no-group] [\-\-hide-control-chars] [\-\-reverse]
+--- 1,8 ----
+! .TH GNULS 1 "GNU File Utilities" "FSF" \" -*- nroff -*-
+  .SH NAME
+! gnuls, dir, vdir \- list contents of directories
+  .SH SYNOPSIS
+! .B gnuls
+  [\-abcdfgiklmnpqrstuxABCFGLNQRSUX1] [\-w cols] [\-T cols] [\-I pattern]
+  [\-\-all] [\-\-escape] [\-\-directory] [\-\-inode] [\-\-kilobytes]
+  [\-\-numeric-uid-gid] [--no-group] [\-\-hide-control-chars] [\-\-reverse]
+***************
+*** 19,34 ****
+  .PP
+  This manual page
+  documents the GNU version of
+! .BR ls .
+  .B dir
+  and
+  .B vdir
+  are versions of
+! .B ls
+  with different default output formats.
+  These programs list each given file or directory name.  Directory contents are
+  sorted alphabetically.  For
+! .BR ls ,
+  files are by default listed in columns, sorted
+  vertically, if the standard output is a terminal; otherwise they are
+  listed one per line.  For
+--- 19,34 ----
+  .PP
+  This manual page
+  documents the GNU version of
+! .BR gnuls .
+  .B dir
+  and
+  .B vdir
+  are versions of
+! .B gnuls
+  with different default output formats.
+  These programs list each given file or directory name.  Directory contents are
+  sorted alphabetically.  For
+! .BR gnuls ,
+  files are by default listed in columns, sorted
+  vertically, if the standard output is a terminal; otherwise they are
+  listed one per line.  For
+***************
+*** 163,169 ****
+  stored on the disk.  This option is not called
+  .I \-f
+  because the Unix
+! .B ls
+  .I \-f
+  option also enables
+  .I \-a
+--- 163,169 ----
+  stored on the disk.  This option is not called
+  .I \-f
+  because the Unix
+! .B gnuls
+  .I \-f
+  option also enables
+  .I \-a
+***************
+*** 229,235 ****
+  When using the
+  .I "\-\-color"
+  option, this version of
+! .B ls
+  will colorize the file names printed according to the name and type of
+  file.  By default, this colorization is by type only, and the codes
+  used are ISO 6429 (ANSI) compliant.
+--- 229,235 ----
+  When using the
+  .I "\-\-color"
+  option, this version of
+! .B gnuls
+  will colorize the file names printed according to the name and type of
+  file.  By default, this colorization is by type only, and the codes
+  used are ISO 6429 (ANSI) compliant.
