@@ -7,7 +7,7 @@ ghostscript version and 3rd party printer driver like hpijs, ijs, hpdj, pcl3
 and gimp-print, to mention some.
 Apsfilter autodetects lots of file(34), archive(11) and compression(6) types.
 Its even possible to print compressed documents. Apsfilter supports printing
-on local as well as on Appletalk-, Unix- and Windows remote printers.
+on local and on Appletalk-, Novell (NEW !), Unix- and Windows remote printers.
 General and "per printer-queue" based config files allow you to configure
 the printer for your needs. Additionally lpr commandline options, -C for
 lpd and -Z for LPRng, allow you to change printing parameters like print
