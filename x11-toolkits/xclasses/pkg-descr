@@ -8,7 +8,7 @@ All gadgets have the same base class (class gadget) so they are
 all used the same way.  Gadgets are put together in groups which
 manage the sizes of the gadgets (or groups) inside.
 
-WWW:  http://www.fsai.fh-trier.de/~schmitzj/Xclasses/
+WWW:  http://www.js-home.org/Xclasses/
 
 Trevor Johnson
 trevor@freebsd.org
