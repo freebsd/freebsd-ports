@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	consolehm
-PORTVERSION=	1.3A
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES= 	ftp://muir.yi.org/pub/consolehm/ \
 		http://www.es.co.nz/~mmuir/
@@ -14,8 +14,9 @@ MASTER_SITES= 	ftp://muir.yi.org/pub/consolehm/ \
 MAINTAINER=	mmuir@es.co.nz
 
 WRKSRC=		${WRKDIR}/consolehm/consolehm
+
 GNU_CONFIGURE=	yes
 MAN8=		chm.8
-MANCOMPRESSED=	maybe
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
