@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.gz
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	A golf theme for Tux Racer
 
-BUILD_DEPENDS=	tuxracer:${PORTSDIR}/games/tuxracer
+RUN_DEPENDS=	tuxracer:${PORTSDIR}/games/tuxracer
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
