@@ -1,0 +1,10 @@
+--- configure.orig	Mon Oct 11 19:30:39 2004
++++ configure	Mon Oct 11 19:32:12 2004
+@@ -2854,6 +2854,7 @@
+             echo "$as_me:$LINENO: checking MOZPLUG_CFLAGS" >&5
+ echo $ECHO_N "checking MOZPLUG_CFLAGS... $ECHO_C" >&6
+             MOZPLUG_CFLAGS=`$PKG_CONFIG --cflags "mozilla-plugin"`
++	    MOZPLUG_CFLAGS="${MOZPLUG_CFLAGS} -I"`$PKG_CONFIG --variable=includedir "mozilla-plugin"`
+             echo "$as_me:$LINENO: result: $MOZPLUG_CFLAGS" >&5
+ echo "${ECHO_T}$MOZPLUG_CFLAGS" >&6
+ 
