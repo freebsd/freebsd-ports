@@ -159,11 +159,31 @@
 # Be very careful with case sensitivity - it can break things!
 ;  case sensitive = no
 
-# Client codepage setting
-# for Western European users
+# Client codepage settings
+
+# for European users (Latin 1)
 ; client code page=850
+
+# for European users (Latin 2)
+; client code page=852
+
+# for Cyrillic users
+; client code page=866
+
 # for Japanese Users
 ; client code page=932
+; coding system=cap
+
+# for Simplified Chinese Users
+; client code page=936
+; coding system=cap
+
+# for Korean Users
+; client code page=949
+; coding system=cap
+
+# for Traditional Chinese Users
+; client code page=950
 ; coding system=cap
 
 # Samba performance workaround:
