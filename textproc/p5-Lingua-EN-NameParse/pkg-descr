@@ -1,0 +1,7 @@
+This module takes as input a person or persons name in free format
+text and attempts to parse it. If successful, the name is broken
+down into components and useful functions can be performed.
+
+WWW: http://search.cpan.org/search?dist=Lingua-EN-NameParse
+
+Seamus Venasse <svenasse@polaris.ca>
