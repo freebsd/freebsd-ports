@@ -43,7 +43,7 @@ do-install:
 	PATH=${PATH}:/tmp/sv001.tmp:/usr/compat/linux/tmp/sv001.tmp:/usr/compat/linux/tmp:/tmp
 	LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/tmp:${WRKDIR}/tmp:/usr/lib:/lib:/tmp:/usr/compat/linux/lib
 	/usr/compat/linux/sbin/ldconfig
-	${CP} ${PKGDIR}/.sversionrc /root
+	${INSTALL_DATA} ${FILESDIR}/dot.sversionrc /root/.sversionrc
 	${TOUCH} ${WRKDIR}/.install-done
 	${CAT} ${PKGDIR}/MESSAGE
 	${WRKDIR}/so51inst/office51/setup /net
