@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:56:45 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/21 22:15:57 steve Exp $
 #
 
 DISTNAME=	bibcard.6.4
@@ -19,6 +19,7 @@ LIB_DEPENDS=    xview.3:${PORTSDIR}/x11-toolkits/xview-lib
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
+MAN1=		bibcard.1
 
 pre-configure:
 	@${ECHO} "OPENWINHOME=${PREFIX}"  \

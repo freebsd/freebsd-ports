@@ -3,7 +3,7 @@
 # Date created:		21 July 1997
 # Whom:			dbader@eece.unm.edu
 #
-# $Id: Makefile,v 1.3 1997/11/24 08:40:52 tg Exp $
+# $Id: Makefile,v 1.4 1998/04/19 18:03:26 mph Exp $
 #
 
 DISTNAME=	bibview-2.2
@@ -15,5 +15,6 @@ MAINTAINER=	dbader@eece.unm.edu
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/bibview-2.2
+MAN1=		bibview.1
 
 .include <bsd.port.mk>
