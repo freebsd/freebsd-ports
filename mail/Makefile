@@ -183,6 +183,7 @@
     SUBDIR += prom-mew
     SUBDIR += prom-wl
     SUBDIR += pronto
+    SUBDIR += py-milter
     SUBDIR += pygmy
     SUBDIR += qmHandle
     SUBDIR += qmail
