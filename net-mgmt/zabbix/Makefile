@@ -7,7 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.0b12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,8 @@ PLIST=		${MASTERDIR}/pkg-plist.agent
 PKGMESSAGE=	nonexistent
 .else
 LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net/net-snmp
-RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-nms
+RUN_DEPENDS=	php:${PORTSDIR}/lang/php4-nms \
+		fping:${PORTSDIR}/net/fping
 
 USE_MYSQL=	yes
 CONFIGURE_ARGS=	--with-mysql --with-net-snmp
@@ -30,6 +31,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
 USE_RC_SUBR=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include
 
@@ -50,6 +52,9 @@ pre-patch:
 .endif
 	@${SED} ${SCRIPT_REGEX} ${PKGDIR}/scripts/zabbix-agent.sh.sample > \
 		${WRKDIR}/zabbix-agent.sh.sample
+
+post-patch:
+	@${REINPLACE_CMD} 's|%LOCALBASE%|${LOCALBASE}|' ${WRKSRC}/src/zabbix_sucker/zabbix_sucker.c
 
 do-install:
 .for FILE in ${ZABBIX_BINARIES}
