@@ -10,7 +10,7 @@ PORTVERSION=	0.99.001216
 CATEGORIES=	databases
 MASTER_SITES=	http://www.santafe.edu/~dirk/sixpack/Download/
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BROKEN=		"Does not package correctly"
 
