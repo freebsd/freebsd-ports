@@ -5,11 +5,14 @@ bin/Xdialog
 %%PORTDOCS%%share/xdialog/buildlist.png
 %%PORTDOCS%%share/xdialog/calendar.png
 %%PORTDOCS%%share/xdialog/center.png
+%%PORTDOCS%%share/xdialog/changelog.html
+%%PORTDOCS%%share/xdialog/check.png
 %%PORTDOCS%%share/xdialog/checklist.png
 %%PORTDOCS%%share/xdialog/common.html
 %%PORTDOCS%%share/xdialog/dselect.png
 %%PORTDOCS%%share/xdialog/editbox.png
 %%PORTDOCS%%share/xdialog/faq.html
+%%PORTDOCS%%share/xdialog/fill.png
 %%PORTDOCS%%share/xdialog/fixedfont.png
 %%PORTDOCS%%share/xdialog/fselect.png
 %%PORTDOCS%%share/xdialog/gauge.png
@@ -22,6 +25,7 @@ bin/Xdialog
 %%PORTDOCS%%share/xdialog/labelleft.png
 %%PORTDOCS%%share/xdialog/labelright.png
 %%PORTDOCS%%share/xdialog/left.png
+%%PORTDOCS%%share/xdialog/license.html
 %%PORTDOCS%%share/xdialog/msgbox.png
 %%PORTDOCS%%share/xdialog/nofixedfont.png
 %%PORTDOCS%%share/xdialog/notags.png
