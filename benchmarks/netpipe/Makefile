@@ -8,7 +8,8 @@ PORTNAME=	netpipe
 PORTVERSION=	2.3
 CATEGORIES=	benchmarks net
 MASTER_SITES=	ftp://ftp.scl.ameslab.gov/pub/netpipe/ \
-		http://people.FreeBSD.org/~jkoshy/PORTS/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=jkoshy
 
 MAINTAINER=	jkoshy@freebsd.org
 
