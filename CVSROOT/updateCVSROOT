@@ -2,7 +2,7 @@
 #
 # Called in place of mkmodules to take care of files mkmodules doesn't know.
 #
-# $Id: updateCVSROOT,v 1.2 1995/11/27 06:33:28 peter Exp peter $
+# $Id: updateCVSROOT,v 1.3 1995/11/27 06:38:22 peter Exp $
 
 PATH=$PATH:/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH
@@ -14,7 +14,7 @@ cd $1
 
 for i in $FILELIST
 do 
-  find $i,v -newer $i -exec echo co -u $i \;
+  find $i,v -newer $i -exec co -u $i \;
 done
 
 #find avail,v -newer cvs-committers -exec ./mkavail
