@@ -1066,7 +1066,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>mod_dosevasive20</name>
-	<range><ge>0</ge></range>
+	<range><lt>1.10</lt></range>
       </package>
     </affects>
     <description>
@@ -1089,11 +1089,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
+      <freebsdpr>ports/77513</freebsdpr>
       <url>http://security.lss.hr/en/index.php?page=details&amp;ID=LSS-2005-01-01</url>
     </references>
     <dates>
       <discovery>2005-01-04</discovery>
       <entry>2005-01-24</entry>
+      <modified>2005-02-22</modified>
     </dates>
   </vuln>
 
