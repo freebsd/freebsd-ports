@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.2
+PORTVERSION=	1.3.1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}b/linux-xpi
+MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
 
 PKGNAMEPREFIX=	linux-
-DIST_SUBDIR=	linux-mozilla/${PORTVERSION}b
+DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	trevor
-PATCHFILES=	linux-mozilla-${PORTVERSION}b-generated-files.tar.gz
+PATCHFILES=	linux-mozilla-${PORTVERSION}-generated-files.tar.bz2
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=Browser, HTML editor, MUA and newsreader for use with Linux plugins
@@ -100,8 +100,10 @@ do-extract:
 
 do-patch:
 	${MKDIR} ${WRKSRC}/tmp
-	${TAR} -C ${WRKSRC}/tmp -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
-	${TAR} -C ${WRKSRC}/bin -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
+	${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} | \
+		${TAR} -C ${WRKSRC}/bin -xf -
+	${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} | \
+		${TAR} -C ${WRKSRC}/tmp -xf -
 	for j in chatzilla cookie inspector messenger pippki venkman; do \
 		if [ ! -e ${WRKSRC}/bin/chrome/$$j.jar ]; then \
 			for i in communicator editor messenger navigator; do \
