@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/22 21:06:40 jfieber Exp $
+# $Id: Makefile,v 1.2 1997/06/29 09:49:45 obrien Exp $
 #
 
 DISTNAME=	docbook-3.0
@@ -16,12 +16,11 @@ MAINTAINER=	jfieber@FreeBSD.ORG
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
 
 NO_MTREE=       yes
-NO_EXTRACT=     yes
+EXTRACT_ONLY=	# empty
 NO_BUILD=       yes
 NO_PATCH=	yes
 NO_CONFIGURE=	yes
-NO_WRKDIR=      yes
-
+NO_WRKSUBDIR=	yes
 
 INSTDIR=	${PREFIX}/share/sgml/docbook
 ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
