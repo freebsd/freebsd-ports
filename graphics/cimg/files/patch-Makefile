@@ -1,0 +1,85 @@
+--- Makefile.orig	Fri Aug  6 17:35:44 2004
++++ Makefile	Mon Oct 11 22:42:11 2004
+@@ -1,41 +1,41 @@
+-#--------------------------------------------------------------------------------------
+-#
+-#  File :                 Makefile
+-#	
+-#  Description :          Makefile to compile CImg for Linux and Solaris
+-#
+-#  Author :               David Tschumperlé
+-#
+-#  Institution :          ODYSSEE, INRIA Sophia Antipolis.
+-#
+-#  Contact :              David.Tschumperle@sophia.inria.fr
+-#
+-#  Date :                 Project started november 1999.
+-#
+-# -----------------------------------------------------------------------------------
+-
+-# Set correct variables and paths
+-CC          = g++ -O4 -Wall-ansi -ffast-math
+-X11PATH     = /usr/X11R6
+-X11FLAGS    = -I$(X11PATH)/include -L$(X11PATH)/lib -lX11
+-
+-# Compilation rules
+-.cpp:	
+-	@echo "> Compiling '$*'"
+-	@$(CC) -o $* $< $(CFLAGS) $(X11FLAGS) $(LDFLAGS)
+-linux:
+-	@echo -e "\n** Starting the compilation of the entire CImg package for Linux. Please wait...\n"
+-	make "LDFLAGS=-lm -lpthread -Wl,-rpath $(X11PATH)/lib" all
+-solaris:
+-	@echo -e "\n** Starting the compilation of the entire CImg package for Solaris. Please wait...\n"
+-	make "LDFLAGS=-lm -lpthread -R$(X11PATH)/lib -lnsl -lsocket" all
+-doc:
+-	@echo "> Create documentation (you need the 'doxygen' tool, see http://www.doxygen.org)."
+-	@doxygen CImg.doxygen >/dev/null
+-all: CImg_test
+-	cd examples && make all
+-	make doc
+-	@echo -e "\n** All done successfully. You can launch 'CImg_test', or read documentation 'html/index.html'. **\n"
+-clean:
+-	cd examples && make clean
+-	rm -rf documentation CImg_test cimg_new core *~ *.o *.exe
++#--------------------------------------------------------------------------------------
++#
++#  File :                 Makefile
++#
++#  Description :          Makefile to compile CImg for Linux and Solaris
++#
++#  Author :               David Tschumperlé
++#
++#  Institution :          ODYSSEE, INRIA Sophia Antipolis.
++#
++#  Contact :              David.Tschumperle@sophia.inria.fr
++#
++#  Date :                 Project started november 1999.
++#
++# -----------------------------------------------------------------------------------
++
++# Set correct variables and paths
++CC          = $(CXX)
++#X11PATH     = /usr/X11R6
++X11FLAGS    = -I$(X11PATH)/include -L$(X11PATH)/lib -lX11
++
++# Compilation rules
++.cpp:
++	@echo "> Compiling '$*'"
++	$(CC) -o $* $< $(CPPFLAGS) -Wall -ansi -ffast-math $(X11FLAGS) $(LDFLAGS)
++linux:
++	@echo -e "\n** Starting the compilation of the entire CImg package for Linux. Please wait...\n"
++	make "LDFLAGS=-lm -lpthread -Wl,-rpath $(X11PATH)/lib" all
++solaris:
++	@echo -e "\n** Starting the compilation of the entire CImg package for Solaris. Please wait...\n"
++	make "LDFLAGS=-lm -lpthread -R$(X11PATH)/lib -lnsl -lsocket" all
++doc:
++	@echo "> Create documentation (you need the 'doxygen' tool, see http://www.doxygen.org)."
++	@doxygen CImg.doxygen >/dev/null
++all: CImg_test
++	cd examples && make all
++	make doc
++	@echo -e "\n** All done successfully. After install, you can launch 'CImg_test', or read documentation 'html/index.html'. **\n"
++clean:
++	cd examples && make clean
++	rm -rf documentation CImg_test cimg_new core *~ *.o *.exe
