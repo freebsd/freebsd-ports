@@ -29,16 +29,23 @@ share/doc/gnupg/TODO
 share/doc/gnupg/VERSION
 @dirrm lib/gnupg
 @dirrm share/gnupg
-@dirrm share/locale/es_ES/LC_MESSAGES
-@dirrm share/locale/es_ES
-@dirrm share/locale/id/LC_MESSAGES
-@dirrm share/locale/id
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/it
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt_BR
-@dirrm share/locale/pt_PT/LC_MESSAGES
-@dirrm share/locale/pt_PT
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ru
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/es_ES/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es_ES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/id/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/id 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pl 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_PT/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_PT 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/local 2>/dev/null || true
 @dirrm share/doc/gnupg
