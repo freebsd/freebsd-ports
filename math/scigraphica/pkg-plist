@@ -130,19 +130,40 @@ share/gnome/scigraphica/examples/image.sg
 share/gnome/scigraphica/examples/multicolumn.sg
 share/gnome/scigraphica/examples/polar.sg
 share/gnome/scigraphica/examples/py_example1.py
+share/gnome/scigraphica/examples/py_example1.pyc
+share/gnome/scigraphica/examples/py_example1.pyo
 share/gnome/scigraphica/examples/py_example2.py
+share/gnome/scigraphica/examples/py_example2.pyc
+share/gnome/scigraphica/examples/py_example2.pyo
 share/gnome/scigraphica/examples/simpletest.sg
 share/gnome/scigraphica/examples/test.dat
 share/gnome/scigraphica/examples/ticks.sg
 share/gnome/scigraphica/examples/trigonometric.sg
 share/gnome/scigraphica/examples/vectors.sg
+share/gnome/scigraphica/python/gtkLeastSquares.py
+share/gnome/scigraphica/python/gtkLeastSquares.pyc
+share/gnome/scigraphica/python/gtkLeastSquares.pyo
+share/gnome/scigraphica/python/pstat.py
+share/gnome/scigraphica/python/pstat.pyc
+share/gnome/scigraphica/python/pstat.pyo
+share/gnome/scigraphica/python/pysga.py
+share/gnome/scigraphica/python/pysga.pyc
+share/gnome/scigraphica/python/pysga.pyo
+share/gnome/scigraphica/python/sgagtk.py
+share/gnome/scigraphica/python/sgagtk.pyc
+share/gnome/scigraphica/python/sgagtk.pyo
+share/gnome/scigraphica/python/stats.py
+share/gnome/scigraphica/python/stats.pyc
+share/gnome/scigraphica/python/stats.pyo
+share/gnome/scigraphica/python/test_plugin.py
+share/gnome/scigraphica/python/test_plugin.pyc
+share/gnome/scigraphica/python/test_plugin.pyo
+share/gnome/scigraphica/python/unpickler.py
+share/gnome/scigraphica/python/unpickler.pyc
+share/gnome/scigraphica/python/unpickler.pyo
+@dirrm share/gnome/scigraphica/python
 @dirrm share/gnome/scigraphica/examples
 @dirrm share/gnome/scigraphica
 @dirrm share/gnome/pixmaps/sg
 @dirrm share/gnome/help/scigraphica/C
 @dirrm share/gnome/help/scigraphica
-@cwd %%LOCALBASE%%
-lib/%%PYTHON_VERSION%%/site-packages/gtkLeastSquares.py
-@unexec /bin/rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/gtkLeastSquares.pyc
-lib/%%PYTHON_VERSION%%/site-packages/pysga.py
-@unexec /bin/rm -f %D/lib/%%PYTHON_VERSION%%/site-packages/pysga.pyc
