@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Oct 26 16:14:26 1998
++++ Makefile	Sun Sep  8 13:14:02 2002
+@@ -8,7 +8,7 @@
+ 		< xcd.in > $@
+ 	chmod ugo+x xcd
+ cdplayer: cdplayer.cc
+-	$(CC) $(CFLAGS) -o $@ cdplayer.cc -lm
++	$(CXX) $(CXXFLAGS) -o $@ cdplayer.cc -lm
+ 
+ install: xcd cdplayer
+ 	mkdir -p $(BINDIR)
