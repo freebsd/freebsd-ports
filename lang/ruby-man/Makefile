@@ -8,11 +8,17 @@
 PORTNAME=	ruby-man
 PORTVERSION=	1.4.6
 CATEGORIES+=	lang ruby
-MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/doc/
+MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/doc/ \
+		ftp://ftp.TokyoNet.AD.JP/pub/misc/ruby/doc/ \
+		ftp://ftp.iij.ad.jp/pub/lang/ruby/doc/ \
+		ftp://blade.nagaokaut.ac.jp/pub/lang/ruby/doc/ \
+		ftp://ftp.krnet.ne.jp/pub/ruby/doc/ \
+		ftp://mirror.nucba.ac.jp/mirror/ruby/doc/
 DISTNAME=	${PORTNAME}-${PORTVERSION}${LANGSUFFIX}
-DIST_SUBDIR=	ruby
 
 MAINTAINER=	olgeni@uli.it
+
+DIST_SUBDIR=	ruby
 
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" LANGSUFFIX="${LANGSUFFIX}"
 
