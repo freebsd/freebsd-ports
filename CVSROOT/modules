@@ -2932,6 +2932,7 @@ ja-openoffice-devel	ports/japanese/openoffice-devel
 ja-otojiro-fpw	ports/japanese/otojiro-fpw
 ja-p5-Date-Japanese-Era	ports/japanese/p5-Date-Japanese-Era
 ja-p5-Jcode	ports/japanese/p5-Jcode
+ja-p5-MeCab	ports/japanese/p5-MeCab
 ja-p5-PDFJ	ports/japanese/p5-PDFJ
 ja-p5-Text-ChaSen	ports/japanese/p5-Text-ChaSen
 ja-p5-Text-Kakasi	ports/japanese/p5-Text-Kakasi
