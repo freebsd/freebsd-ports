@@ -11570,6 +11570,7 @@ wingz		ports/math/wingz
 wingz3		ports/math/wingz3
 winhelpcgi	ports/www/winhelpcgi
 wininfo		ports/devel/wininfo
+wipe		ports/security/wipe
 wise		ports/biology/wise
 wistumbler2	ports/net/wistumbler2
 wizard		ports/devel/wizard
