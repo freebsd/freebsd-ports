@@ -1,0 +1,9 @@
+GP is a set of small utilities written in ANSI C to manipulate DNA
+sequences in a Unix fashion, fit for combining within shell and cgi
+scripts.
+
+The sequences are usually in fasta format, that means the first line
+is the sequence name starting with ">", and the sequence comes in the
+next lines. The programs accept also gzipped sequence files.
+
+WWW: http://www.bioinformatics.org/genpak/#gp
