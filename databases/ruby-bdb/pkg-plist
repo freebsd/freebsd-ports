@@ -12,6 +12,16 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/txn.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/wordlist
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/wordtest
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/b.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/cl.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/example
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/ma.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/mc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/op.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/test1
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/test2
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bdb/replication/test3
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/replication
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb/tmp
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/Changes
