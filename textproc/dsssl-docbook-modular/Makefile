@@ -3,7 +3,7 @@
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.8 1998/10/31 13:43:30 kuriyama Exp $
+# $Id: Makefile,v 1.9 1998/11/03 15:02:22 kuriyama Exp $
 #
 
 DISTNAME=	db120
@@ -21,6 +21,8 @@ MAINTAINER=	kuriyama@FreeBSD.ORG
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		${PREFIX}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbook
 RUN_DEPENDS=	${PREFIX}/share/sgml/docbook/3.0/catalog:${PORTSDIR}/textproc/docbook
+
+BROKEN=		fetch
 
 EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=	-a -q -L
