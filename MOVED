@@ -67,3 +67,37 @@ korean/gaim|net/gaim|2002-11-24|net/gaim could handle Korean
 palm/xcopilot|ports/pose|2002-11-24|pose supersceded xcopilot
 www/libxpg4-ns||2002-11-24|needless since all native netscapes are removed
 textproc/pspell-ispell||2002-11-28|this plugin was obsoleted by aspell
+audio/linux-realplayer|multimedia/linux-realplayer|2002-11-28|new category
+audio/xmms|multimedia/xmms|2002-11-28|new category
+graphics/avifile|multimedia/avifile|2002-11-28|new category
+graphics/divx4linux4|multimedia/linux-divx4linux4|2002-11-28|new category
+graphics/divx4linux|multimedia/linux-divx4linux|2002-11-28|new category
+graphics/ffmpeg|multimedia/ffmpeg|2002-11-28|new category
+graphics/gstreamer-player|multimedia/gstreamer-player|2002-11-28|new category
+graphics/gstreamer-plugins|multimedia/gstreamer-plugins|2002-11-28|new category
+graphics/gstreamer|multimedia/gstreamer|2002-11-28|new category
+graphics/gsubedit|multimedia/gsubedit|2002-11-28|new category
+graphics/libdivxdecore-devel|multimedia/libdivxdecore-devel|2002-11-28|new category
+graphics/libdivxdecore|multimedia/libdivxdecore|2002-11-28|new category
+graphics/libdivxencore|multimedia/libdivxencore|2002-11-28|new category
+graphics/libdvdcss|multimedia/libdvdcss|2002-11-28|new category
+graphics/libdvdread|multimedia/libdvdread|2002-11-28|new category
+graphics/libdv|multimedia/libdv|2002-11-28|new category
+graphics/libmovtar|multimedia/libmovtar|2002-11-28|new category
+graphics/libmpeg2|multimedia/libmpeg2|2002-11-28|new category
+graphics/linux-divxplayer|multimedia/linux-divxplayer|2002-11-28|new category
+graphics/mjpegtools|multimedia/mjpegtools|2002-11-28|new category
+graphics/mpeg4ip|multimedia/mpeg4ip|2002-11-28|new category
+graphics/mplayer-fonts|multimedia/mplayer-fonts|2002-11-28|new category
+graphics/mplayer-skins|multimedia/mplayer-skins|2002-11-28|new category
+graphics/mplayer|multimedia/mplayer|2002-11-28|new category
+graphics/ogle-gui|multimedia/ogle-gui|2002-11-28|new category
+graphics/ogle|multimedia/ogle|2002-11-28|new category
+graphics/ogmtools|multimedia/ogmtools|2002-11-28|new category
+graphics/okle|multimedia/okle|2002-11-28|new category
+graphics/openquicktime|multimedia/openquicktime|2002-11-28|new category
+graphics/oqtencoder|multimedia/oqtencoder|2002-11-28|new category
+graphics/oqtplayer|multimedia/oqtplayer|2002-11-28|new category
+graphics/win32-codecs|multimedia/win32-codecs|2002-11-28|new category
+graphics/xmps-opendivx-plugin|multimedia/xmps-opendivx-plugin|2002-11-28|new category
+graphics/xmps-win32-plugin|multimedia/xmps-win32-plugin|2002-11-28|new category
