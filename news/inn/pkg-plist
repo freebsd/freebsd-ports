@@ -150,6 +150,7 @@ share/doc/inn/LICENSE
 @dirrm news/spool/overview
 @dirrm news/spool/outgoing
 @dirrm news/spool/innfeed
+@dirrm news/spool/incoming/bad
 @dirrm news/spool/incoming
 @dirrm news/spool/articles
 @dirrm news/spool/archive

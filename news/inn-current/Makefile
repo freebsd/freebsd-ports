@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	inn
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
 
@@ -38,8 +38,9 @@ CONFIGURE_ARGS+=	--with-largefiles
 # is somewhat slower
 #CONFIGURE_ARGS+=	--enable-tagged-hash
 
-MAN1=	convdate.1 getlist.1 grephistory.1 inews.1 innconfval.1 innfeed.1 \
-	nntpget.1 rnews.1 shlock.1 shrinkfile.1 simpleftp.1 startinnfeed.1
+MAN1=	ckpasswd.1 convdate.1 getlist.1 grephistory.1 inews.1 innconfval.1 \
+	innfeed.1 nntpget.1 rnews.1 shlock.1 shrinkfile.1 simpleftp.1 \
+	startinnfeed.1
 MAN3=	clientlib.3 dbz.3 inndcomm.3 libinn.3 libstorage.3 parsedate.3 qio.3 \
 	wildmat.3
 MAN5=	active.5 buffindexed.conf.5 control.ctl.5 cycbuff.conf.5 \
@@ -62,6 +63,8 @@ pre-install:
 	${MKDIR} ${INN_NEWSSPOOL}
 
 post-install:
+	@${CHOWN} root:news ${PREFIX}/news/bin/auth/passwd/ckpasswd
+	@${CHMOD} 4755 ${PREFIX}/news/bin/auth/passwd/ckpasswd
 	@(if [ ! -f ${PREFIX}/news/db/history ] ; then \
 	    ${ECHO} 'Creating empty history database...' ; \
 	    cd ${PREFIX}/news/db ; \
