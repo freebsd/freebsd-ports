@@ -53,6 +53,7 @@
     SUBDIR += eject
     SUBDIR += enteruser
     SUBDIR += extipl
+    SUBDIR += fastest_cvsup
     SUBDIR += fastresolve
     SUBDIR += fcron
     SUBDIR += ffsrecov
