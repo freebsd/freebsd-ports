@@ -26,10 +26,10 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/EntityReference.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/EntityReference.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Event.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Event.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/FtNode.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/FtNode.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/NamedNodeMap.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/NamedNodeMap.pyc
-lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Node.py
-lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Node.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/NodeFilter.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/NodeFilter.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/NodeIterator.py
@@ -286,6 +286,12 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/sax/writer.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/sax/writer.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/sax/xmlreader.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/sax/xmlreader.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/unicode/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/unicode/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/unicode/iso8859.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/unicode/iso8859.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/unicode/utf8_iso.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/unicode/utf8_iso.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/utils/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/utils/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/utils/iso8601.py
@@ -293,6 +299,7 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/utils/iso8601.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/utils/qp_xml.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/utils/qp_xml.pyc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/utils
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/unicode
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/sax/drivers2
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/sax/drivers
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/sax

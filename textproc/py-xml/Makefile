@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xml
-PORTVERSION= 		0.6.2
+PORTVERSION= 		0.6.3
 CATEGORIES=		textproc python
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}                     \
 			http://www.python.org/sigs/xml-sig/files/      \
