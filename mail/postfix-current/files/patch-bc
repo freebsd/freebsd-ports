@@ -1,19 +1,20 @@
-*** man/man5/access.5.orig	Mon Mar 29 22:35:58 1999
---- man/man5/access.5	Mon Mar 29 22:36:13 1999
+*** ./html/canonical.5.html.orig	Sat Apr 22 20:28:37 2000
+--- ./html/canonical.5.html	Thu Jun  1 22:21:57 2000
 ***************
-*** 8,14 ****
-  .SH SYNOPSIS
-  .na
-  .nf
-! \fBpostmap /etc/postfix/access\fR
-  .SH DESCRIPTION
-  .ad
-  .fi
---- 8,14 ----
-  .SH SYNOPSIS
-  .na
-  .nf
-! \fBpostmap !!PREFIX!!/etc/postfix/access\fR
-  .SH DESCRIPTION
-  .ad
-  .fi
+*** 11,13 ****
+  <b>SYNOPSIS</b>
+!        <b>postmap</b> <b>/etc/postfix/canonical</b>
+  
+--- 11,13 ----
+  <b>SYNOPSIS</b>
+!        <b>postmap</b> <b>!!PREFIX!!/etc/postfix/canonical</b>
+  
+***************
+*** 21,23 ****
+         used for fast searching by the mail  system.  Execute  the
+!        command <b>postmap</b> <b>/etc/postfix/canonical</b> in order to rebuild
+         the indexed file after changing the canonical table.
+--- 21,23 ----
+         used for fast searching by the mail  system.  Execute  the
+!        command <b>postmap</b> <b>!!PREFIX!!/etc/postfix/canonical</b> in order to rebuild
+         the indexed file after changing the canonical table.

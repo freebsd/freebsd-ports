@@ -1,0 +1,11 @@
+*** ./conf/access.orig	Tue Mar  7 10:42:58 2000
+--- ./conf/access	Thu Jun  1 21:53:36 2000
+***************
+*** 7,9 ****
+  # SYNOPSIS
+! #        postmap /etc/postfix/access
+  # 
+--- 7,9 ----
+  # SYNOPSIS
+! #        postmap !!PREFIX!!/etc/postfix/access
+  # 

@@ -1,0 +1,20 @@
+*** ./proto/transport.orig	Sun Apr  9 17:05:45 2000
+--- ./proto/transport	Thu Jun  1 22:46:23 2000
+***************
+*** 6,8 ****
+  # SYNOPSIS
+! #	\fBpostmap /etc/postfix/transport\fR
+  # DESCRIPTION
+--- 6,8 ----
+  # SYNOPSIS
+! #	\fBpostmap !!PREFIX!!/etc/postfix/transport\fR
+  # DESCRIPTION
+***************
+*** 15,17 ****
+  #	for fast searching by the mail system. Execute the command
+! #	\fBpostmap /etc/postfix/transport\fR in order to rebuild the indexed
+  #	file after changing the transport table.
+--- 15,17 ----
+  #	for fast searching by the mail system. Execute the command
+! #	\fBpostmap !!PREFIX!!/etc/postfix/transport\fR in order to rebuild the indexed
+  #	file after changing the transport table.

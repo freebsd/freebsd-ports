@@ -1,0 +1,44 @@
+*** ./conf/sample-canonical.cf.orig	Thu Sep 23 14:10:38 1999
+--- ./conf/sample-canonical.cf	Thu Jun  1 22:07:23 2000
+***************
+*** 14,16 ****
+  #
+! # If you use this feature, run "postmap /etc/postfix/canonical" to
+  # build the necessary DBM or DB file after every change. The changes
+--- 14,16 ----
+  #
+! # If you use this feature, run "postmap !!PREFIX!!/etc/postfix/canonical" to
+  # build the necessary DBM or DB file after every change. The changes
+***************
+*** 19,24 ****
+  #
+! # canonical_maps = dbm:/etc/postfix/canonical
+! # canonical_maps = hash:/etc/postfix/canonical
+! # canonical_maps = hash:/etc/postfix/canonical, nis:canonical
+! # canonical_maps = hash:/etc/postfix/canonical, netinfo:/canonical
+  canonical_maps = 
+--- 19,24 ----
+  #
+! # canonical_maps = dbm:!!PREFIX!!/etc/postfix/canonical
+! # canonical_maps = hash:!!PREFIX!!/etc/postfix/canonical
+! # canonical_maps = hash:!!PREFIX!!/etc/postfix/canonical, nis:canonical
+! # canonical_maps = hash:!!PREFIX!!/etc/postfix/canonical, netinfo:/canonical
+  canonical_maps = 
+***************
+*** 32,34 ****
+  #
+! # recipient_canonical_maps = hash:/etc/postfix/recipient_canonical
+  recipient_canonical_maps = 
+--- 32,34 ----
+  #
+! # recipient_canonical_maps = hash:!!PREFIX!!/etc/postfix/recipient_canonical
+  recipient_canonical_maps = 
+***************
+*** 46,48 ****
+  #
+! # sender_canonical_maps = hash:/etc/postfix/sender_canonical
+  sender_canonical_maps = 
+--- 46,48 ----
+  #
+! # sender_canonical_maps = hash:!!PREFIX!!/etc/postfix/sender_canonical
+  sender_canonical_maps = 

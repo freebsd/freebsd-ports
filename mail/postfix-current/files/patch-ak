@@ -1,0 +1,26 @@
+*** ./conf/sample-relocated.cf.orig	Thu Sep 23 14:11:17 1999
+--- ./conf/sample-relocated.cf	Thu Jun  1 22:10:43 2000
+***************
+*** 12,14 ****
+  #
+! # If you use this feature, run "postmap /etc/postfix/relocated" to 
+  # build the necessary DBM or DB file after change, then "postfix
+--- 12,14 ----
+  #
+! # If you use this feature, run "postmap !!PREFIX!!/etc/postfix/relocated" to 
+  # build the necessary DBM or DB file after change, then "postfix
+***************
+*** 16,21 ****
+  #
+! # relocated_maps = dbm:/etc/postfix/relocated
+! # relocated_maps = hash:/etc/postfix/relocated
+! # relocated_maps = hash:/etc/postfix/relocated, nis:virtual
+! # relocated_maps = hash:/etc/postfix/relocated, netinfo:/relocated
+  relocated_maps = 
+--- 16,21 ----
+  #
+! # relocated_maps = dbm:!!PREFIX!!/etc/postfix/relocated
+! # relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated
+! # relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated, nis:virtual
+! # relocated_maps = hash:!!PREFIX!!/etc/postfix/relocated, netinfo:/relocated
+  relocated_maps = 

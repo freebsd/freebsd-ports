@@ -1,0 +1,20 @@
+*** ./man/man5/relocated.5.orig	Sat Apr 22 20:28:31 2000
+--- ./man/man5/relocated.5	Thu Jun  1 22:41:05 2000
+***************
+*** 10,12 ****
+  .nf
+! \fBpostmap /etc/postfix/relocated\fR
+  .SH DESCRIPTION
+--- 10,12 ----
+  .nf
+! \fBpostmap !!PREFIX!!/etc/postfix/relocated\fR
+  .SH DESCRIPTION
+***************
+*** 20,22 ****
+  is used for fast searching by the mail system. Execute the command
+! \fBpostmap /etc/postfix/relocated\fR in order to rebuild the indexed
+  file after changing the relocated table.
+--- 20,22 ----
+  is used for fast searching by the mail system. Execute the command
+! \fBpostmap !!PREFIX!!/etc/postfix/relocated\fR in order to rebuild the indexed
+  file after changing the relocated table.

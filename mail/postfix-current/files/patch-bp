@@ -1,0 +1,20 @@
+*** ./html/virtual.5.html.orig	Sat Apr 22 20:28:38 2000
+--- ./html/virtual.5.html	Thu Jun  1 22:35:20 2000
+***************
+*** 11,13 ****
+  <b>SYNOPSIS</b>
+!        <b>postmap</b> <b>/etc/postfix/virtual</b>
+  
+--- 11,13 ----
+  <b>SYNOPSIS</b>
+!        <b>postmap</b> <b>!!PREFIX!!/etc/postfix/virtual</b>
+  
+***************
+*** 28,30 ****
+         used for fast searching by the mail  system.  Execute  the
+!        command  <b>postmap</b>  <b>/etc/postfix/virtual</b> in order to rebuild
+         the indexed file after changing the virtual table.
+--- 28,30 ----
+         used for fast searching by the mail  system.  Execute  the
+!        command  <b>postmap</b>  <b>!!PREFIX!!/etc/postfix/virtual</b> in order to rebuild
+         the indexed file after changing the virtual table.

@@ -1,19 +1,13 @@
-*** man/man8/local.8.orig	Mon Mar 29 22:37:14 1999
---- man/man8/local.8	Mon Mar 29 22:37:44 1999
+*** ./html/master.8.html.orig	Tue Mar  7 10:48:56 2000
+--- ./html/master.8.html	Thu Jun  1 22:29:24 2000
 ***************
-*** 75,81 ****
-  .ad
-  .fi
-  The default per-user mailbox is a file in the UNIX mail spool
-! directory (\fB/var/mail/\fIuser\fR or \fB/var/spool/mail/\fIuser\fR);
-  the location can be specified with the \fBmail_spool_directory\fR
-  configuration parameter.
-  
---- 75,81 ----
-  .ad
-  .fi
-  The default per-user mailbox is a file in the UNIX mail spool
-! directory (\fB/var/mail/\fIuser\fR);
-  the location can be specified with the \fBmail_spool_directory\fR
-  configuration parameter.
-  
+*** 148,151 ****
+  <b>FILES</b>
+!        /etc/postfix/main.cf: global configuration file.
+!        /etc/postfix/master.cf: master process configuration file.
+         /var/spool/postfix/pid/master.pid: master lock file.
+--- 148,151 ----
+  <b>FILES</b>
+!        !!PREFIX!!/etc/postfix/main.cf: global configuration file.
+!        !!PREFIX!!/etc/postfix/master.cf: master process configuration file.
+         /var/spool/postfix/pid/master.pid: master lock file.

@@ -1,36 +1,20 @@
-*** man/man1/sendmail.1.orig	Mon Mar 29 22:35:30 1999
---- man/man1/sendmail.1	Mon Mar 29 22:35:44 1999
+*** ./html/access.5.html.orig	Sat Apr 22 20:28:36 2000
+--- ./html/access.5.html	Thu Jun  1 22:21:32 2000
 ***************
-*** 60,66 ****
-  \fBjust-send-eight\fR.
-  .IP "\fB-C \fIconfig_file\fR (ignored :-)"
-  The path name of the \fBsendmail.cf\fR file. Postfix configuration
-! files are kept in \fB/etc/postfix\fR.
-  .IP "\fB-F \fIfull_name\fR
-  Set the sender full name. This is used only with messages that
-  have no \fBFrom:\fR message header.
---- 60,66 ----
-  \fBjust-send-eight\fR.
-  .IP "\fB-C \fIconfig_file\fR (ignored :-)"
-  The path name of the \fBsendmail.cf\fR file. Postfix configuration
-! files are kept in \fB!!PREFIX!!/etc/postfix\fR.
-  .IP "\fB-F \fIfull_name\fR
-  Set the sender full name. This is used only with messages that
-  have no \fBFrom:\fR message header.
+*** 11,13 ****
+  <b>SYNOPSIS</b>
+!        <b>postmap</b> <b>/etc/postfix/access</b>
+  
+--- 11,13 ----
+  <b>SYNOPSIS</b>
+!        <b>postmap</b> <b>!!PREFIX!!/etc/postfix/access</b>
+  
 ***************
-*** 164,170 ****
-  .na
-  .nf
-  /var/spool/postfix, mail queue
-! /etc/postfix, configuration files
-  .SH CONFIGURATION PARAMETERS
-  .na
-  .nf
---- 164,170 ----
-  .na
-  .nf
-  /var/spool/postfix, mail queue
-! !!PREFIX!!/etc/postfix, configuration files
-  .SH CONFIGURATION PARAMETERS
-  .na
-  .nf
+*** 22,24 ****
+         used for fast searching by the mail  system.  Execute  the
+!        command  <b>postmap</b>  <b>/etc/postfix/access</b>  in order to rebuild
+         the indexed file after changing the access table.
+--- 22,24 ----
+         used for fast searching by the mail  system.  Execute  the
+!        command  <b>postmap</b>  <b>!!PREFIX!!/etc/postfix/access</b> in order to rebuild
+         the indexed file after changing the access table.

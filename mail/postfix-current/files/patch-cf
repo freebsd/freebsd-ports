@@ -1,0 +1,11 @@
+*** ./man/man5/regexp_table.5.orig	Thu Mar 30 14:05:28 2000
+--- ./man/man5/regexp_table.5	Thu Jun  1 22:40:43 2000
+***************
+*** 10,12 ****
+  .nf
+! regexp:/etc/postfix/filename
+  .SH DESCRIPTION
+--- 10,12 ----
+  .nf
+! regexp:!!PREFIX!!/etc/postfix/filename
+  .SH DESCRIPTION

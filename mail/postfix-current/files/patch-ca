@@ -1,0 +1,11 @@
+*** ./man/man1/postdrop.1.orig	Mon May  3 15:03:29 1999
+--- ./man/man1/postdrop.1	Thu Jun  1 22:38:54 2000
+***************
+*** 53,55 ****
+  /var/spool/postfix, mail queue
+! /etc/postfix, configuration files
+  .SH CONFIGURATION PARAMETERS
+--- 53,55 ----
+  /var/spool/postfix, mail queue
+! !!PREFIX!!/etc/postfix, configuration files
+  .SH CONFIGURATION PARAMETERS

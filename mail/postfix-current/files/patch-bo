@@ -1,0 +1,20 @@
+*** ./html/transport.5.html.orig	Sat Apr 22 20:28:37 2000
+--- ./html/transport.5.html	Thu Jun  1 22:35:04 2000
+***************
+*** 11,13 ****
+  <b>SYNOPSIS</b>
+!        <b>postmap</b> <b>/etc/postfix/transport</b>
+  
+--- 11,13 ----
+  <b>SYNOPSIS</b>
+!        <b>postmap</b> <b>!!PREFIX!!/etc/postfix/transport</b>
+  
+***************
+*** 22,24 ****
+         used for fast searching by the mail  system.  Execute  the
+!        command <b>postmap</b> <b>/etc/postfix/transport</b> in order to rebuild
+         the indexed file after changing the transport table.
+--- 22,24 ----
+         used for fast searching by the mail  system.  Execute  the
+!        command <b>postmap</b> <b>!!PREFIX!!/etc/postfix/transport</b> in order to rebuild
+         the indexed file after changing the transport table.
