@@ -1,0 +1,8 @@
+hypersrc is a freeware (GPL) GUI program for browsing source code. 
+
+It displays a list widget containing sorted source code tags. 
+
+A programmer can click any tag to hyperlink to a particular tagged line
+in a source code file. 
+
+WWW: http://www.jimbrooks.org/web/hypersrc/hypersrc.html
