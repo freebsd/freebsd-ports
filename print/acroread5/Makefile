@@ -15,6 +15,8 @@ MAINTAINER=	dima@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
 
+NO_LATEST_LINK=	yes
+
 ONLY_FOR_ARCHS=	i386
 
 NO_FILTER_SHLIBS=	yes
