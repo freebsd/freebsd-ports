@@ -12,6 +12,7 @@ lib/X11/app-defaults/XVkbd-hebrew
 lib/X11/app-defaults/XVkbd-icelandic
 lib/X11/app-defaults/XVkbd-italian
 lib/X11/app-defaults/XVkbd-jisx6004
+lib/X11/app-defaults/XVkbd-korean
 lib/X11/app-defaults/XVkbd-latin1
 lib/X11/app-defaults/XVkbd-norwegian
 lib/X11/app-defaults/XVkbd-portuguese
