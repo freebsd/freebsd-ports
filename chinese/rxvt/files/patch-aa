@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Oct  9 16:38:10 1998
-+++ Makefile.in	Fri Oct  9 16:38:45 1998
+--- Makefile.in.orig	Tue Dec  8 21:23:23 1998
++++ Makefile.in	Tue Dec  8 21:23:37 1998
 @@ -8,7 +8,7 @@
  first_rule: all
  dummy:
@@ -9,51 +9,24 @@
  
  DIST =	INSTALL README.configure configure Makefile Makefile.in
  
---- configure.orig	Fri Oct  9 16:03:53 1998
-+++ configure	Fri Oct  9 16:06:55 1998
-@@ -32,6 +32,8 @@
- ac_help="$ac_help
-   --enable-big5           enable big5 support"
- ac_help="$ac_help
-+  --enable-xcin           enable XCIN Chinese input support"
-+ac_help="$ac_help
-   --enable-greek          enable greek keyboard support"
- ac_help="$ac_help
-   --enable-ttygid         enable tty setting to group \"tty\" - use only if
-@@ -723,6 +725,17 @@
-   if test x$enableval = xyes; then
-     cat >> confdefs.h <<\EOF
- #define ZH 1
-+EOF
-+
-+  fi
-+fi
-+
-+# Check whether --enable-xcin or --disable-xcin was given.
-+if test "${enable_xcin+set}" = set; then
-+  enableval="$enable_xcin"
-+  if test x$enableval = xyes; then
-+    cat >> confdefs.h <<\EOF
-+#define XCIN 1
- EOF
- 
-   fi
---- doc/Makefile.in.orig	Fri Oct  9 16:47:58 1998
-+++ doc/Makefile.in	Fri Oct  9 16:48:35 1998
+--- doc/Makefile.in.orig	Wed Nov 18 15:20:14 1998
++++ doc/Makefile.in	Tue Dec  8 23:42:24 1998
 @@ -55,7 +55,7 @@
  
  tags allbin:
  
 -alldoc:	$(basedir)/$(VERNAME).lsm rxvt.1 rxvt.html rxvtRef.html rxvtRef.txt
-+alldoc:	rxvt.1
++alldoc:	
  
- $(basedir)/$(VERNAME).lsm: LSM.in ../autoconf/Make.common.in
- 	$(SED) $(SEDREPLACE) < LSM.in > $@
-@@ -84,7 +84,7 @@
+ $(basedir)/$(VERNAME).lsm: LSM.in $(srcdir)/../autoconf/Make.common.in $(srcdir)/../src/version.h
+ 	$(SED) $(SEDREPLACE) < $(srcdir)/LSM.in > $@
+@@ -83,8 +83,8 @@
+ 
  distclean:
  
- install: rxvt.1
+-install: rxvt.1
 -	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)rxvt.$(manext)
++install: 
 +	$(INSTALL_DATA) rxvt.1 $(DESTDIR)$(mandir)/$(manprefix)crxvt2.$(manext)
  
  uninstall:
