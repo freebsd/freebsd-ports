@@ -6,26 +6,25 @@
 #
 
 PORTNAME=	pykawari
-PORTVERSION=	8.1.0
-PORTREVISION=	2
+PORTVERSION=	8.2.2
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kawari
 DISTNAME=	kawari-${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.lzh
+EXTRACT_SUFX=	.zip
 
-PATCH_SITES=	http://rinakusu.at.infoseek.co.jp/
-PATCHFILES=	kawari-810-py-module.patch
-PATCH_DIST_STRIP=	-p1
+PATCH_SITES=	http://ninix-aya.sourceforge.jp/
+PATCHFILES=	kawari-822.diff.gz \
+		kawari-822-2.diff.gz
 
 MAINTAINER=	umeno@rr.iij4u.or.jp
-COMMENT=	Pykawari is a real kawari8 module for ninix-aya
+COMMENT=	A real kawari8 module for ninix-aya
 
-EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	ninix:${PORTSDIR}/games/ninix-aya
 
-EXTRACT_CMD=	lha
-EXTRACT_BEFORE_ARGS=	xfqw=${WRKDIR}
+EXTRACT_CMD=	${UNZIP_CMD}
+EXTRACT_BEFORE_ARGS=	# empty
 EXTRACT_AFTER_ARGS=	# empty
 
 PLIST_SUB=	LOCALBASE=${LOCALBASE}
@@ -52,7 +51,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${PREFIX}/share/kawari
-	(cd ${WRKSRC}; ${TAR} -cf - document license.txt readme.1st build/build.txt) | ${TAR} -xvpf - -C ${PREFIX}/share/kawari
+	(cd ${WRKSRC}; ${TAR} -cf - document license.txt readme.1st build/BUILD.TXT) | ${TAR} -xvpf - -C ${PREFIX}/share/kawari
 	${LN} -f ${WRKSRC}/build/mach/freebsd/libshiori.so ${WRKSRC}/build/mach/freebsd/_kawari8.so
 	${MKDIR} ${PREFIX}/libexec/ninix
 	${INSTALL_PROGRAM} ${WRKSRC}/build/mach/freebsd/_kawari8.so ${PREFIX}/libexec/ninix
