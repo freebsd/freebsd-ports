@@ -17,6 +17,14 @@ RUN_DEPENDS+=	glimpse:${PORTSDIR}/textproc/glimpse
 USE_PERL5=	yes
 NO_BUILD=	yes
 
+PL_FILES=	dcollect.pl dindex.pl dsearch.pl flcollect.pl flfilter.pl \
+		flhistory.pl flindex.pl flsearch.pl flserv.pl fltrain.pl
+
+post-extract:
+.for f in ${PL_FILES}
+	@${PERL} -pi -e 's,/usr/local/bin/perl,${PERL},' ${WRKSRC}/${f}
+.endfor
+
 do-install:
 	${INSTALL} -d ${PREFIX}/www/cgi-bin/ftplocate \
 		${PREFIX}/www/cgi-bin/ftplocate/index \
@@ -30,14 +38,14 @@ do-install:
 	${INSTALL} -c -m 644 \
 		fl.config fl.share \
 		${PREFIX}/www/cgi-bin/ftplocate ;\
-	${INSTALL_SCRIPT} \
-		dcollect.pl dindex.pl flcollect.pl flindex.pl indexer.sh \
-		flfilter.pl flsearch.pl dsearch.pl flserv.pl flhistory.pl \
-		${PREFIX}/www/cgi-bin/ftplocate ;\
+	${INSTALL_SCRIPT} indexer.sh ${PREFIX}/www/cgi-bin/ftplocate; \
 	${INSTALL_DATA} \
 		flhelp.html flhelp.zhtw.html \
 		${PREFIX}/www/data ;\
 	${INSTALL_SCRIPT}  ftplocate ${PREFIX}/bin/
+.for f in ${PL_FILES}
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/www/cgi-bin/ftplocate
+.endfor
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
