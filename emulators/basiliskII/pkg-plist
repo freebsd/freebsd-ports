@@ -1,0 +1,4 @@
+bin/BasiliskII
+share/BasiliskII/fbdevices
+share/BasiliskII/keycodes
+@dirrm share/BasiliskII
