@@ -8,13 +8,12 @@
 PORTNAME=	bnbt
 PORTVERSION=	8.1b3
 CATEGORIES=	net
-MASTER_SITES=	http://bnbt.go-dedicated.com/
+MASTER_SITES=	http://bnbt.go-dedicated.com/ \
+		http://www.oook.cz/bsd/distfiles/
 DISTNAME=	bnbt81b-3
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	A C++ BitTorrent Tracker
-
-BROKEN=		Unfetchable
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
