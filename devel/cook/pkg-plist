@@ -6,7 +6,6 @@ bin/cooktime
 bin/find_libs
 bin/make2cook
 bin/roffpp
-info/dir
 lib/cook/en/LC_MESSAGES/c_incl.mo
 lib/cook/en/LC_MESSAGES/cook.mo
 lib/cook/en/LC_MESSAGES/cook_bom.mo
