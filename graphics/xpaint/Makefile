@@ -3,16 +3,17 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.7 1995/10/03 21:58:37 ache Exp $
+# $Id: Makefile,v 1.8 1996/06/15 00:51:15 asami Exp $
 #
 
-DISTNAME=       xpaint-2.4.3
+DISTNAME=       xpaint-2.4.6
 CATEGORIES+=	graphics x11
 MASTER_SITES=	http://www2.dk-online.dk/users/Torsten_Martinsen/xpaint/
 
 LIB_DEPENDS=    jpeg\\.6\\.:${PORTSDIR}/graphics/jpeg \
 		tiff\\.3\\.:${PORTSDIR}/graphics/tiff \
-		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
+		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm   \
+		png\\.0\\.:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/xpaint
 USE_IMAKE=      yes
