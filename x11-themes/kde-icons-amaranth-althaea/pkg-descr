@@ -1,0 +1,8 @@
+[ excerpt from developer's web site ]
+
+Think of it like Crystal SVG, but way simpler-looking and with more
+shadows.  Shadows are cool.  OS X has shadows.  OS X is cool.  You
+may have to edit the "index.desktop" file, to inherit from crystalsvg,
+so as to avoid having all those nagging blank icons.
+
+WWW: http://www.kde-look.org/content/show.php?content=9781
