@@ -318,6 +318,7 @@
     SUBDIR += sgmltools-lite
     SUBDIR += sgrep
     SUBDIR += smartdoc
+    SUBDIR += smartdoc-devel
     SUBDIR += source-highlight
     SUBDIR += sp
     SUBDIR += spell

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export JAVALIBDIR
+
+perl -pi -e 's|%%JAVALIBDIR%%|$ENV{JAVALIBDIR}|g;s|%%LOCALBASE%%|$ENV{LOCALBASE}|g;' ${WRKSRC}/bin/sdoc
