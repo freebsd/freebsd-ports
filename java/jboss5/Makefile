@@ -13,9 +13,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	jonc@chen.org.nz
-COMMENT=	JBoss 4.x, an open-source J2EE application server
+COMMENT=	Open-source J2EE application server (4.x family)
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 
 LATEST_LINK=	jboss4
 USE_JAVA=	yes
@@ -31,7 +31,6 @@ PORTDOCS=	*
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:R}
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}${PORTVERSION:R}
 LOG_DIR=	${APP_HOME}/log
-PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 APP_TITLE=	JBoss
 APP_SHORTNAME=	${PORTNAME}${PORTVERSION:R:R}
 CONTROL_SCRIPT_NAME=	${APP_SHORTNAME}ctl
@@ -55,6 +54,12 @@ DAEMONCTL_FILES=daemonctl.c daemonctl.1 startup.sh
 MAN1=		${CONTROL_SCRIPT_NAME}.1
 
 JBOSSOUTPUT=	${WRKSRC}/build/output/${PORTNAME}-${PORTVERSION}
+APP_HOME_FILES=	bin client lib server
+
+PLIST_FILES=	${CONTROL_SCRIPT:S,^${PREFIX}/,,} \
+		${STARTUP_SCRIPT:S,^${PREFIX}/,,} \
+		${STDOUT_LOG:S,^${PREFIX}/,,} \
+		${STDERR_LOG:S,^${PREFIX}/,,}
 
 .include <bsd.port.pre.mk>
 
@@ -88,30 +93,30 @@ do-configure:
 		-e "s|%%USER%%|${USER}|g;" ${DAEMONCTL_FILES})
 
 post-configure:
-	@${ECHO_CMD} "Installation settings:"
-	@${ECHO_CMD} "   Destination directory:    ${APP_HOME}"
-	@${ECHO_CMD} "   Control program location: ${CONTROL_SCRIPT}"
-	@${ECHO_CMD} "   Startup script location:  ${STARTUP_SCRIPT}"
-	@${ECHO_CMD} "   Location of JDK:          ${JAVA_HOME}"
-	@${ECHO_CMD} "   Location of Java port:    ${JAVA_PORT}"
-	@${ECHO_CMD} "   Startup Java Options:     ${JAVA_OPTS}"
-	@${ECHO_CMD} "   Running as (user/group):  ${USER}/${GROUP}"
-	@${ECHO_CMD} "   Logfile stdout:           ${STDOUT_LOG}"
-	@${ECHO_CMD} "   Logfile stderr:           ${STDERR_LOG}"
-	@${ECHO_CMD} "   Starting after install:   ${AUTO_START}"
-	@${ECHO_CMD} "   Stop time-out:            ${STOP_TIMEOUT} sec."
+	@${ECHO_MSG} "Installation settings:"
+	@${ECHO_MSG} "   Destination directory:    ${APP_HOME}"
+	@${ECHO_MSG} "   Control program location: ${CONTROL_SCRIPT}"
+	@${ECHO_MSG} "   Startup script location:  ${STARTUP_SCRIPT}"
+	@${ECHO_MSG} "   Location of JDK:          ${JAVA_HOME}"
+	@${ECHO_MSG} "   Location of Java port:    ${JAVA_PORT}"
+	@${ECHO_MSG} "   Startup Java Options:     ${JAVA_OPTS}"
+	@${ECHO_MSG} "   Running as (user/group):  ${USER}/${GROUP}"
+	@${ECHO_MSG} "   Logfile stdout:           ${STDOUT_LOG}"
+	@${ECHO_MSG} "   Logfile stderr:           ${STDERR_LOG}"
+	@${ECHO_MSG} "   Starting after install:   ${AUTO_START}"
+	@${ECHO_MSG} "   Stop time-out:            ${STOP_TIMEOUT} sec."
 
 do-build:
 	(cd ${WRKDIR} && ${CC} ${CFLAGS} -o ${CONTROL_SCRIPT_NAME} daemonctl.c)
-	(cd ${WRKSRC}/build && ${SETENV} JAVA_HOME=${JAVA_HOME} PATH=${PATH}:${JAVA_HOME}/bin ${SH} build.sh)
+	(cd ${WRKSRC}/build && ${SETENV} JAVA_HOME="${JAVA_HOME}" PATH="${JAVA_HOME}/bin:${PATH}" ${SH} build.sh)
 
 pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	${MKDIR} ${APP_HOME} && ${CHOWN} ${USER}:${GROUP} ${APP_HOME}
 	${MKDIR} ${LOG_DIR} && ${CHOWN} ${USER}:${GROUP} ${LOG_DIR}
-	(cd ${JBOSSOUTPUT} && ${FIND} bin client lib server |\
+	(cd ${JBOSSOUTPUT} && ${FIND} ${APP_HOME_FILES} |\
 		${CPIO} -pdmu -R ${USER}:${GROUP} ${APP_HOME})
 	${INSTALL} -o ${USER} -g ${GROUP} -m 06754\
 		${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
@@ -121,14 +126,21 @@ do-install:
 	${INSTALL} -o ${USER} -g ${GROUP} -m 0640 /dev/null ${PID_FILE}
 	${INSTALL_MAN} ${WRKDIR}/daemonctl.1 ${MANPREFIX}/man/man1/${CONTROL_SCRIPT_NAME}.1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -r ${JBOSSOUTPUT}/docs/* ${DOCSDIR}
+	cd ${JBOSSOUTPUT}/docs \
+		&& ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+		&& ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 .endif
 
 post-install:
-	@${ECHO_CMD} "${PKGNAME} has been installed in ${APP_HOME}."
-	@${ECHO_CMD} "If a user should be able to use ${CONTROL_SCRIPT_NAME}, put it in the group ${GROUP}."
-	@${ECHO_CMD} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${PORTNAME}."
+	@${FIND} -s ${APP_HOME_FILES:S,^,${JBOSSOUTPUT}/,} -not -type d | \
+		${SED} -ne 's,^${JBOSSOUTPUT},${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -s -d ${APP_HOME_FILES:S,^,${JBOSSOUTPUT}/,} -type d | \
+		${SED} -ne 's,^${JBOSSOUTPUT},@dirrm ${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${APP_HOME:S,^${PREFIX}/,,}/log" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${APP_HOME:S,^${PREFIX}/,,}" >> ${TMPPLIST}
+	@${ECHO_MSG} "${PKGNAME} has been installed in ${APP_HOME}."
+	@${ECHO_MSG} "If a user should be able to use ${CONTROL_SCRIPT_NAME}, put it in the group ${GROUP}."
+	@${ECHO_MSG} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${PORTNAME}."
 .if ${AUTO_START} == "YES"
 	@${CONTROL_SCRIPT} start || true
 .endif
