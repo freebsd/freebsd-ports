@@ -1,0 +1,13 @@
+--- doc/bnf.texi.orig	Thu May 22 06:32:29 2003
++++ doc/bnf.texi	Thu May 22 06:34:23 2003
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename bnf.info
+ @settitle BNF Parser Generator
++@dircategory Programming Tools
++@direntry
++* bnf: (bnf).				A simple parser generator
++@end direntry
+ @c %**end of header
+ 
+      
