@@ -1,50 +1,58 @@
---- Makefile.orig	Thu May 16 02:33:02 2002
-+++ Makefile	Thu May 16 02:38:50 2002
-@@ -1,10 +1,9 @@
- # $Id: Makefile,v 1.50 2002/04/03 15:44:18 prahl Exp $
+--- Makefile.orig	Thu Nov 28 19:36:14 2002
++++ Makefile	Tue Oct 28 21:13:49 2003
+@@ -1,9 +1,8 @@
+ # $Id: Makefile,v 1.76 2002/11/28 18:36:14 prahl Exp $
  
 -CC=gcc
  MKDIR=mkdir -p
- LIBS=
  
 -CFLAGS:=-DUNIX
 +CFLAGS+=-DUNIX
- #CFLAGS:=-DMSDOS
- #CFLAGS:=-DMACINTOSH
+ #CFLAGS:=-DMSDOS         #Windows/DOS
+ #CFLAGS:=-DMACINTOSH     #MacOS 8/9
+ #CFLAGS:=-DOS2           #OS/2
+@@ -18,7 +17,7 @@
+ #CFLAGS:=$(CFLAGS) -Zwin32  
  
-@@ -12,10 +11,8 @@
- #CFLAGS:=$(CFLAGS) -DHAS_NO_GETOPT
+ #Base directory - adapt as needed
+-PREFIX=$(PREFIX_DRIVE)/usr/local
++#PREFIX=$(PREFIX_DRIVE)/usr/local
  
- #Comment out if you don't want compiler warnings
--CFLAGS:=$(CFLAGS) -g -Wall -ansi -pedantic
+ #Name of executable binary --- beware of 8.3 restriction under DOS
+ BINARY_NAME=latex2rtf$(EXE_SUFFIX)
+@@ -32,7 +31,7 @@
  
- #Base directory
--PREFIX=/usr/local
+ # Nothing to change below this line
  
- # Location of binary, man, info, and support files
- BIN_INSTALL=$(PREFIX)/bin
-@@ -123,13 +120,13 @@
+-CFLAGS:=$(CFLAGS) -g -Wall -fsigned-char
++CFLAGS+=-fsigned-char
+ 
+ LIBS=
+ #LIBS=-lMallocDebug -force_flat_namespace
+@@ -144,14 +143,14 @@
  	$(MKDIR) $(BIN_INSTALL)
  	$(MKDIR) $(MAN_INSTALL)
  	$(MKDIR) $(CFG_INSTALL)
--	cp latex2rtf          $(BIN_INSTALL)
+-	cp $(BINARY_NAME)     $(BIN_INSTALL)
 -	cp scripts/latex2png  $(BIN_INSTALL)
 -	cp doc/latex2rtf.1    $(MAN_INSTALL)
+-	cp doc/latex2png.1    $(MAN_INSTALL)
 -	cp $(CFGS)            $(CFG_INSTALL)
 -	cp doc/latex2rtf.html $(SUPPORT_INSTALL)
 -	cp doc/latex2rtf.pdf  $(SUPPORT_INSTALL)
 -	cp doc/latex2rtf.txt  $(SUPPORT_INSTALL)
-+	${BSD_INSTALL_PROGRAM} latex2rtf          $(BIN_INSTALL)
++	${BSD_INSTALL_PROGRAM} $(BINARY_NAME)     $(BIN_INSTALL)
 +	${BSD_INSTALL_SCRIPT} scripts/latex2png  $(BIN_INSTALL)
 +	${BSD_INSTALL_MAN} doc/latex2rtf.1    $(MAN_INSTALL)
++	${BSD_INSTALL_MAN} doc/latex2png.1    $(MAN_INSTALL)
 +	${BSD_INSTALL_DATA} $(CFGS)            $(CFG_INSTALL)
 +	${BSD_INSTALL_DATA} doc/latex2rtf.html $(SUPPORT_INSTALL)
 +	${BSD_INSTALL_DATA} doc/latex2rtf.pdf  $(SUPPORT_INSTALL)
 +	${BSD_INSTALL_DATA} doc/latex2rtf.txt  $(SUPPORT_INSTALL)
  	@echo "******************************************************************"
- 	@echo "*** latex2rtf successfully installed"
- 	@echo "***"
-@@ -145,7 +142,7 @@
+ 	@echo "*** latex2rtf successfully installed as \"$(BINARY_NAME)\""
+ 	@echo "*** in directory \"$(BIN_INSTALL)\""
+@@ -169,7 +168,7 @@
  
  install-info: doc/latex2rtf.info
  	$(MKDIR) $(INFO_INSTALL)

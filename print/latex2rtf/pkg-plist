@@ -31,6 +31,7 @@ share/latex2rtf/cfg/nynorsk.cfg
 share/latex2rtf/cfg/polish.cfg
 share/latex2rtf/cfg/portuges.cfg
 share/latex2rtf/cfg/romanian.cfg
+share/latex2rtf/cfg/russian.cfg
 share/latex2rtf/cfg/samin.cfg
 share/latex2rtf/cfg/scottish.cfg
 share/latex2rtf/cfg/serbian.cfg
