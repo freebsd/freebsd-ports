@@ -678,4 +678,3 @@ share/java/starlogo/starlogo.jar
 @dirrm share/java/starlogo/documentation
 @dirrm share/java/starlogo/adventures-projects
 @dirrm share/java/starlogo
-@unexec rmdir %D/share/java > /dev/null 2>&1 || true

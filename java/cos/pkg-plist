@@ -64,5 +64,3 @@ share/java/cos/doc/upload.war
 @dirrm share/java/cos/doc/images
 @dirrm share/java/cos/doc
 @dirrm share/java/cos
-@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true
-@unexec rmdir %D/share/java > /dev/null 2>&1 || true

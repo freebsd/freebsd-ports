@@ -1,7 +1,5 @@
 share/java/classes/gnujsp10.jar
 share/java/classes/servlet-2.0-plus.jar
-@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true
-@unexec rmdir %D/share/java > /dev/null 2>&1 || true
 share/examples/gnujsp/date.jsp
 share/examples/gnujsp/hello.jsp
 share/examples/gnujsp/snoop.jsp

@@ -47,10 +47,7 @@ jre%%JRE_VERSION%%/lib/psfont.properties.ja
 jre%%JRE_VERSION%%/lib/rt.jar
 jre%%JRE_VERSION%%/lib/security/java.security
 jre%%JRE_VERSION%%/lib/serialver.properties
-@exec mkdir -p %D/share/java/classes
 @exec mkdir -p %D/share/doc/java
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
 @exec %D/bin/registervm "%D/jre%%JRE_VERSION%%/bin/java # JRE%%JRE_VERSION%%"
 @unexec %D/bin/unregistervm JRE%%JRE_VERSION%%

@@ -518,6 +518,4 @@ share/java/classes/xerces_1_2.jar
 %%PORTDOCS%%@dirrm share/java/cocoon/docs
 @dirrm share/java/cocoon
 @exec mkdir %D/share/java/cocoon
-@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true
-@unexec rmdir %D/share/java > /dev/null 2>&1 || true
 @unexec rmdir %D/etc/apache/cocoon > /dev/null 2>&1 || true

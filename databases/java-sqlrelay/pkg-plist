@@ -2,5 +2,3 @@ share/java/classes/SQLRConnection.class
 share/java/classes/SQLRCursor.class
 share/java/classes/libSQLRConnection.so
 share/java/classes/libSQLRCursor.so
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true

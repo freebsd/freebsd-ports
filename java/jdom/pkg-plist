@@ -440,4 +440,3 @@
 @dirrm %%T%%/src/java
 @dirrm %%T%%/src
 @dirrm %%T%%
-@unexec rmdir share/java 2> /dev/null || true

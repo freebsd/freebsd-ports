@@ -637,8 +637,6 @@ share/fop/lib/xml-apis.LICENSE.txt
 share/fop/lib/xml-apis.README.txt
 share/fop/lib/xml-apis.jar
 share/java/classes/fop.jar
-@unexec rmdir %D/share/java/classes 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true
 @dirrm share/fop/lib/bin
 @dirrm share/fop/lib
 @dirrm share/fop/hyph

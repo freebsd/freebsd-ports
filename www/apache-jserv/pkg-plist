@@ -156,5 +156,3 @@ share/doc/mod_jserv/zones.html
 @dirrm share/doc/mod_jserv/install
 @dirrm share/doc/mod_jserv/protocol
 @dirrm share/doc/mod_jserv
-@unexec rmdir %D/share/java/classes > /dev/null 2>&1 || true
-@unexec rmdir %D/share/java > /dev/null 2>&1 || true

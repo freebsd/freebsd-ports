@@ -15,4 +15,3 @@ bin/phex
 %%PORTDOCS%%@dirrm share/doc/phex
 @dirrm %%JAR_DIR%%
 @unexec rmdir %D/share/java/jar 2>/dev/null || true
-@unexec rmdir %D/share/java 2>/dev/null || true

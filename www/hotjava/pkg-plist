@@ -14,4 +14,3 @@ share/java/HotJava/admin-docs/trustProxy.html
 share/java/HotJava/hotjava
 @dirrm share/java/HotJava/admin-docs
 @dirrm share/java/HotJava
-@unexec rmdir %D/share/java || true
