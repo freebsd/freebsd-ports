@@ -1,0 +1,21 @@
+This is the new Apsfilter-STABLE release V 6.0.0
+
+This version has been in use since several months without trouble.
+So this version completely replaces the old -STABLE version 5.4.2.
+
+As usual report trouble / suggestions / comments to:
+
+	apsfilter-stable@apsfilter.org
+
+Apsfilter is a magic printfilter, that allows you to print different document
+types "automagically" without having to convert them manually into something
+which is understood by your lineprinter. Apsfilter supports lots of file and
+compression types: gzip, bzip, compress, freeze, pack, ASCII, BMP,
+Data (data,PCL,...), English, TeX DVI, FIG, GIF, Group 3 Fax, HTML, JPEG,
+Mail/News, PBM/PNM/PPM, PC Bitmap Data, PDF, Postscript(tm), raw, script
+(shell,..), Text, sunraster, tiff, roff (nroff, groff, troff) and lots
+more in V 6.0.0. Docu concerning that is in the pipeline ...
+
+Example: lpr -C duplex:high:presentation:glossy ascii.Z test.gif pic.tiff ...
+
+WWW:	http://www.apsfilter.org/
