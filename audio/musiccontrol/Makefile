@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	musiccontrol
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	audio java
 MASTER_SITES=	http://borderworlds.dk/projects/mc/
-DISTNAME=	MusicControl-0.1
+DISTNAME=	MusicControl-0.2
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
