@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	4.12
+PORTVERSION=	4.13
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	p7zip
@@ -20,15 +20,24 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
-PLIST_FILES=	"@unexec ${RM} %D/bin/7z"
-PLIST_FILES+=	bin/7za
-PLIST_FILES+=	"@exec ${LN} -sf 7za %D/bin/7z"
 PORTDOCS=	*
+
+DLLDIR=		${PREFIX}/libexec/p7zip
+7ZBIN=		7za 7zCon.sfx
+
+.if defined(WITHOUT_MODULES)
+PLIST_SUB=	MODULES="@comment "
+ALL_TARGET=	7za sfx
+.else
+PLIST_SUB=	MODULES=""
+ALL_TARGET=	all2
+7ZBIN+=		7z
+.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500039
-BROKEN=		'Requires wchar functions (mbrtowc(3) etc.) for compilation'
+IGNORE=		requires wchar functions (mbrtowc(3) etc.) for compilation
 .endif
 
 post-patch:
@@ -40,8 +49,18 @@ post-patch:
 	       ${WRKSRC}/makefile.freebsd_x86 > ${WRKSRC}/makefile.machine
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/7za ${PREFIX}/bin
-	${LN} -sf 7za ${PREFIX}/bin/7z
+	${MKDIR} ${DLLDIR}
+.for f in ${7ZBIN}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f} ${DLLDIR}
+.endfor
+	${INSTALL_SCRIPT} ${FILESDIR}/7z ${PREFIX}/bin
+	${LN} -sf 7z ${PREFIX}/bin/7za
+.if !defined(WITHOUT_MODULES)
+.for f in Codecs Formats
+	${MKDIR} ${DLLDIR}/${f}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${f}/* ${DLLDIR}/${f}
+.endfor
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${PAX} -rw -s,${WRKSRC}/DOCS,, ${WRKSRC}/DOCS ${DOCSDIR}
