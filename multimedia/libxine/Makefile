@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.0.b12
+PORTVERSION=	1.0.r0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
-DISTNAME=	${PORTNAME}-lib-1-beta12
+DISTNAME=	${PORTNAME}-lib-1-rc0a
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
@@ -22,7 +22,6 @@ LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		intl.4:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		ogg.4:${PORTSDIR}/audio/libogg \
 		mng.1:${PORTSDIR}/graphics/libmng \
@@ -34,6 +33,7 @@ WANT_GNOME=	yes
 USE_GNOME=	gnomehack
 USE_GMAKE=	yes
 USE_MESA=	yes
+USE_SDL=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
@@ -48,6 +48,11 @@ INSTALLS_SHLIB=	yes
 MAN1=		xine-config.1
 
 .include <bsd.port.pre.mk>
+
+# PRId64 macro is not defined
+.if (${OSVERSION} < 500028)
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src:xine-engine:audio_out.c
+.endif
 
 .if ${XFREE86_VERSION} >= 4
 PLIST_SUB=	HAVE_LIBXV=""
