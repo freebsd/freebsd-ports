@@ -3,28 +3,32 @@
 # Date created:		Mi 18 Dez 1996 00:26:20 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1997/07/27 09:09:41 andreas Exp $
+# $Id: Makefile,v 1.7 1997/10/04 14:53:09 andreas Exp $
 #
 
 DISTNAME=	gcc-2.7.2
 PKGNAME=	pgcc-2.7.2c
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITES=	ftp://ftp.cygnus.com/pub/egcs/snapshots/1997-09-24/ \
+		ftp://ftp.ninemoons.com/pub/egcs/snapshots/1997-09-24/ \
+		ftp://gd.tuwien.ac.at/gnu/egcs/snapshots/1997-09-24/ \
+		ftp://ftp.ilog.fr/pub/Mirrors/egcs/snapshots/1997-09-24/ \
+		ftp://ftp.goof.com/pub/pcg/egcs/snapshots/1997-09-24/ \
+		http://www.goof.com/pcg/data/egcs/snapshots/1997-09-24/
+DISTFILES=	egcs-970924.tar.gz
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-PATCH_SITES=	ftp://ftp.goof.com/pub/pcg/source/ \
-		ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/source/ \
-		ftp://ftp.pmi.saitama-med.ac.jp/pub/pcg/
+PATCH_SITES=	http://www.goof.com/pcg/data/source/ \
+                ftp://ftp.maisel.int-evry.fr/pub/linux/pentium/source/
 
-PATCHFILES=	gcc-2.7.2-970628.diff.gz \
-		pgcc-970628-970706.diff.gz \
-		pgcc-970706-970713.diff.gz \
-		pgcc-970713-970721.diff.gz
+PATCHFILES=	egcs-970924-pgcc-970924.diff.gz \
+		pgcc-970924-971008.diff.gz
 
 FETCH_DEPENDS=	${PREFIX}/bin/autoconf:${PORTSDIR}/devel/autoconf
 
-PATCH_DIST_STRIP=	-p1 -N -E
+WRKSRC=		${WRKDIR}/egcs-970924
+PATCH=		patch -p1
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-gnu-as --with-gnu-ld \
 		pentium-freebsd
