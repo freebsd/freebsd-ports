@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	Class-Date
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://dlux.sch.bme.hu/Class-Date/download/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Class
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	petef@databits.net
