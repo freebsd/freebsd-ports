@@ -1,9 +1,9 @@
---- tricky/GNUmakefile.orig	Sun Jun 20 18:11:23 1999
-+++ tricky/GNUmakefile	Sun Jun 20 18:11:34 1999
+--- tricky/GNUmakefile.orig	Tue Jun 29 09:53:07 1999
++++ tricky/GNUmakefile	Thu Jul  8 18:31:17 1999
 @@ -4,7 +4,7 @@
- VERREV=                 9
+ VERREV=                 0
  
- BINNAME=		tricky
+ BINNAME=		trickyirc
 -INSTALLDIR=		/usr/local/bin/
 +INSTALLDIR=		${PREFIX}/bin/
  

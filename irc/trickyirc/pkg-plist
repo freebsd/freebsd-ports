@@ -1,5 +1,3 @@
-bin/tricky
+bin/trickyirc
 share/doc/TrickyIRC/README
-share/examples/TrickyIRC/config.sample
 @dirrm share/doc/TrickyIRC
-@dirrm share/examples/TrickyIRC
