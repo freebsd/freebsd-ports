@@ -252,6 +252,7 @@
     SUBDIR += p5-Tree-Nary
     SUBDIR += p5-URI-Find
     SUBDIR += p5-WDDX
+    SUBDIR += p5-WordNet-QueryData
     SUBDIR += p5-XML-Catalog
     SUBDIR += p5-XML-DBMS
     SUBDIR += p5-XML-DOM
