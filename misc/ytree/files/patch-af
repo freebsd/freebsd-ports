@@ -1,5 +1,5 @@
---- dirwin.c.orig	Sat Mar 21 22:40:47 1998
-+++ dirwin.c	Sat Mar 21 22:41:17 1998
+--- dirwin.c.orig	Wed Dec  9 15:35:50 1998
++++ dirwin.c	Wed Dec  9 15:35:59 1998
 @@ -163,7 +163,7 @@
                      ERROR_MSG("malloc() Failed*Abort");
                      exit(1);

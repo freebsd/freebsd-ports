@@ -1,27 +1,36 @@
---- Makefile.orig	Mon May 11 04:12:35 1998
-+++ Makefile	Wed May 13 02:30:12 1998
-@@ -29,7 +29,7 @@
+--- Makefile.orig	Wed Dec  9 15:31:25 1998
++++ Makefile	Wed Dec  9 15:32:25 1998
+@@ -12,7 +12,7 @@
+ # ADD_CFLAGS: Add -DVI_KEYS if you want vi-cursor-keys
+ #
+ 
+-ADD_CFLAGS  = -O # -DVI_KEYS
++#ADD_CFLAGS  = -O # -DVI_KEYS
+ 
+ LFLAGS	    = -s
+ BINDIR      = /usr/bin
+@@ -27,10 +27,10 @@
+ ###########################
+ # If color doesn't work, comment out 
  # the following line and recompile
- COLOR       = -DCOLOR_SUPPORT
+-COLOR       = -DCOLOR_SUPPORT
++#COLOR       = -DCOLOR_SUPPORT
  #CLOCK	    = -DCLOCK_SUPPORT
 -CFLAGS      = $(ADD_CFLAGS) $(COLOR) $(CLOCK)
+-LIBS        = -lncurses
 +#CFLAGS      = $(ADD_CFLAGS) $(COLOR) $(CLOCK)
- LIBS        = -lncurses
++#LIBS        = -lncurses
  
  ###########################
-@@ -39,12 +39,14 @@
- #LIBS       = -lcurses -ltermcap
+ # LINUX without ncurses
+@@ -41,8 +41,8 @@
+ ###########################
+ # FreeBSD (Thanks to Peter Brevik)
+ ###########################
+-#CFLAGS      = -DCOLOR_SUPPORT -DNCURSES
+-#LIBS        = -lncurses -lmytinfo -lcompat
++CFLAGS     += -DCOLOR_SUPPORT -DNCURSES
++LIBS        = -lncurses -lmytinfo -lcompat
  
  ###########################
--# FreeBSD with ncurses  (Thanks to Peter Brevik)
-+# FreeBSD (Thanks to Peter Brevik)
- ###########################
- #ADD_INCLUDE = /usr/include/ncurses
- #ADD_LIB     = /usr/lib
- #CFLAGS      = -I$(ADD_INCLUDE) -DNCURSES $(ADD_CFLAGS)
- #LIBS        = -L$(ADD_LIB) -lncurses -lmytinfo -lcompat
-+CFLAGS      += -DCOLOR_SUPPORT -DNCURSES
-+LIBS         = -lncurses -lmytinfo -lcompat
- 
- ###########################
- # NeXT (Thanks to fifi)
+ # DOS/Windows with DJGPP
