@@ -15,7 +15,7 @@ MAINTAINER=	wosch@FreeBSD.org
 
 site_perl=${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 BUILD_DEPENDS=  \
-		${site_perl}/${PERL_ARCH}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
+		${site_perl}/Net/FTP.pm:${PORTSDIR}/net/p5-Net \
 		${site_perl}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${site_perl}/URI.pm:${PORTSDIR}/net/p5-URI
