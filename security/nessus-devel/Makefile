@@ -10,7 +10,8 @@ MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
 		http://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/nessus/nessus-${PORTVERSION}/src/ \
-		ftp://ftp.sekure.net/pub/nessus/nessus-${PORTVERSION}/src/
+		ftp://ftp.au.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
+		ftp://ftp.ayamura.org/pub/nessus/nessus-${PORTVERSION}/src/
 DISTNAME=	nessus-core-${PORTVERSION}
 
 MAINTAINER=	udo.schweigert@siemens.com
