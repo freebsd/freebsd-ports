@@ -38,28 +38,14 @@ NO_BUILD=	yes
 L2HDIR=		${PREFIX}/share/latex2html
 
 post-patch:
-.for f in configure-pstoimg latex2html latex2html.config \
-	ps2img-n pstoimg pstoimg_nopipes
-		${PERL} -e "s:\\\$$ENV{'L2HMODULE'}/user:${L2HDIR}:" \
-			-pi ${WRKSRC}/$f
-.endfor
 .for f in configure-pstoimg install-test latex2html makemap \
 	ps2img-n pstoimg pstoimg_nopipes texexpand
 		${PERL} -e "s:^\#!/usr/local/bin/perl:\#!${PERL}:" \
 		-pi ${WRKSRC}/$f
 .endfor
-	${PERL} -e "s:^use lib \"/usr/local/share/latex2html\":use lib \'${L2HDIR}\':" \
-	${PERL} -e "s:/usr/local/share/latex2html:${L2HDIR}:" \
-	-pi ${WRKSRC}/texexpand
-.ifdef WITH_GIF
-	${PERL} -pi -e "s|IMAGE_TYPE=.*;|IMAGE_TYPE='gif';|" \
-		${WRKSRC}/latex2html.config
-.endif
 
 do-install:
 	${MKDIR} ${L2HDIR}
-	${INSTALL_DATA} ${FILESDIR}/local.pm ${FILESDIR}/DBM.tst.db \
-		${FILESDIR}/TEST2.TMP ${L2HDIR}
 .for dir in IndicTeX-HTML XyMTeX-HTML cweb2html docs/changebar \
 	docs/hthtml docs/psfiles docs example foilhtml icon-dos icons.gif \
 	icons.png makeseg styles tests texinputs versions
@@ -75,6 +61,11 @@ do-install:
 .endfor
 	${MKDIR} ${PREFIX}/share/texmf/tex/latex/latex2html
 	${INSTALL_DATA} ${WRKSRC}/texinputs/* ${PREFIX}/share/texmf/tex/latex/latex2html
-	${INSTALL_SCRIPT} ${WRKSRC}/latex2html ${PREFIX}/bin
+.ifdef WITH_GIF
+	cd ${L2HDIR}; ${CAT} ${FILESDIR}/answer-gif | ${PERL} install-test
+.else
+	cd ${L2HDIR}; ${CAT} ${FILESDIR}/answer-png | ${PERL} install-test
+.endif
+	${INSTALL_SCRIPT} ${L2HDIR}/latex2html ${PREFIX}/bin
 
 .include <bsd.port.mk>
