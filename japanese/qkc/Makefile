@@ -8,8 +8,7 @@
 PORTNAME=	qkc
 PORTVERSION=	1.0
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1995/oct/ \
-		ftp://ftp.iis.u-tokyo.ac.jp/pub1/unix/Kanji/
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA000501/
 DISTNAME=	${PORTNAME}c100
 
 MAINTAINER=	max@FreeBSD.org
