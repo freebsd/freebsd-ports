@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	classpath
-PORTVERSION=	0.10
-PORTREVISION=	1
+PORTVERSION=	0.12
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +23,7 @@ USE_JIKES=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-INFO=	hacking vmintegration
+INFO=		hacking vmintegration
 PLIST_FILES=	lib/security/classpath.security
 
 .include <bsd.port.pre.mk>
