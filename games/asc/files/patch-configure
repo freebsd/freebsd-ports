@@ -1,9 +1,29 @@
 
 $FreeBSD$
 
---- configure.orig	Tue Oct  1 15:16:15 2002
-+++ configure	Tue Oct  1 15:16:21 2002
-@@ -2992,7 +2992,7 @@
+--- configure.orig	Fri Oct 18 19:42:20 2002
++++ configure	Fri Oct 18 19:52:51 2002
+@@ -2219,9 +2219,6 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 2221 "configure"
+ #include "confdefs.h"
+-#ifdef __cplusplus
+-extern "C" void exit(int) throw();
+-#endif
+ 
+ #include <cstdio>
+ #include <cstring>
+@@ -2466,9 +2463,6 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 2468 "configure"
+ #include "confdefs.h"
+-#ifdef __cplusplus
+-extern "C" void exit(int) throw();
+-#endif
+ 
+ #include "paragui.h"
+ #include "pgapplication.h"
+@@ -2992,7 +2986,7 @@
  
  
  
