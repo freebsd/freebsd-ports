@@ -44,20 +44,20 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/extras/syslogtocern.8 ${PREFIX}/man/man8
 	@if [ ! -f ${PREFIX}/sbin/thttpd_wrapper ]; then \
 		${ECHO} "Installing ${PREFIX}/sbin/thttpd_wrapper file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/sbin/thttpd_wrapper; \
-		${ECHO} "${ECHO} \$$\$$ > /var/run/thttpd_wrapper.pid" >> ${PREFIX}/sbin/thttpd_wrapper; \
-		${ECHO} "while true ; do" >> ${PREFIX}/sbin/thttpd_wrapper; \
-		${ECHO} "	${PREFIX}/sbin/thttpd -D -C ${PREFIX}/etc/thttpd.conf" >> ${PREFIX}/sbin/thttpd_wrapper; \
-		${ECHO} "	sleep 10" >> ${PREFIX}/sbin/thttpd_wrapper; \
-		${ECHO} "done" >> ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO_CMD} "#!/bin/sh" > ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO_CMD} "${ECHO_CMD} \$$\$$ > /var/run/thttpd_wrapper.pid" >> ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO_CMD} "while true ; do" >> ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO_CMD} "	${PREFIX}/sbin/thttpd -D -C ${PREFIX}/etc/thttpd.conf" >> ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO_CMD} "	sleep 10" >> ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO_CMD} "done" >> ${PREFIX}/sbin/thttpd_wrapper; \
 		${CHMOD} 751 ${PREFIX}/sbin/thttpd_wrapper; \
 	fi
 	@${ECHO} "Installing ${PREFIX}/etc/thttpd.conf.sample configuration file."
-	@${ECHO} "dir=${PREFIX}/www/data" > ${PREFIX}/etc/thttpd.conf.sample
-	@${ECHO} "chroot" >> ${PREFIX}/etc/thttpd.conf.sample
-	@${ECHO} "cgipat=*.cgi" >> ${PREFIX}/etc/thttpd.conf.sample
-	@${ECHO} "logfile=${PREFIX}/www/logs/thttpd.log" >> ${PREFIX}/etc/thttpd.conf.sample
-	@${ECHO} "pidfile=/var/run/thttpd.pid" >> ${PREFIX}/etc/thttpd.conf.sample
+	@${ECHO_CMD} "dir=${PREFIX}/www/data" > ${PREFIX}/etc/thttpd.conf.sample
+	@${ECHO_CMD} "chroot" >> ${PREFIX}/etc/thttpd.conf.sample
+	@${ECHO_CMD} "cgipat=*.cgi" >> ${PREFIX}/etc/thttpd.conf.sample
+	@${ECHO_CMD} "logfile=${PREFIX}/www/logs/thttpd.log" >> ${PREFIX}/etc/thttpd.conf.sample
+	@${ECHO_CMD} "pidfile=/var/run/thttpd.pid" >> ${PREFIX}/etc/thttpd.conf.sample
 	@if [ ! -f ${PREFIX}/etc/rc.d/thttpd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/thttpd.sh startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/thttpd.sh ${PREFIX}/etc/rc.d/thttpd.sh; \

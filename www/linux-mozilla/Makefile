@@ -57,32 +57,32 @@ do-patch:
 do-configure:
 #	- kldload linux
 #	${SETENV} $DISPLAY="NONE" ${WRKSRC}/bin/mozilla file:///dev/null
-	${ECHO} "#!/bin/sh"		>${WRKDIR}/${STARTUP_CMD}
-	${ECHO} -n "cd "		>>${WRKDIR}/${STARTUP_CMD}
-	${ECHO} ${INSTALL_DIR}		>>${WRKDIR}/${STARTUP_CMD}
-	${ECHO} "exec ./mozilla"	>>${WRKDIR}/${STARTUP_CMD}
-	${ECHO} "#!/bin/sh"					>${WRKDIR}/linkfarm
-	${ECHO} "# Run this after installing Netscape plugins."	>>${WRKDIR}/linkfarm
-	${ECHO} "cd ${PREFIX}/lib/linux-mozilla/plugins"	>>${WRKDIR}/linkfarm
-	${ECHO} -n "${FIND} ../../netscape-linux/plugins/*"	>>${WRKDIR}/linkfarm
-	${ECHO} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
-	${ECHO} -n "${FIND} ../../linux-netscape6/plugins"	>>${WRKDIR}/linkfarm
-	${ECHO} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} "#!/bin/sh"		>${WRKDIR}/${STARTUP_CMD}
+	${ECHO_CMD} -n "cd "		>>${WRKDIR}/${STARTUP_CMD}
+	${ECHO_CMD} ${INSTALL_DIR}		>>${WRKDIR}/${STARTUP_CMD}
+	${ECHO_CMD} "exec ./mozilla"	>>${WRKDIR}/${STARTUP_CMD}
+	${ECHO_CMD} "#!/bin/sh"					>${WRKDIR}/linkfarm
+	${ECHO_CMD} "# Run this after installing Netscape plugins."	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} "cd ${PREFIX}/lib/linux-mozilla/plugins"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} -n "${FIND} ../../netscape-linux/plugins/*"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} -n "${FIND} ../../linux-netscape6/plugins"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 
 pre-install:
-	${ECHO} bin/${STARTUP_CMD} > ${PLIST}
-	${ECHO} "@unexec ${FIND} ${PREFIX}/lib/linux-mozilla/plugins -type l \
+	${ECHO_CMD} bin/${STARTUP_CMD} > ${PLIST}
+	${ECHO_CMD} "@unexec ${FIND} ${PREFIX}/lib/linux-mozilla/plugins -type l \
 		-exec ${RM} {} \;" >> ${PLIST}
 	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
-		${ECHO} lib/linux-mozilla/$${i} >> ${PLIST}; \
+		${ECHO_CMD} lib/linux-mozilla/$${i} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/bin; \
 	for i in `find -d * -type d`; do \
-		${ECHO} @dirrm lib/linux-mozilla/$${i} >> ${PLIST}; \
+		${ECHO_CMD} @dirrm lib/linux-mozilla/$${i} >> ${PLIST}; \
 	done
-	${ECHO} lib/linux-mozilla/linkfarm >> ${PLIST}
-	${ECHO} "@exec ${PREFIX}/lib/linux-mozilla/linkfarm" >> ${PLIST}
-	${ECHO} @dirrm lib/linux-mozilla >> ${PLIST}
+	${ECHO_CMD} lib/linux-mozilla/linkfarm >> ${PLIST}
+	${ECHO_CMD} "@exec ${PREFIX}/lib/linux-mozilla/linkfarm" >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/linux-mozilla >> ${PLIST}
 
 do-install:
 	${MKDIR} ${INSTALL_DIR}

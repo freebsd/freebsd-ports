@@ -42,21 +42,21 @@ do-configure:
 		dir=`${MOD_PHP4_WRKSRC_CMD}`; \
 		php contrib/phpinfo.php > phpinfo.out; \
 		( \
-		${ECHO} "PHP4_SRC=$${dir}"; \
-		${ECHO} "PHP4_CONFIGURED=yes"; \
-		${ECHO} "RUBY_SRC="; \
-		${ECHO} "RUBY=${RUBY}"; \
-		${ECHO} "PHPINFO_OUT=phpinfo.out"; \
-		${ECHO} "LIBRUBYS_SO=${LOCALBASE}/lib/libruby.so"; \
+		${ECHO_CMD} "PHP4_SRC=$${dir}"; \
+		${ECHO_CMD} "PHP4_CONFIGURED=yes"; \
+		${ECHO_CMD} "RUBY_SRC="; \
+		${ECHO_CMD} "RUBY=${RUBY}"; \
+		${ECHO_CMD} "PHPINFO_OUT=phpinfo.out"; \
+		${ECHO_CMD} "LIBRUBYS_SO=${LOCALBASE}/lib/libruby.so"; \
 		) > Configuration; \
 	)
 
 pre-install:
-	dir=`. ${WRKSRC}/phpinfo.sd; ${ECHO} $${PI_EXTENSION_DIR}`; \
+	dir=`. ${WRKSRC}/phpinfo.sd; ${ECHO_CMD} $${PI_EXTENSION_DIR}`; \
 	${MKDIR} $${dir}
 
 post-install:
-	dir=`. ${WRKSRC}/phpinfo.sd; ${ECHO} $${PI_EXTENSION_DIR}`; \
+	dir=`. ${WRKSRC}/phpinfo.sd; ${ECHO_CMD} $${PI_EXTENSION_DIR}`; \
 	${INSTALL_DATA} ${WRKSRC}/ext_pruby_src/pruby_*.rb $${dir}/; \
 	${PERL} -i -pe "s,%%EXTENSION_DIR%%,$${dir#${PREFIX}/},g" ${TMPPLIST}
 .if !defined(NOPORTDOCS)

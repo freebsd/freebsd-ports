@@ -27,9 +27,9 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mMosaic-src-${PORTVERSION}
 
 pre-install:
-	${ECHO} bin/mmosaic > ${PLIST}
+	${ECHO_CMD} bin/mmosaic > ${PLIST}
 	cd ${WRKSRC}/Copyrights; for i in `find * -type f`; do \
-		${ECHO} share/doc/mmosaic/$${i} >> ${PLIST}; \
+		${ECHO_CMD} share/doc/mmosaic/$${i} >> ${PLIST}; \
 	done
 
 do-install:

@@ -27,10 +27,10 @@ do-patch:
 		${WRKSRC}/august
 
 pre-install:
-	${ECHO} bin/august > ${PLIST}
+	${ECHO_CMD} bin/august > ${PLIST}
 .if !defined(NOPORTDOCS)
-	${ECHO} share/doc/august/specchars.txt >> ${PLIST}
-	${ECHO} @dirrm share/doc/august >> ${PLIST}
+	${ECHO_CMD} share/doc/august/specchars.txt >> ${PLIST}
+	${ECHO_CMD} @dirrm share/doc/august >> ${PLIST}
 .endif
 
 do-install:

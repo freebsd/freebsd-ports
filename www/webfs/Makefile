@@ -31,7 +31,7 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/webfsd.man ${PREFIX}/man/man1/webfsd.1
 .if !exists(${PREFIX}/etc/webfsd/mime.types)
 	@${MKDIR} ${PREFIX}/etc/webfsd
-	@${ECHO} "# Insert mime types here" > ${PREFIX}/etc/webfsd/mime.types
+	@${ECHO_CMD} "# Insert mime types here" > ${PREFIX}/etc/webfsd/mime.types
 .endif
 
 .include <bsd.port.post.mk>

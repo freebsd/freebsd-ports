@@ -99,18 +99,18 @@ do-configure:
 	${FILESDIR}/start.sh >${WRKDIR}/${STARTUP_CMD}
 
 pre-install:
-	${ECHO} bin/${STARTUP_CMD} > ${PLIST}
+	${ECHO_CMD} bin/${STARTUP_CMD} > ${PLIST}
 	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
-		${ECHO} lib/linux-netscape6/$${i} >> ${PLIST}; \
+		${ECHO_CMD} lib/linux-netscape6/$${i} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/plugins; for i in `find * \! -type d | sort`; do \
-		${ECHO} lib/linux-netscape6/plugins/$${i} >> ${PLIST}; \
+		${ECHO_CMD} lib/linux-netscape6/plugins/$${i} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/bin; \
 	for i in `find -d * -type d`; do \
-		${ECHO} @dirrm lib/linux-netscape6/$${i} >> ${PLIST}; \
+		${ECHO_CMD} @dirrm lib/linux-netscape6/$${i} >> ${PLIST}; \
 	done
-	${ECHO} @dirrm lib/linux-netscape6 >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/linux-netscape6 >> ${PLIST}
 
 do-install:
 	${MKDIR} ${INSTALL_DIR}

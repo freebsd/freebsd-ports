@@ -43,7 +43,7 @@ pre-install:
 post-install:
 .if defined(WITH_128BIT)
 	cd ${WRKDIR}/${FORTIFY} \
-	&& (${ECHO}; ${ECHO} yes; ${ECHO} no; ${ECHO} no) \
+	&& (${ECHO_CMD}; ${ECHO_CMD} yes; ${ECHO_CMD} no; ${ECHO_CMD} no) \
 	| ./Fortify.sh ${PREFIX}/lib/netscape/netscape.bin
 .endif
 	@${CAT} ${DESCR}

@@ -86,7 +86,7 @@ post-configure:
 		-e "s;@BROWSER_VER@;${BROWSER_VER};g" \
 		${WRAPPER_TEMPLATE} >${WRKSRC}/netscape
 	${CHMOD} +x ${WRKSRC}/netscape
-	${ECHO} -n ${INFILE_HEAD},${NDIR} >${WRKSRC}/infile
+	${ECHO_CMD} -n ${INFILE_HEAD},${NDIR} >${WRKSRC}/infile
 
 .if defined(USE_AOUT_LIB)
 pre-install:
@@ -115,7 +115,7 @@ do-install:
 .endif
 .if defined(WITH_128BIT) && !defined(NO_FORTIFY)
 	cd ${WRKDIR}/${FORTIFY} \
-	&& (${ECHO}; ${ECHO} yes; ${ECHO} no; ${ECHO} no) \
+	&& (${ECHO_CMD}; ${ECHO_CMD} yes; ${ECHO_CMD} no; ${ECHO_CMD} no) \
 	| ./Fortify.sh ${NDIR}/${BROWSER_ARC}-${BROWSER_VER}.bin
 .endif
 	${CHOWN} -R root:wheel ${NDIR}
