@@ -1,7 +1,7 @@
---- Makefile.orig	Sat Jul 25 12:05:46 1998
-+++ Makefile	Wed Apr 14 10:04:18 1999
+--- Makefile.orig	Sun Oct 24 10:30:09 1999
++++ Makefile	Tue Feb  1 03:01:19 2000
 @@ -22,10 +22,10 @@
- #
+ # enochw@scn.org Oct 99: flags for UWIN 2.0 (Unix for Windows)
  
  # Where to install things for Linux sites (FSSTND)
 -BINDIR	= /usr/bin
@@ -66,7 +66,7 @@
  #CC	= cc
  
  # Take these flags for SCO unix.
-@@ -178,7 +178,7 @@
+@@ -185,7 +185,7 @@
  SOBJS	= script.o sysdep1.o common.o
  
  # fmg 8/22/97: merge in new OPFLAGS...
@@ -75,27 +75,30 @@
  
  R	= $(ROOTDIR)
  
-@@ -188,7 +188,7 @@
+@@ -195,7 +195,7 @@
  		$(CC) $(LFLAGS) -o minicom $(MOBJS) $(LIBS)
  
  po: dummy
--		make -C po
-+		## cd po ; $(MAKE)
+-		$(MAKE) -C po
++ 		## cd po ; $(MAKE)
  
  keyserv:	$(KOBJS)
  		$(CC) -o keyserv $(LFLAGS) $(KOBJS) $(LIBS)
-@@ -241,12 +241,12 @@
+@@ -248,7 +248,7 @@
  dummy:
  
  install:	$(PROGS)
--		make -C po install R=$(R)
-+		## cd po ; $(MAKE) install R=$(R)
+-		$(MAKE) -C po install R=$(R)
++ 		## cd po ; $(MAKE) install R=$(R)
  		sh install.sh $(R)$(LIBDIR) $(R)$(BINDIR) $(R)$(MANDIR) $(R)$(DOCDIR)
+ 
+ install2:	$(PROGS)
+@@ -256,7 +256,7 @@
  
  clobber:
  		rm -f *.o *~ minicom keyserv runscript ascii-xfr
--		make -C po clean
-+		## cd po ; $(MAKE) clean
+-		$(MAKE) -C po clean
++ 		## cd po ; $(MAKE) clean
  
  clean:		
  		rm -f *.o

@@ -8,12 +8,13 @@
 #
 
 DISTNAME=	${PKGNAME}.src
-PKGNAME=	minicom-1.82.1
+PKGNAME=	minicom-1.83.0
 CATEGORIES=	comms
-MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
+#MASTER_SITES=	${MASTER_SITE_SUNSITE}  \
+MASTER_SITES=	\
+		http://www.pp.clinet.fi/~walker/mc-dev/  \
 		http://www.clinet.fi/~walker/  \
-		http://www.pp.clinet.fi/~walker/  \
-		ftp://ftp.cistron.nl/pub/people/miquels/software/
+		http://www.pp.clinet.fi/~walker/
 MASTER_SITE_SUBDIR=	apps/serialcomm/dialout
 
 MAINTAINER=     obrien@FreeBSD.org
