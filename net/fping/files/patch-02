@@ -1,5 +1,5 @@
 --- fping.c.orig	Wed Jan  8 12:29:43 1997
-+++ fping.c	Sat Aug 26 20:21:27 2000
++++ fping.c	Sat Apr 14 00:43:43 2001
 @@ -208,6 +208,10 @@
  #include <arpa/inet.h>
  #include <netdb.h>
@@ -95,6 +95,15 @@
    if (result<0) { return 0; } /* timeout */
    
  #ifdef DEBUG
+@@ -1107,7 +1119,7 @@
+       return 0;
+ #endif
+   ip = (struct ip *) buffer;
+-#if defined(__alpha__) && __STDC__
++#if defined(__alpha__) && defined(__osf1__) && __STDC__
+   /* The alpha headers are decidedly broken.
+    * Using an ANSI compiler, it provides ip_vhl instead of ip_hl and
+    * ip_v.  So, to get ip_hl, we mask off the bottom four bits.
 @@ -1144,7 +1156,6 @@
    h=table[n];
  
