@@ -1,0 +1,4 @@
+A Perl interface to URL shortening sites. These sites maintain databases
+of long URLs, each of which has a unique identifier.
+
+WWW: http://search.cpan.org/dist/WWW-Shorten/

@@ -1,0 +1,36 @@
+%%SITE_PERL%%/WWW/Shorten.pm
+%%SITE_PERL%%/WWW/Shorten/EkDk.pm
+%%SITE_PERL%%/WWW/Shorten/MakeAShorterLink.pm
+%%SITE_PERL%%/WWW/Shorten/Metamark.pm
+%%SITE_PERL%%/WWW/Shorten/NotLong.pm
+%%SITE_PERL%%/WWW/Shorten/Shorl.pm
+%%SITE_PERL%%/WWW/Shorten/ShortLink.pm
+%%SITE_PERL%%/WWW/Shorten/SmLnk.pm
+%%SITE_PERL%%/WWW/Shorten/SnipURL.pm
+%%SITE_PERL%%/WWW/Shorten/TinyClick.pm
+%%SITE_PERL%%/WWW/Shorten/TinyURL.pm
+%%SITE_PERL%%/WWW/Shorten/Tinylink.pm
+%%SITE_PERL%%/WWW/Shorten/generic.pm
+%%SITE_PERL%%/WWW/Shorten/qURL.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Artistic
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST.SKIP
+%%PORTDOCS%%%%DOCSDIR%%/META.yml
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SIGNATURE
+%%PORTDOCS%%%%EXAMPLESDIR%%/shorten
+%%PORTDOCS%%%%EXAMPLESDIR%%/shortenrc
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
+@dirrm %%SITE_PERL%%/WWW/Shorten
+@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
