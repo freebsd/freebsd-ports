@@ -1254,6 +1254,7 @@ jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/start/ConverterWindows.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/start/HelloSwingApplet.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/start/SwingApplication.gif
 jdk%%VERSION%%/docs/books/tutorial/forms/sendusmail.html
+jdk%%VERSION%%/docs/books/tutorial/forms/survey.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE-1dot1/FirstClass.java
 jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE-1dot1/SecondClass.java
 jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE-1dot1/Useless.java
@@ -1494,6 +1495,9 @@ jdk%%VERSION%%/docs/books/tutorial/information/auto-reply.html
 jdk%%VERSION%%/docs/books/tutorial/information/bios.html
 jdk%%VERSION%%/docs/books/tutorial/information/copyright.html
 jdk%%VERSION%%/docs/books/tutorial/information/download.html
+jdk%%VERSION%%/docs/books/tutorial/information/example/nothing.java
+jdk%%VERSION%%/docs/books/tutorial/information/example-1dot1/nothing.java
+jdk%%VERSION%%/docs/books/tutorial/information/example-1dot1/nothing.html
 jdk%%VERSION%%/docs/books/tutorial/information/examples.html
 jdk%%VERSION%%/docs/books/tutorial/information/feature_article.html
 jdk%%VERSION%%/docs/books/tutorial/information/glossary.html
@@ -2854,6 +2858,8 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image5.jpg
 jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image6.jpg
 jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image7.jpg
 jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/image8.jpg
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/images/lunar-img.zip
+jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/index.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/fifthexample.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/firstexample.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/fourthexample.html
@@ -3198,6 +3204,8 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial/jar/api/example-1dot2
 @dirrm jdk%%VERSION%%/docs/books/tutorial/jar/api
 @dirrm jdk%%VERSION%%/docs/books/tutorial/jar
+@dirrm jdk%%VERSION%%/docs/books/tutorial/information/example
+@dirrm jdk%%VERSION%%/docs/books/tutorial/information/example-1dot1
 @dirrm jdk%%VERSION%%/docs/books/tutorial/information
 @dirrm jdk%%VERSION%%/docs/books/tutorial/images/diamonds
 @dirrm jdk%%VERSION%%/docs/books/tutorial/images/bookcovers
