@@ -90,8 +90,6 @@
     SUBDIR += kde-icons-wasp
     SUBDIR += kdeartwork3
     SUBDIR += kwin_flatcurve
-    SUBDIR += lila-xfce4-panel
-    SUBDIR += lila-xffm
     SUBDIR += lila-xfwm4
     SUBDIR += linux-gtk-bluecurve-theme
     SUBDIR += metacity-aluminumalloy-cryogenic-theme
