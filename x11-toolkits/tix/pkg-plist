@@ -1,9 +1,9 @@
 bin/satixwish4.1.7.5
 bin/tixwish4.1.7.5
-bin/sawish4.1
-bin/satclsh7.5
 @exec ln -s %D/%F %B/tixwish
 @unexec rm %B/tixwish
+bin/sawish4.1
+bin/satclsh7.5
 include/tix.h
 include/tix/generic/tix.h
 include/tix/generic/tixBitmaps.h
@@ -185,6 +185,7 @@ share/tix4.1/demos/samples/CmpImg.tcl
 share/tix4.1/demos/samples/CmpImg1.tcl
 share/tix4.1/demos/samples/CmpImg2.tcl
 share/tix4.1/demos/samples/CmpImg3.tcl
+share/tix4.1/demos/samples/CmpImg4.tcl
 share/tix4.1/demos/samples/ComboBox.tcl
 share/tix4.1/demos/samples/Control.tcl
 share/tix4.1/demos/samples/DirDlg.tcl
@@ -303,3 +304,12 @@ share/tix4.1/WInfo.tcl
 share/tix4.1/WinFile.tcl
 share/tix4.1/pkgIndex.tcl
 share/tix4.1/tclIndex
+@dirrm include/tix/generic
+@dirrm include/tix/unix
+@dirrm include/tix
+@dirrm share/tix4.1/pref
+@dirrm share/tix4.1/demos/samples
+@dirrm share/tix4.1/demos/bitmaps
+@dirrm share/tix4.1/demos
+@dirrm share/tix4.1/bitmaps
+@dirrm share/tix4.1

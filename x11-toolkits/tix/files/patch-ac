@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Feb 16 06:12:37 1997
-+++ Makefile.in	Sun Apr 20 01:37:54 1997
+--- Makefile.in.orig	Sat Jun 28 02:49:15 1997
++++ Makefile.in	Tue Jul 29 18:56:35 1997
 @@ -29,7 +29,7 @@
  # Directory in which to install the library of Tix scripts and demos
  # (note: you can set the TIX_LIBRARY environment variable at run-time to
@@ -24,14 +24,15 @@
 +LIBS_TCLONLY = @TCL_LIB_SPEC@ @TCL_LIBS@
  
 -RUN_TCLSH	= TCL_LIBRARY=$(TCL_SRC_DIR)/library \
-+RUN_TCLSH	= TCL_LIBRARY=/usr/libdata/tcl \
- 		  TK_LIBRARY=$(TK_SRC_DIR)/library \
+-		  TK_LIBRARY=$(TK_SRC_DIR)/library \
 -	          $(TCL_SRC_DIR)/unix/tclsh
-+	          /usr/bin/tclsh
++RUN_TCLSH	= TCL_LIBRARY=$(TCL_SRC_DIR)/../../lib/tcl7.5 \
++		  TK_LIBRARY=$(TK_SRC_DIR)/../../lib/tk4.1 \
++	          $(TCL_SRC_DIR)/../../bin/tclsh7.5
  
  
  #----------------------------------------------------------------
-@@ -131,7 +131,8 @@
+@@ -133,7 +133,8 @@
  CC_SWITCHES = $(CFLAGS) $(AC_FLAGS) -I$(TCL_GENERIC_DIR) \
      -I$(TCL_SRC_DIR)/unix -I$(TK_GENERIC_DIR) -I$(TK_SRC_DIR)/unix \
      $(ITCL_CFLAGS) \
@@ -41,12 +42,12 @@
  
  #----------------------------------------------------------------
  # The information below should be usable as is. You shouldn't need
-@@ -210,24 +211,24 @@
+@@ -211,24 +212,24 @@
  # scripts of TK must be included in the fixed order.
  #----------------------------------------------------------------------
  
 -TCL_SCRIPTS = $(TCL_SRC_DIR)/library/*.tcl
-+TCL_SCRIPTS = /usr/libdata/tcl/*.tcl
++TCL_SCRIPTS = $(TCL_SRC_DIR)/../../lib/tcl7.5/*.tcl
  
  TK_SCRIPTS = \
 -    $(TK_SRC_DIR)/library/bgerror.tcl \

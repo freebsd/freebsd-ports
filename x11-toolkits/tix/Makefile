@@ -1,13 +1,13 @@
 # New ports collection makefile for:	tix
-# Version required:	4.1.0
+# Version required:	4.1.0.005
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.8 1997/04/22 10:16:06 tg Exp $
+# $Id: Makefile,v 1.9 1997/07/17 15:13:01 max Exp $
 #
 
-DISTNAME=	Tix4.1.0
-PKGNAME=	tix-4.1.0
+DISTNAME=	Tix4.1.0.005
+PKGNAME=	tix-4.1.0.005
 CATEGORIES=	x11 tk41
 MASTER_SITES=	ftp://ftp.xpi.com/pub/
 
@@ -15,10 +15,10 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/unix/tk4.1
+WRKSRC=		${WRKDIR}/Tix4.1.0/unix/tk4.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
-		--with-tcl=/usr/include/tcl \
+		--with-tcl="${PREFIX}/include/tcl7.5" \
 		--with-tk="${PREFIX}/include/tk4.1"
 # this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
@@ -33,14 +33,14 @@ MANN=		BtnBox.n Balloon.n ChkList.n Destroy.n ComboBox.n Control.n \
 		pixmap.n tix.n
 
 pre-configure:
-	@(cd ${WRKDIR}/${DISTNAME}/unix && \
+	@(cd ${WRKSRC}/.. && \
 	    CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
             INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
             INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
             ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
 
 post-install:
-	@(cd ${WRKDIR}/${DISTNAME}/unix && \
+	@(cd ${WRKSRC}/.. && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 	@${MKDIR} ${PREFIX}/man/man1
 	@mv ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
@@ -48,7 +48,7 @@ post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
 .for dir in generic unix
 	@${MKDIR} ${PREFIX}/include/tix/${dir}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${dir}/*.h ${PREFIX}/include/tix/${dir}
+	${INSTALL_DATA} ${WRKSRC}/../../${dir}/*.h ${PREFIX}/include/tix/${dir}
 .endfor
 	${RM} ${PREFIX}/include/tix/generic/tix.h
 	@# These two files are the same
