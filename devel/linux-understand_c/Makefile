@@ -100,7 +100,9 @@ do-install:
 .for file in ${BIN_FILES}
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/pc-linux_elf/${file} \
 		${PREFIX}/lib/understand_c/bin/pc-linux_elf
+.if exists(${STRIP})
 	@${STRIP} ${PREFIX}/lib/understand_c/bin/pc-linux_elf/${file}
+.endif
 	@${BRANDELF} -t Linux ${PREFIX}/lib/understand_c/bin/pc-linux_elf/${file}
 	@if [ ! -f ${PREFIX}/bin/${file} ]; \
 	then \
