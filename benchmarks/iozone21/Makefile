@@ -11,9 +11,6 @@ CATEGORIES=	benchmarks
 MASTER_SITES=   ftp://ftp.cs.uni-sb.de/pub/others/
 EXTRACT_SUFX=	.shar.gz
 
-# This site does not allow root@<hostname> password
-FETCH_CMD=      FTP_PASSWORD=portsuser@FreeBSD.org /usr/bin/fetch
-
 MAINTAINER=	obrien@FreeBSD.org
 
 EXTRACT_CMD=    ( gzcat | awk '{if (/^\#!/) x++} {if(x) print $$0'}| /bin/sh )
