@@ -1,0 +1,8 @@
+IJS is a relatively new initiative to improve the quality and ease
+of use of inkjet printing with Ghostscript. Using IJS, you can add
+new drivers, or upgrade existing ones, without recompiling Ghostscript.
+All driver authors are encouraged to adapt their drivers for IJS,
+and if there is an IJS driver available for your printer, it should
+be your first choice.
+
+WWW: http://www.linuxprinting.org/ijs/

@@ -77,6 +77,7 @@
     SUBDIR += latex
     SUBDIR += latex2rtf
     SUBDIR += libgnomeprint
+    SUBDIR += libijs
     SUBDIR += lilypond
     SUBDIR += lout
     SUBDIR += lprps-a4
