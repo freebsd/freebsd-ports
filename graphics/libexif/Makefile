@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	libexif
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.10
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Library to read digital camera file meta-data 
+COMMENT=	Library to read digital camera file meta-data
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
