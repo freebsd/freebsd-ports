@@ -61,8 +61,6 @@ MANLANG=	"" sk
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 		wcopy.1x wmaker.1x wmsetbg.1x wsetfont.1x wxcopy.1x wxpaste.1x
 
-.include <bsd.port.pre.mk>
-
 LINGUAS!=	/bin/cat ${FILESDIR}/LINGUAS
 
 .if defined(WITH_XKB_STATUS)
