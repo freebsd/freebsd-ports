@@ -1,8 +1,8 @@
-*** Count-config.orig	Mon Nov 24 04:49:51 1997
---- Count-config	Sat Nov 29 18:50:53 1997
+*** Count-config.orig	Fri Sep 10 13:26:09 1999
+--- Count-config	Fri Sep 10 13:40:21 1999
 ***************
 *** 20,26 ****
-  trap 'echo '';echo "Interrupt Detected..exiting";rm -f "./Config.tmpl" 2>/dev/null;rm -f "./.alfcf" ;rm -f "./strict" 2>/dev/null;echo '';exit 1' 1 2 3 15
+  trap 'echo '';echo "Interrupt detected..exiting";rm -f "./Config.tmpl" 2>/dev/null;rm -f "./.alfcf" ;rm -f "./strict" 2>/dev/null;echo '';exit 1' 1 2 3 15
   
   Tmpl="./Config.tmpl"
 ! CgiBinDir="/usr/local/etc/httpd/cgi-bin"
@@ -10,7 +10,7 @@
   if [ ! -f "./VERSION" ] 
   then
 --- 20,26 ----
-  trap 'echo '';echo "Interrupt Detected..exiting";rm -f "./Config.tmpl" 2>/dev/null;rm -f "./.alfcf" ;rm -f "./strict" 2>/dev/null;echo '';exit 1' 1 2 3 15
+  trap 'echo '';echo "Interrupt detected..exiting";rm -f "./Config.tmpl" 2>/dev/null;rm -f "./.alfcf" ;rm -f "./strict" 2>/dev/null;echo '';exit 1' 1 2 3 15
   
   Tmpl="./Config.tmpl"
 ! CgiBinDir="${PREFIX}/www/cgi-bin"
@@ -18,7 +18,7 @@
   if [ ! -f "./VERSION" ] 
   then
 ***************
-*** 37,49 ****
+*** 37,50 ****
   Version=`cat ./VERSION`
   Basedir="wwwcount$Version"
   ConfigH="src/config.h"
@@ -28,8 +28,9 @@
 ! DigitDir="$BaseDir/digits"
   DataDir="$BaseDir/data"
 ! LogDir="$BaseDir/logs"
-! LogFile="Count$Version.log"
-  RgbFile="./wcount/rgb.txt"
+! ext=`echo $Version | sed 's/\./_/g'`
+! LogFile="Count$ext.log"
+  RgbFile="./data/rgb.txt"
   
   #
 --- 37,50 ----
@@ -44,11 +45,11 @@
   DataDir="$BaseDir/data"
 ! LogDir="/var/log"
 ! LogFile="Counter.log"
-  RgbFile="./wcount/rgb.txt"
+  RgbFile="./data/rgb.txt"
   
   #
 ***************
-*** 117,123 ****
+*** 118,124 ****
   
   if [ .$answer = . ]
   then
@@ -65,7 +66,7 @@
       until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
       do
 ***************
-*** 183,191 ****
+*** 186,194 ****
   then
       BaseDir=$newpath
       ConfigDir=$BaseDir/conf
@@ -75,9 +76,9 @@
   fi
   
   #
---- 184,190 ----
+--- 186,192 ----
 ***************
-*** 374,380 ****
+*** 377,383 ****
   
   if [ .$answer = . ]
   then
@@ -85,7 +86,7 @@
   fi
       until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
       do
---- 373,379 ----
+--- 375,381 ----
   
   if [ .$answer = . ]
   then
@@ -94,7 +95,7 @@
       until [ $answer = "y" -o $answer = "Y" -o $answer = "n" -o $answer = "N" ]
       do
 ***************
-*** 517,523 ****
+*** 519,525 ****
   ** so RGB names can be looked up, but yet not allow users to make constant
   ** use of this very ineffiecient lookup.
   */
@@ -102,7 +103,7 @@
   EOX
   
   cat<<EOXXX>>$ConfigH
---- 516,522 ----
+--- 517,523 ----
   ** so RGB names can be looked up, but yet not allow users to make constant
   ** use of this very ineffiecient lookup.
   */
@@ -111,17 +112,17 @@
   
   cat<<EOXXX>>$ConfigH
 ***************
-*** 535,540 ****
---- 534,540 ----
-  ##
-  echo "creating variables template file $Tmpl for the install program.."
-  echo "BASE_DIR=\"$BaseDir\"" > $Tmpl
+*** 540,545 ****
+--- 538,544 ----
+  echo "CGIBIN_DIR=\"$CgiBinDir\"" > $Tmpl
+  
+  echo "BASE_DIR=\"$BaseDir\"" >> $Tmpl
 + echo "LIB_DIR=\"$LibDir\"" >> $Tmpl
-  echo "CGIBIN_DIR=\"$CgiBinDir\"" >> $Tmpl
   echo "CONFIG_FILE=\"$ConfFile\"" >> $Tmpl
   echo "CONFIG_DIR=\"$ConfigDir\"" >> $Tmpl
+  echo "DIGIT_DIR=\"$DigitDir\"" >> $Tmpl
 ***************
-*** 543,549 ****
+*** 547,553 ****
   echo "LOG_DIR=\"$LogDir\"" >> $Tmpl
   echo "LOG_FILE=\"$LogFile\"" >> $Tmpl
   echo "RGB_FILE=\"$RgbFile\"" >> $Tmpl
@@ -129,7 +130,7 @@
   ##
   # create template for install program --ends
   ##
---- 543,549 ----
+--- 546,552 ----
   echo "LOG_DIR=\"$LogDir\"" >> $Tmpl
   echo "LOG_FILE=\"$LogFile\"" >> $Tmpl
   echo "RGB_FILE=\"$RgbFile\"" >> $Tmpl
