@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ap-utils
-PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +15,7 @@ MAINTAINER=	daniel+aputils@pelleg.org
 COMMENT=	A set of utilities to configure and monitor wireless access points
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
@@ -29,7 +29,7 @@ post-patch:
 post-install:
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/Documentation && \
-		${INSTALL_DATA} FAQ Ovislink-HOWTO.html ${DOCSDIR}
+		${INSTALL_DATA} FAQ Ovislink-HOWTO.html HARDWARE-NOTES README.ap-gl ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
