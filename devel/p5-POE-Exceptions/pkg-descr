@@ -1,0 +1,17 @@
+POE::Exceptions extends POE to catch exceptions neatly.  A new signal,
+DIE, is introduced.  This signal will be fired every time an exception
+occurs.  (For those of you new to the term exception, an exception is
+whenever the code decides to bail out by die'ing.) If the signal handler
+returns 1 (as in the example above), POE will assume that the handler
+dealt with the signal appropriately.  If the signal handler returns 0,
+POE will assume that the handler does not want to deal with the signal
+and POE will propgate the exception as if the handler never existed.
+
+Caveat: POE::Exceptions will die on its own in the case of a double
+exception fault.  If the DIE signal handler itself throws an exception,
+POE::Exceptions will shut the program down and bail out.
+
+WWW: http://search.cpan.org/dist/POE-Exceptions/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
