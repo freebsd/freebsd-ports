@@ -1,0 +1,12 @@
+
+$FreeBSD$
+
+--- Makefile.srclist.orig	Fri Sep 14 01:36:54 2001
++++ Makefile.srclist	Fri Oct  5 20:14:43 2001
+@@ -34,3 +34,6 @@
+         vpiinternal.c vpiinternalfio.c
+ SRC_CPP = disk.cpp fio.cpp prochandle.cpp strexp.cpp string.cpp tga.cpp \
+           tgadither.cpp
++
++srclist:
++	@echo ${HDR} ${SRC_C} ${SRC_CPP}

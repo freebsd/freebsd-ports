@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	vertex
-PORTVERSION=	0.0.1d
+PORTVERSION=	0.1.6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
-DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
@@ -19,11 +18,16 @@ LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/vertex
 
+IMLIB_CONFIG?=	${X11BASE}/bin/imlib-config
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GTK=	yes
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-MAKEFILE=	Makefile.Linux
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		IMLIB_CONFIG="${IMLIB_CONFIG}"
+INSTALL_TARGET=	vertex_install
+
+MAN1=		${PORTNAME}.1
 
 .include <bsd.port.mk>

@@ -1,0 +1,30 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Fri Oct  5 20:20:24 2001
++++ Makefile	Fri Oct  5 20:34:15 2001
+@@ -0,0 +1,24 @@
++PREFIX?= /usr/X11R6
++X11BASE?= /usr/X11R6
++BIN= vertex
++
++GTK_CONFIG?= gtk12-config
++IMLIB_CONFIG?= imlib-config
++
++GTK_CFLAGS!= ${GTK_CONFIG} --cflags
++GTK_LIBS!= ${GTK_CONFIG} --libs
++IMLIB_CFLAGS!= ${IMLIB_CONFIG} --cflags
++IMLIB_LIBS!= ${IMLIB_CONFIG} --libs
++PTHREAD_LIBS?= -pthread
++
++PROG= ${BIN}
++SRCS!= ${MAKE} -f ${.CURDIR}/Makefile.srclist srclist
++CFLAGS+= -DHAVE_IMLIB ${GTK_CFLAGS} ${IMLIB_CFLAGS} -DPREFIX=\"${PREFIX}\" \
++	 -DX11BASE=\"${X11BASE}\"
++CXXFLAGS= ${CFLAGS}
++LDADD+= ${GTK_LIBS} ${IMLIB_LIBS} -lGLU -lGL $(PTHREAD_LIBS) -lgtkgl \
++	-lz
++MAN1=
++
++.include <bsd.prog.mk>
++.include "Makefile.install.UNIX"
