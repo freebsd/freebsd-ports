@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	maildrop
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR= courier
+MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	petef@databits.net
 
 # Maildrop is usually installed with gdbm extensions. If you do not
-# want these extensions installed, NO_GDBM must be defined.
+# want these extensions installed, define WITHOUT_GDBM.
 #
-.if !defined(NO_GDBM)
+.if !defined(WITHOUT_GDBM)
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 .endif
 
@@ -30,7 +30,7 @@ INSTALL_TARGET=	install-strip
 MAILDROP_SUID?=	root
 MAILDROP_SGID?=	mail
 
-CONFIGURE_ARGS=	--enable-syslog=1 \
+CONFIGURE_ARGS+=	--enable-syslog=1 \
 		--enable-use-flock \
 		--with-etcdir="${PREFIX}/etc" \
 		--enable-maildrop-uid="${MAILDROP_SUID}" \
@@ -49,7 +49,7 @@ MAN1=		dotlock.1 maildirmake.1 maildrop.1 mailbot.1 makemime.1 \
 MAN5=		maildropex.5 maildropfilter.5 maildropgdbm.5
 MAN8=		maildirquota.8 deliverquota.8
 
-.if defined(NO_GDBM)
+.if defined(WITHOUT_GDBM)
 CONFIGURE_ARGS+=	--without-db
 .endif
 
