@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.9.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://xine.sourceforge.net/files/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -20,15 +21,15 @@ LIB_DEPENDS=	xine.0:${PORTSDIR}/graphics/libxine \
 		png.5:${PORTSDIR}/graphics/png \
 		intl.1:${PORTSDIR}/devel/gettext
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes
-USE_LIBTOOL=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		THREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
-			CPPFLAGS="-I${LOCALBASE}/include" \
-			LIBS="-L${LOCALBASE}/lib"
 
 MANLANG=	"" es fr pl
 MAN1=		aaxine.1 xine.1
@@ -44,8 +45,12 @@ CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
 .endif
 
-post-configure:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
+post-patch:
+	@${PERL} -pi -e \
+		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
+		 s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
+		 s|-L/usr/local/lib||g ; \
+		 s|-I/usr/local/include||g' ${WRKSRC}/configure
 
 post-install:
 	@${CP} ${PREFIX}/man/man1/aaxine.1 ${PREFIX}/man/fr/man1/aaxine.1
