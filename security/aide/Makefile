@@ -15,6 +15,7 @@ MAINTAINER=     Cy.Schubert@uumail.gov.bc.ca
 
 LIB_DEPENDS=	mhash.2:${PORTSDIR}/security/mhash
 
+USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
