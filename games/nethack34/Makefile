@@ -25,6 +25,7 @@ PLIST_SUB=	HACKNAME="${HACKNAME}" \
 
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 
+# Configure these variables as you want them to be.
 HACKNAME?=	nethack
 HACKDIR?=	lib/${HACKNAME}
 HACKDOCSDIR?=	share/doc/${HACKNAME}
