@@ -1,0 +1,11 @@
+-------------------
+How To Use PX fonts
+-------------------
+
+dvips:
+        Add a line "p +pxr.map" into ${PREFIX}/${TEXMF}/dvips/base/config.ps.
+
+dvipdfm:
+        Add a line "f pxr3.map" into ${PREFIX}/${TEXMF}/dvipdfm/config/config.
+
+(NOTE: This instruction depends on the directory layout of teTeX distribution.)

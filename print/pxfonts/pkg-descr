@@ -1,0 +1,24 @@
+The PX fonts consist of
+
+ - virtual text roman fonts using Adobe Palatino (or URW URWPalladioL)
+   with some modified and additional text symbols in OT1, T1, and TS1 encodings
+
+ - virtual text sans serif fonts using Adobe Helvetica (or URW NimbusSanL)
+   with additional text symbols in OT1, T1, TS1, and LY1 encodings
+   (Provided in the TX fonts distribution)
+
+ - monospaced typewriter fonts in OT1, T1, TS1, and LY1 encodings
+   (Provided in the TX fonts distribution)
+
+ - math alphabets using Adobe Palatino (or URWPalladioL) with modified metrics
+
+ - math fonts of all symbols corresponding to those of Computer Modern math
+   fonts (CMSY, CMMI, CMEX, and Greek letters of CMR)
+
+ - math fonts of all symbols corresponding to those of AMS fonts (MSAM and MSBM)
+
+ - additional math fonts of various symbols
+
+All fonts are in the Type 1 format (afm and pfb files).  Necessary tfm and vf
+files together with LaTeXe package files and font map files for dvips are
+provided.
