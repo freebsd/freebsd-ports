@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	eblook
-PORTVERSION=	1.3
+PORTVERSION=	1.5.1
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://openlab.ring.gr.jp/lookup/DIST/eblook/
+MASTER_SITES=	http://openlab.ring.gr.jp/edict/eblook/dist/
+DIST_SUBDIR=	eb
 
 MAINTAINER=	shige@FreeBSD.org
 
 DOCDIR=		share/doc/eblook
 
-LIB_DEPENDS=    eb.3:${PORTSDIR}/japanese/eb2
+LIB_DEPENDS=    eb.6:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=	yes
+USE_AUTOMAKE=	yes
 CONFIGURE_ARGS=	--with-eb-includes=${PREFIX}/include \
 		--with-eb-libraries=${PREFIX}/lib
 
