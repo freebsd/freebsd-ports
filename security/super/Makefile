@@ -4,7 +4,7 @@
 # Date created:			  Fri Mar 18, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.4 1998/12/01 09:50:50 obrien Exp $
+# $Id: Makefile,v 1.5 1998/12/01 10:17:44 obrien Exp $
 #
 
 DISTNAME=	super-3.11.6
@@ -15,7 +15,9 @@ MASTER_SITES=	ftp://phobos.caltech.edu/users/will/  \
 
 MAINTAINER=     obrien@FreeBSD.org
 
-.if ${OSVERSION} < 300000
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 300000
 BROKEN=	'/usr/include/prot.h parse error'         
 .endif
 
@@ -33,4 +35,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/super
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
