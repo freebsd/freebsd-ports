@@ -123,7 +123,6 @@
     SUBDIR += giftrans
     SUBDIR += gimageview
     SUBDIR += gimp
-    SUBDIR += gimp-devel
     SUBDIR += gimp-manual-html
     SUBDIR += gimp-manual-pdf
     SUBDIR += gimp-pmosaic
