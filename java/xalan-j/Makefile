@@ -6,42 +6,47 @@
 #
 
 PORTNAME=	xalan-j
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.0
 CATEGORIES=	java textproc
 MASTER_SITES=	http://xml.apache.org/dist/${PORTNAME}/
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
-#DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
-DISTFILES=	${DISTNAME}-bin${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}-src
 
 MAINTAINER=	znerd@FreeBSD.org
 
-#BUILD_DEPENDS=	ant:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
+
 USE_JAVA=	1.2+
 
-#
-# We'd love to build Xalan rather than install a binary release, but
-# the doc build doesn't seem to work... :(
-#
-NO_BUILD=	YES
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/./_/g}
+ANT?=		${LOCALBASE}/bin/ant
+.if defined(NOPORTDOCS)
+ANT_TARGET=	jar
+.else
+ANT_TARGET=	jar javadocs
+.endif
+JAVASHAREDIR=	${PREFIX}/share/java
+JARDIR=		${JAVASHAREDIR}/classes
+JARFILE=	xalan.jar
+
+do-build:
+	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
 
 do-configure:
 	${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/xalan.sh >${WRKDIR}/xalan
 
-#do-build:
-#	(cd ${WRKSRC} && ant jar)
-#.if !defined(NOPORTDOCS)
-#	(cd ${WRKSRC} && env CLASSPATH=${WRKSRC}/build/xalan.jar:${CLASSPATH} \
-#		ant docs javadocs)
-#.endif
+do-build:
+	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/bin/xalan.jar ${WRKSRC}/bin/xml-apis.jar \
-		${PREFIX}/share/java/classes
-	${INSTALL_SCRIPT} ${WRKDIR}/xalan ${PREFIX}/bin
+	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${JARFILE}..."
+	@${CP} ${WRKSRC}/build/${JARFILE} ${JARDIR}/
+	@${ECHO} " [ DONE ]"
+
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs && \
-		${TAR} -cf - . | ${TAR} -xf - -C ${DOCSDIR})
+	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${MKDIR} ${DOCSDIR}
+	@${CP} -r ${WRKSRC}/build/docs/apidocs/* ${DOCSDIR}
+	@${ECHO} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
