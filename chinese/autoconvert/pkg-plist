@@ -1,5 +1,7 @@
 bin/autob5
 bin/autogb
+include/hz.h
+include/zhstatis.h
 lib/libhz.a
 lib/libhz.so
 lib/libhz.so.0
