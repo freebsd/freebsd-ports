@@ -1,6 +1,5 @@
 bin/thudboard
 %%DATADIR%%/battle.py
-%%DATADIR%%/battles/annotated.thud
 %%DATADIR%%/skins.py
 %%DATADIR%%/img/banner.gif
 %%DATADIR%%/img/bcktile.gif
@@ -19,6 +18,7 @@ bin/thudboard
 %%DATADIR%%/img/stone.gif
 %%DATADIR%%/img/submenubottom.gif
 %%DATADIR%%/img/submenuitem.gif
+%%DATADIR%%/img/submenusep.gif
 %%DATADIR%%/img/submenutop.gif
 %%DATADIR%%/img/thudtitle.gif
 %%DATADIR%%/img/troll.gif
@@ -57,7 +57,6 @@ bin/thudboard
 %%PORTDOCS%%%%DOCSDIR%%/thudboard.css
 %%PORTDOCS%%%%DOCSDIR%%/files/bug.thud
 %%PORTDOCS%%%%DOCSDIR%%/files/ThudBoardBug.jpg
-@dirrm %%DATADIR%%/battles
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/img
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
