@@ -7,6 +7,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	1.0.24
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
@@ -34,6 +35,8 @@ USE_GPG?=	yes
 SIG_SUFFIX=	.sig
 USE_ICONV=	yes
 USE_GETTEXT=	yes
+USE_GNOME=	pkgconfig
+USE_REINPLACE=	yes
 USE_INC_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -46,6 +49,10 @@ MAN1=		certtool.1 gnutls-cli.1 gnutls-cli-debug.1 \
        		gnutls-serv.1 srptool.1
 DOCS=		AUTHORS NEWS README THANKS doc/tex/*.ps
 EXAMPLES=	doc/examples/*.c
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' \
+		${WRKSRC}/lib/Makefile.in ${WRKSRC}/libextra/Makefile.in
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
