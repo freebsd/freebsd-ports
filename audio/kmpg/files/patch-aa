@@ -1,0 +1,32 @@
+--- lib/yaflib/yaf/frontend/nodes/filter/mixerFilter.h.orig	Wed Feb  3 12:41:50 1999
++++ lib/yaflib/yaf/frontend/nodes/filter/mixerFilter.h	Mon Mar  1 16:02:46 1999
+@@ -24,7 +24,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <stdio.h>
+-#include <linux/soundcard.h>
++#include <machine/soundcard.h>
+ 
+ 
+ #define _MAX_MIX_SIZE 8192
+--- lib/yaflib/yaf/frontend/nodes/filter/volumeFilter.h.orig	Wed Feb  3 12:41:50 1999
++++ lib/yaflib/yaf/frontend/nodes/filter/volumeFilter.h	Mon Mar  1 16:24:00 1999
+@@ -24,7 +24,7 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ #include <stdio.h>
+-#include <linux/soundcard.h>
++#include <machine/soundcard.h>
+ 
+ #define _MAX_MIX_SIZE 8192
+ #define _MAX_MIX_ENTRIES 10
+--- lib/yaflib/yaf/frontend/nodes/graph/daisyChain.cpp.orig	Wed Feb  3 12:41:50 1999
++++ lib/yaflib/yaf/frontend/nodes/graph/daisyChain.cpp	Mon Mar  1 16:37:52 1999
+@@ -44,7 +44,6 @@
+ 
+   action.sa_handler=hallo;
+   action.sa_flags=0;
+-  action.sa_restorer=0;
+   sigaction(SIGHUP,&action,NULL);  
+ }
+ 
