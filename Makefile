@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.49 1999/06/26 22:29:57 asami Exp $
+# $Id: Makefile,v 1.50 1999/07/23 09:36:50 asami Exp $
 #
 
 SUBDIR += archivers
@@ -15,6 +15,7 @@ SUBDIR += deskutils
 SUBDIR += devel
 SUBDIR += editors
 SUBDIR += emulators
+SUBDIR += ftp
 SUBDIR += games
 SUBDIR += german
 SUBDIR += graphics
