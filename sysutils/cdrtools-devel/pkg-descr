@@ -1,0 +1,20 @@
+Cdrecord allows you to create CD's on a CD-Recorder.
+
+Cdrecord has been implemented with a Philips CDD 521.
+Cdrecord now is maintained with a Philips CDD-2000
+It should run also on:
+
+	Philips CDD 522
+	Philips CDD 2000
+	Philips CDD 2600
+	HP C4324/C4325	 (HP SureStore 4020i/6020i)
+	Plasmon	RF-41000
+	Plasmon CDR 4220 (not tested)
+	Grundig CDR-100  (not tested)
+	Mitsumi	CR-2401-TS (not tested)
+	Yamaha	CDR-100
+	Yamaha	CDR-102
+	Sony	CDU-924
+
+Multi-session has not been tested with the Plasmon RF-4100
+
