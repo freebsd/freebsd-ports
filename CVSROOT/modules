@@ -3813,6 +3813,7 @@ linuxthreads	ports/devel/linuxthreads
 listar		ports/mail/listar
 listmanager	ports/mail/listmanager
 litestream	ports/audio/litestream
+livecd		ports/sysutils/livecd
 lkm		src/lkm
 lkm_atapi	src/lkm/atapi
 lkm_ccd		src/lkm/ccd
