@@ -12,7 +12,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kvcd4nix
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes high quality X/K/S/VCD movies from many formats
 
 RUN_DEPENDS=	mpeg2enc:${PORTSDIR}/multimedia/mjpegtools \
