@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	domtools
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.domtools.com/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -18,13 +18,15 @@ USE_PERL5=	YES
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/domtools${PORTVERSION}/
 
+MAKE_ENV+=	PDEST=${PREFIX}
+
 # XXX - patches/patch-aa modifies Makefile
 # and so does the post-patch target
 
 post-patch:
 
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.old
-	${SED} -e 's#/usr/bin/perl#${PERL5}#' \
+	${SED} -e 's#/usr/bin/perl#${PERL5}#' -e '/^PDEST=/d' \
 	< ${WRKSRC}/Makefile.old > ${WRKSRC}/Makefile
 
 post-install:
