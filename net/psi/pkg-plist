@@ -4,53 +4,6 @@ share/psi/README
 share/psi/certs/README
 share/psi/certs/cacert-rootonly.pem
 share/psi/certs/cacert.pem
-share/psi/iconsets/cosmic/add.png
-share/psi/iconsets/cosmic/away.png
-share/psi/iconsets/cosmic/changeacc.png
-share/psi/iconsets/cosmic/chat.png
-share/psi/iconsets/cosmic/desc
-share/psi/iconsets/cosmic/dnd.png
-share/psi/iconsets/cosmic/groupclose.png
-share/psi/iconsets/cosmic/groupempty.png
-share/psi/iconsets/cosmic/groupopen.png
-share/psi/iconsets/cosmic/headline.png
-share/psi/iconsets/cosmic/history.png
-share/psi/iconsets/cosmic/info.png
-share/psi/iconsets/cosmic/message.png
-share/psi/iconsets/cosmic/offline.png
-share/psi/iconsets/cosmic/online.png
-share/psi/iconsets/cosmic/remove.png
-share/psi/iconsets/cosmic/send.png
-share/psi/iconsets/cosmic/system.png
-share/psi/iconsets/cosmic/url.png
-share/psi/iconsets/cosmic/xa.png
-share/psi/iconsets/gabber/away.png
-share/psi/iconsets/gabber/chat.png
-share/psi/iconsets/gabber/desc
-share/psi/iconsets/gabber/dnd.png
-share/psi/iconsets/gabber/message.png
-share/psi/iconsets/gabber/offline.png
-share/psi/iconsets/gabber/online.png
-share/psi/iconsets/gabber/xa.png
-share/psi/iconsets/icq2/away.png
-share/psi/iconsets/icq2/chat.png
-share/psi/iconsets/icq2/desc
-share/psi/iconsets/icq2/dnd.png
-share/psi/iconsets/icq2/message.png
-share/psi/iconsets/icq2/offline.png
-share/psi/iconsets/icq2/online.png
-share/psi/iconsets/icq2/send.png
-share/psi/iconsets/icq2/xa.png
-share/psi/iconsets/licq/add.png
-share/psi/iconsets/licq/away.png
-share/psi/iconsets/licq/chat.png
-share/psi/iconsets/licq/desc
-share/psi/iconsets/licq/dnd.png
-share/psi/iconsets/licq/message.png
-share/psi/iconsets/licq/offline.png
-share/psi/iconsets/licq/online.png
-share/psi/iconsets/licq/send.png
-share/psi/iconsets/licq/xa.png
 share/psi/iconsets/lightbulb/away.png
 share/psi/iconsets/lightbulb/chat.png
 share/psi/iconsets/lightbulb/desc
@@ -63,30 +16,14 @@ share/psi/iconsets/lightbulb/offline.png
 share/psi/iconsets/lightbulb/online.png
 share/psi/iconsets/lightbulb/system.png
 share/psi/iconsets/lightbulb/xa.png
-share/psi/iconsets/mike/away.png
-share/psi/iconsets/mike/chat.png
-share/psi/iconsets/mike/desc
-share/psi/iconsets/mike/dnd.png
-share/psi/iconsets/mike/message.png
-share/psi/iconsets/mike/offline.png
-share/psi/iconsets/mike/online.png
-share/psi/iconsets/mike/send.png
-share/psi/iconsets/mike/xa.png
-share/psi/iconsets/smiley/away.png
-share/psi/iconsets/smiley/chat.png
-share/psi/iconsets/smiley/desc
-share/psi/iconsets/smiley/dnd.png
-share/psi/iconsets/smiley/message.png
-share/psi/iconsets/smiley/offline.png
-share/psi/iconsets/smiley/online.png
-share/psi/iconsets/smiley/send.png
-share/psi/iconsets/smiley/xa.png
 share/psi/iconsets/stellar/account.png
 share/psi/iconsets/stellar/add.png
+share/psi/iconsets/stellar/ask.png
 share/psi/iconsets/stellar/away.png
 share/psi/iconsets/stellar/changeacc.png
 share/psi/iconsets/stellar/chat.png
 share/psi/iconsets/stellar/chatclear.png
+share/psi/iconsets/stellar/connect.png
 share/psi/iconsets/stellar/desc
 share/psi/iconsets/stellar/dnd.png
 share/psi/iconsets/stellar/emoticon_angry.png
@@ -126,6 +63,7 @@ share/psi/iconsets/stellar/emoticon_tongue.png
 share/psi/iconsets/stellar/emoticon_unhappy.png
 share/psi/iconsets/stellar/emoticon_wink.png
 share/psi/iconsets/stellar/emoticon_yes.png
+share/psi/iconsets/stellar/groupchat.png
 share/psi/iconsets/stellar/groupclose.png
 share/psi/iconsets/stellar/groupempty.png
 share/psi/iconsets/stellar/groupopen.png
@@ -133,8 +71,10 @@ share/psi/iconsets/stellar/headline.png
 share/psi/iconsets/stellar/history.png
 share/psi/iconsets/stellar/info.png
 share/psi/iconsets/stellar/message.png
+share/psi/iconsets/stellar/noauth.png
 share/psi/iconsets/stellar/offline.png
 share/psi/iconsets/stellar/online.png
+share/psi/iconsets/stellar/perr.png
 share/psi/iconsets/stellar/psimain.png
 share/psi/iconsets/stellar/remove.png
 share/psi/iconsets/stellar/send.png
@@ -148,6 +88,7 @@ share/psi/image/aim_dnd.png
 share/psi/image/aim_offline.png
 share/psi/image/aim_online.png
 share/psi/image/aim_xa.png
+share/psi/image/find.png
 share/psi/image/icon_16.png
 share/psi/image/icon_32.png
 share/psi/image/icon_48.png
@@ -182,13 +123,7 @@ share/psi/sound/send.wav
 @dirrm share/psi/sound
 @dirrm share/psi/image
 @dirrm share/psi/iconsets/stellar
-@dirrm share/psi/iconsets/smiley
-@dirrm share/psi/iconsets/mike
 @dirrm share/psi/iconsets/lightbulb
-@dirrm share/psi/iconsets/licq
-@dirrm share/psi/iconsets/icq2
-@dirrm share/psi/iconsets/gabber
-@dirrm share/psi/iconsets/cosmic
 @dirrm share/psi/iconsets
 @dirrm share/psi/certs
 @dirrm share/psi

@@ -1,0 +1,16 @@
+$FreeBSD$
+
+Fix the getopt to use BSD's getopt instead of Linux's
+
+--- configure.orig	Wed Oct 30 23:09:35 2002
++++ configure	Mon Nov  4 22:10:49 2002
+@@ -2,8 +2,7 @@
+ 
+ # parsing options
+ 
+-TEMP=`getopt -o p:b:l:q:h --long prefix:,bindir:,libdir:,qtdir:,help \
+--n 'configure' -- "$@"`
++TEMP=`getopt p:b:l:q:h $*`
+ 
+ if [ $? != 0 ] ; then echo "Terminating..." >&2 ; exit 1 ; fi
+ 
