@@ -20,6 +20,7 @@ COMMENT=		The base set of CLE packages needed in Linux mode, support both GB & B
 
 RUN_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
+CONFLICTS=		linux_base-*
 ONLY_FOR_ARCHS=		i386
 DIST_SUBDIR=		zh-rpm
 PREFIX=			${LINUXBASE}
