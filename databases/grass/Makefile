@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_src
 MAINTAINER=	reg@FreeBSD.org
 COMMENT=	An open source Geographical Information System (GIS)
 
+BROKEN=		Broken dependency
+
 POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png \
