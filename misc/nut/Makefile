@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	9.11
+PORTVERSION=	9.12
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/
 PKGNAMEPREFIX=	health-
@@ -33,7 +33,7 @@ do-install:
 		${PREFIX}/etc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/raw.data/WEIGHT.txt \
 		${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/raw.data/sr16.nut \
+	${INSTALL_DATA} ${WRKSRC}/raw.data/sr16-1.nut \
 		${PREFIX}/etc/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/nut.1 ${PREFIX}/man/man1
 
