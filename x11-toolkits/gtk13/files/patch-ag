@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- gtk/Makefile.in.orig	Wed Oct 24 10:31:32 2001
-+++ gtk/Makefile.in	Wed Oct 24 10:33:05 2001
-@@ -166,7 +166,7 @@
- 
- SUBDIRS = stock-icons
- 
--INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_LIBDIR=\"$(libdir)\"				-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(sysconfdir)\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-DGTK_VERSION=\"@GTK_VERSION@\"				-DGTK_BINARY_VERSION=\"@GTK_BINARY_VERSION@\"		-DTESTGTK_RCFILE=\"`pwd`/$(srcdir)/testgtkrc\"		-DG_DISABLE_CONST_RETURNS				-I$(top_builddir)/gtk					-I$(top_srcdir) -I../gdk				-I$(top_srcdir)/gdk					-I$(top_srcdir)/gdk-pixbuf -I../gdk-pixbuf		@GTK_DEBUG_FLAGS@					@GTK_DEP_CFLAGS@				@STRIP_END@
-+INCLUDES = @STRIP_BEGIN@ 	-DG_LOG_DOMAIN=\"Gtk\"					-DGTK_LIBDIR=\"$(libdir)\"				-DGTK_DATA_PREFIX=\"$(prefix)\"				-DGTK_SYSCONFDIR=\"$(datadir)/themes/Default/gtk-2.0\"			-DGTK_LOCALEDIR=\"$(gtklocaledir)\"			-DGTK_VERSION=\"@GTK_VERSION@\"				-DGTK_BINARY_VERSION=\"@GTK_BINARY_VERSION@\"		-DTESTGTK_RCFILE=\"`pwd`/$(srcdir)/testgtkrc\"		-DG_DISABLE_CONST_RETURNS				-I$(top_builddir)/gtk					-I$(top_srcdir) -I../gdk				-I$(top_srcdir)/gdk					-I$(top_srcdir)/gdk-pixbuf -I../gdk-pixbuf		@GTK_DEBUG_FLAGS@					@GTK_DEP_CFLAGS@				@STRIP_END@
- 
- 
- gtarget = @gdktarget@
+--- gtk/Makefile.in.orig	Fri Jan 18 11:03:21 2002
++++ gtk/Makefile.in	Fri Jan 18 11:18:26 2002
+@@ -176,7 +176,7 @@
+ 	-DG_LOG_DOMAIN=\"Gtk\"				\
+ 	-DGTK_LIBDIR=\"$(libdir)\"			\
+ 	-DGTK_DATA_PREFIX=\"$(prefix)\"			\
+-	-DGTK_SYSCONFDIR=\"$(sysconfdir)\"		\
++	-DGTK_SYSCONFDIR=\"$(datadir)/themes/Default/gtk-2.0\"	\
+ 	-DGTK_LOCALEDIR=\"$(gtklocaledir)\"		\
+ 	-DGTK_VERSION=\"@GTK_VERSION@\"			\
+ 	-DGTK_BINARY_VERSION=\"@GTK_BINARY_VERSION@\"	\
