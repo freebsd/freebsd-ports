@@ -1,0 +1,29 @@
+%%SITE_PERL%%/Pod/Simple.pm
+%%SITE_PERL%%/Pod/Simple.pod
+%%SITE_PERL%%/Pod/Simple/BlackBox.pm
+%%SITE_PERL%%/Pod/Simple/Checker.pm
+%%SITE_PERL%%/Pod/Simple/Debug.pm
+%%SITE_PERL%%/Pod/Simple/DumpAsText.pm
+%%SITE_PERL%%/Pod/Simple/DumpAsXML.pm
+%%SITE_PERL%%/Pod/Simple/HTML.pm
+%%SITE_PERL%%/Pod/Simple/LinkSection.pm
+%%SITE_PERL%%/Pod/Simple/Methody.pm
+%%SITE_PERL%%/Pod/Simple/PullParser.pm
+%%SITE_PERL%%/Pod/Simple/PullParserEndToken.pm
+%%SITE_PERL%%/Pod/Simple/PullParserStartToken.pm
+%%SITE_PERL%%/Pod/Simple/PullParserTextToken.pm
+%%SITE_PERL%%/Pod/Simple/PullParserToken.pm
+%%SITE_PERL%%/Pod/Simple/RTF.pm
+%%SITE_PERL%%/Pod/Simple/SimpleTree.pm
+%%SITE_PERL%%/Pod/Simple/Subclassing.pod
+%%SITE_PERL%%/Pod/Simple/Text.pm
+%%SITE_PERL%%/Pod/Simple/TextContent.pm
+%%SITE_PERL%%/Pod/Simple/TiedOutFH.pm
+%%SITE_PERL%%/Pod/Simple/XMLOutStream.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Simple/.packlist
+%%SITE_PERL%%/perlpod.pod
+%%SITE_PERL%%/perlpodspec.pod
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod/Simple
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Pod/Simple
+@unexec rmdir %D/%%SITE_PERL%%/Pod 2>/dev/null || true
