@@ -6374,6 +6374,7 @@ slstat		src/usr.sbin/slstat
 slurp		ports/news/slurp
 slurpie		ports/security/slurpie
 slush		ports/security/slush
+sma		ports/mail/sma
 smacx		ports/games/smacx
 smail		ports/mail/smail
 smalleiffel	ports/lang/smalleiffel
