@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	csv
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/CSV/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
