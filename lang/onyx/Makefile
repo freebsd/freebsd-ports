@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.canonware.com/download/onyx/
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
-LIB_DEPENDS=	edit.5:${PORTSDIR}/devel/libedit
+LIB_DEPENDS=	edit.5:${PORTSDIR}/devel/libedit \
+		pcre.0:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
