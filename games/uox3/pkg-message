@@ -9,6 +9,12 @@ tiledata.mul
 multi.mul
 multi.idx
 
+If you're low on disk space, you can make symlinks for these files to
+your already-installed copy of UO (if you have your DOS partition mounted),
+or to your CD-ROM.  But this will probably affect game performance
+(especially if you symlink to a CD-ROM), so it is not advised if you
+wish to run an even moderately-busy server.
+
 Also, edit ${PREFIX}/uox3/uox3.ini to set your world's name, IP address,
 and other configuration data.
 
@@ -25,11 +31,11 @@ The server is created with three default accounts.  They are:
 You will probably want to change these.  In particular, the very first
 account in the file is "special" because it has full Game Master (GM)
 privileges!  The file to edit is called accounts.adm, and is located in
-${PREFIX}/uox3.
+${PREFIX}/uox3.  The file format is pretty self-explanatory.
 
 Documentation on the server and the various commands available to Game
 Masters (GM's) and other higher-level characters is available in the
-directory ${PREFIX}/uox3/docs.
+directory ${PREFIX}/uox3/docs, in HTML and text format.
 
 You may be interested in the Chaos GM Tool (CGMT).  This is an excellent
 (Windows-based) tool that makes being a GM or Counselor extremely easy.
@@ -37,5 +43,11 @@ Create objects, vendors, monster spawns, answer players' help calls, and
 much more, using a simple point-and-click interface.  No more memorizing
 complex commands!  For more info on CGMT, or to download a (free) copy,
 visit the CGMT web site at: http://www.prodes.org/cgmt/.
+
+For more info on UOX3, please visit:
+	http://uox.stratics.com/
+
+For more info on Ultima Online, please visit:
+	http://www.owo.com/
 
 Have fun!
