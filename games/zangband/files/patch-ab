@@ -1,11 +1,11 @@
---- lib/apex/Makefile.in.0	Fri Aug 17 05:10:34 2001
-+++ lib/apex/Makefile.in	Fri Aug 17 05:10:52 2001
-@@ -200,7 +200,7 @@
- 
+--- lib/apex/Makefile.am.0	Tue Sep  4 15:12:16 2001
++++ lib/apex/Makefile.am	Tue Sep  4 15:12:48 2001
+@@ -16,7 +16,7 @@
  install-data-hook:
- @SET_GID_TRUE@	touch "$(DESTDIR)$(angbanddir)/scores.raw"
--@SET_GID_TRUE@	chown -R root.@GAMEGROUP@ "$(DESTDIR)$(angbanddir)"
-+@SET_GID_TRUE@	chown -R root:@GAMEGROUP@ "$(DESTDIR)$(angbanddir)"
- @SET_GID_TRUE@	chmod -R g+w "$(DESTDIR)$(angbanddir)"
+ if SET_GID
+ 	touch "$(DESTDIR)$(angbanddir)/scores.raw"
+-	chown -R root.@GAMEGROUP@ "$(DESTDIR)$(angbanddir)"
++	chown -R root:@GAMEGROUP@ "$(DESTDIR)$(angbanddir)"
+ 	chmod -R g+w "$(DESTDIR)$(angbanddir)"
+ endif
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.

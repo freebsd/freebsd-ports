@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zangband
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES+=	games
 MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/ \
 		ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/
@@ -15,13 +15,14 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	makoto@pinpott.spnet.ne.jp
 
 USE_XLIB=	yes
-HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib \
 		--with-setgid=${SHAREGRP}
 
 NO_CDROM=	Possible copyright infringement
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 PLIST_SUB+=	ANGBANDBIN=${ANGBANDBIN} ANGBANDLIB=${ANGBANDLIB}
 
@@ -34,12 +35,15 @@ BINMODE=	2755
 ANGBANDLIB?=	lib/${PORTNAME}
 ANGBANDBIN?=	bin/${PORTNAME}
 
+post-patch:
+	(cd ${WRKSRC} ; ${SH} bootstrap)
+
 post-install:
 	(cd ${PREFIX}/${ANGBANDLIB} && \
 		${CHOWN} -R ${SHAREOWN}:${SHAREGRP} apex data ; \
 		${CHMOD} 755 . ; \
 		${CHMOD} -R ug+rw,o-rw * ; \
-		${CHMOD} -R o+r help xtra ; \
+		${CHMOD} -R o+r help ; \
 		${CHMOD} 1777 save user \
 	)
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g;s|%%ANGBANDBIN%%|${ANGBANDBIN}|g;s|%%ANGBANDLIB%%|${ANGBANDLIB}|g" ${FILESDIR}/MESSAGE.in > ${PKGMESSAGE}

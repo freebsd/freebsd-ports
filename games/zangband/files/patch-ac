@@ -1,11 +1,11 @@
---- lib/bone/Makefile.in.0	Fri Aug 17 05:14:44 2001
-+++ lib/bone/Makefile.in	Fri Aug 17 05:15:40 2001
-@@ -199,7 +199,7 @@
- 
+--- lib/bone/Makefile.am.0	Tue Sep  4 15:12:21 2001
++++ lib/bone/Makefile.am	Tue Sep  4 15:13:06 2001
+@@ -15,7 +15,7 @@
  
  install-data-hook:
--@SET_GID_TRUE@	chown -R root.@GAMEGROUP@ "$(DESTDIR)$(angbanddir)"
-+@SET_GID_TRUE@	chown -R root:@GAMEGROUP@ "$(DESTDIR)$(angbanddir)"
- @SET_GID_TRUE@	chmod -R 070 "$(DESTDIR)$(angbanddir)"
+ if SET_GID
+-	chown -R root.@GAMEGROUP@ "$(DESTDIR)$(angbanddir)"
++	chown -R root:@GAMEGROUP@ "$(DESTDIR)$(angbanddir)"
+ 	chmod -R 070 "$(DESTDIR)$(angbanddir)"
+ endif
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
