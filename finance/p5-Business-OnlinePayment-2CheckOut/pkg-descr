@@ -1,0 +1,3 @@
+This is Business::OnlinePayment::2CheckOut, an Business::OnlinePayment
+backend module for 2CheckOut authorization service.  It is only useful
+if you have a merchant account with 2CheckOut: http://www.2checkout.com
