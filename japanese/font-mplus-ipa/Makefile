@@ -7,6 +7,7 @@
 
 PORTNAME=	ipa-ttfonts
 PORTVERSION=	1.0.20040814
+PORTEPOCH=	1
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty
