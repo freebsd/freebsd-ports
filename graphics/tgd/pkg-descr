@@ -1,9 +1,0 @@
-tgd reads text files and writes GIF files. Typically, in a Unix
-environment, it would be at the end of a pipe: my_program | tgd. It
-can also be invoked on a file: tgd my_text_file. By using the special
-file handle stdout, it can be used in WWW applications to push images
-to a browser. It was born out of a desire to learn the gd graphics
-library and Perl simultaneously (but it can be used with any scripting
-language). 
-
-WWW: http://dendrome.ucdavis.edu/tgd/tgd.html
