@@ -1,8 +1,10 @@
 @comment $FreeBSD$
+bin/libtasn1-config
 include/libtasn1.h
-lib/libtasn1.so.2
-lib/libtasn1.so
 lib/libtasn1.a
+lib/libtasn1.so
+lib/libtasn1.so.2
+share/aclocal/libtasn1.m4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
