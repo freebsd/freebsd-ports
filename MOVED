@@ -343,6 +343,7 @@ misc/p5-DataCash||2003-05-20|No longer available
 net/p5-Net-BGP4|net/p5-Net-BGP|2003-05-21|module was renamed
 x11-wm/kde-icontheme-crystal||2003-05-22|Included in kdelibs
 devel/p5-File-Tools||2003-05-22|Newer version included into Perl distribution
+lang/php4|lang/php4|2003-05-22|re-separated from www/mod_php4
 x11-servers/XttXF98srv-EGC||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
 x11-servers/XttXF98srv-GA968||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
 x11-servers/XttXF98srv-GANBWAP||2003-05-23|obsoleted by x11-servers/XFree86-4-Server
@@ -486,6 +487,7 @@ x11-toolkits/ruby-fltk||2003-08-07|port was marked broken for 3 months with no f
 x11-wm/scwm||2003-08-07|port was marked broken for 3 months with no fix submitted
 chinese/cce||2003-08-07|port contains a security vulnerability and is no longer developed
 net/ruby-romp||2003-08-08|discontinued
+security/pam_krb5|security/pam_krb5|2003-08-08|resurrected: required when MIT KRB5 used in place of base system KRB5
 audio/ruby-qt2sound||2003-08-09|obsolete
 graphics/ruby-qt2gl||2003-08-09|obsolete
 textproc/ruby-qt2xml||2003-08-09|obsolete
