@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041104:
+  AFFECTS: users of japanese/rskkserv
+  AUTHOR: rushani@FreeBSD.org
+
+  The format of PREFIX/etc/rskkserv.conf has changed in version 2.95.
+  Please update your configuration file before restarting the server
+  using PREFIX/share/examples/rskkserv/conf-o2n.rb and referring to
+  PREFIX/etc/rskkserv.conf.sample.
+
 20041031:
   AFFECTS: users of databases/mysql40-server
   AUTHOR: ale@FreeBSD.org
