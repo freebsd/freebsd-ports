@@ -117,7 +117,27 @@ if (@pkg) {
   print "    <references>\n";
 
   foreach (split ' ', $url) {
-    print "      <url>$_</url>\n";
+    if (m'^http://cve\.mitre\.org/cgi-bin/cvename\.cgi\?name=(.+)$') {
+      print "      <cvename>$1</cvename>\n"
+    }
+    elsif (m'^(http://www\.securityfocus\.com/archive/.+)$') {
+      print "      <mlist>$1</mlist>\n"
+    }
+    elsif (m'^http://www\.securityfocus\.com/bid/(.+)$') {
+      print "      <bid>$1</bid>\n"
+    }
+    elsif (m'^(http://(?:article\.gmane\.org|lists\.netsys\.com|marc\.theaimsgroup\.com)/.+)$') {
+      print "      <mlist>$1</mlist>\n"
+    }
+    elsif (m'^http://www\.kb\.cert\.org/vuls/id/(.+)$') {
+      print "      <certvu>$1</certvu>\n"
+    }
+    elsif (m'^http://www\.cert\.org/advisories/(.+)\.html$') {
+      print "      <certsa>$1</certsa>\n"
+    }
+    else {
+      print "      <url>$_</url>\n";
+    }
   }
 
   print "    </references>\n";
