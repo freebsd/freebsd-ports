@@ -1,0 +1,14 @@
+--- src/gperiodic.c.orig	Wed Sep  8 22:42:48 1999
++++ src/gperiodic.c	Wed Dec 20 03:25:27 2000
+@@ -484,10 +484,7 @@
+   textdomain (PACKAGE);
+   bindtextdomain(PACKAGE, GPERIODIC_LOCALE_DIR);
+ 
+-  lang = getenv("LANG");
+-  if( NULL == lang ) {
+-    lang = "en";
+-  }
++  gtk_set_locale();
+ 
+   gtk_init(&argc,&argv);
+ 
