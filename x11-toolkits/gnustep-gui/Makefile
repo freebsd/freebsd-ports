@@ -12,9 +12,12 @@ PORTVERSION=	0.8.2
 PORTVERSION=	0.7.6
 .endif
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
-		http://archive.progeny.com/gnustep/core/ \
-		ftp://ftp.easynet.nl/mirror/GNUstep/core/
+.if defined(GNUSTEP_GUI_DEVEL)
+MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
+.else
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 

@@ -8,9 +8,7 @@
 PORTNAME=	gnustep-back
 PORTVERSION=	0.8.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
-		http://archive.progeny.com/gnustep/core/ \
-		ftp://ftp.easynet.nl/mirror/GNUstep/core/
+MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
