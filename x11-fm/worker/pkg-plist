@@ -1,5 +1,4 @@
 bin/worker
-bin/worker_inst
 bin/xliwrapper_worker
 share/worker/catalogs/deutsch.catalog
 share/worker/catalogs/deutsch.catalog.coms
