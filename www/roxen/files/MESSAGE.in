@@ -1,0 +1,11 @@
+*****************************************************************************
+Installation of Roxen Challenger finished!
+
+Now perform the following steps to initialize the webserver.
+
+# cd %%PREFIX%%/roxen/server/
+# ./install
+
+Then follow the instructions.  For further documentation read 
+%%PREFIX%%/roxen/server/manual/
+*****************************************************************************

@@ -1,0 +1,7 @@
+#!/bin/sh
+roxen=%%PREFIX%%/roxen/server
+
+if [ -x $roxen/start ]; then
+	( cd $roxen; ./start --log-dir=/var/log/roxen ) > /dev/null
+	echo -n ' Roxen'
+fi
