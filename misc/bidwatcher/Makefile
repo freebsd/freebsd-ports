@@ -7,15 +7,11 @@
 #
 
 PORTNAME=		bidwatcher
-PORTVERSION=		1.3.13
+PORTVERSION=		1.3.15
 PORTREVISION?=		0
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-
-PATCH_SITES=		http://sourceforge.net/tracker/download.php?group_id=2973&atid=302973&file_id=63934&aid=820963/
-PATCHFILES=		add_auction_by_url_also.patch
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=		mph@FreeBSD.org
 COMMENT=		Bid monitor for eBay
@@ -26,16 +22,6 @@ GNU_CONFIGURE=		YES
 
 MAN1=			bidwatcher.1
 
-CFLAGS+=		-UHAVE_GMTIME
-
-# The software includes a "fudge factor" for the snipe timer; by default
-# it snipes 5 minutes (300 seconds) before the time that you tell it to.
-# This fudge factor is only used in certain cases where the software
-# cannot synchronize its time to eBay (for some reason).  To change the
-# "fudge factor" to a different value, set TIMEFUDGE to the desired
-# number of seconds.
-
-TIMEFUDGE?=		300
-CFLAGS+=		-DHAVE_TM_ZONE -DTIMEFUDGE=${TIMEFUDGE}
+CFLAGS+=		-UHAVE_GMTIME -DHAVE_TM_ZONE
 
 .include <bsd.port.mk>
