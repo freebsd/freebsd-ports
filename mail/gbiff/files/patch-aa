@@ -1,0 +1,20 @@
+--- src/protocol.c.orig	Sat Mar 31 22:01:07 2001
++++ src/protocol.c	Sat Mar 31 22:01:39 2001
+@@ -392,7 +392,7 @@
+   sup_bound = 0;
+   range_end = 0;
+   while (fgets (line, 4095, file)) {
+-    if strstr (line, "unseen:") {
++    if(strstr (line, "unseen:")){
+       buffer = line + strlen ("unseen: ");
+ 
+       while (*buffer != '\n') {
+@@ -550,7 +550,7 @@
+   sup_bound = 0;
+   range_end = 0;
+   while (fgets (line, 4095, file)) {
+-    if strstr (line, "unseen:") {
++    if(strstr (line, "unseen:")){
+       buffer = line + strlen ("unseen: ");
+       while (*buffer != '\n') {
+ 	/*
