@@ -1325,6 +1325,7 @@ ecg2png		ports/graphics/ecg2png
 ecgi		ports/devel/ecgi
 echolot		ports/net/echolot
 echoping	ports/net/echoping
+eclipse		ports/java/eclipse
 ecore		ports/x11/ecore
 ecu		ports/comms/ecu
 edb		ports/databases/edb
