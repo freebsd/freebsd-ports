@@ -7,7 +7,8 @@
 
 PORTNAME=	mini_sendmail
 PORTVERSION=	1.3.2
-CATEGORIES+=	mail ipv6
+PORTREVISION=	1
+CATEGORIES+=	mail
 MASTER_SITES=	http://www.acme.com/software/mini_sendmail/
 
 MAINTAINER=	demon@FreeBSD.org

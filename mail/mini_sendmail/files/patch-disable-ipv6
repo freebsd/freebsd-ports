@@ -1,0 +1,10 @@
+--- mini_sendmail.c.orig	Fri Aug 29 11:02:43 2003
++++ mini_sendmail.c	Fri Aug 29 11:03:03 2003
+@@ -541,6 +541,7 @@ add_recipient( char* recipient, int len 
+ #if defined(AF_INET6) && defined(IN6_IS_ADDR_V4MAPPED)
+ #define USE_IPV6
+ #endif
++#undef USE_IPV6
+ 
+ static int
+ open_client_socket( void )
