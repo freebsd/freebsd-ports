@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icecast
-PORTVERSION=	1.3.10
+PORTVERSION=	1.3.11
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/releases/
 
