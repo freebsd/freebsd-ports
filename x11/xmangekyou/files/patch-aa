@@ -1,5 +1,5 @@
---- Makefile~	Tue Feb  2 21:04:13 1999
-+++ Makefile	Tue Feb  2 21:04:29 1999
+--- Makefile~	Fri Nov  3 05:13:33 2000
++++ Makefile	Fri Nov  3 05:14:52 2000
 @@ -1,4 +1,4 @@
 -XMANGEKYOU_PREFIX = /usr/X11R6
 +XMANGEKYOU_PREFIX = ${PREFIX}
