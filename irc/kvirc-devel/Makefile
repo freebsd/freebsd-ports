@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/ \
 
 MAINTAINER=	andrews@technologist.com
 
-LIB_DEPENDS=	pthread.13:${PORTSDIR}/devel/pth-devel
-
 USE_QT2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
