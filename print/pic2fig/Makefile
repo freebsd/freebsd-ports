@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	Patrick Powell <papowell@astart.com>
+MAINTAINER=	papowell@astart.com
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		pic2fig.1
