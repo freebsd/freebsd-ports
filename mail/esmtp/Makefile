@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	esmtp
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,26 +18,24 @@ LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
+USE_BISON=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 DOC_FILES=	README
 MAN1=		esmtp.1
 MAN5=		esmtprc.5
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-	's|/usr/bin|${LOCALBASE}/bin|g' \
+	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|g' \
 		${WRKSRC}/sample.esmtprc
-	@${REINPLACE_CMD} -e \
-	's|sendmail(1)|sendmail(8)|g ; \
-	s|/etc|${PREFIX}/etc|g' \
-		${WRKSRC}/${PORTNAME}.1
-	@${REINPLACE_CMD} -e \
-	's|/etc|${PREFIX}/etc|g' \
+	@${REINPLACE_CMD} -e 's|sendmail(1)|sendmail(8)|g ; \
+		s|/etc|${PREFIX}/etc|g' ${WRKSRC}/${PORTNAME}.1
+	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' \
 		${WRKSRC}/parser.c ${WRKSRC}/parser.y
 
 do-install:
