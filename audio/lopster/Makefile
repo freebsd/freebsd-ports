@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	lopster
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.2.0
+PORTREVISION=	0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,11 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+CONFIGURE_ARGS=	--with-pthread=yes --with-zlib=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
