@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kgamma
-PORTVERSION=		0.9.1
+PORTVERSION=		0.9.2
 CATEGORIES=		x11 kde
 MASTER_SITES=		http://download.berlios.de/kgamma/
 
