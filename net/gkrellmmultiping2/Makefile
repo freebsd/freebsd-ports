@@ -7,21 +7,22 @@
 #
 
 PORTNAME=	gkrellmmultiping
-PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTVERSION=	2.0.8
 CATEGORIES=	net
-MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/
+MASTER_SITES=	http://kmlinux.fjfi.cvut.cz/~makovick/gkrellm/ \
+		http://depot.fsck.ch/mirror/distfiles/
 DISTNAME=	gkrellm-multiping-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GKrellM multiping plugin
+MAINTAINER=	ports@fsck.ch
+COMMENT=	GKrellM2 multiping plugin
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
+PLIST_FILES=	libexec/gkrellm2/plugins/multiping.so libexec/gkrellm2/plugins/pinger
 
 MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
