@@ -3419,6 +3419,7 @@ ko-pycodec	ports/korean/pycodec
 ko-texinfo	ports/korean/texinfo
 ko-uniksc	ports/korean/uniksc
 ko-w3m		ports/korean/w3m
+kobodeluxe	ports/games/kobodeluxe
 koffice	ports/editors/koffice
 koffice-i18n	ports/misc/koffice-i18n
 koffice-kde3	ports/editors/koffice-kde3	
