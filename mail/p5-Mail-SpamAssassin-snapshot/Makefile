@@ -6,65 +6,74 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.51
-PORTREVISION=	0
+PORTVERSION=	2.60-rc3
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://spamassassin.org/devel/ \
+MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	DougB@FreeBSD.org
-COMMENT=	A mail filter for identifying SPAM
+COMMENT=	A highly efficient mail filter for identifying spam
 
-BROKEN=		"mail/p5-Mail-SpamAssassin has been updated to 2.50"
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
+BUILD_DEPENDS=	${SITE_PERL}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
+		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		razor-client:${PORTSDIR}/mail/razor-agents
 
-PODPARSER=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
-RUN_DEPENDS+=	${PODPARSER}
-BUILD_DEPENDS+=	${PODPARSER}
-NO_LATEST_LINK=	yes
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+RUN_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+BUILD_DEPENDS+=	${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
+.endif
+
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	SYSCONFDIR="${PREFIX}/etc" RUN_RAZOR1_TESTS="no" \
-			RUN_RAZOR2_TESTS="no"
+CONFIGURE_ARGS+=	SYSCONFDIR="${PREFIX}/etc" \
+			RUN_RAZOR1_TESTS="no" RUN_RAZOR2_TESTS="no"
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::Conf.3 \
 		Mail::SpamAssassin::PersistentAddrList.3 \
 		Mail::SpamAssassin::PerMsgLearner.3 \
-		Mail::SpamAssassin::Bayes.3
+		Mail::SpamAssassin::Bayes.3 \
+		Mail::SpamAssassin::AutoWhitelist.3 \
+		Mail::SpamAssassin::ConfSourceSQL.3
+
 MAN1PREFIX=	${PREFIX}
-MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn-nonspam.1 \
-		sa-learn-spam.1 sa-learn-rebuild.1 sa-forget.1
+MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples//${PKGNAMEPREFIX}${PORTNAME}
+
+# XXX
+WRKSRC=		${WRKDIR}/Mail-SpamAssassin-2.60
 
 post-patch:
-.for file in Makefile.PL build/preprocessor.pm
-	@${CP} ${WRKSRC}/${file} ${WRKSRC}/${file}.orig
-	@${SED} -e 's#::Post545##' ${WRKSRC}/${file}.orig > ${WRKSRC}/${file}
-.endfor
 	@${FIND} ${WRKSRC} -name \*.orig -delete
 
+	@${MV} ${WRKSRC}/rules/local.cf ${WRKSRC}/rules/local.cf.sample
+	@${SED} -e 's#local.cf#local.cf.sample#g' \
+		${WRKSRC}/Makefile.PL > ${WRKSRC}/Makefile.PL.sed
+	@${MV} ${WRKSRC}/Makefile.PL.sed ${WRKSRC}/Makefile.PL
+
 post-install:
-	@strip ${PREFIX}/bin/spamc
+	@${STRIP_CMD} ${PREFIX}/bin/spamc
 	${INSTALL_SCRIPT} ${FILESDIR}/spamd.sh ${PREFIX}/etc/rc.d/spamd.sh-dist
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
-	cd ${WRKSRC} ; ${INSTALL_DATA} \
-	BUGS COPYRIGHT Changes README TRADEMARK procmailrc.example sample* \
-		spamd/README* sql/spamassassin.sql ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
+	cd ${WRKSRC} ; ${INSTALL_DATA} INSTALL USAGE \
+	    BUGS COPYRIGHT Changes README TRADEMARK procmailrc.example sample* \
+	    spamd/README* sql/spamassassin.sql ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
