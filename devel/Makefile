@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.93 1998/03/15 20:18:48 steve Exp $
+# $Id: Makefile,v 1.94 1998/03/16 03:26:33 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -14,6 +14,7 @@
     SUBDIR += crossgo32
     SUBDIR += crossgo32-djgpp2
     SUBDIR += crossgo32-djgpp2-pdcurses
+    SUBDIR += crossm68k
     SUBDIR += crosssco
     SUBDIR += cs
     SUBDIR += cutils
