@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Wed Feb 24 03:49:45 1999
++++ Makefile.in	Wed Feb 24 19:06:37 1999
+@@ -137,7 +137,7 @@
+ perl_val = @perl_val@
+ python_val = @python_val@
+ 
+-SUBDIRS = intl po macros plugins src doc
++SUBDIRS = intl po macros plugins src
+ 
+ EXTRA_DIST =  	gnumeric.desktop README HACKING gnumeric.spec.in 	gnumeric.keys.in gnumeric.mime $(appicon_DATA)
+ 
+@@ -145,7 +145,7 @@
+ appicondir = $(datadir)/pixmaps
+ appicon_DATA = gnome-gnumeric.png gnome-gnumeric-xl.png
+ 
+-Applicationsdir = $(datadir)/gnome/apps/Applications
++Applicationsdir = $(datadir)/apps/Applications
+ Applications_DATA = gnumeric.desktop
+ 
+ Mimedir = $(datadir)/mime-info
