@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Jan 24 20:12:59 2002
-+++ Makefile	Sun Apr 14 03:46:23 2002
+--- Makefile.orig	Mon Oct 21 03:46:44 2002
++++ Makefile	Sat Nov  2 16:41:52 2002
 @@ -24,7 +24,6 @@
  # Set this to an ANSI compatible C compiler (preferably gcc)
  # See also system specific settings below
@@ -13,15 +13,15 @@
  
  # PREFIX=e:/usr		# OS/2 type
 -PREFIX=/usr/local
+ #PREFIX=/usr
  BINDIR=$(PREFIX)/bin
  LIBDIR=$(PREFIX)/share
- MANDIR=$(PREFIX)/man/man1
-@@ -101,8 +99,11 @@
+@@ -106,8 +104,11 @@
  # Choose one of the following CFLAGS/CC definitions:
  # If you are using gcc, you probably don't need to change anything here.
  
 +# FreeBSD:
-+CFLAGS+=	-s $(DEFS)
++CFLAGS += $(DEFS)
 +
  # Linux:
 -CFLAGS = -O2 -s $(DEFS) -Wall
@@ -29,7 +29,7 @@
  
  # AIX (xlC on aix 4):
  #CFLAGS = -O2 -s $(DEFS)
-@@ -170,7 +171,6 @@
+@@ -177,7 +178,6 @@
  	if [ ! -d $(LIBDIR)/mpage ] ; then mkdir -p $(LIBDIR)/mpage ; fi
  	if [ ! -d $(BINDIR) ] ; then mkdir -p $(BINDIR) ; fi
  	if [ ! -d $(MANDIR) ] ; then mkdir -p $(MANDIR) ; fi
