@@ -1,0 +1,12 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/subfloat.dvi
+%%PORTDOCS%%%%DOCSDIR%%/subfloat.xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/subfloat.dtx
+%%CLASSDIR%%/subfloat.ins
+%%CLASSDIR%%/subfloat.sty
+@dirrm %%CLASSDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%

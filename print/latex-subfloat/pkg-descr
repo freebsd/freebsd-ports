@@ -1,0 +1,6 @@
+subfloat.sty -- subnumbering for figures and tables
+
+This package enables subnumbering of different floats (figures and
+tables) simular to the subequations-environment of the amsmath
+package. It does not the same as the subfigure package which
+generates subfigures within one normal figure.
