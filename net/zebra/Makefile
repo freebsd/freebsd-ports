@@ -20,9 +20,14 @@ CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
 post-install:
 	@${ECHO} "===>     installing zebra startup file..."
 	@${SED} -e "s=!!PREFIX!!=${PREFIX}=" \
-		< ${FILESDIR}/zebra.sh  \
-		> ${PREFIX}/etc/rc.d/zebra.sh 
-	@${CHMOD} 555 ${PREFIX}/etc/rc.d/zebra.sh
-	@${ECHO} "===>     done."
+		< ${FILESDIR}/zebractl.sh  \
+		> ${PREFIX}/sbin/zebractl
+	@${CHMOD} 555 ${PREFIX}/sbin/zebractl
+	@${ECHO} "Make the following entries in /etc/rc.conf to start zebra:"
+	@${ECHO} "defaultrouter=\"NO\""
+	@${ECHO} "router_enable=\"YES\""
+	@${ECHO} "router=\"${PREFIX}/sbin/zebractl\""
+	@${ECHO} "router_flags=\"start\""
+	@${ECHO} "done."
 
 .include <bsd.port.mk>

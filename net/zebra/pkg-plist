@@ -2,7 +2,7 @@ sbin/bgpd
 sbin/ospfd
 sbin/ripd
 sbin/zebra
-etc/rc.d/zebra.sh
+sbin/zebractl
 etc/zebra/bgpd.conf.sample
 etc/zebra/ripd.conf.sample
 etc/zebra/zebra.conf.sample
