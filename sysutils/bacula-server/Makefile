@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bacula
-PORTVERSION=	1.36.1
-PORTREVISION=	1
+PORTVERSION=	1.36.2
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
@@ -37,7 +37,9 @@ CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 		--disable-conio
 
 CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 ALL_OPTIONS=	CLIENT_ONLY WXCONSOLE GNOMECONSOLE MYSQL POSTGRESQL MTX
 
@@ -138,7 +140,7 @@ pre-everything::
 	@${ECHO_MSG} "  WITH_MTX=yes		if you want to use mtx instead of chio for autochanger control."
 .if !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL)
 	@${ECHO_MSG} "  WITH_MYSQL=yes  	if you want MySQL instead of SqLite as the database."
-	@${ECHO_MSG} "  WITH_POSTGRESQL=yes		if you want PostgreSQL instead of SqLite as the database."
+	@${ECHO_MSG} "  WITH_POSTGRESQL=yes	if you want PostgreSQL instead of SqLite as the database."
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The default DB is SQLite!"
 .endif
@@ -150,26 +152,25 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure
 .if defined(WITH_CLIENT_ONLY)
-	# In client port only install startup script out of script dir (see below post-install)
-	# Dont mkdir ${PREFIX}/share/bacule cause it's empty
+# 	In client port only install startup script out of script dir (see below post-install)
+# 	Dont mkdir ${PREFIX}/share/bacule cause it's empty
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)scripts\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's|\(.*$$(MKDIR) $$(DESTDIR)$$(scriptdir)\)|#\1|g' ${WRKSRC}/Makefile.in
 .else
-	# In server port don't install documentation and filed
+#	In server port don't install documentation and filed
 	@${REINPLACE_CMD} -e 's|^\(fd_subdirs = .*\)doc\(.*\)|\1\2|g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|^all_subdirs = .*|all_subdirs = scripts src\/lib src\/findlib $${subdirs}|g' ${WRKSRC}/Makefile.in
 .endif
 
 post-install:
 .if defined(WITH_CLIENT_ONLY)
-	# Install start script
+# 	Install start script
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/bacula ${PREFIX}/etc/rc.d/bacula.sh.sample
-	# Extend only /etc/services
+# 	Extend only /etc/services
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME}
-	# Console stuff
+# 	Console stuff
 	if [ -f ${PREFIX}/etc/bconsole.conf.new ]; then \
 		${ECHO_CMD} "etc/bconsole.conf.new" >> ${TMPPLIST}; \
 	elif [ -f ${PREFIX}/etc/bconsole.conf ]; then \
@@ -201,10 +202,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${DOCSDIR}
 .endif
 .else
-	# Extend /etc/services and install UID/GID
+# 	Extend /etc/services and install UID/GID
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-	# Install config files and preserve existing ones
+# 	Install config files and preserve existing ones
 	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
 	if [ -f ${PREFIX}/etc/bacula-barcodes ]; then \
 		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.new ; \
@@ -213,11 +214,11 @@ post-install:
 		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.samples ; \
 		${ECHO_CMD} "etc/bacula-barcodes.samples" >> ${TMPPLIST}; \
 	fi
-	# chmod of bsmtp program so bacula can use it with dropped down permissions
+# 	chmod of bsmtp program so bacula can use it with dropped down permissions
 	${CHMOD} o+x ${PREFIX}/sbin/bsmtp
 	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
 .endif
-	# Install leaves existing conf files untouched. Respect this here!
+# 	Install leaves existing conf files untouched. Respect this here!
 	for na in ${CONFFILES}; do \
 		if [ -f ${PREFIX}/etc/bacula-$$na.conf.new ]; then \
 			${ECHO_CMD} "etc/bacula-$$na.conf.new" >> ${TMPPLIST}; \

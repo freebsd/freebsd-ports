@@ -1,7 +1,8 @@
 #!/bin/sh
 #
-# Bacula interface to mtx autoloader
-# (By Lars Köller, lars+bacula@koellers.net)
+# Bacula interface to FreeBSD chio autoloader command with
+# multiple drive support
+# (By Lars Köller, lars+bacula@koellers.net, 2004)
 #
 #  If you set in your Device resource
 #
@@ -24,6 +25,16 @@
 #   the mtx exit code or a 0. If the script exits with a non-zero
 #   exit code, Bacula will assume the request failed.
 #
+me=$(basename $0)
+
+# Debug output, take care this file is writeable for user bacula!
+#LOG=/var/db/bacula/chio-bacula.log
+#exec 2>>$LOG
+#echo "------------------------- $(date) Start $(basename $0) -------------------------" >> $LOG
+#set -x
+
+# Debug
+logger -p user.err "$me $@"
 
 # This simulates a barcode reader in the changer.
 # The labes of the virtual barcode reader are located in the BARCODE_FILE
@@ -33,15 +44,36 @@ MTX=/bin/chio
 # Set default values (see case statement below for
 # free mapping of drive index and tape device
 # We have a double drive Qualstar where drive 1 is the default bacula drive
+#TAPE=/dev/bacula-tape
 TAPE=/dev/nrsa0
 DRIVE=0
 # Time to wait for (un)loading
 SLEEP=20
 
-me=$(basename $0)
-
-# Debug
-logger -p user.err "$me $@"
+usage()
+{
+  echo ""
+  echo "The $me script for bacula"
+  echo "--------------------------------------"
+  echo ""
+  echo "usage: $me <changer-device> <command> [slot] [devicename of tapedrive] [drive index]"
+  echo ""
+  echo "Valid commands:"
+  echo ""
+  echo "unload          Unloads a tape into the slot"
+  echo "                from where it was loaded."
+  echo "load <slot>     Loads a tape from the slot <slot>"
+  echo "                (slot-base is calculated to 1 as first slot)"
+  echo "list            Lists full storage slots"
+  echo "loaded          Gives slot from where the tape was loaded."
+  echo "                0 means the tape drive is empty."
+  echo "slots           Gives Number of aviable slots."
+  echo ""
+  echo "Example:"
+  echo "  $me /dev/changer load 1   loads a tape from slot 1"
+  echo ""
+  exit 2
+}
 
 # The changer device
 if [ -z "$1" ] ; then
@@ -68,49 +100,26 @@ fi
 if [ ! -z "$4" ]; then
     TAPE=$4
 fi
-# Set drive for chio as you need
-# here you can also map to any tape device
-# DRIVE is the chio drive number!
+
+# Here you can map bacula drive number to any tape device
+# DRIVE is the chio drive number used below by chio!
 case $5 in
     0)
+	# First Drive in Changer is Bacula drive
 	DRIVE=0
+	#TAPE=/dev/bacula-tape
 	TAPE=/dev/nrsa0
-	#DRIVE=1
-	#TAPE=/dev/nrsa2
 	;;
     1)
 	DRIVE=1
-	#DRIVE=0
+	#TAPE=/dev/bacula-tape2
 	TAPE=/dev/nrsa1
 	;;
 esac
 
-usage()
-{
-  echo ""
-  echo "The $me script for bacula"
-  echo "--------------------------------------"
-  echo ""
-  echo "usage: $me <changer-device> <command> [slot] [devicename of tapedrive] [drive index]"
-  echo ""
-  echo "Valid commands:"
-  echo ""
-  echo "unload          Unloads a tape into the slot"
-  echo "                from where it was loaded."
-  echo "load <slot>     Loads a tape from the slot <slot>"
-  echo "                (slot-base is calculated to 1 as first slot)"
-  echo "list            Lists full storage slots"
-  echo "loaded          Gives slot from where the tape was loaded."
-  echo "                0 means the tape drive is empty."
-  echo "slots           Gives Number of aviable slots."
-  echo ""
-  echo "Example:"
-  echo "  mtx-changer /dev/changer load 1   loads a tape from slot 1"
-  echo ""
-  exit 2
-}
-
-
+#
+# Main
+#
 case ${COMMAND} in
     unload)
 	# enable the following line if you need to eject the cartridge
@@ -144,7 +153,7 @@ case ${COMMAND} in
     list)
 	if [ "${SIMULATE_BARCODE}" = "true" ]; then
 	    if [ -f "$BARCODE_FILE" ]; then
-		cat $BARCODE_FILE | grep -v "^#"
+		cat $BARCODE_FILE | grep -v -e "^#" -e "^$"
 		exit 0
 	    else
 		echo "Barcode file $BARCODE_FILE missing ... exiting!"
