@@ -10,7 +10,7 @@ PORTNAME=	ansistyle
 PORTVERSION=	0.2.1
 CATEGORIES=	devel python
 MASTER_SITES=   ftp://ftp.livinglogic.de/pub/livinglogic/ansistyle/
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ANSIStyle-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
