@@ -18,7 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MI
 RUN_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 
 HAS_CONFIGURE=	yes
-TGNUSVERSION=	6_14_5-06
+USE_GMAKE=	yes
+TGNUSVERSION=	6_14_6-04
 MIMEUI_PRODUCT?=semi
 MIMEUI_VERSION?=1.13.7
 MIMEUI_PORT_NAME?=${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}-current
@@ -34,7 +35,7 @@ WITHOUT_MULE=yes
 .endif
 
 .if (${EMACS_PORT_NAME} == "xemacs21" || ${EMACS_PORT_NAME} == "xemacs21-mule")
-CONFIGURE_ARGS=	--with-xemacs=${EMACS_CMD}
+CONFIGURE_ARGS=	--with-xemacs=${EMACS_CMD} --with-packagedir=${LOCALBASE}/${EMACS_PACKAGESDIR}
 .else
 CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/t-gnus \
@@ -42,21 +43,20 @@ CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 .endif
 
 .if defined(EMACS_PACKAGESDIR)
-ALL_TARGET=	package
 INFODIR=	${LOCALBASE}/${EMACS_PACKAGESDIR}/info
 STARTUPDIR=	${EMACS_PACKAGESDIR}/lisp
+INFOFILES=	emacs-mime gnus gnus-ja message message-ja
 .if (${EMACS_PORT_NAME} == "xemacs21")
+ALL_TARGET=	package
 INSTALL_TARGET=	install-package
-ALL_TARGET+=	info
 .elif (${EMACS_PORT_NAME} == "xemacs21-mule")
-ALL_TARGET+=	info info-ja
+ALL_TARGET=	package-ja
 INSTALL_TARGET=	install-package-ja
 .endif
 .elif (${EMACS_PORT_NAME} == "emacs20" || ${EMACS_PORT_NAME} == "mule")
-ALL_TARGET=	all info info-ja
-INSTALL_TARGET=	install
+ALL_TARGET=	all-ja
+INSTALL_TARGET=	install-ja
 INFODIR=	${LOCALBASE}/info
-INFOFILES=	emacs-mime.info gnus.info gnus-ja.info message.info message-ja.info
 STARTUPDIR=	${EMACS_SITE_LISPDIR}
 .endif
 
@@ -94,16 +94,14 @@ post-install:
 .endfor
 .endif
 	${INSTALL_DATA} ${WRKDIR}/t-gnus-startup.el ${PREFIX}/${STARTUPDIR}
-.if (${EMACS_PORT_NAME} == "emacs20")
+# For XEmacs, ${INFODIR}/dir is not necessary.
+.if (${EMACS_PORT_NAME} == "xemacs21" || ${EMACS_PORT_NAME} == "xemacs21-mule")
 .for file in ${INFOFILES}
-	install-info ${INFODIR}/${file} ${INFODIR}/dir
+	 install-info --delete ${INFODIR}/${file} ${INFODIR}/dir
 .endfor
-.elif (${EMACS_PORT_NAME} == "mule")
-	install-info --section=${DIRSECTION} ${INFODIR}/emacs-mime.info --entry="* Emacs MIME: (emacs-mime.info). The MIME de/composition library." ${INFODIR}/dir
-	install-info --section=${DIRSECTION} ${INFODIR}/gnus.info --entry="* Gnus: (gnus.info).   The news reader gnus" ${INFODIR}/dir
-	install-info --section=${DIRSECTION} ${INFODIR}/gnus-ja.info --entry="* Gnus-ja: (gnus-ja.info).   The news reader gnus" ${INFODIR}/dir
-	install-info --section=${DIRSECTION} ${INFODIR}/message.info --entry="* Message: (message.info).   Mail and news composition mode that goes with Gnus." ${INFODIR}/dir
-	install-info --section=${DIRSECTION} ${INFODIR}/message-ja.info --entry="* Message-ja: (message-ja.info).   Mail and news composition mode that goes with Gnus." ${INFODIR}/dir
+	if [ `${GREP} '^*' ${INFODIR}/dir | wc -l` -eq 1 ]; then \
+		${RM} ${INFODIR}/dir; \
+	fi
 .endif
 	@${CAT} ${PKGMESSAGE}
 

@@ -1,3 +1,4 @@
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus-startup.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/auto-autoloads.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/auto-autoloads.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/base64.el
@@ -6,9 +7,6 @@
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/binhex.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/custom-load.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/custom-load.elc
-%%EMACS_PACKAGESDIR%%/lisp/t-gnus/dgnushack.el
-%%EMACS_PACKAGESDIR%%/lisp/t-gnus/drums.el
-%%EMACS_PACKAGESDIR%%/lisp/t-gnus/drums.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/earcon.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/earcon.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/flow-fill.el
@@ -63,6 +61,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-mailcap.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-mh.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-mh.elc
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-ml.el
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-ml.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-mlspl.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-mlspl.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-move.el
@@ -117,16 +117,12 @@
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/ietf-drums.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/imap.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/imap.elc
-%%EMACS_PACKAGESDIR%%/lisp/t-gnus/lpath.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/mail-parse.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/mail-parse.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/mail-prsvr.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/mail-prsvr.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/mail-source.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/mail-source.elc
-%%EMACS_PACKAGESDIR%%/lisp/t-gnus/mailheader.el
-%%EMACS_PACKAGESDIR%%/lisp/t-gnus/mailheader.elc
-%%EMACS_PACKAGESDIR%%/lisp/t-gnus/md5.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/message.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/message.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/messagexmas.el
@@ -207,6 +203,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/nnwarchive.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/nnweb.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/nnweb.elc
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/nnwfm.el
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/nnwfm.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/parse-time.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/parse-time.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/pop3.el
@@ -229,6 +227,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/score-mode.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/smiley.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/smiley.elc
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/starttls.el
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/starttls.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/time-date.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/time-date.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/utf7.el
@@ -237,7 +237,6 @@
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/uudecode.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/webmail.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/webmail.elc
-%%EMACS_PACKAGESDIR%%/lisp/t-gnus-startup.el
 %%EMACS_PACKAGESDIR%%/pkginfo/MANIFEST.t-gnus
 share/doc/t-gnus-%%EMACS_PORT_NAME%%/ChangeLog
 share/doc/t-gnus-%%EMACS_PORT_NAME%%/ChangeLog.1
@@ -280,6 +279,7 @@ share/doc/t-gnus-%%EMACS_PORT_NAME%%/TODO.ja
 %%INFODIR%%/gnus-ja.info-1
 %%INFODIR%%/gnus-ja.info-10
 %%INFODIR%%/gnus-ja.info-11
+%%INFODIR%%/gnus-ja.info-12
 %%INFODIR%%/gnus-ja.info-2
 %%INFODIR%%/gnus-ja.info-3
 %%INFODIR%%/gnus-ja.info-4
