@@ -88,6 +88,7 @@
     SUBDIR += p5-SyslogScan
     SUBDIR += p5-Unix-ConfigFile
     SUBDIR += p5-Unix-Syslog
+    SUBDIR += personality
     SUBDIR += pib
     SUBDIR += pkg_remove
     SUBDIR += portupgrade

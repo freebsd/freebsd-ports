@@ -1,0 +1,72 @@
+.\" Copyright (c) 2000
+.\"     Andreas Klemm <andreas@FreeBSD.org>.  All rights reserved.
+.\"
+.\" $FreeBSD$
+.\"                                                                           
+.Dd March 25, 2001
+.Dt PERSONALITY 1
+.Os
+.Sh NAME
+.Nm personality
+.Nd system configuration management utility
+.Sh SYNOPSIS
+.Nm personality
+.Op options ...
+.Sh DESCRIPTION
+This script provides functionality for manipulating collections of 
+configuration files which can be organised so as to alter the
+personality of a system.
+.Pp
+Initially, the
+.Ic base
+personality is established. This personality contains the
+.Ic reference
+copies of configuration files, and is used when creating new personalities.
+The files which are currently considered part of the system's personality
+are those contained in the base personality.
+.Pp
+A new personality is established by making a copy of the base personality
+under a new name. Each personality maintains a separate copy of all
+configuration files under
+.Ic /etc/personality .
+.Pp
+To install a new personality, the files currently in place are saved back
+to the current personality as indicated in
+.Ic /etc/personality/current ,
+and the files for the new personality copied into place.
+.Pp
+The
+.Ic select
+and
+.Ic menu
+commands which perform these installations are implemented in such a 
+fashion as to only require the tools available on the root filesystem,
+so that they may be invoked at the earliest stage during system startup.
+.Pp
+If the current personality has become damaged, it can be restored
+from the saved copy.
+.Pp
+Files can be added to and removed from the personality set. When a new
+file is added, it is copied from the current system into all personalities
+and added to the list file. When a file is removed the current version is
+kept in place, but all copies are removed from saved personalities and the
+file is removed from the list.
+.Sh FILES
+.Bl -tag -width /etc/personality/current -compact
+.It Pa /etc/personality
+configuration base
+.It Pa /etc/personality/_base
+system files under management of personality
+.It Pa /etc/personality/current
+backup location of current files before new personality is copied into place
+.Sh SEE ALSO
+.Xr rc 8
+.Sh BUGS
+Currently none.
+.Sh HISTORY
+The
+.Nm
+script has been written 1997 by Mike Smith <msmith@FreeBSD.org>.
+The
+.Nm
+manual page has been written by Andreas Klemm <andreas@FreeBSD.org>.

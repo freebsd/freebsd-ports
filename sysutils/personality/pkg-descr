@@ -1,0 +1,21 @@
+This script provides functionality for manipulating collections of
+configuration files which can be organised so as to alter the
+personality of a system.
+
+Initially, the "base" personality is established.  This personality
+contains the "reference" copies of configuration files, and is used
+when creating new personalities.  The files which are currently
+considered part of the system's personality are those contained in
+the base personality.
+
+A new personality is established by making a copy of the base
+personality under a new name.  Each personality maintains a separate
+copy of all configuration files under /etc/personality.
+
+To install a new personality, the files currently in place are
+saved back to the current personality as indicated in
+/etc/personality/current, and the files for the new personality
+copied into place.  The 'select' and 'menu' commands which perform
+these installations are implemented in such a fashion as to only
+require the tools available on the root filesystem, so that they
+may be invoked at the earliest stage during system startup.
