@@ -8,7 +8,8 @@
 PORTNAME=	mserver
 PORTVERSION=	0.23a
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.be.uu.net/pub/staff/carl/
+MASTER_SITES=	ftp://ftp.usf.uni-kassel.de/pub/unix/modem/ \
+		ftp://ftp.be.uu.net/pub/staff/carl/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
