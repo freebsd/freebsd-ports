@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grap
-PORTVERSION=	1.20
+PORTVERSION=	1.21
 CATEGORIES=	textproc graphics
 MASTER_SITES=	http://www.lunabase.org/~faber/Vault/software/grap/
 
