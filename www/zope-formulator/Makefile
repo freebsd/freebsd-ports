@@ -29,17 +29,6 @@ WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
-pre-install:
-	@${RM} -f ${PLIST}
-	@${TOUCH} ${PLIST}
-	@cd ${WRKDIR} && \
-	for f in `${FIND} ${ZOPEPRODUCTNAME} -type f`; do \
-		${ECHO_CMD} %%ZOPEPRODUCTDIR%%/$${f} >> ${PLIST}; \
-	done; \
-	for d in `${FIND} -d ${ZOPEPRODUCTNAME} -type d`; do \
-		${ECHO_CMD} @dirrm %%ZOPEPRODUCTDIR%%/$${d} >> ${PLIST}; \
-	done; \
-
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 	@${CHMOD} -R og+rX ${WRKSRC}/
