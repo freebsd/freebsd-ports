@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.5.5.s.20040624
+PORTVERSION=	0.6.0
 CATEGORIES=	emulators
-MASTER_SITES=	http://dad-answers.com/qemu/FreeBSD/
-DISTNAME=	${PORTNAME}-snapshot-2004-06-24_23
+MASTER_SITES=	http://fabrice.bellard.free.fr/qemu/
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
@@ -17,7 +16,6 @@ COMMENT=	QEMU CPU Emulator
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 
 HAS_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 USE_SDL=	sdl

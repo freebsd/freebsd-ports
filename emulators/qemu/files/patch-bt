@@ -1,8 +1,8 @@
 Index: qemu/vl.c
-@@ -41,6 +41,9 @@
- #ifdef _BSD
- #include <sys/stat.h>
+@@ -43,6 +43,9 @@
+ #ifndef __APPLE__
  #include <libutil.h>
+ #endif
 +#ifdef __FreeBSD__
 +#include <sys/module.h>
 +#endif

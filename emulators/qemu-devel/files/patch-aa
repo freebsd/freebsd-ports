@@ -110,21 +110,6 @@ diff -urd --exclude=CVS ../cvs/qemu/block.c qemu-0.5.5/block.c
          size = lseek64(fd, 0, SEEK_END);
          bs->total_sectors = size / 512;
 Only in qemu-0.5.5: block.c.bck
-diff -urd --exclude=CVS ../cvs/qemu/configure qemu-0.5.5/configure
---- ../cvs/qemu/configure	Thu May 20 14:23:39 2004
-+++ qemu-0.5.5/configure	Sun May 30 05:42:05 2004
-@@ -419,9 +419,11 @@
- if [ "$bsd" = "yes" ] ; then
-   echo "#define O_LARGEFILE 0" >> $config_h
-   echo "#define lseek64 lseek" >> $config_h
-+  echo "#define mkstemp64 mkstemp" >> $config_h
-   echo "#define ftruncate64 ftruncate" >> $config_h
-   echo "#define MAP_ANONYMOUS MAP_ANON" >> $config_h
-   echo "#define _BSD 1" >> $config_h
-+  echo "#define off64_t off_t" >> $config_h
- fi
- 
- for target in $target_list; do 
 Only in qemu-0.5.5: qemu.1
 diff -urd --exclude=CVS ../cvs/qemu/target-i386/cpu.h qemu-0.5.5/target-i386/cpu.h
 --- ../cvs/qemu/target-i386/cpu.h	Thu May 20 15:01:56 2004
@@ -344,22 +329,3 @@ diff -urd --exclude=CVS ../cvs/qemu/vl.c qemu-0.5.5/vl.c
  #else
          {
              struct tms tp;
-@@ -828,6 +836,7 @@
-            the emulated kernel requested a too high timer frequency */
-         getitimer(ITIMER_REAL, &itv);
- 
-+#if defined(__linux__)
-         if (itv.it_interval.tv_usec > 1000) {
-             /* try to use /dev/rtc to have a faster timer */
-             if (start_rtc_timer() < 0)
-@@ -843,7 +852,9 @@
-             sigaction(SIGIO, &act, NULL);
-             fcntl(rtc_fd, F_SETFL, O_ASYNC);
-             fcntl(rtc_fd, F_SETOWN, getpid());
--        } else {
-+        } else 
-+#endif
-+        {
-         use_itimer:
-             pit_min_timer_count = ((uint64_t)itv.it_interval.tv_usec * 
-                                    PIT_FREQ) / 1000000;
