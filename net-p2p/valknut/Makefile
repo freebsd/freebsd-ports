@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	dcgui
-PORTVERSION=	0.2.19
+PORTVERSION=	0.2.20
 CATEGORIES=	net
-MASTER_SITES=	http://download.berlios.de/dcgui/ \
-		http://ftp.kde.com/Networking_Internet/File_Sharing/Direct_Connect_4_Linux/ \
-		ftp://ftp.kde.com/Networking_Internet/File_Sharing/Direct_Connect_4_Linux/
+MASTER_SITES=	http://download.berlios.de/dcgui/
 DISTNAME=	dcgui-qt-${PORTVERSION}
 
 MAINTAINER=	brueffer@phoenix-systems.de
@@ -31,7 +29,8 @@ CONFIGURE_ARGS=	--with-libdc=${LOCALBASE}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/-O2//g' ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
