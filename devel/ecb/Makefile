@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ecb
-PORTVERSION=	2.24
-PORTREVISION=	1
+PORTVERSION=	2.25
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ecb
@@ -25,7 +24,7 @@ PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 ICONSRC=	${WRKSRC}/ecb-images
 ICONDIR=	${LISPDIR}/ecb-images
-ICONSUBDIRS=	height-10 height-15 height-16 height-17 height-18 height-19 \
+ICONSUBDIRS=	height-10 height-14 height-15 height-16 height-17 height-18 \
 		height-19 height-20 height-21
 
 USE_REINPLACE=	yes
@@ -36,7 +35,7 @@ ALL_TARGET=	ecb
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/semantic/semantic.el:${PORTSDIR}/devel/semantic${PORTNAMESUFFIX}
 MAKE_ARGS=	CEDET=""
 .else
-BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet/common/cedet.el:${PORTSDIR}/devel/cedet
+BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet/common/cedet.el:${PORTSDIR}/devel/cedet${PORTNAMESUFFIX}
 MAKE_ARGS=	CEDET=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/cedet
 .endif
 
@@ -85,9 +84,9 @@ do-install:
 	${INSTALL_DATA} ${ICONSRC}/directories/${i}/*.xpm \
 		${ICONDIR}/directories/${i}
 .endfor
-	${MKDIR} ${ICONDIR}/methods/height-15_to_21
-	${INSTALL_DATA} ${ICONSRC}/methods/height-15_to_21/*.xpm \
-		${ICONDIR}/methods/height-15_to_21
+	${MKDIR} ${ICONDIR}/methods/height-14_to_21
+	${INSTALL_DATA} ${ICONSRC}/methods/height-14_to_21/*.xpm \
+		${ICONDIR}/methods/height-14_to_21
 .endif
 
 .if !defined(NOPORTDOCS)
