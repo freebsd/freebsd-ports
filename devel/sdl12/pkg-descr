@@ -1,3 +1,5 @@
+Unstable development version of the SDL library.
+
 This library is designed to make it easy to write games that run on UNIX,
 Win32 and BeOS using the various native high-performance media interfaces,
 (for video, audio, etc) and presenting a single source-code level API to
