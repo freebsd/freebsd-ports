@@ -7,11 +7,11 @@
 
 PORTNAME=	popd
 PORTVERSION=	2.2.2a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp3.za.freebsd.org/pub/popd/
 
-MAINTAINER=	ianf@za.uu.net
+MAINTAINER=	ian@freislich.nom.za
 COMMENT=	Very fast, highly configurable POP3 server (fully RFC1939 compliant)
 
 MAN5=	popd.conf.5
