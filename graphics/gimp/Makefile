@@ -3,7 +3,7 @@
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.40 1998/09/15 11:57:40 asami Exp $
+# $Id: Makefile,v 1.41 1998/09/17 00:32:41 asami Exp $
 #
 
 DISTNAME=	gimp-1.0.0
@@ -20,7 +20,7 @@ LIB_DEPENDS+=	aa\\.1\\.:${PORTSDIR}/graphics/aalib
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	gtk\\.1\\.5:${PORTSDIR}/x11-toolkits/gtk
 LIB_DEPENDS+=	mpeg\\.1\\.2:${PORTSDIR}/graphics/mpeg-lib
-LIB_DEPENDS+=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png.2:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
 #LIB_DEPENDS+=	xdelta\\.0\\.18:${PORTSDIR}/misc/xdelta
 
