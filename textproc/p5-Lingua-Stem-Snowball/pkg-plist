@@ -1,0 +1,8 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Lingua/Stem/Snowball.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Lingua/Stem/add_stemmer.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Snowball.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball/Snowball.so
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Stem/Snowball 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Lingua/Stem 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Lingua 2>/dev/null || true
