@@ -13,15 +13,15 @@ include/freecell-solver/fcs_user.h
 lib/libfreecell-solver.a
 lib/libfreecell-solver.so
 lib/libfreecell-solver.so.5
-share/freecell-solver/presetrc
-share/freecell-solver/presets/abra-kadabra.sh
-share/freecell-solver/presets/cool-jives.sh
-share/freecell-solver/presets/crooked-nose.sh
-share/freecell-solver/presets/fools-gold.sh
-share/freecell-solver/presets/hello-world.sh
-share/freecell-solver/presets/john_galt_line-500.sh
-share/freecell-solver/presets/rin-tin-tin.sh
-share/freecell-solver/presets/yellow-brick-road.sh
-@dirrm share/freecell-solver/presets
-@dirrm share/freecell-solver
+%%DATADIR%%/presetrc
+%%DATADIR%%/presets/abra-kadabra.sh
+%%DATADIR%%/presets/cool-jives.sh
+%%DATADIR%%/presets/crooked-nose.sh
+%%DATADIR%%/presets/fools-gold.sh
+%%DATADIR%%/presets/hello-world.sh
+%%DATADIR%%/presets/john_galt_line-500.sh
+%%DATADIR%%/presets/rin-tin-tin.sh
+%%DATADIR%%/presets/yellow-brick-road.sh
+@dirrm %%DATADIR%%/presets
+@dirrm %%DATADIR%%
 @dirrm include/freecell-solver
