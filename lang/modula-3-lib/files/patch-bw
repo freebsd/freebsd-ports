@@ -1,0 +1,38 @@
+--- m3cc/gcc/Makefile.in.orig	Wed Sep 25 10:17:27 1996
++++ m3cc/gcc/Makefile.in	Thu Jan 20 18:50:14 2000
+@@ -57,7 +57,7 @@
+ T_CPPFLAGS =
+ 
+ CC = cc
+-BISON = bison
++BISON = byacc
+ BISONFLAGS =
+ LEX = flex
+ LEXFLAGS =
+@@ -1067,7 +1067,7 @@
+ 	$(CC) $(ALL_CFLAGS) $(ALL_CPPFLAGS) $(INCLUDES) -c $(srcdir)/c-parse.c
+ $(srcdir)/c-parse.h: $(srcdir)/c-parse.c
+ $(srcdir)/c-parse.c: $(srcdir)/c-parse.y
+-	cd $(srcdir); $(BISON) $(BISONFLAGS) -d c-parse.y -o c-parse.c
++	cd $(srcdir); $(BISON) $(BISONFLAGS) -d -o c-parse.c c-parse.y
+ $(srcdir)/c-parse.y: c-parse.in
+ 	sed -e "/^ifobjc$$/,/^end ifobjc$$/d" \
+ 	  -e "/^ifc$$/d" -e "/^end ifc$$/d" \
+@@ -1129,7 +1129,7 @@
+    c-tree.h input.h flags.h objc-act.h
+ 	$(CC) $(ALL_CFLAGS) $(ALL_CPPFLAGS) $(INCLUDES) -c $(srcdir)/objc-parse.c
+ $(srcdir)/objc-parse.c : $(srcdir)/objc-parse.y
+-	cd $(srcdir); $(BISON) $(BISONFLAGS) objc-parse.y -o objc-parse.c
++	cd $(srcdir); $(BISON) $(BISONFLAGS) -o objc-parse.c objc-parse.y
+ $(srcdir)/objc-parse.y: $(srcdir)/c-parse.in
+ 	sed -e "/^ifc$$/,/^end ifc$$/d" \
+ 	  -e "/^ifobjc$$/d" -e "/^end ifobjc$$/d" \
+@@ -1569,7 +1569,7 @@
+ 
+ $(srcdir)/bi-parser.h: $(srcdir)/bi-parser.c
+ $(srcdir)/bi-parser.c: $(srcdir)/bi-parser.y
+-	cd $(srcdir); $(BISON) $(BISONFLAGS) -d bi-parser.y -o bi-parser.c
++	cd $(srcdir); $(BISON) $(BISONFLAGS) -d -o bi-parser.c bi-parser.y
+ 
+ bi-parser.o: $(srcdir)/bi-parser.c bi-defs.h $(build_xm_file)
+ 	$(HOST_CC) -c $(HOST_CFLAGS) $(HOST_CPPFLAGS) $(INCLUDES) \
