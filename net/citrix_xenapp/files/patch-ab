@@ -1,0 +1,18 @@
+--- ../original/linux/hinst	Wed Sep  9 05:58:37 1998
++++ linux/hinst	Mon Sep 21 01:47:58 1998
+@@ -714,13 +714,13 @@
+ 		echo_no_nl $calcspace3
+ 		read dummy
+ 
+-		/bin/false
++		/usr/bin/false
+ 		return 
+ 	fi
+ 
+ 	$ECHO_CMD $calcspace4
+ 
+-	/bin/true
++	/usr/bin/true
+ 	return
+ }
+ #!/bin/sh
