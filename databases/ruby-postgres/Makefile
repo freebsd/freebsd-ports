@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postgres
-PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTVERSION=	0.7.0
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://www.postgresql.jp/interfaces/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -25,7 +24,7 @@ CONFIGURE_ARGS=	--with-pgsql-include-dir="${LOCALBASE}/include"
 INSTALL_TARGET=	site-install
 
 DOCS_EN=	ChangeLog README doc/postgres.html
-DOCS_JA=	README.jp doc/postgres.jp.html
+DOCS_JA=	README.ja doc/postgres.jp.html
 
 post-install:
 .if !defined(NOPORTDOCS)
