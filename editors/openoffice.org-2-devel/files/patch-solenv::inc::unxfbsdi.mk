@@ -1,5 +1,5 @@
 --- ../solenv/inc/unxfbsdi.mk.orig	Wed Oct 24 19:21:47 2001
-+++ ../solenv/inc/unxfbsdi.mk	Sat Mar  9 23:28:50 2002
++++ ../solenv/inc/unxfbsdi.mk	Wed Mar 13 19:13:59 2002
 @@ -1,84 +1,145 @@
 -
  # mak file fuer unxfbsdi
@@ -17,10 +17,10 @@
  LINKOUTPUT_FILTER=" |& $(SOLARENV)$/bin$/msg_filter"
  
 +# name of C Compiler
-+cc=gcc
++cc=$(CC)
 +
 +# name of C++ Compiler
-+CC=g++
++CC=$(CXX)
 +
 +# options for C and C++ Compiler
 +CDEFS+=-D_USE_NAMESPACE=1 -DX86 -DNEW_SOLAR -DSTLPORT_VERSION=400 -DOSVERSION=$(OSVERSION)

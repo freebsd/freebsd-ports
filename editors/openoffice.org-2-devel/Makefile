@@ -18,6 +18,7 @@ EXTRACT_ONLY=	oo_${PORTVERSION}_src.tar.bz2
 MAINTAINER=	mbr@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+BUILD_DEPENDS+= ${LOCALBASE}/bin/gcc295:${PORTSDIR}/lang/gcc295
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
@@ -46,7 +47,9 @@ CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX} \
 			--with-os-version=${OSVERSION}
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
-			PTHREAD_LIBS=${PTHREAD_LIBS}
+			PTHREAD_LIBS=${PTHREAD_LIBS} \
+			CC=gcc295 \
+			CXX=g++295
 
 .include <bsd.port.pre.mk>
 
