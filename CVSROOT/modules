@@ -2997,6 +2997,7 @@ javavmwrapper	ports/java/javavmwrapper
 javel		ports/java/javel
 jbigkit		ports/graphics/jbigkit
 jboss2		ports/java/jboss2
+jboss3		ports/java/jboss3
 jce-aba		ports/java/jce-aba
 jday		ports/astro/jday
 jdbc-oracle816	ports/databases/jdbc-oracle816
