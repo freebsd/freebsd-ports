@@ -73,6 +73,7 @@ PLIST_SUB+=	BACULA_DIR=${BACULA_DIR}
 
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
+CONFFILES=	fd
 CONFIGURE_ARGS+=	--enable-client-only
 PORTDOCS=	bacula.pdf ReleaseNotes html-manual
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.client
@@ -99,6 +100,7 @@ PLIST_SUB+=	 	WXCONS="@comment "
 .endif
 .else
 # Server only Options
+CONFFILES=		sd dir
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql=yes
 USE_MYSQL=		yes
@@ -194,18 +196,14 @@ post-install:
 	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
 .endif
 	# Install leaves existing conf files untouched. Respect this here!
-.if defined(WITH_CLIENT_ONLY)
-	for na in fd; do \
-.else
-	for na in sd dir; do \
-.endif
+	for na in ${CONFFILES}; do \
 		if [ -f ${PREFIX}/etc/bacula-$$na.conf.new ]; then \
 			${ECHO_CMD} "etc/bacula-$$na.conf.new" >> ${TMPPLIST}; \
 		elif [ -f ${PREFIX}/etc/bacula-$$na.conf ]; then \
 			${MV} ${PREFIX}/etc/bacula-$$na.conf ${PREFIX}/etc/bacula-$$na.conf.sample; \
 			${ECHO_CMD} "etc/bacula-$$na.conf.sample" >> ${TMPPLIST}; \
-		fi \
-	done; \
+		fi; \
+	done
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/html-manual
