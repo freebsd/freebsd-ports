@@ -299,6 +299,7 @@
     SUBDIR += invitation_to_ruby
     SUBDIR += ixlib
     SUBDIR += jam
+    SUBDIR += jrtplib
     SUBDIR += kaptain
     SUBDIR += kdbg
     SUBDIR += kdesdk3
