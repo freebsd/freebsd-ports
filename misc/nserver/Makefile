@@ -27,9 +27,7 @@ PLIST_DIRS=	share/doc/nserver
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+OPSYS=		BSD
 
 do-patch:
 	@${REINPLACE_CMD} -e "s|-O2|${CFLAGS}|g; \
