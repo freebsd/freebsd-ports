@@ -1,26 +1,15 @@
---- configure.in.orig	Tue Nov 30 16:56:25 2004
-+++ configure.in	Fri Dec  3 09:47:19 2004
-@@ -97,6 +97,10 @@
- then
-     AC_MSG_ERROR(Please install zlib and zlib-devel packages)
- else
-+  case "$target_os" in
-+    freebsd*)
-+    ;;
-+    *)
-     vuln=`grep "ZLIB_VERSION \"1.2.0" $ZLIB_HOME/include/zlib.h`
-     if test -z "$vuln"; then
- 	vuln=`grep "ZLIB_VERSION \"1.2.1" $ZLIB_HOME/include/zlib.h`
-@@ -105,6 +109,8 @@
-     if test -n "$vuln"; then
- 	AC_MSG_ERROR(Installed zlib version contains a security bug. Please install version 1.2.2 or later.)
-     fi
-+    ;;
-+  esac
+--- configure.in.orig	Tue Dec  7 23:46:18 2004
++++ configure.in	Mon Dec 13 23:09:50 2004
+@@ -38,7 +38,7 @@
+ AC_DEFINE(FILEBUFF, 8192,   [file i/o buffer size])
  
-     if test "$ZLIB_HOME" != "/usr"; then
- 	LDFLAGS="$LDFLAGS -L$ZLIB_HOME/lib"
-@@ -343,9 +349,6 @@
+ AC_HEADER_STDC
+-AC_CHECK_HEADERS(stdint.h unistd.h sys/int_types.h dlfcn.h inttypes.h sys/inttypes.h memory.h ndir.h stdlib.h strings.h string.h sys/mman.h sys/param.h sys/stat.h sys/types.h malloc.h poll.h regex.h limits.h sys/filio.h uio.h)
++AC_CHECK_HEADERS(stdint.h unistd.h sys/int_types.h dlfcn.h inttypes.h sys/inttypes.h memory.h ndir.h stdlib.h strings.h string.h sys/mman.h sys/param.h sys/stat.h sys/types.h malloc.h poll.h regex.h limits.h sys/filio.h sys/uio.h)
+ AC_CHECK_HEADER(syslog.h,AC_DEFINE(USE_SYSLOG,1,[use syslog]),)
+ 
+ AC_TYPE_OFF_T
+@@ -360,9 +360,6 @@
      ;;
  freebsd*)
      if test "$have_pthreads" = "yes"; then

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20041201
+PORTVERSION=	20041213
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -42,6 +42,7 @@ PORTDOCS=	NEWS ChangeLog html
 
 CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
 		--with-zlib=/usr \
+		--disable-zlib-vcheck \
 		--disable-clamuko \
 		--disable-clamav \
 		--enable-bigstack \
