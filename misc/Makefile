@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.133 1998/03/09 13:08:55 tg Exp $
+# $Id: Makefile,v 1.134 1998/03/14 21:00:11 markm Exp $
 #
 
     SUBDIR += acron
@@ -53,6 +53,7 @@
     SUBDIR += us-zipcodes
     SUBDIR += viz
     SUBDIR += xcalendar
+    SUBDIR += xd
     SUBDIR += xdelta
     SUBDIR += xgas
     SUBDIR += xinvest
