@@ -1,0 +1,26 @@
+bin/grisbi
+share/gnome/apps/Applications/grisbi.desktop
+share/gnome/help/grisbi/C/contents_motif.gif
+share/gnome/help/grisbi/C/grisbi-manuel.html
+share/gnome/help/grisbi/C/next_motif.gif
+share/gnome/help/grisbi/C/previous_motif.gif
+share/gnome/help/grisbi/C/quickstart.html
+share/gnome/help/grisbi/C/translation.html
+share/gnome/help/grisbi/C/topic.dat
+share/gnome/help/grisbi/fr/contents_motif.gif
+share/gnome/help/grisbi/fr/grisbi-manuel.html
+share/gnome/help/grisbi/fr/next_motif.gif
+share/gnome/help/grisbi/fr/previous_motif.gif
+share/gnome/help/grisbi/fr/quickstart.html
+share/gnome/help/grisbi/fr/topic.dat
+share/gnome/help/grisbi/fr/translation.html
+share/locale/fr/LC_MESSAGES/grisbi.mo
+share/mime-info/grisbi.keys
+share/mime-info/grisbi.mime
+share/pixmaps/grisbi.png
+share/pixmaps/logo_grisbi.xpm
+@dirrm share/gnome/help/grisbi/C
+@dirrm share/gnome/help/grisbi/fr
+@dirrm share/gnome/help/grisbi
+@dirrm share/mime-info
+@dirrm share/pixmaps

@@ -3,6 +3,7 @@
     SUBDIR += aqmoney
     SUBDIR += gnucash
     SUBDIR += gnucash-docs
+    SUBDIR += grisbi
     SUBDIR += khacc
     SUBDIR += libofx
     SUBDIR += openhbci

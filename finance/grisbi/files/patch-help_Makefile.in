@@ -1,0 +1,22 @@
+--- help/Makefile.in.orig	Sat Feb 15 23:19:45 2003
++++ help/Makefile.in	Sun Feb 16 21:21:17 2003
+@@ -238,7 +238,8 @@
+ 	distdir=`cd $(distdir) && pwd`; \
+ 	cd $(top_srcdir) \
+ 	  && $(AUTOMAKE) --include-deps --build-dir=$$here --srcdir-name=$(top_srcdir) --output-dir=$$top_distdir --gnu help/Makefile
+-	@for file in $(DISTFILES); do \
++	@if test "x$(srcdir)" != "x$(DISTFILES)"; then \
++	 for file in $(DISTFILES); do \
+ 	  d=$(srcdir); \
+ 	  if test -d $$d/$$file; then \
+ 	    cp -pr $$d/$$file $(distdir)/$$file; \
+@@ -247,7 +248,8 @@
+ 	    || ln $$d/$$file $(distdir)/$$file 2> /dev/null \
+ 	    || cp -p $$d/$$file $(distdir)/$$file || :; \
+ 	  fi; \
+-	done
++	 done; \
++	fi
+ 	for subdir in $(SUBDIRS); do \
+ 	  if test "$$subdir" = .; then :; else \
+ 	    test -d $(distdir)/$$subdir \
