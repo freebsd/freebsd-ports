@@ -3,5 +3,5 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Approx/Approx.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Approx/Approx.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Approx/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Approx
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String 2>/dev/null || true
