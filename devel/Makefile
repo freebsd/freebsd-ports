@@ -1029,6 +1029,7 @@
     SUBDIR += popt
     SUBDIR += portcheckout
     SUBDIR += portlint
+    SUBDIR += portmk
     SUBDIR += porttools
     SUBDIR += poslib
     SUBDIR += powerpc-rtems-binutils

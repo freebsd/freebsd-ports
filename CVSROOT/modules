@@ -6041,6 +6041,7 @@ p5-AI-DecisionTree	ports/math/p5-AI-DecisionTree
 p5-AI-NeuralNet-BackProp	ports/math/p5-AI-NeuralNet-BackProp
 p5-AI-NeuralNet-Mesh	ports/math/p5-AI-NeuralNet-Mesh
 p5-AI-Perceptron	ports/math/p5-AI-Perceptron
+p5-AMF-Perl	ports/www/p5-AMF-Perl
 p5-AcePerl	ports/biology/p5-AcePerl
 p5-Agent	ports/devel/p5-Agent
 p5-Algorithm-Annotate	ports/devel/p5-Algorithm-Annotate
@@ -6564,7 +6565,6 @@ p5-Filter-Simple	ports/textproc/p5-Filter-Simple
 p5-Finance-Currency-Convert	ports/finance/p5-Finance-Currency-Convert
 p5-Finance-Quote	ports/finance/p5-Finance-Quote
 p5-Finance-QuoteHist	ports/finance/p5-Finance-QuoteHist
-p5-AMF-Perl	ports/www/p5-AMF-Perl
 p5-Font-AFM	ports/x11-fonts/p5-Font-AFM
 p5-Font-TTF	ports/x11-fonts/p5-Font-TTF
 p5-FreeBSD-Ports	ports/textproc/p5-FreeBSD-Ports
@@ -7817,6 +7817,7 @@ portell		ports/misc/portell
 portfwd		ports/net/portfwd
 portindex	ports/sysutils/portindex
 portlint	ports/devel/portlint
+portmk		ports/devel/portmk
 portmon		ports/net-mgmt/portmon
 portoseguro	ports/x11/portoseguro
 ports		ports

@@ -1,0 +1,45 @@
+This is port devel/portmk, an alternate bsd.port.mk.
+
+Targets of this project are:
+
+- Modularization on bsd.port.mk, to make refactoring possible.
+
+- Better awareness of upcoming features for ports developers,
+  including giving them the ability to review changes and give
+  feedback early.
+
+- Faster turnaround times for development patches.
+
+- Widespread testing of new features.
+
+- Faster adoption of advanced features without endangering the
+  stability of the ports tree.
+
+This has been created as a follow-up to a proposal I sent to
+portmgr@ May 13th.
+
+Although it is desired that the whole ports tree builds with
+portmk, it is inevitable to break some ports. This may be due
+to bugs in portmk, where not every change is bento-tested before
+committed, or ports depending on undocumented features they
+shouldn't rely upon.
+
+How can you help?
+
+- Build your ports with portmk, falling back to omake only when
+  necessary. Submit entries to KnownIssues in case of problems.
+
+- Run a tinderbox with portmk 
+
+- Submit patches improving the code
+
+- Give feedback whether you like the new features, and what do
+  you think could be improved.
+
+Other available documentation:
+
+- Features: a list of features in portmk that are not in bsd.port.mk
+
+- ChangeLog: History of mayor feature additions / removals
+
+- KnownIssues: ports known to malfunction with portmk

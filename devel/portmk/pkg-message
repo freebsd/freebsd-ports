@@ -1,0 +1,14 @@
+Port devel/portmk has been successfully installed.
+
+To activate the alternate bsd.port.mk version, do
+
+  cd %%PORTSDIR%%/devel/portmk; make activate
+
+To build a port with the classic bsd.port.mk version, do
+
+  omake <... other args ...>
+
+Documentation is available at
+
+  %%DOCSDIR%%/ReadMe
+
