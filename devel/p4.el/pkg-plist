@@ -1,0 +1,5 @@
+share/emacs/site-lisp/p4.el
+@exec mkdir -p %D/lib/xemacs/site-lisp
+@exec ln -sf %D/%F %D/lib/xemacs/site-lisp/p4.el
+@unexec rm %D/lib/xemacs/site-lisp/p4.el
+@unexec /bin/rmdir %D/lib/xemacs %D/lib/xemacs/site-lisp 2>/dev/null || true
