@@ -417,6 +417,7 @@
     SUBDIR += xjman
     SUBDIR += xjman-3
     SUBDIR += xjtext
+    SUBDIR += xlockmore
     SUBDIR += xmsgsaver
     SUBDIR += xpdf
     SUBDIR += xshodo
