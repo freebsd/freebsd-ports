@@ -1,0 +1,6 @@
+=========================================================
+Please copy the file %%PREFIX%%/etc/yasql.conf.sample
+to %%PREFIX%%/etc/yasql.conf and edit your configuration.
+
+Export your ORACLE_HOME=%%PREFIX%%/oracle7
+=========================================================
