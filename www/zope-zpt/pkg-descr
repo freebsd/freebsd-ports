@@ -1,0 +1,24 @@
+From the website:
+
+  This product seeks to establish website production harmony
+  through the seamless integration of the three separate domains:
+  Presentation, Content and Logic.
+
+Zope Page Templates comprise a trio of Zope products which allow the complete
+conceptual separation of design (presentation) elements from business logic
+elements in a Zope-driven web application.  In essence this allows web
+designers to work on design templates for a Zope-based site using their
+favourite WYSIWYG web design tools.
+
+The ZPT implementation includes the Template Attribute Language (TAL), a web
+templating language (i.e. analogous to, say, PHP or Zope's own DTML).  TAL is
+an intentionally simple language, since in the ZPT paradigm all business
+logic should be implemented externally to the page templates in Python (or
+Perl) Script objects.
+
+See also:  http://www.zope.org/Documentation/Articles/ZPT{1,2}
+
+Author: Evan Simpson <evan@digicool.com>  
+WWW:    http://www.zope.org/Members/4am/ZPT
+
+-- Johann Visagie <wjv@FreeBSD.org>
