@@ -2,6 +2,8 @@ bin/analyze_coverage
 bin/formsedit
 bin/m3browser
 bin/m3build
+bin/m3build-4
+bin/m3build-4.0
 bin/m3bundle
 bin/m3pp
 bin/m3ship
