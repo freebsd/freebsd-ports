@@ -7,53 +7,58 @@
 
 PORTNAME=	ircd-ru
 PORTVERSION=	1.0.7
+PORTREVISION=	1
 CATEGORIES=	russian irc
-MASTER_SITES=	http://www.ircd.ru/pub/ircd-RU/
-DISTNAME=	ircd-RU-${PORTVERSION}-release
+MASTER_SITES=	ftp://ftp.ircd.ru/pub/ircd-RU/ ftp://ftp.ircd.ru/pub/ircd-RU/old/
+DISTNAME=	ircd-RU-${PORTVERSION}-02-stable
 
 MAINTAINER=	ilya@ircd.ru
 COMMENT=	An irc daemon with translation schemes and other useful features
 
 USE_BZIP2=	yes
-USE_GMAKE=      yes
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=	VARDIR=/var
 
 # irc.wenet.ru specific options
 .if defined(WITH_WENET)
-CONFIGURE_ARGS+=--enable-wenet
-CFLAGS+=	 -g
+CONFIGURE_ARGS+=--enable-wenet XFLAGS=-g
 .endif
 
 # enable hub support
 .if defined(WITH_HUB)
-CONFIGURE_ARGS+=	--enable-hub
+CONFIGURE_ARGS+=--enable-hub
 .endif
 
-# enable RC4 crypt (server<>server connection)
+# enable RC4 crypt (server to server connection)
 .if defined(WITH_ENCRYPTION)
-CONFIGURE_ARGS+=	--enable-encryption
+CONFIGURE_ARGS+=--enable-encryption
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 .endif
 
 # log to file instead of syslog
 .if defined(WITH_SYSLOGFILE)
-CONFIGURE_ARGS+=	--enable-syslogfile
+CONFIGURE_ARGS+=--enable-syslogfile
 .endif
 
 # enable dronemodule support
 .if defined(WITH_DRONEMODULE)
-CONFIGURE_ARGS+=	--enable-dronemodule
+CONFIGURE_ARGS+=--enable-dronemodule
+.endif
+
+# enable authmodule support
+.if defined(WITH_AUTHMODULE)
+CONFIGURE_ARGS+=--enable-authmodule
 .endif
 
 # enable DNSBL support
 .if defined(WITH_DNSBL)
-CONFIGURE_ARGS+=	--enable-dnsbl
+CONFIGURE_ARGS+=--enable-dnsbl
 .endif
 
 # enable select I/O
 .if defined(WITH_SELECT)
-CONFIGURE_ARGS+=	--enable-select
+CONFIGURE_ARGS+=--enable-select
 .endif
 
 pre-build:
@@ -66,7 +71,7 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd.sh ${LOCALBASE}/etc/rc.d
+	@${INSTALL_SCRIPT} -m 555 ${FILESDIR}/ircd.sh.sample ${LOCALBASE}/etc/rc.d
 	@${CHOWN} -R ircd:ircd ${LOCALBASE}/etc/ircd-ru
 	@${CHOWN} -R ircd:ircd ${LOCALBASE}/share/ircd-ru
 	@${CHOWN} -R ircd:ircd ${LOCALBASE}/share/doc/ircd-ru
