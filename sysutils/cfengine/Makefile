@@ -17,6 +17,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	GNU cfengine - a systems administration tool for networks
 
+DEPRECATED=		EOL - consider using cfengine-2.x instead
+EXPIRATION_DATE=	2005-09-14
+NO_LATEST_LINK=		yes
+
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 .endif
