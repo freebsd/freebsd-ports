@@ -26,7 +26,7 @@ MOZILLA=		mozilla
 HEADERS_SUFX=
 .else
 .if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
-MOZILLA=		${WITH_MOZILLA}
+MOZILLA=		mozilla-devel
 HEADERS_SUFX=		-devel
 .else
 MOZILLA=		mozilla
