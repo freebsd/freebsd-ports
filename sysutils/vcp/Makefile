@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	vcp
-PORTVERSION=	1.5
+PORTVERSION=	1.6.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://members.optusnet.com.au/~dbbryan/vcp/
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Copy files in curses interface
