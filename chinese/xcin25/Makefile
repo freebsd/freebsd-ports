@@ -6,42 +6,63 @@
 #
 
 PORTNAME=	xcin
-PORTVERSION=	2.5.2.3
-PORTREVISION=	2
+PORTVERSION=	2.5.3.p2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/ \
+		ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/ \
 		http://chewing.oio.cx/download/ \
 		http://chewing.oio.cx/snapshot/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2001Nov01-snapshot.tar.gz
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-2002Jan07-snapshot.tar.gz
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	kcwu@ck.tp.edu.tw
 
-LIB_DEPENDS=	tabe.0:${PORTSDIR}/chinese/libtabe \
+LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe \
 		intl.2:${PORTSDIR}/devel/gettext \
-		db2.0:${PORTSDIR}/databases/db
+		iconv.3:${PORTSDIR}/converters/libiconv
+.if !defined(USE_DB2)
+LIB_DEPENDS+=	db3.2:${PORTSDIR}/databases/db3
+.else
+LIB_DEPENDS+=	db2.0:${PORTSDIR}/databases/db
+.endif
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
-		${LOCALBASE}/share/tabe/libtabe-0.2.2:${PORTSDIR}/chinese/libtabe
+		${LOCALBASE}/share/tabe/libtabe-0.2.5:${PORTSDIR}/chinese/libtabe
 
 WRKSRC=		${WRKDIR}/xcin
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--x-libraries=${PREFIX}/lib \
+		--x-libraries=${X11BASE}/lib \
 		--with-xcin-dir=${PREFIX}/lib/X11/xcin25 \
-		--with-dbinc=${LOCALBASE}/include/db2 \
-		--with-dblib=${LOCALBASE}/lib \
-		--with-tabeinc=${LOCALBASE}/include/tabe \
-		--with-tabelib=${LOCALBASE}/lib \
-		--with-intlinc=${LOCALBASE}/include \
-		--with-intllib=${LOCALBASE}/lib
+		--with-db-lib=${LOCALBASE}/lib \
+		--with-tabe-inc=${LOCALBASE}/include/tabe \
+		--with-tabe-lib=${LOCALBASE}/lib \
+		--with-intl-inc=${LOCALBASE}/include \
+		--with-intl-lib=${LOCALBASE}/lib \
+		--with-iconv-inc=${LOCALBASE}/include \
+		--with-iconv-lib=${LOCALBASE}/lib
+.if !defined(USE_DB2)
+CONFIGURE_ARGS+= --with-db-inc=${LOCALBASE}/include/db3
+.else
+CONFIGURE_ARGS+= --with-db-inc=${LOCALBASE}/include/db2
+.endif
+
+MAN1=		xcin.1
+
+pre-fetch:
+.if !defined(USE_DB2)
+	@${ECHO} --
+	@${ECHO} "Type \"make -DUSE_DB2\" if you want use DB2."
+	@${ECHO} "Otherwise, xcin2.5 will use DB3."
+	@${ECHO} --
+.endif
 
 post-patch:
 	@mv ${WRKDIR}/chewing ${WRKSRC}/src/Cinput
 	@cd ${WRKSRC}/src/Cinput/chewing; ${SH} ./patch_chewing
 
 post-install:
-	strip ${PREFIX}/bin/xcin2.5
-	strip ${PREFIX}/lib/X11/xcin25/bin/cin2tab
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/lib/X11/xcin25/doc
 .for DOC in Bugs COPYING CREDITS Changes Cin CopyRight FAQ README \

@@ -6,38 +6,54 @@
 #
 
 PORTNAME=	libtabe
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.5
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/libtabe/devel/
 
-MAINTAINER=	keith@FreeBSD.org
+MAINTAINER=	kcwu@ck.tp.edu.tw
 
+LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
+.if defined(USE_DB2)
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
+.endif
 
 WRKSRC=		${WRKDIR}/libtabe
-USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${PREFIX}/include/tabe \
-		--with-dbinc=${PREFIX}/include/db2 \
-		--with-dblib=${PREFIX}/lib \
+		--with-db-lib=${LOCALBASE}/lib \
+		--with-db-bin=${LOCALBASE}/bin \
 		--enable-shared
 
+.if !defined(USE_DB2)
+CONFIGURE_ARGS+= --with-db-inc=${LOCALBASE}/include/db3
+.else
+CONFIGURE_ARGS+= --with-db-inc=${LOCALBASE}/include/db2
+.endif
+
 .include <bsd.port.pre.mk>
+
+pre-fetch:
+.if !defined(USE_DB2)
+	@${ECHO} --
+	@${ECHO} "Type \"make -DUSE_DB2\" if you want use DB2."
+	@${ECHO} "Otherwise, xcin2.5 will use DB3."
+	@${ECHO} --
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/tabe
-	${INSTALL_DATA} ${WRKSRC}/src/tsi-src/README ${PREFIX}/share/doc/tabe/README.tsi
+	${INSTALL_DATA} ${WRKSRC}/tsi-src/README ${PREFIX}/share/doc/tabe/README.tsi
 	${INSTALL_DATA} ${WRKSRC}/src/supports/bims/README ${PREFIX}/share/doc/tabe/README.bims
 .for DOC in BoPoMoFo.shtml Changes Changes.pre-0.1 TODO ZuYinCode.txt \
 		et26.txt libtabe.sgml
 	${INSTALL_DATA} ${WRKSRC}/doc/${DOC} ${PREFIX}/share/doc/tabe
 .endfor
 .endif
-	${TOUCH} ${PREFIX}/share/tabe/libtabe-0.2.2
-	${RM} -f ${PREFIX}/lib/libtabe.la ${PREFIX}/lib/libbims.la
+	${MKDIR} ${PREFIX}/share/tabe
+	${TOUCH} ${PREFIX}/share/tabe/libtabe-0.2.5
 
 .include <bsd.port.post.mk>

@@ -1,9 +1,0 @@
---- src/Cinput/bimsphone/Makefile.in.orig	Thu Jul 20 09:46:35 2000
-+++ src/Cinput/bimsphone/Makefile.in	Sat Aug 12 15:15:56 2000
-@@ -38,7 +38,7 @@
- xcininc = -I$(top_srcdir)/src/include
- xcinlib = -L${top_srcdir}/src/lib
- INC     = $(xcininc) $(x_includes) $(extra_inc) $(tabe_inc) $(db_inc)
--LIB     = $(xcinlib) $(extra_lib) $(tabe_lib) $(db_lib)
-+LIB     = $(xcinlib) $(extra_lib) $(tabe_lib) $(db_lib) -lgcc
- TARGET  = bimsphone.$(slib_ext)

@@ -1,10 +1,12 @@
 bin/xcin2.5
 etc/xcinrc
+lib/X11/xcin25/bimsphone.a
+lib/X11/xcin25/bimsphone.la
 lib/X11/xcin25/bimsphone.so
-lib/X11/xcin25/chewing.so
-lib/X11/xcin25/gen_inp.so
-lib/X11/xcin25/zh_hex.so
 lib/X11/xcin25/bin/cin2tab
+lib/X11/xcin25/chewing.a
+lib/X11/xcin25/chewing.la
+lib/X11/xcin25/chewing.so
 %%PORTDOCS%%lib/X11/xcin25/doc/Bugs
 %%PORTDOCS%%lib/X11/xcin25/doc/COPYING
 %%PORTDOCS%%lib/X11/xcin25/doc/CREDITS
@@ -33,6 +35,9 @@ lib/X11/xcin25/bin/cin2tab
 %%PORTDOCS%%lib/X11/xcin25/doc/modules/gen_inp
 %%PORTDOCS%%lib/X11/xcin25/doc/modules/im_comm
 %%PORTDOCS%%lib/X11/xcin25/doc/modules/zh_hex
+lib/X11/xcin25/gen_inp.a
+lib/X11/xcin25/gen_inp.la
+lib/X11/xcin25/gen_inp.so
 lib/X11/xcin25/tab/big5/array30.tab
 lib/X11/xcin25/tab/big5/bims_pinyin.tab
 lib/X11/xcin25/tab/big5/cj.tab
@@ -41,30 +46,37 @@ lib/X11/xcin25/tab/big5/jyutping.tab
 lib/X11/xcin25/tab/big5/jyutping0.tab
 lib/X11/xcin25/tab/big5/phone.tab
 lib/X11/xcin25/tab/big5/pinyin.tab
+lib/X11/xcin25/tab/big5/pinyin0.tab
 lib/X11/xcin25/tab/big5/simplex.tab
 lib/X11/xcin25/tab/big5/sys.tab
-lib/X11/xcin25/tab/big5/tsi.db
-lib/X11/xcin25/tab/big5/yin.db
+lib/X11/xcin25/tab/big5/telecode.tab
 lib/X11/xcin25/tab/ch_index.dat
 lib/X11/xcin25/tab/dict.dat
 lib/X11/xcin25/tab/euc/default.phr
 lib/X11/xcin25/tab/euc/jtcj_gb.tab
-lib/X11/xcin25/tab/euc/phonegb2.tab
 lib/X11/xcin25/tab/euc/pinyin.tab
+lib/X11/xcin25/tab/euc/phonegb2.tab
 lib/X11/xcin25/tab/euc/shuangpin.tab
 lib/X11/xcin25/tab/euc/sys.tab
 lib/X11/xcin25/tab/euc/wubizixing.tab
 lib/X11/xcin25/tab/fonetree.dat
 lib/X11/xcin25/tab/ph_index.dat
 lib/X11/xcin25/tab/us_freq.dat
+lib/X11/xcin25/zh_hex.a
+lib/X11/xcin25/zh_hex.la
+lib/X11/xcin25/zh_hex.so
+lib/libxcin.a
+lib/libxcin.la
+lib/libxcin.so
+lib/libxcin.so.0
 share/locale/zh_TW.Big5/LC_MESSAGES/xcin.mo
-@dirrm lib/X11/xcin25/bin
 %%PORTDOCS%%@dirrm lib/X11/xcin25/doc/En/internal
 %%PORTDOCS%%@dirrm lib/X11/xcin25/doc/En
 %%PORTDOCS%%@dirrm lib/X11/xcin25/doc/history
 %%PORTDOCS%%@dirrm lib/X11/xcin25/doc/internal
 %%PORTDOCS%%@dirrm lib/X11/xcin25/doc/modules
-@dirrm lib/X11/xcin25/doc
+%%PORTDOCS%%@dirrm lib/X11/xcin25/doc
+@dirrm lib/X11/xcin25/bin
 @dirrm lib/X11/xcin25/tab/big5
 @dirrm lib/X11/xcin25/tab/euc
 @dirrm lib/X11/xcin25/tab
