@@ -1,5 +1,8 @@
-etc/fonts/local.conf
+@unexec if cmp -s %D/etc/fonts/local.conf %D/etc/fonts/local.conf-vera; then rm -f %D/etc/fonts/local.conf; fi
+etc/fonts/local.conf-vera
+@exec [ ! -f %B/local.conf ] && cp %B/%f %B/local.conf
 %%FONTSDIR%%/COPYRIGHT.TXT
+%%FONTSDIR%%/fonts.cache-1
 %%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/tt2001gn.ttf
 %%FONTSDIR%%/tt2002gn.ttf
@@ -13,6 +16,4 @@ etc/fonts/local.conf
 %%FONTSDIR%%/tt2012gn.ttf
 %%PORTDOCS%%share/doc/bitstream-vera/Bitstream_Vera_Fonts_README.html
 %%PORTDOCS%%@dirrm share/doc/bitstream-vera
-@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
 @dirrm %%FONTSDIR%%
-@exec %%X11BASE%%/bin/fc-cache -f -v
