@@ -87,6 +87,7 @@
     SUBDIR += p5-Math-Pari
     SUBDIR += p5-Math-Random
     SUBDIR += p5-Math-Random-MT
+    SUBDIR += p5-Math-TrulyRandom
     SUBDIR += p5-MatrixReal
     SUBDIR += p5-Set-IntSpan
     SUBDIR += p5-Set-Window
