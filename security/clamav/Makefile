@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	${DISTVERSION:S/-rc//g:S/-/./g}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
@@ -42,9 +43,7 @@ CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
 		--disable-clamuko \
 		--disable-clamav \
 		--enable-bigstack \
-		--disable-dependency-tracking \
-		--with-user=${CLAMAVUSER} \
-		--with-group=${CLAMAVGROUP}
+		--disable-dependency-tracking
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib \
@@ -55,12 +54,12 @@ MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamav.conf.5
 MAN8=		clamd.8 clamav-milter.8
 
+CONFLICTS=	clamav-devel-*
+
 CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
 CLAMAV_CLAMD_SOCKET?=	/var/run/clamav/clamd
-CLAMAV_MILTER_SOCKET?=	/var/run/clmilter.sock
-
-CONFLICTS=	clamav-devel-*
+CLAMAV_MILTER_SOCKET?=	/var/run/clamav/clmilter.sock
 
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%DATADIR%%|${DATADIR}|g' \
@@ -110,8 +109,6 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|g' \
 		${WRKSRC}/clamav-milter/clamav-milter.c
-
-#	@${REINPLACE_CMD} -E -e 's/(_LIBS=.*)-l?pthread -lc_r[[:>:]]/\1${PTHREAD_LIBS}/' \
 
 post-build:
 	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf
