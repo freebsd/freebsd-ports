@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jing
-PORTVERSION=	2002.04.30
+PORTVERSION=	2002.05.31
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.thaiopensource.com/relaxng/
 DISTNAME=	${PORTNAME}-bin
 
-MAINTAINER=	fuyuki@mj.0038.net
+MAINTAINER=	fuyuki@hadaly.org
 
 JAXP?=		crimson # or xalan, saxon
 
