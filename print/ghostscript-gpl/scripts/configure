@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # driverselection
-/usr/bin/dialog --title "Ghostscript 5 driver configuration" --clear \
+/usr/bin/dialog --title "Ghostscript 6 driver configuration" --clear \
 	--checklist "\n\
 This new ghostscript driver configuration dialog allows you to choose \n\
 only those gs drivers, you really need. Don't think too economical, since \n\
@@ -13,65 +13,68 @@ Have fun with this new configuration style !     -andreas \n\n\
   "iwhi"     "Apple Imagewriter, high-resolution mode" OFF \
   "iwlo"     "Apple Imagewriter, low-resolution mode" OFF \
   "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" OFF \
-  "hl7x0"    "Brother HL 720 and HL 730" OFF \
+  "hl7x0"    "Brother HL720 and HL730 (HL760=PCL), MFC6550MC Fax Machine" OFF \
   "bj10e"    "Canon BubbleJet BJ10e" ON \
   "bj200"    "Canon BubbleJet BJ200 and BJC-240(b&w)" ON \
-  "bjc600"   "Canon Color BJC-240/600/4000/70 + Apple StyleWriter 2x00" ON \
+  "bjc600"   "Canon Color BJC-600/4xxx/70 + Apple StyleWriter 2x00" ON \
   "bjc800"   "Canon Color BubbleJet BJC-240/800" ON \
   "lbp8"     "Canon LBP-8II laser printer" OFF \
-  "lips3"    "Canon LIPS III laser printer in English/CaPSL mode" OFF \
+  "lips3"    "Canon LIPS III laser printer in English (CaPSL) mode" OFF \
   "m8510"    "C.Itoh M8510 printer" OFF \
-  "uniprint" "Configurable Color ESC/P,ESC/P2,HP-RTL/PCL mono/color driver" ON \
-  "la50"     "DEC LA50 printer" OFF \
-  "la70"     "DEC LA70 printer" OFF \
-  "la75"     "DEC LA75 printer" OFF \
-  "la75plus" "DEC LA75plus printer" OFF \
+  "coslw2p"  "CoStar LabelWriter II II/Plus" OFF \
+  "coslwxl"  "CoStar LabelWriter XL" OFF \
+  "uniprint" "Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X mono/color driver" ON \
   "lj250"    "DEC LJ250 Companion color printer" OFF \
   "declj250" "DEC LJ250 driver (alternate)" OFF \
-  "ln03"     "DEC LN03 printer" OFF \
   "ap3250"   "Epson AP3250" OFF \
   "epson"    "Epson-compatible dot matrix, 9/24-pin" OFF \
-  "eps9mid"  "Epson-compatible 9-pin, medium resol" OFF \
-  "eps9high" "Epson-compatible 9-pin, high resol" OFF \
+  "eps9mid"  "Epson-compatible 9-pin, interleaved lines, medium resol" OFF \
+  "eps9high" "Epson-compatible 9-pin, interleaved lines, triple resol" OFF \
   "lp8000"   "Epson LP-8000 line printer" OFF \
   "lq850"    "Epson LQ-850 (360x360), ok for Canon BJ300 in LQ850 emul" OFF \
   "epsonc"   "Epson LQ-2550 and Fujitsu 3400/2400/1200 color" OFF \
   "st800"    "Epson Stylus 800 printer" OFF \
-  "stcolor"  "Epson Stylus Color" OFF \
+  "stcolor"  "Epson Stylus Color and II/IIs/1500 (see driver docu)" OFF \
   "lp2563"   "HP 2563B line printer" OFF \
   "dnj650c"  "HP DesignJet 650C" OFF \
   "deskjet"  "HP DeskJet and DeskJet Plus" ON \
-  "djet500"  "HP DeskJet 500" ON \
+  "djet500"  "HP DeskJet 500 (for DeskJet 600 use -r600)" ON \
   "cdeskjet" "HP DeskJet 500C, 1 bit/pixel color" ON \
   "djet500c" "HP DeskJet 500C alternate driver, not for 550/560C" OFF \
-  "cdjcolor" "HP DeskJet 500C/540C, 24 bit/pixel color + FS dithering" ON \
+  "cdjcolor" "HP DeskJet 500C/540C, 24bit/pxl+FS dith, Citizen Projet IIc" ON \
   "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" ON \
-  "cdj500"   "HP DeskJet 500C (same as cdjcolor)" OFF \
-  "cdj550"   "HP DeskJet 550C/560C" ON \
+  "cdj500"   "HP DeskJet 500/540C (same as cdjcolor)" OFF \
+  "cdj550"   "HP DeskJet 550C/560C/660C/660Cse" ON \
   "cdj670"   "HP DeskJet 670/690" OFF \
   "cdj850"   "HP DeskJet 850/855/870/1100" OFF \
+  "cdj880"   "HP DeskJet 812/815/832/880/882/895/932/970 C (experimental)" OFF \
   "cdj890"   "HP DeskJet 890" OFF \
   "cdj1600"  "HP DeskJet 1600" OFF \
   "laserjet" "HP LaserJet" ON \
   "ljetplus" "HP LaserJet Plus" ON \
   "ljet2p"   "HP LaserJet IId/IIp/III* with TIFF compression" ON \
   "ljet3"    "HP LaserJet III* with Delta Row compression" ON \
-  "ljet3d"   "HP LaserJet IIID with duplex capability" OFF \
-  "ljet4"    "HP LaserJet 4 (defaults to 600 dpi)" ON \
+  "ljet3d"   "HP LaserJet IIID with duplex capability" ON \
+  "ljet4"    "HP LaserJet 4 and 5L/5P (not real LJ5), defaults to 600 dpi" ON \
+  "ljet4d"   "HP LaserJet 4 (defaults to 600 dpi) with duplex" ON \
   "lj4dith"  "HP LaserJet 4 with Floyd-Steinberg dithering" OFF \
-  "cljet5"   "HP LaserJet 5/5M Color " OFF \
-  "lj5mono"  "HP LaserJet 5 and 6 family (PCL5 / PCL XL), bitmap" OFF \
-  "lj5gray"  "HP LaserJet 5 and 6 family, gray-scale bitmap" OFF \
+  "cljet5"   "HP LaserJet 5/5M Color (new driver, old=cljet5pr)" ON \
+  "cljet5c"  "HP LaserJet 5/5M Color Simple" ON \
+  "cljet5pr" "HP LaserJet 5/5M Color (old drv. with rotation hacks/flaws)" ON \
+  "lj5mono"  "HP LaserJet 5 and 6 family (PCL5 / PCL XL), bitmap" ON \
+  "lj5gray"  "HP LaserJet 5 and 6 family, gray-scale bitmap" ON \
   "pj"       "HP PaintJet XL driver " ON \
   "pjetxl"   "HP PaintJet XL driver (alternate)" OFF \
   "pjxl"     "HP PaintJet XL color printer" ON \
   "paintjet" "HP PaintJet color printer (alternate)" OFF \
-  "pjxl300"  "HP PaintJet XL300 color printer (also for 1200C)" ON \
+  "pjxl300"  "HP PaintJet XL300, DeskJet 1200C color printer, HP CopyJet" ON \
   "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" ON \
   "pxlcolor" "HP PCL XL color printers (none available yet)" ON \
   "ibmpro"   "IBM 9-pin Proprinter" OFF \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
   "imagen"   "Imagen ImPress printers" OFF \
+  "fs600"    "Kyocera FS-600 (600 dpi)" OFF \
+  "lxm5700m" "Lexmark 5700 monotone" OFF \
   "cp50"     "Mitsubishi CP50 color" OFF \
   "necp6"    "NEC P6/P6+/P60, 360x360 DPI resol" OFF \
   "oce9050"  "OCE 9050 printer" OFF \
@@ -79,17 +82,19 @@ Have fun with this new configuration style !     -andreas \n\n\
   "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
   "r4081"    "Ricoh 4081 laser printer" OFF \
   "sj48"     "StarJet 48 inkjet printer" OFF \
-  "xes"      "Xerox XES printers (2700, 3700, 4045, etc.)" OFF \
-  "bmpmono"  "BMP Monochrome" OFF \
-  "bmp16"    "BMP 4-bit EGA/VGA" OFF \
-  "bmp256"   "BMP 8-bit 256-color" OFF \
-  "bmp16m"   "BMP 24-bit" OFF \
+  "bmpmono"  "BMP Monochrome" ON \
+  "bmpgray"  "BMP 8-bit gray" ON \
+  "bmp16"    "BMP 4-bit EGA/VGA" ON \
+  "bmp256"   "BMP 8-bit 256-color" ON \
+  "bmp16m"   "BMP 24-bit" ON \
+  "bmp32b"   "BMP 32-bit pseudo-.BMP" ON \
+  "bmpsep1"  "BMP Separated 1-bit CMYK" ON \
+  "bmpsep8"  "BMP Separated 8-bit CMYK" ON \
   "ccr"      "CalComp Raster format" OFF \
   "cgmmono"  "CGM Monochrome -- LOW LEVEL OUTPUT ONLY" OFF \
   "cgm8"     "CGM 8-bit 256-color -- DITTO" OFF \
   "cgm24"    "CGM 24-bit color -- DITTO" OFF \
   "cif"      "CIF file format for VLSI" OFF \
-  "sxlcrt"   "CRT sixels, e.g. for VT240-like terminals" OFF \
   "dfaxhigh" "DigiBoard, DigiFAX software format (high resol)" OFF \
   "dfaxlow"  "DigiFAX low (normal) resol" OFF \
   "faxg3"    "Group 3 fax, with EOLs but no header or EOD" ON \
@@ -128,6 +133,8 @@ Have fun with this new configuration style !     -andreas \n\n\
   "ppmraw"   "Portable Pixmap,  raw format RGB" ON \
   "pkm"      "Portable inKmap (plain format) (4-bit CMYK => RGB)" ON \
   "pkmraw"   "Portable inKmap (raw format) (4-bit CMYK => RGB)" ON \
+  "pksm"     "Portable Separated map (plain) (4-bit CMYK => 4 pages)" ON \
+  "pksmraw"  "Portable Separated map (raw) (4-bit CMYK => 4 pages)" ON \
   "pngmono"  "PNG Monochrome Portable Network Graphics" ON \
   "pnggray"  "PNG 8-bit gray Portable Network Graphics" ON \
   "png16"    "PNG 4-bit color Portable Network Graphics" ON \
@@ -139,6 +146,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pswrite"  "PostScript output (like PostScript Distillery)" ON \
   "epswrite" "EPS output (like PostScript Distillery)" ON \
   "sgirgb"   "SGI RGB pixmap format" OFF \
+  "sunhmono" "Harlequin variant of 1-bit Sun raster file" OFF \
   "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" OFF \
   "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" OFF \
   "t4693d8"  "Tektronix 4693d color, 8 bits per R/G/B component" OFF \
@@ -160,6 +168,8 @@ Have fun with this new configuration style !     -andreas \n\n\
   "x11gray2" "X Windows as a 2-bit gray-scale device" ON \
   "x11gray4" "X Windows as a 4-bit gray-scale device" ON \
   "x11mono"  "X Windows masquer. as black-and-white device" ON \
+  "x11rg16x" "X Windows with G5/B5/R6 pixel layout for testing" ON \
+  "x11rg32x" "X Windows with G11/B10/R11 pixel layout for testing" ON \
 2> /tmp/checklist.tmp.$$
 
 retval=$?
@@ -183,8 +193,8 @@ echo "DEVICE_DEVS=$choice" \
 	| sed -e "s/\"//g" \
 	| sed -e "s/ /.dev /g" \
 	| sed -e "s/$/.dev/g" \
-	> ${WRKSRC}/unix-gcc.mak.new
+	> ${WRKSRC}/src/unix-gcc.mak.new
 
 # create one new Makefile, where DEVICE_DEVS contains all wanted devices
-cat ${WRKSRC}/unix-gcc.mak >> ${WRKSRC}/unix-gcc.mak.new
-mv ${WRKSRC}/unix-gcc.mak.new ${WRKSRC}/unix-gcc.mak
+cat ${WRKSRC}/src/unix-gcc.mak >> ${WRKSRC}/src/unix-gcc.mak.new
+mv ${WRKSRC}/src/unix-gcc.mak.new ${WRKSRC}/src/unix-gcc.mak
