@@ -18,6 +18,8 @@ DISTNAME=	jakarta-tomcat-${PORTVERSION}-src
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Apache module for Tomcat 3
 
+BROKEN=		"Broken dependency"
+
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT} \
 		${TOMCAT_HOME}/lib/tomcat.jar:${PORTSDIR}/www/jakarta-tomcat3
