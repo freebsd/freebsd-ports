@@ -82,8 +82,8 @@ case ${branch} in
     # export PORTOBJFORMAT=elf
     ;;
   4*)
-    # export OSREL=4.2
-    # export OSVERSION=420001
+    export OSREL=4.3
+    export OSVERSION=430000
     # export PORTOBJFORMAT=elf
     ;;
   3*)
