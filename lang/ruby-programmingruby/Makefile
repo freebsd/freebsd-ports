@@ -1,5 +1,5 @@
-# New ports collection makefile for:		Programming Ruby
-# Date created:			8 February 2001
+# New ports collection makefile for:		Programming Ruby--The Book
+# Date created:			8 March 2001
 # Whom:				Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
