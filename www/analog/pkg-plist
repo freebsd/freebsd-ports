@@ -6,6 +6,7 @@ share/analog/lang/README.txt
 share/analog/lang/am.lng
 share/analog/lang/amdom.tab
 share/analog/lang/ba.lng
+share/analog/lang/baq.lng
 share/analog/lang/bg.lng
 share/analog/lang/bgdesc.txt
 share/analog/lang/bgdom.tab
@@ -23,6 +24,8 @@ share/analog/lang/cata.lng
 share/analog/lang/catadom.tab
 share/analog/lang/catdom.tab
 share/analog/lang/cn.lng
+share/analog/lang/cndesc.txt
+share/analog/lang/cndom.tab
 share/analog/lang/cz.lng
 share/analog/lang/cz1.lng
 share/analog/lang/cz1a.lng
@@ -166,11 +169,12 @@ share/analog/lang/yu.lng
 share/analog/lang/yua.lng
 share/analog/lang/yudom.tab
 %%PORTDOCS%%%%DOCSDIR%%/LicBSD.txt
-%%PORTDOCS%%%%DOCSDIR%%/Licapach.txt
+%%PORTDOCS%%%%DOCSDIR%%/Licbzip2.txt
 %%PORTDOCS%%%%DOCSDIR%%/Licence.txt
 %%PORTDOCS%%%%DOCSDIR%%/Licgd.txt
 %%PORTDOCS%%%%DOCSDIR%%/Licpcre.txt
 %%PORTDOCS%%%%DOCSDIR%%/Licpng.txt
+%%PORTDOCS%%%%DOCSDIR%%/Licunzip.txt
 %%PORTDOCS%%%%DOCSDIR%%/Liczlib.txt
 %%PORTDOCS%%%%DOCSDIR%%/Readme.html
 %%PORTDOCS%%%%DOCSDIR%%/acknow.html
@@ -227,10 +231,18 @@ share/analog/lang/yudom.tab
 %%PORTDOCS%%%%DOCSDIR%%/wasnew2.html
 %%PORTDOCS%%%%DOCSDIR%%/wasnew3.html
 %%PORTDOCS%%%%DOCSDIR%%/wasnew4.html
+%%PORTDOCS%%%%DOCSDIR%%/wasnew5.html
 %%PORTDOCS%%%%DOCSDIR%%/webworks.html
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/big.cfg
 %%PORTDOCS%%%%EXAMPLESDIR%%/bigbyrep.cfg
+%%PORTDOCS%%%%EXAMPLESDIR%%/css/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/css/default.css
+%%PORTDOCS%%%%EXAMPLESDIR%%/css/jreeves/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/css/jreeves/blue.css
+%%PORTDOCS%%%%EXAMPLESDIR%%/css/jreeves/buff.css
+%%PORTDOCS%%%%EXAMPLESDIR%%/css/jreeves/gray.css
+%%PORTDOCS%%%%EXAMPLESDIR%%/css/jreeves/gray_expanded.css
 %%PORTDOCS%%%%EXAMPLESDIR%%/misclogs.cfg
 %%PORTDOCS%%%%EXAMPLESDIR%%/robotinc.cfg
 %%PORTDOCS%%%%EXAMPLESDIR%%/searchen.cfg
@@ -375,6 +387,8 @@ share/analog/lang/yudom.tab
 %%IMGDIR%%/sqg.png
 @dirrm share/analog/lang
 @dirrm share/analog
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/css/jreeves
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/css
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm share/doc/analog
-%%PORTDOCS%%@dirrm share/examples/analog
 @unexec rmdir %D/%%IMGDIR%% 2>/dev/null || true

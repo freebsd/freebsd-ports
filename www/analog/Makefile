@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	analog
-PORTVERSION=	5.32
-PORTREVISION=	3
+PORTVERSION=	6.0
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
@@ -52,7 +52,12 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.cfg ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}/css
+	${INSTALL_DATA} ${WRKSRC}/examples/css/Readme.txt ${EXAMPLESDIR}/css
+	${INSTALL_DATA} ${WRKSRC}/examples/css/default.css ${EXAMPLESDIR}/css
+	${MKDIR} ${EXAMPLESDIR}/css/jreeves
+	${INSTALL_DATA} ${WRKSRC}/examples/css/jreeves/* ${EXAMPLESDIR}/css/jreeves
 .endif
 	${INSTALL_MAN} ${WRKSRC}/analog.man ${PREFIX}/man/man1/analog.1
 
