@@ -1889,6 +1889,7 @@ florist		ports/devel/florist
 flounder	ports/science/flounder
 flow-extract	ports/net-mgmt/flow-extract
 flow-tools	ports/net-mgmt/flow-tools
+flowdesigner	ports/devel/flowdesigner
 flowscan	ports/net-mgmt/flowscan
 flphoto		ports/graphics/flphoto
 fltk		ports/x11-toolkits/fltk
