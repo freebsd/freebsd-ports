@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.090
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -24,9 +25,11 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	postfix-1.090-1.wbm.gz \
+WEBMIN_MODULES=	mount-1.090-2.wbm.gz \
+		net-1.090-1.wbm.gz \
+		postfix-1.090-1.wbm.gz \
 		qmailadmin-1.090-1.wbm.gz \
-		quota-1.090-1.wbm.gz \
+		quota-1.090-2.wbm.gz \
 		sendmail-1.090-1.wbm.gz \
 		shorewall-1.090-1.wbm.gz
 
