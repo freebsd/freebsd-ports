@@ -18,4 +18,4 @@ o Route AppleTalk between multiple Ethernet interfaces.
 
 Requires AppleTalk support in the kernel (FreeBSD 2.2 or newer).
 
-See http://www.umich.edu/~rsug/netatalk/ for further information.
+WWW: http://www.umich.edu/~rsug/netatalk/

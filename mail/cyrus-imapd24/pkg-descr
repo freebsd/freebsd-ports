@@ -18,4 +18,4 @@ read/write connections to the same mailbox are permitted.  The server
 supports access control lists on mailboxes and storage quotas on mailbox
 hierarchies.
 
-See http://andrew2.andrew.cmu.edu/cyrus/imapd/ for further details.
+WWW: http://andrew2.andrew.cmu.edu/cyrus/imapd/
