@@ -9,13 +9,13 @@
 #
 # Please view me with 4 column tabs!
 
-# There are two different types of "maintainers" in the whole ports
-# framework concept.  The maintainer alias of the bsd.port.mk file is
-# listed below in the FreeBSD_MAINTAINER entry.  You should consult
-# them if you have any questions/suggestions regarding this file.
+# There are two different types of "maintainers" in the ports framework.
+# The maintainer alias of the bsd.port.mk file is listed below in the
+# FreeBSD_MAINTAINER entry.  You should consult them if you have any
+# questions/suggestions regarding this file.
 #
-# DO NOT COMMIT CHANGES TO THIS FILE BY YOURSELF, EVEN IF DID NOT GET
-# A RESPONSE FROM MAINTAINER(S) WITHIN A REASONABLE TIMEFRAME! ALL
+# DO NOT COMMIT CHANGES TO THIS FILE BY YOURSELF, EVEN IF YOU DID NOT GET
+# A RESPONSE FROM THE MAINTAINER(S) WITHIN A REASONABLE TIMEFRAME! ALL
 # UNAUTHORISED CHANGES WILL BE UNCONDITIONALLY REVERTED!
 
 FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
@@ -24,7 +24,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # contact information on the person(s) to contact if you have questions/
 # suggestions about that specific port.  By default (if no MAINTAINER
 # is listed), a port is maintained by the subscribers of the ports@FreeBSD.org
-# mailing list, and any correspondece should be directed there.
+# mailing list, and any correspondence should be directed there.
 #
 # MAINTAINER	- The e-mail address of the contact person for this port
 #				  (default: ports@FreeBSD.org).
@@ -127,7 +127,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  the stages needs to influence make(1) variables of the later
 #				  stages using ${WRKDIR}/Makefile.inc generated on the fly.
 #
-# Set these if your port only makes sense to certain archetictures.
+# Set these if your port only makes sense to certain architectures.
 # They are lists containing names for them (e.g., "alpha i386").
 #
 # ONLY_FOR_ARCHS - Only build ports if ${ARCH} matches one of these.
@@ -837,9 +837,12 @@ PLIST_SUB+=	        PORTDOCS="@comment "
 PLIST_SUB+=	        PORTDOCS=""
 .endif
 
-CONFIGURE_ENV+=	PORTOBJFORMAT=${PORTOBJFORMAT}
+CONFIGURE_SHELL?=	${SH}
+MAKE_SHELL?=	${SH}
+
+CONFIGURE_ENV+=	SHELL=${SH} CONFIG_SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT}
 SCRIPTS_ENV+=	PORTOBJFORMAT=${PORTOBJFORMAT}
-MAKE_ENV+=		PORTOBJFORMAT=${PORTOBJFORMAT}
+MAKE_ENV+=		SHELL=${SH} PORTOBJFORMAT=${PORTOBJFORMAT}
 PLIST_SUB+=		PORTOBJFORMAT=${PORTOBJFORMAT}
 
 .if defined(MANCOMPRESSED)
@@ -1105,10 +1108,10 @@ MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB=
 
 .if ${OSVERSION} < 500016
 PTHREAD_CFLAGS=	-D_THREAD_SAFE
-PTHREAD_LIBS=		"-pthread"
+PTHREAD_LIBS=		-pthread
 .else
 PTHREAD_CFLAGS=	-D_THREAD_SAFE
-PTHREAD_LIBS=		"-lc_r"
+PTHREAD_LIBS=		-lc_r
 .endif
 
 .if exists(/usr/bin/fetch)
@@ -1146,6 +1149,11 @@ PATCH_DIST_ARGS+=	--batch
 .if defined(PATCH_CHECK_ONLY)
 PATCH_ARGS+=	-C
 PATCH_DIST_ARGS+=	-C
+.endif
+
+.if ${PATCH} == "/usr/bin/patch"
+PATCH_ARGS+=	-b .orig
+PATCH_DIST_ARGS+=	-b .orig
 .endif
 
 .if exists(/bin/tar)
@@ -1488,13 +1496,14 @@ ALLFILES?=	${_DISTFILES} ${_PATCHFILES}
 #
 MASTER_SORT?=
 MASTER_SORT_REGEX?=
-MASTER_SORT_REGEX+= ${MASTER_SORT:S|.|\\.|g:S|^|//[^/]*|:S|$|/|}
+MASTER_SORT_REGEX+=	${MASTER_SORT:S|.|\\.|g:S|^|://[^/]*|:S|$|/|}
 
-MASTER_SORT_AWK= BEGIN { RS = " "; ORS = " "; IGNORECASE = 1 ; gl = "${MASTER_SORT_REGEX}"; }
+MASTER_SORT_AWK=	BEGIN { RS = " "; ORS = " "; IGNORECASE = 1 ; gl = "${MASTER_SORT_REGEX:S|\\|\\\\|g}"; }
 .for srt in ${MASTER_SORT_REGEX}
-MASTER_SORT_AWK+= /${srt:S^/^\\/^g}/ { good["${srt}"] = good["${srt}"] " " $$0 ; next; } 
+MASTER_SORT_AWK+=	/${srt:S|/|\\/|g}/ { good["${srt:S|\\|\\\\|g}"] = good["${srt:S|\\|\\\\|g}"] " " $$0 ; next; }
 .endfor
-MASTER_SORT_AWK+= { rest = rest " " $$0; } END { n=split(gl, gla); for(i=1;i<=n;i++) { print good[gla[i]]; } print rest; }
+MASTER_SORT_AWK+=	{ rest = rest " " $$0; } END { n=split(gl, gla); for(i=1;i<=n;i++) { print good[gla[i]]; } print rest; }
+
 SORTED_MASTER_SITES_DEFAULT_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites-DEFAULT
 SORTED_PATCH_SITES_DEFAULT_CMD=		cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites-DEFAULT
 SORTED_MASTER_SITES_ALL_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites-ALL
@@ -1512,7 +1521,7 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//}
 .			if !target(master-sites-${_group})
 SORTED_MASTER_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites-${_group}
 master-sites-${_group}:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 .			endif
 .		endfor
 .	endif
@@ -1524,7 +1533,7 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//}
 .			if !target(patch-sites-${_group})
 SORTED_PATCH_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites-${_group}
 patch-sites-${_group}:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 .			endif
 .		endfor
 .	endif
@@ -1557,14 +1566,14 @@ _PATCH_SITES_ENV+=	_PATCH_SITES_${_group}="${_PATCH_SITES_${_group}}"
 .endfor
 
 master-sites-ALL:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 patch-sites-ALL:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_ALL}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 # has similar effect to old targets, i.e., access only {MASTER,PATCH}_SITES, not working with the new _n variables
 master-sites-DEFAULT:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_MASTER_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 patch-sites-DEFAULT:
-	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}
+	@echo ${_MASTER_SITE_OVERRIDE} `echo '${_PATCH_SITES_DEFAULT}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 
 # synonyms, mnemonics
 master-sites-all: master-sites-ALL
@@ -1823,7 +1832,7 @@ VERSIONFILE=	${PKG_DBDIR}/.mkversion
 .endif
 .if exists(${VERSIONFILE})
 .if !defined(SYSTEMVERSION)
-SYSTEMVERSION!=	cat ${VERSIONFILE}
+SYSTEMVERSION!=	${CAT} ${VERSIONFILE}
 .endif
 .else
 SYSTEMVERSION=	0
@@ -2057,6 +2066,10 @@ pre-everything:
 
 .if !target(do-fetch)
 do-fetch:
+	@if [ ! -w ${DISTDIR} ]; then \
+	   ${ECHO_MSG} ">> ${DISTDIR} is not writable; cannot fetch."; \
+	   exit 1; \
+	fi
 	@${MKDIR} ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
 	 ${_MASTER_SITES_ENV} ; \
@@ -2064,7 +2077,7 @@ do-fetch:
 		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			if [ -h $$file -o -h `${BASENAME} $$file` ]; then \
+			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
 				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
@@ -2088,7 +2101,7 @@ do-fetch:
 					fi \
 				done; \
 				___MASTER_SITES_TMP= ; \
-				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__MASTER_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__MASTER_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -2117,7 +2130,7 @@ do-fetch:
 		file=`echo $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`echo $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			if [ -h $$file -o -h `${BASENAME} $$file` ]; then \
+			if [ -L $$file -o -L `${BASENAME} $$file` ]; then \
 				${ECHO_MSG} ">> ${_DISTDIR}/$$file is a broken symlink."; \
 				${ECHO_MSG} ">> Perhaps a filesystem (most likely a CD) isn't mounted?"; \
 				${ECHO_MSG} ">> Please correct this problem and try again."; \
@@ -2133,7 +2146,7 @@ do-fetch:
 					fi \
 				done; \
 				___PATCH_SITES_TMP= ; \
-				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__PATCH_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__PATCH_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -2214,7 +2227,7 @@ do-patch:
 			PATCHES_APPLIED="" ; \
 			for i in ${PATCHDIR}/patch-*; do \
 				case $$i in \
-					*.orig|*.rej|*~) \
+					*.orig|*.rej|*~|*,v) \
 						${ECHO_MSG} "===>   Ignoring patchfile $$i" ; \
 						;; \
 					*) \
@@ -2782,7 +2795,7 @@ fetch-list:
 					fi \
 				done; \
 				___MASTER_SITES_TMP= ; \
-				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__MASTER_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_MASTER_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__MASTER_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -2814,7 +2827,7 @@ fetch-list:
 					fi \
 				done; \
 				___PATCH_SITES_TMP= ; \
-				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__PATCH_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK}'` ${_MASTER_SITE_BACKUP}" ; \
+				SORTED_PATCH_SITES_CMD_TMP="echo ${_MASTER_SITE_OVERRIDE} `echo '$${__PATCH_SITES_TMP}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}" ; \
 			else \
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi ; \
@@ -3159,9 +3172,19 @@ RUN-DEPENDS-LIST= \
 package-depends-list:
 	@${PACKAGE-DEPENDS-LIST}
 
-PACKAGE-DEPENDS-LIST= \
+PACKAGE-DEPENDS-LIST?= \
 	if [ "${CHILD_DEPENDS}" ]; then \
-		${ECHO_CMD} "${PKGNAME}	${.CURDIR}"; \
+		installed=$$(${PKG_INFO} -qO ${PKGORIGIN} 2>/dev/null || \
+			${TRUE}); \
+		if [ "$$installed" ]; then \
+			break; \
+		fi; \
+		if [ -z "$$installed" ]; then \
+			installed="${PKGNAME}"; \
+		fi; \
+		for pkgname in $$installed; do \
+			${ECHO_CMD} "$$pkgname ${.CURDIR} ${PKGORIGIN}"; \
+		done; \
 	fi; \
 	checked="${PARENT_CHECKED}"; \
 	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
@@ -3169,12 +3192,11 @@ PACKAGE-DEPENDS-LIST= \
 			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
 				childout=$$(cd $$dir; ${MAKE} CHILD_DEPENDS=yes PARENT_CHECKED="$$checked" package-depends-list); \
 				set -- $$childout; \
-				childname=""; childdir=""; \
+				childdir=""; \
 				while [ $$\# != 0 ]; do \
-					childname="$$childname $$1"; \
 					childdir="$$childdir $$2"; \
-					${ECHO_CMD} "$$1	$$2"; \
-					shift 2; \
+					${ECHO_CMD} "$$1 $$2 $$3"; \
+					shift 3; \
 				done; \
 				checked="$$dir $$childdir $$checked"; \
 			fi; \
@@ -3186,7 +3208,11 @@ PACKAGE-DEPENDS-LIST= \
 # Print out package names.
 
 package-depends:
+.if ${OSVERSION} >= 460102
+	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1":"$$3}'
+.else
 	@${PACKAGE-DEPENDS-LIST} | ${AWK} '{print $$1}'
+.endif
 
 ################################################################
 # Everything after here are internal targets and really
@@ -3421,8 +3447,8 @@ fake-pkg:
 		if [ -f ${PKGMESSAGE} ]; then \
 			${CP} ${PKGMESSAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
-		for dep in `cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} package-depends ECHO_MSG=${TRUE} | sort -u`; do \
-			if [ -d ${PKG_DBDIR}/$$dep -a -z `echo $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
+		for dep in `${PKG_INFO} -qf ${PKGNAME} | ${GREP} -w ^@pkgdep | ${AWK} '{print $$2}' | sort -u`; do \
+			if [ -d ${PKG_DBDIR}/$$dep -a -z `${ECHO_CMD} $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
 				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
 					${ECHO_CMD} ${PKGNAME} >> ${PKG_DBDIR}/$$dep/+REQUIRED_BY; \
@@ -3430,6 +3456,13 @@ fake-pkg:
 			fi; \
 		done; \
 	fi
+.if !defined(NO_MTREE)
+	@if [ ! -d ${PKG_DBDIR}/${PKGNAME} ]; then \
+		if [ -f ${MTREE_FILE} ]; then \
+			${CP} ${MTREE_FILE} ${PKG_DBDIR}/${PKGNAME}/+MTREE_DIRS; \
+		fi; \
+	fi
+.endif
 	@if [ -e /tmp/${PKGNAME}-required-by ]; then \
 		${CAT} /tmp/${PKGNAME}-required-by >> ${PKG_DBDIR}/${PKGNAME}/+REQUIRED_BY; \
 		${RM} -f /tmp/${PKGNAME}-required-by; \
