@@ -3,21 +3,15 @@ bin/plpr
 bin/plrender
 bin/pltek
 include/plplot/pdf.h
-include/plplot/plstrm.h
 include/plplot/plevent.h
 include/plplot/plplot.h
 include/plplot/plplotP.h
 include/plplot/plstream.h
+include/plplot/plstrm.h
 include/plplot/plxwd.h
 lib/libplplotdX.a
 lib/libplplotdX.so
 lib/libplplotdX.so.4
-libdata/plplot/cglobe.map
-libdata/plplot/globe.map
-libdata/plplot/plstnd5.fnt
-libdata/plplot/plxtnd5.fnt
-libdata/plplot/usa.map
-libdata/plplot/usaglobe.map
 share/doc/plplot/CHANGES
 share/doc/plplot/FAQ
 share/doc/plplot/NEWS
@@ -128,6 +122,13 @@ share/examples/plplot/tk/x16.tcl
 share/examples/plplot/tk/xtk01.c
 share/examples/plplot/tk/xtk02.c
 share/examples/plplot/tk/xtk04.c
+share/plplot/cglobe.map
+share/plplot/globe.map
+share/plplot/plstnd5.fnt
+share/plplot/plxtnd5.fnt
+share/plplot/usa.map
+share/plplot/usaglobe.map
+@dirrm share/plplot
 @dirrm share/examples/plplot/tk
 @dirrm share/examples/plplot/tcl
 @dirrm share/examples/plplot/python
@@ -135,5 +136,4 @@ share/examples/plplot/tk/xtk04.c
 @dirrm share/examples/plplot/c
 @dirrm share/examples/plplot
 @dirrm share/doc/plplot
-@dirrm libdata/plplot
 @dirrm include/plplot

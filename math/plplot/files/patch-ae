@@ -5,7 +5,7 @@
  
  #ifndef PLLIBDEV
 -#define PLLIBDEV "/usr/local/plplot/lib"
-+#define PLLIBDEV "%%PREFIX%%/libdata/plplot"
++#define PLLIBDEV "%%PREFIX%%/share/plplot"
  #endif
  
  #endif
