@@ -4042,6 +4042,7 @@ kcdlabel	ports/print/kcdlabel
 kcheckers	ports/games/kcheckers
 kcpuload	ports/sysutils/kcpuload
 kcube		ports/sysutils/kcube
+kdar		ports/sysutils/kdar
 kdbg		ports/devel/kdbg
 kdc2tiff	ports/graphics/kdc2tiff
 kde-icons-amaranth	ports/x11-themes/kde-icons-amaranth
