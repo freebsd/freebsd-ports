@@ -78,6 +78,7 @@ share/opera/locale/english.lng
 share/opera/opera6.adr
 share/opera/plugins/libnpp.so
 share/opera/plugins/operamotifwrapper
+share/opera/plugins/operamotifwrapper-3
 share/opera/plugins/operaplugincleaner
 share/opera/search.ini
 share/opera/skin/standard_skin.zip

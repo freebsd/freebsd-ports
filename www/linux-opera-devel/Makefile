@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	opera
-PORTVERSION=	7.22.20031103
+PORTVERSION=	7.23.20031119
 CATEGORIES=	www linux
-MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/722/final/en/i386/static/
+MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/723/final/en/i386/static/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.2003/-2003/}.1-static-qt.i386-en
 
@@ -20,8 +20,15 @@ RESTRICTED=	"not redistributable; commercial software"
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif
 
-USE_BZIP2=	yes
+.if defined(WITH_XFT2)
+RUN_DEPENDS+=	${LINUXBASE}/usr/X11R6/lib/libXrandr.so.2:${PORTSDIR}/x11/linux-XFree86-libs \
+		${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig \
+		${LINUXBASE}/usr/lib/libexpat.so.0:${PORTSDIR}/textproc/linux-expat
+.else
 USE_LINUX=	yes
+.endif
+
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
@@ -59,6 +66,13 @@ PLIST_SUB+=	KDE2:="@comment "
 PLIST_SUB+=	GNOMELNK:=""
 .else
 PLIST_SUB+=	GNOMELNK:="@comment "
+.endif
+
+pre-everything::
+.if !defined(WITH_XFT2)
+	@${ECHO_MSG} "You may specify the following on the command line:"
+	@${ECHO_MSG} " "
+	@${ECHO_MSG} "WITH_XFT2=yes for use Xft2 (requires linux_base-8) with nicer anti-aliased fonts."
 .endif
 
 post-patch:
