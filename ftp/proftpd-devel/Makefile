@@ -69,6 +69,11 @@ do-install:
 		${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/etc/proftpd.conf; \
 	fi
 	@${SED} -e 's,/usr/local,${PREFIX},g' ${FILESDIR}/proftpd.sh.sample > ${PREFIX}/etc/rc.d/proftpd.sh.sample
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/proftpd
+	@${INSTALL_DATA} ${WRKSRC}/doc/Configuration.html ${PREFIX}/share/doc/proftpd
+	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ-config.html ${PREFIX}/share/doc/proftpd
+.endif
 
 	@${CAT} ${PKGMESSAGE}
 
