@@ -3,16 +3,16 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.8 1998/02/17 00:04:51 obrien Exp $
+# $Id: Makefile,v 1.9 1998/02/23 01:52:52 jdp Exp $
 #
 
-DISTNAME=	egcs-980205
+DISTNAME=	egcs-980221
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-02-05/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-02-05/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-02-05/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-02-21/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-02-21/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-02-21/
 
-MAINTAINER=	jdp@polstra.com
+MAINTAINER=	obrien@FreeBSD.org
 
 MANUAL_PACKAGE_BUILD=	installs libstdc++.a which conflicts with system version
 
@@ -31,12 +31,12 @@ post-patch:
 
 post-install:
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ ${PREFIX}/bin/c++ \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.07/cc1 \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.07/cc1obj \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.07/cc1plus \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.07/cpp \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.07/f771 \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.07/ld ; \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/cc1 \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/cc1obj \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/cc1plus \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/cpp \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/f771 \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.09/ld ; \
 		do strip $$prog ; \
 		done)
 	if [ ! -f ${PREFIX}/info/dir ]; then \
