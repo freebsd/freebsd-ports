@@ -1,0 +1,10 @@
+--- tools/dumpwad.cpp.orig	Wed Jun  6 08:31:42 2001
++++ tools/dumpwad.cpp	Thu Feb  7 10:51:25 2002
+@@ -13,6 +13,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <stdarg.h>
+ 
+ // Dummy declarations to avoid link errors
+ void set_game_error(short a, short b) {}
