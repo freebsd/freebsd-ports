@@ -22,17 +22,6 @@
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
-@@ -57,8 +59,8 @@
- ifndef CLASSIC_NSPR
- USE_PTHREADS		= 1
- DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
--OS_LIBS			+= -pthread
--DSO_LDOPTS		+= -pthread
-+OS_LIBS			+= -lpthread
-+DSO_LDOPTS		+= -lpthread
- endif
- 
- ARCH			= freebsd
 @@ -71,7 +73,11 @@
  DLL_SUFFIX		= so.1.0
  endif
