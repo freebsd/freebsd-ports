@@ -1,11 +1,14 @@
+www/postfixadmin/BACKUP_MX.TXT
 www/postfixadmin/CHANGELOG.TXT
 www/postfixadmin/DATABASE.TXT
 www/postfixadmin/INSTALL.TXT
 www/postfixadmin/LICENSE.TXT
+www/postfixadmin/TABLE_BACKUP_MX.TXT
 www/postfixadmin/TABLE_CHANGES.TXT
 www/postfixadmin/UPGRADE.TXT
 www/postfixadmin/VIRTUAL_VACATION/FILTER_README
 www/postfixadmin/VIRTUAL_VACATION/INSTALL.TXT
+www/postfixadmin/VIRTUAL_VACATION/index.php
 www/postfixadmin/VIRTUAL_VACATION/mail-filter
 www/postfixadmin/VIRTUAL_VACATION/vacation.pl
 www/postfixadmin/admin/.htaccess
@@ -39,8 +42,16 @@ www/postfixadmin/edit-alias.php
 www/postfixadmin/edit-mailbox.php
 www/postfixadmin/functions.inc.php
 www/postfixadmin/index.php
+www/postfixadmin/images/back.gif
+www/postfixadmin/images/index.php
+www/postfixadmin/images/next.gif
+www/postfixadmin/images/postfixadmin.png
+www/postfixadmin/images/up.gif
+www/postfixadmin/languages/ca.lang
+www/postfixadmin/languages/cn.lang
+www/postfixadmin/languages/cs.lang
+www/postfixadmin/languages/da.lang
 www/postfixadmin/languages/de.lang
-www/postfixadmin/languages/dk.lang
 www/postfixadmin/languages/en.lang
 www/postfixadmin/languages/es.lang
 www/postfixadmin/languages/eu.lang
@@ -48,21 +59,21 @@ www/postfixadmin/languages/fi.lang
 www/postfixadmin/languages/fo.lang
 www/postfixadmin/languages/fr.lang
 www/postfixadmin/languages/hu.lang
+www/postfixadmin/languages/index.php
 www/postfixadmin/languages/is.lang
 www/postfixadmin/languages/it.lang
 www/postfixadmin/languages/nl.lang
-www/postfixadmin/languages/no-nn.lang
+www/postfixadmin/languages/nn.lang
 www/postfixadmin/languages/pl.lang
 www/postfixadmin/languages/pt-br.lang
 www/postfixadmin/languages/ru.lang
-www/postfixadmin/languages/se.lang
+www/postfixadmin/languages/sv.lang
 www/postfixadmin/languages/tr.lang
 www/postfixadmin/login.php
 www/postfixadmin/logout.php
 www/postfixadmin/main.php
 www/postfixadmin/overview.php
 www/postfixadmin/password.php
-www/postfixadmin/postfixadmin.png
 www/postfixadmin/sendmail.php
 www/postfixadmin/stylesheet.css
 www/postfixadmin/templates/admin_create-admin.tpl
@@ -74,12 +85,14 @@ www/postfixadmin/templates/admin_list-admin.tpl
 www/postfixadmin/templates/admin_list-domain.tpl
 www/postfixadmin/templates/admin_list-virtual.tpl
 www/postfixadmin/templates/admin_menu.tpl
+www/postfixadmin/templates/bla@bla.com,blabla@bla.com
 www/postfixadmin/templates/create-alias.tpl
 www/postfixadmin/templates/create-mailbox.tpl
 www/postfixadmin/templates/edit-alias.tpl
 www/postfixadmin/templates/edit-mailbox.tpl
 www/postfixadmin/templates/footer.tpl
 www/postfixadmin/templates/header.tpl
+www/postfixadmin/templates/index.php
 www/postfixadmin/templates/login.tpl
 www/postfixadmin/templates/main.tpl
 www/postfixadmin/templates/menu.tpl
@@ -108,6 +121,7 @@ www/postfixadmin/variables.inc.php
 www/postfixadmin/viewlog.php
 @dirrm www/postfixadmin/VIRTUAL_VACATION
 @dirrm www/postfixadmin/admin
+@dirrm www/postfixadmin/images
 @dirrm www/postfixadmin/languages
 @dirrm www/postfixadmin/templates
 @dirrm www/postfixadmin/users
