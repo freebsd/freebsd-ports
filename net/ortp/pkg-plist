@@ -1,0 +1,32 @@
+include/ortp/ortp-config.h
+include/ortp/ortp.h
+include/ortp/payloadtype.h
+include/ortp/port_fct.h
+include/ortp/rtp.h
+include/ortp/rtpmod.h
+include/ortp/rtpport.h
+include/ortp/rtpsession.h
+include/ortp/rtpsignaltable.h
+include/ortp/rtptimer.h
+include/ortp/scheduler.h
+include/ortp/sessionset.h
+include/ortp/str_utils.h
+include/ortp/telephonyevents.h
+lib/libortp.a
+lib/libortp.so
+lib/libortp.so.0
+share/doc/ortp/book1.html
+share/doc/ortp/index.sgml
+share/doc/ortp/ortp-multiplexing-sessions-(in-a-one-thread-design).html
+share/doc/ortp/ortp-rtp-payloads-and-profiles.html
+share/doc/ortp/ortp-rtpsession-api.html
+share/doc/ortp/ortp-stack-initialisation.html
+share/doc/ortp/ortp-stack-management-functions.html
+share/doc/ortp/ortp-telephone-events-(rfc2833)-.html
+share/doc/ortp/ortp-telephony-events-(rfc2833)-.html
+share/doc/ortp/ortpapi.html
+share/doc/ortp/rtpsession.html
+share/doc/ortp/stackinit.html
+share/doc/ortp/startup.html
+@dirrm share/doc/ortp
+@dirrm include/ortp
