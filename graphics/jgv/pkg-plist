@@ -1,0 +1,28 @@
+JDE/JGV/COPYING
+JDE/JGV/bin/JGV.app
+JDE/JGV/defaults/JGV
+JDE/JGV/docs/CHANGES
+JDE/JGV/docs/INSTALL.tk.en
+JDE/JGV/docs/INSTALL.tk.ja
+JDE/JGV/docs/JGV.xpm
+JDE/JGV/docs/README.Imagemagick.en
+JDE/JGV/docs/README.Imagemagick.ja
+JDE/JGV/docs/README.en
+JDE/JGV/docs/README.ja
+JDE/JGV/icons/Pref.en.gif
+JDE/JGV/icons/Pref.ja.gif
+JDE/JGV/icons/logo.gif
+JDE/JGV/icons/logo.xpm
+JDE/JGV/install.sh
+JDE/JGV/menu/menu.en
+JDE/JGV/menu/menu.ja
+JDE/JGV/modules/PrefJGV.m
+bin/JGV.app
+%%PIXMAP_PATH%%/JGV.xpm
+@dirrm JDE/JGV/bin
+@dirrm JDE/JGV/defaults
+@dirrm JDE/JGV/docs
+@dirrm JDE/JGV/icons
+@dirrm JDE/JGV/menu
+@dirrm JDE/JGV/modules
+@dirrm JDE/JGV
