@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.2.06
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES+=	textproc
 MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 DISTNAME=	ispell-3.2.06		# needed for slave ports / options
@@ -209,7 +209,7 @@ post-patch:
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/AF.patch 2>/dev/null
 .endif
 .if defined(ISPELL_PL)
-	@${REINPLACE_CMD} -e 's/bash/sh/' ${BUILDHASH}
+	@${REINPLACE_CMD} -e 's/bash/sh/'  -e 's:^buildhash:${WRKSRC}/buildhash:' ${BUILDHASH}
 .endif
 
 post-configure:
