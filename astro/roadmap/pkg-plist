@@ -1,10 +1,8 @@
-@cwd %%X11BASE%%
 bin/gtkroadmap
 bin/gtkroadgps
 @exec ln -sf %D/bin/gtkroadmap %D/bin/roadmap
 @exec ln -sf %D/bin/gtkroadgps %D/bin/roadgps
 @unexec rm -f %D/bin/roadmap %D/bin/roadgps 2>&1 >/dev/null || true
-@cwd %%LOCALBASE%%
 bin/buildmap
 bin/buildus
 bin/dumpmap
@@ -15,10 +13,4 @@ bin/rdmcompare
 %%DATADIR%%/preferences
 %%DATADIR%%/schema
 %%DATADIR%%/sprites
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
