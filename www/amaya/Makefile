@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	4.3.1
-PORTREVISION=	1
+PORTVERSION=	4.3.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${DISTNAME}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
