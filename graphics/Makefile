@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.57 1997/12/19 19:07:02 vanilla Exp $
+# $Id: Makefile,v 1.58 1997/12/24 07:40:43 vanilla Exp $
 #
 
     SUBDIR += ImageMagick
@@ -58,6 +58,7 @@
     SUBDIR += xbmbrowser
     SUBDIR += xdl
     SUBDIR += xfig
+    SUBDIR += xfpovray
     SUBDIR += xfractint
     SUBDIR += xgrasp
     SUBDIR += xli
