@@ -7,6 +7,7 @@
 
 PORTNAME=	MT
 PORTVERSION=	2.65
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -57,7 +58,8 @@ do-install:
 	  -e 's/# StaticWebPath/StaticWebPath/g' \
 	  -e 's#path/to/static-files#mt#g' \
 	  -e 's/# NoHTMLEntities 1/NoHTMLEntities 1/g' \
-	  ${WRKSRC}/mt.cfg > ${PREFIX}/${CGIDIR}/mt.cfg
+	  ${WRKSRC}/mt.cfg > ${PREFIX}/${CGIDIR}/mt.cfg.dist
+	[ -e ${PREFIX}/${CGIDIR}/mt.cfg ] || ${CP} ${PREFIX}/${CGIDIR}/mt.cfg.dist ${PREFIX}/${CGIDIR}/mt.cfg
 	${SED} -e 's#$$MT_DIR, .schemas.#"${PREFIX}/${DATADIR}/schemas"#' \
 	  ${WRKSRC}/mt-load.cgi > ${PREFIX}/${CGIDIR}/mt-load.cgi
 	@${ECHO_MSG} "Installing data ${PREFIX}/${DATADIR}"

@@ -189,7 +189,9 @@
 %%CGIDIR%%/mt-tb.cgi
 %%CGIDIR%%/mt-view.cgi
 %%CGIDIR%%/mt-xmlrpc.cgi
-%%CGIDIR%%/mt.cfg
+@unexec cmp %D/%%CGIDIR%%/mt.cfg.dist %D/%%CGIDIR%%/mt.cfg && rm %D/%%CGIDIR%%/mt.cfg || true 2>/dev/null
+%%CGIDIR%%/mt.cfg.dist
+@exec [ -e %D/%%CGIDIR%%/mt.cfg ] || cp %D/%%CGIDIR%%/mt.cfg.dist %D/%%CGIDIR%%/mt.cfg
 %%CGIDIR%%/mt.cgi
 %%CGIDIR%%/search_templates/comments.tmpl
 %%CGIDIR%%/search_templates/default.tmpl
@@ -320,6 +322,8 @@
 %%DATADIR%%/schemas/postgres.dump
 %%DATADIR%%/schemas/sqlite.dump
 %%DATADIR%%/styles.css
+@exec mkdir %D/%%CGIDIR%%/plugins
+@exec chown -R www:www %D/%%CGIDIR%% %D/%%DATADIR%%
 @dirrm %%CGIDIR%%/extlib/Apache/XMLRPC
 @dirrm %%CGIDIR%%/extlib/Apache
 @dirrm %%CGIDIR%%/extlib/CGI
@@ -371,7 +375,6 @@
 @dirrm %%DATADIR%%/images/lang-en-us
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/schemas
-@unexec rmdir %D/%%CGIDIR%%/mt/db 2>/dev/null || true
-@unexec rmdir %D/%%CGIDIR%%/mt 2>/dev/null || true
+@unexec rmdir %D/%%CGIDIR%%/db 2>/dev/null || true
 @unexec rmdir %D/%%CGIDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
