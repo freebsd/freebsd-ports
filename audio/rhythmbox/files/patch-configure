@@ -8,36 +8,3 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -21080,20 +21081,20 @@
-         echo "$as_me:$LINENO: checking for id3tag >= 0.15.0b" >&5
- echo $ECHO_N "checking for id3tag >= 0.15.0b... $ECHO_C" >&6
- 
--        if $PKG_CONFIG --exists "id3tag >= 0.15.0b" ; then
-+        if true ; then
-             echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6
-             succeeded=yes
- 
-             echo "$as_me:$LINENO: checking ID3TAG_CFLAGS" >&5
- echo $ECHO_N "checking ID3TAG_CFLAGS... $ECHO_C" >&6
--            ID3TAG_CFLAGS=`$PKG_CONFIG --cflags "id3tag >= 0.15.0b"`
-+            ID3TAG_CFLAGS=""
-             echo "$as_me:$LINENO: result: $ID3TAG_CFLAGS" >&5
- echo "${ECHO_T}$ID3TAG_CFLAGS" >&6
- 
-             echo "$as_me:$LINENO: checking ID3TAG_LIBS" >&5
- echo $ECHO_N "checking ID3TAG_LIBS... $ECHO_C" >&6
--            ID3TAG_LIBS=`$PKG_CONFIG --libs "id3tag >= 0.15.0b"`
-+            ID3TAG_LIBS="-L$LOCALBASE/lib -lid3tag -lz"
-             echo "$as_me:$LINENO: result: $ID3TAG_LIBS" >&5
- echo "${ECHO_T}$ID3TAG_LIBS" >&6
-         else
-@@ -21101,7 +21102,7 @@
-             ID3TAG_LIBS=""
-             ## If we have a custom action on failure, don't print errors, but
-             ## do set a variable so people can do so.
--            ID3TAG_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "id3tag >= 0.15.0b"`
-+            ID3TAG_PKG_ERRORS=
- 
-         fi
- 
