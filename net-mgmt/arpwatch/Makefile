@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	arpwatch
-PORTVERSION=	2.1.a10
-PORTREVISION=	1
+PORTVERSION=	2.1.a11
 CATEGORIES=	net
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/
-DISTNAME=	arpwatch-2.1a10
+DISTNAME=	arpwatch-2.1a11
 
 MAINTAINER=	brian@Awfulhak.org
 
