@@ -3,7 +3,7 @@
 # Date created:         9 February 1999
 # Whom:                 Dima Sivachenko
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/22 01:34:12 billf Exp $
+# $Id: Makefile,v 1.2 1999/04/26 02:46:15 mharo Exp $
 #
 
 DISTNAME=	quotes-1.4-0
@@ -20,7 +20,6 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 post-patch:
-
 	@ ${MV} ${WRKSRC}/quotes ${WRKSRC}/quotes.pre_sed
 	@ ${SED} -e 's#/usr/bin/perl#${PERL5}#' ${WRKSRC}/quotes.pre_sed \
 	> ${WRKSRC}/quotes
@@ -32,7 +31,6 @@ post-patch:
 	> ${WRKSRC}/QuExample.pm
 
 do-install:
-
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/quotes ${PREFIX}/bin
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/quotesmailer ${PREFIX}/bin
 	@ ${INSTALL_DATA} ${WRKSRC}/sample.quotesrc ${PREFIX}/etc/quotesrc.sample
