@@ -1,0 +1,14 @@
+--- src/Files.h.orig	Fri Jan  3 14:39:21 1997
++++ src/Files.h	Sat Jun 28 17:34:53 1997
+@@ -29,7 +29,11 @@
+ #ifdef _AIX
+ #pragma alloca
+ #else
++#ifdef __FreeBSD__
++#pragma alloca
++#else
+ #include <alloca.h>
++#endif
+ #endif
+ 
+ #include <stdio.h>
