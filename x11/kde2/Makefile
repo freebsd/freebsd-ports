@@ -13,7 +13,7 @@ DISTFILES=	# empty
 
 MAINTAINER=	se@freebsd.org
 
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase11 \
 		kcalc:${PORTSDIR}/misc/kdeutils11 \
 		kmahjongg:${PORTSDIR}/games/kdegames11 \

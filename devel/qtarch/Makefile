@@ -13,8 +13,8 @@ MASTER_SITES=	http://www.qtarch.intranova.net/
 
 MAINTAINER=	elwood@mc5sys.in-berlin.de
 
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.3:${PORTSDIR}/x11/kdelibs11
 
 FETCH_BEFORE_ARGS=	-b
 USE_QT=		yes

@@ -13,8 +13,8 @@ MASTER_SITES=	http://myy.helia.fi/~anttiner/
 MAINTAINER=	tom@FreeBSD.org
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.3:${PORTSDIR}/x11/kdelibs11
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/kmikmod

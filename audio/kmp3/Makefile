@@ -13,8 +13,8 @@ MASTER_SITE_SUBDIR=	stable/1.1/apps/multimedia/sound
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.3:${PORTSDIR}/x11/kdelibs11
 
 USE_QT=		yes
 GNU_CONFIGURE=	yes

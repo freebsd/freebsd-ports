@@ -13,9 +13,9 @@ MASTER_SITES=	http://download.sourceforge.net/kicq/
 MAINTAINER=	paxvel@iname.com
 
 LIB_DEPENDS=	icq.1:${PORTSDIR}/net/icqlib \
-		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
-		kfm.2:${PORTSDIR}/x11/kdelibs11
+		kdecore.3:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.3:${PORTSDIR}/x11/kdelibs11 \
+		kfm.3:${PORTSDIR}/x11/kdelibs11
 
 USE_QT=		yes
 

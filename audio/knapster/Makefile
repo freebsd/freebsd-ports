@@ -13,7 +13,7 @@ MASTER_SITES=	http://knapster.netpedia.net/packages/
 MAINTAINER=	jedgar@FreeBSD.org
 
 #BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	${LOCALBASE}/bin/kdehelp:${PORTSDIR}/x11/kdebase11
 
 USE_AUTOCONF=	yes

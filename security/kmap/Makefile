@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.islc.net/~icszepp/downloads/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
 USE_XLIB=	yes

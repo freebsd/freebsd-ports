@@ -13,12 +13,11 @@ MASTER_SITE_SUBDIR= stable/1.1/apps/utils
 
 MAINTAINER=	hanspb@persbraten.vgs.no
 
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt142 \
-		msgfmt:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
-		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
-		kfm.2:${PORTSDIR}/x11/kdelibs11
+		kdecore.3:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.3:${PORTSDIR}/x11/kdelibs11 \
+		kfm.3:${PORTSDIR}/x11/kdelibs11
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

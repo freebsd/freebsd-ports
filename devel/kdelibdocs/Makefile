@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://129.187.206.68/pub/unix/ide/KDevelop/documentation/ \
 
 MAINTAINER=	imura@FreeBSD.org
 
-LIB_DEPENDS?=	kdecore.2:${PORTSDIR}/x11/kdelibs11
+LIB_DEPENDS?=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

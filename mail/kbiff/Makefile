@@ -12,7 +12,7 @@ MASTER_SITES=	http://home.sprintmail.com/~granroth/kbiff/
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	kdeui.2:${PORTSDIR}/x11/kdelibs11 \
+LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11 \
 		intl.1:${PORTSDIR}/devel/gettext
 
 USE_QT=		yes
