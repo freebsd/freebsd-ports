@@ -1,0 +1,11 @@
+--- error.h.orig	Sun Oct 20 03:17:10 2002
++++ error.h	Sun Oct 20 03:17:15 2002
+@@ -15,7 +15,7 @@
+ #ifdef PUBLIC
+ char *errname = NULL;
+ int errcode = -1;
+-FILE *errstream = stderr;
++FILE *errstream;
+ #else
+ # define PUBLIC extern
+ extern char *errname;
