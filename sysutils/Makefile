@@ -300,6 +300,7 @@
     SUBDIR += port-authoring-tools
     SUBDIR += port-maintenance-tools
     SUBDIR += portdowngrade
+    SUBDIR += portindex
     SUBDIR += portsman
     SUBDIR += portupgrade
     SUBDIR += powerman
