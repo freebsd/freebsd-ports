@@ -1,11 +1,23 @@
---- doc/Makefile.in.orig        Tue Sep 30 12:06:45 1997
-+++ doc/Makefile.in     Fri Oct 10 19:19:27 1997
-@@ -147,7 +147,7 @@
- default: all
+--- Makefile.orig	Mon Feb 14 07:09:33 1994
++++ Makefile	Thu May 16 19:20:50 1996
+@@ -29,12 +29,16 @@
+ D	=.
+ O	=.
  
- .SUFFIXES:
--.SUFFIXES: .dvi .info .ps .texi .texinfo
-+#.SUFFIXES: .dvi .info .ps .texi .texinfo
- $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
- 	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps doc/Makefile
-
+-BINDIR	=/usr/local/bin
++##BINDIR	=/usr/local/bin
++BINDIR = $(PREFIX)/bin
+ 
+-MANDIR	=/usr/man/mann
+-MANEXT	=n
++##MANDIR	=/usr/man/mann
++##MANEXT	=n
++MANEXT = 1
++MANDIR = $(PREFIX)/man/man$(MANEXT)
+ 
+-CFLAGS	= -DBSD -O -DLPR_PRINT
++##CFLAGS	= -DBSD -O -DLPR_PRINT
++CFLAGS = -DBSD -O -DWIDTH=$(WIDTH) -DHEIGHT=$(HEIGHT) -DA4_PAPERSIZE=$(A4_PAPERSIZE)
+ # Default values for HEIGHT, WIDTH, MARGIN and DIR_SEP (11.64, 8.27, 1.2, '/').
+ # Default values for LPR_COMMAND and LPR_OPT ("lpr", "-l")
+ # No values for TWOSIDED_DFLT, ONESIDED and TWOSIDED
