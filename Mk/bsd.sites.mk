@@ -303,6 +303,7 @@ MASTER_SITE_RINGSERVER+=	\
 	http://www.t.ring.gr.jp/archives/%SUBDIR%/
 
 MASTER_SITE_RUBY+= \
+	http://www.ibiblio.org/pub/languages/ruby/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/lang/ruby/%SUBDIR%/ \
 	ftp://ftp.ruby-lang.org/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/unix/languages/ruby/%SUBDIR%/ \
@@ -335,8 +336,6 @@ MASTER_SITE_SOURCEWARE+= \
 	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/
 
 MASTER_SITE_SUNSITE+=	\
-	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.oit.unc.edu/pub/Linux/%SUBDIR%/ \
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
 	http://linux.dsi.internet2.edu/%SUBDIR%/ \
 	ftp://ftp.unicamp.br/pub/systems/Linux/%SUBDIR%/ \
