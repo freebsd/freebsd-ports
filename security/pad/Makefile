@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pad
-PORTVERSION=	0.7
+PORTVERSION=	1.0.4
 CATEGORIES=	security
 MASTER_SITES=	http://www.lammah.com/pad/
 EXTRACT_SUFX=	.tgz
@@ -20,9 +20,9 @@ USE_OPENSSL=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pad ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/pad
+	${MKDIR} ${DOCSDIR}
 .for i in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/pad
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
 
