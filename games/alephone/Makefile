@@ -14,13 +14,19 @@ DISTNAME=	AlephOne-${PORTVERSION}
 
 MAINTAINER=	malyn@strangeGizmo.com
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12:install
+LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12:install \
+		SDL_image.10:${PORTSDIR}/graphics/sdl_image:install
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+
+post-patch:
+	@${PERL} -pi -e 's,^#include \"network_modem.h\".*,,' \
+		${WRKSRC}/Source_Files/Network/network.cpp \
+		${WRKSRC}/Source_Files/Network/network_stream.cpp \
 
 post-install:
 .if !defined(NOPORTDOCS)
