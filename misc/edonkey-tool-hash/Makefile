@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ed2k-tools
 PKGNAMESUFFIX=	-tool-hash
-DISTNAME=	ed2k_hash-${PORTVERSION}
+DISTNAME=	ed2k-hash_${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Both calculates 'eDonkey/Overnet hashes' producing ed2k:// file links
@@ -19,8 +19,9 @@ COMMENT=	Both calculates 'eDonkey/Overnet hashes' producing ed2k:// file links
 PLIST_FILES=	bin/edonkey-tool-hash
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
+
+WRKSRC=	${WRKDIR}/ed2k_hash-${PORTVERSION}
 
 post-patch:
 # respect CFLAGS
