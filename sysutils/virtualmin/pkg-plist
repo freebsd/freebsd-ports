@@ -24,6 +24,8 @@ lib/webmin/virtual-server/createvirtualminmodule.sh
 lib/webmin/virtual-server/csr.cgi
 lib/webmin/virtual-server/defaultacl
 lib/webmin/virtual-server/delete_domain.cgi
+lib/webmin/virtual-server/disable-feature.pl
+lib/webmin/virtual-server/disable-limit.pl
 lib/webmin/virtual-server/disable_domain.cgi
 lib/webmin/virtual-server/domain-template
 lib/webmin/virtual-server/domain_form.cgi
@@ -34,14 +36,18 @@ lib/webmin/virtual-server/edit_domain.cgi
 lib/webmin/virtual-server/edit_ffile.cgi
 lib/webmin/virtual-server/edit_limits.cgi
 lib/webmin/virtual-server/edit_newbw.cgi
+lib/webmin/virtual-server/edit_newfields.cgi
 lib/webmin/virtual-server/edit_newlocal.cgi
 lib/webmin/virtual-server/edit_newplugin.cgi
 lib/webmin/virtual-server/edit_newsubdom.cgi
 lib/webmin/virtual-server/edit_newtmpl.cgi
 lib/webmin/virtual-server/edit_newuser.cgi
+lib/webmin/virtual-server/edit_plugconfig.cgi
 lib/webmin/virtual-server/edit_rfile.cgi
 lib/webmin/virtual-server/edit_tmpl.cgi
 lib/webmin/virtual-server/edit_user.cgi
+lib/webmin/virtual-server/enable-feature.pl
+lib/webmin/virtual-server/enable-limit.pl
 lib/webmin/virtual-server/enable_domain.cgi
 lib/webmin/virtual-server/expframe_form.cgi
 lib/webmin/virtual-server/feature-dir.pl
@@ -110,6 +116,7 @@ lib/webmin/virtual-server/help/unixusername.html
 lib/webmin/virtual-server/help/unixuserquota.de.html
 lib/webmin/virtual-server/help/unixuserquota.html
 lib/webmin/virtual-server/help/userdest.html
+lib/webmin/virtual-server/help/userhome.html
 lib/webmin/virtual-server/help/usermailbox.html
 lib/webmin/virtual-server/help/username.de.html
 lib/webmin/virtual-server/help/username.html
@@ -132,6 +139,7 @@ lib/webmin/virtual-server/images/icon.gif
 lib/webmin/virtual-server/images/newbw.gif
 lib/webmin/virtual-server/images/newdns.gif
 lib/webmin/virtual-server/images/newdom.gif
+lib/webmin/virtual-server/images/newfields.gif
 lib/webmin/virtual-server/images/newframe.gif
 lib/webmin/virtual-server/images/newftp.gif
 lib/webmin/virtual-server/images/newlocal.gif
@@ -172,10 +180,12 @@ lib/webmin/virtual-server/save_ffile.cgi
 lib/webmin/virtual-server/save_frame.cgi
 lib/webmin/virtual-server/save_limits.cgi
 lib/webmin/virtual-server/save_newbw.cgi
+lib/webmin/virtual-server/save_newfields.cgi
 lib/webmin/virtual-server/save_newlocal.cgi
 lib/webmin/virtual-server/save_newplugin.cgi
 lib/webmin/virtual-server/save_newsubdom.cgi
 lib/webmin/virtual-server/save_newuser.cgi
+lib/webmin/virtual-server/save_plugconfig.cgi
 lib/webmin/virtual-server/save_rfile.cgi
 lib/webmin/virtual-server/save_tmpl.cgi
 lib/webmin/virtual-server/save_user.cgi
@@ -190,6 +200,7 @@ lib/webmin/virtual-server/subdomain-template
 lib/webmin/virtual-server/uninstall.pl
 lib/webmin/virtual-server/user-template
 lib/webmin/virtual-server/useradmin_update.pl
+lib/webmin/virtual-server/view_log.cgi
 lib/webmin/virtual-server/virtual-server-lib.pl
 lib/webmin/virtual-server/virtual_feature_api.pl
 lib/webmin/virtual-server/warnbw-template
