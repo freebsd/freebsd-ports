@@ -1,0 +1,12 @@
+====
+Note that some of the standard modules are provided as separate
+ports since they require extra dependencies:
+
+bsddb		databases/py-bsddb
+gdbm		databases/py-gdbm
+mpz		math/py-mpz
+pyexpat		textproc/py-expat
+tkinter		x11-toolkits/py-tkinter
+
+Install them as occasion demands.
+====
