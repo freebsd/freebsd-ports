@@ -1,20 +1,11 @@
---- polyp/default.pa.in.orig	Fri Oct 29 22:16:24 2004
-+++ polyp/default.pa.in	Fri Oct 29 22:17:43 2004
-@@ -21,7 +21,7 @@
- # Load audio drivers statically
- 
- #load-module module-alsa-sink
--load-module module-alsa-source device=plughw:1,0
-+#load-module module-alsa-source device=plughw:1,0
- load-module module-oss device="/dev/dsp" sink_name=output source_name=input record=0
- #load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
- load-module module-null-sink
+--- polyp/default.pa.in.orig	Sun Nov 21 22:27:41 2004
++++ polyp/default.pa.in	Fri Dec 31 14:16:34 2004
 @@ -53,7 +53,7 @@
  .nofail
  
  # Load something to the sample cache
 -load-sample x11-bell /usr/share/sounds/KDE_Notify.wav
 +load-sample x11-bell %%LOCALBASE%%/share/sounds/KDE_Notify.wav
+ load-sample-dir-lazy /usr/share/sounds/*.wav
  
  # Load X11 bell module
- load-module module-x11-bell sample=x11-bell sink=output

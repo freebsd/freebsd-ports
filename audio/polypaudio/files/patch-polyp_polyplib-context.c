@@ -1,10 +1,10 @@
---- polyp/polyplib-context.c.orig	Fri Oct 29 17:05:24 2004
-+++ polyp/polyplib-context.c	Fri Oct 29 17:05:39 2004
-@@ -34,6 +34,7 @@
+--- polyp/polyplib-context.c.orig	Fri Dec 31 14:39:40 2004
++++ polyp/polyplib-context.c	Fri Dec 31 14:40:00 2004
+@@ -29,6 +29,7 @@
+ #include <string.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <sys/syslimits.h>
+ #include <netdb.h>
+ #include <unistd.h>
  #include <sys/stat.h>
- #include <errno.h>
- #include <sys/wait.h>
-+#include <signal.h>
- 
- #include "polyplib-internal.h"
- #include "polyplib-context.h"

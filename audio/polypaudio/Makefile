@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polypaudio
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/polypaudio/
 
@@ -45,6 +45,11 @@ post-patch:
 		${WRKSRC}/polyp/default.pa.in
 	@${REINPLACE_CMD} -e 's|seq|jot|' \
 		${WRKSRC}/polyp/esdcompat.sh.in
+# 4.x doesn't have float_t
+.if ${OSVERSION} < 500000
+	@${REINPLACE_CMD} -e 's|float_t|float|g' \
+		${WRKSRC}/polyp/sample-util.c
+.endif
 
 post-install:
 .for ii in default.pa daemon.conf client.conf
