@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Toolkit
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	www textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Template
@@ -44,8 +44,8 @@ MAN3=	Template.3 Template::Base.3 Template::Constants.3 \
 	Template::Plugin::CGI.3 Template::Plugin::DBI.3 \
 	Template::Plugin::Datafile.3 Template::Plugin::Date.3 \
 	Template::Plugin::Directory.3 Template::Plugin::Dumper.3 \
-	Template::Plugin::File.3 Template::Plugin::Format.3 \
-	Template::Plugin::GD::Constants.3 \
+	Template::Plugin::File.3 Template::Plugin::Filter.3 \
+	Template::Plugin::Format.3 Template::Plugin::GD::Constants.3 \
 	Template::Plugin::GD::Graph::area.3 \
 	Template::Plugin::GD::Graph::bars.3 \
 	Template::Plugin::GD::Graph::bars3d.3 \
@@ -60,10 +60,11 @@ MAN3=	Template.3 Template::Base.3 Template::Constants.3 \
 	Template::Plugin::GD::Text::Align.3 \
 	Template::Plugin::GD::Text::Wrap.3 Template::Plugin::HTML.3 \
 	Template::Plugin::Iterator.3 Template::Plugin::Pod.3 \
-	Template::Plugin::Table.3 Template::Plugin::URL.3 \
-	Template::Plugin::View.3 Template::Plugin::Wrap.3 \
-	Template::Plugin::XML::DOM.3 Template::Plugin::XML::RSS.3 \
-	Template::Plugin::XML::Simple.3 Template::Plugin::XML::XPath.3 \
+	Template::Plugin::String.3 Template::Plugin::Table.3 \
+	Template::Plugin::URL.3 Template::Plugin::View.3 \
+	Template::Plugin::Wrap.3 Template::Plugin::XML::DOM.3 \
+	Template::Plugin::XML::RSS.3 Template::Plugin::XML::Simple.3 \
+	Template::Plugin::XML::Style.3 Template::Plugin::XML::XPath.3 \
 	Template::Plugins.3 Template::Provider.3 Template::Service.3 \
 	Template::Stash.3 Template::Stash::Context.3 Template::Stash::XS.3 \
 	Template::Test.3 Template::Tools::tpage.3 Template::Tools::ttree.3 \

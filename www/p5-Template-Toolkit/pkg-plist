@@ -38,6 +38,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Date.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Directory.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Dumper.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Filter.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Format.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Constants.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Graph/area.pm
@@ -58,6 +59,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/GD/Text/Wrap.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/HTML.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Iterator.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Pod.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/String.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Table.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/URL.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/View.pm
@@ -65,6 +67,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/Wrap.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/DOM.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/RSS.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/Simple.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/Style.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugin/XML/XPath.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Plugins.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Template/Provider.pm
@@ -120,6 +123,7 @@ share/tt2/docs/html/Modules/Template/Plugin/Date.html
 share/tt2/docs/html/Modules/Template/Plugin/Directory.html
 share/tt2/docs/html/Modules/Template/Plugin/Dumper.html
 share/tt2/docs/html/Modules/Template/Plugin/File.html
+share/tt2/docs/html/Modules/Template/Plugin/Filter.html
 share/tt2/docs/html/Modules/Template/Plugin/Format.html
 share/tt2/docs/html/Modules/Template/Plugin/GD/Constants.html
 share/tt2/docs/html/Modules/Template/Plugin/GD/Graph/area.html
@@ -140,6 +144,7 @@ share/tt2/docs/html/Modules/Template/Plugin/GD/Text/Wrap.html
 share/tt2/docs/html/Modules/Template/Plugin/HTML.html
 share/tt2/docs/html/Modules/Template/Plugin/Iterator.html
 share/tt2/docs/html/Modules/Template/Plugin/Pod.html
+share/tt2/docs/html/Modules/Template/Plugin/String.html
 share/tt2/docs/html/Modules/Template/Plugin/Table.html
 share/tt2/docs/html/Modules/Template/Plugin/URL.html
 share/tt2/docs/html/Modules/Template/Plugin/View.html
@@ -147,6 +152,7 @@ share/tt2/docs/html/Modules/Template/Plugin/Wrap.html
 share/tt2/docs/html/Modules/Template/Plugin/XML/DOM.html
 share/tt2/docs/html/Modules/Template/Plugin/XML/RSS.html
 share/tt2/docs/html/Modules/Template/Plugin/XML/Simple.html
+share/tt2/docs/html/Modules/Template/Plugin/XML/Style.html
 share/tt2/docs/html/Modules/Template/Plugin/XML/XPath.html
 share/tt2/docs/html/Modules/Template/Plugins.html
 share/tt2/docs/html/Modules/Template/Provider.html
@@ -218,6 +224,7 @@ share/tt2/docs/src/Modules/Template/Plugin/Date.html
 share/tt2/docs/src/Modules/Template/Plugin/Directory.html
 share/tt2/docs/src/Modules/Template/Plugin/Dumper.html
 share/tt2/docs/src/Modules/Template/Plugin/File.html
+share/tt2/docs/src/Modules/Template/Plugin/Filter.html
 share/tt2/docs/src/Modules/Template/Plugin/Format.html
 share/tt2/docs/src/Modules/Template/Plugin/GD/Constants.html
 share/tt2/docs/src/Modules/Template/Plugin/GD/Graph/area.html
@@ -238,6 +245,7 @@ share/tt2/docs/src/Modules/Template/Plugin/GD/Text/Wrap.html
 share/tt2/docs/src/Modules/Template/Plugin/HTML.html
 share/tt2/docs/src/Modules/Template/Plugin/Iterator.html
 share/tt2/docs/src/Modules/Template/Plugin/Pod.html
+share/tt2/docs/src/Modules/Template/Plugin/String.html
 share/tt2/docs/src/Modules/Template/Plugin/Table.html
 share/tt2/docs/src/Modules/Template/Plugin/URL.html
 share/tt2/docs/src/Modules/Template/Plugin/View.html
@@ -245,6 +253,7 @@ share/tt2/docs/src/Modules/Template/Plugin/Wrap.html
 share/tt2/docs/src/Modules/Template/Plugin/XML/DOM.html
 share/tt2/docs/src/Modules/Template/Plugin/XML/RSS.html
 share/tt2/docs/src/Modules/Template/Plugin/XML/Simple.html
+share/tt2/docs/src/Modules/Template/Plugin/XML/Style.html
 share/tt2/docs/src/Modules/Template/Plugin/XML/XPath.html
 share/tt2/docs/src/Modules/Template/Plugins.html
 share/tt2/docs/src/Modules/Template/Provider.html
