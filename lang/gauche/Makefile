@@ -43,6 +43,12 @@ USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 INFO=		gauche-refe gauche-refj
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha (due to included boehm-gc)"
+.endif
+
 post-build:
 	${REINPLACE_CMD} 's/gauche-refj.  info/gauche-refj.info/' ${WRKSRC}/doc/gauche-refj.info
 
@@ -60,4 +66,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
