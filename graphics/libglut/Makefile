@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libglut
-PORTVERSION=	5.0.2
+PORTVERSION=	6.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mesa3d
@@ -20,7 +20,7 @@ INSTALLS_SHLIB=	yes
 USE_GL=		yes
 
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/src-glut
+WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/src/glut/glx
 
 pre-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/

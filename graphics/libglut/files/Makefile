@@ -4,14 +4,14 @@
 
 LIB=		glut
 SHLIB_MAJOR=	3
-CFLAGS+=	-I../include -I${X11BASE}/include
+CFLAGS+=	-I../../../include -I${X11BASE}/include
 LDFLAGS+=	-L${X11BASE}/lib -lGLU -lX11 -lXext -lGL -lXmu -lXi
 LIBDIR=		${PREFIX}/lib
 NOPROFILE?=	yes
 
 beforeinstall:
 	${INSTALL} -C -o ${BINOWN} -g ${BINGRP} -m 444 \
-		${.CURDIR}/../include/GL/glut.h \
+		${.CURDIR}/../../../include/GL/glut.h \
 		${PREFIX}/include/GL
 
 SRCS = \
