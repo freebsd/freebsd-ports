@@ -68,8 +68,10 @@ MAN1=	R.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
+# Build the four documentation formats sequentially (instead of simultaneously)
+# to prevent perl 5.8 from using too much memory (> 512 MB) and being killed.
+.if ${PERL_LEVEL} >= 500800
+ALL_TARGET=	Makefile Makeconf R help html latex examples stamp-recommended
 .endif
 
 test check: build
