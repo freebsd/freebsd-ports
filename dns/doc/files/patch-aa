@@ -1,0 +1,11 @@
+--- doc.org	Sun Nov 28 17:21:08 1999
++++ doc	Sun Nov 28 17:22:36 1999
+@@ -65,7 +65,7 @@
+ ## Note: Make *sure* you keep the trailing slash on the directory
+ ##  name, otherwise doc won't work right.
+ ##
+-set auxd=/users/brad/bin/doc-2.1.4/
++set auxd=${PREFIX}/${AUX_DIR}/
+ #set auxd=""
+ 
+ ######## where are log files written?
