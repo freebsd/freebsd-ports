@@ -3,7 +3,7 @@
 # Date created:		Sun Sep  7 17:55:07 EDT 1997
 # Whom:			Randall Hopper <aa8vb@ipass.net>
 #
-# $Id: Makefile,v 1.16 1999/02/12 15:25:47 roger Exp $
+# $Id: Makefile,v 1.17 1999/03/16 14:01:06 roger Exp $
 #
 
 DISTNAME=	fxtv-0.48
@@ -16,6 +16,8 @@ MAINTAINER=	aa8vb@ipass.net
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff34 \
 		Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d    \
 		Xpm.4:${PORTSDIR}/graphics/xpm
+
+NOT_FOR_ARCHS=	alpha
 
 # This program does not actually require the programs below, but they are 
 # needed if you use digital video recording and playback.
