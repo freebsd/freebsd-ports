@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Sep  5 21:48:28 2003
-+++ Makefile	Mon Sep 29 00:42:38 2003
+--- Makefile.orig	Tue Sep  9 17:02:57 2003
++++ Makefile	Sun Oct  5 02:29:28 2003
 @@ -12,9 +12,9 @@
  
  PLUGIN_DEFINES= -DXP_UNIX -Iinclude -fPIC -I/usr/X11R6/include
@@ -10,10 +10,10 @@
 +CC?= gcc
 +OPTIMIZER=
 +CFLAGS+=  $(OPTIMIZER) $(PLUGIN_DEFINES) -I. -I/usr/include
- #`pkg-config gtk+-2.0 --cflags`
  STRICTFLAGS= -O3 -Wall -W -Wno-unused-variable -Wno-unused-parameter -Wwrite-strings -Werror
- #LDFLAGS   = `pkg-config gtk+-2.0 --libs`
-@@ -25,7 +25,7 @@
+ LDFLAGS= -lpthread
+ OBJ= mplayerplug-in.o support.o stubs.o ui.o
+@@ -24,7 +24,7 @@
  default all: $(SHAREDTARGET)
  
  $(SHAREDTARGET): $(OBJ)

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mplayerplug-in
-PORTVERSION=	0.91
-PORTREVISION=	1
+PORTVERSION=	0.95
 CATEGORIES=	www multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mplayerplug-in
@@ -23,7 +22,8 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g ; \
+		s|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/Source/mplayerplug-in.c
@@ -37,6 +37,12 @@ do-install:
 	if [ ! -f ${PREFIX}/etc/mplayerplug-in.conf ]; then \
 		${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.conf \
 			${PREFIX}/etc/mplayerplug-in.conf ; \
+	fi
+	${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.types \
+		${PREFIX}/etc/mplayerplug-in.types.dist
+	if [ ! -f ${PREFIX}/etc/mplayerplug-in.types ]; then \
+		${INSTALL_DATA} ${WRKSRC}/mplayerplug-in.types \
+			${PREFIX}/etc/mplayerplug-in.types ;\
 	fi
 
 .include <bsd.port.mk>
