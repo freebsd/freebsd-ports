@@ -1,13 +1,13 @@
 # New ports collection makefile for:	pvm3
-# Version required:			3.4beta7
+# Version required:			3.4.3
 # Date created:				11 March 1999
 # Whom:					Dima Sivachenko <dima@chg.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pvm3.4.beta7
-PKGNAME=	pvm-3.4.7
+DISTNAME=	pvm3.4.3
+PKGNAME=	pvm-3.4.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.netlib.org/pvm3/	\
 		ftp://ftp.chg.ru/pub/prog/parallel/pvm/pvm3/
@@ -16,12 +16,14 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dima@Chg.RU
 
 USE_XLIB=	yes
+
 WRKSRC=		${WRKDIR}/pvm3
-MAKE_ENV+=	PVM_ROOT=${WRKSRC}
+MAKE_ENV+=	PVM_ROOT=${WRKSRC} ARCHCFLAGS="${CFLAGS}"
 MAKE_FLAGS+=	F77=/usr/bin/f77
 ALL_TARGET=	all install
+PVM_ROOT=	${PREFIX}/lib/pvm
 
-MAN1=		aimk.1 pvm.1 pvm_intro.1 pvmd.1 pvmd3.1
+MAN1=		PVM.1 aimk.1 pvm.1 pvm_intro.1 pvm_shmd.1 pvmd.1 pvmd3.1
 MAN3=		libfpvm.3 libpvm.3 pvm_addhosts.3 pvm_addmhf.3 pvm_advise.3 \
 		pvm_archcode.3 pvm_barrier.3 pvm_bcast.3 pvm_bufinfo.3 \
 		pvm_catchout.3 pvm_config.3 pvm_delete.3 pvm_delhosts.3 \
@@ -66,18 +68,33 @@ MAN3=		libfpvm.3 libpvm.3 pvm_addhosts.3 pvm_addmhf.3 pvm_advise.3 \
 		pvmftasks.3 pvmftidtoh.3 pvmftrecv.3 pvmfunpack.3 pvmfupkmesg.3
 
 do-install:
-
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/FREEBSD/* ${PREFIX}/bin
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/lib/FREEBSD/pvmd3 ${PREFIX}/libexec
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/lib/FREEBSD/pvm ${PREFIX}/libexec
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/lib/pvm ${PREFIX}/bin
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/lib/pvmd ${PREFIX}/bin
+	@ ${MKDIR} ${PVM_ROOT}/lib/FREEBSD ${PVM_ROOT}/bin/FREEBSD ${PVM_ROOT}/conf
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/FREEBSD/* ${PVM_ROOT}/bin/FREEBSD
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/lib/FREEBSD/pvmd3 ${PVM_ROOT}/lib/FREEBSD
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/lib/FREEBSD/pvm ${PVM_ROOT}/lib/FREEBSD
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/lib/pvm ${PVM_ROOT}/lib
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/lib/pvmd ${PVM_ROOT}/lib
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/lib/pvmgetarch ${PVM_ROOT}/lib
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/lib/aimk ${PVM_ROOT}/lib
+	@ ${LN} -sf ${PVM_ROOT}/lib/pvm ${PREFIX}/bin/pvm
+	@ ${LN} -sf ${PVM_ROOT}/lib/pvmd ${PREFIX}/bin/pvmd
+	@ ${LN} -sf ${PVM_ROOT}/lib/aimk ${PREFIX}/bin/aimk
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libpvm3.a ${PREFIX}/lib
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libfpvm3.a ${PREFIX}/lib
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libgpvm3.a ${PREFIX}/lib
 	@ ${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libpvmtrc.a ${PREFIX}/lib
+	@ ${INSTALL_DATA} ${WRKSRC}/conf/FREEBSD.def ${PVM_ROOT}/conf
 	@ ${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include
 	@ ${INSTALL_MAN} ${WRKSRC}/man/man1/* ${PREFIX}/man/man1
 	@ ${INSTALL_MAN} ${WRKSRC}/man/man3/* ${PREFIX}/man/man3
+
+post-install:
+	@ ${ECHO_MSG}
+	@ ${ECHO_MSG} "You have to set PVM_ROOT=${PVM_ROOT} enviropment variable on all machines"
+	@ ${ECHO_MSG} "which you are planning to use for distributed computing. The best way to set"
+	@ ${ECHO_MSG} "this variable on system-wide basis is to add \"PVM_ROOT=${PVM_ROOT}\" into"
+	@ ${ECHO_MSG} "appropriate section of your /etc/login.conf file. You also have to enable"
+	@ ${ECHO_MSG} "rshd on those machines."
+	@ ${ECHO_MSG}
 
 .include <bsd.port.mk>
