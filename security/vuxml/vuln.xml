@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="184f5d0b-0fe8-11d9-8a8a-000c41e2cdad">
+    <topic>subversion -- WebDAV fails to protect metadata</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<name>subversion-perl</name>
+	<name>subversion-python</name>
+	<range><lt>1.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>In some situations, subversion metadata may be unexpectedly
+	  disclosed via WebDAV.  A subversion advisory states:</p>
+	<blockquote cite="http://subversion.tigris.org/security/CAN-2004-0749-advisory.txt">
+	  <p>mod_authz_svn, the Apache httpd module which does path-based
+	    authorization on Subversion repositories, is not correctly
+	    protecting all metadata on unreadable paths.</p>
+          <p>This security issue is not about revealing the contents
+            of protected files: it only reveals metadata about
+            protected areas such as paths and log messages.  This may
+            or may not be important to your organization, depending
+            on how you're using path-based authorization, and the
+            sensitivity of the metadata. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0749</cvename>
+      <url>http://subversion.tigris.org/security/CAN-2004-0749-advisory.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-09-15</discovery>
+      <entry>2004-09-26</entry>
+    </dates>
+  </vuln>
   <vuln vid="273cc1a3-0d6b-11d9-8a8a-000c41e2cdad">
     <topic>lha -- numerous vulnerabilities when extracting archives</topic>
     <affects>
