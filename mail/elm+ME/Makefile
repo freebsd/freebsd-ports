@@ -6,9 +6,13 @@
 #
 
 PORTNAME=	elm+ME
-PORTVERSION=	2.4.94
+PORTVERSION=	2.4.94.0c
 CATEGORIES=	mail
+.if ${PORTVERSION:M*[a-z]} == ""
 DISTNAME=	${PORTNAME:S/+ME//}-${PORTVERSION:R}ME+${PORTVERSION:E}
+.else
+DISTNAME=	${PORTNAME:S/+ME//}-${PORTVERSION:R:R}ME+${PORTVERSION:R:E}
+.endif
 
 # here are the main repositories.
 MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/ \
@@ -26,7 +30,8 @@ MASTER_SITES+=	ftp://ftp.unina.it/pub/Unix/pkgs/network/mail/elm-me+/ \
 		ftp://ftp.uni-trier.de/pub/unix/network/mail/elm-me+/
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME:S/+/+PL/}a.patch.gz \
-		${DISTNAME:S/+/+PL/}b.patch.gz
+		${DISTNAME:S/+/+PL/}b.patch.gz \
+		${DISTNAME:S/+/+PL/}c.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	clefevre@citeweb.net
