@@ -16,7 +16,8 @@ MASTER_SITE_SUBDIR= X11/desktop
 MAINTAINER=	spadger@best.com
 COMMENT=	A graphical, highly configurable and powerful file manager
 
-LIB_DEPENDS=	itcl32:${PORTSDIR}/lang/itcl
+LIB_DEPENDS=	itcl32:${PORTSDIR}/lang/itcl \
+		tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
