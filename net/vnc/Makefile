@@ -40,10 +40,6 @@ USE_PERL5_RUN=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
-
 pre-build:
 .if !defined(WITHOUT_SERVER)
 	@${ECHO_MSG} "NOTE:"

@@ -1,0 +1,76 @@
+--- Xvnc/config/cf/FreeBSD.cf.orig	Mon Mar 22 16:41:12 2004
++++ Xvnc/config/cf/FreeBSD.cf	Wed Mar 24 15:50:22 2004
+@@ -26,6 +26,7 @@
+ #define UseGas			YES
+ #define GnuCpp			YES
+ #define HasNdbm         	YES
++#define DBMLibrary		/* ndbm is in libc */
+ #define HasPutenv       	YES
+ #define HasSnprintf		YES
+ #define HasBSD44Sockets 	YES
+@@ -50,7 +51,7 @@
+ #define MkdirHierCmd		mkdir -p
+ 
+ #define CcCmd			cc
+-#define CppCmd			/usr/libexec/cpp
++#define CppCmd			/usr/bin/cpp
+ #define PreProcessCmd		CppCmd
+ #define StandardCppDefines	-traditional
+ #if defined(UseInstalled) && (!defined(XF86LinkKit) || !XF86LinkKit)
+@@ -223,12 +224,29 @@
+ # define GccGasOption /**/
+ #endif
+ 
+-#define ServerExtraDefines GccGasOption XFree86ServerDefines
++#ifdef i386Architecture
++# define ServerExtraDefines GccGasOption XFree86ServerDefines
++#else
++# define ServerExtraDefines GccGasOption -D_XSERVER64
++#endif
+ 
+ #define StandardDefines	-DCSRG_BASED
+ 
++#ifdef i386Architecture
++# if OSMajorVersion > 1
++#  define ServerOSDefines		XFree86ServerOSDefines -DDDXTIME
++# else
++#  define ServerOSDefines		XFree86ServerOSDefines -DDDXTIME -DXNO_SYSCONF
++# endif
++#else
++# if defined(SparcArchitecture) || defined(AlphaArchitecture)
++#  define ServerOSDefines 	-DDDXOSINIT
++# else
++#  define ServerOSDefines 	/**/
++# endif
++#endif
++
+ #if OSMajorVersion > 1
+-#define ServerOSDefines		XFree86ServerOSDefines -DDDXTIME
+ #define XawI18nDefines		-DUSE_XWCHAR_STRING
+ #define HasMakefileSafeInclude	YES
+ #define IncludeMakefile(file) @@# dependencies are in .depend
+@@ -241,7 +259,6 @@
+ #endif
+ #define HasMkstemp		YES
+ #else
+-#define ServerOSDefines		XFree86ServerOSDefines -DDDXTIME -DXNO_SYSCONF
+ #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
+ #endif
+ 
+@@ -252,10 +269,15 @@
+ #endif
+ #endif
+ 
++/* Suppress "The -O2 flag TRIGGERS KNOWN OPTIMIZER BUGS ON THIS PLATFORM" on Alpha 4.x */
+ #ifdef i386Architecture
+ # define OptimizedCDebugFlags DefaultGcc2i386Opt
+ #else
+-# define OptimizedCDebugFlags -O2
++# if defined(AlphaArchitecture) && OSMajorVersion < 5
++#  define OptimizedCDebugFlags -O
++# else
++#  define OptimizedCDebugFlags -O2
++# endif
+ #endif
+ 
+ #ifndef PreIncDir
