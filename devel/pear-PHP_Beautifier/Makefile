@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PHP_Beautifier
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -32,9 +32,12 @@ FILES=		Beautifier.php Beautifier/Filter.php Beautifier/Decorator.php \
 		Beautifier/Batch/Output/Directory.php \
 		Beautifier/Batch/Output/DirectoryBz2.php \
 		Beautifier/Batch/Output/DirectoryGz.php \
-		Beautifier/Batch/Output/DirectoryTar.php Beautifier/Batch/Output/Files.php \
-		Beautifier/Batch/Output/FilesBz2.php Beautifier/Batch/Output/FilesGz.php \
-		Beautifier/Batch/Output/FilesTar.php Beautifier/StreamWrapper/Tarz.php
+		Beautifier/Batch/Output/DirectoryTar.php \
+		Beautifier/Batch/Output/Files.php \
+		Beautifier/Batch/Output/FilesBz2.php \
+		Beautifier/Batch/Output/FilesGz.php \
+		Beautifier/Batch/Output/FilesTar.php \
+		Beautifier/StreamWrapper/Tarz.php
 EXAMPLES=	run_me.php example_main.php example_pear.php example_array.php \
 		example_comments.php example_html.php
 TESTS=		Beautifier.phpt Beautifier_Common.phpt Beautifier_Bugs.phpt \
@@ -50,6 +53,9 @@ post-extract:
 post-patch:
 . for file in ${FILES}
 	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|g" ${WRKSRC}/${file}
+. endfor
+. for file in ${TESTS}
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|g" ${WRKSRC}/tests/${file}
 . endfor
 
 .include <bsd.port.pre.mk>
