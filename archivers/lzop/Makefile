@@ -12,7 +12,7 @@ MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/lzo-download/
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/liblzo
+LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
