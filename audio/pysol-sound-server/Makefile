@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pysol-sound-server
-PORTVERSION=	2.40
+PORTVERSION=	2.50
 CATEGORIES=	audio games
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/pysol/pysol-sound-server/
 
