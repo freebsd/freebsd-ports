@@ -2,3 +2,7 @@ include/mhash.h
 lib/libmhash.a
 lib/libmhash.so
 lib/libmhash.so.2
+%%PORTDOCS%%%%DOCSDIR%%/example.c
+%%PORTDOCS%%%%DOCSDIR%%/md5-rfc1321.txt
+%%PORTDOCS%%%%DOCSDIR%%/skid2-authentication
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
