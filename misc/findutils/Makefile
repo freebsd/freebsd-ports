@@ -26,10 +26,10 @@ MAN5=		glocatedb.5
 
 post-install:
 	install-info ${PREFIX}/info/find.info ${PREFIX}/info/dir
-	${RM} -f ${PREFIX}/cat1/gfind.1
-	${RM} -f ${PREFIX}/cat1/gxargs.1
-	${RM} -f ${PREFIX}/cat1/glocate.1
-	${RM} -f ${PREFIX}/cat1/gupdatedb.1
-	${RM} -f ${PREFIX}/cat5/glocatedb.5
+	${RM} -f ${PREFIX}/man/cat1/gfind.1
+	${RM} -f ${PREFIX}/man/cat1/gxargs.1
+	${RM} -f ${PREFIX}/man/cat1/glocate.1
+	${RM} -f ${PREFIX}/man/cat1/gupdatedb.1
+	${RM} -f ${PREFIX}/man/cat5/glocatedb.5
 
 .include <bsd.port.mk>
