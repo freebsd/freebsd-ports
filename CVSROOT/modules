@@ -993,6 +993,7 @@ cribbage	src/games/cribbage
 cricket		ports/net/cricket
 crimap		ports/biology/crimap
 crimson		ports/textproc/crimson
+criticalmass	ports/games/criticalmass
 cron		src/usr.sbin/cron
 cronolog	ports/sysutils/cronolog
 crossfire-client	ports/games/crossfire-client
