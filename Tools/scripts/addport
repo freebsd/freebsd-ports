@@ -40,12 +40,14 @@
 use Cwd "abs_path";
 use Getopt::Std;
 use Sys::Hostname;
+use locale;
 use strict;
 
 my %opts;
 
-getopts('ac:d:fgh:imns:tu:', \%opts);
+getopts('ac:d:fgh:il:mns:tu:', \%opts);
 
+my $autofill = $opts{'l'};
 my $c = $opts{'c'} if ($opts{'c'} ne "");
 my $nomodules = $opts{'g'};
 my $distdir = $opts{'s'} if ($opts{'s'} ne "");
@@ -75,6 +77,11 @@ my $perl = "perl";
 my $cp = "cp";
 my $mv = "mv";
 my $rm = "rm";
+# vars required for commitfile
+my $descr; my $portversion; my $pkgcomment;
+my $tmp; my $pkgcommentlen; my $comment; my $orig;
+my $tmp2; my $offset; my $commitfile = "";
+$tmp = $tmp2 = $offset = 0;
 
 chomp(my $myhost = lc(hostname()));
 if ($myhost ne lc($h)) {
@@ -87,23 +94,9 @@ if ($myhost ne lc($h)) {
 $repo = "$ENV{CVSROOT}" if $ENV{CVSROOT};
 my $cvs = "cvs -d $repo";
 
-# Do commitfile checking.
-my $commitfile = "";
-# first check for relative paths then skip absolute, then add it to filenames.
-if ($c =~ m,.*/,) {
-	$c = "$currentdir/$c";
-} elsif ($c =~ m,/,) {
-	# do nothing
-} else {
-	# assume user passed something like "file"
-	$c = "$currentdir/$c";
-}
-if (-f $c) {
-	$commitfile = "EDITOR=\"cp $c\"";
-	print "\nRemember, you asked to use a commit file to read for the commit log.\n";
-	print "This means you'll get a message saying the log message was unchanged or\n";
-	print "not specified.  Just tell it to continue and it will be committed.\n\n";
-}
+# Check the editor.
+my $edit = "/usr/bin/vi";
+$edit = $ENV{EDITOR} if ($ENV{EDITOR} ne "");
 
 # stuff that always happens when we start
 BEGIN {
@@ -207,11 +200,91 @@ foreach my $thisdir (@dirs) {
 			} while (prompt("Is the new module name $module OK? "));
 		}
 	}
+
+	# Do commitfile checking but only if the user did not request automatic filling.
+	if (!$autofill) {
+		if (-f $c) {
+			system("$mv $c $tmpdir/commitfile") or errx(1, "Oops, can't move commitfile!");
+			$commitfile = "EDITOR=\"cp $tmpdir/commitfile\"";
+			print "\nRemember, you asked to use a commit file to read for the commit log.\n";
+			print "This means you'll get a message saying the log message was unchanged or\n";
+			print "not specified.  Just tell it to continue and it will be committed.\n\n";
+		}
+	} else {
+		## Set up the autofill file.
+		# Read COMMENT for part of the commit message.
+		open(COMMENT, "pkg-comment") or die("Can't open pkg-comment for reading: $!");
+		$pkgcomment = <COMMENT>;
+		close(COMMENT);
+		chomp $pkgcomment;
+		# Change the first character to lowercase to make it fit with the
+		# rest of the commit message.
+		$pkgcomment =~ s/(^.)/\l$1/;
+		# Read Makefile to find necessary variables.
+		open(MAKEFILE, "Makefile") or die("Can't open Makefile for reading: $!");
+		while(<MAKEFILE>) {
+			chomp;
+			($orig) = (m/^# Whom:\s+(\w.*)$/) if (/^# Whom:/);
+			($portname) = (m/^PORTNAME=\s+(\w.*)$/) if (/^PORTNAME=/);
+			($portversion) = (m/^PORTVERSION=\s+(\w.*)$/) if (/^PORTVERSION=/);
+		}
+		close(MAKEFILE);
+		# Obtain length of the current string so we can figure out where to
+		# insert the \n.  This is necessary to keep the commitfile under the
+		# limit for commit messages and such.
+		$tmp = length($portversion) + length($portname) + 10;
+		$offset = 72 - $tmp;
+		# If the comment string is longer than we have space for it, insert
+		# the \n after the last word that doesn't exceed the limit.
+		if (length($pkgcomment) > $offset) {
+			my @commentArr = split(/\s+/, $pkgcomment);
+			$tmp = 0;
+			# Until we reach the offset, record the number of words.
+			while ($tmp < $offset) {
+				$tmp += length($commentArr[$tmp2]);
+				$tmp2++;
+			}
+			$tmp2--;
+			$tmp = 0; $pkgcomment = "";
+			# Now reassemble the comment string.
+			while ($commentArr[$tmp]) {
+				if ($tmp == $tmp2) {
+					$pkgcomment = $pkgcomment . "\n";
+					$pkgcomment = join("", $pkgcomment, $commentArr[$tmp]);
+				} else {
+					$pkgcomment = join(" ", $pkgcomment, $commentArr[$tmp]);
+				}
+				$tmp++;
+			}
+		}
+		chomp $pkgcomment;
+		$pkgcomment = $pkgcomment . "\n";
+		# Write out the data to the comment file.
+		open(AUTOFILL, "> $tmpdir/commitfile") or die("Can't open $tmpdir/commitfile for writing: $!");
+		print AUTOFILL "Add $portname $portversion, $pkgcomment\n";
+		print AUTOFILL "PR:		$autofill\n";
+		print AUTOFILL "Submitted by:	$orig";
+		close(AUTOFILL);
+		print "Okay, a commit log message was automatically generated for you.\n";
+		print "Now you will have a chance to edit it to make sure it's OK to use.\n";
+		print "Here's the contents of the file:\n--start--\n";
+		open(AUTOFILL, "$tmpdir/commitfile") or die("Can't open $tmpdir/commitfile for reading: $!");
+		print while (<AUTOFILL>);
+		close(AUTOFILL);
+		$tmp = prompt("\n--end--\nDo you wish to edit the file before continuing? ");
+		system("$edit $tmpdir/commitfile") if ($tmp == 0);
+		print "\nRemember, you asked to use a commit file to read for the commit log.\n";
+		print "This means you'll get a message saying the log message was unchanged or\n";
+		print "not specified.  Just tell it to continue and it will be committed.\n\n";
+		$commitfile = "EDITOR=\"cp $tmpdir/commitfile\"";
+	}
+
 	print "We're ready to commit.\n";
 	print "Source directory: $thisdir\n";
 	print "Target CVS Repo directory: ports/$category/$portname\n";
 	print "Modules entry: $module --> ports/$category/$portname\n";
 	prompt("Adding port $portname to $category OK? ") && errx(1, "user abort requested");
+	
 	chdir $tmpdir or err(1, "$tmpdir");
 
 	# let's get our hands dirty.
@@ -309,7 +382,7 @@ print <<EOF;
 authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
 
 SYNOPSIS
-	$0 [-h host] [-u user] [-s distdir] [-acfimnt] -d directory
+	$0 [-h host] [-u user] [-s distdir] [-acfilmnt] -d directory
 
 	Where "directory" contains the comma-delimited list
 	of root directories of new ports that you wish to
@@ -325,6 +398,9 @@ OPTIONS
 	-i		Interactive mode; allow more control over
 			where things are placed.  This is required in
 			order to change things like module names etc.
+	-l PR#		Attempts to autogenerate a commit message by
+			reading the Makefile/pkg-comment files.  The
+			PR number must be passed to -l.
 	-m		Do not checkout ports/Mk (needed for support
 			of portlinting etc).
 	-n		Do not actually commit anything.
