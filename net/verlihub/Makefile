@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	verlihub
-PORTVERSION=	0.9.8.a
+PORTVERSION=	0.9.8.b
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	verlihub
-DISTNAME=	verlihub-0.9.8a
+DISTNAME=	verlihub-0.9.8b
 
 MAINTAINER=	hurbold@yahoo.com
 COMMENT=	Verlihub Linux/Unix Direct Connect Hub Software
@@ -46,11 +46,11 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 502010
-USE_GCC=	3.4
+USE_GCC=	3.3
 .endif
 
 .if ${OSVERSION} >= 502126
-BROKEN=		Does not compile with gcc 3.4
+USE_GCC=	3.3
 .endif
 
 .include <bsd.port.post.mk>
