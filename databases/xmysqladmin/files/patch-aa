@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Jan 10 18:17:46 1998
-+++ Makefile	Wed Feb  3 14:14:54 1999
+--- Makefile.orig	Mon Dec  7 12:52:39 1998
++++ Makefile	Thu Jul  1 16:43:57 1999
 @@ -34,7 +34,7 @@
  # This is used by 'make install' command
  #-------------------------------------------------------
@@ -18,56 +18,44 @@
  ########################################################
  
  
-@@ -55,8 +55,8 @@
- # mysql version
- # mysql_reload() on 3.20, mysql_refresh() on 3.21  
- #-------------------------------------------------------
--#MYSQL_VERSION = 320  # for versions 3.20.#
--MYSQL_VERSION = 321   # for versions 3.21.#
-+MYSQL_VERSION = 320  # for versions 3.20.#
-+#MYSQL_VERSION = 321   # for versions 3.21.#
- 
- 
- 
-@@ -93,8 +93,8 @@
+@@ -80,8 +80,7 @@
  # Compilation Details
  # hum... I think you dont need to change this
  #-------------------------------------------------------
 -CC = gcc
 -STDCFLAGS = -g -c -O2 -Wall -DPIXMAPFILE=\"$(PIXMAPPATH)/mysql.xpm\" \
-+# CC = gcc
 +STDCFLAGS = $(CFLAGS) -c -DPIXMAPFILE=\"$(PIXMAPPATH)/mysql.xpm\" \
              -DBACKUP=\"$(BACKUP)\" -DBACKUPDIR=\"$(BACKUPDIR)\" \
              -DBACKUPSUFFIX=\"$(BACKUPSUFFIX)\" \
              -DMYSQL_VERSION=$(MYSQL_VERSION)
-@@ -109,7 +109,7 @@
+@@ -95,7 +94,7 @@
+ ########################################################
  # mysql include dir 
  #-------------------------------------------------------
- #MYSQLINC = -I/opt/local/include/mysql
--MYSQLINC = -I/usr/local/include/mysql
+-MYSQLINC = -I/usr/local/mysql/include/mysql
 +MYSQLINC = -I${LOCALBASE}/include/mysql
  ########################################################
  
  
-@@ -121,7 +121,7 @@
+@@ -107,7 +106,7 @@
  # mysql database dir
  #-------------------------------------------------------
  #MYSQLDBDIR = -DMYSQLDBDIR="\"/var/lib/mysql/\""
--MYSQLDBDIR = -DMYSQLDBDIR="\"/usr/local/var/\""
+-MYSQLDBDIR = -DMYSQLDBDIR="\"/usr/local/mysql/var/\""
 +MYSQLDBDIR = -DMYSQLDBDIR="\"/var/db/mysql/\""
  ########################################################
  
  
-@@ -133,7 +133,7 @@
+@@ -118,7 +117,7 @@
+ ########################################################
  # mysql library dir
  #-------------------------------------------------------
- #MYSQLLOAD = -L/opt/local/i386/lib/mysql -lmysqlclient -lmysys -ldbug -lmystrings
--MYSQLLOAD = -L/usr/local/lib/mysql -lmysqlclient -lmysys -ldbug -lmystrings
-+MYSQLLOAD = -L${LOCALBASE}/lib/mysql -lmysqlclient -lmysys -ldbug -lmystrings
+-MYSQLLOAD = -Wl,-R/usr/local/mysql/lib/mysql -L/usr/local/mysql/lib/mysql -lmysqlclient
++MYSQLLOAD = -Wl,-R${LOCALBASE}/lib/mysql -L${LOCALBASE}/lib/mysql -lmysqlclient
  ########################################################
  
  
-@@ -144,7 +144,7 @@
+@@ -129,7 +128,7 @@
  # xforms librairies dir
  #-------------------------------------------------------
  #XFORMLIBDIR = -L/opt/local/i386/lib
@@ -76,29 +64,29 @@
  ########################################################
  
  
-@@ -156,7 +156,7 @@
+@@ -141,7 +140,7 @@
  # xforms include dir (xforms.h)
  #-------------------------------------------------------
  #XFORMINCDIR = -I/opt/local/include
--XFORMINCDIR = -I/usr/include
+-XFORMINCDIR = -I/usr/X11R6/include
 +XFORMINCDIR = -I${X11BASE}/include
  ########################################################
  
  
-@@ -172,7 +172,7 @@
+@@ -157,7 +156,7 @@
  
  # Use this for Linux:
  XINC =
--XLOAD = -L/usr/X11R6/lib -lX11
+-XLOAD = -L/usr/X11R6/lib -lX11 /usr/X11R6/lib/libXpm.so.4
 +XLOAD = -L${X11BASE}/lib -lX11
  ########################################################
  
  
-@@ -230,8 +230,7 @@
+@@ -215,8 +214,7 @@
  ${PROGRAM}: $(OBJS)
  	$(CC) -o ${PROGRAM} $(OBJS) $(MYSQLINC) $(XFORMINCDIR) \
  	$(XINC) $(STDLFLAGS) $(MYSQLLOAD) \
--	$(XLOAD) $(XFORMLIBDIR) -lforms -lXpm $(LIBS)
+-	$(XLOAD) $(XFORMLIBDIR) -lforms $(LIBS)
 -	./$(PROGRAM)
 +	$(XLOAD) $(XFORMLIBDIR) -lxforms -lXpm $(LIBS)
  

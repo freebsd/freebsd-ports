@@ -1,12 +1,12 @@
 # ports collection makefile for:	xmysqladmin
-# Version required:		0.2.0
+# Version required:		1.0
 # Date created:			Di   2 Sep 1997 16:29:27 CEST
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.20 1999/07/01 09:06:36 dirk Exp $
+# $Id: Makefile,v 1.21 1999/07/01 09:11:16 dirk Exp $
 #
 
-DISTNAME=	xmysqladmin-0.4.4
+DISTNAME=	xmysqladmin-1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tcx.se/Contrib/ \
 		http://www.buoy.com/mysql/Contrib/ \
@@ -19,7 +19,6 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 
-WRKSRC=		${WRKDIR}/xmysqladmin
 USE_X_PREFIX=	yes
 ALL_TARGET=	xmysqladmin
 
