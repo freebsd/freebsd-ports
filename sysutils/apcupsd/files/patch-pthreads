@@ -1,0 +1,172 @@
+--- ./src/apcnis.c	Fri Jul 18 05:32:19 2003
++++ ./apcupsd-3.10.11-debug3/src/apcnis.c	Fri Feb  6 21:19:14 2004
+@@ -197,7 +197,6 @@
+    int newsockfd, sockfd, childpid;
+    struct sockaddr_in cli_addr;       /* client's address */
+    struct sockaddr_in serv_addr;      /* our address */
+-   socklen_t clilen;
+    int tlog;
+    int turnon = 1;
+    struct s_arg *arg;
+@@ -269,11 +268,7 @@
+       /* 
+        * Wait for a connection from a client process.
+        */
+-       clilen = sizeof(cli_addr);
+-       for (tlog=0; (newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen)) < 0; tlog -= 5*60 ) {
+-	  if (errno == EINTR) {
+-	     continue;
+-	  }
++       for (tlog=0; (newsockfd = net_accept(sockfd, &cli_addr)) < 0; tlog -= 5*60 ) {
+ 	  if (tlog <= 0) {
+ 	     tlog = 60*60; 
+              log_event(ups, LOG_ERR,  "apcserver: accept error. ERR=%s",
+--- ./src/lib/apclibnis.c	Sat Aug  3 18:49:45 2002
++++ ./apcupsd-3.10.11-debug3/src/lib/apclibnis.c	
+Fri Feb  6 21:38:58 2004
+@@ -71,12 +71,50 @@
+ 
+ static int read_nbytes(int fd, char *ptr, int nbytes)
+ {
+-    int nleft, nread;
+-       
++    int nleft, nread, rc;
++    
++#if defined HAVE_PTHREADS && (defined HAVE_OPENBSD_OS || defined HAVE_FREEBSD_OS)
++    fd_set fds;
++#endif
++
+     nleft = nbytes;
+-    errno = 0;
++
+     while (nleft > 0) {
++
+ 	do {
++
++#if defined HAVE_PTHREADS && (defined HAVE_OPENBSD_OS || defined HAVE_FREEBSD_OS)
++            /* 
++	     * Work around a bug in OpenBSD & FreeBSD userspace pthreads
++	     * implementations.
++	     *
++	     * The pthreads implementation under the hood sets O_NONBLOCK
++	     * implicitly on all fds. This setting is not visible to the user
++	     * application but is relied upon by the pthreads library to prevent
++	     * blocking syscalls in one thread from halting all threads in the
++	     * process. When a process exit()s or exec()s, the implicit
++	     * O_NONBLOCK flags are removed from all fds, EVEN THOSE IT INHERITED.
++	     * If another process is still using the inherited fds, there will
++	     * soon be trouble.
++	     *
++	     * apcupsd is bitten by this issue after fork()ing a child process to
++	     * run apccontrol.
++	     *
++	     * select() is conveniently immune to the O_NONBLOCK issue so we use
++	     * that to make sure the following read() will not block.
++	     */
++	    do {
++		FD_ZERO(&fds);
++		FD_SET(fd, &fds);
++		rc = select(fd+1, &fds, NULL, NULL, NULL);
++	    } while (rc == -1 && (errno == EINTR || errno == EAGAIN));
++	    if (rc < 0)
++	    {
++		net_errno = errno;
++		return(-1);		 /* error */
++	    }
++#endif
++
+ 	    nread = read(fd, ptr, nleft);    
+ 	} while (nread == -1 && (errno == EINTR || errno == EAGAIN));
+ 	if (nread <= 0) {
+@@ -100,6 +138,15 @@
+ 
+     nleft = nbytes;
+     while (nleft > 0) {
++#if defined HAVE_PTHREADS && (defined HAVE_OPENBSD_OS || defined HAVE_FREEBSD_OS)
++	/* 
++	 * Work around a bug in OpenBSD & FreeBSD userspace pthreads
++	 * implementations. Rationale is the same as described above.
++	 * This seemingly-pointless fcntl() call causes the pthreads
++	 * library to reapply the O_NONBLOCK flag appropriately.
++	 */
++	fcntl(fd, F_SETFL, fcntl(fd, F_GETFL));
++#endif
+ 	nwritten = write(fd, ptr, nleft);
+ 	if (nwritten <= 0) {
+ 	    net_errno = errno;
+@@ -225,6 +272,13 @@
+ 	return -1;
+     }
+     /* connect to server */
++#if defined HAVE_PTHREADS && (defined HAVE_OPENBSD_OS || defined HAVE_FREEBSD_OS)
++    /* 
++     * Work around a bug in OpenBSD & FreeBSD userspace pthreads
++     * implementations. Rationale is the same as described above.
++     */
++    fcntl(sockfd, F_SETFL, fcntl(sockfd, F_GETFL));
++#endif
+     if (connect(sockfd, (struct sockaddr *) &tcp_serv_addr, sizeof(tcp_serv_addr)) < 0) {
+         sprintf(net_errbuf, "tcp_open: cannot connect to server %s on port %d.\n\
+ ERR=%s\n", host, port, strerror(errno));
+@@ -243,6 +297,50 @@
+     close(sockfd);
+ }
+  
++/*     
++ * Accept a TCP connection.
++ * Returns -1 on error.
++ * Returns file descriptor of new connection otherwise.
++ */
++int net_accept(int fd, struct sockaddr_in *cli_addr)
++{
++    socklen_t clilen = sizeof(*cli_addr);
++    int newfd, rc;
++
++#if defined HAVE_PTHREADS && (defined HAVE_OPENBSD_OS || defined HAVE_FREEBSD_OS)
++    fd_set fds;
++#endif
++
++    do {
++
++#if defined HAVE_PTHREADS && (defined HAVE_OPENBSD_OS || defined HAVE_FREEBSD_OS)
++	/*
++	 * Work around a bug in OpenBSD & FreeBSD userspace pthreads
++	 * implementations. Rationale is the same as described above.
++	 */
++	do {
++	    FD_ZERO(&fds);
++	    FD_SET(fd, &fds);
++	    rc = select(fd+1, &fds, NULL, NULL, NULL);
++	} while (rc == -1 && (errno == EINTR || errno == EAGAIN));
++	if (rc < 0)
++	{
++	    net_errno = errno;
++	    return(-1);		 /* error */
++	}
++#endif
++
++	newfd = accept(fd, (struct sockaddr*)cli_addr, &clilen);
++    } while (newfd == -1 && (errno == EINTR || errno == EAGAIN));
++    
++    if (newfd < 0)
++    {
++	net_errno = errno;
++        return(-1);		 /* error */
++    }
++
++    return newfd;
++}
+ 
+ int	upserror, syserrno;
+ 
+--- ./include/apc_nis.h	Tue May 28 09:34:24 2002
++++ ./apcupsd-3.10.11-debug3/include/apc_nis.h	
+Fri Feb  6 21:19:14 2004
+@@ -40,4 +40,7 @@
+ /* Close the network connection */
+ void net_close(int sockfd);
+ 
++/* Wait for and accept a new TCP connection */
++int net_accept(int fd, struct sockaddr_in *cli_addr);
++
+ extern int  upserror, syserrno;
