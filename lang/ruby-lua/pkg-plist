@@ -1,0 +1,3 @@
+%%RUBY_SITEARCHLIBDIR%%/lua.so
+%%PORTDOCS%%%%RUBY_DOCDIR%%/lua/rubylua.txt
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/lua
