@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Thu Nov 27 15:35:19 2003
++++ man/Makefile.in	Sat Feb  7 23:09:21 2004
+@@ -47,7 +47,7 @@
+ 		echo $(INSTALLCMD) -m $(INSTALLMODE) $$f $(MANDIR)/man5; \
+ 		$(INSTALLCMD) -m $(INSTALLMODE) $$f $(MANDIR)/man5; \
+ 	done
+-	@for f in $(MAN8_PAGES) ; do \
++	@for f in $(MAN8_PAGES) $(SNMPPAGES) hp.8 ; do \
+ 		echo $(INSTALLCMD) -m $(INSTALLMODE) $$f $(MANDIR)/man8; \
+ 		$(INSTALLCMD) -m $(INSTALLMODE) $$f $(MANDIR)/man8; \
+ 	done
