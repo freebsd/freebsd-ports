@@ -10071,6 +10071,7 @@ simgear		ports/devel/simgear
 simicq		ports/net/simicq
 simlib		ports/science/simlib
 simplemod	ports/audio/simplemod
+simpletest	ports/devel/simpletest
 simplicity	ports/java/simplicity
 simplog		ports/www/simplog
 simulavr	ports/devel/simulavr
