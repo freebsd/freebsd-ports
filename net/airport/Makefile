@@ -41,10 +41,11 @@ do-install:
 		${MKDIR} ${PREFIX}/share/doc/airport/helpdocs; \
 		${MKDIR} ${PREFIX}/share/java; \
 		${INSTALL_DATA} ${WRKSRC}/*jar ${PREFIX}/share/java; \
+		${INSTALL_DATA} ${WRKSRC}/configurator_${PORTVERSION:S/.//g}/*jar ${PREFIX}/share/java; \
 		${INSTALL_DATA} ${WRKSRC}/AUTHORS ${PREFIX}/share/doc/airport; \
 		${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/airport; \
 		${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/airport; \
-		${INSTALL_DATA} ${WRKSRC}/helpdocs/* ${PREFIX}/share/doc/airport/helpdocs; \
+		${INSTALL_DATA} ${WRKSRC}/configurator_${PORTVERSION:S/.//g}/helpdocs/* ${PREFIX}/share/doc/airport/helpdocs; \
 		${SED} \
 			-e s,%%PREFIX%%,${PREFIX},g \
 			-e s/%%JFC_VERSION%%/${JFC_VERSION}/ \
