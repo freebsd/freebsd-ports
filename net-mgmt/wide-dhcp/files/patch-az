@@ -1,5 +1,5 @@
 --- client/dhcpc.8.orig	Tue Sep 12 13:54:16 1995
-+++ client/dhcpc.8	Thu Mar 27 14:07:16 1997
++++ client/dhcpc.8	Mon Apr 21 23:52:15 1997
 @@ -5,7 +5,7 @@
  .SH SYNOPSIS
  .B dhcpc
@@ -9,11 +9,10 @@
  ]
  .I interface
  .SH DESCRIPTION
-@@ -36,6 +36,21 @@
- option is specified,
+@@ -37,6 +37,21 @@
  .B dhcpc
  runs in foreground and debugging mode.
-+.LP
+ .LP
 +If the
 +.B \-r
 +option is specified, and if your DHCP server supplies the DNS address,
@@ -28,6 +27,17 @@
 +call 
 +.B sethostname(3)
 +with supplied name.
- .LP
++.LP
  The DHCP client can verify whether its assigned information is still
  valid at any time.
+ .B dhcpc
+@@ -66,6 +81,9 @@
+ .TP 20
+ .B /etc/dhcp_cache
+ The file to record previously assigned informations
++.TP
++.B /var/run/dhcpc.[interface name].pid
++File which includes process ID
+ .PD
+ .SH SEE ALSO
+ R. Droms,
