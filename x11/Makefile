@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.214 1998/07/12 08:41:25 scrappy Exp $
+# $Id: Makefile,v 1.215 1998/07/12 22:55:08 steve Exp $
 #
 
     SUBDIR += FWF
@@ -93,6 +93,7 @@
     SUBDIR += windowmaker
     SUBDIR += workplace
     SUBDIR += wm2
+    SUBDIR += wmtime
     SUBDIR += wmx
     SUBDIR += x3270
     SUBDIR += xalarm
