@@ -1,0 +1,62 @@
+--- Makefile.orig	Thu Mar 15 18:28:16 2001
++++ Makefile	Sat Aug 18 21:03:35 2001
+@@ -6,23 +6,22 @@
+ OS=$(shell uname -s)
+ 
+ # Compiler
+-CC=gcc
++CC?=gcc
+ 
+ # Install prefix Where the database and original file is placed.. 
+ 
+-PREFIX=/usr/share/sigit
+ 
+ # Installation directory -- where the binary will go
+ 
+-INSTALLDIR=/usr/bin
++INSTALLDIR=${PREFIX}/bin
+ 
+ # Where the default sigit configuration will be
+ 
+-RCDIR=/etc
++RCDIR=${PREFIX}/etc
+ 
+ # Where the systems man pages are placed.. 
+ 
+-MANDIR=/usr/share/man
++MANDIR=${PREFIX}/man
+ 
+ # if you want to test something..
+ 
+@@ -47,11 +46,11 @@
+ endif
+ 
+ # Compiler flags
+-CFLAGS= -Wall -O2 -D$(OS) $(FLAGS)
++CFLAGS+= -Wall -D$(OS) $(FLAGS)
+ 
+ # This is needed for "make install"
+ OWNER  = root
+-GROUP  = root
++GROUP  = wheel
+ INSTALL  = /usr/bin/install -o $(OWNER) -g $(GROUP) 
+ 
+ 
+@@ -98,14 +97,14 @@
+ 
+ 
+ install:
+-	$(INSTALL) -d $(PREFIX)
++	$(INSTALL) -d $(PREFIX)/share/sigit
+ 	$(INSTALL) -d $(INSTALLDIR)
+ 	$(INSTALL) -d $(RCDIR)
+ 	$(INSTALL) -d $(MANDIR)/man1
+ 	$(INSTALL) -m 555 $(EXE) $(INSTALLDIR)
+-	$(INSTALL) -m 664 sigit.data $(PREFIX)
+-	$(INSTALL) -m 664 sigit.sig $(PREFIX)
+-	$(INSTALL) -m 664 sigit.rc $(RCDIR)
++	$(INSTALL) -m 664 sigit.data $(PREFIX)/share/sigit
++	$(INSTALL) -m 664 sigit.sig $(PREFIX)/share/sigit
++	$(INSTALL) -m 664 sigit.rc $(RCDIR)/sigit.rc.dist
+ 	$(INSTALL) -m 444 sigit.1 $(MANDIR)/man1
+ 	$(INSTALL) -m 444 sigit.rc.1 $(MANDIR)/man1
