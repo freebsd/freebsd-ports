@@ -7,6 +7,7 @@
 
 PORTNAME=	inn
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
 
@@ -60,7 +61,7 @@ MAN8=	actsync.8 actsyncd.8 archive.8 batcher.8 buffchan.8 cnfsheadconf.8 \
 
 EXTRA=	${WRKSRC}/HISTORY ${WRKSRC}/INSTALL ${WRKSRC}/LICENSE
 
-INN_INCLUDES=	clibrary.h config.h libinn.h storage.h
+INN_INCLUDES=	clibrary.h config.h configdata.h dbz.h libinn.h storage.h
 
 pre-install:
 	${MKDIR} ${INN_NEWSSPOOL}
