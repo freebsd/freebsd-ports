@@ -5,7 +5,7 @@
   	solaris*)	JINCSUBDIRS="solaris";;
   	linux*)		JINCSUBDIRS="linux genunix";;
 -+	freebsd*)	JINCSUBDIRS="freebsd genunix";;
-++	freebsd*)	JINCSUBDIRS="linux freebsd genunix";;
+++	freebsd*)	JINCSUBDIRS="linux bsd freebsd genunix";;
   	*)		JINCSUBDIRS="genunix";;
   	esac
   
