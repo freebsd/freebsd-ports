@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/bprint
 bin/lcc
 lib/lcc-3.6/%%ARCH%%-FreeBSD/bbexit.o

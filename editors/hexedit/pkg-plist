@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/hexedit
 share/doc/hexedit/COPYING
 share/doc/hexedit/Changes

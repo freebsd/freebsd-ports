@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%GCC28SUBDIR%%/include/g++/std/bastring.cc
 %%GCC28SUBDIR%%/include/g++/std/bastring.h
 %%GCC28SUBDIR%%/include/g++/std/complext.cc

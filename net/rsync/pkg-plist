@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/rsync
 share/doc/rsync/README
 share/doc/rsync/COPYING

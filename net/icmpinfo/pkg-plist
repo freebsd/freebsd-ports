@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/icmpinfo
 share/doc/icmpinfo/README
 @dirrm share/doc/icmpinfo

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/gv
 lib/X11/app-defaults/GV
 lib/X11/gv/gv_class.ad
