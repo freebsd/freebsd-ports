@@ -19,6 +19,9 @@ MAINTAINER=	yasuf@big.or.jp
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --enable-shared
+.if defined(USE_INET6)
+CONFIGURE_ARGS+= --enable-ipv6
+.endif
 MAN1=		ruby.1
 PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
