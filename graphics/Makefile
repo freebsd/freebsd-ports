@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.122 1999/05/06 14:29:50 taoka Exp $
+# $Id: Makefile,v 1.123 1999/05/07 17:03:06 flathill Exp $
 #
 
     SUBDIR += 4va
@@ -125,6 +125,7 @@
     SUBDIR += xpdf
     SUBDIR += xpm
     SUBDIR += xpx
+    SUBDIR += xsane
     SUBDIR += xv
     SUBDIR += xv-m17n
     SUBDIR += xwpick
