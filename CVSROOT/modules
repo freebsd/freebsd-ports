@@ -10442,6 +10442,7 @@ spamass-rules	ports/mail/spamass-rules
 spamass-rules_du_jour	ports/mail/spamass-rules_du_jour
 spambnc		ports/mail/spambnc
 spamcalc	ports/misc/spamcalc
+spamcup		ports/mail/spamcup
 spamd		ports/mail/spamd
 spamguard	ports/mail/spamguard
 spamilter	ports/mail/spamilter
