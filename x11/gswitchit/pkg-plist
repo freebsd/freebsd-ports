@@ -9,7 +9,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gswitchit/XKB/%gconf.xml
 etc/gconf/schemas/gswitchit.schemas
 libdata/bonobo/servers/GNOME_GSwitchItApplet.server
 libexec/gswitchit-applet
-share/gnome/control-center-2.0/capplets/gswitchit-properties.desktop
 share/gnome/control-center-2.0/capplets/xkb-properties.desktop
 share/gnome/gnome-2.0/ui/GNOME_GSwitchItApplet.xml
 share/gnome/gswitchit/interfaces/gswitchit-properties.glade
@@ -125,8 +124,6 @@ share/gnome/pixmaps/gswitchit/pt.xpm
 share/gnome/pixmaps/gswitchit/qc.xpm
 share/gnome/pixmaps/gswitchit/ro.xpm
 share/gnome/pixmaps/gswitchit/ru.xpm
-share/gnome/pixmaps/gswitchit/ru7.xpm
-share/gnome/pixmaps/gswitchit/ru_new.xpm
 share/gnome/pixmaps/gswitchit/sa.xpm
 share/gnome/pixmaps/gswitchit/si.xpm
 share/gnome/pixmaps/gswitchit/sk.xpm
@@ -140,7 +137,6 @@ share/gnome/pixmaps/gswitchit/tr.xpm
 share/gnome/pixmaps/gswitchit/ua.xpm
 share/gnome/pixmaps/gswitchit/uk.xpm
 share/gnome/pixmaps/gswitchit/us.xpm
-share/gnome/pixmaps/gswitchit/us_new.xpm
 share/gnome/pixmaps/gswitchit/uy.xpm
 share/gnome/pixmaps/gswitchit/vn.xpm
 share/gnome/pixmaps/gswitchit/ye.xpm
@@ -154,14 +150,17 @@ share/locale/el/LC_MESSAGES/gswitchit.mo
 share/locale/es/LC_MESSAGES/gswitchit.mo
 share/locale/fa/LC_MESSAGES/gswitchit.mo
 share/locale/fr/LC_MESSAGES/gswitchit.mo
+share/locale/he/LC_MESSAGES/gswitchit.mo
 share/locale/ja/LC_MESSAGES/gswitchit.mo
 share/locale/lv/LC_MESSAGES/gswitchit.mo
+share/locale/ml/LC_MESSAGES/gswitchit.mo
 share/locale/mn/LC_MESSAGES/gswitchit.mo
 share/locale/nl/LC_MESSAGES/gswitchit.mo
 share/locale/no/LC_MESSAGES/gswitchit.mo
 share/locale/pt/LC_MESSAGES/gswitchit.mo
 share/locale/pt_BR/LC_MESSAGES/gswitchit.mo
 share/locale/ru/LC_MESSAGES/gswitchit.mo
+share/locale/sq/LC_MESSAGES/gswitchit.mo
 share/locale/sr/LC_MESSAGES/gswitchit.mo
 share/locale/sr@Latn/LC_MESSAGES/gswitchit.mo
 share/locale/sv/LC_MESSAGES/gswitchit.mo
