@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bfilter
-PORTVERSION=	0.8.2a
+PORTVERSION=	0.9.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Smart filtering HTTP proxy
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		tre.3:${PORTSDIR}/textproc/libtre \
+		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
