@@ -22,6 +22,7 @@ MAINTAINER?=	demon@FreeBSD.org
 PATCH_VERSION=	20010114
 _PORTVERSION+=	${VERSION}.${PATCH_VERSION}
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-xunicode
 
 PATCH_SITES=	http://www.ab.wakwak.com/~tino/jatk/fltk/
@@ -29,6 +30,8 @@ PATCHFILES=	${PORTNAME}-${VERSION}${PKGNAMESUFFIX}-${PATCH_VERSION}.diff
 PATCH_DIST_STRIP=	-p1
 
 BUILD_DEPENDS=	${X11BASE}/include/xunicode/xunicode.h:${PORTSDIR}/converters/xunicode
+
+CONFIGURE_ENV=	CXXFLAGS=-DUSE_XUNICODE
 .else
 _PORTVERSION+=	${VERSION}
 .endif
