@@ -1,12 +1,25 @@
-*** Makefile.orig	Sun Apr 18 22:38:02 1999
---- Makefile	Sun Apr 18 22:49:30 1999
+*** Makefile.orig	Sat May 22 13:51:28 1999
+--- Makefile	Sat May 22 13:56:17 1999
 ***************
-*** 8,13 ****
---- 8,14 ----
+*** 7,13 ****
+  #	make		Makes the MOPAC file
   #	make clean	Clean up disk to minimum config
   #
-  FFLAGS	        = -O2 -w
-+ LFLAGS		= -lf2c
+! FFLAGS	        = -O2 -w
+  HDRS		= SIZES
+  SRCS		:= $(shell ls *.f)
+  CSRCS           := $(shell ls *.c) 
+--- 7,19 ----
+  #	make		Makes the MOPAC file
+  #	make clean	Clean up disk to minimum config
+  #
+! FFLAGS	        ?= -O2 -w
+! ifdef HAVE_G2C
+! LFLAGS		= -lg2c
+! CFLAGS		+= -DHAVE_G2C
+! else
+! LFLAGS		= -lf2c
+! endif
   HDRS		= SIZES
   SRCS		:= $(shell ls *.f)
   CSRCS           := $(shell ls *.c) 
@@ -16,7 +29,7 @@
   SIZEDEPEND	= $(SIZEDEPSRC:.f=.o)
   MOPAC		= MOPAC7
 ! MOPACSHELL	= mopac
-  BINDIR		= /usr/local/bin
+! BINDIR		= /usr/local/bin
   OWNER		= root.bin
   
   $(MOPAC):     	SIZES $(OBJS) 
@@ -26,12 +39,12 @@
   
   clean:
   	 	$(RM) $(OBJS) *.trace core
---- 16,31 ----
+--- 21,36 ----
   SIZEDEPSRC	:= $(shell grep -l -i '      INCLUDE ' *.f; true)
   SIZEDEPEND	= $(SIZEDEPSRC:.f=.o)
   MOPAC		= MOPAC7
 ! MOPACSHELL	= rmopac
-  BINDIR		= /usr/local/bin
+! BINDIR		= $(PREFIX)/bin
   OWNER		= root.bin
   
   $(MOPAC):     	SIZES $(OBJS) 

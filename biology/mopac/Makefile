@@ -3,7 +3,7 @@
 # Date created:  1997-04-23
 # Whom:	 Ryo MIYAMOTO <rmiya@cc.hirosaki-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/05/07 05:12:13 taoka Exp $
+# $Id: Makefile,v 1.3 1999/05/08 08:06:43 taoka Exp $
 #
 
 DISTNAME=	mopac7
@@ -19,6 +19,11 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 
 USE_GMAKE=	yes
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 400005
+MAKE_ENV+=	HAVE_G2C=yes
+.endif
 
 post-patch:
 	${CP}  ${WRKDIR}/${DISTNAME}/esp.rof  ${WRKDIR}/${DISTNAME}/esp.f
@@ -39,4 +44,4 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/mopac7-man/mopac.tex ${PREFIX}/share/doc/mopac
 	${INSTALL_DATA} ${WRKDIR}/mopac7-man/mopac.dvi ${PREFIX}/share/doc/mopac
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
