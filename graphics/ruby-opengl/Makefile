@@ -7,6 +7,7 @@
 
 PORTNAME=	opengl
 PORTVERSION=	0.32b
+PORTREVISION=	1
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://www2.giganet.net/~yoshi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,11 +23,14 @@ USE_RUBY_EXTCONF=	yes
 
 USE_MESA=	yes
 
-RUBY_WITH_PTHREAD=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CONFIGURE_ARGS=	--with-ruby-dir="${LOCALBASE}" --with-x11-dir="${X11BASE}"
 INSTALL_TARGET=	site-install
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 502102
+BROKEN=		"Systems prior to FreeBSD 502102 are out of support"
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -37,4 +41,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.EUC ${RUBY_MODDOCDIR}/ja/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	devel graphics audio ruby
 MASTER_SITES=	http://www.kmc.gr.jp/~ohai/rubysdl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,7 +25,6 @@ RUBY_OPENGL_WRKSRC_CMD=	cd ${RUBY_OPENGL_PORTDIR}; ${MAKE} -V WRKSRC
 USE_SDL=	mixer image ttf sdl
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-RUBY_WITH_PTHREAD=	yes
 
 CONFIGURE_ARGS=	--with-sdl-config="sdl11-config" \
 		--enable-opengl --linkoglmodule \
@@ -42,6 +42,9 @@ DOCS_JA=	NEWS.ja README.ja \
 		${RUBY_RD_HTML_FILES:N*.en.html}
 
 .include <bsd.port.pre.mk>
+.if ${OSVERSION} < 502102
+BROKEN=		"Systems prior to FreeBSD 502102 are out of support"
+.endif
 
 post-extract:
 	dir=`${RUBY_OPENGL_WRKSRC_CMD}`; \

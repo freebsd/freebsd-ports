@@ -234,10 +234,8 @@
     SUBDIR += ruby-usersguide
     SUBDIR += ruby16
     SUBDIR += ruby16-shim-ruby18
-    SUBDIR += ruby16_r
     SUBDIR += ruby16_static
     SUBDIR += ruby18
-    SUBDIR += ruby18_r
     SUBDIR += ruby18_static
     SUBDIR += sbcl
     SUBDIR += scheme48

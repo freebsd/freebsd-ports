@@ -7,7 +7,7 @@
 
 PORTNAME=	sary
 PORTVERSION=	0.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://prime.sourceforge.jp/freebsd/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,8 +22,6 @@ LIB_DEPENDS=	sary.9:${PORTSDIR}/textproc/sary
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-RUBY_WITH_PTHREAD=	yes
-
 INSTALL_TARGET=	site-install
 
 RUBY_RD_FILES=	*.en.rd *.ja.rd
@@ -34,10 +32,15 @@ DOCS_EN=	ChangeLog \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 502102
+BROKEN=		"Systems prior to FreeBSD 502102 are out of support"
+.endif
+
 post-install: doc-install
 	${INSTALL_SCRIPT} ${WRKSRC}/rsary.rb ${PREFIX}/bin/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
 
 doc-install:
 .if !defined(NOPORTDOCS)

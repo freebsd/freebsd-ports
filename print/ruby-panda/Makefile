@@ -7,6 +7,7 @@
 
 PORTNAME=	panda
 PORTVERSION=	0.0.7
+PORTREVISION=	1
 CATEGORIES=	print ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,7 +24,6 @@ LIB_DEPENDS=	panda.0:${PORTSDIR}/print/panda \
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-RUBY_WITH_PTHREAD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	site-install
@@ -33,6 +33,11 @@ DOCS_EN=	README	\
 DOCS_JA=	ChangeLog.ja	README.ja	TODO.ja	\
 		doc/ref_ja.html	doc/ref_ja.rd
 EXAMPLES_EN=	circles.rb	main.rb		morecircles.rb	template.rb
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 502102
+BROKEN=		"Systems prior to FreeBSD 502102 are out of support"
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -50,4 +55,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

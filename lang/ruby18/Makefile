@@ -1,13 +1,13 @@
-# New ports collection makefile for:	ruby-devel
+# New ports collection makefile for:	ruby18
 # Date created:		6 May 2001
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	ruby${RUBY_R}
+PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY}
@@ -58,6 +58,17 @@ MAN1=		${RUBY_NAME}.1
 LATEST_LINK=	ruby-devel
 
 .include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 502102
+RUBY_ENABLE_PTHREAD?=	public demand
+.endif
+
+.if defined(RUBY_ENABLE_PTHREAD) && ${RUBY_ENABLE_PTHREAD} != "no"
+CONFIGURE_ARGS+=	--enable-pthread
+
+# There seems to be a bug in either gcc or libpthread that gets
+# (mini)ruby to malfunction..
+CFLAGS:=	${CFLAGS:N-march=*}
+.endif
 
 .if ${ARCH} == "ia64"
 BROKEN=		"Segfault during build on ia64"
@@ -70,7 +81,7 @@ CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
-MLINKS=		${RUBY_NAME}.1 ruby${RUBY_R}.1
+MLINKS=		${RUBY_NAME}.1 ruby.1
 IF_DEFAULT=	""
 .else
 IF_DEFAULT=	"@comment "
@@ -145,10 +156,9 @@ post-install:
 .endif
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 # Link just installed "ruby" to "ruby18", etc.
-	${LN} -f ${RUBY_WITH_SUFFIX} ${RUBY_WITHOUT_SUFFIX}${RUBY_R}
-	${LN} -f ${PREFIX}/man/man1/${RUBY_NAME}.1 ${PREFIX}/man/man1/ruby${RUBY_R}.1
+	${LN} -f ${RUBY_WITH_SUFFIX} ${RUBY_WITHOUT_SUFFIX}
 	for f in ${INSTALLED_SCRIPTS}; do \
-		${LN} -f $${f}${RUBY_SUFFIX} $${f}${RUBY_R}; \
+		${LN} -f $${f}${RUBY_SUFFIX} $${f}; \
 	done
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib

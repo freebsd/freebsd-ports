@@ -7,6 +7,7 @@
 
 PORTNAME=	pcsc-lite
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://soth.at/PCSC-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,7 +21,6 @@ LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 
 USE_RUBY=	yes
 RUBY_VER=	1.8
-RUBY_WITH_PTHREAD=	yes
 CONFIGURE_ARGS+=	--with-pcsclite-dir="${PREFIX}"
 USE_RUBY_EXTCONF=	yes
 RUBY_SETUP=	install.rb
@@ -29,6 +29,11 @@ WRKSRC=		${WRKDIR}/PCSC-ruby
 
 DOCS=		README.txt
 EXAMPLES=	examples/test.rb examples/pcsclient.rb
+
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 502102
+BROKEN=		"Systems prior to FreeBSD 502102 are out of support"
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -42,4 +47,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
