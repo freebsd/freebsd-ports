@@ -217,6 +217,7 @@ Local/Library/GNUMail/Viewing.prefs/stamp.make
 @dirrm Local/Library/GNUMail/Clock.bundle/Resources
 @dirrm Local/Library/GNUMail/Clock.bundle
 @dirrm Local/Library/GNUMail
+@dirrm Local/Library
 @dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Applications/GNUMail.app/%%GNU_ARCH%%
@@ -228,3 +229,12 @@ Local/Library/GNUMail/Viewing.prefs/stamp.make
 @dirrm Local/Applications/GNUMail.app/Resources/CVS
 @dirrm Local/Applications/GNUMail.app/Resources
 @dirrm Local/Applications/GNUMail.app
+@dirrm Local/Applications
+@cwd /root
+GNUstep/Defaults/.GNUstepDefaults
+GNUstep/Services/.GNUstepServices
+GNUstep/Services/.GNUstepAppList
+@dirrm GNUstep/Defaults
+@dirrm GNUstep/Library
+@dirrm GNUstep/Services
+@dirrm GNUstep

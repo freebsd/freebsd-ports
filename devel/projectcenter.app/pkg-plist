@@ -161,7 +161,9 @@ System/Library/ProjectCenter/PCToolProj.bundle/stamp.make
 @dirrm System/Applications/ProjectCenter.app/%%GNU_ARCH%%
 @dirrm System/Applications/ProjectCenter.app/Resources
 @dirrm System/Applications/ProjectCenter.app
-@unexec rmdir %D/System/Library 2>/dev/null || true
-@unexec rmdir %D/System/Libraries 2>/dev/null || true
-@unexec rmdir %D/System/Headers 2>/dev/null || true
-@unexec rmdir %D/System/Applications 2>/dev/null || true
+@dirrm System/Applications
+@cwd /root
+GNUstep/Defaults/.GNUstepDefaults
+@dirrm GNUstep/Defaults
+@dirrm GNUstep/Library
+@dirrm GNUstep

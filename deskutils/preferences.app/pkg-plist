@@ -37,6 +37,7 @@ System/Library/Frameworks/PrefsModule.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%
 @unexec rm -f %D/System/Library/Frameworks/PrefsModule.framework/Headers
 @unexec rm -f %D/System/Library/Frameworks/PrefsModule.framework/Resources
 @unexec rm -f %D/System/Library/Frameworks/PrefsModule.framework/Versions/Current
+@unexec rm -f %D/System/Headers/PrefsModule
 System/Library/Preferences/Keyboard.prefs/Resources/Info-gnustep.plist
 System/Library/Preferences/Keyboard.prefs/Resources/Keyboard.gorm
 System/Library/Preferences/Keyboard.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Keyboard
@@ -60,9 +61,15 @@ System/Library/Preferences/Keyboard.prefs/stamp.make
 @dirrm System/Library/Frameworks/PrefsModule.framework/Versions/A
 @dirrm System/Library/Frameworks/PrefsModule.framework/Versions
 @dirrm System/Library/Frameworks/PrefsModule.framework
+@dirrm System/Library/Frameworks
 @dirrm System/Library/Preferences/Keyboard.prefs/Resources
 @dirrm System/Library/Preferences/Keyboard.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/Preferences/Keyboard.prefs/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/Preferences/Keyboard.prefs/%%GNU_ARCH%%
 @dirrm System/Library/Preferences/Keyboard.prefs
 @dirrm System/Library/Preferences
+@cwd /root
+GNUstep/Defaults/.GNUstepDefaults
+@dirrm GNUstep/Defaults
+@dirrm GNUstep/Library
+@dirrm GNUstep

@@ -234,6 +234,8 @@ System/Applications/NSPanelTest.app/stamp.make
 @dirrm Local/Library/Bundles/Composite-test.bundle/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Library/Bundles/Composite-test.bundle/%%GNU_ARCH%%
 @dirrm Local/Library/Bundles/Composite-test.bundle
+@dirrm Local/Library/Bundles
+@dirrm Local/Library
 @dirrm Local/Applications/NSScreenTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Applications/NSScreenTest.app/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Applications/NSScreenTest.app/%%GNU_ARCH%%
@@ -279,3 +281,12 @@ System/Applications/NSPanelTest.app/stamp.make
 @dirrm Local/Applications/Calculator.app/%%GNU_ARCH%%
 @dirrm Local/Applications/Calculator.app/Resources
 @dirrm Local/Applications/Calculator.app
+@dirrm Local/Applications
+@cwd /root
+GNUstep/Defaults/.GNUstepDefaults
+GNUstep/Services/.GNUstepServices
+GNUstep/Services/.GNUstepAppList
+@dirrm GNUstep/Defaults
+@dirrm GNUstep/Library
+@dirrm GNUstep/Services
+@dirrm GNUstep
