@@ -17,6 +17,8 @@ DISTNAME=	ocamlsdl-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OCaml interface to the SDL
 
+BROKEN=		Does not build
+
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib \
 		lablgl:${PORTSDIR}/graphics/ocaml-lablgl
