@@ -13,7 +13,9 @@ DISTNAME=	gh-${PORTVERSION}-source
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	The Generic Haskell compiler
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
+		bash:${PORTSDIR}/shells/bash
+
 .if !defined(WITHOUT_HUGS)	# otherwise the gh-hugs-wrapper won't work
 BUILD_DEPENDS+=	hugs:${PORTSDIR}/lang/hugs
 PLIST_SUB+=	HUGS=""
@@ -39,6 +41,7 @@ INSTALL_TARGET=	install
 GHC_VERSION=    `${LOCALBASE}/bin/ghc --numeric-version`
 PLIST_SUB+=     GHC_VERSION="${GHC_VERSION}"
 
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME:S/-source//}
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-source//}/build
 GHLIBDIR=	${PREFIX}/${DISTNAME:S/-source//}
 PLIST_SUB+=	GH=${DISTNAME:S/-source//}
