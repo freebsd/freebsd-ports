@@ -24,4 +24,6 @@ USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 
+GCONF_SCHEMAS=	mlview.schemas
+
 .include <bsd.port.mk>
