@@ -1,0 +1,159 @@
+This are mostly fixes for warnings, which show up when built with -Wall...
+
+	-mi
+
+--- tclexpat.c	Wed Nov 15 20:13:35 2000
++++ tclexpat.c	Wed Nov 15 20:53:43 2000
+@@ -74,14 +74,14 @@
+ 
+-static void * (TclExpatElementStartHandler) _ANSI_ARGS_((void *userdata,
++static void (TclExpatElementStartHandler) _ANSI_ARGS_((void *userdata,
+ 							 const XML_Char *name,
+ 							 const XML_Char **atts));
+-static void * (TclExpatElementEndHandler) _ANSI_ARGS_((void *userData,
++static void (TclExpatElementEndHandler) _ANSI_ARGS_((void *userData,
+ 						       const XML_Char *name));
+-static void * (TclExpatCharacterDataHandler) _ANSI_ARGS_((void *userData,
++static void (TclExpatCharacterDataHandler) _ANSI_ARGS_((void *userData,
+ 							  const XML_Char *s,
+ 							  int len));
+-static void * (TclExpatProcessingInstructionHandler) _ANSI_ARGS_((void *userData,
++static void (TclExpatProcessingInstructionHandler) _ANSI_ARGS_((void *userData,
+ 								  const XML_Char *target,
+ 								  const XML_Char *data));
+-static void * (TclExpatExternalEntityRefHandler) _ANSI_ARGS_((XML_Parser parser,
++static int (TclExpatExternalEntityRefHandler) _ANSI_ARGS_((XML_Parser parser,
+ 							      const XML_Char *openEntityNames,
+@@ -90,6 +90,6 @@
+ 							      const XML_Char *publicId));
+-static void * (TclExpatDefaultHandler) _ANSI_ARGS_ ((void *userData,
++static void (TclExpatDefaultHandler) _ANSI_ARGS_ ((void *userData,
+ 						     const XML_Char *s,
+ 						     int len));
+-static void * (TclExpatUnparsedDeclHandler) _ANSI_ARGS_ ((void *userData,
++static void (TclExpatUnparsedDeclHandler) _ANSI_ARGS_ ((void *userData,
+ 							  const XML_Char *entityname,
+@@ -99,3 +99,3 @@
+ 							  const XML_Char *notationName));
+-static void * (TclExpatNotationDeclHandler) _ANSI_ARGS_ ((void *userData,
++static void (TclExpatNotationDeclHandler) _ANSI_ARGS_ ((void *userData,
+ 							  const XML_Char *notationName,
+@@ -108,3 +108,3 @@
+ 
+-#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0)
++#if (TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 0) && !defined(Tcl_GetString)
+ 
+@@ -269,3 +269,2 @@
+ {
+-  int len;
+ 
+@@ -286,18 +285,18 @@
+   XML_SetElementHandler(expat->parser,
+-			(XML_StartElementHandler) TclExpatElementStartHandler,
+-			(XML_EndElementHandler) TclExpatElementEndHandler);
++			TclExpatElementStartHandler,
++			TclExpatElementEndHandler);
+   XML_SetCharacterDataHandler(expat->parser,
+-			      (XML_CharacterDataHandler) TclExpatCharacterDataHandler);
++			      TclExpatCharacterDataHandler);
+   XML_SetProcessingInstructionHandler(expat->parser,
+-				      (XML_ProcessingInstructionHandler) TclExpatProcessingInstructionHandler);
++				      TclExpatProcessingInstructionHandler);
+   XML_SetDefaultHandler(expat->parser,
+-			(XML_DefaultHandler) TclExpatDefaultHandler);
++			TclExpatDefaultHandler);
+   XML_SetUnparsedEntityDeclHandler(expat->parser,
+-				   (XML_UnparsedEntityDeclHandler) TclExpatUnparsedDeclHandler);
++				   TclExpatUnparsedDeclHandler);
+   XML_SetNotationDeclHandler(expat->parser,
+-			     (XML_NotationDeclHandler) TclExpatNotationDeclHandler);
++			     TclExpatNotationDeclHandler);
+   XML_SetExternalEntityRefHandler(expat->parser,
+-				  (XML_ExternalEntityRefHandler) TclExpatExternalEntityRefHandler);
++				  TclExpatExternalEntityRefHandler);
+   XML_SetUnknownEncodingHandler(expat->parser,
+-				(XML_UnknownEncodingHandler) TclExpatUnknownEncodingHandler,
++				TclExpatUnknownEncodingHandler,
+ 				(void *) expat);
+@@ -329,3 +328,2 @@
+ {
+-  int len;
+ 
+@@ -359,3 +357,3 @@
+   TclExpatInfo *expat = (TclExpatInfo *) clientData;
+-  char *method, *data;
++  char *data;
+   int len, index, result = TCL_OK;
+@@ -797,3 +795,3 @@
+ 
+-static void *
++static void
+ TclExpatElementStartHandler(userData, name, atts)
+@@ -879,3 +877,3 @@
+ 
+-static void *
++static void
+ TclExpatElementEndHandler(userData, name)
+@@ -949,3 +947,3 @@
+ 
+-static void *
++static void
+ TclExpatCharacterDataHandler(userData, s, len)
+@@ -1008,3 +1006,3 @@
+ 
+-static void *
++static void
+ TclExpatProcessingInstructionHandler(userData, target, data)
+@@ -1068,3 +1066,3 @@
+ 
+-static void *
++static void
+ TclExpatDefaultHandler(userData, s, len)
+@@ -1127,3 +1125,3 @@
+ 
+-static void *
++static void
+ TclExpatUnparsedDeclHandler(userData, entityname, base, systemId, publicId, notationName)
+@@ -1201,3 +1199,3 @@
+ 
+-static void *
++static void
+ TclExpatNotationDeclHandler(userData, notationName, base, systemId, publicId)
+@@ -1281,11 +1279,14 @@
+   TclExpatInfo *expat = (TclExpatInfo *) encodingHandlerData;
++#if 0
+   Tcl_Obj *cmdPtr;
+   int result;
++#endif
+ 
+   Tcl_SetResult(expat->interp, "not implemented", NULL);
+-  return 0;
++  return 1;
+ 
++#if 0
+   if (expat->unknownencodingcommand == NULL ||
+       expat->status != TCL_OK) {
+-    return;
++    return 1;
+   }
+@@ -1319,3 +1320,4 @@
+ 
+-  return;
++  return 0;
++#endif
+ }
+@@ -1338,3 +1340,3 @@
+ 
+-static void *
++static int
+ TclExpatExternalEntityRefHandler(parser, openEntityNames, base, systemId, publicId)
+@@ -1352,3 +1354,3 @@
+       expat->status != TCL_OK) {
+-    return;
++    return 0;
+   }
+@@ -1383,3 +1385,3 @@
+ 
+-  return;
++  return 1;
+ }
