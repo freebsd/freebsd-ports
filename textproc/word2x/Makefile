@@ -3,7 +3,7 @@
 # Date created:		10 June 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/10/20 02:00:22 steve Exp $
+# $FreeBSD$
 
 DISTNAME=	word2x
 PKGNAME=	word2x-0.003

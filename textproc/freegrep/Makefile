@@ -3,7 +3,7 @@
 # Date created:		8 June 1999
 # Whom:			Sheldon Hearn <sheldonh@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1999/07/29 21:30:05 jmg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	grep-0.11

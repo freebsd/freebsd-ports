@@ -3,7 +3,7 @@
 # Date created:         22 Oct 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1999/08/27 22:30:17 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	yodl-1.22

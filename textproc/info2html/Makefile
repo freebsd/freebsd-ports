@@ -3,7 +3,7 @@
 # Date created:         9 October 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/10 13:37:50 wosch Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       info2html-1.1

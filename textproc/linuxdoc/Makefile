@@ -3,7 +3,7 @@
 # Date created:		July 8, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.6 1999/02/11 16:01:16 jfieber Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	linuxdoc-1.1

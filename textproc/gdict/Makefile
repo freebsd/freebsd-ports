@@ -3,7 +3,7 @@
 # Date created:			Sun Jul 18 1999
 # Whom:				domi@saargate.de
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/09 01:54:51 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gdict-0.7

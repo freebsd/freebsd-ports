@@ -3,7 +3,7 @@
 # Date created:		25 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.16 1998/11/02 11:10:08 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       glimpse-4.1.src

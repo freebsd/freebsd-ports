@@ -3,7 +3,7 @@
 # Date created:		28 March 1999
 # Whom:			kuriyama
 #
-# $Id: Makefile,v 1.2 1999/05/30 22:11:16 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	db3x314

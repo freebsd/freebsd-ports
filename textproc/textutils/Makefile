@@ -3,7 +3,7 @@
 # Date created:		14 May 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id: Makefile,v 1.4 1999/02/13 07:25:42 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	textutils-1.22

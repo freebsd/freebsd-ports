@@ -3,7 +3,7 @@
 # Date created:				04/17/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.2 1999/05/01 02:20:34 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		xml-0.5.1

@@ -3,7 +3,7 @@
 # Date created:        27 June 1998
 # Whom:                Nik Clayton <nik@freebsd.org>
 #
-# $Id: Makefile,v 1.15 1999/07/06 06:06:49 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	docproj

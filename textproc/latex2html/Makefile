@@ -3,7 +3,7 @@
 # Date created:		3 May 1998
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.8 1999/08/21 07:37:27 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	latex2html-98.1p1

@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1997/04/27 00:11:48 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	unroff-1.0

@@ -3,7 +3,7 @@
 # Date created:         Fri Nov  6 09:06:33 PST 1998
 # Whom:                 sumikawa@kame.net
 #
-# $Id: Makefile,v 1.5 1999/06/16 13:49:11 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mswordview-0.5.14-bw2

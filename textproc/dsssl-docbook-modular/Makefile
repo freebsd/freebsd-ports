@@ -3,7 +3,7 @@
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.20 1999/08/22 19:00:13 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	db144

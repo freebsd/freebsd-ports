@@ -3,7 +3,7 @@
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.3 1997/10/10 06:53:40 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	vnless

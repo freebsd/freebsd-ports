@@ -3,7 +3,7 @@
 # Date created:                24 June 1998
 # Whom:                        Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/20 03:45:24 steve Exp $
+# $FreeBSD$
 #
 
 # Same version as the contrib groff sources...

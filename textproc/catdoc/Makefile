@@ -3,7 +3,7 @@
 # Date created:        11 November 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
-# $Id: Makefile,v 1.8 1999/06/04 23:15:03 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	catdoc-0.90.3

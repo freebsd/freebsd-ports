@@ -3,7 +3,7 @@
 # Date created:		21 April 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.2 1998/05/11 02:46:05 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	urlview-0.7

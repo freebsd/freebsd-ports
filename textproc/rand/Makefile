@@ -3,7 +3,7 @@
 # Date created:			Mon Jul 26 1999
 # Whom:				domi@saargate.de
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	rand-1.5

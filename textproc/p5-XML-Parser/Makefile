@@ -3,7 +3,7 @@
 # Date created:		15 Nov 1998
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/02/11 03:35:01 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	XML-Parser-2.23

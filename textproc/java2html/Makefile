@@ -3,7 +3,7 @@
 # Date created:				21 March 1999
 # Whom:					Martin Kammerhofer
 #
-# $Id: Makefile,v 1.2 1999/05/04 22:40:30 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		java2html-0.6.1

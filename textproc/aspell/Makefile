@@ -3,7 +3,7 @@
 # Date created:		7 December 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.8 1999/08/22 19:46:21 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	aspell-.28.2.1
