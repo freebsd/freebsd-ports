@@ -1,0 +1,19 @@
+libdata/pkgconfig/pygtkglext-1.0.pc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/_gdkglmodule.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl/_gdkglmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/_gtkglmodule.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/_gtkglmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/widget.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/widget.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl/widget.pyo
+share/pygtk/2.0/defs/gdkglext-types.defs
+share/pygtk/2.0/defs/gdkglext.defs
+share/pygtk/2.0/defs/gtkglext.defs
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gtkgl
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gtk/gdkgl
