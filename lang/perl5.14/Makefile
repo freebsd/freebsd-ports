@@ -3,7 +3,7 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.19 1997/07/17 17:46:36 markm Exp $
+# $Id: Makefile,v 1.20 1997/07/18 06:16:44 markm Exp $
 #
 
 DISTNAME=	perl5.004_01
@@ -64,5 +64,6 @@ test:
 
 post-install:
 	@strip ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
+	@ln -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl5
 
 .include <bsd.port.mk>
