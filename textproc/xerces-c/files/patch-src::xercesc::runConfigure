@@ -1,0 +1,13 @@
+--- src/xercesc/runConfigure.orig	Wed Oct 20 12:25:47 2004
++++ src/xercesc/runConfigure	Wed Oct 20 12:26:33 2004
+@@ -294,8 +294,8 @@
+ 				;;
+ 		esac
+     elif test $platform = "freebsd"; then
+-        threadingLibs="-pthread -lc_r"
+-        threadingDefines="-D_THREAD_SAFE -DXML_USE_PTHREADS"
++        threadingLibs="${PTHREAD_LIBS}"
++        threadingDefines="${PTHREAD_CFLAGS} -DXML_USE_PTHREADS"
+     elif test $platform = "aix"; then
+         aix_version=`./config.guess`;
+         echo Found host system to be $aix_version
