@@ -1,0 +1,46 @@
+# New ports collection makefile for:	qmail-mysql
+# Date created:				6 Feb 2001
+# Whom:					Mario S F Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	qmail
+PORTVERSION=	${QMAIL_VERSION}.${MYSQL_PATCH_VERSION}
+CATEGORIES=	mail
+PKGNAMESUFFIX=	-mysql
+
+PATCH_SITES+=	http://iain.cx/unix/qmail/download/
+PATCHFILES+=	qmail-mysql-${MYSQL_PATCH_VERSION}.patch
+
+MAINTAINER=	lioux@FreeBSD.org
+
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+
+MYSQL_PATCH_VERSION=	1.1.1
+
+.if !defined(PRE_MK_INCLUDED)
+.include <bsd.port.pre.mk>
+.endif
+
+#PREFIX=		/var/qmail-mysql
+
+# Yet anther ugly hack (works due to code inside the main qmail port)
+yetanotherone-post-patch: qmail-mysql-post-patch
+
+qmail-mysql-post-patch:
+	@${PERL} -pi -ne \
+		 "s|/usr/local/mysql/lib|${LOCALBASE}/lib|;s|/usr/local/mysql/include|${LOCALBASE}/include|;s|-lm|-lm -lz|" \
+			${WRKSRC}/Makefile
+
+# Local overrides
+MASTERDIR=	${PORTSDIR}/mail/qmail
+#MASTERDIR=	${.CURDIR}/../qmail
+PKGDIR_LOCAL=	${.CURDIR}
+COMMENT=	${PKGDIR_LOCAL}/pkg-comment
+DESCR=		${PKGDIR_LOCAL}/pkg-descr
+PKGMESSAGE=	${PKGDIR_LOCAL}/pkg-message
+
+PRE_MK_INCLUDED=	yes
+
+.include "${MASTERDIR}/Makefile"
