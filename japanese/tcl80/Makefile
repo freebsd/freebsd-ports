@@ -35,6 +35,10 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64 (needs -fPIC)"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-patch:
 	@${CP} ${FILESDIR}/README.FreeBSD.in ${TOPDIR}/README.FreeBSD.JP.in
