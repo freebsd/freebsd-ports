@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	thefish
-PORTVERSION=	0.2.5.1
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://energyhq.homeip.net/files/
 
@@ -19,6 +18,11 @@ MAKE_ENV+=	NO_GUI=yes
 .else
 LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
 USE_X_PREFIX=	yes
+.endif
+
+.if defined(WITH_CDK)
+LIB_DEPENDS=	cdk:${PORTSDIR}/devel/cdk
+MAKE_ENV+=	WITH_CDK=yes
 .endif
 
 MAN1=		thefish.1
