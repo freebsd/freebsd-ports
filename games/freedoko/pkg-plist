@@ -88,7 +88,6 @@ bin/FreeDoko
 %%DATADIR%%/cardsets/Altenburg/french/icons/swines.heart.png
 %%DATADIR%%/cardsets/Altenburg/french/icons/swines.spade.png
 %%DATADIR%%/rules/beginner
-%%DATADIR%%/rules/last
 %%DATADIR%%/rules/standard
 %%DATADIR%%/rules/tournament
 %%DATADIR%%/translations/de/text
@@ -181,7 +180,12 @@ bin/FreeDoko
 %%DOCSDIR%%/manual/de/operation/overview.html
 %%DOCSDIR%%/manual/de/operation/party_settings.html
 %%DOCSDIR%%/manual/de/operation/pictures/bug_report.png
+%%DOCSDIR%%/manual/de/operation/pictures/main_window.png
+%%DOCSDIR%%/manual/de/operation/pictures/party_settings.png
+%%DOCSDIR%%/manual/de/operation/pictures/player_config.png
+%%DOCSDIR%%/manual/de/operation/pictures/reservation.png
 %%DOCSDIR%%/manual/de/operation/pictures/splash.png
+%%DOCSDIR%%/manual/de/operation/player_config.html
 %%DOCSDIR%%/manual/de/operation/problems.html
 %%DOCSDIR%%/manual/de/operation/reservation.html
 %%DOCSDIR%%/manual/de/operation/rules_config.html
@@ -199,6 +203,7 @@ bin/FreeDoko
 %%DOCSDIR%%/manual/en/faq.html
 %%DOCSDIR%%/manual/en/index.html
 %%DOCSDIR%%/manual/en/introduction.html
+%%DOCSDIR%%/manual/en/operation/ai_config.html
 %%DOCSDIR%%/manual/en/operation/overview.html
 %%DOCSDIR%%/manual/en/overview.html
 %%DOCSDIR%%/manual/en/rules.html
