@@ -1,8 +1,8 @@
 *** ./ada/a-init.c.orig	Fri Sep 24 08:42:43 1999
---- ./ada/a-init.c	Sat Nov  6 16:22:51 1999
+--- ./ada/a-init.c	Mon Jun 26 21:43:54 2000
 ***************
 *** 1445,1450 ****
---- 1445,1523 ----
+--- 1445,1532 ----
   }
   
   
@@ -73,12 +73,38 @@
 +   (void) sigaction (SIGBUS,  &act, NULL);
 + }
 + 
++ void __gnat_init_float ();
++ 
 + void
 + __gnat_initialize ()
 + {
 +    __gnat_install_handler ();
++ 
++    /* XXX - Initialize floating-point coprocessor.  This call is
++       needed because FreeBSD defaults to 53-bit precision instead
++       of 64-bit precision.   We require the full precision for
++       proper operation, given that we have set Max_Digits etc
++       with this in mind. */
++    __gnat_init_float ();
 + }
 + 
   /***************************************/
   /* __gnat_initialize (default version) */
   /***************************************/
+***************
+*** 1470,1476 ****
+     defined in all Win32 versions, but only actually does something on
+     the i386 version, where it properly initializes the FPU for GNAT use.  */
+  
+! #if defined (_WIN32) || defined (__INTERIX)
+  void
+  __gnat_init_float ()
+  {
+--- 1552,1558 ----
+     defined in all Win32 versions, but only actually does something on
+     the i386 version, where it properly initializes the FPU for GNAT use.  */
+  
+! #if defined (_WIN32) || defined (__INTERIX) || defined (__FreeBSD__)
+  void
+  __gnat_init_float ()
+  {
