@@ -28,7 +28,7 @@ MASTER_SITES?=	http://www.epkowa.on.arena.ne.jp/pips/data/${PRTYPE}/
 DISTNAME?=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.i386.tgz
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	ume@FreeBSD.org
 COMMENT?=	Photo Image Print System for Linux --- EPSON PM-800C
 
 RUN_DEPENDS=	${LINUXBASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
