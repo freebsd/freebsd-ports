@@ -160,6 +160,7 @@
     SUBDIR += trafd
     SUBDIR += whatmask
     SUBDIR += wide-dhcp
+    SUBDIR += yabm
     SUBDIR += zabbix
 
 .include <bsd.port.subdir.mk>

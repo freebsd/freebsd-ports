@@ -1,0 +1,12 @@
+Yet Another Bandwidth Meter displays current bandwidth utilization using the
+PNG image format. It somewhat resembles the Linux bwbar (although there is no
+connection to it).
+
+Features include measurement both on interface and assigned IP-address basis,
+possible to run non-root and non-setuid, quite customizable (colours, geometry,
+device max speed, etc). It also includes text output to the image.
+
+WWW: http://shapeshifter.se/code/yabm/
+
+-- Fredrik Lindberg
+   fli@shapeshifter.se

@@ -1,0 +1,11 @@
+
+**********************************************************
+
+ A startup script has been copied to 
+ %%PREFIX%%/etc/rc.d/yabm.sh, please add yabm_enable="YES"
+ in your /etc/rc.conf to run yabm at startup.
+ For further script configuration notes, please see the
+ online documentation or comments in yabm.sh.
+
+**********************************************************
+
