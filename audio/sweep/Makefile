@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sweep
-PORTVERSION=	0.8.2
-PORTREVISION=	5
+PORTVERSION=	0.8.3
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -25,7 +24,7 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
-USE_GNOME=	gnomeprefix gnomehier gnomehack gtk12
+USE_GNOME=	gnomeprefix gnomehier gnomehack gnometarget gtk12
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
