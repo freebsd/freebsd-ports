@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r1467
+PORTVERSION=	r1537
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tigris.org/files/15/38/
 
@@ -15,17 +15,13 @@ LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		neon.19:${PORTSDIR}/www/neon \
 		expat:${PORTSDIR}/textproc/expat \
 		apr:${PORTSDIR}/devel/apr-devel
-
-RUN_DEPENDS=	gdiff:${PORTSDIR}/textproc/diffutils \
-		gpatch:${PORTSDIR}/devel/patch
-
-BUILD_DEPENDS=	gdiff:${PORTSDIR}/textproc/diffutils \
-		gpatch:${PORTSDIR}/devel/patch \
-		python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils \
+BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils \
+	 	python:${PORTSDIR}/lang/python
 
 MAN1=		svn.1
 
-WRKSRC=	${WRKDIR}/subversion-r1467
+WRKSRC=	${WRKDIR}/subversion-r1537
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-ssl \
 		--with-neon=${LOCALBASE} \
