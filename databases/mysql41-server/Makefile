@@ -132,6 +132,7 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "	WITH_CHARSET=charset	Define the primary built-in charset (latin1)."
 	@${ECHO} "	WITH_XCHARSET=list	Define other built-in charsets (may be 'all')."
+	@${ECHO} "	WITH_COLLATION=collate	Define default collation (latin1_swedish_ci)."
 	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
