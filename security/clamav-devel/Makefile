@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040610
+PORTVERSION=	20040701
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -26,7 +26,6 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 OPTIONS=	MILTER "Compile the milter interface" off
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_AUTOCONF_VER=259
