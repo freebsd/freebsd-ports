@@ -2331,7 +2331,7 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	# check OPTIONS
 	print "OK: checking OPTIONS.\n" if ($verbose);
 	@oopt = ($makevar{OPTIONS} =~ /(\w+)\s+\".*?\"\s+\w+/sg);
-	@mopt = ($tmp =~ /^\s*\.\s*(?:ifdef\s+|if\s+defined\s*)\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg);
+	@mopt = ($tmp =~ /^\s*\.\s*(?:ifn?def\s+|if\s+\!?\s*defined\s*)\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg);
 	foreach my $i (@oopt) {
 		if (!grep(/^$i$/, @mopt)) {
 			&perror("WARN: $file: $i is listed in OPTIONS, ".
