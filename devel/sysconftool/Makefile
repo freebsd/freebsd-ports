@@ -13,11 +13,8 @@ MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	yds@CoolRat.org
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
-
-GNU_CONFIGURE=	yes
 USE_PERL5=	yes
+USE_AUTOMAKE_VER=	14
 
 MAN1=		sysconftool.1 sysconftoolcheck.1
 MAN7=		sysconftool.7
