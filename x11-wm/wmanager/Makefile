@@ -13,6 +13,7 @@ EXTRACT_SUFX=	-src.tar.bz2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 window manager selector
+BROKEN=		unfetchable
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
