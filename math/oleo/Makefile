@@ -15,7 +15,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU spreadsheet for X11 and terminals
 
-USE_GETTEXT=		yes
 USE_PERL5_BUILD=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
@@ -42,6 +41,7 @@ CONFIGURE_ARGS+=	--without-motif
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .else
+USE_GETTEXT=	yes
 PLIST_SUB=	NLS=""
 .endif
 
