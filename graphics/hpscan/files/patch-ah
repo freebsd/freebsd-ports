@@ -1,0 +1,20 @@
+--- scanner.c.orig	Sun Oct 11 21:46:19 1998
++++ scanner.c	Sun Oct 11 21:46:42 1998
+@@ -84,7 +84,7 @@
+     ScsiStatus status;
+     ScsiSense sense;
+ 
+-    status = scsi_send(fd, &sense, data, &length);
++    status = Scsi_send(fd, &sense, data, &length);
+ 
+     if(decode_status(status, sense, "scanner_send") == -1)
+ 	return -1;
+@@ -106,7 +106,7 @@
+     ScsiStatus status;
+     ScsiSense sense;
+     
+-    status = scsi_receive(fd, &sense, data, &length);
++    status = Scsi_receive(fd, &sense, data, &length);
+ 
+     if(decode_status(status, sense, "scanner_receive") == -1)
+ 	return -1;

@@ -1,17 +1,15 @@
---- /dev/null	Sat Jan 13 17:05:14 1996
-+++ Imakefile	Fri Jan 12 17:49:11 1996
-@@ -0,0 +1,14 @@
-+XCOMM
-+XCOMM Imakefile for Richard Tobin's HP scanner utility,
-+XCOMM written by Jörg Wunsch, 96/01/12.
-+XCOMM
-+
-+ EXTRA_INCLUDES = -I/sys
-+
-+        DEPLIBS = XawClientDepLibs
-+LOCAL_LIBRARIES = XawClientLibs MathLibrary
-+
-+           SRCS = main.c scsi.c scanner.c scl.c gui.c colour.c Plain.c
-+           OBJS = main.o scsi.o scanner.o scl.o gui.o colour.o Plain.o
-+
-+ComplexProgramTarget(hpscan)
+--- scsi.h.orig	Sun Oct 11 21:30:07 1998
++++ scsi.h	Sun Oct 11 21:32:11 1998
+@@ -6,8 +6,8 @@
+ typedef struct scsi_sense_data *ScsiSense;
+ typedef struct scsi_inquiry_data *ScsiInquiry;
+ 
+-ScsiStatus scsi_test_unit_ready(int fd, ScsiSense *sense);
+-ScsiStatus scsi_inquiry(int fd, ScsiSense *sense, ScsiInquiry *inquiry);
+-ScsiStatus scsi_send(int fd, ScsiSense *sense, u_char *data, int *len);
+-ScsiStatus scsi_receive(int fd, ScsiSense *sense, u_char *data, int *len);
++ScsiStatus Scsi_test_unit_ready(int fd, ScsiSense *sense);
++ScsiStatus Scsi_inquiry(int fd, ScsiSense *sense, ScsiInquiry *inquiry);
++ScsiStatus Scsi_send(int fd, ScsiSense *sense, u_char *data, int *len);
++ScsiStatus Scsi_receive(int fd, ScsiSense *sense, u_char *data, int *len);
+ 

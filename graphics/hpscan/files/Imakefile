@@ -1,0 +1,20 @@
+XCOMM
+XCOMM Imakefile for Richard Tobin's HP scanner utility,
+XCOMM written by Jörg Wunsch, 96/01/12.
+XCOMM
+
+#if OSMajorVersion < 3
+ EXTRA_INCLUDES = -I/sys -I/usr/local/include
+#else
+ EXTRA_INCLUDES = -I/usr/include/cam -I/sys -I/usr/local/include
+#endif
+ EXTRA_DEFINES  = -DJPEG
+        DEPLIBS = XawClientDepLibs /usr/local/lib/libjpeg.a
+LOCAL_LIBRARIES = XawClientLibs MathLibrary -L/usr/local/lib -ljpeg
+
+           SRCS = main.c scsi.c scanner.c scl.c gui.c colour.c Plain.c
+           OBJS = main.o scsi.o scanner.o scl.o gui.o colour.o Plain.o
+
+ComplexProgramTarget(hpscan)
+InstallAppDefaults(HPscan)
+InstallAppDefaultsLong(HPscan-co,HPscan-color)
