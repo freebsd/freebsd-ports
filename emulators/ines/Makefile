@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ines
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/iNES/
-DISTNAME=	iNES22-FreeBSD-80x86-bin
+DISTNAME=	iNES23-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
@@ -28,8 +28,8 @@ STRIP=
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ines ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/ines-debug ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/ines
-	@${INSTALL_DATA} ${WRKSRC}/iNES.html ${PREFIX}/share/ines
-	@${INSTALL_DATA} ${WRKSRC}/CART.NES ${PREFIX}/share/ines
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/iNES.html ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/CART.NES ${DATADIR}
 
 .include <bsd.port.post.mk>
