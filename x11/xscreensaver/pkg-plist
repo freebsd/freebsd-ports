@@ -16,6 +16,7 @@ bin/coral
 bin/critical
 bin/crystal
 bin/cynosure
+bin/dangerball
 bin/decayscreen
 bin/deco
 bin/deluxe
@@ -60,6 +61,7 @@ bin/maze
 bin/moebius
 bin/moire
 bin/moire2
+bin/molecule
 bin/morph3d
 bin/mountain
 bin/munch
@@ -79,6 +81,7 @@ bin/ripples
 bin/rocks
 bin/rorschach
 bin/rotor
+bin/rotzoomer
 bin/rubik
 bin/shadebobs
 bin/sierpinski
