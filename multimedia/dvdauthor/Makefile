@@ -16,7 +16,6 @@ COMMENT=	Makes a DVD file structure from one or more MPEG2 streams
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		png.5:${PORTSDIR}/graphics/png \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
