@@ -16,7 +16,7 @@
 -	APR_ADDTO(CPPFLAGS, [-D_REENTRANT -D_THREAD_SAFE])
 +	if test $os_version -lt "500016"; then
 +		ac_cv_pthreads_cflags="-D_THREAD_SAFE -D_REENTRANT"
-+		APR_ADDTO(LIBS, [-pthread])
++		LIBS="$LIBS -pthread"
 +	else
 +		ac_cv_pthreads_lib="c_r"
 +	fi
