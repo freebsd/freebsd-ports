@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sn
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	news
 MASTER_SITES=	http://www.infa.abo.fi/~patrik/sn/files/
 EXTRACT_SUFX=	.tar.bz2
@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	fehlner@gmx.de
 COMMENT=	Small news system for small sites serving
 
-DOCS=		README CHANGES FAQ INSTALL INTERNALS \
+PORTDOCS=	README CHANGES FAQ INSTALL INTERNALS \
 		THANKS TODO INSTALL.notes INSTALL.notes2 \
 		INSTALL.run INSTALL.upgrade
 
@@ -36,7 +36,7 @@ pre-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
