@@ -8,10 +8,14 @@
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
 CATEGORIES=	lang ruby ipv6
-MASTER_SITES=	${MASTER_SITE_RUBY}
-MASTER_SITE_SUBDIR=	snapshots
-DISTNAME=	${RUBY_DISTNAME}
+MASTER_SITES=		${MASTER_SITE_RUBY} \
+			${ONIGURUMA_MASTER_SITES:S,$,:oniguruma,}
+MASTER_SITE_SUBDIR=	snapshots \
+			${ONIGURUMA_MASTER_SITE_SUBDIR:S,$,/:oniguruma,}
+DISTFILES=		${RUBY_DISTNAME}${EXTRACT_SUFX} \
+			${ONIGURUMA_DISTFILE:S,$,:oniguruma,}
 DIST_SUBDIR=	ruby
+EXTRACT_ONLY=	${RUBY_DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITE_RUBY}
 PATCH_SITE_SUBDIR=	snapshots
@@ -19,6 +23,14 @@ PATCHFILES=	${RUBY_PATCHFILES}
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
+
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+
+.if defined(WITH_ONIGURUMA)
+ONIGURUMA_MASTER_SITES=		${MASTER_SITE_RUBY}
+ONIGURUMA_MASTER_SITE_SUBDIR=	contrib
+ONIGURUMA_DISTFILE=		onigd20020325.tar.gz
+.endif
 
 USE_BZIP2=	yes
 
@@ -28,7 +40,8 @@ USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 RUBY_NO_RUN_DEPENDS=	yes
 
-USE_AUTOCONF_VER=213
+#USE_AUTOCONF=	yes	# does not work with 2.13; requires 2.53 or later
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
@@ -64,16 +77,37 @@ PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
 IRB_WITHOUT_SUFFIX=	${LOCALBASE}/bin/irb
 IRB_WITH_SUFFIX=	${IRB_WITHOUT_SUFFIX}${_RUBY_SUFFIX}
 
-OBSOLETED_MODULES=	sha1 shell syslog timex urb uri
+OBSOLETED_MODULES=	bigfloat \
+			fileutils \
+			racc-runtime \
+			sha1 \
+			shell \
+			strscan \
+			syslog \
+			timex \
+			urb \
+			uri
+
+post-extract:
+.if defined(WITH_ONIGURUMA)
+	cd ${WRKDIR}; ${TAR} zxvf ${_DISTDIR}/${ONIGURUMA_DISTFILE}
+.endif
 
 post-patch:
-	find ${WRKSRC} -name '*.orig' -delete
+.if defined(WITH_ONIGURUMA)
+	${CP} -f ${WRKDIR}/oniguruma/regex.[ch] ${WRKSRC}/
+	cd ${WRKSRC}; ${PATCH} < ${WRKDIR}/oniguruma/re.c.172.patch
+.endif
+	${FIND} ${WRKSRC} -name '*.orig' -delete
 .for d in Win32API
 	${RM} -rf ${WRKSRC}/ext/${d}
 .endfor
-.for d in gdbm tcltklib tk
+.for d in gdbm iconv tcltklib tk
 	${MV} ${WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
+
+pre-configure:
+	cd ${WRKSRC}; autoconf
 
 pre-install:
 	${RM} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} \
