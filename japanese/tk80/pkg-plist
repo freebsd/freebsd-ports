@@ -47,6 +47,7 @@ lib/tk8.0jp/tearoff.tcl
 lib/tk8.0jp/text.tcl
 lib/tk8.0jp/tk.tcl
 lib/tk8.0jp/tkfbox.tcl
+lib/tk8.0jp/xim.tcl
 lib/tk8.0jp/xmfbox.tcl
 lib/tk8.0jp/tclIndex
 lib/tk8.0jp/prolog.ps
