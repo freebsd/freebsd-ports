@@ -1,9 +1,9 @@
---- src/Makefile.in.orig	Fri Dec  1 04:58:38 2000
-+++ src/Makefile.in	Wed Feb  7 00:14:03 2001
-@@ -59,12 +59,12 @@
- all: $(PROGRAMS)
- 
- install: $(PROGRAMS)
+--- src/Makefile.in.orig	Tue May 29 07:16:55 2001
++++ src/Makefile.in	Mon Jul  2 22:12:55 2001
+@@ -65,12 +65,12 @@
+ 	  echo "*** maybe the GTK libraries weren't found?" ; \
+ 	  exit 1 ; \
+ 	fi
 -	$(MKDIR) $(bindir) $(datadir)
 +	$(MKDIR) $(bindir) $(sanedatadir)
  	@for program in $(BINPROGS); do \
@@ -13,5 +13,5 @@
 -	$(INSTALL_DATA) $(srcdir)/sane-style.rc $(datadir)/sane-style.rc
 +	$(INSTALL_DATA) $(srcdir)/sane-style.rc $(sanedatadir)/sane-style.rc
  
- xscanimage: $(XSCAN_OBJS) $(LIBSANEI) $(LIBLIB)
- 	$(LINK) $(XSCAN_OBJS) $(LIBSANEI) \
+ uninstall:
+ 	@for program in $(BINPROGS); do \
