@@ -816,6 +816,7 @@ buildtool	ports/devel/buildtool
 buildtool-doc	ports/devel/buildtool-doc
 bulk_mailer	ports/mail/bulk_mailer
 burgerspace	ports/games/burgerspace
+bush		ports/shells/bush
 buttonbox	ports/x11/buttonbox
 bvi		ports/editors/bvi
 bwbasic		ports/lang/bwbasic
