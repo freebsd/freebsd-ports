@@ -1,9 +1,9 @@
---- config/PostSession.orig	Fri Apr 27 18:51:10 2001
-+++ config/PostSession	Tue May  8 11:33:08 2001
+--- config/PostSession.orig	Sun Jun  3 14:48:43 2001
++++ config/PostSession	Sun Jun  3 14:49:15 2001
 @@ -1,4 +1,4 @@
  #!/bin/sh
 -if [ -x /usr/bin/X11/sessreg ]; then
--	/usr/bin/X11/sessreg -d -w /var/log/wtmp -u /var/run/utmp -l $DISPLAY $USER
+-	/usr/bin/X11/sessreg -d -w /var/log/wtmp -u none -l $DISPLAY $USER
 +if [ -x /usr/X11R6/bin/sessreg ]; then
-+	/usr/X11R6/bin/sessreg -d -w /var/log/wtmp -u /var/run/utmp -l $DISPLAY -x /usr/X11R6/lib/X11/xdm/Xservers $USER
++	/usr/X11R6/bin/sessreg -d -w /var/log/wtmp -u none -l $DISPLAY -x /usr/X11R6/lib/X11/xdm/Xservers $USER
  fi
