@@ -1,0 +1,33 @@
+--- Makefile.in~	Wed Aug 12 11:02:41 1998
++++ Makefile.in	Sat Jan 16 17:37:42 1999
+@@ -49,7 +49,7 @@
+ INCLUDE_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/include
+ 
+ # Top-level directory in which to install manual entries:
+-MAN_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/man
++MAN_INSTALL_DIR = $(INSTALL_ROOT)$(prefix)/man
+ 
+ # Directory in which to install manual entry for itclsh:
+ MAN1_INSTALL_DIR = $(MAN_INSTALL_DIR)/man1
+@@ -102,10 +102,10 @@
+ # modify any of this stuff by hand.
+ #----------------------------------------------------------------
+ 
+-INSTALL =		@INSTALL@
++INSTALL =		install -c
+ INSTALL_PROGRAM =	$(INSTALL)
+ INSTALL_DATA =		$(INSTALL) -m 644
+-MKINSTALLDIRS =		$(ITCL_SRC_DIR)/../config/mkinstalldirs
++MKINSTALLDIRS =		../../config/mkinstalldirs
+ RANLIB =		@RANLIB@
+ LN_S =			ln -s
+ TOP_DIR =		@IWIDGETS_SRC_DIR@
+@@ -148,8 +148,6 @@
+ 
+ install-libraries:
+ 	@$(MKINSTALLDIRS) $(SCRIPT_INSTALL_DIR) $(LIB_INSTALL_DIR)
+-	@rm -f $(LIB_INSTALL_DIR)/iwidgets
+-	$(LN_S) iwidgets$(VERSION) $(LIB_INSTALL_DIR)/iwidgets
+ 	@$(MKINSTALLDIRS) $(SCRIPT_INSTALL_DIR)/scripts
+ 	@for i in $(GENERIC_DIR)/*.itk $(GENERIC_DIR)/*.itcl $(GENERIC_DIR)/tclIndex $(GENERIC_DIR)/*.gif ; \
+ 	    do \
