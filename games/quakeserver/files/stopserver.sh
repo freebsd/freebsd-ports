@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id$
+# $FreeBSD$
 #
 
 QPIPE=%%PREFIX%%/quakeserver/quakeserver.in

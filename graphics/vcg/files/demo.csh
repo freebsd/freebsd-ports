@@ -1,7 +1,7 @@
 #!/bin/csh
 #
 # SCCS-info %W% %E%
-# $Id: demo.csh.tpl,v 1.9 1994/08/09 09:17:11 sander Exp sander $
+# $FreeBSD$
 #
 # ====================== Change area ============================
 

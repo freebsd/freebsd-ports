@@ -1,7 +1,7 @@
 #! /bin/sh
 
 #
-# $Id: pre-configure,v 1.1 1998/07/30 13:06:44 andreas Exp $
+# $FreeBSD$
 #
 
 # only one central config file in $PREFIX/etc

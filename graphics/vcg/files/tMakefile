@@ -17,9 +17,14 @@
 # /*                                                                    */
 # /*--------------------------------------------------------------------*/
 #
-# $Id$
+# $FreeBSD$
 #
-# $Log$
+# $Log: tMakefile,v $
+# Revision 1.1.1.1  1995/02/19 09:25:45  hsu
+# vcg - a visualization tool for compiler graphs
+#
+# Submitted by:	Philippe Charnier <charnier@lirmm.fr>
+#
 #
 
 #========================= CHANGE AREA =========================

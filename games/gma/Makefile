@@ -3,7 +3,7 @@
 # Date created:         22 June 1999
 # Whom:                 Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.1 1999/06/22 03:03:42 foxfair Exp $
+# $FreeBSD$
 #
 
 DISTNAME=      gma-0.5

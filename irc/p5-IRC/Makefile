@@ -3,7 +3,7 @@
 # Date created:				07 August 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=       Net-IRC-0.59

@@ -17,7 +17,7 @@
 /*                                                                    */
 /*--------------------------------------------------------------------*/
 
-/* $Id: globals.h.tpl,v 3.7 1994/11/23 14:50:47 sander Exp sander $ */
+/* $FreeBSD$ */
 
 /*
  *   Copyright (C) 1993--1995 by Georg Sander, Iris Lemke, and
@@ -42,7 +42,12 @@
  */
 
 
-/* $Log: globals.h.tpl,v $
+/* $Log: globals.h,v $
+/* Revision 1.1.1.1  1995/02/19 09:25:43  hsu
+/* vcg - a visualization tool for compiler graphs
+/*
+/* Submitted by:	Philippe Charnier <charnier@lirmm.fr>
+/*
 # Revision 3.7  1994/11/23  14:50:47  sander
 # #include <limits.h> added to get MAX_INT and MIN_INT.
 #
