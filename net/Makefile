@@ -399,6 +399,7 @@
     SUBDIR += p5-BIND-Conf_Parser
     SUBDIR += p5-Cflow
     SUBDIR += p5-DNS-Config
+    SUBDIR += p5-DNS-Zone
     SUBDIR += p5-EasyTCP
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-Frontier-RPC
