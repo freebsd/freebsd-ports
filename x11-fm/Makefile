@@ -7,6 +7,7 @@
     SUBDIR += binder
     SUBDIR += cfm
     SUBDIR += dfm
+    SUBDIR += emelfm2
     SUBDIR += endeavour
     SUBDIR += ezfm
     SUBDIR += filerunner
