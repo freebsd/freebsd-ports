@@ -1,13 +1,13 @@
 # New ports collection makefile for:	squid
-# Version required:	1.1.beta13
+# Version required:	1.1.beta16
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1996/11/06 17:20:53 peter Exp $
+# $Id: Makefile,v 1.5 1996/11/12 08:26:06 peter Exp $
 #
 
-DISTNAME=	squid-1.1.beta13
-PKGNAME=	squid-1.1b13
+DISTNAME=	squid-1.1.beta16
+PKGNAME=	squid-1.1b16
 CATEGORIES+=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.1.beta/ \
