@@ -1,0 +1,11 @@
+--- xklock.h.orig	Mon Nov 19 11:17:56 1990
++++ xklock.h	Tue Jan 23 05:00:15 2001
+@@ -47,7 +47,7 @@
+ 
+ /*	£ê£î£á£í£å£ó¥Ç¡¼¥¿¥Ù¡¼¥¹	*/
+ 
+-#define JNAMES_DB	"/usr/local/lib/jnames"
++#define JNAMES_DB	"%%PREFIX%%/lib/X11/xklock/jnames"
+ 
+ /*	¥á¥Ã¥»¡¼¥¸	*/
+ 

@@ -1,0 +1,25 @@
+--- Makefile.orig	Thu Nov  1 18:21:29 1990
++++ Makefile	Tue Jan 23 05:06:16 2001
+@@ -3,10 +3,10 @@
+ #	Makefile
+ #
+ 
+-CC      = cc
+-C_FLAG  = -fwritable-strings -DSHADOW -O2  #-DDEBUG -g
++CC      ?= cc
++C_FLAG  = ${CFLAGS} -I${X11BASE}/include
+ RM_FLAG = -f
+-LIB     = -lX11 -lXmu -lshadow -lXpm
++LIB     = -L${X11BASE}/lib -lX11 -lXmu -lXpm -lcrypt
+ EXE     = xklock
+ OBJ1    = xklock.o
+ OBJ2    = jnames.o
+@@ -25,7 +25,7 @@
+ $(EXE):$(OBJ)
+ 	$(CC) $(C_FLAG) -o $@ $(OBJ) $(LIB)
+ 
+-$(OBJ1):$(SRC1) $(INC)
++$(OBJ1):$(SRC1)
+ 	$(CC) $(C_FLAG) -c $(SRC1)
+ 
+ $(OBJ2):$(SRC2)

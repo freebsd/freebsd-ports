@@ -1,0 +1,11 @@
+--- jnames.c.orig	Mon Nov 19 18:26:45 1990
++++ jnames.c	Tue Jan 23 05:09:46 2001
+@@ -18,7 +18,7 @@
+ #include <ctype.h>
+ #include <strings.h>
+ 
+-#define JNAMES	"/usr/local/lib/jnames"
++#define JNAMES	"%%PREFIX%%/lib/X11/xklock/jnames"
+ 
+ static FILE *MYJF = NULL, *PUBJF = NULL;
+ 
