@@ -8566,6 +8566,7 @@ sonytv		ports/misc/sonytv
 sopwith		ports/games/sopwith
 soqt		ports/x11-toolkits/soqt
 sortmail	ports/mail/sortmail
+sound-juicer	ports/audio/sound-juicer
 soundgrab	ports/audio/soundgrab
 soundtracker	ports/audio/soundtracker
 soup		ports/devel/soup
