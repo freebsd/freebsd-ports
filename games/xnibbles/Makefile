@@ -8,7 +8,7 @@
 PORTNAME=	xnibbles
 PORTVERSION=	1.0.b3
 CATEGORIES=	games
-MASTER_SITES=	http://www.tjhsst.edu/xnibbles/
+MASTER_SITES=	http://tinton.braschka.org/Files/pub/games/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/BETA/}
 
 MAINTAINER=	ports@FreeBSD.org

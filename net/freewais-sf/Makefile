@@ -9,7 +9,9 @@ PORTNAME=	freewais-sf
 PORTVERSION=	2.2.14
 PORTREVISION=	1
 CATEGORIES=	net databases
-MASTER_SITES=	ftp://ls6-ftp.cs.uni-dortmund.de/pub/src/freeWAIS-sf/
+MASTER_SITES=	ftp://ftp.ntua.gr/pub/net/freewais/ \
+		http://fresh.t-systems-sfr.com/unix/src/www/ \
+		http://ftp.ntua.gr/pub/net/freewais/
 DISTNAME=	freeWAIS-sf-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
