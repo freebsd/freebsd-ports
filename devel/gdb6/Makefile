@@ -31,6 +31,10 @@ CFLAGS+=	-DRL_NO_COMPAT
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .endif

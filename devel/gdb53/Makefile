@@ -25,6 +25,10 @@ CONFIGURE_ARGS=	--program-suffix=53
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 .if ${ARCH} == "amd64"
 BROKEN=		"Configure fails on amd64"
 .endif
