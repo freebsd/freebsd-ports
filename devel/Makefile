@@ -979,6 +979,7 @@
     SUBDIR += qtk
     SUBDIR += ragel
     SUBDIR += re2c
+    SUBDIR += readline
     SUBDIR += regexx
     SUBDIR += regexxer
     SUBDIR += replay
