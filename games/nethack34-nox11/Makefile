@@ -3,7 +3,7 @@
 # Date created:		27 March 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1995/04/11 00:20:17 asami Exp $
+# $Id: Makefile,v 1.5 1996/04/22 07:48:35 asami Exp $
 #
 
 DISTNAME=	nethack-3.2.0
@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/ \
 	ftp://ftp.win.tue.nl/pub/games/nethack/General/Source/NH32/sources/
 
 MAINTAINER=	asami@FreeBSD.ORG
+
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
