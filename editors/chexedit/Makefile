@@ -15,6 +15,7 @@ MAINTAINER=	ports@oven.org
 COMMENT=	Full screen text mode Hex editor using the [n]curses library
 
 GNU_CONFIGURE=	yes
+PLIST_FILES=	bin/chexedit
 
 MAN1=		chexedit.1
 
@@ -23,4 +24,3 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/hexedit.1 ${PREFIX}/man/man1/chexedit.1
 
 .include <bsd.port.mk>
-PLIST_FILES=	bin/chexedit
