@@ -29,6 +29,7 @@
     SUBDIR += cost
     SUBDIR += crimson
     SUBDIR += cs-aspell
+    SUBDIR += csv2latex
     SUBDIR += cwtext
     SUBDIR += cy-aspell
     SUBDIR += da-aspell
