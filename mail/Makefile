@@ -227,6 +227,7 @@
     SUBDIR += tpop3d
     SUBDIR += turba
     SUBDIR += vbsfilter
+    SUBDIR += vm
     SUBDIR += vm-pop3d
     SUBDIR += vpopmail
     SUBDIR += vqadmin
