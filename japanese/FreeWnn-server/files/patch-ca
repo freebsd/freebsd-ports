@@ -1,0 +1,10 @@
+--- Xwnmo/xwnmo/do_socket.c.orig	Tue Aug 23 17:11:30 1994
++++ Xwnmo/xwnmo/do_socket.c	Sun Apr 11 19:19:15 1999
+@@ -116,8 +116,6 @@
+ #define	sock_clr(array,pos)	(array[pos/BINTSIZE] &= ~(1<<(pos%BINTSIZE)))
+ #define	sock_tst(array,pos)	(array[pos/BINTSIZE] & (1<<(pos%BINTSIZE)))
+ 
+-extern int read(), write();
+-
+ #define	_Read(fd, data, size)	read((fd), (data), (size))
+ #define	_Write(fd, data, size)	write((fd), (data), (size))

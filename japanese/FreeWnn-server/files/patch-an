@@ -42,17 +42,6 @@
  #else
      extern char *strchr();
  #endif
---- Xwnmo/xjutil/jutil.c.~1~	Thu Jan 21 17:05:44 1993
-+++ Xwnmo/xjutil/jutil.c	Fri Feb  6 07:56:50 1998
-@@ -664,7 +664,7 @@
-     extern int srand();
-     extern long rand();
- #else
--    extern int srandom();
-+/*    extern int srandom(); */
-     extern long random();
- #endif
-     extern long time();
 --- Xwnmo/xjutil/kensaku.c.~1~	Tue Dec  1 14:59:48 1992
 +++ Xwnmo/xjutil/kensaku.c	Fri Feb  6 07:58:54 1998
 @@ -154,7 +154,7 @@

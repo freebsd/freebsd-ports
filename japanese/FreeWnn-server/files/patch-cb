@@ -1,0 +1,11 @@
+--- Xwnmo/xwnmo/do_xjpdrct.c.orig	Mon Aug 22 14:04:23 1994
++++ Xwnmo/xwnmo/do_xjpdrct.c	Sun Apr 11 19:29:19 1999
+@@ -87,8 +87,6 @@
+ #define	sock_clr(array,pos)	(array[pos/BINTSIZE] &= ~(1<<(pos%BINTSIZE)))
+ #define	sock_tst(array,pos)	(array[pos/BINTSIZE] & (1<<(pos%BINTSIZE)))
+ 
+-extern int read(), write();
+-
+ extern XJpClientRec *xjp_clients;
+ extern XJpClientRec *xjp_cur_client;
+ extern XJpInputRec *xjp_inputs;
