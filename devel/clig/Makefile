@@ -3,10 +3,10 @@
 # Date created:        27 July 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.4 1998/09/23 22:59:23 hoek Exp $
+# $Id: Makefile,v 1.5 1998/12/29 18:22:56 billf Exp $
 #
 
-DISTNAME=	clig-1.0.2
+DISTNAME=	clig-1.1.3
 CATEGORIES=	devel tcl80
 MASTER_SITES=	http://wsd.iitb.fhg.de/~kir/clighome/
 
@@ -21,11 +21,12 @@ MAN1=		clig.1
 NO_BUILD=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	tclsh=${PREFIX}/bin/tclsh8.0
+PLIST_SUB=	VERSION=${DISTNAME}
 
 do-patch:
-	chmod a+r ${WRKSRC}/CHANGES
-	${MV} ${WRKSRC}/makefile ${WRKSRC}/makefile.orig
-	${SED} -e 's#prefix =~/tools#prefix =${PREFIX}/share#' \
+	@/usr/sbin/chmod a+r ${WRKSRC}/CHANGES
+	@${MV} ${WRKSRC}/makefile ${WRKSRC}/makefile.orig
+	@${SED} -e 's#prefix =~/tools#prefix =${PREFIX}/share#' \
 	       -e 's#LROOT =~/tools#LROOT =${PREFIX}#' \
 	       -e 's#DOCDIR =$$(prefix)/doc#DOCDIR =${PREFIX}/share/doc/clig#' \
 	       -e 's#MANDIR =$$(prefix)#MANDIR =${MANPREFIX}/man/#' \
