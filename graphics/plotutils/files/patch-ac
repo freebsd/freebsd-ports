@@ -1,11 +1,11 @@
---- configure.orig	Fri Sep 10 14:44:14 1999
-+++ configure	Fri Sep 10 14:43:09 1999
-@@ -4189,7 +4189,7 @@
++--- configure.orig     Mon Oct  4 18:11:17 1999
+++++ configure  Thu Feb 24 16:02:34 2000
++@@ -4041,7 +4041,7 @@
  # Check whether --with-motif or --without-motif was given.
  if test "${with_motif+set}" = set; then
    withval="$with_motif"
--  X_TOOLKIT_LIBS="-lXm $X_TOOLKIT_LIBS"; echo $ac_n "checking for XpQueryExtension in -lXp""... $ac_c" 1>&6
+-  X_TOOLKIT_LIBS="${MOTIFLIB} $X_TOOLKIT_LIBS"; echo $ac_n "checking for XpQueryExtension in -lXp""... $ac_c" 1>&6
 +  X_TOOLKIT_LIBS="${MOTIFLIB} $X_TOOLKIT_LIBS"; echo $ac_n "checking for XpQueryExtension in -lXp""... $ac_c" 1>&6
- echo "configure:4194: checking for XpQueryExtension in -lXp" >&5
+ echo "configure:4046: checking for XpQueryExtension in -lXp" >&5
  ac_lib_var=`echo Xp'_'XpQueryExtension | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
