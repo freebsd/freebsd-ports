@@ -15,7 +15,7 @@ DISTNAME=	sndstretch_xmms-${PORTVERSION}
 MAINTAINER=	ports@edwinm.ik.nu
 COMMENT=	Plugin for xmms to change the pitch and/or speed
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 WRKSRC=		${WRKDIR}/sndstretch_xmms
 

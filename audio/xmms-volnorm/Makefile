@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	xmms-
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Volume Normalizer plugin for XMMS
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12

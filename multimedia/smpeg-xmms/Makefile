@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mpeg video plugin for XMMS
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg \
-		xmms.3:${PORTSDIR}/multimedia/xmms
+		xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_SDL=	yes

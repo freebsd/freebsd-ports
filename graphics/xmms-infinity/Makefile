@@ -14,7 +14,7 @@ DISTNAME=	infinity-${PORTVERSION}
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A XMMS plug-in which generate full-screen interactive light effects
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms \
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 

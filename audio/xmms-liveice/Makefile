@@ -14,7 +14,7 @@ DISTNAME=	liveice-xmms
 MAINTAINER=	esk@ira.uka.de
 COMMENT=	Use XMMS for streaming audio to Icecast servers
 
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
 
 WRKSRC=		${WRKDIR}/LiveIce-1.0.0

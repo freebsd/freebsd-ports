@@ -14,7 +14,7 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"XMMS Plugin that provides LADSPA Plugins to XMMS"
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
