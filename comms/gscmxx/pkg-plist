@@ -3,7 +3,6 @@
 %%SITE_PERL%%/mach/auto/gscmxx/.packlist
 @dirrm %%SITE_PERL%%/mach/auto/gscmxx
 @dirrm %%SITE_PERL%%/SCMxx
-lib/perl5/5.6.1/man/man3/SCMxx.3
 bin/gscmxx
 share/pixmaps/gscmxx/phonebook_30.xpm
 share/pixmaps/gscmxx/preferences_30.xpm
