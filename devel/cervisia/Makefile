@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	andrey@novikov.com
 
+BROKEN=		"Does not configure"
+
 .if defined(KDE_VERSION) && ${KDE_VERSION} == "1"
 USE_KDELIBS_VER=1
 QT_VER=		""
