@@ -204,7 +204,7 @@ JAVA_HOME=	${_JAVA_HOME}
 #
 # If the setting is 1.3+, then use an already installed 1.3 or 1.4 JDK. If
 # there is no such JDK, then set USE_JAVA to 1.3. The FreeBSD JDK 1.4 is
-# preferred over 1.3 JDK's.
+# preferred over all other JDK's.
 #
 # If the setting is 1.4+, then set it to 1.4 right away. There is no other
 # option at the moment.
@@ -254,11 +254,14 @@ USE_JAVA=	1.4
 			   defined(HAVE_JAVA_FREEBSD_1_3) || \
 			   defined(HAVE_JAVA_SUN_LINUX_1_3) || \
 			   defined(HAVE_JAVA_IBM_LINUX_1_3) || \
-			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_3) || \
-			  !defined(HAVE_JAVA_SUN_LINUX_1_4)
+			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_3)
 USE_JAVA=	1.3
-.			else
+.			elif defined(HAVE_JAVA_SUN_LINUX_1_4) || \
+			   defined(HAVE_JAVA_IBM_LINUX_1_4) || \
+			   defined(HAVE_JAVA_BLACKDOWN_LINUX_1_4)
 USE_JAVA=	1.4
+.			else
+USE_JAVA=	1.3
 .			endif
 
 .		elif (${USE_JAVA} == "1.4+")
