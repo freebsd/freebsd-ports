@@ -6,14 +6,17 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.3.1
-PORTREVISION=		3
+PORTVERSION=		1.3.2
 CATEGORIES=		security
 # USE_TARBALL tells the port that the user has fetched the source
 # directly from MIT or crypto-publish.org (CRYTPO-PUBLISH).
 USE_KRB5_TARBALL?=		MIT
 
 .if defined(USE_KRB5_TARBALL) && ${USE_KRB5_TARBALL} == "CRYPTO-PUBLISH"
+# XXX crypto-publish.org still distributes krb5-1.3.1
+PORTVERSION=		1.3.1
+PORTREVISION=		3
+# XXX ---
 MASTER_SITES=		http://www.crypto-publish.org/dist/mit-kerberos5/
 EXTRACT_SUFX=		.tar.gz
 .else
