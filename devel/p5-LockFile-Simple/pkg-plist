@@ -1,0 +1,9 @@
+lib/perl5/site_perl/%%PERL_VER%%/LockFile/Lock.pm
+lib/perl5/site_perl/%%PERL_VER%%/LockFile/Lock/Simple.pm
+lib/perl5/site_perl/%%PERL_VER%%/LockFile/Manager.pm
+lib/perl5/site_perl/%%PERL_VER%%/LockFile/Simple.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LockFile/Simple/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LockFile/Simple
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LockFile
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/LockFile/Lock
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/LockFile
