@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.sony.co.jp/pub/unsupported/src/ \
 		ftp://ftp.cs.titech.ac.jp/pub/japanese/sj3/
 
 PATCH_SITES=	http://oikumene.que.ne.jp/misc/
-PATCHFILES=	${PORTNAME}-patches-20040721.bz2
+PATCHFILES=	${PORTNAME}-patches-20040724.bz2
 
 MAINTAINER=	hiroo+freebsd@oikumene.gcd.org
 COMMENT=	A Japanese input method
