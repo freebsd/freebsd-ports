@@ -40,7 +40,7 @@ lib/sim/styles.so
 %%KDE%%lib/sim/transparent.so
 lib/sim/update.so
 lib/sim/weather.so
-lib/sim/yahoo.so
+%%SSL%%lib/sim/yahoo.so
 lib/sim/zodiak.so
 share/applnk/Internet/sim.desktop
 share/apps/sim/COPYING
