@@ -32,6 +32,7 @@
     SUBDIR += chrootuid
     SUBDIR += cksfv
     SUBDIR += cops
+    SUBDIR += cp2fwb
     SUBDIR += crack
     SUBDIR += cracklib
     SUBDIR += crank
