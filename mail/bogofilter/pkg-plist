@@ -8,6 +8,7 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.11
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.12
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.13
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES-0.14
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/METHODS
@@ -15,9 +16,11 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/bogofilter-tuning.HOWTO
 %%PORTDOCS%%%%DOCSDIR%%/README.cvs
+%%PORTDOCS%%%%DOCSDIR%%/README.tdb
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.11
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.12
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.13
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.14
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/bogofilter-SA-2002-01
@@ -25,6 +28,7 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bogo.R
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bogofilter-qfe
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bogogrep
+%%PORTDOCS%%%%DOCSDIR%%/contrib/bogominitrain.pl
 %%PORTDOCS%%%%DOCSDIR%%/contrib/dot-qmail-bogofilter-default
 %%PORTDOCS%%%%DOCSDIR%%/contrib/mime.get.rfc822
 %%PORTDOCS%%%%DOCSDIR%%/contrib/printmaildir.pl
