@@ -14,6 +14,9 @@ bin/rawdog
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.py
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.pyc
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.pyo
+%%PYTHON_SITELIBDIR%%/rawdoglib/testproxy.py
+%%PYTHON_SITELIBDIR%%/rawdoglib/testproxy.pyc
+%%PYTHON_SITELIBDIR%%/rawdoglib/testproxy.pyo
 %%PYTHON_SITELIBDIR%%/rawdoglib/timeoutsocket.py
 %%PYTHON_SITELIBDIR%%/rawdoglib/timeoutsocket.pyc
 %%PYTHON_SITELIBDIR%%/rawdoglib/timeoutsocket.pyo
