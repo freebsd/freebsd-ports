@@ -6,4 +6,5 @@ bin/pico
 bin/pine
 man/man1/pico.1.gz
 man/man1/pine.1.gz
-
+man/man8/imapd.8c.gz
+man/man8/ipopd.8c.gz
