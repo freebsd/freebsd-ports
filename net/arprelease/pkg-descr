@@ -1,0 +1,3 @@
+This program sends out a custom ARP REQUEST packet with the hardware and
+protocol address information of the sending host to flush the arp cache
+for a given IP on Cisco routers.

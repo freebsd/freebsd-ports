@@ -16,6 +16,7 @@
     SUBDIR += argus
     SUBDIR += arla
     SUBDIR += arping
+    SUBDIR += arprelease
     SUBDIR += arpwatch
     SUBDIR += arts++
     SUBDIR += ascend-radius
