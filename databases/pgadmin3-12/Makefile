@@ -36,11 +36,11 @@ post-patch:
 .if ${OSVERSION} < 500000
 IGNORE=		Systems prior to FreeBSD 5.0 currently out of support
 .else
-LIB_DEPENDS+=	wx_gtk2u_stc-2.5.2:${PORTSDIR}/x11-toolkits/wxgtk2-unicode-contrib-devel
+LIB_DEPENDS+=	wx_gtk2u_stc-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-unicode-contrib-devel
 CONFIGURE_ARGS+=--with-wx-config=wxgtk2u-2.5-config
 .endif
 .else
-LIB_DEPENDS+=	wx_gtk2_stc-2.5.2:${PORTSDIR}/x11-toolkits/wxgtk2-contrib-devel
+LIB_DEPENDS+=	wx_gtk2_stc-2.5.3:${PORTSDIR}/x11-toolkits/wxgtk2-contrib-devel
 CONFIGURE_ARGS+=--with-wx-config=wxgtk2-2.5-config
 .endif # WITH_UNICODE
 
