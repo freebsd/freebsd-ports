@@ -1,0 +1,28 @@
+--- configure.orig	Wed Oct 27 01:13:45 1999
++++ configure	Wed Oct 27 03:29:33 1999
+@@ -2945,7 +2945,7 @@
+ esac
+ 
+ case "$host" in
+-  *-linux-*)
++  *-linux-* | *-freebsd*)
+ 	     sound_if_src=SoundIF-linux.cc
+ 	     ;;
+ 
+--- xdao/SoundIF-linux.cc.orig	Wed Oct 27 01:13:46 1999
++++ xdao/SoundIF-linux.cc	Wed Oct 27 03:37:23 1999
+@@ -31,7 +31,14 @@
+  *
+  */
+ 
++# if defined(__FreeBSD__)
++#include <machine/soundcard.h>
++# if !defined(SNDCTL_DSP_CHANNELS)
++#   define SNDCTL_DSP_CHANNELS SNDCTL_DSP_STEREO
++# endif
++# else 
+ #include <linux/soundcard.h>
++# endif
+ 
+ #include <stdio.h>
+ #include <assert.h>
