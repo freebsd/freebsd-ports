@@ -21,6 +21,7 @@ MAINTAINER=	taguchi@tohoku.iij.ad.jp
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 
 XFREE86_VERSION=	4
+XFREE86_HTML_MAN=	yes
 PREFIX?=		${X11BASE}
 MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
 INSTALLS_SHLIB=		yes
