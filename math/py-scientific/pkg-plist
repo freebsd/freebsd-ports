@@ -114,6 +114,18 @@
 %%PYTHON_SITELIBDIR%%/Scientific/Physics/__init__.py
 %%PYTHON_SITELIBDIR%%/Scientific/Physics/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/Physics/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtPlotCanvas.py
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtPlotCanvas.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtPlotCanvas.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtVisualizationCanvas.py
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtVisualizationCanvas.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/QtVisualizationCanvas.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/Utility.py
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/Utility.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/Utility.pyo
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/__init__.py
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Scientific/QtWidgets/__init__.pyo
 %%PYTHON_SITELIBDIR%%/Scientific/Signals/Models.py
 %%PYTHON_SITELIBDIR%%/Scientific/Signals/Models.pyc
 %%PYTHON_SITELIBDIR%%/Scientific/Signals/Models.pyo
@@ -240,6 +252,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Threading
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Statistics
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Signals
+@dirrm %%PYTHON_SITELIBDIR%%/Scientific/QtWidgets
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/Physics
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/MPI
 @dirrm %%PYTHON_SITELIBDIR%%/Scientific/IO
