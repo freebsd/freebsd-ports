@@ -10,7 +10,7 @@ start)
 	exec 2>/dev/null
 	ulimit -c 0
 	if ${PREFIX}/sbin/vmware-checkvm >/dev/null; then
-		kldstat -v | grep vmmemctl >/dev/null || kldload ${PREFIX}/lib/vmware/lib/modules/vmmemctl.ko
+		kldstat -v | grep vmmemctl >/dev/null || kldload ${PREFIX}/lib/vmware-tools/modules/vmmemctl.ko
 		echo -n ' vmware-guestkmod'
 	fi
 	;;
