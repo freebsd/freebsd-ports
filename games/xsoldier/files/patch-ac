@@ -5,7 +5,7 @@
      else
          argv0 = argv[0];
 -    strcpy(command,argv0); /*** コマンド名取得とコピー ***/
-+    strncpy(command,argv0,sizeof(command)); /*** コマンド名取得とコピー ***/
++    strlcpy(command,argv0,sizeof(command)); /*** コマンド名取得とコピー ***/
  
      for (i=1; i<argc; i++)
      {
@@ -13,7 +13,7 @@
  	{
  	    if (i < argc-1)
 -		strcpy(display,argv[i+1]);
-+		strncpy(display,argv[i+1],sizeof(display));
++		strlcpy(display,argv[i+1],sizeof(display));
  	}
          else if ((strcmp(argv[i],"-wait")==0) || (strcmp(argv[i],"-w")==0))
  	{
