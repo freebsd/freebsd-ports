@@ -30,10 +30,10 @@ include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
 lib/libgsf-1.so
-lib/libgsf-1.so.5
+lib/libgsf-1.so.6
 lib/libgsf-gnome-1.a
 lib/libgsf-gnome-1.so
-lib/libgsf-gnome-1.so.5
+lib/libgsf-gnome-1.so.6
 libdata/pkgconfig/libgsf-1.pc
 libdata/pkgconfig/libgsf-gnome-1.pc
 share/doc/gsf/gsf-gsf-impl-utils.html
