@@ -37,10 +37,7 @@ lib/libsnmp.so.%%shlib%%
 sbin/snmpd
 sbin/snmptrapd
 share/examples/ucd-snmp/README
-share/examples/ucd-snmp/acl.conf
-share/examples/ucd-snmp/context.conf
-share/examples/ucd-snmp/party.conf
-share/examples/ucd-snmp/view.conf
+share/examples/ucdDemoPublic.conf
 @dirrm share/examples/ucd-snmp
 share/snmp/mibs/DLMOD-MIB.txt
 share/snmp/mibs/EtherLike-MIB.txt
