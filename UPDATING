@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040416:
+  AFFECTS: users of net/isc-dhcp3-*
+
+  The isc-dhcp3-* ports must now be enabled / disabled and configured in
+  rc.conf.  See the pkg-message for details.
+
 20040313:
   AFFECTS: users of textproc/expat2
 
