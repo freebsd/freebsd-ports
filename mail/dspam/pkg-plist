@@ -8,6 +8,7 @@ bin/dspam_dump
 bin/dspam_genaliases
 bin/dspam_merge
 bin/dspam_stats
+@unexec if cmp -s %D/etc/dspam.conf %D/etc/dspam.conf.sample; then rm -f %D/etc/dspam.conf; fi
 etc/dspam.conf.sample
 include/dspam/buffer.h
 include/dspam/config.h

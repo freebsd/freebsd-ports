@@ -7,17 +7,17 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.2.3${SNAP_DATE}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://people.tecnik93.com/~itetcu/FreeBSD/ports/dspam/sources/
 DISTFILES=	dspam.3.2.3.cvs.stable${SNAP_DATE}.tar.gz
 
 MAINTAINER=	itetcu@people.tecnik93.com
-COMMENT=	Bayesian spam filter - development version
+COMMENT=	Bayesian spam filter - stable maintenance version
 
 WRKSRC=		${WRKDIR}/dspam-cvs-stable${SNAP_DATE}
 
-SNAP_DATE=	.20041203.1245
+SNAP_DATE=	.20041218.2100
 
 ## debug / log / admin options
 OPTIONS=	DEBUG "Enable debugging logging" on
@@ -60,7 +60,7 @@ OPTIONS+=	POSTGRESQL74 "Use PostgreSQL v.7.4 as back-end" off
 #OPTIONS+=	PGSQL_INSTALLED "You have the client installed" on
 OPTIONS+=	ORACLE "Use Oracle as back-end (BROKEN)" off
 OPTIONS+=	BDB4 "Use BDB4 as back-end (not recomanded)" off
-OPTIONS+=	SQLITE "Use SQLite as back-end" on
+OPTIONS+=	SQLITE2 "Use SQLite v2.x as back-end" on
 OPTIONS+=	VIRT_USERS "Enable virtual users (needs SQL back-end)" off
 OPTIONS+=	LONG_USERNAMES "Usernames longer that OS supports" off
 OPTIONS+=	LARGE_SCALE "File structure for large scale" off
@@ -94,13 +94,16 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 PKGMESSAGE=	${WRKSRC}/README.FreeBSD
 
-CONFLICTS=	dspam-2* dspam-3.0*
+CONFLICTS=	dspam-2* dspam-devel-[0-9]*
 
 SIGNATURE_LIFE?=	15
 _VAR_DIR=	/var
 LOG_DIR?=	${_VAR_DIR}/log/dspam
 DSPAM_HOME?=	${_VAR_DIR}/db/dspam
 DSPAM_HOME_MODE?=	0660
+
+DSPAM_OWNER?=	root
+DSPAM_GROUP?=	mail
 
 .include <bsd.port.pre.mk>
 
@@ -120,14 +123,10 @@ CONFIGURE_ARGS+=	--with-dspam-home-group=${DSPAM_HOME_GROUP}
 CONFIGURE_ARGS+=	--with-dspam-home-mode=${DSPAM_HOME_MODE}
 .endif
 
-.if defined(DSPAM_OWNER)
 CONFIGURE_ARGS+=	--with-dspam-owner=${DSPAM_OWNER}
-.endif
-.if defined(DSPAM_GROUP)
-CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_HOME_GROUP}
-.endif
+CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
 .if defined(DSPAM_MODE)
-CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_HOME_MODE}
+CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_MODE}
 .endif
 
 SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
@@ -341,8 +340,7 @@ SED_SCRIPT+=	-e '/%%SQLITE%%/D'
 DBDRV_COUNT:=	${DBDRV_COUNT:S/o//}
 .endif
 
-.if ${DBDRV_TOTAL_COUNT}==${DBDRV_COUNT} || defined(WITH_SQLITE)
-WITH_SQLITE=	on
+.if ${DBDRV_TOTAL_COUNT}==${DBDRV_COUNT} || defined(WITH_SQLITE2)
 LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-storage-driver=sqlite_drv \
 	--with-sqlite-includes=${LOCALBASE}/include \
@@ -605,12 +603,15 @@ pre-configure:
 	@${FALSE}
 .endif
 
-post-install:
+#pre-install:
 ### to patch dspam.conf
-	${REINPLACE_CMD} -e 's|/usr/bin/|${PREFIX}/bin/|g' ${WRKSRC}/dspam.conf
-	@${CP} ${WRKSRC}/dspam.conf ${WRKSRC}/dspam.conf.sample
+#	${REINPLACE_CMD} -e 's|/usr/bin/|${LOCALBASE}/bin/|g' ${WRKSRC}/dspam.conf.in
+
+post-install:
+	${CP} ${WRKSRC}/dspam.conf ${WRKSRC}/dspam.conf.sample
 	cd ${WRKSRC}/ && \
-		${INSTALL_DATA}	dspam.conf.sample ${PREFIX}/etc
+		${INSTALL} -o ${DSPAM_OWNER} -g ${DSPAM_GROUP} -m 0640 \
+			 dspam.conf.sample ${PREFIX}/etc
 #	@${MKDIR} ${LOG_DIR}
 #	@${MKDIR} ${DSPAM_HOME}
 
@@ -630,7 +631,7 @@ post-install:
 		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/pgsql
 #	${INSTALL_DATA} ${FILESDIR}/pgsql.data ${EXAMPLESDIR}/pgsql
 .endif
-.if defined(WITH_SQLITE)
+.if defined(WITH_SQLITE2)
 	@${MKDIR} ${EXAMPLESDIR}/sqlite
 	cd ${WRKSRC}/tools.sqlite_drv && \
 		${INSTALL_DATA} README *.sql ${EXAMPLESDIR}/sqlite
