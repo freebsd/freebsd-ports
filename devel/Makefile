@@ -336,6 +336,7 @@
     SUBDIR += idlefork
     SUBDIR += ifd-test
     SUBDIR += imake-4
+    SUBDIR += imake-6
     SUBDIR += inilib
     SUBDIR += initutil
     SUBDIR += invitation_to_ruby
