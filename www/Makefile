@@ -293,6 +293,7 @@
     SUBDIR += w3c-httpd
     SUBDIR += w3m
     SUBDIR += w3m-img
+    SUBDIR += w3m-m17n
     SUBDIR += w3mir
     SUBDIR += wb0
     SUBDIR += wcol
