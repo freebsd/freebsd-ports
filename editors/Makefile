@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.82 1999/07/14 18:52:42 obrien Exp $
+# $Id: Makefile,v 1.83 1999/08/09 00:40:17 asami Exp $
 #
 
     SUBDIR += AbiWord
@@ -19,6 +19,7 @@
     SUBDIR += emacs
     SUBDIR += emacs20
     SUBDIR += emacs20-dl
+    SUBDIR += fine
     SUBDIR += flim-emacs
     SUBDIR += flim-emacs-current
     SUBDIR += flim-emacs20
