@@ -95,10 +95,6 @@ ALL_TARGET=	default
 CONFIGURE_ARGS+=	--enable-reorder
 .endif
 
-.if ${OSVERSION} > 500038
-BROKEN=               "runtime error on FreeBSD -CURRENT"
-.endif
-
 .if exists(${LOCALBASE}/include/freetype/freetype.h)
 BROKEN="You must upgrade your freetype port to 1.3.1_2 or higher before installing Beonex.  If you have 1.3.1_2 installed, please remove ${LOCALBASE}/include/freetype, then build Beonex"
 .endif
