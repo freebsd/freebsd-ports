@@ -9,7 +9,7 @@ PORTVERSION=	2.1.6
 PORTREVISION=	1
 CATEGORIES=	german www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
-		ftp://ftp.lan-ks.de/pub/FreeBSD/distfiles/
+		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
 PKGNAMEPREFIX?=	de-
 DISTNAME=	${PORTNAME}-2.01-06-src
 

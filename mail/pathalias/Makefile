@@ -9,7 +9,7 @@ PORTNAME=	pathalias
 PORTVERSION=	9.11
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.lan-ks.de/pub/approved/ \
-		ftp://ftp.dinoex.sub.de/pub/approved/
+		ftp://ftp.dinoex.de/pub/approved/
 DISTNAME=	${PORTNAME}11
 EXTRACT_SUFX=	.tar.Z
 
