@@ -1,0 +1,13 @@
+*** test/Makefile.org	Wed Jan 31 14:21:51 2001
+--- test/Makefile	Wed Jan 31 14:22:01 2001
+***************
+*** 14,17 ****
+  	dvips test -o test.ps
+  
+  test_gantt_1.eps: test.sched
+! 	../opensched test.sched
+--- 14,17 ----
+  	dvips test -o test.ps
+  
+  test_gantt_1.eps: test.sched
+! 	../src/opensched test.sched
