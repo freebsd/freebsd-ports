@@ -1,0 +1,6 @@
+lib/perl5/site_perl/%%PERL_VER%%/AI/NeuralNet/BackProp.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/NeuralNet/BackProp/.packlist
+lib/perl5/%%PERL_VERSION%%/man/man3/AI::NeuralNet::BackProp.3
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/NeuralNet/BackProp
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/NeuralNet
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/AI/NeuralNet
