@@ -6,22 +6,22 @@
 #
 
 PORTNAME=	cbrowser
-PORTVERSION=	0.6
-CATEGORIES=	devel tk82
-MASTER_SITES=	http://www.ziplink.net/~felaco/cbrowser/ \
+PORTVERSION=	0.8
+CATEGORIES=	devel tk83
+MASTER_SITES=	http://download.sourceforge.net/cbrowser/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=jkoshy
 
 MAINTAINER=	jkoshy@freebsd.org
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 NO_BUILD=	yes
 
 # Private variables
 CBDEST=		${PREFIX}/share/cbrowser/
-CBFILES=	builder.tcl calltree.tcl cbrowser hierarchy.tcl tclIndex\
-		widget.tcl
+CBFILES=	README builder.tcl calltree.tcl cbrowser ftcllib.tcl \
+		hierarchy.tcl tclIndex widget.tcl
 
 do-install:
 	${MKDIR} ${PREFIX}/share/cbrowser/

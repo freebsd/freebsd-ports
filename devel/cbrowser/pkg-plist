@@ -1,6 +1,8 @@
+share/cbrowser/README
 share/cbrowser/builder.tcl
 share/cbrowser/calltree.tcl
 share/cbrowser/cbrowser
+share/cbrowser/ftcllib.tcl
 share/cbrowser/hierarchy.tcl
 share/cbrowser/tclIndex
 share/cbrowser/widget.tcl
