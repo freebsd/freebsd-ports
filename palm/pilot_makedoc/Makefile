@@ -1,0 +1,26 @@
+# New ports collection makefile for:	pilot_makedoc
+# Version required:			0.7
+# Date created:				May 10th 1997
+# Whom:					jfitz@FreeBSD.ORG
+#
+# $Id$
+#
+
+PKGNAME=	pilot_makedoc-0.7
+CATEGORIES=	textproc
+MASTER_SITES=	http://www.concentric.net/~rbram/
+DISTFILES=	makedoc7.cpp
+
+NO_WRKSUBDIR=	YES
+
+ALL_TARGET=	pilot_makedoc
+
+do-extract:
+		@${MKDIR} -p ${WRKDIR}
+		@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
+		@${CP} ${FILESDIR}/Makefile ${WRKDIR}
+
+do-install:
+		@${INSTALL_PROGRAM} ${WRKDIR}/pilot_makedoc ${PREFIX}/bin
+
+.include <bsd.port.mk>
