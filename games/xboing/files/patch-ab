@@ -1,7 +1,7 @@
-*** audio/LINUXaudio.c.orig	Tue May 24 16:34:59 1994
---- audio/LINUXaudio.c	Sun Mar  5 23:43:14 1995
+*** audio/LINUXaudio.c.orig	Thu Nov 20 03:04:17 1997
+--- audio/LINUXaudio.c	Thu Nov 20 03:04:31 1997
 ***************
-*** 38,44 ****
+*** 55,61 ****
   #include <unistd.h>
   #include <stdio.h>
   #include <fcntl.h>
@@ -9,7 +9,7 @@
   
   #include "include/error.h"
   #include "include/audio.h"
---- 38,44 ----
+--- 55,61 ----
   #include <unistd.h>
   #include <stdio.h>
   #include <fcntl.h>
