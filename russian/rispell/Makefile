@@ -11,7 +11,7 @@ CATEGORIES=	russian textproc
 MASTER_SITES=	http://www.ispras.ru/~knizhnik/
 DISTNAME=	rispell
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
