@@ -1,0 +1,90 @@
+bin/ipe
+bin/ipe2eps
+lib/ipe/lib/ium/goodies.ium
+lib/ipe/lib/ium/gridalign.ium
+lib/ipe/lib/ium/postscript.ium
+lib/ipe/lib/ium/spline.ium
+lib/ipe/doc/Ipe.html
+lib/ipe/doc/Ipe_1.html
+lib/ipe/doc/Ipe_10.html
+lib/ipe/doc/Ipe_11.html
+lib/ipe/doc/Ipe_12.html
+lib/ipe/doc/Ipe_13.html
+lib/ipe/doc/Ipe_14.html
+lib/ipe/doc/Ipe_15.html
+lib/ipe/doc/Ipe_16.html
+lib/ipe/doc/Ipe_17.html
+lib/ipe/doc/Ipe_18.html
+lib/ipe/doc/Ipe_19.html
+lib/ipe/doc/Ipe_2.html
+lib/ipe/doc/Ipe_20.html
+lib/ipe/doc/Ipe_21.html
+lib/ipe/doc/Ipe_22.html
+lib/ipe/doc/Ipe_23.html
+lib/ipe/doc/Ipe_24.html
+lib/ipe/doc/Ipe_25.html
+lib/ipe/doc/Ipe_26.html
+lib/ipe/doc/Ipe_27.html
+lib/ipe/doc/Ipe_28.html
+lib/ipe/doc/Ipe_29.html
+lib/ipe/doc/Ipe_3.html
+lib/ipe/doc/Ipe_30.html
+lib/ipe/doc/Ipe_31.html
+lib/ipe/doc/Ipe_32.html
+lib/ipe/doc/Ipe_33.html
+lib/ipe/doc/Ipe_34.html
+lib/ipe/doc/Ipe_35.html
+lib/ipe/doc/Ipe_36.html
+lib/ipe/doc/Ipe_37.html
+lib/ipe/doc/Ipe_38.html
+lib/ipe/doc/Ipe_39.html
+lib/ipe/doc/Ipe_4.html
+lib/ipe/doc/Ipe_40.html
+lib/ipe/doc/Ipe_41.html
+lib/ipe/doc/Ipe_42.html
+lib/ipe/doc/Ipe_43.html
+lib/ipe/doc/Ipe_44.html
+lib/ipe/doc/Ipe_45.html
+lib/ipe/doc/Ipe_46.html
+lib/ipe/doc/Ipe_47.html
+lib/ipe/doc/Ipe_48.html
+lib/ipe/doc/Ipe_49.html
+lib/ipe/doc/Ipe_5.html
+lib/ipe/doc/Ipe_50.html
+lib/ipe/doc/Ipe_51.html
+lib/ipe/doc/Ipe_52.html
+lib/ipe/doc/Ipe_53.html
+lib/ipe/doc/Ipe_54.html
+lib/ipe/doc/Ipe_55.html
+lib/ipe/doc/Ipe_56.html
+lib/ipe/doc/Ipe_57.html
+lib/ipe/doc/Ipe_6.html
+lib/ipe/doc/Ipe_7.html
+lib/ipe/doc/Ipe_8.html
+lib/ipe/doc/Ipe_9.html
+lib/ipe/doc/example1.gif
+lib/ipe/doc/example2.gif
+lib/ipe/doc/example3.gif
+lib/ipe/doc/example4.gif
+lib/ipe/doc/example5.gif
+lib/ipe/doc/example6.gif
+lib/ipe/doc/intersection.gif
+lib/ipe/doc/next.xbm
+lib/ipe/doc/parabola.gif
+lib/ipe/doc/previous.xbm
+lib/ipe/doc/setlinecap.gif
+lib/ipe/doc/up.xbm
+lib/ipe/doc/window.gif
+share/texmf/tex/latex/ipe/ipe.sty
+share/texmf/tex/latex/ipe/ipe_pages.tex
+share/texmf/tex/latex/ipe/mipe.cls
+share/texmf/tex/latex/ipe/mipe.sty
+@cwd %%X11BASE%%
+lib/X11/app-defaults/Ipe
+@cwd %%LOCALBASE%%
+@dirrm share/texmf/tex/latex/ipe
+@unexec %D/bin/texconfig rehash
+@dirrm lib/ipe/lib/ium
+@dirrm lib/ipe/lib
+@dirrm lib/ipe/doc
+@dirrm lib/ipe

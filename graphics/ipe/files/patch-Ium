@@ -1,0 +1,37 @@
+diff -cr ../Ipe-5.0/Ium/Makefile Ium/Makefile
+*** ../Ipe-5.0/Ium/Makefile	Thu Nov 27 16:49:47 1997
+--- Ium/Makefile	Thu Oct 26 14:09:39 2000
+***************
+*** 10,17 ****
+  INCLUDE_DIRS	= -I../Plageo 
+  LIB_DIRS	= -L../Plageo
+  
+! CFLAGS		= -O $(INCLUDE_DIRS)
+! LFLAGS		= -s $(LIB_DIRS)
+  
+  CC		= g++ 
+  CPLUS		= g++ 
+--- 10,17 ----
+  INCLUDE_DIRS	= -I../Plageo 
+  LIB_DIRS	= -L../Plageo
+  
+! CFLAGS		= -O $(INCLUDE_DIRS) -DHAVE_BOOL -fno-for-scope
+! LFLAGS		= $(LIB_DIRS)
+  
+  CC		= g++ 
+  CPLUS		= g++ 
+diff -cr ../Ipe-5.0/Ium/ium.h Ium/ium.h
+*** ../Ipe-5.0/Ium/ium.h	Tue May  9 04:36:13 1995
+--- Ium/ium.h	Wed Oct 25 15:28:19 2000
+***************
+*** 61,67 ****
+--- 61,69 ----
+  #define IPE_BOLD    2
+  #define IPE_MATH    3
+  
++ #ifndef HAVE_BOOL
+  typedef int bool;
++ #endif
+  #ifdef IUM_PLAGEO
+  typedef pl_vec vertex;
+  #else

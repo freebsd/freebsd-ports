@@ -1,0 +1,80 @@
+diff -cr ../Ipe-5.0/tex/ipe_pages.tex tex/ipe_pages.tex
+*** ../Ipe-5.0/tex/ipe_pages.tex	Tue May  9 04:38:01 1995
+--- tex/ipe_pages.tex	Fri Oct 27 16:04:44 2000
+***************
+*** 41,50 ****
+  % To achieve this, we make a picture environment with this origin, and then
+  % ignore the picture environment in the Ipe file
+  %
+  \makeatletter\@ifundefined{IpeScale}{}{\IpeScale{100}}\makeatother
+  \unitlength=1bp
+  \setbox0=\hbox{\special{papersize=1000bp,1000bp}%
+!   \makebox(0,0)[lt]{\begin{picture}(928,928)(-428,-500)
+      \bgroup
+      \def\picture(#1)(#2){}\let\endpicture\relax
+      \Ipe{page1.ipe}
+--- 41,51 ----
+  % To achieve this, we make a picture environment with this origin, and then
+  % ignore the picture environment in the Ipe file
+  %
++ % WARNING, modifed cluelessly by David Bremner, bremner@unb.ca
+  \makeatletter\@ifundefined{IpeScale}{}{\IpeScale{100}}\makeatother
+  \unitlength=1bp
+  \setbox0=\hbox{\special{papersize=1000bp,1000bp}%
+!   \makebox(0,0)[lt]{\begin{picture}(928,928)(15,120)
+      \bgroup
+      \def\picture(#1)(#2){}\let\endpicture\relax
+      \Ipe{page1.ipe}
+diff -cr ../Ipe-5.0/tex/mipe.cls tex/mipe.cls
+*** ../Ipe-5.0/tex/mipe.cls	Tue May  9 04:38:02 1995
+--- tex/mipe.cls	Fri Oct 27 16:50:21 2000
+***************
+*** 81,93 ****
+  \def\Ipage#1{\vbox to \paperheight{\vfill
+      \hbox to \paperwidth{\hfill\Ipe{page#1.ipe}\hfill}\vfill}\newpage}
+  
+! \ExecuteOptions{a4paper}
+  \ProcessOptions
+  
+  % need ipe package
+  
+  \RequirePackage{ipe}
+- 
+  % use full paper for printing
+  
+  \textwidth\paperwidth
+--- 81,92 ----
+  \def\Ipage#1{\vbox to \paperheight{\vfill
+      \hbox to \paperwidth{\hfill\Ipe{page#1.ipe}\hfill}\vfill}\newpage}
+  
+! \ExecuteOptions{letterpaper}
+  \ProcessOptions
+  
+  % need ipe package
+  
+  \RequirePackage{ipe}
+  % use full paper for printing
+  
+  \textwidth\paperwidth
+***************
+*** 296,304 ****
+  \DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+  \DeclareOldFontCommand{\sl}{\normalfont\slshape}{\relax}
+  \DeclareOldFontCommand{\sc}{\normalfont\scshape}{\relax}
+! \renewcommand{\cal}{\protect\pcal}
+  \newcommand{\pcal}{\@fontswitch{\relax}{\mathcal}}
+! \renewcommand{\mit}{\protect\pmit}
+  \newcommand{\pmit}{\@fontswitch{\relax}{\mathnormal}}
+  \renewcommand\footnoterule{}
+  \def\thefootnote{\fnsymbol{footnote}}
+--- 295,303 ----
+  \DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+  \DeclareOldFontCommand{\sl}{\normalfont\slshape}{\relax}
+  \DeclareOldFontCommand{\sc}{\normalfont\scshape}{\relax}
+! %\renewcommand{\cal}{\protect\pcal}
+  \newcommand{\pcal}{\@fontswitch{\relax}{\mathcal}}
+! %\renewcommand{\mit}{\protect\pmit}
+  \newcommand{\pmit}{\@fontswitch{\relax}{\mathnormal}}
+  \renewcommand\footnoterule{}
+  \def\thefootnote{\fnsymbol{footnote}}
+Only in tex: mipe.log

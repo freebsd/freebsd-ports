@@ -1,0 +1,72 @@
+*** ../Ipe-5.0/Makefile	Sat Dec 20 12:05:11 1997
+--- Makefile	Fri Oct 27 16:23:21 2000
+***************
+*** 1,33 ****
+  ###########################################################################
+  # Ipe Makefile for Linux
+! #       
+  # Make and installation kit for linux
+  ###########################################################################
+  .PHONY : install build
+  
+! INSTALL_DIR=/usr/local/lib/ipe
+  
+! build: 
+  	cd Plageo/ ; make
+  	cd Ipe/ ; make
+  	cd Ium/ ; make
+  
+! install: build
+! 	mkdir -p $(INSTALL_DIR) $(INSTALL_DIR)/bin $(INSTALL_DIR)/lib 
+  	mkdir -p $(INSTALL_DIR)/lib/ium 
+  	mkdir -p $(INSTALL_DIR)/doc 
+! 	cp Ipe/ipe $(INSTALL_DIR)/bin/
+! 	rm -f /usr/local/bin/ipe
+! 	ln -s $(INSTALL_DIR)/bin/ipe /usr/local/bin/ipe
+! 	cp Ium/*.ium $(INSTALL_DIR)/lib/ium/
+! 	cp html/* $(INSTALL_DIR)/doc/
+! 	cp Ipe.app-defaults.linux /usr/lib/X11/app-defaults/Ipe
+! 	cp ipe2eps /usr/local/bin/
+  
+- kitit: 
+- 	cd Plageo/ ; rm -r -f *.o
+- 	cd Ipe/ ; rm -r -f *.o
+- 	cd Ium/ ; rm -r -f *.o
+- 	rm -f Ipe-5.0.tar Ipe-5.0.tar.gz
+- 	cd .. ; tar cf Ipe-5.0/Ipe-5.0.tar Ipe-5.0/*
+- 	gzip Ipe-5.0.tar
+--- 1,34 ----
+  ###########################################################################
+  # Ipe Makefile for Linux
+! # Modfied for FreeBSD ports, David Bremner     
+  # Make and installation kit for linux
+  ###########################################################################
+  .PHONY : install build
+  
+! INSTALL_DIR= ${PREFIX}/lib/ipe
+! IPETEXDIR= ${LOCALBASE}/share/texmf/tex/latex/ipe
+  
+! all: 
+  	cd Plageo/ ; make
+  	cd Ipe/ ; make
+  	cd Ium/ ; make
+  
+! install: all
+! 	mkdir -p $(INSTALL_DIR) $(INSTALL_DIR)/lib 
+  	mkdir -p $(INSTALL_DIR)/lib/ium 
+  	mkdir -p $(INSTALL_DIR)/doc 
+! 	mkdir -p ${IPETEXDIR}
+! 	$(BSD_INSTALL_PROGRAM) Ipe/ipe $(PREFIX)/bin
+! 	$(BSD_INSTALL_PROGRAM) Ium/goodies.ium $(INSTALL_DIR)/lib/ium/
+! 	$(BSD_INSTALL_PROGRAM) Ium/gridalign.ium $(INSTALL_DIR)/lib/ium/
+! 	$(BSD_INSTALL_SCRIPT) Ium/postscript.ium $(INSTALL_DIR)/lib/ium/
+! 	$(BSD_INSTALL_PROGRAM) Ium/spline.ium $(INSTALL_DIR)/lib/ium/
+! 	$(BSD_INSTALL_DATA) html/* $(INSTALL_DIR)/doc/
+! 	$(BSD_INSTALL_DATA) Ipe.app-defaults ${X11BASE}/lib/X11/app-defaults/Ipe
+! 	$(BSD_INSTALL_DATA) ipe2eps $(PREFIX)/bin
+! 	$(BSD_INSTALL_DATA) tex/ipe.sty ${IPETEXDIR}
+! 	$(BSD_INSTALL_DATA) tex/mipe.sty ${IPETEXDIR}
+! 	$(BSD_INSTALL_DATA) tex/ipe_pages.tex ${IPETEXDIR}
+! 	$(BSD_INSTALL_DATA) tex/mipe.cls ${IPETEXDIR}
+! 	${PREFIX}/bin/texconfig rehash
+  

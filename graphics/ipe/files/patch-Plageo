@@ -1,0 +1,123 @@
+diff -cr ../Ipe-5.0/Plageo/Makefile Plageo/Makefile
+*** ../Ipe-5.0/Plageo/Makefile	Thu Nov 27 15:15:48 1997
+--- Plageo/Makefile	Thu Oct 26 14:41:49 2000
+***************
+*** 12,18 ****
+  CC	= g++
+  # define GFLAGS if you use g++
+  #GFLAGS  =
+! GFLAGS	= -fno-for-scope
+  
+  INCLUDE = -I.
+  CFLAGS  = $(GFLAGS) -O $(INCLUDE)
+--- 12,18 ----
+  CC	= g++
+  # define GFLAGS if you use g++
+  #GFLAGS  =
+! GFLAGS	= -fno-for-scope -g
+  
+  INCLUDE = -I.
+  CFLAGS  = $(GFLAGS) -O $(INCLUDE)
+diff -cr ../Ipe-5.0/Plageo/ipestream.h Plageo/ipestream.h
+*** ../Ipe-5.0/Plageo/ipestream.h	Mon Dec 18 11:19:43 1995
+--- Plageo/ipestream.h	Thu Oct 26 15:16:31 2000
+***************
+*** 21,28 ****
+  public:
+    ipestream(void)	{ _f = NULL; }
+    ipestream(FILE *fd)	{ _f = fd; }
+!   
+!   int open(char *fname, char *mode) {
+      _f = fopen(fname, mode); return (_f != NULL); }
+    int openfd(int fd, char *mode) {
+      _f = fdopen(fd, mode); return (_f != NULL); }
+--- 21,28 ----
+  public:
+    ipestream(void)	{ _f = NULL; }
+    ipestream(FILE *fd)	{ _f = fd; }
+!   int isopen(void) { return (_f != NULL); };
+!   int open(const char *fname, char *mode) {
+      _f = fopen(fname, mode); return (_f != NULL); }
+    int openfd(int fd, char *mode) {
+      _f = fdopen(fd, mode); return (_f != NULL); }
+diff -cr ../Ipe-5.0/Plageo/ireray.C Plageo/ireray.C
+*** ../Ipe-5.0/Plageo/ireray.C	Tue May  9 04:35:50 1995
+--- Plageo/ireray.C	Wed Oct 25 11:31:18 2000
+***************
+*** 40,46 ****
+  // template<class T>
+  reray_T::reray_T(const reray_T & a)
+  {
+!     register i = a.sz;
+      reserved_size = sz = i;
+      if (i==0) {
+  	v = 0;
+--- 40,46 ----
+  // template<class T>
+  reray_T::reray_T(const reray_T & a)
+  {
+!     register unsigned int i = a.sz;
+      reserved_size = sz = i;
+      if (i==0) {
+  	v = 0;
+Only in ../Ipe-5.0/Plageo: libplageo.a
+diff -cr ../Ipe-5.0/Plageo/pl_coincidence.C Plageo/pl_coincidence.C
+*** ../Ipe-5.0/Plageo/pl_coincidence.C	Tue May  9 04:35:52 1995
+--- Plageo/pl_coincidence.C	Wed Oct 25 11:28:53 2000
+***************
+*** 468,475 ****
+  
+  typedef edgelist_link *edgelistp;
+  
+! static const    up = 0;
+! static const    down = 1;
+  
+  // sorted list of edges intersecting current sweep line
+  static edgelistp el = 0;
+--- 468,475 ----
+  
+  typedef edgelist_link *edgelistp;
+  
+! static const int    up = 0;
+! static const int   down = 1;
+  
+  // sorted list of edges intersecting current sweep line
+  static edgelistp el = 0;
+diff -cr ../Ipe-5.0/Plageo/plageo.h Plageo/plageo.h
+*** ../Ipe-5.0/Plageo/plageo.h	Tue May  9 04:35:50 1995
+--- Plageo/plageo.h	Wed Oct 25 11:28:06 2000
+***************
+*** 1050,1065 ****
+  
+  extern int lies_inside(const pl_fixedvec &, const pl_disc &);
+  
+! inline do_overlap(const pl_fixedvec &vec, const pl_box &box)
+  { return lies_inside(vec, box); }
+  
+! inline do_overlap(const pl_fixedvec &vec, const pl_pgn &pgn)
+  { return lies_inside(vec, pgn); }
+  
+! inline do_overlap(const pl_fixedvec &vec, const pl_disc &disc)
+  { return lies_inside(vec, disc); }
+  
+! inline do_overlap(const pl_fixedvec &vec, const pl_object &obj)
+  { return do_overlap(obj, vec); }
+  
+  // ******   POINT   ******
+--- 1050,1065 ----
+  
+  extern int lies_inside(const pl_fixedvec &, const pl_disc &);
+  
+! inline int do_overlap(const pl_fixedvec &vec, const pl_box &box)
+  { return lies_inside(vec, box); }
+  
+! inline int do_overlap(const pl_fixedvec &vec, const pl_pgn &pgn)
+  { return lies_inside(vec, pgn); }
+  
+! inline int  do_overlap(const pl_fixedvec &vec, const pl_disc &disc)
+  { return lies_inside(vec, disc); }
+  
+! inline int do_overlap(const pl_fixedvec &vec, const pl_object &obj)
+  { return do_overlap(obj, vec); }
+  
+  // ******   POINT   ******
