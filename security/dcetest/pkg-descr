@@ -1,0 +1,8 @@
+This little utility dumps MSRPC endpoint information from Windows
+systems. Similar to the rpcdump program from Microsoft, but does not
+need a DCE stack and so runs on Unixes. dcetest can be very useful
+once inside a DMZ to fingerprint Windows machines on the network.
+dcetest operates over TCP port 135. (Think of it as rpcinfo -p against
+Windows)
+
+WWW: http://www.atstake.com/research/tools/info_gathering/

@@ -1,0 +1,10 @@
+--- Makefile.orig	Sat Jan 11 06:22:46 2003
++++ Makefile	Sat Jan 11 06:23:10 2003
+@@ -1,6 +1,6 @@
+ .SUFFIXES: .a .o .c
+ CC              =  gcc
+-CFLAGS          =  -Wall -funsigned-char -c -fPIC -ggdb
++CFLAGS         +=  -Wall -funsigned-char -c -fPIC -ggdb
+ 
+ BINS = dcetest
+ ALL = $(BINS)
