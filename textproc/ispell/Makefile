@@ -31,11 +31,12 @@ ALL_TARGET=
 BUILDHASH=	${WRKSRC}/buildhash
 DATADIR=	${PREFIX}/share/ispell
 
-.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DK))
+.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DK) && !defined(ISPELL_SA))
 pre-everything:
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
 	@${ECHO_MSG} '*                              Use make-flag:           *'
+	@${ECHO_MSG} '*  - Afrikaans                 ISPELL_SA=yes            *'
 	@${ECHO_MSG} '*  - British                   ISPELL_BRITISH=yes       *'
 	@${ECHO_MSG} '*    (replaces the American dictionary)                 *'
 	@${ECHO_MSG} '*  - Dutch                     ISPELL_NL=yes            *'
@@ -101,6 +102,14 @@ MASTER_SITE_SUBDIR=	asmodai
 EXTRA_DICT+=	${DKDISTFILE}
 EXTRACT_ONLY+=	${DKDISTFILE}
 .endif
+.if defined(ISPELL_SA)
+SADISTFILE=	ispell-sa-1.0.0.tar.gz
+MASTER_SITES+=	${MASTER_SITE_LOCAL} \
+		http://www.ninth-circle.org/~asmodai/
+MASTER_SITE_SUBDIR=	asmodai
+EXTRA_DICT+=	${SADISTFILE}
+EXTRACT_ONLY+=	${SADISTFILE}
+.endif
 
 
 DISTFILES+=	${EXTRA_DICT}
@@ -141,6 +150,9 @@ post-patch:
 .endif
 .if defined(ISPELL_DK)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/DK.patch 2>/dev/null
+.endif
+.if defined(ISPELL_SA)
+	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/SA.patch 2>/dev/null
 .endif
 
 
@@ -192,6 +204,10 @@ post-build:
 	@cd ${WRKDIR}/${DKDISTFILE:S=.tar.gz==} && \
 		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} all
 .endif
+.if defined(ISPELL_SA)
+	@cd ${WRKDIR}/${SADISTFILE:S=.tar.gz==} && \
+		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} all
+.endif
 
 pre-install:
 	@if [ ! -d ${DATADIR} ]; then ${MKDIR} ${DATADIR}; fi
@@ -221,6 +237,9 @@ post-install:
 .endif
 .if defined(ISPELL_DK)
 	@${CAT} ${MASTERDIR}/pkg-plist.dk >> ${TMPPLIST}
+.endif
+.if defined(ISPELL_SA)
+	@${CAT} ${MASTERDIR}/pkg-plist.sa >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_BRITISH)
 	@${CAT} ${MASTERDIR}/pkg-plist.british >> ${TMPPLIST}

@@ -4,6 +4,7 @@ corrections when it can figure them out.  Compared to UNIX spell, it
 is faster and much easier to use.  Ispell can also handle languages
 other than English.
 Included in this port are:
+	- Afrikaans
 	- British English
 	- Danish
 	- Dutch
