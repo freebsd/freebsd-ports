@@ -5,7 +5,7 @@
 #      - make options output
 #      - apache2 man/docs routines
 #
-# $FreeBSD: /tmp/pcvs/ports/www/apache21/Attic/Makefile.doc,v 1.1 2004-12-11 18:06:04 clement Exp $
+# $FreeBSD: /tmp/pcvs/ports/www/apache21/Attic/Makefile.doc,v 1.2 2004-12-13 18:48:02 clement Exp $
 #
 
 ## Available knobs:
@@ -90,6 +90,8 @@
 ##
 
 DOCSDIR=	${PREFIX}/share/doc/apache21
+EXAMPLESDIR=	${PREFIX}/share/examples/apache21
+MAKE_ENV+=	EXAMPLESDIR=${EXAMPLESDIR}
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	NOPORTDOCS=yes

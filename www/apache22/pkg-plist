@@ -1,19 +1,17 @@
 @comment $FreeBSD$
-@unexec if cmp -s %D/etc/apache21/highperformance.conf %D/etc/apache21/highperformance-std.conf; then rm -f %D/etc/apache21/highperformance.conf; fi
-etc/apache21/highperformance-std.conf
-@exec [ -f %B/highperformance.conf ] || cp %B/%f %B/highperformance.conf
-@unexec if cmp -s %D/etc/apache21/httpd.conf %D/etc/apache21/httpd-std.conf; then rm -f %D/etc/apache21/httpd.conf; fi
-etc/apache21/httpd-std.conf
-@exec [ -f %B/httpd.conf ] || cp %B/%f %B/httpd.conf
-@unexec if cmp -s %D/etc/apache21/magic %D/etc/apache21/magic-dist; then rm -f %D/etc/apache21/magic; fi
-etc/apache21/magic-dist
-@exec [ -f %B/magic ] || cp %B/%f %B/magic
-@unexec if cmp -s %D/etc/apache21/mime.types %D/etc/apache21/mime.types-dist; then rm -f %D/etc/apache21/mime.types; fi
-etc/apache21/mime.types-dist
-@exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
-@unexec if cmp -s %D/etc/apache21/ssl.conf %D/etc/apache21/ssl-std.conf; then rm -f %D/etc/apache21/ssl.conf; fi
-etc/apache21/ssl-std.conf
-@exec [ -f %B/ssl.conf ] || cp %B/%f %B/ssl.conf
+@exec mkdir -p %D/etc/apache21 2> /dev/null
+@unexec if cmp -s %D/etc/apache21/httpd.conf %D/%%EXAMPLESDIR%%/httpd-std.conf; then rm -f %D/etc/apache21/httpd.conf; fi
+%%EXAMPLESDIR%%/httpd-std.conf
+@exec [ -f %D/etc/apache21/httpd.conf ] || cp %D/%%EXAMPLESDIR%%/httpd-std.conf %D/etc/apache21/httpd.conf
+@unexec if cmp -s %D/etc/apache21/magic %D/%%EXAMPLESDIR%%/magic-dist; then rm -f %D/etc/apache21/magic; fi
+%%EXAMPLESDIR%%/magic-dist
+@exec [ -f %D/etc/apache21/magic ] || cp %D/%%EXAMPLESDIR%%/magic-dist %D/etc/apache21/magic
+@unexec if cmp -s %D/etc/apache21/mime.types %D/%%EXAMPLESDIR%%/mime.types-dist; then rm -f %D/etc/apache21/mime.types; fi
+%%EXAMPLESDIR%%/mime.types-dist
+@exec [ -f %D/etc/apache21/mime.types ] || cp %D/%%EXAMPLESDIR%%/mime.types-dist %D/etc/apache21/mime.types
+@unexec if cmp -s %D/etc/apache21/ssl.conf %D/%%EXAMPLESDIR%%/ssl-std.conf; then rm -f %D/etc/apache21/ssl.conf; fi
+%%EXAMPLESDIR%%/ssl-std.conf
+@exec [ -f %D/etc/apache21/ssl.conf ] || cp %D/%%EXAMPLESDIR%%/ssl-std.conf %D/etc/apache21/ssl.conf
 etc/rc.d/apache21.sh
 include/apache21/ap_compat.h
 include/apache21/ap_config.h
@@ -87,6 +85,8 @@ include/apache21/ap_release.h
 %%APR_PORTS%%include/apr-1/apu.h
 %%APR_PORTS%%include/apr-1/apu_version.h
 %%APR_PORTS%%include/apr-1/apu_want.h
+%%EVENT%%include/apache21/pod.h
+%%EVENT%%include/apache21/fdqueue.h
 %%WORKER%%include/apache21/fdqueue.h
 %%THREADPOOL%%include/apache21/pod.h
 include/apache21/http_config.h
@@ -497,6 +497,7 @@ share/apache21/build/special.mk
 %%ERROR%%@dirrm www/error-dist
 %%WWWDATA%%@dirrm www/data-dist
 %%CGI%%@dirrm www/cgi-bin-dist
+@dirrm %%EXAMPLESDIR%%
 @dirrm share/apache21/build
 @dirrm share/apache21
 @unexec rmdir %D/libexec/apache21 2> /dev/null || true

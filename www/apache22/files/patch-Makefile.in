@@ -1,20 +1,29 @@
 --- Makefile.in.orig	Thu Dec  2 08:34:20 2004
-+++ Makefile.in	Sat Dec 11 16:39:40 2004
-@@ -36,10 +36,13 @@
++++ Makefile.in	Mon Dec 13 19:35:54 2004
+@@ -31,15 +31,22 @@
+ 	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
+ 	    $(MKINSTALLDIRS) $(DESTDIR)$(sysconfdir) ; \
+ 	fi ; \
++	if [ ! -d $(DESTDIR)$(EXAMPLESDIR) ]; then \
++		$(MKINSTALLDIRS) $(DESTDIR)$(EXAMPLESDIR) ; \
++	fi ; \
+ 	cd $(top_srcdir)/docs/conf; \
+ 	for i in mime.types magic; do \
  	    if test ! -f $(DESTDIR)$(sysconfdir)/$$i; then \
  	        $(INSTALL_DATA) $$i $(DESTDIR)$(sysconfdir); \
  	    fi; \
 +	    cp -f $$i $$i-dist; \
-+	    $(INSTALL_DATA) $$i-dist $(DESTDIR)$(sysconfdir); \
++	    $(INSTALL_DATA) $$i-dist $(DESTDIR)$(EXAMPLESDIR); \
  	done; \
  	for j in $(top_srcdir)/docs/conf $(top_builddir)/docs/conf ; do \
  	    cd $$j ; \
++            [ -f `echo "$$i"|sed 's,\.in$$,_nonex,g'` ] || continue; \
  	    for i in *-std*.conf; do \
 +		[ -f `echo "$$i"|sed 's,\.in$$,_nonex,g'` ] || continue; \
  	    	( \
  	    		n_lm=`awk 'BEGIN {n=0} /@@LoadModule@@/ {n+=1} END {print n}' < $$i`; \
  	    		if test $$n_lm -eq 0 -o "x$(DSO_MODULES)" = "x"; then \
-@@ -57,6 +60,9 @@
+@@ -57,6 +64,9 @@
  	    				if test "x$$j" = "xssl"; then \
  	    					echo "<IfDefine SSL>"; \
  	    				fi; \
@@ -24,7 +33,27 @@
  	    				if test $$j != "^EOL^"; then \
  	    					echo "LoadModule $${j}_module $(rel_libexecdir)/mod_$${j}.so"; \
  	    				fi; \
-@@ -108,44 +114,40 @@
+@@ -70,14 +80,15 @@
+ 	    				-e 's#@@Port@@#$(PORT)#g' \
+ 	    				< $$i; \
+ 	    		fi \
+-	    	) > $(DESTDIR)$(sysconfdir)/$$i; \
+-	    	chmod 0644 $(DESTDIR)$(sysconfdir)/$$i; \
+-	    	file=`echo $$i|sed s/-std//`; \
++	    	) > $(DESTDIR)$(EXAMPLESDIR)/$$i; \
++	    	chmod 0644 $(DESTDIR)$(EXAMPLESDIR)/$$i; \
++	    	chmod 0644 $(DESTDIR)$(EXAMPLESDIR)/$$i; \
++		file=`echo $$i|sed s/-std//`; \
+ 	    	if [ "$$file" = "httpd.conf" ]; then \
+ 	    		file=`echo $$file|sed s/.*.conf/$(PROGRAM_NAME).conf/`; \
+ 	    	fi; \
+ 	    	if test "$$file" != "$$i" && test ! -f $(DESTDIR)$(sysconfdir)/$$file; then \
+-	    		$(INSTALL_DATA) $(DESTDIR)$(sysconfdir)/$$i $(DESTDIR)$(sysconfdir)/$$file; \
++	    		$(INSTALL_DATA) $(DESTDIR)$(EXAMPLESDIR)/$$i $(DESTDIR)$(sysconfdir)/$$file; \
+ 	    	fi; \
+ 	    done ; \
+ 	done ; \
+@@ -108,44 +119,40 @@
  	doxygen $(top_srcdir)/docs/doxygen.conf
  
  install-htdocs:
@@ -97,7 +126,7 @@
  
  install-other:
  	@test -d $(DESTDIR)$(logfiledir) || $(MKINSTALLDIRS) $(DESTDIR)$(logfiledir)
-@@ -189,11 +191,13 @@
+@@ -189,11 +196,13 @@
  	@test -d $(DESTDIR)$(mandir)      || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)
  	@test -d $(DESTDIR)$(mandir)/man1 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man1
  	@test -d $(DESTDIR)$(mandir)/man8 || $(MKINSTALLDIRS) $(DESTDIR)$(mandir)/man8
