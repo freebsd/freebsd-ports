@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ Wrapper for the SDL (Simple DirectMedia Layer)
 
 USE_SDL=	sdl
+USE_LIBTOOL_VER=15
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
