@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	1.2
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		ftp://ftp.au.horde.org/pub/horde/turba/			\
@@ -26,15 +25,11 @@ COMMENT=	The Horde contact management application
 #
 #-----------------------------------------------------------------------
 
-.if !defined(WITHOUT_LDAP)
-.if exists(${LOCALBASE}/lib/libldap.so.1)
-LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
-.else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
-.endif
-.endif
+RUN_DEPENDS=  ${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 
-RUN_DEPENDS+=  ${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
+.if !defined(WITHOUT_LDAP)
+USE_OPENLDAP=	yes
+.endif
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
@@ -63,6 +58,11 @@ PHPSO=		${LOCALBASE}/libexec/apache2/libphp4.so
 .else
 PHPSO=		${LOCALBASE}/libexec/apache/libphp4.so
 .endif
+
+post-patch:
+	@${RM} ${WRKSRC}/config/conf.php.dist.orig	\
+		${WRKSRC}/config/prefs.php.dist.orig	\
+		${WRKSRC}/config/sources.php.dist.orig
 
 pre-install:
 .if !defined(WITHOUT_LDAP)

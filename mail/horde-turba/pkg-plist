@@ -7,6 +7,7 @@
 %%PORTDOCS%%share/doc/turba/UPDATE
 %%PORTDOCS%%share/doc/turba/turba.dia
 %%PORTDOCS%%share/doc/turba/turba.pdf
+%%TURBADIR%%/add.php
 %%TURBADIR%%/addobject.php
 %%TURBADIR%%/addobjectaction.php
 %%TURBADIR%%/advanced.php
@@ -16,20 +17,20 @@
 %%TURBADIR%%/config/attributes.php.dist
 %%TURBADIR%%/config/conf.php
 %%TURBADIR%%/config/conf.php.dist
-%%TURBADIR%%/config/conf.php.dist.orig
 %%TURBADIR%%/config/html.php
 %%TURBADIR%%/config/html.php.dist
 %%TURBADIR%%/config/menu.php
 %%TURBADIR%%/config/menu.php.dist
 %%TURBADIR%%/config/prefs.php
 %%TURBADIR%%/config/prefs.php.dist
-%%TURBADIR%%/config/prefs.php.dist.orig
 %%TURBADIR%%/config/sources.php
 %%TURBADIR%%/config/sources.php.dist
-%%TURBADIR%%/config/sources.php.dist.orig
 %%TURBADIR%%/data.php
+%%TURBADIR%%/delete.php
 %%TURBADIR%%/deleteobject.php
+%%TURBADIR%%/display.php
 %%TURBADIR%%/displayobject.php
+%%TURBADIR%%/edit.php
 %%TURBADIR%%/editobject.php
 %%TURBADIR%%/editobjectaction.php
 %%TURBADIR%%/graphics/add.gif
@@ -68,6 +69,7 @@
 %%TURBADIR%%/lib/base.php
 %%TURBADIR%%/lib/version.php
 %%TURBADIR%%/locale/.htaccess
+%%TURBADIR%%/locale/ar_SY/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/bg_BG/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/ca_ES/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/cs_CZ/LC_MESSAGES/turba.mo
@@ -81,18 +83,22 @@
 %%TURBADIR%%/locale/fi_FI/help.xml
 %%TURBADIR%%/locale/fi_FI/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/fr_FR/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/hu_HU/help.xml
 %%TURBADIR%%/locale/hu_HU/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/it_IT/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/ja_JP/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/ko_KR/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/lt_LT/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/lv_LV/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/mk_MK/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/nb_NO/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/nl_NL/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/nn_NO/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/pl_PL/help.xml
 %%TURBADIR%%/locale/pl_PL/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/pt_BR/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/pt_PT/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/ro_RO/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/ru_RU/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/sk_SK/help.xml
@@ -106,6 +112,7 @@
 %%TURBADIR%%/po/.htaccess
 %%TURBADIR%%/po/Makefile
 %%TURBADIR%%/po/README
+%%TURBADIR%%/po/ar_SY.po
 %%TURBADIR%%/po/bg_BG.po
 %%TURBADIR%%/po/ca_ES.po
 %%TURBADIR%%/po/cs_CZ.po
@@ -123,12 +130,14 @@
 %%TURBADIR%%/po/ko_KR.po
 %%TURBADIR%%/po/lt_LT.po
 %%TURBADIR%%/po/lv_LV.po
+%%TURBADIR%%/po/mk_MK.po
 %%TURBADIR%%/po/nb_NO.po
 %%TURBADIR%%/po/nl_NL.po
 %%TURBADIR%%/po/nn_NO.po
 %%TURBADIR%%/po/pl_PL.po
 %%TURBADIR%%/po/pt_BR.po
 %%TURBADIR%%/po/pt_PT.po
+%%TURBADIR%%/po/ro_RO.po
 %%TURBADIR%%/po/ru_RU.po
 %%TURBADIR%%/po/ru_RU.KOI8-R.po
 %%TURBADIR%%/po/shtool
@@ -194,6 +203,8 @@ etc/horde/httpd.conf.turba
 @dirrm %%TURBADIR%%/lib/ListView
 @dirrm %%TURBADIR%%/lib/ObjectView
 @dirrm %%TURBADIR%%/lib
+@dirrm %%TURBADIR%%/locale/ar_SY/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/ar_SY
 @dirrm %%TURBADIR%%/locale/bg_BG/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/bg_BG
 @dirrm %%TURBADIR%%/locale/ca_ES/LC_MESSAGES
@@ -227,6 +238,8 @@ etc/horde/httpd.conf.turba
 @dirrm %%TURBADIR%%/locale/lt_LT
 @dirrm %%TURBADIR%%/locale/lv_LV/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/lv_LV
+@dirrm %%TURBADIR%%/locale/mk_MK/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/mk_MK
 @dirrm %%TURBADIR%%/locale/nb_NO/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/nb_NO
 @dirrm %%TURBADIR%%/locale/nl_NL/LC_MESSAGES
@@ -239,6 +252,8 @@ etc/horde/httpd.conf.turba
 @dirrm %%TURBADIR%%/locale/pt_BR
 @dirrm %%TURBADIR%%/locale/pt_PT/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/pt_PT
+@dirrm %%TURBADIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/ro_RO
 @dirrm %%TURBADIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/ru_RU
 @dirrm %%TURBADIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES
