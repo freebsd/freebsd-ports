@@ -36,8 +36,14 @@ CFLAGS=		-DHAVE_SYS_PARAM_H \
 		-fforce-mem -fforce-addr -funroll-loops
 MAN6=		xaos.6
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "amd64" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on FreeBSD >=5.x on !i386 and !amd64"
+.endif
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/xaos
 	install-info ${PREFIX}/info/xaos.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
