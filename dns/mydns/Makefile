@@ -29,6 +29,10 @@ DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART README TODO
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Installation fails"
+.endif
+
 .if defined (WITH_PGSQL)
 LIB_DEPENDS=	pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=--without-mysql

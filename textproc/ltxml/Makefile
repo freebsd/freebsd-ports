@@ -14,6 +14,12 @@ MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML Toolkit
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Installation fails"
+.endif
+
 CONFIGURE_WRKSRC=	${WRKSRC}/XML
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
@@ -48,4 +54,4 @@ MAN1=	ltxml.1 xmlnorm.1 pesis.1 sgcount.1 sggrep.1 \
 
 MAN5=	ltxml-query.5
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
