@@ -10,6 +10,6 @@ etc/rc.d/nntpcached.sh
 bin/confused
 sbin/nntpcached
 sbin/newshound
-man/man8/nntpcache.8.gz
+man/man8/nntpcached.8.gz
 man/man8/newshound.8.gz
 @unexec rm -rf /var/spool/nntpcache
