@@ -62,6 +62,7 @@ include/php/Zend/zend_reflection_api.h
 include/php/Zend/zend_stack.h
 include/php/Zend/zend_static_allocator.h
 include/php/Zend/zend_stream.h
+include/php/Zend/zend_strtod.h
 include/php/Zend/zend_ts_hash.h
 include/php/Zend/zend_types.h
 include/php/Zend/zend_variables.h

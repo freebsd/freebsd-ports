@@ -1,7 +1,10 @@
---- scripts/Makefile.frag.orig	Mon Jul 12 19:30:23 2004
-+++ scripts/Makefile.frag	Mon Jul 12 19:30:48 2004
-@@ -31,11 +31,7 @@
+--- scripts/Makefile.frag.orig	Tue Nov 23 14:06:16 2004
++++ scripts/Makefile.frag	Thu Dec 16 13:00:26 2004
+@@ -30,14 +30,9 @@
+ 	main/ \
+ 	main/streams/ \
  	regex/ \
+-	ext/iconv/ \
  	ext/libxml/ \
  	ext/standard/ \
 -	ext/session/ \
