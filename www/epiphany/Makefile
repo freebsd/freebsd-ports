@@ -98,9 +98,6 @@ post-configure:
 		s|%%FLASHPLAYER%%|${FLASHPLAYER}|g' <${FILESDIR}/epiphany \
 		> ${WRKDIR}/epiphany
 
-pre-install:
-	@-${X11BASE}/bin/gconftool-2 --shutdown
-
 post-install:
 		@${MV} -f ${PREFIX}/bin/epiphany ${PREFIX}/bin/epiphany-bin
 		${INSTALL_SCRIPT} ${WRKDIR}/epiphany ${PREFIX}/bin

@@ -102,9 +102,6 @@ post-configure:
 		s|%%FLASHPLAYER%%|${FLASHPLAYER}|g' < ${FILESDIR}/galeon \
 		> ${WRKDIR}/galeon
 
-pre-install:
-	@-${X11BASE}/bin/gconftool-2 --shutdown
-
 post-install:
 	@${MV} -f ${PREFIX}/bin/galeon ${PREFIX}/bin/galeon-bin
 	${INSTALL_SCRIPT} ${WRKDIR}/galeon ${PREFIX}/bin
