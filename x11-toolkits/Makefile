@@ -73,6 +73,7 @@
     SUBDIR += gtkstep-pastel
     SUBDIR += gtoolkit
     SUBDIR += guile-gnome
+    SUBDIR += guile-gobject
     SUBDIR += guile-gtk
     SUBDIR += hs-frantk
     SUBDIR += hs-gtk+hs
