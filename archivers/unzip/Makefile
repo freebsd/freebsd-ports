@@ -1,18 +1,19 @@
 # New ports collection makefile for:    unzip
-# Version required:     5.2
+# Version required:     5.3
 # Date created:         17 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1996/11/18 13:55:59 asami Exp $
+# $Id: Makefile,v 1.8 1997/01/06 21:43:22 ache Exp $
 #
 
-DISTNAME=       unzip-5.2
+DISTNAME=       unzip-5.3
 CATEGORIES=	archivers
 MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
-DISTFILES=      unzip52.tar.gz
+DISTFILES=      unzip53.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
+NO_WRKSUBDIR=   YES
 MAKEFILE=       unix/Makefile
 ALL_TARGET=     bsd
 MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS}" \
