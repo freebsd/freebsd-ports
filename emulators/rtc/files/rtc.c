@@ -115,7 +115,11 @@ rtc_attach(dev_t dev)
 	struct rtc_softc *sc;
 	int unit;
 
+#if __FreeBSD_version >= 500014
 	unit = dev2unit(dev);
+#else
+	unit = lminor(dev);
+#endif
 	DLog(Lenter, "%d %p", unit, dev);
 	if (dev->si_drv1) {
 		DLog(Lexit, "old %p, %p", dev, dev->si_drv1);
@@ -161,7 +165,11 @@ rtc_detach(struct rtc_softc *sc)
 /* -=-=-=-=-=-=-=-=-= character device stuff -=-=-=-=-=-=-=-=-= */
 
 int 
+#if __FreeBSD_version >= 500023
+rtc_open(dev_t dev, int oflag, int otyp, struct thread *p)
+#else
 rtc_open(dev_t dev, int oflag, int otyp, struct proc *p)
+#endif
 {
 	struct rtc_softc *sc;
 	
@@ -181,7 +189,11 @@ rtc_open(dev_t dev, int oflag, int otyp, struct proc *p)
 }
 
 int 
+#if __FreeBSD_version >= 500023
+rtc_close(dev_t dev, int fflag, int otyp, struct thread *p)
+#else
 rtc_close(dev_t dev, int fflag, int otyp, struct proc *p)
+#endif
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
 
@@ -190,7 +202,11 @@ rtc_close(dev_t dev, int fflag, int otyp, struct proc *p)
 }
 
 int 
+#if __FreeBSD_version >= 500023
+rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct thread *p)
+#else
 rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct proc *p)
+#endif
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
 	int error=0;
@@ -215,7 +231,11 @@ rtc_ioctl(dev_t dev, u_long cmd, caddr_t arg, int mode, struct proc *p)
 }
 
 int 
+#if __FreeBSD_version >= 500023
+rtc_poll(dev_t dev, int events, struct thread *p)
+#else
 rtc_poll(dev_t dev, int events, struct proc *p)
+#endif
 {
 	struct rtc_softc *sc = (struct rtc_softc *) dev->si_drv1;
    	int revents = 0;
