@@ -15,6 +15,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	kde@freebsd.org
 COMMENT=	A graphical mail client
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes
@@ -29,4 +35,4 @@ post-patch:
 	@${REINPLACE_CMD} -e "s/qt.so/qt2.so/g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s/-lqt/-lqt2/g" ${WRKSRC}/src/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

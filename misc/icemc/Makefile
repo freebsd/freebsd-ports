@@ -13,6 +13,12 @@ MASTER_SITES=	http://www.algorithm.at/comp/icemc/
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	QT-based menu editor for IceWM
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
 
@@ -22,4 +28,4 @@ MAKE_ENV=	QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/icemc ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
