@@ -3,9 +3,9 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.29 1997/02/24 22:22:32 jmz Exp $
+# $Id: Makefile,v 1.30 1997/02/26 02:27:29 jmz Exp $
 #
-VERSION=	96.12
+VERSION=	97.06
 DISTNAME=	latex
 PKGNAME=	latex2e-${VERSION}
 CATEGORIES=	print
@@ -48,7 +48,7 @@ do-install:
 	@mkdir -p ${PREFIX}/share/texmf/tex/latex
 	@(cd ${WRKSRC}/base; for f in latexbug.tex testpage.tex \
 	   lablst.tex idx.tex nfssfont.tex small2e.tex sample2e.tex docstrip.tex \
-	   hyphen.tex *.cls *.clo *.sty *.fd *.def *.cfg ; do \
+	   *.cls *.clo *.sty *.fd *.def *.cfg ; do \
 	    if [ -f $$f ]; then install -c -m 644  $$f ${PREFIX}/share/texmf/tex/latex; fi; done)
 	@mkdir -p ${PREFIX}/share/texmf/makeindx;
 	@(cd ${WRKSRC}/base; install -c -m 644 *.ist ${PREFIX}/share/texmf/makeindx)
