@@ -1,0 +1,2 @@
+bin/ladder
+@unexec rm /var/games/ladder.scores
