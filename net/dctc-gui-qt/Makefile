@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.0.3
+PORTVERSION=	0.0.6
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	dc-qt
@@ -30,7 +30,8 @@ post-patch:
 		${WRKSRC}/dc_hub.cc
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} dc_qt.pro
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
+		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ dc-qt.pro
 
 post-configure:
 # uphold CC/CXX/CFLAGS
@@ -42,6 +43,6 @@ post-configure:
 		${WRKSRC}/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/dc_qt ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/dc-qt ${PREFIX}/bin
 
 .include <bsd.port.mk>
