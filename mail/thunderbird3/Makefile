@@ -7,6 +7,7 @@
 
 PORTNAME=	thunderbird
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/source
@@ -50,8 +51,7 @@ THUNDERBIRD_ICON_SRC=	${WRKSRC}/other-licenses/branding/thunderbird/default.xpm
 OPTIONS=	DEBUG "Build a debugging image" off \
 		LOGGING "Enable additional log messages" off \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
-		XFT "Enable support for anti-aliased fonts" on \
-		NEW_ICON "Install the new Thunderbird branding icon" off
+		XFT "Enable support for anti-aliased fonts" on
 
 .include <bsd.port.pre.mk>
 
@@ -201,15 +201,9 @@ post-install:
 		${LOCAL_PREFIX}/bin/thunderbird-config
 	${FIND} ${LOCAL_PREFIX}/lib/pkgconfig -type f | ${XARGS} \
 		${PERL} -pi -e 's|${FAKEDIR}|${PREFIX}|g'
-.if defined(WITH_NEW_ICON)
-	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/default.xpm \
-		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/default.xpm
-	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/mozicon50.xpm \
-		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/messengerWindow.xpm
-	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/mozicon50.xpm \
-	${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/messengerWindow16.xpm
-.endif # defined(WITH_NEW_ICON)
 	${INSTALL_DATA} ${THUNDERBIRD_ICON_SRC} ${PREFIX}/share/gnome/pixmaps/${THUNDERBIRD_ICON}
 	${INSTALL_DATA} ${WRKDIR}/thunderbird.desktop ${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/default.xpm \
+		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/default.xpm
 
 .include <bsd.port.post.mk>

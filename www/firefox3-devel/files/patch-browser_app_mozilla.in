@@ -1,5 +1,5 @@
---- browser/app/mozilla.in.orig	Sat Nov 13 00:54:51 2004
-+++ browser/app/mozilla.in	Sat Nov 13 00:57:22 2004
+--- browser/app/mozilla.in.orig	Tue Oct 26 05:26:11 2004
++++ browser/app/mozilla.in	Mon Dec 27 19:15:52 2004
 @@ -110,6 +110,7 @@
    # Check default compile-time libdir
    if [ -x "$moz_libdir/run-mozilla.sh" ]; then
@@ -8,7 +8,21 @@
    else 
      echo "Cannot find mozilla runtime directory. Exiting."
      exit 1
-@@ -207,12 +207,31 @@
+@@ -160,11 +161,11 @@
+ 	_optLast="${i}"
+ done #last arg
+ 
+-if [ `expr "${_optLast}" : '.*:/.*'` -eq 0 -a \( -f "${_optLast}" -o -d "${_optLast}" \) ]; then
++if [ `expr -- "${_optLast}" : '.*:/.*'` -eq 0 -a \( -f "${_optLast}" -o -d "${_optLast}" \) ]; then
+ 	# Last argument seems to be a local file/directory
+ 	# Check, if it is absolutely specified (ie. /home/foo/file vs. ./file)
+ 	# If it is just "relatively" (./file) specified, make it absolutely
+-	[ `expr "${_optLast}" : '/.*'` -eq 0 ] && _optLast="file://`pwd`/${_optLast}"
++	[ `expr -- "${_optLast}" : '/.*'` -eq 0 ] && _optLast="file://`pwd`/${_optLast}"
+ fi
+ ################################################################ Parse Arguments
+ 
+@@ -207,12 +208,31 @@
        script_args="$script_args -d $2"
        shift 2
        ;;

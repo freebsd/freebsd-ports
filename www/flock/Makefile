@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -66,8 +66,7 @@ OPTIONS=	DEBUG "Build a debugging image" off \
 		LOGGING "Enable additional log messages" off \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
 		XFT "Enable support for anti-aliased fonts" on \
-		SMB "Enable smb:// URI support using gnomevfs" off \
-		NEW_ICON "Install the new Firefox branding icon" off
+		SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
 
@@ -237,11 +236,9 @@ post-install:
 .for i in ${EXTRA_SCRIPTS}
 	${INSTALL_SCRIPT} ${FILESDIR}/${i} ${PREFIX}/bin
 .endfor
-.if defined(WITH_NEW_ICON)
-	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/firefox/default.xpm \
-		${PREFIX}/lib/${FIREFOX}/chrome/icons/default/default.xpm
-.endif # defined(WITH_NEW_ICON)
 	${INSTALL_DATA} ${FIREFOX_ICON_SRC} ${PREFIX}/share/gnome/pixmaps/${FIREFOX_ICON}
 	${INSTALL_DATA} ${WRKDIR}/firefox.desktop ${PREFIX}/share/gnome/applications
+	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/firefox/default.xpm \
+		${PREFIX}/lib/${FIREFOX}/chrome/icons/default/default.xpm
 
 .include <bsd.port.post.mk>
