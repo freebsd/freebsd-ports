@@ -10,8 +10,9 @@ PORTVERSION=	2.2.2
 CATEGORIES=	textproc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
+DIST_SUBDIR=	KDE
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 
 USE_BZIP2=	yes
 
