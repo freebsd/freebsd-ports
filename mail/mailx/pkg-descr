@@ -1,0 +1,17 @@
+Mail command with mailx extensions.
+
+    Mailx command is based on BSD mail command, but it also provides some
+enhanced features such as:
+
+o Edit header information.
+o Use pager program to display long message.
+o Add pipe (|) command.  You can pass the mail message to the shell command by
+  using this feature.
+o Add Save, Copy command.
+o Add askcc, askbcc command.  The mailx program ask you Cc: and Bcc: at the
+  beggining.
+o Add hsubject command.  This is similar to subject command, but it only
+  displays Subject: headers.
+o Add tilda escape command.
+
+See also the files in ${PREFIX}/share/doc/mailx directory.

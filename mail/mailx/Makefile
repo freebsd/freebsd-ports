@@ -1,0 +1,37 @@
+# New ports collection makefile for:    mailx
+# Version required:     5
+# Date created:         18 Febrary 1999
+# Whom:                 Issei Suzuki <issei@jp.FreeBSD.org>
+#
+# $Id$
+#
+
+DISTNAME=	mailx-0.5
+CATEGORIES=	mail
+MASTER_SITES=	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
+		ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/FreeBSD/mailx/
+DISTFILES=	mail-2.2.8.tar.gz mailx-memo-2.2.8R
+
+PATCH_SITES=	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
+		ftp://ftp.noc.titech.ac.jp/pub/tmp/aki/FreeBSD/mailx/
+PATCHFILES=	mailx.v05.patch.gz
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	issei@jp.FreeBSD.ORG
+
+EXTRACT_ONLY=	mail-2.2.8.tar.gz
+WRKSRC=		${WRKDIR}/mail-2.2.8
+USE_PERL5=	yes
+MAN1=		mailx.1
+MANCOMPRESSED=	yes
+
+post-patch:
+	${PERL5} -pi.bak -e 's/^(\.Nm mail)/$$1x/i; s/^(\.Dt MAIL)/$$1X/' ${WRKSRC}/mail.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/mail ${PREFIX}/bin/mailx
+	${INSTALL_MAN} ${WRKSRC}/mail.1.gz ${PREFIX}/man/man1/mailx.1.gz
+	${MKDIR} ${PREFIX}/share/doc/mailx
+	${INSTALL_DATA} ${DISTDIR}/mailx-memo-2.2.8R ${PREFIX}/share/doc/mailx
+
+.include <bsd.port.mk>
