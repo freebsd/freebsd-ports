@@ -1,0 +1,14 @@
+from the Web page:
+
+	SWM was written for small computer systems with very little
+	memory and small screen sizes. It was written to speed up
+	working with laptops or even PDAs. You need a minimum of
+	about 20 kB of diskspace.  It uses even less memory than
+	rxvt.
+
+The swmswitch command crashes, so it is not installed.
+
+WWW:  http://www.informatik.hu-berlin.de/~sperling/prog/swm.html
+
+Trevor Johnson
+trevor@FreeBSD.org

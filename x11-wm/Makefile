@@ -41,6 +41,7 @@
     SUBDIR += sawfish
     SUBDIR += scwm
     SUBDIR += spager
+    SUBDIR += swm
     SUBDIR += toolbox
     SUBDIR += tvtwm
     SUBDIR += ude

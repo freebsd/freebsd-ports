@@ -1,0 +1,27 @@
+--- Makefile.orig	Thu Dec 14 01:53:57 2000
++++ Makefile	Sat Dec 16 20:13:38 2000
+@@ -4,14 +4,13 @@
+ #MODCC 		= /skiff/local/bin/arm-linux-gcc
+ #LDPOSTLIB	= -L/skiff/local/arm-linux/lib
+ #LDPOSTLIBS 	= -L/skiff/local/arm-linux/lib
+-CC			= gcc
++CC			?= gcc
+ 
+ # Only for testing & devellopment
+ # CFLAGS   = -O0 -Wall -g3 -p -H 
+ # DEFINES  = -DMAXIMIZE -DSHADE -DDRAWTITLE -DSTD_IO -DKEYS -DDEBUG 
+ 
+ # for modern system, but little amount of memory
+-CFLAGS   = -O3 -march=pentium -Wall -shared 
+ DEFINES  = -DSHADE -DDRAWTITLE -DSTD_IO -DKEYS -DMAXIMIZE 
+ 
+ # for very small computers...
+@@ -24,7 +23,7 @@
+ #LDPATH	 = -L$(XROOT)/lib -L/skiff/local/arm-linux/lib -L/skiff/local/lib/gcc-lib/arm-linux/2.95.2
+ #INCLPATH = -I$(XROOT)/include -I/skiff/local/include -I/usr/include 
+ 
+-XROOT    = /usr/X11R6
++XROOT    = ${X11BASE}
+ INCLPATH = -I$(XROOT)/include
+ LDPATH   = -L$(XROOT)/lib
+ LIBS     = -lXext -lX11  
