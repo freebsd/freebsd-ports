@@ -13,4 +13,4 @@ sbin/tcpkill
 sbin/tcpnice
 sbin/urlsnarf
 sbin/webmitm
-sbin/webspy
+%%X11%%sbin/webspy
