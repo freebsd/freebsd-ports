@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	iiimf-gtk
-PORTVERSION=	${IIIMF_VER:S/_/./:C/-.*//}
-PORTREVISION=	2
+PORTNAME=	gtk
+PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.openi18n.org/download/docs/im-sdk/
+MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
+PKGNAMEPREFIX=	iiimf-
 DISTNAME=	im-sdk
-DISTFILES=	${DISTNAME}.${IIIMF_VER:S/-/./}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-src-${IIIMF_VER}.tgz
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Internet/Intranet Input Method Gtk Client Framework
@@ -22,21 +22,24 @@ LIB_DEPENDS=	iiimp.0:${PORTSDIR}/textproc/iiimf-protocol-lib \
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 
-IIIMF_VER=	r11_4-1467
+IIIMF_VER=	r12_0_1-svn1891
 WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}/iiimgcf
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+USE_AUTOCONF_VER=	259
+USE_AUTOHEADER_VER=	259
+USE_AUTOMAKE_VER=	19
+USE_LIBTOOL_VER=	15
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-lpthread,-pthread,g" \
-		-e "s,-D_POSIX_C_SOURCE=199506L,,g" \
-		-e "s,has_xiccallback=no,has_xiccallback=yes,g" \
-		-e "s,/usr/lib/im,${LOCALBASE}/lib/im,g" \
-		-e "s,-I\$$(IM_INCLUDEDIR),-I${LOCALBASE}/include/iiimf,g" \
-		${WRKSRC}/configure
+	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
+		${WRKSRC}/../acfiles/im_common.m4 \
+		${WRKSRC}/configure.ac \
+		${WRKSRC}/imaux.c
+
+pre-configure:
+	cd ${WRKSRC} && glib-gettextize --force --copy
+	cd ${WRKSRC} && intltoolize --copy --force --automake
+	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ../acfiles
+	${TOUCH} ${WRKSRC}/config.h.in
 
 .include <bsd.port.mk>
