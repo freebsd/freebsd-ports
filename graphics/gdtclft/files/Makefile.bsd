@@ -1,8 +1,6 @@
 PACKAGE		= Gdtclft
 VERSION		= 2.2
-LIB		= ${PACKAGE}2
-SHLIB_MAJOR	= 2
-SHLIB_MINOR	= 1
+SHLIB_NAME	= lib${PACKAGE}2.so.2
 
 SRCS		= gdhandle.c gdCmd.c
 
@@ -25,9 +23,7 @@ CFLAGS		+=-I${PREFIX}/include/tcl${TCL_VER} -I${PREFIX}/include/gd
 CFLAGS		+=-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -I${PREFIX}/include
 CFLAGS		+=-DVERSION=\"${VERSION}\"
 
-INTERNALLIB	= don't build the useless static version
-
-all: ${SHLIB_NAME} pkgIndex.tcl
+all: pkgIndex.tcl
 
 pkgIndex.tcl:
 	echo 'package ifneeded $(PACKAGE) $(VERSION) [list load [file join $$dir $(SHLIB_NAME)] $(PACKAGE)]' > pkgIndex.tcl
