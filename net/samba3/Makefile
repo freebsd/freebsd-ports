@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0a19
+PORTVERSION=	3.0a20
 CATEGORIES=	net
 MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	alpha old
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/a/-alpha/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/a/alpha/}
 
 MAINTAINER=	dwcjr@FreeBSD.org
+
+USE_BZIP2="YES"
 
 .if !defined(WITHOUT_CUPS)
 WITH_CUPS=	yes
