@@ -7212,6 +7212,7 @@ savecore	src/sbin/savecore
 sawfish		ports/x11-wm/sawfish
 saxon		ports/textproc/saxon
 sbagen		ports/audio/sbagen
+sbcl		ports/lang/sbcl
 sbin		src/sbin
 sbin_atm	src/sbin/atm
 sbin_i386	src/sbin/i386
