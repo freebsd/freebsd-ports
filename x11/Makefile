@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.254 1999/03/19 22:30:35 asami Exp $
+# $Id: Makefile,v 1.255 1999/04/03 01:45:18 steve Exp $
 #
 
     SUBDIR += 9term
@@ -70,6 +70,7 @@
     SUBDIR += tkgoodstuff
     SUBDIR += tycoon
     SUBDIR += wdm
+    SUBDIR += wmbutton
     SUBDIR += wterm
     SUBDIR += x3270
     SUBDIR += xaniroc
