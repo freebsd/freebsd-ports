@@ -25,7 +25,7 @@ USE_AUTOCONF=   yes
 USE_REINPLACE=	yes
 
 ZSH_VER=	4.1.0
-ZSH_DEV_REV=	5
+ZSH_DEV_REV=	7
 ZSHFUNC_SUBDIR=	share/zsh/${ZSH_VER}-dev-${ZSH_DEV_REV}/functions
 NO_LATEST_LINK=	yes
 
