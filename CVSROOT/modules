@@ -3142,6 +3142,7 @@ ja-tkstep80	ports/japanese/tkstep80
 ja-today	ports/japanese/today
 ja-truetypefonts	ports/japanese/truetypefonts
 ja-typist	ports/japanese/typist
+ja-uim		ports/japanese/uim
 ja-vera-fpw	ports/japanese/vera-fpw
 ja-vflib	ports/japanese/vflib
 ja-vftool	ports/japanese/vftool
