@@ -188,6 +188,7 @@
     SUBDIR += pth
     SUBDIR += pth-devel
     SUBDIR += py-kjbuckets
+    SUBDIR += py-kqueue
     SUBDIR += py-mxDateTime
     SUBDIR += py-mxStack
     SUBDIR += py-mxTools
