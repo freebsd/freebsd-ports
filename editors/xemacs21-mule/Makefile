@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.7 1998/09/17 00:50:44 asami Exp $
+# $Id: Makefile,v 1.8 1998/09/21 02:00:37 steve Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -66,7 +66,7 @@ SITE_LIBRARIES=		${X11BASE}/lib
 SITE_INCLUDES+=		${PREFIX}/include
 SITE_LIBRARIES+=	${PREFIX}/lib
 .if defined(CANNA)
-LIB_INPUT_METHOD+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+LIB_INPUT_METHOD+=	canna.1:${PORTSDIR}/japanese/Canna
 WITH_INPUT_METHOD+=	--with-canna
 .endif
 .if defined(WNN4)

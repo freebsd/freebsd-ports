@@ -3,7 +3,7 @@
 # Date created:		19 Dec 1997
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/27 12:49:25 kuriyama Exp $
 #
 
 DISTNAME=	kinput2-v2-fix4
@@ -30,7 +30,7 @@ WNN4=			yes
 # LIB_DEPENDS, etc.
 .if defined(CANNA)
 INPUT_METHOD+=		canna
-LIB_INPUT_METHOD+=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+LIB_INPUT_METHOD+=	canna.1:${PORTSDIR}/japanese/Canna
 KINPUT2_DEF+=		-DUseCanna
 .endif
 .if defined(SJ3)

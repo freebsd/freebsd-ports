@@ -3,7 +3,7 @@
 # Date created:		6 Mar 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.7 1998/02/09 06:56:40 fenner Exp $
+# $Id: Makefile,v 1.8 1998/02/17 13:11:49 itojun Exp $
 #
 
 DISTNAME=	nvi-1.79
@@ -17,7 +17,7 @@ PATCHFILES=	nvi-1.79.m17n-970820-1600.diff.gz
 
 MAINTAINER=	itojun@itojun.org
 
-#LIB_DEPENDS=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
+#LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 GNU_CONFIGURE=	yes
