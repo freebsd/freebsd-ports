@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GSVER=6.52
+GSVER=6.53
 GSDIR=${PKG_PREFIX}/share/ghostscript
 FONTMAP=${GSDIR}/${GSVER}/lib/Fontmap.GS
 

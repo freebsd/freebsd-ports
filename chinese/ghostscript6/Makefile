@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ghostscript
-PORTVERSION=	6.52
+PORTVERSION=	6.53
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/CID/CMap/ \
 		ftp://freebsd.sinica.edu.tw/pub/keith/GS6TTF/ \
