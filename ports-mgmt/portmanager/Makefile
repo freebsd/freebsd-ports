@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	portmanager
-PORTVERSION=	0.2.6
-PORTREVISION=	6
+PORTVERSION=	0.2.7
+PORTREVISION=	0
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
@@ -34,14 +34,6 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
-#CONFIGURE_ARGS=
-#
-#  WITH_DEBUG disbled in 0.2.6, intend to reinstate it
-#  in 0.2.7
-#.if defined(WITH_DEBUG)
-#CONFIGURE_ARGS= 	--with-debug=yes
-#.endif
-
 #
 # if --with-bin=something then withvar=${PREFIX} + something
 # else defaults to withvar=${PREFIX} + /bin
@@ -56,6 +48,10 @@ CONFIGURE_ARGS=		--with-prefix=${PREFIX} 		\
 			--with-portsdir=${PORTSDIR}		\
 			--with-sharedir=/share/portmanager	\
 			--with-tempdir=/tmp
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--with-debug=yes
+.endif
 
 INSTALLS_SHLIB=		yes
 USE_REINPLACE=		yes
@@ -72,6 +68,10 @@ post-install:
 	@${ECHO}	"* portmanager                                                         *"
 	@${ECHO}	"***********************************************************************"
 	@${ECHO}	"*                                                                     *"
+.if !defined(WITH_DEBUG)
+	@${ECHO}	"* WITH_DEBUG=yes enables debug support and all compile warninings     *"
+	@${ECHO}	"*                                                                     *"
+.endif
 	@${ECHO}	"* upgrade ports example:                                              *"
 	@${ECHO}	"*                                                                     *"
 	@${ECHO}	"* portmanager -u -ip editors/nedit editors/openoffice                 *"
@@ -82,10 +82,10 @@ post-install:
 	@${ECHO}	"*                                                                     *"
 	@${ECHO}	"* portmanager -slid will let you safely remove leaf ports             *"
 	@${ECHO}	"*                                                                     *"
-	@${ECHO}	"* see man portmanager(1) for more information                         *"
+	@${ECHO}	"* see man portmanager(1) or http://portmanager.sunsite.dk             *"
 	@${ECHO}	"*                                                                     *"
 	@${ECHO}	"***********************************************************************"
 	@${ECHO}	"* all feedback is welcome, send to:                                   *"
-	@${ECHO}	"* Michael C. Shultz reso3w83@verizon.net                              *"
+	@${ECHO}	"* Michael C. Shultz ringworm01@gmail.com                              *"
 	@${ECHO}	"***********************************************************************"
 .include <bsd.port.mk>
