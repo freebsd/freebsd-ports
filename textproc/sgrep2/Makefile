@@ -3,14 +3,14 @@
 # Date created:    			Apr 29 1998
 # Whom: 				<koshy@india.hp.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/29 10:55:39 tg Exp $
 #
 
 DISTNAME=	sgrep-0.99
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/
 
-MAINTAINER=	koshy@india.hp.com
+MAINTAINER=	jkoshy@freebsd.org
 
 MAN1=		sgrep.1
 
