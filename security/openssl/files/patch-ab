@@ -1,22 +1,18 @@
-
-$FreeBSD$
-
---- Makefile.org.orig	Thu Mar 16 21:46:20 2000
-+++ Makefile.org	Sun Apr 22 19:50:06 2001
-@@ -165,7 +165,7 @@
+--- Makefile.org.orig	Thu Apr  5 13:08:02 2001
++++ Makefile.org	Mon Apr 23 01:08:26 2001
+@@ -178,7 +178,7 @@
  ONEDIRS=out tmp
  EDIRS=  times doc bugs util include certs ms shlib mt demos perl sf dep VMS
  WDIRS=  windows
--LIBS=   libcrypto.a libssl.a 
+-LIBS=   libcrypto.a libssl.a
 +LIBS=   libcrypto.a libssl.a libRSAglue.a
+ SHARED_CRYPTO=libcrypto$(SHLIB_EXT)
+ SHARED_SSL=libssl$(SHLIB_EXT)
+ SHARED_LIBS=
+@@ -250,6 +250,21 @@
+ 	done
  
- GENERAL=        Makefile
- BASENAME=       openssl
-@@ -189,6 +189,21 @@
- 	do \
- 	(cd $$i && echo "making all in $$i..." && \
- 	$(MAKE) CC='${CC}' PLATFORM='${PLATFORM}' CFLAG='${CFLAG}' SDIRS='$(SDIRS)' INSTALLTOP='${INSTALLTOP}' PEX_LIBS='${PEX_LIBS}' EX_LIBS='${EX_LIBS}' BN_ASM='${BN_ASM}' DES_ENC='${DES_ENC}' BF_ENC='${BF_ENC}' CAST_ENC='${CAST_ENC}' RC4_ENC='${RC4_ENC}' RC5_ENC='${RC5_ENC}' SHA1_ASM_OBJ='${SHA1_ASM_OBJ}' MD5_ASM_OBJ='${MD5_ASM_OBJ}' RMD160_ASM_OBJ='${RMD160_ASM_OBJ}' AR='${AR}' PROCESSOR='${PROCESSOR}' PERL='${PERL}' RANLIB='${RANLIB}' all ) || exit 1; \
-+	done;
+ build-shared: clean-shared do_$(SHLIB_TARGET) link-shared
 +
 +freebsd-shared:
 +	for i in ${SHLIBDIRS}; do \
@@ -31,6 +27,7 @@ $FreeBSD$
 +	@set -x; \
 +	for i in ${SHLIBDIRS}; do \
 +	ln -s lib$$i.so.${SHLIBVER} lib$$i.so; \
- 	done;
++	done;
  
- linux-shared:
+ do_bsd-gcc-shared: do_gnu-shared
+ do_linux-shared: do_gnu-shared
