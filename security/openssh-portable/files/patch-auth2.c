@@ -1,14 +1,14 @@
---- auth2.c.orig	Fri Jun 21 08:21:11 2002
-+++ auth2.c	Fri Jun 28 06:57:56 2002
+--- auth2.c.orig	Tue Sep  2 23:32:46 2003
++++ auth2.c	Tue Sep 16 20:05:44 2003
 @@ -35,6 +35,7 @@
  #include "dispatch.h"
  #include "pathnames.h"
  #include "monitor_wrap.h"
 +#include "canohost.h"
  
- /* import */
- extern ServerOptions options;
-@@ -137,6 +138,15 @@
+ #ifdef GSSAPI
+ #include "ssh-gss.h"
+@@ -143,6 +144,15 @@
  	Authmethod *m = NULL;
  	char *user, *service, *method, *style = NULL;
  	int authenticated = 0;
@@ -18,13 +18,13 @@
 +#if defined(HAVE_LOGIN_CAP) || defined(LOGIN_ACCESS)
 +	const char *from_host, *from_ip;
 +
-+	from_host = get_canonical_hostname(options.verify_reverse_mapping);
++	from_host = get_canonical_hostname(options.use_dns);
 +	from_ip = get_remote_ipaddr();
 +#endif /* HAVE_LOGIN_CAP || LOGIN_ACCESS */
  
  	if (authctxt == NULL)
  		fatal("input_userauth_request: no authctxt");
-@@ -178,6 +188,41 @@
+@@ -187,6 +197,41 @@
  		    "(%s,%s) -> (%s,%s)",
  		    authctxt->user, authctxt->service, user, service);
  	}
@@ -35,12 +35,12 @@
 +		if (lc == NULL)
 +			lc = login_getclassbyname(NULL, authctxt->pw);
 +		if (!auth_hostok(lc, from_host, from_ip)) {
-+			log("Denied connection for %.200s from %.200s [%.200s].",
++			logit("Denied connection for %.200s from %.200s [%.200s].",
 +			    authctxt->pw->pw_name, from_host, from_ip);
 +			packet_disconnect("Sorry, you are not allowed to connect.");
 +		}
 +		if (!auth_timeok(lc, time(NULL))) {
-+			log("LOGIN %.200s REFUSED (TIME) FROM %.200s",
++			logit("LOGIN %.200s REFUSED (TIME) FROM %.200s",
 +			    authctxt->pw->pw_name, from_host);
 +			packet_disconnect("Logins not available right now.");
 +		}
@@ -51,7 +51,7 @@
 +#ifdef LOGIN_ACCESS
 +	if (authctxt->pw != NULL &&
 +	    !login_access(authctxt->pw->pw_name, from_host)) {
-+		log("Denied connection for %.200s from %.200s [%.200s].",
++		logit("Denied connection for %.200s from %.200s [%.200s].",
 +		    authctxt->pw->pw_name, from_host, from_ip);
 +		packet_disconnect("Sorry, you are not allowed to connect.");
 +	}
@@ -65,4 +65,4 @@
 +
  	/* reset state */
  	auth2_challenge_stop(authctxt);
- 	authctxt->postponed = 0;
+ 

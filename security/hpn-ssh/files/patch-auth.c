@@ -1,6 +1,6 @@
---- auth.c.orig	Tue Mar  5 02:42:43 2002
-+++ auth.c	Sun Mar 17 20:53:15 2002
-@@ -193,6 +193,17 @@
+--- auth.c.orig	Tue Sep  2 23:32:46 2003
++++ auth.c	Tue Sep 16 20:05:44 2003
+@@ -259,6 +259,17 @@
  	}
  #endif /* WITH_AIXAUTHENTICATE */
  
@@ -18,8 +18,8 @@
  	/* We found no reason not to let this user try to log on... */
  	return 1;
  }
-@@ -490,7 +480,7 @@
- 	if (pw == NULL || !allowed_user(pw))
+@@ -531,7 +542,7 @@
+ 	if (!allowed_user(pw))
  		return (NULL);
  #ifdef HAVE_LOGIN_CAP
 -	if ((lc = login_getclass(pw->pw_class)) == NULL) {

@@ -1,9 +1,9 @@
---- regress/test-exec.sh.orig	Wed May  1 05:17:35 2002
-+++ regress/test-exec.sh	Tue Apr  1 06:03:11 2003
-@@ -130,6 +130,8 @@
- 	PidFile			$PIDFILE
+--- regress/test-exec.sh.orig	Fri Sep 12 07:32:17 2003
++++ regress/test-exec.sh	Tue Sep 16 19:56:13 2003
+@@ -163,6 +163,8 @@
  	AuthorizedKeysFile	$OBJ/authorized_keys_%u
  	LogLevel		QUIET
+ 	StrictModes		no
 +	PermitRootLogin		yes
 +	UsePrivilegeSeparation	no
  EOF

@@ -1,7 +1,7 @@
---- session.c.orig	Thu Mar 20 19:18:09 2003
-+++ session.c	Wed Sep 17 11:05:26 2003
-@@ -64,6 +64,11 @@
- #define is_winnt       (GetVersion() < 0x80000000)
+--- session.c.orig	Tue Sep 23 10:59:08 2003
++++ session.c	Tue Sep 23 17:29:31 2003
+@@ -62,6 +62,11 @@
+ #include "ssh-gss.h"
  #endif
  
 +#ifdef __FreeBSD__
@@ -12,7 +12,7 @@
  /* func */
  
  Session *session_new(void);
-@@ -471,6 +476,13 @@
+@@ -411,6 +416,13 @@
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
  		/*
@@ -26,7 +26,7 @@
  		 * Create a new session and process group since the 4.4BSD
  		 * setlogin() affects the entire process group.
  		 */
-@@ -576,6 +588,9 @@
+@@ -516,6 +528,9 @@
  {
  	int fdout, ptyfd, ttyfd, ptymaster;
  	pid_t pid;
@@ -36,25 +36,7 @@
  
  	if (s == NULL)
  		fatal("do_exec_pty: no session");
-@@ -583,7 +598,16 @@
- 	ttyfd = s->ttyfd;
- 
- #if defined(USE_PAM)
--	do_pam_session(s->pw->pw_name, s->tty);
-+	/* check if we have a pathname in the ttyname */
-+	shorttty = rindex( s->tty, '/' );
-+	if (shorttty != NULL ) {
-+		/* use only the short filename to check */
-+		shorttty ++;
-+	} else {
-+		/* nothing found, use the whole name found */
-+		shorttty = s->tty;
-+	}
-+	do_pam_session(s->pw->pw_name, shorttty);
- 	do_pam_setcred(1);
- #endif
- 
-@@ -593,6 +617,14 @@
+@@ -535,6 +550,14 @@
  
  		/* Child.  Reinitialize the log because the pid has changed. */
  		log_init(__progname, options.log_level, options.log_facility, log_stderr);
@@ -69,7 +51,7 @@
  		/* Close the master side of the pseudo tty. */
  		close(ptyfd);
  
-@@ -726,6 +758,18 @@
+@@ -676,6 +699,18 @@
  	struct sockaddr_storage from;
  	struct passwd * pw = s->pw;
  	pid_t pid = getpid();
@@ -88,7 +70,7 @@
  
  	/*
  	 * Get IP address of client. If the connection is not a socket, let
-@@ -759,6 +803,72 @@
+@@ -710,6 +745,72 @@
  	}
  #endif
  
@@ -107,7 +89,7 @@
 +		if (tv.tv_sec >= pw->pw_change) {
 +			(void)printf(
 +			    "Sorry -- your password has expired.\n");
-+			log("%s Password expired - forcing change",
++			logit("%s Password expired - forcing change",
 +			    pw->pw_name);
 +			if (newcommand != NULL)
 +				xfree(newcommand);
@@ -124,10 +106,10 @@
 +		if (tv.tv_sec >= pw->pw_expire) {
 +			(void)printf(
 +			    "Sorry -- your account has expired.\n");
-+			log(
++			logit(
 +	   "LOGIN %.200s REFUSED (EXPIRED) FROM %.200s ON TTY %.200s",
 +				pw->pw_name, get_remote_name_or_ip(utmp_len,
-+				options.verify_reverse_mapping), s->tty);
++				options.use_dns), s->tty);
 +			exit(254);
 +		} else if (pw->pw_expire - tv.tv_sec < warntime &&
 +			   !check_quietlogin(s, command))
@@ -150,10 +132,10 @@
 +	}
 +	if (!auth_ttyok(lc, shorttty)) {
 +		(void)printf("Permission denied.\n");
-+		log(
++		logit(
 +	       "LOGIN %.200s REFUSED (TTY) FROM %.200s ON TTY %.200s",
 +		    pw->pw_name, get_remote_name_or_ip(utmp_len,
-+			options.verify_reverse_mapping), s->tty);
++			options.use_dns), s->tty);
 +		exit(254);
 +	}
 +#endif /* HAVE_LOGIN_CAP */
@@ -161,8 +143,8 @@
  	if (check_quietlogin(s, command))
  		return;
  
-@@ -772,7 +882,17 @@
- #endif /* WITH_AIXAUTHENTICATE */
+@@ -726,7 +827,17 @@
+ 	buffer_free(&loginmsg);
  
  #ifndef NO_SSH_LASTLOG
 -	if (options.print_lastlog && s->last_login_time != 0) {
@@ -180,7 +162,7 @@
  		time_string = ctime(&s->last_login_time);
  		if (strchr(time_string, '\n'))
  			*strchr(time_string, '\n') = 0;
-@@ -784,7 +904,30 @@
+@@ -738,7 +849,30 @@
  	}
  #endif /* NO_SSH_LASTLOG */
  
@@ -212,7 +194,7 @@
  }
  
  /*
-@@ -800,9 +943,9 @@
+@@ -754,9 +888,9 @@
  #ifdef HAVE_LOGIN_CAP
  		f = fopen(login_getcapstr(lc, "welcome", "/etc/motd",
  		    "/etc/motd"), "r");
@@ -224,7 +206,7 @@
  		if (f) {
  			while (fgets(buf, sizeof(buf), f))
  				fputs(buf, stdout);
-@@ -829,10 +972,10 @@
+@@ -783,10 +917,10 @@
  #ifdef HAVE_LOGIN_CAP
  	if (login_getcapbool(lc, "hushlogin", 0) || stat(buf, &st) >= 0)
  		return 1;
@@ -237,38 +219,10 @@
  	return 0;
  }
  
-@@ -844,7 +987,7 @@
- child_set_env(char ***envp, u_int *envsizep, const char *name,
- 	const char *value)
- {
--	u_int i, namelen;
-+	u_int i, namelen, envsize;
- 	char **env;
- 
- 	/*
-@@ -862,12 +1005,14 @@
- 		xfree(env[i]);
- 	} else {
- 		/* New variable.  Expand if necessary. */
--		if (i >= (*envsizep) - 1) {
--			if (*envsizep >= 1000)
-+		envsize = *envsizep;
-+		if (i >= envsize - 1) {
-+			if (envsize >= 1000)
- 				fatal("child_set_env: too many env vars,"
- 				    " skipping: %.100s", name);
--			(*envsizep) += 50;
--			env = (*envp) = xrealloc(env, (*envsizep) * sizeof(char *));
-+			envsize += 50;
-+			env = (*envp) = xrealloc(env, envsize * sizeof(char *));
-+			*envsizep = envsize;
- 		}
- 		/* Need to set the NULL pointer at end of array beyond the new slot. */
- 		env[i + 1] = NULL;
-@@ -952,6 +1097,10 @@
+@@ -973,6 +1107,10 @@
  	char buf[256];
  	u_int i, envsize;
- 	char **env, *laddr;
+ 	char **env, *laddr, *path = NULL;
 +#ifdef HAVE_LOGIN_CAP
 +	extern char **environ;
 +	char **senv, **var;
@@ -276,7 +230,7 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -959,6 +1108,9 @@
+@@ -980,6 +1118,9 @@
  	env = xmalloc(envsize * sizeof(char *));
  	env[0] = NULL;
  
@@ -286,7 +240,7 @@
  #ifdef HAVE_CYGWIN
  	/*
  	 * The Windows environment contains some setting which are
-@@ -1003,9 +1155,21 @@
+@@ -1034,9 +1175,21 @@
  
  		/* Normal systems set SHELL by default. */
  		child_set_env(&env, &envsize, "SHELL", shell);
@@ -310,7 +264,7 @@
  
  	/* Set custom environment options from RSA authentication. */
  	if (!options.use_login) {
-@@ -1219,7 +1383,7 @@
+@@ -1245,7 +1398,7 @@
  		setpgid(0, 0);
  # endif
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -319,7 +273,25 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1382,7 +1546,7 @@
+@@ -1275,7 +1428,16 @@
+ 		 * Reestablish them here.
+ 		 */
+ 		if (options.use_pam) {
+-			do_pam_session();
++			/* check if we have a pathname in the ttyname */
++			shorttty = rindex( s->tty, '/' );
++			if (shorttty != NULL ) {
++				/* use only the short filename to check */
++				shorttty ++;
++			} else {
++				/* nothing found, use the whole name found */
++				shorttty = s->tty;
++			}
++			do_pam_session(s->pw->pw_name, shorttty);
+ 			do_pam_setcred(0);
+ 		}
+ # endif /* USE_PAM */
+@@ -1411,7 +1573,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -328,7 +300,7 @@
  		close(i);
  
  	/*
-@@ -1412,6 +1576,31 @@
+@@ -1429,6 +1591,31 @@
  			exit(1);
  #endif
  	}
