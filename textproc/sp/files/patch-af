@@ -1,0 +1,33 @@
+--- Makefile.comm.orig	Sun Dec 28 06:24:24 1997
++++ Makefile.comm	Wed Jun  2 14:55:44 1999
+@@ -3,6 +3,7 @@
+  $(DEFINES)
+ ALL_CFLAGS=$(CFLAGS) $(DEBUG) $(OPTIMIZE) $(INCLUDE) $(DEFINES)
+ MSGGENFLAGS=
++SHFLAGS=-fpic
+ CXXDEPGENFLAGS=-MM
+ AR=ar
+ RANLIB=:
+@@ -13,13 +14,19 @@
+ PROG=
+ PERL=perl
+ 
+-.SUFFIXES: .cxx .c .o .m4 .msg
++.SUFFIXES: .cxx .c .o .so .m4 .msg
+ 
+ .cxx.o:
+-	$(CXX) $(ALL_CXXFLAGS) -c $<
++	$(CXX) $(ALL_CXXFLAGS) -c -o $@ $<
++
++.cxx.so:
++	$(CXX) $(ALL_CXXFLAGS) $(SHFLAGS) -c -o $@ $<
+ 
+ .c.o:
+-	$(CC) $(ALL_CFLAGS) -c $<
++	$(CC) $(ALL_CFLAGS) -c -o $@ $<
++
++.c.so:
++	$(CC) $(ALL_CFLAGS) $(SHFLAGS) -c -o $@ $<
+ 
+ .m4.cxx:
+ 	rm -f $@

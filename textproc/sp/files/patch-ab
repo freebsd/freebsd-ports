@@ -1,0 +1,41 @@
+--- Makefile.orig	Sun Dec 28 06:24:20 1997
++++ Makefile	Wed Jun  2 15:44:11 1999
+@@ -1,13 +1,14 @@
+ # Copyright (c) 1994, 1995 James Clark
+ # See the file COPYING for copying permission.
+ 
+-prefix=/opt/local
++prefix=/usr/local
+ exec_prefix=$(prefix)
+ # Where to install the binaries
+ bindir=$(exec_prefix)/bin
+-INSTALL=cp
++libdir=$(exec_prefix)/lib
++#INSTALL=cp
+ # You might want to change this to uncomment this on BSD systems
+-#INSTALL=install
++INSTALL=install -c
+ 
+ # If you use gcc, then you must have at least version 2.6.1 and
+ # you must use -fno-implicit-templates
+@@ -46,17 +47,17 @@
+ # If you defined SP_HAVE_SOCKET, add any libraries that are needed for sockets
+ # -lsocket -lnsl needed on Solaris 2.x
+ # -lnsl on SunOS 4.1.3
+-XLIBS=#-lsocket -lnsl
++XLIBS=-lgcc
+ # -L/usr/local/lib may be needed on the RS/6000
+ LIBS=$(XLIBS)
+ # If you're building in another directory, copy or link this Makefile
+ # to the build directory, and set srcdir to point to the source directory.
+ srcdir=.
+ AR=ar
+-RANLIB=:
++#RANLIB=:
+ # Uncomment this for SunOS 4.1.3 or FreeBSD
+ # (and probably other BSD flavor systems as well)
+-#RANLIB=ranlib
++RANLIB=ranlib
+ M4=m4
+ # perl is needed if you change or add messages
+ PERL=perl

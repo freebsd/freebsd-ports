@@ -33,7 +33,6 @@ include/sp/EntityManager.h
 include/sp/ErrnoMessageArg.h
 include/sp/ErrorCountEventHandler.h
 include/sp/Event.h
-include/sp/EventGenerator.h
 include/sp/EventsWanted.h
 include/sp/ExtendEntityManager.h
 include/sp/ExternalId.h
@@ -67,11 +66,11 @@ include/sp/Lpd.h
 include/sp/Markup.h
 include/sp/Message.h
 include/sp/MessageArg.h
+include/sp/MessageTable.h
 include/sp/MessageBuilder.h
 include/sp/MessageEventHandler.h
 include/sp/MessageFormatter.h
 include/sp/MessageReporter.h
-include/sp/MessageTable.h
 include/sp/Mode.h
 include/sp/NCVector.h
 include/sp/NCVector.sed
@@ -91,7 +90,6 @@ include/sp/Owner.h
 include/sp/OwnerTable.cxx
 include/sp/OwnerTable.h
 include/sp/ParserApp.h
-include/sp/ParserEventGeneratorKit.h
 include/sp/ParserOptions.h
 include/sp/PointerTable.cxx
 include/sp/PointerTable.h
@@ -102,7 +100,6 @@ include/sp/RangeMap.cxx
 include/sp/RangeMap.h
 include/sp/Resource.h
 include/sp/RewindStorageObject.h
-include/sp/SGMLApplication.h
 include/sp/SJISCodingSystem.h
 include/sp/SOEntityCatalog.h
 include/sp/Sd.h
@@ -129,11 +126,13 @@ include/sp/UnivCharsetDesc.h
 include/sp/Vector.cxx
 include/sp/Vector.h
 include/sp/Win32CodingSystem.h
-include/sp/WinInetStorage.h
 include/sp/WinApp.h
+include/sp/WinInetStorage.h
+include/sp/XMLCodingSystem.h
 include/sp/XcharMap.cxx
 include/sp/XcharMap.h
 include/sp/config.h
+include/sp/config.h.orig
 include/sp/constant.h
 include/sp/macros.h
 include/sp/rtti.h
@@ -141,9 +140,12 @@ include/sp/sptchar.h
 include/sp/types.h
 include/sp/xnew.h
 lib/libsp.a
+lib/libsp.so.1
 @comment lib/libsp.so.1.4
+share/doc/sp/Makefile
 share/doc/sp/archform.htm
 share/doc/sp/build.htm
+share/doc/sp/catalog
 share/doc/sp/catalog.htm
 share/doc/sp/charset.htm
 share/doc/sp/features.htm
@@ -157,8 +159,10 @@ share/doc/sp/sgmlnorm.htm
 share/doc/sp/sgmlsout.htm
 share/doc/sp/spam.htm
 share/doc/sp/spent.htm
+share/doc/sp/sx.htm
 share/doc/sp/sysdecl.htm
 share/doc/sp/sysid.htm
+share/doc/sp/xml.htm
 @comment @exec /sbin/ldconfig -m %D/lib
 @dirrm include/sp
 @dirrm share/doc/sp
