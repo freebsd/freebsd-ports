@@ -1,5 +1,5 @@
-*** src/osdep/unix/Makefile.orig	Thu May 29 00:14:31 1997
---- src/osdep/unix/Makefile	Mon Jun  2 23:13:00 1997
+*** src/osdep/unix/Makefile.orig	Fri Sep  5 03:32:10 1997
+--- src/osdep/unix/Makefile	Mon Sep 29 07:44:29 1997
 ***************
 *** 32,37 ****
 --- 32,38 ----
@@ -68,8 +68,8 @@
   
   bsi:	sigbsd	# BSD/i386
 ***************
-*** 474,485 ****
---- 479,497 ----
+*** 502,513 ****
+--- 507,525 ----
   
   clean:
   	$(RM) *.o linkage.[ch] auths.c $(ARCHIVE) osdep.* CCTYPE CFLAGS LDFLAGS
@@ -90,8 +90,8 @@
   
   dummy.o: mail.h misc.h osdep.h dummy.h
 ***************
-*** 528,533 ****
---- 540,565 ----
+*** 557,562 ****
+--- 569,594 ----
   	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
   	$(EXTRAOSDEFS) -c os_$(OS).c
   	$(MV) os_$(OS).o osdep.o
