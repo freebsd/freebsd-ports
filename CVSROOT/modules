@@ -5330,6 +5330,7 @@ p5-CDB_File-Generator	ports/databases/p5-CDB_File-Generator
 p5-CDDB		ports/audio/p5-CDDB
 p5-CDDB-File	ports/audio/p5-CDDB-File
 p5-CDDB_get	ports/audio/p5-CDDB_get
+p5-CGI-SSI	ports/www/p5-CGI-SSI
 p5-CGI-Application	ports/www/p5-CGI-Application
 p5-CGI-ArgChecker	ports/www/p5-CGI-ArgChecker
 p5-CGI-Cache	ports/www/p5-CGI-Cache
