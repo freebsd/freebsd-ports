@@ -1,4 +1,4 @@
 *shared*
 
 _imaging _imaging.c decode.c encode.c map.c display.c outline.c path.c -IlibImaging libImaging/libImaging.a -I${PREFIX}/include -L${PREFIX}/lib -ljpeg -lz
-_imagingtk _imagingtk.c Tk/tkImaging.c -IlibImaging -I${X11BASE}/include -I${PREFIX}/include/tcl8.3 -I${PREFIX}/include/tk8.3 -L${PREFIX}/lib -ltk83 -ltcl83 -L${X11BASE}/lib -lX11
+_imagingtk _imagingtk.c Tk/tkImaging.c -IlibImaging -I${X11BASE}/include -I${PREFIX}/include/tcl8.4 -I${PREFIX}/include/tk8.4 -L${PREFIX}/lib -ltk84 -ltcl84 -L${X11BASE}/lib -lX11
