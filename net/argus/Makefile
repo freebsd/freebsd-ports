@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	argus
-PORTVERSION=	1.8.1
+PORTVERSION=	2.0.0
 CATEGORIES=	net security
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/argus/current/
+MASTER_SITES=	http://qosient.com/argus/src/ \
+		ftp://qosient.com/pub/argus/src/
 
 MAINTAINER=	se@freebsd.org
 
@@ -17,28 +18,28 @@ LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
 GNU_CONFIGURE=	true
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX} #--without-flex --without-bison
 
-MAN1=	connections.1 ra.1 rasort.1 services.1
-MAN5=	argus.5
+MAN1=	ra.1 racount.1 ragator.1 ramon.1 rasort.1 raxml.1
+MAN5=	argus.5 argus.conf.5 rarc.5
 MAN8=	argus.8
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/argus_bpf ${PREFIX}/bin/argus
-.for i in fullra ra radjacency raconnections racount radnstats raservices rasort
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin
-.endfor
-.for i in connections.1 ra.1 rasort.1 services.1
-	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${PREFIX}/man/man1
-.endfor
-	${INSTALL_MAN} ${WRKSRC}/man/man5/argus.5 ${PREFIX}/man/man5/argus.5
-	${INSTALL_MAN} ${WRKSRC}/man/man8/argus.8 ${PREFIX}/man/man8/argus.8
+pre-install:
 	${INSTALL_DATA} ${WRKSRC}/include/cons_def.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/cons_out.h ${PREFIX}/include
+	${MKDIR} ${PREFIX}/share/examples/argus-2.0
+	${INSTALL_DATA} ${WRKSRC}/support/README ${PREFIX}/share/examples/argus-2.0
+.for i in Archive Config Deployment Startup System Xml
+	${MKDIR} ${PREFIX}/share/examples/argus-2.0/$i
+	${INSTALL_DATA} ${WRKSRC}/support/$i/* ${PREFIX}/share/examples/argus-2.0/$i
+.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/argus
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/argus/README.argus
-.for i in CA-95.01 CA-95.01.scan.sh README configs dailyscan.sh policy.conf policy.test ra.conf services
-	${INSTALL_DATA} ${WRKSRC}/examples/$i ${PREFIX}/share/doc/argus
+	${MKDIR} ${PREFIX}/share/doc/argus-2.0/html/man
+.for i in README LICENSE COPYRIGHT doc/CHANGES doc/FAQ doc/HOW-TO
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/argus-2.0
+.endfor
+.for i in  doc/html/man/*.html
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/argus-2.0/html/man
 .endfor
 .endif
 
