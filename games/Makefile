@@ -50,6 +50,7 @@
     SUBDIR += galaxis
     SUBDIR += garith
     SUBDIR += gemdropx
+    SUBDIR += glasteroids
     SUBDIR += gleyes
     SUBDIR += gltron
     SUBDIR += gma
