@@ -1,25 +1,20 @@
 # New ports collection makefile for:    ecu
-# Version required:     3.34beta
+# Version required:     3.38
 # Date created:         Feb 18, 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1995/05/11 19:32:28 ache Exp $
+# $Id: Makefile,v 1.5 1995/05/13 06:06:49 asami Exp $
 #
 
-DISTNAME=       ecu-3.34beta
-PKGNAME=	ecu-3.34b
+DISTNAME=       ecu-3.38
 CATEGORIES+=	comms
-MASTER_SITES=   ftp://ftp.kiae.su/unix/comm/
-EXTRACT_SUFX=   .cpio.Z
-WRKSRC=         ${WRKDIR}/ecu
+MASTER_SITES=   ftp://tsx-11.mit.edu/pub/linux/sources/usr.bin/Communications/ \
+		ftp://ftp.kiae.su/unix/comm/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-EXTRACT_CMD=    (zcat | cpio -idm)
-EXTRACT_ARGS=   <
-HAS_CONFIGURE=  yes
-CONFIGURE_SCRIPT= Configure
-IS_INTERACTIVE= yes
+do-configure:
+	cd ${WRKSRC}; yes "" | ./Configure
 
 pre-install:
 	cd ${WRKSRC}/doc; \
