@@ -31,9 +31,24 @@ GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
+.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+.include <bsd.port.pre.mk>
+
+pre-everything::
+.if !defined(WITH_OPTIONAL_DEPENDS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You may define WITH_OPTIONAL_DEPENDS (make WITH_OPTIONAL_DEPENDS=YES)"
+	@${ECHO_MSG} "to automatically build the suggested programs to complement kdesdk3."
+	@${ECHO_MSG}
+.endif
+
+# calltree is optional. It depends on valgrind, which is i386 only.
+.if defined(WITH_OPTIONAL_DEPENDS) && ${ARCH} == "i386"
+RUN_DEPENDS+=	calltree:${PORTSDIR}/devel/calltree
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-I$$ac_db_includes|-I${LOCALBASE}/include/db4|g' \
 			-e 's|ac_db_name="db"|ac_db_name="db4"|g' ${WRKSRC}/configure
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
