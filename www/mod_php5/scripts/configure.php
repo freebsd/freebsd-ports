@@ -166,6 +166,7 @@ while [ "$1" ]; do
 		\"MySQL\")
 			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
 			echo "CONFIGURE_ARGS+=--with-mysql=\${LOCALBASE}"
+			MYSQL=1
 			;;
 		\"PostgreSQL\")
 			echo "POSTGRESQL_PORT?=	databases/postgresql7"
@@ -362,4 +363,8 @@ done
 
 if [ "${LIBS}" ]; then
 	echo "CONFIGURE_ENV+=	LIBS='${LIBS}'"
+fi
+
+if [ -z "${MYSQL}" ]; then
+	echo "WITHOUT_MYSQL=	1"
 fi
