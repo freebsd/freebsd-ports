@@ -378,6 +378,7 @@
     SUBDIR += p5-PV
     SUBDIR += p5-Params-Validate
     SUBDIR += p5-Parse-RecDescent
+    SUBDIR += p5-Parse-Yapp
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
     SUBDIR += p5-PerlMenu

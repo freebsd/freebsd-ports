@@ -1,0 +1,6 @@
+Parse::Yapp lets you create Perl OO fully reentrant LALR(1) parser modules
+and has been designed to be functionally as close as possible to yacc,
+but using the full power of Perl and opened for enhancements.
+
+- Michael Lyngbol
+lyngbol@wheel.dk

@@ -1,0 +1,13 @@
+bin/yapp
+lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Options.pm
+lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Driver.pm
+lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Grammar.pm
+lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Output.pm
+lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Lalr.pm
+lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp/Parse.pm
+lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/Yapp/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse/Yapp
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parse 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Parse/Yapp 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Parse 2>/dev/null || true
