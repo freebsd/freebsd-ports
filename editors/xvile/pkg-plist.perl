@@ -102,6 +102,7 @@ share/xvile/vile/shifts.rc
 share/xvile/vile/vileinit.rc
 share/xvile/vile/vileperl.rc
 share/xvile/vile/vile.hlp
+share/xvile/vile/which.rc
 share/xvile/vile/basic.keywords
 share/xvile/vile/c.keywords
 share/xvile/vile/cpp.keywords
@@ -164,6 +165,7 @@ share/xvile/macros/shifts.rc
 share/xvile/macros/vileinit.rc
 share/xvile/macros/vilemenu.rc
 share/xvile/macros/vileperl.rc
+share/xvile/macros/which.rc
 share/xvile/macros/vile-pager
 share/xvile/vile/yacc.keywords
 @dirrm share/xvile/vile/perl/Vile
