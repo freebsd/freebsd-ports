@@ -32,6 +32,12 @@ CONFIGURE_ARGS=	--with-x=no --sharedstatedir=/var/run
 STRIP=
 MAN1=		emacs.1 etags.1 ctags.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on !i386 5.x"
+.endif
+
 post-install:
 .for file in emacs-19.34 emacsclient etags ctags b2m
 	${STRIP_CMD} ${PREFIX}/bin/${file}
@@ -44,4 +50,4 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${FILESDIR}/emacs.sh ${PREFIX}/etc/rc.d
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
