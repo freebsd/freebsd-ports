@@ -8,14 +8,19 @@
 
 PORTNAME=	pvr250
 PORTVERSION=	200408
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
-DISTFILES=	cxm-200408.shar hcwPVRP2.sys
+DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
 
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Hauppauge PVR-250/260 TV cards driver for the cxm device
 
+PVRTOOLS=	pvr250-1
+CXMSHAR=	cxm-200408.shar
+
 WRKSRC=		${WRKDIR}
+USE_REINPLACE=	yes
 
 RESTRICTED_FILES=	hcwPVRP2.sys
 RESTRICTED=	"This port uses a binary driver which is owned by Hauppauge"
@@ -28,6 +33,8 @@ OPTIONS=	USBROADCAST	"US Broadcast"	Off \
 		BGAUSTRALIA	"B/G Australia" Off \
 		IBROADCAST	"I Broadcast" Off \
 		LBROADCAST	"L Broadcast" Off
+
+MAN4=		cxm.4
 
 pre-everything::
 	@${ECHO_CMD} "Some tuners (for example the Philips FQ1216M) supports multiple standards."
@@ -57,13 +64,14 @@ EXTRA_PATCHES=	${FILESDIR}/patchtuner-lbroadcast
 .endif
 
 .if ${OSVERSION} < 500000
-PREFIX=		/modules
+MODULESDIR=	/modules
 .else
-PREFIX=		/boot/kernel
+MODULESDIR=	/boot/kernel
 .endif
+PLIST_SUB=	MODULESDIR=${MODULESDIR}
 
 .if !exists(${DISTDIR}/hcwPVRP2.sys)
-BROKEN=		You need the file hcwPVRP2.sys from the CD coming with the PVR-250/350 card. Please place this file in ${DISTDIR} and run make again.
+IGNORE=		You need the file hcwPVRP2.sys from the CD coming with the PVR-250/350 card. Please place this file in ${DISTDIR} and run make again.
 .endif
 
 .if !exists(/usr/src/sys/dev/iicbus/iicbb.c)
@@ -90,7 +98,15 @@ patch-iicbb:
 do-extract:
 	${MKDIR} ${WRKDIR}
 	cd ${WRKDIR}; \
-	${SH} ${DISTDIR}/cxm-200408.shar
+	${SH} ${DISTDIR}/${CXMSHAR}; \
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${PVRTOOLS}.tar.gz ${EXTRACT_AFTER_ARGS};
+
+post-patch:
+.if ${OSVERSION} > 500000
+	${REINPLACE_CMD} -e 's/bktr0/cxm0/' \
+		${WRKDIR}/${PVRTOOLS}/setchannel.c \
+		${WRKDIR}/${PVRTOOLS}/setsize.c
+.endif
 
 do-configure:
 	cd ${WRKDIR}/dev/cxm; \
@@ -98,12 +114,15 @@ do-configure:
 	./cxm_extract_fw ${DISTDIR}/hcwPVRP2.sys
 
 do-build:
-	cd ${WRKDIR}/modules/cxm; \
-	${MAKE}
+	cd ${WRKDIR}/modules/cxm; ${MAKE}
+	cd ${WRKDIR}/${PVRTOOLS}; ${MAKE}
 
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/modules/cxm/cxm/cxm.ko ${PREFIX}
-	${INSTALL_DATA} ${WRKDIR}/modules/cxm/cxm_iic/cxm_iic.ko ${PREFIX}
+	${INSTALL_DATA} ${WRKDIR}/modules/cxm/cxm/cxm.ko ${MODULESDIR}
+	${INSTALL_DATA} ${WRKDIR}/modules/cxm/cxm_iic/cxm_iic.ko ${MODULESDIR}
+	${INSTALL_MAN} ${WRKDIR}/${PVRTOOLS}/cxm.4 ${PREFIX}/man/man4/cxm.4
+	${INSTALL_PROGRAM} ${WRKDIR}/${PVRTOOLS}/setchannel ${PREFIX}/bin/pvr250-setchannel
+	${INSTALL_PROGRAM} ${WRKDIR}/${PVRTOOLS}/setsize ${PREFIX}/bin/pvr250-setsize
 .if ${OSVERSION} < 500000
 	cd /dev; \
 	./MAKEDEV bktr0
