@@ -3,12 +3,13 @@
 # Date created:		May 3 1999
 # Whom:			Chris Piazza <cpiazza@home.net>
 #
-# $Id: Makefile,v 1.2 1999/05/09 17:35:48 steve Exp $
+# $Id: Makefile,v 1.3 1999/05/10 04:08:20 steve Exp $
 #
 
 DISTNAME=	bbdate-0.2.1
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
+MASTER_SITES=	http://bbtools.windsofstorm.net/sources/ \
+		ftp://stokes.tte.ele.tue.nl/pub/
 
 MAINTAINER=	cpiazza@home.net
 
