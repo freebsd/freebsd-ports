@@ -79,11 +79,11 @@ share/Eterm/themes/trans/pixmaps.list
 share/Eterm/themes/trans/scaled-pixmaps.list
 share/Eterm/themes/trans/theme.cfg
 share/Eterm/themes/trans/tiled-pixmaps.list
-share/doc/Eterm/Eterm.1.html
-share/doc/Eterm/Eterm_reference.html
-share/doc/Eterm/Eterm.tcap
-share/doc/Eterm/Eterm.ti
-share/doc/Eterm/ReleaseNotes
+%%PORTDOCS%%share/doc/Eterm/Eterm.1.html
+%%PORTDOCS%%share/doc/Eterm/Eterm_reference.html
+%%PORTDOCS%%share/doc/Eterm/Eterm.tcap
+%%PORTDOCS%%share/doc/Eterm/Eterm.ti
+%%PORTDOCS%%share/doc/Eterm/ReleaseNotes
 @dirrm share/Eterm/themes/trans
 @dirrm share/Eterm/themes/mutt
 @dirrm share/Eterm/themes/irc
@@ -95,4 +95,4 @@ share/doc/Eterm/ReleaseNotes
 @dirrm share/Eterm/themes
 @dirrm share/Eterm/pix
 @dirrm share/Eterm
-@dirrm share/doc/Eterm
+%%PORTDOCS%%@dirrm share/doc/Eterm
