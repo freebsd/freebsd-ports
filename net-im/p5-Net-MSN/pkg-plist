@@ -1,0 +1,11 @@
+%%SITE_PERL%%/Net/MSN/Base.pm
+%%SITE_PERL%%/Net/MSN/Debug.pm
+%%SITE_PERL%%/Net/MSN/PassPort.pm
+%%SITE_PERL%%/Net/MSN/SB.pm
+%%SITE_PERL%%/Net/MSN.pm
+%%SITE_PERL%%/Net/client.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MSN/.packlist
+@dirrm %%SITE_PERL%%/Net/MSN
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MSN
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MSN 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net/MSN 2>/dev/null || true

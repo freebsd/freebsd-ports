@@ -445,6 +445,7 @@
     SUBDIR += p5-Net-ICQ2000
     SUBDIR += p5-Net-Ident
     SUBDIR += p5-Net-Jabber
+    SUBDIR += p5-Net-MSN
     SUBDIR += p5-Net-MovableType
     SUBDIR += p5-Net-ParseWhois
     SUBDIR += p5-Net-Patricia
