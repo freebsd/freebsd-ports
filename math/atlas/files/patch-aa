@@ -1,6 +1,13 @@
---- config.c.orig	Mon Jun 17 10:37:24 2002
-+++ config.c	Fri Jun 21 09:23:31 2002
-@@ -2055,6 +2055,7 @@
+--- config.c.orig	Mon Jun 17 09:37:24 2002
++++ config.c	Mon Jul 15 18:39:46 2002
+@@ -2049,12 +2049,14 @@
+          if (!CmndOneLine(targ, "sysctl hw.model", ln))
+          {
+             if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
++            else if (strstr(ln, "Pentium 4")) mach = IntP4;
+             else if (strstr(ln, "Pentium III")) mach = IntPIII;
+             else if (strstr(ln, "Pentium II ")) mach = IntPII;
+             else if (strstr(ln, "Athlon")) mach = AmdAthlon;
              else if (strstr(ln, "AMD-K7")) mach = AmdAthlon;
              else if (strstr(ln, "Pentium/P55C")) mach = IntP5MMX; /* sent by */
              else if (strstr(ln, "Pentium")) mach=IntP5;       /* Nakata Maho */
@@ -8,7 +15,7 @@
           }
           break;
        default:;
-@@ -3024,6 +3025,9 @@
+@@ -3024,6 +3026,9 @@
     }
     if (USEWINF77) strcpy(F77, "$(BINdir)/winf77.exe");
  
