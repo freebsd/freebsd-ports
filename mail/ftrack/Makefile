@@ -8,7 +8,7 @@
 PORTNAME=	ftrack
 PORTVERSION=	3.01
 CATEGORIES=	mail
-MASTER_SITES=	http://ufm.kgb.ru/FTrack/ftpdir/3.01/
+MASTER_SITES=	http://gonza.nm.ru/ports/
 DISTNAME=	ftr${PORTVERSION:S/.//g}s
 
 MAINTAINER=	gonza@techline.ru
