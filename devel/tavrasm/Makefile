@@ -14,6 +14,7 @@ DISTFILES=	${PORTNAME}${EXTRACT_SUFX}:0
 MAINTAINER=	wes@FreeBSD.org
 COMMENT=	Tom's AVR Assembler
 
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
 WRKSRC=		${WRKDIR}/tavrasm.119
