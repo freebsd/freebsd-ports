@@ -1,0 +1,37 @@
+--- include/make/sys/FreeBSD-3.x_g++.orig	Tue Aug 31 20:36:33 1999
++++ include/make/sys/FreeBSD-3.x_g++	Tue May 30 21:08:07 2000
+@@ -6,11 +6,11 @@
+ 
+ # This tells us where to find the X libraries.
+ 
+-J_X11_LIB_DIR := -L/usr/X11R6/lib
++J_X11_LIB_DIR := -LX11PREFIX/lib
+ 
+ # Uncomment this and change it if your X11 headers are not in /usr/include/X11.
+ 
+-J_X11_INCLUDE_DIR := -I/usr/X11R6/include
++J_X11_INCLUDE_DIR := -IX11PREFIX/include
+ 
+ # Uncomment this if you want to compile libXpm into libjx
+ 
+@@ -88,15 +88,15 @@
+ 
+ # makemake variables
+ 
+-LINKER := g++
++LINKER := ${CXX}
+ 
+ # make variables
+ 
+-CC       := gcc
+-CXX      := g++
++CC       := ${CC}
++CXX      := ${CXX}
+ CPPFLAGS  = ${DEPENDFLAGS}
+-CFLAGS    = ${J_MAKE_NEEDS_OUTPUT_ARG}
+-CXXFLAGS  = ${J_MAKE_NEEDS_OUTPUT_ARG}
++CFLAGS    = ${J_MAKE_NEEDS_OUTPUT_ARG} ${PORTCFLAGS}
++CXXFLAGS  = ${J_MAKE_NEEDS_OUTPUT_ARG} ${PORTCXXFLAGS}
+ 
+ # libraries to link
+ 

@@ -1,0 +1,11 @@
+--- programs/makemake/Make.header.orig	Tue Sep 21 16:33:40 1999
++++ programs/makemake/Make.header	Tue May 30 11:07:18 2000
+@@ -95,7 +95,7 @@
+ #
+ 
+ .PHONY : jxinstall
+-jxinstall: makemake
++jxinstall_not: makemake
+ 	@strip makemake
+ 	@mv makemake ${JX_INSTALL_ROOT}/
+ 	@chmod a+x ${SCRIPT_FILES}

@@ -1,0 +1,13 @@
+--- Makefile	Sat Sep 11 16:44:38 1999
++++ Makefile.new	Wed Jun  7 12:39:22 2000
+@@ -492,9 +492,7 @@
+ 
+ CHECK_ACE := lib/util/ace/j_has_ace
+ 
+-CC := ${shell if { which gcc > /dev/null; } \
+-              then { echo gcc; } \
+-              else { echo ${CC}; } fi }
++CC := ${CC}
+ 
+ .PHONY : fix_ace
+ fix_ace:
