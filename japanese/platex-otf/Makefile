@@ -14,6 +14,8 @@ EXTRACT_ONLY=	otfstable${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A pLaTeX package for OpenType font support
 
+BROKEN=		Unfetchable
+
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
 		mktexlsr:${PORTSDIR}/japanese/ptex-tetex \
 		ovp2ovf-old:${PORTSDIR}/print/tex-omegaware-old \
