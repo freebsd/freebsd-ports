@@ -19,6 +19,7 @@ BUILD_DEPENDS=	qcad:${PORTSDIR}/cad/qcad
 WRKSRC=		${WRKDIR}/partlibrary-${PORTVERSION:S/.1$/-1/}
 DATADIR=	${PREFIX}/share/qcad/libraries
 
+USE_X_PREFIX=	yes
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
