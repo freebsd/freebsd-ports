@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/nap
 NO_BUILD=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nap ${PREFIX}/bin/nap
+	${INSTALL} -c -o root -g wheel -m 555 ${WRKSRC}/nap ${PREFIX}/bin/nap
 	${MKDIR} ${PREFIX}/share/nap
 	${INSTALL_DATA} ${WRKSRC}/nap.conf ${PREFIX}/share/nap
 .if (!defined(NOPORTDOCS))
