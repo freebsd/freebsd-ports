@@ -1,8 +1,6 @@
 bin/gtop
 share/gnome/apps/System/gtop.desktop
 share/gnome/gtoprc
-share/gnome/help/gtop/C/credits.html
-share/gnome/help/gtop/C/errata.html
 share/gnome/help/gtop/C/figs/gtop-fs-1.png
 share/gnome/help/gtop/C/figs/gtop-fs-2.png
 share/gnome/help/gtop/C/figs/gtop-mem.png
@@ -12,13 +10,6 @@ share/gnome/help/gtop/C/figs/gtop-pic-middle.png
 share/gnome/help/gtop/C/figs/gtop-pic-top.png
 share/gnome/help/gtop/C/figs/gtop-prefs.png
 share/gnome/help/gtop/C/figs/gtop-proc.png
-share/gnome/help/gtop/C/filesystems.html
-share/gnome/help/gtop/C/gtop.html
-share/gnome/help/gtop/C/index.html
-share/gnome/help/gtop/C/memory.html
-share/gnome/help/gtop/C/more-info.html
-share/gnome/help/gtop/C/preferences.html
-share/gnome/help/gtop/C/processes.html
 share/gnome/help/gtop/C/topic.dat
 share/gnome/pixmaps/gnome-gtop.png
 share/locale/ca/LC_MESSAGES/gtop.mo
@@ -39,6 +30,7 @@ share/locale/no/LC_MESSAGES/gtop.mo
 share/locale/pl/LC_MESSAGES/gtop.mo
 share/locale/pt/LC_MESSAGES/gtop.mo
 share/locale/ru/LC_MESSAGES/gtop.mo
+share/locale/sl/LC_MESSAGES/gtop.mo
 share/locale/sv/LC_MESSAGES/gtop.mo
 share/locale/uk/LC_MESSAGES/gtop.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gtop.mo
