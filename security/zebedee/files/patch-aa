@@ -1,5 +1,5 @@
---- ../zebedee-1.3.0.orig/Makefile	Fri Jan 21 13:47:17 2000
-+++ Makefile	Sat Jan 22 19:15:21 2000
+--- Makefile.orig	Fri Jan 21 13:47:17 2000
++++ Makefile	Sat Feb  5 23:59:19 2000
 @@ -3,7 +3,7 @@
  #
  # $Id: Makefile,v 1.10 2000/01/21 21:46:41 nwinton Exp nwinton $
@@ -9,15 +9,19 @@
  
  ###
  ### Locations of tools, libraries and installation directories.
-@@ -17,6 +17,7 @@
+@@ -17,33 +17,34 @@
  CC_win32 = /gcc-2.95/bin/gcc
  CC_linux = gcc
  CC_solaris = gcc
+-CC = $(CC_$(OS))
 +CC_freebsd = cc
- CC = $(CC_$(OS))
++CC ?= $(CC_$(OS))
  
  # Optimise/debug compilation
-@@ -26,24 +27,24 @@
+ 
+ #OPTIM = -Wall -g
+-OPTIM = -Wall -O
++OPTIM = -Wall
  
  # Location of gmp include and library
  
@@ -30,8 +34,8 @@
  
 -BFINC = -I../blowfish
 -BFLIB = ../blowfish/libblowfish.a
-+BFINC = -I${PREFIX}/include/openssl
-+BFLIB = ${PREFIX}/lib/libcrypto.a
++BFINC = -I${OPENSSLINC} -I${OPENSSLINC}/openssl
++BFLIB = ${OPENSSLLIB}/libcrypto.a
  
  # Location of zlib include and library
  
@@ -45,8 +49,8 @@
  
 -BZINC = -I../bzip2-0.9.5d
 -BZLIB = ../bzip2-0.9.5d/libbz2.a
-+BZINC = -I${PREFIX}/include
-+BZLIB = ${PREFIX}/lib/libbz2.a
++BZINC = -I${LOCALBASE}/include
++BZLIB = ${LOCALBASE}/lib/libbz2.a
  #
  # Tools needed for Perl "POD"-format documentation conversion.
  #
@@ -65,4 +69,14 @@
 +OSLIBS_freebsd =				# FreeBSD
  OSLIBS_solaris = -lsocket -lnsl -lthread	# Solaris
  OSLIBS = $(OSLIBS_$(OS))
+ 
+@@ -116,7 +119,8 @@
+ #### You REALLY shouldn't have to modify anything beyond here ...
+ ####
+ 
+-CFLAGS = $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
++CFLAGS ?= -O
++CFLAGS += $(OPTIM) $(DEFINES) -I. $(GMPINC) $(BFINC) $(ZINC) $(BZINC)
+ 
+ LIBS = $(GMPLIB) $(BFLIB) $(ZLIB) $(BZLIB) $(OSLIBS)
  
