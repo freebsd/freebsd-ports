@@ -1,0 +1,10 @@
+XMold, mold spreading over your X-Window screen.
+
+Usage:
+	xmold
+
+Recover:
+
+	xrefresh
+
+Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
