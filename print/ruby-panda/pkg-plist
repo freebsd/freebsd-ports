@@ -6,6 +6,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/panda/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/panda
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/brave-gnu.png
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/circles.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/gnu-head.jpg
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/gnu-head.png
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panda/gnu_box.jpg
