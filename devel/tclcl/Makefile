@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	tclcl
-PORTVERSION=	1.0b11
-CATEGORIES=	devel tcl83 tk83
-MASTER_SITES=	http://www.isi.edu/nsnam/dist/
+PORTVERSION=	1.15
+CATEGORIES=	devel tcl84 tk84
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	otcl-tclcl
 DISTFILES=	tclcl-src-${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/C++ interface used by ns and nam
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		otcl.1:${PORTSDIR}/lang/otcl
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
+CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcl2c++ ${PREFIX}/bin

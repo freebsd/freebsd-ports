@@ -1,10 +1,14 @@
---- Makefile.in.orig	Mon Mar 11 15:31:08 2002
-+++ Makefile.in	Mon Mar 11 15:31:21 2002
-@@ -103,7 +103,7 @@
+--- Makefile.in.orig	Wed Mar 10 22:31:11 2004
++++ Makefile.in	Wed Mar 10 22:34:54 2004
+@@ -103,10 +103,10 @@
  	$(LIBRARY_TCL)/http2.1/http.tcl
  TCL_83_LIBRARY_FILES = \
  	$(TCL_BASE_LIBRARY_FILES) \
 -	$(LIBRARY_TCL)/http2.3/http.tcl
++	$(LIBRARY_TCL)/http2.4/http.tcl
+ TCL_84_LIBRARY_FILES = \
+         $(TCL_BASE_LIBRARY_FILES) \
+-	$(LIBRARY_TCL)/http/http.tcl
 +	$(LIBRARY_TCL)/http2.4/http.tcl
  
  TCL_LIBRARY_FILES = \
