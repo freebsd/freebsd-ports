@@ -24,12 +24,12 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=--with-libpng=sys \
+CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-libjpeg=sys \
 		--with-libtiff=sys \
 		--with-zlib=sys \
