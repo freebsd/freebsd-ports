@@ -39,6 +39,7 @@
     SUBDIR += bnetd
     SUBDIR += bogged
     SUBDIR += bomb
+    SUBDIR += bomberclone
     SUBDIR += bomberinstinct
     SUBDIR += bombermaze
     SUBDIR += braincurses

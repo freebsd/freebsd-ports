@@ -1,0 +1,31 @@
+bin/bomberclone
+share/doc/bomberclone/README
+share/doc/bomberclone/COPYING
+share/doc/bomberclone/AUTHORS
+share/doc/bomberclone/ChangeLog
+share/doc/bomberclone/INSTALL
+share/doc/bomberclone/NEWS
+share/doc/bomberclone/TODO
+@dirrm share/doc/bomberclone
+
+share/bomberclone.gfx/background.bmp
+share/bomberclone.gfx/block.bmp
+share/bomberclone.gfx/bomb.bmp
+share/bomberclone.gfx/fieldbomb.bmp
+share/bomberclone.gfx/fielddeath.bmp
+share/bomberclone.gfx/fieldfire.bmp
+share/bomberclone.gfx/fieldshoe.bmp
+share/bomberclone.gfx/fire.bmp
+share/bomberclone.gfx/font.bmp
+share/bomberclone.gfx/font1.bmp
+share/bomberclone.gfx/logo.bmp
+share/bomberclone.gfx/logo1.bmp
+share/bomberclone.gfx/menuselect.bmp
+share/bomberclone.gfx/player0.bmp
+share/bomberclone.gfx/player1.bmp
+share/bomberclone.gfx/player2.bmp
+share/bomberclone.gfx/player3.bmp
+share/bomberclone.gfx/player4.bmp
+share/bomberclone.gfx/stone.bmp
+share/bomberclone.gfx/playersick.bmp
+@dirrm share/bomberclone.gfx
