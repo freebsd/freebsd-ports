@@ -2,7 +2,7 @@ bin/vmware
 etc/rc.d/vmware.sh
 etc/vmware/config
 lib/vmware/lib/modules/vmmon_smp.ko
-lib/vmware/lib/modules/linker.hints
+%%FREEBSD5%%lib/vmware/lib/modules/linker.hints
 lib/vmware/lib/modules/vmmon_up.ko
 lib/vmware/lib/modules/vmnet.ko
 lib/vmware/lib/config

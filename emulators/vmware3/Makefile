@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	vmware3
-PORTVERSION=	3.2.1
-PORTREVISION=	2242
+PORTVERSION=	3.2.1-2242
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
-DISTFILES=	VMware-workstation-${PORTVERSION}-${PORTREVISION}${EXTRACT_SUFX}:vmware \
+DISTFILES=	VMware-workstation-${PORTVERSION}${EXTRACT_SUFX}:vmware \
 		vmmon-only-3.2.1-20031009${EXTRACT_SUFX}:patch \
 		vmnet-only-3.2.1-20030412${EXTRACT_SUFX}:patch
 
@@ -49,8 +48,8 @@ MODULES=	vmmon vmnet
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Systems prior to FreeBSD 5 currently out of support"
+.if ${OSVERSION} < 480102 
+BROKEN=		"Systems prior to FreeBSD 480102 currently out of support"
 .endif
 
 .if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(/boot/kernel/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko)
@@ -78,10 +77,21 @@ SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
 MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
 PLIST_SUB=	LINUXBASE="${LINUXBASE}" VMNET1_MINOR="${VMNET1_MINOR}"
 
+.if ${OSVERSION} < 500000
+PLIST_SUB+=	FREEBSD5="@comment "
+.else
+PLIST_SUB+=	FREEBSD5=""
+.endif
+
 pre-fetch:
-.if ${OSVERSION} < 500113
+.if ${OSVERSION} < 500000
 	@${ECHO}
-	@${ECHO} "You need a uncommitted kernel patch to run this port:"
+	@${ECHO} "You need an uncommitted kernel patch to run this port:"
+	@${ECHO} "You can get it at: http://people.freebsd.org/~fjoe/shm-freebsd4-20031003.diff"
+	@${ECHO}
+.elif ${OSVERSION} < 500113
+	@${ECHO}
+	@${ECHO} "You need an uncommitted kernel patch to run this port:"
 	@${ECHO} "You can get it at: http://people.freebsd.org/~mbr/patches/"
 	@${ECHO} "linux.shm.patch-cvs-freebsd5-20030329"
 	@${ECHO}
@@ -120,6 +130,9 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
 	${CP} ${FILESDIR}/Makefile.vmnet ${WRKSRC}/vmnet-only/Makefile
+.if ${OSVERSION} < 500000
+	${CAT} ${FILESDIR}/freebsd4.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+.endif
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
