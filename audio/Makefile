@@ -186,6 +186,7 @@
     SUBDIR += play
     SUBDIR += playmidi
     SUBDIR += py-ao
+    SUBDIR += py-cddb
     SUBDIR += py-ogg
     SUBDIR += py-vorbis
     SUBDIR += py-xmms
