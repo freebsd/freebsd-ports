@@ -1,5 +1,14 @@
---- src/pgcluster/pgrp/recovery.c.orig	Tue Feb  3 23:40:16 2004
-+++ src/pgcluster/pgrp/recovery.c	Tue Feb  3 23:43:47 2004
+--- src/pgcluster/pgrp/recovery.c.orig	Fri Feb 20 11:38:40 2004
++++ src/pgcluster/pgrp/recovery.c	Fri Feb 20 16:25:21 2004
+@@ -121,7 +121,7 @@
+ 	int packet_size = 0;
+ 
+ 	/* set function name */
+-	set_function("read_packet");
++	set_function("recovery::read_packet");
+ 
+ 	read_ptr = (char*)packet;
+ 	packet_size = sizeof(RecoveryPacket);
 @@ -140,7 +140,7 @@
  		}
  		read_size += r;
@@ -18,6 +27,15 @@
  	for(;;)
  	{
  		rtn = select(host->sock+1, &rmask, (fd_set *)NULL, (fd_set *)NULL, &timeout);
+@@ -227,7 +227,7 @@
+ 		{
+ 			if (count > MAX_RETRY_TIMES )
+ 			{
+-				show_error("PGR_Create_Socket_Connect failed");
++				show_error("PGR_Create_Socket_Connect(%d, %s, %d) failed", host->sock, host->hostName, host->recoveryPort);
+ 				return STATUS_ERROR;
+ 			}
+ 			count ++;
 @@ -331,18 +331,18 @@
  	Target->port = packet->port;
  	Target->recoveryPort = packet->recoveryPort;
@@ -46,7 +64,7 @@
  	 * add recovery target to host table
  	 */
 -	show_debug("add recovery target to host table\n");
-+	show_debug("add recovery target to host table");
++	show_debug("add recovery target to host table (%s)", packet->hostName);
  	memcpy(host_tbl.hostName,packet->hostName,sizeof(host_tbl.hostName));
  	host_tbl.port = packet->port;
  	PGRset_recovered_host(&host_tbl,DB_TBL_INIT);
@@ -177,16 +195,33 @@
  
  		switch (packet.packet_no)
  		{
-@@ -721,7 +721,7 @@
+@@ -694,6 +694,7 @@
+ 				if (status == STATUS_OK)
+ 				{
+ 					show_debug("PGRsend_queue ok");
++					memset(&new_host, 0, sizeof(new_host));
+ 					memcpy(new_host.hostName,Target.hostName,sizeof(new_host.hostName));
+ 					new_host.port = Target.port;
+ 					new_host.recoveryPort = Target.recoveryPort;
+@@ -708,7 +709,7 @@
+ 					status = send_packet(&Target,&packet);
+ 				}
+ 				/*
+-				 * stop queueing, and initiarise recovery status
++				 * stop queueing, and initialise recovery status
+ 				 */
+ 				finish_recovery();
+ 				loop_end = true;
+@@ -721,7 +722,7 @@
  				memset((char *)&MasterPacketData,0,sizeof(RecoveryPacket));
  				break;
  			case RECOVERY_ERROR_ANS : 
 -				show_debug("recovery error accept. top queueing and initiarse recovery status\n");
-+				show_debug("recovery error accept. top queueing and initiarse recovery status");
++				show_debug("recovery error accept. top queueing and initialise recovery status");
  				status = PGRsend_queue(&Master,NULL);
  				memset(&packet,0,sizeof(RecoveryPacket));
  				packet.packet_no = RECOVERY_ERROR_ANS ;
-@@ -776,7 +776,7 @@
+@@ -776,7 +777,7 @@
  		 */
  		FD_ZERO(&rmask);
  		FD_SET(fd,&rmask);
