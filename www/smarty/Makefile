@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smarty
-PORTVERSION=	2.2.0
+PORTVERSION=	2.3.0
 CATEGORIES=	www
 MASTER_SITES=	http://smarty.php.net/distributions/ \
 		http://smarty.php.net/distributions/manual/en/:manual
@@ -28,6 +28,8 @@ MSG_SRC=${FILESDIR}/pkg-message
 
 MSG_SUB=	DATADIR=${DATADIR} LOCALBASE=${LOCALBASE}
 
+CPIO?=	/usr/bin/cpio
+
 do-install:
 	@${MKDIR} ${DATADIR}
 .for f in Config_File.class.php Smarty.class.php Smarty_Compiler.class.php debug.tpl
@@ -41,7 +43,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
 	@${MKDIR} ${DOCSDIR}/manual
-	@${INSTALL_DATA} ${WRKDIR}/manual/* ${DOCSDIR}/manual
+	@cd ${WRKDIR}/manual && ${FIND} . | ${CPIO} --quiet -dumpR ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/manual
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/index.php ${EXAMPLESDIR}
 .for f in configs templates templates_c cache
