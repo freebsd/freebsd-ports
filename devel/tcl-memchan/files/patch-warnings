@@ -1,0 +1,51 @@
+--- generic/fifo.c	Mon Aug 26 13:02:08 2002
++++ generic/fifo.c	Tue Apr  6 13:34:19 2004
+@@ -29,3 +29,5 @@
+ 
++#include <string.h>
++
+ #include "memchanInt.h"
+ #include "buf.h"
+--- generic/fifo2.c	Mon Aug 26 13:02:08 2002
++++ generic/fifo2.c	Tue Apr  6 13:37:36 2004
+@@ -29,3 +29,5 @@
+ 
++#include <string.h>
++
+ #include "memchanInt.h"
+ #include "buf.h"
+--- generic/bufExt.c	Mon Aug 26 13:02:08 2002
++++ generic/bufExt.c	Tue Apr  6 13:38:40 2004
+@@ -12,4 +12,6 @@
+  */
+ 
++#include <string.h>
++
+ #include "buf.h"
+ 
+--- generic/bufRange.c	Mon Aug 26 13:02:08 2002
++++ generic/bufRange.c	Tue Apr  6 13:40:04 2004
+@@ -12,4 +12,6 @@
+  */
+ 
++#include <string.h>
++
+ #include "buf.h"
+ 
+--- generic/bufFix.c	Mon Aug 26 13:02:08 2002
++++ generic/bufFix.c	Tue Apr  6 13:40:10 2004
+@@ -12,4 +12,6 @@
+  */
+ 
++#include <string.h>
++
+ #include "buf.h"
+ 
+--- generic/buf.c	Mon Aug 26 13:02:08 2002
++++ generic/buf.c	Tue Apr  6 13:46:08 2004
+@@ -64,4 +64,4 @@
+ {
+   Tcl_InterpDeleteProc* proc = (Tcl_InterpDeleteProc*) NULL;
+-  return (int) Tcl_GetAssocData (interp, ASSOC, &proc);
++  return (int)(long) Tcl_GetAssocData (interp, ASSOC, &proc);
+ }
