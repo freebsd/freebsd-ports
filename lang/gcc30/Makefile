@@ -20,6 +20,8 @@ DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.0.
 
+DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release instead."
+
 NOT_FOR_ARCHS=	amd64 sparc64 ia64
 LATEST_LINK=	gcc30
 
