@@ -2,9 +2,8 @@
 # Version required:	2.2
 # Date created:		Sun Jun 22 16:57:39 EST 1997
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au)
-# FreeBSD Version:	2.2.1-RELEASE
 #
-# $Id: Makefile,v 1.3 1998/11/07 07:42:12 asami Exp $
+# $Id: Makefile,v 1.4 1999/02/03 11:11:41 asami Exp $
 #
 
 DISTNAME=	pdc22
@@ -12,17 +11,15 @@ PKGNAME=	crossgo32-djgpp2-pdcurses-2.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.tas.gov.au/pc/simtelnet/gnu/djgpp/v2tk/ \
 		ftp://ftp.cdrom.com/pub/simtelnet/gnu/djgpp/v2tk/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	sutton@aardvark.apana.org.au
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/zip
 RUN_DEPENDS=	i386-go32-gcc:${PORTSDIR}/devel/crossgo32
 RUN_DEPENDS=	i386-go32-stubify:${PORTSDIR}/devel/crossgo32-djgpp2
 
-EXTRACT_CMD=		unzip
-EXTRACT_BEFORE_ARGS=	-La
-EXTRACT_AFTER_ARGS=	# empty
+BROKEN=		DEPENDS on crossgo32-djgpp2
+USE_ZIP=	yes
+EXTRACT_BEFORE_ARGS=	-qLa
 
 # Since were only taking the library and include files we don't
 # actually need to build anything
