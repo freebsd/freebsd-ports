@@ -116,8 +116,10 @@ replace:
 .if ${OSVERSION} >= 400014
 	@${ECHO_MSG} "===> Activating postfix in /etc/mail/mailer.conf"
 	${MV} -f /etc/mail/mailer.conf /etc/mail/mailer.conf.bak
-	${SED} -e 's|/usr/libexec/sendmail|${PREFIX}/sbin|' \
-		< /etc/mail/mailer.conf.bak > /etc/mail/mailer.conf
+	${ECHO} 'sendmail	${PREFIX}/sbin/sendmail' > /etc/mail/mailer.conf
+	${ECHO} 'send-mail	${PREFIX}/sbin/sendmail' >>/etc/mail/mailer.conf
+	${ECHO} 'mailq		${PREFIX}/sbin/sendmail' >>/etc/mail/mailer.conf
+	${ECHO} 'newaliases	${PREFIX}/sbin/sendmail' >>/etc/mail/mailer.conf
 .else
 	@${ECHO_MSG} "===> Replacing sendmail"
 	@if [ -e /usr/sbin/sendmail ]; then \
