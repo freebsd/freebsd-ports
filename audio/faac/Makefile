@@ -7,7 +7,7 @@
 
 PORTNAME=	faac
 PORTVERSION=	1.24
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	faac
@@ -31,6 +31,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 INSTALLS_SHLIB=	yes
 
+OPTIONS=	MPEG4IP "Enable mpeg4 audio encoding" On
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/libmp4v2.a)
+WITH_MPEG4IP=yes
+.endif
+
+.if defined(WITH_MPEG4IP)
+LIB_DEPENDS+=	mp4v2.0:${PORTSDIR}/multimedia/mpeg4ip-libmp4v2
+.endif
+
 pre-patch: build-depends
 
 post-patch:
@@ -40,4 +52,4 @@ post-patch:
 	${REINPLACE_CMD} -e 's|$$lt_target|$$host|' \
 		${WRKSRC}/aclocal.m4
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
