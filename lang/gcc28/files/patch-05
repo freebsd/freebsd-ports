@@ -1,9 +1,21 @@
 --- flags.h.orig	Wed Dec 31 05:02:33 1997
-+++ flags.h	Tue Aug 11 13:31:22 1998
-@@ -216,6 +216,20 @@
++++ flags.h	Wed Mar 31 00:08:39 1999
+@@ -125,6 +125,10 @@
+ 
+ extern int warn_aggregate_return;
+ 
++/* Nonzero means that -Wformat accepts certain non-ANSI formats.  */
++
++extern int flag_format_extensions;
++
+ /* Nonzero if generating code to do profiling.  */
+ 
+ extern int profile_flag;
+@@ -215,6 +219,20 @@
+    This is generally not a win.  */
  
  extern int flag_unroll_all_loops;
- 
++
 +/* Nonzero forces all invariant computations in loops to be moved
 +   outside the loop. */
 +
@@ -17,7 +29,6 @@
 +/* Nonzero gets another run of loop_optimize performed. */
 +
 +extern int flag_rerun_loop_opt;
-+
+ 
  /* Nonzero for -fcse-follow-jumps:
     have cse follow jumps to do a more extensive job.  */
- 

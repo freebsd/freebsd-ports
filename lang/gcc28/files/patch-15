@@ -1,0 +1,11 @@
+--- c-tree.h.orig	Fri Aug  8 13:09:02 1997
++++ c-tree.h	Tue Mar 30 14:14:51 1999
+@@ -162,7 +162,7 @@
+ extern void declare_function_name               PROTO((void));
+ extern void decl_attributes                     PROTO((tree, tree, tree));
+ extern void init_function_format_info		PROTO((void));
+-extern void record_function_format		PROTO((tree, tree, int, int, int));
++extern void record_function_format		PROTO((tree, tree, int, int, int, int));
+ extern void check_function_format		PROTO((tree, tree, tree));
+ /* Print an error message for invalid operands to arith operation CODE.
+    NOP_EXPR is used as a special case (see truthvalue_conversion).  */
