@@ -1,0 +1,6 @@
+GSS is an implementation of the Generic Security Service Application Program
+Interface (GSS-API). GSS-API is used by network servers (e.g., IMAP, SMTP) to
+provide security security services, e.g., authenticate clients against servers.
+GSS consists of a library and a manual.
+
+WWW: http://www.gnu.org/software/gss/

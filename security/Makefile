@@ -103,6 +103,7 @@
     SUBDIR += gpgme
     SUBDIR += gringotts
     SUBDIR += gsfv
+    SUBDIR += gss
     SUBDIR += gtk-knocker
     SUBDIR += gtkportscan
     SUBDIR += hackbot
