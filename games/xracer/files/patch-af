@@ -1,0 +1,16 @@
+--- src/sound/generic.c.orig	Sun Sep 12 22:16:25 1999
++++ src/sound/generic.c	Thu Aug 10 03:18:34 2000
+@@ -37,11 +37,11 @@
+ int
+ os_sound_enable ()
+ {
+-  return fd;
++  return -1;
+ }
+ 
+ int
+ os_sound_disable ()
+ {
+-  return fd;
++  return -1;
+ }

@@ -1,0 +1,11 @@
+--- test/Makefile.am.orig	Sun Jul 11 21:36:17 1999
++++ test/Makefile.am	Thu Aug 10 02:00:47 2000
+@@ -14,7 +14,7 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ 
+-CFLAGS		= -Wall -O3 -I/usr/X11R6/include -I/usr/local/include -I../src
++CFLAGS		= @CFLAGS@ -I$(top_srcdir)/src
+ 
+ bin_PROGRAMS    = test-poly-opts
+ 

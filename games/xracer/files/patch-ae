@@ -1,0 +1,11 @@
+--- tools/Makefile.am.orig	Wed Aug 25 06:50:22 1999
++++ tools/Makefile.am	Thu Aug 10 01:59:08 2000
+@@ -15,7 +15,7 @@
+ # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ 
+ #TRACK		= track-general
+-CFLAGS		= -Wall -O -I/usr/X11R6/include -I/usr/local/include -I$(top_srcdir)/src
++CFLAGS		= @CFLAGS@ -I$(top_srcdir)/src
+ 
+ bin_PROGRAMS    = mktrackmodel mktrack perlin
+ 

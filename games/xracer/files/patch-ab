@@ -1,0 +1,11 @@
+--- aclocal.m4.orig	Mon Jun 21 05:48:38 1999
++++ aclocal.m4	Thu Aug 10 01:41:06 2000
+@@ -43,7 +43,7 @@
+ dnl AM_INIT_AUTOMAKE(package,version, [no-define])
+ 
+ AC_DEFUN(AM_INIT_AUTOMAKE,
+-[AC_REQUIRE([AM_PROG_INSTALL])
++[AC_REQUIRE([AC_PROG_INSTALL])
+ PACKAGE=[$1]
+ AC_SUBST(PACKAGE)
+ VERSION=[$2]
