@@ -3,7 +3,7 @@
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
-# $Id: Makefile,v 1.19 1997/05/31 17:36:10 fenner Exp $
+# $Id: Makefile,v 1.20 1997/07/17 15:12:47 max Exp $
 #
 
 DISTNAME=	itcl2.1
@@ -16,6 +16,7 @@ MAINTAINER=	chuckr@freebsd.org
 BROKEN=		"installation does not DTRT"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --exec_prefix=${PREFIX}
+USE_XLIB=	yes
 
 post-extract:
 	@$(RM) -f $(WRKSRC)/tcl7.5/library/*.c
