@@ -12,7 +12,7 @@ MASTER_SITES=	http://godot.tuniv.szczecin.pl/~jgregor/xvs/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	xvs-${PORTVERSION}
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
@@ -22,7 +22,8 @@ USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	XML2_CONFIG="${LOCALBASE}/bin/xml2-config" \
-		XMMS_CONFIG="${X11BASE}/bin/xmms-config"
+		XMMS_CONFIG="${X11BASE}/bin/xmms-config" \
+		CFLAGS="-I${LOCALBASE}/include/libxml2/libxml ${CFLAGS}"
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
