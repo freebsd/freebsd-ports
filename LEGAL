@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.136 1999/04/30 04:47:47 taoka Exp $
+# $Id: LEGAL,v 1.137 1999/04/30 18:19:39 taoka Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -86,6 +86,10 @@ mew-1.70.tar.gz		ports/mail/mew		ITAR export-controlled
 mindfocus-*		ports/games/mindfocus	contains commercial
 						character data
 mmv/*			ports/misc/mmv		Restrictive/unclear copyright
+molden			ports/biology/molden	free for academic,
+						non profit usage
+						do not re-distribute source and
+						 executable
 msql-*			ports/databases/msql	Not free for commercial org.
 netscape-*-us-*		ports/www/netscape*	Crypto; export-controlled
 netshow-*		ports/graphics/netshow	Commercial software
@@ -94,6 +98,8 @@ openssl-*		ports/security/openssl	Crypto; export/import-controlled
 Crypt-*			ports/security/p5-Crypt-*	Crypto; export-controlled
 pgp*			ports/security/pgp*	Various locality restrictions
 pklin*			ports/archivers/pkzip	Shareware
+platon-*		ports/biology/platon	US$ 5000 for commercial users,
+						(free for academic)
 prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
