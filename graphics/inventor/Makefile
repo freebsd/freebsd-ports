@@ -17,10 +17,10 @@ MAINTAINER=	c47g@gmx.at
 COMMENT=	This is SGI's Open Inventor (TM)
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		GLU.1:${PORTSDIR}/x11/XFree86-4-libraries
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_XLIB=	yes
+USE_GL=		yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_MOTIF=	yes

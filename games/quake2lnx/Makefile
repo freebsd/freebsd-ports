@@ -80,8 +80,7 @@ PLIST_SUB+=	SDLGL="@comment "
 .endif
 
 .if !defined(WITHOUT_X11)
-LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries \
-		Xext.6:${PORTSDIR}/x11/XFree86-4-libraries
+USE_XLIB=	yes
 MAKE_ARGS+=	BUILD_X11=YES
 REF_TARGETS+=	softx
 PLIST_SUB+=	X11=""
@@ -90,7 +89,7 @@ PLIST_SUB+=	X11="@comment "
 .endif
 
 .if !defined(WITHOUT_GLX) || defined(WITH_EYECANDY)
-LIB_DEPENDS+=	GL.1:${PORTSDIR}/x11/XFree86-4-libraries
+USE_GL=		yes
 MAKE_ARGS+=	BUILD_GLX=YES
 REF_TARGETS+=	glx
 PLIST_SUB+=	GLX=""
