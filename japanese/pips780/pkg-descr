@@ -1,0 +1,22 @@
+Photo Image Print System for Linux is the Printer filter for EPSON
+PM-780C. By using this driver you can print out as high quality as you
+use Windows driver.  See the below URL:
+
+WWW: http://www.epkowa.co.jp/
+
+And this port has a modified filter "filter780.rev" when you print out
+more than one page useful.  For example, if you use it, you add the
+next entry into /etc/printcap.
+
+pm780c|EPSON PM-780C:\
+        :lp=/dev/lpt0:\
+        :sh:\
+        :if=/usr/local/libexec/pips780/filter780.rev:\
+        :sd=/var/spool/lpd/pm780c:\
+        :mx#0:\
+        :lf=/var/log/lpd-errs
+
+*************************************************************
+To run with Japanese messages, you should execute as follows:
+  env LANG=ja_JP pips780 -la JP
+*************************************************************
