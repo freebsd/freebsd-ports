@@ -1,0 +1,86 @@
+--- wpa_supplicant.c.orig	Sat Feb  5 15:51:25 2005
++++ wpa_supplicant.c	Wed Feb 16 01:16:55 2005
+@@ -32,6 +32,9 @@
+ #endif /* CONFIG_NATIVE_WINDOWS */
+ #include <fcntl.h>
+ 
++#include <sys/param.h>
++#include <paths.h>
++
+ #define OPENSSL_DISABLE_OLD_DES_SUPPORT
+ #include "common.h"
+ #include "eapol_sm.h"
+@@ -2285,12 +2288,43 @@
+ 	wpa_supplicant_cleanup(wpa_s);
+ }
+ 
++static	const char*	pid_filename = _PATH_VARRUN "wpa_supplicant.pid";
++
++static
++void
++remove_pid_file(void) {
++	unlink(pid_filename);
++}
++
++static
++void
++create_pidfile(const char* path_pid_file) {
++	FILE*	fd;
++
++	if (path_pid_file) {
++		pid_filename = path_pid_file;
++	}
++
++	fd = fopen(pid_filename, "w");
++	if (fd) {
++		pid_t	pid;
++
++		pid = getpid();
++
++		fprintf(fd, "%ld\n", pid);
++		fclose(fd);
++
++		atexit(remove_pid_file);
++	}
++}
++
+ 
+ int main(int argc, char *argv[])
+ {
+ 	struct wpa_supplicant *head, *wpa_s;
+ 	int c;
+ 	const char *confname, *driver, *ifname;
++	const char *path_pid_file = NULL;
+ 	int daemonize = 0, wait_for_interface = 0, disable_eapol = 0, exitcode;
+ 
+ #ifdef CONFIG_NATIVE_WINDOWS
+@@ -2312,7 +2346,7 @@
+ 	ifname = confname = driver = NULL;
+ 
+ 	for (;;) {
+-		c = getopt(argc, argv, "Bc:D:dehi:KLNqtvw");
++		c = getopt(argc, argv, "Bc:D:dehi:KLNp:qtvw");
+ 		if (c < 0)
+ 			break;
+ 		switch (c) {
+@@ -2347,6 +2381,9 @@
+ 		case 'L':
+ 			license();
+ 			return -1;
++		case 'p':
++			path_pid_file = optarg;
++			break;
+ 		case 'q':
+ 			wpa_debug_level++;
+ 			break;
+@@ -2405,6 +2442,10 @@
+ 			exitcode = -1;
+ 			goto cleanup;
+ 		}
++	}
++
++	if (daemonize) {
++		create_pidfile(path_pid_file);
+ 	}
+ 
+ 	eloop_register_signal(SIGINT, wpa_supplicant_terminate, NULL);
