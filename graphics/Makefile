@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.29 1996/11/17 11:56:58 asami Exp $
+# $Id: Makefile,v 1.30 1996/11/19 12:33:33 asami Exp $
 #
 
     SUBDIR += ImageMagick
@@ -9,6 +9,7 @@
     SUBDIR += giftool
     SUBDIR += giftrans
     SUBDIR += gimp
+    SUBDIR += gimp-devel
     SUBDIR += hpscan
     SUBDIR += jpeg
     SUBDIR += mpeg-lib
