@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.12 1998/09/28 16:35:54 jfieber Exp $
+# $Id: Makefile,v 1.13 1999/01/27 00:12:22 dirk Exp $
 #
 
 DISTNAME=	jade-1.2.1
@@ -16,6 +16,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 
 post-install:
+.for i in jade nsgmls sgmlnorm spam spent sx
+	strip ${PREFIX}/bin/$i
+.endfor
 	${MKDIR} ${PREFIX}/include/sp
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/sp
 	${MKDIR} ${PREFIX}/share/doc/jade
