@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	yaml
-PORTVERSION=	20021223
+PORTVERSION=	0.32
 CATEGORIES=	devel python
-MASTER_SITES=	http://mountainwebtools.com/PyYaml/
+MASTER_SITES=	http://iron.cx/yaml/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	PyYaml_23Dec2002
-EXTRACT_SUFX=	.tgz
+DISTNAME=	PyYaml-SHowell-${PORTVERSION}
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python YAML parser
