@@ -8,7 +8,7 @@ ECHO_CMD=echo
 RM=/bin/rm
 BACKUPDIR=/var/backups
 
-PREFIX=${PKG_PREFIX:-/usr}
+PREFIX=${PKG_PREFIX:-/usr/local}
 if [ "${PREFIX}" = "/usr" ]; then
   MANPREFIX="${PREFIX}/share"
 else
@@ -17,10 +17,12 @@ fi
 
 case $2 in
 POST-DEINSTALL)
-  if [ -e "${BACKUPDIR}/pkg_install.tgz" ]; then
-    ${PAX} -r -pe -z -f "${BACKUPDIR}/pkg_install.tgz"
-    ${RM} "${BACKUPDIR}/pkg_install.tgz"
-    ${ECHO_CMD} "===>  Base pkg_install restored."
+  if [ "${PREFIX}" = "/usr" ]; then
+    if [ -e "${BACKUPDIR}/pkg_install.tgz" ]; then
+      ${PAX} -r -pe -z -f "${BACKUPDIR}/pkg_install.tgz"
+      ${RM} "${BACKUPDIR}/pkg_install.tgz"
+      ${ECHO_CMD} "===>  Base pkg_install restored."
+    fi
   fi
   ;;
 esac
