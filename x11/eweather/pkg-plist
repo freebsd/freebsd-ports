@@ -1,2 +1,3 @@
 bin/E-Weather.epplet
 share/enlightenment/epplet_icons/E-Weather.icon
+@unexec rmdir %D/share/enlightenment/epplet_icons 2>/dev/null || true
