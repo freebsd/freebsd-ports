@@ -37,6 +37,12 @@ CFGTOOL_MAKE_ENV=	WXDIR=${X11BASE} WX_CONFIG=wxgtk2-2.4-config \
 CFGTOOL_MAKEFILE=	${ECOSSRCDIR}/tools/configtool/standalone/wxwin/makefile.gnu
 CFGTOOL_ALL_TARGET=
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Configure fails"
+.endif
+
 post-extract:
 	@${MKDIR} ${WRKSRC}
 
@@ -76,4 +82,4 @@ post-install:
 	@(cd ${CFGTOOL_WRKSRC}; \
 		${SETENV} ${MAKE_ENV} ${CFGTOOL_MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${CFGTOOL_MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
