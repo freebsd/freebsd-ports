@@ -15,18 +15,19 @@ MAINTAINER=	hendrik@scholz.net
 COMMENT=	Audio player for the Gnome 2 desktop environment
 
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		gstplay-0.6.1:${PORTSDIR}/multimedia/gstreamer-plugins \
 		FLAC.5:${PORTSDIR}/audio/flac \
 		mad.2:${PORTSDIR}/audio/mad \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
+USE_GNOME=	gnomehack gnomeprefix libgnomeui gstreamerplugins
 USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 CONFIGURE_ARGS=	--disable-lirc
+
+BROKEN=	"Needs update for gstreamer-0.8"
 
 .include <bsd.port.pre.mk>
 
