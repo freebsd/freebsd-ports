@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
@@ -180,6 +179,11 @@ WITH_GNOMEVFS=yes
 # jack
 .if exists(${LOCALBASE}/lib/libjack.so.0)
 WITH_JACK=YES
+.endif
+
+# KIO
+.if exists(${LOCALBASE}/lib/libkio.a)
+WITH_KIO=yes
 .endif
 
 # libcaca
@@ -457,6 +461,15 @@ PLIST_SUB+=	JACK="@comment "
 .else
 LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
+.endif
+
+# KIO
+.ifndef(WITH_KIO)
+CONFIGURE_ARGS+=	--disable-kio
+PLIST_SUB+=	KIO="@comment "
+.else
+LIB_DEPENDS+=	kio.6:${PORTSDIR}/x11/kdelibs3
+PLIST_SUB+=	KIO=""
 .endif
 
 # Hermes
@@ -834,6 +847,10 @@ pre-everything::
 .ifndef(WITH_JACK)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_JACK to enable jackd audio plugin'
+.endif
+.ifndef(WITH_KIO)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_KIO to enable support for KIO slave sources'
 .endif
 .ifndef(WITH_HERMES)
 	@${ECHO_MSG} '===>'
