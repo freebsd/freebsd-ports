@@ -7161,6 +7161,7 @@ p5-Term-Prompt	ports/devel/p5-Term-Prompt
 p5-Term-Query	ports/devel/p5-Term-Query
 p5-Term-ReadKey	ports/devel/p5-Term-ReadKey
 p5-Term-Screen	ports/devel/p5-Term-Screen
+p5-Term-Shell	ports/devel/p5-Term-Shell
 p5-Term-Size	ports/devel/p5-Term-Size
 p5-Test-Builder-Tester	ports/devel/p5-Test-Builder-Tester
 p5-Test-Class	ports/devel/p5-Test-Class
