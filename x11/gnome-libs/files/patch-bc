@@ -1,15 +1,15 @@
---- libgnome/Makefile.in.orig	Tue Feb 16 01:09:10 1999
-+++ libgnome/Makefile.in	Fri Feb 19 00:21:51 1999
-@@ -170,10 +170,10 @@
+--- libgnome/Makefile.in.orig	Wed Apr  7 21:33:54 1999
++++ libgnome/Makefile.in	Fri Apr 30 17:35:08 1999
+@@ -172,10 +172,10 @@
  
  EXTRA_DIST = parse-path.cP 
  
--libgnome_la_LDFLAGS = -version-info 35:0:3 #-rpath $(libdir)
-+libgnome_la_LDFLAGS = -version-info 1:0:0
+-libgnome_la_LDFLAGS = -version-info 35:2:3 #-rpath $(libdir)
++libgnome_la_LDFLAGS = -version-info 1:0:0 #-rpath $(libdir)
  libgnome_la_LIBADD = $(GLIB_LIBS) -lm $(DL_LIB)
  
 -bin_PROGRAMS = dns-helper gnome-dump-metadata gnome-moz-remote 	gconfigger gnome-gen-mimedb
-+bin_PROGRAMS = gnome-dump-metadata gnome-moz-remote gconfigger gnome-gen-mimedb
++bin_PROGRAMS = gnome-dump-metadata gnome-moz-remote 	gconfigger gnome-gen-mimedb
  
  
  dns_helper_SOURCES = dns-helper.c

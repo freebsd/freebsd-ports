@@ -1,15 +1,15 @@
---- support/Makefile.in.orig	Tue Feb 16 01:08:59 1999
-+++ support/Makefile.in	Fri Feb 19 00:20:20 1999
-@@ -146,7 +146,7 @@
+--- support/Makefile.in.orig	Thu Apr  8 11:33:39 1999
++++ support/Makefile.in	Thu Apr  8 08:46:59 1999
+@@ -148,7 +148,7 @@
  mcserv = @mcserv@
  need_gnome_support = @need_gnome_support@
  
--supportincludedir = $(pkglibdir)/include
-+supportincludedir = $(includedir)
+-supportexecincludedir = $(pkglibdir)/include
++supportexecincludedir = $(includedir)
  
  INCLUDES = -D_GNU_SOURCE
  
-@@ -171,7 +171,7 @@
+@@ -170,7 +170,7 @@
  
  libgnomesupport_la_SOURCES = gnomesupport.h $(popt_sources) gnome-argp.c
  libgnomesupport_la_LIBADD = @LTLIBOBJS@
