@@ -1,5 +1,5 @@
---- log/src/Makefile.orig	Wed Jul 21 04:10:58 1999
-+++ log/src/Makefile	Tue Sep 21 02:57:21 1999
+--- log/src/Makefile.orig	Tue Jul 20 16:10:36 1999
++++ log/src/Makefile	Tue Feb 20 14:18:59 2001
 @@ -45,8 +45,8 @@
  
  CD = cd
@@ -51,7 +51,7 @@
  
  DIGOBJ = logsim.o logdig.o logsimasm.o logsimed.o diggates.o \
           loghier.o logsimh.o swap.o
-@@ -178,11 +179,12 @@
+@@ -178,11 +179,13 @@
  ##
  
  install: all
@@ -64,10 +64,11 @@
 +	install -c -s loged $(BINDIR)
 +	install -c fixfet7 $(BINDIR)
 +	cp -R ../lib/* $(LOGLIBDIR)
++	chmod -R a=r+X $(LOGLIBDIR)
  
  clean:
  	-rm -f *.o ana/*.o log loged
-@@ -192,12 +194,12 @@
+@@ -192,12 +195,12 @@
  main: log loged
  
  makeana:
