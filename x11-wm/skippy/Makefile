@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skippy
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://thegraveyard.org/files/
 
@@ -20,14 +20,24 @@ USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
 USE_REINPLACE=	yes
-PLIST_FILES=	bin/skippy
+PLIST_FILES=	bin/skippy \
+		%%DATADIR%%/skippyrc-default
+PLIST_DIRS=	%%DATADIR%%
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|; \
 		s|/usr/local|${LOCALBASE}|; s|gcc|${CC}|' \
 			${WRKSRC}/Makefile
+post-build:
+	@${SED} 's|%%DATADIR%%|${DATADIR}|' ${PKGDIR}/pkg-message >${PKGMESSAGE}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/skippy ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/skippyrc-default ${DATADIR}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
