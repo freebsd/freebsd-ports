@@ -8,8 +8,9 @@
 PORTNAME=	xemacs-oa-packages
 PORTVERSION=	1.2
 CATEGORIES=	editors elisp
-MASTER_SITES=	${MASTER_SITE_XEMACS}
-MASTER_SITE_SUBDIR=	packages
+MASTER_SITES=	${MASTER_SITE_XEMACS} \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
 		calc-1.13-pkg.tar.gz \
 		calendar-1.15-pkg.tar.gz \

@@ -8,8 +8,9 @@
 PORTNAME=	xemacs-packages
 PORTVERSION=	1.7
 CATEGORIES=	editors elisp
-MASTER_SITES=	${MASTER_SITE_XEMACS}
-MASTER_SITE_SUBDIR=	packages
+MASTER_SITES=	${MASTER_SITE_XEMACS} \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
 		apel-1.19-pkg.tar.gz \
 		auctex-1.22-pkg.tar.gz \
