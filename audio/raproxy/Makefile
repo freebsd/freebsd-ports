@@ -3,7 +3,7 @@
 # Date created:			  Sat May 8, 1999
 # Whom:				  Nick Sayer (nsayer@freebsd.org)
 #
-# $Id: Makefile,v 1.9 1999/02/13 20:03:59 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1999/05/09 17:34:12 nsayer Exp $
 #
 
 DISTNAME=	raproxy3.0b1
@@ -21,7 +21,7 @@ MAN8=		raproxy.8
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/{$DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE='Please fill out the form at http://service.real.com/firewall/index.html and place the sources at ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} then run make again'
 .endif
 
