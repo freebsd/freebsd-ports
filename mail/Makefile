@@ -60,6 +60,7 @@
     SUBDIR += gmail
     SUBDIR += gmime
     SUBDIR += gnumail
+    SUBDIR += gotmail
     SUBDIR += grepmail
     SUBDIR += hbiff
     SUBDIR += icqmail
