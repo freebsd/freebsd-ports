@@ -61,11 +61,14 @@ post-install:
 	cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
 		${MAKEFILE} clean all ${INSTALL_TARGET}
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/html
+	@${MKDIR} ${DOCSDIR}/html ${DOCSDIR}/misc
 	${INSTALL_DATA} ${WRKDIR}/doc/html/*.html ${DOCSDIR}/html
 	${CP} -Rp ${WRKDIR}/src/conf ${DOCSDIR}
 .for file in CHANGES DNSSEC LICENSE LICENSE_RSA README SUPPORT TODO
 	${INSTALL_DATA} ${WRKDIR}/src/${file} ${DOCSDIR}
+.endfor
+.for file in DynamicUpdate FAQ.* *.txt
+	${INSTALL_DATA} ${WRKDIR}/doc/misc/${file} ${DOCSDIR}/misc
 .endfor
 .endif
 
