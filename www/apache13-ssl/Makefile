@@ -9,7 +9,7 @@
 
 PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		ftp://src.doc.ic.ac.uk/packages/apache/dist/ \
@@ -58,7 +58,8 @@ CFLAGS+=	-I${OPENSSLINC}/openssl
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	\
 		--prefix=${PREFIX} \
-		--server-gid=nogroup \
+		--server-uid=www \
+		--server-gid=www \
 		--with-perl=${PERL} \
 		--with-layout=GNU \
 		--suexec-docroot=${PREFIX}/www/data \
@@ -96,9 +97,11 @@ post-patch:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./FixPatch ${OPENSSLBASE}
 
 certificate:
+	-${MKDIR} ${PREFIX}/etc/apache/certs
 	@if [ -f ${OPENSSLDIR}/openssl.cnf ]; then \
 		cd ${WRKSRC}/src; ${MAKE} ${MAKE_ENV} $@; \
-		${CP} ${WRKSRC}/SSLconf/conf/httpsd.pem ${PREFIX}/certs/cert.pem; \
+		${CP} ${WRKSRC}/SSLconf/conf/httpsd.pem \
+		${PREFIX}/etc/apache/certs/cert.pem; \
 	else \
 		${ECHO} "You must create the file ${OPENSSLDIR}/openssl.cnf first."; \
 	fi

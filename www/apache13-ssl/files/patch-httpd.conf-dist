@@ -1,0 +1,32 @@
+--- conf/httpd.conf-dist.orig	Wed Sep  4 06:39:41 2002
++++ conf/httpd.conf-dist	Mon Jan 27 17:29:26 2003
+@@ -943,6 +943,29 @@
+ #</IfModule>
+ # End of proxy directives.
+ 
++# Note that all SSL options can apply to virtual hosts.
++# Disable SSL. Useful in combination with virtual hosts. Note that SSLEnable is
++# now also supported.
++#SSLDisable
++SSLEnable
++
++# Set the path for the global cache server executable.
++# If this facility gives you trouble, you can disable it by setting
++# CACHE_SESSIONS to FALSE in apache_ssl.c
++SSLCacheServerPath @@ServerRoot@@/sbin/gcache
++
++# Set the global cache server port number, or path. If it is a path, a Unix
++# domain socket is used. If a number, a TCP socket.
++SSLCacheServerPort logs/gcache_port
++#SSLCacheServerPort 1234
++
++# Directory for the cache server to run in (in case of crashes). Optional.
++SSLCacheServerRunDir /usr/tmp
++
++# Set the session cache timeout, in seconds (set to 15 for testing, use a
++# higher value in real life)
++SSLSessionCacheTimeout 15
++
+ ### Section 3: Virtual Hosts
+ #
+ # VirtualHost: If you want to maintain multiple domains/hostnames on your
