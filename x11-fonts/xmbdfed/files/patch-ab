@@ -1,19 +1,11 @@
-*** xmbdfed.c.orig	Mon Jun  2 14:08:10 1997
---- xmbdfed.c	Fri Jun 20 15:30:46 1997
-***************
-*** 91,97 ****
-  #define HGINFO "\"%s\" %04lX (%02X,%02X)\nascent %d descent %d right %d left %d"
-  
-  static String fallback_resources[] = {
-!     "*fontList: -adobe-new century schoolbook-medium-r-normal--14-100-100-100-p-82-iso8859-1",
-      (String) NULL,
-  };
-  
---- 91,97 ----
-  #define HGINFO "\"%s\" %04lX (%02X,%02X)\nascent %d descent %d right %d left %d"
-  
-  static String fallback_resources[] = {
-! /*    "*fontList: -adobe-new century schoolbook-medium-r-normal--14-100-100-100-p-82-iso8859-1", */
-      (String) NULL,
-  };
-  
+--- xmbdfed.c.orig	Sat Oct 23 15:43:37 1999
++++ xmbdfed.c	Mon Nov  1 13:34:23 1999
+@@ -102,7 +102,7 @@
+ #define HGINFO "\"%s\" %04lX (%02X,%02X)\nascent %d descent %d right %d left %d"
+ 
+ static String fallback_resources[] = {
+-    "*fontList: -adobe-new century schoolbook-medium-r-normal--14-100-100-100-p-82-iso8859-1",
++/*    "*fontList: -adobe-new century schoolbook-medium-r-normal--14-100-100-100-p-82-iso8859-1", */
+     (String) NULL,
+ };
+ 

@@ -6,14 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xmbdfed-3.9
+DISTNAME=	xmbdfed-4.2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	ftp://crl.nmsu.edu/CLR/multiling/General/
 
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	xmbdfed-3.9.patch1 xmbdfed-3.9.patch2
-
-MAINTAINER=	jfieber@FreeBSD.org
+MAINTAINER=	ports@freebsd.org
 
 .if defined(USE_FREETYPE)
 LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
