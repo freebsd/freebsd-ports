@@ -3,9 +3,8 @@ include/iiimf/iiimp/iiimp-opcode.h
 include/iiimf/iiimp/iiimp-keycode.h
 include/iiimf/iiimp/iiimp-data.h
 include/iiimf/iiimp/iiimp-character-subsets.h
-@dirrm include/iiimf/iiimp
-@dirrm include/iiimf
 lib/libiiimp.so.0
 lib/libiiimp.so
-lib/libiiimp.la
 lib/libiiimp.a
+@dirrm include/iiimf/iiimp
+@unexec rmdir %D/include/iiimf 2>/dev/null || true
