@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.4 1998/10/08 23:52:03 asami Exp $
+# $Id: Makefile,v 1.5 1998/10/10 04:22:09 steve Exp $
 #
 
 DISTNAME=	xc
@@ -23,6 +23,8 @@ PATCHFILES=	3.3.2-patch1 3.3.2-patch2 3.3.2-patch3 \
 		xtt10-to-pl00.diff.gz 
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
+
+BROKEN_ELF=	yes
 
 LIB_DEPENDS=	ttf.2:${PORTSDIR}/print/freetype
 
