@@ -5,17 +5,14 @@
 # $FreeBSD$
 #
 
-
 PORTNAME=	rt2
-PORTVERSION=	2.0.14
-RT_VERSION=    ${PORTVERSION:C/\./-/g}
+PORTVERSION=	2.0.15
 CATEGORIES=	www
 MASTER_SITES=	http://www.fsck.com/pub/rt/release/
-RT_VERSION=    ${PORTVERSION:C/\./-/g}
-DISTFILES=     rt-${RT_VERSION}.tar.gz
-WRKSRC=        ${WRKDIR}/rt-${RT_VERSION}
+DISTNAME=	rt-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	plasmaball@pchome.com.tw
+COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Cookie.pm:${PORTSDIR}/www/p5-libapreq \
@@ -26,7 +23,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/DBIx/SearchBuilder.pm:${PORTSDIR}/databases/p5-DBIx-SearchBuilder \
 		${SITE_PERL}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \
 		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/FreezeThaw.pm:${PORTSDIR}/devel/p5-FreezeThaw \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
@@ -37,16 +33,21 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/MLDBM.pm:${PORTSDIR}/databases/p5-MLDBM \
 		${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
-		${SITE_PERL}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
+		${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		${SITE_PERL}/Text/Wrapper.pm:${PORTSDIR}/textproc/p5-Text-Wrapper \
-		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
+		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash \
+		${SITE_PERL}/CGI/Cookie.pm:${PORTSDIR}/www/p5-CGI.pm \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
+WRKSRC=		${WRKDIR}/rt-${RT_VERSION}
+RT_VERSION=	${PORTVERSION:C/\./-/g}
 DB_TYPE?=	mysql
 
 .if ${DB_TYPE} == "Pg"
-BUILD_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7
+BUILD_DEPENDS+=	${LOCALBASE}/bin/psql:${PORTSDIR}/databases/postgresql7 \
+		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .else
 DB_TYPE=	mysql
 BUILD_DEPENDS+=	${LOCALBASE}/bin/safe_mysqld:${PORTSDIR}/databases/mysql323-server
@@ -59,7 +60,7 @@ USE_REINPLACE=	yes
 USE_PERL5=	yes
 
 RT_PATH?=	${PREFIX}/rt2
-DB_DBA_PASSWORDD?=	
+DB_DBA_PASSWORDD?=
 DB_HOST?=	localhost
 DB_RT_PASS=	rt_pass
 
@@ -122,6 +123,12 @@ pre-fetch:
 	@${ECHO} "IMPORTANT!!! If you want to install a fresh new port, define INSTALL_NEW to do so, otherwise this port just do a upgrade."
 	@${ECHO} ""
 
+post-patch:
+.for _FILE in tools/testdeps
+	${REINPLACE_CMD} 's,/usr/bin/perl,${PERL},' ${WRKSRC}/${_FILE}
+	${CHMOD} +x ${WRKSRC}/${_FILE}
+.endfor
+
 do-build:
 .for _NAME in RT_PATH DB_DBA_PASSWORD DB_HOST DB_RT_PASS DB_TYPE
 	@${REINPLACE_CMD} "s!%%${_NAME}%%!${${_NAME}}!g" ${WRKSRC}/Makefile
@@ -130,7 +137,7 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile fixdeps
 
 do-install:
-	@${MKDIR} /var/log/rt2
+	@${MKDIR} ${LOCALBASE}/var/log/rt2
 .if defined(INSTALL_NEW)
 	-@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile dropdb
 	@cd ${WRKSRC} && ${MAKE} -f ${WRKSRC}/Makefile install
@@ -143,4 +150,11 @@ do-install:
 post-install:
 	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+.endif
+
+.include <bsd.port.post.mk>
