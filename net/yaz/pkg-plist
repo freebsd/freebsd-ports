@@ -125,6 +125,7 @@ share/doc/yaz/soap.http.html
 share/doc/yaz/soap.srw.html
 share/doc/yaz/soap.xml.html
 share/doc/yaz/tools.html
+share/doc/yaz/tools.log.html
 share/doc/yaz/tools.marc.html
 share/doc/yaz/tools.nmem.html
 share/doc/yaz/tools.oid.html
