@@ -3,12 +3,12 @@
 # Date created:			13 Dec, 1997
 # Whom:				kline
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/06 08:11:00 obrien Exp $
+# $Id: Makefile,v 1.2 1999/03/24 17:49:46 steve Exp $
 #
 
-DISTNAME=       rftp-1.2
+DISTNAME=	rftp-1.2
 CATEGORIES=	mail
-MASTER_SITES=   http://www.freebsd.org/~steve/
+MASTER_SITES=	ftp://toxic.magnesium.net/pub/FreeBSD/rftp/
 
 MAINTAINER=	kline@thought.org
 
