@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	firebird
-PORTVERSION=	1.5.r8
-PORTREVISION=	1
+PORTVERSION=	1.5.r9
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}	\
 		http://www.aims.net.au/chris/firebird/
 MASTER_SITE_SUBDIR=firebird
-DISTNAME=	firebird15-rc8
+DISTNAME=	Firebird-1.5.0.4288.src
 
 MAINTAINER=	chris@e-easy.com.au
 COMMENT=	The open-source InterBase(tm) 6.0 spin-off (Classic version)
 
+USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
+WANT_LIBTOOL_VER=	13
 WANT_AUTOCONF_VER=	253
 USE_GCC=	3.3
 
@@ -29,7 +29,7 @@ LD=	gcc
 
 CONFLICTS=	firebird-devel-*
 
-WRKSRC=		${WRKDIR}/firebird15
+WRKSRC=		${WRKDIR}/firebird15-rc9
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/firebird/lib
 MSG_FILE=	${PKGDIR}/pkg-message
@@ -53,9 +53,6 @@ pre-everything::
 .if !defined(BATCH)
 	@sleep 10
 .endif
-
-patch-libtool:
-	@${DO_NADA}
 
 do-configure:
 	@(cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} MAKE=${GMAKE}	\

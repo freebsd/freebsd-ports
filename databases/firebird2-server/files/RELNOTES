@@ -1,6 +1,6 @@
-Firebird 1.5.0 FreeBSD Release Notes                    11-Jan-2004
+Firebird 1.5.0 FreeBSD Release Notes                    12-Feb-2004
 --------------------------------------
-FB-V1.5.0.4201 Firebird 1.5 Release Candidate 8
+FB-V1.5.0.4288 Firebird 1.5 Release Candidate 9
 
     Welcome to the FreeBSD Firebird port!
 
@@ -58,12 +58,12 @@ this to your kernel config, or add the following line to /boot/loader.conf:
 where is is the current value plus 48. If this doesn't resolve the issue,
 try adding 48 again. 
 
-    Please note that RC8 has changed the libgds.so symlink to point to
+    Please note that as of RC8, the libgds.so symlink now points to
 libfbembed.so. This has been done to resolve compatability issues with
 older versions of Firebird. The FreeBSD port of RC7 had libgds.so
 pointing to libfbclient.so. libfbclient.so is a remote access-only
 shared library with threaded support, which requires target applications
-to link with a threaded library such as libc_r.so, libkse.so or libthr.so.
+to link with a threaded library such as libc_r.so, libpthread.so or libthr.so.
 
     Super Server support in Firebird 1.5 for FreeBSD is not currently
 available due to the Firebird code using POSIX threads APIs not available
