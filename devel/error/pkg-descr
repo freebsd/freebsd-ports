@@ -1,0 +1,14 @@
+Error analyzes and optionally disperses the diagnostic error messages
+produced by a number of compilers and language processors to the
+source file and line where the errors occurred.  It can replace the
+painful, traditional methods of scribbling abbreviations of errors on
+paper, and permits error messages and source code to be viewed
+simultaneously without machinations of multiple windows in a screen
+editor.
+
+Error knows about the error messages produced by: make(1), cc(1),
+cpp(1), ccom(1), as(1), ld(1), lint(1), pi(1), pc(1), f77(1), and DEC
+Western Research Modula-2.  However, please note that error hasn't
+been taught about the toolchain currently in use on FreeBSD, so the
+aforementioned programs may not necessarily be the ones installed on
+your system!

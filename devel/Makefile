@@ -103,6 +103,7 @@
     SUBDIR += elib-emacs
     SUBDIR += elib-emacs20
     SUBDIR += entity
+    SUBDIR += error
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fampp
