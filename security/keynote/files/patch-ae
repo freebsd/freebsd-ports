@@ -1,0 +1,11 @@
+--- man/keynote.4.orig	Tue Sep 26 16:16:32 2000
++++ man/keynote.4	Sat Dec  1 01:52:33 2001
+@@ -20,7 +20,7 @@
+ .\" PURPOSE.
+ .\"
+ .Dd May 22, 1999
+-.Dt KEYNOTE 4
++.Dt KEYNOTE 5
+ .\" .TH KeyNote 4 local
+ .Os
+ .Sh NAME
