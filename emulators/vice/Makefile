@@ -5,15 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	1.2
+PORTVERSION=	1.6
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
 
-MAINTAINER=	dchapes@ddm.on.ca
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
-WRKSRC=		${WRKDIR}/vice-1.2
 USE_XLIB=	yes
 RESTRICTED=	ROMs are copyrighted by Commodore Business Machines
 NO_CDROM=	${RESTRICTED}
