@@ -15,6 +15,7 @@ lib/ivl/ivlpp
 lib/ivl/null-s.conf
 lib/ivl/null.conf
 lib/ivl/null.tgt
+lib/ivl/system.sft
 lib/ivl/system.vpi
 lib/ivl/vvp-s.conf
 lib/ivl/vvp.conf
