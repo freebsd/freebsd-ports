@@ -153,6 +153,7 @@
     SUBDIR += freeradius
     SUBDIR += freevrrpd
     SUBDIR += freewais-sf
+    SUBDIR += frost
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fugu
