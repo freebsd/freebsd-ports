@@ -32,6 +32,68 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0cf3480d-5fdf-11d9-b721-00065be4b5b6">
+    <topic>helvis -- arbitrary file deletion problem</topic>
+    <affects>
+      <package>
+        <name>ko-helvis</name>
+        <range><le>1.8h2_1</le></range>
+      </package>
+      <package>
+        <name>helvis</name>
+        <range><le>1.8h2_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>The setuid root elvprsv utility, used to preserve
+	 recovery helvis files, can be abused by local users to delete
+        with root privileges.</p> 
+	<p>The problem is that elvprsv deletes files when it thinks they
+	have become corrupt. When elvprsv is pointed to a normal file then
+	it will almost always think the file is corrupt and deletes it.
+	This behavior may be exploited by local attackers to delete critical
+	files.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://people.freebsd.org/~niels/ports/korean/helvis/issues.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-11-24</discovery>
+      <entry>2005-01-10</entry>
+    </dates>
+  </vuln>
+  <vuln vid="bb99f803-5fde-11d9-b721-00065be4b5b6">
+    <topic>helvis -- information leak vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>ko-helvis</name>
+        <range><le>1.8h2_1</le></range>
+      </package>
+      <package>
+        <name>helvis</name>
+        <range><le>1.8h2_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Once a recovery file has been preserved by the setuid root elvprsv
+	utility it is placed in a worldreadable directory with worldreadable
+	permissions.  This possibly allows sensitive information to leak.</p>
+	<p>In addition to this information leak, it is possible for users
+	to recover files that belong to other users by using elvrec, another
+	setuid root binary.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://people.freebsd.org/~niels/ports/korean/helvis/issues.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-11-24</discovery>
+      <entry>2005-01-10</entry>
+    </dates>
+  </vuln>
   <vuln vid="28ab7ddf-61ab-11d9-a9e7-0001020eed82">
     <topic>dillo -- format string vulnerability</topic>
     <affects>
