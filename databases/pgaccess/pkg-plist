@@ -59,9 +59,18 @@ share/postgresql/pgaccess/README
 share/postgresql/pgaccess/changelog
 share/postgresql/pgaccess/copyright
 share/postgresql/pgaccess/demo/README.demo
+share/postgresql/pgaccess/demo/demo.pga
 share/postgresql/pgaccess/demo/formdemo72.sql
 share/postgresql/pgaccess/demo/formdemo73.sql
+share/postgresql/pgaccess/demo/icons.pga
+share/postgresql/pgaccess/demo/sillygraphs.pga
+share/postgresql/pgaccess/demo/todomanager.pga
+share/postgresql/pgaccess/demo/treedemo.pga
+share/postgresql/pgaccess/extra/MSAccessPrintWidgets.tcl
+share/postgresql/pgaccess/extra/SendExcel.tcl
+share/postgresql/pgaccess/extra/customers.tcl
 share/postgresql/pgaccess/extra/graph.tcl
+share/postgresql/pgaccess/extra/psic.tcl
 share/postgresql/pgaccess/extra/tpe.tcl
 share/postgresql/pgaccess/images/icon_button.gif
 share/postgresql/pgaccess/images/icon_checkbutton.gif
@@ -73,10 +82,13 @@ share/postgresql/pgaccess/images/icon_listbox.gif
 share/postgresql/pgaccess/images/icon_query.gif
 share/postgresql/pgaccess/images/icon_radiobutton.gif
 share/postgresql/pgaccess/images/icon_spinbox.gif
+share/postgresql/pgaccess/images/icon_table.gif
 share/postgresql/pgaccess/images/icon_text.gif
+share/postgresql/pgaccess/images/icon_tree.gif
 share/postgresql/pgaccess/known_bugs
 share/postgresql/pgaccess/lib/connections.tcl
 share/postgresql/pgaccess/lib/database.tcl
+share/postgresql/pgaccess/lib/debug.tcl
 share/postgresql/pgaccess/lib/diagrams.tcl
 share/postgresql/pgaccess/lib/forms.tcl
 share/postgresql/pgaccess/lib/functions.tcl
@@ -90,6 +102,7 @@ share/postgresql/pgaccess/lib/help/author.hlp
 share/postgresql/pgaccess/lib/help/begin.hlp
 share/postgresql/pgaccess/lib/help/close.hlp
 share/postgresql/pgaccess/lib/help/cluster.hlp
+share/postgresql/pgaccess/lib/help/command_line_options.hlp
 share/postgresql/pgaccess/lib/help/commit.hlp
 share/postgresql/pgaccess/lib/help/copy.hlp
 share/postgresql/pgaccess/lib/help/copyrights.hlp
@@ -153,6 +166,7 @@ share/postgresql/pgaccess/lib/help/notify.hlp
 share/postgresql/pgaccess/lib/help/open_database.hlp
 share/postgresql/pgaccess/lib/help/open_query.hlp
 share/postgresql/pgaccess/lib/help/open_table.hlp
+share/postgresql/pgaccess/lib/help/pgackages.hlp
 share/postgresql/pgaccess/lib/help/pgfunctions.hlp
 share/postgresql/pgaccess/lib/help/postgresql.hlp
 share/postgresql/pgaccess/lib/help/queries.hlp
@@ -178,6 +192,7 @@ share/postgresql/pgaccess/lib/help/view_table_structure.hlp
 share/postgresql/pgaccess/lib/help/views.hlp
 share/postgresql/pgaccess/lib/help/visual_designer.hlp
 share/postgresql/pgaccess/lib/help/y2k.hlp
+share/postgresql/pgaccess/lib/images.tcl
 share/postgresql/pgaccess/lib/importexport.tcl
 share/postgresql/pgaccess/lib/languages/chinese_big5
 share/postgresql/pgaccess/lib/languages/chinese_gb
@@ -195,6 +210,8 @@ share/postgresql/pgaccess/lib/languages/russian.koi8r
 share/postgresql/pgaccess/lib/languages/russian_win
 share/postgresql/pgaccess/lib/languages/spanish
 share/postgresql/pgaccess/lib/mainlib.tcl
+share/postgresql/pgaccess/lib/pgackages.tcl
+share/postgresql/pgaccess/lib/plugins/pgin.tcl
 share/postgresql/pgaccess/lib/plugins/pgmonitor.tcl
 share/postgresql/pgaccess/lib/preferences.tcl
 share/postgresql/pgaccess/lib/printer.tcl
@@ -205,7 +222,7 @@ share/postgresql/pgaccess/lib/sequences.tcl
 share/postgresql/pgaccess/lib/stack.tcl
 share/postgresql/pgaccess/lib/syntax.tcl
 share/postgresql/pgaccess/lib/tables.tcl
-share/postgresql/pgaccess/lib/users.tcl
+share/postgresql/pgaccess/lib/usergroups.tcl
 share/postgresql/pgaccess/lib/views.tcl
 share/postgresql/pgaccess/lib/visualqb.tcl
 share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1/arrow.tcl
@@ -279,6 +296,16 @@ share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1/tree.tcl
 share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1/utils.tcl
 share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1/widget.tcl
 share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1/xpm2image.tcl
+share/postgresql/pgaccess/lib/widgets/base64/base64.tcl
+share/postgresql/pgaccess/lib/widgets/base64/pkgIndex.tcl
+share/postgresql/pgaccess/lib/widgets/base64/uuencode.tcl
+share/postgresql/pgaccess/lib/widgets/cmdline/cmdline.tcl
+share/postgresql/pgaccess/lib/widgets/cmdline/pkgIndex.tcl
+share/postgresql/pgaccess/lib/widgets/cmdline/typedCmdline.tcl
+share/postgresql/pgaccess/lib/widgets/csv/csv.tcl
+share/postgresql/pgaccess/lib/widgets/csv/pkgIndex.tcl
+share/postgresql/pgaccess/lib/widgets/fileutil/fileutil.tcl
+share/postgresql/pgaccess/lib/widgets/fileutil/pkgIndex.tcl
 share/postgresql/pgaccess/lib/widgets/icons1.0/LICENSE
 share/postgresql/pgaccess/lib/widgets/icons1.0/icons.tcl
 share/postgresql/pgaccess/lib/widgets/icons1.0/pkgIndex.tcl
@@ -290,25 +317,36 @@ share/postgresql/pgaccess/lib/widgets/tablelist2.7/scripts/tablelistSortByColumn
 share/postgresql/pgaccess/lib/widgets/tablelist2.7/scripts/tablelistWidget.tcl
 share/postgresql/pgaccess/lib/widgets/tablelist2.7/scripts/tclIndex
 share/postgresql/pgaccess/lib/widgets/tablelist2.7/tablelist.tcl
+share/postgresql/pgaccess/lib/widgets/tkwizard-1.0a1/README
+share/postgresql/pgaccess/lib/widgets/tkwizard-1.0a1/pkgIndex.tcl
+share/postgresql/pgaccess/lib/widgets/tkwizard-1.0a1/tkwizard.tcl
+share/postgresql/pgaccess/lib/widgets/tkwizard-1.0a1/tkwizthing.tcl
+share/postgresql/pgaccess/osx/README.osx
 share/postgresql/pgaccess/pgaccess.tcl
 share/postgresql/pgaccess/pgmonitor
 share/postgresql/pgaccess/todo
 %%PORTDOCS%%@dirrm share/doc/postgresql/pgaccess/tutorial
 %%PORTDOCS%%@dirrm share/doc/postgresql/pgaccess
 %%PORTDOCS%%@unexec rmdir %D/share/doc/postgresql 2> /dev/null || true
-@dirrm share/postgresql/pgaccess/demo
-@dirrm share/postgresql/pgaccess/extra
-@dirrm share/postgresql/pgaccess/images
-@dirrm share/postgresql/pgaccess/lib/help
-@dirrm share/postgresql/pgaccess/lib/plugins
-@dirrm share/postgresql/pgaccess/lib/languages
-@dirrm share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1/images
-@dirrm share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1/lang
-@dirrm share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1
-@dirrm share/postgresql/pgaccess/lib/widgets/icons1.0
+@dirrm share/postgresql/pgaccess/osx
+@dirrm share/postgresql/pgaccess/lib/widgets/tkwizard-1.0a1
 @dirrm share/postgresql/pgaccess/lib/widgets/tablelist2.7/scripts
 @dirrm share/postgresql/pgaccess/lib/widgets/tablelist2.7
+@dirrm share/postgresql/pgaccess/lib/widgets/icons1.0
+@dirrm share/postgresql/pgaccess/lib/widgets/fileutil
+@dirrm share/postgresql/pgaccess/lib/widgets/csv
+@dirrm share/postgresql/pgaccess/lib/widgets/cmdline
+@dirrm share/postgresql/pgaccess/lib/widgets/base64
+@dirrm share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1/lang
+@dirrm share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1/images
+@dirrm share/postgresql/pgaccess/lib/widgets/BWidget-1.4.1
 @dirrm share/postgresql/pgaccess/lib/widgets
+@dirrm share/postgresql/pgaccess/lib/plugins
+@dirrm share/postgresql/pgaccess/lib/languages
+@dirrm share/postgresql/pgaccess/lib/help
 @dirrm share/postgresql/pgaccess/lib
+@dirrm share/postgresql/pgaccess/images
+@dirrm share/postgresql/pgaccess/extra
+@dirrm share/postgresql/pgaccess/demo
 @dirrm share/postgresql/pgaccess
 @unexec rmdir %D/share/postgresql 2> /dev/null || true

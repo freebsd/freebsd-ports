@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pgaccess
-PORTVERSION=	0.98.8
-PORTREVISION=	1
+PORTVERSION=	0.98.8.20030520
 CATEGORIES=	databases tcl83 tk83
-MASTER_SITES=	http://www.pgaccess.org/download/
-DIST_SUBDIR=	postgresql
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	pgaccess
 
 MAINTAINER=	girgen@pingpong.net
 COMMENT=	A powerful GUI PostgreSQL database administration tool and toolkit
