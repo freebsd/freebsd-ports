@@ -14,8 +14,9 @@ bin/djvups
 bin/djvused
 bin/djvuserve
 bin/djvutxt
-lib/libdjvulibre-3.5.12.so
 %%X11%%lib/browser_plugins/nsdejavu.so
+lib/libdjvulibre3.so.5
+share/djvu/languages.xml
 share/djvu/osi/Chinese_PRC/libdjvu++.xml
 share/djvu/osi/Chinese_PRC/messages.xml
 @dirrm share/djvu/osi/Chinese_PRC
@@ -30,14 +31,11 @@ share/djvu/osi/en/unixgui-viewer.xml
 @dirrm share/djvu/osi/en
 share/djvu/osi/fr_FR/libdjvu++.xml
 share/djvu/osi/fr_FR/messages.xml
-@dirrm share/djvu/osi/fr_FR
+@dirrm share/djvu/fr_FR
 share/djvu/osi/ja_JP/libdjvu++.xml
 share/djvu/osi/ja_JP/messages.xml
-@dirrm share/djvu/osi/ja_JP
-@dirrm share/djvu/osi
-share/djvu/languages.xml
+@dirrm share/djvu/ja_JP
 @dirrm share/djvu
 %%PORTDOCS%%share/doc/djvulibre/djvu2spec.djvu
 %%PORTDOCS%%share/doc/djvulibre/djvu3changes.txt
 %%PORTDOCS%%share/doc/djvulibre/lizard2002.djvu
-%%PORTDOCS%%@dirrm share/doc/djvulibre
