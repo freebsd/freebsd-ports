@@ -1,5 +1,14 @@
---- Makefile.in.orig	Thu Sep 14 17:35:51 2000
-+++ Makefile.in	Wed Jan  3 20:19:31 2001
+--- Makefile.in.orig	Tue Feb 13 14:12:02 2001
++++ Makefile.in	Tue Feb 13 21:09:12 2001
+@@ -72,7 +72,7 @@
+ LIBSRCS=$(LIBOBJS:.o=.c)
+ 
+ LIBS=@LIBS@
+-CFLAGS=-D_REENTRANT=1 -I. @CFLAGS@
++CFLAGS=-D_REENTRANT=1 -I. @CFLAGS@ -I@prefix@/include
+ LDFLAGS=@LDFLAGS@
+ 
+ MKDEPEND=$(CC) $(CFLAGS) -MM
 @@ -87,7 +87,7 @@
  
  # Set this to something if you want all installed binaries to have a suffix.
