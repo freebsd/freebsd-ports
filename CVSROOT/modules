@@ -1921,6 +1921,7 @@ ganglia-webfrontend	ports/sysutils/ganglia-webfrontend
 gap		ports/math/gap
 garith		ports/games/garith
 garlic		ports/biology/garlic
+garmin-utils	ports/comms/garmin-utils
 gate		ports/editors/gate
 gatekeeper	ports/net/gatekeeper
 gauche		ports/lang/gauche
