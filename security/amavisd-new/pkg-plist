@@ -2,6 +2,7 @@
 %%PORTDOCS%%share/doc/amavisd-new/INSTALL
 %%PORTDOCS%%share/doc/amavisd-new/LICENSE
 %%PORTDOCS%%share/doc/amavisd-new/README.chroot
+%%PORTDOCS%%share/doc/amavisd-new/README.contributed
 %%PORTDOCS%%share/doc/amavisd-new/README.customize
 %%PORTDOCS%%share/doc/amavisd-new/README.exim_v3
 %%PORTDOCS%%share/doc/amavisd-new/README.exim_v4
@@ -12,6 +13,7 @@
 %%PORTDOCS%%share/doc/amavisd-new/README.performance
 %%PORTDOCS%%share/doc/amavisd-new/README.postfix
 %%PORTDOCS%%share/doc/amavisd-new/README.sendmail
+%%PORTDOCS%%share/doc/amavisd-new/README.sendmail-dual
 %%PORTDOCS%%share/doc/amavisd-new/RELEASE_NOTES
 %%PORTDOCS%%@dirrm share/doc/amavisd-new
 etc/amavisd.conf-dist
