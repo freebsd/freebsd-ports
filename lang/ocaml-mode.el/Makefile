@@ -33,4 +33,10 @@ CAMLMODE_DIR_ENTRY=* Caml-mode: (caml-mode).         A mode for editing CAML pro
 INSTALL_TARGET=	install install-ocamltags
 MAKE_ENV+=	EMACSDIR=${CAMLMODE_ELISPDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Does not build on ia64"
+.endif
+
+.include <bsd.port.post.mk>
