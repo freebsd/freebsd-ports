@@ -8,9 +8,8 @@
 PORTNAME=	wmcyrx
 PORTVERSION=	2.1
 CATEGORIES=	russian windowmaker
-MASTER_SITES=	http://freebsd.org.ru/~osa/distfiles/ \
-		ftp://ftp.ssau.ru/pub/linux_soft/Cyrillic/ \
-		ftp://ftp.uven.ru/pub/cyrillic/X11/keyboard/
+MASTER_SITES=	http://ozz.pp.ru/distfiles/ \
+		ftp://ftp.vistdon.ru/pub/unix/X/wmanagers/windowmaker/
 DISTNAME=	cyrx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
