@@ -16,8 +16,9 @@ MAINTAINER=	ports@freebsd.org
 USE_X_PREFIX=	yes
 NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
 
-XSERVVERSION!=	${PKG_INFO} -O x11-servers/XFree86-4-Server 2>/dev/null | grep Server- || true
-XLIBVERSION!=	${PKG_INFO} -O x11/XFree86-4-libraries 2>/dev/null | grep libraries- || true
+# XXX Should use ${PKG_INFO} and ${GREP}
+XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | grep Server- || true
+XLIBVERSION!=	/usr/sbin/pkg_info -O x11/XFree86-4-libraries 2>/dev/null | grep libraries- || true
 
 PLIST_SUB=	XSERVVERSION=${XSERVVERSION} XLIBVERSION=${XLIBVERSION} \
 		LINUXBASE=${LINUXBASE}
