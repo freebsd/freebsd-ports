@@ -3,7 +3,7 @@
 # Date Created:				7 nov 98
 # Whom:				 	Gilad Rom
 #
-# $Id: Makefile,v 1.3 1999/02/18 04:58:45 vanilla Exp $
+# $Id: Makefile,v 1.4 1999/03/15 18:30:06 nectar Exp $
 #
 
 DISTNAME=	gtkstep-1.4
@@ -17,7 +17,7 @@ LIB_DEPENDS=	gdk_imlib.3:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk11d-config"
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
