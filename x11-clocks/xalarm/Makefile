@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 
-MAINTAINER=	desmo@bandwidth.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X based alarm clock
 
 .include <bsd.port.pre.mk>
