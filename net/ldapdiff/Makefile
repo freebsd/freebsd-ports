@@ -5,27 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=       ldapdiff
-PORTVERSION=    0.9.0
-CATEGORIES=     net
-MASTER_SITES=   http://webtomware.rhoen.de/ \
+PORTNAME=	ldapdiff
+PORTVERSION=	0.9.0
+CATEGORIES=	net
+MASTER_SITES=	http://webtomware.rhoen.de/ \
 		http://unixpages.org/distfiles/
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility for patching LDAP directories using LDIF files
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+.if defined(WITH_OPENLDAP1)
+LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
+.else
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
+.endif
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-ldap-dir=${PREFIX} \
 		--with-iconv-dir=${PREFIX}
-
-.if defined(WITH_OPENLDAP1)
-LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
-.else
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20
-.endif
+LDAP_PORT?=	net/openldap20-client
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ldapdiff ${PREFIX}/bin
