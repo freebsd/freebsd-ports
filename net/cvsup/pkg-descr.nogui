@@ -7,8 +7,8 @@ fastest mirroring tool in existence today.  In addition to being
 a great general-purpose mirroring tool, CVSup includes special
 features and optimizations specifically tailored to CVS repositories.
 
-This port of CVSup includes the GUI and requires X11.  For a version
-that does not include the GUI, use the "net/cvsup-without-gui" port.
+This port of CVSup omits the GUI and does not require X11.  For a
+version that includes the GUI, use the "net/cvsup" port.
 
 WWW: http://www.polstra.com/projects/freeware/CVSup/
 

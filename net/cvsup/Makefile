@@ -18,6 +18,9 @@ MAINTAINER=	jdp@FreeBSD.org
 .ifdef WITHOUT_X11
 M3FLAGS+=	-DNOGUI
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/tcp/${TARGET}/libm3tcp.a:${PORTSDIR}/lang/ezm3
+PKGNAMESUFFIX=	-without-gui
+COMMENT=	${PKGDIR}/pkg-comment.nogui
+DESCR=		${PKGDIR}/pkg-descr.nogui
 .else
 USE_XLIB=	yes
 BUILD_DEPENDS=	${PREFIX}/lib/m3/pkg/formsvbt/${TARGET}/libm3formsvbt.a:${PORTSDIR}/lang/ezm3
@@ -54,8 +57,10 @@ pre-fetch:
 	@${FALSE}
 .endif
 .ifndef WITHOUT_X11
-	@${ECHO_MSG} -n "To build this port without X11 (and without the GUI),"
-	@${ECHO_MSG} " define \"WITHOUT_X11\"."
+	@${ECHO_MSG} "*****************************************************"
+	@${ECHO_MSG} "* To build CVSup without X11 (and without the GUI), *"
+	@${ECHO_MSG} "* use the \"net/cvsup-without-gui\" port.             *"
+	@${ECHO_MSG} "*****************************************************"
 .endif
 	@${TRUE}
 
