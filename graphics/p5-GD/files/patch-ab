@@ -1,0 +1,11 @@
+--- GD.xs.orig	Thu Aug 24 18:41:47 2000
++++ GD.xs	Mon Mar 19 12:45:05 2001
+@@ -1278,7 +1278,7 @@
+ 	    img = NULL;
+ 	  }
+ 
+-	  err = gdImageStringTTF(img,brect,fgcolor,fontname,ptsize,angle,x,y,string);
++	  err = gdImageStringFT(img,brect,fgcolor,fontname,ptsize,angle,x,y,string);
+ 	  if (err) {
+ 	    errormsg = perl_get_sv("@",0);
+ 	    if (errormsg != NULL)
