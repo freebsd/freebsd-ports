@@ -1,10 +1,30 @@
 bin/zsh
-@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
-@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
+@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells; rm -f /etc/shells.bak
+@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells; rm -f /etc/shells.bak
 bin/zsh-%%ZSH_VER%%
-@unexec install-info --delete %D/info/zsh.info %D/info/dir
-info/zsh.info
-@exec install-info %D/info/zsh.info %D/info/dir
+%%PORTDOCS%%@unexec install-info --delete %D/%%PORTDOCS%%info/zsh.info %D/info/dir
+%%PORTDOCS%%info/zsh.info
+%%PORTDOCS%%info/zsh.info-1
+%%PORTDOCS%%info/zsh.info-10
+%%PORTDOCS%%info/zsh.info-11
+%%PORTDOCS%%info/zsh.info-12
+%%PORTDOCS%%info/zsh.info-13
+%%PORTDOCS%%info/zsh.info-14
+%%PORTDOCS%%info/zsh.info-15
+%%PORTDOCS%%info/zsh.info-16
+%%PORTDOCS%%info/zsh.info-17
+%%PORTDOCS%%info/zsh.info-18
+%%PORTDOCS%%info/zsh.info-19
+%%PORTDOCS%%info/zsh.info-2
+%%PORTDOCS%%info/zsh.info-20
+%%PORTDOCS%%info/zsh.info-3
+%%PORTDOCS%%info/zsh.info-4
+%%PORTDOCS%%info/zsh.info-5
+%%PORTDOCS%%info/zsh.info-6
+%%PORTDOCS%%info/zsh.info-7
+%%PORTDOCS%%info/zsh.info-8
+%%PORTDOCS%%info/zsh.info-9
+%%PORTDOCS%%@exec install-info %D/%%PORTDOCS%%info/zsh.info %D/info/dir
 %%NO_STATIC%%lib/zsh/libzsh-%%ZSH_VER%%.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/cap.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/clone.so
@@ -29,6 +49,39 @@ info/zsh.info
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zprof.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zpty.so
 %%NO_STATIC%%lib/zsh/%%ZSH_VER%%/zsh/zutil.so
+%%PORTDOCS%%share/doc/zsh/zsh_1.html
+%%PORTDOCS%%share/doc/zsh/zsh_10.html
+%%PORTDOCS%%share/doc/zsh/zsh_11.html
+%%PORTDOCS%%share/doc/zsh/zsh_12.html
+%%PORTDOCS%%share/doc/zsh/zsh_13.html
+%%PORTDOCS%%share/doc/zsh/zsh_14.html
+%%PORTDOCS%%share/doc/zsh/zsh_15.html
+%%PORTDOCS%%share/doc/zsh/zsh_16.html
+%%PORTDOCS%%share/doc/zsh/zsh_17.html
+%%PORTDOCS%%share/doc/zsh/zsh_18.html
+%%PORTDOCS%%share/doc/zsh/zsh_19.html
+%%PORTDOCS%%share/doc/zsh/zsh_2.html
+%%PORTDOCS%%share/doc/zsh/zsh_20.html
+%%PORTDOCS%%share/doc/zsh/zsh_21.html
+%%PORTDOCS%%share/doc/zsh/zsh_22.html
+%%PORTDOCS%%share/doc/zsh/zsh_23.html
+%%PORTDOCS%%share/doc/zsh/zsh_24.html
+%%PORTDOCS%%share/doc/zsh/zsh_25.html
+%%PORTDOCS%%share/doc/zsh/zsh_26.html
+%%PORTDOCS%%share/doc/zsh/zsh_27.html
+%%PORTDOCS%%share/doc/zsh/zsh_28.html
+%%PORTDOCS%%share/doc/zsh/zsh_29.html
+%%PORTDOCS%%share/doc/zsh/zsh_3.html
+%%PORTDOCS%%share/doc/zsh/zsh_4.html
+%%PORTDOCS%%share/doc/zsh/zsh_5.html
+%%PORTDOCS%%share/doc/zsh/zsh_6.html
+%%PORTDOCS%%share/doc/zsh/zsh_7.html
+%%PORTDOCS%%share/doc/zsh/zsh_8.html
+%%PORTDOCS%%share/doc/zsh/zsh_9.html
+%%PORTDOCS%%share/doc/zsh/zsh_toc.html
+share/examples/zsh/zlogin
+share/examples/zsh/zshenv
+share/examples/zsh/zshrc
 %%ZSHFUNC_SUBDIR%%/_a2ps
 %%ZSHFUNC_SUBDIR%%/_alias
 %%ZSHFUNC_SUBDIR%%/_aliases
@@ -44,6 +97,7 @@ info/zsh.info
 %%ZSHFUNC_SUBDIR%%/_arguments
 %%ZSHFUNC_SUBDIR%%/_arp
 %%ZSHFUNC_SUBDIR%%/_arrays
+%%ZSHFUNC_SUBDIR%%/_autocd
 %%ZSHFUNC_SUBDIR%%/_autoload
 %%ZSHFUNC_SUBDIR%%/_bash_completions
 %%ZSHFUNC_SUBDIR%%/_bindkey
@@ -406,3 +460,5 @@ info/zsh.info
 @dirrm share/zsh/%%ZSH_VER%%
 @dirrm share/zsh/site-functions
 @dirrm share/zsh
+@dirrm share/examples/zsh
+@dirrm share/doc/zsh
