@@ -1,69 +1,69 @@
 bin/revelation
-%%PYTHON_SITELIBDIR%%/revelation/dialog.py
-%%PYTHON_SITELIBDIR%%/revelation/data.py
-%%PYTHON_SITELIBDIR%%/revelation/misc.py
-%%PYTHON_SITELIBDIR%%/revelation/__init__.py
-%%PYTHON_SITELIBDIR%%/revelation/entry.py
-%%PYTHON_SITELIBDIR%%/revelation/stock.py
-%%PYTHON_SITELIBDIR%%/revelation/widget.py
-%%PYTHON_SITELIBDIR%%/revelation/io.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/__init__.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/base.py
-%%PYTHON_SITELIBDIR%%/revelation/datahandler/netrc.py
-%%PYTHON_SITELIBDIR%%/revelation/datahandler/gpass.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/fpm.py
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/gpass.py
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/netrc.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/rvl.py
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/text.py
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.py
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/__init__.pyc
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/base.pyc
-%%PYTHON_SITELIBDIR%%/revelation/datahandler/netrc.pyc
-%%PYTHON_SITELIBDIR%%/revelation/datahandler/gpass.pyc
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/fpm.pyc
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/gpass.pyc
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/netrc.pyc
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/rvl.pyc
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/text.pyc
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.pyc
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/__init__.pyo
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/base.pyo
-%%PYTHON_SITELIBDIR%%/revelation/datahandler/netrc.pyo
-%%PYTHON_SITELIBDIR%%/revelation/datahandler/gpass.pyo
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/fpm.pyo
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/gpass.pyo
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/netrc.pyo
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/rvl.pyo
-%%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.py
-%%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.pyc
+%%PYTHON_SITELIBDIR%%/revelation/datahandler/text.pyo
 %%PYTHON_SITELIBDIR%%/revelation/datahandler/xhtml.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/revelation/datahandler
-%%PYTHON_SITELIBDIR%%/revelation/dialog.pyc
-%%PYTHON_SITELIBDIR%%/revelation/data.pyc
-%%PYTHON_SITELIBDIR%%/revelation/misc.pyc
+%%PYTHON_SITELIBDIR%%/revelation/__init__.py
+%%PYTHON_SITELIBDIR%%/revelation/config.py
+%%PYTHON_SITELIBDIR%%/revelation/data.py
+%%PYTHON_SITELIBDIR%%/revelation/dialog.py
+%%PYTHON_SITELIBDIR%%/revelation/entry.py
+%%PYTHON_SITELIBDIR%%/revelation/io.py
+%%PYTHON_SITELIBDIR%%/revelation/ui.py
+%%PYTHON_SITELIBDIR%%/revelation/util.py
 %%PYTHON_SITELIBDIR%%/revelation/__init__.pyc
+%%PYTHON_SITELIBDIR%%/revelation/config.pyc
+%%PYTHON_SITELIBDIR%%/revelation/data.pyc
+%%PYTHON_SITELIBDIR%%/revelation/dialog.pyc
 %%PYTHON_SITELIBDIR%%/revelation/entry.pyc
-%%PYTHON_SITELIBDIR%%/revelation/stock.pyc
-%%PYTHON_SITELIBDIR%%/revelation/widget.pyc
 %%PYTHON_SITELIBDIR%%/revelation/io.pyc
-%%PYTHON_SITELIBDIR%%/revelation/dialog.pyo
-%%PYTHON_SITELIBDIR%%/revelation/data.pyo
-%%PYTHON_SITELIBDIR%%/revelation/misc.pyo
+%%PYTHON_SITELIBDIR%%/revelation/ui.pyc
+%%PYTHON_SITELIBDIR%%/revelation/util.pyc
 %%PYTHON_SITELIBDIR%%/revelation/__init__.pyo
+%%PYTHON_SITELIBDIR%%/revelation/config.pyo
+%%PYTHON_SITELIBDIR%%/revelation/data.pyo
+%%PYTHON_SITELIBDIR%%/revelation/dialog.pyo
 %%PYTHON_SITELIBDIR%%/revelation/entry.pyo
-%%PYTHON_SITELIBDIR%%/revelation/stock.pyo
-%%PYTHON_SITELIBDIR%%/revelation/widget.pyo
 %%PYTHON_SITELIBDIR%%/revelation/io.pyo
+%%PYTHON_SITELIBDIR%%/revelation/ui.pyo
+%%PYTHON_SITELIBDIR%%/revelation/util.pyo
+%%PYTHON_SITELIBDIR%%/revelation/authmanager.so
 @dirrm %%PYTHON_SITELIBDIR%%/revelation
-@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2>/dev/null || true
-@unexec rmdir %D/%%PYTHON_LIBDIR%% 2>/dev/null || true
 share/gnome/applications/revelation.desktop
-share/gnome/pixmaps/revelation.png
-share/gnome/revelation/pixmaps/account-creditcard.png
-share/gnome/revelation/pixmaps/account-cryptokey.png
-share/gnome/revelation/pixmaps/account-database.png
-share/gnome/revelation/pixmaps/account-door.png
-share/gnome/revelation/pixmaps/account-email.png
-share/gnome/revelation/pixmaps/account-ftp.png
-share/gnome/revelation/pixmaps/account-generic.png
-share/gnome/revelation/pixmaps/account-phone.png
-share/gnome/revelation/pixmaps/account-shell.png
-share/gnome/revelation/pixmaps/account-website.png
-share/gnome/revelation/pixmaps/folder.png
-share/gnome/revelation/pixmaps/folder-open.png
-share/gnome/revelation/pixmaps/password.png
-share/gnome/revelation/pixmaps/revelation.png
-share/gnome/revelation/pixmaps/revelation-16x16.png
-@dirrm share/gnome/revelation/pixmaps
+share/mime/packages/revelation.xml
+@exec update-desktop-database > /dev/null || /usr/bin/true
+@unexec update-desktop-database > /dev/null || /usr/bin/true
+share/icons/hicolor/16x16/apps/revelation.png
+share/icons/hicolor/24x24/apps/revelation.png
+share/icons/hicolor/32x32/apps/revelation.png
+share/icons/hicolor/48x48/apps/revelation.png
+share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-revelation.png
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime
+share/gnome/revelation/ui/actions.xml
+share/gnome/revelation/ui/menubar.xml
+share/gnome/revelation/ui/popup-tree.xml
+share/gnome/revelation/ui/toolbar.xml
+@dirrm share/gnome/revelation/ui
 @dirrm share/gnome/revelation
