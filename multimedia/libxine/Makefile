@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	xine
-PORTVERSION=	1.0.r3
-PORTREVISION=	5
+PORTVERSION=	1.0.r4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
-DISTNAME=	${PORTNAME}-lib-1-rc3c
+DISTNAME=	${PORTNAME}-lib-1-rc4
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
@@ -38,11 +37,11 @@ USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
 USE_REINPLACE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/dvdread -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		THREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		THREAD_LIBS="${PTHREAD_LIBS}" \
-		X_EXTRA_LIBS="-lGL -lGLU -lXext -lX11 -lm"
+		EXTRA_X_LIBS="-lGL -lGLU -lXext -lX11 -lm"
 CONFIGURE_ARGS=	--with-w32-path=${LOCALBASE}/lib/win32 --enable-ipv6
 INSTALLS_SHLIB=	yes
 
@@ -52,10 +51,7 @@ MAN1=		xine-config.1
 
 # PRId64, INT16_MAX macro are not defined
 .if ${OSVERSION} < 500040
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src:xine-engine:audio_out.c \
-		${PATCHDIR}/extra-patch-src:xine-engine:video_out.c \
-		${PATCHDIR}/extra-patch-src:xine-engine:metronom.c \
-		${PATCHDIR}/extra-patch-src:demuxers:demux_ogg.c
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-config.h.in
 .endif
 
 # CDIOCREADAUDIO macro is not defined
@@ -64,43 +60,57 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src:input:input_cdda.c
 .endif
 
 .if ${XFREE86_VERSION} >= 4
-PLIST_SUB+=	HAVE_LIBXV=""
+PLIST_SUB+=	WITH_LIBXV=""
 .else
-PLIST_SUB+=	HAVE_LIBXV="@comment "
+PLIST_SUB+=	WITH_LIBXV="@comment "
 .endif
 
 .if exists(${LOCALBASE}/bin/artsc-config) || defined(WITH_ARTS)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
-PLIST_SUB+=	HAVE_ARTS=""
+PLIST_SUB+=	WITH_ARTS=""
 .else
-PLIST_SUB+=	HAVE_ARTS="@comment "
+PLIST_SUB+=	WITH_ARTS="@comment "
+.endif
+
+.if exists(${LOCALBASE}/lib/libcaca.a) || defined(WITH_LIBCACA)
+BUILD_DEPENDS+=	caca-config:${PORTSDIR}/graphics/libcaca
+PLIST_SUB+=	WITH_LIBCACA=""
+.else
+PLIST_SUB+=	WITH_LIBCACA="@comment "
 .endif
 
 .if ${HAVE_GNOME:Mesound} != "" || defined(WITH_ESOUND)
 USE_GNOME+=	esound
-PLIST_SUB+=	HAVE_ESOUND=""
+PLIST_SUB+=	WITH_ESOUND=""
 .else
-PLIST_SUB+=	HAVE_ESOUND="@comment "
+PLIST_SUB+=	WITH_ESOUND="@comment "
 .endif
 
 .if ${HAVE_GNOME:Mgnomevfs2} != ""
 USE_GNOME+=	gnomevfs2
-PLIST_SUB+=	HAVE_GNOMEVFS2=""
+PLIST_SUB+=	WITH_GNOMEVFS2=""
 .else
-PLIST_SUB+=	HAVE_GNOMEVFS2="@comment "
+PLIST_SUB+=	WITH_GNOMEVFS2="@comment "
 .endif
 
 .if ${ARCH} == "i386"
-PLIST_SUB+=	VIDIX=""
+PLIST_SUB+=	WITH_VIDIX=""
 .else
-PLIST_SUB+=	VIDIX="@comment "
+PLIST_SUB+=	WITH_VIDIX="@comment "
 .endif
 
 .if exists(${X11BASE}/lib/libXvMCNVIDIA.so.1)
 LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
-PLIST_SUB+=	XVMC=""
+PLIST_SUB+=	WITH_XVMC=""
 .else
-PLIST_SUB+=	XVMC="@comment "
+PLIST_SUB+=	WITH_XVMC="@comment "
+.endif
+
+.if exists(${LOCALBASE}/lib/libtheora.so.0) || defined (WITH_LIBTHEORA)
+LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
+PLIST_SUB+=	WITH_LIBTHEORA=""
+.else
+PLIST_SUB+=	WITH_LIBTHEORA="@comment "
 .endif
 
 pre-everything::
@@ -112,10 +122,20 @@ pre-everything::
 .else
 	@${ECHO_MSG} "===> WITH_ARTS   (arts support, enabled)"
 .endif
+.if !exists(${LOCALBASE}/lib/libcaca.a) && !defined(WITH_LIBCACA)
+	@${ECHO_MSG} "===> WITH_LIBCACA (libcaca support)"
+.else
+	@${ECHO_MSG} "===> WITH_LIBCACA (libcaca support, enabled)"
+.endif
 .if !(${HAVE_GNOME:Mesound} != "") && !defined(WITH_ESOUND)
 	@${ECHO_MSG} "===> WITH_ESOUND (esound support)"
 .else
 	@${ECHO_MSG} "===> WITH_ESOUND (esound support, enabled)"
+.endif
+.if !exists(${LOCALBASE}/lib/libtheora.so.0) && !defined(WITH_LIBTHEORA)
+	@${ECHO_MSG} "===> WITH_LIBTHEORA (libtheora support)"
+.else
+	@${ECHO_MSG} "===> WITH_LIBTHEORA (libtheora support, enabled)"
 .endif
 	@${ECHO_MSG} "===>"
 

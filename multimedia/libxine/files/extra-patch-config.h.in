@@ -1,0 +1,15 @@
+--- config.h.in.orig	Thu Apr 29 06:07:44 2004
++++ config.h.in	Thu May 13 00:43:36 2004
+@@ -554,3 +554,12 @@
+ 
+ /* Define to `unsigned' if <sys/types.h> does not define. */
+ #undef size_t
++
++#if defined(__alpha__) || defined(__amd64__) || defined(__ia64__) || defined(__\
++sparc64__)
++#define PRId64 "ld"
++#else if defined(__i386__) || defined(__powerpc__)
++#define PRId64 "lld"
++#endif
++#define INT16_MAX 0x7fff
++#define INT16_MIN (-0x7fff-1)
