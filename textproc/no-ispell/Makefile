@@ -7,6 +7,8 @@
 
 MAINTAINER=	alex@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 ISPELL_NO=	yes
 PORTNAME=	no-ispell
 PORTVERSION=	2.0
