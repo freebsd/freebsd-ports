@@ -64,6 +64,7 @@ post-patch:
 		 s|gimpui-1.3|gimpui-2.0|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|images/gtkam|gtkam/images|g'
+	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gtkam.desktop \
