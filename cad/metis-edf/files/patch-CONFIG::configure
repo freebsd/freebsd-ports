@@ -1,6 +1,14 @@
 --- CONFIG/configure.orig	Mon Dec 16 18:11:44 2002
-+++ CONFIG/configure	Sun Jun 29 14:58:48 2003
-@@ -18,7 +18,7 @@
++++ CONFIG/configure	Tue Aug 12 22:47:59 2003
+@@ -4,6 +4,7 @@
+ # SHELL defined by make (sh)
+ 
+ OS_TYPE=`uname -s`
++ARCHI=`uname -p`
+ if [ $OS_TYPE = "SunOS" ]; then
+  	OS_LEVEL=`uname -r`
+    OS_NIV=`echo $OS_LEVEL | awk -F'.' '{print $2}'`
+@@ -18,7 +19,7 @@
     if [ -z "$rtn" ] || [ "$rtn" = "y" -o "$rtn" = "Y" ]; then
        OS_TYPE=SunOS64
     fi
@@ -9,7 +17,7 @@
  	echo " Operating system $OS_TYPE unknown on this distribution"
  	echo " Installation failed !"
     exit 8
-@@ -30,14 +30,23 @@
+@@ -30,14 +31,25 @@
  # FOPTIONS : Fortran compiler options,
  # LDOPTIONS : link options, AR : archiver
  
@@ -24,9 +32,11 @@
 +if [ $OS_TYPE = "FreeBSD" ]; then
 +   CC="$CC"
 +   F90="$F77"
-+   LD="$LD"
++   LD="$CC -v"
 +   COPTIONS="$CFLAGS"
-+   LDOPTIONS="$LDFLAGS -lc -lg2c -L. -L.."
++   OPTFLAGS=""
++   FOPTIONS="$FFLAGS"
++   LDOPTIONS="$LDFLAGS -L. -L.."
 +   AR="$AR rv"
 +else
 +   CC="cc"
