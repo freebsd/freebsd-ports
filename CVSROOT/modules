@@ -6111,6 +6111,7 @@ prcs		ports/devel/prcs
 prefix		src/usr.sbin/prefix
 premail		ports/mail/premail
 preview-latex	ports/print/preview-latex
+primer3		ports/biology/primer3
 primes		src/games/primes
 printenv	src/usr.bin/printenv
 printf		src/usr.bin/printf
