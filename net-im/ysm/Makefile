@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ysm
-PORTVERSION=	7.2.9.4
+PORTVERSION=	7.2.9.5
 CATEGORIES=	net
-MASTER_SITES=	ftp://rusunix.org/pub/FreeBSD/distfiles/ \
-		http://aquatique.rusunix.org/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=ysmv7
 DISTNAME=	${PORTNAME}v${PORTVERSION:S/./_/g}
 
 MAINTAINER=	aquatique-ports@rambler.ru
