@@ -13,7 +13,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	matusita@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=The "meta-port" for the SKK Japanese-input software
 
 RUN_DEPENDS=	${LOCALBASE}/share/skk/${SKKJISYO}:${PORT_SKK_JISYO} \
