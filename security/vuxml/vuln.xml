@@ -488,6 +488,10 @@ misc.c:
         <range><le>4.3.0_13</le></range>
         <range><ge>4.3.99</ge><le>4.3.99.15_1</le></range>
       </package>
+      <package>
+	<name>linux-XFree86-libs</name>
+	<range><le>4.3.0_2</le></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -509,7 +513,7 @@ misc.c:
     <dates>
       <discovery>2004-02-10</discovery>
       <entry>2004-02-12</entry>
-      <modified>2004-02-18</modified>
+      <modified>2004-03-06</modified>
     </dates>
   </vuln>
 
