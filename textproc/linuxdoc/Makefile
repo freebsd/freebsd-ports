@@ -10,11 +10,10 @@ PORTVERSION= 	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
-MAINTAINER=	jfieber@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 
 RUN_DEPENDS=    ${ISOCAT}:${PORTSDIR}/textproc/iso8879
 
-NO_MTREE=       yes
 EXTRACT_ONLY=	# empty
 NO_BUILD=       yes
 NO_WRKSUBDIR=	yes
