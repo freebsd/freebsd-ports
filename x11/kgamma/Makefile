@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		kgamma
-PORTVERSION=		0.9.9
+PORTVERSION=		1.0.1
 CATEGORIES=		x11 kde
 MASTER_SITES=		http://download.berlios.de/kgamma/
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.p./_pre/}
