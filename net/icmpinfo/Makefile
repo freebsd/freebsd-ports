@@ -28,5 +28,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/icmpinfo
 .endif
 
-
 .include <bsd.port.mk>
