@@ -26,7 +26,6 @@
 %%PORTDOCS%%%%DOCDIR%%/QLDAPNEWS
 %%PORTDOCS%%%%DOCDIR%%/QLDAPTODO
 %%PORTDOCS%%%%DOCDIR%%/QLDAPPICTURE
-%%PORTDOCS%%%%DOCDIR%%/ANTISPAM
 boot/home
 boot/home+df
 boot/proc
@@ -75,7 +74,15 @@ bin/predate
 @mode 0755
 bin/datemail
 @mode 0755
+bin/digest
+@mode 0755
 bin/mailsubj
+@mode 0755
+bin/pbsadd
+@mode 0755
+bin/pbscheck
+@mode 0755
+bin/pbsdbd
 @mode 0755
 bin/qmail-showctl
 @mode 0755
@@ -98,6 +105,8 @@ bin/qmail-qmqpd
 bin/qmail-qmtpd
 @mode 0755
 bin/qmail-smtpd
+@mode 0755
+bin/qmail-todo
 @mode 0755
 bin/sendmail
 @mode 0755
@@ -164,9 +173,10 @@ configure/dnsptr
 %%PORTDOCS%%%%DOCDIR%%/PORT_NOTES
 %%PORTDOCS%%%%DOCDIR%%/PORT_NOTES_FreeBSD_40-RELEASE
 %%PORTDOCS%%%%DOCDIR%%/SYSDEPS
+%%PORTDOCS%%%%DOCDIR%%/mailer.conf.sample
 %%PORTDOCS%%%%DOCDIR%%/mkaliasdir
 boot/maildir
-@dirrm %%DOCDIR%%
+%%PORTDOCS%%@dirrm %%DOCDIR%%
 @dirrm configure
 @dirrm boot
 @dirrm bin
