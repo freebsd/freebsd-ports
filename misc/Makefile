@@ -67,6 +67,7 @@
     SUBDIR += documancer
     SUBDIR += dog
     SUBDIR += dotfile
+    SUBDIR += dtach
     SUBDIR += dvorak7min
     SUBDIR += dvorakng
     SUBDIR += earthview
