@@ -15,6 +15,7 @@
     SUBDIR += cyrus
     SUBDIR += distribute
     SUBDIR += elm
+    SUBDIR += elm25
     SUBDIR += emil
     SUBDIR += exim
     SUBDIR += exmh
