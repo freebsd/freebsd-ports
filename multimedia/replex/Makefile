@@ -7,6 +7,7 @@
 
 PORTNAME=	replex
 PORTVERSION=	0.1.3
+PORTVERSION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.metzlerbros.org/dvb/
 
@@ -22,7 +23,6 @@ TOFIX=		avi.h element.h mpg_common.h pes.h replex.h ringbuffer.h \
 		replex.c ts.c
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libreplex.a ${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${WRKSRC}/replex ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
