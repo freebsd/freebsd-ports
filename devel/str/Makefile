@@ -22,10 +22,6 @@ MAN3=		str.3
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
