@@ -1136,6 +1136,7 @@ dbench		ports/benchmarks/dbench
 dbf		ports/databases/dbf
 dbf2mysql	ports/databases/dbf2mysql
 dbh		ports/databases/dbh
+dbmail		ports/mail/dbmail
 dbmetrix	ports/databases/dbmetrix
 dbs		ports/benchmarks/dbs
 dbtool		ports/databases/dbtool
