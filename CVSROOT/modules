@@ -4618,6 +4618,8 @@ netscape4-communicator.us	ports/www/netscape4-communicator.us
 netscape4-navigator	ports/www/netscape4-navigator
 netscape47-communicator	ports/www/netscape47-communicator
 netscape47-navigator	ports/www/netscape47-navigator
+netscape48-communicator	ports/www/netscape48-communicator
+netscape48-navigator	ports/www/netscape48-navigator
 netscape7	ports/www/netscape7
 netscript	ports/net/netscript
 netsed		ports/net/netsed
