@@ -186,7 +186,7 @@
  
  	if (!deadChildren)
 --- screen.c.orig	Mon Oct 19 14:21:32 1998
-+++ screen.c	Mon Oct 19 14:11:14 1998
++++ screen.c	Fri Nov 20 16:55:00 1998
 @@ -66,6 +66,13 @@
   *-------------------------------------------------------------------------*/
  List	*ScreenInfoList;			/* List of managed screens */
@@ -201,6 +201,14 @@
  
  /*-------------------------------------------------------------------------
   *	Local Data
+@@ -282,6 +289,7 @@
+ 		     	case PseudoColor:
+ 			case GrayScale:
+ 		     	case DirectColor:
++			case TrueColor:
+ 		    		return True;
+ 				/*NOTREACHED*/
+ 		    		break;
 --- st.c.orig	Thu Jan 13 15:36:18 1994
 +++ st.c	Mon Oct 19 14:12:31 1998
 @@ -14,6 +14,7 @@
