@@ -7,6 +7,7 @@
 
 PORTNAME=	qt2gl
 PORTVERSION=	${RUBY_QT2_PORTVERSION}
+PORTREVISION=	${RUBY_QT2_PORTREVISION}
 CATEGORIES=	graphics x11-toolkits ruby
 MASTER_SITES=	${RUBY_QT2_MASTER_SITES}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -22,12 +23,8 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/qt2.so:${RUBY_QT2_PORTDIR} \
 USE_MESA=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-RUBY_WITH_PTHREAD=	yes
 
 USE_GMAKE=	yes
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../x11-toolkits/ruby-qt2/Makefile.common"
 
 WRKSRC=		${RUBY_QT2_WRKSRC}/modules/opengl
 CONFIGURE_ARGS=	${RUBY_QT2_CONFIGURE_ARGS}
@@ -45,4 +42,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/${PORTNAME}/
 .endif
 
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../../x11-toolkits/ruby-qt2/Makefile.common"
+.include <bsd.port.mk>

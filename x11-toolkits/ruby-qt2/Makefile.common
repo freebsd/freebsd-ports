@@ -2,6 +2,7 @@
 
 RUBY_QT2_VERSION=	0.12
 RUBY_QT2_PORTVERSION=	${RUBY_QT2_VERSION}a.2
+RUBY_QT2_PORTREVISION=	# none
 RUBY_QT2_MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/
 RUBY_QT2_DISTNAME=	ruby-qt2-${RUBY_QT2_VERSION}
 
@@ -13,6 +14,7 @@ RUBY_QT2_CONFIGURE_ARGS= \
 			--with-qt2-lib=${X11BASE}/lib \
 			--with-x11-dir=${X11BASE} \
 			--with-qt2=qtgl
+RUBY_WITH_PTHREAD=	yes
 
 MD5_FILE=		${RUBY_QT2_PORTDIR}/distinfo
 
