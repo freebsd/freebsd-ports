@@ -8,9 +8,7 @@
 PORTNAME=	xscreensaver-gnome
 PORTVERSION=	4.19
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	adamw
+MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
