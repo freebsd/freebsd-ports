@@ -8,7 +8,7 @@
 
 DISTNAME=	cdb-0.55
 CATEGORIES=	databases
-MASTER_SITES=	ftp://koobera.math.uic.edu/www/software/
+MASTER_SITES=	http://cr.yp.to/software/
 
 MAINTAINER=	ports@FreeBSD.org
 
