@@ -16,7 +16,7 @@ MAINTAINER=		nectar@FreeBSD.org
 
 BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=		python:${PORTSDIR}/lang/python
-LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql
+LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql7
 
 MAKE_ENV=		PYTHON=${PREFIX}/bin/python \
 			LN="${LN}" SETENV="${SETENV}" MKDIR="${MKDIR}"
