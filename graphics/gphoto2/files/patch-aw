@@ -1,0 +1,11 @@
+--- mustek/device.c.orig	Mon Dec  6 03:48:54 1999
++++ mustek/device.c	Thu Apr 20 03:00:00 2000
+@@ -59,7 +59,7 @@
+ 	newtio.c_cflag = (newtio.c_cflag & ~CSIZE) | CS8;
+ 
+ 	//  Set into raw, no echo mode 
+-	#if defined(__NetBSD__)
++	#if defined(__NetBSD__) || defined(__FreeBSD__)
+ 	newtio.c_iflag &= ~(IGNBRK | IGNCR | INLCR | ICRNL |
+ 		IXANY | IXON | IXOFF | INPCK | ISTRIP);
+ 	#else

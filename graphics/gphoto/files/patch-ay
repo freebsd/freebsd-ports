@@ -1,0 +1,10 @@
+--- src/main.c.orig	Tue Mar  7 06:23:06 2000
++++ src/main.c	Thu Apr 20 03:00:00 2000
+@@ -134,6 +134,7 @@
+ 		"Usage: gphoto [-h] [-c] [-n] [-s # filename] [-t # filename]\n");
+ 	fprintf(stdout, "              [-d #] [-p filename] [-l filename]\n");
+ 
++	gtk_set_locale();
+ 	gtk_init(&argc, &argv);
+ #if 1 /* by fujisawa */
+ 	gdk_imlib_init();

@@ -6,34 +6,33 @@
 #
 
 PORTNAME=	gphoto
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.mustec.eu.org/~psj/downloads/ \
-		http://www.freenix.no/~anders/
+MASTER_SITES=	ftp://ftp.gphoto.org/projects/gphoto/pub/tar/stable/
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/include/ppm.h:${PORTSDIR}/graphics/netpbm
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gdk_imlib.5:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	GLIB_CONFIG="${PREFIX}/bin/glib12-config" \
-		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
-		IMLIB_CONFIG="${X11BASE}/bin/imlib-config" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GLIB_CONFIG="${GLIB_CONFIG}" \
+		GTK_CONFIG="${GTK_CONFIG}" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-gtktest --disable-imlibtest
 
 MAN1=		gphoto.1
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/gphoto/doc
-	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/gphoto/doc
-	@${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/gphoto/doc
-	@${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/gphoto/doc
-	@${INSTALL_DATA} ${WRKSRC}/PROGRAMMERS ${PREFIX}/share/gphoto/doc
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/gphoto/doc
-	@${INSTALL_DATA} ${WRKSRC}/THANKS ${PREFIX}/share/gphoto/doc
-	@${INSTALL_DATA} ${WRKSRC}/THEMES ${PREFIX}/share/gphoto/doc
-	@${INSTALL_DATA} ${WRKSRC}/TODO ${PREFIX}/share/gphoto/doc
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/gphoto
+.for file in ChangeLog FAQ NEWS PROGRAMMERS README THANKS THEMES TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gphoto
+.endfor
+.endif
 
 .include <bsd.port.mk>

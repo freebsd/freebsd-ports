@@ -1,10 +1,10 @@
---- src/callbacks.c.orig	Thu Jun 17 00:09:31 1999
-+++ src/callbacks.c	Thu Jun 17 00:10:16 1999
-@@ -403,7 +403,9 @@
+--- src/callbacks.c.orig	Tue Mar  7 06:23:06 2000
++++ src/callbacks.c	Thu Apr 20 03:00:00 2000
+@@ -529,7 +529,9 @@
  
  #ifdef linux
          sprintf(serial_port_prefix, "/dev/ttyS");
--#elif defined(__FreeBSD__) || defined(__NetBSD__)
+-#elif defined(BSD)
 +#elif defined(__FreeBSD__)
 +        sprintf(serial_port_prefix, "/dev/cuaa");
 +#elif defined(__NetBSD__)
