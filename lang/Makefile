@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.142 1999/07/13 02:56:58 cpiazza Exp $
+# $Id: Makefile,v 1.143 1999/08/05 16:22:10 obrien Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -54,6 +54,7 @@
     SUBDIR += modula-3-socks
     SUBDIR += moscow_ml
     SUBDIR += nawk
+    SUBDIR += nqc
     SUBDIR += o2c
     SUBDIR += objc
     SUBDIR += ocaml
