@@ -11,7 +11,7 @@ CATEGORIES=	comms
 MASTER_SITES=	http://www.qpage.org/download/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	joes@seaport.net
+MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
