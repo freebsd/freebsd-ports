@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.3 1996/10/02 02:22:27 jkh Exp $
+# $Id: Makefile,v 1.4 1996/10/09 11:25:32 jkh Exp $
 #
 
 DISTNAME=	qt-1.0
@@ -20,17 +20,19 @@ post-extract:
 	cd $(WRKDIR)/$(DISTNAME)/arch; $(GMAKE) freebsd
 	
 do-install:
-	install -c $(WRKDIR)/qt-1.0/bin/moc $(X11BASE)/bin
-	install -c $(WRKDIR)/qt-1.0/lib/libqt.so.1.0 $(X11BASE)/lib
-	mv $(PREFIX)/lib/libqt.so.1.0 $(PREFIX)/lib/libqt.so.1.0
+	${INSTALL_PROGRAM} $(WRKDIR)/qt-1.0/bin/moc $(X11BASE)/bin
+	${INSTALL_DATA} $(WRKDIR)/qt-1.0/lib/libqt.so.1.0 $(X11BASE)/lib
 	/sbin/ldconfig -m $(PREFIX)/lib
 	mkdir -p $(PREFIX)/include/X11/qt
-	install $(WRKDIR)/qt-1.0/include/* $(PREFIX)/include/X11/qt
+	${INSTALL_DATA} $(WRKDIR)/qt-1.0/include/* $(PREFIX)/include/X11/qt
 .if !defined(NOMANCOMPRESS)
 	gzip -9nf $(WRKDIR)/qt-1.0/man/man1/*.1
-	gzip -9nf $(WRKDIR)/qt-1.0/man/man3/*3qt
+	gzip -9nf $(WRKDIR)/qt-1.0/man/man3/*.3qt
 .endif
-	install $(WRKDIR)/qt-1.0/man/man1/* $(PREFIX)/man/man1
-	install $(WRKDIR)/qt-1.0/man/man3/* $(PREFIX)/man/man3
+	${INSTALL_MAN} $(WRKDIR)/qt-1.0/man/man1/* $(PREFIX)/man/man1
+	${INSTALL_MAN} $(WRKDIR)/qt-1.0/man/man3/* $(PREFIX)/man/man3
+	mkdir -p ${PREFIX}/share/doc/qt
+	${INSTALL_DATA} ${WRKDIR}/qt-1.0/README ${PREFIX}/share/doc/qt
+	${INSTALL_DATA} ${WRKDIR}/qt-1.0/README.QT ${PREFIX}/share/doc/qt
 
 .include <bsd.port.mk>
