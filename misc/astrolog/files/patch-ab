@@ -1,8 +1,41 @@
-*** astrolog.h.orig	Thu Jun 20 22:40:36 1996
---- astrolog.h	Mon Jul 15 23:29:41 1996
+*** astrolog.h.bak	Sun Sep 29 23:27:00 1996
+--- astrolog.h	Tue Jan 14 01:16:37 1997
 ***************
-*** 127,133 ****
---- 127,135 ----
+*** 47,61 ****
+  ** the X11 graphics can be disabled even if you are running X windows.
+  */
+  
+! #define PC /* Comment out this #define if you have a Unix, Mac, or other */
+             /* system that isn't a generic PC running DOS or MS Windows.  */
+  
+  /*#define MAC /* Comment out this #define if you're not compiling for a Mac. */
+  
+! /*#define X11 /* Comment out this #define if you don't have X windows, or */
+              /* else have them and don't wish to compile in X graphics.  */
+  
+! #define WIN /* Comment out this #define if you don't have MS Windows, or */
+              /* else have them but want to compile a DOS version instead. */
+  
+  /*#define MSG /* Comment out this #define if you don't have access to the     */
+--- 47,61 ----
+  ** the X11 graphics can be disabled even if you are running X windows.
+  */
+  
+! /*#define PC /* Comment out this #define if you have a Unix, Mac, or other */
+             /* system that isn't a generic PC running DOS or MS Windows.  */
+  
+  /*#define MAC /* Comment out this #define if you're not compiling for a Mac. */
+  
+! #define X11 /* Comment out this #define if you don't have X windows, or */
+              /* else have them and don't wish to compile in X graphics.  */
+  
+! /*#define WIN /* Comment out this #define if you don't have MS Windows, or */
+              /* else have them but want to compile a DOS version instead. */
+  
+  /*#define MSG /* Comment out this #define if you don't have access to the     */
+***************
+*** 131,137 ****
+--- 131,139 ----
   */
   
   #ifndef PC
@@ -12,20 +45,3 @@
   #else
   #define DEFAULT_DIR "C:\\ASTROLOG"
   #endif
-***************
-*** 251,257 ****
-  #define chJW   (char)('|')
-  #define chJE   (char)('|')
-  #define chDeg0 (char)(' ')
-! #define chDeg1 (char)(us.fAnsi ? 176 : ':')   /* degree symbol */
-  
-  /*
-  ** One shouldn't ever need to change anything below this line to compile.
---- 253,259 ----
-  #define chJW   (char)('|')
-  #define chJE   (char)('|')
-  #define chDeg0 (char)(' ')
-! #define chDeg1 (char)(':')   /* degree symbol */
-  
-  /*
-  ** One shouldn't ever need to change anything below this line to compile.
