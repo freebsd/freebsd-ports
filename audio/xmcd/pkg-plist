@@ -2,6 +2,7 @@ bin/.xmcd_start
 bin/cda
 bin/xmcd
 lib/X11/xmcd/app-defaults/XMcd
+lib/X11/xmcd/app-defaults/XMcd.sgi
 lib/X11/xmcd/app-defaults/XKeysymDB
 lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/README
 lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/cda
@@ -102,6 +103,7 @@ lib/X11/xmcd/help/Dd/Dnum.txw
 lib/X11/xmcd/help/Dd/Genre.opt
 lib/X11/xmcd/help/Dd/Info.lbl
 lib/X11/xmcd/help/Dd/Label.txw
+lib/X11/xmcd/help/Dd/Lang.txw
 lib/X11/xmcd/help/Dd/Notes.txw
 lib/X11/xmcd/help/Dd/Ok.btn
 lib/X11/xmcd/help/Dd/Region.txw
@@ -165,6 +167,8 @@ lib/X11/xmcd/help/Kp/Ind.lbl
 lib/X11/xmcd/help/Kp/Num.btn
 lib/X11/xmcd/help/Kp/Sel.btn
 lib/X11/xmcd/help/Kp/Warp.scl
+lib/X11/xmcd/help/Ls/Lang.lsw
+lib/X11/xmcd/help/Ls/Ok.btn
 lib/X11/xmcd/help/Ms/Match.lsw
 lib/X11/xmcd/help/Ms/Ok.btn
 lib/X11/xmcd/help/Op/AddTag.btn
@@ -270,14 +274,17 @@ lib/X11/xmcd/help/Xm/TimeMode.lbl
 lib/X11/xmcd/help/Xm/Track.lbl
 lib/X11/xmcd/help/Xm/TrkTitle.lbl
 lib/X11/xmcd/help/Xm/WWWwarp.btn
+lib/X11/xmcd/pixmaps/XMcd_sgi.icon
+lib/X11/xmcd/pixmaps/xmcd.closed.fti
+lib/X11/xmcd/pixmaps/xmcd.ftr
 lib/X11/xmcd/pixmaps/xmcd.icon
+lib/X11/xmcd/pixmaps/xmcd.open.fti
 lib/X11/xmcd/pixmaps/xmcd_a.px
 lib/X11/xmcd/pixmaps/xmcd_b.px
 lib/X11/xmcd/pixmaps/xmcd.xpm
 lib/X11/xmcd/scripts/genidx
 @dirrm lib/X11/xmcd/app-defaults
 @dirrm lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%
-@dirrm lib/X11/xmcd/lib-FreeBSD_%%RELEASE%%-%%ARCH%%
 @unexec rm -rf %D/lib/X11/xmcd/lib-FreeBSD_%%RELEASE%%-%%ARCH%%
 @dirrm lib/X11/xmcd/config/.tbl
 @dirrm lib/X11/xmcd/config
@@ -313,6 +320,7 @@ lib/X11/xmcd/scripts/genidx
 @dirrm lib/X11/xmcd/help/Dt
 @dirrm lib/X11/xmcd/help/Hp
 @dirrm lib/X11/xmcd/help/Kp
+@dirrm lib/X11/xmcd/help/Ls
 @dirrm lib/X11/xmcd/help/Ms
 @dirrm lib/X11/xmcd/help/Op
 @dirrm lib/X11/xmcd/help/Pm
