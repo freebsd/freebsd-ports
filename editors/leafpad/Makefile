@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	leafpad
-PORTVERSION=	0.7.7
-PORTREVISION=	1
+PORTVERSION=	0.7.8
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	radek@raadradd.com
 COMMENT=	Light-weight GTK+ editor similar to notepad.exe
 
-USE_GNOME=	gtk20 gnomehier
+USE_GNOME=	gtk20 gnomehier desktopfileutils
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
