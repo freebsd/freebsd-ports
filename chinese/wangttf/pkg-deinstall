@@ -15,7 +15,7 @@ FONTS="wcl-01.ttf wcl-02.ttf wcl-03.ttf wcl-04.ttf wcl-05.ttf \
 
 if [ -r $FONTDIR/$PKGNAME ]; then
     for i in `cat $FONTDIR/$PKGNAME`; do
-        for f in $FONTS $DEFAULTMING $DEFAULTKAI; do
+        for f in $FONTS; do
             $TTFM --remove $i $f
         done
     done
