@@ -7,4 +7,9 @@ considerably.
 
 Leafnode+ contains several enhancements from the original Leafnode.
 
+You can setenv `LEAFNODE_SETUP_WRKDIRS' variable to `yes' before
+you make install or pkg_add and needed working directiries
+(typically PREFIX/lib/leafnode and /var/spool/leafnode)
+are setup automatically.
+
 WWW: http://www.io.com/~kazushi/freeware/leafnode+.html

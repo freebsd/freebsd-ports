@@ -1,0 +1,26 @@
+#!/bin/sh
+LIBDIR=@LIBDIR@
+SPOOLDIR=@SPOOLDIR@
+if [ x$2 = xPOST-INSTALL -a x$LEAFNODE_SETUP_WRKDIRS != x ]; then
+ if [ ! -d $LIBDIR ]; then
+	mkdir -p $LIBDIR
+	chown -R news.news $LIBDIR/.
+ fi
+ if [ ! -d $SPOOLDIR ]; then
+	mkdir -p $SPOOLDIR
+	mkdir -p $SPOOLDIR/message.id
+	mkdir -p $SPOOLDIR/interesting.groups
+	mkdir -p $SPOOLDIR/out.going
+	cd $SPOOLDIR/message.id ; for a in 0 1 2 3 4 5 6 7 8 9 ; do \
+		for b in 0 1 2 3 4 5 6 7 8 9 ; do \
+			mkdir -p ${a}${b}0 ${a}${b}1 ${a}${b}2 \
+				${a}${b}3 ${a}${b}4 ${a}${b}5 \
+				${a}${b}6 ${a}${b}7 ${a}${b}8 \
+				${a}${b}9 ; \
+		done
+	done
+	chown -R news.news $SPOOLDIR/.
+	chmod 2750 $SPOOLDIR
+ fi
+fi
+exit 0

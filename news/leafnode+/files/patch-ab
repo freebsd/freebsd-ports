@@ -7,7 +7,7 @@
 -Also, see the sample configuration file, "config.example", in the
 -Leafnode+ distribution.
 +Also, see the sample configuration file, "config.example", in
-+!!PREFIX!!/share/doc/leafnode+.
++@PREFIX@/share/doc/leafnode+.
  
  
  6. How do I upgrade from Leafnode?
@@ -17,7 +17,7 @@
  the LIBDIR defined when compiling Leafnode+, usually
 -/usr/lib/leafnode. Therefore, the UID under which Leafnode+ runs,
 -usually root or news, needs write access to this directory.
-+!!PREFIX!!/lib/leafnode. Therefore, the UID under which Leafnode+
++@LIBDIR@. Therefore, the UID under which Leafnode+
 +runs, usually root or news, needs write access to this directory.
  
  You will need to change all references to the "fetch" program to
@@ -28,8 +28,8 @@
  To update from Cornelius's Leafnode, copy
 -/var/spool/news/leaf.node/groupinfo into your LIBDIR (usually
 -/usr/lib/leafnode/groupinfo) then run "fetchnews".
-+/var/spool/news/leaf.node/groupinfo into your LIBDIR
-+(!!PREFIX!!/lib/leafnode/groupinfo) then run "fetchnews".
++@SPOOLDIR@/leaf.node/groupinfo into your LIBDIR
++(@LIBDIR@/groupinfo) then run "fetchnews".
  
  
  7. Can I use Leafnode+ with multiple news servers?
@@ -38,7 +38,7 @@
  the creation of new groups. The Leafnode+ news server does not
  support this command. To check if new groups are available, see the
 -"groupinfo" file in your LIBDIR (usually /usr/lib/leafnode).
-+"groupinfo" file in your LIBDIR (!!PREFIX!!/lib/leafnode).
++"groupinfo" file in your LIBDIR (@LIBDIR@).
  
  
  
@@ -49,7 +49,7 @@
  3. make installall
  
 -4. Edit $(LIBDIR)/config so server points to your upstream news server
-+4. Edit !!PREFIX!!/lib/leafnode/config so the server points to your
++4. Edit @LIBDIR@/config so the server points to your
 +   upstream news server
     (generally, your IP provider's).  Make sure $NNTPSERVER or
     /etc/nntpserver points to your own host so clients will talk to
@@ -59,13 +59,13 @@
     maybe every week.  Here is my crontab line, which runs nightly:
  
 -0 4 * * * /usr/local/sbin/texpire
-+0 4 * * * !!PREFIX!!/sbin/texpire
++0 4 * * * @PREFIX@/sbin/texpire
  
     I did "crontab -u news -e" as root to edit the crontab file, and
     added this line.  Substituting "1" for the third "*", thus:
  
 -0 4 * * 1 /usr/local/sbin/texpire
-+0 4 * * 1 !!PREFIX!!/sbin/texpire
++0 4 * * 1 @PREFIX@/sbin/texpire
  
     tells cron to run texpire at 4am Monday morning.
  
@@ -82,7 +82,7 @@
 +   incoming NNTP connections.  HUP inetd.  Here is my inetd.conf line:
  
 -nntp    stream  tcp     nowait  news    /usr/local/sbin/leafnode
-+nntp    stream  tcp     nowait  news    !!PREFIX!!/sbin/leafnode
++nntp    stream  tcp     nowait  news    @PREFIX@/sbin/leafnode
  
     This starts leafnode for all connections on the nntp port.
  
@@ -93,26 +93,26 @@
  be writable by user "news".
  .PP
 -.I /usr/lib/leafnode/groupinfo
-+.I !!PREFIX!!/lib/leafnode/groupinfo
++.I @LIBDIR@/groupinfo
  contains the information about each USENET group.  In case of harm, it
  is rebuilt by
  .BR fetchnews (8).
  .PP
 -.I /usr/lib/leafnode/news-server-name
-+.I !!PREFIX!!/lib/leafnode/news-server-name
++.I @LIBDIR@/news-server-name
  contains the information about every USENET group on each news server.
  In case of harm, it
  is rebuilt by
  .BR fetchnews (8).
  .PP
 -.I /usr/lib/leafnode/news-server-name.active
-+.I !!PREFIX!!/lib/leafnode/news-server-name.active
++.I @LIBDIR@/news-server-name.active
  is an empty file created when
  .BR fetchnews (8)
  get information about every USENET group on each news server.
  .PP
 -.I /usr/lib/leafnode/config
-+.I !!PREFIX!!/lib/leafnode/config
++.I @LIBDIR@/config
  contains the configuration parameters for
  .B leafnode.
  See CONFIGURATION below.
@@ -121,7 +121,7 @@
  .SH CONFIGURATION
  All configuration is done using the file
 -.I /usr/lib/leafnode/config.
-+.I !!PREFIX!!/lib/leafnode/config.
++.I @LIBDIR@/config.
  There is no GUI configuration tool yet.
  .PP
  The file is in the common UNIX format: One line per argument, white
