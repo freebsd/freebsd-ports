@@ -1,11 +1,17 @@
---- Makefile.in.orig	Fri Apr 25 20:20:55 2003
-+++ Makefile.in	Wed May 14 11:51:27 2003
-@@ -58,7 +58,7 @@
+--- ./Makefile.in.orig	Sat Apr 26 00:20:55 2003
++++ ./Makefile.in	Mon Aug 11 18:09:33 2003
+@@ -58,12 +58,11 @@
  	$(INSTALL_PROGRAM) sarg $(BINDIR)/sarg
  	chmod 755 $(BINDIR)/sarg
  	$(INSTALL_PROGRAM) sarg.1 $(MANDIR)/sarg.1
 -	chmod 755 $(MANDIR)/sarg.1
 +	chmod 644 $(MANDIR)/sarg.1
++	cp sarg.conf $(SYSCONFDIR)/sarg.conf.default;
  	@if test ! -f $(SYSCONFDIR)/sarg.conf; then \
  		echo "cp $(SYSCONFDIR)/sarg.conf"; \
  		cp sarg.conf $(SYSCONFDIR)/sarg.conf; \
+-	else \
+-		cp sarg.conf $(SYSCONFDIR)/sarg.conf.default; \
+ 	fi
+ 	cp -r ./languages $(SYSCONFDIR);
+ 	cp ./exclude_codes $(SYSCONFDIR);
