@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	This is the base set of libraries needed by KDE programs
+COMMENT=	Base set of libraries needed by KDE programs
 
 CONFLICTS=	kdebase-3.1.*
 
