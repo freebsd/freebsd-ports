@@ -1,0 +1,13 @@
+bin/xyx
+bin/ysh
+bin/yaml2outline
+bin/phone2yaml
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/.packlist
+%%SITE_PERL%%/YAML/Transfer.pm
+%%SITE_PERL%%/YAML/Node.pm
+%%SITE_PERL%%/YAML/Error.pm
+%%SITE_PERL%%/YAML/Family.pm
+%%SITE_PERL%%/YAML.pod
+%%SITE_PERL%%/YAML.pm
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/YAML 2>/dev/null || true
