@@ -1239,7 +1239,6 @@ emacs-w3m-emacs20	ports/www/emacs-w3m-emacs20
 emacs-w3m-xemacs21-mule	ports/www/emacs-w3m-xemacs21-mule
 emacs20		ports/editors/emacs20
 emacs20-dl	ports/editors/emacs20-dl
-emacs20-emcws	ports/japanese/emacs20-emcws
 emacs20-mule-devel	ports/editors/emacs20-mule-devel
 emacs21		ports/editors/emacs21
 emboss		ports/biology/emboss
@@ -2370,6 +2369,7 @@ ja-elvis	ports/japanese/elvis
 ja-emacs-manual	ports/japanese/emacs-manual
 ja-emacs20-dl-canna	ports/japanese/emacs20-dl-canna
 ja-emacs20-dl-wnn6	ports/japanese/emacs20-dl-wnn6
+ja-emacs20-emcws	ports/japanese/emacs20-emcws
 ja-epic4	ports/japanese/epic4
 ja-epwutil	ports/japanese/epwutil
 ja-escpf	ports/japanese/escpf
@@ -2468,6 +2468,7 @@ ja-kinput2-sj3+wnn6	ports/japanese/kinput2-sj3+wnn6
 ja-kinput2-sj3+wnn7	ports/japanese/kinput2-sj3+wnn7
 ja-kinput2-wnn6	ports/japanese/kinput2-wnn6
 ja-kinput2-wnn7	ports/japanese/kinput2-wnn7
+ja-kochi-ttfonts	ports/japanese/kochi-ttfonts
 ja-kon2-14dot	ports/japanese/kon2-14dot
 ja-kon2-16dot	ports/japanese/kon2-16dot
 ja-kpcal	ports/japanese/kpcal
@@ -3040,7 +3041,6 @@ ko-pycodec	ports/korean/pycodec
 ko-texinfo	ports/korean/texinfo
 ko-uniksc	ports/korean/uniksc
 ko-w3m		ports/korean/w3m
-kochi-ttfonts	ports/japanese/kochi-ttfonts
 koffice	ports/editors/koffice
 koffice-i18n	ports/misc/koffice-i18n
 koi8r-ps	ports/russian/koi8r-ps
