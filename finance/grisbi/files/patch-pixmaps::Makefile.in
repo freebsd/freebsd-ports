@@ -1,0 +1,11 @@
+--- pixmaps/Makefile.in.orig	Sun May 23 18:00:24 2004
++++ pixmaps/Makefile.in	Mon May 24 17:11:38 2004
+@@ -96,7 +96,7 @@
+ VERSION = @VERSION@
+ prefix = @prefix@
+ 
+-grisbi_pixmapsdir = $(datadir)/pixmaps/grisbi
++grisbi_pixmapsdir = $(pkgdatadir)/pixmaps
+ 
+ grisbi_pixmaps_DATA =  	addresses.png 	banks.png 	currencies.png 	dollar.gif 	exec.png 	euro.gif 	files.png 	financial-years.png 	fonts.png 	form.png 	import.png 	payment-methods.png 	reconciliation.png 	transaction-list.png 	warnings.png 	grisbi-logo.png 	grisbi.png
+ 

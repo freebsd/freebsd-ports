@@ -1,26 +1,45 @@
 bin/grisbi
-share/gnome/apps/Applications/grisbi.desktop
-share/gnome/help/grisbi/C/contents_motif.gif
-share/gnome/help/grisbi/C/grisbi-manuel.html
-share/gnome/help/grisbi/C/next_motif.gif
-share/gnome/help/grisbi/C/previous_motif.gif
-share/gnome/help/grisbi/C/quickstart.html
-share/gnome/help/grisbi/C/topic.dat
-share/gnome/help/grisbi/C/translation.html
-share/gnome/help/grisbi/fr/contents_motif.gif
-share/gnome/help/grisbi/fr/grisbi-manuel.html
-share/gnome/help/grisbi/fr/next_motif.gif
-share/gnome/help/grisbi/fr/previous_motif.gif
-share/gnome/help/grisbi/fr/quickstart.html
-share/gnome/help/grisbi/fr/topic.dat
-share/gnome/help/grisbi/fr/translation.html
+%%DOCSDIR%%/help/C/contents_motif.gif
+%%DOCSDIR%%/help/C/grisbi-manuel.html
+%%DOCSDIR%%/help/C/next_motif.gif
+%%DOCSDIR%%/help/C/previous_motif.gif
+%%DOCSDIR%%/help/C/quickstart.html
+%%DOCSDIR%%/help/C/translation.html
+%%DOCSDIR%%/help/C/topic.dat
+%%DOCSDIR%%/help/fr/contents_motif.gif
+%%DOCSDIR%%/help/fr/grisbi-manuel.html
+%%DOCSDIR%%/help/fr/next_motif.gif
+%%DOCSDIR%%/help/fr/previous_motif.gif
+%%DOCSDIR%%/help/fr/quickstart.html
+%%DOCSDIR%%/help/fr/topic.dat
+%%DOCSDIR%%/help/fr/translation.html
 share/locale/fr/LC_MESSAGES/grisbi.mo
-share/mime-info/grisbi.keys
-share/mime-info/grisbi.mime
-share/pixmaps/grisbi-logo.png
-share/pixmaps/grisbi.png
-@dirrm share/gnome/help/grisbi/C
-@dirrm share/gnome/help/grisbi/fr
-@dirrm share/gnome/help/grisbi
-@unexec rmdir %D/share/mime-info 2>/dev/null || true
-@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+share/locale/it/LC_MESSAGES/grisbi.mo
+%%DATADIR%%/pixmaps/addresses.png
+%%DATADIR%%/pixmaps/banks.png
+%%DATADIR%%/pixmaps/currencies.png
+%%DATADIR%%/pixmaps/dollar.gif
+%%DATADIR%%/pixmaps/euro.gif
+%%DATADIR%%/pixmaps/exec.png
+%%DATADIR%%/pixmaps/files.png
+%%DATADIR%%/pixmaps/financial-years.png
+%%DATADIR%%/pixmaps/fonts.png
+%%DATADIR%%/pixmaps/form.png
+%%DATADIR%%/pixmaps/grisbi-logo.png
+%%DATADIR%%/pixmaps/grisbi.png
+%%DATADIR%%/pixmaps/import.png
+%%DATADIR%%/pixmaps/payment-methods.png
+%%DATADIR%%/pixmaps/reconciliation.png
+%%DATADIR%%/pixmaps/transaction-list.png
+%%DATADIR%%/pixmaps/warnings.png
+@dirrm %%DOCSDIR%%/help/C
+@dirrm %%DOCSDIR%%/help/fr
+@dirrm %%DOCSDIR%%/help
+@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
