@@ -1,0 +1,6 @@
+BIND version 9 Nameserver, with DLZ extensions
+
+Add capabilities to Bind 9 that will allow Bind backend databases to support
+adding and removing zones without interrupting normal server operation.
+
+WWW: http://bind-dlz.sourceforge.net/

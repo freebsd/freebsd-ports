@@ -31,6 +31,7 @@
     SUBDIR += bgpq
     SUBDIR += bind8
     SUBDIR += bind9
+    SUBDIR += bind9-dlz
     SUBDIR += bing
     SUBDIR += binkd
     SUBDIR += boclient
