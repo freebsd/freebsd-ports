@@ -10,7 +10,7 @@ use strict;
 my $tmpdir;
 
 if ($ENV{CVSROOT} eq "") {
-	$ENV{CVSROOT}="/home/pcvs";
+	$ENV{CVSROOT}="pcvs.freebsd.org:/home/pcvs";
 }
 
 sub goodbye
