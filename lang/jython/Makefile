@@ -16,6 +16,8 @@ EXTRACT_ONLY=	# none
 
 MAINTAINER=	perky@fallin.lv
 
+BROKEN=		"Does not build"
+
 USE_JAVA=	1.1+
 NO_BUILD=	yes
 
