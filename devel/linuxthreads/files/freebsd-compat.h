@@ -29,7 +29,6 @@
 #define __getpid _getpid
 #define __jmp_buf jmp_buf
 #define __sigaction _sigaction
-#define _errno errno
 #define _h_errno h_errno
 #define __ptr_t void *
 #define __pid_t pid_t
