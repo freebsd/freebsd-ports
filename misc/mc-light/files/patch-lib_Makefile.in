@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- lib/Makefile.in.orig	Mon May 25 12:16:05 1998
++++ lib/Makefile.in	Fri Sep  3 14:52:08 2004
+@@ -34,10 +34,10 @@
+ 	$(RMF) $(srcdir)/*~ $(srcdir)/Makefile
+ 
+ install:
+-	$(INSTALL_DATA) mc.ext $(DESTDIR)$(libdir)/mc.ext
+-	$(INSTALL_DATA) $(srcdir)/mc.menu $(DESTDIR)$(libdir)/mc.menu
+-	$(INSTALL_DATA) $(srcdir)/mc.hint $(DESTDIR)$(libdir)/mc.hint
+-	$(INSTALL_DATA) $(srcdir)/mc.lib $(DESTDIR)$(libdir)/mc.lib
++	$(INSTALL_DATA) mc.ext $(DESTDIR)$(datadir)/mc.ext
++	$(INSTALL_DATA) $(srcdir)/mc.menu $(DESTDIR)$(datadir)/mc.menu
++	$(INSTALL_DATA) $(srcdir)/mc.hint $(DESTDIR)$(datadir)/mc.hint
++	$(INSTALL_DATA) $(srcdir)/mc.lib $(DESTDIR)$(datadir)/mc.lib
+ 	$(INSTALL_DATA) $(srcdir)/ansi.ti $(DESTDIR)$(tidir)/ansi.ti
+ 	$(INSTALL_DATA) $(srcdir)/linux.ti $(DESTDIR)$(tidir)/linux.ti
+ 	$(INSTALL_DATA) $(srcdir)/vt100.ti $(DESTDIR)$(tidir)/vt100.ti
