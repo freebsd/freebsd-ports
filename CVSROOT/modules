@@ -526,6 +526,7 @@ birda		ports/comms/birda
 birthday	ports/misc/birthday
 bison		ports/devel/bison
 bitchx		ports/irc/bitchx
+bitedit		ports/editors/bitedit
 bitmap		ports/editors/bitmap
 bitmap-emacs20	ports/editors/bitmap-emacs20
 bitmap-fonts	ports/x11-fonts/bitmap-fonts
