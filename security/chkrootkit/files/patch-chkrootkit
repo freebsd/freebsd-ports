@@ -1,0 +1,84 @@
+--- chkrootkit.orig	Sun Aug 24 12:04:58 2003
++++ chkrootkit	Sun Aug 24 12:08:26 2003
+@@ -1020,8 +1020,10 @@
+              STATUS=${INFECTED}
+           fi;;
+        FreeBSD)
++          TMP="2"
++          if [ "${FreeBSD5}" = "yes" ]; then TMP="1"; fi
+           if [ `${strings} -a ${CMD} | \
+-                ${egrep} -c "${GENERIC_ROOTKIT_LABEL}"` -ne 2 ]
++                ${egrep} -c "${GENERIC_ROOTKIT_LABEL}"` -ne "${TMP}" ]
+           then
+              STATUS=${INFECTED}
+           fi;;
+@@ -1053,7 +1055,9 @@
+              fi
+           fi;;
+        FreeBSD)
+-          if [ `${strings} -a ${CMD} | ${egrep} -c "${GENERIC_ROOTKIT_LABEL}"` -ne 2 ]
++          TMP="2"
++          if [ "${FreeBSD5}" = "yes" ] ; then TMP="1"; fi
++          if [ `${strings} -a ${CMD} | ${egrep} -c "${GENERIC_ROOTKIT_LABEL}"` -ne "${TMP}" ]
+              then
+              STATUS=${INFECTED}
+           fi;;
+@@ -1264,7 +1268,10 @@
+         return 5
+     fi
+ 
+-    if ${strings} -a ${CMD} | ${egrep} "${LS_INFECTED_LABEL}" >/dev/null 2>&1
++    TMP="0"
++    if [ "${FreeBSD5}" = "yes" ] ; then TMP="1"; fi
++    if [ `${strings} -a ${CMD} | \
++          ${egrep} -c "${LS_INFECTED_LABEL}"` -ne "${TMP}" ]
+     then
+        STATUS=${INFECTED}
+     fi
+@@ -1342,7 +1349,10 @@
+         return 5
+     fi
+ 
+-    if ${strings} -a ${CMD} | ${egrep} "${PS_I_L}" >/dev/null 2>&1
++    TMP="0"
++    if [ "${FreeBSD5}" = "yes" ] ; then TMP="1"; fi
++    if [ `${strings} -a ${CMD} | \
++          ${egrep} -c "${PS_I_L}"` -ne "${TMP}" ]
+     then
+        STATUS=${INFECTED}
+     fi
+@@ -1560,7 +1570,10 @@
+         return 5
+     fi
+ 
+-    if ${strings} -a ${CMD} | ${egrep} "${GENERIC_ROOTKIT_LABEL}" > /dev/null 2>&1
++    TMP="0"
++    if [ "${FreeBSD5}" = "yes" ] ; then TMP="2"; fi
++    if [ `${strings} -a ${CMD} | \
++          ${egrep} -c "${GENERIC_ROOTKIT_LABEL}"` -ne "${TMP}" ]
+     then
+         STATUS=${INFECTED}
+     fi
+@@ -1750,7 +1763,7 @@
+     STATUS=${NOT_INFECTED}
+     CMD=`loc vdir vdir $pth`
+     VDIR_INFECTED_LABEL="/lib/volc"
+-    if [ -r ${CMD} ]; then
++    if [ ! -r ${CMD} ]; then
+         return ${NOT_FOUND}
+     fi
+ 
+@@ -2323,6 +2336,13 @@
+ 
+ SYSTEM=`${uname} -s`
+ VERSION=`${uname} -r`
++
++if [ "${SYSTEM}" = "FreeBSD" ] ; then
++   if [ -n '`uname -r | grep "^5"`' ] ; then
++      FreeBSD5="yes"
++   fi
++fi
++
+ if [ "${SYSTEM}" != "FreeBSD" -a ${SYSTEM} != "OpenBSD" ] ; then
+    V=44
+ else
