@@ -3,7 +3,7 @@
 # Date created:        31 October 1996
 # Whom:                Stefan Zehl <sec@42.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/26 08:14:02 dburr Exp $
 #
 
 DISTNAME=	sidplay-13625
@@ -14,7 +14,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org
 
-USE_CONFIGURE=	YES
 GNU_CONFIGURE=	YES
 
 USE_GMAKE=	YES
