@@ -4,8 +4,8 @@
  target_alias = @target_alias@
  
  #--------------------------------------------------------------------------
--SUBDIRS = conf contrib doc man service src tests
-+SUBDIRS = contrib man src tests
+-SUBDIRS = conf contrib doc man service src
++SUBDIRS = contrib man src
  
  #--------------------------------------------------------------------------
  EXTRA_DIST = bincimap.spec config.h COPYING.OpenSSL config.h.in
