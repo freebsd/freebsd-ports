@@ -3,10 +3,10 @@
 # Date created:         30 July 1998
 # Whom:                 Brent J. Nordquist <bjn@visi.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/10 00:16:36 steve Exp $
 #
 
-DISTNAME=	cgiwrap-3.6.1
+DISTNAME=	cgiwrap-3.6.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.umr.edu/~cgiwrap/dist/ \
 		ftp://ftp.umr.edu/pub/cgi/cgiwrap/ \
@@ -41,7 +41,7 @@ INSTALLDIR=	${PREFIX}/www/cgi-bin
 HTTPDUSER=	--with-httpd-user=nobody
 
 pre-install:
-	${MKDIR} ${PREFIX}/www/cgi-bin
+	${MKDIR} ${INSTALLDIR}
 
 post-install:
 	strip ${INSTALLDIR}/cgiwrap
