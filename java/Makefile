@@ -11,6 +11,7 @@
     SUBDIR += cryptix-jce
     SUBDIR += eclipse
     SUBDIR += eclipse-examples
+    SUBDIR += eclipse-gef
     SUBDIR += forte
     SUBDIR += gnu-regexp
     SUBDIR += guavac
