@@ -3,7 +3,7 @@
 # Date created:		10 August 1998
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/22 17:12:38 sada Exp $
 #
 
 DISTNAME=	ppp-2.2.7
@@ -23,7 +23,7 @@ MAINTAINER=	sada@FreeBSD.ORG
 MANCOMPRESSED=	yes
 MAN8=		ppp.8
 WRKSRC=		${WRKDIR}/ppp
-MAKE_ENV+=	USE_SCHEDULE=YES
+MAKE_ENV=	USE_SCHEDULE=YES
 
 .SILENT:
 
