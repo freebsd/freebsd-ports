@@ -31,8 +31,8 @@ NO_CDROM=	${RESTRICTED}
 
 pre-configure:
 	@${PERL} -pi.fbsd \
-		 -e 's|^vgaromimage:\sbios/|vgaromimage: ${PREFIX}/bios/| ;' \
-		 -e 's|^romimage:\sfile=bios/|romimage: file=${PREFIX}/bios/|' \
+		 -e 's|^vgaromimage:\sbios/|vgaromimage: ${PREFIX}/lib/bochs/bios/| ;' \
+		 -e 's|^romimage:\sfile=bios/|romimage: file=${PREFIX}/lib/bochs/bios/|' \
 		${WRKSRC}/.bochsrc
 
 do-install:
