@@ -4936,6 +4936,7 @@ mtr		ports/net/mtr
 mtrxmath	ports/math/mtrxmath
 mtv		ports/multimedia/mtv
 mtx		ports/misc/mtx
+mtxorbd		ports/sysutils/mtxorbd
 muddleftpd	ports/ftp/muddleftpd
 mudix		ports/net/mudix
 mudsh		ports/shells/mudsh
