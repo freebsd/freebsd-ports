@@ -59,6 +59,6 @@ do-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
 .endif
 	${MKDIR} ${TARGETDIR}
-	${SETENV} OBJFORMAT=aout ${INSTALL_PROGRAM} ${WRKSRC}/libswf.so ${TARGETDIR}
+	${SETENV} OBJFORMAT=aout ${INSTALL_SCRIPT} ${WRKSRC}/libswf.so ${TARGETDIR}
 
 .include <bsd.port.post.mk>
