@@ -1,5 +1,5 @@
---- src/common/vars.c.orig	Fri Aug 18 16:58:08 2000
-+++ src/common/vars.c	Fri Aug 18 16:57:56 2000
+--- src/common/vars.c.orig	Thu Dec 28 05:06:11 2000
++++ src/common/vars.c	Tue Jul  3 19:44:29 2001
 @@ -62,10 +62,10 @@
  #error Missing REQUIRE_CONFIGFILES definition
  #endif
@@ -13,12 +13,12 @@
  #endif
  #if !defined(LOCKFILE)
  #error Missing LOCKFILE definition
-@@ -236,7 +236,7 @@
+@@ -242,7 +242,7 @@
  	/* remote server principal for server to server forwarding */
- { "kerberos_forward_principal", STRING_K, &Kerberos_forward_principal_DYN,0,0},
+ { "kerberos_forward_principal", 0, STRING_K, &Kerberos_forward_principal_DYN,0,0},
  	/* keytab file location for kerberos, used by server */
--{ "kerberos_keytab", STRING_K, &Kerberos_keytab_DYN,0,0,"=/etc/lpd.keytab"},
-+{ "kerberos_keytab", STRING_K, &Kerberos_keytab_DYN,0,0,"=/usr/local/etc/lpd.keytab:/etc/lpd.keytab"},
+-{ "kerberos_keytab", 0, STRING_K, &Kerberos_keytab_DYN,0,0,"=/etc/lpd.keytab"},
++{ "kerberos_keytab", 0, STRING_K, &Kerberos_keytab_DYN,0,0,"=/usr/local/etc/lpd.keytab:/etc/lpd.keytab"},
  	/* key lifetime for kerberos, used by server */
- { "kerberos_life", STRING_K, &Kerberos_life_DYN,0,0},
+ { "kerberos_life", 0, STRING_K, &Kerberos_life_DYN,0,0},
  	/* key renewal time for kerberos, used by server */

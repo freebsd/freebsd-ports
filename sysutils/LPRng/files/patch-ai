@@ -1,32 +1,33 @@
---- man/Makefile.in.orig	Fri Aug 18 16:54:27 2000
-+++ man/Makefile.in	Fri Aug 18 16:52:45 2000
-@@ -58,18 +58,18 @@
+--- man/Makefile.in.orig	Mon Jan  8 11:19:50 2001
++++ man/Makefile.in	Wed Jul  4 01:58:15 2001
+@@ -18,7 +18,7 @@
+ INSTALL=@INSTALL@
  
- # Standard man install target.
- #
-+#install:
-+#	for suffix in 1 5 8 ; do \
-+#	  if [ ! -d $(INSTALL_PREFIX)$(MAN)/man$${suffix} ] ; then \
-+#		  echo ${SRC}/mkinstalldirs $(INSTALL_PREFIX)$(MAN)/man$${suffix}; \
-+#		  ${SRC}/mkinstalldirs $(INSTALL_PREFIX)$(MAN)/man$${suffix}; \
-+#	  fi; \
-+#	  for i in ${SRC}/*.$$suffix; do \
-+#		echo $(INSTALL) -m 644 $$i $(INSTALL_PREFIX)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
-+#		$(INSTALL) -m 644 $$i $(INSTALL_PREFIX)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
-+#	  done; \
-+#	done;
- install:
--	for suffix in 1 5 8 ; do \
--	  if [ ! -d $(INSTALL_PREFIX)$(MAN)/man$${suffix} ] ; then \
--		  echo ${SRC}/mkinstalldirs $(INSTALL_PREFIX)$(MAN)/man$${suffix}; \
--		  ${SRC}/mkinstalldirs $(INSTALL_PREFIX)$(MAN)/man$${suffix}; \
--	  fi; \
--	  for i in ${SRC}/*.$$suffix; do \
--		echo $(INSTALL) -m 644 $$i $(INSTALL_PREFIX)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
--		$(INSTALL) -m 644 $$i $(INSTALL_PREFIX)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
--	  done; \
--	done;
--install.zman:
- 	for suffix in 1 5 8 ; do \
- 	  if [ ! -d $(INSTALL_PREFIX)$(MAN)/man$${suffix} ] ; then \
- 		  echo ${SRC}/mkinstalldirs $(INSTALL_PREFIX)$(MAN)/man$${suffix}$(COMPRESS_DIR); \
+ # change MANEXT to .gz or .Z if you use compressed manpages.
+-MANEXT =
++MANEXT =.gz
+ 
+ ## fix up prefix to be a make variable
+ prefix = @prefix@
+@@ -66,8 +66,11 @@
+ 		    ${SRC}/mkinstalldirs $(DESTDIR)$(MAN)/man$${suffix}; \
+ 	    fi; \
+ 	    for i in ${SRC}/*.$$suffix; do \
+-		echo   $(INSTALL) -m 644 $$i $(DESTDIR)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
+-		$(INSTALL)   -m 644 $$i $(DESTDIR)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
++		echo $(COMPRESS) $$i ; \
++		$(COMPRESS) < $$i >_; \
++		echo $(INSTALL) -m 644 _ $(DESTDIR)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
++		$(INSTALL) -m 644 _ $(DESTDIR)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
++		rm _; \
+ 	    done; \
+ 	  fi; \
+ 	done;
+@@ -81,7 +84,6 @@
+ 	    done; \
+ 	  fi; \
+ 	done;
+-	
+ realclean mostlyclean distclean:: clean
+ 
+ clean::
