@@ -4,12 +4,16 @@
 # Please try to keep the handbook (contrib/chapter.sgml authors.ent
 # staff/chapter.sgml) in in sync with this.
 #
-
-jmallett
-dannyboy
-greid
+#
+#	KEEP ALPHABETICALLY SORTED!!!
+#	KEEP ALPHABETICALLY SORTED!!!
+#	KEEP ALPHABETICALLY SORTED!!!
+#
 adamw
-marcus
-obrien
 bsd
 cjh
+dannyboy
+greid
+jmallett
+marcus
+obrien
