@@ -3,13 +3,14 @@
 # Date created:		19 Nov 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/08/29 01:55:31 max Exp $
+# $Id: Makefile,v 1.3 1998/09/10 08:03:40 asami Exp $
 #
 
 DISTNAME=	bzip2-0.1pl2
 PKGNAME=	bzip2-0.1p2
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.muraroa.demon.co.uk/
+MASTER_SITES=	ftp://ftp.connectnet.com/pub/bzip/ \
+		http://www.muraroa.demon.co.uk/
 
 MAINTAINER=	ports@FreeBSD.org
 
