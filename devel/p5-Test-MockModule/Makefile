@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-MockModule
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
@@ -25,7 +25,6 @@ MAN3=	Test::MockModule.3
 
 .include <bsd.port.pre.mk>
 .if ${PERL_LEVEL} < 500600
-# Test::MockModule uses weak references, which are introduced in 5.6
-IGNORE=		"Perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try again."
+IGNORE=	requires weak references, which were introduced in Perl 5.6. Install lang/perl5 or lang/perl5.8 and try again
 .endif
 .include <bsd.port.post.mk>
