@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	grace
-PORTVERSION=	5.1.16
-#PORTREVISION=	1
+PORTVERSION=	5.1.17
+PORTREVISION=	0
 CATEGORIES=	math print
 #
 # You never know when and why it is moved to ../src/old/   :-)
@@ -38,22 +38,21 @@ USE_X_PREFIX=	YES
 USE_GMAKE=	YES
 USE_MOTIF=	YES
 USE_REINPLACE=	YES
-HAS_CONFIGURE=	YES
-CONFIGURE_ARGS=	-prefix=${X11BASE} \
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS=	\
 	--with-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \
 	--with-extra-ldpath=${LOCALBASE}/lib --without-bundled_xbae \
 	--enable-grace-home=${X11BASE}/lib/X11/grace
-
-ALL_TARGET=
+ALL_TARGET=	# empty
 INSTALL_TARGET=	install links
 
 post-patch:
-	${REINPLACE_CMD} -e "s%-lXm %${MOTIFLIB} %" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s%-lXm %${MOTIFLIB} %" ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
-	if [ ! -e ${X11BASE}/share/doc/grace ]; then \
-	    ${LN} -s ${X11BASE}/lib/X11/grace/doc ${X11BASE}/share/doc/grace; \
+	if [ ! -e ${DOCSDIR} ]; then \
+	    ${LN} -s ${X11BASE}/lib/X11/grace/doc ${DOCSDIR}; \
 	fi
 .endif
 
