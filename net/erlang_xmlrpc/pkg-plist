@@ -1,0 +1,36 @@
+lib/erlang/lib/xmlrpc/ebin/tcp_serv.beam
+lib/erlang/lib/xmlrpc/ebin/xmlrpc.beam
+lib/erlang/lib/xmlrpc/ebin/xmlrpc_decode.beam
+lib/erlang/lib/xmlrpc/ebin/xmlrpc_encode.beam
+lib/erlang/lib/xmlrpc/ebin/xmlrpc_http.beam
+lib/erlang/lib/xmlrpc/ebin/xmlrpc_util.beam
+lib/erlang/lib/xmlrpc/src/Makefile
+lib/erlang/lib/xmlrpc/src/log.hrl
+lib/erlang/lib/xmlrpc/src/tcp_serv.erl
+lib/erlang/lib/xmlrpc/src/xmlrpc.erl
+lib/erlang/lib/xmlrpc/src/xmlrpc.hrl
+lib/erlang/lib/xmlrpc/src/xmlrpc_decode.erl
+lib/erlang/lib/xmlrpc/src/xmlrpc_encode.erl
+lib/erlang/lib/xmlrpc/src/xmlrpc_http.erl
+lib/erlang/lib/xmlrpc/src/xmlrpc_util.erl
+%%DOCSDIR%%/xmlrpc.pdf
+%%DOCSDIR%%/xmlrpc.ps
+%%DOCSDIR%%/xmlrpc.txt
+%%EXAMPLESDIR%%/BankClient.java
+%%EXAMPLESDIR%%/DateClient.java
+%%EXAMPLESDIR%%/EchoClient.java
+%%EXAMPLESDIR%%/FibClient.java
+%%EXAMPLESDIR%%/Makefile
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/date_server.erl
+%%EXAMPLESDIR%%/echo_server.erl
+%%EXAMPLESDIR%%/fib_server.erl
+%%EXAMPLESDIR%%/robust_bank_client.erl
+%%EXAMPLESDIR%%/robust_bank_server.erl
+%%EXAMPLESDIR%%/robust_banking.txt
+%%EXAMPLESDIR%%/validator.erl
+@dirrm lib/erlang/lib/xmlrpc/src
+@dirrm lib/erlang/lib/xmlrpc/ebin
+@dirrm lib/erlang/lib/xmlrpc/
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
