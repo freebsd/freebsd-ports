@@ -3,22 +3,23 @@ bin/checkgid
 bin/dbmmanage
 bin/htdigest
 bin/htpasswd
+@exec mkdir -p %D/etc/apache 2> /dev/null
 etc/rc.d/apache.sh
-@unexec if cmp -s %D/etc/apache/access.conf %D/etc/apache/access.conf-dist; then rm -f %D/etc/apache/access.conf; fi
-etc/apache/access.conf-dist
-@exec [ -f %B/access.conf ] || cp %B/%f %B/access.conf
-@unexec if cmp -s %D/etc/apache/httpsd.conf %D/etc/apache/httpsd.conf-dist; then rm -f %D/etc/apache/httpsd.conf; fi
-etc/apache/httpsd.conf-dist
-@exec [ -f %B/httpsd.conf ] || cp %B/%f %B/httpsd.conf
-@unexec if cmp -s %D/etc/apache/magic %D/etc/apache/magic-dist; then rm -f %D/etc/apache/magic; fi
-etc/apache/magic-dist
-@exec [ -f %B/magic ] || cp %B/%f %B/magic
-@unexec if cmp -s %D/etc/apache/mime.types %D/etc/apache/mime.types-dist; then rm -f %D/etc/apache/mime.types; fi
-etc/apache/mime.types-dist
-@exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
-@unexec if cmp -s %D/etc/apache/srm.conf %D/etc/apache/srm.conf-dist; then rm -f %D/etc/apache/srm.conf; fi
-etc/apache/srm.conf-dist
-@exec [ -f %B/srm.conf ] || cp %B/%f %B/srm.conf
+@unexec if cmp -s %D/etc/apache/access.conf% %D/%%EXAMPLESDIR%%/access.conf-dist; then rm -f %D/etc/apache/access.conf%; fi
+%%EXAMPLESDIR%%/access.conf-dist
+@exec [ -f %D/etc/apache/access.conf% ] || cp %D/%%EXAMPLESDIR%%/access.conf-dist %D/etc/apache/access.conf
+@unexec if cmp -s %D/etc/apache/httpsd.conf% %D/%%EXAMPLESDIR%%/httpsd.conf-dist; then rm -f %D/etc/apache/httpsd.conf%; fi
+%%EXAMPLESDIR%%/httpsd.conf-dist
+@exec [ -f %D/etc/apache/httpsd.conf% ] || cp %D/%%EXAMPLESDIR%%/httpsd.conf-dist %D/etc/apache/httpsd.conf
+@unexec if cmp -s %D/etc/apache/magic% %D/%%EXAMPLESDIR%%/magic-dist; then rm -f %D/etc/apache/magic%; fi
+%%EXAMPLESDIR%%/magic-dist
+@exec [ -f %D/etc/apache/magic% ] || cp %D/%%EXAMPLESDIR%%/magic-dist %D/etc/apache/magic
+@unexec if cmp -s %D/etc/apache/mime.types% %D/%%EXAMPLESDIR%%/mime.types-dist; then rm -f %D/etc/apache/mime.types%; fi
+%%EXAMPLESDIR%%/mime.types-dist
+@exec [ -f %D/etc/apache/mime.types% ] || cp %D/%%EXAMPLESDIR%%/mime.types-dist %D/etc/apache/mime.types
+@unexec if cmp -s %D/etc/apache/srm.conf% %D/%%EXAMPLESDIR%%/srm.conf-dist; then rm -f %D/etc/apache/srm.conf%; fi
+%%EXAMPLESDIR%%/srm.conf-dist
+@exec [ -f %D/etc/apache/srm.conf% ] || cp %D/%%EXAMPLESDIR%%/srm.conf-dist %D/etc/apache/srm.conf
 include/apache/ap.h
 include/apache/ap_alloc.h
 include/apache/ap_compat.h
@@ -632,7 +633,7 @@ www/icons/world1.png
 www/icons/world2.gif
 www/icons/world2.png
 @exec mkdir -p %D/www/proxy
-@unexec rm -f %D/etc/apache2/httpd.conf.bak 2> /dev/null || true
+@unexec rm -f %D/etc/apache/httpsd.conf.bak 2> /dev/null || true
 @unexec rmdir %D/etc/apache 2> /dev/null || true
 @dirrm include/apache/xml
 @dirrm include/apache
@@ -651,3 +652,4 @@ www/icons/world2.png
 @dirrm www/icons/small
 @dirrm www/icons
 @dirrm www/proxy
+@dirrm %%EXAMPLESDIR%%
