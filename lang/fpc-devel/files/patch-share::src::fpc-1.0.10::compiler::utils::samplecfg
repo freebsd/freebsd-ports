@@ -1,0 +1,11 @@
+--- share/src/fpc-1.0.10/compiler/utils/samplecfg.old	Sun Jan  4 04:15:50 2004
++++ share/src/fpc-1.0.10/compiler/utils/samplecfg	Sun Jan  4 04:17:59 2004
+@@ -38,7 +38,7 @@
+ fi
+ 
+ # Find path to libgcc.a
+-GCCSPEC=`(gcc -v 2>&1)| head -n 1| awk '{ print $4 } '`
++GCCSPEC=`gcc -print-file-name=libgcc.a`
+ GCCDIR=`dirname $GCCSPEC`
+ echo Found libgcc.a in $GCCDIR
+ 
