@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-.10.2
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-LIB_DEPENDS=	pspell.2:${PORTSDIR}/textproc/pspell
+LIB_DEPENDS=	pspell.4:${PORTSDIR}/textproc/pspell
 
 USE_NEWGCC=	yes
 USE_LIBTOOL=	yes
