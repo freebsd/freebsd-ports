@@ -7,17 +7,17 @@
 #
 
 DISTNAME=	TiMidity++-1.3.10
-PKGNAME=	timidity++-gtk-1.3.10
+PKGNAME=	timidity++-motif-1.3.10
 CATEGORIES=	audio
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
 RUN_DEPENDS=	${PREFIX}/bin/timidity:${PORTSDIR}/audio/timidity++
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_XLIB=	yes
 USE_AUTOCONF=	yes
+REQUIRES_MOTIF=	yes
 
 FILESDIR=	${.CURDIR}/../../audio/timidity++/files
 
@@ -25,18 +25,18 @@ DIST_SUBDIR=	timidity
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS= --prefix=${PREFIX} --with-x \
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-x \
 		--disable-ncurses --disable-vt100 --disable-tcltk \
 		--disable-emacs --disable-xaw --disable-xskin \
-		--disable-motif --disable-slang --enable-gtk=dynamic \
+		--enable-motif=dynamic --disable-slang --disable-gtk \
 		--enable-network --enable-spectrogram --enable-wrd
-CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config SHLD="gcc -shared"
+CONFIGURE_ENV=	MOTIFLIB="${MOTIFLIB}"
 .if ${PORTOBJFORMAT} == "elf"
 CONFIGURE_ENV+=	LDFLAGS=-export-dynamic
 .endif
 
 TIMID_DIR=	${PREFIX}/lib/timidity
-LINK=		gtkmidi
+LINK=		xmmidi
 
 do-build:
 	cd ${WRKSRC}/interface; ${MAKE}

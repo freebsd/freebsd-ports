@@ -1,4 +1,4 @@
-This port allows you to operate TiMidity++ with Gtk interface.
+This port allows you to operate TiMidity++ with Motif interface.
 
 Formerly, the original version of this program was written by Tuuka
 Toivonen(until version 0.2i).
