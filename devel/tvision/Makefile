@@ -9,7 +9,8 @@ PORTNAME=	tvision
 PORTVERSION=	0.7
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		http://www.sigala.it/sergio/tvision/mysource/
 MASTER_SITE_SUBDIR=	devel/lang/c++
 
 MAINTAINER=	ports@FreeBSD.org
