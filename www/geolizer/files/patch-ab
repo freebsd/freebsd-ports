@@ -1,0 +1,65 @@
+--- preserve.c.bak	Fri Sep 29 07:51:32 2000
++++ preserve.c	Sat Oct 14 17:34:03 2000
+@@ -492,7 +492,7 @@
+       tmp_buf[strlen(tmp_buf)-1]=0;
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 10;  /* error exit */
+-      if (!isdigit((int)buffer[0])) return 10;  /* error exit */
++      if (!isdigit((unsigned char)buffer[0])) return 10;  /* error exit */
+ 
+       /* load temporary node data */
+       sscanf(buffer,"%d %lu %lu %lf %lu %lu",
+@@ -523,7 +523,7 @@
+       tmp_buf[strlen(buffer)-1]=0;
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 8;  /* error exit */
+-      if (!isdigit((int)buffer[0])) return 8;  /* error exit */
++      if (!isdigit((unsigned char)buffer[0])) return 8;  /* error exit */
+ 
+       /* load temporary node data */
+       sscanf(buffer,"%d %lu %lu %lf %lu %lu",
+@@ -563,7 +563,7 @@
+       tmp_buf[strlen(buffer)-1]=0;
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 9;  /* error exit */
+-      if (!isdigit((int)buffer[0])) return 9;  /* error exit */
++      if (!isdigit((unsigned char)buffer[0])) return 9;  /* error exit */
+ 
+       /* load temporary node data */
+       sscanf(buffer,"%d %lu %lu %lf %lu %lu",
+@@ -602,7 +602,7 @@
+       tmp_buf[strlen(buffer)-1]=0;
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 11;  /* error exit */
+-      if (!isdigit((int)buffer[0])) return 11;  /* error exit */
++      if (!isdigit((unsigned char)buffer[0])) return 11;  /* error exit */
+ 
+       /* load temporary node data */
+       sscanf(buffer,"%d %lu",&t_rnode.flag,&t_rnode.count);
+@@ -627,7 +627,7 @@
+       tmp_buf[strlen(buffer)-1]=0;
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 12;  /* error exit */
+-      if (!isdigit((int)buffer[0])) return 12;  /* error exit */
++      if (!isdigit((unsigned char)buffer[0])) return 12;  /* error exit */
+ 
+       /* load temporary node data */
+       sscanf(buffer,"%d %lu",&t_anode.flag,&t_anode.count);
+@@ -652,7 +652,7 @@
+       tmp_buf[strlen(buffer)-1]=0;
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 13;  /* error exit */
+-      if (!isdigit((int)buffer[0])) return 13;  /* error exit */
++      if (!isdigit((unsigned char)buffer[0])) return 13;  /* error exit */
+ 
+       /* load temporary node data */
+       sscanf(buffer,"%lu",&t_snode.count);
+@@ -677,7 +677,7 @@
+       tmp_buf[strlen(buffer)-1]=0;
+ 
+       if ((fgets(buffer,BUFSIZE,fp)) == NULL) return 14;  /* error exit */
+-      if (!isdigit((int)buffer[0])) return 14;  /* error exit */
++      if (!isdigit((unsigned char)buffer[0])) return 14;  /* error exit */
+ 
+       /* load temporary node data */
+       sscanf(buffer,"%d %lu %lu %lf %lu %lu",
