@@ -441,7 +441,9 @@ sub mail_notification {
 #	}
 #	print(MAIL "\n");
 
-	my @email = ();
+	my $to = $cfg::MAILADDRS;
+
+	my @email = ("To: $to");
 
 	my $subject = 'Subject: cvs commit:';
 	my @subj = &read_logfile($SUBJ_FILE);
@@ -498,7 +500,7 @@ sub mail_notification {
 	}
 
 	# Send the email.
-	open MAIL, "| $cfg::MAILCMD $cfg::MAILADDRS"
+	open MAIL, "| $cfg::MAILCMD $to"
 	    or die "Please check $cfg::MAILCMD.";
 	print MAIL map { "$_\n" } @email;
 	close MAIL;
