@@ -9,22 +9,36 @@ PORTNAME=	apsfilter
 PORTVERSION=	6.0.0
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
-DISTFILES=	apsfilter-current-07.09.2000.tar.bz2
+DISTFILES=	apsfilter-current-09.09.2000.tar.bz2
 
 MAINTAINER=	andreas@FreeBSD.org
 
-RUN_DEPENDS=	recode:${PORTSDIR}/converters/recode
-.if defined(BATCH)
-RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript6
-RUN_DEPENDS+=	html2ps:${PORTSDIR}/print/html2ps-letter
-RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig
-RUN_DEPENDS+=	cjpeg:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS+=	anytopnm:${PORTSDIR}/graphics/netpbm
+.if defined(BATCH) && defined(APSFILTER_ALL)
+# Please note: this might be needed only in rare cases or for testing
+# all of apsfilters capabilities
+# ps emulator
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
+# all needed decompression utilities
 RUN_DEPENDS+=	bunzip2:${PORTSDIR}/archivers/bzip2
+RUN_DEPENDS+=	melt:${PORTSDIR}/archivers/freeze
+# all needed "xxx to ps" filter utilities
+RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
+RUN_DEPENDS+=	acroread4:${PORTSDIR}/print/acroread4
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	dvips:${PORTSDIR}/print/teTeX
+RUN_DEPENDS+=	html2ps:${PORTSDIR}/print/html2ps-letter
+RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
+RUN_DEPENDS+=	transfig:${PORTSDIR}/print/transfig
+# all possible remote printing support
+RUN_DEPENDS+=	pap:${PORTSDIR}/net/netatalk
+RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
+.elif defined(BATCH)
+# ps emulator
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
+# most important "xxx to ps" filter utilities
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
-RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
-RUN_DEPENDS+=	pap:${PORTSDIR}/net/netatalk
+RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 USE_BZIP2=	yes
