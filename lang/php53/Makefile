@@ -20,18 +20,18 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.0.0.a2
+PORTVERSION=	5.0.0.a3
 CATEGORIES?=	lang devel www
-MASTER_SITES=	http://www.php.net/distributions/ \
-		http://it.php.net/distributions/ \
-		http://fi.php.net/distributions/ \
-		http://de.php.net/distributions/ \
-		http://gr.php.net/distributions/ \
-		http://fr.php.net/distributions/ \
-		http://es.php.net/distributions/ \
-		http://se.php.net/distributions/ \
-		http://www.sm.FreeBSD.org/~alex/ \
-		http://downloads.php.net/jani/
+MASTER_SITES=	http://www.php.net/distributions/:release \
+		http://it.php.net/distributions/:release \
+		http://fi.php.net/distributions/:release \
+		http://de.php.net/distributions/:release \
+		http://gr.php.net/distributions/:release \
+		http://fr.php.net/distributions/:release \
+		http://es.php.net/distributions/:release \
+		http://se.php.net/distributions/:release \
+		http://www.sm.FreeBSD.org/~alex/:rc \
+		http://downloads.php.net/jani/:rc
 .if defined(WITHOUT_CLI) && !defined(WITHOUT_APACHE)
 PKGNAMEPREFIX=	mod_
 .else
@@ -44,6 +44,7 @@ PKGNAMESUFFIX=	-cli
 .endif
 .endif
 DISTNAME=	php-${PORTVERSION:S/.a/a/}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:rc
 
 MAINTAINER?=	sysadmin@alexdupre.com
 COMMENT=	PHP Scripting Language (Apache Module and CLI)
@@ -59,13 +60,10 @@ COMMENT=	PHP Apache Module
 .endif
 .endif
 
-BROKEN=		Does not compile
-
 USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
-USE_LIBTOOL_VER=14
 
 CONFIGURE_ARGS=	--enable-versioning \
 		--enable-memory-limit \
@@ -126,8 +124,8 @@ SAPI_FILE=	"bin/php"
 
 ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX DOM \
 		EXIF FILEPRO FTP GD GDBM GETTEXT GMP ICONV IMAP INTERBASE \
-		INIFILE MBSTRING MCAL MCVE MCRYPT MHASH MIME MING MYSQL \
-		NCURSES OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB POSIX \
+		INIFILE MBSTRING MCAL MCVE MCRYPT MHASH MIME MING MNOGOSEARCH \
+		MYSQL NCURSES OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB POSIX \
 		POSTGRESQL PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP \
 		SOCKETS SQLITE SYBASEDB SYBASECT SYSVSEM SYSVSHM TOKENIZER \
 		UNIXODBC WDDX XML XMLRPC XSL YAZ YP ZLIB
@@ -142,40 +140,6 @@ BATCH=		yes
 IS_INTERACTIVE=	yes
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 400014 || defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=--disable-ipv6
-.endif
-
-.if !defined(WITHOUT_APACHE)
-.if exists(${LOCALBASE}/include/apache2/apr.h)
-WITH_APACHE2=	yes
-.endif
-
-APXS?=		${LOCALBASE}/sbin/apxs
-
-.if defined(WITH_APACHE2)
-APACHE_PORT?=	${PORTSDIR}/www/apache2
-CONFIGURE_ARGS+=--with-apxs2=${APXS}
-SAPI_FILE=	libexec/apache2/libphp5.so
-.else
-APACHE_PORT?=	${PORTSDIR}/www/apache13
-CONFIGURE_ARGS+=--with-apxs=${APXS}
-SAPI_FILE=	libexec/apache/libphp5.so
-.endif
-
-BUILD_DEPENDS+=	${APXS}:${APACHE_PORT}
-RUN_DEPENDS+=	${APXS}:${APACHE_PORT}
-
-PLIST_SUB+=	APACHE=""
-.else
-PLIST_SUB+=	APACHE="@comment "
-.endif
-
-PLIST_SUB+=	SAPI_FILE=${SAPI_FILE} \
-		EXT_DIR=${EXT_DIR}
-
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 PHP5_OPTFILE?=	${HOME}/php5_options
 
@@ -189,6 +153,9 @@ SEL_OPTIONS+=	${opt}
 .for opt in ${PHP5_OPTIONS}
 .if !defined(WITHOUT_${opt})
 SEL_OPTIONS+=	${opt}
+.if !exists(${WRKDIR}/Makefile.inc)
+WITH_${opt}=	yes
+.endif
 .endif
 SCRIPTS_ENV+=	WITH_${opt}=ON
 .endfor
@@ -198,10 +165,6 @@ SCRIPTS_ENV+=	SEL_OPTIONS="${SEL_OPTIONS}" \
 		WRKDIR="${WRKDIR}" \
 		CAT="${CAT}" \
 		SED="${SED}"
-
-.ifmake describe
-WITH_XML=	yes
-.endif
 
 .if exists(${WRKDIR}/Makefile.inc)
 .include "${WRKDIR}/Makefile.inc"
@@ -337,28 +300,11 @@ CONFIGURE_ARGS+=--with-gmp=${LOCALBASE}
 
 .if defined(WITH_ICONV) || defined(WITH_ICONV_DEP)
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+CONFIGURE_ARGS+=--with-iconv-dir=${LOCALBASE}
 .endif
 
 .if defined(WITH_ICONV)
 CONFIGURE_ARGS+=--with-iconv=${LOCALBASE}
-.endif
-
-.if defined(WITH_IMAP)
-LIB_DEPENDS+=	c-client4.8:${PORTSDIR}/mail/cclient
-.if !exists(${LOCALBASE}/lib/libc-client4.so)
-.if !defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
-.endif
-.else
-WITH_IMAP_SSL!=/usr/bin/ldd ${LOCALBASE}/lib/libc-client4.so | ${GREP} libssl || ${TRUE}
-.if !empty(WITH_IMAP_SSL)
-CONFIGURE_ARGS+=--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
-.endif
-.endif
 .endif
 
 .if defined(WITH_INIFILE)
@@ -386,6 +332,7 @@ CONFIGURE_ARGS+=--with-mcve=${LOCALBASE}
 
 .if defined(WITH_MCRYPT)
 LIB_DEPENDS+=	mcrypt.8:${PORTSDIR}/security/libmcrypt
+LIB_DEPENDS+=	ltdl.4:${PORTSDIR}/devel/libltdl
 CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
 .endif
 
@@ -403,19 +350,14 @@ LIB_DEPENDS+=	ming.3:${PORTSDIR}/graphics/ming
 CONFIGURE_ARGS+=--with-ming=${LOCALBASE}
 .endif
 
+.if defined(WITH_MNOGOSEARCH)
+LIB_DEPENDS+=	udmsearch.1:${PORTSDIR}/www/mnogosearch
+CONFIGURE_ARGS+=--with-mnogosearch=${LOCALBASE}
+.endif
+
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
-.endif
-
-.if defined(WITH_NCURSES)
-.if ${OSVERSION} < 400000
-NCURSESBASE=	${LOCALBASE}
-LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
-.else
-NCURSESBASE=	/usr
-.endif
-CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 .endif
 
 .if defined(WITH_OPENLDAP)
@@ -424,7 +366,9 @@ CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 .endif
 
 .if defined(WITH_OPENSSL) || defined(WITH_OPENSSL_DEP)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=	yes
+LDFLAGS+=	-lcrypto -lssl
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-openssl-dir=${OPENSSLBASE}
 .endif
 
@@ -486,15 +430,6 @@ CONFIGURE_ARGS+=--enable-shmop
 CONFIGURE_ARGS+=--enable-simplexml
 .endif
 
-.if defined(WITH_SNMP)
-.if exists(${LOCALBASE}/lib/libsnmp.so.4)
-LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
-.else
-LIB_DEPENDS+=	netsnmp.5:${PORTSDIR}/net/net-snmp
-.endif
-CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
-.endif
-
 .if defined(WITH_SOCKETS)
 CONFIGURE_ARGS+=--enable-sockets
 .endif
@@ -536,7 +471,7 @@ CONFIGURE_ARGS+=--enable-wddx
 
 .if defined(WITH_XML) || defined(WITH_XML_DEP)
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=--with-libxml-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-libxml --with-libxml-dir=${LOCALBASE}
 .endif
 
 .if defined(WITH_XML)
@@ -545,7 +480,7 @@ CONFIGURE_ARGS+=--enable-xml
 
 .if defined(WITH_XMLRPC)
 LIB_DEPENDS+=	expat.4:${PORTSDIR}/textproc/expat2
-CONFIGURE_ARGS+=--with-xmlrpc --with-expat-dir=${LOCALBASE} --with-iconv-dir=${LOCALBASE}
+CONFIGURE_ARGS+=--with-xmlrpc --with-expat-dir=${LOCALBASE}
 .endif
 
 .if defined(WITH_XSL)
@@ -568,6 +503,70 @@ CONFIGURE_ARGS+=--with-zlib-dir=/usr
 
 .if defined(WITH_ZLIB)
 CONFIGURE_ARGS+=--with-zlib
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_APACHE)
+APXS?=		${LOCALBASE}/sbin/apxs
+.if exists(${LOCALBASE}/include/apache2/apr.h)
+WITH_APACHE2=	yes
+.endif
+.if defined(WITH_APACHE2)
+APACHE_PORT?=	${PORTSDIR}/www/apache2
+CONFIGURE_ARGS+=--with-apxs2=${APXS}
+SAPI_FILE=	libexec/apache2/libphp5.so
+.else
+APACHE_PORT?=	${PORTSDIR}/www/apache13
+CONFIGURE_ARGS+=--with-apxs=${APXS}
+SAPI_FILE=	libexec/apache/libphp5.so
+.endif
+BUILD_DEPENDS+=	${APXS}:${APACHE_PORT}
+RUN_DEPENDS+=	${APXS}:${APACHE_PORT}
+.endif
+
+PLIST_SUB+=	SAPI_FILE=${SAPI_FILE} \
+		EXT_DIR=${EXT_DIR}
+
+.if ${OSVERSION} < 400014 || defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=--disable-ipv6
+.endif
+
+.if defined(WITH_IMAP)
+LIB_DEPENDS+=	c-client4.8:${PORTSDIR}/mail/cclient
+.if !exists(${LOCALBASE}/lib/libc-client4.so)
+.if !defined(WITHOUT_SSL)
+CONFIGURE_ARGS+=--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
+.endif
+.else
+WITH_IMAP_SSL!=	/usr/bin/ldd ${LOCALBASE}/lib/libc-client4.so | ${GREP} libssl || ${TRUE}
+.if !empty(WITH_IMAP_SSL)
+CONFIGURE_ARGS+=--with-imap=${LOCALBASE} --with-imap-ssl=${LOCALBASE}
+.else
+CONFIGURE_ARGS+=--with-imap=${LOCALBASE}
+.endif
+.endif
+.endif
+
+.if defined(WITH_NCURSES)
+.if ${OSVERSION} < 400000
+NCURSESBASE=	${LOCALBASE}
+LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+.else
+NCURSESBASE=	/usr
+.endif
+CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
+.endif
+
+.if defined(WITH_SNMP)
+.if exists(${LOCALBASE}/lib/libsnmp.so.4)
+LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net/net-snmp4
+.else
+LIB_DEPENDS+=	netsnmp.5:${PORTSDIR}/net/net-snmp
+.endif
+CONFIGURE_ARGS+=--with-snmp=${LOCALBASE} --enable-ucd-snmp-hack
 .endif
 
 pre-patch:

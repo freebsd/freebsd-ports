@@ -228,7 +228,7 @@
 @@ -57066,8 +57240,8 @@
    
    echo $ac_n "checking Oracle version""... $ac_c" 1>&6
- echo "configure:58744: checking Oracle version" >&5
+ echo "configure:59505: checking Oracle version" >&5
 -  if test -s "$ORACLE_DIR/orainst/unix.rgs"; then
 -  	ORACLE_VERSION=`grep '"ocommon"' $ORACLE_DIR/orainst/unix.rgs | sed 's/  */:/g' | cut -d: -f 6 | cut -c 2-4`
 +  if test -s "$ORACLE_DIR/ocommon/install/partial.prd"; then
