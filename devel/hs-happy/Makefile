@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	devel
-MASTER_SITES=	http://www.haskell.org/happy/dist/1.10/
+MASTER_SITES=	http://www.haskell.org/happy/dist/1.11/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	simonmar@microsoft.com
