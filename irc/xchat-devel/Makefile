@@ -6,10 +6,10 @@
 #
 
 PORTNAME=		xchat
-PORTVERSION=		1.5.11
+PORTVERSION=		1.7.0
 CATEGORIES=		irc gnome
-MASTER_SITES=		http://xchat.org/files/source/1.5/ \
-			http://xchat.linuxpower.org/files/source/1.5/
+MASTER_SITES=		http://xchat.org/files/source/1.7/ \
+			http://xchat.linuxpower.org/files/source/1.7/
 
 MAINTAINER=		jim@FreeBSD.org
 
@@ -21,6 +21,9 @@ USE_IMLIB=		yes
 WANT_GNOME=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-python
+
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LIBS="-L${LOCALBASE}/lib -lintl"
 
 .include <bsd.port.pre.mk>
 
