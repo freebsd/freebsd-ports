@@ -1,16 +1,5 @@
 --- configure.orig	Fri Jul 28 11:18:54 2000
 +++ configure	Wed Aug 16 17:16:40 2000
-@@ -5738,8 +5738,8 @@
- 
- saved_CFLAGS="$CFLAGS"
- saved_LDFLAGS="$LDFLAGS"
--CFLAGS="$CFLAGS `gnome-config --cflags bonobo`"
--LDFLAGS="$LDFLAGS `gnome-config --libs bonobo`"
-+CFLAGS="$CFLAGS `gnome-config --cflags bonobox`"
-+LDFLAGS="$LDFLAGS `gnome-config --libs bonobox`"
- cat > conftest.$ac_ext <<EOF
- #line 5745 "configure"
- #include "confdefs.h"
 @@ -5799,8 +5799,8 @@
      { echo "configure: error: Did not find gdkpixbuf installed" 1>&2; exit 1; }
  fi
@@ -19,35 +8,6 @@
 -GLIB_LIBS="`glib-config --libs`"
 +GLIB_CFLAGS="`$GLIB_CONFIG --cflags`"
 +GLIB_LIBS="`$GLIB_CONFIG --libs`"
- 
- 
- 
-@@ -5813,13 +5813,13 @@
- 
- 
- 
--BONOBO_GNOME_LIBS="`gnome-config --libs bonobo libglade gdk_pixbuf gnomecanvaspixbuf gnomeui`"
--BONOBO_GNOME_CFLAGS="`gnome-config --cflags bonobo libglade gdk_pixbuf gnomecanvaspixbuf gnomeui `"
-+BONOBO_GNOME_LIBS="`gnome-config --libs bonobox libglade gdk_pixbuf gnomecanvaspixbuf gnomeui`"
-+BONOBO_GNOME_CFLAGS="`gnome-config --cflags bonobox libglade gdk_pixbuf gnomecanvaspixbuf gnomeui `"
- 
- 
- 
--BONOBO_HTML_GNOME_LIBS="`gnome-config --libs bonobo libglade gdk_pixbuf gtkhtml gnomecanvaspixbuf gnomeui ` $THREAD_LIBS"
--BONOBO_HTML_GNOME_CFLAGS="`gnome-config --cflags bonobo libglade gdk_pixbuf gtkhtml gnomecanvaspixbuf gnomeui ` $THREAD_CFLAGS"
-+BONOBO_HTML_GNOME_LIBS="`gnome-config --libs bonobox libglade gdk_pixbuf gtkhtml gnomecanvaspixbuf gnomeui ` $THREAD_LIBS"
-+BONOBO_HTML_GNOME_CFLAGS="`gnome-config --cflags bonobox libglade gdk_pixbuf gtkhtml gnomecanvaspixbuf gnomeui ` $THREAD_CFLAGS"
- 
- 
- 
-@@ -5930,8 +5930,8 @@
- CFLAGS="$saved_CFLAGS"
- LDFLAGS="$saved_LDFLAGS"
- 
--BONOBO_VFS_GNOME_LIBS="`gnome-config --libs bonobo libglade gdk_pixbuf gnomecanvaspixbuf vfs gnomeui `"
--BONOBO_VFS_GNOME_CFLAGS="`gnome-config --cflags bonobo libglade gdk_pixbuf gnomecanvaspixbuf vfs gnomeui `"
-+BONOBO_VFS_GNOME_LIBS="`gnome-config --libs bonobox libglade gdk_pixbuf gnomecanvaspixbuf vfs gnomeui `"
-+BONOBO_VFS_GNOME_CFLAGS="`gnome-config --cflags bonobox libglade gdk_pixbuf gnomecanvaspixbuf vfs gnomeui `"
  
  
  
