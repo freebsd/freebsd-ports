@@ -3,6 +3,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/Google.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Cache.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Response.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Search.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Service.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Services/GoogleSearch.wsdl
 lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Spelling.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/Google/Services
