@@ -7,4 +7,4 @@ bin/pdp8
 bin/pdp9
 bin/pdp11
 bin/pdp15
-share/sim/simh_doc.txt
+share/doc/sim/simh_doc.txt
