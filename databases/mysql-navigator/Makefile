@@ -21,6 +21,7 @@ USE_KDELIBS_VER=3
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS+=--with-mysql-includes=${LOCALBASE}/include/mysql \
 		--with-mysql-libraries=${LOCALBASE}/lib/mysql
 CONFIGURE_ENV+=	MOC="${MOC}" QTDIR="${X11BASE}"
