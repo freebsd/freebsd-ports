@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	py-pmw
-PORTVERSION= 	0.8.3
-DISTNAME=	Pmw.0.8.3
+PORTVERSION=	0.8.3
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	ftp://ftp.dscpl.com.au/pub/pmw/
 DISTNAME=	Pmw.${PORTVERSION}
