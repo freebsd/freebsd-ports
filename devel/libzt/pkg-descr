@@ -4,4 +4,4 @@ configuration file parser, commandline option parser, and
 numerous handy tools that need to be written for just about any
 project (wrappers to malloc, etc).
 
-WWW: http://www.zerotao.org/projects/libzt
+WWW: http://www.zerotao.org/downloads/libzt/
