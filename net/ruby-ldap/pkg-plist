@@ -3,14 +3,17 @@
 @dirrm %%RUBY_SITELIBDIR%%/ldap
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/add.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/add2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/add3.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-ldaps.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-sasl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind-ssl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/bind.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/cgi/search.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/cgi/search.html
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/compare.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/conf.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/delete.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/ext.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/modrdn.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap1/slapd.conf.in
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/slapd-ssl.conf.in
