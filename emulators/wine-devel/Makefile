@@ -3,12 +3,12 @@
 # Date created:         Fri Oct  6 23:43:28 MET 1995
 # Whom:			se
 #
-# $Id: Makefile,v 1.17 1995/11/29 21:38:08 se Exp $
+# $Id: Makefile,v 1.18 1995/12/16 12:50:24 se Exp $
 #
 
-DATE=		951212
+DATE=		960114
 DISTNAME=	Wine-${DATE}
-PKGNAME=	wine-95.12.12
+PKGNAME=	wine-96.01.14
 CATEGORIES+=	emulators x11
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/ \
 		ftp://aris.com/pub/linux/ALPHA/Wine/development/ \
@@ -33,7 +33,7 @@ do-install:
 	[ -f ${PREFIX}/etc/wine.conf ] \
 		|| cp ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf
 	cp ${WRKSRC}/wine.sym ${PREFIX}/etc
-	cp ${WRKSRC}/Wine.man ${PREFIX}/man/man1/wine.1
+	cp ${WRKSRC}/wine.man ${PREFIX}/man/man1/wine.1
 	gzip -9f ${PREFIX}/man/man1/wine.1
 
 .include <bsd.port.mk>
