@@ -29,6 +29,7 @@
     SUBDIR += xpostit
     SUBDIR += xpostitPlus
     SUBDIR += xrolo
+    SUBDIR += xwrits
     SUBDIR += yank
     SUBDIR += zorro
 
