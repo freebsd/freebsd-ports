@@ -62,6 +62,7 @@
     SUBDIR += dim
     SUBDIR += dirdiff
     SUBDIR += diskcheckd
+    SUBDIR += disktype
     SUBDIR += diskusage
     SUBDIR += doconfig
     SUBDIR += du2ps
