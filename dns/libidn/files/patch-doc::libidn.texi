@@ -1,0 +1,12 @@
+--- doc/libidn.texi.orig	Thu Jan 22 20:48:25 2004
++++ doc/libidn.texi	Thu Jan 22 20:48:45 2004
+@@ -1271,8 +1271,7 @@
+ Accessing a specific StringPrep profile directly:
+ 
+ @example
+-jas@@latte:~$ idn --quiet --profile=SASLprep --stringprep te@ss{}t@ordf{}
+-te@ss{}ta
++jas@@latte:~$ idn --quiet --profile=SASLprep --stringprep
+ jas@@latte:~$
+ @end example
+ 
