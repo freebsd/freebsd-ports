@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gtgt
-PORTVERSION=	1.3.2
+PORTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.karubik.de/gtgt/
@@ -17,5 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General (or GNU) template generation tools
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
