@@ -1,0 +1,10 @@
+--- rat/config_unix.h.orig	Sat Nov 27 18:27:56 1999
++++ rat/config_unix.h	Sat Nov 27 18:33:33 1999
+@@ -17,6 +17,7 @@
+ 
+ #include <limits.h>
+ #include <sys/types.h>
++#include <sys/signal.h>
+ #include <sys/time.h>
+ #include <sys/resource.h>
+ 
