@@ -7,7 +7,7 @@
 
 PORTNAME=	nessus
 PORTVERSION=	2.0.10a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -37,14 +37,12 @@ PKGNAMESUFFIX=	-gtk
 CONFIGURE_ARGS+=--disable-gtk
 .endif
 
-CONFIGURE_ARGS+=	--sharedstatedir=${PREFIX}/etc/nessus/com \
-			--localstatedir=${PREFIX}/etc/nessus/var
-
 MAN1=		nessus.1 nessus-mkrand.1 nessus-mkcert-client.1
 MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
 
 post-install:
-.if ! exists(${PREFIX}/etc/nessus/var/CA/serverkey.pem)
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/move_nessus
+.if ! exists(${PREFIX}/var/CA/serverkey.pem)
 .if ! defined(BATCH)
 	${PREFIX}/sbin/nessus-mkcert
 .else

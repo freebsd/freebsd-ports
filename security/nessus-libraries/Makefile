@@ -10,7 +10,7 @@
 
 PORTNAME=	nessus-libraries
 PORTVERSION=	2.0.10a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -28,8 +28,7 @@ WRKSRC=		${WRKDIR}/nessus-libraries
 
 USE_BISON=	YES
 USE_LIBTOOL_VER=13
-CONFIGURE_ARGS=	--enable-cipher --sharedstatedir=${PREFIX}/etc/nessus/com \
-		--localstatedir=${PREFIX}/etc/nessus/var
+CONFIGURE_ARGS=	--enable-cipher
 .if defined(WITH_NESSUS_BPF_SHARE)
 CONFIGURE_ARGS+=	--enable-bpf-sharing
 .endif
