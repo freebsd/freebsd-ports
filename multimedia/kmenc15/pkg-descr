@@ -1,0 +1,11 @@
+[ excerpt from developer's web site ]
+
+Kmenc15 is an advanced MEncoder frontend, generally designed to be
+a VirtualDub replacement for Linux. It is most useful for editing
+and encoding large high quality AVIs capped from TV. It allows
+cutting and merging at exact frames, applying any MPlayer/MEncoder
+filter, with preview.
+
+WWW: http://www.kde-apps.org/content/show.php?content=16439
+
+-- lioux@FreeBSD.org
