@@ -7,6 +7,7 @@
 
 PORTNAME=	startup-notification
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.freedesktop.org/software/startup-notification/releases/
 DIST_SUBDIR=	gnome2
@@ -16,7 +17,7 @@ COMMENT=	Library that supports startup notification spec from freedesktop.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier gnometarget pkgconfig
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
