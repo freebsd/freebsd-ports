@@ -1,0 +1,24 @@
+include/rvm/rds.h
+include/rvm/rvm.h
+include/rvm/rvm_segment.h
+include/rvm/rvm_statistics.h
+lib/librds.a
+lib/librds.so
+lib/librds.so.1
+lib/librdslwp.a
+lib/librdslwp.so
+lib/librdslwp.so.1
+lib/librvm.a
+lib/librvm.so
+lib/librvm.so.1
+lib/librvmlwp.a
+lib/librvmlwp.so
+lib/librvmlwp.so.1
+lib/libseg.a
+lib/libseg.so
+lib/libseg.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+sbin/rdsinit
+sbin/rvmutl
+@dirrm include/rvm
