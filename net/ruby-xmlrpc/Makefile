@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlrpc
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.s-direktnet.de/homepages/neumann/xmlrpc4r/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
