@@ -2251,6 +2251,7 @@ fpc-oracle	ports/databases/fpc-oracle
 fpc-paszlib	ports/archivers/fpc-paszlib
 fpc-postgres	ports/databases/fpc-postgres
 fpc-regexpr	ports/devel/fpc-regexpr
+fpdf		ports/print/fpdf
 fpdns		ports/dns/fpdns
 fping		ports/net/fping
 fpm		ports/security/fpm
