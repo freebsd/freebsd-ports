@@ -1,10 +1,28 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat/Expat.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat/Expat.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/Japanese_Encodings.msg
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/README
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/big5.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/iso-8859-2.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/iso-8859-3.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/iso-8859-4.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/iso-8859-5.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/iso-8859-7.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/iso-8859-8.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/iso-8859-9.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/windows-1250.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/x-euc-jp-jisx0221.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/x-euc-jp-unicode.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/x-sjis-cp932.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/x-sjis-jdk117.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/x-sjis-jisx0221.enc
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/x-sjis-unicode.enc
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Expat.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML
