@@ -18,11 +18,10 @@ COMMENT=	Gnu Regression, Econometrics and Time-series Library
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4 \
-		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	253
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -37,9 +36,7 @@ MAN1=	gretl.1 gretl-config.1
 CONFIGURE_ARGS+=	--without-gnome
 PLIST_SUB+=	GNOME2:="@comment " DATADIR="share"
 .else
-LIB_DEPENDS+=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui20 \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
-USE_GNOME=	gnomeprefix
+USE_GNOME+=	gnomeprefix libgnomeprintui libgnomeui
 PLIST_SUB+=	GNOME2:="" DATADIR="share/gnome"
 .endif
 
