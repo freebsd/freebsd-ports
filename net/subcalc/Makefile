@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	subcalc
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	ipv6 net
 MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 MASTER_SITE_SUBDIR=	subcalc
