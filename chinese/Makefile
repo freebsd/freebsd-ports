@@ -77,6 +77,7 @@
     SUBDIR += openoffice-zh_CN
     SUBDIR += openoffice-zh_TW
     SUBDIR += oto
+    SUBDIR += oxford
     SUBDIR += p5-Date-Chinese
     SUBDIR += p5-Encode-HanConvert
     SUBDIR += p5-Lingua-ZH-Numbers
