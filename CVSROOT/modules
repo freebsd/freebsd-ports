@@ -11534,6 +11534,7 @@ xcoral		ports/editors/xcoral
 xcpustate	ports/sysutils/xcpustate
 xcruise		ports/x11-fm/xcruise
 xcubes		ports/games/xcubes
+xcurs		ports/x11/xcurs
 xcut		ports/x11/xcut
 xd		ports/misc/xd
 xd3d		ports/graphics/xd3d
