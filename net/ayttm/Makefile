@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	everybuddy
-PORTVERSION=	0.1.3
+PORTVERSION=	0.1.4-2
 CATEGORIES=	net
 MASTER_SITES=	http://www.everybuddy.com/files/
 
@@ -25,5 +25,8 @@ CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
 
 MAN1=		everybuddy.1
+
+post-patch:
+	@${CP} ${FILESDIR}/config.h ${WRKSRC}/src
 
 .include <bsd.port.mk>
