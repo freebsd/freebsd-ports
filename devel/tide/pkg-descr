@@ -1,7 +1,7 @@
 TIDE is the T3X Integrated Development Environment. Basically, it
 is a text editor with an integrated interface to the T3X compiler.
-T3X 6.8 or a later version is recommended to run TIDE. The main
-purposes of TIDE are:
+T3X 7.0 or a later version is required to run this version of TIDE.
+The main purposes of TIDE are:
 
 . editing source programs
 . compiling programs without leaving the editor
