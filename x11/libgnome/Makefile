@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	1.114.0
-PORTREVISION=	1
+PORTVERSION=	1.115.0
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta3
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta4
 DIST_SUBDIR=	gnome2
 
 MAINTAINER?=	gnome@FreeBSD.org
@@ -25,7 +24,7 @@ USE_GMAKE=	yes
 USE_ESOUND=	yes
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome2 \
 		--datadir=${PREFIX}/share/gnome2 \
 		--with-html-dir=${PREFIX}/share/doc
