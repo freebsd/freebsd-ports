@@ -9,13 +9,14 @@
 PORTNAME=	jdresolve
 PORTVERSION=	0.6.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.jdrowell.com/files/
+MASTER_SITES=	http://www.jdrowell.com/static/
 
 MAINTAINER=	christophe@labouisse.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_BZIP2=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 
