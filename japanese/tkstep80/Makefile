@@ -31,6 +31,8 @@ PATCH_DIST_ARGS=-d ${TOPDIR} -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DIST_ARGS=-d ${TOPDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
+PKGINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg/INSTALL.wish
+PKGDEINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg/DEINSTALL.wish
 
 TCLVERSION=	8.0
 TOPDIR=		${WRKDIR}/${DISTNAME}
@@ -46,5 +48,8 @@ post-install:
 		README.TkStep README.step changes.TkSTEPjp ${PORTDOCDIR}
 .endif
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+.if exists(${PKGINSTALL})
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
+.endif
 
 .include <bsd.port.post.mk>

@@ -29,6 +29,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-shared --enable-xpm --enable-step --enable-dnd \
 		 --enable-tiff --with-optimize="${CFLAGS} -I${PREFIX}/include"
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
+PKGINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg/INSTALL.wish
+PKGDEINSTALL=	${PORTSDIR}/x11-toolkits/tk82/pkg/DEINSTALL.wish
 
 post-install:
 	@${RM} ${PREFIX}/lib/tkstep8.0/demos/*.orig
@@ -40,13 +42,11 @@ post-install:
 .endif
 	${LN} -sf ${PREFIX}/lib/libtkstep80.so.1  ${PREFIX}/lib/libtkstep80.so
 	${LDCONFIG} -m ${PREFIX}/lib
-.if exists(${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish)
-	${SH} ${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish
+.if exists(${PKGINSTALL})
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
 
 test:
 	cd ${WRKSRC}; make test
 
 .include <bsd.port.mk>
-
-PKG_ARGS+=      -i ${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish
