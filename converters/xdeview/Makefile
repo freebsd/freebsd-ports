@@ -3,7 +3,7 @@
 # Date Created:		9 Feb 1997
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/03/29 23:55:55 obrien Exp $
 #
 
 DISTNAME=	uudeview-0.5.13
@@ -19,6 +19,7 @@ LIB_DEPENDS=    tk41\\.1\\.:${PORTSDIR}/x11/tk41
 BUILD_DEPENDS=	${LOCALBASE}/lib/libuu.a:${PORTSDIR}/devel/uulib
 #LIB_DEPENDS=	uu\\.1\\.:${PORTSDIR}/devel/uulib
 
+FILESDIR=	${.CURDIR}/../../devel/uulib/files
 USE_X11=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	xdeview

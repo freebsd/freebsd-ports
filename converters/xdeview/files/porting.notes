@@ -1,5 +1,0 @@
-This was originally one distribution for Uudeview, but I broke it up into
-`libuu', `uudeview', and `xdeview' to make it cleaner and potentially more
-useful.
-
-The package is covered under the GNU license.

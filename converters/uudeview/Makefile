@@ -3,7 +3,7 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.6 1996/12/11 23:08:12 ache Exp $
+# $Id: Makefile,v 1.7 1997/03/29 22:19:11 obrien Exp $
 #
 
 DISTNAME=       uudeview-0.5.13
@@ -16,6 +16,7 @@ MAINTAINER=	ac199@freenet.hamilton.on.ca
 
 BUILD_DEPENDS=	${PREFIX}/lib/libuu.a:${PORTSDIR}/devel/uulib
 
+FILESDIR=	${.CURDIR}/../../devel/uulib/files
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS+=        --enable-inews=${PREFIX}/news/lib/inews \
 			--disable-tcl
