@@ -7,6 +7,7 @@
 
 PORTNAME=	PySQLite
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pysqlite
@@ -17,7 +18,7 @@ MAINTAINER=	gh@ghaering.de
 COMMENT=	A DB-API v2 Python library for the SQLite embedded SQL engine
 
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
-LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite2
 
 WRKSRC=		${WRKDIR}/pysqlite
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}

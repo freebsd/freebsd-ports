@@ -8,6 +8,7 @@
 
 PORTNAME=	libdbi-drivers
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,7 +42,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if defined(WITH_SQLITE)
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite
 PLIST_SUB+=	SQLITE=""
 .else

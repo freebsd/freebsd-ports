@@ -6,7 +6,7 @@
 
 PORTNAME=		gambas
 PORTVERSION=		0.99
-PORTREVISION=		4
+PORTREVISION=		5
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 DISTNAME=		${PORTNAME}-${PORTVERSION}.RC5
@@ -89,7 +89,7 @@ PLIST_SUB+=		PGSQL="@comment "
 WITH_SQLITE=		yes
 .endif
 .if defined(WITH_SQLITE)
-LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite-includes=${LOCALBASE}/include		\
 			--with-sqlite-libraries=${LOCALBASE}/lib
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libpub.a:${PORTSDIR}/devel/publib

@@ -7,6 +7,7 @@
 
 PORTNAME=	dpsearch
 PORTVERSION=	4.26
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.dataparksearch.org/ \
 		http://dataparksearch.h0t.de/
@@ -119,7 +120,7 @@ USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 
 .elif defined(WITH_DPSEARCH_SQLITE)
-LIB_DEPEND+=		sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPEND+=		sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 
 .endif

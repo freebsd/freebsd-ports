@@ -7,6 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sqlrelay
@@ -50,7 +51,7 @@ OPTIONS=	MSQL "Build MSQL connection" off \
 
 .if defined(WITH_SQLITE) && ${WITH_SQLITE:L} != no
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm \
-			sqlite.2:${PORTSDIR}/databases/sqlite
+			sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-gdbm-prefix="${LOCALBASE}" \
 			--with-sqlite-prefix="${LOCALBASE}"
 IF_SQLITE=	""

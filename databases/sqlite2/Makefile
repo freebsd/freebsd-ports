@@ -12,13 +12,17 @@
 # SQLITE_WITH_TCL83 and SQLITE_WITH_TCL84.
 
 PORTNAME=	sqlite
-PORTVERSION=	2.8.14
+PORTVERSION=	2.8.15
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gh@ghaering.de
-COMMENT=	An SQL database engine in a C library, including a Tcl wrapper
+COMMENT=	An SQL database engine in a C library w/ Tcl wrapper
+
+DOCSDIR=	${PREFIX}/share/doc/sqlite2
+EXAMPLESDIR=	${PREFIX}/share/examples/sqlite2
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}2
 
 # Defaults, for building the docs:
 TCL_V=		8.4
@@ -66,20 +70,17 @@ INSTALLS_SHLIB=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-DOCFILES=	arch.html arch.png c_interface.html changes.html \
-		conflict.html datatypes.html download.html faq.html \
-		fileformat.html formatchng.html index.html lang.html \
-		lemon.html mingw.html nulls.html omitted.html \
-		opcode.html quickstart.html report1.txt speed.html \
-		sqlite.html tclsqlite.html vdbe.html
+.include <bsd.port.pre.mk>
+
+DOCFILES!=	${AWK} 'BEGIN {FS="/"}; /^%%PORTDOCS%%%%DOCSDIR%%/{print $$2}' pkg-plist
 
 post-patch:
-	${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" \
-			 -e "s|%%LIBTOOL%%|${LIBTOOL}|g" \
+	@${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" \
+			 -e "s|\./libtool|${LIBTOOL}|g" \
 			 ${WRKSRC}/Makefile.in
-	${ECHO} "config_TARGET_TCL_INC=\"-I${PREFIX}/include/tcl${TCL_V}\"" >${WRKSRC}/freebsd.hints
-	${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_SHORT_V}\"" >>${WRKSRC}/freebsd.hints
-	#${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 -pthread\"" >>${WRKSRC}/freebsd.hints
+	@${ECHO} "config_TARGET_TCL_INC=\"-I${PREFIX}/include/tcl${TCL_V}\"" >${WRKSRC}/freebsd.hints
+	@${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_SHORT_V}\"" >>${WRKSRC}/freebsd.hints
+	#@${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 -pthread\"" >>${WRKSRC}/freebsd.hints
 
 post-build:
 	# Build the docs
@@ -95,11 +96,10 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
-
+	${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

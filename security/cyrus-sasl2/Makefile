@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.20
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=--without-pgsql
 .endif
 
 .if defined(WITH_SQLITE)
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=--with-sqlite=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-sqlite

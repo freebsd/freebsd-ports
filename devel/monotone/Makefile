@@ -7,6 +7,7 @@
 
 PORTNAME=	monotone
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.venge.net/monotone/  \
 		http://norton.kettering.edu/freebsd/
@@ -47,7 +48,7 @@ LIB_DEPENDS+=	lua.5:${PORTSDIR}/lang/lua
 CONFIGURE_ARGS=	--with-bundled-lua
 .endif
 .if !defined(WITHOUT_SQLITE)
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite
+LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
 .else
 CONFIGURE_ARGS=	--with-bundled-sqlite
 .endif

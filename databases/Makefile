@@ -323,7 +323,7 @@
     SUBDIR += ruby-sqlite
     SUBDIR += ruby-sqlrelay
     SUBDIR += slony1
-    SUBDIR += sqlite
+    SUBDIR += sqlite2
     SUBDIR += sqlite3
     SUBDIR += sqlrelay
     SUBDIR += sqsh

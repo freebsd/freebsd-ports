@@ -8,6 +8,7 @@
 
 PORTNAME=	qt-${DB}-plugin
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/      \
 		ftp://ftp.silug.org/pub/qt/             \
@@ -22,7 +23,7 @@ COMMENT=	A plugin for QT to connect to SQLite-Databases
 DB=		sqlite
 
 LIB_DEPENDS+=	qt-mt:${PORTSDIR}/x11-toolkits/qt33 \
-		sqlite:${PORTSDIR}/databases/sqlite
+		sqlite.2:${PORTSDIR}/databases/sqlite2
 
 USE_BZIP2=	yes
 PLUGIN=		plugins/src/sqldrivers/${DB}
