@@ -3,7 +3,6 @@ lib/X11/app-defaults/GV
 lib/X11/gv/gv_class.ad
 lib/X11/gv/gv_system.ad
 lib/X11/gv/gv_user.ad
-man/man1/gv.1.gz
 share/doc/gv/comments.doc.gz
 share/doc/gv/gs.interface.gz
 share/doc/gv/gv-1.html

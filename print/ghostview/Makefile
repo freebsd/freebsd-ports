@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.9 1997/01/14 09:11:49 asami Exp $
+# $Id: Makefile,v 1.10 1997/07/13 18:49:28 max Exp $
 #
 
 DISTNAME=	ghostview-1.5
@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
+MAN1=		ghostview.1
 
 post-install:
 	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
