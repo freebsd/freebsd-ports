@@ -22,6 +22,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_ARCHLIBDIR%%/re.h
 %%RUBY_ARCHLIBDIR%%/readline.so
 %%RUBY_ARCHLIBDIR%%/regex.h
+%%ONIGURUMA%%%%RUBY_ARCHLIBDIR%%/regint.h
 %%RUBY_ARCHLIBDIR%%/ruby.h
 %%RUBY_ARCHLIBDIR%%/rubyio.h
 %%RUBY_ARCHLIBDIR%%/rubysig.h
