@@ -17,6 +17,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/misc/10x20.pcf.gz:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/vnc_unixsrc
