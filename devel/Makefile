@@ -273,6 +273,7 @@
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
     SUBDIR += ruby-racc-runtime
+    SUBDIR += ruby-runit
     SUBDIR += ruby-strscan
     SUBDIR += rvm
     SUBDIR += sdcc
