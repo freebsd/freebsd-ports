@@ -6321,6 +6321,7 @@ qgo		ports/games/qgo
 qhacc		ports/misc/qhacc
 qico		ports/comms/qico
 qident		ports/security/qident
+qinx		ports/x11-wm/qinx
 qiv		ports/graphics/qiv
 qix		ports/games/qix
 qkmj		ports/games/qkmj
