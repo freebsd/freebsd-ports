@@ -26,7 +26,8 @@
 @@ -51,7 +51,9 @@
  
  install: figlet chkfont
- 	mkdir $(DEFAULTFONTDIR)
+-	mkdir $(DEFAULTFONTDIR)
++	mkdir -p $(DEFAULTFONTDIR)
 +	strip figlet
  	cp figlet $(DESTDIR)
 +	strip chkfont
