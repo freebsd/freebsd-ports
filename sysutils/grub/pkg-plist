@@ -2,10 +2,6 @@ bin/mbchk
 @unexec install-info --delete %D/info/grub.info %D/info/dir
 @unexec install-info --delete %D/info/multiboot.info %D/info/dir
 info/grub.info
-info/grub.info-1
-info/grub.info-2
-info/grub.info-3
-info/grub.info-4
 info/multiboot.info
 @exec install-info %D/info/multiboot.info %D/info/dir
 @exec install-info %D/info/grub.info %D/info/dir
