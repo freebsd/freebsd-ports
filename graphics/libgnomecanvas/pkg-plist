@@ -72,6 +72,7 @@ share/locale/vi/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/wa/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomecanvas-2.0.mo
+@dirrm share/doc/libgnomecanvas
 @dirrm lib/libglade/2.0
 @dirrm lib/libglade
 @dirrm include/libgnomecanvas-2.0/libgnomecanvas
