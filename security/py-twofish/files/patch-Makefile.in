@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Feb  9 20:43:21 2002
++++ Makefile.in	Sat Feb  9 20:43:31 2002
+@@ -63,7 +63,7 @@
+ 
+ #CFLAGS=-g -O2
+ 
+-CFLAGS=-g $(INCLUDES)
++CFLAGS+=$(INCLUDES)
+ 
+ all: _twofish.so
+ 

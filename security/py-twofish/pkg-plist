@@ -1,0 +1,8 @@
+lib/%%PYTHON_VERSION%%/site-packages/_twofish.so
+lib/%%PYTHON_VERSION%%/site-packages/bin2hex.py
+lib/%%PYTHON_VERSION%%/site-packages/cryptfile.py
+lib/%%PYTHON_VERSION%%/site-packages/cryptrand.py
+lib/%%PYTHON_VERSION%%/site-packages/decryptfile.py
+lib/%%PYTHON_VERSION%%/site-packages/twofish.py
+%%PORTDOCS%%share/doc/twofish/README
+%%PORTDOCS%%@dirrm share/doc/twofish
