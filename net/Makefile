@@ -328,6 +328,7 @@
     SUBDIR += rsync
     SUBDIR += rtsp_proxy
     SUBDIR += ruby-drb
+    SUBDIR += ruby-gserver
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
     SUBDIR += ruby-nis
