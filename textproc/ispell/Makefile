@@ -31,13 +31,14 @@ ALL_TARGET=
 BUILDHASH=	${WRKSRC}/buildhash
 DATADIR=	${PREFIX}/share/ispell
 
-.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO))
+.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL))
 pre-everything:
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
 	@${ECHO_MSG} '*                              Use make-flag:           *'
 	@${ECHO_MSG} '*  - British                   ISPELL_BRITISH=yes       *'
 	@${ECHO_MSG} '*    (replaces the American dictionary)                 *'
+	@${ECHO_MSG} '*  - Dutch                     ISPELL_NL=yes            *'
 	@${ECHO_MSG} '*  - French                    ISPELL_FR=yes            *'
 	@${ECHO_MSG} '*  - Brasilian                 ISPELL_BR=yes            *'
 	@${ECHO_MSG} '*  - German (old spelling)     ISPELL_DEALT=yes         *'
@@ -83,6 +84,14 @@ MASTER_SITES+=	http://www.uio.no/~runekl/
 EXTRA_DICT+=	${NODISTFILE}
 MASKBITS?=	64
 .endif
+.if defined(ISPELL_NL)
+NLDISTFILE=	ispell-nl-1.0.0.tar.gz
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	asmodai
+EXTRA_DICT+=	${NLDISTFILE}
+EXTRACT_ONLY+=	${NLDISTFILE}
+.endif
+
 
 DISTFILES+=	${EXTRA_DICT}
 .endif
@@ -117,6 +126,10 @@ post-patch:
 .if defined(ISPELL_NO)
 	@cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/NO.patch 2>/dev/null
 .endif
+.if defined(ISPELL_NL)
+	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/NL.patch 2>/dev/null
+.endif
+
 
 post-configure:
 	@${ECHO} "#define CFLAGS \"${CFLAGS}\"" >> ${WRKSRC}/local.h
@@ -158,6 +171,10 @@ post-build:
 		${CAT} norsk.base > norsk.sml && \
 		${BUILDHASH} norsk.sml norsk.aff norsk.hash
 .endif
+.if defined(ISPELL_NL)
+	@cd ${WRKDIR}/${NLDISTFILE:S=.tar.gz==} && \
+		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} all
+.endif
 
 pre-install:
 	@if [ ! -d ${DATADIR} ]; then ${MKDIR} ${DATADIR}; fi
@@ -181,6 +198,9 @@ post-install:
 .endif
 .if defined(ISPELL_NO)
 	@${CAT} ${MASTERDIR}/pkg-plist.no >> ${TMPPLIST}
+.endif
+.if defined(ISPELL_NL)
+	@${CAT} ${MASTERDIR}/pkg-plist.nl >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_BRITISH)
 	@${CAT} ${MASTERDIR}/pkg-plist.british >> ${TMPPLIST}
