@@ -36,6 +36,7 @@
     SUBDIR += gemcal
     SUBDIR += genius
     SUBDIR += gkrellm-gtodo
+    SUBDIR += gkrellm-reminder2
     SUBDIR += glabels
     SUBDIR += gmcal
     SUBDIR += gnomeblog
