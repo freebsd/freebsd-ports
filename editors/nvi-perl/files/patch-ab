@@ -1,5 +1,14 @@
---- perl_api/perl.xs.orig	Thu Feb 19 23:50:23 1998
-+++ perl_api/perl.xs	Thu Feb 19 23:50:38 1998
+--- perl_api/perl.xs.orig	Thu Oct 17 03:16:34 1996
++++ perl_api/perl.xs	Sun May  9 01:42:05 1999
+@@ -142,7 +142,7 @@
+         perl_call_argv("VI::bootstrap", G_DISCARD, bootargs);
+ 	perl_eval("$SIG{__WARN__}='VI::Warn'");
+ 
+-	av_unshift(av = GvAVn(incgv), 1);
++	av_unshift(av = GvAVn(PL_incgv), 1);
+ 	av_store(av, 0, newSVpv(_PATH_PERLSCRIPTS,
+ 				sizeof(_PATH_PERLSCRIPTS)-1));
+ 
 @@ -418,7 +418,7 @@
  xs_init()
  {
