@@ -14,14 +14,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	A Gnome RSI prevention tool
 
-LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
-		gnomeuimm-2.0:${PORTSDIR}/x11-toolkits/libgnomeuimm \
+LIB_DEPENDS=	gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26 \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel gconf2
+USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
