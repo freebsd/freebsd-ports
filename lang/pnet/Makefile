@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pnet
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
 MAINTAINER=	ahze@rgv.net
 
-BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
+BUILD_DEPENDS=	treecc-0.1.0:${PORTSDIR}/lang/treecc
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
