@@ -81,6 +81,7 @@ share/automake%%BUILD_VERSION%%/am/yacc.am
 share/automake%%BUILD_VERSION%%/ansi2knr.1
 share/automake%%BUILD_VERSION%%/ansi2knr.c
 share/automake%%BUILD_VERSION%%/compile
+share/automake%%BUILD_VERSION%%/config-ml.in
 share/automake%%BUILD_VERSION%%/config.guess
 share/automake%%BUILD_VERSION%%/config.sub
 share/automake%%BUILD_VERSION%%/depcomp
@@ -90,6 +91,7 @@ share/automake%%BUILD_VERSION%%/mdate-sh
 share/automake%%BUILD_VERSION%%/missing
 share/automake%%BUILD_VERSION%%/mkinstalldirs
 share/automake%%BUILD_VERSION%%/py-compile
+share/automake%%BUILD_VERSION%%/symlink-tree
 share/automake%%BUILD_VERSION%%/texinfo.tex
 share/automake%%BUILD_VERSION%%/ylwrap
 @dirrm share/aclocal%%BUILD_VERSION%%
