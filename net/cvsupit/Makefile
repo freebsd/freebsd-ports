@@ -12,6 +12,8 @@ DISTFILES=	#empty
 
 MAINTAINER=	jkh@FreeBSD.org
 
+IS_INTERACTIVE= 'Must configure cvsup server information'
+
 RUN_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup-bin
 
 .if (BATCH)
