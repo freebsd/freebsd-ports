@@ -7,7 +7,7 @@
 
 PORTNAME=	FlightGear
 PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTREVISION=	3
 BASEVERSION=	0.9.1a
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
@@ -20,18 +20,21 @@ MAINTAINER=	des@FreeBSD.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit \
+		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
 		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit \
+		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
 		${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 # Force configure to look in /usr/local/{include,lib}
-CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}" \
+CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-threads
 
 MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
 
