@@ -4,6 +4,7 @@ bin/ja-communicator-46
 @exec ln -sf /usr/share/locale/en_US.ISO_8859-1 %D/%%NSUBDIR%%/locale/%%LANG%%
 @unexec rm -f %D/%%NSUBDIR%%/locale/%%LANG%%
 @dirrm %%NSUBDIR%%/locale
+%%NSUBDIR%%/netscape.cfg
 %%NSUBDIR%%/%%LANG%%/Netscape
 %%NSUBDIR%%/%%LANG%%/about
 %%NSUBDIR%%/%%LANG%%/mail.msg
@@ -106,7 +107,6 @@ bin/ja-communicator-46
 %%NSUBDIR%%/%%LANG%%/nethelp/picsfail.htm
 %%NSUBDIR%%/%%LANG%%/nethelp/picsfail.jar
 %%NSUBDIR%%/%%LANG%%/nethelp/scraps
-%%NSUBDIR%%/%%LANG%%/netscape.cfg
 %%NSUBDIR%%/%%LANG%%/plugins
 %%NSUBDIR%%/%%LANG%%/splash
 %%NSUBDIR%%/preferences.js

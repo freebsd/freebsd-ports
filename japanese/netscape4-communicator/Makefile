@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.20 1999/05/20 17:37:19 sada Exp $
+# $Id: Makefile,v 1.21 1999/05/21 01:10:54 sada Exp $
 #
 
 DISTNAME=	ja-netscape-${BROWSER}-${BROWSER_VERSION}
@@ -64,7 +64,8 @@ do-install:
 	${MKDIR} ${NDIR}/locale
 	${LN} -sf /usr/share/locale/en_US.ISO_8859-1 ${NDIR}/locale/${LANG}
 	${MKDIR} ${NDIR}/${LANG}
-.for f in mail.msg netscape.cfg plugins
+	${INSTALL_DATA} ${WRKSRC}/netscape.cfg ${NDIR}/
+.for f in mail.msg plugins
 	${INSTALL_DATA} ${WRKSRC}/$f ${NDIR}/${LANG}/
 .endfor
 .for f in Netscape about splash
