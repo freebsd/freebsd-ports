@@ -9,15 +9,15 @@
 .if !defined(USE_GNOMENG)
 .if !defined(_POSTMKINCLUDED)
 
-# Please make sure all changes to this file are past through the maintainer. 
+# Please make sure all changes to this file are passed through the maintainer. 
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
 Gnome_Include_MAINTAINER=	gnome@FreeBSD.org
 
-# This section keeps tests for optional software.  These work off four
-# types of of variables.  WANT_, WITH_, HAVE_ and USE_.  The logic of
-# this is that a port can WANT support for a package, a user specifies
-# if they want ports compiles WITH certain features.  This section tests
-# if we HAVE these features, and the port is then free to USE them.
+# This section defines tests for optional software.  These work off four
+# types of variables:  WANT_, WITH_, HAVE_ and USE_.  The logic of
+# this is that a port can WANT support for a package; a user specifies
+# if they want ports compiled WITH certain features; this section tests
+# if we HAVE these features; and the port is then free to USE them.
 
 # The logic of this section is like this:
 #
@@ -49,7 +49,7 @@ Gnome_Include_MAINTAINER=	gnome@FreeBSD.org
 # .endif
  
 # The following defines are for the various levels of libraries in the
-# GLib/GTK+/GNOME group of software. There are the following options:
+# GLib/GTK+/GNOME group of software.  There are the following options:
 #
 # WITH_GLIB, WITH_GTK, WITH_ESOUND, WITH_IMLIB, WITH_GNOME:
 #	- Only set by the user, indicates that they always want
@@ -290,7 +290,7 @@ MAKE_ENV+=		HAVE_IMLIB=${HAVE_IMLIB}
 # Ports which optionally depend on GNOME can add '--datadir=${PREFIX}/share'
 # to CONFIGURE_ARGS before including <bsd.port.post.mk> if they do not wish
 # to install their data files in /usr/X11R6/share/gnome.  Please be aware
-# that you will need to make non standard patches to get the rest of the
+# that you will need to make non-standard patches to get the rest of the
 # files into the correct places.  Specifically, the help files and pixmaps
 # must still go into /usr/X11R6/share/gnome/help and
 # /usr/X11R6/share/gnome/pixmaps respectively.  %%DATADIR%% will still be

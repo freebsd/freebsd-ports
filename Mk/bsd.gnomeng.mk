@@ -4,7 +4,7 @@
 
 .if !defined(_POSTMKINCLUDED)
 
-# Please make sure all changes to this file are past through the maintainer.
+# Please make sure all changes to this file are passed through the maintainer.
 # Do not commit them yourself (unless of course you're the Port's Wraith ;).
 Gnome_Include_MAINTAINER=	gnome@FreeBSD.org
 
@@ -187,11 +187,11 @@ libpanel_LIB_DEPENDS=	panel_applet.5:${PORTSDIR}/x11/libpanel
 libpanel_DETECT=	${X11BASE}/etc/appletsConf.sh
 libpanel_USE_GNOME_IMPL=gnomelibs
 
-# This section keeps tests for optional software.  These work off four
-# types of of variables.  WANT_GNOME, WITH_GNOME, HAVE_GNOME and USE_GNOME.
-# The logic of this is that a port can WANT support for a package, a user
-# specifies if they want ports compiles WITH certain features.  This section
-# tests if we HAVE these features, and the port is then free to USE them.
+# This section defines tests for optional software.  These work off four
+# types of variables:  WANT_GNOME, WITH_GNOME, HAVE_GNOME and USE_GNOME.
+# The logic of this is that a port can WANT support for a package; a user
+# specifies if they want ports compiled WITH certain features; this section
+# tests if we HAVE these features; and the port is then free to USE them.
 
 # The logic of this section is like this:
 #
