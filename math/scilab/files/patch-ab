@@ -1,35 +1,14 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/configure ./configure
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/configure	Tue May 13 14:08:49 1997
---- ./configure	Sun May 25 21:16:16 1997
-***************
-*** 1050,1055 ****
---- 1050,1078 ----
-      fi
-      MAKEFILE_TARGET=Makefile.solaris
-      ;;
-+ # FreeBSD
-+   *-*-freebsd*)
-+      CC=gcc
-+      CC_OPTIONS='-O2 -Dfreebsd'
-+      CC_LDFLAGS=-lm
-+      # script shell f77 have bugs, get ours
-+      FC=f77
-+      FC_OPTIONS='-O2 -Dfreebsd'
-+      FC_LDFLAGS=-lm
-+      LD=ld
-+      LD_LDFLAGS=-lm
-+      if test "$enable_debug" = yes; then 
-+        CC_OPTIONS='-g -Dfreebsd'
-+        FC_OPTIONS=-g
-+      fi
-+      if test "$G77" = yes; then
-+        FC=g77
-+      fi
-+     DLDLIB='${SCIDIR}/libs/libdld.a'
-+     DLD_SUBDIR=dld
-+     MAKEFILE_TARGET=Makefile.sunos
-+     ;;
-+ 
-  # Linux a.out
-    *-pc-linux-gnuaout)
-      LIEEELIB=
+--- routines/graphics/periFig.c.orig	Sun Dec 13 21:20:36 1998
++++ routines/graphics/periFig.c	Sun Dec 13 21:21:44 1998
+@@ -47,5 +47,11 @@
+ #define M_PI	3.14159265358979323846
+ #else
++#if defined(HAVE_VALUES_H)
+ #include <values.h>
++#else
++#ifndef M_PI
++#define M_PI    3.14159265358979323846 
++#endif
++#endif
+ #endif
+ 

@@ -1,0 +1,9 @@
+--- scilab.star.orig	Sun Jan 17 10:41:16 1999
++++ scilab.star	Sun Jan 17 10:41:32 1999
+@@ -21,5 +21,5 @@
+ 
+ // Special variables definition
+-%inf=10000.3^10000.3;%nan=%inf-%inf;
++//%inf=10000.3^10000.3;%nan=%inf-%inf;
+ %s=poly(0,'s');%z=poly(0,'z');
+ $=poly(0,'$')

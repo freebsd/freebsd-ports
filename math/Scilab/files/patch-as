@@ -1,13 +1,17 @@
-*** ./routines/metanet/saveg.c.old	Sun Jun 22 16:56:33 1997
---- ./routines/metanet/saveg.c	Sun Jun 22 16:56:53 1997
-***************
-*** 1,5 ****
---- 1,8 ----
-  #include <stdio.h>
-  #ifndef __MSC__
-+ #ifdef __FreeBSD__
-+ #include <sys/types.h>
-+ #endif
-  #include <dirent.h>
-  #endif
-  #include <string.h>
+--- ./xmetanet/init.c.orig	Sat Aug  8 13:47:04 1998
++++ ./xmetanet/init.c	Sat Aug  8 14:18:41 1998
+@@ -1,6 +1,14 @@
+ /* Copyright INRIA */
++#if defined(freebsd) || defined(netbsd)
++#include <sys/types.h>
++#endif
++
+ #include <dirent.h>
+ #include <stdlib.h>
+ #include <string.h>
++
++#if defined(netbsd) || defined(freebsd)
++#include <unistd.h>
++#endif
+ 
+ #include "list.h"

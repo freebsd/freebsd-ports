@@ -1,27 +1,21 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/imp/Slpr.c ./imp/Slpr.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/imp/Slpr.c	Mon May 12 16:34:55 1997
---- ./imp/Slpr.c	Wed May 21 00:55:40 1997
-***************
-*** 5,10 ****
---- 5,13 ----
-  #include <malloc.h>
-  #endif 
-  #include <stdio.h>
-+ #ifdef __FreeBSD__
-+ #include <floatingpoint.h>
-+ #endif
-  
-  
-  #ifdef __STDC__
-***************
-*** 52,57 ****
---- 55,63 ----
-    char buf[256];
-    int i ;
-    FILE *fd;
-+ #ifdef __FreeBSD__
-+   fpsetmask(0);
-+ #endif
-    if (argc <= 2) { int i=0;
-  		   while (strcmp(UsageStr[i],"fin")!=0)
-  		     { 
+--- /dev/null	Fri Dec 18 02:05:39 1998
++++ config/Makefile.freebsd	Sat Dec 19 00:06:25 1998
+@@ -0,0 +1,18 @@
++# Copyright INRIA
++
++
++FFLAGS = $(FC_OPTIONS)
++
++bin/scilex: scilex-lib 
++	@x=1;if test -f $@; then  \
++		x=`find $(DEFAULTS) $(LIBR)  \( -name '*.a' -o -name '*.o' \) \
++		-newer $@ -print | wc -l `; \
++	fi;\
++	if test $$x -ne 0; then \
++		$(RM) $@; \
++		echo "linking"; \
++		$(FC) $(FFLAGS) -o $@ $(DEFAULTS) $(FC_LDFLAGS) $(LIBR)  \
++			$(TCLTK_LIBS) $(XLIBS) $(TERMCAPLIB); \
++	else \
++		echo bin/scilex is up to date ; \
++	fi

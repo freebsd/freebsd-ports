@@ -1,15 +1,8 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/sound/misc.c ./routines/sound/misc.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/sound/misc.c	Mon May 12 16:34:27 1997
---- ./routines/sound/misc.c	Fri May 16 20:25:33 1997
-***************
-*** 358,364 ****
---- 358,366 ----
-  {
-    static char  nomesg[30];
-    extern int sys_nerr;
-+ #ifndef __FreeBSD__
-    extern char *sys_errlist[];
-+ #endif
-    if (errcode < sys_nerr)
-      return (sys_errlist[errcode]);
-    else
+--- ./routines/default/mainsci.f.orig	Mon Jul 20 07:37:23 1998
++++ ./routines/default/mainsci.f	Mon Jul 20 07:37:23 1998
+@@ -15,4 +15,5 @@
+       nargs = iargc()
+       call fgetarg(0,pname)
++      call nofpex()
+       i = 0
+  10   continue

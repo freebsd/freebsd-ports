@@ -1,0 +1,9 @@
+--- routines/xsci/x_main.c.orig	Sat Jan 16 12:34:24 1999
++++ routines/xsci/x_main.c	Sat Jan 16 12:35:25 1999
+@@ -530,5 +530,5 @@
+ 
+ /* following include needed for solaris */
+-#if defined(sparc) && defined(__STDC__)
++#if (defined(sparc) && defined(__STDC__)) && !defined(netbsd)
+ #include <stropts.h>
+ #include <poll.h>

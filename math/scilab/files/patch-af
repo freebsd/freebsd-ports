@@ -1,13 +1,23 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/default/mainsci.f ./routines/default/mainsci.f
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/default/mainsci.f	Mon May 12 16:33:46 1997
---- ./routines/default/mainsci.f	Wed May 21 00:44:49 1997
-***************
-*** 11,16 ****
---- 11,17 ----
-        mem=0
-        nargs = iargc()
-        call fgetarg(0,pname)
-+       call nofpex()
-        i = 0
-   10   continue
-        i=i+1
+--- routines/sun/link.c.orig	Tue Aug 25 04:24:09 1998
++++ routines/sun/link.c	Sat Dec 19 00:53:28 1998
+@@ -120,9 +120,9 @@
+ 
+ 
+-#if defined(sun) || defined(__alpha) || defined(sgi) || (!defined(hppa_old) && defined(hppa))
++#if defined(netbsd) || defined(freebsd) || defined(sun) || defined(__alpha) || defined(sgi) || (!defined(hppa_old) && defined(hppa))
+ #include "link_SYSV.c"
+ #else
+ /** no more used on sun */
+-#if defined(sun_old) ||  defined(mips) || defined(_IBMR2) || defined(hppa_old)
++#if defined(sun_old) ||  (defined(mips) && !defined(netbsd)) || defined(_IBMR2) || defined(hppa_old)
+ #ifdef SUNOSDLD 
+ #include "link_linux.c"
+@@ -145,4 +145,8 @@
+   C2F(dyncall)() {cerro("Dynamic link not implemented");}
+   **/
++int LinkStatus()
++{
++  return(0);
++}
+ 
+ void SciLink(iflag,rhs,ilib,files,en_names,strf)

@@ -1,0 +1,16 @@
+--- examples/misc-examples/zlink.dia.ref.orig	Tue Sep 15 07:28:05 1998
++++ examples/misc-examples/zlink.dia.ref	Fri Oct  8 19:36:36 1999
+@@ -231,5 +231,5 @@
+ yy2=dassl([y0,y0d],t0,t,'dres1',info);   //=yy0
+  
+-if norm(dres1(yy2(1,:),yy2(2:3,:),yy2(4:5,:)),1)>1.d-6 then bugmes();quit;end
++if norm(dres1(yy2(1,:),yy2(2:3,:),yy2(4:5,:)),1)>1.4d-6 then bugmes();quit;end
+  
+ // fortran routines dres1 and djac1 in dir. routines/default, with jacobian
+@@ -346,5 +346,5 @@
+ xn=dassl([x0,x0d],t0,t,g,j,info);
+  
+-if norm(x-xn,1)  > Eps then bugmes();quit;end
++if norm(x-xn,1)  > 2.0*Eps then bugmes();quit;end
+  
+  

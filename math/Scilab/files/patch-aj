@@ -1,37 +1,16 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/sun/link.c ./routines/sun/link.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/sun/link.c	Mon May 12 16:34:04 1997
---- ./routines/sun/link.c	Sun May 25 21:13:41 1997
-***************
-*** 118,124 ****
-  }
-  
-  
-! #if (defined(sun) && defined(SYSV)) || defined(__alpha) || defined(sgi) || (!defined(hppa_old) && defined(hppa))
-  #include "link_SYSV.c"
-  #else
-  #if defined(sun) ||  defined(mips) || defined(_IBMR2) || defined(hppa_old)
---- 118,124 ----
-  }
-  
-  
-! #if (defined(sun) && defined(SYSV)) || defined(__alpha) || defined(sgi) || (!defined(hppa_old) && defined(hppa)) || defined(__FreeBSD__)
-  #include "link_SYSV.c"
-  #else
-  #if defined(sun) ||  defined(mips) || defined(_IBMR2) || defined(hppa_old)
-***************
-*** 128,134 ****
-  #include "link_std.c"
-  #endif /* end of SUNOSDLD */
-  #else
-! #if defined(linux)
-  #ifdef __ELF__
-  #include "link_SYSV.c"
-  #else
---- 128,134 ----
-  #include "link_std.c"
-  #endif /* end of SUNOSDLD */
-  #else
-! #if defined(linux) 
-  #ifdef __ELF__
-  #include "link_SYSV.c"
-  #else
+--- ./routines/metanet/loadg.c.orig	Sat Aug  8 13:53:32 1998
++++ ./routines/metanet/loadg.c	Sat Aug  8 13:58:47 1998
+@@ -1,4 +1,7 @@
+ #include <stdio.h>
+ #ifndef __MSC__
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#endif
+ #include <dirent.h>
+ #endif
+@@ -14,5 +17,4 @@
+ #define  getwd(x) _getcwd(x,1024)
+ #endif
+-
+ 
+ #include "mysearch.h"

@@ -1,22 +1,29 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/sparse/spConfig.h ./routines/sparse/spConfig.h
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/sparse/spConfig.h	Mon May 12 16:34:02 1997
---- ./routines/sparse/spConfig.h	Fri May 16 20:08:24 1997
-***************
-*** 495,500 ****
---- 495,510 ----
-  #   define  LARGEST_SHORT_INTEGER   SHRT_MAX
-  #   define  LARGEST_LONG_INTEGER    LONG_MAX
-  #endif
-+ #ifdef freebsd
-+ #   include <limits.h>
-+ #   include <float.h>
-+ #   define  MACHINE_RESOLUTION      DBL_EPSILON
-+ #   define  LARGEST_REAL            DBL_MAX
-+ #   define  SMALLEST_REAL           DBL_MIN
-+ #   define  LARGEST_SHORT_INTEGER   SHRT_MAX
-+ #   define  LARGEST_LONG_INTEGER    LONG_MAX
-+ #endif
-+ 
-  #ifdef WIN32 
-  #   include <limits.h>
-  #   include <float.h>
+--- ./routines/default/scimem.c.orig	Mon Jul 20 07:50:29 1998
++++ ./routines/default/scimem.c	Sat Aug  8 13:13:30 1998
+@@ -8,6 +8,25 @@
+ #endif
+ 
+-
+ #include "../machine.h"
++
++#if defined(netbsd)
++#include <ieeefp.h>
++#endif
++
++#if defined(freebsd)
++#include <floatingpoint.h>
++#endif
++
++#if (defined(netbsd) || defined(freebsd))&& !defined(__alpha__)
++void C2F(nofpex)()
++{
++  fpsetmask(0);   /* Don't dump core on FPE return Inf or NaN */
++}
++#else
++void C2F(nofpex)()
++{
++  return;
++}
++#endif
+ 
+ char *the_p=NULL;

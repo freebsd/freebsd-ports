@@ -1,27 +1,44 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/imp/Slatexpr2.c ./imp/Slatexpr2.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/imp/Slatexpr2.c	Mon May 12 16:34:55 1997
---- ./imp/Slatexpr2.c	Wed May 21 01:00:03 1997
-***************
-*** 5,10 ****
---- 5,13 ----
-  #include <malloc.h>
-  #endif 
-  #include <stdio.h>
-+ #ifdef __FreeBSD__
-+ #include <floatingpoint.h>
-+ #endif
-  
-  void readOneLine();
-  
-***************
-*** 142,147 ****
---- 145,153 ----
-    int i ;
-    FILE *fd;
-    FILE *fdo;
-+ #ifdef __FreeBSD__
-+   fpsetmask(0);
-+ #endif
-    if (argc !=4 ) { int i=0;
-  		   while (strcmp(UsageStr[i],"fin")!=0)
-  		     { 
+--- ./routines/sparse/spConfig.h.orig	Sat Jul 18 22:31:40 1998
++++ ./routines/sparse/spConfig.h	Sat Aug  8 13:15:56 1998
+@@ -430,5 +430,5 @@
+ 
+ /* VAX machine constants */
+-#ifdef vax
++#if  (defined(vax) && !defined(netbsd)) 
+ #   define  MACHINE_RESOLUTION      6.93889e-18
+ #   define  LARGEST_REAL            1.70141e+38
+@@ -439,5 +439,5 @@
+ 
+ /* MIPS machine constants */
+-#ifdef mips
++#if (defined(mips) && !defined(netbsd)) 
+ #   define  MACHINE_RESOLUTION      6.93889e-18
+ #   define  LARGEST_REAL            1.70141e+38
+@@ -469,5 +469,5 @@
+ 
+ /* Sun machine constants */
+-#ifdef sun
++#if (defined(sun) && !defined(netbsd))
+ /* These values are rumored to be the correct values. */
+ #   define  MACHINE_RESOLUTION      8.9e-15
+@@ -478,5 +478,5 @@
+ #endif
+ /* DEC alpha machine constant*/
+-#ifdef __alpha 
++#if (defined(__alpha) && !defined(netbsd)) 
+ #   include <limits.h>
+ #   include <float.h>
+@@ -488,4 +488,13 @@
+ #endif
+ #ifdef linux
++#   include <limits.h>
++#   include <float.h>
++#   define  MACHINE_RESOLUTION      DBL_EPSILON
++#   define  LARGEST_REAL            DBL_MAX
++#   define  SMALLEST_REAL           DBL_MIN
++#   define  LARGEST_SHORT_INTEGER   SHRT_MAX
++#   define  LARGEST_LONG_INTEGER    LONG_MAX
++#endif
++#if defined(netbsd) || defined(freebsd)
+ #   include <limits.h>
+ #   include <float.h>

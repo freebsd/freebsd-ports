@@ -1,14 +1,10 @@
-*** ./routines/metanet/loadg.c.old	Sun Jun 22 16:54:55 1997
---- ./routines/metanet/loadg.c	Sun Jun 22 16:55:26 1997
-***************
-*** 1,5 ****
---- 1,8 ----
-  #include <stdio.h>
-  #ifndef __MSC__
-+ #ifdef __FreeBSD__
-+ #include <sys/types.h>
-+ #endif
-  #include <dirent.h>
-  #endif
-  #include <string.h>
-
+--- ./xmetanet/graphics.c.orig	Sat Aug  8 13:28:35 1998
++++ ./xmetanet/graphics.c	Sat Aug  8 14:17:55 1998
+@@ -2,5 +2,7 @@
+ #include <X11/Intrinsic.h>
+ #include <math.h>
++#ifndef __STDC__
+ #include <malloc.h>
++#endif
+ #include <string.h>
+ #include <stdio.h>

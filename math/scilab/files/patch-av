@@ -1,0 +1,68 @@
+--- Makefile.in.orig	Fri Sep 11 07:12:14 1998
++++ Makefile.in	Sun Jan 17 12:51:05 1999
+@@ -60,5 +60,7 @@
+ 	$(RM) bin/scilex
+ 
+-SUBDIRS = scripts maple macros imp intersci @MANVIEWER@ @XMETANET@ \
++# don't install @MANVIEWER@  (xless) because FreeBSD already has it
++#SUBDIRS = scripts maple macros imp intersci @MANVIEWER@ @XMETANET@ \
++SUBDIRS = scripts maple macros imp intersci @XMETANET@ \
+ 	tests demos @COMM@ examples
+ 
+@@ -78,6 +80,6 @@
+ 		$(MAKE) $(MFLAGS) world;
+ 
+-scilex-lib-world::
+-	@cd pvm3; echo "making all in pvm3..."; $(MAKE) $(MFLAGS);
++#scilex-lib-world::
++#	@cd pvm3; echo "making all in pvm3..."; $(MAKE) $(MFLAGS);
+ 
+ all::
+@@ -106,8 +108,8 @@
+ 	done
+ 
+-distclean::
+-	@cd pvm3; echo "making distclean in pvm3..."; \
+-	$(MAKE) $(MFLAGS) clean;
+-	$(RM) -r pvm3/lib/@PVMARCH@ pvm3/bin/@PVMARCH@
++#distclean::
++#	@cd pvm3; echo "making distclean in pvm3..."; \
++#	$(MAKE) $(MFLAGS) clean;
++#	$(RM) -r pvm3/lib/@PVMARCH@ pvm3/bin/@PVMARCH@
+ 
+ clean::
+@@ -119,7 +121,7 @@
+ 	done
+ 
+-clean::
+-	@cd pvm3; echo "making clean in pvm3..."; \
+-	$(MAKE) $(MFLAGS)  clean;
++#clean::
++#	@cd pvm3; echo "making clean in pvm3..."; \
++#	$(MAKE) $(MFLAGS)  clean;
+ 
+ tests:
+@@ -150,8 +152,4 @@
+ 	$(SCIBASE)/routines/graphics/Graphics.h \
+ 	$(SCIBASE)/routines/sun/link.h $(SCIBASE)/routines/intersci/sparse.h \
+-	$(SCIBASE)/pvm3/lib/pvm $(SCIBASE)/pvm3/lib/pvmd \
+-	$(SCIBASE)/pvm3/lib/pvmtmparch \
+-	$(SCIBASE)/pvm3/lib/@PVMARCH@/pvmd3 \
+-	$(SCIBASE)/pvm3/lib/@PVMARCH@/pvmgs \
+ 	$(SCIBASE)/tcl \
+ 	$(SCIBASE)/.binary
+@@ -162,2 +160,14 @@
+ 	cd .. ; tar cvf $(SCIDIR)/$(SCIBASE)-bin.tar $(BINDISTFILES)
+ 	$(RM) .binary
++
++install:
++	touch .binary
++	strip $(SCIDIR)/bin/scilex
++	cd .. ; tar cvf - $(BINDISTFILES) | (cd ${PREFIX}/lib/X11; tar xf -)
++	cd ${SCIDIR}; $(MAKE)
++	ln -fs ${X11BASE}/bin/xless ${SCIDIR}/bin/xless
++	rm -f ${PREFIX}/bin/scilab
++	ln -fs ${SCIDIR}/bin/scilab ${PREFIX}/bin/scilab
++	${BSD_INSTALL_DATA} ${SCIDIR}/X11_defaults/Xscilab ${X11BASE}/lib/X11/app-defaults
++	${BSD_INSTALL_DATA} ${SCIDIR}/X11_defaults/Metanet-color ${X11BASE}/lib/X11/app-defaults
++

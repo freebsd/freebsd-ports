@@ -1,15 +1,10 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/xsci/wf_fig.h ./routines/xsci/wf_fig.h
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/xsci/wf_fig.h	Mon May 12 16:34:24 1997
---- ./routines/xsci/wf_fig.h	Fri May 16 20:27:49 1997
-***************
-*** 209,215 ****
---- 209,217 ----
-  
-  extern int	errno;
-  extern int	sys_nerr;
-+ #ifndef __FreeBSD__
-  extern char    *sys_errlist[];
-+ #endif
-  
-  #include <math.h>	/* for sin(), cos() etc */
-  
+--- ./routines/metanet/files.c.orig	Sat Aug  8 14:04:52 1998
++++ ./routines/metanet/files.c	Sat Aug  8 14:06:46 1998
+@@ -1,4 +1,7 @@
+ #include <stdio.h>
+ #ifndef __MSC__
++#if defined(netbsd) || defined(freebsd)
++#include <sys/types.h>
++#endif
+ #include <dirent.h>
+ #endif

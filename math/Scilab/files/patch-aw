@@ -1,0 +1,18 @@
+--- routines/xsci/wf_f_util.c.orig	Fri Dec 18 23:37:39 1998
++++ routines/xsci/wf_f_util.c	Fri Dec 18 23:38:57 1998
+@@ -11,4 +11,8 @@
+  */
+ 
++#if defined(netbsd) || defined(freebsd)
++#include <unistd.h>
++#endif
++
+ #include "wf_fig.h"
+ #include "wf_resources.h"
+@@ -66,5 +70,5 @@
+ get_directory()
+ {
+-#if defined(SYSV) || defined(SVR4)
++#if defined(SYSV) || defined(SVR4) || defined(netbsd) || defined(freebsd)
+     extern char	   *getcwd();
+ 

@@ -1,14 +1,30 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/xmetanet/graphics.c ./xmetanet/graphics.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/xmetanet/graphics.c	Mon May 12 16:34:40 1997
---- ./xmetanet/graphics.c	Mon May 19 00:28:39 1997
-***************
-*** 1,6 ****
---- 1,8 ----
-  #include <X11/Intrinsic.h>
-  #include <math.h>
-+ #ifndef __FreeBSD__
-  #include <malloc.h>
-+ #endif
-  #include <string.h>
-  #include <stdio.h>
-  
+--- geci/scruteur.c.orig	Tue May 27 05:13:53 1997
++++ geci/scruteur.c	Wed Jan 13 19:34:54 1999
+@@ -11,7 +11,16 @@
+ #include <errno.h>
+ #include <stdio.h>
++#include <string.h>
+ #include <signal.h>
+ #include <netdb.h>
+ 
++#if defined(netbsd)
++#include <ieeefp.h>
++#endif
++
++#if defined(freebsd)
++#include <floatingpoint.h>
++#endif
++
+ #include "listes_chainees.h"
+ #include "utilitaires.h"
+@@ -46,5 +55,9 @@
+   sigset_t set,oset;
+ #endif  
+-  
++
++#if (defined(netbsd) || defined(freebsd)) && !defined(__alpha__)
++  fpsetmask(0);
++#endif
++
+   signal(SIGTERM,signal_arret_scruteur);
+   signal(SIGQUIT,signal_arret_scruteur);

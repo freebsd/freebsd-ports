@@ -1,60 +1,19 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/sun/link_SYSV.c ./routines/sun/link_SYSV.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/sun/link_SYSV.c	Mon May 12 16:34:04 1997
---- ./routines/sun/link_SYSV.c	Wed May 21 00:12:20 1997
-***************
-*** 27,42 ****
-  #include <archives.h>
-  #endif
-  
-! #ifdef linux 
-  #include <unistd.h>
-  #include <sys/wait.h>
-  #endif 
-  
-  #ifndef linux
-  #ifndef hppa
-  #include <sys/mode.h>
-  #endif
-  #endif 
-  
-  #ifdef __alpha
-  #include <c_asm.h>
---- 27,47 ----
-  #include <archives.h>
-  #endif
-  
-! #if defined(linux) || defined(__FreeBSD__)
-  #include <unistd.h>
-  #include <sys/wait.h>
-  #endif 
-  
-+ #ifdef __FreeBSD__
-+ #define RTLD_NOW 1
-+ #endif
-  #ifndef linux
-+ #ifndef __FreeBSD__
-  #ifndef hppa
-  #include <sys/mode.h>
-  #endif
-  #endif 
-+ #endif 
-  
-  #ifdef __alpha
-  #include <c_asm.h>
-***************
-*** 169,178 ****
---- 174,187 ----
-  #ifdef linux
-  	  "/usr/bin/ld", "-shared", "-o", 0, 0  
-  #else
-+ #ifdef __FreeBSD__
-+ 	"/usr/bin/ld", "-Bshareable", "-o", 0, 0
-+ #else
-  #ifdef hppa
-            "/bin/ld", "-b", "-o", 0, 0
-  #else
-  	  "/bin/ld", "-shared", "-o", 0, 0  
-+ #endif
-  #endif
-  #endif
-  #endif
+--- ./routines/metanet/saveg.c.orig	Sat Aug  8 14:01:11 1998
++++ ./routines/metanet/saveg.c	Sat Aug  8 14:06:07 1998
+@@ -1,4 +1,7 @@
+ #include <stdio.h>
+ #ifndef __MSC__
++#if defined(netbsd) || defined(freebsd) 
++#include <sys/types.h>
++#endif
+ #include <dirent.h>
+ #endif
+@@ -13,4 +16,8 @@
+ /** only used for x=dir[1024] **/
+ #define  getwd(x) _getcwd(x,1024) 
++#endif
++
++#if defined(netbsd) || defined(freebsd)
++#include <unistd.h>
+ #endif
+ 

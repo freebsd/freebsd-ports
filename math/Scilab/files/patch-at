@@ -1,13 +1,13 @@
-*** ./routines/metanet/files.c.old	Sun Jun 22 16:57:23 1997
---- ./routines/metanet/files.c	Sun Jun 22 16:58:16 1997
-***************
-*** 1,5 ****
---- 1,8 ----
-  #include <stdio.h>
-  #ifndef __MSC__
-+ #ifdef __FreeBSD__
-+ #include <sys/types.h>
-+ #endif
-  #include <dirent.h>
-  #endif
-  #include <string.h>
+--- ./xmetanet/save.c.orig	Sat Aug  8 14:03:32 1998
++++ ./xmetanet/save.c	Sat Aug  8 14:19:33 1998
+@@ -1,5 +1,10 @@
+ /* Copyright INRIA */
++#if defined(netbsd) || defined(freebsd)
++#include <sys/types.h>
++#endif
+ #include <dirent.h>
++#ifndef __STDC__
+ #include <malloc.h>
++#endif
+ #include <stdio.h>
+ #include <string.h>
