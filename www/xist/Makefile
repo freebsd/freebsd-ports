@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xist
-PORTVERSION= 	2.2
+PORTVERSION= 	2.5
 CATEGORIES=	www python
 MASTER_SITES=	ftp://ftp.livinglogic.de/pub/livinglogic/xist/
 DISTNAME=	ll-${PORTNAME}-${PORTVERSION}
@@ -21,6 +21,7 @@ RUN_DEPENDS=	${PYXML} \
 
 USE_PYTHON=	2.3
 USE_PYDISTUTILS=	yes
+USE_BZIP2=	yes
 
 post-install:
 .for file in doc2txt dtd2xsc tld2xsc xscmake
