@@ -1,12 +1,12 @@
 # New ports collection makefile for:    GIMP
-# Version required:     0.99.6
+# Version required:     0.99.7
 # Date created:         Mon Nov 18 21:28:43 CST 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1997/03/02 19:44:41 erich Exp $
+# $Id: Makefile,v 1.6 1997/03/27 21:41:12 erich Exp $
 #
 
-DISTNAME=       gimp-0.99.6
+DISTNAME=       gimp-0.99.7
 CATEGORIES=     graphics
 MASTER_SITES=   ftp://ftp.xcf.berkeley.edu/pub/gimp/developers/
 

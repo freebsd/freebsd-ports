@@ -1,88 +1,55 @@
---- plug-ins/script-fu/scripts/Makefile.in.orig	Sun Mar  2 05:54:56 1997
-+++ plug-ins/script-fu/scripts/Makefile.in	Sun Mar  2 08:00:11 1997
-@@ -50,7 +50,7 @@
- 
- scriptdatadir = $(pkgdatadir)/scripts
- 
--scriptdata_DATA = \
-+_scriptdata_DATA = \
- 	alien-glow.scm		\
- 	bds-logo-textured.scm	\
- 	blend-logo.scm		\
-@@ -76,6 +76,7 @@
- 
- DIST_COMMON =  Makefile.am Makefile.in
- 
-+scriptdata_DATA = $(patsubst %.scm,%.sed,${_scriptdata_DATA})
- 
- DISTFILES = $(DIST_COMMON) $(SOURCES) $(HEADERS) \
- 	$(TEXINFOS) $(MANS) $(EXTRA_DIST)
-@@ -83,7 +84,7 @@
- TAR = tar
- default: all
- 
--.SUFFIXES:
-+.SUFFIXES: .sed
- $(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL) 
- 	cd $(top_srcdir) && automake --gnu plug-ins/script-fu/scripts/Makefile
- 
-@@ -95,13 +96,15 @@
- install-scriptdataDATA: $(scriptdata_DATA)
- 	$(NORMAL_INSTALL)
- 	$(mkinstalldirs) $(scriptdatadir)
--	@list="$(scriptdata_DATA)"; for p in $$list; do \
--	  if test -f $(srcdir)/$$p; then \
--	    echo "$(INSTALL_DATA) $(srcdir)/$$p $(scriptdatadir)/$$p"; \
--	    $(INSTALL_DATA) $(srcdir)/$$p $(scriptdatadir)/$$p; \
--	  else if test -f $$p; then \
--	    echo "$(INSTALL_DATA) $$p $(scriptdatadir)/$$p"; \
--	    $(INSTALL_DATA) $$p $(scriptdatadir)/$$p; \
-+	@list="$(scriptdata_DATA)"; for s in $$list; do \
-+	  p=$$(basename $$s .sed); \
-+	  if [ $$p != $$s ]; then p=$$p.scm; fi; \
-+	  if test -f $(srcdir)/$$s; then \
-+	    echo "$(INSTALL_DATA) $(srcdir)/$$s $(scriptdatadir)/$$p"; \
-+	    $(INSTALL_DATA) $(srcdir)/$$s $(scriptdatadir)/$$p; \
-+	  else if test -f $$s; then \
-+	    echo "$(INSTALL_DATA) $$s $(scriptdatadir)/$$p"; \
-+	    $(INSTALL_DATA) $$s $(scriptdatadir)/$$p; \
- 	  fi; fi; \
- 	done
- 
-@@ -188,3 +191,7 @@
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
-+
-+
-+%.sed : %.scm
-+	sed 's,@_scriptdatadir_@,${scriptdatadir},' $< > $@
---- plug-ins/script-fu/scripts/chrome-it.scm.orig	Sun Mar  2 05:12:07 1997
-+++ plug-ins/script-fu/scripts/chrome-it.scm	Sun Mar  2 07:43:14 1997
-@@ -153,5 +153,5 @@
-     (gimp-displays-flush)
-     (gimp-image-enable-undo img)))
- 
--(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Gold Trim)" "Input Image" "1" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
--(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Copper Trim)" "Input Image" "1" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
-+(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Gold Trim)" "Input Image" "1" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Environment Map" "\"@_scriptdatadir_@/beavis.jpg\"")
-+(script-fu-register "sota-chrome-it" "SOTA Chrome-IT (Copper Trim)" "Input Image" "1" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75" "Environment Map" "\"@_scriptdatadir_@/beavis.jpg\"")
---- plug-ins/script-fu/scripts/chrome2.scm.orig	Sun Mar  2 05:12:07 1997
-+++ plug-ins/script-fu/scripts/chrome2.scm	Sun Mar  2 07:43:14 1997
-@@ -161,6 +161,6 @@
-     (gimp-image-enable-undo img)
-     (gimp-display-new img)))
- 
--(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Gold Trim)" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"GoodCityModern(kbd)\"" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
-+(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Gold Trim)" "Highlight Color" "'(211 95 0)" "Chrome Color" "'(0 27 209)" "Chrome Saturation" "-80" "Chrome Lightness" "-47" "Chrome Factor" "0.75" "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"GoodCityModern(kbd)\"" "Environment Map" "\"@_scriptdatadir_@/beavis.jpg\"")
- 
--(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Copper Trim)" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75"  "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"RoostHeavy\"" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
-+(script-fu-register "sota-chrome-logo" "SOTA Chromed Logos (Copper Trim)" "Highlight Color" "'(220 50 -20)" "Chrome Color" "'(0 0 0)" "Chrome Saturation" "0" "Chrome Lightness" "0" "Chrome Factor" "0.75"  "Text String" "\"The GIMP\"" "Font Size (in pixels)" "150" "Font" "\"RoostHeavy\"" "Environment Map" "\"@_scriptdatadir_@/beavis.jpg\"")
---- plug-ins/script-fu/scripts/crystal.scm.orig	Sun Mar  2 07:56:25 1997
-+++ plug-ins/script-fu/scripts/crystal.scm	Sun Mar  2 07:57:25 1997
-@@ -164,4 +164,4 @@
-     (gimp-display-new img)))
+****
+**** patches for the various configure scripts
+****  1) force INSTALL=`/usr/bin/install -c'
+****     to fix some obsecure problem with firing
+****     ./configure via the ports mechanism
+****  2) put the plug-ins in libexec rather than lib
+****
+--- ./gtk+/glib/configure~	Fri Mar 28 12:03:26 1997
++++ ./gtk+/glib/configure	Tue Apr  8 08:06:14 1997
+@@ -560,6 +560,7 @@
+ # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
+ # ./install, which can be erroneously created by make from ./install.sh.
+ echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
++INSTALL="/usr/bin/install -c"
+ echo "configure:564: checking for a BSD compatible install" >&5
+ if test -z "$INSTALL"; then
+ if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
+--- ./gtk+/configure~	Fri Mar 28 10:58:42 1997
++++ ./gtk+/configure	Tue Apr  8 08:05:57 1997
+@@ -568,6 +568,7 @@
+ # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
+ # ./install, which can be erroneously created by make from ./install.sh.
+ echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
++INSTALL="/usr/bin/install -c"
+ echo "configure:572: checking for a BSD compatible install" >&5
+ if test -z "$INSTALL"; then
+ if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
+--- ./configure~	Mon Apr  7 17:42:41 1997
++++ ./configure	Tue Apr  8 08:07:58 1997
+@@ -567,6 +567,7 @@
+ # SVR4 /usr/ucb/install, which tries to use the nonexistent group "staff"
+ # ./install, which can be erroneously created by make from ./install.sh.
+ echo $ac_n "checking for a BSD compatible install""... $ac_c" 1>&6
++INSTALL="/usr/bin/install -c"
+ echo "configure:571: checking for a BSD compatible install" >&5
+ if test -z "$INSTALL"; then
+ if eval "test \"`echo '$''{'ac_cv_path_install'+set}'`\" = set"; then
+@@ -617,7 +618,7 @@
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
  
  
--(script-fu-register "crystal-logo" "Crystal Logos" "Chrome Factor" "1.0" "Text String" "\"Crystal\"" "Font Size (in pixels)" "150" "Font" "\"Engraver\"" "Background Img" "\"/usr/local/share/gimp/scripts/texture1.jpg\"" "Environment Map" "\"/usr/local/share/gimp/scripts/beavis.jpg\"")
-+(script-fu-register "crystal-logo" "Crystal Logos" "Chrome Factor" "1.0" "Text String" "\"Crystal\"" "Font Size (in pixels)" "150" "Font" "\"Engraver\"" "Background Img" "\"@_scriptdatadir_@/texture1.jpg\"" "Environment Map" "\"@_scriptdatadir_@/beavis.jpg\"")
+-test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
++test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -m 555'
+ 
+ 
+ PACKAGE=gimp
+@@ -2173,7 +2174,7 @@
+ 
+ 
+ gimpdatadir=$datadir/$PACKAGE/$VERSION
+-gimpplugindir=$libdir/$PACKAGE/$VERSION
++gimpplugindir=$libexecdir/$PACKAGE/$VERSION
+ 
+ 
+ 
