@@ -213,6 +213,7 @@
     SUBDIR += ldapsdk
     SUBDIR += libfreenet
     SUBDIR += libicq
+    SUBDIR += libicq2000
     SUBDIR += libkmsn
     SUBDIR += libnet
     SUBDIR += libnids
