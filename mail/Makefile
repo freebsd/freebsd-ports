@@ -155,6 +155,7 @@
     SUBDIR += teapop
     SUBDIR += tkrat
     SUBDIR += tkrat2
+    SUBDIR += vbsfilter-1.3
     SUBDIR += vpopmail
     SUBDIR += vrfy
     SUBDIR += wanderlust-emacs
