@@ -1,0 +1,11 @@
+--- config/cf/FreeBSD.cf.orig	Tue May 20 05:10:21 2003
++++ config/cf/FreeBSD.cf	Tue May 20 03:41:35 2003
+@@ -464,6 +464,8 @@
+ #endif
+ #ifdef Sparc64Architecture
+ #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
++#define AsVISOption            -Av9a
++#define AsOutputArchSize      64
+ #endif
+ #ifdef ia64Architecture
+ #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64

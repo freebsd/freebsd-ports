@@ -1,5 +1,5 @@
---- programs/Xserver/hw/xfree86/common/Imakefile.orig	Mon Feb 17 09:06:41 2003
-+++ programs/Xserver/hw/xfree86/common/Imakefile	Tue Jul 15 17:29:14 2003
+--- programs/Xserver/hw/xfree86/common/Imakefile.orig	Mon Feb 17 12:06:41 2003
++++ programs/Xserver/hw/xfree86/common/Imakefile	Thu May 15 20:17:15 2003
 @@ -18,7 +18,8 @@
  #endif /* GNUMachArchitecture */
  #else
@@ -10,3 +10,12 @@
          KBD = xf86KbdBSD
  # else
  #  ifdef LinuxArchitecture
+@@ -29,7 +30,7 @@
+ # endif
+ #endif
+ 
+-#ifdef SparcArchitecture
++#if defined(SparcArchitecture) || defined(Sparc64Architecture)
+         SBUSSRC = xf86sbusBus.c
+         SBUSOBJ = xf86sbusBus.o
+ #endif
