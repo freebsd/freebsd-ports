@@ -1,4 +1,5 @@
 etc/rc.d/zope.sh
+etc/rc.d/zeo.sh
 %%ZOPEBASEDIR%%/Products/00readme-freebsd.txt
 %%ZOPEBASEDIR%%/bin/README.txt
 %%ZOPEBASEDIR%%/bin/check_catalog.py
@@ -1253,6 +1254,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/TransienceInterfaces.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/TransientObject.py
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/TransientObject.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Transience/TransactionHelper.py
+%%ZOPEBASEDIR%%/lib/python/Products/Transience/TransactionHelper.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/dtml/addTransientObjectContainer.dtml
@@ -1270,6 +1273,10 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/tests/testTransientObject.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/tests/testTransientObjectContainer.py
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/tests/testTransientObjectContainer.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Transience/tests/testCounters.py
+%%ZOPEBASEDIR%%/lib/python/Products/Transience/tests/testCounters.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/Transience/tests/testTransactionHelper.py
+%%ZOPEBASEDIR%%/lib/python/Products/Transience/tests/testTransactionHelper.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/Transience/www/datacontainer.gif
 %%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/BaseIndex.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZCTextIndex/BaseIndex.pyc
@@ -2374,6 +2381,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testHTTPResponse.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testTaintedString.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testTaintedString.pyc
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testPublish.py
+%%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/testPublish.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/test_xmlrpc.py
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/tests/test_xmlrpc.pyc
 %%ZOPEBASEDIR%%/lib/python/ZPublisher/xmlrpc.py
@@ -2642,6 +2651,8 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/parts.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/references.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/references.pyc
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/tables.py
+%%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/directives/tables.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/__init__.py
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/docutils/parsers/rst/languages/af.py
@@ -2820,6 +2831,7 @@ etc/rc.d/zope.sh
 %%ZOPEBASEDIR%%/lib/python/zdaemon/zdoptions.pyc
 %%ZOPEBASEDIR%%/lib/python/zdaemon/zdrun.py
 %%ZOPEBASEDIR%%/lib/python/zdaemon/zdrun.pyc
+%%ZOPEBASEDIR%%/lib/python/version.txt
 %%ZOPEBASEDIR%%/skel/Extensions/README.txt
 %%ZOPEBASEDIR%%/skel/Products/README.txt
 %%ZOPEBASEDIR%%/skel/README.txt

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.7.2
+PORTVERSION=	2.7.3
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-0
@@ -73,6 +73,9 @@ post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/zope.sh > ${PREFIX}/etc/rc.d/zope.sh
 	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/zope.sh
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/zeo.sh > ${PREFIX}/etc/rc.d/zeo.sh
+	@${CHMOD} ${BINMODE} ${PREFIX}/etc/rc.d/zeo.sh
 	@${MKDIR} ${ZOPEBASEDIR}/Products
 	@${CP} ${FILESDIR}/Products_00readme-freebsd.txt ${ZOPEBASEDIR}/Products/00readme-freebsd.txt
 	@${CAT} ${PKGMESSAGE}
@@ -87,6 +90,12 @@ instance:
 	@${CHOWN} ${ZOPE_USER} ${ZOPEINSTANCEDIR}/log
 	@${SED} ${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${FILESDIR}/instance_message
 	@${RM} -f ${ZOPEBASEDIR}/bin/copyzopeskel.pyc
+
+zeo:
+	@${ZOPEBASEDIR}/bin/mkzeoinstance.py ${ZOPEINSTANCEDIR}
+	@${CHOWN} ${ZOPE_USER} ${ZOPEINSTANCEDIR}/var
+	@${CHOWN} ${ZOPE_USER} ${ZOPEINSTANCEDIR}/log
+	@${SED} ${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${FILESDIR}/zeo_message
 
 pre-package:
 	@${SED} ${CONFIG_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} < ${FILESDIR}/pkg-message.package.in \

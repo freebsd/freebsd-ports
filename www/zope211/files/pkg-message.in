@@ -18,6 +18,13 @@ make instance INSTANCENAME=<somename>
 The Instancefiles created by make instance will not be remove when the
 port is deinstalled. You'll have to delete them yourself.
 
+** ZEO Instances ** (Optional) 
+** Please refere to http://zope.org/Products/ZEO/ZEOFactSheet
+
+To create a ZEO instance please run 
+make zeo [INSTANCENAME=<somename>]
+
+
 **********************************************************************
 ****** ATTENTION ***** ATTENTION ***** ATTENTION ***** ATTENTION *****
 
