@@ -1,3 +1,4 @@
+bin/bjcmd
 bin/bjfilter
 bin/bjprn
 bin/lgmon
@@ -38,6 +39,7 @@ usr/lib/libcnclapi.so.1.0.0
 usr/lib/libcnclbjcmd.so.1.0.0
 usr/lib/libcnclui.so.1.0.0
 usr/local/share/locale/ja/LC_MESSAGES/stsmon.mo
+usr/local/share/locale/ja/LC_MESSAGES/printui.mo
 usr/local/share/printui/black_bar.xpm
 usr/local/share/printui/cyan_bar.xpm
 usr/local/share/printui/locale-table
@@ -45,5 +47,12 @@ usr/local/share/printui/magenta_bar.xpm
 usr/local/share/printui/printui.glade
 usr/local/share/printui/printui.res
 usr/local/share/printui/yellow_bar.xpm
-@dirrm usr/lib/bjlib
 @dirrm usr/local/share/printui
+@dirrm usr/local/share/locale/ja/LC_MESSAGES
+@dirrm usr/local/share/locale/ja
+@dirrm usr/local/share/locale
+@dirrm usr/local/share
+@dirrm usr/local
+@dirrm usr/lib/bjlib
+@dirrm usr/lib
+@dirrm usr

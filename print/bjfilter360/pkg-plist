@@ -1,5 +1,6 @@
 bin/bjf360ps
 libexec/bjfilter360/filter360
+libexec/bjfilter360/filter360_gui
 @dirrm libexec/bjfilter360
 @cwd /compat/linux
 usr/lib/bjlib/cnb_0980.tbl

@@ -5,13 +5,13 @@ can print out as high quality as you use the Windows driver. See the
 below URLs:
 
 WWW: http://www.canon-sales.co.jp/drv-upd/linux/bjlinux100.html
-     file:/usr/local/share/doc/bjfiltercom-1.1/html/README.HTM
-     file:/usr/local/share/doc/bjfiltercom-1.1/html/INDEX.HTM
-     file:/usr/local/share/doc/bjfiltercom-1.1/html/FAQ.HTM
+     file:/usr/local/share/doc/bjfiltercom-1.1_1/html/README.HTM
+     file:/usr/local/share/doc/bjfiltercom-1.1_1/html/INDEX.HTM
+     file:/usr/local/share/doc/bjfiltercom-1.1_1/html/FAQ.HTM
 
-And then this port has a filter "filter360" which is useful to print
-out more than one page. If you use it, you add the next entry into
-/etc/printcap.
+And then this port has filters filter360 and filter360_gui which are
+useful to print out more than one page. If you use it, you add the
+next entry into /etc/printcap.
 
 bjfilter360|Canon BJ F360:\
         :lp=/dev/lpt0:\
@@ -20,3 +20,14 @@ bjfilter360|Canon BJ F360:\
         :sd=/var/spool/lpd/bjfilter360:\
         :mx#0:\
         :lf=/var/log/lpd-errs
+bjfilter360_gui|Canon BJ F360 with GUI:\
+        :lp=/dev/lpt0:\
+        :sh:\
+        :if=/usr/local/libexec/bjfilter360/filter360_gui:\
+        :sd=/var/spool/lpd/bjfilter360_gui:\
+        :mx#0:\
+        :lf=/var/log/lpd-errs
+
+Notice: If you use filter360_gui then the host which you are using
+have to be the printer saver. Then before using it, you have to run X
+and execute "xhost localhost".

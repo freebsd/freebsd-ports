@@ -1,5 +1,6 @@
 bin/bjf850ps
 libexec/bjfilter850/filter850
+libexec/bjfilter850/filter850_gui
 @dirrm libexec/bjfilter850
 @cwd /compat/linux
 usr/lib/bjlib/cnb_0740.tbl
