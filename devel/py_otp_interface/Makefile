@@ -7,7 +7,7 @@
 
 PORTNAME=	py_otp_interface
 PORTVERSION=	0.91
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.erlang.org/contrib/
 DISTNAME=	py_interface-${PORTVERSION}
