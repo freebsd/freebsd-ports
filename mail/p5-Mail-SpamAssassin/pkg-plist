@@ -36,7 +36,6 @@ etc/rc.d/spamd.sh-dist
 %%SITE_PERL%%/Mail/SpamAssassin/Util.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Win32Locker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
-lib/perllocal.pod-Mail-SpamAssassin
 share/spamassassin/10_misc.cf
 share/spamassassin/20_anti_ratware.cf
 share/spamassassin/20_body_tests.cf
