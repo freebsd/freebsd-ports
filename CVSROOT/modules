@@ -6148,6 +6148,7 @@ p5-Cstools	ports/converters/p5-Cstools
 p5-Curses	ports/devel/p5-Curses
 p5-Curses-Application	ports/devel/p5-Curses-Application
 p5-Curses-Forms	ports/devel/p5-Curses-Forms
+p5-Curses-UI	ports/devel/p5-Curses-UI
 p5-Curses-Widgets	ports/devel/p5-Curses-Widgets
 p5-DBD-CSV	ports/databases/p5-DBD-CSV
 p5-DBD-Excel	ports/databases/p5-DBD-Excel
