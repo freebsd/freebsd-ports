@@ -1,0 +1,13 @@
+--- freebsd/makefile.orig	Sat Nov 18 13:19:02 1995
++++ freebsd/makefile	Wed Mar 25 15:07:14 1998
+@@ -14,8 +14,8 @@
+ 
+ # options and arguments to the C compiler
+ 
+-#CFLAGS += -I. -I$(HDIR)
+-CFLAGS = -O -I. -I$(HDIR)
++CFLAGS += -I. -I$(HDIR)
++#CFLAGS = -O -I. -I$(HDIR)
+ 
+ # list of header files
+ 
