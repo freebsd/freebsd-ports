@@ -34,3 +34,4 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/Heap/autosplit.ix
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Heap/Elem/StrRev
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Heap/Elem
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Heap
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Heap
