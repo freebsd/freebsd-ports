@@ -1,6 +1,6 @@
---- x11/Makefile.in.orig	Sun Apr 30 19:49:50 2000
-+++ x11/Makefile.in	Sun Apr 30 19:50:36 2000
-@@ -25,10 +25,10 @@
+--- x11/Makefile.in.orig	Mon Jun 19 10:36:18 2000
++++ x11/Makefile.in	Thu Jun 29 04:44:07 2000
+@@ -24,10 +24,10 @@
  
  krnsrcdir = $(srcdir)/../kernel
  
@@ -14,3 +14,12 @@
  DIRPERM  = 0755
  FILEPERM = 0644
  
+@@ -215,7 +215,7 @@
+ 	$(CC) -o imf2x $(ALL_CFLAGS) $(LDFLAGS) imf2x.o $(XUTOBJS) $(LOW_LIB) $(X11_LIB_FLAGS) $(WITH_LIBS) $(XAW_LIB) $(NET_EXTRA_LIBS)
+ 
+ ximfapp:	ximfapp.o xcutil.o $(TKIAPP_LIB) $(TKIMF_LIB) $(LOW_LIB)
+-	$(CC) -o ximfapp $(ALL_CFLAGS) $(LDFLAGS) ximfapp.o xcutil.o $(TKIAPP_LIB) $(TKIMF_LIB) $(LOW_LIB) $(X11_LIB_FLAGS) $(WITH_LIBS) $(TCLTK_LIB) $(X11_LIB) $(NET_EXTRA_LIBS)
++	$(CC) -o ximfapp $(ALL_CFLAGS) $(LDFLAGS) ximfapp.o xcutil.o $(TKIAPP_LIB) $(TKIMF_LIB) $(LOW_LIB) $(X11_LIB_FLAGS) $(WITH_LIBS) $(TCLTK_LIB) $(X11_LIB) $(NET_EXTRA_LIBS) -lm
+ 
+ xshowimf:	xshowimf.o $(XUTOBJS) $(LOW_LIB)
+ 	$(CC) -o xshowimf $(ALL_CFLAGS) $(LDFLAGS) xshowimf.o $(XUTOBJS) $(LOW_LIB) $(X11_LIB_FLAGS) $(WITH_LIBS) $(SELFILE_LIB) $(XAW_LIB) $(NET_EXTRA_LIBS)
