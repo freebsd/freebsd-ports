@@ -77,6 +77,7 @@
     SUBDIR += gnome-vnc
     SUBDIR += gnosamba
     SUBDIR += gnu-finger
+    SUBDIR += gnubile
     SUBDIR += gnut
     SUBDIR += gopher
     SUBDIR += gq
