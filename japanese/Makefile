@@ -15,6 +15,7 @@
     SUBDIR += acroread-jpnfont
     SUBDIR += addttfont
     SUBDIR += another-htmllint
+    SUBDIR += anthy
     SUBDIR += aterm
     SUBDIR += balsa
     SUBDIR += bdf-fonts
