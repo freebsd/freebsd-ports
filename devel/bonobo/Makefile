@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sources/bonobo
 MAINTAINER=	ade@lovett.com
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
-		gdk_pixbuf.0:${PORTSDIR}/graphics/gdk-pixbuf
+		gdk_pixbuf.1:${PORTSDIR}/graphics/gdk-pixbuf
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
