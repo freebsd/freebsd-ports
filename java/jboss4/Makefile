@@ -7,7 +7,7 @@
 
 PORTNAME=	${APP_TITLE:L}
 PORTVERSION= 	2.4.4
-PORTREVISION= 	2
+PORTREVISION= 	3
 CATEGORIES=	java
 MASTER_SITES=  ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -43,7 +43,7 @@ PID_FILE=	/var/run/${APP_SHORTNAME}.pid
 REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.c \
 		${PORTSDIR}/www/jakarta-tomcat4/files/daemonctl.1 \
 		${PORTSDIR}/www/jakarta-tomcat4/files/startup.sh
-JAR_FILE=	${APP_SHORTNAME}.jar
+JAR_FILE=	bin/run.jar
 WRKDIR?=	${.CURDIR}/work
 
 .include <bsd.port.pre.mk>
@@ -65,7 +65,7 @@ post-patch:
 	-e "/%%GROUP%%/s//${GROUP}/g" \
 	-e "/%%JAVA_CMD%%/s//bin\/java/g" \
 	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
-	-e "/%%JAR_FILE%%/s//${JAR_FILE}/g" \
+	-e "/%%JAR_FILE%%/s//${JAR_FILE:S/\//\\\//g}/g" \
 	-e "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/g" \
 	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/g" \
 	-e "/%%PORTNAME%%/s//${PORTNAME}/g" \
