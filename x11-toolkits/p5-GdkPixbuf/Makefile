@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Gtk
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Gtk-Perl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Pixbuf module of Gtk-Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
@@ -33,7 +33,7 @@ IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try aga
 .endif
 
 .if ${PERL_LEVEL} >= 500800
-BROKEN=		"Build fails"
+#BROKEN=		"Build fails"
 .endif
 
 .include <bsd.port.post.mk>
