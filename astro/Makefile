@@ -3,6 +3,7 @@
 
     SUBDIR += dgpsip
     SUBDIR += ephem
+    SUBDIR += glunarclock
     SUBDIR += luna
     SUBDIR += openuniverse
     SUBDIR += pyweather

@@ -1,0 +1,7 @@
+bin/glunarclock
+etc/CORBA/servers/glunarclock.gnorba
+share/gnome/applets/Clocks/glunarclock.desktop
+share/gnome/pixmaps/glunarclock-logo.png
+share/gnome/pixmaps/glunarclock/cartoonmoon_13frames.png
+share/gnome/pixmaps/glunarclock/moon_60frames.png
+@dirrm share/gnome/pixmaps/glunarclock
