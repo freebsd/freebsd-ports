@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libmpeg2
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.4.0b
 CATEGORIES=	multimedia
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 DISTNAME=	mpeg2dec-${PORTVERSION}
+WRKSRC=		${WRKDIR}/mpeg2dec-0.4.0
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
@@ -18,13 +18,14 @@ COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 USE_XLIB=	yes
 USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ARGS=	--enable-shared \
 		--with-x
 
 MAN1=	extract_mpeg2.1 mpeg2dec.1
+
+PORTDOCS=	libmpeg2.txt
 
 .ifdef(WITH_MGA)
 CONFIGURE_ARGS+=	--enable-mga
@@ -75,11 +76,12 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
 		${WRKSRC}/libmpeg2/Makefile.in
-
+	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
+		${WRKSRC}/libmpeg2/convert/Makefile.in
 post-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/libvo.txt ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/libmpeg2.txt ${DOCSDIR}
 .endif
 	@${INSTALL_DATA} ${WRKSRC}/libvo/libvo.a ${PREFIX}/lib
 	@${INSTALL_DATA} ${WRKSRC}/include/video_out.h \
