@@ -9,7 +9,7 @@ PORTNAME=	fragroute
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	security net
-MASTER_SITES=	http://www.monkey.org/~dugsong/fragroute/
+MASTER_SITES=	http://monkey.org/~dugsong/fragroute/
 
 MAINTAINER=	dominic_marks@btinternet.com
 
