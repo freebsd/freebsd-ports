@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chkrootkit
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
@@ -14,7 +14,7 @@ MAINTAINER=	cordeiro@luinil.nic.br
 
 USE_REINPLACE=	yes
 
-ALL_TARGET=	chkrootkit chklastlog chkwtmp chkproc ifpromisc 
+ALL_TARGET=	chkrootkit chklastlog chkwtmp chkproc chkdirs ifpromisc 
 
 DOCFILES=	COPYRIGHT README README.chklastlog README.chkwtmp
 
@@ -26,6 +26,7 @@ pre-patch:
 		's#\./chklastlog#${PREFIX}/sbin/chklastlog#g; \
 		s#\./chkwtmp#${PREFIX}/sbin/chkwtmp#g; \
 		s#\./chkproc#${PREFIX}/sbin/chkproc#g; \
+		s#\./chkdirs#${PREFIX}/sbin/chkdirs#g; \
 		s#\./ifpromisc#${PREFIX}/sbin/ifpromisc#g;' \
 		${WRKSRC}/chkrootkit
 
@@ -34,6 +35,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/chklastlog ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/chkwtmp    ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/chkproc    ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/chkdirs    ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/ifpromisc  ${PREFIX}/sbin
 .if	!defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/chkrootkit
