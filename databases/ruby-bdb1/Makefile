@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bdb1
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,10 +16,22 @@ MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+USE_RUBY_RDOC=		yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		Changes README.en bdb1.html bdb1.rd docs/*
+DOCS=		Changes \
+		README.en \
+		bdb1.html \
+		bdb1.rd \
+		docs/*.html \
+		docs/*.rd \
+		docs/doc
+
+post-build:
+.if !defined(NOPORTDOCS)
+	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} rdoc
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -27,7 +39,7 @@ post-install:
 	${CP} -R ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 
