@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	braa
-PORTVERSION=	0.42
+PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	http://s-tech.elsat.net.pl/braa/
 
@@ -22,7 +22,7 @@ LDFLAGS+=	-lcompat
 post-patch:
 .for file in Makefile
 	@${REINPLACE_CMD} -e \
-		's|CFLAGS =|CFLAGS?=${CFLAGS}|g ; \
+		's|CFLAGS =|CFLAGS+=${CFLAGS}|g ; \
 		s|LDFLAGS =|LDFLAGS?=${LDFLAGS}|g ; \
 		s|strip $$(OUT)||g' ${WRKSRC}/${file}
 .endfor
