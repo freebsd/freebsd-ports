@@ -1,7 +1,7 @@
---- config/registry.php.dist.orig	Mon May 20 18:43:28 2002
-+++ config/registry.php.dist	Tue Jun 11 18:53:47 2002
+--- config/registry.php.dist.orig	Mon Dec 30 02:26:06 2002
++++ config/registry.php.dist	Thu Jan 16 23:02:48 2003
 @@ -20,8 +20,8 @@
-  *   IMP or Gollem handle the authentication for Horde. This avoids the
+  *   IMP handle the authentication for Horde. This avoids the
   *   "double login" while accessing IMP.
   */
 -// $this->registry['auth']['login'] = 'imp';
@@ -11,7 +11,7 @@
  
  /* mail: Handler for sending mail. */
  $this->registry['mail']['compose'] = 'imp';
-@@ -39,12 +39,29 @@
+@@ -45,12 +45,29 @@
  $this->registry['memos']['show'] = 'mnemo';
  $this->registry['memos']['add'] = 'mnemo';
  
@@ -41,80 +41,88 @@
  
  /**
   * Application registry
-@@ -74,60 +91,121 @@
-     'server_port' => $GLOBALS['HTTP_SERVER_VARS']['SERVER_PORT']
+@@ -100,68 +117,122 @@
+     'status' => 'notoolbar'
  );
  
--// $this->applications['imp'] = array(
--//     'fileroot' => dirname(__FILE__) . '/../imp',
--//     'webroot' => $this->applications['horde']['webroot'] . '/imp',
--//     'icon' => $this->applications['horde']['webroot'] . '/imp/graphics/imp.gif',
--//     'name' => _("Mail"),
--//     'allow_guests' => false,
--//     'show' => true
--// );
+-$this->applications['imp'] = array(
+-    'fileroot' => dirname(__FILE__) . '/../imp',
+-    'webroot' => $this->applications['horde']['webroot'] . '/imp',
+-    'icon' => $this->applications['horde']['webroot'] . '/imp/graphics/imp.gif',
+-    'name' => _("Mail"),
+-    'allow_guests' => false,
+-    'status' => 'inactive'
+-);
 -
--// $this->applications['turba'] = array(
--//     'fileroot' => dirname(__FILE__) . '/../turba',
--//     'webroot' => $this->applications['horde']['webroot'] . '/turba',
--//     'icon' => $this->applications['horde']['webroot'] . '/turba/graphics/turba.gif',
--//     'name' => _("Addressbook"),
--//     'allow_guests' => false,
--//     'show' => true
--// );
+-$this->applications['turba'] = array(
+-    'fileroot' => dirname(__FILE__) . '/../turba',
+-    'webroot' => $this->applications['horde']['webroot'] . '/turba',
+-    'icon' => $this->applications['horde']['webroot'] . '/turba/graphics/turba.gif',
+-    'name' => _("Address Book"),
+-    'allow_guests' => false,
+-    'status' => 'inactive'
+-);
 -
--// $this->applications['kronolith'] = array(
--//     'fileroot' => dirname(__FILE__) . '/../kronolith',
--//     'webroot' => $this->applications['horde']['webroot'] . '/kronolith',
--//     'icon' => $this->applications['horde']['webroot'] . '/kronolith/graphics/kronolith.gif',
--//     'name' => _("Calendar"),
--//     'allow_guests' => false,
--//     'show' => false
--// );
+-$this->applications['kronolith'] = array(
+-    'fileroot' => dirname(__FILE__) . '/../kronolith',
+-    'webroot' => $this->applications['horde']['webroot'] . '/kronolith',
+-    'icon' => $this->applications['horde']['webroot'] . '/kronolith/graphics/kronolith.gif',
+-    'name' => _("Calendar"),
+-    'allow_guests' => false,
+-    'status' => 'inactive'
+-);
 -
--// $this->applications['mnemo'] = array(
--//     'fileroot' => dirname(__FILE__) . '/../mnemo',
--//     'webroot' => $this->applications['horde']['webroot'] . '/mnemo',
--//     'icon' => $this->applications['horde']['webroot'] . '/mnemo/graphics/mnemo.gif',
--//     'name' => _("Memos"),
--//     'allow_guests' => false,
--//     'show' => true
--// );
+-$this->applications['mnemo'] = array(
+-    'fileroot' => dirname(__FILE__) . '/../mnemo',
+-    'webroot' => $this->applications['horde']['webroot'] . '/mnemo',
+-    'icon' => $this->applications['horde']['webroot'] . '/mnemo/graphics/mnemo.gif',
+-    'name' => _("Memos"),
+-    'allow_guests' => false,
+-    'status' => 'inactive'
+-);
 -
--// $this->applications['nag'] = array(
--//     'fileroot' => dirname(__FILE__) . '/../nag',
--//     'webroot' => $this->applications['horde']['webroot'] . '/nag',
--//     'icon' => $this->applications['horde']['webroot'] . '/nag/graphics/nag.gif',
--//     'name' => _("Tasks"),
--//     'allow_guests' => false,
--//     'show' => false
--// );
+-$this->applications['nag'] = array(
+-    'fileroot' => dirname(__FILE__) . '/../nag',
+-    'webroot' => $this->applications['horde']['webroot'] . '/nag',
+-    'icon' => $this->applications['horde']['webroot'] . '/nag/graphics/nag.gif',
+-    'name' => _("Tasks"),
+-    'allow_guests' => false,
+-    'status' => 'inactive'
+-);
 -
--// $this->applications['chora'] = array(
--//     'fileroot' => dirname(__FILE__) . '/../chora',
--//     'webroot' => $this->applications['horde']['webroot'] . '/chora',
--//     'icon' => $this->applications['horde']['webroot'] . '/chora/graphics/chora.gif',
--//     'name' => _("CVS"),
--//     'allow_guests' => false,
--//     'show' => false
--// );
+-$this->applications['chora'] = array(
+-    'fileroot' => dirname(__FILE__) . '/../chora',
+-    'webroot' => $this->applications['horde']['webroot'] . '/chora',
+-    'icon' => $this->applications['horde']['webroot'] . '/chora/graphics/chora.gif',
+-    'name' => _("CVS"),
+-    'allow_guests' => false,
+-    'status' => 'inactive'
+-);
 -
+-$this->applications['klutz'] = array(
+-    'fileroot' => dirname(__FILE__) . '/../klutz',
+-    'webroot' => $this->applications['horde']['webroot'] . '/klutz',
+-    'icon' => $this->applications['horde']['webroot'] . '/klutz/graphics/klutz.gif',
+-    'name' => _("Comics"),
+-    'allow_guests' => false,
+-    'status' => 'inactive'
+-);
 +//UNCOMMENTWHENINSTIMP$this->applications['imp'] = array(
 +//UNCOMMENTWHENINSTIMP    'fileroot' => dirname(__FILE__) . '/../imp',
 +//UNCOMMENTWHENINSTIMP    'webroot' => $this->applications['horde']['webroot'] . '/imp',
 +//UNCOMMENTWHENINSTIMP    'icon' => $this->applications['horde']['webroot'] . '/imp/graphics/imp.gif',
 +//UNCOMMENTWHENINSTIMP    'name' => _("Mail"),
 +//UNCOMMENTWHENINSTIMP    'allow_guests' => false,
-+//UNCOMMENTWHENINSTIMP    'show' => true
++//UNCOMMENTWHENINSTIMP    'status' => 'active'
 +//UNCOMMENTWHENINSTIMP);
 +
 +//UNCOMMENTWHENINSTTURBA$this->applications['turba'] = array(
 +//UNCOMMENTWHENINSTTURBA    'fileroot' => dirname(__FILE__) . '/../turba',
 +//UNCOMMENTWHENINSTTURBA    'webroot' => $this->applications['horde']['webroot'] . '/turba',
 +//UNCOMMENTWHENINSTTURBA    'icon' => $this->applications['horde']['webroot'] . '/turba/graphics/turba.gif',
-+//UNCOMMENTWHENINSTTURBA    'name' => _("Addressbook"),
++//UNCOMMENTWHENINSTTURBA    'name' => _("Address Book"),
 +//UNCOMMENTWHENINSTTURBA    'allow_guests' => false,
-+//UNCOMMENTWHENINSTTURBA    'show' => true
++//UNCOMMENTWHENINSTTURBA    'status' => 'active'
 +//UNCOMMENTWHENINSTTURBA);
 +
 +//UNCOMMENTWHENINSTKRONOLITH$this->applications['kronolith'] = array(
@@ -123,7 +131,7 @@
 +//UNCOMMENTWHENINSTKRONOLITH    'icon' => $this->applications['horde']['webroot'] . '/kronolith/graphics/kronolith.gif',
 +//UNCOMMENTWHENINSTKRONOLITH    'name' => _("Calendar"),
 +//UNCOMMENTWHENINSTKRONOLITH    'allow_guests' => false,
-+//UNCOMMENTWHENINSTKRONOLITH    'show' => true
++//UNCOMMENTWHENINSTKRONOLITH    'status' => 'active'
 +//UNCOMMENTWHENINSTKRONOLITH);
 +
 +//UNCOMMENTWHENINSTMNEMO$this->applications['mnemo'] = array(
@@ -132,7 +140,7 @@
 +//UNCOMMENTWHENINSTMNEMO    'icon' => $this->applications['horde']['webroot'] . '/mnemo/graphics/mnemo.gif',
 +//UNCOMMENTWHENINSTMNEMO    'name' => _("Memos"),
 +//UNCOMMENTWHENINSTMNEMO    'allow_guests' => false,
-+//UNCOMMENTWHENINSTMNEMO    'show' => true
++//UNCOMMENTWHENINSTMNEMO    'status' => 'active'
 +//UNCOMMENTWHENINSTMNEMO);
 +
 +//UNCOMMENTWHENINSTNAG$this->applications['nag'] = array(
@@ -141,7 +149,7 @@
 +//UNCOMMENTWHENINSTNAG    'icon' => $this->applications['horde']['webroot'] . '/nag/graphics/nag.gif',
 +//UNCOMMENTWHENINSTNAG    'name' => _("Tasks"),
 +//UNCOMMENTWHENINSTNAG    'allow_guests' => false,
-+//UNCOMMENTWHENINSTNAG    'show' => true
++//UNCOMMENTWHENINSTNAG    'status' => 'active'
 +//UNCOMMENTWHENINSTNAG);
 +
 +//UNCOMMENTWHENINSTCHORA$this->applications['chora'] = array(
@@ -150,16 +158,25 @@
 +//UNCOMMENTWHENINSTCHORA    'icon' => $this->applications['horde']['webroot'] . '/chora/graphics/chora.gif',
 +//UNCOMMENTWHENINSTCHORA    'name' => _("CVS"),
 +//UNCOMMENTWHENINSTCHORA    'allow_guests' => false,
-+//UNCOMMENTWHENINSTCHORA    'show' => true
++//UNCOMMENTWHENINSTCHORA    'status' => 'active'
 +//UNCOMMENTWHENINSTCHORA);
-+ 
++
++//UNCOMMENTWHENINSTKLUTZ$this->applications['klutz'] = array(
++//UNCOMMENTWHENINSTKLUTZ    'fileroot' => dirname(__FILE__) . '/../klutz',
++//UNCOMMENTWHENINSTKLUTZ    'webroot' => $this->applications['horde']['webroot'] . '/klutz',
++//UNCOMMENTWHENINSTKLUTZ    'icon' => $this->applications['horde']['webroot'] . '/klutz/graphics/klutz.gif',
++//UNCOMMENTWHENINSTKLUTZ    'name' => _("Comics"),
++//UNCOMMENTWHENINSTKLUTZ    'allow_guests' => false,
++//UNCOMMENTWHENINSTKLUTZ    'status' => 'active'
++//UNCOMMENTWHENINSTKLUTZ);
++
 +//UNCOMMENTWHENINSTGOLLEM$this->applications['gollem'] = array(
 +//UNCOMMENTWHENINSTGOLLEM    'fileroot' => dirname(__FILE__) . '/../gollem',
 +//UNCOMMENTWHENINSTGOLLEM    'webroot' => '/horde/gollem',
 +//UNCOMMENTWHENINSTGOLLEM    'icon' => '/horde/gollem/graphics/gollem.gif',
 +//UNCOMMENTWHENINSTGOLLEM    'name' => _("FTP"),
 +//UNCOMMENTWHENINSTGOLLEM    'allow_guests' => false,
-+//UNCOMMENTWHENINSTGOLLEM    'show' => true
++//UNCOMMENTWHENINSTGOLLEM    'status' => 'active'
 +//UNCOMMENTWHENINSTGOLLEM);
 +
 +//UNCOMMENTWHENINSTNIC$this->applications['nic'] = array(
@@ -168,7 +185,7 @@
 +//UNCOMMENTWHENINSTNIC    'icon' => '/horde/nic/graphics/nic.gif',
 +//UNCOMMENTWHENINSTNIC    'name' => _("Network"),
 +//UNCOMMENTWHENINSTNIC    'allow_guests' => false,
-+//UNCOMMENTWHENINSTNIC    'show' => true
++//UNCOMMENTWHENINSTNIC    'status' => 'active'
 +//UNCOMMENTWHENINSTNIC);
 +
 +//UNCOMMENTWHENINSTJONAH$this->applications['jonah'] = array(
@@ -177,7 +194,7 @@
 +//UNCOMMENTWHENINSTJONAH    'icon' => '/horde/jonah/graphics/jonah.gif',
 +//UNCOMMENTWHENINSTJONAH    'name' => _("Headlines"),
 +//UNCOMMENTWHENINSTJONAH    'allow_guests' => true,
-+//UNCOMMENTWHENINSTJONAH    'show' => true
++//UNCOMMENTWHENINSTJONAH    'status' => 'active'
 +//UNCOMMENTWHENINSTJONAH);
 +
 +//UNCOMMENTWHENINSTTROLL$this->applications['troll'] = array(
@@ -186,7 +203,7 @@
 +//UNCOMMENTWHENINSTTROLL    'icon' => '/horde/troll/graphics/troll.gif',
 +//UNCOMMENTWHENINSTTROLL    'name' => _("News"),
 +//UNCOMMENTWHENINSTTROLL    'allow_guests' => false,
-+//UNCOMMENTWHENINSTTROLL    'show' => true
++//UNCOMMENTWHENINSTTROLL    'status' => 'active'
 +//UNCOMMENTWHENINSTTROLL);
 +
 +//UNCOMMENTWHENINSTBABEL$this->applications['babel'] = array(
@@ -195,7 +212,7 @@
 +//UNCOMMENTWHENINSTBABEL    'icon' => $this->applications['horde']['webroot'] . '/babel/graphics/babel.gif',
 +//UNCOMMENTWHENINSTBABEL    'name' => _("i18n"),
 +//UNCOMMENTWHENINSTBABEL    'allow_guests' => false,
-+//UNCOMMENTWHENINSTBABEL    'show' => true
++//UNCOMMENTWHENINSTBABEL    'status' => 'active'
 +//UNCOMMENTWHENINSTBABEL);
 +
 +//UNCOMMENTWHENINSTWHUPS$this->applications['whups'] = array(
@@ -204,29 +221,12 @@
 +//UNCOMMENTWHENINSTWHUPS    'icon' => '/horde/whups/graphics/whups.gif',
 +//UNCOMMENTWHENINSTWHUPS    'name' => _("Bugs"),
 +//UNCOMMENTWHENINSTWHUPS    'allow_guests' => false,
-+//UNCOMMENTWHENINSTWHUPS    'show' => true
++//UNCOMMENTWHENINSTWHUPS    'status' => 'active'
 +//UNCOMMENTWHENINSTWHUPS);
-+
-+//UNCOMMENTWHENINSTORATOR$this->applications['orator'] = array(
-+//UNCOMMENTWHENINSTORATOR    'fileroot' => dirname(__FILE__) . '/../orator',
-+//UNCOMMENTWHENINSTORATOR    'webroot' => '/horde/orator',
-+//UNCOMMENTWHENINSTORATOR    'name' => _("Presentations"),
-+//UNCOMMENTWHENINSTORATOR    'allow_guests' => true,
-+//UNCOMMENTWHENINSTORATOR    'show' => true
-+//UNCOMMENTWHENINSTORATOR);
+ 
  
  /**
-  * Service registry
-@@ -185,7 +263,7 @@
-     'type' => 'array'
- );
- 
--$this->services['kronolith']['horde']['summary'] = array(
-+$this->services['kronolith']['horde']['summary'] = array( 
-     'file' => '%application%/lib/api.php',
-     'function' => 'kronolithSummary',
-     'args' => array(),
-@@ -238,6 +316,29 @@
+@@ -303,6 +374,29 @@
  $this->services['nag']['horde']['summary'] = array(
      'file' => '%application%/lib/api.php',
      'function' => 'nagSummary',

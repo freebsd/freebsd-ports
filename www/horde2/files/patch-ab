@@ -1,15 +1,15 @@
---- config/horde.php.dist.orig	Sat Jun  1 01:57:03 2002
-+++ config/horde.php.dist	Mon Jun 24 21:59:21 2002
-@@ -75,7 +75,7 @@
+--- config/horde.php.dist.orig	Tue Oct 29 22:21:36 2002
++++ config/horde.php.dist	Thu Jan  9 21:37:31 2003
+@@ -86,7 +86,7 @@
  
  // What backend should we use for authenticating users to Horde? Valid
- // options are currently 'imap', 'ldap', 'mcal', 'sql', and 'ftp'.
+ // options are currently 'imap', 'ldap', 'mcal', 'sql', 'ftp' and 'krb5'.
 -$conf['auth']['driver'] = '';
 +$conf['auth']['driver'] = 'imap';
  
  // An array holding any parameters that the Auth object will need to
  // function correctly.
-@@ -131,7 +131,7 @@
+@@ -145,7 +145,7 @@
  // (meaning use system defaults and don't save any user preferences),
  // 'session' (preferences only persist during the login), 'ldap',
  // and 'sql'.
@@ -18,7 +18,7 @@
  
  // Any parameters that the preferences driver needs. This includes
  // database or ldap server, username/password to connect with, etc.
-@@ -140,12 +140,12 @@
+@@ -154,12 +154,12 @@
  // This is an example configuration for a MySQL preference backend.
  // The SQL script to setup the preference database is placed in
  // horde/scripts/db/prefs.sql.
@@ -37,16 +37,16 @@
  
  // This is an example configuration for an LDAP preference backend.
  // The schemas needed for ldap are in horde/scripts/ldap.  For more
-@@ -195,7 +195,7 @@
- // If you want to use SMTP authentication, set the 'auth' parameter
- // to 'true' (without quotes).
+@@ -209,7 +209,7 @@
+ // SMTP authentication can be enabled by setting the 'auth' parameter
+ // to true.
  $conf['mailer']['params'] = array();
 -// $conf['mailer']['params'] = array('sendmail_path' => '/usr/lib/sendmail');
 +// $conf['mailer']['params'] = array('sendmail_path' => '/usr/sbin/sendmail');
  // $conf['mailer']['params'] = array('host' => 'smtp.example.com');
  
  
-@@ -241,3 +241,9 @@
+@@ -267,3 +267,9 @@
  // Should we use DHTML to display a floating menu of Horde appliation
  // links, instead of a frame?
  $conf['menu']['floating_bar'] = false;
