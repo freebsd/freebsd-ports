@@ -674,6 +674,41 @@ MASTER_SITE_MOZILLA+= \
 	ftp://mozilla.mirror.pacific.net.au/mozilla/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/WWW/mozilla/%SUBDIR%/
 
+MASTER_SITE_MYSQL+=	\
+	ftp://gd.tuwien.ac.at/db/mysql/Downloads/%SUBDIR%/ \
+	ftp://ftp.easynet.be/mysql/Downloads/%SUBDIR%/ \
+	ftp://ftp.fi.muni.cz/pub/mysql/Downloads/%SUBDIR%/ \
+	http://mysql.mirrors.cybercity.dk/Downloads/%SUBDIR%/ \
+	ftp://ftp.fh-wolfenbuettel.de/pub/database/mysql/Downloads/%SUBDIR%/ \
+	ftp://ftp.gwdg.de/pub/misc/mysql/Downloads/%SUBDIR%/ \
+	http://netmirror.org/mirror/mysql.com/Downloads/%SUBDIR%/ \
+	ftp://netmirror.org/mysql.com/Downloads/%SUBDIR%/ \
+	http://mirrors.ntua.gr/MySQL/Downloads/%SUBDIR%/ \
+	ftp://ftp.ntua.gr/pub/databases/mysql/Downloads/%SUBDIR%/ \
+	http://mysql.sote.hu/Downloads/%SUBDIR%/ \
+	ftp://ftp.rhnet.is/pub/mysql/Downloads/%SUBDIR%/ \
+	ftp://mirror.widexs.nl/pub/mysql/Downloads/%SUBDIR%/ \
+	ftp://mysql.mirror.trueserver.nl/pub/mirror/mysql/Downloads/%SUBDIR%/ \
+	http://mysql.l.rt-comm.ru/Downloads/%SUBDIR%/ \
+	ftp://mirror.etf.bg.ac.yu/mysql/Downloads/%SUBDIR%/ \
+	ftp://mirror.switch.ch/mirror/mysql/Downloads/%SUBDIR%/ \
+	http://mysql.dp.ua/Downloads/%SUBDIR%/ \
+	http://mysql.mirrored.ca/Downloads/%SUBDIR%/ \
+	ftp://mysql.azc.uam.mx/mirrors/mysql/Downloads/%SUBDIR%/ \
+	ftp://mirror.services.wisc.edu/mirrors/mysql/Downloads/%SUBDIR%/ \
+	ftp://ftp.orst.edu/pub/mysql/Downloads/%SUBDIR%/ \
+	http://mysql.mirrors.pair.com/Downloads/%SUBDIR%/ \
+	ftp://mysql.mirror.redwire.net/pub/mysql/Downloads/%SUBDIR%/ \
+	ftp://mysql.bannerlandia.com.ar/mirrors/mysql/Downloads/%SUBDIR%/ \
+	http://mysql.mesi.com.ar/Downloads/%SUBDIR%/ \
+	ftp://ftp.linorg.usp.br/mysql/Downloads/%SUBDIR%/ \
+	ftp://mysql.ihostunit.com/pub/Mirror/mysql/Downloads/%SUBDIR%/ \
+	ftp://mirror.cbn.net.id/mysql/Downloads/%SUBDIR%/ \
+	http://mysql.fresh.co.il/Downloads/%SUBDIR%/ \
+	ftp://ftp.fresh.co.il/pub/mirrors/mysql.com/Downloads/%SUBDIR%/ \
+	http://www.softagency.co.jp/MySQL/Downloads/%SUBDIR%/ \
+	http://mysql.nctu.edu.tw/Downloads/%SUBDIR%/
+
 MASTER_SITE_NETBSD+=	\
 	http://www.gtlib.cc.gatech.edu/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
