@@ -1,11 +1,20 @@
---- src/defines.h	Sun Dec 22 22:20:16 1996
-+++ /home/andy/tmp/wrk/src/defines.h	Thu May 21 22:10:31 1998
-@@ -23,7 +23,7 @@
- 
+--- defines.h.orig	Fri Feb 18 13:18:42 2000
++++ defines.h	Thu Mar 30 20:31:43 2000
+@@ -27,7 +27,7 @@
  /***** Change this, or use -c on the command line to specify it *****/
  
--#define SERVER_ROOT "/usr/local/boa"
-+#define SERVER_ROOT "/usr/local/www"
+ #ifndef SERVER_ROOT
+-#define SERVER_ROOT "/etc/boa"
++#define SERVER_ROOT "%%PREFIX%%/etc"
+ #endif
  
  /***** Various stuff that you may want to tweak, but probably shouldn't *****/
+@@ -44,7 +44,7 @@
+ #define REQUEST_TIMEOUT				60
  
+ #define CGI_MIME_TYPE    "application/x-httpd-cgi"
+-#define DEFAULT_PATH     "/bin:/usr/bin:/usr/local/bin"
++#define DEFAULT_PATH     "/bin:/usr/bin:%%PREFIX%%/bin"
+ 
+ /***** CHANGE ANYTHING BELOW THIS LINE AT YOUR OWN PERIL *****/
+ /***** You will probably introduce buffer overruns unless you know
