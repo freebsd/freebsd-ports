@@ -1,7 +1,23 @@
 bin/dune
+bin/nostereodune
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/animation_example.wrl
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/index.html
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/joystick2.sh
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/joystick2.sh.html
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/nostereo.sh
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/nostereo.sh.html
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/spaceball_joystick_example.sh
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/spaceball_joystick_example.sh.html
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/wingmancordlessgamepad.sh
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/xinput_example.sh
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/xinput_example.sh.html
+%%PORTDOCS%%share/doc/white_dune/commandline_examples/xinput_irix6.2_example.sh
+%%PORTDOCS%%share/doc/white_dune/deutsch.jpg
+%%PORTDOCS%%share/doc/white_dune/developer_docs/Doxyfile.in
+%%PORTDOCS%%share/doc/white_dune/developer_docs/Makefile
 %%PORTDOCS%%share/doc/white_dune/developer_docs/dune.jpg
-%%PORTDOCS%%share/doc/white_dune/developer_docs/dune.png
 %%PORTDOCS%%share/doc/white_dune/developer_docs/dune_developer.html
+%%PORTDOCS%%share/doc/white_dune/english.jpg
 %%PORTDOCS%%share/doc/white_dune/index.html
 %%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/billboard.wrl
 %%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/bubble.wav
@@ -23,29 +39,59 @@ bin/dune
 %%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/touch_trigger.wrl
 %%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/transform_animation.wrl
 %%PORTDOCS%%share/doc/white_dune/typical_vrml_examples/visibilty_trigger.wrl
+%%PORTDOCS%%share/doc/white_dune/usage_docs/6d.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/6dloc.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/6dlocal_right1.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/6dlocal_right2.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/6dlocal_right3.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/6dlocal_wrong.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/animation_onetime.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/animation_onetime2.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/animation_recording.jpg
 %%PORTDOCS%%share/doc/white_dune/usage_docs/cassettenrecorder.jpg
-%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_animation.jpg
-%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_de.html
-%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_en.html
-%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_interaktion.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/center.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/colorcircle1.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/colorcircle2.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/cosmo_colorpervertex.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/cosmo_no_colorpervertex.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/crash.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/crashrestore.jpg
 %%PORTDOCS%%share/doc/white_dune/usage_docs/rot.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dials_default.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dials_normal.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune.1.html
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_animation.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_colorpervertex.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_de.html
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_de_exercise.html
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_en.html
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_en_exercise.html
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_interaktion.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/dune_no_colorpervertex.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/fieldchange.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/interpolator.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/level3.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/navigation.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/node_add_invalid.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/node_add_valid.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/recording.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/recording_one.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/routecut1.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/routecut2.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/routemake1.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/routemake2.jpg
 %%PORTDOCS%%share/doc/white_dune/usage_docs/scale.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/scenegraphchange_invalid.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/scenegraphchange_valid.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/sceneicon.jpg
 %%PORTDOCS%%share/doc/white_dune/usage_docs/schieb.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/spaceball.jpg
+%%PORTDOCS%%share/doc/white_dune/usage_docs/timesensor.jpg
 %%PORTDOCS%%share/doc/white_dune/usage_docs/transform.jpg
 %%PORTDOCS%%share/doc/white_dune/usage_docs/transform2.jpg
-%%PORTDOCS%%share/doc/white_dune/usage_examples/animation_example.wrl
-%%PORTDOCS%%share/doc/white_dune/usage_examples/index.html
-%%PORTDOCS%%share/doc/white_dune/usage_examples/joystick2.sh
-%%PORTDOCS%%share/doc/white_dune/usage_examples/joystick2.sh.html
-%%PORTDOCS%%share/doc/white_dune/usage_examples/nostereo.sh
-%%PORTDOCS%%share/doc/white_dune/usage_examples/nostereo.sh.html
-%%PORTDOCS%%share/doc/white_dune/usage_examples/spaceball_joystick_example.sh
-%%PORTDOCS%%share/doc/white_dune/usage_examples/spaceball_joystick_example.sh.html
-%%PORTDOCS%%share/doc/white_dune/usage_examples/xinput_example.sh
-%%PORTDOCS%%share/doc/white_dune/usage_examples/xinput_example.sh.html
-%%PORTDOCS%%share/doc/white_dune/usage_examples/xinput_irix6.2_example.sh
-%%PORTDOCS%%@dirrm share/doc/white_dune/developer_docs
-%%PORTDOCS%%@dirrm share/doc/white_dune/typical_vrml_examples
+%%PORTDOCS%%share/doc/white_dune/usage_docs/windows.jpg
 %%PORTDOCS%%@dirrm share/doc/white_dune/usage_docs
-%%PORTDOCS%%@dirrm share/doc/white_dune/usage_examples
+%%PORTDOCS%%@dirrm share/doc/white_dune/typical_vrml_examples
+%%PORTDOCS%%@dirrm share/doc/white_dune/developer_docs
+%%PORTDOCS%%@dirrm share/doc/white_dune/commandline_examples
 %%PORTDOCS%%@dirrm share/doc/white_dune

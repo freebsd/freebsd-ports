@@ -7,37 +7,39 @@
 #
 
 PORTNAME=	white_dune
-PORTVERSION=	0.19b31
+PORTVERSION=	0.19.4
+PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.csv.ica.uni-stuttgart.de/vrml/dune/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}pl${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png
 
 USE_REINPLACE=	yes
-USE_BISON=	yes
 USE_MESA=	yes
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 ALL_TARGET=	# empty
 
 MAN1=	dune.1
 
 post-patch:
-	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} \
-		${REINPLACE_CMD} -e "s/malloc\.h/stdlib.h/g"
-	@${REINPLACE_CMD} -e "s/values\.h/limits.h/g" ${WRKSRC}/stdafx.h
-	@${REINPLACE_CMD} -e "s/alloca\.h/stdlib.h/g" ${WRKSRC}/NodeNurbsSurface.cpp
+	@${REINPLACE_CMD} -e 's|<values.h>|<limits.h>|g' ${WRKSRC}/src/stdafx.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dune ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/dune ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/nostereodune ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
+	${TAR} -C ${WRKSRC}/docs -cf - . | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

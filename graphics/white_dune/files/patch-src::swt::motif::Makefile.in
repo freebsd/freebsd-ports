@@ -1,0 +1,11 @@
+--- src/swt/motif/Makefile.in.orig	Tue Jul 16 23:42:39 2002
++++ src/swt/motif/Makefile.in	Tue Aug 20 05:05:49 2002
+@@ -8,7 +8,7 @@
+ INCDIRS = -I../.. -I../include @CPPFLAGS@
+ # WARNINGS = -Wall -Wwrite-strings
+ FONT24 = @FONT24@
+-CFLAGS = @OPTIM@ $(WARNINGS) $(INCDIRS) -DFONT24=\"$(FONT24)\"
++CFLAGS = @CFLAGS@ $(WARNINGS) $(INCDIRS) -DFONT24=\"$(FONT24)\"
+ DLIB = ../lib/libswt.so.0.1
+ SLIB = ../lib/libswt.a
+ 
