@@ -1,4 +1,4 @@
-bin/gnome_commander
+bin/gnome-commander
 share/gnome/pixmaps/gnome-commander/32_gnome-cmd.png
 share/gnome/pixmaps/gnome-commander/cvs_fish.xpm
 share/gnome/pixmaps/gnome-commander/cvs_fish_small.xpm
@@ -30,7 +30,8 @@ share/gnome/pixmaps/gnome-commander/gnome_cmd_arrow_down.xpm
 share/gnome/pixmaps/gnome-commander/gnome_cmd_arrow_up.xpm
 share/gnome/pixmaps/gnome-commander/key.xpm
 share/gnome/pixmaps/gnome-commander/lock.xpm
-share/gnome/pixmaps/gnome-commander/logo.xpm
+share/gnome/pixmaps/gnome-commander/logo.png
+share/gnome/pixmaps/gnome-commander/logo.xcf
 share/gnome/pixmaps/gnome-commander/menu_cvs_add.xpm
 share/gnome/pixmaps/gnome-commander/menu_cvs_checkout.xpm
 share/gnome/pixmaps/gnome-commander/menu_cvs_commit.xpm
@@ -48,6 +49,7 @@ share/gnome/pixmaps/gnome-commander/mkdir.xpm
 share/gnome/pixmaps/gnome-commander/server.xpm
 share/locale/de/LC_MESSAGES/gnome-commander.mo
 share/locale/pl/LC_MESSAGES/gnome-commander.mo
+share/locale/ru/LC_MESSAGES/gnome-commander.mo
 share/locale/sk/LC_MESSAGES/gnome-commander.mo
 share/locale/sv/LC_MESSAGES/gnome-commander.mo
 @dirrm share/gnome/pixmaps/gnome-commander

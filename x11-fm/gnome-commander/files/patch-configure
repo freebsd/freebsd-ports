@@ -1,6 +1,6 @@
---- configure.orig	Fri Apr 26 20:09:18 2002
-+++ configure	Fri Apr 26 20:09:42 2002
-@@ -4265,7 +4265,7 @@
+--- configure.old	Wed Jun 12 08:28:53 2002
++++ configure	Wed Jun 12 08:29:15 2002
+@@ -4627,7 +4627,7 @@
  if test "x${prefix}" = "xNONE"; then
    PACKAGE_PIXMAPS_DIR="${ac_default_prefix}/share/pixmaps/${PACKAGE}"
  else
