@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# dos2unx file [file...]
+#
+# Converts text files (names specified on command line) from MS-DOS
+# format to UNIX format.  Essentially, gets rid of all newlines (\n),
+# since linefeeds (\l) are all it needs.
+
+if [ $# -lt 1 ]
+then
+	echo usage: dos2unx file [file ...]
+	exit 1
+fi
+
+for FILE
+do
+	echo -n "dos2unx: converting ${FILE} ... "
+	tr -d '\r' < ${FILE} > /tmp/conv$$
+	rm -f ${FILE}
+	cp -f /tmp/conv$$ ${FILE}
+	rm -f /tmp/conv$$
+	echo "done"
+done

@@ -1,0 +1,19 @@
+What is vMac? vMac is a free software emulator that emulates the Apple
+Macintosh Plus(tm). That means that vMac does not cost anything, and
+does not use any hardware. A lot of the Macintosh Plus' functionality is
+already implemented in this port, and that includes:
+
+- 68000 CPU, 68010 CPU, 68020 CPU + 68881 FPU emulation
+- 4 MB of RAM
+- Keyboard support   
+- Mouse support
+- Floppy support
+- HardDisk support (However, vMac will treat all harddisks or partitions
+                       as floppies).
+- Sound support (soon!)
+- Can run MacOS (System Software) versions up to 7.5.5
+
+Currently, work is being done on IceCube, a new CPU emulator which will
+replace UAE's CPU emulator which we use currently, and other stuff :).
+
+WWW: http://www.vmac.org/
