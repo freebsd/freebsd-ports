@@ -1,20 +1,20 @@
 # New ports collection makefile for:	DSSSL stylesheets for DocBook
-# Version required:	1.19
+# Version required:	1.20
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.7 1998/10/09 07:31:45 kuriyama Exp $
+# $Id: Makefile,v 1.8 1998/10/31 13:43:30 kuriyama Exp $
 #
 
-DISTNAME=	db119
-PKGNAME=	dsssl-docbook-modular-1.19
+DISTNAME=	db120
+PKGNAME=	dsssl-docbook-modular-1.20
 CATEGORIES=	textproc
 MASTER_SITES=	http://nwalsh.com/docbook/dsssl/
 EXTRACT_SUFX=	.zip
 
 PATCH_SITES=	http://www.freebsd.org/~kuriyama/distfiles/
-PATCHFILES=	db119jpja-981031.diff.gz
-PATCH_DIST_STRIP=	-p1
+PATCHFILES=	db120jpja-981103.diff.gz
+#PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kuriyama@FreeBSD.ORG
 
