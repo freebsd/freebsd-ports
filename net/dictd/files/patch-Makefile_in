@@ -17,7 +17,7 @@
 +XTRACFLAGS=     @WCFLAGS@ @XTRACFLAGS@ @DEFS@ @CPPFLAGS@ -I. # -Iregex
  XTRALDFLAGS=    @WLDFLAGS@ @XTRALDFLAGS@
 -LDLIBS=		@LIBS@ -Lregex -lregex
-+LDLIBS=		@LIBS@ # -Lregex -lregex
++LDLIBS=		@LIBS@ -L%%PREFIX%%/lib -lltdl # -Lregex -lregex
  
  EXES=	 	dict dictd dictzip
  
