@@ -10,7 +10,7 @@ PORTVERSION=	2.04
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/
-DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz ${DOCFILES}
+DISTFILES=	${PKGNAME}.tar.gz ${DOCFILES}
 
 MAINTAINER=	ortmann@isl.net
 

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.pu-toyama.ac.jp/pub/misc/ \
 		ftp://ftp.sra.co.jp/pub/net/ndtp/misc/
 DISTNAME=	${PORTNAME}2.2betapl2
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${DISTNAME}.addtable.${EXTRACT_SUFX} \
+		${DISTNAME}.addtable${EXTRACT_SUFX} \
 		kenjiro-ndtpd.diff \
 		kenjiro-dictlist.diff
 EXTRACT_ONLY=	${DISTFILES:Nkenjiro-*}

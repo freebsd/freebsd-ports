@@ -16,6 +16,7 @@ MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/releases/${
 		ftp://ftp.iij.ad.jp/pub/egcs/releases/${DISTNAME}/ \
 		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/${DISTNAME}/
 MASTER_SITE_SUBDIR=	gcc
+DISTNAME=	gcc-${PORTVERSION}
 DISTFILES=	gcc-core-${DISTNAME:S/gcc-//g}${EXTRACT_SUFX} \
 		gcc-g++-${DISTNAME:S/gcc-//g}${EXTRACT_SUFX} \
 		gcc-g77-${DISTNAME:S/gcc-//g}${EXTRACT_SUFX} \
@@ -49,7 +50,6 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
-WRKSRC=		${WRKDIR}/gcc-2.95.1
 PLIST_SUB=	EGCS_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

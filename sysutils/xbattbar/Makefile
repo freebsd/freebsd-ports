@@ -9,7 +9,7 @@ PORTNAME=	xbattbar
 PORTVERSION= 	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://infonet.aist-nara.ac.jp/member/suguru/
-DISTNAMe=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sumikawa@FreeBSD.org
 

@@ -9,6 +9,7 @@ PORTNAME=	fvwm-i18n
 PORTVERSION= 	2.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
+DISTNAME=	fvwm-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/fvwm-users-jp/I18N_MB/
 PATCHFILES=	fvwm-${PORTVERSION}-I18N_MB-${FVWM_PATCHVER}.patch

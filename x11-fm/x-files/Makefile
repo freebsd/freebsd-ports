@@ -9,7 +9,7 @@ PORTNAME=	x-files
 PORTVERSION= 	2.00b1
 CATEGORIES=	x11-fm tk82
 MASTER_SITES=   http://www.hut.fi/~mkivinie/X-Files/data/
-DISTNAME=	X-files-${PORTVERSION}
+DISTNAME=	X-Files-${PORTVERSION}
 
 MAINTAINER=     dmaddox@conterra.com
 

@@ -19,6 +19,7 @@ MASTER_SITES=	ftp://berlin.ccc.de/pub/gd/src/                        \
 		ftp://ftp.infodrom.north.de/pub/unix/language/dylan/gwydion/FreeBSD/ \
 		ftp://ftp.fu-berlin.de/pub/unix/languages/dylan/src/   \
 		ftp://ftp.fu-berlin.de/pub/unix/languages/dylan/FreeBSD/
+DISTNAME=	gd-2.2.0
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} d2c-2.2.0-FreeBSD.gz
 
 MAINTAINER= 	housel@acm.org
