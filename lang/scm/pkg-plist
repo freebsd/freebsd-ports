@@ -1,11 +1,5 @@
 bin/scm
 bin/scmlit
-@unexec install-info --delete %D/info/slib.info %D/info/dir
-@unexec install-info --delete %D/info/scm.info %D/info/dir
-info/scm.info
-info/slib.info
-@exec install-info %D/info/scm.info %D/info/dir
-@exec install-info %D/info/slib.info %D/info/dir
 lib/scm/COPYING
 lib/scm/Iedline.scm
 lib/scm/Init%%VERSION%%.scm
@@ -92,10 +86,12 @@ lib/scm/slib/mularg.scm
 lib/scm/slib/mwdenote.scm
 lib/scm/slib/mwexpand.scm
 lib/scm/slib/mwsynrul.scm
+lib/scm/slib/ncbi-dna.scm
 lib/scm/slib/null.scm
 lib/scm/slib/obj2str.scm
 lib/scm/slib/object.scm
 lib/scm/slib/paramlst.scm
+lib/scm/slib/phil-spc.scm
 lib/scm/slib/plottest.scm
 lib/scm/slib/pnm.scm
 lib/scm/slib/pp.scm

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	scm
-PORTVERSION=	5d7
+PORTVERSION=	5d8
 CATEGORIES=	lang
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
-DISTFILES=	scm5d7.zip slib2d5.zip slib-psd1-3.tar.gz
-EXTRACT_ONLY=	scm5d7.zip slib2d5.zip
+DISTFILES=	scm5d8.zip slib2d6.zip slib-psd1-3.tar.gz
+EXTRACT_ONLY=	scm5d8.zip slib2d6.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scheme interpreter
@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	scmlit
 MAN1=		scm.1
+INFO=		scm slib
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
