@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Duration.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTime/Infinite.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/DateTime/LeapSecond.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTimePP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/DateTimePPExtra.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/.packlist
