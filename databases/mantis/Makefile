@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	mantis
-PORTVERSION=	0.18.0
+PORTVERSION=	0.18.2
 CATEGORIES=	databases www
-MASTER_SITES=	http://switch.dl.sourceforge.net/sourceforge/mantisbt/ \
-		http://umn.dl.sourceforge.net/sourceforge/mantisbt/ \
-		http://keihanna.dl.sourceforge.net/sourceforge/mantisbt/ \
-		http://flow.dl.sourceforge.net/sourceforge/mantisbt/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	mantisbt
 
 MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	A bug tracking system written in PHP
 
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/lang/php4
-
 NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_APACHE=	yes
+USE_PHP=	yes
 
 do-install:
 	${ECHO} "Installing in ${PREFIX}/www/data/mantis"
