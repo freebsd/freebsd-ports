@@ -109,6 +109,7 @@
     SUBDIR += java2html
     SUBDIR += javacc
     SUBDIR += jdictionary
+    SUBDIR += jdictionary-int-eng
     SUBDIR += jing
     SUBDIR += jrefentry
     SUBDIR += kbedic
