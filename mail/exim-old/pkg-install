@@ -1,8 +1,10 @@
 #!/bin/sh
 #
 # Since FreeBSD does not supply a user for running an MTA in a sandbox
-# by default, use the traditional sendmail sandbox user, sendmail,
-# adding it if it does not exist.
+# by default, use user 'exim', adding it if it does not exist.  Even
+# if FreeBSD supplied an MTA user, it's neglected to do so for so long
+# that every sandboxed MTA under the sun uses its own user, so user
+# 'exim' should probably be used forever.
 #
 # Modern FreeBSD systems already have a group mail.
 #
@@ -11,7 +13,7 @@
 
 PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
-user=sendmail
+user=exim
 group=mail
 
 if [ "$2" = "PRE-INSTALL" ]; then
