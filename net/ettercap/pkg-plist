@@ -2,6 +2,7 @@ sbin/ettercap
 share/doc/ettercap/COPYING
 share/doc/ettercap/README
 share/doc/ettercap/README.PLUGINS
+share/doc/ettercap/README.WIN32
 share/doc/ettercap/CHANGELOG
 share/doc/ettercap/HISTORY
 share/doc/ettercap/AUTHORS
@@ -10,9 +11,11 @@ share/doc/ettercap/THANKS
 share/doc/ettercap/KNOWN-BUGS
 share/doc/ettercap/PORTINGS
 share/doc/ettercap/INSTALL
+share/doc/ettercap/ZARATAN.HOWTO
 share/doc/ettercap/ettercap.fr.8.in
 share/ettercap/mac-fingerprints
 share/ettercap/nmap-os-fingerprints
+share/ettercap/etter.mime
 share/ettercap/etter.conf
 share/ettercap/etter.dns
 share/ettercap/etter.filter
