@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://scwm.mit.edu/pub/scwm/
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	guile.4:${PORTSDIR}/lang/guile \
-		Imlib.4:${PORTSDIR}/graphics/imlib
+		Imlib.5:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	${X11BASE}/share/scwm/pixmaps/Animator.xpm:${PORTSDIR}/graphics/scwm-icons
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
