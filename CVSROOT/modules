@@ -9166,6 +9166,7 @@ sml-mode.el	ports/lang/sml-mode.el
 sml-nj		ports/lang/sml-nj
 sml-nj-devel	ports/lang/sml-nj-devel
 smm++		ports/net/smm++
+smoke		ports/graphics/smoke
 smokeping	ports/net/smokeping
 smpeg		ports/multimedia/smpeg
 smpeg-xmms	ports/multimedia/smpeg-xmms
