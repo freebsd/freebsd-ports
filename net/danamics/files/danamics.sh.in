@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+(cd "%%DATADIR%%" && \
+	"%%LOCALBASE%%/bin/java" -classpath "DaNAMiCS.jar:${CLASSPATH}" DaNAMiCS.DFrame)
