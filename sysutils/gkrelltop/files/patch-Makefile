@@ -1,0 +1,28 @@
+--- Makefile.orig	Sat Dec 11 12:50:39 2004
++++ Makefile	Sat Dec 25 23:35:53 2004
+@@ -28,9 +28,9 @@
+ OSFLAG = `uname | tr '[:lower:]' '[:upper:]'`
+ SHELL=/bin/sh
+ 
+-GKRELL1FLAG=1
++GKRELL1FLAG=0
+ #find out if we have gkrellm 2 or 1 (from the gtk+ version)
+-GKRELL1FLAG=$(shell bash -c 'pkg-config gtk+-2.0 --cflags &>/dev/null && echo 0')
++#GKRELL1FLAG=$(shell sh -c 'pkg-config gtk+-2.0 --cflags &>/dev/null && echo 0')
+ GKRELLTOP= gkrelltop.so
+ OBJ = top_three.o gkrelltop.o 
+ EXTRA = krell_panel1.xpm
+@@ -61,11 +61,11 @@
+ endif
+ 
+ ifeq ($(WANT_GLIB12),yes)
+-CFLAGSD = -I/usr/X11R6/include -D$(OSFLAG) -fPIC -Wall `glib-config --cflags`
++CFLAGSD = -I${X11BASE}/include -D$(OSFLAG) -fPIC -Wall `glib-config --cflags`
+ LIBSD = `glib-config --libs`
+ CONFIGURE_ARGS += --with-glib12
+ else
+-CFLAGSD = -D$(OSFLAG) -fPIC -Wall `pkg-config glib-2.0 --cflags`
++CFLAGSD = -D$(OSFLAG) -I${X11BASE}/include -fPIC -Wall `pkg-config glib-2.0 --cflags`
+ LIBSD = `pkg-config glib-2.0 --libs`
+ endif
+ INSTALLDIRD=$(HOME)/.gkrellm2/plugins-gkrellmd
