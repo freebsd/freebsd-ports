@@ -1,24 +1,15 @@
---- configure.orig	Mon Aug 14 22:26:34 2000
-+++ configure	Tue Aug 22 17:35:12 2000
+--- configure.orig	Sun Oct  1 01:16:19 2000
++++ configure	Thu Nov  2 05:45:10 2000
 @@ -2622,6 +2622,8 @@
    if test "$cross_compiling" = yes; then
    ac_cv_func_mmap_fixed_mapped=no
  else
-+  ac_save_LIBS="$LIBS"
-+  LIBS="-lintl  $LIBS"
++    ac_save_LIBS="$LIBS"
++    LIBS="-lintl  $LIBS"
    cat > conftest.$ac_ext <<EOF
  #line 2627 "configure"
  #include "confdefs.h"
-@@ -5551,7 +5553,7 @@
- 
- else
-   
--  GTK_ENGINE_DIR=`gtk-config --prefix`/lib/gtk/themes/engines
-+  GTK_ENGINE_DIR=`${GTK_CONFIG} --prefix`/lib/gtk/themes/engines
- 
- fi
- 
-@@ -6611,8 +6613,8 @@
+@@ -6667,8 +6669,8 @@
  
  
  
