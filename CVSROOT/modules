@@ -2609,6 +2609,7 @@ heyu		ports/misc/heyu
 hf6to4		ports/net/hf6to4
 hffzip		ports/archivers/hffzip
 hfs		ports/emulators/hfs
+hfsplusutils	ports/emulators/hfsplusutils
 hfsutils	ports/emulators/hfsutils
 hgrep		ports/textproc/hgrep
 hidentd		ports/net/hidentd
