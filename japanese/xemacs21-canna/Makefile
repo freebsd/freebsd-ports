@@ -20,15 +20,13 @@
 
 CATEGORIES=	japanese editors
 
-JAPANESE=	yes
 MANLANG=	ja
 MAN1=		xemacs-ja.1
-DESCR_TMPL=	${.CURDIR}/../xemacs-canna/files/DESCR.tmpl
+DESCR=		${.CURDIR}/../xemacs-canna/pkg/DESCR
 PLIST=		${PKGLDIR}/PLIST-ja
 
+DESCR_TMPL=	${.CURDIR}/../xemacs-canna/files/DESCR.tmpl
 LANGPREFIX=	ja-
-COMMENT=	${WRKDIR}/COMMENT
-DESCR=		${WRKDIR}/DESCR
 .if defined(CANNA) && defined(WNN4)
 PKGNAMEEXT=		-canna+wnn4
 SITE_INCLUDES=		${X11BASE}/include
@@ -54,7 +52,7 @@ COMMENT_TEXT=		XEmacs(version ${XEMACS_VER}) text editor, with SJ3, SKK and Wnn4
 PKGNAMEEXT=		-wnn6
 WITH_INPUT_METHOD=	--with-wnn6 --with-canna=no
 BUILD_INPUT_METHOD=	${PREFIX}/include/wnn/jlib.h:${PORTSDIR}/japanese/Wnn6-lib
-COMMENT_TEXT=		XEmacs(version ${XEMACS_VER}) text editor, with SJ3, SKK, Canna and Wnn6 support.
+COMMENT_TEXT=		XEmacs(version ${XEMACS_VER}) text editor, with SJ3, SKK and Wnn6 support.
 .else
 PKGNAMEEXT=		-canna
 WITH_INPUT_METHOD=	--with-canna --with-wnn=no --with-wnn6=no
@@ -62,12 +60,14 @@ LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna
 COMMENT_TEXT=		XEmacs(version ${XEMACS_VER}) text editor, with SJ3, SKK and Canna support.
 .endif
 
-post-configure::
-	@${ECHO} "${COMMENT_TEXT}" > ${COMMENT}
-
 post-install::
 	@${MKDIR} ${PREFIX}/man/ja/man1
 	@${INSTALL_MAN} ${WRKSRC}/etc/xemacs-ja.1 ${PREFIX}/man/ja/man1
 	@${LN} -sf ja ${PREFIX}/lib/xemacs/mule-packages/etc/app-defaults/ja_JP.EUC
+
+# for make COMMENT (only maintainer use)
+arrange::
+	@${MKDIR} ${PKGDIR} ${.CURDIR}/../xemacs-canna/pkg
+	@${ECHO} "${COMMENT_TEXT}" > ${COMMENT}
 
 .include "${.CURDIR}/../../editors/xemacs-mule/Makefile"

@@ -1,0 +1,18 @@
+This is XEmacs lisp files, info pages, and so on (except executables)
+for XEmacs with Mule(version 21.1.8), the next generation of Emacs. 
+
+You must install one of packages, xemacs-mule-21.1.8,
+ja-xemacs-*-21.1.8 (ja-xemacs-canna-21.1.8, ja-xemacs-canna+wnn4-21.1.8, etc.),
+each of which contains only the executables for XEmacs with Mule(vresion 21.1.8).
+
+This package and the above package of the executables *will* clobber any
+existing XEmacs installation.  In particular, the executables and man
+pages of etags/ctags are installed, and the info pages that come with
+the original emacs get installed too.
+
+Although this shouldn't cause any problems to run both mule and emacs,
+it may cause some confusion when one of them is pkg_delete'd.  If
+someone has a solution to this, please tell me.
+
+-- 
+Kazz

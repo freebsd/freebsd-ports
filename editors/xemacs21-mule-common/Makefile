@@ -51,7 +51,7 @@ MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 INSTALL_TARGET=	install-arch-indep
 PKGINSTALL=	${WRKDIR}/INSTALL.${PKGNAME}
 PLIST=		${PKGDIR}/PLIST
-DESCR=		${WRKDIR}/DESCR.${PKGNAME}
+# DESCR=		${WRKDIR}/DESCR.${PKGNAME}
 PLIST_SUB=	XEMACS_DIR=${XEMACS_DIR}
 PKGINSTALL=	${WRKDIR}/INSTALL
 TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
@@ -74,8 +74,6 @@ pre-install:
 	@if [ ! -f ${PREFIX}/lib/xemacs/info/dir ]; then \
 		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/lib/xemacs/info/dir; \
 	fi
-	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
-		${DESCR_TMPL} > ${DESCR}
 	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
 		${INSTALL_TMPL} > ${PKGINSTALL}
 
