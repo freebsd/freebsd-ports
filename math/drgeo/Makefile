@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	drgeo
-PORTVERSION=	0.9.11
-PORTREVISION=	1
+PORTVERSION=	0.9.12
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ofset
@@ -18,7 +17,7 @@ COMMENT=	A GTK interactive geometry sofware
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget libglade2
+USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libglade2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
