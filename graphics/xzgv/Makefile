@@ -12,7 +12,7 @@ MASTER_SITES=	http://xzgv.browser.org/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/viewers/X
 
-MAINTAINER=	nosuzuki@e-mail.ne.jp
+MAINTAINER=	nosuzuki@postcard.st
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
