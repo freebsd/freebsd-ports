@@ -1,3 +1,3 @@
 bin/epstool
-share/doc/epstool/epstool.htm
-@dirrm share/doc/epstool
+%%PORTDOCS%%share/doc/epstool/epstool.htm
+%%PORTDOCS%%@dirrm share/doc/epstool
