@@ -16,6 +16,7 @@
     SUBDIR += jlex
     SUBDIR += jsdk
     SUBDIR += kaffe
+    SUBDIR += netrexx
     SUBDIR += shujit
     SUBDIR += tya
 
