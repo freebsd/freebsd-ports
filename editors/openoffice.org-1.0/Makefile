@@ -123,6 +123,7 @@ BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
+BUILD_DEPENDS+=	xmkmf:${X_IMAKE_PORT}
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
 .endif

@@ -99,6 +99,7 @@ CXX=	g++32
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gcp:${PORTSDIR}/sysutils/coreutils \
+		xmkmf:${X_IMAKE_PORT} \
 		${X11BASE}/lib/libXft.so:${PORTSDIR}/x11-fonts/libXft
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${X_VFBSERVER_PORT}
