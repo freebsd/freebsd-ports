@@ -24,7 +24,6 @@ LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
 .endif
 
 USE_GETOPT_LONG=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -33,6 +32,14 @@ PLIST_SUB+=	XMMS=""
 .else
 CONFIGURE_ARGS=	--disable-xmms
 PLIST_SUB+=	XMMS="@comment "
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=    yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 MAN1=		normalize.1 normalize-mp3.1
