@@ -1,0 +1,10 @@
+--- RhapServer/OSMutex.h.orig	Sun Feb 27 09:45:03 2000
++++ RhapServer/OSMutex.h	Sun Feb 27 09:45:12 2000
+@@ -44,6 +44,7 @@
+ #include "mymutex.h"
+ #else
+ #include <pthread.h>
++#include <pthread_np.h>
+ #endif
+ 
+ #include "OSHeaders.h"

@@ -1,0 +1,25 @@
+--- RhapServer/UDPSocket.cpp.orig	Sun Feb 27 10:02:16 2000
++++ RhapServer/UDPSocket.cpp	Sun Feb 27 10:03:48 2000
+@@ -39,6 +39,10 @@
+ #include <sys/errno.h>
+ #endif
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#endif
++
+ #if NEED_SOCKETBITS
+ #include <socketbits.h>
+ #endif
+@@ -141,7 +145,11 @@
+ 	
+ 	int addrLen = sizeof(fMsgAddr);
+ 	
++#if defined(__FreeBSD__) && (__FreeBSD_version >= 400013)
++	SInt32 theRecvLen = ::recvfrom(fSocket, ioBuffer, inBufLen, 0, (sockaddr*)&fMsgAddr, (socklen_t*)&addrLen);
++#else
+ 	SInt32 theRecvLen = ::recvfrom(fSocket, ioBuffer, inBufLen, 0, (sockaddr*)&fMsgAddr, &addrLen);
++#endif
+ 	if (theRecvLen == -1)
+ 		return this-> CheckError(outRecvLen);
+ 

@@ -1,0 +1,11 @@
+--- QTFile/QTTrack.h.orig	Sun Feb 27 09:42:11 2000
++++ QTFile/QTTrack.h	Sun Feb 27 09:42:31 2000
+@@ -84,7 +84,7 @@
+ 	// Accessors.
+ 	inline	bool		IsInitialized(void) { return fIsInitialized; }
+ 	
+-	inline	char *		GetTrackName(void) { return (fTrackName ? fTrackName : ""); }
++	inline	char *		GetTrackName(void) { return (fTrackName ? fTrackName : (char *)""); }
+ 	inline	UInt32		GetTrackID(void) { return fTrackHeaderAtom->GetTrackID(); }
+ 	inline	UInt32		GetCreationTime(void) { return fTrackHeaderAtom->GetCreationTime(); }
+ 	inline	UInt32		GetModificationTime(void) { return fTrackHeaderAtom->GetModificationTime(); }
