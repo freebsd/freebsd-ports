@@ -64,6 +64,7 @@ share/gnome/galeon/Insecure.png
 share/gnome/galeon/Secure.png
 share/gnome/galeon/about_logo.png
 share/gnome/galeon/autoscroll.xpm
+share/gnome/galeon/blocked.png
 share/gnome/galeon/bookmarks-editor.glade
 share/gnome/galeon/bookmarks.glade
 share/gnome/galeon/bug.png
@@ -198,6 +199,7 @@ share/gnome/pixmaps/galeon.png
 share/gnome/sounds/galeon/clicked.wav
 share/locale/am/LC_MESSAGES/galeon-2.0.mo
 share/locale/az/LC_MESSAGES/galeon-2.0.mo
+share/locale/be/LC_MESSAGES/galeon-2.0.mo
 share/locale/bg/LC_MESSAGES/galeon-2.0.mo
 share/locale/ca/LC_MESSAGES/galeon-2.0.mo
 share/locale/cs/LC_MESSAGES/galeon-2.0.mo
@@ -230,6 +232,8 @@ share/locale/ro/LC_MESSAGES/galeon-2.0.mo
 share/locale/ru/LC_MESSAGES/galeon-2.0.mo
 share/locale/sk/LC_MESSAGES/galeon-2.0.mo
 share/locale/sl/LC_MESSAGES/galeon-2.0.mo
+share/locale/sr/LC_MESSAGES/galeon-2.0.mo
+share/locale/sr@Latn/LC_MESSAGES/galeon-2.0.mo
 share/locale/sv/LC_MESSAGES/galeon-2.0.mo
 share/locale/ta/LC_MESSAGES/galeon-2.0.mo
 share/locale/tr/LC_MESSAGES/galeon-2.0.mo
