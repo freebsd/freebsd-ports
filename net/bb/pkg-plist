@@ -1,6 +1,4 @@
-etc/rc.d/bb.sh
 bb/README
-bb/runbb.sh
 bb/bin/bb
 bb/bin/bb-local.sh
 bb/bin/bb-network.sh
@@ -9,31 +7,43 @@ bb/bin/bbd
 bb/bin/bbnet
 bb/bin/sendmsg
 bb/bin/touchtime
-bb/doc/README
-bb/doc/STRUCTURE
-bb/doc/bbclient
-bb/doc/bbconfig
 bb/etc/bb-hosts
 bb/etc/bbdef.sh
 bb/etc/bbinc.sh
+bb/etc/bbsys.aix
 bb/etc/bbsys.freebsd
 bb/etc/bbsys.hpux
+bb/etc/bbsys.hpux9
+bb/etc/bbsys.irix
 bb/etc/bbsys.linux
 bb/etc/bbsys.local
+bb/etc/bbsys.netbsd
+bb/etc/bbsys.osf
+bb/etc/bbsys.redhat
+bb/etc/bbsys.sco
+bb/etc/bbsys.sco3
 bb/etc/bbsys.sh
 bb/etc/bbsys.solaris
 bb/etc/bbsys.sunos
+bb/etc/bbsys.ultrix
+bb/etc/bbsys.unixware
+bb/etc/numeric.scr
+bb/etc/security.INFO
+bb/etc/sms.scr
+bb/tmp/.keep_me
 bb/web/mkbb.bkg
 bb/web/mkbb.cols
 bb/web/mkbb.sh
 bb/web/mkbb2.sh
-bb/www/index.html
+bb/www/bb-faq.html
 bb/www/bb-help.html
 bb/www/bb-info.html
 bb/www/bb-page.html
 bb/www/bb-pager.sh
 bb/www/gifs/bb-diag.gif
 bb/www/gifs/bb.gif
+bb/www/gifs/bb2.gif
+bb/www/gifs/bbbut.gif
 bb/www/gifs/bkg-green.gif
 bb/www/gifs/bkg-purple.gif
 bb/www/gifs/bkg-red.gif
@@ -43,15 +53,26 @@ bb/www/gifs/buthelp.gif
 bb/www/gifs/butinfo.gif
 bb/www/gifs/butpage.gif
 bb/www/gifs/butview.gif
+bb/www/gifs/clear.gif
 bb/www/gifs/green.gif
+bb/www/gifs/nb-bbbut.gif
+bb/www/gifs/nb-red.gif
+bb/www/gifs/nb-yellow.gif
 bb/www/gifs/purple.gif
 bb/www/gifs/red.gif
 bb/www/gifs/yellow.gif
+bb/www/index.html
 bb/www/logs/later
-bb/tmp/.keep_me
+etc/rc.d/runbb.sh
+share/doc/bb/FAQ
+share/doc/bb/README
+share/doc/bb/README.SMS
+share/doc/bb/STRUCTURE
+share/doc/bb/bbclient
+share/doc/bb/bbconfig
 www/cgi-bin/bb-pager.sh
+www/data/bb
 @dirrm bb/bin
-@dirrm bb/doc
 @dirrm bb/etc
 @dirrm bb/web
 @dirrm bb/www/gifs
@@ -60,4 +81,3 @@ www/cgi-bin/bb-pager.sh
 @dirrm bb/www
 @dirrm bb/tmp
 @dirrm bb
-www/data/bb
