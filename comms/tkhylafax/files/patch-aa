@@ -5,11 +5,11 @@
  
  # The full path to tclsh
 -TCLSH = /usr/local/bin/tclsh
-+TCLSH = tclsh7.6
++TCLSH = tclsh8.2
  
  # The full path to wish.
 -WISH = /usr/local/bin/wish
-+WISH = wish4.2
++WISH = wish8.2
  ### DON'T EDIT ANYTHING BELOW THIS LINE ###
  
  TCLLIB_FILES =  \
