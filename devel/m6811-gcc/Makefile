@@ -41,9 +41,15 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --target=m6811-elf   \
 
 MAN1=		m6811-elf-g++.1 m6811-elf-g77.1 m6811-elf-gcc.1 cccp.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.sed
 	${SED} -e "s/TARGET_CONFIGDIRS = libiberty/TARGET_CONFIGDIRS =/" \
 		${WRKSRC}/Makefile.in.sed > ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

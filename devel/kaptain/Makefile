@@ -26,6 +26,12 @@ CONFIGURE_ARGS=	--enable-mt
 MAN1=		kaptain.1
 INFO=		kaptain
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/doc/*.info*
 
@@ -33,4 +39,4 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/examples/dia2code.kaptn
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

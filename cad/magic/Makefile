@@ -26,6 +26,12 @@ MAN3=	dqueue.3 extflat.3 geometry.3 hash.3 heap.3 libmalloc.3 list.3 \
 MAN5=	cmap.5 displays.5 dlys.5 dstyle.5 ext.5 glyphs.5 magic.5 net.5 sim.5
 MAN8=	prleak.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|make |\$$\{MAKE\} |g'
@@ -65,4 +71,4 @@ post-install:
 	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/mpack.h		\
 	  ${PREFIX}/lib/libmpack.a
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

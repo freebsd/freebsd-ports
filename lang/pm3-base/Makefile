@@ -43,6 +43,10 @@ SOVERSION=	7
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 .if ${PORTOBJFORMAT} == "aout"
 TARGET=		FreeBSD2
 TARGETDIR=	freebsd-2

@@ -19,4 +19,10 @@ MAN6=		xrisk.6
 
 RESTRICTED=	"Possible trademark infringement"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>

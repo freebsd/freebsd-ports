@@ -32,6 +32,12 @@ CONFIGURE_ARGS+=--enable-shared --with-artspp=${PREFIX}
 MANL=		cfdases.l cfdifmatrix.l cfdnets.l cfdnexthops.l \
 		cfdportmatrix.l cfdprotos.l cfdtos.l flowdump.l flowwatch.l
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 .if !defined(CFLOWD_FLOWSCAN_PATCH)
 pre-everything::
 	@${ECHO} "you can compile cflowd with patches for FlowScan by typing:"
@@ -42,4 +48,4 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/cflowd.sh \
 		${PREFIX}/etc/rc.d/cflowd-base.sh.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

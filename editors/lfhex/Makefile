@@ -24,6 +24,12 @@ CONFIGURE_ARGS=	--with-qt-moc=${MOC}
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${PTHREAD_CFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
 		s,%%X11BASE%%,${X11BASE},g" ${WRKSRC}/src/Makefile.in
@@ -31,4 +37,4 @@ post-patch:
 post-configure:
 	${REINPLACE_CMD} -e "s,LFLAGS =,LFLAGS = ${PTHREAD_LIBS} ${LDFLAGS}," ${WRKSRC}/src/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

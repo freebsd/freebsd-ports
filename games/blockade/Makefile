@@ -18,8 +18,14 @@ USE_XLIB=	yes
 
 MAN6=	blockade.6
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blockade ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/blockade.6 ${PREFIX}/man/man6
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

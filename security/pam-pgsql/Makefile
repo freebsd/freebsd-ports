@@ -30,6 +30,12 @@ PATCH_DIST_STRIP=	-p1
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ARGS+=	FILESDIR=${FILESDIR}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	${CAT} ${PKGMESSAGE}
 .if !defined(NOPORTDOCS)
@@ -41,4 +47,4 @@ DOCDIR=		share/doc/pam-pgsql
 PLIST_SUB+=	DOCDIR=${DOCDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

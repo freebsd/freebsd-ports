@@ -30,8 +30,14 @@ INSTALL_TARGET=	vertex_install
 
 MAN1=		${PORTNAME}.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 pre-patch:
 	@${FIND} ${WRKSRC} -name "*.[c,h]" | ${XARGS} ${PERL} -pi -e \
 		's|malloc.h|stdlib.h|'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

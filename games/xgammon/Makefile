@@ -25,6 +25,12 @@ MAN6=		xgammon.6
 
 PATCH_FILES=	${PORTNAME}-${PORTVERSION}-dirent.patch
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -37,4 +43,4 @@ pre-patch:
 	@${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/${file}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -25,9 +25,15 @@ MAKEFILE=	GNUmakefile
 MAKE_ARGS=	CXX="${CXX}" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include -DUNIX"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/h2l ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/nmr.tex ${DATADIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

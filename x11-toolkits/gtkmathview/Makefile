@@ -32,9 +32,15 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	mathmlviewer.1 mathml2ps.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 .for file in src/stringAux.cc src/PS_T1_FontManager.cc
 	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|g" ${WRKSRC}/${file}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
