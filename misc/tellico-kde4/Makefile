@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/tellico/download/
 
@@ -15,7 +15,10 @@ COMMENT=	Collection manager for KDE
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
-		kcddb:${PORTSDIR}/multimedia/kdemultimedia3
+		kcddb:${PORTSDIR}/multimedia/kdemultimedia3 \
+		yaz.2:${PORTSDIR}/net/yaz
+
+EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
