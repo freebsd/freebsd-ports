@@ -7,6 +7,7 @@
 
 PORTNAME=	vsftpd
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
 
