@@ -1,0 +1,9 @@
+--- data/scripts/pekwm_themeset.pl.orig Wed Jun 18 21:15:56 2003
++++ data/scripts/pekwm_themeset.pl      Wed Jun 18 21:16:16 2003
+@@ -46,5 +46,5 @@
+ 	print(PKCONF @file);
+ 	close(PKCONF);
+
+-	system("pkill -HUP pekwm"); # Make pekwm re-read it's config
++	system("killall -HUP pekwm"); # Make pekwm re-read it's config
+ }
