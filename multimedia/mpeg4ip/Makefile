@@ -132,13 +132,13 @@ post-configure:
 		s|-Werror||g'
 # configure is not propagating PTHREAD_LIBS to the makefiles
 # investigated by David Yeske <dyeske@yahoo.com>
-#.if ${OSVERSION} >= 500000
+.if ${OSVERSION} >= 500000
 	@${REINPLACE_CMD} -E \
 		-e 's|(-lSDL)|${PTHREAD_LIBS} \1|' \
 		${WRKSRC}/player/src/Makefile \
 		${WRKSRC}/util/yuv/Makefile \
 		${WRKSRC}/util/iptv/Makefile
-#.endif
+.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
