@@ -1,19 +1,19 @@
 
 $FreeBSD$
 
---- libIDL/ltmain.sh	2001/08/27 09:51:26	1.1
-+++ libIDL/ltmain.sh	2001/08/27 09:51:42
-@@ -2408,6 +2408,9 @@
- 	  *-*-netbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
- 	    ;;
-+	  *-*-freebsd*)
-+	    # FreeBSD doesn't need this...
-+	    ;;
- 	  *)
- 	    # Add libc to deplibs on all other systems if necessary.
- 	    if test "$build_libtool_need_lc" = "yes"; then
-@@ -4175,10 +4178,12 @@
+--- libIDL/ltmain.sh	Mon Jan  7 11:09:55 2002
++++ libIDL/ltmain.sh	Thu Jan 24 16:32:50 2002
+@@ -1795,6 +1795,9 @@
+ 	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
+ 	  # these systems don't actually have a c library (as such)!
+ 	  ;;
++	*-*-freebsd*)
++	  # has libc, but it shouldn't be explicitly linked in
++	  ;;
+         *-*-rhapsody*)
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
+@@ -3360,10 +3366,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
