@@ -210,6 +210,7 @@
     SUBDIR += qmailanalog
     SUBDIR += qpopper
     SUBDIR += qtools
+    SUBDIR += queue-repair
     SUBDIR += raysfilter
     SUBDIR += razor-agents
     SUBDIR += rblcheck
