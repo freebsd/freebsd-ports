@@ -5,7 +5,9 @@
 # $FreeBSD$
 #
 
-MASTERDIR=	${.CURDIR}/../emacs-w3m-emacs20
+MASTERDIR=	${.CURDIR}/../emacs-w3m
+
+PORTCLASS=	slave
 
 EMACS_PORT_NAME=	xemacs21-mule
 

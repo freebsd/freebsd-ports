@@ -14,10 +14,18 @@ DISTNAME=	w3m_el-${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 
-EMACS_PORT_NAME?=	emacs20
+PORTCLASS?=		master
 
-CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD}
-LISPDIR?=	${EMACS_LIBDIR}/site-lisp/w3m
+.if (${PORTCLASS} == "master")
+EMACS_PORT_NAME?=	emacs21
+DEPPORT_SUFFIX=		
+.else
+DEPPORT_SUFFIX=		-${EMACS_PORT_NAME}
+.endif
+
+CONFIGURE_ARGS?=	--with-emacs=${EMACS_CMD} \
+			--with-lispdir=${LOCALBASE}/${LISPDIR}
+LISPDIR?=	${EMACS_VERSION_SITE_LISPDIR}/w3m
 ETCDIR?=	share/w3m
 PKGINFODIR?=	"@comment "
 
@@ -47,7 +55,7 @@ SEMI_FILE=		${LOCALBASE}/${EMACS_PACKAGESDIR}/lisp/semi/mime-setup.el
 .else
 XEMACS_ONLY?=		"@comment "
 EMACS_ONLY?=		""
-SEMI_FILE=		${LOCALBASE}/${EMACS_LIBDIR}/site-lisp/semi/mime-setup.el
+SEMI_FILE=		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/semi/mime-setup.el
 .endif
 
 .if defined(WITH_SHIMBUN)
@@ -63,8 +71,8 @@ SHIMBUN=		"@comment "
 .endif
 
 .if defined(HAVE_SEMI) 
-BUILD_DEPENDS+=		${SEMI_FILE}:${PORTSDIR}/editors/semi-${EMACS_PORT_NAME}-current
-RUN_DEPENDS+=		${SEMI_FILE}:${PORTSDIR}/editors/semi-${EMACS_PORT_NAME}-current
+BUILD_DEPENDS+=		${SEMI_FILE}:${PORTSDIR}/editors/semi${DEPPORT_SUFFIX}
+RUN_DEPENDS+=		${SEMI_FILE}:${PORTSDIR}/editors/semi${DEPPORT_SUFFIX}
 .endif
 
 .if !defined(HAVE_SEMI)

@@ -114,8 +114,9 @@
 %%LISPDIR%%/w3m-dtree.el
 %%LISPDIR%%/w3m-dtree.elc
 %%LISPDIR%%/w3m-e20.el
-%%EMACS_ONLY%%%%LISPDIR%%/w3m-e20.elc
+%%EMACS_ONLY%%@unexec rm -f %D/%%LISPDIR%%/w3m-e20.elc
 %%LISPDIR%%/w3m-e21.el
+%%EMACS_ONLY%%@unexec rm -f %D/%%LISPDIR%%/w3m-e21.elc
 %%LISPDIR%%/w3m-filter.el
 %%LISPDIR%%/w3m-filter.elc
 %%LISPDIR%%/w3m-form.el
