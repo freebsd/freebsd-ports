@@ -1,0 +1,18 @@
+bin/dvi2dvi
+lib/dvi2dvi/a2n
+lib/dvi2dvi/config
+lib/dvi2dvi/fontdesc
+lib/dvi2dvi/mtex
+lib/dvi2dvi/n2a
+lib/dvi2dvi/n2w
+lib/dvi2dvi/p2n
+lib/dvi2dvi/p2pn
+lib/dvi2dvi/w2n
+share/doc/dvi2dvi/bugs.doc
+share/doc/dvi2dvi/changes.doc
+share/doc/dvi2dvi/dvi2dvi.doc
+share/doc/dvi2dvi/install.doc
+share/doc/dvi2dvi/lib.doc
+@exec mkdir -p -m 777 %D/share/fonts/vf-rot
+@dirrm lib/dvi2dvi
+@dirrm share/doc/dvi2dvi

@@ -1,0 +1,14 @@
+#
+# dvi2dvi fontdesc file for FreeBSD jTeX and pTeX ports collection.
+#
+# configuration
+fontdesc	config
+#
+# NTT dvi (subfont) -> ASCII dvi
+#
+# virtual font
+font	vf	* 0	$vf/vf-n2a/%f.vf
+#
+# tfm used in the above vf (ASCII jfm, i.e. min10.tfm ...)
+font	jfm	* 0	$af/tfm/ptex/%f.tfm
+font	jfm	* 0	$nsf/jfms/%f.tfm

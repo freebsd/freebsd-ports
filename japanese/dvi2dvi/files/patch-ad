@@ -1,0 +1,13 @@
+--- lib/n2a.orig	Sun Apr 30 14:53:22 1995
++++ lib/n2a	Mon Dec 21 19:31:33 1998
+@@ -3,7 +3,8 @@
+ # configuration
+ fontdesc	config
+ # virtual font
+-font	vf	* 0	$nsf/vf-n2a/%f.vf
++font	vf	* 0	$vf/vf-n2a/%f.vf
+ #
+ # tfm used in the above vf (ASCII jfm, i.e. min10.tfm ...)
+-font	jfm	* 0	$af/jfm/%f.tfm
++font	jfm	* 0	$af/tfm/ptex/%f.tfm
++font	jfm	* 0	$nsf/jfms/%f.tfm
