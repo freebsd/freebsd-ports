@@ -14,6 +14,7 @@ MAINTAINER=	freebsd@jdc.parodius.com
 COMMENT=	A combination which provides a wrapper for PHP
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_PHP=	yes
 WANT_PHP_CGI=	yes
 USE_APACHE=	yes
@@ -53,6 +54,14 @@ CONFIGURE_ARGS+=	--disable-checkgid
 CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
 
 .include <bsd.port.pre.mk>
+
+##
+## Sanity check; -C flag for make(1) was added in 4.8, but was not
+## fully fixed until shortly before 4.9-RELEASE.  We need -C !
+##
+.if ${OSVERSION} < 490000
+BROKEN=	Please upgrade to FreeBSD 4.9-RELEASE or higher \(see PR bin/50981\).
+.endif
 
 .if exists(${LOCALBASE}/include/apache2/apr.h) || defined(WITH_APACHE2)
 APACHE_PORT=	www/apache2
