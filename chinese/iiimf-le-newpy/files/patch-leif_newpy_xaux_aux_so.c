@@ -5,7 +5,7 @@
  #define HASH_SIZE 137
  #define ME			"aux_so"
 -#define	AUX_EXT			"/usr/lib/im/locale/zh_CN/newpy/aux_win"
-+#define	AUX_EXT			"/usr/local/lib/im/locale/zh_CN/newpy/aux_win"
++#define	AUX_EXT			(IMDIR "/locale/zh_CN/newpy/aux_win")
  
  typedef struct _aux_icid {
          aux_t *                 aux;

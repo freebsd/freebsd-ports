@@ -5,10 +5,10 @@
  #define USRNAME		".usrhjd"
  #ifdef __STDC__
 -#define SYSPATH		"/usr/lib/im/locale/ko_KR/common/data"
-+#define SYSPATH		"/usr/local/lib/im/locale/ko_KR/common/data"
++#define SYSPATH		(IMDIR "/locale/ko_KR/common/data")
  #else
 -#define SYSPATH		"/usr/lib/im/locale/ko_KR/common/data"
-+#define SYSPATH		"/usr/local/lib/im/locale/ko_KR/common/data"
++#define SYSPATH		(IMDIR "/locale/ko_KR/common/data")
  #endif
  #define SYSNAME		"syshjd"
  #define NULNAME		"nulhjd"

@@ -5,7 +5,7 @@
    fp = fopen (argv[1], "w");
    
 -  construct_binary_tree_from_file ("/usr/lib/im/locale/ko_KR/common/data/hhdict",
-+  construct_binary_tree_from_file ("/usr/local/lib/im/locale/ko_KR/common/data/hhdict",
++  construct_binary_tree_from_file (IMDIR "/locale/ko_KR/common/data/hhdict",
  				   &trees, &n_trees);
    mthd_return = dictionary_search_hanja_candidates_in_utf16
      (ga, &n_candidates, &cand );

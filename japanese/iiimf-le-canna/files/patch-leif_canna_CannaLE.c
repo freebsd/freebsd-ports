@@ -1,11 +1,11 @@
---- leif/canna/CannaLE.c	Wed Oct 13 00:26:27 2004
-+++ leif/canna/CannaLE.c	Thu Feb 17 01:55:18 2005
+--- leif/canna/CannaLE.c.orig	Wed Oct 13 00:26:27 2004
++++ leif/canna/CannaLE.c	Wed Mar  2 23:37:14 2005
 @@ -86,7 +86,7 @@
  
  #include <dlfcn.h>
  #include "csconv.h"
 -#define CSC_PATH	"/usr/lib/im/csconv/csconv.so"
-+#define CSC_PATH	"/usr/local/lib/im/csconv/csconv.so"
++#define CSC_PATH	(IMDIR "/csconv/csconv.so")
  #define CSC_OPEN_LOCALE	"csconv_open_locale"
  #define CSC_OPEN	"csconv_open"
  #define CSC_CONV	"csconv"

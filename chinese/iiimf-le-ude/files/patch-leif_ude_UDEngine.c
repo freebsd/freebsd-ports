@@ -5,7 +5,7 @@
      l->domain = "com.sun.udengine";
      l->scope = "udengine";      
 -    l->path = "/usr/lib/im/locale/zh_CN/udengine/udengine_obj.jar";  /* path */
-+    l->path = "/usr/local/lib/im/locale/zh_CN/udengine/udengine_obj.jar";  /* path */
++    l->path = (IMDIR "/locale/zh_CN/udengine/udengine_obj.jar");  /* path */
      l->signature = "";
      l->basepath = NULL;         /* only for CCDEF */
      l->encoding = NULL;         /* only for CCDEF */

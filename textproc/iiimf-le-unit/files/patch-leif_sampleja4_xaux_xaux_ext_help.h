@@ -5,6 +5,6 @@
  #endif /* USE_CDE_HELP */
  
 -#define	DEFAULT_HELP_PATH "file:/usr/lib/im/locale/ja/sampleja4/help/"
-+#define	DEFAULT_HELP_PATH "file:/usr/local/lib/im/locale/ja/sampleja4/help/"
++#define	DEFAULT_HELP_PATH ("file:" IMDIR "/locale/ja/sampleja4/help/")
  
  #endif	/* !XAUX_EXT_HELP_H */

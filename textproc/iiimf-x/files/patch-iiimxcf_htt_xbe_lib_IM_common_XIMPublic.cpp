@@ -5,7 +5,7 @@
  #define XIIIMP_PATH     "/usr/openwin/lib/locale/common/xiiimp.so.2"
  #else /* Linux */
 -#define XIIIMP_PATH     "/usr/lib/im/xiiimp.so.2"
-+#define XIIIMP_PATH     "/usr/local/lib/im/xiiimp.so.2"
++#define XIIIMP_PATH     (IMDIR "/xiiimp.so.2")
  #endif /* Linux */
  
  #include <stdio.h>

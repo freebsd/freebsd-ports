@@ -5,7 +5,7 @@
      char	**argv;
  {
 -    const char *httpath="/usr/lib/im/htt_server" ; /* SUNWiiimf Only */
-+    const char *httpath="/usr/local/lib/im/htt_server" ; /* SUNWiiimf Only */
++    const char *httpath=IM_DIRECTORY "/htt_server" ; /* SUNWiiimf Only */
      pid_t pgrp;
      void (*disp)(int);
      char **new_argv, **pp;

@@ -5,7 +5,7 @@
      IMXMLModifier xml((const char *)argv[1]);
      IMModuleInfoVec *lev;
 -    string mod("/usr/lib/im/leif/freewnnle.so");
-+    string mod("/usr/local/lib/im/leif/freewnnle.so");
++    string mod(IM_DIRECTORY "/leif/freewnnle.so");
      string lang("ja");
      string out("foo.conf");
  
@@ -14,7 +14,7 @@
      */
      printf("\n\n*** remove\n");
 -    mod = "/usr/lib/im/leif/CannaLE.so";
-+    mod = "/usr/local/lib/im/leif/CannaLE.so";
++    mod = IM_DIRECTORY "/leif/CannaLE.so";
      xml.removemodule(mod, lang);
      /*
        for (IMModuleInfoVec::iterator i = lev->begin (); i != lev->end (); i++) {

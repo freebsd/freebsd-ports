@@ -5,7 +5,7 @@
  #include <dlfcn.h>
  #include "csconv.h"
 -#define CSC_PATH	"/usr/lib/im/csconv/csconv.so"
-+#define CSC_PATH	"/usr/local/lib/im/csconv/csconv.so"
++#define CSC_PATH	(IMDIR "/csconv/csconv.so")
  #define CSC_OPEN_LOCALE	"csconv_open_locale"
  #define CSC_OPEN	"csconv_open"
  #define CSC_CONV	"csconv"

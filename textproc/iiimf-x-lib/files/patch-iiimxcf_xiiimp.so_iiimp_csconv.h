@@ -5,7 +5,7 @@
  #endif /* !CSC_BASE_DIR_SYSTEM */
  #if !defined(CSC_BASE_DIR_DEFAULT)
 -#    define	CSC_BASE_DIR_DEFAULT	"/usr/lib/im/csconv/"
-+#    define	CSC_BASE_DIR_DEFAULT	"/usr/local/lib/im/csconv/"
++#    define	CSC_BASE_DIR_DEFAULT	(IMDIR "/csconv/")
  #endif /* !CSC_BASE_DIR_DEFAULT */
  
  #define CSC_IS_PATH_ABS(path)	(('/' == *(path)) ||			\

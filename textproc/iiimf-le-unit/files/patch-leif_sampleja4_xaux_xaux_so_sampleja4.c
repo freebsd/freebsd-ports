@@ -5,4 +5,4 @@
   * primary path for external executables
   */
 -const char *xaux_so_extexec_path = "/usr/lib/im/locale/ja/sampleja4/xaux";
-+const char *xaux_so_extexec_path = "/usr/local/lib/im/locale/ja/sampleja4/xaux";
++const char *xaux_so_extexec_path = IMDIR "/locale/ja/sampleja4/xaux";

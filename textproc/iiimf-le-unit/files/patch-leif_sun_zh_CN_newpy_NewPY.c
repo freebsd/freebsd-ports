@@ -5,7 +5,7 @@
  #define  PUNCT_ENGLISH      1
  
 -#define  CIKU_DATA_PATH     "/usr/lib/im/locale/zh_CN/common/data"
-+#define  CIKU_DATA_PATH     "/usr/local/lib/im/locale/zh_CN/common/data"
++#define  CIKU_DATA_PATH     (IMDIR "/locale/zh_CN/common/data")
  
  JINT      nGlobalSpMode;      /* ZRM, CStar, ABC */
  

@@ -7,6 +7,7 @@
 
 PORTNAME=	server
 PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
@@ -23,12 +24,14 @@ USE_RC_SUBR=	htt.sh
 USE_BZIP2=	yes
 USE_REINPLACE=  yes
 USE_GMAKE=	yes
-USE_GNOME=	intltool pkgconfig libxml2
+USE_GNOME=	pkgconfig libxml2
 USE_OPENSSL=    yes
-WANT_AUTOCONF_VER=253
-WANT_AUTOHEADER_VER=253
-WANT_AUTOMAKE_VER=15
-WANT_LIBTOOL_VER=15
+USE_AUTOCONF_VER=	259
+USE_AUTOHEADER_VER=	259
+USE_AUTOMAKE_VER=	19
+WANT_LIBTOOL_VER=	15
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/src-//}/iiimsf
 PATCH_WRKSRC=   ${WRKDIR}/${DISTNAME:S/src-//}
@@ -43,10 +46,17 @@ IGNORE=         "It is supported on FreeBSD 5.3 and later"
 IGNORE=	"${ARCH} is not support."
 .endif
 
-MAKE_ARGS+=	LIBTOOL="${LIBTOOL} --tag=CXX"
+.if defined(WITH_DEBUG)
+CFLAGS+=	-g -ggdb -DDEBUG
+.endif
+
+CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 UPDATE_ARGS+=	ACLOCAL=${ACLOCAL} AUTOMAKE=${AUTOMAKE} \
 		AUTOHEADER=${AUTOHEADER} AUTOCONF=${AUTOCONF} \
-		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE}
+		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE} \
+		ACLOCAL_DIR="-I ${LOCALBASE}/share/aclocal -I ${ACLOCAL_DIR}"
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
@@ -56,11 +66,15 @@ post-patch:
 	${MV} ${WRKSRC}/src/le.xml.conf ${WRKSRC}/src/le.xml.conf.sample
 
 pre-configure:
-	(cd ${WRKSRC}/.. && ${GMAKE} ${UPDATE_ARGS} update-acfiles)
-	(cd ${WRKSRC}/../acfiles/ && ${TOUCH} ltconfig)
-
-do-configure:
-	(cd ${WRKSRC} && ./autogen.sh --prefix=${PREFIX})
+	@cd ${WRKSRC}/.. && ${GMAKE} ${UPDATE_ARGS} update-acfiles
+	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
+	 -I ../acfiles -I ${LOCALBASE}/share/aclocal -I ${ACLOCAL_DIR}
+	@cd ${WRKSRC} && ${REINPLACE_CMD} \
+	 -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
+	 -e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
+	 -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+	 ${LIBTOOLFILES}
+	@cd ${WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER}
 
 post-configure:
 	${REINPLACE_CMD} -e "s,\$${prefix}/var,/var,g" \

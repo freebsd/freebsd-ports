@@ -1,8 +1,0 @@
---- leif/unit/xaux_common/Makefile.am	Thu Jun 12 20:41:27 2003
-+++ leif/unit/xaux_common/Makefile.am	Wed Feb 16 17:01:09 2005
-@@ -1,4 +1,5 @@
- libxaux_common_la_CFLAGS = -I../include
-+libxaux_common_la_LDFLAGS = -lintl
- libxaux_common_la_SOURCES = logf.c encode.c
- noinst_LTLIBRARIES = libxaux_common.la
- 

@@ -14,7 +14,7 @@
  
  	lang_name = (char *)get_langname_from_locale(sLocaleName);
 -	sprintf(path_name, "/usr/lib/im/locale/%s", lang_name);
-+	sprintf(path_name, "/usr/local/lib/im/locale/%s", lang_name);
++	sprintf(path_name, IMDIR "/locale/%s", lang_name);
  
  	DEBUG_printf("path_name:%s\n", path_name);
  

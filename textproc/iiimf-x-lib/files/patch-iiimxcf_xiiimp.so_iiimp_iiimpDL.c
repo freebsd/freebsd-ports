@@ -5,7 +5,7 @@
  
  #ifndef XLOCALEDIR
 -#define XLOCALEDIR "/usr/lib/im/modules"
-+#define XLOCALEDIR "/usr/local/lib/im/modules"
++#define XLOCALEDIR (IMDIR "/modules")
  #endif
  
  static const char*

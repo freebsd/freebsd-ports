@@ -5,10 +5,10 @@
  #endif
  
 -#define WNNRCFILE "/etc/FreeWnn/ja/wnnenvrc"
-+#define WNNRCFILE "/usr/local/lib/wnn/ja_JP/wnnenvrc"
++#define WNNRCFILE (LOCALBASE "/lib/wnn/ja_JP/wnnenvrc")
  
 -#define CSC_PATH "/usr/lib/im/csconv/csconv.so"
-+#define CSC_PATH "/usr/local/lib/im/csconv/csconv.so"
++#define CSC_PATH (IMDIR "/csconv/csconv.so")
  #define CSC_OPEN_LOCALE "csconv_open_locale"
  #define CSC_OPEN        "csconv_open"
  #define CSC_CONV        "csconv"

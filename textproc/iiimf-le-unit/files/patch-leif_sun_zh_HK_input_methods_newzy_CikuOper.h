@@ -5,7 +5,7 @@
  #define SINGLEHZ_DSP_FULL      2
  
 -#define  CIKU_DATA_PATH     "/usr/lib/im/locale/zh_HK/common/data"
-+#define  CIKU_DATA_PATH     "/usr/local/lib/im/locale/zh_HK/common/data"
++#define  CIKU_DATA_PATH     (IMDIR "/locale/zh_HK/common/data")
  
  typedef struct _CizuItem {
  	UCHAR     szLine[CIZU_ITEM_LEN];           /* Org Line read from file */

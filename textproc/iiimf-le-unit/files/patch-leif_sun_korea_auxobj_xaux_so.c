@@ -5,7 +5,7 @@
  #define	XAUX_CLASS_MAX		7
  
 -#define	XAUX_EXT_DIR 		"/usr/lib/im/locale/ko_KR/"
-+#define	XAUX_EXT_DIR 		"/usr/local/lib/im/locale/ko_KR/"
++#define	XAUX_EXT_DIR 		(IMDIR "/locale/ko_KR/")
  
  CARD16	aux_utfname_palette[] = {
  	'c','o','m','.','s','u','n','.',

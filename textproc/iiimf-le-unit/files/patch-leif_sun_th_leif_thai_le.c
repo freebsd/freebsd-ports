@@ -5,7 +5,7 @@
  Bool if_le_OpenIF(iml_if_t * If)
  {
 -	char *keymap_config_file = "/usr/lib/im/locale/th_TH/thai_keymap.cfg";
-+	char *keymap_config_file = "/usr/local/lib/im/locale/th_TH/thai_keymap.cfg";
++	char *keymap_config_file = IMDIR "/locale/th_TH/thai_keymap.cfg";
  	TThaiKeymapList *pThaiKeymapList = &gThaiKeymapList;
  
      	DEBUG_printf("if_le_OpenIF ====\n");

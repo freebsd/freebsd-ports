@@ -13,7 +13,7 @@
  update-acfiles:
  	cd acfiles && \
 -        $(ACLOCAL) && $(AUTOMAKE) --add-missing --copy && libtoolize --force --copy && \
-+        $(ACLOCAL) && $(AUTOMAKE) --add-missing --copy && $(LIBTOOLIZE) --force --copy && \
++        $(ACLOCAL) $(ACLOCAL_DIR) && $(AUTOMAKE) --add-missing --copy && $(LIBTOOLIZE) --force --copy && \
          rm -f Makefile.in aclocal.m4
  
  config:

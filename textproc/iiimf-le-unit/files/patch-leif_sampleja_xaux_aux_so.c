@@ -5,7 +5,7 @@
  #define HTT_AUX_PROP1_NAME	"htt_aux_sample_prop1"
  
 -#define	AUX_EXT			"/usr/lib/im/locale/ja/sampleja/aux_ext"
-+#define	AUX_EXT			"/usr/local/lib/im/locale/ja/sampleja/aux_ext"
++#define	AUX_EXT			(IMDIR "/locale/ja/sampleja/aux_ext")
  
  typedef struct _aux_icid {
  	aux_t *			aux;

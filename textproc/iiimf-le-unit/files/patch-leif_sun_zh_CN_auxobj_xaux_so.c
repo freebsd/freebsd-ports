@@ -5,7 +5,7 @@
  #endif
  
 -#define	XAUX_EXT_DIR 		"/usr/lib/im/locale/zh_CN/"
-+#define	XAUX_EXT_DIR 		"/usr/local/lib/im/locale/zh_CN/"
++#define	XAUX_EXT_DIR 		(IMDIR "/locale/zh_CN/")
  
  CARD16	aux_utfname_palette[] = {
  	'c','o','m','.','s','u','n','.',

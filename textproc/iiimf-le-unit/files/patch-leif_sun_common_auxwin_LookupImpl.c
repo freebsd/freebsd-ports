@@ -5,7 +5,7 @@
  	lang_name = (char *)get_langname_from_locale(sLocaleName);
  
 -	sprintf(path_name, "/usr/lib/im/locale/%s", lang_name);
-+	sprintf(path_name, "/usr/local/lib/im/locale/%s", lang_name);
++	sprintf(path_name, IMDIR "/locale/%s", lang_name);
  	ret = read_keyboard_config_file(path_name, DEFAULT_SYMBOLS_CONFIG_FILE);
  }
  
