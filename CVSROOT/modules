@@ -715,6 +715,7 @@ chkgrp		src/usr.sbin/chkgrp
 chkrootkit	ports/security/chkrootkit
 chmod		src/bin/chmod
 choparp		ports/net/choparp
+chora		ports/devel/chora
 chord		ports/misc/chord
 chordpack	ports/audio/chordpack
 chown		src/usr.sbin/chown
