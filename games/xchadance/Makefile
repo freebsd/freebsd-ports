@@ -13,6 +13,8 @@ DISTFILES=	xchada01.lzh
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not fetch"
+
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 MAKEFILE=	makefile
