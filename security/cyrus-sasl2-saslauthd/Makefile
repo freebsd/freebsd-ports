@@ -9,9 +9,10 @@ PORTNAME=	saslauthd
 PORTVERSION=	2.1.14
 #PORTREVISION=	0
 CATEGORIES=	security ipv6
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		ftp://ftp.westbend.net/pub/cyrus-mail/ \
-		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
+MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
+		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
+		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. OLD-VERSIONS/sasl
 PKGNAMEPREFIX=	cyrus-sasl-
 DISTNAME=	${PKGNAMEPREFIX}${PORTVERSION}
 
