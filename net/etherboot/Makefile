@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	etherboot
-PORTVERSION=	4.6.1
+PORTVERSION=	4.6.10
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.us.kernel.org/pub/linux/devel/gcc/ \
-		http://www.ambrisko.com/doug/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME}.tar.gz ${BINUTILS_VER}.tar.gz
 
 MAINTAINER=	ambrisko@whistle.com
 
@@ -21,15 +18,6 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 NO_PACKAGE=	lots of configuration necessary
 USE_GMAKE=1
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-BINUTILS_VER=   binutils-2.9.1.0.25  # need newer version of gas for data32
-
-pre-configure:
-	cd ${WRKDIR}/${BINUTILS_VER} ; \
-	   ./configure -host=i386-unknown-freebsdelf
-
-pre-build:
-	cd ${WRKDIR}/${BINUTILS_VER} ; \
-	make
 
 do-install:
 	@${ECHO} Refer ${DESCR} and ${WRKDIR}/${PKGNAME}/doc for how to

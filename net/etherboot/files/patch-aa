@@ -1,19 +1,7 @@
-*** Makefile.orig	Sat Mar 18 00:30:20 2000
---- Makefile	Sat Mar 18 19:46:12 2000
+*** Makefile.orig	Mon Oct 16 21:24:09 2000
+--- Makefile	Sun Oct 22 10:05:01 2000
 ***************
-*** 90,95 ****
---- 90,98 ----
-  IDENT16=		'Etherboot/16 $(VERSION) (GPL) $@'
-  IDENT32=		'Etherboot/32 $(VERSION) (GPL) $@'
-  
-+ AS=          `echo ../../bin*/gas/as-new`
-+ LD32=          `echo ../../bin*/ld/ld-new`
-+ 
-  # Find out if we're using binutils 2.9.5 which uses a different syntax in some
-  # places (most prominently in the opcode prefix area).
-  NEWGAS:=	$(shell $(AS) --version | grep -q '2\.9\.1' || echo -DGAS295)
-***************
-*** 142,148 ****
+*** 149,155 ****
   #AS86=		as86
   # If you have made changes to the *.S files and you want to rebuild *loader.bin
   # and {floppy,com}load.bin and you have nasm (not most people)
@@ -21,7 +9,7 @@
   
   # if your as has trouble with the data32 directive, uncomment this
   # but note that the premade start*.o will be larger than necessary because it
---- 145,151 ----
+--- 149,155 ----
   #AS86=		as86
   # If you have made changes to the *.S files and you want to rebuild *loader.bin
   # and {floppy,com}load.bin and you have nasm (not most people)
@@ -29,21 +17,3 @@
   
   # if your as has trouble with the data32 directive, uncomment this
   # but note that the premade start*.o will be larger than necessary because it
-***************
-*** 207,213 ****
-  	|| { $(RM) $@; echo "ERROR: code size exceeds limit!"; exit 1; }
-  
-  # Make sure that the relocation address is acceptable for all ROM sizes
-! RELOCADDR=0x98000
-  # Evaluate ROMLIMIT only once - it is constant during the make run.
-  # Note that the 3K safety margin below is for the 1K extended BIOS data area
-  # and for the Etherboot runtime stack.  Under normal situations, 2K of stack
---- 211,218 ----
-  	|| { $(RM) $@; echo "ERROR: code size exceeds limit!"; exit 1; }
-  
-  # Make sure that the relocation address is acceptable for all ROM sizes
-! #RELOCADDR=0x98000
-! RELOCADDR=0x8f000
-  # Evaluate ROMLIMIT only once - it is constant during the make run.
-  # Note that the 3K safety margin below is for the 1K extended BIOS data area
-  # and for the Etherboot runtime stack.  Under normal situations, 2K of stack
