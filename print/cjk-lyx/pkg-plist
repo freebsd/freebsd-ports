@@ -83,6 +83,7 @@ share/lyx/doc/fr_Tutorial.lyx
 share/lyx/doc/fr_UserGuide.lyx
 share/lyx/doc/he_Intro.lyx
 share/lyx/doc/he_TOC.lyx
+share/lyx/doc/he_Tutorial.lyx
 share/lyx/doc/hu_Intro.lyx
 share/lyx/doc/hu_TOC.lyx
 share/lyx/doc/it_Customization.lyx
@@ -104,6 +105,7 @@ share/lyx/doc/pt_Tutorial.lyx
 share/lyx/doc/ro_Intro.lyx
 share/lyx/doc/ro_TOC.lyx
 share/lyx/doc/ro_splash.lyx
+share/lyx/doc/ru_FAQ.lyx
 share/lyx/doc/ru_Intro.lyx
 share/lyx/doc/ru_TOC.lyx
 share/lyx/doc/ru_Tutorial.lyx
@@ -155,6 +157,9 @@ share/lyx/examples/fr_exemple_brut.lyx
 share/lyx/examples/fr_exemple_lyxifie.lyx
 share/lyx/examples/fr_mathed.lyx
 share/lyx/examples/fr_splash.lyx
+share/lyx/examples/he_example_raw.lyx
+share/lyx/examples/he_he_example_lyxified.lyx
+share/lyx/examples/he_he_example_raw.lyx
 share/lyx/examples/hu_splash.lyx
 share/lyx/examples/iecc05.fen
 share/lyx/examples/iecc07.fen
@@ -331,6 +336,7 @@ share/lyx/layouts/g-brief-en.layout
 share/lyx/layouts/heb-article.layout
 share/lyx/layouts/heb-letter.layout
 share/lyx/layouts/hollywood.layout
+share/lyx/layouts/ijmpd.layout
 share/lyx/layouts/kluwer.layout
 share/lyx/layouts/latex8.layout
 share/lyx/layouts/letter.layout
@@ -404,6 +410,7 @@ share/lyx/templates/docbook_article.lyx
 share/lyx/templates/g-brief-de.lyx
 share/lyx/templates/g-brief-en.lyx
 share/lyx/templates/hollywood.lyx
+share/lyx/templates/ijmpd.lyx
 share/lyx/templates/kluwer.lyx
 share/lyx/templates/latex8.lyx
 share/lyx/templates/letter.lyx
