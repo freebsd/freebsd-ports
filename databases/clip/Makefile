@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not fetch"
+
 USE_BISON=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	local
