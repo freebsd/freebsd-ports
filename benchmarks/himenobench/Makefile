@@ -27,23 +27,23 @@ EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 RESTRICTED=	"unsure to redistribute"
 
 .if defined(OPTIMIZED_FLAGS)
-FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
-CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations -malign-double
-.if (${MACHINE_ARCH} == "i386")
-CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
-CXXFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3
+FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
+CFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops -fexpensive-optimizations
+.if (${MACHINE_ARCH} == "i386" && !${MACHINE_ARCH}== "amd64")
+CFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
+FFLAGS+=	-mfancy-math-387 -mpreferred-stack-boundary=3 -malign-double
 .endif # i386
 .endif
 
 .if defined(WITH_ICC)
-CFLAGS_ICC+=	-O3 -tpp7 -xiMKW -Vaxlib
+CFLAGS_ICC+=	-O3 -tpp7 -axN -Vaxlib
 ICC=		${LOCALBASE}/intel_cc_80/bin/icc
 PLIST_SUB+=	WITH_ICC=""
 .else
 PLIST_SUB+=	WITH_ICC="@comment "
 .endif
 .if defined(WITH_IFC)
-FFLAGS_IFC+=	-O3 -tpp7 -xiMKW -Vaxlib -ipo
+FFLAGS_IFC+=	-O3 -tpp7 -axN -Vaxlib -ipo
 IFC=		${LOCALBASE}/intel_fc_80/bin/ifort
 PLIST_SUB+=	WITH_IFC=""
 .else
@@ -57,7 +57,7 @@ do-extract:
 	done
 do-build:
 #	@cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp_xl himenobmtxp_xl.f #Too large
-	@cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp_l  himenobmtxp_l.f
+#	@cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp_l  himenobmtxp_l.f
 	@cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp_m  himenobmtxp_m.f
 	@cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp_s  himenobmtxp_s.f
 #	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DELARGE  -o himenobmtxps_xl himenobmtxps.c #Too large
@@ -65,11 +65,7 @@ do-build:
 	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DMIDDLE  -o himenobmtxps_m  himenobmtxps.c
 	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DSMALL   -o himenobmtxps_s  himenobmtxps.c
 	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DSSMALL  -o himenobmtxps_ss himenobmtxps.c
-	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DELARGE  -o himenobmtxpa_xl himenobmtxpa.c
-	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DLARGE   -o himenobmtxpa_l  himenobmtxpa.c
-	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DMIDDLE  -o himenobmtxpa_m  himenobmtxpa.c
-	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DSMALL   -o himenobmtxpa_s  himenobmtxpa.c
-	@cd ${WRKSRC} ; ${CC} ${CFLAGS} -DSSMALL  -o himenobmtxpa_ss himenobmtxpa.c
+	@cd ${WRKSRC} ; ${CC} ${CFLAGS}           -o himenobmtxpa    himenobmtxpa.c
 .if defined(WITH_IFC)
 #	@cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp_xl.ifc himenobmtxp_xl.f #Too large
 	@cd ${WRKSRC} ; ${IFC} ${FFLAGS_IFC} -o himenobmtxp_l.ifc  himenobmtxp_l.f
@@ -83,23 +79,20 @@ do-build:
 	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DMIDDLE  -o himenobmtxps_m.icc  himenobmtxps.c
 	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DSMALL   -o himenobmtxps_s.icc  himenobmtxps.c
 	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DSSMALL  -o himenobmtxps_ss.icc himenobmtxps.c
-	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DELARGE  -o himenobmtxpa_xl.icc himenobmtxpa.c
-	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DLARGE   -o himenobmtxpa_l.icc  himenobmtxpa.c
-	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DMIDDLE  -o himenobmtxpa_m.icc  himenobmtxpa.c
-	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DSMALL   -o himenobmtxpa_s.icc  himenobmtxpa.c
-	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC} -DSSMALL  -o himenobmtxpa_ss.icc himenobmtxpa.c
+	@cd ${WRKSRC} ; ${ICC} ${CFLAGS_ICC}           -o himenobmtxpa.icc    himenobmtxpa.c
 .endif
 do-install:
 #	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_xl          ${PREFIX}/bin #Too large
-	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_l           ${PREFIX}/bin
+#	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_l           ${PREFIX}/bin#Too large
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_m           ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_s           ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxpa            ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_l          ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_m          ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_s          ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_ss         ${PREFIX}/bin
-#	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_xl.ifc      ${PREFIX}/bin #Too large
 .if defined(WITH_IFC)
+#	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_xl.ifc      ${PREFIX}/bin #Too large
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_l.ifc       ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_m.ifc       ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_s.ifc       ${PREFIX}/bin
@@ -111,10 +104,6 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_m.icc      ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_s.icc      ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxps_ss.icc     ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxpa_xl.icc     ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxpa_l.icc      ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxpa_m.icc      ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxpa_s.icc      ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxpa_ss.icc     ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxpa.icc        ${PREFIX}/bin
 .endif
 .include <bsd.port.mk>
