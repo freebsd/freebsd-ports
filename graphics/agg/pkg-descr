@@ -1,0 +1,16 @@
+Anti-Grain Geometry (AGG) is an Open Source, free of charge graphic library,
+written in industrially standard C++. AGG doesn't depend on any graphic API or
+technology. Basically, you can think of AGG as of a rendering engine that
+produces pixel images in memory from some vectorial data. But of course, AGG can
+do much more than that. The ideas and the philosophy of AGG are:
+  
+  * Anti-Aliasing.
+  * Subpixel Accuracy.
+  * The highest possible quality.
+  * High performance.
+  * Platform independence and compatibility.
+  * Flexibility and extensibility.
+  * Lightweight design.
+  * Reliability and stability (including numerical stability).
+
+WWW: http://vector-agg.sourceforge.net/

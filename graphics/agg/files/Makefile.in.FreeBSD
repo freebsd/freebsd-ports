@@ -1,0 +1,8 @@
+AGGLIBS= -lagg 
+AGGCXXFLAGS = -I%%X11BASE%%/include -L%%X11BASE%%/lib
+#CXX = 
+#C = gcc
+#CXX = icc
+LIB = ar cr
+
+.PHONY : clean
