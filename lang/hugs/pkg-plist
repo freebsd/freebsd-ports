@@ -172,21 +172,21 @@ share/hugs/lib/hugs/ParseLib.hs
 share/hugs/lib/hugs/StdLibs.hs
 share/hugs/lib/hugs/Trace.hs
 share/hugs/lib/hugs/Trex.hs
-share/doc/hugs/Makefile
-share/doc/hugs/Makefile.in
-share/doc/hugs/ffi-notes.txt
-share/doc/hugs/hugs.1.in
-share/doc/hugs/machugs-notes.txt
-share/doc/hugs/mdo-notes.txt
-share/doc/hugs/observe-notes.txt
-share/doc/hugs/winhugs-notes.txt
-share/doc/hugs/zipcomp-notes.txt
-share/doc/hugs/server.tex
-share/doc/hugs/server.html
-share/doc/hugs/hugs.1
-share/doc/hugs/Credits
-share/doc/hugs/License
-share/doc/hugs/Readme
+%%PORTDOCS%%share/doc/hugs/Makefile
+%%PORTDOCS%%share/doc/hugs/Makefile.in
+%%PORTDOCS%%share/doc/hugs/ffi-notes.txt
+%%PORTDOCS%%share/doc/hugs/hugs.1.in
+%%PORTDOCS%%share/doc/hugs/machugs-notes.txt
+%%PORTDOCS%%share/doc/hugs/mdo-notes.txt
+%%PORTDOCS%%share/doc/hugs/observe-notes.txt
+%%PORTDOCS%%share/doc/hugs/winhugs-notes.txt
+%%PORTDOCS%%share/doc/hugs/zipcomp-notes.txt
+%%PORTDOCS%%share/doc/hugs/server.tex
+%%PORTDOCS%%share/doc/hugs/server.html
+%%PORTDOCS%%share/doc/hugs/hugs.1
+%%PORTDOCS%%share/doc/hugs/Credits
+%%PORTDOCS%%share/doc/hugs/License
+%%PORTDOCS%%share/doc/hugs/Readme
 @dirrm share/hugs/lib/hugs
 @dirrm share/hugs/lib/exts
 @dirrm share/hugs/lib
@@ -194,4 +194,4 @@ share/doc/hugs/Readme
 @dirrm share/hugs/demos/prolog
 @dirrm share/hugs/demos
 @dirrm share/hugs
-@dirrm share/doc/hugs
+%%PORTDOCS%%@dirrm share/doc/hugs
