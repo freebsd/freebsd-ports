@@ -28,10 +28,7 @@ MAN1=		gpg.1 gpgv.1
 
 .include <bsd.port.pre.mk>
 
-.if exists(${PREFIX}/lib/libgdbm.so)
-LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm
-.endif
-.if exists(${PREFIX}/lib/libiconv.so)
+.if defined(WITH_LIBICONV) || exists(${PREFIX}/lib/libiconv.so)
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
 
