@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	1.9
+PORTVERSION=	2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.klografx.net/qiv/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -15,6 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Small, fast GDK/Imlib image viewer
 
+OPTIONS=	XINERAMA "use multiple monitors (XFree86 4 and X.org only)" off
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib
@@ -26,8 +27,14 @@ PLIST_FILES=	bin/qiv
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha"
+pre-configure:
+.if defined(WITH_XINERAMA)
+	@${ECHO_MSG} compiling with Xinerama support
+	@${MV} -v ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
+	@${SED} -e 's/\# GTD_XINERAMA/GTD_XINERAMA/' \
+		< ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
+.else
+	@${ECHO_MSG} compiling without Xinerama support
 .endif
 
 do-configure:
