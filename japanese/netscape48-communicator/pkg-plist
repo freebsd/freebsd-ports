@@ -1,4 +1,4 @@
-bin/ja-communicator-4.06
+bin/ja-communicator-4.07
 @exec /bin/ln -sf %f %B/netscape
 lib/netscape/ja_JP.EUC/Netscape
 lib/netscape/ja_JP.EUC/about
