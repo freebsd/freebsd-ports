@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	plib
-PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTVERSION=	1.8.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://plib.sourceforge.net/dist/
 
-MAINTAINER=	des@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable library for joystick/sound/OpenGL GUI/3D math
 
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}" \
