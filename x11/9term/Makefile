@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.6 1998/08/23 07:34:46 hoek Exp $
+# $Id: Makefile,v 1.7 1998/11/21 17:18:15 steve Exp $
 #
 
 DISTNAME=       9term.1.6.3
@@ -13,11 +13,12 @@ MASTER_SITES=   ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
 
 MAINTAINER=	erich@FreeBSD.org
 
-MAN1=		9term.1
-MANCOMPRESSED=	yes
-
 # needs library and private header, but not during runtime
 BUILD_DEPENDS=	/always_build_it:${PORTSDIR}/plan9/sam
+
+USE_XLIB=	yes
+MAN1=		9term.1
+MANCOMPRESSED=	yes
 
 NO_WRKSUBDIR=	yes
 

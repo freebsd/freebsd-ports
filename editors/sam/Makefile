@@ -3,7 +3,7 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.4 1998/10/04 00:56:49 steve Exp $
+# $Id: Makefile,v 1.5 1998/11/21 17:18:16 steve Exp $
 #
 
 DISTNAME=	sam
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.msg.gz
 
 MAINTAINER=	erich@FreeBSD.org
 
+USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=

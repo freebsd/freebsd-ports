@@ -3,7 +3,7 @@
 # Date created:        31 October 1996
 # Whom:                Stefan Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/26 08:14:02 dburr Exp $
+# $Id: Makefile,v 1.2 1998/07/27 18:11:10 asami Exp $
 #
 
 DISTNAME=	sidplay-13625
@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sec@42.org
+
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/x11/XFree86
 
 GNU_CONFIGURE=	YES
 

@@ -3,7 +3,7 @@
 # Date created:         13 Feb 1997
 # Whom:                 Julian Assange
 #
-# $Id: Makefile,v 1.2 1997/10/29 03:20:31 dima Exp $
+# $Id: Makefile,v 1.3 1998/09/28 02:10:29 steve Exp $
 #
 
 DISTNAME=       lincity109
@@ -14,6 +14,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	proff@iq.org
 
+USE_XLIB=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	freebsd
 MAN6=		lincity.6
