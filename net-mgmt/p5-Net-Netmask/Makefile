@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	Net-Netmask
-PORTVERSION=	1.9004
+PORTVERSION=	1.9007
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lars@thegler.dk
 COMMENT=	Perl module to parse, manipulate and lookup IP network blocks
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Net::Netmask.3
 
-post-patch:
-	@${PERL} -pi -e '$$_ = "" if $$. == 1' ${WRKSRC}/Netmask.pm
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} <= 500503
+# make PREFIX-clean under perl 5.005_03
+post-configure:
+	${PERL} -pi -e 's,/usr/local/,\$$(PREFIX)/,g' ${WRKSRC}/Makefile
+.endif
+
+.include <bsd.port.post.mk>
