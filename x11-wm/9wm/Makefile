@@ -3,13 +3,15 @@
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/08/14 04:07:57 asami Exp $
 #
 
 DISTNAME=	9wm-1.1
 CATEGORIES+=	plan9
 MASTER_SITES=	ftp://ftp.ecf.toronto.edu/pub/plan9/arnold/
 EXTRACT_SUFX=	.shar.gz
+
+MAINTAINER=	erich@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=		zcat
