@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gocr
-PORTVERSION=	0.37
+PORTVERSION=	0.38
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jocr
@@ -21,12 +21,12 @@ GNU_CONFIGURE=	yes
 
 MAN1=		gocr.1
 
-DOC_FILES=	examples.txt gocr.html unicode.txt
+PORTDOCS=	examples.txt gocr.html unicode.txt
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
+.for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif

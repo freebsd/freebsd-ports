@@ -1,7 +1,3 @@
 bin/gocr
 include/gocr.h
 lib/libPgm2asc.a
-share/doc/gocr/examples.txt
-share/doc/gocr/gocr.html
-share/doc/gocr/unicode.txt
-@dirrm share/doc/gocr
