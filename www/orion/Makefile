@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	orion
-PORTVERSION=	2.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/
@@ -21,7 +21,7 @@ USE_ZIP=	YES
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:R}
+APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION:R:R}
 LOG_DIR=	${APP_HOME}/log
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 APP_TITLE=	Orion Server
