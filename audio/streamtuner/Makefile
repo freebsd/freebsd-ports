@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		streamtuner
-PORTVERSION=		0.99
-PORTREVISION=	1
+PORTVERSION=		0.99.99
 CATEGORIES=		audio www
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,8 +22,10 @@ USE_X_PREFIX=		yes
 USE_GNOME=		gtk20 gnomehack gnomeprefix
 USE_GMAKE=		yes
 USE_LIBTOOL_VER=	15
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+USE_GETOPT_LONG=	yes
+CPPFLAGS=		-I${LOCALBASE}/include
+LDFLAGS=		-L${LOCALBASE}/lib
+CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 OPTIONS=		SHOUTCAST "SHOUTcast plugin" on \
 			LIVE365 "Live365 plugin" on \
@@ -74,10 +75,11 @@ CONFIGURE_ARGS+=	--disable-python
 PLIST_SUB+=		PYTHON="@comment "
 .else
 PLIST_SUB+=		PYTHON=""
-USE_PYTHON=		2.2+
+USE_PYTHON=		2.3+
 # we need to manually include this, because USE_PYTHON is defined
 # after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.python.mk"
+USE_GNOME+=		pygtk2
 .endif
 
 .include <bsd.port.post.mk>

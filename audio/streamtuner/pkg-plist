@@ -7,6 +7,7 @@ include/streamtuner/st-handler-field-api.h
 include/streamtuner/st-handlers-api.h
 include/streamtuner/st-m3u-api.h
 include/streamtuner/st-pls-api.h
+include/streamtuner/st-plugin-api.h
 include/streamtuner/st-programs-api.h
 include/streamtuner/st-re-api.h
 include/streamtuner/st-settings-api.h
@@ -23,14 +24,65 @@ include/streamtuner/streamtuner.h
 %%SHOUTCAST%%lib/streamtuner/plugins/shoutcast.so
 %%XIPH%%lib/streamtuner/plugins/xiph.so
 libdata/pkgconfig/streamtuner.pc
+share/doc/streamtuner/api-reference.html
+share/doc/streamtuner/ch01s02.html
+share/doc/streamtuner/home.png
+share/doc/streamtuner/index.html
+share/doc/streamtuner/index.sgml
+share/doc/streamtuner/ix01.html
+share/doc/streamtuner/left.png
+share/doc/streamtuner/overview.html
+share/doc/streamtuner/right.png
+share/doc/streamtuner/streamtuner-STHandler.html
+share/doc/streamtuner/streamtuner-STPlugin.html
+share/doc/streamtuner/streamtuner-st-action-api.html
+share/doc/streamtuner/streamtuner-st-category-api.html
+share/doc/streamtuner/streamtuner-st-dialog-api.html
+share/doc/streamtuner/streamtuner-st-handler-field-api.html
+share/doc/streamtuner/streamtuner-st-handlers-api.html
+share/doc/streamtuner/streamtuner-st-m3u-api.html
+share/doc/streamtuner/streamtuner-st-pls-api.html
+share/doc/streamtuner/streamtuner-st-programs-api.html
+share/doc/streamtuner/streamtuner-st-re-api.html
+share/doc/streamtuner/streamtuner-st-settings-api.html
+share/doc/streamtuner/streamtuner-st-sgml-ref-api.html
+share/doc/streamtuner/streamtuner-st-state-api.html
+share/doc/streamtuner/streamtuner-st-stream-api.html
+share/doc/streamtuner/streamtuner-st-transfer-api.html
+share/doc/streamtuner/streamtuner-st-util-api.html
+share/doc/streamtuner/streamtuner-st-version-api.html
+share/doc/streamtuner/streamtuner.devhelp
+share/doc/streamtuner/up.png
 share/gnome/applications/streamtuner.desktop
-share/gnome/doc/streamtuner/C/documentation-license.xml
-share/gnome/doc/streamtuner/C/figures/main-window.png
-share/gnome/doc/streamtuner/C/software-license.xml
-share/gnome/doc/streamtuner/C/streamtuner.xml
+share/gnome/help/streamtuner/C/documentation-license.xml
+share/gnome/help/streamtuner/C/figures/main-window.png
+share/gnome/help/streamtuner/C/software-license.xml
+share/gnome/help/streamtuner/C/streamtuner.xml
 share/gnome/omf/streamtuner/streamtuner-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/streamtuner/streamtuner-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/streamtuner.png
+share/gnome/streamtuner/ui/applications.png
+share/gnome/streamtuner/ui/bookmarks.png
+share/gnome/streamtuner/ui/browse.png
+share/gnome/streamtuner/ui/category-open-running.png
+share/gnome/streamtuner/ui/category-open.png
+share/gnome/streamtuner/ui/category-running.png
+share/gnome/streamtuner/ui/category.png
+%%LIVE365%%share/gnome/streamtuner/ui/live365.png
+%%LOCAL%%share/gnome/streamtuner/ui/local.png
+share/gnome/streamtuner/ui/logo.png
+share/gnome/streamtuner/ui/main-category-running.png
+share/gnome/streamtuner/ui/main-category.png
+share/gnome/streamtuner/ui/preselections.png
+%%PYTHON%%share/gnome/streamtuner/ui/python.png
+share/gnome/streamtuner/ui/record.png
+share/gnome/streamtuner/ui/search-category-running.png
+share/gnome/streamtuner/ui/search-category.png
+share/gnome/streamtuner/ui/search.png
+%%SHOUTCAST%%share/gnome/streamtuner/ui/shoutcast.png
+share/gnome/streamtuner/ui/streamtuner.png
+share/gnome/streamtuner/ui/tune-in.png
+%%XIPH%%share/gnome/streamtuner/ui/xiph.png
 %%PYTHON%%share/gnome/streamtuner/python/icons/basic.ch.png
 %%PYTHON%%share/gnome/streamtuner/python/icons/google-stations.png
 %%PYTHON%%share/gnome/streamtuner/python/icons/punkcast.com.png
@@ -40,16 +92,19 @@ share/gnome/pixmaps/streamtuner.png
 share/locale/de/LC_MESSAGES/streamtuner.mo
 share/locale/fr/LC_MESSAGES/streamtuner.mo
 share/locale/hu/LC_MESSAGES/streamtuner.mo
+share/locale/ja/LC_MESSAGES/streamtuner.mo
 share/locale/pt/LC_MESSAGES/streamtuner.mo
 @dirrm include/streamtuner
 @dirrm lib/streamtuner/plugins
 @dirrm lib/streamtuner
-@dirrm share/gnome/doc/streamtuner/C/figures
-@dirrm share/gnome/doc/streamtuner/C
-@dirrm share/gnome/doc/streamtuner
+@dirrm share/doc/streamtuner
+@dirrm share/gnome/help/streamtuner/C/figures
+@dirrm share/gnome/help/streamtuner/C
+@dirrm share/gnome/help/streamtuner
 @dirrm share/gnome/omf/streamtuner
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/streamtuner/streamtuner-C.omf 2>/dev/null || /usr/bin/true
+@dirrm share/gnome/streamtuner/ui
 %%PYTHON%%@dirrm share/gnome/streamtuner/python/icons
 %%PYTHON%%@dirrm share/gnome/streamtuner/python/scripts
 %%PYTHON%%@dirrm share/gnome/streamtuner/python
-%%PYTHON%%@dirrm share/gnome/streamtuner
+@dirrm share/gnome/streamtuner
