@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image sequence viewer
 
-LIB_DEPENDS=	wx_gtk-2.2.2:${PORTSDIR}/x11-toolkits/wxgtk
+LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
