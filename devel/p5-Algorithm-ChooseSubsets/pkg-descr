@@ -1,0 +1,12 @@
+Perl algorithm to iterate through subsets of a list.
+
+"Subsets" in this context refers to lists with elements taken
+from the original list, and in the same order as the elements in the
+original list.  After creating the object, subsequent calls to next()
+will return the next such list in lexicographic order (where the alphabet
+is the original list).
+
+WWW: http://search.cpan.org/~bduggan/Algorithm-ChooseSubsets/
+
+- Brian Duggan
+bduggan@matatu.org
