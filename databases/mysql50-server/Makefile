@@ -11,7 +11,6 @@ PKGNAME?=	${DISTNAME:S/-/-server-/}
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.digex.net/pub/packages/database/mysql/Downloads/MySQL-3.22/ \
-		ftp://ftp.bse.bg/pub/Unix/database/MySQL/ \
 		ftp://ftp.plig.net/pub/mysql/Downloads/MySQL-3.22/ \
 		ftp://ftp.sunet.se/pub/unix/databases/relational/mysql/Downloads/MySQL-3.22/
 
