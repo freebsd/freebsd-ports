@@ -17,6 +17,7 @@
     SUBDIR += blast
     SUBDIR += bricons
     SUBDIR += buttonbox
+    SUBDIR += decurs
     SUBDIR += dgs
     SUBDIR += dxpc
     SUBDIR += dynamag
