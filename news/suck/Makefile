@@ -29,6 +29,7 @@ MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/lib
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/news/cnews
 .else
+BROKEN=		inn 2.4 is not supported. You need inn 2.3.x
 MAKE_ENV+=	DB_TYPE="-DUSE_INN23 -DDO_TAGGED_HASH"
 MAKE_ENV+=	DB_LIB="-linn -lstorage"
 MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/news/lib
