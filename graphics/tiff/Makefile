@@ -8,44 +8,35 @@
 #
 
 PORTNAME=	tiff
-PORTVERSION=	3.6.1
-PORTREVISION=	3
+PORTVERSION=	3.7.0
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 		http://libtiff.maptools.org/dl/
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
-DISTFILES=	${PORTNAME}-v${PORTVERSION}${EXTRACT_SUFX} ${LZW_DIST}
-PKGNAMESUFFIX?=	${TIFF_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ZIP --with-JPEG \
-		--with-DIR_BIN=${PREFIX}/bin \
-		--with-DIR_LIB=${PREFIX}/lib \
-		--with-DIR_INC=${PREFIX}/include \
-		--with-DIR_MAN=${PREFIX}/man \
-		--with-CC="${CC}" --with-GCOPTS="${CFLAGS}" \
-		--with-OPTIMIZER="" \
-		--with-DIRS_LIBINC=${LOCALBASE}/include \
-		--with-DIR_GZLIB=/usr/lib \
-		--with-DIR_JPEGLIB=${LOCALBASE}/lib \
-		--with-LIBGL=no --with-LIBIMAGE=no \
-		--with-INSTALL="${SH} ${WRKSRC}/port/install.sh" \
-		--noninteractive
+GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=	--with-jpeg-include-dir=${LOCALBASE}/include \
+			--with-jpeg-lib-dir=${LOCALBASE}/lib
 
-.if !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--with-HTML --with-DIR_HTML=${DOCSDIR}
+.if defined(WITH_X11) && !defined(WITHOUT_X11)
+USE_XLIB=	yes
+.else
+CONFIGURE_ARGS+=	--without-x --without-libgl
 .endif
 
-MAN1=	tiff2pdf.1 fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 ppm2tiff.1 \
-	ras2tiff.1 raw2tiff.1 rgb2ycbcr.1 sgi2tiff.1 thumbnail.1 tiff2bw.1 \
-	tiff2ps.1 tiff2rgba.1 tiffcmp.1 tiffcp.1 tiffdither.1 tiffdump.1 \
-	tiffgt.1 tiffinfo.1 tiffmedian.1 tiffsplit.1 tiffsv.1
+MAN1=	bmp2tiff.1 tiff2pdf.1 fax2ps.1 fax2tiff.1 gif2tiff.1 pal2rgb.1 \
+	ppm2tiff.1 ras2tiff.1 raw2tiff.1 rgb2ycbcr.1 sgi2tiff.1 \
+	thumbnail.1 tiff2bw.1 tiff2ps.1 tiff2rgba.1 tiffcmp.1 tiffcp.1 \
+	tiffdither.1 tiffdump.1 tiffgt.1 tiffinfo.1 tiffmedian.1 \
+	tiffsplit.1 tiffsv.1
 MAN3=	TIFFClose.3t TIFFDataWidth.3t TIFFError.3t TIFFFlush.3t \
 	TIFFGetField.3t TIFFOpen.3t TIFFPrintDirectory.3t TIFFRGBAImage.3t \
 	TIFFReadDirectory.3t TIFFReadEncodedStrip.3t TIFFReadEncodedTile.3t \
@@ -115,30 +106,21 @@ MLINKS=	TIFFError.3t          TIFFSetErrorHandler.3t \
 	TIFFtile.3t           TIFFTileRowSize.3t \
 	TIFFtile.3t           TIFFVTileSize.3t
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_TIFF_LZW_KIT)
-TIFF_SUFFIX=	-lzw
-LZKIT=		libtiff-lzw-compression-kit
-LZKIT_VER=	1.5
-LZW_DIST=	${LZKIT}-${LZKIT_VER}${EXTRACT_SUFX}
-RESTRICTED=	"Redistribution not allowed"
-
-.if !exists(${DISTDIR}/${LZW_DIST})
-IGNORE=	Due to patent enforcement from Unisys you must manually\
-	fetch ${LZW_DIST} from ftp://ftp.remotesensing.org/libtiff\
-	and place it in ${DISTDIR}. \
-	To use this patch legally you must live in a country where the patent\
-	does not apply or you must obtain a license from Unisys
-.endif
-
 post-patch:
-	@${CP} -f ${WRKDIR}/${LZKIT}-${LZKIT_VER}/tif_lzw.c ${WRKSRC}/libtiff
-.else
+	${REINPLACE_CMD} \
+		-e 's=-version-number .*$$=-version-number 4:0:0=' \
+		${WRKSRC}/libtiff/Makefile.in
 
-pre-everything::
-	@${ECHO_MSG} "===> Enable LZW Compression by defining WITH_TIFF_LZW_KIT"
-
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}/images ${DOCSDIR}/man
+	${INSTALL_DATA} ${WRKSRC}/html/*.html ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/html/images/*.jpg ${DOCSDIR}/images/
+	${INSTALL_DATA} ${WRKSRC}/html/images/*.gif ${DOCSDIR}/images/
+	${INSTALL_DATA} ${WRKSRC}/html/man/*.html ${DOCSDIR}/man/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
+
+# bsd.autotools.mk does not allow additional vars
+LIBTOOL_VARS+=	-version-number=4
