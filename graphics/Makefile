@@ -200,6 +200,7 @@
     SUBDIR += sketch
     SUBDIR += smpeg
     SUBDIR += smpeg-xmms
+    SUBDIR += sng
     SUBDIR += sodipodi
     SUBDIR += spigot
     SUBDIR += splitmpg
