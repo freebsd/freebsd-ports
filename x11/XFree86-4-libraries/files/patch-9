@@ -1,0 +1,11 @@
+--- programs/Xserver/hw/xfree86/vga256/drivers/s3v/regs3v.h~	Mon Sep  6 10:47:18 1999
++++ programs/Xserver/hw/xfree86/vga256/drivers/s3v/regs3v.h	Fri Sep 24 14:39:18 1999
+@@ -421,7 +421,7 @@
+ 
+ /* Wait until Command FIFO is empty */
+ #define WaitCommandEmpty()       do { int loop=0; mem_barrier(); 			\
+-	if (s3vPriv.chip == S3_ViRGE_GX2 || s3vPriv.chip == S3_ViRGE_MX || s3vPriv.chip == S3_ViRGE_MXP) 		\
++	if (S3_ViRGE_GX2_SERIES(s3vPriv.chip) || S3_ViRGE_MX_SERIES(s3vPriv.chip)) 	\
+ 	     while ((!(((((mmtr)s3vMmioMem)->subsys_regs.regs.adv_func_cntl)) & 0x400)) && (loop++<MAXLOOP));	\
+ 	else if (S3_TRIO_3D_SERIES(s3vPriv.chip)) \
+ 	     while (((IN_SUBSYS_STAT() & 0x5f00) != 0x5f00) && (loop++<MAXLOOP)); \
