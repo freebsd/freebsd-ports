@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	djvu
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DjVu viewers, encoders, browser plugin, and utilities
 
-BROKEN=		Incomplete pkg-plist
-
 .if !defined(WITHOUT_X11)
 USE_X_PREFIX=	yes
 USE_QT_VER=	3
