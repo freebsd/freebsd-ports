@@ -10,6 +10,7 @@ lib/libgnomeprintui-2.so
 lib/libgnomeprintui-2.so.0
 libdata/pkgconfig/libgnomeprintui-2.0.pc
 share/locale/az/LC_MESSAGES/libgnomeprintui.mo
+share/locale/bg/LC_MESSAGES/libgnomeprintui.mo
 share/locale/ca/LC_MESSAGES/libgnomeprintui.mo
 share/locale/de/LC_MESSAGES/libgnomeprintui.mo
 share/locale/es/LC_MESSAGES/libgnomeprintui.mo
