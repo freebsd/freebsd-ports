@@ -181,6 +181,7 @@
     SUBDIR += quack
     SUBDIR += ratfor
     SUBDIR += rexx-imc
+    SUBDIR += rexx-regina
     SUBDIR += rscheme
     SUBDIR += ruby-js
     SUBDIR += ruby-lua

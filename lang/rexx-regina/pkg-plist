@@ -1,0 +1,23 @@
+bin/regina
+bin/regina-config
+bin/rexx
+bin/rxqueue
+bin/rxstack
+etc/rc.d/rxstack.sh
+include/rexxsaa.h
+lib/libregina.a
+lib/libregina.so
+lib/libtest1.so
+lib/libtest2.so
+%%DATADIR%%/animal.rexx
+%%DATADIR%%/block.rexx
+%%DATADIR%%/dateconv.rexx
+%%DATADIR%%/de.mtb
+%%DATADIR%%/dynfunc.rexx
+%%DATADIR%%/es.mtb
+%%DATADIR%%/newstr.rexx
+%%DATADIR%%/no.mtb
+%%DATADIR%%/pt.mtb
+%%DATADIR%%/rexxcps.rexx
+%%DATADIR%%/timeconv.rexx
+@dirrm %%DATADIR%%
