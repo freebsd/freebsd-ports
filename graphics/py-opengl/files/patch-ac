@@ -1,32 +1,38 @@
 
 $FreeBSD$
 
---- togl_setup.py.orig	Wed Jan 10 14:43:40 2001
-+++ togl_setup.py	Mon Jan 22 13:28:56 2001
-@@ -52,14 +52,12 @@
-         library_dirs = config.togl_lib_dirs + [tk_dir]
-         runtime_library_dirs = None
-     else:
--        tcl_include_dir = os.path.join( tk.getvar('tcl_library'),
--                                        "../../include" )
--        tk_include_dir = os.path.join(tk.getvar('tk_library'),
--                                        "../../include" )
-+        tcl_include_dir = tk.getvar('tcl_library').replace('/lib/', '/include/')
-+        tk_include_dir = tk.getvar('tk_library').replace('/lib/', '/include/')
-         tcl_lib_dir = os.path.normpath(os.path.join(tk.getvar('tcl_library'),".."))
-         tk_lib_dir = os.path.normpath(os.path.join(tk.getvar('tk_library'),".."))
--        tcl_lib = "tcl" + tk.getvar('tcl_version')
--        tk_lib = "tk" + tk.getvar('tk_version')
-+        tcl_lib = "tcl" + string.replace(tk.getvar('tcl_version'),".","")
-+        tk_lib = "tk" + string.replace(tk.getvar('tk_version'),".","")
+--- setup/togl_setup.py	2003/01/14 17:31:36	1.1
++++ setup/togl_setup.py	2003/01/14 17:37:16
+@@ -40,7 +40,7 @@
+     sources = [os.path.join('src',Togl,'togl.c')]
  
-         # Where to find tcl.h, tk.h, OpenGL/Mesa headers, etc:
-         include_dirs = [os.path.join("src",Togl),
-@@ -102,6 +100,7 @@
+     include_dirs.append(os.path.join('src',Togl))
+-    include_dirs.append(os.path.join(tk.getvar('tk_library'), '..', '..', 'include'))
++    include_dirs.append(tk.getvar('tk_library').replace('/lib/', '/include/'))
+ 
+     lib_dirs.append(os.path.normpath(os.path.join(tk.getvar('tk_library'), '..')))
+ 
+@@ -53,12 +53,12 @@
+         libs.append('tcl' + string.replace(tk.getvar('tcl_version'), '.', ''))
+         libs.append('tk' + string.replace(tk.getvar('tk_version'), '.', ''))
+     else:
+-        include_dirs.append(os.path.normpath(os.path.join(tk.getvar('tcl_library'), '..', '..', 'include')))
++        include_dirs.append(tk.getvar('tcl_library').replace('/lib/', '/include/'))
+ 
+         lib_dirs.append(os.path.normpath(os.path.join(tk.getvar('tcl_library'), '..')))
+ 
+-        libs.append('tcl' + tk.getvar('tcl_version'))
+-        libs.append('tk' + tk.getvar('tk_version'))
++        libs.append('tcl' + string.replace(tk.getvar('tcl_version'),'.',''))
++        libs.append('tk' + string.replace(tk.getvar('tk_version'),'.',''))
+ 
+     # rest of this function was inspired by build_ext.py , build_extensions() 
+     
+@@ -91,6 +91,7 @@
                              extra_postargs=extra_compile_args)
  
          # link all together
-+        extra_link_args = ["-Wl,-E"]
++	extra_link_args = ['-Wl,-E']
          build_ext.compiler.link_shared_object (
                  objects, 
                  output_filename,
