@@ -22,6 +22,8 @@ EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 
+IGNORE=		"openoffice-1.1 is preceding this port a while"
+
 SNAPDATE=	20041101
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
