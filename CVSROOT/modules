@@ -247,6 +247,7 @@ aleph		ports/lang/aleph
 alephone	ports/games/alephone
 alephone-data	ports/games/alephone-data
 alevt		ports/misc/alevt
+align		ports/textproc/align
 allegro		ports/devel/allegro
 altivore	ports/security/altivore
 amanda		ports/misc/amanda
