@@ -21,7 +21,6 @@ NO_BUILD=	# none
 OPTIONS=	BCMATH          "bc style precision math functions" off \
 		BZ2             "bzip2 library support" off \
 		CALENDAR        "calendar conversion support" off \
-		CRACK           "crack support" off \
 		CTYPE           "ctype functions" on \
 		CURL            "CURL support" off \
 		DBA             "dba support" off \
@@ -93,7 +92,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
 .include "${OPTIONSFILE}"
 .endif
 
-ALL_OPTIONS=	BCMATH BZ2 CALENDAR CRACK CTYPE CURL DBA DBASE DBX DIO \
+ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA DBASE DBX DIO \
 		DOM EXIF FILEPRO FRIBIDI FTP GD GETTEXT \
 		GMP HYPERWAVE ICONV IMAP INTERBASE LDAP MBSTRING MCRYPT \
 		MCVE MHASH MIME_MAGIC MING MNOGOSEARCH MSSQL MYSQL MYSQLI \
