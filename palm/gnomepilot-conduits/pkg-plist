@@ -1,6 +1,4 @@
 bin/mal-conduit-control-applet
-lib/gnome-pilot/conduits/libmal_conduit.a
 lib/gnome-pilot/conduits/libmal_conduit.so
-lib/gnome-pilot/conduits/libmal_conduit.so.0
 share/gnome/control-center/Peripherals/PalmPilot/Conduits/mal-conduit-control-applet.desktop
 share/gnome/gnome-pilot/conduits/mal.conduit

@@ -1,0 +1,11 @@
+--- mal-conduit/src/Makefile.in.orig	Wed Apr 19 05:21:56 2000
++++ mal-conduit/src/Makefile.in	Fri Apr 21 11:36:16 2000
+@@ -163,7 +163,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libmal_conduit_la_LDFLAGS = 
++libmal_conduit_la_LDFLAGS = -avoid-version
+ libmal_conduit_la_DEPENDENCIES =  ../mal/common/libmal_common.la \
+ ../mal/client/unix/libmal_client_unix.la \
+ ../mal/client/common/libmal_client_common.la
