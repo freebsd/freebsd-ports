@@ -81,6 +81,13 @@ do-extract:
 		@${CP} ${SYSDIR}/modules/ntfs/Makefile ${WRKDIR}/ntfs/Makefile.orig
 .endif
 	@(cd ${WRKDIR}; ${TAR} xzf ${DISTDIR}/${DISTFILES} )
+.if ${OSVERSION} > 500041
+# Guess a number when FreeBSD finished de __P
+	@(cd ${WRKDIR}; ${CP} cd9660_big5.diff cd9660_big5.diff.orig; \
+			${CP} msdos_big5.diff msdos_big5.diff.orig; \
+	${SED} -e 's/ __P(\(.*\))/\1/' msdos_big5.diff.orig > msdos_big5.diff; \
+	${SED} -e 's/ __P(\(.*\))/\1/' cd9660_big5.diff.orig > cd9660_big5.diff)
+.endif
 	@${SED} -e 's,@@PREFIX@@,${PREFIX},' ${FILESDIR}/big5fs.sh > ${WRKDIR}/big5fs.sh
 
 do-patch:
