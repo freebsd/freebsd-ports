@@ -13,4 +13,4 @@ EMACS_PORT_NAME=	emacs21
 RUN_DEPENDS=		${X11BASE}/lib/X11/fonts/local/monak12.pcf.gz:${PORTSDIR}/japanese/monafonts
 .endif
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
