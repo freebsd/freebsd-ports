@@ -89,6 +89,7 @@
     SUBDIR += libimg
     SUBDIR += libungif
     SUBDIR += libwmf
+    SUBDIR += linux-jpeg
     SUBDIR += linux_glide
     SUBDIR += linux_glx
     SUBDIR += linux_mesa
