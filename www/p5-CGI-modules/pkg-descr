@@ -3,9 +3,9 @@ These are the CGI:: modules for perl5, for use in writing CGI scripts.
 Online documentation of these modules as well as related modules (such
 as the earlier CGI.pm module)  can be found at:
 
-WWW: http://www-genome.wi.mit.edu/ftp/pub/software/WWW/CGIperl/
+WWW: http://stein.cshl.org/WWW/software/CGI::modules/
 
 Many examples of CGI scripts of various degrees of complexity can be
 found at:
 
-        http://www-genome.wi.mit.edu/WWW/examples/Ch9/
+        http://modperl.com:9000/WWW/examples/Ch9/
