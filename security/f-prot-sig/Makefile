@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	f-prot-sig
-PORTVERSION=	20040302
+PORTVERSION=	20040307
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.f-prot.com/pub/
-
-DISTFILES=	fp-def.zip \
-		macrdef2.zip
+DISTFILES=	fp-def.zip macrdef2.zip
 
 MAINTAINER=	tim@bishnet.net
 COMMENT=	F-Prot Antivirus Signatures
