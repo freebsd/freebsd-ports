@@ -1,0 +1,5 @@
+bin/fressh
+bin/fressh-add
+bin/fressh-agent
+bin/fressh-keygen
+sbin/fresshd

@@ -1,0 +1,10 @@
+FreSSH is a free implementation of the SSH communication protocol. 
+It is compact, modular, portable, and designed for security and
+performance.  It is a completely new implementation.  Unlike various
+other SSH implementations already available for Unix, it does not
+trace its ancestry to the original SSH code written by Tatu Ylonen. 
+FreSSH currently implements SSH protocol version 1.5, with extensions
+which offer enhanced security when both sides of a connection are
+running FreSSH.
+
+WWW: http://www.fressh.org/

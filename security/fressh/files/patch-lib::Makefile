@@ -1,0 +1,40 @@
+
+$FreeBSD$
+
+--- lib/Makefile	2001/04/18 15:56:18	1.1
++++ lib/Makefile	2001/04/18 15:56:44
+@@ -1,8 +1,8 @@
+ # $Id: Makefile,v 1.1 2001/04/18 15:56:18 root Exp root $
+ 
+ NOLINT = 1
+-DEBUG = -g
+-OPTIMIZE = -O2
++#DEBUG = -g
++#OPTIMIZE = -O2
+ LIB = ssh
+ NOPIC = 1
+ 
+@@ -10,9 +10,9 @@
+ .PATH:	${.CURDIR}/../transport
+ .PATH:	${.CURDIR}/../crypto
+ 
+-WARNINGS = -Wall -Wstrict-prototypes -Wmissing-prototypes \
+-           -Wpointer-arithmetic -Wreturn-type -Wwrite-strings \
+-	   -Wcast-qual -Wswitch -Werror # -Wshadow
++#WARNINGS = -Wall -Wstrict-prototypes -Wmissing-prototypes \
++#           -Wpointer-arithmetic -Wreturn-type -Wwrite-strings \
++#	   -Wcast-qual -Wswitch -Werror # -Wshadow
+ # DEFINES += -DUNSAFE_DEBUG
+ # DEFINES += -DFORCE_VALID_LOOPBACK_HOST_KEYS
+ # DEFINES += -DNO_CRC_AT_ALL
+@@ -20,8 +20,8 @@
+ 
+ INCLUDE	=  -I${.CURDIR}/.. -I${.CURDIR}/../transport -I${.CURDIR}/../crypto
+ 
+-CPPFLAGS = ${WARNINGS} ${INCLUDE} ${MEMDEBUG_INCLUDE}
+-CFLAGS = ${DEBUG} ${OPTIMIZE} ${CPPFLAGS}
++CPPFLAGS += ${WARNINGS} ${INCLUDE} ${MEMDEBUG_INCLUDE}
++CFLAGS += ${DEBUG} ${OPTIMIZE} ${CPPFLAGS}
+ 
+ OS_SRC = ssh_sys_bsd44+.c ssh_sys_posix.c
+ 

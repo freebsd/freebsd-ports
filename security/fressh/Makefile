@@ -1,0 +1,28 @@
+# New ports collection makefile for:	fressh
+# Date created:				25 July 2000
+# Whom:					Alistair G. Crooks <agc@netbsd.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	fressh
+PORTVERSION=	0.8.1
+CATEGORIES=	security
+MASTER_SITES=	http://www.fressh.org/
+
+MAINTAINER=	ports@FreeBSD.org
+
+USE_BZIP2=	yes
+
+.include <bsd.port.pre.mk>
+
+.if !exists(/usr/lib/libssl.a) || !exists(/usr/lib/libcrypto.a)
+.if exists(${LOCALBASE}/lib/libssl.a) && exists(${LOCALBASE}/lib/libcrypto.a)
+LIB_DEPENDS+=	ssl.1:${PORTSDIR}/security/openssl
+MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		RSAGLUE="-lrsaref -lRSAglue"
+.endif
+.endif
+
+.include <bsd.port.post.mk>
