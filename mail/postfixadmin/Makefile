@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfixadmin
-PORTVERSION=	1.5.4
+PORTVERSION=	2.0.2
 CATEGORIES=	mail
 MASTER_SITES=	http://high5.net/postfixadmin/download.php/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -32,7 +32,21 @@ post-patch:
 		${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
-		@${MKDIR} ${PREFIX}/www/postfixadmin
-		@${CP} -r ${WRKSRC}/* ${PREFIX}/www/postfixadmin/
+		@${MKDIR} ${PREFIX}/www/postfixadmin/VIRTUAL_VACATION
+		@${MKDIR} ${PREFIX}/www/postfixadmin/admin
+		@${MKDIR} ${PREFIX}/www/postfixadmin/languages
+		@${MKDIR} ${PREFIX}/www/postfixadmin/templates
+		@${MKDIR} ${PREFIX}/www/postfixadmin/users
+		@${INSTALL_DATA} ${WRKSRC}/*.TXT ${PREFIX}/www/postfixadmin
+		@${INSTALL_DATA} ${WRKSRC}/*.php ${PREFIX}/www/postfixadmin
+		@${INSTALL_DATA} ${WRKSRC}/*.png ${PREFIX}/www/postfixadmin
+		@${INSTALL_DATA} ${WRKSRC}/*.sample ${PREFIX}/www/postfixadmin
+		@${INSTALL_DATA} ${WRKSRC}/*.css ${PREFIX}/www/postfixadmin
+		@${INSTALL_DATA} ${WRKSRC}/VIRTUAL_VACATION/* ${PREFIX}/www/postfixadmin/VIRTUAL_VACATION
+		@${INSTALL_DATA} ${WRKSRC}/admin/* ${PREFIX}/www/postfixadmin/admin
+		@${INSTALL_DATA} ${WRKSRC}/admin/.ht* ${PREFIX}/www/postfixadmin/admin
+		@${INSTALL_DATA} ${WRKSRC}/languages/* ${PREFIX}/www/postfixadmin/languages
+		@${INSTALL_DATA} ${WRKSRC}/templates/* ${PREFIX}/www/postfixadmin/templates
+		@${INSTALL_DATA} ${WRKSRC}/users/* ${PREFIX}/www/postfixadmin/users
 
 .include <bsd.port.mk>
