@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	pyslsk
-PORTVERSION=	1.2.5
-PORTREVISION=	3
+PORTVERSION=	1.2.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/
 
 MAINTAINER=	shoesoft@gmx.net
-COMMENT=	"Client for SoulSeek filesharing system"
+COMMENT=	Client for SoulSeek filesharing system
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
