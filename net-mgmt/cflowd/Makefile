@@ -39,6 +39,6 @@ pre-everything:
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/cflowd.sh \
-		${PREFIX}/etc/rc.d/cflowd.sh.sample
+		${PREFIX}/etc/rc.d/cflowd-base.sh.sample
 
 .include <bsd.port.mk>
