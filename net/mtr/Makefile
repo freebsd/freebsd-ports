@@ -3,14 +3,14 @@
 # Date created:        12 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.3 1998/09/22 22:55:54 asami Exp $
+# $Id: Makefile,v 1.4 1998/11/04 03:47:08 jkoshy Exp $
 #
 
 DISTNAME=	mtr-0.28
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/
 
-MAINTAINER=	billf@chc-chimes.com
+MAINTAINER=	billf@FreeBSD.org
 
 LIB_DEPENDS=    gtk.1:${PORTSDIR}/x11-toolkits/gtk
 
