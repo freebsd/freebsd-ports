@@ -8,7 +8,7 @@
 PORTNAME=	ctwm
 PORTVERSION=	3.5.2c
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://slhp1.epfl.ch/public/ctwm/
+MASTER_SITES=	http://slpc1.epfl.ch/public/software/ctwm/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ctwm-images${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
