@@ -39,17 +39,16 @@ do-install:
 	@${INSTALL} -c -o ${SHAREOWN} -g ${SHAREGRP} -m 755  ${WRKDIR}/udbcsdk/lib/libudbc.la ${PREFIX}/lib
 	@${INSTALL} -c -o ${LIBOWN} -g ${LIBGRP} -m 755 ${WRKDIR}/udbcsdk/lib/libudbc.so ${PREFIX}/lib
 	@${LN} -f ${PREFIX}/lib/libudbc.so ${PREFIX}/lib/libudbc.so.3
-.if !defined(NOPORTSDOC)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 	@${INSTALL_DATA} ${WRKDIR}/udbcsdk/doc/udbc.doc ${PREFIX}/share/doc/${PORTNAME}
 	@${INSTALL_DATA} ${WRKDIR}/udbcsdk/doc/udbc.ini ${PREFIX}/share/doc/${PORTNAME}/udbc.ini.sample
 	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	@${INSTALL_DATA} ${WRKDIR}/udbcsdk/examples/Makefile ${PREFIX}/share/examples/${PORTNAME}/Makefile
-	@${PERL} -pi -e "s,../,${PREFIX}/," ${PREFIX}/share/examples/${PORTNAME}/Makefile
+	@${SED} "s,../,${PREFIX}/," <${WRKDIR}/udbcsdk/examples/Makefile >${PREFIX}/share/examples/${PORTNAME}/Makefile
 	@${INSTALL_DATA} ${WRKDIR}/udbcsdk/examples/udbctest.c ${PREFIX}/share/examples/${PORTNAME}
 
 post-install:
-	@${CAT} pkg-message | ${SED} "s'PREFIX'${PREFIX}'"
+	@${SED} "s'PREFIX'${PREFIX}'" <pkg-message
 .endif
 
 .include <bsd.port.pre.mk>

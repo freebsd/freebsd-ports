@@ -12,10 +12,10 @@ lib/libudbc.la
 lib/libudbc.so
 @exec ln %D/lib/libudbc.so %D/lib/libudbc.so.3
 @unexec rm %D/lib/libudbc.so.3
-share/doc/libudbc/udbc.doc
-share/doc/libudbc/udbc.ini.sample
-share/examples/libudbc/Makefile
-share/examples/libudbc/udbctest.c
+%%PORTDOCS%%share/doc/libudbc/udbc.doc
+%%PORTDOCS%%share/doc/libudbc/udbc.ini.sample
+%%PORTDOCS%%share/examples/libudbc/Makefile
+%%PORTDOCS%%share/examples/libudbc/udbctest.c
 @dirrm include/udbc
-@dirrm share/doc/libudbc
-@dirrm share/examples/libudbc
+%%PORTDOCS%%@dirrm share/doc/libudbc
+%%PORTDOCS%%@dirrm share/examples/libudbc
