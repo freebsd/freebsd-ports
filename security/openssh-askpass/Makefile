@@ -26,7 +26,7 @@ DISTFILES+=	${IGNOREFILES}
 CVS_CMD?=	cvs -z3
 CVS_DATE=	Sun Feb 27 22:21:56 PST 2000
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
-CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
+CVS_SITES?=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
 		:pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs
 STAMPFILE=	${DISTDIR}/${PKGNAME}/.stamp
 WRKSRC=		${WRKDIR}/ssh-askpass
@@ -44,6 +44,9 @@ do-fetch:
 		unset CVS_RSH CVS_SERVER || ${TRUE}; \
 		if [ -n "${PORTS_CVS_RSH}" ]; then \
 			export CVS_RSH="${PORTS_CVS_RSH}"; \
+		fi; \
+		if [ -n "${PORTS_CVS_SERVER}" ]; then \
+			export CVS_SERVER="${PORTS_CVS_SERVER}"; \
 		fi; \
 		${MKDIR} ${DISTDIR}/${PKGNAME} && \
 		cd ${DISTDIR}/${PKGNAME}; \

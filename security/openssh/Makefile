@@ -27,7 +27,7 @@ CVS_CMD?=	cvs -z3
 CVS_DATE=	Tue Feb  1 02:19:07 EST 2000
 SED?=		/usr/bin/sed
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
-CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
+CVS_SITES?=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
 		:pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 .if defined(OPENSSL_RSAREF)
@@ -74,6 +74,9 @@ do-fetch:
 		unset CVS_RSH CVS_SERVER || ${TRUE}; \
 		if [ -n "${PORTS_CVS_RSH}" ]; then \
 			export CVS_RSH="${PORTS_CVS_RSH}"; \
+		fi; \
+		if [ -n "${PORTS_CVS_SERVER}" ]; then \
+			export CVS_SERVER="${PORTS_CVS_SERVER}"; \
 		fi; \
 		${MKDIR} ${DISTDIR}/${PKGNAME} && \
 		cd ${DISTDIR}/${PKGNAME}; \
