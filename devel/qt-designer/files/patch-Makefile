@@ -1,0 +1,16 @@
+--- Makefile	Wed Jan 31 21:29:35 2001
++++ Makefile.new	Sat Feb  3 20:21:49 2001
+@@ -25,11 +25,11 @@
+ 	-rm -f bin/moc
+ 	cp src/moc/moc bin/moc
+ 
+-sub-tools: sub-src FORCE
++sub-tools: FORCE
+ 	cd tools; $(MAKE)
+ 
+ symlinks: .buildopts
+-	@cd include; rm -f q*.h; ln -s $(QTDIR)/src/*/q*.h .; ln -s $(QTDIR)/extensions/*/src/q*.h .; rm -f q*_p.h
++	@cd include; rm -f q*.h; ln -s ../src/*/q*.h .; ln -s ../extensions/*/src/q*.h .; rm -f q*_p.h
+ 
+ sub-src: src-moc src-mt .buildopts FORCE
+ 	cd src; $(MAKE)

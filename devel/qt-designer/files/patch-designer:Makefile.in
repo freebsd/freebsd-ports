@@ -1,0 +1,17 @@
+--- tools/designer/Makefile.in	Wed Jan 31 21:29:47 2001
++++ tools/designer/Makefile.in.new	Sat Feb  3 20:04:32 2001
+@@ -5,13 +5,9 @@
+ #    Template: subdirs
+ #############################################################################
+ 
+-SUBDIRS =	util \
+-		uic \
+-		designer
++SUBDIRS =	designer
+ 
+ all:
+-	$(MAKE) util
+-	$(MAKE) uic
+ 	$(MAKE) designer
+ 
+ 

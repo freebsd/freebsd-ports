@@ -1,24 +1,6 @@
-diff -ur src/kernel/qfontdatabase.cpp src/kernel/qfontdatabase.cpp
---- src/kernel/qfontdatabase.cpp	Wed Oct  4 13:48:48 2000
-+++ src/kernel/qfontdatabase.cpp	Mon Oct  9 12:03:01 2000
-@@ -1280,9 +1280,15 @@
- 		(qstrcmp( encoding, "r" ) == 0 ||
- 		 qstrcmp( encoding, "1" ) == 0) ) {
- 	return QFont::KOI8R;
--    } else if ( strcmp( registry, "koi8" ) == 0 &&
-+    } else if ( qstrcmp( registry, "koi8" ) == 0 &&
- 		qstrcmp( encoding, "u" ) == 0) {
- 	return QFont::KOI8U;
-+    } else if ( qstrcmp( encoding, "cp1251" ) == 0 ||
-+  		 qstrcmp( encoding, "1251" ) == 0)  {
-+  	return QFont::CP_1251;
-+    } else if ( qstrcmp( encoding, "cp154" ) == 0 ||
-+  		 qstrcmp( encoding, "154" ) == 0)  {
-+  	return QFont::PT_154;
-     } else if ( qstrcmp( registry, "tscii" ) == 0 &&
- 		qstrcmp( encoding, "0" ) == 0 ) {
- 	return QFont::TSCII;
-@@ -1334,6 +1340,14 @@
+--- src/kernel/qfontdatabase.cpp	Wed Jan 31 21:26:40 2001
++++ src/kernel/qfontdatabase.cpp.new	Sat Feb  3 16:30:20 2001
+@@ -1343,6 +1343,14 @@
          return QFont::KOI8R;
      if ( name == "koi8-u" )
          return QFont::KOI8U;
@@ -33,53 +15,19 @@ diff -ur src/kernel/qfontdatabase.cpp src/kernel/qfontdatabase.cpp
      if ( name == "tis620-0" )
          return QFont::TIS620;
      if ( name == "tscii-0" )
-@@ -1380,6 +1394,10 @@
-         return "koi8-r";
-     case QFont::KOI8U:
-         return "koi8-u";
-+    case QFont::CP_1251:
-+        return "microsoft-cp1251";
-+    case QFont::PT_154:
-+        return "paratype-cp154";
-     case QFont::Unicode:
-         return "iso10646-1";
-     default:
-@@ -1448,11 +1466,17 @@
-         name = "French/Finnish/Euro(ISO 8859-15)";
-         break;
-     case QFont::KOI8R:
--        name = "Cyrillic (KOI8-R)";
-+        name = "Russian Cyrillic (KOI8-R)";
-         break;
-     case QFont::KOI8U:
--        name = "Ukrainian (KOI8-U)";
-+        name = "Ukrainian Cyrillic (KOI8-U)";
-         break;
-+    case QFont::CP_1251:
-+        name = "Windows Cyrillic (CP 1251)";
-+        break;
-+    case QFont::PT_154:
-+        name = "Asian Cyrillic (PT 154)";
-+	break;
-     case QFont::TSCII:
- 	name = "Tamil (TSCII)";
- 	break;
-@@ -1571,6 +1595,18 @@
+@@ -1598,13 +1606,13 @@
          sample += QChar(0x0436);
          sample += QChar(0x2560);
          break;
+-    case QFont::CP1251:
 +    case QFont::CP_1251:
-+ 	sample += QChar(0x0414);
-+ 	sample += QChar(0x0490);
-+ 	sample += QChar(0x040E);
-+ 	sample += QChar(0x20AC);
-+  	break;
+  	sample += QChar(0x0414);
+  	sample += QChar(0x0490);
+  	sample += QChar(0x040E);
+  	sample += QChar(0x20AC);
+   	break;
+-    case QFont::PT154:
 +    case QFont::PT_154:
-+ 	sample += QChar(0x0496);
-+ 	sample += QChar(0x04E8);
-+ 	sample += QChar(0x04D8);
-+ 	sample += QChar(0x04AE);
-+  	break;
-     case QFont::Unicode:
-         sample = "Aa";
-         sample += QChar(0x01A7); // Latin B
+  	sample += QChar(0x0496);
+  	sample += QChar(0x04E8);
+  	sample += QChar(0x04D8);

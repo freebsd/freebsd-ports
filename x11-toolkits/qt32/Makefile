@@ -5,18 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	qt
-PORTVERSION=	2.2.3
-PORTREVISION=	3
-CATEGORIES=	x11-toolkits
+PORTNAME?=	qt
+PORTVERSION?=	2.2.4
+CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 DISTNAME=	qt-x11-${PORTVERSION}
-
-.if exists(${X11BASE}/lib/libXft.so) && !defined(NO_AA)
-PATCHFILES=	qt-aa-${PORTVERSION}.diff.gz
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	will
-.endif
 
 MAINTAINER=	will@FreeBSD.org
 
@@ -26,25 +19,26 @@ LIB_DEPENDS=	mng.0:${PORTSDIR}/graphics/libmng \
 
 YES?=		/usr/bin/yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_MESA=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
-		-system-libmng -thread -no-opengl \
+		-system-libmng -thread \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV=	${YES} yes | QTDIR=${WRKSRC}
 .if defined(MAKE_JOBS)
 MAKE_ARGS+=	MAKE="${GMAKE} -j${MAKE_JOBS}"
-.else
-MAKE_ARGS+=	MAKE="${GMAKE} -j2"
 .endif
-MAKE_ENV=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib
+MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib
 
 CONFIG=		${WRKSRC}/configs/freebsd-g++-${STATIC}
 
 .if !defined(NOPORTDOCS)
+.if (${PORTNAME} == "qt")
 .include "${.CURDIR}/files/manpages"
+.endif
 .endif
 
 .if defined(WANT_STATIC)
@@ -68,30 +62,25 @@ pre-fetch:
 .endif
 
 pre-configure:
-	@${CP} ${CONFIG} ${CONFIG}.new
-	${SED} -e "s,gcc,${CC},g" -e "s,g\+\+,${CXX},g" -e "s,/usr/X11R6,${X11BASE},g" \
-		-e "s,-pipe -O2,${CXXFLAGS} -frerun-cse-after-loop,g" ${CONFIG}.new > ${CONFIG}
-.if exists(${X11BASE}/lib/libXft.so) && !defined(NO_AA)
-	@${CP} ${CONFIG} ${CONFIG}.new
-	${SED} -e "s,= -lXext,= -lXft -lXext,g" -e "s,QT= -I,QT= -DQT_XFT -I,g" \
-		${CONFIG}.new > ${CONFIG}
-.endif
-	${CP} ${WRKSRC}/src/Makefile.in ${WRKSRC}/src/Makefile.in.new
-	${SED} -e "s,VER_MAJ = 2,VER_MAJ = 4,g" -e "s,TARGET	= qt,TARGET = qt2,g" ${WRKSRC}/src/Makefile.in.new > ${WRKSRC}/src/Makefile.in
+	${PERL} -pi -e "s,gcc,${CC},g; s,g\+\+,${CXX},g; \
+			s,/usr/X11R6,${X11BASE},g; \
+			s,-pipe -O2,${CXXFLAGS} -frerun-cse-after-loop,g" ${CONFIG}
+	${PERL} -pi -e "s,VER_MAJ = 2,VER_MAJ = 4,g; \
+			s,TARGET	= qt,TARGET = qt2,g" ${WRKSRC}/src/Makefile.in
 	${PERL} -pi -e "s@TARGET\t= moc@TARGET = moc2@g" ${WRKSRC}/src/moc/Makefile.in
-	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.new
-	${SED} -e "s,rm -f bin/moc,rm -f  bin/moc2,g" -e "s,cp src/moc/moc bin/moc,cp src/moc/moc2 bin/moc2,g" \
-		-e "s,symlinks  src-moc src-mt sub-src sub-tools sub-tutorial sub-examples,symlinks src-moc src-mt sub-src sub-tools,g" \
-		${WRKSRC}/Makefile.new > ${WRKSRC}/Makefile
-	${PERL} -pi -e "s@-L../lib@-L${WRKSRC}/lib@g" ${WRKSRC}/tools/designer/uic/Makefile.in
+	${PERL} -pi -e "s,rm -f bin/moc,rm -f  bin/moc2,g; \
+			s,cp src/moc/moc bin/moc,cp src/moc/moc2 bin/moc2,g; \
+			s,symlinks  src-moc src-mt sub-src sub-tools sub-tutorial sub-examples,symlinks src-moc src-mt sub-src sub-tools,g" \
+		${WRKSRC}/Makefile
 
 post-configure:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks)
 
+# XXX: This target looks like crap now.
 do-install:
+.if (${PORTNAME} == "qt")
 	${MKDIR} ${PREFIX}/include/qt2
-	${MKDIR} ${PREFIX}/share/qt2/designer/templates
-.for BIN in designer moc2 uic
+.for BIN in moc2 uic
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${BIN} ${PREFIX}/bin
 .endfor
 .for SCRIPT in findtr qt20fix qtrename140
@@ -99,38 +88,41 @@ do-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/qt2
 .if !defined(WANT_STATIC)
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqt2.so.4 ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqt2-mt.so.4 ${PREFIX}/lib
+.for LIB in qt2 qt2-mt
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib${LIB}.so.4 ${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/lib${LIB}.so.4 ${PREFIX}/lib/lib${LIB}.so
+.endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libqutil.so.1 ${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libqt2-mt.so.4 ${PREFIX}/lib//libqt2-mt.so
-	${LN} -sf ${PREFIX}/lib/libqt2.so.4 ${PREFIX}/lib/libqt2.so
 	${LN} -sf ${PREFIX}/lib/libqutil.so.1 ${PREFIX}/lib/libqutil.so
 .else
 .for LIB in qt2 qutil
 	${INSTALL_DATA} ${WRKSRC}/lib/lib${LIB}.a ${PREFIX}/lib
 .endfor
 .endif
-	${INSTALL_DATA} ${WRKSRC}/tools/designer/templates/* \
-		${PREFIX}/share/qt2/designer/templates
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/qt2
-	(cd ${WRKSRC} ; \
-	${INSTALL_DATA} ANNOUNCE ${PREFIX}/share/doc/qt2 ; \
-	${INSTALL_DATA} FAQ ${PREFIX}/share/doc/qt2 ; \
-	${INSTALL_DATA} LICENSE.QPL ${PREFIX}/share/doc/qt2 ; \
-	${INSTALL_DATA} PORTING ${PREFIX}/share/doc/qt2 ; \
-	${INSTALL_DATA} README ${PREFIX}/share/doc/qt2 ; \
-	${INSTALL_DATA} README.QT ${PREFIX}/share/doc/qt2 ; \
-	( cd ${WRKSRC}/doc &&  ${TAR} -chf - html | \
-		${TAR} --unlink -xf - -C ${PREFIX}/share/doc/qt2 ) ; \
-	${INSTALL_MAN} doc/man/man3/q* ${PREFIX}/man/man3 )
+	${MKDIR} ${PREFIX}/share/doc/qt2/html
+.for FILE in ANNOUNCE FAQ PORTING README README.QT
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/share/doc/qt2
+.endfor
+.for SUFFIX in g1n html png
+	(for FILE in ${WRKSRC}/doc/html/*.${SUFFIX}; do \
+		${INSTALL_DATA} $$FILE ${PREFIX}/share/doc/qt2/html; done)
+.endfor
+.for FILE in index titleindex propertyindex whatsthis
+	${INSTALL_DATA} ${WRKSRC}/doc/html/${FILE} ${PREFIX}/share/doc/qt2/html
+.endfor
+	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/q* ${PREFIX}/man/man3
+.endif
 .endif
 
 .if defined(WANT_STATIC)
+.if (${PORTNAME} == "qt")
 post-install:
 	${CP} ${TMPPLIST} ${TMPPLIST}.new
-	${SED} -e "s/libqt2\/.so/libqt2\.a/" -e "s/.*libqt2\.a\.\d\n//" -e "s/libqutil\.so/libqutil.a/" \
-		-e "s/.*libqutil\.a\.\d\n//" ${TMPPLIST}.new > ${TMPPLIST}
+	${SED} -e "s/libqt2\/.so/libqt2\.a/" -e "s/.*libqt2\.a\.\d\n//" \
+		-e "s/libqutil\.so/libqutil.a/" -e "s/.*libqutil\.a\.\d\n//" \
+			${TMPPLIST}.new > ${TMPPLIST}
+.endif
 .endif
 
 .include <bsd.port.mk>

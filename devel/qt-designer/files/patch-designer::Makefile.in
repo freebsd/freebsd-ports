@@ -1,0 +1,11 @@
+--- tools/designer/designer/Makefile.in	Wed Jan 31 21:29:50 2001
++++ tools/designer/designer/Makefile.in.new	Sat Feb  3 20:41:04 2001
+@@ -14,7 +14,7 @@
+ 
+ ####### Target
+ 
+-DESTDIR = $(QTDIR)/bin/
++DESTDIR = ../../../bin/
+ VER_MAJ = 1
+ VER_MIN = 0
+ VER_PATCH = 0
