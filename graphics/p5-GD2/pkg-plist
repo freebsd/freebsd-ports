@@ -1,0 +1,8 @@
+lib/perl5/man/man3/GD.3.gz
+lib/perl5/site_perl/GD.pm
+lib/perl5/site_perl/auto/GD/autosplit.ix
+lib/perl5/site_perl/qd.pl
+lib/perl5/site_perl/i386-freebsd/auto/GD/GD.bs
+lib/perl5/site_perl/i386-freebsd/auto/GD/GD.so
+lib/perl5/site_perl/i386-freebsd/auto/GD/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/GD
