@@ -1,7 +1,10 @@
-lib/%%PYTHON_VERSION%%/site-packages/milter.so
 lib/%%PYTHON_VERSION%%/site-packages/Milter.py
 lib/%%PYTHON_VERSION%%/site-packages/Milter.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Milter.pyo
+lib/%%PYTHON_VERSION%%/site-packages/milter.so
 lib/%%PYTHON_VERSION%%/site-packages/mime.py
 lib/%%PYTHON_VERSION%%/site-packages/mime.pyc
 lib/%%PYTHON_VERSION%%/site-packages/mime.pyo
+lib/%%PYTHON_VERSION%%/site-packages/spf.py
+lib/%%PYTHON_VERSION%%/site-packages/spf.pyc
+lib/%%PYTHON_VERSION%%/site-packages/spf.pyo
