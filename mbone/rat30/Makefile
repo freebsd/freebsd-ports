@@ -20,6 +20,8 @@ USE_GMAKE=	yes
 MAN1=		rat.1
 MANCOMPRESSED=	no
 
+LATEST_LINK=	rat30
+
 do-build:
 	(cd ${WRKSRC};${SETENV} MAKE=${GMAKE} ${SH} ./Build rat)
 
