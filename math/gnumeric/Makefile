@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	0.67
-PORTREVISION=	1
+PORTVERSION=	0.68
 CATEGORIES?=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
@@ -16,7 +15,8 @@ MAINTAINER?=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
 		gnomeole2.0:${PORTSDIR}/devel/libole2 \
-		gbrun.0:${PORTSDIR}/lang/gnomebasic
+		gbrun.0:${PORTSDIR}/lang/gnomebasic \
+		giconv.2:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -37,5 +37,7 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC}/plugins/excel -name "*.[ch]" | xargs ${PERL} -pi -e \
+		's|iconv\.h|giconv.h|g'
 
 .include <bsd.port.mk>
