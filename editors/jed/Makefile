@@ -3,7 +3,7 @@
 # Date created:         22 APR 1997
 # Whom:                 eric
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 06:32:22 asami Exp $
+# $Id: Makefile,v 1.2 1997/06/08 12:55:02 asami Exp $
 #
 
 DISTNAME=       jed0.98-4
@@ -42,7 +42,7 @@ post-install:
 .endif
 	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib/jed/lib 
 	${INSTALL_DATA} ${WRKSRC}/info/jed.* ${PREFIX}/info
-	rmdir ${PREFIX}/lib/jed/info
+	-${RMDIR} ${PREFIX}/lib/jed/info
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/jed
 	${INSTALL_DATA} ${WRKSRC}/doc/README ${WRKSRC}/doc/*.txt \
