@@ -7,8 +7,12 @@
 
 PORTNAME=	kmldonkey
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	net kde
 MASTER_SITES=	http://www.gibreel.net/dump/
+
+RUN_DEPENDS=	\
+	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE integration for MLDonkey eDonkey P2P client
