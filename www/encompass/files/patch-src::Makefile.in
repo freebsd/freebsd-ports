@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/07/23 07:30:54	1.1
++++ src/Makefile.in	2001/07/23 07:31:09
+@@ -123,7 +123,7 @@
+ encompass_SOURCES = encompass.c config.h toolbar.c bookmarks.c bookmarks.h 		   menu.c menu.h toolbar.h html.c html.h prefs.c 		   prefs.h print.c print.h htmlurl.c htmlurl.h 		   history.h history.c search.c search.h full-screen.c 		full-screen.h			   io.c io.h io-jpg.c io-jpg.h io-png.c io-png.h
+ 
+ 
+-encompass_LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) 		$(INTLLIBS) $(EXTRA_GNOME_LIBS) 		$(NEON_LIBS) -lpthread -lz -ljpeg -lpng
++encompass_LDADD = $(GNOME_LIBDIR) $(GNOMEUI_LIBS) 		$(INTLLIBS) $(EXTRA_GNOME_LIBS) 		$(NEON_LIBS) -lz -ljpeg -lpng
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
