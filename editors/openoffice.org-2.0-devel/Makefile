@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES+=	editors
-MASTER_SITES+=	ftp://openofficeorg.secsup.org/pub/software/openoffice/stable/%SUBDIR%/ \
+MASTER_SITES+=	http://people.freebsd.org/~maho \
+		ftp://openofficeorg.secsup.org/pub/software/openoffice/stable/%SUBDIR%/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice.org/stable/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/stable/&,} \
 		http://www.binarycode.org/openoffice/stable/%SUBDIR%/ \
@@ -102,6 +102,7 @@ MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 .endif
 
+BROKEN=		"under construction"
 #
 # The JDK dependency needs to be at the first place, so all
 # following dependencies use the same JDK.
