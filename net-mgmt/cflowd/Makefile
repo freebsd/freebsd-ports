@@ -13,8 +13,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	andreas@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libArts.a:${PORTSDIR}/net/arts++
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_BISON=	yes
+
 CONFIGURE_ARGS+=--enable-shared --with-artspp=${PREFIX}
 
 MANL=		cfdases.l cfdifmatrix.l cfdnets.l cfdnexthops.l \
