@@ -1,14 +1,13 @@
---- locals_english.LRW/mkcommand.vst.orig	Tue Jan 13 13:52:13 1998
-+++ locals_english.LRW/mkcommand.vst	Wed Feb  4 11:52:40 1998
-@@ -1,9 +1,8 @@
-                                                                @ Tcl_7.3     @ Tcl_7.4     @ Tcl_7.5     @ Tcl_7.6     @ Tcl_8.0
--*** delete this line, rearrange following lines (see Installation.tex) @ mkcommand.9 @ mkcommand.9 @ mkcommand.9 @ mkcommand.9 @ mkcommand.9
-+high performancy (Tcl command used: pipe)                      @             @ mkcommand.7 @ mkcommand.7 @ mkcommand.7 @ mkcommand.7
-+high performancy (Tcl command used: open "|...|& cat" )        @             @ mkcommand.6 @ mkcommand.6 @ mkcommand.6 @ mkcommand.6
- high performancy (does not work under BSD based Unix)          @ mkcommand.3 @             @             @             @
- high performancy                                               @             @ mkcommand.3 @             @             @
--high performancy (Tcl command used: open "|...|& cat" )        @             @ mkcommand.6 @ mkcommand.6 @ mkcommand.6 @ mkcommand.6
--high performancy (Tcl command used: pipe)                      @             @ mkcommand.7 @ mkcommand.7 @ mkcommand.7 @ mkcommand.7
- efficient    (does not work under BSD based unix)              @ mkcommand.2 @ mkcommand.2 @             @             @
- less efficient if much output is to be displayed (all systems) @ mkcommand.1 @ mkcommand.1 @ mkcommand.1 @ mkcommand.1 @
- a permanent xterm window will be generated   (most systems)    @ mkcommand.4 @ mkcommand.4 @ mkcommand.4 @ mkcommand.4 @ mkcommand.4
+--- locals_english.LRW/mkcommand.vst.orig	Mon Jun 21 14:00:36 1999
++++ locals_english.LRW/mkcommand.vst	Fri Sep  3 10:44:24 1999
+@@ -1,8 +1,8 @@
+                                                                  @ Tcl_7.3     @ Tcl_7.4     @ Tcl_7.5     @ Tcl_7.6     @ Tcl_8.0     @ Tcl_8.1
++high performancy (Tcl command used: pipe)                        @             @ mkcommand.7 @ mkcommand.7 @ mkcommand.7 @ mkcommand.7 @ mkcommand.7
++high performancy (Tcl command used: open "|...|& cat" )          @             @ mkcommand.6 @ mkcommand.6 @ mkcommand.6 @ mkcommand.6 @ mkcommand.6
+ high performancy (does not work with BSD based Unix)             @ mkcommand.3 @             @             @             @             @
+ high performancy                                                 @             @ mkcommand.3 @             @             @             @
+-high performancy (Tcl command used: open "|...|& cat" )          @             @ mkcommand.6 @ mkcommand.6 @ mkcommand.6 @ mkcommand.6 @ mkcommand.6
+-high performancy (Tcl command used: pipe)                        @             @ mkcommand.7 @ mkcommand.7 @ mkcommand.7 @ mkcommand.7 @ mkcommand.7
+ efficient    (does not work under BSD based unix)                @ mkcommand.2 @ mkcommand.2 @             @             @             @
+ less efficient if much output is to be displayed (all systems)   @ mkcommand.1 @ mkcommand.1 @ mkcommand.1 @ mkcommand.1 @             @
+ a permanent xterm window will be generated   (most systems)      @ mkcommand.4 @ mkcommand.4 @ mkcommand.4 @ mkcommand.4 @ mkcommand.4 @ mkcommand.4

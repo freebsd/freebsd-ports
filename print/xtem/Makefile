@@ -1,14 +1,14 @@
 # New ports collection makefile for:   xtem
-# Version required:     6.18
+# Version required:     7.00
 # Date created:         01 June 1997
 # Whom:                 Peter Cornelius <pc@inr.fzk.de>
 #
 # $FreeBSD$
 
-DISTNAME=	xtem_texmenu.6.18
-PKGNAME=	xtem-6.18
+DISTNAME=	xtem_texmenu.7.00
+PKGNAME=	xtem-7.00
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem/xtem.v6/
+MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem.v7/
 
 MAINTAINER=     ports@FreeBSD.org
 
@@ -19,13 +19,13 @@ RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv \
 .endif
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
-MAN1=		xtem.1
+MAN1=		hyphen_show.1 xtem.1
 
 pre-extract:
 	@${CAT} ${FILESDIR}/makemsg.txt
 
 post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+	@${CP} ${FILESDIR}/Makefile ${FILESDIR}/exclude-list ${WRKSRC}
 
 post-patch:
 	@/usr/bin/perl -pi.bak -e "s|\@WISHX\@|${PREFIX}/bin/wishx|; \

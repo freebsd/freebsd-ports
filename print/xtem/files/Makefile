@@ -1,13 +1,18 @@
-all: changecode
+DIR=	${.CURDIR}
+
+all: changecode hyphen_show pages_show
 
 install: all
-	install -c -s -g bin -o bin -m 755 changecode ${PREFIX}/bin
-	install -c -g bin -o bin -m 755 xtem ${PREFIX}/bin
-	install -c -g bin -o bin -m 644 xtem.1 ${PREFIX}/man/man1
+	${BSD_INSTALL_PROGRAM} changecode ${PREFIX}/bin
+	${BSD_INSTALL_PROGRAM} hyphen_show ${PREFIX}/bin
+	${BSD_INSTALL_PROGRAM} pages_show ${PREFIX}/bin
+	${BSD_INSTALL_SCRIPT} xtem ${PREFIX}/bin
+	${BSD_INSTALL_MAN} hyphen_show.1 ${PREFIX}/man/man1
+	${BSD_INSTALL_MAN} xtem.1 ${PREFIX}/man/man1
 	@echo "Installing files into ${PREFIX}/share/xtem..."
 	@mkdir -p ${PREFIX}/share/xtem
 	@tar -cf - . | (cd ${PREFIX}/share/xtem; \
-	    tar -x --exclude *.orig --exclude *.bak --exclude changecode -f -)
+	    tar -x --exclude-from=${DIR}/exclude-list -f -)
 	@echo "Installing local files..."
 	@rm -rf ${PREFIX}/share/xtem_locals_english
 	@mv -f ${PREFIX}/share/xtem/locals_english.LRW ${PREFIX}/share/xtem_locals_english

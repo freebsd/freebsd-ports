@@ -1,4 +1,6 @@
 bin/changecode
+bin/hyphen_show
+bin/pages_show
 bin/xtem
 share/xtem/COPYING
 share/xtem/Changelog
@@ -14,7 +16,6 @@ share/xtem/SyntaxHelp_htx.tex
 share/xtem/ak.tcl
 share/xtem/bibliogr.tcl
 share/xtem/bv.tcl
-share/xtem/changecode.c
 share/xtem/dm.tcl
 share/xtem/ds.tcl
 share/xtem/dv.tcl
@@ -59,6 +60,7 @@ share/xtem/help_english/ev_h.hlp
 share/xtem/help_english/ev_syntaxhlp.hlp
 share/xtem/help_english/fs_chgmenu2.hlp
 share/xtem/help_english/fs_chgmenu3.hlp
+share/xtem/help_english/fs_edigrep.hlp
 share/xtem/help_english/fs_dirdisp2.hlp
 share/xtem/help_english/fs_dirdisp3.hlp
 share/xtem/help_english/fs_diredi3.hlp
@@ -351,6 +353,7 @@ share/xtem/help_english/latex/verse.dvi
 share/xtem/help_english/latex/verse.htx
 share/xtem/help_english/latex/verse.tex
 share/xtem/help_english/latex/verse.xbm.gz
+share/xtem/help_english/le_konflikt.hlp
 share/xtem/help_english/lv_filesel.hlp
 share/xtem/help_english/lv_grund.hlp
 share/xtem/help_english/lv_h.hlp
@@ -416,6 +419,7 @@ share/xtem/help_english/tv_loganlyz.hlp
 share/xtem/help_english/tv_maxlines.hlp
 share/xtem/help_english/tv_overfull.hlp
 share/xtem/help_english/tv_speich.hlp
+share/xtem/help_english/tv_texautost.hlp
 share/xtem/help_english/tv_texposth.hlp
 share/xtem/help_english/tv_undrfull.hlp
 share/xtem/help_english/ut_createdir.hlp
@@ -499,6 +503,7 @@ share/xtem/help_german/fs_dirdisp2.hlp
 share/xtem/help_german/fs_dirdisp3.hlp
 share/xtem/help_german/fs_diredi3.hlp
 share/xtem/help_german/fs_dirsel3.hlp
+share/xtem/help_german/fs_edigrep.hlp
 share/xtem/help_german/fs_edirdisp2.hlp
 share/xtem/help_german/fs_editdisp2.hlp
 share/xtem/help_german/fs_editdisp3.hlp
@@ -787,6 +792,7 @@ share/xtem/help_german/latex/verse.dvi
 share/xtem/help_german/latex/verse.htx
 share/xtem/help_german/latex/verse.tex
 share/xtem/help_german/latex/verse.xbm.gz
+share/xtem/help_german/le_konflikt.hlp
 share/xtem/help_german/lv_filesel.hlp
 share/xtem/help_german/lv_grund.hlp
 share/xtem/help_german/lv_h.hlp
@@ -852,6 +858,7 @@ share/xtem/help_german/tv_loganlyz.hlp
 share/xtem/help_german/tv_maxlines.hlp
 share/xtem/help_german/tv_overfull.hlp
 share/xtem/help_german/tv_speich.hlp
+share/xtem/help_german/tv_texautost.hlp
 share/xtem/help_german/tv_texposth.hlp
 share/xtem/help_german/tv_undrfull.hlp
 share/xtem/help_german/ut_createdir.hlp
@@ -893,11 +900,11 @@ share/xtem/help_german/z_loeschetf.hlp
 share/xtem/help_german/z_textfeld.hlp
 share/xtem/help_german/z_voreinst1.hlp
 share/xtem/help_german/z_vstquit.hlp
-share/xtem/hyphen_show.1
-share/xtem/hyphen_show.c
+share/xtem/hyphen_show.sort
 share/xtem/index.tcl
 share/xtem/iv.tcl
 share/xtem/le.tcl
+share/xtem/letter.tcl
 share/xtem/logfile.tcl
 share/xtem/lv.tcl
 share/xtem/mkcommand.0
@@ -911,13 +918,14 @@ share/xtem/mkcommand.7
 share/xtem/mkcommand.9
 share/xtem/mkcommand74ff.a
 share/xtem/mkcommand74ff.b
+share/xtem/mv.tcl
 share/xtem/newsfile.tcl
-share/xtem/pages_show.c
 share/xtem/preview.tcl
 share/xtem/printing.tcl
 share/xtem/process.tcl
 share/xtem/prt_dvijep.tcl
 share/xtem/prt_dvilj.tcl
+share/xtem/prt_dvilj4.tcl
 share/xtem/prt_dvips.tcl
 share/xtem/pv.tcl
 share/xtem/quick.tcl
@@ -937,34 +945,53 @@ share/xtem/tv.tcl
 share/xtem/ut.tcl
 share/xtem/utility.tcl
 share/xtem/xV.tcl
-share/xtem/xi.tcl
+share/xtem/xi1.tcl
+share/xtem/xi2.tcl
+share/xtem/xic.tcl
 share/xtem/xtem
-share/xtem/xtem.1
 share/xtem/xtem.tcl
 share/xtem/xtem_async
 share/xtem/xtem_prog
 share/xtem/xteminstall
 share/xtem/xv.tcl
+share/xtem/xtemletters-demo/ScriptAppendLine
+share/xtem/xtemletters-demo/ScriptDay
+share/xtem/xtemletters-demo/ScriptDayMonthYear
+share/xtem/xtemletters-demo/ScriptMonth
+share/xtem/xtemletters-demo/ScriptMonthYear
+share/xtem/xtemletters-demo/ScriptNameSpecifics
+share/xtem/xtemletters-demo/br_IWD.vst
+share/xtem/xtemletters-demo/br_QuickDirty.vst
+share/xtem/xtemletters-demo/letterhead.tex
 share/xtem_locals_english/bibtex.vst
 share/xtem_locals_english/cleanup.vst
 share/xtem_locals_english/editor.vst
 share/xtem_locals_english/hyphen.vst
 share/xtem_locals_english/index.vst
 share/xtem_locals_english/install.vst
+share/xtem_locals_english/letter.vst
 share/xtem_locals_english/local.news
-share/xtem_locals_english/loganalyze.vst
 share/xtem_locals_english/logform.vst
 share/xtem_locals_english/logsuffix.vst
 share/xtem_locals_english/mkcommand.vst
 share/xtem_locals_english/preview.vst
 share/xtem_locals_english/printing.vst
+share/xtem_locals_english/printing.vst-
+share/xtem_locals_english/printing.vst-Comment
+share/xtem_locals_english/printing.vst-Preamble
+share/xtem_locals_english/printing.vst-lp
+share/xtem_locals_english/printing.vst-lpjep
+share/xtem_locals_english/printing.vst-lpjep1
+share/xtem_locals_english/printing.vst-lpr
 share/xtem_locals_english/prt_dvijep.vst
 share/xtem_locals_english/prt_dvilj.vst
+share/xtem_locals_english/prt_dvilj4.vst
 share/xtem_locals_english/prt_dvips.vst
 share/xtem_locals_english/spellcheck.vst
 share/xtem_locals_english/suffix.vst
 share/xtem_locals_english/syntax.vst
 share/xtem_locals_english/texfmt.vst
+share/xtem_locals_english/texopts.vst
 share/xtem_locals_english/texsiz.vst
 share/xtem_locals_english/texsuffix.vst
 share/xtem_locals_english/utility.vst
@@ -975,6 +1002,7 @@ share/xtem_locals_german/editor.vst
 share/xtem_locals_german/hyphen.vst
 share/xtem_locals_german/index.vst
 share/xtem_locals_german/install.vst
+share/xtem_locals_german/letter.vst
 share/xtem_locals_german/letters.vst
 share/xtem_locals_german/local.news
 share/xtem_locals_german/loganalyze.vst
@@ -983,13 +1011,22 @@ share/xtem_locals_german/logsuffix.vst
 share/xtem_locals_german/mkcommand.vst
 share/xtem_locals_german/preview.vst
 share/xtem_locals_german/printing.vst
+share/xtem_locals_german/printing.vst-
+share/xtem_locals_german/printing.vst-Comment
+share/xtem_locals_german/printing.vst-Preamble
+share/xtem_locals_german/printing.vst-lp
+share/xtem_locals_german/printing.vst-lpjep
+share/xtem_locals_german/printing.vst-lpjep1
+share/xtem_locals_german/printing.vst-lpr
 share/xtem_locals_german/prt_dvijep.vst
 share/xtem_locals_german/prt_dvilj.vst
+share/xtem_locals_german/prt_dvilj4.vst
 share/xtem_locals_german/prt_dvips.vst
 share/xtem_locals_german/spellcheck.vst
 share/xtem_locals_german/suffix.vst
 share/xtem_locals_german/syntax.vst
 share/xtem_locals_german/texfmt.vst
+share/xtem_locals_german/texopts.vst
 share/xtem_locals_german/texsiz.vst
 share/xtem_locals_german/texsuffix.vst
 share/xtem_locals_german/utility.vst
@@ -1000,6 +1037,7 @@ share/xtem_locals_german/xtemstart.news
 @unexec rm -f %D/share/xtem/locals_english
 @dirrm share/xtem_locals_german
 @dirrm share/xtem_locals_english
+@dirrm share/xtem/xtemletters-demo
 @dirrm share/xtem/help_german/miscellaneous
 @dirrm share/xtem/help_german/latex
 @dirrm share/xtem/help_german
