@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.125 1998/06/29 19:47:30 max Exp $
+# $Id: Makefile,v 1.126 1998/06/29 22:10:12 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -112,6 +112,7 @@
     SUBDIR += ptex-sjis
     SUBDIR += qkc
     SUBDIR += recjis
+    SUBDIR += rxvt
     SUBDIR += sed
     SUBDIR += sj3
     SUBDIR += sjxa
