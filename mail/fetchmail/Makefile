@@ -3,7 +3,7 @@
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id: Makefile,v 1.47 1997/10/15 22:01:42 max Exp $
+# $Id: Makefile,v 1.48 1997/10/26 02:47:37 max Exp $
 #
 
 DISTNAME=       fetchmail-4.3.2
@@ -27,7 +27,7 @@ post-patch:
 	@${CP} -f  /usr/include/md5.h ${WRKSRC}
 
 post-install:
-	${INSTALL} -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${FDOC}
+	install -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${FDOC}
 	cd ${WRKSRC} && ${INSTALL_DATA} \
 	   sample.rcfile FAQ NOTES FEATURES README COPYING \
 	   fetchmail-FAQ.html fetchmail-features.html \
