@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distutils
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.python.org/sigs/distutils-sig/download/
 PKGNAMEPREFIX=	py-
