@@ -3,7 +3,7 @@
 # Date created:		August 13, 1997
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.5 1998/03/28 20:22:42 ache Exp $
+# $Id: Makefile,v 1.6 1998/03/28 20:53:22 asami Exp $
 
 DISTNAME=	WindowMaker-0.14.0
 PKGNAME=	windowmaker-0.14.0
@@ -19,8 +19,6 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 		png\\.2\\.:${PORTSDIR}/graphics/png \
 		tiff34\\.1:${PORTSDIR}/graphics/tiff34
-
-BROKEN=		build
 
 USE_X11=	yes
 USE_GMAKE=	yes
