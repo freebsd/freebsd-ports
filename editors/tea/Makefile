@@ -14,10 +14,6 @@ DISTNAME=		${PORTNAME}
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A simple and powerful GTK+ text editor
 
-.if defined(WITH_ASPELL)
-LIB_DEPENDS+=		aspell:${PORTSDIR}/textproc/aspell
-.endif
-
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_X_PREFIX=		yes
@@ -29,13 +25,16 @@ USE_GNOME=		gtk20
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-everything::
-.if !defined(WITH_ASPELL)
-	@${ECHO_MSG} "Define WITH_ASPELL to build with aspell support"
+OPTIONS=		ASPELL "Build with GNU aspell support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ASPELL)
+LIB_DEPENDS+=		aspell:${PORTSDIR}/textproc/aspell
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/tea/doc/|/doc/tea/|' \
 		${WRKSRC}/src/tea_defs.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
