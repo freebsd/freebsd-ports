@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/cob-config
 bin/cobc
 bin/cobpp
@@ -16,7 +17,7 @@ info/open-cobol.info
 @exec install-info %D/info/open-cobol.info %D/info/dir
 lib/libcob.a
 lib/libcob.so
-lib/libcob.so.0
+lib/libcob.so.1
 libdata/pkgconfig/cob.pc
 share/locale/ja/LC_MESSAGES/open-cobol.mo
 @dirrm include/libcob

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	open-cobol
-PORTVERSION=	0.10
+PORTVERSION=	0.12
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,21 +17,16 @@ COMMENT=	An open-source COBOL compiler
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		ltdl.1:${PORTSDIR}/devel/libtool \
-		gmp.6:${PORTSDIR}/math/libgmp4
+		gmp.6:${PORTSDIR}/math/libgmp4 \
+		ltdl.1:${PORTSDIR}/devel/libtool
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_REINPLACE=	yes
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-readline
 INSTALLS_SHLIB=	yes
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 .include <bsd.port.mk>
