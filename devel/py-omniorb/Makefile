@@ -27,7 +27,7 @@ USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	export
 INSTALLS_SHLIB=	yes
-WRKSRC=		${WRKDIR}/omni
+WRKSRC!=	cd ${.CURDIR}/../omniORB && ${MAKE} -V WRKSRC
 BUILD_WRKSRC=	${WRKSRC}/src/lib/omniORBpy
 MAKE_ENV+=	CDEBUGFLAGS="${CFLAGS}" CXXDEBUGFLAGS="${CXXFLAGS}" \
 		BSD_INSTALL="${INSTALL}" PYTHON_CMD="${PYTHON_CMD}" \
@@ -41,7 +41,6 @@ DOCDIR=		${PREFIX}/share/doc/omniORBpy
 EGDIR=		${PREFIX}/share/examples/omniORBpy
 
 post-extract:
-	@ ${CP} -pfR ${PORTSDIR}/devel/omniORB/work/omni ${WRKDIR}
 	@ ${MV} -f ${WRKDIR}/omniORBpy ${WRKSRC}/src/lib/
 
 do-install:
