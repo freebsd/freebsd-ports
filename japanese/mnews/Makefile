@@ -3,12 +3,12 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1996/10/27 06:16:35 max Exp $
+# $Id: Makefile,v 1.5 1996/11/02 03:04:49 max Exp $
 #
 
 DISTNAME=	mnews119
 PKGNAME=	jp-mnews-1.19.2
-CATEGORIES+=	japanese news
+CATEGORIES=	japanese news
 MASTER_SITES=	ftp://ftp.mei.co.jp/free/Network/news/readers/
 DISTFILES=	mnews119.tar.gz mnews119_119PL1.tar.gz mnews119PL1_PL2.tar.gz
 

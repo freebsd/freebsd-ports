@@ -3,12 +3,12 @@
 # Date created:		10 Aug 1996
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/20 10:27:37 asami Exp $
 #
 
 DISTNAME=	kinput2-v2-fix1
 PKGNAME=	jp-cskinput2-2.0.1
-CATEGORIES+=	japanese x11
+CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/
 
 MAINTAINER=	hidekazu@cs.titech.ac.jp

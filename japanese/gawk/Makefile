@@ -3,12 +3,12 @@
 # Date created:		5 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.6 1995/05/29 08:39:27 asami Exp $
+# $Id: Makefile,v 1.7 1996/06/26 22:13:52 gpalmer Exp $
 #
 
 DISTNAME=	gawk-2.15.6
 PKGNAME=	jp-gawk-2.15.6
-CATEGORIES+=	japanese
+CATEGORIES=	japanese
 MASTER_SITES=	ftp://gatekeeper.dec.com/pub/GNU/
 
 MAINTAINER=	asami@FreeBSD.ORG

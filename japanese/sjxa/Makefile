@@ -3,12 +3,12 @@
 # Date created:		10 Aug 1996
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/19 11:40:49 asami Exp $
+# $Id: Makefile,v 1.2 1996/09/19 04:38:42 asami Exp $
 #
 
 DISTNAME=	sjxa-1.5.11
 PKGNAME=	jp-sjxa-1.5.11
-CATEGORIES+=	japanese x11
+CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sony.co.jp/pub/unsupported/src/ \
 		ftp://ftp.cs.titech.ac.jp/pub/japanese/sj3/
 

@@ -3,12 +3,12 @@
 # Date created:		10 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1996/11/02 17:04:08 max Exp $
+# $Id: Makefile,v 1.3 1996/11/08 20:54:29 asami Exp $
 #
 
 DISTNAME=	VFlib-2.22
 PKGNAME=	jp-vflib-2.22
-CATEGORIES+=	japanese print
+CATEGORIES=	japanese print
 MASTER_SITES=	ftp://gull.se.hiroshima-u.ac.jp/pub/VFlib/
 DISTFILES=	VFlib-2.22.tar.gz watanabe-vf.tar.Z \
 		VFlib-2.22-PATCH-1 VFlib-2.22-PATCH-2

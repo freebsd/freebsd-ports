@@ -3,12 +3,12 @@
 # Date created:		8 August 1996
 # Whom:			Hidekazu Kuroki <hidekazu@cs.titech.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/19 11:56:49 asami Exp $
 #
 
 DISTNAME=	mule-2.3
 PKGNAME=	jp-smule-2.3
-CATEGORIES+=	japanese editors
+CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://etlport.etl.go.jp/pub/mule/ \
 		ftp://ftp.cs.buffalo.edu/pub/mule/ \
 		ftp://sh.wide.ad.jp/JAPAN/mule/ \

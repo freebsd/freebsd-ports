@@ -3,12 +3,12 @@
 # Date created:		7 June 1995
 # Whom:			Takashi Ogura <ogura@st.rim.or.jp>
 #
-# $Id: Makefile,v 1.5 1995/10/11 00:53:37 asami Exp $
+# $Id: Makefile,v 1.6 1996/09/19 04:38:17 asami Exp $
 #
 
 DISTNAME=	kon
 PKGNAME=	jp-kon-0994e
-CATEGORIES+=	japanese
+CATEGORIES=	japanese
 # note kon is only in first directory and fonts are only in second directory
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/linux-j/JE-sources/JE/ \
 		ftp://ftp.iij.ad.jp/pub/X/XFree86/XFree86/3.1.1/untarred/xc/fonts/bdf/misc/
