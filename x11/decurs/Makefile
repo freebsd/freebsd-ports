@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	decurs
-PORTVERSION=	0.50.0
+PORTVERSION=	0.50.1
 CATEGORIES=	x11
 MASTER_SITES=	http://www.hut.fi/~pvsavola/files/
 
