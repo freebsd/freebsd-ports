@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Apr 15 12:07:52 2002
-+++ Makefile.in	Mon Apr 15 12:12:07 2002
+--- Makefile.in.orig	Mon Sep  3 15:01:12 2001
++++ Makefile.in	Mon Apr 15 16:54:29 2002
 @@ -27,9 +27,9 @@
  prefix = @prefix@
  exec_prefix = @exec_prefix@
  # Pathname of directory to install the binary
 -BINDEST = @sbindir@
-+BINDIR = @bindir@
++BINDIR = @sbindir@
  # Pathname of directory to install the man page
 -MANDEST = @mandir@
 +MANDIR = @mandir@
