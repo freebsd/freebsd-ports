@@ -7,7 +7,7 @@
 
 PORTNAME=	MT
 PORTVERSION=	2.661
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 MASTER_SITES=	http://mtbook.net/download/
 DISTFILES=	MT-${PORTVERSION}-full-lib.new.tar.gz mt.diff mt.no-htmlarea.diff
@@ -38,8 +38,10 @@ post-extract:
 	@${MV} ${WRKDIR}/MT-${PORTVERSION}-full-lib/lib ${WRKDIR}/${CGIDIR}
 	@${MV} ${WRKDIR}/MT-${PORTVERSION}-full-lib/extlib ${WRKDIR}/${CGIDIR}
 	@${MV} ${WRKDIR}/MT-${PORTVERSION}-full-lib/*cgi ${WRKDIR}/${CGIDIR}
+	@${MV} ${WRKDIR}/MT-${PORTVERSION}-full-lib/mt-rebuild.pl ${WRKDIR}/MT-${PORTVERSION}-full-lib/plugins/mt-rebuild.pl
 	@${MV} ${WRKDIR}/MT-${PORTVERSION}-full-lib/* ${WRKDIR}/${DATADIR}
 	@${RMDIR} ${WRKDIR}/MT-${PORTVERSION}-full-lib
+	@${CHMOD} ${BINMODE} ${WRKDIR}/${CGIDIR}/*cgi
 
 do-install:
 	@${REINPLACE_CMD} -e 's/# PublishCharset Shift_JIS/PublishCharset UTF-8/g' \
