@@ -1,0 +1,19 @@
+share/gnome/stardict/dic/cdict-gb.dict.dz
+share/gnome/stardict/dic/cdict-gb.idx
+share/gnome/stardict/dic/cdict-gb.ifo
+share/gnome/stardict/dic/cedict-gb.dict.dz
+share/gnome/stardict/dic/cedict-gb.idx
+share/gnome/stardict/dic/cedict-gb.ifo
+share/gnome/stardict/dic/oxford-gb.dict.dz
+share/gnome/stardict/dic/oxford-gb.idx
+share/gnome/stardict/dic/oxford-gb.ifo
+share/gnome/stardict/dic/stardict1.3.dict.dz
+share/gnome/stardict/dic/stardict1.3.idx
+share/gnome/stardict/dic/stardict1.3.ifo
+share/gnome/stardict/dic/xdict-ce-gb.dict.dz
+share/gnome/stardict/dic/xdict-ce-gb.idx
+share/gnome/stardict/dic/xdict-ce-gb.ifo
+share/gnome/stardict/dic/xdict-ec-gb.dict.dz
+share/gnome/stardict/dic/xdict-ec-gb.idx
+share/gnome/stardict/dic/xdict-ec-gb.ifo
+@unexec rmdir %D/share/gnome/stardict/dic 2>/dev/null || true
