@@ -1,0 +1,13 @@
+Handy library for manipulating strings, string arrays, buffers, CGI forms,
+configuration files, textual templates, regular expressions, date
+and time conversions, et cetera.
+
+Handles base64, quoted-printable, url_encode, mime-words and other encoded data.
+
+Please have a look at strfunc(3) and other manual pages.
+
+WWW: http://www.spelio.net.ru/soft/
+
+-- 
+Lev Walkin
+vlm@spelio.net.ru
