@@ -43,8 +43,8 @@ pre-build:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/ddupcron.sh ${PREFIX}/sbin
-.if !defined(NOPORTSDOC)
-	@${MKDIR} ${PREFIX}/share/doc/ddup
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
