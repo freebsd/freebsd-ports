@@ -1,11 +1,21 @@
+%%FONTSDIR%%/10x20L2b.pcf.gz
+%%FONTSDIR%%/10x20L2m.pcf.gz
+%%FONTSDIR%%/10x20L3b.pcf.gz
+%%FONTSDIR%%/10x20L3m.pcf.gz
+%%FONTSDIR%%/10x20L9b.pcf.gz
+%%FONTSDIR%%/10x20L9m.pcf.gz
 %%FONTSDIR%%/10x20b.pcf.gz
 %%FONTSDIR%%/10x20m.pcf.gz
 %%FONTSDIR%%/10x20rkb.pcf.gz
 %%FONTSDIR%%/10x20rkm.pcf.gz
+%%FONTSDIR%%/ipa-10x20b.pcf.gz
+%%FONTSDIR%%/ipa-10x20m.pcf.gz
 %%FONTSDIR%%/k20b.pcf.gz
 %%FONTSDIR%%/k20m.pcf.gz
-share/doc/kappa20/README
-share/doc/kappa20/fonts.alias.kappa
+%%FONTSDIR%%/nk20b-1.pcf.gz
+%%FONTSDIR%%/vk20b.pcf.gz
+%%FONTSDIR%%/vk20m.pcf.gz
+share/doc/ja/kappa20/README.euc-jp
 @exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
