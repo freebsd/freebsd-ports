@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xephem
-PORTVERSION=	3.5.1
+PORTVERSION=	3.5.2
 CATEGORIES=	astro
 MASTER_SITES=	http://www.clearskyinstitute.com/xephem/ \
 		ftp://iraf.noao.edu/contrib/xephem/ \
