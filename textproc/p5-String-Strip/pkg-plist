@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Strip/Strip.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Strip/Strip.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Strip/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Strip/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String/Strip.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Strip
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/String 2>/dev/null || true
