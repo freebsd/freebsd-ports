@@ -8,7 +8,7 @@
 PORTNAME=	mono
 PORTVERSION=	1.0
 CATEGORIES=	lang
-MASTER_SITES=	http://mono2.ximian.com/archive/${PORTVERSION}/
+MASTER_SITES=	http://mono.ximian.com/archive/${PORTVERSION}/
 
 MAINTAINER=	coop9211@uidaho.edu
 COMMENT=	An open source implementation of .NET Development Framework
