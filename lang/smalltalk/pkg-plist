@@ -65,7 +65,6 @@ share/smalltalk/examples/Bench.st
 share/smalltalk/examples/Buffers.st
 share/smalltalk/examples/Case.st
 share/smalltalk/examples/CompFileSeg.st
-share/smalltalk/examples/DBFile.st
 share/smalltalk/examples/Debugger.st
 share/smalltalk/examples/Dinner.st
 share/smalltalk/examples/EditStream.st
@@ -83,9 +82,7 @@ share/smalltalk/examples/RecursLit.st
 share/smalltalk/examples/RegExp.st
 share/smalltalk/examples/Richards.st
 share/smalltalk/examples/SortCriter.st
-share/smalltalk/examples/Timer.st
 share/smalltalk/examples/Tokenizer.st
-share/smalltalk/examples/Watchdog.st
 share/smalltalk/examples/blox/Man.st
 share/smalltalk/examples/blox/Tetris.st
 share/smalltalk/examples/modules/gdbm-c.st
