@@ -1,0 +1,7 @@
+bin/cvschroot
+bin/cvsco
+bin/cvsdiff
+bin/cvsdiscard
+bin/cvspurge
+bin/cvsrmadm
+bin/cvsu
