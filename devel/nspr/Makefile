@@ -8,7 +8,8 @@
 PORTNAME=	nspr
 PORTVERSION=	4.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.mozilla.org/pub/nspr/releases/v${PORTVERSION}/src/
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
 
 MAINTAINER=	gnome@FreeBSD.org
 
