@@ -198,6 +198,7 @@
     SUBDIR += weblint
     SUBDIR += webredirect
     SUBDIR += webstone
+    SUBDIR += webstone-ssl
     SUBDIR += wml
     SUBDIR += wmnetselect
     SUBDIR += wn

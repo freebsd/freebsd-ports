@@ -1,0 +1,13 @@
+--- configure.in.orig	Fri Jun 16 05:55:49 2000
++++ configure.in	Fri Oct 27 15:15:36 2000
+@@ -79,8 +79,9 @@
+ # Replace `main' with a function in -lm:
+ AC_CHECK_LIB(m, floor)
+-AC_CHECK_LIB(nsl, gethostbyname)
+-AC_CHECK_LIB(socket, connect, AC_SUBST(LIBS), , -lnsl)
++#AC_CHECK_LIB(nsl, gethostbyname)
++#AC_CHECK_LIB(socket, connect, AC_SUBST(LIBS), , -lnsl)
++AC_CHECK_LIB(c, connect)
+ 
+ #
+ # checks for header files

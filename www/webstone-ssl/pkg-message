@@ -1,0 +1,16 @@
+
+Before running webstone make sure that the non-root user
+who runs webstone has rexec access to the webclients and
+the web server. This user must also have write access to
+/usr/local/webstone-ssl on webmaster and write access in
+the web data directory on the web server. Be aware of
+security risks!
+
+To run configure webstones, run it, and see the results:
+
+    cd /usr/local/webstone-ssl
+    ${EDITOR} conf/testbed
+    ./webstone -genfiles
+    ./webstone
+    ./webstone -results
+
