@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	png
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lib${PORTNAME}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
 PATCH_SITES=	${MASTER_SITES}
-PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-PATCHFILES=	libpng-1.2.6-patch-pngwutil.txt
-PATCH_DIST_STRIP= -p1
+#PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
+#PATCHFILES=
+#PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Library for manipulating PNG images
 
 MAKEFILE=       ${WRKSRC}/scripts/makefile.freebsd
-# "test" target not works after libpng-1.2.6-patch-pngwutil.txt
-ALL_TARGET=	all #test
+ALL_TARGET=	all test
 INSTALLS_SHLIB=	yes
 SHLIB_VER=	5
 
