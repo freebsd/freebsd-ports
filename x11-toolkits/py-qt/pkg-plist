@@ -3,7 +3,7 @@ bin/pyuic
 %%PYTHON_SITELIBDIR%%/pyqtconfig.py
 %%PYTHON_SITELIBDIR%%/qt.so
 %%PYTHON_SITELIBDIR%%/qtcanvas.so
-%%PYTHON_SITELIBDIR%%/qtgl.so
+%%GL%%%%PYTHON_SITELIBDIR%%/qtgl.so
 %%PYTHON_SITELIBDIR%%/qtnetwork.so
 %%PYTHON_SITELIBDIR%%/qtsql.so
 %%PYTHON_SITELIBDIR%%/qttable.so
@@ -190,10 +190,28 @@ share/sip/qt/versions.sip
 share/sip/qtcanvas/copying.sip
 share/sip/qtcanvas/qcanvas.sip
 share/sip/qtcanvas/qtcanvasmod.sip
-share/sip/qtgl/copying.sip
-share/sip/qtgl/qgl.sip
-share/sip/qtgl/qglcolormap.sip
-share/sip/qtgl/qtglmod.sip
+share/sip/qtext/qtextmod.sip
+share/sip/qtext/copying.sip
+share/sip/qtext/qextscintillaapis.sip
+share/sip/qtext/qextscintillabase.sip
+share/sip/qtext/qextscintilla.sip
+share/sip/qtext/qextscintillacommand.sip
+share/sip/qtext/qextscintillacommandset.sip
+share/sip/qtext/qextscintillalexer.sip
+share/sip/qtext/qextscintillalexercpp.sip
+share/sip/qtext/qextscintillalexercsharp.sip
+share/sip/qtext/qextscintillalexerhtml.sip
+share/sip/qtext/qextscintillalexeridl.sip
+share/sip/qtext/qextscintillalexerjava.sip
+share/sip/qtext/qextscintillalexerjavascript.sip
+share/sip/qtext/qextscintillalexerpython.sip
+share/sip/qtext/qextscintillalexersql.sip
+share/sip/qtext/qextscintillamacro.sip
+share/sip/qtext/qextscintillaprinter.sip
+%%GL%%share/sip/qtgl/copying.sip
+%%GL%%share/sip/qtgl/qgl.sip
+%%GL%%share/sip/qtgl/qglcolormap.sip
+%%GL%%share/sip/qtgl/qtglmod.sip
 share/sip/qtnetwork/copying.sip
 share/sip/qtnetwork/qdns.sip
 share/sip/qtnetwork/qftp.sip
@@ -235,7 +253,8 @@ share/sip/qtxml/qdom.sip
 share/sip/qtxml/qtxmlmod.sip
 @dirrm share/sip/qt
 @dirrm share/sip/qtcanvas
-@dirrm share/sip/qtgl
+@dirrm share/sip/qtext
+%%GL%%@dirrm share/sip/qtgl
 @dirrm share/sip/qtnetwork
 @dirrm share/sip/qtsql
 @dirrm share/sip/qttable
