@@ -29,6 +29,10 @@ MAKE_ARGS=	rcdir="${LOCALBASE}/etc/rc.d"
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-extract:
 	${MV} ${WRKSRC}/htdocs/index.html ${WRKSRC}/htdocs/index.html-dist
 
