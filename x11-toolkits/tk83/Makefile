@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.20 1998/12/13 08:49:14 asami Exp $
+# $Id: Makefile,v 1.21 1999/01/17 14:26:32 ejc Exp $
 #
 
 DISTNAME=	tk8.1b1
@@ -21,7 +21,7 @@ NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
-CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
+CONFIGURE_ENV=  PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk81.so.1
 PKGINSTALL=     ${PORTSDIR}/x11-toolkits/tk80/pkg/INSTALL.wish
 
 MAN1=	wish.1

@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Dec 11 18:38:40 1998
-+++ Makefile.in	Thu Jan 21 12:24:03 1999
+--- Makefile.in.orig	Fri Dec 11 17:38:40 1998
++++ Makefile.in	Sun Jan 24 16:16:06 1999
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -62,17 +62,13 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -387,16 +395,23 @@
- 		fi; \
+@@ -388,15 +396,22 @@
  	    done;
  	@echo "Installing $(TK_LIB_FILE)"
--	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
--	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
--	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
-+	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk81.so.1
-+	@ln -sf libtk81.so.1 $(LIB_INSTALL_DIR)/libtk81.so
-+	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk81.so.1)
-+	@chmod 555 $(LIB_INSTALL_DIR)/libtk81.so.1
+ 	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
++	@ln -sf $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk81.so
+ 	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
+ 	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
 +	@echo "Installing libtk81.a"
 +	@$(INSTALL_DATA) libtk81.a $(LIB_INSTALL_DIR)/libtk81.a
 +	@(cd $(LIB_INSTALL_DIR); $(RANLIB) libtk81.a)
