@@ -145,6 +145,7 @@
     SUBDIR += mpmf20
     SUBDIR += mpt
     SUBDIR += mq3
+    SUBDIR += musicbox
     SUBDIR += musicbrainz
     SUBDIR += mutemix
     SUBDIR += mxv
