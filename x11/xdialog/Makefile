@@ -7,26 +7,27 @@
 #
 
 PORTNAME=	xdialog
-PORTVERSION=	2.0.6
+PORTVERSION=	2.1.1
 CATEGORIES=	x11
-MASTER_SITES=	http://www.chez.com/godefroy/
+MASTER_SITES=	http://thgodef.nerim.net/xdialog/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.Org
 COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
 USE_BZIP2=	yes
-USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
+USE_GNOME=	gtk12
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	Xdialog.1
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-PLIST_DIRS=	DOCSDIR=${DOCSDIR}
-PLIST_SUB+=	${PLIST_DIRS:S,DIR=${PREFIX}/,DIR=,}
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's| install-docDATA||g'
 
 post-install:
 .if !defined(NOPORTDOCS)
