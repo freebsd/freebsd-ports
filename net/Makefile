@@ -259,6 +259,7 @@
     SUBDIR += sharity-light
     SUBDIR += sing
     SUBDIR += slirp
+    SUBDIR += smbfs
     SUBDIR += smbtcpdump
     SUBDIR += smm++
     SUBDIR += sniffit
