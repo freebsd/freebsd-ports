@@ -51,6 +51,7 @@
     SUBDIR += chgrep
     SUBDIR += clean_
     SUBDIR += clockspeed
+    SUBDIR += clockspeed-conf
     SUBDIR += cmdwatch
     SUBDIR += colorize
     SUBDIR += comconsole

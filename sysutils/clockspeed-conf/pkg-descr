@@ -1,0 +1,7 @@
+The clockspeed-conf package provides configuration
+scripts to set up a clockspeed client and/or a taiclockd
+server using Dan Bernstein's daemontools for supervision
+and his clockspeed package for time synchronisation.
+
+Author:	Patrick Atamaniuk <atamaniuk at frobs.net>
+WWW:	http://foo42.de/devel/sysutils/clockspeed-conf/

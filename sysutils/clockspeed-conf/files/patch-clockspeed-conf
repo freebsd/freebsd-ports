@@ -1,0 +1,10 @@
+--- clockspeed-conf.orig        Mon Apr 14 14:55:45 2003
++++ clockspeed-conf     Mon Apr 14 14:55:54 2003
+@@ -12,7 +12,7 @@
+ # and optionally ATTOFILE if not ETCDIR/atto
+ #
+ #
+-[ -z "${CLOCKSPEED_INSTALLATION}" ] && CLOCKSPEED_INSTALLATION="DJB"
++[ -z "${CLOCKSPEED_INSTALLATION}" ] && CLOCKSPEED_INSTALLATION="FreeBSD_PORT"
+ 
+ PATH=/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/command:${PATH}
