@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION=	4.69.1
+PORTVERSION=	4.70
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/  \
 		ftp://ftp.cert.dfn.de/pub/tools/admin/lsof/NEW/ \
 		ftp://ftp.tau.ac.il/pub/unix/admin/
-FIXUP_RELEASE=	yes
+#FIXUP_RELEASE=	yes
 .if defined(FIXUP_RELEASE)
 DISTNAME=	${PORTNAME}_4.70A.freebsd
 .else
@@ -37,6 +37,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 .else
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}
 .endif
+USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
@@ -56,8 +57,7 @@ post-extract:
 		${ECHO} "($$EXPMD5 != $$CALCMD5)" ; \
 		exit 1 ; \
 	fi ; \
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS:S/z//} ${SRCBALL_NAME}.tar \
-	${EXTRACT_AFTER_ARGS} \
+	${CAT} ${SRCBALL_NAME}.tar ${EXTRACT_AFTER_ARGS} \
 	)
 	@( cd ${WRKSRC} ; ${ECHO_CMD} "y" | ./Inventory || exit 1 )
 .endif
