@@ -203,6 +203,12 @@ MANL=	cbdsqr.l cgbbrd.l cgbcon.l cgbequ.l cgbmv.l cgbrfs.l cgbsv.l cgbsvx.l \
 
 .include <bsd.port.pre.mk>
 
+pre-fetch:
+	@${ECHO} "You can override FC and FFLAGS on the command line."
+.if !defined(ENABLE_TESTING) || ${ENABLE_TESTING} != "YES"
+	@${ECHO} "Set ENABLE_TESTING to YES to enable testing and timing."
+.endif
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/BLAS/SRC/libblas.* ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/SRC/liblapack.* ${PREFIX}/lib
