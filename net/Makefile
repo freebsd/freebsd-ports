@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.210 1998/12/24 06:56:35 steve Exp $
+# $Id: Makefile,v 1.211 1998/12/24 07:38:51 steve Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -143,6 +143,7 @@
     SUBDIR += tcpshow
     SUBDIR += tcptrace
     SUBDIR += telnetx
+    SUBDIR += tik
     SUBDIR += tintin++
     SUBDIR += tinyfugue
     SUBDIR += tkirc
