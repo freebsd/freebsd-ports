@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xclass
 
-MAINTAINER=	patrick@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ layout library for X
 
 USE_X_PREFIX=	yes
