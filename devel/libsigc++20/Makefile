@@ -7,6 +7,7 @@
 
 PORTNAME=	libsigc++
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -16,7 +17,9 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
+		pkg-config:${PORTSDIR}/devel/pkgconfig
+RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 USE_GMAKE=	yes
 LATEST_LINK=	libsigc++12
