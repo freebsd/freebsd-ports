@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lep
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	security
 MASTER_SITES=	http://members.optusnet.com.au/setagllib/
 
