@@ -1,0 +1,20 @@
+--- ../prc-tools-2.0/Makefile.in~	Tue Feb  8 04:37:04 2000
++++ ../prc-tools-2.0/Makefile.in	Fri Mar 24 10:07:03 2000
+@@ -31,7 +31,7 @@
+ all-host:
+ 	for dir in `echo $(host_subdirs) | sed -e 's/gcc//' -e 's/make//'`; do \
+ 	  if [ -f ./$${dir}/Makefile ]; then \
+-	    if (cd $${dir} && $(MAKE) all info); then true; else exit 1; fi; \
++	    if (cd $${dir} && $(MAKE) all); then true; else exit 1; fi; \
+ 	  fi; \
+ 	done
+ 
+@@ -50,7 +50,7 @@
+ install-host:
+ 	for dir in `echo $(host_subdirs) | sed -e 's/gcc//' -e 's/make//'`; do \
+ 	  if [ -f ./$${dir}/Makefile ]; then \
+-	    if (cd $${dir} && $(MAKE) install install-info); then true; else exit 1; fi; \
++	    if (cd $${dir} && $(MAKE) install); then true; else exit 1; fi; \
+ 	  fi; \
+ 	done
+ 
