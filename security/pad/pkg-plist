@@ -1,3 +1,5 @@
 bin/pad
+share/doc/pad/COPYING
 share/doc/pad/README
+share/doc/pad/ChangeLog
 @dirrm share/doc/pad
