@@ -16,6 +16,9 @@ MAINTAINER=	brian@Awfulhak.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
+.if defined(ENABLE_DEBUG)
+CONFIGURE_ARGS+=--enable-debug
+.endif
 MAN1=		hts.1 htc.1
 
 post-install:
