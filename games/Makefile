@@ -9,6 +9,7 @@
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
+    SUBDIR += abuse
     SUBDIR += abuse_sdl
     SUBDIR += acm
     SUBDIR += acorn
