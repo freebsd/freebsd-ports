@@ -102,6 +102,12 @@ pre-patch:
 post-patch:
 	@cd ${WRKSRC} \
 	&& find . -type f -name "*.orig" -print | xargs ${RM} -f
+	@${SED} 's#@@PREFIX@@#${PREFIX}#g' \
+		< ${WRKSRC}/src/modules/ssl/libssl.module \
+		> ${WRKSRC}/src/modules/ssl/libssl.module.NEW
+	@${MV} \
+		${WRKSRC}/src/modules/ssl/libssl.module.NEW \
+		${WRKSRC}/src/modules/ssl/libssl.module
 
 post-build:
 	@cd ${WRKSRC} \
