@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ich.bin.kein.hoschi.de/fpl/ \
 MAINTAINER=	d.marks@student.umist.ac.uk
 COMMENT=	An interpreted script/macro language
 
+BROKEN=		Does not fetch
+
 ALL_TARGET=
 
 .include <bsd.port.pre.mk>

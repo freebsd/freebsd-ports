@@ -15,6 +15,8 @@ MAINTAINER=	bdodson@scms.utmb.edu
 COMMENT=	\
  "This is nab (nucleic acid builder), a language for macromolecules"
 
+BROKEN=		Does not fetch
+
 BUILD_DEPENDS=	ucpp:${PORTSDIR}/devel/ucpp
 
 ONLY_FOR_ARCHS= i386
