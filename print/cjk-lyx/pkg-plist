@@ -27,9 +27,11 @@ share/locale/wa/LC_MESSAGES/lyx.mo
 share/lyx/CREDITS
 share/lyx/bind/broadway.bind
 share/lyx/bind/cua.bind
+share/lyx/bind/cyrkeys.bind
 share/lyx/bind/de_menus.bind
 share/lyx/bind/emacs.bind
 share/lyx/bind/fi_menus.bind
+share/lyx/bind/greekkeys.bind
 share/lyx/bind/hollywood.bind
 share/lyx/bind/latinkeys.bind
 share/lyx/bind/math.bind
@@ -79,6 +81,8 @@ share/lyx/doc/fr_Intro.lyx
 share/lyx/doc/fr_TOC.lyx
 share/lyx/doc/fr_Tutorial.lyx
 share/lyx/doc/fr_UserGuide.lyx
+share/lyx/doc/he_Intro.lyx
+share/lyx/doc/he_TOC.lyx
 share/lyx/doc/hu_Intro.lyx
 share/lyx/doc/hu_TOC.lyx
 share/lyx/doc/it_Customization.lyx
@@ -142,12 +146,14 @@ share/lyx/examples/eu_splash.lyx
 share/lyx/examples/example_lyxified.lyx
 share/lyx/examples/example_raw.lyx
 share/lyx/examples/fr_AlignementDecimal.lyx
+share/lyx/examples/fr_CV.lyx
 share/lyx/examples/fr_ExemplesTableaux.lyx
 share/lyx/examples/fr_ListesPuces.lyx
 share/lyx/examples/fr_Minipage.lyx
 share/lyx/examples/fr_MultiColonnes.lyx
 share/lyx/examples/fr_exemple_brut.lyx
 share/lyx/examples/fr_exemple_lyxifie.lyx
+share/lyx/examples/fr_mathed.lyx
 share/lyx/examples/fr_splash.lyx
 share/lyx/examples/hu_splash.lyx
 share/lyx/examples/iecc05.fen
@@ -182,6 +188,7 @@ share/lyx/images/banner.xpm
 share/lyx/images/buffer-close.xpm
 share/lyx/images/buffer-export_ascii.xpm
 share/lyx/images/buffer-export_latex.xpm
+share/lyx/images/buffer-new.xpm
 share/lyx/images/buffer-print.xpm
 share/lyx/images/buffer-update_dvi.xpm
 share/lyx/images/buffer-update_ps.xpm
@@ -233,6 +240,7 @@ share/lyx/kbd/arabic.kmap
 share/lyx/kbd/bg-bds-1251.kmap
 share/lyx/kbd/brazil.kmap
 share/lyx/kbd/brazil2.kmap
+share/lyx/kbd/cp1251.cdef
 share/lyx/kbd/czech-prg.kmap
 share/lyx/kbd/czech.kmap
 share/lyx/kbd/european.kmap
@@ -243,6 +251,7 @@ share/lyx/kbd/german-3.kmap
 share/lyx/kbd/german.kmap
 share/lyx/kbd/greek.kmap
 share/lyx/kbd/hebrew.kmap
+share/lyx/kbd/ibm866.cdef
 share/lyx/kbd/iso8859-1.cdef
 share/lyx/kbd/iso8859-15.cdef
 share/lyx/kbd/iso8859-2.cdef
@@ -251,7 +260,10 @@ share/lyx/kbd/iso8859-4.cdef
 share/lyx/kbd/iso8859-7.cdef
 share/lyx/kbd/iso8859-8.cdef
 share/lyx/kbd/iso8859-9.cdef
+share/lyx/kbd/koi8-r.cdef
 share/lyx/kbd/koi8-r.kmap
+share/lyx/kbd/koi8-t.cdef
+share/lyx/kbd/koi8-u.cdef
 share/lyx/kbd/koi8-u.kmap
 share/lyx/kbd/latvian.kmap
 share/lyx/kbd/magyar-2.kmap
@@ -291,6 +303,7 @@ share/lyx/layouts/article.layout
 share/lyx/layouts/book.layout
 share/lyx/layouts/broadway.layout
 share/lyx/layouts/chess.layout
+share/lyx/layouts/cl2emult.layout
 share/lyx/layouts/cv.layout
 share/lyx/layouts/db_lyxmacros.inc
 share/lyx/layouts/db_stdclass.inc
@@ -318,7 +331,6 @@ share/lyx/layouts/g-brief-en.layout
 share/lyx/layouts/heb-article.layout
 share/lyx/layouts/heb-letter.layout
 share/lyx/layouts/hollywood.layout
-share/lyx/layouts/iletter.layout
 share/lyx/layouts/kluwer.layout
 share/lyx/layouts/latex8.layout
 share/lyx/layouts/letter.layout
@@ -392,7 +404,6 @@ share/lyx/templates/docbook_article.lyx
 share/lyx/templates/g-brief-de.lyx
 share/lyx/templates/g-brief-en.lyx
 share/lyx/templates/hollywood.lyx
-share/lyx/templates/iletter.lyx
 share/lyx/templates/kluwer.lyx
 share/lyx/templates/latex8.lyx
 share/lyx/templates/letter.lyx
@@ -403,7 +414,6 @@ share/lyx/templates/slides.lyx
 share/lyx/tex/broadway.cls
 share/lyx/tex/cv.cls
 share/lyx/tex/hollywood.cls
-share/lyx/tex/iletter.cls
 share/lyx/tex/lyxchess.sty
 share/lyx/tex/lyxskak.sty
 share/lyx/tex/revtex.cls
