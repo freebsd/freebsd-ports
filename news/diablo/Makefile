@@ -16,6 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	xmake:${PORTSDIR}/devel/xmake
 
+USE_REINPLACE=	yes
+
 MAN5=		diablo-kp.5 diablo-files.5
 MAN8=		dicmd.8 didump.8 dexpireover.8 dfeedinfo.8 dgrpctl.8 \
 		dilookup.8 diloadfromspool.8 doutq.8 dreadart.8 \
@@ -28,10 +30,10 @@ post-extract:
 	${CP} ${SCRIPTDIR}/diablo.sh ${WRKDIR}
 
 do-configure:
-	${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKDIR}/diablo.sh ${WRKSRC}/XMakefile.inc
 .ifndef WITH_DES
-	${PERL} -pi -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
+	${REINPLACE_CMD} -e 's| -ldes||g' ${WRKSRC}/XMakefile.inc
 .endif
 
 do-build:
