@@ -29,6 +29,7 @@
     SUBDIR += ataidle
     SUBDIR += autopsy
     SUBDIR += bacula
+    SUBDIR += bacula-client
     SUBDIR += barry
     SUBDIR += battfink
     SUBDIR += bbapm
