@@ -1,6 +1,5 @@
 www/data.default/achievo/README
 www/data.default/achievo/achievotools.inc
-www/data.default/achievo/activitystats.inc
 www/data.default/achievo/atk.inc
 www/data.default/achievo/atk/atkbrowsertools.inc
 www/data.default/achievo/atk/atkconfigtools.inc
@@ -16,7 +15,9 @@ www/data.default/achievo/atk/attributes/class.atkdummyattribute.inc
 www/data.default/achievo/atk/attributes/class.atkdurationattribute.inc
 www/data.default/achievo/atk/attributes/class.atkemailattribute.inc
 www/data.default/achievo/atk/attributes/class.atkfileattribute.inc
+www/data.default/achievo/atk/attributes/class.atkflagattribute.inc
 www/data.default/achievo/atk/attributes/class.atklistattribute.inc
+www/data.default/achievo/atk/attributes/class.atkmultiselectattribute.inc
 www/data.default/achievo/atk/attributes/class.atknumberattribute.inc
 www/data.default/achievo/atk/attributes/class.atkparserattribute.inc
 www/data.default/achievo/atk/attributes/class.atkpasswordattribute.inc
@@ -28,23 +29,62 @@ www/data.default/achievo/atk/attributes/class.atkupdatestampattribute.inc
 www/data.default/achievo/atk/class.atknode.inc
 www/data.default/achievo/atk/class.layout.inc
 www/data.default/achievo/atk/db/class.atkdb.inc
+www/data.default/achievo/atk/db/class.atkddl.inc
 www/data.default/achievo/atk/db/class.atkmysqldb.inc
+www/data.default/achievo/atk/db/class.atkmysqlddl.inc
 www/data.default/achievo/atk/db/class.atkmysqlquery.inc
+www/data.default/achievo/atk/db/class.atkoci805db.inc
+www/data.default/achievo/atk/db/class.atkoci805query.inc
 www/data.default/achievo/atk/db/class.atkoci8db.inc
 www/data.default/achievo/atk/db/class.atkoci8query.inc
+www/data.default/achievo/atk/db/class.atkoci9db.inc
+www/data.default/achievo/atk/db/class.atkoci9query.inc
 www/data.default/achievo/atk/db/class.atkpgsqldb.inc
 www/data.default/achievo/atk/db/class.atkpgsqlquery.inc
 www/data.default/achievo/atk/db/class.atkquery.inc
 www/data.default/achievo/atk/defaultconfig.inc.php
+www/data.default/achievo/atk/images/arrow.gif
 www/data.default/achievo/atk/images/dummy.gif
-www/data.default/achievo/atk/javascript/class.atkdateattribute.js.php
+www/data.default/achievo/atk/images/lock.gif
+www/data.default/achievo/atk/images/lock_expired.gif
+www/data.default/achievo/atk/images/lock_head.gif
+www/data.default/achievo/atk/images/select_color_off.gif
+www/data.default/achievo/atk/images/select_color_on.gif
+www/data.default/achievo/atk/include/db.inc
+www/data.default/achievo/atk/javascript/calendar/calendar-runner.js
+www/data.default/achievo/atk/javascript/calendar/calendar.js
+www/data.default/achievo/atk/javascript/calendar/lang/brazilian_portuguese.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/calendar-ca.js
+www/data.default/achievo/atk/javascript/calendar/lang/calendar-el.js
+www/data.default/achievo/atk/javascript/calendar/lang/calendar-ro.js
+www/data.default/achievo/atk/javascript/calendar/lang/chinese.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/czech.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/danish.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/deutsch.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/english.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/finnish.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/french.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/hungarian.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/italian.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/nederlands.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/norwegian.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/russian.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/spanish.lng.js
+www/data.default/achievo/atk/javascript/calendar/lang/swedish.lng.js
+www/data.default/achievo/atk/javascript/class.atkdateattribute.js.inc
+www/data.default/achievo/atk/javascript/class.atkmanytoonerelation.js
 www/data.default/achievo/atk/javascript/class.atkprofileattribute.js.php
 www/data.default/achievo/atk/javascript/colorpicker.js
 www/data.default/achievo/atk/javascript/formfocus.js
+www/data.default/achievo/atk/javascript/formselect.js
 www/data.default/achievo/atk/javascript/formsubmit.js
 www/data.default/achievo/atk/javascript/newwindow.js
+www/data.default/achievo/atk/javascript/popup.js
+www/data.default/achievo/atk/javascript/xml.js
 www/data.default/achievo/atk/languages/brazilian_portuguese.lng
+www/data.default/achievo/atk/languages/chinese.lng
 www/data.default/achievo/atk/languages/czech.lng
+www/data.default/achievo/atk/languages/danish.lng
 www/data.default/achievo/atk/languages/deutsch.lng
 www/data.default/achievo/atk/languages/english.lng
 www/data.default/achievo/atk/languages/finnish.lng
@@ -55,10 +95,17 @@ www/data.default/achievo/atk/languages/nederlands.lng
 www/data.default/achievo/atk/languages/norwegian.lng
 www/data.default/achievo/atk/languages/russian.lng
 www/data.default/achievo/atk/languages/spanish.lng
+www/data.default/achievo/atk/languages/swedish.lng
+www/data.default/achievo/atk/lock/class.atkdummylock.inc
+www/data.default/achievo/atk/lock/class.atklock.inc
+www/data.default/achievo/atk/lock/db/install-mysql.sql
+www/data.default/achievo/atk/lock/db/install-oracle.sql
+www/data.default/achievo/atk/lock/lock.js.php
+www/data.default/achievo/atk/lock/lock.php
 www/data.default/achievo/atk/modules/atkmoduletools.inc
 www/data.default/achievo/atk/modules/class.atkmodule.inc
-www/data.default/achievo/atk/popups/colorpicker.php
-www/data.default/achievo/atk/popups/help.php
+www/data.default/achievo/atk/popups/colorpicker.inc
+www/data.default/achievo/atk/popups/help.inc
 www/data.default/achievo/atk/relations/class.atkmanyboolrelation.inc
 www/data.default/achievo/atk/relations/class.atkmanytomanyrelation.inc
 www/data.default/achievo/atk/relations/class.atkmanytoonerelation.inc
@@ -87,20 +134,28 @@ www/data.default/achievo/atk/themes/ananda/images/speck.gif
 www/data.default/achievo/atk/themes/ananda/images/topleft.gif
 www/data.default/achievo/atk/themes/ananda/images/topright.gif
 www/data.default/achievo/atk/themes/ananda/layout.inc
+www/data.default/achievo/atk/themes/ananda/login_bottom.tmpl
+www/data.default/achievo/atk/themes/ananda/login_top.tmpl
 www/data.default/achievo/atk/themes/blackbox/block_bottom.tmpl
 www/data.default/achievo/atk/themes/blackbox/block_top.tmpl
 www/data.default/achievo/atk/themes/blackbox/layout.inc
+www/data.default/achievo/atk/themes/blackbox/login_top.tmpl
 www/data.default/achievo/atk/themes/blurb/block_bottom.tmpl
 www/data.default/achievo/atk/themes/blurb/block_top.tmpl
 www/data.default/achievo/atk/themes/blurb/images/drop-bg.gif
 www/data.default/achievo/atk/themes/blurb/layout.inc
+www/data.default/achievo/atk/themes/blurb/login_top.tmpl
 www/data.default/achievo/atk/themes/default/block_bottom.tmpl
 www/data.default/achievo/atk/themes/default/block_top.tmpl
 www/data.default/achievo/atk/themes/default/images/help.gif
 www/data.default/achievo/atk/themes/default/images/required_field.gif
 www/data.default/achievo/atk/themes/default/layout.inc
+www/data.default/achievo/atk/themes/default/login_top.tmpl
+www/data.default/achievo/atk/themes/default/styles/atkdateattribute.css
 www/data.default/achievo/atk/themes/default/toolbar_icons/bold.gif
+www/data.default/achievo/atk/themes/default/toolbar_icons/delimiter.gif
 www/data.default/achievo/atk/themes/default/toolbar_icons/italic.gif
+www/data.default/achievo/atk/themes/default/toolbar_icons/link.gif
 www/data.default/achievo/atk/themes/default/toolbar_icons/underline.gif
 www/data.default/achievo/atk/themes/default/tree_icons/tree_collapse.gif
 www/data.default/achievo/atk/themes/default/tree_icons/tree_end.gif
@@ -116,36 +171,60 @@ www/data.default/achievo/atk/themes/default/tree_icons/tree_vertline.gif
 www/data.default/achievo/atk/themes/kuro5hin/block_bottom.tmpl
 www/data.default/achievo/atk/themes/kuro5hin/block_top.tmpl
 www/data.default/achievo/atk/themes/kuro5hin/layout.inc
+www/data.default/achievo/atk/themes/kuro5hin/login_top.tmpl
 www/data.default/achievo/atk/themes/moronic/block_bottom.tmpl
 www/data.default/achievo/atk/themes/moronic/block_top.tmpl
 www/data.default/achievo/atk/themes/moronic/layout.inc
+www/data.default/achievo/atk/themes/moronic/login_top.tmpl
+www/data.default/achievo/atk/themes/moronic/styles/atkdateattribute.css
 www/data.default/achievo/atk/themes/newsforge/block_bottom.tmpl
 www/data.default/achievo/atk/themes/newsforge/block_top.tmpl
 www/data.default/achievo/atk/themes/newsforge/images/speck.gif
 www/data.default/achievo/atk/themes/newsforge/layout.inc
+www/data.default/achievo/atk/themes/newsforge/login_top.tmpl
 www/data.default/achievo/atk/themes/outlook/block_bottom.tmpl
 www/data.default/achievo/atk/themes/outlook/block_top.tmpl
+www/data.default/achievo/atk/themes/outlook/images/add.gif
+www/data.default/achievo/atk/themes/outlook/images/admin.gif
 www/data.default/achievo/atk/themes/outlook/images/arrowdown.gif
 www/data.default/achievo/atk/themes/outlook/images/arrowup.gif
+www/data.default/achievo/atk/themes/outlook/images/blank.gif
 www/data.default/achievo/atk/themes/outlook/images/button_back.gif
 www/data.default/achievo/atk/themes/outlook/images/dark_back.gif
 www/data.default/achievo/atk/themes/outlook/images/delete.gif
 www/data.default/achievo/atk/themes/outlook/images/edit.gif
 www/data.default/achievo/atk/themes/outlook/images/handvat.gif
 www/data.default/achievo/atk/themes/outlook/images/help.gif
+www/data.default/achievo/atk/themes/outlook/images/keys.gif
 www/data.default/achievo/atk/themes/outlook/images/left.gif
 www/data.default/achievo/atk/themes/outlook/images/logout.gif
 www/data.default/achievo/atk/themes/outlook/images/main_structuur.gif
 www/data.default/achievo/atk/themes/outlook/images/publixheader.gif
 www/data.default/achievo/atk/themes/outlook/images/right.gif
+www/data.default/achievo/atk/themes/outlook/images/select.gif
+www/data.default/achievo/atk/themes/outlook/images/tab_back.gif
+www/data.default/achievo/atk/themes/outlook/images/tab_back_s.gif
+www/data.default/achievo/atk/themes/outlook/images/tab_left.gif
+www/data.default/achievo/atk/themes/outlook/images/tab_left_s.gif
+www/data.default/achievo/atk/themes/outlook/images/tab_right.gif
+www/data.default/achievo/atk/themes/outlook/images/tab_right_s.gif
+www/data.default/achievo/atk/themes/outlook/images/view.gif
 www/data.default/achievo/atk/themes/outlook/layout.inc
+www/data.default/achievo/atk/themes/outlook/login_top.tmpl
+www/data.default/achievo/atk/themes/outlook/styles/atkdateattribute.css
+www/data.default/achievo/atk/themes/outlook/tab_normal.tmpl
+www/data.default/achievo/atk/themes/outlook/tab_selected.tmpl
+www/data.default/achievo/atk/themes/outlook/tabs_bottom.tmpl
+www/data.default/achievo/atk/themes/outlook/tabs_top.tmpl
 www/data.default/achievo/atk/themes/outlook/tree_icons/tree_add.gif
 www/data.default/achievo/atk/themes/outlook/tree_icons/tree_collapse.gif
 www/data.default/achievo/atk/themes/outlook/tree_icons/tree_end.gif
 www/data.default/achievo/atk/themes/outlook/tree_icons/tree_end_minus.gif
 www/data.default/achievo/atk/themes/outlook/tree_icons/tree_end_plus.gif
 www/data.default/achievo/atk/themes/outlook/tree_icons/tree_expand.gif
+www/data.default/achievo/atk/themes/outlook/tree_icons/tree_extfile.gif
 www/data.default/achievo/atk/themes/outlook/tree_icons/tree_leaf.gif
+www/data.default/achievo/atk/themes/outlook/tree_icons/tree_leaf_link.gif
 www/data.default/achievo/atk/themes/outlook/tree_icons/tree_space.gif
 www/data.default/achievo/atk/themes/outlook/tree_icons/tree_split.gif
 www/data.default/achievo/atk/themes/outlook/tree_icons/tree_split_minus.gif
@@ -155,12 +234,14 @@ www/data.default/achievo/atk/themes/papered/block_bottom.tmpl
 www/data.default/achievo/atk/themes/papered/block_top.tmpl
 www/data.default/achievo/atk/themes/papered/images/square.gif
 www/data.default/achievo/atk/themes/papered/layout.inc
+www/data.default/achievo/atk/themes/papered/login_top.tmpl
 www/data.default/achievo/atk/themes/rainyd/block_bottom.tmpl
 www/data.default/achievo/atk/themes/rainyd/block_top.tmpl
 www/data.default/achievo/atk/themes/rainyd/images/comment.gif
 www/data.default/achievo/atk/themes/rainyd/images/drop-bg.gif
 www/data.default/achievo/atk/themes/rainyd/images/header-bg.gif
 www/data.default/achievo/atk/themes/rainyd/layout.inc
+www/data.default/achievo/atk/themes/rainyd/login_top.tmpl
 www/data.default/achievo/atk/themes/slash/block_bottom.tmpl
 www/data.default/achievo/atk/themes/slash/block_top.tmpl
 www/data.default/achievo/atk/themes/slash/images/cl.gif
@@ -169,53 +250,14 @@ www/data.default/achievo/atk/themes/slash/images/pix.gif
 www/data.default/achievo/atk/themes/slash/images/sl.gif
 www/data.default/achievo/atk/themes/slash/images/sr.gif
 www/data.default/achievo/atk/themes/slash/layout.inc
+www/data.default/achievo/atk/themes/slash/login_top.tmpl
+www/data.default/achievo/atk/utils/adodb-time.inc.php
 www/data.default/achievo/atkconf.inc
-www/data.default/achievo/billsetup.inc
-www/data.default/achievo/class.activity.inc
-www/data.default/achievo/class.base_dayview.inc
-www/data.default/achievo/class.base_monthview.inc
-www/data.default/achievo/class.base_weekview.inc
-www/data.default/achievo/class.calendar.inc
-www/data.default/achievo/class.contact.inc
-www/data.default/achievo/class.contracts.inc
-www/data.default/achievo/class.contracttype.inc
-www/data.default/achievo/class.costregistration.inc
-www/data.default/achievo/class.customer.inc
-www/data.default/achievo/class.dependencyattrib.inc
-www/data.default/achievo/class.employee.inc
-www/data.default/achievo/class.holidays.inc
-www/data.default/achievo/class.hours.inc
-www/data.default/achievo/class.hours_lock.inc
-www/data.default/achievo/class.phase.inc
-www/data.default/achievo/class.phase_activity.inc
-www/data.default/achievo/class.profile.inc
-www/data.default/achievo/class.project.inc
-www/data.default/achievo/class.project_notes.inc
-www/data.default/achievo/class.project_notesview.inc
-www/data.default/achievo/class.project_todoview.inc
-www/data.default/achievo/class.projectattrib.inc
-www/data.default/achievo/class.projectphaseattrib.inc
-www/data.default/achievo/class.schedule.inc
-www/data.default/achievo/class.schedule_types.inc
-www/data.default/achievo/class.todo.inc
-www/data.default/achievo/class.tpl_dependencyattrib.inc
-www/data.default/achievo/class.tpl_phase.inc
-www/data.default/achievo/class.tpl_phase_activity.inc
-www/data.default/achievo/class.tpl_project.inc
-www/data.default/achievo/class.tpl_project_phase.inc
-www/data.default/achievo/class.usercontracts.inc
-www/data.default/achievo/class.userprefs.inc
-www/data.default/achievo/class.weekreport.inc
 www/data.default/achievo/config.inc.php
 www/data.default/achievo/config.menu.inc
-www/data.default/achievo/config.nodes.inc
 www/data.default/achievo/contrib/README
 www/data.default/achievo/contrib/phase_convert.pl
-www/data.default/achievo/costreport.inc
 www/data.default/achievo/cron/README
-www/data.default/achievo/cron/timereg_check.php
-www/data.default/achievo/db/achievo_mysql.sql
-www/data.default/achievo/db/demo_mysql.sql
 www/data.default/achievo/dispatch.php
 www/data.default/achievo/doc/AUTHORS
 www/data.default/achievo/doc/CHANGES
@@ -226,18 +268,21 @@ www/data.default/achievo/doc/LICENSE
 www/data.default/achievo/doc/README
 www/data.default/achievo/doc/TODO
 www/data.default/achievo/doc/UPGRADE
-www/data.default/achievo/employeestats.inc
+www/data.default/achievo/graph.php
 www/data.default/achievo/help/english/help.hours.inc
-www/data.default/achievo/hoursurvey.inc
 www/data.default/achievo/images/arrow_down.gif
 www/data.default/achievo/images/arrow_right.gif
 www/data.default/achievo/images/stats_blue.png
 www/data.default/achievo/images/stats_red.gif
 www/data.default/achievo/images/stats_red50.gif
 www/data.default/achievo/images/trans.gif
+www/data.default/achievo/include.php
 www/data.default/achievo/index.php
+www/data.default/achievo/javascript/menuload.js
 www/data.default/achievo/languages/brazilian_portuguese.lng
+www/data.default/achievo/languages/chinese.lng
 www/data.default/achievo/languages/czech.lng
+www/data.default/achievo/languages/danish.lng
 www/data.default/achievo/languages/deutsch.lng
 www/data.default/achievo/languages/english.lng
 www/data.default/achievo/languages/finnish.lng
@@ -248,66 +293,196 @@ www/data.default/achievo/languages/nederlands.lng
 www/data.default/achievo/languages/norwegian.lng
 www/data.default/achievo/languages/russian.lng
 www/data.default/achievo/languages/spanish.lng
+www/data.default/achievo/languages/swedish.lng
 www/data.default/achievo/languages/unmaintained/README
 www/data.default/achievo/license.php
 www/data.default/achievo/logout.php
 www/data.default/achievo/manual.php
 www/data.default/achievo/manual/guide.html
 www/data.default/achievo/menu.php
+www/data.default/achievo/modules/calendar/class.base_dayview.inc
+www/data.default/achievo/modules/calendar/class.base_employeeview.inc
+www/data.default/achievo/modules/calendar/class.base_monthview.inc
+www/data.default/achievo/modules/calendar/class.base_weekview.inc
+www/data.default/achievo/modules/calendar/class.calendar.inc
+www/data.default/achievo/modules/calendar/class.holidays.inc
+www/data.default/achievo/modules/calendar/class.schedule.inc
+www/data.default/achievo/modules/calendar/class.schedule_attendee.inc
+www/data.default/achievo/modules/calendar/class.schedule_notes.inc
+www/data.default/achievo/modules/calendar/class.schedule_types.inc
+www/data.default/achievo/modules/calendar/install/install.inc
+www/data.default/achievo/modules/calendar/install/patch-2.inc
+www/data.default/achievo/modules/calendar/module.inc
+www/data.default/achievo/modules/calendar/pim.inc
+www/data.default/achievo/modules/class.achievomodule.inc
 www/data.default/achievo/modules/config.modules.inc
-www/data.default/achievo/modules/finance/billaddon.php
-www/data.default/achievo/modules/finance/class.bill.inc
-www/data.default/achievo/modules/finance/class.bill_line.inc
-www/data.default/achievo/modules/finance/class.currency.inc
-www/data.default/achievo/modules/finance/class.finance_customer.inc
-www/data.default/achievo/modules/finance/class.finance_project.inc
-www/data.default/achievo/modules/finance/class.rates.inc
-www/data.default/achievo/modules/finance/createbill.php
-www/data.default/achievo/modules/finance/generate_bill.php
-www/data.default/achievo/modules/finance/languages/english.lng
-www/data.default/achievo/modules/finance/languages/nederlands.lng
-www/data.default/achievo/modules/finance/module.inc
-www/data.default/achievo/modules/finance/skel/mysql.update
+www/data.default/achievo/modules/employee/class.accessright.inc
+www/data.default/achievo/modules/employee/class.employee.inc
+www/data.default/achievo/modules/employee/class.profile.inc
+www/data.default/achievo/modules/employee/class.usercontracts.inc
+www/data.default/achievo/modules/employee/class.userprefs.inc
+www/data.default/achievo/modules/employee/employeestats.inc
+www/data.default/achievo/modules/employee/install/install.inc
+www/data.default/achievo/modules/employee/module.inc
+www/data.default/achievo/modules/graph/attributes/class.datagraphattribute.inc
+www/data.default/achievo/modules/graph/attributes/class.graphattribute.inc
+www/data.default/achievo/modules/graph/jpgraph/QPL.txt
+www/data.default/achievo/modules/graph/jpgraph/jpgraph.php
+www/data.default/achievo/modules/graph/jpgraph/jpgraph_bar.php
+www/data.default/achievo/modules/graph/jpgraph/jpgraph_gantt.php
+www/data.default/achievo/modules/graph/jpgraph/jpgraph_gradient.php
+www/data.default/achievo/modules/graph/jpgraph/jpgraph_line.php
+www/data.default/achievo/modules/graph/jpgraph/jpgraph_pie.php
+www/data.default/achievo/modules/graph/module.inc
+www/data.default/achievo/modules/notes/class.project_notes.inc
+www/data.default/achievo/modules/notes/class.project_notesview.inc
+www/data.default/achievo/modules/notes/install/install.inc
+www/data.default/achievo/modules/notes/module.inc
+www/data.default/achievo/modules/organization/class.contact.inc
+www/data.default/achievo/modules/organization/class.contracts.inc
+www/data.default/achievo/modules/organization/class.contracttype.inc
+www/data.default/achievo/modules/organization/class.organization.inc
+www/data.default/achievo/modules/organization/install/install.inc
+www/data.default/achievo/modules/organization/install/patch-2.inc
+www/data.default/achievo/modules/organization/install/patch-3.inc
+www/data.default/achievo/modules/organization/module.inc
+www/data.default/achievo/modules/person/class.person.inc
+www/data.default/achievo/modules/person/class.select_person.inc
+www/data.default/achievo/modules/person/install/install.inc
+www/data.default/achievo/modules/person/module.inc
+www/data.default/achievo/modules/pim/class.pim.inc
+www/data.default/achievo/modules/pim/install/install.inc
+www/data.default/achievo/modules/pim/module.inc
+www/data.default/achievo/modules/project/activitystats.inc
+www/data.default/achievo/modules/project/attributes/class.dependencyattrib.inc
+www/data.default/achievo/modules/project/attributes/class.filterprojectbyorganizationattrib.inc
+www/data.default/achievo/modules/project/attributes/class.phasetemplateattribute.inc
+www/data.default/achievo/modules/project/attributes/class.projectattrib.inc
+www/data.default/achievo/modules/project/attributes/class.projectphaseattrib.inc
+www/data.default/achievo/modules/project/attributes/class.projecttemplateattribute.inc
+www/data.default/achievo/modules/project/attributes/class.timecountattribute.inc
+www/data.default/achievo/modules/project/attributes/class.tpl_dependencyattrib.inc
+www/data.default/achievo/modules/project/class.activity.inc
+www/data.default/achievo/modules/project/class.dependency.inc
+www/data.default/achievo/modules/project/class.phase.inc
+www/data.default/achievo/modules/project/class.phase_activity.inc
+www/data.default/achievo/modules/project/class.project.inc
+www/data.default/achievo/modules/project/class.project_personcontact.inc
+www/data.default/achievo/modules/project/class.project_personemployee.inc
+www/data.default/achievo/modules/project/class.projectstats.inc
+www/data.default/achievo/modules/project/class.role.inc
+www/data.default/achievo/modules/project/class.select_contact.inc
+www/data.default/achievo/modules/project/class.tpl_dependency.inc
+www/data.default/achievo/modules/project/class.tpl_phase.inc
+www/data.default/achievo/modules/project/class.tpl_phase_activity.inc
+www/data.default/achievo/modules/project/class.tpl_project.inc
+www/data.default/achievo/modules/project/class.tpl_project_phase.inc
+www/data.default/achievo/modules/project/ganttchart.php
+www/data.default/achievo/modules/project/install/install.inc
+www/data.default/achievo/modules/project/module.inc
+www/data.default/achievo/modules/project/projectstats.inc
+www/data.default/achievo/modules/reports/class.hoursurvey.inc
+www/data.default/achievo/modules/reports/class.weekreport.inc
+www/data.default/achievo/modules/reports/install/install.inc
+www/data.default/achievo/modules/reports/module.inc
+www/data.default/achievo/modules/search/class.search.inc
+www/data.default/achievo/modules/search/install/install.inc
+www/data.default/achievo/modules/search/module.inc
+www/data.default/achievo/modules/setup/class.dbsequence.inc
+www/data.default/achievo/modules/setup/class.setup.inc
+www/data.default/achievo/modules/setup/class.versioninfo.inc
+www/data.default/achievo/modules/setup/install/install.inc
+www/data.default/achievo/modules/setup/module.inc
+www/data.default/achievo/modules/timereg/class.hours.inc
+www/data.default/achievo/modules/timereg/class.hours_lock.inc
+www/data.default/achievo/modules/timereg/cron/reminder.cron
+www/data.default/achievo/modules/timereg/install/install.inc
+www/data.default/achievo/modules/timereg/module.inc
+www/data.default/achievo/modules/timereg/pim.inc
+www/data.default/achievo/modules/todo/class.project_todoview.inc
+www/data.default/achievo/modules/todo/class.todo.inc
+www/data.default/achievo/modules/todo/class.todo_history.inc
+www/data.default/achievo/modules/todo/cron/reminder.cron
+www/data.default/achievo/modules/todo/install/install.inc
+www/data.default/achievo/modules/todo/module.inc
+www/data.default/achievo/modules/todo/pim.inc
+www/data.default/achievo/modules/utils/attributes/class.fuzzysearchattribute.inc
+www/data.default/achievo/modules/utils/module.inc
 www/data.default/achievo/nondays.inc
-www/data.default/achievo/projectbilling.inc
-www/data.default/achievo/projectplanning.inc
-www/data.default/achievo/projectstats.inc
+www/data.default/achievo/runcron
 www/data.default/achievo/scheduler/view_scheduler_item.inc
+www/data.default/achievo/setup.php
 www/data.default/achievo/style.php
 www/data.default/achievo/theme.inc
 www/data.default/achievo/themes/achievo/block_bottom.tmpl
 www/data.default/achievo/themes/achievo/block_top.tmpl
 www/data.default/achievo/themes/achievo/layout.inc
+www/data.default/achievo/themes/achievo/login_top.tmpl
 www/data.default/achievo/themes/achievo_classic/block_bottom.tmpl
 www/data.default/achievo/themes/achievo_classic/block_top.tmpl
 www/data.default/achievo/themes/achievo_classic/images/misc_lines.gif
 www/data.default/achievo/themes/achievo_classic/images/pijl.gif
 www/data.default/achievo/themes/achievo_classic/images/trans.gif
 www/data.default/achievo/themes/achievo_classic/layout.inc
+www/data.default/achievo/themes/achievo_classic/login_top.tmpl
 www/data.default/achievo/top.php
 www/data.default/achievo/upgrade/README
-www/data.default/achievo/upgrade/convert-0.4-to-0.6.php
-www/data.default/achievo/upgrade/convert-0.6-to-0.8.sql
+www/data.default/achievo/upgrade/convert-0.4-to-0.6.inc
+www/data.default/achievo/upgrade/convert-0.6-to-0.8.inc
+www/data.default/achievo/upgrade/convert-0.8-to-0.9.inc
+www/data.default/achievo/upgrade/convert-0.9-to-0.9.1.inc
+www/data.default/achievo/upgrade/convert-0.9.1-to-0.9.2.inc
+www/data.default/achievo/version.inc
 @dirrm www/data.default/achievo/upgrade
 @dirrm www/data.default/achievo/themes/achievo_classic/images
 @dirrm www/data.default/achievo/themes/achievo_classic
 @dirrm www/data.default/achievo/themes/achievo
 @dirrm www/data.default/achievo/themes
 @dirrm www/data.default/achievo/scheduler
-@dirrm www/data.default/achievo/modules/finance/skel
-@dirrm www/data.default/achievo/modules/finance/languages
-@dirrm www/data.default/achievo/modules/finance
+@dirrm www/data.default/achievo/modules/utils/attributes
+@dirrm www/data.default/achievo/modules/utils
+@dirrm www/data.default/achievo/modules/todo/install
+@dirrm www/data.default/achievo/modules/todo/cron
+@dirrm www/data.default/achievo/modules/todo
+@dirrm www/data.default/achievo/modules/timereg/install
+@dirrm www/data.default/achievo/modules/timereg/cron
+@dirrm www/data.default/achievo/modules/timereg
+@dirrm www/data.default/achievo/modules/setup/install
+@dirrm www/data.default/achievo/modules/setup
+@dirrm www/data.default/achievo/modules/search/install
+@dirrm www/data.default/achievo/modules/search
+@dirrm www/data.default/achievo/modules/reports/install
+@dirrm www/data.default/achievo/modules/reports
+@dirrm www/data.default/achievo/modules/project/install
+@dirrm www/data.default/achievo/modules/project/attributes
+@dirrm www/data.default/achievo/modules/project
+@dirrm www/data.default/achievo/modules/pim/install
+@dirrm www/data.default/achievo/modules/pim
+@dirrm www/data.default/achievo/modules/person/install
+@dirrm www/data.default/achievo/modules/person
+@dirrm www/data.default/achievo/modules/organization/install
+@dirrm www/data.default/achievo/modules/organization
+@dirrm www/data.default/achievo/modules/notes/install
+@dirrm www/data.default/achievo/modules/notes
+@dirrm www/data.default/achievo/modules/graph/jpgraph
+@dirrm www/data.default/achievo/modules/graph/attributes
+@dirrm www/data.default/achievo/modules/graph
+@dirrm www/data.default/achievo/modules/employee/install
+@dirrm www/data.default/achievo/modules/employee
+@dirrm www/data.default/achievo/modules/calendar/install
+@dirrm www/data.default/achievo/modules/calendar
 @dirrm www/data.default/achievo/modules
 @dirrm www/data.default/achievo/manual
 @dirrm www/data.default/achievo/languages/unmaintained
 @dirrm www/data.default/achievo/languages
+@dirrm www/data.default/achievo/javascript
 @dirrm www/data.default/achievo/images
 @dirrm www/data.default/achievo/help/english
 @dirrm www/data.default/achievo/help
 @dirrm www/data.default/achievo/doc
-@dirrm www/data.default/achievo/db
 @dirrm www/data.default/achievo/cron
 @dirrm www/data.default/achievo/contrib
+@dirrm www/data.default/achievo/atk/utils
 @dirrm www/data.default/achievo/atk/themes/slash/images
 @dirrm www/data.default/achievo/atk/themes/slash
 @dirrm www/data.default/achievo/atk/themes/rainyd/images
@@ -315,14 +490,17 @@ www/data.default/achievo/upgrade/convert-0.6-to-0.8.sql
 @dirrm www/data.default/achievo/atk/themes/papered/images
 @dirrm www/data.default/achievo/atk/themes/papered
 @dirrm www/data.default/achievo/atk/themes/outlook/tree_icons
+@dirrm www/data.default/achievo/atk/themes/outlook/styles
 @dirrm www/data.default/achievo/atk/themes/outlook/images
 @dirrm www/data.default/achievo/atk/themes/outlook
 @dirrm www/data.default/achievo/atk/themes/newsforge/images
 @dirrm www/data.default/achievo/atk/themes/newsforge
+@dirrm www/data.default/achievo/atk/themes/moronic/styles
 @dirrm www/data.default/achievo/atk/themes/moronic
 @dirrm www/data.default/achievo/atk/themes/kuro5hin
 @dirrm www/data.default/achievo/atk/themes/default/tree_icons
 @dirrm www/data.default/achievo/atk/themes/default/toolbar_icons
+@dirrm www/data.default/achievo/atk/themes/default/styles
 @dirrm www/data.default/achievo/atk/themes/default/images
 @dirrm www/data.default/achievo/atk/themes/default
 @dirrm www/data.default/achievo/atk/themes/blurb/images
@@ -336,12 +514,17 @@ www/data.default/achievo/upgrade/convert-0.6-to-0.8.sql
 @dirrm www/data.default/achievo/atk/relations
 @dirrm www/data.default/achievo/atk/popups
 @dirrm www/data.default/achievo/atk/modules
+@dirrm www/data.default/achievo/atk/lock/db
+@dirrm www/data.default/achievo/atk/lock
 @dirrm www/data.default/achievo/atk/languages
+@dirrm www/data.default/achievo/atk/javascript/calendar/lang
+@dirrm www/data.default/achievo/atk/javascript/calendar
 @dirrm www/data.default/achievo/atk/javascript
+@dirrm www/data.default/achievo/atk/include
 @dirrm www/data.default/achievo/atk/images
 @dirrm www/data.default/achievo/atk/db
 @dirrm www/data.default/achievo/atk/attributes
 @dirrm www/data.default/achievo/atk
 @dirrm www/data.default/achievo
-@dirrm www/data.default
-@dirrm www
+@unexec rmdir www/data.default 2>/dev/null || true
+@unexec rmdir www 2>/dev/null || true
