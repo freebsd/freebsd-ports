@@ -32,6 +32,9 @@ OPTIONS=	MYSQL "Build MySQL driver" on \
 		POSTGRESQL "Build PostrgreSQL driver" off \
 		ODBC "Build unixODBC driver" off
 
+MAN1=		hk_report.1man hk_actionquery.1man hk_exportxml.1man \
+		hk_exporthtml.1man hk_exportcsv.1man hk_importcsv.1man
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MYSQL)
