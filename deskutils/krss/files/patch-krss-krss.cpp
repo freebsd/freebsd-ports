@@ -1,5 +1,5 @@
---- krss/krss.cpp~	Wed Feb 20 09:00:22 2002
-+++ krss/krss.cpp	Tue Sep 10 23:11:14 2002
+--- krss/krss.cpp.orig	Thu Feb 21 02:00:22 2002
++++ krss/krss.cpp	Wed May 21 10:41:25 2003
 @@ -24,6 +24,7 @@
  #include <qscrollbar.h>
  #include <qsplitter.h>
@@ -17,7 +17,16 @@
  
  // application specific includes
  #include "krss.h"
-@@ -518,7 +519,7 @@
+@@ -62,6 +63,8 @@
+ 
+ #define ID_STATUS_MSG 1
+ 
++using namespace std;
++
+ KrssApp::KrssApp(QWidget* , const char* name)
+ : KMainWindow(0, name)
+ {
+@@ -518,7 +521,7 @@
  {
  	config->setGroup(QString("General"));
  	QString mExec = config->readEntry(QString("Open URLs With"), QString("konqueror %url"));
@@ -26,7 +35,7 @@
  		
  	slotStatusMsg(i18n("Starting ") + mExec + QString("..."));
  	
-@@ -967,12 +968,12 @@
+@@ -967,12 +970,12 @@
  		config->setGroup(QString("General"));
  		QStringList uh_list = config->readListEntry(QString("URL Handlers"));
  		QString default_handler = config->readEntry(QString("Open URLs With"), QString("konqueror %url"));
