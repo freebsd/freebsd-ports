@@ -3908,6 +3908,7 @@ linbot		ports/www/linbot
 linc		ports/net/linc
 lincity		ports/games/lincity
 lincvs		ports/devel/lincvs
+lingoteach	ports/misc/lingoteach
 linguist	ports/devel/linguist
 links		ports/www/links
 links1		ports/www/links1
