@@ -13,7 +13,7 @@ MASTER_SITES=								      \
 	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/releases/4.2.22/ \
 	http://www.icir.org/hodson/ucl-mirror/
 
-MAINTAINER=	orion@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IPv4/v6 Multicast and unicast audio conferencing tool
 
 TCLTK_VERSION=  8.2
