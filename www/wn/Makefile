@@ -3,10 +3,10 @@
 # Date created:         4 May 1995
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.17 1996/12/07 11:26:58 max Exp $
+# $Id: Makefile,v 1.18 1996/12/08 01:05:19 max Exp $
 #
 
-DISTNAME=       wn-1.16.1
+DISTNAME=       wn-1.16.7
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/wn/
 
