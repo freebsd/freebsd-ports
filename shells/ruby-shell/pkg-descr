@@ -1,0 +1,13 @@
+shell.rb is a Ruby library to run commands and control jobs like a
+shell.  Pipes and redirections work just as expected:
+
+  sh = Shell.cd("/foo")
+
+  sh.cat("bar") | sh.tee("baz") > "baa"
+  # or
+  sh.transact do
+    cat("bar") | tee("baz") > "baa"
+  end
+
+Author:	Keiju Ishitsuka <keiju@ishitsuka.com>
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=Shell

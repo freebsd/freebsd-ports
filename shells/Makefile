@@ -14,6 +14,7 @@
     SUBDIR += pdksh
     SUBDIR += perlsh
     SUBDIR += rc
+    SUBDIR += ruby-shell
     SUBDIR += sash
     SUBDIR += scsh
     SUBDIR += tcsh
