@@ -1,0 +1,3 @@
+#! /bin/sh
+export INFOPATH=/usr/local/info:/usr/share/info:/usr/X11R6/info
+exec ${SCRIPT_FILENAME%/*}/gnuinfo

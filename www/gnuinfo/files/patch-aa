@@ -1,0 +1,24 @@
+Index: Makefile
+@@ -1,9 +1,10 @@
+ 
+-INFO_DIRS=\"/usr/info\"
++INFO_DIRS=\"/usr/share/info:/usr/local/info:/usr/X11R6/info\"
+ GZIP=\"/usr/bin/gzip\"
+ 
+-CC=gcc
+-CFLAGS=-g -Wall -ansi -pedantic -O2 -DINFODIRS=$(INFO_DIRS) -DGZIP=$(GZIP)
++#CC=gcc
++#CFLAGS=-g -Wall -ansi -pedantic -O2 -DINFODIRS=$(INFO_DIRS) -DGZIP=$(GZIP)
++CFLAGS+=-Wall -ansi -pedantic -DINFODIRS=$(INFO_DIRS) -DGZIP=$(GZIP)
+ 
+ VERSION=1.3
+ OBJS=info2html.o convert.o
+@@ -18,7 +19,7 @@
+ convert.o: convert.c info2html.h
+ 
+ convert.c: convert.lex
+-	flex -t convert.lex > convert.c
++	lex -t convert.lex > convert.c
+ 
+ 
+ install: gnuinfo
