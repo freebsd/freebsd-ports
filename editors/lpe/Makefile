@@ -3,10 +3,10 @@
 # Date created:		12 April 1999
 # Whom:			Chris Piazza <cpiazza@home.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/14 05:56:14 mharo Exp $
+# $Id: Makefile,v 1.2 1999/04/19 04:06:52 steve Exp $
 #
 
-DISTNAME=     	lpe-1.1.8
+DISTNAME=     	lpe-1.1.9
 CATEGORIES=	editors
 MASTER_SITES=	http://cdsmith.twu.net/lpe/
 
