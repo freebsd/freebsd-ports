@@ -36,10 +36,13 @@ CONFIGURE_ARGS+=--with-docdir=${DOCSDIR} \
 		--disable-desktopbuild \
 		--disable-unpluck \
 		--disable-explode \
-		--disable-palmosbuild
+		--disable-palmosbuild \
+		--disable-docbuild
 MAN1=		pluck-comics.1 plucker-build.1 plucker-decode.1 \
 		plucker-dump.1 plucker-setup.1
 FIND?=		find
+
+.include <bsd.port.pre.mk>
 
 post-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
@@ -84,4 +87,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/Plucker_Doc/* ${DOCSDIR}/manual
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
