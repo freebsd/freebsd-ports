@@ -51,6 +51,7 @@
     SUBDIR += htmlpp
     SUBDIR += http-analyze
     SUBDIR += httperf
+    SUBDIR += httptunnel
     SUBDIR += hypermail
     SUBDIR += indexme
     SUBDIR += jesred
