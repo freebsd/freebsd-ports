@@ -1,24 +1,15 @@
-*** Imakefile.orig	Sun Aug 17 13:45:11 1997
---- Imakefile	Mon Aug 25 21:25:31 1997
+*** Imakefile.orig	Thu Aug 28 21:36:09 1997
+--- Imakefile	Mon Sep 15 04:31:02 1997
 ***************
-*** 6,12 ****
+*** 6,20 ****
   /* ---------------------------------------------------------------- */
   
   LIBNAME=Im
 ! LIBREV=1.0
   
-! CONVERT_DIR=/usr/local/bin
-! NETPBM_DIR=/usr/local/bin
---- 6,12 ----
-  /* ---------------------------------------------------------------- */
+! CONVERT_DIR=/usr/bin
+! NETPBM_DIR=/usr/bin
   
-  LIBNAME=Im
-! LIBREV=2.0
-  
-! CONVERT_DIR=/usr/X11R6/bin
-! NETPBM_DIR=/usr/X11R6/bin
-*************** NETPBM_DIR=/usr/local/bin
-*** 14,20 ****
   #ifdef UseEtcX11
   ETCDIR=/etc/X11/$(LIBNAME)
   #else
@@ -26,7 +17,15 @@
   #endif /* def UseEtcX11 */
   
   CNFDIR = $(ETCDIR)
---- 14,20 ----
+--- 6,20 ----
+  /* ---------------------------------------------------------------- */
+  
+  LIBNAME=Im
+! LIBREV=3.0
+  
+! CONVERT_DIR=/usr/X11R6/bin
+! NETPBM_DIR=/usr/X11R6/bin
+  
   #ifdef UseEtcX11
   ETCDIR=/etc/X11/$(LIBNAME)
   #else
@@ -34,7 +33,7 @@
   #endif /* def UseEtcX11 */
   
   CNFDIR = $(ETCDIR)
-*************** InstallMultiple($(HDRS),$(INCROOT)/X11)
+***************
 *** 64,70 ****
   CNFSRC = ./sys_conf
   CNFS = $(CNFSRC)/imrc 
