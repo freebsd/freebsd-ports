@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dtcp
-PORTVERSION=	20030228
-PORTREVISION=	1
+PORTVERSION=	20040608
+#PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
 		http://home.jp.FreeBSD.org/~ume/ipv6/
@@ -15,15 +15,13 @@ MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Dynamic Tunnel Configuration Protocol daemon and client
 
-USE_RC_SUBR=	YES
-
 .if !defined(DTCP_CLIENT_ONLY)
 RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
 .endif
 
+USE_RC_SUBR=	yes
 USE_RUBY=	yes
-RUBY_SHEBANG_FILES=	${WRKSRC}/dtcpauth.rb ${WRKSRC}/dtcpc.rb \
-			${WRKSRC}/dtcps.rb
+MAKE_ENV+=	RUBY=${RUBY}
 
 MAN8=		dtcpauth.8 dtcpc.8 dtcps.8
 MANCOMPRESSED=	yes
@@ -42,7 +40,7 @@ pre-everything::
 pre-install:
 	@for script in ${RC_SCRIPTS}; do \
 		if [ -f $${script} ]; then \
-			echo "Remove old $${script} before install."; \
+			${ECHO_MSG} "Remove old $${script} before install."; \
 			exit 1; \
 		fi; \
 	done
