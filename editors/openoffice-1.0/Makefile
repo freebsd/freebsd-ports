@@ -139,9 +139,8 @@ do-build:
 		tcsh -c 'source FreeBSDEnv.Set && dmake'
 
 pre-install:
-	${SH} -c "cd ${WRKSRC}/../instsetoo/*.pro/01/normal && \
-		${SED} -e 's#@@PREFIX@@#${PREFIX}#g' \
-		< ${FILESDIR}/oo_setup.resp > oo_setup.resp"
+	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/oo_setup.resp \
+	    > ${WRKSRC}/../instsetoo/unxfbsd.pro/01/normal/oo_setup.resp
 
 do-install:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
