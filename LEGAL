@@ -110,6 +110,8 @@ eawpats*		ports/audio/eawpats	Some of the patches are not
 edith*			ports/editors/edith	Redistribution not allowed.
 eijiro*.txt		ports/japanese/eijiro-fpw The original dictionary is not
 						free
+emc2			ports/math/emc2		Contact author personally
+						regarding commercial use
 ezmlm			ports/mail/ezmlm	no license--see
 						http://cr.yp.to/softwarelaw.html
 ezmlm-idx		ports/mail/ezmlm-idx	no license--see
