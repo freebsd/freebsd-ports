@@ -1,16 +1,16 @@
 libexec/noattach
 etc/rc.d/noattach.sh.sample
 etc/noattach.patterns-dist
-%%PORTDOCS%%share/doc/noattach/AUTHORS
-%%PORTDOCS%%share/doc/noattach/COPYING
-%%PORTDOCS%%share/doc/noattach/INSTALL
-%%PORTDOCS%%share/doc/noattach/NEWS
-%%PORTDOCS%%share/doc/noattach/README
-%%PORTDOCS%%share/doc/noattach/THANKS
-%%PORTDOCS%%share/doc/noattach/TODO
-%%PORTDOCS%%share/doc/noattach/ChangeLog
-%%PORTDOCS%%@dirrm share/doc/noattach
-%%PORTDOCS%%share/examples/noattach/README
-%%PORTDOCS%%share/examples/noattach/noattach.patterns
-%%PORTDOCS%%share/examples/noattach/noattach.patterns.johncon
-%%PORTDOCS%%@dirrm share/examples/noattach
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/noattach.patterns
+%%PORTDOCS%%%%EXAMPLESDIR%%/noattach.patterns.johncon
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
