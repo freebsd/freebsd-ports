@@ -1,5 +1,5 @@
---- /ports/devel/sdl12/work/SDL-1.2.7/src/video/SDL_yuv_mmx.c	Wed Feb 18 18:22:04 2004
-+++ ../video/SDL_yuv_mmx.c	Sun May 16 19:19:48 2004
+--- src/video/SDL_yuv_mmx.c.orig	Wed Feb 18 18:22:04 2004
++++ src/video/SDL_yuv_mmx.c	Sun May 16 19:19:48 2004
 @@ -22,7 +22,7 @@
  
  #ifdef SAVE_RCSID

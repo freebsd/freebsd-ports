@@ -1,5 +1,5 @@
---- /ports/devel/sdl12/work/SDL-1.2.7/src/audio/SDL_mixer_MMX.c	Sat Nov  9 07:13:28 2002
-+++ SDL_mixer_MMX.c	Sun May 16 19:19:47 2004
+--- src/audio/SDL_mixer_MMX.c.orig	Sat Nov  9 07:13:28 2002
++++ src/audio/SDL_mixer_MMX.c	Sun May 16 19:19:47 2004
 @@ -15,13 +15,11 @@
  {
      __asm__ __volatile__ (
