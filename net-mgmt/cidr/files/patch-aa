@@ -1,11 +1,29 @@
---- Makefile.old	Wed Jul 19 12:44:39 2000
-+++ Makefile	Sat Jun 17 14:26:22 2000
-@@ -4,7 +4,7 @@
- OBJS = cidr.o
+--- Makefile.orig	Fri Jul 20 11:11:34 2001
++++ Makefile	Sat May 18 04:21:47 2002
+@@ -1,9 +1,8 @@
+ VERSION=2.3.2
+ RELEASE=1
  
- cidr: $(OBJS)
--	gcc -Wall -o cidr cidr.c
-+	$(CC) -Wall -o cidr $(OBJS)
+-CC=gcc
+ STRIP=strip
+-CCFLAGS=-Wall
++CCFLAGS= $(CFLAGS)
+ 
+ SOL7FLAGS=-lsocket -lnsl
+ SOL8FLAGS=-lresolv -lnsl
+@@ -13,15 +12,12 @@
+ 
+ all	:
+ 	$(CC) $(CCFLAGS) cidr.c -o cidr
+-	$(STRIP) cidr
+ 
+ solaris8:
+ 	$(CC) $(CCFLAGS) $(SOL8FLAGS) cidr.c -o cidr
+-	$(STRIP) cidr
+ 
+ solaris7:
+ 	$(CC) $(CCFLAGS) $(SOL7FLAGS) cidr.c -o cidr
+-	$(STRIP) cidr
  
  clean:
- 	rm $(OBJS) cidr
+ 	rm -f cidr cidr.o \

@@ -5,21 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	cidr
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	net
-MASTER_SITES=	http://home.netcom.com/~naym/cidr/
+MASTER_SITES=	http://geeksoul.com/robert/cidr/
 DISTNAME=	cidr-current
 
 MAINTAINER=	midom@dammit.lt
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
-
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	cidr
+
+MAN1=		cidr.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cidr ${PREFIX}/bin/cidr
 	${INSTALL_MAN} ${WRKSRC}/cidr.1 ${PREFIX}/man/man1/cidr.1
-
-MAN1=	cidr.1
 
 .include <bsd.port.mk>
