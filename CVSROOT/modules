@@ -700,6 +700,7 @@ bonobo		ports/devel/bonobo
 bonobo-conf	ports/devel/bonobo-conf
 boodler		ports/audio/boodler
 bookcase	ports/misc/bookcase
+bookmarkbridge	ports/www/bookmarkbridge
 boost		ports/devel/boost
 borzoi		ports/security/borzoi
 botan		ports/security/botan
