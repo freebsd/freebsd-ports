@@ -1,4 +1,3 @@
-bin/Util
 bin/gambas
 bin/gambas-database-manager
 bin/gba
@@ -9,87 +8,69 @@ lib/gambas/lib.gb.a
 lib/gambas/lib.gb.component
 lib/gambas/lib.gb.compress.a
 lib/gambas/lib.gb.compress.bzlib2.a
-lib/gambas/lib.gb.compress.bzlib2.la
 lib/gambas/lib.gb.compress.bzlib2.so
 lib/gambas/lib.gb.compress.bzlib2.so.0
 lib/gambas/lib.gb.compress.component
-lib/gambas/lib.gb.compress.la
 lib/gambas/lib.gb.compress.so
 lib/gambas/lib.gb.compress.so.0
 lib/gambas/lib.gb.compress.zlib.a
-lib/gambas/lib.gb.compress.zlib.la
 lib/gambas/lib.gb.compress.zlib.so
 lib/gambas/lib.gb.compress.zlib.so.0
 lib/gambas/lib.gb.db.a
 lib/gambas/lib.gb.db.component
-lib/gambas/lib.gb.db.la
 lib/gambas/lib.gb.db.mysql.a
-lib/gambas/lib.gb.db.mysql.la
 lib/gambas/lib.gb.db.mysql.so
 lib/gambas/lib.gb.db.mysql.so.0
 %%PGSQL%%lib/gambas/lib.gb.db.postgresql.a
-%%PGSQL%%lib/gambas/lib.gb.db.postgresql.la
 %%PGSQL%%lib/gambas/lib.gb.db.postgresql.so
 %%PGSQL%%lib/gambas/lib.gb.db.postgresql.so.0
 lib/gambas/lib.gb.db.so
 lib/gambas/lib.gb.db.so.0
 %%SQLITE%%lib/gambas/lib.gb.db.sqlite.a
-%%SQLITE%%lib/gambas/lib.gb.db.sqlite.la
 %%SQLITE%%lib/gambas/lib.gb.db.sqlite.so
 %%SQLITE%%lib/gambas/lib.gb.db.sqlite.so.0
 lib/gambas/lib.gb.debug.a
 lib/gambas/lib.gb.debug.component
-lib/gambas/lib.gb.debug.la
 lib/gambas/lib.gb.debug.so
 lib/gambas/lib.gb.debug.so.0
 lib/gambas/lib.gb.eval.a
 lib/gambas/lib.gb.eval.component
-lib/gambas/lib.gb.eval.la
 lib/gambas/lib.gb.eval.so
 lib/gambas/lib.gb.eval.so.0
 lib/gambas/lib.gb.net.a
 lib/gambas/lib.gb.net.component
 lib/gambas/lib.gb.net.curl.a
 lib/gambas/lib.gb.net.curl.component
-lib/gambas/lib.gb.net.curl.la
 lib/gambas/lib.gb.net.curl.so
 lib/gambas/lib.gb.net.curl.so.0
-lib/gambas/lib.gb.net.la
 lib/gambas/lib.gb.net.so
 lib/gambas/lib.gb.net.so.0
 lib/gambas/lib.gb.qt.a
 lib/gambas/lib.gb.qt.component
 lib/gambas/lib.gb.qt.editor.a
 lib/gambas/lib.gb.qt.editor.component
-lib/gambas/lib.gb.qt.editor.la
 lib/gambas/lib.gb.qt.editor.so
 lib/gambas/lib.gb.qt.editor.so.0
 lib/gambas/lib.gb.qt.ext.a
 lib/gambas/lib.gb.qt.ext.component
-lib/gambas/lib.gb.qt.ext.la
 lib/gambas/lib.gb.qt.ext.so
 lib/gambas/lib.gb.qt.ext.so.0
 lib/gambas/lib.gb.qt.kde.a
 lib/gambas/lib.gb.qt.kde.component
 lib/gambas/lib.gb.qt.kde.html.a
 lib/gambas/lib.gb.qt.kde.html.component
-lib/gambas/lib.gb.qt.kde.html.la
 lib/gambas/lib.gb.qt.kde.html.so
 lib/gambas/lib.gb.qt.kde.html.so.0
-lib/gambas/lib.gb.qt.kde.la
 lib/gambas/lib.gb.qt.kde.so
 lib/gambas/lib.gb.qt.kde.so.0
-lib/gambas/lib.gb.qt.la
 lib/gambas/lib.gb.qt.so
 lib/gambas/lib.gb.qt.so.0
 %%SDL%%lib/gambas/lib.gb.sdl.a
 %%SDL%%lib/gambas/lib.gb.sdl.component
-%%SDL%%lib/gambas/lib.gb.sdl.la
 %%SDL%%lib/gambas/lib.gb.sdl.so
 %%SDL%%lib/gambas/lib.gb.sdl.so.0
 lib/gambas/lib.gb.vb.a
 lib/gambas/lib.gb.vb.component
-lib/gambas/lib.gb.vb.la
 lib/gambas/lib.gb.vb.so
 lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Automation/KateBrowser/.gambas/FBROWSER
@@ -141,6 +122,14 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/FTimer.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/Timer
 %%PORTDOCS%%%%EXAMPLESDIR%%/Basic/Timer/timer.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/TreeView/.gambas/TREEVIEWEXAMPLE
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/TreeView/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/TreeView/Female.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/TreeView/Male.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/TreeView/TreeView
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/TreeView/TreeViewExample.class
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/TreeView/TreeViewExample.form
+%%PORTDOCS%%%%EXAMPLESDIR%%/Basic/TreeView/treeview.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FABOUT
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FCONN
 %%PORTDOCS%%%%EXAMPLESDIR%%/Database/DataReportExample/.gambas/FMAIN
@@ -278,6 +267,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/FEval.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/FEval.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/FEval.pot
+%%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Evaluator/calculator.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/.gambas/FEXPLORER
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/.project
 %%PORTDOCS%%%%EXAMPLESDIR%%/Miscellaneous/Explorer/Explorer
@@ -357,8 +347,12 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/WebBrowser
 %%PORTDOCS%%%%EXAMPLESDIR%%/Networking/WebBrowser/webbrowser.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.gambas/FSOUNDPLAYER
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.icon/16.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.icon/32.png
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.icon/48.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.lang/.pot
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/.project
+%%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/CHANGELOG
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/FSoundPlayer.class
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/FSoundPlayer.form
 %%PORTDOCS%%%%EXAMPLESDIR%%/Sound/MusicPlayer/MusicPlayer
@@ -5933,6 +5927,7 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Sound/MusicPlayer/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Sound/MusicPlayer/.icon
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Sound/MusicPlayer/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Sound/MusicPlayer
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Sound
@@ -5998,6 +5993,8 @@ lib/gambas/lib.gb.vb.so.0
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/DataReportExample/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database/DataReportExample
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Database
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/TreeView/.gambas
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/TreeView
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Timer/.lang
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Timer/.gambas
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Basic/Timer

@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Jul 19 23:57:54 2004
-+++ Makefile.in	Sat Jul 31 17:31:52 2004
+--- Makefile.in.orig	Sat Aug 14 11:17:09 2004
++++ Makefile.in	Sat Aug 14 14:47:25 2004
 @@ -35,6 +35,7 @@
  DESTDIR =
  
@@ -8,13 +8,15 @@
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  
-@@ -378,19 +379,18 @@
+@@ -378,23 +379,17 @@
  
  
  install-exec-local:
--	@echo "Installing with ROOT=$(ROOT)"
- 	@echo
- 
+-	@if test "x$(ROOT)" != "x"; then \
+-	 "Installing with ROOT=$(ROOT)"; \
+-         echo; \
+-        fi
+-
 -	@if test "$(bindir)" != "$(ROOT)/usr/bin" && test "$(bindir)" != "$(ROOT)/usr/bin/"; then \
 -	 echo "Making symbolic links in /usr/bin..."; \
 -	 rm -f $(ROOT)/usr/bin/gbx; \
@@ -25,6 +27,8 @@
 -	 ln -s $(bindir)/gba $(ROOT)/usr/bin/gba; \
 -	 rm -f $(ROOT)/usr/bin/gbi; \
 -	 ln -s $(bindir)/gbi $(ROOT)/usr/bin/gbi; \
+-	fi
+-
 +	@if test "$(bindir)" != "%%PREFIX%%/bin" && test "$(bindir)" != "%%PREFIX%%/bin/"; then \
 +	 echo "Making symbolic links in %%PREFIX%%/bin..."; \
 +	 rm -f %%PREFIX%%/bin/gbx; \
@@ -35,10 +39,11 @@
 +	 ln -sf $(bindir)/gba %%PREFIX%%/bin/gba; \
 +	 rm -f %%PREFIX%%/bin/gbi; \
 +	 ln -sf $(bindir)/gbi %%PREFIX%%/bin/gbi; \
- 	fi
- 
++ 	fi
  	@echo
-@@ -404,28 +404,28 @@
+ 	@echo "Creating the library info files..."
+ 	@rm -rf $(pkgdatadir)/info
+@@ -406,28 +401,28 @@
  	@echo
  	@echo "Installing the development environment..."
  	@(cd $(srcdir)/app; d=`pwd`; for p in *; do echo "Compiling $$p..."; cd $$d/$$p; \
