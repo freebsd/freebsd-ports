@@ -284,6 +284,7 @@
     SUBDIR += gorm
     SUBDIR += gperf
     SUBDIR += gputils
+    SUBDIR += gsoap
     SUBDIR += gtgt
     SUBDIR += gtranslator
     SUBDIR += gvd
