@@ -1,0 +1,4 @@
+POE::Component::Client::NNTP is a POE component that provides
+non-blocking NNTP access to other components and sessions.
+
+WWW: http://search.cpan.org/dist/POE-Component-Client-NNTP/
