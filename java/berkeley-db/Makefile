@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	je
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.1
 CATEGORIES=	java databases
 MASTER_SITES=	http://downloads.sleepycat.com/ \
 		ftp://ftp.sleepycat.com/releases/
