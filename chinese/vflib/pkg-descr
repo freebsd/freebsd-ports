@@ -5,6 +5,6 @@ hinting information in TrueType, so clearer output is possible.
 See /usr/local/lib/VFlib/doc/man.ps (in Japanese) or the following
 URL for more details.
 
-http://TypeHack.aial.hiroshima-u.ac.jp/VFlib/
+WWW: http://TypeHack.aial.hiroshima-u.ac.jp/VFlib/
 
 This port can use Chinese BIG5 and GB encoded fonts.
