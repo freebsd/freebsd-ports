@@ -3,7 +3,7 @@
 # Date created:		14 December 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.7 1996/11/07 02:15:09 fenner Exp $
+# $Id: Makefile,v 1.8 1996/11/07 12:27:06 asami Exp $
 #
 
 DISTNAME=	vic-2.8
@@ -13,14 +13,14 @@ DISTFILES=	vicsrc-2.8.tar.gz
 
 MAINTAINER=	fenner@FreeBSD.ORG
 
-LIB_DEPENDS=	tk41:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
 
 GNU_CONFIGURE=	yes
 USE_X11=	yes
+MAN1=		vic.1
 
 post-install:
 	strip ${PREFIX}/bin/vic
 	strip ${PREFIX}/bin/histtolut
-	${COMPRESS_MAN} ${PREFIX}/man/man1/vic.1
-	
+
 .include <bsd.port.mk>

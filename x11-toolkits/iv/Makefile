@@ -3,7 +3,7 @@
 # Date created:		23.sept.1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.10 1995/06/24 11:42:29 asami Exp $
+# $Id: Makefile,v 1.11 1996/10/20 15:45:07 max Exp $
 #
 
 VERSION=	3.1
@@ -31,7 +31,7 @@ pre-fetch:
 
 post-install:
 .if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/interviews/man/mann/*.n
+	${GZIP_CMD} ${PREFIX}/interviews/man/mann/*.n
 .endif
 # need these in ${PREFIX}/lib so that ldconfig can find them
 	ln -fs ../interviews/lib/FREEBSD/libIV.so.3.1 ${PREFIX}/lib

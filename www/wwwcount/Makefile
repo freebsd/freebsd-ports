@@ -3,7 +3,7 @@
 # Date created:         16 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1996/09/06 14:18:10 ache Exp $
+# $Id: Makefile,v 1.6 1996/09/11 04:44:19 asami Exp $
 #
 
 # WWW site: http://www.fccc.edu/users/muquit/Count.html
@@ -19,6 +19,7 @@ MAINTAINER=     ache@FreeBSD.ORG
 
 GNU_CONFIGURE=  yes
 IS_INTERACTIVE= yes
+MAN1=		mkstrip.1
 
 pre-configure:
 	cd ${WRKSRC}; yes "" | PREFIX=${PREFIX} ./Count-config
@@ -33,8 +34,5 @@ do-install:
 		${INSTALL_PROGRAM} mkstrip ${PREFIX}/bin; \
 		${INSTALL_MAN} mkstrip.1 ${PREFIX}/man/man1; \
 		${INSTALL_SCRIPT} mkstrip.sh ${PREFIX}/lib/Counter/digits
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/mkstrip.1
-.endif
 
 .include <bsd.port.mk>

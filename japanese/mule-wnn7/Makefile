@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.24 1996/08/16 09:43:57 asami Exp $
+# $Id: Makefile,v 1.25 1996/11/11 10:12:33 max Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -25,6 +25,7 @@ CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit \
 		--wnn-includes=/usr/X11R6/include/wnn --terminal-face \
 		--locallisppath=${PREFIX}/lib/mule/site-lisp:${PREFIX}/share/emacs/site-lisp
 STRIP=
+MAN1=		coco.1 ctags.1 etags.1 m2ps.1 mule.1
 
 pre-build:
 	find ${WRKSRC} -name \*.orig -exec /bin/rm -f \{} \;
@@ -37,12 +38,5 @@ post-install:
 	strip ${PREFIX}/bin/etags
 	strip ${PREFIX}/bin/m2ps
 	strip ${PREFIX}/bin/mule-19.28
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/coco.1
-	gzip -9nf ${PREFIX}/man/man1/ctags.1
-	gzip -9nf ${PREFIX}/man/man1/etags.1
-	gzip -9nf ${PREFIX}/man/man1/m2ps.1
-	gzip -9nf ${PREFIX}/man/man1/mule.1
-.endif
 
 .include <bsd.port.mk>

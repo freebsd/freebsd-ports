@@ -3,7 +3,7 @@
 # Date created:         18 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.8 1995/07/29 08:49:36 asami Exp $
+# $Id: Makefile,v 1.9 1996/10/21 07:43:40 max Exp $
 #
 
 DISTNAME=       magic-6.4.4
@@ -32,30 +32,18 @@ post-install:
 .for f in ${MAN1}
 	@chmod ${MANMODE} ${PREFIX}/man/man1/$f
 	@chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man1/$f
-.if !defined(NOMANCOMPRESS)
-	@gzip -9nf ${PREFIX}/man/man1/$f
-.endif
 .endfor
 .for f in ${MAN3}
 	@chmod ${MANMODE} ${PREFIX}/man/man3/$f
 	@chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man3/$f
-.if !defined(NOMANCOMPRESS)
-	@gzip -9nf ${PREFIX}/man/man3/$f
-.endif
 .endfor
 .for f in ${MAN5}
 	@chmod ${MANMODE} ${PREFIX}/man/man5/$f
 	@chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man5/$f
-.if !defined(NOMANCOMPRESS)
-	@gzip -9nf ${PREFIX}/man/man5/$f
-.endif
 .endfor
 .for f in ${MAN8}
 	@chmod ${MANMODE} ${PREFIX}/man/man8/$f
 	@chown ${MANOWN}.${MANGRP} ${PREFIX}/man/man8/$f
-.if !defined(NOMANCOMPRESS)
-	@gzip -9nf ${PREFIX}/man/man8/$f
-.endif
 .endfor
 	@chmod -R a+rX,go-w ${PREFIX}/lib/magic
 	@chown -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/lib/magic
