@@ -1,12 +1,12 @@
 --- src/mtest/mtest.c.orig	Sat May 29 08:07:06 1999
-+++ src/mtest/mtest.c	Sun Dec 19 15:29:29 1999
-@@ -95,6 +95,7 @@
- void status (MAILSTREAM *stream);
- void prompt (char *msg,char *txt);
- void smtptest (long debug);
-+char *safegets(char *buf);
- 
- /* Main program - initialization */
++++ src/mtest/mtest.c	Fri Feb  4 12:25:32 2000
+@@ -49,6 +49,7 @@
+ #include "rfc822.h"
+ #include "smtp.h"
+ #include "nntp.h"
++#include "safegets.h"
+ 
+ /* Excellent reasons to hate ifdefs, and why my real code never uses them */
  
 @@ -528,7 +529,7 @@
  void prompt (char *msg,char *txt)
@@ -26,22 +26,3 @@
      if (line[0] == '.') {
        if (line[1] == '\0') break;
        else strcat (text,".");
-@@ -744,4 +745,18 @@
-   else puts ("[Can't open connection to any server]");
-   mail_free_envelope (&msg);
-   mail_free_body (&body);
-+}
-+
-+char *safegets(char *buf) {
-+ char *p;
-+
-+ if (!fgets(buf, MAILTMPLEN, stdin)) {
-+  return NULL;
-+ }
-+
-+ if ((p = strchr(buf, '\n')) != NULL) {
-+  *p = '\0';
-+ }
-+
-+ return buf;
- }
