@@ -1,6 +1,6 @@
 bin/MakeTeXPK
 bin/access
-bin/afm2tfm
+%%DVIPSK%%bin/afm2tfm
 bin/allcm
 bin/allec
 bin/allneeded
@@ -18,7 +18,7 @@ bin/dvilj4l
 bin/dvilj6
 bin/dvipdfm
 bin/dvipdft
-bin/dvips
+%%DVIPSK%%bin/dvips
 bin/dvired
 bin/dvitomp
 bin/dvitype
@@ -106,7 +106,7 @@ bin/pslatex
 bin/readlink
 bin/rubibtex
 bin/rumakeindex
-%%X11BITS%%bin/t1mapper
+%%XDVIK%%bin/t1mapper
 bin/tangle
 bin/tex
 bin/texconfig
@@ -133,9 +133,9 @@ bin/virmpost
 bin/viromega
 bin/virtex
 bin/vptovf
-%%X11BITS%%bin/xdvi
-%%X11BITS%%bin/xdvi.bin
-%%X11BITS%%bin/xdvizilla
+%%XDVIK%%bin/xdvi
+%%XDVIK%%bin/xdvi.bin
+%%XDVIK%%bin/xdvizilla
 bin/weave
 include/kpathsea/absolute.h
 include/kpathsea/c-auto.h
@@ -3282,26 +3282,26 @@ share/texmf/dvips/base/EC.enc
 share/texmf/dvips/base/ad.enc
 share/texmf/dvips/base/asex.enc
 share/texmf/dvips/base/asexp.enc
-share/texmf/dvips/base/color.pro
+%%DVIPSK%%share/texmf/dvips/base/color.pro
 share/texmf/dvips/base/cork.enc
-share/texmf/dvips/base/crop.pro
+%%DVIPSK%%share/texmf/dvips/base/crop.pro
 share/texmf/dvips/base/dc.enc
 share/texmf/dvips/base/dvips.enc
 share/texmf/dvips/base/extex.enc
-share/texmf/dvips/base/finclude.pro
+%%DVIPSK%%share/texmf/dvips/base/finclude.pro
 share/texmf/dvips/base/funky.enc
-share/texmf/dvips/base/hps.pro
+%%DVIPSK%%share/texmf/dvips/base/hps.pro
 share/texmf/dvips/base/mh2scr.enc
 share/texmf/dvips/base/psfonts.map
-share/texmf/dvips/base/special.pro
-share/texmf/dvips/base/tex.pro
+%%DVIPSK%%share/texmf/dvips/base/special.pro
+%%DVIPSK%%share/texmf/dvips/base/tex.pro
 share/texmf/dvips/base/tex256.enc
-share/texmf/dvips/base/texc.pro
+%%DVIPSK%%share/texmf/dvips/base/texc.pro
 share/texmf/dvips/base/texmext.enc
 share/texmf/dvips/base/texmital.enc
 share/texmf/dvips/base/texmsym.enc
 share/texmf/dvips/base/texnansx.enc
-share/texmf/dvips/base/texps.pro
+%%DVIPSK%%share/texmf/dvips/base/texps.pro
 share/texmf/dvips/base/xl2.enc
 share/texmf/dvips/base/xt2.enc
 share/texmf/dvips/bluesky/config.ams
@@ -3315,7 +3315,7 @@ share/texmf/dvips/bluesky/psfonts.cmz
 share/texmf/dvips/cc-pl/cc-pl.enc
 share/texmf/dvips/cc-pl/ccpl.map
 share/texmf/dvips/config/builtin35.map
-share/texmf/dvips/config/config.ps
+share/texmf/dvips/config/config.ps.tetex
 share/texmf/dvips/config/context.map
 share/texmf/dvips/config/download35.map
 share/texmf/dvips/config/dvipdfm.map
@@ -9165,7 +9165,6 @@ share/texmf/fonts/vf/yandy/times/ptmbc8y.vf
 share/texmf/fonts/vf/yandy/times/ptmrc8y.vf
 share/texmf/fonts/vf/yandy/times/tibsc.vf
 share/texmf/fonts/vf/yandy/times/tirsc.vf
-share/texmf/ls-R
 share/texmf/makeindex/gglo.ist
 share/texmf/makeindex/gind.ist
 share/texmf/makeindex/nomencl.ist
@@ -11691,10 +11690,34 @@ share/texmf/web2c/tex-pl.pool
 share/texmf/web2c/tex.fmt
 share/texmf/web2c/tex.log
 share/texmf/web2c/tex.pool
-share/texmf/web2c/texmf.cnf
+share/texmf/web2c/texmf.cnf.tetex
 share/texmf/web2c/updmap.cfg
-share/texmf/xdvi/XDvi
-%%X11BITS%%share/texmf/xdvi/xdvi.cfg
+%%XDVIK%%share/texmf/xdvi/XDvi
+%%XDVIK%%share/texmf/xdvi/xdvi.cfg
+@exec mkdir -p %D/share/texmf/fonts/afm/hoekwater
+@exec mkdir -p %D/share/texmf/fonts/bh
+@exec mkdir -p %D/share/texmf/fonts/bh/lucidabr
+@exec mkdir -p %D/share/texmf/fonts/bh/lumath
+@exec mkdir -p %D/share/texmf/fonts/ofm/public/ommincho
+@exec mkdir -p %D/share/texmf/fonts/ofm/uhc
+@exec mkdir -p %D/share/texmf/fonts/ofm/uhc/gothic
+@exec mkdir -p %D/share/texmf/fonts/ofm/uhc/myoungjo
+@exec mkdir -p %D/share/texmf/fonts/ofm/uhc/taza
+@exec mkdir -p %D/share/texmf/fonts/ovf/public/ommincho
+@exec mkdir -p %D/share/texmf/fonts/ovf/uhc
+@exec mkdir -p %D/share/texmf/fonts/ovf/uhc/gothic
+@exec mkdir -p %D/share/texmf/fonts/ovf/uhc/myoungjo
+@exec mkdir -p %D/share/texmf/fonts/ovf/uhc/taza
+@exec mkdir -p %D/share/texmf/fonts/ovp/public/ommincho
+@exec mkdir -p %D/share/texmf/fonts/pk
+@exec mkdir -p %D/share/texmf/fonts/tfm/monotype
+@exec mkdir -p %D/share/texmf/fonts/vf/monotype
+@exec mkdir -p %D/share/texmf/omega/generic
+@exec mkdir -p %D/share/texmf/omega/generic/config
+@exec mkdir -p %D/share/texmf/omega/ocp/omegajapanese
+@exec mkdir -p %D/share/texmf/omega/otp/omega-j
+@exec mkdir -p %D/share/texmf/omega/otp/omegajapanese
+@exec mkdir -p %D/share/texmf/xdvi
 @dirrm include/kpathsea
 @dirrm share/texmf/xdvi
 @dirrm share/texmf/web2c
@@ -11863,9 +11886,9 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/omega/plain
 @dirrm share/texmf/omega/otp/uni2char
 @dirrm share/texmf/omega/otp/otibet
-@dirrm share/texmf/omega/otp/omegajapanese
 @dirrm share/texmf/omega/otp/omega-j
 @dirrm share/texmf/omega/otp/omega
+@dirrm share/texmf/omega/otp/omegajapanese
 @dirrm share/texmf/omega/otp/ocherokee
 @dirrm share/texmf/omega/otp/misc
 @dirrm share/texmf/omega/otp/ethiop
@@ -11873,8 +11896,8 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/omega/otp
 @dirrm share/texmf/omega/ocp/uni2char
 @dirrm share/texmf/omega/ocp/otibet
-@dirrm share/texmf/omega/ocp/omegajapanese
 @dirrm share/texmf/omega/ocp/omega
+@dirrm share/texmf/omega/ocp/omegajapanese
 @dirrm share/texmf/omega/ocp/ocherokee
 @dirrm share/texmf/omega/ocp/misc
 @dirrm share/texmf/omega/ocp/ethiop
@@ -12433,4 +12456,6 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/bibtex/bib/ams
 @dirrm share/texmf/bibtex/bib
 @dirrm share/texmf/bibtex
+@unexec rm -f %D/share/texmf/ls-R
 @dirrm share/texmf
+@exec %%MKTEXLSR%%
