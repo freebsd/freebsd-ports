@@ -3,12 +3,13 @@
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
-# $Id: Makefile,v 1.49 1999/01/23 07:05:31 vanilla Exp $
+# $Id: Makefile,v 1.50 1999/02/11 07:23:10 kuriyama Exp $
 
 DISTNAME=	WindowMaker-0.51.0
 PKGNAME=	windowmaker-i18n-0.51.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
+		ftp://muse.brain.riken.go.jp:/pub/ja.po/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/ \
 		http://jgo.local.net/cool_downloads/wm/ \
 		ftp://muse.brain.riken.go.jp/pub/rpm/contrib/
