@@ -19,6 +19,8 @@ NO_CDROM=	"cannot be redistributed for more than the cost of duplication"
 NO_PACKAGE=	"requires local database to be built"
 RESTRICTED=	"contains crypto class algorithms"
 
+TWCONFIG?=	${FILESDIR}/tw.conf.freebsd2
+
 post-extract:
 	@ (cd ${WRKDIR}; tar xpf T1.2.tar)
 
@@ -29,13 +31,14 @@ post-patch:
 pre-configure:
 	@ ${CP} ${FILESDIR}/conf-freebsd2.h ${WRKSRC}/configs
 	@ ${SED} s%/kernel%`sysctl -bn kern.bootfile`% \
-		< ${FILESDIR}/tw.conf.freebsd2 \
+		< ${TWCONFIG} \
 		> ${WRKSRC}/configs/tw.conf.freebsd2
 
 post-install:
 	@ ${MKDIR} /var/adm/tcheck
-	@ ${CP} ${FILESDIR}/tw.conf.freebsd2 /var/adm/tcheck/tw.config
+	@ ${CP} ${TWCONFIG} /var/adm/tcheck/tw.config
 	# Creating tripwire database
+.ifndef NO_DB_BUILD
 	@ (cd /var/adm/tcheck; tripwire -initialize)
 .if defined(TRIPWIRE_FLOPPY) && ${TRIPWIRE_FLOPPY} == YES
 	# preparing the floppy
@@ -52,6 +55,7 @@ post-install:
 	@ ${CHMOD} 555 /mnt/tripwire /mnt/gunzip /mnt/twcheck
 	@ umount /mnt
 	# Do not forget to remove and write-protect the floppy.
+.endif
 .endif
 
 .include <bsd.port.mk>
