@@ -16,7 +16,8 @@ MAINTAINER=	chat95@mbox.kyoto-inet.or.jp
 
 BUILD_DEPENDS=	${PYNUMERIC}
 RUN_DEPENDS=	${PYNUMERIC} \
-		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_SITELIBDIR}/PMW:${PORTSDIR}/x11-toolkits/pmw
 LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/Mesa3
 
 WRKSRC=         ${WRKDIR}/${PKGNAME}
