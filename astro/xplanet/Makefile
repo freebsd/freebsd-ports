@@ -77,6 +77,6 @@ pre-build:
 	@${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/auxfiles.h
 
 post-install:
-	@${INSTALL_DATA} ${DISTDIR}/photo_1600.jpg ${PREFIX}/share/xplanet/earth.jpg
+	@${INSTALL_DATA} ${DISTDIR}/depths_800.jpg ${PREFIX}/share/xplanet/earth.jpg
 
 .include <bsd.port.post.mk>
