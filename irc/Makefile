@@ -20,6 +20,7 @@
     SUBDIR += hybserv
     SUBDIR += iip
     SUBDIR += infobot
+    SUBDIR += insub
     SUBDIR += irc
     SUBDIR += ircII
     SUBDIR += ircatlite
