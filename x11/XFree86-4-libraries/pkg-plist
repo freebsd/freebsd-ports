@@ -2479,6 +2479,7 @@ man/man3/XwcTextPropertyToTextList.3.gz
 man/man5/XF86Config.5.gz
 @dirrm lib/modules
 @dirrm lib/X11/xsm
+@dirrm lib/X11/xserver
 @dirrm lib/X11/xkb/types
 @dirrm lib/X11/xkb/symbols/sun
 @dirrm lib/X11/xkb/symbols/sony
@@ -2509,6 +2510,7 @@ man/man5/XF86Config.5.gz
 @dirrm lib/X11/rstart/commands/x11r6
 @dirrm lib/X11/rstart/commands
 @dirrm lib/X11/rstart
+@dirrm lib/X11/proxymngr
 @dirrm lib/X11/locale/zh_TW
 @dirrm lib/X11/locale/zh
 @dirrm lib/X11/locale/th_TH.TACTIS
@@ -2530,6 +2532,7 @@ man/man5/XF86Config.5.gz
 @dirrm lib/X11/locale/en_US.utf
 @dirrm lib/X11/locale/C
 @dirrm lib/X11/locale
+@dirrm lib/X11/lbxproxy
 @dirrm lib/X11/fs
 @dirrm lib/X11/fonts/misc
 @dirrm lib/X11/fonts/cyrillic
@@ -2543,6 +2546,10 @@ man/man5/XF86Config.5.gz
 @dirrm lib/X11/doc
 @dirrm lib/X11/config
 @dirrm lib/X11/app-defaults
+@dirrm lib/X11/XF86Setup/tcllib
+@dirrm lib/X11/XF86Setup/scripts
+@dirrm lib/X11/XF86Setup/pics
+@dirrm lib/X11/XF86Setup
 @dirrm include/X11/fonts
 @dirrm include/X11/extensions
 @dirrm include/X11/bitmaps
@@ -2552,11 +2559,3 @@ man/man5/XF86Config.5.gz
 @dirrm include/X11/PM
 @dirrm include/X11/PEX5
 @dirrm include/X11/ICE
-@dirrm lib/X11/xserver
-@dirrm lib/X11/XF86Setup/pics
-@dirrm lib/X11/XF86Setup/scripts
-@dirrm lib/X11/XF86Setup/tcllib
-@dirrm lib/X11/XF86Setup
-@dirrm lib/X11/lbxproxy
-@dirrm lib/X11/proxymngr
-@dirrm lib/X11/xserver
