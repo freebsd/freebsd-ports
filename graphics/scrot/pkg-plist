@@ -1,0 +1,6 @@
+bin/scrot
+share/doc/scrot/AUTHORS
+share/doc/scrot/ChangeLog
+share/doc/scrot/README
+share/doc/scrot/TODO
+@dirrm share/doc/scrot
