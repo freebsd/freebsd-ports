@@ -2,3 +2,5 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/Telnet.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/Telnet.pm.orig
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Telnet/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/Telnet
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
