@@ -1,6 +1,6 @@
---- configure.orig	Thu Nov 19 03:50:52 1998
-+++ configure	Sun Feb 21 00:53:23 1999
-@@ -978,8 +978,8 @@
+--- configure.orig	Tue Oct 26 16:57:43 1999
++++ configure	Thu Nov 18 16:13:16 1999
+@@ -1715,8 +1715,8 @@
      TCL_INC_DIR=${TCL_TOP_DIR}/include
  elif test -d ${TCL_EXEC_PREFIX}/include -a -f ${TCL_EXEC_PREFIX}/include/tcl.h; then
      TCL_INC_DIR=${TCL_EXEC_PREFIX}/include
@@ -11,7 +11,7 @@
  else
      TCL_INC_DIR=$prefix/include
  fi
-@@ -1091,8 +1091,8 @@
+@@ -1832,8 +1832,8 @@
      TK_INC_DIR=${TK_TOP_DIR}/include
  elif test -d ${TK_EXEC_PREFIX}/include -a -f ${TK_EXEC_PREFIX}/include/tk.h; then
      TK_INC_DIR=${TK_EXEC_PREFIX}/include
@@ -22,3 +22,22 @@
  else
      TK_INC_DIR=$prefix/include
  fi
+@@ -1936,12 +1936,12 @@
+ if test "x$ok" = "xyes" -a "x${SHLIB_SUFFIX}" != "x"; then
+     IMG_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
+     if test "x$SHLIB_SUFFIX" = "x.so"; then
+-	Z_LIB_FILE="libz${SHLIB_SUFFIX}.1.1.3"
+-	PNG_LIB_FILE="libpng${SHLIB_SUFFIX}.2.1.0"
+-	JPEG_LIB_FILE="libjpeg${SHLIB_SUFFIX}.62.0.0"
+-	TIFF_LIB_FILE="libtiff${SHLIB_SUFFIX}.3.5.2"
+-	TTF_LIB_FILE="libttf${SHLIB_SUFFIX}.2.0.1"
+-	GIF_LIB_FILE="libungif${SHLIB_SUFFIX}.3.1.0"
++	Z_LIB_FILE="libz${SHLIB_SUFFIX}.2"
++	PNG_LIB_FILE="libpng${SHLIB_SUFFIX}.3"
++	JPEG_LIB_FILE="libjpeg${SHLIB_SUFFIX}.9"
++	TIFF_LIB_FILE="libtiff${SHLIB_SUFFIX}.4"
++	TTF_LIB_FILE="libttf${SHLIB_SUFFIX}.3"
++	GIF_LIB_FILE="libungif${SHLIB_SUFFIX}.5"
+     else
+ 	Z_LIB_FILE="libz${SHLIB_SUFFIX}"
+ 	PNG_LIB_FILE="libpng${SHLIB_SUFFIX}"

@@ -1,10 +1,6 @@
-lib/Img1.1/tests/all
-lib/Img1.1/pkgIndex.tcl
-lib/Img1.1/demo.tcl
-lib/Img1.1/tkv.tcl
-lib/Img1.1/libimg1.1.so.1
+lib/Img1.2/pkgIndex.tcl
+lib/Img1.2/libimg1.2.so.1
 lib/libimg.so.1
 lib/libimg.so
-@dirrm lib/Img1.1/tests
-@dirrm lib/Img1.1
+@dirrm lib/Img1.2
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

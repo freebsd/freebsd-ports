@@ -5,3 +5,5 @@ bmp, gif, png, jpeg, tiff, xpm, xbm, and postscript.
 
 Using this library with Tcl/Tk applications allows one to work with
 photos and images in the application.
+
+WWW: http://members1.chello.nl/~j.nijtmans/img.html
