@@ -119,6 +119,7 @@
     SUBDIR += gtkspell2
     SUBDIR += gutenbook
     SUBDIR += gutenmark
+    SUBDIR += gv-aspell
     SUBDIR += gxditview
     SUBDIR += gxmlviewer
     SUBDIR += hevea
