@@ -1,0 +1,6 @@
+************************************************************
+After install goto ${PREFIX}/lib/RealPlayer7 directory
+and launch:
+  ./mimeinstall - for install mime types for the mail and browser
+  ./plugininstall - for install plugin for the Linux Netscape
+************************************************************
