@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.5 1996/06/15 07:01:00 gpalmer Exp $
+# $Id: Makefile,v 1.6 1996/07/10 22:19:23 asami Exp $
 #
 
     SUBDIR += SSLeay
+    SUBDIR += donkey
     SUBDIR += fwtk
     SUBDIR += libident
     SUBDIR += pgp
