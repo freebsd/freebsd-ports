@@ -141,6 +141,7 @@
     SUBDIR += orville-write
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Business-CreditCard
+    SUBDIR += p5-Business-ISBN
     SUBDIR += p5-Data-Buffer
     SUBDIR += p5-DataCash
     SUBDIR += p5-File-CounterFile
