@@ -72,6 +72,7 @@
     SUBDIR += kdeadmin
     SUBDIR += koncd
     SUBDIR += lavaps
+    SUBDIR += lfm
     SUBDIR += libretto-config
     SUBDIR += lmmon
     SUBDIR += log_analysis

@@ -1,0 +1,5 @@
+Last File Manager is (tries to be) a simple 'midnight commander'-type
+application for UNIX console. 
+It is written in python and uses curses module. 
+
+WWW: http://www.terra.es/personal7/inigoserna/lfm/
