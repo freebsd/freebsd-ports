@@ -7,6 +7,7 @@
 
 PORTNAME=	imms
 PORTVERSION=	1.2a
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		fftw3.3:${PORTSDIR}/math/fftw3 \
+		fftw3f.3:${PORTSDIR}/math/fftw3-float \
 		tag.4:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
