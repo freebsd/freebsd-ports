@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	weewm
-PORTVERSION=	0.01
+PORTVERSION=	0.0.2
+PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.weewm.org/download/
 
@@ -15,9 +16,7 @@ COMMENT=	Fast and ultra light windowmanager with total keyboard control
 
 USE_X_PREFIX=	yes
 
-WRKSRC=${WRKDIR}/weewm
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/weewm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/weewm ${PREFIX}/bin
 
 .include <bsd.port.mk>
