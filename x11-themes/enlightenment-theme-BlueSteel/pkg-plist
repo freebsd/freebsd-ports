@@ -1,0 +1,414 @@
+share/enlightenment/themes/BlueSteel/ABOUT/MAIN
+share/enlightenment/themes/BlueSteel/ABOUT/bg.png
+share/enlightenment/themes/BlueSteel/ABOUT/logo.png
+share/enlightenment/themes/BlueSteel/ABOUT/vixar.ttf
+share/enlightenment/themes/BlueSteel/Eterm/Eterm.cfg
+share/enlightenment/themes/BlueSteel/Eterm/images/anchor_fg.png
+share/enlightenment/themes/BlueSteel/Eterm/images/anchor_hl.png
+share/enlightenment/themes/BlueSteel/Eterm/images/bg.png
+share/enlightenment/themes/BlueSteel/Eterm/images/downarrow_cl.png
+share/enlightenment/themes/BlueSteel/Eterm/images/downarrow_fg.png
+share/enlightenment/themes/BlueSteel/Eterm/images/downarrow_hl.png
+share/enlightenment/themes/BlueSteel/Eterm/images/leftarrow_cl.png
+share/enlightenment/themes/BlueSteel/Eterm/images/leftarrow_fg.png
+share/enlightenment/themes/BlueSteel/Eterm/images/leftarrow_hl.png
+share/enlightenment/themes/BlueSteel/Eterm/images/menu_selected.png
+share/enlightenment/themes/BlueSteel/Eterm/images/menubg.png
+share/enlightenment/themes/BlueSteel/Eterm/images/rightarrow_cl.png
+share/enlightenment/themes/BlueSteel/Eterm/images/rightarrow_fg.png
+share/enlightenment/themes/BlueSteel/Eterm/images/rightarrow_hl.png
+share/enlightenment/themes/BlueSteel/Eterm/images/submenu.png
+share/enlightenment/themes/BlueSteel/Eterm/images/submenu_selected.png
+share/enlightenment/themes/BlueSteel/Eterm/images/trough.png
+share/enlightenment/themes/BlueSteel/Eterm/images/uparrow_cl.png
+share/enlightenment/themes/BlueSteel/Eterm/images/uparrow_fg.png
+share/enlightenment/themes/BlueSteel/Eterm/images/uparrow_hl.png
+share/enlightenment/themes/BlueSteel/README
+share/enlightenment/themes/BlueSteel/backgrounds/backgrounds.cfg
+share/enlightenment/themes/BlueSteel/backgrounds/images/All-Good-People-4.jpg
+share/enlightenment/themes/BlueSteel/backgrounds/images/Enigmas-Oven-2.jpg
+share/enlightenment/themes/BlueSteel/borders/BORDERLESS/border.cfg
+share/enlightenment/themes/BlueSteel/borders/DEFAULT/border.cfg
+share/enlightenment/themes/BlueSteel/borders/DEFAULT/images/maximize_bg.png
+share/enlightenment/themes/BlueSteel/borders/DEFAULT/images/maximize_cl.png
+share/enlightenment/themes/BlueSteel/borders/DEFAULT/images/maximize_fg.png
+share/enlightenment/themes/BlueSteel/borders/FIXEDSIZE/border.cfg
+share/enlightenment/themes/BlueSteel/borders/ICONBOX/border.cfg
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/border.cfg
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/border.cfg.ja
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/resize_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/resize_cl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/resize_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/right_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/right_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/rightbottomtrim_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/rightbottomtrim_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/shade_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/shade_cl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/shade_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/title_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/title_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/toptrim_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/toptrim_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/unshade_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/unshade_cl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images/unshade_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/border.cfg
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/bottom_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/bottom_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/bottomresize_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/bottomresize_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/close_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/close_cl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/close_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/close_sh_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/close_sh_cl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/close_sh_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/left_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/left_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/maximize_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/maximize_cl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/maximize_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/maximize_hl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/minimize_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/minimize_cl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/minimize_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/minimize_hl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/right_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/right_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/rightresize_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/rightresize_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/righttrim_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/righttrim_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/stick_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/stick_bg_st.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/stick_cl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/stick_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/stick_fg_st.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/stick_sh_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/stick_sh_bg_st.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/stick_sh_cl.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/stick_sh_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/stick_sh_fg_st.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/top_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/top_fg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/toptrim_bg.png
+share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images/toptrim_fg.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/border.cfg
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/left_bg.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/left_fg.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/resize_bg.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/resize_cl.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/resize_fg.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/shade_bg.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/shade_cl.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/shade_fg.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/unshade_bg.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/unshade_cl.png
+share/enlightenment/themes/BlueSteel/borders/PAGER/images/unshade_fg.png
+share/enlightenment/themes/BlueSteel/borders/SMALL/border.cfg
+share/enlightenment/themes/BlueSteel/borders/SMALLFIXED/border.cfg
+share/enlightenment/themes/BlueSteel/borders/TRANSIENT/border.cfg
+share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images/top_sh_bg.png
+share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images/top_sh_fg.png
+share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images/topright_bg.png
+share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images/topright_fg.png
+share/enlightenment/themes/BlueSteel/borders/VERYSMALL/border.cfg
+share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images/leftresize_bg.png
+share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images/leftresize_fg.png
+share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images/rightresize_bg.png
+share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images/rightresize_fg.png
+share/enlightenment/themes/BlueSteel/borders/VERYSMALLFIXED/border.cfg
+share/enlightenment/themes/BlueSteel/borders/borders.cfg
+share/enlightenment/themes/BlueSteel/borders/borders.cfg.ja
+share/enlightenment/themes/BlueSteel/borders/common/border.cfg
+share/enlightenment/themes/BlueSteel/borders/common/border.cfg.ja
+share/enlightenment/themes/BlueSteel/borders/common/images/bottomresize_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/bottomresize_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/close_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/close_cl.png
+share/enlightenment/themes/BlueSteel/borders/common/images/close_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/close_sh_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/close_sh_cl.png
+share/enlightenment/themes/BlueSteel/borders/common/images/close_sh_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/default_bottom_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/default_bottom_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/default_bottomtrim_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/default_bottomtrim_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/default_title_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/default_title_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/default_top_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/default_top_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/fixed_bottom_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/fixed_bottom_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/left_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/left_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/leftresize_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/leftresize_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/leftside_bottomtrim_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/leftside_bottomtrim_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/leftside_title_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/leftside_title_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/lefttoptrim_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/lefttoptrim_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/lefttrim_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/lefttrim_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/minimize_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/minimize_cl.png
+share/enlightenment/themes/BlueSteel/borders/common/images/minimize_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/right_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/right_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/righttrim_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/righttrim_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/stick_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/stick_bg_st.png
+share/enlightenment/themes/BlueSteel/borders/common/images/stick_cl.png
+share/enlightenment/themes/BlueSteel/borders/common/images/stick_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/stick_fg_st.png
+share/enlightenment/themes/BlueSteel/borders/common/images/stick_sh_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/stick_sh_bg_st.png
+share/enlightenment/themes/BlueSteel/borders/common/images/stick_sh_cl.png
+share/enlightenment/themes/BlueSteel/borders/common/images/stick_sh_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/stick_sh_fg_st.png
+share/enlightenment/themes/BlueSteel/borders/common/images/toprighttrim_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/toprighttrim_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/transient_title_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/transient_title_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/verysmall_top_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/verysmall_top_fg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/verysmall_top_sh_bg.png
+share/enlightenment/themes/BlueSteel/borders/common/images/verysmall_top_sh_fg.png
+share/enlightenment/themes/BlueSteel/borders.cfg
+share/enlightenment/themes/BlueSteel/borders.cfg.ja
+share/enlightenment/themes/BlueSteel/buttons/buttons.cfg
+share/enlightenment/themes/BlueSteel/buttons.cfg
+share/enlightenment/themes/BlueSteel/colormodifiers.cfg
+share/enlightenment/themes/BlueSteel/common/images/bg.png
+share/enlightenment/themes/BlueSteel/common/images/blank.png
+share/enlightenment/themes/BlueSteel/common/images/dragbar_horiz.png
+share/enlightenment/themes/BlueSteel/common/images/selected.png
+share/enlightenment/themes/BlueSteel/coords/coords.cfg
+share/enlightenment/themes/BlueSteel/coords/coords.cfg.ja
+share/enlightenment/themes/BlueSteel/cursors/bw_images/arrow_left.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/arrow_left.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/arrow_right.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/arrow_right.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/cursor.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/cursor.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/iconify.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/iconify.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/kill.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/kill.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/max.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/max.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/move.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/move.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/resize_bl.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/resize_bl.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/resize_br.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/resize_br.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/resize_h.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/resize_h.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/resize_v.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/resize_v.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/bw_images/stick.xbm
+share/enlightenment/themes/BlueSteel/cursors/bw_images/stick.xbm.mask
+share/enlightenment/themes/BlueSteel/cursors/cursors.cfg
+share/enlightenment/themes/BlueSteel/cursors.cfg
+share/enlightenment/themes/BlueSteel/desktops.cfg
+share/enlightenment/themes/BlueSteel/dialogs/dialogs.cfg
+share/enlightenment/themes/BlueSteel/dialogs/dialogs.cfg.ja
+share/enlightenment/themes/BlueSteel/dialogs/images/button_down.png
+share/enlightenment/themes/BlueSteel/dialogs/images/button_up.png
+share/enlightenment/themes/BlueSteel/dialogs/images/check_off.png
+share/enlightenment/themes/BlueSteel/dialogs/images/check_on.png
+share/enlightenment/themes/BlueSteel/dialogs/images/darkbg.png
+share/enlightenment/themes/BlueSteel/dialogs/images/lightbg.png
+share/enlightenment/themes/BlueSteel/dialogs/images/radio_off.png
+share/enlightenment/themes/BlueSteel/dialogs/images/radio_on.png
+share/enlightenment/themes/BlueSteel/dialogs/images/separator.png
+share/enlightenment/themes/BlueSteel/dialogs/images/slider_horiz.png
+share/enlightenment/themes/BlueSteel/dialogs/images/slider_vert.png
+share/enlightenment/themes/BlueSteel/dialogs/images/window.png
+share/enlightenment/themes/BlueSteel/dock/dock.cfg
+share/enlightenment/themes/BlueSteel/dock/images/icon.png
+share/enlightenment/themes/BlueSteel/dragbar/dragbar.cfg
+share/enlightenment/themes/BlueSteel/dragbar/images/downarrow.png
+share/enlightenment/themes/BlueSteel/dragbar/images/downarrow_cl.png
+share/enlightenment/themes/BlueSteel/dragbar/images/dragbar_vert.png
+share/enlightenment/themes/BlueSteel/dragbar/images/leftarrow.png
+share/enlightenment/themes/BlueSteel/dragbar/images/leftarrow_cl.png
+share/enlightenment/themes/BlueSteel/dragbar/images/rightarrow.png
+share/enlightenment/themes/BlueSteel/dragbar/images/rightarrow_cl.png
+share/enlightenment/themes/BlueSteel/dragbar/images/uparrow.png
+share/enlightenment/themes/BlueSteel/dragbar/images/uparrow_cl.png
+share/enlightenment/themes/BlueSteel/epplets/epplets.cfg
+share/enlightenment/themes/BlueSteel/epplets/epplets.cfg.ja
+share/enlightenment/themes/BlueSteel/epplets/images/arrow_down_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/arrow_down_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/arrow_left_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/arrow_left_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/arrow_right_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/arrow_right_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/arrow_up_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/arrow_up_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/bar.png
+share/enlightenment/themes/BlueSteel/epplets/images/bg_h.png
+share/enlightenment/themes/BlueSteel/epplets/images/bg_v.png
+share/enlightenment/themes/BlueSteel/epplets/images/button_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/button_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/close_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/close_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/config_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/config_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/drawingarea.png
+share/enlightenment/themes/BlueSteel/epplets/images/eject_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/eject_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/ff_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/ff_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/help_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/help_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/next_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/next_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/pause_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/pause_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/play_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/play_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/prev_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/prev_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/repeat_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/repeat_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/rw_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/rw_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/skip_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/skip_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/slider_base_h.png
+share/enlightenment/themes/BlueSteel/epplets/images/slider_base_v.png
+share/enlightenment/themes/BlueSteel/epplets/images/slider_knob_h.png
+share/enlightenment/themes/BlueSteel/epplets/images/slider_knob_v.png
+share/enlightenment/themes/BlueSteel/epplets/images/stop_cl.png
+share/enlightenment/themes/BlueSteel/epplets/images/stop_fg.png
+share/enlightenment/themes/BlueSteel/epplets/images/togglebutton_down.png
+share/enlightenment/themes/BlueSteel/epplets/images/togglebutton_up.png
+share/enlightenment/themes/BlueSteel/focuslist/focuslist.cfg
+share/enlightenment/themes/BlueSteel/focuslist/focuslist.cfg.ja
+share/enlightenment/themes/BlueSteel/focuslist/images/lightbg.png
+share/enlightenment/themes/BlueSteel/focuslist/images/lightbg_hl.png
+share/enlightenment/themes/BlueSteel/iconbox/iconbox.cfg
+share/enlightenment/themes/BlueSteel/iconbox/iconbox.cfg.ja
+share/enlightenment/themes/BlueSteel/iconbox/images/arrow_down.png
+share/enlightenment/themes/BlueSteel/iconbox/images/arrow_down_cl.png
+share/enlightenment/themes/BlueSteel/iconbox/images/arrow_left.png
+share/enlightenment/themes/BlueSteel/iconbox/images/arrow_left_cl.png
+share/enlightenment/themes/BlueSteel/iconbox/images/arrow_right.png
+share/enlightenment/themes/BlueSteel/iconbox/images/arrow_right_cl.png
+share/enlightenment/themes/BlueSteel/iconbox/images/arrow_up.png
+share/enlightenment/themes/BlueSteel/iconbox/images/arrow_up_cl.png
+share/enlightenment/themes/BlueSteel/iconbox/images/bar_h.png
+share/enlightenment/themes/BlueSteel/iconbox/images/bar_v.png
+share/enlightenment/themes/BlueSteel/iconbox/images/base_h.png
+share/enlightenment/themes/BlueSteel/iconbox/images/base_v.png
+share/enlightenment/themes/BlueSteel/iconbox/images/bg_h.png
+share/enlightenment/themes/BlueSteel/iconbox/images/bg_v.png
+share/enlightenment/themes/BlueSteel/iconbox/images/cover_h.png
+share/enlightenment/themes/BlueSteel/iconbox/images/cover_v.png
+share/enlightenment/themes/BlueSteel/iconbox/images/icon.png
+share/enlightenment/themes/BlueSteel/iconbox/images/knob_h.png
+share/enlightenment/themes/BlueSteel/iconbox/images/knob_v.png
+share/enlightenment/themes/BlueSteel/imageclasses.cfg
+share/enlightenment/themes/BlueSteel/imageclasses.cfg.ja
+share/enlightenment/themes/BlueSteel/init/images/bar.png
+share/enlightenment/themes/BlueSteel/init/images/bg.jpg
+share/enlightenment/themes/BlueSteel/init/images/logo.png
+share/enlightenment/themes/BlueSteel/init/init.cfg
+share/enlightenment/themes/BlueSteel/init/init.cfg.ja
+share/enlightenment/themes/BlueSteel/init.cfg
+share/enlightenment/themes/BlueSteel/init.cfg.ja
+share/enlightenment/themes/BlueSteel/menustyles/images/submenu.png
+share/enlightenment/themes/BlueSteel/menustyles/images/submenu_selected.png
+share/enlightenment/themes/BlueSteel/menustyles/menustyles.cfg
+share/enlightenment/themes/BlueSteel/menustyles/menustyles.cfg.ja
+share/enlightenment/themes/BlueSteel/menustyles.cfg
+share/enlightenment/themes/BlueSteel/menustyles.cfg.ja
+share/enlightenment/themes/BlueSteel/pager/images/selected.png
+share/enlightenment/themes/BlueSteel/pager/images/window.png
+share/enlightenment/themes/BlueSteel/pager/pager.cfg
+share/enlightenment/themes/BlueSteel/pager/pager.cfg.ja
+share/enlightenment/themes/BlueSteel/slideouts/slideouts.cfg
+share/enlightenment/themes/BlueSteel/slideouts.cfg
+share/enlightenment/themes/BlueSteel/sound/sound.cfg
+share/enlightenment/themes/BlueSteel/sound.cfg
+share/enlightenment/themes/BlueSteel/tooltips/images/cloud_large.png
+share/enlightenment/themes/BlueSteel/tooltips/images/cloud_small.png
+share/enlightenment/themes/BlueSteel/tooltips/tooltips.cfg
+share/enlightenment/themes/BlueSteel/tooltips/tooltips.cfg.ja
+share/enlightenment/themes/BlueSteel/tooltips.cfg
+share/enlightenment/themes/BlueSteel/tooltips.cfg.ja
+share/enlightenment/themes/BlueSteel/ttfonts/vixar.ttf
+share/enlightenment/themes/BlueSteel/windowmatches.cfg
+@dirrm share/enlightenment/themes/BlueSteel/ttfonts
+@dirrm share/enlightenment/themes/BlueSteel/tooltips/images
+@dirrm share/enlightenment/themes/BlueSteel/tooltips
+@dirrm share/enlightenment/themes/BlueSteel/sound/samples
+@dirrm share/enlightenment/themes/BlueSteel/sound
+@dirrm share/enlightenment/themes/BlueSteel/slideouts/images
+@dirrm share/enlightenment/themes/BlueSteel/slideouts
+@dirrm share/enlightenment/themes/BlueSteel/pager/images
+@dirrm share/enlightenment/themes/BlueSteel/pager
+@dirrm share/enlightenment/themes/BlueSteel/menustyles/images
+@dirrm share/enlightenment/themes/BlueSteel/menustyles
+@dirrm share/enlightenment/themes/BlueSteel/init/images
+@dirrm share/enlightenment/themes/BlueSteel/init
+@dirrm share/enlightenment/themes/BlueSteel/iconbox/images
+@dirrm share/enlightenment/themes/BlueSteel/iconbox
+@dirrm share/enlightenment/themes/BlueSteel/focuslist/images
+@dirrm share/enlightenment/themes/BlueSteel/focuslist
+@dirrm share/enlightenment/themes/BlueSteel/epplets/images
+@dirrm share/enlightenment/themes/BlueSteel/epplets
+@dirrm share/enlightenment/themes/BlueSteel/dragbar/images
+@dirrm share/enlightenment/themes/BlueSteel/dragbar
+@dirrm share/enlightenment/themes/BlueSteel/dock/images
+@dirrm share/enlightenment/themes/BlueSteel/dock
+@dirrm share/enlightenment/themes/BlueSteel/dialogs/images
+@dirrm share/enlightenment/themes/BlueSteel/dialogs
+@dirrm share/enlightenment/themes/BlueSteel/cursors/bw_images
+@dirrm share/enlightenment/themes/BlueSteel/cursors
+@dirrm share/enlightenment/themes/BlueSteel/coords/images
+@dirrm share/enlightenment/themes/BlueSteel/coords
+@dirrm share/enlightenment/themes/BlueSteel/common/images
+@dirrm share/enlightenment/themes/BlueSteel/common
+@dirrm share/enlightenment/themes/BlueSteel/buttons/images
+@dirrm share/enlightenment/themes/BlueSteel/buttons
+@dirrm share/enlightenment/themes/BlueSteel/borders/common/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/common
+@dirrm share/enlightenment/themes/BlueSteel/borders/VERYSMALLFIXED/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/VERYSMALLFIXED
+@dirrm share/enlightenment/themes/BlueSteel/borders/VERYSMALL/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/VERYSMALL
+@dirrm share/enlightenment/themes/BlueSteel/borders/TRANSIENT/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/TRANSIENT
+@dirrm share/enlightenment/themes/BlueSteel/borders/SMALLFIXED/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/SMALLFIXED
+@dirrm share/enlightenment/themes/BlueSteel/borders/SMALL/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/SMALL
+@dirrm share/enlightenment/themes/BlueSteel/borders/PAGER/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/PAGER
+@dirrm share/enlightenment/themes/BlueSteel/borders/LEFTSIDE/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/LEFTSIDE
+@dirrm share/enlightenment/themes/BlueSteel/borders/LEFTPAGER/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/LEFTPAGER
+@dirrm share/enlightenment/themes/BlueSteel/borders/ICONBOX/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/ICONBOX
+@dirrm share/enlightenment/themes/BlueSteel/borders/FIXEDSIZE/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/FIXEDSIZE
+@dirrm share/enlightenment/themes/BlueSteel/borders/DEFAULT/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/DEFAULT
+@dirrm share/enlightenment/themes/BlueSteel/borders/BORDERLESS/images
+@dirrm share/enlightenment/themes/BlueSteel/borders/BORDERLESS
+@dirrm share/enlightenment/themes/BlueSteel/borders
+@dirrm share/enlightenment/themes/BlueSteel/backgrounds/images
+@dirrm share/enlightenment/themes/BlueSteel/backgrounds
+@dirrm share/enlightenment/themes/BlueSteel/Eterm/images
+@dirrm share/enlightenment/themes/BlueSteel/Eterm
+@dirrm share/enlightenment/themes/BlueSteel/ABOUT
+@dirrm share/enlightenment/themes/BlueSteel
