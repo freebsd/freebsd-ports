@@ -58,7 +58,7 @@ LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .endif
 
 .if defined(WITH_VORBIS)
-LIB_DEPENDS+=	vorbis.0:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	vorbis.1:${PORTSDIR}/audio/libvorbis
 .endif
 
 # "enable" build for other archs
