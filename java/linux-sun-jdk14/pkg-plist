@@ -523,7 +523,7 @@
 %%T%%/jre/plugin/i386/ns600/libjavaplugin_oji.so
 %%T%%/jre/plugin/i386/ns610/libjavaplugin_oji.so
 %%T%%/jre/ControlPanel.html
-%%T%%/jre/javaws-1_2-linux-i586-i.zip
+%%T%%/jre/javaws-1_2_0_01-linux-i586-i.zip
 %%T%%/lib/htmlconverter.jar
 %%T%%/lib/tools.jar
 %%T%%/lib/orb.idl
