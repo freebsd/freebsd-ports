@@ -31,9 +31,6 @@ NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 USE_REINPLACE=	YES
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=83
 
-#	we need fpsetround
-NOT_FOR_ARCHS=	amd64
-
 MAN1=	tclsh.1
 
 MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
