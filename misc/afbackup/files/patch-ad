@@ -1,5 +1,5 @@
---- label_tape.c.orig	Wed Jul  4 08:04:02 2001
-+++ label_tape.c	Thu Sep 13 18:49:29 2001
+--- label_tape.c.orig	Tue Sep 18 08:26:18 2001
++++ label_tape.c	Fri Nov  2 15:51:10 2001
 @@ -33,11 +33,13 @@
  UChar		*programfile = NULL;
  UChar		*programdir = NULL;
@@ -14,7 +14,7 @@
  	{ "%L",	NULL, &libdir },
  	{ "%V",	NULL, &vardir },
  	};
-@@ -1035,11 +1037,13 @@
+@@ -1044,11 +1046,13 @@
      if( (cptr = FN_LASTDIRDELIM(programdir)) )
  	*(cptr) = '\0';
      bindir = strapp(programdir, FN_DIRSEPSTR "bin");
@@ -28,7 +28,7 @@
       libdir = strdup(DEFSERVLIBDIR);
  
  #endif	/* if else defined(ORIG_DEFAULTS) */
-@@ -1049,6 +1053,7 @@
+@@ -1058,6 +1062,7 @@
       backuphome = strdup(backuphome);
       /* construct file- and dirnames */
       bindir = strapp(backuphome, FN_DIRSEPSTR "bin");

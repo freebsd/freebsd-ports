@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	afbackup
-PORTVERSION=	3.3.4p1
+PORTVERSION=	3.3.5
 CATEGORIES?=	misc
 MASTER_SITES=	ftp://ftp.vic.com/af/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	afbackup
-DISTNAME=	${PORTNAME}-3.3.4pl1
+DISTNAME=	${PORTNAME}-3.3.5
 # XXX Remember to remove the comment if the actual variable is needed by someone.
 #SLAVEDIRS=misc/afbackup-client misc/afbackup-server
 
 MAINTAINER=	voland@catpipe.net
 
-WRKSRC=		${WRKDIR}/afbackup-3.3.4
+WRKSRC=		${WRKDIR}/afbackup-3.3.5
 PLIST=		${WRKSRC}/pkg-plist
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
@@ -32,6 +32,7 @@ RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 MAKE_ARGS+=	NO_GUI=yes
 .endif
 USE_AUTOCONF=	yes
+USE_LIBTOOL=	yes
 .if defined(NO_AUTOKEY) && defined(BATCH)
 INGORE =	"cannot be build in batch mode whithout automated DES key generation"
 .endif
@@ -82,6 +83,9 @@ PLIST_SRC+=		pkg-plist.guiclient
 .if !defined(NO_DES)
 PLIST_SRC+=		pkg-plist.desclient
 .endif
+.if defined(WITH_USERRESTORE)
+INSTALL_TARGET+=	install.userrestore
+.endif
 .endif
 .if !defined(WITHOUT_SERVER)
 INSTALL_TARGET+=	install.server
@@ -131,6 +135,7 @@ pre-fetch:
 	@${ECHO} "	-DWITHOUT_SERVER	don't install the server part."
 	@${ECHO} "	-DWITHOUT_CLIENT	don't install the client part."
 	@${ECHO} "	-DWITHOUT_REXECLINKS	don't install links needed for remote execution."
+	@${ECHO} "	-DWITH_USERRESTORE	allow users to use restore."
 	@${ECHO} "	-DNO_GUI		build and install without TCL/TK tools."
 	@${ECHO} "	-DNO_DES		build and install without DES encryption."
 	@${ECHO} "	-DNO_AUTOKEY		don't autogenerate DES encryption key."

@@ -18,7 +18,8 @@ OPTIMIZE	=
 DEBUG		=	
 
 INCLUDES	=	-I$(X_INCLUDE) @DESINCLUDEPATH@ @ZLIB_INCLUDEPATH@
-DEFINES		=	-D$(OSNAME) -DOSNAME=$(OSNAME) @DESDEFINES@ @ZLIB_DEFINES@
+DEFINES		=	-D$(OSNAME) -DOSNAME=$(OSNAME) @SYSDEFINES@ \
+				@DESDEFINES@ @ZLIB_DEFINES@
 
 CFLAGS		=	@CFLAGS@ $(INCLUDES) $(DEFINES) $(DEBUG) $(OPTIMIZE)	\
 				$(EXTRA_CFLAGS) @EXTRACFLAGS@ \
@@ -317,7 +318,7 @@ install.server: server cartready label_tape install.server.man install.l10n
 install.rclient: install.server install.client install.rexeclinks
 
 install.userrestore:
-	$(INSTALL) -m 04755 -o root:wheel $(LIBEXECDIR)/full_backup $(SBINDIR)/afrestore
+	$(INSTALL) -m 04755 -o root -g wheel full_backup $(SBINDIR)/afrestore
 	ln -sf $(SBINDIR)/afrestore $(SBINDIR)/afbackout
 	ln -sf $(SBINDIR)/afrestore $(SBINDIR)/update_indexes
 

@@ -1,5 +1,5 @@
 --- mvals.h.orig	Sat Oct 21 13:27:49 2000
-+++ mvals.h	Thu Aug 23 12:17:33 2001
++++ mvals.h	Fri Nov  2 15:51:10 2001
 @@ -8,7 +8,7 @@
  #if !defined(__WATCOMC__) && !defined(__QNX__) && !defined(__MSDOS__) && !defined(__WIN32__) && !defined(_MSC_VER)
  # ifdef INC_LIMITS_H

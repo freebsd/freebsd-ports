@@ -1,6 +1,6 @@
---- CONFIG.in.orig	Fri Aug 24 14:54:34 2001
-+++ CONFIG.in	Thu Aug 23 12:27:55 2001
-@@ -380,8 +380,8 @@
+--- CONFIG.in.orig	Mon Oct  8 08:32:42 2001
++++ CONFIG.in	Fri Nov  2 15:51:10 2001
+@@ -393,8 +393,8 @@
    will be appended to it. Otherwise the file is removed before
    writing.
    %L will be replaced with the full path of the lib-directory
@@ -11,7 +11,7 @@
  
  
   Lock-file
-@@ -702,9 +702,10 @@
+@@ -776,9 +776,10 @@
    The name of a file error messages or other notable events
    are written to. A dash - stands for no logging. The pattern
    %V will be replaced with the full path to the var-directory,
@@ -25,9 +25,9 @@
  
  
   ClientIdentifier
---- afclient.conf.8.in.orig	Fri Aug 24 14:54:34 2001
-+++ afclient.conf.8.in	Thu Aug 23 12:29:21 2001
-@@ -244,9 +244,10 @@
+--- afclient.conf.8.in.orig	Sat Sep 15 17:36:40 2001
++++ afclient.conf.8.in	Fri Nov  2 15:51:10 2001
+@@ -279,9 +279,10 @@
  The name of a file error messages or other notable events
  are written to. A dash - stands for no logging. The pattern
  %V will be replaced with the full path to the var-directory,
@@ -41,8 +41,8 @@
  .TP
  .B ClientIdentifier
  The identifier for the client. Default: The official hostname.
---- cartagehandler.orig	Sat Mar 24 17:54:49 2001
-+++ cartagehandler	Thu Aug 23 12:17:33 2001
+--- cartagehandler.orig	Mon Jun 25 19:05:20 2001
++++ cartagehandler	Fri Nov  2 15:51:10 2001
 @@ -106,6 +106,8 @@
    set p=$p:h
    set bindir="$p"
@@ -68,30 +68,737 @@
  if ( ! -x $NUMSET ) then
    set NUMSET="$sbindir"/__numset
    if ( ! -x $NUMSET ) then
---- clientconfig.in.orig	Mon Jun 25 18:53:28 2001
-+++ clientconfig.in	Thu Sep 13 20:06:21 2001
-@@ -414,7 +414,7 @@
- helps__11=`TN_ "This flag specifies, whether the filename logging files should be processed by the configured program."`
- helps__12=`TN_ "These patterns or filenames specify files, that no processing is attempted on. Normally this is done for all files. This might be unefficient, e.g. compressing files, that are already compressed, so their compression can be suppressed with this parameter. The value of this parameter must be a list separated by whitespace. Double quotes may enclose list elements."`
- helps__13=`TN_ "This number determines how many log files of previous full backups are saved. These files may serve for the restore of older files than those present in the current backup. Of course there must be sufficient space to hold all the backups. It doesn't help to save all the saved filenames but not to have them available on tape."`
--helps__14=`TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %L with the lib directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)"`
-+helps__14=`TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %L with the lib directory, %E with the libexec directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)"`
- helps__15=`TN_ "The directory, where varying files should be put in. These files must not be deleted. The information they contain is necessary for restore."`
- helps__16=`TN_ "The identifier for the client. Default: The official hostname. This entry is required, it several afbackup clients reside on one host. In this case the multi stream server must be able to distinguish the clients to distribute the pieces of backup data on tape correctly. Otherwise the data would be mixed up and be unusable by the reading client."`
- helps__17=`TN_ "To prevent client programs from being started several times a lock file is created and this is it's name. For pattern replacements see LoggingFile (14)."`
---- configure.in.orig	Thu May 24 13:50:13 2001
-+++ configure.in	Thu Aug 23 12:17:33 2001
-@@ -38,7 +38,7 @@
+--- clientconfig.in.orig	Sat Oct 13 15:00:55 2001
++++ clientconfig.in	Fri Nov  2 15:51:10 2001
+@@ -446,7 +446,7 @@
+ helps__15=`TN_ "This is the maximum number of index files, that will be scanned during restore. This can be helpful, if it takes too much time to scan through all index files, what is done, if restrictions are given, such as before time, after time or certain tapes. This parameter can be overridden by option -N of afrestore."`
+ helps__16=`TN_ "Instead of configuring the maximum number of index files to be scanned (previous parameter), their maximum age in days can be configured (floating point number allowed). This parameter can be overridden by option -O of afrestore."`
+ helps__17=`TN_ "When this flag is set, during restore started by a normal user (not the superuser) it is checked, whether the user has sufficient access permissions in the directory, where the files are recovered. When relocating using option -C this is default behaviour. With this flag set it will be enforced also when not relocating. This has pros and cons. It might be desirable, that users can also restore their own files in directories owned by root (e.g. at-job files or the CDE calendar stuff). On the other side this might be considered a security problem."`
+-helps__18=`TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %L with the lib directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)"`
++helps__18=`TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %L with the lib directory, %E with the libexec directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)"`
+ helps__19=`TN_ "The directory, where varying files should be put in. These files must not be deleted. The information they contain is necessary for restore."`
+ helps__20=`TN_ "The identifier for the client. Default: The official hostname. This entry is required, it several afbackup clients reside on one host. In this case the multi stream server must be able to distinguish the clients to distribute the pieces of backup data on tape correctly. Otherwise the data would be mixed up and be unusable by the reading client."`
+ helps__21=`TN_ "To prevent client programs from being started several times a lock file is created and this is it's name. For pattern replacements see LoggingFile (18)."`
+--- configure.in.orig	Thu Oct 18 22:50:41 2001
++++ configure.in	Fri Nov  2 15:53:56 2001
+@@ -4,6 +4,9 @@
+ 
+ PACKAGE=afbackup
+ VERSION=`[grep VERSION_STRING version.h|sed 's/^[^"]*"//g'|sed 's/"[^"]*$//g']`
++datadir='${prefix}/share/afbackup'
++sysconfdir='${prefix}/etc/afbackup'
++localstatedir='/var/spool/afbackup'
+ dnl VERSION=`[grep VERSION_STRING version.h|awk '{l=$0;while(substr(l,1,1)!="\"" && l != "")l=substr(l,2);l=substr(l,2);while(substr(l,length(l)-1,1)!="\"" && l != "") l=substr(l,1,length(l)-1);l=substr(l,1,length(l)-1);print l}']`
+ AC_DEFINE_UNQUOTED(PACKAGE, "$PACKAGE")
+ AC_DEFINE_UNQUOTED(VERSION, "$VERSION")
+@@ -38,18 +41,17 @@
  dnl Checks for header files.
  
  if test `uname` = "FreeBSD" ; then
 -  if test -r /usr/include/values.h ; then
-+  if test `uname -r` -le '2' -a -r /usr/include/values.h ; then
++  if test `uname -r` "<" '2' -a -r /usr/include/values.h ; then
      ac_cv_header_values_h=yes
    else
      ac_cv_header_values_h=no
---- server.conf.changer.orig	Fri Aug 24 14:54:34 2001
-+++ server.conf.changer	Fri Aug 24 14:28:47 2001
+   fi
+ fi
+ 
+-
+ AC_HEADER_DIRENT
+ AC_HEADER_STDC
+ dnl AC_HEADER_SYS_WAIT
+-AC_CHECK_HEADERS(arpa/inet.h fcntl.h intl/locale.h limits.h malloc.h netinet/ip.h netinet/tcp.h netinet/in_systm.h pthread.h regex.h string.h strings.h sys/acl.h sys/ioctl.h sys/mode.h sys/mount.h sys/mtio.h sys/param.h sys/resource.h sys/select.h sys/statfs.h sys/statvfs.h sys/time.h sys/timers.h sys/vfs.h sys/wait.h termios.h termio.h time.h unistd.h values.h)
++AC_CHECK_HEADERS(arpa/inet.h fcntl.h intl/locale.h limits.h malloc.h netinet/ip.h netinet/tcp.h netinet/in_systm.h pthread.h regex.h string.h strings.h sys/acl.h sys/ioctl.h sys/mode.h sys/mount.h sys/param.h sys/resource.h sys/select.h sys/statfs.h sys/statvfs.h sys/time.h sys/timers.h sys/vfs.h sys/wait.h termios.h termio.h time.h unistd.h values.h)
+ 
+ dnl Checks for typedefs, structures, and compiler characteristics.
+ AC_STRUCT_ST_RDEV
+@@ -98,61 +100,27 @@
+ 
+ AC_CHECK_TYPE(signal_t, int)
+ 
+-AC_ARG_ENABLE(threads, [  --disable-threads       do not configure threads], 
+-    if test "x$enable_threads" != xyes; then enable_threads=no; fi,
+-    enable_threads=yes)
+-
+-if test $enable_threads = yes ; then
+-  # cannot use pthread_create here, cause IRIX will fail compiling.
+-  # Solaris has pthread functions in libc, but they don't work, so
+-  # we have to check for libpthread or libthread FIRST.
+-  # BTW the m4 autoconf syntax constraints are terrible.
+-  AC_CHECK_LIB(pthread, pthread_join, libpthread=yes, libpthread=no)
+-  if test $libpthread = yes ; then
++# cannot use pthread_create here, cause IRIX will fail compiling.
++# Solaris has pthread functions in libc, but they don't work, so
++# we have to check for libpthread or libthread FIRST.
++# BTW the m4 autoconf syntax constraints are terrible.
++AC_CHECK_LIB(pthread, pthread_join, libpthread=yes, libpthread=no)
++if test $libpthread = yes ; then
++  AC_DEFINE(HAVE_PTHREAD_JOIN)
++  LIBS="$LIBS -lpthread"
++else
++  AC_CHECK_LIB(thread, pthread_join, libthread=yes, libthread=no)
++  if test $libthread = yes ; then
++    LIBS="$LIBS -lthread"
+     AC_DEFINE(HAVE_PTHREAD_JOIN)
+-    LIBS="$LIBS -lpthread"
+   else
+-    AC_CHECK_LIB(thread, pthread_join, libthread=yes, libthread=no)
+-    if test $libthread = yes ; then
+-      LIBS="$LIBS -lthread"
++    AC_CHECK_FUNC(pthread_join, libc=yes, libc=no)
++    if test $libc = yes ; then
+       AC_DEFINE(HAVE_PTHREAD_JOIN)
+-    else
+-      AC_CHECK_FUNC(pthread_join, libc=yes, libc=no)
+-      if test $libc = yes ; then
+-	AC_DEFINE(HAVE_PTHREAD_JOIN)
+-      else
+-	AC_MSG_CHECKING(for FreeBSD-like pthreads)
+-	LIBS_BEFORE="$LIBS"
+-	CPPFLAGS_BEFORE="$CPPFLAGS"
+-	LIBS="$LIBS -pthread"
+-	CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE"
+-	AC_CACHE_VAL(ac_cv_decl_freebsd_pthreads,
+-	[AC_TRY_LINK([
+-#include <stdio.h>
+-#include <errno.h>
+-#ifdef HAVE_STDLIB_H
+-#include <stdlib.h>
+-#endif
+-#ifdef HAVE_UNISTD_H
+-#include <unistd.h>
+-#endif],[pthread_join();],
+-	ac_cv_decl_freebsd_pthreads=yes, ac_cv_decl_freebsd_pthreads=no)
+-	])
+-	AC_MSG_RESULT($ac_cv_decl_freebsd_pthreads)
+-	if test $ac_cv_decl_freebsd_pthreads = yes; then
+-	  AC_DEFINE(HAVE_PTHREAD_JOIN)
+-	  SYSDEFINES="$SYSDEFINES -D_THREAD_SAFE"
+-	else
+-	  LIBS="$LIBS_BEFORE"
+-	  CPPFLAGS="$CPPFLAGS_BEFORE"
+-	fi
+-      fi
+     fi
+   fi
+ fi
+ 
+-AC_SUBST(SYSDEFINES)
+-
+ checkBoth=0
+ AC_CHECK_FUNC(connect, checkSocket=0, checkSocket=1)
+ if test "$checkSocket" = 1; then
+@@ -165,7 +133,7 @@
+ fi
+ AC_CHECK_FUNC(gethostbyname, , AC_CHECK_LIB(nsl, main, [LIBS="$LIBS -lnsl"]))
+ 
+-AC_CHECK_FUNCS(bsearch door_create drand48 getcwd gettimeofday inet_ntoa isatty isnan lchown lfind lsearch memmove mkdir mkfifo mktime qsort rand re_comp regcomp re_compile_pattern rint seed48 select seteuid setreuid setresuid setegid setregid setresgid setitimer sighold sigrelse socket strcasecmp strncasecmp strcasestr strdup strerror strrstr strstr timer_create uname acl setacl chacl sys_errlist stat64 statvfs vsnprintf vsyslog)
++AC_CHECK_FUNCS(bsearch drand48 getcwd gettimeofday inet_ntoa isatty isnan lchown lfind lsearch memmove mkdir mkfifo mktime qsort rand re_comp regcomp re_compile_pattern rint select setitimer sighold sigrelse socket strcasecmp strncasecmp strcasestr strdup strerror strrstr strstr timer_create uname acl setacl chacl sys_errlist stat64 statvfs vsnprintf vsyslog)
+ AC_CHECK_LIB(acl, acl_get_file, acl_get_file=yes, acl_get_file=no)
+ if test $acl_get_file = yes ; then
+   LIBS="$LIBS -lacl"
+@@ -190,17 +158,15 @@
+ test "x$prefix" = xNONE && prefix=$ac_default_prefix
+ test "x$exec_prefix" = xNONE && exec_prefix=${prefix}
+ 
+-
+-
+ AC_ARG_WITH(utilslibdir,
+     [   --with-utilslibdir=DIR   server configuration files in DIR [prefix/lib]],
+     [
+-	if test "$withval"; then
+-	    utilslibdir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-utilslibdir
++        if test "$withval"; then
++            utilslibdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-utilslibdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${utilslibdir:='$prefix/lib'}
+@@ -211,12 +177,12 @@
+ AC_ARG_WITH(utilsincdir,
+     [   --with-utilsincdir=DIR   server configuration files in DIR [prefix/include]],
+     [
+-	if test "$withval"; then
+-	    utilsincdir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-utilsincdir
++        if test "$withval"; then
++            utilsincdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-utilsincdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${utilsincdir:='$prefix/include'}
+@@ -227,12 +193,12 @@
+ AC_ARG_WITH(utilsbindir,
+     [   --with-utilsbindir=DIR   server configuration files in DIR [prefix/bin]],
+     [
+-	if test "$withval"; then
+-	    utilsbindir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-utilsbindir
++        if test "$withval"; then
++            utilsbindir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-utilsbindir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${utilsbindir:='$prefix/bin'}
+@@ -245,12 +211,12 @@
+ AC_ARG_WITH(prefixext,
+     [   --with-prefixext=YESNO extend prefix with /backup [yes]],
+     [
+-	if test "$withval"; then
+-	    prefixext="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-prefixext
++        if test "$withval"; then
++            prefixext="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-prefixext
+  option.])
+-	fi
++        fi
+     ]
+ )
+ subdir="/backup"
+@@ -262,12 +228,12 @@
+ AC_ARG_WITH(serverdir,
+     [   --with-serverdir=DIR   server installation in DIR [prefix/subdir/server]],
+     [
+-	if test "$withval"; then
+-	    serverdir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-serverdir
++        if test "$withval"; then
++            serverdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-serverdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${serverdir:='$prefix$subdir/server'}
+@@ -279,12 +245,12 @@
+ AC_ARG_WITH(serverbindir,
+     [   --with-serverbindir=DIR   server binaries in DIR [serverdir/bin]],
+     [
+-	if test "$withval"; then
+-	    serverbindir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-serverbindir
++        if test "$withval"; then
++            serverbindir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-serverbindir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${serverbindir:='$serverdir/bin'}
+@@ -296,12 +262,12 @@
+ AC_ARG_WITH(serverlibdir,
+     [   --with-serverlibdir=DIR   server configuration files in DIR [serverdir/lib]],
+     [
+-	if test "$withval"; then
+-	    serverlibdir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-serverlibdir
++        if test "$withval"; then
++            serverlibdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-serverlibdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${serverlibdir:='$serverdir/lib'}
+@@ -313,12 +279,12 @@
+ AC_ARG_WITH(serverconfdir,
+     [   --with-serverconfdir=DIR   server configuration files in DIR [serverdir/lib]],
+     [
+-	if test "$withval"; then
+-	    serverconfdir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-serverconfdir
++        if test "$withval"; then
++            serverconfdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-serverconfdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${serverconfdir:='$serverdir/lib'}
+@@ -330,12 +296,12 @@
+ AC_ARG_WITH(servervardir,
+     [   --with-servervardir=DIR   variable server files in DIR [serverdir/var]],
+     [
+-	if test "$withval"; then
+-	    servervardir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-servervardir
++        if test "$withval"; then
++            servervardir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-servervardir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${servervardir:='$serverdir/var'}
+@@ -347,12 +313,12 @@
+ AC_ARG_WITH(servermandir,
+     [   --with-servermandir=DIR   variable server files in DIR [serverdir/man]],
+     [
+-	if test "$withval"; then
+-	    servermandir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-servermandir
++        if test "$withval"; then
++            servermandir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-servermandir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${servermandir:='$serverdir/man'}
+@@ -364,12 +330,12 @@
+ AC_ARG_WITH(serverlogdir,
+     [   --with-serverlogdir=DIR   server log files in DIR [serverdir/var]],
+     [
+-	if test "$withval"; then
+-	    serverlogdir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-serverlogdir
++        if test "$withval"; then
++            serverlogdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-serverlogdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${serverlogdir:='$serverdir/var'}
+@@ -382,12 +348,12 @@
+ AC_ARG_WITH(clientdir,
+     [   --with-clientdir=DIR   client installation in DIR [prefix/subdir/client]],
+     [
+-	if test "$withval"; then
+-	    clientdir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-clientdir
++        if test "$withval"; then
++            clientdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-clientdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${clientdir:='$prefix$subdir/client'}
+@@ -399,12 +365,12 @@
+ AC_ARG_WITH(clientbindir,
+     [   --with-clientbindir=DIR   client binaries in DIR [clientdir/bin]],
+     [
+-	if test "$withval"; then
+-	    clientbindir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-clientbindir
++        if test "$withval"; then
++            clientbindir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-clientbindir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${clientbindir:='$clientdir/bin'}
+@@ -416,12 +382,12 @@
+ AC_ARG_WITH(clientlibdir,
+     [   --with-clientlibdir=DIR   client configuration files in DIR [clientdir/lib]],
+     [
+-	if test "$withval"; then
+-	    clientlibdir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-clientlibdir
++        if test "$withval"; then
++            clientlibdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-clientlibdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${clientlibdir:='$clientdir/lib'}
+@@ -429,16 +395,33 @@
+     eval echo "$clientlibdir"
+ )`
+ AC_SUBST(clientlibdir)
++dnl *** clientconfdir
++AC_ARG_WITH(clientconfdir,
++    [   --with-clientconfdir=DIR   client configuration files in DIR [clientdir/lib]],
++    [
++        if test "$withval"; then
++            clientconfdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-clientconfdir
++ option.])
++        fi
++    ]
++)
++: ${clientconfdir:='$clientdir/lib'}
++clientconfdir=`(
++    eval echo "$clientconfdir"
++)`
++AC_SUBST(clientconfdir)
+ dnl *** clientvardir
+ AC_ARG_WITH(clientvardir,
+     [   --with-clientvardir=DIR   variable client files in DIR [clientdir/var]],
+     [
+-	if test "$withval"; then
+-	    clientvardir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-clientvardir
++        if test "$withval"; then
++            clientvardir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-clientvardir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${clientvardir:='$clientdir/var'}
+@@ -450,12 +433,12 @@
+ AC_ARG_WITH(clientmandir,
+     [   --with-clientmandir=DIR   variable client files in DIR [clientdir/man]],
+     [
+-	if test "$withval"; then
+-	    clientmandir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-clientmandir
++        if test "$withval"; then
++            clientmandir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-clientmandir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${clientmandir:='$clientdir/man'}
+@@ -467,12 +450,12 @@
+ AC_ARG_WITH(clientlogdir,
+     [   --with-clientlogdir=DIR   client log files in DIR [clientdir/var]],
+     [
+-	if test "$withval"; then
+-	    clientlogdir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-clientlogdir
++        if test "$withval"; then
++            clientlogdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-clientlogdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${clientlogdir:='$clientdir/var'}
+@@ -484,12 +467,12 @@
+ AC_ARG_WITH(rexecdir,
+     [   --with-rexecdir=DIR   binaries for remote execution in DIR [prefix/rexec]],
+     [
+-	if test "$withval"; then
+-	    REXECDIR="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-rexecdir
++        if test "$withval"; then
++            REXECDIR="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-rexecdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${REXECDIR:='$prefix$subdir/rexec'}
+@@ -501,12 +484,12 @@
+ AC_ARG_WITH(clientconf,
+     [   --with-clientconf=NAME   NAME for client configuration [backup.conf]],
+     [
+-	if test "$withval"; then
+-	    clientconf="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-clientconf
++        if test "$withval"; then
++            clientconf="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-clientconf
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${clientconf:=backup.conf}
+@@ -518,12 +501,12 @@
+ AC_ARG_WITH(serverconf,
+     [   --with-serverconf=NAME   NAME for server configuration [backup.conf]],
+     [
+-	if test "$withval"; then
+-	    serverconf="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-serverconf
++        if test "$withval"; then
++            serverconf="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-serverconf
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${serverconf:=backup.conf}
+@@ -535,12 +518,12 @@
+ AC_ARG_WITH(commondir,
+     [   --with-commondir=DIR   software for client and server will reside in DIR [prefix/common]],
+     [
+-	if test "$withval"; then
+-	    commondir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-commondir
++        if test "$withval"; then
++            commondir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-commondir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${commondir:='$prefix$subdir/common'}
+@@ -552,12 +535,12 @@
+ AC_ARG_WITH(commondatadir,
+     [   --with-commondatadir=DIR   architecture independent data for client and server will reside in DIR [commondir/share]],
+     [
+-	if test "$withval"; then
+-	    commondatadir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-commondatadir
++        if test "$withval"; then
++            commondatadir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-commondatadir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${commondatadir:='$commondir/share'}
+@@ -569,12 +552,12 @@
+ AC_ARG_WITH(commonshlibdir,
+     [   --with-commonshlibdir=DIR   architecture independent program text for client and server will reside in DIR [commondatadir/lib]],
+     [
+-	if test "$withval"; then
+-	    commonshlibdir="$withval"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-commonshlibdir
++        if test "$withval"; then
++            commonshlibdir="$withval"
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-commonshlibdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ : ${commonshlibdir:='$commondatadir/lib'}
+@@ -590,7 +573,7 @@
+ AC_ARG_WITH(des,
+     [   --with-des   for client/server authentication [no]],
+     [
+-	usedes=yes
++        usedes=yes
+ 	des_include=../libdes
+ 	des_libdir=`echo $des_include|sed 's#include$#lib#g'`
+ 	des_header=des.h
+@@ -601,43 +584,43 @@
+ AC_ARG_WITH(des-include,
+     [   --with-des-include=DIR   des header file in DIR [../libdes]],
+     [
+-	if test "$withval"; then
+-	    usedes=yes
+-	    des_include="$withval"
++        if test "$withval"; then
++            usedes=yes
++            des_include="$withval"
+ 	    des_libdir="$des_include"
+ 	    des_header=des.h
+ 	    des_ldflag=-ldes
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-des-include
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-des-include
+  option.])
+-	fi
++        fi
+     ]
+ )
+ 
+ AC_ARG_WITH(des-header,
+     [   --with-des-header=NAME   NAME is des header file [des.h]],
+     [
+-	if test "$withval"; then
+-	    usedes=yes
+-	    des_header="$withval"
++        if test "$withval"; then
++            usedes=yes
++            des_header="$withval"
+ 	    des_ldflag=-ldes
+ 	    if test _"$des_include" = _ ; then
+ 		des_include=../libdes
+ 		des_libdir="$des_include"
+ 	    fi
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-des-header
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-des-header
+  option.])
+-	fi
++        fi
+     ]
+ )
+ 
+ AC_ARG_WITH(des-libdir,
+     [   --with-des-libdir=DIR   des library is in DIR [../libdes]],
+     [
+-	if test "$withval"; then
+-	    usedes=yes
+-	    des_libdir="$withval"
++        if test "$withval"; then
++            usedes=yes
++            des_libdir="$withval"
+ 	    des_ldflag=-ldes
+ 	    if test _"$des_include" = _ ; then
+ 		des_include="$des_libdir"
+@@ -645,19 +628,19 @@
+ 	    if test _"$des_header" = _ ; then
+ 		des_header="des.h"
+ 	    fi
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-des-libdir
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-des-libdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ 
+ AC_ARG_WITH(des-ldflag,
+     [   --with-des-ldflag=LIB   des library is specified by LIB [-ldes]],
+     [
+-	if test "$withval"; then
+-	    usedes=yes
+-	    des_ldflag="$withval"
++        if test "$withval"; then
++            usedes=yes
++            des_ldflag="$withval"
+ 	    if test _"$des_include" = _ ; then
+ 		des_include=../libdes
+ 	    fi
+@@ -667,10 +650,10 @@
+ 	    if test _"$des_libdir" = _ ; then
+ 		des_libdir="$des_include"
+ 	    fi
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-des-ldflag
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-des-ldflag
+  option.])
+-	fi
++        fi
+     ]
+ )
+ 
+@@ -708,7 +691,7 @@
+ AC_ARG_WITH(zlib,
+     [   --with-zlib   for builtin compression [no]],
+     [
+-	usezlib=yes
++        usezlib=yes
+ 	zlib_include=/usr/local/include
+ 	zlib_libdir=`echo $zlib_include|sed 's#include$#lib#g'`
+     ]
+@@ -717,30 +700,30 @@
+ AC_ARG_WITH(zlib-include,
+     [   --with-zlib-include=DIR   zlib header file in DIR [/usr/local/include]],
+     [
+-	if test "$withval"; then
+-	    usezlib=yes
+-	    zlib_include="$withval"
++        if test "$withval"; then
++            usezlib=yes
++            zlib_include="$withval"
+ 	    zlib_libdir="$zlib_include"
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-zlib-include
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-zlib-include
+  option.])
+-	fi
++        fi
+     ]
+ )
+ 
+ AC_ARG_WITH(zlib-libdir,
+     [   --with-zlib-libdir=DIR   zlib library is in DIR [/usr/local/lib]],
+     [
+-	if test "$withval"; then
+-	    usezlib=yes
+-	    zlib_libdir="$withval"
++        if test "$withval"; then
++            usezlib=yes
++            zlib_libdir="$withval"
+ 	    if test _"$zlib_include" = _ ; then
+ 		zlib_include="$zlib_libdir"
+ 	    fi
+-	else
+-	    AC_MSG_WARN([*** You must supply an argument to the --with-zlib-libdir
++        else
++            AC_MSG_WARN([*** You must supply an argument to the --with-zlib-libdir
+  option.])
+-	fi
++        fi
+     ]
+ )
+ 
+--- server.conf.changer.orig	Mon Jun 25 19:03:19 2001
++++ server.conf.changer	Fri Nov  2 15:51:10 2001
 @@ -63,10 +63,10 @@
  # %m by the number, if the count starts with 0.
  #
@@ -114,8 +821,8 @@
  #
  # The command to erase the tape. This is necessary on some systems.
  #Erasetape-Command:	exit 0
---- server.conf.dir.orig	Fri Aug 24 14:54:34 2001
-+++ server.conf.dir	Thu Aug 23 12:38:11 2001
+--- server.conf.dir.orig	Mon Jun 25 19:02:48 2001
++++ server.conf.dir	Fri Nov  2 15:51:10 2001
 @@ -126,7 +126,7 @@
  # CONFIGURATION FOR REMOTE_EXECUTION
  # 
@@ -125,8 +832,8 @@
  # 
  # 
  # SERVER-STARTUP AND SHUTDOWN ACTIONS
---- server.conf.dirsl.orig	Fri Aug 24 14:54:34 2001
-+++ server.conf.dirsl	Fri Aug 24 14:28:45 2001
+--- server.conf.dirsl.orig	Mon Jun 25 19:03:04 2001
++++ server.conf.dirsl	Fri Nov  2 15:51:10 2001
 @@ -69,7 +69,7 @@
  SetFile-Command:		/bin/rm -f %d;touch %d.%m; ln -s %d.%m %d; exit 0
  # 
@@ -145,8 +852,32 @@
  # 
  # 
  # SERVER-STARTUP AND SHUTDOWN ACTIONS
---- server.conf.in.orig	Fri Aug 24 14:54:34 2001
-+++ server.conf.in	Fri Aug 24 14:28:43 2001
+--- server.conf.in.orig	Tue Sep 25 08:36:27 2001
++++ server.conf.in	Fri Nov  2 15:51:10 2001
+@@ -66,10 +66,10 @@
+ # %m by the number, if the count starts with 0.
+ #
+ # Command to set the file # on tape
+-SetFile-Command:	sh -c "mt -f %d rewind && %B/__mt -f %d fsf %m"
++SetFile-Command:	sh -c "mt -f %d rewind && %E/__mt -f %d fsf %m"
+ #
+ # Command to skip to the next %n-th file on tape
+-SkipFiles-Command:	%B/__mt -f %d fsf %n
++SkipFiles-Command:	%E/__mt -f %d fsf %n
+ #
+ # If there is a command to set the cartridge directly, use it here
+ #Setcart-Command:	%B/cart_ctl -F -m -C %n -D
+@@ -84,7 +84,7 @@
+ #InitMedia-Command:	
+ #
+ # Command, that is called, when a tape is full
+-#TapeFull-Command:	%B/cartagehandler %c %n %C
++#TapeFull-Command:	%E/cartagehandler %c %n %C
+ #
+ # The command to erase the tape. This is necessary on some systems.
+ #Erasetape-Command:	exit 0
+--- server.conf.manual.orig	Mon Jun 25 19:03:28 2001
++++ server.conf.manual	Fri Nov  2 15:51:10 2001
 @@ -63,10 +63,10 @@
  # %m by the number, if the count starts with 0.
  #
@@ -169,54 +900,30 @@
  #
  # The command to erase the tape. This is necessary on some systems.
  #Erasetape-Command:	exit 0
---- server.conf.manual.orig	Fri Aug 24 14:54:34 2001
-+++ server.conf.manual	Fri Aug 24 14:28:39 2001
-@@ -63,10 +63,10 @@
- # %m by the number, if the count starts with 0.
- #
- # Command to set the file # on tape
--SetFile-Command:	sh -c "mt -f %d rewind && %B/__mt -f %d fsf %m"
-+SetFile-Command:	sh -c "mt -f %d rewind && %E/__mt -f %d fsf %m"
- #
- # Command to skip to the next %n-th file on tape
--SkipFiles-Command:	%B/__mt -f %d fsf %n
-+SkipFiles-Command:	%E/__mt -f %d fsf %n
- #
- # If there is a command to set the cartridge directly, use it here
- #Setcart-Command:	%B/cart_ctl -F -m -C %n -D
-@@ -81,7 +81,7 @@
- #InitMedia-Command:	
- #
- # Command, that is called, when a tape is full
--#TapeFull-Command:	%B/cartagehandler %c %n %C
-+#TapeFull-Command:	%E/cartagehandler %c %n %C
- #
- # The command to erase the tape. This is necessary on some systems.
- #Erasetape-Command:	exit 0
---- serverconfig.in.orig	Fri Aug 24 14:54:34 2001
-+++ serverconfig.in	Fri Aug 24 14:27:20 2001
-@@ -425,7 +425,7 @@
- helps__13=`TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails) or another backup server process is still running, the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, an e-mail is sent to the configured user in charge (see: User To Inform). Supplying 0 means: never send mail."`
- helps__14=`TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails), the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, it exits silently leaving a warning in the log file. Supplying 0 means: try forever, never exit."`
- helps__15=`TN_ "This is the interval in seconds, after that regularly the device is probed to be ready for reading. Thus after having ejected a cartridge it is automatically recognized, if a new cartridge has been inserted. For other media (e.g. exchangeable disks) this may not be suitable. Supply a 0 in these cases for no probing."`
--helps__16=`TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation."`
-+helps__16=`TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory, %E with the libexec-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation."`
- helps__17=`TN_ "This is the (shell-) command to run to position the tape to a certain file. Usually this is something like a combination of: mt -f <device> rewind  and  mt -f <device> fsf <number>. If the command you are supplying here starts to count with 1 for the first file on tape, you should insert %n for the <number>. If it starts with 0, replace <number> with %m. If you don't want to type the devicename again here, you may write %d instead. For more pattern replacements see Changer-Configuration-File (16)."`
- helps__18=`TN_ "This is the (shell-) command to run to skip over to a file later on tape. Usually this is something like\nmt -f <device> fsf <number>\nInsert %n, where the number of files to skip over must be supplied in the command, in the example instead of <number>, and %d, where the device should appear (here: <device>). For more pattern replacements see Changer-Configuration-File (16)."`
- helps__19=`TN_ "This is the (shell-) command to run to put a certain cartridge into the device. If the command you are supplying here starts to count with 1 for the first cartridge, you should insert %n in the place, where the cartridge number must appear. If it starts with 0, replace it with %m. If you don't want to type the devicename again here, you may write %d instead. If you don't have a command to perform this task, don't supply anything here. In this case you must set your cartridge handling system to sequential mode (automatically putting the next cartridge in, when the actual one is ejected). For more pattern replacements see Changer-Configuration-File (16)."`
---- xcc.in.orig	Mon Jun 25 19:01:35 2001
-+++ xcc.in	Thu Sep 13 20:07:56 2001
-@@ -196,7 +196,7 @@
- set helps(11) [ TN_ "This flag specifies, whether the filename logging files should be processed by the configured program." ]
- set helps(12) [ TN_ "These patterns or filenames specify files, that no processing is attempted on. Normally this is done for all files. This might be unefficient, e.g. compressing files, that are already compressed, so their compression can be suppressed with this parameter. The value of this parameter must be a list separated by whitespace. Double quotes may enclose list elements." ]
- set helps(13) [ TN_ "This number determines how many log files of previous full backups are saved. These files may serve for the restore of older files than those present in the current backup. Of course there must be sufficient space to hold all the backups. It doesn't help to save all the saved filenames but not to have them available on tape." ]
--set helps(14) [ TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %L with the lib directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)" ]
-+set helps(14) [ TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %E with the libexec directory, %L with the lib directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)" ]
- set helps(15) [ TN_ "The directory, where varying files should be put in. These files must not be deleted. The information they contain is necessary for restore." ]
- set helps(16) [ TN_ "The identifier for the client. Default: The official hostname. This entry is required, it several afbackup clients reside on one host. In this case the multi stream server must be able to distinguish the clients to distribute the pieces of backup data on tape correctly. Otherwise the data would be mixed up and be unusable by the reading client." ]
- set helps(17) [ TN_ "To prevent client programs from being started several times a lock file is created and this is it's name. For pattern replacements see LoggingFile (14)." ]
---- xrs.in.orig	Wed Jun 13 09:36:35 2001
-+++ xrs.in	Thu Aug 23 12:17:33 2001
+--- serverconfig.in.orig	Sat Oct 13 15:01:04 2001
++++ serverconfig.in	Fri Nov  2 15:51:10 2001
+@@ -439,7 +439,7 @@
+ helps__14=`TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails) or another backup server process is still running, the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, an e-mail is sent to the configured user in charge (see: User To Inform). Supplying 0 means: never send mail."`
+ helps__15=`TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails), the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, it exits silently leaving a warning in the log file. Supplying 0 means: try forever, never exit."`
+ helps__16=`TN_ "This is the interval in seconds, after that regularly the device is probed to be ready for reading. Thus after having ejected a cartridge it is automatically recognized, if a new cartridge has been inserted. For other media (e.g. exchangeable disks) this may not be suitable. Supply a 0 in these cases for no probing."`
+-helps__17=`TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation."`
++helps__17=`TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory, %E with the libexec-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation."`
+ helps__18=`TN_ "This is the (shell-) command to run to position the tape to a certain file. Usually this is something like a combination of: mt -f <device> rewind  and  mt -f <device> fsf <number>. If the command you are supplying here starts to count with 1 for the first file on tape, you should insert %n for the <number>. If it starts with 0, replace <number> with %m. If you don't want to type the devicename again here, you may write %d instead. For more pattern replacements see Changer-Configuration-File (17)."`
+ helps__19=`TN_ "This is the (shell-) command to run to skip over to a file later on tape. Usually this is something like\nmt -f <device> fsf <number>\nInsert %n, where the number of files to skip over must be supplied in the command, in the example instead of <number>, and %d, where the device should appear (here: <device>). For more pattern replacements see Changer-Configuration-File (17)."`
+ helps__20=`TN_ "This is the (shell-) command to run to put a certain cartridge into the device. If the command you are supplying here starts to count with 1 for the first cartridge, you should insert %n in the place, where the cartridge number must appear. If it starts with 0, replace it with %m. If you don't want to type the devicename again here, you may write %d instead. If you don't have a command to perform this task, don't supply anything here. In this case you must set your cartridge handling system to sequential mode (automatically putting the next cartridge in, when the current one is ejected). For more pattern replacements see Changer-Configuration-File (17)."`
+--- xcc.in.orig	Thu Sep 13 08:26:58 2001
++++ xcc.in	Fri Nov  2 15:51:10 2001
+@@ -217,7 +217,7 @@
+ set helps(15) [ TN_ "This is the maximum number of index files, that will be scanned during restore. This can be helpful, if it takes too much time to scan through all index files, what is done, if restrictions are given, such as before time, after time or certain tapes. This parameter can be overridden by option -N of afrestore." ]
+ set helps(16) [ TN_ "Instead of configuring the maximum number of index files to be scanned (previous parameter), their maximum age in days can be configured (floating point number allowed). This parameter can be overridden by option -O of afrestore." ]
+ set helps(17) [ TN_ "When this flag is set, during restore started by a normal user (not the superuser) it is checked, whether the user has sufficient access permissions in the directory, where the files are recovered. When relocating using option -C this is default behaviour. With this flag set it will be enforced also when not relocating. This has pros and cons. It might be desirable, that users can also restore their own files in directories owned by root (e.g. at-job files or the CDE calendar stuff). On the other side this might be considered a security problem." ]
+-set helps(18) [ TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %L with the lib directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)" ]
++set helps(18) [ TN_ "The name of a file error messages or other notable events are written to. A dash - stands for no logging. The pattern %V will be replaced with the full path to the var-directory, %B with the bin directory, %E with the libexec directory, %L with the lib directory, %C with the configuration directory (usually == %L) and %I with the logging directory (usually == %V)" ]
+ set helps(19) [ TN_ "The directory, where varying files should be put in. These files must not be deleted. The information they contain is necessary for restore." ]
+ set helps(20) [ TN_ "The identifier for the client. Default: The official hostname. This entry is required, it several afbackup clients reside on one host. In this case the multi stream server must be able to distinguish the clients to distribute the pieces of backup data on tape correctly. Otherwise the data would be mixed up and be unusable by the reading client." ]
+ set helps(21) [ TN_ "To prevent client programs from being started several times a lock file is created and this is it's name. For pattern replacements see LoggingFile (18)." ]
+--- xrs.in.orig	Mon Aug 27 23:35:43 2001
++++ xrs.in	Fri Nov  2 15:51:10 2001
 @@ -17,7 +17,8 @@
  # user settable section
  
@@ -244,19 +951,19 @@
  
  source "@commonshlibdir@/aftcllib.tcl"
  
---- xsc.in.orig	Fri Aug 24 14:54:34 2001
-+++ xsc.in	Fri Aug 24 14:27:54 2001
-@@ -226,7 +226,7 @@
- set helps(13) [ TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails) or another backup server process is still running, the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, an e-mail is sent to the configured user in charge (see: User To Inform). Supplying 0 means: never send mail." ]
- set helps(14) [ TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails), the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, it exits silently leaving a warning in the log file. Supplying 0 means: try forever, never exit." ]
- set helps(15) [ TN_ "This is the interval in seconds, after that regularly the device is probed to be ready for reading. Thus after having ejected a cartridge it is automatically recognized, if a new cartridge has been inserted. For other media (e.g. exchangeable disks) this may not be suitable. Supply a 0 in these cases for no probing." ]
--set helps(16) [ TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation." ]
-+set helps(16) [ TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory, %E with the libexec-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation." ]
- set helps(17) [ TN_ "This is the (shell-) command to run to position the tape to a certain file. Usually this is something like a combination of: mt -f <device> rewind  and  mt -f <device> fsf <number>. If the command you are supplying here starts to count with 1 for the first file on tape, you should insert %n for the <number>. If it starts with 0, replace <number> with %m. If you don't want to type the devicename again here, you may write %d instead. For more pattern replacements see Changer-Configuration-File (16)." ]
- set helps(18) [ TN_ "This is the (shell-) command to run to skip over to a file later on tape. Usually this is something like\nmt -f <device> fsf <number>\nInsert %n, where the number of files to skip over must be supplied in the command, in the example instead of <number>, and %d, where the device should appear (here: <device>). For more pattern replacements see Changer-Configuration-File (16)." ]
- set helps(19) [ TN_ "This is the (shell-) command to run to put a certain cartridge into the device. If the command you are supplying here starts to count with 1 for the first cartridge, you should insert %n in the place, where the cartridge number must appear. If it starts with 0, replace it with %m. If you don't want to type the devicename again here, you may write %d instead. If you don't have a command to perform this task, don't supply anything here. In this case you must set your cartridge handling system to sequential mode (automatically putting the next cartridge in, when the actual one is ejected). For more pattern replacements see Changer-Configuration-File (16)." ]
---- xss.in.orig	Fri Aug 24 14:54:34 2001
-+++ xss.in	Fri Aug 24 14:28:35 2001
+--- xsc.in.orig	Mon Oct  8 08:39:07 2001
++++ xsc.in	Fri Nov  2 15:51:10 2001
+@@ -232,7 +232,7 @@
+ set helps(14) [ TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails) or another backup server process is still running, the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, an e-mail is sent to the configured user in charge (see: User To Inform). Supplying 0 means: never send mail." ]
+ set helps(15) [ TN_ "If the streaming device is not accessible (i.e. an open or a tape handling command fails), the server process re-tries his attempts regularly. If it fails longer than the time in minutes supplied here, it exits silently leaving a warning in the log file. Supplying 0 means: try forever, never exit." ]
+ set helps(16) [ TN_ "This is the interval in seconds, after that regularly the device is probed to be ready for reading. Thus after having ejected a cartridge it is automatically recognized, if a new cartridge has been inserted. For other media (e.g. exchangeable disks) this may not be suitable. Supply a 0 in these cases for no probing." ]
+-set helps(17) [ TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation." ]
++set helps(17) [ TN_ "If a media changer is available and it should be used, this is the file to configure it. It must contain specifications of the commands, that are driving the media changer. %L will be replaced with the full path of the lib-directory of the server, %B with the bin-directory, %E with the libexec-directory and %V with the var-directory. See the manual pages of cart_ctl, how to setup the media changer operation." ]
+ set helps(18) [ TN_ "This is the (shell-) command to run to position the tape to a certain file. Usually this is something like a combination of: mt -f <device> rewind  and  mt -f <device> fsf <number>. If the command you are supplying here starts to count with 1 for the first file on tape, you should insert %n for the <number>. If it starts with 0, replace <number> with %m. If you don't want to type the devicename again here, you may write %d instead. For more pattern replacements see Changer-Configuration-File (17)." ]
+ set helps(19) [ TN_ "This is the (shell-) command to run to skip over to a file later on tape. Usually this is something like\nmt -f <device> fsf <number>\nInsert %n, where the number of files to skip over must be supplied in the command, in the example instead of <number>, and %d, where the device should appear (here: <device>). For more pattern replacements see Changer-Configuration-File (17)." ]
+ set helps(20) [ TN_ "This is the (shell-) command to run to put a certain cartridge into the device. If the command you are supplying here starts to count with 1 for the first cartridge, you should insert %n in the place, where the cartridge number must appear. If it starts with 0, replace it with %m. If you don't want to type the devicename again here, you may write %d instead. If you don't have a command to perform this task, don't supply anything here. In this case you must set your cartridge handling system to sequential mode (automatically putting the next cartridge in, when the current one is ejected). For more pattern replacements see Changer-Configuration-File (17)." ]
+--- xss.in.orig	Wed May 23 08:47:17 2001
++++ xss.in	Fri Nov  2 15:51:10 2001
 @@ -81,6 +81,7 @@
    { "%L" "libdir" "lib" "@serverlibdir@" }
    { "%I" "logdir" "var" "@serverlogdir@" }
