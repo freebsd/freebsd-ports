@@ -1,0 +1,2 @@
+MD5_FILE=	${.CURDIR}/distinfo
+INCDIR=		..
