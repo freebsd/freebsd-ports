@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 
 CATEGORIES=	x11-fonts www
-MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
+MASTER_SITES=	http://www.happygiraffe.net/dist/
 
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	Web fonts for Netscape/Mozilla
