@@ -1,0 +1,12 @@
+Recombine fits a model which has a single population of constant size with a
+single recombination rate across all sites.  It can accomodate either plain
+DNA or RNA data or SNP (single nucleotide polymorphism) data.
+
+Recombine forms part of the Lamarc (Likelihood Analysis with Metropolis
+Algorithm using Random Coalescence) suite.  See:
+
+  http://evolution.genetics.washington.edu/lamarc.html
+
+WWW:    http://evolution.genetics.washington.edu/lamarc/recombine.html
+
+-- Johann Visagie <wjv@FreeBSD.org>
