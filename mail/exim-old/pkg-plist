@@ -22,3 +22,4 @@ info/exim_filter.info
 @exec install-info --section="Exim" --entry "* Overview: (exim_overview).    Overview of the Exim system" %D/info/exim_overview.info %D/info/dir
 @exec install-info --section="Exim" --entry "* User guide: (exim).           Exim manual" %D/info/exim.info %D/info/dir
 @exec install-info --section="Exim" --entry "* Filtering: (exim_filter).     Filtering mail with Exim" %D/info/exim_filter.info %D/info/dir
+@dirrm etc/exim

@@ -1,6 +1,4 @@
-lib/gcc-lib/m6811-local/2.6.3/include
 lib/gcc-lib/m6811-local/2.6.3/include/syslimits.h
-lib/gcc-lib/m6811-local/2.6.3/include/objc
 lib/gcc-lib/m6811-local/2.6.3/include/objc/hash.h
 lib/gcc-lib/m6811-local/2.6.3/include/objc/list.h
 lib/gcc-lib/m6811-local/2.6.3/include/objc/sarray.h
@@ -54,3 +52,7 @@ bin/asi85
 bin/aslink
 m6811-local/include/assert.h
 bin/gcc11
+@dirrm lib/gcc-lib/m6811-local/2.6.3/include/objc
+@dirrm lib/gcc-lib/m6811-local/2.6.3/include
+@dirrm lib/gcc-lib/m6811-local/2.6.3
+@dirrm lib/gcc-lib/m6811-local
