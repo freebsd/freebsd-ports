@@ -1,0 +1,4 @@
+lib/xfce4/panel-plugins/libwindowlist.so
+lib/xfce4/panel-plugins/libwindowlist.la
+lib/xfce4/panel-plugins/libwindowlist.a
+@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
