@@ -15,6 +15,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Benchmark SMTP/POP servers
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -24,4 +30,4 @@ MAN8=	postal.8 postal-list.8 rabid.8
 post-patch:
 	@${REINPLACE_CMD} -e "s,-pthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
