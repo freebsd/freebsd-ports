@@ -41,27 +41,20 @@ CONFIGURE_ARGS+=--without-java			\
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/include/Xm/Xm.h)
-WITH_MOTIF=	yes
-.endif # exists(${X11BASE}/include/Xm/Xm.h)
-
 .if defined(WITHOUT_MOTIF)
-.undef WITH_MOTIF
 CONFIGURE_ARGS+=	--without-motif
-.endif # defined(WITHOUT_MOTIF)
-
-.if defined(WITH_MOTIF)
+.else
 USE_MOTIF=	yes
 PLIST_APPEND+=	plist.motif
-.else
+
 pre-extract::
 	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with Motif support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_MOTIF=yes\""
+	@${ECHO_MSG} "If you want to compile WITHOUT Motif support, hit"
+	@${ECHO_MSG} "Ctrl-C right now and use \"make WITHOUT_MOTIF=yes\""
 	@${ECHO_MSG}
-	@${ECHO_MSG} "Motif is used for Netscape plugin compatibility."
+	@${ECHO_MSG} "This will DISABLE netscape plugin compatibility."
 	@${ECHO_MSG}
-.endif # defined(WITH_MOTIF)
+.endif # defined(WITHOUT_MOTIF)
 
 post-extract:
 	@${ECHO} "#!/bin/sh" > ${WRKSRC}/mkpamserv
