@@ -2,6 +2,7 @@
 
 # $FreeBSD$
 
+OPTIONS=""
 IFACES="SET_THIS"
 
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
@@ -11,10 +12,10 @@ fi
 
 case "$1" in
 start)
-	${PREFIX}/sbin/dhcpd $IFACES
+	${PREFIX}/sbin/dhcpd $OPTIONS $IFACES
 	;;
 stop)
-	kill `cat /var/run/dhcpd.pid`
+	killall dhcpd
 	;;
 restart)
 	$0 stop
@@ -24,7 +25,7 @@ status)
 	ps -auxww | egrep '(conserver|console)' | egrep -v "($0|egrep)"
 	;;
 *)
-	echo "Usage: `basename $0` {start|stop|restart|status}" >&2
+	echo "usage: ${0##*/} {start|stop|restart|status}" >&2
 	;;
 esac
 

@@ -1,43 +1,20 @@
---- includes/dhcpd.h.orig	Wed Feb  2 18:01:17 2000
-+++ includes/dhcpd.h	Mon Jul 17 21:21:04 2000
-@@ -329,7 +329,7 @@
- #endif
+--- includes/dhcpd.h.orig	Thu Jan 25 09:25:12 2001
++++ includes/dhcpd.h	Fri Jan 26 06:46:12 2001
+@@ -672,7 +672,7 @@
+ 	u_int32_t requested_lease;	/* Requested lease time, if user
+ 					   doesn't configure one. */
+ 	struct string_list *media;	/* Possible network media values. */
+-	char *script_name;		/* Name of config script. */
++	const char *script_name;	/* Name of config script. */
+ 	char *vendor_space_name;	/* Name of config script. */
+ 	enum policy bootp_policy;
+ 					/* Ignore, accept or prefer BOOTP
+@@ -1864,6 +1864,8 @@
+ void set_ip_address PROTO ((struct interface_info *, struct in_addr));
  
- #ifndef CL_DEFAULT_SCRIPT_NAME
--# define CL_DEFAULT_SCRIPT_NAME "/etc/dhclient-script"
-+# define CL_DEFAULT_SCRIPT_NAME "!!PREFIX!!/etc/dhclient-script"
- #endif
- 
- #ifndef CL_DEFAULT_REQUESTED_OPTIONS
-@@ -771,11 +771,11 @@
- #define _PATH_DHCPD_DB		"dhcpd.leases"
- #else
- #ifndef _PATH_DHCPD_CONF
--#define _PATH_DHCPD_CONF	"/etc/dhcpd.conf"
-+#define _PATH_DHCPD_CONF	"!!PREFIX!!/etc/dhcpd.conf"
- #endif
- 
- #ifndef _PATH_DHCPD_DB
--#define _PATH_DHCPD_DB		"/etc/dhcpd.leases"
-+#define _PATH_DHCPD_DB		"!!PREFIX!!/etc/dhcpd.leases"
- #endif
- 
- #ifndef _PATH_DHCPD_PID
-@@ -784,7 +784,7 @@
- #endif
- 
- #ifndef _PATH_DHCLIENT_CONF
--#define _PATH_DHCLIENT_CONF	"/etc/dhclient.conf"
-+#define _PATH_DHCLIENT_CONF	"!!PREFIX!!/etc/dhclient.conf"
- #endif
- 
- #ifndef _PATH_DHCLIENT_PID
-@@ -792,7 +792,7 @@
- #endif
- 
- #ifndef _PATH_DHCLIENT_DB
--#define _PATH_DHCLIENT_DB	"/etc/dhclient.leases"
-+#define _PATH_DHCLIENT_DB	"!!PREFIX!!/etc/dhclient.leases"
- #endif
- 
- #ifndef _PATH_RESOLV_CONF
+ /* clparse.c */
++extern const char *client_script_name;
++
+ isc_result_t read_client_conf PROTO ((void));
+ void read_client_leases PROTO ((void));
+ void parse_client_statement PROTO ((struct parse *, struct interface_info *,

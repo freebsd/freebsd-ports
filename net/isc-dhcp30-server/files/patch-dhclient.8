@@ -1,5 +1,5 @@
---- client/dhclient.8.orig	Wed May 10 02:36:03 2000
-+++ client/dhclient.8	Wed May 10 02:39:43 2000
+--- client/dhclient.8.orig	Mon May  1 19:11:36 2000
++++ client/dhclient.8	Fri Jan 26 05:12:37 2001
 @@ -34,7 +34,7 @@
  .B -q
  ]
@@ -9,15 +9,59 @@
  ]
  [
  .B -lf
-@@ -170,6 +170,11 @@
- .B -q
+@@ -49,6 +49,10 @@
+ .I config-file
+ ]
+ [
++.B -sf
++.I script-file
++]
++[
+ .B -s
+ server
+ ]
+@@ -174,17 +178,25 @@
  flag prevents any messages other than errors from being printed to the
  standard error descriptor.
-+.PP
+ .PP
 +The
 +.B -1
 +flag cause dhclient to try once to get a lease.  If it fails, dhclient exits
 +with exit code two.
- .PP
++.PP
  The DHCP client normally gets its configuration information from
  .B ETCDIR/dhclient.conf,
+ its lease database from
+-.B DBDIR/dhclient.leases
+-and stores its process ID in a file called
++.B DBDIR/dhclient.leases,
++stores its process ID in a file called
+ .B RUNDIR/dhclient.pid.
++and configure the network interface using
++.B CLIENTBINDIR/dhclient-script.
+ To specify different names and/or locations for these files, use the
+ .B -cf,
+-.B -lf
+-and
++.B -lf,
+ .B -pf
++and
++.B -sf
+ flags, respectively, followed by the name of the file.   This can be
+ particularly useful if, for example,
+ .B DBDIR
+@@ -206,10 +218,12 @@
+ .SH CONFIGURATION
+ The syntax of the dhclient.conf(8) file is discussed seperately.
+ .SH FILES
++.B CLIENTBINDIR/dhclient-script,
+ .B ETCDIR/dhclient.conf, DBDIR/dhclient.leases, RUNDIR/dhclient.pid,
+-.B DBDIR/dhclient.leases~.
++.B DBDIR/dhclient.leases.
+ .SH SEE ALSO
+-dhcpd(8), dhcrelay(8), dhclient.conf(5), dhclient.leases(5)
++dhcpd(8), dhcrelay(8), dhclient-script(8), dhclient.conf(5) and
++dhclient.leases(5).
+ .SH AUTHOR
+ .B dhclient(8)
+ has been written for the Internet Software Consortium

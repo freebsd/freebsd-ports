@@ -1,16 +1,17 @@
-ISC-DHCP Dynamic Host Configuration Protocol server
+The ISC Dynamic Host Configuration Protocol Distribution provides
+a freely redistributable reference implementation of all aspects
+of the DHCP protocol, through a suite of DHCP tools:
 
-This is a release of the Internet Software Consortium
-DHCP Server (ISC dhcpd).  In this release, support for the core
-DHCP protocol is provided.  BOOTP support is also provided for
-backwards compatibility. 
+    * A DHCP server
+    * A DHCP client
+    * A DHCP relay agent
 
 Version 3, Beta 2 of the ISC DHCP Distribution includes the following
-features that are new since version 2.0: 
+features that are new since version 2.0:
 
     * DHCP Failover Protocol support 
     * OMAPI, an API for accessing and modifying the DHCP
-      server and client state. 
+      server and client state.
     * Conditional behaviour 
     * Storing arbitrary information on leases 
     * Address pools with access control 
@@ -19,10 +20,12 @@ features that are new since version 2.0:
     * Relay agent information option support 
     * Dynamic DNS updates 
     * Many bug fixes, performance enhancements, and minor
-      new DHCP protocol features. 
+      new DHCP protocol features.
 
-A fully-featured implementation of dynamic DNS updates is included in
-this release.  There are no build dependencies with any BIND version.
+Also, a fully-featured implementation of dynamic DNS updates is
+included and there are no build dependencies with any BIND version.
 
+Since patch-level 15, a log-facility configuration parameter has
+been added, see the manual pages for details.
 
 WWW: http://www.isc.org/products/DHCP/

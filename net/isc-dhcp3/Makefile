@@ -7,19 +7,16 @@
 #
 
 PORTNAME=	isc-dhcp3
-PORTVERSION=	3.0.b2.11
+PORTVERSION=	3.0.b2.16
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
-DISTNAME=	dhcp-3.0b2pl${PORTVERSION:S/3.0.b2.//g}
+DISTNAME=	${PORTNAME:S/isc-//:S/3/-/}${PORTVERSION:S/.b/b/:R}pl${PORTVERSION:E}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clefevre@citeweb.net
 
-.if defined(USE_FACILITY)
-_USE_FACILITY:=	`${ECHO} ${USE_FACILITY} | ${TR} "[:lower:]" "[:upper:]"`
-USE_FACILITY=	${_USE_FACILITY}
-.else
-USE_FACILITY=	DAEMON
-.endif
+#
+# Global variables
+#
 
 HAS_CONFIGURE=	yes
 
@@ -29,34 +26,89 @@ MAN5=		dhclient.conf.5 dhclient.leases.5 dhcp-contrib.5 \
 		dhcpd.leases.5
 MAN8=		dhclient.8 dhclient-script.8 dhcpd.8 dhcrelay.8
 
-pre-fetch:
-.if ${USE_FACILITY} == "DAEMON"
-	@${ECHO} ""
-	@${ECHO} "	You can choose which syslog faciliy by setting LOG_FACILITY to:"
-	@${ECHO} "		daemon, local{0-7}"
-	@${ECHO} "	'daemon' is the default option if one is not defined."
-	@${ECHO} "	Press Control-C and run make clean build LOG_FACILITY=<local{0-7}>,"
-	@${ECHO} "	if you wish to use a different logging facility."
-	@${ECHO} ""
-	@sleep 2
+#
+# Local variables
+#
+
+PATCH_SUBDIRS=	client common dhcpctl minires omapip relay server
+
+BIN_FILES=	dhclient dhcpd dhcrelay
+SAMP_FILES=	client/dhclient.conf server/dhcpd.conf
+RCD_FILES=	isc-dhcpd.sh.sample
+DOC_FILES=	CHANGES COPYRIGHT README RELNOTES
+DATA_FILES=	dhclient.leases dhcpd.leases
+CONF_FILES=	dhclient.conf
+
+BIN_DIR=	${PREFIX}/sbin
+ETC_DIR=	${PREFIX}/etc
+RCD_DIR=	${PREFIX}/etc/rc.d
+DOC_DIR=	${PREFIX}/share/doc/${PORTNAME}
+VARDB_DIR=	/var/db
+
+STRIP?=		strip
+
+#
+# Post-patch
+#
+
+post-patch: patch-scripts patch-makefiles
+
+patch-scripts:
+	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' \
+		${WRKSRC}/client/scripts/freebsd
+
+patch-makefiles:
+.for subdir in ${PATCH_SUBDIRS}
+	@${PERL} -pi.fbsd -e \
+	    's|^DEBUG[	 ]*=|DEBUG ?=|g;s|^CFLAGS[	 ]*=|CFLAGS +=|g' \
+		${WRKSRC}/${subdir}/Makefile.dist
+.endfor
+
+#
+# Post-install
+#
+
+post-install: strip-binary-files install-startup-files \
+	      install-doc-files install-sample-files \
+	      create-data-files create-conf-files
+
+strip-binary-files:
+.for file in ${BIN_FILES}
+.if exists({BIN_DIR}/${file})
+	@${STRIP} ${BIN_DIR}/${file}
+.endif
+.endfor
+
+install-startup-files:
+.for file in ${RCD_FILES}
+	@${INSTALL_SCRIPT} ${FILESDIR}/${file} ${RCD_DIR}/${file}
+.endfor
+
+install-doc-files:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOC_DIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOC_DIR}/${file}
+.endfor
 .endif
 
-post-patch:
-	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' ${WRKSRC}/includes/dhcpd.h
-	@${PERL} -pi.fbsd -e "s.!!USE_FACILITY!!.${USE_FACILITY}.g" ${WRKSRC}/includes/site.h
-	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' ${WRKSRC}/client/scripts/freebsd
-.for MF in relay/Makefile.dist server/Makefile.dist client/Makefile.dist common/Makefile.dist dhcpctl/Makefile.dist minires/Makefile.dist omapip/Makefile.dist 
-	@${PERL} -pi.fbsd -e 's|^DEBUG[	 ]*=|DEBUG ?=|g ; s|^CFLAGS[	 ]*=|CFLAGS +=|g' ${WRKSRC}/${MF}
+install-sample-files:
+.for file in ${SAMP_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${ETC_DIR}/${file:T}.sample
 .endfor
 
-post-install:
-	${TOUCH} /var/db/dhcpd.leases
-.for file in dhclient dhcpd dhcrelay
-	if [ -f ${PREFIX}/sbin/${file} ]; then \
-		strip ${PREFIX}/sbin/${file}; \
-	fi
+create-data-files:
+.for file in ${DATA_FILES}
+.if !exists(${VARDB_DIR}/${file})
+	@${TOUCH} ${VARDB_DIR}/${file}
+.endif
 .endfor
-	${INSTALL_SCRIPT} ${FILESDIR}/isc-dhcpd.sh.sample  \
-		${PREFIX}/etc/rc.d
+
+create-conf-files:
+.for file in ${CONF_FILES}
+.if !exists(${ETC_DIR}/${file})
+	@${TOUCH} ${ETC_DIR}/${file}
+.endif
+.endfor
 
 .include <bsd.port.mk>
