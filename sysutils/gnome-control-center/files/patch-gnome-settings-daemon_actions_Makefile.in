@@ -1,0 +1,11 @@
+--- gnome-settings-daemon/actions/Makefile.in.orig	Mon Dec 20 19:19:31 2004
++++ gnome-settings-daemon/actions/Makefile.in	Mon Dec 20 19:20:45 2004
+@@ -296,7 +296,7 @@
+ Datadir = $(datadir)/control-center-2.0/interfaces/
+ Data_DATA = acme.glade
+ 
+-pixmapsdir = $(GNOMECC_PIXMAPS_DIR)
++pixmapsdir = $(prefix)/share/icons/gnome/48x48/apps
+ pixmaps_DATA = acme-brightness.png acme-eject.png gnome-speakernotes-muted.png gnome-speakernotes.png
+ 
+ EXTRA_DIST = \

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.8.3
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,11 +15,10 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The "meta-port" for the GNOME 2 integrated X11 desktop
 
-RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
+RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnomeapplets2 \
 		gnome-cd:${PORTSDIR}/audio/gnomemedia2 \
 	 	gnome-dictionary:${PORTSDIR}/deskutils/gnomeutils2 \
 		eog:${PORTSDIR}/graphics/eog \
-		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
 		gconf-editor:${PORTSDIR}/sysutils/gconf-editor \
 		gnect:${PORTSDIR}/games/gnomegames2 \
 		gedit:${PORTSDIR}/editors/gedit \
@@ -44,17 +42,22 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		gcalctool:${PORTSDIR}/math/gcalctool \
 		gucharmap:${PORTSDIR}/deskutils/gucharmap \
 		zenity:${PORTSDIR}/x11/zenity \
-		gst-thumbnail:${PORTSDIR}/multimedia/nautilus-media \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
 		gnopernicus:${PORTSDIR}/accessibility/gnopernicus \
 		${X11BASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnomenetstatus \
 		dasher:${PORTSDIR}/accessibility/dasher \
-		evolution-2.0:${PORTSDIR}/mail/evolution \
+		evolution-2.2:${PORTSDIR}/mail/evolution \
 		${X11BASE}/libexec/evolution-webcal:${PORTSDIR}/www/evolution-webcal \
 		network-admin:${PORTSDIR}/sysutils/gnomesystemtools \
 		gnome-nettool:${PORTSDIR}/net/gnomenettool \
 		vino-session:${PORTSDIR}/net/vino \
-		ximian-connector-setup-2.0:${PORTSDIR}/mail/ximian-connector
+		ximian-connector-setup-2.2:${PORTSDIR}/mail/ximian-connector \
+		${X11BASE}/lib/gstreamer-0.8/.gstreamer-plugins-core.keep:${PORTSDIR}/multimedia/gstreamer-plugins-core \
+		totem:${PORTSDIR}/multimedia/totem-gstreamer \
+		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
+		${X11BASE}/share/gnome/gnome-background-properties/gnome-branded.xml:${PORTSDIR}/x11-themes/gnome-backgrounds \
+		sound-juicer:${PORTSDIR}/audio/sound-juicer \
+		${X11BASE}/libdata/pkgconfig/libgtkhtml-2.0.pc:${PORTSDIR}/www/libgtkhtml
 
 NO_BUILD=	yes
 

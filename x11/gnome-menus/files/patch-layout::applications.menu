@@ -1,0 +1,349 @@
+--- layout/applications.menu.orig	Fri Jan 14 14:17:53 2005
++++ layout/applications.menu	Tue Mar  1 01:28:57 2005
+@@ -15,15 +15,18 @@
+   <DefaultAppDirs/>
+   <DefaultDirectoryDirs/>
+ 
+-  <!-- Read in overrides and child menus from applications-merged/ -->
+-  <DefaultMergeDirs/>
+-
+   <!-- Accessories submenu -->
+   <Menu>
+     <Name>Accessories</Name>
+     <Directory>Accessories.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>Utility</Category>
+         <Not>
+           <Category>System</Category>
+@@ -38,6 +41,12 @@
+     <Directory>Accessibility.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>Accessibility</Category>
+         <Not>
+           <Category>Settings</Category>
+@@ -52,6 +61,12 @@
+     <Directory>Development.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>Development</Category>
+       </And>
+       <Filename>emacs.desktop</Filename>
+@@ -64,6 +79,12 @@
+     <Directory>Edutainment.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>Education</Category>
+       </And>
+     </Include>
+@@ -75,6 +96,12 @@
+     <Directory>Games.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>Game</Category>
+       </And>
+     </Include>
+@@ -86,6 +113,12 @@
+     <Directory>Graphics.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>Graphics</Category>
+       </And>
+     </Include>
+@@ -97,6 +130,12 @@
+     <Directory>Internet.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>Network</Category>
+       </And>
+     </Include>
+@@ -108,6 +147,12 @@
+     <Directory>Multimedia.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>AudioVideo</Category>
+       </And>
+     </Include>
+@@ -119,6 +164,12 @@
+     <Directory>Office.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>Office</Category>
+       </And>
+     </Include>
+@@ -130,6 +181,12 @@
+     <Directory>System-Tools.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>System</Category>
+         <Not><Category>Settings</Category></Not>
+       </And>
+@@ -143,11 +200,207 @@
+     <OnlyUnallocated/>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>Application</Category>
+         <Not><Category>Core</Category></Not>
+         <Not><Category>Settings</Category></Not>
+       </And>
+     </Include>
+   </Menu> <!-- End Other -->
++
++  <!-- Read in overrides and child menus from applications-merged/ -->
++  <DefaultMergeDirs/>
++
++  <!-- KDE -->
++  <Menu>
++    <Name>KDE</Name>
++    <Directory>KDE.directory</Directory>
++
++    <!-- KAccessories submenu -->
++    <Menu>
++      <Name>Accessories</Name>
++      <Directory>Accessories.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Utility</Category>
++          <Not>
++            <Category>System</Category>
++          </Not>
++        </And>
++      </Include>
++    </Menu> <!-- End KAccessories -->
++
++    <!-- KAccessibility submenu -->
++    <Menu>
++      <Name>Accessibility</Name>
++      <Directory>Accessibility.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Accessibility</Category>
++          <Not>
++            <Category>Settings</Category>
++          </Not>
++        </And>
++      </Include>
++    </Menu> <!-- End KAccessibility -->
++
++    <!-- KDevelopment Tools -->
++    <Menu>
++      <Name>Development</Name>
++      <Directory>Development.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Development</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KDevelopment Tools -->
++
++    <!-- KEdutainment -->
++    <Menu>
++      <Name>Edutainment</Name>
++      <Directory>Edutainment.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Education</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KEdutainment -->
++
++    <!-- KGames -->
++    <Menu>
++      <Name>Games</Name>
++      <Directory>Games.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Game</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KGames -->
++
++    <!-- KGraphics -->
++    <Menu>
++      <Name>Graphics</Name>
++      <Directory>Graphics.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Graphics</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KGraphics -->
++
++    <!-- KInternet -->
++    <Menu>
++      <Name>Internet</Name>
++      <Directory>Internet.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Network</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KInternet -->
++
++    <!-- KMultimedia -->
++    <Menu>
++      <Name>Multimedia</Name>
++      <Directory>Multimedia.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>AudioVideo</Category>
++        </And>
++      </Include>
++    </Menu> <!-- End KMultimedia -->
++
++    <!-- KOffice -->
++    <Menu>
++      <Name>Office</Name>
++      <Directory>Office.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Or>
++            <Category>Office</Category>
++            <Category>Spreadsheet</Category>
++            <Category>WordProcessor</Category>
++            <Category>Calendar</Category>
++            <Category>ProjectManagement</Category>
++          </Or>
++        </And>
++      </Include>
++    </Menu><!-- End KOffice -->
++
++    <!-- KSystem Tools-->
++    <Menu>
++      <Name>System</Name>
++      <Directory>System-Tools.directory</Directory>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>System</Category>
++          <Not><Category>Settings</Category></Not>
++        </And>
++      </Include>
++    </Menu>   <!-- End KSystem Tools -->
++
++    <!-- KOther -->
++    <Menu>
++      <Name>Other</Name>
++      <Directory>Other.directory</Directory>
++      <OnlyUnallocated/>
++      <Include>
++        <And>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++          <Category>Application</Category>
++          <Not><Category>Core</Category></Not>
++          <Not><Category>Settings</Category></Not>
++        </And>
++      </Include>
++    </Menu> <!-- End KOther -->
++  </Menu> <!-- KDE -->
+ 
+ </Menu> <!-- End Applications -->

@@ -22,39 +22,36 @@ etc/gnome-vfs-2.0/modules/font-method.conf
 etc/gnome-vfs-2.0/modules/theme-method.conf
 include/gnome-window-settings-2.0/gnome-window-manager.h
 include/gnome-window-settings-2.0/gnome-wm-manager.h
-lib/bonobo/libthemus-theme-properties-view.so
 lib/gnome-vfs-2.0/modules/libfont-method.so
 lib/gnome-vfs-2.0/modules/libtheme-method.so
 lib/libgnome-window-settings.a
 lib/libgnome-window-settings.so
 lib/libgnome-window-settings.so.1
+lib/nautilus/extensions-1.0/libnautilus-fontilus.so
+lib/nautilus/extensions-1.0/libnautilus-themus.so
 lib/window-manager-settings/libmetacity.a
 lib/window-manager-settings/libmetacity.so
 libdata/bonobo/servers/GNOME_SettingsDaemon.server
-libdata/bonobo/servers/Themus_Properties_View.server
-libdata/bonobo/servers/fontilus.server
 libdata/pkgconfig/gnome-window-settings-2.0.pc
-libexec/fontilus-context-menu
 libexec/gnome-settings-daemon
-share/gnome/application-registry/fontilus.applications
-share/gnome/application-registry/themus.applications
+share/gnome/applications/accessibility-keyboard.desktop
+share/gnome/applications/at-properties.desktop
+share/gnome/applications/background.desktop
+share/gnome/applications/default-applications.desktop
+share/gnome/applications/display-properties.desktop
+share/gnome/applications/font-properties.desktop
 share/gnome/applications/gnome-font-viewer.desktop
+share/gnome/applications/gnome-network-preferences.desktop
+share/gnome/applications/gnome-settings-mouse.desktop
+share/gnome/applications/gnome-settings-sound.desktop
+share/gnome/applications/gnome-ui-properties.desktop
 share/gnome/applications/gnomecc.desktop
+share/gnome/applications/gtk-theme-selector.desktop
+share/gnome/applications/keybinding.desktop
+share/gnome/applications/keyboard.desktop
+share/gnome/applications/themus-theme-applier.desktop
+share/gnome/applications/window-properties.desktop
 @exec update-desktop-database > /dev/null || /usr/bin/true
-share/gnome/control-center-2.0/capplets/accessibility-keyboard.desktop
-share/gnome/control-center-2.0/capplets/at-properties.desktop
-share/gnome/control-center-2.0/capplets/background.desktop
-share/gnome/control-center-2.0/capplets/default-applications.desktop
-share/gnome/control-center-2.0/capplets/display-properties.desktop
-share/gnome/control-center-2.0/capplets/font-properties.desktop
-share/gnome/control-center-2.0/capplets/gnome-network-preferences.desktop
-share/gnome/control-center-2.0/capplets/gnome-settings-mouse.desktop
-share/gnome/control-center-2.0/capplets/gnome-settings-sound.desktop
-share/gnome/control-center-2.0/capplets/gnome-ui-properties.desktop
-share/gnome/control-center-2.0/capplets/gtk-theme-selector.desktop
-share/gnome/control-center-2.0/capplets/keybinding.desktop
-share/gnome/control-center-2.0/capplets/keyboard.desktop
-share/gnome/control-center-2.0/capplets/window-properties.desktop
 share/gnome/control-center-2.0/icons/display-capplet.png
 share/gnome/control-center-2.0/interfaces/acme.glade
 share/gnome/control-center-2.0/interfaces/apply-font.glade
@@ -69,6 +66,7 @@ share/gnome/control-center-2.0/interfaces/gnome-mouse-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-network-preferences.glade
 share/gnome/control-center-2.0/interfaces/gnome-ui-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-window-properties.glade
+share/gnome/control-center-2.0/interfaces/modmap-dialog.glade
 share/gnome/control-center-2.0/interfaces/sound-properties.glade
 share/gnome/control-center-2.0/interfaces/theme-install.glade
 share/gnome/control-center-2.0/interfaces/theme-properties.glade
@@ -77,8 +75,6 @@ share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-mousekey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-slowkey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-stickykey.png
 share/gnome/control-center-2.0/pixmaps/accessibility-keyboard-togglekey.png
-share/gnome/control-center-2.0/pixmaps/acme-brightness.png
-share/gnome/control-center-2.0/pixmaps/acme-eject.png
 share/gnome/control-center-2.0/pixmaps/at-startup.png
 share/gnome/control-center-2.0/pixmaps/at-support.png
 share/gnome/control-center-2.0/pixmaps/bar-disabled.png
@@ -88,8 +84,6 @@ share/gnome/control-center-2.0/pixmaps/bar.png
 share/gnome/control-center-2.0/pixmaps/double-click-maybe.png
 share/gnome/control-center-2.0/pixmaps/double-click-off.png
 share/gnome/control-center-2.0/pixmaps/double-click-on.png
-share/gnome/control-center-2.0/pixmaps/gnome-speakernotes-muted.png
-share/gnome/control-center-2.0/pixmaps/gnome-speakernotes.png
 share/gnome/control-center-2.0/pixmaps/keyboard-bell.png
 share/gnome/control-center-2.0/pixmaps/keyboard-cursor.png
 share/gnome/control-center-2.0/pixmaps/keyboard-repeat.png
@@ -117,23 +111,16 @@ share/gnome/control-center-2.0/xrdb/Xaw.ad
 share/gnome/cursor-fonts/cursor-large-white.pcf
 share/gnome/cursor-fonts/cursor-large.pcf
 share/gnome/cursor-fonts/cursor-white.pcf
-share/gnome/gnome-2.0/ui/gnomecc-ui.xml
 share/gnome/idl/ConfigArchiver.idl
 share/gnome/idl/GNOME_SettingsDaemon.idl
-share/gnome/mime-info/fontilus.keys
-share/gnome/mime-info/fontilus.mime
-share/gnome/mime-info/themus.keys
-share/gnome/pixmaps/control-center2.png
 share/gnome/pixmaps/display-capplet.png
-share/gnome/pixmaps/gnomecc-2/active.png
-share/gnome/pixmaps/gnomecc-2/bcg_top.png
-share/gnome/pixmaps/gnomecc-2/blank.png
-share/gnome/pixmaps/gnomecc-2/title.png
-share/gnome/vfolders/Accessibility.directory
-share/gnome/vfolders/Advanced.directory
 share/gnome/vfolders/font-method.directory
 share/gnome/vfolders/theme-method.directory
-share/icons/gnome/48x48/apps/accessibility-directory.png
+share/icons/gnome/48x48/apps/acme-brightness.png
+share/icons/gnome/48x48/apps/acme-eject.png
+share/icons/gnome/48x48/apps/gnome-speakernotes-muted.png
+share/icons/gnome/48x48/apps/gnome-speakernotes.png
+share/icons/hicolor/48x48/apps/gnome-control-center.png
 share/locale/af/LC_MESSAGES/control-center-2.0.mo
 share/locale/am/LC_MESSAGES/control-center-2.0.mo
 share/locale/ar/LC_MESSAGES/control-center-2.0.mo
@@ -175,6 +162,7 @@ share/locale/ml/LC_MESSAGES/control-center-2.0.mo
 share/locale/mn/LC_MESSAGES/control-center-2.0.mo
 share/locale/ms/LC_MESSAGES/control-center-2.0.mo
 share/locale/nb/LC_MESSAGES/control-center-2.0.mo
+share/locale/ne/LC_MESSAGES/control-center-2.0.mo
 share/locale/nl/LC_MESSAGES/control-center-2.0.mo
 share/locale/nn/LC_MESSAGES/control-center-2.0.mo
 share/locale/no/LC_MESSAGES/control-center-2.0.mo
@@ -200,17 +188,14 @@ share/locale/wa/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
 share/locale/zu/LC_MESSAGES/control-center-2.0.mo
-@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/zu 2> /dev/null || true
 @unexec rmdir %D/share/locale/nso/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/nso 2> /dev/null || true
-@dirrm share/gnome/pixmaps/gnomecc-2
 @dirrm share/gnome/gnome-background-properties
 @dirrm share/gnome/cursor-fonts
 @dirrm share/gnome/control-center-2.0/xrdb
 @dirrm share/gnome/control-center-2.0/pixmaps
 @dirrm share/gnome/control-center-2.0/interfaces
-@dirrm share/gnome/control-center-2.0/icons
+@unexec rmdir %D/share/gnome/control-center-2.0/icons 2> /dev/null || true
 @dirrm lib/window-manager-settings
 @dirrm include/gnome-window-settings-2.0
 @unexec update-desktop-database > /dev/null || /usr/bin/true

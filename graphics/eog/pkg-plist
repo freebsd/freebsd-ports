@@ -1,8 +1,8 @@
 bin/eog
 share/gnome/applications/eog.desktop
 @exec update-desktop-database > /dev/null || /usr/bin/true
+share/gnome/eog/eog-gtk-ui.xml
 share/gnome/eog/glade/eog.glade
-share/gnome/gnome-2.0/ui/eog-gtk-ui.xml
 share/gnome/help/eog/C/eog.xml
 share/gnome/help/eog/C/figures/eog_save_as_window.png
 share/gnome/help/eog/C/figures/eog_start_window.png
@@ -128,9 +128,6 @@ share/locale/vi/LC_MESSAGES/eog.mo
 share/locale/wa/LC_MESSAGES/eog.mo
 share/locale/zh_CN/LC_MESSAGES/eog.mo
 share/locale/zh_TW/LC_MESSAGES/eog.mo
-share/locale/zu/LC_MESSAGES/eog.mo
-@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/zu 2> /dev/null || true
 @dirrm share/gnome/pixmaps/eog
 @dirrm share/gnome/omf/eog
 @dirrm share/gnome/help/eog/zh_TW/figures
@@ -158,6 +155,4 @@ share/locale/zu/LC_MESSAGES/eog.mo
 @dirrm share/gnome/help/eog
 @dirrm share/gnome/eog/glade
 @dirrm share/gnome/eog
-@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/zu 2> /dev/null || true
 @unexec update-desktop-database > /dev/null || /usr/bin/true

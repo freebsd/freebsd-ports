@@ -1,0 +1,10 @@
+--- configure.orig	Mon Jan 10 04:40:58 2005
++++ configure	Mon Jan 10 04:41:11 2005
+@@ -25377,7 +25377,6 @@
+ 
+   if test x$have_xrender = xyes; then
+      echo "Building with Render"
+-     METACITY_PC_MODULES="$METACITY_PC_MODULES xrender >= $XRENDER_VERSION"
+   fi
+ fi ## have_composite
+ 

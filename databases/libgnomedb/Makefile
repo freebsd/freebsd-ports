@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libgnomedb
-PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTVERSION=	1.2.1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/libgnomedb/1.0
+MASTER_SITE_SUBDIR=	sources/libgnomedb/1.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -20,8 +19,8 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libgda2 gtksourceview \
-		intlhack lthack
-USE_INC_LIBTOOL_VER=	13
+		intlhack
+USE_LIBTOOL_VER=15
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

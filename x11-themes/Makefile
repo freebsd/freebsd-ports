@@ -19,6 +19,7 @@
     SUBDIR += fluxbox-sid-pack
     SUBDIR += fvwm-themes
     SUBDIR += geramik
+    SUBDIR += gnome-backgrounds
     SUBDIR += gnome-icons
     SUBDIR += gnome-icons-aqua-fusion
     SUBDIR += gnome-icons-cool-gorilla

@@ -1,11 +1,11 @@
---- gnome-session/Makefile.in.orig	Mon May 31 14:34:48 2004
-+++ gnome-session/Makefile.in	Mon May 31 14:34:57 2004
-@@ -153,7 +153,7 @@
- 
+--- gnome-session/Makefile.in.orig	Tue Nov 30 14:07:39 2004
++++ gnome-session/Makefile.in	Tue Nov 30 14:07:51 2004
+@@ -209,7 +209,7 @@
+ target_alias = @target_alias@
  NULL = 
  
 -defaultdir = $(datadir)/gnome
 +defaultdir = $(datadir)
  
- INCLUDES =  	$(GNOME_SESSION_CFLAGS)					$(STANDARD_PROPERTIES_CFLAGS)				$(WARN_CFLAGS)						$(DISABLE_DEPRECATED_CFLAGS)				-DGNOMELOCALEDIR=\""$(prefix)/${DATADIRNAME}/locale\""		-DGCONF_SANITY_CHECK=\""$(GCONF_SANITY_CHECK)"\"	    	-DGNOME_KEYRING_DAEMON=\""$(GNOME_KEYRING_DAEMON)"\"	    	-DGNOME_ICONDIR=\""$(datadir)/pixmaps\""		-DREBOOT_COMMAND=\""$(REBOOT_COMMAND)\""		-DHALT_COMMAND=\""$(HALT_COMMAND)\""			-DRSH_COMMAND=\""$(RSH_COMMAND)\""			-DGCONFTOOL_CMD=\""$(GCONFTOOL)\""			-DDEFAULTDIR="\"$(defaultdir)\""			-DESD_SERVER="\"$(ESD_SERVER)\""
- 
+ INCLUDES = \
+ 	$(GNOME_SESSION_CFLAGS)				\

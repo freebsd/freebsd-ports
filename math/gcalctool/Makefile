@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcalctool
-PORTVERSION=	4.4.22
+PORTVERSION=	5.5.41
 PORTEPOCH=	2
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -18,8 +18,8 @@ COMMENT=	A GNOME 2 calculator tool based on the old calctool for OpenWindows
 
 USE_BZIP2=	yes
 USE_BISON=	yes
-USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes
+USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes

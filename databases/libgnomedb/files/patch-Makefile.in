@@ -1,12 +1,12 @@
---- Makefile.in.orig	Sun Apr 18 16:19:21 2004
-+++ Makefile.in	Sun Apr 18 16:19:38 2004
-@@ -212,8 +212,7 @@
- 
- @BUILD_WITH_GNOME_TRUE@GNOME_DIRECTORY = control-center components monikers
- 
--@ENABLE_GTK_DOC_TRUE@DOC_DIRECTORY = doc
+--- Makefile.in.orig	Thu Jul 22 10:56:33 2004
++++ Makefile.in	Thu Jul 22 10:57:14 2004
+@@ -251,8 +251,7 @@
+ @HAVE_LIBGLADE_TRUE@LIBGLADE_DIRECTORY = glade
+ @BUILD_WITH_GNOME_FALSE@GNOME_DIRECTORY = 
+ @BUILD_WITH_GNOME_TRUE@GNOME_DIRECTORY = control-center
 -@ENABLE_GTK_DOC_FALSE@DOC_DIRECTORY = 
+-@ENABLE_GTK_DOC_TRUE@DOC_DIRECTORY = doc
 +DOC_DIRECTORY = doc
- 
  SUBDIRS = \
  	po \
+ 	libgnomedb \

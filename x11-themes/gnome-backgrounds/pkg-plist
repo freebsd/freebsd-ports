@@ -1,0 +1,58 @@
+share/gnome/gnome-background-properties/gnome-branded.xml
+share/gnome/gnome-background-properties/gnome-tiles.xml
+share/gnome/gnome-background-properties/gnome-translucent.xml
+share/gnome/pixmaps/backgrounds/gnome/branded/GNOME-Aqua.jpg
+share/gnome/pixmaps/backgrounds/gnome/branded/GNOME-FraserIsland.jpg
+share/gnome/pixmaps/backgrounds/gnome/branded/GNOME-Redblurred.jpg
+share/gnome/pixmaps/backgrounds/gnome/branded/GNOME-Weirdcolours.jpg
+share/gnome/pixmaps/backgrounds/gnome/tiles/alien-artifact-trans.png
+share/gnome/pixmaps/backgrounds/gnome/tiles/cow-trans.png
+share/gnome/pixmaps/backgrounds/gnome/tiles/tiles-trans.png
+share/gnome/pixmaps/backgrounds/gnome/translucent/ellipsis.png
+share/gnome/pixmaps/backgrounds/gnome/translucent/rects.png
+share/gnome/pixmaps/backgrounds/gnome/translucent/tentacles.png
+share/locale/ar/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/bg/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ca/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/cs/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/cy/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/da/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/de/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/el/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/en_CA/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/en_GB/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/es/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/fi/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/fr/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/gu/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/hi/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/hu/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/id/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/it/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ja/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ko/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/lt/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/nb/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ne/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/nl/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/no/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/pa/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/pl/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/pt/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/ro/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/sk/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/sq/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/sr/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/sv/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/uk/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/vi/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-backgrounds.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-backgrounds.mo
+@dirrm share/gnome/pixmaps/backgrounds/gnome/translucent
+@dirrm share/gnome/pixmaps/backgrounds/gnome/tiles
+@dirrm share/gnome/pixmaps/backgrounds/gnome/branded
+@dirrm share/gnome/pixmaps/backgrounds/gnome
+@dirrm share/gnome/pixmaps/backgrounds
+@dirrm share/gnome/gnome-background-properties

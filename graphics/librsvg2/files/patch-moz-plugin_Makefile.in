@@ -1,25 +1,25 @@
---- moz-plugin/Makefile.in.orig	Fri Sep  3 01:07:24 2004
-+++ moz-plugin/Makefile.in	Fri Sep  3 01:08:00 2004
-@@ -282,15 +282,15 @@
- $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
- 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
+--- moz-plugin/Makefile.in.orig	Tue Jan 25 23:31:56 2005
++++ moz-plugin/Makefile.in	Tue Jan 25 23:32:32 2005
+@@ -252,15 +252,15 @@
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ pluginLTLIBRARIES_INSTALL = $(INSTALL)
  install-pluginLTLIBRARIES: $(plugin_LTLIBRARIES)
 -	@$(NORMAL_INSTALL)
--	test -z "$(plugindir)" || $(mkdir_p) "$(DESTDIR)$(plugindir)"
+-	$(mkinstalldirs) $(DESTDIR)$(plugindir)
 -	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
 -	  if test -f $$p; then \
 -	    f="`echo $$p | sed -e 's|^.*/||'`"; \
--	    echo " $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(plugindir)/$$f'"; \
--	    $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(plugindir)/$$f"; \
+-	    echo " $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(plugindir)/$$f"; \
+-	    $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(plugindir)/$$f; \
 -	  else :; fi; \
 -	done
 +#	@$(NORMAL_INSTALL)
-+#	test -z "$(plugindir)" || $(mkdir_p) "$(DESTDIR)$(plugindir)"
++#	$(mkinstalldirs) $(DESTDIR)$(plugindir)
 +#	@list='$(plugin_LTLIBRARIES)'; for p in $$list; do \
 +#	  if test -f $$p; then \
 +#	    f="`echo $$p | sed -e 's|^.*/||'`"; \
-+#	    echo " $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(plugindir)/$$f'"; \
-+#	    $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(plugindir)/$$f"; \
++#	    echo " $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(plugindir)/$$f"; \
++#	    $(LIBTOOL) --mode=install $(pluginLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(plugindir)/$$f; \
 +#	  else :; fi; \
 +#	done
  

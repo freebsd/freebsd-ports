@@ -1,5 +1,4 @@
 libexec/evolution-webcal
-share/gnome/application-registry/evolution-webcal.applications
 share/locale/ar/LC_MESSAGES/evolution-webcal.mo
 share/locale/az/LC_MESSAGES/evolution-webcal.mo
 share/locale/bg/LC_MESSAGES/evolution-webcal.mo
@@ -14,17 +13,22 @@ share/locale/el/LC_MESSAGES/evolution-webcal.mo
 share/locale/en_CA/LC_MESSAGES/evolution-webcal.mo
 share/locale/en_GB/LC_MESSAGES/evolution-webcal.mo
 share/locale/es/LC_MESSAGES/evolution-webcal.mo
+share/locale/et/LC_MESSAGES/evolution-webcal.mo
 share/locale/eu/LC_MESSAGES/evolution-webcal.mo
+share/locale/fa/LC_MESSAGES/evolution-webcal.mo
 share/locale/fi/LC_MESSAGES/evolution-webcal.mo
 share/locale/fr/LC_MESSAGES/evolution-webcal.mo
 share/locale/gu/LC_MESSAGES/evolution-webcal.mo
 share/locale/hi/LC_MESSAGES/evolution-webcal.mo
 share/locale/hu/LC_MESSAGES/evolution-webcal.mo
+share/locale/id/LC_MESSAGES/evolution-webcal.mo
 share/locale/it/LC_MESSAGES/evolution-webcal.mo
 share/locale/ja/LC_MESSAGES/evolution-webcal.mo
 share/locale/ko/LC_MESSAGES/evolution-webcal.mo
+share/locale/lt/LC_MESSAGES/evolution-webcal.mo
 share/locale/ms/LC_MESSAGES/evolution-webcal.mo
 share/locale/nb/LC_MESSAGES/evolution-webcal.mo
+share/locale/ne/LC_MESSAGES/evolution-webcal.mo
 share/locale/nl/LC_MESSAGES/evolution-webcal.mo
 share/locale/no/LC_MESSAGES/evolution-webcal.mo
 share/locale/or/LC_MESSAGES/evolution-webcal.mo
@@ -38,6 +42,7 @@ share/locale/sr/LC_MESSAGES/evolution-webcal.mo
 share/locale/sr@Latn/LC_MESSAGES/evolution-webcal.mo
 share/locale/sv/LC_MESSAGES/evolution-webcal.mo
 share/locale/ta/LC_MESSAGES/evolution-webcal.mo
+share/locale/th/LC_MESSAGES/evolution-webcal.mo
 share/locale/tr/LC_MESSAGES/evolution-webcal.mo
 share/locale/uk/LC_MESSAGES/evolution-webcal.mo
 share/locale/vi/LC_MESSAGES/evolution-webcal.mo

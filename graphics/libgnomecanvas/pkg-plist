@@ -15,36 +15,37 @@ include/libgnomecanvas-2.0/libgnomecanvas/libgnomecanvas.h
 lib/libglade/2.0/libcanvas.so
 lib/libgnomecanvas-2.a
 lib/libgnomecanvas-2.so
-lib/libgnomecanvas-2.so.800
+lib/libgnomecanvas-2.so.1000
 libdata/pkgconfig/libgnomecanvas-2.0.pc
-share/doc/libgnomecanvas/GnomeCanvas.html
-share/doc/libgnomecanvas/GnomeCanvasBpath.html
-share/doc/libgnomecanvas/GnomeCanvasClipgroup.html
-share/doc/libgnomecanvas/GnomeCanvasEllipse.html
-share/doc/libgnomecanvas/GnomeCanvasGroup.html
-share/doc/libgnomecanvas/GnomeCanvasItem.html
-share/doc/libgnomecanvas/GnomeCanvasLine.html
-share/doc/libgnomecanvas/GnomeCanvasPixbuf.html
-share/doc/libgnomecanvas/GnomeCanvasPolygon.html
-share/doc/libgnomecanvas/GnomeCanvasRE.html
-share/doc/libgnomecanvas/GnomeCanvasRect.html
-share/doc/libgnomecanvas/GnomeCanvasRichText.html
-share/doc/libgnomecanvas/GnomeCanvasShape.html
-share/doc/libgnomecanvas/GnomeCanvasText.html
-share/doc/libgnomecanvas/GnomeCanvasWidget.html
-share/doc/libgnomecanvas/ch01.html
-share/doc/libgnomecanvas/ch02.html
-share/doc/libgnomecanvas/home.png
-share/doc/libgnomecanvas/index.html
-share/doc/libgnomecanvas/index.sgml
-share/doc/libgnomecanvas/left.png
-share/doc/libgnomecanvas/libgnomecanvas-gnome-canvas-path-def.html
-share/doc/libgnomecanvas/libgnomecanvas-gnome-canvas-util.html
-share/doc/libgnomecanvas/libgnomecanvas.devhelp
-share/doc/libgnomecanvas/right.png
-share/doc/libgnomecanvas/style.css
-share/doc/libgnomecanvas/up.png
+%%DOCSDIR%%/GnomeCanvas.html
+%%DOCSDIR%%/GnomeCanvasBpath.html
+%%DOCSDIR%%/GnomeCanvasClipgroup.html
+%%DOCSDIR%%/GnomeCanvasEllipse.html
+%%DOCSDIR%%/GnomeCanvasGroup.html
+%%DOCSDIR%%/GnomeCanvasItem.html
+%%DOCSDIR%%/GnomeCanvasLine.html
+%%DOCSDIR%%/GnomeCanvasPixbuf.html
+%%DOCSDIR%%/GnomeCanvasPolygon.html
+%%DOCSDIR%%/GnomeCanvasRE.html
+%%DOCSDIR%%/GnomeCanvasRect.html
+%%DOCSDIR%%/GnomeCanvasRichText.html
+%%DOCSDIR%%/GnomeCanvasShape.html
+%%DOCSDIR%%/GnomeCanvasText.html
+%%DOCSDIR%%/GnomeCanvasWidget.html
+%%DOCSDIR%%/ch01.html
+%%DOCSDIR%%/ch02.html
+%%DOCSDIR%%/home.png
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+%%DOCSDIR%%/left.png
+%%DOCSDIR%%/libgnomecanvas-gnome-canvas-path-def.html
+%%DOCSDIR%%/libgnomecanvas-gnome-canvas-util.html
+%%DOCSDIR%%/libgnomecanvas.devhelp
+%%DOCSDIR%%/right.png
+%%DOCSDIR%%/style.css
+%%DOCSDIR%%/up.png
 share/locale/am/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ang/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/ar/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/az/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/be/LC_MESSAGES/libgnomecanvas-2.0.mo
@@ -108,10 +109,15 @@ share/locale/tr/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/uk/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/vi/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/wa/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/xh/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/yi/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomecanvas-2.0.mo
-@dirrm share/doc/libgnomecanvas
+@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh 2> /dev/null || true
+@unexec rmdir %D/share/locale/ang/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ang 2> /dev/null || true
+@dirrm %%DOCSDIR%%
 @dirrm lib/libglade/2.0
 @dirrm lib/libglade
 @dirrm include/libgnomecanvas-2.0/libgnomecanvas

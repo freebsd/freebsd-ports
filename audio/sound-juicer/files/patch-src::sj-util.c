@@ -1,71 +1,43 @@
---- src/sj-util.c.orig	Tue Jun 15 19:14:09 2004
-+++ src/sj-util.c	Tue Jun 15 19:29:16 2004
-@@ -122,6 +122,9 @@
-     gtk_widget_destroy (dialog);
-     goto done;
-   }
-+#ifdef __FreeBSD__
-+  ioctl (fd, CDIOCALLOW);
-+#endif
-   result = ioctl (fd, CDROMEJECT);
-   if (result == -1) {
-     GtkWidget *dialog;
-@@ -151,20 +154,32 @@
- {
-   int fd, status;
-   
-+#if defined(__linux__)
-   fd = open (device, O_RDONLY | O_NONBLOCK | O_EXCL);
+--- src/sj-util.c.orig	Tue Feb  8 14:06:57 2005
++++ src/sj-util.c	Tue Feb  8 14:25:03 2005
+@@ -157,6 +157,15 @@
    if (fd < 0) {
      return FALSE;
    }
++#if defined(__FreeBSD__)
++  status = FALSE;
++
++  ioctl (fd, CDIOCCLOSE);
++
++  close (fd);
++
++  return status;
++#else
    
    status = ioctl (fd, CDROM_DRIVE_STATUS, CDSL_CURRENT);
-+  close (fd);
    if (status < 0) {
--    close (fd);
-     return FALSE;
-   }
+@@ -167,6 +176,7 @@
+   close (fd);
    
--  close (fd);
--  
    return status == CDS_TRAY_OPEN;
-+#elif defined(__FreeBSD__)
-+  struct ioc_toc_header h;
-+
-+  fd = open (device, O_RDONLY | O_NONBLOCK | O_EXCL);
-+  if (fd < 0) {
-+    return FALSE;
-+  }
-+
-+  status = ioctl (fd, CDIOREADTOCHEADER, &h);
-+  close (fd);
-+
-+  return status < 0;
 +#endif
  }
  
  gboolean is_audio_cd (const char *device)
-@@ -191,15 +210,19 @@
-     return FALSE;
+@@ -191,7 +201,7 @@
+     default:
+       return FALSE;
    }
- 
-+#if defined(__linux__)
-   status = ioctl (fd, CDROM_DISC_STATUS, CDSL_CURRENT);
-+  close (fd);
-   if (status < 0) {
--    close (fd);
-     return FALSE;
-   }
- 
--  close (fd);
 -
++/*
+   fd = open (device, O_RDONLY | O_NONBLOCK | O_EXCL);
+   if (fd <0) {
+     return FALSE;
+@@ -206,6 +216,7 @@
+   close (fd);
+ 
    return status == CDS_AUDIO;
-+#elif defined (__FreeBSD__)
-+  return TRUE;
-+#else
-+  return TRUE;
-+#endif
++  */
  }
  
  /* Pass NULL to use g_free */

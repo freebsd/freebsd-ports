@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	2.0.4
+PORTVERSION=	2.2.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -22,17 +22,16 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
-INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack evolutiondataserver gal2 \
 		gtkhtml3 desktopfileutils
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
+INSTALLS_OMF=	yes
 CONFIGURE_ARGS=	--enable-nss=yes \
 		--with-nss-includes=${LOCALBASE}/include/nss/nss \
 		--with-nss-libs=${LOCALBASE}/lib \
 		--with-nspr-includes=${LOCALBASE}/include/nspr \
 		--with-nspr-libs=${LOCALBASE}/lib \
-		--enable-openssl=no \
 		--with-sub-version=" FreeBSD GNOME Team Port" \
 		--with-krb5=/usr
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -43,15 +42,24 @@ GCONF_SCHEMAS=	apps_evolution_addressbook-${EVO_VERSION}.schemas \
 		apps_evolution_shell-${EVO_VERSION}.schemas \
 		evolution-mail-${EVO_VERSION}.schemas
 
-EVO_VERSION=	2.0
+EVO_VERSION=	2.2
 PLIST_SUB=	VERSION=${EVO_VERSION} \
-		PORTVERSION=2.0
+		PORTVERSION=2.2
 
 OPTIONS=	PILOT "Enable Palm Pilot sync support" off \
 		LDAP "Enable LDAP support" on \
 		SPAMASSASSIN "Enable SpamAssassin spam filtering" off
 
 .include <bsd.port.pre.mk>
+
+.if exists(${X11BASE}/lib/libgstreamer-0.8.so.5) || \
+	defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+WITH_GSTREAMER=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libdbus-glib-1.so)
+WITH_DBUS=	yes
+.endif
 
 .if defined(WITH_PILOT)
 LIB_DEPENDS+=	gpilotdconduit.2:${PORTSDIR}/palm/gnomepilot2
@@ -73,8 +81,21 @@ CONFIGURE_ARGS+=--with-openldap=no
 RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
+.if defined(WITH_GSTREAMER)
+LIB_DEPENDS+=	gstreamer-0.8.5:${PORTSDIR}/multimedia/gstreamer
+PLIST_SUB+=	GSTREAMER=""
+.else
+PLIST_SUB+=	GSTREAMER="@comment "
+.endif
+
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=	dbus-glib-1.0:${PORTSDIR}/devel/dbus
+PLIST_SUB+=	DBUS=""
+.else
+PLIST_SUB+=	DBUS="@comment "
+.endif
+
 post-install:
-	@${CHMOD} u+w ${PREFIX}/share/gnome/evolution/${EVO_VERSION}/default/C/mail/local/Inbox
 	@${LN} -sf ${PREFIX}/bin/evolution-${EVO_VERSION} \
 		${PREFIX}/bin/evolution
 

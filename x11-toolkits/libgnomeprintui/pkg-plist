@@ -5,6 +5,7 @@ include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-job-preview.h
 include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-paper-selector.h
 include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-preview.h
 include/libgnomeprintui-2.2/libgnomeprintui/gnome-print-unit-selector.h
+include/libgnomeprintui-2.2/libgnomeprintui/libgnomeprintui-enum-types.h
 lib/libgnomeprintui-2-2.a
 lib/libgnomeprintui-2-2.so
 lib/libgnomeprintui-2-2.so.1
@@ -64,6 +65,7 @@ share/locale/ko/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/li/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/lt/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/lv/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/mk/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ml/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/mn/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ms/LC_MESSAGES/libgnomeprintui-2.2.mo
@@ -87,8 +89,8 @@ share/locale/sv/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/ta/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/th/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/tr/LC_MESSAGES/libgnomeprintui-2.2.mo
-share/locale/vi/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/uk/LC_MESSAGES/libgnomeprintui-2.2.mo
+share/locale/vi/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/wa/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomeprintui-2.2.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeprintui-2.2.mo

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ximian
-PORTVERSION=	2.0.4
+PORTVERSION=	2.2.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/2.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}${PKGNAMESUFFIX}/2.2
 PKGNAMESUFFIX=	-connector
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -26,13 +26,13 @@ USE_GMAKE=	yes
 USE_OPENLDAP=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnometarget
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -rpath ${X11BASE}/lib/evolution/${EVO_VERSION}"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-openldap=${LOCALBASE} \
 		--with-static-ldap=no
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-EVO_VERSION=	2.0
-PLIST_SUB=	VERSION="2.0" EVO_VERSION=${EVO_VERSION}
+EVO_VERSION=	2.2
+PLIST_SUB=	VERSION="2.2" EVO_VERSION=${EVO_VERSION} EDS_VERSION="1.2"
 
 .include <bsd.port.pre.mk>
 
@@ -46,6 +46,10 @@ CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME} --with-krb5-includes=${HEIMDAL_HOME
 .else
 CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 .endif
+.endif
+
+.if ${ARCH} == "amd64"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
 .endif
 
 .include <bsd.port.post.mk>

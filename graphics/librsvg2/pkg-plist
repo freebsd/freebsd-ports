@@ -1,5 +1,6 @@
 bin/rsvg
 bin/rsvg-view
+include/librsvg-2/librsvg/librsvg-enum-types.h
 include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg-gz.h
 include/librsvg-2/librsvg/rsvg.h
@@ -8,7 +9,7 @@ lib/gtk-2.0/%%GTK_VERSION%%/engines/libsvg.so
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/svg_loader.so
 lib/librsvg-2.a
 lib/librsvg-2.so
-lib/librsvg-2.so.10
+lib/librsvg-2.so.11
 libdata/pkgconfig/librsvg-2.0.pc
 share/doc/librsvg/html/home.png
 share/doc/librsvg/html/index.html

@@ -1,16 +1,16 @@
-# New ports collection makefile for:   atk
-# Date Created:			14 May 2001
-# Whom:				Maxim Sobolev <sobomax@FreeBSD.org>
+# New ports collection makefile for:	atk
+# Date Created:				14 May 2001
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	atk
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.1
 CATEGORIES=	accessibility devel
 MASTER_SITES=	${MASTER_SITE_GNOME} \
-		ftp://ftp.gtk.org/pub/gtk/v2.4/
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.8
+		ftp://ftp.gtk.org/pub/gtk/v2.6/
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.9
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org

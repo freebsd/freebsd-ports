@@ -1,14 +1,14 @@
---- src/nettool.c.orig	Wed Dec 22 07:07:36 2004
-+++ src/nettool.c	Mon Dec 27 21:22:28 2004
-@@ -21,6 +21,7 @@
- #include <gnome.h>
+--- src/nettool.c.orig	Fri Jan  7 23:13:56 2005
++++ src/nettool.c	Mon Jan 24 21:03:48 2005
+@@ -22,6 +22,7 @@
+ #include <glib/gi18n.h>
  #include <sys/types.h>
  #include <sys/socket.h>
 +#include <netinet/in.h>
  #include <signal.h>
  #include <errno.h>
  #include <sys/wait.h>
-@@ -361,6 +362,10 @@
+@@ -357,6 +358,10 @@
  						 	len, NULL);
  			}
  
@@ -19,17 +19,15 @@
  		} else if (status == G_IO_STATUS_AGAIN) {
  			char buf[1];
  
-@@ -372,12 +377,14 @@
+@@ -368,12 +373,13 @@
  				}
  				g_string_append_c (netinfo->command_output, buf[0]);
  			}
 +
 +			g_free (text);
-+
 +			return TRUE;
  		} else if (status == G_IO_STATUS_EOF) {
--		} 
-+		}
+ 		}
  
  		g_free (text);
 -

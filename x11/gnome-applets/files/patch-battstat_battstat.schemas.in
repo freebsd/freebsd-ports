@@ -5,7 +5,7 @@
          <owner>battstat-applet</owner>
          <type>string</type>
 -        <default>/usr/bin/apm -s</default>
-+        <default>/usr/sbin/apm -s</default>
++        <default>/usr/sbin/zzz</default>
          <locale name="C">
  	  <short>Suspend Command</short>
            <long>Command to send to suspend the computer</long>

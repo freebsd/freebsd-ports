@@ -7,7 +7,6 @@
 
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-gnome
-PORTREVISION=	1
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME wrapper for libgsf

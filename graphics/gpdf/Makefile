@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	gpdf
-PORTVERSION=	2.8.3
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -29,6 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GCONF_SCHEMAS=	gpdf.schemas
 
 post-install:
-	@-update-desktop-database > /dev/null
+	@-update-desktop-database
 
 .include <bsd.port.mk>

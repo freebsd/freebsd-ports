@@ -1,58 +1,3 @@
---- battstat/Makefile.in.orig	Mon Sep 27 18:39:44 2004
-+++ battstat/Makefile.in	Mon Sep 27 18:40:56 2004
-@@ -173,6 +173,8 @@
- pixmapsdir = $(datadir)/pixmaps
- pixmaps_DATA = battstat.png
- 
-+ACPIINC = @ACPIINC@
-+
- @HAVE_LIBAPM_FALSE@@NEED_LIBAPM_TRUE@APMLIB = apmlib/libapm.a
- @HAVE_LIBAPM_TRUE@@NEED_LIBAPM_TRUE@APMLIB = -lapm
- @NEED_LIBAPM_FALSE@APMLIB = 
-@@ -191,6 +193,7 @@
- 	$(GNOME_APPLETS_CFLAGS) \
- 	$(LIBGLADE_CFLAGS) \
- 	$(APMINC) \
-+	$(ACPIINC) \
- 	-DDATA_DIR=\"$(datadir)\" \
- 	-DGLADE_DIR=\"$(gladedir)\" \
- 	-DG_LOG_DOMAIN=\"battstat_applet\" \
-@@ -205,7 +208,9 @@
- 	properties.c \
- 	battstat_applet.c \
- 	acpi-linux.c \
--	acpi-linux.h
-+	acpi-linux.h \
-+	acpi-freebsd.c \
-+	acpi-freebsd.h
- 
- 
- battstat_applet_2_LDADD = \
-@@ -242,7 +247,7 @@
- PROGRAMS = $(libexec_PROGRAMS)
- 
- am_battstat_applet_2_OBJECTS = properties.$(OBJEXT) \
--	battstat_applet.$(OBJEXT) acpi-linux.$(OBJEXT)
-+	battstat_applet.$(OBJEXT) acpi-freebsd.$(OBJEXT) acpi-linux.$(OBJEXT)
- battstat_applet_2_OBJECTS = $(am_battstat_applet_2_OBJECTS)
- @HAVE_LIBAPM_FALSE@@NEED_LIBAPM_TRUE@battstat_applet_2_DEPENDENCIES = \
- @HAVE_LIBAPM_FALSE@@NEED_LIBAPM_TRUE@	apmlib/libapm.a
-@@ -259,6 +264,7 @@
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/acpi-linux.Po \
-+@AMDEP_TRUE@	./$(DEPDIR)/acpi-freebsd.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/battstat_applet.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/properties.Po
- COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-@@ -330,6 +336,7 @@
- 	-rm -f *.tab.c
- 
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/acpi-linux.Po@am__quote@
-+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/acpi-freebsd.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/battstat_applet.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/properties.Po@am__quote@
- 
 --- battstat/acpi-freebsd.h.orig	Mon Sep 27 18:39:30 2004
 +++ battstat/acpi-freebsd.h	Mon Sep 27 18:39:30 2004
 @@ -0,0 +1,45 @@
@@ -101,9 +46,171 @@
 +void acpi_freebsd_cleanup(struct acpi_info * acpiinfo);
 +
 +#endif /* __ACPI_FREEBSD_H__ */
---- battstat/acpi-freebsd.c.orig	Tue Sep 28 16:55:52 2004
-+++ battstat/acpi-freebsd.c	Tue Sep 28 17:00:32 2004
-@@ -0,0 +1,213 @@
+--- battstat/Makefile.in.orig	Mon Jan 24 20:20:49 2005
++++ battstat/Makefile.in	Mon Jan 24 20:22:02 2005
+@@ -55,9 +55,10 @@
+ PROGRAMS = $(libexec_PROGRAMS)
+ am_battstat_applet_2_OBJECTS = properties.$(OBJEXT) \
+ 	battstat_applet.$(OBJEXT) power-management.$(OBJEXT) \
+-	acpi-linux.$(OBJEXT)
++	acpi-freebsd.$(OBJEXT) acpi-linux.$(OBJEXT)
+ battstat_applet_2_OBJECTS = $(am_battstat_applet_2_OBJECTS)
+ am__DEPENDENCIES_1 =
++ACPIINC = @ACPIINC@
+ @HAVE_LIBAPM_FALSE@@NEED_LIBAPM_TRUE@am__DEPENDENCIES_2 =  \
+ @HAVE_LIBAPM_FALSE@@NEED_LIBAPM_TRUE@	apmlib/libapm.a
+ battstat_applet_2_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+@@ -66,6 +67,7 @@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/acpi-linux.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/acpi-freebsd.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/battstat_applet.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/power-management.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/properties.Po
+@@ -336,6 +338,7 @@
+ 	$(GNOME_APPLETS_CFLAGS)			\
+ 	$(LIBGLADE_CFLAGS)			\
+ 	$(APMINC)				\
++	$(ACPIINC)				\
+ 	-DG_LOG_DOMAIN=\"battstat_applet\"
+ 
+ battstat_applet_2_SOURCES = \
+@@ -345,7 +348,9 @@
+ 	battstat_applet.c \
+ 	power-management.c \
+ 	acpi-linux.c \
+-	acpi-linux.h
++	acpi-linux.h \
++	acpi-freebsd.c \
++	acpi-freebsd.h
+ 
+ battstat_applet_2_LDADD = \
+ 		     $(GNOME_APPLETS_LIBS) \
+@@ -439,6 +444,7 @@
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/acpi-linux.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/acpi-freebsd.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/battstat_applet.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/power-management.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/properties.Po@am__quote@
+--- battstat/battstat_applet.c.orig	Mon Jan 24 12:51:51 2005
++++ battstat/battstat_applet.c	Mon Jan 24 20:20:50 2005
+@@ -953,6 +953,7 @@
+ 	"Seth Nickell <snickell@stanford.edu> (GNOME2 port)",
+ 	"Davyd Madeley <davyd@madeley.id.au>",
+ 	"Ryan Lortie <desrt@desrt.ca>",
++	"Joe Marcus Clarke <marcus@FreeBSD.org> (FreeBSD ACPI support)",
+ 	NULL
+    };
+ 
+--- battstat/power-management.c.orig	Thu Jan 13 23:06:40 2005
++++ battstat/power-management.c	Wed Feb 16 02:58:10 2005
+@@ -76,6 +76,14 @@
+ #ifdef __FreeBSD__
+ 
+ #include <machine/apm_bios.h>
++#include "acpi-freebsd.h"
++
++struct acpi_info acpiinfo;
++gboolean using_acpi;
++int acpi_count;
++struct apm_info apminfo;
++
++gboolean acpi_freebsd_read(struct apm_info *apminfo, struct acpi_info *acpiinfo);
+ 
+ #define APMDEVICE "/dev/apm"
+ 
+@@ -86,32 +94,48 @@
+      FreeBSD.  Each time this functions is called (once every second)
+      the APM device is opened, read from and then closed.
+   */
+-  struct apm_info apminfo;
+   int fd;
+ 
+   if (DEBUG) g_print("apm_readinfo() (FreeBSD)\n");
+ 
+-  fd = open(APMDEVICE, O_RDONLY);
+-  if (fd == -1)
+-  {
+-    pm_initialised = 0;
+-    return ERR_OPEN_APMDEV;
++  if (using_acpi) {
++    fd = -1;
++    if (acpi_count <= 0) {
++      acpi_count = 30;
++      acpi_freebsd_read(&apminfo, &acpiinfo);
++    }
++    acpi_count--;
+   }
++  else {
++    fd = open(APMDEVICE, O_RDONLY);
++    if (fd == -1) {
++      return ERR_OPEN_APMDEV;
++    }
+ 
+-  if (ioctl(fd, APMIO_GETINFO, &apminfo) == -1)
+-    err(1, "ioctl(APMIO_GETINFO)");
++    if (ioctl(fd, APMIO_GETINFO, &apminfo) == -1)
++      err(1, "ioctl(APMIO_GETINFO)");
+ 
+-  close(fd);
++      close(fd);
+ 
+-  if(apminfo.ai_status == 0)
+-    return ERR_APM_E;
++    if(apminfo.ai_status == 0)
++      return ERR_APM_E;
++
++  }
++
++  if (using_acpi) {
++    acpi_process_event(&acpiinfo);
++    acpi_freebsd_read(&apminfo, &acpiinfo);
++  }
+ 
+   status->present = TRUE;
+   status->on_ac_power = apminfo.ai_acline ? 1 : 0;
+   status->state = apminfo.ai_batt_stat;
+   status->percent = apminfo.ai_batt_life;
+   status->charging = (status->state == 3) ? TRUE : FALSE;
+-  status->minutes = apminfo.ai_batt_time;
++  if (using_acpi)
++    status->minutes = apminfo.ai_batt_time;
++  else
++    status->minutes = (int) (apminfo.ai_batt_time/60.0);
+ 
+   return NULL;
+ }
+@@ -339,6 +363,13 @@
+         G_IO_IN | G_IO_ERR | G_IO_HUP,
+         acpi_callback, NULL);
+   }
++#elif defined(__FreeBSD__)
++  if (acpi_freebsd_init(&acpiinfo)) {
++    using_acpi = TRUE;
++    acpi_count = 0;
++  }
++  else
++    using_acpi = FALSE;
+ #endif
+   pm_initialised = 1;
+ 
+@@ -360,6 +391,10 @@
+       g_source_remove(acpiwatch);
+      acpiwatch = 0;
+      acpi_linux_cleanup(&acpiinfo);
++  }
++#elif defined(__FreeBSD__)
++  if (using_acpi) {
++    acpi_freebsd_cleanup(&acpiinfo);
+   }
+ #endif
+ 
+--- battstat/acpi-freebsd.c.orig	Mon Feb 28 01:41:08 2005
++++ battstat/acpi-freebsd.c	Mon Feb 28 03:00:11 2005
+@@ -0,0 +1,206 @@
 +/* battstat        A GNOME battery meter for laptops.
 + * Copyright (C) 2000 by Jörgen Pehrson <jp@spektr.eu.org>
 + *
@@ -121,7 +228,7 @@
 + *  along with this program; if not, write to the Free Software
 + *  Foundation, Inc., 59 Temple Street #330, Boston, MA 02111-1307, USA.
 + *
-+ $Id: patch-battstat-acpi,v 1.3 2004/10/01 20:45:45 marcus Exp $
++ $Id: patch-battstat-acpi,v 1.13 2005/02/28 08:02:03 marcus Exp $
 + */
 +
 +/*
@@ -147,7 +254,6 @@
 +#include <glib.h>
 +
 +#include <dev/acpica/acpiio.h>
-+#include <contrib/dev/acpica/acpi.h>
 +
 +#include "acpi-freebsd.h"
 +
@@ -300,160 +406,14 @@
 +  }
 +  apminfo->ai_batt_life = life;
 +  if (!charging) {
-+    apminfo->ai_batt_time = time * 60;
++    apminfo->ai_batt_time = time;
 +  }
 +  else if (charging && rate > 0) {
-+    apminfo->ai_batt_time = (int) ((acpiinfo->max_capacity-remain)/(float)rate * 60);
++    apminfo->ai_batt_time = (int) ((acpiinfo->max_capacity-remain)/(float)rate);
 +  }
 +  else
-+    /* This multiplication is a hack to make sure the -1 survives so the applet
-+     * can process it.  Battstat wants the remaining time in minutes, but
-+     * ai_batt_time is in seconds.  In order to make both ACPI and APM work
-+     * with the fewest amount of hacks, we will just assume everything is
-+     * in seconds.
-+     */
-+    apminfo->ai_batt_time = -1 * 60;
++    apminfo->ai_batt_time = -1;
 +
 +  return TRUE;
 +}
 +#endif
---- battstat/battstat_applet.c.orig	Mon Sep 13 04:33:31 2004
-+++ battstat/battstat_applet.c	Fri Oct  1 16:46:01 2004
-@@ -62,6 +62,9 @@
- #ifdef __linux__
- #include "acpi-linux.h"
- #endif
-+#ifdef __FreeBSD__
-+#include "acpi-freebsd.h"
-+#endif
- 
- #ifndef gettext_noop
- #define gettext_noop(String) (String)
-@@ -237,6 +240,24 @@
- #endif
- 
- #ifdef __FreeBSD__
-+struct acpi_info acpiinfo;
-+gboolean using_acpi;
-+int acpi_count;
-+
-+gboolean acpi_freebsd_read(struct apm_info *apminfo, struct acpi_info *acpiinfo);
-+
-+gboolean acpi_callback (gpointer data)
-+{
-+  ProgressData * battstat = (ProgressData *) data;
-+
-+  if (acpi_process_event(&acpiinfo)) {
-+    acpi_freebsd_read(&apminfo, &acpiinfo);
-+    pixmap_timeout(data);
-+  }
-+
-+  return TRUE;
-+}
-+
- void
- apm_readinfo (PanelApplet *applet, ProgressData * battstat)
- {
-@@ -247,13 +268,22 @@
-   int fd;
-   if (DEBUG) g_print("apm_readinfo() (FreeBSD)\n");
- 
--  fd = open(APMDEVICE, O_RDONLY);
--  if (fd == -1) cleanup (applet, 1);
-+  if (using_acpi) {
-+    if (acpi_count <= 0) {
-+      acpi_count = 30;
-+      acpi_freebsd_read(&apminfo, &acpiinfo);
-+    }
-+    acpi_count--;
-+  }
-+  else {
-+    fd = open(APMDEVICE, O_RDONLY);
-+    if (fd == -1) cleanup (applet, 1);
- 
--  if (ioctl(fd, APMIO_GETINFO, &apminfo) == -1)
--    err(1, "ioctl(APMIO_GETINFO)");
-+    if (ioctl(fd, APMIO_GETINFO, &apminfo) == -1)
-+      err(1, "ioctl(APMIO_GETINFO)");
- 
--  close(fd);
-+    close(fd);
-+  }
- }
- #elif defined(__NetBSD__) || defined(__OpenBSD__)
- void
-@@ -361,7 +391,7 @@
- 
- #ifdef __FreeBSD__
- 	acline_status = apminfo.ai_acline ? 1 : 0;
--	time = apminfo.ai_batt_time;
-+	time = (int) (apminfo.ai_batt_time / 60);
- 	batt_life = apminfo.ai_batt_life;
- #elif defined (__NetBSD__) || defined(__OpenBSD__)
- 	acline_status = apminfo.ac_state ? 1 : 0;
-@@ -375,8 +405,10 @@
- 
- 	if (batt_life > 100) batt_life = 100;
- 
--	hours = time / 60;
--	mins = time % 60;
-+	if (time >= 0) {
-+		hours = time / 60;
-+		mins = time % 60;
-+	}
- 
- 	if (acline_status && batt_life == 100)
- 		return g_strdup_printf (_("Battery charged (%d%%)"), batt_life);
-@@ -912,6 +944,13 @@
-      pdata->acpiwatch = 0;
-      acpi_linux_cleanup(&acpiinfo);
-    }
-+#elif defined(__FreeBSD__)
-+   if (using_acpi) {
-+     if (pdata->acpiwatch != 0)
-+       g_source_remove(pdata->acpiwatch);
-+     pdata->acpiwatch = 0;
-+     acpi_freebsd_cleanup(&acpiinfo);
-+   }
- #endif
- 
-    if (pdata->suspend_cmd)
-@@ -1052,6 +1091,7 @@
- 	"Lennart Poettering <lennart@poettering.de> (Linux ACPI support)",
- 	"Seth Nickell <snickell@stanford.edu> (GNOME2 port)",
- 	"Davyd Madeley <davyd@ucc.asn.au>",
-+	"Joe Marcus Clarke <marcus@FreeBSD.org> (FreeBSD ACPI support)",
- 	NULL
-    };
- 
-@@ -1760,11 +1800,18 @@
-       using_acpi = TRUE;
-       acpi_count = 0;
-   }
-+#elif defined(__FreeBSD__)
-+  if (acpi_freebsd_init(&acpiinfo)) {
-+    using_acpi = TRUE;
-+    acpi_count = 0;
-+  }
-+  else
-+    using_acpi = FALSE;
- #endif
-   apm_readinfo (applet, NULL);
- 
- #ifdef __FreeBSD__
--  if(apminfo.ai_status == 0) cleanup (applet, 2);
-+  if(!using_acpi && apminfo.ai_status == 0) cleanup (applet, 2);
- #endif
-   
-   battstat = g_new0 (ProgressData, 1);
-@@ -1803,6 +1850,10 @@
-     battstat->acpiwatch = g_io_add_watch (acpiinfo.channel,
-         G_IO_IN | G_IO_ERR | G_IO_HUP,
-         acpi_callback, battstat);
-+  }
-+#elif defined(__FreeBSD__)
-+  if (using_acpi) {
-+    battstat->acpiwatch = g_timeout_add (2000, acpi_callback, battstat);
-   }
- #endif
- 

@@ -1,0 +1,10 @@
+--- service-list.pl.in.orig	Sun Sep 19 13:20:02 2004
++++ service-list.pl.in	Sun Sep 19 13:20:10 2004
+@@ -225,6 +225,7 @@
+      "atm3\.sh",
+      "ccd",
+      "cleanvar",
++     "cleartmp",
+      "devdb",
+      "devfs",
+      "dhclient",

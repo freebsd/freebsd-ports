@@ -1,0 +1,11 @@
+--- calendar/libical/configure.orig	Sun Dec 26 16:54:57 2004
++++ calendar/libical/configure	Sun Dec 26 16:55:23 2004
+@@ -19736,7 +19736,7 @@
+ 
+ 
+ 
+-if test "x$USE_MAINTAINER_MODE" == xyes; then
++if test "x$USE_MAINTAINER_MODE" = xyes; then
+ 	DEV="yes"
+ 	echo "$as_me:$LINENO: result: Setting up for development: -Wall, flex, bison" >&5
+ echo "${ECHO_T}Setting up for development: -Wall, flex, bison" >&6

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	totem
-PORTVERSION=	0.100
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
@@ -16,18 +15,18 @@ DIST_SUBDIR=	gnome2
 MAINTAINER?=	hendrik@scholz.net
 COMMENT?=	A Xine-based video player for the Gnome 2 Desktop
 
-LIB_DEPENDS=	nautilus-burn.0:${PORTSDIR}/sysutils/nautilus-cd-burner
-
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop desktopfileutils
+USE_GNOME=	gnomeprefix intlhack gnomehack gnomedesktop desktopfileutils \
+		nautiluscdburner
 WANT_GSTREAMER=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_OMF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 	       	LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lXrandr"
+CONFIGURE_ARGS+=--disable-mozilla
 
 OPTIONS?=	DVDNAV "Enable DVD support" on \
 		GSTREAMER "Use Gstreamer instead of Xine" off
@@ -41,7 +40,7 @@ CONFLICTS=	totem-gstreamer-[0-9]*
 
 .if defined(WITH_GSTREAMER)
 CONFIGURE_ARGS+=--enable-gstreamer
-USE_GSTREAMER=	gnomevfs core
+USE_GSTREAMER+=	gnomevfs core
 WITHOUT_DVDNAV=	yes
 PLIST_SUB=	GSTREAMER=""
 .else
@@ -90,5 +89,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|' \
 		${WRKSRC}/src/bacon-video-widget-gst.c
 .endif
+
+post-install:
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>

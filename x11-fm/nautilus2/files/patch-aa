@@ -1,14 +1,5 @@
 --- configure.orig	Mon Nov 10 22:08:05 2003
 +++ configure	Mon Nov 10 22:08:05 2003
-@@ -12971,7 +12971,7 @@
- 
- LIBNAUTILUS_LIBS="`$PKG_CONFIG --libs $LIBNAUTILUS_MODULES`"
- 
--LIBNAUTILUS_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir $LIBNAUTILUS_MODULES | $srcdir/add-include-prefix`"
-+LIBNAUTILUS_IDL_INCLUDES="`$PKG_CONFIG --variable=idldir $LIBNAUTILUS_MODULES | xargs -n1 echo -n ' -I '`"
- 
- 
- CORE_MODULES="eel-2.0 librsvg-2.0 bonobo-activation-2.0 libbonobo-2.0 libbonoboui-2.0 esound gnome-desktop-2.0 $EXTRA_CORE_MODULES"
 @@ -12979,7 +12979,7 @@
  
  CORE_LIBS="`$PKG_CONFIG --libs $CORE_MODULES` $CDDA_LIBS $LIBJPEG $x_libs"

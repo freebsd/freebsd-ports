@@ -1,0 +1,29 @@
+--- replace.pl.in.orig	Tue Dec 21 11:17:14 2004
++++ replace.pl.in	Thu Dec 23 13:14:41 2004
+@@ -1128,7 +1128,7 @@
+ 
+   while ($line_no < $line_end)
+   {
+-    delete $$buff[$line_no];
++    splice @{$buff},$line_no,1;
+     $line_no++;
+   }
+   
+@@ -1140,7 +1140,7 @@
+ 
+     while ($line_no < $line_end)
+     {
+-      delete $$buff[$line_no];
++      splice @{$buff},$line_no,1;
+       $line_no++;
+     }
+   }
+@@ -1680,7 +1680,7 @@
+         }
+         else
+         {
+-          delete $$buff[$i];
++	  splice @{$buff},$i,1;
+         }
+       }
+     }

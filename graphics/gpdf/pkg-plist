@@ -46,6 +46,7 @@ share/locale/en_CA/LC_MESSAGES/gpdf.mo
 share/locale/en_GB/LC_MESSAGES/gpdf.mo
 share/locale/eo/LC_MESSAGES/gpdf.mo
 share/locale/es/LC_MESSAGES/gpdf.mo
+share/locale/et/LC_MESSAGES/gpdf.mo
 share/locale/eu/LC_MESSAGES/gpdf.mo
 share/locale/fa/LC_MESSAGES/gpdf.mo
 share/locale/fi/LC_MESSAGES/gpdf.mo
@@ -70,6 +71,7 @@ share/locale/ml/LC_MESSAGES/gpdf.mo
 share/locale/mn/LC_MESSAGES/gpdf.mo
 share/locale/ms/LC_MESSAGES/gpdf.mo
 share/locale/nb/LC_MESSAGES/gpdf.mo
+share/locale/ne/LC_MESSAGES/gpdf.mo
 share/locale/nl/LC_MESSAGES/gpdf.mo
 share/locale/nn/LC_MESSAGES/gpdf.mo
 share/locale/no/LC_MESSAGES/gpdf.mo

@@ -1,144 +1,6 @@
 bin/evolution
 bin/evolution-%%VERSION%%
-include/evolution-%%VERSION%%/camel/broken-date-parser.h
-include/evolution-%%VERSION%%/camel/camel-address.h
-include/evolution-%%VERSION%%/camel/camel-arg.h
-include/evolution-%%VERSION%%/camel/camel-block-file.h
-include/evolution-%%VERSION%%/camel/camel-certdb.h
-include/evolution-%%VERSION%%/camel/camel-charset-map.h
-include/evolution-%%VERSION%%/camel/camel-cipher-context.h
-include/evolution-%%VERSION%%/camel/camel-data-cache.h
-include/evolution-%%VERSION%%/camel/camel-data-wrapper.h
-include/evolution-%%VERSION%%/camel/camel-debug.h
-include/evolution-%%VERSION%%/camel/camel-digest-folder.h
-include/evolution-%%VERSION%%/camel/camel-digest-store.h
-include/evolution-%%VERSION%%/camel/camel-digest-summary.h
-include/evolution-%%VERSION%%/camel/camel-disco-diary.h
-include/evolution-%%VERSION%%/camel/camel-disco-folder.h
-include/evolution-%%VERSION%%/camel/camel-disco-store.h
-include/evolution-%%VERSION%%/camel/camel-exception-list.def
-include/evolution-%%VERSION%%/camel/camel-exception.h
-include/evolution-%%VERSION%%/camel/camel-file-utils.h
-include/evolution-%%VERSION%%/camel/camel-filter-driver.h
-include/evolution-%%VERSION%%/camel/camel-filter-search.h
-include/evolution-%%VERSION%%/camel/camel-folder-search.h
-include/evolution-%%VERSION%%/camel/camel-folder-summary.h
-include/evolution-%%VERSION%%/camel/camel-folder-thread.h
-include/evolution-%%VERSION%%/camel/camel-folder.h
-include/evolution-%%VERSION%%/camel/camel-gpg-context.h
-include/evolution-%%VERSION%%/camel/camel-http-stream.h
-include/evolution-%%VERSION%%/camel/camel-i18n.h
-include/evolution-%%VERSION%%/camel/camel-imap-command.h
-include/evolution-%%VERSION%%/camel/camel-imap-folder.h
-include/evolution-%%VERSION%%/camel/camel-imap-message-cache.h
-include/evolution-%%VERSION%%/camel/camel-imap-search.h
-include/evolution-%%VERSION%%/camel/camel-imap-store-summary.h
-include/evolution-%%VERSION%%/camel/camel-imap-store.h
-include/evolution-%%VERSION%%/camel/camel-imap-summary.h
-include/evolution-%%VERSION%%/camel/camel-imap-types.h
-include/evolution-%%VERSION%%/camel/camel-imap-utils.h
-include/evolution-%%VERSION%%/camel/camel-imap-wrapper.h
-include/evolution-%%VERSION%%/camel/camel-index.h
-include/evolution-%%VERSION%%/camel/camel-internet-address.h
-include/evolution-%%VERSION%%/camel/camel-junk-plugin.h
-include/evolution-%%VERSION%%/camel/camel-local-folder.h
-include/evolution-%%VERSION%%/camel/camel-local-store.h
-include/evolution-%%VERSION%%/camel/camel-local-summary.h
-include/evolution-%%VERSION%%/camel/camel-lock-client.h
-include/evolution-%%VERSION%%/camel/camel-lock.h
-include/evolution-%%VERSION%%/camel/camel-maildir-folder.h
-include/evolution-%%VERSION%%/camel/camel-maildir-store.h
-include/evolution-%%VERSION%%/camel/camel-maildir-summary.h
-include/evolution-%%VERSION%%/camel/camel-mbox-folder.h
-include/evolution-%%VERSION%%/camel/camel-mbox-store.h
-include/evolution-%%VERSION%%/camel/camel-mbox-summary.h
-include/evolution-%%VERSION%%/camel/camel-medium.h
-include/evolution-%%VERSION%%/camel/camel-mh-folder.h
-include/evolution-%%VERSION%%/camel/camel-mh-store.h
-include/evolution-%%VERSION%%/camel/camel-mh-summary.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-basic.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-bestenc.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-canon.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-charset.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-crlf.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-enriched.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-from.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-gzip.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-html.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-index.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-linewrap.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-save.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-tohtml.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-windows.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter-yenc.h
-include/evolution-%%VERSION%%/camel/camel-mime-filter.h
-include/evolution-%%VERSION%%/camel/camel-mime-message.h
-include/evolution-%%VERSION%%/camel/camel-mime-parser.h
-include/evolution-%%VERSION%%/camel/camel-mime-part-utils.h
-include/evolution-%%VERSION%%/camel/camel-mime-part.h
-include/evolution-%%VERSION%%/camel/camel-mime-utils.h
-include/evolution-%%VERSION%%/camel/camel-movemail.h
-include/evolution-%%VERSION%%/camel/camel-multipart-encrypted.h
-include/evolution-%%VERSION%%/camel/camel-multipart-signed.h
-include/evolution-%%VERSION%%/camel/camel-multipart.h
-include/evolution-%%VERSION%%/camel/camel-nntp-folder.h
-include/evolution-%%VERSION%%/camel/camel-nntp-resp-codes.h
-include/evolution-%%VERSION%%/camel/camel-nntp-store-summary.h
-include/evolution-%%VERSION%%/camel/camel-nntp-store.h
-include/evolution-%%VERSION%%/camel/camel-nntp-stream.h
-include/evolution-%%VERSION%%/camel/camel-nntp-summary.h
-include/evolution-%%VERSION%%/camel/camel-object.h
-include/evolution-%%VERSION%%/camel/camel-operation.h
-include/evolution-%%VERSION%%/camel/camel-partition-table.h
-include/evolution-%%VERSION%%/camel/camel-pop3-engine.h
-include/evolution-%%VERSION%%/camel/camel-pop3-folder.h
-include/evolution-%%VERSION%%/camel/camel-pop3-store.h
-include/evolution-%%VERSION%%/camel/camel-pop3-stream.h
-include/evolution-%%VERSION%%/camel/camel-provider.h
-include/evolution-%%VERSION%%/camel/camel-sasl-anonymous.h
-include/evolution-%%VERSION%%/camel/camel-sasl-cram-md5.h
-include/evolution-%%VERSION%%/camel/camel-sasl-digest-md5.h
-include/evolution-%%VERSION%%/camel/camel-sasl-gssapi.h
-include/evolution-%%VERSION%%/camel/camel-sasl-kerberos4.h
-include/evolution-%%VERSION%%/camel/camel-sasl-login.h
-include/evolution-%%VERSION%%/camel/camel-sasl-ntlm.h
-include/evolution-%%VERSION%%/camel/camel-sasl-plain.h
-include/evolution-%%VERSION%%/camel/camel-sasl-popb4smtp.h
-include/evolution-%%VERSION%%/camel/camel-sasl.h
-include/evolution-%%VERSION%%/camel/camel-seekable-stream.h
-include/evolution-%%VERSION%%/camel/camel-seekable-substream.h
-include/evolution-%%VERSION%%/camel/camel-sendmail-transport.h
-include/evolution-%%VERSION%%/camel/camel-service.h
-include/evolution-%%VERSION%%/camel/camel-session.h
-include/evolution-%%VERSION%%/camel/camel-smime-context.h
-include/evolution-%%VERSION%%/camel/camel-smtp-transport.h
-include/evolution-%%VERSION%%/camel/camel-spool-folder.h
-include/evolution-%%VERSION%%/camel/camel-spool-store.h
-include/evolution-%%VERSION%%/camel/camel-spool-summary.h
-include/evolution-%%VERSION%%/camel/camel-store-summary.h
-include/evolution-%%VERSION%%/camel/camel-store.h
-include/evolution-%%VERSION%%/camel/camel-stream-buffer.h
-include/evolution-%%VERSION%%/camel/camel-stream-filter.h
-include/evolution-%%VERSION%%/camel/camel-stream-fs.h
-include/evolution-%%VERSION%%/camel/camel-stream-mem.h
-include/evolution-%%VERSION%%/camel/camel-stream-null.h
-include/evolution-%%VERSION%%/camel/camel-stream-process.h
-include/evolution-%%VERSION%%/camel/camel-stream.h
-include/evolution-%%VERSION%%/camel/camel-string-utils.h
-include/evolution-%%VERSION%%/camel/camel-tcp-stream-raw.h
-include/evolution-%%VERSION%%/camel/camel-tcp-stream-ssl.h
-include/evolution-%%VERSION%%/camel/camel-tcp-stream.h
-include/evolution-%%VERSION%%/camel/camel-text-index.h
-include/evolution-%%VERSION%%/camel/camel-transport.h
-include/evolution-%%VERSION%%/camel/camel-types.h
-include/evolution-%%VERSION%%/camel/camel-uid-cache.h
-include/evolution-%%VERSION%%/camel/camel-url-scanner.h
-include/evolution-%%VERSION%%/camel/camel-url.h
-include/evolution-%%VERSION%%/camel/camel-utf8.h
-include/evolution-%%VERSION%%/camel/camel-vee-folder.h
-include/evolution-%%VERSION%%/camel/camel-vee-store.h
-include/evolution-%%VERSION%%/camel/camel-vtrash-folder.h
-include/evolution-%%VERSION%%/camel/camel.h
+include/evolution-%%VERSION%%/calendar/gui/e-cal-config.h
 include/evolution-%%VERSION%%/e-conduit/e-pilot-map.h
 include/evolution-%%VERSION%%/e-conduit/e-pilot-util.h
 include/evolution-%%VERSION%%/e-util/e-account-list.h
@@ -148,32 +10,30 @@ include/evolution-%%VERSION%%/e-util/e-categories-config.h
 include/evolution-%%VERSION%%/e-util/e-categories-master-list-wombat.h
 include/evolution-%%VERSION%%/e-util/e-component-listener.h
 include/evolution-%%VERSION%%/e-util/e-config-listener.h
+include/evolution-%%VERSION%%/e-util/e-config.h
 include/evolution-%%VERSION%%/e-util/e-corba-utils.h
 include/evolution-%%VERSION%%/e-util/e-dialog-utils.h
 include/evolution-%%VERSION%%/e-util/e-dialog-widgets.h
+include/evolution-%%VERSION%%/e-util/e-event.h
 include/evolution-%%VERSION%%/e-util/e-folder-map.h
 include/evolution-%%VERSION%%/e-util/e-fsutils.h
 include/evolution-%%VERSION%%/e-util/e-gtk-utils.h
 include/evolution-%%VERSION%%/e-util/e-gui-utils.h
-include/evolution-%%VERSION%%/e-util/e-host-utils.h
 include/evolution-%%VERSION%%/e-util/e-html-utils.h
 include/evolution-%%VERSION%%/e-util/e-icon-factory.h
 include/evolution-%%VERSION%%/e-util/e-iterator.h
 include/evolution-%%VERSION%%/e-util/e-list-iterator.h
 include/evolution-%%VERSION%%/e-util/e-list.h
-include/evolution-%%VERSION%%/e-util/e-memory.h
+include/evolution-%%VERSION%%/e-util/e-menu.h
 include/evolution-%%VERSION%%/e-util/e-mktemp.h
-include/evolution-%%VERSION%%/e-util/e-msgport.h
-include/evolution-%%VERSION%%/e-util/e-passwords.h
-include/evolution-%%VERSION%%/e-util/e-path.h
+include/evolution-%%VERSION%%/e-util/e-plugin.h
+include/evolution-%%VERSION%%/e-util/e-popup.h
+include/evolution-%%VERSION%%/e-util/e-print.h
 include/evolution-%%VERSION%%/e-util/e-request.h
-include/evolution-%%VERSION%%/e-util/e-sexp.h
 include/evolution-%%VERSION%%/e-util/e-signature-list.h
 include/evolution-%%VERSION%%/e-util/e-signature.h
 include/evolution-%%VERSION%%/e-util/e-time-utils.h
-include/evolution-%%VERSION%%/e-util/e-trie.h
 include/evolution-%%VERSION%%/e-util/e-uid.h
-include/evolution-%%VERSION%%/e-util/e-url.h
 include/evolution-%%VERSION%%/e-util/md5-utils.h
 include/evolution-%%VERSION%%/importer/GNOME_Evolution_Importer.h
 include/evolution-%%VERSION%%/importer/evolution-importer-client.h
@@ -208,26 +68,10 @@ include/evolution-%%VERSION%%/widgets/e-map.h
 include/evolution-%%VERSION%%/widgets/e-multi-config-dialog.h
 %%PILOT:%%include/evolution-%%VERSION%%/widgets/e-pilot-settings.h
 include/evolution-%%VERSION%%/widgets/e-search-bar.h
-include/evolution-%%VERSION%%/widgets/e-source-option-menu.h
-include/evolution-%%VERSION%%/widgets/e-source-selector.h
+include/evolution-%%VERSION%%/widgets/e-send-options.h
 include/evolution-%%VERSION%%/widgets/e-task-bar.h
 include/evolution-%%VERSION%%/widgets/e-task-widget.h
-include/evolution-%%VERSION%%/widgets/e-title-bar.h
 include/evolution-%%VERSION%%/widgets/e-url-entry.h
-lib/evolution/%%VERSION%%/camel-providers/libcamelgroupwise.so
-lib/evolution/%%VERSION%%/camel-providers/libcamelgroupwise.urls
-lib/evolution/%%VERSION%%/camel-providers/libcamelimap.so
-lib/evolution/%%VERSION%%/camel-providers/libcamelimap.urls
-lib/evolution/%%VERSION%%/camel-providers/libcamellocal.so
-lib/evolution/%%VERSION%%/camel-providers/libcamellocal.urls
-lib/evolution/%%VERSION%%/camel-providers/libcamelnntp.so
-lib/evolution/%%VERSION%%/camel-providers/libcamelnntp.urls
-lib/evolution/%%VERSION%%/camel-providers/libcamelpop3.so
-lib/evolution/%%VERSION%%/camel-providers/libcamelpop3.urls
-lib/evolution/%%VERSION%%/camel-providers/libcamelsendmail.so
-lib/evolution/%%VERSION%%/camel-providers/libcamelsendmail.urls
-lib/evolution/%%VERSION%%/camel-providers/libcamelsmtp.so
-lib/evolution/%%VERSION%%/camel-providers/libcamelsmtp.urls
 lib/evolution/%%VERSION%%/components/libevolution-addressbook.so
 lib/evolution/%%VERSION%%/components/libevolution-calendar.so
 lib/evolution/%%VERSION%%/components/libevolution-mail.so
@@ -237,21 +81,33 @@ lib/evolution/%%VERSION%%/components/libevolution-mail.so
 lib/evolution/%%VERSION%%/evolution-addressbook-importers/libevolution-addressbook-ldif-importer.so
 lib/evolution/%%VERSION%%/evolution-addressbook-importers/libevolution-addressbook-vcard-importer.so
 lib/evolution/%%VERSION%%/evolution-calendar-importers/libevolution-calendar-importers.so
-lib/evolution/%%VERSION%%/libcamel.a
-lib/evolution/%%VERSION%%/libcamel.so
-lib/evolution/%%VERSION%%/libcamel.so.0
+lib/evolution/%%VERSION%%/libeabutil.a
+lib/evolution/%%VERSION%%/libeabutil.so
+lib/evolution/%%VERSION%%/libeabutil.so.0
 lib/evolution/%%VERSION%%/libeconduit.a
 lib/evolution/%%VERSION%%/libeconduit.so
 lib/evolution/%%VERSION%%/libeconduit.so.0
+lib/evolution/%%VERSION%%/libecontacteditor.a
+lib/evolution/%%VERSION%%/libecontacteditor.so
+lib/evolution/%%VERSION%%/libecontacteditor.so.0
+lib/evolution/%%VERSION%%/libecontactlisteditor.a
+lib/evolution/%%VERSION%%/libecontactlisteditor.so
+lib/evolution/%%VERSION%%/libecontactlisteditor.so.0
+lib/evolution/%%VERSION%%/libefilterbar.a
+lib/evolution/%%VERSION%%/libefilterbar.so
+lib/evolution/%%VERSION%%/libefilterbar.so.0
 lib/evolution/%%VERSION%%/libemiscwidgets.a
 lib/evolution/%%VERSION%%/libemiscwidgets.so
 lib/evolution/%%VERSION%%/libemiscwidgets.so.0
-lib/evolution/%%VERSION%%/libeselectnames.a
-lib/evolution/%%VERSION%%/libeselectnames.so
-lib/evolution/%%VERSION%%/libeselectnames.so.0
 lib/evolution/%%VERSION%%/libeshell.a
 lib/evolution/%%VERSION%%/libeshell.so
 lib/evolution/%%VERSION%%/libeshell.so.0
+lib/evolution/%%VERSION%%/libessmime.a
+lib/evolution/%%VERSION%%/libessmime.so
+lib/evolution/%%VERSION%%/libessmime.so.0
+lib/evolution/%%VERSION%%/libetimezonedialog.a
+lib/evolution/%%VERSION%%/libetimezonedialog.so
+lib/evolution/%%VERSION%%/libetimezonedialog.so.0
 lib/evolution/%%VERSION%%/libeutil.a
 lib/evolution/%%VERSION%%/libeutil.so
 lib/evolution/%%VERSION%%/libeutil.so.0
@@ -270,12 +126,80 @@ lib/evolution/%%VERSION%%/libevolution-importer.so.0
 lib/evolution/%%VERSION%%/libevolution-mail-importers.a
 lib/evolution/%%VERSION%%/libevolution-mail-importers.so
 lib/evolution/%%VERSION%%/libevolution-mail-importers.so.0
+lib/evolution/%%VERSION%%/libevolution-smime.a
+lib/evolution/%%VERSION%%/libevolution-smime.so
+lib/evolution/%%VERSION%%/libevolution-smime.so.0
 lib/evolution/%%VERSION%%/libevolution-widgets-a11y.a
 lib/evolution/%%VERSION%%/libevolution-widgets-a11y.so
 lib/evolution/%%VERSION%%/libevolution-widgets-a11y.so.0
+lib/evolution/%%VERSION%%/libfilter.a
+lib/evolution/%%VERSION%%/libfilter.so
+lib/evolution/%%VERSION%%/libfilter.so.0
+lib/evolution/%%VERSION%%/libmenus.a
+lib/evolution/%%VERSION%%/libmenus.so
+lib/evolution/%%VERSION%%/libmenus.so.0
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-addressbook-file.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-addressbook-groupwise.so
+%%GSTREAMER%%lib/evolution/%%VERSION%%/plugins/liborg-gnome-audio-inline.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-file.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-http.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-calendar-weather.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-compose-send-options.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-copy-tool.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-default-source.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-bbdb.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-evolution-startup-wizard.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-exchange-account-settings.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-gw-account-setup.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-itip-formatter.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-mail-folder-unsubscribe.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-mail-to-task.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-mailing-list-actions.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-mark-calendar-offline.so
+%%DBUS%%lib/evolution/%%VERSION%%/plugins/liborg-gnome-new-mail-notify.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-prefer-plain.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-plugin-manager.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-save-attachments.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-save-calendar.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-select-one-source.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-send-options.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-shared-folder.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-status-track.so
+lib/evolution/%%VERSION%%/plugins/liborg-gnome-subject-thread.so
+lib/evolution/%%VERSION%%/plugins/org-gnome-addressbook-file.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-addressbook-groupwise.eplug
+%%GSTREAMER%%lib/evolution/%%VERSION%%/plugins/org-gnome-audio-inline.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-file.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-http.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-calendar-weather.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-compose-send-options.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-compose-send-options.xml
+lib/evolution/%%VERSION%%/plugins/org-gnome-copy-tool.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-default-source.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-bbdb.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-evolution-startup-wizard.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-exchange-account-setup.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-gw-account-setup.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-itip-formatter.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-mail-folder-unsubscribe.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-mail-to-task.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-mailing-list-actions.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-mailing-list-actions.xml
+lib/evolution/%%VERSION%%/plugins/org-gnome-mark-calendar-offline.eplug
+%%DBUS%%lib/evolution/%%VERSION%%/plugins/org-gnome-new-mail-notify.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-plugin-manager.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-plugin-manager.xml
+lib/evolution/%%VERSION%%/plugins/org-gnome-prefer-plain.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-save-attachments.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-save-attachments.xml
+lib/evolution/%%VERSION%%/plugins/org-gnome-save-calendar.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-select-one-source.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-send-options.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-shared-folder.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-status-track.eplug
+lib/evolution/%%VERSION%%/plugins/org-gnome-subject-thread.eplug
 libdata/bonobo/servers/GNOME_Evolution_Addressbook_%%VERSION%%.server
 libdata/bonobo/servers/GNOME_Evolution_Addressbook_LDIF_Importer_%%VERSION%%.server
-libdata/bonobo/servers/GNOME_Evolution_Addressbook_SelectNames_%%VERSION%%.server
 libdata/bonobo/servers/GNOME_Evolution_Addressbook_VCard_Importer_%%VERSION%%.server
 libdata/bonobo/servers/GNOME_Evolution_Calendar_%%VERSION%%.server
 libdata/bonobo/servers/GNOME_Evolution_Calendar_AlarmNotify_%%VERSION%%.server
@@ -283,10 +207,8 @@ libdata/bonobo/servers/GNOME_Evolution_Calendar_Importer_%%VERSION%%.server
 libdata/bonobo/servers/GNOME_Evolution_Mail_%%VERSION%%.server
 libdata/bonobo/servers/GNOME_Evolution_Mail_Importers_%%VERSION%%.server
 libdata/bonobo/servers/GNOME_Evolution_Shell_%%VERSION%%.server
-libdata/pkgconfig/camel-%%VERSION%%.pc
+libdata/pkgconfig/evolution-plugin-%%VERSION%%.pc
 libdata/pkgconfig/evolution-shell-%%VERSION%%.pc
-libexec/evolution/%%VERSION%%/camel/camel-index-control
-libexec/evolution/%%VERSION%%/camel/camel-lock-helper
 libexec/evolution/%%VERSION%%/csv2vcard
 libexec/evolution/%%VERSION%%/evolution-addressbook-clean
 libexec/evolution/%%VERSION%%/evolution-addressbook-export
@@ -296,6 +218,11 @@ share/gnome/applications/evolution-%%VERSION%%.desktop
 @exec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/evolution/%%VERSION%%/addresstypes.xml
 share/gnome/evolution/%%VERSION%%/default/C/mail/local/Inbox
+share/gnome/evolution/%%VERSION%%/default/de/mail/local/Inbox
+share/gnome/evolution/%%VERSION%%/default/ja/mail/local/Inbox
+share/gnome/evolution/%%VERSION%%/default/nl/mail/local/Inbox
+share/gnome/evolution/%%VERSION%%/default/pt/mail/local/Inbox
+share/gnome/evolution/%%VERSION%%/default/zh_CN/mail/local/Inbox
 share/gnome/evolution/%%VERSION%%/ecps/medbook.ecps
 share/gnome/evolution/%%VERSION%%/ecps/phonelist.ecps
 share/gnome/evolution/%%VERSION%%/ecps/smallbook.ecps
@@ -303,6 +230,9 @@ share/gnome/evolution/%%VERSION%%/errors/addressbook-errors.xml
 share/gnome/evolution/%%VERSION%%/errors/calendar-errors.xml
 share/gnome/evolution/%%VERSION%%/errors/e-system-errors.xml
 share/gnome/evolution/%%VERSION%%/errors/filter-errors.xml
+share/gnome/evolution/%%VERSION%%/errors/org-gnome-itip-formatter-errors.xml
+share/gnome/evolution/%%VERSION%%/errors/org-gnome-mailing-list-actions-errors.xml
+share/gnome/evolution/%%VERSION%%/errors/org-gnome-shared-folder-errors.xml
 share/gnome/evolution/%%VERSION%%/errors/mail-composer-errors.xml
 share/gnome/evolution/%%VERSION%%/errors/mail-errors.xml
 share/gnome/evolution/%%VERSION%%/errors/shell-errors.xml
@@ -311,15 +241,13 @@ share/gnome/evolution/%%VERSION%%/etspec/e-cal-list-view.etspec
 share/gnome/evolution/%%VERSION%%/etspec/e-calendar-table.etspec
 share/gnome/evolution/%%VERSION%%/etspec/e-contact-list-editor.etspec
 share/gnome/evolution/%%VERSION%%/etspec/e-meeting-time-sel.etspec
-share/gnome/evolution/%%VERSION%%/etspec/e-select-names-section.etspec
-share/gnome/evolution/%%VERSION%%/etspec/e-select-names.etspec
 share/gnome/evolution/%%VERSION%%/etspec/message-list.etspec
 share/gnome/evolution/%%VERSION%%/filtertypes.xml
 share/gnome/evolution/%%VERSION%%/glade/alarm-dialog.glade
 share/gnome/evolution/%%VERSION%%/glade/alarm-list-dialog.glade
 share/gnome/evolution/%%VERSION%%/glade/alarm-notify.glade
+share/gnome/evolution/%%VERSION%%/glade/cal-attachment.glade
 share/gnome/evolution/%%VERSION%%/glade/cal-prefs-dialog.glade
-share/gnome/evolution/%%VERSION%%/glade/calendar-setup.glade
 share/gnome/evolution/%%VERSION%%/glade/contact-editor.glade
 share/gnome/evolution/%%VERSION%%/glade/contact-list-editor.glade
 share/gnome/evolution/%%VERSION%%/glade/e-active-connection-dialog.glade
@@ -327,6 +255,7 @@ share/gnome/evolution/%%VERSION%%/glade/e-contact-print.glade
 share/gnome/evolution/%%VERSION%%/glade/e-delegate-dialog.glade
 share/gnome/evolution/%%VERSION%%/glade/e-itip-control.glade
 share/gnome/evolution/%%VERSION%%/glade/e-msg-composer-attachment.glade
+share/gnome/evolution/%%VERSION%%/glade/e-send-options.glade
 share/gnome/evolution/%%VERSION%%/glade/e-timezone-dialog.glade
 share/gnome/evolution/%%VERSION%%/glade/eab-contact-commit-duplicate-detected.glade
 share/gnome/evolution/%%VERSION%%/glade/eab-contact-duplicate-detected.glade
@@ -342,9 +271,9 @@ share/gnome/evolution/%%VERSION%%/glade/ldap-config.glade
 share/gnome/evolution/%%VERSION%%/glade/mail-config.glade
 share/gnome/evolution/%%VERSION%%/glade/mail-dialogs.glade
 share/gnome/evolution/%%VERSION%%/glade/meeting-page.glade
+share/gnome/evolution/%%VERSION%%/glade/properties.glade
 share/gnome/evolution/%%VERSION%%/glade/recurrence-page.glade
 share/gnome/evolution/%%VERSION%%/glade/schedule-page.glade
-share/gnome/evolution/%%VERSION%%/glade/select-names.glade
 share/gnome/evolution/%%VERSION%%/glade/smime-ui.glade
 share/gnome/evolution/%%VERSION%%/glade/task-details-page.glade
 share/gnome/evolution/%%VERSION%%/glade/task-page.glade
@@ -360,11 +289,7 @@ share/gnome/evolution/%%VERSION%%/images/world_map-960.png
 share/gnome/evolution/%%VERSION%%/searchtypes.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-addressbook.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-calendar.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-comp-editor.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-composer-entries.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-contact-editor.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-contact-list-editor.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-event-editor.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-executive-summary.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-mail-global.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-mail-list.xml
@@ -373,7 +298,6 @@ share/gnome/evolution/%%VERSION%%/ui/evolution-mail-messagedisplay.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-message-composer.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-signature-editor.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-subscribe.xml
-share/gnome/evolution/%%VERSION%%/ui/evolution-task-editor.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution-tasks.xml
 share/gnome/evolution/%%VERSION%%/ui/evolution.xml
 share/gnome/evolution/%%VERSION%%/vfoldertypes.xml
@@ -394,6 +318,13 @@ share/gnome/evolution/%%VERSION%%/views/tasks/Tasks.galview
 share/gnome/evolution/%%VERSION%%/views/tasks/With_DueDate.galview
 share/gnome/evolution/%%VERSION%%/views/tasks/With_Status.galview
 share/gnome/evolution/%%VERSION%%/views/tasks/galview.xml
+share/gnome/evolution/%%VERSION%%/weather/category_weather_cloudy_16.png
+share/gnome/evolution/%%VERSION%%/weather/category_weather_fog_16.png
+share/gnome/evolution/%%VERSION%%/weather/category_weather_partly_cloudy_16.png
+share/gnome/evolution/%%VERSION%%/weather/category_weather_rain_16.png
+share/gnome/evolution/%%VERSION%%/weather/category_weather_snow_16.png
+share/gnome/evolution/%%VERSION%%/weather/category_weather_sun_16.png
+share/gnome/evolution/%%VERSION%%/weather/category_weather_tstorm_16.png
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-address-%%VERSION%%.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-calendar-%%VERSION%%.conduit
 %%PILOT:%%share/gnome/gnome-pilot/conduits/e-todo-%%VERSION%%.conduit
@@ -410,8 +341,8 @@ share/gnome/help/evolution-%%PORTVERSION%%/C/figures/evo_email_a.png
 share/gnome/help/evolution-%%PORTVERSION%%/C/figures/evo_gwreceive_a.png
 share/gnome/help/evolution-%%PORTVERSION%%/C/figures/evo_identity_a.png
 share/gnome/help/evolution-%%PORTVERSION%%/C/figures/evo_imapreceive_a.png
-share/gnome/help/evolution-%%PORTVERSION%%/C/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution-%%PORTVERSION%%/C/figures/evo_mail_callout_a.png
+share/gnome/help/evolution-%%PORTVERSION%%/C/figures/evo_maildirreceive_a.png
 share/gnome/help/evolution-%%PORTVERSION%%/C/figures/evo_mboxreceive_a.png
 share/gnome/help/evolution-%%PORTVERSION%%/C/figures/evo_mereceive_a.png
 share/gnome/help/evolution-%%PORTVERSION%%/C/figures/evo_mhreceive_a.png
@@ -445,7 +376,6 @@ share/gnome/help/evolution-%%PORTVERSION%%/C/figures/replymsg.png
 share/gnome/help/evolution-%%PORTVERSION%%/C/figures/schedule.png
 share/gnome/help/evolution-%%PORTVERSION%%/C/figures/vfolder-createrule-fig.png
 share/gnome/idl/evolution-%%VERSION%%/Composer.idl
-share/gnome/idl/evolution-%%VERSION%%/Evolution-Addressbook-SelectNames.idl
 share/gnome/idl/evolution-%%VERSION%%/Evolution-Component.idl
 share/gnome/idl/evolution-%%VERSION%%/Evolution-Composer.idl
 share/gnome/idl/evolution-%%VERSION%%/Evolution-ConfigControl.idl
@@ -465,7 +395,6 @@ share/locale/ar/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/az/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/be/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/bg/LC_MESSAGES/evolution-%%VERSION%%.mo
-share/locale/bn/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/bs/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -486,18 +415,14 @@ share/locale/ga/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/gl/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/gu/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/he/LC_MESSAGES/evolution-%%VERSION%%.mo
-share/locale/hi/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/hr/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/evolution-%%VERSION%%.mo
-share/locale/id/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/is/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/lt/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/lv/LC_MESSAGES/evolution-%%VERSION%%.mo
-share/locale/mk/LC_MESSAGES/evolution-%%VERSION%%.mo
-share/locale/ml/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/mn/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/ms/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/nb/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -516,7 +441,6 @@ share/locale/sq/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sr@Latn/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/evolution-%%VERSION%%.mo
-share/locale/ta/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/tr/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/uk/LC_MESSAGES/evolution-%%VERSION%%.mo
 share/locale/vi/LC_MESSAGES/evolution-%%VERSION%%.mo
@@ -528,6 +452,7 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm share/gnome/help/evolution-%%PORTVERSION%%/C/figures
 @dirrm share/gnome/help/evolution-%%PORTVERSION%%/C
 @dirrm share/gnome/help/evolution-%%PORTVERSION%%
+@dirrm share/gnome/evolution/%%VERSION%%/weather
 @dirrm share/gnome/evolution/%%VERSION%%/views/tasks
 @dirrm share/gnome/evolution/%%VERSION%%/views/mail
 @dirrm share/gnome/evolution/%%VERSION%%/views/calendar
@@ -542,20 +467,34 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm share/gnome/evolution/%%VERSION%%/etspec
 @dirrm share/gnome/evolution/%%VERSION%%/errors
 @dirrm share/gnome/evolution/%%VERSION%%/ecps
+@dirrm share/gnome/evolution/%%VERSION%%/default/zh_CN/mail/local
+@dirrm share/gnome/evolution/%%VERSION%%/default/zh_CN/mail
+@dirrm share/gnome/evolution/%%VERSION%%/default/zh_CN
+@dirrm share/gnome/evolution/%%VERSION%%/default/pt/mail/local
+@dirrm share/gnome/evolution/%%VERSION%%/default/pt/mail
+@dirrm share/gnome/evolution/%%VERSION%%/default/pt
+@dirrm share/gnome/evolution/%%VERSION%%/default/nl/mail/local
+@dirrm share/gnome/evolution/%%VERSION%%/default/nl/mail
+@dirrm share/gnome/evolution/%%VERSION%%/default/nl
+@dirrm share/gnome/evolution/%%VERSION%%/default/ja/mail/local
+@dirrm share/gnome/evolution/%%VERSION%%/default/ja/mail
+@dirrm share/gnome/evolution/%%VERSION%%/default/ja
+@dirrm share/gnome/evolution/%%VERSION%%/default/de/mail/local
+@dirrm share/gnome/evolution/%%VERSION%%/default/de/mail
+@dirrm share/gnome/evolution/%%VERSION%%/default/de
 @dirrm share/gnome/evolution/%%VERSION%%/default/C/mail/local
 @dirrm share/gnome/evolution/%%VERSION%%/default/C/mail
 @dirrm share/gnome/evolution/%%VERSION%%/default/C
 @dirrm share/gnome/evolution/%%VERSION%%/default
 @dirrm share/gnome/evolution/%%VERSION%%
 @dirrm share/gnome/evolution
-@dirrm libexec/evolution/%%VERSION%%/camel
 @dirrm libexec/evolution/%%VERSION%%
 @dirrm libexec/evolution
+@dirrm lib/evolution/%%VERSION%%/plugins
 @dirrm lib/evolution/%%VERSION%%/evolution-calendar-importers
 @dirrm lib/evolution/%%VERSION%%/evolution-addressbook-importers
 %%PILOT:%%@dirrm lib/evolution/%%VERSION%%/conduits
 @dirrm lib/evolution/%%VERSION%%/components
-@dirrm lib/evolution/%%VERSION%%/camel-providers
 @dirrm lib/evolution/%%VERSION%%
 @dirrm lib/evolution
 @dirrm include/evolution-%%VERSION%%/widgets
@@ -563,6 +502,7 @@ share/locale/zh_TW/LC_MESSAGES/evolution-%%VERSION%%.mo
 @dirrm include/evolution-%%VERSION%%/importer
 @dirrm include/evolution-%%VERSION%%/e-util
 @dirrm include/evolution-%%VERSION%%/e-conduit
-@dirrm include/evolution-%%VERSION%%/camel
+@dirrm include/evolution-%%VERSION%%/calendar/gui
+@dirrm include/evolution-%%VERSION%%/calendar
 @dirrm include/evolution-%%VERSION%%
 @unexec update-desktop-database > /dev/null || /usr/bin/true

@@ -438,6 +438,7 @@
     SUBDIR += symlinks
     SUBDIR += synergy
     SUBDIR += syslog-ng
+    SUBDIR += system-tools-backends
     SUBDIR += tcplist
     SUBDIR += tct
     SUBDIR += tdir

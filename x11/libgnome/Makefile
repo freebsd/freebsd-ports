@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	libgnome
-PORTVERSION=	2.8.1
+PORTVERSION=	2.10.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack esound \
+USE_GNOME=	gnomeprefix gnomehack intlhack esound \
 		gnomevfs2 libxslt
 USE_BISON=	yes
 INSTALLS_SHLIB=	yes
@@ -47,8 +47,6 @@ GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_sound.schemas desktop_gnome_thumbnailers.schemas \
 		desktop_gnome_typing_break.schemas
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
@@ -57,4 +55,4 @@ post-patch:
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

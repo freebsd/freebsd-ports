@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case $2 in
+POST-INSTALL)
+	/usr/sbin/mtree %%MTREE_ARGS%% ${PKG_PREFIX}
+	exit 0
+	;;
+esac

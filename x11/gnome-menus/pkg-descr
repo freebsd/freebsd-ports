@@ -1,0 +1,12 @@
+This package is free software and is part of the
+GNOME project.
+
+The package contains an implementation of the draft "Desktop
+Menu Specification" from freedesktop.org:
+
+  http://www.freedesktop.org/Standards/menu-spec
+
+Also contained here are the GNOME menu layout configuration
+files, .directory files and assorted menu related utility programs.
+
+-- gnome-menus README

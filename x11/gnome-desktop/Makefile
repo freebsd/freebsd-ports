@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomedesktop
-PORTVERSION=	2.8.3
+PORTVERSION=	2.10.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-desktop/2.8
+MASTER_SITE_SUBDIR=	sources/gnome-desktop/2.10
 DISTNAME=	gnome-desktop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 USE_BISON=	yes

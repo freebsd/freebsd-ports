@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome2
-PORTVERSION=	2.8.3
+PORTVERSION=	2.10.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	-lite
@@ -16,11 +16,10 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The "meta-port" of the GNOME desktop slimmed down for FreeBSD releases
 
-RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
+RUN_DEPENDS=	${X11BASE}/libexec/gweather-applet-2:${PORTSDIR}/x11/gnomeapplets2 \
 		gnome-cd:${PORTSDIR}/audio/gnomemedia2 \
 	 	gnome-dictionary:${PORTSDIR}/deskutils/gnomeutils2 \
 		eog:${PORTSDIR}/graphics/eog \
-		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
 		gedit:${PORTSDIR}/editors/gedit \
 		gnome-terminal:${PORTSDIR}/x11/gnometerminal \
 		gnome-session:${PORTSDIR}/x11/gnomesession \
@@ -35,9 +34,10 @@ RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		ggv:${PORTSDIR}/print/ggv \
 		gcalctool:${PORTSDIR}/math/gcalctool \
 		gucharmap:${PORTSDIR}/deskutils/gucharmap \
-		gst-thumbnail:${PORTSDIR}/multimedia/nautilus-media \
 		${X11BASE}/lib/X11/fonts/bitstream-vera/Vera.ttf:${PORTSDIR}/x11-fonts/bitstream-vera \
-		gconf-editor:${PORTSDIR}/sysutils/gconf-editor
+		gconf-editor:${PORTSDIR}/sysutils/gconf-editor \
+		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
+		totem:${PORTSDIR}/multimedia/totem-gstreamer
 
 NO_BUILD=	yes
 
@@ -54,7 +54,7 @@ do-install:	# empty
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "amd64" && ( ${ARCH} == "i386" || ${OSVERSION} > 500035 )
+.if ${ARCH} == "i386" || ${OSVERSION} > 500035
 RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
 .endif
 

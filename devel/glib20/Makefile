@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	glib
-PORTVERSION=	2.4.8
+PORTVERSION=	2.6.3
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.4,} \
-		ftp://ftp.gtk.org/pub/gtk/v2.4/ \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/2.6,} \
+		ftp://ftp.gtk.org/pub/gtk/v2.6/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
@@ -38,4 +39,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600012
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-gthread_gthread-posix.c
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
+		${WRKSRC}/glib/gutils.c
+
+.include <bsd.port.post.mk>

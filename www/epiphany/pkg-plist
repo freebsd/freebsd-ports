@@ -1,6 +1,7 @@
 bin/epiphany
 bin/epiphany-bin
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-bookmarks.h
+include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-bookmarks-type-builtins.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-command-manager.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-cookie-manager.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-dialog.h
@@ -10,10 +11,14 @@ include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-embed-persist.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-embed-prefs.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-embed-shell.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-embed-single.h
+include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-embed-type-builtins.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-embed.h
-include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-encodings.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-extension.h
+include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-extensions-manager.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-history.h
+include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-lib-type-builtins.h
+include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-link.h
+include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-loader.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-node-db.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-node.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-notebook.h
@@ -21,11 +26,13 @@ include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-password-manager.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-permission-manager.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-session.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-shell.h
+include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-state.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-statusbar.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-tab.h
+include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-type-builtins.h
 include/epiphany-%%EPHY_VERSION%%/epiphany/ephy-window.h
 libdata/bonobo/servers/GNOME_Epiphany_Automation.server
-libdata/pkgconfig/epiphany-%%EPHY_VERSION%%.pc
+libdata/pkgconfig/epiphany-1.6.pc
 %%DOCSDIR%%/EphyCommandManager.html
 %%DOCSDIR%%/EphyEmbed.html
 %%DOCSDIR%%/EphyEmbedPersist.html
@@ -37,6 +44,7 @@ libdata/pkgconfig/epiphany-%%EPHY_VERSION%%.pc
 %%DOCSDIR%%/ch01.html
 %%DOCSDIR%%/ch02.html
 %%DOCSDIR%%/epiphany-EphyEmbedFactory.html
+%%DOCSDIR%%/epiphany-EphyExtensionsManager.html
 %%DOCSDIR%%/epiphany-EphyGlade.html
 %%DOCSDIR%%/epiphany-ephy-cookie-manager.html
 %%DOCSDIR%%/epiphany-ephy-password-manager.html
@@ -59,13 +67,12 @@ share/gnome/epiphany/art/epiphany-download.png
 share/gnome/epiphany/art/epiphany-entry.png
 share/gnome/epiphany/art/epiphany-history.png
 share/gnome/epiphany/art/epiphany-popup-hidden.png
-share/gnome/epiphany/art/epiphany-secure.png
-share/gnome/epiphany/art/epiphany-unsecure.png
 share/gnome/epiphany/art/hand-open.png
-share/gnome/epiphany/conspiracy.xhtml
 share/gnome/epiphany/default-prefs.js
 share/gnome/epiphany/epiphany-bookmark-editor-ui.xml
+share/gnome/epiphany/epiphany-bookmarks-html.xsl
 share/gnome/epiphany/epiphany-bookmarksbar.xml
+share/gnome/epiphany/epiphany-extension.xsd
 share/gnome/epiphany/epiphany-fs-toolbar.xml
 share/gnome/epiphany/epiphany-history-window-ui.xml
 share/gnome/epiphany/epiphany-toolbar.xml
@@ -104,11 +111,18 @@ share/gnome/help/epiphany/ja/figures/ephy-bookmarkbar-smartbookmark-screenshot.p
 share/gnome/help/epiphany/ja/figures/ephy-history-window-screenshot.png
 share/gnome/help/epiphany/ja/figures/ephy-screenshot.png
 share/gnome/help/epiphany/ja/legal.xml
+share/gnome/help/epiphany/uk/epiphany.xml
+share/gnome/help/epiphany/uk/figures/ephy-addressbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/uk/figures/ephy-bookmarkbar-smartbookmark-screenshot.png
+share/gnome/help/epiphany/uk/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/uk/figures/ephy-screenshot.png
+share/gnome/help/epiphany/uk/legal.xml
 share/gnome/omf/epiphany/epiphany-C.omf
 share/gnome/omf/epiphany/epiphany-es.omf
 share/gnome/omf/epiphany/epiphany-eu.omf
 share/gnome/omf/epiphany/epiphany-fi.omf
 share/gnome/omf/epiphany/epiphany-ja.omf
+share/gnome/omf/epiphany/epiphany-uk.omf
 share/gnome/pixmaps/epiphany-bookmarks.png
 share/locale/am/LC_MESSAGES/epiphany.mo
 share/locale/ar/LC_MESSAGES/epiphany.mo
@@ -176,6 +190,8 @@ share/locale/wa/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm share/gnome/omf/epiphany
+@dirrm share/gnome/help/epiphany/uk/figures
+@dirrm share/gnome/help/epiphany/uk
 @dirrm share/gnome/help/epiphany/ja/figures
 @dirrm share/gnome/help/epiphany/ja
 @dirrm share/gnome/help/epiphany/fi/figures

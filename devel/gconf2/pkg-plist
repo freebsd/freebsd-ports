@@ -56,6 +56,7 @@ share/locale/el/LC_MESSAGES/GConf2.mo
 share/locale/en_CA/LC_MESSAGES/GConf2.mo
 share/locale/en_GB/LC_MESSAGES/GConf2.mo
 share/locale/es/LC_MESSAGES/GConf2.mo
+share/locale/et/LC_MESSAGES/GConf2.mo
 share/locale/eu/LC_MESSAGES/GConf2.mo
 share/locale/fa/LC_MESSAGES/GConf2.mo
 share/locale/fi/LC_MESSAGES/GConf2.mo
@@ -97,6 +98,7 @@ share/locale/ta/LC_MESSAGES/GConf2.mo
 share/locale/tr/LC_MESSAGES/GConf2.mo
 share/locale/uk/LC_MESSAGES/GConf2.mo
 share/locale/vi/LC_MESSAGES/GConf2.mo
+share/locale/xh/LC_MESSAGES/GConf2.mo
 share/locale/yi/LC_MESSAGES/GConf2.mo
 share/locale/zh_CN/LC_MESSAGES/GConf2.mo
 share/locale/zh_TW/LC_MESSAGES/GConf2.mo
