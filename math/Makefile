@@ -31,6 +31,7 @@
     SUBDIR += entropy
     SUBDIR += eukleides
     SUBDIR += eval
+    SUBDIR += fbm
     SUBDIR += femlab
     SUBDIR += fftpack
     SUBDIR += fftw

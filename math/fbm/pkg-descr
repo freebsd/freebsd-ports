@@ -1,0 +1,19 @@
+Software for Flexible Bayesian Modeling and Markov Chain Sampling
+
+This software supports Bayesian regression and classification models
+based on neural networks and Gaussian processes, and Bayesian mixture
+models.  It also supports a variety of Markov chain sampling methods,
+which may be applied to distributions specified by simple formulas,
+including simple Bayesian models defined by formulas for the prior
+and likelihood.
+
+Before trying to use the software, you may need to read various 
+references that describe the models and the Markov chain methods used.
+
+Some of the programs in this package are designed for use with the xgraph 
+plot package for X-Windows, though the data can instead be plotted by 
+whatever plot program you have available.
+
+WWW:	http://www.cs.utoronto.ca/~radford/fbm.software.html
+
+Radford Neal
