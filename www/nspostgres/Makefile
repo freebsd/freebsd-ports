@@ -8,7 +8,7 @@
 PORTNAME=	nspostgres
 PORTVERSION=	3.0
 CATEGORIES=	www databases
-MASTER_SITES=	ftp://ftp.aolserver.com/modules/nspostgres/
+MASTER_SITES=	ftp://ftp.aolserver.com/pub/contrib/
 DISTNAME=	nspostgres3_0
 
 MAINTAINER=	jkoshy@freebsd.org
