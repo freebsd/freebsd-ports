@@ -51,6 +51,7 @@
     SUBDIR += nntp
     SUBDIR += nntpbtr
     SUBDIR += nntpcache
+    SUBDIR += nntpswitch
     SUBDIR += noffle
     SUBDIR += p5-Gateway
     SUBDIR += p5-NNTPClient

@@ -1,0 +1,8 @@
+NNTPSwitch is a NNTP content router. It's aimed at  high-performance 
+news servers for ISPs and Usenet resellers. NNTPSwitch forwards client
+connections to multiple backend servers to get its actual articles. 
+Depending on the backend server type, all NNTP commands and extensions
+are supported, including (remote) authorization. Accounting is supported 
+in a user-friendly matter for data limited NNTP connections.
+
+WWW: http://www.nntpswitch.org/
