@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rvm/src/
 
-MAINTAINER=	lioux@linf.unb.br
+MAINTAINER=	coda@cs.cmu.edu
 
 LIB_DEPENDS=	lwp.1:${PORTSDIR}/devel/lwp
 
