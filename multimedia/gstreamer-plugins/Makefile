@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,18 +17,15 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GStreamer written collection of plugins handling several media types
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
-		gconf-2.5:${PORTSDIR}/devel/gconf2 \
-		gstreamer-0.6.0:${PORTSDIR}/multimedia/gstreamer \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
+LIB_DEPENDS=	gstreamer-0.6.0:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt \
-		xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack \
 		gnomehier \
-		gnomeprefix
+		gnomeprefix \
+		gconf2
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -119,6 +115,8 @@ post-install:
 # hermes is required for gstreamer-player to work
 # since it is currently the only colorspace plugin available
 WITH_HERMES=	yes
+# gnomevfs is required for gstreamer-player to work
+WITH_GNOMEVFS=	yes
 
 ##
 ## auto detect possible plugins
@@ -160,7 +158,7 @@ WITH_LAME=yes
 .endif
 
 # gnomevfs
-.if exists(${X11BASE}/lib/libgnomevfs-2.a)
+.if ${HAVE_GNOME:Mgnomevfs2}!=""
 WITH_GNOMEVFS=yes
 .endif
 
@@ -344,8 +342,7 @@ PLIST_SUB+=	FREETYPE=""
 CONFIGURE_ARGS+=	--disable-gnome_vfs
 PLIST_SUB+=	GNOMEVFS="@comment "
 .else
-LIB_DEPENDS+=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
-
+USE_GNOME+=	gnomevfs2
 PLIST_SUB+=	GNOMEVFS=""
 .endif
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,18 +15,18 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Development framework for creating media applications
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
-		popt.0:${PORTSDIR}/devel/popt \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
+WANT_GNOME=	yes
 USE_GNOME=	gnomehack \
-		gnomeprefix
+		gnomeprefix \
+		glib20 \
+		libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --disable-tests \
 		--disable-failing-tests
@@ -54,8 +54,8 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if exists(${X11BASE}/libdata/pkgconfig/libgnomeui-2.0.pc)
-LIB_DEPENDS+=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+USE_GNOME+=	libgnomeui
 .endif
 
 .include <bsd.port.post.mk>
