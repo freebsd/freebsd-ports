@@ -7,7 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	5.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.simplesystems.org/pub/ImageMagick/ \
 		ftp://ftp.cdrom.com/pub/ImageMagick/ \
@@ -45,17 +45,18 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-shared --without-modules \
 		--without-magick-plus-plus \
 		--with-perl=${PERL5} --without-xml
-.if defined(PERL_THREADED) && ${PERL_THREADED} == "true"
-CONFIGURE_ARGS+= --with-threads
-.endif
 INSTALLS_SHLIB=	yes
 
+.if defined(PERL_THREADED) && ${PERL_THREADED} == "true"
+CONFIGURE_ARGS+=	--with-threads
+.endif
+
 .if defined(WITH_16BIT_PIXEL)
-CONFIGURE_ARGS+= --enable-16bit-pixel
+CONFIGURE_ARGS+=	--enable-16bit-pixel
 .endif
 
 .if defined(HAVE_UNISYS_LICENSE)
-CONFIGURE_ARGS+= --enable-lzw
+CONFIGURE_ARGS+=	--enable-lzw
 .endif
 
 MAN1=		ImageMagick.1 Magick-config.1 animate.1 combine.1 convert.1 \
