@@ -24,7 +24,7 @@ RESTRICTED=	"30 day evaluation license"
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
-BINVER=		5.2.1
+BINVER=		5.3
 .elif ${OSVERSION} >= 480000
 BINVER=		4.8
 .elif ${OSVERSION} >= 350000
