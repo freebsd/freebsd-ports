@@ -29,3 +29,4 @@ sbin/bconsole
 %%SERVER%%share/bacula/delete_catalog_backup
 %%SERVER%%share/bacula/make_catalog_backup
 %%SERVER%%@dirrm share/bacula
+@exec mkdir -p %%BACULA_DIR%%
