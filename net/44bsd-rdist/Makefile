@@ -5,6 +5,7 @@
 #
 # $FreeBSD$
 #
+
 PORTNAME=	44bsd-rdist
 PORTVERSION=	20001111
 CATEGORIES=	net
@@ -28,7 +29,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/rdist.1 ${PREFIX}/man/man1/44bsd-rdist.1
 
 tarup:
-	-cd ${WRKSRC} ; rm *
-	cd ${WRKSRC} ; tar cvyf /tmp/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} .
+	-cd ${WRKSRC} ; ${RM} *
+	cd ${WRKSRC} ; ${TAR} cvyf /tmp/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} .
 
 .include <bsd.port.mk>
