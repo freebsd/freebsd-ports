@@ -1,0 +1,123 @@
+--- src/id3tag.c
++++ src/id3tag.c
+@@ -389,12 +389,20 @@
+   return(1);
+ }
+ 
++static void id3tag_sanitize (char *string)
++{
++    while ((string = strchr (string, '/')))
++    {
++      *string = '_';
++    }
++}
++
+ /* This function renames a file based on its tag in the given format */
+ int id3tag_rename( char *filename, char *format )
+ {
+   struct id3tag tag;
+   struct stat stbuf;
+-  char target_filename[80]="";
++  char target_filename[PATH_MAX]="";
+   char buffer[10]="";
+   char *tmp;
+   int i;
+@@ -425,36 +433,42 @@
+ 	    {
+ 	    case 't':
+ 	      strcat( target_filename, tag.title);
++	      id3tag_sanitize (target_filename+i2);
+ 	      i2=i2+strlen(tag.title);
+ 	      i++;
+ 	      break;
+ 	      
+ 	    case 'a':
+ 	      strcat( target_filename, tag.artist);
++	      id3tag_sanitize (target_filename+i2);
+ 	      i2=i2+strlen(tag.artist);
+ 	      i++;	      
+ 	      break;
+ 
+ 	    case 'b':
+ 	      strcat( target_filename, tag.album);
++	      id3tag_sanitize (target_filename+i2);
+ 	      i2=i2+strlen(tag.album);
+ 	      i++;	      
+ 	      break;
+ 
+ 	    case 'c':
+ 	      strcat( target_filename, tag.comment);
++	      id3tag_sanitize (target_filename+i2);
+ 	      i2=i2+strlen(tag.comment);
+ 	      i++;	      
+ 	      break;
+ 		
+ 	    case 'y':
+ 	      strcat( target_filename, tag.year);
++	      id3tag_sanitize (target_filename+i2);
+ 	      i2=i2+strlen(tag.year);
+ 	      i++;	      
+ 	      break;
+ 
+ 	    case 'g':
+ 	      strcat( target_filename, id3tag_get_genre(tag.genre));
++	      id3tag_sanitize (target_filename+i2);
+ 	      i2=i2+strlen(id3tag_get_genre(tag.genre));	      
+ 	      i++;
+ 	      break;
+@@ -521,9 +535,9 @@
+ int id3tag_sort( char *filename, char *rootdir, char *format_level1, char *format_level2 )
+ {
+   struct id3tag tag;
+-  char *dir_level1=NULL;
+-  char *dir_level2=NULL;
+-  char target_filename[80];
++  char *dir_level1=NULL, *dir_level1_sanitized;
++  char *dir_level2=NULL, *dir_level2_sanitized;
++  char source_filename[PATH_MAX], target_filename[PATH_MAX];
+   char dir_cur[80];
+ 
+   
+@@ -554,8 +568,10 @@
+   chdir(rootdir);
+   if( dir_level1[0] == '\0' )
+     dir_level1 = "Unknown";
+-  yamtlog("%s %s", "New directory: ", dir_level1);
+-  mkdir( dir_level1, S_IRUSR|S_IWUSR|S_IXUSR|S_IRGRP|S_IXGRP|S_IROTH );
++  dir_level1_sanitized = strdup (dir_level1);
++  id3tag_sanitize (dir_level1_sanitized);
++  yamtlog("%s %s", "New directory: ", dir_level1_sanitized);
++  mkdir( dir_level1_sanitized, S_IRUSR|S_IWUSR|S_IXUSR|S_IRGRP|S_IXGRP|S_IROTH );
+ 	  
+   /* Level 2 */
+   if( strcmp( format_level2, "Album") == 0 )
+@@ -573,18 +589,24 @@
+   
+   if( dir_level2[0] == '\0' )
+     dir_level2 = "Unknown";
+-  yamtlog("%s %s", "New directory: ", dir_level2);
++  dir_level2_sanitized = strdup (dir_level2);
++  id3tag_sanitize (dir_level2_sanitized);
++  yamtlog("%s %s", "New directory: ", dir_level2_sanitized);
+ 
+   /* Go into the previously created directory */
+-  chdir( dir_level1 );
+-  mkdir( dir_level2, S_IRUSR|S_IWUSR|S_IXUSR|S_IRGRP|S_IXGRP|S_IROTH );
++  chdir( dir_level1_sanitized );
++  mkdir( dir_level2_sanitized, S_IRUSR|S_IWUSR|S_IXUSR|S_IRGRP|S_IXGRP|S_IROTH );
+   /* Move the file into the new (?) directory */
+ 
+-  sprintf( target_filename, "mv \"%s/%s\" \"%s%s/%s/%s\"", dir_cur, filename, rootdir, dir_level1, dir_level2, filename ); 
++  snprintf( source_filename, PATH_MAX, "%s/%s", dir_cur, filename );
++  snprintf( target_filename, PATH_MAX, "%s%s/%s/%s", rootdir, dir_level1_sanitized, dir_level2_sanitized, filename );
++
++  free (dir_level1_sanitized);
++  free (dir_level2_sanitized);
+ 
+   yamtlog("%s %s", "Sorted ", filename );
+ 
+-  system( target_filename ); 
++  rename( source_filename, target_filename ); 
+   
+ /*   if( (rename( filename, target_filename )) )   */
+ /*     {   */
