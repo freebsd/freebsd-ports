@@ -32,8 +32,8 @@ share/faces/lib/allrc
 share/doc/faces/README
 share/doc/faces/README.kinzler
 share/doc/faces/from.allrc-eg
-@dirrm share/faces
 @dirrm share/faces/lib
+@dirrm share/faces
 @dirrm share/doc/faces
 @cwd /usr/X11R6
 lib/X11/app-defaults/Faces

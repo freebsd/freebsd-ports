@@ -24,7 +24,7 @@ RUN_DEPENDS=	rplay:${PORTSDIR}/audio/rplay
 SED_REPL=rplay
 .endif
 
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/faces
 MAN1=		compface.1 faces.1 face_update.1

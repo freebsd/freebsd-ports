@@ -1,5 +1,5 @@
---- Makefile.dist	Sun Nov 24 17:55:28 1991
-+++ Makefile	Fri Sep 18 18:40:51 1998
+--- Makefile.dist	Sun Nov 24 15:55:28 1991
++++ Makefile	Sat Mar 10 15:34:48 2001
 @@ -22,15 +22,18 @@
  #  uncommented and set accordingly, if needed.
  #
@@ -102,16 +102,24 @@
  			    NOINDEX=$(NOINDEX) SYSV=$(SYSV)
  
  #
-@@ -302,7 +306,7 @@
+@@ -302,8 +306,8 @@
  		  $(SELTYPE) $(SGIDEF) $(SPOOLDIR) $(SPOOLFILE) $(SYSV) \
  		  $(TTEXT) $(TOPIX) $(UPDATE) $(USE_BZERO) $(USE_GETWD) \
  		  $(X11R3) $(X11INCDIR) $(XVIEWINCDIR) $(DEBUG)
 -CCOMP		= -O
-+CCOMP		= -pipe -O2 -fwritable-strings
- CFLAGS		= $(CCOMP) $(CDEFS)
+-CFLAGS		= $(CCOMP) $(CDEFS)
++CCOMP		= -pipe -fwritable-strings 
++CFLAGS		+= $(CCOMP) $(CDEFS)
  #
  #=======================================================================
-@@ -316,7 +320,7 @@
+ 
+@@ -311,12 +315,12 @@
+ 
+ BINARIES	= psfaces svfaces xfaces xvfaces
+ 
+-CC		= cc
++CC		?= cc
+ MAKE		= make
  
  STDSRCS		= address.c get.c main.c mon.c parsefrom.c rec.c
  STDOBJS		= address.o get.o main.o mon.o parsefrom.o rec.o
