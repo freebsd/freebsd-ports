@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vamos
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,13 +15,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automotive simulation framework
 
-BUILD_DEPENDS=	${X11BASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	sigc:${PORTSDIR}/devel/libsigc++
+BUILD_DEPENDS=	${X11BASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
+		${X11BASE}/lib/libplibul.a:${PORTSDIR}/x11-toolkits/plib
+LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 
 USE_MESA=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${X11BASE}/lib -lGL -lGLU -lglut ${PTHREAD_LIBS}"
 INSTALLS_SHLIB=	yes
