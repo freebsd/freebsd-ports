@@ -411,6 +411,7 @@
     SUBDIR += py-jaxml
     SUBDIR += py-ltxml
     SUBDIR += py-martel
+    SUBDIR += py-pyx12
     SUBDIR += py-rdflib
     SUBDIR += py-rxp
     SUBDIR += py-sgrep
