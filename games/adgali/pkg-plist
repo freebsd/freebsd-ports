@@ -1,9 +1,10 @@
 bin/adgali-config
-bin/create_font
-bin/create_imglist
+bin/agl_bfont
 include/agl.h
+include/agl_endian.h
 include/agl_gui.h
 include/agl_ios.h
+include/agl_object.h
 include/agl_video.h
 lib/libagl.a
 lib/libagl.so
@@ -17,20 +18,8 @@ share/aclocal/adgali.m4
 %%PORTDOCS%%share/doc/adgali/annotated.html
 %%PORTDOCS%%share/doc/adgali/classes.html
 %%PORTDOCS%%share/doc/adgali/doxygen.css
-%%PORTDOCS%%share/doc/adgali/doxygen.gif
+%%PORTDOCS%%share/doc/adgali/doxygen.png
 %%PORTDOCS%%share/doc/adgali/files.html
-%%PORTDOCS%%share/doc/adgali/ftv2blank.gif
-%%PORTDOCS%%share/doc/adgali/ftv2doc.gif
-%%PORTDOCS%%share/doc/adgali/ftv2folderclosed.gif
-%%PORTDOCS%%share/doc/adgali/ftv2folderopen.gif
-%%PORTDOCS%%share/doc/adgali/ftv2lastnode.gif
-%%PORTDOCS%%share/doc/adgali/ftv2link.gif
-%%PORTDOCS%%share/doc/adgali/ftv2mlastnode.gif
-%%PORTDOCS%%share/doc/adgali/ftv2mnode.gif
-%%PORTDOCS%%share/doc/adgali/ftv2node.gif
-%%PORTDOCS%%share/doc/adgali/ftv2plastnode.gif
-%%PORTDOCS%%share/doc/adgali/ftv2pnode.gif
-%%PORTDOCS%%share/doc/adgali/ftv2vertline.gif
 %%PORTDOCS%%share/doc/adgali/functions.html
 %%PORTDOCS%%share/doc/adgali/globals.html
 %%PORTDOCS%%share/doc/adgali/graph_legend.dot
@@ -40,7 +29,6 @@ share/aclocal/adgali.m4
 %%PORTDOCS%%share/doc/adgali/index.hhk
 %%PORTDOCS%%share/doc/adgali/index.hhp
 %%PORTDOCS%%share/doc/adgali/index.html
-%%PORTDOCS%%share/doc/adgali/main.html
 %%PORTDOCS%%share/doc/adgali/structagl__channel.html
 %%PORTDOCS%%share/doc/adgali/structagl__channel__coll__graph.gif
 %%PORTDOCS%%share/doc/adgali/structagl__ios.html
@@ -49,7 +37,4 @@ share/aclocal/adgali.m4
 %%PORTDOCS%%share/doc/adgali/structagl__pos.html
 %%PORTDOCS%%share/doc/adgali/structagl__rect.html
 %%PORTDOCS%%share/doc/adgali/structagl__size.html
-%%PORTDOCS%%share/doc/adgali/tree.html
-%%PORTDOCS%%share/doc/adgali/tree.js
-%%PORTDOCS%%share/doc/adgali/treeview.js
 %%PORTDOCS%%@dirrm share/doc/adgali
