@@ -85,6 +85,9 @@ pre-patch:
 .endfor
 
 post-patch:
+.if ${OSVERSION} >= 500023
+	cat ${FILESDIR}/kse.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+.endif
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
 	${RM} -rf ${WRKSRC}/vmmon-only/linux/
