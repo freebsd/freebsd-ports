@@ -1,161 +1,302 @@
-*** Makefile.orig	Tue Oct 27 11:07:42 1992
---- Makefile	Sun Dec 14 15:04:04 1997
-***************
-*** 55,61 ****
-  #               lvr.o lvr_io.o  sony laser video disk recorder controller
-  #               dq.o            diaquest controller          
-  
-! DRV_FLAGS = -Dincps -Dinctek -Dinccgmc -Dinccgmb 
-  
-  CTR_FLAGS = -O -Dinctty
-  CTR_OBJ = tty.o
---- 55,61 ----
-  #               lvr.o lvr_io.o  sony laser video disk recorder controller
-  #               dq.o            diaquest controller          
-  
-! DRV_FLAGS = -Dincps -Dinctek -Dinccgmc -Dinccgmb
-  
-  CTR_FLAGS = -O -Dinctty
-  CTR_OBJ = tty.o
-***************
-*** 87,94 ****
-  
-  # To build this software on a Sun workstation, uncomment the next lines.
-  #AR = ar ru
-! #F_LINK = f77
-! #RANLIB = ranlib
-  # To include the Sunview driver and gplottool interface, uncomment SVLIBS.
-  # To include the Sun CGI B&W driver, uncomment SLIBS.
-  # NOTE: Uncomment only one of the following two lines.
---- 87,94 ----
-  
-  # To build this software on a Sun workstation, uncomment the next lines.
-  #AR = ar ru
-! F_LINK = f77
-! RANLIB = ranlib
-  # To include the Sunview driver and gplottool interface, uncomment SVLIBS.
-  # To include the Sun CGI B&W driver, uncomment SLIBS.
-  # NOTE: Uncomment only one of the following two lines.
-***************
-*** 141,147 ****
-  #CFLAGS = -g
-  # To build Gplot on the IRIS, uncomment the next line.
-  #CFLAGS = -cckr
-! CFLAGS =
-  
-  #  ******************************************************************
-  #
---- 141,147 ----
-  #CFLAGS = -g
-  # To build Gplot on the IRIS, uncomment the next line.
-  #CFLAGS = -cckr
-! #CFLAGS =
-  
-  #  ******************************************************************
-  #
-***************
-*** 309,315 ****
-  # (1000 implies 10 point fonts at 300 pt/in), e.g.,
-  # /usr/staff/andrews/pk/1000/cmr10.pk
-  pkras.o: pkras.c defs.h
-! 	cc -c -DUNIXFONTS=\"/usr/staff/andrews/pk\" pkras.c
-  
-  #TTY controller
-  tty.o: tty.c defs.h
---- 309,315 ----
-  # (1000 implies 10 point fonts at 300 pt/in), e.g.,
-  # /usr/staff/andrews/pk/1000/cmr10.pk
-  pkras.o: pkras.c defs.h
-! 	cc -c -DUNIXFONTS=\"/usr/local/share/texmf/fonts/pk\" pkras.c
-  
-  #TTY controller
-  tty.o: tty.c defs.h
-***************
-*** 366,408 ****
-  
-  xws_setup.o:	/usr/include/stdio.h \
-  		/usr/include/strings.h \
-! 		/usr/include/X11/Intrinsic.h \
-! 		/usr/include/X11/StringDefs.h \
-! 		/usr/include/X11/Xutil.h \
-! 		/usr/include/X11/cursorfont.h \
-  		defs.h xws_defs.h
-  
-  xws_delim.o:    /usr/include/stdio.h \
-  		/usr/include/strings.h \
-! 		/usr/include/X11/Intrinsic.h \
-! 		/usr/include/X11/Xutil.h \
-  		defs.h xws_defs.h
-  
-  xws_color.o:	/usr/include/stdio.h \
-  		/usr/include/math.h \
-! 		/usr/include/X11/Intrinsic.h \
-! 		/usr/include/X11/Xutil.h \
-! 		/usr/include/X11/Xatom.h \
-  		defs.h xws_defs.h xws_color.h
-  
-! xws_polyline.o:/usr/include/X11/Intrinsic.h \
-  		defs.h xws_defs.h
-  
-  xws_polygon.o:	/usr/include/stdio.h \
-! 		/usr/include/X11/Intrinsic.h \
-  		defs.h xws_defs.h xws_fill.h
-  
-! xws_marker.o:	/usr/include/X11/Intrinsic.h \
-  		defs.h xws_defs.h
-  
-  xws_text.o:	/usr/include/strings.h \
-! 		/usr/include/X11/Intrinsic.h \
-! 		/usr/include/X11/Xatom.h \
-  		defs.h xws_defs.h
-  
-  xws_cla.o:      /usr/include/stdio.h \
-  		/usr/include/math.h \
-! 		/usr/include/X11/Intrinsic.h \
-  		defs.h xws_defs.h xws_color.h
-  #-----------------------------------------------------------------------------
-  # DrawCGM and CGMGen, and test routines
---- 366,408 ----
-  
-  xws_setup.o:	/usr/include/stdio.h \
-  		/usr/include/strings.h \
-! 		$(X11BASE)/include/X11/Intrinsic.h \
-! 		$(X11BASE)/include/X11/StringDefs.h \
-! 		$(X11BASE)/include/X11/Xutil.h \
-! 		$(X11BASE)/include/X11/cursorfont.h \
-  		defs.h xws_defs.h
-  
-  xws_delim.o:    /usr/include/stdio.h \
-  		/usr/include/strings.h \
-! 		$(X11BASE)/include/X11/Intrinsic.h \
-! 		$(X11BASE)/include/X11/Xutil.h \
-  		defs.h xws_defs.h
-  
-  xws_color.o:	/usr/include/stdio.h \
-  		/usr/include/math.h \
-! 		$(X11BASE)/include/X11/Intrinsic.h \
-! 		$(X11BASE)/include//X11/Xutil.h \
-! 		$(X11BASE)/include/X11/Xatom.h \
-  		defs.h xws_defs.h xws_color.h
-  
-! xws_polyline.o:$(X11BASE)/include/X11/Intrinsic.h \
-  		defs.h xws_defs.h
-  
-  xws_polygon.o:	/usr/include/stdio.h \
-! 		$(X11BASE)/include/X11/Intrinsic.h \
-  		defs.h xws_defs.h xws_fill.h
-  
-! xws_marker.o:	$(X11BASE)/include/X11/Intrinsic.h \
-  		defs.h xws_defs.h
-  
-  xws_text.o:	/usr/include/strings.h \
-! 		$(X11BASE)/include/X11/Intrinsic.h \
-! 		$(X11BASE)/include/X11/Xatom.h \
-  		defs.h xws_defs.h
-  
-  xws_cla.o:      /usr/include/stdio.h \
-  		/usr/include/math.h \
-! 		$(X11BASE)/include/X11/Intrinsic.h \
-  		defs.h xws_defs.h xws_color.h
-  #-----------------------------------------------------------------------------
-  # DrawCGM and CGMGen, and test routines
+--- Makefile.orig	Tue Oct 27 16:07:42 1992
++++ Makefile	Fri Oct 25 16:57:05 2002
+@@ -55,9 +55,9 @@
+ #               lvr.o lvr_io.o  sony laser video disk recorder controller
+ #               dq.o            diaquest controller          
+ 
+-DRV_FLAGS = -Dincps -Dinctek -Dinccgmc -Dinccgmb 
++DRV_FLAGS = -Dincps -Dinctek -Dinccgmc -Dinccgmb
+ 
+-CTR_FLAGS = -O -Dinctty
++CTR_FLAGS = $(CFLAGS) -Dinctty
+ CTR_OBJ = tty.o
+ 
+ XWS_OBJ = xws_cla.o xws_color.o xws_delim.o xws_marker.o xws_polygon.o \
+@@ -87,8 +87,8 @@
+ 
+ # To build this software on a Sun workstation, uncomment the next lines.
+ #AR = ar ru
+-#F_LINK = f77
+-#RANLIB = ranlib
++F_LINK = f77
++RANLIB = ranlib
+ # To include the Sunview driver and gplottool interface, uncomment SVLIBS.
+ # To include the Sun CGI B&W driver, uncomment SLIBS.
+ # NOTE: Uncomment only one of the following two lines.
+@@ -141,7 +141,7 @@
+ #CFLAGS = -g
+ # To build Gplot on the IRIS, uncomment the next line.
+ #CFLAGS = -cckr
+-CFLAGS =
++#CFLAGS =
+ 
+ #  ******************************************************************
+ #
+@@ -162,32 +162,32 @@
+ 	utils.o carray.o io.o $(FONTS) devices.o emul.o
+ 
+ gplot: $(GPT_OBJ) $(CTR_OBJ) $(DRV_OBJ) $(MACHINE_OBJ)
+-	cc  -o $@ $(GPT_OBJ) $(CTR_OBJ) $(DRV_OBJ) $(MACHINE_OBJ) $(LIBS)
++	$(CC)  -o $@ $(GPT_OBJ) $(CTR_OBJ) $(DRV_OBJ) $(MACHINE_OBJ) $(LIBS)
+ 
+ gtex: $(GTEX_OBJ) ps.o tek.o qms.o cgmb.o cgmc.o tty.o
+-	cc -o $@ $(GTEX_OBJ) ps.o tek.o qms.o cgmb.o cgmc.o tty.o -lm 
++	$(CC) -o $@ $(GTEX_OBJ) ps.o tek.o qms.o cgmb.o cgmc.o tty.o -lm 
+ 
+ gplottool: gplot_suntool.o wint.o ccgm.o cgm.o utils.o io.o carray.o \
+ 	hload.o emul.o sv.o
+-	cc -o $@ gplot_suntool.o wint.o cgm.o utils.o io.o carray.o ccgm.o \
++	$(CC) -o $@ gplot_suntool.o wint.o cgm.o utils.o io.o carray.o ccgm.o \
+ 	hload.o emul.o sv.o $(LIBS)
+ 
+ # To use the xws driver for gplotdw, include $(XWS_OBJ) instead of xl.o
+ gplotdw: gplotdw.o wint.o cgm.o utils.o io.o carray.o ccgm.o emul.o \
+ 	hload.o xl.o
+-	cc -o $@ gplotdw.o wint.o cgm.o utils.o io.o carray.o ccgm.o emul.o \
++	$(CC) -o $@ gplotdw.o wint.o cgm.o utils.o io.o carray.o ccgm.o emul.o \
+ 	hload.o xl.o $(LIBS)
+ 
+ # To use the xws driver for gplotaw, include $(XWS_OBJ) instead of xl.o
+ gplotaw: gplotaw.o wint.o cgm.o ccgm.o utils.o io.o carray.o \
+ 	hload.o emul.o xl.o $(MACHINE_OBJ)
+-	cc -o $@ gplotaw.o wint.o cgm.o ccgm.o utils.o io.o carray.o \
++	$(CC) -o $@ gplotaw.o wint.o cgm.o ccgm.o utils.o io.o carray.o \
+ 	hload.o emul.o xl.o $(MACHINE_OBJ) $(LIBS)
+ 
+ # To use the xws driver for gplotm, include $(XWS_OBJ) instead of xl.o
+ gplotm: gplotm.o wint.o cgm.o utils.o io.o carray.o ccgm.o emul.o \
+ 	hload.o xl.o $(MACHINE_OBJ)
+-	cc -o $@ gplotm.o wint.o cgm.o utils.o io.o carray.o ccgm.o emul.o \
++	$(CC) -o $@ gplotm.o wint.o cgm.o utils.o io.o carray.o ccgm.o emul.o \
+ 	hload.o xl.o $(MACHINE_OBJ) $(LIBS)
+ 
+ drawcgm: $(DCGM_PATH)drawcgm.a
+@@ -230,77 +230,77 @@
+ 
+ # controlling GPLOT program
+ gplot.o: gplot.c defs.h
+-	cc -c $(CFLAGS) gplot.c
++	$(CC) -c $(CFLAGS) gplot.c
+ 
+ # controlling GPLOT program for the SUNview driver
+ gplot_suntool.o: gplot_suntool.c defs.h
+-	cc -c $(CFLAGS) gplot_suntool.c
++	$(CC) -c $(CFLAGS) gplot_suntool.c
+ 
+ # controlling GPLOTAW program for Athena Widgets
+ gplotaw.o: gplotaw.c
+ # To make gplotaw (xl) compile on the Cray, uncomment the next line
+-#       cc -c -DR3_INTRINSICS gplotaw.c
++#       $(CC) -c -DR3_INTRINSICS gplotaw.c
+ # To make gplotaw (xws) compile on the Cray, uncomment the next line
+-#       cc -c -DR3_INTRINSICS -Dincxws gplotaw.c
++#       $(CC) -c -DR3_INTRINSICS -Dincxws gplotaw.c
+ # To use the xws driver for gplotaw, uncomment the next line
+-#	cc -c $(CFLAGS) -Dincxws gplotaw.c
++#	$(CC) -c $(CFLAGS) -Dincxws gplotaw.c
+ 
+ # controlling GPLOTDW program for Decwindows 
+ gplotdw.o: gplotdw.c defs.h
+ # To use the xws driver for gplotdw, uncomment the next line
+-#	cc -c $(CFLAGS) -Dincxws gplotdw.c
++#	$(CC) -c $(CFLAGS) -Dincxws gplotdw.c
+ 
+ # controlling GPLOTM program for Motif 
+ gplotm.o: gplotm.c defs.h
+ # To use the xws driver for gplotm, uncomment the next line
+-#	cc -c $(CFLAGS) -Dincxws gplotm.c
++#	$(CC) -c $(CFLAGS) -Dincxws gplotm.c
+ 
+ # window interface module
+ wint.o: wint.c defs.h
+-	cc -c $(CFLAGS) wint.c
++	$(CC) -c $(CFLAGS) wint.c
+ 
+ # controlling GTEX program
+ gtex.o: gtex.c defs.h
+-	cc -c $(CFLAGS) -Dincps -Dincqms gtex.c
++	$(CC) -c $(CFLAGS) -Dincps -Dincqms gtex.c
+ 
+ # all of the cgm specific stuff
+ cgm.o: cgm.c defs.h
+-	cc -c $(CFLAGS) cgm.c
++	$(CC) -c $(CFLAGS) cgm.c
+ 
+ # all of the clear text cgm specific stuff
+ ccgm.o: ccgm.c defs.h ccdefs.h
+-	cc -c $(CFLAGS) ccgm.c 
++	$(CC) -c $(CFLAGS) ccgm.c 
+ 
+ # utility functions
+ utils.o: utils.c defs.h
+-	cc -c $(CFLAGS) -Dinchershey utils.c
++	$(CC) -c $(CFLAGS) -Dinchershey utils.c
+ # if we wanted PK fonts also, it would be
+-#       cc -c $(CFLAGS) -Dinchershey -Dincpkras utils.c
++#       $(CC) -c $(CFLAGS) -Dinchershey -Dincpkras utils.c
+ 
+ # I/O routines
+ io.o: io.c defs.h
+-	cc -c $(CFLAGS) $(CTR_FLAGS) io.c   
++	$(CC) -c $(CFLAGS) $(CTR_FLAGS) io.c   
+ # To get a gplot usage log file on Unix, uncomment the next line
+-#	cc -c $(CTR_FLAGS) -DUSAGE_NAME=\"gplot_usage.log\" io.c 
++#	$(CC) -c $(CTR_FLAGS) -DUSAGE_NAME=\"gplot_usage.log\" io.c 
+ 
+ # devices interface
+ devices.o: devices.c defs.h
+-	cc -c $(CFLAGS) $(CTR_FLAGS) $(DRV_FLAGS) devices.c
++	$(CC) -c $(CFLAGS) $(CTR_FLAGS) $(DRV_FLAGS) devices.c
+ 
+ # Cell Array libraries
+ carray.o: carray.c defs.h
+-	cc -c $(CFLAGS) carray.c
++	$(CC) -c $(CFLAGS) carray.c
+ 
+ drvcla.o: drvcla.c defs.h
+-	cc -c $(CFLAGS) drvcla.c
++	$(CC) -c $(CFLAGS) drvcla.c
+ 
+ # Emulation package
+ emul.o: emul.c defs.h
+-	cc -c $(CFLAGS) emul.c
++	$(CC) -c $(CFLAGS) emul.c
+ 
+ # Hershey font support
+ hload.o: hload.c hload.h defs.h
+-	cc -c $(CFLAGS) hload.c
++	$(CC) -c $(CFLAGS) hload.c
+ 
+ # decoding for the PK format files
+ # if fonts are available we must say here where they are
+@@ -309,100 +309,100 @@
+ # (1000 implies 10 point fonts at 300 pt/in), e.g.,
+ # /usr/staff/andrews/pk/1000/cmr10.pk
+ pkras.o: pkras.c defs.h
+-	cc -c -DUNIXFONTS=\"/usr/staff/andrews/pk\" pkras.c
++	$(CC) -c -DUNIXFONTS=\"/usr/local/share/texmf/fonts/pk\" pkras.c
+ 
+ #TTY controller
+ tty.o: tty.c defs.h
+-	cc -c $(CFLAGS) tty.c
++	$(CC) -c $(CFLAGS) tty.c
+ 
+ # LVR controller
+ lvr.o: lvr.c lvr_defines.h defs.h
+-	cc -c $(CFLAGS) lvr.c
++	$(CC) -c $(CFLAGS) lvr.c
+ #       to change audit file name, lvr port
+-#       cc -c -DAUDIT_FILE="lvr.dat" -DDEFAULT_PORT="ttyd2" lvr.c
++#       $(CC) -c -DAUDIT_FILE="lvr.dat" -DDEFAULT_PORT="ttyd2" lvr.c
+ 
+ dq.o: dq.c defs.h
+-	cc -c $(CFLAGS) dq.c
++	$(CC) -c $(CFLAGS) dq.c
+ 
+ lvr_io.o: lvr_io.c lvr_defines.h
+-	cc -c $(CFLAGS) lvr_io.c
++	$(CC) -c $(CFLAGS) lvr_io.c
+ #       to turn on debug I/O printout
+-#       cc -c -DDEBUG_IO lvr_io.c
++#       $(CC) -c -DDEBUG_IO lvr_io.c
+ 
+ # Postscript device
+ ps.o: ps.c defs.h
+-	cc -c $(CFLAGS) ps.c
++	$(CC) -c $(CFLAGS) ps.c
+ 
+ # Tektronix devices
+ tek.o: tek.c defs.h
+-	cc -c $(CFLAGS) tek.c
++	$(CC) -c $(CFLAGS) tek.c
+ 
+ # Clear text CGM driver
+ cgmc.o: cgmc.c defs.h
+-	cc -c $(CFLAGS) cgmc.c
++	$(CC) -c $(CFLAGS) cgmc.c
+ 
+ # Binary CGM driver
+ cgmb.o: cgmb.c defs.h
+-	cc -c $(CFLAGS) cgmb.c
++	$(CC) -c $(CFLAGS) cgmb.c
+ 
+ # Sun CGI driver
+ sundriv.o: sundriv.c defs.h
+-	cc -c $(CFLAGS) sundriv.c
++	$(CC) -c $(CFLAGS) sundriv.c
+ 
+ # Silicon Graphics GI driver
+ igl.o:	igl.c defs.h
+-	cc -c $(CFLAGS) igl.c
++	$(CC) -c $(CFLAGS) igl.c
+ 
+ # the sunview driver
+ sv.o:	sv.c defs.h
+-	cc -c $(CFLAGS) sv.c
++	$(CC) -c $(CFLAGS) sv.c
+ 
+ # the Xlib driver
+ xl.o:	xl.c defs.h
+-	cc -c $(CFLAGS) xl.c
++	$(CC) -c $(CFLAGS) xl.c
+ 
+ 
+ #-------------- X Window System driver (xws) --------------------------
+ 
+ xws_setup.o:	/usr/include/stdio.h \
+ 		/usr/include/strings.h \
+-		/usr/include/X11/Intrinsic.h \
+-		/usr/include/X11/StringDefs.h \
+-		/usr/include/X11/Xutil.h \
+-		/usr/include/X11/cursorfont.h \
++		$(X11BASE)/include/X11/Intrinsic.h \
++		$(X11BASE)/include/X11/StringDefs.h \
++		$(X11BASE)/include/X11/Xutil.h \
++		$(X11BASE)/include/X11/cursorfont.h \
+ 		defs.h xws_defs.h
+ 
+ xws_delim.o:    /usr/include/stdio.h \
+ 		/usr/include/strings.h \
+-		/usr/include/X11/Intrinsic.h \
+-		/usr/include/X11/Xutil.h \
++		$(X11BASE)/include/X11/Intrinsic.h \
++		$(X11BASE)/include/X11/Xutil.h \
+ 		defs.h xws_defs.h
+ 
+ xws_color.o:	/usr/include/stdio.h \
+ 		/usr/include/math.h \
+-		/usr/include/X11/Intrinsic.h \
+-		/usr/include/X11/Xutil.h \
+-		/usr/include/X11/Xatom.h \
++		$(X11BASE)/include/X11/Intrinsic.h \
++		$(X11BASE)/include//X11/Xutil.h \
++		$(X11BASE)/include/X11/Xatom.h \
+ 		defs.h xws_defs.h xws_color.h
+ 
+-xws_polyline.o:/usr/include/X11/Intrinsic.h \
++xws_polyline.o:$(X11BASE)/include/X11/Intrinsic.h \
+ 		defs.h xws_defs.h
+ 
+ xws_polygon.o:	/usr/include/stdio.h \
+-		/usr/include/X11/Intrinsic.h \
++		$(X11BASE)/include/X11/Intrinsic.h \
+ 		defs.h xws_defs.h xws_fill.h
+ 
+-xws_marker.o:	/usr/include/X11/Intrinsic.h \
++xws_marker.o:	$(X11BASE)/include/X11/Intrinsic.h \
+ 		defs.h xws_defs.h
+ 
+ xws_text.o:	/usr/include/strings.h \
+-		/usr/include/X11/Intrinsic.h \
+-		/usr/include/X11/Xatom.h \
++		$(X11BASE)/include/X11/Intrinsic.h \
++		$(X11BASE)/include/X11/Xatom.h \
+ 		defs.h xws_defs.h
+ 
+ xws_cla.o:      /usr/include/stdio.h \
+ 		/usr/include/math.h \
+-		/usr/include/X11/Intrinsic.h \
++		$(X11BASE)/include/X11/Intrinsic.h \
+ 		defs.h xws_defs.h xws_color.h
+ #-----------------------------------------------------------------------------
+ # DrawCGM and CGMGen, and test routines
