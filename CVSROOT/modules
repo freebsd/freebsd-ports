@@ -7711,6 +7711,7 @@ xmms-jess	ports/graphics/xmms-jess
 xmms-kde	ports/audio/xmms-kde
 xmms-liveice	ports/audio/xmms-liveice
 xmms-musepack	ports/audio/xmms-musepack
+xmms-paranormal	ports/graphics/xmms-paranormal
 xmms-quix3dn	ports/audio/xmms-quix3dn
 xmms-shn	ports/audio/xmms-shn
 xmms-sndfile	ports/audio/xmms-sndfile
