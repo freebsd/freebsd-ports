@@ -32,7 +32,7 @@ static int c;
 # include "cdrom_freebsd.h"
 
 extern char	*device;
-static char	cdrom[] =	"/dev/rcd0a";
+static char     cdrom[] =       "/dev/rcd0c";
 
 cdrom_info	cdi;
 char		info_filename[256];
