@@ -1,9 +1,14 @@
-This program aims to view many variously formated pictures easily.
-So far, it can treat JPEG, PNG, MAG, BMP, XPM, PNM, and several
-special (minor) formats. It has been implemented plugin mechanism
-so that each user can choose each format support linked in main
-program or separated as plugin. Moreover, you can make your own
-plugins to extend supported formats.
+    This program aims to view many variously formated pictures
+easily. So far, it can treat below formats:
+
+    - Archiver: BZ2 DRI GZ LIBARC MISC PAK TAR
+    - Loader: ALD BMP GRP JPEG LFG MAG PIC PNG PNM XMB XPM
+    - Saver: JPEG PMS PNG
+   
+    It has been implemented plugin mechanism so that each user
+can choose each format support linked in main program or separated
+as plugin. Moreover, you can make your own plugins to extend
+supported formats.
 
 WWW: http://enfle.fennel.org/
 
