@@ -3,7 +3,7 @@
 # Date created:		6 January 1997
 # Whom:			proff@suburbia.net
 #
-# $Id: Makefile,v 1.5 1997/04/09 07:16:39 asami Exp $
+# $Id: Makefile,v 1.6 1997/07/31 06:36:03 asami Exp $
 #
 
 DISTNAME=	nntpcache-1.0.7.1
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://nntpcache.org/pub/nntpcache/ \
 MAINTAINER=	nntpcache@nntpcache.org
 
 GNU_CONFIGURE=	TRUE
-CONFIGURE_ARGS+=	--localstatedir=/var/spool
+CONFIGURE_ARGS=	--localstatedir=/var/spool
 MAN8=		nntpcache.8
 
 post-configure:

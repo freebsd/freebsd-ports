@@ -3,7 +3,7 @@
 # Date created:         5 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1997/08/13 15:28:12 jmz Exp $
+# $Id: Makefile,v 1.17 1997/10/08 21:12:22 jmz Exp $
 #
 
 DISTNAME=	mtools-3.8
@@ -14,7 +14,7 @@ MASTER_SITES=   ftp://linux.wauug.org/pub/knaff/mtools/ \
 MAINTAINER=	jmz@FreeBSD.org
 
 HAS_CONFIGURE=  yes
-CONFIGURE_ARGS+=--enable-xdf --prefix=${PREFIX}
+CONFIGURE_ARGS= --enable-xdf --prefix=${PREFIX}
 
 USE_GMAKE=	yes
 

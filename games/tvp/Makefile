@@ -3,7 +3,7 @@
 # Date Created:		3 Jul 1996
 # Whom:			Tim Vanderhoek <ac199@hwcn.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/23 14:42:22 hoek Exp $
+# $Id: Makefile,v 1.2 1997/11/08 13:26:08 hoek Exp $
 #
 
 DISTNAME=	tvp-0.9.7.1
@@ -18,7 +18,7 @@ MAINTAINER=	hoek@FreeBSD.ORG
 LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS+=	--enable-tcl-dir=${PREFIX}/lib \
+CONFIGURE_ARGS=		--enable-tcl-dir=${PREFIX}/lib \
 			--enable-carddir=${PREFIX}/share/games/tvp
 
 MAN6=	tvp.6

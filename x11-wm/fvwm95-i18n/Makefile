@@ -3,7 +3,7 @@
 # Date created:		Sa   1 Feb 1997 14:46:05 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.15 1997/12/04 02:21:59 vanilla Exp $
+# $Id: Makefile,v 1.16 1997/12/04 22:47:32 vanilla Exp $
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${X11BASE}/icons/chuck.xpm:${PORTSDIR}/x11/fbsd-icons
 
 USE_X11=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--includedir=${LOCALBASE}/include \
+CONFIGURE_ARGS= --includedir=${LOCALBASE}/include \
 		--libdir=${LOCALBASE}/lib
 
 MAN1=		fvwm95.1

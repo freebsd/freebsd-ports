@@ -3,7 +3,7 @@
 # Date created:		06 November 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1997/12/01 12:41:44 tg Exp $
+# $Id: Makefile,v 1.5 1997/12/05 13:45:35 tg Exp $
 #
 
 DISTNAME=	tk8.0p2
@@ -26,7 +26,7 @@ FETCH_BEFORE_ARGS=	-b
 PATCH_DIST_ARGS=	-p1 -d ${WRKDIR}/tk8.0 -E --quiet
 WRKSRC=		${WRKDIR}/tk8.0/unix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --enable-shared --enable-xpm --enable-step --enable-dnd \
+CONFIGURE_ARGS= --enable-shared --enable-xpm --enable-step --enable-dnd \
 		 --enable-tiff --with-optimize="${CFLAGS} -I${PREFIX}/include -I${PREFIX}/include/tiff34"
 CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 

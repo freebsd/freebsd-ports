@@ -3,7 +3,7 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1997/10/24 15:18:16 obrien Exp $
+# $Id: Makefile,v 1.12 1997/10/29 18:26:01 obrien Exp $
 #
 
 DISTNAME=	lyx-0.11.45
@@ -20,7 +20,7 @@ LIB_DEPENDS=	xforms\\.0\\.:${PORTSDIR}/x11/xforms \
 
 GNU_CONFIGURE=	yes
 STRIP=
-CONFIGURE_ARGS+=--with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11"
+CONFIGURE_ARGS= --with-extra-lib=${X11BASE}/lib --with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11"
 MAN1=		lyx.1
 
 post-install:
