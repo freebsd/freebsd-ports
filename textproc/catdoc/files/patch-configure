@@ -1,0 +1,20 @@
+--- configure.orig	Sun Nov 16 00:31:22 2003
++++ configure	Sun Aug  1 02:15:09 2004
+@@ -748,8 +748,8 @@
+ fi
+ 
+ echo "$ac_t""$ac_cv_prog_cc_g" 1>&6
+-if test "$ac_test_CFLAGS" = set; then
++if :; then
+   CFLAGS="$ac_save_CFLAGS"
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+     CFLAGS="-g -O2"
+@@ -1493,7 +1494,6 @@
+ 
+ 
+ if test "$GCC" = "yes"; then
+-	CFLAGS="-g -O2 -Wall"
+ fi
+ 
+ 

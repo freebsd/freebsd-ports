@@ -1,0 +1,26 @@
+--- doc/catdoc.1.in.orig	Wed Sep 24 12:55:01 2003
++++ doc/catdoc.1.in	Sun Aug  1 02:15:09 2004
+@@ -86,7 +86,10 @@
+ CHARACTER SETS below and should have 
+ .B .txt
+ extension  and reside in 
+-.B catdoc library directory ( @libdir@/catdoc).
++.B catdoc
++library directory (
++.B /usr/local/share/catdoc
++).
+ .TP 8
+ .BI -f format
+ - specifies output format as described in CHARACTER SUBSTITUTION below.
+@@ -227,9 +230,8 @@
+ 
+ .SH RUNTIME CONFIGURATION
+ Upon startup catdoc reads its system-wide configuration file (
+-.B catdocrc in 
+-.B catdoc
+-library directory) and then
++.B /usr/local/etc/catdocrc
++) and then
+ user-specific configuration file
+ .BR ${HOME}/.catdocrc.
+ .PP

@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sat Nov 15 18:29:14 2003
++++ src/Makefile.in	Sun Aug  1 02:15:09 2004
+@@ -87,7 +87,7 @@
+ 	$(INSTALL) -m 755 wordview $(installroot)$(bindir)/wordview
+ wordview: wordview.tcl
+ 	echo "#! $(WISH)" >wordview
+-	echo set charset_lib "\"$(LIB_DIR)\"">>wordview
++	echo set charset_lib "\"$(CHARSETPATH)\"">>wordview
+ 	cat wordview.tcl >>wordview
+ 	chmod 0755 wordview
+ strftime.o: ../compat/strftime.c
