@@ -10,7 +10,7 @@
     SUBDIR += abcm2ps
     SUBDIR += abntex
     SUBDIR += acrobatviewer
-    SUBDIR += acroread5
+    SUBDIR += acroread
     SUBDIR += acroread5-commfont
     SUBDIR += adobe-cmaps
     SUBDIR += afm
