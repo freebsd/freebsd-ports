@@ -1,6 +1,9 @@
-Make+ is a set of GNU Make rules for building the other packages from this
-author.
+Make+ is a set of scripts which enhance GNU make. 
 
-WWW: http://www.annexia.org/freeware/
+The scripts replace the functionality of autoconf, automake, rpm, 
+dpkg and more, allowing you to build, install, make RPMs, 
+make Debian packages and more, all from a single maintainable 
+'Makefile+' script. 
 
--- AlanE@FreeBSD.org
+Author:	Richard W.M. Jones <rich@annexia.org>
+WWW:	http://www.annexia.org/freeware/makeplus/

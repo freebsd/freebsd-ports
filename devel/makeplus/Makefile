@@ -1,5 +1,3 @@
-# ex:ts=8	-*-mode: makefile-*-
-#
 # New ports collection makefile for:	makeplus
 # Date created:		2002-12-22
 # Whom:			Alan Eldridge <alane@geeksrus.net>
@@ -8,34 +6,29 @@
 #
 
 PORTNAME=	makeplus
-PORTVERSION=	0.1.2
-PORTREVISION=	1
-PORTEPOCH=	0
+PORTVERSION=	0.2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of GNU Make rules for building packages with gmake
+MAINTAINER=	sergei@kolobov.com
+COMMENT=	Advanced build system for GNU Make
 
+BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
 USE_GMAKE=	yes
-PREFIX?=	${LOCALBASE}
-MAKE_ENV+=	MAKEPLUS_HOME=${WRKSRC}
-NO_MTREE=	yes
+HAS_CONFIGURE=	yes
+MAKEPLUS_HOME=	${WRKSRC}
+CONFIGURE_ENV=	PATH=${MAKEPLUS_HOME}:${PATH} MAKEPLUS_HOME=${MAKEPLUS_HOME}
+CONFIGURE_ARGS=	--prefix=${PREFIX}
+MAKE_ENV=	MAKEPLUS_HOME=${MAKEPLUS_HOME}
 
 MAN1=		make+.1
 
-.include <bsd.port.pre.mk>
-
 do-build:
-	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./make+ \
-		prefix=${PREFIX} manprefix=${PREFIX}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./make+
 
 do-install:
-	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		./make+ install prefix=${PREFIX} manprefix=${PREFIX}
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./make+ install
 
-.include <bsd.port.post.mk>
-
-#EOF
+.include <bsd.port.mk>

@@ -1,0 +1,36 @@
+
+$FreeBSD$
+
+--- Makefile+.orig	Tue Jul  1 15:43:11 2003
++++ Makefile+	Tue Jul  1 15:43:50 2003
+@@ -36,10 +36,10 @@
+ RPM_REQUIRES	:= make >= 3.76, bash
+ RPM_GROUP	:= Development/Building
+ 
+-CFLAGS		+= -Wall -Werror -g -O2
+-
+ EXTRA_DIST	:= doc/*.html doc/*.1
+ 
++XMLTO		:= xmlto --skip-validation
++
+ all:	build
+ 
+ configure:
+@@ -53,14 +53,14 @@
+ 
+ doc/index.html: doc/make+-book.xml
+ 	rm -f doc/*.html
+-	-xmlto html -o doc $^
++	-$(XMLTO) html -o doc $^
+ 
+ doc/make+.1: doc/make+-man.xml
+-	-rm -f doc/*.1 ; xmlto man -o doc $^
++	-rm -f doc/*.1 ; $(XMLTO) man -o doc $^
+ 
+ doc/makeplus.pdf: doc/make+-book.xml
+ 	rm -f $@
+-	-xmlto pdf -o doc $^
++	-$(XMLTO) pdf -o doc $^
+ 
+ test:
+ 
