@@ -4,7 +4,9 @@
 #
 
 # PROVIDE: dancer-ircd
-# KEYWORD: FreeBSD
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
 
 . %%RC_SUBR%%
 
