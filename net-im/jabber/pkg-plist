@@ -1,12 +1,15 @@
-bin/jserver
-etc/jserver.xml.default
-etc/rc.d/jserver.sh
-lib/jabber/mod_echo.so
-lib/jabber/mod_time.so
-lib/jabber/mod_version.so
-lib/jabber/svc_hell.so
-lib/jabber/svc_http.so
-lib/jabber/svc_irc.so
-lib/jabber/svc_telnet.so
+bin/jabberd
+etc/jabber.xml.sample
+etc/rc.d/jabberd.sh
+lib/jabber/dialback/dialback.so
+lib/jabber/dnsrv/dnsrv.so
+lib/jabber/jsm/jsm.so
+lib/jabber/pthsock/pthsock_client.so
+lib/jabber/xdb_file/xdb_file.so
+@dirrm lib/jabber/dialback
+@dirrm lib/jabber/dnsrv
+@dirrm lib/jabber/jsm
+@dirrm lib/jabber/pthsock
+@dirrm lib/jabber/xdb_file
 @dirrm lib/jabber
-@unexec rmdir /var/jspool 2>/dev/null || true
+@unexec rmdir /var/spool/jabber 2>/dev/null || true
