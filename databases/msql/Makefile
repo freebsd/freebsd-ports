@@ -17,7 +17,6 @@ INSTALLS_SHLIB= YES
 USE_PERL5=	YES
 
 # Not free for commercial use.
-NO_PACKAGE=	YES
 RESTRICTED=	"restrictive copyright (no commercial use)"
 
 MAKE_ENV+=	WRKSRC=${WRKSRC}
