@@ -1,0 +1,67 @@
+lib/gtk/themes/engines/libXenoStep.so
+share/themes/XenoStep_Classic/README.html
+share/themes/XenoStep_Classic/arrows.png
+share/themes/XenoStep_Classic/buds.png
+share/themes/XenoStep_Classic/buttons.png
+share/themes/XenoStep_Classic/dimple.png
+share/themes/XenoStep_Classic/gtk/gtkrc
+share/themes/XenoStep_Classic/holes.png
+share/themes/XenoStep_Classic/lines.png
+share/themes/XenoStep_Classic/xeno.css
+share/themes/XenoStep_Classic_Small/README.html
+share/themes/XenoStep_Classic_Small/arrows.png
+share/themes/XenoStep_Classic_Small/buds.png
+share/themes/XenoStep_Classic_Small/buttons.png
+share/themes/XenoStep_Classic_Small/dimple.png
+share/themes/XenoStep_Classic_Small/gtk/gtkrc
+share/themes/XenoStep_Classic_Small/holes.png
+share/themes/XenoStep_Classic_Small/lines.png
+share/themes/XenoStep_Classic_Small/xeno.css
+share/themes/XenoStep_HeliX/README.html
+share/themes/XenoStep_HeliX/arrows.png
+share/themes/XenoStep_HeliX/buds.png
+share/themes/XenoStep_HeliX/buttons.png
+share/themes/XenoStep_HeliX/dimple.png
+share/themes/XenoStep_HeliX/gtk/gtkrc
+share/themes/XenoStep_HeliX/holes.png
+share/themes/XenoStep_HeliX/lines.png
+share/themes/XenoStep_HeliX/xeno.css
+share/themes/XenoStep_HeliX_Small/README.html
+share/themes/XenoStep_HeliX_Small/arrows.png
+share/themes/XenoStep_HeliX_Small/buds.png
+share/themes/XenoStep_HeliX_Small/buttons.png
+share/themes/XenoStep_HeliX_Small/dimple.png
+share/themes/XenoStep_HeliX_Small/gtk/gtkrc
+share/themes/XenoStep_HeliX_Small/holes.png
+share/themes/XenoStep_HeliX_Small/lines.png
+share/themes/XenoStep_HeliX_Small/xeno.css
+share/themes/XenoStep_Modern/README.html
+share/themes/XenoStep_Modern/arrows.png
+share/themes/XenoStep_Modern/buds.png
+share/themes/XenoStep_Modern/buttons.png
+share/themes/XenoStep_Modern/dimple.png
+share/themes/XenoStep_Modern/gtk/gtkrc
+share/themes/XenoStep_Modern/holes.png
+share/themes/XenoStep_Modern/lines.png
+share/themes/XenoStep_Modern/xeno.css
+share/themes/XenoStep_Modern_Small/README.html
+share/themes/XenoStep_Modern_Small/arrows.png
+share/themes/XenoStep_Modern_Small/buds.png
+share/themes/XenoStep_Modern_Small/buttons.png
+share/themes/XenoStep_Modern_Small/dimple.png
+share/themes/XenoStep_Modern_Small/gtk/gtkrc
+share/themes/XenoStep_Modern_Small/holes.png
+share/themes/XenoStep_Modern_Small/lines.png
+share/themes/XenoStep_Modern_Small/xeno.css
+@dirrm share/themes/XenoStep_Modern_Small/gtk
+@dirrm share/themes/XenoStep_Modern_Small
+@dirrm share/themes/XenoStep_Modern/gtk
+@dirrm share/themes/XenoStep_Modern
+@dirrm share/themes/XenoStep_HeliX_Small/gtk
+@dirrm share/themes/XenoStep_HeliX_Small
+@dirrm share/themes/XenoStep_HeliX/gtk
+@dirrm share/themes/XenoStep_HeliX
+@dirrm share/themes/XenoStep_Classic_Small/gtk
+@dirrm share/themes/XenoStep_Classic_Small
+@dirrm share/themes/XenoStep_Classic/gtk
+@dirrm share/themes/XenoStep_Classic

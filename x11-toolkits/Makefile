@@ -91,6 +91,7 @@
     SUBDIR += xbae
     SUBDIR += xclasses
     SUBDIR += xenophilia
+    SUBDIR += xenostep
     SUBDIR += xforms
     SUBDIR += xg
     SUBDIR += xmhtml
