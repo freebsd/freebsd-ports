@@ -92,6 +92,7 @@ share/gnome/gnumeric/%%VERSION%%/glade/descriptive-stats.glade
 share/gnome/gnumeric/%%VERSION%%/glade/dialog-stf-export.glade
 share/gnome/gnumeric/%%VERSION%%/glade/dialog-stf.glade
 share/gnome/gnumeric/%%VERSION%%/glade/dialog-zoom.glade
+share/gnome/gnumeric/%%VERSION%%/glade/exp-smoothing.glade
 share/gnome/gnumeric/%%VERSION%%/glade/font-sel.glade
 share/gnome/gnumeric/%%VERSION%%/glade/formula-guru.glade
 share/gnome/gnumeric/%%VERSION%%/glade/fourier-analysis.glade
@@ -143,6 +144,7 @@ share/gnome/help/gnumeric/C/data-and-time-formatting.html
 share/gnome/help/gnumeric/C/descriptive-statistics-tool.html
 share/gnome/help/gnumeric/C/editing-selections.html
 share/gnome/help/gnumeric/C/editing.html
+share/gnome/help/gnumeric/C/exp-smoothing-tool.html
 share/gnome/help/gnumeric/C/file-format.html
 share/gnome/help/gnumeric/C/files.html
 share/gnome/help/gnumeric/C/filter.html
@@ -713,13 +715,6 @@ share/locale/en_AU/LC_MESSAGES/gnumeric.mo
 share/locale/en_CA/LC_MESSAGES/gnumeric.mo
 share/locale/en_GB/LC_MESSAGES/gnumeric.mo
 share/locale/es/LC_MESSAGES/gnumeric.mo
-share/locale/es_DO/LC_MESSAGES/gnumeric.mo
-share/locale/es_GT/LC_MESSAGES/gnumeric.mo
-share/locale/es_HN/LC_MESSAGES/gnumeric.mo
-share/locale/es_MX/LC_MESSAGES/gnumeric.mo
-share/locale/es_PA/LC_MESSAGES/gnumeric.mo
-share/locale/es_PE/LC_MESSAGES/gnumeric.mo
-share/locale/es_SV/LC_MESSAGES/gnumeric.mo
 share/locale/et/LC_MESSAGES/gnumeric.mo
 share/locale/fi/LC_MESSAGES/gnumeric.mo
 share/locale/fr/LC_MESSAGES/gnumeric.mo
