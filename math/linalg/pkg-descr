@@ -1,0 +1,19 @@
+        LinAlg -- C++ Linear Algebra and Optimization classlib
+
+- Matrix, Vector, subMatrices, and LAStreams over real domain;
+- Matrix inverse, norms, determinant, lazy matrices, Singular Value
+  Decomposition (SVD) and applications, nested functions;
+- Brent's univariate optimization and root finding, Hooke-Jeeves
+  multidimensional optimization of functors, Aitken-Lagrange interpolation;
+- LinAlg stresses Matrix streams, which provide a sequential
+  view/access to a matrix or its parts. LABlockStreams may
+  span over an arbitrary rectangular block of a matrix, including the
+  whole matrix, a single matrix element, and all other block sizes in
+  between. Matrix streams are seekable and subrange-able. A stream or
+  a substream are always created in-line; they do not allocate any
+  heap storage, and are safe.
+- Every feature is extensively tested in the validation code (included).
+
+WWW: http://pobox.com/~oleg/ftp/packages.html
+
+Oleg Kiselyov <oleg@pobox.com>

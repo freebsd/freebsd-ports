@@ -28,6 +28,7 @@
     SUBDIR += hexcalc
     SUBDIR += lapack
     SUBDIR += libranlib
+    SUBDIR += linalg
     SUBDIR += linpack
     SUBDIR += metis
     SUBDIR += netcdf

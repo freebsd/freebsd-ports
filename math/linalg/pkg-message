@@ -1,0 +1,11 @@
+Don't forget to compile and run verification/validation code: gmake check-all
+or specifically, sub-targets
+	vmatrix vvector vmatrix1 vmatrix2 vlastreams
+	vali vhjmin vfminbr vzeroin
+	vsvd vslesing sample_ult sample_adv
+
+See comments in a LinAlg/Makefile for details, as well as NumMath.dr.
+The verification code checks to see that all the functions in this
+package have compiled and run well. The validation code can also serve
+as an illustration of how package's classes and functions may be
+employed.
