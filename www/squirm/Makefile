@@ -7,16 +7,15 @@
 
 PORTNAME=	squirm
 PORTVERSION=	1.23
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-# this mastersite hosts an older version; mastersites with newer version have disappeared
-MASTER_SITES=	# http://squirm.foote.com.au/
+MASTER_SITES=	http://squirm.foote.com.au/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast & configurable redirector for the Squid
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 NO_PACKAGE=	must set SQUID_UID and SQUID_GID before building
 
