@@ -34,7 +34,7 @@ pre-build:
 
 post-build:
 	${RM} -f ${PLIST}
-	for i in `find ${WRKDIR} -type f -perm 755`; do \
+	for i in `${FIND} ${WRKDIR} -type f -perm 755`; do \
 		${ECHO_CMD} bin/`${BASENAME} $${i}` >> ${PLIST}; \
 	done
 	${ECHO_CMD} share/csound/csound.xmg >> ${PLIST}
