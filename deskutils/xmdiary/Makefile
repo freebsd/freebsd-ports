@@ -3,7 +3,7 @@
 # Date created:		29 Sep 1997
 # Whom:			mi@aldan.ziplink.net
 #
-# $Id: Makefile,v 1.2 1998/08/07 22:17:54 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/27 03:44:37 steve Exp $
 #
 
 DISTNAME=	xmdiary-3.0.1
@@ -23,7 +23,7 @@ MAN1=		xdaclunix.1 xdalarm.1 xdcustom.1 xddump.1 xdiary.1 xdinitdb.1 \
 		xdrestore.1
 
 pre-patch:
-	for node in `tar tzf ${DISTDIR}/xmdfix.gz` ; \
+	@for node in `tar tzf ${DISTDIR}/xmdfix.gz` ; \
 	do \
 		test -f $(WRKSRC)/$$node && ${RM} -f $(WRKSRC)/$$node ; \
 	done
