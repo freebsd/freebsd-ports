@@ -26,6 +26,12 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		dgs.1 dpsnx.agent.1
-MANM=		dpsexec makepsres xepsf
+MANN=		dpsexec.man makepsres.man xepsf.man
+
+pre-patch:
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|manm|mann|g'
+
+
 
 .include <bsd.port.mk>
