@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Graphics-ColorNames
-PORTVERSION=	0.32
+PORTVERSION=	1.05
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Graphics
@@ -18,9 +18,10 @@ COMMENT=	A perl class that defines RGB values for common color names
 PERL_CONFIGURE=	yes
 
 MAN3=	Graphics::ColorNames.3 \
-	Graphics::HTML.3 \
-	Graphics::Netscape.3 \
-	Graphics::Windows.3 \
-	Graphics::X.3
+	Graphics::ColorNames::HTML.3 \
+	Graphics::ColorNames::Netscape.3 \
+	Graphics::ColorNames::Windows.3 \
+	Graphics::ColorNames::X.3 \
+	Graphics::ColourNames.3
 
 .include <bsd.port.mk>
