@@ -16,7 +16,6 @@ COMMENT=	An image viewer that uses Gdk-Pixbuf and OpenGL
 LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_BZIP2=	yes
-USE_GCC=	3.4
 USE_X_PREFIX=	yes
 USE_GL=		yes
 USE_GETOPT_LONG=	yes
