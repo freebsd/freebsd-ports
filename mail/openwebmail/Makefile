@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	1.61
+PORTVERSION=	1.62
 CATEGORIES=	mail
 MASTER_SITES=	http://turtle.ee.ncku.edu.tw/openwebmail/download/
 EXTRACT_SUFX=	.tgz
@@ -26,7 +26,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/${dir}/openwebmail ${PREFIX}/www/${dir}/
 	@${CHOWN} -R root:mail ${PREFIX}/www/${dir}/openwebmail
 .endfor
-.for file in openwebmail.pl openwebmail-main.pl openwebmail-prefs.pl openwebmail-read.pl openwebmail-send.pl openwebmail-viewatt.pl
+.for file in auth_pop3.pl openwebmail-main.pl openwebmail-prefs.pl openwebmail-read.pl openwebmail-send.pl openwebmail-viewatt.pl openwebmail.pl
 	@${CHMOD} 4555 ${SUIDPERL}
 	@${PERL5} -pi -e 's,/usr/bin/perl,${SUIDPERL},g' ${OWCGIDIR}/${file}
 	@${CHMOD} 4555 ${OWCGIDIR}/${file}
