@@ -1,0 +1,5 @@
+The Modified module is intended as a simple method for programs to
+detect whether configuration files (or modules they rely on) have
+changed.
+
+WWW:	http://search.cpan.org/search?dist=File-Modified

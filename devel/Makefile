@@ -766,6 +766,7 @@
     SUBDIR += p5-File-Grep
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-MMagic
+    SUBDIR += p5-File-Modified
     SUBDIR += p5-File-NCopy
     SUBDIR += p5-File-NFSLock
     SUBDIR += p5-File-Path-Expand
