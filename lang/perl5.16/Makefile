@@ -7,6 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
+PORTREVISION=	1
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -32,7 +33,6 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dprivlib=${PREFIX}/lib/perl5/${PERL_VER} \
 	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VER}/perl/man/man3 \
 	-Dman1dir=${PREFIX}/man/man1 \
-	-Duse64bitint \
 	-Dsitearch=${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH} \
 	-Dsitelib=${PREFIX}/${SITE_PERL_REL} -Dscriptdir=${PREFIX}/bin \
 	-Dsiteman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
@@ -83,6 +83,10 @@ CONFIGURE_ARGS+=	-Dusethreads=n
 CONFIGURE_ARGS+=	-Dusemymalloc=y
 .else
 CONFIGURE_ARGS+=	-Dusemymalloc=n
+.endif
+
+.if !defined(WITHOUT_PERL_64BITINT)
+CONFIGURE_ARGS+=	-Duse64bitint
 .endif
 
 .if ${OSVERSION} < 502100
