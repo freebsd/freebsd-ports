@@ -1,0 +1,55 @@
+--- fine.C.orig	Fri May  7 03:08:12 1999
++++ fine.C	Tue Aug 17 17:46:57 1999
+@@ -172,7 +172,7 @@
+ 
+   if (sc == NULL)
+   { sc = new QBinaryTree<Configuration>(shortcut);
+-    sprintf(s,"%s/.fine/.editor",getenv("HOME"));
++    sprintf(s,"%s/editor",FINEDIR);
+     f = fopen(s,"rt");
+     if (f != NULL) 
+     { while (!feof(f))
+@@ -181,7 +181,7 @@
+          }
+        fclose(f);
+        } else QMessageBox::warning(ed,"Couldn't find main configuration file",
+-    "Couldn't find .editor file in your .fine directory!\nTry to type: make install in the FINE distribution directory.");
++    "Couldn't find editor file in your .fine directory!\nTry to type: make install in the FINE distribution directory.");
+     }
+ 
+   sysmenu = new QMenuBar(this,"Editor System Main Menu");
+@@ -370,7 +370,7 @@
+   if (ptrsc != NULL)
+   {  sh = ptrsc->Element();
+       s = new char[strlen(getenv("HOME"))+strlen(sh.filename)+200];
+-      sprintf(s,"%s/.fine/%s",getenv("HOME"),sh.filename);
++      sprintf(s,"%s/%s",FINEDIR,sh.filename);
+       w->editor()->readConfig(s);
+       delete [] s;
+       }
+@@ -410,7 +410,7 @@
+         printf("\nTemplate file:%s, Compiler:%s, Previewer:%s",defsc.filename,
+           (defsc.compiler != NULL? defsc.compiler:"(null)"),
+ 	     (defsc.previewer != NULL? defsc.previewer:"(null)"));
+-        sprintf(s,"%s/.fine/%s",getenv("HOME"),defsc.filename);
++        sprintf(s,"%s/%s",FINEDIR,defsc.filename);
+         ed->readConfig(s);
+         ed->repaint();
+         fflush(stdout);
+@@ -461,14 +461,14 @@
+  { if (ptrsc != NULL) Delete(sc,ptrsc->Element());
+     sc->Insert(*scw);
+     ptrsc = sc->Locate(*scw);
+-    sprintf(fns,"%s/.fine/.editor",getenv("HOME"));
++    sprintf(fns,"%s/editor",FINEDIR);
+     f = fopen(fns,"wt");
+     fprintf(f,"# This is file used by FINE editor\n"); 
+     fprintf(f,"# It contains information about all template files used by FINE\n");
+     saveConfigTree(f,sc->Left());
+     saveConfigTree(f,sc->Right());
+     fclose(f);
+-    sprintf(fns,"%s/.fine/%s",getenv("HOME"),scw->filename);
++    sprintf(fns,"%s/%s",FINEDIR,scw->filename);
+     f = fopen(fns,"wt");
+     fprintf(f,"# This is %s template file\n",scw->name);
+     fprintf(f,"\n# screen settings\n");

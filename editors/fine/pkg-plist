@@ -1,0 +1,7 @@
+bin/fine
+share/fine/C++.template
+share/fine/LaTeX.template
+share/fine/editor
+share/fine/h.template
+share/fine/html.template
+@dirrm share/fine
