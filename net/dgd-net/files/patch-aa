@@ -1,12 +1,9 @@
-*** Makefile.orig	Thu Jan  2 23:38:50 1997
---- Makefile	Thu Jan  2 23:41:13 1997
+*** Makefile	Mon Jul 20 09:19:39 1998
+--- Makefile.new	Mon Jul 20 09:23:57 1998
 ***************
-*** 3,24 ****
-  #
-  HOST=	NETBSD
-  DEFINES=-D$(HOST) #-DDUMP_FUNCS
-! DEBUG=	-g -DDEBUG
-  CCFLAGS=$(DEFINES) $(DEBUG)
+*** 6,24 ****
+  DEBUG=
+  CCFLAGS=-O2 $(DEFINES) $(DEBUG)
   CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
 ! LDFLAGS=
 ! LIBS=
@@ -24,13 +21,9 @@
   
   a.out:	$(OBJ) always
   	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
---- 3,27 ----
-  #
-  HOST=	NETBSD
-  DEFINES=-D$(HOST) #-DDUMP_FUNCS
-! DEBUG=-O2
-! #DEBUG=	-g -DDEBUG
-  CCFLAGS=$(DEFINES) $(DEBUG)
+--- 6,26 ----
+  DEBUG=
+  CCFLAGS=-O2 $(DEFINES) $(DEBUG)
   CFLAGS=	-I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
 ! LDFLAGS=-s
 ! LIBS=-lcrypt -lgnuregex
@@ -59,7 +52,7 @@
   
   comp.sub: $(COMPOBJ)
   	@for i in $(COMPOBJ); do echo ../$$i; done > comp.sub
---- 41,51 ----
+--- 40,50 ----
   	-mv $(BIN)/driver $(BIN)/driver.old
   	cp a.out $(BIN)/driver
   
@@ -80,7 +73,7 @@
   
   clean:
   	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
---- 61,67 ----
+--- 60,66 ----
   
   comp/a.out:
   	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
@@ -90,7 +83,7 @@
   	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
 ***************
 *** 92,94 ****
---- 99,102 ----
+--- 98,101 ----
   call_out.o config.o dgd.o: call_out.h
   error.o comm.o call_out.o config.o dgd.o: comm.h
   config.o: version.h
