@@ -1,0 +1,11 @@
+The purpose of this library was to replace our dependence on Unix epoch time,
+which, being limited to a range of about 1970 to 2030, is inadequate for our
+purposes (we have data as old as 1870). This date library effectively handles
+dates from A.D. 1000 to infinity, and would probably work all the way back to 0
+(ignoring, of course, the switch-over to the Gregorian calendar). The useful
+features of Unix epoch time (ease of date difference calculation and date
+comparison, strict ordering) are preserved, and elements such as
+human-legibility are added. The library handles fractional seconds and some
+date/time manipulations used for the Global Positioning Satellite system.
+
+WWW: http://datetime.perl.org/
