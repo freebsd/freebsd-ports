@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	airport
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net java
 MASTER_SITES=	http://edge.mcs.drexel.edu/GICL/people/sevy/airport/
-DISTFILES=	configurator_13${EXTRACT_SUFX}
+DISTFILES=	configurator_${PORTVERSION:S/.//}${EXTRACT_SUFX}
 
 MAINTAINER=	nsayer@freebsd.org
 
