@@ -2,5 +2,9 @@ bin/mutt
 man/man1/mutt.1.gz
 share/misc/Muttrc
 share/misc/mime.types
-@unexec /bin/rm -rf %D/share/doc/mutt
-share/doc/mutt
+share/doc/mutt/manual.txt
+share/doc/mutt/pgp-Notes.txt
+share/doc/mutt/sample.muttrc
+share/doc/mutt/Mush.rc
+share/doc/mutt/Pine.rc
+@dirrm share/doc/mutt
