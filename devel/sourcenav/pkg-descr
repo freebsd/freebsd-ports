@@ -1,0 +1,20 @@
+Source-Navigator is a source code analysis tool. With it, you can edit your
+source code, display relationships between classes and functions and members,
+and display call trees. You can also build your projects, either with your
+own makefile, or by using Source-Navigator's build system to automatically
+generate a makefile.
+
+Source-Navigator works with the Insight GUI interface for GDB.
+
+Source-Navigator supports C, C++, Java, Tcl, [incr Tcl], FORTRAN and COBOL,
+and provides and SDK so that you can write your own parsers.
+
+Use Source-Navigator to:
+* Analyze how a change will effect external source modules. 
+* Find every place in your code where a given function is called. 
+* Find each file that includes a given header file. 
+* Use the grep tool to search for a given string in all your source files. 
+
+Source-Navigator is released under the GNU Public License.
+
+[ This port is maintained by Donald Burr <dburr@FreeBSD.ORG> ]
