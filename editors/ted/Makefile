@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ted
-PORTVERSION=	2.11
+PORTVERSION=	2.12
 CATEGORIES=	editors textproc print
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 EXTRACT_SUFX=	.src.tar.gz
@@ -18,14 +18,15 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
+CONFIGURE_WRKSRC=	${WRKSRC}/Ted
 
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=	${WRKSRC}/Ted
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--with-GTK
 MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}\\\"\"" \
