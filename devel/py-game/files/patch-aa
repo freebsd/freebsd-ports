@@ -1,6 +1,6 @@
---- config_unix.py	2000/12/16 08:03:29	1.1
-+++ config_unix.py	2000/12/16 08:23:56
-@@ -4,7 +4,9 @@
+--- config_unix.py.orig	Sat Jan  6 19:18:37 2001
++++ config_unix.py	Tue Jan  9 19:37:48 2001
+@@ -4,8 +4,12 @@
  import os, sys, shutil
  from glob import glob
  
@@ -9,5 +9,31 @@
 +except KeyError: configcommand = 'sdl-config'
 +configcommand = configcommand + ' --version --cflags --libs'
  
-     
++try: localbase = os.environ['LOCALBASE']
++except KeyError: localbase = ''
  
+ class Dependency:
+     def __init__(self, name, checkhead, checklib, lib):
+@@ -57,12 +61,16 @@
+ flags have been used, which will likely require a little editing."""
+ 
+     print 'Hunting dependencies...'
+-    incdir = libdir = ''
+-    for arg in configinfo.split():
+-        if arg.startswith('-I'):
+-            incdir = arg[2:]
+-        elif arg.startswith('-L'):
+-            libdir = arg[2:]
++    if localbase != '':
++        incdir = localbase + '/include/SDL11'
++        libdir = localbase + '/lib'
++    else:
++        incdir = libdir = ''
++        for arg in configinfo.split():
++            if arg.startswith('-I'):
++                incdir = arg[2:]
++            elif arg.startswith('-L'):
++                libdir = arg[2:]
+     #print 'INCDIR', incdir
+     #print 'LIBDIR', libdir
+     for d in DEPS:
