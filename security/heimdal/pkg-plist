@@ -161,9 +161,11 @@ man/man3/krb5_auth_con_setuserkey.3
 man/man3/krb5_auth_context.3
 man/man3/krb5_auth_getauthenticator.3
 man/man3/krb5_auth_getcksumtype.3
+man/man3/krb5_auth_getkeytype.3
 man/man3/krb5_auth_getlocalseqnumber.3
 man/man3/krb5_auth_getremoteseqnumber.3
 man/man3/krb5_auth_setcksumtype.3
+man/man3/krb5_auth_setkeytype.3
 man/man3/krb5_auth_setlocalseqnumber.3
 man/man3/krb5_auth_setremoteseqnumber.3
 man/man3/krb5_build_principal.3
