@@ -1,0 +1,5 @@
+@cwd /usr/local
+bin/tracker
+bin/randomize
+bin/analyzer
+man/man1/tracker.1
