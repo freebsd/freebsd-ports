@@ -1,6 +1,57 @@
 #!/bin/sh
+#
 # $FreeBSD$
 #
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+delete_account() {
+    local u g home
+
+    u=$1
+    g=$2
+    if yesno "Do you want me to remove group \"${g}\"" y; then
+        pw groupdel -n ${g}
+        echo "Done."
+    fi
+    if yesno "Do you want me to remove user \"${u}\"" y; then
+        eval home=~${u}
+        pw userdel -n ${u}
+        echo "Done."
+        if [ -d "${home}" ]; then
+            echo "Please remember to check if there's any unsent mail left"
+            echo "in the home directory \"${home}\""
+        fi
+
+    fi
+}
 
 if [ -f ${PKG_PREFIX}/var/smokeping/smokeping.pid ]; then
     if [ -x ${PKG_PREFIX}/etc/rc.d/smokeping.sh ]; then
@@ -13,11 +64,23 @@ if [ "$2" != "POST-DEINSTALL" ]; then
     exit 0
 fi
 
-if [ -d ${PKG_PREFIX}/smokeping ]; then
-    echo "----------------------------------------------------------------"
-    echo "To delete your custom SmokePing configuration and all collected"
-    echo "data permanently, use 'rm -R ${PKG_PREFIX}/smokeping'"
-    echo "----------------------------------------------------------------"
-fi
+if [ ! -n "$BATCH" ]; then
 
-exit 0
+    if [ -d ${PKG_PREFIX}/etc/smokeping ]; then
+	echo "You have some custom SmokePing configuration in \"${PKG_PREFIX}/etc/smokeping/\"."
+	if yesno "Would you like me to remove it" y; then
+	    rm -R ${PKG_PREFIX}/etc/smokeping
+	    echo "Done."
+	fi
+    fi
+
+    if [ -d ${PKG_PREFIX}/var/smokeping ]; then
+	echo "You have some collected data in \"${PKG_PREFIX}/var/smokeping/\"."
+	if yesno "Would you like me to remove it" y; then
+	    rm -R ${PKG_PREFIX}/var/smokeping
+	    echo "Done."
+	fi
+    fi
+
+    delete_account smokeping smokeping
+fi
