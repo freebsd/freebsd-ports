@@ -1,9 +1,9 @@
 # New ports collection makefile for:	pclock
 # Version required:		0.12a
 # Date created:			15 Apr 1999
-# Whom:				Jim Mock <jim@phrantic.phear.net>
+# Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/19 12:02:25 flathill Exp $
 #
 
 DISTNAME=	pclock-0.12a
@@ -11,7 +11,7 @@ CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	ftp://ftp.kourakos.com/pub/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jim@phrantic.phear.net
+MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
@@ -19,17 +19,12 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/pclock ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/pclock ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/pclock/pixmaps && chmod a+rx ${PREFIX}/share/pclock/pixmaps
-	@${ECHO} "		"
-	@${ECHO} "===> Installing sample pixmaps in ${PREFIX}/share/pclock/pixmaps"
-	${INSTALL_DATA} ${WRKSRC}/XPM/*.xpm ${PREFIX}/share/pclock/pixmaps
+	@${ECHO} "===>  Installing sample pixmaps in ${PREFIX}/share/pclock/pixmaps"
+	@${INSTALL_DATA} ${WRKSRC}/XPM/*.xpm ${PREFIX}/share/pclock/pixmaps
 
 post-install:
-	@${ECHO} "		"
-	@${ECHO} "-----------------------------------------------"
-	@${ECHO} "===> Use 'pclock --help' for usage instructions"
-	@${ECHO} "-----------------------------------------------"
-	@${ECHO} "		"
+	@${ECHO} "===>  Use 'pclock --help' for usage instructions"
 
 .include <bsd.port.mk>
