@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	4.2.0/:x \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X420src-1.tgz:x \
-		Wraphelp.gz:local
+		Wraphelp2.gz:local
 EXTRACT_ONLY=	X420src-1.tgz
 
 PATCH_SITES=		${MASTER_SITE_LOCAL}
@@ -40,7 +40,7 @@ XINSTALL_DIRS=		programs/Xserver
 XINSTALL_MAN_DIRS=	${XINSTALL_DIRS}
 
 post-extract:
-	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
+	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp2.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
