@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/ \
 		http://www.whizkidtech.net/ISO-8859-2/
 DISTNAME=	libutf-8-1.0
 
-MAINTAINER=	adam@redprince.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unicode conversion routines between UCS-4 and UTF-8
 
 INSTALLS_SHLIB=	yes
