@@ -1,0 +1,22 @@
+[ excerpt from developer's site ]
+
+matroska is a project aiming to become the standard of Multimedia
+Container Formats one day. It was derived from a similar project
+called MCF, but differentiates from that significantly because it
+is based on EBML (Extensible Binary Meta Language ), a kind of
+binary version of XML. This way the development team gains significant
+advantages in terms of future format extensability, without breaking
+file support in old parsers.
+
+Advanced because it is based on EBML, a kind of XML equivalent,
+that allow infinite extensibility of the format. And full featured
+because it includes precise seeking, any audio/video/subtitle codec
+support including VCM/ACM/DirectShow compatibility, timecode based
+format, complex frame dependencies, chaptering, internationalisation,
+error protection, tagging, file attachement, control track (to be
+defined), menu (to be defined), etc.
+
+All these features are not yet implemented but already defined in
+the format.
+
+WWW: http://www.matroska.org/

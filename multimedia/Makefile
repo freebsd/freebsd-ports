@@ -40,6 +40,7 @@
     SUBDIR += libdvdplay
     SUBDIR += libdvdread
     SUBDIR += libfame
+    SUBDIR += libmatroska
     SUBDIR += libmovtar
     SUBDIR += libmpeg2
     SUBDIR += libquicktime
