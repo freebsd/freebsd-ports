@@ -77,6 +77,7 @@
     SUBDIR += fnlib
     SUBDIR += fractorama
     SUBDIR += frontline
+    SUBDIR += ftgl
     SUBDIR += fujiplay
     SUBDIR += g2
     SUBDIR += g3dviewer
