@@ -3,7 +3,7 @@
 # Date created:			24 September, 1998
 # Whom:				kline
 #
-# $Id: Makefile,v 1.1 1998/09/26 01:43:22 kline Exp kline $
+# $Id: Makefile,v 1.9 1998/10/10 03:47:31 steve Exp $
 #
 
 DISTNAME=	cbb-0.74
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 
 MAINTAINER=	kline@thought.org
 
-RUN_DEPENDS=   wish4.2:${PORTSDIR}/x11-toolkits/tk42
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 
 NO_BUILD=       yes
 USE_PERL5=	yes
