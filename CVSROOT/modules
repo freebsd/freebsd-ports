@@ -4656,6 +4656,7 @@ libvc		ports/devel/libvc
 libvm68k	ports/emulators/libvm68k
 libvncserver	ports/net/libvncserver
 libvorbis	ports/audio/libvorbis
+libvorbis-aotuv	ports/audio/libvorbis-aotuv
 libwhisker	ports/security/libwhisker
 libwmf		ports/graphics/libwmf
 libwnck		ports/x11-toolkits/libwnck
