@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	gtktalog
-PORTVERSION=	0.99.20
+PORTVERSION=	1.0.0
 CATEGORIES=	misc
-MASTER_SITES=	http://savannah.nongnu.org/download/gtktalog/gtktalog/sources/
+MASTER_SITES=	http://savannah.nongnu.org/download/gtktalog/gtktalog.pkg/1.0.0/
 
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	GTKtalog is a tool to make disk catalogs
-
-BROKEN=		"Bad pkg-plist"
 
 USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes

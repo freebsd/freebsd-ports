@@ -1,0 +1,12 @@
+--- Docs/C/Makefile.in.orig	Fri Jul 11 00:24:00 2003
++++ Docs/C/Makefile.in	Fri Jul 11 00:26:06 2003
+@@ -326,9 +326,6 @@
+ 	-rm -rf man
+ 
+ gtktalog/gtktalog.html: $(SGML_FILES)
+-	-db2html gtktalog.sgml
+-	-db2html man.sgml
+-	-mv man/man.html gtktalog
+ 
+ dist-hook: gtktalog/gtktalog.html
+ 	mkdir -p $(distdir)/gtktalog
