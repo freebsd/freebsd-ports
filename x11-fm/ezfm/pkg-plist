@@ -1,5 +1,4 @@
 bin/ezfm
-man/man1/ezfm.1.gz
 share/doc/ezfm/COPYING
 share/ezfm/ezfmExtension
 share/ezfm/ezfmMagic
