@@ -1,0 +1,6 @@
+Kwiki::RecentChangesRSS - Kwiki RSS Plugin
+
+Provides an RSS 2.0 feed of your (Kwiki) recent changes.
+
+WWW: http://search.cpan.org/dist/Kwiki-RecentChangesRSS/
+Author:	Brian Ingerson <INGY at cpan.org>

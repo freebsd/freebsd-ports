@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Kwiki/RecentChangesRSS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/RecentChangesRSS/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/RecentChangesRSS
+@unexec rmdir %D/%%SITE_PERL%%/Kwiki 2>/dev/null || true
