@@ -30,6 +30,7 @@
     SUBDIR += icewm
     SUBDIR += ion
     SUBDIR += kappdock
+    SUBDIR += kwix
     SUBDIR += larswm
     SUBDIR += libdockapp
     SUBDIR += libepplet

@@ -1,0 +1,8 @@
+lib/kde2/libkcm_kwix.so
+lib/kde2/libkcm_kwix.la
+lib/kde2/libkwinkwix.so
+lib/kde2/libkwinkwix.la
+share/apps/kwin/kwix.desktop
+share/applnk/Settings/LookNFeel/kcmkwix.desktop
+share/icons/hicolor/16x16/apps/kcmkwix.png
+share/icons/hicolor/32x32/apps/kcmkwix.png
