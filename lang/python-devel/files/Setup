@@ -362,7 +362,7 @@ bsddb bsddbmodule.o
 binascii binascii.c
 
 # Fred Drake's interface to the Python parser.
-#parser parsermodule.c
+parser parsermodule.c
 
 # Digital Creations' cStringIO and cPickle
 cStringIO cStringIO.c
