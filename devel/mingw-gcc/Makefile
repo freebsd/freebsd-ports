@@ -40,6 +40,12 @@ MAN1=	cccp.1                 \
 	i386-mingw32msvc-gcc.1
 INFO=	cpp g77 gcc
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's/install-libiberty//' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -E -e 's/([^x])str(error|signal).[co]/\1/g' \
@@ -63,4 +69,4 @@ post-install:
 	  ${STRIP_CMD} ${PREFIX}/bin/$${file}; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
