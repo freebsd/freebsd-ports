@@ -1,6 +1,6 @@
---- src/main.c.orig	Fri Mar  5 12:26:41 1999
-+++ src/main.c	Fri Mar  5 12:30:58 1999
-@@ -453,6 +453,16 @@
+--- src/main.c.orig	Wed Feb  9 11:57:04 2000
++++ src/main.c	Wed Feb  9 12:02:43 2000
+@@ -460,6 +460,16 @@
  			       GCForeground | GCBackground |
  			       GCFont | GCGraphicsExposures,
  			       &gcvalue);
@@ -9,15 +9,15 @@
 +#ifdef MULTICHAR_SET
 +	gcvalue.font = TermWin.mfont->fid;
 +	TermWin.mgc = XCreateGC(Xdisplay, TermWin.vt,
-+			GCForeground | GCBackground |
-+			GCFont | GCGraphicsExposures,
-+			&gcvalue);
++			       GCForeground | GCBackground |
++			       GCFont | GCGraphicsExposures,
++			       &gcvalue);
 +#endif
 +#endif
      }
  }
  /* window resizing - assuming the parent window is the correct size */
-@@ -976,7 +986,11 @@
+@@ -969,7 +979,11 @@
  
  /* alter existing GC */
      if (!init) {
@@ -28,11 +28,11 @@
 +#endif
  	menubar_expose();
      }
- /* set the sizes */
---- src/rxvt.h.orig	Fri Mar  5 12:31:15 1999
-+++ src/rxvt.h	Fri Mar  5 12:42:25 1999
-@@ -8,6 +8,8 @@
- #include "../config.h"
+ 
+--- src/rxvt.h.orig	Wed Feb  9 12:01:07 2000
++++ src/rxvt.h	Wed Feb  9 12:04:17 2000
+@@ -7,6 +7,8 @@
+ 
  #include "feature.h"
  
 +#define FIX_ALIGNMENT
@@ -40,14 +40,15 @@
  /*
   *****************************************************************************
   * SYSTEM HACKS
-@@ -170,11 +172,18 @@
+@@ -170,12 +172,19 @@
+     Window          parent[KNOW_PARENTS], /* parent[0] is our window        */
  		    vt;		/* vt100 window                             */
      GC              gc;		/* GC for drawing text                      */
-     XFontStruct    *font;	/* main font structure                      */
 +#ifdef FIX_ALIGNMENT
 +    GC              ngc;
 +    int             vascent;
 +#endif
+     XFontStruct    *font;	/* main font structure                      */
  #ifndef NO_BOLDFONT
      XFontStruct    *boldFont;	/* bold font                                */
  #endif
@@ -57,11 +58,11 @@
 +#ifdef FIX_ALIGNMENT
 +    GC              mgc;
  #endif
-     XFontSet       fontset;
+     XFontSet        fontset;
  #ifdef XPM_BACKGROUND
---- src/screen.c.orig	Fri Mar  5 12:32:53 1999
-+++ src/screen.c	Fri Mar  5 12:40:43 1999
-@@ -2134,7 +2134,12 @@
+--- src/screen.c.orig	Wed Feb  9 12:04:29 2000
++++ src/screen.c	Wed Feb  9 12:23:07 2000
+@@ -2169,7 +2169,12 @@
   * always go back to the base font - it's much safer
   */
      wbyte = 0;
@@ -73,48 +74,48 @@
 +#endif
      draw_string = XDrawString;
      draw_image_string = XDrawImageString;
-     boldlast = 0;
-@@ -2318,7 +2323,11 @@
- 
+     clearfirst = clearlast = 0;
+@@ -2378,7 +2383,11 @@
  	    len = 0;
  	    buffer[len++] = stp[col];
+ 	    ypixelc = Row2Pixel(row);
 +#ifdef FIX_ALIGNMENT
-+	    ypixel = TermWin.vascent + Row2Pixel(row);
++	    ypixel = ypixelc + TermWin.vascent;
 +#else
- 	    ypixel = TermWin.font->ascent + Row2Pixel(row);
+ 	    ypixel = ypixelc + TermWin.font->ascent;
 +#endif
  	    xpixel = Col2Pixel(col);
+ 	    fontdiff = 0;
  	    wlen = 1;
- 
-@@ -2332,7 +2341,13 @@
- 		    && ((srp[col + 1]) & RS_multiMask) == RS_multi2) {
- 		    if (!wbyte) {
- 			wbyte = 1;
+@@ -2399,7 +2408,13 @@
+ 		fprop = TermWin.mprop;
+ 		if (!wbyte && TermWin.mfont) {
+ 		    wbyte = 1;
 +#ifdef FIX_ALIGNMENT
-+			TermWin.gc = TermWin.mgc;
-+			ypixel += TermWin.mfont->ascent - TermWin.vascent;
-+			TermWin.vascent = TermWin.mfont->ascent;
++		    TermWin.gc = TermWin.mgc;
++		    ypixel += TermWin.mfont->ascent - TermWin.vascent;
++		    TermWin.vascent = TermWin.mfont->ascent;
 +#else
- 			XSetFont(Xdisplay, TermWin.gc, TermWin.mfont->fid);
+ 		    XSetFont(Xdisplay, TermWin.gc, TermWin.mfont->fid);
 +#endif
- 			draw_string = XDrawString16;
- 			draw_image_string = XDrawImageString16;
- 		    }
-@@ -2370,7 +2385,13 @@
- 		    }
- 		    if (wbyte) {
- 			wbyte = 0;
+ 		    fontdiff = TermWin.mprop;
+ 		    draw_string = XDrawString16;
+ 		    draw_image_string = XDrawImageString16;
+@@ -2446,7 +2461,13 @@
+ 		}
+ 		if (wbyte) {
+ 		    wbyte = 0;
 +#ifdef FIX_ALIGNMENT
-+			TermWin.gc = TermWin.ngc;
-+			ypixel += TermWin.font->ascent - TermWin.vascent;
-+			TermWin.vascent = TermWin.font->ascent;
++		    TermWin.gc = TermWin.ngc;
++		    ypixel += TermWin.font->ascent - TermWin.vascent;
++		    TermWin.vascent = TermWin.font->ascent;
 +#else
- 			XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
+ 		    XSetFont(Xdisplay, TermWin.gc, TermWin.font->fid);
 +#endif
- 			draw_string = XDrawString;
- 			draw_image_string = XDrawImageString;
- 		    }
-@@ -2466,7 +2487,11 @@
+ 		    draw_string = XDrawString;
+ 		    draw_image_string = XDrawImageString;
+ 		}
+@@ -2544,7 +2565,11 @@
  		rend &= ~RS_Bold;	/* we've taken care of it */
  	    } else if (bfont) {
  		bfont = 0;
@@ -126,40 +127,7 @@
  	    }
  #endif
  /*
-@@ -2478,12 +2503,20 @@
- 		    gcmask |= (GCForeground | GCBackground);
- 		    XChangeGC(Xdisplay, TermWin.gc, gcmask, &gcvalue);
- 		    XFillRectangle(Xdisplay, drawBuffer, TermWin.gc,
-+#ifdef FIX_ALIGNMENT
-+				   xpixel, ypixel - TermWin.vascent,
-+#else
- 				   xpixel, ypixel - TermWin.font->ascent,
-+#endif
- 				   Width2Pixel(1), Height2Pixel(1));
- 		    SWAP_IT(gcvalue.foreground, gcvalue.background, ltmp);
- 		    XChangeGC(Xdisplay, TermWin.gc, gcmask, &gcvalue);
- 		} else
-+#ifdef FIX_ALIGNMENT
-+		    CLEAR_CHARS(xpixel, ypixel - TermWin.vascent, 1);
-+#else
- 		    CLEAR_CHARS(xpixel, ypixel - TermWin.font->ascent, 1);
-+#endif
- 		DRAW_STRING(draw_string, xpixel, ypixel, buffer, 1);
- #ifndef NO_BOLDOVERSTRIKE
- 		if (MONO_BOLD(rend))
-@@ -2498,7 +2531,11 @@
- #endif
- #ifdef XPM_BACKGROUND
- 	    if (TermWin.pixmap != None && back == Color_bg) {
-+#ifdef FIX_ALIGNMENT
-+		CLEAR_CHARS(xpixel, ypixel - TermWin.vascent, len);
-+#else
- 		CLEAR_CHARS(xpixel, ypixel - TermWin.font->ascent, len);
-+#endif
- 		DRAW_STRING(draw_string, xpixel, ypixel, buffer, wlen);
- 	    } else
- #endif
-@@ -2612,6 +2649,9 @@
+@@ -2679,6 +2704,9 @@
      end_row = TermWin.saveLines - TermWin.view_start;
      if (selection.op && current_screen == selection.screen) {
  	i = selection.beg.row + TermWin.saveLines;

@@ -6,11 +6,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	rxvt-2.6.0
-PKGNAME=	zh-rxvt-2.6.0
+DISTNAME=	rxvt-2.7.2
+PKGNAME=	zh-rxvt-2.7.2
 CATEGORIES=	chinese x11
-MASTER_SITES=	ftp://mason.primenet.com.au/pub/rxvt/ \
-		ftp://ftp.rxvt.org/pub/rxvt/devel/
+MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
 
 MAINTAINER=	frankch@waru.life.nthu.edu.tw
 
@@ -23,6 +22,6 @@ MAN1=		crxvt.1
 
 CONFIGURE_ARGS+=--enable-xpm-background --enable-transparency \
 		--enable-menubar --enable-graphics --enable-xim \
-		--enable-big5 --disable-backspace-key --disable-delete-key
+		--enable-languages --with-encoding=big5
 
 .include <bsd.port.mk>
