@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl
 #
-# $Id: log_accum.pl,v 1.21 1997/04/13 11:18:56 bde Exp $
+# $Id: log_accum.pl,v 1.22 1997/05/15 19:53:32 peter Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -126,8 +126,8 @@ sub format_names {
     local(@lines, $indent);
 
     $indent = length($dir);
-    if ($indent < 15) {
-      $indent = 15;
+    if ($indent < 20) {
+      $indent = 20;
     }
 
     $format = "    %-" . sprintf("%d", $indent) . "s ";
@@ -149,7 +149,7 @@ sub format_names {
 
 sub format_lists {
     local($header, @lines) = @_;
-    local(@text, @files, $lastdir, $tag);
+    local(@text, @files, $lastdir, $lastsep, $tag);
 
     if ($debug) {
 	print STDERR "format_lists(): ", join(":", @lines), "\n";
@@ -158,10 +158,11 @@ sub format_lists {
     @files = ();
 
     $lastdir = '';
+    $lastsep = '';
     foreach $line (@lines) {
 	if ($line =~ /.*\/$/) {
 	    if ($lastdir ne '') {
-	      push(@text, &format_names($lastdir, @files));
+	        push(@text, &format_names($lastdir, @files));
 	    }
 	    $lastdir = $line;
 	    $lastdir =~ s,/$,,;
@@ -169,10 +170,13 @@ sub format_lists {
 	    @files = ();
 	} elsif ($tag eq '') {
 	    $tag = $line;
+	    next if ($header . $tag eq $lastsep);
+	    $lastsep = $header . $tag;
 	    if ($tag eq 'HEAD') {
 		push(@text, "  $header files:");
 	    } else {
-		push(@text, sprintf("  %-17s %s", "$header files:", $tag));
+		push(@text, sprintf("  %-22s (Branch: %s)", "$header files:",
+			$tag));
 	    }
 	} else {
 	    push(@files, $line);
@@ -301,9 +305,13 @@ sub mlist_map {
 sub do_changes_file {
     local($changes,$category,@mailaddrs);
     local(@text) = @_;
+    local(%unique);
 
+    %unique = ();
     @mailaddrs = &read_logfile("$MAIL_FILE.$id", "");
     foreach $category (@mailaddrs) {
+	next if ($unique{$category});
+	$unique{$category} = 1;
 	if ($category =~ /^cvs-/) {
 	    # convert mailing list name back to category
 	    $category =~ s,\n,,;
@@ -320,10 +328,11 @@ sub do_changes_file {
 sub mail_notification {
     local(@text) = @_;
     local($line, $word, $subjlines, $subjwords, @mailaddrs);
+    local(%unique);
 
     print "Mailing the commit message...\n";
 
-    local($[) = 0;
+    %unique = ();
 
     @mailaddrs = &read_logfile("$MAIL_FILE.$id", "");
 
@@ -335,6 +344,8 @@ sub mail_notification {
 
     print(MAIL 'To: cvs-committers@FreeBSD.org, cvs-all@FreeBSD.org');
     foreach $line (@mailaddrs) {
+	next if ($unique{$line});
+	$unique{$line} = 1;
 	print(MAIL ", ", $line, '@FreeBSD.org');
     }
     print(MAIL "\n");
