@@ -1,0 +1,9 @@
+*.orig
+*.bak
+changecode*
+exclude-list
+hyphen_show
+hyphen_show.1
+hyphen_show.c
+pages_show*
+xtem.1
