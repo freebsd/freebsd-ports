@@ -1,6 +1,6 @@
---- configure.in.orig	Fri Jan 14 00:00:16 2000
-+++ configure.in	Mon Feb  7 15:14:50 2000
-@@ -49,8 +49,9 @@
+--- configure.in.orig	Mon May  8 12:51:13 2000
++++ configure.in	Sat Jun 10 20:23:18 2000
+@@ -66,8 +66,9 @@
  dnl check for -R, etc. switch
  CMU_GUESS_RUNPATH_SWITCH
  dnl let's just link against local.  otherwise we never find anything useful.
@@ -10,13 +10,26 @@
 +CMU_ADD_LIBPATH("${LOCALBASE}/lib")
 +CMU_ADD_LIBPATH("${OPENSSLLIB}")
  
- if test "$enable_java" = yes; then
-   AC_PATH_PROG(JAVAC, javac, no)
-@@ -222,6 +223,7 @@
-   AC_CHECK_LIB(crypt, crypt,
- 	       LIB_CRYPT="-lcrypt"; cmu_have_crypt=yes,
- 	       cmu_have_crypt=no))
-+AC_SUBST(LIB_CRYPT)
+ AM_DISABLE_STATIC
  
- CMU_SOCKETS
+@@ -413,8 +414,9 @@
  
+   if test "$with_des" != no; then
+     AC_CHECK_HEADER(krb.h,
+-      AC_CHECK_LIB(krb, krb_mk_priv,:,
+-                   AC_WARN(No Kerberos V4 found); krb4=no,
++      AC_CHECK_LIB(krb, krb_mk_priv, COM_ERR="",
++                   AC_CHECK_LIB(krb, krb_mk_err, COM_ERR="-lcom_err",
++			AC_WARN(No Kerberos V4 found); krb4=no,-ldes -lcom_err),
+ 		   -ldes),
+       AC_WARN(No Kerberos V4 found); krb4=no)
+   else
+@@ -428,7 +430,7 @@
+   AC_MSG_RESULT(enabled)
+   SASL_MECHS="$SASL_MECHS libkerberos4.la"
+   AC_DEFINE(HAVE_KRB)
+-  SASL_KRB_LIB="-lkrb -ldes"
++  SASL_KRB_LIB="-lkrb -ldes $COM_ERR"
+   AC_SUBST(SASL_KRB_LIB)
+ else
+   AC_MSG_RESULT(disabled)
