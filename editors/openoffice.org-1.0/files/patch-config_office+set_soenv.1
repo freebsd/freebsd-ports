@@ -1,11 +1,11 @@
 --- set_soenv.1.orig	Wed Apr 17 22:41:31 2002
-+++ set_soenv.1	Wed May 29 14:17:31 2002
++++ set_soenv.1	Tue Jun  4 12:13:21 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
  # command line arguments. 
 -my $numArgs = 20;
-+my $numArgs = 25;
++my $numArgs = 26;
  # Determining the amount of arguments in the call.
  my $numEnter = $#ARGV + 1;
  if ( $numEnter != $numArgs ) 
@@ -24,11 +24,11 @@
 -     $DEMO_ENV, $DYNAMIC_CRT, $SET_EXCEPTIONS, $emergency, $use_shl_versions, $CDPATHx );
 +     $GVER, $GVERDIR, $OSVERSION, $OS, $OUTPATH, $INPATH, $PATH_SEPERATOR, $PROSWITCH, $XPVERSION, $BOTH,
 +     $DEMO_ENV, $DYNAMIC_CRT, $SET_EXCEPTIONS, $emergency, $use_shl_versions, $CDPATHx, $PTHREAD_CFLAGS,
-+     $PTHREAD_LIBS );
++     $PTHREAD_LIBS, $EXCEPTIONS );
  #
  #-------------------------------------------
  # IIc. Declaring the environment variables.
-@@ -145,7 +146,9 @@
+@@ -145,7 +146,10 @@
  $STLPORT4	= $ARGV [ 12 ];     # Location of STLport4
  $MINGWIN32	= $ARGV [ 17 ];     # use MINGWIN32
  $use_shell	= $ARGV [ 18 ];     # preferred shell
@@ -36,10 +36,11 @@
 +$USE_GCC3	= $ARGV [ 19 ];     # use gcc3 (only for unxlngi4 and unxfbsd5i at the moment)
 +$CC		= $ARGV [ 23 ];     # get cc from environment
 +$CXX		= $ARGV [ 24 ];     # use c++ from environment
++$EXCEPTIONS	= $ARGV [ 25 ];     # Exception handling type
  #
  #---------------------------------------------------------------
  # IIIb. Initialising the variables for the system commands, etc.
-@@ -316,7 +319,7 @@
+@@ -316,7 +320,7 @@
     $PROSWITCH      = "-DPRODUCT";
     $XPVERSION      = "3";
     $SOLAR_JAVA	   = "TRUE"; 
@@ -48,7 +49,7 @@
  } 
  elsif ( $platform eq "$FreeBSD" ) 
  {     print "Setting FreeBSD specific values... ";
-@@ -326,7 +329,14 @@
+@@ -326,7 +330,14 @@
        $COMPATH        = $ARGV[ 0 ]; 
        $CPU            = "I";
        $CPUNAME        = "INTEL";
@@ -63,7 +64,7 @@
        $DLLSUFFIX      = "fi";
        $GUI            = "UNX";
        $GUIBASE        = "unx";
-@@ -339,6 +349,9 @@
+@@ -339,6 +350,9 @@
        $PATH_SEPERATOR = $ps;
        $PROSWITCH      = "-DPRODUCT";
        $XPVERSION      = "3";
@@ -73,7 +74,7 @@
  } 
  elsif ( $platform eq "$Linux" ) 
  {
-@@ -934,15 +947,16 @@
+@@ -934,15 +948,16 @@
                          $D.$COM.
  			$D.$CVER.
                          $D.$GVER.
@@ -93,7 +94,7 @@
  {  $SOLARDEF         .= $D."GLIBC=".$GLIBC;
  }
  $SOLARDEF            .= $D."SUPD=$UPD".
-@@ -1039,7 +1053,7 @@
+@@ -1039,7 +1054,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
  }
@@ -102,7 +103,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1058,6 +1072,22 @@
+@@ -1058,6 +1073,22 @@
  			$ps.$USR.$ds."X11".$BIN.
                          $ps.$USR.$LIB;
  }
@@ -125,7 +126,7 @@
  elsif ($platform eq "$Winnt")
  { 
     my ( $noldPATH );
-@@ -1196,7 +1226,7 @@
+@@ -1196,7 +1227,7 @@
  	$SOLARINC            .= $I.$USR.$INCLUDE;
  }
  $SOLARINC	     .= $STLPORT_stlport;
@@ -134,7 +135,7 @@
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1210,11 +1240,6 @@
+@@ -1210,11 +1241,6 @@
  {  $SOLARINC         .= $I.'$COMPATH'.$ds."include";
  }
  
@@ -146,12 +147,13 @@
  $SOLARINC            .= $I.'$SOLARENV'.$INC.$ds."Xp31".
                          $I.'$JAVA_HOME'.$INCLUDE;
  
-@@ -1407,6 +1432,11 @@
+@@ -1407,6 +1433,12 @@
  ToFile( "GUIENV",            $GUIENV,            "e" );
  ToFile( "GVER",              $GVER,              "e" );
  ToFile( "OS",                $OS,                "e" );
 +ToFile( "CC",                $CC,                "e" );
 +ToFile( "CXX",               $CXX,               "e" );
++ToFile( "EXCEPTIONS",        $EXCEPTIONS,        "e" );
 +ToFile( "OSVERSION",         $OSVERSION,         "e" );
 +ToFile( "PTHREAD_CFLAGS",    $PTHREAD_CFLAGS,    "e" );
 +ToFile( "PTHREAD_LIBS",      $PTHREAD_LIBS,      "e" );
