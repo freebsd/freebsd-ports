@@ -1,0 +1,5 @@
+This package does not contain anything by itself.  It is a
+"meta-port" that depends on other teTeX related packages.
+Its sole purpose is to require dependencies so users can install
+this package only and have teTeX + dvipsk + xdvik pulled in
+by the port/package dependency mechanism.
