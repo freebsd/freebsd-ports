@@ -6,6 +6,7 @@
 
 PORTNAME=	spacehulk
 PORTVERSION=	1.4.5
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/main.pkg/${PORTVERSION}/
 
