@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ftpcopy
-PORTVERSION=	0.4.8
+PORTVERSION=	0.5.1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.ohse.de/uwe/ftpcopy/
 
@@ -24,7 +24,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR} && \
 	cd ${WRKSRC}/compile && \
-		${INSTALL_DATA} ChangeLog NEWS LICENSES LICENSES.LOCAL \
+		${INSTALL_DATA} ChangeLog NEWS \
 			README THANKS ${DOCSDIR}
 .endif
 
