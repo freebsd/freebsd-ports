@@ -8023,6 +8023,7 @@ pear-HTML_Select_Common	ports/devel/pear-HTML_Select_Common
 pear-HTML_Table	ports/devel/pear-HTML_Table
 pear-HTML_Template_IT	ports/devel/pear-HTML_Template_IT
 pear-HTML_Template_PHPLIB	ports/devel/pear-HTML_Template_PHPLIB
+pear-HTML_TreeMenu	ports/devel/pear-HTML_TreeMenu
 pear-HTTP	ports/www/pear-HTTP
 pear-HTTP_Header	ports/www/pear-HTTP_Header
 pear-HTTP_Request	ports/www/pear-HTTP_Request
