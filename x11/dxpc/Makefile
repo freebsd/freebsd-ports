@@ -10,7 +10,7 @@ PORTVERSION= 	3.8.0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.vigor.nu/dxpc/3.8.0/
 
-MAINTAINER=	bmah@ca.sandia.gov
+MAINTAINER=	bmah@acm.org
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
