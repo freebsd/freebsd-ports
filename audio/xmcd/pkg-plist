@@ -5,11 +5,11 @@ bin/wm2xmcd
 bin/xmcd
 lib/X11/app-defaults/XMcd
 lib/X11/xmcd/app-defaults/XMcd
-lib/X11/xmcd/bin-FreeBSD-i386/cda
-lib/X11/xmcd/bin-FreeBSD-i386/cddbcmd
-lib/X11/xmcd/bin-FreeBSD-i386/dp2xmcd
-lib/X11/xmcd/bin-FreeBSD-i386/wm2xmcd
-lib/X11/xmcd/bin-FreeBSD-i386/xmcd
+lib/X11/xmcd/bin-FreeBSD-%%ARCH%%/cda
+lib/X11/xmcd/bin-FreeBSD-%%ARCH%%/cddbcmd
+lib/X11/xmcd/bin-FreeBSD-%%ARCH%%/dp2xmcd
+lib/X11/xmcd/bin-FreeBSD-%%ARCH%%/wm2xmcd
+lib/X11/xmcd/bin-FreeBSD-%%ARCH%%/xmcd
 lib/X11/xmcd/config/.tbl/Acer
 lib/X11/xmcd/config/.tbl/Apple
 lib/X11/xmcd/config/.tbl/Aztech
@@ -183,7 +183,7 @@ lib/X11/xmcd/scripts/ncsarmt
 lib/X11/xmcd/scripts/ncsawrap
 lib/X11/xmcd/scripts/nswrap
 @dirrm lib/X11/xmcd/app-defaults
-@dirrm lib/X11/xmcd/bin-FreeBSD-i386
+@dirrm lib/X11/xmcd/bin-FreeBSD-%%ARCH%%
 @unexec rm -rf %D/lib/X11/xmcd/cddb
 @dirrm lib/X11/xmcd/config/.tbl
 @dirrm lib/X11/xmcd/config

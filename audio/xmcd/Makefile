@@ -14,6 +14,7 @@ MAINTAINER=	eischen@vigrid.com
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
+PLIST_SUB+=	ARCH=${ARCH}
 
 MAN1=		cda.1 cddbcmd.1 dp2xmcd.1 wm2xmcd.1 xmcd.1
 MANCOMPRESSED=	no
