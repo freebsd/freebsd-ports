@@ -5314,7 +5314,6 @@ linux-bmrt	ports/graphics/linux-bmrt
 linux-dislin	ports/math/linux-dislin
 linux-divx4linux	ports/multimedia/linux-divx4linux
 linux-divx4linux4	ports/multimedia/linux-divx4linux4
-linux-divxplayer	ports/multimedia/linux-divxplayer
 linux-ePSXe	ports/emulators/linux-ePSXe
 linux-eagle	ports/cad/linux-eagle
 linux-edonkey-core	ports/net/linux-edonkey-core
