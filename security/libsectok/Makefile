@@ -20,4 +20,6 @@ USE_OPENSSL=	YES
 
 MAN3=		sectok.3
 
+IGNORE=		produces a broken package (dangling symlink)
+
 .include <bsd.port.mk>
