@@ -3,7 +3,7 @@
 # Date created:         11 Apr 1997
 # Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 09:29:13 asami Exp $
+# $Id: Makefile,v 1.10 1997/07/10 13:14:50 max Exp $
 #
 
 DISTNAME=	kon2-0.3
@@ -23,9 +23,9 @@ EXTRACT_ONLY=	kon2-0.3.tar.gz
 DOCDIR=		${PREFIX}/share/doc/kon2
 
 pre-build:
-	sed -e 's,%%PREFIX%%,${PREFIX},' \
+	${SED} -e 's,%%PREFIX%%,${PREFIX},' \
 	  -e 's,%%DISTDIR%%,${DISTDIR},' \
-	  files/dotconfig > ${WRKSRC}/.config
+	  ${FILESDIR}/dotconfig > ${WRKSRC}/.config
 	@(cd ${WRKSRC}; ${MAKE} -f Makefile.FreeBSD config)
 
 post-install:

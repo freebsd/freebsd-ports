@@ -3,7 +3,7 @@
 # Date created:		12 Apr 1997
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 08:12:07 asami Exp $
 #
 
 DISTNAME=	han-1.0fb
@@ -16,13 +16,13 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 USE_GMAKE=	yes
 
 post-configure:
-	sed -e 's%%WRKSRC%%${WRKSRC}' \
+	${SED} -e 's%%WRKSRC%%${WRKSRC}' \
 	  -e 's%%PREFIX%%${PREFIX}' \
 	  -e 's%%DISTDIR%%${DISTDIR}' \
-	  files/dotconfig > ${WRKSRC}/.config
-	sed -e 's%%WRKSRC%%${WRKSRC}' \
+	  ${FILESDIR}/dotconfig > ${WRKSRC}/.config
+	${SED} -e 's%%WRKSRC%%${WRKSRC}' \
 	  -e 's%%PREFIX%%${PREFIX}' \
 	  -e 's%%DISTDIR%%${DISTDIR}' \
-	  files/han.sh > ${WRKSRC}/han.sh
+	  ${FILESDIR}/han.sh > ${WRKSRC}/han.sh
 
 .include <bsd.port.mk>

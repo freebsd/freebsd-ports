@@ -3,7 +3,7 @@
 # Date created:		07 Jan 1997
 # Whom:			Hung-Chi Chu <hcchu@r350.ee.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/16 01:14:03 obrien Exp $
+# $Id: Makefile,v 1.2 1997/02/17 20:33:32 obrien Exp $
 #
 # This port is adapted from japanese/kon
 #
@@ -28,10 +28,10 @@ EXTRACT_ONLY=	kon-0.99.4e.tgz
 USE_GMAKE=	yes
 
 post-configure:
-	sed -e 's%%CURDIR%%${.CURDIR}' \
+	${SED} -e 's%%CURDIR%%${.CURDIR}' \
 	  -e 's%%PREFIX%%${PREFIX}' \
 	  -e 's%%DISTDIR%%${DISTDIR}' \
-	  files/dotconfig > ${WRKSRC}/.config
+	  ${FILESDIR}/dotconfig > ${WRKSRC}/.config
 
 post-install:
 	@echo
