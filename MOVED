@@ -1339,3 +1339,4 @@ www/jonah||2004-11-28|did not run with horde2.x
 x11-fonts/mkfontalias||2004-11-28|master site disappeared
 games/quakeserver||2004-11-28|install and fetch problems
 picobsd/ssh-picobsd||2004-11-28|deleted due to build failure
+net/partysip||2004-11-28|deleted because due to link failure
