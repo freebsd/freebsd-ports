@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	clip
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.5.1
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.linux.ru.net/mirrors/clip/	\
 		ftp://ftp.lastik.ru/clip/		\
 		ftp://ftp.itk.ru/pub/clip/
-DISTNAME=	${PORTNAME}-prg-${PORTVERSION:S/.5/-5/}
+DISTNAME=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xBase and Clipper language compatible compiler
-
-BROKEN=		"Does not install, will be removed after Feb 2"
 
 .include <bsd.port.pre.mk>
 
@@ -26,13 +24,13 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg		\
 		png.5:${PORTSDIR}/graphics/png			\
 		freetype.9:${PORTSDIR}/print/freetype2		\
-		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12		\
 		gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra	\
 		gd.4:${PORTSDIR}/graphics/gd			\
 		intl.5:${PORTSDIR}/devel/gettext		\
 		iconv.3:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
 		wget:${PORTSDIR}/ftp/wget
+
 .if !defined(WITHOUT_IODBC)
 LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
 PLIST_SUB=	ODBC=""
@@ -42,18 +40,21 @@ PLIST_SUB=	ODBC=""
 .else
 PLIST_SUB=	ODBC="@comment "
 .endif
+
 .if !defined(WITHOUT_MYSQL) || exists(${LOCALBASE}/include/mysql/mysql.h)
 USE_MYSQL=	yes
 PLIST_SUB+=	MYSQL=""
 .else
 PLIST_SUB+=	MYSQL="@comment "
 .endif
+
 .if defined(WITH_PGSQL) || exists(${LOCALBASE}/include/libpq-fe.h)
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${PGSQL_PORT}
 PLIST_SUB+=	PGSQL=""
 .else
 PLIST_SUB+=	PGSQL="@comment "
 .endif
+
 .if defined(WITH_FIREBIRD) || exists(${LOCALBASE}/firebird/include/ibase.h)
 LIB_DEPENDS+=	gds.1:${PORTSDIR}/${FIREBIRD_PORT}
 PLIST_SUB+=	IBASE=""
@@ -67,6 +68,7 @@ USE_REINPLACE=		yes
 REINPLACE_ARGS=		-i ""
 USE_XLIB=		yes
 USE_XPM=		yes
+USE_GNOME=		gtk12
 HAS_CONFIGURE=		yes
 CONFIGURE_WRKSRC=	${WRKSRC}/clip
 ALL_TARGET=		local
