@@ -1,66 +1,62 @@
-*** libs/Makefile.in.orig	Sat Nov 23 12:09:43 1996
---- libs/Makefile.in	Sat Jun 21 13:43:32 1997
-***************
-*** 44,50 ****
-  INSTALL_DATA =		@INSTALL_DATA@
-  
-  CC_SWITCHES = ${CFLAGS} -I$(SRCDIR) \
-! 	-I$(TK_PREFIX)/include -I$(TK_PREFIX)/include/tcl \
-  	$(XINCLUDES) $(SHLIB_CFLAGS)
-  
-  OBJS = tkFvwm.o tixImgXpm.o tkXAccess.o tkNetscape.o clientWin.o \
---- 44,50 ----
-  INSTALL_DATA =		@INSTALL_DATA@
-  
-  CC_SWITCHES = ${CFLAGS} -I$(SRCDIR) \
-! 	-I$(TK_PREFIX)/include/tk4.2 -I$(TK_PREFIX)/include/tcl7.6 \
-  	$(XINCLUDES) $(SHLIB_CFLAGS)
-  
-  OBJS = tkFvwm.o tixImgXpm.o tkXAccess.o tkNetscape.o clientWin.o \
-***************
-*** 58,79 ****
-  libs: $(SHLIBS) pkgIndex.tcl
-  
-  $(TKG_SHLIB): tkg.o tkgButton.o
-! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tkg.o tkgButton.o
-  	@chmod 0755 $@
-  
-  $(XPM_SHLIB): tixImgXpm.o
-! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tixImgXpm.o
-  	@chmod 0755 $@
-  
-  $(NETSCAPE_SHLIB): tkNetscape.o clientWin.o
-! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tkNetscape.o clientWin.o
-  
-  $(FVWM_SHLIB): tkFvwm.o
-! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tkFvwm.o
-  	@chmod 0755 $@
-  
-  $(STEAL_SHLIB): tkXAccess.o
-! 	${SHLIB_LD} -o $@ $(LIBS) $(SHLIB_LD_LIBS) tkXAccess.o
-  	@chmod 0755 $@
-  
-  tkgwish: $(TKGWISH_NAME)
---- 58,79 ----
-  libs: $(SHLIBS) pkgIndex.tcl
-  
-  $(TKG_SHLIB): tkg.o tkgButton.o
-! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tkg.o tkgButton.o
-  	@chmod 0755 $@
-  
-  $(XPM_SHLIB): tixImgXpm.o
-! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tixImgXpm.o
-  	@chmod 0755 $@
-  
-  $(NETSCAPE_SHLIB): tkNetscape.o clientWin.o
-! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tkNetscape.o clientWin.o
-  
-  $(FVWM_SHLIB): tkFvwm.o
-! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tkFvwm.o
-  	@chmod 0755 $@
-  
-  $(STEAL_SHLIB): tkXAccess.o
-! 	${SHLIB_LD} -o $@ $(SHLIB_LD_LIBS) tkXAccess.o
-  	@chmod 0755 $@
-  
-  tkgwish: $(TKGWISH_NAME)
+--- configure	Thu Aug  7 12:49:27 1997
++++ configure	Wed Aug 27 01:18:17 1997
+@@ -540,29 +540,34 @@
+ # Find appropriate tclConfig.sh and
+ # recover information that Tcl computed with its configure script.
+ 
+-TCLCONFIGSH=""
+-for prefix in $dirlist; do
+-  if test -f $prefix/lib/tclConfig.sh; then
+-    TCLCONFIGSH=$prefix/lib/tclConfig.sh
+-    . $TCLCONFIGSH
+-    if test `expr \( $TCL_MAJOR_VERSION \< $TCLTK_MAJORNEEDED \) \| \( $TCL_MINOR_VERSION \< $TCLTK_MINORNEEDED \)` = 0
+-    then
+-      break
++if [ -z "$TCLCONFIGSH" ] ; then
++  TCLCONFIGSH=""
++  for prefix in $dirlist; do
++    if test -f $prefix/lib/tclConfig.sh; then
++      TCLCONFIGSH=$prefix/lib/tclConfig.sh
++      . $TCLCONFIGSH
++      if test `expr \( $TCL_MAJOR_VERSION \< $TCLTK_MAJORNEEDED \) \| \( $TCL_MINOR_VERSION \< $TCLTK_MINORNEEDED \)` = 0
++      then
++        break
++      fi
+     fi
+-  fi
+-done
++  done
++fi
+ test -f "$TCLCONFIGSH" || abort "Can't find any tclConfig.sh"
++. $TCLCONFIGSH
+ if test `expr \( $TCL_MAJOR_VERSION \< $TCLTK_MAJORNEEDED \) \| \( $TCL_MINOR_VERSION \< $TCLTK_MINORNEEDED \)` = 1
+ then 
+   abort "Need but can't find tclConfig.sh for Tcl ${TCLTK_MAJORNEEDED}.${TCLTK_MINORNEEDED} or later."
+ fi
+ echo "using $TCLCONFIGSH"
+ 
+-TKCONFIGSH=${prefix}/lib/tkConfig.sh
+-test -f "$TKCONFIGSH" || abort "Can't find any tkConfig.sh"
++if [ -z "$TKCONFIGSH" ] ; then
++  TKCONFIGSH=${prefix}/lib/tkConfig.sh
++  test -f "$TKCONFIGSH" || abort "Can't find any tkConfig.sh"
++fi
+ . $TKCONFIGSH
+ if test `expr \( $TK_MAJOR_VERSION \< $TCLTK_MAJORNEEDED \) \| \( $TK_MINOR_VERSION \< $TCLTK_MINORNEEDED \)` = 1
+-   then abort "Need but can't find tkConfig.sh for Tk ${TCLTK_MAJORNEEDED}.${TCLTK_MINORNEEDED} or later."
++ then abort "Need but can't find tkConfig.sh for Tk ${TCLTK_MAJORNEEDED}.${TCLTK_MINORNEEDED} or later."
+ fi
+ echo "using $TKCONFIGSH"
+ 
+--- libs/Makefile.in	Wed Aug  6 08:10:43 1997
++++ libs/Makefile.in	Wed Aug 27 01:22:36 1997
+@@ -28,7 +28,8 @@
+ SRCDIR =		@srcdir@
+ 
+ CFLAGS =		-O @TCL_DEFS@ @TK_DEFS@ -I$(SRCDIR) \
+-			-I$(TK_PREFIX)/include -I$(TK_PREFIX)/include/tcl \
++			-I$(TCL_PREFIX)/include/tcl8.0 \
++			-I$(TK_PREFIX)/include/tk8.0 \
+ 			$(XINCLUDES)
+ 
+ INSTALL =		@INSTALL@
