@@ -1,11 +1,13 @@
 # New ports collection makefile for:	gaim
 # Date created:			26 Mar 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
+#
 # $FreeBSD$
 #
 
 PORTNAME=	gaim
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
