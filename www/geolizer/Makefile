@@ -51,10 +51,12 @@ CONFIGURE_ARGS+=	--enable-dns \
 			--with-geoip-lib=${LOCALBASE}/lib \
 			--with-geoip-inc=${LOCALBASE}/include \
 			--with-png=${LOCALBASE}/lib \
-			--with-png-inc=${LOCALBASE}/include \
+			--with-png-inc=${LOCALBASE}/include
 
 .if defined(GEOLIZER_LANG)
 CONFIGURE_ARGS+=        --with-language=${GEOLIZER_LANG}
+.else
+CONFIGURE_ARGS+=        --with-language=english
 .endif
 
 CFLAGS+=	-DLINKLIST_MAX_STRING=256
