@@ -23,10 +23,4 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
