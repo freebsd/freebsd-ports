@@ -7,6 +7,7 @@
 
 PORTNAME=	ifc
 PORTVERSION=	7.1.033
+PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_fc_pc_${PORTVERSION}
@@ -45,7 +46,7 @@ CPIO?=		/usr/bin/cpio
 OBJCOPY?=	/usr/bin/objcopy
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=	"Please manually download ${DISTFILES} from ${IFC_SITE}, ${IFC_SITE}flin/noncom.htm or https://premier.intel.com/ \(whichever has the file, to access premier.intel.com you have to register at http://www.intel.com/software/products/registrationcenter/index.htm\). With a little bit of luck it may also be available from ftp://download.intel.com/software/products/compilers/downloads/. Put it into ${DISTDIR} and run make again"
+IGNORE= "Go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${IFC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again"
 .endif
 
 .if exists(${LINUXBASE}/boot/kernel.h) #|| \
@@ -106,6 +107,13 @@ post-patch:
 .endfor
 	@cd ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ && ${LN} -s ifc.cfg ifcbin.cfg
 
+.if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
+	( ${OSVERSION} >= 500042 )
+OBJCOPY_OPS=    --redefine-sym stdin=__stdinp \
+		--redefine-sym stdout=__stdoutp \
+		--redefine-sym stderr=__stderrp
+.endif
+
 do-build:
 # Fix unresolved references
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/assert_fail.c \
@@ -118,17 +126,14 @@ do-build:
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdin.o ${FILESDIR}/stdin.c
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdout.o ${FILESDIR}/stdout.c
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
-.else
+.endif
 .for i in libcxa.a libimf.a libirc.a libircmt.a libunwind.a \
 	libBINDF90.a libCEPCF90.a libF90.a libIEPCF90.a libPEPCF90.a \
 	libcprts.a libintrins.a libompstub.a
 	@${OBJCOPY} --redefine-sym __sigsetjmp=sigsetjmp \
-		--redefine-sym stdin=__stdinp \
-		--redefine-sym stdout=__stdoutp \
-		--redefine-sym stderr=__stderrp \
+		${OBJCOPY_OPS} \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/lib/${i}
 .endfor
-.endif
 	@(cd ${WRKSRC}; ${AR} x /usr/lib/libcompat.a ftime.o)
 	@${AR} q ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/lib/libcxa.a ${WRKSRC}/*.o
 .for i in BINDF90 PEPCF90 CEPCF90 POSF90 IEPCF90
