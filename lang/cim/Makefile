@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/
 MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 MAN1=		cim.1
 
 .include <bsd.port.mk>

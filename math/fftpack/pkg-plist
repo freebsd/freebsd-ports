@@ -2,6 +2,4 @@ lib/libbihar.a
 lib/libbihar.so
 lib/libbihar.so.1
 share/doc/fftpack/fft.doc.gz
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm share/doc/fftpack

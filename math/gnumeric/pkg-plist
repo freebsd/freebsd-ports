@@ -11,8 +11,6 @@ include/libole2/ms-ole.h
 lib/libole2.a
 lib/libole2.so
 lib/libole2.so.0
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 lib/gnumeric/%%VERSION%%/plugins/gnum_csv.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_dif.so
 lib/gnumeric/%%VERSION%%/plugins/gnum_guile.so

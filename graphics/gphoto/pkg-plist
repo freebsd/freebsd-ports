@@ -55,8 +55,6 @@ lib/libgphoto_sony_dscf1.so.0
 lib/libgphoto_sony_dscf55.a
 lib/libgphoto_sony_dscf55.so
 lib/libgphoto_sony_dscf55.so.0
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/doc/gphoto/ChangeLog
 share/doc/gphoto/FAQ
 share/doc/gphoto/NEWS

@@ -16,6 +16,8 @@ MAINTAINER=	max@FreeBSD.org
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
+INSTALLS_SHLIBS=	yes
+
 ALL_TARGET=	canna
 INSTALL_TARGET=	install install.man
 MAN1=	addwords.1 cannacheck.1 cannakill.1 cannaserver.1 cannastat.1 \
@@ -54,7 +56,6 @@ post-install:
 	${LN} -sf libcanna.so.1.0 ${PREFIX}/lib/libcanna.so
 	${LN} -sf libcanna16.so.1.0 ${PREFIX}/lib/libcanna16.so
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	if [ ! -f ${STARTUP_SCRIPT} ]; then 				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file."; 	\
 		${INSTALL_SCRIPT} ${WRKDIR}/canna.sh ${STARTUP_SCRIPT};	\

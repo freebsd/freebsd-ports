@@ -18,6 +18,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		GL.14:${PORTSDIR}/graphics/Mesa3
 
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-opengl=mesa --with-x
 .if defined(NO_SHM)

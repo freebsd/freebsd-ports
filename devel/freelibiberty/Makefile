@@ -15,14 +15,13 @@ DISTNAME=	libiberty-${PORTVERSION}
 
 MAINTAINER=	howardjp@wam.umd.edu
 
+INSTALLS_SHLIBS=	yes
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libiberty.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libiberty.so.1 ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/libiberty.so.1 ${PREFIX}/lib/libiberty.so
 	${INSTALL_DATA} ${WRKSRC}/libiberty.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/getopt.h ${PREFIX}/include
-
-post-install:
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

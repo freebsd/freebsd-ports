@@ -1,8 +1,6 @@
 lib/libtcl76jp.a
 lib/libtcl76jp.so.1
 lib/libtcl76jp.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 bin/tclsh7.6jp
 include/tcl7.6jp/tcl.h
 include/tcl7.6jp/unix/tclUnixPort.h

@@ -17,6 +17,4 @@ lib/libesd.so.2
 lib/libesddsp.a
 lib/libesddsp.so
 lib/libesddsp.so.2
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/esd.m4

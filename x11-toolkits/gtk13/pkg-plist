@@ -131,8 +131,6 @@ lib/libgdk12.so.2
 lib/libgtk12.a
 lib/libgtk12.so
 lib/libgtk12.so.2
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/gtk.m4
 share/locale/ca/LC_MESSAGES/gtk+.mo
 share/locale/cs/LC_MESSAGES/gtk+.mo

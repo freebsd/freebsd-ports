@@ -22,6 +22,7 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

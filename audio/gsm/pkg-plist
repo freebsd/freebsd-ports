@@ -7,5 +7,3 @@ include/gsm.h
 lib/libgsm.a
 lib/libgsm.so
 lib/libgsm.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

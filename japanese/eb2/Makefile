@@ -50,6 +50,7 @@ APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 
 DIST_SUBDIR=	eb
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_ARGS=	--with-zlib
 
 APPENDIXDIR=	${PREFIX}/share/eb/appendix

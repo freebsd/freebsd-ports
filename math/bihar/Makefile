@@ -20,6 +20,8 @@ EXTRACT_CMD=		${TAR}
 EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=	# empty
 
+INSTALLS_SHLIBS=	yes
+
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -38,6 +40,5 @@ post-install:
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libbihar.so.1 ${PREFIX}/lib/libbihar.so
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

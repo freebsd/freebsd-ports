@@ -25,8 +25,6 @@ include/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
 lib/libgnomeprint.so
 lib/libgnomeprint.so.9
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/fonts/afms/adobe/pagd8a.afm
 share/gnome/fonts/afms/adobe/pagdo8a.afm
 share/gnome/fonts/afms/adobe/pagk8a.afm

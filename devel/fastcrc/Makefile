@@ -16,6 +16,8 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 ONLY_FOR_ARCHS=	i386
 
+INSTALLS_SHLIBS=	yes
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libfcrc.so.1 ${PREFIX}/lib
 	${LN} -fs ${PREFIX}/lib/libfcrc.so.1 ${PREFIX}/lib/libfcrc.so
@@ -23,8 +25,5 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/fastcrc
 	${INSTALL_MAN} ${WRKSRC}/index.html ${PREFIX}/share/doc/fastcrc
 	${INSTALL_PROGRAM} ${WRKSRC}/fc ${PREFIX}/bin
-
-post-install:
-	${SETENV} OBFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

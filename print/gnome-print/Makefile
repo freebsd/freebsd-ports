@@ -24,6 +24,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-gnome=${PREFIX}

@@ -15,7 +15,5 @@ include/gtkDPS/parseAFM.h
 lib/libgtkDPS.a
 lib/libgtkDPS.so
 lib/libgtkDPS.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/gtkDPS.m4
 @dirrm include/gtkDPS

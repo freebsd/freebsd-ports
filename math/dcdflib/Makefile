@@ -14,6 +14,8 @@ MAINTAINER=	tobez@plab.ku.dk
 
 WRKSRC=		${WRKDIR}/dcdflib.c/src
 
+INSTALLS_SHLIBS=	yes
+
 .include <bsd.port.pre.mk>
 
 post-extract:
@@ -29,6 +31,5 @@ post-install:
 .if ${PORTOBJFORMAT} == "aout"
 	@${LN} -sf libdcdflib.so.1.1 ${PREFIX}/lib/libdcdflib.so
 .endif
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

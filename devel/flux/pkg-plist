@@ -19,8 +19,6 @@ include/flux/url.h
 include/flux/xml.h
 lib/libflux.a
 lib/libflux.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/flux/AUTHORS
 share/flux/NEWS
 share/flux/README

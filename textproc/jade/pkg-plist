@@ -185,5 +185,3 @@ share/sgml/jade/style-sheet.dtd
 @dirrm include/sp
 @dirrm share/doc/jade
 @dirrm share/sgml/jade
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

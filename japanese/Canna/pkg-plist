@@ -119,8 +119,6 @@ lib/libcanna.so.1
 lib/libcanna16.a
 lib/libcanna16.so
 lib/libcanna16.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 sbin/cannakill
 sbin/cannaserver
 @exec mkdir -p /var/run/canna

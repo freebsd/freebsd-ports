@@ -21,5 +21,3 @@ lib/libsybdb.so.0
 lib/libtds.a
 lib/libtds.la
 lib/libtds.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

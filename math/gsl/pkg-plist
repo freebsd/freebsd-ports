@@ -220,8 +220,6 @@ lib/libgslblascblas.so.0
 lib/libgslblasnative.a
 lib/libgslblasnative.so
 lib/libgslblasnative.so.0
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
 share/aclocal/gsl.m4
 share/doc/gsl/gsl-ref.ps
 @dirrm include/gsl

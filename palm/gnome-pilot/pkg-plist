@@ -43,8 +43,6 @@ lib/libgpilotdcm.so.0
 lib/libgpilotdconduit.a
 lib/libgpilotdconduit.so
 lib/libgpilotdconduit.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome/apps/Settings/Peripherals/Conduits/.directory
 share/gnome/apps/Settings/Peripherals/Conduits/backup-conduit-control-applet.desktop
 share/gnome/apps/Settings/Peripherals/Conduits/email-conduit-control-applet.desktop

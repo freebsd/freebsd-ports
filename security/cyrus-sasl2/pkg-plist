@@ -10,8 +10,6 @@ include/sasl/saslutil.h
 lib/libsasl.a
 lib/libsasl.so
 lib/libsasl.so.8
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/sasl/libanonymous.a
 lib/sasl/libanonymous.so
 lib/sasl/libanonymous.so.1

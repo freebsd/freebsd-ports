@@ -192,8 +192,6 @@ lib/libgdkmm.so
 lib/libgtkmm-1.2.so.0
 lib/libgtkmm.a
 lib/libgtkmm.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/aclocal/gtk--.m4
 @dirrm include/gdk--
 @dirrm include/gtk--/private

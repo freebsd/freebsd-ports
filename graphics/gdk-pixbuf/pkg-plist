@@ -38,8 +38,6 @@ lib/libgdk_pixbuf.so.2
 lib/libgnomecanvaspixbuf.a
 lib/libgnomecanvaspixbuf.so
 lib/libgnomecanvaspixbuf.so.1
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/gdk-pixbuf.m4
 share/gnome/html/gdk-pixbuf-decl.txt
 share/gnome/html/gdk-pixbuf-sections.txt

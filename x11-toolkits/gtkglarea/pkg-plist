@@ -3,7 +3,5 @@ include/gtkgl/gtkglarea.h
 lib/libgtkgl.a
 lib/libgtkgl.so
 lib/libgtkgl.so.5
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 share/aclocal/gtkgl.m4
 @dirrm include/gtkgl

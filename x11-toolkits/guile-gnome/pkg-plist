@@ -11,8 +11,6 @@ lib/libguilegnorba.so.0
 lib/libguilezvt.a
 lib/libguilezvt.so
 lib/libguilezvt.so.0
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/guile-gnome/gnome.defs
 share/guile-gnome/gnorba.defs
 share/guile-gnome/libglade.defs

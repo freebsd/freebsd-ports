@@ -21,6 +21,8 @@ MAINTAINER=	max@FreeBSD.org
 
 BROKEN_ELF=	yes
 
+INSTALLS_SHLIBS=	yes
+
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 BUILD_DEPENDS=	${PREFIX}/lib/libcanna.a:${PORTSDIR}/japanese/Canna
 
@@ -48,6 +50,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/pine/pine.ndx ${PREFIX}/lib/pine
 	${INSTALL_DATA} ${WRKSRC}/pine/pine_ja.hlp ${PREFIX}/lib/pine
 	${INSTALL_DATA} ${WRKSRC}/pine/pine_ja.ndx ${PREFIX}/lib/pine
-	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

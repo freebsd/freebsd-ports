@@ -6,8 +6,6 @@ include/itk3.0/itk.h
 lib/libitk30.so.1
 lib/libitk30.so
 lib/libitk30.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/itk3.0/itkConfig.sh
 lib/itk3.0/Archetype.itk
 lib/itk3.0/Toplevel.itk

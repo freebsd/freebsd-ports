@@ -47,8 +47,6 @@ info/ebzip.info
 lib/libeb.a
 lib/libeb.so
 lib/libeb.so.3
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/eb/appendix/LIST
 share/eb/appendix/LIST-ja
 share/eb/appendix/cencro-1.0/catalog

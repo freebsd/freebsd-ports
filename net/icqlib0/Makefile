@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	paxvel@iname.com
 
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

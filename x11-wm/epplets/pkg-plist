@@ -28,8 +28,6 @@ lib/libepplet.a
 lib/libepplet.la
 lib/libepplet.so
 lib/libepplet.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/enlightenment/epplet_data/E-Biff/7of9.png
 share/enlightenment/epplet_data/E-Biff/newmail.png
 share/enlightenment/epplet_data/E-Biff/nomail.png

@@ -19,6 +19,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	taoka@FreeBSD.org
 
 USE_XLIB=	yes
+INSTALLS_SHLIBS=	yes
 PATCHDIR=	${.CURDIR}/../../japanese/Wnn/patches
 FILESDIR=	${.CURDIR}/../../japanese/Wnn/files
 PKGDIR=		${.CURDIR}/../../japanese/Wnn/pkg
@@ -168,6 +169,5 @@ post-install:
 		${LN} -sf ${SHARED_LIB}.so.1.0 \
 			${X11BASE}/lib/${SHARED_LIB}.so; \
 	fi
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

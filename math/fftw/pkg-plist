@@ -16,7 +16,5 @@ lib/librfftw.a
 lib/librfftw.la
 lib/librfftw.so
 lib/librfftw.so.2
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/fftw/fftw.ps
 @dirrm share/doc/fftw

@@ -14,8 +14,6 @@ etc/coolicon.config.dist
 lib/libCw.a
 lib/libCw.so
 lib/libCw.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/cooledit/Xmlrpclib.py
 share/cooledit/c_utils.py
 share/cooledit/global.py

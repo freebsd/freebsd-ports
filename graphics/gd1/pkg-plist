@@ -18,5 +18,3 @@ lib/libgd.a
 lib/libgd.so
 lib/libgd.so.1
 @dirrm include/gd
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R

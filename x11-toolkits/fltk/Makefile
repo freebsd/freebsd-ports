@@ -22,6 +22,7 @@ LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
 VERSION=	1.0.7
 USE_BZIP2=	yes
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared
 WRKSRC=		${WRKDIR}/${PKGNAME}
@@ -34,7 +35,6 @@ BROKEN=	requires ELF library format
 .endif
 
 post-install:
-	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@ ${INSTALL_MAN} ${WRKSRC}/documentation/fluid.1 \
 		${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)

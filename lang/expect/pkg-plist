@@ -29,6 +29,4 @@ lib/expect5.31/libexpect531.a
 lib/libexpect531.a
 lib/libexpect531.so
 lib/libexpect531.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm lib/expect5.31

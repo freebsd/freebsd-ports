@@ -562,5 +562,3 @@ share/examples/db2/examples_java/TpcbExample.java
 @dirrm share/doc/db2/api_java
 @dirrm share/doc/db2/images
 @dirrm share/doc/db2
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R

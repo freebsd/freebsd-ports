@@ -22,6 +22,7 @@ PLIST_SUB=	VFLIB_VERSION=${VFLIB_VERSION}
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_ARGS=	--with-freetype \
 		--with-freetype-includedir=${PREFIX}/include \
 		--with-freetype-libdir=${PREFIX}/lib

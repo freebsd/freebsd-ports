@@ -6,8 +6,6 @@ include/itcl3.0/itcl.h
 lib/libitcl30.so.1
 lib/libitcl30.so
 lib/libitcl30.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/itcl3.0/itclConfig.sh
 lib/itcl3.0/itcl.tcl
 lib/itcl3.0/tclAppInit.c
