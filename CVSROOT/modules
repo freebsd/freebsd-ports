@@ -4861,6 +4861,7 @@ pango		ports/x11-toolkits/pango
 panorama	ports/graphics/panorama
 pantomime	ports/mail/pantomime
 papaya		ports/net/papaya
+papaya-plugins	ports/net/papaya-plugins
 papers		src/share/doc/papers
 par		ports/textproc/par
 paraget		ports/ftp/paraget
