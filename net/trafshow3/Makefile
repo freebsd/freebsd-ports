@@ -7,6 +7,7 @@
 
 PORTNAME=	trafshow
 PORTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoftware/
 EXTRACT_SUFX=	.tgz
