@@ -1,13 +1,13 @@
 # New ports collection makefile for:	skkinput
-# Version required:	2.00-SNAP980123
+# Version required:	2.00
 # Date created:		28 Jan 1998
 # Whom:			Murata Shuuichirou <mrt@mickey.ai.kyutech.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/03/21 10:54:22 asami Exp $
+# $Id: Makefile,v 1.3 1998/03/22 15:10:23 itojun Exp $
 #
 
-DISTNAME=	skkinput-2.00-SNAP980123
-PKGNAME=	ja-skkinput-2.00-980123
+DISTNAME=	skkinput-2.00
+PKGNAME=	ja-skkinput-2.00
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://www.yajima.kuis.kyoto-u.ac.jp/staffs/sakamoto/skkinput/
 
