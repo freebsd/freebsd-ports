@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	plucker
-PORTVERSION=	1.1.13
+PORTVERSION=	1.1.14
 CATEGORIES=	palm www
 MASTER_SITES=	http://plkr.org/download/plucker-1.1/
 DISTNAME=	${PORTNAME}_bin-${PORTVERSION}
 
-MAINTAINER=	noway@nohow.demon.co.uk
+MAINTAINER=	mt@primats.org.ua
 
 BUILD_DEPENDS=	ppmtoTbmp:${PORTSDIR}/palm/ppmtoTbmp \
 		convert:${PORTSDIR}/graphics/ImageMagick \
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	ppmtoTbmp:${PORTSDIR}/palm/ppmtoTbmp \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
-USE_BZIP=	yes
+USE_BZIP2=	yes
 PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	install-prc-files install-data install-pyplucker

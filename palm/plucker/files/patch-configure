@@ -1,0 +1,11 @@
+--- configure.orig	Sat Oct 27 22:06:04 2001
++++ configure	Sun Sep 15 00:26:05 2002
+@@ -974,7 +974,7 @@
+ test -n "$SED" && break
+ done
+ 
+-    $SED --version 2>&1 | grep GNU >/dev/null 2>&1
++#    $SED --version 2>&1 | grep GNU >/dev/null 2>&1
+     if test "$?" != "0" ; then
+     	echo "configure: warning: "Version of sed on path must be GNU sed to build manual"" 1>&2
+     	BUILD_MANUAL=no
