@@ -9,9 +9,6 @@ following options are set in your php.ini file:
 register_globals = On
 file_uploads = On
 
-If you have problems logging in, please try setting the following
-php.ini option:
-
 If you have problems with SquirrelMail saying "you must login" after
 you just have, the following php.ini option may help:
 session.auto_start = 1
