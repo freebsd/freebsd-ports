@@ -1,0 +1,12 @@
+This is mmv, a program to move/copy/append/link multiple files
+according to a set of wildcard patterns. The wildcard matches
+can be reused in forming the target names. You can i.e. move
+all *.c.or? files to or?.new.*.c by saying 'mmv "*.c.or?" or=2.new.=1.c'
+
+The multiple action is performed safely, i.e. without any unexpected
+deletion of files due to collisions of target names with existing
+filenames or with other target names. Furthermore, before doing
+anything, mmv attempts to detect any errors that would result from the
+entire set of actions specified and gives the user the choice of
+either aborting before beginning, or proceeding by avoiding the
+offending parts.

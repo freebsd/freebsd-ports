@@ -1,0 +1,8 @@
+#!/bin/sh
+ed $1 <<XXXEOF
+/#! \/bin\/sh
+1,.-1d
+w
+q
+XXXEOF
+/bin/sh $1
