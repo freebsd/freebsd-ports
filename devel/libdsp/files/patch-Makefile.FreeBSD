@@ -1,0 +1,19 @@
+--- Makefile.FreeBSD.orig	Sun Sep  9 19:52:53 2001
++++ Makefile.FreeBSD	Sun Sep  9 19:54:01 2001
+@@ -17,14 +17,12 @@
+ # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ #
+ 
+-CXX = g++
+-CXXFLAGS = -mcpu=pentium -march=pentium -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=5 -malign-jumps=5 -malign-functions=5 -mpreferred-stack-boundary=5 -mfancy-math-387 -Wall -Werror #-g
++CXXFLAGS += -O6 -fomit-frame-pointer -ffast-math -funroll-loops -malign-loops=5 -malign-jumps=5 -malign-functions=5 -mpreferred-stack-boundary=5 -mfancy-math-387 -Wall -Werror #-g
+ DEFS = -D_REENTRANT -D_THREAD_SAFE -DBSDSYS -DX86 -DUSE_MEMMOVE
+-INCS = -I. -I/usr/local/include
++INCS = -I. -I../Inlines-%%INLINE_VER%%
+ LDFLAGS = #-g
+ LIBS = -lm #-ldrfftw -ldfftw
+ LIBTOOL = libtool
+-PREFIX = /usr/local
+ 
+ VERSION = 1:1:0
+ 
