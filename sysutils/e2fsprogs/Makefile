@@ -19,7 +19,6 @@ COMMENT=	Utilities and library to manipulate an ext2 or ext3 filesystem
 USE_GETTEXT=	yes
 .endif
 
-USE_GCC=	3.3
 PATCH_STRIP=	-p1
 USE_AUTOCONF_VER=	213
 USE_REINPLACE=	yes
@@ -66,6 +65,10 @@ post-extract:
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 491000
+USE_GCC=	3.4
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|-DRESOURCE_TRACK||' ${WRKSRC}/e2fsck/Makefile.in
