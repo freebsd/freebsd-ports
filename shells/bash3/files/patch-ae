@@ -1,0 +1,151 @@
+diff -ru ../work/bash-2.04/builtins/shopt.def ./builtins/shopt.def
+--- ../work/bash-2.04/builtins/shopt.def	Tue Sep 21 17:20:01 1999
++++ ./builtins/shopt.def	Wed May 24 12:18:31 2000
+@@ -56,7 +56,7 @@
+ 
+ #define OPTFMT		"%-15s\t%s\n"
+ 
+-extern int allow_null_glob_expansion, glob_dot_filenames;
++extern int allow_null_glob_expansion, fail_glob_expansion, glob_dot_filenames;
+ extern int cdable_vars, mail_warning, source_uses_path;
+ extern int no_exit_on_failed_exec, print_shift_error;
+ extern int check_hashed_filenames, promptvars, interactive_comments;
+@@ -137,6 +137,7 @@
+ #endif
+   { "nocaseglob", &glob_ignore_case, (Function *)NULL },
+   { "nullglob",	&allow_null_glob_expansion, (Function *)NULL },
++  { "failglob",	&fail_glob_expansion, (Function *)NULL },
+ #if defined (PROGRAMMABLE_COMPLETION)
+   { "progcomp", &prog_completion_enabled, (Function *)NULL },
+ #endif
+diff -ru ../work/bash-2.04/doc/bash.1 ./doc/bash.1
+--- ../work/bash-2.04/doc/bash.1	Tue Mar 14 17:37:56 2000
++++ ./doc/bash.1	Wed May 24 12:17:39 2000
+@@ -2414,6 +2414,10 @@
+ .B nullglob
+ option is set, and no matches are found,
+ the word is removed.
++If the 
++.B failglob
++option is set, and no matches are found, an error message is printed
++and the command is not executed.
+ If the shell option
+ .B nocaseglob
+ is enabled, the match is performed without regard to the case
+diff -ru ../work/bash-2.04/doc/bashref.texi ./doc/bashref.texi
+--- ../work/bash-2.04/doc/bashref.texi	Tue Mar 14 17:38:33 2000
++++ ./doc/bashref.texi	Wed May 24 12:17:39 2000
+@@ -1679,7 +1679,8 @@
+ and replaced with an alphabetically sorted list of
+ file names matching the pattern. If no matching file names are found,
+ and the shell option @code{nullglob} is disabled, the word is left
+-unchanged.
++unchanged. If the @code{failglob} option is set, an error message is
++printed and the commandline is not executed.
+ If the @code{nullglob} option is set, and no matches are found, the word
+ is removed.
+ If the shell option @code{nocaseglob} is enabled, the match is performed
+@@ -1692,8 +1693,8 @@
+ matched explicitly.
+ In other cases, the @samp{.} character is not treated specially.
+ 
+-See the description of @code{shopt} in @ref{Bash Builtins},
+-for a description of the @code{nocaseglob}, @code{nullglob},
++See the description of @code{shopt} in @ref{Bash Builtins}, for a
++description of the @code{nocaseglob}, @code{nullglob}, @code{failglob}
+ and @code{dotglob} options.
+ 
+ The @code{GLOBIGNORE}
+@@ -3319,6 +3320,10 @@
+ @item extglob
+ If set, the extended pattern matching features described above
+ (@pxref{Pattern Matching}) are enabled.
++
++@item failglob
++If set, filenames that have globbing characters in them, but don't match
++anything, will cause an error.
+ 
+ @item histappend
+ If set, the history list is appended to the file named by the value
+Only in ../work/bash-2.04/lib/readline/doc: Makefile
+diff -ru ../work/bash-2.04/subst.c ./subst.c
+--- ../work/bash-2.04/subst.c	Tue Mar 14 16:42:02 2000
++++ ./subst.c	Wed May 24 12:17:39 2000
+@@ -106,6 +106,9 @@
+    a null file. */
+ int allow_null_glob_expansion;
+ 
++/* Non-zero means to signal an error when globbing fails to match. */
++int fail_glob_expansion;
++
+ /* Variables to keep track of which words in an expanded word list (the
+    output of expand_word_list_internal) are the result of globbing
+    expansions.  GLOB_ARGV_FLAGS is used by execute_cmd.c. */
+@@ -6018,6 +6021,11 @@
+ 	    {
+ 	      output_list = (WORD_LIST *)list_append (glob_list, output_list);
+ 	      PREPEND_LIST (tlist, disposables);
++	    }
++	  else if (fail_glob_expansion != 0)
++	    {
++	      report_error ("no match: %s", tlist->word->word);
++	      jump_to_top_level (DISCARD);
+ 	    }
+ 	  else if (allow_null_glob_expansion == 0)
+ 	    {
+diff -ru ../work/bash-2.04/tests/shopt.right ./tests/shopt.right
+--- ../work/bash-2.04/tests/shopt.right	Tue Sep 21 17:55:58 1999
++++ ./tests/shopt.right	Wed May 24 12:17:23 2000
+@@ -21,6 +21,7 @@
+ shopt -u no_empty_cmd_completion
+ shopt -u nocaseglob
+ shopt -u nullglob
++shopt -u failglob
+ shopt -s progcomp
+ shopt -s promptvars
+ shopt -u restricted_shell
+@@ -56,6 +57,7 @@
+ shopt -u no_empty_cmd_completion
+ shopt -u nocaseglob
+ shopt -u nullglob
++shopt -u failglob
+ shopt -u restricted_shell
+ shopt -u shift_verbose
+ shopt -u xpg_echo
+@@ -75,6 +77,7 @@
+ no_empty_cmd_completion	off
+ nocaseglob     	off
+ nullglob       	off
++failglob       	off
+ restricted_shell	off
+ shift_verbose  	off
+ xpg_echo       	off
+@@ -198,3 +201,5 @@
+ --
+ ./shopt.tests: shopt: xyz1: unknown shell option name
+ ./shopt.tests: shopt: xyz1: unknown option name
++tmp/l1 tmp/l2 tmp/*4 tmp/l3
++./shopt.tests: no match: tmp/*4
+diff -ru ../work/bash-2.04/tests/shopt.tests ./tests/shopt.tests
+--- ../work/bash-2.04/tests/shopt.tests	Tue Sep 21 17:49:32 1999
++++ ./tests/shopt.tests	Wed May 24 12:17:39 2000
+@@ -21,6 +21,7 @@
+ shopt -u mailwarn
+ shopt -u nocaseglob
+ shopt -u nullglob
++shopt -u failglob
+ shopt -s promptvars
+ shopt -u shift_verbose
+ shopt -s sourcepath
+@@ -92,3 +93,11 @@
+ builtin printf -- "--\n"
+ shopt -p xyz1
+ shopt -o -p xyz1
++
++mkdir tmp
++touch tmp/l1 tmp/l2 tmp/l3
++builtin echo tmp/l[12] tmp/*4 tmp/*3
++shopt -s failglob
++builtin echo tmp/l[12] tmp/*4 tmp/*3
++rm -r tmp
++shopt -u failglob
