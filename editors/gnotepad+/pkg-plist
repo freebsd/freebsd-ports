@@ -141,5 +141,6 @@ share/locale/fr/LC_MESSAGES/gnotepad+.mo
 share/locale/ja/LC_MESSAGES/gnotepad+.mo
 @dirrm %%DATADIR%%/help/gnotepad+/C
 @dirrm %%DATADIR%%/help/gnotepad+
+%%NOGNOME:%%@dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/gnotepad+/xpm
 @dirrm %%DATADIR%%/gnotepad+
