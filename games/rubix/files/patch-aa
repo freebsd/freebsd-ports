@@ -1,12 +1,12 @@
---- Makefile.orig	Mon Dec  6 07:19:16 1999
-+++ Makefile	Sun Jan  2 13:07:30 2000
+--- Makefile.orig	Tue Dec  7 00:19:16 1999
++++ Makefile	Sat Dec 23 13:31:45 2000
 @@ -11,35 +11,38 @@
  #
  
  #customize to fit your needs (it does not work for now).
 -architecture=-DPC_ARCHI
 +#architecture=-DPC_ARCHI
-+module_file=-DMODULE_FILE_PREFIX=\"$(PREFIX)/share/rubix/\"
++module_path=-DMODULE_PATH=\"${PREFIX}/share/rubix\"
  
  #SOLARIS=-lsocket
  
@@ -14,14 +14,14 @@
 -CFLAGS=-Wall -O3 -fomit-frame-pointer -ffast-math -Iplayer \
 -	$(architecture)
 +CC?=gcc
-+CFLAGS+=-Wall -fomit-frame-pointer -ffast-math -Iplayer \
-+	$(architecture) $(module_file)
++CFLAGS+=-Iplayer \
++	$(architecture) $(module_path)
  #CFLAGS=-Wall -g -ffast-math -Iplayer \
  #	$(architecture)
 -XINC=-I/usr/X11R6/include
 -XLIB=-L/usr/X11R6/lib -lX11
-+XINC=-I$(PREFIX)/include
-+XLIB=-L$(PREFIX)/lib -lX11
++XINC=-I${X11BASE}/include
++XLIB=-L${X11BASE}/lib -lX11
  
  #the following should not be changed.
  
@@ -36,14 +36,15 @@
  clean :
  	rm -f *.o *~ core *.bak *.dat gmon.out
 -	(cd player; make clean)
-+	(cd player; $(GMAKE) clean)
++	(cd player; $(MAKE) clean)
  
  dep :
- 	makedepend -Y *.c -s"#I like the GNU tools" -Iplayer
+-	makedepend -Y *.c -s"#I like the GNU tools" -Iplayer
++#	makedepend -Y *.c -s"#I like the GNU tools" -Iplayer
  
  player/player.a : player/*.c player/*.h
 -	(cd player; make)
-+	(cd player; $(GMAKE))
++	(cd player; $(MAKE))
  
  %.o : %.c
  	$(CC) $(CFLAGS) $(XINC) -c -o $@ $<
