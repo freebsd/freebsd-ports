@@ -1,0 +1,53 @@
+--- makefile.tlr.orig	Tue Aug  4 12:17:57 1992
++++ makefile.tlr	Sun Oct  4 23:37:05 1998
+@@ -7,7 +7,7 @@
+ 	@sh -c "if test 'x$(DIRS)' != x ; then eval \
+ 		'set -e ; for dir in $(DIRS) ; do \
+ 			(cd \$$dir ; echo Make ${HERE}\$$dir ; \
+-			 	make $(MFLAGS) $(DIRMFLAGS) ) ; \
++			 	$(MAKE) $(MFLAGS) $(DIRMFLAGS) ) ; \
+ 		done' ; \
+ 	  else \
+ 		true ; \
+@@ -24,7 +24,6 @@
+ 	else \
+ 	    true ; \
+ 	fi"
+-	touch install-pgm
+ 
+ # Install all scripts
+ install-script: $(SCRIPTS)
+@@ -39,14 +38,13 @@
+ 	else \
+ 	    true ; \
+ 	fi"
+-	touch install-pgm
+ 
+ # Install subdirectories
+ install-subdirs: subdirs
+ 	@sh -c "if test 'x$(DIRS)' != x  ; then eval \
+ 		'for dir in $(DIRS) ; do \
+ 			(cd \$$dir ; echo Install ${HERE}\$$dir ; \
+-			 make $(MFLAGS) $(DIRMFLAGS) install) ; \
++			 $(MAKE) $(MFLAGS) $(DIRMFLAGS) install) ; \
+ 		done' ; \
+ 	  else \
+ 		true ; \
+@@ -105,7 +103,7 @@
+ 	    'for dir in $(ALLDIRS); do \
+ 		if test -d $$dir ; then \
+ 			(cd $$dir; echo Make ${HERE}$$dir pristine ; \
+-			 make $(MFLAGS) pristine); \
++			 $(MAKE) $(MFLAGS) pristine); \
+ 		else \
+ 			true; \
+ 		fi; \
+@@ -124,7 +122,7 @@
+ 	    'for dir in $(ALLDIRS); do \
+ 		if test -d $$dir ; then \
+ 			(cd $$dir; echo Clean ${HERE}$$dir ; \
+-			 make $(MFLAGS) clean); \
++			$(MAKE) $(MFLAGS) clean); \
+ 		else \
+ 			true; \
+ 		fi; \

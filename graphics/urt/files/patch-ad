@@ -1,5 +1,5 @@
 --- lib/makefile.src.orig	Wed Mar  4 13:32:53 1992
-+++ lib/makefile.src	Sat Oct  3 23:57:51 1998
++++ lib/makefile.src	Sun Oct  4 23:38:40 1998
 @@ -26,7 +26,14 @@
  	vaxshort.o \
  	$(OPT_OBJS)
@@ -16,7 +16,7 @@
  
  # Just rebuild the object files.
  objs: $(OBJS)
-@@ -37,23 +44,14 @@
+@@ -37,40 +44,46 @@
  # Do nothing if $(DEST) is empty (or not defined)
  install: buildlib
  	@sh -c "if test '$(DEST)x' != x ; then \
@@ -47,8 +47,10 @@
  		else \
  			true ; \
  		fi ; \
-@@ -63,14 +61,30 @@
- 	touch install
+ 	else \
+ 		true ; \
+ 	fi"
+-	touch install
  
  # Rebuild the library from all the .o files.
 -buildlib: $(OBJS)
@@ -59,7 +61,7 @@
 +
 +$(LIBANAME): $(OBJS)
 +	-rm -f $@
-+	ar rc $@ $?
++	ar rc $@ $(OBJS)
  #ifndef NO_RANLIB
 -	ranlib $(LIBNAME)
 +	ranlib $@
@@ -75,16 +77,16 @@
 +.if $(PORTOBJFORMAT) == "elf"
 +$(LIBSONAME): $(SOOBJS)
 +	-rm -f $@
-+	ld -shared -soname $@ -o $@ $>
++	ld -shared -soname $@ -o $@ $(SOOBJS)
 +.else
 +$(LIBSONAME): $(SOOBJS)
 +	-rm -f $@
-+	ld -Bshareable -o $@ $>
++	ld -Bshareable -o $@ $(SOOBJS)
 +.endif
  
  # Clean up installed stuff and binaries
  pristine: clean
-@@ -86,9 +100,12 @@
+@@ -86,9 +99,12 @@
  # Get rid of everything which must be recompiled on a different computer.
  clean:
  	-rm -f *.o
