@@ -28,12 +28,12 @@ NO_BUILD=	yes
 
 .if ${TYPE} == "gtk"
 THEME_DIR=	${PREFIX}/share/themes/${THEME_NAME}
-PLIST_SUB+=	GTK20=""
-PLIST_SUB+=	METACITY="@comment "
+PLIST_SUB+=	GTK20="" METACITY="@comment "
+USE_GNOME=	gtk20
 .else	# metacity
 THEME_DIR=	${PREFIX}/share/gnome/themes/${THEME_NAME}
-PLIST_SUB+=	GTK20="@comment "
-PLIST_SUB+=	METACITY=""
+PLIST_SUB+=	GTK20="@comment " METACITY=""
+USE_GNOME=	gnomehier
 .endif
 
 do-install:
