@@ -7,22 +7,20 @@
 #
 
 PORTNAME=	gonvert
-PORTVERSION=	0.0.8
-PORTREVISION=	1
+PORTVERSION=	0.1.2
+PORTREVISION=	0
 CATEGORIES=	misc python gnome
-MASTER_SITES=	http://webhome.idirect.com/~tekatch/anthony/ucu/
+MASTER_SITES=	http://unihedron.com/projects/gonvert/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A conversion utility that allows conversion between many units
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
-		${PYTHON_SITELIBDIR}/gtk-1.2/gnome/ui.py:${PORTSDIR}/x11-toolkits/py-gnome
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
-
+USE_GNOMENG=	yes
 USE_GMAKE=	yes
 NO_BUILD=	yes
 
