@@ -2131,6 +2131,7 @@ gtk--		ports/x11-toolkits/gtk--
 gtk-Mac2-theme	ports/x11-toolkits/gtk-Mac2-theme
 gtk-doc		ports/textproc/gtk-doc
 gtk-engines	ports/x11-toolkits/gtk-engines
+gtk-engines2	ports/x11-toolkits/gtk-engines2
 gtk-engines-collection	ports/x11-toolkits/gtk-engines-collection
 gtk-flat-theme	ports/x11-toolkits/gtk-flat-theme
 gtk-gnutella	ports/net/gtk-gnutella
