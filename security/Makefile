@@ -160,6 +160,7 @@
     SUBDIR += pad
     SUBDIR += pam-mysql
     SUBDIR += pam-pgsql
+    SUBDIR += pam_alreadyloggedin
     SUBDIR += pam_krb5
     SUBDIR += pam_ldap
     SUBDIR += pam_pwdfile

@@ -1,0 +1,19 @@
+# New ports collection makefile for:	pam_alreadyloggedin
+# Date created:				6 March 2002
+# Whom:					green@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pam_alreadyloggedin
+PORTVERSION=	0.1
+CATEGORIES=	security
+MASTER_SITES=	${MASTER_SITE_LOCAL}					\
+		http://green.bikeshed.org/~green/
+MASTER_SITE_SUBDIR=	green
+
+MAINTAINER=	green@FreeBSD.org
+
+MAN=		pam_alreadyloggedin.8
+
+.include <bsd.port.mk>

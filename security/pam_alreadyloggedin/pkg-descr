@@ -1,0 +1,6 @@
+This is a PAM module which will, given restrictions upon whether the
+user to be authenticated is root or logging in on a given terminal, will
+allow the user to be authenticated successfully if the user is currently
+already logged in on another terminal.
+
+Brian Fundakowski Feldman <green@FreeBSD.org>
