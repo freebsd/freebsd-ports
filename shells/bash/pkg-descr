@@ -6,3 +6,5 @@ expansion, and a slew of other stuff.  For more information on the
 features of Bash that are new to this type of shell, see the file
 `documentation/features.texi'.  There is also a processed DVI file
 there, as well as a large man page.
+
+WWW: http://www.gnu.org/software/bash/
