@@ -23,7 +23,7 @@ LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 BUILD_DEPENDS=	objprelink:${PORTSDIR}/devel/objprelink
 .endif
 
-.if ${OSVERSION} >= 500000
+.if ${OSVERSION} >= 500029
 NO_QT_OBJPRELINK=	yes
 .endif
 
