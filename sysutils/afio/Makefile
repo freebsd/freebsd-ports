@@ -3,14 +3,14 @@
 # Date created:         4 October 1995
 # Whom:                 Juergen Lock <nox@jelal.hb.north.de>
 #
-# $Id: Makefile,v 1.2 1995/10/05 04:57:45 asami Exp $
+# $Id: Makefile,v 1.5 1997/01/06 09:24:57 obrien Exp $
 #
 
 DISTNAME=       afio.2.4.2
 PKGNAME=        afio-2.4.2
 CATEGORIES=     sysutils
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	system/Backup
+MASTER_SITE_SUBDIR=	system/backup
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	nox@jelal.hb.north.de
