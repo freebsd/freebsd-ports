@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-PKGNAME=	kmamerun-0.3.0.1
 DISTNAME=	kmamerun-0.3.0pre1
+PKGNAME=	kmamerun-0.3.0.1
 CATEGORIES=	emulators kde
 MASTER_SITES=	ftp://ftp.sad.it/pub/kde/local/
 
