@@ -7,6 +7,7 @@
 
 PORTNAME=	cairo
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://cairographics.org/snapshots/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +24,9 @@ USE_PYTHON=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL_VER=15
 
+OPTIONS=	PYGTK "Enable PyGTK Support" On \
+		SVG "Enable SVG Support" On
+
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mpygtk2}!=""
@@ -34,6 +38,13 @@ PLIST_SUB+=	GTK="@comment "
 .else
 USE_GNOME=	pygtk2
 PLIST_SUB+=	GTK=""
+.endif
+
+.if defined(WITH_SVG) || exists(${LOCALBASE}/lib/libsvg-cairo.a)
+LIB_DEPENDS+=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
+PLIST_SUB+=	SVG=""
+.else
+PLIST_SUB+=	SVG="@comment "
 .endif
 
 .include <bsd.port.post.mk>
