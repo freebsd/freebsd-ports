@@ -1268,3 +1268,4 @@ audio/libvorbis-aotuv|audio/libvorbis|2004-10-13|The aoTuV enhancement has been 
 graphics/kolourpaint|graphics/kdegraphics3|2004-10-13|kolourpaint was integrated into the kdegraphics3 port
 graphics/kimagemapeditor|www/kdewebdev|2004-10-13|kimagemapeditor was integrated into the kdewebdev port
 devel/automake18|devel/automake19|2004-10-15|automake18 replaced with automake19
+www/zope-cmftransforms|www/zope-portaltransforms|2004-10-16|renamed by authors
