@@ -119,6 +119,7 @@
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += lyx
+    SUBDIR += lyx-doc
     SUBDIR += magicpoint
     SUBDIR += man
     SUBDIR += man-doc
@@ -274,6 +275,7 @@
     SUBDIR += xshodo
     SUBDIR += xshodou
     SUBDIR += xv
+    SUBDIR += xyagamo
     SUBDIR += zipcodes
 
 .include <bsd.port.subdir.mk>
