@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rudl
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://froukepc.dhs.org/rudl/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ USE_RUBY_EXTCONF=	yes
 CONFIGURE_ARGS=	--with-sdl-config="sdl11-config"
 INSTALL_TARGET=	site-install
 
-DOCS=		Readme
+DOCS=		INSTALL.txt LICENSE.txt README.txt WARRANTY.txt
 
 post-patch:
 	${RUBY} -i -pe 'gsub %r:\.\./:, ""' ${WRKSRC}/samples/*.rb

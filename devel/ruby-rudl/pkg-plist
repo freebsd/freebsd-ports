@@ -1,13 +1,20 @@
-%%RUBY_SITEARCHLIBDIR%%/RuDL.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/analog.wav
+%%RUBY_SITEARCHLIBDIR%%/RUDL.so
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/bounce.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/bounceme.bmp
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/caribean.mod
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/crap.xm
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/crapola.bmp
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/crapola.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/joystick.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/mousecursor.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/music.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/pixelaccess.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/schoenie.jpg
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/test.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/pong.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/pong_bip.wav
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/pong_blerpblerp.wav
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rudl/pong_bop.wav
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rudl
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rudl/Readme
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rudl/INSTALL.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rudl/LICENSE.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rudl/README.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rudl/WARRANTY.txt
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rudl
