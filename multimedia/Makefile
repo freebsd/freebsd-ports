@@ -38,6 +38,7 @@
     SUBDIR += gtksubtitler
     SUBDIR += gxanim
     SUBDIR += gxine
+    SUBDIR += gxmms
     SUBDIR += hayes
     SUBDIR += kaffeine
     SUBDIR += kaffeine-mozilla
