@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK front-end to external cd rippers and mp3 encoders
 
-LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
+LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
 USE_REINPLACE=	yes

@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tag editor for MP3 and OGG files
 
-LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
+LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		FLAC.5:${PORTSDIR}/audio/flac
 
