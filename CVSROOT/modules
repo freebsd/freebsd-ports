@@ -59,6 +59,7 @@ taginfo		CVSROOT taginfo
 # Add other modules here...
 0verkill	ports/games/0verkill
 2bsd-diff	ports/textproc/2bsd-diff
+2dhf		ports/science/2dhf
 3dc		ports/games/3dc
 3ddesktop	ports/x11/3ddesktop
 3dm		ports/sysutils/3dm
