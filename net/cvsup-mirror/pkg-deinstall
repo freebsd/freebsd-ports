@@ -1,0 +1,90 @@
+#! /bin/sh
+
+ask() {
+    local question default answer
+
+    question=$1
+    default=$2
+    if [ -z "${PACKAGE_BUILDING}" ]; then
+	read -p "${question} [${default}]? " answer
+    fi
+    if [ x${answer} = x ]; then
+	answer=${default}
+    fi
+    echo ${answer}
+}
+
+yesno() {
+    local dflt question answer
+
+    question=$1
+    dflt=$2
+    while :; do
+	answer=$(ask "${question}" "${dflt}")
+	case "${answer}" in
+	[Yy]*)		return 0;;
+	[Nn]*)		return 1;;
+	esac
+	echo "Please answer yes or no."
+    done
+}
+
+if [ x$2 != xDEINSTALL ]; then
+    exit
+fi
+
+export PATH=/bin:/usr/bin:/usr/sbin
+
+base=${PKG_PREFIX}/etc/cvsup
+
+. ${base}/config.sh || exit
+
+if ps -axc | grep -q cvsupd; then
+    echo "Please kill your running cvsupd processes first" >&2
+    exit 1
+fi
+
+tmp="/etc/#cvsma$$"
+trap "rm -f ${tmp}" 0 1 2 3 15
+
+rm -rf ${base}/prefixes
+rm -f ${base}/.start_server
+
+if yesno "Do you want me to remove scheduled updates from \"/etc/crontab\"" y
+then
+    sed "/\/etc\/cvsup\/update\.sh/d" /etc/crontab >${tmp} || exit
+    chmod 644 ${tmp}
+    mv ${tmp} /etc/crontab || exit
+    echo "Done."
+fi
+
+if yesno \
+    "Do you want me to remove the cvsupd logging from \"/etc/syslog.conf\"" y
+then
+    sed "/^!cvsupd/,/cvsupd\.log\$/d" /etc/syslog.conf >${tmp} || exit
+    chmod 644 ${tmp}
+    mv ${tmp} /etc/syslog.conf || exit
+
+    if [ -f /var/run/syslog.pid ]; then
+	echo "Giving syslogd a kick in the pants."
+	kill -HUP $(cat /var/run/syslog.pid)
+    fi
+    echo "Done."
+fi
+
+if yesno "Do you want me to remove the cvsupd log entry from \
+\"/etc/newsyslog.conf\"" y; then
+    sed "/cvsupd\.log/d" /etc/newsyslog.conf >${tmp} || exit
+    chmod 644 ${tmp}
+    mv ${tmp} /etc/newsyslog.conf || exit
+    echo "Done."
+fi
+
+if yesno "Do you want me to remove group \"${group}\"" y; then
+    pw groupdel -n ${group}
+    echo "Done."
+fi
+if yesno "Do you want me to remove user \"${user}\"" y; then
+    pw userdel -n ${user}
+    echo "Done."
+fi
