@@ -1,17 +1,17 @@
-Turck MMCache is a opcode cache for PHP. It increases
+eAccelerator is a opcode cache for PHP. It increases
 performance of PHP scripts by caching them in compiled state,
 so that the overhead of compiling is almost completely eliminated.
 Also it uses some optimizations for speed up of PHP scripts execution.
-Turck MMCache typically reduces server load and increases
+eAccelerator typically reduces server load and increases
 the speed of your PHP code by 1-10 times.
 
-Turck MMCache contains PHP encoder and loader. You can encode any PHP
+eAccelerator contains PHP encoder and loader. You can encode any PHP
 scripts with encoder to distribute them without sources. Encoded files
-can be run on any site which runs PHP with Turck MMCache. The sources
+can be run on any site which runs PHP with eAccelerator. The sources
 of encoded script can't be restored because they are stored in a compiled
 form and the encoded version doesn't contain the source. 
 
-WWW: http://turck-mmcache.sourceforge.net/
+WWW: http://eaccelerator.net/
 
 - Alex Dupre
 ale@FreeBSD.org
