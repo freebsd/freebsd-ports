@@ -10,12 +10,3 @@
  	args[i++] = _PATH_RSH;
  	/* host may have to come after user on some systems */
  	args[i++] = host;
-@@ -489,7 +492,7 @@
- 		struct addrinfo *ai = NULL;
- 		int errgai;
- 		memset(&hints, 0, sizeof(hints));
--		hints.ai_family = AF_UNSPEC;
-+		hints.ai_family = IPv4or6;
- 		hints.ai_flags = AI_CANONNAME;
- 		hints.ai_socktype = SOCK_STREAM;
- 		errgai = getaddrinfo(host, NULL, &hints, &ai);

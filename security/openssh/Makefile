@@ -24,7 +24,7 @@ IGNOREFILES!=	${SED} 's:^\(.*\)$$:${PKGNAME}/\1:g' ${FILESDIR}/ignorefiles
 DISTFILES+=	${IGNOREFILES}
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Tue Feb  1 02:19:07 EST 2000
+CVS_DATE=	Fri Mar  3 00:37:20 EST 2000
 SED?=		/usr/bin/sed
 CVS_DATE_!=	${ECHO} -n "${CVS_DATE}" | ${SED} 's/[ \t:]/_/g'
 CVS_SITES?=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \

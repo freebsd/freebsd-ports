@@ -1,14 +1,5 @@
 --- sshconnect.c-	Tue Feb 15 22:00:22 2000
 +++ sshconnect.c	Tue Feb 15 22:00:27 2000
-@@ -150,7 +150,7 @@
- 		int p = IPPORT_RESERVED - 1;
- 		sock = rresvport_af(&p, family);
- 		if (sock < 0)
--			fatal("rresvport: af=%d %.100s", family, strerror(errno));
-+			error("rresvport: af=%d %.100s", family, strerror(errno));
- 		debug("Allocated local port %d.", p);
- 	} else {
- 		/*
 @@ -1080,9 +1080,11 @@
  	case AF_INET:
  		local = (ntohl(((struct sockaddr_in *)hostaddr)->sin_addr.s_addr) >> 24) == IN_LOOPBACKNET;
