@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.2
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
+		ftp://ftp.au.horde.org/pub/horde/			\
+		ftp://ftp.es.horde.org/pub/horde/			\
+		ftp://ftp.it.horde.org/pub/mirror/horde.org/horde/	\
+		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/horde/	\
+		ftp://ftp.pt.horde.org/pub/horde-ftp/horde/
 
 MAINTAINER=	thierry@pompo.net
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 #-----------------------------------------------------------------------
 # You may define these options:
 #
-# - WITHOUT_SSL		: if you do not need Apache with mod_ssl;
+# - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree;
 #
 #-----------------------------------------------------------------------
 
@@ -27,10 +28,20 @@ LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 .if !defined(WITHOUT_MCAL)
 LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .endif
-RUN_DEPENDS=	${LOCALBASE}/lib/php/Log.php:${PORTSDIR}/sysutils/pear-Log
+# Remark: pear-XML_sql2xml is included, but never used.
+RUN_DEPENDS=	${PHP_LIB}/Console/Getopt.php:${PORTSDIR}/devel/pear-Console_Getopt \
+		${PHP_LIB}/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC	\
+		${PHP_LIB}/Date.php:${PORTSDIR}/devel/pear-Date		\
+		${PHP_LIB}/DB.php:${PORTSDIR}/databases/pear-DB		\
+		${PHP_LIB}/HTML/Select.php:${PORTSDIR}/devel/pear-HTML_Select	\
+		${PHP_LIB}/Log.php:${PORTSDIR}/sysutils/pear-Log	\
+		${PHP_LIB}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
+		${PHP_LIB}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
+
+LDD=		/usr/bin/ldd
 
 REINPLACE_ARGS=	-i.beforeHorde
 DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
@@ -51,21 +62,16 @@ CONFDIR=	${HORDEDIR}/config
 APACHE_CNFDIR?=	${LOCALBASE}/etc/apache
 APACHE_CONF=	${APACHE_CNFDIR}/httpd.conf
 PHP_LIB?=	${LOCALBASE}/lib/php
+PHPSO?=		${LOCALBASE}/libexec/apache/libphp4.so
 HORDE_INC=	${PREFIX}/etc/horde
 LOG_FILE?=	/var/log/horde.log
 
 pre-everything::
-.if !defined(WITHOUT_SSL)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Press CTRL-C and define WITHOUT_SSL"
-	@${ECHO_MSG} " if you do not want to use Apache with SSL."
-	@${ECHO_MSG} ""
-.endif
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "If you plan to install IMP, it is better to configure"
 	@${ECHO_MSG} "PHP with IMAP / IMAP-SSL, OpenLDAP, OpenSSL, mcrypt, XML,"
-	@${ECHO_MSG} "FTP, gettext, pspell, zlib, MCAL and"
-	@${ECHO_MSG} "a database (like MySQL or PostgreSQL)."
+	@${ECHO_MSG} "FTP, gettext, zlib, MCAL and a database (like MySQL or"
+	@${ECHO_MSG} "PostgreSQL)."
 	@${ECHO_MSG} "For Japanese language, please enable mbstring."
 	@${ECHO_MSG} ""
 
@@ -76,12 +82,32 @@ pre-install:
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "lintl.4"; then \
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libintl.so"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with gettext support." ; \
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
+# N.B.: database dependencies are binded with mod_php#, not with Horde
+.if !defined(WITHOUT_SUPPORTED_DB)
+	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmysqlclient" ; then \
+	 if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libpq.so" ; then \
+	  if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libsybdb.so" ; then \
+	   if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libct.so" ; then \
+	    ${ECHO_MSG} "" ; \
+	    ${ECHO_MSG} "Please configure PHP with a database support." ; \
+	    ${ECHO_MSG} "MySQL, PostgreSQL and Sybase (CTLIB or DBLIB)" ; \
+	    ${ECHO_MSG} "can be used with PHP AND Horde." ; \
+	    ${ECHO_MSG} "" ; \
+	    ${ECHO_MSG} "(If everything will run on this machine, do not" ; \
+	    ${ECHO_MSG} " forget to install the database server-side!)" ; \
+	    ${ECHO_MSG} "" ; \
+	    ${FALSE} ; \
+	   fi ; \
+	  fi ; \
+	 fi ; \
+	fi
+.endif
 
 do-install:
 	@${MKDIR}  ${HORDEDIR}

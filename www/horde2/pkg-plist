@@ -62,6 +62,7 @@
 %%HORDEDIR%%/graphics/mime/text.gif
 %%HORDEDIR%%/graphics/mime/unknown.gif
 %%HORDEDIR%%/graphics/mime/vcard.gif
+%%HORDEDIR%%/graphics/mime/video.gif
 %%HORDEDIR%%/graphics/mime/xml.gif
 %%HORDEDIR%%/graphics/prefs.gif
 %%HORDEDIR%%/graphics/problem.gif
@@ -82,8 +83,10 @@
 %%HORDEDIR%%/javascript.php
 %%HORDEDIR%%/lib/.htaccess
 %%HORDEDIR%%/lib/Auth.php
+%%HORDEDIR%%/lib/Auth/auto.php
 %%HORDEDIR%%/lib/Auth/ftp.php
 %%HORDEDIR%%/lib/Auth/imap.php
+%%HORDEDIR%%/lib/Auth/krb5.php
 %%HORDEDIR%%/lib/Auth/ldap.php
 %%HORDEDIR%%/lib/Auth/mcal.php
 %%HORDEDIR%%/lib/Auth/sql.php
@@ -93,6 +96,15 @@
 %%HORDEDIR%%/lib/Category.php
 %%HORDEDIR%%/lib/CategoryTree.php
 %%HORDEDIR%%/lib/Category/sql.php
+%%HORDEDIR%%/lib/Cipher.php
+%%HORDEDIR%%/lib/Cipher/BlockMode.php
+%%HORDEDIR%%/lib/Cipher/BlockMode/cbc.php
+%%HORDEDIR%%/lib/Cipher/BlockMode/cfb64.php
+%%HORDEDIR%%/lib/Cipher/BlockMode/ecb.php
+%%HORDEDIR%%/lib/Cipher/BlockMode/ofb64.php
+%%HORDEDIR%%/lib/Cipher/blowfish.php
+%%HORDEDIR%%/lib/Cipher/cast128.php
+%%HORDEDIR%%/lib/Cipher/rc2.php
 %%HORDEDIR%%/lib/Data.php
 %%HORDEDIR%%/lib/Group.php
 %%HORDEDIR%%/lib/Help.php
@@ -109,6 +121,7 @@
 %%HORDEDIR%%/lib/MIME/Viewer/default.php
 %%HORDEDIR%%/lib/MIME/Viewer/enriched.php
 %%HORDEDIR%%/lib/MIME/Viewer/enscript.php
+%%HORDEDIR%%/lib/MIME/Viewer/images.php
 %%HORDEDIR%%/lib/MIME/Viewer/msexcel.php
 %%HORDEDIR%%/lib/MIME/Viewer/mspowerpoint.php
 %%HORDEDIR%%/lib/MIME/Viewer/msword.php
@@ -132,13 +145,29 @@
 %%HORDEDIR%%/lib/Secret.php
 %%HORDEDIR%%/lib/Serialize.php
 %%HORDEDIR%%/lib/SessionCache.php
+%%HORDEDIR%%/lib/SessionHandler/dbm.php
+%%HORDEDIR%%/lib/SessionHandler/mysql.php
+%%HORDEDIR%%/lib/SessionHandler/pgsql.php
+%%HORDEDIR%%/lib/SessionHandler/sapdb.php
+%%HORDEDIR%%/lib/SessionHandler/sql.php
+%%HORDEDIR%%/lib/SessionHandler.php
+%%HORDEDIR%%/lib/SQL.php
 %%HORDEDIR%%/lib/Text.php
 %%HORDEDIR%%/lib/Token.php
 %%HORDEDIR%%/lib/Token/file.php
 %%HORDEDIR%%/lib/Token/sql.php
+%%HORDEDIR%%/lib/VFS.php
+%%HORDEDIR%%/lib/VFS/ListItem.php
+%%HORDEDIR%%/lib/VFS/Object.php
+%%HORDEDIR%%/lib/VFS/file.php
+%%HORDEDIR%%/lib/VFS/ftp.php
+%%HORDEDIR%%/lib/VFS/musql.php
+%%HORDEDIR%%/lib/VFS/sql.php
+%%HORDEDIR%%/lib/VFS/sql_file.php
 %%HORDEDIR%%/lib/base.php
 %%HORDEDIR%%/lib/version.php
 %%HORDEDIR%%/locale/.htaccess
+%%HORDEDIR%%/locale/bg_BG/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/da_DK/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/de_DE/LC_MESSAGES/horde.mo
@@ -147,17 +176,21 @@
 %%HORDEDIR%%/locale/es_ES/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/et_EE/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/fi_FI/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/fi_FI/help.xml
 %%HORDEDIR%%/locale/fr_FR/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/hu_HU/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/it_IT/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ja_JP/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ko_KR/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/lt_LT/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/lv_LV/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/nl_NL/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/nb_NO/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/nn_NO/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/pl_PL/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/pt_BR/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/pt_PT/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/ro_RO/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ru_RU/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/sk_SK/LC_MESSAGES/horde.mo
@@ -173,6 +206,7 @@
 %%HORDEDIR%%/po/Makefile
 %%HORDEDIR%%/po/README
 %%HORDEDIR%%/po/wintokoi.pl
+%%HORDEDIR%%/po/bg_BG.po
 %%HORDEDIR%%/po/cs_CZ.po
 %%HORDEDIR%%/po/da_DK.po
 %%HORDEDIR%%/po/de_DE.po
@@ -184,20 +218,25 @@
 %%HORDEDIR%%/po/fr_FR.po
 %%HORDEDIR%%/po/hu_HU.po
 %%HORDEDIR%%/po/it_IT.po
+%%HORDEDIR%%/po/horde.pot
 %%HORDEDIR%%/po/ja_JP.po
 %%HORDEDIR%%/po/ko_KR.po
+%%HORDEDIR%%/po/lt_LT.po
+%%HORDEDIR%%/po/lv_LV.po
 %%HORDEDIR%%/po/nl_NL.po
 %%HORDEDIR%%/po/nb_NO.po
 %%HORDEDIR%%/po/nn_NO.po
 %%HORDEDIR%%/po/pl_PL.po
 %%HORDEDIR%%/po/pt_BR.po
 %%HORDEDIR%%/po/pt_PT.po
+%%HORDEDIR%%/po/ro_RO.po
 %%HORDEDIR%%/po/ru_RU.po
 %%HORDEDIR%%/po/ru_RU.KOI8-R.po
 %%HORDEDIR%%/po/shtool
 %%HORDEDIR%%/po/sk_SK.po
 %%HORDEDIR%%/po/sl_SI.po
 %%HORDEDIR%%/po/sv_SE.po
+%%HORDEDIR%%/po/translation.php
 %%HORDEDIR%%/po/uk_UA.po
 %%HORDEDIR%%/po/xgettext.sh
 %%HORDEDIR%%/po/zh_CN.po
@@ -215,6 +254,8 @@
 %%HORDEDIR%%/scripts/db/pgsql_create.sql
 %%HORDEDIR%%/scripts/db/pgsql_drop.sql
 %%HORDEDIR%%/scripts/db/prefs.sql
+%%HORDEDIR%%/scripts/db/sessionhandler.sql
+%%HORDEDIR%%/scripts/db/sessionhandler_sapdb.sql
 %%HORDEDIR%%/scripts/horde-rsync.sh
 %%HORDEDIR%%/scripts/ldap/horde.schema
 %%HORDEDIR%%/scripts/mime_mapping/Makefile
@@ -288,12 +329,18 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/lib/Auth
 @dirrm %%HORDEDIR%%/lib/Cache
 @dirrm %%HORDEDIR%%/lib/Category
+@dirrm %%HORDEDIR%%/lib/Cipher/BlockMode
+@dirrm %%HORDEDIR%%/lib/Cipher
 @dirrm %%HORDEDIR%%/lib/MIME/Viewer
 @dirrm %%HORDEDIR%%/lib/MIME
 @dirrm %%HORDEDIR%%/lib/Notification
 @dirrm %%HORDEDIR%%/lib/Prefs
+@dirrm %%HORDEDIR%%/lib/SessionHandler
 @dirrm %%HORDEDIR%%/lib/Token
+@dirrm %%HORDEDIR%%/lib/VFS
 @dirrm %%HORDEDIR%%/lib
+@dirrm %%HORDEDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/bg_BG
 @dirrm %%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/cs_CZ
 @dirrm %%HORDEDIR%%/locale/da_DK/LC_MESSAGES
@@ -319,6 +366,10 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/locale/ja_JP
 @dirrm %%HORDEDIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/ko_KR
+@dirrm %%HORDEDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/lt_LT
+@dirrm %%HORDEDIR%%/locale/lv_LV/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/lv_LV
 @dirrm %%HORDEDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/nl_NL
 @dirrm %%HORDEDIR%%/locale/nb_NO/LC_MESSAGES
@@ -331,6 +382,8 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/locale/pt_BR
 @dirrm %%HORDEDIR%%/locale/pt_PT/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/pt_PT
+@dirrm %%HORDEDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/ro_RO
 @dirrm %%HORDEDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/ru_RU
 @dirrm %%HORDEDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES
