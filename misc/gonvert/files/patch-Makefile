@@ -1,25 +1,41 @@
---- Makefile.orig	Mon Feb 24 23:45:55 2003
-+++ Makefile	Mon Feb 24 23:49:07 2003
-@@ -13,17 +13,17 @@
+--- Makefile.orig	Wed Feb 26 21:18:18 2003
++++ Makefile	Thu Feb 27 00:24:14 2003
+@@ -4,31 +4,31 @@
+ VERSION=$(shell head -2 $(NAME) | grep version | cut -d\" -f2)
+ 
+ #DESTDIR can be defined when calling make ie. make install DESTDIR=$RPM_BUILD_ROOT
+-BASEDIR  = $(DESTDIR)/usr
++BASEDIR  = $(DESTDIR)/${PREFIX}
+ BINDIR   = $(BASEDIR)/bin
+ LIBDIR   = $(BASEDIR)/lib
+ DOCDIR   = $(BASEDIR)/doc
+ 
+-MYLIBDIR = $(LIBDIR)/$(NAME)-$(VERSION)
++MYLIBDIR = $(BASEDIR)/share/gnome/$(NAME)
+ MYDOCDIR = $(DOCDIR)/$(NAME)-$(VERSION)
+ 
  all:
  
+ 
  install:
--	install -D --mode=755 $(PROGRAMNAME) $(DESTDIR)/$(BINDIR)/$(PROGRAMNAME)	#put the main program into the bin directory
-+	install --mode=755 $(PROGRAMNAME) $(DESTDIR)/$(BINDIR)/$(PROGRAMNAME)	#put the main program into the bin directory
- 	install --directory $(DESTDIR)/$(MYDATADIR)					#create directory to hold project files
- 	install --mode=644 $(NAME).glade $(DESTDIR)/$(MYDATADIR)			#copy glade file over
- 	install --directory $(DESTDIR)/$(MYDATADIR)/pixmaps				#create pixmap directory to hold project pictures
- 	install --mode=644 pixmaps/*.png $(DESTDIR)/$(MYDATADIR)/pixmaps		#copy project specific pictures over
- 	install --directory $(DESTDIR)/$(DATADIR)/pixmaps				#create pixmaps directory to hold gnome pictures
- 	install --mode=644 pixmaps/$(NAME)_icon.png $(DESTDIR)/$(DATADIR)/pixmaps	#copy gnome pictures over
--	install --directory $(DESTDIR)/$(DATADIR)/gnome/apps/Utilities			#create a directory for gnome menu description
--	install --mode=644 $(NAME).desktop $(DESTDIR)/$(DATADIR)/gnome/apps/Utilities	#copy the gnome menu description
--	install --directory $(MYDOCDIR) 						#create a directory that holds project documentation
--	install --mode=644 doc/* $(MYDOCDIR)						#copy project documentation
-+	install --directory $(DESTDIR)/$(DATADIR)/apps/Utilities			#create a directory for gnome menu description
-+	install --mode=644 $(NAME).desktop $(DESTDIR)/$(DATADIR)/apps/Utilities	#copy the gnome menu description
-+	#install --directory $(MYDOCDIR) 						#create a directory that holds project documentation
-+	#install --mode=644 doc/* $(MYDOCDIR)						#copy project documentation
+-	install -D --mode=755 $(NAME) $(BINDIR)/$(NAME)				#put the main program into the bin directory
++	install --mode=755 $(NAME) $(BINDIR)/$(NAME)				#put the main program into the bin directory
+ 	rm -rf $(LIBDIR)/gonvert-*						#remove old lib directories
+ 	install --directory $(MYLIBDIR)						#create directory to hold project files
+ 	install --mode=644 $(NAME).glade $(MYLIBDIR)/$(NAME).glade		#copy glade file over
+ 	install --directory $(MYLIBDIR)/pixmaps					#create pixmap directory to hold project pictures
+ 	install --mode=644 pixmaps/*.png $(MYLIBDIR)/pixmaps			#copy project specific pictures over
+-	install --directory $(BASEDIR)/share/pixmaps				#create pixmap directory to hold gnome icon
+-	install --mode=644 pixmaps/$(NAME)_icon.png $(BASEDIR)/share/pixmaps	#copy gnome pictures over
++	install --directory $(BASEDIR)/share/gnome/pixmaps				#create pixmap directory to hold gnome icon
++	install --mode=644 pixmaps/$(NAME)_icon.png $(BASEDIR)/share/gnome/pixmaps	#copy gnome pictures over
+ 	install --directory $(BASEDIR)/share/gnome/apps/Utilities		#create directory to hold gnome menu description
+ 	install --mode=644 $(NAME).desktop $(BASEDIR)/share/gnome/apps/Utilities #copy the gnome menu description
+ 	rm -rf $(DOCDIR)/gonvert-*						#remove old doc directories
+-	install --directory $(MYDOCDIR) 					#create a directory that holds project documentation
+-	install --mode=644 doc/* $(MYDOCDIR)					#copy project documentation
++	#install --directory $(MYDOCDIR) 					#create a directory that holds project documentation
++	#install --mode=644 doc/* $(MYDOCDIR)					#copy project documentation
+ 
  
  uninstall:
- 	#specify project name manually to prevent removal of all directories
