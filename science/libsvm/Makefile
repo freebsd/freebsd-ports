@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	2.36
-PORTREVISION=	0
+PORTVERSION=	2.4
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/
 
