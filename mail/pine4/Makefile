@@ -22,8 +22,6 @@ COMMENT=	PINE(tm) -- a Program for Internet News & Email
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
-# Define "WITH_LDAP" to include ldap support.
-#
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 LDAP_PREFIX?=	${LOCALBASE}
@@ -51,8 +49,19 @@ pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	${SH} pkg-install
 .endif
+.if defined(WITH_MAILDIR)
+PATCH_SITES=	http://www.math.washington.edu/~chappa/pine/patches/pine4.62/
+PATCHFILES=	maildir.patch.gz
+PATCH_DIST_ARGS+=	-E --quiet -d ${PATCH_WRKSRC} -p1
+.endif
 
 post-patch:
+# Do this here because the maildir patch also modifies this file
+	@${CP} ${WRKSRC}/imap/src/osdep/unix/Makefile \
+		${WRKSRC}/imap/src/osdep/unix/Makefile.presed
+	@${SED} -e 's:^CFLAGS=.*:CFLAGS=$$(BASECFLAGS) $$(EXTRACFLAGS):' \
+		${WRKSRC}/imap/src/osdep/unix/Makefile.presed > \
+		${WRKSRC}/imap/src/osdep/unix/Makefile
 .for f in build buildcyg
 	@${CP} ${WRKSRC}/${f} ${WRKSRC}/${f}.presed
 	@${SED} -e 's:CC=cc:CC=${CC}:g' ${WRKSRC}/${f}.presed > ${WRKSRC}/${f}
@@ -99,6 +108,6 @@ post-install:
 	${PREFIX}/bin/pine -P ${PREFIX}/etc/pine.conf -conf >${WRKSRC}/pine.conf
 	${INSTALL_DATA} ${WRKSRC}/pine.conf ${PREFIX}/etc/pine.conf
 
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

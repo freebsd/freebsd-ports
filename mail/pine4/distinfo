@@ -1,2 +1,4 @@
 MD5 (pine4.62.tar.gz) = 97880cde506534d6d0cfb44aed366fa1
 SIZE (pine4.62.tar.gz) = 4108969
+MD5 (maildir.patch.gz) = 4efeb83dc94e9e5ed654e10e0b9337e3
+SIZE (maildir.patch.gz) = 23472
