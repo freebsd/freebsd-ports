@@ -1,0 +1,11 @@
+--- snmplib/ucd-snmp-includes.h.orig	Wed Jan 20 18:18:42 1999
++++ snmplib/ucd-snmp-includes.h	Sat Aug 28 02:13:56 1999
+@@ -4,7 +4,7 @@
+ #include <netinet/in.h>
+ 
+ /* uncomment if you don't have in_addr_t in netinet/in.h */
+-/* typedef u_int in_addr_t; */
++typedef u_int in_addr_t;
+ 
+ #include <ucd-snmp/asn1.h>
+ #include <ucd-snmp/snmp_api.h>
