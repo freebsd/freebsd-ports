@@ -8,6 +8,7 @@ bin/gnome-name-service
 bin/goad-browser
 bin/libart-config
 bin/loadshlib
+bin/new-object
 etc/gnomeConf.sh
 etc/libartConf.sh
 etc/mime-magic
@@ -96,6 +97,7 @@ include/libgnomeui/gnome-canvas-widget.h
 include/libgnomeui/gnome-canvas.h
 include/libgnomeui/gnome-client.h
 include/libgnomeui/gnome-color-picker.h
+include/libgnomeui/gnome-compat.h
 include/libgnomeui/gnome-dateedit.h
 include/libgnomeui/gnome-dentry-edit.h
 include/libgnomeui/gnome-dialog-util.h
@@ -220,6 +222,7 @@ share/locale/cs/LC_MESSAGES/gnome-libs.mo
 share/locale/da/LC_MESSAGES/gnome-libs.mo
 share/locale/de/LC_MESSAGES/gnome-libs.mo
 share/locale/es/LC_MESSAGES/gnome-libs.mo
+share/locale/eu/LC_MESSAGES/gnome-libs.mo
 share/locale/fi/LC_MESSAGES/gnome-libs.mo
 share/locale/fr/LC_MESSAGES/gnome-libs.mo
 share/locale/ga/LC_MESSAGES/gnome-libs.mo
