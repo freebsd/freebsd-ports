@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnomeiconedit
-# Version required:			1.0.5
+# Version required:			1.0.6
 # Date created:				28th January 2000
 # Whom:					Ade Lovett <ade@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnome-iconedit-1.0.5
-PKGNAME=	gnomeiconedit-1.0.5
+DISTNAME=	gnome-iconedit-1.0.6
+PKGNAME=	gnomeiconedit-1.0.6
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.abdn.ac.uk/~u07ih/gnome-iconedit/
 
