@@ -7,12 +7,19 @@
 
 PORTNAME?=	cdrtools
 PORTVERSION?=	2.01a19
-PORTREVISION?=	0
+#PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
-PKGNAMESUFFIX=	-devel
 DISTNAME=	cdrtools-2.01a19
+
+.if defined(WITH_DVDHACK) && !defined(MKISOFS)
+PATCH_SITES=	http://people.mandrakesoft.com/~warly/files/cdrtools/archives/
+PATCHFILES=	cdrtools-2.01a16-dvd.patch.bz2
+PATCH_DIST_STRIP=	-p1
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-drv_mmc.c
+.endif
 
 MAINTAINER=	marius@alchemy.franken.de
 COMMENT?=	Cdrecord and other programs to extract and record CDs/CD-R[W]s
@@ -49,13 +56,18 @@ PKGMESSAGE=	""
 .else
 DOCSSRC=	${WRKSRC}
 PKGMESSAGE=	${WRKDIR}/pkg-message
+.if defined(WITH_DVDHACK)
+_DVDSUFFIX=	-dvd
+.endif
 .if defined(WITH_RSCSI)
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
 PLIST_SUB=	RSCSI=""
+_RSCSISUFFIX=	-rscsi
 .else
 PLIST_SUB=	RSCSI="@comment "
 .endif
 .endif
+PKGNAMESUFFIX=	${_DVDSUFFIX}${_RSCSISUFFIX}-devel
 
 .include <bsd.port.pre.mk>
 
@@ -64,10 +76,12 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build option(s):"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITH_RSCSI=yes	builds with rscsi which allows using SCSI-devices over the"
-	@${ECHO_MSG} "		network."
-	@${ECHO_MSG} "		BEWARE:	The rscsi binary gets installed suid root as this is"
-	@${ECHO_MSG} "			the preferred method to set it up."
+	@${ECHO_MSG} "WITH_DVDHACK=yes	builds with a third-party patch that enables recording"
+	@${ECHO_MSG} "			of DVD-R[W]s."
+	@${ECHO_MSG} "WITH_RSCSI=yes		builds with rscsi which allows using SCSI-devices over"
+	@${ECHO_MSG} "			the network."
+	@${ECHO_MSG} "			BEWARE:	The rscsi binary gets installed suid root as"
+	@${ECHO_MSG} "			this is the preferred method to set it up."
 	@${ECHO_MSG} ""
 .endif
 
