@@ -1,0 +1,16 @@
+========================================================
+************ Post Installation Tasks *******************
+========================================================
+*** Printer installation / apsfilter setup         ***  
+    root# cd /usr/local/share/apsfilter; ./SETUP               
+--------------------------------------------------------
+*** In any case of trouble please read             ***  
+    the apsfilter handbook: handbook.html                
+    and FAQ, HOWTO-BUGREPORTS                            
+    under /usr/local/share/doc/apsfilter/                 
+--------------------------------------------------------
+*** Support only over apsfilter mailinglists       ***  
+    please don't contact authors directly !!!
+    For more infos see:
+    http://www.apsfilter.org/support.html
+    http://www.apsfilter.org/
