@@ -7,7 +7,6 @@
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -16,11 +15,10 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
+LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 
 USE_KDEBASE_VER=3
 PREFIX=		${KDE_PREFIX}
-KDE_BUILD_PLIST=yes
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -30,17 +28,9 @@ INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_CERVISIA)
-DO_NOT_COMPILE+=cervisia
-.else
-PLIST_APPEND+=	plist.cervisia
 .include "${FILESDIR}/manpages.mk"
-.endif # defined(WITHOUT_CERVISIA)
-
-.if defined(DO_NOT_COMPILE)
-CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
-.endif # defined(DO_NOT_COMPILE)
 
 .include <bsd.port.post.mk>
