@@ -12,18 +12,18 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind9
-PORTVERSION=	9.2.1.rc2
+PORTVERSION=	9.2.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${ISCVERSION}/ \
 		ftp://ftp.nominum.com/pub/isc/bind9/${ISCVERSION}/ \
 		ftp://ftp.nerdc.ufl.edu/pub/mirrors/ftp.isc.org/isc/bind9/${ISCVERSION}/ \
 		ftp://ftp.sunet.se/pub/network/isc/bind9/${ISCVERSION}/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/bind9/${ISCVERSION}/,}
-DISTFILES=	bind-9.2.1rc2.tar.gz
+DISTFILES=	bind-9.2.1.tar.gz
 
 MAINTAINER=	DougB@FreeBSD.org
 
-ISCVERSION=	9.2.1rc2
+ISCVERSION=	9.2.1
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps
