@@ -3,7 +3,7 @@
 # Date created:         20 February 1995
 # Whom:                 Tim Wilkinson <tim@sarc.city.ac.uk>
 #
-# $Id: Makefile,v 1.28 1997/11/21 23:10:10 fenner Exp $
+# $Id: Makefile,v 1.29 1997/12/08 07:28:25 obrien Exp $
 #
 
 DISTNAME=	kaffe-0.9.2
@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}.tgz kaffe-0.9.2-package-javasoft.com.tgz \
 
 MAINTAINER=	xaa@stack.nl
 
-RESTRICTED=	"No redistribution of the Java(tm) Development Kit"
+RESTRICTED=	'No redistribution of the Java(tm) Development Kit'
 NO_PACKAGE=	${RESTRICTED}
 
 GNU_CONFIGURE=	yes
