@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dbf
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,6 +19,7 @@ COMMENT=	Show and convert the content of dBASE III, IV, and 5.0 files
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 USE_REINPLACE=	yes
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 
 post-patch:
 .for file in endian.h tables.h
