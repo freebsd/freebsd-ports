@@ -118,7 +118,7 @@ CONFIGURE_ARGS+=	--disable-faad
 
 # libmad
 .if !defined(WITHOUT_MAD)
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad
 
 CONFIGURE_ARGS+=	--enable-libmad
 PLIST_SUB+=	MAD=""
