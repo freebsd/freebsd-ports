@@ -1,12 +1,10 @@
-$FreeBSD$
-
---- pam_ldap.c.orig	Mon Mar 25 15:54:28 2002
-+++ pam_ldap.c	Mon Mar 25 15:54:29 2002
+--- pam_ldap.c.orig	Thu Jul 25 22:15:52 2002
++++ pam_ldap.c	Thu Jul 25 22:20:11 2002
 @@ -126,12 +126,7 @@
  #include "pam_ldap.h"
  #include "md5.h"
  
--#ifdef HAVE_SECURITY_PAM_MISC_H
+-#if defined(HAVE_SECURITY_PAM_MISC_H) || defined(HAVE_PAM_PAM_MISC_H)
 - /* FIXME: is there something better to check? */
  #define CONST_ARG const
 -#else
@@ -15,7 +13,7 @@ $FreeBSD$
  
  #ifndef HAVE_LDAP_MEMFREE
  #define ldap_memfree(x)	free(x)
-@@ -2843,11 +2838,11 @@
+@@ -2898,11 +2893,11 @@
  		    {
  		      _conv_sendmsg (appconv, "Password change aborted",
  				     PAM_ERROR_MSG, no_warn);
@@ -27,11 +25,11 @@ $FreeBSD$
 -#endif /* PAM_AUTHTOK_RECOVERY_ERR */
 +#else
 +		      return PAM_AUTHTOK_RECOVERY_ERR;
-+#endif /* PAM_AUTHTOK_RECOVER_ERR */
++#endif
  		    }
  		  else
  		    {
-@@ -2887,11 +2882,11 @@
+@@ -2942,11 +2937,11 @@
        syslog (LOG_ERR,
  	      "pam_ldap: error getting old authentication token (%s)",
  	      pam_strerror (pamh, rc));
@@ -47,7 +45,7 @@ $FreeBSD$
      }
  
    if (try_first_pass || use_first_pass)
-@@ -2901,11 +2896,11 @@
+@@ -2956,11 +2951,11 @@
  	newpass = NULL;
  
        if (use_first_pass && newpass == NULL)
@@ -63,7 +61,7 @@ $FreeBSD$
      }
  
    tries = 0;
-@@ -2955,11 +2950,11 @@
+@@ -3010,11 +3005,11 @@
  	}
        else
  	{
@@ -79,7 +77,7 @@ $FreeBSD$
  	}
  
        if (cmiscptr == NULL)
-@@ -2991,11 +2986,11 @@
+@@ -3046,11 +3041,11 @@
  		{
  		  _conv_sendmsg (appconv, "Password change aborted",
  				 PAM_ERROR_MSG, no_warn);
