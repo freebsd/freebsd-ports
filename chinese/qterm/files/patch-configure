@@ -1,5 +1,5 @@
---- configure.orig	Fri Jan 10 20:18:26 2003
-+++ configure	Thu Jan 16 08:52:01 2003
+--- configure.orig	Sat Apr 12 20:56:11 2003
++++ configure	Sat Apr 12 20:56:27 2003
 @@ -8752,7 +8752,7 @@
  
  
