@@ -1,8 +1,8 @@
 This window manager is yet another descendant of aewm.  It has title bars,
 shading, a widget for resizing, automatic placement of windows (with the upper
 left corner at the current position of the mouse) as they open, and a list (by
-title) from which iconized windows may be chosen for display.  Some features
-are implemented in applets, not all of which work in this port.
+title) from which windows may be chosen for raising or un-iconizing.  Some
+features are implemented in applets, not all of which work in this port.
 
 from the home page:
 	It is somewhat ICCCM compliant (it knows what a transient window is,
