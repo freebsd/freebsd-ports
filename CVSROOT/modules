@@ -7676,7 +7676,7 @@ poptop		ports/net/poptop
 pork		ports/net/pork
 pornview	ports/graphics/pornview
 port-authoring-tools	ports/sysutils/port-authoring-tools
-port-maintenance-tools	ports/sysutils/port-authoring-tools
+port-maintenance-tools	ports/sysutils/port-maintenance-tools
 portaudio	ports/audio/portaudio
 portaudit	ports/security/portaudit
 portcheckout	ports/devel/portcheckout
