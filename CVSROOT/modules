@@ -8019,6 +8019,7 @@ vrrp		ports/net/vrrp
 vscan		ports/security/vscan
 vsftpd		ports/ftp/vsftpd
 vshnu		ports/shells/vshnu
+vsound		ports/audio/vsound
 vtcl		ports/devel/vtcl
 vterrain-apps	ports/graphics/vterrain-apps
 vterrain-sdk	ports/graphics/vterrain-sdk
