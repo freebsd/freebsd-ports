@@ -1,0 +1,4 @@
+@unexec if cmp -s %D/etc/freevrrpd.conf %D/etc/freevrrpd.conf.sample; then rm -f %D/etc/freevrrpd.conf; fi
+etc/freevrrpd.conf.sample
+etc/rc.d/freevrrpd.sh
+libexec/freevrrpd

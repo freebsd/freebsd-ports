@@ -1,0 +1,21 @@
+freevrrpd is a VRRP (Virtual Router Redundancy Protocol) implemetation
+daemon under FreeBSD freevrrpd is a part of High UpTime project This
+daemon has been rewrited from scratch and is not based on existing
+projects. For this second public release, you can found:
+
+       * A daemon RFC 2338 Compliant adapted on FreeBSD systems
+       * Implementation of Virtual Adresses
+       * Support for multiples VRID
+       * Master announce state by sending multicast packets via BPF
+       * Changing routes and IP in 3 seconds
+       * Doing gratuitous ARP requests to clean the cache of all hosts
+       * Election between different slave servers
+       * Same host can be Slave and Master at the same time
+       * Automatic Downgrade to Slave if a Master is up again
+       * Anti-Address Conflict system
+       * Multi-threaded vrrp daemon
+       * Plain text password authentication
+       * Using now only one BPF device for all VRID
+       * Support netmask for Virtual IP addresses
+
+WWW: http://www.bsdshell.net/
