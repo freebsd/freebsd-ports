@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION= 	0.31
+PORTVERSION= 	0.31.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sawmill
@@ -19,8 +19,8 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 .if !defined(WITHOUT_GNOME)
 LIB_DEPENDS+=	capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter
 .endif
-BUILD_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
-RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
+BUILD_DEPENDS=	${X11BASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
+RUN_DEPENDS=	${X11BASE}/libexec/rep/${ARCH}--freebsd${OSREL}/gtk.so:${PORTSDIR}/x11-toolkits/rep-gtk
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
