@@ -1,0 +1,52 @@
+--- src/common/debug.c.bak	Mon Aug 20 05:19:27 2001
++++ src/common/debug.c	Thu Sep 11 10:38:57 2003
+@@ -18,7 +18,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include <string.h>
+ #include "debug.h"
+ 
+@@ -136,26 +136,20 @@
+ 
+ 
+ 
+-void _msqlTrace(va_alist)
+-	va_dcl
++void _msqlTrace(int dir, char *fmt, ...)
+ {
+ 	va_list args;
+-	char	*fmt,
+-		*tag;
+-	int	loop,
+-		dir;
++	char    *tag;
++	int     loop;
+ 	static	int indent = 0;
+ 	static 	char inTag[] = "-->",
+ 		     outTag[] = "<--";
+ 
+-	va_start(args);
+ 	if (! (debugLevel & MOD_TRACE))
+ 	{
+-		va_end(args);
+ 		return;
+ 	}
+ 
+-	dir = va_arg(args, int);
+ 	if (dir == TRACE_IN)
+ 	{
+ 		tag = inTag;
+@@ -163,9 +157,9 @@
+ 	}
+ 	else
+ 		tag = outTag;
+-	fmt = (char *)va_arg(args, char *);
+ 	if (!fmt)
+         	return;
++	va_start(args, fmt);
+ 	(void)vsprintf(msqlDebugBuf,fmt,args);
+ 	va_end(args);
+ 	printf("[%s] ",PROGNAME);

@@ -1,0 +1,11 @@
+--- src/common/debug.h.bak	Mon Aug 20 05:19:27 2001
++++ src/common/debug.h	Thu Sep 11 10:44:11 2003
+@@ -31,7 +31,7 @@
+ #define TRACE_OUT	2
+ 
+ void	_msqlDebug();
+-void	_msqlTrace();
++void    _msqlTrace(int, char *, ...);
+ void	initDebug();
+ int	debugSet();
+ 

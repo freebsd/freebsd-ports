@@ -7,7 +7,7 @@
 
 PORTNAME=	msql
 PORTVERSION=    2.0.12
-PORTREVISION=	2
+PORTREVISION=   3
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,6 +19,7 @@ USE_PERL5=	YES
 # Not free for commercial use.
 RESTRICTED=	"restrictive copyright (no commercial use)"
 
+CFLAGS+=        -DANSI_ARGS
 MAKE_ENV+=	WRKSRC=${WRKSRC}
 
 # Uncomment this if you're upgrading from <= b4 to >= b5 and have already
