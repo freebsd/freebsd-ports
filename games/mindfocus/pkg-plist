@@ -1,0 +1,57 @@
+bin/mindfocus
+share/examples/mindfocus/akane.mfc
+share/examples/mindfocus/misaki.mfc
+share/examples/mindfocus/nanase.mfc
+share/examples/mindfocus/mayu.mfc
+share/examples/mindfocus/mio.mfc
+share/examples/mindfocus/misaki2.mfc
+share/examples/mindfocus/mizuka.mfc
+share/examples/mindfocus/myu.mfc
+share/examples/mindfocus/ryoko.mfc
+share/examples/mindfocus/system.mindfocus
+share/examples/mindfocus/pixmaps/akane0.xpm
+share/examples/mindfocus/pixmaps/akane1.xpm
+share/examples/mindfocus/pixmaps/akane2.xpm
+share/examples/mindfocus/pixmaps/akane3.xpm
+share/examples/mindfocus/pixmaps/misaki0.xpm
+share/examples/mindfocus/pixmaps/misaki1.xpm
+share/examples/mindfocus/pixmaps/misaki2.xpm
+share/examples/mindfocus/pixmaps/misaki3.xpm
+share/examples/mindfocus/pixmaps/nanase0.xpm
+share/examples/mindfocus/pixmaps/nanase1.xpm
+share/examples/mindfocus/pixmaps/nanase2.xpm
+share/examples/mindfocus/pixmaps/nanase3.xpm
+share/examples/mindfocus/pixmaps/mayu1.xpm
+share/examples/mindfocus/pixmaps/mayu2.xpm
+share/examples/mindfocus/pixmaps/mayu3.xpm
+share/examples/mindfocus/pixmaps/mayu4.xpm
+share/examples/mindfocus/pixmaps/mio1.xpm
+share/examples/mindfocus/pixmaps/mio2.xpm
+share/examples/mindfocus/pixmaps/mio3.xpm
+share/examples/mindfocus/pixmaps/mio4.xpm
+share/examples/mindfocus/pixmaps/misaki2-1.xpm
+share/examples/mindfocus/pixmaps/misaki2-2.xpm
+share/examples/mindfocus/pixmaps/misaki2-3.xpm
+share/examples/mindfocus/pixmaps/misaki2-4.xpm
+share/examples/mindfocus/pixmaps/mizuka1.xpm
+share/examples/mindfocus/pixmaps/mizuka2.xpm
+share/examples/mindfocus/pixmaps/mizuka3.xpm
+share/examples/mindfocus/pixmaps/mizuka4.xpm
+share/examples/mindfocus/pixmaps/myu1.xpm
+share/examples/mindfocus/pixmaps/myu2.xpm
+share/examples/mindfocus/pixmaps/myu3.xpm
+share/examples/mindfocus/pixmaps/myu4.xpm
+share/examples/mindfocus/pixmaps/ryoko1.xpm
+share/examples/mindfocus/pixmaps/ryoko2.xpm
+share/examples/mindfocus/pixmaps/ryoko3.xpm
+share/examples/mindfocus/pixmaps/ryoko4.xpm
+share/examples/mindfocus/scripts/eye.ms
+share/doc/ja/mindfocus/HISTORY.euc
+share/doc/ja/mindfocus/MFC.euc
+share/doc/ja/mindfocus/README.euc
+share/doc/ja/mindfocus/SCRIPT.euc
+share/doc/ja/mindfocus/TODO.euc
+@dirrm share/examples/mindfocus/pixmaps
+@dirrm share/examples/mindfocus/scripts
+@dirrm share/examples/mindfocus
+@dirrm share/doc/ja/mindfocus
