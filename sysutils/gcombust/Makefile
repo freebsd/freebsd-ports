@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gcombust
-PORTVERSION=	0.1.46
+PORTVERSION=	0.1.47
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
-MAINTAINER=	bsdx@looksharp.net
+MAINTAINER=	mcdouga9@msu.edu
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
