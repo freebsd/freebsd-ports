@@ -1,5 +1,0 @@
-%%PEARDIR%%/Upload.php
-%%PKGREGDIR%%/package.xml
-%%PORTDOCS%%%%DOCSDIR%%/upload_example.php
-@dirrm %%PKGREGDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

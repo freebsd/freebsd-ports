@@ -4,8 +4,8 @@ from html forms. Features:
  * Safe file copying from tmp dir.
  * Easy detecting mechanism of valid upload, missing upload or error.
  * Gives extensive information about the uploaded file.
- * Rename uploaded files in different ways: as it is, safe or unique
- * Validate allowed file extensions
- * Multiple languages error messages support (es, en, de, fr, nl)
+ * Rename uploaded files in different ways: as it is, safe or unique.
+ * Validate allowed file extensions.
+ * Multiple languages error messages support (es, en, de, fr, nl).
 
-WWW: http://pear.php.net/package-info.php?package=HTTP_Upload
+WWW: http://pear.php.net/package/HTTP_Upload/
