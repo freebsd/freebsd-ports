@@ -8,8 +8,7 @@
 PORTNAME=	mrproject
 PORTVERSION=	0.3.2
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	anjuta
+MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 
 MAINTAINER=	demon@FreeBSD.org
 
