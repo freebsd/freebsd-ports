@@ -16,7 +16,7 @@ COMMENT=	Nic is a set of small web-based network applications
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde
 
-IGNORE=		"Not compatible with Horde 3 - to be refreshed."
+IGNORE=		is not compatible with Horde 3 - to be refreshed
 
 NO_BUILD=	yes
 
