@@ -1,0 +1,20 @@
+--- ascd/Imakefile.orig	Thu Apr 22 20:53:46 1999
++++ ascd/Imakefile	Thu Apr 22 20:54:09 1999
+@@ -5,7 +5,7 @@
+ BINDIR		= CBINDIR
+ MANDIR		= CMANDIR
+ THEMESDIR	= CTHDIR
+-MOREFLAGS	= -I/usr/local/include -I.
++MOREFLAGS	= -I/usr/X11R6/include -I.
+ CCOPTIONS	= $(MOREFLAGS)
+ SYS_LIBRARIES	= $(XLIB) -lXpm
+ 	
+@@ -15,7 +15,7 @@
+ WM_LIB = 
+ #endif
+ 
+-LOCAL_LIBRARIES = -L../libworkman -lworkman -L/usr/local/lib
++LOCAL_LIBRARIES = -L../libworkman -lworkman -L/usr/X11R6/lib
+ 
+ SRCS = cdcontrol.c ascd.c
+ OBJS = cdcontrol.o ascd.o
