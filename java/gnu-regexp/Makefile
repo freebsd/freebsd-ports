@@ -14,7 +14,7 @@ DISTNAME=	gnu.regexp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A regexp library for Java
 
-USE_JAVA=	1.1+
+USE_JAVA=	yes
 NO_BUILD=	yes
 
 .if !defined(NOPORTDOCS)
