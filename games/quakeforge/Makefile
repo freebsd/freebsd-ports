@@ -7,6 +7,7 @@
 
 PORTNAME=	QuakeForge
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:qf/} \
 		ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/:qw
@@ -23,7 +24,7 @@ MASTER_SITES+=	ftp://ftp.idsoftware.com/idstuff/quakeworld/skins/:skins
 DISTFILES+=	${SKINFILES:S/$/:skins/}
 .endif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	q@uni.de
 COMMENT=	Cleaned up copy of the GPL'd Quake 1 source code
 
 WADFILE=	quakesw-1.0.6.tar.gz
