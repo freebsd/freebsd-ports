@@ -1,6 +1,6 @@
---- b.c.orig	Mon Jul  9 13:22:47 2001
-+++ b.c	Mon Jul  9 13:22:49 2001
-@@ -16,6 +16,9 @@
+--- b.c.orig	Fri Dec  7 19:13:04 2001
++++ b.c	Fri Dec  7 19:13:10 2001
+@@ -17,6 +17,9 @@
  #include <pwd.h>
  #endif
  #include <errno.h>
@@ -10,7 +10,7 @@
  #include <stdlib.h>
  #include <ctype.h>
  #include <string.h>
-@@ -184,6 +187,7 @@
+@@ -187,6 +190,7 @@
  	else
  		b->o = pdefault;
  	mset(b->marks, 0, sizeof(b->marks));
@@ -18,7 +18,7 @@
  	b->rdonly = 0;
  	b->orphan = 0;
  	b->oldcur = 0;
-@@ -236,6 +240,10 @@
+@@ -239,6 +243,10 @@
  void brm(B * b)
  {
  	if (b && !--b->count) {
@@ -29,7 +29,7 @@
  		if (b->changed)
  			abrerr(b->name);
  		if (b == errbuf)
-@@ -1809,7 +1817,8 @@
+@@ -1805,7 +1813,8 @@
  	B *b;
  	long skip, amnt;
  	char *n;
@@ -39,7 +39,7 @@
  
  	if (!s || !s[0]) {
  		error = -1;
-@@ -1857,6 +1866,12 @@
+@@ -1852,6 +1861,12 @@
  		goto opnerr;
  	}
  
@@ -52,7 +52,7 @@
  	/* Skip data if we need to */
  	if (skip && lseek(fileno(fi), skip, 0) < 0) {
  		int r;
-@@ -1912,6 +1927,8 @@
+@@ -1907,6 +1922,8 @@
  	vsrm(n);
  
  	b->er = error;

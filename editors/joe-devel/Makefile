@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	joe-devel
-PORTVERSION=	2.9.7p1
+PORTVERSION=	2.9.8p1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	joe-editor
@@ -21,11 +21,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 ALL_TARGET=	joe
-
-post-patch:
-	@${PERL} -pi -e 's!CFLAGS = -O2!CFLAGS +=!' ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's!fprintf.*long time.*!!' ${WRKSRC}/conf.c
-	@${PERL} -pi -e 's!2.9.6-pre1!2.9.7-pre0!' ${WRKSRC}/main.c
 
 post-install:
 .if !defined(NOPORTDOCS)
