@@ -244,6 +244,7 @@
     SUBDIR += p5-HTML-TableLayout
     SUBDIR += p5-HTML-Tagset
     SUBDIR += p5-HTML-Template
+    SUBDIR += p5-HTML-Template-Expr
     SUBDIR += p5-HTML-Tree
     SUBDIR += p5-HTTP-GHTTP
     SUBDIR += p5-HTTPD-Tools
