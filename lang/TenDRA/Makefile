@@ -3,7 +3,7 @@
 # Date created:		7 Apr 1998
 # Whom:			Robert Nordier <rnordier@iafrica.com>
 #
-# $Id: Makefile,v 1.6 1999/07/04 20:47:43 steve Exp $
+# $Id: Makefile,v 1.7 1999/07/07 08:10:31 hoek Exp $
 #
 
 DISTNAME=	TenDRA-4.1.2
@@ -51,7 +51,9 @@ pre-install:
 		INSTALL >INSTALL.install && \
 	chmod a+x INSTALL.install)
 
-do-install: ${TMPPLIST}
+do-install:
+
+post-install:
 	@${MKDIR} ${PREFIX}/lib/TenDRA
 	@(PATH=${WRKSRC}/bin:$$PATH && \
 	cd ${WRKSRC} && \
