@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=qwt
 
-MAINTAINER=	bob@bomar.us
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qwt widget library for technical purposes
 
 USE_QT_VER=	3
