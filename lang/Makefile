@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.141 1999/07/06 01:28:42 cpiazza Exp $
+# $Id: Makefile,v 1.142 1999/07/13 02:56:58 cpiazza Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -14,7 +14,6 @@
     SUBDIR += cmucl
     SUBDIR += dylan
     SUBDIR += egcs
-    SUBDIR += egcs-devel
     SUBDIR += eiffel
     SUBDIR += elisp-manual
     SUBDIR += elk
@@ -26,6 +25,7 @@
     SUBDIR += f77
     SUBDIR += forth
     SUBDIR += gawk
+    SUBDIR += gcc-devel
     SUBDIR += gcc28
     SUBDIR += gcl
     SUBDIR += glibstdc++28
