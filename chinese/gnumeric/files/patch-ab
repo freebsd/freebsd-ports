@@ -5,10 +5,10 @@
  
  		/* Worst case scenario */
 -		font->gdk_font = gnome_display_font_get_gdk_font (font->dfont);
-+		font->gdk_font = gdk_fontset_load ("-*-medium-r-normal--14-*-*-*-*-*-big5-0");
++		font->gdk_font = gdk_fontset_load ("-*-medium-r-normal-*-14-*-iso8859-1,-*-medium-r-normal--14-*-*-*-*-*-big5-0");
  		if (font->gdk_font == NULL)
 -			font->gdk_font = gdk_font_load ("fixed");
-+			font->gdk_font = gdk_fontset_load ("-*-medium-r-normal--14-*-*-*-*-*-big5-0");
++			font->gdk_font = gdk_fontset_load ("-*-medium-r-normal-*-14-*-iso8859-1,-*-medium-r-normal--14-*-*-*-*-*-big5-0");
  		else
  			gdk_font_ref (font->gdk_font);
  

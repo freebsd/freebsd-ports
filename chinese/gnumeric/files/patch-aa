@@ -5,7 +5,7 @@
  	renderdata->hashtable    = g_hash_table_new (g_int_hash, g_int_equal);
  
 -	renderdata->font       = gdk_font_load ("fixed");
-+	renderdata->font       = gdk_fontset_load ("-*-medium-r-normal--14-*-*-*-*-*-big5-0");
++	renderdata->font       = gdk_fontset_load ("-*-medium-r-normal-*-14-*-iso8859-1,-*-medium-r-normal--14-*-*-*-*-*-big5-0");
  	renderdata->charwidth  = gdk_string_width (renderdata->font, "W");
  	renderdata->charheight = gdk_string_height (renderdata->font, "W");
  
