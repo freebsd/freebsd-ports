@@ -10,7 +10,7 @@ PORTVERSION=		1.1
 CATEGORIES=		sysutils
 MASTER_SITES=		ftp://ftp.cold.org/pub/brandon/
 
-MAINTAINER=		nectar@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 MAN8=			autokernconf.8 doconfig.8
 
