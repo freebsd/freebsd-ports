@@ -1,0 +1,24 @@
+# ex:ts=8
+# Ports collection makefile for:  Rawio
+# Version required:     	  1.0
+# Date created:			  Sun Aug 08, 1999
+# Whom:				  David O'Brien (obrien@NUXI.com)
+#
+# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+#
+
+DISTNAME=	rawio
+PKGNAME=	rawio-1.0
+CATEGORIES=	benchmarks
+MASTER_SITES=	ftp://ftp.lemis.com/pub/
+
+MAINTAINER=     obrien@FreeBSD.org
+
+NO_WRKSUBDIR=	yes
+MAN1=		rawio.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/rawio ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/rawio.1 ${PREFIX}/man/man1
+
+.include <bsd.port.mk>
