@@ -6,24 +6,21 @@
 #
 
 PORTNAME=	xlhtml
-PORTVERSION=	0.4
+PORTVERSION=	0.5.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.xlhtml.org/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sobomax
+MASTER_SITES=	http://chicago.sourceforge.net/xlhtml/
+DISTNAME=	${PORTNAME}.${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	cole.2:${PORTSDIR}/textproc/cole
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/cole"
+GNU_CONFIGURE=	yes
 
 MAN1=		ppthtml.1 xlhtml.1
 
-do-install:
-	(cd ${WRKSRC}/xlhtml && ${MAKE} ${INSTALL_TARGET})
-	(cd ${WRKSRC}/ppthtml && ${MAKE} ${INSTALL_TARGET})
+post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/xlhtml
 	${INSTALL_MAN} ${WRKSRC}/xlhtml/README \
