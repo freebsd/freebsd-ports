@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.13.8.0
-PORTREVISION=	2
+PORTVERSION=	1.15.0.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	asc-hq
@@ -16,7 +15,8 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A turn based, multiplayer strategic game with very nice graphics
 
-LIB_DEPENDS=	paragui.4:${PORTSDIR}/x11-toolkits/paragui
+LIB_DEPENDS=	paragui.4:${PORTSDIR}/x11-toolkits/paragui \
+		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -32,6 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 CONFIGURE_ARGS=	--disable-paraguitest
 
 OPTIONS=	MUSIC "Install extra music files" off
+
+MAN6=		asc.6 asc_demount.6 asc_mount.6 asc_mapedit.6 asc_makegfx.6 asc_weaponguide.6
 
 .include <bsd.port.pre.mk>
 
