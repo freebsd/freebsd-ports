@@ -15,8 +15,6 @@ DISTFILES=	exim-3.951.tar.bz2 exim-texinfo-3.951.tar.bz2
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
-BROKEN=		'Default configuration file gives unknown named list "+local_domains"'
-
 NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
