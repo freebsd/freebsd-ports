@@ -9,15 +9,16 @@
 
 PORTNAME=	wu-ftpd
 PORTVERSION=	2.6.1
-PORTREVISION=   7
+PORTREVISION=   8
 CATEGORIES=	ftp
 DIST_SUBDIR=    wu-ftpd
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 PATCH_SITES=    ftp://ftp.wu-ftpd.org/pub/wu-ftpd/patches/apply_to_2.6.1/
-PATCHFILES=     missing_format_strings.patch \
-		nlst-shows-dirs.patch \
-		pasv-port-allow-correction.patch
-PATCH_DIST_STRIP= -S + -p0
+
+# Due to error pasv-port-allow-correction.patch copied locally as patch-ak
+PATCHFILES=     ftpglob.patch \
+		missing_format_strings.patch \
+		nlst-shows-dirs.patch
 
 MAINTAINER=	ache@FreeBSD.org
 

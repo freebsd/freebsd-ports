@@ -1,4 +1,4 @@
 MD5 (wu-ftpd/wu-ftpd-2.6.1.tar.gz) = 857ab8504998a753195eb94ac2dc39a4
+MD5 (wu-ftpd/ftpglob.patch) = 85f6ce5ab6e0d29d439c19b0582e20f8
 MD5 (wu-ftpd/missing_format_strings.patch) = ddf252d05e01931b4f985cdcf6f5f106
 MD5 (wu-ftpd/nlst-shows-dirs.patch) = 58c002ad680fae0d0caba45b2ead30aa
-MD5 (wu-ftpd/pasv-port-allow-correction.patch) = 973f82a3cce4cb30ef0adc873d5078fc
