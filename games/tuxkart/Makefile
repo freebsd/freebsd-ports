@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tuxkart
-PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	games
 MASTER_SITES=	http://tuxkart.sourceforge.net/dist/
 
@@ -17,12 +16,12 @@ COMMENT=	An OpenGL action kart racing game
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lusbhid"
 CONFIGURE_ARGS=	--with-plib=${X11BASE}
 
 post-patch:
