@@ -1,0 +1,9 @@
+EXACT is a program that implements POP Before SMTP Relay Authentication.
+
+It will work as is with UW-IMAPD, Cyrus, Courier (imapd and popd),
+Perdition, Exim and Sendmail.
+
+WWW: http://www.britishsteal.com/dist/exact/
+
+--
+mwest@uct.ac.za
