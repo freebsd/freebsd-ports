@@ -3,7 +3,7 @@
 # Date created:		9 March 1999
 # Whom:			Dima Sivachenko	<dima@chg.ru>
 #
-# $Id $
+# $Id$
 #
 
 DISTNAME=	vera-1.5
