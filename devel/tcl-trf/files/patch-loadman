@@ -5,8 +5,10 @@ the OpenSSL library.
 
 --- generic/loadman.h	Fri Feb 15 14:49:06 2002
 +++ generic/loadman.h	Fri Feb 15 14:50:48 2002
-@@ -48,9 +48,5 @@
+@@ -48,9 +48,7 @@
  
++#include <sys/types.h>
++
  #ifdef HAVE_MD2_H
 -#   ifdef OPENSSL_SUB
 -#       include <openssl/md2.h>

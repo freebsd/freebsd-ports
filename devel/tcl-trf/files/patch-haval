@@ -1,18 +1,27 @@
 --- generic/haval.c	Wed Aug  9 15:13:17 2000
-+++ generic/haval.c	Fri Feb  8 11:07:48 2002
-@@ -59,8 +59,8 @@
++++ generic/haval.c	Fri Jul  9 16:25:39 2004
+@@ -46,8 +46,5 @@
+  */
+ 
+-static void MDHaval_Start     _ANSI_ARGS_ ((VOID* context));
+ static void MDHaval_Update    _ANSI_ARGS_ ((VOID* context, unsigned int character));
+-static void MDHaval_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, int bufLen));
+-static void MDHaval_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
+ 
+ /*
+@@ -59,8 +56,8 @@
    sizeof (CTX_TYPE),
    DIGEST_SIZE,
 -  MDHaval_Start,
-+  haval_start,
++  (Trf_MDStart *)haval_start,
    MDHaval_Update,
 -  MDHaval_UpdateBuf,
 -  MDHaval_Final,
-+  haval_hash,
-+  haval_end,
++  (Trf_MDUpdateBuf *)haval_hash,
++  (Trf_MDFinal *)haval_end,
    NULL
  };
-@@ -94,30 +94,4 @@
+@@ -94,30 +91,4 @@
   *------------------------------------------------------*
   *
 - *	MDHaval_Start --
@@ -43,7 +52,7 @@
 - *
   *	MDHaval_Update --
   *
-@@ -145,63 +119,2 @@
+@@ -145,63 +116,2 @@
    haval_hash ((CTX_TYPE*) context, &buf, 1);
  }
 -

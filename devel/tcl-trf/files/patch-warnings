@@ -1,0 +1,117 @@
+--- generic/init.c	Wed Aug  9 15:13:17 2000
++++ generic/init.c	Tue Apr  6 12:20:51 2004
+@@ -60,5 +60,5 @@
+ 
+ #ifdef USE_TCL_STUBS
+-  char* actualVersion;
++  const char* actualVersion;
+ 
+   actualVersion = Tcl_InitStubs(interp, "8.1", 0);
+--- generic/transformInt.h	Tue Aug 21 01:51:33 2001
++++ generic/transformInt.h	Tue Apr  6 12:27:33 2004
+@@ -678,4 +678,8 @@
+ #define TCL_STORAGE_CLASS DLLIMPORT
+ 
++#ifndef CONST84
++#    define CONST84
++#endif
++
+ #ifdef __cplusplus
+ }
+--- generic/registry.c	Tue Aug 21 01:51:33 2001
++++ generic/registry.c	Tue Apr  6 12:32:35 2004
+@@ -285,5 +285,5 @@
+ static int
+ TrfOutput _ANSI_ARGS_ ((ClientData instanceData,
+-			char*  buf, int toWrite,
++			CONST84 char*  buf, int toWrite,
+ 			int*        errorCodePtr));
+ 
+@@ -300,9 +300,9 @@
+ static int
+ TrfGetOption _ANSI_ARGS_ ((ClientData instanceData, Tcl_Interp* interp,
+-			   char* optionName, Tcl_DString* dsPtr));
++			   CONST84 char* optionName, Tcl_DString* dsPtr));
+ 
+ static int
+ TrfSetOption _ANSI_ARGS_((ClientData instanceData, Tcl_Interp* interp,
+-			  char* optionName, char* value));
++			  CONST84 char* optionName, CONST84 char* value));
+ #ifdef USE_TCL_STUBS
+ static int
+@@ -364,9 +364,9 @@
+ DownSOpt _ANSI_ARGS_ ((Tcl_Interp* interp,
+ 		       TrfTransformationInstance* ctrl,
+-		       char* optionName, char* value));
++		       CONST84 char* optionName, CONST84 char* value));
+ static int
+ DownGOpt _ANSI_ARGS_ ((Tcl_Interp* interp,
+ 		       TrfTransformationInstance* ctrl,
+-		       char* optionName, Tcl_DString* dsPtr));
++		       CONST84 char* optionName, Tcl_DString* dsPtr));
+ 
+ #define DOWNC(trans)             (DownChannel (trans))
+@@ -1708,5 +1708,5 @@
+ TrfOutput (instanceData, buf, toWrite, errorCodePtr)
+ ClientData instanceData;
+-char*      buf;
++CONST84 char*      buf;
+ int        toWrite;
+ int*       errorCodePtr;
+@@ -2162,6 +2162,6 @@
+      ClientData  instanceData;
+      Tcl_Interp* interp;
+-     char*       optionName;
+-     char*       value;
++     CONST84 char*       optionName;
++     CONST84 char*       value;
+ {
+   /* Recognized options:
+@@ -2315,5 +2315,5 @@
+      ClientData   instanceData;
+      Tcl_Interp*  interp;
+-     char*        optionName;
++     CONST84 char*        optionName;
+      Tcl_DString* dsPtr;
+ {
+@@ -3207,6 +3207,6 @@
+      Tcl_Interp*                interp;
+      TrfTransformationInstance* ctrl;
+-     char*                      optionName;
+-     char*                      value;
++     CONST84 char*                optionName;
++     CONST84 char*                value;
+ {
+   Tcl_Channel parent = DOWNC (ctrl);
+@@ -3252,5 +3252,5 @@
+      Tcl_Interp*                interp;
+      TrfTransformationInstance* ctrl;
+-     char*                      optionName;
++     CONST84 char*                optionName;
+      Tcl_DString*               dsPtr;
+ {
+--- generic/trfStubLib.c	Mon Sep 20 17:07:24 1999
++++ generic/trfStubLib.c	Tue Apr  6 13:13:38 2004
+@@ -61,5 +61,5 @@
+ #endif
+ 
+-char *
++const char *
+ Trf_InitStubs(interp, version, exact)
+     Tcl_Interp *interp;
+@@ -67,5 +67,5 @@
+     int exact;
+ {
+-    char *actualVersion;
++    const char *actualVersion;
+ 
+     actualVersion = Tcl_PkgRequireEx(interp, "Trf", (char *) version, exact,
+--- generic/transform.h	Tue Aug 21 01:52:21 2001
++++ generic/transform.h	Tue Apr  6 13:15:22 2004
+@@ -916,5 +916,5 @@
+ #define TCL_STORAGE_CLASS
+ 
+-EXTERN char *Trf_InitStubs _ANSI_ARGS_((Tcl_Interp *interp, CONST char *version, int exact));
++EXTERN const char *Trf_InitStubs _ANSI_ARGS_((Tcl_Interp *interp, CONST char *version, int exact));
+ 
+ #ifndef USE_TRF_STUBS

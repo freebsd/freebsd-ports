@@ -1,5 +1,5 @@
 --- generic/sha.c	Wed Aug  9 15:13:18 2000
-+++ generic/sha.c	Fri Feb  8 11:22:17 2002
++++ generic/sha.c	Fri Jul  9 16:28:57 2004
 @@ -30,34 +30,6 @@
  #include "transformInt.h"
  
@@ -37,7 +37,15 @@
 +#include <sha.h>
  
  /*
-@@ -76,9 +48,9 @@
+@@ -65,7 +37,5 @@
+  */
+ 
+-static void MDsha_Start     _ANSI_ARGS_ ((VOID* context));
+ static void MDsha_Update    _ANSI_ARGS_ ((VOID* context, unsigned int character));
+-static void MDsha_UpdateBuf _ANSI_ARGS_ ((VOID* context, unsigned char* buffer, int bufLen));
+ static void MDsha_Final     _ANSI_ARGS_ ((VOID* context, VOID* digest));
+ 
+@@ -76,9 +46,9 @@
  static Trf_MessageDigestDescription mdDescription = { /* THREADING: constant, read-only => safe */
    "sha",
 -  sizeof (CTX_TYPE),
@@ -45,13 +53,13 @@
 -  MDsha_Start,
 +  sizeof (SHA_CTX),
 +  SHA_DIGEST_LENGTH,
-+  SHA_Init,
++  (Trf_MDStart *)SHA_Init,
    MDsha_Update,
 -  MDsha_UpdateBuf,
-+  SHA_Update,
++  (Trf_MDUpdateBuf *)SHA_Update,
    MDsha_Final,
    NULL
-@@ -113,33 +85,4 @@
+@@ -113,33 +83,4 @@
   *------------------------------------------------------*
   *
 - *	MDsha_Start --
@@ -85,7 +93,7 @@
 - *
   *	MDsha_Update --
   *
-@@ -163,79 +106,7 @@
+@@ -163,79 +104,7 @@
  unsigned int   character;
  {
 -  sha_trf_info* s = (sha_trf_info*) context;
@@ -167,7 +175,7 @@
 +  SHA_Update ((SHA_CTX*)context, &buf, 1);
  }
  
-@@ -264,26 +135,4 @@
+@@ -264,26 +133,4 @@
  VOID* digest;
  {
 -  sha_trf_info* s = (sha_trf_info*) context;

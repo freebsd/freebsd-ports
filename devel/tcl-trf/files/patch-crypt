@@ -1,5 +1,11 @@
 --- generic/crypt.c	Sat Nov 18 17:42:31 2000
 +++ generic/crypt.c	Fri Feb  8 11:59:47 2002
+@@ -29,4 +29,5 @@
+ 
+ #include "loadman.h"
++#include <unistd.h>
+ 
+ static int
 @@ -112,4 +112,6 @@
   */
  
