@@ -171,6 +171,7 @@
     SUBDIR += scintilla
     SUBDIR += sdl_gui
     SUBDIR += slingshot
+    SUBDIR += soqt
     SUBDIR += thinice
     SUBDIR += tix
     SUBDIR += tk80
