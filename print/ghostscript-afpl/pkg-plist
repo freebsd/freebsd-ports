@@ -28,6 +28,7 @@ bin/pv.sh
 bin/sysvlp.sh
 bin/unix-lpr.sh
 bin/wftopfa
+libexec/lpr/if-hpdj
 share/ghostscript/%%GS_VERSION%%/doc/Bug-form.htm
 share/ghostscript/%%GS_VERSION%%/doc/C-style.htm
 share/ghostscript/%%GS_VERSION%%/doc/Commprod.htm
@@ -444,3 +445,4 @@ share/ghostscript/hpdj/margins-LetterRotated.ps
 @dirrm share/ghostscript/fonts
 @dirrm share/ghostscript/hpdj
 @dirrm share/ghostscript
+@unexec rmdir %D/libexec/lpr 2>/dev/null || true
