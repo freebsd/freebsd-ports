@@ -33,6 +33,10 @@ INSTALL_TARGET=	site-install
 
 .include "${.CURDIR}/../sqlrelay/Makefile.common"
 
+.if ${PORTVERSION} == 0.34.3
+PORTREVISION?=	1
+.endif
+
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
