@@ -15,7 +15,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 .if defined(WITH_SOUND)
 LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
-MAKE_FLAGS+=	-DSOUND
+MAKE_ENV=	SOUND=yes
 .endif
 
 DIGREL=		20000407
