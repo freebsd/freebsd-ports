@@ -1,0 +1,11 @@
+--- docs/texiplus.tex.orig	Tue Dec 28 09:29:03 2004
++++ docs/texiplus.tex	Tue Dec 28 09:29:33 2004
+@@ -240,8 +240,6 @@
+ \global\pageheight=\vsize
+ 
+ \global\let\smalllisp=\smalllispx
+-\global\let\smallexample=\smalllispx
+-\global\def\Esmallexample{\Esmalllisp}
+ }\textfonts
+ 
+ \globaldefs=0 % this is NOT redundant; the \endgroup done by@end tex
