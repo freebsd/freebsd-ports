@@ -91,6 +91,10 @@ post-extract:
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64 (shared libraries must be compiled with -fPIC)"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" -or -name "*.cpp" | ${XARGS} -n 10 \
 		${REINPLACE_CMD} -e \
