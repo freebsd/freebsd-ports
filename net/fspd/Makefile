@@ -28,7 +28,6 @@ MAN1=		fcat.1 fcatcmd.1 fcd.1 fcdcmd.1 fdu.1 fducmd.1 ffind.1 \
 MAN5=		fsp_prof.5
 PLIST_FILES=	bin/fspd bin/fspscan etc/fspd.conf.sample
 OPTIONS=	NOCLIENTS "Omit client commands" off
-CONFIGURE_TARGET:=	--build=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
