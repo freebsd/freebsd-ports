@@ -383,13 +383,16 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  configure stage will not do anything if this is not set.
 # GNU_CONFIGURE	- Set if you are using GNU configure (optional).  Implies
 #				  HAS_CONFIGURE.
+# PERL_CONFIGURE - Configure using Perl's MakeMaker.  Implies USE_PERL5.
 # CONFIGURE_WRKSRC - Directory to run configure in (default: ${WRKSRC}).
-# CONFIGURE_SCRIPT - Name of configure script (default: configure).
+# CONFIGURE_SCRIPT - Name of configure script (default: "Makefile.PL" if
+#					 PERL_CONFIGURE is set, "configure" otherwise).
 # CONFIGURE_TARGET - The name of target to call when GNU_CONFIGURE is
 #				  defined (default: ${MACHINE_ARCH}--freebsd${OSREL}).
 # CONFIGURE_ARGS - Pass these args to configure if ${HAS_CONFIGURE} is set
 #				  (default: "--prefix=${PREFIX} ${CONFIGURE_TARGET}" if
-#				  GNU_CONFIGURE is set, empty otherwise).
+#				  GNU_CONFIGURE is set, "CC=${CC} CCFLAGS=${CFLAGS}
+#				  PREFIX=${PREFIX}" if PERL_CONFIGURE is set, empty otherwise).
 # CONFIGURE_ENV - Pass these env (shell-like) to configure if
 #				  ${HAS_CONFIGURE} is set.
 # CONFIGURE_LOG - The name of configure log file (default: config.log).
@@ -1251,6 +1254,13 @@ PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
 PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 PKGLATESTFILE?=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
 
+.if defined(PERL_CONFIGURE)
+CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
+CONFIGURE_SCRIPT?=	Makefile.PL
+USE_PERL5=			yes
+.undef HAS_CONFIGURE
+.endif
+
 CONFIGURE_WRKSRC?=	${WRKSRC}
 CONFIGURE_SCRIPT?=	configure
 CONFIGURE_TARGET?=	${MACHINE_ARCH}--freebsd${OSREL}
@@ -1466,9 +1476,13 @@ IGNORE=	"defines NO_PATCH, which is obsoleted"
 .elif defined(BROKEN_ELF) && (${PORTOBJFORMAT} == "elf") && \
 	  !defined(PARALLEL_PACKAGE_BUILD)
 IGNORE=	"is broken for ELF: ${BROKEN_ELF}"
-.elif defined(BROKEN) && !defined(PARALLEL_PACKAGE_BUILD)
+.elif defined(BROKEN)
+.if defined(PARALLEL_PACKAGE_BUILD)
 # try building even if marked BROKEN
+TRYBROKEN=	yes
+.else
 IGNORE=	"is marked as broken: ${BROKEN}"
+.endif
 .elif defined(FORBIDDEN)
 IGNORE=	"is forbidden: ${FORBIDDEN}"
 .endif
@@ -1748,6 +1762,7 @@ do-patch:
 			fi; \
 		else \
 			${ECHO_MSG} "===>  Applying ${OPSYS} patches for ${PKGNAME}" ; \
+			PATCHES_APPLIED="" ; \
 			for i in ${PATCHDIR}/patch-*; do \
 				case $$i in \
 					*.orig|*.rej|*~) \
@@ -1757,7 +1772,15 @@ do-patch:
 						if [ ${PATCH_DEBUG_TMP} = yes ]; then \
 							${ECHO_MSG} "===>   Applying ${OPSYS} patch $$i" ; \
 						fi; \
-						${PATCH} ${PATCH_ARGS} < $$i; \
+						if ${PATCH} ${PATCH_ARGS} < $$i ; then \
+							PATCHES_APPLIED="$$PATCHES_APPLIED $$i" ; \
+						else \
+							${ECHO_MSG} `${ECHO} ">> Patch $$i failed to apply cleanly." | ${SED} "s|${PATCHDIR}/||"` ; \
+							if [ x"$$PATCHES_APPLIED" != x"" ]; then \
+								${ECHO_MSG} `${ECHO} ">> Patch(es) $$PATCHES_APPLIED applied cleanly." | ${SED} "s|${PATCHDIR}/||g"` ; \
+							fi; \
+							${FALSE} ; \
+						fi; \
 						;; \
 				esac; \
 			done; \
@@ -1793,6 +1816,11 @@ do-configure:
 			${ECHO} "(end of \"${CONFIGURE_LOG}\")"; \
 			${FALSE}; \
 		fi)
+.endif
+.if defined(PERL_CONFIGURE)
+	@cd ${CONFIGURE_WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} \
+		${PERL5} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
 .endif
 .if defined(USE_IMAKE)
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
@@ -1855,7 +1883,7 @@ do-package: ${TMPPLIST}
 
 .if !target(package-links)
 package-links:
-	@${MAKE} ${__softMAKEFLAGS} delete-package-links
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} delete-package-links
 	@for cat in ${CATEGORIES}; do \
 		if [ ! -d ${PACKAGES}/$$cat ]; then \
 			if ! ${MKDIR} ${PACKAGES}/$$cat; then \
@@ -1888,7 +1916,7 @@ delete-package-links:
 
 .if !target(delete-package)
 delete-package:
-	@${MAKE} ${__softMAKEFLAGS} delete-package-links
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} delete-package-links
 	@${RM} -f ${PKGFILE}
 .endif
 
@@ -1904,7 +1932,7 @@ delete-package-links-list:
 
 .if !target(delete-package-list)
 delete-package-list:
-	@${MAKE} ${__softMAKEFLAGS} delete-package-links-list
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} delete-package-links-list
 	@${ECHO} "[ -f ${PKGFILE} ] && (${ECHO} deleting ${PKGFILE}; ${RM} -f ${PKGFILE})"
 .endif
 
@@ -1915,6 +1943,9 @@ delete-package-list:
 
 _PORT_USE: .USE
 .if make(real-fetch)
+.if defined(TRYBROKEN)
+	@${ECHO_MSG} "Trying build of ${PKGNAME} even though it is marked BROKEN."
+.endif
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch-depends
 .endif
 .if make(real-extract)
@@ -2074,7 +2105,7 @@ ${INSTALL_COOKIE}:
 		if [ -s ${WRKDIR}/.PLIST.startup ] ; then \
 			echo "      This port has installed the following startup scripts which may cause"; \
 			echo "      network services to be started at boot time."; \
-			${SED} s,^,$$PREFIX/, < ${WRKDIR}/.PLIST.startup; \
+			${SED} s,^,${PREFIX}/, < ${WRKDIR}/.PLIST.startup; \
 			echo; \
 		fi; \
 		echo "      If there are vulnerabilities in these programs there may be a security"; \
@@ -2180,7 +2211,7 @@ checkpatch:
 .if !target(reinstall)
 reinstall:
 	@${RM} -f ${INSTALL_COOKIE} ${PACKAGE_COOKIE}
-	@DEPENDS_TARGET="${DEPENDS_TARGET}" ${MAKE} install
+	@cd ${.CURDIR} && DEPENDS_TARGET="${DEPENDS_TARGET}" ${MAKE} install
 .endif
 
 # Deinstall
@@ -2218,15 +2249,15 @@ do-clean:
 .if !target(clean)
 clean:
 .if !defined(NOCLEANDEPENDS)
-	@${MAKE} ${__softMAKEFLAGS} clean-depends
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} clean-depends
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
 .if target(pre-clean)
-	@${MAKE} ${__softMAKEFLAGS} pre-clean
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pre-clean
 .endif
-	@${MAKE} ${__softMAKEFLAGS} do-clean
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} do-clean
 .if target(post-clean)
-	@${MAKE} ${__softMAKEFLAGS} post-clean
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} post-clean
 .endif
 .endif
 
@@ -2781,19 +2812,19 @@ readmes:	readme
 
 .if !target(readme)
 readme:
-	@rm -f README.html
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} README.html
+	@rm -f ${.CURDIR}/README.html
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.CURDIR}/README.html
 .endif
 
-README.html:
+${.CURDIR}/README.html:
 	@${ECHO_MSG} "===>   Creating README.html for ${PKGNAME}"
 	@${CAT} ${TEMPLATES}/README.port | \
 		${SED} -e 's%%PORT%%'`${ECHO} ${.CURDIR} | ${SED} -e 's.*/\([^/]*/[^/]*\)$$\1'`'g' \
 			-e 's%%PKG%%${PKGNAME}g' \
 			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' \
 			-e '/%%COMMENT%%/d' \
-			-e 's%%BUILD_DEPENDS%%'"`${MAKE} ${__softMAKEFLAGS} pretty-print-build-depends-list`"'' \
-			-e 's%%RUN_DEPENDS%%'"`${MAKE} ${__softMAKEFLAGS} pretty-print-run-depends-list`"'' \
+			-e 's%%BUILD_DEPENDS%%'"`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pretty-print-build-depends-list`"'' \
+			-e 's%%RUN_DEPENDS%%'"`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pretty-print-run-depends-list`"'' \
 			-e 's%%TOP%%'"`${ECHO} ${CATEGORIES} | ${SED} -e 'sa .*aa' -e 'sa[^/]*a..ag'`"'/..' \
 		>> $@
 
@@ -2844,8 +2875,8 @@ generate-plist:
 	@${ECHO} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
 .if ${XFREE86_HTML_MAN} == "yes"
-.for mansect in MAN1 MAN2 MAN3 MAN4 MAN5 MAN6 MAN7 MAN8 MAN9 MANL MANN
-.for man in ${${mansect}}
+.for mansect in 1 2 3 4 5 6 7 8 9 L N
+.for man in ${MAN${mansect}}
 	@echo lib/X11/doc/html/${man}.html >> ${TMPPLIST}
 .endfor
 .endfor
@@ -2929,7 +2960,7 @@ fake-pkg:
 		if [ -f ${PKGMESSAGE} ]; then \
 			${CP} ${PKGMESSAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
-		for dep in `${MAKE} ${__softMAKEFLAGS} package-depends ECHO_MSG=/usr/bin/true | sort -u`; do \
+		for dep in `cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} package-depends ECHO_MSG=/usr/bin/true | sort -u`; do \
 			if [ -d ${PKG_DBDIR}/$$dep -a -z `echo $$dep | ${GREP} -E ${PKG_IGNORE_DEPENDS}` ]; then \
 				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
