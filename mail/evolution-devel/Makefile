@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	unstable/sources/evolution
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf
+LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf \
+		gtkhtml.15:${PORTSDIR}/www/gtkhtml
 #ldap.1:${PORTSDIR}/net/openldap <- avoid extra dependency until
 #						   it actually works
 
