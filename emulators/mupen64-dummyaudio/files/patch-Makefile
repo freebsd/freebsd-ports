@@ -1,0 +1,14 @@
+--- Makefile.orig	Sun Jul  4 11:44:08 2004
++++ Makefile	Thu Aug 12 16:02:04 2004
+@@ -1,7 +1,7 @@
+-CC = gcc
+-CFLAGS = -O3 -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=athlon -Wall
+-LD = gcc
+-LDFLAGS = -shared -Wl,-Bsymbolic
++#CC = gcc
++#CFLAGS = -O3 -fomit-frame-pointer -funroll-loops -ffast-math -mcpu=athlon -Wall
++#LD = gcc
++#LDFLAGS = -shared -Wl,-Bsymbolic
+ 
+ OBJECTS	=	audio.o
+ 
