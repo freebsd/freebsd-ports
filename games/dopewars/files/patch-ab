@@ -1,9 +1,9 @@
---- dopeunix.h.orig	Fri Dec  3 12:19:36 1999
-+++ dopeunix.h	Fri Dec  3 12:19:54 1999
-@@ -22,6 +22,7 @@
+--- dopeos.h.orig	Fri Jan 14 16:13:24 2000
++++ dopeos.h	Fri Jan 14 16:14:40 2000
+@@ -127,6 +127,7 @@
+ #else /* Definitions for Unix build */
  
- #ifndef __DOPEOS_H__
- #define __DOPEOS_H__
+ #if NETWORKING
 +#include <sys/types.h>
  #include <sys/socket.h>
  #include <netinet/in.h>

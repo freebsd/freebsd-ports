@@ -1,31 +1,20 @@
---- Makefile.orig	Thu Nov 11 15:54:12 1999
-+++ Makefile	Fri Dec  3 12:22:35 1999
-@@ -1,10 +1,10 @@
--CFLAGS = -Wall
--CC = gcc
-+iCFLAGS ?= -Wall
-+CC ?= gcc
- HEADERS = message.h dopewars.h serverside.h clientside.h AIPlayer.h dopeos.h
- OBJS = message.o dopewars.o serverside.o clientside.o AIPlayer.o dopeos.o
- LIBS = -lncurses
- VERSION = 1.4.6
--DOCPATH = /usr/doc/dopewars-$(VERSION)
-+DOCPATH = ${LOCALBASE}/share/doc/dopewars-$(VERSION)
- DOCS = index.html installation.html clientplay.html server.html credits.html \
-        aiplayer.html configfile.html commandline.html developer.html \
-        metaserver.html servercommands.html \
-@@ -32,14 +32,6 @@
+--- Makefile.am.orig	Mon Jan 10 18:07:57 2000
++++ Makefile.am	Fri Jan 14 16:30:09 2000
+@@ -2,7 +2,7 @@
+ dopewars_SOURCES = AIPlayer.c serverside.c clientside.c dopewars.c message.c \
+ 		   dopeos.c
  
- dopeos.o : dopeos.c $(HEADERS)
- 	$(CC) $(CFLAGS) -c dopeos.c
--
--install : all
--	install -o root -g games -m 2755 dopewars /usr/bin/dopewars
--	touch /var/lib/games/dopewars.sco
--	chown root.games /var/lib/games/dopewars.sco
--	chmod 0660 /var/lib/games/dopewars.sco
--	install -d -o root -g root -m 0755 $(DOCPATH)
--	install -o root -g root -m 0644 $(DOCS) $(DOCPATH)
+-DOCPATH=/usr/doc/${PACKAGE}-${VERSION}/
++DOCPATH=${LOCALBASE}/share/doc/${PACKAGE}
+ DOCS= aiplayer.html configfile.html index.html server.html clientplay.html \
+       credits.html installation.html servercommands.html commandline.html \
+       developer.html metaserver.html windows.html README
+@@ -15,6 +15,6 @@
+ 	touch ${datadir}/dopewars.sco
+ 	chown root.games ${datadir}/dopewars.sco
+ 	chmod 0660 ${datadir}/dopewars.sco
+-	${INSTALL} -d -o root -g root -m 0755 $(DOCPATH)
+-	${INSTALL} -o root -g root -m 0644 $(DOCS) $(DOCPATH)
++	${INSTALL} -d -o root -g wheel -m 0755 $(DOCPATH)
++	${INSTALL} -o root -g wheel -m 0644 $(DOCS) $(DOCPATH)
  
- clean :
- 	rm -f $(OBJS)
