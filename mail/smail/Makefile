@@ -1,33 +1,54 @@
 # New ports collection makefile for:	smail
-# Version required:	3.1.29
+# Version required:	3.2
 # Date created:		16 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.12 1996/11/10 21:32:45 obrien Exp $
+# $Id: Makefile,v 1.13 1996/11/17 07:42:56 obrien Exp $
 #
 
-DISTNAME=	smail-3.1.29.1
+DISTNAME=	smail-3.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+#.if defined(USE_IDENT)
+#DEPENDS=	${PORTSDIR}/security/libident
+#.endif
 
-MAKE_FLAGS=	"SHELL=${PREFIX}/bin/bash"
+INSTALL_TARGET=	install installman
+
 MAN1=		pathto.1 uuwho.1 uupath.1
-MAN5=		smail.5
+MAN5=		smailconf.5 smail.5 smaildrct.5 smailmeth.5 smailqual.5 \
+		smailrtrs.5 smailrtry.5 smailtrns.5 
 MAN8=		pathalias.8 mkdbm.8 mkline.8 mksort.8 mkaliases.8 smail.8 \
 		mkpath.8 pathmerge.8 checkerr.8 getmap.8 mkhpath.8 savelog.8 \
 		mkuuwho.8 mailq.8 sendmail.8 runq.8 rmail.8 rsmtp.8 smtpd.8
 
-pre-install:
-	${MKDIR} ${PREFIX}/lib/smail
-
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/samples/generic/config ${PREFIX}/lib/smail/config.sample
-	@${INSTALL_DATA} ${WRKSRC}/samples/generic/directors ${PREFIX}/lib/smail/directors.sample
-	@${INSTALL_DATA} ${WRKSRC}/samples/generic/routers ${PREFIX}/lib/smail/routers.sample
-	@${INSTALL_DATA} ${WRKSRC}/samples/generic/transports ${PREFIX}/lib/smail/transports.sample
+	@echo "If you want to replace sendmail with links to smail, type"
+	@echo "the following command as \"root\":"
+	@echo ""
+	@echo "      make replace"
 
+replace:
+	@echo "===> Replacing sendmail"
+.if exists(/usr/sbin/sendmail)
+	mv -f /usr/sbin/sendmail /usr/sbin/sendmail.BAK && chmod 0 \
+		/usr/sbin/sendmail && cp -fp /usr/local/bin/smail \
+		/usr/sbin/sendmail
+.endif
+.if exists(/usr/sbin/mailstats)
+	chmod 0 /usr/sbin/mailstats
+.endif
+.if exists(/usr/bin/newaliases)
+	mv -f /usr/bin/newaliases /usr/bin/newaliases.BAK && chmod 0 \
+		/usr/bin/newaliases && cp -fp /usr/local/bin/newaliases \
+		/usr/bin/newaliases
+.endif
+.if exists(/usr/bin/mailq)
+	mv -f /usr/bin/mailq /usr/bin/mailq.BAK && chmod 0 \
+		/usr/bin/mailq && cp -fp /usr/local/bin/mailq /usr/bin/mailq
+.endif
+	
 .include <bsd.port.mk>
