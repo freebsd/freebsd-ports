@@ -1370,7 +1370,7 @@ eiffel		ports/lang/eiffel
 eights		ports/games/eights
 eispack		ports/math/eispack
 eject		ports/sysutils/eject
-ekg		ports/net/ekg
+ekg		ports/polish/ekg
 el-aspell	ports/textproc/el-aspell
 el-ooodict-GR	ports/editors/ooodict-el_GR
 eldav.el	ports/www/eldav.el
@@ -2155,7 +2155,7 @@ gnucap		ports/cad/gnucap
 gnucash		ports/finance/gnucash
 gnucash-docs	ports/finance/gnucash-docs
 gnuchess	ports/games/gnuchess
-gnugadu		ports/net/gnugadu
+gnugadu		ports/polish/gnugadu
 gnugo		ports/games/gnugo
 gnuinfo		ports/www/gnuinfo
 gnujsp		ports/www/gnujsp
@@ -3375,7 +3375,7 @@ kde3-i18n-nb	ports/misc/kde3-i18n-nb
 kde3-i18n-nl	ports/misc/kde3-i18n-nl
 kde3-i18n-nn	ports/misc/kde3-i18n-nn
 kde3-i18n-nso	ports/misc/kde3-i18n-nso
-kde3-i18n-pl	ports/misc/kde3-i18n-pl
+kde3-i18n-pl	ports/polish/kde3-i18n-pl
 kde3-i18n-ro	ports/misc/kde3-i18n-ro
 kde3-i18n-se	ports/misc/kde3-i18n-se
 kde3-i18n-sk	ports/misc/kde3-i18n-sk
@@ -3527,7 +3527,7 @@ koffice-i18n-mt	ports/misc/koffice-i18n-mt
 koffice-i18n-nb	ports/misc/koffice-i18n-nb
 koffice-i18n-nl	ports/misc/koffice-i18n-nl
 koffice-i18n-nn	ports/misc/koffice-i18n-nn
-koffice-i18n-pl	ports/misc/koffice-i18n-pl
+koffice-i18n-pl	ports/polish/koffice-i18n-pl
 koffice-i18n-sk	ports/misc/koffice-i18n-sk
 koffice-i18n-sl	ports/misc/koffice-i18n-sl
 koffice-i18n-sv	ports/misc/koffice-i18n-sv
@@ -6169,10 +6169,10 @@ pkill		ports/sysutils/pkill
 pks		ports/security/pks
 pktrace		ports/print/pktrace
 pktsuckers	ports/security/pktsuckers
-pl-aspell	ports/textproc/pl-aspell
+pl-aspell	ports/polish/pl-aspell
 pl-ooodict-PL	ports/editors/ooodict-pl_PL
 pl-openoffice	ports/editors/openoffice-pl
-pl-sms		ports/misc/pl-sms
+pl-sms		ports/polish/sms
 plan		ports/deskutils/plan
 planets		ports/astro/planets
 plasma-kmod	ports/graphics/plasma-kmod
