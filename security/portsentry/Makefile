@@ -3,12 +3,12 @@
 # Date created:		3 January 1998
 # Whom:			chris@still.whet.org
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/19 16:53:20 jseger Exp $
+# $Id: Makefile,v 1.2 1999/01/20 20:49:45 max Exp $
 #
 
-DISTNAME=	sentry-0.61
+DISTNAME=	portsentry-0.61
 CATEGORIES=	security
-MASTER_SITES=	http://www.psionic.com/tools/sentry/
+MASTER_SITES=	http://www.psionic.com/tools/
 
 MAINTAINER=	chris@still.whet.org
 
