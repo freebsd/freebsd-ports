@@ -3,7 +3,7 @@
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.13 1998/10/01 07:39:33 tg Exp $
+# $Id: Makefile,v 1.14 1998/11/24 16:06:23 tg Exp $
 
 DISTNAME=	wdm-1.0
 CATEGORIES=	x11
@@ -19,7 +19,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.2:${PORTSDIR}/graphics/png \
-		tiff34.1:${PORTSDIR}/graphics/tiff34
+		tiff.1:${PORTSDIR}/graphics/tiff34
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	wdm
@@ -28,7 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} CPPFLAGS=-I${PREFIX}/include \
 		CFLAGS="${CFLAGS} -DHAS_SETUSERCONTEXT"
 CONFIGURE_ARGS=	--with-gfx-libs="-L${PREFIX}/lib -L${LOCALBASE}/lib -lgif" \
-	--with-gfx-incs="-I${LOCALBASE}/include/tiff34 -I${LOCALBASE}/include" \
+	--with-gfx-incs="-I${LOCALBASE}/include" \
 	--with-tiff-libs="-ljpeg" \
 	--with-logdir=/var/log --with-runlockdir=/var/run \
 	--with-wdmdir=${PREFIX}/lib/X11/wdm --with-Logo=Earth200x130.xpm \

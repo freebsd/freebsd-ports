@@ -3,7 +3,7 @@
 # Date created:		Sun Sep  7 17:55:07 EDT 1997
 # Whom:			Randall Hopper <rhh@ct.picker.com>
 #
-# $Id: Makefile,v 1.11 1998/09/17 00:32:41 asami Exp $
+# $Id: Makefile,v 1.12 1998/11/21 07:27:35 steve Exp $
 #
 
 DISTNAME=	fxtv-0.47
@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rhh@ct.picker.com
 
-LIB_DEPENDS=	tiff34.1:${PORTSDIR}/graphics/tiff34 \
+LIB_DEPENDS=	tiff.1:${PORTSDIR}/graphics/tiff34 \
 		Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d    \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 

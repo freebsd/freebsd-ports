@@ -5,7 +5,7 @@
  #endif
  #ifdef HAVE_LIBTIFF
 -#include <tiffio.h>
-+#include <tiff34/tiffio.h>
++#include <tiffio.h>
  #endif
  #ifdef HAVE_LIBGIF
 -#include <gif_lib.h>
@@ -20,7 +20,7 @@
  #endif
  #ifdef HAVE_LIBTIFF
 -#include <tiffio.h>
-+#include <tiff34/tiffio.h>
++#include <tiffio.h>
  #endif
  #ifdef HAVE_LIBGIF
 -#include <gif_lib.h>

@@ -1,6 +1,6 @@
-lib/libtiff34.a
-lib/libtiff34.so.1
-lib/libtiff34.so
+lib/libtiff.a
+lib/libtiff.so.1
+lib/libtiff.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 bin/fax2tiff
@@ -20,8 +20,8 @@ bin/tiffdump
 bin/tiffinfo
 bin/tiffmedian
 bin/tiffsplit
-include/tiff34/tiff.h
-include/tiff34/tiffio.h
+include/tiff.h
+include/tiffio.h
 share/doc/tiff/bugs.html
 share/doc/tiff/build.html
 share/doc/tiff/contrib.html
@@ -61,4 +61,3 @@ share/doc/tiff/images/strike.gif
 share/doc/tiff/images/warning.gif
 @dirrm share/doc/tiff/images
 @dirrm share/doc/tiff
-@dirrm include/tiff34
