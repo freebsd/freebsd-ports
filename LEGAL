@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.66 1997/03/05 23:47:25 asami Exp $
+# $Id: LEGAL,v 1.67 1997/03/09 21:43:03 obrien Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -51,8 +51,6 @@ fmsx-*			ports/emulators/fmsx	Unclear legal status of
 fwtk-*			ports/security/fwtk	No redistribution allowed
 glimpse-*		ports/misc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
-irc-2.8.21.tar.gz	ports/net/irc		Restrictive copyright
-						in irc2.8.21/ircd/res.c
 ivs3.4-src.tar.gz	ports/net/ivs		Crypto; export-controlled
 john-1.4		ports/security/john	crypt(); export-controlled
 maxima-5.0-beta		ports/math/maxima	License required
