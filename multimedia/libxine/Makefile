@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.0.b4
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +25,8 @@ LIB_DEPENDS=	avcodec.0:${PORTSDIR}/multimedia/ffmpeg \
 		iconv.3:${PORTSDIR}/converters/libiconv \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
-		ogg.4:${PORTSDIR}/audio/libogg
+		ogg.4:${PORTSDIR}/audio/libogg \
+		mng.1:${PORTSDIR}/graphics/libmng
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
@@ -61,11 +63,17 @@ PLIST_SUB+=	HAVE_ARTS="@comment "
 .endif
 
 .if ${HAVE_GNOME:Mesound} != "" || defined(WITH_ESOUND)
-WANT_GNOME=	yes
 USE_GNOME+=	esound
 PLIST_SUB+=	HAVE_ESOUND=""
 .else
 PLIST_SUB+=	HAVE_ESOUND="@comment "
+.endif
+
+.if exists(${X11BASE}/libdata/pkgconfig/gnome-vfs-2.0.pc)
+LIB_DEPENDS+=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
+PLIST_SUB+=	HAVE_GNOMEVFS2=""
+.else
+PLIST_SUB+=	HAVE_GNOMEVFS2="@comment "
 .endif
 
 pre-everything::
