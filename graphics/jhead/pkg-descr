@@ -1,0 +1,21 @@
+'jhead' is a program to parse through the little file system in the Exif
+headers and extract digital camera settings.
+
+Information that the 'jhead' program can extract from an Exif file:
+
+	Integral low-res Exif thumbnail 
+	Shutter speed 
+	Camera F-stop number 
+	Flash used (yes/no) 
+	Focus distance (some digital cameras store this element) 
+	Focal length (most zoom cameras store their zoomed-to focal length) 
+	Equivalent 35mm focal length (Calculated from focal length, CCD
+	 size, and CCD resolution) 
+	Image resolution 
+	Time and date picture was taken 
+	Camera make and model 
+
+WWW: http://www.sentex.net/~mwandel/jhead/
+    
+- Jamie
+jamie@hermans.ca

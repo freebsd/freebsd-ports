@@ -1,0 +1,3 @@
+bin/jhead
+%%PORTDOCS%%share/doc/jhead/usage.html
+%%PORTDOCS%%@dirrm share/doc/jhead
