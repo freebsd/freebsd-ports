@@ -1,0 +1,38 @@
+--- Unix/Makefile.orig	Tue Mar 24 12:13:02 1998
++++ Unix/Makefile	Sat Dec  1 10:53:00 2001
+@@ -9,15 +9,18 @@
+ # Use : 
+ #     make install
+ 
+-DESTDIR      = ../Unix/
+-COMPIL_FLAGS = -g
++PREFIX			= %%PREFIX%%
++DESTDIRLIB		= %%PREFIX%%/lib
++DESTDIRINC		= %%PREFIX%%/include
++
++COMPIL_FLAGS = -O2
+ 
+ 
+ # SunOS: AR should be declared as ar r
+ AR      = ar -r
+ # AR      = ar r
+ 
+-INSTALL = cp -p
++INSTALL = cp -pR
+ RM      = rm -f
+ 
+ 
+@@ -51,9 +54,10 @@
+ 	ranlib $@
+ 
+ install:: $(TEST_DIRECTORY) lib$(LIB_NAME).a
+-	@if [ -d $(DESTDIR) ]; then set +x; \
+-		else (set -x; $(MKDIRHIER) $(DESTDIR) $(DESTDIR)); fi
+-	$(INSTALL) $(INSTLIBFLAGS) lib$(LIB_NAME).a $(DESTDIR) 
++	@if [ -d $(DESTDIRLIB) ]; then set +x; \
++		else (set -x; $(MKDIRHIER) $(DESTDIRLIB) $(DESTDIRLIB)); fi
++	$(INSTALL) $(INSTLIBFLAGS) lib$(LIB_NAME).a $(DESTDIRLIB) 
++	$(INSTALL) $(TCP4U_INC)/*4u.h $(DESTDIRINC)
+ 
+ test_directory: 
+ 	@if [ ! -r tcp4u.c ]; then \

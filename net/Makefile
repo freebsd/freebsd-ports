@@ -289,6 +289,7 @@
     SUBDIR += librsync
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
+    SUBDIR += libtcp4u
     SUBDIR += libunp
     SUBDIR += libunpipc
     SUBDIR += libvncserver
