@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	phpMyAdmin
-PORTVERSION=	2.5.6
-PORTREVISION=	1
+PORTVERSION=	2.5.7
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
-COMMENT=	A set of PHP-scripts to adminster MySQL over the web
+COMMENT=	A set of PHP-scripts to administer MySQL over the web
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
