@@ -35,6 +35,12 @@ INSTALL_TARGET=	install.${SUBSYS}
 SUBSYS?=	server
 
 .if ${SUBSYS} == client
+.if ${OSVERSION} >= 502000
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-client::clparse.c \
+		${PATCHDIR}/extra-patch-client::dhclient.8 \
+		${PATCHDIR}/extra-patch-client::dhclient.c \
+		${PATCHDIR}/extra-patch-client::dhclient.conf
+.endif
 MAN5=		dhclient.conf.5 dhclient.leases.5
 MAN8=		dhclient.8 dhclient-script.8
 .elif ${SUBSYS} == server
