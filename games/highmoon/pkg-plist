@@ -1,0 +1,25 @@
+bin/highmoon
+%%DATADIR%%/gfx/c_shooting.bmp
+%%DATADIR%%/gfx/c_thinking.bmp
+%%DATADIR%%/gfx/cpktblue.bmp
+%%DATADIR%%/gfx/cpktred.bmp
+%%DATADIR%%/gfx/earth.bmp
+%%DATADIR%%/gfx/explosionanim.bmp
+%%DATADIR%%/gfx/font.bmp
+%%DATADIR%%/gfx/hole.bmp
+%%DATADIR%%/gfx/jupiter.bmp
+%%DATADIR%%/gfx/mars.bmp
+%%DATADIR%%/gfx/moon.bmp
+%%DATADIR%%/gfx/shoot.bmp
+%%DATADIR%%/gfx/shootback.bmp
+%%DATADIR%%/gfx/ufoblue.bmp
+%%DATADIR%%/gfx/ufored.bmp
+@dirrm %%DATADIR%%/gfx
+%%DATADIR%%/snd/applause.wav
+%%DATADIR%%/snd/beam.wav
+%%DATADIR%%/snd/explosion.wav
+%%DATADIR%%/snd/kling.wav
+%%DATADIR%%/snd/laser.wav
+%%DATADIR%%/snd/pluck.wav
+@dirrm %%DATADIR%%/snd
+@dirrm %%DATADIR%%
