@@ -148,8 +148,6 @@ uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 vfrb101e.taz		ports/security/vscan	Commercial software
 vice-*			ports/emulators/vice	ROMs are copyrighted by
 						Commodore Business Machines
-vje.tgz			ports/japanese/vje-trial Redistribution is forbidden.
-						Trial for commercial software.
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
 xev*.tar.gz		ports/games/xbat	Possible copyright infringement
 xfntmizi-*.noarch	ports/korean/mizifont	Not a free software, but
