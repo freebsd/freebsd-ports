@@ -44,6 +44,7 @@
     SUBDIR += cpuburn
     SUBDIR += crashme
     SUBDIR += cronolog
+    SUBDIR += curly
     SUBDIR += cvsweb-converters
     SUBDIR += daemontools
     SUBDIR += daemontools53
