@@ -148,8 +148,8 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-ftp"
 			;;
 		\"gettext\")
-			echo "LIB_DEPENDS+=	intl.1:${PORTSDIR}/devel/gettext"
-			echo "CONFIGURE_ARGS+=--with-gettext=${PREFIX}"
+			echo "LIB_DEPENDS+=	intl.1:\${PORTSDIR}/devel/gettext"
+			echo "CONFIGURE_ARGS+=--with-gettext=\${PREFIX}"
 			;;
 		*)
 			echo "Invalid option(s): $*" > /dev/stderr
