@@ -8,7 +8,7 @@
 PORTNAME=	sim
 PORTVERSION=	2.3d
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://minnie.cs.adfa.oz.au/pub/PDP-11/Sims/Supnik_2.3/sources/ \
+MASTER_SITES=	ftp://minnie.tuhs.org/pub/PDP-11/Sims/Supnik_2.3/sources/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=jedgar
 DISTNAME=	${PORTNAME}_${PORTVERSION}
