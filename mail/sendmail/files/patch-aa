@@ -104,19 +104,19 @@ diff -ur mail.local/mail.local.8.orig mail.local/mail.local.8
  getservbyname(3), 
  comsat(8), 
 diff -ur mail.local/mail.local.c.orig mail.local/mail.local.c
---- mail.local/mail.local.c.orig	Mon Nov  3 19:38:29 2003
-+++ mail.local/mail.local.c	Tue May 18 07:56:42 2004
+--- mail.local/mail.local.c.orig	Mon Nov  1 21:42:42 2004
++++ mail.local/mail.local.c	Thu Dec 16 05:25:26 2004
 @@ -144,6 +144,8 @@
  bool	HoldErrs = false;		/* Hold errors in ErrBuf */
  bool	LMTPMode = false;
  bool	BounceQuota = false;		/* permanent error when over quota */
 +bool	NoBiff = false;
 +bool	NoFsync = false;
+ bool	CloseMBDB = false;
  char	*HomeMailFile = NULL;		/* store mail in homedir */
  
- #if HASHSPOOL
-@@ -205,9 +207,9 @@
- 		exit(EX_CONFIG);
+@@ -223,9 +225,9 @@
+ 		sm_exit(EX_CONFIG);
  	}
  #if HASHSPOOL
 -	while ((ch = getopt(argc, argv, "7bdD:f:h:r:lH:p:n")) != -1)
@@ -127,7 +127,7 @@ diff -ur mail.local/mail.local.c.orig mail.local/mail.local.c
  #endif /* HASHSPOOL */
  	{
  		switch(ch)
-@@ -216,6 +218,10 @@
+@@ -234,6 +236,10 @@
  			EightBitMime = false;
  			break;
  
@@ -138,7 +138,7 @@ diff -ur mail.local/mail.local.c.orig mail.local/mail.local.c
  		  case 'b':		/* bounce mail when over quota. */
  			BounceQuota = true;
  			break;
-@@ -307,6 +313,10 @@
+@@ -325,6 +331,10 @@
  			break;
  #endif /* HASHSPOOL */
  
@@ -149,7 +149,7 @@ diff -ur mail.local/mail.local.c.orig mail.local/mail.local.c
  		  case '?':
  		  default:
  			usage();
-@@ -316,7 +326,8 @@
+@@ -334,7 +344,8 @@
  	argv += optind;
  
  	/* initialize biff structures */
@@ -159,7 +159,7 @@ diff -ur mail.local/mail.local.c.orig mail.local/mail.local.c
  
  	err = sm_mbdb_initialize(mbdbname);
  	if (err != EX_OK)
-@@ -1239,6 +1250,7 @@
+@@ -1256,6 +1267,7 @@
  
  	/* Get the starting offset of the new message */
  	curoff = lseek(mbfd, (off_t) 0, SEEK_END);
@@ -167,7 +167,7 @@ diff -ur mail.local/mail.local.c.orig mail.local/mail.local.c
  	(void) sm_snprintf(biffmsg, sizeof(biffmsg), "%s@%lld\n",
  			   name, (LONGLONG_T) curoff);
  
-@@ -1301,7 +1313,7 @@
+@@ -1318,7 +1330,7 @@
  	}
  
  	/* Flush to disk, don't wait for update. */
@@ -176,7 +176,7 @@ diff -ur mail.local/mail.local.c.orig mail.local/mail.local.c
  	{
  		mailerr("450 4.2.0", "%s: %s", path, sm_errstring(errno));
  err3:
-@@ -1368,7 +1380,7 @@
+@@ -1385,7 +1397,7 @@
  		/* Attempt to truncate back to pre-write size */
  		goto err3;
  	}
@@ -185,14 +185,13 @@ diff -ur mail.local/mail.local.c.orig mail.local/mail.local.c
  		notifybiff(biffmsg);
  
  	if (setreuid(0, 0) < 0)
-@@ -1547,7 +1559,8 @@
+@@ -1564,7 +1576,7 @@
  usage()
  {
  	ExitVal = EX_USAGE;
 -	mailerr(NULL, "usage: mail.local [-7] [-b] [-d] [-l] [-f from|-r from] [-h filename] user ...");
 +	mailerr(NULL, "usage: mail.local [-7] [-b] [-B] [-d] [-l] [-s] [-f from|-r from] [-h filename] user ...");
-+
- 	exit(ExitVal);
+ 	sm_exit(ExitVal);
  }
  
 diff -ur rmail/rmail.c src/contrib/sendmail/rmail/rmail.c
