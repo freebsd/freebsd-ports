@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libebml
-PORTVERSION=	0.6.4
-PORTREVISION=	2
+PORTVERSION=	0.6.5
 CATEGORIES=	textproc
 MASTER_SITES=	http://dl.matroska.org/downloads/libebml/
 
@@ -16,7 +15,6 @@ COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 BUILD_WRKSRC=	${WRKSRC}/make/linux
 INSTALL_WRKSRC=	${WRKSRC}/make/linux
 
