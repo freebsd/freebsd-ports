@@ -6135,7 +6135,6 @@ primes		src/games/primes
 printenv	src/usr.bin/printenv
 printf		src/usr.bin/printf
 prips		ports/sysutils/prips
-priss		ports/net/priss
 procctl		src/usr.sbin/procctl
 procfs		src/sys/fs/procfs
 procmail	ports/mail/procmail
