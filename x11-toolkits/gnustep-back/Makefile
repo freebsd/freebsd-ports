@@ -6,11 +6,7 @@
 #
 
 PORTNAME=	gnustep-back
-.if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	0.8.9
-.else
-PORTVERSION=	0.8.5
-.endif
+PORTVERSION=	0.9.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
@@ -56,9 +52,6 @@ CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
 PLIST_SUB+=		BACK=art USE_XLIB="@comment "
 PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="@comment " USE_ART=""
 PKGNAMESUFFIX?=		-art
-.if !defined(WITH_GNUSTEP_DEVEL)
-EXTRA_PATCHES+=		${FILESDIR}/ftfont.m.diff
-.endif
 .else
 CONFIGURE_ARGS+=	--enable-graphics=xlib --with-name=back
 PLIST_SUB+=		BACK=back

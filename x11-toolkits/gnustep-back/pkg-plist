@@ -1,32 +1,12 @@
-%%GNUSTEP_DEVEL%%System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/English.lproj/nfontFaceNames.strings
+System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/English.lproj/nfontFaceNames.strings
 System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Info-gnustep.plist
-%%GNUSTEP_DEVEL%%System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Swedish.lproj/nfontFaceNames.strings
-System/Library/Bundles/libgnustep-%%BACK%%.bundle/%%NOFLAT%%libgnustep-%%BACK%%
+System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Swedish.lproj/nfontFaceNames.strings
+System/Library/Bundles/libgnustep-%%BACK%%.bundle/libgnustep-%%BACK%%
 System/Library/Bundles/libgnustep-%%BACK%%.bundle/stamp.make
-%%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Headers/gnustep/gsc/GSContext.h
-%%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Headers/gnustep/gsc/GSGState.h
-%%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Headers/gnustep/gsc/GSGStateOps.h
-%%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Headers/gnustep/gsc/gscolors.h
-%%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Headers/gnustep/x11/XGServer.h
-%%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Headers/gnustep/x11/XGServerWindow.h
-%%GNUSTEP_STABLE%%%%USE_ART%%%%SYSTEMLIBRARY%%/Headers/gnustep/art/ARTContext.h
-%%GNUSTEP_STABLE%%%%USE_XDPS%%%%SYSTEMLIBRARY%%/Headers/gnustep/xdps/NSDPSContext.h
-%%GNUSTEP_STABLE%%%%USE_XLIB%%%%SYSTEMLIBRARY%%/Headers/gnustep/xlib/XGContext.h
-%%GNUSTEP_STABLE%%%%USE_XLIB%%%%SYSTEMLIBRARY%%/Headers/gnustep/xlib/XGGState.h
-%%GNUSTEP_STABLE%%%%USE_XLIB%%%%SYSTEMLIBRARY%%/Headers/gnustep/xlib/XGGeometry.h
-%%GNUSTEP_STABLE%%%%USE_XLIB%%%%SYSTEMLIBRARY%%/Headers/gnustep/xlib/XGPrivate.h
-%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/gpbs.1.gz
-%%USE_XLIB%%System/Tools/%%NOFLAT%%font_cacher
-System/Tools/%%NOFLAT%%gpbs
-%%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/x11
-%%GNUSTEP_STABLE%%%%USE_ART%%@dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/art
-%%GNUSTEP_STABLE%%%%USE_XDPS%%@dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/xdps
-%%GNUSTEP_STABLE%%%%USE_XLIB%%@dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/xlib
-%%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/gsc
-%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/%%GNU_ARCH%%
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Swedish.lproj
-%%GNUSTEP_DEVEL%%@dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/English.lproj
+System/Library/Documentation/man/man1/gpbs.1.gz
+%%USE_XLIB%%System/Tools/font_cacher
+System/Tools/gpbs
+@dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/Swedish.lproj
+@dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources/English.lproj
 @dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle/Resources
 @dirrm System/Library/Bundles/libgnustep-%%BACK%%.bundle
