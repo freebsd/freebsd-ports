@@ -1101,6 +1101,7 @@ cwtext		ports/textproc/cwtext
 cxmon		ports/devel/cxmon
 cxref		ports/devel/cxref
 cxsc		ports/math/cxsc
+cxxtest		ports/devel/cxxtest
 cy-aspell	ports/textproc/cy-aspell
 cybercalendar	ports/www/cybercalendar
 cybervrml97	ports/graphics/cybervrml97
