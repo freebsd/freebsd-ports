@@ -1,5 +1,5 @@
---- contrib/new-list.orig	Sun Apr 27 20:23:43 1997
-+++ contrib/new-list	Sun Apr 27 20:23:58 1997
+--- contrib/new-list.orig	Tue Dec 10 01:50:45 1996
++++ contrib/new-list	Wed Sep 10 00:57:18 1997
 @@ -41,7 +41,7 @@
  # Define all of the mailer properties:
  # It is possible that one or both of $sendmail_command and $bounce_mailer

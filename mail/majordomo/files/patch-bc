@@ -1,5 +1,5 @@
---- config-test.orig	Sun Apr 27 20:23:06 1997
-+++ config-test	Sun Apr 27 20:23:21 1997
+--- config-test.orig	Thu Aug 28 00:17:13 1997
++++ config-test	Wed Sep 10 00:57:17 1997
 @@ -237,9 +237,9 @@
  else {
      print "You have defined neither \$mailer, nor \$sendmail_command.\n";

@@ -1,5 +1,5 @@
---- resend.orig	Sun Apr 27 20:26:33 1997
-+++ resend	Sun Apr 27 20:26:49 1997
+--- resend.orig	Wed Aug 27 23:59:24 1997
++++ resend	Wed Sep 10 00:57:38 1997
 @@ -111,7 +111,7 @@
  # XXX It is possible that owner-$opt_l won't be the right address, but we
  # have little choice.  Sending the bounces to $whoami_owner is an option,
@@ -9,7 +9,7 @@
  $bounce_mailer = $bounce_mailer || "$sendmail_command -f\$sender -t";
  &set_mail_from("owner-$opt_l");
  &set_mail_sender("owner-$opt_l");
-@@ -928,7 +928,7 @@
+@@ -924,7 +924,7 @@
      else {
  	# Painful, but we have to provide some kind of backwards
  	# compatibility and this is what 1.93 used
