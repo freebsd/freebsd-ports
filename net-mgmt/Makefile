@@ -134,6 +134,7 @@
     SUBDIR += py-flowtools
     SUBDIR += py-ipy
     SUBDIR += py-snmp
+    SUBDIR += py-yapsnmp
     SUBDIR += rancid
     SUBDIR += rate
     SUBDIR += remarp
