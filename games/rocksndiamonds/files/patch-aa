@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Dec  5 16:24:39 1998
++++ Makefile	Thu May 27 13:39:26 1999
+@@ -43,8 +43,6 @@
+ 
+ .EXPORT_ALL_VARIABLES:
+ 
+-MAKE = make
+-
+ SRC_DIR = src
+ MAKE_CMD = @$(MAKE) -C $(SRC_DIR)
+ 
