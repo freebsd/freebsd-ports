@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
 	 	ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
 
-MAINTAINER=	cpiazza@FreeBSD.org
+MAINTAINER=	patseal@hyperhost.net
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
