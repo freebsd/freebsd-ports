@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	libxml++
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME:S/+/plus/g}
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	XML API for C++
 
-USE_GNOME=	gnomehack gnometarget libxml2 pkgconfig
+USE_GNOME=	gnomehack lthack gnometarget libxml2 pkgconfig
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
