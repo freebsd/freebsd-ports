@@ -1,14 +1,14 @@
 # ex:ts=8 
 # Ports collection makefile for:	egcs 
-# Version required: 			1998-08-03
+# Version required: 			1998-09-14
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.29 1998/09/04 18:56:55 obrien Exp $
+# $Id: Makefile,v 1.30 1998/09/10 04:05:26 obrien Exp $
 #
 
-DISTNAME=	egcs-1.1b
-PKGNAME=	egcs-1.1.0.2
+DISTNAME=	egcs-19980914
+PKGNAME=	egcs-19980914
 CATEGORIES=	lang
 MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/ \
 		ftp://cambridge.cygnus.com/pub/egcs/releases/${DISTNAME}/ \
@@ -16,7 +16,8 @@ MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/ \
 
 MAINTAINER=	obrien@FreeBSD.org
 
-EGCS_REV=	egcs-2.91.57
+EGCS_REV=	egcs-2.92.07
+LIBSTDCPP_REV=	2.9.0
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${GNUHOST}
 GNUHOST=	i386-unknown-freebsd
 GNU_CONFIGURE=	yes
@@ -57,8 +58,8 @@ post-install:
 	ln -f ${PREFIX}/bin/g++ ${PREFIX}/bin/eg++
 	${MV} ${PREFIX}/lib/libiberty.a  \
 		${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}
-	${MV} ${PREFIX}/lib/libstdc++.a  \
-		${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}
+	${MV} -f ${PREFIX}/lib/libstdc++.a.${LIBSTDCPP_REV}  \
+		${PREFIX}/lib/gcc-lib/${GNUHOST}/${EGCS_REV}/libstdc++.a
 	if [ ! -f ${PREFIX}/info/dir ]; then \
 	    ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
