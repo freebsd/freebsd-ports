@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	1.99r10
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
@@ -19,10 +20,9 @@ COMMENT=	Embeds a Perl interpreter in the Apache2 server
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE2_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE2_PORT}
 
-USE_PERL5=	YES
-
-INSTALLS_SHLIB=	YES
-LDCONFIG_DIRS=	%%PREFIX%%/libexec/apache2/
+PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	MP_APXS=${LOCALBASE}/sbin/apxs \
+		MP_INST_APACHE2=1 PREFIX=${PREFIX}
 
 MAN3=		Apache::TestRequest.3 Apache::TestSmoke.3 Apache::TestRun.3 \
 		Apache::TestTrace.3 Apache::TestMM.3 Bundle::ApacheTest.3 \
@@ -41,13 +41,8 @@ MAN3+=		ModPerl::Config.3 Apache::TestConfig.3
 ## this port requires PERL 5.6.x or later
 ##
 .if ${PERL_LEVEL} < 500600
-IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
+IGNORE=		requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
-
-do-configure:
-	@ cd ${WRKSRC}; \
-	${PERL5} Makefile.PL MP_APXS=${LOCALBASE}/sbin/apxs \
-		MP_INST_APACHE2=1 PREFIX=${PREFIX}
 
 post-install:
 	${MKDIR} ${PREFIX}/include/apache2/modules/perl
