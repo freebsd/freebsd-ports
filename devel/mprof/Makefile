@@ -3,12 +3,12 @@
 # Date created:         Sat Nov  5 01:16:33 PST 1994
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.7 1996/10/18 08:38:18 max Exp $
+# $Id: Makefile,v 1.8 1996/11/18 11:23:19 asami Exp $
 #
 
 DISTNAME=       mprof-3.0
 CATEGORIES=	devel
-MASTER_SITES=   ftp://cs.colorado.edu/pub/misc/
+MASTER_SITES=   ftp://ftp.cs.colorado.edu/pub/misc/
 EXTRACT_SUFX=	.tar.Z
 
 WRKSRC=		${WRKDIR}
