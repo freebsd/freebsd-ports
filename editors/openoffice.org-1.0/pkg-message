@@ -60,8 +60,8 @@ ${PREFIX}/bin/openoffice-swriter
 4 Setup problems
 ----------------
 
-If the setup complains about a missing file
-"setup.ins", it's time to upgrade your FreeBSD system
-to the lastest version. You will encounter this bug
-only if your OS is older than FreeBSD 4.6 STABLE.
-4.6 RELEASE is still affected.
+If the setup complains about a missing file "setup.ins",
+it's time to upgrade your FreeBSD system to the lastest
+version. You will encounter this bug only if your OS is
+older than FreeBSD 4.7-RELEASE. 4.6-RELEASE and
+4.6.2-RELEASE are still affected.
