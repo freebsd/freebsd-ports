@@ -1,4 +1,5 @@
 bin/ftp
+bin/kauth
 bin/kdestroy
 bin/kf
 bin/kgetcred
@@ -22,6 +23,7 @@ include/asn1_err.h
 include/base64.h
 include/der.h
 include/editline.h
+include/fnmatch.h
 include/getarg.h
 include/gssapi.h
 include/hdb-private.h
@@ -59,7 +61,7 @@ info/heimdal.info
 @exec install-info %D/info/heimdal.info %D/info/dir
 lib/libasn1.a
 lib/libasn1.so
-lib/libasn1.so.5
+lib/libasn1.so.6
 lib/libeditline.a
 lib/libgssapi.a
 lib/libgssapi.so
@@ -81,7 +83,7 @@ lib/libotp.so
 lib/libotp.so.1
 lib/libroken.a
 lib/libroken.so
-lib/libroken.so.14
+lib/libroken.so.16
 lib/libsl.a
 lib/libsl.so
 lib/libsl.so.1

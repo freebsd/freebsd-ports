@@ -1,15 +1,17 @@
---- ltmain.sh.orig	Wed Aug 30 08:22:05 2000
-+++ ltmain.sh	Wed Aug 30 08:24:36 2000
-@@ -4058,12 +4058,6 @@
- 	  IFS="$save_ifs"
+--- ltmain.sh.orig	Mon Aug 19 07:22:52 2002
++++ ltmain.sh	Mon Aug 19 07:23:04 2002
+@@ -4210,10 +4210,10 @@
  	fi
  
--	# Install the pseudo-library for information purposes.
+ 	# Install the pseudo-library for information purposes.
 -	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
 -	instname="$dir/$name"i
 -	$show "$install_prog $instname $destdir/$name"
 -	$run eval "$install_prog $instname $destdir/$name" || exit $?
--
++	#name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
++	#instname="$dir/$name"i
++	#$show "$install_prog $instname $destdir/$name"
++	#$run eval "$install_prog $instname $destdir/$name" || exit $?
+ 
  	# Maybe install the static library, too.
  	test -n "$old_library" && staticlibs="$staticlibs $dir/$old_library"
- 	;;
