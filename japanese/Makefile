@@ -76,6 +76,7 @@
     SUBDIR += esecanna-module-vje25
     SUBDIR += esecanna-module-vje30
     SUBDIR += esecanna-module-wnn6
+    SUBDIR += estraier
     SUBDIR += eterm
     SUBDIR += ewipe
     SUBDIR += exmh2
