@@ -1,11 +1,11 @@
---- libdib/Makefile.in.orig	Fri Sep 22 04:14:36 2000
-+++ libdib/Makefile.in	Sat Nov  4 20:27:35 2000
+--- libdib/Makefile.in.orig	Tue Nov 14 19:32:10 2000
++++ libdib/Makefile.in	Mon Dec 18 22:33:23 2000
 @@ -22,30 +22,34 @@
  libdir = @libdir@
  mandir = @mandir@
  
--CFLAGS = @CFLAGS@ @DEFS@ -I.
-+CFLAGS = @CFLAGS@ @DEFS@ -I. -I..
+-CFLAGS = @CPPFLAGS@ @CFLAGS@ @DEFS@ -I.
++CFLAGS = @CPPFLAGS@ @CFLAGS@ @DEFS@ -I. -I..
  
  MKINSTALLDIRS = $(srcdir)/mkinstalldirs
  
