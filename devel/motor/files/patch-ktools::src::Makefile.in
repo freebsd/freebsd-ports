@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- ktools/src/Makefile.in	2001/04/17 13:43:29	1.1
++++ ktools/src/Makefile.in	2001/04/17 13:43:36
+@@ -88,7 +88,7 @@
+ noinst_LIBRARIES = libkonst.a
+ libkonst_a_SOURCES = konst.d.cc konst.fs.cc konst.list.cc konst.logic.cc konst.process.cc konst.socket.cc konst.string.cc konst.ui.edit.cc konst.ui.fm.cc konst.ui.func.cc konst.ui.horbar.cc konst.ui.input.cc konst.ui.menu.cc konst.ui.skel.cc konst.ui.text.cc konst.ui.tree.cc konst.ui.window.cc konst.ui.dlg.cc
+ EXTRA_DIST = konst.d.cc konst.fs.cc konst.list.cc konst.logic.cc konst.process.cc konst.socket.cc konst.string.cc konst.ui.edit.cc konst.ui.fm.cc konst.ui.func.cc konst.ui.horbar.cc konst.ui.input.cc konst.ui.menu.cc konst.ui.skel.cc konst.ui.text.cc konst.ui.tree.cc konst.ui.window.cc konst.ui.dlg.cc
+-CXXFLAGS = -g
++#CXXFLAGS = -g
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 

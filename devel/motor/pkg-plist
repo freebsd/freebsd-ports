@@ -1,30 +1,47 @@
 bin/motor
+share/locale/de/LC_MESSAGES/motor.mo
 share/locale/pl/LC_MESSAGES/motor.mo
 share/locale/ru/LC_MESSAGES/motor.mo
-share/motor/COPYING
+share/locale/zh_CN/LC_MESSAGES/motor.mo
 share/motor/external
 share/motor/syntax
 share/motor/templates/library/static/Browser
-share/motor/templates/library/static/Buildrules
+share/motor/templates/library/static/Debug
+share/motor/templates/library/static/Dist
 share/motor/templates/library/static/Folders
-share/motor/templates/library/static/Makefile
-share/motor/templates/library/static/rpm.Dist
-share/motor/templates/library/static/tar.gz.Dist
+share/motor/templates/library/static/Makefile.func
+share/motor/templates/library/static/Parserules
+share/motor/templates/library/static/[value name].spec.tmpl
+share/motor/templates/library/static/configure.in.tmpl
 share/motor/templates/terminal program/C++/Browser
-share/motor/templates/terminal program/C++/Buildrules
+share/motor/templates/terminal program/C++/Debug
+share/motor/templates/terminal program/C++/Dist
 share/motor/templates/terminal program/C++/Folders
-share/motor/templates/terminal program/C++/Makefile
+share/motor/templates/terminal program/C++/Makefile.func
+share/motor/templates/terminal program/C++/Parserules
 share/motor/templates/terminal program/C++/[value name].cc.tmpl
-share/motor/templates/terminal program/C++/rpm.Dist
-share/motor/templates/terminal program/C++/tar.gz.Dist
+share/motor/templates/terminal program/C++/[value name].spec.tmpl
+share/motor/templates/terminal program/C++/configure.in.tmpl
 share/motor/templates/terminal program/C/Browser
-share/motor/templates/terminal program/C/Buildrules
+share/motor/templates/terminal program/C/Debug
+share/motor/templates/terminal program/C/Dist
 share/motor/templates/terminal program/C/Folders
-share/motor/templates/terminal program/C/Makefile
+share/motor/templates/terminal program/C/Makefile.func
+share/motor/templates/terminal program/C/Parserules
 share/motor/templates/terminal program/C/[value name].c.tmpl
-share/motor/templates/terminal program/C/rpm.Dist
-share/motor/templates/terminal program/C/tar.gz.Dist
+share/motor/templates/terminal program/C/[value name].spec.tmpl
+share/motor/templates/terminal program/C/configure.in.tmpl
+share/motor/templates/terminal program/java/Browser
+share/motor/templates/terminal program/java/Debug
+share/motor/templates/terminal program/java/Dist
+share/motor/templates/terminal program/java/Folders
+share/motor/templates/terminal program/java/Makefile.func
+share/motor/templates/terminal program/java/Parserules
+share/motor/templates/terminal program/java/[value name].java.tmpl
+share/motor/templates/terminal program/java/[value name].spec.tmpl
+share/motor/templates/terminal program/java/configure.in.tmpl
 share/motor/themes
+@dirrm share/motor/templates/terminal program/java
 @dirrm share/motor/templates/terminal program/C++
 @dirrm share/motor/templates/terminal program/C
 @dirrm share/motor/templates/terminal program
