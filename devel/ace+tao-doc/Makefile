@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	ace+tao-doc
-PORTVERSION=	5.3.1
+PORTVERSION=	5.4.0
 CATEGORIES=	devel
 MASTER_SITES=	http://deuce.doc.wustl.edu/old_distribution/ \
 		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/old_distribution/
-DISTNAME=	ACE-${PORTVERSION}-html
+DISTNAME=	ACE-${PORTVERSION:C/\.0$//}-html
 
 MAINTAINER=	sem@ciam.ru
 COMMENT=	The ACE+TAO HTML documentation
 
-USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/ACE_wrappers
+WRKSRC=		${WRKDIR}/html
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
 DIRLIST=	${WRKDIR}/dir-list
@@ -24,7 +23,7 @@ INSTALL_DIR=	share/doc/${PORTNAME}
 
 pre-install:
 	@${ECHO_MSG} "--> Generating a directories list"; \
-	cd ${WRKSRC}/html; \
+	cd ${WRKSRC}; \
 	${RM} -f ${PLIST}; ${ECHO_CMD} "@dirrm ${INSTALL_DIR}" > ${DIRLIST}; \
 	for d in `${FIND} . -type d`; do \
 		n=`${ECHO_CMD} $${d}|${SED} -e 's#^./##'`; \
@@ -41,7 +40,7 @@ pre-install:
 
 do-install:
 	@${ECHO_MSG} "--> Installing files:"; \
-	${MKDIR} ${DOCSDIR}; cd ${WRKSRC}/html; \
+	${MKDIR} ${DOCSDIR}; cd ${WRKSRC}; \
 	for d in `${FIND} . -type d`; do \
 		n=`${ECHO_CMD} $${d}|${SED} -e 's#^./##'`; \
 		if [ "$${n}" != "." ]; then \
