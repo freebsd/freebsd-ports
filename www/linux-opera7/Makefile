@@ -11,14 +11,14 @@ CATEGORIES=	www linux
 MASTER_SITES=	http://opera.online.no/linux/600/final/en/qt_static/ \
 		ftp://ftp.opera.com/pub/opera/linux/600/final/en/qt_static/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}.1-static-qt.i386
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/0./0-/}.1-static-qt.i386
 
 MAINTAINER=	des@FreeBSD.org
 
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif \
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png
 
-FORBIDDEN=	Known javascript-related security hole
+#FORBIDDEN=	Known javascript-related security hole
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
