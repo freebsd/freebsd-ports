@@ -1,16 +1,16 @@
---- config/Makefile.SH.orig	Wed Nov 17 02:12:01 1999
-+++ config/Makefile.SH	Mon Jan 10 02:37:39 2000
-@@ -293,7 +293,8 @@
- 	\$(INSTALL_DATA)    $doc/translations \$(MISCDIR)
- 
+--- config/Makefile.SH.orig	Tue Mar 28 02:33:26 2000
++++ config/Makefile.SH	Sat Jul 15 10:52:27 2000
+@@ -290,7 +290,8 @@
  install-doc:
+ 	-mkdir -p \$(MISCDIR)
+ 	-mkdir -p \$(BINDIR)
 -	-cd $doc; \$(MAKE) all
 +#	-cd $doc; \$(MAKE) all
-+	-\$(INSTALL_DATA) $doc/Makefile   \$(MISCDIR)
- 	-\$(INSTALL_DATA) $doc/paricfg.tex   \$(MISCDIR)
- 	-\$(INSTALL_DATA) $doc/parimacro.tex \$(MISCDIR)
- 	-\$(INSTALL_DATA) $doc/usersch1.tex \$(MISCDIR)
-@@ -301,10 +302,10 @@
++	-\$(INSTALL_PROGRAM) $doc/Makefile    \$(BINDIR)
+ 	-\$(INSTALL_PROGRAM) $doc/gphelp    \$(BINDIR)
+ 	-\$(INSTALL_DATA) $doc/translations \$(MISCDIR)
+ 	-\$(INSTALL_DATA) $doc/paricfg.tex  \$(MISCDIR)
+@@ -300,10 +301,10 @@
  	-\$(INSTALL_DATA) $doc/usersch3.tex \$(MISCDIR)
  	-\$(INSTALL_DATA) $doc/usersch4.tex \$(MISCDIR)
  	-\$(INSTALL_DATA) $doc/usersch5.tex \$(MISCDIR)
@@ -25,7 +25,7 @@
  
  install-data:
  	-mkdir -p \$(DATADIR)
-@@ -378,13 +379,13 @@
+@@ -377,13 +378,13 @@
  
  if test -n "$emacs"; then
    cat >> $file << EOT

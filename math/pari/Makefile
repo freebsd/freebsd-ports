@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pari
-PORTVERSION=	2.0.18b
+PORTVERSION=	2.0.20b
 CATEGORIES=	math
 MASTER_SITES=	ftp://www.gn-50uma.de/gn/gn-50uma.de/pari-2.0/
-DISTNAME=	pari-2.0.18.beta
+DISTNAME=	pari-2.0.20.beta
 
 MAINTAINER=     yoshiaki@kt.rim.or.jp
 
@@ -21,7 +21,7 @@ CONFIGURE_SCRIPT = Configure
 CONFIGURE_ARGS = --prefix=${PREFIX}
 CFLAGS=
 
-#USE_GMAKE = Yes
+USE_GMAKE = Yes
 MAKE_ARGS= 	gp
 
 MAN1=		gp.1 gphelp.1
