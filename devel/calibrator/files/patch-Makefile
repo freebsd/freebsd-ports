@@ -1,12 +1,13 @@
 --- Makefile.orig	Mon Oct 13 11:14:02 2003
 +++ Makefile	Mon Oct 13 11:16:20 2003
-@@ -0,0 +1,9 @@
+@@ -0,0 +1,10 @@
 +# $FreeBSD$
 +
 +PROG=	calibrator
 +SRCS=	calibrator.c
 +NOMAN=	defined
 +
++CFLAGS+=	-D_ANSI_SOURCE
 +LDADD+=	-lm
 +
 +.include <bsd.prog.mk>
