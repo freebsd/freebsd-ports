@@ -101,8 +101,8 @@ post-install:
 #
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
-		${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/sshd.sh; \
-		${ECHO} "[ -x ${PREFIX}/sbin/sshd ] && ${PREFIX}/sbin/sshd && ${ECHO} -n ' sshd'" >> ${PREFIX}/etc/rc.d/sshd.sh; \
+		${SED} -e 's+!!PREFIX!!+${PREFIX}+' < ${FILESDIR}/sshd.sh \
+			> ${PREFIX}/etc/rc.d/sshd.sh
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/sshd.sh; \
 	fi
 
