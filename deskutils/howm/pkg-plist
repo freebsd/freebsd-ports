@@ -5,11 +5,12 @@
 %%EMACS_SITE_LISPDIR%%/howm-date.el
 %%EMACS_SITE_LISPDIR%%/howm-menu.el
 %%EMACS_SITE_LISPDIR%%/howm-misc.el
-%%EMACS_SITE_LISPDIR%%/howm-mode-mode.el
 %%EMACS_SITE_LISPDIR%%/howm-mode.el
 %%EMACS_SITE_LISPDIR%%/howm-reminder.el
 %%EMACS_SITE_LISPDIR%%/howm-version.el
 %%EMACS_SITE_LISPDIR%%/howm-view.el
+%%EMACS_SITE_LISPDIR%%/howm.el
+%%EMACS_SITE_LISPDIR%%/riffle.el
 %%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/action-lock.elc
 %%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/bcomp.elc
 %%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/cheat-font-lock.elc
@@ -17,20 +18,25 @@
 %%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/howm-date.elc
 %%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/howm-menu.elc
 %%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/howm-misc.elc
-%%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/howm-mode-mode.elc
 %%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/howm-mode.elc
 %%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/howm-reminder.elc
 %%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/howm-version.elc
 %%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/howm-view.elc
+%%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/howm.elc
+%%COMPILED_ELISP%%%%EMACS_SITE_LISPDIR%%/riffle.elc
 %%EXAMPLESDIR%%/en/0000-00-00-000000.howm
 %%EXAMPLESDIR%%/ja/0000-00-00-000000.howm
 %%DOCSDIR%%/README-j.html
+%%DOCSDIR%%/come.png
+%%DOCSDIR%%/go.png
 %%DOCSDIR%%/index-j.html
 %%DOCSDIR%%/index.html
 %%DOCSDIR%%/s-cat.png
 %%DOCSDIR%%/s-menu.png
 %%DOCSDIR%%/s-screen-shot.png
 %%DOCSDIR%%/s-search.png
+%%DOCSDIR%%/todo.png
+%%DOCSDIR%%/updown.png
 @dirrm %%EXAMPLESDIR%%/en
 @dirrm %%EXAMPLESDIR%%/ja
 @dirrm %%EXAMPLESDIR%%
