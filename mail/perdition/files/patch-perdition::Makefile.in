@@ -1,0 +1,11 @@
+--- perdition/Makefile.in.orig	Mon Dec 15 08:19:21 2003
++++ perdition/Makefile.in	Mon Dec 15 14:35:08 2003
+@@ -573,8 +573,6 @@
+ 	for i in pop3 pop3s imap4 imap4s imaps; do \
+ 		(cd $(DESTDIR)$(sbindir) && rm -f perdition.$$i && \
+ 			ln -sf perdition perdition.$$i); \
+-		(cd $(DESTDIR)$(mandir)/man8 && rm -f perdition.$$i && \
+-			ln -sf perdition.8 perdition.$$i.8); \
+ 	done
+ 
+ uninstall-local:
