@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
