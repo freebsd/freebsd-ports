@@ -18,10 +18,13 @@ LIB_DEPENDS=  	SDL-1.0.2:${PORTSDIR}/devel/sdl
 
 DATAVERSION=	0.8.6
 
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 post-install:
 		@(cd ${WRKDIR}/amph && ${TAR} -c -f - * ) \
