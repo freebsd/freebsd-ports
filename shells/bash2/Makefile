@@ -1,13 +1,13 @@
 # New ports collection makefile for:	bash
-# Version required:     1.14.6
+# Version required:     1.14.7
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.14 1995/12/03 00:14:27 ache Exp $
+# $Id: Makefile,v 1.15 1996/02/09 07:20:37 adam Exp $
 #
 
-DISTNAME=       bash-1.14.6
-WRKSRC=         ${WRKDIR}/bash-1.14.6
+DISTNAME=       bash-1.14.7
+WRKSRC=         ${WRKDIR}/bash-1.14.7
 CATEGORIES+=	shells
 MASTER_SITES=   ftp://slc2.ins.cwru.edu/pub/dist/
 
