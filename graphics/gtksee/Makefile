@@ -6,17 +6,14 @@
 #
 
 PORTNAME=	gtksee
-PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTVERSION=	0.5.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.linux.tucows.com/files/x11/graphics/ \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
+MASTER_SITES=	http://download.berlios.de/gtksee/
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image viewer
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip
@@ -24,9 +21,14 @@ RUN_DEPENDS=	bzip:${PORTSDIR}/archivers/bzip
 RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 
-USE_GNOME=	gtk12
+USE_GNOME=	gtk12 gnometarget
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS=""|CFLAGS="$$CFLAGS"|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

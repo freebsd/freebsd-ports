@@ -1,2 +1,4 @@
 bin/gtksee
+share/locale/es/LC_MESSAGES/gtksee.mo
+share/locale/fr/LC_MESSAGES/gtksee.mo
 share/locale/zh_CN.EUC/LC_MESSAGES/gtksee.mo
