@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	1.2.2
+PORTVERSION=	1.5
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.tobez.org/download/port-mirrors/www/wordpress/
+MASTER_SITES=	ftp://ftp.stu.edu.tw/pub/wordpress/
 MASTER_SITE_SUBDIR=	cafelog
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -23,10 +22,18 @@ NO_BUILD=	YES
 WANT_PHP_WEB=	YES
 WORDPRESS?=	www/data-dist/wordpress
 PLIST_SUB+=	WORDPRESS=${WORDPRESS}
+PLIST=		${WRKDIR}/pkg-plist
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	license.txt readme.html
 .endif
+
+pre-install:
+	cd ${WRKSRC} && ${FIND} -s * -type f | \
+		${SED} -e 's|^|${WORDPRESS}/|' > ${PLIST} \
+		&& ${FIND} -d * -type d | \
+		${SED} -e 's|^|@dirrm ${WORDPRESS}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST}
 
 do-install:
 	-${MKDIR} ${PREFIX}/${WORDPRESS}
@@ -41,12 +48,6 @@ do-install:
 .endif
 
 post-install:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "          **** NOTE ****"
-	@${ECHO_MSG} "Before the first use of WordPress, copy wp-config-sample.php to wp-config.php"
-	@${ECHO_MSG} "in ${PREFIX}/${WORDPRESS}"
-	@${ECHO_MSG} "And Modify it to fit your MySQL."
-	@${ECHO_MSG} "Maybe you need 'mysqladmin create wordpress' first"
-	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
