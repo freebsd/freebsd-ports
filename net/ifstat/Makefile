@@ -14,12 +14,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network interface statistics monitoring tool
 
-LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
-
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
 MAN1=		ifstat.1
 PLIST_FILES=	bin/ifstat
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_SNMP)
+LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+.else
+CONFIGURE_ARGS+=	--without-snmp
+.endif
+
+.include <bsd.port.post.mk>
