@@ -1,7 +1,9 @@
 bin/electricsheep
+bin/convert-flame
+bin/mpeg2dec_onroot
+bin/hqi-flame
 bin/anim-flame
 bin/pick-flame
-bin/mpeg-loop
 share/electricsheep/electricsheep-frown.tif
 share/electricsheep/electricsheep-smile.tif
 share/electricsheep/electricsheep-splash-0.tif
