@@ -9,12 +9,3 @@
  CONFIGFILES=sshd_config.out ssh_config.out moduli.out
  CONFIGFILES_IN=sshd_config ssh_config moduli
  
-@@ -218,7 +220,7 @@
- 	$(srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/$(mansubdir)8
- 	$(srcdir)/mkinstalldirs $(DESTDIR)$(libexecdir)
- 	$(srcdir)/mkinstalldirs $(DESTDIR)$(PRIVSEP_PATH)
--	chmod 0700 $(DESTDIR)$(PRIVSEP_PATH)
-+	-chmod 0700 $(DESTDIR)$(PRIVSEP_PATH)
- 	$(INSTALL) -m 0755 -s ssh $(DESTDIR)$(bindir)/ssh
- 	$(INSTALL) -m 0755 -s scp $(DESTDIR)$(bindir)/scp
- 	$(INSTALL) -m 0755 -s ssh-add $(DESTDIR)$(bindir)/ssh-add
