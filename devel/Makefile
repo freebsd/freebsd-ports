@@ -724,11 +724,14 @@
     SUBDIR += ruby-filelock
     SUBDIR += ruby-flex_rb
     SUBDIR += ruby-gconf
+    SUBDIR += ruby-gconf2
     SUBDIR += ruby-gemfinder
     SUBDIR += ruby-gettext
+    SUBDIR += ruby-glib2
     SUBDIR += ruby-gnustep
     SUBDIR += ruby-intl
     SUBDIR += ruby-libglade
+    SUBDIR += ruby-libglade2
     SUBDIR += ruby-libgtop
     SUBDIR += ruby-locale
     SUBDIR += ruby-metaruby

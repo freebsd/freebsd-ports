@@ -1,11 +1,11 @@
-# New ports collection makefile for:	ruby-libart
+# New ports collection makefile for:	Ruby/libart2
 # Date created:		1 September 2002
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	libart
+PORTNAME=	libart2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
 CATEGORIES=	graphics ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
@@ -16,24 +16,25 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	art_lgpl.5:${PORTSDIR}/graphics/libart
+LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-.include "${.CURDIR}/../../x11/ruby-gnome/Makefile.common"
+.include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
-WRKSRC=		${RUBY_GNOME_WRKSRC}/${PORTNAME}
+WRKSRC=		${RUBY_GNOME_WRKSRC}/libart
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	ChangeLog	README
+DOCS=		ChangeLog \
+		README
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${CP} -R ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
-.for f in ${DOCS_EN}
+.for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif

@@ -1,13 +1,13 @@
-# New ports collection makefile for:	Ruby-GNOME2
-# Date created:		28 February 2001
+# New ports collection makefile for:	Ruby/GnomeCanvas2
+# Date created:		24 November 2002
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnome2
+PORTNAME=	gnomecanvas2
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-CATEGORIES=	x11 ruby
+CATEGORIES=	graphics ruby gnome
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,27 +16,22 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
-		${RUBY_SITEARCHLIBDIR}/gnomecanvas2.so:${PORTSDIR}/graphics/ruby-gnomecanvas2
+LIB_DEPENDS=    gnomecanvas-2.0:${PORTSDIR}/graphics/libgnomecanvas
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2 \
+		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
+		${RUBY_SITEARCHLIBDIR}/libart2.so:${PORTSDIR}/graphics/ruby-libart2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
 
-.include "${.CURDIR}/Makefile.common"
+.include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
 
-WRKSRC=		${RUBY_GNOME_WRKSRC}/gnome
+WRKSRC=		${RUBY_GNOME_WRKSRC}/gnomecanvas
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	AUTHORS \
-		ChangeLog \
-		README \
-		README.gnome2-all
-
-post-extract:
-	${CP} ${RUBY_GNOME_WRKSRC}/AUTHORS ${WRKSRC}/AUTHORS
-	${CP} ${RUBY_GNOME_WRKSRC}/README ${WRKSRC}/README.gnome2-all
+DOCS_EN=	ChangeLog \
+		README
 
 post-install:
 .if !defined(NOPORTDOCS)

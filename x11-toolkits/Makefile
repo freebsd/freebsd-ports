@@ -141,6 +141,7 @@
     SUBDIR += ruby-fltk
     SUBDIR += ruby-fox
     SUBDIR += ruby-gtk
+    SUBDIR += ruby-gtk2
     SUBDIR += ruby-qt2
     SUBDIR += ruby-qt2canvas
     SUBDIR += ruby-qt2iconview
