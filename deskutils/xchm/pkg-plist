@@ -1,4 +1,6 @@
 bin/xchm
+share/locale/fr/LC_MESSAGES/xchm.mo
+share/locale/ro/LC_MESSAGES/xchm.mo
 share/pixmaps/xchmdoc-128.xpm
 share/pixmaps/xchmdoc-16.xpm
 share/pixmaps/xchmdoc-32.xpm
