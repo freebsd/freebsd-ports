@@ -1,0 +1,101 @@
+diff -ur docs/reference.html docs/reference.html
+--- docs/reference.html	Fri Oct 25 19:54:20 2002
++++ docs/reference.html	Fri Jan 21 15:14:24 2005
+@@ -13,6 +13,7 @@
+ <DL><DD><A HREF=#mutex_t>st_mutex_t</A></DD></DL>
+ <DL><DD><A HREF=#utime_t>st_utime_t</A></DD></DL>
+ <DL><DD><A HREF=#netfd_t>st_netfd_t</A></DD></DL>
++<DL><DD><A HREF=#switch_cb_t>st_switch_cb_t</A></DD></DL>
+ <P>
+ <DD><A HREF=#errors><B>Error Handling</B></A></DD>
+ <P>
+@@ -20,6 +21,8 @@
+ <P>
+ <DL><DD><A HREF=#st_init>st_init()</A></DD></DL>
+ <DL><DD><A HREF=#st_getfdlimit>st_getfdlimit()</A></DD></DL>
++<DL><DD><A HREF=#st_set_switch_in_cb>st_set_switch_in_cb()</A></DD></DL>
++<DL><DD><A HREF=#st_set_switch_out_cb>st_set_switch_out_cb()</A></DD></DL>
+ <P>
+ <DD><A HREF=#threads><B>Thread Control and Identification</B></A></DD>
+ <P>
+@@ -244,6 +247,29 @@
+ <HR>
+ <P>
+ 
++<A NAME="switch_cb_t">
++<H4>st_switch_cb_t</H4>
++</A>
++Context switch callback function type.
++<P>
++<H5>Syntax</H5>
++
++<PRE>
++#include &lt;st.h&gt;
++
++typedef void (*st_switch_cb_t)(void);
++</PRE>
++<P>
++<H5>Description</H5>
++
++This datatype is a convenience type for describing a pointer
++to a function that will be called when a thread is set to stop
++or set to run.
++
++<P>
++<HR>
++<P>
++
+ <A NAME="errors">
+ <H2>Error Handling</H2>
+ </A>
+@@ -267,6 +293,8 @@
+ <DL>
+ <DD><A HREF=#st_init>st_init()</A></DD>
+ <DD><A HREF=#st_getfdlimit>st_getfdlimit()</A></DD>
++<DD><A HREF=#st_set_switch_in_cb>st_set_switch_in_cb()</A></DD>
++<DD><A HREF=#st_set_switch_out_cb>st_set_switch_out_cb()</A></DD>
+ </DL>
+ <P>
+ <HR>
+@@ -343,6 +371,41 @@
+ <H5>Description</H5>
+ This function returns the limit on the number of open file descriptors which
+ is set by the <A HREF=#st_init>st_init()</A> function.
++<P>
++<HR>
++<P>
++
++<A NAME="st_set_switch_in_cb">
++<H4>st_set_switch_in_cb()</H4>
++</A>
++<A NAME="st_set_switch_out_cb">
++<H4>st_set_switch_out_cb()</H4>
++</A>
++Set the callback function for thread switches.
++<P>
++<H5>Syntax</H5>
++
++<PRE>
++#include &lt;st.h&gt;
++
++st_switch_cb_t st_set_switch_in_cb(st_switch_cb_t cb);
++st_switch_cb_t st_set_switch_out_cb(st_switch_cb_t cb);
++</PRE>
++<P>
++<H5>Parameters</H5>
++<TT>st_set_switch_in_cb()</TT> and <TT>st_set_switch_out_cb()</TT> have the
++following parameter:<P>
++<TT>cb</TT><P>
++A function to be called when a thread is resumed and stopped respectively.<P>
++<H5>Returns</H5>
++The previous callback function pointer.
++<P>
++<H5>Description</H5>
++These functions set the callback for when a thread is resumed and stopped
++respectively.  After being called any thread switch will call the callback.
++It is suggested that thread specific data is used to differentiate between
++different threads.<P>
++These functions can be called at any time.
+ <P>
+ <HR>
+ <P>

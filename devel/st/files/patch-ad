@@ -1,0 +1,25 @@
+diff -ur sched.c sched.c
+--- sched.c	Wed Jan 30 19:46:11 2002
++++ sched.c	Fri Jan 21 15:14:24 2005
+@@ -232,6 +232,21 @@
+   return 0;
+ }
+ 
++st_switch_cb_t st_set_switch_in_cb(st_switch_cb_t cb)
++{
++  st_switch_cb_t ocb = _st_this_vp.switch_in_cb;
++
++  _st_this_vp.switch_in_cb = cb;
++  return (ocb);
++}
++
++st_switch_cb_t st_set_switch_out_cb(st_switch_cb_t cb)
++{
++  st_switch_cb_t ocb = _st_this_vp.switch_out_cb;
++
++  _st_this_vp.switch_out_cb = cb;
++  return (ocb);
++}
+ 
+ /*
+  * Start function for the idle thread

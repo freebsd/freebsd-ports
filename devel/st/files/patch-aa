@@ -1,0 +1,49 @@
+diff -ur common.h common.h
+--- common.h	Fri Feb 22 12:55:46 2002
++++ common.h	Fri Jan 21 15:14:51 2005
+@@ -190,6 +190,7 @@
+   int on_ioq;                 /* Is it on ioq? */
+ } _st_pollq_t;
+ 
++typedef void (*_st_switch_cb_t)(void);
+ 
+ typedef struct _st_vp {
+   _st_thread_t *idle_thread;  /* Idle thread for this vp */
+@@ -204,6 +205,8 @@
+ #endif
+   st_utime_t sleep_max;
+   int pagesize;
++  _st_switch_cb_t switch_out_cb; /* called when a thread is switched out */
++  _st_switch_cb_t switch_in_cb;  /* called when a thread is switched in */
+ 
+ #ifndef USE_POLL
+   int maxfd;
+@@ -362,12 +365,22 @@
+  * Switch away from the current thread context by saving its state and
+  * calling the thread scheduler
+  */
+-#define _ST_SWITCH_CONTEXT(_thread)       \
+-    ST_BEGIN_MACRO                        \
+-    if (!MD_SETJMP((_thread)->context)) { \
+-      _st_vp_schedule();                  \
+-    }                                     \
+-    ST_DEBUG_ITERATE_THREADS();           \
++#define _ST_SWITCH_CONTEXT(_thread)                     \
++    ST_BEGIN_MACRO                                      \
++    if (_st_this_vp.switch_out_cb != NULL &&            \
++	_thread != _st_this_vp.idle_thread &&		\
++	_thread->state != _ST_ST_ZOMBIE) {              \
++      _st_this_vp.switch_out_cb();                      \
++    }                                                   \
++    if (!MD_SETJMP((_thread)->context)) {               \
++      _st_vp_schedule();                                \
++    }                                                   \
++    ST_DEBUG_ITERATE_THREADS();                         \
++    if (_st_this_vp.switch_in_cb != NULL &&             \
++	_thread != _st_this_vp.idle_thread &&		\
++	_thread->state != _ST_ST_ZOMBIE) {              \
++      _st_this_vp.switch_in_cb();                       \
++    }                                                   \
+     ST_END_MACRO
+ 
+ /*
