@@ -1,13 +1,5 @@
 bin/oregano
 bin/pspice2oregano
-share/locale/ca/LC_MESSAGES/oregano.mo
-share/locale/de/LC_MESSAGES/oregano.mo
-share/locale/es/LC_MESSAGES/oregano.mo
-share/locale/fr/LC_MESSAGES/oregano.mo
-share/locale/it/LC_MESSAGES/oregano.mo
-share/locale/ja/LC_MESSAGES/oregano.mo
-share/locale/ro/LC_MESSAGES/oregano.mo
-share/locale/sv/LC_MESSAGES/oregano.mo
 share/gnome/oregano/glade/part-browser.glade
 share/gnome/oregano/glade/settings.glade
 share/gnome/oregano/glade/sim-settings.glade
@@ -24,8 +16,16 @@ share/gnome/oregano/samples/zener.oregano
 share/gnome/oregano/samples/555.oregano
 share/gnome/oregano/samples/OP177B.oregano
 share/gnome/oregano/samples/transistors.oregano
+share/gnome/oregano/libraries/cmos.oreglib
+share/gnome/oregano/libraries/cpu.oreglib
 share/gnome/oregano/libraries/default.oreglib
+share/gnome/oregano/libraries/interface.oreglib
+share/gnome/oregano/libraries/linear.oreglib
+share/gnome/oregano/libraries/memory.oreglib
+share/gnome/oregano/libraries/miscellaneous.oreglib
 share/gnome/oregano/libraries/opamplib.oreglib
+share/gnome/oregano/libraries/peripheral.oreglib
+share/gnome/oregano/libraries/power.oreglib
 share/gnome/oregano/libraries/ttl.oreglib
 share/gnome/oregano/models/12AX7A.model
 share/gnome/oregano/models/TLC555.model
@@ -41,6 +41,16 @@ share/gnome/apps/Applications/oregano.desktop
 share/gnome/mime-info/oregano.keys
 share/gnome/mime-info/oregano.mime
 share/gnome/pixmaps/gnome-oregano.png
+share/locale/ca/LC_MESSAGES/oregano.mo
+share/locale/de/LC_MESSAGES/oregano.mo
+share/locale/es/LC_MESSAGES/oregano.mo
+share/locale/fr/LC_MESSAGES/oregano.mo
+share/locale/it/LC_MESSAGES/oregano.mo
+share/locale/ja/LC_MESSAGES/oregano.mo
+share/locale/pt_BR/LC_MESSAGES/oregano.mo
+share/locale/ro/LC_MESSAGES/oregano.mo
+share/locale/ru/LC_MESSAGES/oregano.mo
+share/locale/sv/LC_MESSAGES/oregano.mo
 @dirrm share/gnome/oregano/glade
 @dirrm share/gnome/oregano/samples
 @dirrm share/gnome/oregano/libraries
