@@ -4,6 +4,10 @@ harvest/bin/Gatherer
 harvest/bin/Harvest
 harvest/bin/broker
 harvest/bin/gather
+harvest/bin/gzip
+harvest/bin/hostname
+harvest/bin/perl
+harvest/bin/whoami
 harvest/brokers/Attributes.html
 harvest/brokers/adminhelp.html
 harvest/brokers/queryhelp.html
@@ -74,11 +78,15 @@ harvest/lib/gatherer/Binary-raw.sum
 harvest/lib/gatherer/Binary.sum
 harvest/lib/gatherer/C-raw.sum
 harvest/lib/gatherer/C.sum
+harvest/lib/gatherer/CHeader.sum
+harvest/lib/gatherer/Configuration.sum
 harvest/lib/gatherer/Dvi.sum
+harvest/lib/gatherer/FAQ.sum
 harvest/lib/gatherer/FullText.sum
 harvest/lib/gatherer/HTML-lax.sum
 harvest/lib/gatherer/HTML.sum
 harvest/lib/gatherer/HTMLurls
+harvest/lib/gatherer/HomeHTML.sum
 harvest/lib/gatherer/IMS-DOCUMENT.sum
 harvest/lib/gatherer/Mail.sum
 harvest/lib/gatherer/ManPage.sum
@@ -127,6 +135,7 @@ harvest/lib/gatherer/gopherenum-depth
 harvest/lib/gatherer/hexbin
 harvest/lib/gatherer/httpenum-breadth
 harvest/lib/gatherer/httpenum-depth
+harvest/lib/gatherer/in.gatherd
 harvest/lib/gatherer/kill-gatherd
 harvest/lib/gatherer/l2h.pl
 harvest/lib/gatherer/magic
@@ -188,3 +197,29 @@ harvest/lib/test-socket-ph.pl
 harvest/lib/timelocal.pl
 harvest/lib/urlget
 harvest/lib/urlpurge
+@dirrm harvest/bin
+@dirrm harvest/lib/gatherer/sgmls-lib/IMS
+@dirrm harvest/lib/gatherer/sgmls-lib/HTML
+@dirrm harvest/lib/gatherer/sgmls-lib/HTMLPLUS
+@dirrm harvest/lib/gatherer/sgmls-lib
+@dirrm harvest/lib/gatherer
+@dirrm harvest/lib/broker
+@dirrm harvest/lib
+@dirrm harvest/cgi-bin/lib
+@dirrm harvest/cgi-bin
+@dirrm harvest/man/man1
+@dirrm harvest/man
+@dirrm harvest/gatherers/example-1
+@dirrm harvest/gatherers/example-2/lib
+@dirrm harvest/gatherers/example-2
+@dirrm harvest/gatherers/example-3/lib
+@dirrm harvest/gatherers/example-3
+@dirrm harvest/gatherers/example-4/bin
+@dirrm harvest/gatherers/example-4/lib
+@dirrm harvest/gatherers/example-4
+@dirrm harvest/gatherers/example-5
+@dirrm harvest/gatherers
+@dirrm harvest/brokers/skeleton/admin
+@dirrm harvest/brokers/skeleton
+@dirrm harvest/brokers
+@dirrm harvest
