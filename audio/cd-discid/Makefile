@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://frantica.lly.org/~rcw/cd-discid/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
-MAINTAINER=	mchopra@engmail.uwaterloo.ca
+MAINTAINER=	chopra@soulwax.net
 COMMENT=	Backend utility to retrieve CDDB discid information
 
 WRKSRC=		${WRKDIR}/${PKGNAME}

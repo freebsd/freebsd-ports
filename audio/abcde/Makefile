@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.hispalinux.es/~data/files/
 DISTNAME= 	abcde_${PORTVERSION}.orig
 
-MAINTAINER=	mchopra@engmail.uwaterloo.ca
+MAINTAINER=	chopra@soulwax.net
 COMMENT=	Front-end shell script to encode CDs in ogg, mp3 or flac format
 
 RUN_DEPENDS=    cd-discid:${PORTSDIR}/audio/cd-discid \
