@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.12 1999/04/30 04:58:30 taoka Exp $
+# $Id: Makefile,v 1.13 1999/05/14 06:43:24 asami Exp $
 #
 
     SUBDIR += ephem
@@ -9,6 +9,7 @@
     SUBDIR += ssystem
     SUBDIR += stars
     SUBDIR += sunclock
+    SUBDIR += wmglobe
     SUBDIR += wmmoonclock
     SUBDIR += wmspaceweather
     SUBDIR += wmsun
