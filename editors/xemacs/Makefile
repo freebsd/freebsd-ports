@@ -20,7 +20,8 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDI
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		compface.1:${PORTSDIR}/mail/faces
 USE_XLIB=	yes
 USE_XPM=	yes
 .endif
@@ -34,7 +35,7 @@ USE_AUTOCONF_VER=213
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
 
 CONFIGURE_ARGS?=--with-clash-detection \
-		--with-sound=native \
+		--with-sound=native,nonas,noesd \
 		--site-includes=${LOCALBASE}/include \
 		--site-libraries=${LOCALBASE}/lib \
 		--with-ldap=no \
