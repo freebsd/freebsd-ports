@@ -75,11 +75,9 @@ include/cflowd/snmp++/userdefined.h
 include/cflowd/snmp++/usertimeout.h
 include/cflowd/snmp++/vb.h
 lib/cflowd/libCfd.a
-lib/cflowd/libCfd.la
 lib/cflowd/libCfd.so
 lib/cflowd/libCfd.so.0
 lib/cflowd/libsnmp++.a
-lib/cflowd/libsnmp++.la
 lib/cflowd/libsnmp++.so
 lib/cflowd/libsnmp++.so.0
 sbin/cfdcollect
@@ -88,5 +86,3 @@ sbin/cflowdmux
 @dirrm include/cflowd/snmp++
 @dirrm include/cflowd
 @dirrm lib/cflowd
-@unexec /usr/bin/env /sbin/ldconfig -R
-@exec /usr/bin/env /sbin/ldconfig -m %B

@@ -11,38 +11,37 @@ PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://ftp.caida.org/pub/cflowd/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
-
-.if defined(CFLOWD_FLOWSCAN_PATCH)
-PATCH_SITES=	http://net.doit.wisc.edu/~plonka/cflowd/
-PATCHFILES=	cflowd-2-1-b1-djp.patch
-.endif
+DISTNAME=	${PORTNAME}-${PORTVERSION:S|.|-|g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flow analysis tool used for analyzing Cisco's NetFlow switching
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libArts.a:${PORTSDIR}/net-mgmt/arts++
+LIB_DEPENDS=	Arts.0:${PORTSDIR}/net-mgmt/arts++
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=13
+USE_GCC=	2.95
 
-CONFIGURE_ARGS+=--enable-shared --with-artspp=${PREFIX}
+CONFIGURE_ARGS=	--enable-shared --with-artspp=${LOCALBASE}
 
 MANL=		cfdases.l cfdifmatrix.l cfdnets.l cfdnexthops.l \
 		cfdportmatrix.l cfdprotos.l cfdtos.l flowdump.l flowwatch.l
 
+OPTIONS=	FLOWSCAN "FlowScan patch" off
+
 .include <bsd.port.pre.mk>
 
-post-patch:
-	cd ${WRKSRC}; ${FIND} . -type f | ${XARGS} ${GREP} -l '<strstream.h>' | ${XARGS} ${REINPLACE_CMD} -e 's/<strstream.h>/<strstream>/'
-
-.if !defined(CFLOWD_FLOWSCAN_PATCH)
-pre-everything::
-	@${ECHO} "you can compile cflowd with patches for FlowScan by typing:"
-	@${ECHO} "make CFLOWD_FLOWSCAN_PATCH=yes"
+.if defined(WITH_FLOWSCAN)
+PATCH_SITES+=	http://net.doit.wisc.edu/~plonka/cflowd/
+PATCHFILES+=	cflowd-${PORTVERSION:S|.|-|g}-djp.patch
 .endif
+
+post-configure:
+	${REINPLACE_CMD} -e 's/ gcc\* / gcc\* | g\+\+\* /g' ${WRKSRC}/libtool
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/cflowd.sh \
