@@ -1,0 +1,4 @@
+bin/synce-trayicon
+share/pixmaps/synce/synce-color-small.png
+share/pixmaps/synce/synce-gray-small.png
+@dirrm share/pixmaps/synce

@@ -34,6 +34,7 @@
     SUBDIR += synce-librapi2
     SUBDIR += synce-libsynce
     SUBDIR += synce-serial
+    SUBDIR += synce-trayicon
     SUBDIR += syncmal
     SUBDIR += txt2pdbdoc
 
