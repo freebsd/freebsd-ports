@@ -20,6 +20,8 @@ DISTFILES=	Linux+FreeBSD.sgml.gz  \
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Checksum fails"
+
 BUILD_DEPENDS=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 
 DIST_SUBDIR=	Howto
