@@ -1,149 +1,67 @@
-Index: canna/Canna.conf
-diff -u canna/Canna.conf:1.1.1.1 canna/Canna.conf:1.2
---- canna/Canna.conf:1.1.1.1	Tue Jun 20 09:45:46 1995
-+++ canna/Canna.conf	Tue Jun 20 09:59:41 1995
-@@ -119,10 +119,10 @@
- cannaLibDir = /usr/local/canna/lib
- cannaManDir = /usr/local/canna/man
- cannaIncDir = /usr/local/canna/include/canna
--libCannaDir = /usr/lib
-+libCannaDir = /usr/local/lib
- 
--ErrDir  = /usr/spool/canna
--LockDir = /usr/spool/canna/lock
-+ErrDir  = /var/spool/canna
-+LockDir = /var/spool/canna/lock
- 
- wcharDefinition = -DCANNA_WCHAR
- Wlib =
-@@ -135,7 +135,7 @@
- 
- pointerIntegerDef =
- 
--cannaDsoRev = 1
-+cannaDsoRev = 1.0
- sharedLibExtension = so.$(cannaDsoRev)
- 
- /* 以下の３つは root にならないでインストールするのであれば echo に
-@@ -145,7 +145,7 @@
- CHMOD = chmod
- 
- /* 日本語マニュアルを使わないのであればコメントアウト */
--#define JAPANESEMAN
-+/* #define JAPANESEMAN */
- 
- /* locale ディレクトリを持っている場合は以下を記述する */
- /* #define LOCALE_DIR /usr/lib/locale */
-Index: canna/canna/protodefs.h
-diff -u canna/canna/protodefs.h:1.1.1.1 canna/canna/protodefs.h:1.2
---- canna/canna/protodefs.h:1.1.1.1	Tue Jun 20 09:45:47 1995
-+++ canna/canna/protodefs.h	Tue Jun 20 09:59:47 1995
-@@ -77,6 +77,7 @@
- #define I16toI32(x) (x)
- #define I8toI32(x) (((x) & 0x80) ? ((x) | 0xffffff80) : (x))
- 
-+#if 0
- #ifdef HTONS			/* hir, 1993.1.2 */
- #undef HTONS
- #endif
-@@ -85,6 +86,7 @@
- 	work = htons( (len) ) ; \
- 	bcopy( (char *)&work, (char *)(data), sizeof( short ) ) ; \
- }
-+#endif
- 
- #ifndef MIN
- #define MIN( n, m )	( ((unsigned)(n) > (unsigned)(m)) ? (m) : (n) )
-Index: canna/canna/widedef.h
-diff -u canna/canna/widedef.h:1.1.1.1 canna/canna/widedef.h:1.2
---- canna/canna/widedef.h:1.1.1.1	Tue Jun 20 09:45:48 1995
-+++ canna/canna/widedef.h	Tue Jun 20 09:59:48 1995
-@@ -27,6 +27,10 @@
- #ifndef _WIDEDEF_H_
- #define _WIDEDEF_H_
-      
-+#if defined(__FreeBSD__) || defined(__NetBSD__)
-+# include <machine/ansi.h>
-+#endif
-+
- #if __STDC__ || defined(SVR4) || defined(sun) /* This may be wrong. */
- # if !defined(WCHAR16) && !defined(CANNA_WCHAR)
- #  define HAVE_WCHAR_OPERATION
-@@ -40,6 +44,18 @@
- #endif
- #endif /* HAVE_WCHAR_OPERATION */
- 
-+#if defined(__FreeBSD__) || defined(__NetBSD__)
-+# ifdef _BSD_WCHAR_T_
-+#  undef _BSD_WCHAR_T_
-+#  ifdef WCHAR16
-+#   define _BSD_WCHAR_T_ unsigned short
-+#  else
-+#   define _BSD_WCHAR_T_ unsigned long
-+#  endif
-+#  include <stddef.h>
-+#  define _WCHAR_T
-+# endif
-+#else
- #if !defined(WCHAR_T) && !defined(_WCHAR_T) && !defined(_WCHAR_T_) \
-  && !defined(__WCHAR_T) && !defined(_GCC_WCHAR_T)
- # ifdef WCHAR16
-@@ -54,5 +70,6 @@
- # define __WCHAR_T
- # define _GCC_WCHAR_T
- #endif
-+#endif /* __FreeBSD__ || __NetBSD__ */
- 
- #endif /* _WIDEDEF_H_ */
-Index: canna/lib/RKC/Imakefile
-diff -u canna/lib/RKC/Imakefile:1.1.1.1 canna/lib/RKC/Imakefile:1.2
---- canna/lib/RKC/Imakefile:1.1.1.1	Tue Jun 20 09:46:30 1995
-+++ canna/lib/RKC/Imakefile	Tue Jun 20 10:00:01 1995
-@@ -26,7 +26,7 @@
- 
- #if ProjectX > 5
- #define LibName RKC
--#define SoRev		cannaDsoRev
-+#define SoRev cannaDsoRev
- #define SHLIBDIR	libCannaDir
- #define USRLIBDIR	libCannaDir
- #define LibHeaders 0
-Index: canna/lib/RKC16/Imakefile
-diff -u canna/lib/RKC16/Imakefile:1.1.1.1 canna/lib/RKC16/Imakefile:1.2
---- canna/lib/RKC16/Imakefile:1.1.1.1	Tue Jun 20 09:46:31 1995
-+++ canna/lib/RKC16/Imakefile	Tue Jun 20 10:00:03 1995
-@@ -23,7 +23,7 @@
- 
- #if ProjectX > 5
- #define LibName RKC16
--#define SoRev		cannaDsoRev
-+#define SoRev cannaDsoRev
- #define SHLIBDIR	libCannaDir
- #define USRLIBDIR	libCannaDir
- #define LibHeaders 0
-Index: canna/lib/canna/Imakefile
-diff -u canna/lib/canna/Imakefile:1.1.1.1 canna/lib/canna/Imakefile:1.2
---- canna/lib/canna/Imakefile:1.1.1.1	Tue Jun 20 09:46:33 1995
-+++ canna/lib/canna/Imakefile	Tue Jun 20 10:00:06 1995
-@@ -56,7 +56,7 @@
- 
- #if ProjectX > 5
- #define LibName canna
--#define SoRev		cannaDsoRev
-+#define SoRev cannaDsoRev
- #define SHLIBDIR	libCannaDir
- #define USRLIBDIR	libCannaDir
- #define LibHeaders 0
-Index: canna/lib/canna16/Imakefile
-diff -u canna/lib/canna16/Imakefile:1.1.1.1 canna/lib/canna16/Imakefile:1.2
---- canna/lib/canna16/Imakefile:1.1.1.1	Tue Jun 20 09:46:43 1995
-+++ canna/lib/canna16/Imakefile	Tue Jun 20 10:00:08 1995
-@@ -58,7 +58,7 @@
- 
- #if ProjectX > 5
- #define LibName canna16
--#define SoRev		cannaDsoRev
-+#define SoRev cannaDsoRev
- #define SHLIBDIR	libCannaDir
- #define USRLIBDIR	libCannaDir
- #define LibHeaders 0
+*** canna/protodefs.h.orig	Wed Mar  9 16:01:53 1994
+--- canna/protodefs.h	Sun Aug 11 06:54:35 1996
+***************
+*** 77,82 ****
+--- 77,83 ----
+  #define I16toI32(x) (x)
+  #define I8toI32(x) (((x) & 0x80) ? ((x) | 0xffffff80) : (x))
+  
++ #if 0
+  #ifdef HTONS			/* hir, 1993.1.2 */
+  #undef HTONS
+  #endif
+***************
+*** 85,90 ****
+--- 86,92 ----
+  	work = htons( (len) ) ; \
+  	bcopy( (char *)&work, (char *)(data), sizeof( short ) ) ; \
+  }
++ #endif
+  
+  #ifndef MIN
+  #define MIN( n, m )	( ((unsigned)(n) > (unsigned)(m)) ? (m) : (n) )
+*** canna/widedef.h.orig	Mon Jul  5 20:11:01 1993
+--- canna/widedef.h	Sun Aug 11 06:54:35 1996
+***************
+*** 27,32 ****
+--- 27,36 ----
+  #ifndef _WIDEDEF_H_
+  #define _WIDEDEF_H_
+       
++ #if defined(__FreeBSD__) || defined(__NetBSD__)
++ # include <machine/ansi.h>
++ #endif
++ 
+  #if __STDC__ || defined(SVR4) || defined(sun) /* This may be wrong. */
+  # if !defined(WCHAR16) && !defined(CANNA_WCHAR)
+  #  define HAVE_WCHAR_OPERATION
+***************
+*** 40,45 ****
+--- 44,61 ----
+  #endif
+  #endif /* HAVE_WCHAR_OPERATION */
+  
++ #if defined(__FreeBSD__) || defined(__NetBSD__)
++ # ifdef _BSD_WCHAR_T_
++ #  undef _BSD_WCHAR_T_
++ #  ifdef WCHAR16
++ #   define _BSD_WCHAR_T_ unsigned short
++ #  else
++ #   define _BSD_WCHAR_T_ unsigned long
++ #  endif
++ #  include <stddef.h>
++ #  define _WCHAR_T
++ # endif
++ #else
+  #if !defined(WCHAR_T) && !defined(_WCHAR_T) && !defined(_WCHAR_T_) \
+   && !defined(__WCHAR_T) && !defined(_GCC_WCHAR_T)
+  # ifdef WCHAR16
+***************
+*** 54,58 ****
+--- 70,75 ----
+  # define __WCHAR_T
+  # define _GCC_WCHAR_T
+  #endif
++ #endif /* __FreeBSD__ || __NetBSD__ */
+  
+  #endif /* _WIDEDEF_H_ */
