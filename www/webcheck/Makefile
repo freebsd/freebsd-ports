@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.bz2
 MAINTAINER=	mwm@mired.org
 
 USE_PYTHON=	YES
+USE_BZIP2=	YES
 
 do-install:
 	@${MKDIR} ${DATADIR}
