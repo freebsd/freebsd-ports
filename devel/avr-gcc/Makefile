@@ -35,6 +35,6 @@ CONFIGURE_ARGS=	--target=avr
 
 MAKE_FLAGS=	LANGUAGES="c c++"
 
-MAN1=		cpp.1 avr-gcc.1 gcov.1
+MAN1=		cpp.1 avr-gcc.1 avr-g++.1 gcov.1
 
 .include <bsd.port.mk>
