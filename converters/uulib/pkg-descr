@@ -4,6 +4,6 @@ This library is able to encode/decode files in the following formats:
         xxencode
         Base64
         BinHex
-		yEnc
+	yEnc
 
 WWW: http://www.fpx.de/fp/Software/UUDeview/
