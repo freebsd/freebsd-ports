@@ -34,6 +34,14 @@ MAKE_ENV=	${CONFIGURE_ENV}
 # spurious, but i don't care
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${PERL} -pi -e 's@values\.h@limits.h@' \
+		${WRKSRC}/mpeglib/lib/util/render/x11/x11Surface.h \
+		${WRKSRC}/mpeglib/lib/util/render/x11/imageDeskX11.h
+	@${PERL} -pi -e 's@\bMAXINT\b@INT_MAX@g' \
+		${WRKSRC}/mpeglib/lib/util/render/x11/x11Surface.cpp \
+		${WRKSRC}/mpeglib/lib/util/render/x11/imageDeskX11.cpp
+
 post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "In order to run the kscd program properly, please run as root:"
