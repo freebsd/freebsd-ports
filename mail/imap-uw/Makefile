@@ -93,6 +93,7 @@ post-install:
 	@${ECHO} "================================================================================"
 .endif
 .if !defined(WITHOUT_SSL)
+	@${ECHO}
 	@${ECHO} "To create and install a new SSL certificate for imapd and ipop3d, type \"make"
 	@${ECHO} "cert\". Or install manually in ${PREFIX}/certs."
 	@${ECHO}
@@ -100,9 +101,6 @@ post-install:
 	@${ECHO}
 	@${ECHO} "pop3s   stream  tcp     nowait  root    ${PREFIX}/libexec/ipop3d       ipop3d"
 	@${ECHO} "imaps   stream  tcp     nowait  root    ${PREFIX}/libexec/imapd        imapd"
-	@${ECHO}
-	@${ECHO} "Remember to recompile and reinstall your cclient port with SSL support too, if"
-	@${ECHO} "you had it installed without SSL support."
 	@${ECHO} "================================================================================"
 .endif
 
