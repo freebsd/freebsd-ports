@@ -10,7 +10,7 @@ DISTNAME=	psgml-${PSGML_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/sgml/
 
-MAINTAINER=	shige@FreeBSD.org
+MAINTAINER?=	shige@FreeBSD.org
 
 # distfile version
 PSGML_VER=		1.2.0
@@ -37,7 +37,7 @@ HAS_COMMON_PORT=	NO
 #
 .if defined(EMACS_PORT)
 PKGNAME=	psgml-${EMACS_PORT}-${PSGML_VER}
-EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
+EMACS_CMD?=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .if defined(HAS_COMMON_PORT) && (${HAS_COMMON_PORT} == "YES")
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
