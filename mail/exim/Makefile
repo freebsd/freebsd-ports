@@ -169,13 +169,17 @@ SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 
 .if (${DB_LIB_VERSION} == 1)
 DB_LIBS=
+DB_INCLUDES=
+SEDLIST+=	-e 's,^DBMLIB=,\#DBMLIB=,'
 .elif (${DB_LIB_VERSION} == 4)
-DB_LIBS=	-ldb4
+DB_LIBS=	-L${LOCALBASE}/lib -ldb4
+DB_INCLUDES=	-I${LOCALBASE}/include/db4
 LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 .else
 .error DB_LIB_VERSION must be either 1 or 4
 .endif
-SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},'
+SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
+		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
 
 .if defined(WITH_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
