@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	multi-gnome-terminal
-PORTVERSION=	1.3.13
+PORTVERSION=	1.4.1
 CATEGORIES=	x11 gnome
-MASTER_SITES= 	http://multignometerm.sourceforge.net/
+MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/multignometerm/ \
+		http://unc.dl.sourceforge.net/sourceforge/multignometerm/ \
+		http://belnet.dl.sourceforge.net/sourceforge/multignometerm/ \
+		http://multignometerm.sourceforge.net/
 
 MAINTAINER=	fdubuy@free.fr
 
@@ -18,8 +21,8 @@ LIB_DEPENDS+=	xml.5:${PORTSDIR}/textproc/libxml \
 RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 
 USE_X_PREFIX=	yes
-USE_GTK=        yes
-USE_GNOME=      yes
+USE_GTK=	yes
+USE_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 # The distribution Makefile.in files append "/gnome" to --datadir
