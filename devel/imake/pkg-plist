@@ -103,4 +103,3 @@ bin/mkdirhier
 bin/gccmakedep
 bin/mergelib
 bin/makeg
-@dirrm lib/X11/config
