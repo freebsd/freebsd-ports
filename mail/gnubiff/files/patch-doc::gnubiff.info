@@ -1,0 +1,14 @@
+--- doc/gnubiff.info.bak	Fri Dec 10 13:20:19 2004
++++ doc/gnubiff.info	Fri Dec 10 13:23:07 2004
+@@ -10,6 +10,11 @@
+      Foundation; with no Invariant Sections, no Front-Cover Texts, and
+      no Back-Cover Texts.  A copy of the license is included in the
+      section entitled "GNU Free Documentation License".
++
++INFO-DIR-SECTION Utilities
++START-INFO-DIR-ENTRY
++* gnubiff: (gnubiff).		A mail notification program for Gnome
++END-INFO-DIR-ENTRY
+    
+ 
+ File: gnubiff.info,  Node: Top,  Next: Copying,  Up: (dir)
