@@ -73,6 +73,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <url>http://cvsweb.netbsd.org/bsdweb.cgi/src/libexec/ftpd/ftpd.c#rev1.158</url>
       <url>ftp://ftp.netbsd.org/pub/NetBSD/security/advisories/NetBSD-SA2004-009.txt.asc</url>
+      <mlist msgid="412239E7.1070807@freebsd.lublin.pl">http://lists.netsys.com/pipermail/full-disclosure/2004-August/025418.html</mlist>
     </references>
     <dates>
       <discovery>2004-08-17</discovery>
