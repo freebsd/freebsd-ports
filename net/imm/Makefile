@@ -3,7 +3,7 @@
 # Date created:		13 October 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.11 1997/04/20 13:19:20 wosch Exp $
+# $Id: Makefile,v 1.12 1997/09/11 03:55:02 fenner Exp $
 #
 
 DISTNAME=	imm-3.5a1
@@ -17,6 +17,9 @@ MAINTAINER=	fenner@freebsd.org
 LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
 
 USE_X11=	yes
+
+post-extract:
+	${CP} ${FILESDIR}/Makefile.freebsd ${WRKSRC}/src
 
 # The included makefile doesn't have an "install" target.
 do-install:
