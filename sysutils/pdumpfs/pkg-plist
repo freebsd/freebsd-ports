@@ -1,0 +1,6 @@
+sbin/pdumpfs
+%%PORTDOCS%%share/doc/pdumpfs/ChangeLog
+%%PORTDOCS%%share/doc/pdumpfs/pdumpfs-en.html
+%%PORTDOCS%%share/doc/pdumpfs/ja/pdumpfs-ja.html
+%%PORTDOCS%%@dirrm share/doc/pdumpfs/ja
+%%PORTDOCS%%@dirrm share/doc/pdumpfs
