@@ -19,7 +19,7 @@ DICTD_PID_FILE=/var/run/dictd.pid
 case "$1" in
 	start)
 		if [ -x $DICTD ]; then
-			${ECHO} "dictd starting."
+			${ECHO} -n " dictd"
 			$DICTD $DICTD_OPTIONS
 			${ECHO} `${SOCKSTAT} | ${GREP} dictd | ${AWK} '{print $3}'` > ${DICTD_PID_FILE}
 		else
@@ -33,7 +33,7 @@ case "$1" in
 		fi
 		dictdpid=`${CAT} $DICTD_PID_FILE`
 		if [ "$dictdpid" -gt 0 ]; then
-			${ECHO} "Stopping the dictd server."
+			${ECHO} -n " dictd"
 			${KILL} -15 $dictdpid 2>&1 > /dev/null
 		fi
 		${RM} -f $DICTD_PID_FILE
