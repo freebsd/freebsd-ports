@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.prbh.org/pub/epic/EPIC4-PRODUCTION/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-help-20040801.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	josh@tcbug.org
 COMMENT=	The (E)nhanced (P)rogrammable (I)RC-II (C)lient
 
 GNU_CONFIGURE=	yes
