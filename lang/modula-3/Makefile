@@ -39,7 +39,7 @@ PLIST=		${WRKDIR}/pkg-plist.noX11
 pre-fetch:
 	@${ECHO_MSG} "To build this port without X11, define \"WITHOUT_X11\"."
 
-PLIST=		${WRKDIR}/PLIST
+PLIST=		${WRKDIR}/pkg-plist
 MAN1+=		formsedit.1 replayheap.1 showheap.1 shownew.1 showthread.1
 .endif
 
