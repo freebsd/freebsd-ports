@@ -1,14 +1,16 @@
 # New ports collection makefile for:	rdist
-# Version required:	rdist-6.1.3
+# Version required:	rdist-6.1.4
 # Date created:		19 August 1995
 # Whom:			peter
 #
-# $Id: Makefile,v 1.11 1996/12/01 01:23:09 obrien Exp $
+# $Id: Makefile,v 1.12 1998/01/21 02:39:56 peter Exp $
 #
 
-DISTNAME=	rdist-6.1.3
+DISTNAME=	rdist-6.1.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://usc.edu/pub/rdist/
+MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
+		ftp://ftp.rge.com/pub/admin/rdist/ \
+		ftp://ftp.sunet.se/pub/unix/admin/mirror-magnicomp/download/rdist/
 
 MAINTAINER=	peter@FreeBSD.org
 
@@ -26,6 +28,3 @@ post-install:
 	@strip ${PREFIX}/bin/rdistd
 
 .include <bsd.port.mk>
-
-# Stupid GNU Make 2.5!!!
-PATCH:=		env POSIXLY_CORRECT=yes ${PATCH}

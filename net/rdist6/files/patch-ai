@@ -1,5 +1,5 @@
---- config/os-type.dist	Fri Feb 23 03:18:41 1996
-+++ config/os-type	Wed Dec 11 07:17:07 1996
+--- build/os-type.dist	Fri Feb 23 03:18:41 1996
++++ build/os-type	Wed Dec 11 07:17:07 1996
 @@ -102,7 +102,7 @@
  				OS="${osname}${osmajver}"
  				;;

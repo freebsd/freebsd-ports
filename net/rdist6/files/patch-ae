@@ -1,11 +1,5 @@
-Index: src/docmd.c
-===================================================================
-RCS file: /src/rdist/src/docmd.c,v
-retrieving revision 1.1.1.1
-retrieving revision 1.2
-diff -c -r1.1.1.1 -r1.2
-*** docmd.c	1995/07/21 09:53:30	1.1.1.1
---- docmd.c	1995/07/21 10:07:14	1.2
+*** src/docmd.c	1995/07/21 09:53:30	1.1.1.1
+--- src/docmd.c	1995/07/21 10:07:14	1.2
 ***************
 *** 251,259 ****
   	char *cmd;
