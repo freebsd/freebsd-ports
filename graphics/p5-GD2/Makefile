@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GD2
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GD
@@ -19,8 +19,8 @@ COMMENT=	A perl5 interface to Gd Graphics Library version2
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd2
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS=	-options "JPEG,FT,XPM" -lib_gd_path ${LOCALBASE} -lib_ft_path ${X11BASE} -lib_png_path ${LOCALBASE} -lib_zlib_path ${LOCALBASE}
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		GD.3 GD::Polyline.3
 
 .include <bsd.port.mk>
