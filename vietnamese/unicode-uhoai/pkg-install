@@ -1,0 +1,11 @@
+#!/bin/sh
+# $FreeBSD$
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+
+cd ${PKG_PREFIX}/lib/X11/fonts/TrueType
+${PKG_PREFIX}/bin/mkfontdir >/dev/null 2>&1
+${PKG_PREFIX}/bin/ttmkfdir -o fonts.scale
+chmod a+r fonts.scale
