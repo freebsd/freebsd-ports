@@ -7,6 +7,7 @@
 
 PORTNAME=	gdc
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://home.earthlink.net/~dvdfrdmn/d/:gdc \
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	snapshots/${GCC_VERSIONSTRING}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2:gdc \
 		gcc-core-${GCC_VERSIONSTRING}.tar.bz2 \
 		gcc-g++-${GCC_VERSIONSTRING}.tar.bz2 \
-		gc6.3.tar.gz:boehm
+		${BOEHM_SRC_PKG}:boehm
 EXTRACT_ONLY=	gcc-core-${GCC_VERSIONSTRING}.tar.bz2 \
 		gcc-g++-${GCC_VERSIONSTRING}.tar.bz2
 
@@ -32,8 +33,12 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 
 GCC_VERSION=	3.4.4
-GCC_REVISION=	20041112
+GCC_REVISION=	20041224
 GCC_VERSIONSTRING=	3.4-${GCC_REVISION}
+
+BOEHM_VERSION=	6.4
+BOEHM_SRC_PKG=	gc${BOEHM_VERSION}.tar.gz
+BOEHM_PATCH=	boehm-gc.20050102.patch
 
 .include <bsd.port.pre.mk>
 
@@ -72,16 +77,13 @@ post-extract:
 	@${TAR} xjf ${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		-C ${GCCDIR}
 	@${RM} ${PHOBOSDIR}/boehm-gc
-	@${TAR} xzf ${DISTDIR}/gc6.3.tar.gz -C ${PHOBOSDIR}
-	@${MV} ${PHOBOSDIR}/gc6.3 ${PHOBOSDIR}/boehm-gc
+	@${TAR} xzf ${DISTDIR}/${BOEHM_SRC_PKG} -C ${PHOBOSDIR}
+	@${MV} ${PHOBOSDIR}/gc${BOEHM_VERSION} ${PHOBOSDIR}/boehm-gc
 
 post-patch:
 	@cd ${GCCDIR} && ${PATCH} -p1 < d/patch-gcc-3.4.x
 	@echo "++ Patching for d/phobos/boehm-gc ++"
-	@for _PF in `${LS} ${PORTSDIR}/devel/boehm-gc/files/*` ; \
-	do \
-		cd ${PHOBOSDIR}/boehm-gc && ${PATCH} < $${_PF}; \
-	done
+	@cd ${PHOBOSDIR}/boehm-gc && ${PATCH} < ${PATCHDIR}/${BOEHM_PATCH}
 	@${REINPLACE_CMD} -e \
 		's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
 		${WRKSRC}/gcc/version.c
