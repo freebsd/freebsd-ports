@@ -3,7 +3,7 @@
 # Date created:		21 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.27 1999/01/06 04:18:08 simokawa Exp $
+# $Id: Makefile,v 1.28 1999/01/13 04:00:07 scrappy Exp $
 #
 
 DISTNAME=       netscape-3.04
@@ -42,7 +42,7 @@ pre-extract:
 post-install:
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 	cd ${WRKSRC}/Fortify-1.3.2-unix-x86 && \
-		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${PREFIX}/lib/netscape/netscape.bin
+		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) | ./Fortify.sh ${PREFIX}/lib/netscape/netscape.bin
 .endif
 	@${CAT} ${PKGDIR}/DESCR
 
