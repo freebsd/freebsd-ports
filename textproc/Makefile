@@ -212,6 +212,7 @@
     SUBDIR += ruby-nqxml
     SUBDIR += ruby-qt2xml
     SUBDIR += ruby-rd-mode.el
+    SUBDIR += ruby-rdoc
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-rexml
     SUBDIR += ruby-rss
