@@ -1,0 +1,15 @@
+Modern desktop environments make it possible for you to work on several
+documents in several windows at the same time. This will inevitably result
+in lots of open windows on your desktop.
+
+Switching between applications can become a real pain: the buttons in the
+taskbar already got too small to be usable, and finding the right window in
+the tablist takes ages.
+
+expocity is an effort to integrate an efficient means of switching between
+applications into the window manager metacity, similar to Expose(tm) on
+Apple's OS-X.
+
+Use ALT+TAB to switch between application.
+
+WWW: http://www.pycage.de/software_expocity.html
