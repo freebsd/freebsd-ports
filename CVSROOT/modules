@@ -31,16 +31,11 @@
 #
 
 # Convenient aliases
-workrave	ports/x11/workrave
 world		-a .
 
 # CVSROOT support
-ADMsmb		ports/security/ADMsmb
-ADMsnmp		ports/security/ADMsnmp
-AquaGatekeeper	ports/net/AquaGatekeeper
 CVSROOT		CVSROOT
 access		CVSROOT access
-authpf		ports/security/authpf
 avail		CVSROOT avail
 commit_prep	CVSROOT commit_prep.pl
 commitcheck	CVSROOT commitcheck
@@ -80,7 +75,10 @@ taginfo		CVSROOT taginfo
 9menu		ports/x11-wm/9menu
 9term		ports/x11/9term
 9wm		ports/x11-wm/9wm
+ADMsmb		ports/security/ADMsmb
+ADMsnmp		ports/security/ADMsnmp
 AbiWord2	ports/editors/AbiWord2
+AquaGatekeeper	ports/net/AquaGatekeeper
 CaribbeanStud	ports/games/CaribbeanStud
 Cgraph		ports/graphics/Cgraph
 Coin		ports/graphics/Coin
@@ -453,17 +451,20 @@ aunit		ports/devel/aunit
 aureal-kmod	ports/audio/aureal-kmod
 auth_ldap	ports/www/auth_ldap
 authforce	ports/security/authforce
+authpf		ports/security/authpf
 autobench	ports/benchmarks/autobench
 autobook	ports/devel/autobook
 autocd		ports/audio/autocd
 autoconf	ports/devel/autoconf
 autoconf213	ports/devel/autoconf213
+autoconf253	ports/devel/autoconf253
 autoconf257	ports/devel/autoconf257
 autocutsel	ports/deskutils/autocutsel
 autodia		ports/devel/autodia
 autogen		ports/devel/autogen
 automake	ports/devel/automake
 automake14	ports/devel/automake14
+automake15	ports/devel/automake15
 automake17	ports/devel/automake17
 autools		ports/audio/autools
 autopsy		ports/sysutils/autopsy
@@ -757,9 +758,9 @@ carthage	ports/textproc/carthage
 cascade		ports/cad/cascade
 catdoc		ports/textproc/catdoc
 catdvi		ports/print/catdvi
+caudium-devel	ports/www/caudium-devel
 caudium10	ports/www/caudium10
 caudium12	ports/www/caudium12
-caudium-devel	ports/www/caudium-devel
 cave		ports/misc/cave
 cbb		ports/deskutils/cbb
 cbedic		ports/textproc/cbedic
@@ -945,8 +946,8 @@ cocor		ports/lang/cocor
 coda5_client	ports/net/coda5_client
 coda5_doc	ports/net/coda5_doc
 coda5_server	ports/net/coda5_server
-coda6_server	ports/net/coda6_server
 coda6_client	ports/net/coda6_client
+coda6_server	ports/net/coda6_server
 coda_doc	ports/net/coda_doc
 coda_intro	ports/net/coda_intro
 code2html	ports/textproc/code2html
@@ -1307,8 +1308,8 @@ djvuplugin	ports/www/djvuplugin
 dk-openoffice-1.0	ports/editors/openoffice-1.0-dk
 dkimap4		ports/mail/dkimap4
 dlint		ports/dns/dlint
-dlx		ports/emulators/dlx
 dlume		ports/deskutils/dlume
+dlx		ports/emulators/dlx
 dmake		ports/devel/dmake
 dmalloc		ports/devel/dmalloc
 dmidecode	ports/sysutils/dmidecode
@@ -1608,7 +1609,6 @@ exim-doc-html	ports/mail/exim-doc-html
 exim-doc-info	ports/mail/exim-doc-info
 exim-doc-pdf	ports/mail/exim-doc-pdf
 exim-doc-postscript	ports/mail/exim-doc-postscript
-exim-ldap	ports/mail/exim-ldap
 exim-ldap2	ports/mail/exim-ldap2
 exim-monitor	ports/mail/exim-monitor
 exim-mysql	ports/mail/exim-mysql
@@ -1747,6 +1747,7 @@ flashplayer	ports/graphics/flashplayer
 flashplugin	ports/www/flashplugin
 flashplugin-mozilla	ports/www/flashplugin-mozilla
 flashplugin-mozilla-devel	ports/www/flashplugin-mozilla-devel
+flashpluginwrapper	ports/www/flashpluginwrapper
 flasm		ports/graphics/flasm
 flawfinder	ports/security/flawfinder
 flexbackup	ports/sysutils/flexbackup
@@ -2049,8 +2050,8 @@ geda		ports/cad/geda
 geda-symbols	ports/cad/geda-symbols
 geda-symcheck	ports/cad/geda-symcheck
 geda-utils	ports/cad/geda-utils
-gedit2		ports/editors/gedit2
 gedit-plugins	ports/editors/gedit-plugins
+gedit2		ports/editors/gedit2
 geekcode	ports/misc/geekcode
 geeklog		ports/www/geeklog
 geg		ports/math/geg
@@ -2094,8 +2095,8 @@ ggv2		ports/print/ggv2
 ggz-client-libs	ports/games/ggz-client-libs
 ggz-txt-client	ports/games/ggz-txt-client
 ghc		ports/lang/ghc
-ghc6		ports/lang/ghc6
 ghc-doc		ports/lang/ghc-doc
+ghc6		ports/lang/ghc6
 ghemical	ports/science/ghemical
 ghex2		ports/editors/ghex2
 ghfaxviewer	ports/comms/ghfaxviewer
@@ -2258,9 +2259,9 @@ gnome--		ports/x11-toolkits/gnome--
 gnome-btdownload	ports/net/gnome-btdownload
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-cups-manager	ports/print/gnome-cups-manager
+gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-industrial-theme	ports/x11-toolkits/gnome-industrial-theme
 gnome-jabber	ports/net/gnome-jabber
-gnome-icon-theme	ports/misc/gnome-icon-theme
 gnome-look	ports/x11-toolkits/gnome-look
 gnome-mud	ports/net/gnome-mud
 gnome-pkgview	ports/sysutils/gnome-pkgview
@@ -2937,7 +2938,6 @@ isync		ports/mail/isync
 it++		ports/math/it++
 it-aspell	ports/textproc/it-aspell
 it-ooodict-IT	ports/editors/ooodict-it_IT
-it-openoffice	ports/editors/openoffice-it
 itcl		ports/lang/itcl
 ithought	ports/deskutils/ithought
 itk		ports/x11-toolkits/itk
@@ -3307,6 +3307,7 @@ ja-skkinput3	ports/japanese/skkinput3
 ja-skkserv	ports/japanese/skkserv
 ja-slirc	ports/japanese/slirc
 ja-slrn		ports/japanese/slrn
+ja-squirrelmail	ports/japanese/squirrelmail
 ja-srd-fpw	ports/japanese/srd-fpw
 ja-srd-fpw-package	ports/japanese/srd-fpw-package
 ja-t2ps		ports/japanese/t2ps
@@ -3480,9 +3481,9 @@ jext		ports/editors/jext
 jfc		ports/java/jfc
 jfconv		ports/palm/jfconv
 jfk		ports/games/jfk
+jfreechart	ports/java/jfreechart
 jftp		ports/ftp/jftp
 jftpgw		ports/ftp/jftpgw
-jfreechart	ports/java/jfreechart
 jgraph		ports/graphics/jgraph
 jgv		ports/graphics/jgv
 jhead		ports/graphics/jhead
@@ -4149,6 +4150,7 @@ liferea		ports/net/liferea
 lightning	ports/devel/lightning
 lile		ports/misc/lile
 lilypond	ports/print/lilypond
+lilypond-devel	ports/print/lilypond-devel
 limewire	ports/net/limewire
 linalg		ports/math/linalg
 linc		ports/net/linc
@@ -4165,7 +4167,6 @@ linpack		ports/math/linpack
 linphone	ports/net/linphone
 linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
-linuxpluginwrapper	ports/www/linuxpluginwrapper
 linux-XFree86-libs	ports/x11/linux-XFree86-libs
 linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
@@ -4263,6 +4264,7 @@ linux_nwndata	ports/games/linux_nwndata
 linuxdoc	ports/textproc/linuxdoc
 linuxfdisk	ports/sysutils/linuxfdisk
 linuxigd	ports/net/linuxigd
+linuxpluginwrapper	ports/www/linuxpluginwrapper
 linuxthreads	ports/devel/linuxthreads
 lirc		ports/comms/lirc
 lire		ports/sysutils/lire
@@ -5171,15 +5173,14 @@ openjade	ports/textproc/openjade
 openjit		ports/java/openjit
 openldap12	ports/net/openldap12
 openldap20-client	ports/net/openldap20-client
-openldap21-client	ports/net/openldap21-client
-openldap22-client	ports/net/openldap22-client
 openldap20-server	ports/net/openldap20-server
+openldap21-client	ports/net/openldap21-client
 openldap21-server	ports/net/openldap21-server
+openldap22-client	ports/net/openldap22-client
 openldap22-server	ports/net/openldap22-server
 openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice-1.0	ports/editors/openoffice-1.0
-openoffice-1.1	ports/editors/openoffice-1.1
 openoffice-1.0-ar	ports/editors/openoffice-1.0-ar
 openoffice-1.0-dk	ports/editors/openoffice-1.0-dk
 openoffice-1.0-es	ports/editors/openoffice-1.0-es
@@ -5188,6 +5189,7 @@ openoffice-1.0-it	ports/editors/openoffice-1.0-it
 openoffice-1.0-nl	ports/editors/openoffice-1.0-nl
 openoffice-1.0-se	ports/editors/openoffice-1.0-se
 openoffice-1.0-tr	ports/editors/openoffice-1.0-tr
+openoffice-1.1	ports/editors/openoffice-1.1
 openoffice-1.1-ca	ports/editors/openoffice-1.1-ca
 openoffice-1.1-cs	ports/editors/openoffice-1.1-cs
 openoffice-1.1-dk	ports/editors/openoffice-1.1-dk
@@ -5212,6 +5214,7 @@ opensp		ports/textproc/opensp
 openssh-askpass	ports/security/openssh-askpass
 openssh-portable	ports/security/openssh-portable
 openssl-beta	ports/security/openssl-beta
+openthreads	ports/devel/openthreads
 openuniverse	ports/astro/openuniverse
 openverse	ports/net/openverse
 openvmps	ports/net/openvmps
@@ -5386,21 +5389,21 @@ p5-Business-OnlinePayment-SurePay	ports/finance/p5-Business-OnlinePayment-SurePa
 p5-Business-OnlinePayment-TCLink	ports/finance/p5-Business-OnlinePayment-TCLink
 p5-Business-OnlinePayment-VirtualNet	ports/finance/p5-Business-OnlinePayment-VirtualNet
 p5-Business-OnlinePayment-eSec		ports/finance/p5-Business-OnlinePayment-eSec
-p5-Business-WorldPay-Junior	ports/finance/p5-Business-WorldPay-Junior
 p5-Business-UPS	ports/misc/p5-Business-UPS
+p5-Business-WorldPay-Junior	ports/finance/p5-Business-WorldPay-Junior
 p5-C-Scan	ports/devel/p5-C-Scan
 p5-CDB_File	ports/databases/p5-CDB_File
 p5-CDB_File-Generator	ports/databases/p5-CDB_File-Generator
 p5-CDDB		ports/audio/p5-CDDB
 p5-CDDB-File	ports/audio/p5-CDDB-File
 p5-CDDB_get	ports/audio/p5-CDDB_get
-p5-CGI-SSI	ports/www/p5-CGI-SSI
 p5-CGI-Application	ports/www/p5-CGI-Application
 p5-CGI-ArgChecker	ports/www/p5-CGI-ArgChecker
 p5-CGI-Cache	ports/www/p5-CGI-Cache
 p5-CGI-FastTemplate	ports/www/p5-CGI-FastTemplate
 p5-CGI-Kwiki	ports/www/p5-CGI-Kwiki
 p5-CGI-Minimal	ports/www/p5-CGI-Minimal
+p5-CGI-SSI	ports/www/p5-CGI-SSI
 p5-CGI-Session	ports/www/p5-CGI-Session
 p5-CGI-SpeedyCGI	ports/www/p5-CGI-SpeedyCGI
 p5-CGI-Untaint	ports/www/p5-CGI-Untaint
@@ -6005,6 +6008,7 @@ p5-Net-SFTP	ports/net/p5-Net-SFTP
 p5-Net-SMPP	ports/net/p5-Net-SMPP
 p5-Net-SMTP-Server	ports/mail/p5-Net-SMTP-Server
 p5-Net-SNMP	ports/net/p5-Net-SNMP
+p5-Net-SNMP3	ports/net/p5-Net-SNMP3
 p5-Net-SNPP	ports/net/p5-Net-SNPP
 p5-Net-SSH	ports/net/p5-Net-SSH
 p5-Net-SSH-Perl	ports/net/p5-Net-SSH-Perl
@@ -6155,8 +6159,8 @@ p5-Search-Binary	ports/devel/p5-Search-Binary
 p5-Search-InvertedIndex	ports/databases/p5-Search-InvertedIndex
 p5-Search-Namazu	ports/databases/p5-Search-Namazu
 p5-Search-Saryer	ports/textproc/p5-Search-Saryer
-p5-Server-FastPL	ports/devel/p5-Server-FastPL
 p5-Sendmail-Milter	ports/mail/p5-Sendmail-Milter
+p5-Server-FastPL	ports/devel/p5-Server-FastPL
 p5-Set-Crontab	ports/devel/p5-Set-Crontab
 p5-Set-Infinite	ports/devel/p5-Set-Infinite
 p5-Set-IntSpan	ports/math/p5-Set-IntSpan
@@ -6601,7 +6605,6 @@ pgen		ports/mail/pgen
 pglogd		ports/www/pglogd
 pgp		ports/security/pgp
 pgp4pine	ports/mail/pgp4pine
-pgp5		ports/security/pgp5
 pgp6		ports/security/pgp6
 pgpdump		ports/security/pgpdump
 pgperl		ports/graphics/pgperl
@@ -6711,6 +6714,7 @@ pks		ports/security/pks
 pktsuckers	ports/security/pktsuckers
 pl-aspell	ports/polish/aspell
 pl-openoffice-1.0	ports/polish/openoffice-1.0
+pl-openoffice-1.1	ports/polish/openoffice-1.1
 pl-sms		ports/polish/sms
 plan		ports/deskutils/plan
 planets		ports/astro/planets
@@ -6757,7 +6761,6 @@ pngcrush	ports/graphics/pngcrush
 pngquant	ports/graphics/pngquant
 pngwriter	ports/graphics/pngwriter
 pnm2ppa		ports/print/pnm2ppa
-ppower4		ports/textproc/ppower4
 poc		ports/security/poc
 pocketreader	ports/textproc/pocketreader
 poedit		ports/editors/poedit
@@ -6811,8 +6814,8 @@ ports_databases	ports/databases
 ports_deskutils	ports/deskutils
 ports_devel	ports/devel
 ports_dict	ports/textproc/dict
-ports_doc	ports/net/doc
 ports_dns	ports/dns
+ports_doc	ports/net/doc
 ports_editors	ports/editors
 ports_egcs	ports/lang/egcs
 ports_emulators	ports/emulators
@@ -6938,6 +6941,7 @@ ppl		ports/devel/ppl
 ppm2fli		ports/multimedia/ppm2fli
 ppmcaption	ports/graphics/ppmcaption
 ppmtoTbmp	ports/palm/ppmtoTbmp
+ppower4		ports/textproc/ppower4
 pppload		ports/net/pppload
 pppoa		ports/net/pppoa
 ppptraf		ports/net/ppptraf
@@ -6981,6 +6985,7 @@ proxyper	ports/misc/proxyper
 proxytunnel	ports/security/proxytunnel
 prozilla	ports/ftp/prozilla
 prtunnel	ports/net/prtunnel
+prune		ports/sysutils/prune
 pscal		ports/print/pscal
 pscan		ports/security/pscan
 pserv		ports/www/pserv
@@ -7277,6 +7282,7 @@ q3server-wfa	ports/games/q3server-wfa
 qadsl		ports/net/qadsl
 qbrew		ports/misc/qbrew
 qcad		ports/cad/qcad
+qcad2		ports/cad/qcad2
 qcc		ports/games/qcc
 qcl		ports/emulators/qcl
 qconfirm	ports/mail/qconfirm
@@ -7406,8 +7412,8 @@ rbldnsd		ports/dns/rbldnsd
 rboot		ports/net/rboot
 rbot		ports/irc/rbot
 rc		ports/shells/rc
-rc_subr		ports/sysutils/rc_subr
 rc5pipe		ports/security/rc5pipe
+rc_subr		ports/sysutils/rc_subr
 rcalc		ports/math/rcalc
 rclean		ports/sysutils/rclean
 rclock		ports/x11-clocks/rclock
@@ -7761,6 +7767,7 @@ ruby-rice	ports/irc/ruby-rice
 ruby-rmagick	ports/graphics/ruby-rmagick
 ruby-rmail	ports/mail/ruby-rmail
 ruby-robjectteam	ports/devel/ruby-robjectteam
+ruby-romp	ports/net/ruby-romp
 ruby-rreadline	ports/devel/ruby-rreadline
 ruby-rss	ports/textproc/ruby-rss
 ruby-rss.alt	ports/textproc/ruby-rss.alt
@@ -7776,6 +7783,7 @@ ruby-shout	ports/audio/ruby-shout
 ruby-slang	ports/devel/ruby-slang
 ruby-smf	ports/audio/ruby-smf
 ruby-snmp	ports/net/ruby-snmp
+ruby-socketproxy	ports/net/ruby-socketproxy
 ruby-spread	ports/net/ruby-spread
 ruby-spreadsheet-excel	ports/textproc/ruby-spreadsheet-excel
 ruby-sqlite	ports/databases/ruby-sqlite
@@ -7869,8 +7877,8 @@ scalapack	ports/math/scalapack
 scand		ports/net/scand
 scandoc		ports/devel/scandoc
 scanssh		ports/security/scanssh
-scdp		ports/net/scdp
 sccmilter	ports/mail/sccmilter
+scdp		ports/net/scdp
 sced		ports/graphics/sced
 sceptre		ports/cad/sceptre
 scheme48	ports/lang/scheme48
@@ -7932,10 +7940,10 @@ seahaven	ports/games/seahaven
 seahorse	ports/security/seahorse
 seaview		ports/biology/seaview
 sec		ports/sysutils/sec		
-security_hydra	ports/security/hydra
 secpanel	ports/security/secpanel
 sectar		ports/archivers/sectar
 sectok		ports/security/sectok
+security_hydra	ports/security/hydra
 sed_inplace	ports/textproc/sed_inplace
 sedsed		ports/devel/sedsed
 seejpeg		ports/graphics/seejpeg
@@ -8631,6 +8639,7 @@ trueprint	ports/print/trueprint
 truevision	ports/graphics/truevision
 tsclient	ports/net/tsclient
 tsocks		ports/net/tsocks
+tt		ports/games/tt
 ttcp		ports/net/ttcp
 ttf2pt1		ports/print/ttf2pt1
 ttftot42	ports/print/ttftot42
@@ -8638,7 +8647,6 @@ tth		ports/textproc/tth
 ttlscan		ports/net/ttlscan
 ttmkfdir	ports/x11-fonts/ttmkfdir
 ttraffic	ports/games/ttraffic
-tt		ports/games/tt
 ttt		ports/net/ttt
 ttyload		ports/sysutils/ttyload
 ttyrec		ports/misc/ttyrec
@@ -9092,6 +9100,7 @@ wordplay	ports/games/wordplay
 worker		ports/x11-fm/worker
 workman		ports/audio/workman
 workplace	ports/x11-fm/workplace
+workrave	ports/x11/workrave
 worldtools	ports/sysutils/worldtools
 wots		ports/sysutils/wots
 wping		ports/net/wping
@@ -9267,6 +9276,7 @@ xfce4-minicmd-plugin	ports/sysutils/xfce4-minicmd-plugin
 xfce4-mixer	ports/audio/xfce4-mixer
 xfce4-netload-plugin	ports/sysutils/xfce4-netload-plugin
 xfce4-notes	ports/deskutils/xfce4-notes
+xfce4-notes-plugin	ports/deskutils/xfce4-notes-plugin
 xfce4-panel	ports/x11-wm/xfce4-panel
 xfce4-panel-themes	ports/misc/xfce4-panel-themes
 xfce4-print	ports/print/xfce4-print
@@ -9850,8 +9860,8 @@ zonecheck	ports/dns/zonecheck
 zoo		ports/archivers/zoo
 zoom		ports/games/zoom
 zope		ports/www/zope
-zope-cmf13	ports/www/zope-cmf13
 zope-cmf	ports/www/zope-cmf
+zope-cmf13	ports/www/zope-cmf13
 zope-cmfforum	ports/www/zope-cmfforum
 zope-guf	ports/www/zope-guf
 zope-zmysqlda	ports/www/zope-zmysqlda
