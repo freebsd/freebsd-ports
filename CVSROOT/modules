@@ -5458,6 +5458,7 @@ p5-Digest	ports/security/p5-Digest
 p5-Digest-BubbleBabble	ports/security/p5-Digest-BubbleBabble
 p5-Digest-HMAC	ports/security/p5-Digest-HMAC
 p5-Digest-MD2	ports/security/p5-Digest-MD2
+p5-Digest-MD4	ports/security/p5-Digest-MD4
 p5-Digest-MD5	ports/security/p5-Digest-MD5
 p5-Digest-Nilsimsa	ports/security/p5-Digest-Nilsimsa
 p5-Digest-SHA1	ports/security/p5-Digest-SHA1
