@@ -1700,6 +1700,7 @@ gdbm		ports/databases/gdbm
 gdcd		ports/audio/gdcd
 gdchart		ports/graphics/gdchart
 gdict		ports/textproc/gdict
+gdis		ports/science/gdis
 gdk-pixbuf	ports/graphics/gdk-pixbuf
 gdkxft		ports/x11/gdkxft
 gdl		ports/x11-toolkits/gdl
