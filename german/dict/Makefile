@@ -9,7 +9,7 @@
 DISTNAME=       dict-1.1
 PKGNAME=        de-dict-1.1
 CATEGORIES=	german
-MASTER_SITES=   http://www.freebsd.org/~wosch/src/
+MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${dict}.gz
 
 MAINTAINER=     wosch@FreeBSD.org
