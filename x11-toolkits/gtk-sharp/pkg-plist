@@ -1,0 +1,37 @@
+bin/gapi.pl
+bin/gapi2xml.pl
+bin/gapi_codegen.exe
+bin/gapi_format_xml
+bin/gapi_pp.pl
+bin/gconfsharp-schemagen
+bin/gconfsharp-schemagen.exe
+lib/art-sharp.dll
+lib/atk-sharp.dll
+lib/gconf-sharp-peditors.dll
+lib/gconf-sharp.dll
+lib/gda-sharp.dll
+lib/gdk-sharp.dll
+lib/glade-sharp.dll
+lib/glib-sharp.dll
+lib/gnome-sharp.dll
+lib/gnomedb-sharp.dll
+lib/gtk-sharp.dll
+lib/libgtksharpglue.a
+lib/libgtksharpglue.so
+lib/libgtksharpglue.so.0
+lib/pango-sharp.dll
+share/gapi/art-api.xml
+share/gapi/atk-api.xml
+share/gapi/gda-api.xml
+share/gapi/gdk-api.xml
+share/gapi/gdk-symbols.xml
+share/gapi/glade-api.xml
+share/gapi/gnome-api.xml
+share/gapi/gnomedb-api.xml
+share/gapi/gst-api.xml
+share/gapi/gtk-api.xml
+share/gapi/gtk-symbols.xml
+share/gapi/pango-api.xml
+share/perl5/GAPI/Metadata.pm
+@dirrm share/perl5/GAPI
+@dirrm share/gapi

@@ -1,0 +1,19 @@
+--- parser/Makefile.in	Tue Sep  3 23:31:19 2002
++++ parser/Makefile.in	Wed Dec 11 15:35:33 2002
+@@ -1,4 +1,7 @@
+ CC = @CC@
++CFLAGS = @CFLAGS@
++CPPFLAGS = @CPPFLAGS@
++BASE_DEPENDENCIES_CFLAGS = @BASE_DEPENDENCIES_CFLAGS@
+ 
+ SCRIPTS = \
+ 	gapi.pl \
+@@ -10,7 +13,7 @@
+ all: $(SCRIPTS) $(MODULES) gapi_format_xml
+ 
+ gapi_format_xml: formatXml.c
+-	$(CC) -o gapi_format_xml formatXml.c `pkg-config --cflags --libs libxml-2.0 glib-2.0`
++	$(CC) $(CPPFLAGS) -o gapi_format_xml formatXml.c `pkg-config --cflags --libs libxml-2.0 glib-2.0` $(CFLAGS) $(BASE_DEPENDENCIES_CFLAGS)
+ 
+ clean:
+ 	rm -f gapi_format_xml
