@@ -1,0 +1,19 @@
+--- evg.py.orig	Sun Apr 18 18:55:42 1999
++++ evg.py	Sun Apr 18 18:57:00 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/python
++#!!!PREFIX!!/bin/python
+ # EVG - ECLiPt Virtual Gallery Creator
+ # (c) 1999 by Emanuel Pirker <epirker@edu.uni-klu.ac.at>
+ # Distributed under the GNU GPL. 
+@@ -10,8 +10,8 @@
+ # ----------------------------------------------------------------------
+ # Constants
+ 
+-CONVERTCMD = '/usr/X11R6/bin/convert'
+-VIEWERCMD = '/usr/bin/ee'
++CONVERTCMD = '!!PREFIX!!/bin/convert'
++VIEWERCMD = '!!XPREF!!/bin/xv'
+ THUMBNAILDIR = 'thumbnails'
+ THUMBPERCENT = '20%'
+ SERDBFILE = "serdb"
