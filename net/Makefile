@@ -258,6 +258,7 @@
     SUBDIR += ldapdiff
     SUBDIR += ldapsdk
     SUBDIR += lft
+    SUBDIR += libconnect
     SUBDIR += libdnet
     SUBDIR += libfreenet
     SUBDIR += libicq
