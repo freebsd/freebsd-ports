@@ -6,25 +6,39 @@
 #
 
 PORTNAME=		powermanga
-PORTVERSION=		0.78
-PORTREVISION=	2
+PORTVERSION=		0.79
 CATEGORIES=		games
-MASTER_SITES=		http://www.tlk.fr/lesjeux/
-DISTNAME=		${PORTNAME}
+MASTER_SITES=		http://linux.tlk.fr/games/Powermanga/download/
+EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		An arcade 2D shoot-em-up
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_X_PREFIX=		yes
 USE_SDL=		sdl mixer
 GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--program-prefix=""
 USE_REINPLACE=		yes
 
 MAN6=			powermanga.6
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/powermanga.6
+	@${REINPLACE_CMD} -e 's|^CXXFLAGS="-O3.*||' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/games/\(powermanga/graphics\)|${PREFIX}/share/\1|; \
+		 s|/usr/share/games/\(powermanga\)/sound|${PREFIX}/share/\1/sounds|' \
+		${WRKSRC}/powermanga.6
+	@${REINPLACE_CMD} -e 's|(mandir)|&/man6|' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|\((prefix)\)/games|\1/bin|' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|games/\(powermanga\)|\1|' \
+		${WRKSRC}/graphics/Makefile.in \
+		${WRKSRC}/sounds/Makefile.in \
+		${WRKSRC}/src/linuxroutines.cpp
+	@${REINPLACE_CMD} -e 's|SDL/||' \
+		${WRKSRC}/src/powermanga.hpp \
+		${WRKSRC}/src/sdl_mixer.cpp
 
 .if !defined(NOPORTDOCS)
 post-install:
