@@ -1,0 +1,11 @@
+--- configure.orig	Fri Jan 16 23:19:17 2004
++++ configure	Wed Dec 29 00:11:23 2004
+@@ -228,7 +228,7 @@
+ fi
+ 
+ echo "VERSION=$version" > Makefile.cfg
+-#echo "PREFIX=$prefix" >> Makefile.cfg
++echo "PREFIX=$prefix" >> Makefile.cfg
+ echo "XLIB_DIR=$xlib_dir" >> Makefile.cfg
+ if [ "$vk_opt" != "" ]; then
+ 	echo "VK_OPT=$vk_opt" >> Makefile.cfg

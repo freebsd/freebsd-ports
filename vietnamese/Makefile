@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += xvnkb
 
     COMMENT = Vietnamese support
 
