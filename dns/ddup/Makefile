@@ -22,6 +22,7 @@ post-configure:
 		${WRKSRC}/INSTALL-C
 
 post-install:
+	${INSTALL_MAN} ${FILESDIR}/ddup.1 ${PREFIX}/man/man1
 	strip ${PREFIX}/sbin/ddup
 
 .include <bsd.port.mk>
