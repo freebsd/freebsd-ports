@@ -6266,6 +6266,7 @@ py-period	ports/devel/py-period
 py-plex		ports/devel/py-plex
 py-pow		ports/security/py-pow
 py-pqueue	ports/devel/py-pqueue
+py-psyco	ports/devel/py-psyco
 py-psycopg	ports/databases/py-psycopg
 py-px		ports/devel/py-px
 py-pyPgSQL	ports/databases/py-pyPgSQL
