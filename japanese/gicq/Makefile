@@ -12,8 +12,8 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.korsoft.com/pub/gicq/
 MASTER_SITE_SUBDIR=	flathill
 
-PATCH_SITES=	${MASTER_SITE_LOCAL} \
-		http://www-nagao.kuee.kyoto-u.ac.jp/member/taku/soft/
+PATCH_SITES=	http://download.sourceforge.net/gicq/ \
+		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	flathill
 PATCHFILES=	${DISTNAME}ja.patch
 PATCH_DIST_STRIP=	-p1
