@@ -1,18 +1,18 @@
---- Makefile.orig	Wed Jun 16 22:27:02 1999
-+++ Makefile	Wed Jun 23 12:48:55 1999
+--- Makefile.orig	Tue Sep 12 21:41:59 2000
++++ Makefile	Wed Sep 13 00:29:49 2000
 @@ -20,12 +20,12 @@
  #
  
  #CC	= cc
 -CC	= gcc
-+CC	?= gcc
++#CC	= gcc
  MAN1	= README
  # If you want to show only default color , remove "-DANSI_COLOR"
--CFLAG	= -g -DANSI_COLOR
-+CFLAG	= ${CFLAGS} -DANSI_COLOR
+-CFLAGS += -g -DANSI_COLOR
++CFLAGS += -DANSI_COLOR
  PROG	= templ
 -DESTDIR	= /usr/local
-+DESTDIR	= ${PREFIX} 
- TEMPLS = t.c t.cc t.css t.html t.makefile t.pl t.pmakefile t.py t.sh t.txt t.sgml
++DESTDIR	= ${PREFIX}
+ TEMPLS = t.c t.cc t.css t.html t.makefile t.pl t.pmakefile t.py t.sh t.txt t.sgml t.4th
  TEMPLDIR = ${DESTDIR}/share/templates
  RM	= rm -f
