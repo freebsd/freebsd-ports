@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
-# $Id: Makefile,v 1.5 1999/01/18 06:42:59 asami Exp $
+# $Id: Makefile,v 1.6 1999/06/27 01:52:37 cpiazza Exp $
 #
 
 DISTNAME=	wmmixer-1.0-beta1
@@ -16,6 +16,7 @@ MAINTAINER=	rneswold@mcs.net
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+WRKSRC=			${WRKDIR}/wmmixer
 FETCH_BEFORE_ARGS=	-t
 USE_IMAKE=		yes
 NO_INSTALL_MANPAGES=	yes
