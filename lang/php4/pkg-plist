@@ -1,4 +1,4 @@
-%%CLI%%bin/pear
+%%CLI%%%%PEAR%%bin/pear
 %%CLI%%bin/php
 bin/php-config
 bin/phpextdist
@@ -201,31 +201,31 @@ lib/php/build/shtool
 %%SAPI_FILE%%
 %%APACHE%%@exec %D/sbin/apxs -e -a -n php4 %f
 %%APACHE%%@unexec %D/sbin/apxs -e -A -n php4 %f
-%%CLI%%share/pear/bootstrap/Archive/Tar.php
-%%CLI%%share/pear/bootstrap/PEAR.php
-%%CLI%%share/pear/bootstrap/System.php
-%%CLI%%share/pear/bootstrap/Console/Getopt.php
-%%CLI%%share/pear/bootstrap/OS/Guess.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Auth.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Build.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Common.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Config.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Install.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Mirror.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Package.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Registry.php
-%%CLI%%share/pear/bootstrap/PEAR/Command/Remote.php
-%%CLI%%share/pear/bootstrap/PEAR/Autoloader.php
-%%CLI%%share/pear/bootstrap/PEAR/Builder.php
-%%CLI%%share/pear/bootstrap/PEAR/Command.php
-%%CLI%%share/pear/bootstrap/PEAR/Common.php
-%%CLI%%share/pear/bootstrap/PEAR/Config.php
-%%CLI%%share/pear/bootstrap/PEAR/Dependency.php
-%%CLI%%share/pear/bootstrap/PEAR/Installer.php
-%%CLI%%share/pear/bootstrap/PEAR/Packager.php
-%%CLI%%share/pear/bootstrap/PEAR/Registry.php
-%%CLI%%share/pear/bootstrap/PEAR/Remote.php
-%%CLI%%share/pear/bootstrap/PEAR/Frontend/CLI.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/Archive/Tar.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/System.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/Console/Getopt.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/OS/Guess.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Auth.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Build.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Common.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Config.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Install.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Mirror.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Package.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Registry.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command/Remote.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Autoloader.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Builder.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Command.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Common.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Config.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Dependency.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Installer.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Packager.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Registry.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Remote.php
+%%CLI%%%%PEAR%%share/pear/bootstrap/PEAR/Frontend/CLI.php
 @dirrm include/php/TSRM
 @dirrm include/php/Zend
 @dirrm include/php/ext/mbstring
@@ -241,11 +241,11 @@ lib/php/build/shtool
 @unexec rmdir %D/lib/php/%%EXT_DIR%% 2> /dev/null || true
 @dirrm lib/php/build
 @unexec rmdir %D/lib/php 2> /dev/null || true
-%%CLI%%@dirrm share/pear/bootstrap/Archive
-%%CLI%%@dirrm share/pear/bootstrap/Console
-%%CLI%%@dirrm share/pear/bootstrap/OS
-%%CLI%%@dirrm share/pear/bootstrap/PEAR/Command
-%%CLI%%@dirrm share/pear/bootstrap/PEAR/Frontend
-%%CLI%%@dirrm share/pear/bootstrap/PEAR
-%%CLI%%@dirrm share/pear/bootstrap
-%%CLI%%@unexec rmdir %D/share/pear 2> /dev/null || true
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/Archive
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/Console
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/OS
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/PEAR/Command
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/PEAR/Frontend
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap/PEAR
+%%CLI%%%%PEAR%%@dirrm share/pear/bootstrap
+%%CLI%%%%PEAR%%@unexec rmdir %D/share/pear 2> /dev/null || true
