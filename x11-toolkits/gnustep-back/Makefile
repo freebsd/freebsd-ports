@@ -15,6 +15,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
+PKGNAMESUFFIX?=	${BACK_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep GUI backend
@@ -48,7 +49,7 @@ BREAKS_IF_PEDANTIC=	yes
 CONFIGURE_ARGS+=	--enable-graphics=xdps --with-name=xdps
 PLIST_SUB+=		BACK=xdps
 PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="" USE_ART="@comment "
-PKGNAMESUFFIX?=		-xdps
+BACK_SUFFIX?=		-xdps
 CONFLICTS?=		gunstep-back-0.* gunstep-back-art-0.*
 .else
 .if defined(WITH_GNUSTEP_LIBART)
@@ -56,7 +57,7 @@ LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
 PLIST_SUB+=		BACK=art USE_XLIB="@comment "
 PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="@comment " USE_ART=""
-PKGNAMESUFFIX?=		-art
+BACK_SUFFIX?=		-art
 CONFLICTS?=		gunstep-back-0.* gunstep-back-xdps-0.*
 .else
 CONFIGURE_ARGS+=	--enable-graphics=xlib --with-name=back
