@@ -124,6 +124,7 @@
     SUBDIR += libgnomecups
     SUBDIR += libgnomeprint
     SUBDIR += libijs
+    SUBDIR += libotf
     SUBDIR += libpaper
     SUBDIR += libpdf++
     SUBDIR += lilypond
