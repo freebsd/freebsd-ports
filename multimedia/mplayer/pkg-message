@@ -5,7 +5,7 @@ Just cd to the ports directory and type
 make install-user
 
 Note: This is only for the bitmap fonts! If you've compiled
-mplayer with truetype supprt, this won't work.
+mplayer with truetype support, this won't work.
 
 Please take a look at docs in
 /usr/local/share/doc/mplayer
