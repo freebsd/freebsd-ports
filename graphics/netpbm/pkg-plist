@@ -3,7 +3,7 @@ bin/anytopnm
 bin/asciitopgm
 bin/atktopbm
 bin/bioradtopgm
-bin/bmptoppm
+bin/bmptopnm
 bin/brushtopbm
 bin/cmuwmtopbm
 bin/eyuvtoppm
@@ -32,6 +32,7 @@ bin/palmtopnm
 bin/pamchannel
 bin/pamcut
 bin/pamdeinterlace
+bin/pamdice
 bin/pamfile
 bin/pamoil
 bin/pamstretch
@@ -69,6 +70,7 @@ bin/pbmtopgm
 bin/pbmtopi3
 bin/pbmtopk
 bin/pbmtoplot
+bin/pbmtoppa
 bin/pbmtopsg3
 bin/pbmtoptx
 bin/pbmtowbmp
@@ -87,7 +89,6 @@ bin/pgmhist
 bin/pgmkernel
 bin/pgmmerge
 bin/pgmnoise
-bin/pgmnorm
 bin/pgmramp
 bin/pgmslice
 bin/pgmtexture
@@ -122,6 +123,7 @@ bin/pnmmargin
 bin/pnmmerge
 bin/pnmmontage
 bin/pnmnlfilt
+bin/pnmnorm
 bin/pnmpad
 bin/pnmpaste
 bin/pnmpsnr
@@ -166,7 +168,6 @@ bin/ppmlabel
 bin/ppmmake
 bin/ppmmerge
 bin/ppmmix
-bin/ppmnorm
 bin/ppmntsc
 bin/ppmpat
 bin/ppmquant
@@ -233,6 +234,7 @@ bin/ybmtopbm
 bin/yuvsplittoppm
 bin/yuvtoppm
 bin/zeisstopnm
+include/bitio.h
 include/pam.h
 include/pammap.h
 include/pbm.h

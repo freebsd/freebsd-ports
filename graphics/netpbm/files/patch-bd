@@ -1,45 +1,19 @@
---- pbm/Makefile.orig	Fri Nov 16 02:33:04 2001
-+++ pbm/Makefile	Sat Dec  8 00:00:00 2001
+--- pbm/Makefile.orig	Mon Feb 18 04:18:04 2002
++++ pbm/Makefile	Sat Mar 16 00:00:00 2002
 @@ -52,6 +52,7 @@
  
  # Library objects to be built and linked by Makefile.common:
- LIBOBJECTS = libpm.o libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
+ LIBOBJECTS = libpm.o libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o bitio.o
 +SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
  ifneq (${VMS}x,x)
  LIBOBJECTS += libpbmvms.o
  endif
-@@ -68,26 +69,21 @@
- 
- .PHONY: all
- all:	$(LIBPBM) $(BINARIES) $(EXTRA_STATICLIB)
--	$(MAKE) -C pbmtoppa all
+@@ -71,7 +72,7 @@
+ 	$(MAKE) -C pbmtoppa all
  
  .PHONY: merge
 -merge: $(MERGENAME)
--	$(MAKE) -C pbmtoppa all
 +merge: $(MERGENAME) $(EXTRA_STATICLIB)
+ 	$(MAKE) -C pbmtoppa all
  
  .PHONY: install.bin
- install.bin: install.bin.common
--	$(MAKE) -C pbmtoppa install.bin
- 
- .PHONY: install.merge
- install.merge: install.merge.common
--	$(MAKE) -C pbmtoppa install.bin
- 
- .PHONY: install.lib
- install.lib: install.lib.common
- 
- .PHONY: install.man
- install.man: install.man.common
--	$(MAKE) -C pbmtoppa install.man
- 
- HEADERLINKS = pm_config.h version.h compile.h
- 
-@@ -110,6 +106,5 @@
- clean: clean.common
- 	rm -f thinkjettopbm.c
- 	rm -f compile.h
--	$(MAKE) -C pbmtoppa clean
- 
- FORCE:
