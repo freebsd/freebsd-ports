@@ -11,7 +11,7 @@ CATEGORIES=	lang tcl81
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
 DISTNAME=	tcl8.1b1
 
-MAINTAINER=	ejc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl81 with threads support
 
 FILE_DEPENDS=	${PORTSDIR}/lang/tcl80
