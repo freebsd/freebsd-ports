@@ -2,6 +2,8 @@ bin/vileget
 bin/xvile
 bin/xvile-pager
 bin/xshell.sh
+lib/xvile/vile-as-filt
+lib/xvile/vile-asm-filt
 lib/xvile/vile-basic-filt
 lib/xvile/vile-c-filt
 lib/xvile/vile-crypt
@@ -22,6 +24,7 @@ lib/xvile/vile-esql-filt
 lib/xvile/vile-est-filt
 lib/xvile/vile-html-filt
 lib/xvile/vile-imake-filt
+lib/xvile/vile-info-filt
 lib/xvile/vile-latex-filt
 lib/xvile/vile-lex-filt
 lib/xvile/vile-lisp-filt
@@ -32,6 +35,7 @@ lib/xvile/vile-mms-filt
 lib/xvile/vile-nr-filt
 lib/xvile/vile-perl-filt
 lib/xvile/vile-pl-filt
+lib/xvile/vile-pot-filt
 lib/xvile/vile-ps-filt
 lib/xvile/vile-py-filt
 lib/xvile/vile-rc-filt
@@ -48,10 +52,12 @@ lib/xvile/vile-tags-filt
 lib/xvile/vile-tbl-filt
 lib/xvile/vile-tc-filt
 lib/xvile/vile-tcl-filt
+lib/xvile/vile-texi-filt
 lib/xvile/vile-ti-filt
 lib/xvile/vile-txt-filt
 lib/xvile/vile-vlog-filt
 lib/xvile/vile-vile-filt
+lib/xvile/vile-xml-filt
 lib/xvile/vile-xres-filt
 lib/xvile/vile-xs-filt
 lib/xvile/vile-yacc-filt
@@ -106,6 +112,9 @@ share/xvile/vile/vileinit.rc
 share/xvile/vile/vileperl.rc
 share/xvile/vile/vile.hlp
 share/xvile/vile/which.rc
+share/xvile/vile/as.keywords
+share/xvile/vile/as386.keywords
+share/xvile/vile/asm.keywords
 share/xvile/vile/basic.keywords
 share/xvile/vile/c.keywords
 share/xvile/vile/cpp.keywords
@@ -155,7 +164,9 @@ share/xvile/vile/tags.keywords
 share/xvile/vile/tbl.keywords
 share/xvile/vile/tc.keywords
 share/xvile/vile/tcl.keywords
+share/xvile/vile/texi.keywords
 share/xvile/vile/ti.keywords
+share/xvile/vile/xml.keywords
 share/xvile/vile/xres.keywords
 share/xvile/vile/xs.keywords
 share/xvile/macros/color-ls.rc

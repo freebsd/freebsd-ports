@@ -52,6 +52,9 @@ share/vile/shifts.rc
 share/vile/vileinit.rc
 share/vile/vileperl.rc
 share/vile/vile.hlp
+share/vile/as.keywords
+share/vile/as386.keywords
+share/vile/asm.keywords
 share/vile/c.keywords
 share/vile/cpp.keywords
 share/vile/filters.rc
@@ -101,8 +104,10 @@ share/vile/tags.keywords
 share/vile/tbl.keywords
 share/vile/tc.keywords
 share/vile/tcl.keywords
+share/vile/texi.keywords
 share/vile/ti.keywords
 share/vile/which.rc
+share/vile/xml.keywords
 share/vile/xres.keywords
 share/vile/xs.keywords
 share/vile/macros/color-ls.rc

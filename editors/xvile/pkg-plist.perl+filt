@@ -55,6 +55,9 @@ share/xvile/vile/vileinit.rc
 share/xvile/vile/vileperl.rc
 share/xvile/vile/vile.hlp
 share/xvile/vile/which.rc
+share/xvile/vile/as.keywords
+share/xvile/vile/as386.keywords
+share/xvile/vile/asm.keywords
 share/xvile/vile/basic.keywords
 share/xvile/vile/c.keywords
 share/xvile/vile/cpp.keywords
@@ -104,7 +107,9 @@ share/xvile/vile/tags.keywords
 share/xvile/vile/tbl.keywords
 share/xvile/vile/tc.keywords
 share/xvile/vile/tcl.keywords
+share/xvile/vile/texi.keywords
 share/xvile/vile/ti.keywords
+share/xvile/vile/xml.keywords
 share/xvile/vile/xres.keywords
 share/xvile/vile/xs.keywords
 share/xvile/macros/color-ls.rc
