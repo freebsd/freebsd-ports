@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	POE-Component-RSS
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5 textproc
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	skv@protey.ru
+MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A module for event based RSS parsing
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/POE.pm:${PORTSDIR}/devel/p5-POE \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
+BUILD_DEPENDS=	${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE \
+		${SITE_PERL}/XML/RSS.pm:${PORTSDIR}/textproc/p5-XML-RSS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		POE::Component::RSS.3
 
 .include <bsd.port.mk>
