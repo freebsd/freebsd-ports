@@ -6,33 +6,28 @@
 #
 
 PORTNAME=	gschem
-PORTVERSION=	20030223
-PORTREVISION=	1
+PORTVERSION=	20040111
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/devel/${PORTVERSION}/ \
 		http://geda.seul.org/devel/${PORTVERSION}/ \
 		http://www.tinkerbox.org/projects/files/gEDA/
-
-DISTNAME=       geda-${PORTNAME}-${PORTVERSION}
+DISTNAME=	geda-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	gEDA electronic schematic capture tools
 
-BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols
-LIB_DEPENDS=	geda.18:${PORTSDIR}/cad/libgeda \
+RUN_DEPENDS=	${LOCALBASE}/share/gEDA/sym:${PORTSDIR}/cad/geda-symbols
+LIB_DEPENDS=	geda.20:${PORTSDIR}/cad/libgeda \
 		guile.15:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=	yes
-
-GNU_CONFIGURE=	yes
-AUTOCONF=	autoconf
-
 USE_GNOME=	gtk12
 CONFIGURE_ARGS=	--enable-gdgeda
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
+INFO=		gschemdoc
 MAN1=		gschem.1
 
 .include <bsd.port.mk>

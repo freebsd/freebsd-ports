@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgdgeda
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.15
 CATEGORIES=	graphics cad
 MASTER_SITES=	ftp://ftp.geda.seul.org/pub/geda/dist/ \
 		http://www.geda.seul.org/devel/support/ \
@@ -17,6 +17,8 @@ COMMENT=	Special version of the gd graphic lib for use by gEDA programs
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
+USE_GMAKE=	yes
+USE_GNOME=	pkgconfig gnomehack
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
