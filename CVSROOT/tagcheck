@@ -13,6 +13,7 @@ case "$1" in
     ;;
 esac
 
+USER=`/usr/bin/id -un`
 case "$USER" in
   peter | jdp | markm | obrien | murray | jhb | bmah | scottl)
     exit 0	# ok
