@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- configure.orig	Tue Jan 22 12:36:47 2002
-+++ configure	Tue Jan 22 12:38:07 2002
+--- configure.orig	Thu Jan 24 10:25:14 2002
++++ configure	Thu Jan 24 10:38:00 2002
 @@ -5949,7 +5949,7 @@
  VFS_GNOMEUI_LIBS="`gnome-config --libs gnome gnomeui`"
  VFS_GNOMEGNORBA_LIBS="`gnome-config --libs gnome gnomeui gnorba`"
@@ -54,3 +54,12 @@ $FreeBSD$
  		
  
  if true; then
+@@ -10594,7 +10594,7 @@
+ s%@GTK_CFLAGS@%$GTK_CFLAGS%g
+ s%@GTK_LIBS@%$GTK_LIBS%g
+ s%@cflags_set@%$cflags_set%g
+-s%@PTHREAD_LIB@%$PTHREAD_LIB%g
++s%@PTHREAD_LIB@%$BSD_PTHREAD_LIBS%g
+ s%@ALLOCA@%$ALLOCA%g
+ s%@USE_NLS@%$USE_NLS%g
+ s%@MSGFMT@%$MSGFMT%g

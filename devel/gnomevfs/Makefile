@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomevfs
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-vfs
@@ -27,10 +28,11 @@ USE_X_PREFIX=	yes
 USE_GNOMELIBS=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
-		XGETTEXT=${LOCALBASE}/bin/xgettext-new
+		XGETTEXT=${LOCALBASE}/bin/xgettext-new \
+		BSD_PTHREAD_LIBS=${PTHREAD_LIBS}
 
 MAN5=		gnome-vfs-mime.5
 
