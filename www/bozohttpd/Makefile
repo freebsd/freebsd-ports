@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bozohttpd
-PORTVERSION=	20031005
+PORTVERSION=	20040218
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.eterna.com.au/bozohttpd/
 
@@ -18,6 +18,19 @@ USE_BZIP2=	YES
 .if defined(WITH_HTPASSWD_SUPPORT)
 CFLAGS+=	-DDO_HTPASSWD
 MAKE_ARGS+=	'LDFLAGS+= -lcrypt'
+.endif
+
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+CFLAGS+=	-UNO_SSL_SUPPORT
+.else
+CFLAGS+=	-DNO_SSL_SUPPORT
+.endif
+
+.if defined(NO_CGI)
+CFLAGS+=	-DNO_CGIBIN_SUPPORT
+.else
+CFLAGS+=	-UNO_CGIBIN_SUPPORT
 .endif
 
 MAN8=		bozohttpd.8
