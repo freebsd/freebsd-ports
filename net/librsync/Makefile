@@ -1,0 +1,30 @@
+# ex:ts=8
+# New ports collection makefile for:	librsync
+# Date created:			Mar 13, 2001
+# Whom:				Ying-Chieh Liao <ijliao@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	librsync
+PORTVERSION=	0.9.2
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	rproxy
+
+MAINTAINER=	ijliao@FreeBSD.org
+
+LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
+		bz2.1:${PORTSDIR}/archivers/bzip2
+
+USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
+		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include"
+
+USE_GMAKE=	yes
+
+MAN1=	rdiff.1
+MAN3=	librsync.3
+
+.include <bsd.port.mk>

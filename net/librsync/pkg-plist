@@ -1,0 +1,3 @@
+bin/rdiff
+include/rsync.h
+lib/librsync.a
