@@ -140,6 +140,7 @@ share/irc/help/load/2.9script
 share/irc/help/load/action
 share/irc/help/load/alias
 share/irc/help/load/autoop
+share/irc/help/load/autoquery
 share/irc/help/load/basical
 share/irc/help/load/bigcheese
 share/irc/help/load/brc
@@ -241,6 +242,7 @@ share/irc/help/on/connect
 share/irc/help/on/ctcp
 share/irc/help/on/ctcp_reply
 share/irc/help/on/dcc_chat
+share/irc/help/on/dcc_list
 share/irc/help/on/dcc_raw
 share/irc/help/on/disconnect
 share/irc/help/on/exec
@@ -499,6 +501,7 @@ share/irc/help/window/stack
 share/irc/help/window/sticky
 share/irc/help/window/swap
 share/irc/help/window/unbind
+share/irc/help/window/where
 share/irc/help/window/window
 share/irc/help/xecho
 share/irc/help/xtype
@@ -507,6 +510,7 @@ share/irc/script/2.9script
 share/irc/script/action
 share/irc/script/alias
 share/irc/script/autoop
+share/irc/script/autoquery
 share/irc/script/basical
 share/irc/script/bigcheese
 share/irc/script/brc
