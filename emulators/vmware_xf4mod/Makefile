@@ -28,9 +28,9 @@ RESTRICTED=	"Not sure if we can redistribute it"
 
 do-extract:
 		${MKDIR} ${WRKSRC}
-		${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
+		# Nothing else
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} ${PREFIX}/lib/modules/drivers
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${PREFIX}/lib/modules/drivers
 
 .include <bsd.port.mk>
