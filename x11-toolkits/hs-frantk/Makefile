@@ -37,7 +37,9 @@ PLIST_SUB+=	HUGS="@comment "
 .if !defined(WITHOUT_GHC)
 ALL_TARGET+=	all
 INSTALL_TARGET+=install_ghc pkg
-PLIST_SUB+=	GHC=""
+GHC_VERSION=	`${PREFIX}/bin/ghc --version 2>&1 | \
+			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
+PLIST_SUB+=	GHC="" GHC_VERSION="${GHC_VERSION}"
 .else
 PLIST_SUB+=	GHC="@comment "
 .endif
@@ -67,6 +69,9 @@ post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/frantk.conf
 
 post-install:
+.if !defined(WITHOUT_GHC)
+	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
+.endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${CP} ${WRKDIR}/FranTk1.1/doc/frantk.pdf ${DOCSDIR}

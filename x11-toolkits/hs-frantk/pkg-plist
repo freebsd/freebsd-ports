@@ -168,4 +168,6 @@
 %%GHC%%@dirrm lib/frantk/imports
 %%GHC%%@dirrm lib/frantk
 %%HUGS%%@unexec rmdir %D/lib/frantk || true
+%%GHC%%@exec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
 %%GHC%%@unexec ghc-pkg -r FranTk
+%%GHC%%@unexec /bin/rm -f %D/lib/ghc-%%GHC_VERSION%%/package.conf.old
