@@ -3,7 +3,7 @@ system may be used with either plain TeX or LaTeX. It includes the Metafont
 sources for a new set of Go fonts, and a Perl script called Sgf2tex which
 translates files in ``Smart Go Format'' (SGF) into TeX.
 
-WWW: http://match.stanford.edu/bump/sgf2tex.html
+WWW: http://match.stanford.edu/~bump/sgf2tex.html
 
 - Steve Coltrin
 spcoltri@omcl.org
