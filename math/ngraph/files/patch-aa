@@ -67,7 +67,7 @@
 +PLATFORM  = '"for X11 [FreeBSD+Motif2.1]"'
 +X11INCLUDE = -I${X11BASE}/include -I/usr/dt/include
 +STATICLINK =
-+X11LIB = ${MOTIFLIB} -lm -L${X11BASE}/lib -lXext -lXt -lXp -lX11 -lICE -lSM -lxpg4
++X11LIB = ${MOTIFLIB} -lm -L${X11BASE}/lib -lXext -lXt -lXp -lX11 -lICE -lSM
  #
  ###############################################################################
  

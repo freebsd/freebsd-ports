@@ -49,13 +49,6 @@ pre-patch:
 	  ${CP} ${FILESDIR}/LocPixmap.c ${WRKSRC} );
 
 post-patch:
-	@(for libfile in /usr/lib/libxpg4*; do \
-		if [ ! "$$libfile" = "" ]; then \
-			${ECHO_MSG} "===>  Finding the xpg4 library in /usr/lib"; \
-			(cd ${WRKSRC}; ${PATCH} -s < ${FILESDIR}/Imakefile.xpg4.diff );\
-			break 1; \
-		fi; \
-	  done)
 .if defined(YOUBIN)
 	@(cd ${WRKSRC}; ${PATCH} -s < ${FILESDIR}/xpbiff.youbin.diff );
 .endif

@@ -34,7 +34,7 @@ diff -rBbc src/s/freebsd.h src/s/freebsd.h
   #define PENDING_OUTPUT_COUNT(FILE) ((FILE)->_p - (FILE)->_bf._base)
   
   #define LIBS_DEBUG
-! #define LIBS_SYSTEM -lutil -lcrypt -lxpg4
+! #define LIBS_SYSTEM -lutil -lcrypt
 ! #if __FreeBSD_version < 400000
   #define LIBS_TERMCAP -ltermcap
 ! #else

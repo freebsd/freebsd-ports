@@ -1,5 +1,5 @@
---- Imakefile.orig	Thu Jun 14 00:25:24 2001
-+++ Imakefile	Thu Jun 14 00:26:01 2001
+--- Imakefile.orig	Mon Nov 15 10:27:12 2004
++++ Imakefile	Mon Nov 15 10:28:32 2004
 @@ -6,13 +6,15 @@
  /* if, for whatever reason, you're unable to get the JPEG library to compile
   * on your machine, *COMMENT OUT* the following line
@@ -65,28 +65,7 @@
  
  INCLUDES = $(JPEGINCLUDE) $(TIFFINCLUDE)
  
-@@ -254,10 +270,10 @@
- #endif
- 
- 
--NormalProgramTarget(xv,$(OBJS1),$(DEPLIBS),$(LOCAL_LIBRARIES),)
--NormalProgramTarget(bggen,$(OBJS2),$(DEPLIBS),$(LOCAL_LIBRARIES),)
--NormalProgramTarget(xcmap,$(OBJS4),$(DEPLIBS),$(LOCAL_LIBRARIES),)
--NormalProgramTarget(xvpictoppm,$(OBJS5),$(DEPLIBS),$(LOCAL_LIBRARIES),)
-+NormalProgramTarget(xv,$(OBJS1),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
-+NormalProgramTarget(bggen,$(OBJS2),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
-+NormalProgramTarget(xcmap,$(OBJS4),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
-+NormalProgramTarget(xvpictoppm,$(OBJS5),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
- 
-  
- InstallProgram(xv,$(BINDIR))
-@@ -266,16 +282,16 @@
- InstallProgram(xvpictoppm,$(BINDIR))
- 
- #ifdef HavePDS
--NormalProgramTarget(vdcomp,$(OBJS3),$(DEPLIBS),$(LOCAL_LIBRARIES),)
-+NormalProgramTarget(vdcomp,$(OBJS3),$(DEPLIBS),$(LOCAL_LIBRARIES),-lxpg4)
- InstallProgram(vdcomp,$(BINDIR))
+@@ -271,11 +287,11 @@
  #endif
  
   

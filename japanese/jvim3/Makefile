@@ -35,7 +35,7 @@ PORT_DOCDIR=	${PREFIX}/share/doc/ja-jvim-${PORTVERSION}
 # -DUSE_X11 is the cause of a problem treating Japanese
 MACHINE=	-DBSD_UNIX -DUSE_LOCALE
 CC=		cc ${CFLAGS} -Wall
-LIBS=		-ltermlib -lxpg4 -L${PREFIX}/lib 
+LIBS=		-ltermlib -L${PREFIX}/lib 
 
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes

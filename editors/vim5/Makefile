@@ -73,12 +73,6 @@ MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable
 
 .include <bsd.port.pre.mk>
 
-# Determine if we need xpg4.
-# No xpg4 in libc below 400020 and 500005
-.if ${OSVERSION} < 400020 && ${OSVERSION} < 500005
-MAKE_ARGS+=	LIBS=-lxpg4
-.endif
-
 .if ${PERL_LEVEL} >= 500800
 BROKEN=		"Does not compile with perl 5.8"
 .endif

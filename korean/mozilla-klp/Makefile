@@ -37,7 +37,6 @@ LOCALENAME=	ko_KR.eucKR
 LOCALENAME=	ko_KR.EUC
 .else
 LOCALENAME=	ko_KR.EUC
-LIBXPG4=	LD_PRELOAD=/usr/lib/libxpg4.so.2; export LD_PRELOAD
 .endif
 
 post-extract:
@@ -47,7 +46,6 @@ post-extract:
 do-build:
 	${SED} -e "s^@PREFIX@^${PREFIX}^g" \
 	       -e "s^@LOCALENAME@^${LOCALENAME}^g" \
-	       -e "s^@LIBXPG4@^${LIBXPG4}^g" \
 	${FILESDIR}/mozilla.sh > ${WRKDIR}/mozilla
 
 do-install:

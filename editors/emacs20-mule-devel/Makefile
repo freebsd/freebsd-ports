@@ -67,13 +67,6 @@ PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET} \
 SCRIPTS_ENV=	SED=${SED} MV=${MV} \
 		DOC_FILE=${DOC_FILE}
 
-.if defined(WITH_XPG4)
-.if ${OSVERSION} >= 220000 && ${OSVERSION} < 400020 || \
-	${OSVERSION} >= 500000 && ${OSVERSION} < 500005
-CONFIGURE_ARGS+=	--with-xpg4
-.endif
-.endif
-
 pre-patch:
 	@(cd ${WRKSRC} ; \
 	  ${PATCH} ${PATCH_ARGS} -p1 < ../${XIM_PATCH}/${XIM_PATCH}.diff ;\

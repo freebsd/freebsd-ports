@@ -1,14 +1,16 @@
---- configs/freebsd-g++-shared.orig	Tue Oct 10 00:37:00 2000
-+++ configs/freebsd-g++-shared	Tue Oct 10 00:37:24 2000
-@@ -25,7 +25,7 @@
+--- configs/freebsd-g++-shared.orig	Mon Nov 15 10:50:49 2004
++++ configs/freebsd-g++-shared	Mon Nov 15 10:52:33 2004
+@@ -25,8 +25,8 @@
  
  # Linking applications
  SYSCONF_LINK		= g++
 -SYSCONF_LFLAGS		= 
+-SYSCONF_LIBS		= -lxpg4
 +SYSCONF_LFLAGS		= %%CXXFLAGS%%
- SYSCONF_LIBS		= -lxpg4
++SYSCONF_LIBS		= 
  
  # Link flags shared objects
+ SYSCONF_LFLAGS_SHOBJ	= -shared
 @@ -40,15 +40,13 @@
  #   - Usually needs to incorporate $(VER_MAJ) and $(VER_MIN)
  #

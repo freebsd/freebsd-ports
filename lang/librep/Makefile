@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lxpg4 -lintl ${PTHREAD_LIBS}"
+		LIBS="-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 

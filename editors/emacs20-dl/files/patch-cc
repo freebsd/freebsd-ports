@@ -1,15 +1,5 @@
 --- configure.in.orig	Tue Jun  6 00:42:49 2000
 +++ configure.in	Sat Jul  1 20:46:31 2000
-@@ -42,6 +42,9 @@
- AC_ARG_WITH(hesiod,
- [  --with-hesiod           support Hesiod to get the POP server host],
- [AC_DEFINE(HESIOD)])
-+AC_ARG_WITH(xpg4,
-+[  --with-xpg4             support XPG4 library on FreeBSD system],
-+[AC_DEFINE(USE_XPG)])
- dnl This should be the last --with option, because --with-x is
- dnl added later on when we find the path of X, and it's best to
- dnl keep them together visually.
 @@ -147,6 +150,15 @@
  machine='' opsys='' unported=no
  case "${canonical}" in

@@ -35,14 +35,3 @@
  
 -mailto		/usr/X11/bin/mailto.pl
 +mailto		/usr/X11R6/lib/X11/chimera/mailto.pl
---- src/Imakefile.orig	Wed May 28 02:44:35 1997
-+++ src/Imakefile	Sun Feb 21 11:42:50 1999
-@@ -28,7 +28,7 @@
-                    -L../xloadimage -lxloadimage $(COMPATLIB) \
-                    -L../common -lcommon \
-                    $(CSOCKSLIB) $(CTERMLIB) $(CEXTRA_LIBS) \
--                   XawClientLibs -lm
-+                   XawClientLibs -lm -lxpg4
- 
- #ifdef __QNX__
- LOCAL_DEPLIBS    = ../common/common3r.lib ../mxw/mxw3r.lib \

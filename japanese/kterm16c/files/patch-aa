@@ -18,12 +18,3 @@
  /*
   * add -DWTMP and -DLASTLOG if you want them.
   */
-@@ -81,7 +90,7 @@
- SpecialCObjectRule(charproc,$(_NOOP_),$(MISC_DEFINES))
- 
- #if InstallXtermSetUID
--SetUIDProgramTarget(kterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(XPMLIB) $(TERMCAPLIB) $(PTYLIB))
-+SetUIDProgramTarget(kterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(XPMLIB) $(TERMCAPLIB) $(PTYLIB) -lxpg4)
- #else
- NormalProgramTarget(kterm,$(OBJS1),$(DEPLIBS1),XkbClientLibs XawClientLibs,$(XPMLIB) $(TERMCAPLIB) $(PTYLIB))
- #endif

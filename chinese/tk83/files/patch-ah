@@ -1,5 +1,5 @@
---- configure.in.orig	Thu Feb 10 11:11:02 2000
-+++ configure.in	Wed Feb 21 21:27:45 2001
+--- configure.in.orig	Thu Feb 10 20:11:02 2000
++++ configure.in	Mon Nov 15 10:10:10 2004
 @@ -60,6 +60,12 @@
  SC_LOAD_TCLCONFIG
  
@@ -13,7 +13,7 @@
  # Recompute the necessary flags to run the compiler
  #--------------------------------------------------------------------
  
-@@ -372,6 +378,113 @@
+@@ -372,6 +378,72 @@
  TK_SHARED_BUILD=${SHARED_BUILD}
  
  #--------------------------------------------------------------------
@@ -79,47 +79,6 @@
 +    rm -rf ImakeCheck
 +fi
 +
-+# At last check FreeBSD and have -lxpg4.
-+AC_MSG_CHECKING([system version (for additional locale library)])
-+if test -f /usr/lib/NextStep/software_version; then
-+    system=NEXTSTEP-`awk '/3/,/3/' /usr/lib/NextStep/software_version`
-+else
-+    system=`uname -s`-`uname -r`
-+    if test "$?" -ne 0 ; then
-+        system=unknown
-+    else
-+        # Special check for weird MP-RAS system (uname returns weird
-+        # results, and the version is kept in special file).
-+    
-+        if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
-+            system=MP-RAS-`awk '{print $3}' /etc/.relid'`
-+        fi
-+        if test "`uname -s`" = "AIX" ; then
-+            system=AIX-`uname -v`.`uname -r`
-+        fi
-+    fi
-+fi
-+
-+case $system in
-+    FreeBSD-*)
-+	LIBS="$XLIBSW -lxpg4 $tk_oldLibs"
-+	CFLAGS="$CFLAGS $X11_IMAKE_FLAGS"
-+	AC_TRY_COMPILE([
-+#include <locale.h>
-+], [
-+(void)setlocale(LC_ALL, "");
-+], [
-+AC_MSG_RESULT(use xpg4 library.)
-+XLIBSW="$XLIBSW -lxpg4"
-+], [
-+AC_MSG_RESULT(no need other libraries.)
-+])
-+	;;
-+    *)
-+	AC_MSG_RESULT(No additional library is needed.)
-+	;;
-+esac
-+
 +CFLAGS=$tk_oldCflags
 +LIBS=$tk_oldLibs
 +
@@ -127,7 +86,7 @@
  # The statements below define various symbols relating to creating
  # the stub'd version of the Tk library
  #
-@@ -453,5 +566,5 @@
+@@ -453,5 +525,5 @@
  AC_SUBST(XINCLUDES)
  AC_SUBST(XLIBSW)
  AC_SUBST(TK_SHARED_BUILD)
