@@ -1,0 +1,42 @@
+--- configure.orig	Wed Sep 18 07:02:16 2002
++++ configure	Thu Oct 31 17:55:52 2002
+@@ -2789,7 +2789,7 @@
+ echo "$as_me: error: this package needs a convenience libltdl" >&2;}
+    { (exit 1); exit 1; }; } ;;
+   "") enable_ltdl_convenience=yes
+-      ac_configure_args="$ac_configure_args --enable-ltdl-convenience" ;;
++      ac_configure_args="--enable-ltdl-convenience" ;;
+   esac
+   LIBLTDL='${top_builddir}/''libltdl'/libltdlc.la
+   LTDLINCL='-I${top_srcdir}/''libltdl'
+@@ -9633,9 +9633,9 @@
+ 
+ 
+ 
+-# Check whether --with-gl or --without-gl was given.
+-if test "${with_gl+set}" = set; then
+-  withval="$with_gl"
++# Check whether --with-opengl or --without-opengl was given.
++if test "${with_opengl+set}" = set; then
++  withval="$with_opengl"
+   HAVE_OPENGL=$withval
+ else
+   HAVE_OPENGL=auto
+@@ -9763,7 +9763,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lGL $OPENGL_LIBS
++LIBS="-lGL $OPENGL_LIBS -lX11 -lXext
+ 		 $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+@@ -9814,7 +9814,7 @@
+ echo "$as_me:$LINENO: result: $ac_cv_lib_GL_glBegin" >&5
+ echo "${ECHO_T}$ac_cv_lib_GL_glBegin" >&6
+ if test $ac_cv_lib_GL_glBegin = yes; then
+-  OPENGL_LIBS="$OPENGL_LIBS -lGL"
++  OPENGL_LIBS="$OPENGL_LIBS -lGL -lX11 -lXext"
+ 			HAVE_OPENGL=yes
+ else
+   HAVE_OPENGL=no
