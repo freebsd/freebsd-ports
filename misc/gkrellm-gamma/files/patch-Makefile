@@ -1,0 +1,17 @@
+--- Makefile.orig	Sun Sep 14 19:18:12 2003
++++ Makefile	Sat Dec 11 23:12:03 2004
+@@ -8,12 +8,12 @@
+ FLAGS = -Wall -fPIC $(GTK_CFLAGS) $(GKRELLM_INCLUDE)
+ CFLAGS ?= -O -g
+ CFLAGS += $(FLAGS)
+-LIBS = -L/usr/X11R6/lib $(GTK_LIB)
++LIBS = -L${X11BASE}/lib $(GTK_LIB) -lXxf86vm
+ LFLAGS = -shared
+ CC ?= gcc
+ INSTALL = install -c
+ INSTALL_PROGRAM = $(INSTALL) -s
+-OBJS = main.o /usr/X11R6/lib/libXxf86vm.a
++OBJS = main.o
+ 
+ gamma.so: $(OBJS)
+ 	$(CC) $(FLAGS) $(OBJS) -o gamma.so $(LIBS) $(LFLAGS)
