@@ -8,7 +8,7 @@
 PORTNAME=	lincvs
 PORTVERSION=	0.4.90
 CATEGORIES=	devel kde
-MASTER_SITES=	http://lincvs.sunsite.dk/download/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	http://lincvs.sunsite.dk/download/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src
 EXTRACT_SUFX=	.tgz
 
