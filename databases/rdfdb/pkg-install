@@ -1,0 +1,48 @@
+#!/bin/sh
+
+PATH=/bin:/usr/sbin
+if [ -z "${RDFDB_DIR}" ]; then
+	RDFDB_DIR=/var/db/rdfdb
+fi
+
+case $2 in
+PRE-INSTALL)
+	USER=rdfdb
+	GROUP=${USER}
+	UID=71
+	GID=${UID}
+
+	if pw group show "${GROUP}" 2>/dev/null; then
+		echo "You already have a group \"${GROUP}\", so I will use it."
+	else
+		if pw groupadd ${GROUP} -g ${GID}; then
+			echo "Added group \"${GROUP}\"."
+		else
+			echo "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+
+	if pw user show "${USER}" 2>/dev/null; then
+		echo "You already have a user \"${USER}\", so I will use it."
+		if pw usermod ${USER} -d ${RDFDB_DIR}
+		then
+			echo "Changed home directory of \"${USER}\" to \"${RDFDB_DIR}\""
+		else
+			echo "Changing home directory of \"${USER}\" to \"${RDFDB_DIR}\" failed..."
+			exit 1
+		fi
+	else
+		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
+			-d ${RDFDB_DIR} -s /bin/sh -c "rdfDB Daemon"
+		then
+			echo "Added user \"${USER}\"."
+		else
+			echo "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+
+	chown -R ${USER}:${GROUP} ${RDFDB_DIR}
+	;;
+esac

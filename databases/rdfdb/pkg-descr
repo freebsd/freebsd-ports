@@ -1,0 +1,24 @@
+R.V. Guha's rdfDB. Intended to be a simple, scalable, open-source
+database for RDF. Written in C and based on top of the Sleepycat
+Berkeley Database, it supports interrogation via TCP/IP sockets,
+meaning integration is possible with any programming language.
+
+rdfDB uses a high level SQLish query language. The data is modelled as
+a directed labelled graph (RDF).
+
+The goals of this project are to build a database that is capable of:
+
+   1. Supporting a graph oriented API via a textual query language ala
+      SQL.
+   2. Load/Reload an RDF file from a url into the database
+   3. Scalable to millions of nodes and triples.
+   4. Provide support for RDF Schemas.
+   5. Provide support for some basic forms of inferencing.
+   6. Provide both C and Perl access to the database.
+   7. The Perl philosophy applies : Simple things should be simple and
+      complex things should be possible.
+
+WWW: http://www.guha.com/rdfdb/
+
+- Philip Jenvey
+pjenvey@turntables.org

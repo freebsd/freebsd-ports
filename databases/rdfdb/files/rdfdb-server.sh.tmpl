@@ -1,0 +1,22 @@
+#!/bin/sh
+
+RDFDB_DIR=%%RDFDB_DIR%%
+RDFDB_PORT=%%RDFDB_PORT%%
+export RDFDB_DIR RDFDB_PORT
+
+case "$1" in
+	start)
+		if [ -x %%PREFIX%%/bin/rdfdb ]; then
+			su rdfdb -c 'exec %%PREFIX%%/bin/rdfdb > /dev/null &' && echo -n ' rdfdb'
+		fi
+		;;
+	stop)
+		/usr/bin/killall rdfdb > /dev/null 2>&1 && echo -n ' rdfdb'
+		;;
+	*)
+		echo ""
+		echo "Usage: `basename $0` { start | stop }"
+		echo ""
+		exit 64
+		;;
+esac

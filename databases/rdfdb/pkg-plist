@@ -1,0 +1,4 @@
+bin/rdfdb
+etc/rc.d/rdfdb-server.sh
+@unexec rmdir %%RDFDB_DIR%% 2>/dev/null || true
+@exec mkdir -p %%RDFDB_DIR%%

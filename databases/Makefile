@@ -124,6 +124,7 @@
     SUBDIR += py-pyPgSQL
     SUBDIR += py-sqlrelay
     SUBDIR += rdb
+    SUBDIR += rdfdb
     SUBDIR += ruby-bdb
     SUBDIR += ruby-bdb1
     SUBDIR += ruby-cdb
