@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtk-engines-collection
-PORTVERSION= 	1.1
+PORTVERSION= 	1.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -19,6 +19,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${PORTSDIR}/x11-toolkits/buffy \
 		${THEMESBASE}/libclean.so:${PORTSDIR}/x11-toolkits/clean-theme-gtk \
 		${THEMESBASE}/libgnomelook.so:${PORTSDIR}/x11-toolkits/gnome-look \
+		${THEMESBASE}/libgtkbe.so:${PORTSDIR}/x11-toolkits/gtkbe \
 		${THEMESBASE}/libstep.so:${PORTSDIR}/x11-toolkits/gtkstep \
 		${THEMESBASE}/libsteppastel.so:${PORTSDIR}/x11-toolkits/gtkstep-pastel \
 		${THEMESBASE}/libthinice.so:${PORTSDIR}/x11-toolkits/thinice \
