@@ -28,6 +28,7 @@ DIST_SUBDIR=	netscape6/english/${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUX_BASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		${LINUX_BASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk \
 		${LINUX_BASE}/usr/lib/libjpeg.so.62.0.0:${PORTSDIR}/graphics/linux-jpeg
@@ -45,7 +46,7 @@ STARTUP_CMD=	netscape6
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	@${TAR} xzf ${DISTDIR}/${DISTFILES} -C ${WRKDIR}
+	@${TAR} xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} -C ${WRKDIR}
 .for i in browser deflenus jre langenus mail psm spellchecker xpcom
 	unzip -qo ${WRKSRC}/${i}.xpi -d ${WRKSRC}
 .endfor
@@ -63,6 +64,7 @@ do-patch:
 
 do-configure:
 	${SETENV} $DISPLAY="NONE" ${WRKSRC}/bin/netscape file:///dev/null
+	@${ECHO} A \"cannot open display\" error here is normal.
 	${SED} -e "s;%%INSTALL_DIR%%;${INSTALL_DIR};g" \
 	${FILESDIR}/start.sh >${WRKDIR}/${STARTUP_CMD}
 
