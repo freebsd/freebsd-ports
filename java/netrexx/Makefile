@@ -22,8 +22,10 @@ USE_ZIP=	yes
 USE_REINPLACE=	yes
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's/\015//' ${WRKSRC}/bin/NetRexxC.sh
-	@${REINPLACE_CMD} -e 's/\015//' ${WRKSRC}/read.me.first
+	for file in ${WRKSRC}/bin/NetRexxC.sh ${WRKSRC}/read.me.first; do \
+	    ${TR} -d '\015' < $${file} > $${file}.new; \
+	    ${MV} $${file}.new $${file}; \
+	done
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/NetRexxC.sh ${PREFIX}/bin
