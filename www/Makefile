@@ -129,7 +129,6 @@
     SUBDIR += fxhtml
     SUBDIR += g-gcl
     SUBDIR += galeon
-    SUBDIR += galeon2
     SUBDIR += gallery
     SUBDIR += gatling
     SUBDIR += geeklog
@@ -338,7 +337,6 @@
     SUBDIR += mozilla
     SUBDIR += mozilla-bonobo
     SUBDIR += mozilla-devel
-    SUBDIR += mozilla-gtk1
     SUBDIR += mplayer-plugin
     SUBDIR += nanoblogger
     SUBDIR += nd
