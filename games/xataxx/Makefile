@@ -17,13 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN6=		xataxx.6
-MANCOMPRESSED=	no
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xataxx ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/xataxx.man ${PREFIX}/man/man6/xataxx.6
-	@${MKDIR} ${PREFIX}/share/xataxx
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/share/xataxx
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xataxx
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xataxx
