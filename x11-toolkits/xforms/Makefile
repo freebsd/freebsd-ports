@@ -3,13 +3,15 @@
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.13 1998/01/05 17:24:19 vanilla Exp $
+# $Id: Makefile,v 1.14 1998/01/10 06:05:41 jdp Exp $
 #
 
 DISTNAME=	bxform-088
 PKGNAME=	xforms-0.88
 CATEGORIES=	graphics x11
-MASTER_SITES=	ftp://einstein.phys.uwm.edu/pub/xforms/freeBSD/
+MASTER_SITES=	ftp://bragg.phys.uwm.edu/pub/xforms/freeBSD/ \
+		ftp://ftp.via.ecp.fr/pub2/xforms/freeBSD/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/X11/xforms/freeBSD/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	gena@NetVision.net.il
