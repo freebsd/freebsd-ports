@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	1.3.17
-PORTREVISION=	1
+PORTVERSION=    1.3.19
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
@@ -26,8 +25,8 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
 DISTNAME=	apache_${PORTVERSION}
 
-PATCH_SITES=    ${MASTER_SITES}
-PATCHFILES=     apache_1.3.17-fix.diff
+#PATCH_SITES=    ${MASTER_SITES}
+#PATCHFILES=     apache_${PORTVERSION}-fix.diff
 
 MAINTAINER=	ache@freebsd.org
 
