@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	6.0.0
+PORTVERSION=	6.0.0p1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/${PORTVERSION:S/.//g}src/
 DISTNAME=	PDFlib-Lite-${PORTVERSION}
