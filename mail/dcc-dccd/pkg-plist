@@ -1,5 +1,8 @@
 bin/dccproc
 bin/cdcc
+dcc/grey_whitelist
+dcc/libexec/fetch-testmsg-whitelist
+dcc/libexec/updatedcc
 dcc/libexec/dbclean
 dcc/libexec/dccd
 dcc/libexec/dccm

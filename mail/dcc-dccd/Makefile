@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcc-dccd
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.28
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
@@ -23,8 +23,6 @@ MANCOMPRESSED=	yes
 MAN8=		cdcc.8		dcc.8		dccd.8 \
 		dccm.8		dccproc.8	dccsight.8 \
 		dccifd.8	dbclean.8	dblist.8
-CAT8=		dccproc.8	cdcc.8
-
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -exec \
