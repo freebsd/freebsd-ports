@@ -121,6 +121,8 @@ jdk-tutorial-*		ports/java/jdk-tutorial	This software is under license and expor
 JRE-*			ports/java/jre		Put copyright on packaging!
 kaffe-*			ports/java/kaffe	Restrictive copyright
 linuxq3ademo-*		ports/games/linux-q3ademo	Restrictive license by Loki Software
+linux-ibm-*		ports/java/linux-ibm-jdk13	Redistribution of repackaged
+							binaries not permitted
 l0phtcrack		ports/security/l0phtcrack	Parts are under GPL, so
 						binaries should not be
 						distributed.  Contains crypto
