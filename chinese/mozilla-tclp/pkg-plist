@@ -6,6 +6,7 @@
 bin/mozilla
 lib/mozilla/chrome/installed-chrome.txt
 lib/mozilla/chrome/zh-TW.jar
+lib/mozilla/chrome/zh-unix.jar
 lib/mozilla/chrome/all-locales.rdf
 lib/mozilla/chrome/user-locales.rdf
 lib/mozilla/defaults/pref/unix.js

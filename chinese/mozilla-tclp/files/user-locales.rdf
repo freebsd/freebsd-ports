@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<RDF:RDF
+     xmlns:NS1541="http://www.mozilla.org/rdf/chrome#"
+     xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description about="urn:mozilla:package:global">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:global"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:global-region">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:US:global-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:wallet">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:wallet"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:global-platform">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:global-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:editor">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:editor"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:navigator-platform">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:navigator-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:navigator">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:navigator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:embed">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:embed"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:communicator">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:communicator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:messenger">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:messenger"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:communicator-platform">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:communicator-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:necko">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:necko"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:package:cookie">
+    <NS1541:selectedLocale resource="urn:mozilla:locale:zh-TW:cookie"/>
+  </RDF:Description>
+</RDF:RDF>
