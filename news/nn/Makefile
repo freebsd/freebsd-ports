@@ -23,6 +23,10 @@ MAN8=		nnmaster.8 nnspew.8
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not build on FreeBSD >= 5.x"
+.endif
+
 pre-patch:
 	@${CP} ${WRKSRC}/config.h-dist ${WRKSRC}/config.h.unparsed
 
