@@ -13,7 +13,11 @@ DISTNAME=	Wnn6-SDK-sources
 
 MAINTAINER=	taoka@FreeBSD.org
 
+.if ${XFREE86_VERSION} == 3
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
+.else
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+.endif
 
 WRKSRC=		${WRKDIR}/src/contrib/im/Xsi
 DOCDIR=		${PREFIX}/share/doc/ja-Wnn6-lib
