@@ -1,9 +1,9 @@
 # New ports collection makefile for:	apache HTTPD / php3
-# Version required:	1.3.1 / 3.0.3
+# Version required:	1.3* / 3.0*
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.54 1998/09/13 17:18:11 andreas Exp $
+# $Id: Makefile,v 1.56 1998/09/30 18:16:06 andreas Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -15,8 +15,8 @@ DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP3}.tar.gz
 
 MAINTAINER=	Dirk Froemberg <ibex@physik.TU-Berlin.DE>
 
-VERSION_APACHE=	1.3.2
-VERSION_PHP3=	3.0.4
+VERSION_APACHE=	1.3.3
+VERSION_PHP3=	3.0.5
 
 IS_INTERACTIVE=	yes
 NO_PACKAGE=	Support for different databases
