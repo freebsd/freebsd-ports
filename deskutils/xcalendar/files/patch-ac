@@ -1,5 +1,5 @@
 --- XCal-uj.sed.orig	Sun Oct  1 14:31:06 1995
-+++ XCal-uj.sed	Sun Mar 11 12:52:22 2001
++++ XCal-uj.sed	Sat Nov 22 00:58:44 2003
 @@ -3,7 +3,9 @@
  *showGrip:		False
  *calendar*internalBorderWidth: 0
@@ -68,12 +68,13 @@
  *succ*vertDistance: 0
  
 -*controls*date*fontSet:		8x13bold
-+*controls*date*fontSet:		8x13bold, -*--14-*
- *daynames*fontSet:			-*--14-*
+-*daynames*fontSet:			-*--14-*
 -*dayEditor*editorTitle*fontSet:	8x13bold
 -*helpWindow*editorTitle*fontSet:	8x13bold
-+*dayEditor*editorTitle*fontSet:	8x13bold, -*--14-*
-+*helpWindow*editorTitle*fontSet:	8x13bold, -*--14-*
++*controls*date*fontSet:		8x13bold, -*-r-*--14-*
++*daynames*fontSet:			-*-r-*--14-*
++*dayEditor*editorTitle*fontSet:	8x13bold, -*-r-*--14-*
++*helpWindow*editorTitle*fontSet:	8x13bold, -*-r-*--14-*
  
  *helpButton*vertDistance: 5
  *quitButton*vertDistance: 5
@@ -105,7 +106,12 @@
 -*prevday*highlightThickness: 0
 -*succday*highlightThickness: 0
 -*daybuttons*borderWidth: 0
--
++*dayEditor*fontSet:			-*-r-*--14-*
++*controls*fontSet:			-*-r-*--14-*
++*bcontrols*fontSet:			-*-r-*--14-*
++*editorControls*fontSet:		-*-r-*--14-*
++*fontSet: 				-*-r-*--14-*
+ 
 -*Scrollbar.borderWidth: 1
 -*editor.scrollVertical: whenNeeded
 -! *scrollHorizontal: False
@@ -116,12 +122,11 @@
 -*helpWindow*displayCaret: False
 -
 -
- *dayEditor*fontSet:			-*--14-*
- *controls*fontSet:			-*--14-*
- *bcontrols*fontSet:			-*--14-*
- *editorControls*fontSet:		-*--14-*
- *fontSet: 				-*--14-*
-+
+-*dayEditor*fontSet:			-*--14-*
+-*controls*fontSet:			-*--14-*
+-*bcontrols*fontSet:			-*--14-*
+-*editorControls*fontSet:		-*--14-*
+-*fontSet: 				-*--14-*
  !*preeditType: Root
  !*preeditType: OffTheSpot
  *preeditType: OverTheSpot
@@ -144,9 +149,10 @@
 +*daybuttons*borderWidth: 0
  
  *Scrollbar.borderWidth: 1
- *Text*scrollVertical: whenNeeded
+-*Text*scrollVertical: whenNeeded
 -*scrollHorizontal: False
 -*helpWindow*scrollHorizontal: True
++*Text*scrollVertical: always
 +*scrollHorizontal: Never
 +*helpWindow*scrollHorizontal: Always
  *holiday*cursorPositionVisible: False

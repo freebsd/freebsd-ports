@@ -1,5 +1,5 @@
 --- XCalendar.sed.orig	Tue Jul  4 06:59:01 1995
-+++ XCalendar.sed	Sun Mar 11 11:39:52 2001
++++ XCalendar.sed	Sat Nov 22 03:05:34 2003
 @@ -2,7 +2,9 @@
  *showGrip:		False
  *calendar*internalBorderWidth: 0
@@ -11,12 +11,14 @@
  *resizable: True
  *title: XCalendar v.4.0
  *dayEditor.title: Day Editor
-@@ -120,8 +122,8 @@
+@@ -119,9 +121,9 @@
+ *daybuttons*borderWidth: 0
  
  *Scrollbar.borderWidth: 1
- *Text*scrollVertical: whenNeeded
+-*Text*scrollVertical: whenNeeded
 -*scrollHorizontal: False
 -*helpWindow*scrollHorizontal: True
++*Text*scrollVertical: Always
 +*scrollHorizontal: Never
 +*helpWindow*scrollHorizontal: Always
  *holiday*cursorPositionVisible: False
