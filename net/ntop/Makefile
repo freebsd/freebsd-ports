@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=	--with-pcap-root=${PCAP_ROOT}
 
 .if defined(WITH_RRD)
 LIB_DEPENDS+=		rrd.0:${PORTSDIR}/net/rrdtool
-CONFIGURE_ARGS+=	--enable-rrd
+CONFIGURE_ARGS+=	--enable-rrd \
 			--with-rrd-root=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-rrd-root
