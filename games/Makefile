@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.37 1996/08/16 13:45:55 erich Exp $
+# $Id: Makefile,v 1.38 1996/09/16 00:31:37 asami Exp $
 #
 
     SUBDIR += acm
@@ -40,5 +40,6 @@
     SUBDIR += xsol
     SUBDIR += xtetris
     SUBDIR += xtic
+    SUBDIR += yamsweeper
 
 .include <bsd.port.subdir.mk>
