@@ -1,0 +1,11 @@
+--- po/Makefile.in.in.orig	Wed Apr 24 04:05:50 2002
++++ po/Makefile.in.in	Wed Apr 24 04:06:09 2002
+@@ -122,7 +122,7 @@
+ 	  cat=`basename $$cat`; \
+ 	  case "$$cat" in \
+ 	    *.gmo) destdir=$(gnulocaledir);; \
+-	    *)     destdir=$(localedir);; \
++	    *)     destdir=$(gnulocaledir);; \
+ 	  esac; \
+ 	  lang=`echo $$cat | sed 's/\$(CATOBJEXT)$$//'`; \
+ 	  dir=$$destdir/$$lang/LC_MESSAGES; \
