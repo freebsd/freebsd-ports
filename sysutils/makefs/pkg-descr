@@ -1,0 +1,8 @@
+This is a port of NetBSD's makefs utility.  Given a directory tree,
+makefs will generate a file system image, without requiring any
+special devices, kernel support, or privileges.
+
+WWW: http://www.daemonology.net/makefs/
+
+- Colin Percival
+cperciva@daemonology.net
