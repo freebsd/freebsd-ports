@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fdp-tools
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ruhr.de/home/nathan/FreeBSD/
 
