@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grip
-PORTVERSION=	3.0.7
-PORTREVISION=	1
+PORTVERSION=	3.1.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=grip
@@ -19,7 +18,7 @@ LIB_DEPENDS=	id3-3.8.2:${PORTSDIR}/audio/id3lib \
 		ghttp.1:${PORTSDIR}/www/libghttp
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomehack gnomelibs gnomeprefix gnometarget
+USE_GNOME=	gnomehack gnomeprefix gnometarget gnomevfs2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
