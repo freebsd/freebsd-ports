@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	java-commapi
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	comms java
 MASTER_SITES=	#
 DISTNAME=	javax_comm-${PORTVERSION:S/./_/g}-solsparc
@@ -22,8 +22,8 @@ RESTRICTED=	"no commercial use"
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/commapi
-DISTDESCR=	"the Java Communications API ${PORTVERSION} for Solaris/SPARC archive"
-DOWNLOAD_URL=	"http://java.sun.com/Download4?config-file=javacomm-${PORTVERSION:S/./_/g}.config\&platform=solsparc\&button=continue"
+DISTDESCR=	"the Java Communications API ${PORTVERSION} for Solaris/SPARC"
+DOWNLOAD_URL=	"http://java.sun.com/products/javacomm/"
 PORTDESTDIR=	${PREFIX}/jdk1.3.1/jre/lib/ext
 DISTFILE=	${DISTNAME}${EXTRACT_SUFX}
 DISTPATH=	${DISTDIR}/${DISTFILE}
@@ -35,7 +35,7 @@ IGNORE=		"Should be fetched manually"
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTPATH})
-IGNORE=You must manually fetch ${DISTDESCR} (${DISTFILE}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again.
+IGNORE=You must manually fetch ${DISTDESCR} (${DISTFILE}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
 do-install:
