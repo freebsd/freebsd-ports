@@ -1,0 +1,7 @@
+bin/Xinvest
+lib/X11/app-defaults/Xinvest
+share/examples/Xinvest/401k.inv
+share/examples/Xinvest/mutual.inv
+share/examples/Xinvest/stock.inv
+share/examples/Xinvest/tbill.inv
+@dirrm share/examples/Xinvest

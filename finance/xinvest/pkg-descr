@@ -1,0 +1,33 @@
+With Xinvest you can:
+
+Centralize record keeping by storing all transactions in account specific
+files.  
+Calculate total and annualized returns including the effects of buys, 
+sells, and dividends. This provides a means of comparing the results of all
+accounts in a portfolio, be they CDs, bonds, mutual funds, or your checking
+account.
+Receive automatic price updates in conjunction with the Xquote WWW quote
+retrieval program.
+View various transaction parameters such as share price, shares per 
+transaction, transaction cost, transaction value (at current price), 
+dividends, internal and total return, and/or cumulative and moving
+averages of the above. Plots are transaction based bar or date based x-y
+charts.
+View overall value weightings (asset allocation) of accounts in a
+portfolio. Specify categories, what percent of an account is in that category, and
+which accounts are of interest and Xinvest will tell you the value and
+percentage of all categories in the defined portfolio.  Predefined is a
+account category to view weighting of accounts in the total portfolio.
+Categories are hierarchical, so you can zoom into the makeup of your portfolio.  View in 
+text and pie chart form.
+A Financial calculator with common equations is provided.  Included are
+FV, PV, FV of sum of payments, and periodic loan payments.
+Hopefully, all of this is displayed using  an easy-to-use, point-and-click 
+interface.  There are few command line switches, no dot files, and X
+resources are limited to color and font selection allowing you to tailor
+the look of the tool to your own preferences.
+==========================================================================
+
+Check out the Xinvest home page at http://sunsite.auc.dk/xinvest/. Here
+you can find the latest source and Linux binary along with other helpful
+information on using Xinvest.
