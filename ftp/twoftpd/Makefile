@@ -7,6 +7,7 @@
 
 PORTNAME=	twoftpd
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/twoftpd/
 
