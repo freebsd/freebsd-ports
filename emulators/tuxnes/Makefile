@@ -12,7 +12,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	asmodai@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Nintendo Entertainment System 8-bit emulator
 
 USE_GETOPT_LONG=yes
