@@ -1,5 +1,5 @@
---- ircd-hybrid-6.2/Makefile.orig	Sun Oct  7 17:58:34 2001
-+++ ircd-hybrid-6.2/Makefile.in	Sun Oct  7 17:58:45 2001
+--- Makefile.in.orig	Thu Mar 21 16:47:44 2002
++++ Makefile.in	Thu Mar 21 16:47:57 2002
 @@ -22,7 +22,7 @@
  RM=@RM@
  
