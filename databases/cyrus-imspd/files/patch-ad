@@ -5,7 +5,7 @@
  #include <syslog.h>
  #include "xmalloc.h"
 -#include <sasl.h>
-+#include <sasl/sasl.h>
++#include <sasl1/sasl.h>
  
  #include "util.h"
  #include "syncdb.h"

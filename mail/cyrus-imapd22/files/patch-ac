@@ -7,7 +7,7 @@ diff -u configure.orig configure
  	if test -d ${with_sasl}; then
            ac_cv_sasl_where_lib=${with_sasl}/lib
 -          ac_cv_sasl_where_inc=${with_sasl}/include
-+          ac_cv_sasl_where_inc=${with_sasl}/include/sasl
++          ac_cv_sasl_where_inc=${with_sasl}/include/sasl1
  
  	  SASLFLAGS="-I$ac_cv_sasl_where_inc"
  	  LIB_SASL="-L$ac_cv_sasl_where_lib"

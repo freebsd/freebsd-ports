@@ -3,7 +3,7 @@ How to enable SMTP AUTH with FreeBSD default Sendmail
 1) Add the following to  /etc/make.conf:
 
     # Add SMTP AUTH support to Sendmail
-    SENDMAIL_CFLAGS+=	-I/usr/local/include/sasl -DSASL
+    SENDMAIL_CFLAGS+=	-I/usr/local/include/sasl1 -DSASL
     SENDMAIL_LDFLAGS+=	-L/usr/local/lib
     SENDMAIL_LDADD+=	-lsasl
 

@@ -5,7 +5,7 @@
            if test "$with_sasl" != "yes"
            then
 -            CPPFLAGS="$CPPFLAGS -I$with_sasl/include"
-+            CPPFLAGS="$CPPFLAGS -I$with_sasl/include/sasl"
++            CPPFLAGS="$CPPFLAGS -I$with_sasl/include/sasl1"
              LDFLAGS="$LDFLAGS -L$with_sasl/lib"
            fi
  
