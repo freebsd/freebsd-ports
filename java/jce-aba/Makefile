@@ -7,9 +7,8 @@
 
 PORTNAME=	jce-aba
 PORTVERSION=	1.1
-CATEGORIES=	java
-MASTER_SITES=	http://www.metaverse.nl/~ernst/ \
-		${MASTER_SITE_LOCAL}
+CATEGORIES=	java security
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
 
 MAINTAINER=	greg@greg.rim.or.jp
