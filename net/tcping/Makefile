@@ -13,6 +13,8 @@ MASTER_SITES=	http://stud.fh-heilbronn.de/~kirchner/tcping/
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Do a TCP connect to the given ip/port combination
 
+BROKEN=		"Checksum mismatch"
+
 DOCS=		README
 
 do-build:

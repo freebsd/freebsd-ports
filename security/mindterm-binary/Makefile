@@ -16,6 +16,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	alex@FreeBSD.org
 COMMENT=	"A full vt220 compatible Java SSH-1 client (not only for websites)"
 
+BROKEN=		"Checksum mismatch"
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

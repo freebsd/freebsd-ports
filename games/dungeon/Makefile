@@ -23,6 +23,8 @@ DISTFILES=	dungn27s.zip dungn32b.zip
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 COMMENT=	Text adventure game of ZORK
 
+BROKEN=		"Checksum mismatch"
+
 EXTRACT_ONLY=	dungn27s.zip
 
 NO_WRKSUBDIR=	yes

@@ -22,6 +22,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	taoka@FreeBSD.org
 COMMENT=	Japanese <-> English Dictionary (SDIC format)
 
+BROKEN=		"Checksum mismatch"
+
 ALL_TARGET=	jedict.sdic eedict.sdic
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-emacs=mule \

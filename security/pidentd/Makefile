@@ -18,6 +18,8 @@ PATCH_DIST_STRIP=	-p2
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An RFC1413 identification server
 
+BROKEN=		"Checksum mismatch"
+
 ALL_TARGET=	freebsd
 MAKE_ENV=	REALPREFIX=${PREFIX}
 MAN8=		identd.8 idecrypt.8

@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	File transfer utility using the kermit protocol
 
+BROKEN=		"Checksum mismatch"
+
 NO_WRKSUBDIR=	yes
 MAN1=		gkermit.1
 

@@ -19,6 +19,8 @@ PATCHFILES=	${DISTNAME}-ipv6-20020129-3.diff.gz
 MAINTAINER=	jkh@FreeBSD.org
 COMMENT=	A mirror program for FTP sites (written in C)
 
+BROKEN=		"Checksum mismatch"
+
 MANCOMPRESSED=	yes
 MAN1=		spegla.1
 

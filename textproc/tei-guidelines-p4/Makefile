@@ -15,6 +15,8 @@ DISTNAME=	p4html
 MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	TEI's Guidelines for Electronic Text Encoding and Interchange
 
+BROKEN=		"Checksum mismatch"
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 INSTDIR=	${PREFIX}/share/doc/tei/p4
