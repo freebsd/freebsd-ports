@@ -14,13 +14,10 @@ lib/%%DISTNAME%%/boot/dwim.pl
 lib/%%DISTNAME%%/boot/history.pl
 lib/%%DISTNAME%%/boot/init.pl
 lib/%%DISTNAME%%/boot/license.pl
-lib/%%DISTNAME%%/boot/list.pl
 lib/%%DISTNAME%%/boot/load.pl
-lib/%%DISTNAME%%/boot/make.pl
 lib/%%DISTNAME%%/boot/menu.pl
 lib/%%DISTNAME%%/boot/messages.pl
 lib/%%DISTNAME%%/boot/parms.pl
-lib/%%DISTNAME%%/boot/profile.pl
 lib/%%DISTNAME%%/boot/qlf.pl
 lib/%%DISTNAME%%/boot/rc.pl
 lib/%%DISTNAME%%/boot/sort.pl
@@ -42,7 +39,10 @@ lib/%%DISTNAME%%/library/am_match.pl
 lib/%%DISTNAME%%/library/backcomp.pl
 lib/%%DISTNAME%%/library/bim.pl
 lib/%%DISTNAME%%/library/check.pl
+lib/%%DISTNAME%%/library/checkselect.pl
+lib/%%DISTNAME%%/library/checklast.pl
 lib/%%DISTNAME%%/library/ctypes.pl
+lib/%%DISTNAME%%/library/debug.pl
 lib/%%DISTNAME%%/library/edinburgh.pl
 lib/%%DISTNAME%%/library/edit.pl
 lib/%%DISTNAME%%/library/emacs_interface.pl
@@ -52,7 +52,9 @@ lib/%%DISTNAME%%/library/gensym.pl
 lib/%%DISTNAME%%/library/help.pl
 lib/%%DISTNAME%%/library/helpidx.pl
 lib/%%DISTNAME%%/library/listing.pl
+lib/%%DISTNAME%%/library/lists.pl
 lib/%%DISTNAME%%/library/main.pl
+lib/%%DISTNAME%%/library/make.pl
 lib/%%DISTNAME%%/library/netscape.pl
 lib/%%DISTNAME%%/library/occurs.pl
 lib/%%DISTNAME%%/library/ordsets.pl
@@ -69,7 +71,7 @@ lib/%%DISTNAME%%/library/system.pl
 lib/%%DISTNAME%%/library/threadutil.pl
 lib/%%DISTNAME%%/library/tty.pl
 lib/%%DISTNAME%%/library/url.pl
-lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%/libpl.a
+lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%/libplmt.a
 lib/%%DISTNAME%%/swipl
 @dirrm lib/%%DISTNAME%%/runtime/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/runtime
@@ -83,3 +85,4 @@ lib/%%DISTNAME%%/swipl
 @dirrm lib/%%DISTNAME%%/bin/%%ARCH%%-%%OS%%
 @dirrm lib/%%DISTNAME%%/bin
 @dirrm lib/%%DISTNAME%%
+
