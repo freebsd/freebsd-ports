@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Mar 21 20:12:30 1997
-+++ Makefile	Wed Sep 22 23:55:40 1999
+--- Makefile.orig	Fri Mar 21 12:12:30 1997
++++ Makefile	Tue Jan 28 17:53:41 2003
 @@ -1,9 +1,12 @@
  
 -LIBS	=  -L/usr/X11/lib -lXext -lX11 -lXmu -lm
@@ -12,7 +12,7 @@
 -CCC	= gcc
 -CFLAGS	= -O2
 +CC	?= gcc
-+CCC	= $(CC)
++CCC	= $(CXX)
 +CFLAGS	+= -I$(PREFIX)/include
  OBJECTS	= Border.o Buttons.o Client.o Events.o Main.o Manager.o Rotated.o
  
