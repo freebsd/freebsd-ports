@@ -1,6 +1,6 @@
 # New ports collection makefile for: ZPyGreSQLDA
 # Date created:		07 Sep 2000
-# Whom:			makeport.pl
+# Whom:			Neil Blakey-Milner
 #
 # $FreeBSD$
 #
