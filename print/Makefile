@@ -87,6 +87,7 @@
     SUBDIR += mp-letter
     SUBDIR += mpage
     SUBDIR += musixtex
+    SUBDIR += muttprint
     SUBDIR += nenscript
     SUBDIR += offix-printer
     SUBDIR += p5-GnomePrint
