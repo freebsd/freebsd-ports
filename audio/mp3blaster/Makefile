@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	mp3blaster
-PORTVERSION=	3.0p5
+PORTVERSION=	3.0p7
 CATEGORIES=	audio
 MASTER_SITES=	ftp://mud.stack.nl/pub/mp3blaster/ \
 		http://mp3blaster.linuxave.net/src/
 
-MAINTAINER=	greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
