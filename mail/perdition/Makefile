@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	perdition
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
