@@ -50,6 +50,7 @@ bin/pamfunc
 bin/pamlookup
 bin/pamoil
 bin/pampop9
+bin/pamscale
 bin/pamseq
 bin/pamslice
 bin/pamstack
@@ -298,6 +299,6 @@ share/netpbm/palmgray1.map
 share/netpbm/palmgray2.map
 share/netpbm/palmgray4.map
 share/netpbm/rgb.txt
-%%PORTDOCS%%share/doc/netpbm/USERDOC
-%%PORTDOCS%%@dirrm share/doc/netpbm
+%%PORTDOCS%%%%DOCSDIR%%/USERDOC
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/netpbm

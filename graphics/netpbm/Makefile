@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netpbm
-PORTVERSION=	10.19
-PORTREVISION?=	3
+PORTVERSION=	10.20
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -55,9 +54,12 @@ post-patch:
 
 post-install:
 	@${ECHO_MSG} "===>  Installing man pages..."
-	@${REINPLACE_CMD} -e 's|doc/USERDOC|${DOCSDIR}/USERDOC|g' ${WRKSRC}/doc/netpbm.1
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${DOCSDIR}
+	@${REINPLACE_CMD} -e 's|doc/USERDOC|${DOCSDIR}/USERDOC|g' \
+		${WRKSRC}/doc/netpbm.1
 	${INSTALL_MAN} ${WRKSRC}/doc/netpbm.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${DOCSDIR}/
+.endif
 
 .include <bsd.port.post.mk>
