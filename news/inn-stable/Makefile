@@ -1,15 +1,15 @@
 # New ports collection makefile for:	inn
-# Version required:	2.2
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
 # $FreeBSD$
 
-DISTNAME=	inn-STABLE_2_2-2000-02-25_03-09
-PKGNAME=	inn-stable-v22
+PORTNAME=	inn-stable
+PORTVERSION=	v22
 CATEGORIES=	news
 MASTER_SITES=	http://people.FreeBSD.org/~andreas/download/ \
 		ftp://ftp.isc.org/isc/inn/snapshots/
+DISTNAME=	inn-STABLE_2_2-2000-02-25_03-09
 
 MAINTAINER=	andreas@FreeBSD.org
 
@@ -114,7 +114,7 @@ post-install:
 	${CHOWN} news:news ${NEWSSPOOL}/uniover
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 		s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
-	# create log and run subdir with a .keep_me file to make sure 
+	# create log and run subdir with a .keep_me file to make sure
 	# packaging works. The mkdir might be unnecessary, but to be sure ...
 .for dir in log run
 	${MKDIR} -p ${NEWSLIB}/${dir}

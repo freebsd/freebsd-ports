@@ -1,12 +1,12 @@
 # New ports collection makefile for:	suck
-# Version required:	4.2.3
 # Date created:		30 Mar 1996
 # Whom:			graphite@taurus.bekkoame.or.jp
 #
 # $FreeBSD$
 #
 
-DISTNAME=	suck-4.2.3
+PORTNAME=	suck
+PORTVERSION=	4.2.3
 CATEGORIES=	news
 MASTER_SITES=	http://home.att.net/~bobyetman/
 

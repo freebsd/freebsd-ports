@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-News-Newsrc
-# Version required:	1.07
 # Date created:		February 7, 1998
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	News-Newsrc-1.07
-PKGNAME=	p5-News-Newsrc-1.07
+PORTNAME=	p5-News-Newsrc
+PORTVERSION=	1.07
 CATEGORIES=	news perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	News
+DISTNAME=	News-Newsrc-1.07
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 

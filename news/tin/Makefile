@@ -1,13 +1,13 @@
 # ex:ts=8
 # New ports collection makefile for:	tin
-# Version required:     tinpre-1.4
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=       tin-1.4.2
+PORTNAME=	tin
+PORTVERSION=	1.4.2
 CATEGORIES=	news
 MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/v1.4/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/v1.4/ \

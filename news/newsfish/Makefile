@@ -1,12 +1,12 @@
 # New ports collection makefile for:	newsfish
-# Version required:	1.2
 # Date created:		17 January 1999
 # Whom:			asaddi@philosophysw.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	newsfish-1.2
+PORTNAME=	newsfish
+PORTVERSION=	1.2
 CATEGORIES=	news
 MASTER_SITES=	http://www.philosophysw.com/download/
 

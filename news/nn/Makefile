@@ -1,12 +1,12 @@
 # New ports collection makefile for:	nn
-# Version required:	6.5.6
 # Date created:		24 September 1994
 # Whom:			adam
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nn-6.5.6
+PORTNAME=	nn
+PORTVERSION= 	6.5.6
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.visi.com/users/mtpins/nn/
 EXTRACT_SUFX=	.tar.Z

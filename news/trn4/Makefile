@@ -1,16 +1,16 @@
 # New ports collection makefile for:	trn
-# Version required:	4.0-test72
 # Date created:		21 October 1994
 # Whom:			smace
 #
 # $FreeBSD$
 #
 
-DISTNAME=	trn4-test72
-PKGNAME=	trn-4.0b72
+PORTNAME=	trn
+PORTVERSION=	4.0.b72
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.clari.net/private/trn/ \
 		ftp://ftp.uu.net/private/trn/
+DISTNAME=	trn4-test72
 
 MAINTAINER=	mph@freebsd.org
 

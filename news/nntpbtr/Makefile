@@ -1,12 +1,12 @@
 # New ports collection makefile for:    nntpbtr
-# Version required:     1.7
 # Date created:         1 July 1996
 # Whom:                 dk
 #
 # $FreeBSD$
 #
 
-DISTNAME=       nntpbtr-1.7
+PORTNAME=	nntpbtr
+PORTVERSION=	1.7
 CATEGORIES=	news
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/news/
 EXTRACT_SUFX=   .tar.Z

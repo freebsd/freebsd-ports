@@ -1,12 +1,12 @@
 # New ports collection makefile for:	nntpcache
-# Version required:	2.3.2
 # Date created:		6 January 1997
 # Whom:			proff@suburbia.net
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nntpcache-2.4.0b2
+PORTNAME=	nntpcache
+PORTVERSION=	2.4.0b2
 CATEGORIES=	news
 MASTER_SITES=	ftp://nntpcache.org/pub/nntpcache/ \
 		ftp://ftp.ntnu.no/pub/unix/news/nntpcache/ \

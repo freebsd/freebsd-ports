@@ -1,14 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  aub
-# Version required: 0.0
 # Date created:			  Sun Oct 12, 1997
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	aub
-PKGNAME=	aub-2.0.5
+PORTNAME=	aub
+PORTVERSION=	2.0.5
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/perl/CPAN/scripts/news/nntpstuff/aub/ \
 		ftp://ftp.digital.com/pub/plan/perl/CPAN/scripts/news/nntpstuff/aub/ \

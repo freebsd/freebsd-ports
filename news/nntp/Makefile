@@ -1,15 +1,15 @@
 # New ports collection makefile for:	nntp
-# Version required:	t5
 # Date created:		29 September 1994
 # Whom:			adam
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nntp.1.5.12.2
-PKGNAME=	nntp-1.5.12.2
+PORTNAME=	nntp
+PORTVERSION=	1.5.12.2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.academ.com/pub/nntp/server/
+DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 PATCH_SITES=    ftp://ftp.lan-ks.de/pub/c-news/ \
 		ftp://ftp.dinoex.org/pub/c-news/
