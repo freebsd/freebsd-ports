@@ -9291,6 +9291,7 @@ zh-nvi-euc-tw	ports/chinese/nvi-euc-tw
 zh-openoffice-CN	ports/chinese/openoffice-zh_CN
 zh-openoffice-TW	ports/chinese/openoffice-zh_TW
 zh-p5-Date-Chinese	ports/chinese/p5-Date-Chinese
+zh-p5-Lingua-ZH-Numbers	ports/chinese/p5-Lingua-ZH-Numbers
 zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
 zh-pycodec	ports/chinese/pycodec
