@@ -7,7 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.13.1
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -69,13 +69,13 @@ CONFIGURE_ARGS += --with-krb4=/usr
 
 .if !defined(WITHOUT_LIBIDN) && (defined(WITH_LIBIDN) || exists(${LOCALBASE}/lib/libidn.so))
 LIB_DEPENDS+=	idn.16:${PORTSDIR}/devel/libidn
-CONFIGURE_ARGS+= --with-libidn=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-libidn=${LOCALBASE}
 .else
-CONFIGURE_ARGS+= --without-libidn
+CONFIGURE_ARGS+=	--without-libidn
 .endif
 
 .if defined(WITH_CURL_DEBUG)
-CONFIGURE_ARGS+= --enable-debug
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 # Setting LC_ALL=C is a kludge; maybe curl/libcurl shouldn't actually use
@@ -86,7 +86,7 @@ test:	build
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${DOCSDIR}
-	${CP} -r ${WRKSRC}/docs/* ${DOCSDIR}/ 
+	${CP} -r ${WRKSRC}/docs/* ${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
