@@ -1,0 +1,1022 @@
+diff -ud /devel/slnr/src/slnr.c ./slnr.c
+--- /devel/slnr/src/slnr.c	Mon Jul 29 17:27:37 1996
++++ ./slnr.c	Mon Jul 29 17:28:34 1996
+@@ -9,12 +9,18 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <sys/types.h>
++#ifdef _HAVE_PWD_H
++#include <pwd.h>
++#endif
+ #ifndef NOSTAT
+ # include <sys/stat.h>
+ #endif
+ #include <ctype.h>  /* for toupper */
+ #include <stdlib.h> /* For getenv */
+ #include "colour.h"
++#ifdef _HAVE_PARAM_H
++#include <sys/param.h>
++#endif
+ 
+ #ifdef ATARI
+ #include <mintbind.h>
+@@ -35,8 +41,13 @@
+ ** This is used for putting the terminal in raw mode
+ ** Under dos we don't need that since getch() returns directly
+ */
++#if defined(BSD)
++#include <termios.h>
++#else
+ #include <termio.h>
+ #endif
++#include <sys/ioctl.h>
++#endif
+ #endif
+ #endif
+ 
+@@ -55,13 +66,15 @@
+ #define GET_REPLYTO   16L
+ #define GET_FOLLOWUP  32L
+ #define GET_NEWSGROUP 64L
+-
+-#define INITFILE "slnr.ini"
++#define GET_CC       128L
++#define GET_HTO      256L
+ 
+ #ifdef __MSDOS__
+ #  define PAGER "more <"
+ #  define EDIT "q"
+ #  define COMPRESS "pkzip"
++#  define SIGFILE "sig.txt"
++#  define INITFILE "slnr.ini"
+ #  define MAXART 500 /* 1000		/* Originally 500	*/
+ #  define MAXGRP 100 /* 500		/* Originally 100	*/
+ #  define UNIXR  "rb"
+@@ -76,21 +89,32 @@
+ 	 char PAGER[64];
+ #    define EDIT "???" /* To be defined by atari guru */
+ #    define COMPRESS "stzip"  /* To be defined by atari guru */
++#    define SIGFILE "sig.txt"
++#    define INITFILE "slnr.ini"
+ #    define MAXART 1000
+ #    define MAXGRP 200
+ #  else /* Unix */
+-#    define PAGER "simplpg"
+-#    define EDIT "simpled"
++/* is there a better way to set this pager, maybe? */
++/* NOTE also that we're awfully close to the 80 char limit with this one... */
++/* NOTE the double \\ is to get one slash from the C preparser moving us
++ * just under the 80 char limit */
++#	define PAGER "echo 'reset;clear;more $@;read -p '\\''<<<Press ENTER>>>'\\'' nl</dev/tty'|sh -s"
++#    define EDIT "ee"
+ #    define COMPRESS "zip"
++#    define SIGFILE ".signature"
++#    define INITFILE ".slnrrc"
+ #    define MAXART 5000
+ #    define MAXGRP 1000
+ #   endif
+ #endif
++#define REPFILE "REPLY.zip"
+ 
+ /*
+ ** Global variables
+ */
+-static char pager_str[80],edit_str[80],compress_str[80],quote_str[80];
++static char pager_str[80],edit_str[80],compress_str[80],quote_str[80],
++		repfile_str[80];
++static char sigfile_str[80];
+ static int use_ansi;
+ int Lines=24;
+ 
+@@ -101,6 +125,8 @@
+ 	char *replyto;
+ 	char *followup;
+ 	char *newsgroups;
++	char *cc;
++	char *hto;
+ };
+ 
+ /*
+@@ -124,6 +150,10 @@
+ 	char subject[60];
+ 	unsigned long rank;
+ 	unsigned long ptr;              /* Pointer to start of article */
++	unsigned long bsize;  /* size in bytes, cause type `b' & `B'
++	                       * a separator that is guaranteed to be 
++	                       * present.  The other size refers to
++	                       * line_cnt (see extract_article()) */
+ }
+ #ifdef __MSDOS2__	/* Create huge array if MS-DOS	*/
+ 	huge article[MAXART];
+@@ -377,11 +407,11 @@
+ #else
+ 
+ #ifndef __MSDOS__
+-	if ( strstr((char *) getenv("TERM"),"ansi") == NULL)
++	/* if ( strstr((char *) getenv("TERM"),"ansi") == NULL)
+ 	{
+ 		Color_string[0][0] = '\0';
+ 		return (Color_string[0]);
+-	}
++	} */
+ #endif
+ 	att_str[0] = '\0';
+ 	for_str[0] = '\0';
+@@ -414,7 +444,7 @@
+ #ifdef ATARI
+ 	printf(CLEAR_HOME); fflush(stdout);
+ #else
+-	if ( strstr((char *) getenv("TERM"),"ansi") != NULL)
++	if (use_ansi)
+ 		printf("\033[0;37;40m\033[2J\033H\n"); 
+ 	else 
+ 		system("tput clear 2>/dev/null");     /* else use clear with terminfo */
+@@ -458,6 +488,30 @@
+ 	return(line);
+ }
+ 
++char *remove_qt(line)
++char *line;
++{
++	char hold[80];
++	char *p;
++	char *h=hold;
++	p=line;
++	while (*p!='\0') {
++		switch (*p) {
++		case '"':
++			p++;
++			break;
++		case '\\':
++			if (*(p+1)!='\0') p++;
++			/* fall through */
++		default:
++			*h++=*p++;
++			break;
++		}
++	}
++	*h='\0';
++	strcpy (line, hold);
++}
++
+ /* 
+ ** Like fgets but with a prompt and check line length 
+ */
+@@ -483,7 +537,12 @@
+ 		printf ("\r%s%s%s ",scr(1,3,0),prompt,scr(8,7,0));
+ 		fflush(stdout);
+ 	}
++#if defined(BSD) /* guessing here */
++	fpurge(fr); /* I think the intent is to remove all pending input
++	             * and fflush(stdin) doesn't really do that */
++#else
+ 	fflush(fr);
++#endif
+ 	if (fgets(line,size,fr) == NULL)
+ 	{
+ 		/* Return the default */
+@@ -525,8 +584,12 @@
+ 	unsigned long bytes_read, line_cnt, file_pos;
+ 	char *pos,*p,temp[255],line[255];
+ 
+-	if (size==0)
++	if (size==0) {
+ 		l=strlen(separator);
++		article[cur_art].bsize = 0;
++	} else
++			article[cur_art].bsize = size;
++
+ 	headermode=1;
+ 	end_of_article=0;
+ 	line_cnt=1;
+@@ -610,7 +673,19 @@
+ 	/* Open the files */
+ 	if ((nlist=fopen("AREAS","r"))==NULL)
+ 	{
++		char j[2];
+ 		fprintf( stderr, "Unable to open AREAS\n" );
++#if defined(BSD)
++		fpurge (stdin);
++#else
++		fflush(stdin);
++#endif
++		fgetstr ("Press ENTER", j, "", 2, stdin);
++#ifdef UNIX
++		if (use_ansi) system ("reset");
++#else
++		/* Do we need to reset the colours with other systems? */
++#endif
+ 		exit(1);
+ 	}
+ 
+@@ -935,21 +1010,40 @@
+ #else
+ 	int file;
+ 	char return_char;
++#if defined(BSD)
++	struct termios newterm, oldterm;
++#else
+ 	struct termio newterm, oldterm;
++#endif
+ 	file = open("/dev/tty", O_RDONLY);
+ 	if (file == -1)
+ 		return (0);
++#ifndef BSD
+ 	ioctl(file,TCGETA,&oldterm);
+ 	memcpy (&newterm,&oldterm,sizeof(struct termio));
++#else
++	tcgetattr (file, &oldterm);
++	memcpy (&newterm,&oldterm,sizeof(struct termios));
++#endif
+ 	newterm.c_cc[4] = 1;
+ 	newterm.c_cc[5] = 0;
+ 	/* newterm.c_cflag = (B9600|CS8|CREAD); */
+ 	newterm.c_lflag = 0;
+ 	newterm.c_iflag = IGNBRK;
+ 	newterm.c_oflag = 0;
++#ifndef BSD
+ 	ioctl (file,TCSETAF,&newterm);
++#else
++	/* I really don't know what the TCSETAF action means specifically,
++	 * but it's probably not incredibly important - hoek */
++	tcsetattr (file, TCSANOW, &newterm);
++#endif
+ 	read(file,&return_char,1);
++#ifndef BSD
+   ioctl (file,TCSETAF,&oldterm);
++#else
++  tcsetattr (file, TCSANOW, &oldterm);
++#endif
+   close(file);
+ 	return (return_char);
+ #endif
+@@ -1038,6 +1132,7 @@
+ 	FILE *df1,*df2, *temp;
+ 	int c;
+ 	unsigned long length;
++	char * translat;
+ #ifndef NOSTAT
+ 	struct stat buf;
+ #endif
+@@ -1047,6 +1142,7 @@
+ 		fprintf (stderr,"Unable to open a file [%s] or [%s]!\n",f1,f2);
+ 		return (0);
+ 	}
++	translat = tempnam (".", "translat_");
+ /*
+  * This section of the code uses C's automatic text translation
+  * feature to translate from what is probably MS-DOS text to Unix text.
+@@ -1060,7 +1156,7 @@
+  * the logical \n's will be written as literal \n's.  Voila!
+  */
+ 
+-	temp = fopen("translat.tmp", UNIXW) ;	/* temp translation file	*/
++	temp = fopen(translat, UNIXW) ;	/* temp translation file	*/
+ 
+ 	while ((c=fgetc(df2))!=EOF)
+ 		fputc(c,temp);
+@@ -1072,11 +1168,11 @@
+  * to Unix text.  We can now get the correct size of it and add it to the
+  * packet.
+  */
+-	temp = fopen("translat.tmp", UNIXR) ;
++	temp = fopen(translat, UNIXR) ;
+ #ifdef NOSTAT
+-	length = get_len("translat.tmp" );
++	length = get_len(translat);
+ #else
+-	stat("translat.tmp", &buf);
++	stat(translat, &buf);
+ 	length=(unsigned long)buf.st_size;
+ #endif
+ 	sprintf (header,"#! rnews %ld\n",length);
+@@ -1088,7 +1184,7 @@
+ 
+ 	fclose(df1);
+ 	fclose(temp);
+-	remove("translat.tmp") ;
++	remove(translat) ;
+ 	return(length);
+ }
+ 
+@@ -1106,7 +1202,7 @@
+ 	FILE *fr,*fw;
+ 	char line[81];
+ 
+-	if ((fr=fopen("sig.txt","r"))==NULL)
++	if ((fr=fopen(sigfile_str,"r"))==NULL)
+ 		return;
+ 	if ((fw=fopen(name,"a"))==NULL)
+ 		return;
+@@ -1225,8 +1321,11 @@
+ 	if (c==NULL)
+ 		return (-2);
+ 
++	/* This is apparently a bug the author did not notice, but how
++	 * it was missed, I do not know.  Maybe it is I who is missing
++	 * something... */
++	*c = ' '; /* the fix: make get_full_word() not stop at the '=' */
+ 	*pos=c+1;
+-
+ 	return( get_token( pos, line, tlist) );
+ }
+ 
+@@ -1239,46 +1338,63 @@
+ 	FILE *fr;
+ 	int n;
+ 	char line[80],old_line[80],*pos;
+-	static char *tlist[7]={"editor",
++	char init_str[80];
++	static char *tlist[9]={"editor",
+ 		"pager",
+ 		"compress",
+ 		"ansi",
+ 		"lines",
+ 		"quote",
++		"sigfile",
++		"repfile",
+ 		""};
+ 
+ 	/*
+ 	** Default
+ 	*/
+ 
+-	strcpy (edit_str,EDIT);
+-	strcpy (pager_str,PAGER);
+-	strcpy (compress_str,COMPRESS);
+-	strcpy (quote_str,"> ");
+-	use_ansi = SET;
++	strncpy (edit_str,EDIT, 80);
++	strncpy (pager_str,PAGER, 80);
++	strncpy (compress_str,COMPRESS, 80);
++	strncpy (quote_str,"> ", 80);
++	strncpy (sigfile_str, SIGFILE, 80);
++	strncpy (repfile_str, REPFILE, 80);
++#ifdef UNIX
++	snprintf(sigfile_str, 80, "%s/%s", getpwuid(getuid())->pw_dir, SIGFILE);
++#else
++	snprintf(sigfile_str, 80, "%s", SIGFILE);
++#endif
++	use_ansi = 0; /* change default behaviour */
+ 	Lines = 24;
+ 
+-	if ((fr=fopen(INITFILE,"r"))==NULL)
++	snprintf (init_str, 80, "%s/%s", getpwuid(getuid())->pw_dir, INITFILE);
++	if ((fr=fopen(init_str,"r"))==NULL)
+ 		return; /* No config file */
+ 	while (fgets(line,80,fr)!=NULL)
+ 	{
+ 		strcpy (old_line,line);
+ 		if (line[0]!='#' && line[0]!='\n') /* Ignore comments and blank lines */
+ 		{
+-			if (line[strlen(line)-1]=='\n') /* Remove end CR */
++			if (line[strlen(line)-1]=='\r') /* Remove end CR */
+ 				line[strlen(line)-1]='\0';
+ 			switch( get_config_token( &pos, line, tlist ) )
+ 			{
+ 				case 0: /* EDITOR */
+ 					strcpy (edit_str,pos);
++					remove_cr (edit_str);
++					remove_qt (edit_str);
+ 					break;
+ 
+ 				case 1: /* PAGER */
+ 					strcpy (pager_str,pos);
++					remove_cr (pager_str);
++					remove_qt (pager_str);
+ 					break;
+ 
+ 				case 2: /* COMPRESS */
+ 					strcpy (compress_str,pos);
++					remove_cr (compress_str);
++					remove_qt (compress_str);
+ 					break;
+ 
+ 				case 3: /* Ansi */
+@@ -1310,6 +1426,16 @@
+ 					remove_cr(quote_str);
+ 					break;
+ 
++				case 6: /* sigfile */
++					strcpy (sigfile_str,pos);
++					remove_cr (sigfile_str);
++					remove_qt (sigfile_str);
++					break;
++				case 7: /* repfile */
++					strcpy (repfile_str, pos);
++					remove_cr (repfile_str);
++					remove_qt (repfile_str);
++					break;
+ 				default:
+ 					fprintf(stderr,"Line <%s> has no keyword\n",old_line);
+ 					break;
+@@ -1317,6 +1443,23 @@
+ 		}
+ 	}
+ 	fclose(fr);
++
++	if (getenv ("EDITOR")) 
++			strncpy (edit_str, getenv ("EDITOR"), 80);
++	if (getenv ("PAGER"))
++			strncpy (pager_str, getenv ("PAGER"), 80);
++	if (getenv ("COMPRESS"))
++			strncpy (compress_str, getenv ("COMPRESS"), 80);
++	if (getenv ("QUOTE_STR"))
++			strncpy (quote_str, getenv ("QUOTE"), 80);
++	if (getenv ("SIGFILE"))
++			strncpy (sigfile_str, getenv ("SIGFILE"), 80);
++	if (getenv ("ANSI"))
++			use_ansi = SET;
++	if (getenv ("LINES"))
++			Lines = atoi (getenv ("LINES"));
++	if (getenv ("REPFILE"))
++			strncpy (repfile_str, getenv ("REPFILE"), 80);
+ }
+ 
+ /*
+@@ -1326,16 +1469,18 @@
+ ** And quote the message with the quote string
+ */
+ 
+-int put_into_file(filename,fr,quote,flags,head)
++int put_into_file(filename,fr,quote,flags,head,bsize)
+ char *filename;
+ FILE *fr;
+ char *quote;
+ struct header *head;
+ unsigned long flags;
++unsigned long bsize;
+ {
+ 	FILE *fw;
+ 	int end=0,l,headermode=1,line_no=1,mail_flag=0;
+ 	char separator[80],line[255],mode[5];
++	unsigned long oursize=0;
+ 
+ 	strcpy( mode, "w" ); /* default */
+ 
+@@ -1383,6 +1528,7 @@
+ 	l = strlen(separator);
+ 
+ 	fgets(line,255,fr);
++	oursize=strlen(line);
+ 	if (mail_flag)
+ 	{
+ 		if (!(flags & NO_HEADER))
+@@ -1392,7 +1538,7 @@
+ 			return(0);
+ 	}
+ 
+-	while( strncmp( line, separator, l ))
++	while( strncmp( line, separator, l ) && (bsize ? oursize < bsize + 1 : 1))
+ 	{
+ 		if( headermode )
+ 		{
+@@ -1411,6 +1557,16 @@
+ 			if( (flags & GET_REPLYTO) && strncmp(line,"Reply-To: ",10)==0)
+ 				strcpy( head->replyto, line+10);
+ 
++			/* I see both Cc: and cc: used... :( */
++			if ((flags & GET_CC) && strncmp (line, "cc: ", 4) == 0)
++					strcpy (head->cc, line + 4);
++
++			if ((flags & GET_CC) && strncmp (line, "Cc: ", 4) == 0)
++					strcpy (head->cc, line + 4);
++
++			if ((flags & GET_HTO) && strncmp (line, "To: ", 4) == 0)
++					strcpy (head->hto, line + 4);
++
+ 			if( (flags & GET_NEWSGROUP) && strncmp( line, "Newsgroups: ",12)==0)
+ 			{
+ 				strcpy( head->newsgroups, line+12);
+@@ -1437,6 +1593,7 @@
+ 
+ 		if(fgets(line,255,fr)==NULL)
+ 			break;
++		oursize += strlen (line);
+ 	}
+ 	fclose(fw);
+ 	return(line_no);
+@@ -1445,18 +1602,18 @@
+ void show_menu(tof,eof)
+ unsigned int tof,eof;
+ {
+-	printf ("\n%sA%sgain %sV%siew %sM%sail ",
++	printf ("\n%sV%s)iew %sM%s)ail ",
+ 		scr(1,3,0),scr(1,6,0),scr(1,3,0),scr(1,6,0),scr(1,3,0),scr(1,6,0));
+ 	if (group[cur_grp].enc_type=='u')
+ 	/* No follow-up for private mail */
+-		printf ("%sW%srite ",scr(1,3,0),scr(1,6,0));
++		printf ("%sW%s)rite ",scr(1,3,0),scr(1,6,0));
+ 	if (!eof)
+-		printf ("%sn%sext_pg ",
++		printf ("%sn%s)ext_pg ",
+ 			scr(1,3,0),scr(1,6,0));
+ 	if (!tof)
+-		printf ("%sp%srev_pg ",
++		printf ("%sp%s)rev_pg ",
+ 			scr(1,3,0),scr(1,6,0));
+-	printf ("%sN%sext_grp %sP%srev_grp %sS%save %sH%slp %sQ%suit ",
++	printf ("%sN%s)ext_grp %sP%s)rev_grp %sS%s)ave %sH%s)lp %sQ%s)uit ",
+ 			scr(1,3,0),scr(1,6,0),
+ 			scr(1,3,0),scr(1,6,0),
+ 			scr(1,3,0),scr(1,6,0),
+@@ -1480,7 +1637,9 @@
+ 	}
+ 	if (cur_line!=line_no)
+ 	{
+-		for (i=cur_line; i<=line_no; i++)
++		/* We add one to i for the same 18-line reason that is 
++		 * else-mentioned.  See the main loop for comments. */
++		for (i=cur_line+1; i<=line_no; i++)
+ 			printf("\n");
+ 	}
+ }
+@@ -1629,7 +1788,7 @@
+ 	unsigned int tof=1,redisplay=1,Max_grp,Max_art,mail_reply_no=0;
+ 	char line[255],temp[80],choice,value[80],file_list[255];
+ 	char ngrpline[255], followupline[255];
+-	char To[80],Replyto[80],From[80];
++	char To[80],Replyto[80],From[80],Cc[80],Hto[80];
+ 	char Reply[80],subjectline[80],msgidline[255];
+ 	char art_save_name[80],shell_cmd_name[80];
+ 	FILE *fr,*fw;
+@@ -1651,16 +1810,33 @@
+ 	/*
+ 	** To be changed when we have another compressor
+ 	*/
+-	sprintf (Reply,"REPLY.zip");
++	sprintf (Reply,repfile_str);
+ 	if ((fr=fopen(Reply,"r"))!=NULL)
+ 	{
++		char j[2];
+ 		fclose (fr);
+ 		printf ("\nA Reply packet already exists. Keep it (Y/n) ? ");
+ 		fflush(stdout);
+ 		choice=ch_get();
+-		if (choice=='n' || choice=='N')
++		if (choice=='n' || choice=='N') {
+ 			remove (Reply);
++			printf (
++"Only the %s file has been deleted.  You must delete the R*.MSG files\n"
++"files yourself or they will be sent alongwith the next reply packet.\n"
++"You must also delete the REPLIES file.\n",
++repfile_str);
++#if defined(BSD)
++			fpurge (stdin);
++#else
++			fflush(stdin);
++#endif
++			fgetstr ("Press ENTER", j, "", 2, stdin);
++		}
++#if defined(BSD)
++		fpurge (stdin);
++#else
+ 		fflush(stdin);
++#endif
+ 	}
+ 	for (i=0; i<MAXGRP; group[i++].reply=0)
+ 		;
+@@ -1701,10 +1877,11 @@
+ 		cur_line++;
+ 		cur_art++;
+ 	}
+-	if (cur_line!=line_no)
++	/* if (cur_line!=line_no) */
++	if (article[cur_art-1].rank+1 == group[cur_grp].art)
+ 	{
+ 		eof=1;
+-		for (i=cur_line; i<=line_no; i++)
++		for (i=cur_line+1; i<=line_no; i++)
+ 			printf("\n");
+ 	}
+ 
+@@ -1721,8 +1898,7 @@
+ 		redisplay=1;
+ 		switch (choice)
+ 		{
+-			case 'A':
+-			case 'a':
++			case 'r': case 18: case 'R':
+ 				display_page_again(line_no);
+ 				break;
+ 
+@@ -1743,10 +1919,18 @@
+ 						cur_art++;
+ 					}
+ 					disp_f(&article[cur_art++]);
+-					if (cur_line!=line_no)
++					/* if (cur_line!=line_no) */
++					/* The below doesn't seem to work for groups
++					 * that have 18 messages in them (number
++					 * dependant on screensize).  The reason
++					 * I leave it there (although commented-
++					 * out) is that for some inexplicable
++					 * reason I'm not entirely comfortable with
++					 * my replacement. */
++					if (article[cur_art-1].rank+1 == group[cur_grp].art)
+ 					{
+ 						eof=1;
+-						for (i=cur_line; i<=line_no; i++)
++						for (i=cur_line+1; i<=line_no; i++)
+ 							printf("\n");
+ 					}
+ 					else
+@@ -1793,10 +1977,11 @@
+ 					cur_line++;
+ 					cur_art++;
+ 				}
+-				if (cur_line!=line_no)
++				if (article[cur_art-1].rank+1 == group[cur_grp].art)
++				/* if (cur_line!=line_no) */
+ 				{
+ 					eof=1;
+-					for (i=cur_line; i<=line_no; i++)
++					for (i=cur_line+1; i<=line_no; i++)
+ 						printf("\n");
+ 				}
+ 				break;
+@@ -1820,10 +2005,11 @@
+ 					cur_line++;
+ 					cur_art++;
+ 				}
+-				if (cur_line!=line_no)
++				if (article[cur_art-1].rank+1 == group[cur_grp].art)
++				/* if (cur_line!=line_no) */
+ 				{
+ 					eof=1;
+-					for (i=cur_line; i<=line_no; i++)
++					for (i=cur_line+1; i<=line_no; i++)
+ 						printf("\n");
+ 				}
+ 				break;
+@@ -1835,7 +2021,7 @@
+ 				** Help doesnt help much at the moment
+ 				** Well, c'est la vie...
+ 				*/
+-				printf ("A : redisplay the same page\n"
++				printf ("<ctrl-R> : redisplay the same page\n"
+ 					      "n : Display next page\n"
+ 								"p : Display previous page \n"
+ 								"N or > : Go to next Newsgroup\n"
+@@ -1868,7 +2054,10 @@
+ 					** The field "reply" is set only for "follow-up" or "posts"
+ 					** Not for mails or replies by mail to the author.
+ 					*/
+-					if ((fw=fopen("REPLIES", UNIXW))==NULL)
++					/* Use UNIXA here, for consistency.  Nowhere else do
++					 * the messages files get deleted automatically.  In
++					 * all other cases, the user has to do it themself. */
++					if ((fw=fopen("REPLIES", UNIXA))==NULL)
+ 						exit(1);
+ 					for (i=0;i<MAXGRP;i++)
+ 					{
+@@ -1919,6 +2108,8 @@
+ showit:
+ 				if ((no>0) && (no <= group[cur_grp].art))
+ 				{
++					char * filename;
++					filename = tempnam (".", "article_");
+ 					sprintf( temp, "%s.MSG", group[cur_grp].prefix );
+ 					fr=fopen(temp, UNIXR);
+ 					/* Get the starting article number */
+@@ -1926,14 +2117,15 @@
+ 
+ 					/* save the article into a temp file */
+ 					fseek(fr, article[count].ptr, 0);
+-					put_into_file("art.tmp",fr,"",
++					put_into_file(filename,fr,"",
+ 							(choice=='V') ? 0L : NO_HEADER, 
+-							(struct header *)NULL);
++							(struct header *)NULL,
++							article[count].bsize);
+ 					fclose(fr);
+ 
+-					sprintf (temp,"%s %s",pager_str,"art.tmp");
++					sprintf (temp,"%s %s",pager_str,filename);
+ 					system(temp);
+-					remove("art.tmp");
++					remove(filename);
+ 					/*
+ 					** Show the list again
+ 					*/
+@@ -1944,13 +2136,17 @@
+ 						disp_f(&article[cur_art]);
+ 						cur_art++;
+ 					}
+-					if (cur_line!=line_no)
++					if (article[cur_art-1].rank+1 == group[cur_grp].art)
++					/* if (cur_line!=line_no) */
+ 					{
+ 						eof=1;
+-						for (i=cur_line; i<=line_no; i++)
++						for (i=cur_line+1; i<=line_no; i++)
+ 							printf("\n");
+ 					}
++					free (filename);
+ 				}
++				/* Entering invalid number needs redisplay */
++				display_page_again(line_no);
+ 				break;
+ 
+ 			case ' ':
+@@ -1960,7 +2156,14 @@
+ 
+ 			case 'M': /* Mail somebody */
+ 			case 'm':
+-				printf ("\n%sN%sew message or %sR%sesponse ?",
++			{
++				char * editfile;
++				char * othereditfile;
++				char * articlefile;
++				editfile = tempnam (".", "edit_");
++				othereditfile = tempnam (".", "ed0_");
++				articlefile = tempnam (".", "article_");
++				printf ("\n%sN%s)ew message or %sR%s)esponse ?",
+ 					scr(1,3,0),scr(1,6,0),scr(1,3,0),scr(1,6,0));
+ 				fflush(stdout);
+ 				choice=ch_get();
+@@ -1986,9 +2189,11 @@
+ 						head.subject = line;
+ 						head.from = From;
+ 						head.replyto = Replyto;
++						head.cc = Cc;
++						head.hto = Hto;
+ 
+-						ret = put_into_file( "ed0.tmp",fr, quote_str,
+-							NO_HEADER | GET_SUBJECT | GET_FROM | GET_REPLYTO, &head);
++						ret = put_into_file(othereditfile,fr, quote_str,
++							NO_HEADER | GET_SUBJECT | GET_FROM | GET_REPLYTO | GET_CC | GET_HTO, &head, article[count].bsize);
+ 						fclose(fr);
+ 
+ 						if( ret == 0 )
+@@ -2005,7 +2210,7 @@
+ 						strcpy( temp, line );
+ 						lowerit( temp );
+ 
+-						if (strncmp(temp,"RE:",3)==0)
++						if (strncmp(temp,"RE:",3)==0 || strncmp(temp,"Re:",3)==0 || strncmp(temp,"re:",3)==0)
+ 							sprintf(subjectline,"%s",line);
+ 						else
+ 							sprintf(subjectline,"Re: %s",line);
+@@ -2017,71 +2222,119 @@
+ 						remove_cr( To );
+ 						clean_to( To );
+ 
++						remove_cr (Cc);
++						/* optimally would call clean_to(), too */
++						remove_cr (Hto);
++
+ 						/*
+ 						** Add the group in the body of the quoted article
+ 						*/
+ 						remove_cr(From);
+-						fr = fopen( "ed0.tmp","r" );
+-						fw = fopen( "edit.tmp","w" );
+-						fprintf( fw, "In %s you wrote:\n", group[cur_grp].name);
++						fr = fopen(othereditfile,"r" );
++						fw = fopen(editfile,"w" );
++						fprintf( fw, "In %s, %s wrote:\n", group[cur_grp].name, (*From ? From : "someone"));
+ 						while( fgets(line,255,fr)!=NULL )
+ 						{
+ 							fprintf( fw, "%s", line );
+ 						}
+ 						fclose( fr );
+ 						fclose( fw );
+-						remove( "ed0.tmp" );
++						remove(othereditfile);
+ 					}
+ 				}
+ 				/* Print the header first */
+-				fw=fopen ("article.tmp","w");
++				fw=fopen (articlefile,"w");
+ 				if (fw==NULL)
+ 					break;
+ 
+ 				if (!*To)
+ 					fgetstr("To >",To,"",60,stdin);
+ 				fgetstr("Subject >",temp,subjectline,60,stdin);
++#ifdef __FreeBSD__
++				fprintf (fw,"X-Mailer: slnr v.2.13 as ported to FreeBSD\n");
++#else
++				fprintf (fw,"X-Mailer: slnr v.2.13 w/ modifications\n");
++#endif
+ 				fprintf (fw,"To: %s\n",To);
++				if (*Cc) { 
++					char j[2];
++					fgetstr ("Reply to all recipients?", j, "", 2, stdin);
++					if (*j == 'y' || *j == 'Y') {
++						if (*Hto) {
++							char j[2]; char jj[80];
++							snprintf (jj, 80, "Cc to %s?", Hto);
++							fgetstr (jj, j, "", 2, stdin);
++							if (*j == 'y' || *j == 'Y')
++									fprintf (fw, "cc: %s, %s\n", Cc, Hto);
++						} else
++								fprintf (fw, "cc: %s\n", Cc);
++					}
++
++				} else {
++					if (*Hto) {
++						char j[2]; char jj[80];
++						snprintf (jj, 80, "Cc to %s?", Hto);
++						fgetstr (jj, j, "", 2, stdin);
++						if (*j == 'y' || *j == 'Y')
++								fprintf (fw, "cc: %s\n", Hto);
++								/* Looking through headers, I see
++								 * both Cc: and cc: used...  I
++								 * suppose I should check a 
++								 * relevant RFC, but instead I'll
++								 * just use cc: */
++					}
++				}
+ 				fprintf (fw,"Subject: %s\n",temp);
+ 				fclose(fw);
+-				To[0]=From[0]=Replyto[0]='\0';
++				To[0]=From[0]=Replyto[0]=Cc[0]=Hto[0]='\0';
+ 
+-				if (edit_file("edit.tmp","article.tmp"))
+-					remove("article.tmp");
++				if (edit_file(editfile,articlefile))
++					remove(articlefile);
+ 				else
+ 				{
+ 					/* Add the signature */
+-					addsig("edit.tmp");
++					addsig(editfile);
+ 
+ 					/* Concatenate article.tmp and edit.tmp */
+-					fr=fopen("edit.tmp","r");
+-					fw=fopen("article.tmp","a");
++					fr=fopen(editfile,"r");
++					fw=fopen(articlefile,"a");
+ 					fprintf (fw,"\n"); /* End of header */
+ 					while (fgets(line,255,fr)!=NULL)
+ 						fprintf(fw,"%s",line);
+ 					fclose(fr);
+ 					fclose(fw);
+-					remove("edit.tmp");
++					remove(editfile);
+ 
+ 					/*
+ 					** Add article.tmp to the RMAIL.MSG file
+ 					*/
+ 					sprintf( temp, "RMAIL.MSG" );
+-					add_file(temp,"article.tmp");
+-					remove("article.tmp");
++					add_file(temp,articlefile);
++					remove(articlefile);
+ 					mail_reply_no++;
+ 				}
+ 				/* Then redisplay the list */
+ 				display_page_again(line_no);
++				free (editfile); free (othereditfile); free (articlefile);
+ 				break;
+-
++			}
+ 			case 'W': /* write article or follow-up */
+ 			case 'w':
+-				if( group[cur_grp].enc_type != 'u')
++			{
++				char * editfile;
++				char * othereditfile;
++				char * articlefile;
++				editfile = tempnam (".", "edit_");
++				othereditfile = tempnam (".", "ed0_");
++				articlefile = tempnam (".", "article_");
++				if( group[cur_grp].enc_type != 'u') {
++					printf ("\nNot a newsgroup!\n");
+ 					break;
++				}
+ 
+ 				printf ("\n%sN%sew article or %sF%sollow-up ?",
+ 					scr(1,3,0),scr(1,6,0),scr(1,3,0),scr(1,6,0));
++				fflush (stdout);
+ 				choice=ch_get();
+ 				printf ("\n");
+ 
+@@ -2121,9 +2374,10 @@
+ 						head.newsgroups = ngrpline;
+ 						head.followup = followupline;
+ 
+-						ret = put_into_file( "ed0.tmp",fr, quote_str,
++						ret = put_into_file(othereditfile,fr, quote_str,
+ 							NO_HEADER | GET_SUBJECT | GET_ID | GET_FROM | 
+-							GET_FOLLOWUP | GET_NEWSGROUP, &head);
++							GET_FOLLOWUP | GET_NEWSGROUP, &head,
++							article[count].bsize);
+ 
+ 						fclose(fr);
+ 						if( ret == 0 )
+@@ -2143,7 +2397,7 @@
+ 						strcpy( temp, line );
+ 						lowerit( temp );
+ 
+-						if (strncmp(temp,"re:",3)==0)
++						if (strncmp(temp,"re:",3)==0 || strncmp(temp,"Re:", 3)==0 || strncmp(temp, "re:", 3)==0)
+ 							sprintf(subjectline,"%s",line);
+ 						else
+ 							sprintf(subjectline,"Re: %s",line);
+@@ -2153,8 +2407,8 @@
+ 						** of the quoted article
+ 						*/
+ 						remove_cr(From);
+-						fr = fopen( "ed0.tmp","r" );
+-						fw = fopen( "edit.tmp","w" );
++						fr = fopen(othereditfile,"r" );
++						fw = fopen(editfile,"w" );
+ 						fprintf( fw, "%s wrote:\n", From);
+ 						while( fgets(line,255,fr)!=NULL )
+ 						{
+@@ -2162,16 +2416,20 @@
+ 						}
+ 						fclose( fr );
+ 						fclose( fw );
+-						remove( "ed0.tmp" );
++						remove(othereditfile);
+ 
+ 					}
+ 				}
+ 				/* Print the header first */
+-				fw=fopen ("article.tmp","w");
++				fw=fopen (articlefile,"w");
+ 				if (fw==NULL)
+ 					break;
+ 
++#if defined(BSD)
++				fpurge (stdin);
++#else
+ 				fflush(stdin);
++#endif
+ 				fgetstr( "Subject >", temp, subjectline, 60, stdin );
+ 				fprintf( fw, "Newsgroups: %s\n", ngrpline );
+ 				fprintf( fw, "Subject: %s\n", temp );
+@@ -2182,35 +2440,37 @@
+ 
+ 				fclose(fw);
+ 
+-				if (edit_file("edit.tmp","article.tmp"))
+-					remove("article.tmp");
++				if (edit_file(editfile,articlefile))
++					remove(articlefile);
+ 				else
+ 				{
+ 					/* Add the signature */
+-					addsig("edit.tmp");
++					addsig(editfile);
+ 
+ 					/* Concatenate article.tmp and edit.tmp */
+-					fr = fopen( "edit.tmp", "r");
+-					fw = fopen( "article.tmp", "a");
++					fr = fopen(editfile, "r");
++					fw = fopen(articlefile, "a");
+ 					fprintf( fw,"\n" ); /* End of header */
+ 					while( fgets(line,255,fr)!=NULL )
+ 						fprintf( fw,"%s",line );
+ 					fclose(fr);
+ 					fclose(fw);
+-					remove("edit.tmp");
++					remove(editfile);
+ 					/*
+ 					** Add article.tmp to the reply file
+ 					*/
+ 					sprintf( temp, "R%s.MSG", group[cur_grp].prefix );
+-					add_file(temp,"article.tmp");
+-					remove("article.tmp");
++					add_file(temp,articlefile);
++					remove(articlefile);
+ 					reply_created++;
+ 					group[cur_grp].reply++;
+ 				}
+ 				/* Then redisplay the list */
+ 				display_page_again(line_no);
++				free (editfile); free (othereditfile); free (articlefile);
+ 				break;
+-			
++			}
++
+ 			case 's': /* Save article */
+ 			case 'S': /* Save with no header */
+ 				printf("\n");
+@@ -2240,7 +2500,8 @@
+ 						*/
+ 						if (!put_into_file( art_save_name, fr, "",
+ 							(choice=='S') ? NO_HEADER : 0L,
+-							(struct header *)NULL))
++							(struct header *)NULL),
++							article[count].bsize)
+ 							perror("Unable to save article");
+ 						fclose(fr);
+ 					}
+@@ -2274,5 +2535,10 @@
+ 
+ 		}
+ 	}
++#ifdef UNIX
++	if (use_ansi) system ("reset");
++#else
++	/* Do we need to reset the screen colours for other systems? */
++#endif
+ 	return(0);
+ }
+Only in .: slnr.ini
+Only in /devel/slnr/src: slnr.o
