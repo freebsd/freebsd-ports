@@ -1,24 +1,13 @@
 --- xphoon.c.orig	Thu Sep 19 04:57:37 1991
 +++ xphoon.c	Sun Jan  3 18:30:29 1999
-@@ -31,9 +31,18 @@
- 
- /* Externals. */
- 
-+#if (defined(__unix__) || defined(unix)) && !defined(USG)
-+#include <sys/param.h>
-+#endif
-+
-+#if (defined(BSD) && (BSD >= 199306))
-+#include <stdlib.h>
-+#include <time.h>
-+#else
- extern char* malloc();
- extern long time();
- extern long random();
-+#endif
- 
- extern void getbits();
- extern double jtime();
+@@ -20,7 +20,6 @@
+ #include "vroot.h"
+ #include <stdio.h>
+ #include <stdlib.h>	/* added by David Frey */
+-#include <malloc.h>	/* added by David Frey */
+ #include <time.h>	/* added by David Frey */
+ #include <math.h>
+ #include <limits.h>	/* added by Lalo Martins */
 @@ -65,7 +74,7 @@
      int blackflag, demoflag;
      int printpid;

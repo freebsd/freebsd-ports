@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xphoon
-PORTVERSION=	1991.9.18
-CATEGORIES=	astro x11
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
-DISTNAME=	xphoon
-EXTRACT_SUFX=	.tar.Z
+PORTVERSION=	2000.06.13
+CATEGORIES=	astro
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set the root window to the moon in its current phase
