@@ -12,5 +12,5 @@ in %%X11BASE%%/lib/X11/locale/zh_CN/XI18N_OBJS
 Remember to set environment varible XMODIFIERS:
  csh/tcsh: setenv XMODIFIERS @im=XSIM
  sh/bash:  export XMODIFIERS='@im=XSIM'
-and set LANG, LC_CTYPE to zh_CN.EUC.
+and set LANG, LC_CTYPE to zh_CN.eucCN.
 -------------------------------------------------------------------------------

@@ -16,12 +16,12 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and fast GBK Chinese XIM server
 
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-cn-locale=EUC
+CONFIGURE_ARGS=	--with-cn-locale=eucCN
 
 .include <bsd.port.pre.mk>
 
@@ -34,9 +34,14 @@ post-patch:
 		${WRKSRC}/xsim/IMdkit/IMConn.c
 	@${FIND} ${WRKSRC} -name xsimrc.in -or -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -Ee 's,@prefix@/(plugins|dat|bin),${DATADIR}/\1,g'
+	@${FIND} ${WRKSRC} ! -type d \
+		-exec ${GREP} -q _CPP_BITS_IOSBASE_H '{}' \; \
+		-exec ${REINPLACE_CMD} 's/#ifdef _CPP_BITS_IOSBASE_H/#if defined(_IOS_BASE_H) || defined(_CPP_BITS_IOSBASE_H)/g' '{}' \;
+	@${REINPLACE_CMD} "s/-O2/${CFLAGS}/g" ${WRKSRC}/configure
 
 post-install:
-	@${LN} -s ${DATADIR}/bin/xsim ${PREFIX}/bin/xsim
+	@${SED} "s|%%PREFIX%%|${PREFIX}|g" <${FILESDIR}/xsim.sh \
+		>${PREFIX}/bin/xsim && ${CHMOD} 555 ${PREFIX}/bin/xsim
 	@${MKDIR} ${DATADIR}/dat
 	@${CP} -R ${WRKDIR}/usr/local/xsim/dat/* ${DATADIR}/dat
 	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' < ${PKGMESSAGE}
