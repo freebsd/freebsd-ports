@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enlightenment Database Library
 
 USE_LIBTOOL=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes

@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/gDeskCal-${PORTVERSION}
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehier
 NO_BUILD=	yes
 

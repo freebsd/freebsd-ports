@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/mcal/mcal:${PORTSDIR}/deskutils/mcal
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 post-extract:

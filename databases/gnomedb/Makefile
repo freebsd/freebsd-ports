@@ -19,7 +19,6 @@ COMMENT=	Provide uniform access to data sources for the GNOME environment
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier libgda
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

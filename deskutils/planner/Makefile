@@ -20,7 +20,6 @@ LIB_DEPENDS=	mrproject.0:${PORTSDIR}/deskutils/libmrproject \
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

@@ -19,7 +19,6 @@ LIB_DEPENDS=    xml2.5:${PORTSDIR}/textproc/libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/libexec
 
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 post-patch:

@@ -25,7 +25,6 @@ CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-iodbc-inidir=${INIDIR} --with-pthread
 
 .if !defined(WITHOUT_GUI)
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 PLIST_SUB+=	GUI=""
 .else
