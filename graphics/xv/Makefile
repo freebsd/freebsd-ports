@@ -7,6 +7,7 @@
 
 PORTNAME=	xv
 PORTVERSION=	3.10a
+PORTREVISION=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		ftp://ftp.trilon.com/pub/xv/ \
