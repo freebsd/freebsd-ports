@@ -40,6 +40,43 @@ share/sawfish/themes/Eazel/top-left-corner.png
 share/sawfish/themes/Eazel/top-right-corner.png
 share/sawfish/themes/Eazel/top-teal-repeat.png
 share/sawfish/themes/Eazel/top-title-text-repeat.png
+share/sawfish/themes/Ice/README
+share/sawfish/themes/Ice/bottom-left-corner.png
+share/sawfish/themes/Ice/bottom-repeat.png
+share/sawfish/themes/Ice/bottom-right-corner.png
+share/sawfish/themes/Ice/close.png
+share/sawfish/themes/Ice/i-bottom-left-corner.png
+share/sawfish/themes/Ice/i-bottom-repeat.png
+share/sawfish/themes/Ice/i-bottom-right-corner.png
+share/sawfish/themes/Ice/i-close.png
+share/sawfish/themes/Ice/i-left-repeat.png
+share/sawfish/themes/Ice/i-max.png
+share/sawfish/themes/Ice/i-min.png
+share/sawfish/themes/Ice/i-right-repeat.png
+share/sawfish/themes/Ice/i-titlebar-left-edge.png
+share/sawfish/themes/Ice/i-titlebar-left-ice.png
+share/sawfish/themes/Ice/i-titlebar-main-ice-scale.png
+share/sawfish/themes/Ice/i-titlebar-right-edge.png
+share/sawfish/themes/Ice/i-titlebar-textbg.png
+share/sawfish/themes/Ice/i-top-left-corner.png
+share/sawfish/themes/Ice/i-top-repeat.png
+share/sawfish/themes/Ice/i-top-right-corner.png
+share/sawfish/themes/Ice/left-repeat.png
+share/sawfish/themes/Ice/max.png
+share/sawfish/themes/Ice/min.png
+share/sawfish/themes/Ice/p-close.png
+share/sawfish/themes/Ice/p-max.png
+share/sawfish/themes/Ice/p-min.png
+share/sawfish/themes/Ice/right-repeat.png
+share/sawfish/themes/Ice/theme.jl
+share/sawfish/themes/Ice/titlebar-left-edge.png
+share/sawfish/themes/Ice/titlebar-left-ice.png
+share/sawfish/themes/Ice/titlebar-main-ice-scale.png
+share/sawfish/themes/Ice/titlebar-right-edge.png
+share/sawfish/themes/Ice/titlebar-textbg.png
+share/sawfish/themes/Ice/top-left-corner.png
+share/sawfish/themes/Ice/top-repeat.png
+share/sawfish/themes/Ice/top-right-corner.png
 share/themes/Eazel/README
 share/themes/Eazel/gtk/arrow_down-spinner.png
 share/themes/Eazel/gtk/arrow_down.png
@@ -137,4 +174,5 @@ share/themes/Eazel/gtk/vline.png
 share/themes/Eazel/gtk/vtrough.png
 @dirrm share/themes/Eazel/gtk
 @dirrm share/themes/Eazel
+@dirrm share/sawfish/themes/Ice
 @dirrm share/sawfish/themes/Eazel
