@@ -3,7 +3,7 @@
 # Date created:		25 October 1998
 # Whom:			NAKAJI Hiroyuki <nakaji@zeisei.dpri.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.3 1999/01/15 09:49:43 asami Exp $
+# $Id: Makefile,v 1.4 1999/04/02 08:28:53 taoka Exp $
 #
 
 DISTNAME=	xc
@@ -13,6 +13,8 @@ CATEGORIES=	x11
 MAINTAINER=	nakaji@zeisei.dpri.kyoto-u.ac.jp
 
 LIB_DEPENDS=	font.1:${.CURDIR}/../XttXF86srv-common
+
+ONLY_FOR_ARCHS=	i386
 
 SERVER=		XF98_TGUI
 
