@@ -1,0 +1,10 @@
+gnome-network is a set of network oriented user tools. It includes the
+following tools:
+
+        * gnome-remote-shell: a remote shell (Telnet/SSH) client.
+        * gnome-remote-desktop: a remote desktop (X11/VNC) client.
+        * gnome-netinfo: a network information tool, for getting info on
+          network cards, DNS, etc.
+        * gnome-backup: a backup client tool.
+
+WWW: http://www.gnome.org/
