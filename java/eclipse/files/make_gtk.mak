@@ -54,7 +54,6 @@ ATKLIBS = `pkg-config --libs atk gtk+-2.0`
 GNOMECFLAGS = `pkg-config --cflags gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0`
 GNOMELIBS = `pkg-config --libs gnome-vfs-module-2.0 libgnome-2.0 libgnomeui-2.0`
 
-ifeq ($(BROWSER),mozilla)
 MOZILLACFLAGS = -O \
 	-fno-rtti	\
 	-Wall	\
@@ -69,22 +68,6 @@ MOZILLACFLAGS = -O \
 	-I$(MOZILLA_HOME)/include/$(BROWSER)/nspr \
 	-I$(MOZILLA_HOME)/include/$(BROWSER)/embed_base \
 	-I$(MOZILLA_HOME)/include/$(BROWSER)/gfx
-else
-MOZILLACFLAGS = -O \
-	-fno-rtti	\
-	-Wall	\
-	-I./ \
-	-I$(JAVA_HOME)/include	\
-	-I$(JAVA_HOME)/include/bsd	\
-	-I$(JAVA_HOME)/include/freebsd \
-	-include $(MOZILLA_HOME)/include/$(BROWSER)/mozilla-config.h \
-	-I$(MOZILLA_HOME)/include/$(BROWSER) \
-	-I$(MOZILLA_HOME)/include/$(BROWSER)/xpcom \
-	-I$(MOZILLA_HOME)/include/$(BROWSER)/string \
-	-I$(MOZILLA_HOME)/include/$(BROWSER)/nspr \
-	-I$(MOZILLA_HOME)/include/$(BROWSER)/embed_base \
-	-I$(MOZILLA_HOME)/include/$(BROWSER)/gfx
-endif
 
 MOZILLALIBS = -L$(MOZILLA_HOME)/lib/$(BROWSER) \
 	-L$(MOZILLA_HOME)/lib/$(BROWSER) \
