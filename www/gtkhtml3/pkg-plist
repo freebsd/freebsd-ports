@@ -138,4 +138,5 @@ share/locale/tr/LC_MESSAGES/gtkhtml.mo
 share/locale/uk/LC_MESSAGES/gtkhtml.mo
 @dirrm share/gnome/html/gtkhtml
 @dirrm share/gnome/gtkhtml
+@dirrm share/gnome/control-center/capplets
 @dirrm include/gtkhtml
