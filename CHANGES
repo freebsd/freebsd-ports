@@ -1,0 +1,48 @@
+Updating Information for FreeBSD ports developers
+
+This file is maintained by Erwin Lansing <erwin@FreeBSD.org> and
+copyrighted by the FreeBSD Foundation.
+
+This file contains major changes to ports and the ports infrastructure.
+Intended audience are ports committers, maintainers and other
+developers. User oriented changes should be submitted for inclusion
+in the release notes.
+
+All ports committers are allowed to commit to this file.
+
+20040129:
+	Start of CHANGES file.
+
+FORMAT:
+
+This file contains a list, in reverse chronological order, of major
+breakages or added features in tracking ports.  Not all things will be
+listed here, and it only starts on January 29, 2004.
+
+Copyright information:
+
+Copyright 2004 FreeBSD Foundation All Rights Reserved.
+
+Redistribution, publication, translation and use, with or without
+modification, in full or in part, in any form or format of this
+document are permitted without further permission from the author.
+
+THIS DOCUMENT IS PROVIDED BY FREEBSD FOUNDATION ``AS IS'' AND ANY EXPRESS OR
+IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED.  IN NO EVENT SHALL WARNER LOSH BE LIABLE FOR ANY DIRECT,
+INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+
+If you find this document useful, and you want to, you may buy the
+author a beer.
+
+Contact Erwin Lansing if you have any questions about your use of
+this document.
+
+$FreeBSD$
