@@ -22,7 +22,7 @@ LIB_DEPENDS=	gimp.2:${PORTSDIR}/graphics/gimp1
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GTK=	yes
-USE_PERL=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
 

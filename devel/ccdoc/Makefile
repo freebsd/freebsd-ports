@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.exe
 MAINTAINER=	lonewolf@flame.org
 
 WRKSRC=		${WRKDIR}/ccdoc_v07a
-USE_PERL=	yes
+USE_PERL5=	yes
 
 DOCDIR=${PREFIX}/share/doc/ccdoc
 
