@@ -6991,6 +6991,7 @@ pg		ports/misc/pg
 pgaccess	ports/databases/pgaccess
 pgadmin3	ports/databases/pgadmin3
 pgbash		ports/databases/pgbash
+pgcluster	ports/databases/pgcluster
 pgdriver	ports/www/pgdriver
 pgen		ports/mail/pgen
 pglogd		ports/www/pglogd
@@ -7182,6 +7183,7 @@ poptop		ports/net/poptop
 pork		ports/net/pork
 pornview	ports/graphics/pornview
 portaudio	ports/audio/portaudio
+portaudit	ports/security/portaudit
 portcheckout	ports/devel/portcheckout
 portdowngrade	ports/sysutils/portdowngrade
 porteasy	ports/misc/porteasy
@@ -10439,4 +10441,3 @@ ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
-pgcluster	ports/databases/pgcluster
