@@ -1,0 +1,22 @@
+--- src/half_sse.h.orig	Tue Dec  7 10:24:14 2004
++++ src/half_sse.h	Tue Dec  7 10:24:29 2004
+@@ -19,7 +19,7 @@
+ */
+ /**************************** half-pixel interpolation ***********************/
+ 
+-static short const _mmx_one[] = { 1, 1, 1, 1 };
++const _mmx_one[] = { 1, 1, 1, 1 };
+ static unsigned char const _mmx_one_byte[] = {1,1,1,1,1,1,1,1};
+ 
+ 
+--- src/half_mmx.h.orig	Tue Dec  7 10:23:21 2004
++++ src/half_mmx.h	Tue Dec  7 10:23:32 2004
+@@ -18,7 +18,7 @@
+ */
+ /**************************** half-pixel interpolation ***********************/
+ 
+-static short const _mmx_one[] = { 1, 1, 1, 1 };
++const _mmx_one[] = { 1, 1, 1, 1 };
+ 
+ static void inline mmx_interpolate(unsigned char **ref,
+ 				   int pitch,
