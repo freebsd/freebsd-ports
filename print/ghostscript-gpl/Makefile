@@ -54,6 +54,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 NO_CDROM=	"Can only be distributed for free"
 
+CONFLICTS=	ghostscript-gnu*
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
