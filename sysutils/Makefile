@@ -63,6 +63,7 @@
     SUBDIR += webmin
     SUBDIR += wmapm
     SUBDIR += wmavgload
+    SUBDIR += wmbattery
     SUBDIR += wmhm
     SUBDIR += wminet
     SUBDIR += wmlmmon
