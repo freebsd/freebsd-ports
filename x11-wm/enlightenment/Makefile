@@ -3,7 +3,7 @@
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.28 1998/09/25 09:55:30 asami Exp $
+# $Id: Makefile,v 1.29 1998/11/29 04:31:19 asami Exp $
 #
 
 DISTNAME=	enlightenment-0.14
@@ -19,7 +19,7 @@ LIB_DEPENDS=	esd.0:${PORTSDIR}/audio/esound \
 		Fnlib.0:${PORTSDIR}/graphics/fnlib \
 		gif.3:${PORTSDIR}/graphics/giflib \
 		Imlib.1:${PORTSDIR}/graphics/imlib \
-		tiff.4${PORTSDIR}/graphics/tiff34	
+		tiff.4:${PORTSDIR}/graphics/tiff34	
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
