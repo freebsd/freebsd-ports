@@ -4,7 +4,7 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.72 1999/06/25 22:01:04 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       tinpre-1.4-19990805

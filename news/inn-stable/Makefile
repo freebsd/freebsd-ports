@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994 (1.4), 18 Dec 1996 (1.5.1)
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.41 1999/08/22 18:59:40 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	inn-STABLE_2_2-1999-07-24_03-02

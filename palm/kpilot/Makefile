@@ -3,7 +3,7 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.22 1999/05/24 02:31:44 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kpilot-3.0.2

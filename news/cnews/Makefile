@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.22 1999/08/22 18:59:39 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	c-news

@@ -3,7 +3,7 @@
 # Date created:		6 January 1997
 # Whom:			proff@suburbia.net
 #
-# $Id: Makefile,v 1.13 1999/08/28 01:57:50 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nntpcache-2.3.2

@@ -3,7 +3,7 @@
 # Date created:		February 7, 1998
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/24 06:52:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	News-Newsrc-1.07

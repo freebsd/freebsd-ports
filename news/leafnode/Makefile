@@ -3,7 +3,7 @@
 # Date created:		10 April 1996
 # Whom:			Brian Somers <brian@Awfulhak.org>
 #
-# $Id: Makefile,v 1.6 1999/04/04 22:48:29 brian Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	leafnode-1.9.2

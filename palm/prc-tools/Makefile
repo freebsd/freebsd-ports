@@ -3,7 +3,7 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1999/04/24 03:07:36 nectar Exp $
+# $FreeBSD$
 #
 # *WARNING* write access to ${PREFIX} is required DURING build because the
 # make "all" target actually installs the gnu tools before building the

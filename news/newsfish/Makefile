@@ -3,7 +3,7 @@
 # Date created:		17 January 1999
 # Whom:			asaddi@philosophysw.com
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	newsfish-1.1

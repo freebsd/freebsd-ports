@@ -3,7 +3,7 @@
 # Date created:		03 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1998/07/22 11:33:49 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rkive3.1

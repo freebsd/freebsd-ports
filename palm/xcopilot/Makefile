@@ -3,7 +3,7 @@
 # Date created:			July 17 1997
 # Whom:				Nick Sayer <nsayer@quack.kfu.com>
 #
-# $Id: Makefile,v 1.7 1999/01/09 08:52:31 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xcopilot-0.6.6

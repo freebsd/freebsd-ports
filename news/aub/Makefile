@@ -4,7 +4,7 @@
 # Date created:			  Sun Oct 12, 1997
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.4 1998/11/03 09:29:15 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	aub

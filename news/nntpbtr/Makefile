@@ -3,7 +3,7 @@
 # Date created:         1 July 1996
 # Whom:                 dk
 #
-# $Id: Makefile,v 1.5 1997/08/10 22:31:23 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       nntpbtr-1.7

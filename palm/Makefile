@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.2 1999/01/09 08:52:26 asami Exp $
+# $FreeBSD$
 #
 
     SUBDIR += kpilot

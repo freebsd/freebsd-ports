@@ -3,7 +3,7 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.5 1998/09/21 22:15:57 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xvnews-2.3.2

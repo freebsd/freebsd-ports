@@ -3,7 +3,7 @@
 # Date created:		29 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.14 1998/08/30 15:46:06 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nntp-t5

@@ -3,7 +3,7 @@
 # Date created:		12 September 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.4 1998/10/07 06:52:58 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	newsfetch-1.21

@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.20 1999/05/21 22:39:37 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	trn4-test72

@@ -3,7 +3,7 @@
 # Date created:		30 Mar 1996
 # Whom:			graphite@taurus.bekkoame.or.jp
 #
-# $Id: Makefile,v 1.17 1999/04/11 21:47:45 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	suck-4.2.1

@@ -3,7 +3,7 @@
 # Date created:         19 Feb 1997
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.8 1999/01/26 02:25:35 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       ifmail-2.14

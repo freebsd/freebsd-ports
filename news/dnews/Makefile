@@ -3,7 +3,7 @@
 # Date created:		Thu May 29 17:16:36 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1998/12/23 01:22:40 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dnews47k_freebsd

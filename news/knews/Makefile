@@ -3,7 +3,7 @@
 # Date created:         Sun Apr 14 09:23:59 MET DST 1996
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.23 1999/01/07 20:37:40 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	knews-1.0b.1
