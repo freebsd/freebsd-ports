@@ -292,6 +292,7 @@
     SUBDIR += pgen
     SUBDIR += pgp4pine
     SUBDIR += pgpsendmail
+    SUBDIR += php4-imap
     SUBDIR += pine-pgp-filters
     SUBDIR += pine4
     SUBDIR += pm-lib
