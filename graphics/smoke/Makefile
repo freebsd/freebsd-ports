@@ -31,26 +31,17 @@ TMAKEPATH?=		${LOCALBASE}/share/tmake/freebsd-g++
 
 PORTDOCS=	README
 
-.include <bsd.port.pre.mk>
-
-.if exists(${FREETYPE_CONFIG})
-FREETYPE_INCLUDEPATH!=	${FREETYPE_CONFIG} --cflags | ${SED} -e 's|-I||g'
-.endif
-.if exists(${SDL_CONFIG})
-SDL_INCLUDEPATH!=	${SDL_CONFIG} --cflags | ${SED} -e 's|-I||g; s|-D[[:graph:]]*||g'
-.endif
-
 pre-everything::
 	@${ECHO_MSG} "This port depends on SDL with OpenGL support."
 	@${ECHO_MSG} "If your SDL does not support OpenGL, hit ^C now and reinstall SDL"
 	@${ECHO_MSG} "with OpenGL support turned on."
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%FREETYPE_CONFIG%%|${FREETYPE_CONFIG}|g; \
-			      s|%%SDL_CONFIG%%|${SDL_CONFIG}|g; \
-			      s|%%FREETYPE_INCLUDEPATH%%|${FREETYPE_INCLUDEPATH}|g; \
-			      s|%%SDL_INCLUDEPATH%%|${SDL_INCLUDEPATH}|g; \
-			      s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e "s|%%FREETYPE_CONFIG%%|${FREETYPE_CONFIG}|g; \
+		s|%%SDL_CONFIG%%|${SDL_CONFIG}|g; \
+		s#%%FREETYPE_INCLUDEPATH%%#`${FREETYPE_CONFIG} --cflags | ${SED} -e 's|-I||g'`#; \
+		s#%%SDL_INCLUDEPATH%%#`${SDL_CONFIG} --cflags | ${SED} -e 's|-I||g; s|-D[[:graph:]]*||g'`#; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g" \
 		${WRKSRC}/project
 
 pre-build:
@@ -67,4 +58,4 @@ do-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
