@@ -7,7 +7,6 @@ bin/artsrec
 bin/artsshell
 bin/artswrapper
 bin/mcopidl
-bin/testdhandle
 include/arts/anyref.h
 include/arts/artsflow.h
 include/arts/artsflow.idl
@@ -36,7 +35,6 @@ include/arts/extensionloader.h
 include/arts/factory.h
 include/arts/fft.h
 include/arts/flowsystem.h
-include/arts/gsl/gslartsthreads.h
 include/arts/gsl/gslcommon.h
 include/arts/gsl/gslconfig.h
 include/arts/gsl/gslconvert.h
@@ -49,7 +47,6 @@ include/arts/gsl/gsldefs.h
 include/arts/gsl/gslengine.h
 include/arts/gsl/gslfft.h
 include/arts/gsl/gslfilter.h
-include/arts/gsl/gslglib.h
 include/arts/gsl/gslieee754.h
 include/arts/gsl/gslloader.h
 include/arts/gsl/gslmagic.h
@@ -59,6 +56,7 @@ include/arts/gsl/gslosctable.h
 include/arts/gsl/gslsignal.h
 include/arts/gsl/gslwavechunk.h
 include/arts/gsl/gslwaveosc.h
+include/arts/gslschedule.h
 include/arts/idlfilereg.h
 include/arts/ifacerepo_impl.h
 include/arts/iomanager.h
@@ -160,8 +158,3 @@ lib/mcop/soundserver.mcopclass
 lib/mcop/soundserver.mcoptype
 lib/mcop/x11globalcomm.mcopclass
 lib/mcop/x11globalcomm.mcoptype
-@dirrm lib/mcop/Arts
-@dirrm lib/mcop
-@dirrm include/artsc
-@dirrm include/arts/gsl
-@dirrm include/arts
