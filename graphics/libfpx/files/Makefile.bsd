@@ -33,6 +33,6 @@ LDADD	+=	-L${LOCALBASE}/lib -ljpeg -lstdc++
 CXXFLAGS+=	-I${.CURDIR}/$d
 .endfor
 
-CXXFLAGS+=	-I${LOCALBASE}/include -D_UNIX
+CXXFLAGS+=	-I${LOCALBASE}/include -D_UNIX -Wno-error
 
 .include <bsd.lib.mk>
