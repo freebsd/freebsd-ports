@@ -18,7 +18,7 @@ COMMENT=	Provides access to PostgreSQL databases through the DBI
 
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
-POSTGRESQL_PORT?=	databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql-client
 
 PERL_CONFIGURE=	yes
 
