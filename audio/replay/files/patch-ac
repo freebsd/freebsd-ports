@@ -1,0 +1,11 @@
+--- replay.c.orig	Wed Oct 28 01:34:31 1998
++++ replay.c	Wed Oct 28 01:34:46 1998
+@@ -1163,7 +1163,7 @@
+ 		DPRINT("\tglobbing: ");
+ 		DPRINT(buffer2);
+ 		DPRINT("\n");
+-		if (glob(buffer2, GLOB_ERR, NULL, &match) == GLOB_NOMATCH) {
++		if (glob(buffer2, GLOB_ERR, NULL, &match) == GLOB_NOCHECK) {
+ 			DPRINT("\tmatched nothing\n");
+ 			return;
+ 		}

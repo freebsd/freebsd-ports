@@ -1,0 +1,12 @@
+--- audioIO_esd.c.orig	Wed Oct 28 21:38:30 1998
++++ audioIO_esd.c	Wed Oct 28 21:39:01 1998
+@@ -19,7 +19,9 @@
+ 
+ /* declare these static to effectively isolate the audio device */
+ 
++#ifndef OS_BSD
+ int AUSIZ=0;
++#endif
+ static int audio_fd;
+ 
+ /* audioOpen() */
