@@ -3,7 +3,7 @@
 # Date created:				7 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.8 1998/08/20 11:18:07 vanilla Exp $
+# $Id: Makefile,v 1.9 1998/09/22 22:55:55 asami Exp $
 #
 
 DISTNAME=	workplace-1.0.a3
@@ -17,7 +17,7 @@ LIB_DEPENDS=	gtk.1:${PORTSDIR}/x11-toolkits/gtk
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/gtk10" \
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/gtk10" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-configure:
