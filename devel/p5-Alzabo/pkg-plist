@@ -50,19 +50,6 @@
 %%SITE_PERL%%/Alzabo/SQLMaker/PostgreSQL.pm
 %%SITE_PERL%%/Alzabo/Schema.pm
 %%SITE_PERL%%/Alzabo/Table.pm
-%%PORTDOCS%%%%EXAMPLESDIR%%/alzabo_grep
-%%PORTDOCS%%%%EXAMPLESDIR%%/alzabo_to_ascii
-%%PORTDOCS%%%%EXAMPLESDIR%%/convert.pl
-%%PORTDOCS%%%%EXAMPLESDIR%%/mason/edit_field_checkbox
-%%PORTDOCS%%%%EXAMPLESDIR%%/mason/edit_field_text_input
-%%PORTDOCS%%%%EXAMPLESDIR%%/mason/edit_field_textarea
-%%PORTDOCS%%%%EXAMPLESDIR%%/mason/fk_to_one_select
-%%PORTDOCS%%%%EXAMPLESDIR%%/mason/insert
-%%PORTDOCS%%%%EXAMPLESDIR%%/mason/insert_or_update
-%%PORTDOCS%%%%EXAMPLESDIR%%/mason/update
-%%PORTDOCS%%%%EXAMPLESDIR%%/reverse_cardinality.pl
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/mason
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/Alzabo/SQLMaker
 @dirrm %%SITE_PERL%%/Alzabo/Runtime/RowState
 @dirrm %%SITE_PERL%%/Alzabo/Runtime

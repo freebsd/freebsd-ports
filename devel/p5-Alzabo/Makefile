@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Alzabo
-PORTVERSION=	0.85
+PORTVERSION=	0.86
 CATEGORIES=	devel databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Alzabo
@@ -92,6 +92,10 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}/mason
 	@${INSTALL_DATA} ${EXAMPLESMASON:S|^|${WRKSRC}/|} ${EXAMPLESDIR}/mason
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+	@${FIND} -P ${EXAMPLESDIR} ! -type d 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -P -d ${EXAMPLESDIR} -type d 2>/dev/null | \
+		${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.pre.mk>
