@@ -329,8 +329,6 @@ lib/icon/lib/iscreen.u1
 lib/icon/lib/iscreen.u2
 lib/icon/lib/isdplot.u1
 lib/icon/lib/isdplot.u2
-lib/icon/lib/ispf.u1
-lib/icon/lib/ispf.u2
 lib/icon/lib/iterfncs.u1
 lib/icon/lib/iterfncs.u2
 lib/icon/lib/itlib.u1
@@ -385,6 +383,8 @@ lib/icon/lib/lstfncs.u1
 lib/icon/lib/lstfncs.u2
 lib/icon/lib/lsystem.u1
 lib/icon/lib/lsystem.u2
+lib/icon/lib/lterps.u1
+lib/icon/lib/lterps.u2
 lib/icon/lib/lu.u1
 lib/icon/lib/lu.u2
 lib/icon/lib/maccolor.icn
@@ -481,6 +481,8 @@ lib/icon/lib/plural.u1
 lib/icon/lib/plural.u2
 lib/icon/lib/polynom.u1
 lib/icon/lib/polynom.u2
+lib/icon/lib/polyseq.u1
+lib/icon/lib/polyseq.u2
 lib/icon/lib/polystuf.u1
 lib/icon/lib/polystuf.u2
 lib/icon/lib/popen.u1
@@ -545,8 +547,6 @@ lib/icon/lib/revadd.u1
 lib/icon/lib/revadd.u2
 lib/icon/lib/rewrap.u1
 lib/icon/lib/rewrap.u2
-lib/icon/lib/rexx.u1
-lib/icon/lib/rexx.u2
 lib/icon/lib/rgbcomp.u1
 lib/icon/lib/rgbcomp.u2
 lib/icon/lib/rgbrec.u1
@@ -800,6 +800,7 @@ lib/icon/lib/zipread.u2
 %%PORTDOCS%%share/doc/icon/files.htm
 %%PORTDOCS%%share/doc/icon/gb80.jpg
 %%PORTDOCS%%share/doc/icon/ib80.jpg
+%%PORTDOCS%%share/doc/icon/icon.txt
 %%PORTDOCS%%share/doc/icon/icont.txt
 %%PORTDOCS%%share/doc/icon/index.htm
 %%PORTDOCS%%share/doc/icon/install.htm
