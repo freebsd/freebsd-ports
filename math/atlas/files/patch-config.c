@@ -1,5 +1,5 @@
---- config.c.orig	Fri Apr 25 03:10:17 2003
-+++ config.c	Sat May 10 07:43:36 2003
+--- config.c.orig	Sun May  4 06:09:23 2003
++++ config.c	Tue Jun 10 13:12:30 2003
 @@ -697,7 +697,7 @@
           else if (mach == IA64Itan || MachIsUS(mach) ||
                    mach == Dec21164 || mach == Dec21264)
@@ -31,14 +31,19 @@
           }
           break;
        case LAIA64: /* don't know */
-@@ -2113,14 +2118,17 @@
+@@ -2113,14 +2118,22 @@
           if (!CmndOneLine(targ, "sysctl hw.model", ln))
           {
              if (strstr(ln, "Pentium Pro")) mach = IntPPRO;
++            else if (strstr(ln, "Pentium(R) Pro")) mach = IntPPRO;
 +            else if (strstr(ln, "Pentium 4")) mach = IntP4;
++	    else if (strstr(ln, "Pentium(R) 4")) mach = IntP4;
              else if (strstr(ln, "Pentium III")) mach = IntPIII;
++            else if (strstr(ln, "Pentium(R) III")) mach = IntPIII;
              else if (strstr(ln, "Pentium II ")) mach = IntPII;
++            else if (strstr(ln, "Pentium(R) II ")) mach = IntPII;
 +            else if (strstr(ln, "Celeron")) mach = IntPII;
++            else if (strstr(ln, "Celeron(R)")) mach = IntPII;
              else if (strstr(ln, "Athlon")) mach = AmdAthlon;
              else if (strstr(ln, "AMD-K7")) mach = AmdAthlon;
              else if (strstr(ln, "32 bit Hammer")) mach = AmdHammer32;
@@ -49,7 +54,7 @@
           }
           break;
        default:;
-@@ -3124,6 +3132,9 @@
+@@ -3124,6 +3137,9 @@
     }
     if (USEWINF77) strcpy(F77, "$(BINdir)/winf77.exe");
  
