@@ -3,7 +3,7 @@
 # Date created:         Jul, 15, 1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.1.1.1 1997/01/03 00:37:20 max Exp $
+# $Id: Makefile,v 1.2 1997/07/15 12:00:46 cracauer Exp $
 #
 
 DISTNAME=	scsh-0.5.1
@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 NO_CDROM=	"Wait for next release by the author's request"
 ALL_TARGET=	enough
 MAN1=		scsh.1
-STRIP=		
+STRIP=
 
 post-install:
 	@strip ${PREFIX}/bin/scsh
