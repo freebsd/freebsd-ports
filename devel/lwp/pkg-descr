@@ -1,0 +1,8 @@
+The LWP userspace threads library. The LWP threads library is used by the Coda
+distributed filesystem, RVM (a persistent VM library), and RPC2/SFTP (remote
+procedure call library)
+
+Project contact information below.
+
+EMAIL: coda@cs.cmu.edu
+WWW: http://www.coda.cs.cmu.edu/

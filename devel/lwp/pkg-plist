@@ -1,0 +1,10 @@
+include/lwp/lock.h
+include/lwp/lwp.h
+include/lwp/preempt.h
+include/lwp/timer.h
+lib/liblwp.a
+lib/liblwp.so
+lib/liblwp.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm include/lwp
