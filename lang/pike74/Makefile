@@ -13,11 +13,6 @@ MASTER_SITES=	http://pike.idonex.se/download/
 
 MAINTAINER=	vns@delta.odessa.ua
 
-pre-fetch:
-.if !defined(BATCH)
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.pike
-.endif
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/
 
 IS_INTERACTIVE=	yes
@@ -30,10 +25,18 @@ CONFIGURE_ARGS?= \
 	--without-msql \
 	--without-jpeg
 
+pre-fetch:
+.if !defined(BATCH)
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.pike
+.endif
+
 pre-configure:
 	@${ECHO} ${CONFIGURE_ARGS}
 
 pre-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
 .include <bsd.port.mk>
