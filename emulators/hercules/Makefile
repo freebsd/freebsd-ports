@@ -10,7 +10,7 @@ PORTVERSION=	2.16.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.conmicro.cx/hercules/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	phk@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
