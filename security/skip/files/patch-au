@@ -1,7 +1,7 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/doc/README.FreeBSD skipsrc-1.0/doc/README.FreeBSD
 --- skipsrc-1.0.orig/doc/README.FreeBSD	Wed Dec 31 16:00:00 1969
-+++ skipsrc-1.0/doc/README.FreeBSD	Tue Dec 23 16:23:06 1997
-@@ -0,0 +1,64 @@
++++ skipsrc-1.0/doc/README.FreeBSD	Sun Apr 12 16:10:32 1998
+@@ -0,0 +1,74 @@
 +
 +Some notes regarding the FreeBSD port of SKIP
 +December 8, 1997
@@ -12,6 +12,16 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/doc/README.FreeBSD skipsrc-1
 +  wheras the FreeBSD port puts it under /usr/local (or elsewhere if
 +  you set ${PREFIX}). This documentation can be found under
 +  /usr/local/share/doc/skip.
++
++- Thanks to S. Wehner, skiphost now takes a new argument for specifying
++  the source address for encrypted packets. This allows encrypted packets
++  that are being tunnelled between two routers to have source and dest
++  IP addresses of only those two routers. This reduces firewall complexity
++  in many cases. From his description:
++
++    This adds another command line option to skiphost, namely
++    -f <source address> . Every packet going out to the other host
++    will then have this source address in the packet.
 +
 +- SKIP is applied to packets *after* any ipfw(8) filtering is applied.
 +  This is true for both incoming and outgoing packets. Note that SKIP
