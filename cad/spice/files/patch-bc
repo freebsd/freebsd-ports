@@ -1,0 +1,17 @@
+--- src/lib/fte/x11.c~	Fri Mar 22 00:12:59 2002
++++ src/lib/fte/x11.c	Fri Mar 22 00:25:41 2002
+@@ -808,11 +808,13 @@
+ {
+ 
+ 	GRAPH *graph = (GRAPH *) client_data;
++	Widget w;
+ 
+ 	/* Iplots are done asynchronously */
+ 	DEVDEP(graph).isopen = 0;
++	w = DEVDEP(graph).shell;
+ 	DestroyGraph(graph->graphid);
+-	XtDestroyWidget(DEVDEP(graph).shell);
++	XtDestroyWidget(w);
+ 
+ }
+ 
