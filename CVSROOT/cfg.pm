@@ -143,9 +143,9 @@ sub add_cvsweb_entry {
 	while (1) {
 		my $line = shift @input;
 		last unless defined($line);
-		last if $line =~ /^\s*Revision\s*Changes\s*Path\s*$/;
 
 		push @output, $line;
+		last if $line =~ /^\s*Revision\s*Changes\s*Path\s*$/;
 	}
 
 	# Add the url links
