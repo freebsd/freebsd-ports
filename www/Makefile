@@ -217,6 +217,7 @@
     SUBDIR += udmsearch
     SUBDIR += vrweb
     SUBDIR += w3
+    SUBDIR += w3-4
     SUBDIR += w3c-httpd
     SUBDIR += w3m
     SUBDIR += w3m-ssl
