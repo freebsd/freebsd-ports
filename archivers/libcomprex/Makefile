@@ -8,7 +8,7 @@
 
 PORTNAME=	libcomprex
 PORTVERSION=	0.3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnupdate
@@ -16,13 +16,11 @@ MASTER_SITE_SUBDIR=	gnupdate
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transparently handles automatic compression and decompression of files
 
-LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
+#LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
-
-BROKEN=		"Broken pkg-plist"
 
 USE_LIBLTDL=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
