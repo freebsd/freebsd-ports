@@ -54,10 +54,10 @@ BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 PATCH_MESA=	yes
 
 .if defined(PATCH_XFREE)
-BUILD_DEPENDS= 	/nonexistent:${PORTSDIR}/x11/XFree86:patch
+BUILD_DEPENDS= 	${NONEXISTENT}:${PORTSDIR}/x11/XFree86:patch
 .endif
 .if defined(PATCH_MESA)
-BUILD_DEPENDS= 	/nonexistent:${PORTSDIR}/graphics/Mesa3:patch
+BUILD_DEPENDS= 	${NONEXISTENT}:${PORTSDIR}/graphics/Mesa3:patch
 .endif
 
 USE_BZIP2=	yes
