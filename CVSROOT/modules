@@ -6879,6 +6879,7 @@ p5-SOAP-Lite	ports/net/p5-SOAP-Lite
 p5-SPOPS	ports/devel/p5-SPOPS
 p5-SQL-Abstract	ports/databases/p5-SQL-Abstract
 p5-SQL-Statement	ports/databases/p5-SQL-Statement
+p5-SQL-Translator	ports/databases/p5-SQL-Translator
 p5-SVG	ports/textproc/p5-SVG
 p5-SVN-Mirror	ports/devel/p5-SVN-Mirror
 p5-SVN-Simple	ports/devel/p5-SVN-Simple
