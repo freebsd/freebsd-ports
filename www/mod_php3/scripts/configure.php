@@ -59,7 +59,7 @@ exec > ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 while [ "$1" ]; do
 	case $1 in
 		\"GD\")
-			echo "LIB_DEPENDS+=	gd.2:\${PORTSDIR}/graphics/gd"
+			echo "LIB_DEPENDS+=	gd.4:\${PORTSDIR}/graphics/gd"
 			echo "CONFIGURE_ARGS+=--with-gd=\${PREFIX}"
 			GD=1
 			;;
