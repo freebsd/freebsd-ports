@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.9
-PORTREVISION=	1
+PORTVERSION=	0.9.9.2002050810
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi/
+MASTER_SITE_SUBDIR=	mozilla/nightly/2002-05-08-10-1.0.0/linux-xpi
+
 PKGNAMEPREFIX=	linux-
 DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
 
@@ -20,8 +20,6 @@ PATCH_SITE_SUBDIR=	trevor
 PATCHFILES=	linux-mozilla-${PORTVERSION}-generated-files.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
-
-FORBIDDEN=	"malicious Web servers can upload files--see http://sec.greymagic.com/adv/gm001-ns/ or http://www.heise.de/ct/browsercheck/n6demo1.shtml "
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk
@@ -49,7 +47,6 @@ pre-everything::
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
 DISTFILES=	browser.xpi \
-		chatzilla.xpi \
 		deflenus.xpi \
 		inspector.xpi \
 		langenus.xpi \
