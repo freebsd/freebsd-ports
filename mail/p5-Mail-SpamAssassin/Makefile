@@ -14,13 +14,15 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Audit.pm:${PORTSDIR}/mail/p5-Mail-Audit
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3
+MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
+		Mail::SpamAssassin::Conf.3 \
+		Mail::SpamAssassin::PersistentAddrList.3 \
+		Mail::SpamAssassin::SMTP::SmartHost.3
 MAN1PREFIX=	${PREFIX}
 MAN1=		spamd.1 spamassassin.1 spamc.1
 
