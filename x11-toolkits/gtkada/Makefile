@@ -36,6 +36,8 @@ PLIST_SUB=	SHLIB_VERSION=${SHLIB_VERSION}
 
 MAN1=	dgate.1 gate.1 gtkada-config.1
 
+CONFLICTS=	zenity-[0-9]*
+
 post-install:
 	${INSTALL_DATA}	${WRKSRC}/docs/*.1 ${PREFIX}/man/man1/
 	${LN} -sf ${PREFIX}/share/doc/GtkAda/*/*.info* ${PREFIX}/info/
