@@ -1,0 +1,38 @@
+--- configure.in.orig	Mon Mar 15 03:46:35 2004
++++ configure.in	Mon Mar 15 03:46:25 2004
+@@ -25,35 +25,6 @@
+ AC_LANG_CPLUSPLUS
+ AC_PROG_CXX
+ 
+-dnl ----------- If both CC and CXX are GNU compilers, it is better to use CC ---
+-dnl ---- for linking. Also check how to turn off RTTI and exception handling ---
+-if test x"$ac_cv_prog_gxx" != x; then
+-  AC_PROG_CC
+-  if test x"$ac_cv_prog_gcc" != x; then
+-    CXX_LINK=${CC}
+-  fi
+-  
+-  ICE_CXX_FLAG_ACCEPT(no_rtti, -fno-rtti)
+-  dnl --- Intel C++ supports -fno-rtti, but doens't support -fno-*-exceptions
+-  if test $(basename $CXX) != "icc"; then
+-    ICE_CXX_FLAG_ACCEPT(no_exceptions, -fno-exceptions)
+-      if test x"$no_exceptions_ok" = xno; then
+-      ICE_CXX_FLAG_ACCEPT(no_exceptions, -fno-handle-exceptions)
+-    fi
+-  fi
+-fi
+-
+-if test x"$ac_cv_prog_gxx" != x; then
+-  dnl --- Intel C++ doesn't supports lots of GCC -W* and -fpermissive
+-  if test $(basename $CXX) = "icc"; then
+-    dnl --- Using -w0 to avoid noisy "remark" messages 
+-    ICE_CXX_FLAG_ACCEPT(warn_xxx, -w0)
+-  else
+-    ICE_CXX_FLAG_ACCEPT(warn_xxx, -Wall -Wpointer-arith -Wconversion -Wwrite-strings -Winline -Woverloaded-virtual -W)
+-    ICE_CXX_FLAG_ACCEPT(permissive, -fpermissive)
+-  fi
+-fi
+-
+ if test x"$CXX_LINK" = x; then
+   CXX_LINK=$CXX
+ fi
