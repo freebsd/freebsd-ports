@@ -3,9 +3,7 @@ include/dotconf.h
 include/libpool.h
 lib/libpool.a
 lib/libdotconf.a
-lib/libdotconf.la
 lib/libdotconf.so
-lib/libdotconf-1.0.so
 lib/libdotconf-1.0.so.0
 share/aclocal/dotconf.m4
 %%PORTDOCS%%share/dotconf/dotconf-api.txt
