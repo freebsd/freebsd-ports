@@ -1,6 +1,6 @@
 --- servers/slapd/Makefile.in.orig	Mon Dec 29 19:10:38 2003
 +++ servers/slapd/Makefile.in	Tue Jan 20 02:33:39 2004
-@@ -343,7 +343,6 @@
+@@ -354,7 +354,6 @@
  
  install-slapd: FORCE
  	-$(MKDIR) $(DESTDIR)$(libexecdir)
