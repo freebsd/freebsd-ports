@@ -13,8 +13,8 @@ DISTNAME=	ns-src-2.1b5
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
-BUILD_DEPENDS=	${PREFIX}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
-RUN_DEPENDS=	${PREFIX}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
+BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
+RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
 
 MAN1=		ns.1
 MANCOMPRESSED=	no
