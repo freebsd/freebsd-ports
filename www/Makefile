@@ -575,6 +575,7 @@
     SUBDIR += webglimpse
     SUBDIR += weblint
     SUBDIR += webredirect
+    SUBDIR += webreport
     SUBDIR += webresolve
     SUBDIR += webstats
     SUBDIR += webstone
