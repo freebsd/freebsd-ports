@@ -483,6 +483,9 @@ share/xine/skins/xinetic/skinconfig
 @dirrm man/fr
 @dirrm man/pl/man1
 @dirrm man/pl
+@dirrm share/xine/skins/CelomaChrome
+@dirrm share/xine/skins/CelomaGold
+@dirrm share/xine/skins/CelomaMdk
 @dirrm share/xine/skins/cloudy
 @dirrm share/xine/skins/lcd
 @dirrm share/xine/skins/mp2k
