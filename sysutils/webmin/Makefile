@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.86
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
@@ -22,7 +22,8 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	useradmin-0.86-1.wbm.gz cron-0.86-1.wbm.gz
+WEBMIN_MODULES=	useradmin-0.86-2.wbm.gz cron-0.86-1.wbm.gz \
+		file-0.86-1.wbm.gz lpadmin-0.86-1.wbm.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
