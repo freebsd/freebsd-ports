@@ -3928,6 +3928,7 @@ jzip		ports/games/jzip
 jzip.org	ports/archivers/jzip.org
 k3b		ports/sysutils/k3b
 k3b-i18n	ports/misc/k3b-i18n
+k3d		ports/graphics/k3d
 kaddressbook-plugins	ports/misc/kaddressbook-plugins
 kadu		ports/polish/kadu
 kaffe		ports/java/kaffe
