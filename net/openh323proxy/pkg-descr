@@ -1,0 +1,15 @@
+OpenH323Proxy is a Gatekeeper and Proxy for Video Conferencing and
+Internet Phone (VoIP) applications using the H323 protocol.
+
+The H323 protocol is used by OpenH323, OhPhone and Microsoft's NetMeeting
+plus many other applications.
+
+It makes use of PWLib and the OpenH323 stack from Equivalence Ltd Pty
+and as it is based on OpenGatekeeper from Egoboo, it is a
+gatekeeper as well as a proxy.
+
+WWW: http://openh323proxy.sourceforge.net/
+
+and
+
+WWW: http://www.openh323.org/
