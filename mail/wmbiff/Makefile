@@ -6,30 +6,24 @@
 #
 
 PORTNAME=	wmbiff
-PORTVERSION=	0.3.7
+PORTVERSION=	0.4.5
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jim@FreeBSD.org
 
-USE_GMAKE=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}/wmbiff
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		wmbiff.1
 MAN5=		wmbiffrc.5
 
-MAKE_ARGS=	OSTYPE="FreeBSD" MANDIR=${PREFIX}/man \
-		WITHOUT_CRYPTO=yes LIBDIR="-L${X11BASE}/lib" \
-		INSTALL_USER=${BINOWN} INSTALL_GROUP=${BINGRP}
 post-install:
-	@${ECHO} "===>   Installing sample.wmbiffrc to ${PREFIX}/share/wmbiff"
-	@${ECHO} "===>   Modify it to suit your needs and copy to ~/.wmbiffrc"
-	@${MKDIR} ${PREFIX}/share/wmbiff && ${CHMOD} a+rx ${PREFIX}/share/wmbiff
-	@${INSTALL_DATA} ${WRKSRC}/sample.wmbiffrc ${PREFIX}/share/wmbiff
-	@${CHMOD} 644 ${PREFIX}/share/wmbiff/sample.wmbiffrc
+	@${ECHO_MSG} "===>   Installing sample.wmbiffrc to ${DATADIR}"
+	@${ECHO_MSG} "===>   Modify it to suit your needs and copy to ~/.wmbiffrc"
+	@${INSTALL_DATA} -m 644 ${WRKSRC}/wmbiff/sample.wmbiffrc ${DATADIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
