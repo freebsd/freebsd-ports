@@ -15,6 +15,7 @@ MAINTAINER=     bms@FreeBSD.org
 COMMENT=	Java/Swing-based LDAP Browser/Editor
 
 RESTRICTED=	"No reply from author regarding redistribution licensing"
+BROKEN=		"Creates a file in /"
 
 USE_JAVA=	1.4+
 NO_BUILD=	yes
