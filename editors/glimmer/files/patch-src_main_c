@@ -1,0 +1,20 @@
+--- src/main.c.orig	Tue Jun 17 01:53:17 2003
++++ src/main.c	Tue Jun 17 01:54:18 2003
+@@ -342,7 +342,7 @@ main_finish (void *closure, int argc, ch
+     gchar *path;
+     gchar *file;
+     gchar *full;
+-    gchar cwd[256];
++    gchar cwd[MAXPATHLEN];
+ 
+     args = (gchar **) poptGetArgs (pctx);
+ 
+@@ -381,7 +381,7 @@ main_finish (void *closure, int argc, ch
+         }
+     }
+     if (input_file) {
+-        gchar *path, *file, *full, cwd[256];
++        gchar *path, *file, *full, cwd[MAXPATHLEN];
+ 
+         getcwd (cwd, sizeof (cwd));
+         path = get_path_from_filename (input_file);

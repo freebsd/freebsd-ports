@@ -1,0 +1,15 @@
+--- src/file-io.c.orig	Tue Jun 17 01:52:36 2003
++++ src/file-io.c	Tue Jun 17 01:53:49 2003
+@@ -102,10 +102,10 @@ void
+ new_file_real (char *filename)
+ {
+     GnomeVFSURI *uri;
+-    gchar cwd[256];
++    gchar cwd[MAXPATHLEN];
+     gchar *full;
+ 
+-    getcwd (cwd, 256);
++    getcwd (cwd, sizeof(cwd));
+     full = g_strconcat (cwd, "/", filename, NULL);
+     uri = gnome_vfs_uri_new (full);
+     g_free (full);
