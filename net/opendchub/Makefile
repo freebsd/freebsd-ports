@@ -29,4 +29,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		"needs at least perl 5.6.1 to build"
+.endif
+
+.include <bsd.port.post.mk>
