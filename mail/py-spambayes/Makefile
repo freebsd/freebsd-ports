@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spambayes
-PORTVERSION=	1.0.a.4
+PORTVERSION=	1.0.a.6
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 DOC_FILES=	HAMMIE.txt INTEGRATION.txt LICENSE.txt README.txt \
-		TESTING.txt contrib/BULK.txt \
+		TESTING.txt WHAT_IS_NEW.txt contrib/BULK.txt \
 		contrib/muttrc contrib/procmailrc contrib/spambayes.el
 
 post-install:
