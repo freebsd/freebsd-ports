@@ -103,6 +103,7 @@
     SUBDIR += gnomecontrolcenter2
     SUBDIR += gnomefind
     SUBDIR += gnomesystemmonitor
+    SUBDIR += gok
     SUBDIR += gpart
     SUBDIR += grub
     SUBDIR += gtk-imonc
