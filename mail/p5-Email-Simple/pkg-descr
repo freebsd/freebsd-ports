@@ -1,0 +1,7 @@
+Email::Simple is the first deliverable of the "Perl Email Project", a
+reaction against the complexity and increasing bugginess of the Mail::*
+modules. In contrast, Email::* modules are meant to be simple to use
+and to maintain, pared to the bone, fast, minimal in their external
+dependencies, and correct. 
+
+WWW: http://search.cpan.org/dist/Email-Simple
