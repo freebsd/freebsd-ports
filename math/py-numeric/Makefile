@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	numeric
-PORTVERSION=	17.3.0
+PORTVERSION=	19.0.0
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	numpy
@@ -18,21 +18,17 @@ MAINTAINER=	tg@FreeBSD.org
 BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes
+PYTHON_VERSION=	python2.1
 
 DOCDIR=		${PREFIX}/share/doc/py-numeric
 EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
 
-post-extract:
-.for dir in FFT LALITE RANLIB RNG
-	@(cd ${WRKSRC}/Packages/${dir}; \
-		${LN} -sf ../../../Include Include/Numeric)
-.endfor
-
 do-build:
-	@(cd ${WRKSRC}; ${PYTHON_CMD} setup_all.py build)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py build)
 
 do-install:
-	@(cd ${WRKSRC}; ${PYTHON_CMD} setup_all.py install)
+	@(cd ${WRKSRC}; \
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup_all.py install)
 
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLEDIR}
