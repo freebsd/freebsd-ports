@@ -1,8 +1,7 @@
-`FD' (FDclone) is a GUI-based file and directory management tool for
-text terminal which allows you to browse and manipulate directories
-and files with an easy and intuitive user interface.  It also has a
-built-in Bourne-shell compatible shell which can be run stand-alone by
-the name of `fdsh'.
+`FD' (FDclone) is a CUI-based file and directory management tool which
+allows you to browse and manipulate directories and files with an easy
+and intuitive user interface.  It also has a built-in Bourne-shell
+compatible shell which can be run stand-alone by the name of `fdsh'.
 
 This version is a clone of FD for DOS (AT and PC9801) designed &
 written by A. Idei (SDI00544@niftyserve.or.jp).
