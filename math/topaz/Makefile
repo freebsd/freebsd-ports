@@ -17,7 +17,7 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 .include<bsd.port.pre.mk>
 .if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses:${PORTNAME}/devel/ncurses
+LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
