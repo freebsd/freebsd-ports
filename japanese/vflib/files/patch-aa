@@ -1,5 +1,5 @@
 *** src/Makefile.orig	Fri Apr 25 13:14:25 1997
---- src/Makefile	Fri Jul 25 05:40:39 1997
+--- src/Makefile	Thu Oct  2 08:12:51 1997
 ***************
 *** 24,29 ****
 --- 24,32 ----
@@ -68,7 +68,7 @@
   
   
 ***************
-*** 82,112 ****
+*** 82,111 ****
   #endif
   
   default:
@@ -96,11 +96,10 @@
   # Font drivers
   DRV_OBJ=  VF_Sony.o VF_Zeit.o VF_Jg.o VF_TT.o VF_Bdf.o VF_Hbf.o hbf.o \
   	  VF_Comp.o VF_BitOp.o VF_FNTWV.o VF_Comp2.o VF_Null.o
-! 
+  
   
   # VFlib
-  libVFlib.a:	VFlib.o VFenc.o VFEtable.o VFcap.o fn2ent.o fman.o $(DRV_OBJ)
---- 85,119 ----
+--- 85,118 ----
   #endif
   
   default:
@@ -117,7 +116,6 @@
   	$(CP) VF.h $(INSTALL_INCDIR)/VF.h
   	$(CP) ttindex $(INSTALL_BINDIR)/ttindex
   	$(CP) bdfindex $(INSTALL_BINDIR)/bdfindex
-+ 	$(CP) fwindex $(INSTALL_BINDIR)/fwindex
   
   clean:
   	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex fwindex bdfjpindex \
@@ -130,12 +128,12 @@
   # Font drivers
   DRV_OBJ=  VF_Sony.o VF_Zeit.o VF_Jg.o VF_TT.o VF_Bdf.o VF_Hbf.o hbf.o \
   	  VF_Comp.o VF_BitOp.o VF_FNTWV.o VF_Comp2.o VF_Null.o
-!   
-! DRV_SOBJ=  VF_Sony.so VF_Zeit.so VF_Jg.so VF_TT.so VF_Bdf.so VF_Hbf.so hbf.so \
-! 	   VF_Comp.so VF_BitOp.so VF_FNTWV.so VF_Comp2.so VF_Null.so
++    
++ DRV_SOBJ=  VF_Sony.so VF_Zeit.so VF_Jg.so VF_TT.so VF_Bdf.so VF_Hbf.so hbf.so \
++ 	   VF_Comp.so VF_BitOp.so VF_FNTWV.so VF_Comp2.so VF_Null.so
+  
   
   # VFlib
-  libVFlib.a:	VFlib.o VFenc.o VFEtable.o VFcap.o fn2ent.o fman.o $(DRV_OBJ)
 ***************
 *** 116,121 ****
 --- 123,132 ----
