@@ -1661,6 +1661,7 @@ getty		src/libexec/getty
 getxml		ports/devel/getxml
 gevas		ports/x11-toolkits/gevas
 gexpr		ports/math/gexpr
+gfe		ports/x11-fonts/gfe
 gff2ps		ports/biology/gff2ps
 gfont		ports/graphics/gfont
 gfontview	ports/print/gfontview
