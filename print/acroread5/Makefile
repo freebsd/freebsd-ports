@@ -21,16 +21,13 @@ ONLY_FOR_ARCHS=	i386
 
 USE_LINUX=	yes
 USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i
+REINPLACE_ARGS=	-E
 NO_FILTER_SHLIBS=	yes
 
 .if ${ARCH} == "i386"
 PLIST_SUB=      "ARCHDIR=intellinux"
 .endif
 WRKSRC=		${WRKDIR}
-
-pre-configure:
-	${REINPLACE_CMD} -E 's:Linux):FreeBSD|Linux):g' ${WRKDIR}/INSTALL
 
 do-build:
 	@${ECHO_MSG} "Do a \`make install' as root."
@@ -44,7 +41,7 @@ do-install:
 .endif
 
 post-install:
-	${REINPLACE_CMD} -E 's:Linux):FreeBSD|Linux):g' ${PREFIX}/Acrobat5/bin/acroread
+	${REINPLACE_CMD} 's:Linux):FreeBSD|Linux):g' ${PREFIX}/Acrobat5/bin/acroread
 	-@/compat/linux/usr/bin/strip ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
 	@brandelf -t Linux ${PREFIX}/Acrobat5/Reader/intellinux/bin/acroread
 	${REINPLACE_CMD} -E 's:OSF1):FreeBSD|OSF1):g' ${PREFIX}/Acrobat5/bin/acroread
