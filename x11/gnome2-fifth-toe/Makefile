@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2-fifth-toe
 PORTVERSION=	2.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -48,7 +48,8 @@ RUN_DEPENDS=	gnumeric:${PORTSDIR}/math/gnumeric2 \
 		streamtuner:${PORTSDIR}/audio/streamtuner \
 		gok:${PORTSDIR}/sysutils/gok \
 		meld:${PORTSDIR}/textproc/meld \
-		gcompris:${PORTSDIR}/games/gcompris2
+		gcompris:${PORTSDIR}/games/gcompris2 \
+		gurlchecker:${PORTSDIR}/www/gurlchecker
 
 NO_BUILD=	yes
 
