@@ -19,8 +19,6 @@ COMMENT?=	Input server of Japanese text (FreeWnn)
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 
-BROKEN=		"Does not compile"
-
 PATCHDIR=	${.CURDIR}/../kinput2-freewnn/files
 FILESDIR=	${.CURDIR}/../kinput2-freewnn/files
 USE_IMAKE=	yes
