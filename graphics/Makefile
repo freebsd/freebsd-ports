@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.42 1997/02/18 08:35:56 tg Exp $
+# $Id: Makefile,v 1.43 1997/02/25 14:22:31 tg Exp $
 #
 
     SUBDIR += ImageMagick
@@ -42,6 +42,7 @@
     SUBDIR += vcg
     SUBDIR += whirlgif
     SUBDIR += xanim
+    SUBDIR += xaos
     SUBDIR += xbmbrowser
     SUBDIR += xdl
     SUBDIR += xfig
