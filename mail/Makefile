@@ -69,6 +69,7 @@
     SUBDIR += p5-IMAP-Admin
     SUBDIR += p5-MIME-Lite
     SUBDIR += p5-MIME-Tools
+    SUBDIR += p5-Mail-CClient
     SUBDIR += p5-Mail-Folder
     SUBDIR += p5-Mail-POP3Client
     SUBDIR += p5-Mail-Sendmail
