@@ -1,2 +1,3 @@
-share/emacs/site-lisp/yc.el
-lib/xemacs/site-lisp/yc.el
+%%EMACS_VERSION_SITE_LISPDIR%%/yc/yc.el
+%%EMACS_VERSION_SITE_LISPDIR%%/yc/yc.elc
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/yc
