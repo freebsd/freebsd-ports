@@ -1,0 +1,14 @@
+%%SITE_PERL%%/XML/Atom.pm
+%%SITE_PERL%%/XML/Atom/API.pm
+%%SITE_PERL%%/XML/Atom/Content.pm
+%%SITE_PERL%%/XML/Atom/Entry.pm
+%%SITE_PERL%%/XML/Atom/ErrorHandler.pm
+%%SITE_PERL%%/XML/Atom/Feed.pm
+%%SITE_PERL%%/XML/Atom/Person.pm
+%%SITE_PERL%%/XML/Atom/Thing.pm
+%%SITE_PERL%%/XML/Atom/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom/.packlist
+@dirrm %%SITE_PERL%%/XML/Atom
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Atom
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
