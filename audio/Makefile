@@ -85,6 +85,7 @@
     SUBDIR += id3tool
     SUBDIR += juke
     SUBDIR += kdemultimedia2
+    SUBDIR += khordpro
     SUBDIR += kmikmod
     SUBDIR += kmp3
     SUBDIR += kmpg
