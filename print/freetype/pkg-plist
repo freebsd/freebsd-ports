@@ -1,22 +1,45 @@
 bin/ftdump
 bin/ftlint
+bin/ftmetric
+bin/ftsbit
 bin/ftstring
 bin/ftstrpnm
+bin/ftstrtto
 bin/fttimer
 bin/ftview
 bin/ftzoom
+include/freetype/freetype.h
+include/freetype/fterrid.h
+include/freetype/ftnameid.h
+include/freetype/ftxcmap.h
+include/freetype/ftxerr18.h
+include/freetype/ftxgasp.h
+include/freetype/ftxgdef.h
+include/freetype/ftxgpos.h
+include/freetype/ftxgsub.h
+include/freetype/ftxkern.h
+include/freetype/ftxopen.h
+include/freetype/ftxpost.h
+include/freetype/ftxsbit.h
+include/freetype/ftxwidth.h
 include/freetype.h
 include/fterrid.h
 include/ftnameid.h
 include/ftxcmap.h
 include/ftxerr18.h
 include/ftxgasp.h
+include/ftxgdef.h
+include/ftxgpos.h
+include/ftxgsub.h
 include/ftxkern.h
+include/ftxopen.h
 include/ftxpost.h
+include/ftxsbit.h
 include/ftxwidth.h
 lib/libttf.a
 lib/libttf.la
 lib/libttf.so
-lib/libttf.so.3
+lib/libttf.so.4
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm include/freetype
