@@ -5,12 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	mod_auth_pgsql
-PORTVERSION=	0.9.5a
-PORTREVISION=	1
+PORTVERSION=	0.9.9
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.eurolink.it/pub/linux/postgreSQL/mod_auth_pgsql/
+MASTER_SITES=	http://www.giuseppetanzilli.it/mod_auth_pgsql/dist/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/${AP_TARGET}:${PORTSDIR}/www/${AP_PORT}
