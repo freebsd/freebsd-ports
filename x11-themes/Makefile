@@ -4,6 +4,7 @@
     COMMENT = X Windows System themes
 
     SUBDIR += aquaosk
+    SUBDIR += baghira
     SUBDIR += buffy
     SUBDIR += clean-theme-gtk
     SUBDIR += colorstep
