@@ -26,7 +26,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	alane@freebsd.org
 
-BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext	\
+		autoconf:${PORTSDIR}/devel/autoconf	\
+		automake:${PORTSDIR}/devel/automake
+
+ACLOCAL=	aclocal
+AUTOCONF=	autoconf
+AUTOHEADER=	autoheader
+AUTOMAKE=	automake
 
 USE_KDELIBS_VER=3
 USE_XPM=	yes
