@@ -266,6 +266,7 @@
     SUBDIR += rpc2
     SUBDIR += ruby-amstd
     SUBDIR += ruby-date2
+    SUBDIR += ruby-filelock
     SUBDIR += ruby-intl
     SUBDIR += ruby-locale
     SUBDIR += ruby-optparse
