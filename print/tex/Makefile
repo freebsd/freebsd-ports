@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.31 1997/12/11 00:00:20 jmz Exp $
+# $Id: Makefile,v 1.32 1997/12/15 02:19:01 jmz Exp $
 #
 
 DISTNAME=	web2c-7.1
@@ -21,8 +21,11 @@ EXTRACT_ONLY=	web2c-7.1.tar.gz web-7.1.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 
 USE_GMAKE=	yes
 
-MAKE_FLAGS=	fmts= all_mems= -f
+MAKE_FLAGS=	fmts= all_mems=
 
+do-build:
+	 @(cd ${WRKSRC}; unset `env|grep ^TEX|sed -e s/=.*//`; \
+	    ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${ALL_TARGET})
 
 post-install:
 	@for i in kpsewhich dmp bibtex dvicopy dvitomp dvitype gftodvi gftopk \
