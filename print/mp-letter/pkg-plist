@@ -14,11 +14,3 @@ share/mp/mp.pro.l.ps
 share/mp/mp.pro.ps
 share/mp/mp.pro.tm.ps
 share/mp/mp.pro.ts.ps
-man/man1/digestp.1.gz
-man/man1/filep.1.gz
-man/man1/filofaxp.1.gz
-man/man1/franklinp.1.gz
-man/man1/mailp.1.gz
-man/man1/newsp.1.gz
-man/man1/timemanp.1.gz
-man/man1/timesysp.1.gz
