@@ -6668,6 +6668,7 @@ vipw		src/usr.sbin/vipw
 virt		ports/games/virt
 virtualpaper	ports/print/virtualpaper
 vis		src/usr.bin/vis
+vis2u		ports/vietnamese/vis2u
 visualos	ports/emulators/visualos
 viz		ports/misc/viz
 vlc		ports/graphics/vlc
