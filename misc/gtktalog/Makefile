@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	GTKtalog is a tool to make disk catalogs
 
+BROKEN=		"Broken pkg-plist"
+
 USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
@@ -26,12 +28,6 @@ MAN1=		gtktalog.1
 DOCS=	AUTHORS BUGS ChangeLog NEWS README TODO
 
 CONFIGURE_ENV=	XGETTEXT=${LOCALBASE}/bin/xgettext
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-BROKEN=		"Broken pkg-plist"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@" ${WRKSRC}/configure
@@ -52,4 +48,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
