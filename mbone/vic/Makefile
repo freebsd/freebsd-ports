@@ -3,11 +3,11 @@
 # Date created:		14 December 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.6 1996/11/04 04:43:23 fenner Exp $
+# $Id: Makefile,v 1.7 1996/11/07 02:15:09 fenner Exp $
 #
 
 DISTNAME=	vic-2.8
-CATEGORIES+=	net
+CATEGORIES+=	mbone
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vic/
 DISTFILES=	vicsrc-2.8.tar.gz
 
