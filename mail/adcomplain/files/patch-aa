@@ -1,0 +1,101 @@
+*** adcomplain.pl.orig	Sat Sep 13 17:48:01 1997
+--- adcomplain.pl	Sat Sep 13 17:59:23 1997
+***************
+*** 1,6 ****
+! #! /bin/sh -- # -*- perl -*-
+! eval 'exec perl $0 ${1+"$@"}'
+! if 0;
+  
+  # $Id: adcomplain.pl,v 1.6 1997/08/01 19:38:06 jason Exp $
+  
+--- 1,4 ----
+! #!/usr/bin/perl
+  
+  # $Id: adcomplain.pl,v 1.6 1997/08/01 19:38:06 jason Exp $
+  
+***************
+*** 230,236 ****
+  $noinclude = 1;
+  
+  # comment this if your mailer automatically adds your .signature
+! $addsig = 1;
+  
+  # this is the default name of the file to use for the complaint text
+  # if the file name is empty, the default text will be used
+--- 228,234 ----
+  $noinclude = 1;
+  
+  # comment this if your mailer automatically adds your .signature
+! $addsig = 0;
+  
+  # this is the default name of the file to use for the complaint text
+  # if the file name is empty, the default text will be used
+***************
+*** 238,244 ****
+  
+  # this is the name of the mail utility (see sendmail(8) man page)
+  # type "which sendmail" to find out where sendmail is on your system
+! $mailcmd = "/usr/lib/sendmail -t";
+  
+  #-----------------------------------------------
+  
+--- 236,242 ----
+  
+  # this is the name of the mail utility (see sendmail(8) man page)
+  # type "which sendmail" to find out where sendmail is on your system
+! $mailcmd = "/usr/sbin/sendmail -t";
+  
+  #-----------------------------------------------
+  
+***************
+*** 294,300 ****
+    }
+  
+  # Make sure critical messages are seen
+! if ($poster eq "" || $complain_to eq "") {
+    print "Press enter to continue.... ";
+    $ans = <STDIN>;
+    }
+--- 292,298 ----
+    }
+  
+  # Make sure critical messages are seen
+! if (!$quiet && ($poster eq "" || $complain_to eq "")) {
+    print "Press enter to continue.... ";
+    $ans = <STDIN>;
+    }
+***************
+*** 358,363 ****
+--- 356,364 ----
+    $cc = "$complain_to$cc";
+    }
+  $header .= "Cc: $cc\n" if $cc ne "";
++ if ($quiet) {
++   print "$header";
++ }
+  if ($recipient == $complain_to_only) {
+    $header .= "Subject: Abuse report ($subject)\n";
+    }
+***************
+*** 374,379 ****
+--- 375,381 ----
+  close TEXTFILE;
+  $response = ""; # garbage collection
+  
++ if (!$quiet) {
+  ## print copy of message on terminal
+  print "\n";
+  $pager = $ENV{"PAGER"};
+***************
+*** 405,410 ****
+--- 407,416 ----
+    } # for
+  
+  print "\n";
++ } else {
++     system "$mailcmd <$tempname"; # Unix dependent
++     print "sent\n";
++ }
+  unlink $tempname;
+  close STDIN;
+  exit 0;
