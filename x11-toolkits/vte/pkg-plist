@@ -16,13 +16,6 @@ lib/vte/utf8mode
 lib/vte/window
 libdata/pkgconfig/vte.pc
 libexec/gnome-pty-helper
-share/doc/vte/c4.html
-share/doc/vte/index.html
-share/doc/vte/index.sgml
-share/doc/vte/vte-pty.html
-share/doc/vte/vtereaper.html
-share/doc/vte/vteterminal.html
-share/doc/vte/vteterminalaccessible.html
 share/gnome/vte/termcap/xterm
 share/locale/cs/LC_MESSAGES/vte.mo
 share/locale/da/LC_MESSAGES/vte.mo
