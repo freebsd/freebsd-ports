@@ -8,6 +8,7 @@ bin/pflogstats
 %%SITE_PERL%%/Pflogstats/pflogstats-statistics-accpopimap.pm
 %%SITE_PERL%%/Pflogstats/pflogstats-statistics-antivirus.pm
 %%SITE_PERL%%/Pflogstats/pflogstats-statistics-reject.pm
+%%SITE_PERL%%/Pflogstats/pflogstats-statistics-spamassassin.pm
 %%SITE_PERL%%/Pflogstats/pflogstats-statistics-uce.pm
 %%SITE_PERL%%/Pflogstats/pflogstats-template.pm
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
