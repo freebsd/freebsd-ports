@@ -1,0 +1,7 @@
+bin/GP-j
+etc/GP-jp/printer
+etc/GP-jp/filetype
+share/doc/GP-jp/README
+share/doc/GP-jp/Variables
+@dirrm etc/GP-jp
+@dirrm share/doc/GP-jp
