@@ -4,6 +4,7 @@ DISTNAME=	latex
 
 FTPGET=		${FILESDIR}/ftpget
 BUILD_COOKIE=	${WRKDIR}/.build_done
+IS_INTERACTIVE= yes
 
 #other equivalent sites: ftp.shsu.edu ftp.dante.de
 CTAN=		ftp.tex.ac.uk
