@@ -1,22 +1,30 @@
-*** string.c.orig	Fri Sep 23 18:34:06 1994
---- string.c	Fri Sep 23 18:50:39 1994
-***************
-*** 4,9 ****
---- 4,20 ----
-  #define strchr	index
-  #endif
-  
-+ char *
-+ gets (char *s)
-+ {
-+     char *x = fgets (s, WORDLEN, stdin);
-+     if (x) {
-+ 	char *p = strchr (x, '\n');
-+ 	if (p) 
-+ 	    *p = 0;
-+     }
-+     return x;
-+ }
-  
-  /* function to find the position of sub_string in main_string 
-   * ---------------------------------------------------------- */
+--- string.c~	Tue Aug 17 03:06:07 2004
++++ string.c	Tue Aug 17 03:06:28 2004
+@@ -4,6 +4,19 @@
+ #define strchr	index
+ #endif
+ 
++char * strsave(char *);
++
++char *
++gets (char *s)
++{
++    char *x = fgets (s, WORDLEN, stdin);
++    if (x) {
++	char *p = strchr (x, '\n');
++	if (p) 
++	    *p = 0;
++    }
++    return x;
++}
+ 
+ /* function to find the position of sub_string in main_string 
+  * ---------------------------------------------------------- */
+@@ -260,7 +273,6 @@
+ 		/* if it has a multi-command delim, save rest for next time */
+ #define MULTI_CMD_DELIM ','
+ 		if (p = index(string, MULTI_CMD_DELIM)) {
+-			char *strsave();
+ 			struct inp_link *l;
+ 			*p++ = EOS;
+ 			if ((l=getnode(sizeof(*l))) && (l->input=strsave(p)))
