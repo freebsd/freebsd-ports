@@ -5,6 +5,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/dnd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/drawing.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/helloworld.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/item_factory.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/keyboard_grab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/pointer_grab.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gtk/browser/gtkbrows.rb
