@@ -1,0 +1,1256 @@
+--- /dev/null	Sun Apr 15 16:08:08 2001
++++ po/uk.po	Sun Apr 15 16:17:42 2001
+@@ -0,0 +1,1253 @@
++# Ukrainian translation for Centericq
++# Copyright (C) 2001 Free Software Foundation, Inc.
++# Olexander Kunytsa  <kunia@snark.ukma.kiev.ua>, 2001.
++# UKMA Internet Project
++#
++msgid ""
++msgstr ""
++"Project-Id-Version: centericq 3.20.5\n"
++"POT-Creation-Date: 2001-04-15 16:17+0000\n"
++"PO-Revision-Date: 2001-04-01 23:18+0200\n"
++"Last-Translator: Cawko Xakep <xakep@snark.ukma.kiev.ua>\n"
++"Language-Team: Ukrainian <linux@linux.org.ua>\n"
++"MIME-Version: 1.0\n"
++"Content-Type: text/plain; charset=koi8-u\n"
++"Content-Transfer-Encoding: 8bit\n"
++
++#: centericq.cc:58 icqdialogs.cc:87
++msgid "Password: "
++msgstr "Пароль: "
++
++#: centericq.cc:108
++msgid " Registration progress "
++msgstr " Ре╓страц╕я "
++
++#: centericq.cc:123
++#, c-format
++msgid "Connecting to the server %s ..."
++msgstr "Конектимося до серверу %s ..."
++
++#: centericq.cc:128
++msgid "Sending request"
++msgstr "Надсилання запиту"
++
++#: centericq.cc:139
++msgid "Timed out waiting for a new uin. Retry?"
++msgstr "Помилка оч╕кування ре╓страц╕╖. Спробувати ще?"
++
++#: centericq.cc:142
++msgid "Retrying.."
++msgstr "Нова спроба..."
++
++#: centericq.cc:157
++#, c-format
++msgid "New UIN received, %lu"
++msgstr "Отримано новий номаер UIN, %lu"
++
++#: centericq.cc:162
++msgid "Disconnected"
++msgstr "В╕д'╓дноно"
++
++#: centericq.cc:167
++msgid "Unable to connect to the icq server. Retry?"
++msgstr "Не можу п╕д'╓днатися до серверу ICQ. Спробувати ще?"
++
++#: centericq.cc:194
++msgid ""
++"F2/M current contact menu, F3/S change icq status, F4/G general actions, Q "
++"quit"
++msgstr "F2/M меню користувача, F3/S зм╕на статусу, F4/G головне меню, Q вих╕д"
++
++#: centericq.cc:234
++#, c-format
++msgid "Ignore all events from %s (%lu)?"
++msgstr "╤гнорувати пов╕домлення в╕д %s (%lu)?"
++
++#: centericq.cc:245
++#, c-format
++msgid "+ %s has been removed from the visible list"
++msgstr "+ %s : видалено з видимого списку"
++
++#: centericq.cc:248
++#, c-format
++msgid "+ %s has been added to the visible list"
++msgstr "+ %s : додано у видимий список"
++
++#: centericq.cc:276
++#, c-format
++msgid "Are you sure want to remove %s (%lu)?"
++msgstr "Д╕йсно видалити %s (%lu)?"
++
++#: centericq.cc:283
++msgid "New nickname to show: "
++msgstr " Показувати п╕д такою Кличкою: "
++
++#: centericq.cc:309
++msgid " [continued]"
++msgstr " [продовжено]"
++
++#: centericq.cc:351
++#, c-format
++msgid "%s (%lu) wrote:"
++msgstr "прийшло в╕д %s (%lu):"
++
++#: centericq.cc:421
++msgid "Fetching your ICQ details"
++msgstr "Отримання Вашо╖ ╕нформац╕╖ користувача"
++
++#: centericq.cc:475
++#, c-format
++msgid "+ sending file %s to %s, %lu"
++msgstr "+ в╕дсилання файлу %s до %s, %lu"
++
++#: centericq.cc:479
++msgid "+ remote client doesn't support file transfers"
++msgstr "+ протилежний кл╕╓нт не п╕дтриму╓ передачу файл╕в"
++
++#: centericq.cc:569
++#, c-format
++msgid "+ new mail arrived, %d messages"
++msgstr "+ нова пошта! %d лист╕в"
++
++#: centericq.cc:570
++#, c-format
++msgid "+ last msg from %s"
++msgstr "+ останн╕й лист в╕д %s"
++
++#: icqdialogs.cc:28
++msgid " Register on ICQ network "
++msgstr " Ре╓страц╕я в мереж╕ ICQ "
++
++#: icqdialogs.cc:36 icqdialogs.cc:178 icqdialogs.cc:312 icqdialogs.cc:609
++msgid "Change"
++msgstr "Зм╕нити"
++
++#: icqdialogs.cc:36 icqdialogs.cc:178 icqdialogs.cc:312 icqdialogs.cc:609
++#: icqface.cc:1251 icqface.cc:1326 icqface.cc:1373
++msgid "Done"
++msgstr "Гаразд"
++
++#: icqdialogs.cc:40
++msgid " Mode "
++msgstr " Тип "
++
++#: icqdialogs.cc:41
++msgid " Details "
++msgstr " ╤нформац╕я "
++
++#: icqdialogs.cc:42 icqdialogs.cc:618
++msgid " Options "
++msgstr " Параметри "
++
++#: icqdialogs.cc:44
++#, c-format
++msgid " Registration mode : %s "
++msgstr " Тип ре╓страц╕╖ : %s "
++
++#: icqdialogs.cc:45
++msgid "new uin"
++msgstr "новий користувач"
++
++#: icqdialogs.cc:45
++msgid "existing user"
++msgstr "╕снуючий користувач"
++
++#: icqdialogs.cc:47
++#, c-format
++msgid " Server address : %s "
++msgstr " Назва серверу : %s "
++
++#: icqdialogs.cc:48 icqdialogs.cc:633
++#, c-format
++msgid " Use SOCKS proxy : %s "
++msgstr " Використовувати SOCKS-прокс╕ : %s "
++
++#: icqdialogs.cc:49
++#, c-format
++msgid " Sound device : %s "
++msgstr " Звуковий пристр╕й : %s "
++
++#: icqdialogs.cc:50
++#, c-format
++msgid " Initial color scheme : %s "
++msgstr " Пал╕тра кольор╕в програми : %s "
++
++#: icqdialogs.cc:51 icqdialogs.cc:626
++#, c-format
++msgid " Russian translation win1251-koi8 needed : %s "
++msgstr " Перекодування кирилиц╕ м╕ж Win1251 та Koi-8 : %s "
++
++#: icqdialogs.cc:54
++#, c-format
++msgid " Password to set : %s "
++msgstr " Пароль для ICQ : %s "
++
++#: icqdialogs.cc:55 icqdialogs.cc:75
++#, c-format
++msgid " Check the password : %s "
++msgstr " Пароль ще раз : %s "
++
++#: icqdialogs.cc:56 icqdialogs.cc:189 icqdialogs.cc:248
++#, c-format
++msgid " Nickname : %s "
++msgstr " Кличкa : %s "
++
++#: icqdialogs.cc:57 icqdialogs.cc:190
++#, c-format
++msgid " E-Mail : %s "
++msgstr " Адреса ел.пошти : %s "
++
++#: icqdialogs.cc:58 icqdialogs.cc:191 icqdialogs.cc:249
++#, c-format
++msgid " First name : %s "
++msgstr " Iм'я : %s "
++
++#: icqdialogs.cc:59 icqdialogs.cc:192 icqdialogs.cc:250
++#, c-format
++msgid " Last name : %s "
++msgstr " Пр╕звище : %s "
++
++#: icqdialogs.cc:61 icqdialogs.cc:188
++#, c-format
++msgid " UIN : %s "
++msgstr " UIN : %s "
++
++#: icqdialogs.cc:62
++#, c-format
++msgid " Password : %s "
++msgstr " Пароль : %s "
++
++#: icqdialogs.cc:66 icqdialogs.cc:629
++#, c-format
++msgid " Remember ICQ password : %s "
++msgstr " Запам'ятати пароль : %s "
++
++#: icqdialogs.cc:71 icqdialogs.cc:637
++msgid " SOCKS proxy settings "
++msgstr " Параметри Socks-прокс╕ "
++
++#: icqdialogs.cc:72 icqdialogs.cc:638
++#, c-format
++msgid " Proxy server address : %s "
++msgstr " Адреса прокс╕-серверу : %s "
++
++#: icqdialogs.cc:73 icqdialogs.cc:639
++#, c-format
++msgid " Proxy user name : %s "
++msgstr " ╤м'я користувача прокс╕-серверу : %s "
++
++#: icqdialogs.cc:74 icqdialogs.cc:640
++#, c-format
++msgid " Proxy password : %s "
++msgstr " Пароль прокс╕-серверу : %s "
++
++#: icqdialogs.cc:88
++msgid "Check the password you entered: "
++msgstr " Введ╕ть вдруге той самий пароль: "
++
++#: icqdialogs.cc:89
++msgid "Nickname to set: "
++msgstr "Заре╓струватися з кличкою: "
++
++#: icqdialogs.cc:90 icqdialogs.cc:202
++msgid "E-Mail: "
++msgstr "Адреса електронно╖ пошти: "
++
++#: icqdialogs.cc:91 icqdialogs.cc:203 icqdialogs.cc:344
++msgid "First name: "
++msgstr "╤м'я: "
++
++#: icqdialogs.cc:92 icqdialogs.cc:204 icqdialogs.cc:345
++msgid "Last name: "
++msgstr "Пр╕звище: "
++
++#: icqdialogs.cc:105
++msgid "Existing UIN: "
++msgstr "╤снуючий номер UIN: "
++
++#: icqdialogs.cc:111 icqdialogs.cc:672
++msgid "ICQ server to use: "
++msgstr "Сервер ICQ: "
++
++#: icqdialogs.cc:116 icqdialogs.cc:678
++msgid "SOCKS proxy server to use: "
++msgstr "Задайте адресу Socks-прокс╕ серверу: "
++
++#: icqdialogs.cc:120 icqdialogs.cc:686
++msgid "SOCKS proxy password: "
++msgstr "Пароль Socks-прокс╕: "
++
++#: icqdialogs.cc:124 icqdialogs.cc:682
++msgid "SOCKS proxy user name: "
++msgstr "╤м'я користувача Socks-прокс╕: "
++
++#: icqdialogs.cc:128
++msgid "Check the SOCKS proxy password: "
++msgstr "Пароль Socks-прокс╕ ще раз: "
++
++#: icqdialogs.cc:135
++msgid "Passwords do not match"
++msgstr "Парол╕ не сп╕впадають!"
++
++#: icqdialogs.cc:137
++msgid "SOCKS proxy passwords do not match"
++msgstr "Socks-парол╕ не сп╕впадають!"
++
++#: icqdialogs.cc:169
++msgid " Find user(s) "
++msgstr " Пошук користувач╕в "
++
++#: icqdialogs.cc:185
++msgid " by UIN "
++msgstr " за номером UIN "
++
++#: icqdialogs.cc:186
++msgid " by Details "
++msgstr " за ╕нформац╕╓ю "
++
++#: icqdialogs.cc:200
++msgid "UIN: "
++msgstr "UIN: "
++
++#: icqdialogs.cc:201 icqdialogs.cc:341
++msgid "Nickname: "
++msgstr "Кличка: "
++
++#: icqdialogs.cc:242
++msgid " General "
++msgstr " Загальне "
++
++#: icqdialogs.cc:243
++msgid " Home "
++msgstr " Адреса "
++
++#: icqdialogs.cc:244
++msgid " Work "
++msgstr " Робота "
++
++#: icqdialogs.cc:245
++msgid " More "
++msgstr " ╤нтереси "
++
++#: icqdialogs.cc:246
++msgid " About "
++msgstr " Про "
++
++#: icqdialogs.cc:251
++#, c-format
++msgid " E-mail : %s "
++msgstr " Адреса ел.пошти : %s "
++
++#: icqdialogs.cc:252
++#, c-format
++msgid " Second e-mail : %s "
++msgstr " ╤нший e-mail : %s "
++
++#: icqdialogs.cc:253
++#, c-format
++msgid " Old e-mail : %s "
++msgstr " Старий e-mail : %s "
++
++#: icqdialogs.cc:254
++#, c-format
++msgid " Gender : %s "
++msgstr " Стать : %s "
++
++#: icqdialogs.cc:255
++#, c-format
++msgid " Birthdate : %s "
++msgstr " Дата народження : %s "
++
++#: icqdialogs.cc:256
++#, c-format
++msgid " Age : %s "
++msgstr " В╕к : %s "
++
++#: icqdialogs.cc:258 icqdialogs.cc:267
++#, c-format
++msgid " City : %s "
++msgstr " М╕сто : %s "
++
++#: icqdialogs.cc:259 icqdialogs.cc:268
++#, c-format
++msgid " State : %s "
++msgstr " Штат : %s "
++
++#: icqdialogs.cc:260 icqdialogs.cc:269
++#, c-format
++msgid " Country : %s "
++msgstr " Кра╖на : %s "
++
++#: icqdialogs.cc:261 icqdialogs.cc:270
++#, c-format
++msgid " Street address : %s "
++msgstr " Адреса : %s "
++
++#: icqdialogs.cc:262
++#, c-format
++msgid " Zip code : %s "
++msgstr " Поштовий ╕ндекс : %s "
++
++#: icqdialogs.cc:263 icqdialogs.cc:276
++#, c-format
++msgid " Phone : %s "
++msgstr " Телефон : %s "
++
++#: icqdialogs.cc:264 icqdialogs.cc:277
++#, c-format
++msgid " Fax : %s "
++msgstr " Факс : %s "
++
++#: icqdialogs.cc:265
++#, c-format
++msgid " Cellular phone : %s "
++msgstr " Моб╕ла : %s "
++
++#: icqdialogs.cc:271
++#, c-format
++msgid " Company : %s "
++msgstr " Компан╕я : %s "
++
++#: icqdialogs.cc:272
++#, c-format
++msgid " Department : %s "
++msgstr " В╕дд╕л : %s "
++
++#: icqdialogs.cc:273
++#, c-format
++msgid " Occupation : %s "
++msgstr " Заняття : %s "
++
++#: icqdialogs.cc:274
++#, c-format
++msgid " Position : %s "
++msgstr " Посада : %s "
++
++#: icqdialogs.cc:275 icqdialogs.cc:279
++#, c-format
++msgid " Homepage : %s "
++msgstr " Домашня стор╕нка : %s "
++
++#: icqdialogs.cc:280
++#, c-format
++msgid " 1st language : %s "
++msgstr " Перша мова : %s "
++
++#: icqdialogs.cc:281
++#, c-format
++msgid " 2nd language : %s "
++msgstr " Друга мова : %s "
++
++#: icqdialogs.cc:282
++#, c-format
++msgid " 3rd language : %s "
++msgstr " Третя мова : %s "
++
++#: icqdialogs.cc:301
++msgid " Your ICQ details "
++msgstr " ╤нформац╕я про користувача "
++
++#: icqdialogs.cc:303
++#, c-format
++msgid " %s's ICQ details "
++msgstr " ╤нформац╕я про %s "
++
++#: icqdialogs.cc:336
++msgid "Wait a moment. Your ICQ details haven't been fetched yet"
++msgstr "Хвилиночку, Ваше ╕нфо ще не отримано з серверу"
++
++#: icqdialogs.cc:346
++msgid "E-mail: "
++msgstr "Адреса ел.пошти: "
++
++#: icqdialogs.cc:347
++msgid "Second e-mail: "
++msgstr "╤нший e-mail: "
++
++#: icqdialogs.cc:348
++msgid "Old e-mail: "
++msgstr "Старий e-mail: "
++
++#: icqdialogs.cc:352
++msgid "Enter birthdate (DD-MM-YYYY): "
++msgstr "Дата Вашого народження (дд-мм-рррр): "
++
++#: icqdialogs.cc:370
++msgid "Age: "
++msgstr "В╕к: "
++
++#: icqdialogs.cc:372 icqdialogs.cc:381
++msgid "City: "
++msgstr "М╕сто: "
++
++#: icqdialogs.cc:373 icqdialogs.cc:382
++msgid "State: "
++msgstr "Штат: "
++
++#: icqdialogs.cc:375 icqdialogs.cc:384
++msgid "Street address: "
++msgstr "Адреса: "
++
++#: icqdialogs.cc:376
++msgid "Zip code: "
++msgstr "Поштовий ╕ндекс: "
++
++#: icqdialogs.cc:377 icqdialogs.cc:390
++msgid "Phone: "
++msgstr "Телефон: "
++
++#: icqdialogs.cc:378 icqdialogs.cc:391
++msgid "Fax: "
++msgstr "Факс: "
++
++#: icqdialogs.cc:379
++msgid "Cellular phone: "
++msgstr "Моб╕ла: "
++
++#: icqdialogs.cc:385
++msgid "Company: "
++msgstr "Компан╕я: "
++
++#: icqdialogs.cc:386
++msgid "Department: "
++msgstr "В╕дд╕л: "
++
++#: icqdialogs.cc:388
++msgid "Position: "
++msgstr "Посада: "
++
++#: icqdialogs.cc:389 icqdialogs.cc:393
++msgid "Homepage: "
++msgstr "Домашня стор╕нка: "
++
++#: icqdialogs.cc:422
++msgid "Not entered"
++msgstr "Не введено"
++
++#: icqdialogs.cc:459
++msgid " Not entered"
++msgstr " Не введено"
++
++#: icqdialogs.cc:496
++msgid " About [Ctrl-X save, Esc cancel] "
++msgstr " Про Вас [^X зберегти, Esc в╕дмова] "
++
++#: icqdialogs.cc:529
++#, c-format
++msgid " Send file(s) to %s, %lu "
++msgstr " В╕д╕слати файли для %s, %lu "
++
++#: icqdialogs.cc:539 icqface.cc:424 icqface.cc:1414 icqface.cc:1566
++msgid "Add"
++msgstr "Додати"
++
++#: icqdialogs.cc:539 icqface.cc:1566
++msgid "Remove"
++msgstr "Видалити"
++
++#: icqdialogs.cc:539
++msgid "Comment"
++msgstr "Коментар"
++
++#: icqdialogs.cc:539
++msgid "Send"
++msgstr "В╕д╕слати"
++
++#: icqdialogs.cc:548
++msgid " Files "
++msgstr " Файли "
++
++#: icqdialogs.cc:549
++msgid " Comment "
++msgstr " Коментар "
++
++#: icqdialogs.cc:561
++msgid "filename: "
++msgstr "який файл: "
++
++#: icqdialogs.cc:568
++msgid "comment: "
++msgstr "коментар: "
++
++#: icqdialogs.cc:602
++msgid " CenterICQ quick config "
++msgstr " Конф╕гурац╕я CenterICQ "
++
++#: icqdialogs.cc:617
++msgid " Configuration "
++msgstr " Конф╕гуряц╕я "
++
++#: icqdialogs.cc:619
++msgid " Communications "
++msgstr " Мережа "
++
++#: icqdialogs.cc:621
++#, c-format
++msgid " Change sound device to : %s "
++msgstr " Звуковий пристр╕й : %s"
++
++#: icqdialogs.cc:622
++#, c-format
++msgid " Change color scheme to : %s "
++msgstr " Пал╕тра кольор╕в : %s "
++
++#: icqdialogs.cc:624
++#, c-format
++msgid " Automatically set Away period (min) : %d "
++msgstr " Зм╕нювати статус на 'В╕д╕йшов' через %d хвилин "
++
++#: icqdialogs.cc:625
++#, c-format
++msgid " Automatically set N/A period (min) : %d "
++msgstr " Зм╕нювати статус на 'Недocяжний' через %d хвилин "
++
++#: icqdialogs.cc:627
++#, c-format
++msgid " Hide offline users : %s "
++msgstr " Не показувати в╕дключених : %s "
++
++#: icqdialogs.cc:628
++#, c-format
++msgid " Quote a message on reply : %s "
++msgstr " Цитувати пов╕домлення у в╕дпов╕д╕ : %s "
++
++#: icqdialogs.cc:630
++#, c-format
++msgid " Anti-spam: kill msgs from users not on the list : %s "
++msgstr " В╕дкидати пов╕домлення в╕д тих, хто не в контакт-лист╕ : %s "
++
++#: icqdialogs.cc:632
++#, c-format
++msgid " ICQ server address : %s "
++msgstr " Сервер ICQ: %s "
++
++#: icqdialogs.cc:663
++msgid "Auto Away period (0 - disable): "
++msgstr "'Biдiйшoв' Задайте пром╕жок часу (0 - не використовувати): "
++
++#: icqdialogs.cc:667
++msgid "Auto N/A period (0 - disable): "
++msgstr "'Недocяжний' Задайте пром╕жок часу (0 - не використовувати): "
++
++#: icqdialogs.cc:732
++msgid "Your ICQ details have been fetched"
++msgstr "Ваше ╕нфо отримано"
++
++#: icqface.cc:16
++msgid "yes"
++msgstr "так"
++
++#: icqface.cc:16
++msgid "no"
++msgstr "н╕"
++
++#: icqface.cc:20
++msgid "sound card"
++msgstr "звукова карта"
++
++#: icqface.cc:21
++msgid "speaker"
++msgstr "динам╕к"
++
++#: icqface.cc:22
++msgid "disable"
++msgstr "без звуку"
++
++#: icqface.cc:23 icqface.cc:29
++msgid "don't change"
++msgstr "без зм╕ни"
++
++#: icqface.cc:27
++msgid "dark"
++msgstr "темна"
++
++#: icqface.cc:28
++msgid "blue"
++msgstr "блакитна"
++
++#: icqface.cc:34
++msgid "Female"
++msgstr "Ж╕ноча"
++
++#: icqface.cc:35
++msgid "Male"
++msgstr "Чолов╕ча"
++
++#: icqface.cc:36
++msgid "Not specified"
++msgstr "Не вказано"
++
++#: icqface.cc:49
++msgid "Jan"
++msgstr "С╕ч"
++
++#: icqface.cc:50
++msgid "Feb"
++msgstr "Лют"
++
++#: icqface.cc:51
++msgid "Mar"
++msgstr "Бер"
++
++#: icqface.cc:52
++msgid "Apr"
++msgstr "Кв╕"
++
++#: icqface.cc:53
++msgid "May"
++msgstr "Тра"
++
++#: icqface.cc:54
++msgid "Jun"
++msgstr "Чер"
++
++#: icqface.cc:55
++msgid "Jul"
++msgstr "Лип"
++
++#: icqface.cc:56
++msgid "Aug"
++msgstr "Сер"
++
++#: icqface.cc:57
++msgid "Sep"
++msgstr "Вер"
++
++#: icqface.cc:58
++msgid "Oct"
++msgstr "Жов"
++
++#: icqface.cc:59
++msgid "Nov"
++msgstr "Лис"
++
++#: icqface.cc:60
++msgid "Dec"
++msgstr "Гру"
++
++#: icqface.cc:124
++msgid "STATUS: "
++msgstr "Поточний Статус: "
++
++#: icqface.cc:151 icqface.cc:159 icqface.cc:176
++msgid " Events history         h"
++msgstr " ╤стор╕я пов╕домлень    h"
++
++#: icqface.cc:153 icqface.cc:170
++msgid " Send a message     enter"
++msgstr " Над╕слати пов╕домлення  "
++
++#: icqface.cc:154
++msgid " Send an URL            u"
++msgstr " Над╕слати URL          u"
++
++#: icqface.cc:156
++msgid " Send a file            f"
++msgstr " Над╕слати файл         f"
++
++#: icqface.cc:158 icqface.cc:175 icqface.cc:186
++msgid " User's details         ?"
++msgstr " ╤нфо користувача       ?"
++
++#: icqface.cc:160 icqface.cc:177 icqface.cc:187
++msgid " Remove user          del"
++msgstr " Видалити користувача del"
++
++#: icqface.cc:161 icqface.cc:178
++msgid " Ignore user"
++msgstr " ╤гнорувати користувача"
++
++#: icqface.cc:162
++msgid " Rename user            r"
++msgstr " Пере╕менувати          r"
++
++#: icqface.cc:165 icqface.cc:181
++msgid " Add to visible list    v"
++msgstr " Показувати невидим╕сть v"
++
++#: icqface.cc:167 icqface.cc:183
++msgid " Remove from vis. list  v"
++msgstr " Приховати невидим╕сть  v"
++
++#: icqface.cc:171
++msgid " Send URL               u"
++msgstr " Над╕слати URL          u"
++
++#: icqface.cc:173
++msgid " Add to list            a"
++msgstr " Додати в контакт-л╕ст  a"
++
++#: icqface.cc:188
++msgid " Edit details"
++msgstr " Редагувати ╕нфо"
++
++#: icqface.cc:243
++msgid " Change ICQ status                   s"
++msgstr " Зм╕нити статус                      s"
++
++#: icqface.cc:244
++msgid " Go to contact..                 alt-s"
++msgstr " Перейти до контакту            meta-s"
++
++#: icqface.cc:245
++msgid " Update your details"
++msgstr " Поновити Ваше ╕нфо"
++
++#: icqface.cc:246
++msgid " Find/add users"
++msgstr " Пошук користувач╕в"
++
++#: icqface.cc:247
++msgid " CenterICQ config options"
++msgstr " Параметри CenterICQ"
++
++#: icqface.cc:248
++msgid " Add non-icq contact"
++msgstr " Додати контакт не з ICQ"
++
++#: icqface.cc:250
++msgid " View/edit ignore list"
++msgstr " Редагувати список ╕гнорування"
++
++#: icqface.cc:251
++msgid " View/edit visible list"
++msgstr " Редагувати список видимост╕"
++
++#: icqface.cc:424 icqface.cc:1139 icqface.cc:1147 icqface.cc:1414
++#: icqface.cc:1566
++msgid "Details"
++msgstr "╤нфо"
++
++#: icqface.cc:425
++msgid "New search"
++msgstr "Новий пошук"
++
++#: icqface.cc:470
++#, c-format
++msgid "Information about %lu, %s"
++msgstr "╤нформац╕я про %lu, %s"
++
++#: icqface.cc:471
++msgid "Non-ICQ"
++msgstr "Не з ICQ"
++
++#: icqface.cc:493
++msgid "Nickname"
++msgstr "Кличка"
++
++#: icqface.cc:494
++msgid "Name"
++msgstr "╤м'я"
++
++#: icqface.cc:495
++msgid "E-mail"
++msgstr "E-mail"
++
++#: icqface.cc:496
++msgid "2nd e-mail"
++msgstr "E-mail #2"
++
++#: icqface.cc:497
++msgid "Old e-mail"
++msgstr "Старе мило"
++
++#: icqface.cc:498
++msgid "Gender"
++msgstr "Стать"
++
++#: icqface.cc:499
++msgid "Birthdate"
++msgstr "Народження"
++
++#: icqface.cc:500
++msgid "Age"
++msgstr "В╕к"
++
++#: icqface.cc:501
++msgid "Languages"
++msgstr "Мови"
++
++#: icqface.cc:502
++msgid "Last IP"
++msgstr "Останн╕й IP"
++
++#: icqface.cc:533
++msgid "Last seen"
++msgstr "Востанн╓"
++
++#: icqface.cc:534
++msgid "Never"
++msgstr "Н╕коли"
++
++#: icqface.cc:554 icqface.cc:606
++msgid "Address"
++msgstr "Адреса"
++
++#: icqface.cc:555 icqface.cc:607
++msgid "Location"
++msgstr "М╕сце"
++
++#: icqface.cc:556 icqface.cc:608
++msgid "Zip code"
++msgstr "╤ндекс"
++
++#: icqface.cc:557 icqface.cc:615
++msgid "Phone"
++msgstr "Телефон"
++
++#: icqface.cc:558 icqface.cc:616
++msgid "Fax"
++msgstr "Факс"
++
++#: icqface.cc:559
++msgid "Cellular"
++msgstr "Моб╕ла"
++
++#: icqface.cc:560 icqface.cc:617
++msgid "Homepage"
++msgstr "Стор╕нка"
++
++#: icqface.cc:610
++msgid "Company"
++msgstr "Компан╕я"
++
++#: icqface.cc:611
++msgid "Department"
++msgstr "В╕дд╕л"
++
++#: icqface.cc:612
++msgid "Occupation"
++msgstr "Заняття"
++
++#: icqface.cc:613
++msgid "Title"
++msgstr "Посада"
++
++#: icqface.cc:684
++msgid "Interests"
++msgstr "Захоплення"
++
++#: icqface.cc:692
++msgid "Affiliations"
++msgstr "Орган╕зац╕я"
++
++#: icqface.cc:702
++msgid "Background/Past"
++msgstr "Досв╕д/Осв╕та"
++
++#: icqface.cc:728
++msgid "Info"
++msgstr "╤нфо"
++
++#: icqface.cc:728
++msgid "Home"
++msgstr "Д╕м"
++
++#: icqface.cc:728
++msgid "Work"
++msgstr "Робота"
++
++#: icqface.cc:728
++msgid "More"
++msgstr "Додатково"
++
++#: icqface.cc:728
++msgid "About"
++msgstr "Про"
++
++#: icqface.cc:729
++msgid "Retrieve"
++msgstr "Поновити"
++
++#: icqface.cc:729
++msgid "Edit"
++msgstr "Редагувати"
++
++#: icqface.cc:787
++msgid " [o] Online"
++msgstr " [o] В еф╕р╕"
++
++#: icqface.cc:788
++msgid " [_] Offline"
++msgstr " [_] В╕дключитися"
++
++#: icqface.cc:789
++msgid " [a] Away"
++msgstr " [a] В╕д╕йшов"
++
++#: icqface.cc:790
++msgid " [d] Do not disturb"
++msgstr " [d] Не турбувaти"
++
++#: icqface.cc:791
++msgid " [n] Not available"
++msgstr " [n] Недocяжний"
++
++#: icqface.cc:792
++msgid " [c] Occupied"
++msgstr " [c] Зайнятий"
++
++#: icqface.cc:793
++msgid " [f] Free for chat"
++msgstr " [f] Xoчу попатякати!"
++
++#: icqface.cc:794
++msgid " [i] Invisible"
++msgstr " [i] Невидимий"
++
++#: icqface.cc:826
++msgid "Connecting.."
++msgstr "П╕дключення..."
++
++#: icqface.cc:827
++msgid "Offline"
++msgstr "В╕дключений"
++
++#: icqface.cc:828
++msgid "Invisible"
++msgstr "Невидимий"
++
++#: icqface.cc:829
++msgid "Free for chat"
++msgstr "Xoчу попатякати!"
++
++#: icqface.cc:830
++msgid "Do not disturb"
++msgstr "Не турбувaти"
++
++#: icqface.cc:831
++msgid "Occupied"
++msgstr "Зайнятий"
++
++#: icqface.cc:832
++msgid "Not avail"
++msgstr "Недocяжний"
++
++#: icqface.cc:833
++msgid "Away"
++msgstr "В╕д╕йшoв"
++
++#: icqface.cc:834
++msgid "Online"
++msgstr "В еф╕р╕"
++
++#: icqface.cc:834
++msgid "Unknown"
++msgstr "Нев╕домий"
++
++#: icqface.cc:867
++msgid " enter to select a file, esc to cancel "
++msgstr " <enter> вибрати файл, <ESC> в╕дб╕й "
++
++#: icqface.cc:999 icqface.cc:1316
++#, c-format
++msgid "URL to %s, %lu"
++msgstr "URL для %s, %lu"
++
++#: icqface.cc:1013 icqface.cc:1051
++msgid "Ctrl-X send, Ctrl-P multiple, Ctrl-O history, Alt-? details, ESC cancel"
++msgstr "^X в╕д╕слати, ^P багатьом, ^O ╕стор╕я, Meta-? ╕нфо, ESC в╕дмова"
++
++#: icqface.cc:1049
++#, c-format
++msgid "Writing a message to %s, %lu"
++msgstr "Пишемо пов╕домлення для %s, %lu"
++
++#: icqface.cc:1135
++#, c-format
++msgid "Authorization request from %lu"
++msgstr "Запит на аторизац╕ю в╕д %lu"
++
++#: icqface.cc:1139 icqface.cc:1147
++msgid "Add to the list"
++msgstr "Додати в контакт-л╕ст"
++
++#: icqface.cc:1139 icqface.cc:1372
++msgid "Accept"
++msgstr "Прийняти"
++
++#: icqface.cc:1140 icqface.cc:1148 icqface.cc:1369 icqface.cc:1415
++msgid "Ok"
++msgstr "OK"
++
++#: icqface.cc:1140
++msgid "Ignore"
++msgstr "╤гнорувати"
++
++#: icqface.cc:1143
++#, c-format
++msgid "You were added to %lu's list"
++msgstr "Користувач %lu додав Вас у св╕й контакт-л╕ст"
++
++#: icqface.cc:1148 icqface.cc:1255 icqface.cc:1330 icqface.cc:1373
++#: icqface.cc:1415
++msgid "Next"
++msgstr "Дал╕"
++
++#: icqface.cc:1251 icqface.cc:1255 icqface.cc:1326 icqface.cc:1330
++msgid "Fwd"
++msgstr "Переслати"
++
++#: icqface.cc:1251 icqface.cc:1255
++msgid "Reply"
++msgstr "В╕дпов╕сти"
++
++#: icqface.cc:1263
++#, c-format
++msgid "Message from %s, %lu"
++msgstr "Пов╕домлення в╕д %s, %lu"
++
++#: icqface.cc:1266 icqface.cc:1311
++#, c-format
++msgid "%s, rcvd on %s"
++msgstr "%s, отримано %s"
++
++#: icqface.cc:1271
++#, c-format
++msgid "Message to %s, %lu"
++msgstr "Пов╕домлення для %s, %lu"
++
++#: icqface.cc:1274 icqface.cc:1319
++#, c-format
++msgid "Sent on %s"
++msgstr "В╕д╕слано %s"
++
++#: icqface.cc:1309
++#, c-format
++msgid "URL from %s, %lu"
++msgstr "URL в╕д %s, %lu"
++
++#: icqface.cc:1365
++#, c-format
++msgid "File from %s, %lu"
++msgstr "Файл в╕д %s, %lu"
++
++#: icqface.cc:1372
++msgid "Refuse"
++msgstr "В╕дмовитись"
++
++#: icqface.cc:1407
++#, c-format
++msgid "Contacts from %s, %lu"
++msgstr "Контакт в╕д %s, %lu"
++
++#: icqface.cc:1464
++msgid "save file(s) in: "
++msgstr "зберегти в: "
++
++#: icqface.cc:1470
++#, c-format
++msgid "+ file %s from %s, %lu started"
++msgstr "+ файл %s в╕д %s, %lu: початок передач╕"
++
++#: icqface.cc:1480
++#, c-format
++msgid "+ file from %s, %lu refused"
++msgstr "+ файл в╕д %s, %lu в╕дкинуто"
++
++#: icqface.cc:1506
++#, c-format
++msgid "History items for %s, %lu"
++msgstr "╤стор╕я з %s, %lu"
++
++#: icqface.cc:1509
++msgid "ICQ system messages history"
++msgstr "╤стор╕я системних пов╕домлень"
++
++#: icqface.cc:1523
++#, c-format
++msgid "+ no history items for %s, %lu"
++msgstr "+ ╕стор╕я замовчу╓ про %s, %lu"
++
++#: icqface.cc:1566
++msgid "Move to contacts"
++msgstr "В контакт-л╕ст"
++
++#: icqface.cc:1577
++msgid "ICQ Ignore list"
++msgstr "Список ╕гнорування"
++
++#: icqface.cc:1578
++msgid "ICQ Visible list"
++msgstr "Список видимост╕"
++
++#: icqface.cc:1578
++msgid "ICQ Invisible list"
++msgstr "Список невидимост╕"
++
++#: icqface.cc:1592
++msgid "Select contacts to add to the list"
++msgstr "Додати вибран╕ контакти в л╕ст"
++
++#: icqface.cc:1645
++msgid "Event recipients"
++msgstr "Отримувач╕"
++
++#: icqface.cc:1755
++msgid "QuickSearch: type to find, Alt-S find again, Enter finish"
++msgstr "ШвидкийПошук: набирайте, Meta-S знову шукати, Enter зак╕нчити"
++
++#: icqhook.cc:70
++msgid "+ connecting to the icq server"
++msgstr "+ п╕д'╓днання до серверу ICQ"
++
++#: icqhook.cc:76
++msgid "+ unable to connect to the icq server"
++msgstr "+ не можу законектитися"
++
++#: icqhook.cc:120
++msgid "+ logged in"
++msgstr "+ законектилися"
++
++#: icqhook.cc:142
++msgid "+ disconnected"
++msgstr "+ в╕д'╓днано"
++
++#: icqhook.cc:240
++msgid "has added you to his/her contact list"
++msgstr "додав Вас у св╕й контакт-л╕ст"
++
++#: icqhook.cc:255
++msgid ""
++"has requested your authorization to add you to his/her contact list. The "
++"reason was: "
++msgstr "просить авторизац╕╖ щоб додати Вас у св╕й контакт-лист. Аргументац╕я: "
++
++#: icqhook.cc:401
++msgid "+ server reported a problem: wrong password"
++msgstr "+ сервер каже що не той пароль"
++
++#: icqhook.cc:406
++msgid "+ server reported a problem: invalid uin"
++msgstr "+ сервер каже що неправильний UIN"
++
++#: icqhook.cc:442
++msgid "+ search done"
++msgstr "+ пошук зак╕нчено"
++
++#: icqhook.cc:458
++#, c-format
++msgid "+ file %s refused by %s, %lu"
++msgstr "+ в╕дкинуто файл %s (%s, %lu)"
++
++#: icqhook.cc:468
++#, c-format
++msgid "+ file %s from %s, %lu received"
++msgstr "+ отримано файл %s (%s, %lu)"
++
++#: icqhook.cc:473
++#, c-format
++msgid "+ file %s to %s, %lu sent"
++msgstr "+ файл %s в╕д╕слано (%s, %lu)"
++
++#: icqhook.cc:564
++msgid "+ automatically set away"
++msgstr "+ Авто зм╕на статусу: В╕д╕йшов"
++
++#: icqhook.cc:573
++msgid "+ automatically set N/A"
++msgstr "+ Авто зм╕на статусу: Недocяжний"
++
++#: icqhook.cc:580
++msgid "+ the user is back"
++msgstr "+ статус в╕дновлено"

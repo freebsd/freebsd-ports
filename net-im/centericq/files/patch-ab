@@ -1,0 +1,11 @@
+--- motor.project.info.orig	Sun Apr 15 16:20:14 2001
++++ motor.project.info	Sun Apr  1 23:01:51 2001
+@@ -64,6 +64,8 @@
+ po/ru.mo
+ po/de.mo
+ po/de.po
++po/uk.mo
++po/uk.po
+ po/centericq.pot
+ po/zh_TW.Big5.mo
+ po/zh_TW.Big5.po
