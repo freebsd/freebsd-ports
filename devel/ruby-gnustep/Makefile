@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,6 +16,11 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
+BUILD_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
+		${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc \
+		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
+		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui \
+		${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
 RUN_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
 		${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc \
 		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
@@ -50,6 +55,9 @@ MAKE_ENV=	GNUSTEP_LOCAL_ROOT=${GNUSTEP_LOCAL_ROOT} \
 		PATH=${PATH}:${GNUSTEP_SYSTEM_ROOT}/Tools
 PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L}
 NO_FILTER_SHLIBS=	yes
+
+post-extract:
+	find ${WRKSRC}/ -type f -name '.cvsignore' -delete
 
 post-patch:
 	${RUBY} -i~ -pe 'gsub(/-lpthread/, "-pthread")' ${WRKSRC}/Source/${MAKEFILE}
