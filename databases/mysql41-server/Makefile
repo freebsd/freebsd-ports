@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.1.9
+PORTVERSION=	4.1.10
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -17,14 +17,15 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 
 SLAVEDIRS=	databases/mysql41-client
-PKGINSTALL?=	${WRKDIR}/pkg-install
-DB_DIR?=	/var/db/mysql
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
-USE_RC_SUBR=	yes
+
+.if ${PKGNAMESUFFIX} == "-server"
+USE_RC_SUBR=	mysql-server.sh
+.endif
 
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
+CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
 		--without-readline \
 		--without-libedit \
@@ -106,14 +107,12 @@ LATEST_LINK=	mysql41-server
 
 CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
 
-PLIST_SUB=	DB_DIR=${DB_DIR} \
-		VER=${PORTVERSION}
+PLIST_SUB=	VER=${PORTVERSION}
 .if defined(WITH_NDB)
 PLIST_SUB+=	NDB=""
 .else
 PLIST_SUB+=	NDB="@comment "
 .endif
-
 
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
@@ -131,8 +130,6 @@ pre-fetch:
 	@${ECHO} "	WITH_CHARSET=charset	Define the primary built-in charset (latin1)."
 	@${ECHO} "	WITH_XCHARSET=list	Define other built-in charsets (may be 'all')."
 	@${ECHO} "	WITH_OPENSSL=yes	Enable secure connections."
-	@${ECHO} "	DB_DIR=directory	Set alternate directory for database files"
-	@${ECHO} "				(default is /var/db/mysql)."
 	@${ECHO} "	WITH_LINUXTHREADS=yes	Use the linuxthreads pthread library."
 	@${ECHO} "	WITH_PROC_SCOPE_PTH=yes	Use process scope threads"
 	@${ECHO} "				(try it if you use libpthread)."
@@ -156,22 +153,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
 .endif
 
-post-build:
-	@${SED} "s|%%DB_DIR%%|${DB_DIR}|g" ${PKGDIR}/pkg-install > ${WRKDIR}/pkg-install
-
 post-install:
 .if !defined(PACKAGE_BUILDING)
-.if exists(${DB_DIR}) && defined(OVERWRITE_DB) && ${OVERWRITE_DB:L} != "no"
-	@${RM} -r ${DB_DIR}/mysql ${DB_DIR}/test 2>/dev/null || true
+	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-.if !exists(${DB_DIR}) || (defined(OVERWRITE_DB) && ${OVERWRITE_DB:L} != "no")
-	${PREFIX}/bin/mysql_install_db --ldata=${DB_DIR}
-.endif
-	@${SETENV} DB_DIR=${DB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-	@${SED} "s|%%RC_SUBR%%|${RC_SUBR}|g;s|%%PREFIX%%|${PREFIX}|g;s|%%DB_DIR%%|${DB_DIR}|g" < \
-		${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
-	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-server.sh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
@@ -218,7 +203,6 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mys
 .if ${PERL_LEVEL} <= 500800
 RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .endif
-
 
 LATEST_LINK=	mysql41-scripts
 

@@ -27,7 +27,6 @@ bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
-etc/rc.d/mysql-server.sh
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters.h
 %%NDB%%include/mysql/ndb/mgmapi/mgmapi_config_parameters_debug.h
@@ -53,6 +52,7 @@ etc/rc.d/mysql-server.sh
 %%NDB%%include/mysql/ndb/ndbapi/NdbScanFilter.hpp
 %%NDB%%include/mysql/ndb/ndbapi/NdbScanOperation.hpp
 %%NDB%%include/mysql/ndb/ndbapi/ndb_cluster_connection.hpp
+%%NDB%%include/mysql/ndb/ndbapi/ndb_opt_defaults.h
 %%NDB%%include/mysql/ndb/ndbapi/ndbapi_limits.h
 %%NDB%%include/mysql/ndb/ndbapi/ndberror.h
 lib/mysql/libdbug.a
@@ -126,6 +126,8 @@ libexec/mysqld
 %%DATADIR%%/italian/errmsg.txt
 %%DATADIR%%/japanese/errmsg.sys
 %%DATADIR%%/japanese/errmsg.txt
+%%DATADIR%%/japanese-sjis/errmsg.sys
+%%DATADIR%%/japanese-sjis/errmsg.txt
 %%DATADIR%%/korean/errmsg.sys
 %%DATADIR%%/korean/errmsg.txt
 %%DATADIR%%/mi_test_all
@@ -138,6 +140,7 @@ libexec/mysqld
 %%DATADIR%%/mysql-%%VER%%.spec
 %%DATADIR%%/mysql-log-rotate
 %%DATADIR%%/mysql.server
+%%DATADIR%%/ndb-config-2-node.ini
 %%DATADIR%%/norwegian-ny/errmsg.sys
 %%DATADIR%%/norwegian-ny/errmsg.txt
 %%DATADIR%%/norwegian/errmsg.sys
@@ -177,6 +180,7 @@ libexec/mysqld
 @dirrm %%DATADIR%%/hungarian
 @dirrm %%DATADIR%%/italian
 @dirrm %%DATADIR%%/japanese
+@dirrm %%DATADIR%%/japanese-sjis
 @dirrm %%DATADIR%%/korean
 @dirrm %%DATADIR%%/norwegian
 @dirrm %%DATADIR%%/norwegian-ny
@@ -190,5 +194,4 @@ libexec/mysqld
 @dirrm %%DATADIR%%/swedish
 @dirrm %%DATADIR%%/ukrainian
 @unexec rmdir %D/%%DATADIR%% 2> /dev/null || true
-@exec [ -d %%DB_DIR%% ] || %D/bin/mysql_install_db --ldata=%%DB_DIR%%
 @unexec /usr/bin/killall mysqld > /dev/null 2>&1 || true
