@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Config/Objective.pm
+%%SITE_PERL%%/Config/Objective/List.pm
+%%SITE_PERL%%/Config/Objective/Parser.pm
+%%SITE_PERL%%/Config/Objective/Boolean.pm
+%%SITE_PERL%%/Config/Objective/Table.pm
+%%SITE_PERL%%/Config/Objective/Hash.pm
+%%SITE_PERL%%/Config/Objective/Integer.pm
+%%SITE_PERL%%/Config/Objective/String.pm
+%%SITE_PERL%%/Config/Objective/DataType.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Objective/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config/Objective 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Config 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Config/Objective 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Config 2>/dev/null || true

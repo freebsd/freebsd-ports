@@ -1,0 +1,8 @@
+The Config::Objective module provides a mechanism for parsing config files
+to manipulate configuration data.  Unlike most other config file modules,
+which represent config data as simple variables, Config::Objective
+represents config data as perl objects.  This allows for a much more
+flexible configuration language, since new classes can be easily written
+to add methods to the config syntax.
+
+WWW: http://search.cpan.org/~roth/Config-Objective/
