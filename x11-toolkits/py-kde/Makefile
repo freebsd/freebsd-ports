@@ -18,7 +18,7 @@ COMMENT=	Python Bindings for KDE3
 
 BROKEN=		"Does not compile with KDE >= 3.3.1"
 EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
+DEPRECATED=	"${BROKEN}"
 
 BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 RUN_DEPENDS=	${BUILD_DEPENDS}
