@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040817:
+  AFFECTS: users of www/apache2
+  AUTHOR: clement@FreeBSD.org
+
+  Summary of recent changes:
+  - Access to filesystem is denied by default.
+  - mod_proxy* are no longer built by default
+  - Now ${PREFIX}/etc/apache2/Includes/*.conf can be used to store
+    local configuration or sample configurations.
+  - Makefile.modules.3rd contains modules selection for apache 2.x and 1.3.x
+
 20040815:
   AFFECTS: users of net/openldap22{,-sasl}-server
   AUTHOR: eik@FreeBSD.org

@@ -9,7 +9,8 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.50
-CATEGORIES=	www ipv6
+PORTREVISION=	1
+CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://sheepkiller.nerim.net/ports/${PORTNAME}/:powerlogo
 DISTNAME=	httpd-${PORTVERSION}
@@ -77,10 +78,13 @@ WITH_HTTP_PORT?=	80
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
-.elif defined(WITH_IPV6_V6ONLY) && defined(WITHOUT_V4MAPPED)
-CONFIGURE_ARGS+=	--disable-v4-mapped
 .else
+CATEGORIES+=		ipv6
+.   if defined(WITH_IPV6_V6ONLY) && defined(WITHOUT_V4MAPPED)
+CONFIGURE_ARGS+=	--disable-v4-mapped
+.   else
 CONFIGURE_ARGS+=	--enable-v4-mapped
+.   endif
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -185,8 +189,10 @@ post-patch:
 	@${RM} -f ${WRKSRC}/docs/docroot/*.bak
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache.sh > ${WRKDIR}/apache2.sh
+.if !defined(WITH_APR_FROM_PORTS)
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/apache2libs.sh > ${WRKDIR}/apache2libs.sh
+.endif
 	@${RM} -f ${WRKSRC}/docs/manual/index.html.ko.euc-kr
 	@${REINPLACE_CMD} -e 's," PLATFORM ",FreeBSD,' \
 			${WRKSRC}/server/core.c
@@ -205,10 +211,12 @@ pre-install:
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/apache2/Includes
-	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."
-	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh
+.if !defined(WITH_APR_FROM_PORTS)
 	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/000.apache2libs.sh startup file."
 	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2libs.sh ${PREFIX}/etc/rc.d/000.apache2libs.sh
+.endif
+	@${ECHO_CMD} "Installing ${PREFIX}/etc/rc.d/apache2.sh startup file."
+	@${INSTALL_SCRIPT} -m 751 ${WRKDIR}/apache2.sh ${PREFIX}/etc/rc.d/apache2.sh
 	@@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
