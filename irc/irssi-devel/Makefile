@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.7.98.4
+PORTVERSION=	0.8.0-20020217
 PORTREVISION?=	0
 CATEGORIES+=	irc ipv6	# `+=' is for slave ports
-MASTER_SITES=	http://irssi.org/files/
+MASTER_SITES=	http://irssi.org/files/snapshots/
+DISTFILES=	${PORTNAME}-20020217${EXTRACT_SUFX}
 
 MAINTAINER?=	vanilla@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.8.0
+#USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GLIB=	yes
 GNU_CONFIGURE=	yes
 # `+=' is for slave ports
-CONFIGURE_ARGS+=	--without-socks --with-bot --without-servertest \
-		--enable-perl-path=${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-CONFIGURE_ENV= LIBS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS+=	--without-socks --with-bot --with-textui \
+		--with-perl-lib=${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 .include <bsd.port.pre.mk>
 
@@ -39,12 +40,12 @@ pre-patch:
 		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
 
 pre-configure:
-	@cd ${WRKSRC} && ${MV} config config.sample
+	@cd ${WRKSRC} && ${MV} irssi.conf irssi.conf.sample
 
 post-install:
-	@if [ ! -f ${LOCALBASE}/etc/irssi/config ]; then \
+	@if [ ! -f ${LOCALBASE}/etc/irssi.conf ]; then \
 		${ECHO} "Installing default configuration file."; \
-		${INSTALL_SCRIPT} -m 644 ${WRKSRC}/config.sample ${LOCALBASE}/etc/irssi/config; \
+		${INSTALL_SCRIPT} -m 644 ${WRKSRC}/irssi.conf.sample ${LOCALBASE}/etc/irssi.conf ; \
 	fi
 
 .include <bsd.port.post.mk>
