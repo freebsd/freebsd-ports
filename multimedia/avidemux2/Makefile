@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	avidemux2
-PORTVERSION=	2.0.24
+PORTVERSION=	2.0.26
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/
-DISTNAME=	avidemux-2.0.24
+DISTNAME=	avidemux-${PORTVERSION}
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Simple GUI based video editor
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	\
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GNOME=	gnomeprefix gnomehack gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
@@ -85,5 +85,7 @@ post-patch:
 	@${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/adm_lavcodec/*.c
 	@${REINPLACE_CMD} 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/adm_lavcodec/*/*.c
 	@${REINPLACE_CMD} 's|ADM_LOCALEDIR=$${datadir}/locale|ADM_LOCALEDIR=${PREFIX}/share/locale|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} "s|-O2|${CFLAGS}|" ${WRKSRC}/adm_lavcodec/Makefile
+	@${REINPLACE_CMD} "s|-O2||" ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
