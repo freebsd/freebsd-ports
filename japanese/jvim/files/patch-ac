@@ -1,0 +1,12 @@
+--- src/term.c.orig	Fri Jun 30 12:32:40 1995
++++ src/term.c	Thu Aug 27 18:02:42 1998
+@@ -176,7 +176,9 @@
+ 			T_DL = tgetstr("dl", &tp);
+ 			T_CDL = tgetstr("DL", &tp);
+ 			T_ED = tgetstr("cl", &tp);
++#ifndef __FreeBSD__ /* by Satoshi TAOKA */
+ 			T_CI = tgetstr("vi", &tp);
++#endif
+ 			T_CV = tgetstr("ve", &tp);
+ 			T_TP = tgetstr("me", &tp);
+ 			T_TI = tgetstr("mr", &tp);
