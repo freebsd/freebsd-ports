@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	est
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.daemonology.net/freebsd-est/
 
@@ -16,6 +16,9 @@ COMMENT=	Enhanced SpeedStep driver for Pentium M processors
 ONLY_FOR_ARCHS=	i386
 KMODDIR=	${PREFIX}/modules
 MAKE_ARGS=	KMODDIR="${KMODDIR}"
+
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 PLIST_FILES=	modules/est.ko			\
 		etc/rc.d/est.sh
@@ -27,13 +30,14 @@ EXTRA_PATCHES=	${FILESDIR}/est.c.diff.fbsd4
 .endif
 
 post-extract:
-	@${SED} -e 's|@@PREFIX@@|${PREFIX}|' ${FILESDIR}/est.sh	\
-		> ${WRKDIR}/est.sh
+	${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}	\
+		${FILESDIR}/est.sh > ${WRKDIR}/est.sh
 
 pre-install:
 	${MKDIR} ${KMODDIR}
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/est.sh ${PREFIX}/etc/rc.d/
+	${INSTALL_SCRIPT} ${WRKDIR}/est.sh ${PREFIX}/etc/rc.d/est.sh
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
