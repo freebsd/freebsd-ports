@@ -34,12 +34,6 @@ PORTDOCS=	Asmutils-HOWTO.html acknowledgements.html endorsements.html \
 		history.html index.html s-contrib.html s-debug.html \
 		s-include.html s-layout.html s-optimize.html
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 503000
-BROKEN=		"Install fails on FreeBSD >= 5.x"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG
 	@${REINPLACE_CMD} -e 's,m386,march=i386,' ${WRKSRC}/lib/Makefile
@@ -47,7 +41,7 @@ post-patch:
 		${WRKSRC}/lib/Makefile ${WRKSRC}/src/Makefile
 
 # Stripping binaries will break install
-.undef STRIP
+STRIP=	#
 
 do-install:
 	${MKDIR} ${PREFIX}/bin/asmutils
@@ -73,4 +67,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
