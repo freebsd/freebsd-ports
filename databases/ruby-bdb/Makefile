@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bdb
-PORTVERSION=	0.3.3
-PORTREVISION=	1
+PORTVERSION=	0.3.4
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -37,9 +36,6 @@ CONFIGURE_ARGS=	--with-db-include-dir="${PREFIX}/include/db3" \
 INSTALL_TARGET=	site-install
 
 DOCS=		Changes README.en bdb.html bdb.rd docs/*
-
-post-extract:
-	${RM} -f ${WRKSRC}/examples/*.bdb
 
 post-install:
 .if !defined(NOPORTDOCS)
