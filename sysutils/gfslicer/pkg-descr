@@ -1,0 +1,11 @@
+gfslicer is a software which helps to slice and then deslice files which
+are of larger size. Generally transferring of larger files is meant to
+be a tough job and this one makes it possible and easy too. gfslicer is
+mainly aimed at slicing and transferring files using any sort of removable
+storage media. Files can be sliced to any arbitrary size as per the
+requirement and can be transferred using floppies or things of that sort.
+The sliced files can then be desliced to the original form with its name
+and extension. A perfect checking mechanism helps in avoiding all possible
+errors in the sliced and desliced files.
+
+WWW: http://www.geocities.com/gfslicer/
