@@ -1,5 +1,6 @@
 bin/gimp
 bin/gimp-config
+bin/gimp-remote
 bin/gimp.setfont
 bin/gimptool
 include/gck/gck.h
@@ -211,6 +212,7 @@ libexec/gimp/1.1/plug-ins/lic
 %%PERL:%%libexec/gimp/1.1/plug-ins/logulator
 libexec/gimp/1.1/plug-ins/mail
 libexec/gimp/1.1/plug-ins/mapcolor
+%%PERL:%%libexec/gimp/1.1/plug-ins/map_to_gradient
 libexec/gimp/1.1/plug-ins/max_rgb
 libexec/gimp/1.1/plug-ins/maze
 libexec/gimp/1.1/plug-ins/mblur
@@ -405,6 +407,7 @@ share/gimp/devel-docs/html/libgimp/libgimp-gimpmodule.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimppalette.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpparasite.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpparasiteio.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimppatterns.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimppixelrgn.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpplugin.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpproceduraldb.html
@@ -774,6 +777,7 @@ share/gimp/help/C/filters/animoptimize.html
 share/gimp/help/C/filters/apply_lens.html
 share/gimp/help/C/filters/autocrop.html
 share/gimp/help/C/filters/autostretch_hsv.html
+share/gimp/help/C/filters/avi.html
 share/gimp/help/C/filters/blinds.html
 share/gimp/help/C/filters/blur.html
 share/gimp/help/C/filters/bmp.html
@@ -791,6 +795,7 @@ share/gimp/help/C/filters/convmatrix.html
 share/gimp/help/C/filters/csource.html
 share/gimp/help/C/filters/cubism.html
 share/gimp/help/C/filters/curve_bend.html
+share/gimp/help/C/filters/dataurl.html
 share/gimp/help/C/filters/dbbrowser.html
 share/gimp/help/C/filters/decompose.html
 share/gimp/help/C/filters/deinterlace.html
@@ -854,7 +859,9 @@ share/gimp/help/C/filters/mapobject.html
 share/gimp/help/C/filters/max_rgb.html
 share/gimp/help/C/filters/maze.html
 share/gimp/help/C/filters/mblur.html
+share/gimp/help/C/filters/miff.html
 share/gimp/help/C/filters/mosaic.html
+share/gimp/help/C/filters/mpeg.html
 share/gimp/help/C/filters/newsprint.html
 share/gimp/help/C/filters/nlfilt.html
 share/gimp/help/C/filters/noisify.html
@@ -1299,6 +1306,7 @@ share/gimp/scripts/xach-effect.scm
 share/gimp/tips/gimp_conseils.fr.txt
 share/gimp/tips/gimp_tips.cs.txt
 share/gimp/tips/gimp_tips.de.txt
+share/gimp/tips/gimp_tips.es.txt
 share/gimp/tips/gimp_tips.it.txt
 share/gimp/tips/gimp_tips.ja.txt
 share/gimp/tips/gimp_tips.ko.txt
@@ -1343,6 +1351,10 @@ share/locale/fr/LC_MESSAGES/gimp-libgimp.mo
 share/locale/fr/LC_MESSAGES/gimp-script-fu.mo
 share/locale/fr/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/fr/LC_MESSAGES/gimp.mo
+share/locale/gl/LC_MESSAGES/gimp-libgimp.mo
+share/locale/gl/LC_MESSAGES/gimp-script-fu.mo
+share/locale/gl/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/gl/LC_MESSAGES/gimp.mo
 share/locale/hu/LC_MESSAGES/gimp-libgimp.mo
 share/locale/hu/LC_MESSAGES/gimp-script-fu.mo
 share/locale/hu/LC_MESSAGES/gimp-std-plugins.mo
@@ -1373,6 +1385,10 @@ share/locale/pl/LC_MESSAGES/gimp-libgimp.mo
 share/locale/pl/LC_MESSAGES/gimp-script-fu.mo
 share/locale/pl/LC_MESSAGES/gimp-std-plugins.mo
 share/locale/pl/LC_MESSAGES/gimp.mo
+share/locale/pt_BR/LC_MESSAGES/gimp-libgimp.mo
+share/locale/pt_BR/LC_MESSAGES/gimp-script-fu.mo
+share/locale/pt_BR/LC_MESSAGES/gimp-std-plugins.mo
+share/locale/pt_BR/LC_MESSAGES/gimp.mo
 share/locale/ru/LC_MESSAGES/gimp-libgimp.mo
 %%PERL:%%share/locale/ru/LC_MESSAGES/gimp-perl.mo
 share/locale/ru/LC_MESSAGES/gimp-script-fu.mo
