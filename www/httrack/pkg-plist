@@ -26,6 +26,9 @@ lib/httrack/libfilename.so.1
 lib/httrack/libfilename2.a
 lib/httrack/libfilename2.so
 lib/httrack/libfilename2.so.1
+lib/httrack/libfilenameiisbug.a
+lib/httrack/libfilenameiisbug.so
+lib/httrack/libfilenameiisbug.so.1
 lib/httrack/liblistlinks.a
 lib/httrack/liblistlinks.so
 lib/httrack/liblistlinks.so.1
@@ -120,6 +123,7 @@ share/applications/WebHTTrack.desktop
 %%DOCSDIR%%/html/server/option8.html
 %%DOCSDIR%%/html/server/option9.html
 %%DOCSDIR%%/html/server/refresh.html
+%%DOCSDIR%%/html/server/sfx/finished.wav
 %%DOCSDIR%%/html/server/step2.html
 %%DOCSDIR%%/html/server/step3.html
 %%DOCSDIR%%/html/server/step4.html
@@ -180,6 +184,7 @@ share/applications/WebHTTrack.desktop
 %%DATADIR%%/libtest/callbacks-example-displayheader.c
 %%DATADIR%%/libtest/callbacks-example-filename.c
 %%DATADIR%%/libtest/callbacks-example-filename2.c
+%%DATADIR%%/libtest/callbacks-example-filenameiisbug.c
 %%DATADIR%%/libtest/callbacks-example-listlinks.c
 %%DATADIR%%/libtest/example.c
 %%DATADIR%%/libtest/example.dsp
@@ -200,6 +205,7 @@ share/pixmaps/httrack.xpm
 @dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/html/server/sfx
 @dirrm %%DOCSDIR%%/html/server/images
 @dirrm %%DOCSDIR%%/html/server
 @dirrm %%DOCSDIR%%/html/img
