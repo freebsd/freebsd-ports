@@ -156,7 +156,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <bid>11312</bid>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109674050017645</url>
+      <mlist msgid="415F00A8.13029.1FAADB7@localhost">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109674050017645</mlist>
     </references>
     <dates>
       <discovery>2004-10-02</discovery>
@@ -181,7 +181,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://wordpress.org/development/2004/10/wp-121/</url>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109641484723194</url>
+      <mlist msgid="20040927231608.19365.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109641484723194</mlist>
     </references>
     <dates>
       <discovery>2004-09-27</discovery>
@@ -262,7 +262,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109608092609200</url>
+      <mlist msgid="20040924213102.7fb91138.aluigi@autistici.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109608092609200</mlist>
     </references>
       <dates>
 	<discovery>2004-09-24</discovery>
