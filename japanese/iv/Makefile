@@ -18,7 +18,7 @@ PATCH_SITES=	${MASTER_SITE_PORTS_JP}
 PATCHFILES=	${DISTNAME}j-gamma-fixcmpfont.patch
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A toolkit from Stanford University and Silicon Graphics + Japanese patches
 
 .include <bsd.port.pre.mk>
