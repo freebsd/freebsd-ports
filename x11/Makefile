@@ -194,6 +194,7 @@
     SUBDIR += xautomation
     SUBDIR += xballoon
     SUBDIR += xbanner
+    SUBDIR += xbelld
     SUBDIR += xbindkeys
     SUBDIR += xbindkeys_config
     SUBDIR += xcb
