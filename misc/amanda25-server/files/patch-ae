@@ -1,0 +1,14 @@
+--- client-src/sendbackup-gnutar.c.orig	Sat Jan  4 12:46:08 2003
++++ client-src/sendbackup-gnutar.c	Thu Oct 23 19:22:31 2003
+@@ -480,7 +480,11 @@
+ 
+ 	start_index(options->createindex, dumpout, mesgf, indexf, indexcmd);
+ 
++#ifdef GNUTAR
++	my_argv[i++] = "GNUTAR";
++#else
+ 	my_argv[i++] = "gtar";
++#endif
+ 	my_argv[i++] = "--create";
+ 	my_argv[i++] = "--file";
+ 	my_argv[i++] = "-";
