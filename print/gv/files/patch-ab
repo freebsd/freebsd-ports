@@ -1,6 +1,6 @@
---- doc/Imakefile.orig	Sun Apr  6 00:00:00 1997
-+++ doc/Imakefile	Thu Apr 17 16:24:07 1997
-@@ -27,6 +27,6 @@
+--- doc/Imakefile.orig	Fri Jun  6 15:00:00 1997
++++ doc/Imakefile	Mon Jun  9 14:36:59 1997
+@@ -27,7 +27,7 @@
  GV_CONFIG_FILE = ../config.Unix
  #include "../config.Unix"
  
@@ -8,3 +8,4 @@
 +XCOMM MANDIR=$(GV_MANDIR)
  
  ComplexProgramTarget(gv)
+ 
