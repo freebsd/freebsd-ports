@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.7 1995/04/22 22:39:30 jmz Exp $
+# $Id: Makefile,v 1.8 1995/04/26 14:45:15 jmz Exp $
 #
 
 #######################################################################
@@ -25,6 +25,9 @@ X11FIXES = /usr/ports/distfiles/xc
 #define this if you are short of space - save ~28 Mbytes
 #REMOVE_NOT_ESSENTIAL	=	yes
 
+# Define FORCE_PACKAGE from the command line if you want to override
+# this and build a package
+NO_PACKAGE	=	yes
 #######################################################################
 DISTNAME	=	xc
 PKGNAME		= 	XFree86-3.1.1
