@@ -3,7 +3,7 @@
 # Date created:         25 Aug 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/20 02:58:32 steve Exp $
+# $Id: Makefile,v 1.2 1998/10/07 06:11:41 asami Exp $
 #
 
 DISTNAME=	dvipsk-5.78a
@@ -21,7 +21,7 @@ MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 
 RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common \
 		${PREFIX}/share/fonts/vf-a2bk:${PORTSDIR}/japanese/vftool
-LIB_DEPENDS=	VFlib2.23:${PORTSDIR}/japanese/vflib
+LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of dvipsk-*
 
