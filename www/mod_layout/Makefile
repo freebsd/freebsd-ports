@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mod_layout
-PORTVERSION=	2.10.6
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.tangent.org/pub/apache/ \
-		http://www.tangent.org/mod_layout/
+		http://software.tangent.org/download/
 
 MAINTAINER=	petef@databits.net
 
@@ -20,13 +19,14 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 MAKE_ENV=	APXS=${LOCALBASE}/sbin/apxs
 
 post-patch:
-	@${PERL} -pi -e 's!-i -a -n!-i -A -n!; s!APXS=apxs!APXS?=apxs!' \
+	@${PERL} -pi -e 's!APXS=apxs!APXS?=apxs!' \
 		${WRKSRC}/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/faq.html ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/directives
+	${INSTALL_DATA} ${WRKSRC}/faq.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/directives/* ${DOCSDIR}/directives
 .endif
 	@${CAT} ${PKGMESSAGE}
 
