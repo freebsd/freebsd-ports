@@ -5507,6 +5507,7 @@ py-qt		ports/x11-toolkits/py-qt
 py-reportlab	ports/print/py-reportlab
 py-rijndael	ports/security/py-rijndael
 py-scientific	ports/math/py-scientific
+py-serial	ports/comms/py-serial
 py-sgrep	ports/textproc/py-sgrep
 py-smb		ports/net/py-smb
 py-soap		ports/net/py-soap
