@@ -7,6 +7,7 @@
 
 PORTNAME=	muttprint
 PORTVERSION=	0.70
+PORTREVISION=	1
 CATEGORIES=	print mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	muttprint
@@ -22,7 +23,8 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		psnup:${PORTSDIR}/print/psutils-${PAPERSIZE} \
 		uncompface:${PORTSDIR}/mail/faces \
 		convert:${PORTSDIR}/graphics/ImageMagick \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
