@@ -9,7 +9,7 @@ PORTNAME=	ccmalloc
 PORTVERSION=	0.3.9
 PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.inf.ethz.ch/personal/biere/projects/ccmalloc/
+MASTER_SITES=	http://www2.inf.ethz.ch/personal/biere/projects/ccmalloc/
 
 MAINTAINER=	jure@kom.org
 COMMENT=	C/C++ memory profiler and memory leak tracer
