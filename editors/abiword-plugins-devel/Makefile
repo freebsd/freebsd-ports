@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	abiword
-PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
+		http://www.abisource.com/downloads/%SUBDIR%/${PORTVERSION}/source/
 MASTER_SITE_SUBDIR=	abiword
 PKGNAMESUFFIX=	-plugins
 DIST_SUBDIR=	AbiWord
@@ -236,13 +235,13 @@ PLIST_SUB+=		WMF:=""
 PLIST_SUB+=		WMF:="@comment "
 .endif
 
-.if defined(WITH_WORDPERFECT) || defined(PACKAGE_BUILDING)
-LIB_DEPENDS+=		wpd-1.7:${PORTSDIR}/textproc/libwpd
-CONFIGURE_ARGS+=	--enable-wordperfect
-PLIST_SUB+=		WORDPERFECT:=""
-.else
-PLIST_SUB+=		WORDPERFECT:="@comment "
-.endif
+#.if defined(WITH_WORDPERFECT) || defined(PACKAGE_BUILDING)
+#LIB_DEPENDS+=		wpd-1.7:${PORTSDIR}/textproc/libwpd
+#CONFIGURE_ARGS+=	--enable-wordperfect
+#PLIST_SUB+=		WORDPERFECT:=""
+#.else
+#PLIST_SUB+=		WORDPERFECT:="@comment "
+#.endif
 
 .if defined(WITH_XSLFO) || defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS+=	--enable-xsl-fo
@@ -256,13 +255,6 @@ PLIST_SUB+=		XSLFO:="@comment "
 .if ${HAVE_GNOME:Mnautilus2}!="" && ${HAVE_GNOME:Mlibgnomeprintui}!=""
 USE_GNOME+=		nautilus2 libgnomeprintui
 CONFIGURE_ARGS+=	--enable-gnome
-.endif
-
-.if ${HAVE_GNOME:Mgtk20}!=""
-CONFIGURE_ARGS+=	--enable-AbiGdkPixbuf
-PLIST_SUB+=		GTKPIXBUF:=""
-.else
-PLIST_SUB+=		GTKPIXBUF:="@comment "
 .endif
 
 .if ${HAVE_GNOME:Mlibrsvg2}!=""
@@ -356,9 +348,9 @@ pre-everything::
 .if !defined(WITH_WMF)
 	@${ECHO_MSG} "WITH_WMF=yes		View Windows Metafiles."
 .endif
-.if !defined(WITH_WORDPERFECT)
-	@${ECHO_MSG} "WITH_WORDPERFECT=yes	Import/export Wordperfect files."
-.endif
+#.if !defined(WITH_WORDPERFECT)
+#	@${ECHO_MSG} "WITH_WORDPERFECT=yes	Import/export Wordperfect files."
+#.endif
 .if !defined(WITH_XSLFO)
 	@${ECHO_MSG} "WITH_XSLFO=yes		Import/export XSL-FO."
 .endif

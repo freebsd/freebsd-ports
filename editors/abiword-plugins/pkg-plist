@@ -9,7 +9,6 @@
 %%EML:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiEML.so
 %%FREETRANSLATION:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiFreeTranslation.so
 %%GDICT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiGdict.so
-%%GTKPIXBUF:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiGdkPixbuf.so
 %%GOOGLE:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiGoogle.so
 %%HRTEXT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiHRText.so
 %%HANCOM:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiHancom.so
@@ -27,5 +26,4 @@
 %%URLDICT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiURLDict.so
 %%WMF:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiWMF.so
 %%WIKIPEDIA:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiWikipedia.so
-%%WORDPERFECT:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiWordPerfect.so
 %%XSLFO:%%lib/AbiWord-%%ABIVERSION%%/plugins/libAbiXSLFO.so
