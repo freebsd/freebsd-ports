@@ -1,0 +1,31 @@
+--- lisp/jde-db.el.orig	Mon Jan  7 17:18:11 2002
++++ lisp/jde-db.el	Tue Jan  8 14:03:16 2002
+@@ -728,6 +728,10 @@
+ 			   (jde-db-pkg-to-path package) curr-dir)))))
+ 	(setq n (1+ n))))))
+
++(defun gud-new-keymap (map)
++  "Return a new keymap which inherits from MAP and has name `Gud'."
++  (nconc (make-sparse-keymap "Gud") map))
++
+ ;; Fixes a bug in gud-make-debug-menu
+ (defun jde-db-make-debug-menu ()
+   "Make sure the current local map has a [menu-bar debug] submap.
+@@ -748,7 +752,7 @@
+ 	 (jde-db-search-src-dirs f jde-db-last-package)))
+     (if source-dir
+ 	(let ((source-file
+-	       (concat source-dir f)))	
++	       (expand-file-name f source-dir)))
+ 	  (save-excursion
+ 	    (let ((buf (find-file-noselect source-file)))
+ 	      (set-buffer buf)
+@@ -760,6 +764,8 @@
+ 			(add-menu nil "Jdb" jde-db-xemacs-menu)))
+ 		(progn
+ 		  (jde-db-make-debug-menu)
++		  (local-set-key [menu-bar debug finish] nil)
++		  (local-set-key [menu-bar debug tbreak] nil)
+ 		  (local-set-key [menu-bar debug refresh] nil)
+ 		  (local-set-key [menu-bar debug stepi] nil)
+ 		  (local-set-key [menu-bar debug up] '("Up Stack" . gud-up))

@@ -1,0 +1,11 @@
+--- lisp/jde.el.orig	Thu Dec 13 17:37:42 2001
++++ lisp/jde.el	Thu Jan 10 17:59:35 2002
+@@ -1672,8 +1672,6 @@
+       (setq dir (file-name-directory (locate-library "jde"))))
+     (if dir
+ 	(nsubstitute ?/ ?\\ dir))
+-    (if (not jde-xemacsp)
+-	(setq dir (substring dir 0 (- (length dir) 5))))
+     dir))
+
+ (defun jde-find-jde-doc-directory ()

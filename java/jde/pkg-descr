@@ -1,0 +1,19 @@
+The Java Development Environment for Emacs is a software package that
+interfaces Emacs to command-line Java development tools (for example,
+JavaSoft's JDK). JDEE features include:
+
+  - JDEE menu with compile, run, debug, build, browse, project,
+    and help commands
+  - syntax coloring
+  - auto indentation
+  - compile error to source links
+  - source-level debugging
+  - source code browsing
+  - make file support
+  - automatic code generation
+  - Java source interpreter (Pat Neimeyer's BeanShell)
+
+WWW: http://jdee.sunsite.dk/
+
+- Kimura Fuyuki
+fuyuki@mj.0038.net
