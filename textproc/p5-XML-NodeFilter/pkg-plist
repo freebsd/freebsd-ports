@@ -1,0 +1,5 @@
+%%SITE_PERL%%/XML/NodeFilter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/NodeFilter/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/NodeFilter
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
