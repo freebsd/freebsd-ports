@@ -23,7 +23,7 @@ and look at the suggestions in qserver.sh.
 
 The startup procedure for the server is:
 
-%%PREFIX%%/etc/rc.d/quakeserver.sh runs the server as user 'nobody'. 
+%%PREFIX%%/etc/rc.d/quakeserver.sh runs the server as user 'quakerun'. 
 Input is redirected from the named pipe 
 
 %%PREFIX%%/quakeserver/quakeserver.in
@@ -34,10 +34,6 @@ and output is redirected to
 
 You can see the output of the console by viewing quakeserver.log, and feed
 commands to the server by echoing them into quakeserver.in.
-
-NOTE THAT THIS COULD REPRESENT A SECURITY RISK ON MACHINES RUNNING WEB
-SERVERS AS USER 'nobody'.  If your system does this, please create an
-alternate pseudo-user to run the server as.
 
 One of the frequently asked questions about this port is how to run a
 registered server.  It's pretty simple.  If you want to run just a shareware

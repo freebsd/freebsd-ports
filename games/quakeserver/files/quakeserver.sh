@@ -5,12 +5,12 @@ case "$1" in
 start)
 	if [ -x %%PREFIX%%/quakeserver/unixded ]
 	then
-		su nobody -c %%PREFIX%%/quakeserver/qserver.sh \
+		echo %%PREFIX%%/quakeserver/qserver.sh | su -m quakerun \
 			&& echo -n ' quakeserver'
 	fi
 	;;
 stop)
-	su nobody -c %%PREFIX%%/quakeserver/qserver.sh && echo -n ' quakeserver'
+	echo killall unixded | su -m quakerun && echo -n ' quakeserver'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
