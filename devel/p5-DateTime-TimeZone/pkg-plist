@@ -56,6 +56,17 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Anguilla.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Antigua.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Araguaina.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Buenos_Aires.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Catamarca.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/ComodRivadavia.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Cordoba.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Jujuy.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/La_Rioja.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Mendoza.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Rio_Gallegos.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/San_Juan.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Tucuman.pm
+%%SITE_PERL%%/DateTime/TimeZone/America/Argentina/Ushuaia.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Aruba.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Asuncion.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Bahia.pm
@@ -65,17 +76,14 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Boa_Vista.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Bogota.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Boise.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Buenos_Aires.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Cambridge_Bay.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Campo_Grande.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Cancun.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Caracas.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Catamarca.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Cayenne.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Cayman.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Chicago.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Chihuahua.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Cordoba.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Costa_Rica.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Cuiaba.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Curacao.pm
@@ -108,7 +116,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Inuvik.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Iqaluit.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Jamaica.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Jujuy.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Juneau.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Kentucky/Monticello.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/La_Paz.pm
@@ -120,7 +127,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Manaus.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Martinique.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Mazatlan.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Mendoza.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Menominee.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Merida.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Mexico_City.pm
@@ -382,6 +388,7 @@
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/America/North_Dakota
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/America/Kentucky
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/America/Indiana
+@dirrm %%SITE_PERL%%/DateTime/TimeZone/America/Argentina
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/America
 @dirrm %%SITE_PERL%%/DateTime/TimeZone/Africa
 @dirrm %%SITE_PERL%%/DateTime/TimeZone
