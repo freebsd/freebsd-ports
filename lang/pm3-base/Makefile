@@ -69,7 +69,7 @@ WORDSIZE=	64
 BOOTSTRAP=	pm3-${PORTVERSION}-${TARGET}-boot.tar.bz2
 .endif
 
-.if empty(TARGET)
+.if !defined(TARGET)
 pre-fetch:
 	@${ECHO_MSG} "Cannot determine M3 target for this architecture"
 	@${FALSE}
