@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pan
-# Version required:			0.7.1
+# Version required:			0.7.2
 # Date created:				07 August 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pan-0.7.1
+DISTNAME=	pan-0.7.2
 CATEGORIES=	news gnome
 MASTER_SITES=	ftp://source.rebelbase.com/pub/pan/ \
 		ftp://source.rebelbase.com/pub/pan/obsolete/
@@ -33,7 +33,7 @@ CONFIGURE_ENV+=	CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "Must have FreeBSD-3.0 or greater due to"
-	@${ECHO} "the use of the thread library."
+	@${ECHO} "the use of the pthread library."
 	@${ECHO}
 .endif
 
