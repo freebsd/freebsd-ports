@@ -1,0 +1,22 @@
+--- musicin.c~	Thu Aug  1 14:25:33 1996
++++ musicin.c	Thu Aug  1 14:26:03 1996
+@@ -101,6 +101,8 @@
+ #include "common.h"
+ #include "encoder.h"
+ 
++#include <stdlib.h>
++
+ /* Global variable definitions for "musicin.c" */
+ 
+ FILE               *musicin;
+--- musicout.c~	Thu Aug  1 14:25:41 1996
++++ musicout.c	Thu Aug  1 14:26:13 1996
+@@ -58,6 +58,8 @@
+ #include        "common.h"
+ #include        "decoder.h"
+ 
++#include <stdlib.h>
++
+ /********************************************************************
+ /*
+ /*        This part contains the MPEG I decoder for Layers I & II.
