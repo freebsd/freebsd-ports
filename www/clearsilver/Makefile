@@ -60,6 +60,12 @@ MAN3=	cBroadcast.3 cCreate.3 cDestroy.3 cSignal.3 cWait.3 \
 	skipInsert.3 skipNewList.3 skipNext.3 skipRelease.3 skipSearch.3 \
 	wdb_keys.3
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (missing -fPIC from shared libraries)"
+.endif
+
 post-patch:
 	@# Exclude lemon.c, it gives some errors and its not used at all.
 	@${MV} ${WRKSRC}/cs/lemon.c ${WRKSRC}/cs/lemon.c.not_used
@@ -69,4 +75,4 @@ post-patch:
 	@# Avoid rebuiling man pages
 	@${REINPLACE_CMD} -e 's,all man,all,g' ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
