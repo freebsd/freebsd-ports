@@ -3599,6 +3599,7 @@ kmamerun	ports/emulators/kmamerun
 kmerlin		ports/net/kmerlin
 kmess		ports/net/kmess
 kmldonkey	ports/net/kmldonkey
+kmovisto	ports/science/kmovisto
 kmplayer	ports/multimedia/kmplayer
 kmyirc		ports/irc/kmyirc
 knews		ports/news/knews
