@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Elm port to FreeBSD 2.0
-#	$Id: pre-configure,v 1.3 1995/09/28 16:41:56 ache Exp $
+#	$Id: pre-configure,v 1.4 1995/11/19 21:11:57 ache Exp $
 
 PortsDir=$PORTSDIR
   CurDir=$CURDIR
@@ -294,7 +294,7 @@ xencf=''
 xenlf=''
 d_xenix='undef'
 d_bsd='define'
-d_pgp='define'
+d_pgp='undef'
 pgp='/usr/local/bin/pgp'
 pgp_path='/usr/local/bin/pgp'
 d_remailer='define'
