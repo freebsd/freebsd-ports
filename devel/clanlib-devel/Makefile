@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clanlib
-PORTVERSION=	0.7.4.1
+PORTVERSION=	0.7.5.2
 CATEGORIES=	devel
 MASTER_SITES=	http://clanlib.org/~sphair/download/
 DISTNAME=	ClanLib-${PORTVERSION:R}-${PORTVERSION:E}
@@ -86,8 +86,10 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|-lpthread||g'
+	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|SDL/SDL|SDL|g'
+	@${REINPLACE_CMD} -e 's|-lpthread||g' \
+		${WRKSRC}/Sources/Core/Makefile.in
 	@${REINPLACE_CMD} -e 's|@perl_exec@|${PERL}|g' \
 		${WRKSRC}/Documentation/Utilities/webbuilder.pl.in
 

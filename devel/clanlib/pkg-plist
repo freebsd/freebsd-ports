@@ -91,6 +91,7 @@ include/ClanLib-0.7/ClanLib/Display/display_mode.h
 include/ClanLib-0.7/ClanLib/Display/display_window.h
 include/ClanLib-0.7/ClanLib/Display/display_window_description.h
 include/ClanLib-0.7/ClanLib/Display/font.h
+include/ClanLib-0.7/ClanLib/Display/frameratecounter.h
 include/ClanLib-0.7/ClanLib/Display/glyph_buffer.h
 include/ClanLib-0.7/ClanLib/Display/gradient.h
 include/ClanLib-0.7/ClanLib/Display/graphic_context.h
@@ -123,13 +124,11 @@ include/ClanLib-0.7/ClanLib/GUI/checkbox.h
 include/ClanLib-0.7/ClanLib/GUI/component.h
 include/ClanLib-0.7/ClanLib/GUI/component_manager.h
 include/ClanLib-0.7/ClanLib/GUI/component_move_handler.h
-include/ClanLib-0.7/ClanLib/GUI/component_options.h
 include/ClanLib-0.7/ClanLib/GUI/component_resize_handler.h
 include/ClanLib-0.7/ClanLib/GUI/component_style.h
 include/ClanLib-0.7/ClanLib/GUI/component_type.h
 include/ClanLib-0.7/ClanLib/GUI/filedialog.h
 include/ClanLib-0.7/ClanLib/GUI/frame.h
-include/ClanLib-0.7/ClanLib/GUI/gui_file_parser.h
 include/ClanLib-0.7/ClanLib/GUI/gui_manager.h
 include/ClanLib-0.7/ClanLib/GUI/image.h
 include/ClanLib-0.7/ClanLib/GUI/inputbox.h
@@ -180,6 +179,7 @@ include/ClanLib-0.7/ClanLib/GUIStyleSilver/window_silver.h
 include/ClanLib-0.7/ClanLib/Network/Browse/browse_client.h
 include/ClanLib-0.7/ClanLib/Network/Browse/browse_master.h
 include/ClanLib-0.7/ClanLib/Network/Browse/browse_server.h
+include/ClanLib-0.7/ClanLib/Network/IRC/dcc_download.h
 include/ClanLib-0.7/ClanLib/Network/IRC/irc_connection.h
 include/ClanLib-0.7/ClanLib/Network/IRC/irc_numerics.h
 include/ClanLib-0.7/ClanLib/Network/NetObjects/netobject_client.h
@@ -223,6 +223,7 @@ include/ClanLib-0.7/ClanLib/Sound/SoundFilters/fadefilter.h
 include/ClanLib-0.7/ClanLib/Sound/SoundFilters/inverse_echofilter.h
 include/ClanLib-0.7/ClanLib/Sound/SoundProviders/soundprovider_factory.h
 include/ClanLib-0.7/ClanLib/Sound/SoundProviders/soundprovider_raw.h
+include/ClanLib-0.7/ClanLib/Sound/SoundProviders/soundprovider_recorder.h
 include/ClanLib-0.7/ClanLib/Sound/SoundProviders/soundprovider_type.h
 include/ClanLib-0.7/ClanLib/Sound/SoundProviders/soundprovider_type_register.h
 include/ClanLib-0.7/ClanLib/Sound/SoundProviders/soundprovider_wave.h
