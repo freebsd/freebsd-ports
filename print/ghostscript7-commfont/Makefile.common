@@ -16,7 +16,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 GSLIB_DIR=	${PREFIX}/share/ghostscript/${PORTVERSION}/lib
-PLIST_SUB=	GS_VERSION=${PORTVERSION}
+PLIST_SUB=	GS_VERSION=${PORTVERSION} SHAREMODE=${SHAREMODE}
 
 .if defined(COMMFONT)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-commfont
@@ -60,6 +60,7 @@ do-install:
 	${GREP} -v -e "${CIDFNMAP}" ${GSLIB_DIR}/CIDFnmap.orig > \
 		${GSLIB_DIR}/CIDFnmap
 	${ECHO_CMD} '(${CIDFNMAP}) .runlibfile' >> ${GSLIB_DIR}/CIDFnmap
+	${CHMOD} ${SHAREMODE} ${GSLIB_DIR}/CIDFnmap
 .endif
 
 post-install:
