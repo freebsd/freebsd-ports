@@ -1,0 +1,9 @@
+This is a filter that converts text files to 
+PostScript and spools generated  PostScript  
+output  to  the  specified  printer or leaves 
+it to file.  If no input files are given,  
+enscript processes  standard  input.   enscript  
+can be extended to handle different output media  
+and it has many options which can be used to 
+customize printouts.
+
