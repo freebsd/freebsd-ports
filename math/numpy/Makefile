@@ -8,7 +8,7 @@
 PORTNAME=	numeric
 PORTVERSION=	15.2
 CATEGORIES=	math python
-MASTER_SITES=	http://downloads.sourceforge.net/
+MASTER_SITES=	http://download.sourceforge.net/numpy/
 PKGNAMEPREFIX=	py-
 DISTNAME=	Numerical-${PORTVERSION}
 
