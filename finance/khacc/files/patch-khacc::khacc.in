@@ -1,0 +1,17 @@
+--- khacc/khacc.in.orig	Sun Oct 12 21:58:50 2003
++++ khacc/khacc.in	Sun Dec 14 22:47:45 2003
+@@ -1,4 +1,4 @@
+-#! /bin/sh
++#!%%LOCALBASE%%/bin/bash
+ ###############################################################
+ # parse the command line, and call the appropriate executable #
+ #                                                             #
+@@ -17,7 +17,7 @@
+ }
+ 
+ # You can change QHACC_ROOT and QHACC_HOME to fit your needs
+-QHACC_ROOT=${QHACC_ROOT:="@QHACCROOT@"}
++QHACC_ROOT=${QHACC_ROOT:="@QHACCROOT@/lib/qhacc"}
+ QHACC_HOME=${QHACC_HOME:="DEFAULT"}
+ KHACC_HOME=${KHACC_HOME:=$QHACC_HOME}
+ 
