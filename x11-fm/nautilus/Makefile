@@ -19,6 +19,8 @@ LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.7:${PORTSDIR}/print/freetype2 \
 		eel.0:${PORTSDIR}/x11-toolkits/eel
 
+WITHOUT_MOZILLA=	"Doesn't build with recent Mozilla"
+
 .if !defined(WITHOUT_MOZILLA)
 MOZILLA=	mozilla-embedded
 BUILD_DEPENDS=	${X11BASE}/include/mozilla/gtkmozembed.h:${PORTSDIR}/www/mozilla-headers \
