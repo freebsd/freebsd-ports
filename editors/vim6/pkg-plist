@@ -77,6 +77,7 @@ share/vim/syntax/atlas.vim
 share/vim/syntax/awk.vim
 share/vim/syntax/bib.vim
 share/vim/syntax/c.vim
+share/vim/syntax/clean.vim
 share/vim/syntax/cobol.vim
 share/vim/syntax/colortest.vim
 share/vim/syntax/cpp.vim
