@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/:apache Mail/:cpan
@@ -87,6 +88,9 @@ post-build:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/spamc
 	@${INSTALL_SCRIPT} ${WRKDIR}/sa-spamd.sh ${PREFIX}/etc/rc.d/sa-spamd.sh
+	@[ -f ${PREFIX}/etc/mail/spamassassin/init.pre ] || \
+		${CP} ${PREFIX}/etc/mail/spamassassin/init.pre.sample \
+			${PREFIX}/etc/mail/spamassassin/init.pre
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/sql ${DOCSDIR}/contrib ${DOCSDIR}/ldap
 	@${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
