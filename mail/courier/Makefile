@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	courier
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Courier SMTP IMAP POP3 HTTP mail server suite
 
+FORBIDDEN=	http://vuxml.freebsd.org/98bd69c3-834b-11d8-a41f-0020ed76ef5a.html
+
 CONFLICTS=	exim-4.* courier-imap-2.* maildrop-1.* \
 		postfix-1.* postfix-2.* \
 		qmail-1.* qmail-*-1.* \
