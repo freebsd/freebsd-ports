@@ -37,7 +37,7 @@ LIB_DEPENDS+=	iconv.2:${PORTSDIR}/converters/iconv
 
 .if defined(WITH_NAS)
 HAVE_NAS=	yes
-LIB_DEPENDS=	audio.1:${PORTSDIR}/audio/nas
+LIB_DEPENDS=	audio.2:${PORTSDIR}/audio/nas
 MAKE_ENV+=	HAVE_NAS=${HAVE_NAS}
 .endif
 
