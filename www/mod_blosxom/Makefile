@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mod-blosxom
 
-MAINTAINER=	ychsiao@ychsiao.idv.tw
+MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Apache module to build the extremely lightweight Weblog environment
 
 USE_APACHE=	yes

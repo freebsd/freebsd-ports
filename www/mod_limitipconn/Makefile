@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dominia.org/djao/limit/
 
-MAINTAINER=	ychsiao@ychsiao.idv.tw
+MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Limit the number of simultaneous connections from a single client IP address
 
 PLIST_FILES=	libexec/apache/mod_limitipconn.so
