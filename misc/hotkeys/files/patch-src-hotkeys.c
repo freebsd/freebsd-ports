@@ -1,5 +1,14 @@
 --- src/hotkeys.c.orig	Tue Dec  3 14:26:32 2002
-+++ src/hotkeys.c	Sun May 11 22:56:06 2003
++++ src/hotkeys.c	Wed Jun 11 23:54:54 2003
+@@ -54,7 +54,7 @@
+ #include <fcntl.h>
+ #include <sys/ioctl.h>
+ #if defined (__FreeBSD__)
+-#include <machine/soundcard.h>
++#include <sys/soundcard.h>
+ #else
+ #       if defined (__NetBSD__) || defined (__OpenBSD__)
+ #       include <soundcard.h>          /* OSS emulation */
 @@ -66,9 +66,9 @@
  #endif                          /* __FreeBSD__ */
  

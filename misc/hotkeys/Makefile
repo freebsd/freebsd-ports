@@ -1,4 +1,4 @@
-# New ports collection makefile for:	xquote
+# New ports collection makefile for:	hotkeys
 # Date created:				May 20th, 2003
 # Whom:					Andy Pavlo <amp0928@rit.edu>
 #
@@ -11,7 +11,7 @@ MASTER_SITES=	http://ypwong.org/hotkeys/${PORTVERSION}/	\
 		${MASTER_SITE_XCONTRIB}
 DISTNAME=	hotkeys_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	amp0928@rit.edu
 COMMENT=	Allows usage of special keys on internet/multimedia keyboards
 
 LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd \
