@@ -3,12 +3,13 @@
 # Date created:        30 January 1998
 # Whom:                Sean Cole <scole@aracnet.com>
 #
-# $Id: Makefile,v 1.8 1998/11/21 07:27:39 steve Exp $
+# $Id: Makefile,v 1.9 1999/01/26 02:56:27 steve Exp $
 #
 
 DISTNAME=	pppload-1.0
 CATEGORIES=	net sysutils
-MASTER_SITES=	http://sunsite.unc.edu/pub/Linux/system/network/serial/ppp/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=		system/network/serial/ppp
 
 MAINTAINER=	ports@FreeBSD.ORG
 
