@@ -1,0 +1,11 @@
+--- admin/acinclude.m4.in.orig	Tue Sep 11 01:23:25 2001
++++ admin/acinclude.m4.in	Sat Aug 30 04:07:57 2003
+@@ -2259,7 +2259,7 @@
+        CXXFLAGS="$CXXFLAGS"
+ 
+        if test true || test "$kde_use_debug_code" = "yes"; then
+-	 CXXFLAGS="$CXXFLAGS -Wall -pedantic -W -Wpointer-arith -Wmissing-prototypes -Wwrite-strings"
++	 CXXFLAGS="$CXXFLAGS"
+ 
+          KDE_CHECK_COMPILER_FLAG(Wno-long-long,
+ 	 [
