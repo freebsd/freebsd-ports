@@ -1,67 +1,6 @@
---- configure.orig	Sat Apr 10 21:32:10 1999
-+++ configure	Sat Apr 10 21:32:13 1999
-@@ -521,7 +521,7 @@
- # sure it supports prototypes, void, and enums properly (can't trust
- # __STDC__).
- 
--CFLAGS=$OPT
-+CFLAGS=$CFLAGS
- # Extract the first word of "gcc", so it can be a program name with args.
- set dummy gcc; ac_word=$2
- echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
-@@ -700,51 +700,6 @@
-   fi
- fi
-   
--# See how high an optimization level (up to -O6) the compiler will 
--# let us go.  This is skipped if $opt_level is already set (eg.
--# by the NeXT-detector code above) because the NeXT cc dies, but 
--# doesn't return an error code if run with an illegal -O option!
--
--if test -z "$opt_level" ; then
--  echo $ac_n "checking highest available optimization level""... $ac_c" 1>&6
--  opt_level=""
--  if eval "test \"`echo '$''{'mpeg_cv_opt_level'+set}'`\" = set"; then
--  echo $ac_n "(cached) $ac_c" 1>&6
--else
--  
--  for opt in "-O" "-O2" "-O3" "-O4" "-O5" "-O6"; do
--    CFLAGS="$OPT$opt"
--    cat > conftest.$ac_ext <<EOF
--#line 719 "configure"
--#include "confdefs.h"
--
--int main() { return 0; }
--int t() {
--
--; return 0; }
--EOF
--if eval $ac_compile; then
--  rm -rf conftest*
--  mpeg_cv_opt_level=$opt
--fi
--rm -f conftest*
--
--  done
--  
--fi
--
--  opt_level=$mpeg_cv_opt_level
--  if  test -z $opt_level ; then
--    { echo "configure: error: your compiler is broken" 1>&2; exit 1; }
--  fi
--
--  echo "$ac_t""$opt_level" 1>&6
--fi
--OPT="$OPT$opt_level"
--
--
--CFLAGS="$OPT $DEFS"      # this is the final, real assigment to CFLAGS!
--
- # Extract the first word of "ranlib", so it can be a program name with args.
- set dummy ranlib; ac_word=$2
- echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
-@@ -817,6 +772,7 @@
+--- configure.orig	Mon Aug  9 09:36:05 1999
++++ configure	Tue Aug 31 23:11:56 1999
+@@ -1101,6 +1101,7 @@
  if test $dither = yes; then
    libsrc='$(DECODER_SRC) $(DITHER_SRC)'
    libobj='$(DECODER_SRC:.c=.o) $(DITHER_SRC:.c=.o)'
@@ -69,7 +8,7 @@
    cat >> confdefs.h <<\EOF
  #define ENABLE_DITHER 1
  EOF
-@@ -825,6 +781,7 @@
+@@ -1109,6 +1110,7 @@
  else
    libsrc='$(DECODER_SRC)'
    libobj='$(DECODER_SRC:.c=.o)'
@@ -77,11 +16,11 @@
    cat >> confdefs.h <<\EOF
  #define ENABLE_DITHER 0
  EOF
-@@ -1459,6 +1416,7 @@
+@@ -1818,6 +1820,7 @@
  s%@AR@%$AR%g
  s%@libsrc@%$libsrc%g
  s%@libobj@%$libobj%g
 +s%@shlibobj@%$shlibobj%g
- s%@jrevdct@%$jrevdct%g
- s%@extras@%$extras%g
- /@Makefile_extras@/r $Makefile_extras
+ s%@CPP@%$CPP%g
+ 
+ CEOF
