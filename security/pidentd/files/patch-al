@@ -1,6 +1,6 @@
---- /dev/null	Wed Jul 14 15:27:00 1999
-+++ src/freebsd-sysctl.c	Thu Jul  8 15:52:57 1999
-@@ -0,0 +1,32 @@
+--- /dev/null	Thu Feb 10 20:03:15 2000
++++ src/freebsd-sysctl.c	Thu Feb 10 20:03:40 2000
+@@ -0,0 +1,98 @@
 +#include <sys/param.h>
 +#include <sys/types.h>
 +#include <sys/socket.h>
@@ -15,6 +15,71 @@
 +	return 0;
 +}
 +
++#ifdef INET6
++int k_getuid(struct sockaddr *faddr, int fport, struct sockaddr *laddr,
++	     int lport, int *uid) {
++	struct sockaddr_in sin[2];
++	struct sockaddr_in6 sin6[2];
++	struct ucred uc;
++	size_t oldlen = sizeof(uc);
++	struct sockaddr *sa;
++	int salen;
++	char *ctlname;
++
++	if (faddr->sa_family != laddr->sa_family)
++		return -1;
++	if (faddr->sa_family == AF_INET) {
++		sin[0].sin_family = sin[1].sin_family = AF_INET;
++		sin[0].sin_len = sin[1].sin_len = sizeof(struct sockaddr_in);
++		memcpy(&sin[0].sin_addr,
++		       &((struct sockaddr_in *)laddr)->sin_addr,
++		       sizeof(struct in_addr));
++		memcpy(&sin[1].sin_addr,
++		       &((struct sockaddr_in *)faddr)->sin_addr,
++		       sizeof(struct in_addr));
++		sin[0].sin_port = (u_int16_t)lport;
++		sin[1].sin_port = (u_int16_t)fport;
++		sa = (struct sockaddr *)sin;
++		salen = sizeof(sin);
++		ctlname = "net.inet.tcp.getcred";
++	} else if (IN6_IS_ADDR_V4MAPPED(&((struct sockaddr_in6 *)faddr)->sin6_addr)) {
++		sin[0].sin_family = sin[1].sin_family = AF_INET;
++		sin[0].sin_len = sin[1].sin_len = sizeof(struct sockaddr_in);
++		memcpy(&sin[0].sin_addr,
++		       &((struct sockaddr_in6 *)laddr)->sin6_addr.s6_addr[12],
++		       sizeof(struct in_addr));
++		memcpy(&sin[1].sin_addr,
++		       &((struct sockaddr_in6 *)faddr)->sin6_addr.s6_addr[12],
++		       sizeof(struct in_addr));
++		sin[0].sin_port = (u_int16_t)lport;
++		sin[1].sin_port = (u_int16_t)fport;
++		sa = (struct sockaddr *)sin;
++		salen = sizeof(sin);
++		ctlname = "net.inet.tcp.getcred";
++	} else {
++		sin6[0].sin6_family = sin6[1].sin6_family = AF_INET6;
++		sin6[0].sin6_len = sin6[1].sin6_len
++				 = sizeof(struct sockaddr_in6);
++		memcpy(&sin6[0].sin6_addr,
++		       &((struct sockaddr_in6 *)laddr)->sin6_addr,
++		       sizeof(struct in6_addr));
++		memcpy(&sin6[1].sin6_addr,
++		       &((struct sockaddr_in6 *)faddr)->sin6_addr,
++		       sizeof(struct in6_addr));
++		sin6[0].sin6_port = (u_int16_t)lport;
++		sin6[1].sin6_port = (u_int16_t)fport;
++		sa = (struct sockaddr *)sin6;
++		salen = sizeof(sin6);
++		ctlname = "net.inet6.tcp6.getcred";
++	}
++
++	if (sysctlbyname(ctlname, &uc, &oldlen, sa, salen))
++		return -1;
++
++	*uid = uc.cr_uid;
++	return 0;
++}	
++#else
 +int k_getuid(struct in_addr *faddr, int fport, struct in_addr *laddr,
 +	     int lport, int *uid) {
 +	struct sockaddr_in sin[2];
@@ -33,3 +98,4 @@
 +	*uid = uc.cr_uid;
 +	return 0;
 +}	
++#endif
