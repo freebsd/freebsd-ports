@@ -1,0 +1,177 @@
+*** wmmon.c.orig	Sun May  4 21:15:27 2003
+--- wmmon.c	Sun May  4 21:16:48 2003
+***************
+*** 93,99 ****
+--- 93,104 ----
+  #include <limits.h>
+  #include <osreldate.h>
+  #include <sys/conf.h>
++ #if __FreeBSD_version < 500101
+  #include <sys/dkstat.h>
++ #endif
++ #if __FreeBSD_version >= 500106
++ #include <sys/resource.h>
++ #endif
+  #if __FreeBSD_version >= 300000
+  #include <devstat.h>
+  #endif
+***************
+*** 190,196 ****
+  
+  void wmmon_routine(int, char **);
+  
+! void main(int argc, char *argv[]) {
+  
+  	int		i;
+  	
+--- 195,201 ----
+  
+  void wmmon_routine(int, char **);
+  
+! int main(int argc, char *argv[]) {
+  
+  	int		i;
+  	
+***************
+*** 230,236 ****
+--- 235,245 ----
+  		}
+  	}
+  
++ #if __FreeBSD_version >= 500106
++ 	if( devstat_checkversion(NULL) < 0 )
++ #else
+  	if( checkversion() < 0 )
++ #endif
+  	{
+  		fprintf( stderr, devstat_errbuf );
+  		exit(1);
+***************
+*** 338,345 ****
+  				if( nlp->n_type == 0 )
+  					fprintf (stderr, "kvm_nlist: Symbol '%s' not found\n", nlp->n_name);
+  			}
+! 		
+! #if __FreeBSD_version >= 300000
+  			ndrives = getnumdevs();
+  #else
+  			if (nl[0].n_type != 0) {
+--- 347,356 ----
+  				if( nlp->n_type == 0 )
+  					fprintf (stderr, "kvm_nlist: Symbol '%s' not found\n", nlp->n_name);
+  			}
+! 
+! #if __FreeBSD_version >= 500106
+! 			ndrives = devstat_getnumdevs(NULL);
+! #elif __FreeBSD_version >= 300000
+  			ndrives = getnumdevs();
+  #else
+  			if (nl[0].n_type != 0) {
+***************
+*** 936,942 ****
+--- 947,957 ----
+  		static int                initted = 0;
+  		static struct statinfo    last;
+  		static struct statinfo    cur;
++ #if __FreeBSD_version >= 500106
++ 		int			  ndevs = devstat_getnumdevs(NULL);
++ #else
+  		int                       ndevs = getnumdevs();
++ #endif
+  		int                       gotdevs = 0;
+  		long                      generation;
+  		int                       num_devices_specified = 0;
+***************
+*** 986,995 ****
+--- 1001,1018 ----
+  			memcpy( &last, &cur, sizeof(cur) );
+  			cur.dinfo = tmp;
+  
++ #if __FreeBSD_version >= 500106
++ 			last.snap_time = cur.snap_time;
++ #else
+  			last.busy_time = cur.busy_time;
++ #endif
+  		}
+  
++ #if __FreeBSD_version >= 500106
++ 		if( !gotdevs && ( devstat_getdevs( NULL, &cur ) >= 0 ) )
++ #else
+  		if( !gotdevs && ( getdevs( &cur ) >= 0 ) )
++ #endif
+  			gotdevs = 1;
+  
+  		if( gotdevs )
+***************
+*** 999,1005 ****
+--- 1022,1032 ----
+  
+  			if( !initted )
+  			{
++ #if __FreeBSD_version >= 500106
++ 				devstat_selectdevs( &dev_select, &num_selected, &num_selections,
++ #else
+  				selectdevs( &dev_select, &num_selected, &num_selections,
++ #endif
+  					    &select_generation, generation, cur.dinfo->devices,
+  					    ndevs, matches, num_matches, specified_devices,
+  					    num_devices_specified, DS_SELECT_ONLY, maxshowdevs,
+***************
+*** 1010,1019 ****
+--- 1037,1054 ----
+  				struct devinfo *tmpinfo;
+  				long tmp;
+  
++ #if __FreeBSD_version >= 500106
++ 				switch( devstat_getdevs( NULL, &cur ) )
++ #else
+  				switch( getdevs( &cur ) )
++ #endif
+  				{
+  					case 1:
++ #if __FreeBSD_version >= 500106
++ 						devstat_selectdevs( &dev_select, &num_selected,
++ #else
+  						selectdevs( &dev_select, &num_selected,
++ #endif
+  							    &num_selections, &select_generation,
+  							    generation, cur.dinfo->devices,
+  							    ndevs, matches, num_matches,
+***************
+*** 1041,1053 ****
+--- 1076,1096 ----
+  						memcpy( &last, &cur, sizeof(cur) );
+  						cur.dinfo = tmpinfo;
+  
++ #if __FreeBSD_version >= 500106
++ 						last.snap_time = cur.snap_time;
++ #else
+  						last.busy_time = cur.busy_time;
++ #endif
+  						break;
+  					default:
+  						break;
+  				}
+  
++ #if __FreeBSD_version >= 500106
++ 				devstat_selectdevs( &dev_select, &num_selected, &num_selections,
++ #else
+  				selectdevs( &dev_select, &num_selected, &num_selections,
++ #endif
+  					    &select_generation, generation, cur.dinfo->devices,
+  					    ndevs, matches, num_matches, specified_devices,
+  					    num_devices_specified, DS_SELECT_ONLY, maxshowdevs,
+***************
+*** 1068,1074 ****
+--- 1111,1121 ----
+  					long double busy_seconds;
+  					long double blocks_per_second, ms_per_transaction;
+  
++ #if __FreeBSD_version >= 500106
++ 					busy_seconds = cur.snap_time - last.snap_time;
++ #else
+  					busy_seconds = compute_etime( cur.busy_time, last.busy_time );
++ #endif
+  
+  					for( dn = 0; dn < ndevs; dn++ )
+  					{
