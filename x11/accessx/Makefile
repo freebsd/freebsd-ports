@@ -17,10 +17,12 @@ MAINTAINER=	stephen@math.missouri.edu
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/accessx
+USE_REINPLACE=	yes
+USE_X_PREFIX=	yes
 
 pre-build:
-	${PERL} -pi.orig -e "s@g\+\+@${CXX} ${CXXFLAGS} -I${X11BASE}/include@g" ${WRKSRC}/Makefile
-	${PERL} -pi.orig -e "s@wish -f@wish8.2 -f@g" ${WRKSRC}/accessx
+	${REINPLACE_CMD} -e "s@g\+\+@${CXX} ${CXXFLAGS} -I${X11BASE}/include@g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s@wish -f@wish8.2 -f@g" ${WRKSRC}/accessx
 
 post-install:
 	strip ${PREFIX}/bin/ax
