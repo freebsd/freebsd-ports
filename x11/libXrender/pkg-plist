@@ -3,8 +3,4 @@ lib/libXrender.a
 lib/libXrender.la
 lib/libXrender.so
 lib/libXrender.so.1
-lib/pkgconfig/xrender.pc
-@exec mkdir -p %D/lib/pkgconfig
-@exec mkdir -p %D/include/X11/extensions
-@unexec rmdir %D/include/X11/extensions 2>/dev/null || true
-@unexec rmdir %D/share/lib/pkgconfig 2>/dev/null || true
+libdata/pkgconfig/xrender.pc
