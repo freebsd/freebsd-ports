@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.49 1999/08/02 03:32:42 cpiazza Exp $
+# $FreeBSD$
 #
 
     SUBDIR += atp

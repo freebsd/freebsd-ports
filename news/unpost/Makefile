@@ -3,7 +3,7 @@
 # Date created:		14 october 1997
 # Whom:			volf@oasis.IAEhv.nl
 #
-# $Id: Makefile,v 1.2 1999/05/03 02:12:24 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	unpost-2.3.4

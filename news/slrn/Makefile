@@ -3,7 +3,7 @@
 # Date created:        28 March 1997
 # Whom:                Carey Jones <mcj@acquiesce.org>
 #
-# $Id: Makefile,v 1.15 1999/07/17 04:03:20 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	slrn-0.9.5.7

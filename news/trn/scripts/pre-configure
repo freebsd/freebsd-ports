@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Trn port to FreeBSD 3.0
-#	$Id: pre-configure,v 1.1 1998/06/04 16:12:39 smace Exp $
+# $FreeBSD$
 
 PortsDir=$PORTSDIR
   CurDir=$CURDIR

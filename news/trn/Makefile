@@ -3,7 +3,7 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.13 1997/04/27 00:24:32 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	trn-3.6

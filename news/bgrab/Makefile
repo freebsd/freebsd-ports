@@ -3,7 +3,7 @@
 # Date created:		27 July 1999
 # Whom:			Kelly Yancey <kbyanc@posi.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/02 03:32:21 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bgrab

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: configure,v 1.1 1997/11/13 23:14:58 jraynard Exp $
+# $FreeBSD$
 #
 
 TMPFILE=${TMPDIR:-/tmp}/tmp.slurp.sed.$$

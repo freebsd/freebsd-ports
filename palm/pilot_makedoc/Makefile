@@ -3,7 +3,7 @@
 # Date created:				May 10th 1997
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1998/01/01 17:29:11 asami Exp $
+# $FreeBSD$
 #
 
 PKGNAME=	pilot_makedoc-0.7

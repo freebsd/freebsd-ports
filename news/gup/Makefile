@@ -3,7 +3,7 @@
 # Date created:		22 November 1998
 # Whom:			Denis Shaposhnikov <dsh@vlink.ru>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/09 00:35:32 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gup-0.4

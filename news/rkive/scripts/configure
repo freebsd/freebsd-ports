@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id$
+# $FreeBSD$
 #
 if [ -d /var/spool/news ] && [ ! -d /var/news ]
 then

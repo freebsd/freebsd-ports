@@ -3,7 +3,7 @@
 # Date created:         02 Dez 1997
 # Whom:                 dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.4 1999/04/23 11:36:51 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	fidogate-4.2.9

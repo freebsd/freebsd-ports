@@ -3,7 +3,7 @@
 # Date created:        15 March 1999
 # Whom:                Kris Kennaway <kris@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1999/04/20 05:45:52 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dejasearch163

@@ -3,7 +3,7 @@
 # Date created:		28 Nov 1997
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.3 1999/01/18 02:37:39 steve Exp $
+# $FreeBSD$
 
 DISTNAME=	PGPMoose
 PKGNAME=	pgpmoose-1.19

@@ -3,7 +3,7 @@
 # Date created:		19 November 1998
 # Whom:			Tom Hukins <tom@FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1999/07/05 18:59:56 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	leafnode+-2.6

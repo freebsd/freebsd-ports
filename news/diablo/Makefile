@@ -3,7 +3,7 @@
 # Date created:					June 2nd 1997
 # Whom:						jfitz
 #
-# $Id: Makefile,v 1.6 1999/08/22 18:59:40 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	diablo-1.15-rel

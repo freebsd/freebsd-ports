@@ -3,7 +3,7 @@
 # Date created:         29 Nov 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	xmitBin-1.9

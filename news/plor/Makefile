@@ -3,7 +3,7 @@
 # Date Created:		30 Dec 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.3 1997/10/01 21:59:38 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	plor-0.3.1

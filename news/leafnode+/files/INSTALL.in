@@ -1,5 +1,5 @@
 #!/bin/sh
-# $Id$
+# $FreeBSD$
 LIBDIR=@LIBDIR@
 SPOOLDIR=@SPOOLDIR@
 if [ x$2 = xPOST-INSTALL -a x$LEAFNODE_SETUP_WRKDIRS != x ]; then

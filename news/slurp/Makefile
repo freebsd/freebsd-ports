@@ -3,7 +3,7 @@
 # Date created:		30 Jun 1996
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.4 1997/11/15 10:55:21 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	slurp-1.10

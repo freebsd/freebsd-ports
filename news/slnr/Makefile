@@ -3,7 +3,7 @@
 # Date created:		21 July 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.4 1997/04/01 04:35:34 max Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	slnr-2.3.0
