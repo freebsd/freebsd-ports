@@ -1,5 +1,5 @@
 --- agent/mibgroup/host/hr_swrun.c.orig	Tue Oct  3 13:36:38 2000
-+++ agent/mibgroup/host/hr_swrun.c	Thu Feb  1 18:14:05 2001
++++ agent/mibgroup/host/hr_swrun.c	Fri Feb  2 11:27:39 2001
 @@ -216,15 +216,15 @@
          if ( pid == -1 )
  	    break;
@@ -223,7 +223,7 @@
  #endif
  	    return (u_char *)&long_return;
  
-@@ -603,16 +635,22 @@
+@@ -603,16 +635,24 @@
  				 */
  #elif defined(solaris2)
  #if _SLASH_PROC_METHOD_
@@ -237,9 +237,11 @@
  #endif
  #elif HAVE_KVM_GETPROCS
 +#if defined(freebsd5) && __FreeBSD_version >= 500014
++	    /* XXX: Accessing ki_paddr causes sig10 ...
 +	    long_return = proc_table[LowProcIndex].ki_paddr->p_uticks +
 +	    		  proc_table[LowProcIndex].ki_paddr->p_sticks +
-+	    		  proc_table[LowProcIndex].ki_paddr->p_iticks;
++	    		  proc_table[LowProcIndex].ki_paddr->p_iticks; */
++	    long_return = 0;
 +#else
  	    long_return = proc_table[LowProcIndex].kp_proc.p_uticks +
  	    		  proc_table[LowProcIndex].kp_proc.p_sticks +
@@ -248,7 +250,7 @@
  #elif defined(linux)
  	    sprintf( string, "/proc/%d/stat", pid );
  	    if ((fp = fopen( string, "r")) == NULL) return NULL;
-@@ -645,13 +683,18 @@
+@@ -645,13 +685,20 @@
  	    long_return = (proc_buf.pst_rssize << PGSHIFT)/1024;
  #elif defined(solaris2)
  #if _SLASH_PROC_METHOD_
@@ -262,14 +264,16 @@
 +#if defined(freebsd3)
  	    long_return = proc_table[LowProcIndex].kp_eproc.e_vm.vm_map.size/1024;
 +#elif defined(freebsd5) && __FreeBSD_version >= 500014
++	    /* XXX
 +	    long_return = proc_table[LowProcIndex].ki_vmspace->vm_tsize +
 +			  proc_table[LowProcIndex].ki_vmspace->vm_ssize +
 +			  proc_table[LowProcIndex].ki_vmspace->vm_dsize;
-+	    long_return = long_return * (getpagesize() / 1024);
++	    long_return = long_return * (getpagesize() / 1024); */
++	    long_return = 0;
  #else
  	    long_return = proc_table[LowProcIndex].kp_eproc.e_vm.vm_tsize +
  			  proc_table[LowProcIndex].kp_eproc.e_vm.vm_ssize +
-@@ -747,6 +790,10 @@
+@@ -747,6 +794,10 @@
      }
  #elif HAVE_KVM_GETPROCS
      {
@@ -280,7 +284,7 @@
  	proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nproc);
      }
  #else
-@@ -794,8 +841,13 @@
+@@ -794,8 +845,13 @@
  #elif defined(solaris2)
  	return proc_table[current_proc_entry++];
  #elif HAVE_KVM_GETPROCS
@@ -294,7 +298,7 @@
  #else
  	if ( proc_table[current_proc_entry].p_stat != 0 )
  	    return proc_table[current_proc_entry++].p_pid;
-@@ -853,7 +905,7 @@
+@@ -853,7 +909,7 @@
  
  int count_processes (void)
  {
