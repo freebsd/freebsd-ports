@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gnarr
-PORTVERSION=	2.0
+PORTVERSION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.sacredchao.net/freednd/
-DISTNAME=	${PORTNAME}-2
+MASTER_SITES=	http://www.sacredchao.net/freednd/gnarr/
 
 MAINTAINER=	roam@FreeBSD.org
 
