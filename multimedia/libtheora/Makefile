@@ -7,7 +7,7 @@
 
 PORTNAME=	libtheora
 PORTVERSION=	1.0.a4
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.xiph.org/releases/theora/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a4/alpha4/}
 
