@@ -63,16 +63,14 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/documentation/wine.man ${PREFIX}/man/man1/wine.1
 	${INSTALL_MAN} ${WRKSRC}/documentation/wine.conf.man ${PREFIX}/man/man5/wine.conf.5
 .if !defined(NOPORTDOCS)
-	-@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+	-@${MKDIR} ${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS LICENSE
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .for i in wcmd winedbg
-	${INSTALL_DATA} ${WRKSRC}/programs/${i}/README \
-		${PREFIX}/share/doc/${PORTNAME}/README.${i}
+	${INSTALL_DATA} ${WRKSRC}/programs/${i}/README ${DOCSDIR}/README.${i}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README \
-		${PREFIX}/share/doc/${PORTNAME}/README.winedump
+	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl ${PREFIX}/lib/wine
 	${INSTALL_DATA} ${WRKSRC}/winedefault.reg ${PREFIX}/lib/wine
