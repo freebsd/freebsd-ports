@@ -2825,6 +2825,16 @@ do-configure:
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 		  ${SCRIPTDIR}/configure; \
 	fi
+.if defined(GNU_CONFIGURE)
+	@CONFIG_GUESS_DIRS=$$(${FIND} ${WRKDIR} -name config.guess -o -name config.sub \
+		| ${XARGS} -n 1 /usr/bin/dirname); \
+	for _D in $${CONFIG_GUESS_DIRS}; do \
+		${CP} -f ${TEMPLATES}/config.guess $${_D}/config.guess; \
+		${CHMOD} a+rx $${_D}/config.guess; \
+	    ${CP} -f ${TEMPLATES}/config.sub $${_D}/config.sub; \
+		${CHMOD} a+rx $${_D}/config.sub; \
+	done
+.endif
 .if defined(HAS_CONFIGURE)
 	@(cd ${CONFIGURE_WRKSRC} && \
 		if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
