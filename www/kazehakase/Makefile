@@ -7,7 +7,7 @@
 
 PORTNAME=	kazehakase
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/12370/
@@ -85,7 +85,7 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Enable Migemo (Japanese incremental search by defining WITH_MIGEMO"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Enable Thumbnail support by definining WITH_THUMBNAIL"
+	@${ECHO_MSG} "Enable Thumbnail support by defining WITH_THUMBNAIL"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Disable Estraier, A full-text search engine for searching your history"
 	@${ECHO_MSG} " by defining WITHOUT_ESTRAIER"

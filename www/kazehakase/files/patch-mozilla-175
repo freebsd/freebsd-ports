@@ -1,0 +1,135 @@
+--- src/mozilla/kz-mozfilepicker.cpp.orig	Sun Dec 19 15:54:38 2004
++++ src/mozilla/kz-mozfilepicker.cpp	Sun Dec 19 16:01:06 2004
+@@ -100,14 +100,14 @@
+ ////////////////////////////////////////////////////////////////////////////////
+ 
+ /* void init (in nsIDOMWindowInternal parent, in wstring title, in short mode); */
+-#if MOZILLA_SNAPSHOT > 15
++/* #if MOZILLA_SNAPSHOT > 15 */
+ NS_IMETHODIMP KzFilePicker::Init(nsIDOMWindow *aParent,
+ 				 const nsAString &aTitle,
+ 				 PRInt16 aMode)
+-#else
++/* #else
+ NS_IMETHODIMP KzFilePicker::Init(nsIDOMWindowInternal *aParent, 
+ 				 const PRUnichar *aTitle, PRInt16 aMode)
+-#endif
++#endif */
+ {
+ 	mParent = do_QueryInterface(aParent);
+ 	mParentWidget = GetGtkWindowForDOMWindow(mParent);
+@@ -127,13 +127,13 @@
+ }
+ 
+ /* void appendFilter (in wstring title, in wstring filter); */
+-#if MOZILLA_SNAPSHOT > 15
++/* #if MOZILLA_SNAPSHOT > 15 */
+ NS_IMETHODIMP KzFilePicker::AppendFilter(const nsAString &aTitle,
+ 					 const nsAString &aFilter)
+-#else
++/* #else
+ NS_IMETHODIMP KzFilePicker::AppendFilter(const PRUnichar *aTitle,
+ 					 const PRUnichar *aFilter)
+-#endif
++#endif */
+ {
+ 	//GtkFileSelection is crippled, so we can't provide a short-list
+ 	//of filters to choose from. We provide minimal functionality
+@@ -153,35 +153,35 @@
+ }
+ 
+ /* attribute wstring defaultString; */
+-#if MOZILLA_SNAPSHOT > 15
++/* #if MOZILLA_SNAPSHOT > 15 */
+ NS_IMETHODIMP KzFilePicker::GetDefaultString(nsAString &aDefaultString)
+-#else
++/* #else
+ NS_IMETHODIMP KzFilePicker::GetDefaultString(PRUnichar * *aDefaultString)
+-#endif
++#endif */
+ {
+ 	gsize bytesWritten;
+ 	gchar *utf8DefaultString = g_filename_to_utf8(mDefaultString.get(), -1,
+ 						      NULL,
+ 						      &bytesWritten, NULL);
+-#if MOZILLA_SNAPSHOT > 15
++/* #if MOZILLA_SNAPSHOT > 15 */
+ 	aDefaultString.Assign(NS_ConvertUTF8toUCS2(utf8DefaultString));
+-#else
++/* #else
+ 	*aDefaultString = ToNewUnicode(NS_ConvertUTF8toUCS2(utf8DefaultString));
+-#endif
++#endif */
+ 	g_free(utf8DefaultString);
+ 	return NS_OK;
+ }
+-#if MOZILLA_SNAPSHOT > 15
++/* #if MOZILLA_SNAPSHOT > 15 */
+ NS_IMETHODIMP KzFilePicker::SetDefaultString(const nsAString &aDefaultString)
+-#else
++/* #else
+ NS_IMETHODIMP KzFilePicker::SetDefaultString(const PRUnichar *aDefaultString)
+-#endif
++#endif */
+ {
+-#if MOZILLA_SNAPSHOT > 15
++/* #if MOZILLA_SNAPSHOT > 15 */
+ 	if (aDefaultString.Length())
+-#else
++/* #else
+ 	if (aDefaultString)
+-#endif
++#endif */
+ 	{
+ 		gsize bytesWritten;
+ 		gchar *localeDefaultString =
+@@ -199,19 +199,19 @@
+ /* attribute wstring defaultExtension; */
+ // Again, due to the crippled file selector, we can't really
+ // do anything here.
+-#if MOZILLA_SNAPSHOT > 15
++/* #if MOZILLA_SNAPSHOT > 15 */
+ NS_IMETHODIMP KzFilePicker::GetDefaultExtension(nsAString &aDefaultExtension)
+-#else
++/* #else
+ NS_IMETHODIMP KzFilePicker::GetDefaultExtension(PRUnichar * *aDefaultExtension)
+-#endif
++#endif */
+ {
+     return NS_ERROR_NOT_IMPLEMENTED;
+ }
+-#if MOZILLA_SNAPSHOT > 15
++/* #if MOZILLA_SNAPSHOT > 15 */
+ NS_IMETHODIMP KzFilePicker::SetDefaultExtension(const nsAString &aDefaultExtension)
+-#else
++/* #else
+ NS_IMETHODIMP KzFilePicker::SetDefaultExtension(const PRUnichar *aDefaultExtension)
+-#endif
++#endif */
+ {
+     return NS_OK;
+ }
+--- src/mozilla/kz-mozlauncher.cpp.orig	Sun Dec 19 15:52:05 2004
++++ src/mozilla/kz-mozlauncher.cpp	Sun Dec 19 15:54:12 2004
+@@ -102,18 +102,18 @@
+ 
+ 	const nsAString &title = NS_ConvertUTF8toUCS2(_("Select the destination filename"));
+ 
+-#if MOZILLA_SNAPSHOT > 15
++/* #if MOZILLA_SNAPSHOT > 15 */
+ 	filePicker->Init(windowInternal,
+ 			 title, 
+ 			 nsIFilePicker::modeSave);
+ 	nsAutoString defaultFile(aDefaultFile);
+ 	filePicker->SetDefaultString(defaultFile);
+-#else
++/* #else
+ 	filePicker->Init(windowInternal,
+ 			 PromiseFlatString(title).get(), 
+ 			 nsIFilePicker::modeSave);
+ 	filePicker->SetDefaultString(aDefaultFile);
+-#endif
++#endif */
+ 	filePicker->SetDisplayDirectory(saveDir);
+ 
+ 	filePicker->Show(&okToSave);
