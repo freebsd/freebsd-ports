@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4-2.0
+bin/epic-EPIC4-2.2
 libexec/wserv4
 share/epic/help/1_General/1_General
 share/epic/help/1_General/away
@@ -963,9 +963,12 @@ share/epic/script/utime
 share/epic/script/vi-binds
 share/epic/script/webster
 share/epic/script/window
-%%PORTDOCS%%%%DOCSDIR%%/BUG_FORM
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/VOTES
 %%PORTDOCS%%%%DOCSDIR%%/UPDATES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/KNOWNBUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/BUG_FORM
 @dirrm share/epic/script
 @dirrm share/epic/help/8_Scripts
 @dirrm share/epic/help/7_Docs
