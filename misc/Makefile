@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.152 1998/07/28 23:44:23 obrien Exp $
+# $Id: Makefile,v 1.153 1998/08/04 17:04:49 mph Exp $
 #
 
     SUBDIR += acron
@@ -6,8 +6,6 @@
     SUBDIR += amanda24
     SUBDIR += astrolog
     SUBDIR += bb
-    SUBDIR += cal
-    SUBDIR += cbb
     SUBDIR += chord
     SUBDIR += colorls
     SUBDIR += ctk
@@ -26,14 +24,11 @@
     SUBDIR += gnuls
     SUBDIR += gone
     SUBDIR += gyvescm
-    SUBDIR += ical
     SUBDIR += iselect
     SUBDIR += jargon
     SUBDIR += jive
     SUBDIR += kdeutils
-    SUBDIR += korganizer
     SUBDIR += kp
-    SUBDIR += kproject
     SUBDIR += kwatch
     SUBDIR += less
     SUBDIR += lile
@@ -44,12 +39,10 @@
     SUBDIR += most
     SUBDIR += mshell
     SUBDIR += nwrite
-    SUBDIR += offix-trash
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Locale-Codes
     SUBDIR += p5-Search
-    SUBDIR += plan
     SUBDIR += rpm
     SUBDIR += screen
     SUBDIR += scriptkit
@@ -57,7 +50,6 @@
     SUBDIR += sma
     SUBDIR += splitvt
     SUBDIR += team
-    SUBDIR += teapot
     SUBDIR += tkcron
     SUBDIR += tkinfo
     SUBDIR += tkman
@@ -68,20 +60,14 @@
     SUBDIR += viz
     SUBDIR += x-files
     SUBDIR += xacc
-    SUBDIR += xcalendar
     SUBDIR += xd
     SUBDIR += xdelta
     SUBDIR += xgas
-    SUBDIR += xinvest
     SUBDIR += xless
-    SUBDIR += xmaddressbook
-    SUBDIR += xmdiary
-    SUBDIR += xopps
     SUBDIR += xpns
     SUBDIR += xtar
     SUBDIR += xtimer
     SUBDIR += xquote
     SUBDIR += ytree
-    SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>
