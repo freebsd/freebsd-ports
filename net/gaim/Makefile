@@ -61,6 +61,7 @@ CONFIGURE_ARGS+=	--enable-nss=no
 CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=		PERL:="@comment "
 .else
+CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=		PERL:=""
 .endif
 
