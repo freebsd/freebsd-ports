@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.41 1999/02/07 22:35:56 dirk Exp $
+# $Id: Makefile,v 1.42 1999/02/08 17:41:30 dirk Exp $
 #
 
 DISTNAME=	mysql-3.22.16a-gamma
@@ -26,8 +26,8 @@ CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-debug \
 		--without-readline \
 		--without-bench
-CONFIGURE_ENV+=	PERL=${PERL5} \
-		PERL5=${PERL5} \
+CONFIGURE_ENV+=	PERL=${PERL} \
+		PERL5=${PERL} \
 		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		CXXFLAGS="${CFLAGS}"
 
