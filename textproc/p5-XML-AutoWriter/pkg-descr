@@ -1,0 +1,5 @@
+This module subclasses XML::ValidWriter and provides automatic
+start and end tag generation, allowing you to emit only the
+'important' tags.
+
+WWW: http://search.cpan.org/dist/XML-AutoWriter/

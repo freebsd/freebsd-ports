@@ -1,0 +1,10 @@
+%%SITE_PERL%%/XML/AutoWriter.pm
+%%SITE_PERL%%/XML/Doctype.pm
+%%SITE_PERL%%/XML/Doctype/AttDef.pm
+%%SITE_PERL%%/XML/Doctype/ElementDecl.pm
+%%SITE_PERL%%/XML/ValidWriter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/AutoWriter/.packlist
+@dirrm %%SITE_PERL%%/XML/Doctype
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/AutoWriter
+@unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
