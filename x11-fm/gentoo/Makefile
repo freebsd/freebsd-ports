@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.51
+PORTVERSION=	0.11.52
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gentoo.1
+
+OPTIONS=	NLS "Native Language Support" on \
+		FAM "File Alteration Monitor Support" off
+
+.include <bsd.port.pre.mk>
 
 MYPORTDOCS=	BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
 		README.gtkrc TODO
@@ -40,8 +45,9 @@ CONFIGURE_ARGS+=	--disable-fam
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^CFLAGS = @GENTOO_CFLAGS@|CFLAGS = @CFLAGS@|g' \
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^CFLAGS = @GENTOO_CFLAGS@|CFLAGS = @CFLAGS@|g ; \
+		 s|^mkinstalldirs =.*$$|mkinstalldirs = $$(SHELL) $$(top_srcdir)/mkinstalldirs|g'
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1
@@ -57,4 +63,4 @@ post-install:
 	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+x
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
