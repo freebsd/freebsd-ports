@@ -62,4 +62,5 @@ lib/camlp4/grammar.cmx
 lib/camlp4/plexer.cmx
 lib/camlp4/stdpp.cmx
 lib/camlp4/token.cmx
+lib/camlp4/pa_olabl.cmo
 @dirrm lib/camlp4
