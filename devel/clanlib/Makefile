@@ -7,6 +7,7 @@
 
 PORTNAME=	clanlib
 PORTVERSION=	0.4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dark.x.dtu.dk/~mbn/clanlib/download/
 DISTNAME=	ClanLib-${PORTVERSION}

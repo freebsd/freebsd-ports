@@ -1,6 +1,26 @@
 --- Makefile.in.orig	Sun Apr  9 15:17:58 2000
-+++ Makefile.in	Sun Sep 24 15:01:31 2000
-@@ -261,43 +264,43 @@
++++ Makefile.in	Wed Jan 10 00:20:32 2001
+@@ -35,7 +35,8 @@
+ 		Sources/Lua:\
+ 		Sources/Lua/tolua:\
+ 		Sources/MPEG:\
+-		Sources/GUI
++		Sources/GUI:\
++		Sources/Util
+ 
+ OBJF_GENERIC =	Libs/Intermediate/cliprect.o \
+ 		Libs/Intermediate/res_surface_generic.o \
+@@ -131,7 +132,8 @@
+ 		Libs/Intermediate/appconf.o \
+ 		Libs/Intermediate/thread_pthread.o \
+ 		Libs/Intermediate/mutex_pthread.o \
+-		Libs/Intermediate/network_delivery_socket.o
++		Libs/Intermediate/network_delivery_socket.o \
++		Libs/Intermediate/fcvt.o
+ 
+ OBJF_NETWORK_UNIX =	Libs/Intermediate/network_delivery_unix.o \
+ 	 	Libs/Intermediate/network_delivery_pipe.o \
+@@ -261,43 +263,43 @@
  	@install -d $(BIN_PREFIX)
  	@install -d $(LIB_PREFIX)
  	@for i in `find Sources/API/* -type d | grep -v CVS | sed "s/Sources\/API\///;"`; do install -d $(INC_PREFIX)/ClanLib/$$i; done
@@ -52,7 +72,7 @@
  		ln -s -f libclanPNG.so.$(D_VERSION_MINOR) $(LIB_PREFIX)/libclanPNG.so.$(D_VERSION_MAJOR); \
  		ln -s -f libclanPNG.so.$(D_VERSION_MAJOR) $(LIB_PREFIX)/libclanPNG.so; \
  	fi
-@@ -306,10 +309,10 @@
+@@ -306,10 +308,10 @@
  		install -d $(TARGET_PREFIX); \
  		all_targets_var="$(ALL_TARGETS)"; \
  		for curtarget in $$all_targets_var; do \
