@@ -1,4 +1,4 @@
-bin/%%STELLA_BIN%%
+bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/chucky_cheese.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/circuit.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/console.png
