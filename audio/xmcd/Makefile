@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	xmcd
-PORTVERSION=	3.3.1
+PORTVERSION=	3.3.2
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.3.0/src/:xmcd \
-		http://www.ibiblio.org/tkan/xmcd/:xmcd_331_patch
-DISTFILES=	xmcd-3.3.0.tar.gz:xmcd \
-		xmcd-330_331.patch:xmcd_331_patch
-EXTRACT_ONLY=	xmcd-3.3.0.tar.gz
+MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.3.2/src/
 
 MAINTAINER=	eischen@vigrid.com
 COMMENT=	Motif CD player
@@ -27,7 +23,6 @@ USE_MOTIF=	yes
 USE_IMAKE=	yes
 PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH}
 
-WRKSRC= 	${WRKDIR}/xmcd-3.3.0
 MAN1=		cda.1 xmcd.1
 MANCOMPRESSED=	no
 RMAN=		${X11BASE}/bin/rman
@@ -41,8 +36,6 @@ post-extract:
 
 pre-patch:
 	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${WRKSRC}/xmcd_d/XMcd.ad.in
-	@(cd ${WRKDIR}; ${PATCH} -p0 --quiet < ${DISTDIR}/xmcd-330_331.patch)
-	@${RM} -f ${WRKSRC}/docs_d/CHANGES.orig
 
 post-patch:
 	@${SED} -e "s;@PREFIX@;${PREFIX};g" ${WRKSRC}/xmcd_d/XMcd.ad.in \
