@@ -1,15 +1,6 @@
---- Makefile.orig	Wed Jan 23 22:23:20 2002
-+++ Makefile	Wed Jan 23 22:36:17 2002
-@@ -13,7 +13,7 @@
- ######## Covered by GPL; see the file ./Copyright for details. 
- 
- # defaults..
--CC = gcc
-+#CC = gcc
- PLATFORM = UNIX
- RMCOM = rm -f
- XOBJ = x11.o sleep.o interact.o
-@@ -26,12 +26,12 @@
+--- Makefile.orig	Thu Mar  7 16:10:46 2002
++++ Makefile	Thu Mar  7 16:10:50 2002
+@@ -22,14 +22,14 @@
  ######## Choose one of the following.   All others should be commented out.
  
  #### For Solaris 2.x uncomment the following..
@@ -22,37 +13,46 @@
 -# XLIBS = -L/usr/X11R6/lib -lX11
 -# XINCLUDEDIR = -I/usr/X11R6/include
 +XLIBS = -L%%X11BASE%%/lib -lX11
-+XINCLUDEDIR = -I/usr/X11R6/include
++XINCLUDEDIR = -I%%X11BASE%%/include
+ #### For FreeBSD uncomment the following and find GD16H or GD18H below and set to -I/usr/local/include
+-# ADDLIBS = -L/usr/local/lib
++ADDLIBS = -L%%LOCALBASE%%/lib
  
  #### For Cygwin uncomment the following..
  # PLATFORM = WIN32
-@@ -79,7 +79,7 @@
- ######## Choose ONE of the following.  All others should be commented out.
+@@ -87,11 +87,11 @@
+ # ZFLAG = -DWZ
  
- #### For pseudo-GIF uncomment the following..  (no libs required)
--ploticus: pl pltab
-+#ploticus: pl pltab
+ #### For both pseudo-GIF & PNG uncomment the following..  (you must have libpng and zlib)
+-ploticus: pl plpng 
++#ploticus: pl plpng 
+ # GD16LIBS = -lpng -lz
+ # GD16H = 
+-GD16LIBS = /home/scg/lib/libpng.a /home/scg/lib/libz.a
+-GD16H = -I/home/scg/lib
++#GD16LIBS = /home/scg/lib/libpng.a /home/scg/lib/libz.a
++#GD16H = -I/home/scg/lib
  
- #### For PNG uncomment the following.. (you must have libpng and zlib)
- # ploticus: plpng pltabpng
-@@ -105,11 +105,11 @@
+ #### For JPEG, WBMP, and PNG using your copy of GD 1.84+ uncomment the following.. 
+ #### (you must have gd 1.84+, libpng, zlib, libjpeg)
+@@ -104,11 +104,11 @@
  #### For JPEG, WBMP, and PNG & FreeType2 using your copy of GD 1.84+ uncomment the following..
  #### (you must have gd 1.84+, libpng, zlib, libjpeg, libfreetype)
  #### Before using set environment var GDFONTPATH to directory containing .ttf files
--# ploticus: plgd18 pltabgd18
+-# ploticus: plgd18 
 -# GD18LIBS = -lgd -lpng -lz -ljpeg -lfreetype
 -# GD18H = 
 -# GDFREETYPE = -DGDFREETYPE
 -# ZFLAG = -DWZ
-+ploticus: plgd18 pltabgd18
++ploticus: plgd18 
 +GD18LIBS = -lgd -lpng -lz -ljpeg -lfreetype
 +GD18H = -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/gd -I%%LOCALBASE%%/include/freetype2
 +GDFREETYPE = -DGDFREETYPE
 +ZFLAG = -DWZ
  
  #### To disable GD image support (no GIF, PNG, JPEG, etc) uncomment the following..
- # ploticus: plnogd pltabnogd
-@@ -123,11 +123,11 @@
+ # ploticus: plnogd 
+@@ -122,11 +122,11 @@
  #### To set a hard-coded directory for prefabs files, uncomment & edit the following.. 
  #### If done, users won't be required to have PLOTICUS_PREFABS environment variable defined.
  #### This option not available for win32
@@ -78,4 +78,4 @@
 +CFLAGS += -DPLOTICUS -D$(PLATFORM) -DTDH_NOREC $(ZFLAG) $(FLAGS) $(LOCALE_FLAG) \
    $(NOGDFLAG) $(NOXFLAG) $(XINCLUDEDIR) $(NORLIMFLAG) -DPREFABS_DIR=\"$(PREFABS_DIR)\"
  
- OBJ = 	proc_annotate.o proc_areadef.o proc_axis.o proc_bars.o proc_bevelrect.o proc_breakaxis.o \
+ OBJ = 	proc_annotate.o proc_areadef.o proc_axis.o proc_bars.o proc_rect.o proc_breakaxis.o \
