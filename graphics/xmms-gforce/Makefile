@@ -20,4 +20,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 
+RESTRICTED=	"Non-commercial use only"
+
 .include <bsd.port.mk>
