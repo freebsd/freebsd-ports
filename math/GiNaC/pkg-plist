@@ -46,7 +46,7 @@ info/ginac.info-4
 @exec install-info %D/info/ginac.info %D/info/dir
 lib/libginac.a
 lib/libginac.so
-lib/libginac-0.8.so.1
+lib/libginac-0.8.so.2
 share/aclocal/ginac.m4
 @dirrm share/doc/GiNaC/reference
 @dirrm share/doc/GiNaC/tutorial
