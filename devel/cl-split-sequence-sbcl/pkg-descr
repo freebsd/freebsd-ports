@@ -1,0 +1,8 @@
+split-sequence is a small library to split sequences in to a list of
+subsequences delimited by an object satisfying a test function. It is
+a member of the Common Lisp Utilities family of programs, designed by
+community consensus.
+
+WWW: http://www.cliki.net/SPLIT-SEQUENCE
+
+-- Henrik Motakef

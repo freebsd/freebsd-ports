@@ -109,6 +109,7 @@
     SUBDIR += cl-port-cmucl
     SUBDIR += cl-port-sbcl
     SUBDIR += cl-split-sequence
+    SUBDIR += cl-split-sequence-sbcl
     SUBDIR += clanlib
     SUBDIR += clig
     SUBDIR += clint
