@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	c_c++_reference
-PORTVERSION=	1.08
+PORTVERSION=	2.0.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://129.187.206.68/pub/unix/ide/KDevelop/documentation/ \
-		ftp://gd.tuwien.ac.at/hci/KDevelop/documentation/ \
-		ftp://fara.cs.uni-potsdam.de/pub/kdevelop/documentation/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	ftp://ftp.ee.fhm.edu/pub/unix/ide/KDevelop/
+DISTNAME=	c_cpp_reference-${PORTVERSION}_for_KDE_3.0
 
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	kdevelop:${PORTSDIR}/devel/kdevelop
 
-EXTRACT_ONLY=	# none
-NO_BUILD=	yes
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_KDELIBS_VER=	3
+USE_GMAKE=	yes
+CONFIGURE_TARGET=
+CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=	yes
 
-do-install:
-	${TAR} -xzf ${DISTDIR}/c_c++_reference.tar.gz -C ${PREFIX}
-	${CHOWN} -R 0:0 ${PREFIX}/share/doc/HTML/en/kdevelop/reference
+post-patch:
+	${REINPLACE_CMD} -e 's,-lqt,-lqt-mt -pthread,' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

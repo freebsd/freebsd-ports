@@ -17,7 +17,7 @@ share/doc/HTML/en/kdevelop/reference/C/CONCEPT/storage_class.html
 share/doc/HTML/en/kdevelop/reference/C/CONCEPT/string.html
 share/doc/HTML/en/kdevelop/reference/C/CONCEPT/true_false.html
 share/doc/HTML/en/kdevelop/reference/C/CONCEPT/type_conv.html
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/.htaccess
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/HEADER.html
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/01_1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/01_2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/02_1.c
@@ -86,19 +86,19 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/16_2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/16_3.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/17_1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/17_2.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/HEADER.html
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/font.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/fonts.c
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/macros.c
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/symbol.c
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/tlint.c
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/font.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/gen.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/macro.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/macros.c
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/troff.test
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/test.csh
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/makefile.tcc
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/makefile.unix
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/standard.mac
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/symbol.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/test.csh
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/tlint.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C/troff.test
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/HEADER.html
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/02.1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/02.2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/02.3.c
@@ -130,7 +130,6 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/10.2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/10.3.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/10.4.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/10.5.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/10.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/11.1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/11.2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/11.3.c
@@ -146,7 +145,6 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/13.2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/13.3.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/14.1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/14.2.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/HEADER.html
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/a.1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/a.2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/a.3.c
@@ -160,6 +158,8 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/d.1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/dircom.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/e.1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/nap.c
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C/10.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL/intro.html
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL/c-lesson.1
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL/c-lesson.2
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL/c-lesson.3
@@ -169,38 +169,30 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL/c-lesson.6
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL/c-lesson.7
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL/c-lesson.8
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL/c-lesson.9
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL/intro.html
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/.htaccess
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/2dlife.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/8087_sav.asm
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/HEADER.html
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/a2e.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/absdisk.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/absdiskc.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/addhndls.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/addpath.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/amalloc.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ansiflen.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ansiload.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ansiscrn.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ansiself.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ansisys.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ansisys.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/approx.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/assignpr.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/atr2ansi.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bascnvrt.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bastrngs.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/big_mall.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bigfac.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bincomp.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/biport.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/biport.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bitarray.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bitcnt_1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bitcnt_2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bitfiles.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bitops.c
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/8087_sav.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bitstrng.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bmhasrch.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bmhisrch.c
@@ -210,20 +202,12 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/break.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bresnham.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/bstr_i.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/c_cmnt.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/c_lines.awk
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/c_port.txt
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/c_prec.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cal.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/calsupp.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cant.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cast.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cbtrap.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ccomcall.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cctrap.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cdir.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/center.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cerrinst.asm
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cerrtrap.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/changprn.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/chbytes.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/checkexe.c
@@ -232,16 +216,14 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/chgext.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/chmod.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/clock.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cmdline.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/coldboot.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/combin.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/commafmt.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/commconv.c
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/crypt.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/compiler.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cpucheck.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/crc-16.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/crc-16f.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/crc_32.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/crypt.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ctrlprnt.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cubic.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cursize.c
@@ -249,16 +231,11 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cursor.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/daynum.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dbl2long.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dblround.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dd_struc.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dirent.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dirmask.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/do.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/doansi.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/doansi_1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/doansi_2.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dos5boot.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/doscopy.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dosfuncs.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dossort.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/drivsrch.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/droptime.c
@@ -268,14 +245,9 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dspclock.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dspdtst.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/editgets.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/eng.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/enums.txt
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/environ.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/errfix.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/eval.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/evsavres.txt
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/except.doc
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ext_keys.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ext_keys.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/factor.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/factoryl.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/faskbhit.c
@@ -284,7 +256,6 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/fcompare.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/fcopy.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ferrorf.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/filcount.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/file_id.diz
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/files.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/fln_fix.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/flnorm.c
@@ -299,24 +270,20 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/fscanbin.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/fsize.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/fsm.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ftime.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ftime.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/getcmt.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/getdcwd.c
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/grep.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/getkey.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/getopt3.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/getopts.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/getopts.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/getseg.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/getstrng.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/getvol.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/glbl_env.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/grafline.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/grep.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/head.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/hexdump.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/hexorint.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/hilobyte.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/hires.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/howdy.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/hstr_i.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/hugeread.c
@@ -324,8 +291,6 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/hugesort.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ifactor.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/inchcvrt.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/initvars.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/int2e.asm
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/iostutor.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/iscons.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/isfopen.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/isisbn.c
@@ -357,87 +322,60 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ltostr.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/lv1ws.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/lzhuf.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mainmain.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/make.ini
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/match.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/match.doc
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/match.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/maze_1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/maze_2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/maze_3.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mcb_env.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mdalloc.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mem.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mem.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mem.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/memavail.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/memrev.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/missing.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mkdirs.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mktone.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/moon_age.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/morse.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mouse.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mouse.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/msb2ieee.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/msc_peek.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mterm.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mv.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myio.cpp
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myio.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myio.mak
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myiodemo.cpp
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myline.cpp
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myline.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mystream.cpp
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mystream.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ndpcheck.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/noctrlc.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/nonmsdos.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/noreset.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ord_text.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/os_id.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/os_id.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/palndrom.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/patmat.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pbmsrch.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pcnvrt.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pdn.lst
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/perm_idx.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/permute1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/permute2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pfopen.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pi.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pi.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/playdemo.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/playlib.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pluraltx.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pmerge.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/portable.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/posix_ls.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/posixdir.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pr.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/printq.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/prnspool.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/prnspool.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/prtoggle.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/prtscrn.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/prtstat.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/psplit.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ptr_help.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pushdir.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/query.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rand1.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rand2.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rdxcnvrt.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/read.me
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/reboot.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/redir.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/remtab.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/resource.lst
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rfind1st.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rg_isort.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rg_qsort.c1
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rg_qsort.c2
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rg_rand.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rg_ssort.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rm_all.c
@@ -446,26 +384,16 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rmlead.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rmtrail.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rndmize.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/roman.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/round.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rtlftrul.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/scaldate.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/scaldate.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/scanfrac.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/scrnmacs.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/scrnpick.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/scrnsave.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/scroll.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/setenvar.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/setimeto.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/setvol.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/sharing.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/shel2dos.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/snippets.(c)
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/snippets.ndx
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/snippets.txt
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/snippets.wc
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/sound.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/sound.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/soundex.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/speed.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/spin.c
@@ -473,16 +401,10 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/split.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/srchfile.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/sstrcpy.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/stats.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/storage.typ
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/stptok.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/str.cpp
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/str.doc
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/str.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/str27seg.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/strat.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/strat.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/strdup.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/strecpy.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/strftime.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/stripeof.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/strrepl.c
@@ -496,57 +418,132 @@ share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/sunriset.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/tabtrick.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/tail.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/tasker.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/tasker.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/tasker.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/testcmt.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/timegetc.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/toascii.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/todaybak.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/toolkit.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/touch.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/tp6tod.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/translat.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/trapdemo.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/trapflag.asm
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/treedir.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/trim.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/truename.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/uclock.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/uclock.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/unix2dos.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/uudecode.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/uuencode.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/vfname.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/video.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/vidport.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/vio.asm
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/vio.h
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/vt100.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/w_wrap.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/w_wrap.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/wb_fcopy.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/wc.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/weird.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/where.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/which_c.txt
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/whicharc.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/windchil.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/wordwrap.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/x00api.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/x00api.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/xfile.c
-share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/xfile.h
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/xstrcat.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/xstrcmp.c
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/xtest.c
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ansiscrn.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/big_mall.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/biport.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cast.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dd_struc.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dirent.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/doansi.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dos5boot.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ext_keys.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ftime.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/getopts.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/hilobyte.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/match.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mem.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mouse.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myio.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myline.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mystream.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/os_id.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pi.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/portable.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/prnspool.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/round.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/scaldate.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/scrnmacs.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/sound.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/str.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/strat.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/tasker.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/toolkit.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/uclock.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/vio.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/w_wrap.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/x00api.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/xfile.h
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/HEADER.html
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/absdisk.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/vio.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cbtrap.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cctrap.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cerrinst.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cerrtrap.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/coldboot.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/cpucheck.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/hires.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/int2e.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ndpcheck.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/strecpy.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/trapflag.asm
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ansisys.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/c_port.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/c_prec.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/dosfuncs.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/enums.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/environ.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/evsavres.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/iostutor.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mem.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/missing.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/nonmsdos.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/ptr_help.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rtlftrul.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/sharing.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/snippets.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/tasker.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/vt100.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/which_c.txt
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/c_lines.awk
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/except.doc
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/file_id.diz
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/make.ini
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/match.doc
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myio.cpp
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myio.mak
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myiodemo.cpp
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/myline.cpp
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/mystream.cpp
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/pdn.lst
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/read.me
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/resource.lst
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rg_qsort.c1
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/rg_qsort.c2
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/snippets._c_
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/snippets.ndx
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/snippets.wc
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/storage.typ
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/str.cpp
+share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP/str.doc
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/YABL/yabl
 share/doc/HTML/en/kdevelop/reference/C/CONTRIB/intro.html
-share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/.htaccess
-share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/10to1.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/HEADER.html
-share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/Master.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/README.html
-share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/a.out
+share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/examples.html
+share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/10to1.c
+share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/Master.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/address.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/and.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/atexit.c
@@ -569,7 +566,6 @@ share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/enum2.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/enum3.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/enum4.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/enum5.c
-share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/examples.html
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/exec_one.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/exec_two.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/exponent.c
@@ -585,11 +581,8 @@ share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/fork1.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/fork2.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/fprintf.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/funcpt1.c
-share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/funcpt1.c~
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/funcpt2.c
-share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/funcpt2.c~
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/funcpt3.c
-share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/funcpt3.c~
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/function.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/getchar.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/gets.c
@@ -599,9 +592,9 @@ share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/if.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/if_else_endif.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/ifndef.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/inc_dec.c
+share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/kill.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/is_examp.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/keyboard.c
-share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/kill.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/lenstr.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/linklst1.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/linklst2.c
@@ -651,8 +644,8 @@ share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/strtol.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/struct1.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/struct2.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/struct3.c
-share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/struct4.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/swap.c
+share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/struct4.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/switch.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/system.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/temp.c
@@ -665,9 +658,7 @@ share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/varlist.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/while.c
 share/doc/HTML/en/kdevelop/reference/C/EXAMPLES/whiteball.gif
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/Master.html
-share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/abort.htm
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/arglists.html
-share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/atexit.htm
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/atof.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/atoi.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/atol.html
@@ -677,7 +668,6 @@ share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/clrscr.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/dec_tab.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/directory.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/env.html
-share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/errno.htm
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/escape.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/execl.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/exit.html
@@ -691,17 +681,12 @@ share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/format.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/fprintf.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/fputc.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/free.html
-share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/funcframe.htm
-share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/funcquery.htm
-share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/funcref.htm
-share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/funcref.orig
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/getchar.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/getopt.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/gets.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/hex_tab.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/kill.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/malloc.html
-share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/memcpy.htm
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/open.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/passwd.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/pclose.html
@@ -733,9 +718,16 @@ share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/system.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/time.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/uname.html
 share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/write.html
+share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/abort.htm
+share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/atexit.htm
+share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/errno.htm
+share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/funcframe.htm
+share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/funcquery.htm
+share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/funcref.htm
+share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS/memcpy.htm
 share/doc/HTML/en/kdevelop/reference/C/GDB/gdb.html
-share/doc/HTML/en/kdevelop/reference/C/LIBRARIES/dynamic.htm
 share/doc/HTML/en/kdevelop/reference/C/LIBRARIES/libraries.html
+share/doc/HTML/en/kdevelop/reference/C/LIBRARIES/dynamic.htm
 share/doc/HTML/en/kdevelop/reference/C/LIBRARIES/syscalls.htm
 share/doc/HTML/en/kdevelop/reference/C/MAN/abs.htm
 share/doc/HTML/en/kdevelop/reference/C/MAN/access.htm
@@ -855,7 +847,6 @@ share/doc/HTML/en/kdevelop/reference/C/MAN/sysconf.htm
 share/doc/HTML/en/kdevelop/reference/C/MAN/tan.htm
 share/doc/HTML/en/kdevelop/reference/C/MAN/tanh.htm
 share/doc/HTML/en/kdevelop/reference/C/MAN/telldir.htm
-share/doc/HTML/en/kdevelop/reference/C/MAN/test
 share/doc/HTML/en/kdevelop/reference/C/MAN/time.htm
 share/doc/HTML/en/kdevelop/reference/C/MAN/tmpfile.htm
 share/doc/HTML/en/kdevelop/reference/C/MAN/tmpnam.htm
@@ -879,25 +870,25 @@ share/doc/HTML/en/kdevelop/reference/C/MISC/linklists.html
 share/doc/HTML/en/kdevelop/reference/C/MISC/numconv.html
 share/doc/HTML/en/kdevelop/reference/C/MISC/perl.html
 share/doc/HTML/en/kdevelop/reference/C/MISC/stdfiles.html
+share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/problems.html
+share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/computer.gif
+share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/whiteball.gif
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/array_prob.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/ascii1.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/ascii2.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/binary_op.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/bits.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/calender.c
-share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/computer.gif
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/fractions.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/hexdump1.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/ljust.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/lotto1.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/lotto2.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/numtest.c
-share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/problems.html
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/times1.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/times2.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/times3.c
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/unix2dos.c
-share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/whiteball.gif
 share/doc/HTML/en/kdevelop/reference/C/PROBLEMS/yesterday.c
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/Master.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/break.html
@@ -910,7 +901,6 @@ share/doc/HTML/en/kdevelop/reference/C/SYNTAX/define_preprocessor.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/do.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/enum.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/for.html
-share/doc/HTML/en/kdevelop/reference/C/SYNTAX/fork1.c
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/functions.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/glo_int_vars.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/got_ya.html
@@ -927,11 +917,9 @@ share/doc/HTML/en/kdevelop/reference/C/SYNTAX/preprocessors.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/return.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/sizeof.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/statements.html
-share/doc/HTML/en/kdevelop/reference/C/SYNTAX/static.htm
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/storage_class.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/struct.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/switch.html
-share/doc/HTML/en/kdevelop/reference/C/SYNTAX/syntax.gif
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/syntax.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/syntax_p.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/typedef.html
@@ -939,6 +927,8 @@ share/doc/HTML/en/kdevelop/reference/C/SYNTAX/union.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/void.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/volatile.html
 share/doc/HTML/en/kdevelop/reference/C/SYNTAX/while.html
+share/doc/HTML/en/kdevelop/reference/C/SYNTAX/fork1.c
+share/doc/HTML/en/kdevelop/reference/C/SYNTAX/syntax.gif
 share/doc/HTML/en/kdevelop/reference/C/TECHNIC/itter_rec.html
 share/doc/HTML/en/kdevelop/reference/C/TECHNIC/technic.html
 share/doc/HTML/en/kdevelop/reference/C/X_EXAMPLES/Xref.html
@@ -946,16 +936,15 @@ share/doc/HTML/en/kdevelop/reference/C/X_EXAMPLES/hardware.c
 share/doc/HTML/en/kdevelop/reference/C/X_EXAMPLES/root_colour.c
 share/doc/HTML/en/kdevelop/reference/C/X_EXAMPLES/xxterm.c
 share/doc/HTML/en/kdevelop/reference/C/backup/mindxbdy.htm
-share/doc/HTML/en/kdevelop/reference/C/backup/mindxbdy.orig
 share/doc/HTML/en/kdevelop/reference/C/backup/mindxhed.htm
-share/doc/HTML/en/kdevelop/reference/C/blueball.gif
 share/doc/HTML/en/kdevelop/reference/C/c.html
 share/doc/HTML/en/kdevelop/reference/C/compiler.html
 share/doc/HTML/en/kdevelop/reference/C/cref.html
 share/doc/HTML/en/kdevelop/reference/C/future.html
 share/doc/HTML/en/kdevelop/reference/C/glossary.html
-share/doc/HTML/en/kdevelop/reference/C/master.gif
 share/doc/HTML/en/kdevelop/reference/C/master_index.html
+share/doc/HTML/en/kdevelop/reference/C/blueball.gif
+share/doc/HTML/en/kdevelop/reference/C/master.gif
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONCEPT/Master.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONCEPT/cast.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONCEPT/constructor.html
@@ -968,14 +957,10 @@ share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONCEPT/scope.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONTRIB/GNU_STDLIB/libgpp.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONTRIB/GNU_STDLIB/libgpp_toc.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONTRIB/intro.html
-share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONTRIB/xx
-share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/MGREP.CC
-share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/a.out
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/cast.cc
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/class1.cc
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/class2.cc
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/const1.cc
-share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/enum1.c
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/enum1.cc
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/inherit.cc
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/inline.cc
@@ -988,11 +973,7 @@ share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/refvar.cc
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/scope.cc
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/struct1.cc
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/throw.cc
-@exec mkdir -p %D/share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/FUNCTIONS
-@exec mkdir -p %D/share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/GDB
-@exec mkdir -p %D/share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/LIBRARIES
-@exec mkdir -p %D/share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/MISC
-@exec mkdir -p %D/share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/PROBLEMS
+share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES/MGREP.CC
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/Master.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/bool.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/class.html
@@ -1007,12 +988,10 @@ share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/namespace.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/new.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/operator.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/ops.html
-share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/static.htm
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/struct.html
-share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/syntax.htm
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/throw.html
-@exec mkdir -p %D/share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/TECHNIC
-@exec mkdir -p %D/share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/X_EXAMPLES
+share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/static.htm
+share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX/syntax.htm
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/cref.html
 share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/glossary.html
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/bg.gif
@@ -1023,7 +1002,6 @@ share/doc/HTML/en/kdevelop/reference/GRAPHICS/books.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/climb.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/computer.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/cref2.gif
-share/doc/HTML/en/kdevelop/reference/GRAPHICS/cref2.old
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/directory.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/function.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/grey.gif
@@ -1039,8 +1017,8 @@ share/doc/HTML/en/kdevelop/reference/GRAPHICS/mottled.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/news.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/orangeball.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/ptr.gif
-share/doc/HTML/en/kdevelop/reference/GRAPHICS/purpleball.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/redball.gif
+share/doc/HTML/en/kdevelop/reference/GRAPHICS/purpleball.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/redball2.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/ski2.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/sound_2.gif
@@ -1050,36 +1028,36 @@ share/doc/HTML/en/kdevelop/reference/GRAPHICS/thumb.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/utah.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/whiteball.gif
 share/doc/HTML/en/kdevelop/reference/GRAPHICS/yellowball.gif
-@dirrm share/doc/HTML/en/kdevelop/reference/GRAPHICS
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/X_EXAMPLES
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/TECHNIC
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/PROBLEMS
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/MISC
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/LIBRARIES
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/GDB
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/FUNCTIONS
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONTRIB/GNU_STDLIB
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONTRIB
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONCEPT
-@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS
-@dirrm share/doc/HTML/en/kdevelop/reference/C/backup
-@dirrm share/doc/HTML/en/kdevelop/reference/C/X_EXAMPLES
-@dirrm share/doc/HTML/en/kdevelop/reference/C/TECHNIC
-@dirrm share/doc/HTML/en/kdevelop/reference/C/SYNTAX
-@dirrm share/doc/HTML/en/kdevelop/reference/C/PROBLEMS
+@dirrm share/doc/HTML/en/kdevelop/reference/C/CONCEPT
+@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C
+@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C
+@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL
+@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP
+@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB/YABL
+@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB
+@dirrm share/doc/HTML/en/kdevelop/reference/C/EXAMPLES
+@dirrm share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS
+@dirrm share/doc/HTML/en/kdevelop/reference/C/GDB
+@dirrm share/doc/HTML/en/kdevelop/reference/C/LIBRARIES
+@dirrm share/doc/HTML/en/kdevelop/reference/C/MAN
 @dirrm share/doc/HTML/en/kdevelop/reference/C/MISC/CLASSES
 @dirrm share/doc/HTML/en/kdevelop/reference/C/MISC
-@dirrm share/doc/HTML/en/kdevelop/reference/C/MAN
-@dirrm share/doc/HTML/en/kdevelop/reference/C/LIBRARIES
-@dirrm share/doc/HTML/en/kdevelop/reference/C/GDB
-@dirrm share/doc/HTML/en/kdevelop/reference/C/FUNCTIONS
-@dirrm share/doc/HTML/en/kdevelop/reference/C/EXAMPLES
-@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB/YABL
-@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SNIP
-@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB/SAWTELL
-@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_USING_C
-@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB/OR_PRACTICAL_C
-@dirrm share/doc/HTML/en/kdevelop/reference/C/CONTRIB
-@dirrm share/doc/HTML/en/kdevelop/reference/C/CONCEPT
+@dirrm share/doc/HTML/en/kdevelop/reference/C/PROBLEMS
+@dirrm share/doc/HTML/en/kdevelop/reference/C/SYNTAX
+@dirrm share/doc/HTML/en/kdevelop/reference/C/TECHNIC
+@dirrm share/doc/HTML/en/kdevelop/reference/C/X_EXAMPLES
+@dirrm share/doc/HTML/en/kdevelop/reference/C/backup
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONCEPT
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONTRIB/GNU_STDLIB
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/CONTRIB
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/EXAMPLES
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/FUNCTIONS
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/GDB
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/LIBRARIES
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/MISC
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/PROBLEMS
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/SYNTAX
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/TECHNIC
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS/X_EXAMPLES
+@dirrm share/doc/HTML/en/kdevelop/reference/CPLUSPLUS
+@dirrm share/doc/HTML/en/kdevelop/reference/GRAPHICS
