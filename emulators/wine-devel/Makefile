@@ -72,18 +72,19 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/documentation/wine.man ${PREFIX}/man/man1/wine.1
 	${INSTALL_MAN} ${WRKSRC}/documentation/wine.conf.man ${PREFIX}/man/man5/wine.conf.5
 .if !defined(NOPORTDOCS)
-	-@${MKDIR} ${PREFIX}/lib/wine/documentation
+	-@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 .for i in README ANNOUNCE AUTHORS LICENSE WARRANTY documentation/psdrv.reg
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/lib/wine/documentation
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/debugger/README \
-		${PREFIX}/lib/wine/documentation/README.debugger
+		${PREFIX}/share/doc/${PORTNAME}/README.debugger
 	${INSTALL_DATA} ${WRKSRC}/programs/regapi/README \
-		${PREFIX}/lib/wine/documentation/README.regapi
+		${PREFIX}/share/doc/${PORTNAME}/README.regapi
 .endif
+	-@${MKDIR} ${PREFIX}/lib/wine
+	-@${MKDIR} ${PREFIX}/lib/wine/reg
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/bug_report.pl \
 		${PREFIX}/lib/wine
-	-@${MKDIR} ${PREFIX}/lib/wine/reg
 	${INSTALL_SCRIPT} \
 		${WRKSRC}/programs/regapi/regFixer.pl \
 		${WRKSRC}/programs/regapi/regRestorer.pl \
