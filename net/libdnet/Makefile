@@ -16,6 +16,8 @@ COMMENT=	A simple interface to low level networking routines
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
+USE_LIBTOOL_VER=15
 
 MAN3=	dnet.3
 MAN8=	dnet.8

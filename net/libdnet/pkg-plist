@@ -1,6 +1,8 @@
 bin/dnet-config
 sbin/dnet
 lib/libdnet.a
+lib/libdnet.so
+lib/libdnet.so.0
 include/dnet/addr.h
 include/dnet/arp.h
 include/dnet/blob.h
