@@ -1,5 +1,5 @@
---- Makefile.in.orig	Mon Jul 14 23:52:38 2003
-+++ Makefile.in	Sun Jul 27 22:04:59 2003
+--- Makefile.in.orig	Fri Nov  7 05:44:51 2003
++++ Makefile.in	Fri Nov 14 00:00:39 2003
 @@ -168,7 +168,7 @@
  tmpdir = /tmp
  
@@ -23,7 +23,7 @@
  lib/tcl/xcircuit${SHDLIB_EXT}: xcwrap.o ${xcircuit_OBJECTS}
  	$(RM) lib/xcircuit${SHDLIB_EXT}
 -	$(CC) ${CFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o ${xcircuit_OBJECTS} \
-+	$(LD) ${CFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o ${xcircuit_OBJECTS} \
++	$(LD) ${LDFLAGS} -o $@ ${LDDL_FLAGS} xcwrap.o ${xcircuit_OBJECTS} \
  		${X_LIBS} ${X_EXTRA_LIBS} ${EXTRA_LIBS} -lc ${LIBS}
  
  tcl:	lib/tcl/xcircuit${SHDLIB_EXT}
