@@ -20,6 +20,7 @@ share/doc/py-MySQLdb/examples/dbtrainer1
 share/doc/py-MySQLdb/examples/dbtrainer2
 share/doc/py-MySQLdb/examples/dbtrainer3
 share/doc/py-MySQLdb/examples/dbtrainer4
+share/doc/py-MySQLdb/examples/deirdre.py
 share/doc/py-MySQLdb/examples/test.sql
 @dirrm share/doc/py-MySQLdb/examples
 @dirrm share/doc/py-MySQLdb
