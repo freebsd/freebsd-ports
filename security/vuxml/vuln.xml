@@ -67,7 +67,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </body>
     </description>
     <references>
-      <url>http://www.securityfocus.com/bid/12781/discussion/</url>
+      <bid>12781</bid>
+      <cvename>CAN-2005-0709</cvename>
+      <cvename>CAN-2005-0710</cvename>
+      <cvename>CAN-2005-0711</cvename>
     </references>
     <dates>
       <discovery>2005-03-11</discovery>
