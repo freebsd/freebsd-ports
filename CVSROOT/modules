@@ -2841,7 +2841,6 @@ ja-kappa20	ports/japanese/kappa20
 ja-kbanner	ports/japanese/kbanner
 ja-kcc		ports/japanese/kcc
 ja-kde3-i18n	ports/japanese/kde3-i18n
-ja-kdeaddons	ports/japanese/kdeaddons
 ja-kdevelop	ports/japanese/kdevelop
 ja-kdrill	ports/japanese/kdrill
 ja-kinput2-canna	ports/japanese/kinput2-canna
@@ -3272,7 +3271,6 @@ kdb_init	src/eBones/kdb_init
 kdb_util	src/eBones/kdb_util
 kdbg		ports/devel/kdbg
 kdc2tiff	ports/graphics/kdc2tiff
-kde-i18n-uk	ports/ukrainian/kde-i18n-uk
 kde-icontheme-crystal	ports/x11-wm/kde-icontheme-crystal
 kde3		ports/x11/kde3
 kde3-i18n	ports/misc/kde3-i18n
