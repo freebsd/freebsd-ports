@@ -19,10 +19,8 @@ COMMENT=	A library for doing evolutionary computation in Perl
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Algorithm/Permute.pm:${PORTSDIR}/devel/p5-Algorithm-Permute \
 		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Tree/DAG_Node.pm:${PORTSDIR}/devel/p5-Tree-DAG_Node \
-		${SITE_PERL}/XML/Parser/EasyTree:${PORTSDIR}/textproc/p5-XML-Parser-EasyTree
+		${SITE_PERL}/XML/Parser/EasyTree.pm:${PORTSDIR}/textproc/p5-XML-Parser-EasyTree
 RUN_DEPENDS=	${BUILD_DEPENDS}
-
-BROKEN=		Broken dependency, will be removed after Feb 2
 
 PERL_CONFIGURE=	yes
 
