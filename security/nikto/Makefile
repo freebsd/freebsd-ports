@@ -7,6 +7,7 @@
 
 PORTNAME=	nikto
 PORTVERSION=	1.32
+PORTREVISION=	1
 CATEGORIES=	security www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,6 +22,8 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
+PORTDOCS=	nikto_usage.txt nikto_usage.html CHANGES.txt README_plugins.txt
+
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/nikto.pl ${PREFIX}/bin/nikto
 	@${MKDIR} ${PREFIX}/etc/nikto && ${CHMOD} 755 ${PREFIX}/etc/nikto
@@ -32,5 +35,11 @@ do-install:
 	do \
 	${INSTALL_SCRIPT} ${WRKSRC}/plugins/$$i ${PREFIX}/share/nikto; \
 	done
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/docs/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
