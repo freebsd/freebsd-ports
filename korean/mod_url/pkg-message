@@ -1,0 +1,8 @@
+You might want to add the following lines to your httpd.conf:
+
+	LoadModule redurl_module libexec/apache/mod_url.so
+	AddModule mod_url.c
+
+	<IfModule mod_url.c>
+	CheckURL On
+	</IfModule>

@@ -50,6 +50,7 @@
     SUBDIR += man-doc
     SUBDIR += mizifont
     SUBDIR += mkisofs
+    SUBDIR += mod_url
     SUBDIR += mozilla-klp
     SUBDIR += mplayer-fonts
     SUBDIR += msdosfs
