@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	autodia
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://droogs.org/autodia/download/
-DISTNAME=	AutoDia-${PORTVERSION}
+DISTNAME=	Autodia-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -21,15 +21,12 @@ BUILD_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Te
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_SITELIBDIR=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
-USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/Autodia
 
-MAN1=	autodia.1
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=	Autodia.3 Autodia::Diagram.3 Autodia::Diagram::Class.3 \
-	Autodia::Diagram::Component.3 Autodia::Handler.3 \
-	Autodia::Handler::Cpp.3 Autodia::Handler::PHP.3 \
+MAN3=	Autodia.3 autodia.3 autodia_java.3 Autodia::Diagram.3 \
+	Autodia::Diagram::Class.3 Autodia::Diagram::Component.3 \
+	Autodia::Handler.3 Autodia::Handler::Cpp.3 Autodia::Handler::PHP.3 \
 	Autodia::Handler::Perl.3
 
 DOCS=	CHANGES COPYING CREDITS DEVELOP FAQ INSTALL README
