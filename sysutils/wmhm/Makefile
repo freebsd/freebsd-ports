@@ -11,7 +11,7 @@ CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 
-MAINTAINER=	mmuir@cwnet.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WindowMaker dockable hardware monitor for FreeBSD
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
