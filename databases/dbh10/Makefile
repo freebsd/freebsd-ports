@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dbh
-PORTVERSION=	1.0.17
+PORTVERSION=	1.0.18
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,9 +16,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Disk Based Hashtables
 
+USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_LIBTOOL_VER=	13
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
