@@ -1,0 +1,11 @@
+SmallEiffel is now available through the symbolic link %%PREFIX%%/SmallEiffel.
+
+Add %%PREFIX%%/SmallEiffel/bin to your path to be able to call 
+the SmallEiffel compiler and its other utilities.
+
+Make sure the environment variable SmallEiffel is defined and points to
+%%PREFIX%%/SmallEiffel/sys/system.se.
+
+One way to do this is to extend /etc/profile with the following line:
+
+  SmallEiffel=%%PREFIX%%/SmallEiffel/sys/system.se; export SmallEiffel

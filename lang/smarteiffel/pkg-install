@@ -1,0 +1,3 @@
+if [ "X$2" = "XPOST-INSTALL" ]; then
+	ln -fs %%PREFIX%%/$1 %%PREFIX%%/SmallEiffel;
+fi 
