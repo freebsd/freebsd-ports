@@ -9,6 +9,9 @@ etc/%%PKGNAMEPREFIX%%webalizer.conf-dist
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FIRST
 %%PORTDOCS%%%%DOCSDIR%%/country-codes.txt
+%%PORTDOCS%%%%DOCSDIR%%/geolizer/GeoIP.README
+%%PORTDOCS%%%%DOCSDIR%%/geolizer/INSTALL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/geolizer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/msfree.png
 %%PORTDOCS%%%%EXAMPLESDIR%%/sample.conf

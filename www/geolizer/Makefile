@@ -7,6 +7,7 @@
 
 PORTNAME=	geolizer
 PORTVERSION=	2.1.10
+PORTREVISION=	1
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/:main \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/:main \
@@ -20,7 +21,8 @@ PATCH_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web server log file analysis program, using GeoIP library
 
-LIB_DEPENDS=    gd.4:${PORTSDIR}/${GD_PORT} \
+LIB_DEPENDS=    png.5:${PORTSDIR}/graphics/png \
+		gd.4:${PORTSDIR}/${GD_PORT} \
 		GeoIP.4:${PORTSDIR}/net/GeoIP
 
 USE_BZIP2=	yes
@@ -40,12 +42,15 @@ CONFIGURE_ARGS+=	--enable-dns \
 			--enable-geoip \
 			--with-geoip-lib=${LOCALBASE}/lib \
 			--with-geoip-inc=${LOCALBASE}/include \
+			--with-png=${LOCALBASE}/lib \
+			--with-png-inc=${LOCALBASE}/include \
 			--with-language=english
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+
 CFLAGS+=	-DLINKLIST_MAX_STRING=256
 MAN1=		${PKGNAMEPREFIX}webalizer.1
 DOC1=		CHANGES Copyright INSTALL \
 		README README.FIRST DNS.README country-codes.txt
+DOC2=		INSTALL GeoIP.README
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src$//}
 PLIST_SUB+=	PKGNAMEPREFIX=${PKGNAMEPREFIX}
 
@@ -70,9 +75,13 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/webalizer.1 ${PREFIX}/man/man1/${i}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}/geolizer
 .for i in ${DOC1}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+.endfor
+.for i in ${DOC2}
+	@${INSTALL_DATA} ${WRKDIR}/geolizer_2.01-10-patch/${i} \
+		${DOCSDIR}/geolizer/${i}
 .endfor
 	${MKDIR} ${EXAMPLESDIR}
 .for i in msfree.png sample.conf webalizer.png
