@@ -1,60 +1,7 @@
-*** include/config.h.dist.orig	Tue Mar 11 11:24:47 1997
---- include/config.h.dist	Tue Mar 11 11:49:29 1997
+*** support/config.h.dist.orig	Sun Jan 25 16:22:33 1998
+--- support/config.h.dist	Sun Jan 25 16:36:00 1998
 ***************
-*** 60,66 ****
-   * If your host supports varargs and has vsprintf(), vprintf() and vscanf()
-   * C calls in its library, then you can define USE_VARARGS to use varargs
-   * instead of imitation variable arg passing.
-! #undef	USE_VARARGS
-   * NOTE: with current server code, varargs doesn't survive because it can't
-   *       be used in a chain of 3 or more funtions which all have a variable
-   *       number of params.  If anyone has a solution to this, please notify
---- 60,66 ----
-   * If your host supports varargs and has vsprintf(), vprintf() and vscanf()
-   * C calls in its library, then you can define USE_VARARGS to use varargs
-   * instead of imitation variable arg passing.
-! #define	USE_VARARGS
-   * NOTE: with current server code, varargs doesn't survive because it can't
-   *       be used in a chain of 3 or more funtions which all have a variable
-   *       number of params.  If anyone has a solution to this, please notify
-***************
-*** 96,102 ****
-   */
-  
-  #undef	EPATH /* "/local/gnu/icn/password_mail" */
-! #undef	NPATH /* "/local/gnu/icn/.ircdnote" */
-  
-  /*
-   * Full pathnames and defaults of irc system's support files. Please note that
---- 96,104 ----
-   */
-  
-  #undef	EPATH /* "/local/gnu/icn/password_mail" */
-! #ifdef ENABLE_NOTE
-! #define	NPATH ".ircdnote"
-! #endif
-  
-  /*
-   * Full pathnames and defaults of irc system's support files. Please note that
-***************
-*** 159,165 ****
-   * mode "i" (i == invisible). Invisibility means people dont showup in
-   * WHO or NAMES unless they are on the same channel as you.
-   */
-! #undef	NO_DEFAULT_INVISIBLE
-  
-  /* OPER_KILL
-   *
---- 161,167 ----
-   * mode "i" (i == invisible). Invisibility means people dont showup in
-   * WHO or NAMES unless they are on the same channel as you.
-   */
-! #define	NO_DEFAULT_INVISIBLE
-  
-  /* OPER_KILL
-   *
-***************
-*** 176,188 ****
+*** 129,142 ****
    * The 'LOCOP_' #defines are for making the respective commands available
    * to 'local' operators.
    */
@@ -65,25 +12,27 @@
 ! #undef	OPER_REMOTE
 ! #undef	LOCOP_REHASH
 ! #undef	LOCOP_RESTART
-  #undef	LOCOP_DIE
+! #undef	LOCOP_DIE
   
   /*
---- 178,190 ----
+   * Maximum number of network connections your server will allow.  This should
+--- 129,142 ----
    * The 'LOCOP_' #defines are for making the respective commands available
    * to 'local' operators.
    */
-! #define	OPER_KILL
+! #define OPER_KILL
   #define	OPER_REHASH
 ! #define	OPER_RESTART
-! #define	OPER_DIE
+! #define OPER_DIE
 ! #define	OPER_REMOTE
-! #define LOCOP_REHASH
-! #undef 	LOCOP_RESTART
-  #undef	LOCOP_DIE
+! #define	LOCOP_REHASH
+! #define	LOCOP_RESTART
+! #define	LOCOP_DIE
   
   /*
+   * Maximum number of network connections your server will allow.  This should
 ***************
-*** 290,321 ****
+*** 254,285 ****
    * this option is used unless you tell the system administrator beforehand
    * and obtain their permission to send messages to the system log files.
    */
@@ -116,7 +65,7 @@
   
   /*
    * If you want to store encrypted passwords in N-lines for server links,
---- 292,323 ----
+--- 254,285 ----
    * this option is used unless you tell the system administrator beforehand
    * and obtain their permission to send messages to the system log files.
    */
@@ -127,18 +76,18 @@
    * If you use syslog above, you may want to turn some (none) of the
    * spurious log messages for KILL/SQUIT off.
    */
-! #define	SYSLOG_KILL	/* log all operator kills to syslog */
+! #define SYSLOG_KILL	/* log all operator kills to syslog */
 ! #define	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
 ! #define	SYSLOG_CONNECT	/* log remote connect messages for other all servs */
-! #define	SYSLOG_USERS	/* send userlog stuff to syslog */
-! #define	SYSLOG_OPER	/* log all users who successfully become an Op */
-! #define	SYSLOG_CONN	/* log all uncomplete/rejected connections */
+! #define SYSLOG_USERS	/* send userlog stuff to syslog */
+! #define SYSLOG_OPER	/* log all users who successfully become an Op */
+! #define SYSLOG_CONN	/* log all uncomplete/rejected connections */
   
   /*
    * If you want to log to a different facility than DAEMON, change
    * this define.
    */
-! #define LOG_FACILITY !!SYSLOGFACILITY!!
+! #define LOG_FACILITY !!SYSLOG_FACILITY!!
   #endif /* USE_SYSLOG */
   
   /*
@@ -150,41 +99,7 @@
   /*
    * If you want to store encrypted passwords in N-lines for server links,
 ***************
-*** 323,329 ****
-   * need not be the same for both, as long as hte opposite end has the
-   * right password in the opposite line.  See INSTALL doc for more details.
-   */
-! #undef	CRYPT_LINK_PASSWORD
-  
-  /*
-   * define this if you enable summon and if you want summon to look for the
---- 325,331 ----
-   * need not be the same for both, as long as hte opposite end has the
-   * right password in the opposite line.  See INSTALL doc for more details.
-   */
-! #undef	CRYPT_LINK_PASSWORD	/* CHANGE ME */
-  
-  /*
-   * define this if you enable summon and if you want summon to look for the
-***************
-*** 343,349 ****
-  /*
-   * use these to setup a Unix domain socket to connect clients/servers to.
-   */
-! #undef	UNIXPORT
-  
-  /*
-   * IRC_UID
---- 345,351 ----
-  /*
-   * use these to setup a Unix domain socket to connect clients/servers to.
-   */
-! #define	UNIXPORT
-  
-  /*
-   * IRC_UID
-***************
-*** 367,373 ****
+*** 331,337 ****
    * send to the server without processing before disconnecting the client for
    * flooding it.  Values greater than 8000 make no difference to the server.
    */
@@ -192,11 +107,28 @@
   
   /* Remote query flood protection. */
   #define	CHREPLLEN	8192
---- 369,375 ----
+--- 331,337 ----
    * send to the server without processing before disconnecting the client for
    * flooding it.  Values greater than 8000 make no difference to the server.
    */
-! #define	CLIENT_FLOOD	8000
+! #define	CLIENT_FLOOD	4000
   
   /* Remote query flood protection. */
   #define	CHREPLLEN	8192
+***************
+*** 367,373 ****
+   * Defining this will enable the use of compressed server-server links.
+   * In order to have it work, you must have the zlib version 1.0 or higher.
+   */
+! #undef ZIP_LINKS
+  
+  /*
+   * Defining this will add an artificial 2 seconds delay for accepting
+--- 367,373 ----
+   * Defining this will enable the use of compressed server-server links.
+   * In order to have it work, you must have the zlib version 1.0 or higher.
+   */
+! #define ZIP_LINKS
+  
+  /*
+   * Defining this will add an artificial 2 seconds delay for accepting
