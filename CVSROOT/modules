@@ -5116,8 +5116,6 @@ lifelines	ports/misc/lifelines
 liferea		ports/net/liferea
 lightning	ports/devel/lightning
 lighttpd	ports/www/lighttpd
-lila-xfce4-panel	ports/x11-themes/lila-xfce4-panel
-lila-xffm	ports/x11-themes/lila-xffm
 lila-xfwm4	ports/x11-themes/lila-xfwm4
 lile		ports/misc/lile
 lilypond	ports/print/lilypond
