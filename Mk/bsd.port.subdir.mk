@@ -239,20 +239,19 @@ README.html:
 	PORTOBJFORMAT="${PORTOBJFORMAT:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
 .endif
 
-# Ports may be symlinked to somewhere else.  Convert the directory path
-# back into one that lives within the ports collection.
-PORTSACTUALDIR!=perl -e '($$subdir = "${.CURDIR}") =~ s!.*/([^/]+)!$$1/!; \
-	print "${PORTSACTUALDIR}/";  print $$subdir unless "${PORTSTOP}";'
+
+
 search: ${PORTSDIR}/INDEX
-.if !defined(key) && !defined(name)
-	@echo "The search target requires a keyword parameter or name parameter,"
-	@echo "e.g.: \"make search key=somekeyword\""
-	@echo "or    \"make search name=somekeyword\""
-.else
-.if defined(key)
-	@grep ${PORTSACTUALDIR} ${PORTSDIR}/INDEX | grep -i "${key}" | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'
-.endif
-.if defined(name)
-	@grep ${PORTSACTUALDIR} ${PORTSDIR}/INDEX | grep -i "^[^|]*${name}[^|]*|" | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'
-.endif
-.endif
+	@here=`pwd`; \
+	cd ${PORTSDIR}; \
+	top=`pwd`; \
+	there=`echo "$$here/" | sed s%$$top%${PORTSDIR}%`; \
+	if [ $$key ]; then \
+	  grep $$there ${PORTSDIR}/INDEX | grep -i "${key}" | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'; \
+	elif [ $$name ]; then \
+	  grep $$there ${PORTSDIR}/INDEX | grep -i "^[^|]*${name}[^|]*|" | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'; \
+	else \
+	  echo "The search target requires a keyword parameter or name parameter,"; \
+	  echo "e.g.: \"make search key=somekeyword\""; \
+	  echo "or    \"make search name=somekeyword\""; \
+	fi;
