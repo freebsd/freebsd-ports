@@ -16,21 +16,24 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMPCR (USB XM radio) control software
 
-RUN_DEPENDS=	${JDKDIR}/jre/lib/ext/CommDriver.jar:${PORTSDIR}/comms/java-commapi-freebsd
+RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/CommDriver.jar:${PORTSDIR}/comms/java-commapi-freebsd
 
-USE_JAVA=	1.4+
+USE_JAVA=	yes
+JAVA_VERSION=	1.4+
+JAVA_OS=	native
+
+NO_BUILD=	yes
+
+SUB_FILES=	jxm.sh
+PLIST_FILES=	%%JAVAJARDIR%%/jxm.jar bin/jxm
 
 do-extract:
-	${MKDIR} ${WRKSRC}
-
-do-build:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		< ${FILESDIR}/jxm > ${WRKSRC}/jxm
+	${MKDIR} ${WRKDIR}
 
 do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} \
-		${PREFIX}/share/java/classes/jxm.jar
-	${INSTALL_SCRIPT} ${WRKSRC}/jxm \
+		${JAVAJARDIR}/jxm.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/jxm.sh \
 		${PREFIX}/bin/jxm
 
 .include <bsd.port.mk>
