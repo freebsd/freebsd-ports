@@ -1,0 +1,10 @@
+--- src/kvirc/kvi_dlgoptions.h.orig	Sat May 27 11:12:24 2000
++++ src/kvirc/kvi_dlgoptions.h	Sun Sep 24 19:28:09 2000
+@@ -31,6 +31,7 @@
+ #include <qlabel.h>
+ #include <qpushbutton.h>
+ #include <qcheckbox.h>
++#include <qsplitter.h>
+ #include <qwidget.h>
+ #include <qwidgetstack.h>
+ #include <qtableview.h>

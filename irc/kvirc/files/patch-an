@@ -1,0 +1,12 @@
+--- src/kvirc/kvi_window.h.orig	Fri May 26 09:47:12 2000
++++ src/kvirc/kvi_window.h	Sun Sep 24 19:48:24 2000
+@@ -74,8 +74,8 @@
+ 	* Plugin that this window belongs to (usually 0)
+ 	*/
+ 	void              *m_pluginHandle;
+-	QAccel            *m_pAccelerators;
+ #endif //COMPILE_PLUGIN_SUPPORT
++	QAccel            *m_pAccelerators;
+ public:
+ 	/**
+ 	* The view splitter...
