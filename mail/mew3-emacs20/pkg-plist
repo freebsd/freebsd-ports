@@ -3,35 +3,27 @@ bin/mewcat
 bin/mewdecode
 bin/mewencode
 bin/mewls
-@unexec install-info --delete %D/info/mew%%MEW_MAJOR_VER%%.info %D/info/dir
-@unexec install-info --delete %D/info/mew%%MEW_MAJOR_VER%%.jis.info %D/info/dir
-info/mew%%MEW_MAJOR_VER%%.info
-info/mew%%MEW_MAJOR_VER%%.info-1
-info/mew%%MEW_MAJOR_VER%%.info-2
-info/mew%%MEW_MAJOR_VER%%.info-3
-info/mew%%MEW_MAJOR_VER%%.jis.info
-info/mew%%MEW_MAJOR_VER%%.jis.info-1
-info/mew%%MEW_MAJOR_VER%%.jis.info-2
-info/mew%%MEW_MAJOR_VER%%.jis.info-3
-@exec install-info %D/info/mew%%MEW_MAJOR_VER%%.info %D/info/dir
-@exec install-info %D/info/mew%%MEW_MAJOR_VER%%.jis.info %D/info/dir
-share/doc/mew%%MEW_MAJOR_VER%%/00api
-share/doc/mew%%MEW_MAJOR_VER%%/00changes
-share/doc/mew%%MEW_MAJOR_VER%%/00copyright
-share/doc/mew%%MEW_MAJOR_VER%%/00copyright.jis
-share/doc/mew%%MEW_MAJOR_VER%%/00diff
-share/doc/mew%%MEW_MAJOR_VER%%/00readme
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/00readme
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/00readme-namazu.jis
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-browse.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-caesar.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-fancy-summary.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-gnus.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-nmz-fixer.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-nmz.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-refile-view.el
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-smime-ja.texi
-share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
+%%DOCSDIR%%/00api
+%%DOCSDIR%%/00changes
+%%DOCSDIR%%/00changes.0
+%%DOCSDIR%%/00changes.1
+%%DOCSDIR%%/00changes.2
+%%DOCSDIR%%/00copyright
+%%DOCSDIR%%/00copyright.jis
+%%DOCSDIR%%/00diff
+%%DOCSDIR%%/00readme
+%%DOCSDIR%%/00roadmap
+%%DOCSDIR%%/contrib/00readme
+%%DOCSDIR%%/contrib/00readme-namazu.jis
+%%DOCSDIR%%/contrib/mew-browse.el
+%%DOCSDIR%%/contrib/mew-caesar.el
+%%DOCSDIR%%/contrib/mew-edebug.el
+%%DOCSDIR%%/contrib/mew-fancy-summary.el
+%%DOCSDIR%%/contrib/mew-nmz-fixer.el
+%%DOCSDIR%%/contrib/mew-nmz.el
+%%DOCSDIR%%/contrib/mew-refile-view.el
+%%DOCSDIR%%/contrib/mew-smime-ja.texi
+%%DOCSDIR%%/contrib/mew-toolbar-frame.el
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.img
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.png
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/Mew.xbm
@@ -58,6 +50,7 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-comp.xpm
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-forward.xpm
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-inc.xpm
+%%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-lock.xpm
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-next.xpm
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-pgp-enc.xpm
 %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/mew-pgp-sigenc.xpm
@@ -89,6 +82,7 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-config.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-const.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-const.elc
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-darwin.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-decode.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-decode.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-demo.el
@@ -101,6 +95,8 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-encode.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-env.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-env.elc
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-exec.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-exec.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-ext.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-ext.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-fib.el
@@ -112,9 +108,14 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-header.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-highlight.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-highlight.elc
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-imap.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-imap.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-key.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-key.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-lang-jp.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-lang-latin.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-local.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-local.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-mark.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-mark.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-md5.el
@@ -128,8 +129,12 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-mule.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-mule0.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-mule3.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-net.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-net.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-nntp.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-nntp.elc
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-nntp2.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-nntp2.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-pgp.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-pgp.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-pick.el
@@ -148,8 +153,16 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-sort.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-ssh.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-ssh.elc
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-ssl.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-ssl.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-summary.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-summary.elc
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-summary2.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-summary2.elc
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-summary3.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-summary3.elc
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-summary4.el
+%%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-summary4.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-syntax.el
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-syntax.elc
 %%EMACS_LIBDIR%%/site-lisp/mew%%MEW_MAJOR_VER%%/mew-temacs.el
@@ -173,5 +186,5 @@ share/doc/mew%%MEW_MAJOR_VER%%/contrib/mew-toolbar-frame.el
 @dirrm %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%/etc
 @dirrm %%EMACS_LIBDIR%%/etc/mew%%MEW_MAJOR_VER%%
 @unexec rmdir %D/%%EMACS_LIBDIR%%/etc 2>/dev/null || true
-@dirrm share/doc/mew%%MEW_MAJOR_VER%%/contrib
-@dirrm share/doc/mew%%MEW_MAJOR_VER%%
+@dirrm %%DOCSDIR%%/contrib
+@dirrm %%DOCSDIR%%
