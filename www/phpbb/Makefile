@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	2.0.8
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +16,6 @@ MAINTAINER=	liukang@bjpu.edu.cn
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
-
-FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/c551ae17-7f00-11d8-868e-000347dd607f.html
 
 USE_BZIP2=	yes
 
