@@ -264,6 +264,7 @@
     SUBDIR += ttt
     SUBDIR += tund
     SUBDIR += ucd-snmp
+    SUBDIR += unison
     SUBDIR += vnc
     SUBDIR += vtun
     SUBDIR += wais
