@@ -3,12 +3,12 @@
 # Date created:		3 Nov 1997
 # Whom:			Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/14 12:38:55 jseger Exp $
+# $Id: Makefile,v 1.2 1998/06/27 05:19:48 asami Exp $
 #
 
 DISTNAME=	cgihtml-1.69
 CATEGORIES=	devel www
-MASTER_SITES=	ftp://ftp.eekim.com/users/eekim/cgihtml/
+MASTER_SITES=	ftp://ftp.eekim.com/pub/users/eekim/cgihtml/
 
 MAINTAINER=	i.vaudrey@bigfoot.com
 
@@ -24,5 +24,6 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${PREFIX}/share/doc/cgihtml/html
 .endif
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

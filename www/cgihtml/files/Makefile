@@ -1,8 +1,13 @@
 # Makefile for cgihtml libraries
 
-CFLAGS= -O #-DUPLOADDIR='"/tmp"'
 LIB = cgihtml
-SHLIB_VER = 1.0
+MAJ = 1
+MIN = 0
+.if ($(PORTOBJFORMAT) == "elf")
+SHLIB_VER = $(MAJ)
+.else
+SHLIB_VER = $(MAJ).$(MIN)
+.endif
 
 OBJS = string-lib.o cgi-llist.o cgi-lib.o html-lib.o
 HDRS =	${OBJS:.o=.h}
@@ -37,9 +42,8 @@ install:
 	@mkdir -p ${PREFIX}/lib
 	@mkdir -p ${PREFIX}/include
 	${INSTALL} -c -m 644 lib${LIB}.a ${PREFIX}/lib
-	${RANLIB} -t ${PREFIX}/lib/lib${LIB}.a
+#	${RANLIB} -t ${PREFIX}/lib/lib${LIB}.a
 	${INSTALL} -c -m 644 lib${LIB}.so.${SHLIB_VER} ${PREFIX}/lib
-	/sbin/ldconfig -m ${PREFIX}/lib
 .for file in ${HDRS}
 	${INSTALL} -c -m 644 ${file} ${PREFIX}/include
 .endfor
