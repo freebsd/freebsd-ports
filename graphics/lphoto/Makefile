@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lphoto
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.26
 CATEGORIES=	graphics
 MASTER_SITES=	 http://software.linspire.com/emptypool/lindowsos/pool/main/l/lphoto/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-0.0.0.45.lindows0.1
@@ -14,13 +14,12 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-0.0.0.45.lindows0.1
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A complete desktop solution for digital photo management
 
-BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
+BUILD_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
 LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS=	gphoto2:${PORTSDIR}/graphics/gphoto2 \
-		pyuic:${PORTSDIR}/x11-toolkits/py-qt
+		kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
 
 USE_REINPLACE=	yes
-USE_KDELIBS_VER=3
 USE_PYTHON=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
