@@ -8,8 +8,7 @@ PORTNAME=	haddock
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.haskell.org/haddock/ \
-		http://www.mirror.ac.uk/sites/www.haskell.org/haddock/
+MASTER_SITES=	http://www.haskell.org/haddock/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 

@@ -9,8 +9,7 @@ PORTNAME=	hgl
 PORTVERSION=	2.0.4
 PORTREVISION=	2
 CATEGORIES=	graphics haskell
-MASTER_SITES=	http://haskell.org/graphics/downloads/ \
-		http://www.mirror.ac.uk/sites/www.haskell.org/graphics/downloads/
+MASTER_SITES=	http://haskell.org/graphics/downloads/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	graphics-${PORTVERSION}.src
 

@@ -9,8 +9,7 @@ PORTNAME=	hugs98
 PORTVERSION=	200311
 PORTREVISION=	1
 CATEGORIES=	lang haskell
-MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/${HUGS_DATE}/ \
-		http://www.mirror.ac.uk/sites/www.haskell.org/Hugs/downloads/${HUGS_DATE}/
+MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/${HUGS_DATE}/
 DISTNAME=	${PORTNAME}-${HUGS_DATE}
 
 MAINTAINER=	haskell@FreeBSD.org

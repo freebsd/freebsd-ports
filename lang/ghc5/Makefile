@@ -9,9 +9,7 @@ PORTVERSION=	5.04.3
 PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
-		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot \
-		http://www.mirror.ac.uk/sites/www.haskell.org/ghc/dist/${PORTVERSION}/:source \
-		http://www.mirror.ac.uk/sites/www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
+		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
 
 ONLY_FOR_ARCHS=	i386
 

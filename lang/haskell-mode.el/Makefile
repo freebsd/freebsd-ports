@@ -8,8 +8,7 @@
 PORTNAME=	haskell-mode
 PORTVERSION=	1.44
 CATEGORIES=	lang elisp
-MASTER_SITES=	http://www.haskell.org/haskell-mode/ \
-		http://www.mirror.ac.uk/sites/www.haskell.org/haskell-mode/
+MASTER_SITES=	http://www.haskell.org/haskell-mode/
 
 MAINTAINER=	jre@vineyard.net
 COMMENT=	An Emacs lisp mode for editing haskell programs
