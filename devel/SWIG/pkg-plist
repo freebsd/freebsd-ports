@@ -1,0 +1,4 @@
+bin/wrap
+lib/libswig.a
+include/swig.h
+lib/swig_lib

@@ -1,0 +1,13 @@
+SWIG is a tool for automatically generating the wrapper code needed
+to link collections of functions written in C/C++ with interpreted
+scripting languages.    Currently, SWIG supports :
+
+        - Tcl
+        - Perl4
+        - Perl5
+        - Guile-iii
+        - Python 1.3
+
+Using SWIG, it is possible to greatly simplify interface development
+and to put interesting interfaces on existing applications with
+little effort.    
