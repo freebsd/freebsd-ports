@@ -2499,7 +2499,6 @@ gimp1		ports/graphics/gimp1
 gindent		ports/devel/gindent
 gini		ports/net/gini
 ginsu		ports/net/ginsu
-giram		ports/graphics/giram
 git		ports/misc/git
 gj		ports/java/gj
 gj-jdk11	ports/java/gj-jdk11
@@ -9378,7 +9377,6 @@ ruby-freedb	ports/audio/ruby-freedb
 ruby-gconf2	ports/devel/ruby-gconf2
 ruby-gd		ports/graphics/ruby-gd
 ruby-gdbm	ports/databases/ruby-gdbm
-ruby-gdchart	ports/graphics/ruby-gdchart
 ruby-gdk_imlib	ports/graphics/ruby-gdk_imlib
 ruby-gdk_pixbuf	ports/graphics/ruby-gdk_pixbuf
 ruby-gdk_pixbuf2	ports/graphics/ruby-gdk_pixbuf2
