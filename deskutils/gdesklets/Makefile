@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gdesklets
-PORTVERSION=	0.34
+PORTVERSION=	0.34.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.pycage.de/download/${PORTNAME}/
 DISTNAME=	gDesklets-${PORTVERSION}
