@@ -622,3 +622,4 @@ www/mozilla-embedded-devel||2003-10-01|was seldom used and broken
 net/6to4|net/hf6to4|2003-10-04|Replaced by net/hf6to4
 security/rsaref||2003-10-04|Port is no longer useful
 sysytils/clean|sysutils/clean_|2003-10-06|Portname clash with Makefile target
+graphics/Mesa5||2003-10-06|Dupe port, see graphics/mesagl

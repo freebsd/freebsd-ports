@@ -10,7 +10,6 @@
     SUBDIR += IPA
     SUBDIR += ImageMagick
     SUBDIR += Mesa3
-    SUBDIR += Mesa5
     SUBDIR += OpenEXR
     SUBDIR += aalib
     SUBDIR += acidwarp
