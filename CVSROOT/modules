@@ -7838,6 +7838,7 @@ procmap		ports/sysutils/procmap
 prodosemu	ports/emulators/prodosemu
 proftpd		ports/ftp/proftpd
 profxp		ports/ftp/profxp
+progsreiserfs	ports/sysutils/progsreiserfs
 proguard	ports/java/proguard
 proj		ports/graphics/proj
 projectcenter.app	ports/devel/projectcenter.app
