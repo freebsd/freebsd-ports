@@ -18,15 +18,11 @@ DIST_SUBDIR=	mingw
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Headers and Libraries for Windows cross-development
 
-RUNTIMEVERSION=	3.1
-APIVERSION=	2.4
+RUNTIMEVERSION=	3.0
+APIVERSION=	2.3
 
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
-
-.if defined(INSTALL_AS_USER)
-MAKE_ARGS+=	INSTALL_AS_USER=yes
-.endif
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
