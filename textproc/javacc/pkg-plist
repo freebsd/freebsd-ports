@@ -1,0 +1,197 @@
+bin/javacc
+bin/jjdoc
+bin/jjtree
+share/doc/javacc/COPYRIGHT
+share/doc/javacc/doc/jjtree.JJTREE-FIX
+share/doc/javacc/doc/INSTALLATIONNOTES
+share/doc/javacc/doc/javacc.RELEASENOTES
+share/doc/javacc/doc/javacc.DETAILEDNOTES
+share/doc/javacc/doc/jjdoc.RELEASENOTES
+share/doc/javacc/doc/jjtree.RELEASENOTES
+share/doc/javacc/doc/jjtree.INTRO
+share/doc/javacc/doc/README
+share/examples/javacc/examples/Lookahead/Example9.jj
+share/examples/javacc/examples/Lookahead/Example10.jj
+share/examples/javacc/examples/Lookahead/Example1.jj
+share/examples/javacc/examples/Lookahead/Example2.jj
+share/examples/javacc/examples/Lookahead/Example3.jj
+share/examples/javacc/examples/Lookahead/Example4.jj
+share/examples/javacc/examples/Lookahead/Example5.jj
+share/examples/javacc/examples/Lookahead/Example6.jj
+share/examples/javacc/examples/Lookahead/Example7.jj
+share/examples/javacc/examples/Lookahead/Example8.jj
+share/examples/javacc/examples/Lookahead/README
+share/examples/javacc/examples/CPP/README
+share/examples/javacc/examples/CPP/CPP.jj
+share/examples/javacc/examples/CandCPLUSPLUS/C/README
+share/examples/javacc/examples/CandCPLUSPLUS/C/C.jj
+share/examples/javacc/examples/CandCPLUSPLUS/CPLUSPLUS/README
+share/examples/javacc/examples/CandCPLUSPLUS/CPLUSPLUS/CPLUSPLUS.jj
+share/examples/javacc/examples/CandCPLUSPLUS/CPLUSPLUS/ClassScope.java
+share/examples/javacc/examples/CandCPLUSPLUS/CPLUSPLUS/Declaration.java
+share/examples/javacc/examples/CandCPLUSPLUS/CPLUSPLUS/Scope.java
+share/examples/javacc/examples/CandCPLUSPLUS/CPLUSPLUS/SymtabManager.java
+share/examples/javacc/examples/CandCPLUSPLUS/README
+share/examples/javacc/examples/DU/README
+share/examples/javacc/examples/DU/du.jj
+share/examples/javacc/examples/GUIParsing/ParserVersion/README
+share/examples/javacc/examples/GUIParsing/ParserVersion/CalcInput.jj
+share/examples/javacc/examples/GUIParsing/ParserVersion/CalcGUI.java
+share/examples/javacc/examples/GUIParsing/ParserVersion/Main.java
+share/examples/javacc/examples/GUIParsing/ParserVersion/ProducerConsumer.java
+share/examples/javacc/examples/GUIParsing/ParserVersion/TokenCollector.java
+share/examples/javacc/examples/GUIParsing/TokenMgrVersion/README
+share/examples/javacc/examples/GUIParsing/TokenMgrVersion/CalcInput.jj
+share/examples/javacc/examples/GUIParsing/TokenMgrVersion/CalcGUI.java
+share/examples/javacc/examples/GUIParsing/TokenMgrVersion/CharCollector.java
+share/examples/javacc/examples/GUIParsing/TokenMgrVersion/Main.java
+share/examples/javacc/examples/GUIParsing/TokenMgrVersion/MyLexer.java
+share/examples/javacc/examples/GUIParsing/README
+share/examples/javacc/examples/HTMLGrammars/RobsHTML/README
+share/examples/javacc/examples/HTMLGrammars/RobsHTML/README.html
+share/examples/javacc/examples/HTMLGrammars/RobsHTML/html-3.2.jjt
+share/examples/javacc/examples/HTMLGrammars/RobsHTML/NodeAttribute.java
+share/examples/javacc/examples/HTMLGrammars/RobsHTML/NodePCDATA.java
+share/examples/javacc/examples/HTMLGrammars/RobsHTML/html-3.2.dtd
+share/examples/javacc/examples/HTMLGrammars/README
+share/examples/javacc/examples/Interpreter/sqrt.spl
+share/examples/javacc/examples/Interpreter/ASTAddNode.java
+share/examples/javacc/examples/Interpreter/ASTAndNode.java
+share/examples/javacc/examples/Interpreter/ASTAssignment.java
+share/examples/javacc/examples/Interpreter/ASTBitwiseAndNode.java
+share/examples/javacc/examples/Interpreter/ASTBitwiseComplNode.java
+share/examples/javacc/examples/Interpreter/ASTBitwiseOrNode.java
+share/examples/javacc/examples/Interpreter/ASTBitwiseXorNode.java
+share/examples/javacc/examples/Interpreter/ASTBlock.java
+share/examples/javacc/examples/Interpreter/ASTCompilationUnit.java
+share/examples/javacc/examples/Interpreter/ASTDivNode.java
+share/examples/javacc/examples/Interpreter/ASTEQNode.java
+share/examples/javacc/examples/Interpreter/ASTFalseNode.java
+share/examples/javacc/examples/Interpreter/ASTGENode.java
+share/examples/javacc/examples/Interpreter/ASTGTNode.java
+share/examples/javacc/examples/Interpreter/ASTId.java
+share/examples/javacc/examples/Interpreter/ASTIfStatement.java
+share/examples/javacc/examples/Interpreter/ASTIntConstNode.java
+share/examples/javacc/examples/Interpreter/ASTLENode.java
+share/examples/javacc/examples/Interpreter/ASTLTNode.java
+share/examples/javacc/examples/Interpreter/ASTModNode.java
+share/examples/javacc/examples/Interpreter/ASTMulNode.java
+share/examples/javacc/examples/Interpreter/ASTNENode.java
+share/examples/javacc/examples/Interpreter/ASTNotNode.java
+share/examples/javacc/examples/Interpreter/ASTOrNode.java
+share/examples/javacc/examples/Interpreter/ASTReadStatement.java
+share/examples/javacc/examples/Interpreter/ASTStatementExpression.java
+share/examples/javacc/examples/Interpreter/ASTSubtractNode.java
+share/examples/javacc/examples/Interpreter/ASTTrueNode.java
+share/examples/javacc/examples/Interpreter/ASTVarDeclaration.java
+share/examples/javacc/examples/Interpreter/ASTWhileStatement.java
+share/examples/javacc/examples/Interpreter/ASTWriteStatement.java
+share/examples/javacc/examples/Interpreter/Node.java
+share/examples/javacc/examples/Interpreter/SimpleNode.java
+share/examples/javacc/examples/Interpreter/SPL.java
+share/examples/javacc/examples/Interpreter/SPL.jjt
+share/examples/javacc/examples/Interpreter/fact.spl
+share/examples/javacc/examples/Interpreter/odd.spl
+share/examples/javacc/examples/Interpreter/README
+share/examples/javacc/examples/JJTreeExamples/eg4DumpVisitor.java
+share/examples/javacc/examples/JJTreeExamples/eg1.jjt
+share/examples/javacc/examples/JJTreeExamples/eg2.jjt
+share/examples/javacc/examples/JJTreeExamples/eg3.jjt
+share/examples/javacc/examples/JJTreeExamples/eg4.jjt
+share/examples/javacc/examples/JJTreeExamples/ASTMyID.java
+share/examples/javacc/examples/JJTreeExamples/ASTMyOtherID.java
+share/examples/javacc/examples/JJTreeExamples/README
+share/examples/javacc/examples/JavaGrammars/Java1.2-b.jjt
+share/examples/javacc/examples/JavaGrammars/OPTIMIZING
+share/examples/javacc/examples/JavaGrammars/billsJava1.0.2.jj
+share/examples/javacc/examples/JavaGrammars/Java1.0.2.jj
+share/examples/javacc/examples/JavaGrammars/Java1.0.2LS.jj
+share/examples/javacc/examples/JavaGrammars/Java1.1.jj
+share/examples/javacc/examples/JavaGrammars/Java1.1noLA.jj
+share/examples/javacc/examples/JavaGrammars/Java1.2-a.jj
+share/examples/javacc/examples/JavaGrammars/README
+share/examples/javacc/examples/JavaCCGrammar/JavaCC.jj
+share/examples/javacc/examples/CORBA-IDL/README
+share/examples/javacc/examples/CORBA-IDL/IDL.jj
+share/examples/javacc/examples/MailProcessing/README
+share/examples/javacc/examples/MailProcessing/Digest.jj
+share/examples/javacc/examples/MailProcessing/Faq.jj
+share/examples/javacc/examples/MailProcessing/sampleMailFile
+share/examples/javacc/examples/Obfuscator/input/package1/Main.java
+share/examples/javacc/examples/Obfuscator/input/package2/Incr.java
+share/examples/javacc/examples/Obfuscator/README
+share/examples/javacc/examples/Obfuscator/IdsFile.jj
+share/examples/javacc/examples/Obfuscator/Java1.1.jj
+share/examples/javacc/examples/Obfuscator/MapFile.jj
+share/examples/javacc/examples/Obfuscator/Globals.java
+share/examples/javacc/examples/Obfuscator/Main.java
+share/examples/javacc/examples/Obfuscator/Obfuscator.java
+share/examples/javacc/examples/Obfuscator/maps
+share/examples/javacc/examples/Obfuscator/nochangeids
+share/examples/javacc/examples/Obfuscator/useids
+share/examples/javacc/examples/SimpleCalculators/Calc2i.jj
+share/examples/javacc/examples/SimpleCalculators/Calc1i.jj
+share/examples/javacc/examples/SimpleCalculators/Calc1.jj
+share/examples/javacc/examples/SimpleCalculators/README
+share/examples/javacc/examples/SimpleCalculators/Calc2.jj
+share/examples/javacc/examples/SimpleCalculators/Calc3i.jj
+share/examples/javacc/examples/SimpleCalculators/Calc3.jj
+share/examples/javacc/examples/SimpleExamples/README
+share/examples/javacc/examples/SimpleExamples/IdList.jj
+share/examples/javacc/examples/SimpleExamples/NL_Xlator.jj
+share/examples/javacc/examples/SimpleExamples/Simple1.jj
+share/examples/javacc/examples/SimpleExamples/Simple2.jj
+share/examples/javacc/examples/SimpleExamples/Simple3.jj
+share/examples/javacc/examples/Transformer/README
+share/examples/javacc/examples/Transformer/ToyJava.jjt
+share/examples/javacc/examples/Transformer/ASTCompilationUnit.java
+share/examples/javacc/examples/Transformer/ASTSpecialBlock.java
+share/examples/javacc/examples/Transformer/SimpleNode.java
+share/examples/javacc/examples/Transformer/divide.toy
+share/examples/javacc/examples/JavaScope/README
+share/examples/javacc/examples/VHDL/Vhdl.zip
+share/examples/javacc/examples/VHDL/README
+share/examples/javacc/examples/VTransformer/README
+share/examples/javacc/examples/VTransformer/Java1.1.jjt
+share/examples/javacc/examples/VTransformer/AddAcceptVisitor.java
+share/examples/javacc/examples/VTransformer/Main.java
+share/examples/javacc/examples/VTransformer/SimpleNode.java
+share/examples/javacc/examples/VTransformer/UnparseVisitor.java
+share/examples/javacc/examples/README
+share/java/classes/JavaCC.jar
+@dirrm share/doc/javacc/doc
+@dirrm share/doc/javacc
+@dirrm share/doc
+@dirrm share/examples/javacc/examples/Lookahead
+@dirrm share/examples/javacc/examples/CPP
+@dirrm share/examples/javacc/examples/CandCPLUSPLUS/C
+@dirrm share/examples/javacc/examples/CandCPLUSPLUS/CPLUSPLUS
+@dirrm share/examples/javacc/examples/CandCPLUSPLUS
+@dirrm share/examples/javacc/examples/DU
+@dirrm share/examples/javacc/examples/GUIParsing/ParserVersion
+@dirrm share/examples/javacc/examples/GUIParsing/TokenMgrVersion
+@dirrm share/examples/javacc/examples/GUIParsing
+@dirrm share/examples/javacc/examples/HTMLGrammars/RobsHTML
+@dirrm share/examples/javacc/examples/HTMLGrammars
+@dirrm share/examples/javacc/examples/Interpreter
+@dirrm share/examples/javacc/examples/JJTreeExamples
+@dirrm share/examples/javacc/examples/JavaGrammars
+@dirrm share/examples/javacc/examples/JavaCCGrammar
+@dirrm share/examples/javacc/examples/CORBA-IDL
+@dirrm share/examples/javacc/examples/MailProcessing
+@dirrm share/examples/javacc/examples/Obfuscator/input/package1
+@dirrm share/examples/javacc/examples/Obfuscator/input/package2
+@dirrm share/examples/javacc/examples/Obfuscator/input
+@dirrm share/examples/javacc/examples/Obfuscator
+@dirrm share/examples/javacc/examples/SimpleCalculators
+@dirrm share/examples/javacc/examples/SimpleExamples
+@dirrm share/examples/javacc/examples/Transformer
+@dirrm share/examples/javacc/examples/JavaScope
+@dirrm share/examples/javacc/examples/VHDL
+@dirrm share/examples/javacc/examples/VTransformer
+@dirrm share/examples/javacc/examples
+@dirrm share/examples/javacc
+@dirrm share/examples
+@dirrm share/java/classes
+@dirrm share/java
+@dirrm share
