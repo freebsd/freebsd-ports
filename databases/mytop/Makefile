@@ -1,0 +1,40 @@
+# New ports collection makefile for:	mytop
+# Date created:				28 Augest 2000
+# Whom:	      				Yen-Ming Lee <leeym@cae.ce.ntu.edu.tw>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mytop
+PORTVERSION=	0.3
+CATEGORIES=	databases
+MASTER_SITES=	http://public.yahoo.com/~jzawodn/mytop/
+DISTNAME=	mytop
+EXTRACT_SUFX=	.gz
+
+MAINTAINER=	leeym@cae.ce.ntu.edu.tw
+
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-Mysql
+
+USE_PERL5=	yes
+
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+
+MAN1=		mytop.1
+POD2MAN?=	/usr/bin/pod2man
+
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	@${GUNZIP_CMD} -c ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/${DISTNAME}
+	@${POD2MAN} ${WRKDIR}/${DISTNAME} > ${WRKDIR}/${DISTNAME}.1
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}.1 ${PREFIX}/man/man1
+
+NEWLAYOUT=	yes
+
+.include <bsd.port.mk>
