@@ -19,11 +19,6 @@ MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 GNU_CONFIGURE=	yes
 
-OPTIMIZATION!=	${ECHO} "${CFLAGS}" | grep '\-O[2-6]' || true
-.if empty(OPTIMIZATION)
-CFLAGS+=	-O2
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400016
