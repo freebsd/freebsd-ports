@@ -1,48 +1,48 @@
 @comment $FreeBSD$
-include/FL/Fl_Editor.H
+%%INCSDIR%%/Fl_Editor.H
 @exec ln -fs %f %B/Fl_Editor.h
 @unexec rm -f %B/Fl_Editor.h
-include/FL/Fl_FancyEditor.H
+%%INCSDIR%%/Fl_FancyEditor.H
 @exec ln -fs %f %B/Fl_FancyEditor.h
 @unexec rm -f %B/Fl_FancyEditor.h
-include/FL/Fl_FancyMultiEditor.H
+%%INCSDIR%%/Fl_FancyMultiEditor.H
 @exec ln -fs %f %B/Fl_FancyMultiEditor.h
 @unexec rm -f %B/Fl_FancyMultiEditor.h
-include/FL/Fl_MultiEditor.H
+%%INCSDIR%%/Fl_MultiEditor.H
 @exec ln -fs %f %B/Fl_MultiEditor.h
 @unexec rm -f %B/Fl_MultiEditor.h
-include/FL/Fl_ProgressBox.H
+%%INCSDIR%%/Fl_ProgressBox.H
 @exec ln -fs %f %B/Fl_ProgressBox.h
 @unexec rm -f %B/Fl_ProgressBox.h
-include/FL/Fl_StatusPanel.H
+%%INCSDIR%%/Fl_StatusPanel.H
 @exec ln -fs %f %B/Fl_StatusPanel.h
 @unexec rm -f %B/Fl_StatusPanel.h
-include/FL/editengine.h
+%%INCSDIR%%/editengine.h
 @exec ln -fs %f %B/editengine.H
 @unexec rm -f %B/editengine.H
-include/FL/editvars.h
+%%INCSDIR%%/editvars.h
 @exec ln -fs %f %B/editvars.H
 @unexec rm -f %B/editvars.H
-include/FL/lists.h
+%%INCSDIR%%/lists.h
 @exec ln -fs %f %B/lists.H
 @unexec rm -f %B/lists.H
-include/FL/stringsup.h
+%%INCSDIR%%/stringsup.h
 @exec ln -fs %f %B/stringsup.H
 @unexec rm -f %B/stringsup.H
-include/FL/wstring.h
+%%INCSDIR%%/wstring.h
 @exec ln -fs %f %B/wstring.H
 @unexec rm -f %B/wstring.H
-lib/libfleditor.a
-lib/libfleditor.so.1
+%%LIBSDIR%%/libfleditor.a
+%%LIBSDIR%%/libfleditor.so.1
 @exec ln -fs %f %B/libfleditor.so
 @unexec rm -f %B/libfleditor.so
-%%PORTDOCS%%share/doc/fl_editor/Fl_Editor.html
-%%PORTDOCS%%share/doc/fl_editor/Fl_Editor.jpg
-%%PORTDOCS%%share/doc/fl_editor/Fl_FancyEditor.html
-%%PORTDOCS%%share/doc/fl_editor/Fl_FancyEditor.jpg
-%%PORTDOCS%%share/doc/fl_editor/Fl_FancyMultiEditor.html
-%%PORTDOCS%%share/doc/fl_editor/Fl_MultiEditor.html
-%%PORTDOCS%%share/doc/fl_editor/Fl_StatusPanel.html
-%%PORTDOCS%%share/doc/fl_editor/Fl_StatusPanel.jpg
-%%PORTDOCS%%share/doc/fl_editor/index.html
-%%PORTDOCS%%@dirrm share/doc/fl_editor
+%%PORTDOCS%%%%DOCSDIR%%/Fl_Editor.html
+%%PORTDOCS%%%%DOCSDIR%%/Fl_Editor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Fl_FancyEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/Fl_FancyEditor.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Fl_FancyMultiEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/Fl_MultiEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/Fl_StatusPanel.html
+%%PORTDOCS%%%%DOCSDIR%%/Fl_StatusPanel.jpg
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

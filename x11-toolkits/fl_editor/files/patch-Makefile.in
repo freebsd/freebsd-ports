@@ -1,6 +1,18 @@
---- Makefile.in.orig	Wed Jan 10 00:11:24 2001
-+++ Makefile.in	Sat Aug 18 09:03:39 2001
-@@ -40,14 +40,19 @@
+--- Makefile.in.orig	Fri Jun 14 23:12:25 2002
++++ Makefile.in	Wed Mar 10 02:08:47 2004
+@@ -23,7 +23,10 @@
+ DSONAME         =       @DSOLIBNAME@@DSOEXT@
+ GLLIB	=	@GLLIB@
+ FLTKROOT	=	@ac_fltk_root@
+-FLTKLIBDIR	=	@ac_fltk_libraries@
++FLTKLIBDIR	=	%%PREFIX%%/lib
++FLTKINCDIR	=	%%PREFIX%%/include/FL
++MKDIR		=	mkdir -p
++INSTALL_DATA	=	${BSD_INSTALL_DATA}
+ 
+ #
+ # Program options...
+@@ -40,14 +43,19 @@
  #
  
  .SILENT:
@@ -22,7 +34,7 @@
  
  
  #
-@@ -62,7 +67,7 @@
+@@ -62,7 +70,7 @@
  # Make all targets...
  #
  
@@ -31,19 +43,20 @@
  
  #
  # Remove object and target files...
-@@ -86,7 +91,10 @@
+@@ -86,7 +94,11 @@
  
  install: libfleditor.a
  	echo "Installing library to $(FLTKLIBDIR)"
 -	cp libfleditor.a $(FLTKLIBDIR)	
-+	rm -f $(FLTKLIBDIR)/libfleditor.*
-+	cp libfleditor.a $(DSONAME) $(FLTKLIBDIR)	
-+	echo "Installing headers to $(FLTKROOT)/include/FL"
-+	cp FL/*.[Hh] $(FLTKROOT)/include/FL
++	${RM} -f $(FLTKLIBDIR)/libfleditor.*
++	${INSTALL_DATA} libfleditor.a $(DSONAME) $(FLTKLIBDIR)	
++	echo "Installing headers to $(FLTKINCDIR)"
++	${MKDIR} -p $(FLTKINCDIR)
++	${INSTALL_DATA} FL/*.[Hh] $(FLTKINCDIR)
  
  #
  # Make the test programs.
-@@ -122,6 +130,7 @@
+@@ -122,6 +134,7 @@
  EDITOR_OBJS = src/Fl_Editor.o src/Fl_FancyEditor.o src/Fl_FancyMultiEditor.o \
          src/Fl_MultiEditor.o src/Fl_ProgressBox.o src/Fl_StatusPanel.o \
          src/editengine.o src/lists.o src/wstring.o
@@ -51,7 +64,7 @@
  
  libfleditor.a:	$(EDITOR_OBJS)
  	echo Building library $@...
-@@ -129,15 +138,14 @@
+@@ -129,15 +142,14 @@
  	$(AR) $(ARFLAGS) libfleditor.a $(EDITOR_OBJS)
  	$(RANLIB) libfleditor.a
  
