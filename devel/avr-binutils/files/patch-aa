@@ -1,10 +1,36 @@
 --- libiberty/Makefile.in.orig	Sat Dec  9 17:10:41 2000
-+++ libiberty/Makefile.in	Thu Apr 19 23:30:16 2001
-@@ -152,6 +152,7 @@
++++ libiberty/Makefile.in	Tue May 15 20:58:52 2001
+@@ -152,7 +152,8 @@
  	$(RANLIB) $(TARGETLIB)
  
  INSTALL_DEST = @INSTALL_DEST@
+-install: install_to_$(INSTALL_DEST) install-subdir
 +#install: install_to_$(INSTALL_DEST) install-subdir
- install: install_to_$(INSTALL_DEST) install-subdir
++install:
  
  install_to_libdir: all
+ 	$(INSTALL_DATA) $(TARGETLIB) $(libdir)$(MULTISUBDIR)/$(TARGETLIB)n
+--- bfd/Makefile.in.orig	Mon Jan 22 10:41:40 2001
++++ bfd/Makefile.in	Tue May 15 21:02:37 2001
+@@ -564,7 +564,8 @@
+ 
+ install-am: all-am
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+-install: install-recursive
++#install: install-recursive
++install:
+ uninstall-am: uninstall-libLTLIBRARIES
+ uninstall: uninstall-recursive
+ all-am: Makefile $(LIBRARIES) $(LTLIBRARIES) config.h
+--- opcodes/Makefile.in.orig	Thu Jan 11 22:20:19 2001
++++ opcodes/Makefile.in	Tue May 15 21:03:33 2001
+@@ -663,7 +663,8 @@
+ 
+ install-am: all-am
+ 	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
+-install: install-recursive
++#install: install-recursive
++install:
+ uninstall-am: uninstall-libLTLIBRARIES
+ uninstall: uninstall-recursive
+ all-am: Makefile $(LIBRARIES) $(LTLIBRARIES) config.h
