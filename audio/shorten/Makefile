@@ -8,7 +8,8 @@
 PORTNAME=	shorten
 PORTVERSION=	2.3a
 CATEGORIES=	audio archivers
-MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/coding/
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	sec@42.org
