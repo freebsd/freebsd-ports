@@ -13,14 +13,15 @@ MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/xoct
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 MAN1=		xoct.1
 MANCOMPRESSED=	no
+XFREE86_HTML_MAN=	no
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xoct ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Oct.ad ${PREFIX}/lib/X11/app-defaults/Oct
-	${INSTALL_MAN} ${WRKSRC}/xoct.man ${PREFIX}/man/man1/xoct.1
+	${INSTALL_MAN} ${WRKSRC}/xoct.man ${MANPREFIX}/man/man1/xoct.1
 
 .include <bsd.port.mk>

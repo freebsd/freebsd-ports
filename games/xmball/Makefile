@@ -13,14 +13,15 @@ MASTER_SITE_SUBDIR=	games/xpuzzles
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/xmball
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_IMAKE=	yes
 MAN1=		xmball.1
 MANCOMPRESSED=	no
+XFREE86_HTML_MAN=	no
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xmball ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/Mball.ad ${PREFIX}/lib/X11/app-defaults/Mball
-	${INSTALL_MAN} ${WRKSRC}/xmball.man ${PREFIX}/man/man1/xmball.1
+	${INSTALL_MAN} ${WRKSRC}/xmball.man ${MANPREFIX}/man/man1/xmball.1
 
 .include <bsd.port.mk>
