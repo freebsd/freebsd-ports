@@ -1,0 +1,11 @@
+--- intel2gas.cc.orig	Wed May  5 10:53:34 1999
++++ intel2gas.cc	Wed May 12 12:26:47 1999
+@@ -428,7 +428,7 @@
+ static void printHelp(char const *infostr)
+ {
+     fprintf(stderr,"%s\n"\
+-	   "usage: intel2gas [options] [infile] [-o outfile]\n"\
++	   "usage: intel2gas [options] [-o outfile] [infile]\n"\
+ 	   "where options include:\n"\
+ 	   "\t-h\t\tthis help\n"\
+ 	   "\t-i\t\tconvert from intel to at&t format (default)\n"\

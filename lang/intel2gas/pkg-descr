@@ -1,0 +1,17 @@
+intel2gas 1.2 (c)1999 Mikko Tiihonen (mikko.tiihonen@hut.fi)
+
+This program converts assembler source from intel (NASM), to AT&T (gas) 
+syntax. It is FREE SOFTWARE under the terms of the GNU General Public 
+License (GPL), enclosed in the file 'COPYING'.
+----------------------------------------------------------------------------
+Intel2gas is a small text parser that can convert assembler source
+written in intel syntax to at&t syntax. And nowadays more often also
+the other way.
+
+The program does minimal error checking and does not understand the
+text it's converting. It just tries to find matches from its syntax
+database.
+You are encouraged to send any bug reports, suggestions and comments to
+the author.
+
+FreeBSD port by G. Adam Stanislav <adam@whizkidtech.net>
