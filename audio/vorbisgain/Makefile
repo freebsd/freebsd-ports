@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://sjeng.org/ftp/vorbis/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Calculates the perceived sound level of an Ogg Vorbis file
 
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
@@ -25,6 +25,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		vorbisgain.1
 PLIST_FILES=	bin/vorbisgain
+
+.if defined(WITH_RECURSIVE)
+CONFIGURE_ARGS=	--enable-recursive
+.endif
 
 pre-configure:
 	@${CHMOD} +x ${WRKSRC}/configure
