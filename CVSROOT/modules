@@ -10172,6 +10172,7 @@ xbomb		ports/games/xbomb
 xbomber		ports/games/xbomber
 xbone		ports/net/xbone
 xbraitenberg	ports/emulators/xbraitenberg
+xbsql		ports/databases/xbsql
 xbubble		ports/games/xbubble
 xbuffy		ports/mail/xbuffy
 xc-mail		ports/mail/xc-mail
