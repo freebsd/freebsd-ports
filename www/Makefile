@@ -609,6 +609,7 @@
     SUBDIR += phpSysInfo
     SUBDIR += phpbb
     SUBDIR += phpgedview
+    SUBDIR += phpsurveyor
     SUBDIR += phpwebapp
     SUBDIR += phpwiki
     SUBDIR += plog
