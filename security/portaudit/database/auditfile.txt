@@ -42,3 +42,4 @@ fspd<=2.8.1.3|http://fsp.sourceforge.net/|buffer overflow (CAN-2004-0011) and di
 libtool>=1.3<1.3.5_2|http://www.securityfocus.com/archive/1/352519|symlink vulnerability
 libtool>=1.4<1.4.3_3|http://www.securityfocus.com/archive/1/352519|symlink vulnerability
 libtool>=1.5<1.5.2|http://www.securityfocus.com/archive/1/352333|symlink vulnerability
+gnats<=3.113.1_9|http://www.securityfocus.com/archive/1/326337|Local privilege elevation
