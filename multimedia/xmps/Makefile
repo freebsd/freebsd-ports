@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	xmps
-PORTVERSION=	0.1.3
+PORTVERSION=	0.2.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	smpeg.1:${PORTSDIR}/graphics/smpeg
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
+INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		SDL_CONFIG="${SDL_CONFIG}" \
@@ -29,7 +27,8 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
 		 s|\$$\(datadir\)/aclocal|\$$\(prefix\)/share/aclocal|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
+		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g ; \
+		 s|-lpthread|-pthread|g'
 
 post-configure:
 	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \

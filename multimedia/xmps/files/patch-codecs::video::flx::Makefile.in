@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- codecs/video/flx/Makefile.in.orig	Sat Jan 20 01:53:42 2001
++++ codecs/video/flx/Makefile.in	Sun Feb  4 22:55:34 2001
+@@ -125,7 +125,7 @@
+ libflx_la_SOURCES =  flx_codec.h flx_codec.c 
+ 
+ 
+-INCLUDES = @CFLAGS@ -DVERSION=\"@VERSION@\" -DPACKAGE=\"@PACKAGE@\" -I$(includedir) -I$(top_srcdir)/src -I$(top_srcdir)/libxmps -I$(top_srcdir)/intl -I../../src -I../../libxmps -Wall
++INCLUDES = @CFLAGS@ @SDL_CFLAGS@ -DVERSION=\"@VERSION@\" -DPACKAGE=\"@PACKAGE@\" -I$(includedir) -I$(top_srcdir)/src -I$(top_srcdir)/libxmps -I$(top_srcdir)/intl -I../../src -I../../libxmps -Wall
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
