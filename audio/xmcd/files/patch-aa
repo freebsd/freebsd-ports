@@ -1,5 +1,5 @@
-*** ./xmcd_d/Imakefile.orig	Thu Apr  4 21:42:31 1996
---- ./xmcd_d/Imakefile	Thu Apr  4 23:31:17 1996
+*** xmcd_d/Imakefile.orig	Sat May 23 02:31:49 1998
+--- xmcd_d/Imakefile	Tue May 26 17:32:59 1998
 ***************
 *** 43,49 ****
    * #include "Motif.tmpl"
@@ -18,7 +18,7 @@
   
   /**** Optional defines:  Change as you see fit. *****************************
 ***************
-*** 67,78 ****
+*** 68,79 ****
   DEFINES=
   #endif
   
@@ -31,7 +31,7 @@
   
   /*
    * C Source files
---- 67,78 ----
+--- 68,79 ----
   DEFINES=
   #endif
   
@@ -44,45 +44,3 @@
   
   /*
    * C Source files
-*** cda_d/Imakefile.orig	Tue Aug 12 19:13:31 1997
---- cda_d/Imakefile	Sun Sep  7 15:34:34 1997
-***************
-*** 95,101 ****
-  #if defined(__QNX__)
-  LOCAL_LIBRARIES=-lncurses
-  #else
-! LOCAL_LIBRARIES=-lcurses
-  #endif	/* __QNX__ */
-  #endif	/* SINIX */
-  #endif	/* ultrix */
---- 95,101 ----
-  #if defined(__QNX__)
-  LOCAL_LIBRARIES=-lncurses
-  #else
-! LOCAL_LIBRARIES=-lcurses -lmytinfo
-  #endif	/* __QNX__ */
-  #endif	/* SINIX */
-  #endif	/* ultrix */
-***************
-*** 104,109 ****
---- 104,110 ----
-  #endif	/* LinuxArchitecture */
-  #endif	/* SunArchitecture */
-  
-+ MANSUFFIX = 1
-  
-  /*
-   * C Source files
-*** ./dbconv_d/Imakefile.orig	Thu Apr  4 23:33:09 1996
---- ./dbconv_d/Imakefile	Thu Apr  4 23:33:53 1996
-***************
-*** 24,29 ****
---- 24,31 ----
-   *
-   */
-  
-+ MANSUFFIX = 1
-+ 
-  
-  /*
-   * Add local include path

@@ -1,0 +1,29 @@
+*** cda_d/Imakefile.orig	Sat May 23 02:31:57 1998
+--- cda_d/Imakefile	Tue May 26 17:32:59 1998
+***************
+*** 109,115 ****
+  #if defined(__QNX__)
+  LOCAL_LIBRARIES=-lncurses
+  #else
+! LOCAL_LIBRARIES=-lcurses
+  #endif	/* __QNX__ */
+  #endif	/* SINIX */
+  #endif	/* ultrix */
+--- 109,115 ----
+  #if defined(__QNX__)
+  LOCAL_LIBRARIES=-lncurses
+  #else
+! LOCAL_LIBRARIES=-lcurses -lmytinfo
+  #endif	/* __QNX__ */
+  #endif	/* SINIX */
+  #endif	/* ultrix */
+***************
+*** 119,124 ****
+--- 119,125 ----
+  #endif	/* LinuxArchitecture OpenBSDArchitecture */
+  #endif	/* SunArchitecture */
+  
++ MANSUFFIX = 1
+  
+  /*
+   * C Source files
