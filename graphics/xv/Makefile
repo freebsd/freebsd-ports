@@ -55,7 +55,7 @@ post-patch:
 	${PATCH} ${PATCH_ARGS} -p0 < ${XVDIST}/mp-tiff-patch
 	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/xv-png-1.2d.patch
 	${PATCH} ${PATCH_ARGS} -p0 < ${XVDIST}/xvpng-1.2d-fix3.patch
-	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/jp-ext-bzip2.patch
+	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/jp-ext-bzip2-1.1.patch
 	@${MV} ${WRKSRC}/config.h ${WRKSRC}/config.h.in
 	@${CAT} ${WRKSRC}/config.h.in | \
 		${SED} -e "s@%%LOCALBASE%%@${LOCALBASE}@" > ${WRKSRC}/config.h
