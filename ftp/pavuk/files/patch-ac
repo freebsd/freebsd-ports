@@ -1,0 +1,12 @@
+--- src/doc.c.orig	Thu Aug  5 02:09:04 1999
++++ src/doc.c	Thu Aug  5 02:09:25 1999
+@@ -18,7 +18,8 @@
+ #include <sys/file.h>
+ #endif
+ #ifdef HAVE_FSTATFS
+-#include <sys/vfs.h>
++#include <sys/param.h>
++#include <sys/mount.h>
+ #endif
+ #include <sys/time.h>
+ #include <time.h>
