@@ -15,8 +15,10 @@ MASTER_SITE_SUBDIR=	apps/sound/libs
 MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 USE_LIBTOOL=	yes
+USE_GMAKE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 INSTALLS_SHLIB=	yes
 
@@ -24,11 +26,12 @@ MAN1=	libmikmod-config.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_ESOUND)
-USE_ESOUND=     yes
-CONFIGURE_ARGS+= --enable-esd
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME=	esound
+CONFIGURE_ARGS+=	--enable-esd
+PKGNAMESUFFIX=	-esound
 .else
-CONFIGURE_ARGS+= --disable-esd
+CONFIGURE_ARGS+=	--disable-esd
 .endif
 
 post-extract:
