@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cvsgraph
-PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTVERSION=	1.4.0
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/release/
 
@@ -29,7 +28,6 @@ DOCDIR=		share/doc/${PORTNAME}
 DOCS=		ChangeLog LICENSE README
 EXAMPLES=	cvsgraphwrapper.php3 mkimage.php3
 PLIST=		${WRKDIR}/pkg-plist
-USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-freetype2-inc=${X11BASE}/include/freetype2/freetype \
@@ -49,14 +47,16 @@ CONFIGURE_ARGS=	--with-freetype2-inc=${X11BASE}/include/freetype2/freetype \
 		--with-z
 
 pre-patch:
-	${REINPLACE_CMD} -e "s:/home/bertho/tmp/cvstest:/home/ncvs:g" \
-		${WRKSRC}/cvsgraph.conf
+	${RM} ${WRKSRC}/configure # Avoid having to read this file.
+	${MV} ${WRKSRC}/cvsgraph.conf ${WRKSRC}/cvsgraph.conf.orig
+	${SED} -e "s:/home/bertho/tmp/cvstest:/home/ncvs:g" \
+		< ${WRKSRC}/cvsgraph.conf.orig > ${WRKSRC}/cvsgraph.conf
 
 post-configure:
-	${REINPLACE_CMD} -e \
-		"s|CFLAGS	=|CFLAGS += -I${LOCALBASE}/include \
+	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
+	${SED} -e "s|CFLAGS	=|CFLAGS += -I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/gd|g" \
-		${WRKSRC}/Makefile
+		< ${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
 
 pre-install:
 	${ECHO_CMD} bin/cvsgraph > ${PLIST}
