@@ -8764,6 +8764,7 @@ share/texmf/web2c/tex.log
 share/texmf/web2c/tex.pool
 share/texmf/web2c/texmf.cnf
 share/texmf/xdvi/XDvi
+@exec mkdir %D/share/texmf/fonts/source/public/cs
 @dirrm share/texmf/xdvi
 @dirrm share/texmf/web2c
 @dirrm share/texmf/texconfig/x
@@ -9104,6 +9105,7 @@ share/texmf/xdvi/XDvi
 @dirrm share/texmf/fonts/source/public/euxm
 @dirrm share/texmf/fonts/source/public/ecc
 @dirrm share/texmf/fonts/source/public/dstroke
+@dirrm share/texmf/fonts/source/public/cs
 @dirrm share/texmf/fonts/source/public/concrete
 @dirrm share/texmf/fonts/source/public/concmath
 @dirrm share/texmf/fonts/source/public/cmextra
