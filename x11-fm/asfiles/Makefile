@@ -3,7 +3,7 @@
 # Date created:                17 August 1997
 # Whom:                        lukin@okbmei.msk.su
 #
-# $Id: Makefile,v 1.8 1999/01/18 06:43:03 asami Exp $
+# $Id: Makefile,v 1.9 1999/03/15 01:20:22 steve Exp $
 #
 
 DISTNAME=	ASFiles-1.0
@@ -21,5 +21,11 @@ GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 MAN1=	files.1
 MAN3=	regexp.3
+
+post-install:
+	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-aa
+	${INSTALL_DATA} ${WRKSRC}/src/Files.ad ${PREFIX}/lib/X11/app-defaults/
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${MV} ${WRKSRC}/src/Files.ad.orig ${WRKSRC}/src/Files.ad
 
 .include <bsd.port.mk>

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+ADDIR=${PKG_PREFIX}/lib/X11/app-defaults
+
+if [ X"$2" = "XPOST-INSTALL" ]; then
+    perl -pe 's/%%PREFIX%%/$ENV{PKG_PREFIX}/g' ${ADDIR}/Files.ad > ${ADDIR}/Files
+fi

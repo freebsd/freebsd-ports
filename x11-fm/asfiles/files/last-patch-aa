@@ -1,0 +1,19 @@
+--- src/Files.ad.orig	Mon Apr 21 12:55:17 1997
++++ src/Files.ad	Sun Mar 21 21:29:33 1999
+@@ -5,13 +5,13 @@
+ !***********************************************************************
+ 
+ ! Search paths for icon files
+-Files*bitmapPath: /usr/local/include/bitmaps
+-Files*pixmapPath: /usr/local/include/pixmaps:/usr/X11/lib/X11/afterstep/icons
++Files*bitmapPath: %%PREFIX%%/include/bitmaps
++Files*pixmapPath: %%PREFIX%%/include/pixmaps:%%PREFIX%%/include/X11/pixmaps
+ ! A pixmap for the background
+ !Files*icon box*backgroundPixmap: /usr/local/pixmaps/Files_back.xpm
+ 
+ ! System-wide Configuration file 
+-Files*configFile: /usr/local/lib/OffiX/Filesrc
++Files*configFile: %%PREFIX%%/share/OffiX/Filesrc
+ 
+ ! Double click time in milliseconds
+ Files*doubleClickTime:		300
