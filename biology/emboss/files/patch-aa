@@ -17,7 +17,7 @@ The port installs ${PREFIX}/etc/emboss.default.sample
 +    if (!prefixRootFile)
 +    {
 +      ajFmtPrintS (&namRootStr, "%s/etc/%s.default",
-+		   namInstallRoot, prefixCap, prefix);
++		   namInstallRoot, prefix);
 +      prefixRootFile = fopen (ajStrStr(namRootStr), "r");
 +    }
 +
