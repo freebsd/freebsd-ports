@@ -7,6 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	${SAMBA_VERSION}.j${SAMBA_JA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.samba.gr.jp/pub/samba-jp/%SUBDIR%/ \
 		ftp://ftp.iij.ad.jp/pub/SAMBA/samba-jp/%SUBDIR%/ \
@@ -19,15 +20,11 @@ DISTNAME=	${PORTNAME}-${SAMBA_VERSION}-ja-${SAMBA_JA_VERSION}
 MAINTAINER=	nakaji@jp.FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-
 SAMBA_VERSION=		2.2.8a
 SAMBA_JA_VERSION=	1.1
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_SUBMAKE=	yes
 
 # directories
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
@@ -36,10 +33,6 @@ IS_INTERACTIVE=	yes
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
-
-.if defined(WITH_GNU_GETTEXT)
-LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 .endif
 
 AUDIT?=		"@comment "
@@ -54,7 +47,6 @@ SMBSH?=		"@comment "
 AUDIT=		""
 LIBSAMBA=	""
 BUILD_VFS=	""
-USE_LIBTOOL=	yes
 .endif
 
 .if defined(WITH_RECYCLE)
@@ -86,14 +78,7 @@ CONFIGURE_ARGS=	--with-i18n-swat \
 		--with-logfilebase=${SAMBA_LOGDIR} \
 		--with-privatedir=${SAMBA_PRIVATE} \
 		--with-piddir=${VARDIR}/run \
-		--with-pam --with-pam_smbpass \
-		--prefix=${PREFIX}
-
-.if defined(WITH_GNU_GETTEXT)
-CONFIGURE_ARGS+=	--with-included-gettext=no
-.else
-CONFIGURE_ARGS+=	--with-included-gettext
-.endif
+		--with-pam --with-pam_smbpass
 
 .include <bsd.port.pre.mk>
 
@@ -127,10 +112,6 @@ CONFIGURE_ARGS+=	--with-ldapsam
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 LDAPSAM=	""
-.endif
-
-.if defined(WITH_CUPS)
-WITH_CUPS=	yes
 .endif
 
 .if defined(WITH_WINBIND)
@@ -211,7 +192,7 @@ post-build:
 		> ${WRKDIR}/samba.sh.sample
 .if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
 	cd ${WRKSRC}/../examples/VFS; \
-		${SETENV} LIBTOOL=${LIBTOOL} ./configure;${GMAKE}; \
+		./configure;${MAKE}; \
 		${RM} -f config.cache config.log config.status
 .endif
 
