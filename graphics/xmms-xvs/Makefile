@@ -7,34 +7,47 @@
 
 PORTNAME=	xmms-xvs
 PORTVERSION=	0.1.0b1
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://godot.tuniv.szczecin.pl/~jgregor/xvs/download/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	http://jgregor.ps.pl/xvs/download/
 DISTNAME=	xvs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
+XML2_CONFIG?=	${LOCALBASE}/bin/xml2-config
+XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
+
+USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	XML2_CONFIG="${LOCALBASE}/bin/xml2-config" \
-		XMMS_CONFIG="${X11BASE}/bin/xmms-config" \
-		CFLAGS="-I${LOCALBASE}/include/libxml2/libxml ${CFLAGS}"
+WANT_GNOME=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	XML2_CONFIG="${XML2_CONFIG}" XMMS_CONFIG="${XMMS_CONFIG}"
 
-DOCS=	AUTHORS ChangeLog NEWS README TODO
+.include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
+.if ${HAVE_GNOME:Mlibpanel}!=""
+USE_GNOME+=	libpanel gnomeprefix
+PLIST_SUB+=	DATADIR="share/gnome"
+.else
+PLIST_SUB+=	DATADIR="share"
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<xml|<libxml/xml|g' ${WRKSRC}/configure
+
 post-install:
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog NEWS README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
