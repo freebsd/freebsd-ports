@@ -13,6 +13,7 @@ etc/mimedefang/spamassassin/sa-mimedefang.cf.example
 %%PORTDOCS%%share/doc/mimedefang/README.SPAMASSASSIN
 %%PORTDOCS%%share/doc/mimedefang/README.NONROOT
 %%PORTDOCS%%share/doc/mimedefang/README.SECURITY
+%%PORTDOCS%%share/doc/mimedefang/README.TRU64
 %%PORTDOCS%%share/doc/mimedefang/README.IRIX
 %%PORTDOCS%%share/examples/mimedefang/suggested-minimum-filter-for-windows-clients
 %%PORTDOCS%%share/examples/mimedefang/stream-by-domain-filter
