@@ -570,6 +570,7 @@ bbrb		ports/graphics/bbrb
 bbrun		ports/x11/bbrun
 bbsmount	ports/sysutils/bbsmount
 bbsnet		ports/net/bbsnet
+bbuname		ports/x11/bbuname
 bcc		ports/devel/bcc
 bchunk		ports/sysutils/bchunk
 bclock		ports/x11-clocks/bclock
