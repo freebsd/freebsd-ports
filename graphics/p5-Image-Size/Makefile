@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Image-Size
-PORTVERSION=	2.991
+PORTVERSION=	2.992
 CATEGORIES=	graphics www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
@@ -16,10 +16,8 @@ MAINTAINER=	tolid@plab.ku.dk
 COMMENT=	Perl5 module to determine the size of images in several common formats
 
 PERL_CONFIGURE=	YES
-CONFIGURE_ARGS=	PREFIX=${PREFIX}
 
 MAN1=		imgsize.1
 MAN3=		Image::Size.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>

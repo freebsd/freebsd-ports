@@ -1,21 +1,22 @@
 bin/imgsize
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Size/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Image/Size.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/bmpsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/gifsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/jpegsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/mngsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/pcdsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/pngsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/ppmsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/psdsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/swfsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/tiffsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/xbmsize.al
-lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/xpmsize.al
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Size
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Image 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Image 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size/.packlist
+%%SITE_PERL%%/Image/Size.pm
+%%SITE_PERL%%/auto/Image/Size/autosplit.ix
+%%SITE_PERL%%/auto/Image/Size/bmpsize.al
+%%SITE_PERL%%/auto/Image/Size/gifsize.al
+%%SITE_PERL%%/auto/Image/Size/jpegsize.al
+%%SITE_PERL%%/auto/Image/Size/mngsize.al
+%%SITE_PERL%%/auto/Image/Size/pcdsize.al
+%%SITE_PERL%%/auto/Image/Size/pngsize.al
+%%SITE_PERL%%/auto/Image/Size/ppmsize.al
+%%SITE_PERL%%/auto/Image/Size/psdsize.al
+%%SITE_PERL%%/auto/Image/Size/swfsize.al
+%%SITE_PERL%%/auto/Image/Size/swfmxsize.al
+%%SITE_PERL%%/auto/Image/Size/tiffsize.al
+%%SITE_PERL%%/auto/Image/Size/xbmsize.al
+%%SITE_PERL%%/auto/Image/Size/xpmsize.al
+@dirrm %%SITE_PERL%%/auto/Image/Size
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size
+@unexec rmdir %D/%%SITE_PERL%%/auto/Image 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Image 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
