@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	procmail
-PORTVERSION=	3.15.1
-PORTREVISION=	1
+PORTVERSION=    3.20
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/
