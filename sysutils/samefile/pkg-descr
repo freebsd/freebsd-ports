@@ -1,0 +1,10 @@
+The samefile program finds files with identical contents (independent of
+file name). Typical usage would be
+
+	find / -print | samefile
+
+turning up megabytes of wasted disk space due to duplicates. Try it,
+you'll be baffled. 
+
+Jens Schweikhardt
+samefile@schweikhardt.net

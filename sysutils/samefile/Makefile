@@ -1,0 +1,29 @@
+# New ports collection makefile for:   samefile
+# Date created:        15 March 2001
+# Whom:                schweikh
+#
+# $FreeBSD$
+#
+
+PORTNAME=      samefile
+PORTVERSION=   2.9
+CATEGORIES=    sysutils
+MASTER_SITES=  http://www.schweikhardt.net/
+
+MAINTAINER=    samefile@schweikhardt.net
+
+MAN1=          samefile.1
+GNU_CONFIGURE= yes
+
+CFLAGS+= -ansi -pedantic -Wall -Wshadow -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wcast-align -Wconversion -Wsign-compare -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wmissing-noreturn -Wredundant-decls -Wnested-externs -Winline
+
+post-build:
+	@echo "   >>>>                        <<<<"
+	@echo "   >>>> Running the test suite <<<<"
+	@echo "   >>>>                        <<<<"
+	cd ${WRKSRC}; ${MAKE} test
+
+post-install:
+	strip ${PREFIX}/bin/samefile
+
+.include <bsd.port.mk>

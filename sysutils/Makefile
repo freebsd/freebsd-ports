@@ -103,6 +103,7 @@
     SUBDIR += roottail
     SUBDIR += ruby-syslog
     SUBDIR += safecat
+    SUBDIR += samefile
     SUBDIR += sarah
     SUBDIR += sdd
     SUBDIR += setcdboot
