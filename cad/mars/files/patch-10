@@ -1,0 +1,10 @@
+--- include/component.h.orig	Tue Dec  9 20:04:47 2003
++++ include/component.h	Tue Dec  9 20:05:04 2003
+@@ -153,6 +153,6 @@
+ } Neighbor;
+ 
+ Neighbor *find_neighbor();
+-Neighbor *add_neighbor();
++Neighbor *add_neighbor(register Component *c, register Component *neighc, int max_num_neighbors, int num_classes, ... );
+ Param *param_init();
+ #endif   /* COMPONENT_H   */

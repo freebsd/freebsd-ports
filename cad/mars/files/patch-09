@@ -1,0 +1,34 @@
+--- sim/subr.c.orig	Tue Dec  9 20:00:42 2003
++++ sim/subr.c	Tue Dec  9 20:01:31 2003
+@@ -6,7 +6,7 @@
+ #include <ctype.h>
+ #include <sys/types.h>
+ #include <stdio.h>
+-#include <varargs.h>
++#include <stdarg.h>
+ #include <math.h>
+ #include "sim.h"
+ #include "q.h"
+@@ -610,12 +610,7 @@
+ 
+ /*VARARGS4*/
+ Neighbor *
+-add_neighbor(c, neighc, max_num_neighbors, num_classes, va_alist)
+-     register Component *c;	/* Comp to add neighbor to */
+-     register Component *neighc; /* New neighbor */
+-     int max_num_neighbors;	/* Max number neighbors allowed (0=infinite)*/
+-     int num_classes;		/* How many classes follow  */
+-     va_dcl
++add_neighbor(register Component *c, register Component *neighc, int max_num_neighbors, int num_classes, ... )
+ {
+   va_list vp;
+   register Neighbor *n;
+@@ -644,7 +639,7 @@
+   if (num_classes > 0)  {
+     /* Final check--may sure the new neighbor is one of the
+        legal classes */
+-    va_start(vp);
++    va_start(vp, num_classes);
+     notlegal = TRUE;
+     while (num_classes--)
+       if (neighc->co_class == va_arg(vp, int))  {
