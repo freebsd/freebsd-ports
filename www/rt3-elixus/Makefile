@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${SITE_PERL}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTabl
 BUILD_DEPENDS+=	${SITE_PERL}/MasonX/Apache2Handler.pm:${PORTSDIR}/www/p5-MasonX-Apache2Handler
 .endif
 
+BROKEN=		Install fails
+
 MASTERDIR=	${.CURDIR}/../../www/rt3
 MD5_FILE=	${.CURDIR}/distinfo
 DESCR=		${.CURDIR}/pkg-descr
