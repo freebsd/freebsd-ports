@@ -11,8 +11,6 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 
-MAINTAINER=	plm@xs4all.nl
-
 USE_QT=		yes
 WRKSRC=		${WRKDIR}/blackjack
 
