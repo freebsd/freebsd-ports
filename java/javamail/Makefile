@@ -25,7 +25,7 @@ NO_BUILD=	yes
 NO_CDROM=	"See the license"
 TARGET_DIR=	${PREFIX}/share/java/${PKGNAME}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
-DOWNLOAD_URL=	"http://java.sun.com/products/javamail/"
+DOWNLOAD_URL=	http://java.sun.com/webapps/download/Display?BundleId=8674
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
