@@ -1,0 +1,25 @@
+--- Makefile.orig	Thu Dec  4 20:35:38 1997
++++ Makefile	Mon Sep 30 02:55:39 2002
+@@ -5,20 +5,14 @@
+ 
+ DIR=    cast
+ TOP=    .
+-CC=     gcc
+-CFLAG=	-O3 -fomit-frame-pointer
+ 
+-CPP=    $(CC) -E
+-INCLUDES=
+-INSTALLTOP=/usr/local/lib
++CPP?=		$(CC) -E
++INSTALLTOP=	${PREFIX}/lib
+ MAKE=           make
+ MAKEDEPEND=     makedepend
+-MAKEFILE=       Makefile.uni
+ AR=             ar r
+ 
+ IDEA_ENC=i_cbc.o
+-
+-CFLAGS= $(INCLUDES) $(CFLAG)
+ 
+ GENERAL=Makefile
+ TEST=ideatest
