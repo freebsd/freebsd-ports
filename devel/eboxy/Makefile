@@ -8,6 +8,7 @@
 
 PORTNAME=	eboxy
 PORTVERSION=	0.3.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.bluelightning.org/ebox/files/eboxy/
@@ -16,20 +17,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create simple GUI interfaces for entertainment PC
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libSDL_gui.so:${PORTSDIR}/x11-toolkits/sdl_gui
-LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
-RUN_DEPENDS=	${LOCALBASE}/lib/libSDL_gui.so:${PORTSDIR}/x11-toolkits/sdl_gui
+LIB_DEPENDS=	SDL_gui.0:${PORTSDIR}/x11-toolkits/sdl_gui
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
-USE_GNOME=	libxml2
+USE_SDL=	yes
+USE_GNOME=	gnometarget libxml2
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"  LDFLAGS="${LDFLAGS}" \
-		SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-lirc
 
 MAN1=		eboxy.1
