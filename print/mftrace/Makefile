@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mftrace
-PORTVERSION=	1.0.24
+PORTVERSION=	1.0.26
 CATEGORIES=	print
 MASTER_SITES=	http://www.xs4all.nl/~hanwen/mftrace/
 
@@ -15,9 +15,14 @@ MAINTAINER=	atamaniuk-ports@frobs.net
 COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
 
 RUN_DEPENDS=	mktextfm:${PORTSDIR}/print/teTeX \
-		autotrace:${PORTSDIR}/graphics/autotrace \
 		t1asm:${PORTSDIR}/print/t1utils \
 		pfaedit:${PORTSDIR}/print/pfaedit
+
+.if defined(WITH_POTRACE)
+RUN_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
+.else
+RUN_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
+.endif
 
 USE_GETOPT_LONG=yes
 USE_PYTHON=	yes
