@@ -39,6 +39,7 @@
     SUBDIR += emacs20
     SUBDIR += enscript
     SUBDIR += eterm
+    SUBDIR += fcitx
     SUBDIR += firebird
     SUBDIR += fortunetw
     SUBDIR += gb2jis

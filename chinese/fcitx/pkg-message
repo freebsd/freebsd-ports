@@ -1,0 +1,6 @@
+-----------------------------------------------
+Remember to set environment varible XMODIFIERS:
+ csh/tcsh: setenv XMODIFIERS @im=fcitx
+ sh/bash:  export XMODIFIERS='@im=fcitx'
+and set LANG, LC_CTYPE to zh_CN.EUC.
+-----------------------------------------------
