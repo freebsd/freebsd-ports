@@ -24,6 +24,7 @@ lib/xemacs/site-packages/lisp/wnn7egg/its-v309/kata.el
 lib/xemacs/site-packages/lisp/wnn7egg/its-v309/zenkaku.el
 lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-cnv.el
 lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-comx21.el
+lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-comx214.el
 lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-edep.el
 lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-jsymbol.el
 lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-leim.el
