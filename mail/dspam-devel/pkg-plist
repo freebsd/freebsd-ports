@@ -1,5 +1,6 @@
 bin/dspam
 bin/dspam_2sql
+bin/dspam_admin
 bin/dspam_clean
 bin/dspam_corpus
 bin/dspam_crc
@@ -24,8 +25,8 @@ libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%MYSQL%%%%EXAMPLESDIR%%/mysql/README
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/2x_to_3x_db.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/README
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql.data
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects.sql.space.optimized
 %%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects.sql.speed.optimized
@@ -40,5 +41,36 @@ libdata/pkgconfig/dspam.pc
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
 %%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
 %%PGSQL%%@dirrm %%EXAMPLESDIR%%
+%%SQLITE%%%%EXAMPLESDIR%%/sqlite/README
+%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge.sql
+%%SQLITE%%@dirrm %%EXAMPLESDIR%%/sqlite
+%%SQLITE%%@dirrm %%EXAMPLESDIR%%
+%%CGI%%www/vhosts/dspam/admins.sample
+%%CGI%%www/vhosts/dspam/admin.cgi
+%%CGI%%www/vhosts/dspam/admingraph.cgi
+%%CGI%%www/vhosts/dspam/base.css
+%%CGI%%www/vhosts/dspam/configure.pl
+%%CGI%%www/vhosts/dspam/default.prefs.sample
+%%CGI%%www/vhosts/dspam/dspam.cgi
+%%CGI%%www/vhosts/dspam/graph.cgi
+%%CGI%%www/vhosts/dspam/logo.gif
+%%CGI%%www/vhosts/dspam/rgb.txt
+%%CGI%%www/vhosts/dspam/templates/nav_admin_error.html
+%%CGI%%www/vhosts/dspam/templates/nav_admin_preferences.html
+%%CGI%%www/vhosts/dspam/templates/nav_admin_status.html
+%%CGI%%www/vhosts/dspam/templates/nav_admin_user.html
+%%CGI%%www/vhosts/dspam/templates/nav_alerts.html
+%%CGI%%www/vhosts/dspam/templates/nav_analysis.html
+%%CGI%%www/vhosts/dspam/templates/nav_error.html
+%%CGI%%www/vhosts/dspam/templates/nav_history.html
+%%CGI%%www/vhosts/dspam/templates/nav_performance.html
+%%CGI%%www/vhosts/dspam/templates/nav_preferences.html
+%%CGI%%www/vhosts/dspam/templates/nav_quarantine.html
+%%CGI%%www/vhosts/dspam/templates/nav_viewmessage.html
+%%CGI%%@dirrm www/vhosts/dspam/templates
+%%CGI%%@dirrm www/vhosts/dspam
+%%CGI%%@dirrm www/vhosts
+%%CGI%%@unexec rmdir %D/www 2>/dev/null || true
 @dirrm include/dspam
 @dirrm etc/dspam
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

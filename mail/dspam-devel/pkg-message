@@ -1,26 +1,35 @@
 
---------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
- See the file %%DOCSDIR%%/README for advice about
- how to configure DSPAM with your MTA. Examples are provided for
- sendmail, postfix, exim and courier MTAs.
+ See the file %%DOCSDIR%%/README for advice about 
+ how to configure DSPAM with your MTA and setting up the CGI with Apache.
+ Examples are provided for sendmail, postfix, exim and courier MTAs.
 
+%%POSTFIX_MBC%%
+%%POSTFIX_MBC%% Quick Postfix setup guide:
+%%POSTFIX_MBC%% Add root, postfix and cgiuser to %%PREFIX%%/etc/dspam/trusted.users
+%%POSTFIX_MBC%% (Do NOT add --user $USER to the call of dspam binary)
+%%POSTFIX_MBC%% In main.cf set 
+%%POSTFIX_MBC%%  mailbox_command = %%PREFIX%%/bin/dspam --mode=teft --deliver=innocent,spam --feature=chained,noise -d %u
+%%POSTFIX_MBC%% And don't forget to set
+%%POSTFIX_MBC%% %%PREFIX%%/etc/dspam/untrusted.mailer_args
+%%POSTFIX_MBC%% (for mail.local it could be /usr/libexec/mail.local -s %u)
+%%POSTFIX_MBC%%
  Note that man entries have been added for all dspam binaries.
-
 %%MYSQL%%
-%%MYSQL%% See %%EXAMPLESDIR%%/README
+%%MYSQL%% See %%EXAMPLESDIR%%/mysql/README
 %%MYSQL%% for instructions on how to configure MySQL
 %%MYSQL%% for use with DSPAM.
 %%MYSQL%%
-%%MYSQL%% %%EXAMPLESDIR%%/mysql.data
+%%MYSQL%% %%EXAMPLESDIR%%/mysql/mysql.data
 %%MYSQL%% contains an example configuration for use with MySQL.
 %%MYSQL%% Edit and install as
-%%MYSQL%% %%LOCALBASE%%/etc/dspam/mysql.data
+%%MYSQL%% %%PREFIX%%/etc/dspam/mysql.data
 %%MYSQL%% To modify an 2.x database use and use it with dspam 3.x use:
 %%MYSQL%% %%EXAMPLESDIR%%/mysql/2x_to_3x_db.sql
 %%MYSQL%%
 %%PGSQL%%
-%%PGSQL%% See %%EXAMPLESDIR%%/README
+%%PGSQL%% See %%EXAMPLESDIR%%/pgsql/README
 %%PGSQL%% for instructions on how to configure PostrgreSQL
 %%PGSQL%% for use with DSPAM.
 %%PGSQL%% [ To add a nice tutorial on this ]
@@ -28,7 +37,53 @@
 %%PGSQL%% %%EXAMPLESDIR%%/pgsql.data
 %%PGSQL%% contains an example configuration for use with PostgreSQL.
 %%PGSQL%% Edit and install as
-%%PGSQL%% %%LOCALBASE%%/etc/dspam/pgsql.data
-%%PGSQL%%
+%%PGSQL%% %%PREFIX%%/etc/dspam/pgsql.data
+%%PGSQL%% 
+%%SQLITE%%
+%%SQLITE%% See %%EXAMPLESDIR%%/sqlite/README
+%%SQLITE%% for suggestion on SQLite back-end. It should work out-of-the-box.
+%%SQLITE%%
+%%SQLITE%% You'll always want to run dspam_clean -p0 and 
+%%SQLITE%% sqlite /path/to/user.sdb < vacuum after a corpusfeed.
+%%SQLITE%% where /path/to/user.sdb would by on a default install: 
+%%SQLITE%% %%LOCALBASE%%/etc/dspam/data/user/user.sdb
+%%SQLITE%% There are  most likely 70%+ junk tokens that need to be removed.
+%%SQLITE%% This will have a HUGE impact on the disk space your db uses.
+%%SQLITE%%
+%%CGI%%
+%%CGI%% The GCI files had been installed in
+%%CGI%% %%CGI_PATH%%
+%%CGI%% Copy
+%%CGI%% %%CGI_PATH%%/default.prefs.sample
+%%CGI%% to
+%%CGI%% %%CGI_PATH%%/default.prefs
+%%CGI%% and edit it to your  needs.
+%%CGI%% If you symlink this file in %%DSPAM_HOME%%/
+%%CGI%% an administrator can edit these options in the DSPAM Admin Suite.
+%%CGI%% Define administrators by copying 
+%%CGI%% %%CGI_PATH%%/admins.sample
+%%CGI%% to
+%%CGI%% %%CGI_PATH%%/admins 
+%%CGI%% and edit the file to your needs. 
+%%CGI%% See %%DOCSDIR%%/README 
+%%CGI%% especially the CGI and Trusted Users sections for more info.
 
---------------------------------------------------------------------
+  See %%DOCSDIR%%/RELEASE.NOTES 
+  for new things in this 3.1.0 and 
+  %%DOCSDIR%%/CHANGES 
+  for the full list from 3.0.0 stable.
+  Preference extensions are NOT yet integrated in this port, 
+  feel free to test and send patches.
+
+ ***************************** WARNING: ***************************************
+ Command-line options (and MySQL database structure) has changed.
+ If you are upgrading from 2.x be sure to change the way you are calling
+ dspam binary (for delivery, submitting fp, etc.), otherwise mail
+ will go to the bit-bucket with NO WARNING.
+ ******************************************************************************
+
+     ------------    Version 3.1.0 is a DEVELOPMENT release.  ------------
+         All problems should be reported to the maintainer of the port 
+    	             and dspam development mailing list
+
+------------------------------------------------------------------------------
