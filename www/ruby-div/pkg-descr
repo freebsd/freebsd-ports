@@ -1,0 +1,5 @@
+Div is a web application server using dRuby and ERB2.
+You can write web applications like GUI programming.
+
+Author:	Masatoshi SEKI <m_seki@mva.biglobe.ne.jp>
+WWW:	http://www.ruby-lang.org/raa/list.rhtml?name=div
