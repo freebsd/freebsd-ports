@@ -103,9 +103,12 @@ share/apache/htdocs/index.html.en
 share/apache/htdocs/index.html.es
 share/apache/htdocs/index.html.fr
 share/apache/htdocs/index.html.it
+share/apache/htdocs/index.html.ja.jis
 share/apache/htdocs/index.html.lu
 share/apache/htdocs/index.html.nl
+share/apache/htdocs/index.html.po.iso-pl
 share/apache/htdocs/index.html.pt
+share/apache/htdocs/index.html.pt-br
 share/apache/htdocs/index.html.se
 share/apache/htdocs/manual/LICENSE
 share/apache/htdocs/manual/bind.html
