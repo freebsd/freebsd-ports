@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.96 1997/12/25 10:56:17 itojun Exp $
+# $Id: Makefile,v 1.97 1997/12/27 19:08:05 max Exp $
 #
 
     SUBDIR += Canna
@@ -46,6 +46,7 @@
     SUBDIR += kterm
     SUBDIR += less
     SUBDIR += lipsf
+    SUBDIR += magicpoint
     SUBDIR += man
     SUBDIR += man-doc
     SUBDIR += mew
