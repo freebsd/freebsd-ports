@@ -10,8 +10,7 @@ MASTERDIR=	${.CURDIR}/../../devel/ruby-slang
 CATEGORIES=	japanese
 
 MAINTAINER=	knu@FreeBSD.org
-
-COMMENTFILE=	${.CURDIR}/pkg-comment
+COMMENT=	S-Lang-jp extension module for Ruby
 
 WITH_JAPANESE=	yes
 
