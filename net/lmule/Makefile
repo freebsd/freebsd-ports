@@ -19,6 +19,8 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
+FORBIDDEN=	"Probable format string bug and no longer maintained"
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier \
 		gnomehack \
