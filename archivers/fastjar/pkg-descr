@@ -1,0 +1,5 @@
+FastJar is a version of JDK's `jar' utility written entirely in C,
+and therefore quite a bit faster.  Currently some features such as
+updating archive are unimplemented, but enough seems implemented.
+
+WWW:	http://fastjar.sourceforge.net/
