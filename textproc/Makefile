@@ -59,6 +59,7 @@
     SUBDIR += dtd2relax
     SUBDIR += dtdinst
     SUBDIR += dtdparse
+    SUBDIR += el-aspell
     SUBDIR += eo-aspell
     SUBDIR += eruby
     SUBDIR += es-aspell
