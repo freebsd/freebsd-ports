@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.18 1996/12/07 11:26:57 max Exp $
+# $Id: Makefile,v 1.19 1996/12/08 01:45:16 max Exp $
 #
 
 DISTNAME=       gn-2.24
@@ -19,7 +19,7 @@ NO_PACKAGE=	"Compiled in hostnames"
 WAISDIR=	${PORTSDIR}/net/wais/work/freeWAIS-0.5
 
 INETD_CONF=	/etc/inetd.conf
-CONF=	'	stream	tcp	nowait	nobody	/usr/local/libexec/gn	gn'
+CONF=	'	stream	tcp	nowait	nobody	${PREFIX}/libexec/gn	gn'
 
 pre-build:
 	@ln -fs ${WAISDIR}/include ${WRKSRC}/waisgn/ir
@@ -45,7 +45,7 @@ post-install:
 	  fi; \
 	  tar -cf - -C ${WRKSRC} gnroot libexec bin etc | tar xpf - && \
 		(cd gnroot; ${WRKSRC}/bin/mkcache -r); \
-	  awk '$$1 ~ /#*gopher/ && $$6 == "/usr/local/libexec/gn" { exit 1 }' \
+	  awk '$$1 ~ /#*gopher/ && $$6 == "${PREFIX}/libexec/gn" { exit 1 }' \
 		${INETD_CONF} || { \ echo '#'gopher${CONF} >>${INETD_CONF}
 	  }
 
