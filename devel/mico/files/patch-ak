@@ -1,0 +1,23 @@
+--- configure.in.orig	Sun Nov 15 03:01:35 1998
++++ configure.in	Sun Nov 15 02:52:12 1998
+@@ -102,7 +102,7 @@
+ # extra dirs
+ #
+ 
+-wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local $QTDIR $GTKDIR $TCLDIR $SSLDIR)
++wi_EXTRA_DIRS(no, /usr/local /local /user/local /usr/share /opt /opt/local $QTDIR $GTKDIR $TCLDIR $SSLDIR, tcl8.0)
+ 
+ #
+ # misc
+@@ -234,7 +234,10 @@
+     CONF_OBJ_SIZE_LIMIT=yes
+     ;;
+   *bsd*)
+-    CONF_SOEXT=so.1.0
++    if [ "$PORTOBJFORMAT" = "elf" ]; then
++      CONF_SOEXE=so.1
++    else
++      CONF_SOEXT=so.1.0
+     fi
+     ;;
+   *cygwin32*)
