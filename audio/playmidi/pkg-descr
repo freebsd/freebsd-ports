@@ -1,0 +1,9 @@
+     playmidi is a small quick midi file player using the level two sequencer
+     of the voxware 3.0 package to play on general midi devices or FM or
+     Gravis Ultrasound.  If no files are specified, playmidi will give a short
+     summary of usage options.	If more than one file is specified, you may
+     skip to the next file while the current one is playing by pressing your
+     interrupt (usually control-c) key. If you invoke playmidi while it is al-
+     ready running, it will allow you to control the currently running invoca-
+     tion until its death, after which time all waiting invocations fight to
+     go first.

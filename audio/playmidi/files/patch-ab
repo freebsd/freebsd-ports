@@ -1,0 +1,98 @@
+*** Makefile.orig	Fri Nov 25 22:24:59 1994
+--- Makefile	Mon Feb 27 23:08:42 1995
+***************
+*** 9,59 ****
+  # to prevent segmentation faults 'cause of a bug, otherwise use 2.5.8
+  #CFLAGS = -g
+  #LDFLAGS = -g
+! CFLAGS = -O2 -m486 -Wall
+! LDFLAGS = -s
+! INSTALLDIR = /usr/local/bin
+  OBJECTS = playmidi.o midifile.o playevents.o patchload.o emumidi.o
+  
+  all: playmidi resetmidi
+  
+! playmidi: .depend $(OBJECTS)
+  	$(CC) $(LDFLAGS) -o playmidi $(OBJECTS)
+  
+! resetmidi: .depend resetmidi.o
+! 	$(CC) -N $(LDFLAGS) -o resetmidi resetmidi.o
+! 
+! scope: .depend scope.o
+! 	$(CC) -N $(LDFLAGS) -o scope scope.o -lvga
+  
+  $(INSTALLDIR)/playmidi: playmidi
+! 	cp playmidi $(INSTALLDIR)
+  
+  $(INSTALLDIR)/resetmidi: resetmidi
+! 	cp resetmidi $(INSTALLDIR)
+! 
+! $(INSTALLDIR)/scope: scope
+! 	cp scope $(INSTALLDIR)
+  
+! install: $(INSTALLDIR)/playmidi $(INSTALLDIR)/resetmidi #$(INSTALLDIR)/scope
+  
+  clean:
+! 	rm -f *.o *~ *.bak playmidi resetmidi scope a.out
+  
+- ifeq (.depend, $(wildcard .depend))
+- .depend depend dep:
+- 	for i in *.c; do $(CPP) -M $$i; done >.depend
+- 
+- include .depend
+- else
+- depend dep:
+- 	for i in *.c; do $(CPP) -M $$i; done >.depend
+- 
+- .depend:
+- 	@echo
+- 	@echo "Bad or missing .depend running 'make depend'"
+- 	@echo
+- 	$(MAKE) depend
+- 	@echo
+- 	@echo "Successful.  Now make again (ignore following error)"
+- 	@exit 1
+- endif
+--- 9,50 ----
+  # to prevent segmentation faults 'cause of a bug, otherwise use 2.5.8
+  #CFLAGS = -g
+  #LDFLAGS = -g
+! PREFIX = /usr/local
+! CFLAGS += -Wall -DPREFIX=\"$(PREFIX)\"
+! #LDFLAGS = -s
+! INSTALLDIR = $(PREFIX)/bin
+  OBJECTS = playmidi.o midifile.o playevents.o patchload.o emumidi.o
++ #INSTALL_BIN = cp
++ #INSTALL_DAT = cp
++ INSTALL_BIN = $(INSTALL) -s $(COPY) -o $(BINOWN) -g $(BINGRP) -m 755
++ INSTALL_DAT = $(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 644
+  
+  all: playmidi resetmidi
+  
+! playmidi: $(OBJECTS)
+  	$(CC) $(LDFLAGS) -o playmidi $(OBJECTS)
+  
+! resetmidi: resetmidi.o
+! 	$(CC) $(LDFLAGS) -o resetmidi resetmidi.o
+  
+  $(INSTALLDIR)/playmidi: playmidi
+! 	$(INSTALL_BIN) playmidi $(INSTALLDIR)
+  
+  $(INSTALLDIR)/resetmidi: resetmidi
+! 	$(INSTALL_BIN) resetmidi $(INSTALLDIR)
+  
+! dirs:
+! 	-@mkdir -p $(INSTALLDIR)
+! 	-@mkdir -p $(PREFIX)/lib/midi
+! 	-@mkdir -p $(PREFIX)/lib/gus
+! 	-@mkdir -p $(PREFIX)/man/man1
+! 	-@mkdir -p $(PREFIX)/man/man3
+! 
+! install: dirs $(INSTALLDIR)/playmidi $(INSTALLDIR)/resetmidi
+! 	$(INSTALL_DAT) std.o3 drums.o3 std.sb drums.sb $(PREFIX)/lib/midi
+! 	$(INSTALL_DAT) playmidi.1 $(PREFIX)/man/man1
+! 	$(INSTALL_DAT) midifile.3 $(PREFIX)/man/man3
+  
+  clean:
+! 	rm -f *.o *~ *.bak playmidi resetmidi a.out
+  
