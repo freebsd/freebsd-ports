@@ -1,0 +1,64 @@
+--- src/EDITME.orig	Mon Aug 27 14:35:47 2001
++++ src/EDITME	Mon Aug 27 14:37:31 2001
+@@ -103,7 +103,7 @@
+ # installed in this directory. There is no default for this variable built into
+ # the source files; it must be set in one of the local configuration files.
+ 
+-BIN_DIRECTORY=/usr/exim/bin
++BIN_DIRECTORY=XX_PREFIX_XX/bin
+ 
+ 
+ # The default distribution of Exim contains only the plain text form of the
+@@ -121,14 +121,14 @@
+ # files. Both the name of the command and the suffix that it adds to files
+ # need to be defined here. See also the EXICYCLOG_MAX configuration.
+ 
+-COMPRESS_COMMAND=/opt/gnu/bin/gzip
++COMPRESS_COMMAND=/usr/bin/gzip
+ COMPRESS_SUFFIX=gz
+ 
+ 
+ # If the exigrep utility is fed compressed log files, it tries to uncompress
+ # them using this command.
+ 
+-ZCAT_COMMAND=/opt/gnu/bin/zcat
++ZCAT_COMMAND=/usr/bin/zcat
+ 
+ 
+ # The runtime configuration file: This variable defines where Exim's runtime
+@@ -137,7 +137,7 @@
+ # location of all other runtime files and directories can be changed in the
+ # runtime configuration file.
+ 
+-CONFIGURE_FILE=/usr/exim/configure
++CONFIGURE_FILE=XX_PREFIX_XX/etc/exim/configure
+ 
+ 
+ # In some installations there may be multiple machines sharing file systems,
+@@ -286,7 +286,7 @@
+ # "panic", or "reject" to form the final file name. For example, some
+ # installations may want something like this:
+ 
+-# LOG_FILE_PATH=/var/log/exim_%slog
++LOG_FILE_PATH=/var/log/exim/%slog
+ 
+ # which results in files with names /var/log/exim_mainlog, etc. The directory
+ # in which the log files are placed must exist; Exim does not try to create
+@@ -411,7 +411,7 @@
+ # the file name, allowing sites that run two separate daemons to distinguish
+ # them. Some installations may want something like this
+ 
+-# PID_FILE_PATH=/var/lock/exim%s.pid
++PID_FILE_PATH=/var/run/exim%s.pid
+ 
+ # If PID_FILE_PATH is not defined, Exim writes a file in its spool directory
+ # (see SPOOL_DIRECTORY below) with the name "exim-daemon.pid" for the standard
+@@ -460,7 +460,7 @@
+ # uid and gid.
+ 
+ # Many installations will want something like this:
+-# SPOOL_DIRECTORY=/var/spool/exim
++SPOOL_DIRECTORY=/var/spool/exim
+ 
+ # Others may prefer to keep all Exim things under one directory:
+ # SPOOL_DIRECTORY=/usr/exim/spool

@@ -1,0 +1,12 @@
+--- OS/Makefile-Base.orig	Wed Aug 15 13:09:05 2001
++++ OS/Makefile-Base	Mon Aug 27 14:59:04 2001
+@@ -19,7 +19,8 @@
+ # up-to-date. Then the os-specific source files and the C configuration file
+ # are set up, and finally it goes to the main Exim target.
+ 
+-all:    $(EDITME) checklocalmake Makefile os.h os.c config.h allexim
++all:    $(EDITME) checklocalmake Makefile os.h os.c config.h buildpcre \
++	eximon.bin
+ 
+ checklocalmake:
+ 	@if $(SHELL) $(SCRIPTS)/newer $(EDITME)-$(OSTYPE) $(EDITME) || \
