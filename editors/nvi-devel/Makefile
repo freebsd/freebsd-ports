@@ -7,7 +7,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.81.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/ \
 		${MASTER_SITE_LOCAL}
@@ -20,10 +20,6 @@ BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
 
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
