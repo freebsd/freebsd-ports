@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	opendx
-PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTVERSION=	4.3.2
+PORTREVISION=	0
 CATEGORIES=	graphics math
-MASTER_SITES=	http://www.research.ibm.com/dx/srcDownload/srcArchive/ \
-	        http://opendx.npaci.edu/source/
+MASTER_SITES=	http://opendx.npaci.edu/source/
 DISTNAME=	dx-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,35 +21,26 @@ LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick \
 		netcdf.1:${PORTSDIR}/math/netcdf \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_AUTOMAKE=	yes
+USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_GMAKE=	yes
 USE_MESA=	yes
 USE_MOTIF=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
-AUTOMAKE_ARGS=	-a -i
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --without-javadx
-CONFIGURE_ENV=	ARCH="" \
-		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${PREFIX}/include" \
-		CPPFLAGS="-I${PREFIX}/include" \
-		CXXFLAGS="${CFLAGS} ${PTHREAD_CFLAGS} -I${PREFIX}/include" \
-		LDFLAGS="-L${PREFIX}/lib ${LDFLAGS} ${PTHREAD_LIBS}"
+CONFIGURE_ARGS= --without-javadx
+CFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	ARCH="freebsd" \
+		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+USE_GMAKE=	yes
 NO_MTREE=	yes
 PLIST_SUB=	ARCH=${OPSYS:L}
 
 post-patch:
 	@${RM} -f ${WRKSRC}/include/stamp-h.in
-
-post-configure:
-	${REINPLACE_CMD} -e "s;flex ;flex -l ;g" ${WRKSRC}/src/uipp/dxuilib/Makefile
-
-post-install:
-	@${ECHO_MSG} "===>   Fixing path in the docs (/usr/lpp -> ${PREFIX})"
 .for dir in doc help html man
-	@${FIND} ${PREFIX}/dx/${dir} -type f | \
-	  ${XARGS} ${REINPLACE_CMD} -e "s;/usr/lpp;${PREFIX};g"
+	@${FIND} ${WRKSRC}/${dir} -type f | ${XARGS} \
+		${REINPLACE_CMD} -e "s;/usr/lpp;${PREFIX};g"
 .endfor
 
 .include <bsd.port.mk>
