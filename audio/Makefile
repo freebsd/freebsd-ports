@@ -123,6 +123,7 @@
     SUBDIR += xmp
     SUBDIR += xmpeg3
     SUBDIR += xmradio
+    SUBDIR += xsidplay
     SUBDIR += xtuner
     SUBDIR += yamt
 
