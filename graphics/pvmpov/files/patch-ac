@@ -1,0 +1,14 @@
+--- povray31/source/pvm/pvm.h.orig	Sun Sep 12 01:25:35 1999
++++ povray31/source/pvm/pvm.h	Wed Mar 22 13:04:15 2000
+@@ -23,9 +23,9 @@
+  * add it in permanently.
+  */
+ 
+-#include <features.h>
++/*#include <features.h>*/
+ 
+-#if defined(SUN4SOL2) || defined(your_pvm_arch)
++#if defined(SUN4SOL2) || defined(__FreeBSD__)
+ 
+ #define NICE(x) nice(x)
+ extern int nice PARAMS((int prio));
