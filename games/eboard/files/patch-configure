@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- configure.orig	Wed Nov 26 17:48:49 2003
++++ configure	Sun Dec 21 10:00:21 2003
+@@ -244,7 +244,7 @@
+ 	}
+ 	print TESTCC "$program";
+ 	close TESTCC;
+-	if (run_cmd($cxx,@cxxflags,"-c","test.cc","-o","xxtest.o") != 0) {
++	if (0) {
+ 	    print ": no\n";
+ 	    $y = header_def($x);
+ 	    print CONFIGH "#undef $y\n";
