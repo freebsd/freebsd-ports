@@ -8,7 +8,7 @@
 PORTNAME=	ipsc
 PORTVERSION=	0.4.2
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://www.interloper.net/~dan/software/dist/ipsc/
+MASTER_SITES=	http://ipsc.sourceforge.net/dist/ipsc/
 DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	jeremy@external.org
