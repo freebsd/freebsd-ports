@@ -3,3 +3,19 @@ Tcl language. It consists of 43 lessons covering all of the basic
 Tcl commands and most of the recent (8.0) additions.
 
 WWW: http://www.msen.com/~clif/TclTutor.html
+
+From the author:
+    From: Clif Flynt <clif@cflynt.com>
+    Message-Id: <200310201316.h9KDG0611735@clif.cflynt.com>
+    Subject: Re: TclTutor and FreeBSD
+    To: edwin@freebsd.org (Edwin Groothuis)
+    Date: Mon, 20 Oct 2003 09:16:00 -0400 (EDT)
+
+    The FreeBSD project is permitted to distribute the TclTutor
+    package by any method including network and the cdrom collection.
+	 
+    This distribution must include all files, including the original
+    license, help, and about information.
+	      
+    Clif Flynt
+    clif@cflynt.com
