@@ -43,6 +43,7 @@ share/gnome/html/gdk-pixbuf/r14.html
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @dirrm share/gnome/html/gdk-pixbuf
+@dirrm share/gnome/html
 @dirrm include/gdk-pixbuf
 @dirrm lib/gdk-pixbuf/loaders
 @dirrm lib/gdk-pixbuf
