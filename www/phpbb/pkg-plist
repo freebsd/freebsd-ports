@@ -305,20 +305,20 @@ share/phpbb/upgrade.php
 @dirrm share/phpbb/contrib
 @dirrm share/phpbb
 @dirrm %%PHPBBDIR%%/templates/subSilver/images/lang_english
-@dirrm %%PHPBBDIR%%/templates/subSilver/images
 @dirrm %%PHPBBDIR%%/templates/subSilver/admin
-@dirrm %%PHPBBDIR%%/templates/subSilver
-@dirrm %%PHPBBDIR%%/templates
 @dirrm %%PHPBBDIR%%/language/lang_english/email
 @dirrm %%PHPBBDIR%%/language/lang_english
-@dirrm %%PHPBBDIR%%/language
 @dirrm %%PHPBBDIR%%/includes
 @dirrm %%PHPBBDIR%%/images/smiles
-@dirrm %%PHPBBDIR%%/images/avatars/upload
-@dirrm %%PHPBBDIR%%/images/avatars
-@dirrm %%PHPBBDIR%%/images
 @dirrm %%PHPBBDIR%%/db/schemas
 @dirrm %%PHPBBDIR%%/db
 @dirrm %%PHPBBDIR%%/admin
-@unexec rmdir %D/%%PHPBBDIR%% 2>/dev/null || true
+@unexec rmdir %D/%%PHPBBDIR%%/templates/subSilver/images 2>/dev/null || true
+@unexec rmdir %D/%%PHPBBDIR%%/templates/subSilver 2>/dev/null || true
+@unexec rmdir %D/%%PHPBBDIR%%/templates 2>/dev/null || true
+@unexec rmdir %D/%%PHPBBDIR%%/language 2>/dev/null || true
+@unexec rmdir %D/%%PHPBBDIR%%/images/avatars/upload 2>/dev/null || true
+@unexec rmdir %D/%%PHPBBDIR%%/images/avatars 2>/dev/null || true
+@unexec rmdir %D/%%PHPBBDIR%%/images 2>/dev/null || true
+@unexec rmdir %D/%%PHPBBDIR%% 2>/dev/null || echo "Note: %D/%%PHPBBDIR%% not empty -- not deleted!"
 %%PORTDOCS%%@dirrm share/doc/phpbb
