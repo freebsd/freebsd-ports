@@ -1,6 +1,7 @@
 sbin/pkg_deinstall
 sbin/pkg_glob
 sbin/pkgdepfix
+sbin/portsclean
 sbin/portsdb
 sbin/portinstall
 sbin/portupgrade
