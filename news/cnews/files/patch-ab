@@ -1,3 +1,56 @@
+*** ../work.old/makefile	Mon Sep 26 16:21:40 1994
+--- ./makefile	Sat Oct  1 11:35:43 1994
+***************
+*** 16,22 ****
+  # System V bug fix
+  SHELL=/bin/sh
+  
+! build:	msub sub mx libcnews.a pgms
+  	: everything built successfully
+  
+  lib:	libcnews.a
+--- 16,22 ----
+  # System V bug fix
+  SHELL=/bin/sh
+  
+! build all:	msub sub mx libcnews.a pgms
+  	: everything built successfully
+  
+  lib:	libcnews.a
+*** ../work.old/util/dostatfs.c	Thu Sep  8 13:06:30 1994
+--- ./util/dostatfs.c	Sat Oct  1 11:27:59 1994
+***************
+*** 6,11 ****
+--- 6,12 ----
+  #include <string.h>
+  #include <sys/types.h>
+  
++ #include <sys/param.h>
+  #include <sys/mount.h>
+  
+  #ifndef MNAMELEN
+***************
+*** 19,26 ****
+  #include <sys/statfs.h>
+  #endif
+  
+- #define	f_fsize	f_bsize		/* idiotic incompatible naming in 4.4 */
+  #endif	/* MNAMELEN */
+  
+  extern int debug;
+  
+--- 20,30 ----
+  #include <sys/statfs.h>
+  #endif
+  
+  #endif	/* MNAMELEN */
++ 
++ #if BSD4_4 >= 1
++ #define	f_fsize	f_bsize		/* idiotic incompatible naming in 4.4 */
++ #endif
+  
+  extern int debug;
+  
 *** ./maint/makefile	Tue Sep 20 21:56:32 1994
 --- ../cnews/maint/makefile	Thu Sep 29 09:40:58 1994
 ***************
