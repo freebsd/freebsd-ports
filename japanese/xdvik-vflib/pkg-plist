@@ -1,14 +1,15 @@
+@comment $FreeBSD$
 bin/t1mapper
 bin/xdvi
 bin/xdvizilla
 libexec/xdviprint
-share/texmf/xdvi/vfontmap
-share/texmf/xdvi/vfontmap.freetype
-share/texmf/xdvi/vfontmap.vflib
-share/texmf/xdvi/xdvi.cfg
-share/texmf/xdvi/xdvipaper.dvi2ps-j
-share/texmf/xdvi/xdvipaper.dvips
-share/texmf/xdvi/xdvipaper.jdvi2kps
+%%TEXMF%%/xdvi/vfontmap
+%%TEXMF%%/xdvi/vfontmap.dist
+%%TEXMF%%/xdvi/xdvi.cfg
+%%TEXMF%%/xdvi/xdvipaper.dvi2ps-j
+%%TEXMF%%/xdvi/xdvipaper.dvips
+%%TEXMF%%/xdvi/xdvipaper.jdvi2kps
+%%TEXMF%%/xdvi/XDvi.ptex-tetex
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.xdvik-jp.html
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.xdvik20a-j1.1
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.xdvik20c-j1.0
@@ -34,9 +35,4 @@ share/texmf/xdvi/xdvipaper.jdvi2kps
 %%PORTDOCS%%%%DOCSDIR%%/README.xdvik20c-j1.0p1.patch
 %%PORTDOCS%%%%DOCSDIR%%/README.xdvik-22.15-j1.04.patch
 %%PORTDOCS%%%%DOCSDIR%%/xdvi.icon
-@dirrm share/texmf/xdvi
-@dirrm %%DOCSDIR%%
-@exec [ -x %D/bin/mktexlsr ] && %D/bin/mktexlsr %D/share/texmf
-@unexec [ -x %D/bin/mktexlsr ] && %D/bin/mktexlsr %D/share/texmf
-@cwd %%X11BASE%%
-%%APPDEFAULTSDIR%%/XDvi
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

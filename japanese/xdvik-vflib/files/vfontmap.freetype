@@ -7,22 +7,22 @@
 %    "tfm name1" "{,unicode,adobejapan,cidv}"
 %    "tfm name2" "{,unicode,adobejapan,cidv}"
 
-%%CIDFONTDIR%%/HiraMinPro-W3.otf
-%/usr/X11R6/lib/X11/fonts/truetype/kochi-mincho-subst.ttf
-%/usr/X11R6/lib/X11/fonts/TrueType/kochi-mincho.ttf
+%%%CIDFONTDIR%%/HiraMinPro-W3.otf
+%%TTFMINCHO%%
 	min
 	tmin
 	nmin
 	jis
 	jis-v
-%%CIDFONTDIR%%/HiraKakuPro-W6.otf
-%/usr/X11R6/lib/X11/fonts/truetype/kochi-gothic-subst.ttf
-%/usr/X11R6/lib/X11/fonts/TrueType/kochi-gothic.ttf
+	dm
+%%%CIDFONTDIR%%/HiraKakuPro-W6.otf
+%%TTFGOTHIC%%
 	goth
 	tgoth
 	ngoth
 	jisg
 	jisg-v
+	dg
 %%CIDFONTDIR%%/HiraMinPro-W6.otf
 	fmin
 %%CIDFONTDIR%%/HiraKakuPro-W8.otf
