@@ -5,14 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	qt
-PORTVERSION=	3.12
-PORTREVISION=	1
+PORTVERSION=	3.13
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyQt/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyQt-x11-gpl-${PORTVERSION}
 
-MAINTAINER=	eugos@gmx.net
+MAINTAINER=	danny@ricin.com
 COMMENT=	Python bindings for the Qt toolkit
 
 LIB_DEPENDS=	qscintilla.5:${PORTSDIR}/x11-toolkits/qscintilla
@@ -35,5 +34,9 @@ do-configure:
 		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 		-n ${X11BASE}/include -o ${X11BASE}/lib \
 		-v ${PREFIX}/share/sip)
+
+post-install:
+	@${PYTHON_CMD} -c "import pyqtconfig"
+	@${PYTHON_CMD} -O -c "import pyqtconfig"
 
 .include <bsd.port.post.mk>
