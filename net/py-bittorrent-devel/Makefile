@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	BitTorrent
-PORTVERSION=	3.4.2
-PORTREVISION=	3
+PORTVERSION=	3.9.0
 PORTEPOCH=	1
 CATEGORIES?=	net python
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
-MASTER_SITE_SUBDIR=	${PORTNAME:L}
+MASTER_SITES=	http://www.bittorrent.com/
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+#MASTER_SITE_SUBDIR=	${PORTNAME:L}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX?=	-devel
 #DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	lioux@FreeBSD.org
@@ -24,16 +25,22 @@ USE_REINPLACE=	yes
 
 CONFLICTS=	py??-*[Bb]it[Tt]orrent* py??-*[Bb]it[Tt]ornado* btqueue*
 
-PORTDOCS=	BUILD.windows.txt INSTALL.unix.txt LICENSE.txt \
-		README.txt credits.txt
+NO_LATEST_LINK=	yes
+
+PORTDOCS=	\
+		LICENSE.txt \
+		README.txt \
+		credits.txt \
+		redirdonate.html
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 # required for GUI
 .ifndef(WITHOUT_GUI)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 
-PLIST_SUB+=	GUI=''
 PLIST_FILES+=	\
-		bin/btcompletedirgui.py \
+		bin/btmaketorrentgui.py \
 		bin/btdownloadgui.py
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-nogui-patch-setup.py
@@ -44,27 +51,23 @@ pre-everything::
 	@${ECHO_MSG} '===> Define WITHOUT_GUI to disable GUI installation'
 .endif
 
-#post-extract:
-# patch to work with python 2.4
-#	@${CP} ${FILESDIR}/zurllib.py ${WRKSRC}/BitTorrent
-
 post-patch:
 	@${FIND} ${WRKSRC} -type f | \
 		${XARGS} -x -n 10 \
 		${REINPLACE_CMD} -E \
-		-e 's|/usr/bin/env python2|${LOCALBASE}/bin/python|'
-.ifdef(WITHOUT_GUI)
-	@${REINPLACE_CMD} -E \
-		-e 's|btdownloadgui.py|btdownloadcurses.py|' \
-		${WRKSRC}/INSTALL.unix.txt
-.endif
+		-e 's|/usr/bin/env python|${LOCALBASE}/bin/python|'
 
 post-install:
-.ifndef(NOPORTDOCS)
+.ifndef(NOPORTDOCS) 
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
+# set proper permissions
+	@${CHMOD} -R ${SHAREMODE} \
+		${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
+	@${CHMOD} ${SHAREMODE} ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
+	@${CHMOD} a+x ${PREFIX}/${PYTHON_SITELIBDIR:S|^${PYTHONBASE}/||}/BitTorrent
 
 .include <bsd.port.mk>
