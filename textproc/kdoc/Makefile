@@ -13,12 +13,13 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
 MAINTAINER=	demon@FreeBSD.org
 
+USE_BZIP2=	yes
+
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500007
 BROKEN=		"Requires Perl version 5.6.0"
 .endif
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
