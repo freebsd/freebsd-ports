@@ -7,7 +7,7 @@
 
 PORTNAME=	gnuplot371+
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math japanese graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.yama-ga.com/gnuplot/:patch \
@@ -52,12 +52,6 @@ GP_DOCS=	${WRKSRC}/Copyright.plus \
 		${WRKSRC}/gp+/plus.ps \
 		${WRKSRC}/gp+/plus.tex
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
 post-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/gnuplot3.7.1+${PORTVERSION}.patch.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
 
@@ -82,4 +76,4 @@ post-install:
 	${MKDIR} ${PREFIX}/share/examples/gnuplot+
 	${INSTALL_DATA} ${WRKSRC}/demo/* ${PREFIX}/share/examples/gnuplot+
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
