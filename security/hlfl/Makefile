@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hlfl
-PORTVERSION=	0.52
+PORTVERSION=	0.60.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.hlfl.org/pub/hlfl/
 
