@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libdsp
-PORTVERSION=	3.3.4
+PORTVERSION=	3.3.5
 CATEGORIES=	devel audio
 MASTER_SITES=	http://www.pp.clinet.fi/~visitor/dlbins/
 DISTNAME=	libdsp-src
@@ -24,7 +24,10 @@ MAKEFILE=	Makefile.FreeBSD
 
 USE_GMAKE=	yes
 
+INLINE_VER=	1.1.0
+
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${MAKEFILE}
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%INLINE_VER%%|${INLINE_VER}|g" ${WRKSRC}/${MAKEFILE}
 
 .include <bsd.port.mk>
