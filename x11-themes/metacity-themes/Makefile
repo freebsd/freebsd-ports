@@ -9,6 +9,7 @@
 
 PORTNAME=	metacity-themes
 PORTVERSION=	20040306
+PORTREVISION=	1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	# Empty
 DISTFILES=	# Empty
@@ -21,7 +22,8 @@ RUN_DEPENDS=	${X11BASE}/share/gnome/themes/6nome/metacity-1/metacity-theme-1.xml
 		${X11BASE}/share/gnome/themes/Aero/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-aero \
 		${X11BASE}/share/gnome/themes/Alloy-C/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-alloy-c \
 		${X11BASE}/share/gnome/themes/Hacked-2/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-hacked-2 \
-		${X11BASE}/share/gnome/themes/Iridium-Rounded/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-iridium-rounded
+		${X11BASE}/share/gnome/themes/Iridium-Rounded/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-iridium-rounded \
+		${X11BASE}/share/gnome/themes/microgui/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/metacity-theme-microgui
 
 NO_BUILD=	yes
 
