@@ -8,8 +8,18 @@ arguments.
 
 Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
 --- RTHeapDepC.c.orig	Sat Mar 23 14:52:21 1996
-+++ RTHeapDepC.c	Thu Jul 10 22:41:39 1997
-@@ -89,9 +89,20 @@
++++ RTHeapDepC.c	Wed Sep 24 08:39:00 1997
+@@ -80,7 +80,8 @@
+ #include <sys/file.h>
+ #include <sys/param.h>
+ #if __FreeBSD__ >= 2
+-# include <sys/sysctl.h>
++#include <sys/sysctl.h>
++#include <osreldate.h>
+ #endif
+ #include <sys/mount.h>
+ #include <sys/ipc.h>
+@@ -89,9 +90,21 @@
  #include <ufs/ufs/quota.h>
  #include <sys/signal.h>
  #include <sys/socket.h>
@@ -25,12 +35,13 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
 +#include <ufs/ufs/ufsmount.h>
 +#endif
 +
++#include <string.h>
 +#include <unistd.h>
 +
  #ifdef   NULL
  #undef   NULL
  #endif
-@@ -110,22 +121,8 @@
+@@ -110,22 +123,8 @@
  /* Unless otherwise noted, all the following wrappers have the same
     structure. */
  
@@ -54,7 +65,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int mode;
  { int result;
  
-@@ -137,7 +134,7 @@
+@@ -137,7 +136,7 @@
  }
  
  int acct(file)   /* ok */
@@ -63,7 +74,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -228,19 +225,6 @@
+@@ -228,19 +227,6 @@
  }
  */
  
@@ -83,7 +94,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  /* not implemented
  int cachectl(addr, nbytes, op)
  char *addr;
-@@ -268,7 +252,7 @@
+@@ -268,7 +254,7 @@
  */
  
  int chdir(path)   /* ok */
@@ -92,7 +103,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -278,8 +262,20 @@
+@@ -278,8 +264,20 @@
    return result;
  }
  
@@ -114,7 +125,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  mode_t mode;
  { int result;
  
-@@ -291,7 +287,7 @@
+@@ -291,7 +289,7 @@
  }
  
  int chown(path, owner, group)   /* ok */
@@ -123,7 +134,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  uid_t owner;
  gid_t group;
  { int result;
-@@ -304,7 +300,7 @@
+@@ -304,7 +302,7 @@
  }
  
  int chroot(dirname)   /* ok */
@@ -132,7 +143,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -314,19 +310,6 @@
+@@ -314,19 +312,6 @@
    return result;
  }
  
@@ -152,7 +163,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  /* not implemented (obsolete)
  int creat(name, mode)   
  const char *name;
-@@ -356,8 +339,8 @@
+@@ -356,8 +341,8 @@
      result = syscall(SYS_execve, name, argv, envp);
      if (result == -1 && errno == EFAULT) {
        MAKE_READABLE(name);
@@ -163,7 +174,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
      } else {
        return result;
      }
-@@ -473,7 +456,7 @@
+@@ -473,7 +458,7 @@
  
  int getgroups(gidsetsize, grouplist)   /* ok */
  int gidsetsize;
@@ -172,7 +183,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -513,20 +496,6 @@
+@@ -513,20 +498,6 @@
  }
  */
  
@@ -193,7 +204,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int getrlimit(resource, rlp)   /* ok */
  int resource;
  struct rlimit *rlp;
-@@ -551,20 +520,6 @@
+@@ -551,20 +522,6 @@
    return result;
  }
  
@@ -214,7 +225,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int getsockopt(s, level, optname, optval, optlen)   /* ok */
  int s, level, optname;
  void *optval;
-@@ -629,9 +584,24 @@
+@@ -629,9 +586,24 @@
    return result;
  }
  
@@ -241,7 +252,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -643,7 +613,7 @@
+@@ -643,7 +615,7 @@
  }
  
  int lstat(path, buf)   /* ok */
@@ -250,7 +261,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  struct stat *buf;
  { int result;
  
-@@ -656,7 +626,7 @@
+@@ -656,7 +628,7 @@
  }
  
  int mkdir(path, mode)   /* ok */
@@ -259,7 +270,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  mode_t mode;
  { int result;
  
-@@ -667,8 +637,20 @@
+@@ -667,8 +639,20 @@
    return result;
  }
  
@@ -281,7 +292,74 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  mode_t mode;
  dev_t dev;
  { int result;
-@@ -821,21 +803,8 @@
+@@ -680,13 +664,51 @@
+   return result;
+ }
+ 
+-/* quite different ...
+-int mount(special, name, rwflag, type, options)
+-char *special;
+-char *name;
+-int rwflag, type;
+-char *options;
+-*/
++#if __FreeBSD_version >= 300001		/* New form of mount(2) */
++int
++mount(type, dir, flags, data)
++  const char *type;
++  const char *dir;
++  int flags;
++  void *data;
++{ int result;
++  struct ufs_args *u_data;
++  struct mfs_args *m_data;
++  struct nfs_args *n_data;
++
++  ENTER_CRITICAL;
++  MAKE_READABLE(type);
++  MAKE_READABLE(dir);
++  if (strcmp(type, "ufs") == 0) {
++    u_data = (struct ufs_args*) data;
++    MAKE_READABLE(u_data);
++    MAKE_READABLE(u_data->fspec);
++    result = syscall(SYS_mount, type, dir, flags, data);
++  } else if (strcmp(type, "mfs") == 0) {
++    m_data = (struct mfs_args*) data;
++    MAKE_READABLE(m_data);
++    MAKE_READABLE(m_data->fspec);
++    result = syscall(SYS_mount, type, dir, flags, data);
++  } else if (strcmp(type, "nfs") == 0) {
++    n_data = (struct nfs_args*) data;
++    MAKE_READABLE(n_data);
++    MAKE_READABLE(n_data->addr); 
++    MAKE_READABLE(n_data->fh);
++    MAKE_READABLE(n_data->hostname);
++    result = syscall(SYS_mount, type, dir, flags, data);
++  } else {	/* Not anything we recognize. */
++    MAKE_READABLE(data);
++    result = syscall(SYS_mount, type, dir, flags, data);
++  }
++  EXIT_CRITICAL;
++  if (result != -1) {
++    result = 0;
++  }
++  return result;
++}
++
++#else /* __FreeBSD_version >= 300001 */
++
+ int mount(type, dir, flags, data)
+ int type;
+ const char *dir;
+@@ -723,6 +745,7 @@
+   }
+   return result;
+ }
++#endif /* __FreeBSD_version >= 300001 */
+ 
+ int msgctl(msqid, cmd, buf)   /* ok */
+ int msqid, cmd;
+@@ -821,21 +844,8 @@
    return result;
  }
  
@@ -304,7 +382,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  char *buf;
  int bufsiz;
  { int result;
-@@ -865,46 +834,6 @@
+@@ -865,46 +875,6 @@
    return result;
  }
  
@@ -351,7 +429,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int recvmsg(s, msg, flags)   /* ok */
  int s;
  struct msghdr msg[];
-@@ -940,7 +869,7 @@
+@@ -940,7 +910,7 @@
  }
  
  int rmdir(path)   /* ok */
@@ -360,7 +438,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -950,24 +879,6 @@
+@@ -950,24 +920,6 @@
    return result;
  }
  
@@ -385,7 +463,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int semctl(semid, semnum, cmd, arg)   /* ok ? */
  int semid, cmd;
  int semnum;
-@@ -1012,24 +923,6 @@
+@@ -1012,24 +964,6 @@
    return result;
  }
  
@@ -410,7 +488,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int sendmsg(s, msg, flags)   /* ok */
  int s;
  const struct msghdr msg[];
-@@ -1051,29 +944,8 @@
+@@ -1051,29 +985,8 @@
    return result;
  }
  
@@ -441,7 +519,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int namelen;
  { int result;
  
-@@ -1086,7 +958,7 @@
+@@ -1086,7 +999,7 @@
  
  int setgroups(ngroups, gidset)   /* ok */
  int ngroups;
@@ -450,7 +528,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -1097,7 +969,7 @@
+@@ -1097,7 +1010,7 @@
  }
  
  int sethostname(name, namelen)   /* ok */
@@ -459,7 +537,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int namelen;
  { int result;
  #if __FreeBSD__ >= 2
-@@ -1213,20 +1085,20 @@
+@@ -1213,20 +1126,20 @@
    return result;
  }
  
@@ -487,7 +565,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  int sigaltstack(ss, oss)   /* ok */
  const struct sigaltstack *ss;
  struct sigaltstack *oss;
-@@ -1239,20 +1111,6 @@
+@@ -1239,20 +1152,6 @@
    EXIT_CRITICAL;
    return result;
  }
@@ -508,7 +586,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  
  int socketpair(d, type, protocol, sv)   /* ok */
  int d, type, protocol;
-@@ -1267,7 +1125,7 @@
+@@ -1267,7 +1166,7 @@
  }
  
  int stat(path, buf)   /* ok */
@@ -517,7 +595,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  struct stat *buf;
  { int result;
  
-@@ -1280,7 +1138,7 @@
+@@ -1280,7 +1179,7 @@
  }
  
  int swapon(special)   /* ok */
@@ -526,7 +604,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -1291,8 +1149,8 @@
+@@ -1291,8 +1190,8 @@
  }
  
  int symlink(name1, name2)   /* ok */
@@ -537,7 +615,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -1304,14 +1162,14 @@
+@@ -1304,14 +1203,14 @@
  }
  
  int truncate(path, length)   /* ok */
@@ -556,7 +634,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
    EXIT_CRITICAL;
    return result;
  }
-@@ -1328,7 +1186,7 @@
+@@ -1328,7 +1227,7 @@
  }
  
  int unlink(path)   /* ok */
@@ -565,7 +643,7 @@ Index: m3/m3core/src/runtime/FreeBSD2/RTHeapDepC.c
  { int result;
  
    ENTER_CRITICAL;
-@@ -1414,19 +1272,6 @@
+@@ -1414,19 +1313,6 @@
    ENTER_CRITICAL;
    MAKE_WRITABLE(status);
    result = syscall(SYS_wait4, pid, status, options, NULL);
