@@ -3,13 +3,13 @@
 # Whom:			pst
 # Version required:	5.26
 #
-# $Id: Makefile,v 1.30 1998/02/18 06:28:34 asami Exp $
+# $Id: Makefile,v 1.31 1998/05/25 20:00:59 steve Exp $
 #
 # Note this file is included from japanese/extract/Makefile
 
 DISTNAME=	expect-5.26
 CATEGORIES=	lang tcl80 tk80
-MASTER_SITES=	http://peloton.physics.montana.edu/handy/
+MASTER_SITES=	ftp://peloton.physics.montana.edu/pub/distfiles/
 
 MAINTAINER=	ports@freebsd.org
 
