@@ -1,5 +1,14 @@
---- src/ioports.c.orig	Mon Nov 17 19:15:57 2003
-+++ src/ioports.c	Mon Nov 17 19:39:35 2003
+--- src/ioports.c.orig	Wed Aug 27 11:34:39 2003
++++ src/ioports.c	Wed May 12 17:56:00 2004
+@@ -41,7 +41,7 @@
+ #if defined(__I386__) && defined(HAVE_ASM_IO_H) && defined(HAVE_SYS_PERM_H)
+ #  include <sys/perm.h>
+ #  include <asm/io.h>
+-#elif defined(__BSD__)
++#elif defined(__BSD__) && defined(__I386__)
+ #  include <machine/sysarch.h>
+ #  include <machine/cpufunc.h>
+ #elif defined(__WIN32__)
 @@ -107,7 +107,7 @@
  }
  #endif /* 0 */ /* __MACOSX__ */

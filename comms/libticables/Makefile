@@ -16,11 +16,10 @@ MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator link cables library
 
 LIB_DEPENDS=	usb-0.1.7:${PORTSDIR}/devel/libusb
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
+USE_GNOME=	pkgconfig
 USE_LIBTOOL_VER=	13
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
