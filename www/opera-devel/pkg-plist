@@ -4,6 +4,7 @@ bin/opera-devel
 %%DOCSDIR%%/help
 %%DATADIR%%/bin/missingsyms.so
 %%DATADIR%%/bin/opera
+%%DATADIR%%/bin/spellcheck.so
 %%DATADIR%%/bin/works
 %%DATADIR%%/chartables.bin
 %%DATADIR%%/config/opera6rc
@@ -63,6 +64,7 @@ bin/opera-devel
 %%DATADIR%%/images/startup2.png
 %%DATADIR%%/ini/dialog.ini
 %%DATADIR%%/ini/fastforward.ini
+%%DATADIR%%/ini/filehandler.ini
 %%DATADIR%%/ini/pluginpath.ini
 %%DATADIR%%/ini/spellcheck.ini
 %%DATADIR%%/ini/standard_keyboard.ini

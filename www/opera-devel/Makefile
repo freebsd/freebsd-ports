@@ -18,8 +18,8 @@ COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 OPERA_VER=	7.50
-OPERA_REL=	Preview-2
-OPERA_DATE=	20040218
+OPERA_REL=	Preview-3
+OPERA_DATE=	20040309
 
 CONFLICTS=	linux-opera-devel-*
 
