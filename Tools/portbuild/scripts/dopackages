@@ -193,7 +193,7 @@ if [ "$nobuild" = 0 ]; then
     fi
   done
   if [ "x$new" != "x" ]; then
-    echo "The following ports didn't build the first time around: $new"
+    echo "The following port(s) didn't build the first time around: $new"
   fi
   cd ${PORTSDIR}
   echo "================================================"
