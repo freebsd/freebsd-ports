@@ -24,7 +24,7 @@ DISTFILES=	andale32.exe trebuc32.exe georgi32.exe verdan32.exe \
 		times32.exe courie32.exe webdin32.exe
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kkonstan@duth.gr
 
 BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir \
 		cabextract:${PORTSDIR}/archivers/cabextract
