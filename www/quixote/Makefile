@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	quixote
-PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTVERSION=	0.4.2
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/
 DISTNAME=	Quixote-${PORTVERSION}
@@ -31,7 +30,8 @@ do-install:
 	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 --prefix=${PREFIX}
 
 post-install:
-	@ ${PYTHON_CMD} ${SCRIPTDIR}/compile_ptl.py \
+	@ PYTHONPATH=${PREFIX}/lib/${PYTHON_VERSION}/site-packages \
+	  ${PYTHON_CMD} ${SCRIPTDIR}/compile_ptl.py \
 	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/demo/pages.ptl \
 	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages/${PORTNAME}/form/form_templates.ptl
 	@ ${MKDIR} ${EXAMPLESDIR}
