@@ -46,11 +46,12 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%DOCSDIR%%/web.html
 %%PORTDOCS%%%%DOCSDIR%%/wsp.html
 %%PORTDOCS%%%%DOCSDIR%%/yacc.html
+%%PORTDOCS%%%%DOCSDIR%%/change.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/.cscout/cscout_defs.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/.cscout/cscout_incs.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/awk.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/awk.cs
 %%PORTDOCS%%%%EXAMPLESDIR%%/awk.prj
 %%PORTDOCS%%%%EXAMPLESDIR%%/awk/FIXES
 %%PORTDOCS%%%%EXAMPLESDIR%%/awk/README
@@ -80,6 +81,7 @@ etc/cscout/cscout_incs.WIN32_MSC
 %%PORTDOCS%%%%EXAMPLESDIR%%/bin.prj
 %%PORTDOCS%%%%EXAMPLESDIR%%/mkproj
 %%PORTDOCS%%%%EXAMPLESDIR%%/sh.prj
+%%PORTDOCS%%%%EXAMPLESDIR%%/FreeBSD-kernel-4.8.cs
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/.cscout
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/awk
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
