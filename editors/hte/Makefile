@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hte
-PORTVERSION=	0.6.0b
+PORTVERSION=	0.7.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-lm"
-CONFIGURE_ARGS=	--enable-final
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-release
 
 .include <bsd.port.pre.mk>
 
