@@ -494,7 +494,7 @@ if [ "$nobuild" = 0 ]; then
     echo "================================================"
     echo "copying packages"
     echo "================================================"
-    su ${user} -c '${scripts}/docppackages ${branch}'
+    su ${user} -c "${scripts}/docppackages ${branch}"
   fi
 fi
 echo "================================================"
