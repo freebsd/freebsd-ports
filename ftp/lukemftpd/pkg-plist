@@ -1,5 +1,0 @@
-libexec/ftpd
-%%PORTDOCS%%share/doc/lukemftpd/ChangeLog
-%%PORTDOCS%%share/doc/lukemftpd/README
-%%PORTDOCS%%share/doc/lukemftpd/THANKS
-%%PORTDOCS%%@dirrm share/doc/lukemftpd
