@@ -7,7 +7,7 @@
 
 PORTNAME=	cvsnt
 PORTVERSION=	2.0.58d
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cvsnt.org/archive/
 
@@ -26,6 +26,7 @@ USE_ICONV=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 MAN1=		cvs.1
 MAN5=		cvs.5
