@@ -1,0 +1,45 @@
+include/xg/ClockLabel.h
+include/xg/ClockLabelP.h
+include/xg/ComboBox.h
+include/xg/ComboBoxP.h
+include/xg/ExtPushB.h
+include/xg/ExtPushBP.h
+include/xg/FastLabel.h
+include/xg/FastLabelP.h
+include/xg/NumEntry.h
+include/xg/NumEntryP.h
+include/xg/Row.h
+include/xg/RowP.h
+include/xg/Tabs.h
+include/xg/TabsP.h
+include/xg/TimeEntry.h
+include/xg/TimeEntryP.h
+include/xg/ToolBar.h
+include/xg/ToolBarP.h
+include/xg/ToolPushB.h
+include/xg/ToolPushBP.h
+include/xg/XgUtils.h
+include/xg/x_rotate.h
+include/xg/xgpm.h
+lib/libxg.a
+share/doc/xg/LICENSE
+share/doc/xg/README
+share/examples/xg/CancelPB.xpm
+share/examples/xg/HandSign.xpm
+share/examples/xg/HelpPB.xpm
+share/examples/xg/Makefile
+share/examples/xg/NoPB.xpm
+share/examples/xg/OkayPB.xpm
+share/examples/xg/YesPB.xpm
+share/examples/xg/testcb.c
+share/examples/xg/testcl.c
+share/examples/xg/testepb.c
+share/examples/xg/testfl.c
+share/examples/xg/testne.c
+share/examples/xg/testrow.c
+share/examples/xg/testtabs.c
+share/examples/xg/testtb.c
+share/examples/xg/testte.c
+@dirrm include/xg
+@dirrm share/doc/xg
+@dirrm share/examples/xg

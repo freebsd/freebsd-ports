@@ -1,0 +1,22 @@
+--- src/TimeEntry.c	Fri Mar 14 21:50:04 1997
++++ /home/andy/tmp/wrk/src/TimeEntry.c	Wed Dec  2 22:29:36 1998
+@@ -1549,7 +1549,9 @@
+ {
+ struct tm	ts;
+ long		time_value;
++#ifndef __FreeBSD__
+ extern long timezone;
++#endif
+ 
+ 	ts.tm_mon = te->timeentry.month_value - 1;
+ 	ts.tm_mday = te->timeentry.day_value;
+@@ -1574,7 +1576,9 @@
+ 	 */
+ 	if ( te->timeentry.use_timezone == False )
+ 	{
++#ifndef __FreeBSD__
+ 		time_value -= timezone;
++#endif
+ 
+ 		/*
+ 		 * Adjust for Daylight Savings Time
