@@ -8,7 +8,7 @@ etc/rc.d/rskkserv.sh
 %%RUBY_SITELIBDIR%%/skkserv/logger.rb
 %%RUBY_SITELIBDIR%%/skkserv/skkdic.rb
 @dirrm %%RUBY_SITELIBDIR%%/skkserv
-libexec/rskkserv
+sbin/rskkserv
 @unexec rm -f %D/share/skk/SKK-JISYO.[LMS].[an] 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TODO

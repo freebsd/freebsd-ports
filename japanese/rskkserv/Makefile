@@ -7,7 +7,7 @@
 
 PORTNAME=	rskkserv
 PORTVERSION=	2.95.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	rskkserv/12167
@@ -27,8 +27,7 @@ CONFIGURE_ARGS=	--with-ruby="${RUBY}" \
 		--with-dicfile="${SKKJISYO_BASE}/${SKKJISYO}" \
 		--with-cachedir="${SKKJISYO_BASE}" \
 		--with-logdir="/var/log" \
-		--with-piddir="/var/run" \
-		--sbindir="${PREFIX}/libexec"
+		--with-piddir="/var/run"
 MAKE_ARGS=	SKKSERV=rskkserv
 
 SKKJISYO_SIZE?=	L
@@ -67,9 +66,9 @@ post-install:
 		${ECHO_CMD} "#!/bin/sh"; \
 		${ECHO_CMD} "case \$$1 in"; \
 		${ECHO_CMD} "start)"; \
-		${ECHO_CMD} "	if [ -f ${PREFIX}/libexec/rskkserv ]; then"; \
+		${ECHO_CMD} "	if [ -f ${PREFIX}/sbin/rskkserv ]; then"; \
 		${ECHO_CMD} "		${ECHO_CMD} -n ' rskkserv: '"; \
-		${ECHO_CMD} "		${PREFIX}/libexec/rskkserv"; \
+		${ECHO_CMD} "		${PREFIX}/sbin/rskkserv"; \
 		${ECHO_CMD} "	fi"; \
 		${ECHO_CMD} "	;;"; \
 		${ECHO_CMD} "stop)"; \
