@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	eugos@gmx.net
 COMMENT=	A Qt-based Jabber client
 
+RUN_DEPENDS=	${X11BASE}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls
+
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
