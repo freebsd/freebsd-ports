@@ -7,7 +7,7 @@
 
 PORTNAME=	portmanager
 PORTVERSION=	0.2.9
-PORTREVISION=	1
+PORTREVISION=	2
 #-----------------------------------------
 #for local use, remove before submitting PR
 CATEGORIES=		sysutils
