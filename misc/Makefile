@@ -110,6 +110,7 @@
     SUBDIR += peq
     SUBDIR += pdmenu
     SUBDIR += pinfo
+    SUBDIR += porteasy
     SUBDIR += proxyper
     SUBDIR += py-distutils
     SUBDIR += qclock
