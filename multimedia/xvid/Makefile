@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xvid
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://files.xvid.org/downloads/
