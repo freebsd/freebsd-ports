@@ -1289,3 +1289,7 @@ hebrew/pine||2004-10-23|contained serious vulnerabilities
 mail/cyrus|cyrus-imapd22|2004-10-23|contained serious vulnerabilities
 archivers/alz2zip||2004-10-23|no longer maintained
 x11-wm/fbdesk|x11/fbdesk|2004-10-24|better category
+audio/streamtuner-live365|audio/streamtuner|2004-10-28|plugins rolled into main port
+audio/streamtuner-local|audio/streamtuner|2004-10-28|plugins rolled into main port
+audio/streamtuner-python|audio/streamtuner|2004-10-28|plugins rolled into main port
+audio/streamtuner-xiph|audio/streamtuner|2004-10-28|plugins rolled into main port
