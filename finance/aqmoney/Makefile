@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	heiner@bilch.com
 COMMENT=	AqMoney uses openhbci to manage your credit institute accounts
 
-LIB_DEPENDS=		openhbci.13:${PORTSDIR}/finance/openhbci
+BUILD_DEPENDS=		all:${PORTSDIR}/finance/openhbci
 
 GNU_CONFIGURE=		yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
