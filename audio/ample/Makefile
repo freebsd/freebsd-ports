@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ample
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.7
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to listen to your own MP3's away from home
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		ample.1
 MAN5=		ample.conf.5 ample.html.5
