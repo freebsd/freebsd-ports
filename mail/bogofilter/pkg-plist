@@ -40,19 +40,19 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/programmer/README.dcdflib
 %%PORTDOCS%%%%DOCSDIR%%/programmer/README.freebsd
 %%PORTDOCS%%%%DOCSDIR%%/programmer/README.hp-ux
-%%PORTDOCS%%%%DOCSDIR%%/tuning/README
+%%PORTDOCS%%%%DOCSDIR%%/tuning/README.bogotune
+%%PORTDOCS%%%%DOCSDIR%%/tuning/bogol
+%%PORTDOCS%%%%DOCSDIR%%/tuning/bogotune
 %%PORTDOCS%%%%DOCSDIR%%/tuning/bogolex.sh
-%%PORTDOCS%%%%DOCSDIR%%/tuning/distrib
-%%PORTDOCS%%%%DOCSDIR%%/tuning/mkdb
-%%PORTDOCS%%%%DOCSDIR%%/tuning/setR
-%%PORTDOCS%%%%DOCSDIR%%/tuning/sizes
-%%PORTDOCS%%%%DOCSDIR%%/tuning/tuning.R
-%%PORTDOCS%%%%DOCSDIR%%/tuning/tuning.sh
+%%PORTDOCS%%%%DOCSDIR%%/tuning/sample.output/tune.nochange
+%%PORTDOCS%%%%DOCSDIR%%/tuning/sample.output/tune.normal
+%%PORTDOCS%%%%DOCSDIR%%/tuning/sample.output/tune.verbose
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogofilter.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogolexer.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogoupgrade.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogoutil.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tuning/sample.output
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/tuning
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/programmer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
