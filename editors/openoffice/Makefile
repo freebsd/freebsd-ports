@@ -397,4 +397,14 @@ post-install:
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type d > ${WRKDIR}/dir.tmp
 	@${SORT} -r ${WRKDIR}/dir.tmp | ${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
 
+package-rename:
+	@${ECHO_MSG} "===>   Rename package for OO.org mirror upload";
+.if defined(LANG_SUFFIX)
+	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${LANG_SUFFIX}-${PORTVERSION}_${PORTREVISION}.tbz2 \
+	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}-${LANG_SUFFIX}.tbz2
+.else
+	@${MV} ${WRKDIR}/../${PKGNAMEPREFIX}openoffice-${PORTVERSION}_${PORTREVISION}.tbz2 \
+	    ${WRKDIR}/../OOo_${PORTVERSION}_${OPSYS}Intel_install_${LANG_PKGNAME}.tbz2
+.endif
+
 .include <bsd.port.post.mk>
