@@ -15,13 +15,6 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyse des structures et thermo-mécanique
 
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=   "Does not build on systems prior 5.x - work in progress..."
-.endif
-
 #-----------------------------------------------------------------------
 # You may define these options:
 #
@@ -61,6 +54,12 @@ WRKSRC=		${WRKDIR}/${vaster}
 PLIST_SUB=	ASTERDIR=${PORTNAME}/${vaster}
 .if defined(WITHOUT_ASTK) || defined(WITHOUT_ASTK_CLI)
 PKGMESSAGE=	${PKGDIR}/pkg-message.sans-astk
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		Does not build on systems prior 5.x - work in progress...
 .endif
 
 .if !defined(WITHOUT_ASTK)
