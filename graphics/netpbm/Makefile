@@ -63,4 +63,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${DOCSDIR}/
 .endif
 
+.if !defined(WITHOUT_PERL) && ${PERL_LEVEL} < 500601
+RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
 .include <bsd.port.post.mk>
