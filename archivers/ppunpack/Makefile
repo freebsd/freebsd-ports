@@ -1,0 +1,27 @@
+# New ports collection makefile for:	ppunpack
+# Date created:				Sat 3 June 2000
+# Whom:					will
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ppunpack
+PORTVERSION=	1.0
+CATEGORIES=	archivers
+MASTER_SITES=	ftp://de.aminet.net/pub/aminet/misc/unix/ \
+		ftp://us.aminet.net/pub/aminet/misc/unix/
+DISTNAME=	ppsmall-${PORTVERSION}
+EXTRACT_SUFX=	.tar.Z
+
+MAINTAINER=	will@FreeBSD.org
+
+RESTRICTED=	"No commercial redistribution"
+NO_CDROM=	${RESTRICTED}
+WRKSRC=		${WRKDIR}/PPUnpack
+MAKE_FLAGS=	CC="${CC}" COPTS="${CFLAGS}"
+ALL_TARGET=	ppunpack
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/ppunpack ${PREFIX}/bin/
+
+.include <bsd.port.mk>
