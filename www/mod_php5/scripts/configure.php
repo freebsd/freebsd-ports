@@ -194,7 +194,7 @@ while [ "$1" ]; do
 			;;
 		\"XML\")
 			echo "LIB_DEPENDS+=	expat.2:\${PORTSDIR}/textproc/expat2"
-			echo "CONFIGURE_ARGS+=--with-xml=\${PREFIX}"
+			echo "CONFIGURE_ARGS+=--with-xml --with-expat-dir=\${PREFIX}"
 			XML=1
 			;;
 		\"XSLT\")
