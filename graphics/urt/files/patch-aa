@@ -152,8 +152,8 @@
 -INCTIFF = -I$(TIFFDIR)
 -LIBTIFF = $(TIFFDIR)/libtiff.a
 +##defpath TIFFDIR
-+INCTIFF = -I${PREFIX}/include/tiff34
-+LIBTIFF = -L${PREFIX}/lib -ltiff34
++INCTIFF = -I${PREFIX}/include
++LIBTIFF = -L${PREFIX}/lib -ltiff
 +.if ${PORTOBJFORMAT} == "elf"
 +LIBTIFF +=-Wl,-rpath,${PREFIX}/lib
 +.endif

@@ -42,8 +42,8 @@
  
 +#ifdef UseInstalledTiff
 +TIFF = -DDOTIFF
-+LIBTIFF = -L/usr/local/lib -ltiff34
-+TIFFINCLUDE = -I/usr/local/include/tiff34
++LIBTIFF = -L/usr/local/lib -ltiff
++TIFFINCLUDE = -I/usr/local/include
 +#endif
 +
  #ifdef HavePDS

@@ -3,7 +3,7 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.28 1998/10/05 03:13:40 steve Exp $
+# $Id: Makefile,v 1.29 1998/11/21 07:27:37 steve Exp $
 #
 
 DISTNAME=       xpaint-2.5.4
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/
 MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff34.1:${PORTSDIR}/graphics/tiff34 \
+		tiff.1:${PORTSDIR}/graphics/tiff34 \
 		Xpm.4:${PORTSDIR}/graphics/xpm   \
 		png.2:${PORTSDIR}/graphics/png
 
