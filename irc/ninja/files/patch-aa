@@ -5,7 +5,7 @@
  #define DEFAULT_HELP_PAGER 1
  /*
 -#define DEFAULT_HELP_PATH "/usr/local/lib/ninja/help:/usr/local/lib/irc/help:~/.ninja"
-+#define DEFAULT_HELP_PATH "/usr/local/share/ninja/help:/usr/local/lib/irc/help:~/.ninja"
++#define DEFAULT_HELP_PATH "__PREFIX__/share/ninja/help:/usr/local/lib/irc/help:~/.ninja"
  */
  #define DEFAULT_HELP_PROMPT 1
  #define DEFAULT_HELP_WINDOW 0
