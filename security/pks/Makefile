@@ -9,11 +9,11 @@ PORTNAME=	pks
 PORTVERSION=	0.9.4
 PORTREVISION=	1
 CATEGORIES=	security www
-MASTER_SITES+=	http://www.mit.edu/people/marc/pks/ \
-		ftp://ftp.neonramp.com/pub/pksd/
+MASTER_SITES=	${PATCH_SITES} \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	http://www.mit.edu/people/marc/pks/ \
-		ftp://ftp.neonramp.com/pub/pksd/
+PATCH_SITES=	http://www.mit.edu/people/marc/pks/
 PATCHFILES=	pks094-patch2 \
 		x509patch
 PATCH_DIST_STRIP=-p1
