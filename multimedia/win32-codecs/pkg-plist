@@ -1,5 +1,9 @@
 @comment win32codecs
 lib/win32/wmv8ds32.ax
+lib/win32/vp5vfw.dll
+lib/win32/vp6vfw.dll
+lib/win32/wnvplay1.dll
+lib/win32/wnvwinx.dll
 lib/win32/avimszh.dll
 lib/win32/m3jpeg32.dll
 lib/win32/msnaudio.acm
@@ -77,6 +81,7 @@ lib/win32/vsswlt.dll
 lib/win32/ultimo.dll
 lib/win32/vp4vfw.dll
 @comment qt6dlls
+lib/win32/AvidQTAVUICodec.qtx
 lib/win32/QuickTimeEssentials.qtx
 lib/win32/QuickTime.qts
 lib/win32/QuickTimeInternetExtras.qtx
