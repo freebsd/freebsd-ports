@@ -1,0 +1,54 @@
+#!/bin/sh
+#
+
+# PROVIDE: trafd
+# REQUIRE: netif routing
+# KEYWORD: FreeBSD shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable trafd:
+#
+#trafd_enable="YES"
+#trafd_ifaces="fxp0 fxp1 fxp2"
+#trafd_flags=""
+#trafd_log="/var/log/traffic.log"
+#
+
+. %%RC_SUBR%%
+
+name="trafd"
+rcvar=`set_rcvar`
+command="/usr/local/bin/trafd"
+start_cmd="trafd_start"
+stop_cmd="trafd_stop"
+
+trafd_enable=${trafd_enable:-"NO"}
+trafd_log=${trafd_log:-"/var/log/traffic.log"}
+load_rc_config $name
+
+trafd_start()
+{
+	echo 'Starting trafd.'
+	if checkyesno ${rcvar} && [ "x${trafd_ifaces}" != "x" ]; then
+		for iface in ${trafd_ifaces}; do
+			${command} -i ${iface} ${trafd_flags}
+		done
+	else
+		warn '$trafd_ifaces is not set.'
+	fi
+}
+
+trafd_stop()
+{
+	echo 'Stopping trafd.'
+	for iface in ${trafd_ifaces}; do
+		read rc_pid < /var/run/trafd.$iface
+		if [ -n "${rc_pid}" ]; then
+			kill -TERM ${rc_pid}
+			wait_for_pids ${rc_pid}
+			echo "$(date +"%b %e %H:%M:%S") $(hostname -s) trafstop:" "'('${iface}')' signaling to shutdown" >> ${trafd_log}
+		fi	
+	done
+}
+
+run_rc_command "$1"
