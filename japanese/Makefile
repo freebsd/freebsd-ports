@@ -14,6 +14,7 @@
     SUBDIR += acroread-jpnfont
     SUBDIR += addttfont
     SUBDIR += another-htmllint
+    SUBDIR += aterm
     SUBDIR += balsa
     SUBDIR += bible_names-fpw
     SUBDIR += binder
