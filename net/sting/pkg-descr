@@ -1,0 +1,10 @@
+sting is a TCP-based network measurement tool that measures end-to-end
+network path characteristics. sting is unique because it can estimate
+one-way properties, such as loss rate, through careful manipulation and
+observation of TCP behavior. In addition, using TCP allows sting to
+leverage the existing Internet infrastructure -- any TCP server can be
+used as a de facto measurement service -- and it avoids increasing
+problems with ICMP-based network measurement (blocking, spoofing, rate
+limiting, etc).
+
+WWW: http://www.cs.washington.edu/homes/savage/sting/

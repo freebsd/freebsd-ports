@@ -1,0 +1,11 @@
+--- Makefile	Fri Nov  5 06:00:22 1999
++++ Makefile.new	Wed May 10 11:11:23 2000
+@@ -42,7 +42,7 @@
+ INCLS = -I. -I$(LIBPCAP)
+ DEFS = -DRETSIGTYPE=void -DHAVE_SIGACTION=1 
+ CFLAGS =  -Wall $(CCOPT) $(DEFS) $(INCLS)
+-LIBS = -lm $(LIBPCAP)/libpcap.a
++LIBS = -lm -lpcap
+ 
+ all: sting
+ 

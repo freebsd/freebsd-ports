@@ -1,0 +1,11 @@
+--- setsignal.c	Fri Nov  5 06:00:22 1999
++++ setsignal.c.new	Wed May 10 11:10:59 2000
+@@ -34,7 +34,7 @@
+ #include <string.h>
+ #endif
+ 
+-#include "gnuc.h"
++/* #include "gnuc.h" */
+ #ifdef HAVE_OS_PROTO_H
+ #include "os-proto.h"
+ #endif
