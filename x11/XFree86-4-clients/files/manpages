@@ -26,7 +26,6 @@ MAN1=	Xmark.1 \
 	mkfontscale.1 \
 	oclock.1 \
 	proxymngr.1 \
-	resize.1 \
 	rstart.1 \
 	rstartd.1 \
 	sessreg.1 \
@@ -90,7 +89,6 @@ MAN1=	Xmark.1 \
 	xsetroot.1 \
 	xsm.1 \
 	xstdcmap.1 \
-	xterm.1 \
 	xtrap.1 \
 	xtrapchar.1 \
 	xtrapin.1 \
