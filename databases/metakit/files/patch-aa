@@ -1,0 +1,11 @@
+diff -ur ./src/fileio.cpp ../metakit-2.0.new/src/fileio.cpp
+--- ../src/fileio.cpp	Tue Dec 14 05:05:54 1999
++++ ../metakit-2.0.new/src/fileio.cpp	Sat Dec 25 20:19:15 1999
+@@ -14,6 +14,7 @@
+ #endif
+ 
+ #if q4_UNIX && HAVE_MMAP
++#include <sys/types.h>
+ #include <sys/mman.h>
+ #endif
+ 

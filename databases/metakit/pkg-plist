@@ -1,0 +1,10 @@
+include/mk4.h
+include/mk4.inl
+include/mk4str.h
+include/mk4str.inl
+lib/libmk4.a
+lib/libmk4.so
+lib/libmk4.la
+lib/libmk4.so.0
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
