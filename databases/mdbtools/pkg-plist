@@ -16,7 +16,7 @@ bin/prkkd
 bin/prole
 bin/prtable
 bin/updrow
-include/gmdb.h
+%%GNOME:%%include/gmdb.h
 include/mdbodbc.h
 include/mdbsql.h
 include/mdbtools.h
