@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-oa-packages
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
@@ -18,16 +18,17 @@ DISTFILES=	\
 		frame-icon-1.09-pkg.tar.gz \
 		pc-1.19-pkg.tar.gz \
 		slider-1.13-pkg.tar.gz \
-		speedbar-1.18-pkg.tar.gz \
+		speedbar-1.19-pkg.tar.gz \
 		strokes-1.08-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
 
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/xemacs-packages
+WRKSRC=		${WRKDIR}/${PACKAGES_SUBDIR}
 
 XEMACSDIR=	${PREFIX}/lib/xemacs
+PACKAGES_SUBDIR=	xemacs-packages
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
@@ -38,9 +39,15 @@ do-extract:
 
 do-install:
 	${MKDIR} ${XEMACSDIR}
-	${CP} -Rp ${WRKDIR}/xemacs-packages ${XEMACSDIR}
+	${CP} -R ${WRKSRC} ${XEMACSDIR}
 
 post-install:
+	@cd ${WRKDIR} && \
+	find ${PACKAGES_SUBDIR} -type f|sort|${SED} 's:^:lib/xemacs/:' >> ${TMPPLIST}; \
+	find ${PACKAGES_SUBDIR}/*/* -type d|sort -r|${SED} 's:^:@dirrm lib/xemacs/:'>> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR}/* 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR} 2>/dev/null || true' >> ${TMPPLIST}
+	@${ECHO} '@unexec rmdir %D/lib/xemacs 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_MSG} "    This is the set of the packages for xemacs with the oa category. You can"
 	@${ECHO_MSG} "install other packages provided by XEmacs.org with editors/xemacs-*-packages"
 	@${ECHO_MSG} "ports. These ports are prepared for corresponding XEmacs packages except for"
