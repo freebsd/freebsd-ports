@@ -319,7 +319,7 @@ post-patch:
 		if [ ${PATCH_DEBUG_TMP} = yes ]; then \
 			${ECHO_MSG} "===>   Applying ${OPSYS} patch ${PATCHDIR}/optpatch-freetype::patch" ; \
 		fi; \
-		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/optpatch-freetype::patch ; \
+		${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/optpatch-freetype+patch ; \
 	fi
 .endif
 .if defined(WITH_DEBUG)
