@@ -6,16 +6,22 @@
 #
 
 PORTNAME=	tpop3d
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
 MAINTAINER=	chris@shagged.org
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL auth
 
-USE_REINPLACE=  yes
+USE_OPENSSL=	yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-auth-other \
+		--enable-tcp-wrappers \
+		--with-mailspool-directory=/var/mail
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-# mysql authentication
+# MySQL authentication
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=		yes
 CONFIGURE_ARGS+=	--enable-auth-mysql \
@@ -24,25 +30,16 @@ CONFIGURE_ARGS+=	--enable-auth-mysql \
 .endif
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
-.endif
-
-# perl authentication
-.if defined(WITH_PERLAUTH)
-USE_PERL5=	yes
-.endif
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-auth-other \
-			--enable-tcp-wrappers \
-			--with-mailspool-directory=/var/mail
-
-.if defined(WITH_PERLAUTH)
-CONFIGURE_ARGS+=	--enable-auth-perl
-.endif
-.if defined(WITH_LDAP)
+LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20-client
 CONFIGURE_ARGS+=	--enable-auth-ldap --with-openldap-root=${LOCALBASE}
 .endif
+
+# Perl authentication
+.if defined(WITH_PERLAUTH)
+USE_PERL5=		yes
+CONFIGURE_ARGS+=	--enable-auth-perl
+.endif
+
 .if !defined(WITHOUT_MAILDIR)
 CONFIGURE_ARGS+=	--enable-mbox-maildir
 .endif
@@ -50,10 +47,11 @@ CONFIGURE_ARGS+=	--enable-mbox-maildir
 SAMPLE_RCD=	tpop3d.sh.sample
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${SAMPLE_RCD}
 DEFAULT_CONFIG=	${PREFIX}/etc/tpop3d.conf.dist
-USE_OPENSSL=	yes
 
 MAN5=		tpop3d.conf.5
 MAN8=		tpop3d.8
+DOCS=		CHANGES CREDITS FAQ HACKING INSTALL PORTABILITY \
+       		README README.POP-before-SMTP README.auth_mysql TODO
 
 post-patch:
 	@${REINPLACE_CMD} 's,^CFLAGS =, CFLAGS = \@CFLAGS\@,' \
@@ -71,5 +69,9 @@ post-install:
 		${INSTALL_SCRIPT} ${FILESDIR}/tpop3d.conf.dist 		\
 			${PREFIX}/etc/tpop3d.conf ;			\
 	fi
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

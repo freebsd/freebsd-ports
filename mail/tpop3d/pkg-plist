@@ -1,5 +1,17 @@
+@comment $FreeBSD$
 sbin/tpop3d
 etc/rc.d/tpop3d.sh.sample
 @unexec if cmp -s %D/etc/tpop3d.conf.dist %D/etc/tpop3d.conf; then rm -f %D/etc/tpop3d.conf; fi
 etc/tpop3d.conf.dist
 @exec if [ ! -f %D/etc/tpop3d.conf ]; then cp %D/etc/%f %D/etc/tpop3d.conf; fi
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/PORTABILITY
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.POP-before-SMTP
+%%PORTDOCS%%%%DOCSDIR%%/README.auth_mysql
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
