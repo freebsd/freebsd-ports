@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -61,7 +62,10 @@ JPI_LIST?=\
 	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
 	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
-SYSTEM_PREFS=	${FAKEDIR}/lib/${FIREFOX}-${FF_VER}/defaults/pref/firefox.js
+SYSTEM_PREFS=		${FAKEDIR}/lib/${FIREFOX}-${FF_VER}/defaults/pref/firefox.js
+SCRIPTS_DIR=		${FAKEDIR}/lib/${FIREFOX}-${FF_VER}
+MOZ_PIS_SCRIPTS=	S50cleanhome
+MOZ_PIS_DIR=		${SCRIPTS_DIR}/init.d
 
 OPTIONS=	DEBUG "Build a debugging image" off \
 		LOGGING "Enable additional log messages" off \
@@ -145,6 +149,12 @@ post-patch:
 		s|%%X11BASE%%|${X11BASE}|g' \
 		< ${FILESDIR}/${ii} > ${WRKDIR}/${ii}
 .endfor
+.for ii in ${MOZ_PIS_SCRIPTS}
+	@${SED} -e 's|%%MOZILLA%%|${FIREFOX}|g ; \
+		s|%%PREFIX%%|${PREFIX}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
+		< ${FILESDIR}/moz_pis_${ii} > ${WRKDIR}/moz_pis_${ii}
+.endfor
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/build/unix/run-mozilla.sh
 	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g ; \
@@ -177,6 +187,8 @@ pre-install:
 	@${RM} -rf ${FAKEDIR} ${PLIST}
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
+	@${MKDIR} ${SCRIPTS_DIR}
+	@${MKDIR} ${MOZ_PIS_DIR}
 	${ECHO_CMD} 'share/gnome/pixmaps/${FIREFOX_ICON}' >> ${PLIST}
 	${ECHO_CMD} 'share/gnome/applications/firefox.desktop' >> ${PLIST}
 	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g; \
@@ -188,6 +200,9 @@ pre-install:
 	done
 	${ECHO_CMD} bin/firefox >> ${PLIST}
 	${ECHO_CMD} bin/firefox-config >> ${PLIST}
+.for ii in ${MOZ_PIS_SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKDIR}/moz_pis_${ii} ${MOZ_PIS_DIR}/${ii}
+.endfor
 .if !defined(WITHOUT_NEWTAB)
 	${ECHO_CMD} >> ${SYSTEM_PREFS}
 	${ECHO_CMD} "// Open external links in new tab" >> ${SYSTEM_PREFS}
