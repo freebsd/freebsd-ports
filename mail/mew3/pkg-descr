@@ -1,19 +1,12 @@
-Mew is a "Message interface to Emacs Window" to integrate
+Mew is a user interface for text messages, multimedia messages(MIME),
+news articles and security functionality including PGP, SSH and SSL.
 
-   - Email
-   - MIME(Multipurpose Internet Mail Extensions)
-   - PGP(Pretty Good Privacy)
-
-and to make it easy to view and compose them. With Mew you can send a
-picture of a birthday cake with the song "Happy Birthday to you" to your
-friend, which is encrypted by strong cryptograph.
-
-This port is the Mew2(Mew with version 2) for emacs-21.x (editors/emacs21). 
-The Mew2 port and corresponding Emacs port are listed bellow and elisp
+This port is the Mew3(Mew with version 3) for emacs-21.x (editors/emacs21). 
+The Mew3 port and corresponding Emacs port are listed bellow and elisp
 `site-lisp' directory(elisp load path), info path and etc directory(only
 effective for xemacs ports) are shown as well. 
 
-mail/mew2 (mew-emacs21-2.x) ===> editors/emacs21 (emacs-21.x) 
+mail/mew3 (mew-emacs21-3.x) ===> editors/emacs21 (emacs-21.x) 
 	Lisp directory : /usr/local/share/emacs/site-lisp/mew
 	Info directory : /usr/local/info
 	ETC directory  : /usr/local/share/emacs/etc/mew

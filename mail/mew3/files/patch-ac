@@ -1,5 +1,5 @@
---- info/Makefile.orig	Fri Aug 17 21:26:00 2001
-+++ info/Makefile	Tue Nov 20 10:18:58 2001
+--- info/Makefile.orig	Wed Dec  4 17:07:50 2002
++++ info/Makefile	Fri Aug 22 16:17:02 2003
 @@ -28,9 +28,9 @@
  #INSTALLINFO_OPTIONS = --section Emacs Emacs
  #INSTALLINFO_JOPTIONS =
@@ -16,7 +16,7 @@
  ## DO NOT EDIT THE FOLLOWINGS
  ##
  
--INFO  = mew.info mew.info-1 mew.info-2 mew.info-3
+-INFO  = mew.info mew.info-1 mew.info-2 mew.info-3 mew.info-4
 -JINFO = mew.jis.info mew.jis.info-1 mew.jis.info-2 mew.jis.info-3
 +INFO  = mew${MEW_MAJOR_VER}.info mew${MEW_MAJOR_VER}.info-1 mew${MEW_MAJOR_VER}.info-2 mew${MEW_MAJOR_VER}.info-3
 +JINFO = mew${MEW_MAJOR_VER}.jis.info mew${MEW_MAJOR_VER}.jis.info-1 mew${MEW_MAJOR_VER}.jis.info-2 mew${MEW_MAJOR_VER}.jis.info-3

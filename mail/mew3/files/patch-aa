@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jul 18 08:20:40 2001
-+++ Makefile	Fri Aug  3 22:18:35 2001
+--- Makefile.orig	Wed Dec 11 23:48:41 2002
++++ Makefile	Fri Aug 22 16:01:05 2003
 @@ -19,14 +19,14 @@
  ## EDIT THE FOLLOWINGS
  ##
@@ -38,25 +38,25 @@
  
  ################################################################
  ##
-@@ -67,6 +70,8 @@
- 	mew-key.elc     mew-thread.elc  mew-smime.elc	\
- 	mew-theme.elc	mew.elc
+@@ -70,6 +73,8 @@
+ 	mew-vars.elc		mew-vars2.elc		mew-virtual.elc	\
+ 	mew-exec.elc					mew.elc
  
-+OBJS_PKG=	 auto-autoloads.elc custom-load.elc
++OBJS_PKG=	auto-autoloads.elc custom-load.elc
 +
- SRCS =	mew-addrbook.el	mew-attach.el	mew-blvs.el	\
- 	mew-bq.el	mew-cache.el	mew-complete.el	\
- 	mew-config.el	mew-const.el	mew-decode.el	\
-@@ -87,6 +92,8 @@
- 	mew-thread.el	mew-smime.el	mew-theme.el	\
- 	mew.el
+ SRCS =	mew-addrbook.el	mew-attach.el	mew-auth.el	\
+ 	mew-blvs.el	mew-bq.el	mew-cache.el	\
+ 	mew-complete.el	mew-config.el	mew-const.el	\
+@@ -94,6 +99,8 @@
+ 	mew-win32.el	mew-xemacs.el	mew-exec.el	\
+ 	mew-darwin.el	mew.el
  
 +SRCS_PKG=	auto-autoloads.el custom-load.el
 +
  TEMPFILE = temp.el
  
  CP = cp
-@@ -103,7 +110,9 @@
+@@ -110,7 +117,9 @@
  
  ################################################################
  
@@ -67,7 +67,7 @@
  	@echo 'Compiling EL files of Mew ... '
  	@echo 'PLEASE IGNORE WARNINGS IF DISPLAYED. TAKE IT EASY!'
  	$(EMACS) -batch -q -no-site-file -l ./$(TEMPFILE) -f mew-compile
-@@ -116,11 +125,11 @@
+@@ -123,11 +132,11 @@
  	@echo ')))' >> $(TEMPFILE)
  
  install-el: $(OBJS)
@@ -82,7 +82,7 @@
  
  ################################################################
  
-@@ -136,7 +145,9 @@
+@@ -143,7 +152,9 @@
  	cd info; $(MAKE) info EMACS=$(EMACS)
  
  install-info:
@@ -93,7 +93,7 @@
  
  ################################################################
  
-@@ -144,15 +155,72 @@
+@@ -151,15 +162,72 @@
  	cd info; $(MAKE) jinfo EMACS=$(EMACS)
  
  install-jinfo:
