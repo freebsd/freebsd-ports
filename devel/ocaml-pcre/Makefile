@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	pcre
-PORTVERSION=	5.07.1
-PORTREVISION=	0
+PORTVERSION=	5.09.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.oefai.at/~markus/ocaml_sources/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	pcre-ocaml-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marwan.burelle@lri.fr
 COMMENT=	Perl compatible regular expressions for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
@@ -28,7 +27,7 @@ MAKE_ENV+=	NO_CUSTOM=y
 .endif
 ALL_TARGET=	all
 
-.if !defined(NOPORTDOCS)
+.if defined(WITH_DOCS)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 USE_GHOSTSCRIPT_BUILD=	yes
 ALL_TARGET+=	doc
@@ -45,7 +44,7 @@ post-install:
 		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm lib/ocaml/site-lib/pcre" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ocamlfind remove pcre 2>/dev/null || true" >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if defined(WITH_DOCS)
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
