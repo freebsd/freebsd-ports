@@ -1,5 +1,5 @@
---- makedefs.orig	Sat Jan 22 14:04:27 2000
-+++ makedefs	Sat Mar 25 09:04:50 2000
+--- makedefs.orig	Sun Jan 23 03:04:27 2000
++++ makedefs	Mon Apr  3 08:59:17 2000
 @@ -89,6 +89,8 @@
  		;;
    FreeBSD.4*)	SYSTYPE=FREEBSD4
@@ -9,3 +9,12 @@
    OpenBSD.2*)	SYSTYPE=OPENBSD2
  		;;
     NetBSD.1*)	SYSTYPE=NETBSD1
+@@ -244,7 +246,7 @@
+         *) : ${OPT='-O'};;
+ esac
+ 
+-: ${CC='gcc $(WARN)'} ${OPT='-O'} ${DEBUG='-g'} ${AWK=awk}
++: ${CC='gcc $(WARN)'} ${OPT='-O'} ${AWK=awk}
+ 
+ export SYSTYPE AR ARFL RANLIB SYSLIBS CC OPT DEBUG AWK OPTS
+ 
