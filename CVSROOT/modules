@@ -7496,6 +7496,7 @@ wmpinboard	ports/deskutils/wmpinboard
 wmpop3		ports/mail/wmpop3
 wmq3		ports/net/wmq3
 wmrecord	ports/audio/wmrecord
+wmshuffle	ports/games/wmshuffle
 wmsmixer	ports/audio/wmsmixer
 wmsolar		ports/astro/wmsolar
 wmspaceweather	ports/astro/wmspaceweather
