@@ -1,0 +1,11 @@
+--- plist.c.orig	Sun Jan 19 20:20:25 1997
++++ plist.c	Sun Jul 12 20:02:33 1998
+@@ -100,7 +100,7 @@
+     URL_Reset(&url);
+ }
+ 
+-
++pid_t wcol_pid;
+ 
+ main(int argc, char **argv)
+ {

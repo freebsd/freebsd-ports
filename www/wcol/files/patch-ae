@@ -1,0 +1,11 @@
+--- configure.orig	Sun Jul 12 20:36:14 1998
++++ configure	Sun Jul 12 20:35:57 1998
+@@ -2197,7 +2197,7 @@
+ EOF
+ cat >> $CONFIG_STATUS <<EOF
+ 
+-CONFIG_FILES=\${CONFIG_FILES-"Makefile"}
++CONFIG_FILES=\${CONFIG_FILES-"Makefile ../admin/killwcol"}
+ EOF
+ cat >> $CONFIG_STATUS <<\EOF
+ for ac_file in .. $CONFIG_FILES; do if test "x$ac_file" != x..; then

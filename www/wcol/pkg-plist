@@ -1,0 +1,19 @@
+wcol/wcol
+wcol/hstate
+wcol/icp
+wcol/jfilter
+wcol/parse
+wcol/plist
+wcol/reaper
+wcol/scntl
+wcol/sstate
+wcol/killwcol
+wcol/pool_walk
+wcol/log_report
+wcol/log_transition
+etc/wcol.conf.sample
+etc/rc.d/wcol.sh.sample
+@exec mkdir -p /var/spool/wcol
+@exec touch /var/log/wcol.log
+@unexec rm -rf /var/spool/wcol
+@dirrm wcol

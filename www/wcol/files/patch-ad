@@ -1,0 +1,17 @@
+--- ../admin/killwcol.in.orig	Sun Jul 12 20:37:34 1998
++++ ../admin/killwcol.in	Sun Jul 12 20:35:08 1998
+@@ -3,10 +3,10 @@
+ ###
+ ### defaults
+ ###
+-D_CONFIG=/etc/wcol.conf
+-D_PIDFILE=/var/tmp/wcol.pid
+-BSD=
+-SYSV=1
++D_CONFIG=@prefix@/etc/wcol.conf
++D_PIDFILE=/var/run/wcol.pid
++BSD=1
++SYSV=
+ 
+ 
+ while [ $# -ge 1 ]
