@@ -1,20 +1,20 @@
-*** WWW/Library/Implementation/HTTCP.c.orig	Sat Dec  3 01:31:23 1994
---- WWW/Library/Implementation/HTTCP.c	Thu Dec 15 06:43:22 1994
+*** ./WWW/Library/Implementation/HTTCP.c.orig	Mon May 29 21:05:50 1995
+--- ./WWW/Library/Implementation/HTTCP.c	Sat Jun 17 02:29:35 1995
 ***************
-*** 83,90 ****
---- 83,92 ----
-  #ifndef VMS
+*** 95,102 ****
+--- 95,104 ----
   #ifndef NeXT
   #ifndef THINK_C
+  #ifndef __NetBSD__
 + #ifndef __FreeBSD__
   extern char *sys_errlist[];		/* see man perror on cernvax */
   extern int sys_nerr;
 + #endif  /* __FreeBSD__ */
+  #endif	/* __NetBSD__ */
   #endif  /* think c */
   #endif	/* NeXT */
-  #endif  /* VMS */
 ***************
-*** 192,198 ****
+*** 205,211 ****
   #endif
   #define ER_NO_TRANS_DONE
   #endif
@@ -22,7 +22,7 @@
   	    strerror(errno));
   #define ER_NO_TRANS_DONE
   #endif
---- 194,200 ----
+--- 207,213 ----
   #endif
   #define ER_NO_TRANS_DONE
   #endif
@@ -30,11 +30,11 @@
   	    strerror(errno));
   #define ER_NO_TRANS_DONE
   #endif
-*** WWW/Library/Implementation/HTFile.c.orig	Sat Dec  3 01:31:21 1994
---- WWW/Library/Implementation/HTFile.c	Thu Dec 15 06:43:23 1994
+*** ./WWW/Library/Implementation/HTFile.c.orig	Sat Apr  1 01:34:48 1995
+--- ./WWW/Library/Implementation/HTFile.c	Sat Jun 17 02:04:19 1995
 ***************
-*** 541,547 ****
---- 541,551 ----
+*** 585,591 ****
+--- 585,595 ----
   #ifdef NO_GROUPS
       return NO;		/* Safe answer till we find the correct algorithm */
   #else
@@ -46,58 +46,61 @@
       uid_t	myUid;
       int		ngroups;			/* The number of groups  */
       struct stat	fileStatus;
-*** WWW/Library/freebsd/Makefile.orig	Thu Jul 14 09:32:44 1994
---- WWW/Library/freebsd/Makefile	Thu Dec 15 06:43:23 1994
+*** ./WWW/Library/freebsd/Makefile.orig	Tue Jan 17 16:05:20 1995
+--- ./WWW/Library/freebsd/Makefile	Sat Jun 17 02:26:28 1995
 ***************
-*** 8,14 ****
+*** 8,16 ****
   ASIS_MACH = i386/FreeBSD
   
   
 ! CFLAGS = -O -DDEBUG -DUSE_DIRENT
   LFLAGS =
-  CC = cc
+- CC = cc
   
---- 8,14 ----
+  # Directory for installed binary:
+  BINDIR = /usr/local/bin
+--- 8,15 ----
   ASIS_MACH = i386/FreeBSD
   
   
-! CFLAGS = -O2 -DDEBUG
+! CFLAGS += -DDEBUG
   LFLAGS =
-  CC = cc
   
+  # Directory for installed binary:
+  BINDIR = /usr/local/bin
 ***************
-*** 25,411 ****
+*** 25,408 ****
   #  Where should temporary (object) files go?
   WTMP = ../..
   
-- #	Common Makefile for W3 Library Code
-- #	-----------------------------------
-- #
-- #	(c) CERN 1990, 1991 -- see Copyright.html for conditions
-- #
-- # This file should be invariant between systems.
-- #	DEPENDENCIES NOT COMPLETE @@
-- #
-- #	make		Compile and link the software (private version)
-- #	make install	Copy it into the system (implies make)
-- #	make update	Copy installed version into installed version
-- #	make uninstall	Unlink installed version from the system
-- #	make clean	Remove intermediate files
-- #	make cleanall	Remove intremediate files and products
-- #	
-- # Macros required to be defined already for make:
-- #
-- # CC		The C compiler
-- # CFLAGS	Flags for $(CC) -- except the -I which are below
-- # LFLAGS	Flags for ld
-- #
-- # WWW           The WWW source tree directory
-- #
-- # Macros needed for make install:
-- #
-- # LIBDIR	Directory for installed library
-- #______________________________________________________________________
-  
+! #	Common Makefile for W3 Library Code
+! #	-----------------------------------
+! #
+! #	(c) CERN 1990, 1991 -- see Copyright.html for conditions
+! #
+! # This file should be invariant between systems.
+! #	DEPENDENCIES NOT COMPLETE @@
+! #
+! #	make		Compile and link the software (private version)
+! #	make install	Copy it into the system (implies make)
+! #	make update	Copy installed version into installed version
+! #	make uninstall	Unlink installed version from the system
+! #	make clean	Remove intermediate files
+! #	make cleanall	Remove intremediate files and products
+! #	
+! # Macros required to be defined already for make:
+! #
+! # CC		The C compiler
+! # CFLAGS	Flags for $(CC) -- except the -I which are below
+! # LFLAGS	Flags for ld
+! #
+! # WWW           The WWW source tree directory
+! #
+! # Macros needed for make install:
+! #
+! # LIBDIR	Directory for installed library
+! #______________________________________________________________________
+! 
 ! #  If this env var is set to something else Some makes will use that instead
 ! SHELL = /bin/sh
 ! 
@@ -147,7 +150,7 @@
 ! 
 ! COMMON = $(LOB)/HTParse.o $(LOB)/HTAccess.o $(LOB)/HTTP.o \
 ! 	$(LOB)/HTFile.o	$(LOB)/HTBTree.o $(LOB)/HTFTP.o $(LOB)/HTTCP.o \
-! 	$(LOB)/SGML.o $(LOB)/HTML.o $(LOB)/HTMLDTD.o $(LOB)/HTChunk.o \
+! 	$(LOB)/SGML.o $(LOB)/HTMLDTD.o $(LOB)/HTChunk.o \
 ! 	$(LOB)/HTPlain.o $(LOB)/HTWriter.o $(LOB)/HTFWriter.o \
 ! 	$(LOB)/HTMLGen.o \
 ! 	$(LOB)/HTAtom.o $(LOB)/HTAnchor.o $(LOB)/HTStyle.o \
@@ -162,7 +165,7 @@
 ! 
 ! CFILES = $(CMN)HTParse.c $(CMN)HTAccess.c $(CMN)HTTP.c $(CMN)HTFile.c \
 !         $(CMN)HTBTree.c \
-! 	$(CMN)HTFTP.c   $(CMN)HTTCP.c     $(CMN)SGML.c $(CMN)HTML.c	\
+! 	$(CMN)HTFTP.c   $(CMN)HTTCP.c     $(CMN)SGML.c	\
 ! 	$(CMN)HTMLDTD.c \
 ! 	$(CMN)HTPlain.c	$(CMN)HTWriter.c  $(CMN)HTFWriter.c \
 !         $(CMN)HTMLGen.c	\
@@ -345,9 +348,6 @@
 ! $(LOB)/SGML.o : $(OE) $(CMN)SGML.c $(CMN)HTUtils.h
 ! 	$(CC) -c -o $@ $(CFLAGS2) $(CMN)SGML.c
 ! 
-! $(LOB)/HTML.o : $(OE) $(CMN)HTML.c $(CMN)HTUtils.h $(CMN)HTMLDTD.h
-! 	$(CC) -c -o $@ $(CFLAGS2) $(CMN)HTML.c
-! 
 ! $(LOB)/HTMLGen.o : $(OE) $(CMN)HTMLGen.c $(CMN)HTUtils.h $(CMN)HTMLDTD.h
 ! 	$(CC) -c -o $@ $(CFLAGS2) $(CMN)HTMLGen.c
 ! 
@@ -453,52 +453,47 @@
 ! 
 ! $(LOB)/HTParse.o : $(OE) $(CMN)HTParse.c $(CMN)HTUtils.h
 ! 	$(CC) -c -o $@ $(CFLAGS2) $(CMN)HTParse.c
-  
---- 25,30 ----
+! 
+--- 24,27 ----
   #  Where should temporary (object) files go?
   WTMP = ../..
   
-  
 ! include $(WWW)/Library/Implementation/CommonMakefile
-  
-*** src/LYMain.c.orig	Sat Dec  3 01:31:17 1994
---- src/LYMain.c	Thu Dec 15 06:43:24 1994
+*** ./src/LYJump.c.orig	Sun Feb 12 04:42:24 1995
+--- ./src/LYJump.c	Sat Jun 17 02:04:23 1995
 ***************
-*** 17,23 ****
-  #include <lib$routines.h>
-  #endif /* VMS */
+*** 8,13 ****
+--- 8,16 ----
+  #include "LYSignal.h"
   
-! #ifdef SUN
-  #include<locale.h>
-  #endif /* SUN */
+  #include "LYLeaks.h"
++ #ifndef VMS
++ #include <unistd.h>
++ #endif
   
---- 17,23 ----
-  #include <lib$routines.h>
-  #endif /* VMS */
-  
-! #if defined(SUN) || defined(__FreeBSD__)
-  #include<locale.h>
-  #endif /* SUN */
-  
+  #ifdef VMS
+  #include <fab.h>
+*** ./src/LYShowInfo.c.orig	Sat Apr  8 17:13:02 1995
+--- ./src/LYShowInfo.c	Sat Jun 17 02:04:24 1995
 ***************
-*** 153,159 ****
-      atexit(LYLeaks);
-  #endif /* LY_FIND_LEAKS */
-  
-! #ifdef SUN
-      /* SUN specific support for international characters. */
-      setlocale(LC_ALL, "");
-  #endif /* SUN */
---- 153,159 ----
-      atexit(LYLeaks);
-  #endif /* LY_FIND_LEAKS */
-  
-! #if defined(SUN) || defined(__FreeBSD__)
-      /* SUN specific support for international characters. */
-      setlocale(LC_ALL, "");
-  #endif /* SUN */
-*** Makefile.orig	Sat Dec  3 01:31:11 1994
---- Makefile	Thu Dec 15 07:01:45 1994
+*** 135,141 ****
+  	      grp = getgrgid(dir_info.st_gid);
+  	      fprintf(fp0,"      Group name:  %s\n",grp->gr_name);
+  	      if (((dir_info.st_mode) & S_IFMT) == S_IFREG) {
+! 		 sprintf(temp,"       File size:  %d (bytes)\n",dir_info.st_size);
+  		 fprintf(fp0,"%s",temp);
+  	      }
+  /*
+--- 135,141 ----
+  	      grp = getgrgid(dir_info.st_gid);
+  	      fprintf(fp0,"      Group name:  %s\n",grp->gr_name);
+  	      if (((dir_info.st_mode) & S_IFMT) == S_IFREG) {
+! 		 sprintf(temp,"       File size:  %ld (bytes)\n",(long)dir_info.st_size);
+  		 fprintf(fp0,"%s",temp);
+  	      }
+  /*
+*** ./Makefile.orig	Thu Jun  8 16:47:06 1995
+--- ./Makefile	Sat Jun 17 02:22:01 1995
 ***************
 *** 10,24 ****
   ##change the next line if you want the lynx man file installed somewhere
@@ -533,52 +528,55 @@
   
   #set the relative location of the WWW library Implementation directory, 
 ***************
-*** 82,90 ****
+*** 101,110 ****
   univell: unixware
   
   # Set SITE_LYDEFS to one or more of the defines for the WWW Library:
 ! SITE_LYDEFS = # -DDIRED_SUPPORT
+  
   # Set SITE_DEFS to one or more of the defines for lynx below:
-! SITE_DEFS = # -DDIRED_SUPPORT -DOK_OVERRIDE
+! SITE_DEFS = # -DDIRED_SUPPORT
   
   # if you are compiling on a previously unsupported system, modify
   # this generic entry!!
---- 82,90 ----
+--- 101,110 ----
   univell: unixware
   
   # Set SITE_LYDEFS to one or more of the defines for the WWW Library:
 ! SITE_LYDEFS = -DDIRED_SUPPORT
+  
   # Set SITE_DEFS to one or more of the defines for lynx below:
-! SITE_DEFS = -DDIRED_SUPPORT -DOK_TAR -DOK_GZIP -DOK_OVERRIDE
+! SITE_DEFS = -DDIRED_SUPPORT -DOK_TAR -DOK_GZIP -DOK_ZIP -DOK_OVERRIDE
   
   # if you are compiling on a previously unsupported system, modify
   # this generic entry!!
 ***************
-*** 149,156 ****
-  
-  freebsd:
-! 	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
-! 	cd src; make all CC="cc" MCFLAGS="-O -DUNIX -DNO_KEYPAD -I../$(WWWINC) $(SITE_DEFS)"\
-! 		LIBS="-lcurses -ltermcap $(WAISLIB)" \
+*** 223,232 ****
+  # FreeBSD doesn't have or need ranlib. (ignore the error message about that :)
+  freebsd-ncurses:  
+  	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
+! 	cd src; make all CC="cc" MCFLAGS="-O -DFANCY_CURSES -DNCURSES -DUNIX \
+! 		-DNO_KEYPAD -DNO_CUSERID -I../$(WWWINC) $(SITE_DEFS) \
+! 		-I/usr/include/ncurses" LIBS="-lncurses -lcompat \
+! 		-ltermcap $(WAISLIB) $(SOCKSLIB)" \
   		WWWLIB="../WWW/Library/freebsd/libwww.a"
   
-  # Tested on DN 3500 & 4500's running Domain O/S 10.4 BSD
---- 149,158 ----
+  # NetBSD doesn't have or need ranlib. (ignore the error message about that :)
+--- 223,231 ----
+  # FreeBSD doesn't have or need ranlib. (ignore the error message about that :)
+  freebsd-ncurses:  
+  	cd WWW/Library/freebsd; make LYFLAGS="$(SITE_LYDEFS)"
+! 	cd src; make all MCFLAGS="$(CFLAGS) -DFANCY_CURSES -DNCURSES -DUNIX \
+! 		-DNO_TTYTYPE -DNO_CUSERID -DLOCALE -I../$(WWWINC) $(SITE_DEFS)" \
+! 		LIBS="-lncurses -lmytinfo $(WAISLIB) $(SOCKSLIB)" \
+  		WWWLIB="../WWW/Library/freebsd/libwww.a"
   
-  freebsd:
-! 	cd WWW/Library/freebsd; gmake LYFLAGS="$(SITE_LYDEFS)"
-! 	cd src; make all MCFLAGS="$(CFLAGS) -DNCURSES -DNO_TTYTYPE \
-! 		-DFANCY_CURSES -DNO_CUSERID -DUNIX -I../$(WWWINC) \
-! 		$(SITE_DEFS)" \
-! 		LIBS="-lncurses -lmytinfo $(WAISLIB)" \
-    		WWWLIB="../WWW/Library/freebsd/libwww.a"
-  
-  # Tested on DN 3500 & 4500's running Domain O/S 10.4 BSD
-*** userdefs.h.orig	Sat Dec  3 01:31:11 1994
---- userdefs.h	Thu Dec 15 07:17:29 1994
+  # NetBSD doesn't have or need ranlib. (ignore the error message about that :)
+*** ./userdefs.h.orig	Thu Jun 15 20:21:02 1995
+--- ./userdefs.h	Sat Jun 17 02:07:39 1995
 ***************
-*** 183,189 ****
---- 183,193 ----
+*** 228,234 ****
+--- 228,238 ----
   #ifdef MMDF
   #define SYSTEM_MAIL "/usr/mmdf/bin/submit" 
   #else
@@ -591,10 +589,10 @@
   
   /**************************
 ***************
-*** 599,605 ****
---- 603,614 ----
+*** 668,674 ****
+--- 672,683 ----
   #define LYNX_NAME "Lynx"
-  #define LYNX_VERSION "2.3.6 BETA"
+  #define LYNX_VERSION "2-4-1"
   #ifndef MAXINT
 + #ifdef __FreeBSD__
 + #include <limits.h>
@@ -602,39 +600,37 @@
 + #else
   #define MAXINT 2147483647
 + #endif
-  #endif /*MAXINT*/
+  #endif /* !MAXINT */
   
   /* text strings for certain actions */
-*** src/LYJump.c.bak	Sat Dec 17 00:59:44 1994
---- src/LYJump.c	Fri May 12 21:46:02 1995
+*** src/LYMain.c.bak	Mon Jun  5 06:13:14 1995
+--- src/LYMain.c	Sat Jun 17 03:05:17 1995
 ***************
-*** 7,12 ****
---- 7,15 ----
-  #include "LYSignal.h"
-  
-  #include "LYLeaks.h"
-+ #ifdef HAVE_UNISTD_H
+*** 24,29 ****
+--- 24,30 ----
+  #ifdef SYSLOG_REQUESTED_URLS
+  #include <syslog.h>
+  #endif /* SYSLOG_REQUESTED_URLS */
 + #include <unistd.h>
-+ #endif
+  #endif /* !VMS */
   
-  #ifdef VMS
-  #include <fab.h>
-*** src/LYShowInfo.c.bak	Sat Dec 17 00:59:46 1994
---- src/LYShowInfo.c	Fri May 12 21:47:07 1995
+  #ifdef LOCALE
+*** src/LYStrings.c.bak	Sat Apr  1 01:51:18 1995
+--- src/LYStrings.c	Sat Jun 17 03:29:19 1995
 ***************
-*** 133,139 ****
-  	      grp = getgrgid(dir_info.st_gid);
-  	      fprintf(fp0,"      Group name:  %s\n",grp->gr_name);
-  	      if (((dir_info.st_mode) & S_IFMT) == S_IFREG) {
-! 		 sprintf(temp,"       File size:  %d (bytes)\n",dir_info.st_size);
-  		 fprintf(fp0,"%s",temp);
-  	      }
-  /*
---- 133,139 ----
-  	      grp = getgrgid(dir_info.st_gid);
-  	      fprintf(fp0,"      Group name:  %s\n",grp->gr_name);
-  	      if (((dir_info.st_mode) & S_IFMT) == S_IFREG) {
-! 		 sprintf(temp,"       File size:  %ld (bytes)\n",(long)dir_info.st_size);
-  		 fprintf(fp0,"%s",temp);
-  	      }
-  /*
+*** 35,41 ****
+  #ifdef VMS
+  #define GetChar() ttgetc()
+  #else
+! #ifdef SNAKE
+  #define GetChar() wgetch(stdscr)
+  #else /* everything but VMS and SNAKE */
+  #define GetChar() getchar()  /* used to be "getc(stdin)" and "getch()" */
+--- 35,41 ----
+  #ifdef VMS
+  #define GetChar() ttgetc()
+  #else
+! #if defined(SNAKE) || defined(NCURSES)
+  #define GetChar() wgetch(stdscr)
+  #else /* everything but VMS and SNAKE */
+  #define GetChar() getchar()  /* used to be "getc(stdin)" and "getch()" */
