@@ -156,6 +156,7 @@
     SUBDIR += solitaire
     SUBDIR += spar
     SUBDIR += spooles
+    SUBDIR += spooles-mpich
     SUBDIR += ss
     SUBDIR += superlu
     SUBDIR += surf
