@@ -3,7 +3,7 @@
 # Date created:		18 Feb 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.10 1998/06/14 23:34:59 jseger Exp $
+# $Id: Makefile,v 1.11 1998/10/14 23:46:40 jseger Exp $
 #
 
 PKGNAME=	libwww-5.1m1
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ftp.w3.org/pub/libwww/
 
 MAINTAINER=	jseger@FreeBSD.org
 
-BROKEN_ELF=	yes
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
@@ -22,7 +20,7 @@ DOCDIR=		${PREFIX}/share/doc/libwww
 
 WRKSRC=		${WRKDIR}/w3c-libwww-5.1m
 post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCDIR}/User
 	${CP} -R ${WRKSRC}/Library/User/* ${DOCDIR}/User
