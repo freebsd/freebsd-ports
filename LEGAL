@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.140 1999/05/20 14:42:29 kuriyama Exp $
+# $Id: LEGAL,v 1.141 1999/05/21 15:32:19 kuriyama Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -69,6 +69,8 @@ giftool-*		ports/graphics/giftool	Don't redistribute for profit
 GimpUserManual-*-ps.gz	ports/graphics/gimp-manual-ps	too big
 gnupg-*			ports/security/gnupg	Crypto; export-controlled
 graphviz-*		ports/graphics/graphviz	Needs license before fetching
+hanIM-1.1b-glibc2.0.7-1.i386.rpm
+			ports/korean/hanIM	Not a free software
 inn2-*			ports/news/inn2		Copyright file in package
 						Need to name Rich Salz (done
 						in DESCR). Need to name changes
