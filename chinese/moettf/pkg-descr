@@ -1,3 +1,7 @@
-This port installs Chinese BIG5 TrueType fonts, includes Kai/LiShu/Sung 
-fonts. It then can be used along with X Window System or typesetting 
-software like CJK. Restricted usage: end user and non-commericial only.
+This port installs Chinese BIG5 TrueType fonts, includes
+Kai/Li Shu/Sung Extension/Sung Symbol/Sung fonts. It then
+can be used along with X Window System or typesetting
+software like CJK.
+
+Restricted usage:
+For commercial use, contact Taiwan Ministry of Education.

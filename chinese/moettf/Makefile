@@ -6,46 +6,85 @@
 #
 
 PORTNAME=	moettf
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	chinese x11-fonts
-MASTER_SITES=	ftp://ftp.cc.ntut.edu.tw/OS/Linux/packages/chinese/fonts/twmoefont/ttf/ \
-		ftp://ftp.ncu.edu.tw/Linux/Chinese/fonts/twmoefont/ttf/ \
-		ftp://www.edu.tw/download/mandr/allbook/lishu/
-DISTNAME=	${PKGNAME}
-DISTFILES=	moe_kai.ttf moe_sung.ttf edustd-15.exe
+MASTER_SITES=	ftp://www.edu.tw/download/mandr/biauword/5879/ \
+		ftp://www.edu.tw/download/mandr/allbook/lishu/ \
+		ftp://freebsd.sinica.edu.tw/pub/keith/moettf/ \
+		ftp://ftp.cc.ntut.edu.tw/OS/Linux/packages/chinese/fonts/twmoefont/ttf/
+DISTFILES=	moe_kai.ttf moe_sung.ttf edustds1.exe edustds2.exe edustd-15.exe
 
 MAINTAINER=	keith@FreeBSD.org
 
 BUILD_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar
-LIB_DEPENDS=	font.1:${PORTSDIR}/x11-servers/XttXF86srv-common
+RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
 
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 DIST_SUBDIR=	zh-moettf
 
+NO_CDROM=	"Contact Taiwan's Ministry of Education for commercial use."
 NO_BUILD=	yes
-NO_CDROM=	"Contact Taiwan Ministry of Education for commercial use."
 SHAREMODE=	644
-FONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
+FONTDIR=	${PREFIX}/share/fonts/TrueType
+XFONTDIR=	${X11BASE}/lib/X11/fonts/TrueType
+INSTALL_ENV=	PKG_PREFIX=${PREFIX} XFREE86_VERSION=${XFREE86_VERSION} \
+		DEFAULT=${DEFAULT} WANT_CJK=${WANT_CJK} WANT_GS6=${WANT_GS6} \
+		WITHOUT_X=${WITHOUT_X}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WANT_CJK)
+RUN_DEPENDS+=	bg5latex:${PORTSDIR}/chinese/CJK
+.endif
+.if defined(WANT_GS6)
+RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/CJK/CMap/B5pc-H:${PORTSDIR}/chinese/ghostscript6
+.endif
+.if ${XFREE86_VERSION} == 3 && !defined(WITHOUT_X)
+RUN_DEPENDS+=	mkfontdir.pl:${PORTSDIR}/x11-servers/XttXF86srv-common
+.endif
+
+pre-fetch:
+.if defined(WANT_CJK)
+	@${ECHO} "CJK support will be added."
+.endif
+.if defined(WANT_GS6)
+	@${ECHO} "Ghostscript6 support will be added."
+.endif
+.if defined(WITHOUT_X)
+	@${ECHO} "X Window support will NOT be added."
+.endif
+.if defined(DEFAULT)
+	@${ECHO} "MOETTF will be set as default font."
+.endif
+.if !defined(WANT_CJK) && !defined(WANT_GS6) && !defined(WITHOUT_X) && !defined(DEFAULT)
+	@${ECHO} --
+	@${ECHO} "Type \"make WANT_CJK=yes\" if you want CJK support."
+	@${ECHO} "Type \"make WANT_GS6=yes\" if you want Ghostscript6 support."
+	@${ECHO} "Type \"make WITHOUT_X=yes\" if you DONT want X Window support."
+	@${ECHO} "Type \"make DEFAULT=yes\" to set MOETTF the default font."
+	@${ECHO} "You can use them in combinations."
+	@${ECHO} --
+.endif
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	@unrar x ${DISTDIR}/${DIST_SUBDIR}/edustd-15.exe ${WRKDIR}
 	@${MV} ${WRKDIR}/Edustd-15.TTF ${WRKDIR}/moe_lishu.ttf
+	@unrar x ${DISTDIR}/${DIST_SUBDIR}/edustds1.exe ${WRKDIR}
+	@${MV} ${WRKDIR}/edustds1.ttf ${WRKDIR}/moe_sungext.ttf
+	@unrar x ${DISTDIR}/${DIST_SUBDIR}/edustds2.exe ${WRKDIR}
+	@${MV} ${WRKDIR}/edustds2.ttf ${WRKDIR}/moe_sungsym.ttf
 
 do-install:
 .if !exists(${FONTDIR})
-	@${ECHO} "========================================================="
-	@${ECHO} "Please add ${FONTDIR} to your font path"
-	@${ECHO} "in /etc/XF86Config."
-	@${ECHO} "========================================================="
 	@${MKDIR} ${FONTDIR}
 .endif
 	@${INSTALL_DATA} ${WRKDIR}/moe_lishu.ttf ${FONTDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/moe_kai.ttf ${FONTDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/moe_sung.ttf ${FONTDIR}
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${INSTALL_DATA} ${WRKDIR}/moe_sungext.ttf ${FONTDIR}
+	@${INSTALL_DATA} ${WRKDIR}/moe_sungsym.ttf ${FONTDIR}
+	@${SETENV} ${INSTALL_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
