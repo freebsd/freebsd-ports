@@ -26,7 +26,6 @@
     SUBDIR += august
     SUBDIR += auth_ldap
     SUBDIR += bacon
-    SUBDIR += barque
     SUBDIR += bk2site
     SUBDIR += bkmrkconv
     SUBDIR += bluefish
