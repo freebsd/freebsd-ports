@@ -1,28 +1,21 @@
---- Makefile.orig	Sun Jul 28 18:00:40 2002
-+++ Makefile	Mon Jul 29 18:54:18 2002
-@@ -1,14 +1,11 @@
+--- Makefile.orig	Sat Oct  5 12:28:37 2002
++++ Makefile	Sat Oct  5 12:30:57 2002
+@@ -1,9 +1,9 @@
 -CC = cc
--CFLAGS = -Wall -O2
-+CFLAGS += -Wall
+-CFLAGS = -O
++DESTDIR = $(PREFIX)
++BINDIR = $(PREFIX)/bin
++MANDIR = $(PREFIX)/man
  
 -DESTDIR = /usr/local
 -BINDIR = /usr/local/bin
 -MANDIR = /usr/local/man
--
--INSTALL = install -c
--INST_DIR = install -d
--INST_BIN = $(INSTALL) -m 755
--INST_DOC = $(INSTALL) -m 644
-+DESTDIR = $(PREFIX)
-+BINDIR = $(PREFIX)/bin
-+MANDIR = $(PREFIX)/man
-+
 +INST_BIN = $(BSD_INSTALL_PROGRAM)
 +INST_DOC = $(BSD_INSTALL_MAN)
  
  MAN_BIN = imapfilter.1
  MAN_RC = imapfilterrc.5
-@@ -19,6 +16,8 @@
+@@ -14,6 +14,8 @@
  
  LIBS =  -lssl -lcrypto
  
@@ -31,21 +24,19 @@
  imapfilter: $(OBJ)
  	$(CC) $(LIBS) $(CFLAGS) -o $(BIN) $(OBJ)
  
-@@ -27,11 +26,8 @@
+@@ -22,12 +24,9 @@
  data.o imapfilter.o imap.o file.o passwd.o request.o socket.o: data.h
  
  install: imapfilter
--	if test ! -d $(BINDIR); then $(INST_DIR) $(BINDIR); fi
- 	$(INST_BIN) $(BIN) $(BINDIR)
--	if test ! -d $(MANDIR)/man1; then $(INST_DIR) $(MANDIR)/man1; fi
- 	$(INST_DOC) $(MAN_BIN) $(MANDIR)/man1
--	if test ! -d $(MANDIR)/man5; then $(INST_DIR) $(MANDIR)/man5; fi
- 	$(INST_DOC) $(MAN_RC) $(MANDIR)/man5
+-	if test ! -d $(BINDIR); then mkdir -p $(BINDIR); fi
+-	cp -f $(BIN) $(BINDIR) && chmod 0755 $(BINDIR)/$(BIN)
+-	if test ! -d $(MANDIR)/man1; then mkdir -p $(MANDIR)/man1; fi
+-	cp -f $(MAN_BIN) $(MANDIR)/man1 && chmod 0644 $(MANDIR)/man1/$(MAN_BIN)
+-	if test ! -d $(MANDIR)/man5; then mkdir -p $(MANDIR)/man5; fi
+-	cp -f $(MAN_RC) $(MANDIR)/man5 && chmod 0644 $(MANDIR)/man5/$(MAN_RC)
++	$(INST_BIN) $(BIN) $(BINDIR)
++	$(INST_DOC) $(MAN_BIN) $(MANDIR)/man1
++	$(INST_DOC) $(MAN_RC) $(MANDIR)/man5
  
  uninstall:
-@@ -44,4 +40,4 @@
- 	@if test -f .Makefile; then mv .Makefile Makefile; fi
- 	@if test -f .config.h; then mv .config.h config.h; fi
- 
--.PHONY : install uninstall clean distclean
-+.PHONY : all install uninstall clean distclean
+ 	rm -f $(BINDIR)/$(BIN) $(MANDIR)/man1/$(MAN_BIN) $(MANDIR)/man5/$(MAN_RC)
