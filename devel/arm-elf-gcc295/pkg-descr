@@ -1,0 +1,3 @@
+GNU cross compiler suite for ARM.  This is a vanilla version of gcc only.
+That is, it does not contain any libs or startup code for creating executable
+files.
