@@ -1,0 +1,47 @@
+bin/conglomerate
+share/gnome/applications/conglomerate.desktop
+share/gnome/conglomerate/dispspecs/cnxml.xds
+share/gnome/conglomerate/dispspecs/docbook.xds
+share/gnome/conglomerate/dispspecs/readme.xds
+share/gnome/conglomerate/dispspecs/website-layout.xds
+share/gnome/conglomerate/dispspecs/website-webpage.xds
+share/gnome/conglomerate/dispspecs/xsl.xds
+share/gnome/conglomerate/examples/cnxml.xml
+share/gnome/conglomerate/examples/readme.xml
+share/gnome/conglomerate/examples/test-docbook.xml
+share/gnome/conglomerate/glade/docbook-common-properties.glade
+share/gnome/pixmaps/ChangeLog
+share/gnome/pixmaps/cong-address-16.png
+share/gnome/pixmaps/cong-answer-16.png
+share/gnome/pixmaps/cong-author-16.png
+share/gnome/pixmaps/cong-bibliography-16.png
+share/gnome/pixmaps/cong-bulleted-list-16.png
+share/gnome/pixmaps/cong-code-fragment-16.png
+share/gnome/pixmaps/cong-definition-list-16.png
+share/gnome/pixmaps/cong-docbook-article-16.png
+share/gnome/pixmaps/cong-docbook-book-16.png
+share/gnome/pixmaps/cong-docbook-set-16.png
+share/gnome/pixmaps/cong-editor-16.png
+share/gnome/pixmaps/cong-entry-16.png
+share/gnome/pixmaps/cong-faq-16.png
+share/gnome/pixmaps/cong-footnote-16.png
+share/gnome/pixmaps/cong-history-16.png
+share/gnome/pixmaps/cong-indexterm-16.png
+share/gnome/pixmaps/cong-list-16.png
+share/gnome/pixmaps/cong-list-item-16.png
+share/gnome/pixmaps/cong-metadata-16.png
+share/gnome/pixmaps/cong-name-16.png
+share/gnome/pixmaps/cong-numbered-list-16.png
+share/gnome/pixmaps/cong-paragraph-16.png
+share/gnome/pixmaps/cong-publisher-16.png
+share/gnome/pixmaps/cong-question-16.png
+share/gnome/pixmaps/cong-subsection-16.png
+share/gnome/pixmaps/cong-summary-16.png
+share/gnome/pixmaps/cong-title-16.png
+share/gnome/pixmaps/cong-wrapper-16.png
+share/locale/es/LC_MESSAGES/conglomerate.mo
+share/locale/ru/LC_MESSAGES/conglomerate.mo
+@dirrm share/gnome/conglomerate/dispspecs
+@dirrm share/gnome/conglomerate/examples
+@dirrm share/gnome/conglomerate/glade
+@dirrm share/gnome/conglomerate

@@ -24,6 +24,7 @@
     SUBDIR += bvi
     SUBDIR += chexedit
     SUBDIR += color-mate
+    SUBDIR += conglomerate
     SUBDIR += cooledit
     SUBDIR += custom-emacs
     SUBDIR += custom-mule
