@@ -1,0 +1,16 @@
+/MOEKai-Regular-ETen-B5-H
+/MOEKai-Regular (MOEKai-Regular)
+/ETen-B5-H (CMap/ETen-B5-H)
+
+1 index /CMap resourcestatus
+{pop pop pop}
+{runlibfile} ifelse
+/CMap findresource
+
+3 1 roll
+1 index /CIDFont resourcestatus
+{pop pop pop}
+{runlibfile} ifelse
+/CIDFont findresource
+
+[ exch ] composefont pop

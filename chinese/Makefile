@@ -24,6 +24,7 @@
     SUBDIR += kcfonts
     SUBDIR += libtabe
     SUBDIR += lunar
+    SUBDIR += moefonts-cid
     SUBDIR += moettf
     SUBDIR += mule-freewnn
     SUBDIR += muni

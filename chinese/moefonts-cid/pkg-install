@@ -1,0 +1,15 @@
+#!/bin/sh
+
+GSVER=6.01
+GSDIR=${PKG_PREFIX}/share/ghostscript
+FONTMAP=${GSDIR}/${GSVER}/lib/Fontmap.GS
+
+# Run just once.
+if [ "x$2" != "xPOST-INSTALL" ]; then
+  exit 0
+fi
+
+echo "/MOEKai-Regular-ETen-B5-H (MOEKai-Regular-ETen-B5-H.gsf) ;" >> ${FONTMAP}
+echo "/MOEKai-Regular-ETen-B5-V (MOEKai-Regular-ETen-B5-V.gsf) ;" >> ${FONTMAP}
+echo "/MOESung-Regular-ETen-B5-H (MOESung-Regular-ETen-B5-H.gsf) ;" >> ${FONTMAP}
+echo "/MOESung-Regular-ETen-B5-V (MOESung-Regular-ETen-B5-V.gsf) ;" >> ${FONTMAP}
