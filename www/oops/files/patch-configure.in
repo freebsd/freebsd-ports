@@ -1,0 +1,16 @@
+--- configure.in.orig	Tue Nov 13 15:08:03 2001
++++ configure.in	Tue Nov 13 15:08:49 2001
+@@ -523,10 +523,10 @@
+ esac
+ 
+ if test "X$MYSQL_PATH" != "X" ; then
+-    LIBS="-L$MYSQL_PATH/lib -lmysqlclient $LIBS"
++    LIBS="-L$MYSQL_PATH/lib/mysql -lmysqlclient $LIBS"
+     AC_DEFINE(HAVE_MYSQL)
+-    CFLAGS="$CFLAGS -I$MYSQL_PATH/include"
+-    MYSQL_LIB="-L$MYSQL_PATH/lib -lmysqlclient"
++    CFLAGS="$CFLAGS -I$MYSQL_PATH/include/mysql"
++    MYSQL_LIB="-L$MYSQL_PATH/lib/mysql -lmysqlclient"
+ fi
+ 
+ if test "X$PGSQL_PATH" != "X" ; then
