@@ -1,8 +1,8 @@
---- doc/manpages/Makefile.orig	Wed Sep 11 10:40:24 2002
-+++ doc/manpages/Makefile	Wed Sep 11 20:32:04 2002
-@@ -4,14 +4,14 @@
+--- doc/manpages/Makefile.orig	Sat Apr 26 19:17:56 2003
++++ doc/manpages/Makefile	Sat Apr 26 23:40:24 2003
+@@ -4,15 +4,6 @@
  
- VERSION = 0.63a
+ VERSION = 0.70
  POD2MAN = pod2man --section=1 --release=$(VERSION)
 -prefix = /usr
 -bindir = $(prefix)/bin
@@ -12,43 +12,28 @@
 -sharedir = $(prefix)/share
 -libdir = $(prefix)/lib
 -mandir = $(prefix)/share/man
-+#prefix = /usr
-+#bindir = $(prefix)/bin
-+#tempdir = /tmp
-+#sysconfdir = /etc
-+#docdir = /usr/share/doc/packages
-+#sharedir = $(prefix)/share
-+#libdir = $(prefix)/lib
-+#mandir = $(prefix)/share/man
- INSTALL = install -m 0644 
+-INSTALL = install -m 0644 
  gzip = gzip -f
+ rm = rm
  
-@@ -22,7 +22,7 @@
- TITLE_CS = "Krátký manuál Muttprintu"
+@@ -22,7 +13,7 @@
+ TITLE_IT = "Breve manuale di Muttprint"
  
  
--all: german english spanish italian czech
+-all: german english spanish italian
 +all: english
  german: de/muttprint.1.gz
  english: en/muttprint.1.gz
  italian: it/muttprint.1.gz
-@@ -111,13 +111,12 @@
- 
- ########################### GENERAL ###################################
- 
--install: de/muttprint.1.gz en/muttprint.1.gz es/muttprint.1.gz \
-- 			it/muttprint.1.gz cs/muttprint.1.gz
+@@ -103,10 +94,7 @@
+ ##install: de/muttprint.1.gz en/muttprint.1.gz es/muttprint.1.gz \
+ ## 			it/muttprint.1.gz 
+ install:
 -	$(INSTALL) en/muttprint.1.gz $(mandir)/man1/
 -	$(INSTALL) de/muttprint.1.gz $(mandir)/de/man1/
 -	$(INSTALL) es/muttprint.1.gz $(mandir)/es/man1/
 -	$(INSTALL) it/muttprint.1.gz $(mandir)/it/man1/
--	$(INSTALL) cs/muttprint.1.gz $(mandir)/cs/man1/
-+install: en/muttprint.1.gz
 +	${BSD_INSTALL_MAN} en/muttprint.1.gz $(mandir)/man1/
-+#	$(INSTALL) de/muttprint.1.gz $(mandir)/de/man1/
-+#	$(INSTALL) es/muttprint.1.gz $(mandir)/es/man1/
-+#	$(INSTALL) it/muttprint.1.gz $(mandir)/it/man1/
-+#	$(INSTALL) cs/muttprint.1.gz $(mandir)/cs/man1/
  
  uninstall:
  	rm -f $(mandir)/man1/muttprint.1.gz

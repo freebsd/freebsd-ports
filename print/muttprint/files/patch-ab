@@ -1,22 +1,13 @@
---- muttprint.orig	Sun Dec 15 20:14:03 2002
-+++ muttprint	Sun Apr  6 16:28:56 2003
-@@ -193,8 +193,8 @@
+--- muttprint.orig	Sat Apr 26 19:18:18 2003
++++ muttprint	Sat Apr 26 23:36:53 2003
+@@ -189,8 +189,8 @@
  
  if ($Config{'PENGUIN'} eq "on") {
- 	$Config{'PENGUIN'} = 
--			-r "$share_dir/penguin.eps"
--			? "$share_dir/penguin.eps" : "off";
-+			-r "$share_dir/Beastie.eps"
-+			? "$share_dir/Beastie.eps" : "off";
+ 	my $sharedir = findCommonDir("share");
+-	$Config{'PENGUIN'} = (-r "$sharedir/penguin.eps")
+-			? "$sharedir/penguin.eps" 
++	$Config{'PENGUIN'} = (-r "$sharedir/Beastie.eps")
++			? "$sharedir/Beastie.eps" 
+ 			: "off";
  }
  
- ReadConfig ($Config{RCFILE});
-@@ -1532,7 +1532,7 @@
- ##############################################################################
- 
- sub GetGeometryVersion {
--	my $tempfile = "/tmp/muttprint-geometry-ver";
-+	my $tempfile = "/tmp/muttprint-geometry-ver.$<";
- 	my $geometryVersion;
- 	
- 	# temporary file exists
