@@ -3,10 +3,10 @@
 # Date created:		24 April 1999
 # Whom:			Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.4 1999/07/09 00:49:29 cpiazza Exp $
+# $Id: Makefile,v 1.5 1999/08/01 02:57:38 steve Exp $
 #
 
-DISTNAME=	bnetd-0.4.11
+DISTNAME=	bnetd-0.4.15.1
 CATEGORIES=	games net
 MASTER_SITES=	http://www.bnetd.org/files/
 
@@ -17,14 +17,15 @@ MAN4=		bnetd.conf.4 bntext.4
 MLINKS=		bntext.4 bnmotd.txt.4 bntext.4 bnnews.txt.4
 
 do-configure:
-	@(cd ${WRKSRC}/src; ./configure)
+	@(cd ${WRKSRC}/src; ${SETENV} CFLAGS="${CFLAGS}" \
+	    ./configure --prefix=${PREFIX} ${CONFIGURE_TARGET})
 
 do-build:
 	@(cd ${WRKSRC}/src; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
 
 do-install:
-	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} bnbot bnchat bnftp bnpass ${PREFIX}/bin
-	cd ${WRKSRC}/sbin; ${INSTALL_PROGRAM} bnetd ${PREFIX}/sbin
+	cd ${WRKSRC}/bin; ${INSTALL_PROGRAM} * ${PREFIX}/bin
+	cd ${WRKSRC}/sbin; ${INSTALL_PROGRAM} * ${PREFIX}/sbin
 	cd ${WRKSRC}/man; ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1; ${INSTALL_MAN} ${MAN4} ${MAN4PREFIX}/man/man4
 	${MKDIR} ${PREFIX}/bnetd; ${CP} -R ${WRKSRC}/files ${WRKSRC}/users ${WRKSRC}/conf ${WRKSRC}/reports ${PREFIX}/bnetd
 
