@@ -1,0 +1,10 @@
+Pardiff is a program that takes the output of diff and displays it in a
+parallel (side-by-side) format, emulating the /PARALLEL option on the VMS
+version of diff.
+
+Pardiff detects the width of the terminal on which it is running and adjusts
+its output accordingly.
+
+WWW: http://pardiff.sourceforge.net/
+
+- Anders Nordby <anders@fix.no>
