@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += 0verkill
     SUBDIR += 3dc
     SUBDIR += 3dpong
     SUBDIR += HeroesOfMightAndMagic
