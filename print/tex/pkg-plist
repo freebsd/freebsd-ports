@@ -3,7 +3,6 @@
 @mode 755
 bin/tex
 bin/mf
-bin/latex
 bin/cmmf
 bin/dvicopy
 bin/dvitype
