@@ -4720,6 +4720,7 @@ ns		ports/net/ns
 nsc		ports/net/nsc
 nscache		ports/www/nscache
 nsd		ports/net/nsd
+nserver		ports/misc/nserver
 nsf		ports/misc/nsf
 nslint		ports/net/nslint
 nsping		ports/net/nsping
