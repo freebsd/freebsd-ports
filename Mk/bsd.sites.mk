@@ -140,6 +140,9 @@ MASTER_SITE_DEBIAN_NON_US+=	\
 	ftp://ftp2.de.debian.org/debian-non-US/%SUBDIR%/ \
 	ftp://ftp2.it.debian.org/debian-non-US/%SUBDIR%/
 
+MASTER_SITE_DEBIAN_POOL+=	\
+	${MASTER_SITE_DEBIAN:C|(/%SUBDIR%/)|/pool/main/${PORTNAME:C/^(.).*$/\1/}/${PORTNAME}/|}
+
 MASTER_SITE_ECLIPSE+= \
 	http://download.eclipse.org/downloads/drops/%SUBDIR%/ \
 	ftp://download.eclipse.org/%SUBDIR%/ \
