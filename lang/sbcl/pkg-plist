@@ -1,4 +1,17 @@
 bin/sbcl
+bin/sbcl-asdf-install
+lib/sbcl/asdf-install/.cvsignore
+lib/sbcl/asdf-install/Makefile
+lib/sbcl/asdf-install/README
+lib/sbcl/asdf-install/asdf-install.asd
+lib/sbcl/asdf-install/asdf-install.fasl
+lib/sbcl/asdf-install/defpackage.fasl
+lib/sbcl/asdf-install/defpackage.lisp
+lib/sbcl/asdf-install/installer.fasl
+lib/sbcl/asdf-install/installer.lisp
+lib/sbcl/asdf-install/loader.fasl
+lib/sbcl/asdf-install/loader.lisp
+lib/sbcl/asdf-install/test-passed
 lib/sbcl/asdf/asdf.fasl
 lib/sbcl/sb-aclrepl/.cvsignore
 lib/sbcl/sb-aclrepl/Makefile
@@ -16,6 +29,48 @@ lib/sbcl/sb-aclrepl/tests.fasl
 lib/sbcl/sb-aclrepl/tests.lisp
 lib/sbcl/sb-aclrepl/toplevel.fasl
 lib/sbcl/sb-aclrepl/toplevel.lisp
+lib/sbcl/sb-bsd-sockets/.cvsignore
+lib/sbcl/sb-bsd-sockets/FAQ
+lib/sbcl/sb-bsd-sockets/Makefile
+lib/sbcl/sb-bsd-sockets/NEWS
+lib/sbcl/sb-bsd-sockets/README
+lib/sbcl/sb-bsd-sockets/TODO
+lib/sbcl/sb-bsd-sockets/a.out
+lib/sbcl/sb-bsd-sockets/alien.so
+lib/sbcl/sb-bsd-sockets/alien/get-h-errno.c
+lib/sbcl/sb-bsd-sockets/alien/get-h-errno.o
+lib/sbcl/sb-bsd-sockets/alien/undefs.c
+lib/sbcl/sb-bsd-sockets/alien/undefs.o
+lib/sbcl/sb-bsd-sockets/api-reference.html
+lib/sbcl/sb-bsd-sockets/constants.fasl
+lib/sbcl/sb-bsd-sockets/constants.lisp
+lib/sbcl/sb-bsd-sockets/constants.lisp-temp
+lib/sbcl/sb-bsd-sockets/defpackage.fasl
+lib/sbcl/sb-bsd-sockets/defpackage.lisp
+lib/sbcl/sb-bsd-sockets/doc.lisp
+lib/sbcl/sb-bsd-sockets/foo.c
+lib/sbcl/sb-bsd-sockets/index.html
+lib/sbcl/sb-bsd-sockets/inet.fasl
+lib/sbcl/sb-bsd-sockets/inet.lisp
+lib/sbcl/sb-bsd-sockets/local.fasl
+lib/sbcl/sb-bsd-sockets/local.lisp
+lib/sbcl/sb-bsd-sockets/malloc.fasl
+lib/sbcl/sb-bsd-sockets/malloc.lisp
+lib/sbcl/sb-bsd-sockets/misc.fasl
+lib/sbcl/sb-bsd-sockets/misc.lisp
+lib/sbcl/sb-bsd-sockets/name-service.fasl
+lib/sbcl/sb-bsd-sockets/name-service.lisp
+lib/sbcl/sb-bsd-sockets/sb-bsd-sockets.asd
+lib/sbcl/sb-bsd-sockets/sb-bsd-sockets.fasl
+lib/sbcl/sb-bsd-sockets/sockets.fasl
+lib/sbcl/sb-bsd-sockets/sockets.lisp
+lib/sbcl/sb-bsd-sockets/sockopt.fasl
+lib/sbcl/sb-bsd-sockets/sockopt.lisp
+lib/sbcl/sb-bsd-sockets/split.fasl
+lib/sbcl/sb-bsd-sockets/split.lisp
+lib/sbcl/sb-bsd-sockets/test-passed
+lib/sbcl/sb-bsd-sockets/tests.fasl
+lib/sbcl/sb-bsd-sockets/tests.lisp
 lib/sbcl/sb-cltl2/.cvsignore
 lib/sbcl/sb-cltl2/Makefile
 lib/sbcl/sb-cltl2/compiler-let.fasl
@@ -82,7 +137,6 @@ lib/sbcl/sb-posix/posix-tests.fasl
 lib/sbcl/sb-posix/posix-tests.lisp
 lib/sbcl/sb-posix/sb-posix.asd
 lib/sbcl/sb-posix/sb-posix.fasl
-lib/sbcl/sb-posix/test-lab/stat.error.2/unstatable
 lib/sbcl/sb-posix/test-passed
 lib/sbcl/sb-rotate-byte/.cvsignore
 lib/sbcl/sb-rotate-byte/Makefile
@@ -142,9 +196,12 @@ lib/sbcl/sb-simple-streams/string.fasl
 lib/sbcl/sb-simple-streams/string.lisp
 lib/sbcl/sb-simple-streams/terminal.fasl
 lib/sbcl/sb-simple-streams/terminal.lisp
+lib/sbcl/sb-simple-streams/test-data.txt
 lib/sbcl/sb-simple-streams/test-passed
 lib/sbcl/sbcl.core
+lib/sbcl/systems/asdf-install.asd
 lib/sbcl/systems/sb-aclrepl.asd
+lib/sbcl/systems/sb-bsd-sockets.asd
 lib/sbcl/systems/sb-cltl2.asd
 lib/sbcl/systems/sb-grovel.asd
 lib/sbcl/systems/sb-md5.asd
@@ -183,8 +240,6 @@ lib/sbcl/systems/sb-simple-streams.asd
 @dirrm lib/sbcl/sb-simple-streams
 @dirrm lib/sbcl/sb-rt
 @dirrm lib/sbcl/sb-rotate-byte
-@dirrm lib/sbcl/sb-posix/test-lab/stat.error.2
-@dirrm lib/sbcl/sb-posix/test-lab/rmdir.error.5
 @dirrm lib/sbcl/sb-posix/test-lab
 @dirrm lib/sbcl/sb-posix/alien
 @dirrm lib/sbcl/sb-posix
@@ -193,6 +248,8 @@ lib/sbcl/systems/sb-simple-streams.asd
 @dirrm lib/sbcl/sb-grovel
 @dirrm lib/sbcl/sb-executable
 @dirrm lib/sbcl/sb-cltl2
+@dirrm lib/sbcl/sb-bsd-sockets/alien
+@dirrm lib/sbcl/sb-bsd-sockets
 @dirrm lib/sbcl/sb-aclrepl
 @dirrm lib/sbcl/asdf-install
 @dirrm lib/sbcl/asdf
