@@ -1,5 +1,4 @@
 bin/smbclient
-bin/smbrun
 bin/smbstatus
 bin/smbpasswd
 bin/nmblookup
