@@ -13,6 +13,5 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 MAINTAINER=	sada@FreeBSD.org
 
 USE_IMAKE=	yes
-NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>
