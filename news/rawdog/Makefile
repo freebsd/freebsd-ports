@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rawdog
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	news python
 MASTER_SITES=	http://offog.org/files/ \
 		ftp://ftp.i-scream.org/pub/offog.org/files/ \
@@ -17,19 +17,20 @@ COMMENT=	A simple RSS aggregator
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+MAN1=		rawdog.1
 
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/config ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/style.css ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.ifndef(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	@${ECHO_MSG} "    ---------------------------------------------"
 	@${ECHO_MSG} "    Sample config and stylesheet installed in:"
 	@${ECHO_MSG} "        ${EXAMPLESDIR}"
-.if !defined(NOPORTDOCS)
+.ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "    Please read the README:"
 	@${ECHO_MSG} "        ${DOCSDIR}/README"
 .endif
