@@ -1,0 +1,6 @@
+include/moc.h
+include/moc_cexcept.h
+include/moc_generated.h
+lib/liborchard.a
+lib/liborchard.so
+lib/liborchard.so.0

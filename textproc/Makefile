@@ -101,6 +101,7 @@
     SUBDIR += no-ispell
     SUBDIR += openjade
     SUBDIR += opensched
+    SUBDIR += orchard-c
     SUBDIR += p5-Data-FormValidator
     SUBDIR += p5-DelimMatch
     SUBDIR += p5-FreeBSD-Ports
