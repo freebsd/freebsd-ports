@@ -1,93 +1,38 @@
-*** Makefile.orig	Tue May 30 06:14:14 1995
---- Makefile	Fri Aug 11 16:02:11 1995
+*** prim-sys.c.original	Mon Jun  8 14:55:11 1998
+--- prim-sys.c	Mon Jun  8 14:51:15 1998
 ***************
-*** 33,40 ****
-  SHELL	= /bin/sh
-  CC	= cc
-  #CC	= gcc
-! CFLAGS	= -g
-! #CFLAGS	= -g -O -Wall
-  LDFLAGS	=
-  LIBS	=
+*** 213,219 ****
+  				lim /= suf->amount;
+  				break;
+  			}
+! 		print("%-8s\t%d%s\n", limit->name, lim, (suf == NULL || lim == 0) ? "" : suf->name);
+  	}
+  }
   
---- 33,40 ----
-  SHELL	= /bin/sh
-  CC	= cc
-  #CC	= gcc
-! #CFLAGS	= -g
-! CFLAGS	= -O2
-  LDFLAGS	=
-  LIBS	=
+--- 213,219 ----
+  				lim /= suf->amount;
+  				break;
+  			}
+! 		print("%-8s\t%d%s\n", limit->name, (int)lim, (suf == NULL || lim == 0) ? "" : suf->name);
+  	}
+  }
   
+*** configure.orig	Mon Jun  8 15:02:05 1998
+--- configure	Mon Jun  8 15:02:37 1998
 ***************
-*** 52,57 ****
---- 52,66 ----
-  	  tree.o util.o var.o vec.o version.o y.tab.o
-  OTHER	= Makefile parse.y mksignal
-  GEN	= esdump y.tab.c y.tab.h y.output token.h sigmsgs.c initial.c
-+ 
-+ all: es
-+ 
-+ install:
-+ 	$(INSTALL) -c es $(PREFIX)/bin
-+ 	$(INSTALL) -c esdebug $(PREFIX)/bin/esdebug
-+ 	$(INSTALL) -c es.1 $(PREFIX)/man/man1
-+ 	strip $(PREFIX)/bin/es
-+ 	gzip -9nf $(PREFIX)/man/man1/es.1
+*** 2344,2350 ****
   
-  es	: ${OFILES} initial.o
-  	${CC} -o es ${LDFLAGS} ${OFILES} initial.o ${LIBS}
---- prim-sys.c.orig	Tue May 30 06:13:51 1995
-+++ prim-sys.c	Thu Apr 10 10:15:40 1997
-@@ -194,7 +194,7 @@
- 
- static void printlimit(const Limit *limit, Boolean hard) {
- 	struct rlimit rlim;
--	long lim;
-+	u_quad_t lim;
- 	getrlimit(limit->flag, &rlim);
- 	if (hard)
- 		lim = rlim.rlim_max;
-@@ -209,11 +209,11 @@
- 				lim /= suf->amount;
- 				break;
- 			}
--		print("%-8s\t%d%s\n", limit->name, lim, (suf == NULL || lim == 0) ? "" : suf->name);
-+		print("%-8s\t%ud%s\n", limit->name, (unsigned int)lim, (suf == NULL || lim == 0) ? "" : suf->name);
- 	}
- }
- 
--static long parselimit(const Limit *limit, char *s) {
-+static u_quad_t parselimit(const Limit *limit, char *s) {
- 	long lim;
- 	char *t;
- 	const Suffix *suf = limit->suffix;
---- main.c~	Tue May 30 06:13:50 1995
-+++ main.c	Thu Apr 10 09:20:49 1997
-@@ -9,7 +9,7 @@
- Boolean gcinfo		= FALSE;	/* -I */
- #endif
- 
--#if !HPUX && !defined(linux)
-+#if !HPUX && !defined(linux) && !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
- extern int getopt (int argc, char **argv, const char *optstring);
- #endif
- extern int optind;
---- stdenv.h~	Tue May 30 06:13:53 1995
-+++ stdenv.h	Thu Apr 10 09:32:22 1997
-@@ -283,6 +283,7 @@
- 
- /* stdlib */
- 
-+#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
- extern noreturn exit(int);
- extern noreturn abort(void);
- extern long strtol(const char *num, char **end, int base);
-@@ -290,6 +291,7 @@
- 	void *base, size_t nmemb, size_t size,
- 	int (*compar)(const void *, const void *)
- );
-+#endif
- 
- /* setjmp */
- 
+  
+  cat >> confdefs.h <<EOF
+! #define LIMIT_T $es_cv_rlimit_t
+  EOF
+  
+  
+--- 2344,2350 ----
+  
+  
+  cat >> confdefs.h <<EOF
+! #define LIMIT_T u_quad_t
+  EOF
+  
+  
