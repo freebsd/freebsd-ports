@@ -1,0 +1,25 @@
+*** etc/perdition/Makefile.in.orig	Sun Apr 29 00:56:52 2001
+--- etc/perdition/Makefile.in	Sun Apr 29 00:57:22 2001
+***************
+*** 115,124 ****
+  resolv_lib = @resolv_lib@
+  socket_lib = @socket_lib@
+  
+! EXTRA_DIST = perdition.conf
+  
+  perditionconfdir = $(sysconfdir)/perdition
+! perditionconf_DATA = perdition.conf
+  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+  CONFIG_HEADER = ../../config.h
+  CONFIG_CLEAN_FILES = 
+--- 115,124 ----
+  resolv_lib = @resolv_lib@
+  socket_lib = @socket_lib@
+  
+! EXTRA_DIST = perdition.conf.sample
+  
+  perditionconfdir = $(sysconfdir)/perdition
+! perditionconf_DATA = perdition.conf.sample
+  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+  CONFIG_HEADER = ../../config.h
+  CONFIG_CLEAN_FILES = 

@@ -1,0 +1,25 @@
+*** perdition/db/posix_regex/Makefile.in.orig	Sun Apr 29 01:01:11 2001
+--- perdition/db/posix_regex/Makefile.in	Sun Apr 29 01:01:24 2001
+***************
+*** 116,125 ****
+  resolv_lib = @resolv_lib@
+  socket_lib = @socket_lib@
+  
+! EXTRA_DIST = popmap.re
+  
+  confdir = $(sysconfdir)/perdition
+! conf_DATA = popmap.re
+  
+  lib_LTLIBRARIES = libperditiondb_posix_regex.la
+  
+--- 116,125 ----
+  resolv_lib = @resolv_lib@
+  socket_lib = @socket_lib@
+  
+! EXTRA_DIST = popmap.re.sample
+  
+  confdir = $(sysconfdir)/perdition
+! conf_DATA = popmap.re.sample
+  
+  lib_LTLIBRARIES = libperditiondb_posix_regex.la
+  

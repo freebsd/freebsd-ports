@@ -1,0 +1,25 @@
+*** perdition/db/gdbm/Makefile.am.orig	Sun Apr 29 00:34:26 2001
+--- perdition/db/gdbm/Makefile.am	Sun Apr 29 00:35:37 2001
+***************
+*** 23,32 ****
+  #
+  ######################################################################
+  
+! EXTRA_DIST = popmap Makefile.popmap.in Makefile.popmap
+  
+  confdir = $(sysconfdir)/perdition
+! conf_DATA = popmap Makefile.popmap
+  
+  install-data-hook:
+  	(cd $(DESTDIR)$(sysconfdir)/perdition/ && ln -sf Makefile.popmap Makefile)
+--- 23,32 ----
+  #
+  ######################################################################
+  
+! EXTRA_DIST = popmap.sample Makefile.popmap.in Makefile.popmap
+  
+  confdir = $(sysconfdir)/perdition
+! conf_DATA = popmap.sample Makefile.popmap
+  
+  install-data-hook:
+  	(cd $(DESTDIR)$(sysconfdir)/perdition/ && ln -sf Makefile.popmap Makefile)
