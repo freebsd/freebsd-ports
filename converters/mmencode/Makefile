@@ -22,7 +22,7 @@ ALL_TARGET=	mmencode
 
 do-install:
 	@cd ${WRKSRC}		&& ${INSTALL_PROGRAM} mmencode ${PREFIX}/bin
-	@cd ${WRKSRC}/../man	&& ${CP} mmencode.1 ${PREFIX}/man/man1
+	@cd ${WRKSRC}/../man	&& ${INSTALL_MAN} mmencode.1 ${PREFIX}/man/man1
 	@cd ${PREFIX}/bin	&& ${LN} -s mmencode mimencode
 
 .include <bsd.port.mk>
