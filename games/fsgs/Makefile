@@ -16,7 +16,9 @@ COMMENT=	Free network game server with ladders, player rankings, more
 
 NO_BUILD=	yes
 
-IGNORE=		"Disabled for legal reasons"
+IGNORE=		Disabled for legal reasons
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 do-install:
 	${CP} -Rp ${WRKDIR}/opt/fsgs ${PREFIX}/fsgs

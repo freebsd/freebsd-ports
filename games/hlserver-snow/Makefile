@@ -16,6 +16,8 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Half-Life mod Snow War full server package for Linux
 
 IGNORE=		Current version is not available for Linux yet
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 USE_ZIP=	yes
 

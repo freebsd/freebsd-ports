@@ -22,6 +22,8 @@ COMMENT=	The Apache webserver with MS Frontpage Module
 
 #BROKEN=		"Checksum mismatch"
 FORBIDDEN=	multiple vulnerabilities: http://www.apacheweek.com/features/security-13
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${FORBIDDEN}
 
 #PATCH_SITES=	${MASTER_SITE_APACHE_HTTPD}
 #PATCH_SITE_SUBDIR=	patches/apply_to_${PORTVERSION}/

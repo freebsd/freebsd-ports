@@ -13,6 +13,8 @@ MASTER_SITES=	http://xdiskusage.sourceforge.net/
 EXTRACT_SUFX=	.tgz
 
 IGNORE=		only works with 'du' output, e.g. du | xdiskusage -
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Show where disk space is taken up
 

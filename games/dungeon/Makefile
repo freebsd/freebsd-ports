@@ -24,6 +24,8 @@ MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 COMMENT=	Text adventure game of ZORK
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 EXTRACT_ONLY=	dungn27s.zip
 

@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server to host Quake network games under FreeBSD
 
 IGNORE=		uses an unregistered uid.
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha

@@ -28,7 +28,9 @@ INSTALL_TARGET=	site-install
 
 DOCS=		COPYING ChangeLog README TODO doc
 
-IGNORE=	"Distfile needs to be updated for new libmusicbrainz"
+IGNORE=		Distfile needs to be updated for new libmusicbrainz
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 #
 # XXX Remove the following line when NTP develoopment resumes.
 IGNORE=		4.2.0 just released, no development version available.
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution

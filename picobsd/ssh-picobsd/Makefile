@@ -24,6 +24,8 @@ NO_CDROM=	"Picobsd only"
 NO_PACKAGE=	"This is only useful to build picobsd images"
 
 BROKEN=		"Install fails"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	YES

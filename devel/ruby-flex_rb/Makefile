@@ -17,6 +17,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby flex regular expression matching extension
 
 BROKEN=		Does not compile
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

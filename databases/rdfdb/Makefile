@@ -15,7 +15,9 @@ DISTNAME=	rdfdb_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight RDF database
 
-IGNORE=		"Uses unregistered uid that conflicts with oracle7-client"
+IGNORE=		Uses unregistered uid that conflicts with oracle7-client
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 

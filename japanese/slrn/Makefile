@@ -21,6 +21,8 @@ MAINTAINER=	ukatsuta@mud.biglobe.ne.jp
 COMMENT=	A newsreader based by S-Lang
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 

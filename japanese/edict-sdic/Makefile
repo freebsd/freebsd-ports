@@ -23,6 +23,8 @@ MAINTAINER=	taoka@FreeBSD.org
 COMMENT=	Japanese <-> English Dictionary (SDIC format)
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 ALL_TARGET=	jedict.sdic eedict.sdic
 GNU_CONFIGURE=	yes

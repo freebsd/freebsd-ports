@@ -16,6 +16,8 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Web browser for svgalib which can show pictures
 
 BROKEN=		incorrect packing list
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx-current
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		vga.1:${PORTSDIR}/graphics/svgalib \

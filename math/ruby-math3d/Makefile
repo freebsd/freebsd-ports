@@ -21,6 +21,8 @@ USE_RUBY_EXTCONF=	yes
 INSTALL_TARGET=	site-install
 
 BROKEN=		"Does not compile"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 pre-patch:
 	cd ${WRKSRC}; ${RUBY} -i -pe 'sub(/\r/, "")' *.[ch]

@@ -24,5 +24,7 @@ CONFIGURE_ARGS=	--with-db=gdbm
 INSTALLS_SHLIB=	yes
 
 BROKEN=		Does not link with libossip-2.0.7. Downgrade libossip to 2.0.6, uncomment BROKEN in Makefile and retry
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 .include <bsd.port.mk>

@@ -16,6 +16,8 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Half-Life mod Train Hunters full server package for Linux
 
 IGNORE=		Current version is no longer available anywhere
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 _DONT_INCLUDE_MK_=yes
 

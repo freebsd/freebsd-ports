@@ -23,6 +23,8 @@ COMMENT=	Typeset Texinfo files for printing. Uses TeX
 RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=j

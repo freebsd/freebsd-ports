@@ -25,7 +25,9 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_BUILDARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-IGNORE=	"Distfile needs to catch up with libmusicbrainz"
+IGNORE=		Distfile needs to catch up with libmusicbrainz
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=2004-08-20
 
 .include <bsd.port.pre.mk>
 

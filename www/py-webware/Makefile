@@ -17,6 +17,8 @@ MAINTAINER=	sschwarzer@sschwarzer.net
 COMMENT=	A versatile web application server written in Python
 
 IGNORE=		uses uid registered to quagga.
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 BUILD_DEPENDS=	${PYTHON_CMD}:${PORTSDIR}/lang/python
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/DateTime:${PORTSDIR}/lang/py-mx-base

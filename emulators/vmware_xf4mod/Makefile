@@ -28,7 +28,9 @@ USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 
 RESTRICTED=	"Not sure if we can redistribute it"
-IGNORE=	"This module is now part of XFree86 as of 4.1.0"
+IGNORE=		This module is now part of XFree86 as of 4.1.0
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 do-extract:
 		${MKDIR} ${WRKSRC}

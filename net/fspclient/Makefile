@@ -15,6 +15,8 @@ MAINTAINER=	hsn@netmag.cz
 COMMENT=	A client for the fsp service
 
 IGNORE=		does not work correctly under FreeBSD libc
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${IGNORE}
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

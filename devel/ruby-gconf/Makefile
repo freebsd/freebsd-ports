@@ -19,6 +19,8 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby interface to GConf (1.0.x)
 
 BROKEN=		"Build fails"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 LIB_DEPENDS=	gconf-gtk-1.1:${PORTSDIR}/devel/gconf
 

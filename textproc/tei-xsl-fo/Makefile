@@ -17,6 +17,8 @@ MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	XSLT Stylesheets to convert TEI to XSL Formatting Objects
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

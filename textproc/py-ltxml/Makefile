@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings to the LT XML toolkit
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ltxml12/lt-safe.h:${PORTSDIR}/textproc/ltxml
 RUN_DEPENDS=	${BUILD_DEPENDS}

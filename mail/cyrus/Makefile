@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3, KPOP, and IMAP4 protocols
 
 FORBIDDEN=	remote exploitable buffer overflow: US-CERT VU\#740169, SecurityFocus BID 6298
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${FORBIDDEN}
 
 CONFLICTS=	cyrus-imapd-*
 

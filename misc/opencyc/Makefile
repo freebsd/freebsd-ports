@@ -16,6 +16,8 @@ MAINTAINER=	alexs@snark.rinet.ru
 COMMENT=	General knowledge base and commonsense reasoning engine
 
 BROKEN=		Broken pkg-plist
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 NO_BUILD=	yes
 USE_LINUX=	yes

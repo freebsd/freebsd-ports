@@ -28,6 +28,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Python Imaging Library Handbook
 
 BROKEN=		"Checksum mismatch"
+EXPIRATION_DATE=2004-08-20
+DEPRECATED=	${BROKEN}
 
 DIST_SUBDIR=	pil
 EXTRACT_ONLY=
