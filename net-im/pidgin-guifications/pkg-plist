@@ -44,6 +44,7 @@ share/gnome/pixmaps/gaim/guifications/themes/mini/theme.xml
 %%NLS%%share/locale/no/LC_MESSAGES/guifications.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/guifications.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/guifications.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/guifications.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/guifications.mo
 @dirrm share/gnome/pixmaps/gaim/guifications/themes/mini
 @dirrm share/gnome/pixmaps/gaim/guifications/themes/default
