@@ -5246,6 +5246,7 @@ php-sqlrelay	ports/databases/php-sqlrelay
 php-templates	ports/www/php-templates
 phpSysInfo	ports/www/phpSysInfo
 php_doc		ports/lang/php_doc
+phpbb		ports/www/phpbb
 phpgroupware	ports/deskutils/phpgroupware
 phpmyadmin	ports/databases/phpmyadmin
 phpnuke		ports/www/phpnuke
