@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.15 1999/04/22 00:17:05 scrappy Exp $
+# $Id: Makefile,v 1.16 1999/04/30 16:09:51 cwt Exp $
 #
 
 DISTNAME=	tcl8.0.5
@@ -33,6 +33,10 @@ TCL_LIB_FILE=	${TCL_LIB}.${SHLIB_MAJOR}
 .else
 TCL_LIB_FILE=	${TCL_LIB}.${SHLIB_MAJOR}.${SHLIB_MINOR}
 .endif
+
+post-patch:
+	@${CP} ${WRKSRC}/mkLinks ${WRKSRC}/mkLinks.orig
+	@${SED} -e 's/\.[3n]/&.gz/g' ${WRKSRC}/mkLinks.orig > ${WRKSRC}/mkLinks
 
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}
