@@ -1946,6 +1946,7 @@ fpc-ibase	ports/databases/fpc-ibase
 fpc-ide		ports/editors/fpc-ide
 fpc-inet	ports/net/fpc-inet
 fpc-md5		ports/security/fpc-md5
+fpc-mysql	ports/databases/fpc-mysql
 fpc-odbc	ports/databases/fpc-odbc
 fpc-oracle	ports/databases/fpc-oracle
 fpc-paszlib	ports/archivers/fpc-paszlib
