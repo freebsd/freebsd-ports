@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxml
-PORTVERSION= 	1.8.7
+PORTVERSION= 	1.8.8
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
