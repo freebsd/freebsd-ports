@@ -25,7 +25,7 @@
 + 
 + ## preferred directories for FreeBSD is under /usr/local tree
 + ## we need pccts installed from package
-+ PCCTS =         $(PREFIX)
++ PCCTS =         $(LOCALBASE)
 + PCCTS_H =       $(PCCTS)/include/pccts
 + PCCTS_BIN =     $(PCCTS)/bin
 + 
