@@ -7,7 +7,7 @@
 
 PORTNAME=	icecast2
 PORTVERSION=	20021112
-CATEGORIES=	audio net
+CATEGORIES=	audio net ipv6
 MASTER_SITES=	http://tigress.com/lofi/\
 		http://lofi.dyndns.org/
 DISTNAME=	icecast-devel-${PORTVERSION}
