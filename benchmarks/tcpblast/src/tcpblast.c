@@ -110,7 +110,7 @@ int argc; char **argv;
 	expms = (stops-starts)*1000 + (stopms-startms);
 	printf("\n%d %d-byte blocks in %ld msec.\n", nblocks, BLKSIZE, expms);
 	printf("Throughput  =  %.1f kbit/s", (double) (nblocks*BLKSIZE) / expms * 8.0);
-	printf("  =  %.1f kByte/s", (double) (nblocks*BLKSIZE) / expms * 1000.0);
+	printf("  =  %.1f kByte/s", (double) (nblocks*BLKSIZE) / expms);
 	printf("  =  %.1f MByte/s\n", (double) (nblocks*BLKSIZE) / (double)(expms*1024.0));
 return(0);
 }
