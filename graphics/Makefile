@@ -166,6 +166,7 @@
     SUBDIR += xmfract
     SUBDIR += xmorph
     SUBDIR += xmountains
+    SUBDIR += xmovie
     SUBDIR += xpaint
     SUBDIR += xpdf
     SUBDIR += xpm
