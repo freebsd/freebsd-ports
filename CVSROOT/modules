@@ -3064,6 +3064,7 @@ gxedit		ports/editors/gxedit
 gxine		ports/multimedia/gxine
 gxmame		ports/emulators/gxmame
 gxmlviewer	ports/textproc/gxmlviewer
+gxmms		ports/multimedia/gxmms
 gxset		ports/x11/gxset
 gyach		ports/net/gyach
 gyroscope	ports/x11/gyroscope
