@@ -26,7 +26,6 @@ BASE_NAME=	pips${PRTYPE}
 PAPERSIZE?=	a4
 
 .include <bsd.port.pre.mk>
-MD5_FILE=	${.CURDIR}/files/md5
 PRTYPE?=	800
 
 do-build:
@@ -58,6 +57,9 @@ do-install:
 .endif
 
 .include <bsd.port.post.mk>
+
+MD5_FILE=	${.CURDIR}/files/md5
+
 
 # target for maintainer
 _MAKE_COMMENT_DESCR:
