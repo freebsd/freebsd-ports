@@ -16,9 +16,7 @@ lib/glib-sharp.dll
 lib/gnome-sharp.dll
 lib/gnomedb-sharp.dll
 lib/gtk-sharp.dll
-lib/libgtksharpglue.a
 lib/libgtksharpglue.so
-lib/libgtksharpglue.so.0
 lib/pango-sharp.dll
 share/gapi/art-api.xml
 share/gapi/atk-api.xml
