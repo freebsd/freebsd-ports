@@ -14,4 +14,5 @@ libexec/smtpfeed
 %%PORTDOCS%%share/doc/smtpfeed/SIGNAL
 %%PORTDOCS%%share/doc/smtpfeed/SIGNAL.j
 %%PORTDOCS%%share/doc/smtpfeed/TODO
+%%PORTDOCS%%share/doc/smtpfeed/smtpfeed.html
 %%PORTDOCS%%@dirrm share/doc/smtpfeed
