@@ -4,11 +4,6 @@ bin/moc2
 bin/msg2qm
 bin/qt20fix
 bin/qtrename140
-include/qt2/jri.h
-include/qt2/jri_md.h
-include/qt2/jritypes.h
-include/qt2/npapi.h
-include/qt2/npupp.h
 include/qt2/q1xcompatibility.h
 include/qt2/qabstractlayout.h
 include/qt2/qaccel.h
