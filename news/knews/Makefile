@@ -3,7 +3,7 @@
 # Date created:         Sun Apr 14 09:23:59 MET DST 1996
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.11 1998/03/21 12:40:53 asami Exp $
+# $Id: Makefile,v 1.12 1998/03/21 13:35:04 andreas Exp $
 #
 
 DISTNAME=	knews-1.0b.0
@@ -14,7 +14,7 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 LIB_DEPENDS=    Xpm\\.4\\.:${PORTSDIR}/graphics/xpm \
 		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
-		png\\.0\\.:${PORTSDIR}/graphics/png
+		png\\.2\\.:${PORTSDIR}/graphics/png
 RUN_DEPENDS=    newsp:${PORTSDIR}/print/mp
 
 WRKSRC=		${WRKDIR}/knews

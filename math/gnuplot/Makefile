@@ -3,7 +3,7 @@
 # Date created:         11 January 1997
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.12 1997/07/22 02:22:31 asami Exp $
+# $Id: Makefile,v 1.13 1997/09/01 07:41:23 cwt Exp $
 #
 
 DISTNAME=	gnuplot-beta336
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.ipc.chiba-u.ac.jp/~yamaga/gnuplot%2B/3.6base/
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-LIB_DEPENDS=	png\\.0\\.[7-9]:${PORTSDIR}/graphics/png
+LIB_DEPENDS=    png\\.0\\.:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/gnuplot
 GNU_CONFIGURE=	yes
