@@ -1,9 +1,10 @@
-# $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/Makefile.libgcc_r,v 1.2 2000-07-12 01:43:01 jasone Exp $
+# $FreeBSD: /tmp/pcvs/ports/devel/linuxthreads/files/Makefile.libgcc_r,v 1.3 2000-11-06 19:43:33 jasone Exp $
 
 DESTDIR=/usr/local/
 LIBDIR= lib/
 
 CFLAGS+=-D_PTHREADS -I../
+CFLAGS+=-I../sysdeps/i386 -I../sysdeps/pthread -I../sysdeps/unix/sysv/linux
 
 .include "/usr/src/gnu/lib/libgcc/Makefile"
 

@@ -1,6 +1,6 @@
 diff -ru ../linuxthreads/Examples/Makefile ./Examples/Makefile
 --- ../linuxthreads/Examples/Makefile	Wed Mar 11 04:42:23 1998
-+++ ./Examples/Makefile	Tue May 23 20:55:10 2000
++++ ./Examples/Makefile	Mon Nov  6 11:24:28 2000
 @@ -1,8 +1,8 @@
  CC=gcc
 -CFLAGS=-g -O -Wall -I.. -D_REENTRANT
@@ -15,7 +15,7 @@ diff -ru ../linuxthreads/Examples/Makefile ./Examples/Makefile
  
 diff -ru ../linuxthreads/Makefile ./Makefile
 --- ../linuxthreads/Makefile	Tue Nov  2 16:09:36 1999
-+++ ./Makefile	Tue May 23 20:55:10 2000
++++ ./Makefile	Mon Nov  6 11:24:28 2000
 @@ -1,68 +1,72 @@
 -# Copyright (C) 1996, 1997, 1998, 1999 Free Software Foundation, Inc.
 -# This file is part of the GNU C Library.
@@ -158,7 +158,7 @@ diff -ru ../linuxthreads/Makefile ./Makefile
 +.include <bsd.lib.mk>
 diff -ru ../linuxthreads/attr.c ./attr.c
 --- ../linuxthreads/attr.c	Tue Oct 27 05:51:54 1998
-+++ ./attr.c	Tue May 23 20:55:10 2000
++++ ./attr.c	Mon Nov  6 11:24:28 2000
 @@ -27,7 +27,7 @@
  
    attr->__detachstate = PTHREAD_CREATE_JOINABLE;
@@ -170,7 +170,7 @@ diff -ru ../linuxthreads/attr.c ./attr.c
    attr->__guardsize = ps;
 diff -ru ../linuxthreads/internals.h ./internals.h
 --- ../linuxthreads/internals.h	Thu Jan 20 17:40:19 2000
-+++ ./internals.h	Tue May 23 20:55:10 2000
++++ ./internals.h	Mon Nov  6 11:24:28 2000
 @@ -26,8 +26,8 @@
  #include <unistd.h>
  #include <sys/types.h>
@@ -217,7 +217,7 @@ diff -ru ../linuxthreads/internals.h ./internals.h
  
 diff -ru ../linuxthreads/join.c ./join.c
 --- ../linuxthreads/join.c	Wed Jan  5 17:45:15 2000
-+++ ./join.c	Tue May 23 20:55:10 2000
++++ ./join.c	Mon Nov  6 11:24:28 2000
 @@ -39,6 +39,7 @@
    THREAD_SETMEM(self, p_retval, retval);
    /* Say that we've terminated */
@@ -234,11 +234,12 @@ diff -ru ../linuxthreads/join.c ./join.c
    /* See if someone is joining on us */
    joining = THREAD_GETMEM(self, p_joining);
    __pthread_unlock(THREAD_GETMEM(self, p_lock));
+Only in .: libgcc_r
 Only in ../linuxthreads: lockfile.c
 Only in .: lockfile.c.unused
 diff -ru ../linuxthreads/manager.c ./manager.c
 --- ../linuxthreads/manager.c	Thu Jan 20 17:40:19 2000
-+++ ./manager.c	Tue May 23 20:55:10 2000
++++ ./manager.c	Mon Nov  6 11:24:28 2000
 @@ -52,8 +52,10 @@
     (set to 1 by gdb) */
  volatile int __pthread_threads_debug;
@@ -293,6 +294,17 @@ diff -ru ../linuxthreads/manager.c ./manager.c
  
  static int pthread_allocate_stack(const pthread_attr_t *attr,
                                    pthread_descr default_new_thread,
+@@ -295,8 +300,8 @@
+       /* Allocate space for stack and thread descriptor at default address */
+       new_thread = default_new_thread;
+       new_thread_bottom = (char *) (new_thread + 1) - stacksize;
+-      if (mmap((caddr_t)((char *)(new_thread + 1) - INITIAL_STACK_SIZE),
+-               INITIAL_STACK_SIZE, PROT_READ | PROT_WRITE | PROT_EXEC,
++      if (mmap((caddr_t)((char *)(new_thread + 1) - stacksize),
++               stacksize, PROT_READ | PROT_WRITE | PROT_EXEC,
+                MAP_PRIVATE | MAP_ANONYMOUS | MAP_FIXED | MAP_GROWSDOWN,
+                -1, 0) == MAP_FAILED)
+         /* Bad luck, this segment is already mapped. */
 @@ -337,9 +342,9 @@
  
  static int pthread_handle_create(pthread_t *thread, const pthread_attr_t *attr,
@@ -321,6 +333,17 @@ diff -ru ../linuxthreads/manager.c ./manager.c
    if (pid == 0)
      pid = __clone(pthread_start_thread, (void **) new_thread,
  		  CLONE_VM | CLONE_FS | CLONE_FILES | CLONE_SIGHAND |
+@@ -468,8 +475,8 @@
+       {
+ 	if (new_thread->p_guardsize != 0)
+ 	  munmap(new_thread->p_guardaddr, new_thread->p_guardsize);
+-	munmap((caddr_t)((char *)(new_thread+1) - INITIAL_STACK_SIZE),
+-	       INITIAL_STACK_SIZE);
++	munmap((caddr_t)((char *)(new_thread+1) - STACK_SIZE),
++	       STACK_SIZE);
+       }
+     __pthread_handles[sseg].h_descr = NULL;
+     __pthread_handles[sseg].h_bottom = NULL;
 @@ -555,6 +562,7 @@
        /* Mark thread as exited, and if detached, free its resources */
        __pthread_lock(th->p_lock, NULL);
@@ -337,13 +360,28 @@ diff -ru ../linuxthreads/manager.c ./manager.c
        detached = th->p_detached;
        __pthread_unlock(th->p_lock);
        if (detached)
+@@ -651,10 +660,14 @@
+ 
+ /* Process-wide exit() */
+ 
++extern int __pthread_exit_requested_bymainthread;
++
+ static void pthread_handle_exit(pthread_descr issuing_thread, int exitcode)
+ {
+   pthread_descr th;
+   __pthread_exit_requested = 1;
++  if (issuing_thread == __pthread_main_thread)
++    __pthread_exit_requested_bymainthread = 1;
+   __pthread_exit_code = exitcode;
+   /* Send the CANCEL signal to all running threads, including the main
+      thread, but excluding the thread from which the exit request originated
 Only in ../linuxthreads: no-tsd.c
 Only in .: no-tsd.c.unused
 Only in ../linuxthreads: oldsemaphore.c
 Only in .: oldsemaphore.c.unused
 diff -ru ../linuxthreads/pthread.c ./pthread.c
 --- ../linuxthreads/pthread.c	Thu Jan 20 17:40:19 2000
-+++ ./pthread.c	Tue May 23 20:55:10 2000
++++ ./pthread.c	Mon Nov  6 11:26:04 2000
 @@ -20,6 +20,7 @@
  #include <stdlib.h>
  #include <string.h>
@@ -410,7 +448,15 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    ATOMIC_INITIALIZER,         /* struct pthread_atomic p_resume_count */
    0,                          /* char p_woken_by_cancel */
    NULL,                       /* struct pthread_extricate_if *p_extricate */
-@@ -176,13 +187,15 @@
+@@ -153,6 +164,7 @@
+ /* For process-wide exit() */
+ 
+ int __pthread_exit_requested = 0;
++int __pthread_exit_requested_bymainthread = 0;
+ int __pthread_exit_code = 0;
+ 
+ /* Pointers that select new or old suspend/resume functions
+@@ -176,13 +188,15 @@
  
  /* Forward declarations */
  
@@ -429,7 +475,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  #endif
  static void pthread_handle_sigdebug(int sig);
  
-@@ -194,8 +207,8 @@
+@@ -194,8 +208,8 @@
  #ifndef __SIGRTMIN
  static int current_rtmin = -1;
  static int current_rtmax = -1;
@@ -440,7 +486,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  int __pthread_sig_debug = 0;
  #else
  static int current_rtmin;
-@@ -206,8 +219,8 @@
+@@ -206,8 +220,8 @@
  int __pthread_sig_cancel = __SIGRTMIN + 1;
  int __pthread_sig_debug = __SIGRTMIN + 2;
  #else
@@ -451,7 +497,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  int __pthread_sig_debug = 0;
  #endif
  
-@@ -345,7 +358,7 @@
+@@ -345,7 +359,7 @@
  #ifndef __i386__
    sa.sa_handler = pthread_handle_sigrestart;
  #else
@@ -460,7 +506,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  #endif
    sigemptyset(&sa.sa_mask);
    sa.sa_flags = 0;
-@@ -353,7 +366,7 @@
+@@ -353,7 +367,7 @@
  #ifndef __i386__
    sa.sa_handler = pthread_handle_sigcancel;
  #else
@@ -469,7 +515,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  #endif
    sa.sa_flags = 0;
    __sigaction(__pthread_sig_cancel, &sa, NULL);
-@@ -370,7 +383,7 @@
+@@ -370,7 +384,7 @@
    /* Register an exit function to kill all other threads. */
    /* Do it early so that user-registered atexit functions are called
       before pthread_exit_process. */
@@ -478,7 +524,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  }
  
  void __pthread_initialize(void)
-@@ -399,6 +412,7 @@
+@@ -399,6 +413,7 @@
    }
    /* Start the thread manager */
    pid = 0;
@@ -486,7 +532,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    if (__pthread_initial_thread.p_report_events)
      {
        /* It's a bit more complicated.  We have to report the creation of
-@@ -436,10 +450,12 @@
+@@ -436,10 +451,12 @@
  	    }
  	}
      }
@@ -500,7 +546,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  		  (void *)(long)manager_pipe[0]);
    if (pid == -1) {
      free(__pthread_manager_thread_bos);
-@@ -568,7 +584,7 @@
+@@ -568,7 +585,7 @@
      __pthread_unlock(&handle->h_lock);
      return errno;
    }
@@ -509,7 +555,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    __pthread_unlock(&handle->h_lock);
    if (__pthread_manager_request >= 0)
      __pthread_manager_adjust_prio(th->p_priority);
-@@ -597,7 +613,7 @@
+@@ -597,7 +614,7 @@
  
  /* Process-wide exit() request */
  
@@ -518,7 +564,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
  {
    struct pthread_request request;
    pthread_descr self = thread_self();
-@@ -605,7 +621,7 @@
+@@ -605,7 +622,7 @@
    if (__pthread_manager_request >= 0) {
      request.req_thread = self;
      request.req_kind = REQ_PROCESS_EXIT;
@@ -527,7 +573,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
      __libc_write(__pthread_manager_request,
  		 (char *) &request, sizeof(request));
      suspend(self);
-@@ -625,10 +641,11 @@
+@@ -625,10 +642,11 @@
  {
    pthread_descr self = thread_self();
  #else
@@ -541,7 +587,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    self = thread_self();
  #endif
    THREAD_SETMEM(self, p_signal, sig);
-@@ -647,11 +664,11 @@
+@@ -647,11 +665,11 @@
    pthread_descr self = thread_self();
    sigjmp_buf * jmpbuf;
  #else
@@ -555,7 +601,17 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    self = thread_self();
  #endif
  
-@@ -731,7 +748,7 @@
+@@ -663,6 +681,9 @@
+   if (__pthread_exit_requested) {
+     /* Main thread should accumulate times for thread manager and its
+        children, so that timings for main thread account for all threads. */
++    if (self == __pthread_main_thread &&
++	__pthread_exit_requested_bymainthread != 0)
++	    return;
+     if (self == __pthread_main_thread)
+       waitpid(__pthread_manager_thread.p_pid, NULL, __WCLONE);
+     _exit(__pthread_exit_code);
+@@ -731,7 +752,7 @@
  {
    struct sigaction sa;
    /* Terminate all other threads and thread manager */
@@ -566,7 +622,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    __pthread_reset_main_thread();
 diff -ru ../linuxthreads/ptlongjmp.c ./ptlongjmp.c
 --- ../linuxthreads/ptlongjmp.c	Tue Oct 27 05:52:00 1998
-+++ ./ptlongjmp.c	Tue May 23 20:55:10 2000
++++ ./ptlongjmp.c	Mon Nov  6 11:24:28 2000
 @@ -19,13 +19,14 @@
  #include "pthread.h"
  #include "internals.h"
@@ -600,7 +656,7 @@ diff -ru ../linuxthreads/ptlongjmp.c ./ptlongjmp.c
  }
 diff -ru ../linuxthreads/semaphore.h ./semaphore.h
 --- ../linuxthreads/semaphore.h	Tue Feb 22 23:02:52 2000
-+++ ./semaphore.h	Tue May 23 20:55:10 2000
++++ ./semaphore.h	Mon Nov  6 11:24:28 2000
 @@ -15,7 +15,6 @@
  #ifndef _SEMAPHORE_H
  #define _SEMAPHORE_H    1
@@ -611,7 +667,7 @@ diff -ru ../linuxthreads/semaphore.h ./semaphore.h
  #ifndef _PTHREAD_DESCR_DEFINED
 diff -ru ../linuxthreads/signals.c ./signals.c
 --- ../linuxthreads/signals.c	Mon Oct  4 12:50:04 1999
-+++ ./signals.c	Tue May 23 20:55:10 2000
++++ ./signals.c	Mon Nov  6 11:24:28 2000
 @@ -20,7 +20,6 @@
  #include "internals.h"
  #include "spinlock.h"
@@ -680,7 +736,7 @@ diff -ru ../linuxthreads/signals.c ./signals.c
  	   or real-time signal.  */
 diff -ru ../linuxthreads/spinlock.c ./spinlock.c
 --- ../linuxthreads/spinlock.c	Wed Jan  5 17:47:19 2000
-+++ ./spinlock.c	Tue May 23 20:55:10 2000
++++ ./spinlock.c	Mon Nov  6 11:24:28 2000
 @@ -137,7 +137,6 @@
  
  #if !defined HAS_COMPARE_AND_SWAP || defined TEST_FOR_COMPARE_AND_SWAP
@@ -700,7 +756,7 @@ diff -ru ../linuxthreads/spinlock.c ./spinlock.c
    struct timespec tm;
 diff -ru ../linuxthreads/spinlock.h ./spinlock.h
 --- ../linuxthreads/spinlock.h	Wed Jan  5 17:45:15 2000
-+++ ./spinlock.h	Tue May 23 20:55:10 2000
++++ ./spinlock.h	Mon Nov  6 11:24:28 2000
 @@ -71,6 +71,8 @@
    return 0;
  }
@@ -712,7 +768,7 @@ diff -ru ../linuxthreads/spinlock.h ./spinlock.h
  /* Operations on pthread_atomic, which is defined in internals.h */
 diff -ru ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h ./sysdeps/pthread/bits/pthreadtypes.h
 --- ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h	Thu Jan 20 17:40:19 2000
-+++ ./sysdeps/pthread/bits/pthreadtypes.h	Tue May 23 20:55:10 2000
++++ ./sysdeps/pthread/bits/pthreadtypes.h	Mon Nov  6 11:24:28 2000
 @@ -20,7 +20,6 @@
  #define _BITS_PTHREADTYPES_H	1
  
@@ -732,7 +788,7 @@ diff -ru ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h ./sysdeps/pthread/b
    size_t __guardsize;
 diff -ru ../linuxthreads/sysdeps/pthread/pthread.h ./sysdeps/pthread/pthread.h
 --- ../linuxthreads/sysdeps/pthread/pthread.h	Thu Jan 20 17:40:19 2000
-+++ ./sysdeps/pthread/pthread.h	Tue May 23 20:55:10 2000
++++ ./sysdeps/pthread/pthread.h	Mon Nov  6 11:24:28 2000
 @@ -15,7 +15,6 @@
  #ifndef _PTHREAD_H
  #define _PTHREAD_H	1
@@ -754,7 +810,7 @@ Only in ../linuxthreads/sysdeps/pthread: semaphore.h
 Only in ./sysdeps/pthread: semaphore.h.unused
 diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h ./sysdeps/unix/sysv/linux/bits/local_lim.h
 --- ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h	Thu Nov 12 10:03:14 1998
-+++ ./sysdeps/unix/sysv/linux/bits/local_lim.h	Tue May 23 20:55:10 2000
++++ ./sysdeps/unix/sysv/linux/bits/local_lim.h	Mon Nov  6 11:24:28 2000
 @@ -24,7 +24,7 @@
  #endif
  
@@ -766,7 +822,7 @@ diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h ./sysdeps/unix
  #ifdef __undef_NR_OPEN
 diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h ./sysdeps/unix/sysv/linux/bits/sigthread.h
 --- ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h	Sat Sep 12 14:33:14 1998
-+++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Tue May 23 20:55:10 2000
++++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Mon Nov  6 11:24:28 2000
 @@ -28,8 +28,8 @@
  
  /* Modify the signal mask for the calling thread.  The arguments have
@@ -782,7 +838,7 @@ Only in ../linuxthreads: weaks.c
 Only in .: weaks.c.unused
 diff -ru ../linuxthreads/wrapsyscall.c ./wrapsyscall.c
 --- ../linuxthreads/wrapsyscall.c	Tue Dec  1 11:34:20 1998
-+++ ./wrapsyscall.c	Tue May 23 20:55:40 2000
++++ ./wrapsyscall.c	Mon Nov  6 11:24:28 2000
 @@ -29,6 +29,7 @@
  #include <sys/resource.h>
  #include <sys/wait.h>

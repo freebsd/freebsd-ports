@@ -7,10 +7,11 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.1.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
-DISTFILES=	glibc-linuxthreads-${PORTVERSION}.tar.gz
+DISTNAME=	glibc-linuxthreads-${PORTVERSION}
 
 MAINTAINER=    jasone@freebsd.org
 
@@ -27,12 +28,13 @@ threads_files := README.FreeBSD clone.S clone.h freebsd-compat.h getgr_r.c \
 	gethostby_r.c getnetby_r.c getprotoby_r.c getpw_r.c getservby_r.c \
 	lclone.c libc_calls.c libc_thread.c sched.c uthread_file.c
 
+WRKSRC=		${WRKDIR}/${PKGNAME}
 SRC_BASE=	/usr/src
 LIBSRC_BASE=	${SRC_BASE}/lib
 
 post-extract:
-	@mv ${WRKDIR}/linuxthreads ${WRKDIR}/${PKGNAME}
-	@mv ${WRKDIR}/linuxthreads_db ${WRKDIR}/${PKGNAME}
+	@mv ${WRKDIR}/linuxthreads ${WRKSRC}
+	@mv ${WRKDIR}/linuxthreads_db ${WRKSRC}
 .for src in lockfile.c no-tsd.c oldsemaphore.c weaks.c \
 	sysdeps/pthread/semaphore.h
 	@mv ${WRKSRC}/$(src) ${WRKSRC}/$(src).unused
