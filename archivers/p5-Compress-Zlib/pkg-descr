@@ -1,0 +1,13 @@
+       The Compress::Zlib module provides a Perl interface to the
+       zlib compression library (see the AUTHORS entry elsewhere
+       in this documentfor details about where to get zlib). Most
+       of the functionality provided by zlib is available in
+       Compress::Zlib.
+
+       The module can be split into two general areas of
+       functionality, namely in-memory compression/decompression
+       and read/write access to gzip files. Each of these areas
+       will be discussed separately below.
+
+       WARNING: The interface defined in this document is alpha
+       and is liable to change.
