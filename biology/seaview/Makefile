@@ -3,7 +3,7 @@
 # Date created:         Dec 5 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/21 22:04:38 vanilla Exp $
+# $Id: Makefile,v 1.2 1997/12/26 11:49:39 asami Exp $
 #
 
 DISTNAME=       seaview
@@ -22,7 +22,7 @@ EXTRACT_BEFORE_ARGS=	-xf
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
-	@ (mkdir ${PREFIX}/lib/X11/seaview)
+	@ (${MKDIR} ${PREFIX}/lib/X11/seaview)
 	@ ${INSTALL_DATA} ${WRKSRC}/seaview.help ${PREFIX}/lib/X11/seaview
 
 post-install:
