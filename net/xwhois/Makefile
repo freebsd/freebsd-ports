@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	xwhois
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	net
-MASTER_SITES=	http://c64.org/~nr/ \
-		http://www.goatnet.ml.org/ \
+MASTER_SITES=	http://c64.org/~nr/xwhois/dist/ \
 		ftp://sangis.kalix.net/pub/nr/xwhois/
 
 MAINTAINER=	billf@FreeBSD.org
-
-BROKEN=		"No listed MASTER_SITES carry the distfile"
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
