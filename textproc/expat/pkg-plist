@@ -1,0 +1,5 @@
+bin/xmlwf
+include/xml/xmlparse.h
+include/xml/xmltok.h
+lib/libexpat.a
+@dirrm include/xml
