@@ -1,5 +1,5 @@
 --- ppm/Makefile.orig	Sat Jul  1 03:26:39 2000
-+++ ppm/Makefile	Sat Jul  1 12:00:00 2000
++++ ppm/Makefile	Sat Jul 15 00:00:00 2000
 @@ -3,8 +3,7 @@
  
  LIBROOT = ppm
@@ -52,7 +52,7 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libppm1.o libppm2.o libppm3.o libppm4.o libppm5.o bitio.o
-+LIBSOBJECTS = $(patsubst %.o, %.so, $(LIBOBJECTS))
++SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
 +LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)

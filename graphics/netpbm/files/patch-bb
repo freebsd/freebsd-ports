@@ -1,13 +1,13 @@
---- Makefile.common.orig	Sat Jul  1 04:59:36 2000
-+++ Makefile.common	Sat Jul  1 12:00:00 2000
-@@ -97,24 +97,20 @@
- # BUILDING NETPBM LIBRARIES
+--- Makefile.common.orig	Sat Jul  8 06:14:26 2000
++++ Makefile.common	Sat Jul 15 00:00:00 2000
+@@ -103,24 +103,20 @@
  
  $(LIBOBJECTS): %.o: %.c
-+	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
+ # Note that the user may have configured -I options into CFLAGS.
++	$(CC) -c $(INCLUDE) $(CFLAGS) -o $@ $<
 +
-+$(LIBSOBJECTS): %.so: %.c
- 	$(CC) -c $(CFLAGS) $(CFLAGS_SHLIB) $(INCLUDE) -o $@ $<
++$(SHLIBOBJECTS): %.lo: %.c
+ 	$(CC) -c $(INCLUDE) $(CFLAGS) $(CFLAGS_SHLIB) -o $@ $<
  
 -SONAME = lib$(LIBROOT).so.$(MAJ)
 +SONAME = lib$(LIBROOT).so.$(SOVER)
@@ -26,13 +26,13 @@
 -                                $(LIBOPT)
 -	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
 -          `$(LIBOPT) $(LIBLIBS)` -lc
-+$(SONAME): $(LIBSOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT) lib$(LIBROOT).a
-+	$(LD) $(LDSHLIB) -o $@ $(LIBSOBJECTS) $(LIBOBJECTS_X) \
++$(SONAME): $(SHLIBOBJECTS) $(LIBOBJECTS_X) $(LIBLIBS) $(LIBOPT) lib$(LIBROOT).a
++	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(LIBOBJECTS_X) \
 +          `$(LIBOPT) $(LIBLIBS)`
  
  # Static library.  Unused by default, but with a small change to make files...
  lib$(LIBROOT).a: $(LIBOBJECTS) $(LIBOBJECTS_X)
-@@ -142,7 +138,7 @@
+@@ -148,7 +144,7 @@
  install.merge.common: $(MERGENAME) $(NOMERGEBINARIES) install.script
  	cd $(INSTALLBINARIES) ; rm -f $(BINARIES) $(MERGE_ALIASES)
  ifneq ($(MERGENAME)x,x)
@@ -41,7 +41,7 @@
  	cd $(INSTALLBINARIES) ; \
  	   for i in $(MERGEBINARIES) $(MERGE_ALIASES) ; \
               do ln -s $(MERGENAME)$(EXE) $$i ; \
-@@ -151,7 +147,7 @@
+@@ -157,7 +153,7 @@
  ifneq ($(NOMERGEBINARIES)x,x)
  	for x in $(NOMERGEBINARIES); \
          do \
@@ -50,7 +50,7 @@
  	done
  endif
  
-@@ -163,7 +159,7 @@
+@@ -169,7 +165,7 @@
  # Make and Install know that pbmmake.exe counts as pbmmake.
  	for x in $(BINARIES); \
  	do \
@@ -59,7 +59,7 @@
  	done
  
  .PHONY: install.script
-@@ -171,7 +167,7 @@
+@@ -177,7 +173,7 @@
  ifneq ($(SCRIPTS)x,x)
  	for x in $(SCRIPTS); \
  	do \
@@ -68,7 +68,7 @@
  	done
  endif
  
-@@ -204,7 +200,7 @@
+@@ -210,7 +206,7 @@
  # directory when you compile your programs.
  	for x in $(INTERFACE_HEADERS); \
  	do \
@@ -77,7 +77,7 @@
  	done
  
  # Install a static library 
-@@ -215,16 +211,15 @@
+@@ -221,16 +217,15 @@
  # library, the dependency here will do that.
  .PHONY: install.staticlib
  install.staticlib: lib$(LIBROOT).a

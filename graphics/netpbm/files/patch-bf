@@ -1,5 +1,5 @@
---- pnm/Makefile.orig	Thu Jun 29 02:23:53 2000
-+++ pnm/Makefile	Sat Jul  1 12:00:00 2000
+--- pnm/Makefile.orig	Fri Jul  7 15:24:20 2000
++++ pnm/Makefile	Sat Jul 15 00:00:00 2000
 @@ -3,8 +3,7 @@
  
  LIBROOT = pnm
@@ -10,11 +10,13 @@
  
  PPMDIR = $(SRCDIR)/ppm
  LIBPPM = libppm.$(NETPBMLIBSUFFIX)
-@@ -56,19 +55,20 @@
+@@ -55,20 +54,21 @@
+ # build.
  
  PORTBINARIES = fitstopnm gemtopnm giftopnm \
- 		pnmalias pnmarith pnmcat pnmcomp pnmconvol pnmcrop \
+-		pnmalias pnmarith pnmcat pnmcomp pnmconvol pnmcrop \
 -		pnmcut pnmdepth pnmenlarge pnmfile pnmflip pnmhisteq \
++		pnmalias pnmarith pnmcat pnmcomp pnmconvol \
 +		pnmdepth pnmenlarge pnmflip pnmhisteq \
  		pnmhistmap pnminterp pnminvert pnmpad pnmpaste \
 -		pnmsmooth pnmsplit pnmtile pnmtoddif pnmtofits \
@@ -25,7 +27,7 @@
 +		pnmtosgi pnmtosir pnmtoxwd \
 +		rasttopnm sgitopnm sirtopnm zeisstopnm
  MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmscale pnmshear
-+SHHOPTBINARIES = pnmcut pnmfile pnmsplit pstopnm xwdtopnm
++SHHOPTBINARIES = pnmcrop pnmcut pnmfile pnmsplit pstopnm xwdtopnm
  
  # We don't include programs that have special library dependencies in the
  # merge scheme, because we don't want those dependencies to prevent us
@@ -40,19 +42,21 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o
-+LIBSOBJECTS = $(patsubst %.o, %.so, $(LIBOBJECTS))
++SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
 +LIBSHHOPT = $(SRCDIR)/shhopt/libshhopt.a
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -116,10 +118,12 @@
+@@ -116,12 +118,12 @@
  
  .PHONY: all
  all:      $(BINARIES)
 -	$(MAKE) -C jbig all
+-	$(MAKE) -C fiasco all
  PHONY: merge
  merge:    $(MERGENAME) $(NOMERGEBINARIES)
 -	$(MAKE) -C jbig all
+-	$(MAKE) -C fiasco all
 +
 +$(SHHOPTBINARIES): %: %.o $(NETPBMLIBS) $(LIBOPT) $(LIBSHHOPT)
 +	$(LD) $(LDFLAGS) -o $@ $@.o `$(LIBOPT) $(NETPBMLIBS)` \
@@ -60,7 +64,7 @@
  
  ifeq ($(TIFFLIB_DIR),$(TIFFDIR))
  # We're using the internal Tiff library, so make sure it's built
-@@ -130,18 +134,18 @@
+@@ -132,18 +134,18 @@
  endif
  
  # The Tiff library references math functions.
@@ -84,15 +88,17 @@
  
  ifeq ($(URTLIB_DIR),$(URTDIR))
  # We're using the internal URT library, so make sure it's built
-@@ -178,22 +182,20 @@
+@@ -180,25 +182,20 @@
  # backward compatibility: program used to be gemtopbm
  	rm -f $(INSTALLBINARIES)/gemtopbm
  	ln -s $(INSTALLBINARIES)/gemtopnm$(EXE) $(INSTALLBINARIES)/gemtopbm
 -	$(MAKE) -C jbig install.bin
+-	$(MAKE) -C fiasco install.bin
  
  .PHONY: install.merge
  install.merge: install.merge.common
 -	$(MAKE) -C jbig install.bin
+-	$(MAKE) -C fiasco install.bin
  
  .PHONY: install.lib
  install.lib: install.lib.common
@@ -100,12 +106,14 @@
  .PHONY: install.man
  install.man: install.man.common
 -	$(MAKE) -C jbig install.man
- 
-+$(SRCDIR)/shhopt/libshhopt.a:
+-	$(MAKE) -C fiasco install.man
++
++$(SRCDIR)/shhopt/libshhopt.a:   
 +	cd ../shhopt; $(MAKE) libshhopt.a
  
  .PHONY: clean
  clean: clean.common
 -	$(MAKE) -C jbig clean
+-	$(MAKE) -C fiasco clean
  
  FORCE:

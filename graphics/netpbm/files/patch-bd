@@ -1,5 +1,5 @@
 --- pbm/Makefile.orig	Thu Jun 29 01:06:06 2000
-+++ pbm/Makefile	Sat Jul  1 12:00:00 2000
++++ pbm/Makefile	Sat Jul 15 00:00:00 2000
 @@ -4,13 +4,12 @@
  include $(SRCDIR)/Makefile.config
  
@@ -20,7 +20,7 @@
  
  # Library objects to be built and linked by Makefile.common:
  LIBOBJECTS = libpbm1.o libpbm2.o libpbm3.o libpbm4.o libpbm5.o 
-+LIBSOBJECTS = $(patsubst %.o, %.so, $(LIBOBJECTS))
++SHLIBOBJECTS = $(patsubst %.o, %.lo, $(LIBOBJECTS))
  ifneq (${VMS}x,x)
  LIBOBJECTS += libpbmvms.o
  endif
