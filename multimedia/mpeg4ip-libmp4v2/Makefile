@@ -1,0 +1,43 @@
+# New ports collection makefile for:	mpeg4ip-libmp4v2
+# Date created:		28 Sep 2004
+# Whom:			Michael Johnson <ahze@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	mpeg4ip
+PORTVERSION=	1.1
+CATEGORIES=	multimedia
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	-libmp4v2
+
+MAINTAINER=	ahze@FreeBSD.org
+COMMENT=	Mpeg-4 library and tools from mpeg4ip
+
+USE_GMAKE=	yes
+USE_GNOME=	gnometarget
+USE_INC_LIBTOOL_VER=15
+USE_REINPLACE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
+INSTALLS_SHLIB=	yes
+
+BUILD_WRKSRC=	${WRKSRC}/lib/mp4v2
+INSTALL_WRKSRC=	${WRKSRC}/lib/mp4v2
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 502110
+USE_GCC=	3.4
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|>&/|>/|; s|-Wmissing-declarations||; \
+			s|-Wmissing-prototypes||' \
+			${WRKSRC}/configure
+pre-build:
+	@cd ${WRKSRC}/lib/gnu && ${MAKE}
+
+.include <bsd.port.post.mk>
