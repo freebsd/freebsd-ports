@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	0.99.2a
+PORTVERSION=	0.99.9
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
@@ -54,7 +54,7 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .endif
 
 MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
-		pure-uploadscript.8
+		pure-uploadscript.8 pure-pw.8 pure-pwconvert.8 pure-quotacheck.8
 
 .include <bsd.port.pre.mk>
 
@@ -73,17 +73,20 @@ PAM_TARGET?=	pure-ftpd
 DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 		README README.Configuration-File README.Contrib README.LDAP \
 		README.Netfilter README.MySQL README.Virtual-Users \
-		THANKS
+		THANKS poweredby.jpg
 
 CONTRIB=	xml_python_processors.txt
 
 pre-fetch:
 	@${ECHO} "You can use the following additional options:"
 	@${ECHO} "WITH_DMALLOC=1        - enable use of the dmalloc library;"
-	@${ECHO} "WITH_LDAP=1           - Store users in LDAP directories;"
-	@${ECHO} "WITH_MYSQL=1          - Store users in MySQL databases;"
-	@${ECHO} "WITH_LANG=lang        - enable compilation of language support, lang is one of"
-	@${ECHO} "  english, german, romanian, french, polish, spanish, dutch or danish."
+	@${ECHO} "WITH_LDAP=1           - Support for users in LDAP \
+		directories;"
+	@${ECHO} "WITH_MYSQL=1          - Support for users in MySQL databases;"
+	@${ECHO} "WITH_LANG=lang        - enable compilation of language \
+		support, lang is one of"
+	@${ECHO} "  english, german, romanian, french, polish, spanish, dutch,"
+	@${ECHO} "  italian, brazilian-portuguese or danish."
 	@${ECHO}
 
 post-install:
