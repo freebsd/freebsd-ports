@@ -24,6 +24,7 @@ RUN_DEPENDS=	${MOZILLA}:${PORTSDIR}/www/${MOZILLA} \
 		${PKG_DBDIR}/ja-alias-fonts-1.0:${PORTSDIR}/japanese/alias-fonts
 
 WRKSRC=		${WRKDIR}/bin
+IGNORE=		"japanese/mozilla-jlp has been updated to 1.4"
 
 LATEST_LINK=	ja-mozilla-jlp-devel
 USE_X_PREFIX=	yes
