@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-back
-PORTVERSION=	0.8.4
+PORTVERSION=	0.8.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
