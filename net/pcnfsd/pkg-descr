@@ -1,3 +1,6 @@
 pcnfsd(8) is an authentication and support server to be used by NFS clients that
 don't have their own authentication system (e.g. DOS PC's, Macintoshes,
 fileserver translators...)
+
+This version includes the security patches discussed in CERT advisory
+CA:96-08.pcnfsd.
