@@ -1,0 +1,14 @@
+*** psdriv.cc.orig	Tue Jul  8 23:53:37 1997
+--- psdriv.cc	Tue Jul  8 23:53:43 1997
+***************
+*** 155,161 ****
+--- 155,163 ----
+      fprintf(graph->file, "%%!PS-Adobe-2.0\n");   // was 1.0
+      fprintf(graph->file, "%%%%Title: %s\n", graph->fileName);
+      fprintf(graph->file, "%%%%Creator: MiniGraphic\n");
++ #ifndef __FreeBSD__
+      fprintf(graph->file, "%%%%For: %s\n", cuserid(0));
++ #endif
+      time(&t);
+      fprintf(graph->file, "%%%%CreationDate: %s", ctime(&t));
+      fprintf(graph->file, "%%%%Pages: (atend)\n");

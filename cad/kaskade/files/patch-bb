@@ -1,0 +1,36 @@
+*** kaskade.cc.orig	Wed Jul  9 14:06:44 1997
+--- kaskade.cc	Wed Jul  9 14:09:41 1997
+***************
+*** 101,107 ****
+      if (Continue == True) return noPicture;
+      if (!Cmd.isTrue("pause")) { Continue = True; return noPicture; }
+  
+!     char s[5]; cout << " <CR>"; cout.flush(); gets(s); strToLower(s);
+      if (strchr(s,'q') || strchr(s,'e')) { cout << "\nEXIT FORCED\n"; exit(1); }
+      if (strchr(s,'c') || strchr(s,'g')) { Continue = True; return noPicture;  }
+      if (strchr(s,'p') || strchr(s,'P')) { return picture;  }
+--- 101,107 ----
+      if (Continue == True) return noPicture;
+      if (!Cmd.isTrue("pause")) { Continue = True; return noPicture; }
+  
+!     char s[5]; cout << " <CR>"; cout.flush(); fgets(s,256,stdin); strToLower(s);
+      if (strchr(s,'q') || strchr(s,'e')) { cout << "\nEXIT FORCED\n"; exit(1); }
+      if (strchr(s,'c') || strchr(s,'g')) { Continue = True; return noPicture;  }
+      if (strchr(s,'p') || strchr(s,'P')) { return picture;  }
+***************
+*** 110,116 ****
+  
+  void PauseAnyWay()
+  { 
+!     char s[5]; cout << " <CR>"; cout.flush(); gets(s); strToLower(s);
+      if (strchr(s,'q') || strchr(s,'e')) { cout << "\nExit forced\n"; exit(1); }
+  }
+  //-------------------------------------------------------------------------
+--- 110,116 ----
+  
+  void PauseAnyWay()
+  { 
+!     char s[5]; cout << " <CR>"; cout.flush(); fgets(s,256,stdin); strToLower(s);
+      if (strchr(s,'q') || strchr(s,'e')) { cout << "\nExit forced\n"; exit(1); }
+  }
+  //-------------------------------------------------------------------------

@@ -1,0 +1,36 @@
+*** int.cc.orig	Wed Jul  9 14:06:19 1997
+--- int.cc	Wed Jul  9 14:32:29 1997
+***************
+*** 188,194 ****
+      
+      // --		      interactive
+  
+!     // cout  << "Enter 'y' for mesh plot: "; cout.flush(); gets(s);
+      cout  << "Postscript picture of mesh plot: ";
+  
+      s[0] = 'y';
+--- 188,194 ----
+      
+      // --		      interactive
+  
+!     // cout  << "Enter 'y' for mesh plot: "; cout.flush(); fgets(s,256,stdin);
+      cout  << "Postscript picture of mesh plot: ";
+  
+      s[0] = 'y';
+***************
+*** 204,210 ****
+  	delete fePost;
+      }
+      
+!     // cout  << "Enter 'y' for solution plot: "; cout.flush(); gets(s);
+      cout  << "Postscript picture of solution plot: ";
+      s[0] = 'y';
+      if (strchr(s,'y') || strchr(s,'Y')) 
+--- 204,210 ----
+  	delete fePost;
+      }
+      
+!     // cout  << "Enter 'y' for solution plot: "; cout.flush(); fgets(s,256,stdin);
+      cout  << "Postscript picture of solution plot: ";
+      s[0] = 'y';
+      if (strchr(s,'y') || strchr(s,'Y')) 
