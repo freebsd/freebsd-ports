@@ -921,7 +921,6 @@ cowsay		ports/games/cowsay
 cp2fwb		ports/security/cp2fwb
 cpbk		ports/sysutils/cpbk
 cpdup		ports/sysutils/cpdup
-cphone		ports/net/cphone
 cplay		ports/audio/cplay
 cpmemu		ports/emulators/cpmemu
 cpmtools	ports/emulators/cpmtools
@@ -965,7 +964,6 @@ cryptlib	ports/security/cryptlib
 cryptopp	ports/security/cryptopp
 cryptoslam	ports/games/cryptoslam
 cryptplug	ports/security/cryptplug
-crystal		ports/devel/crystal
 cs-aspell	ports/textproc/cs-aspell
 cs-ooodict-CZ	ports/editors/ooodict-cs_CZ
 cscope		ports/devel/cscope
@@ -1016,7 +1014,6 @@ cvstrac		ports/devel/cvstrac
 cvsup		ports/net/cvsup
 cvsup-mirror	ports/net/cvsup-mirror
 cvsup-without-gui	ports/net/cvsup-without-gui
-cvsupit		ports/net/cvsupit
 cvsutils	ports/devel/cvsutils
 cvsweb		ports/devel/cvsweb
 cvsweb-converters	ports/sysutils/cvsweb-converters
@@ -1417,7 +1414,6 @@ en-ooodict-CA	ports/editors/ooodict-en_CA
 en-ooodict-GB	ports/editors/ooodict-en_GB
 en-ooodict-US	ports/editors/ooodict-en_US
 enca		ports/converters/enca
-encompass	ports/www/encompass
 endeavour	ports/x11-fm/endeavour
 enfle		ports/graphics/enfle
 engradient	ports/x11-toolkits/engradient
@@ -2035,7 +2031,6 @@ glide3		ports/graphics/glide3
 glife		ports/games/glife
 glimmer		ports/editors/glimmer
 glimpse		ports/textproc/glimpse
-glitter		ports/news/glitter
 gliv		ports/graphics/gliv
 glload		ports/sysutils/glload
 glmaze		ports/games/glmaze
@@ -2753,7 +2748,6 @@ ithought	ports/deskutils/ithought
 itk		ports/x11-toolkits/itk
 its		ports/emulators/its
 its4		ports/security/its4
-iv		ports/x11-toolkits/iv
 iverilog	ports/cad/iverilog
 ivtools		ports/graphics/ivtools
 iw-culmus	ports/hebrew/culmus
@@ -2879,9 +2873,6 @@ ja-jisx0213-fonts	ports/japanese/jisx0213-fonts
 ja-jls		ports/japanese/jls
 ja-jmode	ports/japanese/jmode
 ja-jpilot	ports/japanese/jpilot
-ja-jtex209-ascii	ports/japanese/jtex209-ascii
-ja-jtex209-both	ports/japanese/jtex209-both
-ja-jtex209-ntt	ports/japanese/jtex209-ntt
 ja-jvim		ports/japanese/jvim
 ja-jvim-canna	ports/japanese/jvim-canna
 ja-jvim-canna+freewnn	ports/japanese/jvim-canna+freewnn
@@ -3099,9 +3090,7 @@ ja-sed		ports/japanese/sed
 ja-seizedesktop	ports/japanese/seizedesktop
 ja-shinonome	ports/japanese/shinonome
 ja-sj3		ports/japanese/sj3
-ja-sjxa		ports/japanese/sjxa
 ja-skk		ports/japanese/skk
-ja-skk-elisp	ports/japanese/skk-elisp
 ja-skk-jisyo	ports/japanese/skk-jisyo
 ja-skk-jisyo-cdb	ports/japanese/skk-jisyo-cdb
 ja-skk-tools	ports/japanese/skk-tools
@@ -3142,9 +3131,6 @@ ja-today	ports/japanese/today
 ja-truetypefonts	ports/japanese/truetypefonts
 ja-typist	ports/japanese/typist
 ja-vera-fpw	ports/japanese/vera-fpw
-ja-vfghostscript	ports/japanese/vfghostscript
-ja-vfghostscript5	ports/japanese/vfghostscript5
-ja-vfghostscript55	ports/japanese/vfghostscript55
 ja-vflib	ports/japanese/vflib
 ja-vftool	ports/japanese/vftool
 ja-vfxdvi118	ports/japanese/vfxdvi118
@@ -3195,7 +3181,6 @@ ja-xjman	ports/japanese/xjman
 ja-xjman-3	ports/japanese/xjman-3
 ja-xjtext	ports/japanese/xjtext
 ja-xmsgsaver	ports/japanese/xmsgsaver
-ja-xnetmaj	ports/japanese/xnetmaj
 ja-xpdf		ports/japanese/xpdf
 ja-xshodo	ports/japanese/xshodo
 ja-xshodou	ports/japanese/xshodou
@@ -3429,7 +3414,6 @@ kdeutils3	ports/misc/kdeutils3
 kdevelop	ports/devel/kdevelop
 kdiff3		ports/textproc/kdiff3
 kdirstat	ports/sysutils/kdirstat
-kelp		ports/devel/kelp
 kenny		ports/misc/kenny
 kermit		ports/comms/kermit
 keychain	ports/security/keychain
@@ -3475,10 +3459,8 @@ ko-bitchx	ports/korean/bitchx
 ko-elm		ports/korean/elm
 ko-engdic	ports/korean/engdic
 ko-eterm	ports/korean/eterm
-ko-ftghostscript5	ports/korean/ftghostscript5
 ko-gau		ports/korean/gau
 ko-ghostscript-gnu-korfont	ports/korean/ghostscript-gnu-korfont
-ko-ghostscript55httf	ports/korean/ghostscript55httf
 ko-gtkcomm	ports/korean/gtkcomm
 ko-h2ps		ports/korean/h2ps
 ko-han		ports/korean/han
@@ -3502,7 +3484,6 @@ ko-hlatexp-pkfonts300	ports/korean/hlatexp-pkfonts300
 ko-hlatexp-pkfonts600	ports/korean/hlatexp-pkfonts600
 ko-hmconv	ports/korean/hmconv
 ko-hpscat	ports/korean/hpscat
-ko-htexp	ports/korean/htexp
 ko-imhangul	ports/korean/imhangul
 ko-imhangul_status_applet	ports/korean/imhangul_status_applet
 ko-johabfonts	ports/korean/johabfonts
@@ -4711,7 +4692,6 @@ nntp		ports/news/nntp
 nntpbtr		ports/news/nntpbtr
 nntpcache	ports/news/nntpcache
 no-aspell	ports/textproc/no-aspell
-no-ispell	ports/textproc/no-ispell
 no-login	ports/sysutils/no-login
 noattach	ports/mail/noattach
 nocc		ports/mail/nocc
@@ -4840,12 +4820,10 @@ opendchub	ports/net/opendchub
 opendis		ports/graphics/opendis
 opendx		ports/graphics/opendx
 opendx-samples	ports/graphics/opendx-samples
-opengatekeeper	ports/net/opengatekeeper
 opengk		ports/net/opengk
 opengl-man	ports/graphics/opengl-man
 openglad	ports/games/openglad
 openh323	ports/net/openh323
-openh323proxy	ports/net/openh323proxy
 openhbci	ports/finance/openhbci
 openjade	ports/textproc/openjade
 openjit		ports/java/openjit
@@ -4989,7 +4967,6 @@ p5-AtExit	ports/devel/p5-AtExit
 p5-Attribute-Handlers	ports/devel/p5-Attribute-Handlers
 p5-Audio-CD	ports/audio/p5-Audio-CD
 p5-Audio-Wav	ports/audio/p5-Audio-Wav
-p5-Authen-Krb4	ports/security/p5-Authen-Krb4
 p5-Authen-Krb5	ports/security/p5-Authen-Krb5
 p5-Authen-PAM	ports/security/p5-Authen-PAM
 p5-Authen-Radius	ports/security/p5-Authen-Radius
@@ -5347,7 +5324,6 @@ p5-Getopt-Mixed	ports/devel/p5-Getopt-Mixed
 p5-Glade	ports/x11-toolkits/p5-Glade
 p5-Glade-Perl	ports/devel/p5-Glade-Perl
 p5-Gnome	ports/x11-toolkits/p5-Gnome
-p5-GnomeApplet	ports/x11-toolkits/p5-GnomeApplet
 p5-GnomePrint	ports/print/p5-GnomePrint
 p5-GnuPG-Interface	ports/security/p5-GnuPG-Interface
 p5-Graph	ports/math/p5-Graph
