@@ -282,6 +282,7 @@
     SUBDIR += p5-Sort-PolySort
     SUBDIR += p5-Spreadsheet-ParseExcel
     SUBDIR += p5-Spreadsheet-WriteExcel
+    SUBDIR += p5-Spreadsheet-WriteExcelXML
     SUBDIR += p5-String-Scanf
     SUBDIR += p5-String-ShellQuote
     SUBDIR += p5-String-ShowDiff
