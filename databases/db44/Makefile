@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	db3
-PORTVERSION=	3.1.14
+PORTVERSION=	3.1.17
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/${PORTVERSION}/
 DISTNAME=	db-${PORTVERSION}
