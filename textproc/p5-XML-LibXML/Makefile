@@ -22,7 +22,7 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ENV=	XMLPREFIX='${PREFIX}'
+CONFIGURE_ENV=	XMLPREFIX=${LOCALBASE}
 
 MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::CDATASection.3 XML::LibXML::Comment.3 \
@@ -34,6 +34,10 @@ MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::Parser.3 XML::LibXML::SAX.3 \
 		XML::LibXML::SAX::Builder.3 XML::LibXML::SAX::Generator.3 \
 		XML::LibXML::Text.3
+
+post-patch:
+	@${PERL} -pi -e 's,(-MXML::SAX),-I${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH} \1,g' \
+		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.pre.mk>
 
