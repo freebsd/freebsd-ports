@@ -14,6 +14,8 @@ EXTRACT_ONLY=	thb20.tar.gz
 
 MAINTAINER=	lioux@FreeBSD.org
 
+IGNORE=		Current version is no longer available anywhere
+
 _DONT_INCLUDE_MK_=yes
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs

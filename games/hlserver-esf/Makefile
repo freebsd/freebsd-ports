@@ -14,6 +14,8 @@ DISTNAME=	esfb100
 
 MAINTAINER=	lioux@FreeBSD.org
 
+IGNORE=         Current version is no longer available anywhere
+
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
