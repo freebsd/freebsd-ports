@@ -24,12 +24,14 @@ ALL_TARGET=	world MOSMLHOME=$(MOSMLHOME)
 INSTALL_TARGET=	install MOSMLHOME=$(MOSMLHOME)
 WRKSRC=		${WRKDIR}/mosml/src
 USE_PERL5=	yes
+USE_REINPLACE=	yes
+MAKE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
+post-patch:
+	${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
+		${REINPLACE_CMD} -e "s,-O2,${CFLAGS} -I${LOCALBASE}/include,"
 
 post-install:
 	${SED} -e 's|^MOSMLHOME=.*|MOSMLHOME=${MOSMLHOME}|' \
