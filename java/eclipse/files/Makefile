@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 ECHO=		/bin/echo
+FIND=		/usr/bin/find
 MKDIR=		/bin/mkdir -p
 SED=		sed
 ANT=    	ant -Dos=$(ECLIPSE_OS) -Dws=$(ECLIPSE_WS)
@@ -43,34 +44,6 @@ LAUNCHER_LIBS=  `pkg-config --libs gtk+-2.0`
 ECLIPSE_TOPLEVEL_FILES= \
 	startup.jar splash.bmp cpl-v10.html \
 	install.ini notice.html .eclipseproduct
-
-ECLIPSE_CORE_FEATURES= \
-	org.eclipse.jdt \
-	org.eclipse.jdt.source \
-	org.eclipse.pde	\
-	org.eclipse.platform \
-	org.eclipse.platform.source \
-	org.eclipse.team.extras
-
-ECLIPSE_GTK_FEATURES= \
-	org.eclipse.platform.freebsd.gtk \
-	org.eclipse.platform.freebsd.gtk.source \
-	org.eclipse.sdk.freebsd.gtk \
-
-ECLIPSE_MOTIF_FEATURES= \
-	org.eclipse.platform.freebsd.gtk \
-	org.eclipse.platform.freebsd.gtk.source \
-	org.eclipse.sdk.freebsd.gtk \
-
-ECLIPSE_FEATURES= $(ECLIPSE_CORE_FEATURES)
-
-.if $(ECLIPSE_WS) == gtk
-ECLIPSE_FEATURES+= $(ECLIPSE_GTK_FEATURES)
-.endif
-
-.if $(ECLIPSE_WS) == motif
-ECLIPSE_FEATURES+= $(ECLIPSE_MOTIF_FEATURES)
-.endif
 
 all: binaries java
 
@@ -129,7 +102,7 @@ build-doc:
 	$(ANT) -f build.xml init buildDoc
 
 build-install:
-	$(ANT) -f build.xml install
+	$(ANT) -f build.xml install gatherFeatureBinaries gatherFeatureSources
 
 install:
 	@$(ECHO) "===> Creating destination directory..."
@@ -146,13 +119,7 @@ install:
 .for i in $(ECLIPSE_TOPLEVEL_FILES)
 	$(BSD_INSTALL_DATA) plugins/org.eclipse.platform/$i $(PORTDESTDIR)
 .endfor
-.for i in $(ECLIPSE_FEATURES)
-	@$(ECHO) "===> Installing feature $i"
-	$(ANT) -f features/$i-feature/build.xml \
-		-Dfeature.base=$(PORTDESTDIR) \
-		-Dinclude.children=yes \
-		gather.bin.parts
-.endfor
+	@$(FIND) features -name *.zip -exec unzip -o {} -d $(PORTDESTDIR) \;
 
 clean:
 	rm -rf $(LIBUPDATE_DST)/$(LIBUPDATE)

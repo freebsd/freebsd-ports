@@ -37,11 +37,6 @@ eclipse/features/org.eclipse.platform_2.1.1/eclipse_update_120.jpg
 eclipse/features/org.eclipse.platform_2.1.1/feature.properties
 eclipse/features/org.eclipse.platform_2.1.1/feature.xml
 eclipse/features/org.eclipse.platform_2.1.1/license.html
-eclipse/features/org.eclipse.sdk.freebsd.gtk_2.1.1/cpl-v10.html
-eclipse/features/org.eclipse.sdk.freebsd.gtk_2.1.1/eclipse_update_120.jpg
-eclipse/features/org.eclipse.sdk.freebsd.gtk_2.1.1/feature.properties
-eclipse/features/org.eclipse.sdk.freebsd.gtk_2.1.1/feature.xml
-eclipse/features/org.eclipse.sdk.freebsd.gtk_2.1.1/license.html
 eclipse/features/org.eclipse.team.extras_2.1.0/cpl-v10.html
 eclipse/features/org.eclipse.team.extras_2.1.0/eclipse_update_120.jpg
 eclipse/features/org.eclipse.team.extras_2.1.0/feature.properties
@@ -677,6 +672,36 @@ eclipse/plugins/org.eclipse.jdt.source_2.1.1/about.properties
 eclipse/plugins/org.eclipse.jdt.source_2.1.1/eclipse32.gif
 eclipse/plugins/org.eclipse.jdt.source_2.1.1/plugin.properties
 eclipse/plugins/org.eclipse.jdt.source_2.1.1/plugin.xml
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.core_2.1.1/about.html
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.core_2.1.1/jdtCompilerAdaptersrc.zip
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.core_2.1.1/jdtcoresrc.zip
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.core_2.1.1/schema/classpathContainerInitializer.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.core_2.1.1/schema/classpathVariableInitializer.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.core_2.1.1/schema/codeFormatter.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.debug.ui_2.1.1/about.html
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.debug.ui_2.1.1/jdiuisrc.zip
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.debug.ui_2.1.1/schema/vmInstallTypePage.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.debug_2.1.0/about.html
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.debug_2.1.0/jdimodelsrc.zip
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.debug_2.1.0/jdisrc.zip
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.junit_2.1.1/about.html
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.junit_2.1.1/junitsupportsrc.zip
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.junit_2.1.1/schema/testRunListeners.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.launching_2.1.1/about.html
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.launching_2.1.1/launchingsrc.zip
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.launching_2.1.1/lib/launchingsupportsrc.zip
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.launching_2.1.1/schema/classpathProviders.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.launching_2.1.1/schema/runtimeClasspathEntryResolvers.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.launching_2.1.1/schema/vmConnectors.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.launching_2.1.1/schema/vmInstallTypes.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.ui_2.1.1/about.html
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.ui_2.1.1/jdtsrc.zip
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.ui_2.1.1/schema/classpathContainerPage.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.ui_2.1.1/schema/javaEditorTextHovers.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.ui_2.1.1/schema/javaElementFilters.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.ui_2.1.1/schema/javadocCompletionProcessor.exsd
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.junit_3.8.1/about.html
+eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.junit_3.8.1/junitsrc.zip
 eclipse/plugins/org.eclipse.jdt.ui_2.1.1/about.html
 eclipse/plugins/org.eclipse.jdt.ui_2.1.1/icons/full/clcl16/add_exc.gif
 eclipse/plugins/org.eclipse.jdt.ui_2.1.1/icons/full/clcl16/alphab_sort_co.gif
@@ -1118,6 +1143,23 @@ eclipse/plugins/org.eclipse.pde.runtime_2.1.0/plugin.xml
 eclipse/plugins/org.eclipse.pde.source_2.1.0/about.html
 eclipse/plugins/org.eclipse.pde.source_2.1.0/plugin.properties
 eclipse/plugins/org.eclipse.pde.source_2.1.0/plugin.xml
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.build_2.1.0/about.html
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.build_2.1.0/lib/pdebuild-antsrc.zip
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.build_2.1.0/pdebuildsrc.zip
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.core_2.1.0/about.html
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.core_2.1.0/pdecoresrc.zip
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.core_2.1.0/schema/source.exsd
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.runtime_2.1.0/about.html
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.runtime_2.1.0/pdertsrc.zip
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.ui_2.1.0/about.html
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.ui_2.1.0/pdeuiantsrc.zip
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.ui_2.1.0/pdeuisrc.zip
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.ui_2.1.0/schema/newExtension.exsd
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.ui_2.1.0/schema/projectGenerators.exsd
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.ui_2.1.0/schema/templates.exsd
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde_2.1.0/about.html
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde_2.1.0/ant_tasks/pde-antsrc.zip
+eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde_2.1.0/pdesrc.zip
 eclipse/plugins/org.eclipse.pde.ui_2.1.0/about.html
 eclipse/plugins/org.eclipse.pde.ui_2.1.0/icons/full/clcl16/add_att.gif
 eclipse/plugins/org.eclipse.pde.ui_2.1.0/icons/full/clcl16/clear.gif
@@ -1409,6 +1451,11 @@ eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/about.properties
 eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/eclipse32.gif
 eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/plugin.properties
 eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/plugin.xml
+eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/src/org.eclipse.swt.gtk_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/src/org.eclipse.swt.gtk_2.1.1/cpl-v10.html
+eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/src/org.eclipse.swt.gtk_2.1.1/lgpl-v21.txt
+eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/src/org.eclipse.swt.gtk_2.1.1/ws/gtk/swt-pisrc.zip
+eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/src/org.eclipse.swt.gtk_2.1.1/ws/gtk/swtsrc.zip
 eclipse/plugins/org.eclipse.platform.freebsd.gtk_2.1.1/about.html
 eclipse/plugins/org.eclipse.platform.freebsd.gtk_2.1.1/about.ini
 eclipse/plugins/org.eclipse.platform.freebsd.gtk_2.1.1/about.mappings
@@ -1423,6 +1470,160 @@ eclipse/plugins/org.eclipse.platform.source_2.1.1/about.properties
 eclipse/plugins/org.eclipse.platform.source_2.1.1/eclipse32.gif
 eclipse/plugins/org.eclipse.platform.source_2.1.1/plugin.properties
 eclipse/plugins/org.eclipse.platform.source_2.1.1/plugin.xml
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.apache.ant_1.5.3/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.apache.ant_1.5.3/antsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.apache.lucene_1.2.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.apache.lucene_1.2.1/lucene-1.2-src.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.apache.lucene_1.2.1/parsersrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.apache.xerces_4.0.13/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.apache.xerces_4.0.13/xercessrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ant.core_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ant.core_2.1.1/antsupportsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ant.core_2.1.1/lib/antsupportlibsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ant.core_2.1.1/schema/antTasks.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ant.core_2.1.1/schema/antTypes.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ant.core_2.1.1/schema/extraClasspathEntries.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.compare_2.1.0/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.compare_2.1.0/comparesrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.compare_2.1.0/schema/contentMergeViewers.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.compare_2.1.0/schema/contentViewers.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.compare_2.1.0/schema/structureCreators.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.compare_2.1.0/schema/structureMergeViewers.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.boot_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.boot_2.1.1/bootsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/ant_tasks/resources-antsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/resourcessrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/schema/builders.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/schema/fileModificationValidator.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/schema/markers.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/schema/moveDeleteHook.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/schema/natures.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/schema/teamHook.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.runtime_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.runtime_2.1.1/runtimesrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.runtime_2.1.1/schema/applications.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.runtime_2.1.1/schema/urlHandlers.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.core_2.1.0/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.core_2.1.0/dtcoresrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.core_2.1.0/schema/breakpoints.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.core_2.1.0/schema/launchConfigurationComparators.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.core_2.1.0/schema/launchConfigurationTypes.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.core_2.1.0/schema/launchers.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.core_2.1.0/schema/sourceLocators.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.core_2.1.0/schema/statusHandlers.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/dtuisrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/schema/consoleColorProviders.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/schema/consoleLineTrackers.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/schema/debugActionGroups.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/schema/debugModelPresentations.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/schema/launchConfigurationTabGroups.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/schema/launchConfigurationTypeImages.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/schema/launchGroups.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/schema/launchShortcuts.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.appserver_2.1.0/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.appserver_2.1.0/appserversrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.appserver_2.1.0/schema/server.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.ui_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.ui_2.1.1/helpworkbenchsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.webapp_2.1.1/WEB-INF/lib/servletssrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.webapp_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.webapp_2.1.1/webappsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help_2.1.1/helpsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help_2.1.1/schema/browser.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help_2.1.1/schema/contexts.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help_2.1.1/schema/luceneAnalyzer.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help_2.1.1/schema/support.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help_2.1.1/schema/toc.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help_2.1.1/schema/webapp.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.jface.text_2.1.0/jfacetextsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.jface_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.jface_2.1.1/jfacesrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.platform_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.platform_2.1.1/startupsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.search_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.search_2.1.1/schema/searchPages.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.search_2.1.1/schema/searchResultSorters.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.search_2.1.1/searchsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.core_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.core_2.1.1/schema/fileTypes.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.core_2.1.1/schema/ignore.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.core_2.1.1/schema/projectSets.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.core_2.1.1/schema/repository.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.core_2.1.1/teamsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.cvs.core_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.cvs.core_2.1.1/cvssrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.cvs.ssh_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.cvs.ssh_2.1.1/teamcvssshsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.cvs.ui_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.cvs.ui_2.1.1/teamcvsuisrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.ui_2.1.0/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.ui_2.1.0/schema/configurationWizards.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.ui_2.1.0/teamuisrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.text_2.1.0/textsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.tomcat_4.0.6.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.tomcat_4.0.6.1/tomcatwrappersrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.editors_2.1.0/editorssrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.externaltools_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.externaltools_2.1.1/externaltoolssrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.externaltools_2.1.1/lib/antrunnersrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.versioncheck_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.versioncheck_2.1.1/versionchecksrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.views_2.1.0/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.views_2.1.0/viewssrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.workbench.texteditor_2.1.0/texteditorsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.workbench_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.workbench_2.1.1/workbenchsrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/acceleratorConfigurations.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/acceleratorScopes.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/acceleratorSets.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/actionDefinitions.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/actionSetPartAssociations.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/actionSets.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/capabilities.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/commands.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/commonAction.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/commonExpression.mxsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/decorators.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/documentProviders.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/dropActions.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/editorActions.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/editors.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/elementFactories.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/exportWizards.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/fontDefinitions.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/importWizards.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/markerHelp.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/markerImageProviders.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/markerResolution.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/markerUpdaters.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/newWizards.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/perspectiveExtensions.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/perspectives.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/popupMenus.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/preferencePages.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/projectNatureImages.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/propertyPages.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/resourceFilters.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/startup.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/viewActions.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/views.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema/workingSets.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/uisrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.core_2.1.0/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.core_2.1.0/schema/featureTypes.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.core_2.1.0/schema/installHandlers.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.core_2.1.0/schema/siteTypes.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.core_2.1.0/updatecoresrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui.forms_2.1.0/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui.forms_2.1.0/formssrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui_2.1.1/about.html
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui_2.1.1/schema/searchCategory.exsd
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui_2.1.1/updateuisrc.zip
+eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui_2.1.1/webapp/WEB-INF/lib/update-servletssrc.zip
 eclipse/plugins/org.eclipse.platform_2.1.1/about.html
 eclipse/plugins/org.eclipse.platform_2.1.1/about.ini
 eclipse/plugins/org.eclipse.platform_2.1.1/about.mappings
@@ -1437,13 +1638,6 @@ eclipse/plugins/org.eclipse.platform_2.1.1/plugin_customization.properties
 eclipse/plugins/org.eclipse.platform_2.1.1/splash.bmp
 eclipse/plugins/org.eclipse.platform_2.1.1/startup.jar
 eclipse/plugins/org.eclipse.platform_2.1.1/welcome.xml
-eclipse/plugins/org.eclipse.sdk.freebsd.gtk_2.1.1/about.html
-eclipse/plugins/org.eclipse.sdk.freebsd.gtk_2.1.1/about.ini
-eclipse/plugins/org.eclipse.sdk.freebsd.gtk_2.1.1/about.mappings
-eclipse/plugins/org.eclipse.sdk.freebsd.gtk_2.1.1/about.properties
-eclipse/plugins/org.eclipse.sdk.freebsd.gtk_2.1.1/eclipse32.gif
-eclipse/plugins/org.eclipse.sdk.freebsd.gtk_2.1.1/plugin.properties
-eclipse/plugins/org.eclipse.sdk.freebsd.gtk_2.1.1/plugin.xml
 eclipse/plugins/org.eclipse.search_2.1.1/about.html
 eclipse/plugins/org.eclipse.search_2.1.1/icons/full/clcl16/search_goto.gif
 eclipse/plugins/org.eclipse.search_2.1.1/icons/full/clcl16/search_history.gif
@@ -1559,6 +1753,12 @@ eclipse/plugins/org.eclipse.team.cvs.ui_2.1.1/icons/full/wizban/newlocation_wizb
 eclipse/plugins/org.eclipse.team.cvs.ui_2.1.1/plugin.properties
 eclipse/plugins/org.eclipse.team.cvs.ui_2.1.1/plugin.xml
 eclipse/plugins/org.eclipse.team.cvs.ui_2.1.1/teamcvsui.jar
+eclipse/plugins/org.eclipse.team.extras.source_2.1.0/src/org.eclipse.team.ftp_2.1.0/about.html
+eclipse/plugins/org.eclipse.team.extras.source_2.1.0/src/org.eclipse.team.ftp_2.1.0/ftpsrc.zip
+eclipse/plugins/org.eclipse.team.extras.source_2.1.0/src/org.eclipse.team.webdav_2.1.0/about.html
+eclipse/plugins/org.eclipse.team.extras.source_2.1.0/src/org.eclipse.team.webdav_2.1.0/webdavprovidersrc.zip
+eclipse/plugins/org.eclipse.team.extras.source_2.1.0/src/org.eclipse.webdav_2.1.0/about.html
+eclipse/plugins/org.eclipse.team.extras.source_2.1.0/src/org.eclipse.webdav_2.1.0/webdavsrc.zip
 eclipse/plugins/org.eclipse.team.extras_2.1.0/about.html
 eclipse/plugins/org.eclipse.team.extras_2.1.0/about.ini
 eclipse/plugins/org.eclipse.team.extras_2.1.0/about.mappings
@@ -2315,6 +2515,11 @@ eclipse/startup.jar
 @dirrm eclipse/plugins/org.eclipse.team.ftp_2.1.0/doc-html
 @dirrm eclipse/plugins/org.eclipse.team.ftp_2.1.0
 @dirrm eclipse/plugins/org.eclipse.team.extras_2.1.0
+@dirrm eclipse/plugins/org.eclipse.team.extras.source_2.1.0/src/org.eclipse.webdav_2.1.0
+@dirrm eclipse/plugins/org.eclipse.team.extras.source_2.1.0/src/org.eclipse.team.webdav_2.1.0
+@dirrm eclipse/plugins/org.eclipse.team.extras.source_2.1.0/src/org.eclipse.team.ftp_2.1.0
+@dirrm eclipse/plugins/org.eclipse.team.extras.source_2.1.0/src
+@dirrm eclipse/plugins/org.eclipse.team.extras.source_2.1.0
 @dirrm eclipse/plugins/org.eclipse.team.cvs.ui_2.1.1/icons/full/wizban
 @dirrm eclipse/plugins/org.eclipse.team.cvs.ui_2.1.1/icons/full/wizards
 @dirrm eclipse/plugins/org.eclipse.team.cvs.ui_2.1.1/icons/full/ovr16
@@ -2352,10 +2557,71 @@ eclipse/startup.jar
 @dirrm eclipse/plugins/org.eclipse.search_2.1.1/icons/full
 @dirrm eclipse/plugins/org.eclipse.search_2.1.1/icons
 @dirrm eclipse/plugins/org.eclipse.search_2.1.1
-@dirrm eclipse/plugins/org.eclipse.sdk.freebsd.gtk_2.1.1
 @dirrm eclipse/plugins/org.eclipse.platform_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui_2.1.1/webapp/WEB-INF/lib
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui_2.1.1/webapp/WEB-INF
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui_2.1.1/webapp
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.ui.forms_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.core_2.1.0/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.update.core_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.workbench_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.workbench.texteditor_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.views_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.versioncheck_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.externaltools_2.1.1/lib
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.externaltools_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ui.editors_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.tomcat_4.0.6.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.text_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.ui_2.1.0/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.ui_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.cvs.ui_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.cvs.ssh_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.cvs.core_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.core_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.team.core_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.search_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.search_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.platform_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.jface_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.jface.text_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.webapp_2.1.1/WEB-INF/lib
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.webapp_2.1.1/WEB-INF
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.webapp_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.ui_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.appserver_2.1.0/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.help.appserver_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.ui_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.core_2.1.0/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.debug.core_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.runtime_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.runtime_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1/ant_tasks
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.resources_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.core.boot_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.compare_2.1.0/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.compare_2.1.0
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ant.core_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ant.core_2.1.1/lib
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.eclipse.ant.core_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.apache.xerces_4.0.13
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.apache.lucene_1.2.1
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src/org.apache.ant_1.5.3
+@dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1/src
 @dirrm eclipse/plugins/org.eclipse.platform.source_2.1.1
 @dirrm eclipse/plugins/org.eclipse.platform.freebsd.gtk_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/src/org.eclipse.swt.gtk_2.1.1/ws/gtk
+@dirrm eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/src/org.eclipse.swt.gtk_2.1.1/ws
+@dirrm eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/src/org.eclipse.swt.gtk_2.1.1
+@dirrm eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1/src
 @dirrm eclipse/plugins/org.eclipse.platform.freebsd.gtk.source_2.1.1
 @dirrm eclipse/plugins/org.eclipse.platform.doc.user_2.1.1
 @dirrm eclipse/plugins/org.eclipse.platform.doc.isv_2.1.0
@@ -2412,6 +2678,16 @@ eclipse/startup.jar
 @dirrm eclipse/plugins/org.eclipse.pde.ui_2.1.0/icons/full
 @dirrm eclipse/plugins/org.eclipse.pde.ui_2.1.0/icons
 @dirrm eclipse/plugins/org.eclipse.pde.ui_2.1.0
+@dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde_2.1.0/ant_tasks
+@dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde_2.1.0
+@dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.ui_2.1.0/schema
+@dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.ui_2.1.0
+@dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.runtime_2.1.0
+@dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.core_2.1.0/schema
+@dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.core_2.1.0
+@dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.build_2.1.0/lib
+@dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0/src/org.eclipse.pde.build_2.1.0
+@dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0/src
 @dirrm eclipse/plugins/org.eclipse.pde.source_2.1.0
 @dirrm eclipse/plugins/org.eclipse.pde.runtime_2.1.0/icons/full/view16
 @dirrm eclipse/plugins/org.eclipse.pde.runtime_2.1.0/icons/full/ovr16
@@ -2444,6 +2720,20 @@ eclipse/startup.jar
 @dirrm eclipse/plugins/org.eclipse.jdt.ui_2.1.1/icons/full
 @dirrm eclipse/plugins/org.eclipse.jdt.ui_2.1.1/icons
 @dirrm eclipse/plugins/org.eclipse.jdt.ui_2.1.1
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.junit_3.8.1
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.ui_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.ui_2.1.1
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.launching_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.launching_2.1.1/lib
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.launching_2.1.1
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.junit_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.junit_2.1.1
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.debug_2.1.0
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.debug.ui_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.debug.ui_2.1.1
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.core_2.1.1/schema
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src/org.eclipse.jdt.core_2.1.1
+@dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1/src
 @dirrm eclipse/plugins/org.eclipse.jdt.source_2.1.1
 @dirrm eclipse/plugins/org.eclipse.jdt.launching_2.1.1/lib
 @dirrm eclipse/plugins/org.eclipse.jdt.launching_2.1.1
@@ -2532,8 +2822,6 @@ eclipse/startup.jar
 @dirrm eclipse/plugins/org.apache.xerces_4.0.13
 @dirrm eclipse/plugins/org.apache.lucene_1.2.1
 @dirrm eclipse/plugins/org.apache.ant_1.5.3
-@dirrm eclipse/features/org.eclipse.team.extras_2.1.0
-@dirrm eclipse/features/org.eclipse.sdk.freebsd.gtk_2.1.1
 @dirrm eclipse/features/org.eclipse.platform_2.1.1
 @dirrm eclipse/features/org.eclipse.platform.source_2.1.1
 @dirrm eclipse/features/org.eclipse.platform.freebsd.gtk_2.1.1

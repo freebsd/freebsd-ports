@@ -1,6 +1,9 @@
---- build.xml.orig	Thu Nov  7 15:18:47 2002
-+++ build.xml	Thu Feb 13 19:32:36 2003
-@@ -181,7 +187,19 @@
+
+$FreeBSD$
+
+--- build.xml.orig	Fri Jun 27 22:00:54 2003
++++ build.xml	Fri Jul 11 20:45:22 2003
+@@ -181,7 +181,19 @@
  				<equals arg1="${ws}" arg2="photon" />
  			</and>
  		</condition>
@@ -21,3 +24,28 @@
  		<condition property="win">
  			<and>
  			     <os family="windows" />
+@@ -192,6 +204,24 @@
+ 			     <os family="unix" />
+       		</and>
+ 		</condition>
++	</target>
++
++<!-- Gathers all plugins which belong to a feature into a zip, once for 
++     the source, once for the bin plugins. Should be called after run -->
++
++	<target name="gatherFeatureSources" depends="init">
++		<antcall target="allElements">
++			<param name="target" value="build.sources" />
++		</antcall>
++			<antcall target="allElements">
++			<param name="target" value="zip.sources" />
++		</antcall>
++	</target>
++
++	<target name="gatherFeatureBinaries" depends="init">
++		<antcall target="allElements">
++			<param name="target" value="zip.distribution" />
++		</antcall>
+ 	</target>
+ 
+ </project>
