@@ -13,7 +13,11 @@ MASTER_SITES=   http://www.boutell.com/gd/http/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
+		ttf.4:${PORTSDIR}/print/freetype \
+		Xpm.4:${PORTSDIR}/graphics/xpm
+
+USE_XLIB=	YES
 
 pre-install:
 	${MKDIR} ${PREFIX}/include/gd
