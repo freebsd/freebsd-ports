@@ -10,10 +10,10 @@ SNAPDATE=	2003-12-31
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
 PORTNAME=	gcc
-PORTVERSION=	3.4
+PORTVERSION=	3.4.0
 PORTREVISION=	${SNAPDATE:S/-//g}
 CATEGORIES=	lang java
-VERSIONSTRING=	${PORTVERSION}-${PORTREVISION}
+VERSIONSTRING=	3.4-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -44,11 +44,10 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
-GCC_VER=	${PORTVERSION:C/\.0$//}
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${GCC_VER}
-PLIST_SUB=	GCC_VER=${GCC_VER} GNU_HOST=${CONFIGURE_TARGET}
+TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
+PLIST_SUB=	GCC_VER=${PORTVERSION} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
@@ -143,7 +142,7 @@ post-install:
 		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
 		${PREFIX}/man/man1/${f}-34.1 )
 .endfor
-	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION}
+	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug34
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
 .for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
