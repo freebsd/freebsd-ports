@@ -1,8 +1,3 @@
-dri-devel installs unstable DRI drivers from a CVS snapshot,
-replacing parts of your existing XFree86-4 install.
-
-Current major updates include r200 (8500) support, Transform and
-Lighting for radeons, and pageflipping support for radeons.  Requires
-updated DRM to use.  See pkg-message for information.
+dri-devel installs DRI OpenGL hardware acceleration drivers from a CVS snapshot.
 
 WWW: http://people.freebsd.org/~anholt/dri/
