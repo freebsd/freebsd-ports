@@ -21,7 +21,7 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		popt.0:${PORTSDIR}/devel/popt \
 		gdbm.2:${PORTSDIR}/databases/gdbm \
 		vanessa_logger.0:${PORTSDIR}/devel/libvanessa_logger \
-		vanessa_socket.0:${PORTSDIR}/net/libvanessa_socket \
+		vanessa_socket.0:${PORTSDIR}/devel/libvanessa_socket \
 		vanessa_adt.0:${PORTSDIR}/devel/libvanessa_adt
 
 MAN1=		makegdbm.1
