@@ -7,6 +7,7 @@
 
 PORTNAME=	kronolith
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/			\
 		ftp://ftp.au.horde.org/pub/horde/kronolith/		\
@@ -22,9 +23,14 @@ RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-IS_INTERACTIVE=	'need to build mod_php4 with MCAL option set.'
 NO_BUILD=	yes
 USE_REINPLACE=	yes
+
+.if defined(WITH_APACHE2)
+HTPASSWD=	${LOCALBASE}/sbin/htpasswd
+.else
+HTPASSWD=	${LOCALBASE}/bin/htpasswd
+.endif
 
 REINPLACE_ARGS=	-i.beforeKronolith
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL
@@ -92,13 +98,13 @@ post-install:
 	  ${ECHO_MSG} "===> Creating ${LOCALBASE}/etc/mpasswd" ; \
 	  ${ECHO} -n "Please enter a password for www's calendar: " ; \
 	  (read PASSCAL;						\
-	   ${LOCALBASE}/bin/htpasswd -bc ${LOCALBASE}/etc/mpasswd www $${PASSCAL}; \
+	   ${HTPASSWD} -bc ${LOCALBASE}/etc/mpasswd www $${PASSCAL}; \
 	   ${REINPLACE_CMD} -e "s:%%PASSCAL%%:$${PASSCAL}:" ${CONFDIR}/conf.php) \
 	elif ! ${GREP} -q -e "^www" ${LOCALBASE}/etc/mpasswd ; then \
 	  ${ECHO_MSG} "===> Adding www into ${LOCALBASE}/etc/mpasswd" ; \
 	  ${ECHO} -n "Please enter a password for www's calendar: " ; \
 	  (read PASSCAL;						\
-	   ${LOCALBASE}/bin/htpasswd -b ${LOCALBASE}/etc/mpasswd www $${PASSCAL} ; \
+	   ${HTPASSWD} -b ${LOCALBASE}/etc/mpasswd www $${PASSCAL} ; \
 	   ${REINPLACE_CMD} -e "s:%%PASSCAL%%:$${PASSCAL}:" ${CONFDIR}/conf.php) \
 	else \
 	   ${REINPLACE_CMD} -e "s:%%PASSCAL%%:www_cal_password:" ${CONFDIR}/conf.php ; \
