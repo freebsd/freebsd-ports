@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500010
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-vector.hpp
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-vector.hpp
 .endif
 
 .include <bsd.port.post.mk>
