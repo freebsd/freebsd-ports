@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nylon
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/nylon/
 
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
 GNU_CONFIGURE=	yes
 # Necessary for $PREFIX to work:
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
 
 MAN1=		nylon.1
