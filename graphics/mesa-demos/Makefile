@@ -1,6 +1,6 @@
 # New ports collection makefile for:    mesa-demos
-# Date created:         Tue Feb  7 12:02:49  1995
-# Whom:                 anholt
+# Date created:         7 Nov 2003
+# Whom:                 anholt@FreeBSD.org
 #
 # $FreeBSD$
 #
