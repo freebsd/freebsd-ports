@@ -3,14 +3,14 @@
 # Date created:		22 May 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/05/23 07:58:58 tg Exp $
 #
 
 DISTNAME=	cs-0.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://cantor.informatik.rwth-aachen.de/pub/unix/
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	andy@icc.surw.chel.su
 
 NO_CDROM=	this port requires a written license
 ALL_TARGET=	cs
