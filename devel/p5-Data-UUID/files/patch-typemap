@@ -1,0 +1,11 @@
+--- typemap.orig	Tue Dec 11 01:20:31 2001
++++ typemap	Mon Jan 28 19:56:30 2002
+@@ -5,7 +5,7 @@
+ T_PTRUUID
+ 	if (sv_derived_from($arg, \"Data::UUID\")) {
+ 	    IV tmp = SvIV((SV*)SvRV($arg));
+-	    $var = INT2PTR($type,tmp);
++	    $var = ($type)(tmp);
+ 	}
+ 	else
+ 	    croak(\"$var is not of type Data::UUID\")
