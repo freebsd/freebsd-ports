@@ -7,6 +7,7 @@
 
 PORTNAME=	arts++
 PORTVERSION=	1-1-a8
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/arts++/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,6 +16,7 @@ MAINTAINER=	andreas@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NEWGCC=	yes
 CONFIGURE_ARGS+=--enable-shared
 
 MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
