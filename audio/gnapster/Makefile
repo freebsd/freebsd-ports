@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.gotlinux.org/~jasta/files/
 MAINTAINER=	cpiazza@FreeBSD.org
 
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+		Xpm.4:${PORTSDIR}/graphics/xpm \
+	 	ungif.5:${PORTSDIR}/graphics/libungif
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
