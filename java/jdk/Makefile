@@ -15,6 +15,7 @@ MAINTAINER=	nate@freebsd.org
 
 NO_CDROM=	"License doesn't allow distribution with fee"
 
+ONLY_FOR_ARCHS=	i386
 JDK_VERSION=	1.1.8
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 
