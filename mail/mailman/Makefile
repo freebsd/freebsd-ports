@@ -12,7 +12,20 @@ MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mailman
+.if defined(WITH_HTDIG)
+PKGNAMESUFFIX=	-with-htdig
+.endif
 EXTRACT_SUFX=	.tgz
+DIST_SUBDIR=	mailman
+
+.if defined(WITH_HTDIG)
+# Order of application of these patches is critical.
+PATCHFILES=	download.php\?group_id=103\&atid=300103\&file_id=63029\&aid=444879:patch1 \
+		htdig-2.1.3-0.3.patch.gz:patch2
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES=	http://sourceforge.net/tracker/:patch1 \
+		http://www.openinfo.co.uk/mailman/patches/444884/:patch2
+.endif
 
 MAINTAINER=	vivek@khera.org
 COMMENT=	A mailing list manager (MLM) with a user-friendly web front-end
@@ -20,6 +33,9 @@ COMMENT=	A mailing list manager (MLM) with a user-friendly web front-end
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 .if defined(WITH_CHINESE)
 RUN_DEPENDS+=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-cjkcodecs
+.endif
+.if defined(WITH_HTDIG)
+RUN_DEPENDS+=	htdig:${PORTSDIR}/textproc/htdig
 .endif
 
 HAS_CONFIGURE=	yes
@@ -29,6 +45,12 @@ CONFIGURE_ARGS=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
 		--with-username=${MM_USERNAME} \
 		--with-groupname=${MM_GROUPNAME} \
 		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
+
+.if defined(WITH_HTDIG)
+PLIST_SUB+=	SUB_HTDIG=""
+.else
+PLIST_SUB+=	SUB_HTDIG="@comment "
+.endif
 
 .include <bsd.port.pre.mk>
 

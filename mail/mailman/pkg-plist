@@ -1,8 +1,10 @@
+@comment $FreeBSD$
 @unexec if cmp -s %D/%%MMDIR%%/Mailman/mm_cfg.py %D/%%MMDIR%%/Mailman/mm_cfg.py.dist; then rm -f %D/%%MMDIR%%/Mailman/mm_cfg.py; fi
 @unexec rm -f %D/%%MMDIR%%/Mailman/mm_cfg.pyc
+@exec mkdir -p %D/%%MMDIR%%/archives
+%%SUB_HTDIG%%@exec mkdir -p %D/%%MMDIR%%/archives/htdig
 @exec mkdir -p %D/%%MMDIR%%/archives/private
 @exec mkdir -p %D/%%MMDIR%%/archives/public
-@exec mkdir -p %D/%%MMDIR%%/archives
 @exec mkdir -p %D/%%MMDIR%%/lists
 @exec mkdir -p %D/%%MMDIR%%/locks
 @exec mkdir -p %D/%%MMDIR%%/logs
@@ -78,8 +80,12 @@
 %%MMDIR%%/Mailman/Cgi/create.pyc
 %%MMDIR%%/Mailman/Cgi/edithtml.py
 %%MMDIR%%/Mailman/Cgi/edithtml.pyc
+%%SUB_HTDIG%%%%MMDIR%%/Mailman/Cgi/htdig.py
+%%SUB_HTDIG%%%%MMDIR%%/Mailman/Cgi/htdig.pyc
 %%MMDIR%%/Mailman/Cgi/listinfo.py
 %%MMDIR%%/Mailman/Cgi/listinfo.pyc
+%%SUB_HTDIG%%%%MMDIR%%/Mailman/Cgi/mmsearch.py
+%%SUB_HTDIG%%%%MMDIR%%/Mailman/Cgi/mmsearch.pyc
 %%MMDIR%%/Mailman/Cgi/options.py
 %%MMDIR%%/Mailman/Cgi/options.pyc
 %%MMDIR%%/Mailman/Cgi/private.py
@@ -305,6 +311,7 @@
 %%MMDIR%%/bin/add_members
 %%MMDIR%%/bin/arch
 %%MMDIR%%/bin/b4b5-archfix
+%%SUB_HTDIG%%%%MMDIR%%/bin/blow_away_htdig
 %%MMDIR%%/bin/change_pw
 %%MMDIR%%/bin/check_db
 %%MMDIR%%/bin/check_perms
@@ -331,8 +338,8 @@
 %%MMDIR%%/bin/qrunner
 %%MMDIR%%/bin/remove_members
 %%MMDIR%%/bin/rmlist
-%%MMDIR%%/bin/sync_members
 %%MMDIR%%/bin/show_qfiles
+%%MMDIR%%/bin/sync_members
 %%MMDIR%%/bin/transcheck
 %%MMDIR%%/bin/unshunt
 %%MMDIR%%/bin/update
@@ -343,7 +350,9 @@
 %%MMDIR%%/cgi-bin/confirm
 %%MMDIR%%/cgi-bin/create
 %%MMDIR%%/cgi-bin/edithtml
+%%SUB_HTDIG%%%%MMDIR%%/cgi-bin/htdig
 %%MMDIR%%/cgi-bin/listinfo
+%%SUB_HTDIG%%%%MMDIR%%/cgi-bin/mmsearch
 %%MMDIR%%/cgi-bin/options
 %%MMDIR%%/cgi-bin/private
 %%MMDIR%%/cgi-bin/rmlist
@@ -356,8 +365,12 @@
 %%MMDIR%%/cron/gate_news
 %%MMDIR%%/cron/mailpasswds
 %%MMDIR%%/cron/nightly_gzip
+%%SUB_HTDIG%%%%MMDIR%%/cron/nightly_htdig
 %%MMDIR%%/cron/paths.py
 %%MMDIR%%/cron/paths.pyc
+%%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig
+%%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig.pl
+%%SUB_HTDIG%%%%MMDIR%%/cron/remote_nightly_htdig_noshare
 %%MMDIR%%/cron/senddigests
 %%MMDIR%%/data/last_mailman_version
 %%MMDIR%%/data/sitelist.cfg
@@ -374,14 +387,14 @@
 %%MMDIR%%/messages/de/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/de/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/de/README.de
-%%MMDIR%%/messages/eu/LC_MESSAGES/mailman.mo
-%%MMDIR%%/messages/eu/LC_MESSAGES/mailman.po
-%%MMDIR%%/messages/eu/README.eu
 %%MMDIR%%/messages/es/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/es/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/es/README.es
 %%MMDIR%%/messages/et/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/et/LC_MESSAGES/mailman.po
+%%MMDIR%%/messages/eu/LC_MESSAGES/mailman.mo
+%%MMDIR%%/messages/eu/LC_MESSAGES/mailman.po
+%%MMDIR%%/messages/eu/README.eu
 %%MMDIR%%/messages/fi/LC_MESSAGES/mailman.mo
 %%MMDIR%%/messages/fi/LC_MESSAGES/mailman.po
 %%MMDIR%%/messages/fi/README.fi
@@ -693,6 +706,7 @@
 %%MMDIR%%/templates/de/unsub.txt
 %%MMDIR%%/templates/de/userpass.txt
 %%MMDIR%%/templates/de/verify.txt
+%%SUB_HTDIG%%%%MMDIR%%/templates/en/TOC_htsearch.html
 %%MMDIR%%/templates/en/admindbdetails.html
 %%MMDIR%%/templates/en/admindbpreamble.html
 %%MMDIR%%/templates/en/admindbsummary.html
@@ -716,6 +730,9 @@
 %%MMDIR%%/templates/en/emptyarchive.html
 %%MMDIR%%/templates/en/headfoot.html
 %%MMDIR%%/templates/en/help.txt
+%%SUB_HTDIG%%%%MMDIR%%/templates/en/htdig_access_error.html
+%%SUB_HTDIG%%%%MMDIR%%/templates/en/htdig_auth_failure.html
+%%SUB_HTDIG%%%%MMDIR%%/templates/en/htdig_conf.txt
 %%MMDIR%%/templates/en/invite.txt
 %%MMDIR%%/templates/en/listinfo.html
 %%MMDIR%%/templates/en/masthead.txt
@@ -1574,23 +1591,24 @@
 %%MMDIR%%/tests/test_security_mgr.py
 %%MMDIR%%/tests/test_smtp.py
 %%MMDIR%%/tests/testall.py
-%%PORTDOCS%%share/doc/mailman/ACKNOWLEDGMENTS
-%%PORTDOCS%%share/doc/mailman/BUGS
-%%PORTDOCS%%share/doc/mailman/FAQ
-%%PORTDOCS%%share/doc/mailman/FreeBSD-post-install-notes
-%%PORTDOCS%%share/doc/mailman/INSTALL
-%%PORTDOCS%%share/doc/mailman/NEWS
-%%PORTDOCS%%share/doc/mailman/README
-%%PORTDOCS%%share/doc/mailman/README-I18N.en
-%%PORTDOCS%%share/doc/mailman/README.CONTRIB
-%%PORTDOCS%%share/doc/mailman/README.EXIM
-%%PORTDOCS%%share/doc/mailman/README.NETSCAPE
-%%PORTDOCS%%share/doc/mailman/README.POSTFIX
-%%PORTDOCS%%share/doc/mailman/README.QMAIL
-%%PORTDOCS%%share/doc/mailman/README.SENDMAIL
-%%PORTDOCS%%share/doc/mailman/README.USERAGENT
-%%PORTDOCS%%share/doc/mailman/TODO
-%%PORTDOCS%%share/doc/mailman/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGMENTS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FreeBSD-post-install-notes
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-I18N.en
+%%PORTDOCS%%%%DOCSDIR%%/README.CONTRIB
+%%PORTDOCS%%%%DOCSDIR%%/README.EXIM
+%%PORTDOCS%%%%DOCSDIR%%/README.NETSCAPE
+%%PORTDOCS%%%%DOCSDIR%%/README.POSTFIX
+%%PORTDOCS%%%%DOCSDIR%%/README.QMAIL
+%%PORTDOCS%%%%DOCSDIR%%/README.SENDMAIL
+%%PORTDOCS%%%%DOCSDIR%%/README.USERAGENT
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/tests/msgs
 @dirrm %%MMDIR%%/tests/bounces
@@ -1667,10 +1685,10 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/messages/fr
 @dirrm %%MMDIR%%/messages/fi/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/fi
-@dirrm %%MMDIR%%/messages/et/LC_MESSAGES
-@dirrm %%MMDIR%%/messages/et
 @dirrm %%MMDIR%%/messages/eu/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/eu
+@dirrm %%MMDIR%%/messages/et/LC_MESSAGES
+@dirrm %%MMDIR%%/messages/et
 @dirrm %%MMDIR%%/messages/es/LC_MESSAGES
 @dirrm %%MMDIR%%/messages/es
 @dirrm %%MMDIR%%/messages/de/LC_MESSAGES
@@ -1694,8 +1712,6 @@ etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/Mailman/Cgi
 @dirrm %%MMDIR%%/Mailman/Bouncers
 @dirrm %%MMDIR%%/Mailman/Archiver
-@dirrm %%MMDIR%%/Mailman
-%%PORTDOCS%%@dirrm share/doc/mailman
 @unexec rmdir %D/%%MMDIR%%/spam 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/qfiles 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/logs 2>/dev/null || true
@@ -1704,6 +1720,7 @@ etc/rc.d/mailman.sh
 @unexec rmdir %D/%%MMDIR%%/data 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/archives/public 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/archives/private 2>/dev/null || true
+%%SUB_HTDIG%%@unexec rmdir %D/%%MMDIR%%/archives/htdig 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/archives 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/Mailman 2>/dev/null || true
 @unexec rmdir %D/%%MMDIR%%/ 2>/dev/null || true

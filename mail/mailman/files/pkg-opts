@@ -53,3 +53,6 @@
 * WITH_CHINESE [undefined]
   Define to include support for Chinese mailing lists
 
+* WITH_HTDIG [undefined]
+  Define to include the htdig integration patches.
+
