@@ -52,6 +52,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
+XXX_FILES=	EphyAutomation-common.c EphyAutomation-stubs.c \
+	   	EphyAutomation-skels.c EphyAutomation.h
 
 .include <bsd.port.pre.mk>
 
@@ -79,6 +81,11 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "  mozilla-devel-gtk2 "
 	@${ECHO_MSG} ""
+
+post-extract:
+.for i in ${XXX_FILES}
+	@${RM} -f ${WRKSRC}/src/${i}
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g' ${WRKSRC}/configure
