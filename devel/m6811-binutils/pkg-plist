@@ -15,7 +15,6 @@ bin/m6811-elf-readelf
 include/bfd.h
 include/ansidecl.h
 include/bfdlink.h
-info/dir
 lib/libiberty.a
 lib/libbfd.la
 lib/libbfd.a
