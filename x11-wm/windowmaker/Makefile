@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 MASTER_SITE_SUBDIR=	beta/srcs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
-MAINTAINER=	handy@physics.montana.edu
+MAINTAINER=	sobomax@altavista.net
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		ungif.5:${PORTSDIR}/graphics/libungif \
