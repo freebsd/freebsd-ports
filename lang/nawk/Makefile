@@ -8,10 +8,9 @@
 #
 
 DISTNAME=	awk
-PKGNAME=	nawk-99.04.16
+PKGNAME=	nawk-99.06.20
 CATEGORIES=	lang
 MASTER_SITES=	http://cm.bell-labs.com/who/bwk/
-EXTRACT_SUFX=	tar.gz
 
 MAINTAINER=	obrien@FreeBSD.org
 

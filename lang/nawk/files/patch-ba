@@ -1,123 +1,79 @@
-*** b.c.orig	Mon Oct 19 18:42:53 1998
---- b.c	Wed Jan 13 17:46:54 1999
-***************
-*** 27,32 ****
---- 27,35 ----
-  #define	DEBUG
-  
-  #include <ctype.h>
-+ #ifdef	__FreeBSD__
-+ #include <limits.h>
-+ #endif
-  #include <stdio.h>
-  #include <string.h>
-  #include <stdlib.h>
-***************
-*** 74,79 ****
---- 77,100 ----
-  fa	*fatab[NFA];
-  int	nfatab	= 0;	/* entries in fatab */
-  
-+ #ifdef	__FreeBSD__
-+ static int
-+ collate_range_cmp(a, b)
-+ int a, b;
-+ {
-+ 	int r;
-+ 	static char s[2][2];
-+ 
-+ 	if ((unsigned char)a == (unsigned char)b)
-+ 		return 0;
-+ 	s[0][0] = a;
-+ 	s[1][0] = b;
-+ 	if ((r = strcoll(s[0], s[1])) == 0)
-+ 		r = (unsigned char)a - (unsigned char)b;
-+ 	return r;
-+ }
-+ #endif
-+ 
-  fa *makedfa(char *s, int anchor)	/* returns dfa for reg expr s */
-  {
-  	int i, use, nuse;
-***************
-*** 284,289 ****
---- 305,313 ----
-  char *cclenter(char *p)	/* add a character class */
-  {
-  	int i, c, c2;
-+ #ifdef	__FreeBSD__
-+ 	int c3;
-+ #endif
-  	char *op, *bp;
-  	static char *buf = 0;
-  	static int bufsz = 100;
-***************
-*** 301,306 ****
---- 325,347 ----
-  				c2 = *p++;
-  				if (c2 == '\\')
-  					c2 = quoted(&p);
-+ #ifdef	__FreeBSD__
-+ 				if (collate_range_cmp(c, c2) > 0) {
-+ 					bp--;
-+ 					i--;
-+ 					continue;
-+ 				}
-+ 				for (c3 = 0; c3 < (1 << CHAR_BIT) - 1; c3++) {
-+ 					if (collate_range_cmp(c, c3) <= 0 &&
-+ 					    collate_range_cmp(c3, c2) <= 0) {
-+ 						if (!adjbuf(&buf, &bufsz, bp-buf+2, 100, &bp, 0))
-+ 							ERROR "out of space for character class [%.10s...] 2", p FATAL;
-+ 						*bp++ = c3 + 1;
-+ 						i++;
-+ 					}
-+ 				}
-+ #else
-+  				if (c > c2) {	/* empty; ignore */					
-  				if (c > c2) {	/* empty; ignore */
-  					bp--;
-  					i--;
-***************
-*** 312,317 ****
---- 353,359 ----
-  					*bp++ = ++c;
-  					i++;
-  				}
-+ #endif
-  				continue;
-  			}
-  		}
-*** main.c.orig	Mon Oct 19 18:49:03 1998
---- main.c	Wed Jan 13 17:51:59 1999
-***************
-*** 27,32 ****
---- 27,33 ----
-  #define DEBUG
-  #include <stdio.h>
-  #include <ctype.h>
-+ #include <locale.h>
-  #include <stdlib.h>
-  #include <string.h>
-  #include <signal.h>
-***************
-*** 55,61 ****
-  	char *fs = NULL, *marg;
-  	int temp;
-  
-! 	cmdname = argv[0];
-  	if (argc == 1) {
-  		fprintf(stderr, "Usage: %s [-f programfile | 'program'] [-Ffieldsep] [-v var=value] [files]\n", cmdname);
-  		exit(1);
---- 56,67 ----
-  	char *fs = NULL, *marg;
-  	int temp;
-  
-! 	setlocale(LC_ALL, "");
-! 
-! 	if ((cmdname = strrchr(argv[0], '/')) != NULL)
-! 		cmdname++;
-! 	else
-! 		cmdname = argv[0];
-  	if (argc == 1) {
-  		fprintf(stderr, "Usage: %s [-f programfile | 'program'] [-Ffieldsep] [-v var=value] [files]\n", cmdname);
-  		exit(1);
+--- b.c.orig	Mon May 10 07:26:44 1999
++++ b.c	Mon Nov 29 02:10:52 1999
+@@ -27,6 +27,9 @@
+ #define	DEBUG
+ 
+ #include <ctype.h>
++#ifdef	__FreeBSD__
++#include <limits.h>
++#endif
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+@@ -75,6 +78,24 @@
+ fa	*fatab[NFA];
+ int	nfatab	= 0;	/* entries in fatab */
+ 
++#ifdef	__FreeBSD__
++static int
++collate_range_cmp(a, b)
++int a, b;
++{
++	int r;
++	static char s[2][2];
++
++	if ((unsigned char)a == (unsigned char)b)
++		return 0;
++	s[0][0] = a;
++	s[1][0] = b;
++	if ((r = strcoll(s[0], s[1])) == 0)
++		r = (unsigned char)a - (unsigned char)b;
++	return r;
++}
++#endif
++
+ fa *makedfa(char *s, int anchor)	/* returns dfa for reg expr s */
+ {
+ 	int i, use, nuse;
+@@ -285,6 +306,9 @@
+ char *cclenter(char *p)	/* add a character class */
+ {
+ 	int i, c, c2;
++#ifdef	__FreeBSD__
++	int c3;
++#endif
+ 	char *op, *bp;
+ 	static char *buf = 0;
+ 	static int bufsz = 100;
+@@ -302,6 +326,23 @@
+ 				c2 = *p++;
+ 				if (c2 == '\\')
+ 					c2 = quoted(&p);
++#ifdef	__FreeBSD__
++				if (collate_range_cmp(c, c2) > 0) {
++					bp--;
++					i--;
++					continue;
++				}
++				for (c3 = 0; c3 < (1 << CHAR_BIT) - 1; c3++) {
++					if (collate_range_cmp(c, c3) <= 0 &&
++					    collate_range_cmp(c3, c2) <= 0) {
++						if (!adjbuf(&buf, &bufsz, bp-buf+2, 100, &bp, 0))
++							FATAL("out of space for character class [%.10s...] 2", p);
++						*bp++ = c3 + 1;
++						i++;
++					}
++				}
++#else
++ 				if (c > c2) {	/* empty; ignore */					
+ 				if (c > c2) {	/* empty; ignore */
+ 					bp--;
+ 					i--;
+@@ -313,6 +354,7 @@
+ 					*bp++ = ++c;
+ 					i++;
+ 				}
++#endif
+ 				continue;
+ 			}
+ 		}
