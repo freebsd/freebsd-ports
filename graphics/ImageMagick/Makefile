@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.3.8.2
+PORTVERSION=	5.4.0.5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -26,6 +26,7 @@ MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.fifi.org/pub/%SUBDIR%/ \
 		ftp://ftp.simplesystems.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -45,12 +46,11 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
-USE_LIBTOOL=	yes
-USE_AUTOCONF=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
-		--without-gslib --without-hdf --without-wmf
+		--without-gslib --without-hdf --without-jp2
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
@@ -60,10 +60,15 @@ MAN4=		miff.4
 MAN5=		quantize.5
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
 # PerlMagick not works with threads, if perl is not threaded, and vice versa
 .if defined(WITH_IMAGEMAGICK_THREADS) || \
     defined(PERL_THREADED) && ${PERL_THREADED} == "true"
 CONFIGURE_ARGS+=	--with-threads
+CPPFLAGS+=		${PTHREAD_CFLAGS}
+LDFLAGS+=		${PTHREAD_LIBS}
 .else
 CONFIGURE_ARGS+=	--without-threads
 .endif
@@ -82,7 +87,6 @@ CONFIGURE_ARGS+=	--enable-lzw
 # ('make test' there works)
 .if defined(WITH_IMAGEMAGICK_MODULES)
 LIB_DEPENDS+=	ltdl.1:${PORTSDIR}/devel/libtool
-LIBTOOLFLAGS=	# none
 CONFIGURE_ARGS+=	--with-modules
 PLIST_SUB+=	MODULES=''
 .else
@@ -93,9 +97,11 @@ PLIST_SUB+=	MODULES='@comment '
 PKGNAMESUFFIX=	-nox11
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
-CONFIGURE_ARGS+=	--without-x
+CONFIGURE_ARGS+=	--without-x --without-mpeg2 --without-wmf
 PLIST_SUB+=	X11='@comment '
 .else
+LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/graphics/libmpeg2 \
+		wmf.2:${PORTSDIR}/graphics/libwmf
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 USE_XLIB=	yes
@@ -104,11 +110,15 @@ PLIST_SUB+=	X11=''
 .endif
 
 pre-patch:
-	@${PERL} -pi -e 's|\(pthread,|\(c_r,|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|-D_REENTRANT|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure.in
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|LIBLTDL=.*\n|LIBLTDL="-lltdl"\n|g ; \
+ 		 s|INCLTDL=.*\n|INCLTDL=\n|g ; \
+		 s|lcms/lcms.h|lcms.h|g ; \
+		 s|(-D_REENTRANT)|\1 ${PTHREAD_CFLAGS}| ; \
+		 s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(top_builddir\)/ltdl/libltdlc.la|\$$\(LIBLTDL\)|g'
 	@${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
+	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
 
 .include <bsd.port.mk>
