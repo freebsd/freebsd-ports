@@ -1,0 +1,42 @@
+--- src/Makefile.common.orig	Fri Oct 18 09:01:34 2002
++++ src/Makefile.common	Tue Oct 22 07:31:47 2002
+@@ -18,17 +18,17 @@
+ 
+ AR		= ar
+ 
+-CXXDEFS         = -DDEBUG
++CXXDEFS         = 
+ 
+ INCDIR		= ../include
+ 
+-CXXFLAGS	= $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -Wall -O2
++CXXFLAGS	= $(CXXOPTS) $(CXXDEFS) -I$(INCDIR) -Wall $(CFLAGS)
+ 
+ LIBNAME		= libptypes.a
+ LIBDEST		= ../lib
+ 
+ SONAME		= libptypes.$(SOEXT)
+-SOVER		= 1
++SOVER		= $(SHLIB_VER)
+ SOREALNAME	= $(SONAME).$(SOVER)
+ SODEST		= ../so
+ 
+@@ -72,7 +72,7 @@
+ 	cp $@ $(LIBDEST)/
+ 
+ $(SOREALNAME): $(LIBOBJS)
+-	$(LIBTOOL) $(LIBOBJS) $(LDLIBS) -o $@
++	$(LIBTOOL) $(LIBOBJS) $(LDLIBS) -o $@ ${PTHREAD_LIBS} -lc_r
+ 	rm -f $(SONAME) ; ln -s $@ $(SONAME)
+ 	cp $@ $(SODEST)/
+ 	cd $(SODEST) ; rm -f $(SONAME) ; ln -s $@ $(SONAME) ; $(SOSTRIP) $@
+@@ -184,7 +184,8 @@
+ ptypes_test.o: ptypes_test.cxx $(HALL)
+ 
+ ptypes_test: ptypes_test.o $(LIBNAME)
+-	$(CXX) $(CXXFLAGS) $@.o -L./ $(LDLIBS) libptypes.a -o $@
++	$(CXX) $(CXXFLAGS) $@.o -L./ $(LDLIBS) libptypes.a -o $@ \
++		$(PTHREAD_LIBS) -lc_r
+ 
+ clean: clean-src
+ 	rm -f $(LIBDEST)/$(LIBNAME)

@@ -1,0 +1,11 @@
+--- wshare/Makefile.FreeBSD.orig	Fri Oct 18 09:01:35 2002
++++ wshare/Makefile.FreeBSD	Tue Oct 22 07:37:07 2002
+@@ -15,7 +15,7 @@
+ 
+ CXX = g++
+ 
+-CXXOPTS = -pthread
++CXXOPTS =
+ 
+ include Makefile.common
+ 
