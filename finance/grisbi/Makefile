@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grisbi
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,6 @@ RUN_DEPENDS=	${UCS_CLASSDIR}/ucs.sty:${PORTSDIR}/print/latex-ucs
 .endif
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.4
@@ -34,5 +33,22 @@ MAN1=		grisbi.1
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"	\
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(NOPORTDOCS)
+USE_REINPLACE=	yes
+.endif
+
+pre-configure:
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e "s|pixmaps help|pixmaps|" ${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
