@@ -7,6 +7,7 @@
 
 PORTNAME=	vmware3
 PORTVERSION=	3.2.1.2242
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
@@ -49,7 +50,7 @@ MODULES=	vmmon vmnet
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 480102 
+.if ${OSVERSION} < 480102
 BROKEN=		"Systems prior to FreeBSD 480102 currently out of support"
 .endif
 
@@ -59,10 +60,6 @@ BROKEN=		"This software absolutely requires Linux procfs support"
 
 .if !exists(${SRC_BASE}/Makefile)
 BROKEN=		"Kernel source files required"
-.endif
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net)
-.include "${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net"
 .endif
 
 .if ${OSVERSION} < 500023
@@ -75,7 +72,7 @@ SCRIPTS_ENV+=	LINUXBASE="${LINUXBASE}" \
 		VMNET_HOST_IP="${VMNET_HOST_IP}" \
 		VMNET_NETMASK="${VMNET_NETMASK}" \
 		VMNET1_MINOR="${VMNET1_MINOR}"
-MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
+MAKE_ARGS=	KMODDIR="${VMDIR}/modules"
 PLIST_SUB=	LINUXBASE="${LINUXBASE}" VMNET1_MINOR="${VMNET1_MINOR}"
 
 .if ${OSVERSION} < 500000
@@ -109,8 +106,8 @@ pre-patch:
 	@${MKDIR} ${WRKSRC}/vmnet-only/netbsd
 	@${MKDIR} ${WRKSRC}/vmmon-only/freebsd
 	@${MKDIR} ${WRKSRC}/vmmon-only/netbsd
-	@cd ${WRKSRC}/vmmon-only && patch -p1 < ${WRKDIR}/vmmon-only.diff
-	@cd ${WRKSRC} && patch < ${WRKDIR}/vmnet-only.diff
+	@cd ${WRKSRC}/vmmon-only && ${PATCH} -p1 < ${WRKDIR}/vmmon-only.diff
+	@cd ${WRKSRC} && ${PATCH} < ${WRKDIR}/vmnet-only.diff
 
 .if exists(/sys/compat/linux/linux_ioctl.h)
 	${PERL} -i -pe 's,i386(/linux/linux_ioctl\.h),compat$$1,' \
@@ -132,7 +129,7 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
 	${CP} ${FILESDIR}/Makefile.vmnet ${WRKSRC}/vmnet-only/Makefile
 .if ${OSVERSION} < 500000
-	${CAT} ${FILESDIR}/freebsd4.patch | (cd ${WRKSRC} && patch) > /dev/null 2>&1
+	${CAT} ${FILESDIR}/freebsd4.patch | (cd ${WRKSRC} && ${PATCH}) > /dev/null 2>&1
 .endif
 
 setoptions:
@@ -154,7 +151,7 @@ setoptions:
 
 pre-install: setoptions
 	${INSTALL_MAN} ${WRKSRC}/man/man1/vmware.1 ${MANPREFIX}/man/man1
-	${MKDIR} ${VMDIR}/lib/modules
+	${MKDIR} ${VMDIR}/modules
 
 	${MKDIR} ${PREFIX}/etc/vmware
 	${INSTALL_DATA} ${WRKDIR}/config ${PREFIX}/etc/vmware
@@ -177,39 +174,38 @@ pre-install: setoptions
 		${INSTALL_SCRIPT} $${file} ${VMDIR}/bin; \
 	done
 
-	${MKDIR} ${VMDIR}/lib/configurator
+	${MKDIR} ${VMDIR}/configurator
 	for file in ${WRKSRC}/lib/configurator/* ; do \
-		${INSTALL_DATA} $${file} ${VMDIR}/lib/configurator; \
+		${INSTALL_DATA} $${file} ${VMDIR}/configurator; \
 	done
 
-	${MKDIR} ${VMDIR}/lib/isoimages
+	${MKDIR} ${VMDIR}/isoimages
 	for file in ${WRKSRC}/lib/isoimages/* ; do \
-		${INSTALL_DATA} $${file} ${VMDIR}/lib/isoimages; \
+		${INSTALL_DATA} $${file} ${VMDIR}/isoimages; \
 	done
 
-	${MKDIR} ${VMDIR}/lib/licenses/site
-	${MKDIR} ${VMDIR}/lib/licenses/user
+	${MKDIR} ${VMDIR}/licenses/site
+	${MKDIR} ${VMDIR}/licenses/user
 	${INSTALL_DATA} -m 4555 ${WRKSRC}/lib/licenses/user/license.ws.3.0 \
-		${VMDIR}/lib/licenses/user
+		${VMDIR}/licenses/user
 	${INSTALL_SCRIPT} -m 4555 ${WRKSRC}/bin/vmware ${VMDIR}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/vmware ${PREFIX}/bin
-	${MKDIR} ${VMDIR}/lib
-	${INSTALL_DATA} ${WRKSRC}/lib/config ${VMDIR}/lib
-	${MKDIR} ${VMDIR}/lib/help
-	${INSTALL_DATA} ${WRKSRC}/lib/help/* ${VMDIR}/lib/help
+	${INSTALL_DATA} ${WRKSRC}/lib/config ${VMDIR}
+	${MKDIR} ${VMDIR}/help
+	${INSTALL_DATA} ${WRKSRC}/lib/help/* ${VMDIR}/help
 
-	${MKDIR} ${VMDIR}/lib/xkeymap
-	${INSTALL_DATA} ${WRKSRC}/lib/xkeymap/* ${VMDIR}/lib/xkeymap
+	${MKDIR} ${VMDIR}/xkeymap
+	${INSTALL_DATA} ${WRKSRC}/lib/xkeymap/* ${VMDIR}/xkeymap
 
-	${MKDIR} ${VMDIR}/lib/smb/codepages
-	${INSTALL_DATA} ${WRKSRC}/lib/smb/codepages/* ${VMDIR}/lib/smb/codepages
+	${MKDIR} ${VMDIR}/smb/codepages
+	${INSTALL_DATA} ${WRKSRC}/lib/smb/codepages/* ${VMDIR}/smb/codepages
 
-	${MKDIR} ${VMDIR}/lib/messages/chef
-	${INSTALL_DATA} ${WRKSRC}/lib/messages/chef/* ${VMDIR}/lib/messages/chef
-	${MKDIR} ${VMDIR}/lib/messages/ja
-	${INSTALL_DATA} ${WRKSRC}/lib/messages/ja/* ${VMDIR}/lib/messages/ja
-	${MKDIR} ${VMDIR}/lib/messages/jive
-	${INSTALL_DATA} ${WRKSRC}/lib/messages/jive/* ${VMDIR}/lib/messages/jive
+	${MKDIR} ${VMDIR}/messages/chef
+	${INSTALL_DATA} ${WRKSRC}/lib/messages/chef/* ${VMDIR}/messages/chef
+	${MKDIR} ${VMDIR}/messages/ja
+	${INSTALL_DATA} ${WRKSRC}/lib/messages/ja/* ${VMDIR}/messages/ja
+	${MKDIR} ${VMDIR}/messages/jive
+	${INSTALL_DATA} ${WRKSRC}/lib/messages/jive/* ${VMDIR}/messages/jive
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/vmware
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/vmware
@@ -231,3 +227,7 @@ pre-clean:
 .endif
 
 .include <bsd.port.post.mk>
+
+.if exists(${WRKDIR}/Makefile.inc.net)
+.include "${WRKDIR}/Makefile.inc.net"
+.endif
