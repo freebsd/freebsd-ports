@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.22 1997/11/22 01:38:50 asami Exp $
+# $Id: Makefile,v 1.23 1998/02/22 21:54:52 max Exp $
 #
 
 DISTNAME=	base-9712
@@ -48,6 +48,6 @@ do-install:
 	${MKDIR} ${TEXMF}/fonts/source/public/ec
 	${CP} ${WRKDIR}/ec/src/* ${TEXMF}/fonts/source/public/ec
 	@/bin/ln -fs tex ${PREFIX}/bin/latex
-	@/bin/ln -s latex ${PREFIX}/bin/platex-common
+	@/bin/ln -fs latex ${PREFIX}/bin/platex-common
 
 .include <bsd.port.mk>
