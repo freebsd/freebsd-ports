@@ -8,7 +8,8 @@
 PORTNAME=	pm3-base
 PORTVERSION=	1.1.13
 CATEGORIES=	lang
-MASTER_SITES=	http://people.FreeBSD.org/~jdp/distfiles/pm3/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=jdp/pm3
 DISTFILES=	${BOOTSTRAP} \
 		pm3-${PORTVERSION}-src.tar.bz2
 
