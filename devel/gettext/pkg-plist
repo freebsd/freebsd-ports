@@ -48,6 +48,7 @@ share/aclocal/lib-prefix.m4
 share/aclocal/progtest.m4
 share/aclocal/stdint_h.m4
 share/aclocal/uintmax_t.m4
+share/aclocal/ulonglong.m4
 share/doc/gettext/autopoint.1.html
 share/doc/gettext/bind_textdomain_codeset.3.html
 share/doc/gettext/bindtextdomain.3.html
