@@ -2,6 +2,7 @@
 #
     SUBDIR += zssh
 
+    SUBDIR += acfax
     SUBDIR += asmodem
     SUBDIR += bayonne
     SUBDIR += birda
