@@ -3,13 +3,13 @@
 # Date created:        12 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.10 1998/10/10 04:52:24 asami Exp $
+# $Id: Makefile,v 1.11 1998/10/13 23:34:49 jseger Exp $
 #
 
 DISTNAME=	kworldwatch-0.6
 CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/latest/apps/utils/
+MASTER_SITE_SUBDIR= stable/latest/apps/utils
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	scrappy@freebsd.org
