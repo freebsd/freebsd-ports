@@ -7,11 +7,10 @@
 
 PORTNAME=	mutt
 PORTVERSION=	${VERSION}.j${JP_VERSION}
-PORTREVISION=	1
 CATEGORIES=	japanese mail
 MASTER_SITES=	http://www.emaillab.org/mutt/1.3/ \
-		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
 		http://www5.xdsl.ne.jp/~shuna/mutt/distfiles/ \
+		http://ha4.seikyou.ne.jp/home/Kohtaro.Hitomi/mutt/ \
 		ftp://ftp.mutt.org/pub/mutt/devel/
 DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -30,8 +29,8 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext-old
 .endif
 RUN_DEPENDS=	urlview:${PORTSDIR}/textproc/urlview
 
-VERSION=	1.3.27
-JP_VERSION=	2
+VERSION=	1.3.28
+JP_VERSION=	1
 MANUALVERSION=	1.3.23
 
 DIST_SUBDIR=	mutt

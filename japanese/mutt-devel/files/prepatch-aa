@@ -1,9 +1,13 @@
---- patch-1.3.27.tt.ja.2.orig	Wed Feb  6 22:17:00 2002
-+++ patch-1.3.27.tt.ja.2	Wed Feb  6 22:18:03 2002
-@@ -2541,5 +2541,5 @@
-  msgid "Fetching list of messages..."
- --- mutt-ja/PATCHES~    Tue Nov  6 19:59:33 2001
- +++ mutt-ja/PATCHES     Tue Nov  6 19:59:42 2001
--@@ -1,0 +1 @@
-+@@ -0,0 +1 @@
- +patch-1.3.27.tt.ja.2
+*** patch-1.3.28.tt.ja.1.orig	Fri Mar 22 03:55:31 2002
+--- patch-1.3.28.tt.ja.1	Fri Mar 22 03:55:45 2002
+***************
+*** 2793,2796 ****
+  --- mutt-ja/PATCHES~    Tue Nov  6 19:59:33 2001
+  +++ mutt-ja/PATCHES     Tue Nov  6 19:59:42 2001
+! @@ -1,0 +1 @@
+  +patch-1.3.28.tt.ja.1
+--- 2793,2796 ----
+  --- mutt-ja/PATCHES~    Tue Nov  6 19:59:33 2001
+  +++ mutt-ja/PATCHES     Tue Nov  6 19:59:42 2001
+! @@ -0,0 +1 @@
+  +patch-1.3.28.tt.ja.1
