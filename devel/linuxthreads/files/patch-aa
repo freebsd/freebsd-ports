@@ -1,6 +1,6 @@
 diff -ru ../linuxthreads/Examples/Makefile ./Examples/Makefile
 --- ../linuxthreads/Examples/Makefile	Wed Mar 11 13:42:23 1998
-+++ ./Examples/Makefile	Sun Feb 18 21:51:31 2001
++++ ./Examples/Makefile	Sun Feb 25 09:34:02 2001
 @@ -1,8 +1,8 @@
  CC=gcc
 -CFLAGS=-g -O -Wall -I.. -D_REENTRANT
@@ -15,7 +15,7 @@ diff -ru ../linuxthreads/Examples/Makefile ./Examples/Makefile
  
 diff -ru ../linuxthreads/Makefile ./Makefile
 --- ../linuxthreads/Makefile	Wed Nov  3 01:09:36 1999
-+++ ./Makefile	Sun Feb 18 21:51:32 2001
++++ ./Makefile	Sun Feb 25 09:34:02 2001
 @@ -1,68 +1,74 @@
 -# Copyright (C) 1996, 1997, 1998, 1999 Free Software Foundation, Inc.
 -# This file is part of the GNU C Library.
@@ -160,7 +160,7 @@ diff -ru ../linuxthreads/Makefile ./Makefile
 +.include <bsd.lib.mk>
 diff -ru ../linuxthreads/attr.c ./attr.c
 --- ../linuxthreads/attr.c	Tue Oct 27 14:51:54 1998
-+++ ./attr.c	Sun Feb 18 21:51:31 2001
++++ ./attr.c	Sun Feb 25 09:34:02 2001
 @@ -27,7 +27,7 @@
  
    attr->__detachstate = PTHREAD_CREATE_JOINABLE;
@@ -172,7 +172,7 @@ diff -ru ../linuxthreads/attr.c ./attr.c
    attr->__guardsize = ps;
 diff -ru ../linuxthreads/internals.h ./internals.h
 --- ../linuxthreads/internals.h	Fri Jan 21 02:40:19 2000
-+++ ./internals.h	Sun Feb 18 21:51:31 2001
++++ ./internals.h	Sun Feb 25 09:34:02 2001
 @@ -26,8 +26,8 @@
  #include <unistd.h>
  #include <sys/types.h>
@@ -219,7 +219,7 @@ diff -ru ../linuxthreads/internals.h ./internals.h
  
 diff -ru ../linuxthreads/join.c ./join.c
 --- ../linuxthreads/join.c	Thu Jan  6 02:45:15 2000
-+++ ./join.c	Sun Feb 18 21:51:31 2001
++++ ./join.c	Sun Feb 25 09:34:02 2001
 @@ -39,6 +39,7 @@
    THREAD_SETMEM(self, p_retval, retval);
    /* Say that we've terminated */
@@ -238,7 +238,7 @@ diff -ru ../linuxthreads/join.c ./join.c
    __pthread_unlock(THREAD_GETMEM(self, p_lock));
 diff -ru ../linuxthreads/manager.c ./manager.c
 --- ../linuxthreads/manager.c	Fri Jan 21 02:40:19 2000
-+++ ./manager.c	Sun Feb 18 21:51:32 2001
++++ ./manager.c	Sun Feb 25 09:34:02 2001
 @@ -52,8 +52,10 @@
     (set to 1 by gdb) */
  volatile int __pthread_threads_debug;
@@ -389,7 +389,7 @@ diff -ru ../linuxthreads/manager.c ./manager.c
       thread, but excluding the thread from which the exit request originated
 diff -ru ../linuxthreads/pthread.c ./pthread.c
 --- ../linuxthreads/pthread.c	Fri Jan 21 02:40:19 2000
-+++ ./pthread.c	Sun Feb 18 21:53:17 2001
++++ ./pthread.c	Sun Feb 25 09:36:18 2001
 @@ -20,6 +20,7 @@
  #include <stdlib.h>
  #include <string.h>
@@ -628,7 +628,7 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
    /* Make current thread the main thread in case the calling thread
       changes its mind, does not exec(), and creates new threads instead. */
    __pthread_reset_main_thread();
-@@ -838,3 +859,7 @@
+@@ -838,3 +859,10 @@
  static const int *const __pthread_require_wrappers =
    &__pthread_provide_wrappers;
  #endif
@@ -636,9 +636,12 @@ diff -ru ../linuxthreads/pthread.c ./pthread.c
 +/* Force our version of uthreads stub functions to be linked in */
 +extern int _pthread_mutex_init(pthread_mutex_t **mutex, const pthread_mutexattr_t *mattr);
 +static int (*unusedref)(pthread_mutex_t **mutex, const pthread_mutexattr_t *mattr) __attribute__ ((unused)) = _pthread_mutex_init;
++
++extern void _flockfile(FILE *fp);
++static int (*unusedref2)(FILE *fp) = _flockfile;
 diff -ru ../linuxthreads/ptlongjmp.c ./ptlongjmp.c
 --- ../linuxthreads/ptlongjmp.c	Tue Oct 27 14:52:00 1998
-+++ ./ptlongjmp.c	Sun Feb 18 21:51:31 2001
++++ ./ptlongjmp.c	Sun Feb 25 09:34:02 2001
 @@ -19,13 +19,14 @@
  #include "pthread.h"
  #include "internals.h"
@@ -672,7 +675,7 @@ diff -ru ../linuxthreads/ptlongjmp.c ./ptlongjmp.c
  }
 diff -ru ../linuxthreads/semaphore.h ./semaphore.h
 --- ../linuxthreads/semaphore.h	Wed Feb 23 08:02:52 2000
-+++ ./semaphore.h	Sun Feb 18 21:51:31 2001
++++ ./semaphore.h	Sun Feb 25 09:34:02 2001
 @@ -15,7 +15,6 @@
  #ifndef _SEMAPHORE_H
  #define _SEMAPHORE_H    1
@@ -683,7 +686,7 @@ diff -ru ../linuxthreads/semaphore.h ./semaphore.h
  #ifndef _PTHREAD_DESCR_DEFINED
 diff -ru ../linuxthreads/signals.c ./signals.c
 --- ../linuxthreads/signals.c	Mon Oct  4 21:50:04 1999
-+++ ./signals.c	Sun Feb 18 21:51:31 2001
++++ ./signals.c	Sun Feb 25 09:34:02 2001
 @@ -20,7 +20,6 @@
  #include "internals.h"
  #include "spinlock.h"
@@ -752,7 +755,7 @@ diff -ru ../linuxthreads/signals.c ./signals.c
  	   or real-time signal.  */
 diff -ru ../linuxthreads/spinlock.c ./spinlock.c
 --- ../linuxthreads/spinlock.c	Thu Jan  6 02:47:19 2000
-+++ ./spinlock.c	Sun Feb 18 21:51:31 2001
++++ ./spinlock.c	Sun Feb 25 09:34:02 2001
 @@ -137,7 +137,6 @@
  
  #if !defined HAS_COMPARE_AND_SWAP || defined TEST_FOR_COMPARE_AND_SWAP
@@ -772,7 +775,7 @@ diff -ru ../linuxthreads/spinlock.c ./spinlock.c
    struct timespec tm;
 diff -ru ../linuxthreads/spinlock.h ./spinlock.h
 --- ../linuxthreads/spinlock.h	Thu Jan  6 02:45:15 2000
-+++ ./spinlock.h	Sun Feb 18 21:51:31 2001
++++ ./spinlock.h	Sun Feb 25 09:34:02 2001
 @@ -71,6 +71,8 @@
    return 0;
  }
@@ -784,7 +787,7 @@ diff -ru ../linuxthreads/spinlock.h ./spinlock.h
  /* Operations on pthread_atomic, which is defined in internals.h */
 diff -ru ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h ./sysdeps/pthread/bits/pthreadtypes.h
 --- ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h	Fri Jan 21 02:40:19 2000
-+++ ./sysdeps/pthread/bits/pthreadtypes.h	Sun Feb 18 21:51:31 2001
++++ ./sysdeps/pthread/bits/pthreadtypes.h	Sun Feb 25 09:34:03 2001
 @@ -20,7 +20,6 @@
  #define _BITS_PTHREADTYPES_H	1
  
@@ -804,7 +807,7 @@ diff -ru ../linuxthreads/sysdeps/pthread/bits/pthreadtypes.h ./sysdeps/pthread/b
    size_t __guardsize;
 diff -ru ../linuxthreads/sysdeps/pthread/pthread.h ./sysdeps/pthread/pthread.h
 --- ../linuxthreads/sysdeps/pthread/pthread.h	Fri Jan 21 02:40:19 2000
-+++ ./sysdeps/pthread/pthread.h	Sun Feb 18 21:51:31 2001
++++ ./sysdeps/pthread/pthread.h	Sun Feb 25 09:34:03 2001
 @@ -15,7 +15,6 @@
  #ifndef _PTHREAD_H
  #define _PTHREAD_H	1
@@ -824,7 +827,7 @@ diff -ru ../linuxthreads/sysdeps/pthread/pthread.h ./sysdeps/pthread/pthread.h
    struct _pthread_cleanup_buffer *__prev; /* Chaining of cleanup functions.  */
 diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h ./sysdeps/unix/sysv/linux/bits/local_lim.h
 --- ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h	Thu Nov 12 19:03:14 1998
-+++ ./sysdeps/unix/sysv/linux/bits/local_lim.h	Sun Feb 18 21:51:32 2001
++++ ./sysdeps/unix/sysv/linux/bits/local_lim.h	Sun Feb 25 09:34:03 2001
 @@ -24,7 +24,7 @@
  #endif
  
@@ -836,7 +839,7 @@ diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/local_lim.h ./sysdeps/unix
  #ifdef __undef_NR_OPEN
 diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h ./sysdeps/unix/sysv/linux/bits/sigthread.h
 --- ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h	Sat Sep 12 23:33:14 1998
-+++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Sun Feb 18 21:51:32 2001
++++ ./sysdeps/unix/sysv/linux/bits/sigthread.h	Sun Feb 25 09:34:03 2001
 @@ -28,8 +28,8 @@
  
  /* Modify the signal mask for the calling thread.  The arguments have
@@ -850,7 +853,7 @@ diff -ru ../linuxthreads/sysdeps/unix/sysv/linux/bits/sigthread.h ./sysdeps/unix
  extern int pthread_kill __P ((pthread_t __thread, int __signo));
 diff -ru ../linuxthreads/wrapsyscall.c ./wrapsyscall.c
 --- ../linuxthreads/wrapsyscall.c	Tue Dec  1 20:34:20 1998
-+++ ./wrapsyscall.c	Sun Feb 18 21:51:32 2001
++++ ./wrapsyscall.c	Sun Feb 25 09:34:03 2001
 @@ -29,6 +29,7 @@
  #include <sys/resource.h>
  #include <sys/wait.h>
