@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	punkbuster
-PORTVERSION=	0.1156.0
+PORTVERSION=	0.1157.0
 CATEGORIES=	net linux
 MASTER_SITES=	http://www.punkbuster.com/downloads/
 PKGNAMESUFFIX=	-data
