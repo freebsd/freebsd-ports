@@ -1,3 +1,6 @@
+
+$FreeBSD$
+
 --- configure.orig	Sat Feb 10 20:39:39 2001
 +++ configure	Sat Feb 10 20:39:50 2001
 @@ -1078,7 +1078,7 @@

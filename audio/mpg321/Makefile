@@ -13,16 +13,15 @@ MASTER_SITES=	http://www.linuxberg.com/files/ \
 		http://gemini.woot.net/~hosehead/packages/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	naddy@mips.inka.de
 
-LIB_DEPENDS=	ao.1:${PORTSDIR}/audio/libao \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	ao.1:${PORTSDIR}/audio/libao
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmad.a:${PORTSDIR}/audio/mad
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lgnugetopt" \
-		CFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"
-USE_GMAKE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		mpg321.1
