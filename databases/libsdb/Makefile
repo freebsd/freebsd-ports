@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libsdb
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	databases
 MASTER_SITES=	ftp://siag.nu/pub/libsdb/ \
 		http://siag.nu/pub/libsdb/
