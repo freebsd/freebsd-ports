@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cheesetracker
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cheesetronic
@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	cheesetronic
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Impulse Tracker clone
 
+BUILD_DEPENDS= ${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
 USE_QT_VER=	3
