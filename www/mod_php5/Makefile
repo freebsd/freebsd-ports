@@ -101,12 +101,6 @@ post-clean:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
-post-extract:
-.if target(post-extract-jstring)
-	${MAKE} post-extract-jstring
-.endif
-.if target(post-extract-ming)
-	${MAKE} post-extract-ming
-.endif
+post-extract: ${POSTEXTRACT}
 
 .include <bsd.port.mk>
