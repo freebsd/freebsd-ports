@@ -195,6 +195,7 @@
     SUBDIR += lyx
     SUBDIR += lyx-doc
     SUBDIR += magicpoint
+    SUBDIR += mailman
     SUBDIR += makejvf
     SUBDIR += man
     SUBDIR += man-doc
