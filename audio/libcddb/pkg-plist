@@ -1,6 +1,7 @@
 bin/cddb_query
 include/cddb/cddb.h
 include/cddb/cddb_cmd.h
+include/cddb/cddb_config.h
 include/cddb/cddb_conn.h
 include/cddb/cddb_disc.h
 include/cddb/cddb_error.h
