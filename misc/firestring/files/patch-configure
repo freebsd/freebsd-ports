@@ -1,5 +1,5 @@
 --- configure.orig	Sun Sep 22 06:37:40 2002
-+++ configure	Tue Oct 15 17:22:58 2002
++++ configure	Thu Oct 31 12:44:24 2002
 @@ -322,7 +322,7 @@
  $ECHO "INCLUDEDIR ?= \$(PREFIX)/include" >> Makefile
  $ECHO "MANDIR ?= \$(PREFIX)/man" >> Makefile
@@ -33,6 +33,15 @@
  	$ECHO -n "	adding rule to install shared library $LIBRARY..."
 -	$ECHO "	./install.sh $LIBRARY \$(LIBDIR) \$(INSTALL_USER) \$(INSTALL_GROUP) 0755" >> Makefile
 +	$ECHO "	./install.sh $LIBRARY \$(PREFIX)/lib \$(INSTALL_USER) \$(INSTALL_GROUP) 0755" >> Makefile
+ 	$ECHO "done"
+ done;
+ $ECHO >> Makefile
+@@ -556,7 +556,7 @@
+ $ECHO "install-headers: $HEADERS" >> Makefile
+ for HEADER in $HEADERS; do
+ 	$ECHO -n "	adding rule to install header $HEADER..."
+-	$ECHO "	./install.sh $HEADER \$(INCLUDEDIR) \$(INSTALL_USER) \$(INSTALL_GROUP) 0644" >> Makefile
++	$ECHO "	./install.sh $HEADER \$(PREFIX)/include \$(INSTALL_USER) \$(INSTALL_GROUP) 0644" >> Makefile
  	$ECHO "done"
  done;
  $ECHO >> Makefile
