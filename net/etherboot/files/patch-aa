@@ -1,5 +1,5 @@
-*** Makefile.orig	Fri Oct 22 09:17:37 1999
---- Makefile	Fri Oct 22 09:18:27 1999
+*** Makefile.orig	Thu Nov 25 00:34:35 1999
+--- Makefile	Mon Nov 29 14:25:36 1999
 ***************
 *** 74,79 ****
 --- 74,80 ----
@@ -10,3 +10,37 @@
   
   IDENT=		'Etherboot/$(BITS) $(VERSION) (GPL) $@'
   # Stack must be below 640kb so we have real memory there
+***************
+*** 102,108 ****
+  
+  # Exactly one of the following definitions for AS86 should be uncommented
+  # If you have not made any changes to the *.asm files (most people)
+! AS86=		none
+  # If you have made changes to the *.asm files
+  # and you want to rebuild *loader.bin and floppyload.bin and you have as86
+  # from the ELKS Dev86 package (not the one that normally comes with Linux)
+--- 103,109 ----
+  
+  # Exactly one of the following definitions for AS86 should be uncommented
+  # If you have not made any changes to the *.asm files (most people)
+! #AS86=		none
+  # If you have made changes to the *.asm files
+  # and you want to rebuild *loader.bin and floppyload.bin and you have as86
+  # from the ELKS Dev86 package (not the one that normally comes with Linux)
+***************
+*** 111,117 ****
+  # If you have made changes to the *.asm files
+  # and you want to rebuild *loader.bin and floppyload.bin and you have nasm
+  # (not most people)
+! #AS86=		nasm
+  
+  # if your as has trouble with the data32 directive, uncomment this
+  # but note that the premade start*.o will be larger than necessary because it
+--- 112,118 ----
+  # If you have made changes to the *.asm files
+  # and you want to rebuild *loader.bin and floppyload.bin and you have nasm
+  # (not most people)
+! AS86=		nasm
+  
+  # if your as has trouble with the data32 directive, uncomment this
+  # but note that the premade start*.o will be larger than necessary because it
