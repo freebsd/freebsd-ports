@@ -793,6 +793,7 @@ claraocr	ports/graphics/claraocr
 clarence	ports/math/clarence
 clean-theme-gtk	ports/x11-toolkits/clean-theme-gtk
 cleanfeed	ports/news/cleanfeed
+cleanscore	ports/news/cleanscore
 clementine	ports/x11-wm/clementine
 clhep		ports/science/clhep
 cli		ports/lang/cli
