@@ -6,7 +6,7 @@
  mail under unix operating systems, including support color terminals, MIME,
 -and a threaded sorting mode.
 +and a threaded sorting mode.  Details of how to use all of this is
-+available in \fI${PREFIX}/share/doc/mutt/\fP.
++available in \fI${DOCSDIR}\fP.
  .SH OPTIONS
  .IP "-a \fIfile\fP"
  Attach a file to your message using MIME.

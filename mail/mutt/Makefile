@@ -92,6 +92,8 @@ MAN5=		mbox.5 muttrc.5
 post-patch::
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
 		${WRKSRC}/contrib/gpg.rc
+	@${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
+		${WRKSRC}/contrib/Makefile.in
 
 .if defined(WITH_MUTT_XFACE)
 post-patch::
@@ -105,7 +107,7 @@ post-patch::
 # this should be done automagically by aclocal but ....
 # for now, this will have to do
 pre-build:
-	${REINPLACE_CMD} -E -e "s|^(ACLOCAL = ).+|\1${ACLOCAL}|" \
+	@${REINPLACE_CMD} -E -e "s|^(ACLOCAL = ).+|\1${ACLOCAL}|" \
 			-e "s|^(AUTOCONF = ).+|\1${AUTOCONF}|" \
 			-e "s|^(AUTOMAKE = ).+|\1${AUTOMAKE}|" \
 			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
@@ -113,10 +115,16 @@ pre-build:
 
 .if !defined(NOPORTDOCS)
 post-build:
-	${TOUCH} ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.sgml
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
-	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
-		ed -s ${WRKSRC}/doc/mutt.man
+	@${TOUCH} ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.sgml
+	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
+	@${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
+		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
+		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
+		${WRKSRC}/doc/mutt.man
+	@${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
+		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
+		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
+		${WRKSRC}/doc/muttrc.man
 .if defined(WITH_SGML_DOCS) && ${WITH_SGML_DOCS} != "no"
 PLIST:=		${WRKDIR}/PLIST
 pre-install:
@@ -126,7 +134,6 @@ pre-install:
 .endif
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/mutt
 	${INSTALL_DATA} ${WRKSRC}/Muttrc ${PREFIX}/etc/Muttrc.dist
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
