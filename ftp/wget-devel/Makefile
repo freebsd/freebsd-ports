@@ -24,11 +24,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${PREFIX}/include \
 		LDFLAGS=-L${PREFIX}/lib
 
-INFOFILES=	wget.info
+pre-build:
+	${RM} -rf ${WRKSRC}/doc/wget.info*
 
 post-install:
-.for i in ${INFOFILES}
-	install-info ${PREFIX}/info/${i} ${PREFIX}/info/dir
-.endfor
+	install-info ${PREFIX}/info/wget.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
