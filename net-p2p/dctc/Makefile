@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.80
+PORTVERSION=	0.80.5
 CATEGORIES=	net
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.0
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -18,6 +18,7 @@ LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_GLIB=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include \
 		${PTHREAD_CFLAGS}" \
@@ -55,6 +56,8 @@ post-patch:
 		s|<(db.h>)|<db4/\1|'
 	@${PERL} -pi -e 's|(db)-|\1|g;s|db4.0|db4|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${PERL} -pi -e 's|/usr/bin/perl|${PERL}|' \
+		${WRKSRC}/ForcejoinGDL.pl
 
 pre-build:
 	@${ECHO_CMD} '#ifndef MSG_NOSIGNAL' >> ${CONFIGURE_WRKSRC}/config.h
@@ -76,6 +79,9 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file}
 .endfor
 .endif
+	@${MKDIR} ${PREFIX}/share/${PORTNAME}
+	@${INSTALL_SCRIPT} ${WRKSRC}/ForcejoinGDL.pl \
+		${PREFIX}/share/${PORTNAME}
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/hublist ${PREFIX}/bin/dc_hublist
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/dctc ${PREFIX}/bin
