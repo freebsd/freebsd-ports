@@ -1,0 +1,10 @@
+bin/xslt
+%%RUBY_SITELIBDIR%%/xslt.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xslt/data.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xslt/stylesheet.xsl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xslt/stylesheet2.xsl
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xslt/test.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xslt/test_style.xsl
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xslt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/xslt/ToDo
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/xslt
