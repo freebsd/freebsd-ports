@@ -45,6 +45,7 @@
     SUBDIR += jsdk
     SUBDIR += junit
     SUBDIR += kaffe
+    SUBDIR += linux-blackdown-jdk13
     SUBDIR += linux-ibm-jdk13
     SUBDIR += linux-jdk
     SUBDIR += linux-jdk13
