@@ -7,6 +7,7 @@
 
 PORTNAME=	dcc-dccd
 PORTVERSION=	1.2.28
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rhyolite.com/anti-spam/dcc/source/ \
 		http://www.wa.apana.org.au/~dean/sources/ \
@@ -23,6 +24,13 @@ MANCOMPRESSED=	yes
 MAN8=		cdcc.8		dcc.8		dccd.8 \
 		dccm.8		dccproc.8	dccsight.8 \
 		dccifd.8	dbclean.8	dblist.8
+
+.if exists(/usr/lib/libmilter.a) || exists(${LOCALBASE}/lib/libmilter.a)
+PLIST_SUB+=	WITH_SENDMAIL=""
+.else
+CONFIGURE_ARGS+=	--disable-dccm --disable-dccifd
+PLIST_SUB+=	WITH_SENDMAIL="@comment"
+.endif
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -exec \
