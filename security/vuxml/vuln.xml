@@ -119,7 +119,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<range><lt>3.00_5</lt></range>
       </package>
       <package>
-        <name>kpdf</name>
+        <name>kdegraphics</name>
 	<range><lt>3.3.2_1</lt></range>
       </package>
       <package>
