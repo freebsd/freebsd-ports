@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	svg
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://downloads.sourceforge.jp/ruby-svg/1554/
+MASTER_SITES=	http://downloads.sourceforge.jp/ruby-svg/2288/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
