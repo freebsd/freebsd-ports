@@ -110,17 +110,18 @@ my $CVSROOT       = $ENV{'CVSROOT'} || "/home/ncvs";
 ############################################################
 
 sub cleanup_tmpfiles {
-    local($wd, @files);
+    my @files;		# The list of temporary files.
 
-    $wd = `pwd`;
-    chdir("/tmp");
-    opendir(DIR, ".");
-    push(@files, grep(/^$FILE_PREFIX\..*$PID$/, readdir(DIR)));
-    closedir(DIR);
+    # Don't clean up afterwards if in debug mode.
+    return if $DEBUG;
+
+    opendir DIR, $TMPDIR or die "Cannot open directory: $TMPDIR!";
+    push @files, grep /^$FILE_PREFIX\..*$PID$/, readdir(DIR);
+    closedir DIR;
+
     foreach (@files) {
-	unlink $_;
+	unlink "$TMPDIR/$_";
     }
-    chdir($wd);
 }
 
 sub append_to_logfile {
