@@ -4,7 +4,7 @@
 # Date created:                         15th June 1996
 # Whom:                                 gpalmer
 #
-# $Id: Makefile,v 1.10 1997/08/08 01:55:22 obrien Exp $
+# $Id: Makefile,v 1.11 1998/04/18 08:57:16 obrien Exp $
 #
 
 DISTNAME=	fwtk2.1
@@ -31,16 +31,12 @@ SBIN_BINS=	authdump authload authmgr
 LIBEXEC_BINS=	authsrv ftp-gw http-gw netacl plug-gw rlogin-gw smap smapd \
 		tn-gw x-gw
 
-do-fetch:
-	@if [ ! -f ${DISTDIR}/fwtk2.1${EXTRACT_SUFX} ]; then \
-	  ${ECHO} ""; \
-	  ${ECHO} "Please read ftp://ftp.tis.com/pub/firewalls/toolkit/README"; \
-	  ${ECHO} "for details of how to obtain the FTWK source.  Put the files"; \
-	  ${ECHO} "fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} in the directory"; \
-	  ${ECHO} "${DISTDIR} and run make again"; \
-	  ${ECHO} ""; \
-	  exit 1;\
-	fi
+.include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/fwtk2.1${EXTRACT_SUFX}) \
+	&& !exists(${DISTDIR}/fwtk-doc-only${EXTRACT_SUFX})
+IGNORE='Please read ftp://ftp.tis.com/pub/firewalls/toolkit/README for details of how to obtain the FTWK source.  Put the files fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} into the directory ${DISTDIR} and run make again.'
+.endif
 
 pre-configure:
 	@${MV} ${WRKSRC}/Makefile.config ${WRKSRC}/Makefile.config.in
@@ -64,4 +60,4 @@ post-install:
 	( cd ${WRKSRC}/doc ; ${INSTALL_MAN} ${DOCS} ${PREFIX}/share/doc/fwtk )
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
