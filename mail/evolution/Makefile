@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/evolution
 
 MAINTAINER=	sobomax@FreeBSD.org
-
-BROKEN=		"Build failures with bonobo-0.31"
 
 # Note: gnomepilot support has been forcibly taken out for now, so
 # we can save ourselves a little bit of build time
