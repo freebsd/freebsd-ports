@@ -172,8 +172,12 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/frame.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/gaussian_blur.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/gaussian_blur.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/get_multiline_type_metrics.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/get_multiline_type_metrics.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/get_pixels.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/get_pixels.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/get_type_metrics.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/get_type_metrics.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/gradientfill.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/gradientfill.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/grav.gif
@@ -236,7 +240,6 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/images/logo400x83.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/images/model.miff
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/images/notimplemented.gif
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/images/small.tif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/images/smile.miff
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/images/spin.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/implode.gif
@@ -298,6 +301,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/polygon.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/polyline.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/polyline.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/posterize.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/posterize.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/preview.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/preview.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/qbezierpath.gif
@@ -345,6 +350,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/smile.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/solarize.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/solarize.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/splice.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/splice.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/spread.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/spread.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/stegano.gif
@@ -384,6 +391,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/transparent.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/transparent_after.gif
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/transparent_before.gif
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/trim.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/trim_after.jpg
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/trim_before.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/unsharp_mask.jpg
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/unsharp_mask.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ex/viewex.gif
@@ -396,7 +406,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/fonts.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/frame.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gaussian_blur.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/get_multiline_type_metrics.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/get_pixels.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/get_type_metrics.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gradientfill.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/grav.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gravity.rb.html
@@ -437,6 +449,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/pattern2.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/polygon.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/polyline.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/posterize.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/preview.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/qbezierpath.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/quantize-m.rb.html
@@ -461,6 +474,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/skewy.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/smile.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/solarize.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/splice.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/spread.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/stegano.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/stroke_dasharray.rb.html
@@ -480,6 +494,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/to_blob.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/translate.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/transparent.rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/trim.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/unsharp_mask.rb.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/usage.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/viewex.rb.html

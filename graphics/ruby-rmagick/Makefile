@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	rmagick
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	graphics ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/550/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/2231/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	RMagick-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -23,18 +22,14 @@ COMMENT=	A Ruby binding for ImageMagick
 
 LIB_DEPENDS=	Magick.7:${PORTSDIR}/graphics/ImageMagick
 
-BROKEN=		"Does not compile"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
-USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	CFLAGS="${CFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib" \
 		RUBY="${RUBY}"
 CONFIGURE_ARGS=	--doc-dir="${RUBY_MODDOCDIR}"
 
