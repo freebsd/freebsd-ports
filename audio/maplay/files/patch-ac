@@ -1,0 +1,22 @@
+*** obuffer.cc.orig	Thu Jun 23 05:14:36 1994
+--- obuffer.cc	Tue Feb 14 04:17:17 1995
+***************
+*** 537,542 ****
+--- 537,543 ----
+      }
+  
+    // turn NDELAY mode off:
++ #ifndef __FreeBSD__	/* Our /dev/audio doesn't like non-blocking I/O */
+    int flags;
+    if ((flags = fcntl (fd, F_GETFL, 0)) < 0)
+    {
+***************
+*** 549,554 ****
+--- 550,556 ----
+      perror ("fcntl F_SETFL on /dev/audio failed");
+      exit (1);
+    }
++ #endif
+    return fd;
+  }
+  
