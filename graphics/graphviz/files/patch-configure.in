@@ -1,0 +1,44 @@
+--- configure.in.orig	Tue Oct 17 17:19:22 2000
++++ configure.in	Tue Oct 17 17:23:32 2000
+@@ -44,13 +44,17 @@
+ 
+ AC_ARG_WITH(tcl, [  --with-tcl=DIR          use Tcl binaries from DIR], TCLSH_EXEC_PREFIX=$withval,)
+ 
+-if test -f $TCLSH_EXEC_PREFIX/lib/tclConfig.sh; then
+-    AC_MSG_RESULT([using $TCLSH_EXEC_PREFIX/lib/tclConfig.sh])
++if test -z ${TCLCONFIG}; then
++    TCLCONFIG=${TCLSH_EXEC_PREFIX}/lib/tclConfig.sh
++fi
++
++if test -f $TCLCONFIG; then
++    AC_MSG_RESULT([using $TCLCONFIG])
+ else
+     AC_MSG_ERROR([Unable to find tclConfig.sh.])
+ fi
+ 
+-file=${TCLSH_EXEC_PREFIX}/lib/tclConfig.sh
++file=${TCLCONFIG}
+ . $file
+ if test "${TCL_SUPPORTS_STUBS}" = "1"; then
+     TCL_CFLAGS="${TCL_CFLAGS} -DUSE_TCL_STUBS"
+@@ -104,13 +108,17 @@
+ AC_SUBST(TCL_BUILD_STUB_LIB_PATH)
+ AC_SUBST(TCL_STUB_LIB_PATH)
+ 
+-if test -f $TCLSH_EXEC_PREFIX/lib/tkConfig.sh; then
+-    AC_MSG_RESULT([using $TCLSH_EXEC_PREFIX/lib/tkConfig.sh])
++if test -z ${TKCONFIG}; then
++    TKCONFIG=${TCLSH_EXEC_PREFIX}/lib/tkConfig.sh
++fi
++
++if test -f $TKCONFIG; then
++    AC_MSG_RESULT([using $TKCONFIG])
+ else
+     AC_MSG_ERROR([Unable find tkConfig.sh.])
+ fi
+ 
+-file=${TCLSH_EXEC_PREFIX}/lib/tkConfig.sh
++file=${TKCONFIG}
+ . $file
+ 
+ # NB. No TK_SUPPORTS_STUBS set by tkConfig.sh

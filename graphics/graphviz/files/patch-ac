@@ -1,5 +1,5 @@
---- src/cmd/lefty/os/unix/io.c.orig	Mon Mar 10 21:45:50 1997
-+++ src/cmd/lefty/os/unix/io.c	Tue Jan 27 20:45:50 1998
+--- lefty/os/unix/io.c.orig	Tue Apr 18 05:56:10 2000
++++ lefty/os/unix/io.c	Tue Oct 17 18:40:25 2000
 @@ -10,7 +10,11 @@
  #include <fcntl.h>
  #include <signal.h>
@@ -12,7 +12,7 @@
  #include <sys/time.h>
  #include <sys/socket.h>
  #include <netinet/in.h>
-@@ -271,7 +267,11 @@
+@@ -271,7 +275,11 @@
  static int findpty (int *fd) {
      char *majorp, *minorp;
      char pty[32], tty[32];
@@ -24,7 +24,7 @@
  
      static char ptymajor[] = "pqrs";
      static char ptyminor[] = "0123456789abcdefghijklmnopqrstuvwxyz";
-@@ -286,9 +278,15 @@
+@@ -282,9 +290,15 @@
              if ((fd[0] = open (pty, O_RDWR)) >= 0) {
                  sprintf (tty, "/dev/tty%c%c", *majorp, *minorp);
                  if ((fd[1] = open (tty, O_RDWR)) >= 0) {
