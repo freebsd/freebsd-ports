@@ -276,7 +276,7 @@ JAVA_PORT=		${_JAVA_PORT_FREEBSD_1_2}
 #    (1) JDK 1.3.1 for FreeBSD
 #    (2) Sun JDK 1.3.1 for Linux
 #    (3) IBM JDK 1.3.1 for Linux
-#    (3) Blackdown JDK 1.3.1 for Linux
+#    (4) Blackdown JDK 1.3.1 for Linux
 #
 # If the FreeBSD JDK 1.3.1 is installed or if none of the 1.3.1 JDK's is
 # installed, then the FreeBSD JDK 1.3.1 is used as a dependency for the port.
