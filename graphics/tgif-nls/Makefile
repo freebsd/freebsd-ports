@@ -3,11 +3,11 @@
 # Date created:         3 May 1999
 # Whom:                 one@netlab.is.tsukuba.ac.jp
 #
-# $Id: Makefile,v 1.2 1999/05/06 09:34:40 taoka Exp $
+# $Id: Makefile,v 1.3 1999/05/29 04:39:26 steve Exp $
 #
 
-DISTNAME=	tgif-4.1.14
-PKGNAME=	tgif-nls-4.1.14
+DISTNAME=	tgif-4.1.15
+PKGNAME=	tgif-nls-4.1.15
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.cs.umd.edu/pub/tgif/ \
 		ftp://ftp.cs.ucla.edu/pub/tgif/
@@ -18,19 +18,13 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
+XMKMF=		LOCALBASE=${LOCALBASE} xmkmf -a
+
 MAN1=		tgif.1
 
-post-extract:
+pre-patch:
 		@cd ${WRKSRC}; ${RM} -f Tgif.tmpl; \
-		${SED} -e "s#/usr/share/locale#${PREFIX}/share/locale#" \
-			Tgif.tmpl-freebsd > Tgif.tmpl; \
-		${ECHO} "EXTRA_INCLUDES += -I${LOCALBASE}/include" \
-			>> Tgif.tmpl; \
-		${ECHO} "EXTRA_LIBRARIES += -L${LOCALBASE}/lib -lintl" \
-			>> Tgif.tmpl; \
-		${MV} po/Po.tmpl po/Po.tmpl.orig; \
-		${SED} -e "s#/usr/share/locale#${PREFIX}/share/locale#" \
-			po/Po.tmpl.orig > po/Po.tmpl; \
+		${CP} Tgif.tmpl-freebsd Tgif.tmpl
 
 post-patch:
 		@cd ${WRKSRC}; \
