@@ -7,6 +7,6 @@ From the README:
  parser (and the Expat parser itself), and a C helper module that can
  speed up xmllib.py by a factor of 5.  There's even documentation!
 
-See also http://www.python.org/sigs/xml-sig/
+WWW: http://www.python.org/sigs/xml-sig/
 
 -- Jacques Vidrine <nectar@FreeBSD.ORG>

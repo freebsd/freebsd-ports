@@ -6,7 +6,7 @@ There is also a cute little Tcl/Tk program included called wordview, which
 is basically a small GUI frontend to catdoc for viewing word documents.
 The wordview program works with Tcl 7.6 and up, but uses Tk 8.0 by default.
 
-http://www.ice.ru/~vitus/catdoc/
+WWW: http://www.ice.ru/~vitus/catdoc/
 
 - Brion
 brion@queeg.com
