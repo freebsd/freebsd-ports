@@ -8,11 +8,9 @@ compliant video conferencing programs including Microsoft NetMeeting
 It requires a sound card for audio support and a Bt848/878 based
 video card (using the bktr driver) for video capture.
 
-The OpenH323library, and ohpone makes use of PWLib.
+The OpenH323library and ohpone make use of PWLib. http://www.equival.com
 PWLib is a multi-platform code library that can be used to write
 applications that will compile and run on the BSD Unixes, Windows, Linux
 and a few other Unix variants. It was developed by Equivalence Ltd Pty.
 
-For more information see
-http://www.openh323.org
-http://www.equival.com
+WWW: http://www.openh323.org
