@@ -1,3 +1,5 @@
 bin/yalias
 share/yalias/system.yaliasrc
 @dirrm share/yalias
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

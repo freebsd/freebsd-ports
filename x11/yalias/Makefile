@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	yalias
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	x11
 MASTER_SITES=	http://offog.org/files/
 
 MAINTAINER=	tim@bishnet.net
 COMMENT=	An enhanced execution box with regex pattern matching
 
-USE_MOTIF=	yes
 USE_GNOME=	gtk20
 USE_XLIB=	yes
 
@@ -21,5 +20,11 @@ USE_X_PREFIX=	yes
 
 ALL_TARGET=	yalias
 MAKE_ARGS=	prefix=${PREFIX} YALIASDIR=${DATADIR}
+
+.if !defined(NOPORTDOCS)
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
