@@ -1,12 +1,12 @@
 # New ports collection makefile for:   indent
-# Version required:    1.10.0
+# Version required:    2.1.0
 # Date created:        28 August 1997
 # Whom:                Kapil Chowksey <kchowksey@hss.hns.com>
 #
-# $Id: Makefile,v 1.3 1999/06/05 22:28:49 mharo Exp $
+# $Id: Makefile,v 1.4 1999/06/28 19:12:06 cpiazza Exp $
 #
 
-DISTNAME=      indent-1.10.0
+DISTNAME=      indent-2.1.0
 CATEGORIES=    devel
 MASTER_SITES=  ${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	indent
