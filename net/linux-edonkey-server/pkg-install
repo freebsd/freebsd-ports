@@ -1,0 +1,60 @@
+#!/bin/sh
+# $FreeBSD$
+
+# based on original from apache13 port
+
+[ $# != 2 ] && exit 1
+PKGNAME=$1
+ACTION=$2
+
+USER=edonkey2000
+GROUP=${USER}
+
+ECHO=echo
+INSTALL=/usr/bin/install
+PW=/usr/sbin/pw
+
+case "$ACTION" in
+
+PRE-INSTALL)
+	if ! ${PW} groupshow "${GROUP}" 2>/dev/null 1>&2; then
+		if ${PW} groupadd ${GROUP}; then
+			${ECHO} "Added group \"${GROUP}\"."
+		else
+			${ECHO} "Adding group \"${GROUP}\" failed..."
+			exit 1
+		fi
+	fi
+	if ! ${PW} usershow "${USER}" 2>/dev/null 1>&2; then
+		if ${PW} useradd ${USER} -g ${GROUP} -h - \
+			-s "/sbin/nologin" -d "/nonexistent" \
+			-c "& Server Owner"; \
+		then
+			${ECHO} "Added user \"${USER}\"."
+		else
+			${ECHO} "Adding user \"${USER}\" failed..."
+			exit 1
+		fi
+	fi
+	${INSTALL} -d -g ${GROUP} -m 1570 ${PKG_PREFIX}/etc/edonkey2000
+	;;
+
+DEINSTALL)
+	if ${PW} usershow "${USER}" 2>/dev/null 1>&2; then
+		${ECHO} "To delete eDonkey user permanently, use '${PW} userdel ${USER}'"
+	fi
+	if ${PW} groupshow "${GROUP}" 2>/dev/null 1>&2; then
+		${ECHO} "To delete eDonkey group permanently, use '${PW} groupdel ${GROUP}'"
+	fi
+	exit 0
+	;;
+
+POST-INSTALL|POST-DEINSTALL)
+	;;
+
+*)
+	exit 1
+	;;
+esac
+
+exit

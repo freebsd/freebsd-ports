@@ -1,0 +1,5 @@
+etc/edonkey2000/donkey.ini
+etc/rc.d/edonkey2000-server.sh.sample
+sbin/dserver
+@unexec [ -r %D/etc/rc.d/edonkey2000-server.sh ] 2>/dev/null && echo "Do not forget to remove rc script ${PKG_PREFIX}/etc/rc.d/edonkey2000-server.sh. Deinstalling the port does not remove this file." | fmt || true
+@unexec rmdir %D/etc/edonkey2000 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/edonkey2000`` to remove any configuration files and logs left." | fmt

@@ -1,0 +1,61 @@
+# New ports collection makefile for:	Linux eDonkey server
+# Date created:				18 December 2001
+# Whom:	Yen-Ming Lee <leeym@leeym.com> & Mario S F Ferreira <lioux@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	edonkey
+PORTVERSION=	16.38
+CATEGORIES=	net linux
+MASTER_SITES=	http://www.edonkey2000.com/files/
+PKGNAMEPREFIX=	linux-
+PKGNAMESUFFIX=	-server
+DISTNAME=	dserver
+EXTRACT_SUFX=	.gz
+EXTRACT_ONLY=
+
+MAINTAINER=	lioux@FreeBSD.org
+
+ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
+NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+STRIP=
+#
+PKGDEINSTALL=   ${PKGINSTALL}
+
+STRIP_CMD=	${LINUXBASE}/usr/bin/strip
+
+.if exists(/usr/bin/brandelf)
+BRANDELF?=	/usr/bin/brandelf
+.else
+BRANDELF?=	brandelf
+.endif
+
+BINARY_NAME=	dserver
+RC_SAMPLE=	edonkey2000-server.sh.sample
+
+post-extract:
+	@${GZCAT} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKSRC}/${BINARY_NAME}
+
+post-patch:
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|" \
+		-e "s|%%LOCALBASE%%|${LOCALBASE}|" ${FILESDIR}/${RC_SAMPLE} \
+		> ${WRKDIR}/${RC_SAMPLE}
+
+pre-install:
+.if exists(${STRIP_CMD})
+	@${STRIP_CMD} ${WRKSRC}/${BINARY_NAME}
+.endif
+	@${BRANDELF} -t Linux ${WRKSRC}/${BINARY_NAME}
+
+do-install:
+# pre-install work: create user ids, ...
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
+		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${INSTALL_PROGRAM} ${WRKDIR}/${BINARY_NAME} ${PREFIX}/sbin
+	@${INSTALL_SCRIPT} ${WRKSRC}/${RC_SAMPLE} ${PREFIX}/etc/rc.d
+	@${INSTALL_DATA} ${FILESDIR}/donkey.ini ${PREFIX}/etc/edonkey2000
+
+.include <bsd.port.mk>

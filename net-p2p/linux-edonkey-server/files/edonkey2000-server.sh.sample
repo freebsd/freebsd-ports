@@ -1,0 +1,44 @@
+#!/bin/sh
+
+ETC_DIR=%%PREFIX%%/etc/edonkey2000
+SBIN_DIR=%%PREFIX%%/sbin
+PATH=/bin:/usr/bin:%%LOCALBASE%%/bin
+#
+SU=/usr/bin/su
+#
+USER=edonkey2000
+
+CONSOLE=`grep ^console= ${ETC_DIR}/donkey.ini | grep -i true | wc -l`
+
+if [ ${CONSOLE} -gt 0 -a ! -x %%LOCALBASE%%/bin/screen ]; then
+  echo "Please install ports misc/screen first to enable edonkey2000-server console" >&2
+  exit
+fi
+
+case "${1}" in
+start)
+	if [ -x ${SBIN_DIR}/dserver ]; then
+		cd ${ETC_DIR}
+		if [ ${CONSOLE} -gt 0 ]; then
+			${SU} ${USER} -c "screen -dmS ${SBIN_DIR}/dserver dserver" &
+		else
+			${SU} ${USER} -c "${SBIN_DIR}/dserver >/dev/null 2>&1" &
+		fi
+		echo -n ' edonkey2000-server'
+	fi
+	;;
+stop)
+	killall -1 dserver > /dev/null 2>&1
+	echo -n ' edonkey2000-server'
+	;;
+console)
+	if [ ${CONSOLE} -gt 0 ]; then
+		${SU} edonkey2000 -c "screen -d -r dserver"
+	else
+		echo "Please set console=true in ${ETC_DIR}/donkey.ini, install ports misc/screen, then restart dserver"
+	fi
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop|console}" >&2
+	;;
+esac
