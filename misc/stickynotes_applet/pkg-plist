@@ -4,8 +4,8 @@ etc/gconf/gconf.xml.defaults/apps/stickynotes_applet/settings/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/stickynotes_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/stickynotes_applet/defaults/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/stickynotes_applet/settings/%gconf.xml
-etc/gconf/schemas/stickynotes_applet.schemas
-libdata/bonobo/servers/stickynotes_applet.server
+etc/gconf/schemas/stickynotes.schemas
+libdata/bonobo/servers/GNOME_StickyNotesApplet.server
 libexec/stickynotes_applet
 %%PORTDOCS%%share/doc/stickynotes_applet/AUTHORS
 %%PORTDOCS%%share/doc/stickynotes_applet/COPYING
@@ -15,32 +15,38 @@ libexec/stickynotes_applet
 %%PORTDOCS%%share/doc/stickynotes_applet/README
 %%PORTDOCS%%share/doc/stickynotes_applet/THANKS
 %%PORTDOCS%%share/doc/stickynotes_applet/TODO
-share/gnome/gnome-2.0/ui/stickynotes_applet.xml
-share/gnome/help/stickynotes_applet/C/figures/applet_menu.png
-share/gnome/help/stickynotes_applet/C/figures/note_menu.png
-share/gnome/help/stickynotes_applet/C/figures/preferences_dialog.png
-share/gnome/help/stickynotes_applet/C/figures/stickynotes_applet.png
+share/gnome/gnome-2.0/ui/GNOME_StickyNotesApplet.xml
 share/gnome/help/stickynotes_applet/C/legal.xml
 share/gnome/help/stickynotes_applet/C/stickynotes_applet.xml
 share/gnome/omf/stickynotes_applet/stickynotes_applet-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/stickynotes_applet/stickynotes_applet-C.omf 2>/dev/null || /usr/bin/true
-share/gnome/pixmaps/stickynotes_applet/close.png
-share/gnome/pixmaps/stickynotes_applet/resize.png
-share/gnome/pixmaps/stickynotes_applet/stickynotes.png
-share/gnome/pixmaps/stickynotes_applet/stickynotes_prelight.png
-share/gnome/stickynotes_applet/stickynotes_applet.glade
+share/gnome/pixmaps/stickynotes/close.png
+share/gnome/pixmaps/stickynotes/lock.png
+share/gnome/pixmaps/stickynotes/resize_se.png
+share/gnome/pixmaps/stickynotes/resize_sw.png
+share/gnome/pixmaps/stickynotes/stickynotes.png
+share/gnome/pixmaps/stickynotes/stickynotes_prelight.png
+share/gnome/pixmaps/stickynotes/unlock.png
+share/gnome/stickynotes/stickynotes.glade
 share/locale/am/LC_MESSAGES/stickynotes_applet.mo
 share/locale/cs/LC_MESSAGES/stickynotes_applet.mo
 share/locale/de/LC_MESSAGES/stickynotes_applet.mo
 share/locale/es/LC_MESSAGES/stickynotes_applet.mo
+share/locale/et/LC_MESSAGES/stickynotes_applet.mo
 share/locale/fi/LC_MESSAGES/stickynotes_applet.mo
+share/locale/fr/LC_MESSAGES/stickynotes_applet.mo
+share/locale/he/LC_MESSAGES/stickynotes_applet.mo
+share/locale/it/LC_MESSAGES/stickynotes_applet.mo
+share/locale/ms/LC_MESSAGES/stickynotes_applet.mo
 share/locale/nl/LC_MESSAGES/stickynotes_applet.mo
+share/locale/pt/LC_MESSAGES/stickynotes_applet.mo
+share/locale/sr/LC_MESSAGES/stickynotes_applet.mo
+share/locale/sr@Latn/LC_MESSAGES/stickynotes_applet.mo
 share/locale/sv/LC_MESSAGES/stickynotes_applet.mo
 share/locale/uk/LC_MESSAGES/stickynotes_applet.mo
 share/locale/vi/LC_MESSAGES/stickynotes_applet.mo
-@dirrm share/gnome/stickynotes_applet
+@dirrm share/gnome/stickynotes
 @dirrm share/gnome/omf/stickynotes_applet
-@dirrm share/gnome/help/stickynotes_applet/C/figures
 @dirrm share/gnome/help/stickynotes_applet/C
 @dirrm share/gnome/help/stickynotes_applet
 %%PORTDOCS%%@dirrm share/doc/stickynotes_applet

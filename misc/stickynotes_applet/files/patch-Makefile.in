@@ -1,11 +1,11 @@
---- Makefile.in.orig	Mon Feb 17 18:01:51 2003
-+++ Makefile.in	Mon Feb 17 18:02:02 2003
-@@ -444,7 +444,7 @@
+--- Makefile.in.orig	Thu Jun 12 21:29:56 2003
++++ Makefile.in	Thu Jun 12 21:30:38 2003
+@@ -450,7 +450,7 @@
  install-exec-am:
  install-exec: install-exec-recursive
  
 -install-data-am: install-docDATA install-gladeDATA install-schemasDATA \
 +install-data-am: install-gladeDATA install-schemasDATA \
- 		install-serverDATA install-xmlDATA install-data-local
+ 		install-serverDATA install-uiDATA install-data-local
  install-data: install-data-recursive
  
