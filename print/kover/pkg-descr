@@ -1,0 +1,13 @@
+Kover is an easy to use WYSIWYG CD cover printer with CDDB support.
+
+Some features:
+   o CDDB support via freedb.org
+   o supports proxies with authentification (basic)
+   o image embedding in inlet and booklet
+   o should read files saved with Easy CD Pro 2.0
+   o saves CDDB queries locally
+   o do CDDB query without the CD
+   o files created with K3B can be imported
+
+Author: Adrian Reber <adrian@lisas.de>
+WWW: http://lisas.de/kover/
