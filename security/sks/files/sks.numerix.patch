@@ -8,6 +8,26 @@
    echo "$as_me:$LINENO: result: $ocaml_version" >&5
  echo "${ECHO_T}$ocaml_version" >&6
    echo "$as_me:$LINENO: checking for Ocaml directory" >&5
+--- numerix-0.19/config/config.sub	Thu Nov 25 00:33:31 2004
++++ numerix-0.19/config/config.sub	Thu Nov 25 00:35:01 2004
+@@ -155,7 +155,7 @@
+  		| alpha | alphaev5 | alphaev56 | we32k | ns16k | clipper \
+ 		| i370 | sh | powerpc | powerpcle | 1750a | dsp16xx | pdp11 \
+ 		| mips64 | mipsel | mips64el | mips64orion | mips64orionel \
+-		| mipstx39 | mipstx39el \
++		| mipstx39 | mipstx39el | amd64 \
+ 		| sparc | sparclet | sparclite | sparc64 | v850)
+ 		basic_machine=$basic_machine-unknown
+                ;;
+@@ -181,7 +181,7 @@
+ 	      | sparclite-* | pdp11-* | sh-* | powerpc-* | powerpcle-* \
+ 	      | sparc64-* | mips64-* | mipsel-* \
+ 	      | mips64el-* | mips64orion-* | mips64orionel-*  \
+-	      | mipstx39-* | mipstx39el-* \
++	      | mipstx39-* | mipstx39el-* | amd64-* \
+ 	      | f301-*)
+ 	        ;;
+ 	# Recognize the various machine names and aliases which stand
 --- numerix-0.19/lib/kernel/string.c	Sat Oct 16 15:47:19 2004
 +++ numerix-0.19/lib/kernel/string.c	Sat Oct 16 15:14:17 2004
 @@ -38,7 +38,7 @@
