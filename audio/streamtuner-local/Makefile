@@ -8,7 +8,8 @@
 PORTNAME=		streamtuner-local
 PORTVERSION=		0.3.0
 CATEGORIES=		audio www
-MASTER_SITES=		http://streamtuner.sourceforge.net/streamtuner/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	streamtuner
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A streamtuner plugin for local music access
