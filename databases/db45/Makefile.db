@@ -7,13 +7,11 @@ PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
-# Do not use GNU_CONFIGURE or USE_LIBTOOL, it adds a --prefix option
-# we do not want in CONFIGURE_ARGS, and currently (2003-12-09) breaks
-# with its non-standard ${CONFIGURE_SCRIPT}.
 USE_REINPLACE=		yes
 INSTALLS_SHLIB=		yes
-HAS_CONFIGURE=		yes
+USE_LIBTOOL_VER=	15
 CONFIGURE_SCRIPT=	../dist/configure
+LIBTOOLFILES=		${CONFIGURE_SCRIPT}
 CONFIGURE_TARGET=	--target=${ARCH}-portbld-freebsd${OSREL}
 BDBVER=			${PORTVERSION:R}
 BDBMINOR=		${BDBVER:E:S/^\.//}
@@ -32,6 +30,9 @@ PORTDOCS=		*
 
 pre-patch:
 	@${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+pre-configure:
+	${CHMOD} u+w ${WRKSRC}/../dist/configure
 
 post-install:
 .for i in libdb libdb_cxx
