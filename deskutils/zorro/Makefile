@@ -3,17 +3,17 @@
 # Date created:         03 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.8 1997/08/10 22:25:19 fenner Exp $
+# $Id: Makefile,v 1.9 1997/11/22 19:55:25 jseger Exp $
 #
 
 DISTNAME=	zorro-1.1p8
 PKGNAME=	zorro-1.1.8
-CATEGORIES=	misc tk80
+CATEGORIES=	misc tk81
 MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/apps/zorro-1.1p8/
 
 MAINTAINER=	shanee@augusta.de
 
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk81\\.1\\.:${PORTSDIR}/x11/tk81
 
 NO_BUILD=	yes
 

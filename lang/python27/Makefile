@@ -3,12 +3,12 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.19 1998/01/06 08:02:48 tg Exp $
+# $Id: Makefile,v 1.20 1998/01/07 08:32:53 tg Exp $
 #
 
 DISTNAME=       python1.5
 PKGNAME=        python-1.5
-CATEGORIES=	lang tk80
+CATEGORIES=	lang tk81
 MASTER_SITES=	ftp://www.python.org/pub/python/src/ \
 		ftp://ftp.cwi.nl/pub/python/src/
 
@@ -34,7 +34,7 @@ SETUP_FILE=	Setup
 #
 WITH_TK?=	yes
 .if defined(WITH_TK) && $(WITH_TK) == yes
-TK_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
+TK_DEPENDS=	tk81\\.1\\.:${PORTSDIR}/x11/tk81
 SETUP_LOCAL=	Setup.tk
 .endif
 

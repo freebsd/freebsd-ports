@@ -4,4 +4,4 @@
 *** 1,1 ****
 ! #!/usr/bin/wish -f
 --- 1,1 ----
-! #!/usr/local/bin/wish8.0 -f
+! #!/usr/local/bin/wish8.1 -f

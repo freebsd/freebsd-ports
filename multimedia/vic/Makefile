@@ -3,17 +3,17 @@
 # Date created:		14 December 1994
 # Whom:			wollman
 #
-# $Id: Makefile,v 1.11 1997/04/20 13:19:27 wosch Exp $
+# $Id: Makefile,v 1.12 1997/09/11 03:54:53 fenner Exp $
 #
 
 DISTNAME=	vic-2.8
-CATEGORIES=	mbone tk80
+CATEGORIES=	mbone tk81
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/conferencing/vic/
 DISTFILES=	vicsrc-2.8.tar.gz
 
 MAINTAINER=	fenner@FreeBSD.ORG
 
-LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk81\\.1:${PORTSDIR}/x11/tk81
 
 GNU_CONFIGURE=	yes
 USE_X11=	yes

@@ -809,8 +809,8 @@
  	fi
 -	places="$d/lib/libtcl7.5.so \
 -		$d/lib/libtcl7.5.a \
-+	places="$d/lib/libtcl8.0.so \
-+		$d/lib/libtcl8.0.a \
++	places="$d/lib/libtcl8.1.so \
++		$d/lib/libtcl8.1.a \
  		$d/lib/libtcl.so \
  		$d/lib/libtcl.a"
  	V_LIB_TCL=FAIL
@@ -819,7 +819,7 @@
  		exit 1
  	fi
 -	places="$d/lib/tcl7.5 \
-+	places="$d/lib/tcl8.0 \
++	places="$d/lib/tcl8.1 \
  		$d/lib/tcl"
  	V_LIBRARY_TCL=FAIL
  	for dir in $places; do
@@ -852,14 +852,14 @@
 -		places="$PWD/../tcl7.5 \
 -			/usr/src/local/tcl7.5 \
 -			/import/tcl/include/tcl7.5 \
-+		places="$PWD/../tcl8.0 \
-+			/usr/src/local/tcl8.0 \
-+			/import/tcl/include/tcl8.0 \
++		places="$PWD/../tcl8.1 \
++			/usr/src/local/tcl8.1 \
++			/import/tcl/include/tcl8.1 \
  			$prefix/include \
  			$x_includes/tk \
  			$x_includes \
  			/usr/local/include \
-+			/usr/local/include/tcl8.0 \
++			/usr/local/include/tcl8.1 \
  			/usr/contrib/include \
  			/usr/include"
  		for dir in $places; do
@@ -869,15 +869,15 @@
  	fi
 -	echo $ac_n "checking for -ltcl7.5""... $ac_c" 1>&6
 -ac_lib_var=`echo tcl7.5'_'main | tr './+\055' '__p_'`
-+	echo $ac_n "checking for main in -ltcl8.0""... $ac_c" 1>&6
-+echo "configure:1665: checking for main in -ltcl8.0" >&5
-+ac_lib_var=`echo tcl8.0'_'main | sed 'y%./+-%__p_%'`
++	echo $ac_n "checking for main in -ltcl8.1""... $ac_c" 1>&6
++echo "configure:1665: checking for main in -ltcl8.1" >&5
++ac_lib_var=`echo tcl8.1'_'main | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-ltcl7.5  $LIBS"
-+LIBS="-ltcl8.0  $LIBS"
++LIBS="-ltcl8.1  $LIBS"
  cat > conftest.$ac_ext <<EOF
 -#line 1558 "configure"
 +#line 1673 "configure"
@@ -904,7 +904,7 @@
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  V_LIB_TCL="-ltcl7.5"
-+  V_LIB_TCL="-ltcl8.0"
++  V_LIB_TCL="-ltcl8.1"
  else
    echo "$ac_t""no" 1>&6
  V_LIB_TCL="FAIL"
@@ -915,15 +915,15 @@
 -			$PWD/../tcl7.5 \
 -			/usr/src/local/tcl7.5 \
 -			/import/tcl/lib/tcl7.5 \
-+			$PWD/../tcl8.0 \
-+			/usr/src/local/tcl8.0 \
-+			/import/tcl/lib/tcl8.0 \
++			$PWD/../tcl8.1 \
++			/usr/src/local/tcl8.1 \
++			/import/tcl/lib/tcl8.1 \
  			"
  		for dir in $places; do
 -			if test -r $dir/libtcl7.5.so -o -r $dir/libtcl7.5.a; then
 -				V_LIB_TCL="-L$dir -ltcl7.5"
-+			if test -r $dir/libtcl80.so -o -r $dir/libtcl80.a; then
-+				V_LIB_TCL="-L$dir -ltcl80"
++			if test -r $dir/libtcl81.so -o -r $dir/libtcl81.a; then
++				V_LIB_TCL="-L$dir -ltcl81"
  				break
  			fi
  			if test -r $dir/libtcl.so -o -r $dir/libtcl.a; then
@@ -938,13 +938,13 @@
 -		/import/tcl/lib/tcl7.5 \
 -		$prefix/lib/tcl7.5 \
 -		$x_libraries/tcl7.5 \
-+	places="/usr/local/lib/tcl8.0 \
-+		/usr/contrib/lib/tcl8.0 \
-+		/usr/lib/tcl8.0 \
-+		/usr/lib/tk/tcl8.0 \
-+		/import/tcl/lib/tcl8.0 \
-+		$prefix/lib/tcl8.0 \
-+		$x_libraries/tcl8.0 \
++	places="/usr/local/lib/tcl8.1 \
++		/usr/contrib/lib/tcl8.1 \
++		/usr/lib/tcl8.1 \
++		/usr/lib/tk/tcl8.1 \
++		/import/tcl/lib/tcl8.1 \
++		$prefix/lib/tcl8.1 \
++		$x_libraries/tcl8.1 \
  		/usr/local/lib/tcl \
  		/usr/lib/tcl \
  		/usr/lib/tk/tcl \
@@ -954,8 +954,8 @@
  	fi
 -	places="$d/lib/libtk4.1.so \
 -		$d/lib/libtk4.1.a \
-+	places="$d/lib/libtk8.0.so \
-+		$d/lib/libtk8.0.a \
++	places="$d/lib/libtk8.1.so \
++		$d/lib/libtk8.1.a \
  		$d/lib/libtk.so \
  		$d/lib/libtk.a"
  	V_LIB_TK=FAIL
@@ -964,7 +964,7 @@
  		exit 1
  	fi
 -	places="$d/lib/tk4.1 \
-+	places="$d/lib/tk8.0 \
++	places="$d/lib/tk8.1 \
  		$d/lib/tk"
  	V_LIBRARY_TK=FAIL
  	for dir in $places; do
@@ -999,7 +999,7 @@
  		places="\
  			$prefix/include \
  			/usr/local/include \
-+			/usr/local/include/tk8.0 \
++			/usr/local/include/tk8.1 \
  			/usr/contrib/include \
  			/usr/include/tcl \
  			/usr/include\
@@ -1008,9 +1008,9 @@
 -			$PWD/../tk4.1 \
 -			/usr/src/local/tk4.1 \
 -			/import/tcl/include/tk4.1 \
-+			$PWD/../tk8.0 \
-+			/usr/src/local/tk8.0 \
-+			/import/tcl/include/tk8.0 \
++			$PWD/../tk8.1 \
++			/usr/src/local/tk8.1 \
++			/import/tcl/include/tk8.1 \
  			"
  		for dir in $places; do
  			if test -r $dir/tk.h ; then
@@ -1020,15 +1020,15 @@
  	fi
 -	echo $ac_n "checking for -ltk4.1""... $ac_c" 1>&6
 -ac_lib_var=`echo tk4.1'_'main | tr './+\055' '__p_'`
-+	echo $ac_n "checking for main in -ltk8.0""... $ac_c" 1>&6
-+echo "configure:1857: checking for main in -ltk8.0" >&5
-+ac_lib_var=`echo tk8.0'_'main | sed 'y%./+-%__p_%'`
++	echo $ac_n "checking for main in -ltk8.1""... $ac_c" 1>&6
++echo "configure:1857: checking for main in -ltk8.1" >&5
++ac_lib_var=`echo tk8.1'_'main | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-ltk4.1  $LIBS"
-+LIBS="-ltk8.0  $LIBS"
++LIBS="-ltk8.1  $LIBS"
  cat > conftest.$ac_ext <<EOF
 -#line 1745 "configure"
 +#line 1865 "configure"
@@ -1055,7 +1055,7 @@
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
 -  V_LIB_TK="-ltk4.1"
-+  V_LIB_TK="-ltk8.0"
++  V_LIB_TK="-ltk8.1"
  else
    echo "$ac_t""no" 1>&6
  V_LIB_TK="FAIL"
@@ -1065,15 +1065,15 @@
  			/import/tcl/lib \
 -			$PWD/../tk4.1 \
 -			/usr/src/local/tk4.1 \
-+			$PWD/../tk8.0 \
-+			/usr/src/local/tk8.0 \
++			$PWD/../tk8.1 \
++			/usr/src/local/tk8.1 \
  			$prefix/lib \
  			$x_libraries"
  		for dir in $places; do
 -			if test -r $dir/libtk4.1.so -o -r $dir/libtk4.1.a; then
 -				V_LIB_TK="-L$dir -ltk4.1"
-+			if test -r $dir/libtk80.so -o -r $dir/libtk80.a; then
-+				V_LIB_TK="-L$dir -ltk80"
++			if test -r $dir/libtk81.so -o -r $dir/libtk81.a; then
++				V_LIB_TK="-L$dir -ltk81"
  				break
  			fi
  			if test -r $dir/libtk.so -o -r $dir/libtk.a; then
@@ -1090,15 +1090,15 @@
 -		$x_libraries/tk4.1 \
 -		$PWD/../tk4.1/library \
 -		/usr/src/local/tk4.1/library \
-+	places="/usr/local/lib/tk8.0 \
-+		/usr/contrib/lib/tk8.0 \
-+		/usr/lib/tk8.0 \
-+		/usr/lib/tk/tk8.0 \
-+		/import/tcl/lib/tk8.0 \
-+		$prefix/lib/tk8.0 \
-+		$x_libraries/tk8.0 \
-+		$PWD/../tk8.0/library \
-+		/usr/src/local/tk8.0/library \
++	places="/usr/local/lib/tk8.1 \
++		/usr/contrib/lib/tk8.1 \
++		/usr/lib/tk8.1 \
++		/usr/lib/tk/tk8.1 \
++		/import/tcl/lib/tk8.1 \
++		$prefix/lib/tk8.1 \
++		$x_libraries/tk8.1 \
++		$PWD/../tk8.1/library \
++		/usr/src/local/tk8.1/library \
  		/usr/local/lib/tk \
  		/usr/lib/tk \
  		/usr/lib/tk/tk \
@@ -1345,8 +1345,8 @@
  	fi
 -	places="$d/lib/libtcl7.5.so \
 -		$d/lib/libtcl7.5.a \
-+	places="$d/lib/libtcl8.0.so \
-+		$d/lib/libtcl8.0.a \
++	places="$d/lib/libtcl8.1.so \
++		$d/lib/libtcl8.1.a \
  		$d/lib/libtcl.so \
  		$d/lib/libtcl.a"
  	V_LIB_TCL=FAIL
@@ -1355,7 +1355,7 @@
  		exit 1
  	fi
 -	places="$d/lib/tcl7.5 \
-+	places="$d/lib/tcl8.0 \
++	places="$d/lib/tcl8.1 \
  		$d/lib/tcl"
  	V_LIBRARY_TCL=FAIL
  	for dir in $places; do
@@ -1366,14 +1366,14 @@
 -		places="$PWD/../tcl7.5 \
 -			/usr/src/local/tcl7.5 \
 -			/import/tcl/include/tcl7.5 \
-+		places="$PWD/../tcl8.0 \
-+			/usr/src/local/tcl8.0 \
-+			/import/tcl/include/tcl8.0 \
++		places="$PWD/../tcl8.1 \
++			/usr/src/local/tcl8.1 \
++			/import/tcl/include/tcl8.1 \
  			$prefix/include \
  			$x_includes/tk \
  			$x_includes \
  			/usr/local/include \
-+			/usr/local/include/tcl8.0 \
++			/usr/local/include/tcl8.1 \
  			/usr/contrib/include \
  			/usr/include"
  		for dir in $places; do
@@ -1382,7 +1382,7 @@
  		fi
  	fi
 -	AC_CHECK_LIB(tcl7.5, main, V_LIB_TCL="-ltcl7.5", V_LIB_TCL="FAIL")
-+	AC_CHECK_LIB(tcl8.0, main, V_LIB_TCL="-ltcl8.0", V_LIB_TCL="FAIL")
++	AC_CHECK_LIB(tcl8.1, main, V_LIB_TCL="-ltcl8.1", V_LIB_TCL="FAIL")
  	if test "$V_LIB_TCL" = FAIL; then
  		echo "checking for libtcl.a"
  		places="\
@@ -1393,15 +1393,15 @@
 -			$PWD/../tcl7.5 \
 -			/usr/src/local/tcl7.5 \
 -			/import/tcl/lib/tcl7.5 \
-+			$PWD/../tcl8.0 \
-+			/usr/src/local/tcl8.0 \
-+			/import/tcl/lib/tcl8.0 \
++			$PWD/../tcl8.1 \
++			/usr/src/local/tcl8.1 \
++			/import/tcl/lib/tcl8.1 \
  			"
  		for dir in $places; do
 -			if test -r $dir/libtcl7.5.so -o -r $dir/libtcl7.5.a; then
 -				V_LIB_TCL="-L$dir -ltcl7.5"
-+			if test -r $dir/libtcl80.so -o -r $dir/libtcl80.a; then
-+				V_LIB_TCL="-L$dir -ltcl80"
++			if test -r $dir/libtcl81.so -o -r $dir/libtcl81.a; then
++				V_LIB_TCL="-L$dir -ltcl81"
  				break
  			fi
  			if test -r $dir/libtcl.so -o -r $dir/libtcl.a; then
@@ -1416,13 +1416,13 @@
 -		/import/tcl/lib/tcl7.5 \
 -		$prefix/lib/tcl7.5 \
 -		$x_libraries/tcl7.5 \
-+	places="/usr/local/lib/tcl8.0 \
-+		/usr/contrib/lib/tcl8.0 \
-+		/usr/lib/tcl8.0 \
-+		/usr/lib/tk/tcl8.0 \
-+		/import/tcl/lib/tcl8.0 \
-+		$prefix/lib/tcl8.0 \
-+		$x_libraries/tcl8.0 \
++	places="/usr/local/lib/tcl8.1 \
++		/usr/contrib/lib/tcl8.1 \
++		/usr/lib/tcl8.1 \
++		/usr/lib/tk/tcl8.1 \
++		/import/tcl/lib/tcl8.1 \
++		$prefix/lib/tcl8.1 \
++		$x_libraries/tcl8.1 \
  		/usr/local/lib/tcl \
  		/usr/lib/tcl \
  		/usr/lib/tk/tcl \
@@ -1432,8 +1432,8 @@
  	fi
 -	places="$d/lib/libtk4.1.so \
 -		$d/lib/libtk4.1.a \
-+	places="$d/lib/libtk8.0.so \
-+		$d/lib/libtk8.0.a \
++	places="$d/lib/libtk8.1.so \
++		$d/lib/libtk8.1.a \
  		$d/lib/libtk.so \
  		$d/lib/libtk.a"
  	V_LIB_TK=FAIL
@@ -1442,7 +1442,7 @@
  		exit 1
  	fi
 -	places="$d/lib/tk4.1 \
-+	places="$d/lib/tk8.0 \
++	places="$d/lib/tk8.1 \
  		$d/lib/tk"
  	V_LIBRARY_TK=FAIL
  	for dir in $places; do
@@ -1455,7 +1455,7 @@
  		places="\
  			$prefix/include \
  			/usr/local/include \
-+			/usr/local/include/tk8.0 \
++			/usr/local/include/tk8.1 \
  			/usr/contrib/include \
  			/usr/include/tcl \
  			/usr/include\
@@ -1464,9 +1464,9 @@
 -			$PWD/../tk4.1 \
 -			/usr/src/local/tk4.1 \
 -			/import/tcl/include/tk4.1 \
-+			$PWD/../tk8.0 \
-+			/usr/src/local/tk8.0 \
-+			/import/tcl/include/tk8.0 \
++			$PWD/../tk8.1 \
++			/usr/src/local/tk8.1 \
++			/import/tcl/include/tk8.1 \
  			"
  		for dir in $places; do
  			if test -r $dir/tk.h ; then
@@ -1475,7 +1475,7 @@
  		fi
  	fi
 -	AC_CHECK_LIB(tk4.1, main, V_LIB_TK="-ltk4.1", V_LIB_TK="FAIL")
-+	AC_CHECK_LIB(tk8.0, main, V_LIB_TK="-ltk8.0", V_LIB_TK="FAIL")
++	AC_CHECK_LIB(tk8.1, main, V_LIB_TK="-ltk8.1", V_LIB_TK="FAIL")
  	if test "$V_LIB_TK" = FAIL; then
  		echo "checking for libtk.a"
  		places="/usr/local/lib \
@@ -1485,15 +1485,15 @@
  			/import/tcl/lib \
 -			$PWD/../tk4.1 \
 -			/usr/src/local/tk4.1 \
-+			$PWD/../tk8.0 \
-+			/usr/src/local/tk8.0 \
++			$PWD/../tk8.1 \
++			/usr/src/local/tk8.1 \
  			$prefix/lib \
  			$x_libraries"
  		for dir in $places; do
 -			if test -r $dir/libtk4.1.so -o -r $dir/libtk4.1.a; then
 -				V_LIB_TK="-L$dir -ltk4.1"
-+			if test -r $dir/libtk80.so -o -r $dir/libtk80.a; then
-+				V_LIB_TK="-L$dir -ltk80"
++			if test -r $dir/libtk81.so -o -r $dir/libtk81.a; then
++				V_LIB_TK="-L$dir -ltk81"
  				break
  			fi
  			if test -r $dir/libtk.so -o -r $dir/libtk.a; then
@@ -1510,15 +1510,15 @@
 -		$x_libraries/tk4.1 \
 -		$PWD/../tk4.1/library \
 -		/usr/src/local/tk4.1/library \
-+	places="/usr/local/lib/tk8.0 \
-+		/usr/contrib/lib/tk8.0 \
-+		/usr/lib/tk8.0 \
-+		/usr/lib/tk/tk8.0 \
-+		/import/tcl/lib/tk8.0 \
-+		$prefix/lib/tk8.0 \
-+		$x_libraries/tk8.0 \
-+		$PWD/../tk8.0/library \
-+		/usr/src/local/tk8.0/library \
++	places="/usr/local/lib/tk8.1 \
++		/usr/contrib/lib/tk8.1 \
++		/usr/lib/tk8.1 \
++		/usr/lib/tk/tk8.1 \
++		/import/tcl/lib/tk8.1 \
++		$prefix/lib/tk8.1 \
++		$x_libraries/tk8.1 \
++		$PWD/../tk8.1/library \
++		/usr/src/local/tk8.1/library \
  		/usr/local/lib/tk \
  		/usr/lib/tk \
  		/usr/lib/tk/tk \

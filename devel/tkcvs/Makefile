@@ -3,17 +3,17 @@
 # Date created:         02 Aug 1996
 # Whom:                 shanee@augusta.de
 #
-# $Id: Makefile,v 1.10 1997/10/26 23:57:02 fenner Exp $
+# $Id: Makefile,v 1.11 1997/10/31 08:30:45 tg Exp $
 #
 
 DISTNAME=	tkcvs-6.0
-CATEGORIES=	devel tk80
+CATEGORIES=	devel tk81
 MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/apps/tkcvs-6.0/ \
 		http://ftp.sunet.se/pub/lang/tcl/sorted/apps/tkcvs-6.0/
 
 MAINTAINER=	shanee@augusta.de
 
-LIB_DEPENDS=	tk80\\.1\\.:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk81\\.1\\.:${PORTSDIR}/x11/tk81
 
 NO_BUILD=	yes
 MAN1=		tkcvs.1 tkdiff.1

@@ -3,19 +3,19 @@
 # Date created:		7 July 1997
 # Whom:			doconnor@ist.flinders.edu.au
 #
-# $Id: Makefile,v 1.3 1997/10/30 15:04:15 tg Exp $
+# $Id: Makefile,v 1.4 1998/02/21 22:38:11 fenner Exp $
 #
 
 DISTNAME=	xmp3_1.0.0
 PKGNAME=	xmpeg3-1.0
-CATEGORIES=	audio tk80
+CATEGORIES=	audio tk81
 MASTER_SITES=	ftp://ftp.rasip.fer.hr/pub/mpeg/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.ORG
 
 RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
-		wish8.0:${PORTSDIR}/x11/tk80
+		wish8.1:${PORTSDIR}/x11/tk81
 
 WRKSRC=		${WRKDIR}/xmpeg3
 NO_BUILD=	yes

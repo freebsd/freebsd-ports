@@ -3,19 +3,19 @@
 # Date created:		3 August 1996
 # Whom:			lukin
 #
-# $Id: Makefile,v 1.10 1997/11/30 19:35:46 vanilla Exp $
+# $Id: Makefile,v 1.11 1998/01/19 13:21:37 vanilla Exp $
 #
 
 DISTNAME=	FileRunner_2.4.1
 PKGNAME=	filerunner-2.4.1
-CATEGORIES=	x11 tk80
+CATEGORIES=	x11 tk81
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=	tk81\\.1:${PORTSDIR}/x11/tk81
 
 WRKSRC=		${WRKDIR}/FileRunner_2.4.1
 MAKEFILE=	Makefile.freebsd

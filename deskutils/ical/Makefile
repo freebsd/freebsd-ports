@@ -3,24 +3,24 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.15 1998/02/07 22:59:16 hoek Exp $
+# $Id: Makefile,v 1.16 1998/02/21 22:38:00 fenner Exp $
 #
 
 DISTNAME=	ical-2.2
-CATEGORIES=	misc tk80
+CATEGORIES=	misc tk81
 MASTER_SITES=	http://www.research.digital.com/SRC/personal/Sanjay_Ghemawat/ical/icalbins/
 
 MAINTAINER=	erich@FreeBSD.ORG
 
-LIB_DEPENDS=    tk80\\.1:${PORTSDIR}/x11/tk80
+LIB_DEPENDS=    tk81\\.1:${PORTSDIR}/x11/tk81
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-tclconfig=${PREFIX}/lib/tcl8.0 \
-		--with-tclhdir=${PREFIX}/include/tcl8.0 \
-		--with-tclsh=${PREFIX}/bin/tclsh8.0 \
-		--with-tkconfig=${PREFIX}/lib/tk8.0 \
-		--with-tkhdir=${PREFIX}/include/tk8.0
+		--with-tclconfig=${PREFIX}/lib/tcl8.1 \
+		--with-tclhdir=${PREFIX}/include/tcl8.1 \
+		--with-tclsh=${PREFIX}/bin/tclsh8.1 \
+		--with-tkconfig=${PREFIX}/lib/tk8.1 \
+		--with-tkhdir=${PREFIX}/include/tk8.1
 
 MAN1=		ical.1
 
