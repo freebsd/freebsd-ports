@@ -6,6 +6,7 @@
 
 PORTNAME=	Maypole
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/S/SI/SIMON/
@@ -45,7 +46,7 @@ MAN3=		Apache::MVC.3 \
 		Maypole::View::TT.3 \
 		Maypole::Workflow.3
 
-DOCS=		About.pod \
+DOC_FILES=	About.pod \
 		Beer.pod \
 		BuySpy.pod \
 		Flox.pod \
@@ -56,8 +57,8 @@ DOCS=		About.pod \
 		Templates.pod \
 		View.pod \
 		makedoc.pl
-EXAMPLES=	BeerDB.pm
-TEMPLATES=	beerdb.css \
+EXAMPLE_FILES=	BeerDB.pm
+TEMPLATE_FILES=	beerdb.css \
 		beer/addnew \
 		custom/frontpage \
 		custom/header \
@@ -79,18 +80,18 @@ pre-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
+.for FILE in ${DOC_FILES}
 	@ ${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
 .endfor
 	@ ${MKDIR} ${EXAMPLESDIR}
-.for FILE in ${EXAMPLES}
+.for FILE in ${EXAMPLE_FILES}
 	@ ${INSTALL_DATA} ${WRKSRC}/ex/${FILE} ${EXAMPLESDIR}
 .endfor
 .endif
 	@ ${MKDIR} ${DATADIR}/templates/beer
 	@ ${MKDIR} ${DATADIR}/templates/custom
 	@ ${MKDIR} ${DATADIR}/templates/factory
-.for FILE in ${TEMPLATES}
+.for FILE in ${TEMPLATE_FILES}
 	@ ${INSTALL_DATA} ${WRKSRC}/templates/${FILE} ${DATADIR}/templates/${FILE}
 .endfor
 	@ ${CAT} ${PKGMESSAGE}
