@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	worldtools
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://anarcat.ath.cx/software/distfiles/
 
@@ -15,15 +15,9 @@ COMMENT=	Handy tools for living with make world
 
 USE_PERL5_RUN=	yes
 
-NO_BUILD=	yes
+MAN8=		buildit.8 upgrade.8 whereintheworld.8
 
-do-install:
-		${INSTALL_SCRIPT} ${WRKSRC}/whereintheworld ${PREFIX}/sbin
-		${INSTALL_SCRIPT} ${WRKSRC}/upgrade ${PREFIX}/sbin
-		${INSTALL_SCRIPT} ${WRKSRC}/buildit ${PREFIX}/sbin
-.if !defined(NOPORTDOCS)
-		@${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+MAKE_ARGS=	SHAREDIR=${PREFIX}
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>

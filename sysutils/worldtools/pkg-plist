@@ -1,5 +1,3 @@
 sbin/whereintheworld
 sbin/upgrade
 sbin/buildit
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
