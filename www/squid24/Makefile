@@ -13,11 +13,12 @@ MASTER_SITES=  \
 	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/squid-2/STABLE/ \
 	ftp://sunsite.auc.dk/pub/infosystems/squid/squid-2/STABLE/ \
 	ftp://ftp.net.lut.ac.uk/squid/squid-2/STABLE/
-DISTNAME=	squid-2.3.STABLE3
+DISTNAME=	squid-2.3.STABLE4
 EXTRACT_SUFX=	-src.tar.gz
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
-PATCHFILES=	squid-2.3.stable3-storeExpiredReferenceAge.patch
+PATCHFILES=	squid-2.3.stable4-ftp_icon_not_found.patch \
+		squid-2.3.stable4-internal_dns_rcode_table_formatting.patch
 
 MAINTAINER=	peter@freebsd.org
 
@@ -27,7 +28,6 @@ GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--localstatedir=${PREFIX}/squid
-CONFIGURE_ENV=	CFLAGS=""
 STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
 
@@ -91,6 +91,9 @@ MAKEFILE=	makefile
 #CONFIGURE_ARGS+= --enable-underscores
 #  - Enable control of different heap replacement algorithms at runtime.
 #CONFIGURE_ARGS+= --enable-heap-replacement
+
+post-extract:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
