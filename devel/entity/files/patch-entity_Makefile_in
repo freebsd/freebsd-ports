@@ -1,0 +1,11 @@
+--- entity/Makefile.in.orig	Thu Jun 22 22:15:42 2000
++++ entity/Makefile.in	Sat Oct 28 06:26:21 2000
+@@ -109,7 +109,7 @@
+ entity_LDADD = $(top_builddir)/expat-1.1/libexpat.a						$(top_builddir)/g-extentions/libgextend.a					$(top_builddir)/renderers/entitylang/libentitylang.a				$(top_builddir)/renderers/generic/librendgeneric.a				$(top_builddir)/gregex/src/.libs/libgregex.a					@RENDERER_LDFLAGS@ 								$(PCRE_LIBS) $(GLIB_LIBS)
+ 
+ 
+-entity_LDFLAGS = -export-dynamic
++entity_LDFLAGS = -export-dynamic -lreadline
+ 
+ entity_SOURCES = baby-entity.c					baby-entity.h					ebuffer.c					ebuffer.h					econfig.c					econfig.h					edebug.c					edebug.h					elements.c					elements.h					enode.h						entity.h					enode-attribs.c					enode-attribs.h					enode-base.c					enode-base.h					enode-call.c					enode-call.h					enode-data.c					enode-data.h					enode-delete.c					enode-delete.h					enode-event.c					enode-event.h					enode-kv.c					enode-kv.h					enode-search.c					enode-search.h					enode-treewalk.c				enode-treewalk.h				enode-xml.c					enode-xml.h					entity.c					entity.h					entity-exec-class.c				entity-exec-class.h				erend.c						erend.h						eutils.c					eutils.h					mainloop.c					mainloop.h					modulegen.c					modulegen.h					renderers.c					renderers.h					xml-parser.c					xml-parser.h
+ 

@@ -1,0 +1,46 @@
+bin/gregex-config
+bin/entity
+include/gregex.h
+lib/entity/clib/librendcoregtk.so
+lib/entity/clib/librendcoregtk.la
+lib/entity/clib/librendextragtk.so
+lib/entity/clib/librendextragtk.la
+@exec /sbin/ldconfig -m %D/lib/entity/clib
+@unexec /sbin/ldconfig -R
+lib/entity/Entity.pl
+lib/entity/E-init.pl
+lib/entity/ENode.pl
+lib/entity/config/rendnet.conf
+lib/entity/config/rendcoregtk.conf
+lib/entity/config/rendextragtk.conf
+lib/entity/elib/Net/http.e
+lib/entity/elib/Net/patterns
+lib/entity/elib/Net/poptest.e
+lib/entity/elib/Net/smtp.e
+lib/entity/elib/Net/socketaccept.e
+lib/entity/elib/Net/socketconn.e
+lib/entity/elib/Net/sockettest.e
+lib/entity/elib/Net/url-pop-code.e
+lib/entity/elib/Net/url-renderer.e
+lib/entity/elib/Net/url-smtp-code.e
+lib/entity/elib/Net/url-socket-code.e
+lib/entity/elib/Net/urltest.e
+lib/entity/elib/Net/pop-control-app
+lib/libgregex.so.0
+lib/libgregex.so
+lib/libgregex.la
+lib/libgregex.a
+share/entity/bugme.e
+share/entity/bugme.todo
+share/entity/freaky-coo.e
+share/entity/stemwinder.e
+share/entity/stemwinder.pl
+share/entity/tagrefgen.e
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
+@dirrm share/entity
+@dirrm lib/entity/clib
+@dirrm lib/entity/config
+@dirrm lib/entity/elib/Net
+@dirrm lib/entity/elib
+@dirrm lib/entity
