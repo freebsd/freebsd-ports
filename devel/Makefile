@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.53 1997/05/07 21:02:17 max Exp $
+# $Id: Makefile,v 1.54 1997/05/22 21:42:20 obrien Exp $
 #
 
     SUBDIR += SWIG
@@ -8,6 +8,7 @@
     SUBDIR += cflow
     SUBDIR += crossgo32
     SUBDIR += crosssco
+    SUBDIR += cs
     SUBDIR += cutils
     SUBDIR += cxref
     SUBDIR += ddd
