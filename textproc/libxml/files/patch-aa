@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Feb  1 02:46:13 1999
-+++ Makefile.in	Mon Feb  1 02:46:51 1999
-@@ -104,7 +104,7 @@
+--- Makefile.in.orig	Wed Feb 17 02:43:25 1999
++++ Makefile.in	Wed Feb 24 07:42:58 1999
+@@ -105,7 +105,7 @@
  tester_DEPENDENCIES = $(DEPS)
  tester_LDADD = $(LDADDS)
  
@@ -8,13 +8,13 @@
 +confexecdir = $(sysconfdir)
  confexec_DATA = xmlConf.sh
  
- EXTRA_DIST = xmlConf.sh.in libxml.spec
-@@ -439,7 +439,7 @@
+ EXTRA_DIST = xmlConf.sh.in libxml.spec doc/xml.html doc/structure.gif              doc/DOM.gif
+@@ -513,7 +513,7 @@
  uninstall-am: uninstall-libLTLIBRARIES uninstall-binSCRIPTS \
  		uninstall-confexecDATA uninstall-xmlincHEADERS
- uninstall: uninstall-am
+ uninstall: uninstall-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) \
  		$(HEADERS) config.h
- all-redirect: all-am
+ all-redirect: all-recursive-am
  install-strip:

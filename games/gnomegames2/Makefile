@@ -1,13 +1,13 @@
 # New ports collection makefile for:	gnomegames
-# Version required:			0.99.5
+# Version required:			0.99.8
 # Date created:				03 July 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.11 1999/01/27 08:31:50 fenner Exp $
+# $Id: Makefile,v 1.12 1999/02/02 13:01:33 vanilla Exp $
 #
 
-DISTNAME=	gnome-games-0.99.5
-PKGNAME=	gnomegames-0.99.5
+DISTNAME=	gnome-games-0.99.8
+PKGNAME=	gnomegames-0.99.8
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	gnome-games

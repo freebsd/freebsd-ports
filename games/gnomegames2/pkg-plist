@@ -1,18 +1,20 @@
 bin/GnomeScott
 bin/freecell
+bin/gnibbles
 bin/gnobots
 bin/gnobots2
 bin/gnome-stones
 bin/gnometris
 bin/gnomine
 bin/gnotravex
+bin/gtali
 bin/gturing
-bin/gyahtzee
 bin/iagno
 bin/mahjongg
 bin/metatris
 bin/same-gnome
 bin/sol
+etc/sound/events/gnibbles.soundlist
 etc/sound/events/gnobots2.soundlist
 etc/sound/events/iagno.soundlist
 include/gdkcardimage/gdk-card-image.h
@@ -23,13 +25,14 @@ lib/libgdkcardimage.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/gnome/apps/Games/freecell.desktop
+share/gnome/apps/Games/gnibbles.desktop
 share/gnome/apps/Games/gnobots.desktop
 share/gnome/apps/Games/gnobots2.desktop
 share/gnome/apps/Games/gnome-stones.desktop
 share/gnome/apps/Games/gnometris.desktop
 share/gnome/apps/Games/gnomine.desktop
 share/gnome/apps/Games/gnotravex.desktop
-share/gnome/apps/Games/gyahtzee.desktop
+share/gnome/apps/Games/gtali.desktop
 share/gnome/apps/Games/iagno.desktop
 share/gnome/apps/Games/mahjongg.desktop
 share/gnome/apps/Games/metatris.desktop
@@ -58,7 +61,7 @@ share/gnome/games/gnotravex.3x3.scores
 share/gnome/games/gnotravex.4x4.scores
 share/gnome/games/gnotravex.5x5.scores
 share/gnome/games/gnotravex.6x6.scores
-share/gnome/games/gyahtzee.scores
+share/gnome/games/gtali.scores
 share/gnome/games/iagno.b1.scores
 share/gnome/games/iagno.b2.scores
 share/gnome/games/iagno.b3.scores
@@ -68,6 +71,32 @@ share/gnome/games/iagno.w3.scores
 share/gnome/games/mahjongg.scores
 share/gnome/games/metatris.scores
 share/gnome/games/same-gnome.scores
+share/gnome/gnibbles/level001.gnl
+share/gnome/gnibbles/level002.gnl
+share/gnome/gnibbles/level003.gnl
+share/gnome/gnibbles/level004.gnl
+share/gnome/gnibbles/level005.gnl
+share/gnome/gnibbles/level006.gnl
+share/gnome/gnibbles/level007.gnl
+share/gnome/gnibbles/level008.gnl
+share/gnome/gnibbles/level009.gnl
+share/gnome/gnibbles/level010.gnl
+share/gnome/gnibbles/level011.gnl
+share/gnome/gnibbles/level012.gnl
+share/gnome/gnibbles/level013.gnl
+share/gnome/gnibbles/level014.gnl
+share/gnome/gnibbles/level015.gnl
+share/gnome/gnibbles/level016.gnl
+share/gnome/gnibbles/level017.gnl
+share/gnome/gnibbles/level018.gnl
+share/gnome/gnibbles/level019.gnl
+share/gnome/gnibbles/level020.gnl
+share/gnome/gnibbles/level021.gnl
+share/gnome/gnibbles/level022.gnl
+share/gnome/gnibbles/level023.gnl
+share/gnome/gnibbles/level024.gnl
+share/gnome/gnibbles/level025.gnl
+share/gnome/gnibbles/level026.gnl
 share/gnome/gnobots2/classic_robots.cfg
 share/gnome/gnobots2/nightmare.cfg
 share/gnome/gnobots2/robots2.cfg
@@ -84,6 +113,16 @@ share/gnome/gnome-stones/objects/libgnomekoban.a
 share/gnome/gnome-stones/objects/libgnomekoban.la
 share/gnome/gnome-stones/objects/libgnomekoban.so
 share/gnome/gnome-stones/objects/libgnomekoban.so.0
+share/gnome/gturing/examples/3ones2zeroes.tur
+share/gnome/gturing/examples/add.tur
+share/gnome/gturing/examples/addbin.tur
+share/gnome/gturing/examples/bb2.tur
+share/gnome/gturing/examples/bb3.tur
+share/gnome/gturing/examples/bb5.tur
+share/gnome/gturing/examples/bin2dec.tur
+share/gnome/gturing/examples/dashnumbers.tur
+share/gnome/gturing/examples/dec2bin.tur
+share/gnome/gturing/examples/subst.tur
 share/gnome/help/aisleriot/C/beleaguered-castle.html
 share/gnome/help/aisleriot/C/camelot-goal.gif
 share/gnome/help/aisleriot/C/camelot.html
@@ -219,6 +258,8 @@ share/gnome/pixmaps/cards/suits/xpat-21x21.png
 share/gnome/pixmaps/cards/suits/xpat-41x41.png
 share/gnome/pixmaps/cards/baize.png
 share/gnome/pixmaps/cards/splash.png
+share/gnome/pixmaps/gnibbles/gnibbles.png
+share/gnome/pixmaps/gnibbles/gnibbles_logo.png
 share/gnome/pixmaps/gnobots/aieee.png
 share/gnome/pixmaps/gnobots/cows.png
 share/gnome/pixmaps/gnobots/eggs.png
@@ -250,7 +291,10 @@ share/gnome/pixmaps/gnome-stones/frame.png
 share/gnome/pixmaps/gnome-stones/gnome.png
 share/gnome/pixmaps/gnome-stones/title.png
 share/gnome/pixmaps/gnome-stones/wall.png
+share/gnome/pixmaps/gnometris/5blocks-tim.png
 share/gnome/pixmaps/gnometris/5blocks.png
+share/gnome/pixmaps/gnometris/7blocks.png
+share/gnome/pixmaps/gnotravex/gnotravex.png
 share/gnome/pixmaps/iagno/blend.png
 share/gnome/pixmaps/iagno/classic.png
 share/gnome/pixmaps/iagno/flipblend.png
@@ -258,7 +302,6 @@ share/gnome/pixmaps/iagno/metal.png
 share/gnome/pixmaps/iagno/metal2.png
 share/gnome/pixmaps/iagno/shrink.png
 share/gnome/pixmaps/iagno/woodtrim.png
-share/gnome/pixmaps/gnotravex/gnotravex.png
 share/gnome/pixmaps/mahjongg/default.png
 share/gnome/pixmaps/mahjongg/seta.png
 share/gnome/pixmaps/same-gnome/blink-sync.png
@@ -269,8 +312,8 @@ share/gnome/pixmaps/same-gnome/stones.png
 share/gnome/pixmaps/gnome-aisleriot.png
 share/gnome/pixmaps/gnome-gnobots.png
 share/gnome/pixmaps/gnome-gnobots2.png
+share/gnome/pixmaps/gnome-gtali.png
 share/gnome/pixmaps/gnome-gtetris.png
-share/gnome/pixmaps/gnome-gyahtzee.png
 share/gnome/pixmaps/gnome-mahjongg.png
 share/gnome/pixmaps/gnome-metatris.png
 share/gnome/pixmaps/gnome-stones.png
@@ -312,6 +355,10 @@ share/locale/pl/LC_MESSAGES/gnome-games.mo
 share/locale/pt/LC_MESSAGES/gnome-games.mo
 share/locale/ru/LC_MESSAGES/gnome-games.mo
 @dirrm include/gdkcardimage
+@dirrm share/gnome/gnibbles
+@dirrm share/gnome/gnobots2
+@dirrm share/gnome/gturing/examples
+@dirrm share/gnome/gturing
 @dirrm share/gnome/help/aisleriot/C
 @dirrm share/gnome/help/aisleriot
 @dirrm share/gnome/help/gnobots/C
@@ -322,7 +369,6 @@ share/locale/ru/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/gnobots2
 @dirrm share/gnome/help/samegnome/C
 @dirrm share/gnome/help/samegnome
-@dirrm share/gnome/gnobots2
 @dirrm share/gnome/metatris/default-theme
 @dirrm share/gnome/metatris
 @dirrm share/gnome/pixmaps/cards/backs
@@ -332,6 +378,7 @@ share/locale/ru/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/pixmaps/cards/slots
 @dirrm share/gnome/pixmaps/cards/suits
 @dirrm share/gnome/pixmaps/cards
+@dirrm share/gnome/pixmaps/gnibbles
 @dirrm share/gnome/pixmaps/gnobots
 @dirrm share/gnome/pixmaps/gnobots2
 @dirrm share/gnome/pixmaps/gnome-stones
