@@ -19,7 +19,7 @@
  	    echo "  The server will run as user @myident@ if started with";\
  	    echo "  root privileges, otherwise as the user of the parent ";\
 -	    echo "  process (use --enable-identity=USER to change).";\
-+	    echo "  process (use TRUSTED_USER=USER to change).";\
++	    echo "  process (use RUNAS_USER=USER to change).";\
  	    echo;\
  	    echo "  You may want to use: make install-user";\
  	    echo;\
