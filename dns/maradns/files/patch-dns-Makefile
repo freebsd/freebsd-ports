@@ -1,0 +1,11 @@
+--- dns/Makefile.old	Sat May 26 19:32:28 2001
++++ dns/Makefile	Sat May 26 19:32:38 2001
+@@ -4,7 +4,7 @@
+ OBJECTS=$(DOBJECTS) $(JOBJS) $(MJOBJS)
+ 
+ #FLAGS = -O2 -Wall
+-FLAGS = -g
++FLAGS = -g $(CFLAGS)
+ 
+ all: Queries.o Compress.o bobbit.o
+ 

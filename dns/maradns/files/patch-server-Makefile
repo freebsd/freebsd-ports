@@ -1,0 +1,18 @@
+--- server/Makefile.old	Fri May 25 07:53:30 2001
++++ server/Makefile	Sat May 26 19:35:07 2001
+@@ -8,7 +8,7 @@
+ VERSION=0.6.18
+ 
+ #FLAGS = -O2 -Wall
+-FLAGS = -g -DDEBUG
++FLAGS = -g -DDEBUG $(CFLAGS)
+ 
+ all: $(EXECS)
+ 
+@@ -25,5 +25,5 @@
+ 	cc -c $(FLAGS) -o recursive.o recursive.c 
+ 
+ maradns: MaraDNS.c $(OBJECTS) 
+-	cc $(FLAGS) -DVERSION=\"$(VERSION)\" -o maradns MaraDNS.c $(OBJECTS) -lpthread
++	cc $(FLAGS) -DVERSION=\"$(VERSION)\" -o maradns MaraDNS.c $(OBJECTS) -pthread
+ 

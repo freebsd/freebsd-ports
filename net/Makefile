@@ -178,6 +178,7 @@
     SUBDIR += linpopup
     SUBDIR += lla
     SUBDIR += macipgw
+    SUBDIR += maradns
     SUBDIR += mars_nwe
     SUBDIR += merlinmon
     SUBDIR += micq

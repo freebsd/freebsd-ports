@@ -1,0 +1,11 @@
+--- parse/Makefile.old	Sat May 26 19:34:30 2001
++++ parse/Makefile	Sat May 26 19:34:39 2001
+@@ -6,7 +6,7 @@
+ EXECS=parsetest parsetest2
+ 
+ #FLAGS = -O2
+-FLAGS = -g
++FLAGS = -g $(CFLAGS)
+ 
+ all: $(EXECS)
+ 

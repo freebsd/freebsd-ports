@@ -1,0 +1,11 @@
+--- tuzona/Makefile.old	Sat May 26 19:37:30 2001
++++ tuzona/Makefile	Sat May 26 19:37:35 2001
+@@ -6,7 +6,7 @@
+ EXECS=getzone zoneserver
+ 
+ #FLAGS = -O2
+-FLAGS = -g
++FLAGS = -g $(CFLAGS)
+ 
+ all: $(EXECS)
+ 
