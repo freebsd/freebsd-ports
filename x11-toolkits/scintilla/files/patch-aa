@@ -1,15 +1,15 @@
 
 $FreeBSD$
 
---- makefile.orig	Tue Jan 30 02:52:54 2001
-+++ makefile	Tue Jan 30 11:14:12 2001
+--- makefile.orig	Thu Feb  1 10:12:22 2001
++++ makefile	Fri Mar  2 11:12:31 2001
 @@ -5,38 +5,42 @@
  # GNU make does not like \r\n line endings so should be saved to CVS in binary form.
  
  .SUFFIXES: .cxx .o .h .a
 -CC = g++
 -AR = ar
-+CC = c++
++CC ?= c++
 +AR = $(CC) -shared
  
 -COMPLIB=../bin/scintilla.a
@@ -35,8 +35,8 @@ $FreeBSD$
 -	$(CC) `gtk-config --cflags` $(INCLUDEDIRS) $(CXXFLAGS) -c $< -o $@
 +	$(CC) -DPIC -fPIC -fpic $(INCLUDEDIRS) $(CXXFLAGS) -c $< -o $@
  
- LEXOBJS	=  LexConf.o LexCPP.o LexHTML.o LexLua.o LexOthers.o LexPascal.o \
- 	LexPerl.o LexPython.o LexSQL.o LexVB.o
+ LEXOBJS	=  LexAVE.o LexConf.o LexCPP.o LexHTML.o LexLua.o LexOthers.o \
+ 	LexPascal.o LexPerl.o LexPython.o LexSQL.o LexVB.o
  
  # The LEXOBJS have to be treated specially as the functions in them are not called from external code
  
