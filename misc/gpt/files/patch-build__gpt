@@ -1,0 +1,11 @@
+
+$FreeBSD$
+
+--- build_gpt.orig	Fri Jan 16 15:11:51 2004
++++ build_gpt	Fri Jan 16 15:13:12 2004
+@@ -1,4 +1,4 @@
+-#! /usr/bin/env perl
++#!@@PERL@@
+ 
+ use strict;
+ use Getopt::Long;
