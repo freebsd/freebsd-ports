@@ -14,7 +14,7 @@ DISTNAME=	flac-${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITE_DEBIAN}
 PATCH_SITE_SUBDIR=	pool/main/f/flac
-PATCHFILES=	flac_1.1.0-4.diff.gz
+PATCHFILES=	flac_1.1.0-10.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	naddy@FreeBSD.org
