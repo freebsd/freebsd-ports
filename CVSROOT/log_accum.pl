@@ -698,57 +698,54 @@ if (-e "$LAST_FILE.$PID") {
 #
 # Produce the final compilation of the log messages
 #
-@text = &build_header();
-for ($i = 0; ; $i++) {
-	last if (! -e "$LOG_FILE.$i.$PID");
-	@lines = &read_logfile("$CHANGED_FILE.$i.$PID");
-	if ($#lines >= 0) {
-		push(@text, &format_lists("Modified", @lines));
-	}
-	@lines = &read_logfile("$ADDED_FILE.$i.$PID");
-	if ($#lines >= 0) {
-		push(@text, &format_lists("Added", @lines));
-	}
-	@lines = &read_logfile("$REMOVED_FILE.$i.$PID");
-	if ($#lines >= 0) {
-		push(@text, &format_lists("Removed", @lines));
-	}
+my @log_msg = &build_header();
+for (my $i = 0; ; $i++) {
+	last unless -e "$LOG_FILE.$i.$PID";
 
-	@lines = &read_logfile("$LOG_FILE.$i.$PID");
-	if ($#lines >= 0) {
-		push(@text, "  Log:");
-		push(@text, map { "  $_" } @lines);
-	}
+	my @mod_lines = &read_logfile("$CHANGED_FILE.$i.$PID");
+	push @log_msg, &format_lists("Modified", @mod_lines) if @mod_lines;
+
+	my @add_lines = &read_logfile("$ADDED_FILE.$i.$PID");
+	push @log_msg, &format_lists("Added", @add_lines) if @add_lines;
+
+	my @rem_lines = &read_logfile("$REMOVED_FILE.$i.$PID");
+	push @log_msg, &format_lists("Removed", @rem_lines) if @rem_lines;
+
+	my @log_lines = &read_logfile("$LOG_FILE.$i.$PID");
+	push @log_msg, "  Log:", (map { "  $_" } @log_lines) if @log_lines;
+
+
 	if ($RCSIDINFO == 2) {
 		if (-e "$SUMMARY_FILE.$i.$PID") {
-			push(@text, "  ");
-			push @text, map {"  $_"} format_summaries("$SUMMARY_FILE.$i.$PID");
+			push @log_msg, "  ", map {"  $_"}
+			    format_summaries("$SUMMARY_FILE.$i.$PID");
 		}
 	}
-	push(@text, "", "");
+
+	push @log_msg, "", "";
 }
 #
 # Put the log message at the beginning of the Changes file
 #
-&do_changes_file(@text);
+&do_changes_file(@log_msg);
 
 #
 # Now generate the extra info for the mail message..
 #
 if ($RCSIDINFO == 1) {
 	my @summary_files;
-	for ($i = 0; ; $i++) {
+	for (my $i = 0; ; $i++) {
 		last unless -e "$LOG_FILE.$i.$PID";
 		push @summary_files, "$SUMMARY_FILE.$i.$PID";
 	}
-	push @text, format_summaries(@summary_files);
-	push @text, "";
+	push @log_msg, format_summaries(@summary_files);
+	push @log_msg, "";
 }
 
 #
 # Mail out the notification.
 #
-&mail_notification(@text);
+&mail_notification(@log_msg);
 &cleanup_tmpfiles();
 exit 0;
 # EOF
