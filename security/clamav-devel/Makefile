@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20040701
+PORTVERSION=	20040826
 CATEGORIES=	security
-MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
+MASTER_SITES=	http://www.clamav.net/snapshot/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -29,7 +29,9 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_AUTOCONF_VER=259
-USE_LIBTOOL_VER=13
+USE_AUTOMAKE_VER=18
+USE_LIBTOOL_VER=15
+LIBTOOLFILES=	acinclude.m4
 INSTALLS_SHLIB=	yes
 USE_RC_SUBR=	yes
 
@@ -39,9 +41,9 @@ CONFIGURE_ARGS=	--with-dbdir=${DATADIR} \
 		--enable-bigstack \
 		--disable-dependency-tracking
 CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" "CPPFLAGS=${CPPFLAGS}"
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
 
 MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamav.conf.5 freshclam.conf.5
@@ -107,7 +109,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|g' \
 		${WRKSRC}/clamav-milter/clamav-milter.c
 	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.am
 
 post-build:
 	@${SED} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf \

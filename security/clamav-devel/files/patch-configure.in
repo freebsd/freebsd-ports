@@ -1,61 +1,35 @@
---- clamav-devel.orig/files/patch-configure.in	Thu Jan  1 01:00:00 1970
-+++ clamav-devel/files/patch-configure.in	Sun Feb 29 20:35:49 2004
-@@ -0,0 +1,58 @@
-+--- configure.in.orig	Mon Feb 23 18:24:52 2004
-++++ configure.in	Wed Feb 25 17:39:15 2004
-+@@ -199,9 +199,9 @@
-+ AC_SUBST(CFGDIR)
-+ AC_DEFINE_UNQUOTED(CONFDIR,"$cfg_dir",[where to look for the config file])
-+ 
-+-dnl Do not overwrite the current config file
-+-AM_CONDITIONAL(INSTALL_CLAMAV_CONF, test ! -r "$cfg_dir/clamav.conf")
-+-AM_CONDITIONAL(INSTALL_FRESHCLAM_CONF, test ! -r "$cfg_dir/freshclam.conf")
-++dnl Do not install config files
-++AM_CONDITIONAL(INSTALL_CLAMAV_CONF, test 0 = 1 )
-++AM_CONDITIONAL(INSTALL_FRESHCLAM_CONF, test 0 = 1 )
-+ 
-+ if test "$test_urandom" = "yes"
-+ then
-+@@ -294,10 +294,38 @@
-+     ;;
-+ freebsd*)
-+     if test "$have_pthreads" = "yes"; then
-+-	LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS -pthread -lc_r"
-+-	CLAMD_LIBS="-pthread -lc_r"
-+-	CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread -lc_r"
-+-	TH_SAFE="-thread-safe"
-++	if test -n "$with_os_version"; then
-++		OSVERSION="$with_os_version"
-++	else
-++		OSVERSION=`/sbin/sysctl -n kern.osreldate`
-++	fi
-++	if test -z "$PTHREAD_CFLAGS"; then
-++		if test "$OSVERSION" -lt "502102"; then
-++			PTHREAD_CFLAGS="-D_THREAD_SAFE"
-++		else
-++			unset PTHREAD_CFLAGS
-++		fi
-++	fi
-++	if test -z "$PTHREAD_LIBS"; then
-++		if test "$OSVERSION" -lt "502102"; then
-++			PTHREAD_LIBS="-lc_r"
-++		fi
-++		if test "$OSVERSION" -lt "500016"; then
-++			PTHREAD_LIBS="-pthread"
-++		fi
-++		if test "$OSVERSION" -ge "502102"; then
-++			PTHREAD_LIBS="-lpthread"
-++		fi
-++	fi
-++
-++	if test "$OSVERSION" -lt "500016"; then
-++		PTHREAD_LIBS="$PTHREAD_LIBS -lc_r"
-++	fi
-++
-++	LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS $PTHREAD_LIBS"
-++	CLAMD_LIBS="$PTHREAD_LIBS"
-++	CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS $PTHREAD_LIBS"
-++	TH_SAFE="-thread-safe $PTHREAD_CFLAGS"
-+ 	AC_DEFINE(CL_THREAD_SAFE,1,[thread safe])
-+ 	AC_DEFINE(_REENTRANT,1,[thread safe])
-+     fi
+--- configure.in.orig	Sun Aug 22 19:08:25 2004
++++ configure.in	Thu Sep  2 13:36:30 2004
+@@ -284,9 +284,6 @@
+     ;;
+ freebsd*)
+     if test "$have_pthreads" = "yes"; then
+-	LIBCLAMAV_LIBS="$LIBCLAMAV_LIBS -pthread -lc_r"
+-	CLAMD_LIBS="$CLAMD_LIBS -pthread -lc_r"
+-	CLAMAV_MILTER_LIBS="$CLAMAV_MILTER_LIBS -pthread -lc_r"
+ 	TH_SAFE="-thread-safe"
+ 	AC_DEFINE(CL_THREAD_SAFE,1,[thread safe])
+ 	AC_DEFINE(_REENTRANT,1,[thread safe])
+@@ -510,6 +507,8 @@
+ 
+ dnl Check for gethostbyname_r and number of its arguments
+ dnl Code from libwww/configure.in
++AC_CHECK_FUNC(gethostbyname_r)
++if test $ac_cv_func_gethostbyname_r = 'yes'; then
+ AC_MSG_CHECKING(for gethostbyname_r)
+ if test -z "$ac_cv_gethostbyname_args"; then
+ AC_TRY_COMPILE(
+@@ -565,6 +564,13 @@
+ 	AC_DEFINE(HAVE_GETHOSTBYNAME_R_6,1,[gethostbyname_r takes 6 arguments])
+     fi
+     AC_MSG_RESULT([yes, and it takes $ac_cv_gethostbyname_args arguments])
++fi
++else
++dnl Check for gethostbyname()
++AC_CHECK_FUNC(gethostbyname)
++if test $ac_cv_func_gethostbyname = 'no'; then
++    AC_MSG_ERROR(***** fail on check gethostbyname())
++fi
+ fi
+ 
+ dnl Check for clamav in /etc/passwd
