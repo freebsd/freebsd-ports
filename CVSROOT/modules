@@ -1065,6 +1065,7 @@ css-mode.el	ports/www/css-mode.el
 cssc		ports/devel/cssc
 cstream		ports/misc/cstream
 csu		src/lib/csu
+ct		ports/net/ct
 ctags		src/usr.bin/ctags
 cthumb		ports/graphics/cthumb
 ctm		src/usr.sbin/ctm
@@ -8217,6 +8218,7 @@ uwatch		ports/sysutils/uwatch
 uwm		ports/x11-wm/uwm
 uzap		ports/editors/uzap
 v		ports/x11-toolkits/v
+v6eval		ports/net/v6eval
 vMac		ports/emulators/vMac
 vacation	src/usr.bin/vacation
 vamos		ports/games/vamos
