@@ -6957,6 +6957,7 @@ p5-Email-Date	ports/mail/p5-Email-Date
 p5-Email-Filter	ports/mail/p5-Email-Filter
 p5-Email-Find	ports/mail/p5-Email-Find
 p5-Email-Folder	ports/mail/p5-Email-Folder
+p5-Email-Folder-IMAP	ports/mail/p5-Email-Folder-IMAP
 p5-Email-FolderType	ports/mail/p5-Email-FolderType
 p5-Email-FolderType-Net	ports/mail/p5-Email-FolderType-Net
 p5-Email-LocalDelivery	ports/mail/p5-Email-LocalDelivery
