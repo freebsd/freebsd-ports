@@ -1,0 +1,13 @@
+NovaWM is a new window manager for the X Windows System (X11).  It is
+developed with speed, size, and style in mind.  NovaWM takes on its own
+style that is different than ANY window manager.  NovaWM isn't too large
+and toyish like many popular window managers like the desktops (KDE and
+GNOME).  Also like some window managers NovaWM has its own toolkit that
+is much easier to understand and develop with than most others though
+NovaWM itself doesn't use the toolkit to create its interface, reducing
+the dependency on other libraries.  NovaWM was also developed with the
+idea of integration and digital media in mind and so future versions of
+NovaWM are planned to support easy application integration and have
+support for integration of digital media applications.
+
+WWW: http://novawm.sourceforge.net/
