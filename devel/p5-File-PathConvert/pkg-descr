@@ -1,0 +1,8 @@
+File::PathConvert provides functions to convert between absolute and
+relative paths, and from logical paths to physical paths on a variety of
+filesystems, including the URL 'filesystem'.
+
+For new programs, it is probably better to use File::Spec and Cwd
+modules, if you can help it.
+
+WWW: http://search.cpan.org/dist/File-PathConvert
