@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-1.00RC5
 
 MAINTAINER=	clive@FreeBSD.org
 
+FORBIDDEN=	"A long standing bug is noted as a vulnerability on bugtraq"
+
 HAS_CONFIGURE=	yes
 
 CXXFLAGS+=	-lstdc++
