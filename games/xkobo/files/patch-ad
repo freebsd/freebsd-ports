@@ -1,0 +1,10 @@
+--- xkobo.C.orig	Fri Jun 14 19:27:27 1996
++++ xkobo.C	Tue May 25 11:59:03 1999
+@@ -202,6 +202,7 @@
+     
+     wbase.title("xkobo");
+     wbase.set_wm_close();
++    wbase.set_wm_hints(argc, argv);
+     wbase.hold_size();
+     wbase.font(NORMAL_FONT);
+     wbase.foreground(wbase.alloc_color(65535, 65535, 65535));
