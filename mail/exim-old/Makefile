@@ -16,6 +16,8 @@ DISTFILES=	exim-${EXIM_VERSION}${EXTRACT_SUFX} exim-texinfo-${EXIM_DOCVERSION}${
 MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	High performance MTA for Unix systems on the Internet
 
+NO_LATEST_LINK=	yes
+
 USE_BZIP2=	yes
 USE_PERL5=	yes
 
