@@ -8,6 +8,7 @@
 
 PORTNAME=	pico
 PORTVERSION=	4.53
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://mirror.sit.wisc.edu/pub/net/mail/pine/ \
@@ -20,6 +21,9 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 DISTNAME=	pine${PORTVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	PIne's message COmposition editor
+
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 WRKSRC=		${WRKDIR}/pine${PORTVERSION}/pico
 PATCH_WRKSRC=	${WRKSRC}/..
@@ -28,6 +32,11 @@ MAKEFILE=	makefile.bsf
 ALL_TARGET=	pico
 
 MAN1=		pico.1
+
+post-patch:
+	${CP} ${WRKSRC}/osdep/os-bsf.h ${WRKSRC}/osdep/os-bsf.h.presed
+	${SED} -e "s:@@PREFIX@@:${PREFIX}:g" \
+	${WRKSRC}/osdep/os-bsf.h.presed > ${WRKSRC}/osdep/os-bsf.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pico ${PREFIX}/bin/pico
