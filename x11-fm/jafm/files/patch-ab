@@ -1,0 +1,11 @@
+--- icon.cc.orig	Sat Feb 26 19:38:06 2000
++++ icon.cc	Sat Feb 26 19:38:17 2000
+@@ -914,7 +914,7 @@
+   instructions = 0 ;
+   realSize = 0 ;
+ 
+-  static bug = 0 ;
++  static int bug = 0 ;
+   
+   // okay, parse the file
+   // error checking is s.e.p.
