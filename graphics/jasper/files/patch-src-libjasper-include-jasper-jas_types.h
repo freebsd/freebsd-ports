@@ -1,9 +1,8 @@
-
 $FreeBSD$
 
---- src/libjasper/include/jasper/jas_types.h	2003/01/19 20:08:07	1.1
-+++ src/libjasper/include/jasper/jas_types.h	2003/01/19 20:07:51
-@@ -246,13 +246,13 @@
+--- src/libjasper/include/jasper/jas_types.h	Sat Oct  4 12:57:58 2003
++++ src/libjasper/include/jasper/jas_types.h	Wed Dec 17 10:29:46 2003
+@@ -223,13 +223,13 @@
  #endif
  /**********/
  #if !defined(INT_FAST64_MIN)
@@ -13,9 +12,9 @@ $FreeBSD$
  #define INT_FAST64_MAX	LLONG_MAX
  #endif
  /**********/
- #if !defined(UINT_FAST64_MIN)
+ #if !defined(UINT_FAST64_MAX)
 -typedef ulonglong uint_fast64_t;
 +typedef unsigned long long uint_fast64_t;
- #define UINT_FAST64_MIN	ULLONG_MIN
  #define UINT_FAST64_MAX	ULLONG_MAX
  #endif
+ /**********/

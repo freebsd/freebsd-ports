@@ -3,15 +3,6 @@ $FreeBSD$
 
 --- configure.orig	Mon Feb 24 09:21:58 2003
 +++ configure	Wed May  7 19:29:07 2003
-@@ -720,7 +720,7 @@
- 
- JAS_MAJOR_VERSION=1
- JAS_MINOR_VERSION=700
--JAS_MICRO_VERSION=2
-+JAS_MICRO_VERSION=4
- JAS_INTERFACE_AGE=0
- JAS_BINARY_AGE=0
- JAS_VERSION=$JAS_MAJOR_VERSION.$JAS_MINOR_VERSION.$JAS_MICRO_VERSION
 @@ -5469,6 +5469,7 @@
  
  # This can be used to rebuild libtool when needed
