@@ -8,7 +8,9 @@
 PORTNAME=	streamripper
 PORTVERSION=	0.7.0b
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.bigfreakinserver.com/pub/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://ftp.bigfreakinserver.com/pub/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	trevor@FreeBSD.org
 
