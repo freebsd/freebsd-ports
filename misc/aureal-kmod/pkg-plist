@@ -1,0 +1,4 @@
+lib/au88x0/snd_au8810.ko
+lib/au88x0/snd_au8820.ko
+lib/au88x0/snd_au8830.ko
+@dirrm lib/au88x0
