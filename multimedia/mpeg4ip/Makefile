@@ -19,9 +19,9 @@ BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool \
 		pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		glib-2.0.200:${PORTSDIR}/devel/glib20 \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
 		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes

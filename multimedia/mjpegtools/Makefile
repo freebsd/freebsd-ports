@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--with-dv=${LOCALBASE}
 .endif
 #
 .ifdef(WITH_LIBGNUGETOPT)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=	yes
 .endif
 #
 .ifdef(WITH_LIBMOVTAR)
@@ -172,6 +172,9 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|(AVIPLAY_LIBS \=.*)|\1 -lgnugetopt|' \
 		${WRKSRC}/lavtools/Makefile.in
 .endif
+# link to pthreads
+	@${REINPLACE_CMD} -E -e 's|(AVIPLAY_LIBS \=.*)|\1 ${PTHREAD_LIBS}|' \
+		${WRKSRC}/lavtools/Makefile.in
 
 post-configure:
 	@${CP} -f ${LOCALBASE}/bin/${LIBTOOL} ${WRKSRC}

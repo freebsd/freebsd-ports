@@ -13,10 +13,10 @@ MASTER_SITES=	http://lpn.rnbhq.org/download/
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Decrypts and copies DVD .vob files
 
-LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread
 
 USE_BZIP2=	yes
+USE_GETOPT_LONG=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 USE_REINPLACE=	yes
