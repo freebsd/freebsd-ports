@@ -21,10 +21,11 @@ RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomeprint gnomevfs gtkhtml
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
-LIBTOOLFILES=	libmutt/configure
+LIBTOOLFILES=	configure libmutt/configure
 CONFIGURE_ARGS=	--enable-threads \
 		--enable-gtkhtml \
 		--enable-ldap \
@@ -36,12 +37,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 MAN1=		balsa.1
 
 post-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' \
 			${WRKSRC}/configure ${WRKSRC}/libmutt/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
-		 s|\$\(gnomedatadir\)/gnome|\$\(gnomedatadir\)|g'
 
 .include <bsd.port.mk>
