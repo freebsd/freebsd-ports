@@ -1,0 +1,24 @@
+--- Makefile.in.orig	Fri Jan  7 08:33:21 2005
++++ Makefile.in	Sun Jan  9 22:20:21 2005
+@@ -163,11 +163,7 @@
+ readmedir = $(datadir)/gqview
+ readme_DATA = README
+ 
+-desktopdir = $(datadir)/applications
+-desktop_DATA = gqview.desktop
+ 
+-icondir = $(datadir)/pixmaps
+-icon_DATA = gqview.png
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ subdir = .
+@@ -637,8 +633,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-desktopDATA install-iconDATA install-man \
+-	install-readmeDATA
++install-data-am: install-desktopDATA install-iconDATA install-man
+ 
+ install-exec-am:
+ 
