@@ -335,6 +335,7 @@
     SUBDIR += pear-Crypt_CBC
     SUBDIR += pear-Crypt_HMAC
     SUBDIR += pear-Crypt_RC4
+    SUBDIR += pear-File_HtAccess
     SUBDIR += pear-File_Passwd
     SUBDIR += pear-LiveUser
     SUBDIR += pear-LiveUser_Admin
