@@ -1,15 +1,17 @@
---- so_suplu.c.orig	Thu May  6 03:24:22 2004
-+++ so_suplu.c	Thu May  6 03:24:25 2004
-@@ -53,6 +53,8 @@
+--- so_suplu.c.orig	Fri Nov 10 05:59:39 2000
++++ so_suplu.c	Sun Mar 20 00:45:14 2005
+@@ -53,6 +53,10 @@
    int *perm_r, *perm_c;
    int perm_spec;
    int nrhs;
++#if SUPERLU_USE
 +  SuperLUStat_t stat;
 +  superlu_options_t options;
++#endif
  #endif
  
    /* Create Matrix A in the format expected by SuperLU */
-@@ -103,7 +105,9 @@
+@@ -103,7 +107,9 @@
  
    /* Solve */
  #if SUPERLU_USE 
