@@ -1,0 +1,20 @@
+--- src/ui/ui-drv/svga/ui_svga.c--	Thu Mar  5 03:19:12 1998
++++ src/ui/ui-drv/svga/ui_svga.c	Wed Nov 28 15:48:12 2001
+@@ -19,10 +19,17 @@
+  * along with this program; if not, write to the Free Software
+  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
++#if defined(HAVE_SYS_PARAM_H)
++#include <sys/param.h>
++#endif
+ #include "aconfig.h"
+ #ifdef SVGA_DRIVER
+ #include <stdio.h>
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <vga.h>
+ #include <vgagl.h>
+ #include <vgamouse.h>
