@@ -3,7 +3,7 @@
 # Date created:		Oct 4, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.6 1995/12/05 12:37:28 markm Exp $
+# $Id: Makefile,v 1.7 1996/04/25 11:45:58 peter Exp $
 #
 
 DISTNAME=	mh-6.8.3
@@ -12,7 +12,7 @@ CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.ics.uci.edu/pub/mh/tar/
 EXTRACT_SUFX=	.tar.Z
 
-PATCHSITES=	ftp://ftp.ics.uci.edu/pub/mh/updates/
+PATCH_SITES=	ftp://ftp.ics.uci.edu/pub/mh/updates/
 PATCHFILES=	MH.6.8.4.Z
 
 MAINTAINER=	markm@FreeBSD.ORG
@@ -30,7 +30,9 @@ MHMAN=	man1/ali.1 man1/anno.1 man1/burst.1 man1/comp.1 man1/dist.1 \
 	man8/fmtdump.8
 
 post-install:
-	ldconfig -m ${PREFIX}/lib
+	/sbin/ldconfig -m ${PREFIX}/lib
+.if !defined(NOMANCOMPRESS)
 	for m in ${MHMAN}; do gzip -9nf ${PREFIX}/man/$$m; done
+.endif
 
 .include <bsd.port.mk>
