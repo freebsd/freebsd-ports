@@ -13,14 +13,11 @@ MASTER_SITES= 	http://www.mega-nerd.com/SRC/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secret Rabbit Code: a Sample Rate Converter for audio
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		fftw.2:${PORTSDIR}/math/fftw
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-gcc-pipe
