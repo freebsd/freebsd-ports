@@ -517,6 +517,7 @@
     SUBDIR += py-xmltools
     SUBDIR += py2html
     SUBDIR += pybook
+    SUBDIR += pychm
     SUBDIR += qu-aspell
     SUBDIR += queequeg
     SUBDIR += rand
