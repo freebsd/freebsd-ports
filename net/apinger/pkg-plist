@@ -1,6 +1,6 @@
 sbin/apinger
 etc/apinger.conf
-share/doc/apinger/README
-share/doc/apinger/NEWS
-share/doc/apinger/AUTHORS
-@dirrm share/doc/apinger
+%%PORTDOCS%%share/doc/apinger/README
+%%PORTDOCS%%share/doc/apinger/NEWS
+%%PORTDOCS%%share/doc/apinger/AUTHORS
+%%PORTDOCS%%@dirrm share/doc/apinger
