@@ -1,0 +1,9 @@
+--- Makefile.orig	Fri Nov  2 11:07:31 2001
++++ Makefile	Fri Nov  2 11:10:33 2001
+@@ -14,5 +14,5 @@
+ recursive-all recursive-install recursive-clean:
+ 	@target=$@; \
+ 	for i in $(SUBDIRS); do \
+-		(cd $$i && make $(ENV) $${target#recursive-}); \
++		(cd $$i && $(MAKE) $(ENV) $${target#recursive-}); \
+ 	done

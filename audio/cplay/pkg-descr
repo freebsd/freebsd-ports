@@ -1,0 +1,11 @@
+cplay is a curses based front-end to various audioplayers.
+
+Supported players currently include:
+	- mpg123
+	- ogg123
+	- madplay
+	- mikmod
+	- mpg321
+	- splay
+
+WWW: http://www.tf.hut.fi/~flu/cplay/
