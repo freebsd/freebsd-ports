@@ -1,0 +1,29 @@
+--- Makefile.orig	Wed Nov 11 13:19:28 1998
++++ Makefile	Wed Nov 11 13:22:05 1998
+@@ -2,13 +2,13 @@
+ #	Kau Chauo Chinese Fanti Ming Fonts Version 1.05 For FreeBSD
+ #
+ #	All fonts source is contributed by Kau Chauo Business CO.
+-#	Converted by Chih-Hao Tsai & Pa on Taiwan
++#	Converted by Chih-Hao Tsai & PA on Taiwan
+ #
+-#	maintainer: Pa ( Pa@FreeBSD.ee.ntu.edu.tw )
++#	maintainer: PA ( PA@FreeBSD.ee.ntu.edu.tw )
+ #
+ 
+-CFONTDIR=/usr/X11R6/lib/X11/fonts/chinese
+-EFONTDIR=/usr/X11R6/lib/X11/fonts/misc
++CFONTDIR=${PREFIX}/lib/X11/fonts/local
++EFONTDIR=${PREFIX}/lib/X11/fonts/local
+ FONTS	=kc24f.pcf.gz kc15f.pcf.gz kc8x15.pcf.gz kc12x24.pcf.gz
+ PROGS	=kc24f kc15f kc8x15 kc12x24 kca2et
+ OBJS	=tran.o kc24f.o kc15f.o kc8x15.o kc12x24.o kca2et.o
+@@ -43,7 +43,7 @@
+ 	cp kc*f.pcf.gz $(CFONTDIR)
+ 	cp kc*x*.pcf.gz $(EFONTDIR)
+ 	mkfontdir $(CFONTDIR)
+-	mkfontdir $(EFONTDIR)
++#	mkfontdir $(EFONTDIR)
+ 
+ clean:
+ 	rm -f kc*.pcf.gz ascfont.* *.o *~ $(PROGS)

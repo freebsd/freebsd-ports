@@ -1,8 +1,6 @@
-lib/X11/fonts/misc/kc8x15.pcf.gz
-lib/X11/fonts/misc/kc12x24.pcf.gz
-lib/X11/fonts/chinese/kc15f.pcf.gz
-lib/X11/fonts/chinese/kc24f.pcf.gz
-@exec cd %D/lib/X11/fonts/misc ; mkfontdir
-@exec cd %D/lib/X11/fonts/chinese ; mkfontdir
-@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
-@unexec cd %D/lib/X11/fonts/chinese ; mkfontdir
+lib/X11/fonts/local/kc8x15.pcf.gz
+lib/X11/fonts/local/kc12x24.pcf.gz
+lib/X11/fonts/local/kc15f.pcf.gz
+lib/X11/fonts/local/kc24f.pcf.gz
+@exec cd %D/lib/X11/fonts/local ; mkfontdir
+@unexec cd %D/lib/X11/fonts/local ; mkfontdir
