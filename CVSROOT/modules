@@ -5306,6 +5306,7 @@ linux-sun-jdk12	ports/java/linux-sun-jdk12
 linux-sun-jdk13	ports/java/linux-sun-jdk13
 linux-sun-jdk14	ports/java/linux-sun-jdk14
 linux-sun-jdk15	ports/java/linux-sun-jdk15
+linux-sunbird	ports/www/linux-sunbird
 linux-tiff	ports/graphics/linux-tiff
 linux-understand_ada	ports/devel/linux-understand_ada
 linux-understand_c	ports/devel/linux-understand_c
