@@ -162,6 +162,8 @@ eagle-*.tgz		ports/cad/linux-eagle	Usage permitted for non-commercial
 eawpats*		ports/audio/eawpats	Some of the patches are not
 						for commercial use.
 eClient-linux.run	ports/games/atitd	Redistribution not allowed
+eclipse/jp.azzurri.clay.core_1.0.5.bin.dist.20040730.zip	java/eclipse-clay-core	License
+						agreement is required to download.
 
 edith*			ports/editors/edith	Redistribution not allowed.
 eijiro*			ports/japanese/eijiro-fpw The original dictionary is not
@@ -592,4 +594,3 @@ zh-moettf/*		ports/chinese/moettf	Contact Taiwan Ministry of
 NTU*.TTF		ports/chinese/ntuttf	No commercial use
 ztelnet-*		ports/net/ztelnet	zmodem code has
 						restrictive copyright
-eclipse/jp.azzurri.clay.core_1.0.5.bin.dist.20040730.zip	java/eclipse-clay-core	Condition is not clear
