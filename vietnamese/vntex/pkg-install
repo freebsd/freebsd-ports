@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# $FreeBSD$
+
+PATH=/bin:/usr/sbin:${PKG_PREFIX}/bin
+
+case $2 in
+POST-INSTALL)
+	texconfig rehash
+	;;
+esac
