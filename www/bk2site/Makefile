@@ -55,6 +55,7 @@ post-install:
 	${CP} ${WRKSRC}/*.html ${PREFIX}/etc/${PORTNAME}
 	${CP} ${WRKSRC}/*.gif ${PREFIX}/${ICONSDIR}
 	${CP} ${WRKSRC}/*.pl ${PREFIX}/${CGIDIR}
+	${CHMOD} +x ${PREFIX}/${CGIDIR}/*.pl
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
