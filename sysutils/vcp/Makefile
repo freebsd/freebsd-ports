@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vcp
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://members.optusnet.com.au/~dbbryan/vcp/
 EXTRACT_SUFX=	.tar.Z
@@ -22,15 +22,14 @@ LDFLAGS+=	-lncurses
 do-build:
 	cd ${WRKSRC} && \
 	${CC} ${CFLAGS} -c main.c && \
-	${CC} ${CFLAGS} -c color.c && \
 	${CC} ${CFLAGS} -c copyall.c && \
 	${CC} ${CFLAGS} -c copy.c && \
 	${CC} ${CFLAGS} -c screen.c && \
 	${CC} ${CFLAGS} -c log.c && \
-	${CC} ${CFLAGS} -c cntfiles.c && \
 	${CC} ${CFLAGS} -c path.c && \
 	${CC} ${CFLAGS} -c misc.c && \
-	${CC} ${CFLAGS} -o ${PORTNAME} main.o copyall.o copy.o screen.o log.o cntfiles.o path.o misc.o color.o ${LDFLAGS}
+	${CC} ${CFLAGS} -c color.c && \
+	${CC} ${CFLAGS} -o ${PORTNAME} main.o copyall.o copy.o screen.o log.o path.o misc.o color.o ${LDFLAGS}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
