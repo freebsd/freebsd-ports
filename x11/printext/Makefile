@@ -23,8 +23,10 @@ WRKSRC=		${WRKDIR}/xc/include/extensions
 EXTRACT_AFTER_ARGS= | ${TAR} -xf - xc/include/extensions
 NO_BUILD=	yes
 
+DEST=${PREFIX}/include/X11/extensions
+
 do-install:
-	${INSTALL} ${WRKSRC}/Print.h ${PREFIX}/include/X11/extensions
-	${INSTALL} ${WRKSRC}/Printstr.h ${PREFIX}/include/X11/extensions
+	${INSTALL_DATA} ${WRKSRC}/Print.h ${DEST}
+	${INSTALL_DATA} ${WRKSRC}/Printstr.h ${DEST}
 
 .include <bsd.port.mk>
