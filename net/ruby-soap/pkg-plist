@@ -38,6 +38,10 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippoClient.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/exchange.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/exchangeClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/httpd.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/soaplet.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ICD/IICD.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ICD/icd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/SOAP::Lite.pl
@@ -127,6 +131,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RWiki
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RAA
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/ICD
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/webrick
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap
 %%PORTDOCS%%%%RUBY_DOCDIR%%/soap/RELEASE_en.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/soap/rubyStyle.css
