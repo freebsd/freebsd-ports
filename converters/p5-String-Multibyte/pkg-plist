@@ -1,22 +1,24 @@
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/Unicode.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/UTF8.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/UTF16LE.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/UTF16BE.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/UHC.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/ShiftJIS.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/Johab.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/Grapheme.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/GBK.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/GB18030.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/EUC_TW.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/EUC_JP.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/EUC.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/Bytes.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/Big5Plus.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte/Big5.pm
-lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Multibyte/.packlist
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/String/Multibyte 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/String 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String/Multibyte 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/String 2>/dev/null || true
+%%SITE_PERL%%/String/Multibyte/Unicode.pm
+%%SITE_PERL%%/String/Multibyte/UTF8.pm
+%%SITE_PERL%%/String/Multibyte/UTF32LE.pm
+%%SITE_PERL%%/String/Multibyte/UTF32BE.pm
+%%SITE_PERL%%/String/Multibyte/UTF16LE.pm
+%%SITE_PERL%%/String/Multibyte/UTF16BE.pm
+%%SITE_PERL%%/String/Multibyte/UHC.pm
+%%SITE_PERL%%/String/Multibyte/ShiftJIS.pm
+%%SITE_PERL%%/String/Multibyte/Johab.pm
+%%SITE_PERL%%/String/Multibyte/Grapheme.pm
+%%SITE_PERL%%/String/Multibyte/GBK.pm
+%%SITE_PERL%%/String/Multibyte/GB18030.pm
+%%SITE_PERL%%/String/Multibyte/EUC_TW.pm
+%%SITE_PERL%%/String/Multibyte/EUC_JP.pm
+%%SITE_PERL%%/String/Multibyte/EUC.pm
+%%SITE_PERL%%/String/Multibyte/Bytes.pm
+%%SITE_PERL%%/String/Multibyte/Big5Plus.pm
+%%SITE_PERL%%/String/Multibyte/Big5.pm
+%%SITE_PERL%%/String/Multibyte.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Multibyte/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/String/Multibyte 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/String 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/String/Multibyte 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/String 2>/dev/null || true
