@@ -1,7 +1,29 @@
-bin/irssi
 bin/botti
+bin/irssi
+etc/irssi.conf
+etc/irssi.conf.sample
+lib/irssi/modules/libirc_bot.a
+lib/irssi/modules/libirc_bot.la
+lib/irssi/modules/libirc_bot.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi/Irc.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi/TextUI.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi/UI.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irssi.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irssi.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/TextUI/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/TextUI/TextUI.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/UI/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/UI/UI.so
 share/doc/irssi/botnet.txt
 share/doc/irssi/design.txt
+share/doc/irssi/faq.txt
 share/doc/irssi/formats.txt
 share/doc/irssi/manual.txt
 share/doc/irssi/perl.txt
@@ -9,45 +31,6 @@ share/doc/irssi/signals.txt
 share/doc/irssi/special_vars.txt
 share/doc/irssi/startup-HOWTO.txt
 share/doc/irssi/startup-HOWTO.html
-etc/irssi/config.sample
-etc/irssi/default.theme
-etc/irssi/colorless.theme
-etc/irssi/config
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irssi.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irssi.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc/Irc.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi/Irc.pm
-lib/irssi/modules/libfe_irc_dcc.a
-lib/irssi/modules/libfe_irc_dcc.la
-lib/irssi/modules/libfe_irc_dcc.so
-lib/irssi/modules/libfe_irc_notifylist.a
-lib/irssi/modules/libfe_irc_notifylist.la
-lib/irssi/modules/libfe_irc_notifylist.so
-lib/irssi/modules/libfe_perl.la
-lib/irssi/modules/libfe_perl.so
-lib/irssi/modules/libirc_bot.so
-lib/irssi/modules/libirc_bot.la
-lib/irssi/modules/libirc_bot.a
-lib/irssi/modules/libirc_dcc.so
-lib/irssi/modules/libirc_dcc.la
-lib/irssi/modules/libirc_dcc.a
-lib/irssi/modules/libirc_flood.so
-lib/irssi/modules/libirc_flood.la
-lib/irssi/modules/libirc_flood.a
-lib/irssi/modules/libirc_notifylist.so
-lib/irssi/modules/libirc_notifylist.la
-lib/irssi/modules/libirc_notifylist.a
-lib/irssi/modules/libperl_core.la
-lib/irssi/modules/libperl_core.so
-share/locale/pl/LC_MESSAGES/irssi.mo
-share/locale/pt_BR/LC_MESSAGES/irssi.mo
-share/locale/fr/LC_MESSAGES/irssi.mo
-share/locale/de/LC_MESSAGES/irssi.mo
-share/locale/sv/LC_MESSAGES/irssi.mo
 share/irssi/help/action
 share/irssi/help/admin
 share/irssi/help/alias
@@ -126,6 +109,7 @@ share/irssi/help/rmrejoins
 share/irssi/help/rping
 share/irssi/help/run
 share/irssi/help/save
+share/irssi/help/say
 share/irssi/help/sconnect
 share/irssi/help/scrollback
 share/irssi/help/server
@@ -135,6 +119,7 @@ share/irssi/help/silence
 share/irssi/help/squery
 share/irssi/help/squit
 share/irssi/help/stats
+share/irssi/help/statusbar
 share/irssi/help/time
 share/irssi/help/toggle
 share/irssi/help/topic
@@ -156,18 +141,31 @@ share/irssi/help/wait
 share/irssi/help/wall
 share/irssi/help/wallchops
 share/irssi/help/wallops
+share/irssi/help/watch
 share/irssi/help/who
 share/irssi/help/whois
 share/irssi/help/whowas
 share/irssi/help/window
 share/irssi/help/wjoin
 share/irssi/help/wquery
-@dirrm share/doc/irssi
-@dirrm etc/irssi
+share/irssi/scripts/autoop.pl
+share/irssi/scripts/autorejoin.pl
+share/irssi/scripts/clones.pl
+share/irssi/scripts/hello.pl
+share/irssi/scripts/privmsg.pl
+share/irssi/scripts/quitmsg.pl
+share/irssi/scripts/realname.pl
+share/irssi/themes/colorless.theme
+share/irssi/themes/default.theme
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/UI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/TextUI
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi/Irc
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Irssi
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Irssi
 @dirrm lib/irssi/modules
 @dirrm lib/irssi
+@dirrm share/doc/irssi
+@dirrm share/irssi/themes
+@dirrm share/irssi/scripts
 @dirrm share/irssi/help
 @dirrm share/irssi
