@@ -1,5 +1,5 @@
---- /usr/obj/mnt/files/freebsd-cvs/ports/devel/libuta/work/libuta-0.4.4/uta/blitters.cc.orig	Sat Oct 12 23:11:07 2002
-+++ /usr/obj/mnt/files/freebsd-cvs/ports/devel/libuta/work/libuta-0.4.4/uta/blitters.cc	Thu Aug 12 20:58:40 2004
+--- uta/blitters.cc.orig	Sat Oct 12 23:11:07 2002
++++ uta/blitters.cc	Thu Aug 12 20:58:40 2004
 @@ -20,6 +20,7 @@
  
  #include "blitters.h"
