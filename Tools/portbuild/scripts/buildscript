@@ -14,10 +14,17 @@ fi
 cd $dir || exit 1
 echo -n "maintained by: "
 make maintainer
+echo -n "build started at "
+date
+echo "================================================================"
 if make package; then
   echo "0" > /tmp/status
 else
   echo "1" > /tmp/status
 fi
+
+echo "================================================================"
+echo -n "build ended at "
+date
 
 exit 0
