@@ -3,14 +3,14 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1998/01/23 00:43:40 jseger Exp $
+# $Id: Makefile,v 1.8 1998/01/26 10:11:37 asami Exp $
 #
 
-DISTNAME=       unarj
+DISTNAME=	unarj
 PKGNAME=	unarj-2.41
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://garbo.uwasa.fi/unix/arcers/
-DISTFILES=      unarj241.tar.Z
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     ache@FreeBSD.ORG
 
