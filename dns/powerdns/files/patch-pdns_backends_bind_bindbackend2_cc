@@ -1,0 +1,16 @@
+--- pdns/backends/bind/bindbackend2.cc.orig	Sat Oct  4 16:15:46 2003
++++ pdns/backends/bind/bindbackend2.cc		Mon Nov 17 20:54:19 2003
+@@ -61,11 +61,10 @@
+   d_loaded=false;
+   d_last_check=0;
+   d_checknow=false;
+-  d_rwlock=new pthread_rwlock_t;
+   d_status="Seen in bind configuration";
+   d_confcount=0;
+-  //  cout<<"Generated a new bbdomaininfo: "<<(void*)d_rwlock<<"/"<<getpid()<<endl;
+-  pthread_rwlock_init(d_rwlock,0);
++  //  cout<<"Generated a new bbdomaininfo: "<<d_rwlock<<"/"<<getpid()<<endl;
++  pthread_rwlock_init(&d_rwlock,0);
+ }
+ 
+ void BB2DomainInfo::setCheckInterval(time_t seconds)

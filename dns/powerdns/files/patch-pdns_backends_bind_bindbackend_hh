@@ -1,0 +1,39 @@
+--- pdns/backends/bind/bindbackend.hh.orig	Sat Aug 23 16:35:35 2003
++++ pdns/backends/bind/bindbackend.hh		Mon Nov 17 20:54:19 2003
+@@ -58,21 +58,20 @@
+ 
+   bool tryRLock()
+   {
+-    //    cout<<"[trylock!] "<<(void*)d_rwlock<<"/"<<getpid()<<endl;
+-    return pthread_rwlock_tryrdlock(d_rwlock)!=EBUSY;
++    //    cout<<"[trylock!] "<<d_rwlock<<"/"<<getpid()<<endl;
++    return pthread_rwlock_tryrdlock(&d_rwlock)!=EBUSY;
+   }
+   
+   void unlock()
+   {
+-    //    cout<<"[unlock] "<<(void*)d_rwlock<<"/"<<getpid()<<endl;
+-    pthread_rwlock_unlock(d_rwlock);
++    //    cout<<"[unlock] "<<d_rwlock<<"/"<<getpid()<<endl;
++    pthread_rwlock_unlock(&d_rwlock);
+   }
+   
+   void lock()
+   {
+-    //cout<<"[writelock!] "<<(void*)d_rwlock<<"/"<<getpid()<<endl;
+-
+-    pthread_rwlock_wrlock(d_rwlock);
++    //   cout<<"[writelock!] "<<d_rwlock<<"/"<<getpid()<<endl;
++    pthread_rwlock_wrlock(&d_rwlock);
+   }
+ 
+   void setCheckInterval(time_t seconds);
+@@ -80,7 +79,7 @@
+   time_t getCtime();
+   time_t d_checkinterval;
+   time_t d_lastcheck;
+-  pthread_rwlock_t *d_rwlock;
++  pthread_rwlock_t d_rwlock;
+ };
+       
+ 
