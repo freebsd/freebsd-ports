@@ -9,16 +9,12 @@
 # the same distfile.
 
 PORTNAME=	rxvt
-PORTVERSION= 	2.7.3
+PORTVERSION= 	2.6.3
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/ \
 		ftp://mason.primenet.com.au/pub/rxvt/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	X11/terms
-
-PATCH_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
-PATCHFILES=	rxvt-2.7.3.patch1.gz
-PATCH_DIST_STRIP+=      -p1
+		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/ \
+		ftp://ftp.fu-berlin.de/unix/X11/terms/rxvt/
 
 MAINTAINER=	lioux@linf.unb.br
 
