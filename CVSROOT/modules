@@ -6122,6 +6122,7 @@ p5-Lingua-EN-Syllable	ports/textproc/p5-Lingua-EN-Syllable
 p5-Lingua-EN-Tagger	ports/textproc/p5-Lingua-EN-Tagger
 p5-Lingua-Ident	ports/textproc/p5-Lingua-Ident
 p5-Lingua-Ispell	ports/textproc/p5-Lingua-Ispell
+p5-Lingua-PT-Stemmer	ports/textproc/p5-Lingua-PT-Stemmer
 p5-Lingua-Preferred	ports/textproc/p5-Lingua-Preferred
 p5-Lingua-Stem	ports/textproc/p5-Lingua-Stem
 p5-Locale-Codes	ports/misc/p5-Locale-Codes
