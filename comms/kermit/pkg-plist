@@ -20,3 +20,5 @@ share/examples/kermit/ckedemo.ksc
 share/examples/kermit/ckepage.ksc
 share/examples/kermit/ckevt.ksc
 share/examples/kermit/iksdpy
+@dirrm share/doc/kermit
+@dirrm share/examples/kermit
