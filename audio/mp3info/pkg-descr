@@ -1,0 +1,8 @@
+A small utility to read and write TAG info, as well as retrieve the MP3
+Header info and print it all out in a nice format.
+
+Features:
+ - Get, Set and Wipe MP3 TAG Info.
+ - Get MPEG Audio Version 1, 2 and 2.5 Header info.
+ - Userdefinable output formatting (rather advanced).
+ - Can rename files according to userdefined scheme.
