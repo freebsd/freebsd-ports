@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	glade.3:${PORTSDIR}/devel/libglade
+LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 
 LIBGLADE_CONFIG?=	${LOCALBASE}/bin/libglade-config
 GNU_CONFIGURE=	yes

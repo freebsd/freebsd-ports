@@ -24,7 +24,7 @@ LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		gtop.1:${PORTSDIR}/devel/libgtop \
 		xml.5:${PORTSDIR}/textproc/libxml \
 		ghttp.1:${PORTSDIR}/www/libghttp \
-		glade.3:${PORTSDIR}/devel/libglade \
+		glade.4:${PORTSDIR}/devel/libglade \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
 		capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		panel_applet.4:${PORTSDIR}/x11/gnomecore \

@@ -18,7 +18,7 @@ LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gnomemm-1.1.2:${PORTSDIR}/x11-toolkits/gnome-- \
 		sigc.1:${PORTSDIR}/devel/libsigc++ \
 		gnet.0:${PORTSDIR}/net/gnet \
-		glade.3:${PORTSDIR}/devel/libglade
+		glade.4:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
