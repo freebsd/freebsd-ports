@@ -13,7 +13,7 @@ MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/4.0.4/ \
 
 MAINTAINER=	O.Hodson@cs.ucl.ac.uk
 
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 USE_GMAKE=	yes
 MAN1=		rat.1
