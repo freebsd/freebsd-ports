@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.shar.Z
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A collection of programs for searching DNA and protein databases, v3
 
+BROKEN=		"Checksum mismatch"
+
 NO_CDROM=	May not be sold or incorporated into a commercial product
 WRKSRC=		${WRKDIR}/fasta3
 PKGMESSAGE=	${WRKDIR}/pkg-message
