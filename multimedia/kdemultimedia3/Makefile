@@ -22,7 +22,6 @@ LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \
 		FLAC:${PORTSDIR}/audio/flac \
 		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
 		musicbrainz:${PORTSDIR}/audio/libmusicbrainz \
-		mp3lame:${PORTSDIR}/audio/lame \
 		ogg:${PORTSDIR}/audio/libogg \
 		tag:${PORTSDIR}/audio/taglib \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
@@ -44,11 +43,19 @@ CONFIGURE_ARGS+=	--with-vorbis="${LOCALBASE}"
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS+=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
-OPTIONS=	XINE "Enable support for video playback, using libxine" off \
-		MPEGLIB "Use mpeglib for audio playback" on
+OPTIONS=	LAME "Enable support for mp3 encoding using LAME" off \
+		MPEGLIB "Use mpeglib for audio playback" on \
+		XINE "Enable support for video playback using libxine" off
 
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/lame)
+.	if !defined(WITH_LAME)
+LAME_OVERRIDE=	yes
+WITH_LAME=	yes
+.	endif
+.endif
 
 .if exists(${X11BASE}/bin/xine-config)
 .	if !defined(WITH_XINE)
@@ -57,14 +64,19 @@ WITH_XINE=	yes
 .	endif
 .endif
 
+.if defined(WITH_LAME)
+PLIST_APPEND+=	plist.lame
+LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
+.endif
+
 .if defined(WITH_XINE)
 PLIST_APPEND+=	plist.xine
 LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
 BUILD_DEPENDS+=	xine-config:${PORTSDIR}/multimedia/libxine
 CONFIGURE_ARGS+=--with-xine-prefix=${X11BASE}
 .else
-DO_NOT_COMPILE+=        xine_artsplugin
-CONFIGURE_ARGS+=        --disable-xinetest
+DO_NOT_COMPILE+=	xine_artsplugin
+CONFIGURE_ARGS+=	--disable-xinetest
 .endif
 
 .if defined(WITH_MPEGLIB)
@@ -78,6 +90,14 @@ CONFIGURE_ENV+=	DO_NOT_COMPILE="${DO_NOT_COMPILE}"
 .endif # defined(DO_NOT_COMPILE)
 
 pre-everything::
+.if defined(LAME_OVERRIDE)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "********************************************************"
+	@${ECHO_MSG} "*      LAME is installed but WITH_LAME is not set!     *"
+	@${ECHO_MSG} "*       WITH_LAME has been enabled automatically.      *"
+	@${ECHO_MSG} "********************************************************"
+	@${ECHO_MSG}
+.endif
 .if defined(XINE_OVERRIDE)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "********************************************************"
