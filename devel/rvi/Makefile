@@ -8,8 +8,7 @@
 PORTNAME=	rvi
 PORTVERSION=	1.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.rucus.ru.ac.za/~mtsegaye/rvi/ \
-		http://www.databits.net/~petef/distfiles/
+MASTER_SITES=	ftp://rucus.rc.ac.za/users/mtsegaye/
 DISTNAME=	rvi
 
 MAINTAINER=	petef@FreeBSD.org
