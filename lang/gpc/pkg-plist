@@ -1,7 +1,12 @@
+bin/bpc
+bin/epc
 bin/gpc
+bin/pc
 lib/gcc-lib/%%GNUHOST%%/2.8.1/gpc-cpp
 lib/gcc-lib/%%GNUHOST%%/2.8.1/gpc1
+lib/gcc-lib/%%GNUHOST%%/2.8.1/libgcc.a
 lib/gcc-lib/%%GNUHOST%%/2.8.1/libgpc.a
+lib/gcc-lib/%%GNUHOST%%/2.8.1/specs
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/crt.inc
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/crt.pas
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/crtc.c
@@ -35,49 +40,21 @@ lib/gcc-lib/%%GNUHOST%%/2.8.1/units/strings.pas
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/system.pas
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/turbo3.pas
 lib/gcc-lib/%%GNUHOST%%/2.8.1/units/windos.pas
+@unexec rmdir %D/lib/gcc-lib/%%GNUHOST%%/2.8.1/units 2>/dev/null || true
+@unexec rmdir %D/lib/gcc-lib/%%GNUHOST%%/2.8.1 2>/dev/null || true
+@unexec rmdir %D/lib/gcc-lib/%%GNUHOST%% 2>/dev/null || true
+@unexec rmdir %D/lib/gcc-lib 2>/dev/null || true
+share/doc/gpc/demos/demoproc.pas
+share/doc/gpc/demos/factorial.pas
+share/doc/gpc/demos/getoptdemo.pas
+share/doc/gpc/demos/pexecutedemo.pas
+share/doc/gpc/demos/pi.pas
+share/doc/gpc/demos/pipedemo.pas
+share/doc/gpc/demos/portdemo.pas
+share/doc/gpc/demos/power.pas
+share/doc/gpc/demos/regexdemo.pas
+@dirrm share/doc/gpc/demos
+@dirrm share/doc/gpc
 @unexec install-info --delete %D/info/gpc.info %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-1 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-10 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-11 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-12 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-13 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-14 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-2 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-3 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-4 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-5 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-6 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-7 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-8 %D/info/dir
-@unexec install-info --delete %D/info/gpc.info-9 %D/info/dir
 info/gpc.info
-info/gpc.info-1
-info/gpc.info-10
-info/gpc.info-11
-info/gpc.info-12
-info/gpc.info-13
-info/gpc.info-14
-info/gpc.info-2
-info/gpc.info-3
-info/gpc.info-4
-info/gpc.info-5
-info/gpc.info-6
-info/gpc.info-7
-info/gpc.info-8
-info/gpc.info-9
-@dirrm lib/gcc-lib/%%GNUHOST%%/2.8.1/units
 @exec install-info %D/info/gpc.info %D/info/dir
-@exec install-info %D/info/gpc.info-1 %D/info/dir
-@exec install-info %D/info/gpc.info-10 %D/info/dir
-@exec install-info %D/info/gpc.info-11 %D/info/dir
-@exec install-info %D/info/gpc.info-12 %D/info/dir
-@exec install-info %D/info/gpc.info-13 %D/info/dir
-@exec install-info %D/info/gpc.info-14 %D/info/dir
-@exec install-info %D/info/gpc.info-2 %D/info/dir
-@exec install-info %D/info/gpc.info-3 %D/info/dir
-@exec install-info %D/info/gpc.info-4 %D/info/dir
-@exec install-info %D/info/gpc.info-5 %D/info/dir
-@exec install-info %D/info/gpc.info-6 %D/info/dir
-@exec install-info %D/info/gpc.info-7 %D/info/dir
-@exec install-info %D/info/gpc.info-8 %D/info/dir
-@exec install-info %D/info/gpc.info-9 %D/info/dir

@@ -6,6 +6,7 @@
 
 PORTNAME=	gpc
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://agnes.dida.physik.uni-essen.de/gnu-pascal/beta/
 DISTNAME=	gpc-19990118
@@ -22,6 +23,7 @@ ALL_TARGET=	bootstrap
 INSTALL_TARGET=	pascal.install
 
 MAN1=		gpc.1
+MLINKS=		gpc.1 bpc.1 gpc.1 epc.1 gpc.1 pc.1
 
 .include <bsd.port.pre.mk>
 
@@ -32,5 +34,11 @@ CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${GNUHOST}/2.8.1/in
 
 post-extract:
 	@(${CP} -R ${WRKDIRPREFIX}${.CURDIR}/../../lang/gcc28/work/gcc-2.8.1/* ${WRKSRC})
+
+pre-install:
+	@${RM} -f ${WRKSRC}/p/doc/gpc.info*
+
+post-install:
+	install-info ${PREFIX}/info/gpc.info ${PREFIX}/info/dir
 
 .include <bsd.port.post.mk>
