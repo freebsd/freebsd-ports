@@ -3,21 +3,21 @@
 # Date created:         14 April 1999
 # Whom:                 OKAZAKI Tetsurou
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/19 13:23:56 taoka Exp $
 #
 
 DISTNAME=	emacs-20.3-man-jp
 PKGNAME=	ja-emacs-manual-13.1998.11.25
 CATEGORIES=	japanese
-MASTER_SITES=	http://www.ascii.co.jp/pub/GNU/
-DISTFILES=	${EXTRACT_ONLY} ${EMACS_ARC}
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/GNU/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	okazaki@be.to
 
-BUILD_DEPENDS=	emacs-20.3:${PORTSDIR}/editors/emacs20
+BUILD_DEPENDS=	emacs-20.3:${PORTSDIR}/editors/emacs20 \
+		/nonexistent:${PORTSDIR}/editors/emacs20:fetch
 
-EXTRACT_ONLY=	${DISTNAME}.tgz
-
+# EMACS_ARC is fetched by BUILD_DEPENDS
 EMACS_DISTNAME= emacs-20.3
 EMACS_ARC=	${EMACS_DISTNAME}.tar.gz
 EMACS_SRCDIR=	${WRKDIR}/${EMACS_DISTNAME}
