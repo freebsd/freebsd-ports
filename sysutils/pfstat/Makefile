@@ -36,11 +36,11 @@ CFLAGS+=	-I${LOCALBASE}/include/pf
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-#IGNORE=		"Only for 5.0 and above"
+IGNORE=		"Only for 5.0 and above"
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-lgd|-l$${LD_GD}|; s| -lttf||' \
+	@${REINPLACE_CMD} -e 's|-lgd|-l$${LD_GD}|; s| -lttf||' \
 		${WRKSRC}/Makefile
 
 do-install:
