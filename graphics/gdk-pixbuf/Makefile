@@ -6,10 +6,10 @@
 #
 
 PORTNAME?=	gdk-pixbuf
-PORTVERSION=	0.18.0
+PORTVERSION=	0.20.0
 CATEGORIES?=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gdk-pixbuf/0.18
+MASTER_SITE_SUBDIR=	sources/gdk-pixbuf/0.20
 DISTNAME=	gdk-pixbuf-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
