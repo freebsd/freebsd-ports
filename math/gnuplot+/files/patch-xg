@@ -1,5 +1,5 @@
---- graphics.c.orig	Wed Jan 24 14:58:50 2001
-+++ graphics.c	Wed Jan 24 14:58:51 2001
+--- graphics.c.orig	Wed Nov 21 17:04:44 2001
++++ graphics.c	Wed Nov 21 17:05:59 2001
 @@ -1373,7 +1373,6 @@
  
      /* label first y axis tics */
@@ -109,9 +109,9 @@
 +	}
 +    }
 +    if (x_min >= 0.0 && x_max >= 0.0)
-+	axis_zero[FIRST_Y_AXIS] = xleft;
++	axis_zero[FIRST_X_AXIS] = xleft;
 +    else if (x_min <= 0.0 && x_max <= 0.0)
-+	axis_zero[FIRST_Y_AXIS] = xright;
++	axis_zero[FIRST_X_AXIS] = xright;
 +    else {
 +	axis_zero[FIRST_X_AXIS] = map_x(0.0);
 +	if ((yzeroaxis.l_type > -3) && !is_log_x) {
@@ -152,9 +152,9 @@
 +	}
 +    }
 +    if (y_min >= 0.0 && y_max >= 0.0)
-+	axis_zero[SECOND_Y_AXIS] = xleft;
++	axis_zero[SECOND_X_AXIS] = xleft;
 +    else if (x_min <= 0.0 && x_max <= 0.0)
-+	axis_zero[SECOND_Y_AXIS] = xright;
++	axis_zero[SECOND_X_AXIS] = xright;
 +    else {
 +	axis_zero[SECOND_X_AXIS] = map_x(0.0);
 +	if ((y2zeroaxis.l_type > -3) && !is_log_x2) {
