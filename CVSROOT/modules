@@ -6343,6 +6343,7 @@ pg		ports/misc/pg
 pgaccess	ports/databases/pgaccess
 pgdriver	ports/www/pgdriver
 pgen		ports/mail/pgen
+pglogd		ports/www/pglogd
 pgp		ports/security/pgp
 pgp4pine	ports/mail/pgp4pine
 pgp5		ports/security/pgp5
