@@ -1,11 +1,15 @@
---- src/cmd/cmd.cc.orig	Sat Aug  9 16:31:03 1997
-+++ src/cmd/cmd.cc	Sat Aug  9 16:31:15 1997
-@@ -15,7 +15,7 @@
- #include <sys/types.h>
- #include <sys/stat.h>
- #include <sys/ioctl.h>
--#include <sys/soundcard.h>
-+#include <machine/soundcard.h>
+--- Makefile.in.orig	Sat Apr  4 17:32:23 1998
++++ Makefile.in	Sat Apr  4 17:38:18 1998
+@@ -132,12 +132,6 @@
+ 	else file=splay.1; fi; \
+ 	echo " $(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst"; \
+ 	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
+-	@sect=1;				\
+-	inst=`echo "xsplay" | sed '$(transform)'`.1; \
+-	if test -f $(srcdir)/xsplay.1; then file=$(srcdir)/xsplay.1; \
+-	else file=xsplay.1; fi; \
+-	echo " $(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst"; \
+-	$(INSTALL_DATA) $$file $(mandir)/man$$sect/$$inst
  
- #include <mpegsound.h>
- 
+ uninstall-man:
+ 	$(NORMAL_UNINSTALL)
