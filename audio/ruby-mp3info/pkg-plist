@@ -1,0 +1,21 @@
+%%RUBY_SITELIBDIR%%/mp3info.rb
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGELOG
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/blank.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Mp3Info.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Mp3Info.src/M000001.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Mp3InfoError.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Mp3InfoInternalError.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/lib/mp3info_rb.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/lib
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Mp3Info.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
