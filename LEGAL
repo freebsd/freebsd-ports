@@ -18,6 +18,7 @@ Dist			Port			Why
 actx-*			ports/games/actx	contains commercial
 						character data
 adom-*			ports/games/adom	Copy of CD must be sent to
+agsatellite		ports/audio/agsatellite	Unsure of licensing issues
 						author
 alephone-data		ports/games/alephone-data Don't sell for profit
 aswedit-*		ports/www/aswedit	Commercial software.
