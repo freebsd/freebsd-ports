@@ -1,0 +1,11 @@
+--- mp.common.ps.orig	Sun Aug  1 13:28:21 1993
++++ mp.common.ps	Wed Jan 29 05:17:22 1997
+@@ -22,7 +22,7 @@
+ 
+ % Define /ISOLatin1Encoding only if it's not already there.
+ /ISOLatin1Encoding where { pop save true }{ false } ifelse
+-  /ISOLatin1Encoding [ StandardEncoding 0 45 getinterval aload pop /minus
++  /ISOLatin1Encoding [ StandardEncoding 0 45 getinterval aload pop /hyphen
+     StandardEncoding 46 98 getinterval aload pop /dotlessi /grave /acute
+     /circumflex /tilde /macron /breve /dotaccent /dieresis /.notdef /ring
+     /cedilla /.notdef /hungarumlaut /ogonek /caron /space /exclamdown /cent
