@@ -2,7 +2,6 @@ bin/convertstyle
 bin/dockit
 bin/geticonset
 bin/getstyle
-bin/mkmenu
 bin/seticons
 bin/setstyle
 bin/wdwrite
@@ -24,12 +23,12 @@ share/WindowMaker/Defaults/WMState
 share/WindowMaker/Defaults/WMWindowAttributes
 share/WindowMaker/Defaults/WindowMaker
 share/WindowMaker/IconSets/Default
-share/WindowMaker/Pixmaps/Computer.tif
-share/WindowMaker/Pixmaps/Computer.xpm
 share/WindowMaker/Pixmaps/GNUstep.tif
 share/WindowMaker/Pixmaps/GNUstep.xpm
 share/WindowMaker/Pixmaps/GNUstep3D.tif
 share/WindowMaker/Pixmaps/GNUstep3D.xpm
+share/WindowMaker/Pixmaps/GNUterm.tif
+share/WindowMaker/Pixmaps/GNUterm.xpm
 share/WindowMaker/Pixmaps/Sound.tif
 share/WindowMaker/Pixmaps/Sound.xpm
 share/WindowMaker/Pixmaps/clip.tif
