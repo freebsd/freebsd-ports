@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	e4graph
-PORTVERSION=	1.0a7
+PORTVERSION=	1.0a8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,6 +23,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/all
 
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \
 		--with-tcl=${LOCALBASE}/lib/tcl8.3 --enable-tcl \
@@ -30,5 +32,8 @@ CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \
 CFLAGS+=	-fpermissive -I${LOCALBASE}/include/tcl8.3
 MAKEFILE=	makefile
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|=-O$$|="$${CFLAGS}"|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
