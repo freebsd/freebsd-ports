@@ -9,7 +9,7 @@
 SNAPDATE=	2001-04-30
 SNAPVER=	${SNAPDATE:S/-//g}
 
-PORTNAME=	gcc-devel
+PORTNAME=	gcc-30snap
 PORTVERSION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/gcc/snapshots/${SNAPDATE}/  \
