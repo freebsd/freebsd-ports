@@ -1,0 +1,9 @@
+--- src/snipe2d.in.orig	Wed Jan 21 11:56:07 2004
++++ src/snipe2d.in	Wed Jan 21 12:19:02 2004
+@@ -1,4 +1,4 @@
+-#! /bin/bash
++#! /bin/sh
+ prefix=@prefix@
+ cd @datadir@/@PACKAGE@
+-./snipe2d.x86.dynamic $*
++./snipe2d-bin $*
