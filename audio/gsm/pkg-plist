@@ -1,13 +1,8 @@
 bin/toast
 @exec ln -fs %f %B/untoast
 @exec ln -fs %f %B/untoastt
-man/man1/toast.1.gz
 @exec ln -fs %f %B/untoast.1
 @exec ln -fs %f %B/tcat.1
-man/man3/gsm.3.gz
-man/man3/gsm_explode.3.gz
-man/man3/gsm_option.3.gz
-man/man3/gsm_print.3.gz
 lib/libgsm.so.1.0.10
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R

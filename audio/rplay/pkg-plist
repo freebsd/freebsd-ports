@@ -11,10 +11,3 @@ info/librplay.info
 info/rplay.info
 info/RPLAY.info
 info/RPTP.info
-man/man1/rplay.1.gz
-man/man1/rplayd.1.gz
-man/man1/xrplay.1.gz
-man/man1/rptp.1.gz
-man/man5/rplay.conf.5.gz
-man/man5/rplay.hosts.5.gz
-man/man5/rplay.servers.5.gz

@@ -1,6 +1,5 @@
 bin/mikmod
 bin/mikcvt
-man/man1/mikmod.1.gz
 share/doc/mikmod/credits.txt
 share/doc/mikmod/mikmod.txt
 share/doc/mikmod/register.frm
