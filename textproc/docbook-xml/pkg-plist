@@ -1,6 +1,6 @@
 share/xml/dtd/docbook/calstblx.dtd
 share/xml/dtd/docbook/dbcentx.mod
-share/xml/dtd/docbook/dbgenent.ent
+share/xml/dtd/docbook/dbgenent.mod
 share/xml/dtd/docbook/dbhierx.mod
 share/xml/dtd/docbook/dbnotnx.mod
 share/xml/dtd/docbook/dbpoolx.mod
