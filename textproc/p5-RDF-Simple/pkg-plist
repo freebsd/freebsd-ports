@@ -1,0 +1,9 @@
+%%SITE_PERL%%/RDF/Simple.pm
+%%SITE_PERL%%/RDF/Simple/NS.pm
+%%SITE_PERL%%/RDF/Simple/Parser.pm
+%%SITE_PERL%%/RDF/Simple/Serialiser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF/Simple
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/RDF 2>/dev/null || true
+@dirrm %%SITE_PERL%%/RDF/Simple
+@unexec rmdir %D/%%SITE_PERL%%/RDF 2>/dev/null || true

@@ -284,6 +284,7 @@
     SUBDIR += p5-RADIUS-UserFile
     SUBDIR += p5-RDF-Core
     SUBDIR += p5-RDF-Notation3
+    SUBDIR += p5-RDF-Simple
     SUBDIR += p5-RDFStore
     SUBDIR += p5-RTF-Parser
     SUBDIR += p5-RTF-Tokenizer
