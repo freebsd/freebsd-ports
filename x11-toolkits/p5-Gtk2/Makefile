@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	p5-
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan \
 		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module for Gtk+ 2.x graphical user interface library
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \

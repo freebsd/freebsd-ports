@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RTF
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl module for generating documents in Rich Text Format
 
 BUILD_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size

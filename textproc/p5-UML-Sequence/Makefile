@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	UML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A perl module that produce UML sequence diagrams
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM

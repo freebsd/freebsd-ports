@@ -12,7 +12,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Natural language toolkit written in python
 
 USE_PYTHON=	2.3+

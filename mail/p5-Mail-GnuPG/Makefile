@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl5 interface to process and/or create PGP email
 
 BUILD_DEPENDS=	${SITE_PERL}/GnuPG/Interface.pm:${PORTSDIR}/security/p5-GnuPG-Interface \

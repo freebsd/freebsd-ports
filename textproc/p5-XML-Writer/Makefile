@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.cpan.dk/CPAN/authors/id/E/ED/EDAVIS/ \
 MASTER_SITE_SUBDIR=	XML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A simple Perl module for writing XML documents
 
 PERL_CONFIGURE=	yes

@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Chinese Tokenizer on steroids
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Lingua/ZH/TaBE.pm:${PORTSDIR}/chinese/p5-Lingua-ZH-TaBE

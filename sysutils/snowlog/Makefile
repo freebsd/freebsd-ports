@@ -11,7 +11,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://home.kcore.de/~kiza/software/snowlog/download/
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A webserver access log browser/analyzer
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

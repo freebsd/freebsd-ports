@@ -10,7 +10,7 @@ PORTVERSION=	0.9.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://memberwebs.com/nielsen/software/rtfx/
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An RTF to XML converter
 
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron

@@ -12,7 +12,7 @@ PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://centericq.de/archive/source/releases/
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A text mode menu- and window-driven IM interface
 
 USE_ICONV=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A Module generate a HTML table from bidimensional array data
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/HTML/PullParser.pm:${PORTSDIR}/www/p5-HTML-Parser \

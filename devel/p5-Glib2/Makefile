@@ -17,7 +17,7 @@ PKGNAMEPREFIX=	p5-
 DISTFILES=	Glib-${PORTVERSION}${EXTRACT_SUFX}:cpan \
 		Glib-${PORTVERSION}${EXTRACT_SUFX}:sf
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	This module provides access to Glib and GObject libraries
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \

@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	security
 MASTER_SITES=	http://memberwebs.com/nielsen/software/clamsmtp/
 
-MAINTAINER=	clsung@dragon2.net
+MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	An ClamAV anti-virus SMTP Filter
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/clamd:${PORTSDIR}/security/clamav
