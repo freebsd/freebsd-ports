@@ -3,7 +3,7 @@
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
-# $Id: Makefile,v 1.44 1998/12/10 22:15:07 sada Exp $
+# $Id: Makefile,v 1.45 1998/12/10 22:24:31 sada Exp $
 
 DISTNAME=	WindowMaker-0.20.3
 PKGNAME=	windowmaker-i18n-0.20.3
@@ -11,9 +11,11 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/beta/srcs/ \
 		ftp://ftp.io.com/pub/mirror/windowmaker/beta/srcs/ \
 		http://jgo.local.net/cool_downloads/wm/ \
-		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/misc/wmaker/
+		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/misc/wmaker/ \
+		ftp://muse.brain.riken.go.jp/pub/rpm/contrib/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES} \
-		WindowMaker-0.20.3-ko.po.gz WPrefs-0.20.3-ko.po.gz
+		WindowMaker-0.20.3-ko.po.gz WPrefs-0.20.3-ko.po.gz \
+		WindowMaker-0.20.3ja3.tar.gz
 
 MAINTAINER=	mac@jp.freebsd.org
 
@@ -25,7 +27,8 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 BUILD_DEPENDS=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext \
 		nkf:${PORTSDIR}/japanese/nkf
 
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES} \
+		WindowMaker-0.20.3ja3.tar.gz
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE}  LOCALBASE=${LOCALBASE} \
@@ -48,6 +51,10 @@ post-extract:
 			> ${WRKSRC}/po/ko.po
 	@${GUNZIP_CMD} -c < ${_DISTDIR}/WPrefs-0.20.3-ko.po.gz \
 			> ${WRKSRC}/WPrefs.app/po/ko.po
+	@${CP} ${WRKDIR}/WindowMaker-0.20.3ja3/WindowMaker.ja.po \
+			${WRKSRC}/po/ja.po
+	@${CP} ${WRKDIR}/WindowMaker-0.20.3ja3/WPrefs.ja.po \
+			${WRKSRC}/WPrefs.app/po/ja.po
 
 post-patch:
 	@perl -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
