@@ -249,7 +249,7 @@ _USE_PHP_ALL=	bcmath bz2 calendar crack ctype curl dba dbase dbx dio \
 		ming mnogosearch mssql mysql mysqli ncurses odbc \
 		openssl oracle overload panda pcntl pcre pdf pgsql posix \
 		pspell readline recode session shmop simplexml snmp soap \
-		sockets sqlite sybase sybase_ct sysvmsg sysvsem sysvshm \
+		sockets sqlite sybase_ct sysvmsg sysvsem sysvshm \
 		tidy tokenizer wddx xml xmlrpc xsl xslt yaz yp zip zlib
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
@@ -307,7 +307,6 @@ snmp_DEPENDS=	net-mgmt/php${PHP_VER}-snmp
 soap_DEPENDS=	net/php${PHP_VER}-soap
 sockets_DEPENDS=net/php${PHP_VER}-sockets
 sqlite_DEPENDS=	databases/php${PHP_VER}-sqlite
-sybase_DEPENDS=	databases/php${PHP_VER}-sybase
 sybase_ct_DEPENDS=	databases/php${PHP_VER}-sybase_ct
 sysvmsg_DEPENDS=devel/php${PHP_VER}-sysvmsg
 sysvsem_DEPENDS=devel/php${PHP_VER}-sysvsem

@@ -73,8 +73,7 @@ OPTIONS=	BCMATH          "bc style precision math functions" off \
 		SOAP            "SOAP support" off \
 		SOCKETS         "sockets support" off \
 		SQLITE          "sqlite support" on \
-		SYBASE          "Sybase database support (DB-lib)" off \
-		SYBASE_CT       "Sybase database support (CT-lib)" off \
+		SYBASE_CT       "Sybase database support" off \
 		SYSVMSG         "System V message support" off \
 		SYSVSEM         "System V semaphore support" off \
 		SYSVSHM         "System V shared memory support" off \
@@ -103,7 +102,7 @@ ALL_OPTIONS=	BCMATH BZ2 CALENDAR CTYPE CURL DBA DBASE DBX DIO \
 		MCVE MHASH MIME_MAGIC MING MNOGOSEARCH MSSQL MYSQL MYSQLI \
 		NCURSES ODBC OPENSSL ORACLE PANDA PCNTL PCRE PDF PGSQL POSIX \
 		PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP SOAP \
-		SOCKETS SQLITE SYBASE SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
+		SOCKETS SQLITE SYBASE_CT SYSVMSG SYSVSEM SYSVSHM \
 		TIDY TOKENIZER WDDX XML XMLRPC XSL YAZ YP ZIP ZLIB
 
 SEL_OPTIONS=	yes
