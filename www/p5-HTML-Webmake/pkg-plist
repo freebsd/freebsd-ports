@@ -1,0 +1,66 @@
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/editbuttons.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/safe_tag.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/thumbnail_tag.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/rssbox.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/DownloadTag.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/sitetree.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/wwwtable_tag.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/csvtable_tag.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/dump_vars.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/download_tag.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/SiteTree.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/navtree.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/xsl.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/lang_tag.wmk
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/CSVTableTag.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/NavTree.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib/ThumbnailTag.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/SubstCtx.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGIGlue.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/Metadata.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlCodeLibrary.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/Main.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/DataSourceBase.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/DataSource.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/MSHTMLtoHTML.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlCode.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/HTMLCleaner.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI/CGIBase.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI/Del.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI/RWMetaTable.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI/Dir.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI/EditFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI/Edit.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI/CVS.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI/EditBlock.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI/Site.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI/FindWmkf.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/Out.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/Content.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/MediaContent.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/MetadataContent.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/Media.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/NormalContent.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/WMLinkGlossary.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/SiteCache.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/FormatConvert.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/UserTags.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/Contents.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/WmkFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/MetaTable.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/SiteMap.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/DataSources/DirOfFiles.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/DataSources/SVFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/WebMake/.packlist
+bin/webmake_cvs_import
+bin/webmake
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/CGI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/DataSources
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake/PerlLib
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/WebMake
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/WebMake
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML 2> /dev/null || true
