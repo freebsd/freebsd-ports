@@ -7,6 +7,7 @@
 
 PORTNAME=	tpop3d
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 
@@ -18,6 +19,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-auth-other \
 		--enable-tcp-wrappers \
+		--enable-tls \
 		--with-mailspool-directory=/var/mail
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
