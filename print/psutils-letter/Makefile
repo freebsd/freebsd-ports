@@ -15,6 +15,7 @@ DISTNAME=	psutils-p17
 
 MAINTAINER=	jmz@FreeBSD.org
 
+USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/psutils
 MAKE_FLAGS?=	PAPER=${PAPERSIZE} -f
 MAN1=		psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
