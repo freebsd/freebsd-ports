@@ -1,0 +1,19 @@
+[ excerpt from developer's web site ]
+
+JZlib is a re-implementation of zlib in pure Java. The first and
+final aim for hacking this stuff is to add the packet compression
+support to pure Java SSH systems.
+
+- Why JZlib?
+
+Java Platform API provides packages 'java.util.zip.*' for accessing
+to zlib, but that support is very limited if you need to use the
+essence of zlib. For example, we needed to full access to zlib to
+add the packet compression support to pure Java SSH system, but
+they are useless for our requirements. The Internet draft SSH
+Transport Layer Protocol says in the section '4.2 Compression' as
+follows,
+
+WWW: http://www.jcraft.com/jzlib/
+
+-- lioux@FreeBSD.org
