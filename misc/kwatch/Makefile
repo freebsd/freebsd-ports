@@ -3,13 +3,13 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <zerium@webindex.no>
 #
-# $Id: Makefile,v 1.8 1998/10/02 18:21:32 brian Exp $
+# $Id: Makefile,v 1.9 1998/11/21 07:27:38 steve Exp $
 #
 
 DISTNAME=	kwatch-0.3
 CATEGORIES=	misc kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.0/apps/utils
+MASTER_SITE_SUBDIR= stable/1.1/apps/utils
 
 MAINTAINER=	zerium@webindex.no
 
