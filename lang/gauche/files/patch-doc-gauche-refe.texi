@@ -1,0 +1,13 @@
+--- doc/gauche-refe.texi.orig	Tue Sep  3 09:36:37 2002
++++ doc/gauche-refe.texi	Tue Sep 10 01:08:58 2002
+@@ -8,2 +8,10 @@
+ 
++@ifinfo
++@format
++START-INFO-DIR-ENTRY
++* Gauche-en: (gauche-refe).         The Gauche Reference Manual [en]
++END-INFO-DIR-ENTRY
++@end format
++@end ifinfo
++
+ @c module and class index

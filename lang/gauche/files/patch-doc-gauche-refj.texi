@@ -1,0 +1,13 @@
+--- doc/gauche-refj.texi.orig	Tue Sep  3 09:36:47 2002
++++ doc/gauche-refj.texi	Tue Sep 10 01:08:59 2002
+@@ -8,2 +8,10 @@
+ 
++@ifinfo
++@format
++START-INFO-DIR-ENTRY
++* Gauche-ja: (gauche-refj).         The Gauche Reference Manual [ja]
++END-INFO-DIR-ENTRY
++@end format
++@end ifinfo
++
+ @c module and class index
