@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xemacs-devel
-PORTVERSION=	${XEMACS_VER}
+PORTVERSION=	${XEMACS_VER:S/-/./}
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
-DISTNAME=	xemacs-${XEMACS_REL}
-DISTFILES=	${DISTNAME}.11${EXTRACT_SUFX}
+DISTNAME=	xemacs-${XEMACS_VER:S/-b/./}
+#DISTFILES=	${DISTNAME}.11${EXTRACT_SUFX}
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	gj@FreeBSD.org
@@ -27,12 +27,12 @@ USE_XLIB=	yes
 USE_XPM=	yes
 .endif
 
-XEMACS_REL=	21.5
-BETA_VER=	-b11
-XEMACS_VER=	${XEMACS_REL}${BETA_VER}
-XEMACS_ARCH=	${CONFIGURE_TARGET}
-WRKSRC=		${WRKDIR}/${DISTNAME}.11
+XEMACS_MAJOR_VER?=	21
+XEMACS_REL=		${XEMACS_MAJOR_VER}.5
+XEMACS_VER=		${XEMACS_MAJOR_VER}.5-b15
+XEMACS_ARCH=		${CONFIGURE_TARGET}
 
+WRKSRC=		${WRKDIR}/xemacs-${XEMACS_VER:S/-b/./}
 STRIP=
 USE_AUTOCONF_VER=213
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
@@ -108,7 +108,7 @@ pre-configure::
 .endfor
 
 post-install::
-.for file in b2m ctags ellcc etags gnuclient ootags xemacs-${XEMACS_REL}-b11
+.for file in b2m ctags ellcc etags gnuclient ootags xemacs-${XEMACS_VER}
 	${STRIP_CMD} ${PREFIX}/bin/${file}
 .endfor
 	${RM} -f ${PREFIX}/bin/send-pr

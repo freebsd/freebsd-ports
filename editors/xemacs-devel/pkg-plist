@@ -80,12 +80,12 @@ lib/xemacs-%%XEMACS_VER%%/etc/gray1.xbm
 lib/xemacs-%%XEMACS_VER%%/etc/ms-kermit
 lib/xemacs-%%XEMACS_VER%%/etc/ms-kermit-7bit
 lib/xemacs-%%XEMACS_VER%%/etc/package-index.LATEST.gpg
-lib/xemacs-%%XEMACS_VER%%/etc/package-index.LATEST.pgp
 lib/xemacs-%%XEMACS_VER%%/etc/recycle.xpm
 lib/xemacs-%%XEMACS_VER%%/etc/recycle2.xpm
 lib/xemacs-%%XEMACS_VER%%/etc/refcard.ps.gz
 lib/xemacs-%%XEMACS_VER%%/etc/refcard.tex
 lib/xemacs-%%XEMACS_VER%%/etc/sample.Xdefaults
+lib/xemacs-%%XEMACS_VER%%/etc/sample.Xresources
 lib/xemacs-%%XEMACS_VER%%/etc/sample.init.el
 lib/xemacs-%%XEMACS_VER%%/etc/sink.xbm
 lib/xemacs-%%XEMACS_VER%%/etc/trash.xpm
@@ -624,6 +624,8 @@ lib/xemacs-%%XEMACS_VER%%/lisp/msw-mouse.el
 lib/xemacs-%%XEMACS_VER%%/lisp/msw-select.el
 lib/xemacs-%%XEMACS_VER%%/lisp/multicast.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mwheel.el
+lib/xemacs-%%XEMACS_VER%%/lisp/newcomment.el
+lib/xemacs-%%XEMACS_VER%%/lisp/newcomment.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/objects.el
 lib/xemacs-%%XEMACS_VER%%/lisp/obsolete.el
 lib/xemacs-%%XEMACS_VER%%/lisp/package-admin.el
@@ -667,7 +669,6 @@ lib/xemacs-%%XEMACS_VER%%/lisp/update-elc-2.el
 lib/xemacs-%%XEMACS_VER%%/lisp/update-elc.el
 lib/xemacs-%%XEMACS_VER%%/lisp/userlock.el
 lib/xemacs-%%XEMACS_VER%%/lisp/version.el
-lib/xemacs-%%XEMACS_VER%%/lisp/very-early-lisp.el
 lib/xemacs-%%XEMACS_VER%%/lisp/view-less.el
 lib/xemacs-%%XEMACS_VER%%/lisp/wid-browse.el
 lib/xemacs-%%XEMACS_VER%%/lisp/wid-edit.el
@@ -712,8 +713,8 @@ lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-composite-stub.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-composite.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-locale.txt
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-msw-init-late.el
-lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-msw-init.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-tty-init.el
+lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-win32-init.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/mule-x-init.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/thai-util.el
 lib/xemacs-%%XEMACS_VER%%/lisp/mule/thai-xtis.el
@@ -1281,8 +1282,6 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/glyphs-x.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/glyphs.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/gpmevent.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/gtk-xemacs.h
-lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/gui-gtk.h
-lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/gui-x.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/gui.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/gutter.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/hash.h
@@ -1301,7 +1300,6 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/lrecord.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/lstream.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/macros.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/mem-limits.h
-lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/menubar-msw.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/menubar.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/miscplay.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/mule-ccl.h
@@ -1366,6 +1364,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xgccache.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xintrinsic.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xintrinsicp.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xmmanagerp.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xmotif.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xmprimitivep.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/xmu.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/config.values
@@ -1497,7 +1496,6 @@ lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-20
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-21
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-22
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-23
-lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-24
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-3
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-4
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-5
