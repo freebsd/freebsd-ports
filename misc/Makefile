@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.91 1996/11/07 11:38:34 asami Exp $
+# $Id: Makefile,v 1.92 1996/11/11 19:44:15 obrien Exp $
 #
 
     SUBDIR += amanda
@@ -40,6 +40,7 @@
     SUBDIR += trans
     SUBDIR += unclutter
     SUBDIR += xcalendar
+    SUBDIR += xgas
     SUBDIR += zorro
 
 .include <bsd.port.subdir.mk>
