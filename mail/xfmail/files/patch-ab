@@ -1,0 +1,18 @@
+--- autogen.sh.orig	Mon Feb  5 17:40:21 2001
++++ autogen.sh	Mon Jun 25 01:02:54 2001
+@@ -42,15 +42,4 @@
+ automake --gnu --add-missing
+ cd "$THEDIR"
+ 
+-if test -z "$*"; then
+-	echo "I am going to run ./configure with no arguments - if you wish "
+-        echo "to pass any to it, please specify them on the $0 command line."
+-fi
+-
+-$srcdir/configure "$@"
+ cd $srcdir/src/ui && ./help_gen
+-
+-echo 
+-echo "Now type 'make' to compile xfmail."
+-echo "If you have problems, please see the directory docs/"
+-echo "for possible resolutions."
