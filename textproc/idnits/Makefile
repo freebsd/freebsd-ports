@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	idnits
-PORTVERSION=	1.47
+PORTVERSION=	1.58
 CATEGORIES=	textproc
 MASTER_SITES=	http://ietf.levkowetz.com/tools/idnits/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
