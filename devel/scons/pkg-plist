@@ -134,6 +134,9 @@ lib/scons/SCons/Tool/lex.pyo
 lib/scons/SCons/Tool/masm.py
 lib/scons/SCons/Tool/masm.pyc
 lib/scons/SCons/Tool/masm.pyo
+lib/scons/SCons/Tool/mingw.py
+lib/scons/SCons/Tool/mingw.pyc
+lib/scons/SCons/Tool/mingw.pyo
 lib/scons/SCons/Tool/mslib.py
 lib/scons/SCons/Tool/mslib.pyc
 lib/scons/SCons/Tool/mslib.pyo
