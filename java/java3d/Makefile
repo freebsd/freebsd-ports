@@ -36,7 +36,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${JAVA_OS} == "FreeBSD"
+.if ${JAVA_PORT_OS} == "native"
 WITH_PLUGINWRAPPER=	yes
 RUN_DEPENDS+=	${LOCALBASE}/lib/pluginwrapper/java3d.so:${PORTSDIR}/www/linuxpluginwrapper
 .endif

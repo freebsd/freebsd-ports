@@ -35,7 +35,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 IGNORE=		"You must manually fetch the \"Linux CLASSPATH Install\" distribution \(${DISTNAME}${EXTRACT_SUFX}\) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again"
 .endif
 
-.if ${JAVA_OS} == "FreeBSD"
+.if ${JAVA_PORT_OS} == "FreeBSD"
 WITH_PLUGINWRAPPER=	yes
 RUN_DEPENDS+=	${LOCALBASE}/lib/pluginwrapper/jai.so:${PORTSDIR}/www/linuxpluginwrapper
 .endif
