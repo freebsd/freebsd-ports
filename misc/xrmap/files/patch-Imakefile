@@ -1,0 +1,51 @@
+$FreeBSD$
+
+--- Imakefile.orig	Wed Nov 28 17:05:11 2001
++++ Imakefile	Tue Dec 25 21:51:11 2001
+@@ -1,14 +1,16 @@
+ XCOMM Should install to /usr or /usr/local ??
+-DESTDIR=/usr
++DESTDIR=
++
++PREFIX=/usr/X11R6
+ 
+ XCOMM Name of man subdirectory of DESTDIR:
+-MANDIR=/X11R6/man/man1
++MANDIR=$(PREFIX)/man/man1
+ 
+ XCOMM Name of bin subdirectory of DESTDIR: /X11R6/bin or maybe just  /bin
+-BINDIR=/X11R6/bin
++BINDIR=$(PREFIX)/bin
+ 
+ XCOMM Name of share subdirectory of DESTDIR:
+-SHAREDIR=/share/rmap
++SHAREDIR=$(PREFIX)/share/rmap
+ 
+ XCOMM
+ XCOMM Compile options:
+@@ -17,7 +19,7 @@
+ #ifdef HPArchitecture
+ ZLIBDIR=
+ 
+-CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
++CCOPTIONS = -Ae -DZLIB -DSHAREDIR=\"$(SHAREDIR)\"
+ #else
+ # SunOS
+ 
+@@ -27,7 +29,7 @@
+ # Solaris, Linux
+ #ZLIBDIR=-L/usr/lib
+ 
+-CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(DESTDIR)$(SHAREDIR)\"
++CCOPTIONS=-O -DZLIB -DSHAREDIR=\"$(SHAREDIR)\"
+ #endif
+ 
+ SRCS=xrmap.c
+@@ -53,7 +55,6 @@
+ 	cp -fR i18n $(DESTDIR)$(SHAREDIR)
+ 	cp -fR flags $(DESTDIR)$(SHAREDIR)
+ 	cp -fR big_flags $(DESTDIR)$(SHAREDIR)
+-	cat WARNING
+ 
+ clean::
+ 	cd tools ; make clean

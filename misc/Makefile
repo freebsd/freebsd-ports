@@ -229,6 +229,7 @@
     SUBDIR += xosd
     SUBDIR += xpns
     SUBDIR += xquote
+    SUBDIR += xrmap
     SUBDIR += xtail
     SUBDIR += xtar
     SUBDIR += yaucg

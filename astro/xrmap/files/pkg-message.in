@@ -1,0 +1,7 @@
+In order to use this port, you must download the data from one of the
+following sites:
+   ftp://sepftp.stanford.edu/pub/World_Map/
+   ftp://gatekeeper.dec.com/pub/graphics/data/cia-wdb
+   http://www.evl.uic.edu/pape/data/WDB/
+
+Place the resulting data in %%PREFIX%%/share/rmap/.
