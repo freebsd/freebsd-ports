@@ -1,0 +1,4 @@
+IMP is the Internet Messaging Program. It is written in PHP and provides
+webmail access to IMAP and POP3 accounts.
+
+WWW: http://www.horde.org/imp/

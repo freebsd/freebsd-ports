@@ -1,0 +1,33 @@
+--- config/servers.php.dist.orig	Sun Dec 12 07:36:51 2004
++++ config/servers.php.dist	Fri Dec 24 00:27:59 2004
+@@ -47,7 +47,7 @@
+  *
+  * folders: The folder path for the IMAP server.
+  *          Common values:
+- *            UW-IMAP               'mail/'  (note the trailing slash)
++ *            UW-IMAP               'Mail/'  (note the trailing slash)
+  *            Cyrus, Courier-IMAP   'INBOX.' (note the trailing dot)
+  *            dovecot               ''
+  *
+@@ -174,14 +174,16 @@
+ 
+ $servers['imap'] = array(
+     'name' => 'IMAP Server',
+-    'server' => 'imap.example.com',
++//  'server' => 'imap.example.com',
++    'server' => 'localhost',
+     'hordeauth' => false,
+-    'protocol' => 'imap/notls',
+-    'port' => 143,
+-    'folders' => 'mail/',
++    'protocol' => '%%PROTOCOL%%',
++    'port' => %%IMAPPORT%%,
++    'folders' => 'Mail/',
+     'namespace' => '',
+     'maildomain' => 'example.com',
+-    'smtphost' => 'smtp.example.com',
++//  'smtphost' => 'smtp.example.com',
++    'smtphost' => 'localhost',
+     'smtpport' => 25,
+     'realm' => '',
+     'preferred' => '',

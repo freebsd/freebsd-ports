@@ -1,0 +1,25 @@
+--- config/conf.xml.orig	Mon Nov 22 09:40:29 2004
++++ config/conf.xml	Mon Nov 29 11:51:54 2004
+@@ -6,11 +6,11 @@
+    <configheader>External Utilities</configheader>
+    <configstring name="spellchecker" required="false" desc="Enter the location
+    of the binary to either aspell or ispell to enable the spell checker. If
+-   this is empty, then spell checking will be disabled."></configstring>
++   this is empty, then spell checking will be disabled.">%%ASPELL%%</configstring>
+    <configstring name="gnupg" required="false" desc="If you want users to have
+    the option of using the GNU Privacy Guard program to decrypt/encrypt PGP
+    files, enter the location of the 'gpg' binary here.  If this is empty this
+-   feature will be disabled."></configstring>
++   feature will be disabled.">%%GPG%%</configstring>
+    <configmultienum name="gnupg_keyserver" required="false" desc="The address of
+    the public PGP keyserver(s) to use.">wwwkeys.pgp.net
+     <values>
+@@ -23,7 +23,7 @@
+    connecting to the PGP keyserver. Timeouts are not supported on all
+    systems.">10</configstring>
+    <configstring name="openssl_cafile" required="false" desc="The location of
+-   the root certificates bundle.">/somewhere/ca-bundle.crt</configstring>
++   the root certificates bundle.">/usr/local/etc/ssl.crt/ca-bundle.crt</configstring>
+    <configstring name="openssl_binary" required="false" desc="The location of
+    the OpenSSL binary on your system. This program is REQUIRED to import
+    personal S/MIME certificate information, as there is no native PHP function
