@@ -78,6 +78,35 @@
 %%CORNERMP%%%%myDATADIR%%CornerMP/symbols.fnt
 %%CORNERMP%%%%myDATADIR%%CornerMP/symbols.png
 %%CORNERMP%%%%myDATADIR%%CornerMP/vol.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/README
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/about.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/back.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/eqls.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/exit.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/font.fnt
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/font.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/forwd.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/full.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/icnf.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/load.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/main.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/menu.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/menu_ko.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/menus.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/menus_ko.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/next.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/pause.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/play.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/plst.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/pos.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/prev.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/skin
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/stop.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/sub.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/subt.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/symbols.fnt
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/symbols.png
+%%CORNERMP_AGUA%%%%myDATADIR%%CornerMP-aqua/vol.png
 %%CUBICPLAYER%%%%myDATADIR%%CubicPlayer/README
 %%CUBICPLAYER%%%%myDATADIR%%CubicPlayer/VERSION
 %%CUBICPLAYER%%%%myDATADIR%%CubicPlayer/balance.png
@@ -206,6 +235,26 @@
 %%DEFAULT%%%%myDATADIR%%default/symbols.fnt
 %%DEFAULT%%%%myDATADIR%%default/symbols.png
 %%DEFAULT%%%%myDATADIR%%default/volume.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-about.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-exit.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-forward.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-fullscr.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-next.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-open.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-pause.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-play.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-playlst.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-prev.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-rewind.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-skinbr.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/button-stop.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/font.fnt
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/font.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/main.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/pos.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/skin
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/sub.png
+%%HWSW_SKIN%%%%myDATADIR%%hwswskin/vol.png
 %%MENTALIC%%%%myDATADIR%%mentalic/about.png
 %%MENTALIC%%%%myDATADIR%%mentalic/back.png
 %%MENTALIC%%%%myDATADIR%%mentalic/exit.png
@@ -452,12 +501,14 @@
 %%NEUTRON%%@dirrm %%myDATADIR%%neutron
 %%NETSCAPE4%%@dirrm %%myDATADIR%%netscape4
 %%MENTALIC%%@dirrm %%myDATADIR%%mentalic
+%%HWSW_SKIN%%@dirrm %%myDATADIR%%hwswskin
 %%DEFAULT%%@dirrm %%myDATADIR%%default
 %%AVIFILE%%@dirrm %%myDATADIR%%avifile
 %%WINDOWSMEDIAPLAYER6%%@dirrm %%myDATADIR%%WindowsMediaPlayer6
 %%MIDNIGHTLOVE%%@dirrm %%myDATADIR%%MidnightLove
 %%CYRUS%%@dirrm %%myDATADIR%%Cyrus
 %%CUBICPLAYER%%@dirrm %%myDATADIR%%CubicPlayer
+%%CORNERMP_AGUA%%@dirrm %%myDATADIR%%CornerMP-aqua
 %%CORNERMP%%@dirrm %%myDATADIR%%CornerMP
 %%BLUEHEART%%@dirrm %%myDATADIR%%BlueHeart
 %%ALIENMIND%%@dirrm %%myDATADIR%%AlienMind
