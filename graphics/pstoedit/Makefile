@@ -13,16 +13,14 @@ MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
-		gs:${PORTSDIR}/print/ghostscript-gnu
+BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 LIB_DEPENDS=	Magick++.5:${PORTSDIR}/graphics/ImageMagick \
 		ming.3:${PORTSDIR}/graphics/ming \
 		plotter.4:${PORTSDIR}/graphics/plotutils
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
-		gs:${PORTSDIR}/print/ghostscript-gnu
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
+USE_GNOME=	gnometarget pkgconfig
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
