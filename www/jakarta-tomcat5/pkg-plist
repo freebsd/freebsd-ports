@@ -1,6 +1,7 @@
 bin/tomcat50ctl
 etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/LICENSE
+%%T%%/NOTICE
 %%T%%/RELEASE-NOTES
 %%T%%/RUNNING.txt
 %%T%%/bin/LauncherBootstrap.class
@@ -11,6 +12,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/bin/commons-launcher.jar
 %%T%%/bin/commons-logging-api.jar
 %%T%%/bin/digest.sh
+%%T%%/bin/jmx.jar
 %%T%%/bin/jsvc.tar.gz
 %%T%%/bin/launcher.properties
 %%T%%/bin/setclasspath.sh
@@ -29,7 +31,6 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/common/lib/commons-pool-1.1.jar
 %%T%%/common/lib/jasper-compiler.jar
 %%T%%/common/lib/jasper-runtime.jar
-%%T%%/common/lib/jmx.jar
 %%T%%/common/lib/jsp-api.jar
 %%T%%/common/lib/naming-common.jar
 %%T%%/common/lib/naming-factory.jar
@@ -157,6 +158,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/server/webapps/manager/images/void.gif
 %%T%%/server/webapps/manager/manager-howto.html
 %%T%%/server/webapps/manager/manager.xml
+%%T%%/server/webapps/manager/status.xsd
 %%T%%/server/webapps/manager/xform.xsl
 @exec mkdir %D/%%T%%/shared || true
 @exec mkdir %D/%%T%%/shared/classes || true
@@ -667,6 +669,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/SSLAuthenticator.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/SavedRequest.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/SingleSignOn.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/SingleSignOnEntry.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/authenticator/package-tree.html
@@ -731,6 +734,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/Reloader.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/ResourceEntry.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/StandardClassLoader.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/StandardClassLoaderMBean.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.PrivilegedFindResource.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappClassLoader.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/loader/WebappLoader.html
@@ -799,6 +803,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/security/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIEnvironment.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.CGIRunner.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.NameValuePair.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/CGIServlet.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/Constants.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/servlets/DefaultServlet.ResourceInfo.html
@@ -1005,14 +1010,18 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat4/package-summary.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat4/package-tree.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/Constants.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteAdapter.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteConnector.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteInputStream.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteOutputStream.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyotePrincipal.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteReader.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteRequest.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteRequestFacade.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteResponse.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteResponseFacade.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteServerSocketFactory.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/CoyoteWriter.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/InputBuffer.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/MapperListener.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/coyote/tomcat5/OutputBuffer.html
