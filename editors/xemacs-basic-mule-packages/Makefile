@@ -1,29 +1,28 @@
-# New ports collection makefile for:	X-Emacs Packages with Mule
-# Date created:		24 Oct 1999
-# Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
+# New ports collection makefile for:	Basic XEmacs elisp packages with Mule
+# Date created:		03 June 2000
+# Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 #
-# $FreeBSD$
+# $FreeBSD$$
 #
 
-PORTNAME=	xemacs-mule-packages
-PORTVERSION=	1.1
+PORTNAME=	xemacs-basic-mule-packages
+PORTVERSION=	1.0
 CATEGORIES=	editors elisp
 MASTER_SITES=	\
 		ftp://ftp.xemacs.org/pub/xemacs/packages/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/packages/ \
 		ftp://ftp.usyd.edu.au/pub/Xemacs/packages/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/packages/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/packages/ \
-		${MASTER_SITE_PORTS_JP}
+		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/packages/
 
-# These are not smallest set of packages but mostly usage of packages for
-# many `Mule' users.
 DISTFILES=	\
-		mule-base-1.34-pkg.tar.gz	locale-1.15-pkg.tar.gz \
-		skk-1.15-pkg.tar.gz		elib-1.06-pkg.tar.gz \
-		egg-its-1.22-pkg.tar.gz		ps-print-ja-1.01-pkg.tar.gz
+		egg-its-1.22-pkg.tar.gz \
+		elib-1.06-pkg.tar.gz \
+		locale-1.16-pkg.tar.gz \
+		mule-base-1.34-pkg.tar.gz \
+		skk-1.15-pkg.tar.gz
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 
 DIST_SUBDIR=	xemacs
 MASTER_SITE_SUBDIR=${DIST_SUBDIR}
@@ -45,18 +44,16 @@ do-install:
 	${CP} -Rp ${WRKDIR}/mule-packages ${XEMACSDIR}
 
 post-install:
-	@${ECHO_MSG} "This is only a subset of the available packages for xemacs"
-	@${ECHO_MSG} "with mule."
-	@${ECHO_MSG} "You can install additional packages yourself from within xemacs by"
-	@${ECHO_MSG} "running it as root and using the 'Manage Packes' menu within"
-	@${ECHO_MSG} "the 'Options' menu of the menubar."
-	@${ECHO_MSG} "To install all packages besides basic packages(xemacs-packages or"
-	@${ECHO_MSG} "xemacs-mule-packages), consider using the xemacs-other-packages or"
-	@${ECHO_MSG} "xemacs-mule-other-packages port."
-
-## for make PLIST (only maintainer use)
-#arrange:
-#	${MAKE} -DPLIST_OVERRIDE DIRRM2RMDIRS="lib/xemacs/mule-packages/pkginfo lib/xemacs/mule-packages/man lib/xemacs/mule-packages/lisp lib/xemacs/mule-packages/info lib/xemacs/mule-packages/etc lib/xemacs/mule-packages" \
-#		DIRRMDEPTH=2 plist
+	@${ECHO_MSG} "    This is the basic mule package for XEmacs(version over 21). You might be"
+	@${ECHO_MSG} "enough with this package installing basic package(editors/xemacs-packages)"
+	@${ECHO_MSG} "altogether for working at XEmacs but if you think it insufficient,you can"
+	@${ECHO_MSG} "install other packages provided by XEmacs.org with editors/xemacs-*-packages"
+	@${ECHO_MSG} "ports. These ports are prepared for corresponding XEmacs packages except for"
+	@${ECHO_MSG} "xemacs-packages, xemacs-basic-packages and xemacs-additional-packages. Where"
+	@${ECHO_MSG} "xemacs-additional-packages is a meta ports for packages out of xemacs, xemacs"
+	@${ECHO_MSG} "mule-basic and xemacs mule category packages."
+	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packes'"
+	@${ECHO_MSG} "menu within the 'Options' menu of the menubar. But using this xemacs package"
+	@${ECHO_MSG} "managing, you could not control under ports managing ;-)"
 
 .include <bsd.port.mk>

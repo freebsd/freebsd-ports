@@ -395,7 +395,6 @@ lib/xemacs-%%XEMACS_VER%%/info/cl.info-4
 lib/xemacs-%%XEMACS_VER%%/info/cl.info-5
 lib/xemacs-%%XEMACS_VER%%/info/cl.info-6
 lib/xemacs-%%XEMACS_VER%%/info/custom.info
-lib/xemacs-%%XEMACS_VER%%/info/dir
 lib/xemacs-%%XEMACS_VER%%/info/external-widget.info
 lib/xemacs-%%XEMACS_VER%%/info/info.info
 lib/xemacs-%%XEMACS_VER%%/info/internals.info
@@ -485,6 +484,7 @@ lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-2
 lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-3
 lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-4
 lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-5
+lib/xemacs-%%XEMACS_VER%%/info/xemacs-faq.info-6
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-1
 lib/xemacs-%%XEMACS_VER%%/info/xemacs.info-10

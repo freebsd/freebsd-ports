@@ -5,35 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xemacs-${NAMEPREFIX}sumo
-PORTVERSION=	${XEMACS_REL}
-CATEGORIES+=	editors elisp
-MASTER_SITES=	# empty
-DISTFILES=	# empty
-EXTRACT_ONLY=	# empty
-
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
-
-RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc:${PORTSDIR}/editors/xemacs-sumo-packages \
-		${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-sumo-packages \
-		${RUN_DEP_LIST}
-
-NO_BUILD=	yes
-
 XEMACS_MAJOR_VER=	21
-XEMACS_REL=		21.1
-XEMACS_VER=		21.1.10
-XEMACS_ARCH=		${MACHINE_ARCH}--freebsd
-
-.include <bsd.port.pre.mk>
-
-.if defined(PKGNAMEPREFIX) && (${PKGNAMEPREFIX} == "ja-")
-RUN_DEP_LIST=		${LOCALBASE}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/config.values:${PORTSDIR}/japanese/xemacs${XEMACS_MAJOR_VER}${PKGNAMESUFFIX}
-.else
-RUN_DEP_LIST=		${LOCALBASE}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/config.values:${PORTSDIR}/editors/xemacs${XEMACS_MAJOR_VER}-mule
 NAMEPREFIX=		mule-
-.endif
 
-do-install:		# empty
+MASTERDIR=	${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-sumo
 
-.include <bsd.port.post.mk>
+.include	"${MASTERDIR}/Makefile"

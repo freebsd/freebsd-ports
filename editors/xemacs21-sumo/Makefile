@@ -1,4 +1,4 @@
-# New ports collection makefile for:   Meta port of XEmacs mule with sumo package
+# New ports collection makefile for:   Meta port of XEmacs with sumo package
 # Date created:        19 August 1999
 # Whom:                KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
@@ -6,17 +6,23 @@
 #
 
 PORTNAME=	xemacs-${NAMEPREFIX}sumo
-PORTVERSION=	${XEMACS_REL}
-CATEGORIES+=	editors elisp
+PORTVERSION=	${XEMACS_VER}
+CATEGORIES=	editors
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
-RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc:${PORTSDIR}/editors/xemacs-sumo-packages \
-		${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.skk:${PORTSDIR}/editors/xemacs-mule-sumo-packages \
+.if defined(NAMEPREFIX) && ${NAMEPREFIX} == "mule-" || \
+	defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} != ""
+RUN_DEPENDS=	${LOCALBASE}/share/doc/xemacs-additional-packages:${PORTSDIR}/editors/xemacs-additional-packages \
+		${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.leim:${PORTSDIR}/editors/xemacs-mule-packages \
 		${RUN_DEP_LIST}
+.else
+RUN_DEPENDS=	${LOCALBASE}/share/doc/xemacs-additional-packages:${PORTSDIR}/editors/xemacs-additional-packages \
+		${RUN_DEP_LIST}
+.endif
 
 NO_BUILD=	yes
 
@@ -25,15 +31,17 @@ XEMACS_REL=		21.1
 XEMACS_VER=		21.1.10
 XEMACS_ARCH=		${MACHINE_ARCH}--freebsd
 
+do-install:		# empty
+
 .include <bsd.port.pre.mk>
 
-.if defined(PKGNAMEPREFIX) && (${PKGNAMEPREFIX} == "ja-")
+.if defined(PKGNAMEPREFIX) && ${PKGNAMEPREFIX} == "ja-"
 RUN_DEP_LIST=		${LOCALBASE}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/config.values:${PORTSDIR}/japanese/xemacs${XEMACS_MAJOR_VER}${PKGNAMESUFFIX}
-.else
+.elif defined(NAMEPREFIX) && ${NAMEPREFIX} == "mule-"
 RUN_DEP_LIST=		${LOCALBASE}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/config.values:${PORTSDIR}/editors/xemacs${XEMACS_MAJOR_VER}-mule
 NAMEPREFIX=		mule-
+.else
+RUN_DEP_LIST=		${LOCALBASE}/lib/xemacs-${XEMACS_VER}/${XEMACS_ARCH}/config.values:${PORTSDIR}/editors/xemacs${XEMACS_MAJOR_VER}
 .endif
-
-do-install:		# empty
 
 .include <bsd.port.post.mk>

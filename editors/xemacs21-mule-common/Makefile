@@ -13,8 +13,6 @@
 #	MULE_PORT         : Mule port if defined(means COMMN or SLAVE)
 #	MULE_COMMON       : COMMON port if defined
 #	MULE_SLAVE        : SLAVE port if defined
-#	PKGLDIR           : Local PKGDIR of editors/xemacs${XEMACS_MAJOR_VER}-mule
-#                           (that is editors/xemacs${XEMACS_MAJOR_VER}-mule/pkg)
 #	SITE_INCLUDES     : site include path(configure arguments)
 #	SITE_LIBRARIES    : site libraries path(configure arguments)
 #	WITH_INPUT_METHOD : input methods(configure arguments)
@@ -51,6 +49,9 @@ CONFIGURE_ARGS=	--with-x11 \
 		--x-libraries=${X11BASE}/lib
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
+
+PKGDIR=		${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-mule-common/pkg
+
 INSTALL_TARGET=	install-arch-indep
 PLIST=		${PKGDIR}/PLIST
 PLIST_SUB=	XEMACS_VER=${XEMACS_VER}

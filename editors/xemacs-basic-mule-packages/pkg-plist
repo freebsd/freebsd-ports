@@ -182,12 +182,6 @@ lib/xemacs/mule-packages/lisp/mule-base/thai-xtis-util.el
 lib/xemacs/mule-packages/lisp/mule-base/thai-xtis-util.elc
 lib/xemacs/mule-packages/lisp/mule-base/viet-util.el
 lib/xemacs/mule-packages/lisp/mule-base/viet-util.elc
-lib/xemacs/mule-packages/lisp/ps-print-ja/ChangeLog
-lib/xemacs/mule-packages/lisp/ps-print-ja/_pkg.el
-lib/xemacs/mule-packages/lisp/ps-print-ja/auto-autoloads.el
-lib/xemacs/mule-packages/lisp/ps-print-ja/auto-autoloads.elc
-lib/xemacs/mule-packages/lisp/ps-print-ja/ps-print.el
-lib/xemacs/mule-packages/lisp/ps-print-ja/ps-print.elc
 lib/xemacs/mule-packages/lisp/skk/ChangeLog
 lib/xemacs/mule-packages/lisp/skk/_pkg.el
 lib/xemacs/mule-packages/lisp/skk/auto-autoloads.el
@@ -236,20 +230,14 @@ lib/xemacs/mule-packages/pkginfo/MANIFEST.egg-its
 lib/xemacs/mule-packages/pkginfo/MANIFEST.elib
 lib/xemacs/mule-packages/pkginfo/MANIFEST.locale
 lib/xemacs/mule-packages/pkginfo/MANIFEST.mule-base
-lib/xemacs/mule-packages/pkginfo/MANIFEST.ps-print-ja
 lib/xemacs/mule-packages/pkginfo/MANIFEST.skk
-@unexec rmdir %D/lib/xemacs/mule-packages/pkginfo 2>/dev/null || true
 @dirrm lib/xemacs/mule-packages/man/skk
 @dirrm lib/xemacs/mule-packages/man/elib
-@unexec rmdir %D/lib/xemacs/mule-packages/man 2>/dev/null || true
 @dirrm lib/xemacs/mule-packages/lisp/skk
-@dirrm lib/xemacs/mule-packages/lisp/ps-print-ja
 @dirrm lib/xemacs/mule-packages/lisp/mule-base
 @dirrm lib/xemacs/mule-packages/lisp/locale
 @dirrm lib/xemacs/mule-packages/lisp/elib
 @dirrm lib/xemacs/mule-packages/lisp/egg-its
-@unexec rmdir %D/lib/xemacs/mule-packages/lisp 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs/mule-packages/info 2>/dev/null || true
 @dirrm lib/xemacs/mule-packages/etc/start-files/ro
 @dirrm lib/xemacs/mule-packages/etc/start-files/ja
 @dirrm lib/xemacs/mule-packages/etc/start-files/fr
@@ -264,5 +252,3 @@ lib/xemacs/mule-packages/pkginfo/MANIFEST.skk
 @dirrm lib/xemacs/mule-packages/etc/app-defaults/fr
 @dirrm lib/xemacs/mule-packages/etc/app-defaults/de
 @dirrm lib/xemacs/mule-packages/etc/app-defaults
-@unexec rmdir %D/lib/xemacs/mule-packages/etc 2>/dev/null || true
-@unexec rmdir %D/lib/xemacs/mule-packages 2>/dev/null || true
