@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmrproject
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 
