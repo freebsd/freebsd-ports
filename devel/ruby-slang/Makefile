@@ -14,23 +14,18 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 .if defined(WITH_JAPANESE)
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang
 .else
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 .endif
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 
-INSTALL_TARGET=	site-install
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
+
 CONFIGURE_ARGS=	--with-slang-include="${LOCALBASE}/include/slang" \
 		--with-slang-lib="${LOCALBASE}/lib"
-
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
+INSTALL_TARGET=	site-install
 
 EXAMPLES_EN=	fm.rb		smgtest.rb	urlview.rb
 EXAMPLES_JA=	pager.rb
@@ -38,32 +33,29 @@ DOCS_EN=	README		changes.txt
 DOCS_JA=	README.euc
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
 .if defined(PKGNAMEPREFIX)
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}ruby-
+PKGNAMEPREFIX:= ${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 .else
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 .endif
-
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/slang/ja
+	${MKDIR} ${RUBY_EXAMPLESDIR}/slang/ja
 .for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/examples/ruby/slang/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/slang/
 .endfor
 .for f in ${EXAMPLES_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/examples/ruby/slang/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/slang/ja/
 .endfor
-	${MKDIR} ${PREFIX}/share/doc/ruby/slang/ja
+	${MKDIR} ${RUBY_DOCDIR}/slang/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/slang/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/slang/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/slang/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/slang/ja/
 .endfor
 .endif
 

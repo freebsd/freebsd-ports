@@ -13,45 +13,38 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 LIB_DEPENDS=	kakasi.2:${PORTSDIR}/japanese/kakasi
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
+
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 DOCS_EN=	ChangeLog	README		wdcnt.html
 DOCS_JA=	README.jp
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}ruby-
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 post-patch:
 	${PERL} -i -pe 's,/usr/local,${PREFIX},g' ${WRKSRC}/extconf.rb
 	${PERL} -i -pe 's,\./(kakasi),$$1,g' ${WRKSRC}/test.rb
 
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
-
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wdcnt ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/kakasi/ja/
-	${INSTALL_DATA} ${WRKSRC}/test.rb ${PREFIX}/share/examples/ruby/kakasi/ja/
-	${MKDIR} ${PREFIX}/share/doc/ruby/kakasi/ja
+	${MKDIR} ${RUBY_EXAMPLESDIR}/kakasi/ja/
+	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_EXAMPLESDIR}/kakasi/ja/
+	${MKDIR} ${RUBY_DOCDIR}/kakasi/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/kakasi/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/kakasi/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/kakasi/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/kakasi/ja/
 .endfor
 .endif
 

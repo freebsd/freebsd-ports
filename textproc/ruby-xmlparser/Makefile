@@ -11,31 +11,26 @@ CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.bekkoame.ne.jp/~yoshidam/
 MASTER_SITE_SUBDIR=	knu
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
-		${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
+BUILD_DEPENDS=	${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	expat.1:${PORTSDIR}/textproc/expat
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
-		${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
+RUN_DEPENDS=	${PERL_ARCHLIB}/XML/Parser/Expat.pm:${PORTSDIR}/textproc/p5-XML-Parser
 # to utilize encoding maps included in p5-XML-Parser
 
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 .if !defined(NOPORTDOCS)
-BUILD_DEPENDS+=	rd2:${PORTSDIR}/textproc/ruby-rdtool
+USE_RUBY_RD=	yes
 .endif
 
 PERL_ARCHLIB=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/mach
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 INSTALL_TARGET=	site-install
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 EXAMPLES_EN=	dtd/ext1.dtd	dtd/ext2.dtd	dtd/extdtd.rb	dtd/extdtd.xml \
 		namespaces/namespace1.rb	namespaces/namespace1.xml \
@@ -54,34 +49,32 @@ post-patch:
 	${PERL} -i -pe 's,%%PERL_ARCHLIB%%,${PERL_ARCHLIB},g' ${WRKSRC}/extconf.rb
 	${PERL} -i -pe 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/lib/wget.rb
 
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
-
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/xmlparser/dtd
-	${MKDIR} ${PREFIX}/share/examples/ruby/xmlparser/namespaces
-	${MKDIR} ${PREFIX}/share/examples/ruby/xmlparser/ja
+	${MKDIR} ${RUBY_EXAMPLESDIR}/xmlparser/dtd
+	${MKDIR} ${RUBY_EXAMPLESDIR}/xmlparser/namespaces
+	${MKDIR} ${RUBY_EXAMPLESDIR}/xmlparser/ja
 .for f in ${EXAMPLES_EN}
 	${INSTALL_DATA} ${WRKSRC}/samples/${f} \
-		${PREFIX}/share/examples/ruby/xmlparser/${f}
+		${RUBY_EXAMPLESDIR}/xmlparser/${f}
 .endfor
 .for f in ${EXAMPLES_JA}
 	${INSTALL_DATA} ${WRKSRC}/samples/${f} \
-		${PREFIX}/share/examples/ruby/xmlparser/ja/${f}
+		${RUBY_EXAMPLESDIR}/xmlparser/ja/${f}
 .endfor
 .for f in ${RD_DOCS}
 	@cd ${WRKSRC}/lib; \
-	rd2 ${f} > ${f:S/.rb$/.html/}
+	${RUBY_RD} ${f} > ${f:S/.rb$/.html/}
 .endfor
-	${MKDIR} ${PREFIX}/share/doc/ruby/xmlparser/ja
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ruby/xmlparser/
-	${INSTALL_DATA} ${WRKSRC}/README.ja ${PREFIX}/share/doc/ruby/xmlparser/ja/
+	${MKDIR} ${RUBY_DOCDIR}/xmlparser/ja
+	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/xmlparser/
+	${INSTALL_DATA} ${WRKSRC}/README.ja ${RUBY_DOCDIR}/xmlparser/ja/
 .for f in ${RD_DOCS:S/.rb$/.html/}
-	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${PREFIX}/share/doc/ruby/xmlparser/
+	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${RUBY_DOCDIR}/xmlparser/
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

@@ -1,7 +1,7 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/uri.rb
-lib/ruby/site_ruby/%%RUBY_VER%%/urireg.rb
-share/examples/ruby/uri/test-uri.rb
-share/examples/ruby/uri/in-uri.txt
-@dirrm share/examples/ruby/uri
-share/doc/ruby/uri/index.html
-@dirrm share/doc/ruby/uri
+%%RUBY_SITELIBDIR%%/uri.rb
+%%RUBY_SITELIBDIR%%/urireg.rb
+%%RUBY_EXAMPLESDIR%%/uri/test-uri.rb
+%%RUBY_EXAMPLESDIR%%/uri/in-uri.txt
+@dirrm %%RUBY_EXAMPLESDIR%%/uri
+%%RUBY_DOCDIR%%/uri/index.html
+@dirrm %%RUBY_DOCDIR%%/uri

@@ -17,13 +17,13 @@ MAINTAINER=	knu@FreeBSD.org
 SHORTNAME=	${PORTNAME:S/usersguide/uguide/}
 VERSION?=	20000904
 
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" LANGSUFFIX="${LANGSUFFIX}"
+PLIST_SUB=	LANGSUFFIX="${LANGSUFFIX}"
 
 WRKSRC=		${WRKDIR}/${SHORTNAME}
 
 NO_BUILD=	yes
 
-DOCDIR=		${PREFIX}/share/doc/ruby/${PORTNAME}${LANGSUFFIX}
+DOCDIR=		${RUBY_DOCDIR}/${PORTNAME}${LANGSUFFIX}
 
 post-extract:
 	if [ -f ${WRKSRC}/ansi.com ]; then ${RM} ${WRKSRC}/ansi.com; fi
@@ -33,4 +33,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/* ${DOCDIR}
 	${LN} -fs uguide00.html ${DOCDIR}/index.html
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

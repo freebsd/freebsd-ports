@@ -1,10 +1,10 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/_filelock.so
-lib/ruby/site_ruby/%%RUBY_VER%%/filelock.rb
-share/examples/ruby/filelock/test.rb
-share/examples/ruby/filelock/tst1.rb
-share/examples/ruby/filelock/tst2.rb
-share/examples/ruby/filelock/tst3.rb
-share/examples/ruby/filelock/tst4.rb
-@dirrm share/examples/ruby/filelock
-share/doc/ruby/filelock/README
-@dirrm share/doc/ruby/filelock
+%%RUBY_SITEARCHLIBDIR%%/_filelock.so
+%%RUBY_SITELIBDIR%%/filelock.rb
+%%RUBY_EXAMPLESDIR%%/filelock/test.rb
+%%RUBY_EXAMPLESDIR%%/filelock/tst1.rb
+%%RUBY_EXAMPLESDIR%%/filelock/tst2.rb
+%%RUBY_EXAMPLESDIR%%/filelock/tst3.rb
+%%RUBY_EXAMPLESDIR%%/filelock/tst4.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/filelock
+%%RUBY_DOCDIR%%/filelock/README
+@dirrm %%RUBY_DOCDIR%%/filelock

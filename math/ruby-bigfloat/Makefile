@@ -6,36 +6,29 @@
 #
 
 PORTNAME=	bigfloat
-PORTVERSION= 	1.1.3
+PORTVERSION=	1.1.3
 CATEGORIES=	math ruby
 MASTER_SITES=	http://www.tinyforest.gr.jp/ruby/
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-
-INSTALL_TARGET=	site-install
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
 NO_WRKSUBDIR=	yes
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
-
-do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
+INSTALL_TARGET=	site-install
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ruby/bigfloat/ja
+	${MKDIR} ${RUBY_DOCDIR}/bigfloat/ja
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/bigfloat_en.html \
-		${PREFIX}/share/doc/ruby/bigfloat
+		${RUBY_DOCDIR}/bigfloat
 	${INSTALL_DATA} ${WRKSRC}/bigfloat.html \
-		${PREFIX}/share/doc/ruby/bigfloat/ja
+		${RUBY_DOCDIR}/bigfloat/ja
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

@@ -9,26 +9,21 @@ PORTNAME=	snmp
 PORTVERSION=	0.2.1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://w3cic.riken.go.jp/~tsuruoka/
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/ucd-snmp
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
+
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/SNMP
 INSTALL_TARGET=	site-install
 CONFIGURE_ARGS=	--with-snmp-dir="${LOCALBASE}"
-
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 DOCS_EN=	mib_view.html \
 		rubysnmp.html \
@@ -37,16 +32,14 @@ DOCS_EN=	mib_view.html \
 		snmp_session.html \
 		snmp_var.html
 
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
-
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ruby/snmp
+	${MKDIR} ${RUBY_DOCDIR}/snmp
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/snmp/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/snmp/
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

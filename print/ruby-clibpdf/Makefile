@@ -9,25 +9,19 @@ PORTNAME=	clibpdf
 PORTVERSION=	19991016
 CATEGORIES=	print ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ClibPDF-ALPHA-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 LIB_DEPENDS=	cpdf.0:${PORTSDIR}/print/clibpdf
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 
-INSTALL_TARGET=	site-install
-CONFIGURE_ARGS=	--with-opt-dir="${LOCALBASE}"
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/ClibPDF-${PORTVERSION}
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
+INSTALL_TARGET=	site-install
 
 EXAMPLES_EN=	Arcs.rb		DomainDemo.rb	MarkerTest.rb	Minimal.rb \
 		beziertest.rb	charwidth.rb	cover.rb	dashtest.rb \
@@ -42,26 +36,24 @@ DOCS_JA=	ChangeLog.ja	README.ja	TODO.ja
 post-extract:
 	${RM} ${WRKSRC}/examples/*.pdf
 
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
-
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/clibpdf/ja
+	${MKDIR} ${RUBY_EXAMPLESDIR}/clibpdf/ja
 .for f in ${EXAMPLES_EN}
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${PREFIX}/share/examples/ruby/clibpdf/
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${RUBY_EXAMPLESDIR}/clibpdf/
 .endfor
 .for f in ${EXAMPLES_JA}
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${PREFIX}/share/examples/ruby/clibpdf/ja/
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${RUBY_EXAMPLESDIR}/clibpdf/ja/
 .endfor
-	${MKDIR} ${PREFIX}/share/doc/ruby/clibpdf/ja
+	${MKDIR} ${RUBY_DOCDIR}/clibpdf/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/clibpdf/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/clibpdf/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/clibpdf/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/clibpdf/ja/
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/BigFloat.so
-share/doc/ruby/bigfloat/ja/bigfloat.html
-share/doc/ruby/bigfloat/README
-share/doc/ruby/bigfloat/bigfloat_en.html
-@dirrm share/doc/ruby/bigfloat/ja
-@dirrm share/doc/ruby/bigfloat
+%%RUBY_SITEARCHLIBDIR%%/BigFloat.so
+%%RUBY_DOCDIR%%/bigfloat/ja/bigfloat.html
+%%RUBY_DOCDIR%%/bigfloat/README
+%%RUBY_DOCDIR%%/bigfloat/bigfloat_en.html
+@dirrm %%RUBY_DOCDIR%%/bigfloat/ja
+@dirrm %%RUBY_DOCDIR%%/bigfloat

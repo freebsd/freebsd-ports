@@ -9,32 +9,27 @@ PORTNAME=	html-parser
 PORTVERSION=	19990912.p1
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/html-parser/
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
+USE_RUBY=	yes
 
 NO_BUILD=	yes
-
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 MODULES=	formatter.rb	html-parser.rb	sgml-parser.rb
 
 do-install:
 .for f in ${MODULES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ruby/html-parser
-	${INSTALL_DATA} ${WRKSRC}/README.html ${PREFIX}/share/doc/ruby/html-parser/
+	${MKDIR} ${RUBY_DOCDIR}/html-parser
+	${INSTALL_DATA} ${WRKSRC}/README.html ${RUBY_DOCDIR}/html-parser/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

@@ -1,4 +1,4 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/iconv.so
-share/doc/ruby/iconv/iconv.html
-share/doc/ruby/iconv/rd.css
-@dirrm share/doc/ruby/iconv
+%%RUBY_SITEARCHLIBDIR%%/iconv.so
+%%RUBY_DOCDIR%%/iconv/iconv.html
+%%RUBY_DOCDIR%%/iconv/rd.css
+@dirrm %%RUBY_DOCDIR%%/iconv

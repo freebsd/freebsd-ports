@@ -1,5 +1,5 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/syslog.so
-share/examples/ruby/syslog/test.rb
-@dirrm share/examples/ruby/syslog
-share/doc/ruby/syslog/README
-@dirrm share/doc/ruby/syslog
+%%RUBY_SITEARCHLIBDIR%%/syslog.so
+%%RUBY_EXAMPLESDIR%%/syslog/test.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/syslog
+%%RUBY_DOCDIR%%/syslog/README
+@dirrm %%RUBY_DOCDIR%%/syslog

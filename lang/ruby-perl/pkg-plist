@@ -1,14 +1,14 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/perl.so
-share/examples/ruby/perl/htmlparse.rb
-share/examples/ruby/perl/http.rb
-share/examples/ruby/perl/perllib.rb
-share/examples/ruby/perl/ping.rb
-share/examples/ruby/perl/test.rb
-share/examples/ruby/perl/xmlparser.rb
-@dirrm share/examples/ruby/perl
-share/doc/ruby/perl/ja/README.ja
-@dirrm share/doc/ruby/perl/ja
-@dirrm share/doc/ruby/perl
+%%RUBY_SITEARCHLIBDIR%%/perl.so
+%%RUBY_EXAMPLESDIR%%/perl/htmlparse.rb
+%%RUBY_EXAMPLESDIR%%/perl/http.rb
+%%RUBY_EXAMPLESDIR%%/perl/perllib.rb
+%%RUBY_EXAMPLESDIR%%/perl/ping.rb
+%%RUBY_EXAMPLESDIR%%/perl/test.rb
+%%RUBY_EXAMPLESDIR%%/perl/xmlparser.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/perl
+%%RUBY_DOCDIR%%/perl/ja/README.ja
+@dirrm %%RUBY_DOCDIR%%/perl/ja
+@dirrm %%RUBY_DOCDIR%%/perl
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Ruby.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ruby/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Ruby/Ruby.bs

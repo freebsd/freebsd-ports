@@ -1,13 +1,13 @@
-lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/uconv.so
-share/examples/ruby/uconv/ja/euc2unicode.rb
-share/examples/ruby/uconv/ja/test_euc.txt
-share/examples/ruby/uconv/ja/test_euc.xml
-share/examples/ruby/uconv/ja/trilang.xml
-share/examples/ruby/uconv/ja/unicode2euc.rb
-share/examples/ruby/uconv/ja/xmlconv.rb
-@dirrm share/examples/ruby/uconv/ja
-@dirrm share/examples/ruby/uconv
-share/doc/ruby/uconv/README
-share/doc/ruby/uconv/ja/README.ja
-@dirrm share/doc/ruby/uconv/ja
-@dirrm share/doc/ruby/uconv
+%%RUBY_SITEARCHLIBDIR%%/uconv.so
+%%RUBY_EXAMPLESDIR%%/uconv/ja/euc2unicode.rb
+%%RUBY_EXAMPLESDIR%%/uconv/ja/test_euc.txt
+%%RUBY_EXAMPLESDIR%%/uconv/ja/test_euc.xml
+%%RUBY_EXAMPLESDIR%%/uconv/ja/trilang.xml
+%%RUBY_EXAMPLESDIR%%/uconv/ja/unicode2euc.rb
+%%RUBY_EXAMPLESDIR%%/uconv/ja/xmlconv.rb
+@dirrm %%RUBY_EXAMPLESDIR%%/uconv/ja
+@dirrm %%RUBY_EXAMPLESDIR%%/uconv
+%%RUBY_DOCDIR%%/uconv/README
+%%RUBY_DOCDIR%%/uconv/ja/README.ja
+@dirrm %%RUBY_DOCDIR%%/uconv/ja
+@dirrm %%RUBY_DOCDIR%%/uconv

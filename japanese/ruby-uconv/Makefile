@@ -15,38 +15,29 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-
-INSTALL_TARGET=	site-install
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY=		${LOCALBASE}/bin/ruby
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+INSTALL_TARGET=	site-install
 
 EXAMPLES=	euc2unicode.rb	test_euc.txt	test_euc.xml \
 		trilang.xml	unicode2euc.rb	xmlconv.rb
 
 .include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
 
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}ruby-
-
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
 post-install:
-	${MKDIR} ${PREFIX}/share/examples/ruby/uconv/ja
+	${MKDIR} ${RUBY_EXAMPLESDIR}/uconv/ja
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${PREFIX}/share/examples/ruby/uconv/ja
+	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${RUBY_EXAMPLESDIR}/uconv/ja
 .endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ruby/uconv/ja
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ruby/uconv/
-	${INSTALL_DATA} ${WRKSRC}/README.ja ${PREFIX}/share/doc/ruby/uconv/ja/
+	${MKDIR} ${RUBY_DOCDIR}/uconv/ja
+	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/uconv/
+	${INSTALL_DATA} ${WRKSRC}/README.ja ${RUBY_DOCDIR}/uconv/ja/
 .endif
 
 .include <bsd.port.post.mk>

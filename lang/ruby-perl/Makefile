@@ -9,31 +9,22 @@ PORTNAME=	perl
 PORTVERSION=	0.2.5
 CATEGORIES=	lang ruby perl5
 MASTER_SITES=	http://www.bekkoame.ne.jp/~yoshidam/
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-
-INSTALL_TARGET=	site-install
+USE_PERL5=	yes
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-USE_PERL5=	yes
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
+INSTALL_TARGET=	site-install
 
 EXAMPLES=	htmlparse.rb	http.rb		perllib.rb	ping.rb \
 		test.rb		xmlparser.rb
 
 do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
 	@cd ${WRKSRC}/Ruby; \
 	${PERL} Makefile.PL
 
@@ -45,12 +36,14 @@ post-install:
 	@cd ${WRKSRC}/Ruby; \
 	${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/perl
+	${MKDIR} ${RUBY_EXAMPLESDIR}/perl
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${PREFIX}/share/examples/ruby/perl/
+	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${RUBY_EXAMPLESDIR}/perl/
 .endfor
-	${MKDIR} ${PREFIX}/share/doc/ruby/perl/ja
-	${INSTALL_DATA} ${WRKSRC}/README.ja ${PREFIX}/share/doc/ruby/perl/ja/
+	${MKDIR} ${RUBY_DOCDIR}/perl/ja
+	${INSTALL_DATA} ${WRKSRC}/README.ja ${RUBY_DOCDIR}/perl/ja/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>

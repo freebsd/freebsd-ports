@@ -9,39 +9,31 @@ PORTNAME=	filelock
 PORTVERSION=	0.2
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/contrib/
-PKGNAMEPREFIX=	ruby-
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
-RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
-
-PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
-
-RUBY?=		${LOCALBASE}/bin/ruby
-RUBY_VER?=	1.4
-RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 DOCS=		README
 EXAMPLES=	test.rb	tst1.rb	tst2.rb	tst3.rb	tst4.rb
 
-do-configure:
-	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
-
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/ruby/filelock
+	${MKDIR} ${RUBY_EXAMPLESDIR}/filelock
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${PREFIX}/share/examples/ruby/filelock/
+	${INSTALL_DATA} ${WRKSRC}/samples/${f} ${RUBY_EXAMPLESDIR}/filelock/
 .endfor
-	${MKDIR} ${PREFIX}/share/doc/ruby/filelock
+	${MKDIR} ${RUBY_DOCDIR}/filelock
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/ruby/filelock/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/filelock/
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.ruby.mk"
+.include <bsd.port.post.mk>
