@@ -119,7 +119,7 @@ post-build:
 	@cd ${WRKSRC}/smsd && ${GMAKE} libpq.la LOCALBASE=${LOCALBASE}
 .endif
 .endif
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' pkg-message > ${PKGMESSAGE}
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 pre-install:
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
