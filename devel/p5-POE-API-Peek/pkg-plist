@@ -1,3 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/API/Peek/.packlist
 %%SITE_PERL%%/POE/API/Peek.pm
 @unexec rmdir %D/%%SITE_PERL%%/POE/API 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/API/Peek
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/API 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true

@@ -3,6 +3,3 @@ to Kernel internals in a cross-version compatible manner.  Other
 calculated data is also available.
 
 WWW: http://search.cpan.org/dist/POE-API-Peek/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
