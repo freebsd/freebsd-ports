@@ -9185,6 +9185,7 @@ pure-emacs20	ports/irc/pure-emacs20
 pure-emacs21	ports/irc/pure-emacs21
 pure-ftpd	ports/ftp/pure-ftpd
 pure-xemacs21-mule	ports/irc/pure-xemacs21-mule
+pureadmin	ports/ftp/pureadmin
 puredb		ports/databases/puredb
 putty		ports/security/putty
 pv		ports/sysutils/pv
