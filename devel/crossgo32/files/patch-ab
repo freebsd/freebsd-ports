@@ -1,0 +1,134 @@
+--- ./bfd/doc/Makefile.in~	Fri Apr 11 08:42:31 1997
++++ ./bfd/doc/Makefile.in	Fri Apr 11 08:42:31 1997
+@@ -49,7 +49,7 @@
+ 
+ MAKEINFO = makeinfo
+ TEXI2DVI = texi2dvi
+-CFLAGS = -g
++CFLAGS = -O
+ 
+ CC_FOR_BUILD = $(CC)
+ 
+--- ./gas/Makefile.in~	Fri Apr 11 08:42:33 1997
++++ ./gas/Makefile.in	Fri Apr 11 08:42:33 1997
+@@ -72,7 +72,7 @@
+ TEXI2DVI = texi2dvi
+ RANLIB = ranlib
+ CC = @CC@
+-CFLAGS = -g
++CFLAGS = -O
+ LDFLAGS =
+ HLDFLAGS = @HLDFLAGS@
+ RPATH_ENVVAR = @RPATH_ENVVAR@
+--- ./gprof/Makefile.in~	Fri Apr 11 08:42:36 1997
++++ ./gprof/Makefile.in	Fri Apr 11 08:42:36 1997
+@@ -51,7 +51,7 @@
+ # Files that can be generated, but should be included in distribution.
+ GEN_FILES = flat_bl.c bsd_callg_bl.c fsf_callg_bl.c
+ 
+-CFLAGS=-g -DDEBUG
++CFLAGS=-O -DDEBUG
+ LDFLAGS=
+ HLDFLAGS = @HLDFLAGS@
+ .c.o:
+--- ./libiberty/Makefile.in~	Fri Apr 11 08:42:39 1997
++++ ./libiberty/Makefile.in	Fri Apr 11 08:42:39 1997
+@@ -68,7 +68,7 @@
+ 
+ ERRORS_CC = $(CC)
+ CC = cc
+-CFLAGS = -g
++CFLAGS = -O
+ LIBCFLAGS = $(CFLAGS)
+ MAKEINFO = makeinfo
+ RANLIB = ranlib
+--- ./gcc/cp/Makefile.in~	Fri Apr 11 08:45:24 1997
++++ ./gcc/cp/Makefile.in	Fri Apr 11 08:45:24 1997
+@@ -45,7 +45,7 @@
+ # to the stage2 and stage3 compilations
+ # XCFLAGS is used for most compilations but not when using the GCC just built.
+ XCFLAGS =
+-CFLAGS = -g
++CFLAGS = -O
+ BOOT_CFLAGS = -O $(CFLAGS)
+ # These exists to be overridden by the x-* and t-* files, respectively.
+ X_CFLAGS =
+--- ./gcc/Makefile.in~	Fri Apr 11 08:45:33 1997
++++ ./gcc/Makefile.in	Fri Apr 11 08:45:33 1997
+@@ -245,7 +245,7 @@
+ # -g1 causes output of debug info only for file-scope entities.
+ # we use this here because that should be enough, and also
+ # so that -g1 will be tested.
+-LIBGCC2_CFLAGS = -O2 $(LIBGCC2_INCLUDES) $(GCC_CFLAGS) $(TARGET_LIBGCC2_CFLAGS) -g1
++LIBGCC2_CFLAGS = -O2 $(LIBGCC2_INCLUDES) $(GCC_CFLAGS) $(TARGET_LIBGCC2_CFLAGS)
+ 
+ # Additional options to use when compiling libgcc2.a.
+ # Some targets override this to -Iinclude
+--- ./libgloss/m68k/Makefile.in~	Fri Apr 11 08:45:36 1997
++++ ./libgloss/m68k/Makefile.in	Fri Apr 11 08:45:36 1997
+@@ -58,7 +58,7 @@
+ 	lseek.o open.o print.o putnum.o read.o sbrk.o stat.o \
+ 	unlink.o write.o
+ 
+-CFLAGS = -g
++CFLAGS = -O
+ 
+ #
+ # here's all the MVME135 target stuff
+--- ./libgloss/mips/Makefile.in~	Fri Apr 11 08:45:39 1997
++++ ./libgloss/mips/Makefile.in	Fri Apr 11 08:45:39 1997
+@@ -51,7 +51,7 @@
+ OBJS =  syscalls.o fstat.o getpid.o isatty.o kill.o \
+ 	lseek.o print.o putnum.o stat.o unlink.o
+ 
+-CFLAGS = -g 
++CFLAGS = -O
+ 
+ GCC_LDFLAGS = `if [ -d ${objroot}/../gcc ] ; \
+ 	then echo -L${objroot}/../gcc ; fi`
+--- ./libgloss/pa/Makefile.in~	Fri Apr 11 08:45:41 1997
++++ ./libgloss/pa/Makefile.in	Fri Apr 11 08:45:41 1997
+@@ -51,7 +51,7 @@
+ 	lseek.o open.o print.o putnum.o read.o sbrk.o stat.o \
+ 	unlink.o write.o hp-milli.o
+ 
+-CFLAGS = -g
++CFLAGS = -O
+ 
+ MULTILIB = -msoft-float
+ 
+--- ./libgloss/rs6000/Makefile.in~	Fri Apr 11 08:45:43 1997
++++ ./libgloss/rs6000/Makefile.in	Fri Apr 11 08:45:43 1997
+@@ -39,7 +39,7 @@
+ 	else t='$(program_transform_name)'; echo objcopy | sed -e $$t ; fi`
+ 
+ OBJS		= close.o fstat.o getpid.o isatty.o kill.o lseek.o open.o putnum.o stat.o unlink.o
+-CFLAGS		= -g
++CFLAGS		= -O
+ SCRIPTS		= ${SIM_SCRIPTS} ${MVME_SCRIPTS} ${EVM_SCRIPTS}
+ 
+ # Here is all of the simulator stuff
+--- libgloss/testsuite/libgloss.all/#Makefile.in~	Fri Apr 11 09:00:17 1997
++++ libgloss/testsuite/libgloss.all/Makefile.in	Fri Apr 11 09:00:17 1997
+@@ -15,8 +15,8 @@
+ TESTS= misc.x float.x io.x memory.x double.x math.x func.x div.x \
+       printf.x varargs.x varargs2.x array.x struct.x misc.x
+ 
+-CFLAGS= -g
+-LDFLAGS_FOR_TARGET= -g
++CFLAGS= -O
++LDFLAGS_FOR_TARGET= -O
+ LIBS_FOR_TARGET =  ${SUPPORT} ${LIBC_FOR_TARGET} ${LIBGCC_FOR_TARGET} \
+ 	          ${LIBC_FOR_TARGET}
+ 
+--- ./Makefile.in~	Fri Apr 11 08:42:28 1997
++++ ./Makefile.in	Fri Apr 11 08:42:29 1997
+@@ -65,7 +65,7 @@
+ 
+ # We don't specify -g -O because many compilers don't support -g -O,
+ # and/or -O is broken in and of itself.
+-CFLAGS = -g
++CFLAGS = -O
+ LIBCFLAGS = $(CFLAGS)
+ CFLAGS_FOR_TARGET = $(CFLAGS)
+ LIBCFLAGS_FOR_TARGET = $(CFLAGS_FOR_TARGET)
