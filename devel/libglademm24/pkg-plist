@@ -22,6 +22,11 @@ libdata/pkgconfig/libglademm-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/classGnome_1_1Glade_1_1XmlError__inherit__graph.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/classGnome_1_1Glade_1_1Xml__inherit__graph.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/classes.html
+%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dir_000000.html
+%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dir_000000_dep.png
+%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dir_000001.html
+%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dir_000001_dep.png
+%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/dirs.html
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/doxygen.css
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/doxygen.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/files.html
@@ -63,12 +68,6 @@ libdata/pkgconfig/libglademm-%%API_VERSION%%.pc
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__120.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__121.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__122.png
-%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__123.png
-%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__124.png
-%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__125.png
-%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__126.png
-%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__127.png
-%%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__128.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__13.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__14.png
 %%PORTDOCS%%share/doc/gnomemm-2.6/libglademm-%%API_VERSION%%/docs/reference/html/inherit__graph__15.png
