@@ -7,7 +7,7 @@
 
 PORTNAME=		mesa
 PORTVERSION=		3.4.2
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		graphics linux
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
@@ -16,13 +16,8 @@ PKGNAMEPREFIX=		linux_
 DISTFILES=		MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 			MesaDemos-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=		mastake@msel.t.u-tokyo.ac.jp
+MAINTAINER=		ports@freebsd.org
 COMMENT=	A graphics library similar to SGI's OpenGL, used from Linux programs
-
-BROKEN=		"Inconsistent dependencies (installs both linux_base-6.x and 7.x, which conflict), will be removed after Feb 2"
-
-BUILD_DEPENDS=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base \
-		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-6
 
 USE_BZIP2=		yes
 ONLY_FOR_ARCHS=		i386
@@ -59,6 +54,19 @@ PLIST_SUB+=		GL_MAJOR_VER=${GL_MAJOR_VER} \
 			GLUT_MINOR_VER=${GLUT_MINOR_VER} \
 			LIBMESA_MAJOR_VER=${LIBMESA_MAJOR_VER}
 
+.include <bsd.port.pre.mk>
+
+.if exists(${LINUXBASE}/lib/ld-2.1.3.so)
+BUILD_DEPENDS+=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base-6 \
+		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-6
+.elifdef(WITH_LINUX6)
+BUILD_DEPENDS+=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base-6 \
+		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-6
+.else
+BUILD_DEPENDS+=	${LINUXBASE}/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base \
+		${LINUXBASE}/usr/bin/gcc:${PORTSDIR}/devel/linux_devtools-7
+.endif
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/usr/X11R6/lib/libglut.so.${GLUT_MAJOR_VER}.${GLUT_MINOR_VER}.0
 	@for R in GL GLU; do \
@@ -68,4 +76,4 @@ post-install:
 	done
 	${LINUXBASE}/sbin/ldconfig
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
