@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnustep-back
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -49,6 +49,8 @@ CONFLICTS?=		gunstep-back-0.* gunstep-back-art-0.*
 .else
 .if defined(WITH_GNUSTEP_LIBART)
 LIB_DEPENDS+=		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
+LIB_DEPENDS+=		glitz-glx.1:${PORTSDIR}/graphics/glitz
+LIB_DEPENDS+=		cairo.1:${PORTSDIR}/graphics/cairo
 CONFIGURE_ARGS+=	--enable-graphics=art --with-name=art
 PLIST_SUB+=		BACK=art USE_XLIB="@comment "
 PLIST_SUB+=		USE_XLIB="@comment " USE_XDPS="@comment " USE_ART=""
