@@ -135,6 +135,7 @@
     SUBDIR += xtestpicture
     SUBDIR += xtoolwait
     SUBDIR += xtset
+    SUBDIR += xvattr
     SUBDIR += xvkbd
     SUBDIR += xwatchwin
     SUBDIR += xwit
