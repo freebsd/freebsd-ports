@@ -1,86 +1,62 @@
-*** /dev/null	Sat Jul 22 02:21:51 2000
---- etc/mime.types	Sat Jul 22 02:24:24 2000
+*** etc/web2ldap/web2ldapcnf/hosts.py.orig	Thu Jan 11 23:52:07 2001
+--- etc/web2ldap/web2ldapcnf/hosts.py	Thu Jan 11 23:52:42 2001
 ***************
-*** 0 ****
---- 1,81 ----
-+ #
-+ # sample mime.types
-+ #
-+ 
-+ application/andrew-inset	ez
-+ application/excel		xls
-+ application/octet-stream	bin
-+ application/oda			oda
-+ application/pdf			pdf
-+ application/pgp			pgp
-+ application/postscript		ps PS eps
-+ application/rtf			rtf
-+ application/x-arj-compressed	arj
-+ application/x-bcpio		bcpio
-+ application/x-chess-pgn		pgn
-+ application/x-cpio		cpio
-+ application/x-csh		csh
-+ application/x-debian-package	deb
-+ application/x-msdos-program	com exe bat
-+ application/x-dvi		dvi
-+ application/x-gtar		gtar
-+ application/x-gunzip		gz
-+ application/x-hdf		hdf
-+ application/x-latex		latex
-+ application/x-mif		mif
-+ application/x-netcdf		cdf nc
-+ application/x-perl		pl pm
-+ application/x-rar-compressed	rar
-+ application/x-sh		sh
-+ application/x-shar		shar
-+ application/x-sv4cpio		sv4cpio
-+ application/x-sv4crc		sv4crc
-+ application/x-tar		tar
-+ application/x-tar-gz		tgz tar.gz
-+ application/x-tcl		tcl
-+ application/x-tex		tex
-+ application/x-texinfo		texi texinfo
-+ application/x-troff		t tr roff
-+ application/x-troff-man		man
-+ application/x-troff-me		me
-+ application/x-troff-ms		ms
-+ application/x-ustar		ustar
-+ application/x-wais-source	src
-+ application/x-zip-compressed	zip
-+ 
-+ audio/basic			snd
-+ audio/midi			mid midi
-+ audio/ulaw			au
-+ audio/x-aiff			aif aifc aiff
-+ audio/x-wav			wav
-+ 
-+ image/gif			gif
-+ image/ief			ief
-+ image/jpeg			jpe jpeg jpg
-+ image/png			png
-+ image/tiff			tif tiff
-+ image/x-cmu-raster		ras
-+ image/x-portable-anymap		pnm
-+ image/x-portable-bitmap		pbm
-+ image/x-portable-graymap	pgm
-+ image/x-portable-pixmap		ppm
-+ image/x-rgb			rgb
-+ image/x-xbitmap			xbm
-+ image/x-xpixmap			xpm
-+ image/x-xwindowdump		xwd
-+ 
-+ text/html			html htm
-+ text/plain			asc txt
-+ text/richtext			rtx
-+ text/tab-separated-values	tsv
-+ text/x-setext			etx
-+ 
-+ video/dl			dl
-+ video/fli			fli
-+ video/gl			gl
-+ video/mpeg			mp2 mpe mpeg mpg
-+ video/quicktime			mov qt
-+ video/x-msvideo			avi
-+ video/x-sgi-movie		movie
-+ 
-+ x-world/x-vrml			vrm vrml wrl
+*** 55,71 ****
+      # vCard template files
+      'vcard_template': {
+        # 'object class':'pathname of vCard template file'
+!       'person':'/usr/lib/web2ldap/templates/vcard_person.txt',
+      },
+      # HTML template files for printing table entries
+      'print_template': {
+        # 'object class':'pathname of printable HTML template file'
+!       'person':'/usr/lib/web2ldap/templates/print_person.html',
+!       'organization':'/usr/lib/web2ldap/templates/print_organization.html',
+!       'organizationalUnit':'/usr/lib/web2ldap/templates/print_organizationalUnit.html',
+      },
+      # HTML template file for Basic Search form
+!     'searchform_template': '/usr/lib/web2ldap/templates/searchform_Base.html',
+      # Attributes which should be present in attribute select list of advanced search form
+      'search_attrs':['cn','mail','o','ou','telephoneNumber','homePhone','description'],
+      # There are some situations where this client just wants to get the
+--- 55,71 ----
+      # vCard template files
+      'vcard_template': {
+        # 'object class':'pathname of vCard template file'
+!       'person':'/usr/local/web2ldap/templates/vcard_person.txt',
+      },
+      # HTML template files for printing table entries
+      'print_template': {
+        # 'object class':'pathname of printable HTML template file'
+!       'person':'/usr/local/web2ldap/templates/print_person.html',
+!       'organization':'/usr/local/web2ldap/templates/print_organization.html',
+!       'organizationalUnit':'/usr/local/web2ldap/templates/print_organizationalUnit.html',
+      },
+      # HTML template file for Basic Search form
+!     'searchform_template': '/usr/local/web2ldap/templates/searchform_Base.html',
+      # Attributes which should be present in attribute select list of advanced search form
+      'search_attrs':['cn','mail','o','ou','telephoneNumber','homePhone','description'],
+      # There are some situations where this client just wants to get the
+***************
+*** 113,122 ****
+      },
+      'read_template': {
+        # 'object class':'pathname of HTML template file'
+!       'person':'/usr/lib/web2ldap/templates/read_person.html',
+!       'posixAccount':'/usr/lib/web2ldap/templates/read_posixAccount.html',
+!       'bankArrangement':'/usr/lib/web2ldap/templates/read_bankArrangement.html',
+!       'musician':'/usr/lib/web2ldap/templates/read_musician.html',
+      }
+    },
+  
+--- 113,122 ----
+      },
+      'read_template': {
+        # 'object class':'pathname of HTML template file'
+!       'person':'/usr/local/web2ldap/templates/read_person.html',
+!       'posixAccount':'/usr/local/web2ldap/templates/read_posixAccount.html',
+!       'bankArrangement':'/usr/local/web2ldap/templates/read_bankArrangement.html',
+!       'musician':'/usr/local/web2ldap/templates/read_musician.html',
+      }
+    },
+  
