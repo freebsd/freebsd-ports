@@ -28,6 +28,9 @@ etc/asterisk/extensions.conf-dist
 @unexec if cmp -s %D/etc/asterisk/festival.conf %D/etc/asterisk/festival.conf-dist; then rm -f %D/etc/asterisk/festival.conf; fi
 etc/asterisk/festival.conf-dist
 @exec [ -f %B/festival.conf ] || cp %B/%f %B/festival.conf
+@unexec if cmp -s %D/etc/asterisk/h323.conf %D/etc/asterisk/h323.conf-dist; then rm -f %D/etc/asterisk/h323.conf; fi
+etc/asterisk/h323.conf-dist
+@exec [ -f %B/h323.conf ] || cp %B/%f %B/h323.conf
 @unexec if cmp -s %D/etc/asterisk/iax.conf %D/etc/asterisk/iax.conf-dist; then rm -f %D/etc/asterisk/iax.conf; fi
 etc/asterisk/iax.conf-dist
 @exec [ -f %B/iax.conf ] || cp %B/%f %B/iax.conf
@@ -179,6 +182,7 @@ lib/asterisk/modules/app_zapateller.so
 lib/asterisk/modules/cdr_csv.so
 lib/asterisk/modules/cdr_mysql.so
 lib/asterisk/modules/chan_agent.so
+lib/asterisk/modules/chan_h323.so
 lib/asterisk/modules/chan_iax.so
 lib/asterisk/modules/chan_iax2.so
 lib/asterisk/modules/chan_local.so

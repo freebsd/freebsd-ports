@@ -2,7 +2,16 @@
 $FreeBSD$
 
 --- channels/Makefile.orig	Tue Aug 19 19:42:30 2003
-+++ channels/Makefile	Fri Oct 17 12:39:34 2003
++++ channels/Makefile	Sun Oct 19 11:08:13 2003
+@@ -25,7 +25,7 @@
+ #CHANNEL_LIBS+=chan_vofr
+ 
+ CHANNEL_LIBS+=$(shell [ -f /usr/include/linux/ixjuser.h ] && echo chan_phone.so)
+-CHANNEL_LIBS+=$(shell [ -f h323/libchanh323.a ] && echo chan_h323.so)
++CHANNEL_LIBS+=chan_h323.so
+ 
+ CFLAGS+=-Wno-missing-prototypes -Wno-missing-declarations
+ CFLAGS+=$(shell [ ! -f /usr/include/linux/if_wanpipe.h ] && echo " -DOLD_SANGOMA_API")
 @@ -95,7 +95,7 @@
  ifeq (${OSARCH},Linux)
  	$(CC) -shared -Xlinker -x -o $@ chan_iax2.o iax2-parser.o
@@ -12,7 +21,19 @@ $FreeBSD$
  endif
  
  chan_zap.o: $(CHANZAP)
-@@ -127,7 +127,7 @@
+@@ -119,15 +119,17 @@
+ chan_vpb.so: chan_vpb.o
+ 	 $(CXX) -shared -Xlinker -x -o $@ $< -lvpb -lpthread -lm -ldl
+ 
+-chan_h323.so: chan_h323.o h323/libchanh323.a
+-	$(CC) -shared -Xlinker -x -o $@ $< h323/libchanh323.a -L$(PWLIBDIR)/lib  -lpt_linux_x86_r -L$(OPENH323DIR)/lib -lh323_linux_x86_r -L/usr/lib -lpthread -ldl -lcrypto -lssl -lexpat
++chan_h323.so: chan_h323.o h323/ast_h323.o
++	$(CXX) -shared -Xlinker -x -o $@ $< h323/ast_h323.o -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_r_s -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_r_s -lcrypto -lssl -L$(LOCALBASE)/lib -lexpat -llber -lldap -lldap_r
+ 
++h323/ast_h323.o:
++	$(MAKE) -C h323 ast_h323.o
+ 
+ #chan_modem.so : chan_modem.o
  #	$(CC) -rdynamic -shared -Xlinker -x -o $@ $<
  
  install: all

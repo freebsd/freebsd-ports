@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk
 PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 		ftp://ftp.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -15,8 +15,11 @@ MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
-BUILD_DEPENDS=  ${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
-LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
+BUILD_DEPENDS=  ${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client \
+		${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build \
+		${NONEXISTENT}:${PORTSDIR}/net/openh323:build
+LIB_DEPENDS=	speex.2:${PORTSDIR}/audio/speex \
+		ldap.2:${PORTSDIR}/net/openldap20-client
 RUN_DEPENDS=    ${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client
 
 GNU_CONFIGURE=	yes
@@ -24,6 +27,10 @@ CONFIGURE_WRKSRC=	${WRKSRC}/editline
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
-		MKDIR="${MKDIR}"
+		MKDIR="${MKDIR}" \
+		PWLIBDIR=${WRKDIR}/../../../devel/pwlib/work/pwlib \
+		OPENH323DIR=${WRKDIR}/../../../net/openh323/work/openh323 \
+		OSVERSION=${OSVERSION} \
+		CXX="${CXX}"
 
 .include <bsd.port.mk>
