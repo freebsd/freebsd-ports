@@ -1,6 +1,32 @@
---- configure.orig	Sun Aug 20 04:20:18 2000
-+++ configure	Sun Aug 20 22:21:40 2000
-@@ -1906,6 +1906,19 @@
+--- configure.orig	Sun Aug 20 11:20:18 2000
++++ configure	Sat Jan  6 09:57:40 2001
+@@ -1753,14 +1753,13 @@
+ fi
+ 
+ 
+-echo $ac_n "checking for dlopen in -ldl""... $ac_c" 1>&6
+-echo "configure:1758: checking for dlopen in -ldl" >&5
++echo $ac_n "checking for dlopen""... $ac_c" 1>&6
++echo "configure:1758: checking for dlopen" >&5
+ ac_lib_var=`echo dl'_'dlopen | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-ldl  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1766 "configure"
+ #include "confdefs.h"
+@@ -1818,7 +1817,7 @@
+ if eval "test \"`echo '$ac_cv_header_'$ac_safe`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-		DYNAMIC_LINK_LIB="-ldl"
++		DYNAMIC_LINK_LIB=""
+ 		cat >> confdefs.h <<\EOF
+ #define HAVE_DLFCN_H 1
+ EOF
+@@ -1906,6 +1905,19 @@
        IEEE_CFLAGS="-ieee_with_no_inexact"
      fi
      ;;
@@ -20,7 +46,7 @@
    * )
      IEEE_CFLAGS=""
  esac
-@@ -2231,16 +2244,8 @@
+@@ -2231,16 +2243,8 @@
  
  echo $ac_n "checking SLANG_VERSION""... $ac_c" 1>&6
  echo "configure:2234: checking SLANG_VERSION" >&5
