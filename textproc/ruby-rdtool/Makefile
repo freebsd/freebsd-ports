@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rdtool
-PORTVERSION=	0.6.6
-PORTREVISION=	2
+PORTVERSION=	0.6.7
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www2.pos.to/~tosh/ruby/rdtool/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -57,10 +56,9 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/rmi2html.rb ${PREFIX}/bin/
 	${LN} -sf rmi2html.rb ${PREFIX}/bin/rmi2html
 	${INSTALL_DATA} ${WRKSRC}/rd/rd2rmi-lib.rb ${RUBY_SITELIBDIR}/rd/
-	${MKDIR} ${EMACSLISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/utils/rd-mode.el ${EMACSLISPDIR}/
 	${MKDIR} ${XEMACSLISPDIR}
-	${LN} -sf ${EMACSLISPDIR}/rd-mode.el ${XEMACSLISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/utils/rd-mode.el ${XEMACSLISPDIR}/
+	${LN} -sf ${XEMACSLISPDIR}/rd-mode.el ${EMACSLISPDIR}/
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/rdswap.rb ${PREFIX}/bin/rdswap
 .if !defined(NOPORTDOCS)
 #	${RUBY_RD} ${RUBY_DOCDIR}/amstd/ja/amstd-ja.rd \
