@@ -1,0 +1,4 @@
+bin/atlast
+share/doc/atlast/atlast.ps
+share/doc/atlast/atlast.rtf
+@dirrm share/doc/atlast

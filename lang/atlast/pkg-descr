@@ -1,0 +1,27 @@
+ATLAST  is  an  attempt to make software component technology and open
+architecture  applications  commonplace  in  the  mainstream  software
+market.   It  is  both  a  software  component  which  can  be readily
+integrated into existing applications,  providing  them  a  ready-made
+macro  language  and  facilities  for user extension and customisation
+and, at the same time, it is a foundation upon which new  applications
+can be built in an open, component-oriented manner.
+
+ATLAST  was  developed at Autodesk, Inc.  Autodesk returned the rights
+to me in 1991, and I subsequently placed the  program  in  the  public
+domain.
+
+ATLAST is based upon the FORTH-83 language, but has been  extended  in
+many  ways  and  modified  to  better serve its mission as an embedded
+toolkit for open, programmable applications.  ATLAST is implemented in
+a  single  file,  written  in  portable  C; it has been ported to many
+different machines and operating systems, including MS-DOS, OS/2,  the
+Macintosh,  and  a  wide  variety  of  Unix machines.  ATLAST includes
+native support for floating  point,  C-like  strings,  Unix-compatible
+file  access,  and  a  wide variety of facilities for embedding within
+applications.  Integers are 32 bits and identifiers can be up  to  127
+characters;  extensive stack and heap pointer checking is available to
+aid in debugging.  ATLAST may be configured  at  compilation  time  to
+include only the facilities needed by a given application, thus saving
+memory  and  increasing  execution  speed  (when  error  checking   is
+disabled).
+	---John Walker.

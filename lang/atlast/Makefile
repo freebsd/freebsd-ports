@@ -1,0 +1,26 @@
+# New ports collection makefile for:	atlast
+# Version required:     1.0
+# Date created:         26 Ag 97
+# Whom:                 Pedro Giffuni
+#
+# $Id$
+#
+
+DISTNAME=	atlast-1.0
+CATEGORIES=	lang
+MASTER_SITES=	http://www.fourmilab.ch/atlast/
+
+MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
+
+do-install:
+	$(INSTALL_PROGRAM) $(WRKSRC)/atlast $(PREFIX)/bin
+
+post-install:
+	strip ${PREFIX}/bin/atlast
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/atlast
+	${INSTALL_DATA} ${WRKSRC}/atlast.ps ${PREFIX}/share/doc/atlast
+	${INSTALL_DATA} ${WRKSRC}/atlast.rtf ${PREFIX}/share/doc/atlast
+.endif
+
+.include <bsd.port.mk>
