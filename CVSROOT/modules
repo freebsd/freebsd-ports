@@ -3766,6 +3766,7 @@ mailagent	ports/mail/mailagent
 mailcrypt	ports/mail/mailcrypt
 maildrop	ports/mail/maildrop
 mailfilter	ports/mail/mailfilter
+mailgraph	ports/mail/mailgraph
 mailman		ports/mail/mailman
 mailwrapper	src/usr.sbin/mailwrapper
 mailx		ports/mail/mailx
