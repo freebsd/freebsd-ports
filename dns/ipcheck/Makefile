@@ -8,7 +8,7 @@
 PORTNAME=	ipcheck
 PORTVERSION=	0.214
 PORTEPOCH=	1
-CATEGORIES=	dns
+CATEGORIES=	dns python
 MASTER_SITES=	http://ipcheck.sourceforge.net/releases/
 MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	${PORTNAME}.${PORTVERSION:S/^0.//}
@@ -19,7 +19,6 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A fully compliant DynDNS.org client for UNIX (supports NIC v2.0)
 
 USE_PYTHON=	yes
-USE_SIZE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 PLIST_FILES=	bin/ipcheck.py
