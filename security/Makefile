@@ -91,6 +91,7 @@
     SUBDIR += mdcrack
     SUBDIR += mhash
     SUBDIR += mindterm-binary
+    SUBDIR += mussh
     SUBDIR += nbaudit
     SUBDIR += nessus
     SUBDIR += nessus-devel
