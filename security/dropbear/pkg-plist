@@ -1,5 +1,7 @@
-bin/dropbear
 bin/dropbearkey
 bin/dropbearconvert
+etc/rc.d/dropbear.sh.sample
+sbin/dropbear
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/etc/dropbear 2>/dev/null || echo "===> You can safely remove %D/etc/dropbear directory, if you don't want to use dropbear anymore."
