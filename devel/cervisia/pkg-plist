@@ -1,7 +1,10 @@
 bin/cervisia
 share/applnk/Development/Cervisia.kdelnk
+share/doc/HTML/en/cervisia/addingfiles.html
+share/doc/HTML/en/cervisia/addingremovingdirs.html
+share/doc/HTML/en/cervisia/browsinglogs.html
+share/doc/HTML/en/cervisia/ignoredfiles.html
 share/doc/HTML/en/cervisia/index.html
-share/doc/HTML/en/cervisia/index-1.html
-share/doc/HTML/en/cervisia/index-2.html
-share/doc/HTML/en/cervisia/index-3.html
+share/doc/HTML/en/cervisia/mainscreen.html
+share/doc/HTML/en/cervisia/removingfiles.html
 @dirrm share/doc/HTML/en/cervisia
