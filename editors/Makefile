@@ -87,6 +87,7 @@
     SUBDIR += lpe
     SUBDIR += manedit
     SUBDIR += mg
+    SUBDIR += mlview
     SUBDIR += mode-info
     SUBDIR += moleskine
     SUBDIR += mp
