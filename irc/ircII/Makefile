@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ircii
-PORTVERSION=	20040216
+PORTVERSION=	20040820
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/old/ \
-		ftp://ircftp.au.eterna.com.au/pub/ircII/old/ \
-		ftp://ftp.sergei.cc/pub/ircII/old/
+MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
+		ftp://ircftp.au.eterna.com.au/pub/ircII/ \
+		ftp://ftp.sergei.cc/pub/ircII/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The 'Internet Relay Chat' and 'Internet Citizens Band' Client
