@@ -1,12 +1,30 @@
-var/flows/bin/flowscan
-var/flows/bin/FlowScan.pm
-var/flows/bin/CampusIO.pm
-var/flows/bin/SubNetIO.pm
-var/flows/bin/locker
-var/flows/bin/add_ds.pl
-var/flows/bin/add_txrx
-var/flows/bin/event2vrule
-var/flows/bin/ip2hostname
-@dirrm var/flows/bin
-@dirrm var/flows
-@dirrm var
+etc/rc.d/flowscan.sh.sample
+var/db/flows/bin/flowscan
+var/db/flows/bin/FlowScan.pm
+var/db/flows/bin/CampusIO.pm
+var/db/flows/bin/SubNetIO.pm
+var/db/flows/bin/locker
+var/db/flows/bin/add_ds.pl
+var/db/flows/bin/add_txrx
+var/db/flows/bin/event2vrule
+var/db/flows/bin/ip2hostname
+var/db/flows/bin/CampusIO.cf.sample
+var/db/flows/bin/Napster_subnets.boulder.sample
+var/db/flows/bin/SubNetIO.cf.sample
+var/db/flows/bin/flowscan.cf.sample
+var/db/flows/bin/local_nets.boulder.sample
+var/db/flows/bin/our_subnets.boulder.sample
+var/db/flows/graphs/.keep_me
+share/doc/flowscan/README
+share/doc/flowscan/README.html
+share/doc/flowscan/INSTALL
+share/doc/flowscan/INSTALL.html
+share/doc/flowscan/TODO
+share/doc/flowscan/crontab.sample
+share/doc/flowscan/cflowd.sample
+share/doc/flowscan/flowscan.sample
+@dirrm var/db/flows/graphs
+@dirrm var/db/flows/bin
+@dirrm var/db/flows
+@dirrm var/db
+@dirrm share/doc/flowscan
