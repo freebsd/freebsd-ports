@@ -1,0 +1,17 @@
+===============================================================
+
+To complete the installation of this port, you have to do the
+followings:
+
+1. Run %%PREFIX%%/rt2/etc/insertdata <last_version_of_rt> if you're
+   upgrading from an older version.
+2. Edit %%PREFIX%%/rt2/etc/config.pm
+3. Configure the email and web gateways.  Please refer to 'SETTING UP
+   THE MAIL GATEWAY' in %%PREFIX%%/rt2/README
+4. Restart Apache.
+5. Do remember to *CHANGE* the root's password for the web interface.
+   The default is "password" (without the quotes.)
+6. Configure RT per the instructions at http://www.fsck.com/rtfm/.
+
+
+================================================================

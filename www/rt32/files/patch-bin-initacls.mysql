@@ -1,0 +1,12 @@
+--- bin/initacls.mysql	Wed Nov  7 07:04:00 2001
++++ bin/initacls.mysql	Thu Aug 15 18:01:14 2002
+@@ -14,7 +14,7 @@
+ export PATH
+ 
+ echo "Enter the mysql administrator's database password to create a new user for RT"
+-$BINDIR/mysql --host=${HOSTNAME} --port=${PORT} --user=${DATABASEADMIN} -p${DBAPASSWD} mysql < $DATABASEACLS
++$BINDIR/mysql --host=${HOSTNAME} --port=${PORT} --user=${DATABASEADMIN} --password=${DBAPASSWD} mysql < $DATABASEACLS
+ 
+ echo "Enter the mysql administrator's database password to nondestructively reload the database"
+-$BINDIR/mysqladmin --host=${HOSTNAME} --port=${PORT} --user=${DATABASEADMIN} -p${DBAPASSWD} reload
++$BINDIR/mysqladmin --host=${HOSTNAME} --port=${PORT} --user=${DATABASEADMIN} --password=${DBAPASSWD} reload

@@ -1,0 +1,138 @@
+--- Makefile	Sat Jul 20 10:42:39 2002
++++ Makefile	Thu Aug 15 22:17:55 2002
+@@ -2,7 +2,7 @@
+ # RT is Copyright 1996-2002 Jesse Vincent <jesse@bestpractical.com>
+ # It is distributed under the terms of the GNU General Public License, version 2
+ 
+-PERL			= 	/usr/bin/perl
++PERL			= 	/usr/local/bin/perl
+ 
+ RT_VERSION_MAJOR	=	2
+ RT_VERSION_MINOR	=	0
+@@ -15,7 +15,7 @@
+ BRANCH			=	HEAD
+ 
+ # This is the group that all of the installed files will be chgrp'ed to.
+-RTGROUP			=	rt
++RTGROUP			=	www
+ 
+ 
+ # User which should own rt binaries.
+@@ -40,7 +40,7 @@
+ # RT_PATH is the name of the directory you want make to install RT in
+ # RT must be installed in its own directory (don't set this to /usr/local)
+ 
+-RT_PATH			=	/opt/rt2
++RT_PATH			=	%%RT_PATH%%
+ 
+ # The rest of these paths are all configurable, but you probably don't want to 
+ # put them elsewhere
+@@ -49,7 +49,7 @@
+ RT_ETC_PATH		=	$(RT_PATH)/etc
+ RT_CONFIG_PATH		=	$(RT_ETC_PATH)
+ RT_BIN_PATH		=	$(RT_PATH)/bin
+-RT_MAN_PATH		=	$(RT_PATH)/man
++RT_MAN_PATH		=	/usr/local/man
+ MASON_HTML_PATH		=	$(RT_PATH)/WebRT/html
+ 
+ 
+@@ -63,7 +63,7 @@
+ MASON_DATA_PATH		=       $(RT_PATH)/WebRT/data
+ MASON_SESSION_PATH	=       $(RT_PATH)/WebRT/sessiondata
+ 
+-RT_LOG_PATH             =       /tmp
++RT_LOG_PATH             =       /var/log/rt2
+ 
+ # RT_READABLE_DIR_MODE is the mode of directories that are generally meant
+ # to be accessable
+@@ -101,13 +101,13 @@
+ # "Pg" is known to work
+ # "Oracle" is in the early stages of working.
+ 
+-DB_TYPE			=	mysql
++DB_TYPE			=	%%DB_TYPE%%
+ 
+ # DB_HOME is where the Database's commandline tools live.  $DB_HOME/bin
+ # should contain the binaries themselves, e.g. if "which mysql" gives
+ # "/usr/local/mysql/bin/mysql", $DB_HOME should be "/usr/local/mysql"
+ 
+-DB_HOME			= /usr
++DB_HOME			=	/usr/local
+ 
+ # Set DBA to the name of a unix account with the proper permissions and 
+ # environment to run your commandline SQL tools
+@@ -121,14 +121,14 @@
+ # For oracle, you want 'system'
+ 
+ DB_DBA			=	root
+-DB_DBA_PASSWORD		=	
+- 
++DB_DBA_PASSWORD		=	%%DB_DBA_PASSWORD%%	
++
+ #
+ # Set this to the Fully Qualified Domain Name of your database server.
+ # If the database is local, rather than on a remote host, using "localhost" 
+ # will greatly enhance performance.
+ 
+-DB_HOST			=	localhost
++DB_HOST			=	%%DB_HOST%%
+ 
+ # If you're not running your database server on its default port, 
+ # specifiy the port the database server is running on below.
+@@ -144,7 +144,7 @@
+ # to grant those database rights by hand.
+ #
+ 
+-DB_RT_HOST		=	localhost
++DB_RT_HOST		=	%%DB_HOST%%
+ 
+ # set this to the name you want to give to the RT database in 
+ # your database server. For Oracle, this should be the name of your sid
+@@ -158,7 +158,7 @@
+ # Set this to the password used by the rt database user
+ # *** Change This Before Installation***
+ 
+-DB_RT_PASS		=	rt_pass
++DB_RT_PASS		=	%%DB_RT_PASS%%
+ 
+ # }}}
+ 
+@@ -168,7 +168,7 @@
+ # objectcode
+ 
+ WEB_USER		=	www
+-WEB_GROUP		=	rt
++WEB_GROUP		=	www
+ 
+ # }}}
+ 
+@@ -311,7 +311,7 @@
+ 
+ 
+ genschema:
+-	$(PERL)	tools/initdb '$(DB_TYPE)' '$(DB_HOME)' '$(DB_HOST)' '$(DB_PORT)' '$(DB_DBA)' '$(DB_DATABASE)' generate
++	$(PERL)	tools/initdb '$(DB_TYPE)' '$(DB_HOME)' '$(DB_HOST)' '$(DB_PORT)' '$(DB_DBA)' '$(DB_DATABASE)' '$(DB_DBA_PASSWORD)' generate
+ 
+ 
+ initialize.Pg: createdb initdb.dba acls 
+@@ -333,16 +333,16 @@
+ 
+ 
+ dropdb: 
+-	$(PERL)	tools/initdb '$(DB_TYPE)' '$(DB_HOME)' '$(DB_HOST)' '$(DB_PORT)' '$(DB_DBA)' '$(DB_DATABASE)' drop
++	$(PERL)	tools/initdb '$(DB_TYPE)' '$(DB_HOME)' '$(DB_HOST)' '$(DB_PORT)' '$(DB_DBA)' '$(DB_DATABASE)' '$(DB_DBA_PASSWORD)' drop
+ 
+ 
+ createdb: 
+-	$(PERL)	tools/initdb '$(DB_TYPE)' '$(DB_HOME)' '$(DB_HOST)' '$(DB_PORT)' '$(DB_DBA)' '$(DB_DATABASE)' create
++	$(PERL)	tools/initdb '$(DB_TYPE)' '$(DB_HOME)' '$(DB_HOST)' '$(DB_PORT)' '$(DB_DBA)' '$(DB_DATABASE)' '$(DB_DBA_PASSWORD)' create
+ initdb.dba:
+-	$(PERL)	tools/initdb '$(DB_TYPE)' '$(DB_HOME)' '$(DB_HOST)' '$(DB_PORT)' '$(DB_DBA)' '$(DB_DATABASE)' insert
++	$(PERL)	tools/initdb '$(DB_TYPE)' '$(DB_HOME)' '$(DB_HOST)' '$(DB_PORT)' '$(DB_DBA)' '$(DB_DATABASE)' '$(DB_DBA_PASSWORD)' insert
+ 
+ initdb.rtuser:
+-	$(PERL)	tools/initdb '$(DB_TYPE)' '$(DB_HOME)' '$(DB_HOST)' '$(DB_PORT)' '$(DB_RT_USER)' '$(DB_DATABASE)' insert
++	$(PERL)	tools/initdb '$(DB_TYPE)' '$(DB_HOME)' '$(DB_HOST)' '$(DB_PORT)' '$(DB_RT_USER)' '$(DB_DATABASE)' '$(DB_RT_PASS)' insert
+ 
+ 
+ 

@@ -1,0 +1,29 @@
+--- tools/initdb	Wed Nov  7 07:06:06 2001
++++ tools/initdb	Thu Aug 15 17:17:19 2002
+@@ -17,7 +17,7 @@
+ $SCHEMA_DIR ="etc";
+ $SCHEMA_FILE = "$SCHEMA_DIR/schema.pm"; #hmm
+ 
+-($DB_TYPE, $DB_HOME, $DB_HOST, $DB_PORT, $DB_DBA, $DB_DATABASE, $ACTION) = @ARGV;
++($DB_TYPE, $DB_HOME, $DB_HOST, $DB_PORT, $DB_DBA, $DB_DATABASE, $DB_DBA_PASSWORD, $ACTION) = @ARGV;
+ 
+ 
+ if ($DEBUG) {
+@@ -71,6 +71,8 @@
+ # {{{ sub prompt_for_dba_password
+ 
+ sub prompt_for_dba_password {
++    return if defined $DB_DBA_PASSWORD;
++
+     print "Enter the $DB_TYPE password for $DB_DBA: ";
+ 
+     system "stty -echo";
+@@ -107,7 +109,7 @@
+ If you have an existing RT 2.x installation, this will destroy all your data.
+ i
+ END
+-	exit unless _yesno();
++	# exit unless _yesno();
+ 	
+     }
+     
