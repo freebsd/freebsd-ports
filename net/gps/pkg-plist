@@ -1,4 +1,5 @@
 bin/gps
+%%PORTDOCS%%share/doc/gps/FAQ
 %%PORTDOCS%%share/doc/gps/features.html
 %%PORTDOCS%%share/doc/gps/links.html
 %%PORTDOCS%%share/doc/gps/usage.html
