@@ -123,7 +123,6 @@ wolfpack/info.nr/army
 wolfpack/info.nr/assault
 wolfpack/info.nr/attack
 wolfpack/info.nr/bdes
-wolfpack/info.nr/bestdistpath
 wolfpack/info.nr/bestpath
 wolfpack/info.nr/bmap
 wolfpack/info.nr/board
@@ -135,7 +134,6 @@ wolfpack/info.nr/buy
 wolfpack/info.nr/bye
 wolfpack/info.nr/capital
 wolfpack/info.nr/cargo
-wolfpack/info.nr/cede
 wolfpack/info.nr/census
 wolfpack/info.nr/change
 wolfpack/info.nr/coastwatch
@@ -151,7 +149,6 @@ wolfpack/info.nr/demobilize
 wolfpack/info.nr/designate
 wolfpack/info.nr/disable
 wolfpack/info.nr/disarm
-wolfpack/info.nr/dissolve
 wolfpack/info.nr/distribute
 wolfpack/info.nr/drop
 wolfpack/info.nr/dump
@@ -174,11 +171,13 @@ wolfpack/info.nr/give
 wolfpack/info.nr/grind
 wolfpack/info.nr/harden
 wolfpack/info.nr/headlines
+wolfpack/info.nr/help
 wolfpack/info.nr/hidden
 wolfpack/info.nr/improve
 wolfpack/info.nr/info
 wolfpack/info.nr/land
 wolfpack/info.nr/launch
+wolfpack/info.nr/lbmap
 wolfpack/info.nr/lboard
 wolfpack/info.nr/lcargo
 wolfpack/info.nr/ldump
@@ -208,7 +207,6 @@ wolfpack/info.nr/morale
 wolfpack/info.nr/motd
 wolfpack/info.nr/move
 wolfpack/info.nr/mquota
-wolfpack/info.nr/mult
 wolfpack/info.nr/name
 wolfpack/info.nr/nation
 wolfpack/info.nr/navigate
@@ -225,6 +223,7 @@ wolfpack/info.nr/origin
 wolfpack/info.nr/paradrop
 wolfpack/info.nr/path
 wolfpack/info.nr/payoff
+wolfpack/info.nr/pbmap
 wolfpack/info.nr/pboard
 wolfpack/info.nr/pdump
 wolfpack/info.nr/plane
@@ -252,6 +251,7 @@ wolfpack/info.nr/route
 wolfpack/info.nr/sabotage
 wolfpack/info.nr/sail
 wolfpack/info.nr/satellite
+wolfpack/info.nr/sbmap
 wolfpack/info.nr/scrap
 wolfpack/info.nr/scuttle
 wolfpack/info.nr/sdump
@@ -332,11 +332,10 @@ wolfpack/scripts/mapper/text.pbm
 wolfpack/scripts/mapper/text.size
 wolfpack/scripts/postresults
 wolfpack/scripts/saveass
-@dirrm wolfpack/bin
-@dirrm wolfpack/data
-@dirrm wolfpack/doc
-@dirrm wolfpack/info.nr
-@dirrm wolfpack/scripts/blitz
+etc/rc.d/wolfpack.sh
 @dirrm wolfpack/scripts/mapper
+@dirrm wolfpack/scripts/blitz
 @dirrm wolfpack/scripts
-@dirrm wolfpack
+@dirrm wolfpack/info.nr
+@dirrm wolfpack/doc
+@dirrm wolfpack/data

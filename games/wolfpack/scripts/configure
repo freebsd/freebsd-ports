@@ -11,8 +11,6 @@ doquit () {
 name=`pw user show \`id -u\` | awk -F : '{print $8}'`
 username=`id -un`
 email=$username@`hostname`
-host=`hostname`
-ip=`host -t a $host | awk '{print $4}'`
 tempfile=`mktemp -t __input`
 
 if [ ! -z "$BATCH" ]; then
@@ -29,21 +27,11 @@ else
   doquit $?
   email=`cat $tempfile`
 
-  dialog --title "Wolfpack Empire Information" --inputbox "Hostname of the machine the server is running on" 8 60 "$host" 2>$tempfile
-  doquit $?
-  host=`cat $tempfile`
-
-  dialog --title "Wolfpack Empire Information" --inputbox "IP of the machine the server is running on" 8 60 "$ip" 2>$tempfile
-  doquit $?
-  ip=`cat $tempfile`
-
   rm -f $tempfile
 fi
 echo Name is $name
 echo Username is $username
 echo Email address is $email
-echo Hostname is $host
-echo IP is $ip
 
 FROM=$FILESDIR/build.conf.tmpl
 TO=$WRKSRC/build.conf
@@ -52,4 +40,5 @@ if [ -z "$CC" ]; then
   CC=gcc
 fi
 
-sed -e "s/%%CC%%/$CC/" -e "s/%%NAME%%/$name/" -e "s/%%USERNAME%%/$username/" -e "s/%%EMAIL%%/$email/" -e "s/%%HOSTNAME%%/$host/" -e "s/%%IPADDR%%/$ip/" -e "s#%%EMPDIR%%#$PREFIX/wolfpack#" <$FROM >$TO
+sed -e "s/%%CC%%/$CC/" -e "s/%%NAME%%/$name/" -e "s/%%USERNAME%%/$username/" -e "s/%%EMAIL%%/$email/" -e "s#%%EMPDIR%%#$PREFIX/wolfpack#" <$FROM >$TO
+
