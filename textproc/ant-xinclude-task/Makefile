@@ -24,17 +24,16 @@ ANT?=		${LOCALBASE}/bin/ant
 ANT_TARGET=	jar
 .else
 ANT_TARGET=	jar apidocs
+PORTDOCS=	*
 .endif
-JAVASHAREDIR=	${PREFIX}/share/java
-JARDIR=		${JAVASHAREDIR}/classes
 
 do-build:
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+	cd ${WRKSRC} && ${SETENV} ANT_INCLUDE_SHARED_JARS=YES ${ANT} ${ANT_TARGET}
 
 do-install:
 
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${PORTNAME}.jar..."
-	@${CP} ${WRKSRC}/build/${PORTNAME}.jar ${JARDIR}/
+	@${ECHO} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${CP} ${WRKSRC}/build/${PORTNAME}.jar ${JAVAJARDIR}/
 	@${ECHO} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
