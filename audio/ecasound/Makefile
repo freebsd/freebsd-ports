@@ -6,13 +6,20 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	1.8.5d15
+PORTVERSION=	1.9dev5
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ecawave
 
 MAINTAINER=	anarcat@tao.ca
+
+USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
+USE_AUTOCONF=	yes
+
+USE_LIBTOOL=	yes
+INSTALLS_SHLIB=	yes
 
 .if defined(WITH_MPG123)
 RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
@@ -27,24 +34,18 @@ RUN_DEPENDS+=	mikmod:${PORTSDIR}/audio/mikmod
 .endif
 
 .if defined(WITH_AUDIOFILE)
-LIB_DEPENDS+=  audiofile.0:${PORTSDIR}/audio/libaudiofile
+LIB_DEPENDS+=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 .else
-CONFIGURE_ARGS+= --disable-audiofile
+CONFIGURE_ARGS+=	--disable-audiofile
 .endif
 
 .if defined(WITH_PYECASOUND)
-USE_PYTHON=    yes
-PLIST?=                ${PKGDIR}/pkg-plist.py
+USE_PYTHON=	yes
+PLIST_SUB+=	WITH_PYECASOUND=""
 .else
-CONFIGURE_ARGS+= --disable-pyecasound
+CONFIGURE_ARGS+=	--disable-pyecasound
+PLIST_SUB+=	WITH_PYECASOUND="@comment "
 .endif
-
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_AUTOMAKE=	yes
-
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
 
 MAN1=		ecasound-iam.1 ecasound.1 ecatools.1
 MAN5=		ecasoundrc.5
