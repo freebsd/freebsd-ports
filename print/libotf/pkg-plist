@@ -1,0 +1,9 @@
+bin/libotf-config
+bin/otfdump
+bin/otflist
+bin/otftobdf
+bin/otfview
+include/otf.h
+lib/libotf.a
+lib/libotf.so
+lib/libotf.so.0
