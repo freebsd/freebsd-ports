@@ -1,12 +1,10 @@
---- Imakefile.orig	Sat Nov 24 16:41:40 2001
-+++ Imakefile	Sat Nov 24 16:42:20 2001
-@@ -9,8 +9,7 @@
- 	make all
- 	@echo ""
+--- Imakefile.orig	Wed May 22 23:19:15 2002
++++ Imakefile	Wed May 22 23:20:03 2002
+@@ -11,6 +11,7 @@
  	@echo Built $(SUBDIRS).
--	@echo 'To build Xvnc, do "cd Xvnc", followed by "make World"'
--	@echo ""
-+	(cd Xvnc ; make World)
+ 	@echo 'To build Xvnc, do "cd Xvnc", followed by "./configure" then "make"'
+ 	@echo ""
++	( cd Xvnc && ./configure && make )
  
- MakeSubdirs($(SUBDIRS))
- DependSubdirs($(SUBDIRS))
+ libs:
+ 	@echo 'No libraries included.'

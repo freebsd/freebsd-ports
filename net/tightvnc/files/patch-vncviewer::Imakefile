@@ -1,19 +1,23 @@
---- vncviewer/Imakefile.orig	Wed Mar 20 05:38:00 2002
-+++ vncviewer/Imakefile	Fri Mar 29 03:26:02 2002
-@@ -11,10 +11,10 @@
+--- vncviewer/Imakefile.orig	Tue Apr 30 09:07:31 2002
++++ vncviewer/Imakefile	Wed May 22 21:48:12 2002
+@@ -10,12 +10,12 @@
  DEFINES = -DMITSHM
  #endif
  
--INCLUDES = -I../include -I. -I../lib/zlib -I../lib/jpeg -I/usr/include
-+INCLUDES = -I../include -I. -I%%LOCALBASE%%/include
+-ZLIB_INC = -I/usr/local/include
+-JPEG_INC = -I/usr/local/include
++ZLIB_INC = -I%%LOCALBASE%%/include
++JPEG_INC = -I%%LOCALBASE%%/include
+ INCLUDES = -I../include -I. $(ZLIB_INC) $(JPEG_INC) -I/usr/include
  VNCAUTH_LIB = ../libvncauth/libvncauth.a
- ZLIB_LIB = -L../lib/zlib -lz
--JPEG_LIB = -L../lib/jpeg -ljpeg
+-ZLIB_LIB = -L/usr/local/lib -lz
+-JPEG_LIB = -L/usr/local/lib -ljpeg
++ZLIB_LIB = -L%%LOCALBASE%%/lib -lz
 +JPEG_LIB = -L%%LOCALBASE%%/lib -ljpeg
  
  DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB)
  LOCAL_LIBRARIES = XawClientLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)
-@@ -38,4 +38,4 @@
+@@ -39,4 +39,4 @@
  
  OBJS = $(SRCS:.c=.o)
  
