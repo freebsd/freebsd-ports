@@ -10,6 +10,7 @@ PORTVERSION=	2.3.2
 PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
+NO_LATEST_LINK=	yes
 
 MAINTAINER=	des@FreeBSD.org
 
