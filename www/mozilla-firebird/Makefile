@@ -101,6 +101,7 @@ post-extract::
 		-e 's|@X11BASE@|${X11BASE}|'		\
 		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
 		-e 's|@PREFIX@|${LOCAL_PREFIX}|'	\
+		-e 's|@PERL@|${PERL5}|'			\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
 
 post-patch:
