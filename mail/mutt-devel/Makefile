@@ -10,7 +10,7 @@ PORTNAME=	mutt-devel
 PORTVERSION=	1.3.19
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel \
+MASTER_SITES=	ftp://ftp.demon.co.uk/pub/mirrors/mutt/devel/ \
 		ftp://ftp.parodius.com/pub/mutt/devel/
 DISTNAME=	mutt-${PORTVERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
