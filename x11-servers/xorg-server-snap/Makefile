@@ -17,7 +17,7 @@ MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org X server and related programs
 
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/xdmcp.pc:${PORTSDIR}/x11/libXdmcp \
-		${X11BASE}/libdata/pkgconfig/xau:${PORTSDIR}/x11/libXau
+		${X11BASE}/libdata/pkgconfig/xau.pc:${PORTSDIR}/x11/libXau
 BUILD_DEPENDS=	${X11BASE}/include/X11/extensions/XKMformat.h:${PORTSDIR}/x11/libxkbfile \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
