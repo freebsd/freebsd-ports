@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	tilp
 MAINTAINER=	tijl@ulyssis.org
 COMMENT=	TI calculator link cables library
 
-BROKEN=		Broken pkg-plist
-
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
@@ -23,6 +21,7 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+USE_AUTOMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
