@@ -19,11 +19,13 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_QT=		yes
 
-.if defined(ADDITIONAL_SKINS)
 DIST_SUBDIR=	kxicq
+
+.if defined(ADDITIONAL_SKINS)
 SKINS=		GoldBlue blueplanet ciasa_boark_inc cyrus
 PLIST=		${WRKDIR}/PLIST
-DISTFILES+=	GoldBlue.tar.gz blueplanet-0.1.tar.gz cyrustheme.tar.gz \
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} GoldBlue.tar.gz \
+		blueplanet-0.1.tar.gz cyrustheme.tar.gz \
 		ciasa_boark_inc-0.4.tar.gz
 .endif
 
