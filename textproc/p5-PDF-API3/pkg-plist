@@ -1,0 +1,127 @@
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/PCLT.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Vmtx.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Bsln.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Cvt_.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Post.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Ttc.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Fmtx.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Name.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Utils.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Loca.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Manual.pod
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Prop.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Fdsc.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Table.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/GSUB.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/AATKern.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Font.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Feat.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Hhea.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Segarr.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Anchor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Head.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Maxp.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/OS_2.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Delta.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Mort.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Fpgm.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/GPOS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/OldMort.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Vhea.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Cmap.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Ttopen.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/LTSH.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Hmtx.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/AATutils.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/XMLparse.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/OldCmap.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Glyf.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Coverage.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Hdmx.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Prep.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/GDEF.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/PSNames.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Kern.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Glyph.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Changes
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Mort/Ligature.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Mort/Rearrangement.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Mort/Noncontextual.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Mort/Chain.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Mort/Subtable.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Mort/Contextual.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Mort/Insertion.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Kern/ClassArray.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Kern/CompactClassArray.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Kern/Subtable.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Kern/StateTable.pm
+lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Kern/OrderedList.pm
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2.pm
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap.pm
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/Color.pm
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/iso-8859-1.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/koi8-r.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/adobe-symbol.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/microsoft-dingbats.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/pt.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/latin2.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/es2.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/cp1251.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/cp437.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/cp850.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/iso-8859-2.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/pt2.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/koi8-u.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/latin1.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/adobe-zapf-dingbats.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/adobe-standard.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/cp1250.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/es.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/macintosh.map
+lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap/cp1252.map
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Dict.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Objind.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Number.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Pages.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/TTFont0.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Name.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Array.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Crypt.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Bool.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Page.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/String.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/File.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Utils.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/AFont.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/SFont.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/Filter.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/TTFont.pm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Symbol.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Helvetica-Bold.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Times-BoldItalic.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Helvetica.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Times-Italic.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Courier-Bold.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Courier-BoldOblique.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Helvetica-BoldOblique.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Times-Roman.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Courier-Oblique.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Courier.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Times-Bold.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/Helvetica-Oblique.afm
+lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1/ZapfDingbats.afm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PDF/API2/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Mort
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Font/TTF/Kern
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Font/TTF
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/PDF/API2/UniMap
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/PDF/API2
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts/t1
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Text/PDF/fonts
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Text/PDF
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PDF/API2
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Font 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/PDF 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PDF 2>/dev/null || true
