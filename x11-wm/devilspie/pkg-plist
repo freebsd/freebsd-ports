@@ -1,0 +1,10 @@
+bin/devilspie
+%%DATADIR%%/devilspie.dtd
+%%EXAMPLESDIR%%/sample-config.xml
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+@dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
