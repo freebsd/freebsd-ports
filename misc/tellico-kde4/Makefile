@@ -10,7 +10,7 @@ PORTVERSION=	0.7.2
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.periapsis.org/bookcase/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	Personal book collection manager for KDE
 
 USE_KDELIBS_VER=3

@@ -10,7 +10,7 @@ CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	kimagemap
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	KDE-based editor for HTML image maps
 
 USE_BZIP2=	yes

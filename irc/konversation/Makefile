@@ -11,7 +11,7 @@ CATEGORIES=	irc kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	A user friendly IRC client for KDE
 
 USE_KDELIBS_VER=3

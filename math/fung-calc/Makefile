@@ -10,7 +10,7 @@ CATEGORIES=	math kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	Advanced graphic calculator
 
 USE_KDELIBS_VER=	3
