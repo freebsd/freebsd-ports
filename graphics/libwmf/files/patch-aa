@@ -1,15 +1,17 @@
---- Makefile.in.orig	Fri Dec 17 00:31:01 1999
-+++ Makefile.in	Sat May 20 15:02:47 2000
-@@ -16,7 +16,7 @@
- 
+The share lib patch is based on a original idea of billf@FreeBSD.org
+taken from his graphics/gd port.
+
+--- Makefile.in.orig	Thu Dec 16 13:31:01 1999
++++ Makefile.in	Fri May 26 01:24:44 2000
+@@ -17,6 +17,7 @@
  SHELL=/bin/sh
  
--INSTALL = @INSTALL@
+ INSTALL = @INSTALL@
 +INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_DATA = @INSTALL_DATA@
  
  INCLUDEDIR = @includedir@
-@@ -28,7 +28,7 @@
+@@ -28,13 +29,13 @@
  libdir = @libdir@
  mandir = @mandir@
  
@@ -18,7 +20,93 @@
  
  MKINSTALLDIRS = $(srcdir)/mkinstalldirs
  
-@@ -134,9 +134,9 @@
+ SHELL = /bin/sh
+ 
+-.SUFFIXES: .C .o
++.SUFFIXES: .c .o .so
+ 
+ WMFLIBOBJECTS =	\
+ 	wmfapi.o \
+@@ -53,35 +54,64 @@
+ 	Xtext.o \
+ 	rotated.o
+ 
+-TARGETS = wmftopng wmftofig xwmf
++LIBRARIES=	\
++	LIBXGD \
++	LIBDIB \
++	LIBXFIG \
++	libwmf.a \
++	libgdwmf.a \
++	libxfwmf.a \
++	libXwmf.a \
++	libwmf.so.0 \
++	libgdwmf.so.0 \
++	libxfwmf.so.0 \
++	libXwmf.so.0
++
++TARGETS = $(LIBRARIES) wmftopng wmftofig xwmf
+ 
+ all: $(TARGETS)
+ 
+-xwmf: libwmf.a libXwmf.a xwmf.o LIBDIB
++xwmf: libwmf.so.0 libXwmf.so.0 xwmf.o LIBDIB
+ 	$(CC) $(LDFLAGS) -o xwmf xwmf.o -L. -lXwmf -lwmf $(LIBS)
+ 
+-wmftopng:	libwmf.a libgdwmf.a wmftopng.o LIBXGD LIBDIB
++wmftopng:	libwmf.so.0 libgdwmf.so.0 wmftopng.o LIBXGD LIBDIB
+ 	$(CC) $(LDFLAGS) -o wmftopng wmftopng.o -L. -lgdwmf -lwmf $(GDLIBS)
+ 
+-wmftofig: libwmf.a libxfwmf.a wmftofig.o LIBXFIG
++wmftofig: libwmf.so.0 libxfwmf.so.0 wmftofig.o LIBXFIG
+ 	$(CC) $(LDFLAGS) -o wmftofig wmftofig.o -L. -lxfwmf -lwmf $(XFLIBS)
+ 
+ libwmf.a:	$(WMFLIBOBJECTS)
+ 	 $(AR) rc libwmf.a $(WMFLIBOBJECTS) 
+ 	 $(RANLIB) libwmf.a 
+ 
++libwmf.so.0: 	$(WMFLIBOBJECTS:S/o$/so/g)
++	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(WMFLIBOBJECTS:S/o$/so/g) $(LIBS)
++	ln -sf libwmf.so.0 libwmf.so
++
+ libgdwmf.a:	$(GDLIBOBJECTS)
+ 	 $(AR) rc libgdwmf.a $(GDLIBOBJECTS) 
+ 	 $(RANLIB) libgdwmf.a
+ 
++libgdwmf.so.0:	$(GDLIBOBJECTS:S/o$/so/g)
++	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(GDLIBOBJECTS:S/o$/so/g) $(LIBS)
++	ln -sf libgdwmf.so.0 libgdwmf.so
++
+ libxfwmf.a:	$(XFLIBOBJECTS)
+ 	 $(AR) rc libxfwmf.a $(XFLIBOBJECTS) 
+ 	 $(RANLIB) libxfwmf.a
+ 
++libxfwmf.so.0:	$(XFLIBOBJECTS:S/o$/so/g)
++	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(XFLIBOBJECTS:S/o$/so/g) $(LIBS)
++	ln -sf libxfwmf.so.0 libxfwmf.so
++
+ libXwmf.a:	$(XLIBOBJECTS)
+ 	 $(AR) rc libXwmf.a $(XLIBOBJECTS) 
+ 	 $(RANLIB) libXwmf.a
+ 
++libXwmf.so.0:	$(XLIBOBJECTS:S/o$/so/g)
++	$(CC) -shared -Wl,-x -Wl,-assert -Wl,pure-text -Wl,-soname,$@ -o $@ $(XLIBOBJECTS:S/o$/so/g) $(LIBS)
++	ln -sf libXwmf.so.0 libXwmf.so
++
+ LIBDIB:
+ 	@echo making libdib in libdib
+ 	@(cd libdib && $(MAKE)) || exit 1
+@@ -97,6 +127,9 @@
+ %.o: %.c 
+ 	$(CC) $(CFLAGS) -c $*.c 
+ 
++.c.so:
++	$(CC) -fpic -DPIC $(CFLAGS) -c $(.IMPSRC) -o $(.TARGET)
++
+ clean: cleansub
+ 	rm -rf *.o wmftopng wmftofig xwmf a.out core *.a .pure
+ 
+@@ -134,15 +167,24 @@
  	$(libdir)
  
  install: all installdirs installsub
@@ -31,7 +119,15 @@
  	$(INSTALL_DATA) $(srcdir)/libwmf.a $(libdir)/libwmf.a
  	$(INSTALL_DATA) $(srcdir)/libgdwmf.a $(libdir)/libgdwmf.a
  	$(INSTALL_DATA) $(srcdir)/libXwmf.a $(libdir)/libXwmf.a
-@@ -144,5 +144,6 @@
+ 	$(INSTALL_DATA) $(srcdir)/libxfwmf.a $(libdir)/libxfwmf.a
++	$(INSTALL_DATA) $(srcdir)/libwmf.so.0 $(libdir)/libwmf.so.0
++	ln -sf libwmf.so.0 $(libdir)/libwmf.so
++	$(INSTALL_DATA) $(srcdir)/libgdwmf.so.0 $(libdir)/libgdwmf.so.0
++	ln -sf libgdwmf.so.0 $(libdir)/libgdwmf.so
++	$(INSTALL_DATA) $(srcdir)/libXwmf.so.0 $(libdir)/libXwmf.so.0
++	ln -sf libXwmf.so.0 $(libdir)/libXwmf.so
++	$(INSTALL_DATA) $(srcdir)/libxfwmf.so.0 $(libdir)/libxfwmf.so.0
++	ln -sf libxfwmf.so.0 $(libdir)/libxfwmf.so
  	$(INSTALL_DATA) wmfapi.h $(INCLUDEDIR)/wmfapi.h
  	$(INSTALL_DATA) gdwmfapi.h $(INCLUDEDIR)/gdwmfapi.h
  	$(INSTALL_DATA) Xwmfapi.h $(INCLUDEDIR)/Xwmfapi.h
