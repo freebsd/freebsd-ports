@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_PERL5=	yes
+USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 PERL_CONFIGURE=	yes
 
