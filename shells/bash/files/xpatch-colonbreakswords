@@ -1,0 +1,178 @@
+#
+# new shopt `colonbreakswords'
+# http://lists.gnu.org/archive/html/bug-bash/2004-10/msg00190.html
+#
+--- bashline.c.orig	Wed Oct 13 18:39:13 2004
++++ bashline.c	Wed Oct 13 19:02:53 2004
+@@ -212,6 +212,11 @@
+    host list. */
+ int perform_hostname_completion = 1;
+ 
++/* If non-zero, we do hostname completion, breaking words at `@' and
++   trying to complete the stuff after the `@' from our own internal
++   host list. */
++int colon_is_wordbreak = 1;
++
+ /* If non-zero, we don't do command completion on an empty line. */
+ int no_empty_command_completion;
+ 
+@@ -222,6 +227,7 @@
+ 
+ static char *bash_completer_word_break_characters = " \t\n\"'@><=;|&(:";
+ static char *bash_nohostname_word_break_characters = " \t\n\"'><=;|&(:";
+-/* )) */
++static char *bash_nocolon_word_break_characters = " \t\n\"'@><=;|&(";
++/* ))) */
+ 
+ static rl_hook_func_t *old_rl_startup_hook = (rl_hook_func_t *)NULL;
+@@ -323,6 +329,80 @@
+   return (old_value);
+ }
+ 
++/* When this function returns, rl_completer_word_break_characters points to
++   dynamically allocated memory. */
++int
++enable_colon_wordbreak (on_or_off)
++     int on_or_off;
++{
++  int old_value;
++  char *at, *nv, *nval;
++
++  old_value = colon_is_wordbreak;
++
++  if (on_or_off)
++    {
++      colon_is_wordbreak = 1;
++      rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{";	/*}*/
++    }
++  else
++    {
++      colon_is_wordbreak = 0;
++      rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!{";	/*}*/
++    }
++
++  /* Now we need to figure out how to appropriately modify and assign
++     rl_completer_word_break_characters depending on whether we want
++     the colon to be a word break or not. */
++
++  /* If this is the first time this has been called
++     (bash_readline_initialized == 0), use the sames values as before, but
++     allocate new memory for rl_completer_word_break_characters. */
++
++  if (bash_readline_initialized == 0 &&
++      (rl_completer_word_break_characters == 0 || 
++       rl_completer_word_break_characters == rl_basic_word_break_characters))
++    {
++      if (on_or_off)
++	rl_completer_word_break_characters = savestring (bash_completer_word_break_characters);
++      else
++	rl_completer_word_break_characters = savestring (bash_nocolon_word_break_characters);
++    }
++  else
++    {
++      /* See if we have anything to do. */
++      at = strchr (rl_completer_word_break_characters, ':');
++      if ((at == 0 && on_or_off == 0) || (at != 0 && on_or_off != 0))
++        return old_value;
++
++      /* We have something to do.  Do it. */
++      nval = (char *)xmalloc (strlen (rl_completer_word_break_characters) + 1 + on_or_off);
++
++      if (on_or_off == 0)
++	{
++	  /* Turn it off -- just remove `:' from word break chars.  We want
++	     to remove all occurrences of `:' from the char list, so we loop
++	     rather than just copy the rest of the list over AT. */
++	  for (nv = nval, at = rl_completer_word_break_characters; *at; )
++	    if (*at != ':')
++	      *nv++ = *at++;
++	    else
++	      at++;
++	  *nv = '\0';
++	}
++      else
++	{
++	  nval[0] = ':';
++	  strcpy (nval + 1, rl_completer_word_break_characters);
++        }
++
++      free (rl_completer_word_break_characters);
++      rl_completer_word_break_characters = nval;
++    }
++
++  return (old_value);
++}
++
+ /* Called once from parse.y if we are going to use readline. */
+ void
+ initialize_readline ()
+@@ -479,8 +559,12 @@
+      completion is enabled. */
+   enable_hostname_completion (perform_hostname_completion);
+ 
++  /* This sets rl_completer_word_break_characters and rl_filename_quote_characters
++     to the appropriate values, depending on whether or not a colon
++     should break completion words or not. */
++  enable_colon_wordbreak (colon_is_wordbreak);
++
+   /* characters that need to be quoted when appearing in filenames. */
+-  rl_filename_quote_characters = " \t\n\\\"'@<>=;|&()#$`?*[!:{";	/*}*/
+   rl_filename_quoting_function = bash_quote_filename;
+   rl_filename_dequoting_function = bash_dequote_filename;
+   rl_char_is_quoted_p = char_is_quoted;
+--- builtins/shopt.def.orig	Wed Oct 13 19:07:57 2004
++++ builtins/shopt.def	Wed Oct 13 19:10:37 2004
+@@ -82,6 +82,8 @@
+ extern int hist_verify, history_reediting, perform_hostname_completion;
+ extern int no_empty_command_completion;
+ extern int force_fignore;
++extern int colon_is_wordbreak;
++extern int enable_colon_wordbreak __P((int));
+ extern int enable_hostname_completion __P((int));
+ #endif
+ 
+@@ -120,6 +122,9 @@
+   { "checkwinsize", &check_window_size, (shopt_set_func_t *)NULL },
+ #if defined (HISTORY)
+   { "cmdhist", &command_oriented_history, (shopt_set_func_t *)NULL },
++#endif
++#if defined (READLINE)
++  { "colonbreakswords", &colon_is_wordbreak, enable_colon_wordbreak },
+ #endif
+   { "dotglob", &glob_dot_filenames, (shopt_set_func_t *)NULL },
+   { "execfail", &no_exit_on_failed_exec, (shopt_set_func_t *)NULL },
+--- doc/bash.1.orig	Wed Oct 13 19:49:55 2004
++++ doc/bash.1	Wed Oct 13 19:53:28 2004
+@@ -7866,6 +7866,18 @@
+ command in the same history entry.  This allows
+ easy re-editing of multi-line commands.
+ .TP 8
++.B colonbreakswords
++If set, and
++.B readline
++is being used, \fBbash\fP will treat \fB:\fP as
++separating word being completed (see
++.B Completing
++under
++.SM
++.B READLINE
++above).
++This is enabled by default.
++.TP 8
+ .B dotglob
+ If set, 
+ .B bash
+--- doc/bashref.texi.orig	Wed Oct 13 19:53:45 2004
++++ doc/bashref.texi	Wed Oct 13 19:56:27 2004
+@@ -3577,6 +3577,11 @@
+ command in the same history entry.  This allows
+ easy re-editing of multi-line commands.
+ 
++@item colonbreakswords
++If set, and Readline is being used, Bash will treat @samp{:} as
++separating word being completed (@pxref{Commands For Completion}).
++This option is enabled by default.
++
+ @item dotglob
+ If set, Bash includes filenames beginning with a `.' in
+ the results of filename expansion.

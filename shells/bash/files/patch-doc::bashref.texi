@@ -17,3 +17,12 @@
  
  This is Edition @value{EDITION}, last updated @value{UPDATED},
  of @cite{The GNU Bash Reference Manual},
+@@ -4218,7 +4218,7 @@
+ 
+ 
+ @item PS1
+-The primary prompt string.  The default value is @samp{\s-\v\$ }.
++The primary prompt string.  The default value is @samp{\u@@\h\$ }.
+ @xref{Printing a Prompt}, for the complete list of escape
+ sequences that are expanded before @env{PS1} is displayed.
+ 

@@ -1,0 +1,11 @@
+--- builtins/Makefile.in.orig	Mon Oct 11 15:32:28 2004
++++ builtins/Makefile.in	Mon Oct 11 15:32:58 2004
+@@ -177,7 +177,7 @@
+ 
+ install-help:
+ 	@-if test -n "${HELPDIR}" && test -d helpfiles ; then \
+-		test -d ${HELPDIR} || ${SHELL} ${MKDIRS} $(DESTDIR)$(HELPDIR) ;\
++		test -d ${DESTDIR}${HELPDIR} || ${SHELL} ${MKDIRS} $(DESTDIR)$(HELPDIR) ;\
+ 		( cd helpfiles ; \
+ 		  for f in *; do \
+ 			echo installing $$f; \
