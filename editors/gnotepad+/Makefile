@@ -18,6 +18,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	brett@peloton.runet.edu
 
 LIB_DEPENDS=    gnome.4:${PORTSDIR}/x11/gnomelibs
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
