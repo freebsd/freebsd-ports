@@ -1,17 +1,5 @@
-aXe-6.1.2
-
-Here is an extract from the source distribution aXe-6.1.2 README file:
-
-This, version 6.1.2, is an interim release that has been brought out
-purely to enable aXe 6.1 to work under X11R6. It does not support
-internationalisation.
-
-                           ...oooOOOooo...
-
 aXe is a simple to use text editor for X that represents a significant
-improvement over xedit. Also built around the Athena Text Widget it
-features, amongst other things,
-
+improvement over xedit. Built around the Athena Text Widget it features:
    o multiple windows
    o multiple buffers
    o default menu interface
@@ -34,9 +22,3 @@ features, amongst other things,
    o optional extension language using Tcl
    o optional Xaw3d widget set compatability
    o collection of reusable widgets that embody the functionality of aXe
-
-Jim
----
-J.K.Wight@newcastle.ac.uk
-Department of Computing Science, University of Newcastle,  Tel: +44 91 222 8238
-Newcastle upon Tyne, NE1 7RU, United Kingdom.              Fax: +44 91 222 8232
