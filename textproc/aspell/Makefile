@@ -7,7 +7,7 @@
 
 PORTNAME?=	aspell
 PORTVERSION=	0.50.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	textproc
 MASTER_SITES=	http://aspell.net/	\
 		${MASTER_SITE_GNU}
@@ -56,7 +56,7 @@ DICTVER_CS=	0.51-0
 DICTVER_CY=	0.50-3
 DICTVER_DA=	0.50.1-0
 DICTVER_EL=	0.50-3
-DICTVER_EN=	0.51-1
+DICTVER_EN=	6.0-0
 DICTVER_FO=	0.51-0
 DICTVER_FR=	0.50-3
 DICTVER_GA=	0.50.1-0
@@ -84,6 +84,7 @@ DICTVER_UK=	0.51-0
 DICTVER_WA=	0.50-0
 DICTVER_ZU=	0.50-0
 DICT_SUFFIX=	.tar.bz2
+D5=		en
 
 .include <bsd.port.pre.mk>
 
@@ -170,7 +171,9 @@ DICTS=	${LG}
 .endif
 .for DICO in ${DICTS}
 MASTER_SITES+=	ftp://ftp.gnu.org/gnu/aspell/dict/${DICO}/:dict${DICO}
-. if (${SPECDICTS:M${DICO}*} != "")
+. if ${D5} == ${DICO}
+DISTFILES+=	aspell5-${DICO}-${DICTVER_${DICO:U}}${DICT_SUFFIX}:dict${DICO}
+. elif (${SPECDICTS:M${DICO}*} != "")
 DISTFILES+=	aspell-${DICO}-${DICTVER_${DICO:U}}${DICT_SUFFIX}:dict${DICO}
 . else
 DISTFILES+=	aspell-${DICO}-${DICTVERSION}${DICT_SUFFIX}:dict${DICO}
@@ -179,7 +182,10 @@ DISTFILES+=	aspell-${DICO}-${DICTVERSION}${DICT_SUFFIX}:dict${DICO}
 
 post-extract:
 .for DICO in ${DICTS}
-. if (${SPECDICTS:M${DICO}*} != "")
+. if ${D5} == ${DICO}
+	@cd ${WRKDIR} && \
+	 ${TAR} -xjf ${DISTDIR}/aspell5-${DICO}-${DICTVER_${DICO:U}}${DICT_SUFFIX}
+. elif (${SPECDICTS:M${DICO}*} != "")
 	@cd ${WRKDIR} && \
 	 ${TAR} -xjf ${DISTDIR}/aspell-${DICO}-${DICTVER_${DICO:U}}${DICT_SUFFIX}
 . else
@@ -188,14 +194,14 @@ post-extract:
 . endif
 .endfor
 
-post-patch:	# To be removed after commit of PR ports/63944
-	${REINPLACE_CMD} -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-
 post-install:
 .for DICO in ${DICTS}
 	@${ECHO_MSG} "===>   Installing for ${DICO} dictionaries"
-. if (${SPECDICTS:M${DICO}*} != "")
+. if ${D5} == ${DICO}
+	@cd ${WRKDIR}/aspell5-${DICO}-${DICTVER_${DICO:U}} &&	\
+	 ${CONF_DICT_ENV} ./${CONFIGURE_SCRIPT} &&		\
+	 ${GMAKE} install
+. elif (${SPECDICTS:M${DICO}*} != "")
 	@cd ${WRKDIR}/aspell-${DICO}-${DICTVER_${DICO:U}} &&	\
 	 ${CONF_DICT_ENV} ./${CONFIGURE_SCRIPT} &&		\
 	 ${GMAKE} install
