@@ -266,6 +266,7 @@
     SUBDIR += pardiff
     SUBDIR += pdftohtml
     SUBDIR += perl2html
+    SUBDIR += pl-aspell
     SUBDIR += pspell
     SUBDIR += pspell-ispell
     SUBDIR += py-4suite
