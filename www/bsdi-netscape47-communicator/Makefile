@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 thepish
 #
-# $Id: Makefile,v 1.34 1998/12/19 11:20:13 markm Exp $
+# $Id: Makefile,v 1.35 1998/12/27 08:31:13 asami Exp $
 #
 
 DISTNAME=	communicator-v45-export.x86-unknown-freebsd
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/communicator/4.5/english/unix/unsupport
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	thepish@FreeBSD.ORG
+
+ONLY_FOR_ARCHS=	i386
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/communicator-v45.x86-unknown-freebsd
