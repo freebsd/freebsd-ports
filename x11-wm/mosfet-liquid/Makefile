@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mosfet-liquid
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.mosfet.org/
 DISTNAME=	${PORTNAME}${PORTVERSION}
