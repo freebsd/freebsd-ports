@@ -2113,6 +2113,7 @@ gimp-print	ports/print/gimp-print
 gimp1		ports/graphics/gimp1
 gindent		ports/devel/gindent
 gini		ports/net/gini
+ginsu		ports/net/ginsu
 giram		ports/graphics/giram
 git		ports/misc/git
 gj		ports/java/gj
