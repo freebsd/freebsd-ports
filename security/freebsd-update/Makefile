@@ -7,6 +7,7 @@
 
 PORTNAME=	freebsd-update
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.daemonology.net/freebsd-update/
 DISTNAME=	${PORTNAME}-client-${PORTVERSION:S/./_/}
