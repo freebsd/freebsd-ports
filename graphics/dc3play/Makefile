@@ -1,12 +1,12 @@
 # New ports collection makefile for:	dc3play
-# Version required:	970715
+# Version required:	970716
 # Date created:		15 Jul 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/07/15 14:57:38 itojun Exp $
 #
 
-DISTNAME=	dc3play-970715
+DISTNAME=	dc3play-970716
 CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.csl.sony.co.jp/pub/DC-3/unix/
 
