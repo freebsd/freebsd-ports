@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	topaz
-PORTVERSION=	3.30
+PORTVERSION=	3.33
 CATEGORIES=	math
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA007663/topaz/bin/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}-src
@@ -15,14 +15,15 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-.include<bsd.port.pre.mk>
-.if ${OSVERSION} < 400010
-LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
-.endif
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_XLIB=	yes
 MAKEFILE=	Makefile.freebsd
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400010
+LIB_DEPENDS+=	ncurses:${PORTSDIR}/devel/ncurses
+.endif
 
 post-install:
 	${LN} -sf ${PREFIX}/lib/topaz/topaz.sh ${PREFIX}/bin/topaz
