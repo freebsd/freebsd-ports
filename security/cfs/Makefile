@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1997
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.2 1998/09/21 01:03:10 obrien Exp $
+# $Id: Makefile,v 1.3 1999/06/21 17:23:53 jdp Exp $
 #
 
 DISTNAME=	cfs-1.3.3bf
@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	ftp://unix.hensa.ac.uk/mirrors/ftp.replay.com/pub/crypto/disk/ \
 		ftp://ftp.tu-chemnitz.de/pub/linux/suse/4.4.1/unsorted/Crypto-Filesystem/
 
-MAINTAINER=	jdp@polstra.com
+MAINTAINER=	green@FreeBSD.org
 
 ALL_TARGET=	cfs
 MAN1=		cattach.1 cdetach.1 cmkdir.1 cpasswd.1 cfssh.1
