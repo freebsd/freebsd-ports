@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gauche
-PORTVERSION=	0.7.3	# Keep databases/gauche-gdbm in sync with this
-PORTREVISION=	1
+PORTVERSION=	0.7.4.1	# Keep databases/gauche-gdbm in sync with this
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,6 +39,12 @@ CONFIGURE_ARGS=	--enable-threads=${GAUCHE_THREADS} \
 PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}" \
 		INFOSECTION="${INFOSECTION}"
+USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
+INFO=		gauche-refe gauche-refj
+
+post-build:
+	${REINPLACE_CMD} 's/gauche-refj.  info/gauche-refj.info/' ${WRKSRC}/doc/gauche-refj.info
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gosh
@@ -50,8 +55,8 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.info ${PREFIX}/info/
-.for info in gauche-refe.info gauche-refj.info
-	install-info --section="${INFOSECTION}" ${WRKSRC}/doc/${info} ${PREFIX}/info/dir
+.for info in ${INFO}
+	install-info --section="${INFOSECTION}" ${WRKSRC}/doc/${info}.info ${PREFIX}/info/dir
 .endfor
 .endif
 
