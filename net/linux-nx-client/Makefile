@@ -18,7 +18,6 @@ RUN_DEPENDS=		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg
 
 NO_WRKSUBDIR=		yes
 USE_X_PREFIX=		yes
-USE_LINUX=		yes
 ONLY_FOR_ARCHS=		i386
 NO_BUILD=		yes
 

@@ -31,7 +31,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libxml.so.1:${PORTSDIR}/textproc/linux-libxml 
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 BIN_FILES=	bjcmd  bjfilter  bjprn  lgmon  printui  stsmon
-USE_LINUX=	yes
 .endif
 
 EXTRACT_CMD=	rpm2cpio.pl

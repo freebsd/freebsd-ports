@@ -22,7 +22,6 @@ NO_BUILD=	yes
 
 ONLY_FOR_ARCHS=	i386
 
-USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/asWedit-4.0.1
 
 do-install:

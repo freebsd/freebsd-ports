@@ -16,7 +16,7 @@ DIST_SUBDIR=    ${PORTNAME}/${PORTVERSION}
 MAINTAINER=	js@jeannot.org
 COMMENT=	A general purpose programming language
 
-USE_LINUX=	yes
+USE_LINUX?=	yes
 USE_JAVA=	1.3+
 
 ONLY_FOR_ARCHS= i386

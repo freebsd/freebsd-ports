@@ -21,7 +21,6 @@ RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core \
 		${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
 PREFIX?=	${X11BASE}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -21,7 +21,7 @@ RESTRICTED=	unsure of licensing issues
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
-USE_LINUX=	yes
+USE_LINUX?=	yes
 USE_REINPLACE=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME:C/_.+$//}
 NO_BUILD=	yes

@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux
 
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
-USE_LINUX=	yes
 WANT_GNOME=	yes
 ONLY_FOR_ARCHS=	i386
 

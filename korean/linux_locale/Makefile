@@ -20,7 +20,7 @@ BUILD_DEPENDS=  ${LINUXBASE}/usr/share/locale/ko:${PORTSDIR}/emulators/linux_bas
 ONLY_FOR_ARCHS=	i386
 
 USE_LINUX_PREFIX=yes
-USE_LINUX=	yes
+USE_LINUX?=	yes
 NO_MTREE=	yes
 NO_BUILD=	yes
 EXTRACT_ONLY=	# empty

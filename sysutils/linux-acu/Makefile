@@ -30,7 +30,6 @@ IGNORE=		may not be automatically fetched due to licensing\
 .endif
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
 PREFIX?=	${X11BASE}
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

@@ -22,7 +22,7 @@ NO_PACKAGE=     "Packaging is pointless, the port does not build anything"
 NO_INSTALL_MANPAGES= yes
 PKGDEINSTALL=	${PKGDIR}/pkg-install
 
-USE_LINUX=      yes
+USE_LINUX?=      yes
 
 pre-install:
 	@${ECHO_MSG} "---> Creating sybase user and group"

@@ -20,7 +20,6 @@ COMMENT=	The official Macromedia Flash Player for Linux Netscape and Opera
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
 
 RESTRICTED=	"Redistribution not allowed"
 

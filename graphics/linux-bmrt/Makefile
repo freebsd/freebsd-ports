@@ -17,7 +17,6 @@ COMMENT=	A collection of rendering programs that use the RenderMan interface
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/graphics/linux_mesa3
 
-USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/BMRT2.6
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386

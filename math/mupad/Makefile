@@ -20,7 +20,7 @@ COMMENT=	A sophisticated computer algebra system
 BROKEN=		Size mismatch
 NO_CDROM=	"unsure to sell for profit"
 
-USE_LINUX=		yes
+USE_LINUX?=		yes
 ONLY_FOR_ARCHS=		i386
 
 INSTALLS_SHLIB=		yes

@@ -105,7 +105,7 @@ SET3=		postgresql-libs-7.2.4-5.80.i386.rpm \
 
 NGOBJWEB_ADAPTOR= opengroupware.org-mod_ngobjweb-200407092000.tar.gz
 PATCHDIR?=	${MASTERDIR}/files
-USE_LINUX=	yes
+USE_LINUX?=	yes
 USE_GMAKE=	yes
 MAKEFILE=	${WRKSRC}/opengroupware.org-mod_ngobjweb/GNUmakefile
 BUILD_WRKSRC?=	${WRKSRC}/opengroupware.org-mod_ngobjweb

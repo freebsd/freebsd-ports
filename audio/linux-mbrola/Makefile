@@ -19,7 +19,7 @@ DIST_SUBDIR=	mbrola-linux
 MASTERDIR=	${PORTSDIR}/audio/mbrola
 MD5_FILE=	${.CURDIR}/distinfo
 ONLY_FOR_ARCHS=	alpha i386 ppc sparc64
-USE_LINUX=	y
+USE_LINUX?=	y
 USE_ZIP=	y
 
 MASTERDIR=	${.CURDIR}/../mbrola

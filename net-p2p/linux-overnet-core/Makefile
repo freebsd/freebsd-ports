@@ -18,7 +18,7 @@ MAINTAINER=	arundel@h3c.de
 COMMENT=	Overnet 'core' command line client
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
+USE_LINUX?=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 STRIP=

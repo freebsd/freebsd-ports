@@ -21,7 +21,7 @@ COMMENT=		Audio system for the KDE integrated X11 desktop
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
-USE_LINUX=		yes
+USE_LINUX?=		yes
 PREFIX?=		${LINUXBASE}
 NO_MTREE=		yes
 LDCONFIG_LINUX=		${LINUXBASE}/sbin/ldconfig

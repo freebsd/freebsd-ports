@@ -24,7 +24,6 @@ BROKEN=		Unfetchable
 ONLY_FOR_ARCHS=	i386
 PLIST_FILES=	bin/netshow
 
-USE_LINUX=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
 

@@ -35,7 +35,6 @@ RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XF
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	'Must be bought and downloaded direct from Sun via www interface'
 
-USE_LINUX=	yes
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 SOVERSION=	${PORTNAME}${PORTVERSION}

@@ -16,7 +16,7 @@ DISTNAME=	linuxserver${PORTVERSION:S/.//}
 MAINTAINER=	apeiron@coitusmentis.info
 COMMENT=	Neverwinter Nights Linux (x86) Dedicated Server
 
-USE_LINUX=	yes
+USE_LINUX?=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}

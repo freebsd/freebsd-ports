@@ -22,7 +22,6 @@ NO_PACKAGE=	Licence forbids any repacking and reselling
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 PREFIX?=	${X11BASE}
-USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/DeluxeSnake
 
 do-install:

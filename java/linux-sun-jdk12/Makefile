@@ -24,7 +24,6 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 LATEST_LINK=	linux-sun-jdk12
 
 NO_BUILD=	yes
-USE_LINUX=	yes
 JDK_VERSION=	1.2.2.017
 ONLY_FOR_ARCHS=	i386 amd64
 

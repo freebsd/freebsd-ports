@@ -18,7 +18,7 @@ COMMENT=	Kernel module which provides /dev/rtc device support
 WRKSRC=		${WRKDIR}/files
 
 NO_FETCH=	yes
-USE_LINUX=	yes
+USE_LINUX?=	yes
 
 KMODDIR=	${PREFIX}/modules
 

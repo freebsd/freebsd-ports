@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${PREFIX}/usr/games/stvef/linuxstvefded_1.2-static:${PORTSDIR}/ga
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
-USE_LINUX=	yes
+USE_LINUX?=	yes
 EXTRACT_ONLY=	# Don't extract anything
 STRIP=
 

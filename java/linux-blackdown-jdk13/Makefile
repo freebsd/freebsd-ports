@@ -30,7 +30,6 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
 NO_BUILD=	yes
 LATEST_LINK=	linux-blackdown-jdk13
 
-USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 JDK_VERSION=	1.3.1

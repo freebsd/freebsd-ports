@@ -26,7 +26,6 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
 CONFLICTS=	linux_base-6* linux_base-7* linux_base-deb*
-USE_LINUX=	yes
 USE_LINUX_PREFIX=yes
 MD5_FILE=	${MASTERDIR}/distinfo.i386
 NO_BUILD=	yes

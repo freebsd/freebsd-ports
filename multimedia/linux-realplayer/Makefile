@@ -24,7 +24,6 @@ WRKSRC=		${WRKDIR}/usr/local/RealPlayer
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"Redistribution not allowed"
 NO_BUILD=	yes
-USE_LINUX=	yes
 
 # Linux binary should not be stripped by INSTALL_PROGRAM
 # because as a side effect it brands the binary as FreeBSD.

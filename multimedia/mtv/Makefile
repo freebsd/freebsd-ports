@@ -23,7 +23,6 @@ NO_CDROM=	"No redistribution"
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
 WRKSRC=		${WRKDIR}/mtv
 
 MAN1=	mtv.1

@@ -22,7 +22,6 @@ LIB_DEPENDS=	${LINUXBASE}/usr/libGLU.so.1:${PORTSDIR}/graphics/linux_mesa3
 .endif
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
-USE_LINUX=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${PORTNAME}lx

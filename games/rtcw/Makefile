@@ -18,7 +18,7 @@ COMMENT=	Return to Castle Wolfenstein for Linux
 
 ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
-USE_LINUX=	yes
+USE_LINUX?=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

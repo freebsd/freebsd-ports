@@ -35,7 +35,7 @@ COMMENT=		Packages needed for doing development in Linux mode
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-USE_LINUX=		yes
+USE_LINUX?=		yes
 NO_LATEST_LINK=		yes
 ONLY_FOR_ARCHS=		i386
 CONFLICTS=		linux_devtools-*

@@ -28,7 +28,7 @@ RUN_DEPENDS+=	${LINUXBASE}/lib/libGL.so:${PORTSDIR}/graphics/linux_glx
 .endif
 
 PLIST_FILES=	bin/atitd
-USE_LINUX=	yes
+USE_LINUX?=	yes
 USE_MESA=	yes
 
 ONLY_FOR_ARCHS=	i386

@@ -18,7 +18,7 @@ EXTRACT_ONLY=
 MAINTAINER=		chris@chrisburkert.de
 COMMENT=		A high performance Smalltalk environment
 
-USE_LINUX=		yes
+USE_LINUX?=		yes
 ONLY_FOR_ARCHS=		i386
 NO_BUILD=		yes
 PLIST_FILES=		bin/visual

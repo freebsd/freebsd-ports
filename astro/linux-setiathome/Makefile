@@ -16,7 +16,7 @@ COMMENT=	Donate idle cycles to the search for space aliens - Linux i686 version
 #
 
 ONLY_FOR_ARCHS=	i386
-USE_LINUX=	yes
+USE_LINUX?=	yes
 
 # Local variables
 #

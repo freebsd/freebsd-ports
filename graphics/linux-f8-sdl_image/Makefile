@@ -21,7 +21,6 @@ COMMENT=	A simple library to load images as SDL interfaces (linux version)
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libSDL-1.2.so.0:${PORTSDIR}/devel/linux-sdl12
 BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
-USE_LINUX=		yes
 USE_LINUX_PREFIX=	yes
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 

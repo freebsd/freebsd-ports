@@ -21,7 +21,6 @@ COMMENT=	View, distribute and print PDF documents
 RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libX11.so.6:${PORTSDIR}/x11/linux-XFree86-libs
 
 ONLY_FOR_ARCHS=	amd64 i386
-USE_LINUX=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i '' -E
