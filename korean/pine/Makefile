@@ -4,7 +4,7 @@
 # Date created:		2 Apr 1997
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/04/26 22:20:01 chuckr Exp $
 #
 
 DISTNAME=       pine3.96
@@ -13,8 +13,8 @@ CATEGORIES=     korean mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/mail/Others/ \
 		ftp://sunsite.kren.nm.kr/pub/packages/hangul/mail/Others/ \
-
 DISTFILES=      pine3.96.tar.gz pine395k.patch.tar.gz
+
 MAINTAINER=	junker@jazz.snu.ac.kr
 
 EXTRACT_ONLY=   pine3.96.tar.gz
