@@ -1,0 +1,71 @@
+--- ../../generic/tixGrid.c.orig	Thu Feb 11 18:11:44 1999
++++ ../../generic/tixGrid.c	Wed Aug  9 19:15:03 2000
+@@ -798,7 +798,7 @@
+ 		    cellDone = TixGrDataNextCell(&cellSearch)) {
+ 
+ 		TixGridDataDeleteSearchedEntry(&cellSearch);
+-		Tix_GrFreeElem((TixGrEntry*)cellSearch.data);
++		Tix_GrFreeElem(wPtr, (TixGrEntry*)cellSearch.data);
+ 	    }
+ 	}
+ 
+@@ -1757,6 +1757,10 @@
+     iPtr->base.clientData = (ClientData)wPtr;     /* %%%% */
+ 
+     if (chPtr->iPtr) {
++      if (Tix_DItemType(chPtr->iPtr) == TIX_DITEM_WINDOW) {
++	Tix_WindowItemListRemove(&wPtr->mappedWindows,
++				 chPtr->iPtr);
++      }
+ 	Tix_DItemFree(chPtr->iPtr);
+     }
+     chPtr->iPtr = iPtr;
+@@ -1800,7 +1804,7 @@
+     chPtr = Tix_GrFindElem(interp, wPtr, x, y);
+     if (chPtr != NULL) {
+ 	TixGridDataDeleteEntry(wPtr->dataSet, x, y);
+-	Tix_GrFreeElem(chPtr);
++	Tix_GrFreeElem(wPtr, chPtr);
+ 	Tix_GrDoWhenIdle(wPtr, TIX_GR_RESIZE);
+     }
+     return TCL_OK;
+@@ -3008,10 +3012,15 @@
+  */
+ 
+ void
+-Tix_GrFreeElem(chPtr)
++Tix_GrFreeElem(wPtr, chPtr)
++    WidgetPtr wPtr;
+     TixGrEntry * chPtr;		/* The element fo free */
+ {
+     if (chPtr->iPtr) {
++	if (Tix_DItemType(chPtr->iPtr) == TIX_DITEM_WINDOW) {
++	    Tix_WindowItemListRemove(&wPtr->mappedWindows,
++		chPtr->iPtr);
++	}
+ 	Tix_DItemFree(chPtr->iPtr);
+     }
+     ckfree((char*)chPtr);
+--- ../../generic/tixGrid.h.orig	Thu Feb 11 18:11:44 1999
++++ ../../generic/tixGrid.h	Tue Aug  8 13:23:17 2000
+@@ -391,7 +391,8 @@
+ EXTERN void		Tix_GrDoWhenIdle _ANSI_ARGS_((WidgetPtr wPtr,
+ 			    int type));
+ EXTERN void		Tix_GrCancelDoWhenIdle _ANSI_ARGS_((WidgetPtr wPtr));
+-EXTERN void		Tix_GrFreeElem _ANSI_ARGS_((TixGrEntry * chPtr));
++EXTERN void		Tix_GrFreeElem _ANSI_ARGS_((WidgetPtr wPtr,
++			    TixGrEntry * chPtr));
+ EXTERN void		Tix_GrFreeUnusedColors _ANSI_ARGS_((WidgetPtr wPtr,
+ 			    int freeAll));
+ EXTERN void		Tix_GrScrollPage _ANSI_ARGS_((WidgetPtr wPtr,
+--- ../../generic/tixGrData.c.orig	Wed Apr  7 01:40:13 1999
++++ ../../generic/tixGrData.c	Wed Aug  9 16:57:40 2000
+@@ -777,7 +777,7 @@
+ 		    chPtr = (TixGrEntry *)Tcl_GetHashValue(toDel);
+ 		    if (chPtr) {
+ 			deleted = 1;
+-			Tix_GrFreeElem(chPtr);
++			Tix_GrFreeElem(wPtr, chPtr);
+ 		    }
+ 
+ 		    Tcl_DeleteHashEntry(toDel);
