@@ -1,0 +1,6 @@
+This add-on  module allows  the apache  web server  to use  a PostgreSQL
+database for user and/or group authentication. For large user lists this
+can  offer a  significate  speed  up over  apache's  standard flat  file
+format.
+
+WWW: http://www.giuseppetanzilli.it/mod_auth_pgsql2/
