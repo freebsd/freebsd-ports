@@ -4798,7 +4798,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>agenda-snow-libs</name>
 	<name>linux_base</name>
-	<name>open-motif</name>
 	<name>open-motif-devel</name>
 	<name>mupad</name>
 	<name>zh-cle_base</name>
@@ -4827,6 +4826,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>linux-openmotif</name>
 	<range><lt>2.2.4</lt></range>
+      </package>
+      <package>
+	<name>open-motif</name>
+	<range><lt>2.2.3_1</lt></range>
       </package>
     </affects>
     <description>
@@ -4860,7 +4863,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-09-15</discovery>
       <entry>2004-09-15</entry>
-      <modified>2004-10-25</modified>
+      <modified>2005-01-03</modified>
     </dates>
   </vuln>
 
