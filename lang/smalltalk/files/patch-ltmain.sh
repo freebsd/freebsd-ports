@@ -1,5 +1,5 @@
---- ltmain.sh.orig	Thu Apr 26 19:21:26 2001
-+++ ltmain.sh	Fri Nov  2 02:58:37 2001
+--- config/ltmain.sh.orig	Fri Jun 14 06:37:06 2002
++++ config/ltmain.sh	Thu Jun 27 01:04:35 2002
 @@ -961,6 +961,7 @@
  	;;
  
