@@ -299,6 +299,7 @@
     SUBDIR += inilib
     SUBDIR += invitation_to_ruby
     SUBDIR += ixlib
+    SUBDIR += jakelib2
     SUBDIR += jam
     SUBDIR += jrtplib
     SUBDIR += kaptain

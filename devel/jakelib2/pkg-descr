@@ -1,0 +1,8 @@
+Jakelib2 is a cross platform C++ class library with a Java-like API. An
+automatic garbage collector is used to take care of unused objects. External
+libraries like PCRE or GTK+ are beeing integrated to provide the programmer
+with a homogeneous, easy to use programming environment that covers every
+day's tasks like string handling, data storage, networking, or GUI
+programming.
+
+WWW: http://www.jakelib.org/
