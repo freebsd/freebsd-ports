@@ -3,16 +3,14 @@
 # Date created:		Oct 27, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.15 1997/01/18 19:32:38 max Exp $
+# $Id: Makefile,v 1.16 1997/07/10 15:50:51 pst Exp $
 #
 
 DISTNAME=	cku192src
 PKGNAME=        kermit-6.0.192
 CATEGORIES=	comms
-
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
-		ftp://ftp.th-darmstadt.de/pub/networking/kermit/ \
-		ftp://ftp.std.com/customers2/src/telcom/
+		ftp://ftp.th-darmstadt.de/pub/networking/kermit/
 
 MAINTAINER=	ports@FreeBSD.org
 
