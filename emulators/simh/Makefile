@@ -30,7 +30,7 @@ BIN_FILES=	pdp1 pdp4 pdp7 pdp8 pdp9 \
 		i1620 s3 altair altairz80 \
 		gri ibm1130 id16 id32 sds
 
-PORTDOCS=       0readme_30.txt simh_doc.txt simh_swre.txt \
+PORTDOCS=	0readme_30.txt simh_doc.txt simh_swre.txt \
 		0readme_ethernet.txt simh_faq.txt
 
 pre-patch:
