@@ -7,7 +7,6 @@
 
 PORTNAME=	arts++
 PORTVERSION=	1-1-a8
-PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.caida.org/pub/arts++/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
