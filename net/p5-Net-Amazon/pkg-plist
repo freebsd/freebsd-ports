@@ -14,6 +14,7 @@
 %%SITE_PERL%%/Net/Amazon/Request/Manufacturer.pm
 %%SITE_PERL%%/Net/Amazon/Request/Power.pm
 %%SITE_PERL%%/Net/Amazon/Request/Similar.pm
+%%SITE_PERL%%/Net/Amazon/Request/Seller.pm
 %%SITE_PERL%%/Net/Amazon/Request/Sort.pm
 %%SITE_PERL%%/Net/Amazon/Request/TextStream.pm
 %%SITE_PERL%%/Net/Amazon/Request/UPC.pm
@@ -26,13 +27,18 @@
 %%SITE_PERL%%/Net/Amazon/Response/Keyword.pm
 %%SITE_PERL%%/Net/Amazon/Response/Manufacturer.pm
 %%SITE_PERL%%/Net/Amazon/Response/Power.pm
+%%SITE_PERL%%/Net/Amazon/Response/Seller.pm
 %%SITE_PERL%%/Net/Amazon/Response/Similar.pm
 %%SITE_PERL%%/Net/Amazon/Response/TextStream.pm
 %%SITE_PERL%%/Net/Amazon/Response/UPC.pm
 %%SITE_PERL%%/Net/Amazon/Response/Wishlist.pm
+%%SITE_PERL%%/Net/Amazon/Result/Seller.pm
+%%SITE_PERL%%/Net/Amazon/Result/Seller/Listing.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/.packlist
 @dirrm %%SITE_PERL%%/Net/Amazon/Attribute
 @dirrm %%SITE_PERL%%/Net/Amazon/Property
+@dirrm %%SITE_PERL%%/Net/Amazon/Result/Seller
+@dirrm %%SITE_PERL%%/Net/Amazon/Result
 @dirrm %%SITE_PERL%%/Net/Amazon/Response
 @dirrm %%SITE_PERL%%/Net/Amazon/Request
 @dirrm %%SITE_PERL%%/Net/Amazon
