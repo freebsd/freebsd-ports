@@ -1,4 +1,4 @@
-# New ports collection makefile for:	flim-current for emacs
+# New ports collection makefile for:	flim-1.13.x for emacs
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
@@ -8,12 +8,14 @@
 PORTNAME=	flim
 PORTVERSION=	${FLIM_VER}
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.etl.go.jp/pub/mule/flim/flim-1.13/ \
+MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/flim/flim-1.13/ \
+		ftp://ftp.etl.go.jp/pub/mule/flim/flim-1.13/ \
 		ftp://ftp.media.kyoto-u.ac.jp/pub/mule/flim/flim-1.13/ \
 		ftp://ftp.win.or.jp/pub/word/mule/flim/flim-1.13/ \
 		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/emacs/mule/flim/flim-1.13/
-MAINTAINER?=	shige@FreeBSD.org
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
+
+MAINTAINER?=	shige@FreeBSD.org
 
 PORTCLASS?=	master
 
@@ -99,7 +101,7 @@ pre-install:
 
 post-install:
 # install package-cookie
-	@${MKDIR} -p ${LOCALBASE}/share/flim
+	@${MKDIR} ${LOCALBASE}/share/flim
 	@${TOUCH} ${LOCALBASE}/share/flim/${FLIM_COOKIE}
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
 	@${MAKE} setupel-install
@@ -113,7 +115,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MAKE} doc-install
 .endif
-
 
 ###############################################################################
 #
@@ -175,7 +176,6 @@ setupel-install:
 	@${INSTALL_DATA} ${WRKDIR}/${FLIM_SETUPEL} \
 			${LOCALBASE}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 
-
 info-install:
 	@(cd ${WRKSRC} ; \
 	for i in mime-en.info; do \
@@ -196,7 +196,7 @@ info-package-install:
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
 				${LOCALBASE}/${EMACS_PACKAGESDIR}/info ; \
 	done ; \
-	${MKDIR} -p ${LOCALBASE}/${EMACS_PACKAGESDIR}/man/flim ; \
+	${MKDIR} ${LOCALBASE}/${EMACS_PACKAGESDIR}/man/flim ; \
 	for i in mime-en.texi mime-ja.texi; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
 				${LOCALBASE}/${EMACS_PACKAGESDIR}/man/flim ; \
