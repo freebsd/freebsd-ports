@@ -360,6 +360,7 @@
     SUBDIR += stmpclean
     SUBDIR += stow
     SUBDIR += stowES
+    SUBDIR += stress
     SUBDIR += su2
     SUBDIR += symlinks
     SUBDIR += synergy
