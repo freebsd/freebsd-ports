@@ -22,6 +22,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-FreeBSD
 
 NO_BUILD=	yes
 
+BROKEN=		"Creates files in /etc and /usr/lib"
+
 do-install:
 	@${MKDIR} ${LOCALBASE}/etc/antivir
 	@${MKDIR} /var/spool/avmailgate
