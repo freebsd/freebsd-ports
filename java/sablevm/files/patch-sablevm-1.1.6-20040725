@@ -1,0 +1,142 @@
+Index: src/libsablevm/error.c
+===================================================================
+--- src/libsablevm/error.c	(.../tags/sablevm-1.1.6)	(revision 2849)
++++ src/libsablevm/error.c	(.../branches/staging)	(revision 2849)
+@@ -8,6 +8,7 @@
+ 
+ /* We remember previously established signal handlers, so that we can
+    delegate back to them when we don't handle a signal. */
++static sigset_t _svmv_old_sigset;
+ 
+ static struct sigaction _svmv_old_sigquit;
+ static struct sigaction _svmv_old_siginterrupt;
+@@ -320,8 +321,16 @@
+ static jint
+ _svmf_error_init (void)
+ {
++  sigset_t svmv_sigset;
+   struct sigaction sa;
+ 
++  /* save old sigmask before doing any modifications */
++
++  if (sigprocmask(0, NULL, &_svmv_old_sigset) != 0)
++    {
++      goto error;
++    }	       
++
+   _svmm_zero_memory (sa);
+ 
+   /* mask all signals handled by the signal handler */
+@@ -392,6 +401,8 @@
+ #endif /* _SABLEVM_INLINABILITY_TESTING */
+ 
+ #if defined(_SABLEVM_HAS_SIGINFO)
++  
++  /* TODO: add signal support for systems w/o SA_SIGINFO */
+ 
+   /* use extended info version */
+   sa.sa_flags = SA_SIGINFO;
+@@ -457,9 +468,77 @@
+ 
+ #endif /* _SABLEVM_HAS_SIGINFO */
+ 
++  /* ignore SIGPIPE */
++
++  if (sigemptyset (&svmv_sigset) != 0)
++    {
++      goto error;
++    }
++
++  if (sigaddset (&svmv_sigset, SIGPIPE) != 0)
++    {
++      goto error;
++    }
++
++  if (sigprocmask(SIG_BLOCK, &svmv_sigset, NULL) != 0)
++    {
++      goto error;
++    }	       
++
+   return JNI_OK;
+ 
+ error:
+ 
+   return JNI_ERR;
+ }
++
++/*
++----------------------------------------------------------------------
++_svmf_error_init
++----------------------------------------------------------------------
++*/
++
++/* TODO: call this function from the right place. It's unused currently. */
++
++static jint
++_svmf_error_restore (void)
++{
++#if defined(_SABLEVM_HAS_SIGINFO)
++
++  if (sigaction (SIGQUIT, &_svmv_old_sigquit, NULL) != 0)
++    {
++      goto error;
++    }
++
++  if (sigaction (SVM_INTERRUPT_SIGNAL, &_svmv_old_siginterrupt, NULL) != 0)
++    {
++      goto error;
++    }
++
++#if defined(_SABLEVM_SIGNALS_FOR_EXCEPTIONS) || defined(_SABLEVM_INLINABILITY_TESTING)
++
++  if (sigaction (SIGSEGV, &_svmv_old_sigsegv, NULL) != 0)
++    {
++      goto error;
++    }
++
++  if (sigaction (SIGFPE, &_svmv_old_sigfpe, NULL) != 0)
++    {
++      goto error;
++    }
++
++#endif /* _SABLEVM_SIGNALS_FOR_EXCEPTIONS || _SABLEVM_INLINABILITY_TESTING */
++
++#endif /* _SABLEVM_HAS_SIGINFO */
++
++  if (sigprocmask(SIG_SETMASK, &_svmv_old_sigset, NULL) != 0)
++    {
++      goto error;
++    }	       
++
++  return JNI_OK;
++
++error:
++
++  return JNI_ERR;
++}
+Index: configure.ac
+===================================================================
+--- configure.ac	(.../tags/sablevm-1.1.6)	(revision 2849)
++++ configure.ac	(.../branches/staging)	(revision 2849)
+@@ -408,12 +404,12 @@
+ AC_OUTPUT
+ 
+ dnl check whether 'make' is GNU make
+-make_bin=`which make`
+-if test "X$make_bin" != "X"; then
+-  make_test=`$make_bin --version 2>&1 |grep GNU`
+-  if test "X$make_test" = "X"; then
+-    AC_MSG_WARN("*** Your 'make' command does NOT seem to be GNU Make. ***")
+-    AC_MSG_WARN("The build system of SableVM requires GNU Make.  On many systems GNU Make")
+-    AC_MSG_WARN("is installed as 'gmake'.")
+-  fi
+-fi
++dnl make_bin=`which make`
++dnl if test "X$make_bin" != "X"; then
++dnl  make_test=`$make_bin --version 2>&1 |grep GNU`
++dnl  if test "X$make_test" = "X"; then
++dnl    AC_MSG_WARN("*** Your 'make' command does NOT seem to be GNU Make. ***")
++dnl    AC_MSG_WARN("The build system of SableVM requires GNU Make.  On many systems GNU Make")
++dnl    AC_MSG_WARN("is installed as 'gmake'.")
++dnl  fi
++dnl fi
