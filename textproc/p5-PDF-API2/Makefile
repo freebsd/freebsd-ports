@@ -7,13 +7,14 @@
 #
 
 PORTNAME=	PDF-API2
-PORTVERSION=	0.3a30
+PORTVERSION=	0.3b41
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PDF
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	'The Next Generation' of Text::PDF::API
 
 BUILD_DEPENDS=	${PERL_SITELIBDIR}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
 		${PERL_SITELIBDIR}/Text/PDF/Pages.pm:${PORTSDIR}/print/p5-Text-PDF \
