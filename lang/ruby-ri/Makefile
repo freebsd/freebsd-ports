@@ -7,7 +7,7 @@
 
 PORTNAME=	ri
 PORTVERSION=	0.7a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang ruby
 MASTER_SITES=	ftp://www.pragmaticprogrammer.com/ruby/downloads/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,6 +20,8 @@ USE_RUBY=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
+
+ELISP_FILES=	ri.el
 
 DOCS=		COPYING ChangeLog README
 EMACS_DOCS=	Changelog DESCRIPTION
@@ -34,8 +36,11 @@ post-patch:
 do-install:
 	cd ${WRKSRC} && ${RUBY} install.rb
 	${INSTALL_DATA} ${WRKSRC}/contrib/dblack/emacs/Emacs.rb ${RUBY_SITELIBDIR}/${PORTNAME}/op/
-	${INSTALL_DATA} ${WRKSRC}/contrib/dblack/emacs/ri.el ${EMACSLISPDIR}/
-	${INSTALL_DATA} ${EMACSLISPDIR}/ri.el ${XEMACSLISPDIR}/
+.for f in ${ELISP_FILES}
+	${INSTALL_DATA} ${WRKSRC}/contrib/dblack/emacs/${f} ${RUBY_ELISPDIR}/
+	${LN} -sf ${RUBY_ELISPDIR}/${f} ${EMACSLISPDIR}/
+	${LN} -sf ${RUBY_ELISPDIR}/${f} ${XEMACSLISPDIR}/
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/emacs
 .for f in ${DOCS}
