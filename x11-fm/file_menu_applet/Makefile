@@ -14,7 +14,11 @@ MAINTAINER=	klammer@webonaut.com
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack libpanel
 GNU_CONFIGURE=	yes
+
+pre-everything::
+	@${SH} ${PKGINSTALL} ${PKGNAME} ${PREFIX}
 
 .include <bsd.port.mk>

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [ -n "${PACKAGE_BUILDING}" ]; then
+    exit 0
+fi
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin:${PATH}
+export PATH
+
+if [ ! -f ${2}/libdata/pkgconfig/libpanelapplet-2.0.pc ]; then
+	exit 0
+fi
+
+echo "================================================================"
+echo ""
+echo "The GNOME 2.0 package libpanelapplet was detected on the system."
+echo "file_menu_applet works only with the GNOME 1.0 panel."
+echo ""
+echo "================================================================"
+false
