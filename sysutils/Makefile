@@ -125,6 +125,7 @@
     SUBDIR += kdeadmin3
     SUBDIR += kdirstat
     SUBDIR += knutclient
+    SUBDIR += krename
     SUBDIR += lavaps
     SUBDIR += lcdproc
     SUBDIR += lfm
