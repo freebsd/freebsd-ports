@@ -53,6 +53,7 @@
     SUBDIR += ficl-devel
     SUBDIR += forth
     SUBDIR += fpc
+    SUBDIR += fpc-devel
     SUBDIR += freetxl
     SUBDIR += gauche
     SUBDIR += gawk
