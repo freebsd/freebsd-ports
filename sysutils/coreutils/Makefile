@@ -16,7 +16,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	The Free Software Foundation's core utilities
 
-CONFLICTS=	sh-utils-[0-9]* fileutils-[0-9]* textutils-[0-9]* id-utils-[0-9]*
+CONFLICTS=	fileutils-[0-9]* id-utils-[0-9]* linux-gid-[0-9]* \
+		sh-utils-[0-9]*  textutils-[0-9]*
 
 USE_GPG?=	yes
 SIG_FILES=	${DISTNAME}${EXTRACT_SUFX}.sig

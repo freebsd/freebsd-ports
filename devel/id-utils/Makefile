@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The classic Berkeley gid/lid tools for looking up variables in code
 
-CONFLICTS=	coreutils-* sh-utils-*
+CONFLICTS=	coreutils-[0-9]* linux-gid-[0-9]* sh-utils-[0-9]*
 
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
