@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncurses
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://download.berlios.de/ncurses-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,10 +20,9 @@ USE_BZIP2=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
-MAKE_ARGS=	LOCAL_LIBS=-lgcc
 INSTALL_TARGET=	site-install
 
-DOCS=		README TODO
+DOCS=		README THANKS TODO
 
 post-extract:
 	${MKDIR} ${WRKSRC}/lib
