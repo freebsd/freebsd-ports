@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nessus
-PORTVERSION=	1.0.9
+PORTVERSION=	1.2.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
@@ -19,9 +19,9 @@ MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.sekure.net/pub/nessus/nessus-${PORTVERSION}/src/
 DISTNAME=	nessus-core-${PORTVERSION}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	udo.schweigert@siemens.com
 
-LIB_DEPENDS=	nasl.1:${PORTSDIR}/security/nessus-libnasl
+LIB_DEPENDS=	nasl.3:${PORTSDIR}/security/nessus-libnasl
 
 DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-core
@@ -37,13 +37,17 @@ USE_GTK=	yes
 CONFIGURE_ARGS+=--disable-gtk
 .endif
 
-MAN1=		nessus.1
-MAN8=		nessusd.8 nessus-adduser.8
+CONFIGURE_ARGS+=	--sharedstatedir=${PREFIX}/etc/nessus/com \
+			--localstatedir=${PREFIX}/etc/nessus/var
+
+MAN1=		nessus.1 nessus-mkrand.1 nessus-mkcert-client.1
+MAN8=		nessusd.8 nessus-adduser.8 nessus-mkcert.8 nessus-rmuser.8
 
 post-install:
-	@${ECHO} "================================================================================"
-	@${ECHO} "Use ${PREFIX}/sbin/update/nessus-update-plugins to update your plugin"
-	@${ECHO} "collection."
-	@${ECHO} "================================================================================"
+.if ! defined(BATCH)
+.if ! exists(${PREFIX}/etc/nessus/var/CA/serverkey.pem)
+	${PREFIX}/sbin/nessus-mkcert
+.endif
+.endif
 
 .include <bsd.port.post.mk>

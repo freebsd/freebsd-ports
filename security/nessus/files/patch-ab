@@ -1,0 +1,13 @@
+--- nessus-mkcert.in.orig	Fri Sep 14 13:09:12 2001
++++ nessus-mkcert.in	Mon Oct  8 13:25:14 2001
+@@ -64,8 +64,8 @@
+    exit 1
+ esac
+      
+-NESSUSPRIV="$localstatedir/nessus/CA"
+-NESSUSPUB="$sharedstatedir/nessus/CA"
++NESSUSPRIV="$localstatedir/CA"
++NESSUSPUB="$sharedstatedir/CA"
+ if [ ! -d "$NESSUSPRIV" ]; then
+     mkdir -p "$NESSUSPRIV"
+     chmod 700 "$NESSUSPRIV"

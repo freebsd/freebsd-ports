@@ -1,0 +1,15 @@
+--- libpcap-nessus/configure.orig	Mon Jul 31 11:09:51 2000
++++ libpcap-nessus/configure	Wed May 29 12:07:45 2002
+@@ -391,9 +391,9 @@
+     if test -n "`echo $ac_option| sed 's/[-a-z0-9.]//g'`"; then
+       echo "configure: warning: $ac_option: invalid host type" 1>&2
+     fi
+-    if test "x$nonopt" != xNONE; then
+-      { echo "configure: error: can only configure for one host and one target at a time" 1>&2; exit 1; }
+-    fi
++#    if test "x$nonopt" != xNONE; then
++#      { echo "configure: error: can only configure for one host and one target at a time" 1>&2; exit 1; }
++#    fi
+     nonopt="$ac_option"
+     ;;
+ 
