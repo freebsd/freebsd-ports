@@ -196,6 +196,7 @@ share/locale/zh_CN/LC_MESSAGES/planner.mo
 @dirrm share/gnome/help/planner/C/figures
 @dirrm share/gnome/help/planner/C
 @dirrm share/gnome/help/planner
+@dirrm share/doc/libplanner
 @dirrm lib/planner/views
 @dirrm lib/planner/storage-modules
 @dirrm lib/planner/plugins
