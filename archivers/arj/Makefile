@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	arj
-PORTVERSION=	3.10g
-PORTREVISION=	1
+PORTVERSION=	3.10.18
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,12 +19,11 @@ USE_REINPLACE=	yes
 USE_AUTOCONF_VER=	253
 USE_GMAKE=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/gnu
+CONFIGURE_ENV=	CFLAGS="-fPIC"
 MAKEFILE=	GNUmakefile
 STRIP=
 LANGUAGE?=	en
 MAKE_ENV+=	"LOCALE=${LANGUAGE}"
-INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib/arj
 
 MAN1=		arj-register.1 arj.1 arjdisp.1 rearj.1
 
@@ -40,7 +38,7 @@ pre-build:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} COPYING debug.txt ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} debug.txt ${DOCSDIR}
 	cd ${WRKSRC}/resource/en && \
 		${INSTALL_DATA} arjl.txt arjs.txt history.txt readme.txt unix.txt ${DOCSDIR}
 .endif
