@@ -1,0 +1,28 @@
+--- ./Makefile.in.orig	Sat Mar 21 08:53:32 1998
++++ ./Makefile.in	Sat Mar 28 09:28:52 1998
+@@ -59,7 +59,7 @@
+ ARCH		= @host@
+ 
+ LDFLAGS         = @X_LIBS@ @LDFLAGS@
+-DEFS 	        = @DEFS@ @LINUXJOYSTICK@ -DPREFIX=\"@prefix@\"
++DEFS 	        = @DEFS@ @JOYSTICK@ -DPREFIX=\"@prefix@\"
+ MKDEP 	        = @MKDEP@
+ CFLAGS          = @X_CFLAGS@ @CFLAGS@
+ INCLUDES	= -I$(SRCDIR) -I./include -I$(ARCHDIR) -I$(INCLUDEDIR)
+@@ -67,6 +67,7 @@
+ 
+ LN_S 	        = @LN_S@
+ 
++RM		= rm
+ INSTALL		= @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA	= @INSTALL_DATA@
+@@ -510,7 +511,7 @@
+ 	           $(INSTALL_BINDIR)/$$a;				      \
+ 	   done;							      \
+            $(RM) -f $(INSTALL_BINDIR)/recomment;			      \
+-	   $(INSTALL_PROGRAM) $(UTILDIR)/recomment			      \
++	   $(INSTALL) -m 555 $(UTILDIR)/recomment			      \
+ 	       $(INSTALL_LIBDIR)/$(ARCH)/recomment-$$VERSION;		      \
+ 	   $(LN_S) $(INSTALL_LIBDIR)/$(ARCH)/recomment-$$VERSION	      \
+ 	       $(INSTALL_BINDIR)/recomment )

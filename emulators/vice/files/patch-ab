@@ -1,0 +1,71 @@
+--- ./arch/unix/joystick.c.orig	Sat Mar  7 09:01:51 1998
++++ ./arch/unix/joystick.c	Sat Mar 28 09:19:42 1998
+@@ -1,5 +1,5 @@
+ /*
+- * joystick.c - Joystick support for Linux.
++ * joystick.c - Joystick support for Linux and *BSD
+  *
+  * Written by
+  *  Bernhard Kuhn    (kuhn@eikon.e-technik.tu-muenchen.de)
+@@ -7,6 +7,7 @@
+  *
+  * Patches by
+  *  Daniel Sladic    (sladic@eecg.toronto.edu)
++ *  Dave Chapeskie   <dchapes@ddm.on.ca>
+  *
+  * This file is part of VICE, the Versatile Commodore Emulator.
+  * See README for copyright notice.
+@@ -32,7 +33,13 @@
+ 
+ #ifdef HAS_JOYSTICK
+ 
++#ifdef __linux__
+ #include <linux/joystick.h>
++#else
++#include <machine/joystick.h>
++#define JS_DATA_TYPE	joystick
++#define JS_RETURN	(sizeof(struct joystick))
++#endif
+ #include <unistd.h>
+ #include <stdio.h>
+ #include <sys/types.h>
+@@ -89,7 +96,11 @@
+   for(i=0;i<2;i++) {
+     
+     char* dev;
++#ifdef __linux__
+     dev=(i==0)?"/dev/js0":"/dev/js1";
++#else
++    dev=(i==0)?"/dev/joy0":"/dev/joy1";
++#endif
+     
+     ajoyfd[i]=open(dev,O_RDONLY);
+     if (ajoyfd[i] < 0) {
+@@ -132,6 +143,7 @@
+     }
+   }
+     
++#ifdef __linux__
+   /* open device files for digital joystick */
+   for(i=0;i<2;i++) {
+     char* dev;
+@@ -142,6 +154,7 @@
+       fprintf(stderr, "Warning: couldn't open the joystick device %s!\n",dev);
+     }
+   }
++#endif
+ }
+ 
+ void joyclose(void)
+@@ -195,7 +208,11 @@
+ 	  else joy[i] &= ~4;
+ 	  if (js.x>joyxmax[ajoyport]) joy[i] |= 8;
+ 	  else joy[i] &= ~8;
++#ifdef __linux__
+ 	  if(js.buttons) joy[i] |= 16;
++#else
++	  if(js.b1 | js.b2) joy[i] |= 16;
++#endif
+ 	  else joy[i] &= ~16;
+ 	}
+       }

@@ -1,0 +1,23 @@
+Versatile Commodore 8-bit Emulator
+This is version 0.14.1 of VICE, the multi-platform PET/VIC20/C64 emulator.
+
+The following programs are included:
+  - x64, a C64 emulator;
+  - xvic, a VIC20 emulator;
+  - xpet, a PET emulator;
+  - c1541, a stand-alone disk image maintenance utility;
+  - petcat, a CBM BASIC de-tokenizer;
+  - recomment, an iterative database driven reassembler;
+
+For the latest news, have a look at the VICE home page:
+    http://www.tu-chemnitz.de/~fachat/vice/vice.html
+
+VICE is Copyright (c) 1993-1998 Ettore Perazzoli, Teemu Rantanen,
+André Fachat, Jouko Valta, Jarkko Sonninen and Daniel Sladic.
+
+The ROM files in the `C64', `PET' and `VIC20' directories are
+Copyright (c) by Commodore Business Machines.
+
+NOTE:  When compiling on FreeBSD some source files cause gcc to go over the
+default memory limits.  Either fix /etc/login.conf or temporaryily adjust
+the limits with your shells limit command ("unlimit" works in [t]csh).
