@@ -7,6 +7,7 @@
     SUBDIR += fconv
     SUBDIR += i18ntools
     SUBDIR += iconv
+    SUBDIR += iconv-extra
     SUBDIR += iconv-rfc1345
     SUBDIR += ish
     SUBDIR += kdesupport11
