@@ -3,11 +3,11 @@
 # Date created:                      6 Apr 1996
 # Whom:                              Brent J. Nordquist <nordquist@platinum.com>
 #
-# $Id: Makefile,v 1.2 1996/04/15 09:35:10 tg Exp $
+# $Id: Makefile,v 1.3 1996/10/31 11:22:02 asami Exp $
 #
 
 DISTNAME=          sattrack-3.1.4
-CATEGORIES+=       astro
+CATEGORIES=        astro
 MASTER_SITES=      http://ssl.berkeley.edu/isi_www/
 
 MAINTAINER=        nordquist@platinum.com

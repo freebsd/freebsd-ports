@@ -3,12 +3,12 @@
 # Date created:		03 July 1996
 # Whom:			ABURAYER Rewsirow <pcs51674@asciinet.or.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/10/24 08:53:50 asami Exp $
 #
 
 DISTNAME=	luna19
 PKGNAME=	luna-1.9
-CATEGORIES+=	astro games
+CATEGORIES=	astro games
 MASTER_SITES=	ftp://ftp.nc.nihon-u.ac.jp/pub/MSDOS/games/
 
 MAINTAINER=	pcs51674@asciinet.or.jp
