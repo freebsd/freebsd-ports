@@ -388,6 +388,7 @@
     SUBDIR += sendip
     SUBDIR += sharity-light
     SUBDIR += silc-client
+    SUBDIR += silc-doc
     SUBDIR += silc-server
     SUBDIR += sing
     SUBDIR += sleuth
