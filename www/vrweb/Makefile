@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/08/05 09:31:39 asami Exp $
+# $Id: Makefile,v 1.7 1998/09/27 16:06:57 steve Exp $
 #
 
 DISTNAME=	vrweb-1.5
@@ -13,7 +13,9 @@ DISTFILES=	vrweb-src-1.5.tar.gz help-1.5.tar.gz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
 
-LIB_DEPENDS=	GL.13:${PORTSDIR}/graphics/Mesa2
+LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
+
+BROKEN=		install
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

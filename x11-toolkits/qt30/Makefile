@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.23 1998/09/27 16:06:59 steve Exp $
+# $Id: Makefile,v 1.24 1998/09/27 17:46:48 steve Exp $
 #
 
 DISTNAME=	qt-${MAJ}.${MIN}
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-LIB_DEPENDS=	MesaGL.13:${PORTSDIR}/graphics/Mesa2
+LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
 
 MAJ=		1
 MIN=		40
