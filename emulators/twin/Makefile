@@ -41,6 +41,10 @@ INSTALLS_SHLIB=	yes
 USE_GCC=	3.2
 .endif
 
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 FMT?=	/usr/bin/fmt
 
 LIBRARIES=	libadvapi32.so libcomctl32.so libcomm.so \
