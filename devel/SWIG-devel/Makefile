@@ -1,13 +1,13 @@
 # New ports collection makefile for:    SWIG
-# Version required:     1.1p2
+# Version required:     1.1p3
 # Date created:         19 April 1996
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.7 1997/08/11 15:06:30 erich Exp $
+# $Id: Makefile,v 1.8 1997/12/04 11:17:34 asami Exp $
 #
 
-DISTNAME=	swig1.1p2
-PKGNAME=	swig-1.1p2
+DISTNAME=	swig1.1p3
+PKGNAME=	swig-1.1p3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/ \
 		ftp://ftp.rge.com/pub/languages/swig/ \
@@ -15,10 +15,11 @@ MASTER_SITES=	ftp://ftp.cs.utah.edu/pub/beazley/SWIG/ \
 
 MAINTAINER=	erich@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/bin/python:${PORTSDIR}/lang/python/
+BUILD_DEPENDS=	${PREFIX}/bin/python:${PORTSDIR}/lang/python/ \
+		${PREFIX}/bin/tclsh8.0:${PORTSDIR}/lang/tcl80
 
 USE_PERL5=	YES
-WRKSRC=		${WRKDIR}/SWIG1.1p2
+WRKSRC=		${WRKDIR}/SWIG1.1p3
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-tclincl=${PREFIX}/include/tcl8.0/ \
 		--with-tcllib=${PREFIX}/lib/tcl8.0/
