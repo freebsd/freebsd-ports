@@ -37,7 +37,9 @@ include/fox/FXDirSelector.h
 include/fox/FXDocument.h
 include/fox/FXDragCorner.h
 include/fox/FXDrawable.h
+include/fox/FXDriveBox.h
 include/fox/FXElement.h
+include/fox/FXException.h
 include/fox/FXFile.h
 include/fox/FXFileDialog.h
 include/fox/FXFileDict.h
@@ -71,10 +73,12 @@ include/fox/FXIconList.h
 include/fox/FXId.h
 include/fox/FXImage.h
 include/fox/FXImageView.h
+include/fox/FXInputDialog.h
 include/fox/FXJPEGIcon.h
 include/fox/FXJPEGImage.h
 include/fox/FXLabel.h
 include/fox/FXList.h
+include/fox/FXListBox.h
 include/fox/FXMDIButton.h
 include/fox/FXMDIChild.h
 include/fox/FXMDIClient.h
