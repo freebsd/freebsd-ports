@@ -236,7 +236,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       </package>
       <package>
 	<name>gpdf</name>
-	<range><gt>0</gt></range>
+	<range><lt>2.8.3</lt></range>
       </package>
       <package>
 	<name>teTeX-base</name>
@@ -280,7 +280,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-01-06</discovery>
       <entry>2005-01-26</entry>
-      <modified>2005-01-31</modified>
+      <modified>2005-02-03</modified>
     </dates>
   </vuln>
 
