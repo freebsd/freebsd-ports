@@ -1,10 +1,11 @@
---- encoder.php.orig	Wed May 28 15:12:59 2003
-+++ encoder.php	Thu May 29 16:19:28 2003
-@@ -1,10 +1,10 @@
--#! /usr/bin/php -f
-+#! %%LOCALBASE%%/bin/php -f
- 
+--- encoder.php.orig	Fri Jul 25 10:21:09 2003
++++ encoder.php	Mon Jul 28 13:04:19 2003
+@@ -1,10 +1,12 @@
++#!%%LOCALBASE%%/bin/php -f
++
  <?php
+ $web_error = "";
+ 
  function mmcache_encoder_usage() {
 -  echo "Usage:\tphp -q encoder.php [options] source_file_name\n";
 -  echo       "\tphp -q encoder.php [options] source_file_name...\n";
@@ -15,7 +16,7 @@
    echo "Options:\n";
    echo "\t-s suffix\n\t\tencode files only with following suffix (default is \"php\")\n";
    echo "\t-a\n\t\tencode all files (no by default)\n";
-@@ -16,10 +16,10 @@
+@@ -16,10 +18,10 @@
    echo               "\t\tfile name. If you encode directory or several files at once\n";
    echo               "\t\tthen 'target' specifyes an output directory name.\n";
    echo "\nExamples:\n";
