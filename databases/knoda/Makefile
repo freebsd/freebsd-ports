@@ -16,6 +16,8 @@ COMMENT=		Database frontend for KDE
 
 LIB_DEPENDS=		hk_classes.5:${PORTSDIR}/databases/hk_classes
 
+BROKEN=			"Does not compile"
+
 USE_KDELIBS_VER=	3
 USE_PYTHON=		yes
 USE_GMAKE=		yes
