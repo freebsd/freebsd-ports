@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.epcc.ed.ac.uk/~spb/xmountains/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	proff@iq.org
+MAINTAINER=	ports@FreeBSD.Org
 
 NO_WRKSUBDIR=	yes
 
