@@ -31,6 +31,7 @@
     SUBDIR += evolution
     SUBDIR += exim
     SUBDIR += exim-ldap
+    SUBDIR += exim-ldap2
     SUBDIR += exim-mysql
     SUBDIR += exim-postgresql
     SUBDIR += exmh2
