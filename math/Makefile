@@ -183,7 +183,6 @@
     SUBDIR += scigraphica
     SUBDIR += scilab
     SUBDIR += sdpa
-    SUBDIR += simpack
     SUBDIR += slsc
     SUBDIR += snns
     SUBDIR += solitaire
