@@ -1,0 +1,12 @@
+An artificial life implementation using GNOME :)
+
+It will try to emulate an Artificial Society.  It will implement
+reproduction, and movement.  Movement will be based on the 'vision'
+of the animals.  In the future there will also be terrain interaction
+(consume food, and food 'reproduction rate') - this will also come along
+with animal 'metabolism' rates.  After this is done, combat and
+'culture' factors will be added - Maybe inheritance.
+
+Among other things :) The aim is to keep everything HIGHLY configurable.
+
+WWW: http://glife.sourceforge.net/

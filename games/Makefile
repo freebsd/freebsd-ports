@@ -57,6 +57,7 @@
     SUBDIR += gemdropx
     SUBDIR += glasteroids
     SUBDIR += gleyes
+    SUBDIR += glife
     SUBDIR += gltron
     SUBDIR += gma
     SUBDIR += gno3dtet
