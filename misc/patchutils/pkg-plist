@@ -2,6 +2,7 @@
 bin/combinediff
 bin/dehtmldiff
 bin/editdiff
+bin/espdiff
 bin/filterdiff
 bin/fixcvsdiff
 bin/flipdiff
