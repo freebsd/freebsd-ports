@@ -22,7 +22,6 @@ PKGNAMESUFFIX=	-cnews
 EXTRA_PATCHES+=	${FILESDIR}/cnews.patch
 .else
 EXTRA_PATCHES+=	${FILESDIR}/inn2.patch
-BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/news/inn:configure
 BUILD_DEPENDS+=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
