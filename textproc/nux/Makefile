@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	nux
-PORTVERSION=	1.0a5
+PORTVERSION=	1.0
+PORTEPOCH=	1
 CATEGORIES=	textproc java
-MASTER_SITES=	http://dsd.lbl.gov/nux-download/snapshots/
+MASTER_SITES=	http://dsd.lbl.gov/nux-download/releases/
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Small open-source XQuery extension of the XOM library
@@ -28,24 +29,20 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 .if defined(WITH_VALIDATION_TOOL)
 RUN_DEPENDS+=	${JAVALIBDIR}/getopt.jar:${PORTSDIR}/java/java-getopt \
 		classpath:${PORTSDIR}/java/javavmwrapper
-VALIDATION_TOOL=fire-validate
 .endif
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 .if defined(WITH_VALIDATION_TOOL)
-PLIST_FILES+=	bin/${VALIDATION_TOOL}
+PLIST_FILES+=	bin/fire-validate
 .endif
 .if !defined(NOPORTDOCS)
-PORTDOCS=	api bugs.html changelog.html cvs.html dependencies.html \
-		gettingstarted.html images index.html install.html \
-		license.html licenses mailing.html readme.html \
-		relatedwork.html style.css todo.html tutorials.html
+PORTDOCS=	api changelog.html cvs.html dependencies.html \
+		gettingstarted.html images index.html license.html licenses \
+		mailing.html readme.html style.css todo.html
 .endif
 
 .if defined(WITH_VALIDATION_TOOL)
-do-configure:
-	${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},g ; s,%%JAVA%%,${JAVA},g' \
-	  ${FILESDIR}/${VALIDATION_TOOL}.sh >${WRKSRC}/${VALIDATION_TOOL}
+SUB_FILES=	fire-validate.sh
 .endif
 
 do-install:
@@ -55,7 +52,7 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .if defined(WITH_VALIDATION_TOOL)
 	@${ECHO_MSG} -n ">> Installing validation tool as ${PREFIX}/bin/${VALIDATION_TOOL}..."
-	@${INSTALL_SCRIPT} ${WRKSRC}/${VALIDATION_TOOL} ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKDIR}/fire-validate.sh ${PREFIX}/bin/fire-validate
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 .if !defined(NOPORTDOCS)

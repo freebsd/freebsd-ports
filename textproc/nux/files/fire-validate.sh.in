@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+JAVA_VERSION="1.4+" "%%LOCALBASE%%/bin/java" -classpath "`%%LOCALBASE%%/bin/classpath`" nux.xom.tests.ValidationCommand "$@"
