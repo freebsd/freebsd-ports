@@ -15,6 +15,6 @@
  
 -CC=gcc
 +CC?=gcc
- RELEASE=3.15
+ RELEASE=3.19
  
  balance:	balance.c butils.o balance.h
