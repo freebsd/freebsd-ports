@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--with-ssl -ssl-inc=/usr/include/openssl --ssl-lib=/usr/lib
 .endif
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=  ldap.2:\${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=  ldap.2:${PORTSDIR}/net/openldap2
 CONFIGURE_ARGS+=--with-ldapsam
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
@@ -61,7 +61,7 @@ WITH_CUPS=	yes
 .endif
 
 .if defined(WITH_CUPS)
-LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 .endif
