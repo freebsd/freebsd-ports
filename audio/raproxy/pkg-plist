@@ -1,2 +1,13 @@
 libexec/raproxy
-man/man8/raproxy.8.gz
+share/doc/raproxy/about.html
+share/doc/raproxy/advanced.html
+share/doc/raproxy/contents.html
+share/doc/raproxy/generic.html
+share/doc/raproxy/index.html
+share/doc/raproxy/moreinfo.html
+share/doc/raproxy/player.html
+share/doc/raproxy/raproxy.pdf
+share/doc/raproxy/thrdprty.html
+share/doc/raproxy/tproxy.pdf
+share/doc/raproxy/usekit.html
+@dirrm share/doc/raproxy

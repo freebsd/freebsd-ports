@@ -1,5 +1,23 @@
-Proxy for pnm: streams (real audio 5.0 and previous).
+THE REALAUDIO FIREWALL PROXY KIT 3.0 BETA 1
 
-The only way to get the source is to fill out a stupid form,
-which probably puts you on real's (spam) mailing list. A
-throwaway mail address is recommended.
+raproxy
+=======
+raproxy is the application-level proxy.  raproxy is meant as a
+reference implementation for those writing firewall software.
+
+raproxy can also be used with other firewall software, such as the
+TIS Firewall Toolkit (fwtk) to provide a means for people inside
+of a firewall to use RealAudio.  For more details on how to do this
+
+tproxy
+======
+tproxy is a reference implementation for a transparent proxy.  This
+is meant as a reference implementation for those writing firewall
+software.
+
+NOTE: tproxy is not immediately useful for firewall administrators who wish
+      to provide RealAudio access to users inside a firewall.  For
+      those that want an immediate solution for providing RealAudio,
+      please use raproxy.
+
+Copyright 1996, Progressive Networks, Inc.
