@@ -1,13 +1,15 @@
 bin/gdome-config
 lib/libgdome.a
 lib/libgdome.so
-lib/libgdome.so.6
+lib/libgdome.so.7
 lib/gdomeConf.sh
 include/libgdome/gdome.h
 include/libgdome/gdome-events.h
 include/libgdome/gdome-private-list.h
 include/libgdome/gdome-refdebug.h
+include/libgdome/gdome-treegc.h
 include/libgdome/gdome-util.h
+include/libgdome/gdome-xpath.h
 @dirrm include/libgdome
 %%PORTDOCS%%%%DOCSDIR%%/book1.html
 %%PORTDOCS%%%%DOCSDIR%%/gdome2-basic-types-and-enumerations.html
@@ -34,5 +36,14 @@ include/libgdome/gdome-util.h
 %%PORTDOCS%%%%DOCSDIR%%/gdome2-gdomenotation.html
 %%PORTDOCS%%%%DOCSDIR%%/gdome2-gdomeprocessinginstruction.html
 %%PORTDOCS%%%%DOCSDIR%%/gdome2-gdometext.html
+%%PORTDOCS%%%%DOCSDIR%%/gdome2-gdomexpathevaluator.html
+%%PORTDOCS%%%%DOCSDIR%%/gdome2-gdomexpathnamespace.html
+%%PORTDOCS%%%%DOCSDIR%%/gdome2-gdomexpathnsresolver.html
+%%PORTDOCS%%%%DOCSDIR%%/gdome2-gdomexpathresult.html
+%%PORTDOCS%%%%DOCSDIR%%/gdome2-memory.html
+%%PORTDOCS%%%%DOCSDIR%%/gdome2-module-private-list.html
+%%PORTDOCS%%%%DOCSDIR%%/gdome2-module-tree-garbage-collector.html
+%%PORTDOCS%%%%DOCSDIR%%/gdome2-xpath-basic-types-and-enumerations.html
+%%PORTDOCS%%%%DOCSDIR%%/gdome2-xpath.html
 %%PORTDOCS%%%%DOCSDIR%%/index.sgml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
