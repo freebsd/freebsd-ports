@@ -74,8 +74,9 @@ giftool-*		ports/graphics/giftool	Don't redistribute for profit
 GimpUserManual-*-ps.gz	ports/graphics/gimp-manual-ps	too big
 gnupg-*			ports/security/gnupg	Crypto; export-controlled
 graphviz-1.[234]*	ports/graphics/graphviz	Needs license before fetching
-hanIM-1.1b-glibc2.0.7-1.i386.rpm
-			ports/korean/hanIM	Not a free software
+hanIM-*			ports/korean/hanIM	Legal status is not clear
+						But FreeBSD is permitted to 
+						redistriute from author
 hjb3_0-linux.sfx	ports/www/hotjava	Licensed for individual
 						non-commercial use only.
 inn2-*			ports/news/inn2		Copyright file in package
