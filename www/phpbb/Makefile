@@ -15,7 +15,7 @@ DISTNAME=	phpBB-${PORTVERSION}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
-RUN_DEPENDS=	${LOCALBASE}/lib/php/System.php:${PORTSDIR}/www/mod_php4
+RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
 
 # The phpBB2 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.

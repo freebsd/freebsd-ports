@@ -17,7 +17,7 @@ COMMENT=	Gallery is a slick web based photo album written using PHP
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 		jhead:${PORTSDIR}/graphics/jhead \
 		unzip:${PORTSDIR}/archivers/unzip \
-		${LOCALBASE}/lib/php/System.php:${PORTSDIR}/www/mod_php4
+		${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated website package to distribute and manage content
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-RUN_DEPENDS=    ${LOCALBASE}/lib/php/System.php:${PORTSDIR}/www/mod_php4
+RUN_DEPENDS=    ${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear-PEAR
 
 NO_BUILD=	yes
 WRKSRC=         ${WRKDIR}/pn_714
