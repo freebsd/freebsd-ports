@@ -3447,6 +3447,7 @@ jfconv		ports/palm/jfconv
 jfk		ports/games/jfk
 jftp		ports/ftp/jftp
 jftpgw		ports/ftp/jftpgw
+jfreechart	ports/java/jfreechart
 jgraph		ports/graphics/jgraph
 jgv		ports/graphics/jgv
 jhead		ports/graphics/jhead
