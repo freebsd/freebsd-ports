@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.meme.hokudai.ac.jp/pub/games/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Puyo-puyo, tetris like puzzle game for X11
 
+BROKEN=		"connection is refused when attempting to contact website"
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_IMAKE=	yes
