@@ -596,7 +596,6 @@ share/gnome/idl/Terminal.idl
 share/gnome/idl/gnome-panel.idl
 share/gnome/idl/help-browser.idl
 share/gnome/mc/templates/GIMP.desktop
-share/gnome/panelrc
 share/gnome/pixmaps/apple-green.png
 share/gnome/pixmaps/apple-red.png
 share/gnome/pixmaps/fish/fishanim.png
@@ -775,6 +774,7 @@ share/locale/sl/LC_MESSAGES/gnome-core.mo
 share/locale/sp/LC_MESSAGES/gnome-core.mo
 share/locale/sr/LC_MESSAGES/gnome-core.mo
 share/locale/sv/LC_MESSAGES/gnome-core.mo
+share/locale/ta/LC_MESSAGES/gnome-core.mo
 share/locale/tr/LC_MESSAGES/gnome-core.mo
 share/locale/uk/LC_MESSAGES/gnome-core.mo
 share/locale/wa/LC_MESSAGES/gnome-core.mo
