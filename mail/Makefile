@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.46 1997/08/24 15:50:16 itojun Exp $
+# $Id: Makefile,v 1.47 1997/09/06 22:29:51 wosch Exp $
 #
 
+    SUBDIR += adcomplain
     SUBDIR += bulk_mailer
     SUBDIR += cucipop
     SUBDIR += cyrus
