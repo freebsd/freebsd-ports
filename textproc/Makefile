@@ -193,6 +193,7 @@
     SUBDIR += nltk
     SUBDIR += no-aspell
     SUBDIR += ocaml-pxp
+    SUBDIR += ocaml-yaxi
     SUBDIR += ocaml-yaxpo
     SUBDIR += openfts
     SUBDIR += openjade
