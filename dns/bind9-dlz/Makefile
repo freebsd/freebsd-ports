@@ -57,7 +57,8 @@ CONFIGURE_ARGS+=	--with-dlz-postgres
 .endif
 
 .if defined(WITH_MYSQL_DRIVER)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+MYSQL_PORT?=	databases/mysql323-client
+LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/${MYSQL_PORT}
 CONFIGURE_ARGS+=	--with-dlz-mysql
 .endif
 
