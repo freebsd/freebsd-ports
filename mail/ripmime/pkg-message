@@ -1,0 +1,9 @@
+To use RipMIME...
+
+        If you have an MIME encoded archive (say from sendmail's output)
+        called recvmail001.mime and you wish to unpack it to a directory
+        (which already exists) called "/var/tmp/unpack", then use ripMIME
+        as follows...
+
+                ripmime -i recvmail001.mime -d /var/tmp/unpack
+
