@@ -2,3 +2,4 @@ bin/html2ps
 lib/html2ps/html2ps.html
 lib/html2ps/html2psrc
 lib/html2ps/hyphen.tex
+@dirrm lib/html2ps
