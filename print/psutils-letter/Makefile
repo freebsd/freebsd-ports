@@ -26,7 +26,7 @@ PAPERSIZE=letter
 PAPERSIZE_UNSPECIFIED=	yes
 .else
 .if ${PAPERSIZE} != A3 && ${PAPERSIZE} != a3 && ${PAPERSIZE} != A4 \
-    && ${PAPERSIZE} != a4 && ${PAPERSIZE} != A5 && ${PAPERSIZE} != a5 \
+	&& ${PAPERSIZE} != a4 && ${PAPERSIZE} != A5 && ${PAPERSIZE} != a5 \
 	&& ${PAPERSIZE} != B4 && ${PAPERSIZE} != b4 \
 	&& ${PAPERSIZE} != B5 && ${PAPERSIZE} != b5 \
 	&& ${PAPERSIZE} != letter && ${PAPERSIZE} != legal \

@@ -21,8 +21,8 @@ CONFIGURE_ARGS=	--with-skey \
 		--with-ignore-dot \
 		--with-tty-tickets \
 		--with-env-editor \
-  		--with-insults \
-  		--with-all-insults \
+		--with-insults \
+		--with-all-insults \
 		--with-logincap \
 		--disable-root-sudo
 

@@ -9,7 +9,7 @@ PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}b${JDK_BETALEVEL}
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/communitysource/java2/
-                # http://www.eyesbeyond.com/freebsddom/java/jdk.html
+		# http://www.eyesbeyond.com/freebsddom/java/jdk.html
 DISTFILES=	${PORTNAME}${JDK_VERSION:S/./_/g}-src${EXTRACT_SUFX} \
 		freebsd-jdk122-patches-${JDK_BETALEVEL}.tar.gz
 

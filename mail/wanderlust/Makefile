@@ -28,7 +28,7 @@ EMACS_PORT_NAME=	emacs
 .endif
 
 .if (${EMACS_PORT_NAME} == "emacs20" || ${EMACS_PORT_NAME} == "mule" || \
-     ${EMACS_PORT_NAME} == "xemacs21-mule")
+	${EMACS_PORT_NAME} == "xemacs21-mule")
 WITH_MULE=yes
 .else
 WITHOUT_MULE=yes
@@ -50,7 +50,7 @@ UTILSDIR=	${EMACS_PACKAGESDIR}/lisp/wl
 STARTUPDIR=	${EMACS_PACKAGESDIR}/lisp/wl
 .else
 ALL_TARGET=	all info
-INSTALL_TARGET= install install-info
+INSTALL_TARGET=	install install-info
 INFODIR=	${PREFIX}/info
 UTILSDIR=	${EMACS_SITE_LISPDIR}/wl
 .if (${EMACS_PORT_NAME} == "xemacs20")

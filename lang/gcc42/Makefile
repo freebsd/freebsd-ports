@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.freesoftware.com/pub/sourceware/gcc/snapshots/${SNAPDATE
 		ftp://ftp.ninemoons.com/pub/mirrors/egcs/snapshots/${SNAPDATE}/ \
 		ftp://ftp.iij.ad.jp/pub/egcs/snapshots/${SNAPDATE}/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/  \
- 		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/
 DISTFILES=	gcc-core-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \

@@ -39,7 +39,7 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_JISYO) || (exists(${LOCALBASE}/share/skk/${SKKJISYO}) \
-    && !defined(WITHOUT_JISYO))
+	&& !defined(WITHOUT_JISYO))
 pre-build::
 	${CP} ${LOCALBASE}/share/skk/${SKKJISYO} ${WRKSRC}
 .else
