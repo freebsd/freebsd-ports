@@ -1,0 +1,55 @@
+bin/isoqlog
+@unexec if cmp -s %D/etc/isoqlog.conf %D/etc/isoqlog.conf-dist; then rm -f %D/etc/isoqlog.conf; fi
+etc/isoqlog.conf-dist
+@exec [ -f %B/isoqlog.conf ] || cp %B/%f %B/isoqlog.conf
+@unexec if cmp -s %D/etc/isoqlog.domains %D/etc/isoqlog.domains-dist; then rm -f %D/etc/isoqlog.domains; fi
+etc/isoqlog.domains-dist
+@exec [ -f %B/isoqlog.domains ] || cp %B/%f %B/isoqlog.domains
+share/doc/isoqlog/AUTHORS
+share/doc/isoqlog/ChangeLog
+share/doc/isoqlog/COPYING
+share/doc/isoqlog/EnderUNIX
+share/doc/isoqlog/INSTALL
+share/doc/isoqlog/NEWS
+share/doc/isoqlog/README
+share/doc/isoqlog/README.Turkish
+share/doc/isoqlog/TODO
+share/doc/isoqlog/tr/BENIOKU
+share/doc/isoqlog/tr/DEGISIKLIKLER
+share/doc/isoqlog/tr/HABERLER
+share/doc/isoqlog/tr/KOPYALAMA
+share/doc/isoqlog/tr/KURULUM
+share/doc/isoqlog/tr/YAZARLAR
+share/isoqlog/htmltemp/daily.html
+share/isoqlog/htmltemp/days.html
+share/isoqlog/htmltemp/domain.html
+share/isoqlog/htmltemp/index.html
+share/isoqlog/htmltemp/generaldaily.html
+share/isoqlog/htmltemp/generaldomain.html
+share/isoqlog/htmltemp/generalmonthly.html
+share/isoqlog/htmltemp/generalyearly.html
+share/isoqlog/htmltemp/monthly.html
+share/isoqlog/htmltemp/images/dot.gif
+share/isoqlog/htmltemp/images/home.gid
+share/isoqlog/htmltemp/images/isoqlog.gif
+share/isoqlog/htmltemp/images/pk.gif
+share/isoqlog/htmltemp/images/up.gif
+share/isoqlog/htmltemp/library/isoqlog.css
+share/isoqlog/lang/dutch
+share/isoqlog/lang/english
+share/isoqlog/lang/french
+share/isoqlog/lang/german
+share/isoqlog/lang/italian
+share/isoqlog/lang/norwegian
+share/isoqlog/lang/polish
+share/isoqlog/lang/portuguese
+share/isoqlog/lang/spanish
+share/isoqlog/lang/swedish
+share/isoqlog/lang/turkish
+@dirrm share/doc/isoqlog/tr
+@dirrm share/doc/isoqlog
+@dirrm share/isoqlog/htmltemp/images
+@dirrm share/isoqlog/htmltemp/library
+@dirrm share/isoqlog/htmltemp
+@dirrm share/isoqlog/lang
+@dirrm share/isoqlog

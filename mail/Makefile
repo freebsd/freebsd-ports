@@ -74,6 +74,7 @@
     SUBDIR += imap-uw
     SUBDIR += imp
     SUBDIR += imp3
+    SUBDIR += isoqlog
     SUBDIR += isync
     SUBDIR += junkfilter
     SUBDIR += kbiff
