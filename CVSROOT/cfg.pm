@@ -79,7 +79,7 @@ $IDHEADER = 'FreeBSD';	# Our RCS header is '$ FreeBSD $',
 # Contract any instances of $IDHEADER in the source file before committing.
 # This is useful because it means that expanded headers aren't stored in
 # the repository as part of the delta.
-$UNEXPAND_RCSID = 0;
+$UNEXPAND_RCSID = 1;
 
 
 ####################
