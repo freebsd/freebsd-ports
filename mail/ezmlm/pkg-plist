@@ -1,0 +1,10 @@
+bin/ezmlm-make
+bin/ezmlm-manage
+bin/ezmlm-send
+bin/ezmlm-reject
+bin/ezmlm-return
+bin/ezmlm-warn
+bin/ezmlm-weed
+bin/ezmlm-list
+bin/ezmlm-sub
+bin/ezmlm-unsub
