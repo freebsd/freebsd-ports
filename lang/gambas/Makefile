@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		0.93a
+PORTVERSION=		0.93b
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
 
@@ -25,7 +25,8 @@ LIBTOOLFLAGS=		# none
 USE_GMAKE=		yes
 USE_GCC=		3.3
 CONFIGURE_ARGS=		--with-conv-includes=${LOCALBASE}/include	\
-			--with-conv-libraries=${LOCALBASE}/lib
+			--with-conv-libraries=${LOCALBASE}/lib		\
+			--with-moc=${X11BASE}/bin
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"		\
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_MYSQL=		yes
