@@ -30,6 +30,10 @@ MAKE_ENV=	system=FreeBSD \
 		hugs_install=${HGL_LIBS}
 ALL_TARGET=	all
 
+.if ${MACHINE_ARCH:L} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 do-install:
 	${MKDIR} ${HGL_LIBS}
 	${MKDIR} ${HGL_LIBS}/demos
