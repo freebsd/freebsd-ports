@@ -9,16 +9,14 @@ PORTNAME=	analog
 PORTVERSION=	4.16
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
-		http://brendanr.simplenet.com/analog/ \
-		http://www.magma.ca/~brendanr/analog/ \
 		http://www.monash.edu.au/mirror/analog/ \
 		http://analog.gsp.com/ \
-		http://analog.technomancer.com/ \
-		ftp://ftp.netcasting.net/pub/packages/analog/ \
-		ftp://download.netvision.net.il/pub/mirrors/analog/ \
-		ftp://mabuse.phil.uni-passau.de/pub/mirrors/analog/
+		http://analog.barringtons.com/ \
+		http://www.pomfret.net/mirror/analog/ \
+		http://analog.org/loganalysis/ \
+		http://www.skreamsoft.com/analogmirror/ \
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	mharo@FreeBSD.org
 
 MAKE_FLAGS=	-DPREFIX=${PREFIX} -f
 ALL_TARGET=	analog
