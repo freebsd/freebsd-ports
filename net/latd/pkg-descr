@@ -1,0 +1,13 @@
+The linux-decnet project is an effort to bring full DECnet
+support to Linux; however, they also separately offer the latd
+package, a collection of programs that speak Digital's old Local
+Area Terminal (LAT) protocol.  These programs enable network
+clients to reach serial devices connected to old LAT-only
+terminal servers, such as the DECserver 200/MC.
+
+This is a redistribution of the linux-decnet project's software,
+with FreeBSD compatability added. It is based very closely on the
+NetBSD port by Matt Fredette and has benefitted from the
+wonderful assistance of Patrick Caulfield (the original author).
+
+WWW: http://linux-decnet.sourceforge.net/

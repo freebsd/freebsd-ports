@@ -273,6 +273,7 @@
     SUBDIR += l2tpd
     SUBDIR += lam
     SUBDIR += lambdamoo
+    SUBDIR += latd
     SUBDIR += ldap2dns
     SUBDIR += ldapbrowser
     SUBDIR += ldapdiff
