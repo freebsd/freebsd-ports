@@ -1,13 +1,4 @@
 bin/lineakd
 etc/lineakkb.def
-lib/charset.alias
-share/locale/locale.alias
-share/doc/lineakd/README
-share/doc/lineakd/COPYING
-share/doc/lineakd/AUTHORS
-share/doc/lineakd/ChangeLog
-share/doc/lineakd/INSTALL
-share/doc/lineakd/NEWS
-share/doc/lineakd/TODO
-share/doc/lineakd/ABOUT-NLS
-@dirrm share/doc/lineakd
+%%EXAMPLESDIR%%/lineakd.conf.example
+@dirrm %%EXAMPLESDIR%%
