@@ -6,10 +6,10 @@
 #
 
 PORTNAME?=	cdrdao
-PORTVERSION=	1.1.8
-PORTREVISION?=	1
+PORTVERSION=	1.1.9
+PORTREVISION?=	0
 CATEGORIES=	sysutils audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	cdrdao
 DISTNAME=	cdrdao-${PORTVERSION}
 
@@ -49,25 +49,29 @@ CONFIGURE_ARGS+=	--with-pcctsbin=${LOCALBASE}/bin \
 			--without-posix-threads
 #CONFIGURE_ARGS+=	--without-scglib
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
-MAKE_ENV=		CCOM=${CC}
+MAKE_ENV=		CCOM=${CC} LANG=C
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 .if ${PORTNAME} != "gcdmaster" && !defined(WITH_TOC2MP3)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build option(s):"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "WITH_TOC2MP3=yes	builds toc2mp3 (requires audio/lame)"
+	@${ECHO_MSG} "WITH_TOC2MP3=yes	builds with toc2mp3 (requires audio/lame)"
 	@${ECHO_MSG} ""
 .endif
 
 post-extract:
-.if ${MACHINE_ARCH} != "i386" || ${CC} != "cc"
+.if ${ARCH} != "i386" || ${CC} != "cc"
 	@${LN} -sf ${WRKSRC}/scsilib/RULES/i386-freebsd-cc.rul \
-		${WRKSRC}/scsilib/RULES/${MACHINE_ARCH}-freebsd-${CC}.rul
+		${WRKSRC}/scsilib/RULES/${ARCH}-freebsd-${CC}.rul
 .endif
 
 post-patch:
-.for i in 45libdeflt 45librscg 55rscsi
+.for i in 45libdeflt 45libedc 45libfile 45libhfs_iso 45libparanoia 45libunls \
+	45librscg 55cdda2wav 55cdrecord 55cmd 55mkisofs 55mkisofs!@!diag \
+	55readcd 55scgcheck 55scgskeleton 55rscsi 85man
 	@${RM} ${WRKSRC}/scsilib/TARGETS/${i}
 .endfor
 .if ${PORTNAME} == "gcdmaster"
@@ -112,4 +116,4 @@ do-install:
 .endif
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
