@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://aig.cs.man.ac.uk/pub/Maverik/
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
+
 USE_MESA=	yes
 WANT_GTK=	yes
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
@@ -27,7 +29,7 @@ MANCOMPRESSED=	no
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_PNG)
-LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
 
 CONFIGURE_ARGS+=	--PNGLIBS="${LOCALBASE}/lib -lpng" \
 			--PNGINCL="${LOCALBASE}/include"
