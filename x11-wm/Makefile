@@ -52,6 +52,7 @@
     SUBDIR += libepplet
     SUBDIR += lwm
     SUBDIR += metacity
+    SUBDIR += metacity-setup
     SUBDIR += mlvwm
     SUBDIR += mosfet-liquid
     SUBDIR += olvwm
