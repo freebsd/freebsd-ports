@@ -1,0 +1,31 @@
+--- src/modules/standard/mod_auth_db.module.bak	Tue Oct 16 13:12:02 2001
++++ src/modules/standard/mod_auth_db.module	Thu Feb 20 12:55:19 2003
+@@ -4,23 +4,23 @@
+     DB_LIB=''
+     if ./helpers/TestCompile func db_create; then
+         DB_VERSION='Berkeley-DB/3.x'
+-    elif ./helpers/TestCompile lib db db_create; then
++    elif ./helpers/TestCompile lib dbXXX db_create; then
+         DB_VERSION='Berkeley-DB/3.x'
+         DB_LIB='-ldb'
+     elif ./helpers/TestCompile func db_open; then
+         DB_VERSION='Berkeley-DB/2.x'
+-    elif ./helpers/TestCompile lib db db_open; then
++    elif ./helpers/TestCompile lib dbXXX db_open; then
+         DB_VERSION='Berkeley-DB/2.x'
+         DB_LIB='-ldb'
+-    elif ./helpers/TestCompile lib db2 db_open; then
++    elif ./helpers/TestCompile lib db2XXX db_open; then
+         DB_VERSION='Berkeley-DB/2.x'
+         DB_LIB='-ldb2'
+     elif ./helpers/TestCompile func dbopen; then
+         DB_VERSION='Berkeley-DB/1.x'
+-    elif ./helpers/TestCompile lib db dbopen; then
++    elif ./helpers/TestCompile lib dbXXX dbopen; then
+         DB_VERSION='Berkeley-DB/1.x'
+         DB_LIB='-ldb'
+-    elif ./helpers/TestCompile lib db1 dbopen; then
++    elif ./helpers/TestCompile lib db1XXX dbopen; then
+         DB_VERSION='Berkeley-DB/1.x'
+         DB_LIB='-ldb1'
+     elif TCADDINCL='#include <db.h>' INCLUDES1="$INCLUDES1 -I/usr/include/db1" TLIB="-ldb1" \

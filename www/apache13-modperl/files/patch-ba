@@ -1,0 +1,20 @@
+--- src/support/Makefile.tmpl.orig	Sat Mar  2 20:46:23 2002
++++ src/support/Makefile.tmpl	Tue Oct 22 00:31:18 2002
+@@ -7,7 +7,7 @@
+ # LIBS=-L$(SSLLOC)/lib -lssl -lcrypto -lm -lap -los $(EXTRA_LIBS) $(LIBS1)
+ # INCLUDES=-I$(SSLLOC)/include $(INCLUDES1) $(INCLUDES0) $(EXTRA_INCLUDES)
+ 
+-CFLAGS=$(OPTIM) $(CFLAGS1) $(EXTRA_CFLAGS)
++CFLAGS=-DLOGIN_CAP $(OPTIM) $(CFLAGS1) $(EXTRA_CFLAGS)
+ LIBS=-lm -lap -los $(EXTRA_LIBS) $(LIBS1)
+ INCLUDES=$(INCLUDES1) $(INCLUDES0) $(EXTRA_INCLUDES)
+ LDFLAGS=$(LDFLAGS1) $(EXTRA_LDFLAGS) -L$(OSDIR) -L$(SRCDIR)/ap
+@@ -50,7 +50,7 @@
+ 	    -e 's%@LIBS_SHLIB@%$(LIBS_SHLIB)%g' && chmod a+x apxs
+ 
+ suexec: suexec.o
+-	$(CC) $(CFLAGS) -o suexec $(LDFLAGS) suexec.o $(LIBS)
++	$(CC) $(CFLAGS) -lutil -o suexec $(LDFLAGS) suexec.o $(LIBS)
+ 
+ clean:
+ 	rm -f $(TARGETS) *.o

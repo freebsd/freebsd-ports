@@ -1,0 +1,99 @@
+--- Makefile.tmpl.orig	Thu Mar 14 00:05:27 2002
++++ Makefile.tmpl	Sat Jun 22 09:33:52 2002
+@@ -270,10 +270,10 @@
+ 	$(MKDIR) $(root)$(mandir)/man1
+ 	$(MKDIR) $(root)$(mandir)/man8
+ 	$(MKDIR) $(root)$(sysconfdir)
+-	$(MKDIR) $(root)$(htdocsdir)
++	$(MKDIR) $(root)$(htdocsdir)-dist
+ 	$(MKDIR) $(root)$(manualdir)
+ 	$(MKDIR) $(root)$(iconsdir)
+-	$(MKDIR) $(root)$(cgidir)
++	$(MKDIR) $(root)$(cgidir)-dist
+ 	$(MKDIR) $(root)$(includedir)
+ 	$(MKDIR) $(root)$(includedir)/xml
+ 	$(MKDIR) $(root)$(runtimedir)
+@@ -459,33 +459,29 @@
+ #   icons and distributed CGI scripts.
+ install-data:
+ 	@echo "===> [data: Installing initial data files]"
+-	-@if [ -f $(root)$(htdocsdir)/index.html ] || [ -f $(root)$(htdocsdir)/index.html.en ]; then \
+-		echo "[PRESERVING EXISTING DATA SUBDIR: $(root)$(htdocsdir)/]"; \
+-	else \
+-		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(htdocsdir)/"; \
++		echo "Copying tree $(TOP)/htdocs/ -> $(root)$(htdocsdir)-dist/"; \
+ 		(cd $(TOP)/htdocs/ && $(TAR) $(TAROPT) - index* apache_pb.* ) |\
+-		(cd $(root)$(htdocsdir)/ && $(TAR) -xf -); \
+-		find $(root)$(htdocsdir)/ -type d -exec chmod a+rx {} \; ; \
+-		find $(root)$(htdocsdir)/ -type f -print | xargs chmod a+r ; \
+-	fi
+-	-@if [ -d $(TOP)/htdocs/manual ]; then \
++		(cd $(root)$(htdocsdir)-dist/ && $(TAR) -xf -); \
++		find $(root)$(htdocsdir)-dist/ -type d -exec chmod a+rx {} \; ; \
++		find $(root)$(htdocsdir)-dist/ -type f -print | xargs chmod a+r ;
+ 		echo "Copying tree $(TOP)/htdocs/manual -> $(root)/$(manualdir)/"; \
+ 		(cd $(TOP)/htdocs/manual/ && $(TAR) $(TAROPT) - *) |\
+ 		(cd $(root)$(manualdir)/ && $(TAR) -xf -); \
+ 		find $(root)$(manualdir)/ -type d -exec chmod a+rx {} \; ; \
+-		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ; \
++		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ;
++	if [ ! -d $(root)$(htdocsdir)/ ]; then \
++		$(LN) -sf $(root)$(htdocsdir)-dist $(root)$(htdocsdir); \
+ 	fi
+-	-@if [ -f $(root)$(cgidir)/printenv ]; then \
+-		echo "[PRESERVING EXISTING CGI SUBDIR: $(root)$(cgidir)/]"; \
+-	else \
+ 		for script in printenv test-cgi; do \
+ 			cat $(TOP)/cgi-bin/$${script} |\
+ 			sed -e 's;^#!/.*perl;#!$(PERL);' \
+ 			> $(TOP)/$(SRC)/.apaci.install.tmp; \
+-			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir)/$${script}"; \
+-			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir)/$${script}; \
+-		done; \
+-	fi
++			echo "$(INSTALL_DATA) $(TOP)/conf/$${script}[*] $(root)$(cgidir)-dist/$${script}"; \
++			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(cgidir)-dist/$${script}; \
++		done;
++	if [ ! -d $(root)$(cgidir)/ ]; then \
++		$(LN) -sf $(root)$(cgidir)-dist $(root)$(cgidir); \
++  	fi
+ 	@echo "Copying tree $(TOP)/icons/ -> $(root)$(iconsdir)/"; \
+ 	(cd $(TOP)/icons/ && $(TAR) $(TAROPT) - *) |\
+ 	(cd $(root)$(iconsdir)/ && $(TAR) -xf -); \
+@@ -524,10 +520,10 @@
+ 			-e 's;logs/accept\.lock;$(runtimedir)/$(TARGET).lock;' \
+ 			-e 's;logs/apache_runtime_status;$(runtimedir)/$(TARGET).scoreboard;' \
+ 			-e 's;logs/httpd\.pid;$(runtimedir)/$(TARGET).pid;' \
+-			-e "s;logs/access_log;$(logfiledir)/$${target_prefix}access_log;" \
+-			-e "s;logs/error_log;$(logfiledir)/$${target_prefix}error_log;" \
+-			-e "s;logs/referer_log;$(logfiledir)/$${target_prefix}referer_log;" \
+-			-e "s;logs/agent_log;$(logfiledir)/$${target_prefix}agent_log;" \
++			-e "s;logs/access_log;$(logfiledir)/$${target_prefix}httpd-access.log;" \
++			-e "s;logs/error_log;$(logfiledir)/$${target_prefix}httpd-error.log;" \
++			-e "s;logs/referer_log;$(logfiledir)/$${target_prefix}httpd-referer.log;" \
++			-e "s;logs/agent_log;$(logfiledir)/$${target_prefix}httpd-agent.log;" \
+ 			-e 's;conf/magic;$(sysconfdir)/magic;' \
+ 			-e 's;conf/mime\.types;$(sysconfdir)/mime.types;' \
+ 			-e 's;User nobody;User $(conf_user);' \
+@@ -537,8 +533,8 @@
+ 			-e 's;ServerAdmin you@your.address;ServerAdmin $(conf_serveradmin);' \
+ 			-e 's;ServerName new.host.name;ServerName $(conf_servername);' \
+ 			> $(TOP)/$(SRC)/.apaci.install.tmp && \
+-		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}.default"; \
+-		$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}.default; \
++		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}-dist"; \
++		$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}-dist; \
+ 		if [ ! -f "$(root)$(sysconfdir)/$${target_conf}" ]; then \
+ 			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf}-dist[*] $(root)$(sysconfdir)/$${target_conf}"; \
+ 			$(INSTALL_DATA) $(TOP)/$(SRC)/.apaci.install.tmp $(root)$(sysconfdir)/$${target_conf}; \
+@@ -547,8 +543,8 @@
+ 		fi; \
+ 	done
+ 	-@for conf in mime.types magic; do \
+-		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}.default"; \
+-		$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}.default; \
++		echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}-dist"; \
++		$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}-dist; \
+ 		if [ ! -f "$(root)$(sysconfdir)/$${conf}" ]; then \
+ 			echo "$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}"; \
+ 			$(INSTALL_DATA) $(TOP)/conf/$${conf} $(root)$(sysconfdir)/$${conf}; \

@@ -1,0 +1,60 @@
+--- conf/httpd.conf-dist.orig	Wed Jan  9 19:05:31 2002
++++ conf/httpd.conf-dist	Fri Jan 25 07:59:12 2002
+@@ -356,7 +356,22 @@
+ # directory index.  Separate multiple entries with spaces.
+ #
+ <IfModule mod_dir.c>
+-    DirectoryIndex index.html
++    <IfModule mod_php3.c>
++        <IfModule mod_php4.c>
++            DirectoryIndex index.php index.php3 index.html
++        </IfModule>
++        <IfModule !mod_php4.c>
++            DirectoryIndex index.php3 index.html
++        </IfModule>
++    </IfModule>
++    <IfModule !mod_php3.c>
++        <IfModule mod_php4.c>
++            DirectoryIndex index.php index.html
++        </IfModule>
++        <IfModule !mod_php4.c>
++            DirectoryIndex index.html
++        </IfModule>
++    </IfModule>
+ </IfModule>
+ 
+ #
+@@ -476,7 +491,7 @@
+ # define per-<VirtualHost> access logfiles, transactions will be
+ # logged therein and *not* in this file.
+ #
+-CustomLog logs/access_log common
++#CustomLog logs/access_log common
+ 
+ #
+ # If you would like to have agent and referer logfiles, uncomment the
+@@ -489,7 +504,7 @@
+ # If you prefer a single logfile with access, agent, and referer information
+ # (Combined Logfile Format) you can use the following directive.
+ #
+-#CustomLog logs/access_log combined
++CustomLog logs/access_log combined
+ 
+ #
+ # Optionally add a line containing the server version and virtual host
+@@ -759,6 +774,15 @@
+     #
+     <IfModule mod_negotiation.c>
+         LanguagePriority en da nl et fr de el it ja kr no pl pt pt-br ru ltz ca es sv tw
++    </IfModule>
++
++    <IfModule mod_php3.c>
++	AddType application/x-httpd-php3 .php3
++	AddType application/x-httpd-php3-source .php3s
++    </IfModule>
++    <IfModule mod_php4.c>
++	AddType application/x-httpd-php .php
++	AddType application/x-httpd-php-source .phps
+     </IfModule>
+ 
+     #
