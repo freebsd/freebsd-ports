@@ -64,6 +64,7 @@ lib/tcl%%TCL_VER%%/encoding/euc-kr.enc
 lib/tcl%%TCL_VER%%/encoding/gb12345.enc
 lib/tcl%%TCL_VER%%/encoding/gb1988.enc
 lib/tcl%%TCL_VER%%/encoding/gb2312.enc
+lib/tcl%%TCL_VER%%/encoding/gb2312-raw.enc
 lib/tcl%%TCL_VER%%/encoding/iso2022-jp.enc
 lib/tcl%%TCL_VER%%/encoding/iso2022-kr.enc
 lib/tcl%%TCL_VER%%/encoding/iso2022.enc
