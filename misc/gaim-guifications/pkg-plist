@@ -38,6 +38,7 @@ share/gnome/pixmaps/gaim/guifications/themes/mini/theme.xml
 %%NLS%%share/locale/es/LC_MESSAGES/guifications.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/guifications.mo
 %%NLS%%share/locale/he/LC_MESSAGES/guifications.mo
+%%NLS%%share/locale/it/LC_MESSAGES/guifications.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/guifications.mo
 %%NLS%%share/locale/no/LC_MESSAGES/guifications.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/guifications.mo
