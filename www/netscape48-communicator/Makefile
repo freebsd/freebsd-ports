@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.21 1998/08/24 10:04:55 markm Exp $
+# $Id: Makefile,v 1.22 1998/10/09 11:11:12 obrien Exp $
 #
 
 DISTNAME=       netscape-communicator-4.07
@@ -13,6 +13,8 @@ DISTFILES=      communicator-v407-export.x86-unknown-freebsd.tar.gz ${AUTOADMIN}
 AUTOADMIN=      autoadmin-v407.x86-unknown-freebsd.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
+
+NO_FILTER_SHLIBS=	yes
 
 WRKSRC=         ${WRKDIR}/communicator-v407.x86-unknown-freebsd
 NO_BUILD=       Yes
