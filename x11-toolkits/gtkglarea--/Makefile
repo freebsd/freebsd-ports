@@ -13,15 +13,14 @@ MASTER_SITES=	http://www.ece.ucdavis.edu/~kenelson/gtk-glarea/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
-		gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
+LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
+		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_MESA=	yes
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-lib-GL
 INSTALLS_SHLIB=	yes
 
