@@ -382,6 +382,7 @@
     SUBDIR += pvm
     SUBDIR += pvm++
     SUBDIR += py-adns
+    SUBDIR += py-fngrab
     SUBDIR += py-ipy
     SUBDIR += py-jabber
     SUBDIR += py-ldap1
