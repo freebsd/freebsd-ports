@@ -323,6 +323,7 @@
     SUBDIR += pen
     SUBDIR += perldap
     SUBDIR += pfinger
+    SUBDIR += phex
     SUBDIR += pim6dd
     SUBDIR += pim6sd
     SUBDIR += pipsecd
