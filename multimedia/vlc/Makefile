@@ -176,7 +176,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.8.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \

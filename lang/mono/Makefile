@@ -8,6 +8,7 @@
 
 PORTNAME=	mono
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/${PORTVERSION}/
 

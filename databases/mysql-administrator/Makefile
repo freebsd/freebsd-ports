@@ -7,7 +7,7 @@
 
 PORTNAME=	mysql-administrator
 PORTVERSION=	1.0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.softagency.co.jp/MySQL/%SUBDIR%/ \
 		ftp://sunsite.dk/mirrors/mysql/%SUBDIR%/ \

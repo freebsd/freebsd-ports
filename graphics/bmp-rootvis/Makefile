@@ -7,6 +7,7 @@
 
 PORTNAME=	bmp-rootvis
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.berlios.de/bmp-plugins/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	libgnomesu
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	http://members1.chello.nl/~h.lai/libgnomesu/
 

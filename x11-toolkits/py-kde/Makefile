@@ -7,7 +7,7 @@
 
 PORTNAME=	kde
 PORTVERSION=	3.11.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits kde python
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/PyKDE2/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

@@ -8,7 +8,7 @@
 
 PORTNAME=	jpilot
 PORTVERSION=	0.99.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://jpilot.org/
 

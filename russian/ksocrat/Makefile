@@ -6,7 +6,7 @@
 
 PORTNAME=	ksocrat
 PORTVERSION=	3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	russian kde
 MASTER_SITES=	http://ksocrat.linux.kiev.ua/download/ \
 		http://voodoo.oberon.net/download/

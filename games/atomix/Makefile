@@ -7,7 +7,7 @@
 
 PORTNAME=	atomix
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games gnome
 MASTER_SITES=	http://triq.net/~jens/download/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	pager
 PORTVERSION=	0.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dapfy.bei.t-online.de/sawfish/pager/
 EXTRACT_SUFX=	.tgz

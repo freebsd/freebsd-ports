@@ -8,6 +8,7 @@
 
 PORTNAME=	showimg
 PORTVERSION=	0.9.4.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.jalix.org/projects/showimg/download/0.9.4-1/

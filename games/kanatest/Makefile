@@ -7,7 +7,7 @@
 
 PORTNAME=	kanatest
 PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://clay.ll.pl/download/
 

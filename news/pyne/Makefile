@@ -8,7 +8,7 @@
 
 PORTNAME=	pyne
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news python mail
 MASTER_SITES=	http://www.soul-less.pwp.blueyonder.co.uk/pyne/
 

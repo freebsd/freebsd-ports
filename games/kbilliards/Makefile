@@ -6,6 +6,7 @@
 
 PORTNAME=	kbilliards
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	games kde
 MASTER_SITES=	http://www.hostnotfound.it/kbilliards/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	kompose
 PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://download.berlios.de/kompose/
 

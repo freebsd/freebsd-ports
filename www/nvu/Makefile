@@ -7,6 +7,7 @@
 
 PORTNAME=	nvu
 PORTVERSION=	0.90
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://cvs.nvu.com/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-sources

@@ -7,7 +7,7 @@
 
 PORTNAME=	mdh
 PORTVERSION=	1.9.54
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://www.gozer.org/my_stuff/gtk/gtk/mdh/
 

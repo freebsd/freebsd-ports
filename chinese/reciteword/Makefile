@@ -7,6 +7,7 @@
 
 PORTNAME=	reciteword
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	chinese
 MASTER_SITES=	http://reciteword.cosoft.org.cn/yaoguang/myapps/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \

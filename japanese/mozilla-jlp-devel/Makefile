@@ -7,7 +7,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.8.a6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	ftp://ftp.mozilla-japan.org/pub/mozilla-japan/mozilla/development/1.8a6/
 PKGNAMESUFFIX=	-jlp

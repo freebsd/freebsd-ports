@@ -7,6 +7,7 @@
 
 PORTNAME=	kwatch
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://www.m-j-s.net/pub/kde/ \
 		${MASTER_SITE_KDE}

@@ -6,7 +6,7 @@
 
 PORTNAME=	knemo
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net kde
 MASTER_SITES=	http://www.eris23.de/knemo/
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	goats
 PORTVERSION=	2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.menudo.freeserve.co.uk/
 

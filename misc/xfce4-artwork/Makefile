@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-artwork
 PORTVERSION=	0.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc xfce
 MASTER_SITES=	http://download.berlios.de/xfce-goodies/
 DIST_SUBDIR=	xfce4

@@ -7,6 +7,7 @@
 
 PORTNAME=	xcurs
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	x11 python
 MASTER_SITES=	http://varg.dyndns.org/psi/files/xcurs/ \
 		http://freebsd.nsu.ru/distfiles/

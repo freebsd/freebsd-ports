@@ -7,7 +7,7 @@
 
 PORTNAME=	koctave3
 PORTVERSION=	0.65
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math kde
 MASTER_SITES=	http://bubben.homelinux.net/~matti/koctave/
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	kfile-torrent
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://grammarian.homelinux.net/torrent/
 DISTNAME=	torrent-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	bless
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://download.gna.org/bless/
 

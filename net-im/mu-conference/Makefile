@@ -6,6 +6,7 @@
 
 PORTNAME=	mu-conference
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GENTOO} \
 		http://jabber.terrapin.com/JCR/:jcr

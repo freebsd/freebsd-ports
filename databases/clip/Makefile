@@ -7,7 +7,7 @@
 
 PORTNAME=	clip
 PORTVERSION=	1.1.11.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases lang
 MASTER_SITES=	ftp://ftp.itk.ru/pub/clip/	\
 		ftp://ftp.linux.ru.net/mirrors/clip/

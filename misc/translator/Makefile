@@ -7,6 +7,7 @@
 
 PORTNAME=		translator
 PORTVERSION=		0.1.0
+PORTREVISION=	1
 CATEGORIES=		misc
 MASTER_SITES=		http://jodrell.net/files/translator/
 

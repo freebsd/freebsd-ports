@@ -7,7 +7,7 @@
 
 PORTNAME=	graveman
 PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.nongnu.org/${PORTNAME}/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	log4e
 PORTVERSION=	0.7.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	http://log4e.jayefem.de/download/eclipse3/
 PKGNAMEPREFIX=	eclipse-

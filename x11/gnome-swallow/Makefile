@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-swallow
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://interreality.org/~tetron/technology/swallow/
 

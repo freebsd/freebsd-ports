@@ -7,7 +7,7 @@
 
 PORTNAME=	fluxconf
 PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://devaux.fabien.free.fr/flux/
 

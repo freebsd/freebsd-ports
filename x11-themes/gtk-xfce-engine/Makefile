@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-xfce-engine
 PORTVERSION=	2.2.5
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-4.2.0/src/ \
 		http://spuriousinterrupt.org/projects/xfce4/files/mirror/xfce-4.2.0/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=		gnome-osd
 PORTVERSION=		0.6.0
+PORTREVISION=	1
 CATEGORIES=		misc
 MASTER_SITES=		http://yang.inescn.pt/~gjc/gnome-osd/
 

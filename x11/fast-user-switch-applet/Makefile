@@ -7,7 +7,7 @@
 
 PORTNAME=	user-selector-applet
 PORTVERSION=	0.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://esco.mine.nu/downloads/ \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/bland/}

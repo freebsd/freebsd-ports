@@ -7,7 +7,7 @@
 
 PORTNAME=	gtkjournal
 PORTVERSION=	0.3.5.b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://linuxhelp.homeunix.com/gtkjournal/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}

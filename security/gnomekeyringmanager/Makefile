@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomekeyringmanager
 PORTVERSION=	0.0.4
+PORTREVISION=	1
 CATEGORIES=	security gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-keyring-manager/0.0
