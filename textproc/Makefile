@@ -98,6 +98,7 @@
     SUBDIR += gxditview
     SUBDIR += gxmlviewer
     SUBDIR += hevea
+    SUBDIR += hgrep
     SUBDIR += hs-haxml
     SUBDIR += htdig
     SUBDIR += html
