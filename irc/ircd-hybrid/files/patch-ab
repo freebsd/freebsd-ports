@@ -1,171 +1,88 @@
-*** include/config.h.orig	Sat Jan 10 14:43:53 1998
---- include/config.h	Sat Jan 10 14:47:44 1998
-***************
-*** 27,34 ****
-  /***************** MAKE SURE THIS IS CORRECT!!!!!!!!! **************/
-  /* ONLY EDIT "HARD_FDLIMIT_" and "INIT_MAXCLIENTS" */
-  
-! #define HARD_FDLIMIT_	1024
-! #define INIT_MAXCLIENTS	800
-  
-  /*
-   * This is how many 'buffer connections' we allow... 
---- 27,34 ----
-  /***************** MAKE SURE THIS IS CORRECT!!!!!!!!! **************/
-  /* ONLY EDIT "HARD_FDLIMIT_" and "INIT_MAXCLIENTS" */
-  
-! #define HARD_FDLIMIT_	125
-! #define INIT_MAXCLIENTS	40
-  
-  /*
-   * This is how many 'buffer connections' we allow... 
-***************
-*** 82,89 ****
-   * -Dianora
-   */
-  
-! #define	DPATH	"/usr/local/ircd/"
-! #define	SPATH	"/usr/local/ircd/ircd"
-  #define	CPATH	"ircd.conf"
-  #define KPATH   "kline.conf"
-  #define	MPATH	"ircd.motd"
---- 82,89 ----
-   * -Dianora
-   */
-  
-! #define	DPATH	"/usr/local/etc/ircd/"
-! #define	SPATH	"/usr/local/sbin/ircd"
-  #define	CPATH	"ircd.conf"
-  #define KPATH   "kline.conf"
-  #define	MPATH	"ircd.motd"
-***************
-*** 130,137 ****
-   *
-   * These need to be defined if you want to use SYSLOG logging, too.
-   */
-! #define FNAME_USERLOG "/usr/local/ircd/users" /* */
-! #define FNAME_OPERLOG "/usr/local/ircd/opers" /* */
-  
-  /* ANTI_IP_SPOOF - protects against TCP sequence guessing attacks
-   * Define this if you want the server to send a random ping at USER or NICK 
---- 130,137 ----
-   *
-   * These need to be defined if you want to use SYSLOG logging, too.
-   */
-! #define FNAME_USERLOG "/usr/local/etc/ircd/users" /* */
-! #define FNAME_OPERLOG "/usr/local/etc/ircd/opers" /* */
-  
-  /* ANTI_IP_SPOOF - protects against TCP sequence guessing attacks
-   * Define this if you want the server to send a random ping at USER or NICK 
-***************
-*** 169,175 ****
-   * messages, define this.  Otherwise leave it undef'd for plain ole
-   * boring messages.
-   */
-! #undef CUSTOM_ERR
-  
-  
-  /* FAILED_OPER_NOTICE - send a notice to all opers when someone
---- 169,175 ----
-   * messages, define this.  Otherwise leave it undef'd for plain ole
-   * boring messages.
-   */
-! #define CUSTOM_ERR
-  
-  
-  /* FAILED_OPER_NOTICE - send a notice to all opers when someone
-***************
-*** 422,428 ****
-   * mode "i" (i == invisible). Invisibility means people dont showup in
-   * WHO or NAMES unless they are on the same channel as you.
-   */
-! #define	NO_DEFAULT_INVISIBLE
-  
-  /* TS_WARNINGS - warn opers about broken/poorly hacked servers
-   * When defined, +s users are warned of some things that should never
---- 422,428 ----
-   * mode "i" (i == invisible). Invisibility means people dont showup in
-   * WHO or NAMES unless they are on the same channel as you.
-   */
-! #undef	NO_DEFAULT_INVISIBLE
-  
-  /* TS_WARNINGS - warn opers about broken/poorly hacked servers
-   * When defined, +s users are warned of some things that should never
-***************
-*** 431,437 ****
-   * This is useful to track down anomalies;  undefine it on a mixed TS/nonTS
-   * net or you'll get a lot of warnings!
-   */
-! #define TS_WARNINGS
-  
-  /* OPER_KILL OPER_REHASH OPER_RESTART OPER_DIE OPER_REMOTE -
-   *      restrict what local global-Opers can do
---- 431,437 ----
-   * This is useful to track down anomalies;  undefine it on a mixed TS/nonTS
-   * net or you'll get a lot of warnings!
-   */
-! #undef TS_WARNINGS
-  
-  /* OPER_KILL OPER_REHASH OPER_RESTART OPER_DIE OPER_REMOTE -
-   *      restrict what local global-Opers can do
-***************
-*** 530,536 ****
-   * security problem - they can use the "-f" option to read any files
-   * that the 'new' access lets them.
-   */
-! #define	CMDLINE_CONFIG
-  
-  /* M4_PREPROC - run ircd.conf through m4 preprocessor
-   * To use m4 as a preprocessor on the ircd.conf file, define M4_PREPROC.
---- 530,536 ----
-   * security problem - they can use the "-f" option to read any files
-   * that the 'new' access lets them.
-   */
-! #undef	CMDLINE_CONFIG
-  
-  /* M4_PREPROC - run ircd.conf through m4 preprocessor
-   * To use m4 as a preprocessor on the ircd.conf file, define M4_PREPROC.
-***************
-*** 557,567 ****
-   * If you use syslog above, you may want to turn some (none) of the
-   * spurious log messages for KILL,SQUIT,etc off.
-   */
-! #undef	SYSLOG_KILL	/* log all operator kills to syslog */
-! #undef	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
-  #undef	SYSLOG_CONNECT	/* log remote connect messages for other all servs */
-  #undef	SYSLOG_USERS	/* send userlog stuff to syslog */
-! #undef	SYSLOG_OPER	/* log all users who successfully become an Op */
-  
-  /* LOG_FACILITY - facility to use for syslog()
-   * Define the facility you want to use for syslog().  Ask your
---- 557,567 ----
-   * If you use syslog above, you may want to turn some (none) of the
-   * spurious log messages for KILL,SQUIT,etc off.
-   */
-! #define	SYSLOG_KILL	/* log all operator kills to syslog */
-! #define	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
-  #undef	SYSLOG_CONNECT	/* log remote connect messages for other all servs */
-  #undef	SYSLOG_USERS	/* send userlog stuff to syslog */
-! #define	SYSLOG_OPER	/* log all users who successfully become an Op */
-  
-  /* LOG_FACILITY - facility to use for syslog()
-   * Define the facility you want to use for syslog().  Ask your
-***************
-*** 607,614 ****
-   * define IRC_UID to that UID.  This should only be defined if you are running
-   * as root and even then perhaps not.
-   */
-! #define	IRC_UID 1001
-! #define	IRC_GID 31
-  
-  /* CLIENT_FLOOD - client excess flood threshold
-   * this controls the number of bytes the server will allow a client to
---- 607,614 ----
-   * define IRC_UID to that UID.  This should only be defined if you are running
-   * as root and even then perhaps not.
-   */
-! #define	IRC_UID 72
-! #define	IRC_GID 72
-  
-  /* CLIENT_FLOOD - client excess flood threshold
-   * this controls the number of bytes the server will allow a client to
+--- include/config.h.old	Sun Jun  7 07:08:17 1998
++++ include/config.h	Sun Jun  7 07:12:38 1998
+@@ -27,8 +27,8 @@
+ /***************** MAKE SURE THIS IS CORRECT!!!!!!!!! **************/
+ /* ONLY EDIT "HARD_FDLIMIT_" and "INIT_MAXCLIENTS" */
+ 
+-#define HARD_FDLIMIT_   1024
+-#define INIT_MAXCLIENTS 800
++#define HARD_FDLIMIT_   125
++#define INIT_MAXCLIENTS 40
+ 
+ /*
+  * This is how many 'buffer connections' we allow... 
+@@ -82,8 +82,8 @@
+  * -Dianora
+  */
+ 
+-#define DPATH   "/usr/local/ircd/"
+-#define SPATH   "/usr/local/ircd/ircd"
++#define DPATH   "/usr/local/etc/ircd/"
++#define SPATH   "/usr/local/sbin/ircd"
+ #define	CPATH	"ircd.conf"
+ #define KPATH   "kline.conf"
+ #define	MPATH	"ircd.motd"
+@@ -144,8 +144,8 @@
+  *
+  * These need to be defined if you want to use SYSLOG logging, too.
+  */
+-#define FNAME_USERLOG "/usr/local/ircd/users" /* */
+-#define FNAME_OPERLOG "/usr/local/ircd/opers" /* */
++#define FNAME_USERLOG "/usr/local/etc/ircd/users" /* */
++#define FNAME_OPERLOG "/usr/local/etc/ircd/opers" /* */
+ 
+ /* FOLLOW_IDENT_RFC
+  * 
+@@ -180,7 +180,7 @@
+  * messages, define this.  Otherwise leave it undef'd for plain ole
+  * boring messages.
+  */
+-#undef CUSTOM_ERR
++#define CUSTOM_ERR
+ 
+ 
+ /* FAILED_OPER_NOTICE - send a notice to all opers when someone
+@@ -429,7 +429,7 @@
+  * mode "i" (i == invisible). Invisibility means people dont showup in
+  * WHO or NAMES unless they are on the same channel as you.
+  */
+-#define	NO_DEFAULT_INVISIBLE
++#undef	NO_DEFAULT_INVISIBLE
+ 
+ /* OPER_KILL OPER_REHASH OPER_RESTART OPER_DIE OPER_REMOTE -
+  *      restrict what local global-Opers can do
+@@ -528,7 +528,7 @@
+  * security problem - they can use the "-f" option to read any files
+  * that the 'new' access lets them.
+  */
+-#define	CMDLINE_CONFIG
++#undef	CMDLINE_CONFIG
+ 
+ /* M4_PREPROC - run ircd.conf through m4 preprocessor
+  * To use m4 as a preprocessor on the ircd.conf file, define M4_PREPROC.
+@@ -557,11 +557,11 @@
+  * If you use syslog above, you may want to turn some (none) of the
+  * spurious log messages for KILL,SQUIT,etc off.
+  */
+-#undef	SYSLOG_KILL	/* log all operator kills to syslog */
+-#undef	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
++#define	SYSLOG_KILL	/* log all operator kills to syslog */
++#define	SYSLOG_SQUIT	/* log all remote squits for all servers to syslog */
+ #undef	SYSLOG_CONNECT	/* log remote connect messages for other all servs */
+ #undef	SYSLOG_USERS	/* send userlog stuff to syslog */
+-#undef	SYSLOG_OPER	/* log all users who successfully become an Op */
++#define	SYSLOG_OPER	/* log all users who successfully become an Op */
+ #undef  SYSLOG_BLOCK_ALLOCATOR /* debug block allocator */
+ 
+ /* LOG_FACILITY - facility to use for syslog()
+@@ -609,8 +609,8 @@
+  * define IRC_UID to that UID.  This should only be defined if you are running
+  * as root and even then perhaps not.
+  */
+-#define	IRC_UID 1001
+-#define	IRC_GID 31
++#define	IRC_UID 72
++#define	IRC_GID 72
+ 
+ /* CLIENT_FLOOD - client excess flood threshold
+  * this controls the number of bytes the server will allow a client to

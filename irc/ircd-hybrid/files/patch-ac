@@ -1,19 +1,11 @@
-*** include/struct.h.orig	Sat Jan 10 17:27:35 1998
---- include/struct.h	Sat Jan 10 17:28:28 1998
-***************
-*** 86,92 ****
-  				*/
-  #define	USERLEN		10
-  #define	REALLEN	 	50
-! #define	TOPICLEN	90
-  #define	CHANNELLEN	200
-  #define	PASSWDLEN 	20
-  #define	KEYLEN		23
---- 86,92 ----
-  				*/
-  #define	USERLEN		10
-  #define	REALLEN	 	50
-! #define	TOPICLEN	250
-  #define	CHANNELLEN	200
-  #define	PASSWDLEN 	20
-  #define	KEYLEN		23
+--- include/struct.h.old	Sun Jun  7 07:13:45 1998
++++ include/struct.h	Sun Jun  7 07:14:03 1998
+@@ -89,7 +89,7 @@
+ 
+ #define	USERLEN		10
+ #define	REALLEN	 	50
+-#define	TOPICLEN	90
++#define	TOPICLEN	250
+ #define	CHANNELLEN	200
+ #define	PASSWDLEN 	20
+ #define	KEYLEN		23
