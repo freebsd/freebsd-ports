@@ -2558,6 +2558,7 @@ imgvtopgm	ports/palm/imgvtopgm
 imlib		ports/graphics/imlib
 imlib2		ports/graphics/imlib2
 imlib2_loaders	ports/graphics/imlib2_loaders
+imlib3d		ports/graphics/imlib3d
 imm		ports/mbone/imm
 imp		ports/mail/imp
 imp3		ports/mail/imp3
