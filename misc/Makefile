@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.138 1998/03/27 11:58:25 tg Exp $
+# $Id: Makefile,v 1.139 1998/04/20 02:10:42 mph Exp $
 #
 
     SUBDIR += acron
@@ -66,6 +66,7 @@
     SUBDIR += xpns
     SUBDIR += xtar
     SUBDIR += xtimer
+    SUBDIR += xquote
     SUBDIR += ytree
     SUBDIR += zorro
 
