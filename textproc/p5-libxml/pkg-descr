@@ -1,0 +1,9 @@
+From the README:
+
+  libxml-perl is a collection of smaller Perl modules, scripts, and
+  documents for working with XML in Perl.  libxml-perl software works in
+  combination with XML::Parser, PerlSAX, XML::DOM, XML::Grove and others.
+
+Author: Ken MacLeod <ken@bitsko.slc.ut.us>
+
+-- Johann Visagie <johann@egenetics.com>
