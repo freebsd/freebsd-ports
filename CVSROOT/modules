@@ -9614,7 +9614,6 @@ ruby-log4r	ports/sysutils/ruby-log4r
 ruby-lua	ports/lang/ruby-lua
 ruby-lv		ports/converters/ruby-lv
 ruby-man	ports/lang/ruby-man
-ruby-math3d	ports/math/ruby-math3d
 ruby-mcrypt	ports/security/ruby-mcrypt
 ruby-metaruby	ports/devel/ruby-metaruby
 ruby-mime-types	ports/mail/ruby-mime-types
