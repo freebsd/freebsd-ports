@@ -7,13 +7,11 @@
 #
 
 PORTNAME=	cgicc
-PORTVERSION=	3.2.1
-PORTREVISION=	3
+PORTVERSION=	3.2.2
 CATEGORIES=	www devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	ftp://ftp.cgicc.org/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sem@ciam.ru
 COMMENT=	A C++ class library for writing CGI applications
 
 USE_REINPLACE=	yes
