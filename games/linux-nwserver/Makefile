@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	linux-nwserver
-PORTVERSION=	1.29
+PORTNAME=	nwserver
+PORTVERSION=	1.30
 CATEGORIES=	games linux
 MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/${PORTVERSION:S/.//}/
+PKGNAMEPREFIX=	linux-
 DISTNAME=	linuxserver${PORTVERSION:S/.//}
 
 MAINTAINER=	tiamat@telegraph.spb.ru

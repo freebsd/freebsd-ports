@@ -1,4 +1,2 @@
 bin/fixinstall
 bin/nwserver
-%%PORTDOCS%%share/doc/linux-nwserver/readme.linuxserver.txt
-%%PORTDOCS%%@dirrm share/doc/linux-nwserver
