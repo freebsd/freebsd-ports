@@ -1,10 +1,12 @@
-# $Id: Makefile,v 1.25 1996/08/24 18:34:22 chuckr Exp $
+# $Id: Makefile,v 1.26 1996/10/24 08:19:57 jfitz Exp $
 #
 
     SUBDIR += ImageMagick
     SUBDIR += Mesa
     SUBDIR += aero
     SUBDIR += dore
+    SUBDIR += giftool
+    SUBDIR += giftrans
     SUBDIR += gimp
     SUBDIR += hpscan
     SUBDIR += jpeg
