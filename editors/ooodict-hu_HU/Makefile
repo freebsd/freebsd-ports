@@ -14,6 +14,6 @@ LANGPREFIX=	hu
 LANGSUFFIX=	HU
 LANGDIST+=	hu_HU.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice
+RDEP=		${PORTSDIR}/editors/openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"

@@ -14,6 +14,6 @@ LANGPREFIX=	ru
 LANGSUFFIX=	RU
 LANGDIST+=	ru_RU_io.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
-RDEP=		${PORTSDIR}/russian/openoffice
+RDEP=		${PORTSDIR}/russian/openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"

@@ -14,6 +14,6 @@ LANGPREFIX=	uk
 LANGSUFFIX=	UA
 LANGDIST+=	uk_UA.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice
+RDEP=		${PORTSDIR}/editors/openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"

@@ -14,6 +14,6 @@ LANGPREFIX=	bg
 LANGSUFFIX=	BG
 LANGDIST+=	bg_BG.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
-RDEP=		${PORTSDIR}/editors/openoffice
+RDEP=		${PORTSDIR}/editors/openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"
