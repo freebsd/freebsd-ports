@@ -3,7 +3,7 @@
 # Date created:				Jul 11th 1999
 # Whom:					troll
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/29 05:51:17 dburr Exp $
 #
 
 DISTNAME=		vMac-0.1.9.3-src
@@ -16,8 +16,9 @@ MAINTAINER=		troll@digitalspark.net
 
 MAKEFILE=		Makefile
 WRKSRC=			${WRKDIR}/vMac-0.1.9.3
-USE_GMAKE=		YES
+USE_GMAKE=	 	yes
 HAS_CONFIGURE=		yes
+USE_XLIB=		yes
 
 pre-patch:
 	(cd ${WRKSRC} && sh ${FILESDIR}/dos2unx gemulator.c)
