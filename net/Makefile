@@ -84,6 +84,7 @@
     SUBDIR += cvsup-without-gui
     SUBDIR += cvsupit
     SUBDIR += cvsync
+    SUBDIR += danamics
     SUBDIR += dante
     SUBDIR += darkstat
     SUBDIR += datapipe
