@@ -11,7 +11,7 @@ CATEGORIES=		security
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/console
 
-MAINTAINER=		services@nevernet.net
+MAINTAINER=		greid@ukug.uk.freebsd.org
 
 MAN1=			vlock.1
 
