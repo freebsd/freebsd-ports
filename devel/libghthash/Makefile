@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	libghthash
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.student.lu.se/~etn97ksi/sim_home/filer/
+MASTER_SITES=	http://www.ipd.bth.se/ska/sim_home/filer/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Hash Table
