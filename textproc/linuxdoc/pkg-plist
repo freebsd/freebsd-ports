@@ -1,7 +1,6 @@
 share/sgml/linuxdoc/README
 share/sgml/linuxdoc/catalog
 share/sgml/linuxdoc/freebsd-1.0.dtd
-share/sgml/linuxdoc/freebsd-1.0.dtd
 share/sgml/linuxdoc/linuxdoc.dec
 share/sgml/linuxdoc/original.dtd
 @dirrm share/sgml/linuxdoc
