@@ -31,6 +31,10 @@ MAKEFILE=		GNUmakefile
 BROKEN=		"Does not compile on ia64 or sparc64"
 .endif
 
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Internal compiler error on alpha 4.x"
+.endif
+
 pre-install:
 	${STRIP_CMD} ${WRKSRC}/cryptest
 do-install:
