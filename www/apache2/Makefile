@@ -23,7 +23,7 @@ LATEST_LINK=	apache2
 WITH_MPM?=	prefork # or worker, perchild
 HTTP_PORT?=	80
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
