@@ -1,5 +1,6 @@
 %%RUBY_SITEARCHLIBDIR%%/gnomecanvas2.so
 %%RUBY_SITELIBDIR%%/gnomecanvas2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/canvas-arrowhead.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/canvas-curve.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/canvas-features.rb
