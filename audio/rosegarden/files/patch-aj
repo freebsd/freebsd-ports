@@ -5,5 +5,5 @@
  pkgIndex.tcl : PetalMidi.tcl
  	@echo "The error message for PetalMidi.tcl is normal"
 -	echo "pkg_mkIndex . PetalMidi.tcl" | tclsh
-+	echo "pkg_mkIndex . PetalMidi.tcl" | tclsh8.0
++	echo "pkg_mkIndex . PetalMidi.tcl" | tclsh8.2
  

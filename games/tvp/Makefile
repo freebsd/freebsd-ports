@@ -7,19 +7,22 @@
 #
 
 DISTNAME=	tvp-0.9.7.1
-CATEGORIES=	games tk80
+CATEGORIES=	games tk82
 MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/president/
 
 MAINTAINER=	hoek@FreeBSD.org
 
 # Comment-out this (and CFLAGS) to compile only the CLI and ansi interfaces
-LIB_DEPENDS=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
-GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--enable-carddir=${PREFIX}/share/games/tvp
-# Comment-out this (and LIB_DEPENDS) to compile only the CLI and ansi interfaces
-CFLAGS+=		-lX11 -lm -ltcl80 -ltk80 \
-			-L ${LOCALBASE}/lib -L ${X11BASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-carddir=${PREFIX}/share/games/tvp
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/tcl8.2 \
+			  -I${LOCALBASE}/include/tk8.2" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
+		      -ltcl82 -ltk82 -lX11 -lm"
+#CFLAGS+=		-lX11 -lm -ltcl82 -ltk82 \
+#			-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 MAN6=	tvp.6
 MLINKS=	tvp.6 xprez.6 - aprez.6 - prez.6

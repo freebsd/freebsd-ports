@@ -1,0 +1,11 @@
+--- xprez/xpwish.c.orig	Sat Jun 28 17:38:35 1997
++++ xprez/xpwish.c	Wed Nov  3 17:45:12 1999
+@@ -37,7 +37,7 @@
+ 
+ int
+ main (int argc, char **argv) {
+-	Tk_Main (argc, argv, Tcl_AppInit);
++	Tk_MainEx (argc, argv, Tcl_AppInit, Tcl_CreateInterp());
+ 
+ 	return 0;
+ }

@@ -5,8 +5,8 @@
  # FilterName: Harmonize
 -# the next line restarts using tclsh \
 -exec tclsh "$0" "$@"
-+# the next line restarts using tclsh8.0 \
-+exec tclsh8.0 "$0" "$@"
++# the next line restarts using tclsh8.2 \
++exec tclsh8.2 "$0" "$@"
  
  # Trivial harmonizer
  

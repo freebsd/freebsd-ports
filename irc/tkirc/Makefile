@@ -8,19 +8,19 @@
 
 DISTNAME=	tkirc1.202
 PKGNAME=	tkirc-1.202
-CATEGORIES=	irc tk80
+CATEGORIES=	irc tk82
 MASTER_SITES=	ftp://ftp.informatik.uni-oldenburg.de/pub/tkirc/
 
 MAINTAINER=	green@FreeBSD.org
 
 RUN_DEPENDS=	irc:${PORTSDIR}/irc/ircII \
-		wish8.0:${PORTSDIR}/x11-toolkits/tk80
+		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/tkirc
 NO_BUILD=	yes
 
 post-patch:
-	perl -pi.orig -e 's/wish/wish8.0/' ${WRKSRC}/tkirc
+	perl -pi.orig -e 's/wish/wish8.2/' ${WRKSRC}/tkirc
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tkirc	  ${PREFIX}/bin

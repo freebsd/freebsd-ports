@@ -2,9 +2,9 @@ NOPROFILE=	yes
 LIB=		itk30
 ITK_LIBRARY=	${PREFIX}/lib/itk3.0
 CFLAGS+=	-I. -I./../generic \
-		-I${TCL_PREFIX}/include/tcl8.0/generic \
+		-I${TCL_PREFIX}/include/tcl8.2/generic \
 		-I${ITCL_PREFIX}/include/itcl3.0/generic \
-		-I${TK_PREFIX}/include/tk8.0/generic \
+		-I${TK_PREFIX}/include/tk8.2/generic \
 		-I/usr/X11R6/include \
 		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\
 		-DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_TM_ZONE=1\

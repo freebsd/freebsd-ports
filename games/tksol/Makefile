@@ -7,13 +7,13 @@
 #
 
 DISTNAME=       tksol-1.0
-CATEGORIES=	games tk80
+CATEGORIES=	games tk82
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/misc_software/tksol/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	tg@FreeBSD.org
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/release

@@ -1,2 +1,2 @@
 #!/bin/sh
-exec wish8.0 @PREFIX@/share/tik/tik.tcl
+exec wish8.2 @PREFIX@/share/tik/tik.tcl

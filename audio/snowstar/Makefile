@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	fenner@FreeBSD.Org
 
 RUN_DEPENDS=	rio:${PORTSDIR}/audio/rio \
-		wish8.0:${PORTSDIR}/x11-toolkits/tk80
+		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	true
 NO_WRKSUBDIR=	true

@@ -6,8 +6,8 @@
      TCL_INC_DIR=${TCL_EXEC_PREFIX}/include
 -elif test -d ${TCL_EXEC_PREFIX}/include -a -f ${TCL_EXEC_PREFIX}/include/tcl.h; then
 -    TCL_INC_DIR=${TCL_EXEC_PREFIX}/include
-+elif test -d ${TCL_EXEC_PREFIX}/include -a -f ${TCL_EXEC_PREFIX}/include/tcl8.0/tcl.h; then
-+    TCL_INC_DIR=${TCL_EXEC_PREFIX}/include/tcl8.0
++elif test -d ${TCL_EXEC_PREFIX}/include -a -f ${TCL_EXEC_PREFIX}/include/tcl8.2/tcl.h; then
++    TCL_INC_DIR=${TCL_EXEC_PREFIX}/include/tcl8.2
  else
      TCL_INC_DIR=$prefix/include
  fi
@@ -17,8 +17,8 @@
      TK_INC_DIR=${TK_EXEC_PREFIX}/include
 -elif test -d ${TK_EXEC_PREFIX}/include -a -f ${TK_EXEC_PREFIX}/include/tk.h; then
 -    TK_INC_DIR=${TK_EXEC_PREFIX}/include
-+elif test -d ${TK_EXEC_PREFIX}/include -a -f ${TK_EXEC_PREFIX}/include/tk8.0/tk.h; then
-+    TK_INC_DIR=${TK_EXEC_PREFIX}/include/tk8.0
++elif test -d ${TK_EXEC_PREFIX}/include -a -f ${TK_EXEC_PREFIX}/include/tk8.2/tk.h; then
++    TK_INC_DIR=${TK_EXEC_PREFIX}/include/tk8.2
  else
      TK_INC_DIR=$prefix/include
  fi

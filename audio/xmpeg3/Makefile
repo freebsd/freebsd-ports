@@ -8,14 +8,14 @@
 
 DISTNAME=	xmp3_1.0.0
 PKGNAME=	xmpeg3-1.0
-CATEGORIES=	audio tk80
+CATEGORIES=	audio tk82
 MASTER_SITES=	ftp://ftp.funet.fi/pub/sci/audio/mpeg/amp/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	amp:${PORTSDIR}/audio/amp \
-		wish8.0:${PORTSDIR}/x11-toolkits/tk80
+		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/xmpeg3
 NO_BUILD=	yes

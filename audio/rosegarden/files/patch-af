@@ -5,7 +5,7 @@
  #include <ctype.h>
  #include <string.h>
 -#include <tcl.h>
-+#include <tcl8.0/tcl.h>
++#include <tcl8.2/tcl.h>
  
  #define NB_MODES 7
  #define NB_TONALITIES 17 /* names, actually */

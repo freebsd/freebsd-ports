@@ -14,7 +14,7 @@
  install:
 -	$(PERL) install.pl
 +	$(PERL) install.pl --prefix ${PREFIX} --libdir ${PREFIX}/lib/cbb  \
-+		--perlpath ${PERL5} --wishpath ${PREFIX}/bin/wish8.0
++		--perlpath ${PERL5} --wishpath ${PREFIX}/bin/wish8.2
  
  docs/cbb-man.dvi: docs/cbb-man.tex
  	(cd docs; \

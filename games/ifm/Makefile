@@ -20,11 +20,12 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dchapes@ddm.on.ca
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.2
 
 post-install:
 	install-info ${PREFIX}/info/ifm.info ${PREFIX}/info/dir

@@ -16,7 +16,7 @@ MAINTAINER=		nectar@freebsd.org
 
 BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=		python:${PORTSDIR}/lang/python
-LIB_DEPENDS=		tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=			${WRKDIR}/${PKGNAME}
 

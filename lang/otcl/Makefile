@@ -12,9 +12,14 @@ MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
 
-LIB_DEPENDS=    tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS=    tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/tcl8.0/generic
+CONFIGURE_ARGS=	--includedir=${PREFIX}/include/tcl8.2/generic \
+		--with-tcl-ver=8.2
+
+post-install:
+	${LN} -sf libotcl.so.1 ${PREFIX}/lib/libotcl.so
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

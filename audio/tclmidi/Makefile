@@ -14,11 +14,11 @@ MASTER_SITES=   ftp://ftp.unina.it/pub/Other/music/midi/PROGRAMS/ \
 
 MAINTAINER=     shanee@augusta.de
 
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 
-MAKE_ENV=	TCL_GENERIC_DIR=${LOCALBASE}/include/tcl8.0
+MAKE_ENV=	TCL_GENERIC_DIR=${LOCALBASE}/include/tcl8.2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tclsh=${LOCALBASE}/bin/tclsh8.0
+CONFIGURE_ARGS=	--with-tclsh=${LOCALBASE}/bin/tclsh8.2
 
 MAN1=		mplay.1 mrec.1 tclmidi.1 minfo.1 midtotcl.1
 MANN=		midiconf.n midievnt.n midifree.n midiget.n midigrep.n \

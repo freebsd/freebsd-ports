@@ -7,15 +7,15 @@
 #
 
 DISTNAME=       ttt-1.4
-CATEGORIES=	net tk80
+CATEGORIES=	net tk82
 MASTER_SITES=   ftp://ftp.csl.sony.co.jp/pub/kjc/
 
 MAINTAINER=     kjc@csl.sony.co.jp
 
 # the tcl/tk LIB_DEPENDS has to match that of ports/x11-toolkits/blt.
 LIB_DEPENDS=	BLT24.2:${PORTSDIR}/x11-toolkits/blt \
-		tcl80.1:${PORTSDIR}/lang/tcl80 \
-		tk80.1:${PORTSDIR}/x11-toolkits/tk80
+		tcl82.1:${PORTSDIR}/lang/tcl82 \
+		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install install-man

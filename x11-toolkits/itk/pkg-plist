@@ -1,7 +1,9 @@
 bin/itkwish3.0
+@exec /bin/ln -s %D/%F %B/itkwish
+@unexec rm %B/itkwish
 include/itk3.0/generic/itk.h
 include/itk3.0/itk.h
-lib/libitk30.so.1.1
+lib/libitk30.so.1
 lib/libitk30.so
 lib/libitk30.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

@@ -5,5 +5,5 @@
  pkgIndex.tcl : PetalEditor.tcl
  	@echo "The error message for PetalEditor.tcl is normal"
 -	echo "pkg_mkIndex . PetalEditor.tcl" | tclsh
-+	echo "pkg_mkIndex . PetalEditor.tcl" | tclsh8.0
++	echo "pkg_mkIndex . PetalEditor.tcl" | tclsh8.2
  

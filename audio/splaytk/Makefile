@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	apps/sound/players
 MAINTAINER=		brett@peloton.runet.edu
 
 RUN_DEPENDS=	splay:${PORTSDIR}/audio/splay \
-		wish8.0:${PORTSDIR}/x11-toolkits/tk80
+		wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC= ${WRKDIR}/splay-tk-2.0
 

@@ -4,15 +4,16 @@
 # Whom:			dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
+#
 
 DISTNAME=	FrodoV4_1a.Src
 PKGNAME=	frodo-4.1
-CATEGORIES=	emulators tk80
+CATEGORIES=	emulators tk82
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/micro/commodore/crossplatform/emulators/unix/
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 USE_X_PREFIX=	YES
 ALL_TARGET=	Frodo

@@ -4,9 +4,10 @@
 # Whom:					fenner
 #
 # $FreeBSD$
+#
 
 DISTNAME=	geomview-1.6.1
-CATEGORIES=	graphics tk80
+CATEGORIES=	graphics tk82
 MASTER_SITES=	ftp://ftp.geom.umn.edu/pub/software/geomview/	\
 		ftp://ftp-sfb288.math.tu-berlin.de/pub/geomview/
 DISTFILES=	geomview-1.6.1-src.tar.gz
@@ -15,7 +16,7 @@ MAINTAINER=	fenner@freebsd.org
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
 		MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
-		tk80.1:${PORTSDIR}/x11-toolkits/tk80
+		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/Geomview
 REQUIRES_MOTIF=	yes

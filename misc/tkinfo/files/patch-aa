@@ -4,7 +4,7 @@
  #!/bin/sh
  # This is a Tcl/Tk script to be interpreted by wish (Tk4.0 or better): \
 -exec wish "$0" "$@"
-+exec wish8.0 "$0" "$@"
++exec wish8.2 "$0" "$@"
  
  ##########################################################################
  # Version of TkInfo:

@@ -22,14 +22,14 @@
  # Find a Tk interpreter.
   
 -WISH=`which wish4.0`
-+WISH=`which wish8.0`
++WISH=`which wish8.2`
  if [ ! -f $WISH ]; then
 -  WISH=`which wish4.1`
 +  WISH=`which wish4.0`
  fi
  if [ ! -f $WISH ]; then
 -  echo "I cant find a Tk interpreter on your system"
-+  echo "I cant find a usefull Tk interpreter on your system"
++  echo "I cant find a useful Tk interpreter on your system"
    exit 1
  fi
  

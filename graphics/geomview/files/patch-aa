@@ -36,8 +36,8 @@
  # indicate cc options to find tk-related libraries and include-files.
 -# TKLIBS = -L/usr/local/lib -ltk -ltcl -L${SYSXLIBDIR} -lX11
 -# TKINC = -I/u/share/include
-+TKLIBS = -L${LOCALBASE}/lib -ltk80 -ltcl80 -L${SYSXLIBDIR} -lX11
-+TKINC = -I${LOCALBASE}/include/tcl8.0 -I${LOCALBASE}/include/tk8.0
++TKLIBS = -L${LOCALBASE}/lib -ltk82 -ltcl82 -L${SYSXLIBDIR} -lX11
++TKINC = -I${LOCALBASE}/include/tcl8.2 -I${LOCALBASE}/include/tk8.2
  
  
  # Choose or adapt one of the following sets of definitions.

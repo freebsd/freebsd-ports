@@ -14,7 +14,7 @@
  # Absolute pathname of the wish executable #
  ############################################
 -WISH = /usr/imports/bin/wish
-+WISH = ${PREFIX}/bin/wish8.0
++WISH = ${PREFIX}/bin/wish8.2
  
  ####################################################
  # Directory where the script tksol will be located #

@@ -8,18 +8,18 @@
 
 DISTNAME=	qtk
 PKGNAME=	qtk-0.50
-CATEGORIES=	devel
+CATEGORIES=	devel tk82
 MASTER_SITES=	http://www.psn.net/~andrews/dist/
 
 MAINTAINER=	andrews@technologist.com
 
-RUN_DEPENDS=	${LOCALBASE}/bin/wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	${LOCALBASE}/bin/wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	YES
 
 USE_X_PREFIX=	YES
 
-WISH=		${LOCALBASE}/bin/wish8.0
+WISH=		${LOCALBASE}/bin/wish8.2
 
 post-patch:
 	@${SED} 's:/usr/bin/wish:${WISH}:' \

@@ -5,7 +5,7 @@
  pkgIndex.tcl : Petal.so Petal.tcl
  	@echo "The error message for Petal.tcl is normal"
 -	echo "pkg_mkIndex . Petal.so Petal.tcl" | tclsh
-+	echo "pkg_mkIndex . Petal.so Petal.tcl" | tclsh8.0
++	echo "pkg_mkIndex . Petal.so Petal.tcl" | tclsh8.2
  
  petaleditor/pkgIndex.tcl : petaleditor/PetalEditor.tcl
  	cd petaleditor; make

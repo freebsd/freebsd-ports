@@ -5,7 +5,7 @@
  #include <time.h>
  
 -#define DEF_WISH_PATH "/usr/bin/wish"
-+#define DEF_WISH_PATH "/usr/local/bin/wish8.0"
++#define DEF_WISH_PATH "/usr/local/bin/wish8.2"
  
  void wprintf(char *, ...);
  void draw_screen(void);

@@ -43,7 +43,7 @@ SETUP_FILES=	${FILESDIR}/Setup.base
 WITH_TOGL?=	yes
 .if defined(WITH_TOGL) && $(WITH_TOGL) == yes
 SETUP_FILES+=	${FILESDIR}/Setup.add.togl
-LIB_DEPENDS+=	tk80.1:${PORTSDIR}/x11-toolkits/tk80
+LIB_DEPENDS+=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 .endif
 
 .include <bsd.port.pre.mk>

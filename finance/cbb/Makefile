@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.me.umn.edu/pub/finance/ \
 
 MAINTAINER=	kline@thought.org
 
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=       yes
 USE_PERL5=	yes

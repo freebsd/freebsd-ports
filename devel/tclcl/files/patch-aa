@@ -5,7 +5,7 @@
  # the exec restarts using tclsh which in turn ignores
  # the command because of this backslash: \
 -exec tclsh "$0" "$@"
-+exec tclsh8.0 "$0" "$@"
++exec tclsh8.2 "$0" "$@"
  
  #
  # otcldoc - a simple script for translating otcl classes into

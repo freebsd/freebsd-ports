@@ -1,5 +1,74 @@
---- ./configure.org	Thu Jan  9 06:22:00 1997
-+++ ./configure	Sun Mar 30 04:25:11 1997
+--- configure.orig	Thu Jan  9 08:22:00 1997
++++ configure	Thu Nov  4 11:29:23 1999
+@@ -2193,7 +2193,7 @@
+ 
+ if test "$have_tk" = "yes" ; then
+ echo $ac_n "checking for -ltk$tk_major.$tk_minor""... $ac_c" 1>&6
+-ac_lib_var=`echo tk$tk_major.$tk_minor'_'Tk_Main | tr './+\055' '__p_'`
++ac_lib_var=`echo tk$tk_major.$tk_minor'_'Tk_MainEx | tr './+\055' '__p_'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -2205,11 +2205,11 @@
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char Tk_Main();
++char Tk_MainEx();
+ 
+ int main() { return 0; }
+ int t() {
+-Tk_Main()
++Tk_MainEx()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:2216: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; }; then
+@@ -2233,7 +2233,7 @@
+ 
+ if test "$have_tk_lib" = "no" ; then
+ echo $ac_n "checking for -ltk$tk_major$tk_minor""... $ac_c" 1>&6
+-ac_lib_var=`echo tk$tk_major$tk_minor'_'Tk_Main | tr './+\055' '__p_'`
++ac_lib_var=`echo tk$tk_major$tk_minor'_'Tk_MainEx | tr './+\055' '__p_'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -2245,11 +2245,11 @@
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char Tk_Main();
++char Tk_MainEx();
+ 
+ int main() { return 0; }
+ int t() {
+-Tk_Main()
++Tk_MainEx()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:2256: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; }; then
+@@ -2274,7 +2274,7 @@
+ fi
+ if test "$have_tk_lib" = "no" ; then
+ echo $ac_n "checking for -ltk""... $ac_c" 1>&6
+-ac_lib_var=`echo tk'_'Tk_Main | tr './+\055' '__p_'`
++ac_lib_var=`echo tk'_'Tk_MainEx | tr './+\055' '__p_'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+@@ -2286,11 +2286,11 @@
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char Tk_Main();
++char Tk_MainEx();
+ 
+ int main() { return 0; }
+ int t() {
+-Tk_Main()
++Tk_MainEx()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:2297: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; }; then
 @@ -3148,7 +3148,7 @@
  
  fi
