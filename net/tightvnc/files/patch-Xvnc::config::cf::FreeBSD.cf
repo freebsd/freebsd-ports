@@ -1,0 +1,23 @@
+--- Xvnc/config/cf/FreeBSD.cf.orig	Sun Jun 11 21:00:51 2000
++++ Xvnc/config/cf/FreeBSD.cf	Fri Dec  6 03:21:44 2002
+@@ -49,7 +49,7 @@
+ 
+ #define MkdirHierCmd		mkdir -p
+ 
+-#define CcCmd			cc
++#define CcCmd			%%CC%%
+ #define CppCmd			/usr/libexec/cpp
+ #define PreProcessCmd		CppCmd
+ #define StandardCppDefines	-traditional
+@@ -253,9 +253,9 @@
+ #endif
+ 
+ #ifdef i386Architecture
+-# define OptimizedCDebugFlags DefaultGcc2i386Opt
++# define OptimizedCDebugFlags %%CFLAGS%%
+ #else
+-# define OptimizedCDebugFlags -O2
++# define OptimizedCDebugFlags %%CFLAGS%%
+ #endif
+ 
+ #ifndef PreIncDir
