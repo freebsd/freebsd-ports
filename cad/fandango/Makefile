@@ -16,20 +16,15 @@ DISTNAME=	k${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A python scripted 3D CAD application
 
-LIB_DEPENDS=	python2.3.1:${PORTSDIR}/lang/python
-
-BROKEN=		"Broken dependencies"
-
 USE_GL=		yes
 USE_GNOME=	gnometarget
 USE_KDEBASE_VER=	3
-USE_PYTHON=	2.3+
 GNU_CONFIGURE=	yes
 
-pre-everything::
-	@${ECHO_CMD}
-	@${ECHO_CMD} "***    This port requires python shared library    ***"
-	@${ECHO_CMD} "*** You have to build python with BUILD_SHARED=yes ***"
-	@${ECHO_CMD}
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if !exists(${LOCALBASE}/lib/libpython2.3.so.1)
+BROKEN=	"Requires python shared libs; build python 2.3 with BUILD_SHARED=yes"
+.endif
+
+.include <bsd.port.post.mk>
