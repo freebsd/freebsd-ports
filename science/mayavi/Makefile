@@ -7,21 +7,26 @@
 #
 
 PORTNAME=	mayavi
-PORTVERSION=	1.1
+PORTVERSION=	1.3
 CATEGORIES=	science python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	MayaVi-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The MayaVi Data Visualizer
+COMMENT=	A scientific data visualizer
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/vtk.pth:${PORTSDIR}/math/vtk-python \
+		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_MESA=	yes
-PLIST_SUB=	PYTHON_SITELIBDIR=lib/${PYTHON_VERSION}/site-packages
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.* ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
