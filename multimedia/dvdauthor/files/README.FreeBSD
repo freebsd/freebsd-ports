@@ -1,14 +1,14 @@
-To create mpeg files suitable for a DVD, you can use the transcode
-port.
+To create mpeg files suitable for a DVD, you can use the
+multimedia/transcode port.
 
 I use the following options:
-	transcode -i .... -y mpeg,toolame -F d -E 48000 -b 224 -o output
+	transcode -i .... -y mpeg -F d -E 48000 -b 224 -o output
 
 This creates the following files:
 	output.m2v: video, bitrate 10Mbps (use -w to change that rate)
-	output.mp2: MPEG 1 Layer II audio, 48KHz, bitrate 224Kbps
+	output.mpa: MPEG 1 Layer II audio, 48KHz, bitrate 224Kbps
 
 Then multiplex the streams:
-	tcmplex -i output.m2v -p output.mp2 -m d -o output.mpeg
+	tcmplex -i output.m2v -p output.mpa -m d -o output.mpeg
 
 You can then use the resulting output.mpeg file with dvdauthor.
