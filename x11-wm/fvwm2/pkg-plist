@@ -401,5 +401,6 @@ share/fvwm2/pixmaps/xview.xpm
 %%GNOME%%@unexec rmdir %D/share/gnome 2>/dev/null || true
 @dirrm share/fvwm2/pixmaps
 @dirrm share/fvwm2
+@dirrm share/fvwm
 @dirrm libexec/fvwm/%%FVWM_VERSION%%
 @dirrm libexec/fvwm
