@@ -8,7 +8,7 @@
 
 DISTNAME=	swisswatch-0.06
 CATEGORIES=	x11-clocks
-MASTER_SITES=	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+MASTER_SITES=	${MASTER_SITE_PORTS_JP}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	sanpei@jp.FreeBSD.org
