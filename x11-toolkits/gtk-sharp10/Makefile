@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	0.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtk-sharp
@@ -23,7 +23,7 @@ USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack libgnomedb gtkhtml3 vte
+USE_GNOME=	gnomehack libgnomedb gtkhtml3 vte librsvg2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|g' \
