@@ -101,6 +101,7 @@
     SUBDIR += mit-scheme
     SUBDIR += mixal
     SUBDIR += mmix
+    SUBDIR += mono
     SUBDIR += moscow_ml
     SUBDIR += mozart
     SUBDIR += nawk
