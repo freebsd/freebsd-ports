@@ -2220,6 +2220,7 @@ idled		ports/sysutils/idled
 idlefork	ports/devel/idlefork
 ifconfig	src/sbin/ifconfig
 ifhp		ports/print/ifhp
+ifile		ports/mail/ifile
 ifm		ports/games/ifm
 ifmail		ports/news/ifmail
 ifmcstat	src/usr.sbin/ifmcstat
