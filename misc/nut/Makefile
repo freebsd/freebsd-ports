@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	9.8
-PORTREVISION=	1
+PORTVERSION=	9.9
 CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/
 PKGNAMEPREFIX=	health-
@@ -17,7 +16,6 @@ COMMENT=	Nut is nutrition software to record what you eat
 
 MAN1=		nut.1
 
-USE_SIZE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
