@@ -28,9 +28,6 @@ MAN1=		autoexpect.1 cryptdir.1 decryptdir.1 dislocate.1 \
 MAN3=		libexpect.3
 .endif
 
-pre-configure:
-	${TOUCH} ${WRKSRC}/configure
-
 post-install:
 	${LN} -sf libexpect531.so.1 ${PREFIX}/lib/libexpect531.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
