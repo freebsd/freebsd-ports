@@ -1,0 +1,8 @@
+mpeg_edit will edit and apply some effects to an already
+encoded mpeg video stream.
+
+The program has several bugs, but I've been able to use it.  Expect
+core-dumps.  It has problems with displays >8 bits too.
+
+eric.
+erich@FreeBSD.org
