@@ -3,23 +3,25 @@
 # Date created:				18 June 1997
 # Whom:					koshy@india.hp.com
 #
-# $Id: Makefile,v 1.3 1998/03/19 02:58:53 cwt Exp $
+# $Id: Makefile,v 1.4 1998/07/07 11:39:44 jkoshy Exp $
 #
 
-DISTNAME=	MHonArc2.2.0
-PKGNAME=	mhonarc-2.2.0
+DISTNAME=	MHonArc2.3.3
+PKGNAME=	mhonarc-2.3.3
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
-		ftp://hhobel.phl.univie.ac.at/MHonArc/
+		ftp://hhobel.phl.univie.ac.at/MHonArc/ \
+		ftp://contrib.redhat.com/noarch/ \
+		ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ \
+		http://www.perl.com/CPAN/authors/id/EHOOD/
 
 MAINTAINER=	jkoshy@freebsd.org
 
-USE_PERL5=	YES
+USE_PERL5=	Yes
 
-INSTALL_TARGET=	install-batch
+NO_BUILD=	Yes
 
-pre-install:
-		${MKDIR} ${PREFIX}/lib/MHonArc
-		${MKDIR} ${PREFIX}/lib/MHonArc/doc/resources
+do-install:
+	cd ${WRKSRC} && ${PERL5} install.me -prefix ${PREFIX} -batch
 
 .include <bsd.port.mk>
