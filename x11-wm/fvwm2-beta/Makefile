@@ -8,7 +8,9 @@
 PORTNAME=	fvwm
 PORTVERSION=	2.2.4
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
+MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
+		http://www.fvwm.org/generated/icon_download/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} fvwm_icons.tgz
 
 MAINTAINER=	jcwells@u.washington.edu
 
@@ -16,7 +18,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--enable-extras
+CONFIGURE_ARGS+=--enable-extras --prefix=${PREFIX}
 USE_GMAKE=	yes
 
 MAN1=	FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
@@ -28,10 +30,8 @@ MAN1=	FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
 	FvwmConsoleC.pl.1
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${WRKSRC}/icons/*.xbm \
-			${WRKSRC}/icons/*.bitmap ${WRKSRC}/icons/*.icon \
-		${PREFIX}/lib/X11/fvwm2/pixmaps
+	@${MKDIR} ${PREFIX}/icons
+	${INSTALL_DATA} ${WRKDIR}/*.xpm ${PREFIX}/icons
 	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
