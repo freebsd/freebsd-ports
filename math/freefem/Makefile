@@ -3,7 +3,7 @@
 # Date created:        20 December 1996
 # Whom:                pgiffuni@FPS.biblos.unal.edu.co
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/11 11:38:43 asami Exp $
 #
 
 DISTNAME=	freefem
@@ -12,7 +12,7 @@ CATEGORIES=	math cad
 MASTER_SITES=	ftp://ftp.ann.jussieu.fr/pub/soft/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINIR=     pgiffuni@FPS.biblos.unal.edu.co
+MAINTAINER=     pgiffuni@FPS.biblos.unal.edu.co
 
 USE_X11=	yes
 USE_GMAKE=	yes
