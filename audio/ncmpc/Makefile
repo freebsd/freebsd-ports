@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncmpc
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	audio
 MASTER_SITES=	http://hem.bredband.net/kaw/ncmpc/files/ \
 		http://mercury.chem.pitt.edu/~shank/
@@ -50,7 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/ncmpc.lirc ${EXAMPLESDIR}/
 	${INSTALL_MAN} ${WRKSRC}/doc/ncmpc.1 ${MAN1PREFIX}/man/man1/
 .if !defined(WITHOUT_NLS)
-.for language in de sv
+.for language in de sv es ru fr
 	${MKDIR} ${LOCALBASE}/share/locale/${language}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${language}.gmo ${PREFIX}/share/locale/${language}/LC_MESSAGES/ncmpc.mo
 .endfor
