@@ -1,0 +1,9 @@
+bin/tkmidi
+lib/timidity/browser.tcl
+lib/timidity/interface_k.so
+lib/timidity/misc.tcl
+lib/timidity/tclIndex
+lib/timidity/tkmidity.tcl
+lib/timidity/tkpanel.tcl
+share/doc/timidity/C/README.tk
+share/doc/timidity/ja/README.tk
