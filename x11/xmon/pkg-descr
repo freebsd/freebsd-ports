@@ -1,0 +1,19 @@
+From the original README:
+
+Xmon interactively monitors the byte-stream connections between an X
+server and a number of X clients.  Xmon recognises all requests,
+events, errors and replies sent between the clients and the server
+which are part of the core X protocol.  The contents of these messages
+are displayed on standard output at a user settable degree of detail
+from none to every bit and byte.  Xmon also allows the user to select
+a number of requests or events to be monitored at a different degree
+of detail.  Xmon will also block the transmission of selected requests
+from the clients to the server and selected events from the server to
+the clients.  Xmon also keeps statistics of the number of requests,
+events, and errors received.
+
+Author: gregm@nms.otc.com.au
+WWW: http://www.x.org/contrib/devel_tools/xmon.1.5.5.README
+
+Bruce
+bms@spc.org
