@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xenon
-# Version required:			0.6.5
+# Version required:			0.6.6
 # Date created:				22 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xenon-0.6.5
+DISTNAME=	xenon-0.6.6
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.proximity.com.au/pub/xenon/
 

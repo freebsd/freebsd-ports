@@ -16,7 +16,7 @@
  
  # For making a dso, add -fPIC
 -CCFLAGS = $(OPTIMIZER) -pipe -Wall -fno-exceptions
-+CCFLAGS = $(CXXFLAGS)
++CCFLAGS = $(CXXFLAGS) $(CFLAGS)
  
 -INCLUDES = -I$(XEINC)
 +INCLUDES = -I$(XEINC) -I/usr/X11R6/include
