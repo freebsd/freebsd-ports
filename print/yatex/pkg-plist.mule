@@ -13,6 +13,7 @@ share/mule/site-lisp/yatex/yatexm-o.el
 share/mule/site-lisp/yatex/yatexmth.el
 share/mule/site-lisp/yatex/yatexprc.el
 share/mule/site-lisp/yatex/yatexsec.el
+share/mule/site-lisp/yatex/yatexpkg.el
 share/mule/site-lisp/yatex-startup.el
 share/mule/site-lisp/YATEXHLP.jp
 share/mule/site-lisp/YATEXHLP.eng

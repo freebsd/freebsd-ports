@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	yatex
-PORTVERSION=	1.70
+PORTVERSION=	1.72
 CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.yatex.org/ \
 		http://www.gentei.org/~yuuji/tmp/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	taoka@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT?=	Yet Another LaTeX mode and html mode on Emacs (for Emacs{19,20} and XEmacs{19,20})
 
 PKGINSTALL=	${WRKDIR}/INSTALL
@@ -80,7 +80,7 @@ DOCSRC+=	docs/yatexe.tex \
 EL_FILES=	comment.el yatex.el yatexadd.el yatexgen.el \
 		yatexenv.el yatexlib.el \
 		yatexmth.el yatexhks.el yatexhlp.el yatexprc.el \
-		yatexm-o.el yatexsec.el  yatexhie.el yahtml.el \
+		yatexm-o.el yatexsec.el  yatexpkg.el yatexhie.el yahtml.el \
 		yatex19.el
 
 do-build:

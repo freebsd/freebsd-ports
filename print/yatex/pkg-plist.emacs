@@ -13,6 +13,7 @@ share/emacs/site-lisp/yatex/yatexm-o.el
 share/emacs/site-lisp/yatex/yatexmth.el
 share/emacs/site-lisp/yatex/yatexprc.el
 share/emacs/site-lisp/yatex/yatexsec.el
+share/emacs/site-lisp/yatex/yatexpkg.el
 share/emacs/site-lisp/yatex-startup.el
 share/emacs/site-lisp/YATEXHLP.jp
 share/emacs/site-lisp/YATEXHLP.eng
