@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.2b
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -24,7 +24,7 @@ USE_GNOME=	gnomeprefix gnomehack gconf2 libxml2 libgtkhtml \
 		gnomevfs2
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MAN1=		liferea.1
