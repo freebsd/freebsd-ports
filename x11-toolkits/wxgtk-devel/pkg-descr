@@ -1,4 +1,4 @@
-A C++ package for platform independent software development (unstable,
-development version).
+wxWindows is a C++ GUI framework for platform independent software
+development. On FreeBSD the Gtk toolkit is used.
 
-WWW: http://wesley.informatik.uni-freiburg.de/~wxxt/
+WWW: http://www.wxwindows.org/
