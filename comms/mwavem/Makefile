@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oberman@es.net
 
-LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
-
 ONLY_FOR_ARCHS=	i386
 
 GNU_CONFIGURE=	yes
@@ -25,6 +23,21 @@ USE_GMAKE=	yes
 SLEEP=		/bin/sleep
 
 .include <bsd.port.pre.mk>
+
+LTHREADVERSION=2
+.if ${OSVERSION} >= 500035
+LTHREADVERSION=	3
+.endif
+.if ${CC:Mgcc30}!=""
+LTHREADVERSION=	3
+.endif
+.if ${CC:Mgcc31}!=""
+LTHREADVERSION=	3
+.endif
+.if ${CC:Mgcc32}!=""
+LTHREADVERSION=	3
+.endif
+LIB_DEPENDS=	lthread.${LTHREADVERSION}:${PORTSDIR}/devel/linuxthreads
 
 pre-build:
 	${PERL} -pi.orig -e "s@ /modules@ ${PREFIX}/share/mwavem@g" ${WRKSRC}/src/drivers/Makefile
