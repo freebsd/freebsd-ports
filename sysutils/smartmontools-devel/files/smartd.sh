@@ -15,13 +15,14 @@
 #
 smartd_enable="NO"
 smartd_flags=""
+smartd_pidfile="/var/run/smartd.pid"
 
 . %%RC_SUBR%%
 
 name="smartd"
 rcvar=`set_rcvar`
 command="%%PREFIX%%/sbin/smartd"
-pidfile="/var/run/smartd.pid"
+pidfile="${smartd_pidfile}"
 required_files="%%PREFIX%%/etc/smartd.conf"
 
 load_rc_config $name
@@ -33,7 +34,7 @@ case "${smartd_flags}" in
 	exit 1
 	;;
 *)
-	smartd_flags="-p ${smartd_pidfile} ${smartd_flags}"
+	smartd_flags="-p ${pidfile} ${smartd_flags}"
 	;;
 esac
 
