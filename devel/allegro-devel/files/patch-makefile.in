@@ -1,15 +1,45 @@
---- makefile.in.orig	Thu Jul  4 04:20:02 2002
-+++ makefile.in	Tue Oct 22 00:31:27 2002
-@@ -31,7 +31,7 @@
- ACLOCAL = aclocal
+--- makefile.in.orig	Thu Jul  4 05:20:02 2002
++++ makefile.in	Wed Nov  6 02:02:31 2002
+@@ -28,10 +28,10 @@
+ LIBDIR = lib/unix
+ INFO_DIR = $(infodir)/dir
+ 
+-ACLOCAL = aclocal
++ACLOCAL = true
  ACLOCAL_M4 = $(srcdir)/aclocal.m4
- AUTOCONF = autoconf
+-AUTOCONF = autoconf
 -AUTOHEADER = autoheader
-+AUTOHEADER = autoheader213
++AUTOCONF = true
++AUTOHEADER = true
  
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
-@@ -347,17 +347,17 @@
+@@ -249,6 +249,11 @@
+ all: lib modules programs docs
+ 
+ lib: $(ALLEGRO_LIB_TARGETS)
++	@for l in alleg alld allp; do \
++	  if test -f $(LIBDIR)/lib$${l}.so.$(shared_version); then \
++	    ln -sf lib$${l}.so.$(shared_version) $(LIBDIR)/lib$${l}.so; \
++	  fi; \
++	done
+ 
+ modules: $(ALLEGRO_MODULE_TARGETS)
+ 
+@@ -332,9 +337,9 @@
+ 	  fi; \
+ 	done
+ 	@for l in alleg alld allp; do \
+-	  if test -f $(LIBDIR)/lib$${l}-$(shared_version).so; then \
+-	    echo Installing $(LIBDIR)/lib$${l}-$(shared_version).so to $(libdir); \
+-	    $(INSTALL_DATA) $(LIBDIR)/lib$${l}-$(shared_version).so $(libdir)/; \
++	  if test -f $(LIBDIR)/lib$${l}.so.$(shared_version); then \
++	    echo Installing $(LIBDIR)/lib$${l}.so.$(shared_version) to $(libdir); \
++	    $(INSTALL_DATA) $(LIBDIR)/lib$${l}.so.$(shared_version) $(libdir)/; \
+ 	    $(INSTALL_DATA) $(LIBDIR)/lib$${l}_unsharable.a $(libdir)/; \
+ 	  fi; \
+ 	done
+@@ -347,20 +352,20 @@
  	fi
  	$(mkinstalldirs) $(bindir)
  	@echo Installing allegro-config to $(bindir)
@@ -36,14 +66,10 @@
 +#		) ; \
 +#	fi
  	@for l in alleg alld allp; do \
- 	  if test -f $(libdir)/lib$${l}-$(shared_version).so -a \! -L $(libdir)/lib$${l}.so.${shared_major_minor}; then \
- 	    (cd $(libdir); ln -s lib$${l}-$(shared_version).so lib$${l}.so.${shared_major_minor}); \
-@@ -395,7 +395,7 @@
- 	@for prog in $(ALLEGRO_LIB_EXES) $(ALLEGRO_DATAFILE_EXES); do \
- 	  if test "X`echo $$prog | sed -e s,tools/.\*,,`" = X; then \
- 	    echo Installing $$prog to $(bindir); \
--	    $(INSTALL_PROGRAM) $$prog $(bindir); \
-+	    $(INSTALL) $$prog $(bindir); \
+-	  if test -f $(libdir)/lib$${l}-$(shared_version).so -a \! -L $(libdir)/lib$${l}.so.${shared_major_minor}; then \
+-	    (cd $(libdir); ln -s lib$${l}-$(shared_version).so lib$${l}.so.${shared_major_minor}); \
++	  if test -f $(libdir)/lib$${l}.so.$(shared_version) -a \! -L $(libdir)/lib$${l}.so; then \
++	    (cd $(libdir); ln -s lib$${l}.so.$(shared_version) lib$${l}.so); \
  	  fi; \
  	done
  

@@ -1,5 +1,49 @@
---- configure.in.orig	Tue Oct 22 00:18:10 2002
-+++ configure.in	Tue Oct 22 00:20:03 2002
+--- configure.in.orig	Thu Jul  4 05:17:59 2002
++++ configure.in	Wed Nov  6 02:19:16 2002
+@@ -169,12 +169,12 @@
+     TARGET_ARCH=
+   fi
+   if test "X$allegro_cv_support_fomit_frame_pointer" = "Xyes"; then
+-    CFLAGS="$TARGET_ARCH -O2 -funroll-loops -ffast-math -fomit-frame-pointer $WFLAGS"
++    CFLAGS="$TARGET_ARCH $CFLAGS -funroll-loops -ffast-math -fomit-frame-pointer $WFLAGS"
+   else
+-    CFLAGS="$TARGET_ARCH -O2 -funroll-loops -ffast-math $WFLAGS"
++    CFLAGS="$TARGET_ARCH $CFLAGS -funroll-loops -ffast-math $WFLAGS"
+   fi
+   ALLEGRO_DEBUG_CFLAGS="-g $WFLAGS -DDEBUGMODE"
+-  ALLEGRO_PROFILE_CFLAGS="-pg $TARGET_ARCH -O2 -funroll-loops -ffast-math $WFLAGS"
++  ALLEGRO_PROFILE_CFLAGS="-pg $TARGET_ARCH $CFLAGS -funroll-loops -ffast-math $WFLAGS"
+   if test "$allegro_cv_support_asm" != i386; then
+     CFLAGS="$CFLAGS -DALLEGRO_USE_C"
+     ALLEGRO_DEBUG_CFLAGS="$ALLEGRO_DEBUG_CFLAGS -DALLEGRO_USE_C"
+@@ -226,8 +226,8 @@
+   LINK_WITH_STATIC_LIBS=yes
+   allegro_static_libraries=yes
+ else
+-  LIBALLEG="lib/unix/lib${LIB_TO_LINK}-\$(shared_version).so lib/unix/lib${LIB_TO_LINK}_unsharable.a"
+-  LINK_LIBALLEG="-Llib/unix -l${LIB_TO_LINK}-\$(shared_version) -l${LIB_TO_LINK}_unsharable -lm"
++  LIBALLEG="lib/unix/lib${LIB_TO_LINK}.so.\$(shared_version) lib/unix/lib${LIB_TO_LINK}_unsharable.a"
++  LINK_LIBALLEG="-Llib/unix -l${LIB_TO_LINK} -l${LIB_TO_LINK}_unsharable -lm"
+   LINK_WITH_STATIC_LIBS=no
+   allegro_shared_libraries=yes
+ fi
+@@ -254,13 +254,13 @@
+ fi
+ if test "X$allegro_shared_libraries" = "Xyes"; then
+   if test "X$allegro_build_normal_library" = "Xyes"; then
+-    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballeg-\$(shared_version).so lib/unix/liballeg_unsharable.a"
++    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballeg.so.\$(shared_version) lib/unix/liballeg_unsharable.a"
+   fi
+   if test "X$allegro_build_debugging_library" = "Xyes"; then
+-    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballd-\$(shared_version).so lib/unix/liballd_unsharable.a"
++    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballd.so.\$(shared_version) lib/unix/liballd_unsharable.a"
+   fi
+   if test "X$allegro_build_profiling_library" = "Xyes"; then
+-    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballp-\$(shared_version).so lib/unix/liballp_unsharable.a"
++    ALLEGRO_LIB_TARGETS="$ALLEGRO_LIB_TARGETS lib/unix/liballp.so.\$(shared_version) lib/unix/liballp_unsharable.a"
+   fi
+ fi
+ AC_SUBST(ALLEGRO_LIB_TARGETS)
 @@ -504,7 +504,7 @@
      ${MAKE-make} depend
    else
