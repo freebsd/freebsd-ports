@@ -1,0 +1,24 @@
+from http://www.nas.nasa.gov/Software/PBS/pbsnashome.html and 
+http://www.nas.nasa.gov/Software/PBS/summary.html :
+	The Portable Batch System (PBS) project was started to create a
+flexible, extensible batch processing system for heterogeneous computing
+networks.  You can submit your batch job on any machine and PBS will run your
+script on the machine you request when the resources you need are available.
+Your PBS system administrator can define the method used to choose what jobs to
+run where, and in what order.  PBS can be installed on almost any UNIX machine,
+from single-processor workstations to workstation clusters and massively
+parallel supercomputers.
+	A typical batch queuing system has a set of queues.  Within each queue,
+jobs are selected in FIFO order.  This limits the scheduling policies available
+to the adminstrator.  The purpose of PBS is to provide additional controls over
+initiating or scheduling execution of batch jobs, and to allow routing of jobs
+between different hosts. PBS's independent scheduling module allows the
+administrator to define what types of resources, and how much of each resource,
+can be used by each job.  The scheduling module has full knowledge of the
+available queued jobs, running jobs, and system resource usage.  Using one of
+several procedural languages, the scheduling policies can easily be modified to
+suit the computing requirements and goals of any site. PBS also has a mechanism 
+allowing users to specify unique resources required for a job to complete.
+
+WWW: http://pbs.mrj.com/
+- David A. Bader <dbader@eece.unm.edu>

@@ -1,0 +1,9 @@
+#!/bin/sh
+cat << EOF
+****************************************************
+*                                                  *
+* If you won't be using PBS any longer, you may    * 
+* want to remove /var/spool/pbs/ and its contents. *
+*                                                  *
+****************************************************
+EOF

@@ -138,6 +138,7 @@
     SUBDIR += p5-Locale-Codes
     SUBDIR += peq
     SUBDIR += patchutils
+    SUBDIR += pbs
     SUBDIR += pdmenu
     SUBDIR += pg
     SUBDIR += pinfo
