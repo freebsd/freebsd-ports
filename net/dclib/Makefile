@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dclib
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/dcgui/
 
@@ -20,6 +20,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+USE_OPENSSL=	yes
 INSTALLS_SHLIB=	yes
 USE_INC_LIBTOOL_VER=13
 
