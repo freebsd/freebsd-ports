@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/Geramik-${PORTVERSION}
 USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk12 imlib
 USE_GMAKE=	yes
 
 .if exists(${X11BASE}/libdata/pkgconfig/gtk+-2.0.pc) || defined(WITH_GTK2)
