@@ -26,8 +26,13 @@ USE_PERL5=	yes
 MAN1=		vlog.1
 MANCOMPRESSED=	no
 PLIST_FILES=	bin/vlog
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 502125
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" ${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
