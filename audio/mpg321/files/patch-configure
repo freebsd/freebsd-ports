@@ -1,0 +1,11 @@
+--- configure.orig	Sat Feb 10 20:39:39 2001
++++ configure	Sat Feb 10 20:39:50 2001
+@@ -1078,7 +1078,7 @@
+     AO_LIBS="-L$ao_prefix/lib"
+   fi
+ 
+-  AO_LIBS="$AO_LIBS -lao -ldl"
++  AO_LIBS="$AO_LIBS -lao"
+ 
+   echo $ac_n "checking for ao""... $ac_c" 1>&6
+ echo "configure:1085: checking for ao" >&5
