@@ -326,6 +326,7 @@
     SUBDIR += netsaint-plugins
     SUBDIR += netscript
     SUBDIR += netsed
+    SUBDIR += netspeed_applet
     SUBDIR += netspoc
     SUBDIR += nettest
     SUBDIR += ngrep
