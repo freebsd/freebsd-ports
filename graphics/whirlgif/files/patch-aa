@@ -1,0 +1,35 @@
+--- Makefile.orig	Tue Feb 23 04:35:18 1999
++++ Makefile	Mon Dec 27 16:38:29 1999
+@@ -32,7 +32,7 @@
+ # Amiga: SASC
+ # CC = sc
+ # standard
+-CC = cc
++CC ?= cc
+ 
+ ###########################################################
+ # Optimization flags
+@@ -41,12 +41,12 @@
+ #OPTIMIZE= -fcombine-regs -O
+ # for Amiga's SASC compiler remove Optimization flags.
+ # standard:
+-OPTIMIZE = -O
++#OPTIMIZE = -O
+ 
+ ###########################################################
+ # Debug flags
+ #
+-DEBUG = -g
++#DEBUG = -g
+ #DEBUG = -ggdb
+ 
+ ###########################################################
+@@ -62,7 +62,7 @@
+ # for the Amiga:
+ # CFLAGS    = DATA=FAR MATH=IEEE CPU=68020 PARAMETERS=BOTH ANSI STRICT NOICONS IGNORE=51
+ # standard:
+-CFLAGS	=  $(DEBUG) $(OPTIMIZE) $(VIS_GNU_W32) $(STRS_H) $(WARNINGS)
++CFLAGS	+=  $(DEBUG) $(OPTIMIZE) $(VIS_GNU_W32) $(STRS_H) $(WARNINGS)
+ 
+ all: $(TARG_WH)
+ 
