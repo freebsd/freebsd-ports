@@ -7,6 +7,17 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20041012:
+  AFFECTS: users of www/firefox
+  AUTHOR: freebsd-gnome@FreeBSD.org
+
+  After upgrading to firefox-1.0.1.p, certain things such as extension/theme
+  [de]installation, and "Find On Page" may no longer work.  You may also
+  notice an infinite loop when starting Firefox.  If this happens, backup
+  ~/.mozilla/firefox/*/bookmarks.html, and remove ~/.mozilla/firefox.
+  Afterward, Firefox should start up.  You can then restore the bookmarks.html
+  file to the new ~/.mozilla/firefox/*.default directory.
+
+20041012:
   AFFECTS: users of net/netatalk
   AUTHOR: marcus@FreeBSD.org
 
