@@ -1,0 +1,233 @@
+Index: ekpnavi/Makefile.in
+diff -u ekpnavi/Makefile.in.orig ekpnavi/Makefile.in
+--- ekpnavi/Makefile.in.orig	Fri Dec 20 00:09:56 2002
++++ ekpnavi/Makefile.in	Wed Aug 25 18:57:41 2004
+@@ -232,7 +232,7 @@
+ 	if test ! -s Makefile; then \
+ 		./configure --prefix=$(prefix) ;\
+ 	fi ;\
+-	make
++	$(MAKE)
+ 
+ clean-local:
+ 	if test -d $(srcdir)/$(EKPNAVI_PKGNAME); then \
+@@ -243,7 +243,7 @@
+ install-exec-local:
+ 	if test -d $(srcdir)/$(EKPNAVI_PKGNAME); then \
+ 		cd $(srcdir)/$(EKPNAVI_PKGNAME) ;\
+-		make install ;\
++		$(MAKE) install ;\
+ 	fi
+ 
+ $(EKPNAVI_PKGNAME).tar.gz:
+Index: ekpnavi/ekpnavi-1.1.2/src/ekpcom.c
+diff -u -p ekpnavi/ekpnavi-1.1.2/src/ekpcom.c.orig ekpnavi/ekpnavi-1.1.2/src/ekpcom.c
+--- ekpnavi/ekpnavi-1.1.2/src/ekpcom.c.orig	Wed Jul 30 23:06:39 2003
++++ ekpnavi/ekpnavi-1.1.2/src/ekpcom.c	Tue Aug 24 23:37:45 2004
+@@ -42,15 +42,25 @@ sock_open (void)
+ {
+   int sockfd, len;
+   struct sockaddr_in address;
++#ifndef MSG_NOSIGNAL
++  const int on = 1;
++#endif
+ 
+   if (server_sock_fd >= 0)
+     return 0;
+ 
+   /* ソケットオープン */
+   sockfd = socket (AF_INET, SOCK_STREAM, 0);
++#if !defined(MSG_NOSIGNAL) && defined(SO_NOSIGPIPE)
++  setsockopt(sockfd, SOL_SOCKET, SO_NOSIGPIPE, &on, sizeof(on));
++#endif
++  memset(&address, 0, sizeof(address));
+   address.sin_family = AF_INET;
+   address.sin_addr.s_addr = htonl (INADDR_ANY);
+   address.sin_port = htons (35586);
++#ifdef __FreeBSD__
++  address.sin_len = sizeof(address);
++#endif
+   len = sizeof (address);
+   if (connect (sockfd, (struct sockaddr *)&address, len))
+     {
+@@ -92,7 +102,11 @@ sock_write (char* buf, int* lp_wsize)
+   packet[4] = size % 0xFF;
+   memcpy (packet + Header_Size, buf, size);
+ 
++#ifndef MSG_NOSIGNAL
++  size = send (server_sock_fd, packet, size + Header_Size, 0);
++#else
+   size = send (server_sock_fd, packet, size + Header_Size, MSG_NOSIGNAL);
++#endif
+ 
+   if (size < 0)
+     return -1;
+@@ -116,7 +130,11 @@ sock_read (char* buf, int* lp_rsize)
+   if (size <= 0)
+     return 0;
+ 
++#ifndef MSG_NOSIGNAL
++  dsize = recv (server_sock_fd, packet, size, 0);
++#else
+   dsize = recv (server_sock_fd, packet, size, MSG_NOSIGNAL);
++#endif
+ 
+   if (dsize < 0)
+     return -1;
++ #ifdef __FreeBSD__
++   address.sin_len = sizeof(address);
++ #endif
+Index: ekpstm/Makefile.in
+diff -u ekpstm/Makefile.in.orig ekpstm/Makefile.in
+--- ekpstm/Makefile.in.orig	Fri Dec 20 00:09:56 2002
++++ ekpstm/Makefile.in	Wed Aug 25 18:55:20 2004
+@@ -213,7 +213,7 @@
+ 			./configure --prefix=$(prefix) ;\
+ 		fi ;\
+ 	fi ;\
+-	make
++	$(MAKE)
+ 
+ clean-local:
+ 	if test -d $(srcdir)/$(EKPSTM_PKGNAME); then \
+@@ -224,7 +224,7 @@
+ install-exec-local:
+ 	if test -d $(srcdir)/$(EKPSTM_PKGNAME); then \
+ 		cd $(srcdir)/$(EKPSTM_PKGNAME) ;\
+-		make install ;\
++		$(MAKE) install ;\
+ 	fi
+ 
+ #dist-hook:
+Index: ekpstm/ekpstm-1.0.2/src/ekpcom.c
+diff -u -p ekpstm/ekpstm-1.0.2/src/ekpcom.c.orig ekpstm/ekpstm-1.0.2/src/ekpcom.c
+--- ekpstm/ekpstm-1.0.2/src/ekpcom.c.orig	Sat Oct 19 13:01:51 2002
++++ ekpstm/ekpstm-1.0.2/src/ekpcom.c	Wed Aug 25 18:34:15 2004
+@@ -52,14 +52,24 @@ sock_open (void)
+ {
+   int sockfd, len;
+   struct sockaddr_in address;
++#ifndef MSG_NOSIGNAL
++  const int on = 1;
++#endif
+ 
+   if (server_sock_fd >= 0)
+     return 0;
+ 
+   sockfd = socket (AF_INET, SOCK_STREAM, 0);
++#if !defined(MSG_NOSIGNAL) && defined(SO_NOSIGPIPE)
++  setsockopt(sockfd, SOL_SOCKET, SO_NOSIGPIPE, &on, sizeof(on));
++#endif
++  memset(&address, 0, sizeof(address));
+   address.sin_family = AF_INET;
+   address.sin_addr.s_addr = htonl (INADDR_ANY);
+   address.sin_port = htons (35586); /* did hard coding in port number (35586) */
++#ifdef __FreeBSD__
++  address.sin_len = sizeof(address);
++#endif
+   len = sizeof (address);
+   if (connect (sockfd, (struct sockaddr *)&address, len))
+     {
+@@ -114,7 +124,11 @@ sock_write (char* buf, int* lp_wsize)
+   packet[4] = size % 0xFF;	/* date size (lower) */
+   memcpy (packet + Header_Size, buf, size); /* date */
+ 
++#ifndef MSG_NOSIGNAL
++  size = send (server_sock_fd, packet, size + Header_Size, 0);
++#else
+   size = send (server_sock_fd, packet, size + Header_Size, MSG_NOSIGNAL);
++#endif
+ 
+   if (size < 0)
+     return -1;
+@@ -144,7 +158,11 @@ sock_read (char* buf, int* lp_rsize)
+   if (size <= 0)
+     return 0;
+ 
++#ifndef MSG_NOSIGNAL
++  dsize = recv (server_sock_fd, packet, size, 0);
++#else
+   dsize = recv (server_sock_fd, packet, size, MSG_NOSIGNAL);
++#endif
+ 
+   if (dsize < 0)
+     return -1;
+Index: ekpstm/ekpstm-1.0.2/src/main.c
+diff -u -p ekpstm/ekpstm-1.0.2/src/main.c.orig ekpstm/ekpstm-1.0.2/src/main.c
+--- ekpstm/ekpstm-1.0.2/src/main.c.orig	Thu Jul 31 15:01:39 2003
++++ ekpstm/ekpstm-1.0.2/src/main.c	Tue Aug 24 19:41:40 2004
+@@ -69,6 +69,7 @@ main (int argc, char *argv[])
+           break;
+ 	  
+         default:
++          break;
+         }
+     }
+   
+Index: src/Makefile.in
+diff -u src/Makefile.in.orig src/Makefile.in
+--- src/Makefile.in.orig	Fri Dec 20 00:09:54 2002
++++ src/Makefile.in	Wed Aug 25 18:31:51 2004
+@@ -104,7 +104,7 @@
+ MODEL_L = $(shell echo $(MODEL) | tr [:lower:] [:upper:])
+ CFLAGS =  -DGS_PATH=\"gs\" -DLOCALEDIR=\"$(datadir)/locale\" -DPRINTER_MODEL="\"$(MODEL_FULL)\"" -D$(MODEL_L) -DLIBPATH=\"$(libdir)/lib$(MODEL).so\" -DRSC_PATH=\"$(sysconfdir)/pipsrc\" -DSPOOL_NAME=\"$(MODEL)\" -DLOCALE_PATH=\"$(datadir)/locale\" -DNAVI_PATH=\"$(bindir)/ekpnavi\" -DDATA_PATH=\"$(pkgdatadir)\" -DRULED_PATH=\"$(pkgdatadir)/BID.PRN\" -DPATCH_PATH=\"$(pkgdatadir)/PATCH.PRN\" -DBAND_PATH=\"$(pkgdatadir)/BAND.PRN\" -DCUT_PATH=\"$(pkgdatadir)/CUT.PRN\" -D_LPR_DIRECT @CFLAGS@ -fsigned-char
+ 
+-INCLUDES =  @GTK_CFLAGS@ 
++INCLUDES =  @GTK_CFLAGS@ $(INCLTDL)
+ 
+ FILTER_RESOURCE = opt$(MODEL_L).rsc
+ 
+Index: src/ekpcom.c
+diff -u -p src/ekpcom.c.orig src/ekpcom.c
+--- src/ekpcom.c.orig	Sat Oct 19 16:56:12 2002
++++ src/ekpcom.c	Wed Aug 25 18:40:11 2004
+@@ -51,15 +51,25 @@ sock_open (void)
+ {
+   int sockfd, len;
+   struct sockaddr_in address;
++#ifndef MSG_NOSIGNAL
++  const int on = 1;
++#endif
+ 
+   if (server_sock_fd >= 0)
+     return 0;
+ 
+   /* ソケットオープン */
+   sockfd = socket (AF_INET, SOCK_STREAM, 0);
++#if !defined(MSG_NOSIGNAL) && defined(SO_NOSIGPIPE)
++  setsockopt(sockfd, SOL_SOCKET, SO_NOSIGPIPE, &on, sizeof(on));
++#endif
++  memset(&address, 0, sizeof(address));
+   address.sin_family = AF_INET;
+   address.sin_addr.s_addr = htonl (INADDR_ANY);
+   address.sin_port = htons (35586);
++#ifdef __FreeBSD__
++  address.sin_len = sizeof(address);
++#endif
+   len = sizeof (address);
+   if (connect (sockfd, (struct sockaddr *)&address, len))
+     {
+@@ -101,7 +111,11 @@ sock_write (char* buf, int* lp_wsize)
+   packet[4] = size % 0xFF;
+   memcpy (packet + Header_Size, buf, size);
+ 
++#ifndef MSG_NOSIGNAL
++  size = send (server_sock_fd, packet, size + Header_Size, 0);
++#else
+   size = send (server_sock_fd, packet, size + Header_Size, MSG_NOSIGNAL);
++#endif
+ 
+   if (size < 0)
+     return -1;
+@@ -125,7 +139,11 @@ sock_read (char* buf, int* lp_rsize)
+   if (size <= 0)
+     return 0;
+ 
++#ifndef MSG_NOSIGNAL
++  dsize = recv (server_sock_fd, packet, size, 0);
++#else
+   dsize = recv (server_sock_fd, packet, size, MSG_NOSIGNAL);
++#endif
+ 
+   if (dsize < 0)
+     return -1;

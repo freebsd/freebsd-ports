@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 MASTERDIR=	${.CURDIR}/../pips800
 COMMENT=	Photo Image Print System for Linux --- EPSON PM-820C
 
 PRTYPE=		820
 
-.include "${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile.pips"

@@ -12,14 +12,3 @@ print out more than one page. Then you execute the next command:
 /usr/local/libexec/pips760/setup
 
 to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
-
-To run with Japanese/French/Germany/Spanish/Italian/Dutch/
-Portugue/Korean messages, you should execute as follows:
-  env LANG=ja_JP pips760          env LANG=fr pips760	  
-  env LANG=de pips760             env LANG=es pips760	  
-  env LANG=it pips760             env LANG=nl pips760
-  env LANG=pt pips760             env LANG=ko pips760 (*)
-  env LANG=zh_CN pips760 (*)(**)  env LANG=zh_TW.Big5 pips760 (**)
-
-(*) These do not work well.
-(**) See more informations in /usr/local/share/doc/pips760/readme_for_zh

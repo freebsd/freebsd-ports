@@ -1,0 +1,31 @@
+Index: dtrfilter/main.c
+diff -u -p dtrfilter/main.c.orig dtrfilter/main.c
+--- dtrfilter/main.c.orig	Tue Jun 24 15:25:32 2003
++++ dtrfilter/main.c	Tue Aug 24 19:41:40 2004
+@@ -148,3 +148,26 @@ dtr_fatal (char* msg)
+ 	exit (1);
+ }
+ 
++#if defined(__FreeBSD__) && __GNUC__ > 2
++
++int __rethrow = 0;
++
++void *
++__builtin_new(size_t sz /* XXX: ,std::nothrow_t& nothrow */)
++{
++	void *p;
++
++	if (sz == 0)
++		sz = 1;
++	p = malloc(sz);
++	/* XXX: ERROR HANDLER is not available */
++	return p;
++}
++void
++__builtin_delete(void *ptr)
++{
++	if (ptr)
++		free(ptr);
++}
++
++#endif

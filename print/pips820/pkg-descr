@@ -12,14 +12,3 @@ print out more than one page. Then you execute the next command:
 /usr/local/libexec/pips820/setup
 
 to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
-
-To run with Japanese/French/Germany/Spanish/Italian/Dutch/
-Portugue/Korean messages, you should execute as follows:
-  env LANG=ja_JP pips820          env LANG=fr pips820	  
-  env LANG=de pips820             env LANG=es pips820	  
-  env LANG=it pips820             env LANG=nl pips820
-  env LANG=pt pips820             env LANG=ko pips820 (*)
-  env LANG=zh_CN pips820 (*)(**)  env LANG=zh_TW.Big5 pips820 (**)
-
-(*) These do not work well.
-(**) See more informations in /usr/local/share/doc/pips820/readme_for_zh

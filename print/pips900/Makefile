@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	1.3
+PORTVERSION=	2.1.2
 MASTERDIR=	${.CURDIR}/../pips800
 COMMENT=	Photo Image Print System for Linux --- EPSON PM-900C
 
 PRTYPE=		900
 
-.include "${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile.pips"

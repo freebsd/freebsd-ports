@@ -10,4 +10,4 @@ COMMENT=	Photo Image Print System for Linux --- EPSON PM-770C
 
 PRTYPE=		770
 
-.include "${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile.pips"

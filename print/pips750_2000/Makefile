@@ -5,10 +5,9 @@
 # $FreeBSD$
 #
 
-MASTER_SITES=	http://www.epkowa.on.arena.ne.jp/pips/data/750/
 MASTERDIR=	${.CURDIR}/../pips800
 COMMENT=	Photo Image Print System for Linux --- EPSON PM-750C PM-2000C
 
 PRTYPE=		750_2000
 
-.include "${MASTERDIR}/Makefile"
+.include "${MASTERDIR}/Makefile.pips"

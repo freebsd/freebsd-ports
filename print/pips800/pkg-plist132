@@ -1,0 +1,28 @@
+bin/pips%%PRTYPE%%
+libexec/pips/%%PRT_MODEL%%/filter%%PRTYPE%%
+libexec/pips/%%PRT_MODEL%%/filter%%PRTYPE%%.rev
+libexec/pips/%%PRT_MODEL%%/gsconfig%%PRTYPE%%
+libexec/pips/%%PRT_MODEL%%/lang
+libexec/pips/%%PRT_MODEL%%/setup
+libexec/pips/%%PRT_MODEL%%/scripts/en.lc
+libexec/pips/%%PRT_MODEL%%/scripts/ja.lc
+@dirrm libexec/pips/%%PRT_MODEL%%/scripts
+%%PORTDOCS%%share/doc/pips%%PRTYPE%%/COPYING
+%%PORTDOCS%%share/doc/pips%%PRTYPE%%/COPYING.KOWA
+%%PORTDOCS%%share/doc/pips%%PRTYPE%%/COPYING.KOWA.ja
+%%PORTDOCS%%share/doc/pips%%PRTYPE%%/COPYING.LIB
+share/doc/pips%%PRTYPE%%/readme%%PRTYPE%%
+share/doc/pips%%PRTYPE%%/%%LIB_README%%
+@dirrm share/doc/pips%%PRTYPE%%
+etc/pipsrc
+@exec chmod 666 %D/etc/pipsrc
+share/locale/de/LC_MESSAGES/pips%%PRTYPE%%.mo
+share/locale/es/LC_MESSAGES/pips%%PRTYPE%%.mo
+share/locale/fr/LC_MESSAGES/pips%%PRTYPE%%.mo
+share/locale/it/LC_MESSAGES/pips%%PRTYPE%%.mo
+share/locale/ja/LC_MESSAGES/pips%%PRTYPE%%.mo
+share/locale/ko/LC_MESSAGES/pips%%PRTYPE%%.mo
+share/locale/nl/LC_MESSAGES/pips%%PRTYPE%%.mo
+share/locale/pt/LC_MESSAGES/pips%%PRTYPE%%.mo
+share/locale/zh/LC_MESSAGES/pips%%PRTYPE%%.mo
+share/locale/zh_TW/LC_MESSAGES/pips%%PRTYPE%%.mo

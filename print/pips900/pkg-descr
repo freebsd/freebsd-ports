@@ -12,14 +12,3 @@ print out more than one page. Then you execute the next command:
 /usr/local/libexec/pips900/setup
 
 to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
-
-To run with Japanese/French/Germany/Spanish/Italian/Dutch/
-Portugue/Korean messages, you should execute as follows:
-  env LANG=ja_JP pips900          env LANG=fr pips900	  
-  env LANG=de pips900             env LANG=es pips900	  
-  env LANG=it pips900             env LANG=nl pips900
-  env LANG=pt pips900             env LANG=ko pips900 (*)
-  env LANG=zh_CN pips900 (*)(**)  env LANG=zh_TW.Big5 pips900 (**)
-
-(*) These do not work well.
-(**) See more informations in /usr/local/share/doc/pips900/readme_for_zh

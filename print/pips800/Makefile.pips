@@ -1,0 +1,280 @@
+# makefile for use of:	PIPS
+# Date created:		26 Aug 2004
+# Whom:			Hajimu UMEMOTO <ume@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	pips${PRTYPE}
+PORTVERSION?=	1.3.2
+#PORTREVISION=	1
+CATEGORIES?=	print
+MASTER_SITES=	http://www.epkowa3.on.arena.ne.jp/pips/data/%SUBDIR%/
+.if ${PRTYPE} == "750_2000"
+MASTER_SITE_SUBDIR=	pm750c_2000clpr
+.elif ${PRTYPE} == 780 || ${PRTYPE} == 880
+MASTER_SITE_SUBDIR=	${PRTYPE}_20
+.elif ${PRTYPE} == 870
+MASTER_SITE_SUBDIR=	${PRTYPE}Clpr
+.elif ${PRTYPE} == 3500
+MASTER_SITE_SUBDIR=	pm${PRTYPE}c
+.elif ${PRTYPE} == 4000
+MASTER_SITE_SUBDIR=	pm${PRTYPE}pxlpr
+.elif ${PORTVERSION} == 2.1.2
+MASTER_SITE_SUBDIR=	${PRTYPE}_21
+.else
+MASTER_SITE_SUBDIR=	pm${PRTYPE}clpr
+.endif
+
+MAINTAINER=	ume@FreeBSD.org
+
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
+		pstops:${PORTSDIR}/print/psutils-${PAPERSIZE} \
+		${LOCALBASE}/lib/pluginwrapper/pips.so:${PORTSDIR}/www/linuxpluginwrapper
+
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_GNOME=	glib12 gtk12
+USE_GETTEXT=	yes
+
+ONLY_FOR_ARCHS= i386
+MD5_FILE=	${.CURDIR}/distinfo
+DESCR=		${.CURDIR}/pkg-descr
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/pips
+
+PLIST_SUB=	PRTYPE=${PRTYPE} \
+		PRT_MODEL=${PRT_MODEL} \
+		LIB_README=${LIB_README} \
+		MODEL_FILE=${MODEL_FILE} \
+		CUPS=${CUPS} \
+		LPR=${LPR} \
+		EKPNAVI=${EKPNAVI} \
+		DTRFILTER=${DTRFILTER} \
+		GSCONFIG=${GSCONFIG}
+
+.include <bsd.port.pre.mk>
+
+.if ${PORTVERSION} == 2.1.2 || ${PRTYPE} == 870
+PIPS_LPR_ONLY=	yes
+.endif
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+.if ${PORTVERSION} == 2.1.2 || ${PORTVERSION} == 2.6.2
+CONFLICTS=	pips*-2.*
+USE_RC_SUBR=	yes
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-2.6.2
+.if ${PORTVERSION} != 2.1.2
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-dtrfilter
+.endif
+.if defined(PIPS_LPR_ONLY)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-lpr
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-2.6.2-common
+BUILD_DEPEND+=	${LOCALBASE}/bin/autoconf253:${PORTSDIR}/devel/autoconf253
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base \
+		iconv.3:${PORTSDIR}/converters/libiconv
+.endif
+.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		lthread.2:${PORTSDIR}/devel/linuxthreads
+CPPFLAGS+=	-I${LOCALBASE}/include/pthread/linuxthreads
+LDFLAGS+=	-lgnugetopt -llthread
+.else
+LDFLAGS+=	${PTHREAD_LIBS}
+.endif
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+.endif
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+.if defined(INTERNATIONAL_PRODUCTS)
+LIB_FILE=	lib${PRTYPE:S/^-//}.so
+MODEL_FILE=	ekpm${PRTYPE:S/^-//}.ppd
+PRT_MODEL=	${PRTYPE:U:S/^-//}
+.else
+.if ${PRTYPE} == 790
+LIB_FILE=	libpm${PRTYPE}pt.so
+MODEL_FILE=	ekpm${PRTYPE}pt.ppd
+PRT_MODEL=	PM${PRTYPE}PT
+.elif ${PRTYPE} == "780cs"
+LIB_FILE=	libpm${PRTYPE}.so
+MODEL_FILE=	ekpm${PRTYPE}.ppd
+PRT_MODEL=	PM${PRTYPE:U}
+.elif ${PRTYPE} == "820ug"
+LIB_FILE=	libpm820cug.so
+MODEL_FILE=	ekpm${PRTYPE}cug.ppd
+PRT_MODEL=	PM820CUG
+.elif ${PRTYPE} == 4000
+LIB_FILE=	libpm${PRTYPE}px.so
+MODEL_FILE=	ekpm${PRTYPE}px.ppd
+PRT_MODEL=	PM${PRTYPE}PX
+.else
+LIB_FILE=	libpm${PRTYPE}c.so
+MODEL_FILE=	ekpm${PRTYPE}c.ppd
+PRT_MODEL=	PM${PRTYPE}C
+.endif
+.endif
+LIB_README=	${LIB_FILE:S/.so$//}.readme
+PAPERSIZE?=	a4
+.if ${PORTVERSION} == 2.1.2 || ${PORTVERSION} == 2.6.2
+FILTER_SRC=	filter.tmp
+.if ${PORTVERSION} == 2.1.2
+CUPS=		"@comment "
+LPR=		""
+EKPNAVI=	""
+DTRFILTER=	"@comment "
+GSCONFIG=	""
+.elif defined(PIPS_LPR_ONLY)
+CUPS=		"@comment "
+LPR=		""
+EKPNAVI=	""
+DTRFILTER=	""
+GSCONFIG=	"@comment "
+.elif defined(PIPS_CUPS_ONLY)
+CUPS=		""
+LPR=		"@comment "
+EKPNAVI=	"@comment "
+DTRFILTER=	""
+GSCONFIG=	"@comment "
+.else
+CUPS=		""
+LPR=		"@comment "
+EKPNAVI=	""
+DTRFILTER=	""
+GSCONFIG=	"@comment "
+.endif
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		RC_SUBR=${RC_SUBR} \
+		PRT_MODEL=${PRT_MODEL}
+WITH_EKPD?=	yes
+.elif ${PORTVERSION} == 1.3.2
+FILTER_SRC=	filter.org
+PLIST=		${MASTERDIR}/pkg-plist132
+.endif
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+DOCS=		COPYING COPYING.KOWA COPYING.KOWA.ja COPYING.LIB
+
+.if ${PORTVERSION} == 2.1.2 || \
+	(${PORTVERSION} == 2.6.2 && defined(PIPS_LPR_ONLY))
+post-extract:
+	cd ${WRKSRC}/ekpnavi && ${TAR} xf ekpnavi-1.1.2.tar.gz
+	cd ${WRKSRC}/ekpstm && ${TAR} xf ekpstm-1.0.2.tar.gz
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e '/^SUBDIRS =/s/setup//' \
+		-e '/inst-post.sh/s/^/#/' \
+		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's,^prefix=/usr$$,,' -e 's,^sysconfdir=/etc$$,,' \
+	    -e 's,/usr/local/EPKowa,${PREFIX}/libexec/pips,' \
+		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,^pkgdatadir.*$$,pkgdatadir = ${DOCSDIR},' \
+		${WRKSRC}/doc/Makefile.in
+	${REINPLACE_CMD} -e 's,^EKPSTM.*$$,EKPSTM=${PREFIX}/bin/ekpstm,' \
+	    -e 's,/usr/local/EPKowa,${PREFIX}/libexec/pips,' \
+		-e 's,/usr/bin/pips,${PREFIX}/bin/pips,' \
+		-e 's,:/usr/local/bin$$,:${PREFIX}/bin,' \
+		-e 's,^GSCONF=%gsconfig_name%$$,GSCONF=${PREFIX}/bin/%gsconfig_name%,' \
+		${WRKSRC}/src/${FILTER_SRC}
+.if ${PORTVERSION} == 1.3.2
+	${REINPLACE_CMD} -e 's,^PREFIX.*$$,PREFIX=${PREFIX},' \
+		-e 's,^ETCDIR.*$$,ETCDIR=${PREFIX}/etc,' \
+		-e 's,/dev/lp0,/dev/lpt0,' \
+		-e 's,/usr/local/EPKowa,${PREFIX}/libexec/pips,' \
+		-e 's,/usr/bin/pips,${PREFIX}/bin/pips,' \
+		-e 's,:/usr/local/bin$$,:${PREFIX}/bin,' \
+		${WRKSRC}/setup/inst-post.sh
+.endif
+.if ${PORTVERSION} == 2.6.2
+	${REINPLACE_CMD} -e 's,dtrfilter_LDADD = -ldl,dtrfilter_LDADD =,' \
+		${WRKSRC}/dtrfilter/Makefile.in
+	${REINPLACE_CMD} -e 's,/etc/pipsrc,${PREFIX}/etc/pipsrc,' \
+		-e 's,/usr/local/EPKowa,${PREFIX}/libexec/pips,' \
+		${WRKSRC}/layout_script/gsconfig
+.endif
+.if ${PORTVERSION} == 2.1.2 || ${PORTVERSION} == 2.6.2
+	${REINPLACE_CMD} -e 's,/etc/ekpdrc,${PREFIX}/etc/ekpdrc,' \
+		${WRKSRC}/ekpd/cbtd_setup.c
+	${REINPLACE_CMD} -e 's,/dev/lp0,/dev/ulpt0,' \
+		-e 's,^SUBDIRS = rc$$,#SUBDIRS = rc,' \
+		${WRKSRC}/ekpd/Makefile.in
+	${REINPLACE_CMD} -e 's,/etc/ekpdrc,${PREFIX}/etc/ekpdrc,' \
+		${WRKSRC}/src/setup.c
+.endif
+
+.if ${PORTVERSION} == 2.6.2 && !defined(PIPS_LPR_ONLY)
+pre-configure:
+	cd ${WRKSRC}/libltdl && ${LOCALBASE}/bin/autoconf253
+.endif
+
+post-build:
+.if ${PORTVERSION} == 1.3.2
+	${SED}	-e 's,$$GSCONF | $$PIPS -ui C,TMP=/tmp/pips.$$$$;\
+trap "rm -rf $$TMP; exit" 0 2 3 4 6 7 8 10 11 12 13 15;\
+psselect -r > $$TMP;\
+$${GSCONF} < $$TMP | $${PIPS} -ui C,' \
+		-e 's,$${GSCONF} | $${PIPS} -ui C,TMP=/tmp/pips.$$$$;\
+trap "rm -rf $$TMP; exit" 0 2 3 4 6 7 8 10 11 12 13 15;\
+psselect -r > $$TMP;\
+$${GSCONF} < $$TMP | $${PIPS} -ui C,' \
+		${WRKSRC}/src/filter${PRTYPE} > ${WRKSRC}/src/filter${PRTYPE}.rev
+.endif
+	${SED}	-e 's,%%PRTYPE%%,${PRTYPE},g' \
+		-e 's,%%PRT_MODEL%%,${PRT_MODEL},g' \
+		-e 's,%%VERSION%%,${PORTVERSION},'g \
+		-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%WITH_EKPD%%,${WITH_EKPD},g' \
+			${FILESDIR}/setup > ${WRKDIR}/setup.freebsd
+.if ${PORTVERSION} == 2.1.2 || ${PORTVERSION} == 2.6.2
+	${REINPLACE_CMD} -e 's,.rev$$,,' ${WRKDIR}/setup.freebsd
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/ekpd.sh > ${WRKDIR}/ekpd.sh
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/pips.sh > ${WRKDIR}/pips.sh
+.endif
+	${SED}	-e 's,%%LIB_FILE%%,${LIB_FILE},g' \
+		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+
+post-install:
+	${RM} -f ${PREFIX}/etc/pipsrc
+	${TOUCH} ${PREFIX}/etc/pipsrc
+	${CHMOD} 666 ${PREFIX}/etc/pipsrc
+	${INSTALL_SCRIPT} ${WRKDIR}/setup.freebsd \
+		${PREFIX}/libexec/pips/${PRT_MODEL}/setup
+	${MKDIR} ${PREFIX}/libexec/pips/${PRT_MODEL}/scripts
+	${INSTALL_DATA} ${FILESDIR}/en.lc \
+		${PREFIX}/libexec/pips/${PRT_MODEL}/scripts
+	${INSTALL_DATA} ${FILESDIR}/ja.lc \
+		${PREFIX}/libexec/pips/${PRT_MODEL}/scripts
+.if ${PORTVERSION} == 1.3.2
+	${INSTALL_SCRIPT} ${WRKSRC}/src/filter${PRTYPE}.rev \
+		${PREFIX}/libexec/pips/${PRT_MODEL}
+.endif
+.if !defined(NOPORTDOCS)
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
+	@${ECHO_CMD} "lib/pips/${LIB_FILE}" >>${TMPPLIST}
+.if ${PORTVERSION} == 2.6.2 && !defined(PIPS_LPR_ONLY)
+	@${ECHO_CMD} "lib/pips/${LIB_FILE:S/.so/R1.so/}" >>${TMPPLIST}
+	@${ECHO_CMD} "lib/pips/${LIB_FILE:S/.so/R2.so/}" >>${TMPPLIST}
+.endif
+	@${ECHO_CMD} "@dirrm lib/pips" >>${TMPPLIST}
+.for f in ${PATCH_PRN}
+	@${ECHO_CMD} "libexec/pips/${PRT_MODEL}/${f}" >>${TMPPLIST}
+.endfor
+	@${ECHO_CMD} "@dirrm libexec/pips/${PRT_MODEL}" >>${TMPPLIST}
+	@${ECHO_CMD} "@dirrm libexec/pips" >>${TMPPLIST}
+.if ${PORTVERSION} == 2.1.2 || ${PORTVERSION} == 2.6.2
+	${INSTALL_SCRIPT} ${WRKDIR}/ekpd.sh ${PREFIX}/etc/rc.d
+	${INSTALL_SCRIPT} ${WRKDIR}/pips.sh ${PREFIX}/etc/rc.d
+	${PREFIX}/etc/rc.d/pips.sh start
+.endif
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

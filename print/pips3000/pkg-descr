@@ -12,14 +12,3 @@ print out more than one page. Then you execute the next command:
 /usr/local/libexec/pips3000/setup
 
 to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
-
-To run with Japanese/French/Germany/Spanish/Italian/Dutch/
-Portugue/Korean messages, you should execute as follows:
-  env LANG=ja_JP pips3000          env LANG=fr pips3000	  
-  env LANG=de pips3000             env LANG=es pips3000	  
-  env LANG=it pips3000             env LANG=nl pips3000
-  env LANG=pt pips3000             env LANG=ko pips3000 (*)
-  env LANG=zh_CN pips3000 (*)(**)  env LANG=zh_TW.Big5 pips3000 (**)
-
-(*) These do not work well.
-(**) See more informations in /usr/local/share/doc/pips3000/readme_for_zh
