@@ -1,0 +1,5 @@
+Penv runs a specified command after setting an execution environment
+corresponding to the current working directory.
+
+WWW:		http://devel.ringlet.net/sysutils/penv/
+Author:		Peter Pentchev <roam@ringlet.net>
