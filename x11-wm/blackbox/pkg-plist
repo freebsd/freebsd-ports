@@ -1,0 +1,3 @@
+bin/blackbox
+lib/X11/app-defaults/Blackbox.ad
+lib/X11/app-defaults/BlackboxMenu.ad
