@@ -22,6 +22,7 @@ include/gtkhtml/htmlcolor.h
 include/gtkhtml/htmlcolorset.h
 include/gtkhtml/htmlcursor.h
 include/gtkhtml/htmldrawqueue.h
+include/gtkhtml/htmlelement.h
 include/gtkhtml/htmlembedded.h
 include/gtkhtml/htmlengine-cutbuffer.h
 include/gtkhtml/htmlengine-edit-clueflowstyle.h
@@ -37,20 +38,22 @@ include/gtkhtml/htmlengine-edit-movement.h
 include/gtkhtml/htmlengine-edit-paste.h
 include/gtkhtml/htmlengine-edit-rule.h
 include/gtkhtml/htmlengine-edit-selection-updater.h
+include/gtkhtml/htmlengine-edit-table.h
 include/gtkhtml/htmlengine-edit-text.h
 include/gtkhtml/htmlengine-edit.h
 include/gtkhtml/htmlengine-print.h
 include/gtkhtml/htmlengine-save.h
 include/gtkhtml/htmlengine.h
 include/gtkhtml/htmlentity.h
+include/gtkhtml/htmlfont.h
 include/gtkhtml/htmlform.h
 include/gtkhtml/htmlgdkfontmanager.h
 include/gtkhtml/htmlgdkpainter.h
 include/gtkhtml/htmlhidden.h
+include/gtkhtml/htmlhspace.h
 include/gtkhtml/htmliframe.h
 include/gtkhtml/htmlimage.h
 include/gtkhtml/htmlimageinput.h
-include/gtkhtml/htmllinktext.h
 include/gtkhtml/htmllinktextmaster.h
 include/gtkhtml/htmllist.h
 include/gtkhtml/htmlobject.h
@@ -81,11 +84,19 @@ include/gtkhtml/htmlurl.h
 include/gtkhtml/htmlvspace.h
 lib/libgtkhtml.a
 lib/libgtkhtml.so
-lib/libgtkhtml.so.3
+lib/libgtkhtml.so.4
 share/gnome/apps/Settings/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/Documents/gtkhtml-properties.desktop
 share/gnome/gtkhtml/keybindingsrc.emacs
 share/gnome/gtkhtml/keybindingsrc.ms
 share/gnome/oaf/html-editor-control.oafinfo
+share/locale/de/LC_MESSAGES/gtkhtml.mo
+share/locale/fr/LC_MESSAGES/gtkhtml.mo
+share/locale/ja/LC_MESSAGES/gtkhtml.mo
+share/locale/nl/LC_MESSAGES/gtkhtml.mo
+share/locale/no/LC_MESSAGES/gtkhtml.mo
+share/locale/ru/LC_MESSAGES/gtkhtml.mo
+share/locale/sl/LC_MESSAGES/gtkhtml.mo
+share/locale/tr/LC_MESSAGES/gtkhtml.mo
 @dirrm share/gnome/gtkhtml
 @dirrm include/gtkhtml
