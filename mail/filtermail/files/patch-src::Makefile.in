@@ -1,38 +1,56 @@
---- src/Makefile.in.orig	Mon Oct 27 01:22:52 2003
-+++ src/Makefile.in	Sat Nov  8 00:53:16 2003
-@@ -203,7 +203,6 @@
- 			PopAccount.cc PopAccount.hh             \
- 			RFC822.cc RFC822.hh                     \
- 			RegExp.cc RegExp.hh                     \
+--- src/Makefile.in.orig	Sun Feb 15 02:36:23 2004
++++ src/Makefile.in	Fri Mar 19 22:58:12 2004
+@@ -198,7 +198,6 @@
+ 			i18n.hh                                 \
+ 			rcfile.ll rcfile.hh                     \
+ 			rfc822.ll                               \
 -			getopt.c getopt.h getopt1.c             \
- 			filtermail.cc filtermail.hh
+ 			filtermail.hh filtermail.cc             \
+ 			header.hh header.cc                     \
+ 			weeder.hh weeder.cc                     \
+@@ -231,7 +230,7 @@
+ PROGRAMS = $(bin_PROGRAMS)
  
- 
-@@ -226,8 +225,8 @@
- 	Account.$(OBJEXT) Feedback.$(OBJEXT) rcfile.$(OBJEXT) \
- 	Preferences.$(OBJEXT) Checker.$(OBJEXT) Connection.$(OBJEXT) \
- 	SocketConnection.$(OBJEXT) PopAccount.$(OBJEXT) \
--	RFC822.$(OBJEXT) RegExp.$(OBJEXT) getopt.$(OBJEXT) \
--	getopt1.$(OBJEXT) filtermail.$(OBJEXT)
-+	RFC822.$(OBJEXT) RegExp.$(OBJEXT) \
-+	filtermail.$(OBJEXT)
- filtermail_OBJECTS = $(am_filtermail_OBJECTS) \
- 	$(nodist_filtermail_OBJECTS)
- filtermail_DEPENDENCIES = rcparser.o
-@@ -242,7 +241,6 @@
- @AMDEP_TRUE@	./$(DEPDIR)/Preferences.Po ./$(DEPDIR)/RFC822.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/RegExp.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/SocketConnection.Po \
+ am_filtermail_OBJECTS = md5c.$(OBJEXT) rcfile.$(OBJEXT) rfc822.$(OBJEXT) \
+-	getopt.$(OBJEXT) getopt1.$(OBJEXT) filtermail.$(OBJEXT) \
++	filtermail.$(OBJEXT) \
+ 	header.$(OBJEXT) weeder.$(OBJEXT) preferences.$(OBJEXT) \
+ 	feedback.$(OBJEXT) filter.$(OBJEXT) score.$(OBJEXT) \
+ 	account.$(OBJEXT) protocol.$(OBJEXT) socket.$(OBJEXT) \
+@@ -246,7 +245,6 @@
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/account.Po ./$(DEPDIR)/apop.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/feedback.Po ./$(DEPDIR)/filter.Po \
 -@AMDEP_TRUE@	./$(DEPDIR)/getopt.Po ./$(DEPDIR)/getopt1.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/filtermail.Po ./$(DEPDIR)/md5c.Po \
- @AMDEP_TRUE@	./$(DEPDIR)/rcfile.Po ./$(DEPDIR)/y.tab.Po
- COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
-@@ -312,8 +310,6 @@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/RFC822.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/RegExp.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/SocketConnection.Po@am__quote@
+ @AMDEP_TRUE@	./$(DEPDIR)/header.Po ./$(DEPDIR)/filtermail.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/md5c.Po ./$(DEPDIR)/pop3.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/preferences.Po ./$(DEPDIR)/protocol.Po \
+@@ -315,8 +313,6 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/apop.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/feedback.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filter.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt.Po@am__quote@
 -@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getopt1.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/header.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filtermail.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/md5c.Po@am__quote@
- @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/rcfile.Po@am__quote@
+@@ -568,8 +564,8 @@
+ rcparser.hh: y.tab.c
+ y.tab.c: rcfile.yy
+ 	   $(YACC) -p rc $(YFLAGS) -o$@ $^;   \
+-	   mv --force y.tab.c rcparser.cc;    \
+-	   mv --force y.tab.h rcparser.hh;    \
++	   mv -f y.tab.c rcparser.cc;    \
++	   mv -f y.tab.h rcparser.hh;    \
+ 	   $(CXXCOMPILE) -c rcparser.cc;      \
+ 	   touch y.tab.c
+ 
+@@ -580,7 +576,7 @@
+ rfc822parser.hh: rfc822parser.cc
+ rfc822parser.cc: rfc822.yy
+ 		   $(YACC) $(YFLAGS) -p rfc -o$@ $^; \
+-		   mv --force y.tab.h rcparser.hh;   \
++		   mv -f y.tab.h rcparser.hh;   \
+ 		   $(CXXCOMPILE) -c rfc822parser.cc; \
+ 		   touch y.tab.c
+ 

@@ -9,8 +9,7 @@
 #
 
 PORTNAME=	filtermail
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://home.in.tum.de/baueran/%SUBDIR%/
@@ -31,8 +30,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
 USE_BISON=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -43,13 +42,7 @@ MAN5=		filtermailex.5 filtermailrc.5
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502103
-BROKEN=		"Build fails on FreeBSD >= 5.x"
-.endif
-
 post-extract:
 	@${RM} -f ${WRKSRC}/src/getopt.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
