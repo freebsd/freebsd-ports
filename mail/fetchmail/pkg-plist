@@ -6,6 +6,8 @@ libexec/fetchmailconf.bin
 %%PORTDOCS%%share/doc/fetchmail/FEATURES
 %%PORTDOCS%%share/doc/fetchmail/NOTES
 %%PORTDOCS%%share/doc/fetchmail/README
+%%NTLMDOCS%%share/doc/fetchmail/README.NTLM
+%%SSLDOCS%%share/doc/fetchmail/README.SSL
 %%PORTDOCS%%share/doc/fetchmail/design-notes.html
 %%PORTDOCS%%share/doc/fetchmail/fetchmail-FAQ.html
 %%PORTDOCS%%share/doc/fetchmail/fetchmail-features.html
