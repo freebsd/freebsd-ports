@@ -1,0 +1,59 @@
+--- src/installers/80x86/common/assembler.h.orig	Mon Mar 16 13:25:20 1998
++++ src/installers/80x86/common/assembler.h	Mon Sep 28 23:46:57 1998
+@@ -97,6 +97,9 @@
+ #if islinux
+ extern void set_linux_format PROTO_S ((int elf)); /* machine.c */
+ #endif
++#if isfreebsd
++extern void set_freebsd_format PROTO_S ((int elf)); /* machine.c */
++#endif
+ extern void out_main_prelude PROTO_S ((void));
+ extern void out_main_postlude PROTO_S ((void));
+ #endif
+--- src/installers/80x86/common/cproc.c.orig	Mon Mar 16 13:25:21 1998
++++ src/installers/80x86/common/cproc.c	Mon Sep 28 23:48:05 1998
+@@ -687,6 +687,9 @@
+ #if islinux
+ 	!linux_elf &&
+ #endif
++#if isfreebsd
++	!freebsd_elf &&
++#endif
+ 	pname[0] != local_prefix[0] &&
+ 	!strcmp (pname+prefix_length, "main")) {
+     out_main_prelude();
+@@ -1003,6 +1006,9 @@
+   if (
+ #if islinux
+ 	!linux_elf &&
++#endif
++#if isfreebsd
++	!freebsd_elf &&
+ #endif
+ 	pname[0] != local_prefix[0] &&
+ 	!strcmp (pname+prefix_length, "main")) {
+--- src/installers/80x86/common/trans.c.orig	Wed Mar 11 13:03:06 1998
++++ src/installers/80x86/common/trans.c	Mon Sep 28 23:49:29 1998
+@@ -387,6 +387,11 @@
+ 	set_linux_format (s[2] == '1');
+ 	break;
+ #endif
++#if isfreebsd
++      case 'k':
++	set_freebsd_format (s[2] == '1');
++	break;
++#endif
+ #if issco
+       case 's':
+ 	sco_gas = 1;
+@@ -402,6 +407,10 @@
+ #if islinux
+   if (gcc_compatible < 0)
+     gcc_compatible = ! linux_elf;
++#endif
++#if isfreebsd
++  if (gcc_compatible < 0)
++    gcc_compatible = ! freebsd_elf;
+ #endif
+ 
+   if (i == argc)

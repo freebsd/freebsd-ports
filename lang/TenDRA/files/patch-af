@@ -1,0 +1,10 @@
+--- src/utilities/tuname/tuname.c.orig	Mon Mar 16 13:26:37 1998
++++ src/utilities/tuname/tuname.c	Tue Sep 29 01:17:55 1998
+@@ -286,6 +286,7 @@
+ 
+     } else if ( strcmp ( sysname, "freebsd" ) == 0 ) {
+ 	machine = find_linux_machine ( machine ) ;
++	execform = find_linux_format ( argv [0] ) ;
+ 
+     } else if ( strcmp ( sysname, "hp-ux" ) == 0 ) {
+ 	sysname = "hpux" ;

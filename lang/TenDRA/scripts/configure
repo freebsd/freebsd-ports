@@ -1,12 +1,12 @@
 #!/bin/sh
-# Look for *crt0.o in /usr/lib or /usr/lib/aout
 
 olib=/usr/lib
 nlib=/usr/lib/aout
-dir=$WRKSRC/src/lib/env/freebsd/common/80x86
 
 fixlib()
 {
+    dir=$1
+    shift
     crt=$1
     shift
     if [ ! -f $olib/$crt ]; then
@@ -23,5 +23,189 @@ fixlib()
     fi
 }
 
-fixlib crt0.o default.extra tcc_diag
-fixlib gcrt0.o tcc_prof
+#
+# Create tcc aout environment.
+#
+
+mkdir $WRKSRC/src/lib/env/freebsd/aout
+mkdir $WRKSRC/src/lib/env/freebsd/aout/80x86
+
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/K-P5
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/K-P5 <<EOF
++FLAG_TRANS	"-K5"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/K-PIC
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/K-PIC <<EOF
+/* empty */
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/K-frame
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/K-frame <<EOF
++FLAG_TRANS	"-a"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/K-i386
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/K-i386 <<EOF
++FLAG_TRANS	"-K3"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/K-i486
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/K-i486 <<EOF
++FLAG_TRANS	"-K4"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/K-noframe
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/K-noframe <<EOF
+/* This is default */
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/Z-p
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/Z-p <<EOF
++FLAG_TRANS	"-Z1"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/Z-p1
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/Z-p1 <<EOF
++FLAG_TRANS	"-Z1"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/Z-p2
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/Z-p2 <<EOF
++FLAG_TRANS	"-Z2"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/Z-p4
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/Z-p4 <<EOF
++FLAG_TRANS	"-Z4"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/default.extra
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/default.extra <<EOF
++MACHINE	"freebsd-*-80x86"
++TRANS		"-BINDIR-/trans -k0"
++AS		"/usr/bin/as"
++LD		"/usr/bin/ld -e start -dc -dp"
++CC		"/usr/bin/cc"
++CRT0		"/usr/lib/crt0.o"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/tcc_diag
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/tcc_diag <<EOF
+/* TCC ENVIRONMENT : DIAGNOSTICS FOR FreeBSD */
+
++CRT0		"/usr/lib/crt0.o"
+<LINK		"-L-LIBDIR-/diag"
+>SYS_LIB	"-static -lg"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/aout/80x86/tcc_prof
+cat >$WRKSRC/src/lib/env/freebsd/aout/80x86/tcc_prof <<EOF
+/* TCC ENVIRONMENT : PROFILING FOR FreeBSD */
+
++CRT0		"/usr/lib/gcrt0.o"
+<SYS_LINK	"-static -lgmon -lc_p"
++FLAG_TRANS	"-P"
++LINE_START	"#pragma@preserve@*"
+EOF
+
+#
+# Create tcc elf environment.
+#
+
+mkdir $WRKSRC/src/lib/env/freebsd/elf
+mkdir $WRKSRC/src/lib/env/freebsd/elf/80x86
+
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/K-P5
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/K-P5 <<EOF
++FLAG_TRANS	"-K5"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/K-aout
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/K-aout <<EOF
+/* TCC ENVIRONMENT : producing old "a.out" for FreeBSD */
+
++FLAG_TRANS		"-k0"
++AS			"/usr/libexec/aout/as"
++LD			"/usr/libexec/aout/ld"
++CRT0			"/usr/lib/aout/crt0.o"
++CRT1			""
++CRTN			""
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/K-frame
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/K-frame <<EOF
++FLAG_TRANS	"-a"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/K-i386
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/K-i386 <<EOF
++FLAG_TRANS	"-K3"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/K-i486
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/K-i486 <<EOF
++FLAG_TRANS	"-K4"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/K-noframe
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/K-noframe <<EOF
+/* This is default */
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/Z-p
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/Z-p <<EOF
++FLAG_TRANS	"-Z1"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/Z-p1
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/Z-p1 <<EOF
++FLAG_TRANS	"-Z1"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/Z-p2
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/Z-p2 <<EOF
++FLAG_TRANS	"-Z2"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/Z-p4
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/Z-p4 <<EOF
++FLAG_TRANS	"-Z4"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/default.extra
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/default.extra <<EOF
++MACHINE	"freebsd-*-80x86"
++AS		"/usr/bin/as"
++LD		"/usr/bin/ld -m elf_i386"
++CC		"/usr/bin/cc"
++CRT0		"-dynamic-linker /usr/libexec/ld-elf.so.1 /usr/lib/crt1.o"
++CRT1		"/usr/lib/crti.o /usr/lib/crtbegin.o"
++CRTN		"/usr/lib/crtend.o /usr/lib/crtn.o"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/system
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/system <<EOF
+/* tcc environment for system headers on unknown machine */
+
++INCL			"-Nsystem1:-MACHDIR-/include -Nsystem:/usr/include"
++FLAG			"-D__FREEBSD_USE_ELF"
++FLAG			"-f-MACHDIR-/startup/system.h"
++FLAG			"-Y32bit"
++FLAG_TRANS		"-B0"
++API_NAME		"-Asystem1 -Asystem"
++INFO			"System@Headers"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/system+
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/system+ <<EOF
+/* tcc environment for system headers on unknown machine */
+
+>INCL			"-Nsystem1:-MACHDIR-/include -Nsystem:/usr/include"
++FLAG			"-D__FREEBSD_USE_ELF"
++FLAG			"-f-MACHDIR-/startup/system.h"
++FLAG			"-Y32bit"
++FLAG_TRANS		"-B0"
+>API_NAME		"-Asystem1 -Asystem"
+>INFO			"System@Headers"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/tcc_prof
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/tcc_prof <<EOF
+/* TCC ENVIRONMENT : PROFILING FOR FreeBSD */
+
++CRT0		"-dynamic-linker /usr/libexec/ld-elf.so.1 /usr/lib/gcrt1.o"
+<SYS_LINK	"-lgmon"
++FLAG_TRANS	"-P"
++LINE_START	"#pragma@preserve@*"
+EOF
+# Create $WRKSRC/src/lib/env/freebsd/elf/80x86/tdf_ext
+cat >$WRKSRC/src/lib/env/freebsd/elf/80x86/tdf_ext <<EOF
+/* tcc environment for the TDF Spec 4.0 extensions */
+
+<LIB			"-ltarget_tok"
++FLAG_INSTALL		"-Ytdf_ext"
+>INFO			"XANDF@Preliminary@Specification@(DRA-005@proposal)"
+EOF
+
+#
+# Fix aout environment for /usr/lib or /usr/lib/aout.
+#
+
+fixlib $WRKSRC/src/lib/env/freebsd/aout/80x86 crt0.o default.extra tcc_diag
+fixlib $WRKSRC/src/lib/env/freebsd/aout/80x86 gcrt0.o tcc_prof
