@@ -9,7 +9,7 @@
 DISTNAME=	blackbox-0.51.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://portal.alug.org/pub/blackbox/0.5x.x/ \
-	 	ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x
+	 	ftp://ftp.dti.ad.jp/pub/X/blackbox/0.5x.x/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
