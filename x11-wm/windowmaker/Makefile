@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	beta/srcs
 DISTNAME=	WindowMaker-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
-MAINTAINER=	sobomax@altavista.net
+MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		ungif.5:${PORTSDIR}/graphics/libungif \
