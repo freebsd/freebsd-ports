@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmetric
-PORTVERSION=	v0.5
+PORTVERSION=	v0.6
 PORTEPOCH=	1
 CATEGORIES=	benchmarks net
 MASTER_SITES=	http://michael.bacarella.com/projects/tmetric/
