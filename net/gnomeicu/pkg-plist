@@ -4,6 +4,7 @@ etc/CORBA/servers/GnomeICU.gnorba
 etc/sound/events/GnomeICU.soundlist
 share/gnome/applets/Network/GnomeICU.desktop
 share/gnome/apps/Internet/GnomeICU.desktop
+share/gnome/gnomeicu/glade/main.glade
 share/gnome/gnomeicu/icons/Default/gnomeicu-animation.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-auth.png
 share/gnome/gnomeicu/icons/Default/gnomeicu-away.png
@@ -83,10 +84,28 @@ share/gnome/gnomeicu/icons/reDubbed/gnomeicu-online.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-rename.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-still.png
 share/gnome/gnomeicu/icons/reDubbed/gnomeicu-url.png
+share/gnome/help/gnomeicu/C/basics.html
+share/gnome/help/gnomeicu/C/gnomeicu.sgml
+share/gnome/help/gnomeicu/C/index.html
+share/gnome/help/gnomeicu/C/ln13.html
+share/gnome/help/gnomeicu/C/starting.html
+share/gnome/help/gnomeicu/C/stylesheet-images/caution.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/home.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/important.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/next.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/note.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/prev.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/tip.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/toc-blank.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/toc-minus.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/toc-plus.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/up.gif
+share/gnome/help/gnomeicu/C/stylesheet-images/warning.gif
 share/gnome/help/gnomeicu/C/topic.dat
 share/gnome/pixmaps/gnome-gnomeicu.xpm
 share/gnome/sounds/gnomeicu/message.wav
 share/locale/ca/LC_MESSAGES/gnomeicu.mo
+share/locale/cs/LC_MESSAGES/gnomeicu.mo
 share/locale/da/LC_MESSAGES/gnomeicu.mo
 share/locale/de/LC_MESSAGES/gnomeicu.mo
 share/locale/el/LC_MESSAGES/gnomeicu.mo
@@ -100,25 +119,31 @@ share/locale/it/LC_MESSAGES/gnomeicu.mo
 share/locale/ja/LC_MESSAGES/gnomeicu.mo
 share/locale/ko/LC_MESSAGES/gnomeicu.mo
 share/locale/lt/LC_MESSAGES/gnomeicu.mo
+share/locale/ms/LC_MESSAGES/gnomeicu.mo
 share/locale/nl/LC_MESSAGES/gnomeicu.mo
+share/locale/nn/LC_MESSAGES/gnomeicu.mo
 share/locale/no/LC_MESSAGES/gnomeicu.mo
 share/locale/pl/LC_MESSAGES/gnomeicu.mo
 share/locale/pt/LC_MESSAGES/gnomeicu.mo
 share/locale/pt_BR/LC_MESSAGES/gnomeicu.mo
 share/locale/ro/LC_MESSAGES/gnomeicu.mo
 share/locale/ru/LC_MESSAGES/gnomeicu.mo
+share/locale/sk/LC_MESSAGES/gnomeicu.mo
 share/locale/sl/LC_MESSAGES/gnomeicu.mo
 share/locale/sv/LC_MESSAGES/gnomeicu.mo
 share/locale/tr/LC_MESSAGES/gnomeicu.mo
 share/locale/uk/LC_MESSAGES/gnomeicu.mo
+share/locale/zh_CN/LC_MESSAGES/gnomeicu.mo
+share/locale/zh_TW/LC_MESSAGES/gnomeicu.mo
+@dirrm share/gnome/gnomeicu/glade
 @dirrm share/gnome/gnomeicu/icons/Default
 @dirrm share/gnome/gnomeicu/icons/Eyeballs
 @dirrm share/gnome/gnomeicu/icons/Gradients
 @dirrm share/gnome/gnomeicu/icons/reDubbed
 @dirrm share/gnome/gnomeicu/icons
 @dirrm share/gnome/gnomeicu
-@exec mkdir -p %D/share/gnome/help/gnomeicu/C/images
-@dirrm share/gnome/help/gnomeicu/C/images
+@dirrm share/gnome/help/gnomeicu/C/figures
+@dirrm share/gnome/help/gnomeicu/C/stylesheet-images
 @dirrm share/gnome/help/gnomeicu/C
 @dirrm share/gnome/help/gnomeicu
 @dirrm share/gnome/sounds/gnomeicu
