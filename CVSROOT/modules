@@ -4493,7 +4493,6 @@ p5-GD-Graph3d	ports/graphics/p5-GD-Graph3d
 p5-GD-TextUtil	ports/graphics/p5-GD-TextUtil
 p5-GDBM		ports/databases/p5-GDBM
 p5-GIFgraph	ports/graphics/GIFgraph
-p5-GPG		ports/security/p5-GPG
 p5-GPS		ports/astro/p5-GPS
 p5-Gateway	ports/news/p5-Gateway
 p5-GdkImlib	ports/x11-toolkits/p5-GdkImlib
