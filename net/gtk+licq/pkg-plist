@@ -1,4 +1,6 @@
+bin/gtklicq
 %%GNOME:%%lib/licq/licq_gnome_gui.so
+%%GNOME:%%lib/licq/licq_gnome_gui.la
 %%GNOME:%%share/gnome/help/gtk+licq/C/arvancedusage.html
 %%GNOME:%%share/gnome/help/gtk+licq/C/authors.html
 %%GNOME:%%share/gnome/help/gtk+licq/C/bugs.html
@@ -28,7 +30,6 @@ share/licq/gtk-gui/pixmaps/chatClose.xpm
 share/licq/gtk-gui/pixmaps/chatItalic.xpm
 share/licq/gtk-gui/pixmaps/chatUnder.xpm
 share/licq/gtk-gui/pixmaps/close.xpm
-share/licq/gtk-gui/pixmaps/gtklicq-logo.png
 share/licq/gtk-gui/pixmaps/history.xpm
 share/licq/gtk-gui/pixmaps/info.xpm
 share/licq/gtk-gui/pixmaps/logo.xpm
@@ -39,10 +40,10 @@ share/licq/gtk-gui/pixmaps/secure_off.xpm
 share/licq/gtk-gui/pixmaps/secure_on.xpm
 share/licq/gtk-gui/pixmaps/sideways_strippeddownlogo.xpm
 share/locale/de/LC_MESSAGES/gtk+licq.mo
-share/locale/es/LC_MESSAGES/gtk+licq.mo
 share/locale/pt/LC_MESSAGES/gtk+licq.mo
 share/locale/pt_BR/LC_MESSAGES/gtk+licq.mo
 share/locale/ru/LC_MESSAGES/gtk+licq.mo
+share/locale/sv/LC_MESSAGES/gtk+licq.mo
 %%GNOME:%%@dirrm share/gnome/help/gtk+licq/C/images
 %%GNOME:%%@dirrm share/gnome/help/gtk+licq/C
 %%GNOME:%%@dirrm share/gnome/help/gtk+licq
