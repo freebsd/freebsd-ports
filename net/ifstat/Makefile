@@ -6,12 +6,12 @@
 #
 
 PORTNAME=      ifstat
-PORTVERSION=   0.5
+PORTVERSION=   1.0
 CATEGORIES=    net
 MASTER_SITES=  http://gael.roualland.free.fr/%SUBDIR%/
 MASTER_SITE_SUBDIR=    ${PORTNAME}
 
-MAINTAINER=    ports@freebsd.org
+MAINTAINER=    ports@FreeBSD.org
 COMMENT=       Network interface statistics monitoring tool
 
 GNU_CONFIGURE= yes
