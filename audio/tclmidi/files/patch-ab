@@ -1,0 +1,11 @@
+--- configure.orig	Sat Sep 18 15:51:47 1999
++++ configure	Sat Sep 18 15:54:47 1999
+@@ -1727,7 +1727,7 @@
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+   
+-		SHLIB_LD_CXX="-Bstatic -lg++ -lstdc++ -lgcc 2> /dev/null"
++		SHLIB_LD_CXX="-Bstatic -lstdc++ -lgcc 2> /dev/null"
+ 	
+ else
+   echo "$ac_t""no" 1>&6
