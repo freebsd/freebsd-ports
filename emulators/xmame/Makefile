@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.37b12.1
+PORTVERSION?=	0.37b13.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
@@ -14,11 +14,17 @@ MASTER_SITES=	http://x.mame.net/download/ \
 		http://www.mame.net/zips/ \
 		http://cheat.retrogames.com/ \
 		http://www.sys2064.com/files/mame/
-DISTNAME=	xmame-${PORTVERSION:S/p/pre/}
+DISTNAME=	xmame-${XMAMEVERSION:S/p/pre/}
 DIST_SUBDIR=	xmame
+XMAMEVERSION?=	${PORTVERSION}
+.if ${XMAMEVERSION} == "0.37b12.1"
 EXTRACT_SUFX=	.tgz
+.else
+USE_BZIP2=	yes
+EXTRACT_SUFX=	.tar.bz2
+.endif
 
-MAINTAINER?=	c9710216@studentmail.newcastle.edu.au
+MAINTAINER?=	stijn@win.tue.nl
 
 USE_XPM=	yes
 USE_X_PREFIX=	yes
@@ -27,20 +33,20 @@ MAKEFILE=	makefile.unix
 
 MAN6=		x${MAMEMESS}.6
 
-# Are we building MAME, MESS or WPCmame? (also set by slave ports)
+# Are we building MAME, MESS or PinMAME? (also set by slave ports)
 MAMEMESS?=	mame
 
 PLIST_SUB+=	MAMEMESS="x${MAMEMESS}" SPOOLGAMES="${SPOOLGAMES}"
 .if ${MAMEMESS} == "mame"
-PLIST_SUB+=	MAMEONLY="" MESSONLY="@comment " WPCMAMEONLY="@comment "
+PLIST_SUB+=	MAMEONLY="" MESSONLY="@comment " PINMAMEONLY="@comment "
 .else
 .if ${MAMEMESS} == "mess"
-PLIST_SUB+=	MAMEONLY="@comment " MESSONLY="" WPCMAMEONLY="@comment "
+PLIST_SUB+=	MAMEONLY="@comment " MESSONLY="" PINMAMEONLY="@comment "
 .else
-.if ${MAMEMESS} == "wpcmame"
-PLIST_SUB+=	MAMEONLY="@comment " MESSONLY="@comment " WPCMAMEONLY=""
+.if ${MAMEMESS} == "pinmame"
+PLIST_SUB+=	MAMEONLY="@comment " MESSONLY="@comment " PINMAMEONLY=""
 .else
-.error MAMEMESS must be set to one of "mame", "mess" or "wpcmame".
+.error MAMEMESS must be set to one of "mame", "mess" or "pinmame".
 .endif
 .endif
 .endif
@@ -50,7 +56,6 @@ SPOOLGAMES?=	/var/games
 
 # Docs list
 GENERALDOCS=	changes.unix \
-		credits.txt \
 		liesmich.unix \
 		multiplayer-readme.txt \
 		xmame-doc-1.html \
@@ -66,30 +71,35 @@ GENERALDOCS=	changes.unix \
 		xmame-doc.sgml \
 		xmame-doc.txt
 XMAMEDOCS=	changes.mame \
+		changes.opengl \
 		gamelist.mame \
 		readme.mame
 XMESSDOCS=	changes.mess \
+		credits.txt \
 		gamelist.mess \
 		readme.mess \
 		messold.txt \
 		messroms.txt
-WPCMAMEDOCS=	wpcmame/simulation.txt \
-		wpcmame/whatsnew.txt \
-		wpcmame/wpcmame.txt
+PINMAMEDOCS=	pinmame/simulation.txt \
+		pinmame/whatsnew.txt \
+		pinmame/pinmame.txt \
+		pinmame/gamelist.txt \
+		pinmame/keys.txt \
+		pinmame/sounds.dat
 .if ${MAMEMESS} == "mame"
 ALLDOCS=	${GENERALDOCS} ${XMAMEDOCS}
 .else
 .if ${MAMEMESS} == "mess"
 ALLDOCS=	${GENERALDOCS} ${XMESSDOCS}
 .else
-ALLDOCS=	${GENERALDOCS} ${WPCMAMEDOCS}
+ALLDOCS=	${GENERALDOCS} ${PINMAMEDOCS}
 .endif
 .endif
 
 # CPS-2 patches - this enables extra games in MAME.
 .if ${MAMEMESS} == "mame"
 .if defined(WITH_CPS2) && ${WITH_CPS2} == "yes"
-CPS2VERSION=	20010309
+CPS2VERSION=	20010330
 
 PATCH_SITES+=	http://www.win.tue.nl/~stijn/xmame/
 PATCHFILES+=	${DISTNAME}-cps2-${CPS2VERSION}.patch.gz
@@ -199,10 +209,6 @@ post-install:
 	${CHMOD} 775 ${SPOOLGAMES}/x${MAMEMESS}
 	${INSTALL_DATA} ${WRKSRC}/doc/x${MAMEMESS}rc.dist \
 				${PREFIX}/etc/x${MAMEMESS}rc.sample
-	@if [ ! -e ${PREFIX}/etc/x${MAMEMESS}rc ]; then			\
-		( cd ${PREFIX}/etc && 					\
-		  ${LN} -sf x${MAMEMESS}rc.sample x${MAMEMESS}rc );	\
-	fi
 	${LN} -sf ${PREFIX}/etc/x${MAMEMESS}rc \
 				${PREFIX}/share/x${MAMEMESS}/x${MAMEMESS}rc
 .if !defined(NOPORTDOCS)
