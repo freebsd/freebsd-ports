@@ -89,7 +89,6 @@
     SUBDIR += gicq
     SUBDIR += gn-gnspool
     SUBDIR += gnome
-    SUBDIR += gnomecore
     SUBDIR += gnomelibs
     SUBDIR += gnumeric
     SUBDIR += gorua
