@@ -15,15 +15,11 @@ MASTER_SITE_SUBDIR=	nagios
 MAINTAINER=	paul@nerdlabs.com
 COMMENT=	Nagios Remote Plugin Executor
 
-RUN_DEPENDS=    ${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plugins
+RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net/nagios-plugins
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
-pre-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	${REINPLACE_CMD} -e "s=/usr/local/bin/nrpe=${PREFIX}/sbin/nrpe=" ${WRKSRC}/init-script.freebsd
-	${REINPLACE_CMD} -e "s=/usr/local/libexec=${PREFIX}/libexec/nagios=" ${WRKSRC}/nrpe.cfg
+CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/nagios --sysconfdir=${PREFIX}/etc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/nrpe ${PREFIX}/sbin/nrpe
