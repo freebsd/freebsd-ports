@@ -1,21 +1,21 @@
 # New ports collection makefile for:	mtv
-# Version required:	1.1.0.7
+# Version required:	1.1.0.20
 # Date created:		30 Jan 2000
 # Whom:			kris
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mtv-1.1.0.7
+DISTNAME=	mtv-1.1.0.20
 CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.mpegtv.com/pub/mpeg/mpegtv/player/x86-unknown-linux-glibc/packages/TGZ/
-DISTFILES=	mtv-1.1.0.7.tar.gz libforms.so.0.88.gz
+DISTFILES=	mtv-1.1.0.20.tar.gz libSDLx11.so.tar.gz
 
 MAINTAINER=	kris@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
-EXTRACT_ONLY=	mtv-1.1.0.7.tar.gz
+EXTRACT_ONLY=	mtv-1.1.0.20.tar.gz
 NO_PACKAGE=	"No redistribution"
 NO_CDROM=	"No redistribution"
 NO_BUILD=	yes
@@ -26,7 +26,11 @@ WRKSRC=		${WRKDIR}/mtv
 MAN1=	mtv.1
 
 do-install:
-	${GZIP_CMD} -dc ${DISTDIR}/libforms.so.0.88.gz > /compat/linux/usr/X11R6/lib/libforms.so.0.88
+	${MKDIR} ${WRKDIR}/libSDLx11
+	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/libSDLx11.so.tar.gz \
+		${EXTRACT_AFTER_ARGS} -C ${WRKDIR}/libSDLx11
+	${INSTALL_DATA} ${WRKDIR}/libSDLx11/libSDLx11.so.0.9.9 \
+		/compat/linux/usr/X11R6/lib
 	/compat/linux/sbin/ldconfig
 	${INSTALL_SCRIPT} ${WRKSRC}/mtv ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mtvp ${PREFIX}/bin
