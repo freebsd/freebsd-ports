@@ -27,9 +27,10 @@ USE_GMAKE=	yes
 ALL_TARGET=	export
 
 do-install:
+	-${RM} -fr ${PREFIX}/include/mozilla
 	${MKDIR} ${PREFIX}/include/mozilla
 	${CHMOD} 755 ${PREFIX}/include/mozilla
-	${TAR} -C ${WRKSRC}/dist/include -chf - . | \
-		${TAR} -C ${PREFIX}/include/mozilla --unlink -xf -
+	cd ${WRKSRC}/dist/include && ${FIND} . | \
+		cpio -pdm -L -R ${INCOWN}:${INCGRP} ${PREFIX}/include/mozilla
 
 .include <bsd.port.mk>
