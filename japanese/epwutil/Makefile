@@ -27,7 +27,7 @@ do-install:
 	cd ${WRKSRC};\
 	${INSTALL_MAN} ${file}.man ${MANPREFIX}/man/${MANLANG}/cat1/${file}.1
 .if !defined(NOMANCOMPRESS)
-	${GZIP_CMD} -9nf ${MANPREFIX}/man/${MANLANG}/cat1/${file}.1
+	${GZIP_CMD} ${MANPREFIX}/man/${MANLANG}/cat1/${file}.1
 .endif
 .endfor
 	@${MKDIR} ${EPWDOCDIR}
