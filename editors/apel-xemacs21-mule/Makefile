@@ -16,7 +16,7 @@ MASTERDIR=	${.CURDIR}/../../editors/apel-emacs
 # emacs port setup
 EMACS_NAME=	xemacs
 EMACS_PORT=	xemacs21-mule
-EMACS_VER=	21.1.8
+EMACS_VER=	21.1.9
 EMACS_CMD=	${PREFIX}/bin/${EMACS_PORT}
 EMACS_LIBDIR=	lib/${EMACS_NAME}
 EMACS_PACKAGESDIR=	${EMACS_LIBDIR}/site-packages
