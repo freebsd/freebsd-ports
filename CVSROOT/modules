@@ -1184,6 +1184,7 @@ dirdiff		ports/sysutils/dirdiff
 dirname		src/usr.bin/dirname
 dirtree		ports/misc/dirtree
 dis		ports/lang/dis
+disc-cover	ports/audio/disc-cover
 diskcheckd	ports/sysutils/diskcheckd
 disklabel	src/sbin/disklabel
 diskpart	src/usr.sbin/diskpart
