@@ -1,0 +1,14 @@
+--- GrabImage.orig	Sat Mar 23 14:37:54 2002
++++ GrabImage	Sat Mar 23 14:38:23 2002
+@@ -61,9 +61,9 @@
+ 
+ if (! ($Geometry eq "") ) {
+     system "convert -crop $Geometry $home/.wmGrabImage/${ImageName} $home/.wmGrabImage/${ImageName}.tmp.gif" ;
+-    system "convert -geom 54x54 $home/.wmGrabImage/${ImageName}.tmp.gif ${home}/.wmGrabImage/${ImageName}.tmp.xpm";
++    system "convert -geometry 54x54 $home/.wmGrabImage/${ImageName}.tmp.gif ${home}/.wmGrabImage/${ImageName}.tmp.xpm";
+ } else {
+-    system "convert -geom 54x54 $home/.wmGrabImage/${ImageName} ${home}/.wmGrabImage/${ImageName}.tmp.xpm";
++    system "convert -geometry 54x54 $home/.wmGrabImage/${ImageName} ${home}/.wmGrabImage/${ImageName}.tmp.xpm";
+ }
+     system "cat ${home}/.wmGrabImage/${ImageName}.tmp.xpm | sed -e \"s/Transparent/Black/\" \> ${home}/.wmGrabImage/${ImageName}.xpm; rm ${home}/.wmGrabImage/${ImageName}.tmp.xpm";
+ 
