@@ -18,6 +18,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 CATEGORIES=	mail news
 
+MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
+		http://www.kfu.com/~nsayer/encryption/noexport/
+
 MAINTAINER=	nsayer@freebsd.org
 
 BUILD_DEPENDS=	${PREFIX}/lib/librsaref.a:${PORTSDIR}/security/rsaref
@@ -35,10 +38,6 @@ MASTERDIR=	${.CURDIR}/../pine4
 FILESDIR=	${.CURDIR}/files
 
 .include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE='Please fill out the form at http://www.kfu.com/~nsayer/encryption/pine.html and place the sources at ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} then run make again'
-.endif
 
 post-extract:
 	( cd ${WRKSRC} ; tar xfz ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} )
