@@ -19,6 +19,8 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	java@FreeBSD.ORG
 COMMENT=	Eclipse Language Pack Feature
 
+BROKEN=		Requires update to 3.0
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
