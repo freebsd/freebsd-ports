@@ -1,0 +1,71 @@
+--- configure.orig	Mon Jan 26 06:37:00 2004
++++ configure	Mon Jan 26 07:02:35 2004
+@@ -1020,21 +1020,7 @@
+ fi
+ 
+ echo "$ac_t""$ac_cv_prog_cc_g" 1>&6
+-if test "$ac_test_CFLAGS" = set; then
+-  CFLAGS="$ac_save_CFLAGS"
+-elif test $ac_cv_prog_cc_g = yes; then
+-  if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
+-  else
+-    CFLAGS="-g"
+-  fi
+-else
+-  if test "$GCC" = yes; then
+-    CFLAGS="-O2"
+-  else
+-    CFLAGS=
+-  fi
+-fi
++CFLAGS="$ac_save_CFLAGS"
+ 
+ for ac_prog in $CCC c++ g++ gcc CC cxx cc++ cl
+ do
+@@ -1163,26 +1149,9 @@
+ fi
+ 
+ echo "$ac_t""$ac_cv_prog_cxx_g" 1>&6
+-if test "$ac_test_CXXFLAGS" = set; then
+-  CXXFLAGS="$ac_save_CXXFLAGS"
+-elif test $ac_cv_prog_cxx_g = yes; then
+-  if test "$GXX" = yes; then
+-    CXXFLAGS="-g -O2"
+-  else
+-    CXXFLAGS="-g"
+-  fi
+-else
+-  if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
+-  else
+-    CXXFLAGS=
+-  fi
+-fi
++CXXFLAGS="$ac_save_CXXFLAGS"
+ 
+ 
+-CFLAGS="-s -Wall -O2 -ffast-math -fexpensive-optimizations"
+-CXXFLAGS="-s -Wall -O2 -ffast-math -fexpensive-optimizations"
+-LIBS="$LIBS"
+ 
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+ echo "configure:1189: checking how to run the C preprocessor" >&5
+@@ -2387,7 +2356,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include "SDL/SDL.h"
++#include <SDL.h>
+ 
+ char*
+ my_strdup (char *str)
+@@ -2480,7 +2449,7 @@
+ #include "confdefs.h"
+ 
+ #include <stdio.h>
+-#include "SDL/SDL.h"
++#include <SDL.h>
+ 
+ int main() {
+  return 0; 

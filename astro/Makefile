@@ -53,6 +53,7 @@
     SUBDIR += sscalc
     SUBDIR += starplot
     SUBDIR += stars
+    SUBDIR += stellarium
     SUBDIR += sunclock
     SUBDIR += tkseti
     SUBDIR += wmglobe
