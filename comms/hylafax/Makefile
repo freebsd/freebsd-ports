@@ -5,12 +5,11 @@
 # To Replace:		flexfax v2.3beta038special
 # Name changed from flexfax to hylafax by author of both: Sam Leffler.
 #
-# $Id$
+# $Id: Makefile,v 1.6 1995/10/27 22:05:03 pst Exp $
 
 DISTNAME=	hylafax-v3.0pl0
 PKGNAME=	hylafax-3.0.1
 CATEGORIES+=	comms
-KEYWORDS+=	fax
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/
 EXTRACT_SUFX=	-tar.gz
 HAS_CONFIGURE=	yes

@@ -3,12 +3,11 @@
 # Date created:         08 March 1995
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.8 1995/11/22 13:12:36 asami Exp $
+# $Id: Makefile,v 1.9 1995/12/20 08:40:58 tg Exp $
 #
 
 DISTNAME=       elk-3.0
 CATEGORIES+=	lang
-KEYWORDS+=	lang scheme
 MASTER_SITES=	ftp://ftp.uni-bremen.de/pub/programming/languages/scheme/elk/ \
 		ftp://crl.dec.com/pub/X11/contrib/devel_tools/ \
 		ftp://ftp.th-darmstadt.de/pub/X11/contrib/devel_tools/
