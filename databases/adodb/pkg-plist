@@ -24,7 +24,9 @@
 %%ADODB_DIR%%/adodb-session.php.sample
 %%ADODB_DIR%%/adodb-sybase.inc.php
 %%ADODB_DIR%%/adodb-vfp.inc.php
+%%ADODB_DIR%%/adodb.gif
 %%ADODB_DIR%%/adodb.inc.php
+%%ADODB_DIR%%/adodb.png
 %%ADODB_DIR%%/crypt.inc.php
 %%ADODB_DIR%%/server.php.sample
 %%ADODB_DIR%%/tohtml.inc.php
@@ -38,11 +40,12 @@
 %%ADODB_TEST%%/testcache.php
 %%ADODB_TEST%%/testdatabases.inc.php
 %%ADODB_TEST%%/testoci8.php
+%%ADODB_TEST%%/testpaging.php
 %%ADODB_TEST%%/testpear.php
 %%ADODB_TEST%%/testsessions.php
-%%PORTDOCS%%share/doc/adodb/readme.htm
-%%PORTDOCS%%share/doc/adodb/readme.txt
-%%PORTDOCS%%share/doc/adodb/tute.htm
-%%PORTDOCS%%@dirrm share/doc/adodb
+%%PORTDOCS%%%%DOCSDIR%%/readme.htm
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/tute.htm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%ADODB_DIR%%
 @dirrm %%ADODB_TEST%%
