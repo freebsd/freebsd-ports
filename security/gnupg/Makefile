@@ -44,7 +44,7 @@ MAN7=		gnupg.7
 .if defined(WITH_LIBICONV) || exists(${PREFIX}/lib/libiconv.so)
 USE_ICONV=	yes
 .endif
-.if defined(WITH_LDAP) || exists(${PREFIX}/lib/libldap.so.2)
+.if defined(WITH_LDAP) || exists(${PREFIX}/lib/libldap.so)
 USE_OPENLDAP=	yes
 PLIST_SUB+=	WITH_LDAP=""
 .else
