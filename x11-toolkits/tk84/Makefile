@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	tcl
 DISTNAME=	${PORTNAME}${PORTVERSION}-src
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Graphical toolkit for TCL
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/lang/tcl84:build
 LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84

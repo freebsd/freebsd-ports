@@ -34,6 +34,7 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
 		c-news-patch-pgpverify-1.12-perl4
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	An nntp server
 
 DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes

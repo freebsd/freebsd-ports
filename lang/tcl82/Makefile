@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	tcl8_2
 DISTNAME=	tcl8.2.3
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Tool Command Language
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix

@@ -11,6 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www.sucknews.org/
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Receives/sends news to/from localhost via NNTP
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

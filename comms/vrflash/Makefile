@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Flash kernels and romdisks to the Agenda VR3
 
 GNU_CONFIGURE=	yes
 DOCS=		agenda-flashing-overview.txt troubleshooting.txt \

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.lan-ks.de/pub/approved/ \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Mail routing tools
 
 ALL_TARGET=	pathalias
 

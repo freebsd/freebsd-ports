@@ -16,6 +16,7 @@ PKGNAMESUFFIX?=	-before-sendmail
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Secure, performance, tiny POP3 daemon
 
 ALL_TARGET=	popa3d
 MAN8=		popa3d.8

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/dev-apps/
 DISTNAME=	ProjectCenter-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	A development environment for GNUstep
 
 BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall

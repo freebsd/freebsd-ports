@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	FreeBSD-modified Taylor UUCP (unix-to-unix copy program)
 
 USE_BZIP2=	yes
 

@@ -17,6 +17,7 @@ DISTNAME=	xanim2920
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main ${EXTRA_FILES}
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Play most popular animation formats and show pictures
 
 .if (${MACHINE_ARCH} == "i386")
 EXTRA_FILES=	vid_cvid_2.1_freebsdELFx86.tgz \

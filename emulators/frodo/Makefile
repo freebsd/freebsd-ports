@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://metalab.unc.edu/pub/micro/commodore/crossplatform/emulators/
 DISTNAME=	FrodoV4_1a.Src
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Emulates a Commodore 64
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 

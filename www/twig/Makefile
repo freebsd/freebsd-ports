@@ -12,6 +12,7 @@ MASTER_SITES=	http://twig.info/download/ \
 		http://twig.screwdriver.net/download/
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Web Based Email Client and Scheduler
 
 .if !defined(WITH_PHP3)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4

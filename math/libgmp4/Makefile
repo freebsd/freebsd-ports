@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	gmp
 DISTNAME=	gmp-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	A free library for arbitrary precision arithmetic
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.fidogate.org/pub/fidogate/ \
 MASTER_SITE_SUBDIR=	system/fido
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Fido-Internet Gateway and Tosser
 
 # you may commet out this line if you have another transfer-agent
 RUN_DEPENDS=	${LOCALBASE}/libexec/ifmail/ifcico:${PORTSDIR}/news/ifmail

@@ -10,6 +10,7 @@ PORTVERSION=	${CONSOLE_LICQ_VER}
 CATEGORIES=	net
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Ncurses-based console plugin for Licq
 
 USE_AUTOCONF_VER=	253
 USE_AUTOMAKE_VER=	15

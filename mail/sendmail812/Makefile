@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Reliable, highly configurable mail transfer agent with utilities
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site

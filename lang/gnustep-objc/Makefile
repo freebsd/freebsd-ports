@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	A snapshot of libobjc, meant to be used with GNUstep
 
 BUILD_DEPENDS=	${SYSTEMDIR}/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
 		${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall

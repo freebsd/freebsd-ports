@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Foreign function call libraries
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 MASTER_SITE_SUBDIR=	libs
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	GNUstep interface to the GUILE scheme interpreter
 
 BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall

@@ -17,6 +17,7 @@ DISTNAME=	PGPMoose
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	PGP Moose - signatures for moderated newsgroups
 
 MAN1=		pmapp.1 pmcanon.1 pmcheck.1 pmnewsgroups.1 \
 		pmdaemon.1 pmcancel.1

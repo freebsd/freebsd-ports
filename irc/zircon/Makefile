@@ -11,6 +11,7 @@ CATEGORIES=	irc tk83
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	An X11 interface to Internet Relay Chat
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 

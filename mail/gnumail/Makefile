@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.collaboration-world.com/gnumail.data/releases/Stable/ \
 DISTNAME=	GNUMail-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	GNUstep mail client
 
 BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall

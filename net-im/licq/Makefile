@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-socks
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	A popular ICQ-compatible plugin-based program
 
 .if defined(WITH_SOCKS)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5

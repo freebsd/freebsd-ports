@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.klake.org/sma/dl/ \
 		http://www.saunalahti.fi/~jt2/sma/dl/
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Program that analyses Sendmail log entries
 
 MAN8=		sma.8
 DOCSFILES=	BUGS COPYRIGHT HISTORY README TODO

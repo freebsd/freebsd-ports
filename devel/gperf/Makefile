@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gperf
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Generates perfect hash functions for sets of keywords
 
 GNU_CONFIGURE=	yes
 MAN1=		gperf.1

@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	games
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.Org
+COMMENT=	X11 arcade game
 
 .if ${MACHINE_ARCH} == "alpha"
 PLIST=		${PKGDIR}/pkg-plist.alpha

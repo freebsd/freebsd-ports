@@ -13,6 +13,7 @@ PKGNAMESUFFIX=	-kde
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Qt plugin for licq
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"

@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/enrico/gshisen/
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	Mahjongg-kind of game that uses the GNUstep toolkit
 
 BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	A RADIUS-compliant remote authentication and accouting server
 
 MAKEFILE=	Makefile.BSD
 RADIUS_DIR=	${PREFIX}/etc/raddb

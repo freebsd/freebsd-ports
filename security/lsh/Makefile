@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	lsh lsh/old
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
 
 BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp4
 LIB_DEPENDS+=	oop:${PORTSDIR}/devel/liboop

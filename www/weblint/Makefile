@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=../../authors/id/NEILB
 
 MAINTAINER=	dinoex@FreeBSD.org
+COMMENT=	HTML validator and sanity checker
 
 MAN1=		weblint.1
 
