@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	meshviewer
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.dai.ed.ac.uk/homes/helmutc/mesh_viewer/
 DISTNAME=	mview-src-${PORTVERSION}
