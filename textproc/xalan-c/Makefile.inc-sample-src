@@ -38,30 +38,31 @@
 		${EXAMPLESDIR}/ExternalFunction/
 	${MKDIR} ${EXAMPLESDIR}/ParsedSourceWrappers
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/ParsedSourceWrappers/ParsedSourceWrappers.cpp \
 		${WRKSRC}/samples/ParsedSourceWrappers/foo.xml \
 		${WRKSRC}/samples/ParsedSourceWrappers/foo.xsl \
+		${WRKSRC}/samples/ParsedSourceWrappers/ParsedSourceWrappers.cpp \
 		${EXAMPLESDIR}/ParsedSourceWrappers/
 	${MKDIR} ${EXAMPLESDIR}/SerializeNodeSet
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/SerializeNodeSet/SerializeNodeSet.cpp \
 		${WRKSRC}/samples/SerializeNodeSet/foo.xml \
+		${WRKSRC}/samples/SerializeNodeSet/SerializeNodeSet.cpp \
 		${EXAMPLESDIR}/SerializeNodeSet/
 	${MKDIR} ${EXAMPLESDIR}/SimpleTransform
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/SimpleTransform/SimpleTransform.cpp \
 		${WRKSRC}/samples/SimpleTransform/foo.xml \
 		${WRKSRC}/samples/SimpleTransform/foo.xsl \
+		${WRKSRC}/samples/SimpleTransform/SimpleTransform.cpp \
+		${WRKSRC}/samples/SimpleTransform/XalanMemoryManagerImpl.hpp \
 		${EXAMPLESDIR}/SimpleTransform/
 	${MKDIR} ${EXAMPLESDIR}/SimpleXPathAPI
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/SimpleXPathAPI/SimpleXPathAPI.cpp \
 		${WRKSRC}/samples/SimpleXPathAPI/foo.xml \
+		${WRKSRC}/samples/SimpleXPathAPI/SimpleXPathAPI.cpp \
 		${EXAMPLESDIR}/SimpleXPathAPI/
 	${MKDIR} ${EXAMPLESDIR}/SimpleXPathCAPI
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/SimpleXPathCAPI/SimpleXPathCAPI.c \
 		${WRKSRC}/samples/SimpleXPathCAPI/foo.xml \
+		${WRKSRC}/samples/SimpleXPathCAPI/SimpleXPathCAPI.c \
 		${EXAMPLESDIR}/SimpleXPathCAPI/
 	${MKDIR} ${EXAMPLESDIR}/StreamTransform
 	${INSTALL_DATA} \
@@ -69,44 +70,44 @@
 		${EXAMPLESDIR}/StreamTransform/
 	${MKDIR} ${EXAMPLESDIR}/ThreadSafe
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/ThreadSafe/ThreadSafe.cpp \
 		${WRKSRC}/samples/ThreadSafe/birds.xml \
 		${WRKSRC}/samples/ThreadSafe/birds.xsl \
+		${WRKSRC}/samples/ThreadSafe/ThreadSafe.cpp \
 		${EXAMPLESDIR}/ThreadSafe/
 	${MKDIR} ${EXAMPLESDIR}/TraceListen
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/TraceListen/TraceListen.cpp \
 		${WRKSRC}/samples/TraceListen/birds.xml \
 		${WRKSRC}/samples/TraceListen/birds.xsl \
+		${WRKSRC}/samples/TraceListen/TraceListen.cpp \
 		${EXAMPLESDIR}/TraceListen/
 	${MKDIR} ${EXAMPLESDIR}/TransformToXercesDOM
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/TransformToXercesDOM/TransformToXercesDOM.cpp \
 		${WRKSRC}/samples/TransformToXercesDOM/birds.xml \
 		${WRKSRC}/samples/TransformToXercesDOM/birds.xsl \
+		${WRKSRC}/samples/TransformToXercesDOM/TransformToXercesDOM.cpp \
 		${EXAMPLESDIR}/TransformToXercesDOM/
 	${MKDIR} ${EXAMPLESDIR}/UseStylesheetParam
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/UseStylesheetParam/UseStylesheetParam.cpp \
 		${WRKSRC}/samples/UseStylesheetParam/foo.xml \
 		${WRKSRC}/samples/UseStylesheetParam/foo.xsl \
+		${WRKSRC}/samples/UseStylesheetParam/UseStylesheetParam.cpp \
 		${EXAMPLESDIR}/UseStylesheetParam/
-	${MKDIR} ${EXAMPLESDIR}/XPathWrapper
-	${INSTALL_DATA} \
-		${WRKSRC}/samples/XPathWrapper/TestDriver.cpp \
-		${WRKSRC}/samples/XPathWrapper/XPathWrapper.cpp \
-		${WRKSRC}/samples/XPathWrapper/XPathWrapper.hpp \
-		${WRKSRC}/samples/XPathWrapper/foo.xml \
-		${EXAMPLESDIR}/XPathWrapper/
 	${MKDIR} ${EXAMPLESDIR}/XalanTransform
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/XalanTransform/XalanTransform.cpp \
 		${WRKSRC}/samples/XalanTransform/foo.xml \
 		${WRKSRC}/samples/XalanTransform/foo.xsl \
+		${WRKSRC}/samples/XalanTransform/XalanTransform.cpp \
 		${EXAMPLESDIR}/XalanTransform/
 	${MKDIR} ${EXAMPLESDIR}/XalanTransformerCallback
 	${INSTALL_DATA} \
-		${WRKSRC}/samples/XalanTransformerCallback/XalanTransformerCallback.cpp \
 		${WRKSRC}/samples/XalanTransformerCallback/foo.xml \
 		${WRKSRC}/samples/XalanTransformerCallback/foo.xsl \
+		${WRKSRC}/samples/XalanTransformerCallback/XalanTransformerCallback.cpp \
 		${EXAMPLESDIR}/XalanTransformerCallback/
+	${MKDIR} ${EXAMPLESDIR}/XPathWrapper
+	${INSTALL_DATA} \
+		${WRKSRC}/samples/XPathWrapper/foo.xml \
+		${WRKSRC}/samples/XPathWrapper/TestDriver.cpp \
+		${WRKSRC}/samples/XPathWrapper/XPathWrapper.cpp \
+		${WRKSRC}/samples/XPathWrapper/XPathWrapper.hpp \
+		${EXAMPLESDIR}/XPathWrapper/

@@ -7,7 +7,7 @@
 # ------------------------------------------------------------------------------
 
 PORTNAME=	xalan-c
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE_XML:S/$/:msax,docs/}
 MASTER_SITE_SUBDIR=	${PORTNAME}/source/:msax ${PORTNAME}/docs/:docs
@@ -57,6 +57,10 @@ USE_GMAKE=		yes
 MAKE_ENV+=		XALANCROOT=${WRKSRC}
 MAKE_ENV+=		XERCESCROOT=${XERCESCROOT}
 
+.if ( ${OSVERSION} < 500000 )
+EXTRA_CFLAGS=		-ftemplate-depth-20
+.endif
+
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	runConfigure
 CONFIGURE_ENV+=		XALANCROOT=${WRKSRC}
@@ -64,7 +68,7 @@ CONFIGURE_ENV+=		XERCESCROOT=${XERCESCROOT}
 CONFIGURE_ENV+=		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS+=	-p freebsd -c ${CC} -x ${CXX} -l ${PTHREAD_LIBS} \
-				-z -I${LOCALBASE}/include -C --prefix=${PREFIX}
+				-z ${EXTRA_CFLAGS} -I${LOCALBASE}/include -C --prefix=${PREFIX}
 
 .if defined(WITH_INMEM)
 LOCALSYS=		inmem
@@ -99,7 +103,7 @@ PLIST_SUB+=		LOCALSYS_NLS="@comment "
 
 .if defined(WITH_TRANSCODER_ICU)
 PKGNAMESUFFIX+=		-icu
-LIB_DEPENDS+=		icuuc.28:${PORTSDIR}/devel/icu2
+LIB_DEPENDS+=		icuuc.32:${PORTSDIR}/devel/icu
 ICUROOT?=		${LOCALBASE}
 CONFIGURE_ENV+=		XALAN_USE_ICU=1
 CONFIGURE_ENV+=		ICUROOT=${ICUROOT}
@@ -158,7 +162,15 @@ pre-extract:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/check-config-options
 
 post-patch:
-	${RM} -f ${WRKSRC}/src/xalanc/PlatformSupport/XalanArrayAllocator.hpp.orig
+	${RM} -f ${WRKSRC}/src/xalanc/ICUBridge/ICUFormatNumberFunctor.hpp.orig \
+		${WRKSRC}/src/xalanc/PlatformSupport/XalanArrayAllocator.hpp.orig \
+		${WRKSRC}/src/xalanc/XMLSupport/FormatterToText.hpp.orig \
+		${WRKSRC}/src/xalanc/XPath/ElementPrefixResolverProxy.hpp.orig \
+		${WRKSRC}/src/xalanc/XPath/NameSpace.hpp.orig \
+		${WRKSRC}/src/xalanc/XPath/XalanQNameByValue.hpp.orig \
+		${WRKSRC}/src/xalanc/XSLT/FunctionSystemProperty.hpp.orig \
+		${WRKSRC}/src/xalanc/XSLT/TopLevelArg.hpp.orig
+	${CHMOD} 755 ${WRKSRC}/runConfigure ${WRKSRC}/configure
 
 post-install:
 .if !defined(WITH_DEBUG)
@@ -177,8 +189,8 @@ post-install:
 	cd ${DOCSDIR} && \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${_DISTDIR}/${DOCS_TARBALL} ${EXTRACT_AFTER_ARGS} && \
-	${MV} ${DOCSDIR}/docs/* ${DOCSDIR} && \
-	${RMDIR} ${DOCSDIR}/docs
+	${MV} ${DOCSDIR}/Xalan-C_${PORTVERSION:S/./_/g}-docs/* ${DOCSDIR} && \
+	${RMDIR} ${DOCSDIR}/Xalan-C_${PORTVERSION:S/./_/g}-docs
 .endif
 
 post-clean:
