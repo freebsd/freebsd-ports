@@ -28,14 +28,14 @@
      if (format) 
  #ifdef HAVE_VPRINTF
 -        vsprintf(mp,format,ap);
-+        vsnprintf(mp,len,format,ap);
++        vsnprintf(mp,len-3,format,ap);
  #else
  # ifdef PYRAMID
 -        (void)sprintf(mp,format, arg1, arg2, arg3, arg4, arg5, arg6);
-+        (void)snprintf(mp,len,format, arg1, arg2, arg3, arg4, arg5, arg6);
++        (void)snprintf(mp,len-3,format, arg1, arg2, arg3, arg4, arg5, arg6);
  # else
 -        (void)sprintf(mp,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
-+        (void)snprintf(mp,len,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
++        (void)snprintf(mp,len-3,format,((int *)ap)[0],((int *)ap)[1],((int *)ap)[2],
                  ((int *)ap)[3],((int *)ap)[4]);
  # endif
  #endif
