@@ -625,7 +625,7 @@ lib/xemacs-%%XEMACS_VER%%/lisp/fill.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/find-paths.el
 lib/xemacs-%%XEMACS_VER%%/lisp/find-paths.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/finder-inf.el
-lib/xemacs-%%XEMACS_VER%%/lisp/finder-inf.elc
+@comment lib/xemacs-%%XEMACS_VER%%/lisp/finder-inf.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/finder.el
 lib/xemacs-%%XEMACS_VER%%/lisp/finder.elc
 lib/xemacs-%%XEMACS_VER%%/lisp/float-sup.el
