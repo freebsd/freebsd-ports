@@ -1,4 +1,4 @@
-This is Intels C/C++ compiler, it is set up so produce native FreeBSD objects.
+This is Intels C/C++ compiler, it is set up to produce native FreeBSD objects.
 This port is not able to produce native executables on its own, you need to
 use gcc to link the final binary.
 
