@@ -4,8 +4,8 @@
  
  all:			$(targets) txt_files
  
--txt_files:		../INSTALL-SOURCE ../COPYING ../INSTALL-WIN-SOURCE \
-+txt_files:		../INSTALL-SOURCE ../COPYING \
+-txt_files:		../INSTALL-SOURCE ../COPYING ../INSTALL-WIN-SOURCE ../EXCEPTIONS-CLIENT \
++txt_files:		../INSTALL-SOURCE ../COPYING ../EXCEPTIONS-CLIENT \
  			INSTALL-BINARY ../support-files/MacOSX/ReadMe.txt
  
  CLEAN_FILES:		$(BUILD_SOURCES)

@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	4.1.3
+PORTVERSION=	4.1.4
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.1/ \
@@ -21,7 +21,7 @@ MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/MySQL-4.1/ \
 		http://mysql.proserve.nl/Downloads/MySQL-4.1/ \
 		ftp://ftp.free.fr/pub/MySQL/Downloads/MySQL-4.1/
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME}-${PORTVERSION}-beta
+DISTNAME=	${PORTNAME}-${PORTVERSION}-gamma
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
@@ -45,6 +45,7 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-low-memory \
 		--with-ndbcluster \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
+		--with-zlib-dir=/usr \
 		--enable-thread-safe-client
 
 .ifdef USE_MYSQL
@@ -111,7 +112,7 @@ LATEST_LINK=	mysql41-server
 CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
 
 PLIST_SUB=	DB_DIR=${DB_DIR} \
-		VER=${PORTVERSION}-beta
+		VER=${PORTVERSION}-gamma
 
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
