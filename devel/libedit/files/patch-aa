@@ -1,6 +1,14 @@
-diff -ru configure.in.orig configure.in
---- configure.in.orig	Sat Feb  9 12:38:59 2002
-+++ configure.in	Sat Feb  9 18:34:59 2002
+--- configure.in.orig	Mon Feb 11 08:36:44 2002
++++ configure.in	Tue Jan 14 07:31:02 2003
+@@ -118,7 +118,7 @@
+   CPPFLAGS="$CPPFLAGS -DDEBUG_TTY -DDEBUG_KEY -DDEBUG_READ -DDEBUG"
+   CPPFLAGS="$CPPFLAGS -DDEBUG_REFRESH -DDEBUG_PASTE"
+ else
+-  CFLAGS="$CFLAGS -O"
++  CFLAGS="$CFLAGS"
+ fi
+ 
+ 
 @@ -169,7 +169,7 @@
  
  dnl Library settings.

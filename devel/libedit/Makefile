@@ -7,6 +7,7 @@
 
 PORTNAME=	libedit
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.canonware.com/download/libedit/
 
