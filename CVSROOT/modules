@@ -5916,6 +5916,7 @@ p5-Validate-Net	ports/net/p5-Validate-Net
 p5-WDDX		ports/textproc/p5-WDDX
 p5-WWW-Automate	ports/www/p5-WWW-Automate
 p5-WWW-Babelfish	ports/www/p5-WWW-Babelfish
+p5-WWW-Curl	ports/www/p5-WWW-Curl
 p5-WWW-IMDb	ports/www/p5-WWW-IMDb
 p5-WWW-Link	ports/www/p5-WWW-Link
 p5-WWW-Mechanize	ports/www/p5-WWW-Mechanize
