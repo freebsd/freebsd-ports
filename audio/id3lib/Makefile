@@ -16,7 +16,6 @@ MAINTAINER=	roman@xpert.com
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 INSTALLS_SHLIB=	yes
-USE_NEWGCC=	yes
 USE_LIBTOOL=	yes
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes

@@ -13,7 +13,6 @@ MASTER_SITES=	http://dara.notbsd.org/~aholtzma/ac3/tarballs/
 MAINTAINER=	3d@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-USE_NEWGCC=	yes
 
 post-patch:
 	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' \

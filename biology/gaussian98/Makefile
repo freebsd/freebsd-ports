@@ -27,7 +27,6 @@ RESTRICTED=	"You must purchase a licensed copy from Gaussian inc."
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400013
-USE_NEWGCC=	yes
 F77?=		g77
 .else
 F77?=		f77
