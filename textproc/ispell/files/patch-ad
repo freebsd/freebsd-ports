@@ -1,0 +1,57 @@
+*** unsq.c.bak	Tue Jan 25 21:32:18 1994
+--- unsq.c	Tue Dec 16 19:08:44 1997
+***************
+*** 49,54 ****
+--- 49,55 ----
+   */
+  
+  #include <stdio.h>
++ #include <string.h>
+  #include "msgs.h"
+  
+  #ifdef __STDC__
+***************
+*** 99,104 ****
+--- 100,107 ----
+      register char *	prevp;
+      register int	same_count;
+      register int	count_char;
++     int wsize;
++     char *s;
+  
+      count_char = getchar ();
+      if (count_char == EOF)
+***************
+*** 114,126 ****
+  	}
+      prevp = prev;
+      wordp = word;
+!     while (same_count--)
+  	*wordp++ = (*prevp++);
+!     if (gets (wordp) == NULL)
+  	{
+  	(void) fprintf (stderr, UNSQ_C_SURPRISE_EOF);
+  	exit (1);
+  	}
+      (void) strcpy (prev, word);
+      return 0 ;
+      }
+--- 117,134 ----
+  	}
+      prevp = prev;
+      wordp = word;
+!     wsize = 257;
+!     while (same_count--) {
+  	*wordp++ = (*prevp++);
+! 	wsize--;
+!     }
+!     if (fgets (wordp, wsize, stdin) == NULL)
+  	{
+  	(void) fprintf (stderr, UNSQ_C_SURPRISE_EOF);
+  	exit (1);
+  	}
++     if ((s = strchr(wordp, '\n')) != NULL)
++ 	    *s = '\0';
+      (void) strcpy (prev, word);
+      return 0 ;
+      }

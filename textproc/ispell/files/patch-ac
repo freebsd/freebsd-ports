@@ -1,0 +1,37 @@
+*** sq.c.orig	Tue Jan 25 21:32:18 1994
+--- sq.c	Tue Dec 16 19:02:22 1997
+***************
+*** 49,54 ****
+--- 49,55 ----
+   */
+  
+  #include <stdio.h>
++ #include <string.h>
+  
+  #ifdef __STDC__
+  #define P(x)	x
+***************
+*** 82,90 ****
+      {
+      char	word[257];
+      static char	prev[257] = "";
+  
+!     while (gets (word) != NULL)
+  	trunc (word, prev);
+      return 0;
+      }
+  
+--- 83,95 ----
+      {
+      char	word[257];
+      static char	prev[257] = "";
++     char *s;
+  
+!     while (fgets (word, sizeof(word), stdin) != NULL) {
+! 	if ((s = strchr(word, '\n')) != NULL)
+! 		*s = '\0';
+  	trunc (word, prev);
++     }
+      return 0;
+      }
+  
