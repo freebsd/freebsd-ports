@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hte
-PORTVERSION=	0.4.4d
+PORTVERSION=	0.5.0
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,13 @@ DISTNAME=	ht-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LIBS="-lm"
 CONFIGURE_ARGS=	--enable-final
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400000
+LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+.endif
+
+.include <bsd.port.post.mk>
