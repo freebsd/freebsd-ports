@@ -31,7 +31,7 @@ CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
 MAKE_ARGS=	prefix=${PREFIX}
 
 .if defined(WITH_BOCHS_PROCESSORS)
-.if (WITH_BOCHS_CPU_LEVEL < 1) || (WITH_BOCHS_CPU_LEVEL > 15)
+.if ${WITH_BOCHS_CPU_LEVEL} < 1 || ${WITH_BOCHS_CPU_LEVEL} > 15
 .error "WITH_BOCHS_CPU_LEVEL must be an integer value between 1 and 15."
 .endif
 CONFIGURE_ARGS+=	--enable-processors=${WITH_BOCHS_PROCESSORS}
@@ -39,7 +39,7 @@ WITH_BOCHS_CPU_LEVEL=	6
 .endif
 
 .if defined(WITH_BOCHS_CPU_LEVEL)
-.if (WITH_BOCHS_CPU_LEVEL < 3) || (WITH_BOCHS_CPU_LEVEL > 6)
+.if ${WITH_BOCHS_CPU_LEVEL} < 3 || ${WITH_BOCHS_CPU_LEVEL} > 6
 .error "WITH_BOCHS_CPU_LEVEL must be an integer value between 3 and 6."
 .endif
 CONFIGURE_ARGS+=	--enable-cpu-level=${WITH_BOCHS_CPU_LEVEL}
