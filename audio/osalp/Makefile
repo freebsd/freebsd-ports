@@ -33,4 +33,6 @@ INSTALLS_SHLIB=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+CONFLICTS=	libaudiofile-*
+
 .include <bsd.port.mk>
