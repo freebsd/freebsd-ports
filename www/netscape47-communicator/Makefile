@@ -12,7 +12,7 @@ PORTVERSION?=	${DEFAULT_PORTVERSION}
 .include <bsd.port.pre.mk>
 .endif
 .if ${ARCH} == "alpha"
-DEFAULT_PORTVERSION?=	4.77
+DEFAULT_PORTVERSION?=	4.78
 .else
 DEFAULT_PORTVERSION?=	4.76
 .endif
