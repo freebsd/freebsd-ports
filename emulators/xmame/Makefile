@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.87
+PORTVERSION?=	0.88
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -166,9 +166,9 @@ DISPLAY_TARGET=sdl
 .endif
 
 .if ${DISPLAY_TARGET:L} == "opengl"
-CFLAGS+=	${PTHREAD_CFLAGS}
+CFLAGS+=	${PTHREAD_CFLAGS} -I${X11BASE}/include
 USE_GL=		yes
-DISPLAY_METHOD=	xgl
+DISPLAY_METHOD=	x11
 PLIST_SUB+=	OPENGL=""
 ALL_DOCS+=	${GLDOCS}
 .else
@@ -281,6 +281,10 @@ do-configure:
 		${REINPLACE_CMD} -e "s@# JOY_SDL = 1@JOY_SDL = 1@g" ${WRKSRC}/makefile.unix
 .endif
 
+.if ${DISPLAY_TARGET:L} == "opengl"
+		${REINPLACE_CMD} -e "s@# X11_OPENGL = 1@X11_OPENGL = 1@g" ${WRKSRC}/makefile.unix
+.endif
+
 # png.h conflicts with libpng.
 .for f in mess/artworkx.c mess/artworkx.h src/artwork.c \
 	src/common.c src/png.c src/unix/video-drivers/glexport.c
@@ -332,6 +336,15 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/hiscore.dat ${PREFIX}/share/xmame
 	${INSTALL_DATA} ${WRKDIR}/history.dat ${PREFIX}/share/xmame
 	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${PREFIX}/share/xmame
+.endif
+.if ${DISPLAY_TARGET:L} == "opengl"
+	@${ECHO_MSG}
+	@${ECHO_MSG}	"**************************************************************"
+	@${ECHO_MSG}    "* HEADSUP: The OpenGL code is now built on top of the X11"
+	@${ECHO_MSG}    "* drivers. You can enable OpenGL rendering with the -vidmode 2"
+	@${ECHO_MSG}    "* option."
+	@${ECHO_MSG}    "**************************************************************"
+	@${ECHO_MSG}
 .endif
 
 .include <bsd.port.post.mk>
