@@ -6,9 +6,11 @@ info/bookview.info
 @exec install-info %D/info/bookview-ja.info %D/info/dir
 @exec install-info %D/info/bookview.info %D/info/dir
 share/bookview/arrow.xbm
+share/bookview/backward.xbm
 share/bookview/copyright.gif
 share/bookview/find.gif
 share/bookview/finder.tcl
+share/bookview/forward.xbm
 share/bookview/help-ja.txt
 share/bookview/help.tcl
 share/bookview/help.txt
