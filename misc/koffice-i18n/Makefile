@@ -21,6 +21,7 @@ RUN_DEPENDS+=\
 	${LOCALBASE}/share/locale/hu/LC_MESSAGES/kword.mo:${PORTSDIR}/hungarian/koffice-i18n\
 	${LOCALBASE}/share/locale/ja/LC_MESSAGES/kword.mo:${PORTSDIR}/hebrew/koffice-i18n\
 	${LOCALBASE}/share/locale/ja/LC_MESSAGES/kword.mo:${PORTSDIR}/japanese/koffice-i18n\
+	${LOCALBASE}/share/locale/pl/LC_MESSAGES/kword.mo:${PORTSDIR}/polish/koffice-i18n\
 	${LOCALBASE}/share/locale/pt/LC_MESSAGES/kword.mo:${PORTSDIR}/portuguese/koffice-i18n\
 	${LOCALBASE}/share/locale/pt_BR/LC_MESSAGES/kword.mo:${PORTSDIR}/portuguese/koffice-i18n-pt_BR\
 	${LOCALBASE}/share/locale/ru/LC_MESSAGES/kword.mo:${PORTSDIR}/russian/koffice-i18n\
@@ -28,7 +29,7 @@ RUN_DEPENDS+=\
 	${LOCALBASE}/share/locale/zh_TW/LC_MESSAGES/kword.mo:${PORTSDIR}/chinese/koffice-i18n-zh_TW
 
 .for LANG in af ar bs cs da el en_GB eo es et it \
-	lt lv mt nb nl nn pl sk sl sv th tr ven xh zu
+	lt lv mt nb nl nn sk sl sv th tr ven xh zu
 RUN_DEPENDS+=\
 ${LOCALBASE}/share/locale/${LANG}/LC_MESSAGES/kword.mo:${PORTSDIR}/misc/koffice-i18n-${LANG}
 .endfor
