@@ -1,24 +1,6 @@
---- configure.orig	Sun Mar 14 15:20:47 2004
-+++ configure	Thu Mar 25 10:38:38 2004
-@@ -287,7 +287,7 @@
- bindir='${exec_prefix}/bin'
- sbindir='${exec_prefix}/sbin'
- libexecdir='${exec_prefix}/libexec'
--datadir='${prefix}/share'
-+datadir='${prefix}/../share'
- sysconfdir='${prefix}/etc'
- sharedstatedir='${prefix}/com'
- localstatedir='${prefix}/var'
-@@ -504,7 +504,7 @@
-   -prefix | --prefix | --prefi | --pref | --pre | --pr | --p)
-     ac_prev=prefix ;;
-   -prefix=* | --prefix=* | --prefi=* | --pref=* | --pre=* | --pr=* | --p=*)
--    prefix="$ac_optarg" ;;
-+    prefix="$ac_optarg"/gambas ;;
- 
-   -program-prefix | --program-prefix | --program-prefi | --program-pref \
-   | --program-pre | --program-pr | --program-p)
-@@ -6877,6 +6877,7 @@
+--- configure.orig	Sat May 15 15:46:47 2004
++++ configure	Sun May 16 21:24:50 2004
+@@ -6889,6 +6889,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -26,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -7068,10 +7069,10 @@
+@@ -7080,10 +7081,10 @@
  
    case "${host}" in
      *-*-freebsd* )
@@ -41,7 +23,7 @@
        ;;
      *)
        THREAD_LIB="-lpthread"
-@@ -10222,7 +10223,7 @@
+@@ -10234,7 +10235,7 @@
        fi
      done
  
@@ -50,7 +32,14 @@
  
    fi
  
-@@ -10352,20 +10353,7 @@
+@@ -10358,26 +10359,13 @@
+       fi
+ 
+       gb_cv_header_sdl=$gb_inc_sdl
+-    
++
+ fi
+ 
  
      echo "$ac_t""$gb_cv_header_sdl" 1>&6
  
@@ -72,7 +61,7 @@
      if test "$gb_cv_header_sdl" = no; then
        have_inc_sdl="no"
        SDL_INC=""
-@@ -10468,16 +10456,7 @@
+@@ -10480,16 +10468,7 @@
      SDL_LIB=""
      SDL_PATH=""
  
@@ -90,7 +79,7 @@
  
    fi
  
-@@ -10725,8 +10704,8 @@
+@@ -11246,8 +11225,8 @@
  fi
  
  
@@ -101,7 +90,7 @@
  
  if test "$gambas_prof" = "yes"; then
    CFLAGS="$CFLAGS -pg"
-@@ -10756,8 +10735,8 @@
+@@ -11277,8 +11256,8 @@
    CFLAGS="$CFLAGS -Os"
    CXXFLAGS="$CXXFLAGS -Os"
  else
