@@ -3,7 +3,7 @@
 # Date created:				1 June 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/04 02:37:37 mph Exp $
 #
 
 DISTNAME=	crafty-open-large-19960910
@@ -13,14 +13,11 @@ DISTFILES=	large1.zip large2.zip large3.zip large4.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		crafty:${PORTSDIR}/games/crafty
+BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 DIST_SUBDIR=		crafty
-EXTRACT_AFTER_ARGS=
-EXTRACT_BEFORE_ARGS=
-EXTRACT_CMD=		unzip
+USE_ZIP=		yes
 NO_WRKSUBDIR=		yes
 
 post-extract:

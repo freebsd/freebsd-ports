@@ -3,7 +3,7 @@
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1999/01/08 00:15:21 mph Exp $
+# $Id: Makefile,v 1.3 1999/02/03 11:11:44 asami Exp $
 #
 
 DISTNAME=	inform-6.15
@@ -12,22 +12,18 @@ MASTER_SITES=  	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/source/ \
 		ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/library/
 DISTFILES=	inform615_source.zip inform_library68.zip
 
+MAINTAINER=	mph@freebsd.org
+
 .if !defined(NOPORTDOCS)
 MASTER_SITES+=	ftp://ftp.gmd.de/if-archive/infocom/compilers/inform6/manuals/
 DISTFILES+=	designers_manual_html.zip
 .endif
 
-MAINTAINER=	mph@freebsd.org
-
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
 DIST_SUBDIR=	inform
 NO_WRKSUBDIR=	yes
 
-EXTRACT_ONLY=		inform615_source.zip
-EXTRACT_CMD=		unzip
-EXTRACT_BEFORE_ARGS=	-qq
-EXTRACT_AFTER_ARGS=	# empty
+EXTRACT_ONLY=	inform615_source.zip
+USE_ZIP=	yes
 
 # I can hardly believe it, but the ".c" and ".h" extensions are
 # not present on the source files.
@@ -35,7 +31,7 @@ post-extract:
 	@${MV} ${WRKSRC}/header ${WRKSRC}/header.h
 .for file in arrays asm bpatch chars directs errors expressc expressp \
 	files inform lexer linker memory objects states symbols syntax \
-	tables text veneer verbs 
+	tables text veneer verbs
 	@${MV} ${WRKSRC}/${file} ${WRKSRC}/${file}.c
 .endfor
 	@${CP} ${FILESDIR}/Makefile.inform ${WRKSRC}/Makefile

@@ -3,24 +3,20 @@
 # Date created:		03 July 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/08/10 13:26:34 steve Exp $
+# $Id: Makefile,v 1.6 1999/04/19 18:00:07 jseger Exp $
 #
 
 DISTNAME=	pstoedit_3_11
 PKGNAME=	pstoedit-3.11
 CATEGORIES=	graphics print
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Network/1958/pstoedit/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	jseger@FreeBSD.ORG
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 
 FETCH_BEFORE_ARGS=	-t
-EXTRACT_CMD=	unzip
-EXTRACT_BEFORE_ARGS=    -q
-EXTRACT_AFTER_ARGS=     -d ${WRKDIR}
+USE_ZIP=		yes
 WRKSRC=		${WRKDIR}/pstoedit_3.11/src
 MAKEFILE=	makefile
 ALL_TARGET=

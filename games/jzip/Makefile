@@ -3,22 +3,17 @@
 # Date created:				7 May 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1998/07/05 04:15:04 mph Exp $
+# $Id: Makefile,v 1.4 1999/02/03 11:11:44 asami Exp $
 #
 
 DISTNAME=		jzip201g
 PKGNAME=		jzip-2.0.1g
 CATEGORIES=		games
 MASTER_SITES=   	http://www.freebsd.org/~mph/distfiles/
-EXTRACT_SUFX=		.zip
 
 MAINTAINER=		mph@freebsd.org
 
-BUILD_DEPENDS=		unzip:${PORTSDIR}/archivers/unzip
-
-EXTRACT_CMD=		unzip
-EXTRACT_BEFORE_ARGS=	-qq
-EXTRACT_AFTER_ARGS=	# empty
+USE_ZIP=		yes
 
 NO_WRKSUBDIR=		yes
 

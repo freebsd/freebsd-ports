@@ -3,7 +3,7 @@
 # Date created:         22 Jul 1998
 # Whom:                 CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1998/10/16 02:53:04 jseger Exp $
+# $Id: Makefile,v 1.3 1999/02/03 11:11:52 asami Exp $
 #
 # This is based on ja-pgp.
 #
@@ -12,18 +12,14 @@ DISTNAME=	pgp263i-${PGP_LANGUAGE}
 PKGNAME=	ko-pgp-2.6.3
 CATEGORIES=	korean security
 MASTER_SITES=	http://sparcs.kaist.ac.kr/~firiel/Works/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
 RESTRICTED=	"Crypto"
 
-EXTRACT_CMD=	unzip
-EXTRACT_BEFORE_ARGS=	-q
-EXTRACT_AFTER_ARGS=	# empty
+USE_ZIP=	yes
 NO_BUILD=	YES
 
 # version and language specifications

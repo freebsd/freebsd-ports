@@ -3,25 +3,21 @@
 # Date created:				1 June 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/04 02:33:59 mph Exp $
 #
 
 DISTNAME=	medium
 PKGNAME=	crafty-open-medium-19960910
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/common/
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		crafty:${PORTSDIR}/games/crafty
+BUILD_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 DIST_SUBDIR=		crafty
-EXTRACT_AFTER_ARGS=
-EXTRACT_BEFORE_ARGS=
-EXTRACT_CMD=		unzip
+USE_ZIP=		yes
 NO_WRKSUBDIR=		yes
 
 do-build:
