@@ -6974,6 +6974,7 @@ wmx		ports/x11-wm/wmx
 wmx10		ports/misc/wmx10
 wmzazof		ports/sysutils/wmzazof
 wn		ports/www/wn
+wol		ports/net/wol
 wolfpack	ports/games/wolfpack
 word2x		ports/textproc/word2x
 wordnet		ports/textproc/wordnet
