@@ -1,0 +1,5 @@
+bin/carthage
+bin/carthago
+%%PORTDOCS%%share/doc/carthage/README
+%%PORTDOCS%%share/doc/carthage/README.SPQR
+%%PORTDOCS%%@dirrm share/doc/carthage
