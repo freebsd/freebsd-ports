@@ -1,31 +1,38 @@
-# New ports collection makefile for:	lcrzoex
-# Date created:		Wed Apr 10 02:42:20 CEST 2002
-# Whom:			king@v2project.com
+# New ports collection makefile for:	netwox
+# Date created:				26.07.2004
+# Whom:					janos.mohacsi@bsd.hu
 #
 # $FreeBSD$
 #
 
-PORTNAME=	lcrzoex
-PORTVERSION=	4.17.0
-CATEGORIES=	security
-MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwib/download/v4/ \
-		http://fresh.t-systems-sfr.com/unix/src/privat2/
-EXTRACT_SUFX=	-src.tgz
+PORTNAME=	netwox
+PORTVERSION=	5.20.0
+CATEGORIES=	net-mgmt ipv6
+MASTER_SITES=	http://www.laurentconstantin.com/common/netw/netwox/download/v5/ \
+		http://membres.lycos.fr/lauconstantin/common/netw/netwox/download/v5/ \
+		http://laurentconstantin.free.fr/common/netw/netwox/download/v5/
+DISTFILES=	${PORTNAME}-${PORTVERSION}-src.tgz ${PORTNAME}-${PORTVERSION}-doc_html.tgz
 
-MAINTAINER=	king@v2project.com
-COMMENT=	Lcrzoex contains over 300 functionnalities using network library lcrzo
+MAINTAINER=	janos.mohacsi@bsd.hu
+COMMENT=	Netwox a network testing toolbox
 
-BUILD_DEPENDS=	${LOCALBASE}/include/lcrzo_debugdefs.h:${PORTSDIR}/security/lcrzo
+BUILD_DEPENDS=	${LOCALBASE}/bin/netwib-config:${PORTSDIR}/net/netwib
 
-WRKSRC=		${WRKDIR}/${PKGNAME}-src/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
+USE_REINPLACE=	yes
+MAN1=		netwox.1 netwox520.1
 
-MAN1=		lcrzoex.1
-PLIST_FILES=	bin/lcrzoex
-
-pre-configure:
-	cd ${WRKSRC} && ${SH} ${WRKSRC}/genemake
+do-configure:
+		@${REINPLACE_CMD} \
+		-e 's|%%PREFIX%%|${PREFIX}|' \
+		${WRKSRC}/config.dat
+		(cd ${WRKSRC} ; ${SH} ${WRKSRC}/genemake )
 
 post-install:
-	@${CAT}	${PKGMESSAGE}
+		strip ${PREFIX}/bin/${PORTNAME}
+.ifndef(NOPORTDOCS)
+		@${MKDIR} ${DOCSDIR}
+		@${CP} -R ${WRKSRC}/../../${PORTNAME}-${PORTVERSION}-doc_html/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

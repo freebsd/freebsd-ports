@@ -154,7 +154,6 @@
     SUBDIR += l0phtcrack
     SUBDIR += l5
     SUBDIR += labrea
-    SUBDIR += lcrzoex
     SUBDIR += lep
     SUBDIR += libassuan
     SUBDIR += libbf
