@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.2 1997/08/25 16:40:13 jkh Exp $
+# $Id: Makefile,v 1.3 1997/08/27 05:03:11 asami Exp $
 #
 
 DISTNAME=	tk8.0
@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/
 MAINTAINER=	jkh@Freebsd.ORG
 
 LIB_DEPENDS=	tcl80\\.1\\.:${PORTSDIR}/lang/tcl80
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/lang/tcl80:configure
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 GNU_CONFIGURE=	yes
