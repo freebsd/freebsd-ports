@@ -1,7 +1,11 @@
 bin/cube3d
 bin/monitest
-etc/ggi/libggi.conf
-etc/ggi/libggimisc.conf
+@unexec if cmp -s %D/etc/ggi/libggi.conf %D/etc/ggi/libggi.conf.dist; then rm -f %D/etc/ggi/libggi.conf; fi
+etc/ggi/libggi.conf.dist
+@exec [ -f %B/libggi.conf ] || cp %B/%f %B/libggi.conf
+@unexec if cmp -s %D/etc/ggi/libggimisc.conf %D/etc/ggi/libggimisc.conf.dist; then rm -f %D/etc/ggi/libggimisc.conf; fi
+etc/ggi/libggimisc.conf.dist
+@exec [ -f %B/libggimisc.conf ] || cp %B/%f %B/libggimisc.conf
 include/ggi/default/genkgi.h
 include/ggi/display/aa.h
 include/ggi/display/directx.h
@@ -95,6 +99,10 @@ lib/ggi/display/palemu.la
 lib/ggi/display/palemu.so
 lib/ggi/display/sub.la
 lib/ggi/display/sub.so
+lib/ggi/display/svgalib.la
+lib/ggi/display/svgalib.so
+lib/ggi/display/svgalib_misc.la
+lib/ggi/display/svgalib_misc.so
 lib/ggi/display/tele.la
 lib/ggi/display/tele.so
 lib/ggi/display/terminfo.la
@@ -103,6 +111,8 @@ lib/ggi/display/tile.la
 lib/ggi/display/tile.so
 lib/ggi/display/trueemu.la
 lib/ggi/display/trueemu.so
+lib/ggi/display/vgagl.la
+lib/ggi/display/vgagl.so
 lib/ggi/display/vgl.la
 lib/ggi/display/vgl.so
 lib/libggi.la
