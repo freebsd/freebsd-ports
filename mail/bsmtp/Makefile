@@ -6,6 +6,7 @@
 
 PORTNAME=	bsmtp
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uk1o/bsmtp/
 
@@ -15,14 +16,24 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--redo
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500024
+UUPREFIX=	/usr
+.else
+RUN_DEPENDS=	${LOCALBASE}/bin/uux:${PORTSDIR}/net/freebsd-uucp
+UUPREFIX=	${LOCALBASE}
+.endif
+
 pre-configure:
 	@${SED} <${FILESDIR}/config.sed >${WRKSRC}/config.sed \
 		-e 's:%%CC%%:${CC}:' \
 		-e 's:%%CFLAGS%%:${CFLAGS}:' \
-		-e 's:%%PREFIX%%:${PREFIX}:'
+		-e 's:%%PREFIX%%:${PREFIX}:' \
+		-e 's:%%UUPREFIX%%:${UUPREFIX}:'
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/bsmtp
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/bsmtp/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
