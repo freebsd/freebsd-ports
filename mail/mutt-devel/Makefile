@@ -246,7 +246,7 @@ post-patch::
 	@${CP} ${PATCHDIR}/smime.h ${WRKSRC}
 
 pre-configure::
-	@(cd ${WRKSRC}; ${ACLOCAL} -I m4)
+	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
 
 .if defined(WITH_MUTT_NNTP)
 SCRIPTS_ENV+=	MUTT_NNTP="yes"
