@@ -1,12 +1,12 @@
 # New ports collection makefile for:	yamt
-# Version required:		0.2
+# Version required:		0.4
 # Date created:			9 January 2000
 # Whom:				Dmitry Sivachenko <dima@Chg.RU>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	yamt-0.2
+DISTNAME=	yamt-0.4
 CATEGORIES=	audio gnome
 MASTER_SITES=	http://download.sourceforge.net/yamt/ \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
