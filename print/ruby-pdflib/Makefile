@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.71
 CATEGORIES=	print ruby
-MASTER_SITES=	http://www-nh.scphys.kyoto-u.ac.jp/~thitoshi/ruby/
+MASTER_SITES=	http://www-nh.scphys.kyoto-u.ac.jp/~thitoshi/ruby/pdflib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	pdf.3:${PORTSDIR}/print/pdflib3 \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
+.if defined(WITH_PDFLIB4)
+LIB_DEPENDS+=	pdf.4:${PORTSDIR}/print/pdflib
+.else
+LIB_DEPENDS+=	pdf.3:${PORTSDIR}/print/pdflib3
+.endif
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
