@@ -13,7 +13,7 @@ DISTNAME=	Xtuner-${PORTVERSION}
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
-LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_IMAKE=	YES
 USE_XPM=	YES

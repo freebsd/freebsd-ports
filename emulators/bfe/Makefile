@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.qzx.com/bfe/_download/
 
 MAINTAINER=	greid@FreeBSD.org
 
-LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
 
 USE_X_PREFIX=	yes

@@ -16,7 +16,7 @@ MAINTAINER=	fenner@freebsd.org
 
 BROKEN=		"Does not build"
 
-LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/Geomview

@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	matt@LUCIDA.CA
 
-LIB_DEPENDS=	forms.0:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/xrmftp-1.2.4.src

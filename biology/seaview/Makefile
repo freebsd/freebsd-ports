@@ -16,7 +16,7 @@ MAINTAINER=	frankch@waru.life.nthu.edu.tw
 
 BROKEN=		"Checksum is incorrect"
 
-LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 USE_X_PREFIX=	YES
 NO_WRKSUBDIR=	YES
