@@ -20,6 +20,7 @@ DOMAIN="{}"
 GPG="{}"
 PGP="{}"
 PGP5="{}"
+PGP6="{}"
 GLIMPSE="{}"
 PLAY="{}"
 
@@ -51,6 +52,10 @@ if [ -f ${PREFIX}/bin/pgp5 ]; then
   PGP5=${PREFIX}/bin			#bindir
 fi
 
+if [ -f ${PREFIX}/bin/pgp ]; then
+  PGP6=${PREFIX}/bin			#bindir
+fi
+
 if [ -f ${PREFIX}/bin/glimpse ]; then
   GLIMPSE=${PREFIX}/bin			#bindir
 fi
@@ -75,6 +80,7 @@ sed <${FILESDIR}/${CONFIGFILE} \
 	-e "s+!!GPG!!+${GPG}+g" \
 	-e "s+!!PGP!!+${PGP}+g" \
 	-e "s+!!PGP5!!+${PGP5}+g" \
+	-e "s+!!PGP6!!+${PGP6}+g" \
 	-e "s+!!GLIMPSE!!+${GLIMPSE}+g" \
 	-e "s+!!PLAY!!+${PLAY}+g" \
 	-e "s+!!VERSION!!+${VERSION}+g" \

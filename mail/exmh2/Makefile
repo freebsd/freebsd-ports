@@ -7,11 +7,11 @@
 
 # "+=" and "?=" lines are for sharing this Makefile with japanese/exmh2.
 PORTNAME=	exmh
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2
 CATEGORIES+=	mail tk82
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/exmh/
 
-MAINTAINER?=	markm@FreeBSD.org
+MAINTAINER?=	bmah@FreeBSD.org
 
 .if defined(JAPANESE_EXMH)
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
@@ -46,6 +46,7 @@ RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
 # security/gnupg
 # security/pgp
 # security/pgp5
+# security/pgp6
 # mail/faces
 # audio/rplay
 

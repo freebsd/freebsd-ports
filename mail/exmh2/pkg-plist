@@ -150,6 +150,7 @@ lib/exmh-%%EXMH_VERSION%%/pgpMisc.tcl
 lib/exmh-%%EXMH_VERSION%%/pgpOld.tcl
 lib/exmh-%%EXMH_VERSION%%/pgpPgp2.tcl
 lib/exmh-%%EXMH_VERSION%%/pgpPgp5.tcl
+lib/exmh-%%EXMH_VERSION%%/pgpPgp65.tcl
 lib/exmh-%%EXMH_VERSION%%/pgpShared.tcl
 lib/exmh-%%EXMH_VERSION%%/pgpWWW.tcl
 lib/exmh-%%EXMH_VERSION%%/pick.tcl
