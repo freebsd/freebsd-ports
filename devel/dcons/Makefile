@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dcons
-PORTVERSION=	20030629
+PORTVERSION=	20030703
 CATEGORIES=	devel sysutils
 MASTER_SITES=	http://people.FreeBSD.org/~simokawa/firewire/
 
