@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Nov  3 00:09:06 2000
-+++ Makefile	Fri Nov  3 00:12:54 2000
+--- Makefile.orig	Thu May 16 18:05:28 1996
++++ Makefile	Sat Jan 20 16:22:59 2001
 @@ -2,8 +2,8 @@
  #
  
@@ -47,7 +47,7 @@
 -#CFMODE  = 664
 -#MMODE   = 444
 +MODE    = 750
-+CFMODE  = 664
++CFMODE  = 644
 +MMODE   = 444
  
  ######################################################################
@@ -75,19 +75,19 @@
 +#CFDEST  = /usr/local/lib
 +#MDEST   = /usr/local/man
 +#LOGDEST = /var/log
- 
--GROUP   = root
--CFGROUP = root
++
 +#OWNER   = root
 +#CFOWNER = root
 +#MOWNER  = root
  
+-GROUP   = root
+-CFGROUP = root
++#GROUP   = root
++#CFGROUP = root
+ 
 -MODE    = 750
 -CFMODE  = 664
 -MMODE   = 644
-+#GROUP   = root
-+#CFGROUP = root
-+
 +#MODE    = 750
 +#CFMODE  = 664
 +#MMODE   = 644
