@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	pantomime
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	mail
-MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Stable/ \
-		ftp://ftp.gnustep.org/pub/gnustep/libs/
+MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Stable/
 DISTNAME=	Pantomime-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
