@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	1.0.0.r4
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.abridgegame.org/darcs/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
+MASTER_SITES=	http://darcs.net/
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Yet another replacement for CVS, written in Haskell
