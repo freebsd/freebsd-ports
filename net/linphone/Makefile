@@ -14,11 +14,10 @@ MASTER_SITES=	http://simon.morlat.free.fr/download/${PORTVERSION}/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web phone that supports SIP protocol
 
-BROKEN=		Broken pkg-plist
-
 LIB_DEPENDS=	osip.9:${PORTSDIR}/net/libosip \
 		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
+		ogg.4:${PORTSDIR}/audio/libogg
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
