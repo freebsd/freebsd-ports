@@ -4,4 +4,4 @@ server-side agent for UNIX email servers and a developer's library
 for mail clients, other anti-spam tools, and similar projects
 requiring drop-in spam filtering.
 
-WWW: http://www.nuclearelephant.com/projects/dspam/
+WWW: http://dspam.nuclearelephant.com
