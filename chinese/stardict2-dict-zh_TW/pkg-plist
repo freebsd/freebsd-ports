@@ -1,0 +1,22 @@
+share/gnome/stardict/dic/cdict-big5.dict.dz
+share/gnome/stardict/dic/cdict-big5.idx
+share/gnome/stardict/dic/cdict-big5.ifo
+share/gnome/stardict/dic/cedict-big5.dict.dz
+share/gnome/stardict/dic/cedict-big5.idx
+share/gnome/stardict/dic/cedict-big5.ifo
+share/gnome/stardict/dic/langdao-ce-big5.dict.dz
+share/gnome/stardict/dic/langdao-ce-big5.idx
+share/gnome/stardict/dic/langdao-ce-big5.ifo
+share/gnome/stardict/dic/langdao-ec-big5.dict.dz
+share/gnome/stardict/dic/langdao-ec-big5.idx
+share/gnome/stardict/dic/langdao-ec-big5.ifo
+share/gnome/stardict/dic/oxford-big5.dict.dz
+share/gnome/stardict/dic/oxford-big5.idx
+share/gnome/stardict/dic/oxford-big5.ifo
+share/gnome/stardict/dic/xdict-ce-big5.dict.dz
+share/gnome/stardict/dic/xdict-ce-big5.idx
+share/gnome/stardict/dic/xdict-ce-big5.ifo
+share/gnome/stardict/dic/xdict-ec-big5.dict.dz
+share/gnome/stardict/dic/xdict-ec-big5.idx
+share/gnome/stardict/dic/xdict-ec-big5.ifo
+@unexec rmdir %D/share/gnome/stardict/dic 2>/dev/null || true
