@@ -17,6 +17,11 @@ AP_PORT?=	apache13
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${AP_PORT}
+RUN_DEPENDS=	${FPSETPERM}:${PORTSDIR}/www/frontpage
+
+FP_VER=		5.0
+FP_DIR=		${PREFIX}/frontpage/version${FP_VER}
+FPSETPERM=	${FP_DIR}/set_default_perms.sh
 
 .include <bsd.port.pre.mk>
 
