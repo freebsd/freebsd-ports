@@ -296,6 +296,7 @@
     SUBDIR += mshell
     SUBDIR += mtx
     SUBDIR += muuz
+    SUBDIR += nagios-base-logos
     SUBDIR += nserver
     SUBDIR += nsf
     SUBDIR += numchar
