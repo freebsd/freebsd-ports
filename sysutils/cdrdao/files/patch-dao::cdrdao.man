@@ -1,0 +1,16 @@
+--- dao/cdrdao.man.orig	Sat Dec 28 03:05:59 2002
++++ dao/cdrdao.man	Sat Dec 28 03:08:17 2002
+@@ -762,11 +762,9 @@
+ .I cdrdao
+ in that order:
+ 
+-1. /etc/cdrdao.conf
++1. %%LOCALBASE%%/etc/cdrdao.conf
+ 
+-2. /etc/defaults/cdrdao
+-
+-3. $HOME/.cdrdao
++2. $HOME/.cdrdao
+ 
+ 
+ Command line options will overwrite the loaded settings.

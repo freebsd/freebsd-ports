@@ -7,7 +7,7 @@
 +# if defined(__FreeBSD__)
 +#include <sys/soundcard.h>
 +# if !defined(SNDCTL_DSP_CHANNELS)
-+#   define SNDCTL_DSP_CHANNELS SNDCTL_DSP_STEREO
++#   define	SNDCTL_DSP_CHANNELS SOUND_PCM_WRITE_CHANNELS
 +# endif
 +# else 
  #include <linux/soundcard.h>

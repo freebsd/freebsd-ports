@@ -1,0 +1,32 @@
+--- paranoia/configure.orig	Fri Dec 27 17:09:38 2002
++++ paranoia/configure	Fri Dec 27 17:11:47 2002
+@@ -2052,16 +2052,16 @@
+ 
+ if test -z "$GCC"; then
+ 	DEBUG="-g"
+-	OPT="-O"
++	OPT="${CFLAGS}"
+ else
+ 	case $host in
+-	i?86-*-linux*)
++	i?86-*-*)
+ 		DEBUG="-g -Wall -fsigned-char"
+-		OPT="-O20 -ffast-math -fsigned-char -finline-functions"
++		OPT="${CFLAGS} -ffast-math -fsigned-char -finline-functions"
+                 ;;
+ 	*)
+ 		DEBUG="-g -Wall -fsigned-char"
+-		OPT="-O20 -fsigned-char"
++		OPT="${CFLAGS} -fsigned-char"
+                 ;;
+         esac
+ fi
+@@ -2404,7 +2404,7 @@
+ 
+ fi
+ 
+-CFLAGS=""
++#CFLAGS=""
+ 
+ TYPESIZES=""
+ 
