@@ -3,7 +3,7 @@
 # Date created:		23 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.8 1997/04/30 16:02:58 max Exp $
+# $Id: Makefile,v 1.9 1997/07/12 10:53:37 asami Exp $
 #
 
 DISTNAME=	ghostscript-4.03
@@ -75,7 +75,7 @@ post-patch:
 	@${CAT} ${WRKSRC}/mjc.dev >> ${WRKSRC}/unix-gcc.mak
 
 pre-install:
-	@${MKDIR} -p ${PREFIX}/share/ghostscript
+	@${MKDIR} ${PREFIX}/share/ghostscript
 	@tar -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
 	@tar -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_OTHER}
 
