@@ -1,0 +1,11 @@
+--- xmagv.c.orig	Sun Oct 20 03:17:30 2002
++++ xmagv.c	Sun Oct 20 03:17:55 2002
+@@ -1483,6 +1483,8 @@
+   int i, ac;
+   char **av;
+   
++  errstream = stderr;
++
+   argumentc = argc;
+   argumentv = argv;
+   memset(bitmap_fg, 0, sizeof(bitmap_fg));
