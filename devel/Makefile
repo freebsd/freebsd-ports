@@ -469,6 +469,7 @@
     SUBDIR += py-htmlkit
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
+    SUBDIR += py-mx-experimental
     SUBDIR += py-ncurses
     SUBDIR += py-omniorb
     SUBDIR += py-orbit

@@ -1,0 +1,8 @@
+eGenix.com mx Extensions - EXPERIMENTAL Package
+
+It consists of the following packages:
+
+mxNumber	- Extended Numeric Types
+mxTidy		- Interface to HTML Tidy (HTML/XML cleanup tool)
+mxURL		- A URL Datatype
+mxUID		- A UID Datatype
