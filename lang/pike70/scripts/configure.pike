@@ -4,7 +4,7 @@ if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
 fi
 
-/usr/bin/dialog --title "configuration options" --clear \
+/usr/bin/dialog --title "Pike configuration options" --clear \
 	--checklist "\n\
 Please select desired options:" -1 -1 11 \
 FreeType	"TrueType font rendering" OFF \
