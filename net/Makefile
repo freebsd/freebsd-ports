@@ -4,6 +4,7 @@
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
     SUBDIR += 6to4
+    SUBDIR += GeoIP
     SUBDIR += NeTraMet
     SUBDIR += SSLtelnet
     SUBDIR += adasockets
@@ -341,6 +342,7 @@
     SUBDIR += p5-EasyTCP
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-Frontier-RPC
+    SUBDIR += p5-Geo-IP
     SUBDIR += p5-IC-Radius
     SUBDIR += p5-IO-Interface
     SUBDIR += p5-IO-Socket-Multicast
