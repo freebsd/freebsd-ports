@@ -25,7 +25,7 @@
 #			NOTE: does NOT have to be inside ${PREFIX} tree
 
 PORTNAME=	zsh
-PORTVERSION=	4.0.7
+PORTVERSION=	4.0.9
 CATEGORIES=	shells
 MASTER_SITES=	http://www.zsh.org/zsh/ \
 		ftp://ftp.zsh.org/zsh/ \
@@ -56,7 +56,7 @@ ZSH_VER=	${PORTVERSION}
 # Conflicts with shells/zsh-devel as it installs files into the same locations
 CONFLICTS=	zsh-devel-* zsh-4.1.*
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -93,6 +93,9 @@ PLIST_SUB+=	ZSH_VER="${ZSH_VER}" ZSHETCDIR="${ZSH_ETCDIR}" \
 MAN1=		zsh.1 zshbuiltins.1 zshcompctl.1 zshcompwid.1 zshcompsys.1 \
 		zshcontrib.1 zshexpn.1 zshmisc.1 zshmodules.1 zshoptions.1 \
 		zshparam.1 zshzftpsys.1 zshzle.1 zshall.1
+.if !defined(NOPORTDOCS)
+INFO=		zsh
+.endif
 DOCS=		LICENCE META-FAQ README Etc/BUGS Etc/CONTRIBUTORS Etc/FAQ \
 		Etc/FEATURES Etc/NEWS Etc/completion-style-guide \
 		Doc/zsh*.html Doc/zsh.dvi Doc/zsh_a4.ps Doc/zsh_us.ps
