@@ -31,4 +31,7 @@ pre-patch:
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
 		 s|\$\(libdir\)/bonobo/servers|\$\(prefix\)/libdata/bonobo/servers|g'
 
+post-install:
+	@${MKDIR} ${PREFIX}/share/gnome2
+
 .include <bsd.port.mk>
