@@ -7,6 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	6.52
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -31,12 +32,12 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-CFLAGS+=	-DUPD_SIGNAL=0
+MAKE_ENV=	CC="${CC}" CXX="${CXX}" XCFLAGS="${XCFLAGS}"
 MAKEFILE=	src/unix-gcc.mak
-ALL_TARGET=	all pcl3opts escputil
+ALL_TARGET=	all pcl3opts
 PLIST_SUB=	GS_VERSION=${PORTVERSION}
 
-MAN1=		dvipdf.1 eps2eps.1 escputil.1 font2c.1 gs-hpdj.1 gs-pcl3.1 \
+MAN1=		dvipdf.1 eps2eps.1 font2c.1 gs-hpdj.1 gs-pcl3.1 \
 		gs.1 gslp.1 gsnd.1 pcl3opts.1 pdf2dsc.1 pdf2ps.1 pdfopt.1 \
 		pf2afm.1 pfbtopfa.1 printafm.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 \
 		ps2pdfwr.1 ps2ps.1 wftopfa.1
@@ -47,8 +48,10 @@ MLINKS=		gslp.1 gsbj.1 \
 		ps2pdf.1 ps2pdf12.1 \
 		ps2pdf.1 ps2pdf13.1
 
+XCFLAGS=	-DUPD_SIGNAL=0
+
 .if defined(A4)
-MAKE_ENV+=	A4="${A4}"
+XCFLAGS+=	-DA4
 .endif
 
 .if !defined(WITHOUT_X11)
@@ -97,18 +100,16 @@ HP970_DRV=	gdevdj9.c.gz
 
 # gimp-print - very high quality driver for Epson, HPs,...
 # http://gimp-print.sourceforge.net/
-GPRINT=		print
-GPRINT_DESC=	gimp-${GPRINT}
-GPRINT_VERS=	4.0.5
+GPRINT=		gimp-print
+GPRINT_VERS=	4.2.0
 GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
 GPRINT_SRC=	${GPRINT_NAME}.tar.gz
-GPRINT_MAN1=	escputil.1
 
 # HPinkjet - HP developed printer driver for PhotoSmart/DeskJet series
 # http://hpinkjet.sourceforge.net/
 HPIJS=		hpijs
-HPIJS_VERS=	0.97
-HPIJS_NAME=	${HPIJS}${HPIJS_VERS}
+HPIJS_VERS=	1.0
+HPIJS_NAME=	${HPIJS}-${HPIJS_VERS}
 HPIJS_SRC=	${HPIJS_NAME}.tar.gz
 
 # contributed uniprint profiles
@@ -129,9 +130,8 @@ pre-everything::
 
 post-extract:
 	${ECHO_MSG} ">>> in post-extract ..."
-	${LN} -sf ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b \
+	${LN} -sf ${WRKDIRPREFIX}/${PORTSDIR}/graphics/jpeg/work/jpeg-6b \
 		${WRKSRC}/jpeg
-	${RM} -f ${WRKSRC}/man/de/*.1
 # ** 3rd party driver **
 # Note: don't forget to add those devices in scripts/configure and
 # configure.batch, which update unix-gcc.mak to build gs with these
@@ -154,21 +154,21 @@ post-extract:
 	${ECHO_MSG} ">>>   extracting ${HP970_DRV} ..."
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${HP970_DRV} ${WRKSRC}/src
 	${GUNZIP_CMD} ${WRKSRC}/src/${HP970_DRV}
-# for gimp-print
+# for Gimp-Print driver
 	${ECHO_MSG} ">>>   extracting ${GPRINT_SRC} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GPRINT_SRC}
 # for HPinkjet driver
 	${ECHO_MSG} ">>>   extracting ${HPIJS_SRC} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPIJS_SRC}
-	${LN} -sf ${HPIJS_NAME} ${WRKSRC}/hpijs
 
 post-patch:
 	${PERL} -pi -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
 		${WRKSRC}/src/unix-gcc.mak
 # for HPinkjet driver
+	${PERL} -pi -e 's|CFLAGS="-O2 -Wall"||g ; \
+		 s|CXXFLAGS="-O2 -Wall"||g' ${WRKSRC}/${HPIJS_NAME}/configure
 	find ${WRKSRC}/${HPIJS_NAME} -name '*.h' | xargs ${PERL} -pi -e \
-		's|#include <malloc.h>||g; \
-		 s|SRVPATH \"hpijs\"|SRVPATH \"${PREFIX}/libexec/hpijs\"|g'
+		's|#include <malloc.h>||g'
 
 # here we apply the modifications necessary to build the 3rd party drivers
 # advantage: you see unmodified makefiles after a pure make extract
@@ -182,20 +182,11 @@ pre-configure:
 	${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-6.51.add \
 		>> ${WRKSRC}/src/contrib.mak
-# for gimp-print
-	${ECHO_MSG} ">>>   creating symlinks for ${GPRINT_DESC} ..."
-	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/Ghost/*.[ch] \
-		${WRKSRC}/src
-	${ECHO_MSG} ">>>   adding ${GPRINT_DESC} driver to contrib.mak ..."
-	${CAT} ${WRKSRC}/${GPRINT_NAME}/Ghost/contrib.mak.addon \
-		>> ${WRKSRC}/src/contrib.mak
-	${ECHO_MSG} ">>>   adding make rules for escputil to contrib.mak ..."
-	${CAT} ${FILESDIR}/escputil.contrib.mak \
+# for Gimp-Print driver
+	${ECHO_MSG} ">>>   adding ${GPRINT} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/stp.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 # for HPinkjet driver
-	${ECHO_MSG} ">>>   creating symlinks for ${HPIJS} ..."
-	${LN} -sf ${WRKSRC}/${HPIJS_NAME}/gdevhpij.[ch] \
-		${WRKSRC}/src
 	${ECHO_MSG} ">>>   adding ${HPIJS} driver to contrib.mak ..."
 	${CAT} ${FILESDIR}/hpijs.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
@@ -208,16 +199,49 @@ do-configure:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
 
+post-configure:
+	${ECHO_MSG} ">>> in post-configure ..."
+# for Gimp-Print driver
+	${ECHO_MSG} ">>>   running configure script for ${GPRINT} driver ..."
+	cd ${WRKSRC}/${GPRINT_NAME} ; \
+		${SETENV} ${MAKE_ENV} ${SH} ./configure \
+			--without-cups --without-translated-ppds \
+			--with-ghost --without-foomatic \
+			--without-gimp --without-samples \
+			--without-user-guide --disable-escputil \
+			--disable-nls --disable-shared \
+			--prefix=${PREFIX}
+# for HPinkjet driver
+	${ECHO_MSG} ">>>   running configure script for ${HPIJS} driver ..."
+	cd ${WRKSRC}/${HPIJS_NAME} ; \
+		${SETENV} ${MAKE_ENV} ${SH} ./configure \
+			--prefix=${PREFIX}
+
 pre-build:
 	${ECHO_MSG} ">>> in pre-build ..."
 	${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
 	${MKDIR} ${WRKSRC}/bin
-
-post-build:
+# for Gimp-Print driver
+	${ECHO_MSG} ">>>   building ${GPRINT} library ..."
+	cd ${WRKSRC}/${GPRINT_NAME} ; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
+	${ECHO_MSG} ">>>   creating symlinks for ${GPRINT} ..."
+	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/include/gimp-print \
+		${WRKSRC}/src
+	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/src/ghost/*.[ch] \
+		${WRKSRC}/src
+	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/src/main/.libs/libgimpprint.a \
+		${WRKSRC}/obj
 # for HPinkjet driver
+	${ECHO_MSG} ">>>   building ${HPIJS} server ..."
 	cd ${WRKSRC}/${HPIJS_NAME} ; \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} makefile
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
+	${ECHO_MSG} ">>>   creating symlinks for ${HPIJS} ..."
+.for file in gdevijs.[ch] ijs.[ch] ijs_client.[ch] ijs_exec_unix.c unistd_.h
+	${LN} -sf ${WRKSRC}/${HPIJS_NAME}/${file} \
+		${WRKSRC}/src
+.endfor
 
 pre-install:
 	${ECHO_MSG} ">>> in pre-install ..."
@@ -261,29 +285,22 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
 		${DATADIR}/${PORTVERSION}/pcl3
 .endfor
-# for gimp-print driver
-	${ECHO_MSG} ">>>   installing ${GPRINT_DESC} escputil in bindir ..."
-	${INSTALL_PROGRAM} ${WRKSRC}/src/escputil ${PREFIX}/bin
-	${ECHO_MSG} ">>>   installing ${GPRINT_DESC} manpages ..."
-.for i in ${GPRINT_MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${GPRINT_NAME}/Ghost/${i} \
-		${PREFIX}/man/man1
-.endfor
-	${ECHO_MSG} ">>>   creating ${GPRINT_DESC} destdir ..."
+# for Gimp-Print driver
+	${ECHO_MSG} ">>>   creating ${GPRINT} destdir ..."
 	${MKDIR} ${DATADIR}/${PORTVERSION}/gimp-print
-	${ECHO_MSG} ">>>   installing files in gimp-print destdir ..."
+	${ECHO_MSG} ">>>   installing files in ${GPRINT} destdir ..."
 .for i in README
-	${INSTALL_DATA} ${WRKSRC}/${GPRINT_NAME}/Ghost/${i} \
+	${INSTALL_DATA} ${WRKSRC}/${GPRINT_NAME}/src/ghost/${i} \
 		${DATADIR}/${PORTVERSION}/gimp-print
 .endfor
 # for HPinkjet driver
-	${ECHO_MSG} ">>>   installing ${HPIJS} server in libexecdir ..."
-	${INSTALL_PROGRAM} ${WRKSRC}/${HPIJS_NAME}/hpijs ${PREFIX}/libexec
+	${ECHO_MSG} ">>>   installing ${HPIJS} server in bindir ..."
+	${INSTALL_PROGRAM} ${WRKSRC}/${HPIJS_NAME}/hpijs ${PREFIX}/bin
 	${ECHO_MSG} ">>>   creating ${HPIJS} destdir ..."
 	${MKDIR} ${DATADIR}/${PORTVERSION}/hpijs
 	${ECHO_MSG} ">>>   installing files in ${HPIJS} destdir ..."
-.for i in hpijs_readme.html
-	${INSTALL_DATA} ${WRKSRC}/${HPIJS}/${i} \
+.for i in hpijs_readme.html gs_hpijs.png printerdb_append append_db.sh
+	${INSTALL_DATA} ${WRKSRC}/${HPIJS_NAME}/${i} \
 		${DATADIR}/${PORTVERSION}/hpijs
 .endfor
 # contributed UPP driver

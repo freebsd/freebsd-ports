@@ -1,31 +1,19 @@
-### ------------- Hewlett-Packard Co. Inkjet Driver -------------- ###
+### ------------- IJS Interface -------------- ###
 
-hpijs_=$(GLOBJ)gdevhpij.$(OBJ)
+ijs_=$(GLOBJ)gdevijs.$(OBJ) $(GLOBJ)ijs_client.$(OBJ) $(GLOBJ)ijs_exec_unix.$(OBJ) $(GLOBJ)ijs.$(OBJ)
 
-$(DD)gdevhpij.$(OBJ): $(GLSRC)gdevhpij.c $(PDEVH)
-	$(GLCC) $(GLO_)gdevhpij.$(OBJ) $(C_) $(GLSRC)gdevhpij.c
+$(GLOBJ)ijs_client.$(OBJ) : $(GLSRC)ijs_client.c $(PDEVH)
+	$(GLCC) $(GLO_)ijs_client.$(OBJ) $(C_) $(GLSRC)ijs_client.c
 
-$(DD)hpijs.dev : $(hpijs_) $(DD)page.dev
-	$(SETPDEV) $(DD)hpijs $(hpijs_)
+$(GLOBJ)ijs_exec_unix.$(OBJ) : $(GLSRC)ijs_exec_unix.c $(PDEVH)
+	$(GLCC) $(GLO_)ijs_exec_unix.$(OBJ) $(C_) $(GLSRC)ijs_exec_unix.c
 
-$(DD)DJ630.dev : $(hpijs_) $(DD)page.dev
-	$(SETPDEV) DJ630 $(hpijs_)
+$(GLOBJ)ijs.$(OBJ) : $(GLSRC)ijs.c $(PDEVH)
+	$(GLCC) $(GLO_)ijs.$(OBJ) $(C_) $(GLSRC)ijs.c
 
-$(DD)DJ6xx.dev : $(hpijs_) $(DD)page.dev
-	$(SETPDEV) DJ6xx $(hpijs_)
+$(GLOBJ)gdevijs.$(OBJ) : $(GLSRC)gdevijs.c $(PDEVH)
+	$(GLCC) $(GLO_)gdevijs.$(OBJ) $(C_) $(GLSRC)gdevijs.c
 
-$(DD)DJ6xxP.dev : $(hpijs_) $(DD)page.dev
-	$(SETPDEV) DJ6xxP $(hpijs_)
-
-$(DD)DJ8xx.dev : $(hpijs_) $(DD)page.dev
-	$(SETPDEV) DJ8xx $(hpijs_)
-
-$(DD)DJ9xx.dev : $(hpijs_) $(DD)page.dev
-	$(SETPDEV) DJ9xx $(hpijs_)
-
-$(DD)DJ9xxVIP.dev : $(hpijs_) $(DD)page.dev
-	$(SETPDEV) DJ9xxVIP $(hpijs_)
-
-$(DD)AP21xx.dev : $(hpijs_) $(DD)page.dev
-	$(SETPDEV) AP21xx $(hpijs_)
+$(DD)ijs.dev : $(ijs_) $(DD)page.dev
+	$(SETPDEV) $(DD)ijs $(ijs_)
 
