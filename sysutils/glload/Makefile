@@ -6,24 +6,27 @@
 #
 
 PORTNAME=	glload
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://glload.netpedia.net/source/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	vanilla
+MASTER_SITES=	http://reality.exsgi.org/eile/misc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gl base load monitor
 
-PLIST_FILES=	bin/glload
+LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 MAKEFILE=	Makefile.FreeBSD
-ALL_TARGET=	glload
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
+ALL_TARGET=	glload
+
+PLIST_FILES=	bin/glload
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/glload ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/glload ${PREFIX}/bin
 
 .include <bsd.port.mk>
