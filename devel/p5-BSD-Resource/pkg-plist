@@ -1,0 +1,6 @@
+lib/perl5/man/man3/BSD::Resource.3.gz
+lib/perl5/site_perl/BSD/Resource.pm
+lib/perl5/site_perl/i386-freebsd/auto/BSD/Resource/Resource.bs
+lib/perl5/site_perl/i386-freebsd/auto/BSD/Resource/Resource.so
+lib/perl5/site_perl/i386-freebsd/auto/BSD/Resource/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/BSD/Resource
