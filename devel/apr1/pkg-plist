@@ -57,11 +57,14 @@ include/apr-0/apr_date.h
 include/apr-0/apr_buckets.h
 include/apr-0/apr_base64.h
 include/apr-0/apu_version.h
+@dirrm include/apr-0
 lib/libapr-0.so.9
+lib/libapr-0.so
 lib/libapr-0.la
 lib/libapr-0.a
 lib/apr.exp
 lib/libaprutil-0.so.9
+lib/libaprutil-0.so
 lib/libaprutil-0.la
 lib/libaprutil-0.a
 lib/aprutil.exp
