@@ -6259,6 +6259,7 @@ p5-Log-Agent-Logger	ports/devel/p5-Log-Agent-Logger
 p5-Log-Dispatch	ports/devel/p5-Log-Dispatch
 p5-Log-Dispatch-Config	ports/devel/p5-Log-Dispatch-Config
 p5-Log-Dispatch-FileRotate	ports/devel/p5-Log-Dispatch-FileRotate
+p5-Log-Dispatch-Perl	ports/devel/p5-Log-Dispatch-Perl
 p5-Log-Log4perl	ports/devel/p5-Log-Log4perl
 p5-Log-TraceMessages	ports/devel/p5-Log-TraceMessages
 p5-MARC		ports/textproc/p5-MARC
