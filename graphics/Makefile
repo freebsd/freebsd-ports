@@ -43,6 +43,7 @@
     SUBDIR += divxcalc
     SUBDIR += djvulibre
     SUBDIR += dore
+    SUBDIR += dri
     SUBDIR += dri-devel
     SUBDIR += drm-kmod
     SUBDIR += duhdraw

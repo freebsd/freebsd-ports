@@ -1,0 +1,11 @@
+--- lib/GL/Imakefile.orig	Sat Nov  8 23:54:33 2003
++++ lib/GL/Imakefile	Sat Nov  8 23:55:05 2003
+@@ -106,7 +106,7 @@
+ #if BuildXF86DRI && GlxUseBuiltInDRIDriver
+ SUBDIRS = $(MESADIRS) $(DRIDIRS) $(DRIVERDIRS) $(GLXDIRS) $(LIBGLBUILDDIR) $(OSMESADIRS)
+ #else
+-SUBDIRS = $(MESADIRS) $(GLXDIRS) $(DRIDIRS) $(LIBGLBUILDDIR) $(OSMESADIRS) $(DRIVERDIRS)
++SUBDIRS = $(MESADIRS) $(GLXDIRS) $(DRIDIRS) $(DRIVERDIRS)
+ #endif
+ 
+ MakeSubdirs($(SUBDIRS))

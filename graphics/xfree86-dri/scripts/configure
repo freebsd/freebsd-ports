@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# This script does the following:
+# (1) cp xf86site.def, installed by imake-4 port,
+#       to ${WRKDIR}/xc/config/cf.
+#     this provides settings for the ports system.
+# (2) Create a host.def for this specific port, using 
+#     host.def as a base.
+
+ORIGDEF=$PREFIX/lib/X11/config/xf86site.def
+DESTDEF=$WRKDIR/xc/config/cf/xf86site.def
+ORIGHOSTDEF=$PREFIX/lib/X11/config/host.def
+LOCALDEF=$WRKDIR/.config
+HOSTDEF=$WRKDIR/xc/config/cf/host.def
+
+# Use original host.def as initial config file
+rm -f $LOCALDEF
+grep -v '#define.*ProjectRoot' $ORIGHOSTDEF	>> $LOCALDEF
+echo "#define ProjectRoot $PREFIX"		>> $LOCALDEF
+echo "#define X11ProjectRoot $PREFIX"		>> $LOCALDEF
+
+# This is also defined in xf86site.def, but doesn't get
+# picked up for some reason.
+echo "#define NothingOutsideProjectRoot YES"	>> $LOCALDEF
+
+echo "#define BuildXF86DRI YES"			>> $LOCALDEF
+echo "#define BuildXF86DRM NO"			>> $LOCALDEF
+echo "#define HasGlide3 YES"			>> $LOCALDEF
+
+echo "#define BuildGLXLibrary YES"		>> $LOCALDEF
+echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
+echo "#define UseInstalled YES"			>> $LOCALDEF
+echo "#define StandardIncludes -I${PREFIX}/include" >> $LOCALDEF
+
+echo "#define FreeBSDCC	${CC}"			>> $LOCALDEF
+echo "#define FreeBSDCXX ${CXX}"		>> $LOCALDEF
+echo "#define FreeBSDCFLAGS ${CFLAGS}"		>> $LOCALDEF
+
+# Copy ORIGDEF to DESTDEF
+rm -f $DESTDEF
+cp -f $ORIGDEF $DESTDEF
+
+# copy generated config to host.def
+cp -f $LOCALDEF $HOSTDEF
+
+exit 0
