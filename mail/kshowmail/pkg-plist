@@ -23,6 +23,9 @@ share/doc/HTML/es/kshowmail/index.docbook
 share/doc/HTML/fr/kshowmail/common
 share/doc/HTML/fr/kshowmail/index.cache.bz2
 share/doc/HTML/fr/kshowmail/index.docbook
+share/doc/HTML/hu/kshowmail/common
+share/doc/HTML/hu/kshowmail/index.cache.bz2
+share/doc/HTML/hu/kshowmail/index.docbook
 share/doc/HTML/sv/kshowmail/common
 share/doc/HTML/sv/kshowmail/index.cache.bz2
 share/doc/HTML/sv/kshowmail/index.docbook
@@ -30,9 +33,12 @@ share/icons/hicolor/16x16/apps/kshowmail.png
 share/locale/de/LC_MESSAGES/kshowmail.mo
 share/locale/es/LC_MESSAGES/kshowmail.mo
 share/locale/fr/LC_MESSAGES/kshowmail.mo
+share/locale/hu/LC_MESSAGES/kshowmail.mo
 share/locale/sv/LC_MESSAGES/kshowmail.mo
 @unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/hu 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr 2>/dev/null || true
 @unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
@@ -46,6 +52,8 @@ share/locale/sv/LC_MESSAGES/kshowmail.mo
 @unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/doc/HTML/sv/kshowmail
 @unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrm share/doc/HTML/hu/kshowmail
+@unexec rmdir %D/share/doc/HTML/hu 2>/dev/null || true
 @dirrm share/doc/HTML/fr/kshowmail
 @unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
 @dirrm share/doc/HTML/es/kshowmail
