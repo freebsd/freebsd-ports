@@ -3,35 +3,25 @@
 # Date created:		27 Jan 1998
 # Whom:			ports@freebsd.org
 #
-# $Id: Makefile,v 1.11 1998/11/29 13:09:40 asami Exp $
+# $Id: Makefile,v 1.12 1998/12/10 17:24:33 vanilla Exp $
 #
 
-DISTNAME=	siag-2.80
+DISTNAME=	siag-3.1.9
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/OLD/ \
-		ftp://ftp.icm.edu.pl/site/siag/OLD/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tsiag-2.80.tar.gz
+MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/ \
+		ftp://ftp.icm.edu.pl/site/siag/
+#DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tsiag-3.0.7.tar.gz
 
 MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+		Xpm.4:${PORTSDIR}/graphics/xpm \
+		guile.4:${PORTSDIR}/lang/guile
 
+BROKEN=	'installs into doc, not share/doc and needs more testing (probably simple)'
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV+= LOCALBASE=${LOCALBASE}
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/siag
-
-do-build:
-	(cd ${WRKSRC}; ${XMKMF}; \
-	 ${SETENV} ${MAKE_ENV} ${MAKE} Makefiles; \
-	 ${SETENV} ${MAKE_ENV} ${MAKE} depend; \
-	 ${SETENV} ${MAKE_ENV} ${MAKE})
-	(cd ${WRKSRC}/tsiag; ${XMKMF}; \
-	 ${SETENV} ${MAKE_ENV} ${MAKE} depend; \
-	 ${SETENV} ${MAKE_ENV} ${MAKE})
-
-do-install:
-	-(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} install install-misc)
-	-(cd ${WRKSRC}/tsiag; ${SETENV} ${MAKE_ENV} ${MAKE} install)
 
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE

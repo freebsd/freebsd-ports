@@ -1,0 +1,11 @@
+--- configure.orig	Wed Mar  3 08:53:51 1999
++++ configure	Sun Mar  7 11:00:55 1999
+@@ -4554,7 +4554,7 @@
+ 
+ 	fi
+ 	if test "$LIBGUILE" != ""; then
+-		GUILE="-DGUILE"
++		GUILE="-DGUILE -I$LOCALBASE/include"
+ 	fi 
+ fi
+ 
