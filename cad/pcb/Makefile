@@ -15,8 +15,7 @@ MASTER_SITES=	ftp://ftp.riken.go.jp/pub/Linux/plamo/Plamo-1.4.x/contrib/Electron
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
-		latex:${PORTSDIR}/print/teTeX \
-		texi2html:${PORTSDIR}/textproc/texi2html
+		latex:${PORTSDIR}/print/teTeX
 
 USE_IMAKE=	yes
 MAN1=		pcb.1
