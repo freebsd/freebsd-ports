@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.124 1998/07/30 15:24:14 hoek Exp $
+# $Id: Makefile,v 1.125 1998/08/01 16:45:47 jkh Exp $
 #
 
     SUBDIR += ElectricFence
@@ -51,6 +51,7 @@
     SUBDIR += linux_devel
     SUBDIR += linux_kdump
     SUBDIR += m4
+    SUBDIR += m68kbinutils
     SUBDIR += m68kgdb
     SUBDIR += makedepend
     SUBDIR += mico
