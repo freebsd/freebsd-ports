@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	gnome-themes-extras
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.3
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	More themes for the GNOME 2 desktop environment
-
-BUILD_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.2.0/engines/libindustrial.so:${PORTSDIR}/x11-toolkits/gtk-industrial-theme
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
