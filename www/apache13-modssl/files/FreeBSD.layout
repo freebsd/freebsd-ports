@@ -10,6 +10,7 @@
     datadir:       $prefix/www
     iconsdir:      $datadir/icons
     htdocsdir:     $datadir/data
+    manualdir:     $prefix/share/doc/apache/manual
     cgidir:        $datadir/cgi-bin
     includedir:    $prefix/include/apache
     localstatedir: /var
