@@ -25,7 +25,7 @@ MAKE_ENV=	SHORT_TCL_VER=83
 PKGINSTALL=	${PKGDIR}/pkg-install.tclsh
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.tclsh
 TCL_VER=	8.3
-NOPRECIOUSMAKEVARS= yes # Otherwise 'make readmes' is broken
+NOPRECIOUSMAKEVARS=	yes # Otherwise 'make readmes' is broken
 
 PLIST_SUB=	TCL_VER=${TCL_VER} SHORT_TCL_VER=83
 
