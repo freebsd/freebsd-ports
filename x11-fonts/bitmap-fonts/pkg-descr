@@ -1,0 +1,8 @@
+Bitmap font, 8 dots x 16 dots bitmap font.
+
+  Bitmap font is used on Mule with bitmap-mule or Emacs20 with bitmap-emacs20.
+
+  Bitmap font is installed the following directory tree:
+	${X11BASE}/lib/X11/fonts/local/
+
+--- Porting by shige <shige@FreeBSD.org>
