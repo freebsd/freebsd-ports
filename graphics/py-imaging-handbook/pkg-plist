@@ -1,0 +1,29 @@
+share/doc/PIL/handbook/labdoc.css
+share/doc/PIL/handbook/index.htm
+share/doc/PIL/handbook/overview.htm
+share/doc/PIL/handbook/concepts.htm
+share/doc/PIL/handbook/intro01.htm
+share/doc/PIL/handbook/support.htm
+share/doc/PIL/handbook/license.htm
+share/doc/PIL/handbook/image.htm
+share/doc/PIL/handbook/imagechops.htm
+share/doc/PIL/handbook/imagedraw.htm
+share/doc/PIL/handbook/imageenhance.htm
+share/doc/PIL/handbook/imagefilter.htm
+share/doc/PIL/handbook/imagefileio.htm
+share/doc/PIL/handbook/imagefont.htm
+share/doc/PIL/handbook/imagepalette.htm
+share/doc/PIL/handbook/imagesequence.htm
+share/doc/PIL/handbook/imagestat.htm
+share/doc/PIL/handbook/imagetk.htm
+share/doc/PIL/handbook/imagewin.htm
+share/doc/PIL/handbook/psdraw.htm
+share/doc/PIL/handbook/pilconvert.htm
+share/doc/PIL/handbook/pildriver.htm
+share/doc/PIL/handbook/pilfile.htm
+share/doc/PIL/handbook/pilfont.htm
+share/doc/PIL/handbook/pilprint.htm
+share/doc/PIL/handbook/formats.htm
+share/doc/PIL/handbook/decoder.htm
+@dirrm share/doc/PIL/handbook
+@unexec rmdir %B 2>/dev/null || true
