@@ -1,0 +1,13 @@
+This is an implementation of the cardgame President (aka Ass)
+which is based on Tcl/Tk.  You will play against three computer
+players, each of which has a slightly different playing style,
+although the styles are not that advanced (yet).  An explanation
+of how to play the game is included for the unfamiliar.
+
+As a package, this requires Tk80.  However, if you edit the port
+Makefile and build it yourself it will automatically detect and
+configure for any of Tk41, Tk42, Tk80, or the absence of all three
+(in which case no GUI will be available).
+
+- Tim Vanderhoek
+hoek@FreeBSD.ORG
