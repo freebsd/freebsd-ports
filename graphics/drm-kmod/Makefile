@@ -9,9 +9,9 @@ PORTNAME=	drm-kmod
 PORTVERSION=	0.9.5
 PORTREVISION=	1
 CATEGORIES=	graphics x11
-MASTER_SITES=	http://gladstone.uoregon.edu/~eanholt/dri/
+MASTER_SITES=	http://people.freebsd.org/~anholt/dri/files/
 
-MAINTAINER=	eanholt@gladstone.uoregon.edu
+MAINTAINER=	anholt@FreeBSD.org
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -22,18 +22,18 @@ PKGMESSAGE=	${WRKSRC}/.MESSAGE
 
 .if ${OSVERSION} < 400006
 BROKEN=		"FreeBSD before 4.1 is not supported"
-.elif ${OSVERSION} < 500000
+.elif ${OSVERSION} > 500000
+BROKEN=		"FreeBSD 5.0 has DRM supplied by the kernel"
+.endif
+
 .if defined(WITH_SMP)
 CFLAGS+=	-DSMP -DAPIC_IO
 .endif
-.endif
 
 pre-extract:
-.if ${OSVERSION} < 500000
 .if !defined(WITH_SMP)
 	@${ECHO_MSG} "If you are using modules on an SMP system, use "make -DWITH_SMP" to get SMP locking"
 	@${ECHO_MSG}
-.endif
 .endif
 
 pre-patch:
