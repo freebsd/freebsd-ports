@@ -3,18 +3,23 @@
 # Date created:		21 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.11 1998/08/07 23:01:40 asami Exp $
+# $Id: Makefile,v 1.12 1998/08/07 23:56:53 asami Exp $
 #
 
 DISTNAME=	olvwm4
-PKGNAME=	olvwm-4.1
+PKGNAME=	olvwm-4.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://ftp.x.org/R5contrib/
-DISTFILES=	olvwm4.tar.Z
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
+		${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=	window_managers
+EXTRACT_SUFX=	.tar.Z
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	olvwm4.Patch01.Z
+PATCHFILES=	olvwm4.Patch01.Z \
+		olvwm4.Patch02.Z
 PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	brianfeldman@hotmail.com
 
 LIB_DEPENDS=	xview\\.3\\.:${PORTSDIR}/x11-toolkits/xview-lib
 
