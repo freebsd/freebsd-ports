@@ -626,6 +626,7 @@
     SUBDIR += p5-Carp-Datum
     SUBDIR += p5-Cdk
     SUBDIR += p5-Class-Accessor
+    SUBDIR += p5-Class-Accessor-Chained
     SUBDIR += p5-Class-Accessor-Lvalue
     SUBDIR += p5-Class-AlzaboWrapper
     SUBDIR += p5-Class-ArrayObjects
