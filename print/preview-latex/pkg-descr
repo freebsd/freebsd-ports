@@ -1,0 +1,8 @@
+preview-latex is a system for displaying inline images of selected
+parts of a file in Emacs source buffers.
+
+Put the expression below into your ~/.emacs
+
+(require 'preview)
+
+WWW: http://preview-latex.sourceforge.net/ 
