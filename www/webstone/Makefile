@@ -22,6 +22,10 @@ NO_INSTALL_MANPAGES=	yes
 post-extract:
 	( cd ${WRKSRC}; make clobber )
 
+# otherwise these files will be installed by do-install target below
+post-patch:
+	find ${WRKSRC}/.. -name '*.orig' | xargs rm -f
+
 do-install:
 	@${MKDIR} ${PREFIX}/webstone/bin
 	@${MKDIR} ${PREFIX}/webstone/conf
