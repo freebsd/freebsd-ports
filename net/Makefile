@@ -622,6 +622,7 @@
     SUBDIR += wmwave
     SUBDIR += wol
     SUBDIR += xarchie
+    SUBDIR += xbms
     SUBDIR += xbone
     SUBDIR += xferstats
     SUBDIR += xicq

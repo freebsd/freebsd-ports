@@ -1,0 +1,11 @@
+--- server.c.orig	Fri Dec 20 00:00:41 2002
++++ server.c	Fri Dec 20 00:00:55 2002
+@@ -55,7 +55,7 @@
+ 
+ #define VERSION "0.30.5"
+ 
+-#define CONFIG "/etc/xbms.conf"
++#define CONFIG "@@PREFIX@@/etc/xbms.conf"
+ #define PIDFILE "/var/run/xbms.pid"
+ #define C_SERVER_PORT 1400
+ #define MAX_MSG_LENGTH 4096

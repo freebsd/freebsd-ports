@@ -1,0 +1,9 @@
+--- Makefile.orig	Thu Jan 16 16:27:25 2003
++++ Makefile	Thu Jan 16 16:27:36 2003
+@@ -1,5 +1,5 @@
+ CC =            gcc -Wall
+-BINDIR =        /usr/local/bin
++BINDIR =        ${PREFIX}/bin
+ all:    server
+ server:         
+ 	$(CC) -O3 -pthread -o xbms server.c
