@@ -8,22 +8,3 @@
 +            CPPFLAGS="$CPPFLAGS -I$with_sasl/include/sasl"
              LDFLAGS="$LDFLAGS -L$with_sasl/lib"
            fi
- 
-@@ -674,7 +674,7 @@
-         mutt_save_LIBS="$LIBS"
-         LIBS="$LIBS $LIBICONV"
-         AC_TRY_RUN([
--#include <iconv.h>
-+#include <giconv.h>
- int main()
- {
-   iconv_t cd;
-@@ -705,7 +705,7 @@
-         mutt_save_LIBS="$LIBS"
-         LIBS="$LIBS $LIBICONV"
-         AC_TRY_RUN([
--#include <iconv.h>
-+#include <giconv.h>
- #include <string.h>
- int main()
- {
