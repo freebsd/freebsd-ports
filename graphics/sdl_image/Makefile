@@ -15,27 +15,23 @@ DISTNAME=	SDL_image-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple library to load images of various formats as SDL surfaces
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		tiff.4:${PORTSDIR}/graphics/tiff
 
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
-USE_LIBTOOL=	yes
+USE_SDL=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="-I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lm"
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
 CONFIGURE_ARGS=	--enable-tif --enable-xcf
-
-post-extract:
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|-release \$$\(LT_RELEASE\)||g'
+INSTALLS_SHLIB=	yes
 
 post-configure:
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
-		${WRKSRC}/libtool
+	@${REINPLACE_CMD} -e \
+		's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+			${WRKSRC}/libtool
 
 .include <bsd.port.mk>
