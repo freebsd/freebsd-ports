@@ -17,8 +17,8 @@
  	cfg.random_skin_on_play = FALSE;
 -	cfg.mainwin_use_xfont = FALSE;
 +	cfg.mainwin_use_xfont = TRUE;
-+    cfg.use_fontsets = TRUE;
- 	cfg.read_pl_metadata = TRUE;
++	cfg.use_fontsets = TRUE;
+	cfg.use_pl_metadata = TRUE;
  
  	cfg.playlist_x = 295;
 @@ -492,9 +493,9 @@
