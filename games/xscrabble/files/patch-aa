@@ -1,0 +1,13 @@
+--- Imakefile.orig	Tue Mar 11 06:56:29 1997
++++ Imakefile	Sun Jul 27 10:43:53 1997
+@@ -9,3 +9,10 @@
+ MakeLintLibSubdirs($(SUBDIRS))
+ MakeLintSubdirs($(SUBDIRS),install.ln,install.ln)
+ 
++InstallNamedNonExec(XScrabble.ad,XScrabble,$(LIBDIR)/app-defaults)
++InstallNonExecFile(OSPD3.gz,@XSCRABBLEDIR@)
++InstallNonExecFile(scrabble_permutations,@XSCRABBLEDIR@)
++InstallNonExecFile(xscrabble.scores,@XSCRABBLEDIR@)
++
++install::
++	@chmod a+rw @XSCRABBLEDIR@/xscrabble.scores

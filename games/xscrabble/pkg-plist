@@ -1,0 +1,7 @@
+bin/xscrab
+bin/xscrabble
+lib/X11/app-defaults/XScrabble
+lib/X11/xscrabble/OSPD3.gz
+lib/X11/xscrabble/scrabble_permutations
+lib/X11/xscrabble/xscrabble.scores
+@dirrm lib/X11/xscrabble

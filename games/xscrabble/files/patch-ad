@@ -1,0 +1,21 @@
+--- src/Imakefile.orig	Tue Mar 11 06:56:24 1997
++++ src/Imakefile	Sun Jul 27 10:04:12 1997
+@@ -28,8 +28,8 @@
+      PROGRAMS = xscrab xscrabble
+         SLIBS = 
+ 
+-     INCLUDES = -I.. -I/home/mchapman/include
+-SYS_LIBRARIES = -lXpm -L../Xc -lXc -L/home/mchapman/lib
++     INCLUDES = -I..
++SYS_LIBRARIES = -lXpm -L../Xc -lXc
+ 
+     CCOPTIONS = 
+ 
+@@ -39,4 +39,7 @@
+ NormalProgramTarget(xscrabble,$(SETUP_OBJS),$(DEPLIBS),$(LOCAL_LIBS),$(SLIBS))
+ 
+ DependTarget()
++
++InstallProgram(xscrab,$(BINDIR))
++InstallProgram(xscrabble,$(BINDIR))
+ 
