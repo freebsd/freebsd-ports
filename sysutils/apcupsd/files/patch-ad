@@ -1,0 +1,13 @@
+--- powerflute.c.orig	Fri Aug 23 14:58:34 2002
++++ powerflute.c	Fri Aug 23 14:58:09 2002
+@@ -576,9 +576,8 @@
+ int do_horiz_menu(void) {
+ 	int pos = 0;
+ 	int oldpos = 0;
+-	int true = 1;
+ 
+-	while (true) {
++	while (1) {
+ 
+ 		display_h_menu(pos);
+ 
