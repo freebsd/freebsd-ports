@@ -1,6 +1,6 @@
 @comment $FreeBSD$
-sbin/daapd
 etc/daapd.conf.sample
 etc/rc.d/daapd.sh
+sbin/daapd
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
