@@ -13,6 +13,8 @@ DISTNAME=	handbase_desktop_${PORTVERSION:S/./_/}.i386-any-linux2.0
 
 MAINTAINER=	knu@FreeBSD.org
 
+BUILD_DEPENDS=	${LINUXBASE}/usr/bin/strip:${PORTSDIR}/devel/linux_devtools-7
+
 USE_LINUX=	yes
 
 ONLY_FOR_ARCHS=	i386
