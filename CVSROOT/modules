@@ -453,6 +453,7 @@ autocd		ports/audio/autocd
 autoconf	ports/devel/autoconf
 autoconf213	ports/devel/autoconf213
 autoconf257	ports/devel/autoconf257
+autocutsel	ports/deskutils/autocutsel
 autodia		ports/devel/autodia
 autogen		ports/devel/autogen
 automake	ports/devel/automake
