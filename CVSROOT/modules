@@ -734,6 +734,7 @@ calc		ports/math/calc
 calcoo		ports/math/calcoo
 calctool	ports/math/calctool
 calculix	ports/cad/calculix
+calibrator	ports/devel/calibrator
 calife		ports/security/calife
 cam		ports/audio/cam
 camediaplay	ports/graphics/camediaplay
