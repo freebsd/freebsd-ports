@@ -1,23 +1,27 @@
---- ../fxtv-0.46.ORIG/tvcapture.c	Tue Oct 28 01:59:41 1997
-+++ tvcapture.c	Sun Mar 22 16:43:45 1998
-@@ -1126,7 +1126,7 @@
-     /*  Just mmap the biggest buffer we'll need and be done with it.  */
-     /*    (Buffer used for non-directvideo captures)                  */
-     c->drv_buf = (TV_UINT8 *) mmap( (caddr_t)0, MAX_MMAP_BUF_SIZE,
--                                 PROT_READ|PROT_WRITE, 0, c->fd, (off_t)0 );
-+                                 PROT_READ, MAP_SHARED, c->fd, (off_t)0 );
-     if ( c->drv_buf == (TV_UINT8 *) -1 ) {
-         fprintf( stderr, "mmap of driver buffer failed: %s\n", 
-                  strerror(errno) );
-@@ -1537,9 +1537,9 @@
-         video.ramsize  = 0;
- 
-         /*  If TDEC is on, may be a while before old trash gets written on  */
+--- tvcapture.c.old	Sun Jun  7 01:35:21 1998
++++ tvcapture.c	Sun Jun  7 01:35:59 1998
+@@ -1879,8 +1879,8 @@
+         /*  If TDEC is on, may be a while before old trash gets written on.  */
+         /*    So tell the driver to flush the frame buffer before starting   */
+         /*    capture.                                                       */
 -        if ( c->fps != c->fps_max )
-+/*        if ( c->fps != c->fps_max )
-             memset( c->drv_buf, '\0',
--                    g.w * g.h * c->pix_geom_list[ c->pix_geom_idx ].Bpp );
-+                    g.w * g.h * c->pix_geom_list[ c->pix_geom_idx ].Bpp ); */
+-            flush_buf = TRUE;
++        /* if ( c->fps != c->fps_max )
++            flush_buf = TRUE; */
      }
      memcpy( &pix_geom, &c->pix_geom_list[ c->pix_geom_idx ], 
              sizeof( pix_geom ) );
+@@ -1913,11 +1913,13 @@
+         return;
+     }
+ 
++/*
+     larg = flush_buf;
+     if ( ioctl( c->fd, BT848SCBUF, &larg ) < 0 ) {
+         DO_IOCTL_SERR( "BT848SCBUF", larg );
+         return;
+     }
++*/
+ 
+     /*  If user wants to know whenever a/the frame is complete,            */
+     /*    add in a signal handler for this for single captures, or an Xt   */
