@@ -50,10 +50,10 @@ lib/vtk/python/vtkImageWindowWidget.pyo
 lib/vtk/python/vtkRenderWidget.py
 lib/vtk/python/vtkRenderWidget.pyc
 lib/vtk/python/vtkRenderWidget.pyo
-lib/vtk/python/vtkpython.so                          
-lib/vtk/python/vtkTkImageViewerWidget                
-lib/vtk/python/vtkTkImageWindowWidget                
-lib/vtk/python/vtkTkRenderWidget                     
+lib/vtk/python/vtkpython.so
+lib/vtk/python/vtkTkImageViewerWidget
+lib/vtk/python/vtkTkImageWindowWidget
+lib/vtk/python/vtkTkRenderWidget
 @dirrm lib/vtk/python
 @dirrm lib/vtk
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
