@@ -1,6 +1,6 @@
---- configure.orig	Tue Apr 13 23:49:03 1999
-+++ configure	Tue Apr 13 23:49:19 1999
-@@ -3741,7 +3741,7 @@
+--- configure.orig	Sun May  9 19:34:34 1999
++++ configure	Tue May 11 18:19:26 1999
+@@ -3816,7 +3816,7 @@
  
  if test ! -n "$IRCLIB";
  then
