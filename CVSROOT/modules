@@ -3657,6 +3657,7 @@ kbiff		ports/mail/kbiff
 kbilliards	ports/games/kbilliards
 kbirthday	ports/deskutils/kbirthday
 kcd		ports/misc/kcd
+kcdlabel	ports/print/kcdlabel
 kcpuload	ports/sysutils/kcpuload
 kdbg		ports/devel/kdbg
 kdc2tiff	ports/graphics/kdc2tiff
@@ -3862,6 +3863,7 @@ konverse	ports/net/konverse
 konwert		ports/converters/konwert
 kopete		ports/net/kopete
 korelib		ports/devel/korelib
+kover		ports/print/kover
 kp		ports/misc/kp
 kpacman		ports/games/kpacman
 kpictorial	ports/games/kpictorial
