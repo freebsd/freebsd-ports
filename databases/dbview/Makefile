@@ -18,6 +18,11 @@ LIB_DEPENDS=		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 MAN1=			dbview.1
 
+
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/db_dump.c
+
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/dbview ${PREFIX}/bin
 	@ ${INSTALL_MAN} ${WRKSRC}/dbview.1 ${PREFIX}/man/man1
