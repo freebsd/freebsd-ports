@@ -97,6 +97,7 @@
     SUBDIR += fwlogwatch
     SUBDIR += fwtk
     SUBDIR += gag
+    SUBDIR += gaim-encryption
     SUBDIR += gcipher
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnomekeyring
