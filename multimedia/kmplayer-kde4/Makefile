@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kmplayer
-PORTVERSION=	0.8.3.r4
+PORTVERSION=	0.8.3a
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	http://www.xs4all.nl/%7Ejjvrieze/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.r/rc/}
