@@ -7,7 +7,7 @@
 
 PORTNAME=		bash
 PORTVERSION=		3.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		shells
 MASTER_SITES=		${MASTER_SITE_GNU} \
 			ftp://ftp.cwru.edu/pub/%SUBDIR%/
