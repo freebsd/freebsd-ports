@@ -1,0 +1,11 @@
+--- Test/Makefile.orig	Thu Dec 12 13:47:59 2002
++++ Test/Makefile	Sun Jun 29 16:00:25 2003
+@@ -4,7 +4,7 @@
+ 
+ vers_check:
+ 	@echo "### Test 2 : test --version option, onmetis returns :"
+-	(../onmetis --version ; exit 0)
++	@echo `../onmetis --version`
+ 	@echo " "
+ 
+ fort.85 : fort.81

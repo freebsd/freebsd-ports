@@ -1,0 +1,11 @@
+--- Programs/Makefile.orig	Thu Dec 12 13:47:59 2002
++++ Programs/Makefile	Sun Jun 29 15:39:26 2003
+@@ -11,7 +11,7 @@
+ 
+ 
+ 
+-ONMETISOBJS = onmetis.o io.o smbfactor.o ecri11.o lect11.o lect00.o
++ONMETISOBJS = onmetis.o io.o smbfactor.o ecri11.o lect11.o lect00.o /usr/lib/crt1.o
+ 
+  
+ 
