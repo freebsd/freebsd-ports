@@ -1,0 +1,12 @@
+--- support/apxs.in.orig	Mon Nov 29 10:24:23 2004
++++ support/apxs.in	Mon Nov 29 10:25:05 2004
+@@ -629,8 +629,7 @@
+             if (open(FP, ">$CFG_SYSCONFDIR/$CFG_TARGET.conf.new")) {
+                 print FP $content;
+                 close(FP);
+-                system("cp $CFG_SYSCONFDIR/$CFG_TARGET.conf $CFG_SYSCONFDIR/$CFG_TARGET.conf.bak && " .
+-                       "cp $CFG_SYSCONFDIR/$CFG_TARGET.conf.new $CFG_SYSCONFDIR/$CFG_TARGET.conf && " .
++                system("cp $CFG_SYSCONFDIR/$CFG_TARGET.conf.new $CFG_SYSCONFDIR/$CFG_TARGET.conf && " .
+                        "rm $CFG_SYSCONFDIR/$CFG_TARGET.conf.new");
+             } else {
+                 notice("unable to open configuration file");

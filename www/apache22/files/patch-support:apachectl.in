@@ -1,0 +1,11 @@
+--- support/apachectl.in.orig	Thu Sep 16 09:28:54 2004
++++ support/apachectl.in	Thu Sep 16 09:29:14 2004
+@@ -63,7 +63,7 @@
+ ULIMIT_MAX_FILES="@APACHECTL_ULIMIT@"
+ # --------------------                              --------------------
+ # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
+-
++eval `limits -e -C daemon` >/dev/null 2>&1
+ # Set the maximum number of file descriptors allowed per child process.
+ if [ "x$ULIMIT_MAX_FILES" != "x" ] ; then
+     $ULIMIT_MAX_FILES

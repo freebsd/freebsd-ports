@@ -1,0 +1,133 @@
+# Makefile.modules
+# Author:			Clement Laforet <clement@FreeBSD.org>
+#
+# This file is used to build modules list, DBM dependencies and MPM selection.
+# I hope it can easily handle external modules (such as mod_perl) or MPMs, like
+# muxmpm.
+#
+# Note to myself: (to generate PLIST_SUB entries for modules)
+#	gsed 's/^\(.*\)mod\(.*\)\.so/%%\MOD\U\2%%\L\1mod\2\.so/' pkg-plist > tmp
+#	mv tmp pkg-plist
+#
+# $FreeBSD$
+#
+
+# MPM section:
+# << TO BE WRITTEN >>
+.if defined (SLAVE_PORT_MPM)
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment "
+PKGNAMESUFFIX=	-${SLAVE_PORT_MPM}
+.else
+.   if ${WITH_MPM} != "prefork"
+PKGNAMESUFFIX=		-${WITH_MPM:L}
+WITH_THREADS=		yes
+WITH_THREADS_MODULES=	yes
+WITHOUT_MODULES+=	cgi
+.      if ${WITH_MPM:L} == "worker"
+PLIST_SUB+=	PREFORK="@comment " WORKER="" THREADPOOL="@comment "
+.      elif  ${WITH_MPM:L} == "perchild"
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment "
+.      elif  ${WITH_MPM:L} == "threadpool"
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL=""
+.      else
+IGNORE=		"Unknown MPM: ${WITH_MPM}"
+.      endif
+.   else
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment "
+.   endif
+.else
+PLIST_SUB+=	PREFORK="@comment " WORKER="@comment " THREADPOOL="@comment "
+.endif
+
+# xDBM section
+#
+.if !defined(WITH_DBM) && defined(WITH_BERKELEYDB)
+WITH_DBM=bdb
+.endif
+.if defined(WITH_DBM) && !defined(WITH_BERKELEYDB)
+WITH_BERKELEYDB=	FreeBSD
+.endif
+
+.if defined(WITH_DBM)
+.   if ${WITH_DBM:L} == "sdbm"
+CONFIGURE_ARGS+=	--with-dbm=sdbm
+.   elif ${WITH_DBM:L} == "gdbm"
+LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE}
+.   elif ${WITH_DBM:L} == "db" || ${WITH_DBM:L} == "bdb"
+.       if ${WITH_BERKELEYDB} == "FreeBSD"
+CONFIGURE_ARGS+=	--with-dbm=db185 \
+			--with-berkeley-db=/usr
+.       elif ${WITH_BERKELEYDB} == "db2"
+LIB_DEPENDS+=		db2:${PORTSDIR}/databases/db2
+CONFIGURE_ARGS+=	--with-dbm=db2 \
+			--with-berkeley-db=${LOCALBASE}
+.       elif ${WITH_BERKELEYDB} == "db3"
+LIB_DEPENDS+=		db3:${PORTSDIR}/databases/db3
+CONFIGURE_ARGS+=	--with-dbm=db3 \
+			--with-berkeley-db=${LOCALBASE}
+.       elif ${WITH_BERKELEYDB} == "db4"
+LIB_DEPENDS+=		db4:${PORTSDIR}/databases/db4
+CONFIGURE_ARGS+=	--with-dbm=db4 \
+			--with-berkeley-db=${LOCALBASE}
+.       elif ${WITH_BERKELEYDB} == "db41"
+LIB_DEPENDS+=		db41:${PORTSDIR}/databases/db41
+CONFIGURE_ARGS+=	--with-dbm=db41 \
+			--with-berkeley-db=${LOCALBASE}
+.       elif ${WITH_BERKELEYDB} == "db42"
+LIB_DEPENDS+=		db-4.2:${PORTSDIR}/databases/db42
+CONFIGURE_ARGS+=	--with-dbm=db42 \
+			--with-berkeley-db=${LOCALBASE}/include:${LOCALBASE}/lib/db42
+.       else
+IGNORE=		"Unknown Berkeley DB version"
+.       endif
+.   else
+IGNORE=		"Unknown DBM"
+.   endif
+.else
+CONFIGURE_ARGS+=	--with-dbm=sdbm
+.endif
+
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+=	--enable-threads
+.   if ${WITH_PTHREAD_LIBS} != "c_r" && ${OSVERSION} > 500023
+CONFIGURE_ENV+=		apr_cv_pthreads_lib=-l${WITH_PTHREAD_LIBS} \
+			apr_cv_pthreads_cflags=${WITH_PTHREAD_CFLAGS}
+.     if ${ARCH} == i386
+CONFIGURE_ARGS+=	--enable-nonportable-atomics
+.     endif
+.  else
+CFLAGS+=		-DFREEBSD_THREAD_HACK
+.   endif
+.endif
+
+.if !defined(WITHOUT_SSL)
+WITH_SSL_MODULES=	yes
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+.endif
+
+AUTH_MODULES=		auth_basic auth_digest
+AUTHN_MODULES=		authn_file authn_dbm authn_anon authn_default
+AUTHZ_MODULES=		authz_host authz_groupfile authz_user authz_dbm \
+			authz_owner authz_default
+DAV_MODULES=		dav dav_fs
+EXPERIMENTAL_MODULES=	bucketeer case_filter case_filter_in ext_filter charset_lite \
+			log_forensic optional_hook_export optional_hook_import \
+			optional_fn_import optional_fn_export \
+			cache file_cache disk_cache mem_cache
+LDAP_MODULES=		ldap authnz_ldap
+MISC_MODULES=		actions alias asis autoindex cache cern_meta \
+			cgi charset_lite deflate dir disk_cache env expires \
+			file_cache headers imap include info log_config logio mime \
+			mime_magic negotiation rewrite setenvif speling status \
+			unique_id userdir usertrack vhost_alias
+PROXY_MODULES=		proxy proxy_connect proxy_ftp proxy_http proxy_ajp proxy_balancer
+SSL_MODULES=		ssl
+SUEXEC_MODULES=		suexec
+THREADS_MODULES=	cgid
+
+DEFAULT_MODULES_CATEGORIES= \
+			AUTH AUTHN AUTHZ DAV MISC
+
+ALL_MODULES_CATEGORIES=	AUTH AUTHN AUTHZ DAV EXPERIMENTAL LDAP MISC \
+			PROXY SSL SUEXEC THREADS

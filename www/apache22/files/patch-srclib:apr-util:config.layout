@@ -1,0 +1,10 @@
+--- srclib/apr-util/config.layout.orig	Tue Jan  7 13:13:09 2003
++++ srclib/apr-util/config.layout	Tue Apr  1 18:36:16 2003
+@@ -229,3 +229,7 @@
+     infodir:       ${exec_prefix}/share/info
+     libsuffix     -${APRUTIL_MAJOR_VERSION}
+ </Layout>
++
++<Layout FreeBSD>
++    libsuffix:
++</Layout>

@@ -1,0 +1,149 @@
+# Makefile.doc
+# Author:				Clement Laforet <clement@FreeBSD.org>
+#
+# This files contains:
+#      - make options output
+#      - apache2 man/docs routines
+#
+# $FreeBSD: /tmp/pcvs/ports/www/apache21/Attic/Makefile.doc,v 1.1 2004-12-11 18:06:04 clement Exp $
+#
+
+## Available knobs:
+## By default, modules are compiled as dynamically loadable (DSO) modules.
+##
+## Modules knobs philosophy:
+## Modules are split in categories, "make show-categories" shows you 
+## which modules they contain. You can enable/disable/customize a category:
+## - To enable a category: WITH_<CATEGORY>_MODULES=yes
+##                            [WITH_PROXY_MODULES=yes]
+## - To disable a category: WITHOUT_<CATEGORY>_MODULES=yes 
+##                            [WITHOUT_DAV_MODULES=yes]
+## - To customize a category: WITH_CUSTOM_<CATEGORY>
+##                            [WITH_CUSTOM_PROXY="proxy proxy_http"]
+##
+##   Apache-related
+##      WITH_MPM:                 prefork (default)
+##                                worker
+##                                perchild (deprecated)
+##                                threadpool (testing purpose only)
+##      WITH_HTTP_PORT:           default: 80
+##      WITH_LDAP:                Enable LDAP support (mod_auth_ldap) (implies WITH_LDAP_MODULES)
+##      WITHOUT_V4MAPPED
+##      WITH_IPV6_V6ONLY:         Don't allow IPv6 sockets to handle IPv4 
+##                                connections
+##      WITHOUT_SSL:              Disable SSL support
+##      WITH_THREADS:             Enable threads support !! USE IT WITH CARE !!
+##      WITH_DBM:                 Choose your DBM: bdb (Berkeley DB), gdbm or
+##                                ndbm (default)
+##          WITH_BERKELEYDB:      Choose your BerkeleyDB version: db2, db3,
+##                                db4, db41, db42 or FreeBSD (1.85)(default)
+##      WITH_STATIC_SUPPORT:      Build statically linked support binaries
+##      WITH_STATIC_APACHE:       Build a static version of httpd (implies 
+##                                WITH_STATIC_MODULES)
+##      WITH_ALL_STATIC_MODULES:  All modules will be statically linked.
+##      WITH_STATIC_MODULES:      List of modules to build modules statics
+##                                (usefull for slave ports)
+##                                (They must be already enabled (i.e.
+##                                WITH_MODULES or with default configuration
+##                                use 'make show-modules', to check if they are
+##                                enabled)
+##      WITH_MODULES:             List of modules you choose
+##      WITHOUT_MODULES:          Disable selected modules
+##      WITH_SUEXEC:              Enable suExec support
+##            SUEXEC_DOCROOT:     SuExec root directory
+##            SUEXEC_USERDIR:     User subdirectory (default public_html)
+##            SUEXEC_SAFEPATH:    Set the safepath
+##            SUEXEC_LOGFILE:     Set log file for suexec (default: /var/log/httpd-suexec.log)
+##            SUEXEC_UIDMIN:      Minimal allowed UID (default 1000)
+##            SUEXEC_GIDMIN:      Minimal allowed GID (default 1000)
+##            SUEXEC_CALLER:      User allowed to call SuExec (default
+##                                ${WWWOWN} (www))
+##            SUEXEC_UMASK:       Defines umask for suexec'd process(default:
+##                                unset)
+##	WITH_DEBUG:               Build a debug versoin of apache (set CFLAGS
+##                                to "-O0 -g -ggdb3" or ${DEBUG_FLAGS} and
+##                                defines WITH_EXCEPTION_HOOK too)
+##      WITH_EXCEPTION_HOOK:      Enable fatal exception hook
+##
+##   Port-related:
+##      WITHOUT_WWW:              Implies NO_CGI, NO_WWWDATA, NO_ICONS and
+##                                NO_ERROR
+##           WITH_CUSTOM_WWW:     Let you choose your ${PREFIX}/www components
+##                                [cgi|errordocs|icons|wwwdata]
+##
+##  Optionnal patches:  
+##      WITH_EXPERIMENTAL_PATCHES Add performance patches (generally backported
+##                                from apr/httpd CVS)
+##      WITH_WINDOWSUPDATEFIX     Add a fix to use apache as proxy with 
+##                                Windows Update service.
+##
+## Available make targets:
+##      show-options:             prints this message
+##      show-modules:             prints list of available modules
+##      show-categories:          prints list of modules sorted by category
+##
+## Examples:
+##      make WITH_STATIC_MODULES="ssl rewrite include" WITH_EXPERIMENTAL_MODULES=yes \
+##           WITH_CUSTOM_AUTH="auth auth_dbm"
+##      make WITHOUT_MODULES="access speling status" WITH_PROXY_MODULES=yes
+##      make WITH_MODULES="include rewrite auth"
+##
+
+DOCSDIR=	${PREFIX}/share/doc/apache21
+
+.if defined(NOPORTDOCS)
+MAKE_ENV+=	NOPORTDOCS=yes
+.endif
+
+MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
+MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8 htcacheclean.8
+
+.if defined(WITHOUT_WWW)
+NO_CGI=		YES
+NO_WWWDATA=	YES
+NO_ICONS=	YES
+NO_ERROR=	YES
+.elif defined(WITH_CUSTOM_WWW)
+.    if ${WITH_CUSTOM_WWW:Mcgi} == ""
+NO_CGI=		YES
+.    endif
+.    if ${WITH_CUSTOM_WWW:Mwwwdata} == ""
+NO_WWWDATA=		YES
+.    endif
+.    if ${WITH_CUSTOM_WWW:Merrordocs} == ""
+NO_ERROR=		YES
+.    endif
+.    if ${WITH_CUSTOM_WWW:Micons} == ""
+NO_ICONS=		YES
+.    endif
+.endif
+
+.if defined(NO_CGI)
+MAKE_ENV+=	NO_CGI=yes
+PLIST_SUB+=	CGI="@comment "
+.else
+PLIST_SUB+=	CGI=""
+.endif
+
+.if defined(NO_ICONS)
+MAKE_ENV+=	NO_ICONS=yes
+PLIST_SUB+=	ICONS="@comment "
+.else
+PLIST_SUB+=	ICONS=""
+.endif
+
+.if defined(NO_WWWDATA)
+MAKE_ENV+=	NO_WWWDATA=yes
+PLIST_SUB+=	WWWDATA="@comment "
+.else
+PLIST_SUB+=	WWWDATA=""
+.endif
+
+.if defined(NO_ERROR)
+MAKE_ENV+=	NO_ERROR=yes
+PLIST_SUB+=	ERROR="@comment "
+.else
+PLIST_SUB+=	ERROR=""
+.endif
+
+PORTDOCS=	#don't blame me ;-)

@@ -1,0 +1,94 @@
+--- docs/conf/httpd-std.conf.in.orig	Sat Nov 20 21:16:24 2004
++++ docs/conf/httpd-std.conf.in	Sat Dec 11 16:49:35 2004
+@@ -68,7 +68,7 @@
+ #
+ #<IfModule !mpm_netware.c>
+ #<IfModule !perchild.c>
+-#ScoreBoardFile @rel_logfiledir@/apache_runtime_status
++#ScoreBoardFile @rel_runtimedir@/apache_runtime_status
+ #</IfModule>
+ #</IfModule>
+ 
+@@ -264,8 +264,8 @@
+ #  when the value of (unsigned)Group is above 60000; 
+ #  don't use Group #-1 on these systems!
+ #
+-User nobody
+-Group #-1
++User %%WWWOWN%%
++Group %%WWWGRP%%
+ </IfModule>
+ </IfModule>
+ 
+@@ -315,7 +315,6 @@
+ # features.  
+ #
+ <Directory />
+-    Options FollowSymLinks
+     AllowOverride None
+     Order deny,allow
+     Deny from all
+@@ -369,6 +368,23 @@
+ #
+ <IfModule mod_userdir.c>
+     UserDir public_html
++    UserDir disabled %%FTPUSERS%%
++#
++# Control access to UserDir directories.  The following is an example
++# for a site where these directories are restricted to read-only.
++#
++   <Directory /home/*/public_html>
++     AllowOverride FileInfo AuthConfig Limit Indexes
++     Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
++     <Limit GET POST OPTIONS PROPFIND>
++        Order allow,deny
++        Allow from all
++     </Limit>
++     <LimitExcept GET POST OPTIONS PROPFIND>
++        Order deny,allow
++        Deny from all
++     </LimitExcept>
++   </Directory>
+ </IfModule>
+ 
+ #
+@@ -481,7 +497,7 @@
+ # logged here.  If you *do* define an error logfile for a <VirtualHost>
+ # container, that host's errors will be logged there and not here.
+ #
+-ErrorLog @rel_logfiledir@/error_log
++ErrorLog @rel_logfiledir@/httpd-error.log
+ 
+ #
+ # LogLevel: Control the number of messages logged to the error_log.
+@@ -510,20 +526,20 @@
+     # define per-<VirtualHost> access logfiles, transactions will be
+     # logged therein and *not* in this file.
+     #
+-    CustomLog @rel_logfiledir@/access_log common
++    #CustomLog @rel_logfiledir@/httpd-access.log common
+ 
+     #
+     # If you would like to have agent and referer logfiles, uncomment the
+     # following directives.
+     #
+-    #CustomLog @rel_logfiledir@/referer_log referer
+-    #CustomLog @rel_logfiledir@/agent_log agent
++    #CustomLog @rel_logfiledir@/httpd-referer.log referer
++    #CustomLog @rel_logfiledir@/httpd-agent.log agent
+ 
+     #
+     # If you prefer a single logfile with access, agent, and referer information
+     # (Combined Logfile Format) you can use the following directive.
+     #
+-    #CustomLog @rel_logfiledir@/access_log combined
++    CustomLog @rel_logfiledir@/httpd-access.log combined
+ </IfModule>
+ 
+ #
+@@ -1082,3 +1098,5 @@
+ #    ErrorLog @rel_logfiledir@/dummy-host.example.com-error_log
+ #    CustomLog @rel_logfiledir@/dummy-host.example.com-access_log common
+ #</VirtualHost>
++
++Include @rel_sysconfdir@/Includes/*.conf

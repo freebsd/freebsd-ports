@@ -1,0 +1,2 @@
+To run apache www server from startup, add apache21_enable="YES"
+in your /etc/rc.conf. Extra options can be found in startup script.

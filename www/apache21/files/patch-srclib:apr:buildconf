@@ -1,0 +1,29 @@
+--- srclib/apr/buildconf.orig	Thu Jul  1 23:21:59 2004
++++ srclib/apr/buildconf	Sat Dec 11 17:11:22 2004
+@@ -22,7 +22,7 @@
+ #
+ build/buildcheck.sh || exit 1
+ 
+-libtoolize=`build/PrintPath glibtoolize libtoolize libtoolize15 libtoolize14`
++libtoolize=${LIBTOOLIZE}
+ if [ "x$libtoolize" = "x" ]; then
+     echo "libtoolize not found in path"
+     exit 1
+@@ -46,7 +46,7 @@
+    ltfile=`pwd`/libtool.m4
+ else
+    ltpath=`dirname $libtoolize`
+-   ltfile=${LIBTOOL_M4-`cd $ltpath/../share/aclocal ; pwd`/libtool.m4}
++   ltfile=${LIBTOOL_M4-`cd $ltpath/../../share/aclocal ; pwd`/${LIBTOOL_VERSION}.m4}
+ fi
+   
+ if [ ! -f $ltfile ]; then
+@@ -54,7 +54,7 @@
+     exit 1
+ fi
+ 
+-echo "buildconf: Using libtool.m4 at ${ltfile}."
++echo "buildconf: Using libtool${LIBTOOL_VERSION}.m4 at ${ltfile}."
+ 
+ cat $ltfile | sed -e 's/LIBTOOL=\(.*\)top_build/LIBTOOL=\1apr_build/' > build/libtool.m4
+ 
