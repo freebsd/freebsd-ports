@@ -18,7 +18,7 @@ COMMENT=	Trigger-based asynchronous replication system for PostgreSQL
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		${PGINC}/executor/spi.h:${PORTSDIR}/databases/postgresql7
-RUN_DEPENDS=	${JAVAJARDIR}/log4j.jar:${PORTSDIR}/java/jakarta-log4j \
+RUN_DEPENDS=	${JAVAJARDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		psql:${PORTSDIR}/databases/postgresql7
 
 USE_GMAKE=	yes
