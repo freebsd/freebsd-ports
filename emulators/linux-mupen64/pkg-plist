@@ -13,7 +13,7 @@ lib/linux-mupen64/plugins/glN64-0.4.1-rc2.so
 lib/linux-mupen64/plugins/jttl_sound.so
 lib/linux-mupen64/plugins/mupen64_audio.so
 lib/linux-mupen64/plugins/mupen64_gfx.so
-lib/linux-mupen64/plugins/mupen64_hle_rsp.so
+lib/linux-mupen64/plugins/mupen64_hle_rsp_azimer.so
 lib/linux-mupen64/plugins/mupen64_input.so
 lib/linux-mupen64/plugins/ricedaedalus.so
 lib/linux-mupen64/plugins/RiceDaedalus5.1.0.ini
