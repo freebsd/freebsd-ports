@@ -18,7 +18,15 @@ EXTRACT_SUFX=	-src.tar.gz
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
 PATCHFILES=	squid-2.3.stable2-EOF_in_cf.data.pre.patch \
-		squid-2.3.stable2-USE_DNSSERVER.patch
+		squid-2.3.stable2-USE_DNSSERVER.patch \
+		squid-2.3.stable2-USE_DNSSERVER_part2.patch \
+		squid-2.3.stable2-hostname_whitespace.patch \
+		squid-2.3.stable2-netdb_exchange_loop.patch \
+		squid-2.3.stable2-getMyHostname.patch \
+		squid-2.3.stable2-redirected_username_logging.patch \
+		squid-2.3.stable2-snmp-problems.patch \
+		squid-2.3.stable2-getpwnam_return_value.patch \
+		squid-2.3.stable2-mimeGetIconURL_returns_NULL.patch
 
 MAINTAINER=	peter@freebsd.org
 
@@ -28,14 +36,9 @@ GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--localstatedir=${PREFIX}/squid
+CONFIGURE_ENV=	CFLAGS=""
 STRIP=		# won't install scripts correctly othervise.
 MAKEFILE=	makefile
-
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS?=       -d ${WRKSRC}/src -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS?=       -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
 
 # Some other configure options..
 #  - Compile and use the malloc package from Doug Lea
@@ -60,6 +63,8 @@ PATCH_DIST_ARGS?=       -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP
 #CONFIGURE+ARGS+= --enable-mem-gen-trace
 #  - Enable logging of the User-Agent header
 #CONFIGURE_ARGS+= --enable-useragent-log
+#  - Disable Web Cache Coordination Protocol
+#CONFIGURE_ARGS+= --disable-wccp
 #  - Kill parent (eg: RunCache) on shutdown (use with great care!!)
 #CONFIGURE_ARGS+= --enable-kill-parent-hack
 #  - Turn on SNMP server support
@@ -87,6 +92,14 @@ PATCH_DIST_ARGS?=       -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP
 # (--enable-leakfinfer is a developer support tool only)
 #  - Compile out code that does optional Ident (RFC931) lookups
 #CONFIGURE_ARGS+= --disable-ident-lookups
+#  - Disable squid's internal async DNS lookup code.
+#CONFIGURE_ARGS+= --disable-internal-dns
+#  - Use truncate() rather than unlink()
+#CONFIGURE_ARGS+= --enable-truncate
+#  - accept the illegal '_' character in hostnames.
+#CONFIGURE_ARGS+= --enable-underscores
+#  - Enable control of different heap replacement algorithms at runtime.
+#CONFIGURE_ARGS+= --enable-heap-replacement
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
