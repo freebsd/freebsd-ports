@@ -21,9 +21,9 @@ prefix=%%PREFIX%%
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE 
 #
-gkrellmd_enable="NO"				# Enable gkrellmd
+[ -z "$gkrellmd_enable" ] && gkrellmd_enable="NO"	# Enable gkrellmd
 #gkrellmd_program="${prefix}/sbin/gkrellmd"	# Location of gkrellmd
-gkrellmd_flags="-d"				# Flags to gkrellmd program
+[ -z "$gkrellmd_flags" ] && gkrellmd_flags="-d"	# Flags to gkrellmd program
 
 . %%RC_SUBR%%
 
