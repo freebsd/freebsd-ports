@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	eruby
-PORTVERSION=	0.1.1
+PORTVERSION=	${VERSION}
 PORTREVISION=	1
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.ruby-lang.org/~shugo/eruby/
@@ -15,6 +15,15 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
+RUBY_REQUIRE=	160 <= Ruby
+
+.include <bsd.port.pre.mk>
+
+.if defined(RUBY_PROVIDED)
+VERSION=	0.1.2
+.else
+VERSION=	0.1.1
+.endif
 
 CONFIGURE_ARGS=	--enable-shared --default-charset="${DEFAULT_CHARSET}"
 INSTALLS_SHLIB=	yes
@@ -40,4 +49,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
