@@ -1,0 +1,10 @@
+share/xpdf/chinese-traditional/Adobe-CNS1.cidToUnicode
+share/xpdf/chinese-traditional/Big5.unicodeMap
+share/xpdf/chinese-traditional/Big5ascii.unicodeMap
+share/xpdf/chinese-traditional/README
+@unexec mv -f %D/etc/xpdfrc %D/etc/xpdfrc.chinese-traditional
+@unexec grep -F -v --file=%D/share/xpdf/chinese-traditional/dot.xpdfrc %D/etc/xpdfrc.chinese-traditional > %D/etc/xpdfrc
+share/xpdf/chinese-traditional/dot.xpdfrc
+@unexec rm -f %D/etc/xpdfrc.chinese-traditional
+@dirrm share/xpdf/chinese-traditional
+@dirrm share/xpdf

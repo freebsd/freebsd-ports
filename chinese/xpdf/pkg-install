@@ -1,0 +1,10 @@
+#!/bin/sh
+if [ "$2" = "PRE-INSTALL" ]; then
+  exit 0
+fi
+XPDFRC=${PKG_PREFIX}/etc/xpdfrc
+ADDRESOURCE=${PKG_PREFIX}/share/xpdf/chinese-traditional/dot.xpdfrc
+/usr/bin/grep -F -v --file=${ADDRESOURCE} ${XPDFRC} > ${XPDFRC}.nochinese-traditional
+/bin/rm -f ${XPDFRC}
+/bin/cat ${XPDFRC}.nochinese-traditional ${ADDRESOURCE} > ${XPDFRC}
+/bin/rm -f ${XPDFRC}.nochinese-traditional
