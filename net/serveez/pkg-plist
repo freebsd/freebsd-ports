@@ -34,26 +34,20 @@ include/libserveez/util.h
 include/libserveez/vector.h
 include/libserveez/windoze.h
 include/svzconfig.h
-@unexec install-info --delete %D/info/serveez-api.info %D/info/dir
-info/serveez-api.info
-@exec install-info %D/info/serveez-api.info %D/info/dir
-@unexec install-info --delete %D/info/serveez.info %D/info/dir
-info/serveez.info
-@exec install-info %D/info/serveez.info %D/info/dir
+@dirrm include/libserveez/coserver
+@dirrm include/libserveez/codec
+@dirrm include/libserveez
 lib/libserveez.a
 lib/libserveez.so
 lib/libserveez.so.0
 share/aclocal/serveez.m4
-share/serveez/echo-server.scm
-share/serveez/eval-server.scm
-share/serveez/icecast-server.scm
-share/serveez/inetd.scm
-share/serveez/mandel-client.scm
-share/serveez/mandel-server.scm
-share/serveez/mandel-shared.scm
-share/serveez/serveez-procedures.txt
-share/serveez/serveez.scm
-@dirrm share/serveez
-@dirrm include/libserveez/coserver
-@dirrm include/libserveez/codec
-@dirrm include/libserveez
+%%DATADIR%%/echo-server.scm
+%%DATADIR%%/eval-server.scm
+%%DATADIR%%/icecast-server.scm
+%%DATADIR%%/inetd.scm
+%%DATADIR%%/mandel-client.scm
+%%DATADIR%%/mandel-server.scm
+%%DATADIR%%/mandel-shared.scm
+%%DATADIR%%/serveez-procedures.txt
+%%DATADIR%%/serveez.scm
+@dirrm %%DATADIR%%
