@@ -15,6 +15,7 @@ MAINTAINER=	brian@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
+USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet --with-logdir=/var/log
 
