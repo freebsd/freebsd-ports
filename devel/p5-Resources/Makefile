@@ -3,7 +3,7 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.1.1.1 1996/10/24 13:45:43 jfitz Exp $
+#   $Id: Makefile,v 1.2 1996/11/18 08:46:13 asami Exp $
 #
 
 DISTNAME=	Resources-1.03
@@ -17,7 +17,7 @@ MAINTAINER=	jfitz@FreeBSD.ORG
 BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
-MAN3=		Resources
+MAN3=		Resources.3
 MANPREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
