@@ -1,23 +1,16 @@
 # New ports collection Makefile for:    exmh2
-# Version required:		2.0delta
+# Version required:		2.0zeta
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.11 1997/07/08 02:45:57 peter Exp $
+# $Id: Makefile,v 1.12 1997/07/13 18:49:22 max Exp $
 #
 
-DISTNAME=	exmh-2.0delta
-PKGNAME=	exmh-2.0d
+DISTNAME=	exmh-2.0zeta
+PKGNAME=	exmh-2.0z
 CATEGORIES=	mail tk41
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
-
-PATCH_SITES=	http://www.sunlabs.com/~bwelch/exmh/patches/2.0delta/
-PATCHFILES=	getnews.patch ispell.patch addr.patch post.patch \
-		fontsel.patch html_get_http.patch sedit.patch \
-		html_formtag.patch editor.patch thread.patch \
-		pgp.patch mime.patch fcache.patch
-PATCH_DIST_ARGS=	-d ${WRKSRC}/lib --forward --quiet -E
 
 MAINTAINER=	peter@FreeBSD.org
 
