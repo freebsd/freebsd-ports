@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/reverse/Makefile.in.orig	Sat Jul 20 13:59:48 2002
++++ plugins/reverse/Makefile.in	Sat Jul 20 14:10:16 2002
+@@ -143,7 +143,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libreverse_la_LDFLAGS = 
++libreverse_la_LDFLAGS = -avoid-version -module
+ libreverse_la_LIBADD = 
+ libreverse_la_OBJECTS =  reverse.lo
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

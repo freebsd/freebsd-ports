@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/convert/Makefile.in.orig	Sat Jul 20 13:59:48 2002
++++ plugins/convert/Makefile.in	Sat Jul 20 14:09:54 2002
+@@ -150,7 +150,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libconvert_la_LDFLAGS = 
++libconvert_la_LDFLAGS = -avoid-version -module
+ libconvert_la_LIBADD = 
+ libconvert_la_OBJECTS =  convert.lo
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

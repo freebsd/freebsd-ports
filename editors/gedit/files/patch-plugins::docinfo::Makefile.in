@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins/docinfo/Makefile.in	2002/07/20 11:09:25	1.1
++++ plugins/docinfo/Makefile.in	2002/07/20 11:10:07
+@@ -150,7 +150,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libdocinfo_la_LDFLAGS = 
++libdocinfo_la_LDFLAGS = -avoid-version -module
+ libdocinfo_la_LIBADD = 
+ libdocinfo_la_OBJECTS =  docinfo.lo
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
