@@ -101,6 +101,7 @@ share/locale/cy/LC_MESSAGES/file-roller.mo
 share/locale/da/LC_MESSAGES/file-roller.mo
 share/locale/de/LC_MESSAGES/file-roller.mo
 share/locale/el/LC_MESSAGES/file-roller.mo
+share/locale/en_CA/LC_MESSAGES/file-roller.mo
 share/locale/en_GB/LC_MESSAGES/file-roller.mo
 share/locale/es/LC_MESSAGES/file-roller.mo
 share/locale/et/LC_MESSAGES/file-roller.mo
@@ -109,6 +110,7 @@ share/locale/fa/LC_MESSAGES/file-roller.mo
 share/locale/fi/LC_MESSAGES/file-roller.mo
 share/locale/fr/LC_MESSAGES/file-roller.mo
 share/locale/ga/LC_MESSAGES/file-roller.mo
+share/locale/gu/LC_MESSAGES/file-roller.mo
 share/locale/he/LC_MESSAGES/file-roller.mo
 share/locale/hi/LC_MESSAGES/file-roller.mo
 share/locale/hr/LC_MESSAGES/file-roller.mo
