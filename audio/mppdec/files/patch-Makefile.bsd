@@ -1,0 +1,16 @@
+--- Makefile.bsd.orig	Mon May 12 07:55:51 2003
++++ Makefile.bsd	Mon May 12 07:56:15 2003
+@@ -10,11 +10,11 @@
+ #LDADD  += -lossaudio
+ 
+ include version
+-OPTIM    = -O3 -march=pentiumpro -ffast-math -s
++OPTIM    = -O3 -ffast-math -s
+ 
+ WARN     =
+ 
+-CFLAGS   = $(OPTIM) $(WARN) -DMPPDEC_VERSION=\"$(MPPDEC_VERSION)\" -DMPP_DECODER `esd-config --cflags`
++CFLAGS   += $(OPTIM) $(WARN) -DMPPDEC_VERSION=\"$(MPPDEC_VERSION)\" -DMPP_DECODER `esd-config --cflags`
+ 
+ TARGETS  = mppdec
+ 
