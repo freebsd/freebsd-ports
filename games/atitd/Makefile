@@ -13,7 +13,7 @@ DISTNAME=	eClient-linux.run
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	mdodd@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	The Linux "A Tale in the Desert" (ATITD) client
 
 RUN_DEPENDS=	${X11BASE}/bin/xhost:${X_CLIENTS_PORT}
