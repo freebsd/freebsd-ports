@@ -1,0 +1,67 @@
+--- src/http.c.orig	Wed Jul  5 10:41:27 2000
++++ src/http.c	Sat Mar 10 23:03:45 2001
+@@ -710,7 +710,7 @@
+ 	  if (fd < 0)
+ 		  sock_write (clicon->sock, "%s", out);
+ 	  else
+-		  fd_write (fd, out);
++		  fd_write (fd, "%s", out);
+ 	  
+ 	  return 1;
+   } else {
+--- src/utility.c.orig	Wed Jul  5 12:52:40 2000
++++ src/utility.c	Sat Mar 10 23:01:37 2001
+@@ -162,7 +162,7 @@
+ 	
+ 	if (!param) {
+ 		fd_write (info.statsfile, 
+-			 buf);
++			 "%s", buf);
+ 		flags2string (admin, NULL);
+ 		fd_write (info.statsfile, "\n");
+ 	} else {
+@@ -198,7 +198,7 @@
+ 		 nice_time (get_time () - con->connect_time, timebuf), type);
+ 
+ 	if (!param)
+-		fd_write (info.statsfile, buf);
++		fd_write (info.statsfile, "%s", buf);
+ 	else
+ 		sock_write (*sock, "%s", buf);
+ }
+@@ -223,7 +223,7 @@
+ 		 source->num_clients);
+ 	
+ 	if (!param)
+-		fd_write (info.statsfile, buf);
++		fd_write (info.statsfile, "%s", buf);
+ 	else
+ 		sock_write (*sock, "%s", buf);
+ }
+@@ -257,7 +257,7 @@
+ 	}
+ 
+ 	if (!param)
+-		fd_write (info.statsfile, buf);
++		fd_write (info.statsfile, "%s", buf);
+ 	else
+ 		sock_write (*sock, "%s", buf);
+ 
+@@ -267,7 +267,7 @@
+ 		 source->audiocast.mount, source->audiocast.description, source->audiocast.public);
+ 	
+ 	if (!param)
+-		fd_write (info.statsfile, buf);
++		fd_write (info.statsfile, "%s", buf);
+ 	else
+ 		sock_write (*sock, "%s", buf);
+ 
+@@ -330,7 +330,7 @@
+ 		 get_user_agent (con), client->type == listener_e ? "listener" : "relay");
+ 	
+ 	if (!param)
+-		fd_write(info.statsfile, buf);
++		fd_write(info.statsfile, "%s", buf);
+ 	else
+ 		sock_write (*sock, "%s", buf);
+ }

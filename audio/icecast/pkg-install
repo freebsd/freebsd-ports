@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" -o -n "${PACKAGE_BUILDING}" ]; then
+  exit 0
+fi
+
+/usr/bin/dialog --yesno "SECURITY NOTE: The icecast software suffered from numerous format string vulnerabilities, which allowed remote attackers to execute arbitrary code as the user running icecast.  Most of these have been fixed in the FreeBSD port, but a comprehensive audit has not been conducted, and there are several remaining suspicious cases which need to be carefully checked.  It is possible that further security vulnerabilities exist in this software. Do you wish to proceed with the installation of icecast anyway?" 12 70 || /usr/bin/false
+
+
