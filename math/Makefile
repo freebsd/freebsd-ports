@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.53 1998/12/12 22:18:32 jseger Exp $
+# $Id: Makefile,v 1.54 1998/12/19 14:23:43 jseger Exp $
 #
 
     SUBDIR += R-a4
@@ -27,6 +27,7 @@
     SUBDIR += octave
     SUBDIR += oleo
     SUBDIR += p5-MatrixReal
+    SUBDIR += p5-Set-IntSpan
     SUBDIR += pari
     SUBDIR += plplot
     SUBDIR += pygist
