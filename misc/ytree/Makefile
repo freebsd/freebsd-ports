@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		ytree
-PORTVERSION=		1.65
+PORTVERSION=		1.67
 CATEGORIES=		misc
-#MASTER_SITES=		${MASTER_SITE_SUNSITE} \
-#			http://www.han.de/~werner/
-#MASTER_SITE_SUBDIR=	utils/file/managers
+MASTER_SITES=		http://www.han.de/~werner/
 
 MAINTAINER=		ports@FreeBSD.org
+
+FETCH_BEFORE_ARGS=	-b
 
 ALL_TARGET=
 MAN1=			ytree.1
