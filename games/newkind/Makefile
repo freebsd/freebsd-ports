@@ -12,13 +12,11 @@ MASTER_SITES=	http://home.clara.net/cjpinder/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX} ${PORTNAME}b${EXTRACT_SUFX}
 
-MAINTAINER=	wjv@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-# It doesn't seem possible to construct a LIB_DEPENDS for Allegro(?)
-# The dependence on the version number is also sub-optimal.
-BUILD_DEPENDS=	allegro-config:${PORTSDIR}/devel/allegro
-RUN_DEPENDS=	allegro-config:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	alleg.4:${PORTSDIR}/devel/allegro
 
+BROKEN=		Does not build with version of devel/allegro currently in ports
 NO_CDROM=	Reverse-engineered version of copyrighted abandonware
 NO_PACKAGE=	${NO_CDROM}
 USE_ZIP=	yes
@@ -27,25 +25,25 @@ NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=
-SHAREDIR=	${PREFIX}/share/${PORTNAME}
+NK_SCRIPT=	${WRKSRC}/newkind
 
 # Currently, everything required to run newkind (including the binary) is
-# installed to ${SHAREDIR}.  A shell script wrapper is then installed to
+# installed to ${DATADIR}.  A shell script wrapper is then installed to
 # ${PREFIX}/bin.  A more elegant installation to the standard directory
 # hierarchy under ${PREFIX} would require extensive patching of source files,
 # which will have to be maintained across future versions.  If anyone feels
 # up to it, you're more than welcome...  :-)
 do-install:
-	@ ${MKDIR} ${SHAREDIR}/data
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/newkind.exe ${SHAREDIR}
+	@ ${MKDIR} ${DATADIR}/data
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/newkind.exe ${DATADIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/elite.dat ${WRKSRC}/*.cfg \
-	  ${WRKSRC}/*.bmp ${WRKSRC}/*.wav ${SHAREDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/data/* ${SHAREDIR}/data
+	  ${WRKSRC}/*.bmp ${WRKSRC}/*.wav ${DATADIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/data/* ${DATADIR}/data
 	@ ${MKDIR} ${PREFIX}/bin
-	@ ${ECHO_CMD} "#!${SH}" > ${WRKSRC}/newkind
-	@ ${ECHO_CMD} "cd ${SHAREDIR} && exec \"./newkind.exe\" \"\$$@\"" \
-	  >> ${WRKSRC}/newkind
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/newkind ${PREFIX}/bin
+	@ ${ECHO_CMD} "#!${SH}" > ${NK_SCRIPT}
+	@ ${ECHO_CMD} "cd ${DATADIR} && exec \"./newkind.exe\" \"\$$@\"" \
+	  >> ${NK_SCRIPT}
+	@ ${INSTALL_SCRIPT} ${NK_SCRIPT} ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)

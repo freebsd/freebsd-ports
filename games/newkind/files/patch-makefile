@@ -1,17 +1,18 @@
 --- makefile.orig	Fri Jul  6 21:29:04 2001
-+++ makefile	Tue Oct 23 17:40:09 2001
-@@ -2,25 +2,20 @@
++++ makefile	Mon Sep 16 17:03:26 2002
+@@ -2,26 +2,24 @@
  # Makefile for Elite - The New Kind.
  #
  
 -CC	=	gcc
--WRES	=	windres
--
--LIBS	=	-s -mwindows -lalleg_s -lkernel32 -lgdi32 -lcomdlg32 -luser32 -lole32 -lddraw -ldxguid -lwinmm -ldsound -ldinput
--CFLAGS	=	-mpentium -O2 -funroll-loops -Wall -DALLEGRO_STATICLINK
 +CC	?=	gcc
-+LIBS	=	-L/usr/local/lib -lalleg-3.9.34 -lalleg_unsharable
-+CFLAGS	+=	-mpentium -O2 -funroll-loops -Wall -DALLEGRO_STATICLINK -I/usr/local/include
+ WRES	=	windres
+ 
+-LIBS	=	-s -mwindows -lalleg_s -lkernel32 -lgdi32 -lcomdlg32 -luser32 -lole32 -lddraw -ldxguid -lwinmm -ldsound -ldinput
++LOCALBASE ?=	/usr/local
++LIBS	=	-L$(LOCALBASE)/lib -L$(LOCALBASE)/lib/allegro/4.0 -lalleg
+ CFLAGS	=	-mpentium -O2 -funroll-loops -Wall -DALLEGRO_STATICLINK
++CFLAGS	+=	-I$(LOCALBASE)/include -I$(LOCALBASE)/include/allegro
  
  OBJS	= alg_gfx.o alg_main.o docked.o elite.o\
  	intro.o planet.o shipdata.o shipface.o sound.o space.o\
@@ -27,6 +28,7 @@
 -
 -nkres.o: nkres.rc
 -	$(WRES) nkres.rc nkres.o
- 
+-
  
  alg_gfx.o: alg_gfx.c alg_data.h config.h elite.h planet.h gfx.h
+ 
