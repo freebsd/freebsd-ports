@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xosview-1.7.2
+DISTNAME=	xosview-1.7.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lore.ece.utexas.edu/~bgrayson/xosview/ \
 		${MASTER_SITE_SUNSITE}
