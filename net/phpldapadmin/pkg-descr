@@ -1,0 +1,11 @@
+phpLDAPadmin is a web-based LDAP client. It provides easy,
+anywhere-accessible, multi-language administration for your LDAP
+server. Its hierarchical tree-viewer and advanced search functionality
+make it intuitive to browse and administer your LDAP directory. Since
+it is a web application, this LDAP browser works on many platforms,
+making your LDAP server easily manageable from any
+location. phpLDAPadmin is the perfect LDAP browser for the LDAP
+professional and novice alike. Its user base consists mostly of LDAP
+administration professionals.
+
+WWW: http://phpldapadmin.sourceforge.net/
