@@ -1,5 +1,5 @@
 # New ports collection makefile for:	openh323_1.1
-# Date created:		July 25 2000
+# Date created:		July 25 2001
 # Whom:			Roger Hardiman <roger@freebsd.org>
 #
 # $FreeBSD$
@@ -8,9 +8,10 @@
 PORTNAME=	openh323
 PORTVERSION=	1.1
 CATEGORIES=	net
-MASTER_SITES=	http://130.104.229.225/gnomemeeting/downloads/
-DISTFILES=	openh323_1.1.tar.gz \
-		pwlib_min_1.1pl18.tar.gz
+MASTER_SITES=           ${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     roger
+DISTFILES=	openh323_1.1pl1.tar.gz \
+		pwlib_min_1.1pl19.tar.gz
 
 MAINTAINER=	roger@freebsd.org
 

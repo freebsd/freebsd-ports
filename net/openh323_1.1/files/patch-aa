@@ -1,32 +1,5 @@
 *** ../pwlib/src/ptlib/unix/tlibthrd.cxx.orig	Wed Jul 25 17:09:09 2001
 --- ../pwlib/src/ptlib/unix/tlibthrd.cxx	Thu Jul 26 13:21:40 2001
-*************** void PThread::PX_NewThread(BOOL startSus
-*** 386,391 ****
---- 386,409 ----
-  //  pthread_attr_t threadAttr;
-  //  pthread_attr_init(&threadAttr);
-    PAssertOS(pthread_create(&PX_threadId, NULL, PX_ThreadStart, this) == 0);
-+ 
-+ #if defined(P_FREEBSD)
-+   // There is a potential race condition here which shows up with FreeBSD 4.2
-+   // and later, but really applies to all pthread libraries.
-+   // If a thread is started in suspend mode, we need to make sure
-+   // the thread (PX_ThreadStart) has had a chance to execute and block on the
-+   // sigwait() (blocking on the Resume Signal) before this function returns.
-+   // Otherwise the main program may issue a Resume Signal on the thread
-+   // by calling PThread::Resume() before the thread is ready for it.
-+   // If that happens the program will abort with an unhandled signal error.
-+   // A workaround (not 100% guaranteed) is to yield here, which gives
-+   // the newly created thread (PX_ThreadStart) a chance to execute.
-+ 
-+   if (startSuspended) {
-+     sched_yield();
-+   }
-+ #endif
-+ 
-  }
-  
-  
 *************** BOOL PSemaphore::Wait(const PTimeInterva
 *** 767,773 ****
     ::gettimeofday(&finishTime, NULL);
