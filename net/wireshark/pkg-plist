@@ -4,6 +4,8 @@ bin/idl2eth
 bin/mergecap
 bin/tethereal
 bin/text2pcap
+lib/ethereal/plugins/%%PORTVERSION%%/artnet.la
+lib/ethereal/plugins/%%PORTVERSION%%/artnet.so
 lib/ethereal/plugins/%%PORTVERSION%%/coseventcomm.la
 lib/ethereal/plugins/%%PORTVERSION%%/coseventcomm.so
 lib/ethereal/plugins/%%PORTVERSION%%/cosnaming.la
