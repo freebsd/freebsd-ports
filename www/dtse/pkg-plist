@@ -1,0 +1,17 @@
+dtse/LICENSE
+dtse/LICENSE.html
+dtse/README
+dtse/README.html
+dtse/osi-certified-90x75.png
+dtse/bin/Search
+dtse/http/dtse_pb.png
+dtse/http/search.cgi
+dtse/data/header.html
+dtse/data/body.html
+dtse/data/footer.html
+dtse/data/notfound.html
+dtse/data/pages.html
+@dirrm dtse/bin
+@dirrm dtse/http
+@dirrm dtse/data
+@dirrm dtse
