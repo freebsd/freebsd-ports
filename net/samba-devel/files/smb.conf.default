@@ -136,6 +136,39 @@
 # this has been changed in version 1.9.18 to no.
    dns proxy = no 
 
+# Client codepage settings
+
+# for Greek users
+; client code page=737
+
+# for European users (Latin 1)
+; client code page=850
+
+# for European users (Latin 2)
+; client code page=852
+
+# for Icelandic users
+; client code page=861
+
+# for Cyrillic users
+; client code page=866
+
+# for Japanese Users
+; client code page=932
+; coding system=cap
+
+# for Simplified Chinese Users
+; client code page=936
+; coding system=cap
+
+# for Korean Users
+; client code page=949
+; coding system=cap
+
+# for Traditional Chinese Users
+; client code page=950
+; coding system=cap
+
 #============================ Share Definitions ==============================
 [homes]
    comment = Home Directories
