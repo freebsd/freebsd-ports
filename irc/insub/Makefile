@@ -34,6 +34,7 @@ post-install:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPT} ${LOCALBASE}/bin/${SCRIPT:R}
+	${MKDIR} ${LOCALBASE}/share/irssi/scripts/
 	${INSTALL_DATA} ${WRKSRC}/${SCRIPT} \
 		${LOCALBASE}/share/irssi/scripts/${SCRIPT}
 	for i in ${WRKSRC}/cows/* ; do \
