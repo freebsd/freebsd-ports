@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	pad
-PORTVERSION=	1.0.4
 PORTEPOCH=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	security
-MASTER_SITES=	http://www.lammah.com/pad/ \
-			${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=trevor
+MASTER_SITES=	http://www.lammah.com/pad/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jharris@widomaker.com
@@ -20,7 +18,6 @@ DOC_FILES=	COPYING README ChangeLog
 GNU_CONFIGURE=	yes
 MAN1=		pad.1
 PLIST=		${WRKDIR}/pkg-plist
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
 
 pre-install:
