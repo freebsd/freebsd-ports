@@ -107,6 +107,7 @@ libexec/gnome_segv2
 %%DOCSDIR%%/libgnomeui-gnometypebuiltins.html
 %%DOCSDIR%%/libgnomeui-objects.html
 %%DOCSDIR%%/miscellaneous.html
+%%DOCSDIR%%/style.css
 share/gnome/pixmaps/gnome-about-logo.png
 share/gnome/pixmaps/gnome-default-dlg.png
 share/gnome/pixmaps/gnome-error.png
