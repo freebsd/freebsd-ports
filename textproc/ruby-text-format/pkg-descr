@@ -1,0 +1,6 @@
+Text::Format provides strong text formatting capabilities to Ruby.
+Based on Perl Text::Format and offers all of the functionality that
+that module does.
+
+Author:	Austin Ziegler <austin@halostatue.ca>
+WWW:	http://www.halostatue.ca/ruby/Text__Format.html
