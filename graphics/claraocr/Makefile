@@ -17,12 +17,13 @@ DISTNAME=	clara-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_XLIB=	yes
 USE_PERL5=	yes
+MAKE_ENV=	MKDIR="${MKDIR}"
 
 MAN1=	clara-adv.1 clara-dev.1 clara.1
 
 post-patch:
-	@${PERL} -pi -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/Makefile
 	@${PERL} -pi -e 's,^#!/usr/bin/perl,#!${PERL},g' ${WRKSRC}/clara.pl \
 		${WRKSRC}/mkdoc.pl ${WRKSRC}/selthresh.pl
 
