@@ -1637,6 +1637,7 @@ gabber		ports/net/gabber
 gaddr		ports/deskutils/gaddr
 gadfly		ports/databases/gadfly
 gag		ports/security/gag
+gail		ports/x11-toolkits/gail
 gaim		ports/net/gaim
 gal		ports/x11-toolkits/gal
 galaxis		ports/games/galaxis
