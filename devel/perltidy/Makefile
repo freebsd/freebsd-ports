@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	perltidy
-PORTVERSION=	20020826
+PORTVERSION=	20020922
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 PERL_CONFIGURE=	yes
 
-MAN1=	perltidy.1
+MAN1=		perltidy.1
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=	Perl::Tidy.3
+MAN3=		Perl::Tidy.3
 
 .include <bsd.port.mk>
