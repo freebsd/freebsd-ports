@@ -1,6 +1,8 @@
 etc/boa.conf.sample
+etc/rc.d/boa.sh.sample
 sbin/boa
-%%PORTDOCS%%share/doc/boa/boa.sgml
+sbin/boa_indexer
+%%PORTDOCS%%share/doc/boa/boa.texi
 %%PORTDOCS%%share/doc/boa/boa_banner.png
 share/examples/boa/cgi-test.cgi
 share/examples/boa/nph-test.cgi
