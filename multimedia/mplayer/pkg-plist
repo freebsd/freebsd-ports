@@ -14,7 +14,7 @@ bin/mplayer
 %%PORTDOCS%%share/doc/mplayer/video.html
 %%PORTDOCS%%share/doc/mplayer/users_against_developers.html
 lib/libdha.so.0
-lib/libdha-1.so.0
+lib/libdha-0.so.1
 lib/mplayer/vidix/cyberblade_vid.so
 lib/mplayer/vidix/mach64_vid.so
 lib/mplayer/vidix/mga_crtc2_vid.so
