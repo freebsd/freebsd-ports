@@ -3,7 +3,7 @@
 # Date created:         15 Jul 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/15 09:56:31 dburr Exp $
 #
 
 DISTNAME=	nologin
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.xmission.com/pub/users/s/softweyr/pub/
 DISTFILES=	nologin.c nologin.8
 
 MAINTAINER=	dburr@FreeBSD.ORG
+
+BROKEN=		no Makefile
 
 DIST_SUBDIR=	nologin
 NO_WRKSUBDIR=	YES
