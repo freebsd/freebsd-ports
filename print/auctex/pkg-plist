@@ -13,6 +13,11 @@ share/doc/auctex/README
 %%LISPDIR%%/auctex/auc-old.elc
 %%LISPDIR%%/auctex/auto/.nosearch
 @dirrm %%LISPDIR%%/auctex/auto
+%%LISPDIR%%/auctex/bib-cite.el
+%%LISPDIR%%/auctex/bib-cite.elc
+%%LISPDIR%%/auctex/font-latex.el
+%%LISPDIR%%/auctex/font-latex.elc
+%%LISPDIR%%/auctex/hilit-LaTeX.el
 %%LISPDIR%%/auctex/latex.el
 %%LISPDIR%%/auctex/latex.elc
 %%LISPDIR%%/auctex/multi-prompt.el
@@ -113,6 +118,7 @@ share/doc/auctex/README
 %%LISPDIR%%/auctex/tex-buf.elc
 %%LISPDIR%%/auctex/tex-info.el
 %%LISPDIR%%/auctex/tex-info.elc
+%%LISPDIR%%/auctex/tex-jp.el
 %%LISPDIR%%/auctex/tex-mik.el
 %%LISPDIR%%/auctex/tex-mik.elc
 %%LISPDIR%%/auctex/tex.el
