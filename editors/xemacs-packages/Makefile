@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	6.0
+PORTVERSION=	6.1
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
@@ -31,8 +31,8 @@ DISTFILES=	\
 		docbookide-0.05-pkg.tar.gz \
 		ecrypto-0.12-pkg.tar.gz \
 		edebug-1.14-pkg.tar.gz \
-		ediff-1.43-pkg.tar.gz \
-		edit-utils-1.93-pkg.tar.gz \
+		ediff-1.44-pkg.tar.gz \
+		edit-utils-1.95-pkg.tar.gz \
 		edt-1.12-pkg.tar.gz \
 		efs-1.29-pkg.tar.gz \
 		eieio-1.03-pkg.tar.gz \
@@ -54,12 +54,12 @@ DISTFILES=	\
 		hm--html-menus-1.18-pkg.tar.gz \
 		ibuffer-1.08-pkg.tar.gz \
 		idlwave-1.27-pkg.tar.gz \
-		igrep-1.09-pkg.tar.gz \
+		igrep-1.10-pkg.tar.gz \
 		ilisp-1.28-pkg.tar.gz \
 		ispell-1.24-pkg.tar.gz \
 		jde-1.38-pkg.tar.gz \
 		liece-1.10-pkg.tar.gz \
-		mail-lib-1.53-pkg.tar.gz \
+		mail-lib-1.54-pkg.tar.gz \
 		mailcrypt-2.12-pkg.tar.gz \
 		mew-1.17-pkg.tar.gz \
 		mh-e-1.16-pkg.tar.gz \
@@ -73,7 +73,7 @@ DISTFILES=	\
 		pcl-cvs-1.64-pkg.tar.gz \
 		pcomplete-1.02-pkg.tar.gz \
 		perl-modes-1.02-pkg.tar.gz \
-		pgg-1.00-pkg.tar.gz \
+		pgg-1.01-pkg.tar.gz \
 		prog-modes-1.67-pkg.tar.gz \
 		ps-print-1.08-pkg.tar.gz \
 		psgml-1.35-pkg.tar.gz \
@@ -89,14 +89,14 @@ DISTFILES=	\
 		sh-script-1.16-pkg.tar.gz \
 		sieve-1.10-pkg.tar.gz \
 		slider-1.13-pkg.tar.gz \
-		sml-mode-0.03-pkg.tar.gz \
+		sml-mode-0.05-pkg.tar.gz \
 		sounds-au-1.10-pkg.tar.gz \
 		sounds-wav-1.10-pkg.tar.gz \
 		speedbar-1.24-pkg.tar.gz \
 		strokes-1.08-pkg.tar.gz \
 		supercite-1.19-pkg.tar.gz \
 		texinfo-1.21-pkg.tar.gz \
-		text-modes-1.53-pkg.tar.gz \
+		text-modes-1.55-pkg.tar.gz \
 		textools-1.13-pkg.tar.gz \
 		time-1.12-pkg.tar.gz \
 		tm-1.34-pkg.tar.gz \
@@ -110,7 +110,7 @@ DISTFILES=	\
 		viper-1.35-pkg.tar.gz \
 		vm-7.07-pkg.tar.gz \
 		w3-1.26-pkg.tar.gz \
-		xemacs-base-1.70-pkg.tar.gz \
+		xemacs-base-1.71-pkg.tar.gz \
 		xemacs-devel-1.48-pkg.tar.gz \
 		xslide-1.03-pkg.tar.gz \
 		xslt-process-1.11-pkg.tar.gz \
