@@ -47,49 +47,55 @@ include/omniORB3/templatedecls.h
 include/omniORB3/templatedefns.h
 include/omniORB3/tracedthread.h
 include/omniORB3/userexception.h
+include/omnithread.h
 include/omnithread/mach.h
 include/omnithread/nt.h
 include/omnithread/posix.h
 include/omnithread/pthread_nt.h
 include/omnithread/solaris.h
-include/omnithread.h
-lib/omnicpp
 lib/_omniidlmodule.so
-lib/_omniidlmodule.so.0.1
 lib/_omniidlmodule.so.0
-lib/libomnithread.a
-lib/libomnithread.so
-lib/libomnithread.so.2.1
-lib/libomnithread.so.2
-lib/libomniORB3.a
-lib/libomniORB3.so
-lib/libomniORB3.so.0.1
-lib/libomniORB3.so.0
-lib/libomniGK_stub.a
-lib/libomniGK_alone.a
-lib/libtcpwrapGK.a
-lib/libtcpwrapGK.so
-lib/libtcpwrapGK.so.2.0
-lib/libtcpwrapGK.so.2
-lib/libomniDynamic3.a
-lib/libomniDynamic3.so
-lib/libomniDynamic3.so.0.1
-lib/libomniDynamic3.so.0
+lib/_omniidlmodule.so.0.1
 lib/libCOS3.a
-lib/libCOSDynamic3.a
 lib/libCOS3.so
-lib/libCOS3.so.0.1
 lib/libCOS3.so.0
-lib/libCOSDynamic3.so
-lib/libCOSDynamic3.so.0.1
-lib/libCOSDynamic3.so.0
+lib/libCOS3.so.0.2
 lib/libCOSBOA3.a
 lib/libCOSBOA3.so
-lib/libCOSBOA3.so.0.1
 lib/libCOSBOA3.so.0
-share/doc/omniORB/README.unix
+lib/libCOSBOA3.so.0.2
+lib/libCOSDynamic3.a
+lib/libCOSDynamic3.so
+lib/libCOSDynamic3.so.0
+lib/libCOSDynamic3.so.0.2
+lib/libomniDynamic3.a
+lib/libomniDynamic3.so
+lib/libomniDynamic3.so.0
+lib/libomniDynamic3.so.0.2
+lib/libomniGK_alone.a
+lib/libomniGK_stub.a
+lib/libomniORB3.a
+lib/libomniORB3.so
+lib/libomniORB3.so.0
+lib/libomniORB3.so.0.2
+lib/libomnithread.a
+lib/libomnithread.so
+lib/libomnithread.so.2
+lib/libomnithread.so.2.1
+lib/libtcpwrapGK.a
+lib/libtcpwrapGK.so
+lib/libtcpwrapGK.so.2
+lib/libtcpwrapGK.so.2.0
+lib/omnicpp
 share/doc/omniORB/README.FreeBSD
-share/doc/omniORB/ReleaseNote_omniORB_301
+share/doc/omniORB/README.unix
+share/doc/omniORB/ReleaseNote_omniORB_302
+share/doc/omniORB/omniNames.html
+share/doc/omniORB/omniNames.pdf
+share/doc/omniORB/omniNames.ps
+share/doc/omniORB/omniNames.tex
+share/doc/omniORB/omniORB.pdf
+share/doc/omniORB/omniORB.ps
 share/doc/omniORB/omniORB/contents_motif.gif
 share/doc/omniORB/omniORB/index.html
 share/doc/omniORB/omniORB/next_motif.gif
@@ -108,12 +114,6 @@ share/doc/omniORB/omniORB/omniORB012.html
 share/doc/omniORB/omniORB/omniORB013.html
 share/doc/omniORB/omniORB/omniORB014.html
 share/doc/omniORB/omniORB/previous_motif.gif
-share/doc/omniORB/omniNames.html
-share/doc/omniORB/omniNames.pdf
-share/doc/omniORB/omniNames.ps
-share/doc/omniORB/omniNames.tex
-share/doc/omniORB/omniORB.pdf
-share/doc/omniORB/omniORB.ps
 share/doc/omniORB/omniidl.html
 share/doc/omniORB/omniidl.pdf
 share/doc/omniORB/omniidl.ps
@@ -121,10 +121,6 @@ share/doc/omniORB/omnithread.html
 share/doc/omniORB/omnithread.pdf
 share/doc/omniORB/omnithread.ps
 share/doc/omniORB/omnithread.tex
-share/doc/omniORB/utilities.html
-share/doc/omniORB/utilities.pdf
-share/doc/omniORB/utilities.ps
-share/doc/omniORB/utilities.tex
 share/doc/omniORB/tex/cover.tex
 share/doc/omniORB/tex/ode.tex
 share/doc/omniORB/tex/omniORB.bib
@@ -132,8 +128,12 @@ share/doc/omniORB/tex/omniORB.tex
 share/doc/omniORB/tex/omniParTcl.tex
 share/doc/omniORB/tex/omniidl.tex
 share/doc/omniORB/tex/omnithread.tex
-@dirrm include/omniORB3
-@dirrm include/omnithread
-@dirrm share/doc/omniORB/omniORB
+share/doc/omniORB/utilities.html
+share/doc/omniORB/utilities.pdf
+share/doc/omniORB/utilities.ps
+share/doc/omniORB/utilities.tex
 @dirrm share/doc/omniORB/tex
+@dirrm share/doc/omniORB/omniORB
 @dirrm share/doc/omniORB
+@dirrm include/omnithread
+@dirrm include/omniORB3
