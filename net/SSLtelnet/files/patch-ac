@@ -1,11 +1,30 @@
---- ../../SSLtelnet-0.11/lib/libbsd/getpass.c	Sat Jun 15 18:28:30 1996
-+++ ./lib/libbsd/getpass.c	Sun Mar 29 14:30:01 1998
-@@ -6,7 +6,7 @@
+--- telnet/sys_bsd.c.orig	Sat Aug  2 14:18:09 1997
++++ telnet/sys_bsd.c	Wed Sep  2 12:53:22 1998
+@@ -580,7 +580,7 @@
+ 	else
+ 		lmode &= ~LPASS8;
+ #else
+-	if (f & MODE_INBIN)
++	if (1)
+ 		tmp_tc.c_iflag &= ~ISTRIP;
+ 	else
+ 		tmp_tc.c_iflag |= ISTRIP;
+--- telnet/Makefile.orig	Sat Aug  2 13:30:16 1997
++++ telnet/Makefile	Wed Sep  2 13:20:26 1998
+@@ -6,14 +6,12 @@
+ PROG=	telnet
  
- #define	TTY	"/dev/tty"
  
--#if !defined(HPUX) && !defined(__bsdi__)
-+#if !defined(HPUX) && !defined(__bsdi__) && !defined(__FreeBSD__)
+-CFLAGS= -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
+-	-DFILIO_H \
+-	-I../lib/libbsd/include -I../lib \
++CFLAGS+= -DKLUDGELINEMODE -DUSE_TERMIO -DAUTHENTICATE -DUSE_SSL \
++	-DFILIO_H -I../lib -I../lib/libbsd/include \
+ 	-I$(SSLTOP)/include
  
- /* under HPUX use the "system" supplied routine as I cannot
-  * be bothered to "port" this code at the moment --tjh 
+ 
+ LIBS=   ../lib/libtelnet/libtelnet.a \
+-	../lib/libbsd/libbsd.a \
+         $(SSLTOP)/lib/libssl.a \
+ 	$(SSLTOP)/lib/libcrypto.a 
+ #	$(SSLTOP)/lib/libdes.a

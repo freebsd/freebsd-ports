@@ -1,11 +1,83 @@
---- ../../SSLtelnet-0.11/lib/libbsd/inet_addr.c	Sat Jun 15 18:28:34 1996
-+++ ./lib/libbsd/inet_addr.c	Sun Mar 29 14:33:07 1998
-@@ -37,7 +37,7 @@
+--- lib/libtelnet/sslapp.c.orig	Sat Aug  2 13:52:35 1997
++++ lib/libtelnet/sslapp.c	Wed Sep  2 12:53:21 1998
+@@ -31,6 +31,7 @@
+ int ssl_cert_required=0;
+ int ssl_verbose_flag=0;
+ int ssl_disabled_flag=0;
++int ssl_quiet_flag=0;
+ char *ssl_cert_file=NULL;
+ char *ssl_key_file=NULL;
+ char *ssl_cipher_list=NULL;
+@@ -59,7 +60,7 @@
+    * a clean interface for doing things
+    */
+   if (ssl_debug_flag)
+-    BIO_printf(bio_err,"SSL_DEBUG_FLAG on\n");
++    BIO_printf(bio_err,"SSL_DEBUG_FLAG on\r\n");
  
- #if defined(__GNUC__)
  
--#if defined(__bsdi__) || defined(SUNOS)  && !defined(SOLARIS2) 
-+#if defined(__bsdi__) || defined(SUNOS)  && !defined(SOLARIS2) || defined(__FreeBSD__)
+   /* init things so we will get meaningful error messages
+@@ -79,15 +80,18 @@
+     if (SSL_CTX_need_tmp_RSA(ssl_ctx)) {
+       RSA *rsa;
  
- /* nothing required for SunOS 4.1.x */
+-      BIO_printf(bio_err,"Generating temp (512 bit) RSA key ...\n");
++      if (!ssl_quiet_flag)
++	BIO_printf(bio_err,"Generating temp (512 bit) RSA key ...\r\n");
+       rsa=RSA_generate_key(512,RSA_F4,NULL);
+-      BIO_printf(bio_err,"Generation of temp (512 bit) RSA key done\n");
++      if (!ssl_quiet_flag)
++	BIO_printf(bio_err,"Generation of temp (512 bit) RSA key done\r\n");
+    
+-      if (!SSL_CTX_set_tmp_rsa(ssl_ctx,rsa)) {
+-	BIO_printf(bio_err,"Failed to assign generated temp RSA key!\n");
++      if (!SSL_CTX_set_tmp_rsa(ssl_ctx,rsa) && !ssl_quiet_flag) {
++	BIO_printf(bio_err,"Failed to assign generated temp RSA key!\r\n");
+       }
+       RSA_free(rsa);
+-      BIO_printf(bio_err,"Assigned temp (512 bit) RSA key\n");
++      if (!ssl_quiet_flag)
++	BIO_printf(bio_err,"Assigned temp (512 bit) RSA key\r\n");
+     }
+   }
  
+@@ -161,14 +165,14 @@
+ int ret;
+ {
+   if (where==SSL_CB_CONNECT_LOOP) {
+-    BIO_printf(bio_err,"SSL_connect:%s %s\n",
++    BIO_printf(bio_err,"SSL_connect:%s %s\r\n",
+ 		    SSL_state_string(s),SSL_state_string_long(s));
+   } else if (where==SSL_CB_CONNECT_EXIT) {
+     if (ret == 0) {
+-      BIO_printf(bio_err,"SSL_connect:failed in %s %s\n",
++      BIO_printf(bio_err,"SSL_connect:failed in %s %s\r\n",
+ 	      SSL_state_string(s),SSL_state_string_long(s));
+     } else if (ret < 0) {
+-      BIO_printf(bio_err,"SSL_connect:error in %s %s\n",
++      BIO_printf(bio_err,"SSL_connect:error in %s %s\r\n",
+ 	      SSL_state_string(s),SSL_state_string_long(s));
+     }
+   }
+--- lib/libtelnet/sslapp.h.orig	Sat Aug  2 13:56:21 1997
++++ lib/libtelnet/sslapp.h	Wed Sep  2 12:53:22 1998
+@@ -53,6 +53,7 @@
+ extern int ssl_disabled_flag;
+ extern int ssl_cert_required;
+ extern int ssl_certsok_flag;
++extern int ssl_quiet_flag;
+ 
+ extern char *ssl_log_file; 
+ extern char *ssl_cert_file; 
+--- lib/libtelnet/Makefile.orig	Sat Aug  2 13:31:37 1997
++++ lib/libtelnet/Makefile	Wed Sep  2 13:16:15 1998
+@@ -12,8 +12,7 @@
+ #CFLAGS= -DENCRYPT -DAUTHENTICATE -DSRA -DUSE_SSL -DDES_ENCRYPTION \
+ #-I../libbsd/include -I../libpk
+ 
+-CFLAGS= -DAUTHENTICATE -DUSE_SSL \
+--I../libbsd/include -I$(SSLTOP)/include -I../libpk -g
++CFLAGS+= -DAUTHENTICATE -DUSE_SSL -I$(SSLTOP)/include -I../libbsd/include
+ 
+ lib${LIB}.a: ${OBJS}
+ 	echo building standard ${LIB} library 
