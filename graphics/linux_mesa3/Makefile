@@ -7,7 +7,7 @@
 
 PORTNAME=		mesa
 PORTVERSION=		3.4.2
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		graphics linux
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE} \
 			ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
@@ -73,7 +73,6 @@ post-install:
 	${STRIP_CMD} ${PREFIX}/usr/X11R6/lib/libglut.so.${GLUT_MAJOR_VER}.${GLUT_MINOR_VER}.0
 	@for R in GL GLU; do \
 		${STRIP_CMD} ${PREFIX}/usr/X11R6/lib/lib$$R.so.${GL_MAJOR_VER}.${GL_MINOR_VER}.0; \
-		${LN} -s lib$$R.so ${PREFIX}/usr/X11R6/lib/libMesa$$R.so; \
 		${LN} -s lib$$R.so.${GL_MAJOR_VER} ${PREFIX}/usr/X11R6/lib/libMesa$$R.so.${LIBMESA_MAJOR_VER}; \
 	done
 	${LINUXBASE}/sbin/ldconfig
