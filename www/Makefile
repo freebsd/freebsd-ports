@@ -98,6 +98,7 @@
     SUBDIR += mod_perl
     SUBDIR += mod_php3
     SUBDIR += mod_php4
+    SUBDIR += mod_python
     SUBDIR += mod_roaming
     SUBDIR += mod_ruby
     SUBDIR += mod_zap
