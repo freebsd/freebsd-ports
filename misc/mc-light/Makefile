@@ -15,10 +15,11 @@ DISTNAME=	mc-${PORTVERSION:S/.p9/-pre9/}
 MAINTAINER=	sam@brj.pp.ru
 COMMENT=	A lightweight Midnight Commander clone
 
+RUN_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 CONFLICTS=	mc-4.6*
 
 USE_GMAKE=	yes
-USE_GNOME=	glib20 pkgconfig gnometarget
+USE_GNOME=	pkgconfig gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-included-slang \
 		--with-gettext \
