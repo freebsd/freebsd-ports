@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f2d5e56e-67eb-11d9-a9e7-0001020eed82">
+    <topic>unrtf -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>unrtf</name>
+	<range><gt>0</gt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yosef Klein and Limin Wang have found a buffer overflow
+	  vulnerability in unrtf that can allow an attacker to execute
+	  arbitrary code with the permissions of the user running
+	  unrtf, by running unrtf on a specially crafted rtf
+	  document.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12030</bid>
+      <cvename>CAN-2004-1297</cvename>
+      <url>http://tigger.uic.edu/~jlongs2/holes/unrtf.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-12-15</discovery>
+      <entry>2005-01-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3fbf9db2-658b-11d9-abad-000a95bc6fae">
     <topic>mozilla -- heap overflow in NNTP handler</topic>
     <affects>
