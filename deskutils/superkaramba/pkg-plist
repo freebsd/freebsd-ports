@@ -1,0 +1,13 @@
+bin/superkaramba
+share/applnk/Utilities/karamba.desktop
+share/apps/superkaramba/karambaui.rc
+share/doc/HTML/en/karamba/common
+share/doc/HTML/en/karamba/index.cache.bz2
+share/doc/HTML/en/karamba/index.docbook
+@dirrm share/doc/HTML/en/karamba
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/superkaramba
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
