@@ -19,4 +19,7 @@ NO_BUILD=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" \
 		TVILIBDIR="${PREFIX}/lib/${PORTNAME}"
 
+post-install:
+	${RM} ${PREFIX}/lib/${PORTNAME}/*.orig
+
 .include <bsd.port.mk>
