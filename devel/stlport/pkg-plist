@@ -133,6 +133,7 @@ include/stlport/stl/_algobase.c
 include/stlport/stl/_algobase.h
 include/stlport/stl/_alloc.c
 include/stlport/stl/_alloc.h
+include/stlport/stl/_alloc_old.h
 include/stlport/stl/_auto_ptr.h
 include/stlport/stl/_bitset.c
 include/stlport/stl/_bitset.h

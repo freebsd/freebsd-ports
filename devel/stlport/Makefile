@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	stlport
-PORTVERSION=	4.5
+PORTVERSION=	4.5.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.stlport.com/archive/  \
-		http://www.stlport.com/beta/
+MASTER_SITES=	http://www.stlport.com/archive/
 DISTNAME=	STLport-${PORTVERSION:S/.b/-b/}
 
 MAINTAINER=	pmarquis@pobox.com
@@ -18,7 +17,7 @@ MAINTAINER=	pmarquis@pobox.com
 .include <bsd.port.pre.mk>
 
 .if !exists(/usr/include/wchar.h)
-BROKEN=		"requires /usr/include/wchar.h for compilation"
+BROKEN=		"Requires /usr/include/wchar.h for compilation"
 .endif
 
 WRKSRC=		${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}/src
@@ -28,7 +27,7 @@ MAKEFILE=	gcc-freebsd.mak
 MAKE_ARGS=	INSTALLDIR=${PREFIX}
 ALL_TARGET=	clean all
 INSTALL_TARGET=	install_unix
-INSTALLS_SHLIB=	ye
+INSTALLS_SHLIB=	yes
 
 .if ${OSVERSION} < 440000
 BROKEN=		"Not supported on systems prior to FreeBSD 4.4"
