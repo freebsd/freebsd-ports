@@ -1,0 +1,26 @@
+*** bin/trans.c.bak	Sat Jun  1 04:11:00 1996
+--- bin/trans.c	Wed Nov 27 12:52:37 1996
+***************
+*** 47,53 ****
+--- 47,55 ----
+  
+  /*****************************************************************************/
+  
++ #ifndef __FreeBSD__
+  typedef	unsigned short int	ushort ;
++ #endif
+  
+  static	ushort	BadChar = BAD_CHAR ;    /* default BAD character     */
+  
+*** bin/trans.h.bak	Sat Jun  1 04:11:00 1996
+--- bin/trans.h	Wed Nov 27 12:52:37 1996
+***************
+*** 96,98 ****
+--- 96,102 ----
+  	NeXTSTEP	-DUSE_UTIMBUF -DNO_UTIMBUF
+  
+   *****************************************************************************/
++ 
++ #ifdef __FreeBSD__
++ #define USE_UTIMBUF
++ #endif
