@@ -1502,6 +1502,7 @@ fcgi		ports/www/fcgi
 fcitx		ports/chinese/fcitx
 fconv		ports/converters/fconv
 fcplay		ports/audio/fcplay
+fcptools	ports/net/fcptools
 fcron		ports/sysutils/fcron
 fd		ports/misc/fd
 fdp-tools	ports/textproc/fdp-tools
