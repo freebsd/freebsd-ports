@@ -171,6 +171,7 @@ share/sgml/jade/FOT.tex
 share/sgml/jade/Makefile.jadetex
 share/sgml/jade/catalog
 @unexec env LANG=C perl -ni -e 'print if !m|%D/%F|;' %D/share/sgml/catalog
+@unexec if [ -f %D/share/sgml/catalog -a ! -s %D/share/sgml/catalog ]; then rm -f %D/share/sgml/catalog; fi
 @exec if [ ! -f %D/share/sgml/catalog ]; then echo "CATALOG \"%D/%F\"" > %D/share/sgml/catalog; else env LANG=C perl -ni -e 'print if !m|%D/%F|;print "CATALOG \"%D/%F\"\n" if eof;' %D/share/sgml/catalog; fi
 share/sgml/jade/demo.dsl
 share/sgml/jade/demo.sgm
