@@ -473,7 +473,6 @@ include/bitmaps/ldblarrow
 include/bitmaps/rdblarrow
 include/xf86Optrec.h
 include/xf86Parser.h
-info/dir
 lib/X11/Cards
 lib/X11/XErrorDB
 lib/X11/XF86Config.98
@@ -3267,7 +3266,6 @@ X11/xsm/system.xsm
 @dirrm include/X11/fonts
 @dirrm include/X11/pixmaps
 @dirrm include
-@dirrm info
 @dirrm lib/X11/XF86Setup
 @dirrm lib/X11/XF86Setup/pics
 @dirrm lib/X11/XF86Setup/scripts
