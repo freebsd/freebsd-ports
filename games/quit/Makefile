@@ -8,7 +8,7 @@
 PORTNAME=	quit
 PORTVERSION=	1.02
 CATEGORIES?=	games
-MASTER_SITES=	http://matsu-www.is.titech.ac.jp/~fukuchi/archive/misc/
+MASTER_SITES=	http://megaui.net/fukuchi/archive/shortshort/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER?=	umeno@rr.iij4u.or.jp
