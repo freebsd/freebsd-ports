@@ -4496,6 +4496,7 @@ lincvs		ports/devel/lincvs
 lineakd		ports/sysutils/lineakd
 lingoteach	ports/misc/lingoteach
 linguist	ports/devel/linguist
+linkcheck	ports/www/linkcheck
 linkchecker	ports/www/linkchecker
 links		ports/www/links
 links1		ports/www/links1
