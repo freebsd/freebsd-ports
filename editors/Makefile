@@ -51,6 +51,7 @@
     SUBDIR += gedit
     SUBDIR += gedit2
     SUBDIR += ghex
+    SUBDIR += ghex2
     SUBDIR += glimmer
     SUBDIR += gmanedit
     SUBDIR += gnotepad+
