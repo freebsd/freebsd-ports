@@ -1,4 +1,3 @@
-@cwd /usr/local
 bin/xzwrite
 bin/zaway
 bin/zctl
@@ -7,24 +6,24 @@ bin/zlocate
 bin/zmailnotify
 bin/znol
 bin/zstat
-bin/zwrite
 bin/zwgc
-etc/zephyr/default.subscriptions
+bin/zwrite
 etc/rc.d/zhm.sh
+etc/zephyr/default.subscriptions
 include/zephyr/mit-copyright.h
 include/zephyr/zephyr.h
 include/zephyr/zephyr_err.h
 lib/libzephyr.a
-sbin/zshutdown_notify
-sbin/zpopnotify
 sbin/zephyrd
 sbin/zhm
-share/zephyr/XZwrite
+sbin/zpopnotify
+sbin/zshutdown_notify
 share/doc/zephyr/INSTALL
 share/doc/zephyr/NOTES
 share/doc/zephyr/OPERATING
 share/doc/zephyr/README
 share/doc/zephyr/USING
+share/zephyr/XZwrite
 share/zephyr/xzwrite.bitmap
 share/zephyr/zwgc.desc
 share/zephyr/zwgc_resources

@@ -11,3 +11,16 @@
  
  clean:
  	rm -f ${OBJS} xzwrite
+--- zwgc/Makefile.in.orig	Mon Mar 12 14:51:08 2001
++++ zwgc/Makefile.in	Mon Mar 12 14:51:38 2001
+@@ -85,8 +85,8 @@
+ install: zwgc
+ 	${INSTALL} -m 755 -s zwgc ${DESTDIR}${bindir}
+ 	${INSTALL} -m 644 ${srcdir}/zwgc.1 ${DESTDIR}${mandir}/man1
+-	${INSTALL} -m 644 ${srcdir}/zwgc.desc ${DESTDIR}${datadir}/zephyr
+-	${INSTALL} -m 644 ${srcdir}/zwgc_resources ${DESTDIR}${datadir}/zephyr
++	${INSTALL} -m 644 ${srcdir}/zwgc.desc ${DESTDIR}${datadir}
++	${INSTALL} -m 644 ${srcdir}/zwgc_resources ${DESTDIR}${datadir}
+ 
+ clean:
+ 	rm -f ${OBJS} zwgc port_dictionary.[ch] pointer_dictionary.[ch]
