@@ -114,6 +114,7 @@ if [ X$tkversion != X ]; then
     echo "#define TclLibName		tcl$tclversion" >>$F
     ;;
   esac
+  echo "#define BuildXF86Setup		YES" >>$F
 else
 cat <<EOF
 *** I don't see the static library for tk version $tkversion in /usr/local/lib.
