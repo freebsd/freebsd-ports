@@ -1,26 +1,14 @@
-bin/i386-mingw32msvc-addr2line
-bin/i386-mingw32msvc-ar
-bin/i386-mingw32msvc-as
+bin/cpp
+bin/gcov
 bin/i386-mingw32msvc-c++
+@exec mv %D/bin/i386-mingw32msvc-c++filt %D/bin/i386-mingw32msvc-c++filt.binutils
 bin/i386-mingw32msvc-c++filt
-bin/i386-mingw32msvc-dlltool
-bin/i386-mingw32msvc-dllwrap
+@unexec mv %D/bin/i386-mingw32msvc-c++filt.binutils %D/bin/i386-mingw32msvc-c++filt
 bin/i386-mingw32msvc-g++
 bin/i386-mingw32msvc-g77
-bin/i386-mingw32msvc-gasp
 bin/i386-mingw32msvc-gcc
-bin/i386-mingw32msvc-ld
-bin/i386-mingw32msvc-nm
-bin/i386-mingw32msvc-objcopy
-bin/i386-mingw32msvc-objdump
 bin/i386-mingw32msvc-protoize
-bin/i386-mingw32msvc-ranlib
-bin/i386-mingw32msvc-readelf
-bin/i386-mingw32msvc-size
-bin/i386-mingw32msvc-strings
-bin/i386-mingw32msvc-strip
 bin/i386-mingw32msvc-unprotoize
-bin/i386-mingw32msvc-windres
 i386-mingw32msvc/bin/gcc
 i386-mingw32msvc/include/_G_config.h
 i386-mingw32msvc/lib/libiberty.a
@@ -88,61 +76,61 @@ info/gcc.info-9
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/SYSCALLS.c.X
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/cc1
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/cc1obj
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/cc1plus
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/cpp0
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/f771
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/README
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/exception
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/fixed
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/float.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/iso646.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/limits.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/new
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/new.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/NXConstStr.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/Object.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/Protocol.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/encoding.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/hash.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/objc-api.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/objc-list.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/objc.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/sarray.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/thr.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc/typedstream.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/proto.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/stdarg.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/stdbool.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/stddef.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/syslimits.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/typeinfo
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-alpha.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-arc.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-c4x.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-clipper.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-h8300.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-i860.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-i960.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-m32r.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-m88k.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-mips.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-mn10200.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-mn10300.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-pa.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-ppc.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-pyr.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-sh.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-sparc.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-spur.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/va-v850.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/varargs.h
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/libgcc.a
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/libobjc.a
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/libstdc++.a
-lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/specs
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/SYSCALLS.c.X
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/cc1
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/cc1obj
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/cc1plus
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/cpp0
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/f771
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/README
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/exception
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/fixed
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/float.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/iso646.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/limits.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/new
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/new.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/NXConstStr.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/Object.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/Protocol.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/encoding.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/hash.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/objc-api.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/objc-list.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/objc.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/sarray.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/thr.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc/typedstream.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/proto.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/stdarg.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/stdbool.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/stddef.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/syslimits.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/typeinfo
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-alpha.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-arc.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-c4x.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-clipper.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-h8300.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-i860.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-i960.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-m32r.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-m88k.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-mips.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-mn10200.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-mn10300.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-pa.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-ppc.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-pyr.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-sh.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-sparc.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-spur.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/va-v850.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/varargs.h
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/libgcc.a
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/libobjc.a
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/libstdc++.a
+lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/specs
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/include/g++/PlotFile.h
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/include/g++/SFile.h
 lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/include/g++/algo.h
@@ -296,9 +284,9 @@ lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/include/g++/vector.h
 @dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/include/g++/std
 @dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/include/g++
 @dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%/include
-@dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include/objc
-@dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5/include
-@dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-5
+@dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include/objc
+@dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6/include
+@dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%-6
 @dirrm lib/gcc-lib/i386-mingw32msvc/%%PORTVERSION%%
 @dirrm lib/gcc-lib/i386-mingw32msvc
 @unexec rmdir %D/lib/gcc-lib 2>/dev/null || true
