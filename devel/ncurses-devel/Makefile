@@ -3,7 +3,7 @@
 # Date created:				23 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.12 1999/03/11 21:47:10 scrappy Exp $
+# $Id: Makefile,v 1.13 1999/04/04 00:30:20 sada Exp $
 #
 
 DISTNAME=		ncurses-4.2
@@ -49,13 +49,9 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--disable-termcap --includedir=${PREFIX}/include/ncurses \
 		--prefix=${PREFIX} --with-profile --with-shared
-CONFIGURE_ENV=		gnat_exists="no" ac_cv_path_LDCONFIG="/usr/bin/env OBJFORMAT=${PORTOBJFORMAT} /sbin/ldconfig -m ${PREFIX}/lib"
+CONFIGURE_ENV=		gnat_exists="no" ac_cv_path_LDCONFIG="${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib"
 
 .include <bsd.port.pre.mk>
-
-post-configure:
-	@ ${CAT} ${FILESDIR}/patch-ac \
-	 | ${PATCH} ${PATCH_DIST_ARGS}
 
 post-install:
 .if ${PORTOBJFORMAT} == "aout"
