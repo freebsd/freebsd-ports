@@ -1,0 +1,15 @@
+WXftp is an X Window System FTP client
+
+Major features available in current (0.4.0) release:
+
+	o User-friendly, intuitive interface (both GTK+ and Motif). 
+	o Passive data transfers 
+	o Convenient session manager window 
+	o On-line help system 
+	o Recursive downloads with resume option 
+	o Recursive uploads 
+	o Multiple delete with option to recurse 
+	o Auto-redial option
+
+WXftp is copyright (c) 1998 by Alexander Yukhimets <alexy@edgarmail.com>.
+All right under the copyright reserved.
