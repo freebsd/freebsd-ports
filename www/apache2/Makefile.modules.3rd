@@ -18,15 +18,6 @@ OVERRIDABLE_VARS=	SRC_FILE MODULENAME SHORTMODNAME WRKSRC \
 			PKGNAMESUFFIX
 
 
-.if exists(${APXS})
-APXS_PREFIX!=	${APXS} -q prefix
-.   if defined(AP_GENPLIST) && ${APXS_PREFIX} != ${PREFIX}
-IGNORE=	PREFIX must be egal to APXS_PREFIX.
-.   endif
-.else
-APXS_PREFIX=	${APXS:S/\/sbin\/apxs//}
-.endif
-
 .if exists(${APXS_PREFIX}/include/apache2/http_core.h)
 WITH_APACHE2=	YES
 .   if defined (WANT_APACHE)
@@ -59,6 +50,18 @@ IGNORE=		"Unknown apache version"
 .endif
 
 .if !defined(PORT_IS_SERVER)
+.if exists(${APXS})
+APXS_PREFIX!=	${APXS} -q prefix 2> /dev/null || true
+.   if defined(APXS_PREFIX)
+IGNORE=	: Your apache does not support DSO modules
+.   endif
+.   if defined(AP_GENPLIST) && ${APXS_PREFIX} != ${PREFIX}
+IGNORE?=	PREFIX must be egal to APXS_PREFIX.
+.   endif
+.else
+APXS_PREFIX=	${APXS:S/\/sbin\/apxs//}
+.endif
+
 .if defined(WITH_APACHE2)
 AP_BUILDEXT=	la
 PLIST_SUB+=	APACHEMODDIR="libexec/apache2"
@@ -147,6 +150,14 @@ ${module}_PLIST_SUB=	"@comment "
 .if ${WANT_APACHE} == common13
 # dirty hack to make sure all modules are disabled before we select them
 CONFIGURE_ARGS+=	--disable-module="all"
+.elif ${WANT_APACHE} == common2
+CONFIGURE_ARGS+=	--disable-access --disable-auth \
+			--disable-charset-lite --disable-include \
+			--disable-log-config --disable-env --disable-setenvif \
+			--disable-mime --disable-status --disable-autoindex \
+			--disable-asis --disable-cgid --disable-cgi \
+			--disable-negotiation --disable-dir --disable-imap \
+			--disable-actions --disable-userdir --disable-alias
 .endif
 
 .if defined(WITH_MODULES)
@@ -243,6 +254,7 @@ _CONFIGURE_ARGS!=	\
 					fi; done
 CONFIGURE_ARGS+=	${_CONFIGURE_ARGS}
 .elif defined(WITH_STATIC_APACHE) || defined(WITH_ALL_STATIC_MODULES)
+WITH_STATIC_MODULES=	${APACHE_MODULES}
 .    if ${WANT_APACHE} == common13
 .      for module in ${APACHE_MODULES}
 CONFIGURE_ARGS+=	--enable-module=${module}
