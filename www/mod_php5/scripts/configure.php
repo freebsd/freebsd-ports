@@ -75,10 +75,7 @@ while [ "$1" ]; do
 			echo "CONFIGURE_ARGS+=--with-mcrypt=\${PREFIX}"
 			;;
 		\"mhash\")
-			echo "mhash is DISABLED for now. Ignoring." > /dev/stderr
-			;;
-		\"nothing\")
-			echo "LIB_DEPENDS+=	mhash.1:\${PORTSDIR}/security/mhash"
+			echo "LIB_DEPENDS+=	mhash.2:\${PORTSDIR}/security/mhash"
 			echo "CONFIGURE_ARGS+=--with-mhash=\${PREFIX}"
 			;;
 		\"pdflib\")
