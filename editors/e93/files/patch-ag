@@ -1,0 +1,11 @@
+--- xgui/Makefile.orig	Sun Sep 24 23:32:13 2000
++++ xgui/Makefile	Sun Sep 24 23:32:30 2000
+@@ -17,7 +17,7 @@
+ # Include machine/platform specific information into the build
+ include ../machdef.mk
+ 
+-CFLAGS=-I. $(TCL_INCLUDE) $(X_INCLUDE) $(OPTIONS) $(MACHINESPEC) -DPREFIX=\"$(PREFIX)\"
++CFLAGS+=-I. $(TCL_INCLUDE) $(TK_INCLUDE) $(X_INCLUDE) $(OPTIONS) $(MACHINESPEC) -DPREFIX=\"$(PREFIX)\"
+ 
+ OBJECTS = \
+ 	globals.o \

@@ -1,5 +1,24 @@
 bin/e93
-lib/e93/.e93rc
+bin/e93r
+lib/e93lib/highlightschemes/schemes.tcl
+lib/e93lib/modules/c.tcl
+lib/e93lib/syntaxmaps/unknown.tcl
+lib/e93lib/syntaxmaps/asm.tcl
+lib/e93lib/syntaxmaps/html.tcl
+lib/e93lib/syntaxmaps/java.tcl
+lib/e93lib/syntaxmaps/tcl.tcl
+lib/e93lib/syntaxmaps/vhdl.tcl
+lib/e93lib/syntaxmaps/text.tcl
+lib/e93lib/syntaxmaps/c.tcl
+lib/e93lib/images/about.ppm
+lib/e93lib/e93rc.tcl
+share/doc/e93/README.e93
+share/doc/e93/README.regex
+share/doc/e93/README.syntaxmaps
 share/doc/e93/LICENSE.TXT
-@dirrm lib/e93
+@dirrm lib/e93lib/highlightschemes
+@dirrm lib/e93lib/modules
+@dirrm lib/e93lib/syntaxmaps
+@dirrm lib/e93lib/images
+@dirrm lib/e93lib
 @dirrm share/doc/e93

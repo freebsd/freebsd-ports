@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Sep 24 18:33:49 2000
++++ Makefile	Sun Sep 24 18:34:49 2000
+@@ -21,7 +21,7 @@
+ # Include machine/platform specific information
+ include machdef.mk
+ 
+-CFLAGS=-I. $(TCL_INCLUDE) $(X_INCLUDE) $(OPTIONS) $(MACHINESPEC)
++CFLAGS+=-I. $(TCL_INCLUDE) ${TK_INCLUDE} $(X_INCLUDE) $(OPTIONS) $(MACHINESPEC)
+ 
+ OBJECTS = \
+ 	e93.o \

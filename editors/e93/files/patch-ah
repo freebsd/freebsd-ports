@@ -1,0 +1,11 @@
+--- e93r.orig	Fri Sep 29 03:29:30 2000
++++ e93r	Fri Sep 29 03:33:59 2000
+@@ -25,7 +25,7 @@
+ 
+ # NOTE: you may have to adjust the wish to e.g. /usr/local/bin/wish8.3
+ # restart using wish \
+-exec wish "$0" "$@"
++exec wish8.2 "$0" "$@"
+ 
+ # check presence of another e93
+ set e93present ""
