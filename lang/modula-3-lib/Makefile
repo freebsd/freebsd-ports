@@ -81,7 +81,7 @@ pre-fetch:
 	@${ECHO_MSG} "To build this port without X11, define \"WITHOUT_X11\"."
 
 USE_XLIB=	yes
-PLIST=		${WRKDIR}/PLIST
+PLIST=		${WRKDIR}/pkg-plist
 .endif
 
 post-extract:
