@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.23.5
+PORTVERSION=	0.23.7
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
 MAINTAINER=	rodrigc@attbi.com
-COMMENT=	An HTTP and WebDAV client library for Unix systems, with a C interface
+COMMENT=	An HTTP and WebDAV client library for Unix systems
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+
+INSTALLS_SHLIB=	yes
 
 .ifndef WITHOUT_OPENSSL
 USE_OPENSSL=	yes
@@ -47,7 +49,7 @@ MAN3=	ne_add_request_header.3 ne_addr_destroy.3 ne_addr_error.3 \
 	ne_ssl_set_verify.3 ne_status.3 ne_strdup.3 ne_strndup.3 \
 	ne_token.3 ne_version_match.3 ne_version_string.3 neon.3
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} 
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${MANPREFIX}/man/man1
