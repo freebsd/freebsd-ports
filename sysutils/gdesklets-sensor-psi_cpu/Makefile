@@ -18,11 +18,10 @@ COMMENT=	CPU sensor form the Psi Sensor Package
 
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 
-DISTVERSION=	20031028
+DISTVERSION=	20040420
 NAME=		CPU
 DATADIR=	${PREFIX}/share/gnome
 WRKSRC=		${WRKDIR}/${NAME}-${PORTVERSION}

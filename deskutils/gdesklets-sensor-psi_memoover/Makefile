@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	memoover
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.1.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-sensor-psi_
@@ -18,11 +17,10 @@ COMMENT=	MemoOver Sensor from the Psi Sensor Package
 
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
 
-USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
 
-DISTVERSION=	20031028
+DISTVERSION=	20040420
 NAME=		MemoOver
 DATADIR=	${PREFIX}/share/gnome
 WRKSRC=		${WRKDIR}/${NAME}-${PORTVERSION}

@@ -30,10 +30,9 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutil
 		${DATADIR}/Sensors/VariableBorder/__init__.py:${PORTSDIR}/deskutils/gdesklets-sensor-psi_variableborder \
 		${DATADIR}/Sensors/IconButton/__init__.py:${PORTSDIR}/deskutils/gdesklets-sensor-psi_iconbutton
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 
-DISTVERSION=	20031028
+DISTVERSION=	20040420
 NAME=		psi-displays
 DATADIR=	${PREFIX}/share/gnome/gdesklets
 WRKSRC=		${WRKDIR}/${NAME}-v${PORTVERSION}

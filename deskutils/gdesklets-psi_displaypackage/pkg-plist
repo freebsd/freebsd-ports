@@ -5,6 +5,7 @@ share/gnome/gdesklets/Displays/psi-displays/border-top-right.display
 share/gnome/gdesklets/Displays/psi-displays/clock.display
 share/gnome/gdesklets/Displays/psi-displays/diskinfo.display
 share/gnome/gdesklets/Displays/psi-displays/fortune.display
+share/gnome/gdesklets/Displays/psi-displays/info-altuptime.display
 share/gnome/gdesklets/Displays/psi-displays/info.display
 share/gnome/gdesklets/Displays/psi-displays/meminfo.display
 share/gnome/gdesklets/Displays/psi-displays/memo.display

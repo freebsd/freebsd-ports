@@ -108,6 +108,24 @@ share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-round-black/center.png
 share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-round-white/bg.png
 share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-round-white/center.png
 share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/themes
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/email.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/error.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/files.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/fortune-1.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/fortune.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/hd-1.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/hd-2.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/hd-3.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/hd-4.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/hd.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/memory.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/net.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/nonewmail.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/penguin-1.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/penguin.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/ping.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/ping2.png
+share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2/xclock.png
 share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal/email.png
 share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal/error.png
 share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal/files.png
@@ -133,40 +151,41 @@ share/gnome/gdesklets/Themes/Psi-Disp-Themes/shadows/black/bottom.png
 share/gnome/gdesklets/Themes/Psi-Disp-Themes/shadows/black/right.png
 share/gnome/gdesklets/Themes/Psi-Disp-Themes/shadows/black/top-right.png
 share/gnome/gdesklets/Themes/Psi-Disp-Themes/shadows/themes
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/backgrounds/dark
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/backgrounds/light
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/backgrounds
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/black-big
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/black-big-alpha
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/black-ext
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/black-thin
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/white-big
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/white-ext
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/white-med
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/white-thin
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/rect-rect-black
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/rect-rect-white
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-gradient-black
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-gradient-white
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-rect-black
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-rect-white
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-round-black
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-round-white
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/rect-rect-black
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/rect-rect-white
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-gradient-black
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-gradient-white
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-rect-black
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-rect-white
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-round-black
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-round-white
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/shadows/black
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/shadows/alpha
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/shadows
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal-2
 @dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons/crystal
 @dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/icons
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/shadows/alpha
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/shadows/black
-@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/shadows
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-round-white
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-round-black
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-rect-white
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-rect-black
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-gradient-white
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/round-gradient-black
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/rect-rect-white
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge/rect-rect-black
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-round-white
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-round-black
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-rect-white
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-rect-black
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-gradient-white
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/round-gradient-black
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/rect-rect-white
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin/rect-rect-black
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge-thin
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/gauge
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/white-thin
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/white-med
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/white-ext
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/white-big
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/black-thin
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/black-ext
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/black-big-alpha
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders/black-big
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/borders
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/backgrounds/light
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/backgrounds/dark
+@dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes/backgrounds
 @dirrm share/gnome/gdesklets/Themes/Psi-Disp-Themes
 @dirrm share/gnome/gdesklets/Themes
