@@ -25,18 +25,14 @@ pre-fetch:
 	@${ECHO_MSG} You must set variable USA_RESIDENT to YES, if you are USA resident
 	@${ECHO_MSG} or to NO, if you aren\'t USA resident to build this package
 	@${FALSE}
-.endif
+
+.include <bsd.port.mk>
+
+.elif defined(USA_RESIDENT)
 
 .if ${USA_RESIDENT} == NO
 DISTFILES=	rsa.c idea.c
 CONTRIB=	rsa idea
-#EXTRACT_ONLY=
-.else
-do-fetch:
-	@${ECHO_MSG}
-	@${ECHO_MSG} rsaref not yet supported
-	@${FALSE}
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -58,3 +54,15 @@ do-install:
 .endfor
 
 .include <bsd.port.post.mk>
+
+.else
+pre-fetch:
+	@${ECHO_MSG}
+	@${ECHO_MSG} rsaref is not supported in this port
+	@${FALSE}
+
+.include <bsd.port.mk>
+
+.endif
+
+.endif
