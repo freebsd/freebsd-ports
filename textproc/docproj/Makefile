@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docproj
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -22,19 +22,13 @@ RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		${PREFIX}/share/sgml/docbook/4.1/docbook.dtd:${PORTSDIR}/textproc/docbook-410 \
 		${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${PREFIX}/bin/eps2png:${PORTSDIR}/graphics/eps2png \
-		${PREFIX}/bin/pngtopnm:${PORTSDIR}/graphics/netpbm
+		${PREFIX}/bin/pngtopnm:${PORTSDIR}/graphics/netpbm \
+		${PREFIX}/bin/links:${PORTSDIR}/www/links
 
-.if defined(WITH_OPENJADE)
+.if defined(WITH_OPENJADE) || ${MACHINE_ARCH} == "alpha"
 RUN_DEPENDS+=	openjade:${PORTSDIR}/textproc/openjade
 .else
 RUN_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
-.endif
-
-.if ${MACHINE_ARCH} == "alpha"
-WITH_OPENJADE=	yes
-RUN_DEPENDS+=	lynx:${PORTSDIR}/www/lynx
-.else
-RUN_DEPENDS+=	w3m:${PORTSDIR}/www/w3m
 .endif
 
 IS_INTERACTIVE= "user must set JADETEX variable to 'yes' or 'no'"
