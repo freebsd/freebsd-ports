@@ -1,0 +1,22 @@
+Emacs major mode for editing XSL stylesheets.
+
+* FEATURES
+
+ - XSL customization group for setting some variables
+ - Initial stylesheet inserted into empty XSL buffers;
+ - "Template" menu for jumping to template rules, named templates, key
+   declarations, and attribute-set declarations in the buffer;
+ - `xsl-process' function that runs an XSL processor and collects the output;
+ - Predefined command line templates and error regexps for Java and
+   Windows executable versions of both XT and Saxon;
+ - Font lock highlighting so that the important information stands out;
+ - `xsl-complete' function for inserting element and attribute names;
+ - `xsl-insert-tag' function for inserting matching start- and end-tags;
+ - Automatic completion of end-tags;
+ - Automatic indenting of elements with user-definable indentation step; and
+ - Comprehensive abbreviations table to further ease typing.
+
+WWW: http://www.menteith.com/xslide/
+
+- Leo Kim
+leo@florida.sarang.net
