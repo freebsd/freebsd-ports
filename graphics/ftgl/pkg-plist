@@ -1,0 +1,44 @@
+include/ftgl/FTBBox.h
+include/ftgl/FTBitmapGlyph.h
+include/ftgl/FTCharToGlyphIndexMap.h
+include/ftgl/FTCharmap.h
+include/ftgl/FTContour.h
+include/ftgl/FTExtrdGlyph.h
+include/ftgl/FTFace.h
+include/ftgl/FTFont.h
+include/ftgl/FTGL.h
+include/ftgl/FTGLBitmapFont.h
+include/ftgl/FTGLExtrdFont.h
+include/ftgl/FTGLOutlineFont.h
+include/ftgl/FTGLPixmapFont.h
+include/ftgl/FTGLPolygonFont.h
+include/ftgl/FTGLTextureFont.h
+include/ftgl/FTGlyph.h
+include/ftgl/FTGlyphContainer.h
+include/ftgl/FTLibrary.h
+include/ftgl/FTList.h
+include/ftgl/FTOutlineGlyph.h
+include/ftgl/FTPixmapGlyph.h
+include/ftgl/FTPoint.h
+include/ftgl/FTPolyGlyph.h
+include/ftgl/FTSize.h
+include/ftgl/FTTextureGlyph.h
+include/ftgl/FTVector.h
+include/ftgl/FTVectoriser.h
+@dirrm include/ftgl
+lib/libftgl.a
+%%EXAMPLESDIR%%/makefile
+%%EXAMPLESDIR%%/tb.c
+%%EXAMPLESDIR%%/trackball.c
+%%EXAMPLESDIR%%/FTGLDemo.cpp
+%%EXAMPLESDIR%%/tb.h
+%%EXAMPLESDIR%%/trackball.h
+%%EXAMPLESDIR%%/README.txt
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/images/ftgldemo.jpg
+%%PORTDOCS%%%%DOCSDIR%%/images/metrics.png
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%%%DOCSDIR%%/FTGL_1_3.gif
+%%PORTDOCS%%%%DOCSDIR%%/FTGL.html
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
