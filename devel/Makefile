@@ -271,6 +271,7 @@
     SUBDIR += p5-BSD-Resource
     SUBDIR += p5-C-Scan
     SUBDIR += p5-Cache-Cache
+    SUBDIR += p5-Cdk
     SUBDIR += p5-Class-MethodMaker
     SUBDIR += p5-Class-Singleton
     SUBDIR += p5-Class-Tom

@@ -1,0 +1,97 @@
+--- Cdk.xs.orig	Fri Dec 11 03:03:35 1998
++++ Cdk.xs	Sun May 27 05:29:38 2001
+@@ -26,7 +26,7 @@
+ 	      for (y=0; y <= subLen; y++)				\
+ 	      {								\
+ 	         SV *sv	= *av_fetch(subArray,y,FALSE);			\
+-	         (NEWARRAY)[x+(START)][y+(START)] = copyChar((char *)SvPV(sv,na));	\
++	         (NEWARRAY)[x+(START)][y+(START)] = copyChar((char *)SvPV(sv,PL_na));	\
+ 	      }								\
+ 	   }								\
+ 	   (ARRAYLEN)++;						\
+@@ -87,7 +87,7 @@
+ 	   for (x=0; x <= (LEN); x++)					\
+ 	   {								\
+ 	      SV *foo		= *av_fetch(src, x, FALSE);		\
+-	      (DEST)[x+(START)]	= copyChar((char *)SvPV(foo,na));	\
++	      (DEST)[x+(START)]	= copyChar((char *)SvPV(foo,PL_na));	\
+ 	   }								\
+ 	   (LEN)++;							\
+ 	} while (0)
+@@ -107,11 +107,11 @@
+ 	         SV *foo		= *av_fetch(src, x, FALSE);	\
+ 	         if (lines == 0)					\
+ 	         {							\
+-	            sprintf ((DEST), "%s", (char *)SvPV(foo,na));	\
++	            sprintf ((DEST), "%s", (char *)SvPV(foo,PL_na));	\
+ 	         }							\
+ 	         else							\
+ 	         {							\
+-	            sprintf ((DEST), "%s\n%s", (DEST), (char *)SvPV(foo,na));	\
++	            sprintf ((DEST), "%s\n%s", (DEST), (char *)SvPV(foo,PL_na));	\
+ 	         }							\
+ 	         lines++;						\
+ 	      }								\
+@@ -123,7 +123,7 @@
+ 	   }								\
+ 	   else								\
+ 	   {								\
+-              sprintf ((DEST), "%s", (char *)SvPV(INPUT,na));		\
++              sprintf ((DEST), "%s", (char *)SvPV(INPUT,PL_na));		\
+ 	   }								\
+ 	} while (0)
+ 
+@@ -299,7 +299,7 @@
+ {
+    if (SvPOK(sv))
+    {
+-      char *name = SvPV(sv,na);
++      char *name = SvPV(sv,PL_na);
+       chtype *fillerChtype;
+       chtype filler;
+       int j1, j2;
+@@ -608,7 +608,7 @@
+ {
+    if (SvPOK(sv))
+    {
+-      char *name = SvPV(sv,na);
++      char *name = SvPV(sv,PL_na);
+       if (strEQ (name, "vENTRY"))
+          return vENTRY;
+       if (strEQ (name, "vMENTRY"))
+@@ -646,7 +646,7 @@
+ {
+    if (SvPOK(sv))
+    {
+-      char *name = SvPV(sv,na);
++      char *name = SvPV(sv,PL_na);
+       if (strEQ (name, "CHAR"))
+          return vCHAR;
+       if (strEQ (name, "HCHAR"))
+@@ -697,7 +697,7 @@
+ {
+    if (SvPOK(sv))
+    {
+-      char *name = SvPV(sv,na);
++      char *name = SvPV(sv,PL_na);
+       if (strEQ(name, "BOTTOM"))
+          return BOTTOM;
+       if (strEQ(name, "CENTER"))
+@@ -736,7 +736,7 @@
+ sv2CharPtr(inp)
+ SV *inp;
+ {
+-   char *name = (char *)SvPV(inp,na);
++   char *name = (char *)SvPV(inp,PL_na);
+    return (name);
+ }
+ 
+@@ -6424,7 +6424,7 @@
+ 	CDKALPHALIST *	object
+ 	PPCODE:
+ 	{
+-	   SV *sv = (SV *)&sv_undef;
++	   SV *sv = (SV *)&PL_sv_undef;
+ 	   chtype Keys[300];
+ 	   int arrayLen;
+ 	   char *value;

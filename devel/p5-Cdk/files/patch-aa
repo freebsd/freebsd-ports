@@ -1,0 +1,14 @@
+--- Makefile.PL.orig	Fri Dec 11 03:50:16 1998
++++ Makefile.PL	Sun May 27 05:23:05 2001
+@@ -16,9 +16,9 @@
+ WriteMakefile(
+     'NAME'	=> 'Cdk',
+     'VERSION'	=> '4.9.6',
+-    'LIBS'	=> ['-L/home/glover/local/lib -lcdk -lncurses'],
++    'LIBS'	=> ['-L/usr/local/lib -lcdk -lncurses'],
+     'DEFINE'	=> '-DHAVE_USLEEP -DHAVE_NCURSES -DHAVE_COLOR -DCDK_PERL_EXT',
+-    'INC'	=> '-I/usr/include/ncurses -I/home/glover/local/include/cdk',
++    'INC'	=> '-I/usr/include -I/usr/local/include/cdk',
+     'clean'	=> {FILES => 'Makefile.old'},
+ );
+ 

@@ -1,0 +1,31 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Alphalist.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Buttonbox.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Calendar.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Debug.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Diag.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Dialog.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Entry.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Fselect.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Graph.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Histogram.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Itemlist.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Marquee.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Matrix.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Menu.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Mentry.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Label.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Radio.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Scale.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Scroll.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Selection.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Slider.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Swindow.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Template.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk/Viewer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cdk/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cdk/Cdk.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cdk/Cdk.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cdk/autosplit.ix
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cdk
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cdk
