@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=	lo_gafet@users.sourceforge.net
 
+BROKEN=		"Build fails"
+
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
