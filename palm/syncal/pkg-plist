@@ -1,1 +1,3 @@
 bin/syncal
+@unexec mv -f /usr/local/lib/ical/v2.2/actions.tcl.orig /usr/local/lib/ical/v2.2/actions.tcl
+@unexec mv -f /usr/local/lib/ical/v2.2/dayview.tcl.orig /usr/local/lib/ical/v2.2/dayview.tcl

@@ -6,13 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	syncal-0.5
+DISTNAME=	syncal-0.8.1
 CATEGORIES=	palm comms deskutils
-MASTER_SITES=	ftp://ryeham.ee.ryerson.ca/pub/PalmOS/	\
-		http://www.daveltd.com/pilot/PalmOS/	\
-		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/
+MASTER_SITES=	http://hopf.math.nwu.edu/syncal/
 
-MAINTAINER=	Lars.Koeller@Uni-Bielefeled.DE
+MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS=	ical:${PORTSDIR}/deskutils/ical
@@ -26,6 +24,11 @@ MAN1=		syncal.1
 post-patch:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.patched
 	${SED} -e "s:@@PREFIX@@:${PREFIX}:g" ${WRKSRC}/Makefile.patched > ${WRKSRC}/Makefile
+	${MV} ${WRKSRC}/user.tcl ${WRKSRC}/user.tcl.patched
+	${SED} -e "s:@@PREFIX@@:${PREFIX}:g" ${WRKSRC}/user.tcl.patched > ${WRKSRC}/user.tcl
+	${MV} ${WRKSRC}/ical.patch ${WRKSRC}/ical.patch.patched
+	${SED} -e "s:@@PREFIX@@:${PREFIX}:g" ${WRKSRC}/ical.patch.patched > ${WRKSRC}/ical.patch
+	${RM} ${WRKSRC}/*.o
 
 #
 # ical V2.2 needs a little patch, don't know how to do better

@@ -1,7 +1,7 @@
-*** Makefile.org	Fri Apr  9 19:54:00 1999
---- Makefile	Sat Apr 24 13:26:57 1999
+*** Makefile.org	Fri Sep 17 21:54:21 1999
+--- Makefile	Fri Sep 17 21:56:57 1999
 ***************
-*** 13,19 ****
+*** 14,20 ****
   #
   # top_builddir = /home/john/pilot/src/pilot-link.0.9.1
   #
@@ -9,7 +9,7 @@
   
   ##########
   # Pick your C compiler
---- 13,19 ----
+--- 14,20 ----
   #
   # top_builddir = /home/john/pilot/src/pilot-link.0.9.1
   #
@@ -18,7 +18,7 @@
   ##########
   # Pick your C compiler
 ***************
-*** 25,31 ****
+*** 26,32 ****
   ##########
   # Where should I be installed?
   #
@@ -26,7 +26,7 @@
   INSTALLBIN = $(INSTALLTOP)/bin
   INSTALLMAN = $(INSTALLTOP)/man
   
---- 25,31 ----
+--- 26,32 ----
   ##########
   # Where should I be installed?
   #
@@ -35,35 +35,36 @@
   INSTALLMAN = $(INSTALLTOP)/man
   
 ***************
-*** 58,65 ****
+*** 65,72 ****
   #
   # Unless you're smarter than me, which is entirely possible. [JTL]
   #
 ! LIBDIR = -L$(top_builddir)
 ! INCDIR = -I$(top_builddir)
-  CFLAGS = -Wall $(INCDIR)
-  SYNCAL_OBJS = syncal.o syncal_list.o syncal_dates.o syncal_reconcile.o
-  LIBTOOL = $(top_builddir)/libtool
---- 58,65 ----
+  CFLAGS = -Wall $(INCDIR) $(DEFINES)
+  SYNCAL_OBJS = syncal.o syncal_cat.c syncal_list.o syncal_dates.o\
+  	syncal_reconcile.o syncal_gmt.o
+--- 65,72 ----
   #
   # Unless you're smarter than me, which is entirely possible. [JTL]
   #
 ! LIBDIR = -L$(top_builddir)/lib
 ! INCDIR = -I$(top_builddir)/include
-  CFLAGS = -Wall $(INCDIR)
-  SYNCAL_OBJS = syncal.o syncal_list.o syncal_dates.o syncal_reconcile.o
-  LIBTOOL = $(top_builddir)/libtool
+  CFLAGS = -Wall $(INCDIR) $(DEFINES)
+  SYNCAL_OBJS = syncal.o syncal_cat.c syncal_list.o syncal_dates.o\
+  	syncal_reconcile.o syncal_gmt.o
 ***************
-*** 81,86 ****
+*** 90,95 ****
   install:
   	install -d $(INSTALLBIN)
   	install -d $(INSTALLMAN)/man1
 ! 	install -s -g root -o root -m 755 syncal $(INSTALLBIN)
-! 
+  
 ! 	install -g root -o root -m 644 syncal.1 $(INSTALLMAN)/man1
---- 81,85 ----
+--- 90,95 ----
   install:
   	install -d $(INSTALLBIN)
   	install -d $(INSTALLMAN)/man1
 ! 	install -c -s -g bin -o bin -m 755 syncal $(INSTALLBIN)
+  
 ! 	install -c -m 644 syncal.1 $(INSTALLMAN)/man1

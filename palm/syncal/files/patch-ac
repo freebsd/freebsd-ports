@@ -1,0 +1,19 @@
+*** user.tcl~	Fri Sep 17 22:03:52 1999
+--- user.tcl	Fri Sep 17 22:05:58 1999
+***************
+*** 24,30 ****
+      "Okay" "Cancel"]
+      
+      if { $result} {
+!         exec syncal >/dev/null
+          io_read [ical_leader]
+      }
+      cal option AmPm $dm_AmPm
+--- 24,30 ----
+      "Okay" "Cancel"]
+  
+      if { $result} {
+!         exec @@PREFIX@@/bin/syncal >/dev/null
+          io_read [ical_leader]
+      }
+      cal option AmPm $dm_AmPm
