@@ -1,0 +1,29 @@
+Prom-Mew is a procmail reader for Mew on GNU Emacs.
+
+If you want to install quickly, you shoud do following steps:
+
+(1) add dot.emacs to your ~/.emacs file and change it suitable for your site
+
+  % cat /usr/local/share/examples/prom-mew/dot.emacs >> ~/.emacs
+  % vi ~/.emacs
+
+(2) copy dot.procmailrc to ~/.procmailrc and change it suitable for your site
+
+  % cp /usr/local/share/examples/prom-mew/dot.promailrc ~/.promailrc
+  % vi ~/.promailrc
+
+(3) byte-compile with "byte-comile" script if you want
+
+  # cd /usr/local/share/emacs/site-lisp
+  # /usr/local/share/doc/prom-mew/byte_compile -l mew xemacs-mule prom-mew
+
+Where detail specification for .emacs and .procmailrc may be shown in
+/usr/local/share/doc/prom-mew/prom-usage.jis or procmail(1). And for
+usage of byte_compile scripts, run byte_compile with -h option.
+
+Run with "M-x prom-mew" in your emacs editors, Mew will be invoked and then
+search unread mails from procmail log to show unread message from top of
+entries that you specfied in ~/.pronmailrc.
+
+-KIRIYAMA Kazuhiko
+<kiri@pis.toba-cmt.ac.jp>

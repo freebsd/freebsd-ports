@@ -1,0 +1,38 @@
+# New ports collection makefile for:	prom-mew
+# Version required:     1.93.3
+# Date created:		28 Jun 1999
+# Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
+#
+# $FreeBSD$
+#
+
+DISTNAME=       prom-mew-1.93.3
+CATEGORIES=	mail elisp
+MASTER_SITES=	http://www02.so-net.ne.jp/~murata/software/pub/
+
+MAINTAINER=     kiri@pis.toba-cmt.ac.jp
+
+# This port requires Mew and procmail. But for conveniency, there is NO RUN_DEPNDS
+# ediotrs/mew* nor mail/procmail.
+
+NO_BUILD=	yes
+
+ELISPDIR=	${PREFIX}/share/emacs/site-lisp
+SITEPKGDIR=	${PREFIX}/lib/xemacs/site-packages
+
+do-install:
+	@${MKDIR} ${ELISPDIR} ${PREFIX}/share/doc/prom-mew \
+		${PREFIX}/share/examples/prom-mew
+	@cd ${WRKSRC}; \
+	${INSTALL_DATA} prom-mew.el ${ELISPDIR}; \
+	${INSTALL_DATA} ChangeLog prom-usage.jis ${PREFIX}/share/doc/prom-mew
+	@cd ${FILESDIR}; \
+	${INSTALL_SCRIPT} byte-compile ${PREFIX}/share/doc/prom-mew; \
+	${INSTALL_DATA} dot.emacs dot.procmailrc ${PREFIX}/share/examples/prom-mew
+# For xemacs package install configuration
+	@${MKDIR} ${SITEPKGDIR}/lisp/prom-mew ${SITEPKGDIR}/pkginfo
+	@${LN} -sf ${ELISPDIR}/prom-mew.el ${SITEPKGDIR}/lisp/prom-mew/prom-mew.el
+	@${ECHO} 'pkginfo/MANIFEST.prom-mew' > ${SITEPKGDIR}/pkginfo/MANIFEST.prom-mew
+	@${ECHO} 'lisp/prom-mew/prom-mew.el' >> ${SITEPKGDIR}/pkginfo/MANIFEST.prom-mew
+
+.include <bsd.port.mk>

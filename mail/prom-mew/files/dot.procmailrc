@@ -1,0 +1,41 @@
+MAILDIR=$HOME/Mail        # Mew folder directory (indispensable for Prom-Mew)
+LOGFILE=$MAILDIR/from-log # log file (indispensable for Prom-Mew)
+LOCKFILE=$MAILDIR/.lock   # global lockfile (indispensable for Prom-Mew)
+
+# trash
+
+:0
+* ^To: *undisclosed-recipients
+trash/.
+
+#
+# Daily outputs
+#
+
+# daily output - fbsd
+
+:0
+* ^Subject: +daily *run *output$
+* ^From: *Charlie *Root *.*$
+daily/.
+
+#
+# Mailing Lists
+#
+
+:0
+* ^Subject: *\[FreeBSD-users-jp *[0-9]+\]
+* ^To:.*[Ff]ree[Bb][Ss][Dd]-users-jp@jp\.freebsd\.org
+ML/FreeBSD-users-jp/.
+
+:0
+* ^Subject: *\[Mew-dist *[0-9]+\]
+ML/Mew/.
+
+#
+# Miscs
+#
+
+:0
+* ^Cc:.*sinet-.*@
+maintain/.
