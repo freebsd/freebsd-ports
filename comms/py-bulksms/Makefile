@@ -8,7 +8,7 @@
 PORTNAME=	bulksms
 PORTVERSION=	0.1
 CATEGORIES=	comms python
-MASTER_SITES=	http://botanicus.net/dw/dl/
+MASTER_SITES=	http://botanicus.net/dw/py-bulksms/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
