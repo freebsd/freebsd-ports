@@ -1,0 +1,22 @@
+fastDNAml is a program for estimating maximum likelihood phylogenetic trees
+from nucleotide sequences. 
+
+WWW: http://geta.life.uiuc.edu/~gary/programs/fastDNAml.html
+
+fastDNAml is an attempt to solve the same problem as Joseph Felsenstein's
+DNAML, but to do so faster and using less memory, so that larger trees and/or
+more bootstrap replicates become tractable. Much of fastDNAml is merely a
+recoding of the PHYLIP 3.3 DNAML program from PASCAL to C. 
+
+For Felsenstein's phylogenetic analysis softwares, including the latest
+versions of DNAML, visit the PHYLIP Home Page:
+	http://evolution.genetics.washington.edu/phylip.html
+
+When publishing work that based on results from fastDNAml please cite:
+
+   Felsenstein, J.  1981.  Evolutionary trees from DNA sequences:
+   A maximum likelihood approach.  J. Mol. Evol. 17: 368-376.
+
+   Olsen, G. J., Matsuda, H., Hagstrom, R., and Overbeek, R.  1994.
+   fastDNAml:  A tool for construction of phylogenetic trees of DNA
+   sequences using maximum likelihood.  Comput. Appl. Biosci. 10: 41-48.
