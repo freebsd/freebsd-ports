@@ -243,7 +243,7 @@ lib/tk8.0/images/pwrdLogo75.gif
 lib/tk8.0/safetk.tcl
 lib/tk8.0/tkConfig.sh
 lib/libtk80.a
-lib/libtk80.so.1.0
+lib/libtk80.so.1.1
 @exec /sbin/ldconfig -m %B
 @dirrm lib/tk8.0/demos/images
 @dirrm lib/tk8.0/demos

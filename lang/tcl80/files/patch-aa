@@ -1,4 +1,14 @@
---- Makefile.in.orig	Fri Aug 15 22:17:28 1997
+--- configure	Fri Nov  7 09:28:05 1997
++++ configure	Fri Nov 21 23:36:13 1997
+@@ -3789,7 +3789,7 @@
+ 	    DL_LIBS=""
+ 	    LD_FLAGS=""
+ 	    LD_SEARCH_FLAGS=""
+-	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.0'
++	    TCL_SHARED_LIB_SUFFIX='`echo ${VERSION} | tr -d .`.so.1.1'
+ 	
+ else
+   echo "$ac_t""no" 1>&6
 +++ Makefile.in	Wed Oct  1 09:51:59 1997
 @@ -55,7 +55,9 @@
  BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
