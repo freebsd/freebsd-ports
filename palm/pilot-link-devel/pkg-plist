@@ -8,6 +8,7 @@ bin/install-expenses
 bin/install-hinote
 bin/install-memo
 bin/install-netsync
+bin/install-todo
 bin/install-todos
 bin/install-user
 bin/memos
@@ -18,11 +19,11 @@ bin/pi-getrom
 bin/pi-getromtoken
 bin/pi-nredir
 bin/pilot-addresses
+bin/pilot-archive
 bin/pilot-clip
 bin/pilot-datebook
 bin/pilot-dedupe
 bin/pilot-file
-bin/pilot-mail
 bin/pilot-prc
 bin/pilot-schlep
 bin/pilot-xfer
@@ -71,18 +72,18 @@ include/pi-todo.hxx
 include/pi-usb.h
 include/pi-util.h
 include/pi-version.h
+lib/libpisock++.a
+lib/libpisock++.la
+lib/libpisock++.so
+lib/libpisock++.so.0
 lib/libpisock.a
 lib/libpisock.la
 lib/libpisock.so
 lib/libpisock.so.8
-lib/libpisync.so.0
-lib/libpisync.so
-lib/libpisync.la
 lib/libpisync.a
-lib/libpisock++.so.0
-lib/libpisock++.so
-lib/libpisock++.la
-lib/libpisock++.a
+lib/libpisync.la
+lib/libpisync.so
+lib/libpisync.so.0
 share/aclocal/pilot-link.m4
 share/pilot-link/getrom.prc
 share/pilot-link/getrom2.prc
@@ -94,8 +95,8 @@ share/pilot-link/pix/b5.gif
 share/pilot-link/pix/b6.gif
 share/pilot-link/pix/b7.gif
 share/pilot-link/pix/case.gif
-share/pilot-link/pix/casemask.xbm
 share/pilot-link/pix/case.xbm
-@dirrm share/aclocal
+share/pilot-link/pix/casemask.xbm
 @dirrm share/pilot-link/pix
 @dirrm share/pilot-link
+@dirrm share/aclocal
