@@ -13,6 +13,9 @@ MASTER_SITE_SUBDIR=	gswitchit
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+LIB_DEPENDS=	xklavier.0:${PORTSDIR}/x11/libxklavier
+RUN_DEPENDS=	${X11BASE}/lib/X11/xkb/rules/xfree86.xml:${PORTSDIR}/x11/xfree86_xkb_xml
+
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
