@@ -90,8 +90,7 @@ EXTRACT_ONLY+=	${BRDISTFILE}
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 DENEUDISTFILE=	igerman98-20001109.tar.bz2
-MASTER_SITES+=	http://www.suse.de/~bjacke/igerman98/dict/ \
-		ftp://student.physik.uni-dortmund.de/pub/users/jacke/ispell/
+MASTER_SITES+=	http://j3e.de/ispell/igerman98/dict/
 EXTRA_DICT+=	${DENEUDISTFILE}
 .endif
 .if defined(ISPELL_DEALT)
