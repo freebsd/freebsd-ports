@@ -9,7 +9,7 @@ PORTNAME=	pkgconfig
 PORTVERSION=	0.12.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/pkg-config/0.12
+MASTER_SITE_SUBDIR=	sources/pkgconfig/0.12
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
