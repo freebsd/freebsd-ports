@@ -1,0 +1,10 @@
+--- Utilities/src/makeGlobalLib.orig	Thu Sep 17 21:26:39 1998
++++ Utilities/src/makeGlobalLib	Thu Sep 30 23:34:16 2004
+@@ -14,6 +14,7 @@
+       PIV.c \
+       IP.c \
+       I2OP.c \
++      axpy.c \
+       iohb.c \
+       newsort.c \
+       sortAndCompress.c \

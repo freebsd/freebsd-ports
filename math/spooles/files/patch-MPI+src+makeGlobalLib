@@ -1,0 +1,11 @@
+--- MPI/src/makeGlobalLib.orig	Sat Nov 21 23:52:01 1998
++++ MPI/src/makeGlobalLib	Fri Oct  1 00:17:01 2004
+@@ -29,7 +29,7 @@
+       utilities.c
+ 
+ OBJ_FILES = ${SRC:.c=.o}
+-OBJ_FILES = MMM.o makeSendRecvIVLs.o
++#OBJ_FILES = MMM.o makeSendRecvIVLs.o
+ 
+ .c.o :
+ 	$(PURIFY) $(CC) -c $(CFLAGS) $(MPI_INCLUDE_DIR) $*.c -o $(OBJ)_$*.o
