@@ -8,14 +8,16 @@
 PORTNAME=	jdk
 PORTVERSION=	1.2.2
 CATEGORIES=	java devel
-MASTER_SITES=	ftp://iodynamics.com/pub/mirror/linux-jdk/JDK-1.2.2/i386/rc4/ \
-		ftp://ftp.tux.org/pub/java/JDK-1.2.2/i386/rc4/
+MASTER_SITES=	ftp://ftp.tux.org/pub/java/JDK-1.2.2/i386/rc4/ \
+		http://www.metaverse.nl/~ernst/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	znerd
 PKGNAMEPREFIX=	linux-
-DISTNAME=	jdk-1.2.2-RC4-linux-i386-glibc-2.1.2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC4-linux-i386-glibc-2.1.2
 
 MAINTAINER=	znerd@FreeBSD.org
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base \
+RUN_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	"License doesn\'t allow distribution with fee"
