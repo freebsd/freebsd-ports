@@ -4,4 +4,3 @@ news/bin/filter/bad_hosts
 news/bin/filter/bad_paths
 news/bin/filter/cleanfeed
 news/bin/filter/cleanfeed.local.sample
-news/bin/filter/filter_innd.pl

@@ -268,7 +268,6 @@ share/locale/sv/LC_MESSAGES/gcc.mo
 share/locale/da/LC_MESSAGES/gcc.mo
 share/locale/el/LC_MESSAGES/gcc.mo
 share/locale/nl/LC_MESSAGES/gcc.mo
-share/locale/locale.alias
 m68k-rtems/bin/c++
 m68k-rtems/bin/g++
 m68k-rtems/bin/gcc

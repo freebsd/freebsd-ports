@@ -340,7 +340,6 @@ share/locale/sv/LC_MESSAGES/gcc.mo
 share/locale/da/LC_MESSAGES/gcc.mo
 share/locale/el/LC_MESSAGES/gcc.mo
 share/locale/nl/LC_MESSAGES/gcc.mo
-share/locale/locale.alias
 @dirrm lib/gcc-lib/i960-rtems/%%GCCVERSION%%/include
 @dirrm lib/gcc-lib/i960-rtems/%%GCCVERSION%%/soft-float/ld64
 @dirrm lib/gcc-lib/i960-rtems/%%GCCVERSION%%/soft-float
