@@ -1,0 +1,14 @@
+%%SITE_PERL%%/Imager/Plot.pm
+%%SITE_PERL%%/Imager/Plot/Axis.pm
+%%SITE_PERL%%/Imager/Plot/DataSet.pm
+%%SITE_PERL%%/Imager/Plot/Style.pm
+%%SITE_PERL%%/Imager/Plot/Util.pm
+%%SITE_PERL%%/Imager/plot.pl
+@dirrm %%SITE_PERL%%/Imager/Plot
+@unexec rmdir %D/%%SITE_PERL%%/Imager 2>/dev/null || true
+%%SITE_PERL%%/auto/Imager/Plot/autosplit.ix
+@dirrm %%SITE_PERL%%/auto/Imager/Plot
+@unexec rmdir %D/%%SITE_PERL%%/auto/Imager 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Plot/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Plot
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager 2>/dev/null || true

@@ -1,0 +1,15 @@
+This is a module for generating fancy raster plots in color. There is support
+for drawing multiple datasets on the same plot, over a background image. It's
+even possible to do shadows with some thinking.
+
+It's also possible to generate clean plots without any chartjunk at all.
+
+The plot is generated in a few phases. First the initial plot object is
+generated and contains defaults at that point. Then datasets are added with
+possible drawing specifications.
+
+Most of the actual work is delegated to Imager::Plot::Axis. See the
+Imager::Plot::Axis manpage for more information on how to control grid
+generation, ranges for data (zoom).
+
+WWW: http://search.cpan.org/dist/Imager-Plot/
