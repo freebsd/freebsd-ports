@@ -213,6 +213,7 @@ act		ports/biology/act
 actx		ports/games/actx
 adacurses	ports/devel/adacurses
 adamem		ports/emulators/adamem
+adasdl		ports/devel/adasdl
 adasockets	ports/net/adasockets
 adcomplain	ports/mail/adcomplain
 add		ports/math/add
