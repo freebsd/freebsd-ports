@@ -35,6 +35,7 @@ EXTRACT_ONLY=	emacs-${EMACS_VERSION}b${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VERSION}
 PATCHDIR=	${.CURDIR}/../../editors/mule-common/files
 FILESDIR=	${.CURDIR}/../../editors/mule-common/files
+MD5_FILE=	${.CURDIR}/../../editors/mule-common/distinfo
 SCRIPTDIR=	${.CURDIR}/../../editors/mule-common/scripts
 PLIST=		${.CURDIR}/../../editors/mule/pkg-plist
 INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
