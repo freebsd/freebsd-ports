@@ -1,47 +1,29 @@
 bin/gnome-help
+bin/gnome-help-bin
 bin/yelp
+bin/yelp-bin
 libdata/bonobo/servers/GNOME_Yelp.server
 share/gnome/applications/yelp.desktop
-share/gnome/sgml/docbook/yelp/db2html-admon.xsl
-share/gnome/sgml/docbook/yelp/db2html-biblio.xsl
-share/gnome/sgml/docbook/yelp/db2html-block.xsl
-share/gnome/sgml/docbook/yelp/db2html-callout.xsl
-share/gnome/sgml/docbook/yelp/db2html-chunk.xsl
-share/gnome/sgml/docbook/yelp/db2html-common.xsl
-share/gnome/sgml/docbook/yelp/db2html-division.xsl
-share/gnome/sgml/docbook/yelp/db2html-ebnf.xsl
-share/gnome/sgml/docbook/yelp/db2html-footnote.xsl
-share/gnome/sgml/docbook/yelp/db2html-glossary.xsl
-share/gnome/sgml/docbook/yelp/db2html-header.xsl
-share/gnome/sgml/docbook/yelp/db2html-html.xsl
-share/gnome/sgml/docbook/yelp/db2html-index.xsl
-share/gnome/sgml/docbook/yelp/db2html-inline.xsl
-share/gnome/sgml/docbook/yelp/db2html-list.xsl
-share/gnome/sgml/docbook/yelp/db2html-math.xsl
-share/gnome/sgml/docbook/yelp/db2html-media.xsl
-share/gnome/sgml/docbook/yelp/db2html-navbar.xsl
-share/gnome/sgml/docbook/yelp/db2html-param.xsl
-share/gnome/sgml/docbook/yelp/db2html-qanda.xsl
-share/gnome/sgml/docbook/yelp/db2html-refentry.xsl
-share/gnome/sgml/docbook/yelp/db2html-suppressed.xsl
-share/gnome/sgml/docbook/yelp/db2html-synopsis.xsl
-share/gnome/sgml/docbook/yelp/db2html-table.xsl
-share/gnome/sgml/docbook/yelp/db2html-title.xsl
-share/gnome/sgml/docbook/yelp/db2html-titlepage.xsl
-share/gnome/sgml/docbook/yelp/db2html-toc.xsl
-share/gnome/sgml/docbook/yelp/db2html-xref.xsl
 share/gnome/sgml/docbook/yelp/db2html.xsl
-share/gnome/sgml/docbook/yelp/gettext.xsl
-share/gnome/sgml/docbook/yelp/l10n.xml
+share/gnome/sgml/docbook/yelp/info2html.xsl
 share/gnome/sgml/docbook/yelp/man2html.xsl
+share/gnome/sgml/docbook/yelp/toc2html.xsl
 share/gnome/yelp/default.css
-share/gnome/yelp/icons/caution.png
-share/gnome/yelp/icons/important.png
-share/gnome/yelp/icons/note.png
-share/gnome/yelp/icons/tip.png
-share/gnome/yelp/icons/warning.png
+share/gnome/yelp/icons/yelp-icon-caution.png
+share/gnome/yelp/icons/yelp-icon-important.png
+share/gnome/yelp/icons/yelp-icon-note.png
+share/gnome/yelp/icons/yelp-icon-tip.png
+share/gnome/yelp/icons/yelp-icon-warning.png
+share/gnome/yelp/icons/yelp-watermark-blockquote-00AB.png
+share/gnome/yelp/icons/yelp-watermark-blockquote-00BB.png
+share/gnome/yelp/icons/yelp-watermark-blockquote-201C.png
+share/gnome/yelp/icons/yelp-watermark-blockquote-201D.png
+share/gnome/yelp/icons/yelp-watermark-blockquote-201E.png
 share/gnome/yelp/important_docs.xml
+share/gnome/yelp/man.xml
+share/gnome/yelp/scrollkeeper.xml
 share/gnome/yelp/toc.xml
+share/gnome/yelp/ui/yelp-ui.xml
 share/gnome/yelp/ui/yelp.glade
 share/locale/af/LC_MESSAGES/yelp.mo
 share/locale/am/LC_MESSAGES/yelp.mo
@@ -83,7 +65,6 @@ share/locale/ko/LC_MESSAGES/yelp.mo
 share/locale/li/LC_MESSAGES/yelp.mo
 share/locale/lt/LC_MESSAGES/yelp.mo
 share/locale/lv/LC_MESSAGES/yelp.mo
-share/locale/mi/LC_MESSAGES/yelp.mo
 share/locale/mk/LC_MESSAGES/yelp.mo
 share/locale/ml/LC_MESSAGES/yelp.mo
 share/locale/mn/LC_MESSAGES/yelp.mo
@@ -110,7 +91,6 @@ share/locale/sv/LC_MESSAGES/yelp.mo
 share/locale/ta/LC_MESSAGES/yelp.mo
 share/locale/tg/LC_MESSAGES/yelp.mo
 share/locale/th/LC_MESSAGES/yelp.mo
-share/locale/tk/LC_MESSAGES/yelp.mo
 share/locale/tr/LC_MESSAGES/yelp.mo
 share/locale/uk/LC_MESSAGES/yelp.mo
 share/locale/vi/LC_MESSAGES/yelp.mo
@@ -118,11 +98,13 @@ share/locale/wa/LC_MESSAGES/yelp.mo
 share/locale/zh_CN/LC_MESSAGES/yelp.mo
 share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/LC_MESSAGES/yelp.mo
-@unexec rmdir %D/share/locale/zu/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/zu 2> /dev/null || true
+@dirrm share/locale/zu/LC_MESSAGES
+@dirrm share/locale/zu
+@dirrm share/locale/nso/LC_MESSAGES
+@dirrm share/locale/nso
+@dirrm share/locale/mr/LC_MESSAGES
+@dirrm share/locale/mr
 @dirrm share/gnome/yelp/ui
 @dirrm share/gnome/yelp/icons
 @dirrm share/gnome/yelp
 @dirrm share/gnome/sgml/docbook/yelp
-@dirrm share/gnome/sgml/docbook
-@dirrm share/gnome/sgml

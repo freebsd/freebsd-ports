@@ -1,5 +1,5 @@
---- src/netstatus-sysdeps.c.orig	Fri Jul 30 04:19:31 2004
-+++ src/netstatus-sysdeps.c	Tue Sep 21 00:27:19 2004
+--- src/netstatus-sysdeps.c.orig	Fri Jul 30 04:21:30 2004
++++ src/netstatus-sysdeps.c	Thu Mar  3 03:04:41 2005
 @@ -35,6 +35,16 @@
  #include <glib.h>
  #include <libgnome/gnome-i18n.h>
@@ -17,7 +17,7 @@
  static inline gboolean
  parse_stats (char    *buf,
  	     int      prx_idx,
-@@ -384,6 +394,163 @@
+@@ -384,6 +394,173 @@
       }
  }
  
@@ -37,16 +37,18 @@
 +
 +  s = socket (AF_INET, SOCK_DGRAM, 0);
 +
-+  if (s == -1) {
-+    *error = g_strdup_printf (_("Could not connect to interface, '%s'"), iface);
-+    return FALSE;
-+  }
++  if (s == -1)
++    {
++      *error = g_strdup_printf (_("Could not connect to interface, '%s'"), iface);
++      return FALSE;
++    }
 +
-+  if (ioctl (s, req_type, &ifr) == -1) {
-+    *error = g_strdup_printf (_("Could not send ioctl to interface, '%s'"), iface);
-+    close (s);
-+    return FALSE;
-+  }
++  if (ioctl (s, req_type, &ifr) == -1)
++    {
++      *error = g_strdup_printf (_("Could not send ioctl to interface, '%s'"), iface);
++      close (s);
++      return FALSE;
++    }
 +
 +  close (s);
 +  return TRUE;
@@ -110,35 +112,39 @@
 +  level = (int) (wreq.wi_val[1]);
 +
 +#ifdef WI_RID_READ_APS
-+  if (signal_strength <= 0) {
-+	  /* we fail to get signal strength by usual means, try another way */
-+	  static time_t last_scan;
-+	  static long int cached;
-+	  time_t now = time (NULL);
++  if (signal_strength <= 0)
++    {
++      /* we fail to get signal strength by usual means, try another way */
++      static time_t last_scan;
++      static long int cached;
++      time_t now = time (NULL);
 +
-+	  /* XXX: this is long operation, and we will scan station not often then one in 5 secs */
-+	  if (now > last_scan + 5) {
-+		  struct wi_apinfo *w;
-+		  int nstations;
++      /* XXX: this is long operation, and we will scan station not often then one in 5 secs */
++      if (now > last_scan + 5)
++        {
++          struct wi_apinfo *w;
++          int nstations;
 +
-+		  bzero ((char *)&wreq, sizeof(wreq));
-+		  wreq.wi_len = WI_MAX_DATALEN;
-+		  wreq.wi_type = WI_RID_READ_APS;
++          bzero ((char *)&wreq, sizeof(wreq));
++          wreq.wi_len = WI_MAX_DATALEN;
++          wreq.wi_type = WI_RID_READ_APS;
++          if (!wireless_getval (iface, (gpointer) &wreq, SIOCGWAVELAN, &error))
++            return error;
++          nstations = *(int *)wreq.wi_val;
++          if (nstations > 0)
++	    {
++              w = (struct wi_apinfo *)(((char *)&wreq.wi_val) + sizeof(int));
++              signal_strength = (long int)w->signal;
++            }
 +
-+		  if (!wireless_getval (iface, (gpointer) &wreq, SIOCGWAVELAN, &error))
-+			  return error;
-+		  nstations = *(int *)wreq.wi_val;
-+		  if (nstations > 0) {
-+			  w = (struct wi_apinfo *)(((char *)&wreq.wi_val) + sizeof(int));
-+			  signal_strength = (long int)w->signal;
-+		  }
-+
-+		  cached = signal_strength;
-+		  last_scan = now;
-+	  } else {
-+		  signal_strength = cached;
-+	  }
-+  }
++            cached = signal_strength;
++            last_scan = now;
++          }
++        else
++	  {
++            signal_strength = cached;
++          }
++    }
 +#endif
 +
 +  memcpy (signal_strength, &level, sizeof (signal_strength));
@@ -163,17 +169,21 @@
 +    *signal_strength = 0;
 +
 +  if (g_strncasecmp (iface, "an", 2) && g_strncasecmp (iface, "wi", 2) &&
-+    g_strncasecmp (iface, "ath", 3) && g_strncasecmp (iface, "ndis", 4))
++    g_strncasecmp (iface, "ath", 3) && g_strncasecmp (iface, "ndis", 4) &&
++    g_strncasecmp (iface, "ipw", 3) && g_strncasecmp (iface, "iwi", 3) &&
++    g_strncasecmp (iface, "acx", 3))
 +    return error_message;
 +
-+  if (g_strncasecmp (iface, "an", 2) == 0) {
-+    error_message = get_an_data (iface, signal_strength);
-+    *is_wireless = TRUE;
-+  }
-+  else {
-+    error_message = get_wi_data (iface, signal_strength);
-+    *is_wireless = TRUE;
-+  }
++  if (g_strncasecmp (iface, "an", 2) == 0)
++    {
++      error_message = get_an_data (iface, signal_strength);
++      *is_wireless = TRUE;
++    }
++  else
++    {
++      error_message = get_wi_data (iface, signal_strength);
++      *is_wireless = TRUE;
++    }
 +
 +  return error_message;
 +}
@@ -181,7 +191,42 @@
  char *
  netstatus_sysdeps_read_iface_statistics (const char *iface,
  					 gulong     *in_packets,
-@@ -485,23 +652,6 @@
+@@ -413,11 +590,11 @@
+   if (!g_shell_parse_argv (command_line, NULL, &argv, &error))
+     {
+       error_message = g_strdup_printf (_("Could not parse command line '%s': %s"),
+-				       command_line,
+-				       error->message);
++        command_line,
++        error->message);
+       g_error_free (error);
+       g_free (command_line);
+-      
++
+       return error_message;
+     }
+   g_free (command_line);
+@@ -456,8 +633,8 @@
+       g_io_channel_read_line (channel, &buf, NULL, NULL, NULL);
+ 
+       if (!parse_stats (buf,
+-			prx_idx, ptx_idx, in_packets, out_packets,
+-			brx_idx, btx_idx, in_bytes, out_bytes))
++	prx_idx, ptx_idx, in_packets, out_packets,
++	brx_idx, btx_idx, in_bytes, out_bytes))
+ 	{
+ 	  error_message = g_strdup_printf (_("Could not parse interface statistics from '%s'. "
+ 					     "prx_idx = %d; ptx_idx = %d; brx_idx = %d; btx_idx = %d;"),
+@@ -477,7 +654,7 @@
+     }
+   else
+     {
+-      error_message = g_strdup_printf ("Error running /usr/bin/netstat for '%s': %s", 
++      error_message = g_strdup_printf ("Error running /usr/bin/netstat for '%s': %s",
+ 				       iface, error->message);
+       g_error_free (error);
+     }
+@@ -485,23 +662,6 @@
    g_strfreev (argv);
  
    return error_message;

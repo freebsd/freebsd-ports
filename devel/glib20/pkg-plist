@@ -22,6 +22,7 @@ include/glib-2.0/glib/ghook.h
 include/glib-2.0/glib/gi18n-lib.h
 include/glib-2.0/glib/gi18n.h
 include/glib-2.0/glib/giochannel.h
+include/glib-2.0/glib/gkeyfile.h
 include/glib-2.0/glib/glist.h
 include/glib-2.0/glib/gmacros.h
 include/glib-2.0/glib/gmain.h
@@ -29,6 +30,7 @@ include/glib-2.0/glib/gmarkup.h
 include/glib-2.0/glib/gmem.h
 include/glib-2.0/glib/gmessages.h
 include/glib-2.0/glib/gnode.h
+include/glib-2.0/glib/goption.h
 include/glib-2.0/glib/gpattern.h
 include/glib-2.0/glib/gprimes.h
 include/glib-2.0/glib/gprintf.h
@@ -41,6 +43,7 @@ include/glib-2.0/glib/gscanner.h
 include/glib-2.0/glib/gshell.h
 include/glib-2.0/glib/gslist.h
 include/glib-2.0/glib/gspawn.h
+include/glib-2.0/glib/gstdio.h
 include/glib-2.0/glib/gstrfuncs.h
 include/glib-2.0/glib/gstring.h
 include/glib-2.0/glib/gthread.h
@@ -72,18 +75,19 @@ include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
 lib/libglib-2.0.a
 lib/libglib-2.0.so
-lib/libglib-2.0.so.400
+lib/libglib-2.0.so.600
 lib/libgmodule-2.0.a
 lib/libgmodule-2.0.so
-lib/libgmodule-2.0.so.400
+lib/libgmodule-2.0.so.600
 lib/libgobject-2.0.a
 lib/libgobject-2.0.so
-lib/libgobject-2.0.so.400
+lib/libgobject-2.0.so.600
 lib/libgthread-2.0.a
 lib/libgthread-2.0.so
-lib/libgthread-2.0.so.400
+lib/libgthread-2.0.so.600
 libdata/pkgconfig/glib-2.0.pc
 libdata/pkgconfig/gmodule-2.0.pc
+libdata/pkgconfig/gmodule-no-export-2.0.pc
 libdata/pkgconfig/gobject-2.0.pc
 libdata/pkgconfig/gthread-2.0.pc
 share/aclocal/glib-2.0.m4
@@ -148,10 +152,12 @@ share/locale/sr@Latn/LC_MESSAGES/glib20.mo
 share/locale/sr@ije/LC_MESSAGES/glib20.mo
 share/locale/sv/LC_MESSAGES/glib20.mo
 share/locale/ta/LC_MESSAGES/glib20.mo
+share/locale/tl/LC_MESSAGES/glib20.mo
 share/locale/tr/LC_MESSAGES/glib20.mo
 share/locale/uk/LC_MESSAGES/glib20.mo
 share/locale/vi/LC_MESSAGES/glib20.mo
 share/locale/wa/LC_MESSAGES/glib20.mo
+share/locale/xh/LC_MESSAGES/glib20.mo
 share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
@@ -159,6 +165,10 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @unexec rmdir %D/share/locale/ne 2> /dev/null || true
 @unexec rmdir %D/share/locale/sr@ije/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/sr@ije 2> /dev/null || true
+@unexec rmdir %D/share/locale/tl/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/tl 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh 2> /dev/null || true
 @unexec rmdir %D/share/locale/yi/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/yi 2> /dev/null || true
 @dirrm share/glib-2.0/gettext/po

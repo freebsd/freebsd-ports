@@ -1,6 +1,6 @@
---- configure.orig	Mon Feb 21 15:53:01 2005
-+++ configure	Mon Feb 21 15:53:01 2005
-@@ -21286,6 +21286,7 @@
+--- configure.orig	Thu Jan 13 02:39:28 2005
++++ configure	Thu Jan 13 02:39:28 2005
+@@ -22221,6 +22221,7 @@
  if eval "test \"\${$as_ac_var+set}\" = set"; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -8,7 +8,7 @@
    cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -26646,7 +26647,7 @@
+@@ -27490,7 +27491,7 @@
  
  
  cat >>confdefs.h <<_ACEOF

@@ -1,8 +1,14 @@
 bin/totem
 bin/totem-video-thumbnailer
-libdata/bonobo/servers/Totem_properties.server
-libexec/totem-properties-page
-share/gnome/application-registry/totem.applications
+include/totem/1/plparser/totem-disc.h
+include/totem/1/plparser/totem-pl-parser-builtins.h
+include/totem/1/plparser/totem-pl-parser.h
+lib/libtotem-plparser.a
+lib/libtotem-plparser.so
+lib/libtotem-plparser.so.0
+lib/nautilus/extensions-1.0/libtotem-properties-page.a
+lib/nautilus/extensions-1.0/libtotem-properties-page.so
+libdata/pkgconfig/totem-plparser.pc
 share/gnome/applications/totem.desktop
 share/gnome/help/totem/C/figures/totem_next_button.png
 share/gnome/help/totem/C/figures/totem_pause_button.png
@@ -34,11 +40,10 @@ share/gnome/help/totem/es/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/es/figures/totem_volume_mute_button.png
 share/gnome/help/totem/es/legal.xml
 share/gnome/help/totem/es/totem.xml
+share/gnome/help/totem/ru/figures/totem_screenshot.png
+share/gnome/help/totem/ru/figures/totem_start_window.png
 share/gnome/help/totem/ru/legal.xml
 share/gnome/help/totem/ru/totem.xml
-share/gnome/help/totem/ru/figures/totem_start_window.png
-share/gnome/help/totem/ru/figures/totem_screenshot.png
-share/gnome/mime-info/totem.keys
 share/gnome/omf/totem/totem-C.omf
 share/gnome/omf/totem/totem-de.omf
 share/gnome/omf/totem/totem-es.omf
@@ -54,6 +59,7 @@ share/gnome/totem/playlist-16.png
 share/gnome/totem/playlist-24.png
 share/gnome/totem/playlist-playing.png
 share/gnome/totem/playlist.glade
+share/gnome/totem/popup.glade
 share/gnome/totem/properties.glade
 share/gnome/totem/rhythmbox-volume-max.png
 share/gnome/totem/rhythmbox-volume-zero.png
@@ -91,6 +97,7 @@ share/locale/fr/LC_MESSAGES/totem.mo
 share/locale/ga/LC_MESSAGES/totem.mo
 share/locale/gu/LC_MESSAGES/totem.mo
 share/locale/he/LC_MESSAGES/totem.mo
+share/locale/hi/LC_MESSAGES/totem.mo
 share/locale/hr/LC_MESSAGES/totem.mo
 share/locale/hu/LC_MESSAGES/totem.mo
 share/locale/id/LC_MESSAGES/totem.mo
@@ -106,6 +113,7 @@ share/locale/ms/LC_MESSAGES/totem.mo
 share/locale/nb/LC_MESSAGES/totem.mo
 share/locale/nl/LC_MESSAGES/totem.mo
 share/locale/no/LC_MESSAGES/totem.mo
+share/locale/pa/LC_MESSAGES/totem.mo
 share/locale/pl/LC_MESSAGES/totem.mo
 share/locale/pt/LC_MESSAGES/totem.mo
 share/locale/pt_BR/LC_MESSAGES/totem.mo
@@ -116,6 +124,7 @@ share/locale/sq/LC_MESSAGES/totem.mo
 share/locale/sr/LC_MESSAGES/totem.mo
 share/locale/sr@Latn/LC_MESSAGES/totem.mo
 share/locale/sv/LC_MESSAGES/totem.mo
+share/locale/th/LC_MESSAGES/totem.mo
 share/locale/tr/LC_MESSAGES/totem.mo
 share/locale/uk/LC_MESSAGES/totem.mo
 share/locale/vi/LC_MESSAGES/totem.mo
@@ -135,5 +144,8 @@ share/locale/zh_TW/LC_MESSAGES/totem.mo
 @dirrm share/gnome/help/totem
 %%GSTREAMER%%@unexec rmdir lib/mozilla/plugins 2>/dev/null || /usr/bin/true
 %%GSTREAMER%%@unexec rmdir lib/mozilla 2>/dev/null || /usr/bin/true
+@dirrm include/totem/1/plparser
+@dirrm include/totem/1
+@dirrm include/totem
 @exec update-desktop-database > /dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true

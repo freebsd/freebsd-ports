@@ -3,6 +3,7 @@ include/gal-%%VERSION%%/gal/a11y/e-table/gal-a11y-e-cell-registry.h
 include/gal-%%VERSION%%/gal/a11y/e-table/gal-a11y-e-cell-text.h
 include/gal-%%VERSION%%/gal/a11y/e-table/gal-a11y-e-cell-toggle.h
 include/gal-%%VERSION%%/gal/a11y/e-table/gal-a11y-e-cell-tree.h
+include/gal-%%VERSION%%/gal/a11y/e-table/gal-a11y-e-cell-vbox.h
 include/gal-%%VERSION%%/gal/a11y/e-table/gal-a11y-e-cell.h
 include/gal-%%VERSION%%/gal/a11y/e-table/gal-a11y-e-table-click-to-add-factory.h
 include/gal-%%VERSION%%/gal/a11y/e-table/gal-a11y-e-table-click-to-add.h
@@ -149,10 +150,10 @@ include/gal-%%VERSION%%/gal/widgets/widget-color-combo.h
 include/gal-%%VERSION%%/gal/widgets/widget-pixmap-combo.h
 lib/libgal-%%VERSION%%.a
 lib/libgal-%%VERSION%%.so
-lib/libgal-%%VERSION%%.so.1
+lib/libgal-%%VERSION%%.so.0
 lib/libgal-a11y-%%VERSION%%.a
 lib/libgal-a11y-%%VERSION%%.so
-lib/libgal-a11y-%%VERSION%%.so.1
+lib/libgal-a11y-%%VERSION%%.so.0
 libdata/pkgconfig/gal-%%VERSION%%.pc
 share/doc/gal-%%VERSION%%/gal-api.html
 share/doc/gal-%%VERSION%%/gal-api.sgml
@@ -196,6 +197,7 @@ share/locale/bn/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/bs/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/ca/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/cs/LC_MESSAGES/gal-%%VERSION%%.mo
+share/locale/cy/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/da/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/de/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/el/LC_MESSAGES/gal-%%VERSION%%.mo
@@ -209,10 +211,9 @@ share/locale/fr/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/ga/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/gl/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/gu/LC_MESSAGES/gal-%%VERSION%%.mo
-share/locale/hr/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/hi/LC_MESSAGES/gal-%%VERSION%%.mo
+share/locale/hr/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gal-%%VERSION%%.mo
-share/locale/id/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/it/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/ja/LC_MESSAGES/gal-%%VERSION%%.mo
 share/locale/ko/LC_MESSAGES/gal-%%VERSION%%.mo

@@ -409,6 +409,16 @@ share/gnome/gok/nb/numberpad.kbd
 share/gnome/gok/nb/quit.kbd
 share/gnome/gok/nb/text-operations.kbd
 share/gnome/gok/nb/valuator.kbd
+share/gnome/gok/ne/gok-controls.kbd
+share/gnome/gok/ne/hide.kbd
+share/gnome/gok/ne/launcher.kbd
+share/gnome/gok/ne/main.kbd
+share/gnome/gok/ne/mouse.kbd
+share/gnome/gok/ne/move-resize.kbd
+share/gnome/gok/ne/numberpad.kbd
+share/gnome/gok/ne/quit.kbd
+share/gnome/gok/ne/text-operations.kbd
+share/gnome/gok/ne/valuator.kbd
 share/gnome/gok/nl/gok-controls.kbd
 share/gnome/gok/nl/hide.kbd
 share/gnome/gok/nl/launcher.kbd
@@ -472,6 +482,16 @@ share/gnome/gok/pt_BR/text-operations.kbd
 share/gnome/gok/pt_BR/valuator.kbd
 share/gnome/gok/quit.kbd
 share/gnome/gok/qwerty.kbd
+share/gnome/gok/ro/gok-controls.kbd
+share/gnome/gok/ro/hide.kbd
+share/gnome/gok/ro/launcher.kbd
+share/gnome/gok/ro/main.kbd
+share/gnome/gok/ro/mouse.kbd
+share/gnome/gok/ro/move-resize.kbd
+share/gnome/gok/ro/numberpad.kbd
+share/gnome/gok/ro/quit.kbd
+share/gnome/gok/ro/text-operations.kbd
+share/gnome/gok/ro/valuator.kbd
 share/gnome/gok/singlekey-automatic-scanning.xam
 share/gnome/gok/singlekey-inverse-scanning.xam
 share/gnome/gok/sl/gok-controls.kbd
@@ -619,12 +639,14 @@ share/locale/ml/LC_MESSAGES/gok.mo
 share/locale/mn/LC_MESSAGES/gok.mo
 share/locale/ms/LC_MESSAGES/gok.mo
 share/locale/nb/LC_MESSAGES/gok.mo
+share/locale/ne/LC_MESSAGES/gok.mo
 share/locale/nl/LC_MESSAGES/gok.mo
 share/locale/no/LC_MESSAGES/gok.mo
 share/locale/pa/LC_MESSAGES/gok.mo
 share/locale/pl/LC_MESSAGES/gok.mo
 share/locale/pt/LC_MESSAGES/gok.mo
 share/locale/pt_BR/LC_MESSAGES/gok.mo
+share/locale/ro/LC_MESSAGES/gok.mo
 share/locale/sl/LC_MESSAGES/gok.mo
 share/locale/sq/LC_MESSAGES/gok.mo
 share/locale/sr/LC_MESSAGES/gok.mo
@@ -648,12 +670,14 @@ share/locale/zh_TW/LC_MESSAGES/gok.mo
 @dirrm share/gnome/gok/sr
 @dirrm share/gnome/gok/sq
 @dirrm share/gnome/gok/sl
+@dirrm share/gnome/gok/ro
 @dirrm share/gnome/gok/pt_BR
 @dirrm share/gnome/gok/pt
 @dirrm share/gnome/gok/pl
 @dirrm share/gnome/gok/pa
 @dirrm share/gnome/gok/no
 @dirrm share/gnome/gok/nl
+@dirrm share/gnome/gok/ne
 @dirrm share/gnome/gok/nb
 @dirrm share/gnome/gok/ms
 @dirrm share/gnome/gok/mn

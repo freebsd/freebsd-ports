@@ -1,6 +1,14 @@
---- src/info.c.orig	Mon Jun 14 06:52:59 2004
-+++ src/info.c	Sun Oct 31 23:35:06 2004
-@@ -37,6 +37,11 @@
+--- src/info.c.orig	Tue Feb  1 06:05:58 2005
++++ src/info.c	Thu Mar  3 23:39:57 2005
+@@ -20,6 +20,7 @@
+ #include <gtk/gtk.h>
+ #include <glib/gi18n.h>
+ #include <glib/gprintf.h>
++#include <sys/types.h>
+ 
+ #ifdef HAVE_CONFIG_H
+ #  include <config.h>
+@@ -38,6 +39,11 @@
  #include <sys/ioctl.h>
  #include <stdlib.h>
  #include <net/if.h>
@@ -12,7 +20,7 @@
  
  #include "info.h"
  #include "utils.h"
-@@ -57,6 +62,7 @@
+@@ -58,6 +64,7 @@
  	{ N_("Ethernet Interface"),      INFO_INTERFACE_ETH,     "16_ethernet.xpm", "eth",        NULL },
  	{ N_("Wireless Interface"),      INFO_INTERFACE_WLAN,    "wavelan-16.png",  "wlan",       NULL },
  	{ N_("Modem Interface"),         INFO_INTERFACE_PPP,     "16_ppp.xpm",      "ppp",        NULL },
@@ -20,7 +28,7 @@
  	{ N_("Parallel Line Interface"), INFO_INTERFACE_PLIP,    "16_plip.xpm",     "plip",       NULL },
  	{ N_("Infrared Interface"),      INFO_INTERFACE_IRLAN,   "irda-16.png",     "irlan",      NULL },
  	{ N_("Loopback Interface"),      INFO_INTERFACE_LO,      "16_loopback.xpm", "lo",         NULL },
-@@ -97,9 +103,42 @@
+@@ -128,9 +135,42 @@
  {
  	gint i;
  	gchar *path;
@@ -65,7 +73,7 @@
  			(*iface) = g_strdup_printf ("%s (%s)", info_iface_desc[i].name, dev_name);
  			if (info_iface_desc[i].pixbuf == NULL) {
  				path = g_build_filename (PIXMAPS_DIR, info_iface_desc[i].icon, NULL);
-@@ -187,17 +226,26 @@
+@@ -217,38 +257,87 @@
  	gchar tx[10], tx_error[10], tx_drop[10], tx_ovr[10]; 
  	*/
  	gchar iface[30]; /*, flags[30]; */
@@ -96,10 +104,9 @@
  	g_return_val_if_fail (info != NULL, FALSE);
  
  	model = gtk_combo_box_get_model (GTK_COMBO_BOX (info->combo));
-@@ -206,21 +254,61 @@
- 	else
+ 	text = info_get_nic (info);
+ 	if (!text)
  		return FALSE;
- 	/*text = gtk_entry_get_text (GTK_ENTRY (info->nic));*/
 -	
 +
  #if defined(__linux__)
@@ -160,7 +167,7 @@
  
  		if (g_ascii_strcasecmp (iface, text) == 0) {
  			/*
-@@ -248,7 +336,9 @@
+@@ -276,7 +365,9 @@
  	}
  	
  	g_io_channel_unref (io);
@@ -171,7 +178,7 @@
  
  	return TRUE;
  }
-@@ -382,8 +472,16 @@
+@@ -405,8 +496,16 @@
  	InfoIpAddr *ip;
  	gint flags;
  	mii_data_result data;
@@ -188,7 +195,7 @@
  
  	for (ifr6 = ifa0; ifr6; ifr6 = ifr6->ifa_next) {
  		if (strcmp (ifr6->ifa_name, nic) != 0) {
-@@ -429,7 +527,9 @@
+@@ -452,7 +551,9 @@
  			ifc.ifc_req = (struct ifreq *) buf;
  			ioctl (sockfd, SIOCGIFCONF, &ifc);
  
@@ -198,7 +205,7 @@
  
  			for (ptr = buf; ptr < buf + ifc.ifc_len;) {
  				ifr = (struct ifreq *) ptr;
-@@ -460,6 +560,45 @@
+@@ -483,6 +584,45 @@
  				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[3],
  				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[4],
  				   (int) ((guchar *) &ifrcopy.ifr_hwaddr.sa_data)[5]);

@@ -1,0 +1,11 @@
+--- doc/libmergeant/C/Makefile.in.orig	Sat Aug 14 04:12:49 2004
++++ doc/libmergeant/C/Makefile.in	Sat Aug 14 04:13:07 2004
+@@ -214,7 +214,7 @@
+ 
+ # The name of the module.
+ DOC_MODULE = libmergeant
+-HTML_DIR = $(datadir)/gtk-doc/html
++HTML_DIR = $(prefix)/share/doc
+ 
+ # The top-level SGML file.
+ DOC_MAIN_SGML_FILE = $(DOC_MODULE)-docs.sgml

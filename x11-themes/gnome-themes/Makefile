@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnome-themes
-PORTVERSION=	2.8.2
+PORTVERSION=	2.10.0
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -17,8 +17,6 @@ COMMENT=	A collection of themes and icons for GNOME2 designed for accessibility
 
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
-
-CONFLICTS=	gtk-smooth-engine-[0-9]*
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

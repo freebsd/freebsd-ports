@@ -1,0 +1,11 @@
+--- camel/Makefile.in.orig	Tue Dec 21 13:46:00 2004
++++ camel/Makefile.in	Tue Dec 21 13:46:01 2004
+@@ -299,7 +299,7 @@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+ 
+-SUBDIRS = . providers tests
++SUBDIRS = . providers
+ 
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_in_files = camel.pc.in camel-provider.pc.in

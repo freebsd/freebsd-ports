@@ -1,11 +1,11 @@
---- doc/C/Makefile.in.orig	Sun Jun  2 22:17:05 2002
-+++ doc/C/Makefile.in	Sun Jun  2 22:17:27 2002
-@@ -152,7 +152,7 @@
- cxxflags_set = @cxxflags_set@
- 
- DOC_MODULE = libgda
+--- doc/C/Makefile.in.orig	Thu Jul 22 10:35:19 2004
++++ doc/C/Makefile.in	Thu Jul 22 10:35:48 2004
+@@ -116,7 +116,7 @@
+ HISTORY_LIB = @HISTORY_LIB@
+ HISTORY_LIB_FALSE = @HISTORY_LIB_FALSE@
+ HISTORY_LIB_TRUE = @HISTORY_LIB_TRUE@
 -HTML_DIR = $(datadir)/gtk-doc/html
 +HTML_DIR = $(prefix)/share/doc
- 
- # The top-level SGML file. Change it if you want.
- DOC_MAIN_SGML_FILE = $(DOC_MODULE)-docs.sgml
+ IBMDB2_CFLAGS = @IBMDB2_CFLAGS@
+ IBMDB2_FALSE = @IBMDB2_FALSE@
+ IBMDB2_LIBS = @IBMDB2_LIBS@

@@ -6,27 +6,28 @@
 #
 
 PORTNAME=	gnomeapplets2
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-applets/2.8
+MASTER_SITE_SUBDIR=	sources/gnome-applets/2.10
 DISTNAME=	gnome-applets-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Applets components for the Gnome 2 Desktop Environment
 
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/gnome-system-tools.pc:${PORTSDIR}/sysutils/gnomesystemtools
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2 \
-		xklavier.8:${PORTSDIR}/x11/libxklavier
+		xklavier.10:${PORTSDIR}/x11/libxklavier \
+		gucharmap.4:${PORTSDIR}/deskutils/gucharmap
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/system-tools-backends.pc:${PORTSDIR}/sysutils/gnomesystemtools
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-INSTALLS_OMF=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomehier gnomeprefix gnomehack intlhack gnomepanel \
+INSTALLS_OMF=	yes
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel \
 		gail
 USE_GSTREAMER=	yes
 USE_LIBTOOL_VER=15
@@ -34,10 +35,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		FREEBSD_SYS=${FREEBSD_SYS}
 
-GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas gkb.schemas \
+GCONF_SCHEMAS=	charpick.schemas drivemount.schemas geyes.schemas \
 		gswitchit.schemas gtik.schemas gweather.schemas \
-		mailcheck.schemas mini-commander.schemas mixer.schemas \
-		modemlights.schemas multiload.schemas stickynotes.schemas
+		mini-commander-global.schemas mini-commander.schemas \
+		mixer.schemas multiload.schemas \
+		stickynotes.schemas
 
 FREEBSD_SYS?=	/usr/src/sys
 
@@ -50,6 +52,7 @@ PLIST_SUB=	BATTERY="@comment "
 GCONF_SCHEMAS+=	battstat.schemas
 PLIST_SUB=	BATTERY=""
 
+.if ${OSVERSION} < 600019
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "              W  A  R  N  I  N  G"
@@ -61,6 +64,14 @@ pre-everything::
 	@${ECHO_MSG} "* correct path.                                     *"
 	@${ECHO_MSG} "*****************************************************"
 	@${ECHO_MSG} ""
+.endif
+.endif
+
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+PLIST_SUB+=	CPUFREQ="@comment "
+.else
+PLIST_SUB+=	CPUFREQ=""
+GCONF_SCHEMAS+=	cpufreq-applet.schemas
 .endif
 
 .include <bsd.port.post.mk>

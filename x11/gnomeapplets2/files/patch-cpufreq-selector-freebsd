@@ -1,0 +1,373 @@
+--- cpufreq/src/cpufreq-selector/Makefile.in.orig	Mon Feb 14 00:26:10 2005
++++ cpufreq/src/cpufreq-selector/Makefile.in	Mon Feb 14 00:26:58 2005
+@@ -53,7 +53,7 @@
+ PROGRAMS = $(bin_PROGRAMS)
+ am_cpufreq_selector_OBJECTS = cpufreq.$(OBJEXT) \
+ 	cpufreq-sysfs.$(OBJEXT) cpufreq-procfs.$(OBJEXT) \
+-	main.$(OBJEXT)
++	cpufreq-sysctl.$(OBJEXT) main.$(OBJEXT)
+ cpufreq_selector_OBJECTS = $(am_cpufreq_selector_OBJECTS)
+ am__DEPENDENCIES_1 =
+ cpufreq_selector_DEPENDENCIES = $(am__DEPENDENCIES_1)
+@@ -61,6 +61,7 @@
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles
+ @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/cpufreq-procfs.Po \
++@AMDEP_TRUE@	./$(DEPDIR)/cpufreq-sysctl.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq-sysfs.Po \
+ @AMDEP_TRUE@	./$(DEPDIR)/cpufreq.Po ./$(DEPDIR)/main.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+@@ -310,6 +311,7 @@
+ 	cpufreq.c               cpufreq.h        \
+ 	cpufreq-sysfs.c         cpufreq-sysfs.h  \
+ 	cpufreq-procfs.c        cpufreq-procfs.h \
++	cpufreq-sysctl.c        cpufreq-sysctl.h \
+ 	main.c
+ 
+ cpufreq_selector_LDADD = $(CPUFREQ_SELECTOR_LIBS) -lpopt
+@@ -385,6 +387,7 @@
+ 	-rm -f *.tab.c
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-procfs.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-sysctl.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq-sysfs.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cpufreq.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
+--- cpufreq/src/cpufreq-selector/cpufreq-sysctl.h.orig	Mon Feb 14 00:38:57 2005
++++ cpufreq/src/cpufreq-selector/cpufreq-sysctl.h	Mon Feb 14 00:21:39 2005
+@@ -0,0 +1,51 @@
++/*
++ * Copyright (C) 2001, 2002 Free Software Foundation
++ *
++ *  This library is free software; you can redistribute it and/or
++ *  modify it under the terms of the GNU General Public
++ *  License as published by the Free Software Foundation; either
++ *  version 2 of the License, or (at your option) any later version.
++ *
++ *  This library is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ *  General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public
++ *  License along with this library; if not, write to the Free
++ *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++ *
++ * Authors : Joe Marcus Clarke <marcus@FreeBSD.org>
++ */
++
++#ifndef __CPUFREQ_SYSCTL_H__
++#define __CPUFREQ_SYSCTL_H__
++
++#include <glib-object.h>
++
++#include "cpufreq.h"
++
++#define TYPE_CPUFREQ_SYSCTL            (cpufreq_sysctl_get_type ())
++#define CPUFREQ_SYSCTL(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj), TYPE_CPUFREQ_SYSCTL, CPUFreqSysctl))
++#define CPUFREQ_SYSCTL_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST((klass), TYPE_CPUFREQ_SYSCTL, CPUFreqSysctlClass))
++#define IS_CPUFREQ_SYSCTL(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj), TYPE_CPUFREQ_SYSCTL))
++#define IS_CPUFREQ_SYSCTL_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), TYPE_CPUFREQ_SYSCTL))
++#define CPUFREQ_SYSCTL_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), TYPE_CPUFREQ_SYSCTL, CPUFreqSysctlClass))
++
++typedef struct _CPUFreqSysctl      CPUFreqSysctl;
++typedef struct _CPUFreqSysctlClass CPUFreqSysctlClass;
++typedef struct _CPUFreqSysctlPriv  CPUFreqSysctlPriv;
++
++struct _CPUFreqSysctl {
++	   CPUFreq parent;
++};
++
++struct _CPUFreqSysctlClass {
++	   CPUFreqClass parent_class;
++};
++
++
++GType          cpufreq_sysctl_get_type ();
++CPUFreqSysctl *cpufreq_sysctl_new      ();
++
++#endif /* __CPUFREQ_SYSCTL_H__ */
+--- cpufreq/src/cpufreq-selector/main.c.orig	Mon Feb 14 00:22:12 2005
++++ cpufreq/src/cpufreq-selector/main.c	Mon Feb 14 00:26:04 2005
+@@ -16,6 +16,7 @@
+  *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  *
+  * Authors : Carlos García Campos <carlosgc@gnome.org>
++ *           Joe Marcus Clarke <marcus@FreeBSD.org>
+  */
+ 
+ #include <glib-object.h>
+@@ -26,6 +27,9 @@
+ #include "cpufreq.h"
+ #include "cpufreq-sysfs.h"
+ #include "cpufreq-procfs.h"
++#ifdef __FreeBSD__
++#include "cpufreq-sysctl.h"
++#endif /* __FreeBSD__ */
+ 
+ gint
+ main (gint argc, gchar **argv)
+@@ -35,6 +39,9 @@
+ 	   gulong      frequency = 0;
+ 	   poptContext ctx;
+ 	   gint        nextopt;
++#ifdef __FreeBSD__
++	   size_t      len;
++#endif /* __FreeBSD__ */
+ 	   CPUFreq    *cfq;
+ 
+ 	   struct poptOption options[] = {
+@@ -76,10 +83,15 @@
+ 
+ 	   poptFreeContext(ctx);
+ 
++#ifndef __FreeBSD__
+ 	   if (g_file_test ("/sys/devices/system/cpu/cpu0/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.6 kernel */
+ 			 cfq = CPUFREQ (cpufreq_sysfs_new ());
+ 	   } else if (g_file_test ("/proc/cpufreq", G_FILE_TEST_EXISTS)) { /* 2.4 kernel */
+ 			 cfq = CPUFREQ (cpufreq_procfs_new ());
++#else
++           if (sysctlbyname ("dev.cpu.0.freq", NULL, &len, NULL, 0) == 0) {
++	       		 cfq = CPUFREQ (cpufreq_sysctl_new ());
++#endif /* __FreeBSD __ */
+ 	   } else {
+ 			 g_print ("No cpufreq support\n");
+ 			 return 1;
+--- cpufreq/src/cpufreq-selector/cpufreq-sysctl.c.orig	Mon Feb 14 00:38:52 2005
++++ cpufreq/src/cpufreq-selector/cpufreq-sysctl.c	Mon Feb 14 00:44:43 2005
+@@ -0,0 +1,235 @@
++/*
++ * Copyright (C) 2001, 2002 Free Software Foundation
++ *
++ *  This library is free software; you can redistribute it and/or
++ *  modify it under the terms of the GNU General Public
++ *  License as published by the Free Software Foundation; either
++ *  version 2 of the License, or (at your option) any later version.
++ *
++ *  This library is distributed in the hope that it will be useful,
++ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
++ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++ *  General Public License for more details.
++ *
++ *  You should have received a copy of the GNU General Public
++ *  License along with this library; if not, write to the Free
++ *  Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++ *
++ * Authors : Joe Marcus Clarke <marcus@FreeBSD.org>
++ */
++
++#include <glib.h>
++#include <stdio.h>
++#include <stdlib.h>
++
++#ifdef __FreeBSD__
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#endif /* __FreeBSD__ */
++
++#include "cpufreq-sysctl.h"
++
++#define PARENT_TYPE TYPE_CPUFREQ
++
++#define CPUFREQ_SYSCTL_GET_PRIVATE(obj) (G_TYPE_INSTANCE_GET_PRIVATE((obj), TYPE_CPUFREQ_SYSCTL, CPUFreqSysctlPrivate))
++
++static void cpufreq_sysctl_init           (CPUFreqSysctl *cfq);
++static void cpufreq_sysctl_class_init     (CPUFreqSysctlClass *klass);
++static void cpufreq_sysctl_finalize       (GObject *object);
++
++static void  cpufreq_sysctl_set_governor  (CPUFreq *cfq, const gchar *governor);
++static void  cpufreq_sysctl_set_frequency (CPUFreq *cfq, gint frequency);
++
++static void  cpufreq_sysctl_setup         (CPUFreqSysctl *cfq);
++
++static GObjectClass *parent_class = NULL;
++
++typedef struct _CPUFreqSysctlPrivate CPUFreqSysctlPrivate;
++
++struct _CPUFreqSysctlPrivate
++{
++	   gint pmax;
++};
++
++GType cpufreq_sysctl_get_type ()
++{
++	   static GType type = 0;
++
++	   if (!type) {
++			 static const GTypeInfo info = {
++				    sizeof (CPUFreqSysctlClass),
++				    (GBaseInitFunc) NULL,
++				    (GBaseFinalizeFunc) NULL,
++				    (GClassInitFunc) cpufreq_sysctl_class_init,
++				    NULL,
++				    NULL,
++				    sizeof (CPUFreqSysctl),
++				    0,
++				    (GInstanceInitFunc) cpufreq_sysctl_init
++			 };
++
++			 type = g_type_register_static (PARENT_TYPE, "CPUFreqSysctl",
++									  &info, 0);
++	   }
++
++	   return type;
++}
++
++static void
++cpufreq_sysctl_init (CPUFreqSysctl *cfq)
++{
++	   CPUFreqSysctlPrivate *private;
++	   
++	   g_return_if_fail (IS_CPUFREQ_SYSCTL (cfq));
++
++	   private = CPUFREQ_SYSCTL_GET_PRIVATE (cfq);
++}
++
++static void
++cpufreq_sysctl_class_init (CPUFreqSysctlClass *klass)
++{
++	   GObjectClass *object_class = G_OBJECT_CLASS (klass);
++	   CPUFreqClass *cfq_class = CPUFREQ_CLASS (klass);
++
++	   parent_class = g_type_class_peek_parent (klass);
++
++	   g_type_class_add_private (klass, sizeof (CPUFreqSysctlPrivate));
++
++	   cfq_class->set_governor = cpufreq_sysctl_set_governor;
++	   cfq_class->set_frequency = cpufreq_sysctl_set_frequency;
++
++	   object_class->finalize = cpufreq_sysctl_finalize;
++}
++
++static void
++cpufreq_sysctl_finalize (GObject *object)
++{
++	   if (G_OBJECT_CLASS (parent_class)->finalize)
++			 (* G_OBJECT_CLASS (parent_class)->finalize) (object);
++}
++
++CPUFreqSysctl *
++cpufreq_sysctl_new ()
++{
++	   CPUFreqSysctl *cfq;
++
++	   cfq = g_object_new (TYPE_CPUFREQ_SYSCTL, NULL);
++
++	   cpufreq_sysctl_setup (cfq);
++
++	   return cfq;
++}
++
++static void
++cpufreq_sysctl_set_governor (CPUFreq *cfq, const gchar *governor)
++{
++    /* Not implemented. */
++}
++
++static void
++cpufreq_sysctl_set_frequency (CPUFreq *cfq, gint frequency)
++{
++	   gint                  cpu, i;
++	   size_t                len;
++	   gchar                *freq_oid;
++
++	   g_return_if_fail (IS_CPUFREQ_SYSCTL (cfq));
++
++	   g_object_get (G_OBJECT (cfq), "n_cpu", &cpu, NULL);
++
++	   frequency = (gint) ((gdouble) frequency / 1000); /* Convert back to MHz*/
++
++	   for (i = 0; i < cpu; i++) {
++   			 freq_oid = g_strdup_printf ("dev.cpu.%d.freq", i);
++
++	   		 sysctlbyname (freq_oid, NULL, &len, &frequency, sizeof (frequency));
++	   		 g_free (freq_oid);
++	   }
++}
++	
++
++static void
++cpufreq_sysctl_setup (CPUFreqSysctl *cfq)
++{
++	   guint                 cpu;
++	   gint                  fmax, fmin;
++	   gint                  pmax;
++	   gint                  ifreq;
++	   gint                  mib[4];
++	   gchar                *governor, *levels;
++	   gchar               **levelsp, **frpr, **l;
++	   size_t                len;
++	   CPUFreqSysctlPrivate *private;
++
++	   g_return_if_fail (IS_CPUFREQ_SYSCTL (cfq));
++
++	   private = CPUFREQ_SYSCTL_GET_PRIVATE (cfq);
++
++	   pmax = 100;
++	   fmax = 0;
++	   fmin = 0;
++	   ifreq = 0;
++
++	   private->pmax = pmax;
++
++	   len = sizeof (cpu);
++
++	   if (sysctlbyname ("hw.ncpu", &cpu, &len, NULL, 0) == -1)
++	       		 cpu = 1;
++	   
++	   len = 4;
++	   sysctlnametomib ("dev.cpu.0.freq_levels", mib, &len);
++	   len = sizeof (levels);
++
++	   if (sysctl (mib, 4, NULL, &len, NULL, 0) == -1) {
++	       		 g_warning ("Failed to fetch dev.cpu.0.freq_levels");
++			 return;
++	   }
++
++	   levels = g_malloc (len);
++	   if (sysctl (mib, 4, levels, &len, NULL, 0) == -1) {
++	       		 g_warning ("Failed to fetch data for dev.cpu.0.freq_levels");
++			 return;
++	   }
++
++	   levelsp = g_strsplit (levels, " ", 0);
++	   g_free (levels);
++
++	   frpr = g_strsplit (levelsp[0], "/", 0); /* MAX */
++	   if (frpr && frpr[0] != NULL)
++	       		 fmax = atoi (frpr[0]);
++	   g_strfreev (frpr);
++
++	   for (l = levelsp; l && *l; l++) /* Walk to the last frequency */
++	       		 ;
++
++	   l --;
++	   frpr = g_strsplit (*l, "/", 0);
++	   if (frpr && frpr[0] != NULL)
++	       		 fmin = atoi (frpr[0]);
++	   
++	   g_strfreev (frpr);
++	   g_strfreev (levelsp);
++
++	   len = sizeof (ifreq);
++	   if (sysctlbyname ("dev.cpu.0.freq", &ifreq, &len, NULL, 0) == -1) {
++	       		 g_warning ("Failed to fetch data for dev.cpu.0.freq");
++			 return;
++	   }
++
++	   if (ifreq == fmax)
++	       		 governor = g_strdup ("performance");
++	   else if (ifreq == fmin)
++	       		 governor = g_strdup ("economy");
++	   else
++	       		 governor = g_strdup ("other");
++	   
++	   fmax *= 1000;
++	   fmin *= 1000;
++
++	   g_object_set (G_OBJECT (cfq), "n_cpu", cpu, 
++	   		 "sc_max", fmax, "sc_min", fmin,
++			 "governor", governor, NULL);
++
++	   g_free (governor);
++}

@@ -6,6 +6,7 @@ include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-pango.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-pgl.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-config.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-job.h
+include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-meta.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-paper.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-transport.h
 include/libgnomeprint-%%LIBVERSION%%/libgnomeprint/gnome-print-unit.h
@@ -112,6 +113,7 @@ share/locale/mn/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/mr/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/ms/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/nb/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
+share/locale/ne/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/nl/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/nn/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo
 share/locale/no/LC_MESSAGES/libgnomeprint-%%LIBVERSION%%.mo

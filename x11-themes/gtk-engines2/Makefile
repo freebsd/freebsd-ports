@@ -6,30 +6,28 @@
 #
 
 PORTNAME=	gtk-engines2
-PORTVERSION=	2.2.0
-PORTREVISION=	6
+PORTVERSION=	2.6.2
 CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.6
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Theme engine for the gtk+-2.0 toolkit
 
+CONFLICTS=	gtk-smooth-engine-[0-9]*
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 USE_GNOME=	gnomehack gtk20
 PLIST_SUB=	GTK_VERSION="2.4.0"
 
-THEMES=		metal redmond95
-
+# Disable the gtk1 theme.
 post-patch:
-	@for theme in ${THEMES}; do \
-		cd ${WRKSRC}/$$theme/Theme/gtk-2.0; \
-		${MV} gtkrc gtkrc.tmp; \
-		${SED} -e s^%%PREFIX%%^${PREFIX}^g < gtkrc.tmp > gtkrc; \
-	done
+	@${REINPLACE_CMD} -e 's|gtk gtk-2.0|gtk-2.0|' \
+		${WRKSRC}/themes/Redmond/Makefile.in
 
 .include <bsd.port.mk>

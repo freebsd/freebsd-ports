@@ -83,7 +83,6 @@ share/locale/ar/LC_MESSAGES/gcalctool.mo
 share/locale/az/LC_MESSAGES/gcalctool.mo
 share/locale/be/LC_MESSAGES/gcalctool.mo
 share/locale/bg/LC_MESSAGES/gcalctool.mo
-share/locale/bn/LC_MESSAGES/gcalctool.mo
 share/locale/bs/LC_MESSAGES/gcalctool.mo
 share/locale/ca/LC_MESSAGES/gcalctool.mo
 share/locale/cs/LC_MESSAGES/gcalctool.mo
@@ -93,7 +92,9 @@ share/locale/de/LC_MESSAGES/gcalctool.mo
 share/locale/el/LC_MESSAGES/gcalctool.mo
 share/locale/en_CA/LC_MESSAGES/gcalctool.mo
 share/locale/en_GB/LC_MESSAGES/gcalctool.mo
+share/locale/en_US/LC_MESSAGES/gcalctool.mo
 share/locale/es/LC_MESSAGES/gcalctool.mo
+share/locale/et/LC_MESSAGES/gcalctool.mo
 share/locale/eu/LC_MESSAGES/gcalctool.mo
 share/locale/fa/LC_MESSAGES/gcalctool.mo
 share/locale/fi/LC_MESSAGES/gcalctool.mo
@@ -114,6 +115,7 @@ share/locale/ml/LC_MESSAGES/gcalctool.mo
 share/locale/mn/LC_MESSAGES/gcalctool.mo
 share/locale/ms/LC_MESSAGES/gcalctool.mo
 share/locale/nb/LC_MESSAGES/gcalctool.mo
+share/locale/ne/LC_MESSAGES/gcalctool.mo
 share/locale/nl/LC_MESSAGES/gcalctool.mo
 share/locale/no/LC_MESSAGES/gcalctool.mo
 share/locale/or/LC_MESSAGES/gcalctool.mo
@@ -136,6 +138,8 @@ share/locale/uk/LC_MESSAGES/gcalctool.mo
 share/locale/vi/LC_MESSAGES/gcalctool.mo
 share/locale/zh_CN/LC_MESSAGES/gcalctool.mo
 share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
+@unexec rmdir %D/share/locale/en_US/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/en_US 2> /dev/null || true
 @dirrm share/gnome/omf/gcalctool
 @dirrm share/gnome/help/gcalctool/zh_TW/figures
 @dirrm share/gnome/help/gcalctool/zh_TW

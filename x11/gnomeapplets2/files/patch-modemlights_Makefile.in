@@ -1,0 +1,10 @@
+--- modemlights/Makefile.in.orig	Fri Jan 14 00:08:52 2005
++++ modemlights/Makefile.in	Fri Jan 14 00:09:20 2005
+@@ -319,6 +319,7 @@
+ modem_applet_LDADD = \
+ 	$(GNOME_APPLETS_LIBS)	\
+ 	$(LIBGLADE_LIBS)	\
++	-lutil			\
+ 	$(MODEMLIGHTS_LIBS)
+ 
+ uidir = $(datadir)/gnome-2.0/ui

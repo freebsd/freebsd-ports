@@ -1,0 +1,4 @@
+System-tools-backends is a collection of scripts (mostly Perl) used by
+gnome-sytem-tools to perform system administration tasks.
+
+WWW: http://www.gnome.org/projects/gst/

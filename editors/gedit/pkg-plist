@@ -5,6 +5,7 @@ include/gedit-%%VERSION%%/gedit/bonobo-mdi.h
 include/gedit-%%VERSION%%/gedit/gedit-convert.h
 include/gedit-%%VERSION%%/gedit/gedit-debug.h
 include/gedit-%%VERSION%%/gedit/gedit-document.h
+include/gedit-%%VERSION%%/gedit/gedit-encodings-option-menu.h
 include/gedit-%%VERSION%%/gedit/gedit-encodings.h
 include/gedit-%%VERSION%%/gedit/gedit-file.h
 include/gedit-%%VERSION%%/gedit/gedit-mdi-child.h
@@ -26,7 +27,6 @@ include/gedit-%%VERSION%%/gedit/recent-files/egg-recent-util.h
 include/gedit-%%VERSION%%/gedit/recent-files/egg-recent-view-bonobo.h
 include/gedit-%%VERSION%%/gedit/recent-files/egg-recent-view-gtk.h
 include/gedit-%%VERSION%%/gedit/recent-files/egg-recent-view.h
-lib/bonobo/libgedit-control.so
 lib/gedit-2/plugins/changecase.gedit-plugin
 lib/gedit-2/plugins/docinfo.gedit-plugin
 lib/gedit-2/plugins/indent.gedit-plugin
@@ -34,12 +34,14 @@ lib/gedit-2/plugins/libchangecase.so
 lib/gedit-2/plugins/libdocinfo.so
 lib/gedit-2/plugins/libindent.so
 lib/gedit-2/plugins/libsample.so
+lib/gedit-2/plugins/libsavecopy.so
 lib/gedit-2/plugins/libshell_output.so
 lib/gedit-2/plugins/libsort.so
 lib/gedit-2/plugins/libspell.so
 lib/gedit-2/plugins/libtaglist.so
 lib/gedit-2/plugins/libtime.so
 lib/gedit-2/plugins/sample.gedit-plugin
+lib/gedit-2/plugins/savecopy.gedit-plugin
 lib/gedit-2/plugins/shell_output.gedit-plugin
 lib/gedit-2/plugins/sort.gedit-plugin
 lib/gedit-2/plugins/spell.gedit-plugin
@@ -68,7 +70,6 @@ share/gnome/gedit-2/taglist/HTML.tags
 share/gnome/gedit-2/taglist/Latex.tags
 share/gnome/gedit-2/taglist/XSLT.tags
 share/gnome/gedit-2/ui/gedit-ui.xml
-share/gnome/gnome-2.0/ui/gedit-viewer-ui.xml
 share/gnome/help/gedit/C/figures/gedit_format_bold.png
 share/gnome/help/gedit/C/figures/gedit_format_italic.png
 share/gnome/help/gedit/C/figures/gedit_format_strikethrough.png

@@ -129,6 +129,7 @@
     SUBDIR += gmat
     SUBDIR += gmetadom
     SUBDIR += gnome-translate
+    SUBDIR += gnomedocutils
     SUBDIR += gnomespell
     SUBDIR += gpp
     SUBDIR += grap

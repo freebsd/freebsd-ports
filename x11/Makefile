@@ -59,6 +59,7 @@
     SUBDIR += gmessage
     SUBDIR += gmrun
     SUBDIR += gnome-clipboard-daemon
+    SUBDIR += gnome-menus
     SUBDIR += gnome-swallow
     SUBDIR += gnome2
     SUBDIR += gnome2-fifth-toe

@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	gnome2-fifth-toe
-PORTVERSION=	2.8.3
+PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -25,24 +26,29 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		tsclient:${PORTSDIR}/net/tsclient \
 		galeon:${PORTSDIR}/www/galeon \
 		seahorse:${PORTSDIR}/security/seahorse \
-		${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras \
+		${X11BASE}/share/gnome/themes/Gorilla/metacity-1/metacity-theme-1.xml:${PORTSDIR}/x11-themes/gnome-themes-extras \
 		bluefish:${PORTSDIR}/www/bluefish \
 		gossip:${PORTSDIR}/net/gossip \
-		inkscape:${PORTSDIR}/graphics/inkscape \
 		straw:${PORTSDIR}/net/straw \
 		liferea:${PORTSDIR}/net/liferea \
 		gnotime:${PORTSDIR}/deskutils/gnotime \
-		sound-juicer:${PORTSDIR}/audio/sound-juicer \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
 		jamboree:${PORTSDIR}/audio/jamboree \
-		${X11BASE}/share/gnome/pixmaps/glines/classic.png:${PORTSDIR}/games/gnomegames2-extra-data
+		${X11BASE}/share/gnome/pixmaps/glines/classic.png:${PORTSDIR}/games/gnomegames2-extra-data \
+		nautilus-sendto:${PORTSDIR}/deskutils/nautilus-sendto \
+		evince:${PORTSDIR}/graphics/evince \
+		goobox:${PORTSDIR}/audio/goobox
 
-.if !defined(PACKAGE_BUILDING) && !defined(PARALLEL_PACKAGE_BUILD)
-RUN_DEPENDS+=	totem:${PORTSDIR}/multimedia/totem
+.include <bsd.port.pre.mk>
+
+#inkscape currently needs 5.X to build. this should hopefully
+#change soon
+.if ${OSVERSION} > 500000
+RUN_DEPENDS+=	inkscape:${PORTSDIR}/graphics/inkscape
 .endif
 
 NO_BUILD=	yes
 
 do-install:	# empty
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

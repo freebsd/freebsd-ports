@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libgda2
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.2
 DISTNAME=	libgda-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -24,11 +23,12 @@ RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier glib20 libxslt
+USE_GNOME=	gnomeprefix gnomehack glib20 libxslt
 INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
+CONFIGURE_ARGS=	--without-bdb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
 
@@ -45,10 +45,6 @@ post-patch:
 
 .if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so)
 WITH_MYSQL=	yes
-.endif
-
-.if exists(${LOCALBASE}/lib/libpq.so.3)
-WITH_PGSQL=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libldap.so.2)
@@ -111,7 +107,7 @@ LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird
 CONFIGURE_ARGS+=	--with-firebird=${LOCALBASE}/firebird
 PLIST_SUB+=		FIREBIRD:=""
 .else
-CONFIGURE_ARGS+=	--without-firebird
+CONFIGURE_ARGS+=	--without-interbase
 PLIST_SUB+=		FIREBIRD:="@comment "
 .endif
 
@@ -152,7 +148,7 @@ PLIST_SUB+=		ODBC:="@comment "
 .endif
 
 .if !defined(WITHOUT_SQLITE) && defined(WITH_SQLITE)
-LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 PLIST_SUB+=		SQLITE:=""
 .else
@@ -163,9 +159,6 @@ PLIST_SUB+=		SQLITE:="@comment "
 pre-everything::
 .if !defined(WITH_MYSQL)
 	@${ECHO_MSG} "You can enable support for MySQL databases by defining WITH_MYSQL."
-.endif
-.if !defined(WITH_PGSQL)
-	@${ECHO_MSG} "You can enable support for PostgreSQL databases by defining WITH_PGSQL."
 .endif
 .if !defined(WITH_LDAP)
 	@${ECHO_MSG} "You can enable support for LDAP databases by defining WITH_LDAP."

@@ -1,5 +1,5 @@
---- libgnome/gnome-program.c.orig	Mon Feb 21 07:39:01 2005
-+++ libgnome/gnome-program.c	Mon Feb 21 23:35:17 2005
+--- libgnome/gnome-program.c.orig	Mon May 31 16:37:02 2004
++++ libgnome/gnome-program.c	Mon May 31 16:37:05 2004
 @@ -895,17 +895,17 @@
  	attr_rel = "";
  	break;
@@ -68,12 +68,3 @@
  
  	search_path = FALSE;
  	break;
-@@ -1928,7 +1928,7 @@
-                            int argc, char **argv,
-                            guint nparams, GParameter *params)
- {
--    va_list args = 0;
-+    va_list args;
- 
-     return gnome_program_init_common (type, app_id, app_version, module_info,
- 				      argc, argv, NULL, args, nparams, params);

@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gnomepanel
-PORTVERSION=	2.8.3
+PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-panel/2.8
+MASTER_SITE_SUBDIR=	sources/gnome-panel/2.10
 DISTNAME=	gnome-panel-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -21,8 +22,8 @@ INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack gnomedesktop \
-		libwnck
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop \
+		libwnck gnomemenus
 WANT_GNOME=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
@@ -33,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		gnome-panel.1
-GCONF_SCHEMAS=	clock.schemas fish.schemas gnome-panel-screenshot.schemas \
+GCONF_SCHEMAS=	clock.schemas fish.schemas \
 		panel-compatibility.schemas panel-general.schemas \
 		panel-global.schemas panel-object.schemas \
 		panel-toplevel.schemas window-list.schemas \
@@ -53,9 +54,9 @@ CONFIGURE_ARGS+=--enable-eds
 CONFIGURE_ARGS+=--disable-eds
 .endif
 
+post-patch:
 .if ( ${OSVERSION} > 600000 && ${OSVERSION} < 600006 ) || \
 	( ${OSVERSION} < 503101 )
-post-patch:
 .for po in da.po it.po zh_CN.po zh_TW.po
 	@${REINPLACE_CMD} -e 's|%-|%|g' ${WRKSRC}/po/${po}
 .endfor

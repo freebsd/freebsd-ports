@@ -1,11 +1,10 @@
---- Makefile.in.orig	Mon Aug 16 11:35:20 2004
-+++ Makefile.in	Mon Aug 16 11:35:34 2004
-@@ -179,7 +179,7 @@
- DESKTOP_SETTINGS_FILES =  	nautilus-file-management-properties.desktop
- 
- 
--SUBDIRS =  	libnautilus 			libnautilus-extension		cut-n-paste-code 		libbackground			libnautilus-private 		libnautilus-adapter		src 				test 				components			po 				data 				icons 				docs				$(NULL)
-+SUBDIRS =  	libnautilus 			libnautilus-extension		cut-n-paste-code 		libbackground			libnautilus-private 		libnautilus-adapter		src 				 				components			po 				data 				icons 				docs				$(NULL)
- 
- 
- EXTRA_DIST =  	COPYING.LIB					COPYING-DOCS					HACKING						MAINTAINERS					nautilus.spec.in				nautilus.desktop				nautilus.desktop.in				ChangeLog-20000414				ChangeLog-20000625				ChangeLog-20000831				ChangeLog-20001018				intltool-extract.in				intltool-merge.in				intltool-update.in				Makefile.shared					add-include-prefix				$(DESKTOP_IN_FILES)				$(DESKTOP_APPLICATIONS_FILES)				$(DESKTOP_SETTINGS_FILES)				$(NULL)
+--- Makefile.in.orig	Wed Nov 24 13:14:21 2004
++++ Makefile.in	Wed Nov 24 13:14:47 2004
+@@ -183,7 +183,6 @@
+ 	libbackground		\
+ 	libnautilus-private 	\
+ 	src 			\
+-	test 			\
+ 	po 			\
+ 	data 			\
+ 	icons 			\

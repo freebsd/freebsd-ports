@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gedit
-PORTVERSION=	2.8.3
+PORTVERSION=	2.10.0
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,16 +23,16 @@ INSTALLS_OMF=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier \
+USE_GNOME=	gnomeprefix gnomehack intlhack \
 		libgnomeprintui libgnomeui eel2 gtksourceview desktopfileutils
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-PLIST_SUB=	VERSION="2.8"
+PLIST_SUB=	VERSION="2.10"
 
 MAN1=		gedit.1
 GCONF_SCHEMAS=	gedit.schemas
 
 post-install:
-	@-update-desktop-database > /dev/null
+	@-update-desktop-database
 
 .include <bsd.port.mk>

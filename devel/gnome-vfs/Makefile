@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.8.4
+PORTVERSION=	2.10.0
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.8
+MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.10
 DISTNAME=	gnome-vfs-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack gnomemimedata gconf2 \
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomemimedata gconf2 \
 		libbonobo
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
@@ -39,8 +39,6 @@ GCONF_SCHEMAS=	desktop_default_applications.schemas \
 		desktop_gnome_url_handlers.schemas system_dns_sd.schemas \
 		system_http_proxy.schemas system_smb.schemas
 
-OPTIONS=	KDE_MENUS "Integrated KDE menu picks" on
-
 .include <bsd.port.pre.mk>
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
@@ -50,13 +48,6 @@ OPTIONS=	KDE_MENUS "Integrated KDE menu picks" on
 WITH_MDNS=		yes
 WITH_CDPARANOIA=	yes
 WITH_SAMBA=		yes
-.endif
-
-.if !defined(WITHOUT_KDE_MENUS)
-EXTRA_PATCHES=	${FILESDIR}/modules_vfolder_applications-all-users.vfolder-info.in
-PLIST_SUB+=	KDEMENUS=""
-.else
-PLIST_SUB+=	KDEMENUS="@comment "
 .endif
 
 .if exists(${LOCALBASE}/lib/libcdda_paranoia.a)
@@ -98,22 +89,12 @@ LIB_DEPENDS+=	howl:${PORTSDIR}/net/howl
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "*info.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\@datadir\@/gnome|\@datadir\@|g'
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
-		${WRKSRC}/libgnomevfs/Makefile.in \
-		${WRKSRC}/modules/vfolder/applications-all-users.vfolder-info.in
+		${WRKSRC}/libgnomevfs/Makefile.in
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/libgnomevfs/xdgmime.c \
-		${WRKSRC}/libgnomevfs/eggdirfuncs.c \
 		${WRKSRC}/libgnomevfs/gnome-vfs-mime-info.c
-.if !defined(WITHOUT_KDE_MENUS)
-	@${SED} -e 's|/usr/local|${LOCALBASE}|g' \
-		< ${FILESDIR}/KDE.directory > ${WRKSRC}/KDE.directory
-.endif
-	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/test//" \
-		${WRKSRC}/Makefile.in
 	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%X11BASE%%|${X11BASE}|g' \
@@ -127,9 +108,5 @@ pre-configure:
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.if !defined(WITHOUT_KDE_MENUS)
-	@${MKDIR} ${PREFIX}/share/gnome/vfolders
-	@${INSTALL_DATA} ${WRKSRC}/KDE.directory ${PREFIX}/share/gnome/vfolders
-.endif
 
 .include <bsd.port.post.mk>

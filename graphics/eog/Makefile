@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	eog
-PORTVERSION=	2.8.2
-PORTREVISION=	1
+PORTVERSION=	2.9.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.9
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -19,7 +18,7 @@ COMMENT=	The Eye Of Gnome image viewer
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack libgnomeprintui \
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeprintui \
 		librsvg2 desktopfileutils libgnomeui
 USE_X_PREFIX=	yes
 INSTALLS_OMF=	yes

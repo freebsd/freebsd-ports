@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	gnomesession
-PORTVERSION=	2.8.1
-PORTREVISION=	1
+PORTVERSION=	2.10.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
-		http://people.FreeBSD.org/~marcus/:local \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	sources/gnome-session/2.8 \
-		    	marcus/:local
+		${MASTER_SITE_LOCAL:S/$/:local/} \
+		http://people.FreeBSD.org/~pav/:local
+MASTER_SITE_SUBDIR=	sources/gnome-session/2.10 \
+		    	pav/:local
 DISTNAME=	gnome-session-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${SPLASH_IMG}:local
+		${SPLASHES}:local
 DIST_SUBDIR=	gnome2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -25,11 +24,9 @@ COMMENT=	Session component for the GNOME 2 desktop
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier intlhack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=15
-CONFIGURE_ARGS=	--with-halt-command=/sbin/shutdown \
-		--with-reboot-command=/sbin/shutdown
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
@@ -38,13 +35,19 @@ MAN1=		gnome-session.1 gnome-smproxy.1 gnome-wm.1 \
 MAN5=		default.session.5
 GCONF_SCHEMAS=	gnome-session.schemas
 
-SPLASH_IMG=	gnome-splash28.png
+SPLASHES=	freebsd-splashes-gnome-2.10.tar
 
 post-extract:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${SPLASH_IMG} ${WRKDIR}
+	cd ${WRKDIR} && ${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/${SPLASHES}
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/${SPLASH_IMG} \
+	${INSTALL_DATA} ${WRKSRC}/gnome-session/gnome-splash.png \
+		${PREFIX}/share/gnome/pixmaps/splash/original-gnome-splash.png
+	${INSTALL_DATA} ${WRKDIR}/freebsd-splashes-gnome-2.10/franz_klammer-2.png \
 		${PREFIX}/share/gnome/pixmaps/splash/gnome-splash.png
+.for splash in adamw.png banana_flex.png franco_malatacca.jpg franz_klammer-1.png franz_klammer-3.png radek.png
+	${INSTALL_DATA} ${WRKDIR}/freebsd-splashes-gnome-2.10/${splash} \
+		${PREFIX}/share/gnome/pixmaps/splash
+.endfor
 
 .include <bsd.port.mk>

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.4.8
+PORTVERSION=	1.6.0
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.4
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.6
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -36,11 +36,12 @@ HEADERS_SUFX=
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-INSTALLS_OMF=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgnomeui desktopfileutils
+GNOME_DESKTOP_VERSION=2
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+INSTALLS_OMF=	yes
 CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
 		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
@@ -55,14 +56,10 @@ MAN1=		epiphany.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-# Galeon does not build correctly in -CURRENT if -Werror is passed
-# to the compiler.
 NO_WERROR=	yes
-.endif
 # allow build with more warnings enabled
 .if defined(NO_WERROR)
-CONFIGURE_ARGS+=	--disable-werror
+CONFIGURE_ARGS+=	--enable-compile-warnings=no
 .endif
 
 .if ${OSVERSION} < 500000
@@ -101,6 +98,6 @@ post-configure:
 post-install:
 	@${MV} -f ${PREFIX}/bin/epiphany ${PREFIX}/bin/epiphany-bin
 	${INSTALL_SCRIPT} ${WRKDIR}/epiphany ${PREFIX}/bin
-	@-update-desktop-database > /dev/null
+	@-update-desktop-database
 
 .include <bsd.port.post.mk>

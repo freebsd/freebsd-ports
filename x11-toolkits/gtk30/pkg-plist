@@ -2,19 +2,23 @@ bin/gdk-pixbuf-csource
 bin/gdk-pixbuf-query-loaders
 bin/gtk-demo
 bin/gtk-query-immodules-2.0
+bin/gtk-update-icon-cache
 etc/gtk-2.0/gdk-pixbuf.loaders
 etc/gtk-2.0/gtk.immodules
 include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlib.h
 include/gtk-2.0/gdk-pixbuf-xlib/gdk-pixbuf-xlibrgb.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-animation.h
+include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-core.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-enum-types.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-features.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-io.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-loader.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-marshal.h
+include/gtk-2.0/gdk-pixbuf/gdk-pixbuf-transform.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixbuf.h
 include/gtk-2.0/gdk-pixbuf/gdk-pixdata.h
 include/gtk-2.0/gdk/gdk.h
+include/gtk-2.0/gdk/gdkalias.h
 include/gtk-2.0/gdk/gdkcolor.h
 include/gtk-2.0/gdk/gdkcursor.h
 include/gtk-2.0/gdk/gdkdisplay.h
@@ -45,7 +49,10 @@ include/gtk-2.0/gdk/gdkvisual.h
 include/gtk-2.0/gdk/gdkwindow.h
 include/gtk-2.0/gdk/gdkx.h
 include/gtk-2.0/gdkconfig.h
+include/gtk-2.0/gtk/gtkcellview.h
+include/gtk-2.0/gtk/gtkiconview.h
 include/gtk-2.0/gtk/gtk.h
+include/gtk-2.0/gtk/gtkaboutdialog.h
 include/gtk-2.0/gtk/gtkaccelgroup.h
 include/gtk-2.0/gtk/gtkaccellabel.h
 include/gtk-2.0/gtk/gtkaccelmap.h
@@ -65,7 +72,9 @@ include/gtk-2.0/gtk/gtkcalendar.h
 include/gtk-2.0/gtk/gtkcelleditable.h
 include/gtk-2.0/gtk/gtkcelllayout.h
 include/gtk-2.0/gtk/gtkcellrenderer.h
+include/gtk-2.0/gtk/gtkcellrenderercombo.h
 include/gtk-2.0/gtk/gtkcellrendererpixbuf.h
+include/gtk-2.0/gtk/gtkcellrendererprogress.h
 include/gtk-2.0/gtk/gtkcellrenderertext.h
 include/gtk-2.0/gtk/gtkcellrenderertoggle.h
 include/gtk-2.0/gtk/gtkcheckbutton.h
@@ -92,6 +101,7 @@ include/gtk-2.0/gtk/gtkenums.h
 include/gtk-2.0/gtk/gtkeventbox.h
 include/gtk-2.0/gtk/gtkexpander.h
 include/gtk-2.0/gtk/gtkfilechooser.h
+include/gtk-2.0/gtk/gtkfilechooserbutton.h
 include/gtk-2.0/gtk/gtkfilechooserdialog.h
 include/gtk-2.0/gtk/gtkfilechooserwidget.h
 include/gtk-2.0/gtk/gtkfilefilter.h
@@ -134,8 +144,10 @@ include/gtk-2.0/gtk/gtkmenu.h
 include/gtk-2.0/gtk/gtkmenubar.h
 include/gtk-2.0/gtk/gtkmenuitem.h
 include/gtk-2.0/gtk/gtkmenushell.h
+include/gtk-2.0/gtk/gtkmenutoolbutton.h
 include/gtk-2.0/gtk/gtkmessagedialog.h
 include/gtk-2.0/gtk/gtkmisc.h
+include/gtk-2.0/gtk/gtkmodules.h
 include/gtk-2.0/gtk/gtknotebook.h
 include/gtk-2.0/gtk/gtkobject.h
 include/gtk-2.0/gtk/gtkoldeditable.h
@@ -214,6 +226,7 @@ include/gtk-2.0/gtk/gtkvscrollbar.h
 include/gtk-2.0/gtk/gtkvseparator.h
 include/gtk-2.0/gtk/gtkwidget.h
 include/gtk-2.0/gtk/gtkwindow.h
+lib/gtk-2.0/%%GTK_VERSION%%/engines/libpixmap.so
 lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-am-et.so
 lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-cedilla.so
 lib/gtk-2.0/%%GTK_VERSION%%/immodules/im-cyrillic-translit.so
@@ -240,16 +253,16 @@ lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xbm.so
 lib/gtk-2.0/%%GTK_VERSION%%/loaders/libpixbufloader-xpm.so
 lib/libgdk-x11-2.0.a
 lib/libgdk-x11-2.0.so
-lib/libgdk-x11-2.0.so.400
+lib/libgdk-x11-2.0.so.600
 lib/libgdk_pixbuf-2.0.a
 lib/libgdk_pixbuf-2.0.so
-lib/libgdk_pixbuf-2.0.so.400
+lib/libgdk_pixbuf-2.0.so.600
 lib/libgdk_pixbuf_xlib-2.0.a
 lib/libgdk_pixbuf_xlib-2.0.so
-lib/libgdk_pixbuf_xlib-2.0.so.400
+lib/libgdk_pixbuf_xlib-2.0.so.600
 lib/libgtk-x11-2.0.a
 lib/libgtk-x11-2.0.so
-lib/libgtk-x11-2.0.so.400
+lib/libgtk-x11-2.0.so.600
 libdata/pkgconfig/gdk-2.0.pc
 libdata/pkgconfig/gdk-pixbuf-2.0.pc
 libdata/pkgconfig/gdk-pixbuf-xlib-2.0.pc
@@ -263,6 +276,7 @@ share/gtk-2.0/demo/appwindow.c
 share/gtk-2.0/demo/background.jpg
 share/gtk-2.0/demo/button_box.c
 share/gtk-2.0/demo/changedisplay.c
+share/gtk-2.0/demo/clipboard.c
 share/gtk-2.0/demo/colorsel.c
 share/gtk-2.0/demo/dialog.c
 share/gtk-2.0/demo/drawingarea.c
@@ -273,12 +287,15 @@ share/gtk-2.0/demo/floppybuddy.gif
 share/gtk-2.0/demo/gnome-applets.png
 share/gtk-2.0/demo/gnome-calendar.png
 share/gtk-2.0/demo/gnome-foot.png
+share/gtk-2.0/demo/gnome-fs-directory.png
+share/gtk-2.0/demo/gnome-fs-regular.png
 share/gtk-2.0/demo/gnome-gimp.png
 share/gtk-2.0/demo/gnome-gmush.png
 share/gtk-2.0/demo/gnome-gsame.png
 share/gtk-2.0/demo/gnu-keys.png
 share/gtk-2.0/demo/gtk-logo-rgb.gif
 share/gtk-2.0/demo/hypertext.c
+share/gtk-2.0/demo/iconview.c
 share/gtk-2.0/demo/images.c
 share/gtk-2.0/demo/list_store.c
 share/gtk-2.0/demo/menus.c
@@ -286,6 +303,7 @@ share/gtk-2.0/demo/panes.c
 share/gtk-2.0/demo/pixbufs.c
 share/gtk-2.0/demo/sizegroup.c
 share/gtk-2.0/demo/stock_browser.c
+share/gtk-2.0/demo/rotated_text.c
 share/gtk-2.0/demo/textview.c
 share/gtk-2.0/demo/tree_store.c
 share/gtk-2.0/demo/ui_manager.c
@@ -293,8 +311,6 @@ share/locale/af/LC_MESSAGES/gtk20-properties.mo
 share/locale/af/LC_MESSAGES/gtk20.mo
 share/locale/am/LC_MESSAGES/gtk20-properties.mo
 share/locale/am/LC_MESSAGES/gtk20.mo
-share/locale/ang/LC_MESSAGES/gtk20-properties.mo
-share/locale/ang/LC_MESSAGES/gtk20.mo
 share/locale/ar/LC_MESSAGES/gtk20-properties.mo
 share/locale/ar/LC_MESSAGES/gtk20.mo
 share/locale/az/LC_MESSAGES/gtk20-properties.mo
@@ -407,6 +423,8 @@ share/locale/ro/LC_MESSAGES/gtk20-properties.mo
 share/locale/ro/LC_MESSAGES/gtk20.mo
 share/locale/ru/LC_MESSAGES/gtk20-properties.mo
 share/locale/ru/LC_MESSAGES/gtk20.mo
+share/locale/rw/LC_MESSAGES/gtk20-properties.mo
+share/locale/rw/LC_MESSAGES/gtk20.mo
 share/locale/sk/LC_MESSAGES/gtk20-properties.mo
 share/locale/sk/LC_MESSAGES/gtk20.mo
 share/locale/sl/LC_MESSAGES/gtk20-properties.mo
@@ -439,6 +457,8 @@ share/locale/vi/LC_MESSAGES/gtk20-properties.mo
 share/locale/vi/LC_MESSAGES/gtk20.mo
 share/locale/wa/LC_MESSAGES/gtk20-properties.mo
 share/locale/wa/LC_MESSAGES/gtk20.mo
+share/locale/xh/LC_MESSAGES/gtk20-properties.mo
+share/locale/xh/LC_MESSAGES/gtk20.mo
 share/locale/yi/LC_MESSAGES/gtk20-properties.mo
 share/locale/yi/LC_MESSAGES/gtk20.mo
 share/locale/zh_CN/LC_MESSAGES/gtk20-properties.mo
@@ -470,8 +490,6 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK_VERSION%%/engines
 @unexec /bin/rmdir %D/share/themes/Default 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/themes 2>/dev/null || /usr/bin/true
-@unexec rmdir %D/share/locale/ang/LC_MESSAGES 2> /dev/null || true
-@unexec rmdir %D/share/locale/ang 2> /dev/null || true
 @unexec rmdir %D/share/locale/az_IR/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/az_IR 2> /dev/null || true
 @unexec rmdir %D/share/locale/br/LC_MESSAGES 2> /dev/null || true
@@ -484,9 +502,13 @@ share/themes/Emacs/gtk-2.0-key/gtkrc
 @unexec rmdir %D/share/locale/mr 2> /dev/null || true
 @unexec rmdir %D/share/locale/nso/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/nso 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/rw 2> /dev/null || true
 @unexec rmdir %D/share/locale/sr@ije/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/sr@ije 2> /dev/null || true
 @unexec rmdir %D/share/locale/uz@Latn/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/uz@Latn 2> /dev/null || true
 @unexec rmdir %D/share/locale/yi/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/yi 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh/LC_MESSAGES/ 2> /dev/null || true
+@unexec rmdir %D/share/locale/xh 2> /dev/null || true

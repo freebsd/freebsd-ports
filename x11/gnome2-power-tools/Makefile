@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnome2-power-tools
-PORTVERSION=	2.8.3
+PORTVERSION=	2.10.0
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -15,7 +15,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	"Geektoys" for the GNOME 2 power user
 
-RUN_DEPENDS=	${X11BASE}/lib/epiphany-1.4/extensions/libgesturesextension.so:${PORTSDIR}/www/epiphany-extensions \
+RUN_DEPENDS=	${X11BASE}/lib/epiphany-1.6/extensions/libgesturesextension.so:${PORTSDIR}/www/epiphany-extensions \
 		gnome-pkgview:${PORTSDIR}/sysutils/gnome-pkgview \
 		${X11BASE}/libexec/quick-lounge-applet:${PORTSDIR}/misc/quick-lounge-applet \
 		${X11BASE}/libexec/netspeed_applet2:${PORTSDIR}/net/netspeed_applet \
@@ -24,8 +24,10 @@ RUN_DEPENDS=	${X11BASE}/lib/epiphany-1.4/extensions/libgesturesextension.so:${PO
 		gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		cog:${PORTSDIR}/sysutils/cog \
 		gnome-blog-poster:${PORTSDIR}/deskutils/gnomeblog \
-		gnome-keyring-manager:${PORTSDIR}/security/gnomekeyringmanager \
-		gnomesu:${PORTSDIR}/security/libgnomesu
+		gnomesu:${PORTSDIR}/security/libgnomesu \
+		bpm:${PORTSDIR}/sysutils/bpm \
+		gnome-file-share-properties:${PORTSDIR}/www/gnome-user-share \
+		gnome-keyring-manager:${PORTSDIR}/security/gnomekeyringmanager
 
 NO_BUILD=	yes
 

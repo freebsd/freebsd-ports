@@ -1,16 +1,6 @@
 bin/nautilus
+bin/nautilus-connect-server
 bin/nautilus-file-management-properties
-include/libnautilus/libnautilus.h
-include/libnautilus/nautilus-bonobo-ui.h
-include/libnautilus/nautilus-clipboard.h
-include/libnautilus/nautilus-distributed-undo.h
-include/libnautilus/nautilus-idle-queue.h
-include/libnautilus/nautilus-scroll-positionable.h
-include/libnautilus/nautilus-undo-private.h
-include/libnautilus/nautilus-undo.h
-include/libnautilus/nautilus-view-component.h
-include/libnautilus/nautilus-view-standard-main.h
-include/libnautilus/nautilus-view.h
 include/nautilus/libnautilus-extension/nautilus-column-provider.h
 include/nautilus/libnautilus-extension/nautilus-column.h
 include/nautilus/libnautilus-extension/nautilus-extension-types.h
@@ -20,52 +10,21 @@ include/nautilus/libnautilus-extension/nautilus-menu-item.h
 include/nautilus/libnautilus-extension/nautilus-menu-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page.h
-lib/bonobo/libnautilus-emblem-view.so
-lib/bonobo/libnautilus-history-view.so
-lib/bonobo/libnautilus-image-properties-view.so
-lib/bonobo/libnautilus-notes-view.so
-lib/libnautilus-adapter.a
-lib/libnautilus-adapter.so
-lib/libnautilus-adapter.so.2
 lib/libnautilus-extension.a
 lib/libnautilus-extension.so
 lib/libnautilus-extension.so.1
 lib/libnautilus-private.a
 lib/libnautilus-private.so
 lib/libnautilus-private.so.2
-lib/libnautilus.a
-lib/libnautilus.so
-lib/libnautilus.so.2
-libdata/bonobo/servers/Nautilus_ComponentAdapterFactory_std.server
-libdata/bonobo/servers/Nautilus_Control_throbber.server
-libdata/bonobo/servers/Nautilus_View_emblem.server
-libdata/bonobo/servers/Nautilus_View_history.server
-libdata/bonobo/servers/Nautilus_View_image_properties.server
-libdata/bonobo/servers/Nautilus_View_notes.server
-libdata/bonobo/servers/Nautilus_View_text.server
 libdata/bonobo/servers/Nautilus_shell.server
 libdata/pkgconfig/libnautilus-extension.pc
-libdata/pkgconfig/libnautilus.pc
-libexec/nautilus-adapter
-libexec/nautilus-text-view
-libexec/nautilus-throbber
 share/gnome/applications/nautilus-computer.desktop
+share/gnome/applications/nautilus-file-management-properties.desktop
+share/gnome/applications/nautilus-folder-handler.desktop
 share/gnome/applications/nautilus-home.desktop
 share/gnome/applications/nautilus.desktop
 share/gnome/applications/network-scheme.desktop
-share/gnome/control-center-2.0/capplets/nautilus-file-management-properties.desktop
-share/gnome/gnome-2.0/ui/nautilus-clipboard-ui.xml
-share/gnome/gnome-2.0/ui/nautilus-desktop-icon-view-ui.xml
-share/gnome/gnome-2.0/ui/nautilus-directory-view-ui.xml
-share/gnome/gnome-2.0/ui/nautilus-icon-view-ui.xml
-share/gnome/gnome-2.0/ui/nautilus-list-view-ui.xml
-share/gnome/gnome-2.0/ui/nautilus-navigation-window-ui.xml
-share/gnome/gnome-2.0/ui/nautilus-search-list-view-ui.xml
-share/gnome/gnome-2.0/ui/nautilus-shell-ui.xml
-share/gnome/gnome-2.0/ui/nautilus-spatial-window-ui.xml
-share/gnome/gnome-2.0/ui/nautilus-text-view-ui.xml
-share/gnome/idl/nautilus-distributed-undo.idl
-share/gnome/idl/nautilus-view-component.idl
+@exec update-desktop-database > /dev/null || /usr/bin/true
 share/gnome/nautilus/browser.xml
 share/gnome/nautilus/glade/nautilus-bookmarks-window.glade
 share/gnome/nautilus/glade/nautilus-file-management-properties.glade
@@ -103,7 +62,13 @@ share/gnome/nautilus/patterns/snow_ridge.png
 share/gnome/nautilus/patterns/stucco.jpg
 share/gnome/nautilus/patterns/terracotta.png
 share/gnome/nautilus/patterns/wavy_white.png
-share/gnome/nautilus/static_bookmarks.xml
+share/gnome/nautilus/ui/nautilus-desktop-icon-view-ui.xml
+share/gnome/nautilus/ui/nautilus-directory-view-ui.xml
+share/gnome/nautilus/ui/nautilus-icon-view-ui.xml
+share/gnome/nautilus/ui/nautilus-list-view-ui.xml
+share/gnome/nautilus/ui/nautilus-navigation-window-ui.xml
+share/gnome/nautilus/ui/nautilus-shell-ui.xml
+share/gnome/nautilus/ui/nautilus-spatial-window-ui.xml
 share/gnome/pixmaps/nautilus/Search.png
 share/gnome/pixmaps/nautilus/audio.png
 share/gnome/pixmaps/nautilus/backgrounds.png
@@ -181,6 +146,7 @@ share/locale/ne/LC_MESSAGES/nautilus.mo
 share/locale/nl/LC_MESSAGES/nautilus.mo
 share/locale/nn/LC_MESSAGES/nautilus.mo
 share/locale/no/LC_MESSAGES/nautilus.mo
+share/locale/nso/LC_MESSAGES/nautilus.mo
 share/locale/pa/LC_MESSAGES/nautilus.mo
 share/locale/pl/LC_MESSAGES/nautilus.mo
 share/locale/pt/LC_MESSAGES/nautilus.mo
@@ -204,6 +170,7 @@ share/locale/wa/LC_MESSAGES/nautilus.mo
 share/locale/yi/LC_MESSAGES/nautilus.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
+share/locale/zu/LC_MESSAGES/nautilus.mo
 @dirrm share/gnome/pixmaps/nautilus/tahoe
 @dirrm share/gnome/pixmaps/nautilus/sierra
 @dirrm share/gnome/pixmaps/nautilus/gnome
@@ -211,12 +178,13 @@ share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 @dirrm share/gnome/pixmaps/nautilus/crux_teal
 @dirrm share/gnome/pixmaps/nautilus/crux_eggplant
 @dirrm share/gnome/pixmaps/nautilus
+@dirrm share/gnome/nautilus/ui
 @dirrm share/gnome/nautilus/patterns
 @dirrm share/gnome/nautilus/glade
 @dirrm share/gnome/nautilus
 @dirrm include/nautilus/libnautilus-extension
 @dirrm include/nautilus
-@dirrm include/libnautilus
 @exec /bin/mkdir -p %D/lib/nautilus/extensions-1.0
 @unexec /bin/rmdir %D/lib/nautilus/extensions-1.0 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/lib/nautilus 2>/dev/null || /usr/bin/true
+@unexec update-desktop-database > /dev/null || /usr/bin/true

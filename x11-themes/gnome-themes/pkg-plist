@@ -1,84 +1,3 @@
-lib/gtk-2.0/%%GTK_VERSION%%/engines/libcrux-engine.so
-lib/gtk-2.0/%%GTK_VERSION%%/engines/libhcengine.so
-lib/gtk-2.0/%%GTK_VERSION%%/engines/liblighthouseblue.so
-lib/gtk-2.0/%%GTK_VERSION%%/engines/libmist.so
-lib/gtk-2.0/%%GTK_VERSION%%/engines/libsmooth.so
-lib/gtk-2.0/%%GTK_VERSION%%/engines/libthinice.so
-share/eazel-engine/arrow_down-spinner.png
-share/eazel-engine/arrow_down.png
-share/eazel-engine/arrow_left.png
-share/eazel-engine/arrow_right.png
-share/eazel-engine/arrow_up-spinner.png
-share/eazel-engine/arrow_up.png
-share/eazel-engine/check-active-default-focus.png
-share/eazel-engine/check-active-default.png
-share/eazel-engine/check-active-hilight-focus.png
-share/eazel-engine/check-active-hilight.png
-share/eazel-engine/check-active-insensitive.png
-share/eazel-engine/check-active-pressed-focus.png
-share/eazel-engine/check-active-pressed.png
-share/eazel-engine/check-default-focus.png
-share/eazel-engine/check-default.png
-share/eazel-engine/check-hilight-focus.png
-share/eazel-engine/check-hilight.png
-share/eazel-engine/check-insensitive.png
-share/eazel-engine/check-pressed-focus.png
-share/eazel-engine/check-pressed.png
-share/eazel-engine/progressbar-left.png
-share/eazel-engine/progressbar-right.png
-share/eazel-engine/progressbar.png
-share/eazel-engine/progressbar_trough.png
-share/eazel-engine/radio-active-default-focus.png
-share/eazel-engine/radio-active-default.png
-share/eazel-engine/radio-active-hilight-focus.png
-share/eazel-engine/radio-active-hilight.png
-share/eazel-engine/radio-active-insensitive.png
-share/eazel-engine/radio-active-pressed-focus.png
-share/eazel-engine/radio-active-pressed.png
-share/eazel-engine/radio-default-focus.png
-share/eazel-engine/radio-default.png
-share/eazel-engine/radio-hilight-focus.png
-share/eazel-engine/radio-hilight.png
-share/eazel-engine/radio-insensitive.png
-share/eazel-engine/radio-pressed-focus.png
-share/eazel-engine/radio-pressed.png
-share/eazel-engine/scroller-arrow-down-hilight.png
-share/eazel-engine/scroller-arrow-down-pressed.png
-share/eazel-engine/scroller-arrow-down.png
-share/eazel-engine/scroller-arrow-left-hilight.png
-share/eazel-engine/scroller-arrow-left-pressed.png
-share/eazel-engine/scroller-arrow-left.png
-share/eazel-engine/scroller-arrow-right-hilight.png
-share/eazel-engine/scroller-arrow-right-pressed.png
-share/eazel-engine/scroller-arrow-right.png
-share/eazel-engine/scroller-arrow-up-hilight.png
-share/eazel-engine/scroller-arrow-up-pressed.png
-share/eazel-engine/scroller-arrow-up.png
-share/eazel-engine/scroller-h-hilight.png
-share/eazel-engine/scroller-h-thumb-hilight.png
-share/eazel-engine/scroller-h-thumb.png
-share/eazel-engine/scroller-h-trough.png
-share/eazel-engine/scroller-h.png
-share/eazel-engine/scroller-v-hilight.png
-share/eazel-engine/scroller-v-thumb-hilight.png
-share/eazel-engine/scroller-v-thumb.png
-share/eazel-engine/scroller-v-trough.png
-share/eazel-engine/scroller-v.png
-share/eazel-engine/slider_h_thumb.png
-share/eazel-engine/slider_h_trough.png
-share/eazel-engine/slider_h_trough_focus.png
-share/eazel-engine/slider_v_thumb.png
-share/eazel-engine/slider_v_trough.png
-share/eazel-engine/slider_v_trough_focus.png
-share/eazel-engine/tab_left-unsel.png
-share/eazel-engine/tab_left.png
-share/eazel-engine/tab_right.png
-share/eazel-engine/tab_sel-bottom.png
-share/eazel-engine/tab_sel.png
-share/eazel-engine/tab_usel-bottom-left.png
-share/eazel-engine/tab_usel-bottom.png
-share/eazel-engine/tab_usel-left.png
-share/eazel-engine/tab_usel.png
 share/gnome/themes/Glider/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Mist/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Sandwish/metacity-1/active-border-top-left-border.png
@@ -249,6 +168,7 @@ share/icons/HighContrastLargePrint/48x48/apps/administration.png
 share/icons/HighContrastLargePrint/48x48/apps/advanced-directory.png
 share/icons/HighContrastLargePrint/48x48/apps/ax-applet.png
 share/icons/HighContrastLargePrint/48x48/apps/charpick.png
+share/icons/HighContrastLargePrint/48x48/apps/clock.png
 share/icons/HighContrastLargePrint/48x48/apps/config-language.png
 share/icons/HighContrastLargePrint/48x48/apps/config-users.png
 share/icons/HighContrastLargePrint/48x48/apps/config-xfree.png
@@ -281,7 +201,6 @@ share/icons/HighContrastLargePrint/48x48/apps/gnome-ccscreensaver.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-cd.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-cdplayer-icon.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-character-map.png
-share/icons/HighContrastLargePrint/48x48/apps/gnome-clock.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-desktop-config.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-devel.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-eog.png
@@ -320,7 +239,12 @@ share/icons/HighContrastLargePrint/48x48/apps/gnome-panel.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-pdf.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-planner.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-remote-desktop.png
+share/icons/HighContrastLargePrint/48x48/apps/gnome-run.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-screensaver.png
+share/icons/HighContrastLargePrint/48x48/apps/gnome-screenshot.png
+share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool.png
+share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool-animation-rest.png
+share/icons/HighContrastLargePrint/48x48/apps/gnome-searchtool-animation.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-server-config.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-session.png
 share/icons/HighContrastLargePrint/48x48/apps/gnome-settings-accessibility-keyboard.png
@@ -609,10 +533,11 @@ share/icons/HighContrastLargePrint/index.theme
 share/icons/HighContrastLargePrintInverse/48x48/apps/JUSimageIcon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/accessibility-directory.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/acme-48.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/advanced-directory.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/administration.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/advanced-directory.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/ax-applet.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/charpick.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/clock.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/config-language.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/config-users.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/config-xfree.png
@@ -635,8 +560,8 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/glade-2.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/glines.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/glow.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnect-icon.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-applications.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-application-generic.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-applications.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-audio2.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-blackjack.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-calc3.png
@@ -645,7 +570,6 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-ccscreensaver.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-cd.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-cdplayer-icon.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-character-map.png
-share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-clock.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-desktop-config.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-devel.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-eog.png
@@ -684,7 +608,12 @@ share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-panel.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-pdf.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-planner.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-remote-desktop.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-run.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-screensaver.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-screenshot.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool-animation-rest.png
+share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-searchtool-animation.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-server-config.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-session.png
 share/icons/HighContrastLargePrintInverse/48x48/apps/gnome-settings-accessibility-keyboard.png
@@ -976,6 +905,7 @@ share/icons/LowContrastLargePrint/48x48/apps/accessibility-directory.png
 share/icons/LowContrastLargePrint/48x48/apps/advanced-directory.png
 share/icons/LowContrastLargePrint/48x48/apps/ax-applet.png
 share/icons/LowContrastLargePrint/48x48/apps/charpick.png
+share/icons/LowContrastLargePrint/48x48/apps/clock.png
 share/icons/LowContrastLargePrint/48x48/apps/display-capplet.png
 share/icons/LowContrastLargePrint/48x48/apps/file-manager.png
 share/icons/LowContrastLargePrint/48x48/apps/file-roller.png
@@ -991,7 +921,6 @@ share/icons/LowContrastLargePrint/48x48/apps/gnome-ccscreensaver.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-cd.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-cdplayer-icon.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-character-map.png
-share/icons/LowContrastLargePrint/48x48/apps/gnome-clock.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-devel.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-eog.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-ghex.png
@@ -1011,6 +940,11 @@ share/icons/LowContrastLargePrint/48x48/apps/gnome-mixer-applet.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-mixer.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-multimedia.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-panel.png
+share/icons/LowContrastLargePrint/48x48/apps/gnome-run.png
+share/icons/LowContrastLargePrint/48x48/apps/gnome-screenshot.png
+share/icons/LowContrastLargePrint/48x48/apps/gnome-searchtool.png
+share/icons/LowContrastLargePrint/48x48/apps/gnome-searchtool-animation-rest.png
+share/icons/LowContrastLargePrint/48x48/apps/gnome-searchtool-animation.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-session.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-accessibility-keyboard.png
 share/icons/LowContrastLargePrint/48x48/apps/gnome-settings-accessibility-technologies.png
@@ -1233,24 +1167,25 @@ share/icons/Sandy/96x96/filesystems/gnome-fs-directory-accept.png
 share/icons/Sandy/96x96/filesystems/gnome-fs-directory.png
 share/icons/Sandy/index.theme
 share/icons/Smokey-Blue/48x48/emblems/emblem-nowrite.png
-share/icons/Smokey-Blue/48x48/filesystems/gnome-fs-directory-72.png
-share/icons/Smokey-Blue/48x48/filesystems/gnome-fs-directory-96.png
-share/icons/Smokey-Blue/48x48/filesystems/gnome-fs-directory.png
-share/icons/Smokey-Blue/48x48/filesystems/gnome-fs-nfs.png
-share/icons/Smokey-Blue/48x48/filesystems/gnome-fs-trash-empty-accept.png
-share/icons/Smokey-Blue/48x48/filesystems/gnome-fs-trash-empty.png
-share/icons/Smokey-Blue/48x48/filesystems/gnome-fs-trash-full-accept.png
-share/icons/Smokey-Blue/48x48/filesystems/gnome-fs-trash-full.png
+share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-directory.png
+share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-nfs.png
+share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-trash-empty-accept.png
+share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-trash-empty.png
+share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-trash-full-accept.png
+share/icons/Smokey-Blue/64x64/filesystems/gnome-fs-trash-full.png
+share/icons/Smokey-Blue/72x72/filesystems/gnome-fs-directory.png
+share/icons/Smokey-Blue/96x96/filesystems/gnome-fs-directory.png
 share/icons/Smokey-Blue/index.theme
 share/icons/Smokey-Red/48x48/emblems/emblem-nowrite.png
-share/icons/Smokey-Red/48x48/filesystems/gnome-fs-directory-72.png
-share/icons/Smokey-Red/48x48/filesystems/gnome-fs-directory-96.png
-share/icons/Smokey-Red/48x48/filesystems/gnome-fs-directory.png
-share/icons/Smokey-Red/48x48/filesystems/gnome-fs-nfs.png
 share/icons/Smokey-Red/48x48/filesystems/gnome-fs-trash-empty-accept.png
 share/icons/Smokey-Red/48x48/filesystems/gnome-fs-trash-empty.png
 share/icons/Smokey-Red/48x48/filesystems/gnome-fs-trash-full-accept.png
 share/icons/Smokey-Red/48x48/filesystems/gnome-fs-trash-full.png
+share/icons/Smokey-Red/64x64/filesystems/gnome-fs-directory.icon
+share/icons/Smokey-Red/64x64/filesystems/gnome-fs-directory.png
+share/icons/Smokey-Red/64x64/filesystems/gnome-fs-nfs.png
+share/icons/Smokey-Red/72x72/filesystems/gnome-fs-directory.png
+share/icons/Smokey-Red/96x96/filesystems/gnome-fs-directory.png
 share/icons/Smokey-Red/index.theme
 share/locale/am/LC_MESSAGES/gnome-themes.mo
 share/locale/ar/LC_MESSAGES/gnome-themes.mo
@@ -1292,6 +1227,7 @@ share/locale/ml/LC_MESSAGES/gnome-themes.mo
 share/locale/mn/LC_MESSAGES/gnome-themes.mo
 share/locale/ms/LC_MESSAGES/gnome-themes.mo
 share/locale/nb/LC_MESSAGES/gnome-themes.mo
+share/locale/ne/LC_MESSAGES/gnome-themes.mo
 share/locale/nl/LC_MESSAGES/gnome-themes.mo
 share/locale/nn/LC_MESSAGES/gnome-themes.mo
 share/locale/no/LC_MESSAGES/gnome-themes.mo
@@ -1315,22 +1251,8 @@ share/locale/vi/LC_MESSAGES/gnome-themes.mo
 share/locale/wa/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-themes.mo
-share/themes/Crux/gtk-2.0/gtkrc
 share/themes/Crux/index.theme
 share/themes/Glider/gtk-2.0/gtkrc
-share/themes/Glider/gtk-2.0/iconrc
-share/themes/Glider/gtk-2.0/stock_apply.png
-share/themes/Glider/gtk-2.0/stock_bottom.png
-share/themes/Glider/gtk-2.0/stock_cancel.png
-share/themes/Glider/gtk-2.0/stock_down.png
-share/themes/Glider/gtk-2.0/stock_first.png
-share/themes/Glider/gtk-2.0/stock_last.png
-share/themes/Glider/gtk-2.0/stock_left.png
-share/themes/Glider/gtk-2.0/stock_ok.png
-share/themes/Glider/gtk-2.0/stock_refresh.png
-share/themes/Glider/gtk-2.0/stock_right.png
-share/themes/Glider/gtk-2.0/stock_top.png
-share/themes/Glider/gtk-2.0/stock_up.png
 share/themes/Glider/index.theme
 share/themes/Grand-Canyon/gtk-2.0/3d_all_flat.png
 share/themes/Grand-Canyon/gtk-2.0/3d_all_normal.png
@@ -1784,7 +1706,6 @@ share/themes/LargePrint/pixmaps/volume-medium.png
 share/themes/LargePrint/pixmaps/volume-min.png
 share/themes/LargePrint/pixmaps/volume-mute.png
 share/themes/LargePrint/pixmaps/volume-zero.png
-share/themes/LighthouseBlue/gtk-2.0/gtkrc
 share/themes/LowContrast/gtk-2.0/gtkrc
 share/themes/LowContrast/index.theme.disabled
 share/themes/LowContrastLargePrint/gtk-2.0/gtkrc
@@ -1924,7 +1845,6 @@ share/themes/LowContrastLargePrint/pixmaps/volume-medium.png
 share/themes/LowContrastLargePrint/pixmaps/volume-min.png
 share/themes/LowContrastLargePrint/pixmaps/volume-mute.png
 share/themes/LowContrastLargePrint/pixmaps/volume-zero.png
-share/themes/Mist/gtk-2.0/gtkrc
 share/themes/Mist/index.theme
 share/themes/Ocean-Dream/index.theme
 share/themes/Simple/gtk-2.0/gtkrc
@@ -1952,25 +1872,19 @@ share/themes/Smokey-Blue/gtk-2.0/lines_background_blue.png
 share/themes/Smokey-Blue/gtk-2.0/option1.png
 share/themes/Smokey-Blue/gtk-2.0/option2.png
 share/themes/Smokey-Blue/index.theme
-share/themes/ThinIce/gtk-2.0/gtkrc
 share/themes/Traditional/index.theme
 @dirrm share/themes/Traditional
-@dirrm share/themes/ThinIce/gtk-2.0
-@dirrm share/themes/ThinIce
 @dirrm share/themes/Smokey-Blue/gtk-2.0
 @dirrm share/themes/Smokey-Blue
 @dirrm share/themes/Simple/gtk-2.0
 @dirrm share/themes/Simple
 @dirrm share/themes/Ocean-Dream
-@dirrm share/themes/Mist/gtk-2.0
 @dirrm share/themes/Mist
 @dirrm share/themes/LowContrastLargePrint/pixmaps
 @dirrm share/themes/LowContrastLargePrint/gtk-2.0
 @dirrm share/themes/LowContrastLargePrint
 @dirrm share/themes/LowContrast/gtk-2.0
 @dirrm share/themes/LowContrast
-@dirrm share/themes/LighthouseBlue/gtk-2.0
-@dirrm share/themes/LighthouseBlue
 @dirrm share/themes/LargePrint/pixmaps
 @dirrm share/themes/LargePrint/gtk-2.0
 @dirrm share/themes/LargePrint
@@ -1988,13 +1902,23 @@ share/themes/Traditional/index.theme
 @dirrm share/themes/Grand-Canyon
 @dirrm share/themes/Glider/gtk-2.0
 @dirrm share/themes/Glider
-@dirrm share/themes/Crux/gtk-2.0
 @dirrm share/themes/Crux
+@dirrm share/icons/Smokey-Red/96x96/filesystems
+@dirrm share/icons/Smokey-Red/96x96
+@dirrm share/icons/Smokey-Red/72x72/filesystems
+@dirrm share/icons/Smokey-Red/72x72
+@dirrm share/icons/Smokey-Red/64x64/filesystems
+@dirrm share/icons/Smokey-Red/64x64
 @dirrm share/icons/Smokey-Red/48x48/filesystems
 @dirrm share/icons/Smokey-Red/48x48/emblems
 @dirrm share/icons/Smokey-Red/48x48
 @dirrm share/icons/Smokey-Red
-@dirrm share/icons/Smokey-Blue/48x48/filesystems
+@dirrm share/icons/Smokey-Blue/96x96/filesystems
+@dirrm share/icons/Smokey-Blue/96x96
+@dirrm share/icons/Smokey-Blue/72x72/filesystems
+@dirrm share/icons/Smokey-Blue/72x72
+@dirrm share/icons/Smokey-Blue/64x64/filesystems
+@dirrm share/icons/Smokey-Blue/64x64
 @dirrm share/icons/Smokey-Blue/48x48/emblems
 @dirrm share/icons/Smokey-Blue/48x48
 @dirrm share/icons/Smokey-Blue
@@ -2089,5 +2013,4 @@ share/themes/Traditional/index.theme
 @dirrm share/gnome/themes/Mist
 @dirrm share/gnome/themes/Glider/metacity-1
 @dirrm share/gnome/themes/Glider
-@dirrm share/eazel-engine
 @unexec /bin/rmdir %D/share/icons 2>/dev/null || /usr/bin/true

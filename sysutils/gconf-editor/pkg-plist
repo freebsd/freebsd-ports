@@ -10,7 +10,6 @@ share/gnome/help/gconf-editor/C/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/C/gconf-editor.xml
 share/gnome/help/gconf-editor/C/legal.xml
 share/gnome/omf/gconf-editor/gconf-editor-C.omf
-share/gnome/pixmaps/gconf-editor.png
 share/gnome/pixmaps/gconf-editor/entry-blank.png
 share/gnome/pixmaps/gconf-editor/entry-bool.png
 share/gnome/pixmaps/gconf-editor/entry-list.png
@@ -19,6 +18,7 @@ share/gnome/pixmaps/gconf-editor/entry-schema.png
 share/gnome/pixmaps/gconf-editor/entry-string.png
 share/gnome/pixmaps/gconf-editor/folder-closed.png
 share/gnome/pixmaps/gconf-editor/folder-open.png
+share/icons/hicolor/48x48/apps/gconf-editor.png
 share/locale/am/LC_MESSAGES/gconf-editor.mo
 share/locale/ar/LC_MESSAGES/gconf-editor.mo
 share/locale/az/LC_MESSAGES/gconf-editor.mo

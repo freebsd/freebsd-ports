@@ -1,0 +1,41 @@
+--- layout/preferences.menu.orig	Sat Dec 11 07:58:50 2004
++++ layout/preferences.menu	Tue Mar  1 01:28:57 2005
+@@ -9,12 +9,15 @@
+   <DefaultAppDirs/>
+   <DefaultDirectoryDirs/>
+ 
+-  <!-- Read in overrides and child menus from preferences-merged/ -->
+-  <DefaultMergeDirs/>
+-
+   <!-- Stuff in the toplevel -->
+   <Include>
+     <And>
++      <Not>
++        <Or>
++          <Category>Qt</Category>
++          <Category>KDE</Category>
++        </Or>
++      </Not>
+       <Category>Settings</Category>
+       <Not>
+         <Or>
+@@ -36,10 +39,19 @@
+     <Directory>Settings-Accessibility.directory</Directory>
+     <Include>
+       <And>
++        <Not>
++          <Or>
++            <Category>Qt</Category>
++            <Category>KDE</Category>
++          </Or>
++        </Not>
+         <Category>Settings</Category>
+         <Category>Accessibility</Category>
+       </And>
+     </Include>
+   </Menu>
++
++  <!-- Read in overrides and child menus from preferences-merged/ -->
++  <DefaultMergeDirs/>
+ 
+ </Menu>     <!-- End Prefs -->

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dasher
-PORTVERSION=	3.2.11
-PORTREVISION=	4
+PORTVERSION=	3.2.15
 CATEGORIES=	accessibility editors x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/3.2
@@ -22,9 +21,11 @@ RUN_DEPENDS=	scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui atspi
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomehier libgnomeui atspi \
+		libwnck
 WANT_GNOME=	yes
 USE_LIBTOOL_VER=15
+INSTALLS_OMF=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,3 +1,7 @@
+share/gnome/gnome-games/same-gnome/themes/2.10/blink.png
+share/gnome/gnome-games/same-gnome/themes/2.10/glass.png
+share/gnome/gnome-games/same-gnome/themes/2.10/marbles.png
+share/gnome/gnome-games/same-gnome/themes/2.10/rotate.svg
 share/gnome/pixmaps/glines/classic.png
 share/gnome/pixmaps/glines/dots.png
 share/gnome/pixmaps/glines/gumball.png
@@ -24,8 +28,6 @@ share/gnome/pixmaps/mahjongg/default.png
 share/gnome/pixmaps/mahjongg/default2.png
 share/gnome/pixmaps/mahjongg/maya.png
 share/gnome/pixmaps/mahjongg/seta.png
-share/gnome/pixmaps/same-gnome/blink-sync.png
-share/gnome/pixmaps/same-gnome/glass.png
-share/gnome/pixmaps/same-gnome/marbles.png
-share/gnome/pixmaps/same-gnome/rotate.png
-@dirrm share/gnome/pixmaps/same-gnome
+@dirrm share/gnome/gnome-games/same-gnome/themes/2.10
+@dirrm share/gnome/gnome-games/same-gnome/themes
+@dirrm share/gnome/gnome-games/same-gnome

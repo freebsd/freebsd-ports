@@ -1,5 +1,6 @@
 include/libgsf-1/gsf-win32/gsf-input-win32.h
 include/libgsf-1/gsf-win32/gsf-output-win32.h
+include/libgsf-1/gsf/gsf-doc-meta-data.h
 include/libgsf-1/gsf/gsf-impl-utils.h
 include/libgsf-1/gsf/gsf-infile-impl.h
 include/libgsf-1/gsf/gsf-infile-msole.h
@@ -12,10 +13,12 @@ include/libgsf-1/gsf/gsf-input-gzip.h
 include/libgsf-1/gsf/gsf-input-impl.h
 include/libgsf-1/gsf/gsf-input-iochannel.h
 include/libgsf-1/gsf/gsf-input-memory.h
+include/libgsf-1/gsf/gsf-input-proxy.h
 include/libgsf-1/gsf/gsf-input-stdio.h
 include/libgsf-1/gsf/gsf-input-textline.h
 include/libgsf-1/gsf/gsf-input.h
 include/libgsf-1/gsf/gsf-libxml.h
+include/libgsf-1/gsf/gsf-meta-names.h
 include/libgsf-1/gsf/gsf-msole-utils.h
 include/libgsf-1/gsf/gsf-outfile-impl.h
 include/libgsf-1/gsf/gsf-outfile-msole.h
@@ -35,7 +38,7 @@ include/libgsf-1/gsf/gsf-utils.h
 include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
 lib/libgsf-1.so
-lib/libgsf-1.so.11
+lib/libgsf-1.so.12
 libdata/pkgconfig/libgsf-1.pc
 share/doc/gsf/api.html
 share/doc/gsf/gsf-Bononbo.html

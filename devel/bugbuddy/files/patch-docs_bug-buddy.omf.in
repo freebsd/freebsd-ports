@@ -1,0 +1,12 @@
+--- docs/bug-buddy.omf.in.orig	Fri Feb 11 14:23:02 2005
++++ docs/bug-buddy.omf.in	Fri Feb 11 14:22:48 2005
+@@ -0,0 +1,9 @@
++<?xml version="1.0" standalone="no"?>
++<omf>
++  <resource>
++    <subject category="GNOME|Development"/>
++    <type>user's guide</type>
++    <relation seriesid="69b6f5ee-6cc5-11d6-8051-fe97a46511fa"/>
++    <rights type="GNU FDL" license.version="1.1" holder="Eric Baudais"/>
++  </resource>
++</omf>

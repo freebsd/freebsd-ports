@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gtkhtml3
-PORTVERSION=	3.2.5
+PORTVERSION=	3.6.0
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/3.2
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/3$//}/3.6
 DISTNAME=	${PORTNAME:S/3$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -27,10 +27,6 @@ USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-PLIST_SUB=	VERSION="3.1"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@mkdir_p@|${MKDIR}|g' \
-		${WRKSRC}/po/Makefile.in.in
+PLIST_SUB=	VERSION="3.6"
 
 .include <bsd.port.mk>

@@ -3,25 +3,41 @@ share/icons/gnome/12x12/emblems/emblem-symbolic-link.png
 share/icons/gnome/12x12/filesystems/gnome-fs-directory-accept.png
 share/icons/gnome/12x12/filesystems/gnome-fs-directory-visiting.png
 share/icons/gnome/12x12/filesystems/gnome-fs-directory.png
+share/icons/gnome/16x16/filesystems/gnome-fs-directory.png
+share/icons/gnome/16x16/filesystems/gnome-fs-home.png
+share/icons/gnome/16x16/filesystems/gnome-fs-locally-shared.png
+share/icons/gnome/16x16/filesystems/gnome-fs-share-private.png
+share/icons/gnome/16x16/filesystems/gnome-fs-share.png
+share/icons/gnome/16x16/filesystems/gnome-fs-trash-empty.png
+share/icons/gnome/16x16/filesystems/gnome-fs-trash-full.png
 share/icons/gnome/16x16/devices/gnome-dev-cdrom-audio.png
 share/icons/gnome/16x16/devices/gnome-dev-cdrom.png
 share/icons/gnome/16x16/devices/gnome-dev-dvd.png
 share/icons/gnome/16x16/devices/gnome-dev-ethernet.png
 share/icons/gnome/16x16/devices/gnome-dev-floppy.png
 share/icons/gnome/16x16/devices/gnome-dev-harddisk.png
+share/icons/gnome/16x16/devices/gnome-dev-harddisk-1394.png
+share/icons/gnome/16x16/devices/gnome-dev-harddisk-usb.png
 share/icons/gnome/16x16/devices/gnome-dev-ipod.png
 share/icons/gnome/16x16/devices/gnome-dev-memory.png
 share/icons/gnome/16x16/devices/gnome-dev-mouse-ball.png
 share/icons/gnome/16x16/devices/gnome-dev-pci.png
 share/icons/gnome/16x16/devices/gnome-dev-printer.png
 share/icons/gnome/16x16/devices/gnome-dev-removable.png
+share/icons/gnome/16x16/devices/gnome-dev-removable-1394.png
+share/icons/gnome/16x16/devices/gnome-dev-removable-usb.png
 share/icons/gnome/16x16/devices/gnome-dev-wavelan-encrypted.png
 share/icons/gnome/16x16/devices/gnome-dev-wavelan.png
 share/icons/gnome/16x16/filesystems/gnome-fs-bookmark-missing.png
 share/icons/gnome/16x16/filesystems/gnome-fs-bookmark.png
 share/icons/gnome/16x16/filesystems/gnome-fs-client.png
+share/icons/gnome/16x16/filesystems/gnome-fs-desktop.png
+share/icons/gnome/16x16/filesystems/gnome-fs-ftp.png
 share/icons/gnome/16x16/filesystems/gnome-fs-network.png
+share/icons/gnome/16x16/filesystems/gnome-fs-nfs.png
 share/icons/gnome/16x16/filesystems/gnome-fs-server.png
+share/icons/gnome/16x16/filesystems/gnome-fs-smb.png
+share/icons/gnome/16x16/filesystems/gnome-fs-ssh.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-msword.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.ms-excel.png
 share/icons/gnome/16x16/mimetypes/gnome-mime-application-vnd.ms-powerpoint.png
@@ -37,11 +53,16 @@ share/icons/gnome/16x16/mimetypes/gnome-mime-x-directory-smb-workgroup.png
 share/icons/gnome/192x192/devices/gnome-dev-cdrom.png
 share/icons/gnome/192x192/filesystems/gnome-fs-regular.icon
 share/icons/gnome/192x192/filesystems/gnome-fs-regular.png
-share/icons/gnome/192x192/filesystems/gnome-fs-trash-empty.png
-share/icons/gnome/192x192/filesystems/gnome-fs-trash-full.png
 share/icons/gnome/24x24/devices/gnome-dev-battery.png
 share/icons/gnome/24x24/devices/gnome-dev-cdrom-audio.png
 share/icons/gnome/24x24/devices/gnome-dev-cdrom.png
+share/icons/gnome/24x24/devices/gnome-dev-disc-cdr.png
+share/icons/gnome/24x24/devices/gnome-dev-disc-cdrw.png
+share/icons/gnome/24x24/devices/gnome-dev-disc-dvdr-plus.png
+share/icons/gnome/24x24/devices/gnome-dev-disc-dvdr.png
+share/icons/gnome/24x24/devices/gnome-dev-disc-dvdram.png
+share/icons/gnome/24x24/devices/gnome-dev-disc-dvdrom.png
+share/icons/gnome/24x24/devices/gnome-dev-disc-dvdrw.png
 share/icons/gnome/24x24/devices/gnome-dev-dvd.png
 share/icons/gnome/24x24/devices/gnome-dev-ethernet.png
 share/icons/gnome/24x24/devices/gnome-dev-floppy.png
@@ -66,19 +87,29 @@ share/icons/gnome/24x24/emblems/emblem-symbolic-link.png
 share/icons/gnome/24x24/filesystems/gnome-fs-bookmark-missing.png
 share/icons/gnome/24x24/filesystems/gnome-fs-bookmark.png
 share/icons/gnome/24x24/filesystems/gnome-fs-client.png
+share/icons/gnome/24x24/filesystems/gnome-fs-desktop.png
 share/icons/gnome/24x24/filesystems/gnome-fs-directory-accept.icon
 share/icons/gnome/24x24/filesystems/gnome-fs-directory-accept.png
 share/icons/gnome/24x24/filesystems/gnome-fs-directory-visiting.icon
 share/icons/gnome/24x24/filesystems/gnome-fs-directory-visiting.png
 share/icons/gnome/24x24/filesystems/gnome-fs-directory.icon
 share/icons/gnome/24x24/filesystems/gnome-fs-directory.png
+share/icons/gnome/24x24/filesystems/gnome-fs-home.png
+share/icons/gnome/24x24/filesystems/gnome-fs-locally-shared.png
 share/icons/gnome/24x24/filesystems/gnome-fs-network.png
 share/icons/gnome/24x24/filesystems/gnome-fs-server.png
+share/icons/gnome/24x24/filesystems/gnome-fs-share-private.png
+share/icons/gnome/24x24/filesystems/gnome-fs-share.png
+share/icons/gnome/24x24/filesystems/gnome-fs-trash-empty.png
+share/icons/gnome/24x24/filesystems/gnome-fs-trash-full.png
 share/icons/gnome/24x24/mimetypes/gnome-mime-x-directory-nfs-server.png
 share/icons/gnome/32x32/devices/gnome-dev-ipod.png
 share/icons/gnome/32x32/filesystems/gnome-fs-bookmark-missing.png
 share/icons/gnome/32x32/filesystems/gnome-fs-bookmark.png
 share/icons/gnome/32x32/filesystems/gnome-fs-client.png
+share/icons/gnome/32x32/filesystems/gnome-fs-desktop.png
+share/icons/gnome/32x32/filesystems/gnome-fs-trash-empty.png
+share/icons/gnome/32x32/filesystems/gnome-fs-trash-full.png
 share/icons/gnome/32x32/filesystems/gnome-fs-network.png
 share/icons/gnome/32x32/filesystems/gnome-fs-server.png
 share/icons/gnome/32x32/mimetypes/gnome-mime-application-msword.png
@@ -102,6 +133,13 @@ share/icons/gnome/36x36/filesystems/gnome-fs-directory.png
 share/icons/gnome/48x48/devices/gnome-dev-battery.png
 share/icons/gnome/48x48/devices/gnome-dev-cdrom-audio.png
 share/icons/gnome/48x48/devices/gnome-dev-cdrom.png
+share/icons/gnome/48x48/devices/gnome-dev-disc-cdr.png
+share/icons/gnome/48x48/devices/gnome-dev-disc-cdrw.png
+share/icons/gnome/48x48/devices/gnome-dev-disc-dvdr-plus.png
+share/icons/gnome/48x48/devices/gnome-dev-disc-dvdr.png
+share/icons/gnome/48x48/devices/gnome-dev-disc-dvdram.png
+share/icons/gnome/48x48/devices/gnome-dev-disc-dvdrom.png
+share/icons/gnome/48x48/devices/gnome-dev-disc-dvdrw.png
 share/icons/gnome/48x48/devices/gnome-dev-dvd.png
 share/icons/gnome/48x48/devices/gnome-dev-floppy.png
 share/icons/gnome/48x48/devices/gnome-dev-harddisk-1394.png
@@ -154,20 +192,18 @@ share/icons/gnome/48x48/emblems/emblem-danger.icon
 share/icons/gnome/48x48/emblems/emblem-danger.png
 share/icons/gnome/48x48/emblems/emblem-desktop.icon
 share/icons/gnome/48x48/emblems/emblem-desktop.png
+share/icons/gnome/48x48/emblems/emblem-distinguished.icon
+share/icons/gnome/48x48/emblems/emblem-distinguished.png
 share/icons/gnome/48x48/emblems/emblem-documents.icon
 share/icons/gnome/48x48/emblems/emblem-documents.png
 share/icons/gnome/48x48/emblems/emblem-draft.icon
 share/icons/gnome/48x48/emblems/emblem-draft.png
-share/icons/gnome/48x48/emblems/emblem-favorite.icon
-share/icons/gnome/48x48/emblems/emblem-favorite.png
 share/icons/gnome/48x48/emblems/emblem-generic.icon
 share/icons/gnome/48x48/emblems/emblem-generic.png
 share/icons/gnome/48x48/emblems/emblem-handshake.icon
 share/icons/gnome/48x48/emblems/emblem-handshake.png
 share/icons/gnome/48x48/emblems/emblem-important.icon
 share/icons/gnome/48x48/emblems/emblem-important.png
-share/icons/gnome/48x48/emblems/emblem-mail.icon
-share/icons/gnome/48x48/emblems/emblem-mail.png
 share/icons/gnome/48x48/emblems/emblem-marketing.icon
 share/icons/gnome/48x48/emblems/emblem-marketing.png
 share/icons/gnome/48x48/emblems/emblem-money.icon
@@ -198,6 +234,8 @@ share/icons/gnome/48x48/emblems/emblem-presentation.icon
 share/icons/gnome/48x48/emblems/emblem-presentation.png
 share/icons/gnome/48x48/emblems/emblem-sales.icon
 share/icons/gnome/48x48/emblems/emblem-sales.png
+share/icons/gnome/48x48/emblems/emblem-shared.icon
+share/icons/gnome/48x48/emblems/emblem-shared.png
 share/icons/gnome/48x48/emblems/emblem-sound.icon
 share/icons/gnome/48x48/emblems/emblem-sound.png
 share/icons/gnome/48x48/emblems/emblem-special.icon
@@ -261,8 +299,10 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.stardivision.calc.p
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.stardivision.impress.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.stardivision.writer.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.sun.xml.calc.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.sun.xml.draw.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.sun.xml.impress.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.sun.xml.writer.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-vnd.sun.xml.writer.template.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-wordperfect.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-abiword.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-applix-spreadsheet.png
@@ -271,7 +311,10 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-archive.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-arj.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-backup.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-bittorrent.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-bla.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-blender.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-blf.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-blv.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-bzip-compressed-tar.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-bzip.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-cd-image.png
@@ -286,6 +329,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-dc-rom.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-deb.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-desktop.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-dia-diagram.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-dv.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-dvi.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-e-theme.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-executable.png
@@ -337,6 +381,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-stuffit.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-tar.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-tex.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-trash.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-x509-ca-cert.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-zip.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-audio-ac3.png
@@ -426,28 +471,30 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-x-directory-smb-share.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-x-directory-smb-workgroup.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-x-font-afm.png
 share/icons/gnome/48x48/mimetypes/gnome-package.png
-share/icons/gnome/72x72/filesystems/gnome-fs-directory-accept.icon
-share/icons/gnome/72x72/filesystems/gnome-fs-directory-accept.png
-share/icons/gnome/72x72/filesystems/gnome-fs-directory-visiting.icon
-share/icons/gnome/72x72/filesystems/gnome-fs-directory-visiting.png
-share/icons/gnome/72x72/filesystems/gnome-fs-directory.icon
-share/icons/gnome/72x72/filesystems/gnome-fs-directory.png
 share/icons/gnome/72x72/filesystems/gnome-fs-regular.icon
 share/icons/gnome/72x72/filesystems/gnome-fs-regular.png
-share/icons/gnome/96x96/filesystems/gnome-fs-directory-accept.icon
-share/icons/gnome/96x96/filesystems/gnome-fs-directory-accept.png
-share/icons/gnome/96x96/filesystems/gnome-fs-directory-visiting.icon
-share/icons/gnome/96x96/filesystems/gnome-fs-directory-visiting.png
-share/icons/gnome/96x96/filesystems/gnome-fs-directory.icon
-share/icons/gnome/96x96/filesystems/gnome-fs-directory.png
 share/icons/gnome/96x96/filesystems/gnome-fs-regular.icon
 share/icons/gnome/96x96/filesystems/gnome-fs-regular.png
 share/icons/gnome/index.theme
+share/icons/gnome/scalable/emblems/emblem-favorite.icon
+share/icons/gnome/scalable/emblems/emblem-favorite.svg
+share/icons/gnome/scalable/emblems/emblem-mail.icon
+share/icons/gnome/scalable/emblems/emblem-mail.svg
+share/icons/gnome/scalable/filesystems/gnome-fs-directory-accept.svg
+share/icons/gnome/scalable/filesystems/gnome-fs-directory-visiting.svg
+share/icons/gnome/scalable/filesystems/gnome-fs-directory.svg
+share/icons/gnome/scalable/filesystems/gnome-fs-home.svg
+share/icons/gnome/scalable/filesystems/gnome-fs-trash-empty.svg
+share/icons/gnome/scalable/filesystems/gnome-fs-trash-full.svg
 share/icons/hicolor/16x16/apps/blender.png
 share/icons/hicolor/16x16/apps/config-language.png
 share/icons/hicolor/16x16/apps/gnome-devel.png
 share/icons/hicolor/16x16/apps/gnome-globe.png
+share/icons/hicolor/16x16/apps/gnome-help.png
+share/icons/hicolor/16x16/apps/gnome-logout.png
+share/icons/hicolor/16x16/apps/gnome-run.png
 share/icons/hicolor/16x16/apps/gnome-settings.png
+share/icons/hicolor/16x16/apps/gnome-window-manager.png
 share/icons/hicolor/16x16/apps/im-aim.png
 share/icons/hicolor/16x16/apps/im-icq.png
 share/icons/hicolor/16x16/apps/im-jabber.png
@@ -458,6 +505,7 @@ share/icons/hicolor/16x16/apps/im.png
 share/icons/hicolor/16x16/apps/panel-notification-area.png
 share/icons/hicolor/16x16/apps/panel-window-list.png
 share/icons/hicolor/16x16/apps/panel-window-menu.png
+share/icons/hicolor/16x16/apps/text-editor.png
 share/icons/hicolor/16x16/stock/chart/stock_chart-autoformat.png
 share/icons/hicolor/16x16/stock/chart/stock_chart-data-in-columns.png
 share/icons/hicolor/16x16/stock/chart/stock_chart-data-in-rows.png
@@ -579,6 +627,7 @@ share/icons/hicolor/16x16/stock/document/stock_preview-four-pages.png
 share/icons/hicolor/16x16/stock/document/stock_preview-two-pages.png
 share/icons/hicolor/16x16/stock/document/stock_print-layout.png
 share/icons/hicolor/16x16/stock/document/stock_print-options.png
+share/icons/hicolor/16x16/stock/document/stock_print-resolution.png
 share/icons/hicolor/16x16/stock/document/stock_script.png
 share/icons/hicolor/16x16/stock/document/stock_scripts.png
 share/icons/hicolor/16x16/stock/document/stock_task-assigned-to.png
@@ -705,6 +754,7 @@ share/icons/hicolor/16x16/stock/generic/stock_home.png
 share/icons/hicolor/16x16/stock/generic/stock_id.png
 share/icons/hicolor/16x16/stock/generic/stock_keyring.png
 share/icons/hicolor/16x16/stock/generic/stock_landline-phone.png
+share/icons/hicolor/16x16/stock/generic/stock_leave-fullscreen.png
 share/icons/hicolor/16x16/stock/generic/stock_mark.png
 share/icons/hicolor/16x16/stock/generic/stock_new-24h-appointment.png
 share/icons/hicolor/16x16/stock/generic/stock_new-appointment.png
@@ -751,6 +801,8 @@ share/icons/hicolor/16x16/stock/generic/stock_view-details.png
 share/icons/hicolor/16x16/stock/generic/stock_weather-cloudy.png
 share/icons/hicolor/16x16/stock/generic/stock_weather-few-clouds.png
 share/icons/hicolor/16x16/stock/generic/stock_weather-fog.png
+share/icons/hicolor/16x16/stock/generic/stock_weather-night-clear.png
+share/icons/hicolor/16x16/stock/generic/stock_weather-night-few-clouds.png
 share/icons/hicolor/16x16/stock/generic/stock_weather-showers.png
 share/icons/hicolor/16x16/stock/generic/stock_weather-snow.png
 share/icons/hicolor/16x16/stock/generic/stock_weather-storm.png
@@ -946,6 +998,11 @@ share/icons/hicolor/16x16/stock/media/stock_repeat.png
 share/icons/hicolor/16x16/stock/media/stock_shuffle.png
 share/icons/hicolor/16x16/stock/media/stock_smart-playlist.png
 share/icons/hicolor/16x16/stock/media/stock_volume.png
+share/icons/hicolor/16x16/stock/media/stock_volume-0.png
+share/icons/hicolor/16x16/stock/media/stock_volume-max.png
+share/icons/hicolor/16x16/stock/media/stock_volume-med.png
+share/icons/hicolor/16x16/stock/media/stock_volume-min.png
+share/icons/hicolor/16x16/stock/media/stock_volume-mute.png
 share/icons/hicolor/16x16/stock/navigation/stock_bottom.png
 share/icons/hicolor/16x16/stock/navigation/stock_down-with-subpoints.png
 share/icons/hicolor/16x16/stock/navigation/stock_down.png
@@ -1129,6 +1186,7 @@ share/icons/hicolor/16x16/stock/object/stock_insert_graphic.png
 share/icons/hicolor/16x16/stock/object/stock_insert_special_character.png
 share/icons/hicolor/16x16/stock/object/stock_interaction.png
 share/icons/hicolor/16x16/stock/object/stock_new-bcard.png
+share/icons/hicolor/16x16/stock/object/stock_new-window.png
 share/icons/hicolor/16x16/stock/object/stock_object-behind.png
 share/icons/hicolor/16x16/stock/object/stock_object-infront.png
 share/icons/hicolor/16x16/stock/object/stock_pin.png
@@ -1327,16 +1385,21 @@ share/icons/hicolor/24x24/apps/gnome-devel.png
 share/icons/hicolor/24x24/apps/gnome-favorites.png
 share/icons/hicolor/24x24/apps/gnome-globe.png
 share/icons/hicolor/24x24/apps/gnome-graphics.png
+share/icons/hicolor/24x24/apps/gnome-help.png
 share/icons/hicolor/24x24/apps/gnome-joystick.png
 share/icons/hicolor/24x24/apps/gnome-lockscreen.png
+share/icons/hicolor/24x24/apps/gnome-logout.png
 share/icons/hicolor/24x24/apps/gnome-multimedia.png
+share/icons/hicolor/24x24/apps/gnome-run.png
 share/icons/hicolor/24x24/apps/gnome-searchtool.png
 share/icons/hicolor/24x24/apps/gnome-settings.png
 share/icons/hicolor/24x24/apps/gnome-status.png
 share/icons/hicolor/24x24/apps/gnome-terminal.png
+share/icons/hicolor/24x24/apps/gnome-window-manager.png
 share/icons/hicolor/24x24/apps/panel-notification-area.png
 share/icons/hicolor/24x24/apps/panel-window-list.png
 share/icons/hicolor/24x24/apps/panel-window-menu.png
+share/icons/hicolor/24x24/apps/text-editor.png
 share/icons/hicolor/24x24/stock/chart/stock_chart-autoformat.png
 share/icons/hicolor/24x24/stock/chart/stock_chart-data-in-columns.png
 share/icons/hicolor/24x24/stock/chart/stock_chart-data-in-rows.png
@@ -1435,6 +1498,7 @@ share/icons/hicolor/24x24/stock/document/stock_preview-four-pages.png
 share/icons/hicolor/24x24/stock/document/stock_preview-two-pages.png
 share/icons/hicolor/24x24/stock/document/stock_print-layout.png
 share/icons/hicolor/24x24/stock/document/stock_print-options.png
+share/icons/hicolor/24x24/stock/document/stock_print-resolution.png
 share/icons/hicolor/24x24/stock/document/stock_task-assigned-to.png
 share/icons/hicolor/24x24/stock/document/stock_task-assigned.png
 share/icons/hicolor/24x24/stock/document/stock_task-recurring.png
@@ -1530,6 +1594,7 @@ share/icons/hicolor/24x24/stock/generic/stock_home.png
 share/icons/hicolor/24x24/stock/generic/stock_id.png
 share/icons/hicolor/24x24/stock/generic/stock_keyring.png
 share/icons/hicolor/24x24/stock/generic/stock_landline-phone.png
+share/icons/hicolor/24x24/stock/generic/stock_leave-fullscreen.png
 share/icons/hicolor/24x24/stock/generic/stock_mark.png
 share/icons/hicolor/24x24/stock/generic/stock_new-24h-appointment.png
 share/icons/hicolor/24x24/stock/generic/stock_new-appointment.png
@@ -1740,6 +1805,11 @@ share/icons/hicolor/24x24/stock/media/stock_playlist.png
 share/icons/hicolor/24x24/stock/media/stock_repeat.png
 share/icons/hicolor/24x24/stock/media/stock_smart-playlist.png
 share/icons/hicolor/24x24/stock/media/stock_volume.png
+share/icons/hicolor/24x24/stock/media/stock_volume-0.png
+share/icons/hicolor/24x24/stock/media/stock_volume-max.png
+share/icons/hicolor/24x24/stock/media/stock_volume-med.png
+share/icons/hicolor/24x24/stock/media/stock_volume-min.png
+share/icons/hicolor/24x24/stock/media/stock_volume-mute.png
 share/icons/hicolor/24x24/stock/navigation/stock_bottom.png
 share/icons/hicolor/24x24/stock/navigation/stock_down-with-subpoints.png
 share/icons/hicolor/24x24/stock/navigation/stock_down.png
@@ -1859,6 +1929,7 @@ share/icons/hicolor/24x24/stock/object/stock_insert_graphic.png
 share/icons/hicolor/24x24/stock/object/stock_insert_special_character.png
 share/icons/hicolor/24x24/stock/object/stock_interaction.png
 share/icons/hicolor/24x24/stock/object/stock_new-bcard.png
+share/icons/hicolor/24x24/stock/object/stock_new-window.png
 share/icons/hicolor/24x24/stock/object/stock_object-behind.png
 share/icons/hicolor/24x24/stock/object/stock_object-infront.png
 share/icons/hicolor/24x24/stock/object/stock_pin.png
@@ -2058,6 +2129,7 @@ share/icons/hicolor/32x32/apps/gnome-nibbles.png
 share/icons/hicolor/32x32/apps/gnome-pdf.png
 share/icons/hicolor/32x32/apps/gnome-terminal.png
 share/icons/hicolor/32x32/apps/gnome-util.png
+share/icons/hicolor/32x32/apps/gnome-window-manager.png
 share/icons/hicolor/32x32/apps/hwbrowser.png
 share/icons/hicolor/32x32/apps/iagno.png
 share/icons/hicolor/32x32/apps/keyboard.png
@@ -2069,6 +2141,7 @@ share/icons/hicolor/32x32/apps/panel-window-menu.png
 share/icons/hicolor/32x32/apps/postscript-viewer.png
 share/icons/hicolor/32x32/apps/serviceconf.png
 share/icons/hicolor/32x32/apps/system-floppy.png
+share/icons/hicolor/32x32/apps/text-editor.png
 share/icons/hicolor/32x32/apps/tsclient.png
 share/icons/hicolor/32x32/apps/web-browser.png
 share/icons/hicolor/32x32/apps/xcdroast.png
@@ -2177,13 +2250,18 @@ share/icons/hicolor/48x48/apps/apacheconf.png
 share/icons/hicolor/48x48/apps/applets-screenshooter.png
 share/icons/hicolor/48x48/apps/beast.png
 share/icons/hicolor/48x48/apps/blender.png
+share/icons/hicolor/48x48/apps/burner.png
+share/icons/hicolor/48x48/apps/character-picker.png
+share/icons/hicolor/48x48/apps/clock.png
 share/icons/hicolor/48x48/apps/config-date.png
 share/icons/hicolor/48x48/apps/config-language.png
 share/icons/hicolor/48x48/apps/config-users.png
 share/icons/hicolor/48x48/apps/config-xfree.png
 share/icons/hicolor/48x48/apps/dia_gnome_icon.png
 share/icons/hicolor/48x48/apps/disks.png
+share/icons/hicolor/48x48/apps/drawer.png
 share/icons/hicolor/48x48/apps/evolution.png
+share/icons/hicolor/48x48/apps/eyes.png
 share/icons/hicolor/48x48/apps/file-manager.png
 share/icons/hicolor/48x48/apps/file-roller.png
 share/icons/hicolor/48x48/apps/gdict.png
@@ -2216,6 +2294,7 @@ share/icons/hicolor/48x48/apps/gnome-other.png
 share/icons/hicolor/48x48/apps/gnome-panel.png
 share/icons/hicolor/48x48/apps/gnome-pdf.png
 share/icons/hicolor/48x48/apps/gnome-reboot.png
+share/icons/hicolor/48x48/apps/gnome-run.png
 share/icons/hicolor/48x48/apps/gnome-searchtool-animation-rest.png
 share/icons/hicolor/48x48/apps/gnome-searchtool-animation.png
 share/icons/hicolor/48x48/apps/gnome-searchtool.png
@@ -2250,8 +2329,11 @@ share/icons/hicolor/48x48/apps/im-nov.png
 share/icons/hicolor/48x48/apps/im-yahoo.png
 share/icons/hicolor/48x48/apps/im.png
 share/icons/hicolor/48x48/apps/keyboard.png
+share/icons/hicolor/48x48/apps/launcher-program.png
 share/icons/hicolor/48x48/apps/logviewer.png
+share/icons/hicolor/48x48/apps/modem.png
 share/icons/hicolor/48x48/apps/network-config.png
+share/icons/hicolor/48x48/apps/palm-pilot-sync.png
 share/icons/hicolor/48x48/apps/palm-pilot.png
 share/icons/hicolor/48x48/apps/panel-notification-area.png
 share/icons/hicolor/48x48/apps/panel-window-list.png
@@ -2261,13 +2343,15 @@ share/icons/hicolor/48x48/apps/realplayer.png
 share/icons/hicolor/48x48/apps/screensaver.png
 share/icons/hicolor/48x48/apps/serviceconf.png
 share/icons/hicolor/48x48/apps/sodipodi.png
+share/icons/hicolor/48x48/apps/stock-ticker.png
+share/icons/hicolor/48x48/apps/text-editor.png
 share/icons/hicolor/48x48/apps/tsclient.png
 share/icons/hicolor/48x48/apps/user-info.png
 share/icons/hicolor/48x48/apps/visor.png
+share/icons/hicolor/48x48/apps/volume-knob.png
 share/icons/hicolor/48x48/apps/wallpaper.png
 share/icons/hicolor/48x48/apps/web-browser.png
 share/icons/hicolor/48x48/apps/wine.png
-share/icons/hicolor/48x48/apps/xcdroast.png
 share/icons/hicolor/48x48/apps/xchat.png
 share/icons/hicolor/48x48/apps/xsane.png
 share/icons/hicolor/48x48/stock/code/stock_script.png
@@ -2321,6 +2405,8 @@ share/icons/hicolor/48x48/stock/generic/stock_unknown.png
 share/icons/hicolor/48x48/stock/generic/stock_weather-cloudy.png
 share/icons/hicolor/48x48/stock/generic/stock_weather-few-clouds.png
 share/icons/hicolor/48x48/stock/generic/stock_weather-fog.png
+share/icons/hicolor/48x48/stock/generic/stock_weather-night-clear.png
+share/icons/hicolor/48x48/stock/generic/stock_weather-night-few-clouds.png
 share/icons/hicolor/48x48/stock/generic/stock_weather-showers.png
 share/icons/hicolor/48x48/stock/generic/stock_weather-snow.png
 share/icons/hicolor/48x48/stock/generic/stock_weather-storm.png
@@ -2355,6 +2441,7 @@ share/icons/hicolor/48x48/stock/net/stock_mail-flag-for-followup.png
 share/icons/hicolor/48x48/stock/net/stock_mail-import.png
 share/icons/hicolor/48x48/stock/net/stock_mail-open.png
 share/icons/hicolor/48x48/stock/net/stock_mail-receive.png
+share/icons/hicolor/48x48/stock/net/stock_mail-replied.png
 share/icons/hicolor/48x48/stock/net/stock_mail-send-receive.png
 share/icons/hicolor/48x48/stock/net/stock_mail-send.png
 share/icons/hicolor/48x48/stock/net/stock_mail.png
@@ -2367,79 +2454,90 @@ share/icons/hicolor/48x48/stock/net/stock_spam.png
 share/icons/hicolor/72x72/apps/gnome-globe.png
 share/icons/hicolor/96x96/apps/gnome-globe.png
 share/icons/hicolor/96x96/apps/gnome-starthere.png
-@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/generic 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/document 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/generic 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/document 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/generic 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/document 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/text 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/table 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/object 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/net 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/navigation 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/media 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/io 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/image 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/generic 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/form 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/document 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/data 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/code 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/chart 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24/apps 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/24x24 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/generic 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/emoticons 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/document 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/scalable/mimetypes 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/scalable/filesystems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/scalable/emblems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/scalable/devices 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/scalable 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/96x96/mimetypes 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/96x96/filesystems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/96x96/emblems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/96x96/devices 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/96x96 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/72x72/mimetypes 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/72x72/filesystems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/72x72/emblems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/72x72/devices 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/72x72 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/48x48/mimetypes 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/48x48/filesystems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/48x48/emblems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/48x48/devices 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/48x48/apps 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/48x48 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/36x36/mimetypes 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/36x36/filesystems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/36x36/emblems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/36x36/devices 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/36x36 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/32x32/mimetypes 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/32x32/filesystems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/32x32/devices 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/32x32 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/24x24/mimetypes 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/24x24/filesystems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/24x24/emblems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/24x24/devices 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/24x24 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/192x192/mimetypes 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/192x192/filesystems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/192x192/emblems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/192x192/devices 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/192x192 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/16x16/mimetypes 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/16x16/filesystems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/16x16/devices 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/16x16 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/12x12/mimetypes 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/12x12/filesystems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/12x12/emblems 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/12x12/devices 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome/12x12 2> /dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/icons/gnome 2> /dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/96x96 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/72x72 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/generic 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock/document 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48/stock 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/48x48 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/generic 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock/document 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36/stock 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/36x36 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/generic 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32/stock/document 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/32x32 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/text 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/table 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/object 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/net 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/navigation 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/media 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/io 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/image 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/generic 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/form 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/document 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/data 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/code 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock/chart 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/stock 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24/apps 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/24x24 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/192x192 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/generic 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/emoticons 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16/stock/document 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor/16x16 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/hicolor 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/scalable/mimetypes 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/scalable/filesystems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/scalable/emblems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/scalable/devices 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/scalable 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/96x96/mimetypes 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/96x96/filesystems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/96x96/emblems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/96x96/devices 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/96x96 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/72x72/mimetypes 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/72x72/filesystems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/72x72/emblems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/72x72/devices 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/72x72 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/48x48/mimetypes 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/48x48/filesystems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/48x48/emblems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/48x48/devices 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/48x48/apps 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/48x48 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/36x36/mimetypes 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/36x36/filesystems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/36x36/emblems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/36x36/devices 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/36x36 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/32x32/mimetypes 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/32x32/filesystems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/32x32/devices 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/32x32 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/24x24/mimetypes 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/24x24/filesystems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/24x24/emblems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/24x24/devices 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/24x24 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/192x192/mimetypes 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/192x192/filesystems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/192x192/emblems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/192x192/devices 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/192x192 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/16x16/mimetypes 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/16x16/filesystems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/16x16/devices 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/16x16 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/12x12/mimetypes 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/12x12/filesystems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/12x12/emblems 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/12x12/devices 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome/12x12 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons/gnome 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/icons 2>/dev/null || /usr/bin/true

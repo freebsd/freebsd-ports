@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.4.14
-PORTREVISION=	2
+PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.4,} \
-		ftp://ftp.gtk.org/pub/gtk/v2.4/ \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.6,} \
+		ftp://ftp.gtk.org/pub/gtk/v2.6/ \
 		ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/%SUBDIR%/ \
 		http://www.ameth.org/gimp/%SUBDIR%/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.gimp.org/pub/%SUBDIR%/ \
+		ftp://ftp.mirror.ac.uk/sites/ftp.gimp.org/pub/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	gtk/v${PORTVERSION:R}
 DISTNAME=	gtk+-${PORTVERSION}
@@ -39,7 +39,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 USE_BZIP2=	yes
 LATEST_LINK=	gtk20
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
 USE_PERL5=	yes

@@ -6,6 +6,7 @@ share/gnome/help/zenity/C/figures/zenity-error-screenshot.png
 share/gnome/help/zenity/C/figures/zenity-fileselection-screenshot.png
 share/gnome/help/zenity/C/figures/zenity-information-screenshot.png
 share/gnome/help/zenity/C/figures/zenity-list-screenshot.png
+share/gnome/help/zenity/C/figures/zenity-notification-screenshot.png
 share/gnome/help/zenity/C/figures/zenity-progress-screenshot.png
 share/gnome/help/zenity/C/figures/zenity-question-screenshot.png
 share/gnome/help/zenity/C/figures/zenity-text-screenshot.png
@@ -25,9 +26,7 @@ share/gnome/help/zenity/sr/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/sr/legal.xml
 share/gnome/help/zenity/sr/zenity.xml
 share/gnome/omf/zenity/zenity-C.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/zenity/zenity-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/zenity/zenity-sr.omf
-@exec scrollkeeper-install -q %D/share/gnome/omf/zenity/zenity-sr.omf 2>/dev/null || /usr/bin/true
 share/gnome/zenity/clothes/gnome-tshirt.png
 share/gnome/zenity/clothes/hawaii-shirt.png
 share/gnome/zenity/clothes/monk.png
@@ -37,6 +36,7 @@ share/gnome/zenity/zenity-calendar.png
 share/gnome/zenity/zenity-entry.png
 share/gnome/zenity/zenity-file.png
 share/gnome/zenity/zenity-list.png
+share/gnome/zenity/zenity-notification.png
 share/gnome/zenity/zenity-progress.png
 share/gnome/zenity/zenity-text.png
 share/gnome/zenity/zenity.glade
@@ -112,5 +112,3 @@ share/locale/zh_TW/LC_MESSAGES/zenity-0.1.mo
 @dirrm share/gnome/help/zenity/C/figures
 @dirrm share/gnome/help/zenity/C
 @dirrm share/gnome/help/zenity
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/zenity/zenity-C.omf 2>/dev/null || /usr/bin/true
-@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/zenity/zenity-sr.omf 2>/dev/null || /usr/bin/true

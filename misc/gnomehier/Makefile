@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gnomehier
-PORTVERSION=	1.0
-PORTREVISION=	22
+PORTVERSION=	2.0
+PORTREVISION=	3
 CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -16,29 +16,47 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A utility port that creates the GNOME directory tree
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
 PLIST?=		${WRKDIR}/pkg-plist
+PKGINSTALL=	${WRKDIR}/pkg-install
+
+GNOME_MTREE=	BSD.gnome-x11.dist
 
 USE_X_PREFIX=	yes
+
+GNOME_MTREE_ARGS=${MTREE_ARGS:S|${MTREE_FILE}|${PREFIX}/etc/mtree/${GNOME_MTREE}|}
 
 do-fetch:
 	@${DO_NADA}
 
 pre-install:
-	@${RM} -f ${PLIST}
+	@${CP} -f ${FILESDIR}/dirlist ${WRKDIR}
+	@${RM} -f ${PLIST} ${WRKDIR}/${GNOME_MTREE}
 	@${TOUCH} -f ${PLIST}
-	@${CAT} ${FILESDIR}/dirlist | ${SORT} | ${SED} -e \
-		's|$$|/.keep_me|' >> ${PLIST}
+	@${ECHO_CMD} etc/mtree/${GNOME_MTREE} >> ${PLIST}
+	@${MKDIR} ${WRKSRC}
 	@${CAT} ${FILESDIR}/dirlist | ${SORT} -r | ${SED} -e \
 		's|^|@dirrm |' >> ${PLIST}
+	@${ECHO_CMD} "@unexec ${RMDIR} %D/etc/mtree 2>/dev/null || ${TRUE}" >> ${PLIST}
+	@for dir in `${CAT} ${WRKDIR}/dirlist`; \
+	do \
+		${MKDIR} ${WRKSRC}/$${dir}; \
+	done
+	@${SED} -e 's|%%MTREE_ARGS%%|${GNOME_MTREE_ARGS}|' \
+		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
+
+pre-su-install:
+	${CHGRP} games ${WRKSRC}/share/gnome/games
+	${CHMOD} g=rwXs ${WRKSRC}/share/gnome/games
+	${MTREE_CMD} ${MTREE_ARGS} ${WRKSRC}/
+	cd ${WRKSRC} && \
+		${MTREE_CMD} -U -d -n -i -c -k "uname, gname, mode" \
+			> ${WRKDIR}/${GNOME_MTREE}
 
 do-install:
-	@for dir in `${CAT} ${FILESDIR}/dirlist`; \
-	do \
-		${MKDIR} ${PREFIX}/$${dir}; \
-		${TOUCH} ${PREFIX}/$${dir}/.keep_me; \
-	done
-	${CHGRP} games ${PREFIX}/share/gnome/games
-	${CHMOD} g=rwXs ${PREFIX}/share/gnome/games
+	${MKDIR} ${PREFIX}/etc/mtree
+	${INSTALL_DATA} ${WRKDIR}/${GNOME_MTREE} ${PREFIX}/etc/mtree
+
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

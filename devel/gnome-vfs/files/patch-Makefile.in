@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Tue Nov 30 02:05:26 2004
++++ Makefile.in	Tue Nov 30 02:05:34 2004
+@@ -230,7 +230,6 @@
+ 	devel-docs				\
+ 	doc					\
+ 	programs				\
+-	test					\
+ 	monikers				\
+ 	po
+ 

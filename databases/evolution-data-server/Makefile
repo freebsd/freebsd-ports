@@ -6,38 +6,50 @@
 #
 
 PORTNAME=	evolution-data-server
-PORTVERSION=	1.0.4
+PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The data backends for the Evolution integrated mail/PIM suite
 
-LIB_DEPENDS=	soup-2.2.7:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	soup-2.2.7:${PORTSDIR}/devel/libsoup \
+		nss3.1:${PORTSDIR}/security/nss
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget libgnome
+USE_GNOME=	gnomeprefix gnomehack intlhack gnometarget libgnomeui
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--enable-static
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-static \
+		--enable-nss=yes \
+		--with-nss-includes=${LOCALBASE}/include/nss/nss \
+		--with-nss-libs=${LOCALBASE}/lib \
+		--with-nspr-includes=${LOCALBASE}/include/nspr \
+		--with-nspr-libs=${LOCALBASE}/lib \
+		--with-krb5=/usr
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-PLIST_SUB=	VERSION="1.0" EVO_VERSION="1.0"
+PLIST_SUB=	VERSION="1.2" EVO_VERSION="1.2"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 600012
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libedataserver_e-msgport.c
+.endif
 
 .if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-openldap=yes
-PLIST_SUB+=	LDAP=""
 .else
 CONFIGURE_ARGS+=--with-openldap=no
-PLIST_SUB+=	LDAP="@comment "
 .endif
 
 pre-everything::
@@ -46,4 +58,4 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_LDAP	Disable LDAP support"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
