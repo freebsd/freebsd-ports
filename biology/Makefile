@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.1.1.1 1997/12/13 05:54:24 asami Exp $
+# $Id: Makefile,v 1.2 1997/12/15 17:47:41 vanilla Exp $
 #
 
+    SUBDIR += babel
     SUBDIR += rasmol
 
 .include <bsd.port.subdir.mk>
