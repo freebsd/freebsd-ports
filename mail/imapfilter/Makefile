@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imapfilter
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	mail
 MASTER_SITES=	http://imapfilter.hellug.gr/source/
 
