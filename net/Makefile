@@ -584,6 +584,7 @@
     SUBDIR += radreport
     SUBDIR += radvd
     SUBDIR += rancid
+    SUBDIR += rate
     SUBDIR += rboot
     SUBDIR += rdesktop
     SUBDIR += rdist6

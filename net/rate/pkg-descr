@@ -1,0 +1,15 @@
+Rate is a swiss-army-knife command-line traffic analysis tool, designed 
+to help a network administrator to see what is happening at a router at 
+the moment. Unlike tcpdump(1), rate uses statistical and stream-oriented 
+methods, and will never produce an output stream at a speed beyond human 
+perception. The output is less accurate, however. Rate features four 
+different operating modes, designed to perform the following tasks: 
+estimating overall traffic rates, determining nodes generating the 
+highest traffic, determining connections and flows generating the highest 
+traffic and extracting strings from packets.
+
+WWW:	http://s-tech.elsat.net.pl/
+AUTHOR:	<mtg@elsat.net.pl>
+
+- Michael L. Hostbaek
+   mich@FreeBSD.org
