@@ -11,7 +11,7 @@ CATEGORIES=	ftp gnome
 MASTER_SITES=	http://www.junglemonkey.net/src/
 DISTNAME=	jm-${PORTVERSION}
 
-MAINTAINER=	ade@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnet.0:${PORTSDIR}/net/gnet \
 		popt.0:${PORTSDIR}/devel/popt \
