@@ -1243,6 +1243,7 @@ dcetest		ports/security/dcetest
 dcgui		ports/net/dcgui
 dclib		ports/net/dclib
 dclock		ports/x11-clocks/dclock
+dcraw		ports/graphics/dcraw
 dctc		ports/net/dctc
 dctc-gui	ports/net/dctc-gui
 dctc-gui-qt	ports/net/dctc-gui-qt
