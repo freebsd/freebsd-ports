@@ -7,6 +7,7 @@
 
 PORTNAME=	doscmd
 PORTVERSION=	20040324
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	des
@@ -22,5 +23,8 @@ PLIST_SUB+=	X11="@comment "
 USE_XLIB=	yes
 PLIST_SUB+=	X11=""
 .endif
+MAKE_ARGS+=	MANDIR="${PREFIX}/man/man"
+MAN1=		doscmd.1
+MANCOMPRESSED=	yes
 
 .include <bsd.port.mk>
