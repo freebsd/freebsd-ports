@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plone
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	plone
@@ -23,12 +23,13 @@ USE_PYTHON=	yes
 
 WRKSRC=		${WRKDIR}/Plone-${PORTVERSION}
 PLIST=		${WRKDIR}/pkg-plist
-MODULES=	CMFPlone CMFFormController
+MODULES=	CMFPlone
 
 OPTIONS=	FORMULATOR "Install Formulator port" off \
 		BTREEFOLDER2 "Install BTreeFolder2 port" off \
 		CMFQUICKINSTALLER "Install CMFQuickInstallerTool port" off \
 		CMFACTIONICONS "Install CMFActionIcons port" off \
+		CMFFORMCONTROLLER "Install CMFFormController port" off \
 		GROUPUSERFOLDER "Install GroupUserFolder port" off \
 		PLTRANSSERVICE "Install PlacelessTranslationService port" off
 
@@ -56,6 +57,12 @@ MODULES+=	CMFQuickInstallerTool
 RUN_DEPENDS+=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFActionIcons/__init__.py:${PORTSDIR}/www/zope-cmfactionicons
 .else
 MODULES+=	CMFActionIcons
+.endif
+
+.if defined(WITH_CMFFORMCONTROLLER)
+RUN_DEPENDS+=   ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFFormController/__init__.py:${PORTSDIR}/www/zope-cmfformcontroller
+.else
+MODULES+=   CMFFormController
 .endif
 
 .if defined(WITH_GROUPUSERFOLDER)
@@ -107,6 +114,11 @@ do-install:
 			${CP} -R $${m} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}; \
 		fi; \
 	done
+#fix permissions when bundled CMFFormController
+#is installed
+.if !defined(WITH_CMFFORMCONTROLLER)
+	@${CHMOD} -R a+rX ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFFormController/
+.endif
 
 post-install:
 .if !defined(BATCH)
