@@ -49,6 +49,7 @@ share/gnupg/options.skel
 %%NLS%%share/locale/sk/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gnupg.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/gnupg.mo
 @dirrm share/gnupg
 @unexec rmdir %D/share/locale/be/LC_MESSAGES 2>/dev/null || true
@@ -58,50 +59,34 @@ share/gnupg/options.skel
 @unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/cs 2>/dev/null || true
 @unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/da 2>/dev/null || true
 @unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
 @unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/el 2>/dev/null || true
 @unexec rmdir %D/share/locale/eo/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/eo 2>/dev/null || true
 @unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/es 2>/dev/null || true
 @unexec rmdir %D/share/locale/et/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/et 2>/dev/null || true
 @unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fi 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
 @unexec rmdir %D/share/locale/gl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/gl 2>/dev/null || true
 @unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/hu 2>/dev/null || true
 @unexec rmdir %D/share/locale/id/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/id 2>/dev/null || true
 @unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/it 2>/dev/null || true
 @unexec rmdir %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ja 2>/dev/null || true
 @unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/nl 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
 @unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ro 2>/dev/null || true
 @unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/ru 2>/dev/null || true
 @unexec rmdir %D/share/locale/sk/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sk 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sv 2>/dev/null || true
 @unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/tr 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
 @dirrm share/doc/gnupg
