@@ -1,6 +1,6 @@
 --- configure.in.orig	Fri May  3 16:43:04 2002
-+++ configure.in	Fri Sep  6 22:47:11 2002
-@@ -144,48 +144,8 @@
++++ configure.in	Wed Dec 18 19:47:26 2002
+@@ -144,49 +144,6 @@
    CFLAGS="$CFLAGS -DqCvsDebug=1"
  fi
  
@@ -46,8 +46,7 @@
 -AM_CONDITIONAL(HAVE_GETOPT_H, test x$as_ac_Header= xyes)
 -
 -fi
-+AC_CHECK_HEADERS(getopt.h)
-+AM_CONDITIONAL(HAVE_GETOPT_H, test x$as_ac_Header = xyes)
- 
+-
  dnl Set PACKAGE_DATA_DIR in config.h.
  if test "x${datadir}" = 'x${prefix}/share'; then
+   if test "x${prefix}" = "xNONE"; then
