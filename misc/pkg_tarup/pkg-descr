@@ -1,4 +1,4 @@
-Script to tar up an already instaled package.
+Script to tar up an already installed package.
 
 The Script has still a problem, as the MTREE file is removed after
 a pkg_add/make install. As leaving the MTREE file will lead to a
