@@ -93,6 +93,7 @@ share/doc/libgnomedb/libgnomedb-introduction.html
 share/doc/libgnomedb/libgnomedb-libgnomedb.html
 share/doc/libgnomedb/libgnomedb-widgets.html
 share/gnome/control-center-2.0/capplets/database-properties.desktop
+share/gnome/gnome-db/ui/gnome-components-shell.xml
 share/gnome/mime-info/libgnomedb.keys
 share/gnome/mime-info/libgnomedb.mime
 share/gnome/omf/libgnomedb/libgnomedb-C.omf
@@ -144,6 +145,7 @@ share/locale/hu/LC_MESSAGES/libgnomedb-2.mo
 share/locale/it/LC_MESSAGES/libgnomedb-2.mo
 share/locale/ja/LC_MESSAGES/libgnomedb-2.mo
 share/locale/ko/LC_MESSAGES/libgnomedb-2.mo
+share/locale/ml/LC_MESSAGES/libgnomedb-2.mo
 share/locale/ms/LC_MESSAGES/libgnomedb-2.mo
 share/locale/nl/LC_MESSAGES/libgnomedb-2.mo
 share/locale/no/LC_MESSAGES/libgnomedb-2.mo
@@ -164,6 +166,7 @@ share/locale/zh_CN/LC_MESSAGES/libgnomedb-2.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomedb-2.mo
 @dirrm share/gnome/pixmaps/libgnomedb
 @dirrm share/gnome/omf/libgnomedb
+@dirrm share/gnome/gnome-db
 @dirrm share/doc/libgnomedb
 @dirrm include/libgnomedb
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/UI
