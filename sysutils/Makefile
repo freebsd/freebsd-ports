@@ -54,6 +54,7 @@
     SUBDIR += no-login
     SUBDIR += npadmin
     SUBDIR += nut
+    SUBDIR += nwclient
     SUBDIR += obliterate
     SUBDIR += p5-SyslogScan
     SUBDIR += pib
