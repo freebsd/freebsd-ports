@@ -182,8 +182,6 @@
 %%EMACS20%%%%LISPDIR%%/w3m-e20.elc
 %%LISPDIR%%/w3m-e21.el
 %%EMACS21%%%%LISPDIR%%/w3m-e21.elc
-%%LISPDIR%%/w3m-filter.el
-%%LISPDIR%%/w3m-filter.elc
 %%LISPDIR%%/w3m-fsf.el
 %%EMACS%%%%LISPDIR%%/w3m-fsf.elc
 %%LISPDIR%%/w3m-form.el
