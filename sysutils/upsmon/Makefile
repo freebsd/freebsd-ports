@@ -10,7 +10,7 @@ PORTVERSION=	2.1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://newcorridor.com/pub/upsmon/
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Basic UPS monitor for the APC SmartUPS devices
 
 MAKEFILE=	makefile.bsdi
