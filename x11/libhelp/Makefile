@@ -3,7 +3,7 @@
 # Date created:		11 December 96
 # Whom:			Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/09 08:13:33 tg Exp $
+# $Id: Makefile,v 1.2 1998/04/14 04:21:51 asami Exp $
 #
 
 DISTNAME=	libhelp-1.8.1
@@ -11,8 +11,6 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.informatik.uni-stuttgart.de/pub/libhelp/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
-
-BROKEN=		build
 
 REQUIRES_MOTIF= YES
 USE_IMAKE=	YES
