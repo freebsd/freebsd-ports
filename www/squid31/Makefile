@@ -7,14 +7,14 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	\
-	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
-	ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/%SUBDIR%/ \
-	ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
-	ftp://ftp.net.lut.ac.uk/squid/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
+		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
+		ftp://www.unimelb.edu.au/pub/cwis/servers/unix/squid/%SUBDIR%/ \
+		ftp://sunsite.auc.dk/pub/infosystems/squid/%SUBDIR%/ \
+		ftp://ftp.net.lut.ac.uk/squid/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
 DISTNAME=	squid-2.5.STABLE4
 EXTRACT_SUFX=	.tar.bz2
@@ -27,7 +27,6 @@ PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
 		squid-2.5.STABLE4-fqdnnegcache.patch \
 		pam_auth-2.2.patch \
 		squid-2.5.STABLE4_auth_param_doc.patch \
-		squid-2.5.STABLE4-errorpages.patch \
 		squid-2.5.STABLE4-error_load_text.patch \
 		squid-2.5.STABLE4-xpi_mime.patch \
 		squid-2.5.STABLE4-size_overflow.patch \
@@ -47,7 +46,12 @@ PATCHFILES=	squid-2.5.STABLE4-reconfigure_message.patch \
 		squid-2.5.STABLE4-pconn-lifo.patch \
 		squid-2.5.STABLE4-cache_peer_maxconn.patch \
 		squid-2.5.STABLE4-pid_filename_none.patch \
-		squid-2.5.STABLE4-dns_namelength.patch
+		squid-2.5.STABLE4-dns_namelength.patch \
+		squid-2.5.STABLE4-urllogin_acl.patch \
+		squid-2.5.STABLE4-russian.patch \
+		squid-2.5.STABLE4-redirlog.patch \
+		squid-2.5.STABLE4-pinger.patch \
+		squid-2.5.STABLE4-partial_reload.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	adrian@freebsd.org
@@ -134,7 +138,7 @@ MAN8=	pam_auth.8 squid_unix_group.8 squid.8
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/doc/squid.8
-	# Prevent installation of .orig files by deleting them.
+# Prevent installation of .orig files by deleting them.
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
