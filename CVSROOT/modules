@@ -817,7 +817,6 @@ bwbasic		ports/lang/bwbasic
 bwidget		ports/x11-toolkits/bwidget
 byaccj		ports/devel/byaccj
 bygfoot		ports/games/bygfoot
-bytebench	ports/benchmarks/bytebench
 bzflag		ports/games/bzflag
 bzip		ports/archivers/bzip
 c-hey		ports/misc/c-hey
@@ -10993,6 +10992,7 @@ unison		ports/net/unison
 unix2dos	ports/converters/unix2dos
 unix2tcp	ports/net/unix2tcp
 unixODBC	ports/databases/unixODBC
+unixbench	ports/benchmarks/unixbench
 unixstat	ports/math/unixstat
 unlzx		ports/archivers/unlzx
 unpost		ports/news/unpost

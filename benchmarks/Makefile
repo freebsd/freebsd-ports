@@ -6,7 +6,6 @@
     SUBDIR += autobench
     SUBDIR += bonnie
     SUBDIR += bonnie++
-    SUBDIR += bytebench
     SUBDIR += dbench
     SUBDIR += dbs
     SUBDIR += dkftpbench
@@ -38,6 +37,7 @@
     SUBDIR += tmetric
     SUBDIR += ttcp
     SUBDIR += ubench
+    SUBDIR += unixbench
     SUBDIR += webbench
     SUBDIR += xengine
 
