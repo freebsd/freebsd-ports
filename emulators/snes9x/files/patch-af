@@ -1,5 +1,5 @@
---- unix/unix.cpp.orig	Wed Jan 10 06:40:14 2001
-+++ unix/unix.cpp	Mon Jan 22 00:17:21 2001
+--- unix/unix.cpp.orig	Wed Jan 10 15:40:14 2001
++++ unix/unix.cpp	Wed Jan 24 10:27:30 2001
 @@ -51,9 +51,11 @@
  #include <ctype.h>
  
@@ -266,7 +266,7 @@
  void InitJoysticks ()
  {
  #ifdef JSIOCGVERSION
-@@ -731,6 +755,188 @@
+@@ -731,6 +755,185 @@
      }
  #endif
  }
@@ -290,9 +290,6 @@
 +	struct hid_item h, new_h;
 +	struct js_info *my_info;
 +	int reportlen, report_id, is_joystick;
-+#if __FreeBSD__ <= 4
-+	int* hid_input_ptr;
-+#endif
 +
 +	my_info = &js_info[js_count];
 +	rd = hid_get_report_desc(fd);
@@ -305,7 +302,7 @@
 +	reportlen = hid_report_size(rd, report_id, hid_input);
 +#else
 +	*hid_input_ptr = hid_input;
-+	reportlen = hid_report_size(rd, report_id, hid_input_ptr);
++	reportlen = hid_report_size(rd, hid_input, &report_id);
 +#endif
 +	my_info->buf = (char *)malloc(reportlen);
 +	if (my_info->buf == NULL)
@@ -455,7 +452,7 @@
  #endif // defined (JOYSTICK_SUPPORT)
  
  const char *GetHomeDirectory ()
-@@ -1423,7 +1629,7 @@
+@@ -1423,7 +1626,7 @@
  }
  #endif
  
@@ -464,7 +461,7 @@
  static int Rates[8] =
  {
      0, 8192, 11025, 16500, 22050, 29300, 36600, 44000
-@@ -1542,7 +1748,7 @@
+@@ -1542,7 +1745,7 @@
  }
  #endif
  
@@ -473,7 +470,7 @@
  void S9xUnixProcessSound (void)
  {
  }
-@@ -1641,7 +1847,7 @@
+@@ -1641,7 +1844,7 @@
  
  void *S9xProcessSound (void *)
  {
