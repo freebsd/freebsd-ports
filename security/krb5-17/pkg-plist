@@ -26,14 +26,11 @@ include/gssapi/gssapi.h
 include/gssapi/gssapi_generic.h
 include/gssapi/gssapi_krb5.h
 include/kerberosIV/des.h
-include/kerberosIV/kadm.h
+include/kerberosIV/kadm_err.h
 include/kerberosIV/krb.h
 include/kerberosIV/krb_err.h
 include/kerberosIV/mit-copyright.h
 include/krb5.h
-include/libpty.h
-include/mit-sipb-copyright.h
-include/port-sockets.h
 include/profile.h
 info/krb425.info
 info/krb5-admin.info
@@ -50,9 +47,6 @@ lib/libcom_err.so.3
 lib/libdes425.a
 lib/libdes425.so
 lib/libdes425.so.3
-lib/libdyn.a
-lib/libdyn.so
-lib/libdyn.so.1
 lib/libgssapi_krb5.a
 lib/libgssapi_krb5.so
 lib/libgssapi_krb5.so.2
@@ -70,18 +64,13 @@ lib/libkadm5srv.so
 lib/libkadm5srv.so.5
 lib/libkdb5.a
 lib/libkdb5.so
-lib/libkdb5.so.3
+lib/libkdb5.so.4
 %%KRB4%%lib/libkrb4.a
 %%KRB4%%lib/libkrb4.so
 %%KRB4%%lib/libkrb4.so.2
 lib/libkrb5.a
 lib/libkrb5.so
 lib/libkrb5.so.3
-%%KRB4%%lib/libkrb524.a
-lib/libpty.a
-lib/libpty.so
-lib/libpty.so.1
-lib/libss.a
 sbin/ftpd
 sbin/gss-server
 sbin/kadmin
@@ -104,21 +93,9 @@ sbin/telnetd
 sbin/uuserver
 sbin/v5passwdd
 share/doc/krb5/README.FreeBSD
-share/doc/krb5/admin.html
-share/doc/krb5/admin_foot.html
-share/doc/krb5/admin_toc.html
-share/doc/krb5/install.html
-share/doc/krb5/install_foot.html
-share/doc/krb5/install_toc.html
-share/doc/krb5/krb425.html
-share/doc/krb5/krb425_toc.html
-share/doc/krb5/user-guide.html
-share/doc/krb5/user-guide_foot.html
-share/doc/krb5/user-guide_toc.html
 share/gnats/mit
 @dirrm include/gssapi
 @dirrm include/kerberosIV
-@dirrm share/doc/krb5
 @exec install-info %D/info/krb425.info %D/info/dir
 @exec install-info %D/info/krb5-admin.info %D/info/dir
 @exec install-info %D/info/krb5-install.info %D/info/dir

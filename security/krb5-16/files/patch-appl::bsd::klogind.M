@@ -1,10 +1,11 @@
 --- appl/bsd/klogind.M.orig	Wed Feb 28 14:06:43 2001
 +++ appl/bsd/klogind.M	Mon Dec 31 21:22:27 2001
-@@ -14,6 +14,7 @@
+@@ -14,7 +14,7 @@
+ .B \-kr54cpPef
  ]
- [
- [ \fB\-w\fP[\fBip\fP|\fImaxhostlen\fP[\fB,\fP[\fBno\fP]\fBstriplocal\fP]] ]
-+[\fB\-L\fP \fIloginpath\fP]
+ [[ \fB\-w\fP[\fBip\fP|\fImaxhostlen\fP[\fB,\fP[\fBno\fP]\fBstriplocal\fP ]] ]
+-[ \fB\-D\fP \fIport\fP ]
++[ \fB\-D\fP \fIport\fP ] [\fB\-L\fP \fIloginpath\fP]
  .SH DESCRIPTION
  .I Klogind
  is the server for the 
@@ -29,6 +30,6 @@
 -DO_NOT_USE_K_LOGIN was not defined when
 -.I klogind
 -was compiled.
- .SH DIAGNOSTICS
- All diagnostic messages are returned on the connection
- associated with the
+ 
+ .IP \fB\-D\ port\fP
+ Run in standalone mode, listening on \fBport\fP.  The daemon will exit
