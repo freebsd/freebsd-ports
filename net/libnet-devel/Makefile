@@ -5,23 +5,34 @@
 # $FreeBSD$
 #
 
-PORTNAME=	libnet-devel
-PORTVERSION=	1.1.0
+PORTNAME=	libnet
+PORTVERSION=	1.1.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
-DISTNAME=	${PORTNAME:S/-devel$//}-${PORTVERSION}
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	smace@freebsd.org
 COMMENT=	A C library for creating IP packets (development version)
 
-WRKSRC=		${WRKDIR}/Libnet-latest
+CONFLICTS=	libnet-1.*
 
-USE_AUTOMAKE=   yes
-USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN3=		libnet.3
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+DOCS=		README doc/BUGS doc/CHANGELOG doc/CONTRIB doc/COPYING \
+		doc/DESIGN_NOTES doc/MIGRATION doc/PACKET_BUILDING doc/PORTED \
+		doc/RAWSOCKET_NON_SEQUITUR doc/TODO doc/html/*
+EXAMPLES=	sample/*.c
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/libnet-config ${PREFIX}/bin
+	@${MKDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
