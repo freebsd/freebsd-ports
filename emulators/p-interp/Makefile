@@ -30,7 +30,7 @@ post-extract:
 		@cp ${DISTDIR}/apple_pascal_?.dsk.gz ${WRKDIR}/${DISTNAME}
 		@gunzip ${WRKDIR}/${DISTNAME}/apple_pascal_?.dsk.gz
 
-post-patch:
+pre-build:
 		cd ${WRKDIR}/${DISTNAME} && ${MAKE} depend
 
 post-build:
