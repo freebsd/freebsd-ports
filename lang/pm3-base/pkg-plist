@@ -8,7 +8,6 @@ bin/sgmllinear
 bin/sgmlnormalize
 bin/sgmlstructure
 bin/sgmltom3
-info/dir
 lib/m3/%%TARGET%%/libDiGraph.so.%%SOVERSION%%
 lib/m3/%%TARGET%%/libGeometry.so.%%SOVERSION%%
 lib/m3/%%TARGET%%/libTempFiles.so.%%SOVERSION%%
