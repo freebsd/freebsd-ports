@@ -8017,6 +8017,7 @@ sted		ports/editors/sted
 stegdetect	ports/security/stegdetect
 steghide	ports/security/steghide
 stella		ports/emulators/stella
+stickynotes_applet	ports/misc/stickynotes_applet
 sting		ports/net/sting
 stk		ports/lang/STk
 stldoc		ports/lang/stldoc
