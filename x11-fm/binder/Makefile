@@ -20,6 +20,8 @@ COMMENT=	A file manager on X window with TkStep
 RUN_DEPENDS=	${RUN_DEP_LIST}
 LIB_DEPENDS=	${LIB_DEP_LIST}
 
+BROKEN=		Incomplete pkg-plist
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
