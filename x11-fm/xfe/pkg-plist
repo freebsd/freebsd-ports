@@ -1,7 +1,6 @@
 bin/xfe
 bin/xfq
 bin/xfv
-lib/charset.alias
 lib/foxicons/a_32x32.gif
 lib/foxicons/bak_16x16.gif
 lib/foxicons/bak_32x32.gif
@@ -141,7 +140,6 @@ lib/foxicons/zip_32x32.gif
 lib/foxrc/Desktop
 share/locale/fr/LC_MESSAGES/xfe.mo
 share/locale/de/LC_MESSAGES/xfe.mo
-share/locale/locale.alias
 share/locale/pt_BR/LC_MESSAGES/xfe.mo
 share/locale/pl/LC_MESSAGES/xfe.mo
 share/pixmaps/xfe.png

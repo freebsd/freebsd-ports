@@ -16,6 +16,7 @@ MAINTAINER=	ptiJo@noos.fr
 COMMENT=	Fast MS-Explorer like filemanager for X
 
 LIB_DEPENDS=	FOX:${PORTSDIR}/x11-toolkits/fox \
+		intl.5:${PORTSDIR}/devel/gettext \
 		png.5:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
@@ -32,6 +33,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-I/usr/include/fox|-I${LOCALBASE}/include/|g' \
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/xfq/Makefile.in \
 		${WRKSRC}/xfv/Makefile.in
+	@${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings|' ${WRKSRC}/configure
 
 MAN1=		xfe.1 xfq.1 xfv.1
 
