@@ -44,7 +44,7 @@
  		find $(root)$(manualdir)/ -type d -exec chmod a+rx {} \; ; \
  		find $(root)$(manualdir)/ -type f -print | xargs chmod a+r ; \
 +#        fi
-+	$(LN) -sf $(root)$(manualdir) $(root)$(htdocsdir).default/manual
++#	$(LN) -sf $(root)$(manualdir) $(root)$(htdocsdir).default/manual
 +	if [ ! -d $(root)$(htdocsdir)/ ]; then \
 +		$(LN) -sf $(root)$(htdocsdir).default $(root)$(htdocsdir); \
  	fi
