@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/xvmixer/ \
 		ftp://quenix.dyndns.org/freebsd/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gagnon_s@sympatico.ca
 COMMENT=	Open Look-based audio mixer
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview

@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://freesoftware.fsf.org/download/9box/ \
 		http://savannah.nongnu.org/download/9box/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gagnon_s@sympatico.ca
 COMMENT=	9box can "pack" windows inside itself
 
 PLIST_FILES=	bin/9box
