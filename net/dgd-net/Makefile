@@ -3,7 +3,7 @@
 # Date created:		17 June 1996
 # Whom:			adam
 #
-# $Id: Makefile,v 1.12 1996/11/06 17:00:46 adam Exp $
+# $Id: Makefile,v 1.13 1996/11/13 15:18:23 adam Exp $
 #
 
 DISTNAME=	dgd-net-1.0.93
@@ -20,8 +20,8 @@ PATCHFILES=	1.0.91-1.0.92.gz \
 
 MAINTAINER=	adam@veda.is
 
-NO_CDROM=	no distribution to corporate environment
-RESTRICTED=	license required for commercial use
+NO_CDROM=	"no distribution to corporate environment"
+RESTRICTED=	"license required for commercial use"
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src

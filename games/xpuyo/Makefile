@@ -3,7 +3,7 @@
 # Date created:        12 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/16 12:24:28 asami Exp $
 #
 
 DISTNAME=	xpuyo
@@ -17,7 +17,7 @@ USE_IMAKE=	yes
 XMKMF=		xmkmf
 NO_INSTALL_MANPAGES=yes
 
-RESTRICTED=	the author ashames the quality of this version
+RESTRICTED=	"The author ashames the quality of this version"
 
 post-install:
 	@chmod 755 ${PREFIX}/bin/xpuyo
