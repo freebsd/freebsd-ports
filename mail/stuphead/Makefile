@@ -7,7 +7,7 @@
 
 PORTNAME=	stuphead
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://stuphead.antex.ru/
 
@@ -15,8 +15,6 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-1.patch
 
 MAINTAINER=	ozz@FreeBSD.org.ru
-
-BROKEN=		"Does not package correctly"
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
