@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embedding Mozilla in wxWindows
 
-BUILD_DEPENDS=	${X11BASE}/lib/firebird/lib/pkgconfig/mozilla-nspr.pc:${PORTSDIR}/www/mozilla-firebird \
+BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/mozilla-nspr.pc:${PORTSDIR}/www/firefox \
 		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 RUN_DEPENDS=	${BUILD_DEPENDS}
