@@ -7,7 +7,7 @@
 
 PORTNAME=	birda
 PORTVERSION=	1.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/
 
