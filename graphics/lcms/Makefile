@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lcms
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -18,7 +18,7 @@ COMMENT=	Light Color Management System -- a color management library
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
-USE_GNOME=	gnometarget lthack
+USE_GNOME=	gnomehack gnometarget lthack
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

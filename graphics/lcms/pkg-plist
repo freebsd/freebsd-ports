@@ -3,6 +3,7 @@ include/lcms.h
 lib/liblcms.a
 lib/liblcms.so
 lib/liblcms.so.1
+libdata/pkgconfig/lcms.pc
 %%PORTDOCS%%%%DOCSDIR%%/LCMSAPI.TXT
 %%PORTDOCS%%%%DOCSDIR%%/TUTORIAL.TXT
 %%PORTDOCS%%%%DOCSDIR%%/iccjpeg.c
