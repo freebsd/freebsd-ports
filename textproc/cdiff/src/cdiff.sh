@@ -6,7 +6,7 @@
             fetch -q -o - $1
 	    ;;
     	*)
-            cat $1
+            zcat -f $1
 	    ;;
         esac
 	shift;
