@@ -12,6 +12,7 @@ bin/scheme-r5rs
 bin/scheme-srfi-0
 bin/scheme-srfi-7
 include/c_defaults.h
+include/chicken-config.h
 include/chicken.h
 lib/libchicken.a
 lib/libchicken.la
@@ -37,7 +38,6 @@ lib/libustuffed-chicken.a
 lib/libustuffed-chicken.la
 lib/libustuffed-chicken.so
 lib/libustuffed-chicken.so.0
-%%DATADIR%%/chicken.init
 %%DATADIR%%/highlevel-macros.scm
 %%DATADIR%%/match.scm
 %%DATADIR%%/moremacros.scm
@@ -55,7 +55,6 @@ lib/libustuffed-chicken.so.0
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/chicken.eps
 %%PORTDOCS%%%%DOCSDIR%%/chicken.jpg
 %%PORTDOCS%%%%DOCSDIR%%/chicken.png
@@ -112,7 +111,10 @@ lib/libustuffed-chicken.so.0
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-46.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-47.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-48.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-49.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-5.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-50.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-51.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-6.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-7.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/manual-Z-H-8.html
