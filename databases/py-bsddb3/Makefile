@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python extension module for BerkeleyDB 3 and 4
 
-BROKEN=		Does not build
-
 .if defined(WITH_DB3)
 WITH_BDB_VER?=	3
 .elif defined(WITH_DB4)
@@ -43,18 +41,19 @@ LIB_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
 DBVERSION=	db-4.2
 DBHEADER=	db42
 .else
-BROKEN=		"WITH_BDB_VER must be 3, 4, 41 or 42"
+IGNORE=		"WITH_BDB_VER must be 3, 4, 41 or 42"
 .endif
 .endif
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=	yes
+PYDISTUTILS_CONFIGUREARGS=--libs="-l${DBVERSION}" --berkeley-db=${LOCALBASE}
 PYDISTUTILS_BUILDARGS=	--libs="-l${DBVERSION}" --berkeley-db=${LOCALBASE}
 PYDISTUTILS_INSTALLARGS=-c -O1 --prefix=${PREFIX} --berkeley-db=${LOCALBASE}
 
 post-patch:
 	${REINPLACE_CMD} 's,%%DBVERSION%%,${DBVERSION},g' ${WRKSRC}/setup.py
-	${REINPLACE_CMD} 's,<db\.h>,<${DBVERSION}/db.h>,' ${WRKSRC}/extsrc/_bsddb.c
+	${REINPLACE_CMD} 's,<db\.h>,<${DBHEADER}/db.h>,' ${WRKSRC}/extsrc/_bsddb.c
 
 .include <bsd.port.mk>
