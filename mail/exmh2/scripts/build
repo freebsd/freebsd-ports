@@ -1,12 +1,17 @@
 #! /bin/sh
 #
-# $Id: build,v 1.4 1997/08/14 03:44:30 peter Exp $
+# $Id: build,v 1.5 1997/08/21 08:09:56 peter Exp $
 #
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
 DATE="`sed -ne 's/^set date \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
 
 SEDFILE=sed.$$
+if [ x${USE_NMH} = xYES ] ; then
+  CONFIGFILE=config.nmh
+else
+  CONFIGFILE=config.mh
+fi
 
 EXPECT="{}"
 EXPECTK="{}"
@@ -50,7 +55,7 @@ if [ "${EXPECT}" != "{}" ]; then
 fi
 echo "/^#CONFIGURATION/a\\" >>${SEDFILE}
 
-sed <${FILESDIR}/config \
+sed <${FILESDIR}/${CONFIGFILE} \
 	-e "s+!!PREFIX!!+${PREFIX}+g" \
 	-e "s+!!WISH!!+${WISH}+g" \
 	-e "s+!!EXPECT!!+${EXPECT}+g" \
