@@ -1,11 +1,11 @@
---- plugins/check_by_ssh.c.orig	Fri Jun 21 11:19:56 2002
-+++ plugins/check_by_ssh.c	Fri Jun 21 11:54:25 2002
+--- plugins/check_by_ssh.c.orig	Mon Apr 23 09:43:11 2001
++++ plugins/check_by_ssh.c	Tue Jul 22 05:05:52 2003
 @@ -191,7 +191,7 @@
  	if (commands>1)
  		remotecmd=strscat(remotecmd,";echo STATUS CODE: $?;");
  
 -	if (strlen (remotecmd) <= 1)
-+	if (remotecmd==NULL)
++	if ((remotecmd==NULL) || (strlen (remotecmd) <= 1))
  		usage ("No remotecmd\n");
  
  	comm = ssprintf(comm,"%s %s '%s'",comm,hostname,remotecmd);
@@ -23,7 +23,7 @@
  
  #define OPTIONS "\
 --H <host> [-P port] [-f] [-y] [-t timeout] [-i identity]\n
-+-H <host> -C <command> [-fyv] [-P port] [-t timeout] [-i identity]\n
++-H <host> -C <command> [-fyv] [-P port] [-t timeout] [-i identity]\n\
               [-l user] [-n name] [-s servicelist] [-O outputfile]"
  
  void print_usage(void)

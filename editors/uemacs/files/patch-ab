@@ -70,13 +70,13 @@
 +#define ALCYON	0	/* ALCYON Atari ST compiler */ 
 +#define AZTEC	0	/* Aztec C 4.00e ONLY for the amiga now... */
 +#define DGC	0	/* Data General AOS/VS C... */
-+#define GCC	0	/* the GNU C compiler */
++#define GCC	1	/* the GNU C compiler */
 +#define IC	0	/* Rational Systems Instant C */
 +#define LATTICE 0	/* Lattice 2.14 through 3.0 compilers */
 +#define MSC	0	/* MicroSoft C compile version 3 thru 7 */
 +#define MWC	0	/* Mark Williams C */
 +#define TURBO	0	/* Turbo C and Borland C++ under MSDOS */
-+#define UNIX	1	/* a standard UNIX compiler (cc) */
++#define UNIX	0	/* a standard UNIX compiler (cc) */
 +#define ZTC	0	/* Zortech C/C++ 1.02 thru 2.10 under MSDOS */
 +
 +/*	Machine stack growth direction. 		    */
