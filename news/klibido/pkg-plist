@@ -1,0 +1,31 @@
+bin/klibido
+share/applnk/Utilities/klibido.desktop
+share/apps/klibido/icons/hicolor/16x16/actions/icon_article_new.png
+share/apps/klibido/icons/hicolor/16x16/actions/icon_article_read.png
+share/apps/klibido/icons/hicolor/16x16/actions/icon_article_unread.png
+share/apps/klibido/icons/hicolor/16x16/actions/icon_binary.png
+share/apps/klibido/icons/hicolor/16x16/actions/icon_binary_complete.png
+share/apps/klibido/icons/hicolor/16x16/actions/icon_binary_incomplete.png
+share/apps/klibido/icons/hicolor/16x16/actions/icon_filter_only_attachments.png
+share/apps/klibido/icons/hicolor/16x16/actions/icon_filter_only_new.png
+share/apps/klibido/icons/hicolor/16x16/actions/icon_newsgroup.png
+share/apps/klibido/icons/hicolor/16x16/actions/icon_server.png
+share/apps/klibido/icons/hicolor/16x16/apps/klibido.png
+share/apps/klibido/icons/hicolor/32x32/actions/decode.png
+share/apps/klibido/icons/hicolor/32x32/apps/klibido.png
+share/apps/klibido/klibidoui.rc
+share/doc/HTML/en/klibido/common
+share/doc/HTML/en/klibido/index.cache.bz2
+share/doc/HTML/en/klibido/index.docbook
+share/icons/hicolor/16x16/apps/klibido.png
+share/icons/hicolor/32x32/apps/klibido.png
+@dirrm share/apps/klibido/icons/hicolor/16x16/actions
+@dirrm share/apps/klibido/icons/hicolor/16x16/apps
+@dirrm share/apps/klibido/icons/hicolor/32x32/actions
+@dirrm share/apps/klibido/icons/hicolor/32x32/apps
+@dirrm share/apps/klibido/icons/hicolor/16x16
+@dirrm share/apps/klibido/icons/hicolor/32x32
+@dirrm share/apps/klibido/icons/hicolor
+@dirrm share/apps/klibido/icons
+@dirrm share/apps/klibido
+@dirrm share/doc/HTML/en/klibido

@@ -38,6 +38,7 @@
     SUBDIR += inn
     SUBDIR += inn-current
     SUBDIR += inn-stable
+    SUBDIR += klibido
     SUBDIR += knews
     SUBDIR += leafnode
     SUBDIR += leafnode+
