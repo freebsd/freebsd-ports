@@ -10,7 +10,7 @@ PORTVERSION=	2.5
 CATEGORIES=	misc tk83
 MASTER_SITES=	http://math-www.uni-paderborn.de/~axel/tkinfo/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	spadger@best.com
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
