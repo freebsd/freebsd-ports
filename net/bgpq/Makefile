@@ -19,4 +19,10 @@ HAS_CONFIGURE=	yes
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/bgpq
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>

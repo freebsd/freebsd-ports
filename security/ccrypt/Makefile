@@ -26,6 +26,12 @@ MLINKS=	ccrypt.1 ccencrypt.1 \
 	ccrypt.1 ccdecrypt.1 \
 	ccrypt.1 ccat.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|gtar|tar|g' ${WRKSRC}/configure
 
@@ -37,4 +43,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
