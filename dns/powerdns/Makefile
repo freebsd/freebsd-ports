@@ -32,10 +32,6 @@ LIBMAP_CONF=	/etc/libmap.conf
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 600000
-BROKEN=	"Does not compile on FreeBSD 6.0"
-.endif
-
 # use user config if possible
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
