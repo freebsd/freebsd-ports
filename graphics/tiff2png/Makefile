@@ -9,8 +9,9 @@ PORTNAME=	tiff2png
 PORTVERSION=	0.91
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://swrinde.nde.swri.edu/pub/png/applications/
+MASTER_SITE_SUBDIR=	png-mng
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts TIFF images to PNG format
@@ -19,7 +20,15 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
 
 MAKEFILE=	Makefile.unx
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	tiff2png
+
+PORTDOCS=	README
+PLIST_FILES=	bin/tiff2png
+
+CFLAGS+=	-DINVERT_MINISWHITE -DFAXPECT -DDEFAULT_DESTDIR_IS_CURDIR \
+		-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib -lpng -lz -ltiff -ljpeg -lm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tiff2png ${PREFIX}/bin
