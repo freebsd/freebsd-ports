@@ -3,26 +3,22 @@
 # Date created:        11 November 1997
 # Whom:                Brion Moss <brion@queeg.com>
 #
-# $Id: Makefile,v 1.5 1998/07/24 11:48:20 ache Exp $
+# $Id: Makefile,v 1.6 1998/12/22 03:03:31 jseger Exp $
 #
 
 DISTNAME=	catdoc-0.90.1
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.ice.ru/pub/vitus/
+MASTER_SITES=	ftp://ftp.ice.ru/pub/vitus/ \
+		http://www.FreeBSD.org/~billf/
 
 MAINTAINER=	brion@queeg.com
 
-MAN1=		catdoc.1
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-wish=/usr/local/bin/wish8.0
+MAN1=		catdoc.1
 
 .if !defined(LANG) || ${LANG} != ru_RU.KOI8-R
 # Remove the below line to get Cyrillic code page support instead
 CFLAGS+=	-DLATIN1=1
 .endif
-
-# the author seems to have included some .o files for us ;-)
-pre-build:
-	@cd $(WRKSRC); $(MAKE) -k clean
 
 .include <bsd.port.mk>
