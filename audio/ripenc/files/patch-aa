@@ -1,0 +1,33 @@
+--- ripenc.org	Wed Jul 21 14:58:41 1999
++++ ripenc	Wed Jul 21 15:01:22 1999
+@@ -340,6 +340,9 @@
+                            tosha)
+                                 tosha -q -f wav -d ${DEVICE} -t ${num} -o ${SAVETO}/${NAME}.wav
+                                 ;;
++                          dagrab)
++                                dagrab -d ${DEVICE} -f ${SAVETO}/${NAME}.wav ${num}
++                                ;;
+                             none)
+                                echo "Not Ripping"
+                 esac
+@@ -550,7 +553,8 @@
+                         echo "1) cdparanoia"
+                         echo "2) cdda2wav"
+                         echo "3) tosha"
+-                        echo "4) none (assume wavs exist and/or wav files need to be encoded)"
++                        echo "4) dagrab"
++                        echo "5) none (assume wavs exist and/or wav files need to be encoded)"
+                         echo -n "? " ; read ch
+                         if [ "$ch" = "1" ] ;
+                         then
+@@ -565,6 +569,10 @@
+                                 RIPPER=tosha
+                         fi
+                         if [ "$ch" = "4" ]  ;
++                        then
++                                RIPPER=dagrab
++                        fi
++                        if [ "$ch" = "5" ]  ;
+                          then
+                                 RIPPER=none
+                         fi
