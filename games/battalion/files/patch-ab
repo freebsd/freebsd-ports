@@ -1,0 +1,12 @@
+--- battalion.c	Thu Jan 16 16:31:59 1997
++++ /home/andy/tmp/wrk/battalion.c	Sun May 17 15:46:57 1998
+@@ -2867,7 +2867,8 @@
+ 	roadFile = fopen(fullPath, "rb");	
+ #else
+ 
+-    dataPtr = getenv("BATTALIONDATADIR");
++/*    dataPtr = getenv("BATTALIONDATADIR"); */
++    dataPtr = "/usr/X11R6/share/battalion";
+     if (dataPtr != NULL)
+ 	{
+ 	strcpy(dataPath, dataPtr);
