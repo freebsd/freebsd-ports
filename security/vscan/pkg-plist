@@ -2,6 +2,5 @@ bin/uvscan
 lib/mcafee/scan.dat
 lib/mcafee/names.dat
 lib/mcafee/clean.dat
-man/man1/uvscan.1.gz
 share/doc/vscan/vscan.LICENCE
 share/doc/vscan/Whatsnew.txt

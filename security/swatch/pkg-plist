@@ -1,5 +1,3 @@
 bin/swatch
 lib/sw_actions.pl
 lib/sw_history.pl
-man/man5/swatch.conf.5.gz
-man/man8/swatch.8.gz
