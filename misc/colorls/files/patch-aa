@@ -1,7 +1,7 @@
---- ./ls.c.org	Wed Mar  8 02:14:11 1995
-+++ ./ls.c	Wed Mar  8 02:17:10 1995
+--- ./ls.c.org	Sun Jul 19 23:29:17 1998
++++ ./ls.c	Mon Aug 24 01:25:50 1998
 @@ -94,6 +94,7 @@
- int f_dirname;			/* if precede with directory name */
+ int f_statustime;		/* use time of last mode change */
  int f_timesort;			/* sort by time vice name */
  int f_type;			/* add type character for non-regular files */
 +int f_color;			/* add type in color for non-regular files */
@@ -12,14 +12,14 @@
  		f_listdot = 1;
  
  	fts_options = FTS_PHYSICAL;
--	while ((ch = getopt(argc, argv, "1ACFLRTacdfgikloqrstu")) != EOF) {
-+	while ((ch = getopt(argc, argv, "1ACFGLRTacdfgikloqrstu")) != EOF) {
+-	while ((ch = getopt(argc, argv, "1ABCFHLPRTWabcdfgikloqrstu")) != -1) {
++	while ((ch = getopt(argc, argv, "1ABCFGHLPRTWabcdfgikloqrstu")) != -1) {
  		switch (ch) {
  		/*
  		 * The -1, -C and -l options all override each other so shell
-@@ -161,6 +162,9 @@
- 		case 'F':
- 			f_type = 1;
+@@ -169,6 +170,9 @@
+ 		case 'H':
+ 		        fts_options |= FTS_COMFOLLOW;
  			break;
 +		case 'G':
 +			f_color = 1;
@@ -27,7 +27,7 @@
  		case 'L':
  			fts_options &= ~FTS_PHYSICAL;
  			fts_options |= FTS_LOGICAL;
-@@ -216,18 +220,21 @@
+@@ -236,18 +240,21 @@
  	argc -= optind;
  	argv += optind;
  
@@ -51,9 +51,9 @@
  		fts_options |= FTS_COMFOLLOW;
  
  	/* If -l or -s, figure out block size. */
---- ./ls.h.org	Wed Mar  8 02:14:11 1995
-+++ ./ls.h	Wed Mar  8 02:17:11 1995
-@@ -49,6 +49,7 @@
+--- ./ls.h.org	Sun Jul 19 23:29:17 1998
++++ ./ls.h	Mon Aug 24 01:24:27 1998
+@@ -52,6 +52,7 @@
  extern int f_size;		/* list size in short listing */
  extern int f_statustime;	/* use time of last mode change */
  extern int f_type;		/* add type character for non-regular files */
@@ -61,9 +61,9 @@
  
  typedef struct {
  	FTSENT *list;
---- ./print.c.org	Wed Mar  8 02:14:11 1995
-+++ ./print.c	Wed Mar  8 02:17:11 1995
-@@ -66,6 +66,26 @@
+--- ./print.c.org	Sun Jul 19 23:29:17 1998
++++ ./print.c	Mon Aug 24 01:29:28 1998
+@@ -64,6 +64,26 @@
  
  #define	IS_NOPRINT(p)	((p)->fts_number == NO_PRINT)
  
@@ -90,23 +90,22 @@
  void
  printscol(dp)
  	DISPLAY *dp;
-@@ -122,10 +142,14 @@
+@@ -124,10 +144,14 @@
  			printtime(sp->st_ctime);
  		else
  			printtime(sp->st_mtime);
 +		if (f_color)
 +			(void)colortype(sp->st_mode);
- 		(void)printf("%s", p->fts_name);
+ 		if (f_octal || f_octal_escape) (void)prn_octal(p->fts_name);
+ 		else (void)printf("%s", p->fts_name);
  		if (f_type)
  			(void)printtype(sp->st_mode);
--		if (S_ISLNK(sp->st_mode))
 +		if (f_color)
 +			(void)printf("\033[m");
-+	if (S_ISLNK(sp->st_mode))
+ 		if (S_ISLNK(sp->st_mode))
  			printlink(p);
  		(void)putchar('\n');
- 	}
-@@ -190,10 +214,22 @@
+@@ -191,10 +215,22 @@
  			    dp->s_block);
  			if ((base += numrows) >= num)
  				break;
@@ -133,21 +132,20 @@
  			endcol += colwidth;
  		}
  		(void)putchar('\n');
-@@ -217,9 +241,13 @@
+@@ -220,8 +256,12 @@
  	if (f_size)
  		chcnt += printf("%*qd ",
  		    (int)sizefield, howmany(sp->st_blocks, blocksize));
 +	if (f_color)
 +		(void)colortype(sp->st_mode);
- 	chcnt += printf("%s", p->fts_name);
- 	if (f_type)
- 		chcnt += printtype(sp->st_mode);
+ 	chcnt += (f_octal || f_octal_escape) ? prn_octal(p->fts_name)
+ 	                                     : printf("%s", p->fts_name);
 +	if (f_color)
 +		printf("\033[m");
+ 	if (f_type)
+ 		chcnt += printtype(sp->st_mode);
  	return (chcnt);
- }
- 
-@@ -274,6 +302,95 @@
+@@ -282,6 +322,95 @@
  	return (0);
  }
  
@@ -243,11 +241,11 @@
  static void
  printlink(p)
  	FTSENT *p;
---- ./Makefile.org	Wed Mar  8 02:14:10 1995
-+++ ./Makefile	Wed Mar  8 02:20:01 1995
+--- ./Makefile.org	Mon Jul  7 03:02:47 1997
++++ ./Makefile	Mon Aug 24 01:24:27 1998
 @@ -1,7 +1,9 @@
  #	@(#)Makefile	8.1 (Berkeley) 6/2/93
- #	Makefile,v 1.2 1994/09/24 02:55:51 davidg Exp
+ #	$Id: Makefile,v 1.2 1994/09/24 02:55:51 davidg Exp $
  
 -PROG=	ls
 +PROG=	colorls
@@ -256,9 +254,10 @@
 +MANDIR= ${PREFIX}/man/man
  
  .include <bsd.prog.mk>
---- ./colorls.1.org	Wed Mar  8 02:14:10 1995
-+++ ./colorls.1	Wed Mar  8 02:17:10 1995
-@@ -37,15 +37,23 @@
+--- ./colorls.1.org	Mon Aug 24 01:24:27 1998
++++ ./colorls.1	Mon Aug 24 01:27:33 1998
+@@ -36,16 +36,24 @@
+ .\"	$Id: ls.1,v 1.5.2.6 1998/07/15 02:01:34 jkh Exp $
  .\"
  .Dd April 18, 1994
 -.Dt LS 1
@@ -270,9 +269,9 @@
 +.Nd list directory contents in color
  .Sh SYNOPSIS
 -.Nm ls
--.Op Fl ACFLRTacdfgikloqrstu1
+-.Op Fl ABCFHLPRTWabcdfgikloqrstu1
 +.Nm colorls
-+.Op Fl ACFGLRTacdfgikloqrstu1
++.Op Fl ABCFGHLPRTWabcdfgikloqrstu1
  .Op Ar file ...
  .Sh DESCRIPTION
 +(Note: This man page describes the color version of the program.  To
@@ -286,20 +285,20 @@
  For each operand that names a
  .Ar file
  of a type other than
-@@ -86,6 +94,12 @@
- an equals sign (=) after each socket,
+@@ -90,6 +98,12 @@
+ a percent sign (%) after each whiteout,
  and a vertical bar (|) after each that is a
- .Tn FIFO . 
+ .Tn FIFO .
 +.It Fl G
 +Use ANSI color sequences to distinguish file types.  (See
 +.Ev LSCOLORS
 +below.)  In addition to those mentioned above in
 +.Fl F ,
 +some extra attributes (setuid bit set, etc.) are also displayed.
- .It Fl L
- If argument is a symbolic link, list the file or directory the link references
- rather than the link itself.
-@@ -322,6 +336,74 @@
+ .It Fl H
+ Symbolic links on the command line are followed.  This option is assumed if
+ none of the
+@@ -373,6 +387,74 @@
  See
  .Xr environ 7
  for more information.
