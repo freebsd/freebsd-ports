@@ -6,34 +6,60 @@
 #
 
 PORTNAME=	ghostscript
-PORTVERSION=	5.50a
+PORTVERSION=	6.51
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.cs.wisc.edu/ghost/gnu/gs550/ \
-		ftp://ftp.cs.wisc.edu/ghost/gnu/fonts/ \
+		${MASTER_SITE_SOURCEFORGE} \
 		http://members.ozemail.com.au/~geoffk/pdfencrypt/ \
-		http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+		http://www.gelhaus.net/hp880c/1.4beta/ \
+		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/ \
+		http://www.harsch.net/Download/ \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs651/ \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/
+MASTER_SITE_SUBDIR=	${PORTNAME} gimp-print hpinkjet
+PKGNAMESUFFIX=	-gnu
+
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${DECRYPT_PDF} ${HP850_DRV}
+		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_SRC} ${PCL3_SRC} \
+		${HP970_DRV} ${GPRINT_SRC} ${HPIJS_SRC}
 EXTRACT_ONLY=	${GS_SOURCES}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract \
-		unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-NO_LATEST_LINK=	"Older version."
-
-WRKSRC=		${WRKDIR}/gs5.50
-
-USE_XLIB=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKEFILE=	unix-gcc.mak
-MAN1=		gs.1 pdf2dsc.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 ps2ps.1
+CFLAGS+=	-DUPD_SIGNAL=0
+MAKEFILE=	src/unix-gcc.mak
+ALL_TARGET=	all pcl3opts escputil
+PLIST_SUB=	GS_VERSION=${PORTVERSION}
 
-GS_SOURCES=	gnu-gs-5.50a.tar.gz
+MAN1=		dvipdf.1 eps2eps.1 escputil.1 font2c.1 gs-hpdj.1 gs-pcl3.1 \
+		gs.1 gslp.1 gsnd.1 pcl3opts.1 pdf2dsc.1 pdf2ps.1 pdfopt.1 \
+		pf2afm.1 pfbtopfa.1 printafm.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 \
+		ps2pdfwr.1 ps2ps.1 wftopfa.1
+MLINKS=		gslp.1 gsbj.1 \
+		gslp.1 gsdj.1 \
+		gslp.1 gsdj500.1 \
+		gslp.1 gslj.1 \
+		ps2pdf.1 ps2pdf12.1 \
+		ps2pdf.1 ps2pdf13.1
+
+.if defined(A4)
+CFLAGS+=	-DA4
+.endif
+
+.if !defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-gnu
+USE_XLIB=	yes
+.else
+PKGNAMESUFFIX=	-gnu-nox11
+MAKE_ENV+=	WITHOUT_X11=${WITHOUT_X11}
+.endif
+
+GS_SOURCES=	${DISTNAME}${EXTRACT_SUFX}
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
@@ -41,52 +67,270 @@ GS_SOURCES=	gnu-gs-5.50a.tar.gz
 GS_FONTS_STD=	gnu-gs-fonts-std-6.0.tar.gz
 GS_FONTS_OTHER=	gnu-gs-fonts-other-6.0.tar.gz
 
-# Additional driver HP 850, see http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
-HP850_DRV=	hp8xxs13.zip
+# Additional Drivers:
+
+# Ghostscript Driver for HP DeskJet 812C/815C/832C/880C/882C/895C
+# http://www.gelhaus.net/hp880c/
+HP8XX=		cdj880
+HP8XX_DRV=	gdevcd8.tar.gz
+
+# HPDJ, additional driver for HP PCL3 Printers, by Martin Lottermoser
+# still present, just for the case pcl3 is missing some hpdj feature
+# http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
+HPDJ=		hpdj
+HPDJ_VERS=	2.6
+HPDJ_NAME=	${HPDJ}-${HPDJ_VERS}
+HPDJ_SRC=	${HPDJ_NAME}.tar.gz
+HPDJ_MAN1=	gs-hpdj.1
+
+# PCL3 (hpdj successor now in RELEASE quality)
+# additional driver for HP PCL3 Printers, by Martin Lottermoser
+# http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
+PCL3=		pcl3
+PCL3_VERS=	3.2
+PCL3_NAME=	${PCL3}-${PCL3_VERS}
+PCL3_SRC=	${PCL3_NAME}.tar.gz
+PCL3_MAN1=	gs-pcl3.1 pcl3opts.1
+
+# additional driver for HP DeskJet 970, supports duplex printing
+# http://www.harsch.net/Ghostscript/ghostscript.html
+HP970_DRV=	gdevdj9.c.gz
+
+# gimp-print - very high quality driver for Epson, HPs,...
+# http://gimp-print.sourceforge.net/
+GPRINT=		print
+GPRINT_DESC=	gimp-${GPRINT}
+GPRINT_VERS=	4.0.5
+GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
+GPRINT_SRC=	${GPRINT_NAME}.tar.gz
+GPRINT_MAN1=	escputil.1
+
+# HPinkjet - HP developed printer driver for PhotoSmart/DeskJet series
+# http://hpinkjet.sourceforge.net/
+HPIJS=		hpijs
+HPIJS_VERS=	0.97
+HPIJS_NAME=	${HPIJS}${HPIJS_VERS}
+HPIJS_SRC=	${HPIJS_NAME}.tar.gz
+
+# contributed uniprint profiles
+CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
+		stc740ih.upp stc740p.upp stc740pl.upp
 
 # replacement for pdf_sec.ps, that allows you to read encrypted PDF files
 DECRYPT_PDF=	pdf_sec.ps
 
-.if defined(A4)
-CFLAGS+=	-DA4
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS+=	-D_LITTLE_ENDIAN
 .endif
 
-pre-fetch:
+.SILENT:
+
+pre-everything:
 .if !defined(A4)
-	@${ECHO_MSG} "Type \"make A4=yes\" if you want -DA4 for compilation."
+	${ECHO_MSG} "Type \"make A4=yes\" if you want -DA4 for compilation."
 .else
-	@${ECHO_MSG} "Using -DA4 for compilation."
+	${ECHO_MSG} "Using -DA4 for compilation."
 .endif
 
 post-extract:
-	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
-	unzip -L -q -aa -o ${DISTDIR}/${HP850_DRV} -d ${WRKSRC} -x devs.mak
+	${ECHO_MSG} ">>> in post-extract ..."
+	${LN} -sf ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b \
+		${WRKSRC}/jpeg
+	${RM} -f ${WRKSRC}/man/de/*.1
+# ** 3rd party driver **
+# Note: don't forget to add those devices in scripts/configure and
+# configure.batch, which update unix-gcc.mak to build gs with these
+# new devices !
+#
+# for HP8XX driver
+	${ECHO_MSG} ">>>   extracting ${HP8XX_DRV} ..."
+	${TAR} -C ${WRKSRC}/src -xzf ${_DISTDIR}/${HP8XX_DRV}
+# for HPDJ driver
+	${ECHO_MSG} ">>>   extracting ${HPDJ_SRC} ..."
+	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${HPDJ_SRC}
+	${TAR} -C ${WRKSRC}/src -xf ${WRKSRC}/${HPDJ_NAME}/${HPDJ}.tar
+# for PCL3 driver
+	${ECHO_MSG} ">>>   extracting ${PCL3_SRC} ..."
+	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${PCL3_SRC}
+	${LN} -sf ${PCL3_NAME} ${WRKSRC}/pcl3
+	${TAR} -C ${WRKSRC}/${PCL3_NAME} -xf \
+		${WRKSRC}/${PCL3_NAME}/${PCL3}.tar
+# for HP DeskJet 970 driver
+	${ECHO_MSG} ">>>   extracting ${HP970_DRV} ..."
+	${CP} ${_DISTDIR}/${HP970_DRV} ${WRKSRC}/src
+	${GUNZIP_CMD} ${WRKSRC}/src/${HP970_DRV}
+# for gimp-print
+	${ECHO_MSG} ">>>   extracting ${GPRINT_SRC} ..."
+	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${GPRINT_SRC}
+# for HPinkjet driver
+	${ECHO_MSG} ">>>   extracting ${HPIJS_SRC} ..."
+	${TAR} -C ${WRKSRC} -xzf ${_DISTDIR}/${HPIJS_SRC}
+	${LN} -sf ${HPIJS_NAME} ${WRKSRC}/hpijs
+
+post-patch:
+	${PERL} -pi -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
+		${WRKSRC}/src/unix-gcc.mak
+	find ${WRKSRC}/src -name '*.[ch]' | xargs ${PERL} -pi -e \
+		's|pputc|stream_putc|g; \
+		 s|pwrite|stream_write|g ; \
+		 s|pputs|stream_puts|g'
+# for HPinkjet driver
+	find ${WRKSRC}/${HPIJS_NAME} -name '*.h' | xargs ${PERL} -pi -e \
+		's|#include <malloc.h>||g; \
+		 s|SRVPATH \"hpijs\"|SRVPATH \"${PREFIX}/libexec/hpijs\"|g'
+
+# here we apply the modifications necessary to build the 3rd party drivers
+# advantage: you see unmodified makefiles after a pure make extract
+pre-configure:
+	${ECHO_MSG} ">>> in pre-configure ..."
+# for HPDJ driver
+	${ECHO_MSG} ">>>   adding ${HPDJ} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/src/contrib.mak-5.94.add \
+		>> ${WRKSRC}/src/contrib.mak
+# for PCL3 driver
+	${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-6.50.add \
+		>> ${WRKSRC}/src/contrib.mak
+# for gimp-print
+	${ECHO_MSG} ">>>   creating symlinks for ${GPRINT_DESC} ..."
+	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/Ghost/*.[ch] \
+		${WRKSRC}/src
+	${ECHO_MSG} ">>>   adding ${GPRINT_DESC} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${GPRINT_NAME}/Ghost/contrib.mak.addon \
+		>> ${WRKSRC}/src/contrib.mak
+	${ECHO_MSG} ">>>   adding make rules for escputil to contrib.mak ..."
+	${CAT} ${FILESDIR}/escputil.contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for HPinkjet driver
+	${ECHO_MSG} ">>>   creating symlinks for ${HPIJS} ..."
+	${LN} -sf ${WRKSRC}/${HPIJS_NAME}/gdevhpij.[ch] \
+		${WRKSRC}/src
+	${ECHO_MSG} ">>>   adding ${HPIJS} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/hpijs.contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
 
 do-configure:
+	${ECHO_MSG} ">>> in do-configure ..."
 .if defined(BATCH)
-	@${SETENV} WRKSRC=${WRKSRC} ${SH} ${SCRIPTDIR}/configure.batch
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.batch
 .else
-	@${SETENV} WRKSRC=${WRKSRC} ${SH} ${SCRIPTDIR}/configure
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 .endif
 
 pre-build:
+	${ECHO_MSG} ">>> in pre-build ..."
+	${ECHO_MSG} ">>>   creating directories for compilation ..."
 	${MKDIR} ${WRKSRC}/obj
+	${MKDIR} ${WRKSRC}/bin
+
+post-build:
+# for HPinkjet driver
+	cd ${WRKSRC}/${HPIJS_NAME} ; \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} makefile
 
 pre-install:
-	@${MKDIR} ${PREFIX}/share/ghostscript
-	${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
-	${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_OTHER}
+	${ECHO_MSG} ">>> in pre-install ..."
+	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
+	${MKDIR} ${PREFIX}/share/ghostscript
+	${ECHO_MSG} ">>>   extracting ghostscript fonts..."
+	${TAR} -C ${PREFIX}/share/ghostscript -xzf ${_DISTDIR}/${GS_FONTS_STD}
+	${TAR} -C ${PREFIX}/share/ghostscript -xzf ${_DISTDIR}/${GS_FONTS_OTHER}
 
-# install the readme and license file of the hp8xxx driver as well
 post-install:
+	${ECHO_MSG} ">>> in post-install ..."
+	${ECHO_MSG} ">>>   stripping gs ..."
 	strip ${PREFIX}/bin/gs
-	${INSTALL_SCRIPT} ${WRKSRC}/unix-lpr.sh ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/lprsetup.sh ${PREFIX}/bin
-	${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps \
-		${PREFIX}/share/ghostscript/5.50
-	${INSTALL_DATA} ${WRKSRC}/license.hp8 \
-		${PREFIX}/share/ghostscript/5.50/doc
-	${INSTALL_DATA} ${WRKSRC}/readme.hp8 \
-		${PREFIX}/share/ghostscript/5.50/doc
+# for HPDJ driver
+	${ECHO_MSG} ">>>   installing ${HPDJ} manpages ..."
+.for i in ${HPDJ_MAN1}
+	${INSTALL_MAN} ${WRKSRC}/src/${i} ${PREFIX}/man/man1
+.endfor
+	${ECHO_MSG} ">>>   creating ${HPDJ} destdir ..."
+	${MKDIR} ${PREFIX}/share/ghostscript/${PORTVERSION}/hpdj
+	${ECHO_MSG} ">>>   installing files in ${HPDJ} destdir ..."
+.for i in README.hpdj example.mdf margins-A4.ps margins-A4Rotated.ps \
+	margins-Letter.ps margins-LetterRotated.ps
+	${INSTALL_DATA} ${WRKSRC}/src/${i} \
+		${PREFIX}/share/ghostscript/${PORTVERSION}/hpdj
+.endfor
+# for PCL3 driver
+	${ECHO_MSG} ">>> installing ${PCL3} manpages ..."
+.for i in ${PCL3_MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${PCL3_NAME}/doc/${i} ${PREFIX}/man/man1
+.endfor
+# other pcl3 stuff, which might be interesting for runtime
+	${ECHO_MSG} ">>>   creating ${PCL3} destdir ..."
+	${MKDIR} ${PREFIX}/share/ghostscript/${PORTVERSION}/pcl3
+	${ECHO_MSG} ">>>   installing files in ${PCL3} destdir ..."
+.for i in NEWS BUGS README lib/example.mcf lib/if-pcl3 ps/calign.ps \
+	ps/dumppdd.ps ps/levels-test.ps ps/margins-A4.ps \
+	ps/margins-A4Rotated.ps ps/margins-Env10Rotated.ps \
+	ps/margins-EnvDLRotated.ps ps/margins-Letter.ps \
+	ps/margins-LetterRotated.ps
+	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
+		${PREFIX}/share/ghostscript/${PORTVERSION}/pcl3
+.endfor
+# for gimp-print driver
+	${ECHO_MSG} ">>>   installing ${GPRINT_DESC} escputil in bindir ..."
+	${INSTALL_PROGRAM} ${WRKSRC}/src/escputil ${PREFIX}/bin
+	${ECHO_MSG} ">>>   installing ${GPRINT_DESC} manpages ..."
+.for i in ${GPRINT_MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${GPRINT_NAME}/Ghost/${i} \
+		${PREFIX}/man/man1
+.endfor
+	${ECHO_MSG} ">>>   creating ${GPRINT_DESC} destdir ..."
+	${MKDIR} ${PREFIX}/share/ghostscript/${PORTVERSION}/gimp-print
+	${ECHO_MSG} ">>>   installing files in gimp-print destdir ..."
+.for i in README
+	${INSTALL_DATA} ${WRKSRC}/${GPRINT_NAME}/Ghost/${i} \
+		${PREFIX}/share/ghostscript/${PORTVERSION}/gimp-print
+.endfor
+# for HPinkjet driver
+	${ECHO_MSG} ">>>   installing ${HPIJS} server in libexecdir ..."
+	${INSTALL_PROGRAM} ${WRKSRC}/${HPIJS_NAME}/hpijs ${PREFIX}/libexec
+	${ECHO_MSG} ">>>   creating ${HPIJS} destdir ..."
+	${MKDIR} ${PREFIX}/share/ghostscript/${PORTVERSION}/hpijs
+	${ECHO_MSG} ">>>   installing files in ${HPIJS} destdir ..."
+.for i in hpijs_readme.html
+	${INSTALL_DATA} ${WRKSRC}/${HPIJS}/${i} \
+		${PREFIX}/share/ghostscript/${PORTVERSION}/hpijs
+.endfor
+# contributed UPP driver
+	${ECHO_MSG} ">>> installing contributed UPP profiles ..."
+.for i in ${CONTRIB_UPP}
+	${INSTALL_DATA} ${FILESDIR}/${i} \
+		${PREFIX}/share/ghostscript/${PORTVERSION}/lib
+.endfor
+# for reading encrypted PDFs
+	${ECHO_MSG} ">>> installing support for encrypted PDF files ..."
+	${INSTALL_DATA} ${DISTDIR}/${DECRYPT_PDF} \
+		${PREFIX}/share/ghostscript/${PORTVERSION}/lib
+#
+# now NOPORTDOCS dependend stuff
+#
+.if !defined(NOPORTDOCS)
+	${ECHO_MSG} ">>> installing PORTDOC stuff ..."
+# install hpdj docu, not necessary for runtime
+# note: old hpdj driver has its files in ${WRKSRC}/src
+	${ECHO_MSG} ">>>   creating ${HPDJ} docu destdir ..."
+	${MKDIR} ${PREFIX}/share/doc/ghostscript/${PORTVERSION}/hpdj
+	${ECHO_MSG} ">>>   installing files in ${HPDJ} docu destdir ..."
+.for i in NEWS hpdj.html
+	${INSTALL_DATA} ${WRKSRC}/src/${i} \
+		${PREFIX}/share/doc/ghostscript/${PORTVERSION}/hpdj
+.endfor
+# install pcl3 docu, not necessary for runtime
+# note: new pcl3 driver has a subdir of its own
+	${ECHO_MSG} ">>>   creating ${PCL3} docu destdir ..."
+	${MKDIR} ${PREFIX}/share/doc/ghostscript/${PORTVERSION}/pcl3
+	${ECHO_MSG} ">>>   installing files in ${PCL3} docu destdir ..."
+.for i in NEWS doc/gs-pcl3.html doc/how-to-report.txt doc/pcl3opts.html
+	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
+		${PREFIX}/share/doc/ghostscript/${PORTVERSION}/pcl3
+.endfor
+.endif
+	${ECHO_MSG} "> post-installation tasks completed."
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
