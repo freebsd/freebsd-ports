@@ -35,6 +35,7 @@ MAN1=	frox.1
 MAN5=	frox.conf.5
 
 PORTDOCS=	FAQ SECURITY CREDITS ChangeLog
+PLIST_FILES=	sbin/frox etc/frox.conf.sample etc/rc.d/frox.sh
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
