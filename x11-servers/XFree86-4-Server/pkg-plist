@@ -70,8 +70,13 @@ lib/modules/extensions/libpex5.a
 lib/modules/extensions/librecord.a
 lib/modules/extensions/libxie.a
 lib/modules/input/dynapro_drv.o
+lib/modules/input/elo2300_drv.o
+lib/modules/input/elographics_drv.o
+lib/modules/input/magellan_drv.o
 lib/modules/input/microtouch_drv.o
 lib/modules/input/mouse_drv.o
+lib/modules/input/mutouch_drv.o
+lib/modules/input/spaceorb_drv.o
 lib/modules/input/wacom_drv.o
 lib/modules/libafb.a
 lib/modules/libcfb.a
@@ -98,5 +103,8 @@ lib/modules/libxf8_16bpp.a
 lib/modules/libxf8_32bpp.a
 lib/modules/v10002d.uc
 lib/modules/v20002d.uc
+@dirrm lib/modules/drivers
+@dirrm lib/modules/extensions
+@dirrm lib/modules/input
 @cwd /etc
 X11/xserver/SecurityPolicy

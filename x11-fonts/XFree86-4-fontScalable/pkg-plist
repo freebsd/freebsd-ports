@@ -62,6 +62,4 @@ lib/X11/fonts/Type1/lcdxso.pfa
 lib/X11/fonts/Type1/lcdxsr.afm
 lib/X11/fonts/Type1/lcdxsr.pfa
 @dirrm lib/X11/fonts/CID
-@dirrm lib/X11/fonts/PEX
-@dirrm lib/X11/fonts/Speedo
-@dirrm lib/X11/fonts/Type1
+@unexec if [ `wc -c %D/lib/X11/fonts/local/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/lib/X11/fonts/local/fonts.dir; fi

@@ -424,13 +424,4 @@ lib/libxkbui.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/DPS
 @dirrm include/GL
-@dirrm include/X11/ICE
-@dirrm include/X11/PEX5
-@dirrm include/X11/PM
-@dirrm include/X11/SM
-@dirrm include/X11/Xaw
-@dirrm include/X11/Xmu
-@dirrm include/X11/extensions
 @dirrm include/X11/fonts/codeconv
-@dirrm include/X11/fonts
-@dirrm lib/X11/config
