@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmi
-PORTVERSION=	8
+PORTVERSION=	9
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.berlios.de/wmi/
 
