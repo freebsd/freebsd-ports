@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free AFS client implementation
 
-ROKEN=		"Does not build"
+BROKEN=		"Does not build"
 
 USE_XLIB=	yes
 
