@@ -1,5 +1,5 @@
---- src/galeon.in.orig	Thu Dec 27 19:13:42 2001
-+++ src/galeon.in	Mon Oct 21 23:28:37 2002
+--- src/galeon.in.orig	Thu Apr  3 15:14:49 2003
++++ src/galeon.in	Sat Apr 19 23:38:10 2003
 @@ -4,18 +4,14 @@
  
  if test -n "$MOZILLA_FIVE_HOME"; then
@@ -26,7 +26,7 @@
  else
  	echo "Cannot find mozilla installation directory. Please set MOZILLA_FIVE_HOME to your mozilla directory"
  	exit
-@@ -27,16 +23,12 @@
+@@ -27,11 +23,12 @@
  MOZILLA_FIVE_HOME=$MOZILLA_HOME
  export MOZILLA_FIVE_HOME
  
@@ -35,14 +35,13 @@
 -	if [ "`cat /etc/redhat-release`" = "Red Hat Linux release 7.1 (Seawolf)"  ]; then
 -   	 export LD_ASSUME_KERNEL=2.2.5
 -	fi
--fi
 +MOZ_PLUGIN_PATH=%%PREFIX%%/lib/browser_plugins
 +export MOZ_PLUGIN_PATH
- 
- if [ -f ./galeon-bin ]; then
- exec ./galeon-bin "$@"
- else
--exec $dist_bin/galeon-bin "$@"
-+exec %%PREFIX%%/bin/galeon-bin "$@"
++
++if [ -f %%FLASHPLAYER%% ]; then
++    LD_PRELOAD=%%FLASHPLAYER%%
++    export LD_PRELOAD
  fi
  
+-exec "$dist_bin/galeon-bin" "$@"
++exec %%PREFIX%%/bin/galeon-bin "$@"
