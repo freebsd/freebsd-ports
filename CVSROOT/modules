@@ -11078,6 +11078,7 @@ tycoon		ports/x11/tycoon
 typespeed	ports/games/typespeed
 typetools	ports/print/typetools
 typhoon		ports/databases/typhoon
+typo3		ports/www/typo3
 ua-ispell	ports/textproc/ua-ispell
 uae		ports/emulators/uae
 ubench		ports/benchmarks/ubench
