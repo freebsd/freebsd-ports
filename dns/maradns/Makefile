@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.0.17
+PORTVERSION=	1.0.18
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
