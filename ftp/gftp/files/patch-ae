@@ -1,6 +1,6 @@
---- src/gtk/gftp-gtk.h.orig	Tue Mar 20 17:46:01 2001
-+++ src/gtk/gftp-gtk.h	Mon Apr 30 00:18:12 2001
-@@ -197,7 +197,7 @@
+--- src/gtk/gftp-gtk.h.orig	Wed Dec 19 03:52:39 2001
++++ src/gtk/gftp-gtk.h	Wed Jan  2 13:57:06 2002
+@@ -200,7 +200,7 @@
  void ftp_log					( gftp_logging_level level,
  						  void *ptr,
  						  const char *string,
