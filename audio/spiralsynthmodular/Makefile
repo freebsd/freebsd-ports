@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spiralsynthmodular
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	spiralmodular
@@ -44,9 +44,13 @@ post-patch:
 		${WRKSRC}/SpiralSound/Plugins/LADSPAPlugin/Makefile.in
 	@${REINPLACE_CMD} -e 's|O_SYNC|O_FSYNC|' \
 		${WRKSRC}/SpiralSound/Midi.C
+	@${REINPLACE_CMD} -e \
+		's|True|true|; s|False|false|' \
+		${WRKSRC}/SpiralSound/Plugins/MatrixPlugin/MatrixPlugin.C
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -E -e \
 		's|-ldl||; \
-		s@^C(C|XX)[[:space:]]*=.+$$@@; \
+		s|^CC[[:space:]]*=.+$$|CC=${CC}|; \
+		s|^CXX[[:space:]]*=.+$$|CXX=${CXX}|; \
 		s|g\+\+|${CXX}|; \
 		s,@FLTK_(C|CXX)FLAGS@,-I${X11BASE}/include,; \
 		s|-lpthread|${PTHREAD_LIBS}|g'
