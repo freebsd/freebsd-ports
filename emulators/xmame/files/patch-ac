@@ -1,6 +1,11 @@
 --- src/unix/unix.mak.orig	Sat Mar 24 02:33:38 2001
-+++ src/unix/unix.mak	Fri Mar 30 09:52:29 2001
-@@ -50,14 +50,14 @@
++++ src/unix/unix.mak	Mon Apr  2 10:33:48 2001
+@@ -46,18 +46,18 @@
+ LIBS.x11        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext 
+ LIBS.svgalib    = $(X11LIB) -lvga -lvgagl
+ LIBS.ggi        = $(X11LIB) -lggi
+-LIBS.xgl        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext $(GLLIBS) -ljpeg
++LIBS.xgl        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext $(GLLIBS) -L/usr/local/lib -ljpeg $(PTHREAD_LIBS)
  LIBS.xfx        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext -lglide2x
  LIBS.svgafx     = $(X11LIB) -lvga -lvgagl -lglide2x
  LIBS.openstep	= -framework AppKit
@@ -9,7 +14,8 @@
  LIBS.photon2	= -L/usr/lib -lph -lphrender
  
  CFLAGS.x11      = $(X11INC) $(JOY_X11_CFLAGS)
- CFLAGS.xgl      = $(X11INC) $(JOY_X11_CFLAGS)
+-CFLAGS.xgl      = $(X11INC) $(JOY_X11_CFLAGS)
++CFLAGS.xgl      = $(X11INC) $(JOY_X11_CFLAGS) -I/usr/local/include $(PTHREAD_CFLAGS)
  CFLAGS.xfx      = $(X11INC) $(JOY_X11_CFLAGS) -I/usr/include/glide
  CFLAGS.svgafx   = -I/usr/include/glide
 -CFLAGS.SDL      = -D_REENTRANT

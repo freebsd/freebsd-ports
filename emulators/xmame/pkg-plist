@@ -36,6 +36,18 @@ share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/keys.txt
 %%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/sounds.dat
 %%PORTDOCS%%@dirrm share/doc/%%MAMEMESS%%
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmame/cabfront.jpg
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmame/cabtitle.jpg
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmame/glmame.cab
+%%OPENGL%%@dirrm share/%%MAMEMESS%%/cab/glmame
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmamejau/cabfront.jpg
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmamejau/cabside.jpg
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmamejau/cabtitle.jpg
+%%OPENGL%%share/%%MAMEMESS%%/cab/glmamejau/glmamejau.cab
+%%OPENGL%%@dirrm share/%%MAMEMESS%%/cab/glmamejau
+%%OPENGL%%share/%%MAMEMESS%%/cab/trans/trans.cab
+%%OPENGL%%@dirrm share/%%MAMEMESS%%/cab/trans
+%%OPENGL%%@dirrm share/%%MAMEMESS%%/cab
 @dirrm share/%%MAMEMESS%%/roms
 @dirrm share/%%MAMEMESS%%
 @unexec rmdir %%SPOOLGAMES%%/%%MAMEMESS%% 2>/dev/null || true

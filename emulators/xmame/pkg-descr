@@ -2,7 +2,7 @@ XMAME is an arcade game machine emulator for UNIX/X11.  It will emulate
 the hardware, video, sound, and other services, of many classic arcade
 game machines.
 
-As of this release, XMAME supports an incredible 2073 arcade games, and 
+As of this release, XMAME supports an incredible 2843 arcade games, and 
 the number grows every day!  A partial list of the (more popular and
 well-known) games currently supported by this emulator include:
 
@@ -20,5 +20,3 @@ have access to a ROM burner, or you don't own one of these video games
 you can obtain ROM images for XMAME on the Net.
 
 WWW: http://x.mame.net/
-
-[ Maintained by Jacob A. Hart <c9710216@studentmail.newcastle.edu.au>. ]
