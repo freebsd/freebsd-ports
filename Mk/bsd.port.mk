@@ -436,6 +436,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  apply here.  It is recommended that you use
 #				  %%PREFIX%% for ${PREFIX}, %%LOCALBASE%% for
 #				  ${LOCALBASE} and %%X11BASE%% for ${X11BASE}.
+# DOCSDIR		- Name of the directory to install the packages docs in.
 # 
 # Note that the install target will automatically add manpages (see
 # above) and also substitute special sequences of characters (delimited
@@ -1371,6 +1372,8 @@ LDCONFIG_DIRS?=	%%PREFIX%%/lib
 LDCONFIG_PLIST!=	${ECHO} ${LDCONFIG_DIRS} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 LDCONFIG_RUNLIST!=	${ECHO} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!"
 .endif
+
+DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}
 
 .MAIN: all
 
