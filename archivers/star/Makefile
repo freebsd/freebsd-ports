@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Unique standard tape archiver with many enhancements
 
+CONFLICTS=	star-1.5*
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	MAKEPROG=${GMAKE} CCOM=${CC}
