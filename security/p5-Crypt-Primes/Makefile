@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${PERLBASE}/Crypt/Random.pm:${PORTSDIR}/security/p5-Crypt-Random 
 
 PERL_CONFIGURE=	yes
 
+MAN1=		largeprimes.1
 MAN3=		Crypt::Primes.3
 
 .include <bsd.port.mk>
