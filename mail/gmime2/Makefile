@@ -9,7 +9,7 @@ PORTNAME=	gmime
 PORTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/
+MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Library (written in C) for parsing and creating messages using MIME
@@ -28,7 +28,6 @@ CONFIGURE_ARGS+=	--with-libiconv=${LOCALBASE}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-
 INSTALLS_SHLIB=		yes
 
 LATEST_LINK=	gmime2
