@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_PYTHON=     yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--with-libz=internal \
+CONFIGURE_ARGS=	--with-libz=internal \
 		--with-png=internal \
 		--with-libtiff=internal \
 		--with-libgeotiff=internal \
@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-libgif=internal \
 		--with-python
 MAKEFILE=	GNUmakefile
-USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
