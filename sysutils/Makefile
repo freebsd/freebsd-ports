@@ -147,6 +147,7 @@
     SUBDIR += foremost
     SUBDIR += fortunelock
     SUBDIR += freebsd-sha1
+    SUBDIR += freebsd-sha256
     SUBDIR += freecolor
     SUBDIR += freedt
     SUBDIR += freeipmi
