@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	3.9
+PORTVERSION=	3.10
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/ \
