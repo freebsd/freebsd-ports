@@ -1,0 +1,5 @@
+#!/bin/sh
+test -d JDIR -a -x PREFIX/bin/junkbuster -a -f JDIR/configfile || exit 1
+cd JDIR
+su -m nobody -c "PREFIX/bin/junkbuster configfile &"
+echo -n " junkbuster"

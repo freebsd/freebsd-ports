@@ -1,0 +1,3 @@
+Please,  review the  samples of  the configuration  files (somewhere  in
+/usr/local/etc/junkbuster/*.sample)  and create  your own  config files.
+Read the junkbuster man-page (man junkbuster) for even more information.
