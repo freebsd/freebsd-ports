@@ -176,6 +176,7 @@
     SUBDIR += schemetoc
     SUBDIR += scm
     SUBDIR += scriba
+    SUBDIR += scsh
     SUBDIR += siod
     SUBDIR += slib
     SUBDIR += slisp
