@@ -126,7 +126,7 @@ build-java:
 
 build-doc:
 	@$(ECHO) "===> Building Javadoc."
-	$(ANT) -f build.xml buildDoc
+	$(ANT) -f build.xml init buildDoc
 
 build-install:
 	$(ANT) -f build.xml install
