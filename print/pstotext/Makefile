@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pstotext
-PORTVERSION=	2.1
+PORTVERSION=	1.8g
 CATEGORIES=	print
 MASTER_SITES=	http://www.research.digital.com/SRC/virtualpaper/cgi-bin/nph-download.tcl/pstotext.tar.Z?object=pstotext
 DISTNAME=	pstotext
@@ -16,7 +16,7 @@ MAINTAINER=	ob@seicom.NET
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
 
-WRKSRC=		${WRKDIR}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		pstotext.1
 
 .include <bsd.port.mk>
