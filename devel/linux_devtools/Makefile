@@ -120,7 +120,7 @@ do-install:
 #
 	@for R in ${DISTFILES}; do \
 		${ECHO} $$R; \
-		rpm -i ${RPMFLAGS} ${RPMDIR}/$$R; \
+		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #
 # Install updates
