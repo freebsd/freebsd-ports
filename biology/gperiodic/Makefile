@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gperiodic
-PORTVERSION=	1.2.6a
+PORTVERSION=	1.3.0
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.seul.org/pub/gperiodic/
 
@@ -32,7 +32,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/gperiodic
 .for file in AUTHORS ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gperiodic
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gperiodic
 .endfor
 .endif
 
