@@ -78,6 +78,7 @@ share/idl/orbit-2.0/CosNaming.idl
 @dirrm share/idl/orbit-2.0
 @dirrm share/doc/ORBit2
 @unexec /bin/rmdir %D/share/idl 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/lib/orbit-2.0 2>/dev/null || /usr/bin/true
 @dirrm include/orbit-2.0/orbit/util
 @dirrm include/orbit-2.0/orbit/poa
 @dirrm include/orbit-2.0/orbit/orb-core
