@@ -18,7 +18,9 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/c152.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c28.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c287.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c289.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c722.html
+%%DOCHTML:%%%%DOCSDIR%%/html/c724.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c740.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c98.html
 %%DOCHTML:%%%%DOCSDIR%%/html/chap-bg.html
@@ -40,13 +42,19 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/sect-wmctrl.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x160.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x231.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x233.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x315.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x317.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x346.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x348.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x47.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x739.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x741.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x757.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x795.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x812.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x813.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x814.html
 %%DOCPDF:%%%%DOCSDIR%%/pdf/fluxbook.pdf
 share/fluxbox/init
 share/fluxbox/keys
@@ -130,20 +138,6 @@ share/fluxbox/styles/Shade
 share/fluxbox/styles/Spiff
 share/fluxbox/styles/Twice
 share/fluxbox/styles/qnx-photon
-%%NLS:%%@unexec rm %D/share/fluxbox/nls/lv 2>&1 >/dev/null || true
-%%NLS:%%@unexec rm %D/share/fluxbox/nls/fr 2>&1 >/dev/null || true
-%%NLS:%%@unexec rm %D/share/fluxbox/nls/es 2>&1 >/dev/null || true
-%%NLS:%%@unexec rm %D/share/fluxbox/nls/en_US 2>&1 >/dev/null || true
-%%NLS:%%@unexec rm %D/share/fluxbox/nls/en 2>&1 >/dev/null || true
-%%NLS:%%@unexec rm %D/share/fluxbox/nls/US_ASCII 2>&1 >/dev/null || true
-%%NLS:%%@unexec rm %D/share/fluxbox/nls/POSIX 2>&1 >/dev/null || true
-%%NLS:%%@exec ln -s lv_LV %D/share/fluxbox/nls/lv
-%%NLS:%%@exec ln -s fr_FR %D/share/fluxbox/nls/fr
-%%NLS:%%@exec ln -s es_ES %D/share/fluxbox/nls/es
-%%NLS:%%@exec ln -s C %D/share/fluxbox/nls/en_US
-%%NLS:%%@exec ln -s C %D/share/fluxbox/nls/en
-%%NLS:%%@exec ln -s C %D/share/fluxbox/nls/US_ASCII
-%%NLS:%%@exec ln -s C %D/share/fluxbox/nls/POSIX
 @dirrm share/fluxbox/styles/Emerge/pixmaps
 @dirrm share/fluxbox/styles/Emerge
 @dirrm share/fluxbox/styles/BlueFlux/pixmaps
