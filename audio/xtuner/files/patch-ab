@@ -1,0 +1,14 @@
+--- Imakefile.orig	Sat Sep 18 11:34:00 1999
++++ Imakefile	Sat Sep 18 11:34:39 1999
+@@ -27,7 +27,11 @@
+ #if defined (FreeBSDArchitecture)
+   CC=              gcc
+   EXTRA_DEFINES=   -D_HAVE_PARAM_H
++#if defined (AlphaArchitecture)
++  LOCAL_LIBRARIES= -lxforms -lXpm -lX11 -lm -lio
++#else
+   LOCAL_LIBRARIES= -lxforms -lXpm -lX11 -lm
++#endif
+ #else
+   CFLAGS=          -O2 -m486
+   LOCAL_LIBRARIES= -lforms -lXpm -lX11 -lm
