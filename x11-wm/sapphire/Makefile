@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	sapphire
-PORTVERSION=	0.14.2
+PORTVERSION=	0.15.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	trevor@FreeBSD.org
 
-DIST_SUBDIR=	sapphire
-
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 post-extract:
-	@${CP} ${WRKSRC}/data.inst ${WRKSRC}/sapphire.inst
 
 post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/sapphire.inst
+	${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/data.inst
+.for i in data/menu/default configure data.inst src/sapphire.hh
+	${PERL} -pi -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${i}
+.endfor
+	${CP} ${WRKSRC}/data.inst ${WRKSRC}/sapphire.inst
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sapphire.inst ${PREFIX}/bin
@@ -34,12 +35,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/data/menu/default ${PREFIX}/share/sapphire/menu/default.orig
 	@${MKDIR} ${PREFIX}/share/sapphire/themes
 	${INSTALL_DATA} ${WRKSRC}/data/themes/*.theme ${PREFIX}/share/sapphire/themes
-	@${MKDIR} ${PREFIX}/share/sapphire/wmconfig
-	${INSTALL_DATA} ${WRKSRC}/data/wmconfig/wmconf ${PREFIX}/share/sapphire/wmconfig
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/sapphire
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/sapphire
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
