@@ -1,10 +1,10 @@
-*** gdev10v.mak.orig	Sun Apr 20 01:02:16 1997
---- gdev10v.mak	Sun Apr 20 01:04:27 1997
+*** gdev10v.mak.orig	Sun Nov 15 23:30:39 1998
+--- gdev10v.mak	Sun Nov 15 23:41:25 1998
 ***************
-*** 1,10 ****
+*** 1,12 ****
   ### ----------------- The Canon BubbleJet BJ10v device ----------------- ###
   
-  bj10v_=gdev10v.$(OBJ) gdevprn.$(OBJ)
+! bj10v_=gdev10v.$(OBJ) gdevprn.$(OBJ)
 ! bj10v.dev: $(bj10v_)
 ! 	$(SHP)gssetdev bj10v $(bj10v_)
 ! bj10vh.dev: $(bj10v_)
@@ -12,10 +12,12 @@
   
   # Uncomment the following line if you are using MS-DOS on PC9801 series.
   
---- 1,10 ----
+! gdev10v.$(OBJ): gdevbj10.c $(PDEVH)
+  #	$(CCC) -DPC9801 gdev10v.c
+--- 1,13 ----
   ### ----------------- The Canon BubbleJet BJ10v device ----------------- ###
   
-  bj10v_=gdev10v.$(OBJ) gdevprn.$(OBJ)
+! bj10v_=$(GLOBJ)gdev10v.$(OBJ) $(GLOBJ)gdevprn.$(OBJ)
 ! bj10v.dev: $(bj10v_) page.dev
 ! 	$(SETPDEV) bj10v $(bj10v_)
 ! bj10vh.dev: $(bj10v_) page.dev
@@ -23,3 +25,6 @@
   
   # Uncomment the following line if you are using MS-DOS on PC9801 series.
   
+! $(GLOBJ)gdev10v.$(OBJ): $(GLSRC)gdevbj10.c $(PDEVH)
+! 	$(GLCC) $(GLO_)gdev10v.$(OBJ) $(C_) $(GLSRC)gdev10v.c
+  #	$(CCC) -DPC9801 gdev10v.c

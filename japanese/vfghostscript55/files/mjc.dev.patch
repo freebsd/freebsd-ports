@@ -1,9 +1,16 @@
-*** mjc.dev.orig	Sun Apr 20 01:41:48 1997
---- mjc.dev	Sun Apr 20 01:43:46 1997
+*** mjc.dev.orig	Sun Nov 15 23:30:39 1998
+--- mjc.dev	Sun Nov 15 23:43:17 1998
 ***************
-*** 16,27 ****
-  gdevmjc.$(OBJ): gdevmjc.c $(PDEVH) $(gdevpcl_h)
-  	$(CCC) gdevmjc.c
+*** 9,27 ****
+  #
+  ##
+  
+! mj700v2c_=gdevmjc.$(OBJ) $(HPPCL)
+  
+  # To make A4 paper the default, change the second line below this to
+! #	$(CCC) -DA4 gdevmjc.c
+! gdevmjc.$(OBJ): gdevmjc.c $(PDEVH) $(gdevpcl_h)
+! 	$(CCC) gdevmjc.c
   
 ! mjc180.dev: $(mj700v2c_)
 ! 	$(SHP)gssetdev mjc180 $(mj700v2c_)
@@ -14,9 +21,17 @@
 ! mj500c.dev: $(mj700v2c_)
 ! 	$(SHP)gssetdev mj500c $(mj700v2c_)
   
---- 16,27 ----
-  gdevmjc.$(OBJ): gdevmjc.c $(PDEVH) $(gdevpcl_h)
-  	$(CCC) gdevmjc.c
+--- 9,28 ----
+  #
+  ##
+  
+! mj700v2c_=$(GLOBJ)gdevmjc.$(OBJ) $(HPPCL)
+  
+  # To make A4 paper the default, change the second line below this to
+! #	$(CC) -DA4 -o gdevmjc.o gdevmjc.c
+! $(GLOBJ)gdevmjc.$(OBJ): $(GLSRC)gdevmjc.c $(PDEVH) $(gdevpcl_h)
+! 	$(GLCC) $(GLO_)gdevmjc.$(OBJ) $(C_) $(GLSRC)gdevmjc.c
+! 	
   
 ! mjc180.dev: $(mj700v2c_) page.dev
 ! 	$(SETPDEV) mjc180 $(mj700v2c_)

@@ -1,0 +1,21 @@
+*** gdevnpdl.mak.orig	Sun Nov 15 23:30:40 1998
+--- gdevnpdl.mak	Sun Nov 15 23:46:24 1998
+***************
+*** 1,8 ****
+  ### ---------------- The NEC NPDL language printer device ---------------- ###
+  
+! npdl_=gdevnpdl.$(OBJ) gdevprn.$(OBJ)
+  npdl.dev: $(npdl_) page.dev
+  	$(SETPDEV) npdl $(npdl_)
+  
+! gdevnpdl.$(OBJ): gdevnpdl.c $(PDEVH)
+! 	$(CCC) gdevnpdl.c
+--- 1,8 ----
+  ### ---------------- The NEC NPDL language printer device ---------------- ###
+  
+! npdl_=$(GLOBJ)gdevnpdl.$(OBJ) $(GLOBJ)gdevprn.$(OBJ)
+  npdl.dev: $(npdl_) page.dev
+  	$(SETPDEV) npdl $(npdl_)
+  
+! $(GLOBJ)gdevnpdl.$(OBJ): $(GLSRC)gdevnpdl.c $(PDEVH)
+! 	$(GLCC) $(GLO_)gdevnpdl.$(OBJ) $(C_) $(GLSRC)gdevnpdl.c

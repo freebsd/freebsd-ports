@@ -1,0 +1,23 @@
+*** gdevdmpr.mak.orig	Sun Nov 15 23:30:39 1998
+--- gdevdmpr.mak	Sun Nov 15 23:44:27 1998
+***************
+*** 1,8 ****
+  ### ---------------- Dot matrix printer device ---------------- ###
+! dmprt_=gdevdmpr.$(OBJ) dviprlib.$(OBJ) gdevprn.$(OBJ)
+  
+  dmprt.dev: $(dmprt_)
+  	$(SETDEV) dmprt $(dmprt_)
+  	$(ADDMOD) dmprt -ps dmp_init
+! gdevdmpr.$(OBJ): gdevdmpr.c dviprlib.h $(PDEVH)
+! dviprlib.$(OBJ): dviprlib.c dviprlib.h
+--- 1,10 ----
+  ### ---------------- Dot matrix printer device ---------------- ###
+! dmprt_=$(GLOBJ)gdevdmpr.$(OBJ) $(GLOBJ)dviprlib.$(OBJ) $(GLOBJ)gdevprn.$(OBJ)
+  
+  dmprt.dev: $(dmprt_)
+  	$(SETDEV) dmprt $(dmprt_)
+  	$(ADDMOD) dmprt -ps dmp_init
+! $(GLOBJ)gdevdmpr.$(OBJ): $(GLSRC)gdevdmpr.c $(GLSRC)dviprlib.h $(PDEVH)
+! 	$(GLCC) $(GLO_)gdevdmpr.$(OBJ) $(C_) $(GLSRC)gdevdmpr.c
+! $(GLOBJ)dviprlib.$(OBJ): $(GLSRC)dviprlib.c $(GLSRC)dviprlib.h
+! 	$(GLCC) $(GLO_)dviprlib.$(OBJ) $(C_) $(GLSRC)dviprlib.c

@@ -1,0 +1,21 @@
+*** gdevepag.mak.orig	Sun Nov 15 23:30:40 1998
+--- gdevepag.mak	Sun Nov 15 23:40:28 1998
+***************
+*** 1,7 ****
+  ### ------- Epson ESC/Page printer device ----------------- ###
+  
+! epag_ = gdevepag.$(OBJ) gdevprn.$(OBJ)
+  
+! epag.dev: gdevepag.$(OBJ)
+! 	$(SETPDEV) epag gdevepag.$(OBJ)
+  
+--- 1,9 ----
+  ### ------- Epson ESC/Page printer device ----------------- ###
+  
+! epag_ = $(GLOBJ)gdevepag.$(OBJ) $(GLOBJ)gdevprn.$(OBJ)
+! $(GLOBJ)gdevepag.$(OBJ): $(GLSRC)gdevepag.c $(PDEVH)
+! 	$(GLCC) $(GLO_)gdevepag.$(OBJ) $(C_) $(GLSRC)gdevepag.c
+  
+! epag.dev: $(epag_)
+! 	$(SETPDEV) epag $(epag_)
+  

@@ -8,9 +8,12 @@ PRINTER_JAPAN=' epag.dev mjc180.dev mjc360.dev mjc720.dev mj500c.dev lips3.dev l
 
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
-    -e "s;JSRCDIR=jpeg-6a;JSRCDIR=${WRKDIR}/jpeg-6a;" \
-    -e "s;PSRCDIR=libpng;PSRCDIR=${WRKDIR}/libpng-0.96;" \
-    -e "s;ZSRCDIR=zlib;ZSRCDIR=.;" \
+    -e "s;XLDFLAGS=;XLDFLAGS= -L/usr/local/lib;" \
+    -e "s;XLIBS=Xt;XLIBS=Xt ICE SM;" \
+    -e "s;^VFINCLUDE=;VFINCLUDE=-I/usr/local/include;" \
+    -e "s;^VFLIBDIRS=;VFLIBDIRS=-L/usr/local/lib;" \
+    -e "s;PVERSION=96;PVERSION=102;" \
+    -e "s;SHARE_ZLIB=0;SHARE_ZLIB=1;" \
     -e "s;CC=gcc;CC=cc;" \
     -e "s;DEVICE_DEVS15=pdfwrite.dev;DEVICE_DEVS15=pdfwrite.dev stcolor.dev st800.dev uniprint.dev ${PRINTER_JAPAN};" \
     < ${WRKSRC}/unix-gcc.mak > ${WRKSRC}/unix-gcc.mak.bak && \
@@ -23,9 +26,12 @@ else
 # This can be null if these files are in the default linker search path.
 sed -e "s;XINCLUDE=-I/usr/local/X/include;XINCLUDE=-I/usr/X11R6/include;" \
     -e "s;XLIBDIRS=-L/usr/X11/lib;XLIBDIRS=-L/usr/X11R6/lib;" \
-    -e "s;JSRCDIR=jpeg-6a;JSRCDIR=${WRKDIR}/jpeg-6a;" \
-    -e "s;PSRCDIR=libpng;PSRCDIR=${WRKDIR}/libpng-0.96;" \
-    -e "s;ZSRCDIR=zlib;ZSRCDIR=.;" \
+    -e "s;XLDFLAGS=;XLDFLAGS= -L/usr/local/lib;" \
+    -e "s;XLIBS=Xt;XLIBS=Xt ICE SM;" \
+    -e "s;^VFINCLUDE=;VFINCLUDE=-I/usr/local/include;" \
+    -e "s;^VFLIBDIRS=;VFLIBDIRS=-L/usr/local/lib;" \
+    -e "s;PVERSION=96;PVERSION=102;" \
+    -e "s;SHARE_ZLIB=0;SHARE_ZLIB=1;" \
     -e "s;CC=gcc;CC=cc;" \
     -e "s;^DEVICE_DEVS=.*;;" \
     -e "s;^DEVICE_DEVS1=.*;DEVICE_DEVS1=;" \
@@ -62,28 +68,32 @@ Have fun with this new configuration style !     -andreas \n\n\
    "x11"      "X version 11, release >=4" ON \
    "x11alpha" "X masquer. as device with alpha capability" ON \
    "x11cmyk"  "X masquer. as 1-bit-per-plane CMYK device" ON \
+   "x11cmyk2"  "X masquer. as 2-bit-per-plane CMYK device" ON \
+   "x11cmyk4"  "X masquer. as 4-bit-per-plane CMYK device" OFF \
+   "x11cmyk8"  "X masquer. as 8-bit-per-plane CMYK device" OFF \
    "x11gray2" "X masquer. as device with 2-bit gray-scale device" ON \
+   "x11gray4" "X masquer. as device with 4-bit gray-scale device" OFF \
    "x11mono"  "X masquer. as black-and-white device" ON \
-   "ap3250"   "Epson AP3250" OFF \
    "appledmp" "Apple Dot Matrix Printer / Imagewriter" OFF \
+   "iwhi"     "Apple Imagewriter, high-resolution mode" OFF \
+   "iwlo"     "Apple Imagewriter, low-resolution mode" OFF \
+   "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" OFF \
    "bj10e"    "Canon BubbleJet BJ10e" ON \
    "bj10v"    "Canon BubbleJet BJ10v" ON \
-   "bj10vh"    "Canon BubbleJet BJ10v" ON \
+   "bj10vh"   "Canon BubbleJet BJ10v" ON \
    "bj200"    "Canon BubbleJet BJ200" ON \
    "bjc600"   "Canon Color BubbleJet BJC-600/4000/70" ON \
    "bjc800"   "Canon Color BubbleJet BJC-800" ON \
+   "lbp8"     "Canon LBP-8II laser printer" OFF \
+   "lips2p"   "Canon LIPS II+ laser printer " OFF \
+   "lips3"    "Canon LIPS III laser printer " ON \
+   "lips4"    "Canon LIPSIV laser printer 600dpi, mono" ON \
+   "lips4c"   "Canon LIPSIV laser printer 600dpi,CMYK" ON \
    "ccr"      "CalComp Raster format" OFF \
-   "cdeskjet" "HP DeskJet 500C, 1 bit/pixel color" ON \
-   "cdjcolor" "HP DeskJet 500C/540C, 24 bit/pixel color + FS dithering" ON \
-   "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" ON \
-   "cdj550"   "HP DeskJet 550C/560C" ON \
-   "cp50"     "Mitsubishi CP50 color" OFF \
+   "lj250"    "DEC LJ250 Companion color printer" OFF \
    "declj250" "alternate DEC LJ250 driver" OFF \
-   "deskjet"  "HP DeskJet and DeskJet Plus" ON \
-   "djet500"  "HP DeskJet 500" ON \
-   "djet500c" "HP DeskJet 500C alternate driver, not for 550/560C" OFF \
    "dmprt"    "Generic Printer" ON \
-   "dnj650c"  "HP DesignJet 650C" OFF \
+   "ap3250"   "Epson AP3250" OFF \
    "epag"     "Epson ESC/Page laser printer 60-600dpi, mono" ON \
    "mjc180"   "Epson MachJet series  180dpi, CMYK" ON \
    "mjc360"   "Epson MachJet series  360dpi, CMYK" ON \
@@ -93,46 +103,54 @@ Have fun with this new configuration style !     -andreas \n\n\
    "eps9mid"  "Epson-compatible 9-pin, medium resol" OFF \
    "eps9high" "Epson-compatible 9-pin, high resol" OFF \
    "epsonc"   "Epson LQ-2550 and Fujitsu 3400/2400/1200 color" OFF \
+   "lp8000"   "Epson LP8000 laser printer" OFF \
+   "st800"    "Epson Stylus 800 printer" ON \
+   "stcolor"  "Epson Stylus Color" ON \
    "ibmpro"   "IBM 9-pin Proprinter" OFF \
-   "imagen"   "Imagen ImPress printers" OFF \
-   "iwhi"     "Apple Imagewriter, high-resolution mode" OFF \
-   "iwlo"     "Apple Imagewriter, low-resolution mode" OFF \
-   "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" OFF \
    "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
+   "imagen"   "Imagen ImPress printers" OFF \
+   "cljet5"   "HP Color LaserJet 5/5M" ON \
+   "cdeskjet" "HP DeskJet 500C, 1 bit/pixel color" ON \
+   "cdjcolor" "HP DeskJet 500C/540C, 24 bit/pixel color + FS dithering" ON \
+   "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" ON \
+   "cdj550"   "HP DeskJet 550C/560C" ON \
+   "deskjet"  "HP DeskJet and DeskJet Plus" ON \
+   "djet500"  "HP DeskJet 500" ON \
+   "djet500c" "HP DeskJet 500C alternate driver, not for 550/560C" OFF \
+   "dnj650c"  "HP DesignJet 650C" OFF \
    "laserjet" "HP LaserJet" ON \
-   "lbp8"     "Canon LBP-8II laser printer" OFF \
-   "lips3"    "Canon LIPS III laser printer " ON \
-   "lips4"    "Canon LIPSIV laser printer 600dpi, mono" ON \
-   "lips4c"   "Canon LIPSIV laser printer 600dpi,CMYK" ON \
-   "lj250"    "DEC LJ250 Companion color printer" OFF \
    "ljet2p"   "HP LaserJet IId/IIp/III* with TIFF compression" ON \
    "ljet3"    "HP LaserJet III* with Delta Row compression" ON \
    "ljet3d"   "HP LaserJet IIID with duplex capability" OFF \
    "ljet4"    "HP LaserJet 4 (defaults to 600 dpi)" ON \
    "lj4dith"  "HP LaserJet 4 with Floyd-Steinberg dithering" ON \
+   "lj5mono"  "HP LaserJet 5  & 6 family (PCL XL), bitmap" OFF \
+   "lj5gray"  "HP LaserJet 5  & 6 family (PCL XL), gray-scale bitmap" OFF \
    "ljetplus" "HP LaserJet Plus" ON \
    "lp2563"   "HP 2563B line printer" OFF \
-   "lp8000"   "Epson LP8000 laser printer" OFF \
-   "m8510"    "C.Itoh M8510 printer" OFF \
-   "necp6"    "NEC P6/P6+/P60, 360x360 DPI resol" OFF \
-   "npdl"      "NEC Printer Description Language (NPDL)" ON \
-   "nwp533"   "Sony Microsystems NWP533 laser printer" OFF \
-   "oce9050"  "OCE 9050 printer" OFF \
-   "oki182"   "Okidata MicroLine 182" OFF \
-   "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
-   "paintjet" "alternate HP PaintJet color printer" OFF \
    "pj"       "HP PaintJet XL driver " ON \
+   "paintjet" "alternate HP PaintJet color printer" OFF \
    "pjetxl"   "alternate HP PaintJet XL driver" OFF \
    "pjxl"     "HP PaintJet XL color printer" ON \
    "pjxl300"  "HP PaintJet XL300 color printer (also for 1200C)" ON \
+   "paintjet" "alternate HP PaintJet color printer" OFF \
+   "pjetxl"   "alternate HP PaintJet XL driver" OFF \
+   "pjxl"     "HP PaintJet XL color printer" ON \
+   "pjxl300"  "HP PaintJet XL300 color printer (also for 1200C)" ON \
+   "m8510"    "C.Itoh M8510 printer" OFF \
+   "cp50"     "Mitsubishi CP50 color" OFF \
+   "necp6"    "NEC P6/P6+/P60, 360x360 DPI resol" OFF \
+   "npdl"     "NEC Printer Description Language (NPDL)" ON \
+   "oce9050"  "OCE 9050 printer" OFF \
+   "oki182"   "Okidata MicroLine 182" OFF \
+   "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
    "r4081"    "Ricoh 4081 laser printer" OFF \
-   "rpdlA3"  "Ricoh Printer Description Language (RPDL) A3 600 dpi" ON \
-   "rpdlA4"  "Ricoh Printer Description Language (RPDL) A4 600 dpi" ON \
-   "rpdlB4"  "Ricoh Printer Description Language (RPDL) B4 600 dpi" ON \
-   "rpdlB5"  "Ricoh Printer Description Language (RPDL) B5 600 dpi" ON \
+   "rpdlA3"   "Ricoh Printer Description Language (RPDL) A3 600 dpi" ON \
+   "rpdlA4"   "Ricoh Printer Description Language (RPDL) A4 600 dpi" ON \
+   "rpdlB4"   "Ricoh Printer Description Language (RPDL) B4 600 dpi" ON \
+   "rpdlB5"   "Ricoh Printer Description Language (RPDL) B5 600 dpi" ON \
+   "nwp533"   "Sony Microsystems NWP533 laser printer" OFF \
    "sj48"     "StarJet 48 inkjet printer" OFF \
-   "st800"    "Epson Stylus 800 printer" ON \
-   "stcolor"  "Epson Stylus Color" ON \
    "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" OFF \
    "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" OFF \
    "t4693d8"  "Tektronix 4693d color, 8 bits per R/G/B component" OFF \

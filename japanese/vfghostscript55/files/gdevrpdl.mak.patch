@@ -1,0 +1,17 @@
+*** gdevrpdl.mak.orig	Sun Nov 15 23:30:40 1998
+--- gdevrpdl.mak	Sun Nov 15 23:46:53 1998
+***************
+*** 1,5 ****
+  ### ---------- RICOH RPDL IV(600dpi) printer devices ---------- ###
+! rpdl_=gdevrpdl.$(OBJ)
+  
+  rpdlA3.dev: $(rpdl_) page.dev
+  	$(SETPDEV) rpdlA3 $(rpdl_)
+--- 1,7 ----
+  ### ---------- RICOH RPDL IV(600dpi) printer devices ---------- ###
+! rpdl_=$(GLOBJ)gdevrpdl.$(OBJ)
+! $(GLOBJ)gdevrpdl.$(OBJ): $(GLSRC)gdevrpdl.c $(PDEVH)
+! 	$(GLCC) $(GLO_)gdevrpdl.$(OBJ) $(C_) $(GLSRC)gdevrpdl.c
+  
+  rpdlA3.dev: $(rpdl_) page.dev
+  	$(SETPDEV) rpdlA3 $(rpdl_)

@@ -11,7 +11,7 @@
 --- 1,6 ----
   BeginConfig
   %%%%%%%%%%%%%%%%%%%%%% Standard user cusomizations %%%%%%%%%%%%%%%%%%%%%
-! /printer      (/usr/local/share/ghostscript/5.10vflib/escp_24.src)
+! /printer      (/usr/local/share/ghostscript/5.50vflib/escp_24.src)
   %               horizontal / vertical
   % /resolution   [ 160.0 180.0 ]
   %               horizontal / vertical
