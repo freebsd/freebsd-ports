@@ -99,6 +99,7 @@
     SUBDIR += pips-sc680_777
     SUBDIR += pips-sc880
     SUBDIR += pips-sc980
+    SUBDIR += pips-sp810_820
     SUBDIR += pips2200
     SUBDIR += pips3000
     SUBDIR += pips3300
