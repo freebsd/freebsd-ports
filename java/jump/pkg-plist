@@ -114,3 +114,4 @@
 @dirrm %%T%%/build/classes
 @dirrm %%T%%/build
 @dirrm %%T%%
+@unexec rmdir share/java 2> /dev/null || true
