@@ -25,6 +25,7 @@ MAINTAINER=	steve@FreeBSD.org
 
 RUN_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 DIST_SUBDIR=	openmotif
 WRKSRC=		${WRKDIR}/motif
 USE_IMAKE=	yes
