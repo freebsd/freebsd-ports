@@ -1,12 +1,12 @@
 # New ports collection makefile for:	aumix
-# Version required:    1.18.4
+# Version required:    1.19
 # Date created:        21 May 1999
 # Whom:                Chris Piazza <cpiazza@home.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/29 04:47:12 steve Exp $
 #
 
-DISTNAME=	aumix-1.18.4
+DISTNAME=	aumix-1.19
 CATEGORIES=	audio
 MASTER_SITES=	http://jpj.net/~trevor/aumix/ \
 		${MASTER_SITE_SUNSITE}
@@ -18,8 +18,9 @@ LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-L${LOCALBASE}/lib -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -I${LOCALBASE}/include"
+CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
+		--libdir="${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=	aumix.1
 
