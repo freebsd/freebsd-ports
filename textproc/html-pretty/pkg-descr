@@ -1,0 +1,6 @@
+html-pretty (or htmlpty on file systems with unpleasant filename
+length restrictions) is a prettyprinter for HTML and SGML.  It can
+also assist in the conversion of ordinary text files in ASCII or
+ISO8859-1 character sets to HTML.
+
+WWW: http://www.math.utah.edu/~beebe/software/html-sgml-tools.html#html-pretty
