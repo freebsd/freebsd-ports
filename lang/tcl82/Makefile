@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.15 1999/03/11 21:47:13 scrappy Exp $
+# $Id: Makefile,v 1.16 1999/04/08 19:05:47 billf Exp $
 #
 
 DISTNAME=	tcl8.1b1
@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
 MAINTAINER=	jseger@FreeBSD.ORG
 
 Y2K=            http://www.scriptics.com/Y2K.html
-WWW_SITE=       http://www.scriptics.com/
-
 
 FILE_DEPENDS=	${PORTSDIR}/lang/tcl80
 

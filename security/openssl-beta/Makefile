@@ -3,7 +3,7 @@
 # Date created:		Sun Jan  3 19:36:27 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.28 1999/03/26 08:42:48 dirk Exp $
+# $Id: Makefile,v 1.29 1999/04/13 22:37:02 dirk Exp $
 #
 
 DISTNAME=	openssl-0.9.2b
@@ -17,8 +17,6 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	openssl-0.9.2b-rsaoaep.patch
 
 MAINTAINER=	dirk@FreeBSD.ORG
-
-WWW_SITE=	http://www.openssl.org/
 
 ONLY_FOR_ARCHS=	i386
 RESTRICTED=	"Cryptography"

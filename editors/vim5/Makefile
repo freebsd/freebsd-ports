@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.35 1999/03/15 10:24:24 obrien Exp $
+# $Id: Makefile,v 1.36 1999/04/08 19:05:48 billf Exp $
 #
 
 DISTNAME=	vim-5.3
@@ -20,7 +20,6 @@ DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 MAINTAINER=     obrien@FreeBSD.org
 
 Y2K=		http://www.vim.org/y2k.html
-WWW_SITE=	http://www.vim.org/
 
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \

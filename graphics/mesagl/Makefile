@@ -3,7 +3,7 @@
 # Date created:         Tue Feb  7 12:02:49  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.30 1998/11/11 05:37:18 asami Exp $
+# $Id: Makefile,v 1.31 1999/03/11 21:47:11 scrappy Exp $
 #
 
 DISTNAME=       MesaLib-3.0
@@ -14,8 +14,6 @@ MASTER_SITES= 	ftp://iris.ssec.wisc.edu/pub/Mesa/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MesaDemos-3.0.tar.gz
 
 MAINTAINER=	jseger@FreeBSD.ORG
-
-WWW_SITE=	http://www.ssec.wisc.edu/~brianp/Mesa.html
 
 WRKSRC=		${WRKDIR}/Mesa-3.0
 

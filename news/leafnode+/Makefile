@@ -3,7 +3,7 @@
 # Date created:		19 November 1998
 # Whom:			Tom Hukins <tom@eborcom.com>
 #
-# $Id: Makefile,v 1.4 1999/04/03 01:01:04 steve Exp $
+# $Id: Makefile,v 1.5 1999/04/07 18:21:49 jseger Exp $
 #
 
 DISTNAME=	leafnode+-2.6
@@ -11,8 +11,6 @@ CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/leafnode/
 
 MAINTAINER=	tom@eborcom.com
-
-WWW_SITE=	http://www.io.com/~kazushi/freeware/leafnode+.html
 
 MAN8=		checkgroups.8 fetchnews.8 leafnode.8 texpire.8
 

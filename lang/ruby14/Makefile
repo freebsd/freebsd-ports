@@ -3,7 +3,7 @@
 # Date created:         04 September 1997
 # Whom:                 Eiji-usagi-MATSUmoto <usagi@ruby.club.or.jp>
 #
-# $Id: Makefile,v 1.9 1999/02/22 04:11:48 steve Exp $
+# $Id: Makefile,v 1.10 1999/04/19 03:55:51 steve Exp $
 #
 
 DISTNAME=	ruby-1.2.5
@@ -16,8 +16,6 @@ MASTER_SITES=	ftp://ftp.netlab.co.jp/pub/lang/ruby/${BRANCH_NAME}/ \
 		ftp://mirror.nucba.ac.jp/mirror/ruby/${BRANCH_NAME}/
 
 MAINTAINER=	yasuf@big.or.jp
-
-WWW_SITE=	http://www.netlab.co.jp/ruby/
 
 GNU_CONFIGURE=	yes
 #USE_AUTOCONF=	yes
