@@ -13,7 +13,7 @@
 # bsd.port.mk.  There are significant differences in those so you'll have
 # hard time upgrading this...
 #
-# $Id: portlint.pl,v 1.3 1999/02/22 03:01:21 steve Exp $
+# $Id: portlint.pl,v 1.4 1999/04/02 03:24:13 steve Exp $
 #
 
 $err = $warn = 0;
@@ -766,7 +766,7 @@ EOF
 		$j = $`;
 		$k = $1;
 		if ($j =~ /[0-9]$/) {
-			&perror("WARN: is \"$j\" same as package name ".
+			&perror("WARN: is \"$j\" correct as package name ".
 				"WITHOUT version number? ".
 				"if not, avoid \"-\" in version number ".
 				"part of ".
