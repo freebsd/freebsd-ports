@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://web.systhug.com/mod_extract_forwarded/ \
 		http://atreides.freenix.no/~anders/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anders@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
