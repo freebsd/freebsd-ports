@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-DNS
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	DougB@FreeBSD.org
 
+# Warnings during build are harmless, the port does not need these to build
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Digest/HMAC_MD5.pm:${PORTSDIR}/security/p5-Digest-HMAC \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
@@ -34,13 +35,21 @@ MAN3=		Net::DNS.3 Net::DNS::Header.3 Net::DNS::Packet.3 \
 		Net::DNS::RR::NIMLOC.3 Net::DNS::RR::NSAP.3 \
 		Net::DNS::RR::NULL.3 Net::DNS::RR::PX.3 Net::DNS::Update.3 \
 		Net::DNS::Nameserver.3 Net::DNS::RR::CERT.3 \
+		Net::DNS::FAQ.3 Net::DNS::RR::TKEY.3 \
 		Net::DNS::RR::OPT.3 Net::DNS::RR::TSIG.3 Net::DNS::RR::DNAME.3
 
+post-patch:
+	${CP} ${WRKSRC}/lib/Net/DNS/FAQ.pod ${WRKSRC}/lib/Net/DNS/FAQ.pod.Dist
+	${SED} -e '1d' ${WRKSRC}/lib/Net/DNS/FAQ.pod.Dist > \
+		${WRKSRC}/lib/Net/DNS/FAQ.pod
+	${RM} ${WRKSRC}/lib/Net/DNS/FAQ.pod.Dist
+
+DOCSDIR=	${PREFIX}/share/doc/p5-Net-DNS
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/p5-Net-DNS
+	@${MKDIR} ${DOCSDIR}
 .for file in Changes README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/p5-Net-DNS
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
