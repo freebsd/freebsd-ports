@@ -3,22 +3,26 @@
 # Date created:        02 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/08/05 09:30:50 asami Exp $
+# $Id: Makefile,v 1.7 1999/01/12 16:50:59 vanilla Exp $
 #
 
-DISTNAME=	SMS
-PKGNAME=	mastergear-1.0
+DISTNAME=	MG12-FreeBSD-80x86-bin
+PKGNAME=	mastergear-1.2
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.komkon.org/fms/MG/
-DISTFILES=	MG.tar.Z
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	nacai@iname.com
 
+WRKSRC=		${WRKDIR}/SMS
+ONLY_FOR_ARCHS=	i386
+
+NO_BUILD=	yes
+STRIP=
 USE_X_PREFIX=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mg ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/dasm ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/mastergear
 	${INSTALL_DATA} ${WRKSRC}/MG.doc ${PREFIX}/share/mastergear
 
