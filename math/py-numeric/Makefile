@@ -6,26 +6,34 @@
 #
 
 PORTNAME=	numeric
-PORTVERSION=	16.1.1
+PORTVERSION=	17.1.1
 CATEGORIES=	math python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	numpy
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Numeric-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 
 BUILD_DEPENDS=	${PYDISTUTILS}
-LIB_DEPENDS=	lapack.3:${PORTSDIR}/math/lapack \
-		blas.2:${PORTSDIR}/math/lapack
 
 USE_PYTHON=	yes
-MAKE_ENV=	PYTHON_CMD=${PYTHON_CMD}
 
 DOCDIR=		${PREFIX}/share/doc/py-numeric
 EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
 
-post-install:
+post-extract:
+.for dir in FFT LALITE RANLIB RNG
+	@(cd ${WRKSRC}/Packages/${dir}; \
+		${LN} -sf ../../../Include Include/Numeric)
+.endfor
+
+do-build:
+	@(cd ${WRKSRC}; ${PYTHON_CMD} setup_all.py build)
+
+do-install:
+	@(cd ${WRKSRC}; ${PYTHON_CMD} setup_all.py install)
+
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/Demo/*.py ${EXAMPLEDIR}
 	@${MKDIR} ${EXAMPLEDIR}/NumTut
