@@ -7,7 +7,7 @@
 
 PORTNAME=	pktsuckers
 PORTVERSION=	1.2
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	ftp://minnie.cs.adfa.edu.au/pub/NetSecurity/
 DISTNAME=	${PORTNAME}1_2
 

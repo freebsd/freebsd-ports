@@ -7,7 +7,7 @@
 
 PORTNAME=	p5-Authen-Radius
 PORTVERSION=	0.05
-CATEGORIES=	security net perl5
+CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Authen
 DISTNAME=	RadiusPerl-0.05

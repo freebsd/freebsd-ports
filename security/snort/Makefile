@@ -7,7 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	1.6
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	http://www.clark.net/~roesch/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 

@@ -8,7 +8,7 @@
 
 PORTNAME=	kmap
 PORTVERSION=	0.7.1
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	http://www.islc.net/~icszepp/downloads/
 
 MAINTAINER=	obrien@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	strobe
 PORTVERSION=	1.06
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.win.or.jp/pub/network/misc/
 EXTRACT_SUFX=	.tgz
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	identify
 PORTVERSION=	0.7
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/tools/
 
 MAINTAINER=	nsayer@quack.kfu.com

@@ -7,7 +7,7 @@
 
 PORTNAME=	tripwire
 PORTVERSION=	1.2
-CATEGORIES=	security net
+CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/security/tripwire/
 EXTRACT_SUFX=	.tar.Z
 
