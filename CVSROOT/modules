@@ -8809,6 +8809,7 @@ tac_plus-libradius	ports/net/tac_plus-libradius
 tac_plus4	ports/net/tac_plus4
 tacshell	ports/net/tacshell
 tads		ports/games/tads
+taglib		ports/audio/taglib
 taipan		ports/games/taipan
 talkfilters	ports/misc/talkfilters
 tamago		ports/editors/tamago
