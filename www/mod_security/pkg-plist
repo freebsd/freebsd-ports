@@ -5,7 +5,7 @@ libexec/%%APACHE%%/mod_security.so
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/modsecurity-manual-%%VER%%.pdf
+%%PORTDOCS%%%%DOCSDIR%%/modsecurity-manual.pdf
 %%EXAMPLESDIR%%/httpd.conf.example-minimal
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
