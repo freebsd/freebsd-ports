@@ -13,13 +13,14 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	bash
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The GNU Borne Again Shell
+COMMENT=	The GNU Bourne Again Shell
 
 NO_LATEST_LINK=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME}
 # Don't compress manpages or .so not works.
 NOMANCOMPRESS=	yes
 MAN1=		bash.1 bash_builtins.1
+INFO=		bash
 
 post-install:
 	@install-info ${PREFIX}/info/bash.info ${PREFIX}/info/dir
