@@ -1,0 +1,22 @@
+------------------------------------------------------------------------------
+The installation of skim has finished. You can find correponding menu items in
+KDE's menu and Control Center.
+
+Please note this port contains only KDE/QT frontends and utilities to the SCIM
+platform. If you want to use any actual input method, please install the 
+following ports as needed:
+
+ Chinese:
+  chinese/scim-tables	Table based input methods: Array30, CangJie, Cantonese,
+                        Dayi, Erbi, EZ, Jyutping, Simplex, Wubi, Ziranma, ZhuYin
+  chinese/scim-chinese	Smart pinyin
+    
+ Korean:
+  korean/scim-tables	Table based input methods: Hangul, Hanja
+
+ Japanese:
+  japanese/scim-tables	Table based input methods: HIRAGANA, KATAKANA, Nippon
+
+You can use the command `skim' to start after properly setting SCIM (please 
+refer to the message displayed by scim installation).
+------------------------------------------------------------------------------
