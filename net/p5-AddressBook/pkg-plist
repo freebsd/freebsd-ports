@@ -1,0 +1,12 @@
+%%SITE_PERL%%/AddressBook.pm
+%%SITE_PERL%%/AddressBook/Config.pm
+%%SITE_PERL%%/AddressBook/DB/BBDB.pm
+%%SITE_PERL%%/AddressBook/DB/DBI.pm
+%%SITE_PERL%%/AddressBook/DB/HTML.pm
+%%SITE_PERL%%/AddressBook/DB/LDAP.pm
+%%SITE_PERL%%/AddressBook/DB/LDIF.pm
+%%SITE_PERL%%/AddressBook/DB/PDB.pm
+%%SITE_PERL%%/AddressBook/DB/Text.pm
+%%SITE_PERL%%/AddressBook/Entry.pm
+@dirrm %%SITE_PERL%%/AddressBook/DB
+@dirrm %%SITE_PERL%%/AddressBook

@@ -428,6 +428,7 @@
     SUBDIR += osrtspproxy
     SUBDIR += ossp-sa
     SUBDIR += p5-Archie
+    SUBDIR += p5-AddressBook
     SUBDIR += p5-EasyTCP
     SUBDIR += p5-File-Rsync
     SUBDIR += p5-File-RsyncP
