@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	synaesthesia
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	graphics
-MASTER_SITES=	http://yoyo.cc.monash.edu.au/~pfh/
+MASTER_SITES=	http://www.logarithmic.net/pfh/Synaesthesia/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	Graphically represents sound in real time
@@ -18,11 +18,17 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
 USE_GMAKE=	Yes
+USE_REINPLACE=	Yes
 USE_X_PREFIX=	Yes
 
 GNU_CONFIGURE=	Yes
 CONFIGURE_ARGS=	--with-sdl-prefix=${LOCALBASE}
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,' `${FIND} ${WRKSRC} -name \*.cc -or -name \*.c`
+	@${REINPLACE_CMD} -e 's,int16_t,u_int16_t,' \
+		-e 's,machine/soundcard.h,sys/soundcard.h,' ${WRKSRC}/sound.cc
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/synaesthesia ${PREFIX}/bin
