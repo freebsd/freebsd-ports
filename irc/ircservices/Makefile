@@ -6,10 +6,16 @@
 #
 
 PORTNAME=	ircservices
-PORTVERSION=	5.0.14
+PATCHLEVEL=	17
+PORTVERSION=	5.0.${PATCHLEVEL}
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.ircservices.za.net/pub/ircservices/ \
 		ftp://ftp.esper.net/ircservices/
+PATCH_SITES=	${MASTER_SITES}
+DISTNAME=	${PORTNAME}-5.0.0
+PATCHFILES!=	/usr/bin/jot -s " " -w ${DISTNAME:C/[0-9]*$//}%d.diff.gz  \
+                        ${PATCHLEVEL} 1 ${PATCHLEVEL}
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A system of IRC services for IRC networks
