@@ -65,3 +65,22 @@
   pnewname:  lastm=nowm;saddr=strcpy(malloc(strlen(saddr)+1),saddr);
   	   if(namep)
   	      free(namep);
+*** src/misc.c.old	Wed Jan 11 18:11:02 1995
+--- src/misc.c	Wed Jan 11 17:40:33 1995
+***************
+*** 290,296 ****
+  { if(sp->filled==sp->tspace)			    /* growth limit reached? */
+     { if(!sp->offs)
+  	sp->offs=malloc(1);
+!      sp->offs=realloc(sp->offs,(sp->tspace+=4)*sizeof sp->offs);   /* expand */
+     }
+    sp->offs[sp->filled++]=val;				     /* append to it */
+  }
+--- 290,296 ----
+  { if(sp->filled==sp->tspace)			    /* growth limit reached? */
+     { if(!sp->offs)
+  	sp->offs=malloc(1);
+!      sp->offs=realloc(sp->offs,(sp->tspace+=4)*sizeof(off_t));   /* expand */
+     }
+    sp->offs[sp->filled++]=val;				     /* append to it */
+  }
