@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	dists/woody/main/disks-${ARCH}/base-images-${PORTVERSION}-${DISTDATE} \
 			pool/main/u/util-linux
 PKGNAMESUFFIX=	-debian
-DISTFILES=	basedebs.tar util-linux-locales_2.11n-4_all.deb
+DISTFILES=	basedebs.tar util-linux-locales_2.11n-7_all.deb
 EXTRACT_ONLY=	basedebs.tar
 
 MAINTAINER=	ports@FreeBSD.org
@@ -57,7 +57,7 @@ BASEPACKAGES=	adduser apt-utils apt base-config base-files base-passwd \
 		telnet textutils util-linux util-linux-locales whiptail
 
 post-extract:
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/util-linux-locales_2.11n-4_all.deb \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/util-linux-locales_2.11n-7_all.deb \
 		${WRKSRC}
 
 do-patch: build-depends
