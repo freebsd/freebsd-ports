@@ -31,10 +31,12 @@ NO_PACKAGE=	"License doesn\'t allow binary distributions"
 
 TARGET_DIR=	${JAVASHAREDIR}/${PORTNAME}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///} JAVA_HOME=${JAVA_HOME:S/^${PREFIX}\///}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .include <bsd.port.pre.mk>
 
 .if ${JAVA_OS} == "FreeBSD"
+WITH_PLUGINWRAPPER=	yes
 RUN_DEPENDS+=	${LOCALBASE}/lib/pluginwrapper/java3d.so:${PORTSDIR}/www/linuxpluginwrapper
 .endif
 
@@ -42,6 +44,19 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/pluginwrapper/java3d.so:${PORTSDIR}/www/linuxplug
 PLIST_SUB+=	INSTALL_IN_JRE="@comment "
 .else
 PLIST_SUB+=	INSTALL_IN_JRE=""
+.endif
+
+pre-install:
+.if defined(NOINSTALL_IN_JRE)
+		@${SED} -e "s:%%TARGET_DIR%%:${TARGET_DIR}:g" ${MASTERDIR}/pkg-message-jre > ${PKGMESSAGE}
+.endif
+.if defined(WITH_PLUGINWRAPPER)
+.if defined(NOINSTALL_IN_JRE)
+		@${ECHO_CMD} >> ${PKGMESSAGE}
+		@${SED} -e "s:%%LIBDIR%%:${TARGET_DIR}/lib:g" ${MASTERDIR}/pkg-message-libmap >> ${PKGMESSAGE}
+.else
+		@${SED} -e "s:%%LIBDIR%%:${JAVA_HOME}/jre/lib/i386:g" ${MASTERDIR}/pkg-message-libmap > ${PKGMESSAGE}
+.endif
 .endif
 
 do-install:
@@ -66,6 +81,11 @@ do-install:
 		@${MKDIR} ${TARGET_DIR}/demo
 		@${CP} -R ${WRKSRC}/demo/java3d/* ${TARGET_DIR}/demo
 		@${ECHO_CMD} " [DONE]"
+.endif
+
+post-install:
+.if defined(NOINSTALL_IN_JRE) || defined(WITH_PLUGINWRAPPER)
+		@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>

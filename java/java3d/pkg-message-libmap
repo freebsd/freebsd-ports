@@ -1,0 +1,20 @@
+In order to use the Java3D on FreeBSD native JavaVM,
+describe as follows to your /etc/libmap.conf.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+[%%LIBDIR%%/libJ3D.so]
+libdl.so.2	pluginwrapper/java3d.so
+libm.so.6	libm.so.2
+libnsl.so.1	pluginwrapper/java3d.so
+libpthread.so.0	pluginwrapper/java3d.so
+libc.so.6	pluginwrapper/java3d.so
+
+[%%LIBDIR%%/libJ3DUtils.so]
+libpthread.so.0	pluginwrapper/java3d.so
+libc.so.6	pluginwrapper/java3d.so
+
+[%%LIBDIR%%/libj3daudio.so]
+libm.so.6	libm.so.2
+libnsl.so.1	pluginwrapper/java3d_snd.so
+libpthread.so.0	pluginwrapper/java3d_snd.so
+libc.so.6	pluginwrapper/java3d_snd.so
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
