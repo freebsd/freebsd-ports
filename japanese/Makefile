@@ -1,9 +1,9 @@
-# $Id: Makefile,v 1.50 1997/01/03 12:26:56 asami Exp $
+# $Id: Makefile,v 1.51 1997/01/03 13:15:04 asami Exp $
 #
 
     SUBDIR += Canna
     SUBDIR += Wnn
-    SUBDIR += camltk
+    SUBDIR += camltk41
     SUBDIR += chimera
     SUBDIR += dvi2ps
     SUBDIR += dvi2tty
