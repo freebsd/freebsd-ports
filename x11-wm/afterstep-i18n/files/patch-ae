@@ -1,0 +1,8 @@
+--- Imakefile.orig	Sun Mar  9 23:03:27 1997
++++ Imakefile	Tue Sep 19 14:05:36 2000
+@@ -28,4 +28,4 @@
+ MakeSubdirs($(SUBDIRS))
+ 
+ /* Doesn't work for me! */
+-/* #DependSubdirs($(SUBDIRS))*/
++#DependSubdirs($(SUBDIRS))
