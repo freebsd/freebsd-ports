@@ -24,6 +24,7 @@ CONFLICTS?=	openssh-3.* ssh-1.* ssh2-3.*
 USE_OPENSSL=	yes
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_PERL5_BUILD=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --with-md5-passwords
 PRECIOUS=	ssh_config sshd_config \
@@ -76,28 +77,17 @@ EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 PKGNAMESUFFIX=	-gssapi
 CONFLICTS+=	openssh-portable-*
-BUILD_DEPENDS+=		autoreconf:${PORTSDIR}/devel/autoconf
-# USE_AUTOCONF_VER=	252 # broken
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
-AUTORECONF=	autoreconf
-
-post-patch:
-	@${ECHO_MSG} Applying extra patch for GSS-API key-exchange...
-	@${PATCH} ${PATCH_DIST_ARGS:S/-p0/-p1/} \
-		< ${DISTDIR}/${GSSAPI_PATCH}
-
-pre-configure:
-	@${ECHO_MSG} !!!! Warning this option uses autoreconf !!!
-	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTORECONF} \
-		${AUTOCONF_ARGS})
-.else
-.if exists(/usr/include/krb5.h)
-CONFIGURE_ARGS+=	--with-kerberos5
-EXTRA_PATCHES+=	${FILESDIR}/gss-serv.c.patch
-.endif
 .else
 CONFLICTS+=	openssh-gssapi-*
+.if exists(/usr/include/krb5.h)
+CONFIGURE_ARGS+=	--with-kerberos5
+EXTRA_PATCHES+=		${FILESDIR}/gss-serv.c.patch
 .endif
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldes||g' ${WRKSRC}/configure
 
 post-configure:
 	${SED} -e 's:__PREFIX__:${PREFIX}:g' \
