@@ -12,6 +12,7 @@ include/howl-%%VERSION%%/corby/orb.h
 @dirrm include/howl-%%VERSION%%/corby
 include/howl-%%VERSION%%/rendezvous/dll.h
 include/howl-%%VERSION%%/rendezvous/rendezvous.h
+include/howl-%%VERSION%%/rendezvous/text_record.h
 @dirrm include/howl-%%VERSION%%/rendezvous
 include/howl-%%VERSION%%/salt/address.h
 include/howl-%%VERSION%%/salt/assert.h
@@ -40,13 +41,19 @@ lib/libsalt.a
 lib/libsalt.la
 lib/libsalt.so
 lib/libsalt.so.0
-share/howl/help/address-summary.html
-share/howl/help/address.html
-share/howl/help/index.html
-share/howl/help/overall.html
-share/howl/help/rendezvous-summary.html
-share/howl/help/rendezvous.html
-share/howl/help/salt-summary.html
-share/howl/help/salt.html
-@dirrm share/howl/help
-@dirrm share/howl
+%%DATADIR%%/help/address-summary.html
+%%DATADIR%%/help/address.html
+%%DATADIR%%/help/index.html
+%%DATADIR%%/help/overall.html
+%%DATADIR%%/help/rendezvous-summary.html
+%%DATADIR%%/help/rendezvous.html
+%%DATADIR%%/help/salt-summary.html
+%%DATADIR%%/help/salt.html
+%%DATADIR%%/help/txt_rec-summary.html
+%%DATADIR%%/help/txt_rec.html
+%%DATADIR%%/help/txt_rec_iter-summary.html
+%%DATADIR%%/help/txt_rec_iter.html
+%%DATADIR%%/help/txt_rec_str_iter-summary.html
+%%DATADIR%%/help/txt_rec_str_iter.html
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%

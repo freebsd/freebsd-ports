@@ -5,9 +5,9 @@
 #
 
 PORTNAME=	howl
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.1
 CATEGORIES?=	net devel
-MASTER_SITES=	ftp://ftp.swampwolf.com/pub/
+MASTER_SITES=	http://www.porchdogsoft.com/download/
 
 MAINTAINER=	paul@aps.org
 COMMENT=	Zeroconf/Rendezvous implementation
