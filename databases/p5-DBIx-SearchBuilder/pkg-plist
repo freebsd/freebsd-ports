@@ -1,15 +1,15 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder.pm
-lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Handle.pm
-lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Record.pm
-lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Record/Cachable.pm
-lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Handle/Pg.pm
-lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Handle/mysql.pm
-lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Handle/mysqlPP.pm
-lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Handle/Oracle.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Record
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Handle
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBIx 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder/.packlist
+%%SITE_PERL%%/DBIx/SearchBuilder.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Handle.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Record.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Record/Cachable.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Handle/Pg.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Handle/mysql.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Handle/mysqlPP.pm
+%%SITE_PERL%%/DBIx/SearchBuilder/Handle/Oracle.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder
+@dirrm %%SITE_PERL%%/DBIx/SearchBuilder/Record
+@dirrm %%SITE_PERL%%/DBIx/SearchBuilder/Handle
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DBIx/SearchBuilder 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/DBIx 2>/dev/null || true
