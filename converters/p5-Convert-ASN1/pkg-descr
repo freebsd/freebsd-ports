@@ -1,3 +1,4 @@
-DESCRIPTION
-       Convert::ASN1 encodes and decodes ASN.1 data structures
-       using BER/DER rules.
+Convert::ASN1 encodes and decodes ASN.1 data structures
+using BER/DER rules.
+
+WWW: http://search.cpan.org/author/GBARR/Convert-ASN1
