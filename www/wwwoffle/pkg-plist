@@ -235,6 +235,7 @@ html/en/messages/InfoCached-Tail.html
 html/en/messages/InfoContents-Body.html
 html/en/messages/InfoIllegal.html
 html/en/messages/InfoRequest.html
+html/en/messages/InfoRequested.html
 html/en/messages/InfoSource-Body.html
 html/en/messages/MethodUnsupported.html
 html/en/messages/MonitorFormError.html
