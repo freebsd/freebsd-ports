@@ -17,7 +17,6 @@ share/sane/xsane/sane-hp-logo.xpm
 share/sane/xsane/sane-umax-logo.xpm
 share/sane/xsane/sane-xsane-logo.xpm
 share/sane/xsane/xsane-calibration.pnm
-share/sane/xsane/xsane-license.txt
 share/sane/xsane/xsane-logo.xpm
 share/sane/xsane/xsane-startimage.pnm
 share/sane/xsane/xsane-style.rc
@@ -109,6 +108,11 @@ share/sane/xsane/doc/xsane-zoom-undo.jpg
 share/sane/xsane/doc/xsane-zoom.jpg
 share/sane/xsane/doc/xsane-rotate-90.jpg
 share/sane/xsane/Plustek-logo.xpm
+share/sane/xsane/doc/xsane-autoraise_scanarea.jpg
+share/sane/xsane/doc/xsane-mail-project.jpg
+share/sane/xsane/doc/xsane-setup-ocr.jpg
+share/sane/xsane/xsane-gpl.txt
+share/sane/xsane/xsane-eula.txt
 @dirrm share/sane/xsane/doc
 @dirrm share/sane/xsane
 @dirrm share/sane
