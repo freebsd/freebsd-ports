@@ -1,6 +1,6 @@
---- configure.orig	Sat Apr  6 04:06:38 2002
-+++ configure	Fri May  3 04:10:56 2002
-@@ -14424,6 +14424,7 @@
+--- configure.orig	Sun Jun 23 12:18:35 2002
++++ configure	Sun Jun 23 12:23:23 2002
+@@ -14689,6 +14689,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,12 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -25601,7 +25602,7 @@
+           freetype_prefix=`freetype-config --prefix`
+           freetype_exec_prefix=`freetype-config --exec-prefix`
+           LDFLAGS="$LDFLAGS -L${freetype_exec_prefix}/lib"
+-          CPPFLAGS="$CPPFLAGS -I${freetype_prefix}/include/freetype2"
++          CPPFLAGS="-I${freetype_prefix}/include/freetype2 $CPPFLAGS"
+        fi
+     fi
+ 

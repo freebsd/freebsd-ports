@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.4.6.1
-PORTREVISION=	1
+PORTVERSION=	5.4.6.2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -49,6 +48,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 LIBTOOLFLAGS=	# none
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -118,19 +118,23 @@ INSTALL_TARGET=	install
 INSTALL_TARGET=	install install-data-html
 .endif
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|-lc_r|g ; \
+post-patch:
+#	@${REINPLACE_CMD} -e 's|-lpthread|-lc_r|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|`${ECHO_CMD} ${PTHREAD_LIBS}`|g ; \
 		s|LIBLTDL=.*$$|LIBLTDL="-lltdl"|g ; \
 		s|INCLTDL=.*$$|INCLTDL=|g ; \
 		s|lcms/lcms.h|lcms.h|g ; \
 		s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|top_builddir\)/ltdl/libltdlc.la|LIBLTDL\)|g ; \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|top_builddir)/ltdl/libltdlc.la|LIBLTDL)|g ; \
 		 s|pkgdocdir =.*$$|pkgdocdir = ${DOCSDIR}/|g ; \
 		 s| install-data-html||g'
-	@${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
-	@${PERL} -pi -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
-	@${PERL} -pi -e 's|timestamp: %ld|timestamp: %d|g' \
+	@${REINPLACE_CMD} -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
+	@${REINPLACE_CMD} -e 's|timestamp: %ld|timestamp: %d|g' \
 		${WRKSRC}/magick/xwindow.c
+	@${REINPLACE_CMD}-e 's|^tagnames.*\$$|#&|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
+		${WRKSRC}/ltdl/configure
 
 .include <bsd.port.mk>
