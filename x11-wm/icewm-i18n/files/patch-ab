@@ -1,12 +1,13 @@
---- install.in.orig	Mon Jun  7 20:07:12 1999
-+++ install.in	Mon Jun  7 20:08:10 1999
-@@ -3,11 +3,11 @@
+--- install.in.orig	Tue Jun 13 21:19:25 2000
++++ install.in	Tue Jun 13 21:20:11 2000
+@@ -3,12 +3,12 @@
  
  PREFIX      = @prefix@
  BINDIR      = @bindir@
 -LIBDIR      = @libdir@/X11/icewm
 +LIBDIR      = @prefix@/share/icewm
  ETCDIR      = @sysconfdir@
+ LOCALEDIR   = @prefix@/share/locale
  
  INSTALL     = @INSTALL@
 -INSTALLDIR  = @INSTALL@ -m 755 -d
