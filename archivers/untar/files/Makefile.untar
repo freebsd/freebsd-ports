@@ -1,0 +1,11 @@
+#	Makefile for untar-1.4
+#	For FreeBSD-[43].X
+
+PROG=	untar
+SRCS=	untar.c
+NOMAN=	yes
+
+CFLAGS+=	-D_POSIX_SOURCE
+LDFLAGS+=	-static
+
+.include <bsd.prog.mk>

@@ -59,6 +59,7 @@
     SUBDIR += undms
     SUBDIR += unlzx
     SUBDIR += unrar
+    SUBDIR += untar
     SUBDIR += unzip
     SUBDIR += xdms
     SUBDIR += xpk
