@@ -1,0 +1,19 @@
+*** preferences.bak	Thu Oct 31 06:25:13 1996
+--- preferences	Tue Feb  4 10:30:27 1997
+***************
+*** 124,130 ****
+  # 'Reply-To:'. If you want to remain anonymous, set this to your
+  # anonymous address.
+  #
+! # $config{'anon-from'} = '';
+  
+  # addresses: The location of your address book. Each entry in the
+  # address book has the form:
+--- 124,130 ----
+  # 'Reply-To:'. If you want to remain anonymous, set this to your
+  # anonymous address.
+  #
+! # $config{'default-reply-to'} = '';
+  
+  # addresses: The location of your address book. Each entry in the
+  # address book has the form:
