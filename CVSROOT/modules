@@ -5705,6 +5705,7 @@ mysql50-scripts	ports/databases/mysql50-scripts
 mysql50-server	ports/databases/mysql50-server
 mysql_last_value	ports/databases/mysql_last_value
 mysqlcc		ports/databases/mysqlcc
+mysqlcppapi	ports/databases/mysqlcppapi
 mysqlman	ports/databases/mysqlman
 mysqltcl	ports/databases/mysqltcl
 mythserver	ports/games/mythserver
