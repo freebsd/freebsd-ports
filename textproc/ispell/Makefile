@@ -7,7 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.1.20c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	textproc elisp
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/ \
 		ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
@@ -29,8 +29,10 @@ EXTRACT_ONLY=	${ISPELL_FILES}
 EXTRA_DICT=
 MAKE_FLAGS=	TMPDIR=${WRKDIR} -f
 ALL_TARGET=
+
 BUILDHASH=	${WRKSRC}/buildhash
 UNSQ=		${WRKSRC}/unsq
+MUNCHLIST=	${WRKSRC}/munchlist
 DATADIR=	${PREFIX}/share/ispell
 
 .if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF))
@@ -81,10 +83,12 @@ EXTRA_DICT+=	${DEALTDISTFILE}
 MASTER_SITES+=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/
 .endif
 .if defined(ISPELL_NO)
-NODISTFILE=	ispell-norsk-1.1a.tar.gz
-MASTER_SITES+=	http://www.uio.no/~runekl/
+NODISTFILE=	ispell-norsk-2.0.tar.gz
+MASTER_SITES+=	ftp://ftp.ntnu.no/store/store/stash/ispell/
 EXTRA_DICT+=	${NODISTFILE}
+EXTRACT_ONLY+=	${NODISTFILE}
 MASKBITS?=	64
+USE_GMAKE=	yes
 .endif
 .if defined(ISPELL_NL)
 NLDISTFILE=	ispell-nl-1.0.0.tar.gz
@@ -111,7 +115,6 @@ EXTRA_DICT+=	${AFDISTFILE}
 EXTRACT_ONLY+=	${AFDISTFILE}
 .endif
 
-
 DISTFILES+=	${EXTRA_DICT}
 .endif
 
@@ -126,10 +129,6 @@ post-extract:
 .endif
 .if defined(ISPELL_DENEU)
 	@${TAR} -C ${WRKDIR}/ -yxf ${DISTDIR}/${DENEUDISTFILE}
-.endif
-.if defined(ISPELL_NO)
-	@${MKDIR} ${WRKDIR}/inorsk
-	@${TAR} -C ${WRKDIR}/inorsk/ -zxf ${PORTSDIR}/distfiles/${NODISTFILE}
 .endif
 
 post-patch:
@@ -146,7 +145,7 @@ post-patch:
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/SE.patch 2>/dev/null
 .endif
 .if defined(ISPELL_NO)
-	@cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/NO.patch 2>/dev/null
+	cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/NO.patch 2>/dev/null
 .endif
 .if defined(ISPELL_NL)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/NL.patch 2>/dev/null
@@ -195,10 +194,9 @@ post-build:
 		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH}
 .endif
 .if defined(ISPELL_NO)
-	@cd ${WRKDIR}/inorsk && \
-		${CP} norsk.7bit norsk.aff && \
-		${CAT} norsk.base > norsk.sml && \
-		${BUILDHASH} norsk.sml norsk.aff norsk.hash
+	@cd ${WRKDIR}/norsk && \
+		${GMAKE} ${MAKEFLAGS} UNSQ=${UNSQ} BUILDHASH=${BUILDHASH} \
+			MUNCHLIST=${MUNCHLIST}
 .endif
 .if defined(ISPELL_NL)
 	@cd ${WRKDIR}/${NLDISTFILE:S=.tar.gz==} && \
