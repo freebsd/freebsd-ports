@@ -10,35 +10,37 @@ PORTVERSION=	2.0b1
 CATEGORIES=	math python
 MASTER_SITES=	http://starship.python.net/crew/hinsen/ \
 		http://dirac.cnrs-orleans.fr/programs/
-PKGNAMEPREFIX=	py-
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	ScientificPython-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tg@FreeBSD.org
 
 BUILD_DEPENDS=	${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
 RUN_DEPENDS=	${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
 
+USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
+CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 
-PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
-NUMPYDIR=	${PYTHONSCRIPTDIR}/site-packages/Numeric
-SCIENTIFICDIR=	${PYTHONSCRIPTDIR}/site-packages/Scientific
+NUMPYDIR=	${PYTHON_SITELIBDIR}/Numeric
+SCIENTIFICDIR=	${PYTHON_SITELIBDIR}/Scientific
 DOCDIR=		${PREFIX}/share/doc/py-scientific
 EXAMPLEDIR=	${PREFIX}/share/examples/py-scientific
 
 post-extract:
-	@${CP} ${FILESDIR}/Setup ${WRKSRC}
-	@${CP} ${PYTHONSCRIPTDIR}/config/Makefile.pre.in ${WRKSRC}
+	@${SED} -e "s/%%PYTHON_VERSION%%/${PYTHON_VERSION}/g" \
+		< ${FILESDIR}/Setup > ${WRKSRC}/Setup
+	@${CP} ${PYTHON_LIBDIR}/config/Makefile.pre.in ${WRKSRC}
 
 do-configure:
-	@(cd ${WRKSRC} && ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
+	@(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE} -f Makefile.pre.in boot)
 
 post-install:
 	cd ${WRKDIR}/${DISTNAME}; tar cf - Scientific | \
-	    (cd ${PYTHONSCRIPTDIR}/site-packages; tar xf -)
-	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${SCIENTIFICDIR}
-	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${SCIENTIFICDIR}
+	    (cd ${PYTHON_SITELIBDIR}; tar xf -)
+	@${PREFIX}/bin/python ${PYTHON_LIBDIR}/compileall.py ${SCIENTIFICDIR}
+	@${PREFIX}/bin/python -O ${PYTHON_LIBDIR}/compileall.py ${SCIENTIFICDIR}
 	@${MKDIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/Examples/* ${EXAMPLEDIR}
 .if !defined(NOPORTDOCS)
