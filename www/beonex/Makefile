@@ -133,7 +133,6 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/lib/beonex
 	cd ${WRKSRC}/dist/bin && ${FIND} * | \
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/beonex
-	cd ${WRKSRC} && pax -r -w * ${PREFIX}/lib/beonex
 	${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/beonex
 	${ECHO_CMD} 'cd ${PREFIX}/lib/beonex && exec ./mozilla "$$@"' >> \
 		${WRKDIR}/beonex
