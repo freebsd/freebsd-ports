@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ezbounce
-PORTVERSION=	0.99.6
+PORTVERSION=	0.99.7
 CATEGORIES=	irc
 MASTER_SITES=  	http://druglord.freelsd.org/ezbounce/
 
