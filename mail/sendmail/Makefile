@@ -19,6 +19,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
 PLIST=		${WRKDIR}/.PLIST.more
 
+# Options to define Features:
+#
+# SENDMAIL_WITH_TLS=YES
+# SENDMAIL_WITH_SASL=YES
+# SENDMAIL_WITH_SFIO=YES  
+# SENDMAIL_WITH_MILTER=YES
+
 .if defined(SENDMAIL_WITH_TLS)
 USE_OPENSSL=	yes
 .endif
@@ -51,6 +58,10 @@ pre-configure:
 .if defined(SENDMAIL_WITH_TLS)
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${FILESDIR}/site.config.m4.ssl >> ${WCONF}/site.config.m4
+.endif
+.if exists(${FILESDIR}/site.config.m4.local)
+	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
+		${FILESDIR}/site.config.m4.local >> ${WCONF}/site.config.m4
 .endif
 
 PREFIX?=	${DESTDIR}/usr
