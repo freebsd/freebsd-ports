@@ -19,6 +19,7 @@ COMMENT=	MIDI player
 BROKEN=		"Does not compile"
 .endif
 
+ONLY_FOR_ARCHS=	i386
 IS_INTERACTIVE=	YES	# asks what devices you want to support
 HAS_CONFIGURE=	YES
 CONFIGURE_SCRIPT=	Configure
