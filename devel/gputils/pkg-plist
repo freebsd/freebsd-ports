@@ -1,0 +1,3 @@
+bin/gpasm
+share/gpasm/special.inc
+@dirrm share/gpasm

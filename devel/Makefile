@@ -88,6 +88,7 @@
     SUBDIR += gnomedebug
     SUBDIR += gnomevfs
     SUBDIR += gnustep
+    SUBDIR += gpasm
     SUBDIR += gperf
     SUBDIR += gtksheet
     SUBDIR += i386-rtems-binutils
