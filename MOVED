@@ -991,3 +991,4 @@ print/rubber|textproc/rubber|2004-03-22|remove duplicate port
 print/libgnomeprint20||2004-03-23|removed obsolete port
 x11-toolkits/libgnomeprintui20||2004-03-23|removed obsolete port
 textproc/whitespace.el||2004-03-24|removed obsolete port
+editors/openoffice-1.1-sl-SL|editors/openoffice-1.1-sl-SI|2004-03-25|correct ISO code
