@@ -1,0 +1,38 @@
+--- Imakefile.orig	Tue Apr 19 20:38:45 1994
++++ Imakefile	Fri Jan 22 00:50:46 1999
+@@ -2,4 +1,4 @@
+-#include "../Canna.conf"
++#include "./Canna.conf"
+ 
+ #if SystemV || SystemV4
+ SYS_LIBRARIES = -lcurses
+@@ -7,11 +7,12 @@
+ SYS_LIBRARIES = -ltermcap
+ #endif
+ 
+-    CANNAROOT = ..
++    CANNAROOT = .
+ INSTUGIDFLAGS = -m 4755 -o root
+-     CANNASRC = $(CANNAROOT)/lib/canna16
++     CANNASRC = $(CANNAROOT)
+       DEFINES = -DCANNA -DJAPANESE $(SIGNAL_DEFINES)
+-     INCLUDES = -I$(CANNAROOT)/include
++     INCLUDES = -I$(CANNAROOT) -I${PREFIX}/include
++    LDOPTIONS = ${CANNALIB16}
+ 
+          SRCS = header.c printf.c termio.c termcap.c ttyfdslot.c setutmp.c \
+ 		screen.c cursor.c jhlp.c xutoj.c canna.c
+@@ -21,8 +22,12 @@
+             TARGET = canuum
+ 
+ AllTarget($(TARGET))
+-NormalProgramTarget($(TARGET),$(OBJS),$(DEPCANNALIB16),$(CANNALIB16),)
++NormalProgramTarget($(TARGET),$(OBJS),,,)
+ InstallMultipleFlags($(TARGET),$(cannaBinDir),$(INSTUGIDFLAGS))
+ InstallManPage($(TARGET),$(cannaManDir))
+ DependTarget()
+ LintTarget()
++MakeCannaConfigH(cannaconf.h)
++
++clean::
++	$(RM) -f cannaconf.h

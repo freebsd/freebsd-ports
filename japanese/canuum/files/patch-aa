@@ -1,0 +1,85 @@
+--- Canna.conf.orig	Wed Apr 12 22:15:03 1995
++++ Canna.conf	Fri Jan 22 13:48:26 1999
+@@ -115,18 +115,18 @@
+  */
+ 
+-cannaBinDir = /usr/local/canna/bin
+-cannaSrvDir = /usr/local/canna/bin
+-cannaLibDir = /usr/local/canna/lib
+-cannaManDir = /usr/local/canna/man
+-cannaIncDir = /usr/local/canna/include/canna
+-libCannaDir = /usr/lib
++cannaBinDir = ${PREFIX}/bin
++cannaSrvDir = ${PREFIX}/sbin
++cannaLibDir = ${PREFIX}/lib/canna
++cannaManDir = ${PREFIX}/man
++cannaIncDir = ${PREFIX}/include/canna
++libCannaDir = ${PREFIX}/lib
+ 
+-ErrDir  = /usr/spool/canna
+-LockDir = /usr/spool/canna/lock
++ErrDir  = /var/log
++LockDir = /var/run/canna
+ 
+ wcharDefinition = -DCANNA_WCHAR
+-Wlib =
+-JapaneseLocale = japanese
++Wlib = -lxpg4
++JapaneseLocale = ja_JP.EUC
+ 
+ cannaOwner = bin
+ cannaGroup = bin
+@@ -135,7 +135,7 @@
+ 
+ pointerIntegerDef =
+ 
+-cannaDsoRev = 1
++cannaDsoRev = 1.0
+ sharedLibExtension = so.$(cannaDsoRev)
+ 
+ /* 以下の３つは root にならないでインストールするのであれば echo に
+@@ -148,7 +148,7 @@
+ #define JAPANESEMAN
+ 
+ /* locale ディレクトリを持っている場合は以下を記述する */
+-/* #define LOCALE_DIR /usr/lib/locale */
++#define LOCALE_DIR /usr/share/locale
+ 
+ /* エンジンスイッチ機能を使うのであればコメントをはずす */
+ /* #define engineSwitch */
+@@ -174,11 +174,11 @@
+  * インストール済みの共有ライブラリを用いて Canna の
+  * コマンド類をリンクする時は、次を YES にしてくだい。
+  */
+-/* #define UseInstalledLibCanna YES */
+-#define UseInstalledLibCanna NO
++#define UseInstalledLibCanna YES
++/*#define UseInstalledLibCanna NO */
+ 
+ DicDir   = $(cannaLibDir)/dic
+-LockFile = .CANNALOCK
++LockFile = Canna.pid
+ 
+ #ifdef NeXT
+ #define NO_X_ENV
+@@ -311,13 +311,13 @@
+ #endif
+ #define InstallLibManPageAliases(file,destdir,aliases)			@@\
+ install.man::								@@\
+-        @(TMP=/tmp/tmp.$$$$; \						@@\
+-        $(RM) $${TMP}; \						@@\
+-        echo .so `basename destdir/man$(LIBMANSUFFIX)`/file.$(LIBMANSUFFIX) > $${TMP}; \	@@\
+-        for i in aliases; do (set -x; \					@@\
+-        $(INSTALL) -c $(INSTMANFLAGS) $${TMP} $(DESTDIR)destdir/man$(LIBMANSUFFIX)/$$i.$(LIBMANSUFFIX)); \ @@\
+-        done; \								@@\
+-        $(RM) $${TMP})
++	@(TMP=/tmp/tmp.$$$$; \						@@\
++	$(RM) $${TMP}; \						@@\
++	echo .so `basename destdir/man$(LIBMANSUFFIX)`/file.$(LIBMANSUFFIX) > $${TMP}; \	@@\
++	for i in aliases; do (set -x; \					@@\
++	$(INSTALL) -c $(INSTMANFLAGS) $${TMP} $(DESTDIR)destdir/man$(LIBMANSUFFIX)/$$i.$(LIBMANSUFFIX)); \ @@\
++	done; \								@@\
++	$(RM) $${TMP})
+ #ifndef MakeDirectoriesLong
+ #define MakeDirectoriesLong(step,dirs,owner,group)			@@\
+ step::									@@\
