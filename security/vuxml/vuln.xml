@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="29dd0065-81fa-11d9-a9e7-0001020eed82">
+    <topic>kdelibs -- insecure temporary file creation</topic>
+    <affects>
+      <package>
+	<name>kdelibs</name>
+	<name>ja-kdelibs</name>
+	<range><lt>3.3.2_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Davide Madrisan reports:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110814653804757">
+	  <p>The `dcopidlng' script in the KDE library package
+	    (kdelibs-3.3.2/dcop/dcopidlng/dcopidlng) creates temporary
+	    files in a unsecure manner.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0365</cvename>
+      <url>http://bugs.kde.org/show_bug.cgi?id=97608</url>
+      <mlist msgid="200502110916.48921.davide.madrisan@qilinux.it">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110814653804757</mlist>
+    </references>
+    <dates>
+      <discovery>2005-01-21</discovery>
+      <entry>2005-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="74c86a29-81ef-11d9-a9e7-0001020eed82">
     <topic>bidwatcher -- format string vulnerability</topic>
     <affects>
