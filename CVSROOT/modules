@@ -6268,6 +6268,7 @@ prc-tools	ports/palm/prc-tools
 prcs		ports/devel/prcs
 preferences.app	ports/deskutils/preferences.app
 prelude-lml	ports/security/prelude-lml
+prelude-manager	ports/security/prelude-manager
 prelude-nids	ports/security/prelude-nids
 premail		ports/mail/premail
 preview-latex	ports/print/preview-latex
