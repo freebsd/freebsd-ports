@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- docs/Makefile.in.orig	Mon May 14 13:52:10 2001
-+++ docs/Makefile.in	Mon May 14 13:52:40 2001
-@@ -130,7 +130,7 @@
+--- docs/Makefile.in.orig	Wed Oct 24 10:33:45 2001
++++ docs/Makefile.in	Wed Oct 24 10:33:46 2001
+@@ -136,7 +136,7 @@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
  MAINT = @MAINT@
@@ -11,30 +11,4 @@ $FreeBSD$
 +MAKEINFO = @MAKEINFO@ --no-split
  MKINSTALLDIRS = @MKINSTALLDIRS@
  OBJDUMP = @OBJDUMP@
- PACKAGE = @PACKAGE@
-@@ -156,13 +156,13 @@
- 
- SUBDIRS = tutorial faq reference
- 
--man_MANS = gtk-config.1
-+man_MANS = gtk-config-2.0.1
- 
- EXTRA_DIST =  	Changes-1.2.txt				Changes-2.0.txt				debugging.txt				defsformat.txt				developers.txt				dnd_internals.txt			make-todo				refcounting.txt				styles.txt				text_widget.txt 			widget_system.txt 			generation.txt			        README.linux-fb  	                gtk-config.txt  	        	gtk-config.1.in				gtkdocs_fix
- 
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
--CONFIG_CLEAN_FILES =  gtk-config.1
-+CONFIG_CLEAN_FILES =  gtk-config-2.0.1
- man1dir = $(mandir)/man1
- MANS = $(man_MANS)
- 
-@@ -185,6 +185,9 @@
- 
- gtk-config.1: $(top_builddir)/config.status gtk-config.1.in
- 	cd $(top_builddir) && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status
-+
-+gtk-config-2.0.1: gtk-config.1
-+	cp gtk-config.1 gtk-config-2.0.1
- 
- install-man1:
- 	$(mkinstalldirs) $(DESTDIR)$(man1dir)
+ OBJEXT = @OBJEXT@

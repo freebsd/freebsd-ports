@@ -1,23 +1,23 @@
 
 $FreeBSD$
 
---- gtk/gtkrc.c.orig	Sun Apr 29 00:15:37 2001
-+++ gtk/gtkrc.c	Mon May 14 14:49:02 2001
-@@ -333,7 +333,7 @@
+--- gtk/gtkrc.c.orig	Fri Sep 21 22:06:14 2001
++++ gtk/gtkrc.c	Wed Oct 24 10:31:00 2001
+@@ -359,7 +359,7 @@
  	result = g_strdup (im_module_file);
        else
  #ifndef G_OS_WIN32
--	result = g_strdup (GTK_SYSCONFDIR G_DIR_SEPARATOR_S "gtk-2.0" G_DIR_SEPARATOR_S "gtk.immodules");
-+	result = g_strdup (GTK_DATA_PREFIX G_DIR_SEPARATOR_S "etc" G_DIR_SEPARATOR_S "gtk-2.0" G_DIR_SEPARATOR_S "gtk.immodules");
+-	result = g_build_filename (GTK_SYSCONFDIR, "gtk-2.0", "gtk.immodules", NULL);
++	result = g_build_filename (GTK_DATA_PREFIX, "etc", "gtk-2.0", "gtk.immodules", NULL);
  #else
- 	result = g_strdup_printf ("%s\\gtk.immodules", g_win32_get_package_installation_directory (GETTEXT_PACKAGE, get_gtk_dll_name ()));
+ 	result = g_build_filename (get_gtk_win32_directory ("gtk-2.0"), "gtk.immodules", NULL);
  #endif
-@@ -439,7 +439,7 @@
+@@ -453,7 +453,7 @@
    else
      {
  #ifndef G_OS_WIN32
--      str = g_strdup (GTK_SYSCONFDIR G_DIR_SEPARATOR_S "gtk-2.0" G_DIR_SEPARATOR_S "gtkrc");
-+      str = g_strdup (GTK_SYSCONFDIR G_DIR_SEPARATOR_S "gtkrc");
+-      str = g_build_filename (GTK_SYSCONFDIR, "gtk-2.0", "gtkrc", NULL);
++      str = g_build_filename (GTK_SYSCONFDIR, "gtkrc", NULL);
  #else
-       str = g_strdup_printf ("%s\\gtkrc", g_win32_get_package_installation_directory (GETTEXT_PACKAGE, get_gtk_dll_name ()));
+       str = g_build_filename (get_gtk_win32_directory (""), "gtkrc", NULL);
  #endif
