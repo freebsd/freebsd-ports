@@ -49,6 +49,7 @@
     SUBDIR += cy-aspell
     SUBDIR += da-aspell
     SUBDIR += dadadodo
+    SUBDIR += db2latex
     SUBDIR += dbacl
     SUBDIR += denature
     SUBDIR += dict
