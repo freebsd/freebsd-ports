@@ -33,9 +33,6 @@ MAN3=	bitstring.3
 MAN5=	fcrontab.5 fcron.conf.5
 MAN8=	fcron.8
 
-pre-configure:
-	@${MKDIR} -p ${PREFIX}/etc
-
 post-install:
 	@${CP} ${WRKSRC}/files/fcron.allow ${PREFIX}/etc/fcron.allow.dist
 	@${CP} ${WRKSRC}/files/fcron.deny ${PREFIX}/etc/fcron.deny.dist
