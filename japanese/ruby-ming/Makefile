@@ -14,3 +14,5 @@ LIB_DEPENDS=	ming.3:${PORTSDIR}/japanese/ming
 MASTERDIR=	${.CURDIR}/../../graphics/ruby-ming
 
 .include "${MASTERDIR}/Makefile"
+
+PKGNAMEPREFIX=	ja-ruby-
