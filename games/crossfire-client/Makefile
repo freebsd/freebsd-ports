@@ -19,7 +19,6 @@ DISTFILES=	${PORTNAME}-client-${PORTVERSION}.tar.gz \
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
@@ -33,20 +32,17 @@ USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=	253
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	--with-sound-dir=${DATADIR}/sounds \
 		--disable-gnome # Gnome client currently broken
 
 MAN1=		cfclient.1 gcfclient.1
 
 DATADIR=	${PREFIX}/share/${PKGBASE}
-
-pre-configure:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf
 
 post-install:
 	@${MKDIR} ${DATADIR}
