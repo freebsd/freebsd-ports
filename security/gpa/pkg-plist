@@ -5,4 +5,5 @@ share/gpa/gtkrc
 share/gpa/gpa_logo.ppm
 share/locale/de/LC_MESSAGES/gpa.mo
 share/locale/fr/LC_MESSAGES/gpa.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gpa.mo
 @dirrm share/gpa
