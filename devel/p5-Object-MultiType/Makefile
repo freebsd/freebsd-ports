@@ -5,13 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	Object-MultiType
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Object
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Objects as Hash, Array and Scalar at the same time
 
 MAN3=		Object::MultiType.3
