@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	koffice
-PORTVERSION=	1.2.rc1
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	unstable/${PORTNAME}-${PORTVERSION:S/.rc1/-rc1/g}/src
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.rc1/-rc1/g}
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}-${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -22,7 +21,6 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2
 
 _NO_KDE_PATCHUP=yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.rc1/-rc1/g}
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
@@ -30,7 +28,9 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 
-.include "${.CURDIR}/../../x11/kde3/Makefile.kde"
+CONFIGURE_ENV+=	DO_NOT_COMPILE=kontour	# KDE calls it "badly broken"
+
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
 
 pre-configure:
 	cd ${WRKSRC} && ${GMAKE} -f Makefile.cvs
