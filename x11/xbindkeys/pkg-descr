@@ -1,0 +1,4 @@
+xbindkeys is a program that allows you to launch shell commands under X
+with your keyboard. It links commands to keys, using a configuration file.
+
+WWW: http://hocwp.free.fr/xbindkeys/xbindkeys.html
