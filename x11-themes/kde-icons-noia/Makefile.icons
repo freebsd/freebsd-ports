@@ -28,6 +28,9 @@ NO_PACKAGE?=	${RESTRICTED}
 
 INDEX_FILES=	index.desktop index.theme
 
+# do not create some dirs
+PLIST_DIR_PATTERN_EXTRA?=	.
+
 # do not install some files
 PLIST_FILE_PATTERN=	-i -v "(Thumbs\.db|(\.(bak|txt)|/(copying|readme))\$$)"
 PLIST_FILE_PATTERN_EXTRA?=	.
@@ -47,6 +50,7 @@ post-patch:
 annotate-install:
 # annotate dirs
 	@cd ${WRKSRC} ; ${FIND} . -type d ! -empty \
+		| ${GREP} -E ${PLIST_DIR_PATTERN_EXTRA} \
 		| ${SORT} -r \
 		> ${WRKDIR}/dirs.list
 # annotate files
