@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=       rus-ispell
-PORTVERSION=    0.99d6
+PORTNAME=	rus-ispell
+PORTVERSION=	0.99d6
 CATEGORIES=	russian textproc
 MASTER_SITES=   ftp://mch5.chem.msu.su/pub/russian/ispell/
-DISTNAME=       rus-ispell
+DISTNAME=	rus-ispell
 
 MAINTAINER=	ache@FreeBSD.org
 
