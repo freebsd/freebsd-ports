@@ -1,0 +1,11 @@
+--- configure.in.orig	Sat Jan 22 23:59:33 2005
++++ configure.in	Sun Jan 23 00:00:19 2005
+@@ -732,7 +732,7 @@
+ 	if test -f $ac_cv_ssleay_path/lib/librsaref.a; then
+ 		LIBS="$LIBS -lrsaref"
+ 	fi
+-	AC_CHECK_LIB(crypto, des_cbc_encrypt)
++	AC_CHECK_LIB(crypto, DES_cbc_encrypt)
+ 
+ 	CPPFLAGS="$CPPFLAGS $V_INCLS"
+ 	AC_CHECK_HEADERS(openssl/evp.h)

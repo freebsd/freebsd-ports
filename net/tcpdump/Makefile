@@ -7,7 +7,7 @@
 
 PORTNAME=	tcpdump
 PORTVERSION=	3.8.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,17 +15,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Ubiquitous network traffic analysis tool
 
-.if defined(TCPDUMP_OVERWRITE_BASE)
+# TODO: Add strict sanity check that we're compiling against a
+# version of libpcap with which this tcpdump release is compatible.
+#
+.if defined(TCPDUMP_OVERWRITE_BASE) || defined(WITH_LIBPCAP_PORT)
 LIB_DEPENDS=	pcap.2:${PORTSDIR}/net/libpcap
-.else
-BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN1=		tcpdump.1
 
-GNU_CONFIGURE=	yes
+GNU_CONFIGURE=		yes
 
 .if defined(TCPDUMP_OVERWRITE_BASE)
 PREFIX=		/usr
@@ -40,12 +41,39 @@ PLIST_SUB+=	BASE="@comment "
 PLIST_SUB+=	NOTBASE=""
 .endif
 
-.if !defined(WITHOUT_IPV6)
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
+# Compilation Options
+#
+# Special options:
+# TCPDUMP_OVERWRITE_BASE	Overwrite the base system's tcpdump binary.
+#				Implies the use of the libpcap port.
+#
+# User-definable switches:
+# WITHOUT_CRYPTO	Build without IPSEC or TCPMD5 decryption.
+# WITHOUT_IPV6		Build without IPV6 support.
+# WITH_LIBPCAP_PORT	Use libpcap from ports instead of the base system.
+# WITH_RADIOTAP		Build with support for BSD 802.11 Radiotap headers.
+# WITH_TCPMD5		Build with support for TCP-MD5 digest verification.
+#
+# Defaults:	WITHOUT_LIBPCAP_PORT WITHOUT_RADIOTAP WITHOUT_TCPMD5
+#		WITH_CRYPTO WITH_IPV6
 
+# The --without-crypto flag needs to be explicitly specified. The
+# configure script gets confused if you specify --with-crypto and
+# thinks this means you *don't* want crypto.
+# If crypto is requested, then apply a patch to fix the detection
+# of OpenSSL versions > 0.9.7d. We assume the installed version is
+# at least this recent; this may fail on older systems.
+#
 .if defined(WITHOUT_CRYPTO)
 CONFIGURE_ARGS+=	--without-crypto
+.else
+USE_OPENSSL=		defined
+USE_AUTOCONF_VER?=	253
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-openssl-configure.in
+.endif
+
+.if !defined(WITHOUT_IPV6)
+CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
 .if defined(WITH_RADIOTAP)
@@ -55,13 +83,28 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-extract.h \
 .endif
 
 .if defined(WITH_TCPMD5)
+.if defined(WITHOUT_CRYPTO)
+BROKEN=		"The use of WITH_TCPMD5 requires crypto support."
+.else
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-tcpmd5-print-tcp.c \
 		${PATCHDIR}/extra-patch-tcpmd5-tcp.h
 .endif
+.endif
 
-LOCALPCAPDIR=	${WRKDIR}/libpcap-0.8.1
-LOCALPCAPFILES= include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
+# When compiling against the port, it's necessary to force the
+# port to look for libpcap in ${LOCALPCAPBASE} first, for both
+# the configure and build steps.
+#
+.if defined(TCPDUMP_OVERWRITE_BASE) || defined(WITH_LIBPCAP_PORT)
+LOCALPCAPBASE=	${LOCALBASE}
+CONFIGURE_ENV+=	CFLAGS="-L${LOCALPCAPBASE}/lib"
+.else
+LOCALPCAPBASE=	/usr
+.endif
+
+LOCALPCAPFILES=	include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
 		lib/libpcap.a
+WRKPCAPDIR=	${WRKDIR}/libpcap-0.8.3
 
 .include <bsd.port.pre.mk>
 
@@ -69,16 +112,16 @@ LOCALPCAPFILES= include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
 BROKEN=		"Build fails on FreeBSD >= 6.x"
 .endif
 
-#
 # When building tcpdump against a particular pcap version, it expects to
 # find a built, untarred source tree in the parent of the work tree.
-# Build a symlink farm to produce the files it wants without requiring
-# pcap to be untarred.
+# Build a symlink farm which points to the installed versions of the
+# required files, in order to produce the files it wants without
+# requiring that the libpcap distfile be untarred.
 #
 pre-configure:
-	${MKDIR} ${LOCALPCAPDIR}
+	${MKDIR} ${WRKPCAPDIR}
 .for i in ${LOCALPCAPFILES}
-	${LN} -s ${LOCALBASE}/$i ${LOCALPCAPDIR}
+	${LN} -s ${LOCALPCAPBASE}/$i ${WRKPCAPDIR}
 .endfor
 
 .if defined(TCPDUMP_OVERWRITE_BASE)
