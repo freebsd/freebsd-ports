@@ -1,15 +1,15 @@
 --- configure.orig	Sat Sep 30 23:16:14 2000
 +++ configure	Thu Dec 21 00:49:23 2000
-@@ -5786,7 +5786,7 @@
+@@ -6020,7 +6020,7 @@
  	echo $ac_n "checking for Qt insanity""... $ac_c" 1>&6
- echo "configure:5788: checking for Qt insanity" >&5
+ echo "configure:6022: checking for Qt insanity" >&5
  
 -    QT_CFLAGS="-I${QTDIR}/include/qt"
 +    QT_CFLAGS="-I${QTDIR}/include/X11/qt"
      QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
  
      # Check whether --with-static-qt or --without-static-qt was given.
-@@ -7702,6 +7702,9 @@
+@@ -8052,6 +8052,9 @@
  os2*)
      LIBS=
      ;;
@@ -19,7 +19,7 @@
  esac
  for ac_hdr in sys/byteorder.h compat.h getopt.h
  do
-@@ -8655,8 +8658,6 @@
+@@ -8702,8 +8705,6 @@
  	if test $? -eq 0; then
  		if test -z "`egrep -i '(unrecognize|unknown)' conftest.out | grep pthread`" && test -z "`egrep -i '(error|incorrect)' conftest.out`" ; then
  			ac_cv_have_dash_pthread=yes
@@ -28,7 +28,7 @@
  		fi
  	fi
  	rm -f conftest*
-@@ -8672,7 +8673,7 @@
+@@ -8737,7 +8738,7 @@
  EOF
  
  						if test "$ac_cv_have_dash_pthread" = "yes"; then
