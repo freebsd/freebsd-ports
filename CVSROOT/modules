@@ -2984,6 +2984,7 @@ ko-engdic	ports/korean/engdic
 ko-eterm	ports/korean/eterm
 ko-ftghostscript5	ports/korean/ftghostscript5
 ko-gau		ports/korean/gau
+ko-ghostscript-gnu-cjk	ports/korean/ghostscript-gnu-cjk
 ko-ghostscript55httf	ports/korean/ghostscript55httf
 ko-gtkcomm	ports/korean/gtkcomm
 ko-h2ps		ports/korean/h2ps
