@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- xml2Conf.sh.in	2001/05/19 19:57:43	1.1
++++ xml2Conf.sh.in	2001/05/19 19:59:40
+@@ -1,6 +1,12 @@
+ #
+ # Configuration file for using the XML library in GNOME applications
+ #
++
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++includedir=@includedir@
++libdir=@libdir@
++
+ XML2_LIBDIR="@XML_LIBDIR@"
+ XML2_LIBS="@XML_LIBS@"
+ XML2_INCLUDEDIR="@XML_INCLUDEDIR@"
