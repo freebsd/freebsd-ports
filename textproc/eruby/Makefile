@@ -7,6 +7,7 @@
 
 PORTNAME=	eruby
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
@@ -19,6 +20,7 @@ USE_RUBY_RD=	yes
 .endif
 
 CONFIGURE_ARGS=	--enable-shared --with-charset="${DEFAULT_CHARSET}"
+INSTALL_TARGET=	site-install
 INSTALLS_SHLIB=	yes
 
 DEFAULT_CHARSET?=	ISO-8859-1
