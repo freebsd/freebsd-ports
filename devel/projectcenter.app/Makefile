@@ -9,20 +9,12 @@ PORTNAME=	projectcenter.app
 PORTVERSION=	0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/dev-apps/
-.if defined(GNUSTEP_GUI_DEVEL)
-PKGNAMESUFFIX?=	-devel
-.endif
 DISTNAME=	ProjectCenter-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-.if !defined(GNUSTEP_GUI_OLD)
 BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
-.else
-BUILD_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
-RUN_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
-.endif
 
 PREFIX=		${LOCALBASE}/GNUstep
 WRKSRC=		${WRKDIR}/ProjectCenter
@@ -34,7 +26,6 @@ ALL_TARGET=
 NO_MTREE=	yes
 
 BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
-XGPSBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
 .include <bsd.port.pre.mk>
 
