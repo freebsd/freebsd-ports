@@ -1,7 +1,6 @@
 Input method module `Canna' for Emacs with dynamic loading enhancement.
 
 This is an input method module Canna for Emacs.
-
 *** Setting for Fontset on Emacs20 ***
 
 To use japanese fonts on emacs20, put in your $HOME/.emacs as follows:
@@ -40,7 +39,8 @@ And you must use emacs-dl-20.5 (not emacs-20.5!).
 This dynamic loading module sources and emacs20 dynamic loading patch
 is placed on the following URL:
 
-	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/emacs-20-dl/
-	http://www.etl.go.jp/~tomo/comp/emacsen/
+	ftp://ftp.m17n.org/pub/mule/dynamic-loading/
+
+WWW: http://www.m17n.org/mule/dynamic-loading/
 
 --- Porting by shige <shige@FreeBSD.ORG>.
