@@ -1,11 +1,11 @@
 --- src/Makefile.in.orig	Wed May 21 05:56:37 2003
 +++ src/Makefile.in	Wed May 21 12:55:31 2003
-@@ -791,7 +791,7 @@
- 	grep '^CORE_KERNEL_FUNCTION' $(srcdir)/yacasmain.cpp > $@
+@@ -809,7 +809,7 @@
+ # The libmath.cpp source file is generated as follows
  
- $(srcdir)/libmath.cpp: yacas $(top_srcdir)/scripts/base.rep/math.ys gencorefunctions core_yacasmain.h 
+ $(srcdir)/libmath.cpp: $(top_srcdir)/scripts/base.rep/math.ys yacas$(EXEEXT)
 -	(cd ../scripts && make packages.ys corefunctions.ys)
 +	(cd ../scripts && $(MAKE) packages.ys corefunctions.ys)
  	echo "Set(LoadPlugIns,False);Use(\"yacasinit.ys\");" > compileinit.txt
  	echo "CompileCpp(\"base.rep/math.ys\",\"libmath\");" > compile.txt
- 	./yacas --rootdir  $(srcdir)/../scripts:../scripts -pc --init compileinit.txt compile.txt
+ 	./yacas$(EXEEXT) --rootdir  $(top_srcdir)/scripts -pc --init compileinit.txt compile.txt

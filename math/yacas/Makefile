@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	yacas
-PORTVERSION=	1.0.56
-PORTREVISION=	1
+PORTVERSION=	1.0.57
 CATEGORIES=	math
 MASTER_SITES=	http://yacas.sourceforge.net/backups/
 
