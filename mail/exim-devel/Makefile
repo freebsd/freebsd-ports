@@ -22,8 +22,8 @@ USE_BZIP2=	yes
 
 MAN8=		exim.8
 
-EXIM_VERSION=	4.05
-EXIM_DOCVERSION=	4.00
+EXIM_VERSION=	4.10
+EXIM_DOCVERSION=	4.10
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
 
@@ -220,6 +220,7 @@ pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${PREFIX}/etc/rc.d
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${FILESDIR}/POST-INSTALL-NOTES ${PREFIX}/share/doc/exim
