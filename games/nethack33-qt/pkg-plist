@@ -1,7 +1,7 @@
 bin/nethack
 @exec mkdir %D/lib/nethackdir/save
 @exec chmod 775 %D/lib/nethackdir/save
-@exec chown games.games %D/lib/nethackdir/save
+@exec chown games:games %D/lib/nethackdir/save
 lib/nethackdir/.nethackrc
 lib/nethackdir/A-filla.lev
 lib/nethackdir/A-fillb.lev
