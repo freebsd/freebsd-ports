@@ -121,6 +121,7 @@ lib/X11/xboing/sounds/wzzz2.au
 lib/X11/xboing/sounds/youagod.au
 lib/X11/xboing/problems.doc
 man/man1/xboing.1.gz
+@comment otherwise the new directories will have mode 777...duh
 @exec chmod 755 %D/lib/X11/xboing
 @exec chmod 755 %D/lib/X11/xboing/sounds
 @exec chmod 755 %D/lib/X11/xboing/levels
