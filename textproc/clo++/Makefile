@@ -15,6 +15,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV= CXXFLAGS="-I${LOCALBASE}/include"
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/doc/clo++
