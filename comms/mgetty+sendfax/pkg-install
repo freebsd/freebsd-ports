@@ -1,8 +1,9 @@
 #!/usr/bin/perl
 
 exit 0 if $ARGV[1] ne "POST-INSTALL";
+exit 0 if $ENV{'BATCH'};
 
-print STDERR "\n\n\n =========== mgetty+sendfax configuration ================\n\n";
+print STDERR "\n\n\n =========== mgetty+sendfax configuration ===========\n\n";
 $prefix = $ENV{'PKG_PREFIX'};
 $sep = "~";
 

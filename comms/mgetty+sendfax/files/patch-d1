@@ -1,0 +1,14 @@
+--- doc/mgetty.texi-in.orig	Sat Apr 28 12:57:00 2001
++++ doc/mgetty.texi-in	Sat Apr 28 13:03:46 2001
+@@ -11,6 +11,11 @@
+ package.
+ 
+ Copyright @copyright{} 1993-2000 Gert Doering
++@format
++START-INFO-DIR-ENTRY
++* Mgetty: (mgetty).		Mgetty: an advanced getty that can manage faxes.
++END-INFO-DIR-ENTRY
++@end format
+ @end ifinfo
+ 
+ @titlepage
