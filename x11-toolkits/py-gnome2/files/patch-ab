@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Sep 13 23:01:39 1999
++++ Makefile.in	Mon Sep 13 23:01:45 1999
+@@ -94,7 +94,7 @@
+ pyexecdir = @pyexecdir@
+ pythondir = @pythondir@
+ 
+-SUBDIRS = macros pygtk pygnome
++SUBDIRS = macros pygnome
+ 
+ EXTRA_DIST = gnome-python.spec
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
