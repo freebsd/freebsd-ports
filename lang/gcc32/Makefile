@@ -17,7 +17,6 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-testsuite-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g++-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-g77-${PORTVERSION}${EXTRACT_SUFX} \
-		gcc-java-${PORTVERSION}${EXTRACT_SUFX} \
 		gcc-objc-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	ports@FreeBSD.org
@@ -36,17 +35,9 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 502101
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-gcc__config__freebsd-spec.h \
-		${FILESDIR}/extrapatch-libjava__configure
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-gcc__config__freebsd-spec.h
 .endif
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "ia64" || ${ARCH} == "amd64"
-# libgcj is built on all platforms except sparc64 and ia64 and amd64
-WITHOUT_LIBJAVA=yes
-.endif
-.if ${ARCH} == "ia64"
-BROKEN=	gcj does not build.
-.endif
 .if ${ARCH} == "amd64"
 BROKEN=	linker: unrecognised emulation mode: elf_x86_64
 .endif
@@ -87,14 +78,9 @@ CONFIGURE_ARGS+=	--enable-threads
 #	?is this an ObjC only thing?
 CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
-.if defined(WITHOUT_LIBJAVA)
-CONFIGURE_ARGS+=	--disable-libgcj
-.endif
 
 ALL_TARGET=	bootstrap
-MAN1=		cpp32.1 g++32.1 g77-32.1 gcc32.1 gcov32.1 \
-		gcj32.1 gcjh32.1 gij.1 rmic.1 rmiregistry.1 \
-		jcf-dump32.1 jv-scan32.1 jv-convert.1
+MAN1=		cpp32.1 g++32.1 g77-32.1 gcc32.1 gcov32.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-configure:
@@ -123,7 +109,7 @@ post-install:
 	do \
 		${STRIP_CMD} $$prog ; \
 	done )
-.for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jar grepjar
+.for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}32
 	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
@@ -142,11 +128,9 @@ post-install:
 	${MV} -f ${PREFIX}/lib/${file}.* ${TARGLIB}
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-	# Java
-	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
-.for info in cpp cppinternals g77 gcc gcj
+.for info in cpp cppinternals g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
 .endfor
 # I am sick and tired of the anonyance that man pages can only be generated if
@@ -169,8 +153,5 @@ post-install:
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
 	cd ${WRKDIR} ; ex < ex.script
-.if !defined(WITHOUT_LIBJAVA)
-	${CAT} ${MASTERDIR}/pkg-plist.libgcj >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.post.mk>

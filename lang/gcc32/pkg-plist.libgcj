@@ -1,9 +1,0 @@
-bin/addr2name.awk
-bin/gij
-bin/jv-convert
-bin/rmic
-bin/rmiregistry
-lib/security/classpath.security
-lib/security/libgcj.security
-share/java/libgcj-3.2.3.jar
-@dirrm lib/security

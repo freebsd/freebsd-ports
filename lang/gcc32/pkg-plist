@@ -8,12 +8,6 @@ bin/gcov32
 bin/%%GNU_HOST%%-gcc32
 bin/%%GNU_HOST%%-g++32
 bin/gccbug-%%PORTVERSION%%
-bin/gcj32
-bin/gcjh32
-bin/jv-scan32
-bin/jcf-dump32
-bin/jar32
-bin/grepjar32
 @comment Insert PLIST.gcc-lib here
 @comment -=[ begin PLIST.gcc-lib ]=-
 @comment -=[ end PLIST.gcc-lib ]=-
@@ -22,16 +16,13 @@ bin/grepjar32
 @unexec install-info --delete %D/info/g77.info %D/info/dir
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
 @unexec install-info --delete %D/info/gccint.info %D/info/dir
-@unexec install-info --delete %D/info/gcj.info %D/info/dir
 info/cpp.info
 info/cppinternals.info
 info/g77.info
 info/gcc.info
 info/gccint.info
-info/gcj.info
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/cppinternals.info %D/info/dir
 @exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
 @exec install-info %D/info/gccint.info %D/info/dir
-@exec install-info %D/info/gcj.info %D/info/dir
