@@ -13,6 +13,7 @@
   37.32  -121.94 "                                      ,jmg" # San Jose, CA
   37.40  -121.94 "                                          ,alfred" # Santa Clara
   37.33  -121.96 "                                                 ,nsayer" # ??? CA
+  37.39, -122,06 "                                                        ,marcel" # Mountain View, CA
   39.2    -77.0  "   ,gpalmer"			# Silver Spring, MD
   34.13  -118.12 "mph"                          # Pasadena, CA
   49.05  -122.48 "cpiazza"                      # near Vancouver, BC
@@ -36,8 +37,7 @@
   59.72    10.85 "eivind,"                      # Ski, Norway
   59.92    10.75 "       des,tegge"             # Oslo, Norway
   52.14    21.03 "abial"                        # Warsaw, Poland
-  52.05,    4.10 "marcel,"			# The Hague, the Netherlands
-  51.25,    5.30 "       guido"			# Eindhoven, the Netherlands
+  51.25,    5.30 "guido"			# Eindhoven, the Netherlands
   50.70     6.2  "tg"                           # Aachen, Germany
   53.33     9.59 "stb"                          # Hamburg, Germany
   53.56    10.02 "   ,cracauer"                 # Hamburg, Germany
