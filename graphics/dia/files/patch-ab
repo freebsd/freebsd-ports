@@ -1,54 +1,21 @@
---- Makefile.in.orig	Mon Aug  7 12:15:36 2000
-+++ Makefile.in	Mon Aug  7 12:15:39 2000
-@@ -120,14 +120,16 @@
- pkgdata_DATA = dia_logo.png
- man_MANS = dia.1
- 
-+ifdef HAVE_GNOME
- pixmapdir = $(gnomedatadir)/pixmaps
- pixmap_DATA = dia_gnome_icon.png dia-diagram.png
+--- Makefile.in.orig	Fri May 11 05:04:49 2001
++++ Makefile.in	Thu May 17 14:28:56 2001
+@@ -154,3 +154,4 @@
  
 -Applicationsdir = $(gnomedatadir)/gnome/apps/Applications
++ifdef HAVE_GNOME
 +Applicationsdir = $(gnomedatadir)/apps/Applications
- Applications_DATA = dia.desktop
- 
- mimedir = $(gnomedatadir)/mime-info
+ Applications_DATA = dia.desktop 
+@@ -159,2 +160,3 @@
  mime_DATA = dia.mime dia.keys
 +endif
  
- EXTRA_DIST = dia.xpm dia_gnome_icon.png dia_gnome_menu_icon.png 	dia.desktop dia.spec KNOWN_BUGS $(pkgdata_DATA) $(man_MANS) 	dia-diagram.png dia.mime dia.keys.in 	doc/diagram.dtd doc/sheet.dtd doc/custom-shapes
+@@ -556,4 +558,8 @@
  
-@@ -237,7 +239,6 @@
- 
- install-ApplicationsDATA: $(Applications_DATA)
- 	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(Applicationsdir)
- 	@list='$(Applications_DATA)'; for p in $$list; do \
- 	  if test -f $(srcdir)/$$p; then \
- 	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(Applicationsdir)/$$p"; \
-@@ -256,7 +257,6 @@
- 
- install-mimeDATA: $(mime_DATA)
- 	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(mimedir)
- 	@list='$(mime_DATA)'; for p in $$list; do \
- 	  if test -f $(srcdir)/$$p; then \
- 	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(mimedir)/$$p"; \
-@@ -275,7 +275,6 @@
- 
- install-pixmapDATA: $(pixmap_DATA)
- 	@$(NORMAL_INSTALL)
--	$(mkinstalldirs) $(DESTDIR)$(pixmapdir)
- 	@list='$(pixmap_DATA)'; for p in $$list; do \
- 	  if test -f $(srcdir)/$$p; then \
- 	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(pixmapdir)/$$p"; \
-@@ -490,8 +489,7 @@
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
- installdirs: installdirs-recursive
- installdirs-am:
--	$(mkinstalldirs)  $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(Applicationsdir) \
--		$(DESTDIR)$(mimedir) $(DESTDIR)$(pixmapdir) \
-+	$(mkinstalldirs)  $(DESTDIR)$(mandir)/man1 \
- 		$(DESTDIR)$(pkgdatadir)
- 
++ifdef HAVE_GNOME
+ install-data-am: install-ApplicationsDATA install-man install-mimeDATA \
+ 	install-pixmapDATA install-pkgdataDATA
++else
++install-data-am: install-man install-pkgdataDATA
++endif
  
