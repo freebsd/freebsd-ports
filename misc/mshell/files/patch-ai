@@ -1,0 +1,11 @@
+--- main.c~	Tue Aug 19 16:42:36 2003
++++ main.c	Tue Aug 19 16:46:48 2003
+@@ -98,7 +98,7 @@
+ 	chmod(fn, 0600);
+ }
+ 
+-log(s1, s2)
++Log(s1, s2)
+ char *s1, *s2;
+ {
+ 	if (logfp)
