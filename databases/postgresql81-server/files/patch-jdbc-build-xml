@@ -1,0 +1,10 @@
+--- src/interfaces/jdbc/build.xml~	Fri Mar 16 22:50:43 2001
++++ src/interfaces/jdbc/build.xml	Wed Apr 18 08:57:57 2001
+@@ -120,6 +120,7 @@
+     <javac srcdir="${src}" destdir="${dest}">
+       <include name="example/**" />
+       <exclude name="example/corba/**"/>
++      <exclude name="example/blobtest.java" unless="jdk1.2+"/>
+     </javac>
+   </target>
+ 

@@ -15,5 +15,8 @@ operations. You do NOT need to install the pgaccess port separately.
 If you built in the TCL support, you can load the Pg package into your
 TCL scripts as easily as ``package require Pgtcl''.
 
-To start PostgreSQL, run the startup script:
-%%PREFIX%%/etc/rc.d/010.pgsql.sh start
+If you built with Java support, add
+/usr/local/share/java/classes/postgresql.jar to your classpath.
+
+If you have many tables and many clients running, consider raising
+kern.maxfiles using sysctl(8).

@@ -10,26 +10,22 @@ fi
 
 if [ ! "${BATCH}" ]; then
 	dialog --title "Backup your data NOW" \
-	--msgbox "`sed -e \"s#%%WRKDIR%%#${WRKDIR}#; s#%%DISTNAME%%#${DISTNAME}#\" < ${FILESDIR}/pre-install-notes`" \
+	--msgbox "`sed -e \"s#%%PREFIX%%#${PREFIX}#\" < ${FILESDIR}/pre-install-notes`" \
 	-1 -1
 fi
 
-#SSL=${NO_OPENSSL:+OFF}
-#SSL=${NOSSL:-ON}
-
 if [ "${BATCH}" ]; then
-	set \"MultiByte\"
+	set \"MultiByte\" \"ODBC\" \"SSL\"
 else
 	/usr/bin/dialog --title "configuration options" --clear \
 					--checklist "\n\
-Please select desired options:" -1 -1 8 \
+Please select desired options:" -1 -1 7 \
 JDBC       "Java DataBase Connectivity" OFF \
 MultiByte  "Multibyte for Multilingualism" ON \
 ODBC       "Open Database Connectivity" OFF \
-Perl       "Perl" OFF \
 TCL        "Tcl" ON \
 TCLTK      "Tcl/Tk" ON \
-SSL        "Secure Socket Layer (requires certificate)" OFF \
+SSL        "Secure Socket Layer" ON \
 KRB5       "Kerberos 5" OFF \
 2> /tmp/checklist.tmp.$$
 
@@ -57,26 +53,46 @@ exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 while [ "$1" ]; do
 	case $1 in
 		\"JDBC\")
-			# use JAVA_HOME if set correctly
+			# We use JAVA_HOME if set correctly. If the user has
+			# specified a JVM with JAVA_HOME or via the javavmwrapper,
+			# we validate that it really exists. It is unnecessarily
+			# complicated and error prone to try to figure out the
+			# correct java version just to be able to determine a
+			# BUILD_DEPEND in this case. Instead, assume that a set
+			# JAVA_HOME together with simple sanity check mean we have
+			# an installed JVM, and we don't bother setting
+			# BUILD_DEPENDS.
+
 			echo "# JDBC"
-			if [ "${JAVA_HOME}" -a -x ${JAVA_HOME}/bin/javac ]; then
+			# if JAVA_HOME is set and exists, use it
+			if [ "${JAVA_HOME}" -a -x "${JAVA_HOME}/bin/javac" ]; then
 				echo JAVA_HOME=${JAVA_HOME}
-				if [ "$(${JAVA_HOME}/bin/java -version 2>&1 | egrep \"1.1)" ]; then
-				    JAVAVERSION=1
-					echo BUILD_DEPENDS+=    ${JAVA_HOME}/bin/javac:\${PORTSDIR}/java/jdk
-				else
-					JAVAVERSION=2
-					echo BUILD_DEPENDS+=    ${JAVA_HOME}/bin/javac:\${PORTSDIR}/java/jdk12-beta
-				fi
 			else
-				JAVAVERSION=1
-				echo BUILD_DEPENDS+=    \${LOCALBASE}/jdk1.1.8/bin/javac:\${PORTSDIR}/java/jdk
-				echo JAVA_HOME=\${LOCALBASE}/jdk1.1.8
+				# No JAVA_HOME, check javavmwrapper's config file
+				if [ -r "${LOCALBASE}/etc/javavms" ]; then
+					VMS=`/usr/bin/sed 's|#.*||' < "${LOCALBASE}/etc/javavms" | uniq`
+					for JAVAVM in ${VMS}; do
+						if [ -x "${JAVAVM}" ]; then
+							JAVA_HOME=`echo ${JAVAVM} | /usr/bin/sed 's|/bin/java$||`
+							break
+						fi
+					done
+				fi
+				if [ "${JAVA_HOME}" -a -x "${JAVA_HOME}/bin/javac" ]; then
+					# yep, wrapper was good
+					echo JAVA_HOME=${JAVA_HOME}
+				else
+					# nothing, use our boring 1.1.8, the only native non-beta jdk :(
+					echo BUILD_DEPENDS+=    \${LOCALBASE}/jdk1.1.8/bin/javac:\${PORTSDIR}/java/jdk
+					echo JAVA_HOME=\${LOCALBASE}/jdk1.1.8
+				fi
 			fi
 			cat <<-EOF
-				JAVAVERSION=${JAVAVERSION}
+				BUILD_DEPENDS+=	ant:\${PORTSDIR}/devel/jakarta-ant
 				WITH_JDBC=YES
-				SCRIPTS_ENV+=     JAVA_HOME=\${JAVA_HOME}
+				MAKE_ENV+=	JAVA_HOME=\${JAVA_HOME}
+				SCRIPTS_ENV+=	JAVA_HOME=\${JAVA_HOME}
+				CONFIGURE_ARGS+=	--with-java
 
 			EOF
 			;;
@@ -88,14 +104,6 @@ while [ "$1" ]; do
 				# ODBC
 				WITH_ODBC=YES
 				CONFIGURE_ARGS+=  --with-odbc
-
-			EOF
-			;;
-		\"Perl\")
-			cat <<-EOF
-				# PERL
-				WITH_PERL=YES
-				CONFIGURE_ARGS+=  --with-perl
 
 			EOF
 			;;
@@ -115,6 +123,7 @@ while [ "$1" ]; do
 				CFLAGS+=	-DUSE_SSL
 				WITH_SSL=	yes
 				CONFIGURE_ENV+=	LDFLAGS="-L\${OPENSSLLIB} -lssl -lcrypto"
+				CONFIGURE_ARGS+=	--with-openssl
 
 			EOF
 			;;
@@ -215,15 +224,17 @@ if [ "${TCL}" ]; then
 	cat <<-EOF >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 		CONFIGURE_ARGS+= --with-tcl --with-tclconfig="\${TCLCONFIG}"
 		TCLV=\${WITH_TCL:S/.//}
-		TCL_INCDIR=    \${LOCALBASE}/include/tcl\${WITH_TCL}
-		MAKE_ENV=      TCL_INCDIR=\${TCL_INCDIR}
-		LIB_DEPENDS=   tcl\${TCLV}.1:\${PORTSDIR}/lang/tcl\${TCLV}
-		TCLCONFIG=     '\${LOCALBASE}/lib/tcl\${WITH_TCL}'
+		TCL_INCDIR=		\${LOCALBASE}/include/tcl\${WITH_TCL}
+		MAKE_ENV+=		TCL_INCDIR=\${TCL_INCDIR}
+		LIB_DEPENDS+=	tcl\${TCLV}:\${PORTSDIR}/lang/tcl\${TCLV}
+		TCLCONFIG=		"\${LOCALBASE}/lib/tcl\${WITH_TCL}"
 		.if defined(WITH_TK)
-		TK_INCDIR=     \${LOCALBASE}/include/tk\${WITH_TCL}
-		CONFIGURE_ENV+=        WISH=\${LOCALBASE}/bin/wish\${WITH_TCL}
-		LIB_DEPENDS+=  tk\${TCLV}.1:\${PORTSDIR}/x11-toolkits/tk\${TCLV}
-		TCLCONFIG+=    '\${LOCALBASE}/lib/tk\${WITH_TCL}'
+		CONFIGURE_ARGS+= --with-tkconfig="\${TKCONFIG}"
+		TK_INCDIR=		\${LOCALBASE}/include/tk\${WITH_TCL}
+		CONFIGURE_ENV+=	WISH=\${LOCALBASE}/bin/wish\${WITH_TCL}
+		LIB_DEPENDS+=	tk\${TCLV}:\${PORTSDIR}/x11-toolkits/tk\${TCLV}
+		TKCONFIG=		"\${LOCALBASE}/lib/tk\${WITH_TCL}"
+		TCLCONFIG+=		\${TKCONFIG}
 		TCL_PLIST=     pkg-plist.tcl
 		.else
 		TCL_PLIST=     pkg-plist.notk
@@ -259,8 +270,7 @@ if [ "${KRB5}" ]; then
 	fi
 	cat <<-EOF >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 		.if defined(KRB5_HOME) && exists(\${KRB5_HOME})
-		CONFIGURE_KRB=	--with-krb5=\${KRB5_HOME} \
-						--with-krb-keytab=FILE:\${PREFIX}/pgsql/etc/keytab
+		CONFIGURE_KRB=	--with-krb5=\${KRB5_HOME}
 		.endif
 
 	EOF

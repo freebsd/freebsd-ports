@@ -2,28 +2,29 @@
 
 # $FreeBSD$
 #
-# For postmaster startup options, edit $PGDATA/postmaster.opts.default
-# Preinstalled options are -i -o "-F"
+# For postmaster startup options, edit $PGDATA/postgresql.conf
+
+PGBIN=%%PREFIX%%/%%PG_PREFIX%%bin
 
 case $1 in
 start)
-    [ -d !!PREFIX!!/pgsql/lib ] && /sbin/ldconfig -m !!PREFIX!!/pgsql/lib
-    [ -x !!PREFIX!!/pgsql/bin/pg_ctl ] && {
+    [ -d %%PREFIX%%/%%PG_PREFIX%%lib ] && /sbin/ldconfig -m %%PREFIX%%/%%PG_PREFIX%%lib
+    [ -x ${PGBIN}/pg_ctl ] && {
 	su -l pgsql -c \
-	    'exec !!PREFIX!!/pgsql/bin/pg_ctl -w start > !!PREFIX!!/pgsql/errlog 2>&1'
+	    'exec %%PREFIX%%/%%PG_PREFIX%%bin/pg_ctl start -w -l ~pgsql/errlog'
 	echo -n ' pgsql'
     }
     ;;
 
 stop)
-    [ -x !!PREFIX!!/pgsql/bin/pg_ctl ] && {
-	exec su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/pg_ctl -w -m fast stop'
+    [ -x ${PGBIN}/pg_ctl ] && {
+	exec su -l pgsql -c 'exec %%PREFIX%%/%%PG_PREFIX%%bin/pg_ctl stop -m fast'
     }
     ;;
 
 status)
-    [ -x !!PREFIX!!/pgsql/bin/pg_ctl ] && {
-	exec su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/pg_ctl status'
+    [ -x ${PGBIN}/pg_ctl ] && {
+	exec su -l pgsql -c 'exec %%PREFIX%%/%%PG_PREFIX%%bin/pg_ctl status'
     }
     ;;
 

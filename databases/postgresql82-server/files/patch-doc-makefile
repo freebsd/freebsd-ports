@@ -1,0 +1,19 @@
+--- doc/Makefile~	Sun Jan  7 03:03:22 2001
++++ doc/Makefile	Wed Apr 18 08:12:30 2001
+@@ -43,10 +43,13 @@
+ 	gzip -d -c man.tar.gz | ( cd $(DESTDIR)$(mandir) && $(TAR) xf - )
+ endif
+ 
+-
+ installdirs:
+-	$(mkinstalldirs) $(DESTDIR)$(mandir) $(DESTDIR)$(docdir)/html
+-
++ifdef found_html
++	$(mkinstalldirs) $(DESTDIR)$(docdir)/html
++endif
++ifdef found_man
++	$(mkinstalldirs) $(DESTDIR)$(mandir)
++endif
+ 
+ uninstall:
+ ifdef found_html

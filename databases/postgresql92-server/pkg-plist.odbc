@@ -1,8 +1,10 @@
-pgsql/include/iodbc/iodbc.h
-pgsql/include/iodbc/isql.h
-pgsql/include/iodbc/isqlext.h
-pgsql/lib/libpsqlodbc.a
-pgsql/lib/libpsqlodbc.so
-pgsql/lib/libpsqlodbc.so.0
-pgsql/odbcinst.ini
-@dirrm pgsql/include/iodbc
+%%PG_INCLUDE%%/iodbc/iodbc.h
+%%PG_INCLUDE%%/iodbc/isql.h
+%%PG_INCLUDE%%/iodbc/isqlext.h
+@dirrm %%PG_INCLUDE%%/iodbc
+%%PG_PREFIX%%lib/libpsqlodbc.a
+%%PG_PREFIX%%lib/libpsqlodbc.so
+%%PG_PREFIX%%lib/libpsqlodbc.so.0
+etc/postgresql/odbcinst.ini
+@dirrm etc/postgresql
+share/postgresql/odbc.sql

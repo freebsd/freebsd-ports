@@ -1,0 +1,13 @@
+--- src/interfaces/jdbc/org/postgresql/jdbc1/Statement.java~	Fri Feb 23 19:12:23 2001
++++ src/interfaces/jdbc/org/postgresql/jdbc1/Statement.java	Wed Apr 18 08:51:03 2001
+@@ -288,8 +288,8 @@
+ 	 */
+ 	public java.sql.ResultSet getResultSet() throws SQLException
+ 	{
+-          if (result != null) && ((org.postgresql.ResultSet)result.reallyResultSet())
+-            return result;
++          if (result != null && ((org.postgresql.ResultSet)result).reallyResultSet())
++	    return result;
+           return null;
+ 	}
+ 

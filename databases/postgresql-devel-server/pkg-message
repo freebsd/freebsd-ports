@@ -1,6 +1,30 @@
-==========================================
-To initialize the database, you should run
-initdb as the "pgsql" user.
+
+======================================================================
+
+      * IMPORTANT UPGRADE NOTICE * IMPORTANT UPGRADE NOTICE *
+
+The PostgreSQL port now obeys hier(7) by default, which means that it
+installs into:
+
+/usr/local/bin
+/usr/local/lib
+/usr/local/include/pgsql
+
+You *must* move away your old installation from users' and
+ldconfig(8)'s PATHs. If you rather install using the old-fashion
+layout, cancel now and build the port with "make -DWITH_OLD_LAYOUT".
+
+The pgsql user's home dir is /usr/local/pgsql by default, but can be
+changed with for example chpass(1). Datadir defaults to ~pgsql/data,
+but can be changed by modifying the ~pgsql/.profile script.
+
+As always, you *must* dump existing databases before stopping and
+removing your old postgresql, as part of the update.  This is *NOT*
+done by this port!
+
+======================================================================
+
+To initialize the database, you should run initdb as the "pgsql" user.
 
 Example:
 
@@ -9,4 +33,6 @@ Example:
 You can then start PostgreSQL by running:
 
   /usr/local/etc/rc.d/010.pgsql.sh start
-==========================================
+
+For postmaster settings, see ~pgsql/data/postmaster.conf
+======================================================================

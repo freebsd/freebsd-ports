@@ -1,14 +1,27 @@
-share/examples/pgsql/jdbc/ImageViewer.java
-share/examples/pgsql/jdbc/basic.java
-share/examples/pgsql/jdbc/blobtest.java
-share/examples/pgsql/jdbc/datestyle.java
-share/examples/pgsql/jdbc/metadata.java
-share/examples/pgsql/jdbc/psql.java
-share/examples/pgsql/jdbc/threadsafe.java
-share/examples/pgsql/jdbc/README
-share/examples/pgsql/jdbc/README_6.3
-@dirrm share/examples/pgsql/jdbc
-@dirrm share/examples/pgsql
+share/examples/postgresql/corba/StockClient.java
+share/examples/postgresql/corba/StockDB.java
+share/examples/postgresql/corba/StockDispenserImpl.java
+share/examples/postgresql/corba/StockItemImpl.java
+share/examples/postgresql/corba/StockServer.java
+share/examples/postgresql/corba/readme
+share/examples/postgresql/corba/stock.idl
+share/examples/postgresql/corba/stock.sql
+@dirrm share/examples/postgresql/corba
+share/examples/postgresql/ImageViewer.java
+share/examples/postgresql/Unicode.java
+share/examples/postgresql/basic.java
+share/examples/postgresql/blobtest.java
+share/examples/postgresql/datestyle.java
+share/examples/postgresql/metadata.java
+share/examples/postgresql/psql.java
+share/examples/postgresql/threadsafe.java
+share/examples/postgresql/README
+share/examples/postgresql/Implementation
+@dirrm share/examples/postgresql
+share/postgresql/java/postgresql-examples.jar
+share/postgresql/java/postgresql.jar
+share/postgresql/java/retepTools.jar
+@dirrm share/postgresql/java
 share/java/classes/postgresql.jar
 @unexec rmdir %D/share/java/classes 2>/dev/null || true
 @unexec rmdir %D/share/java 2>/dev/null || true
