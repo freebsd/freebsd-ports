@@ -1,18 +1,27 @@
 
 $FreeBSD$
 
---- src/gdkxft_sysinstall.in.orig	Sat Sep  1 23:39:20 2001
-+++ src/gdkxft_sysinstall.in	Tue Sep  4 14:29:30 2001
-@@ -276,7 +276,7 @@
+--- src/gdkxft_sysinstall.in.orig	Tue Sep  4 15:29:48 2001
++++ src/gdkxft_sysinstall.in	Wed Sep  5 11:16:07 2001
+@@ -274,7 +274,7 @@
+ 	$xfttop=<XFT>;
+ 	close(XFT);
+     };
+-    if(!($xfttop =~ /\$XFree86\$/)) {
++    if(!($xfttop =~ /\$XFree86.*\$/)) {
+ 	print STDERR "Your $outfile is already configured.\n";
+ 	return;
+     }
+@@ -434,7 +434,7 @@
  
  # create a theme to show off anti-aliased fonts
  sub install_theme {
--    my $themedir=`gtk-config --prefix`;
-+    my $themedir=`gtk12-config --prefix`;
+-    my $themedir=`gtk-config --prefix` || "/usr";
++    my $themedir=`gtk12-config --prefix` || "/usr";
      chomp $themedir;
      $themedir.="/share/themes";
  
-@@ -285,8 +285,8 @@
+@@ -443,8 +443,8 @@
  	return 0;
      };
  
@@ -23,12 +32,12 @@ $FreeBSD$
      my $file = "$themedir/Gdkxft/gtk/gtkrc";
  
      print STDERR "Creating $file\n";
-@@ -342,7 +342,7 @@
+@@ -500,7 +500,7 @@
      return 1;
  }
  sub uninstall_theme {
--    my $themedir=`gtk-config --prefix`;
-+    my $themedir=`gtk12-config --prefix`;
+-    my $themedir=`gtk-config --prefix` || "/usr";
++    my $themedir=`gtk12-config --prefix` || "/usr";
      chomp $themedir;
      $themedir.="/share/themes";
  
