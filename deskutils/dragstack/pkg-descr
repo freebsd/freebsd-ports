@@ -1,0 +1,7 @@
+DragStacK, inspired by the drop stack of the PathFinder file manager
+for OS X, is a KDE panel applet which provides a stack of files / resources. 
+Files or other resources can be dropped onto the applet to add them to
+the stack, or dragged from the applet to remove them from the stack. 
+
+Author: Dominik Seichter <domseichter@web.de>
+WWW: http://sourceforge.net/projects/dragstack
