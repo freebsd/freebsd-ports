@@ -1,53 +1,49 @@
-# New ports collection makefile for:	py-gtk
-# Date created:				09/14/1999
-# Whom:					nectar@FreeBSD.org
+# New ports collection makefile for:	py-gtk2
+# Date created:				08/13/2002
+# Whom:					marc@informatik.uni-bremen.de
 #
 # $FreeBSD$
-#
 
-PORTNAME=	py-gtk
-PORTVERSION=	0.6.10
+PORTNAME=	gtk
+PORTVERSION=	1.99.12
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-python/1.4
-DISTNAME=	gnome-python-1.4.4
-DIST_SUBDIR=	gnome
+MASTER_SITE_SUBDIR=	sources/pygtk/1.99
+DISTNAME=	pygtk-${PORTVERSION}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	marc@informatik.uni-bremen.de
 
-BUILD_DEPENDS=	${PYNUMERIC}
-LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
+LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		glade-2.0.0:${PORTSDIR}/devel/libglade2 \
+		gtkgl-2.0:${PORTSDIR}/x11-toolkits/gtkglarea2
 RUN_DEPENDS=	${PYNUMERIC}
-
-WRKSRC=		${WRKDIR}/${DISTNAME}/pygtk
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomelibs gdkpixbuf libglade
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 EG_SRC_DIR=	${WRKSRC}/examples
 EG_DST_DIR=	${PREFIX}/share/examples/py-gtk
 
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+pre-build:
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+.endif
+
 .if !defined(NOPORTDOCS)
 post-install:
 	${MKDIR} ${EG_DST_DIR}
-	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xvf -
+	${TAR} -C ${EG_SRC_DIR} -cf - . | ${TAR} -C ${EG_DST_DIR} -xf -
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${EG_DST_DIR}
-	find ${EG_DST_DIR} -type d -print | xargs ${CHMOD} 0555
-	find ${EG_DST_DIR} -type f -print | xargs ${CHMOD} 0444
+	${FIND} ${EG_DST_DIR} -type d -print | ${XARGS} ${CHMOD} 0555
+	${FIND} ${EG_DST_DIR} -type f -print | ${XARGS} ${CHMOD} 0444
 	${MKDIR} ${PREFIX}/share/doc/py-gtk
 	${INSTALL_DATA} ${WRKSRC}/MAPPING ${PREFIX}/share/doc/py-gtk
-.else
-PLIST=		${WRKDIR}/PLIST.nodocs
-pre-install:
-	${RM} -f ${PLIST}
-	${GREP} -E -v '^(@dirrm )?(share/examples/)|(share/doc/)'       \
-		${PKGDIR}/pkg-plist > ${PLIST}
+	${INSTALL_DATA} ${WRKSRC}/THREADS ${PREFIX}/share/doc/py-gtk
 .endif
 
 .include <bsd.port.mk>
