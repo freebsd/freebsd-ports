@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Apr 20 11:24:29 2000
-+++ Makefile	Sat Apr 22 06:00:00 2000
+--- Makefile.orig	Thu May 11 05:49:46 2000
++++ Makefile	Tue May 16 17:36:48 2000
 @@ -1,40 +1,19 @@
 -CXXFLAGS=-Wall -O2 -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
 -# -ggdb
@@ -49,7 +49,7 @@
  
  FACE=face/lmenu.o face/list.o face/addd.o face/graph.o face/log.o \
  	face/prefs.o face/buttons.o face/about.o face/edit.o \
-@@ -50,23 +29,20 @@
+@@ -51,23 +30,20 @@
  all:
  	-rm -f nt
  	$(MAKE) nt
@@ -81,7 +81,7 @@
  
  clean: 
  	-rm -f *.o nt TAGS *~
-@@ -79,8 +55,3 @@
+@@ -80,8 +56,3 @@
  uninstall:
  	-rm -f $(DEST)/bin/nt
  	$(MAKE) uninstall -C po

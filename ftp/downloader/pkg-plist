@@ -1,15 +1,16 @@
 bin/nt
 share/doc/downloader/ChangeLog
 share/doc/downloader/FAQ
+share/doc/downloader/FAQ.de
 share/doc/downloader/FAQ.es
 share/doc/downloader/FAQ.fr
 share/doc/downloader/FAQ.gr 
-share/doc/downloader/INSTALL
-share/doc/downloader/INSTALL.gr
 share/doc/downloader/LICENSE
 share/doc/downloader/NAMES
 share/doc/downloader/PLANS
 share/doc/downloader/README
+share/doc/downloader/README.de
+share/doc/downloader/README.es
 share/doc/downloader/README.gr
 share/doc/downloader/README.ru
 share/doc/downloader/THANKS
@@ -26,6 +27,7 @@ share/locale/id/LC_MESSAGES/nt.mo
 share/locale/it/LC_MESSAGES/nt.mo
 share/locale/ja/LC_MESSAGES/nt.mo
 share/locale/nl/LC_MESSAGES/nt.mo
+share/locale/pl/LC_MESSAGES/nt.mo
 share/locale/pt_BR/LC_MESSAGES/nt.mo
 share/locale/ru/LC_MESSAGES/nt.mo
 share/locale/zh_CN.GBK/LC_MESSAGES/nt.mo

@@ -1,5 +1,5 @@
---- po/Makefile.orig	Mon Apr 17 10:32:26 2000
-+++ po/Makefile	Fri Apr 21 21:00:00 2000
+--- po/Makefile.orig	Mon Apr 17 05:32:26 2000
++++ po/Makefile	Tue May 16 17:37:02 2000
 @@ -1,12 +1,12 @@
  all:
  	for i in `ls *.po`; do \

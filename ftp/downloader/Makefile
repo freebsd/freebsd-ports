@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	1.15
+PORTVERSION=	1.16
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.server51.freshmeat.net/pub/d4x/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
 DISTNAME=	nt-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andrew@chg.ru
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
@@ -26,8 +26,8 @@ MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 
 MAN1=		nt.1
 
-D4X_DOC=	ChangeLog FAQ FAQ.es FAQ.fr FAQ.gr INSTALL INSTALL.gr LICENSE \
-		NAMES PLANS README README.gr README.ru THANKS TODO TROUBLES
+D4X_DOC=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE \
+		NAMES PLANS README README.de README.es README.gr README.ru THANKS TODO TROUBLES
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/../nt.1 ${PREFIX}/man/man1

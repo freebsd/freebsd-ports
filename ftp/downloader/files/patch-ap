@@ -1,8 +1,8 @@
---- face/Makefile.orig	Sun Apr 16 16:18:45 2000
-+++ face/Makefile	Sat Apr 22 06:00:00 2000
+--- face/Makefile.orig	Thu May 11 05:55:43 2000
++++ face/Makefile	Tue May 16 17:36:58 2000
 @@ -2,10 +2,8 @@
  	buttons.o about.o saveload.o limface.o misc.o lod.o columns.o \
- 	dndtrash.o passface.o
+ 	dndtrash.o passface.o mywidget.o
  
 +.cc.o:
 +	$(EXECC) -c $<
