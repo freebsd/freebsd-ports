@@ -2056,6 +2056,7 @@ gnomemimedata	ports/misc/gnomemimedata
 gnomepanel	ports/x11/gnomepanel
 gnomepilot	ports/palm/gnomepilot
 gnomepilot-conduits	ports/palm/gnomepilot-conduits
+gnomepilot-conduits2	ports/palm/gnomepilot-conduits2
 gnomepilot2	ports/palm/gnomepilot2
 gnomepim	ports/deskutils/gnomepim
 gnomepm		ports/misc/gnomepm
