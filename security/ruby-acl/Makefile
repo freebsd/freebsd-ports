@@ -8,7 +8,9 @@
 PORTNAME=	acl
 PORTVERSION=	1.0
 CATEGORIES=	security ipv6 ruby
-MASTER_SITES=	http://www2a.biglobe.ne.jp/~seki/ruby/
+MASTER_SITES=	${MASTER_SITE_RUBY} \
+		http://www2a.biglobe.ne.jp/~seki/ruby/
+MASTER_SITE_SUBDIR=	contrib
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
