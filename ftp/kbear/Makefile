@@ -12,6 +12,9 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=		${PORTNAME}-${PORTVERSION:S/.a.1/alpha1b/}-1.src
 
+PATCH_SITES=		http://www.brueffer.de/distfiles/
+PATCHFILES=		${DISTNAME:S/.src/-patch/}.gz
+
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		A graphical FTP client for KDE
 
@@ -25,7 +28,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		XML2POT=${TRUE} PO2XML=${TRUE} LDFLAGS="${PTHREAD_LIBS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+	@${REINPLACE_CMD} -e 's|-O2|-fPIC|g; s|-lpthread|${PTHREAD_LIBS}|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
