@@ -2636,6 +2636,7 @@ its4		ports/security/its4
 iv		ports/x11-toolkits/iv
 iverilog	ports/cad/iverilog
 ivtools		ports/graphics/ivtools
+iw-culmus	ports/hebrew/culmus
 iw-elmar-fonts	ports/hebrew/elmar-fonts
 iw-he2		ports/hebrew/he2
 iw-hspell	ports/hebrew/hspell
