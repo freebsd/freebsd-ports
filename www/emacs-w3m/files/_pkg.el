@@ -1,4 +1,4 @@
 ;;;###autoload
 (package-provide 'w3m
-                 :version 0.2
+                 :version 1.3
                  :type 'regular)
