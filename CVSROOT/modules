@@ -9902,6 +9902,7 @@ xhtml		ports/textproc/xhtml
 xhtml-11	ports/textproc/xhtml-11
 xhtml-basic	ports/textproc/xhtml-basic
 xhtml-modularization	ports/textproc/xhtml-modularization
+xhtml1-xsd	ports/textproc/xhtml1-xsd
 xicq		ports/net/xicq
 ximp3		ports/audio/ximp3
 xin		ports/sysutils/xin
