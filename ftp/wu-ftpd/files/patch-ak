@@ -1,0 +1,11 @@
+--- src/ftpd.c	2000/07/07 22:17:38	1.113
++++ src/ftpd.c	2000/08/29 17:26:23
+@@ -7274,7 +7274,7 @@
+     int which;
+     struct aclmember *entry = NULL;
+     (void) acl_getclass(class);
+-    while (getaclentry("port-allow", &entry)) {
++    while (getaclentry("pasv-allow", &entry)) {
+ 	if ((ARG0 != NULL) && (strcasecmp(class, ARG0) == 0))
+ 	    for (which = 1; (which < MAXARGS) && (ARG[which] != NULL); which++) {
+ 		if (hostmatch(ARG[which], remoteaddr, NULL))
