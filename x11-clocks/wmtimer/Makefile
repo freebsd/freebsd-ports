@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wmtimer
-PORTVERSION=	2.8
-PORTREVISION=	1
+PORTVERSION=	2.92
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	http://home.dwave.net/~jking/wmtimer/
+MASTER_SITES=	http://www.darkops.net/wmtimer/
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Multi-Function timer dockapp for WindowMaker
@@ -18,7 +17,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/wmtimer
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
