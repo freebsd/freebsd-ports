@@ -5154,6 +5154,7 @@ p5-Date-Simple	ports/devel/p5-Date-Simple
 p5-DateConvert	ports/devel/p5-DateConvert
 p5-DateTime	ports/devel/p5-DateTime
 p5-DateTime-LeapSecond	ports/devel/p5-DateTime-LeapSecond
+p5-DateTime-Precise	ports/devel/p5-DateTime-Precise
 p5-DateTime-Set	ports/devel/p5-DateTime-Set
 p5-DateTime-TimeZone	ports/devel/p5-DateTime-TimeZone
 p5-DelimMatch	ports/textproc/p5-DelimMatch
