@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	docbook
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -22,7 +21,8 @@ RUN_DEPENDS=	${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${PREFIX}/share/sgml/docbook/3.0:${PORTSDIR}/textproc/docbook-300 \
 		${PREFIX}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-310 \
 		${PREFIX}/share/sgml/docbook/4.0:${PORTSDIR}/textproc/docbook-400 \
-		${PREFIX}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410
+		${PREFIX}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410 \
+		${PREFIX}/share/xml/docbook/4.2:${PORTSDIR}/textproc/docbook-xml
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
