@@ -1509,7 +1509,6 @@ drweb		ports/security/drweb
 drweb-postfix	ports/security/drweb-postfix
 drweb-qmail	ports/security/drweb-qmail
 drweb-sendmail	ports/security/drweb-sendmail
-drwebd		ports/security/drwebd
 dsbl-testers	ports/mail/dsbl-testers
 dsnake		ports/games/dsnake
 dsniff		ports/security/dsniff
