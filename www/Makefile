@@ -431,6 +431,7 @@
     SUBDIR += roxen
     SUBDIR += rt2
     SUBDIR += rt3
+    SUBDIR += rt3-elixus
     SUBDIR += ruboard
     SUBDIR += ruby-borges
     SUBDIR += ruby-div
