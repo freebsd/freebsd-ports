@@ -1,6 +1,6 @@
 lib/libuu.a
 lib/libuu.so
-lib/libuu.so.2
+lib/libuu.so.3
 include/uudeview.h
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/README

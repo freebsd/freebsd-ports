@@ -4,13 +4,13 @@
  libuu.a:	uulib/config.h
  	(cd uulib; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' )
  
-+libuu.so.2.0:	uulib/config.h
++libuu.so.3.0:	uulib/config.h
 +	(cd uulib; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' \
-+		libuu.so.2.0 )
++		libuu.so.3.0 )
 +
-+libuu.so.2:	uulib/config.h
++libuu.so.3:	uulib/config.h
 +	(cd uulib; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' \
-+		libuu.so.2 )
++		libuu.so.3 )
 +
  minews:
  	(cd inews; $(MAKE) CC='$(CC)' CFLAGS='$(CFLAGS)' LIBS='$(LIBS)' )
