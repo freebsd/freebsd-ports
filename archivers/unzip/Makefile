@@ -8,16 +8,22 @@
 PORTNAME=	unzip
 PORTVERSION=	5.42
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.freesoftware.com/pub/infozip/src/ \
+MASTER_SITES=   ftp://ftp.icce.rug.nl/infozip/src/ \
 		${MASTER_SITE_TEX_CTAN:S,%SUBDIR%,tools/zip/info-zip/src/,}
-DISTNAME=	${PORTNAME}542
+DISTFILES=      ${PORTNAME}542.tar.gz
 
 MAINTAINER=	ache@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKEFILE=	unix/Makefile
-MAKE_FLAGS=	LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK" -f
+MAKE_ENV=       LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK"
 MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
+
+.if defined(WITH_UNZIP_UNREDUCE)
+DISTFILES+=     unreduce_full.zip
+EXTRACT_ONLY=   ${PORTNAME}542.tar.gz
+MAKE_ENV=       LOCAL_UNZIP="${CFLAGS} -DUSE_UNSHRINK -DUSE_SMITH_CODE"
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -25,6 +31,15 @@ MAN1=		funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 ALL_TARGET=	freebsd
 .else
 ALL_TARGET=	bsd
+.endif
+
+.if defined(WITH_UNZIP_UNREDUCE)
+pre-build:
+	@(cd ${BUILD_WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} unzip)
+	@(cd ${WRKSRC}; \
+		./unzip -o ${DISTDIR}/unreduce_full.zip; \
+		${MV} unreduce_full.c unreduce.c)
+	@(cd ${BUILD_WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} clean)
 .endif
 
 do-install:
