@@ -7,6 +7,7 @@
 
 PORTNAME?=	aspell
 PORTVERSION=	0.50.3
+PORTREVISION=	1
 CATEGORIES+=	textproc
 MASTER_SITES=	http://savannah.gnu.org/download/${PORTNAME}/rel/	\
 		${MASTER_SITE_GNU}
@@ -30,7 +31,6 @@ USE_REINPLACE=	yes
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
 WRKSRC=		${WRKDIR}/aspell-${PORTVERSION}	# needed for slave ports / options
 DOCSDIR=	${PREFIX}/share/doc/aspell
 DATADIR=	${PREFIX}/share/aspell
@@ -41,12 +41,15 @@ CONF_DICT_ENV=	ASPELL="${PREFIX}/bin/aspell"	\
 		WORD_LIST_COMPRESS="${PREFIX}/bin/word-list-compress"
 AVAIL_DICT=	br ca cs cy da de el en eo es fo fr it nl no pl pt ro ru sk sv uk
 DICTVERSION=	0.50
+DICTVERSION2=	0.51
 DICTREVISION=	2
 DICTREVISION2=	3
+DICTREVISION3=	0
 UDICT1=		cy
 UDICT2=		el
 UDICT3=		fr
 UDICT4=		uk
+UDICT5=		en
 DICT_SUFFIX=	.tar.bz2
 
 .include <bsd.port.pre.mk>
@@ -174,6 +177,8 @@ DISTFILES+=	aspell-${DICO}-${DICTVERSION}-${DICTREVISION2}${DICT_SUFFIX}
 DISTFILES+=	aspell-${DICO}-${DICTVERSION}-${DICTREVISION2}${DICT_SUFFIX}
 .elif (${UDICT4} == ${DICO})
 DISTFILES+=	aspell-${DICO}-${DICTVERSION}-${DICTREVISION2}${DICT_SUFFIX}
+.elif (${UDICT5} == ${DICO})
+DISTFILES+=	aspell-${DICO}-${DICTVERSION2}-${DICTREVISION3}${DICT_SUFFIX}
 .else
 DISTFILES+=	aspell-${DICO}-${DICTVERSION}-${DICTREVISION}${DICT_SUFFIX}
 .endif
@@ -193,6 +198,9 @@ post-extract:
 .elif (${UDICT4} == ${DICO})
 	@cd ${WRKDIR} && \
 	 ${TAR} -xjf ${DISTDIR}/aspell-${DICO}-${DICTVERSION}-${DICTREVISION2}${DICT_SUFFIX}
+.elif (${UDICT5} == ${DICO})
+	@cd ${WRKDIR} && \
+	 ${TAR} -xjf ${DISTDIR}/aspell-${DICO}-${DICTVERSION2}-${DICTREVISION3}${DICT_SUFFIX}
 .else
 	@cd ${WRKDIR} && \
 	 ${TAR} -xjf ${DISTDIR}/aspell-${DICO}-${DICTVERSION}-${DICTREVISION}${DICT_SUFFIX}
@@ -216,6 +224,10 @@ post-install:
 	 ${GMAKE} install
 .elif (${UDICT4} == ${DICO})
 	@cd ${WRKDIR}/aspell-${DICO}-${DICTVERSION}-${DICTREVISION2} && \
+	 ${CONF_DICT_ENV} ./${CONFIGURE_SCRIPT} && \
+	 ${GMAKE} install
+.elif (${UDICT5} == ${DICO})
+	@cd ${WRKDIR}/aspell-${DICO}-${DICTVERSION2}-${DICTREVISION3} && \
 	 ${CONF_DICT_ENV} ./${CONFIGURE_SCRIPT} && \
 	 ${GMAKE} install
 .else
