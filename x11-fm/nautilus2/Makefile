@@ -40,4 +40,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
+post-install:
+	@${CHMOD} u+w ${PREFIX}/share/gnome/nautilus/*.desktop
+
 .include <bsd.port.mk>
