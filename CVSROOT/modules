@@ -4099,6 +4099,7 @@ jbidwatcher	ports/misc/jbidwatcher
 jbigkit		ports/graphics/jbigkit
 jboss2		ports/java/jboss2
 jboss3		ports/java/jboss3
+jboss4		ports/java/jboss4
 jc		ports/java/jc
 jcalendar	ports/java/jcalendar
 jcckit		ports/java/jcckit
