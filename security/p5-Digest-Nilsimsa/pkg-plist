@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Digest/Nilsimsa.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/Nilsimsa/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/Nilsimsa/Nilsimsa.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/Nilsimsa/Nilsimsa.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Digest/Nilsimsa

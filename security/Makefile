@@ -171,6 +171,7 @@
     SUBDIR += p5-Digest-HMAC
     SUBDIR += p5-Digest-MD2
     SUBDIR += p5-Digest-MD5
+    SUBDIR += p5-Digest-Nilsimsa
     SUBDIR += p5-Digest-SHA1
     SUBDIR += p5-File-Scan
     SUBDIR += p5-GnuPG-Interface
