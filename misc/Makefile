@@ -319,6 +319,7 @@
     SUBDIR += viz
     SUBDIR += whichman
     SUBDIR += wmScoreBoard
+    SUBDIR += wmcalendar
     SUBDIR += wmcp
     SUBDIR += wmessage
     SUBDIR += wmfirew
