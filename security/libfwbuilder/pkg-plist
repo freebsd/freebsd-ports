@@ -1,0 +1,107 @@
+include/fwbd/fwbd.h
+include/fwcompiler/manifest.hh
+include/fwcompiler/Compiler.hh
+include/fwcompiler/PolicyCompiler.hh
+include/fwcompiler/NATCompiler.hh
+include/fwcompiler/OSConfigurator.hh
+include/fwcompiler/RuleProcessor.hh
+include/fwbuilder/libfwbuilder-config.h
+include/fwbuilder/Constants.hh
+include/fwbuilder/Tools.hh
+include/fwbuilder/XMLTools.hh
+include/fwbuilder/crypto.hh
+include/fwbuilder/FWException.hh
+include/fwbuilder/IPAddress.hh
+include/fwbuilder/ThreadTools.hh
+include/fwbuilder/dns.hh
+include/fwbuilder/snmp.hh
+include/fwbuilder/HostsFile.hh
+include/fwbuilder/Logger.hh
+include/fwbuilder/BackgroundOp.hh
+include/fwbuilder/SyncQueue.hh
+include/fwbuilder/Pool.hh
+include/fwbuilder/FWObjectDatabase.hh
+include/fwbuilder/FWReference.hh
+include/fwbuilder/FWServiceReference.hh
+include/fwbuilder/FWIntervalReference.hh
+include/fwbuilder/FWObjectReference.hh
+include/fwbuilder/FWObject.hh
+include/fwbuilder/Address.hh
+include/fwbuilder/Service.hh
+include/fwbuilder/TCPService.hh
+include/fwbuilder/UDPService.hh
+include/fwbuilder/CustomService.hh
+include/fwbuilder/IPService.hh
+include/fwbuilder/ICMPService.hh
+include/fwbuilder/Interval.hh
+include/fwbuilder/Management.hh
+include/fwbuilder/Host.hh
+include/fwbuilder/Interface.hh
+include/fwbuilder/InterfacePolicy.hh
+include/fwbuilder/Group.hh
+include/fwbuilder/Rule.hh
+include/fwbuilder/RuleSet.hh
+include/fwbuilder/RuleElement.hh
+include/fwbuilder/FWOptions.hh
+include/fwbuilder/Firewall.hh
+include/fwbuilder/NAT.hh
+include/fwbuilder/Policy.hh
+include/fwbuilder/Network.hh
+include/fwbuilder/AddressRange.hh
+include/fwbuilder/ObjectGroup.hh
+include/fwbuilder/ServiceGroup.hh
+include/fwbuilder/IntervalGroup.hh
+share/libfwbuilder/migration/0.8.7/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.9.0/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.9.1/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.9.2/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.9.3/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.9.4/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.9.5/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.10.0/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.10.1/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.10.2/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.10.3/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.10.4/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.10.5/FWObjectDatabase.xslt
+share/libfwbuilder/migration/0.10.6/FWObjectDatabase.xslt
+share/libfwbuilder/fwbuilder.dtd
+bin/libfwbuilder-config
+lib/libfwbuilder.so.2
+lib/libfwbuilder.so
+lib/libfwbuilder.la
+lib/libfwbuilder.a
+lib/libfwcompiler.so.2
+lib/libfwcompiler.so
+lib/libfwcompiler.la
+lib/libfwcompiler.a
+lib/libfwbd.so.2
+lib/libfwbd.so
+lib/libfwbd.la
+lib/libfwbd.a
+share/doc/libfwbuilder-%%PORTVERSION%%/AUTHORS
+share/doc/libfwbuilder-%%PORTVERSION%%/COPYING
+share/doc/libfwbuilder-%%PORTVERSION%%/ChangeLog
+share/doc/libfwbuilder-%%PORTVERSION%%/Credits
+share/doc/libfwbuilder-%%PORTVERSION%%/README
+@dirrm include/fwbd
+@dirrm include/fwbuilder
+@dirrm include/fwcompiler
+@dirrm share/libfwbuilder/migration/0.8.7
+@dirrm share/libfwbuilder/migration/0.9.0
+@dirrm share/libfwbuilder/migration/0.9.1
+@dirrm share/libfwbuilder/migration/0.9.2
+@dirrm share/libfwbuilder/migration/0.9.3
+@dirrm share/libfwbuilder/migration/0.9.4
+@dirrm share/libfwbuilder/migration/0.9.5
+@dirrm share/libfwbuilder/migration/0.10.0
+@dirrm share/libfwbuilder/migration/0.10.1
+@dirrm share/libfwbuilder/migration/0.10.2
+@dirrm share/libfwbuilder/migration/0.10.3
+@dirrm share/libfwbuilder/migration/0.10.4
+@dirrm share/libfwbuilder/migration/0.10.5
+@dirrm share/libfwbuilder/migration/0.10.6
+@dirrm share/libfwbuilder/migration
+@dirrm share/libfwbuilder
+@unexec rmdir %D/share/doc/libfwbuilder-%%PORTVERSION%%/classref > /dev/null 2>&1 || true
+@dirrm share/doc/libfwbuilder-%%PORTVERSION%%
