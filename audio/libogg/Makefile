@@ -6,23 +6,17 @@
 #
 
 PORTNAME=	libogg
-PORTVERSION=	20001018
+PORTVERSION=	1.0b4
+PORTEPOCH=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://home.student.utwente.nl/t.vanklaveren/distfiles/
-DISTNAME=	ogg-${PORTVERSION}
+MASTER_SITES=	http://www.vorbis.com/files/beta4/unix/ \
+		http://home.student.utwente.nl/t.vanklaveren/distfiles/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
 MAINTAINER=	t.vanklaveren@student.utwente.nl
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_AUTOMAKE=	yes
-AUTOMAKE_ARGS=	--add-missing
-WRKSRC=		${WRKDIR}/ogg
-
-AUTOHEADER?=	${LOCALBASE}/bin/autoheader
-
-pre-configure:
-	cd ${WRKSRC} && ${AUTOHEADER}
 
 .include <bsd.port.mk>
