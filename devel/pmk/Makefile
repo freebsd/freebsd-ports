@@ -19,7 +19,7 @@ MAN5=	pmk.conf.5 pmkfile.5
 MAN8=	pmksetup.8
 
 post-extract:
-	cd ${WRKDIR}; ${MAKE} clean
+	cd ${WRKSRC}; ${MAKE} clean
 
 do-configure:
 	cd ${WRKSRC}; ${MAKE} cfgrm
