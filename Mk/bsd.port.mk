@@ -457,6 +457,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # NO_LATEST_LINK - Do not install the "Latest" link for package.  Define this
 #				  if this port is a beta version of another stable port
 #				  which is also in the tree.
+# LATEST_LINK    - Install the "Latest" link for the package as ___.  Define
+#                 this if the "Latest" link name will be incorrectly determined.
 #
 # This is used in all stages:
 #
@@ -1265,7 +1267,8 @@ PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
 # The "latest version" link -- ${PKGNAME} minus everthing after the last '-'
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
 PKGBASE?=			${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
-PKGLATESTFILE?=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
+LATEST_LINK?=		${PKGBASE}
+PKGLATESTFILE=		${PKGLATESTREPOSITORY}/${LATEST_LINK}${PKG_SUFX}
 
 .if defined(PERL_CONFIGURE)
 CONFIGURE_ARGS+=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
