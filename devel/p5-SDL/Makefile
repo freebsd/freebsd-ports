@@ -5,6 +5,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.18.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.sdlperl.org/downloads/ \
 		ftp://sdlperl.org/SDL_perl/old/
@@ -29,7 +30,7 @@ LIB_DEPENDS+=	SDL_net.0:${PORTSDIR}/net/sdl_net
 .endif
 
 .if !defined(WITHOUT_SDL_GFX)
-LIB_DEPENDS+=	SDL_gfx.8:${PORTSDIR}/graphics/sdl_gfx
+LIB_DEPENDS+=	SDL_gfx.9:${PORTSDIR}/graphics/sdl_gfx
 .endif
 
 .if !defined(WITHOUT_SDL_IMAGE)

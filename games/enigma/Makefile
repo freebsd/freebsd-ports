@@ -18,7 +18,7 @@ BUILD_DEPENDS=	sdl11-config:${PORTSDIR}/devel/sdl12 \
 		lua:${PORTSDIR}/lang/lua
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer	\
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_gfx.8:${PORTSDIR}/graphics/sdl_gfx
+		SDL_gfx.9:${PORTSDIR}/graphics/sdl_gfx
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
