@@ -26,9 +26,6 @@
  //user_pref("font.min-size.variable.zh-TW", 10);
  //user_pref("font.min-size.fixed.zh-TW", 10);
 
-// Chatzilla
- user_pref("extensions.irc.charset", "Big5");
-
 // Printing 
 //  Change lines below to your local system fonts
 //  Check http://freebsd.sinica.edu.tw/~statue/zh-tut/web-browse.html

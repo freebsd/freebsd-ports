@@ -9,8 +9,8 @@
 # And just download and install there.
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0.0rc3
-LANGPACKDATE=	0524
+PORTVERSION=	1.0
+LANGPACKDATE=	0607
 CATEGORIES=	chinese www
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~b7506051/mozilla/langpack/distfiles/
 PKGNAMESUFFIX=	-tclp
