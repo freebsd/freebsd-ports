@@ -30,6 +30,12 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS=	-L${LOCALBASE}/lib
 
+.include<bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on 4.x"
+.endif
+
 post-extract:
 	@${REINPLACE_CMD} -e 's/min/Min/; s/max/Max/' ${WRKSRC}/include/Various.h
 	@${REINPLACE_CMD} -E -e 's/\(int\*\)/int\*/' ${WRKSRC}/src/ArenaRealTime.cc
