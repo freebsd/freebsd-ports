@@ -1600,7 +1600,6 @@ filmgimp	ports/graphics/filmgimp
 filtermail	ports/mail/filtermail
 find-zlib	ports/security/find-zlib
 find_ddos	ports/security/find_ddos
-finder		ports/x11/finder
 findutils	ports/misc/findutils
 finfo		ports/sysutils/finfo
 finger_mysql	ports/security/finger_mysql
@@ -1847,7 +1846,6 @@ gawk		ports/lang/gawk
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
 gbib		ports/databases/gbib
-gbiff		ports/mail/gbiff
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
 gcalctool	ports/math/gcalctool
@@ -2131,7 +2129,6 @@ gnomepilot2	ports/palm/gnomepilot2
 gnomepim	ports/deskutils/gnomepim
 gnomepm		ports/misc/gnomepm
 gnomeprint	ports/print/gnomeprint
-gnomeres_applet ports/x11/gnomeres_applet
 gnomermind	ports/games/gnomermind
 gnomesession	ports/x11/gnomesession
 gnomespell	ports/textproc/gnomespell
@@ -7659,7 +7656,6 @@ stldoc		ports/lang/stldoc
 stlport		ports/devel/stlport
 stlport-icc	ports/devel/stlport-icc
 stmpclean	ports/sysutils/stmpclean
-stockticker_applet ports/x11/stockticker_applet
 stone		ports/net/stone
 stonx		ports/emulators/stonx
 stow		ports/sysutils/stow
@@ -9030,7 +9026,6 @@ yudit		ports/editors/yudit
 yuzu		ports/mail/yuzu
 z80-asm		ports/devel/z80-asm
 zangband	ports/games/zangband
-zclock		ports/x11-clocks/zclock
 zebedee		ports/security/zebedee
 zebra		ports/net/zebra
 zebra-devel	ports/net/zebra-devel
