@@ -71,7 +71,7 @@ PKGNAMESUFFIX=	-${LANG_SUFFIX}
 #
 # LANG_CONFIGURE_ARG is missing for the german port
 #
-.if defined(LANG_EXT) && ${LANG_EXT}!=49
+.if defined(LANG_EXT)
 CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG},ENUS
 .endif
 .endif
