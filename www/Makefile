@@ -252,8 +252,6 @@
     SUBDIR += mozilla
     SUBDIR += mozilla-devel
     SUBDIR += mozilla-devel-gtk2
-    SUBDIR += mozilla-embedded
-    SUBDIR += mozilla-embedded-devel
     SUBDIR += mozilla-firebird
     SUBDIR += mozilla-gtk2
     SUBDIR += mozilla-headers
