@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	aleefonts
-PORTVERSION=	2.7
+PORTVERSION=	3.1
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/t/ttf-alee
@@ -14,8 +14,6 @@ DISTNAME=	ttf-alee_${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	A-Lee's Hangul truetype fonts
-
-BROKEN=		Unfetchable
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
