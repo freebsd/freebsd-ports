@@ -3,6 +3,7 @@ lib/X11/tgif/Copyright
 lib/X11/tgif/LICENSE.QPL
 lib/X11/tgif/eq4-2x.sym
 lib/X11/tgif/eq4-epstool.sym
+lib/X11/tgif/eq4-lyx-ps2epsi.sym
 lib/X11/tgif/eq4-ps2epsi.sym
 lib/X11/tgif/eq4.sym
 lib/X11/tgif/eq4xpm.sym
