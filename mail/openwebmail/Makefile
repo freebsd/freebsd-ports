@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	openwebmail
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	mail
-MASTER_SITES=	http://openwebmail.org/openwebmail/download/ \
+MASTER_SITES=	http://openwebmail.com/openwebmail/download/ \
 		http://turtle.ee.ncku.edu.tw/openwebmail/download/
 EXTRACT_SUFX=	.tgz
 
@@ -27,11 +27,11 @@ OWCGIDIR=	${PREFIX}/www/cgi-bin/openwebmail
 OWDATADIR=	${PREFIX}/www/data/openwebmail
 PATCH_WRKSRC=	${WRKSRC}/cgi-bin/openwebmail
 PATCH_STRIP=	-p1
-PLIST=		${WRKDIR}/.PLIST.openwebmail
+PLIST=		${WRKDIR}/.PLIST.${PKGNAME}
 
-.if defined(WITH_SPEEDYCGI)
-BUILD_DEPENDS+=	${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI
-RUN_DEPENDS+=	${SITE_PERL}/CGI/SpeedyCGI.pm:${PORTSDIR}/www/p5-CGI-SpeedyCGI
+.if !defined(WITHOUT_SPEEDYCGI)
+BUILD_DEPENDS+=	speedy_suid:${PORTSDIR}/www/p5-CGI-SpeedyCGI
+RUN_DEPENDS+=	speedy_suid:${PORTSDIR}/www/p5-CGI-SpeedyCGI
 EXTRA_PATCHES=	${PATCH_WRKSRC}/uty/suidperl2speedy.diff
 .endif
 
@@ -54,17 +54,17 @@ pre-fetch:
 .if defined(WITH_ISPELL)
 	@${ECHO} "ISpell support will be added."
 .endif
-.if defined(WITH_SPEEDYCGI)
-	@${ECHO} "SpeedyCGI support will be added."
+.if defined(WITHOUT_SPEEDYCGI)
+	@${ECHO} "SpeedyCGI support will NOT be added."
 .endif
 .if defined(WITH_IMAGEMAGICK)
 	@${ECHO} "ImageMagick support will be added."
 .endif
-.if !defined(WITH_PAM) && !defined(WITH_ISPELL) && !defined(WITH_IMAGEMAGICK) && !defined(WITH_SPEEDYCGI)
+.if !defined(WITH_PAM) && !defined(WITH_ISPELL) && !defined(WITH_IMAGEMAGICK) && !defined(WITHOUT_SPEEDYCGI)
 	@${ECHO} ""
 	@${ECHO} "Type \"make WITH_PAM=yes\" if you want PAM support."
 	@${ECHO} "Type \"make WITH_ISPELL=yes\" if you want ISpell support."
-	@${ECHO} "Type \"make WITH_SPEEDYCGI=yes\" if you want SpeedyCGI support."
+	@${ECHO} "Type \"make WITHOUT_SPEEDYCGI=yes\" if you DONT want SpeedyCGI support."
 	@${ECHO} "Type \"make WITH_IMAGEMAGICK=yes\" if you want ImageMagick support."
 	@${ECHO} "You can use them in combinations."
 	@${ECHO} ""
@@ -73,8 +73,9 @@ pre-fetch:
 post-patch:
 	@${PERL} -pi.bak -e 's,/usr/local/www/cgi-bin/openwebmail,${OWCGIDIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf
 	@${PERL} -pi.bak -e 's,/usr/local/www/data/openwebmail,${OWDATADIR},g' ${PATCH_WRKSRC}/etc/openwebmail.conf
-.if defined(WITH_SPEEDYCGI)
+.if !defined(WITHOUT_SPEEDYCGI)
 	@${ECHO} "savedsuid_support	no" >> ${PATCH_WRKSRC}/etc/openwebmail.conf
+	@${PERL} -pi.bak -e 's,/usr/local/bin/speedy,${PREFIX}/bin/speedy_suid,g' ${PATCH_WRKSRC}/openwebmail*pl
 .else
 	@${PERL} -pi.bak -e 's,/usr/bin/suidperl,${PERL},g' ${PATCH_WRKSRC}/openwebmail*pl
 .endif
@@ -85,11 +86,14 @@ do-install:
 	@cd ${WRKSRC}/data/openwebmail && ${FIND} . | cpio -dpum -R ${SHAREOWN}:${SHAREGRP} ${OWDATADIR}
 	@${CHMOD} 0770 ${OWCGIDIR}/etc/sessions ${OWCGIDIR}/etc/users
 	@${CHMOD} 4755 ${OWCGIDIR}/openwebmail*pl
+.if defined(WITHOUT_SPEEDYCGI)
 	@${PERL} ${OWCGIDIR}/uty/wrapsuid.pl ${OWCGIDIR}
+.endif
 	@${OWCGIDIR}/openwebmail-tool.pl --init --no
 	@${FIND} ${OWCGIDIR} \( -name "*.bak" -or -name "*.orig" \) -delete
-	@${RM} -f ${PLIST}
+.if !exists(${PLIST})
 	@cd ${PREFIX} && ${FIND} ${OWCGIDIR:S,${PREFIX}/,,} ${OWDATADIR:S,${PREFIX}/,,} -type f -or -type l | sort -u > ${PLIST}
 	@cd ${PREFIX} && ${FIND} ${OWCGIDIR:S,${PREFIX}/,,} ${OWDATADIR:S,${PREFIX}/,,} -type d | sort -ur | ${SED} -e 's,^,@dirrm ,g' >> ${PLIST}
+.endif
 
 .include <bsd.port.mk>
