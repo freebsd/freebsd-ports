@@ -3,6 +3,7 @@
 
     SUBDIR += SSLtelnet
     SUBDIR += archie
+    SUBDIR += archie.el
     SUBDIR += argus
     SUBDIR += arla
     SUBDIR += arpwatch
