@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Net_Socket
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	net www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonio@php.net
 COMMENT=	PEAR Network Socket Interface
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
