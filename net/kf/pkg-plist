@@ -112,7 +112,10 @@ share/kf/vcard.glade.h
 share/kf/www.png
 share/kf/xa.png
 share/locale/pl/LC_MESSAGES/kf.mo
+share/locale/ru/LC_MESSAGES/kf.mo
 @dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/ru/LC_MESSAGES
 @dirrm share/locale/pl
+@dirrm share/locale/ru
 @dirrm share/kf/emoticons
 @dirrm share/kf
