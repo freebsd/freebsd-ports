@@ -7,6 +7,7 @@ include/opencl/base64.h
 include/opencl/bigint.h
 include/opencl/blowfish.h
 include/opencl/buf_filt.h
+include/opencl/cast128.h
 include/opencl/cast256.h
 include/opencl/cast5.h
 include/opencl/cbc.h
@@ -21,12 +22,15 @@ include/opencl/defalloc.h
 include/opencl/des.h
 include/opencl/desx.h
 include/opencl/dh.h
+include/opencl/dl_parm.h
 include/opencl/dsa.h
 include/opencl/ecb.h
 include/opencl/emac.h
 include/opencl/eme1.h
+include/opencl/emsa1.h
 include/opencl/emsa2.h
 include/opencl/emsa3.h
+include/opencl/emsa_raw.h
 include/opencl/es_file.h
 include/opencl/exceptn.h
 include/opencl/filter.h
@@ -46,6 +50,7 @@ include/opencl/kdf2.h
 include/opencl/key_filt.h
 include/opencl/lion.h
 include/opencl/look_add.h
+include/opencl/look_pk.h
 include/opencl/lookup.h
 include/opencl/lubyrack.h
 include/opencl/manalloc.h
@@ -61,6 +66,7 @@ include/opencl/mod_exp.h
 include/opencl/mode_pad.h
 include/opencl/modebase.h
 include/opencl/mp_core.h
+include/opencl/mp_types.h
 include/opencl/mutex.h
 include/opencl/nr.h
 include/opencl/numthry.h
