@@ -1,6 +1,15 @@
---- gst/cothreads.c.orig	Wed Nov 13 22:59:21 2002
-+++ gst/cothreads.c	Wed Nov 13 22:59:38 2002
-@@ -41,11 +41,11 @@
+--- gst/cothreads.c.orig	Sat Feb  1 19:09:00 2003
++++ gst/cothreads.c	Mon Feb  3 10:57:44 2003
+@@ -41,12 +41,16 @@
+ #include <ucontext.h>
+ #endif
+ 
++#ifdef HAVE_MAKECONTEXT
++#include <ucontext.h>
++#endif
++
+ /* older glibc's have MAP_ANON instead of MAP_ANONYMOUS */
+ #ifndef MAP_ANONYMOUS
  #define MAP_ANONYMOUS MAP_ANON
  #endif
  
@@ -9,8 +18,3 @@
  
  #define COTHREAD_MAGIC_NUMBER 0xabcdef
  
--#define COTHREAD_MAXTHREADS 16
-+#define COTHREAD_MAXTHREADS 8
- #define COTHREAD_STACKSIZE (STACK_SIZE/COTHREAD_MAXTHREADS)
- 
- static void 	cothread_destroy 	(cothread_state *thread);

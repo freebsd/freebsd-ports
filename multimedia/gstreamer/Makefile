@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.4.2
+PORTVERSION=	0.6.0
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,6 +34,9 @@ CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_TARGET=
+PLIST_SUB=	\
+		VERSION="${PORTVERSION:C/..$//}" \
+		SHLIB_VERSION="${SHLIB_VERSION}"
 INSTALLS_SHLIB=	yes
 
 MAN1=	gst-complete.1 gst-compprep.1 gst-inspect.1 gst-launch.1 \
@@ -42,26 +45,17 @@ MAN1=	gst-complete.1 gst-compprep.1 gst-inspect.1 gst-launch.1 \
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 
-post-patch:
-# use proper dir
-# remove version number from include dir name
-	@${FIND} ${WRKSRC} -type f -name Makefile.in | \
-		${XARGS} -n 10 ${REINPLACE_CMD} -E \
-		's|^(lib[[:alpha:]]+includedir.+)-@VERSION@|\1|'
-# remove version number from include dir name AND
-# help dependent ports find popt.h
-	@${REINPLACE_CMD} -E -e \
-		's|-@VERSION@||; \
-		s|(-I\$${includedir})|\1 -I${LOCALBASE}/include|' \
-		${WRKSRC}/gstreamer.pc.in
-
-post-configure:
-# remove version number postfix from library names
-	@${REINPLACE_CMD} -E -e 's|-release ${PORTVERSION}||' \
-		${WRKSRC}/gst/Makefile ${WRKSRC}/libs/gst/control/Makefile
+# library minor number
+SHLIB_VERSION=	0
 
 post-install:
 # register plugins
 	@${PREFIX}/bin/gst-register 2>/dev/null
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if exists(${X11BASE}/libdata/pkgconfig/libgnomeui-2.0.pc)
+LIB_DEPENDS+=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+.endif
+
+.include <bsd.port.post.mk>

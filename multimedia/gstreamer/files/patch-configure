@@ -1,6 +1,6 @@
---- configure.orig	Wed Jul 10 16:32:49 2002
-+++ configure	Wed Jul 10 16:33:12 2002
-@@ -6620,6 +6620,7 @@
+--- configure.orig	Wed Jan 22 09:17:40 2003
++++ configure	Wed Jan 29 14:49:56 2003
+@@ -7520,6 +7520,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,3 +8,12 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7712,7 +7713,7 @@
+ if test "x$COMPILER" = "xforte"; then
+   GST_ERROR=
+ else
+-  if test "x$GST_CVS"="xyes"; then
++  if test "x$GST_CVS" = "xyes"; then
+     GST_ERROR="-Wall -Werror"
+   else
+     GST_ERROR="-Wall"
