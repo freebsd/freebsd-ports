@@ -1,0 +1,11 @@
+Migemo is a Japanese incremental search tool for XEmacs.
+You can search Japanese words on XEmacs without Kanji conversion.
+
+To use Migemo, you must set following elisp to your own .emacs file.
+
+(load-library "migemo")
+
+WWW: http://migemo.namazu.org/
+
+--
+MANTANI Nobutaka <nobutaka@nobutaka.com>
