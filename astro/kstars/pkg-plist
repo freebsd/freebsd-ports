@@ -329,8 +329,8 @@ share/icons/hicolor/48x48/apps/kstars.png
 share/icons/locolor/16x16/apps/kstars.png
 share/icons/locolor/32x32/apps/kstars.png
 share/icons/locolor/48x48/apps/kstars.png
-share/locale/de/LC_MESSAGES/kstars-0.8.mo
-share/locale/fr/LC_MESSAGES/kstars-0.8.mo
+share/locale/de/LC_MESSAGES/kstars-0.8.5.mo
+share/locale/fr/LC_MESSAGES/kstars-0.8.5.mo
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr 2>/dev/null || true
 @unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
