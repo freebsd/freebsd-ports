@@ -50,6 +50,7 @@
     SUBDIR += enscript-letter
     SUBDIR += enscript-letterdj
     SUBDIR += enscriptfonts
+    SUBDIR += envelope
     SUBDIR += freetype
     SUBDIR += freetype2
     SUBDIR += ft2demos

@@ -1,0 +1,30 @@
+bin/envelope
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/ReadMe
+%%PORTDOCS%%%%DOCSDIR%%/samplerc
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/8.625
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/datacard
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number10
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number10.5
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number11
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number12
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number14
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number5
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number6
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number6.25
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number6.75
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number7
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number7.5
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number7.75
+%%PORTDOCS%%%%EXAMPLESDIR%%/config/number9
+%%PORTDOCS%%%%EXAMPLESDIR%%/normal
+%%PORTDOCS%%%%EXAMPLESDIR%%/returnaddress
+%%PORTDOCS%%%%EXAMPLESDIR%%/shipping_label
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple
+%%PORTDOCS%%%%EXAMPLESDIR%%/with_config
+%%PORTDOCS%%%%EXAMPLESDIR%%/with_font_info
+%%PORTDOCS%%%%EXAMPLESDIR%%/with_options
+@comment dirs
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/config
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
