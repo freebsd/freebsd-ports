@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.46 1999/01/26 03:58:55 asami Exp $
+# $Id: Makefile,v 1.47 1999/06/01 02:55:43 billf Exp $
 #
 
 SUBDIR += archivers
@@ -74,18 +74,22 @@ parallel: ${.CURDIR}/INDEX
 .endfor
 	@sed -e 's/|/.tgz|/' ${.CURDIR}/INDEX | awk -F '|' '{me=$$1; here=$$2; bdep=$$8; rdep=$$9; split(here, tmp, "/"); if (bdep != "") { gsub("$$", ".tgz", bdep); gsub(" ", ".tgz ", bdep); } if (rdep != "") { gsub("$$", ".tgz", rdep); gsub(" ", ".tgz ", rdep); } print tmp[4] "-all:: " me; print me ": " bdep " " rdep; printf("\t@/a/asami/portbuild/scripts/pdispatch /a/asami/portbuild/scripts/portbuild %s %s", me, here); if (bdep != "") printf(" %s", bdep); if (rdep != "") printf(" %s", rdep); printf("\n")}'
 
+CVS?= cvs
 update:
 .if defined(SUP_UPDATE)
+.if !defined(PORTSSUPFILE)
+	@${ECHO_MSG} "Error: Please define PORTSSUPFILE before doing make update."
+	@exit 1
+.endif
 	@echo "--------------------------------------------------------------"
 	@echo ">>> Running ${SUP}"
 	@echo "--------------------------------------------------------------"
-.if defined(PORTSSUPFILE)
 	@${SUP} ${SUPFLAGS} ${PORTSSUPFILE}
-.endif
-.endif
-.if defined(CVS_UPDATE)
+.elif defined(CVS_UPDATE)
 	@echo "--------------------------------------------------------------"
-	@echo ">>> Updating /usr/src from cvs repository" ${CVSROOT}
+	@echo ">>> Updating ${.CURDIR} from cvs repository" ${CVSROOT}
 	@echo "--------------------------------------------------------------"
-	cd ${.CURDIR}; cvs -q update -P -d
+	cd ${.CURDIR}; ${CVS} -q update -P -d
+.else
+	@${ECHO_MSG} "Error: Please define either SUP_UPDATE or CVS_UPDATE first."
 .endif
