@@ -134,7 +134,7 @@ build-install:
 install:
 	@$(ECHO) "===> Creating destination directory..."
 	@$(MKDIR) $(PORTDESTDIR)
-	@$(ECHO) "===> Installing a schell script..."
+	@$(ECHO) "===> Installing a shell script..."
 	@$(SED) \
 	-e "/%%ECLIPSE_HOME%%/s//$(PORTDESTDIR:S/\//\\\//g)/g" \
 	-e "/%%JAVA_HOME%%/s//$(JAVA_HOME:S/\//\\\//g)/g" \
