@@ -3,7 +3,7 @@
 # Whom:			pst
 # Version required:	5.25
 #
-# $Id: Makefile,v 1.22 1997/10/11 22:26:28 obrien Exp $
+# $Id: Makefile,v 1.23 1997/10/11 22:31:59 obrien Exp $
 #
 
 DISTNAME=	expect
