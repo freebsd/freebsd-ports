@@ -3,7 +3,7 @@
 # Date created:		23 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.14 1998/06/02 10:52:54 tg Exp $
+# $Id: Makefile,v 1.15 1998/10/13 04:21:00 jseger Exp $
 #
 
 DISTNAME=	rpm-2.5.1
@@ -13,13 +13,11 @@ MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/code/rpm/ \
 
 MAINTAINER=	tg@FreeBSD.ORG
 
-
-BROKEN_ELF=	yes
-
 BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_PROGRAM="${BSD_INSTALL_SCRIPT}"
+CONFIGURE_ARGS=	--disable-nls
 USE_GMAKE=	yes
 MAN8=		rpm.8 rpm2cpio.8
 
