@@ -15,9 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 COMMENT=	ASCII Japanese pLaTeX 2.09 with Japanese EUC code support
 
-BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex${PKGNAMESUFFIX} \
+BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex \
 		nkf:${PORTSDIR}/japanese/nkf
-RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex${PKGNAMESUFFIX}
+RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of platex209-*
 

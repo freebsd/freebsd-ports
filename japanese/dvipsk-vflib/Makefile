@@ -22,7 +22,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 COMMENT=	A DVI to PostScript translator + Japanese patch + vflib patch
 
-RUN_DEPENDS=	MakeTeXPK:${PORTSDIR}/japanese/ptex-common
+RUN_DEPENDS=	MakeTeXPK:${PORTSDIR}/japanese/ptex-base
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of dvipsk-*

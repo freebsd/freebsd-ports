@@ -109,7 +109,7 @@ BDPI?=		300
 DVIPS?=		dvips
 
 .if ${FONTTYPE} == metafont
-RUN_DEPENDS+=	mktexpk:${PORTSDIR}/japanese/ptex-common
+RUN_DEPENDS+=	mktexpk:${PORTSDIR}/japanese/ptex-base
 MF_MODE=	${MAKETEX_MODE}
 .else
 MF_MODE=	${USEPK_MODE}
