@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	cgoban2
-PORTVERSION=	2.5.7
+PORTVERSION=	2.6.1
 CATEGORIES=	games
 MASTER_SITES=	http://kgs.kiseido.com/
 DISTNAME=	cgoban-unix-${PORTVERSION}
 
 MAINTAINER=	smazanek@steffen-mazanek.de
 COMMENT=	Internet Go Server client and game editor
-
-BROKEN=		Unfetchable
 
 WRKSRC=		${WRKDIR}/cgoban
 INSTALLDIR=	${PREFIX}/share/java/cgoban2
