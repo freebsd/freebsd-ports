@@ -7,13 +7,12 @@
 #
 
 PORTNAME=	easytag
-PORTVERSION=	0.31
+PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	easytag-${PORTVERSION:S/d$//}
 
-MAINTAINER=	roddie@krweb.net
+MAINTAINER=	wxs@csh.rit.edu
 COMMENT=	Tag editor for MP3 and OGG files
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
