@@ -1,5 +1,5 @@
 --- unix/Makefile.orig	Sun Dec 29 19:59:23 2002
-+++ unix/Makefile	Sun Jul 27 21:02:31 2003
++++ unix/Makefile	Tue Apr 13 12:23:58 2004
 @@ -1,4 +1,4 @@
 -##############################################################################
 +#############################################################################
@@ -72,3 +72,12 @@
  COMPILE_DISP = $(CC) $(DEFS) $(DEFS_ADD_DISP) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
  COMPILE_NODISP = $(CC) $(DEFS) $(DEFS_ADD_NODISP) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
  CCLD = $(CC)
+@@ -503,7 +503,7 @@
+ 	rm -f $(builddir)/*.o
+ 
+ install:
+-	install --mode=0755 $(builddir)/megapov $(installdir)
++	install -m 0755 $(builddir)/megapov $(installdir)
+ 
+ FRAME=\
+ 	$(srcdir)/frame.h \
