@@ -1,5 +1,5 @@
-*** src/Makefile.in.orig	Mon Jul 19 21:28:29 1999
---- src/Makefile.in	Fri Sep  3 04:26:09 1999
+*** src/Makefile.in.orig	Thu Feb  3 03:25:50 2000
+--- src/Makefile.in	Thu Feb  3 04:15:43 2000
 ***************
 *** 36,42 ****
   exec_prefix = @exec_prefix@
@@ -26,14 +26,14 @@
 + .if ( ${PORTOBJFORMAT} == "aout" )
   ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION).$(ELF_MINOR_VERSION)#
 + .else
-+ ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION)#
++ ELFLIB_MAJOR_MINOR = $(ELFLIB).$(ELF_MAJOR_VERSION)
 + .endif
   
   ELFDIR_ELF_LIB = $(ELFDIR)/$(ELFLIB_MAJOR_MINOR)#
   
 ***************
-*** 106,111 ****
---- 110,116 ----
+*** 107,112 ****
+--- 111,117 ----
   $(ELFDIR_ELF_LIB): $(ELFDIR) $(CONFIG_H) $(ELFOBJS)
   	-$(RM) $(ELFDIR_ELF_LIB)
   	cd $(ELFDIR); $(ELF_LINK_CMD) -o $(ELFLIB_MAJOR_MINOR) $(OFILES) $(ELF_DEP_LIBS)
