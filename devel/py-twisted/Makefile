@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	twisted
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel net python
 MASTER_SITES=	http://twisted.sourceforge.net/ \
+		http://twistedmatrix.com/downloads/ \
 		http://twistedmatrix.com/downloads/old/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,13 +25,10 @@ COMMENT=	An event-based Python framework for internet applications
 #   separately if desired.
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 
 PLIST_SUB+=	S=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
-
-pre-install:
-	@ ${SH} ${PKGREQ} INSTALL
 
 post-install:
 	@ ${MKDIR} ${DATADIR}/admin
