@@ -1,20 +1,30 @@
---- ada/a-adaint.c.orig	Tue Feb 12 17:24:15 2002
-+++ ada/a-adaint.c	Tue Feb 12 17:21:56 2002
-@@ -590,6 +590,17 @@
-     strcpy (tmp_filename, pname);
-     free (pname);
-   }
-+#elif defined (__FreeBSD__)
-+  {
-+    int fd;
-+
-+    strcpy (tmp_filename, "/tmp/gnat-XXXXXX");
-+    fd = mkstemp (tmp_filename);
-+    if (fd < 0)
-+      strcpy (tmp_filename, "");
-+    else
-+      close (fd);
-+  }
- #else
-   tmpnam (tmp_filename);
- #endif
+*** ada/a-adaint.c.orig	Thu Oct 24 04:02:15 2002
+--- ada/a-adaint.c	Fri Nov 22 09:53:21 2002
+***************
+*** 605,610 ****
+--- 605,612 ----
+  
+  #if defined (linux) && !defined (__vxworks)
+    return mkstemp (path);
++ #elif defined (__FreeBSD__)
++   return mkstemp (path);
+  #elif defined (__Lynx__)
+    mktemp (path);
+  #else
+***************
+*** 673,679 ****
+  
+      free (pname);
+    }
+! #elif defined (linux)
+    char *tmpdir = getenv ("TMPDIR");
+  
+    if (tmpdir == NULL)
+--- 675,681 ----
+  
+      free (pname);
+    }
+! #elif defined (linux) || defined (__FreeBSD__)
+    char *tmpdir = getenv ("TMPDIR");
+  
+    if (tmpdir == NULL)

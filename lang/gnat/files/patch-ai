@@ -54,7 +54,7 @@
 +   Raise_From_Signal_Handler (exception, msg);
 + }
 + 
-+ static void
++ void
 + __gnat_install_handler ()
 + {
 +   struct sigaction act;

@@ -14,7 +14,7 @@
 #   using symbolic links.
 
 PORTNAME=	gnat
-PORTVERSION=	3.14p
+PORTVERSION=	3.15p
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/:gnat \
 		${MASTER_SITE_LOCAL}:boot \
@@ -24,6 +24,8 @@ DISTFILES=	${GNATNAME}.tgz:gnat \
 		gcc-2.8.1.tar.gz:gcc
 
 MAINTAINER=	eischen@vigrid.com
+
+BUILD_DEPENDS=  ${PORTSDIR}/lang/gcc28
 
 .include <bsd.port.pre.mk>
 
@@ -94,7 +96,7 @@ BROKEN=	"Cannot build with or for an aout compiler."
 
 .if empty(have_boot)
 ONLY_FOR_ARCHS=	i386
-DISTFILES+=	gnat-3.13p-boot.tar.gz:boot
+DISTFILES+=	gnat-3.15p-boot.tar.gz:boot
 .if ${OSVERSION} >= 500000
 LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 .endif
@@ -118,7 +120,7 @@ GNATLIBCFLAGS=	-O2
 .endif
 
 # Shared library handling
-LIBRARY_VERSION=	3.14
+LIBRARY_VERSION=	3.15
 SHARED_MAJOR=	1
 
 # Account for signal set changes
@@ -136,10 +138,12 @@ pre-patch:
 		${MV} ${WRKSRC}/config/i386/freebsd-elf.h ${WRKSRC}/config/i386/freebsd.h; \
 	fi
 	@${ECHO} "===>  Applying FreeBSD patches to gcc for ${DISTNAME}"
-	-( ${PATCH} ${PATCH_ARGS} < ${FILESDIR}/freebsdgcc28-patches )
+	-( for i in ${PORTSDIR}/lang/gcc28/files/patch-*; do \
+		${PATCH} ${PATCH_ARGS} < $$i; \
+	    done )
 	@${ECHO} "===>  Patching gcc for ${GNATNAME}"
 	-( ${PATCH} ${PATCH_ARGS} < ${WRKDIR}/${GNATNAME}/src/gcc-281.dif )
-	@${ECHO} "===>  Copying GNAT compiler sources into GCC tree."
+	@${ECHO} "===>  Moving GNAT compiler sources into GCC tree."
 	-( ${MV} ${WRKDIR}/${GNATNAME}/src/ada ${WRKDIR}/gcc-2.8.1 )
 	@${ECHO} "===>  Making way for FreeBSD GNAT support files"
 	-( ${RM} -f ${WRKSRC}/ada/[45]f* )
@@ -151,7 +155,10 @@ post-patch:
 	    for i in *.adb *.ads ; do \
 		${CP} $$i ${WRKSRC}/ada; \
 	    done )
-	${RM} ${WRKDIR}/gnat-3.14p-src/examples/*.orig
+.if ${OSVERSION} >= 500016
+	( ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/freebsd5x-patch-01 )
+.endif
+	${RM} ${WRKDIR}/gnat-3.15p-src/examples/*.orig
 
 pre-configure:
 	@(cd ${WRKSRC}/config/${ARCH}/ ; \
@@ -186,8 +193,6 @@ do-build:
 	(cd ${WRKSRC}; \
 	    ${GMAKE} CFLAGS="${GNATCFLAGS}" LANGUAGES="c ada gcov" bootstrap )
 	(cd ${WRKSRC}; \
-	    ${GMAKE} CFLAGS="${GNATCFLAGS}" gnattools )
-	(cd ${WRKSRC}; \
 	    ${GMAKE} CFLAGS="${GNATCFLAGS}" GNATLIBCFLAGS="-fPIC ${GNATLIBCFLAGS}" \
 	    soext=.so.${SHARED_MAJOR} LIBRARY_VERSION=${LIBRARY_VERSION} \
 	    gnatlib-shared )
@@ -196,6 +201,8 @@ do-build:
 	${RM} ${WRKSRC}/stamp-gnatlib2
 	(cd ${WRKSRC}; \
 	    ${GMAKE} CFLAGS="${GNATCFLAGS}" GNATLIBCFLAGS="${GNATLIBCFLAGS}" gnatlib )
+	(cd ${WRKSRC}; \
+	    ${GMAKE} CFLAGS="${GNATCFLAGS}" gnattools )
 
 do-install:
 	(cd ${WRKSRC}; \
@@ -214,7 +221,7 @@ do-install:
 .ifndef(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} \
-	    ${WRKDIR}/gnat-3.14p-src/examples/* ${EXAMPLESDIR}
+	    ${WRKDIR}/gnat-3.15p-src/examples/* ${EXAMPLESDIR}
 .endif
 
 post-install:

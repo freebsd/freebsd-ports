@@ -1,37 +1,31 @@
---- ada/Makefile.in.orig	Thu May  3 07:01:07 2001
-+++ ada/Makefile.in	Mon Feb  4 13:15:17 2002
-@@ -1109,6 +1109,25 @@
- 	$(CC) -c $(CFLAGS) -gnatpg $(ADA_INCLUDES) $<
- endif
- 
-+ifeq ($(strip $(filter-out %86 freebsd%,$(arch) $(osys))),)
-+    LIBGNAT_TARGET_PAIRS = \
-+    a-intnam.ads<4fintnam.ads \
-+    s-inmaop.adb<7sinmaop.adb \
-+    s-intman.adb<5fintman.adb \
-+    s-mastop.adb<5omastop.adb \
-+    s-osinte.adb<5fosinte.adb \
-+    s-osinte.ads<5fosinte.ads \
-+    s-osprim.adb<7sosprim.adb \
-+    s-taprop.adb<5ftaprop.adb \
-+    s-taspri.ads<7staspri.ads \
-+    s-tpopsp.adb<7stpopsp.adb \
-+    system.ads<5fsystem.ads
-+
-+    SHARED_MAJOR = 1
-+    soext = .so.$(SHARED_MAJOR)
-+    LIBRARY_VERSION := $(strip $(shell grep Library_Version $(fsrcpfx)gnatvsn.ads | sed -e 's/.*GNAT Lib v\(.*\)[ "].*/\1/'))
-+endif
-+
- ifeq ($(strip $(filter-out mips sgi irix%,$(targ))),)
-   ifeq ($(strip $(filter-out mips sgi irix6%,$(targ))),)
-     LIBGNAT_TARGET_PAIRS = \
-@@ -1997,7 +2016,7 @@
- 		$(GNATRTL_NONTASKING_OBJS) $(LIBGNAT_OBJS) $(misclib) -lm
- 	cd rts; ../../xgcc -B../../ -shared $(TARGET_LIBGCC2_CFLAGS) \
- 		-o libgnarl-$(LIBRARY_VERSION)$(soext) $(SO_OPTS)libgnarl-$(LIBRARY_VERSION)$(soext) \
--		$(GNATRTL_TASKING_OBJS) -l$(threadslib)
-+		$(GNATRTL_TASKING_OBJS) $(threadslib)
- 	cd rts; $(LN) libgnat-$(LIBRARY_VERSION)$(soext) libgnat$(soext)
- 	cd rts; $(LN) libgnarl-$(LIBRARY_VERSION)$(soext) libgnarl$(soext)
- 
+*** ada/Makefile.in.orig	Thu Oct 24 04:02:15 2002
+--- ada/Makefile.in	Fri Nov 22 09:12:11 2002
+***************
+*** 820,825 ****
+--- 820,845 ----
+    endif
+  endif
+  
++ ifeq ($(strip $(filter-out %86 freebsd%,$(arch) $(osys))),)
++   LIBGNAT_TARGET_PAIRS = \
++   a-intnam.ads<4fintnam.ads \
++   s-inmaop.adb<7sinmaop.adb \
++   s-intman.adb<5fintman.adb \
++   s-mastop.adb<5omastop.adb \
++   s-osinte.adb<5fosinte.adb \
++   s-osinte.ads<5fosinte.ads \
++   s-osprim.adb<7sosprim.adb \
++   s-taprop.adb<5ftaprop.adb \
++   s-taspri.ads<7staspri.ads \
++   s-tpopsp.adb<7stpopsp.adb \
++   system.ads<5fsystem.ads
++ 
++   SHARED_MAJOR = 1
++   soext = .so.$(SHARED_MAJOR)
++   THREADSLIB=-pthread
++   LIBRARY_VERSION := $(strip $(shell grep Library_Version $(fsrcpfx)gnatvsn.ads | sed -e 's/.*GNAT Lib v\(.*\)[ "].*/\1/'))
++ endif
++ 
+  ifeq ($(strip $(filter-out mips sgi irix%,$(targ))),)
+    ifeq ($(strip $(filter-out mips sgi irix6%,$(targ))),)
+      LIBGNAT_TARGET_PAIRS = \

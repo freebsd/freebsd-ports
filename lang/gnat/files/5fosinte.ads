@@ -152,8 +152,9 @@ package System.OS_Interface is
    -- Signals --
    -------------
 
-   NSIG : constant := 32;
-   type Signal is new int range 0 .. Interfaces.C."-" (NSIG, 1);
+   Max_Interrupt : constant := 31;
+   type Signal is new int range 0 .. Max_Interrupt;
+   for Signal'Size use int'Size;
 
    --  NAMEs not used are commented-out
    --  NAMEs not supported on this system have __NAME for value
@@ -210,32 +211,19 @@ package System.OS_Interface is
 
    type sigset_t is private;
 
-   function sigaddset
-     (set : access sigset_t;
-      sig : Signal)
-     return int;
+   function sigaddset (set : access sigset_t; sig : Signal) return int;
    pragma Import (C, sigaddset, "sigaddset");
 
-   function sigdelset
-     (set : access sigset_t;
-      sig : Signal)
-     return int;
+   function sigdelset (set : access sigset_t; sig : Signal) return int;
    pragma Import (C, sigdelset, "sigdelset");
 
-   function sigfillset
-     (set : access sigset_t)
-     return int;
+   function sigfillset (set : access sigset_t) return int;
    pragma Import (C, sigfillset, "sigfillset");
 
-   function sigismember
-     (set : access sigset_t;
-      sig : Signal)
-     return int;
+   function sigismember (set : access sigset_t; sig : Signal) return int;
    pragma Import (C, sigismember, "sigismember");
 
-   function sigemptyset
-     (set : access sigset_t)
-     return int;
+   function sigemptyset (set : access sigset_t) return int;
    pragma Import (C, sigemptyset, "sigemptyset");
 
    --  sigcontext is architecture dependent, so define it private
@@ -357,6 +345,16 @@ package System.OS_Interface is
 
    function getpid return pid_t;
    pragma Import (C, getpid, "getpid");
+
+   ---------
+   -- LWP --
+   ---------
+
+   function lwp_self return System.Address;
+   --  lwp_self does not exist on this thread library, revert to pthread_self
+   --  which is the closest approximation (with getpid). This function is
+   --  needed to share 7staprop.adb across POSIX-like targets.
+   pragma Import (C, lwp_self, "pthread_self");
 
    -------------
    -- Threads --

@@ -1,19 +1,19 @@
-*** ./ada/gnatcmd.adb.orig	Fri Sep 24 08:41:33 1999
---- ./ada/gnatcmd.adb	Tue Nov  2 02:44:41 1999
+*** ./ada/gnatcmd.adb.orig	Thu Oct 24 04:02:18 2002
+--- ./ada/gnatcmd.adb	Fri Nov 22 09:16:30 2002
 ***************
-*** 1173,1179 ****
-  
-        (Cname    => new S'("COMPILE"),
-         Usage    => new S'("GNAT COMPILE filespec[,...] /qualifiers"),
-!        Unixcmd  => new S'("gcc -c -x ada"),
-         Switches => GCC_Switches'Access,
-         Params   => new Parameter_Array'(1 => FILES_OR_WILDCARD),
-         Defext   => "   "),
---- 1173,1179 ----
-  
-        (Cname    => new S'("COMPILE"),
-         Usage    => new S'("GNAT COMPILE filespec[,...] /qualifiers"),
-!        Unixcmd  => new S'("adagcc -c -x ada"),
-         Switches => GCC_Switches'Access,
-         Params   => new Parameter_Array'(1 => FILES_OR_WILDCARD),
-         Defext   => "   "),
+*** 2530,2536 ****
+           Usage    => new S'("GNAT SHARED [obj_&_lib_&_exe_&_opt"
+                              & "files] /qualifiers"),
+           VMS_Only => True,
+!          Unixcmd  => new S'("gcc"),
+           Unixsws  => new Argument_List'(new String'("-shared")
+                                          & Init_Object_Dirs),
+           Switches => Shared_Switches'Access,
+--- 2530,2536 ----
+           Usage    => new S'("GNAT SHARED [obj_&_lib_&_exe_&_opt"
+                              & "files] /qualifiers"),
+           VMS_Only => True,
+!          Unixcmd  => new S'("adagcc"),
+           Unixsws  => new Argument_List'(new String'("-shared")
+                                          & Init_Object_Dirs),
+           Switches => Shared_Switches'Access,

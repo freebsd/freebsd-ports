@@ -1,5 +1,5 @@
---- ../gnat-3.14p-src/examples/Makefile	Tue Jan 30 18:00:05 2001
-+++ ../gnat-3.14p-src/examples/Makefile.new	Mon Feb  4 15:01:55 2002
+--- ../gnat-3.15p-src/examples/Makefile	Tue Jan 30 18:00:05 2001
++++ ../gnat-3.15p-src/examples/Makefile.new	Mon Feb  4 15:01:55 2002
 @@ -6,10 +6,10 @@
  CC = gcc
  
