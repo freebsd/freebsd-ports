@@ -17,7 +17,9 @@ LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs gdkpixbuf
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -25,15 +27,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
-	@${PERL} -pi -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
-		 s|\$$\(datadir\)/aclocal|\$$\(prefix\)/share/aclocal|g ; \
-		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g'
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
+		 's|-lpthread|${PTHREAD_LIBS}|g'
 
 post-configure:
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+	@${REINPLACE_CMD} -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
 		${WRKSRC}/libtool
 
 .include <bsd.port.mk>
