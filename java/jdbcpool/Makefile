@@ -6,28 +6,23 @@
 #
 
 PORTNAME=	jdbcpool
-PORTVERSION=	0.94
+PORTVERSION=	0.99
 CATEGORIES=	java
 MASTER_SITES=	http://www.bitmechanic.com/projects/jdbcpool/dist/
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
-RUN_DEPENDS=	${PREFIX}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
-
-JDK_VERSION=	1.1.8
+USE_JAVA=	1.2+
 NO_BUILD=	yes
+TARGET_DIR=	${PREFIX}/share/java/${PORTNAME}
+JAR_DEST=	${PREFIX}/share/java/classes
+PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/java/classes ${PREFIX}/share/java/jdbcpool
-	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${PREFIX}/share/java/classes/jdbcpool.jar
-	@cd ${WRKSRC}; \
-	  ${RM} -rf CVS; \
-	  ${RM} -rf examples/CVS; \
-	  ${RM} -rf examples/gsp/CVS; \
-	  ${CP} CHANGES ${PREFIX}/share/java/jdbcpool; \
-	  ${CP} LICENSE ${PREFIX}/share/java/jdbcpool; \
-	  ${CP} README ${PREFIX}/share/java/jdbcpool; \
-	  ${CP} -R examples ${PREFIX}/share/java/jdbcpool; \
-	  ${CP} -R javadoc ${PREFIX}/share/java/jdbcpool
+	${MKDIR} ${TARGET_DIR} ${JAR_DEST}
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAR_DEST}/${PORTNAME}.jar
+	cd ${WRKSRC}; \
+		${RM} -rf `${FIND} examples javadoc -name CVS -type dir`; \
+		${CP} -R examples javadoc CHANGES LICENSE README ${TARGET_DIR}
 
 .include <bsd.port.mk>
