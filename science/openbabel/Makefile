@@ -18,7 +18,7 @@ COMMENT=	Chemistry file translation program
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static --program-prefix=open
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget
 
 MAN1=	openbabel.1
 
