@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.grass-japan.org/FOSS4G/ipafonts/
 DISTNAME=	grass5.0.3_i686-pc-linux-i18n-ipafull-gnu_bin
 DIST_SUBDIR=    ipa-fonts
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Freely available Japanese TrueType fonts by Infomation-technology Promotion Agency (IPA)
 
 USE_X_PREFIX=	yes
