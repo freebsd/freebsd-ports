@@ -1,0 +1,14 @@
+This is a port of velocity.  A file and desktop manager for GNOME designed to 
+replace Nautilus.  It is designed to be fast, efficient, and very powerful.  
+It supports advanced features such as:
+
+   * View Profiles - Allowing you to customize the way you view files.
+   * Context menu image preview - allowing you a clearer view of thumbnailed 
+			          files.
+   * Add-ons - Scripts to help do odd or complex tasks and Templates to make 
+	       creating new documents simpler.
+
+WWW: http://homepages.ius.edu/kydavis/
+
+- Ryan
+ryan@transaeris.com

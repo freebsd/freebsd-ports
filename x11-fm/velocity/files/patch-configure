@@ -1,0 +1,27 @@
+--- configure.orig	Tue Aug 26 03:15:17 2003
++++ configure	Wed Dec 10 20:50:34 2003
+@@ -7156,16 +7156,16 @@
+   packageprefix=${prefix}
+ fi
+ 
+-packagedatadir=share/${PACKAGE}
+-packagedocdir=doc/${PACKAGE}
++packagedatadir=share/gnome/${PACKAGE}
++packagedocdir=share/doc/${PACKAGE}
+ 
+-packagepixmapsdir=share/pixmaps/${PACKAGE}
++packagepixmapsdir=share/gnome/pixmaps/${PACKAGE}
+ packagehelpdir=share/gnome/help/${PACKAGE}
+-packagemenudir=share/applications
+-packagescriptsdir=share/${PACKAGE}/scripts
+-packagetemplatesdir=share/${PACKAGE}/templates
+-packagepluginsdir=share/${PACKAGE}/plugins
+-packagesendtodir=share/${PACKAGE}/sendto
++packagemenudir=share/gnome/applications
++packagescriptsdir=share/gnome/${PACKAGE}/scripts
++packagetemplatesdir=share/gnome/${PACKAGE}/templates
++packagepluginsdir=share/gnome/${PACKAGE}/plugins
++packagesendtodir=share/gnome/${PACKAGE}/sendto
+ 
+ NO_PREFIX_PACKAGE_DATA_DIR="${packagedatadir}"
+ 
