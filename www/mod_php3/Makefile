@@ -21,6 +21,8 @@ MASTER_SITES=	ftp://ftp.php.net/pub/${PHP_DISTDIR}/ \
 		http://php3.globe.de/${PHP_DISTDIR}/
 DISTNAME=	php-${PORTVERSION}
 
+FORBIDDEN=	"Remotely exploitable."
+
 MAINTAINER=	dirk@FreeBSD.org
 
 .if !defined(STANDALONE)
