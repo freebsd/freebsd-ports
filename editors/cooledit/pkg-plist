@@ -12,6 +12,7 @@ lib/libCw.so
 lib/libCw.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/cooledit/global.py
 lib/coolicon/browse.xpm
 lib/coolicon/cooledit.xpm
 lib/coolicon/coolicon.config
@@ -49,3 +50,4 @@ share/locale/ja/LC_MESSAGES/cooledit.mo
 share/locale/ko/LC_MESSAGES/cooledit.mo
 share/locale/sl/LC_MESSAGES/cooledit.mo
 @dirrm lib/coolicon
+@dirrm lib/cooledit
