@@ -6,21 +6,28 @@
 #
 
 PORTNAME=	mbrowse
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	net
-MASTER_SITES=	http://goldplated.atlcartel.com/
+MASTER_SITES=	http://www.kill-9.org/mbrowse/
 
 MAINTAINER=	markp@FreeBSD.org
 
+.if defined(WITH_NET_SNMP4)
 LIB_DEPENDS=	snmp.4:${PORTSDIR}/net/net-snmp4
+.else
+LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp
+.endif
 
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
-CONFIGURE_ARGS+=	--with-ucdsnmp-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--with-snmp-prefix=${LOCALBASE}
 
-post-patch:
-	@${PERL} -pi -e 'print "#include <sys/types.h>\n" if !$$a; $$a=1' \
-		${WRKSRC}/src/callbacks.h
+.if defined(WITH_NET_SNMP4)
+CONFIGURE_ARGS+=	--with-snmp-type=ucd
+.else
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS+=	--with-snmp-type=net
+.endif
 
 .include <bsd.port.mk>
