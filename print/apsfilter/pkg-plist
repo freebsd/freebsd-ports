@@ -10,6 +10,7 @@ share/apsfilter/driver/alc2000
 share/apsfilter/driver/ap3250
 share/apsfilter/driver/bitcmyk
 share/apsfilter/driver/bjc600
+share/apsfilter/driver/bjc800
 share/apsfilter/driver/bmp
 share/apsfilter/driver/cdeskjet
 share/apsfilter/driver/cdj970
@@ -33,6 +34,17 @@ share/apsfilter/driver/hpijs/DJ6xxP
 share/apsfilter/driver/hpijs/DJ8xx
 share/apsfilter/driver/hpijs/DJ9xx
 share/apsfilter/driver/hpijs/DJ9xxVIP
+share/apsfilter/driver/ijs/APOLLO_P-22
+share/apsfilter/driver/ijs/Apollo-2500-2600
+share/apsfilter/driver/ijs/DESKJET_350
+share/apsfilter/driver/ijs/DESKJET_600
+share/apsfilter/driver/ijs/DESKJET_610
+share/apsfilter/driver/ijs/DESKJET_630
+share/apsfilter/driver/ijs/DESKJET_810
+share/apsfilter/driver/ijs/DESKJET_825
+share/apsfilter/driver/ijs/DESKJET_920
+share/apsfilter/driver/ijs/DESKJET_960
+share/apsfilter/driver/ijs/PHOTOSMART_100
 share/apsfilter/driver/imagen
 share/apsfilter/driver/jpeg
 share/apsfilter/driver/lex3200
@@ -233,6 +245,7 @@ share/apsfilter/setup/printer-cdj
 share/apsfilter/setup/printer-epson
 share/apsfilter/setup/printer-hpdj
 share/apsfilter/setup/printer-hpijs
+share/apsfilter/setup/printer-ijs
 share/apsfilter/setup/printer-lexmark
 share/apsfilter/setup/printer-misc
 share/apsfilter/setup/printer-omni
@@ -255,6 +268,7 @@ share/doc/apsfilter/paper
 @dirrm share/apsfilter/bin
 @dirrm share/apsfilter/driver/hpdj
 @dirrm share/apsfilter/driver/hpijs
+@dirrm share/apsfilter/driver/ijs
 @dirrm share/apsfilter/driver/omni
 @dirrm share/apsfilter/driver/pcl3
 @dirrm share/apsfilter/driver/pips
