@@ -1,0 +1,53 @@
+#!/bin/sh
+
+cleanup() {
+  lock=$1
+  error=$2
+
+  rm -f ${lock}
+
+  exit ${error}
+}
+
+# configurable variables
+pb=/var/portbuild
+arch=$1
+branch=$(echo $(basename $0) | cut -d'.' -f2)
+shift
+
+. ${pb}/${arch}/portbuild.conf
+
+lock=${pb}/${arch}/lock
+status=${pb}/${arch}/status
+date=$(date '+%Y%m%d%H')
+shortdate=$(date '+%Y%m%d')
+
+if [ -e ${lock} ]; then
+  exit 1
+fi
+
+touch ${lock}
+rm -f ${status}
+mkdir -p ${pb}/${arch}/archive/buildlogs
+
+trap "cleanup ${lock} 1" 1 2 3 9 10 11 15
+
+dorun() {
+  branch=$1
+  shift 1
+
+  ln -sf ${pb}/${arch}/archive/buildlogs/log.${branch}.${date} ${pb}/${arch}/${branch}/build.log
+  ln -sf log.${branch}.${date} ${pb}/${arch}/archive/buildlogs/log.${branch}.${shortdate}
+  ${pb}/scripts/dopackages ${arch} $@ ${branch} ${date} 2>&1 \
+    > ${pb}/${arch}/archive/buildlogs/log.${branch}.${date}
+  if [ -f ${status} ]; then
+    error=$(cat ${status})
+    cleanup ${lock} ${error}
+  fi
+
+}
+
+dorun ${branch} $@ &
+wait
+
+cleanup ${lock} 0
