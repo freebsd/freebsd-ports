@@ -56,7 +56,7 @@ pre-install:
 	${ECHO} ${DOCDIR}/${i} >> ${PLIST}
 .endfor
 .for i in ${EXAMPLES}
-	${ECHO} ${PREFIX}/share/examples/${PORTNAME}/${i} >> ${PLIST}
+	${ECHO} share/examples/${PORTNAME}/${i} >> ${PLIST}
 .endfor
 	${ECHO} @dirrm share/examples/${PORTNAME} >> ${PLIST}
 	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
