@@ -3,7 +3,7 @@
 # Date created:		1 August 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id: Makefile,v 1.5 1998/08/31 14:20:41 vanilla Exp $
+# $Id: Makefile,v 1.6 1998/09/15 12:06:45 vanilla Exp $
 #
 
 DISTNAME=	xlogmaster-1.4.4
@@ -18,7 +18,7 @@ MAINTAINER=	aw1@stade.co.uk
 LIB_DEPENDS=	gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}" GTK_CONFIG="${PREFIX}/bin/gtk11-config"
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
