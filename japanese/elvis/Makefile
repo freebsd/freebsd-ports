@@ -7,6 +7,7 @@
 
 PORTNAME=	elvis
 PORTVERSION=	1.8.4
+PORTREVISION=	1
 CATEGORIES=    japanese editors
 MASTER_SITES=   ftp://ftp.cs.pdx.edu/pub/elvis/
 EXTRACT_SUFX=	.tgz

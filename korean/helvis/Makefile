@@ -7,6 +7,7 @@
 
 PORTNAME=	helvis
 PORTVERSION=	1.8h2
+PORTREVISION=	1
 CATEGORIES=	korean editors
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/editor/HElvis/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/editor/HElvis/
