@@ -1,0 +1,8 @@
+POP3VScan is a transparent POP3-Proxy with virus-scanning capabilities.
+This means that all your POP3-Clients in the Network can't fetch mails
+from the internet without that POP3VScan have scanned it. If a virus has
+been found the mail is replaced with a notification and the original
+(infeceted) version is stored on the harddisc. Transparent means, that
+neither the client nor any of the used POP3-servers has to be configured. 
+
+WWW: http://pop3vscan.sourceforge.net/
