@@ -104,10 +104,12 @@ www/cgi-bin/lib/robots.pm
 www/cgi-bin/lib/search_engines.pm
 www/cgi-bin/lib/worms.pm
 www/cgi-bin/plugins/example/example.pm
+www/cgi-bin/plugins/geoip.pm
 www/cgi-bin/plugins/graph3d.pm
 www/cgi-bin/plugins/hashfiles.pm
 www/cgi-bin/plugins/timehires.pm
 www/cgi-bin/plugins/timezone.pm
+www/cgi-bin/plugins/urlalias.pm
 www/cgi-bin/awstats.model.conf
 www/cgi-bin/awstats.pl
 www/icons/browser/adobe.png
