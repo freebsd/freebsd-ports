@@ -1,5 +1,5 @@
---- demo/Makefile.orig	Tue Feb 20 19:28:28 2001
-+++ demo/Makefile	Sun Apr 29 01:19:20 2001
+--- demo/Makefile.orig	Sun Sep  9 21:00:39 2001
++++ demo/Makefile	Sun Sep  9 21:01:09 2001
 @@ -21,9 +21,7 @@
  # Description: Terminality demos Makefile (Unix/ncurses)
  # Author: Emil Mikulic, Michal Safranek
@@ -7,8 +7,8 @@
 -CC = gcc
 -CPP = g++
 -CFLAGS = -g -I.. -Wall -DUSE_NCURSES
-+CFLAGS += -I.. -DUSE_NCURSES
- LIBS = -lncurses ../libtn.a
++CFLAGS += -I.. -Wall -DUSE_NCURSES
+ LIBS = -lncurses ../libtn.a -lstdc++
  
  .SUFFIXES: .c .cpp .h
 @@ -34,7 +32,7 @@

@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	terminality
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	devel
 MASTER_SITES= 	http://members.optushome.com.au/darkmoon7/
 DISTNAME=	tn-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/tn
 USE_GMAKE=	yes
@@ -24,10 +24,10 @@ post-patch:
 	@${PERL} -pi -e "s,make,gmake,g ; \
 		s,/usr/local,${PREFIX},g" ${WRKSRC}/Makefile
 
-post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/terminality
-	${CP} -R ${WRKSRC}/doc/ ${PREFIX}/share/doc/terminality
+post-install:
+	${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
