@@ -1,0 +1,26 @@
+From the README:
+			Welcome to xephem v2.7.1
+
+Xephem is an interactive astronomical ephemeris program for X Windows
+systems. It ...
+
+    computes heliocentric, geocentric and topocentric information for fixed
+    celestial objects and objects in heliocentric and geocentric orbits;
+
+    has built-in support for all planet positions; the moons of Jupiter, Saturn
+    and Earth; Mars' and Jupiter's central meridian longitude; Saturn's rings;
+    and Jupiter's Great Red Spot
+
+    supports user-defined objects;
+
+    comes with sample databases of over 20,000 objects in the release kit;
+
+    can access the Hubble Guide Star Catalog from CD-ROM using gscdbd;
+
+  Elwood Downey
+  ecdowney@noao.edu
+  http://iraf.noao.edu/~ecdowney
+  August 1995
+
+eric.
+erich@FreeBSD.org
