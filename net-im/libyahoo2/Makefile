@@ -8,6 +8,7 @@
 
 PORTNAME=	libyahoo2
 PORTVERSION=	0.7.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +23,7 @@ INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall -ansi -pedantic||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-g -Wall||g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|-g -Wall||g ; \
+		 s| -module ||g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
