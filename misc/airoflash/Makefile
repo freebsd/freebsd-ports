@@ -17,7 +17,8 @@ MAINTAINER=	ambrisko@freebsd.org
 AF_VERSION=	1.3
 
 do-fetch:
-		${FETCH_CMD} -o ${DISTDIR}/${DISTNAME} ${MASTER_SITES}
+		[ -f ${DISTDIR}/${DISTNAME} ] || \
+			${FETCH_CMD} -o ${DISTDIR}/${DISTNAME} ${MASTER_SITES}
 
 do-extract:
 		${MKDIR} ${WRKSRC}
