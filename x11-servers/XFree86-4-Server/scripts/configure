@@ -362,6 +362,13 @@ if [ $cpkb != NO ]; then
 fi
 
 echo
+yesno "Do you want to compile with threads support? (experimental)"
+if [ $answ = YES ]; then
+    THREADS_PATCH=$FILESDIR/BSD-threads.diff
+else
+    THREADS_PATCH=
+fi
+echo
 echo "End of configuration questions. No more user input required"
 echo
 }
@@ -376,6 +383,10 @@ if [ X$cpkb != XNO ]; then
   cp $K4XDM $XDMDIR
   echo "===>  Applying KerberosIV patches"
   patch -s -d $WRKDIR/xc -E -p0 < $K4PATCH
+fi
+if [ X$THREADS_PATCH != X ]; then
+    echo "===>  Applying threads patches"
+    patch -s -d $WRKDIR  -E -p0 <  $THREADS_PATCH
 fi
 
 cat $F >>  $WRKDIR/xc/config/cf/xf86site.def
