@@ -8,21 +8,21 @@
 PORTNAME=	divx4linux
 PORTVERSION=	0.${RELEASE_DATE}
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://download3.divx.com/videocodecs/linux/
-DISTNAME=	${PORTNAME}-${PORTVERSION:E}
+MASTER_SITES=	http://download.divx.com/videocodecs/linux/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lioux@FreeBSD.org
 
 RESTRICTED=	unsure of licensing issues
 
 ONLY_FOR_ARCHS=	i386
-USE_ZIP=	yes
 USE_LINUX_PREFIX=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=	${WRKDIR}/${DISTNAME:C/_.+$//}
 NO_BUILD=	yes
 PLIST_SUB=	PKGNAME="${PKGNAME}"
 
-RELEASE_DATE=	20010824
+RELEASE_DATE=	20011010_4.02
 
 post-patch:
 .for ext in h linux txt
