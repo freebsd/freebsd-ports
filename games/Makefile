@@ -139,6 +139,7 @@
     SUBDIR += magiccube4d
     SUBDIR += mahjong
     SUBDIR += mangband
+    SUBDIR += marathon-evil
     SUBDIR += merlin
     SUBDIR += mindfocus
     SUBDIR += mindguard
