@@ -9,4 +9,5 @@ share/doc/w3mir/README
 share/doc/w3mir/example.cfg
 share/doc/w3mir/multiscope.cfg
 share/doc/w3mir/w3mir-HOWTO.html
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/w3mir
 @dirrm share/doc/w3mir
