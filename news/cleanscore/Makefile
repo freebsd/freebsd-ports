@@ -16,6 +16,9 @@ COMMENT=	A perl script to clean up your slrn score file
 USE_PERL5=	yes
 NO_BUILD=	yes
 
+PORTDOCS=	README
+PLIST_FILES=	bin/cleanscore
+
 post-patch:
 	@${PERL} -pi -e 's|^use warnings|#use warnings|g ; \
 		s|^our |my |g' ${WRKSRC}/cleanscore
