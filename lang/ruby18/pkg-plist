@@ -6,6 +6,8 @@ bin/h2rb%%_RUBY_SUFFIX%%
 bin/irb%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/rdoc%%RUBY_R%%
 bin/rdoc%%_RUBY_SUFFIX%%
+%%IF_DEFAULT%%bin/ri%%RUBY_R%%
+bin/ri%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/ruby%%RUBY_R%%
 bin/ruby%%_RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/testrb%%RUBY_R%%
@@ -69,6 +71,17 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/ludcmp.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/math.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/newton.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/generators/ri_generator.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/markup/simple_markup/to_flow.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_cache.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_descriptions.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_formatter.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_options.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_paths.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_reader.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_util.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/rdoc/ri/ri_writer.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/cgi.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/nlsolve.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/util.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/cgi-lib.rb
@@ -532,6 +545,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/encodings
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml/dtd
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rexml
+%%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/ri
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/parsers
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/test
 %%RUBYLIB%%@dirrm %%RUBY_LIBDIR%%/rdoc/markup/simple_markup

@@ -84,6 +84,7 @@ INSTALLED_SCRIPTS=	${PREFIX}/bin/irb \
 			${PREFIX}/bin/erb \
 			${PREFIX}/bin/h2rb \
 			${PREFIX}/bin/rdoc \
+			${PREFIX}/bin/ri \
 			${PREFIX}/bin/testrb
 
 OBSOLETED_MODULES=	bigfloat \
@@ -98,6 +99,7 @@ OBSOLETED_MODULES=	bigfloat \
 			racc-runtime \
 			rdoc \
 			rexml \
+			ri \
 			sha1 \
 			shell \
 			soap \
