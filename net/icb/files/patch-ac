@@ -1,5 +1,5 @@
 --- icb/c_log.c.orig	Fri Feb 24 13:20:18 1995
-+++ icb/c_log.c	Sat Aug 26 19:15:52 2000
++++ icb/c_log.c	Sat Aug 26 19:18:36 2000
 @@ -6,6 +6,7 @@
  #include "icb.h"
  #include "externs.h"
@@ -19,17 +19,18 @@
  
  	/* determine pathname to use */
  	if (path == NULL || *path == '\0')
-@@ -98,7 +101,8 @@
+@@ -97,8 +100,8 @@
+ 		aptr++;
  	
  	/* timestamp it */
- 	sprintf(mbuf, "Session log \"%s\" started at %d/%02d/%-2d %s.",
+-	sprintf(mbuf, "Session log \"%s\" started at %d/%02d/%-2d %s.",
 -	  path, t->tm_mon+1, t->tm_mday, t->tm_year, aptr);
 +	sprintf(mbuf, "Session log \"%s\" started at %d/%02d/%-4d %s.",
 +	  path, t->tm_mon+1, t->tm_mday, 1900+t->tm_year, aptr);
  	putl(mbuf, PL_SCR | PL_LOG);
  
  	return(0);
-@@ -126,8 +130,8 @@
+@@ -126,8 +129,8 @@
  		aptr++;
  	
  	/* timestamp it */
