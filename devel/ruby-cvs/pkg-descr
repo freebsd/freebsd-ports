@@ -1,0 +1,7 @@
+Ruby/CVS provides a high level interface to a CVS repository.
+
+It contains examples: a ViewCVS/CVSweb like CGI script and a revision
+tree visualizer.
+
+Author:	Tanaka Akira <akr@m17n.org>
+WWW:	http://cvs.m17n.org/~akr/ruby-cvs/
