@@ -60,8 +60,6 @@ DISTFILES?=	browser.xpi \
 		mail.xpi \
 		psm.xpi \
 		regca.xpi \
-		reges.xpi \
-		reggb.xpi \
 		regus.xpi \
 		spellchecker.xpi \
 		talkback.xpi \
