@@ -7,6 +7,7 @@
 
 PORTNAME=	spambayes
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,8 +19,10 @@ COMMENT=	A Bayesian anti-spam filter written in Python
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb
 
-USE_PYTHON=		yes
+USE_PYTHON=		2.3
 USE_PYDISTUTILS=	yes
+
+USE_REINPLACE=		yes
 
 PORTDOCS=	CHANGELOG.txt \
 		LICENSE.txt \
@@ -34,6 +37,12 @@ PORTDOCS=	CHANGELOG.txt \
 
 post-extract:
 	@${CHMOD} -Rf u+w ${WRKSRC}
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f | \
+		${XARGS} -n 10 -x \
+		${REINPLACE_CMD} -E \
+		-e 's|/usr/bin/env python|${PYTHONBASE}/bin/${PYTHON_VERSION}|'
 
 post-install:
 .ifndef(NOPORTDOCS)
