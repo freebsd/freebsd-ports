@@ -1,17 +1,33 @@
---- Makefile.orig	Tue Aug 15 06:19:17 2000
-+++ Makefile	Tue Aug 15 11:35:39 2000
-@@ -1,12 +1,12 @@
+--- Makefile.orig	Tue Aug 15 08:44:37 2000
++++ Makefile	Fri Aug 18 09:06:02 2000
+@@ -1,24 +1,24 @@
  
  .SUFFIXES:
  
 -OPT = -s -Wall
-+OPT = $(CFLAGS) -Wall -I$(X11BASE)/include
++OPT = $(CFLAGS) -I$(X11BASE)/include
  
  all: abclock abc_img
  
  abclock: abclock.o abclib.o
 -	gcc $(OPT) -o abclock abclock.o abclib.o -lX11
-+	gcc $(OPT) -o abclock abclock.o abclib.o -lX11 -L$(X11BASE)/lib
++	$(CC) $(OPT) -o abclock abclock.o abclib.o -lX11 -L$(X11BASE)/lib
  
  abc_img: abc_img.o abclib.o
- 	gcc $(OPT) -o abc_img abc_img.o abclib.o
+-	gcc $(OPT) -o abc_img abc_img.o abclib.o
++	$(CC) $(OPT) -o abc_img abc_img.o abclib.o
+ 
+ abclib.o: abclib.c abclib.h
+-	gcc -c $(OPT) -o abclib.o abclib.c
++	$(CC) -c $(OPT) -o abclib.o abclib.c
+ 
+ abclock.o: abclock.c abclib.h
+-	gcc -c $(OPT) -o abclock.o abclock.c
++	$(CC) -c $(OPT) -o abclock.o abclock.c
+ 
+ abc_img.o: abc_img.c abclib.h
+-	gcc -c $(OPT) -o abc_img.o abc_img.c
++	$(CC) -c $(OPT) -o abc_img.o abc_img.c
+ 
+ clean:
+ 	rm -f *.o
