@@ -114,7 +114,7 @@ LIB_DEPENDS+=	qt:${PORTSDIR}/x11-toolkits/qt-copy
 USE_NEWGCC=		yes
 QTCPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include -I${PREFIX}/include \
 				-I${X11BASE}/include/qt
-QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg
+QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg \
 				-lqt
 .if !defined(QT_NONSTANDARD)
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt \
