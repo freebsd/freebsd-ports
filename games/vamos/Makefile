@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vamos
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,6 +44,7 @@ post-extract:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		'/^AM_CXXFLAGS/d'
+		's|-lsgxml -lsgmisc|-lsgxml -lsgstructure -lsgmisc|g ; \
+		 s|-pedantic||g'
 
 .include <bsd.port.mk>
