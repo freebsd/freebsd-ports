@@ -18,6 +18,7 @@
     SUBDIR += gtk-engines-collection
     SUBDIR += gtk10
     SUBDIR += gtk12
+    SUBDIR += gtk13
     SUBDIR += gtkbe
     SUBDIR += gtkglarea
     SUBDIR += gtkstep
