@@ -42,8 +42,11 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 .error You have `USE_GCC' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
-# do not require Gcc 3.1 to compile -- or we have an infinate loop on RELENG_4.
-USE_GCC=	2.7+
+# Do not let USE_GCC be set here. We can't hardcode that gcc31 should require
+# gcc31 in order to build. Setting USE_GCC at all here causes recursion errors
+# when it clobbers the USE_GCC defined by other ports.
+.undef USE_GCC
+
 NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>

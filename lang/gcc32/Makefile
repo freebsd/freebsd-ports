@@ -31,8 +31,10 @@ USE_REINPLACE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
-# Do not require GCC 3.2 to compile -- or we have an infinite loop on RELENG_4.
-USE_GCC=	2.7+
+# Do not let USE_GCC be set here. We can't hardcode that gcc32 should require
+# gcc32 in order to build. Setting USE_GCC at all here causes recursion errors
+# when it clobbers the USE_GCC defined by other ports.
+.undef USE_GCC
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
