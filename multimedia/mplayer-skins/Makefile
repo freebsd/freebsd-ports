@@ -7,12 +7,13 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	1.0.5
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/:Skin \
 		http://ftp.lug.udel.edu/MPlayer/Skin/:Skin \
 		ftp://ftp.mplayerhq.hu/MPlayer/Skin/:Skin \
 		ftp://ftp.lug.udel.edu/MPlayer/Skin/:Skin \
-		${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%\/$/mplayerplug-in\/:mini/}
+		http://www.stud.uni-karlsruhe.de/~uedc/mplayer/:mini
 PKGNAMESUFFIX=	-skins
 DISTFILES=
 EXTRACT_ONLY=
@@ -196,11 +197,9 @@ DISTFILES+=	xine-lcd-1.0.tar.bz2:Skin
 EXTRACT_ONLY+=	xine-lcd-1.0.tar.bz2
 .endif
 
-DISTFILES+=	mini.tar.bz2:mini
+DISTFILES+=	mini-0.1.tar.bz2:mini
 .ifdef(WITH_SKIN_MINI)
-EXTRACT_ONLY+=	mini.tar.bz2
-post-extract::
-	@${RM} -fr ${WRKDIR}/mini/.xvpics
+EXTRACT_ONLY+=	mini-0.1.tar.bz2
 .endif
 
 # Automatically create PLIST
