@@ -1,0 +1,6 @@
+If you have ever used Java, you may have run across the java.util.Observable
+class and the java.util.Observer interface. Using them, you can decouple an
+object from the one or more objects that wish to be notified whenever
+particular events occur.  Class::Observable allows you to mimic this action.
+
+WWW: http://search.cpan.org/search?dist=Class-Observable
