@@ -1,0 +1,20 @@
+--- src/main.c	2000/12/12 10:59:00	1.1
++++ src/main.c	2000/12/12 11:00:32
+@@ -208,7 +208,7 @@
+ 		 g_free(thing);
+ 		 continue;
+ 	      }
+-	      if ((thing->frequency = (time_t) strtoull(skunk, NULL, 10)) == 
++	      if ((thing->frequency = (time_t) strtoul(skunk, NULL, 10)) == 
+ 		  (time_t) 0ULL) {
+ 		 g_warning(_("Corrupted database : null frequency\n"));
+ 		 g_free(thing);
+@@ -219,7 +219,7 @@
+ 		 g_free(thing);
+ 		 continue;
+ 	      }
+-	      thing->last = (time_t) strtoull(skunk, NULL, 10);
++	      thing->last = (time_t) strtoul(skunk, NULL, 10);
+ 	      if ((skunk = strtok(NULL, DBSEP)) == NULL) {
+ 		 g_warning(_("Corrupted database : wrong line format\n"));
+ 		 g_free(thing);
