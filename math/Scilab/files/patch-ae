@@ -1,0 +1,27 @@
+diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/imp/Slpr.c ./imp/Slpr.c
+*** /usr/LOCAL/scilab2.3/work/scilab-2.3/imp/Slpr.c	Mon May 12 16:34:55 1997
+--- ./imp/Slpr.c	Wed May 21 00:55:40 1997
+***************
+*** 5,10 ****
+--- 5,13 ----
+  #include <malloc.h>
+  #endif 
+  #include <stdio.h>
++ #ifdef __FreeBSD__
++ #include <floatingpoint.h>
++ #endif
+  
+  
+  #ifdef __STDC__
+***************
+*** 52,57 ****
+--- 55,63 ----
+    char buf[256];
+    int i ;
+    FILE *fd;
++ #ifdef __FreeBSD__
++   fpsetmask(0);
++ #endif
+    if (argc <= 2) { int i=0;
+  		   while (strcmp(UsageStr[i],"fin")!=0)
+  		     { 

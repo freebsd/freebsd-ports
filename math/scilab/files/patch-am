@@ -1,0 +1,15 @@
+diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/xsci/x_misc.c ./routines/xsci/x_misc.c
+*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/xsci/x_misc.c	Mon May 12 16:34:23 1997
+--- ./routines/xsci/x_misc.c	Fri May 16 20:29:07 1997
+***************
+*** 507,513 ****
+--- 507,515 ----
+  char *SysErrorMsg(n)
+    int n;
+  {
++ #ifndef __FreeBSD__
+    extern char *sys_errlist[];
++ #endif
+    extern int sys_nerr;
+  
+    return ((n >= 0 && n < sys_nerr) ? sys_errlist[n] : "unknown error");

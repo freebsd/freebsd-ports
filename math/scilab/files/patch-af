@@ -1,0 +1,13 @@
+diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/default/mainsci.f ./routines/default/mainsci.f
+*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/default/mainsci.f	Mon May 12 16:33:46 1997
+--- ./routines/default/mainsci.f	Wed May 21 00:44:49 1997
+***************
+*** 11,16 ****
+--- 11,17 ----
+        mem=0
+        nargs = iargc()
+        call fgetarg(0,pname)
++       call nofpex()
+        i = 0
+   10   continue
+        i=i+1

@@ -1,0 +1,26 @@
+diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/default/scimem.c ./routines/default/scimem.c
+*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/default/scimem.c	Mon May 12 16:33:46 1997
+--- ./routines/default/scimem.c	Wed May 21 00:47:34 1997
+***************
+*** 8,13 ****
+--- 8,27 ----
+  
+  
+  #include "../machine.h"
++ #if defined (__FreeBSD__)
++ #include <floatingpoint.h>    /* This should be elsewhere but I had to
++                                    put it somewhere :( */
++  void C2F(nofpex)()
++  {
++        fpsetmask(0);   /* Don't dump core on FPE return Inf or NaN */
++  }
++ #else
++  void C2F(nofpex)()
++ {
++        return;
++  }
++ #endif /*freebsd*/
++ 
+  
+  char *the_p=NULL;
+  char *the_ps=NULL;

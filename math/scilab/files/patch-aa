@@ -1,0 +1,26 @@
+--- Makefile.in.orig	Mon May 12 17:30:43 1997
++++ Makefile.in	Wed Jun 18 13:44:05 1997
+@@ -54,7 +54,8 @@
+ distclean::
+ 	$(RM) bin/scilex
+ 
+-SUBDIRS = scripts macros imp intersci @MANVIEWER@ @XMETANET@ tests demos @COMM@
++# FreeBSD Has xless so we dont need it here
++SUBDIRS = scripts macros imp intersci  @XMETANET@ tests demos @COMM@
+ 
+ SUBDIRS-DOC = man doc
+ 
+@@ -135,3 +136,13 @@
+ 	touch .binary
+ 	cd .. ; tar cvf $(SCIDIR)/$(SCIBASE)-bin.tar $(BINDISTFILES)
+ 	$(RM) .binary
++
++install:
++	touch .binary
++	cd .. ; tar cvf - $(BINDISTFILES) | (cd ${PREFIX}/lib/X11; tar xf -)
++	cd ${PREFIX}/lib/X11/scilab-2.3; make
++	rm -f ${PREFIX}/bin/scilab
++	ln -fs ${PREFIX}/lib/X11/scilab-2.3/bin/scilab ${PREFIX}/bin/scilab
++	ln -fs ${PREFIX}/bin/xless ${PREFIX}/lib/X11/scilab-2.3/bin/xless
++	cp ${PREFIX}/lib/X11/scilab-2.3/X11_defaults/Xscilab ${PREFIX}/lib/X11/app-defaults
++	cp ${PREFIX}/lib/X11/scilab-2.3/X11_defaults/Metanet-color ${PREFIX}/lib/X11/app-defaults

@@ -1,0 +1,27 @@
+diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/imp/Slatexpr2.c ./imp/Slatexpr2.c
+*** /usr/LOCAL/scilab2.3/work/scilab-2.3/imp/Slatexpr2.c	Mon May 12 16:34:55 1997
+--- ./imp/Slatexpr2.c	Wed May 21 01:00:03 1997
+***************
+*** 5,10 ****
+--- 5,13 ----
+  #include <malloc.h>
+  #endif 
+  #include <stdio.h>
++ #ifdef __FreeBSD__
++ #include <floatingpoint.h>
++ #endif
+  
+  void readOneLine();
+  
+***************
+*** 142,147 ****
+--- 145,153 ----
+    int i ;
+    FILE *fd;
+    FILE *fdo;
++ #ifdef __FreeBSD__
++   fpsetmask(0);
++ #endif
+    if (argc !=4 ) { int i=0;
+  		   while (strcmp(UsageStr[i],"fin")!=0)
+  		     { 

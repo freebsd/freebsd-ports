@@ -1,0 +1,14 @@
+diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/xmetanet/graphics.c ./xmetanet/graphics.c
+*** /usr/LOCAL/scilab2.3/work/scilab-2.3/xmetanet/graphics.c	Mon May 12 16:34:40 1997
+--- ./xmetanet/graphics.c	Mon May 19 00:28:39 1997
+***************
+*** 1,6 ****
+--- 1,8 ----
+  #include <X11/Intrinsic.h>
+  #include <math.h>
++ #ifndef __FreeBSD__
+  #include <malloc.h>
++ #endif
+  #include <string.h>
+  #include <stdio.h>
+  
