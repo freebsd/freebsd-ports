@@ -3,10 +3,7 @@ bin/c2hs-config
 lib/c2hs-%%C2HS_VERSION%%/ghc%%GHCMAJOR%%/c2hs.conf
 lib/c2hs-%%C2HS_VERSION%%/ghc%%GHCMAJOR%%/import/C2HS.hi
 lib/c2hs-%%C2HS_VERSION%%/ghc%%GHCMAJOR%%/import/C2HSBase.hi
-lib/c2hs-%%C2HS_VERSION%%/ghc%%GHCMAJOR%%/import/C2HSDeprecated.hi
 lib/c2hs-%%C2HS_VERSION%%/ghc%%GHCMAJOR%%/import/C2HSMarsh.hi
-lib/c2hs-%%C2HS_VERSION%%/ghc%%GHCMAJOR%%/import/NewStablePtr.hi
-lib/c2hs-%%C2HS_VERSION%%/ghc%%GHCMAJOR%%/import/NewStorable.hi
 lib/c2hs-%%C2HS_VERSION%%/ghc%%GHCMAJOR%%/libc2hs.a
 lib/c2hs-%%C2HS_VERSION%%/ghc%%GHCMAJOR%%/c2hs.o
 @dirrm lib/c2hs-%%C2HS_VERSION%%/ghc%%GHCMAJOR%%/import
