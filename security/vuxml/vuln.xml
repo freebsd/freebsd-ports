@@ -185,7 +185,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>mozilla</name>
-	<range><ge>1.7.a,2</ge><lt>1.7</lt></range>
+	<range><ge>1.7.a,2</ge><lt>1.7,2</lt></range>
 	<range><ge>1.8.a,2</ge><lt>1.8.a2,2</lt></range>
       </package>
       <package>
@@ -209,6 +209,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-04-28</discovery>
       <entry>2004-09-22</entry>
+      <modified>2004-09-26</modified>
     </dates>
   </vuln>
 
@@ -356,10 +357,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="ca6c8f35-0a5f-11d9-ad6f-00061bc2ad93">
-    <topic>apache13 -- heap overflow in mod_proxy</topic>
+    <topic>apache -- heap overflow in mod_proxy</topic>
     <affects>
       <package>
-	<name>apache13</name>
+	<name>apache</name>
 	<range><le>1.3.31_6</le></range>
       </package>
     </affects>
@@ -377,6 +378,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-06-10</discovery>
       <entry>2004-09-19</entry>
+      <modified>2004-09-26</modified>
     </dates>
   </vuln>
 
