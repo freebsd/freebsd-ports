@@ -5,7 +5,7 @@ diff -ur cf/m4/cfhead.m4 src/contrib/sendmail/cf/m4/cfhead.m4
  # forth in the LICENSE file which can be found at the top level of
  # the sendmail distribution.
  #
-+# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.3 2001-03-10 20:49:42 dinoex Exp $
++# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $
  #
  
  ######################################################################
@@ -27,7 +27,7 @@ diff -ur cf/ostype/bsd4.4.m4 src/contrib/sendmail/cf/ostype/bsd4.4.m4
  # the sendmail distribution.
  #
 -#
-+# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.3 2001-03-10 20:49:42 dinoex Exp $
++# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $
  #
  
  divert(0)
@@ -43,7 +43,7 @@ diff -ur cf/sh/makeinfo.sh src/contrib/sendmail/cf/sh/makeinfo.sh
  #
  #	$Id: makeinfo.sh,v 8.14 1999/02/07 07:26:25 gshapiro Exp $
  #
-+# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.3 2001-03-10 20:49:42 dinoex Exp $
++# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $
 +#
  
  usewhoami=0
@@ -53,7 +53,7 @@ diff -ur cf/sh/makeinfo.sh src/contrib/sendmail/cf/sh/makeinfo.sh
  	host=`uname -n`
  fi
 -echo '#####' built by $user@$host on `date`
-+echo '#####' built by $user@$host on `LC_TIME=C date`
++echo '#####' built by $user@$host on `LC_ALL=C LC_TIME=C date`
  echo '#####' in `pwd` | sed 's/\/tmp_mnt//'
  echo '#####' using $1 as configuration include directory | sed 's/\/tmp_mnt//'
  echo "define(\`__HOST__', $host)dnl"
@@ -64,7 +64,7 @@ diff -ur mail.local/mail.local.8 src/contrib/sendmail/mail.local/mail.local.8
  .\"
  .\"	$Id: mail.local.8,v 8.14.14.5 2000/12/29 18:12:16 gshapiro Exp $
  .\"
-+.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.3 2001-03-10 20:49:42 dinoex Exp $
++.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $
 +.\"
  .TH MAIL.LOCAL 8 "$Date: 2000/12/29 18:12:16 $"
  .SH NAME
@@ -118,7 +118,7 @@ diff -ur mail.local/mail.local.c src/contrib/sendmail/mail.local/mail.local.c
  static char id[] = "@(#)$Id: mail.local.c,v 8.143.4.57 2001/02/11 20:08:20 gshapiro Exp $";
  #endif /* ! lint */
  
-+/* $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.3 2001-03-10 20:49:42 dinoex Exp $ */
++/* $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $ */
 +
  /*
  **  This is not intended to work on System V derived systems
@@ -251,7 +251,7 @@ diff -ur rmail/rmail.c src/contrib/sendmail/rmail/rmail.c
  static char id[] = "@(#)$Id: rmail.c,v 8.39.4.8 2000/09/16 22:20:25 gshapiro Exp $";
  #endif /* ! lint */
  
-+/* $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.3 2001-03-10 20:49:42 dinoex Exp $ */
++/* $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $ */
 +
  /*
   * RMAIL -- UUCP mail server.
@@ -275,7 +275,7 @@ diff -ur smrsh/smrsh.8 src/contrib/sendmail/smrsh/smrsh.8
  .\"
  .\"     $Id: smrsh.8,v 8.11.16.2 2000/12/15 19:50:46 gshapiro Exp $
  .\"
-+.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.3 2001-03-10 20:49:42 dinoex Exp $
++.\" $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/patch-aa,v 1.4 2001-06-26 05:13:51 dinoex Exp $
 +.\"
  .TH SMRSH 8 "$Date: 2000/12/15 19:50:46 $"
  .SH NAME
