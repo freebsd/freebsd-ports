@@ -1,0 +1,15 @@
+--- tools/biewhlp/makefile.orig	Mon Sep 25 00:35:56 2000
++++ tools/biewhlp/makefile	Fri Nov 10 21:37:47 2000
+@@ -62,7 +62,11 @@
+ biewlib/biewlib.o\
+ biewlib/file_ini.o\
+ biewlib/pmalloc.o\
+-biewlib/sysdep/$(MACHINE)/$(HOST)/fileio.o
++biewlib/sysdep/$(MACHINE)/$(HOST)/fileio.o\
++biewlib/sysdep/$(MACHINE)/$(HOST)/keyboard.o\
++biewlib/sysdep/$(MACHINE)/$(HOST)/nls.o\
++biewlib/sysdep/$(MACHINE)/$(HOST)/os_dep.o\
++biewlib/sysdep/$(MACHINE)/$(HOST)/vio.o
+ all: $(TARGET)
+ 
+ clean:
