@@ -13,6 +13,9 @@ MASTER_SITES=	http://xchat.org/files/source/1.4/ \
 
 MAINTAINER=	jim@FreeBSD.org
 
+.if defined(USE_SOCKS)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
+.endif
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		Imlib.5:${PORTSDIR}/graphics/imlib
 .if defined(USE_GNOME)
@@ -28,6 +31,10 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --disable-python
+
+.if defined(USE_SOCKS)
+CONFIGURE_ARGS+= --enable-socks
+.endif
 
 .if defined(USE_GNOME)
 CONFIGURE_ARGS+= --enable-gnome
