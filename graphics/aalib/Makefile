@@ -3,7 +3,7 @@
 # Date created:				9 Dec 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.5 1998/04/19 10:26:47 andreas Exp $
+# $Id: Makefile,v 1.6 1998/09/22 15:30:37 vanilla Exp $
 #
 
 DISTNAME=	aalib-1.2
@@ -12,12 +12,7 @@ MASTER_SITES=	ftp://ftp.ta.jcu.cz/pub/aa/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-GNU_CONFIGURE=	yes
-
-pre-install:
-	@if [ ! -f ${PREFIX}/info/dir ]; then \
-	${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
-	fi
+USE_LIBTOOL=	yes
 
 post-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib

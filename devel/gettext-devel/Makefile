@@ -3,7 +3,7 @@
 # Date created:        16 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.8 1999/03/09 01:08:51 nectar Exp $
+# $Id: Makefile,v 1.9 1999/03/09 09:11:26 asami Exp $
 #
 
 DISTNAME=	gettext-0.10.35
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://alpha.gnu.ai.mit.edu/gnu/ \
 
 MAINTAINER=	nacai@iname.com
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 
 PLIST_SUB=	X11BASE=${X11BASE}
 

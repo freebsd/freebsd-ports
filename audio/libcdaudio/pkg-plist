@@ -1,6 +1,5 @@
 include/cdaudio.h
 lib/libcdaudio.a
-lib/libcdaudio.la
 lib/libcdaudio.so
 lib/libcdaudio.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

@@ -5,7 +5,6 @@ include/Hermes/H_Pal.h
 include/Hermes/Hermes.h
 include/Hermes/Types.h
 lib/libHermes.a
-lib/libHermes.la
 lib/libHermes.so
 lib/libHermes.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.21 1999/05/03 22:28:34 se Exp $
+# $Id: Makefile,v 1.22 1999/05/10 22:59:31 asami Exp $
 #
 
 DISTNAME=	kdesupport-1.1.1
@@ -16,7 +16,7 @@ MAINTAINER=	se@freebsd.org
 USE_BZIP2=	yes
 
 USE_QT=		yes
-HAS_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	"--prefix=$(PREFIX)" \
 		"--without-libjpeg" \
 		"--without-libgif" \
