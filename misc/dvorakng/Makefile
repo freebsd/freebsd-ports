@@ -8,6 +8,7 @@
 
 PORTNAME=	dvorakng
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.free.of.pl/n/nopik/
 
@@ -15,20 +16,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Dvorak typing tutor
 
 USE_BZIP2=	yes
+USE_GETOPT_LONG=	yes
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500041
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-MAKE_ARGS=	PROF="-I${LOCALBASE}/include ${CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-lncurses -lgnugetopt"
-.else
-MAKE_ARGS=	PROF="${CFLAGS}"
-.endif
+DOCS=		README TODO
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dvorakng ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
