@@ -38,5 +38,6 @@ pre-patch:
 
 post-patch:
 	@${CHMOD} 755 ${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/../dist/configure
 
 .include <bsd.port.mk>

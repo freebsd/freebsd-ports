@@ -7,8 +7,8 @@
 -	${CONFIG_SHELL-/bin/sh} $srcdir/ltconfig \
 -		--no-verify $srcdir/ltmain.sh \
 -		--output=./libtool $host_os \
-+	${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig \
-+		--no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $target \
++	${CONFIG_SHELL-/bin/sh} %%LOCALBASE%%/share/libtool/ltconfig \
++		--no-verify --disable-ltlibs %%LOCALBASE%%/share/libtool/ltmain.sh $target \
 +		--output=./libtool \
  		--disable-static \
  	|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
