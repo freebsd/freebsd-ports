@@ -1,30 +1,32 @@
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Change.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Merge.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Repair.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Repair/ResourceMapper.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Repair/Substitutor.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/Compile.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/HTML.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/LongList.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/RepairForm.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/Text.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/junk
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Selector.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Test.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Test/Validate.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester/Adaptive.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester/Base.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester/Complex.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester/Complex.pm.extra
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester/Simple.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW-Link/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW-Link
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Test
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Repair
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Link
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/WWW 2>/dev/null || true
+%%SITE_PERL%%/WWW/Link.pm
+%%SITE_PERL%%/WWW/Link/Change.pm
+%%SITE_PERL%%/WWW/Link/Merge.pm
+%%SITE_PERL%%/WWW/Link/Redirect.pm
+%%SITE_PERL%%/WWW/Link/Repair.pm
+%%SITE_PERL%%/WWW/Link/Repair/ResourceMapper.pm
+%%SITE_PERL%%/WWW/Link/Repair/Substitutor.pm
+%%SITE_PERL%%/WWW/Link/Reporter.pm
+%%SITE_PERL%%/WWW/Link/Reporter/Compile.pm
+%%SITE_PERL%%/WWW/Link/Reporter/HTML.pm
+%%SITE_PERL%%/WWW/Link/Reporter/LongList.pm
+%%SITE_PERL%%/WWW/Link/Reporter/RepairForm.pm
+%%SITE_PERL%%/WWW/Link/Reporter/Text.pm
+%%SITE_PERL%%/WWW/Link/Reporter/URI.pm
+%%SITE_PERL%%/WWW/Link/Reporter/junk
+%%SITE_PERL%%/WWW/Link/Selector.pm
+%%SITE_PERL%%/WWW/Link/Test.pm
+%%SITE_PERL%%/WWW/Link/Test/Validate.pm
+%%SITE_PERL%%/WWW/Link/Tester.pm
+%%SITE_PERL%%/WWW/Link/Tester/Adaptive.pm
+%%SITE_PERL%%/WWW/Link/Tester/Base.pm
+%%SITE_PERL%%/WWW/Link/Tester/Complex.pm
+%%SITE_PERL%%/WWW/Link/Tester/Complex.pm.extra
+%%SITE_PERL%%/WWW/Link/Tester/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-Link/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-Link
+@dirrm %%SITE_PERL%%/WWW/Link/Tester
+@dirrm %%SITE_PERL%%/WWW/Link/Test
+@dirrm %%SITE_PERL%%/WWW/Link/Reporter
+@dirrm %%SITE_PERL%%/WWW/Link/Repair
+@dirrm %%SITE_PERL%%/WWW/Link
+@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
