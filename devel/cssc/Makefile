@@ -6,23 +6,18 @@
 #
 
 PORTNAME=	cssc
-PORTVERSION=	0.10b.1
+PORTVERSION=	0.13a.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://alpha.gnu.org/gnu/CSSC/
-DISTNAME=	CSSC-0.10beta.pl1
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	CSSC-0.13alpha.pl1a
 
 MAINTAINER=	olli@fromme.com
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--enable-binary
 MAN1=		sccs.1
 
-post-install:
-	@strip ${PREFIX}/bin/sccs
-	@for FILE in ${PREFIX}/libexec/cssc/*; do \
-	    if file $$FILE | ${GREP} -q 'not stripped'; then \
-		strip $$FILE; \
-	    fi; \
-	done
-	@install-info ${PREFIX}/info/cssc.info ${PREFIX}/info/dir
+WRKSRC=		${WRKDIR}/CSSC-0.13alpha.pl1
 
 .include <bsd.port.mk>
