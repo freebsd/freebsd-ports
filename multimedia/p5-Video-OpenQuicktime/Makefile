@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Video
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interface to the OpenQuicktime library
 
 BUILD_DEPENDS=	${SITE_PERL}/Inline-API.pod:${PORTSDIR}/devel/p5-Inline
