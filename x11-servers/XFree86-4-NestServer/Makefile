@@ -30,7 +30,7 @@ SCRIPTS_ENV+=		PREFIX=${PREFIX} \
 ALL_TARGET=		FreeBSDPortsBuild
 INSTALL_TARGET= 	installXnest installXnest.man
 MANCOMPRESSED=		yes
-MAN1=			Xnest.1
+MAN1=			Xnest.1 Xserver.1
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
