@@ -1,0 +1,14 @@
+--- util/check_lin_tif.c.orig	Thu Nov 13 07:09:50 2003
++++ util/check_lin_tif.c	Sat Feb  7 14:57:33 2004
+@@ -164,9 +164,8 @@
+             "risking instability and probable data loss.  You are very brave!\n"
+             "Please do not report bugs to the NEdit developers unless you can\n"
+             "reproduce them with a known-good NEdit binary downloaded from:\n"
+-            "\thttp://www.nedit.org\n"
+-            "\nHIT ENTER TO CONTINUE\n", tif);
+-        fgets(buf, 2, stdin);
++            "\thttp://www.nedit.org\n", tif);
++	sleep(5);
+         exit(0);
+ #else
+         fprintf(stderr,
