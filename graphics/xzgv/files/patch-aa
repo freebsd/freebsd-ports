@@ -72,22 +72,3 @@ diff -ur xzgv-0.5/src/Makefile work/xzgv-0.5/src/Makefile
  #
  # makeman - make xzgv man page from texinfo file.
  # Public domain by Russell Marks.
---- doc/Makefile.orig	Mon Nov 22 17:23:34 1999
-+++ doc/Makefile	Thu Oct 19 11:36:31 2000
-@@ -27,14 +27,14 @@
- man: xzgv.1
- xzgv.1: xzgv.texi makeman.awk
- 	@echo 'Making man page from xzgv.texi...'
--	gawk -f makeman.awk <xzgv.texi >xzgv.1
-+	awk -f makeman.awk <xzgv.texi >xzgv.1
- 
- installdirs:
- 	/bin/sh ../mkinstalldirs $(INFODIR) $(MANDIR)
- 
- # I think this one's getting just a tiny bit confusing :-}
- ifeq ($(INFO_DIR_UPDATE),no)
--install: installdirs
-+install:
- else
- install: ../src/install-info installdirs
- endif
