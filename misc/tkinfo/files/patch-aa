@@ -1,0 +1,13 @@
+*** tkinfo.orig	Fri Aug 27 09:52:50 1993
+--- tkinfo	Mon Jan 16 14:41:41 1995
+***************
+*** 4,7 ****
+  # a Bourne script: there is no way to get proper quoting and pass through ``~''
+  # in the csh.
+  # RCS: $Header: /vol/tukey/tukey1/kennard/src/tkgraph/lib/RCS/tkinfo,v 1.1 93/03/11 17:32:17 kennard Exp $
+! exec wish -f $0.tcl "$@"
+--- 4,7 ----
+  # a Bourne script: there is no way to get proper quoting and pass through ``~''
+  # in the csh.
+  # RCS: $Header: /vol/tukey/tukey1/kennard/src/tkgraph/lib/RCS/tkinfo,v 1.1 93/03/11 17:32:17 kennard Exp $
+! exec wish -f /usr/local/lib/tk/tkinfo/`basename $0.tcl` "$@"
