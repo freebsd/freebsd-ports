@@ -7,9 +7,10 @@
 #
 
 PORTNAME=	cdpr
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	net
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
+		http://www.monkeymental.com/mmfiles/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
