@@ -5,7 +5,7 @@
      /* Synchronize access to func and lib opening functions if we can...     */
  
 -#ifndef __FreeBSD__
-+#if !defined(__FreeBSD__) || __FreeBSD__ < 2
++#if !defined(__FreeBSD__) || __FreeBSD__ != 2
      name++;
  #endif
  
@@ -14,7 +14,7 @@
      /* Synchronize access to func and lib opening functions if we can...     */
  
 -#ifndef __FreeBSD__
-+#if !defined(__FreeBSD__) || __FreeBSD__ < 2
++#if !defined(__FreeBSD__) || __FreeBSD__ != 2
      name++;
  #endif
  

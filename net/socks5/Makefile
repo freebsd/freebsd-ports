@@ -1,13 +1,13 @@
 # New ports collection makefile for:	socks5
-# Version required:			v1.0r6
+# Version required:			v1.0r7
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.18 1998/07/12 21:26:49 imp Exp $
+# $Id: Makefile,v 1.19 1998/07/20 22:46:57 imp Exp $
 #
 
-DISTNAME=	socks5-v1.0r6
-PKGNAME=	socks5-1.0.6
+DISTNAME=	socks5-v1.0r7
+PKGNAME=	socks5-1.0.7
 CATEGORIES=	net security
 EXTRACT_SUFX=	.tar.gz
 
@@ -38,7 +38,7 @@ do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
 	  ${ECHO} ""; \
 	  ${ECHO} "NEC requires that you grab the dist files from their"; \
-	  ${ECHO} "web site at http://www.socks5.nec.com.  Please make sure"; \
+	  ${ECHO} "web site at http://www.socks.nec.com.  Please make sure"; \
 	  ${ECHO} "you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR}"; \
 	  ${ECHO} "and run make again."; \
 	  ${ECHO} ""; \
