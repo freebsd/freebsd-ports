@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.obviously.com/dice/
 DISTNAME=	${PORTNAME}-rel-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	adam@vectors.cx
 
 post-patch:
 		@for i in ${WRKSRC}/lib/version.h ${WRKSRC}/include/lib/version.h \

@@ -10,7 +10,7 @@ PORTVERSION=	0.50.0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.hut.fi/~pvsavola/files/
 
-MAINTAINER=	flynn@energyhq.homeip.net
+MAINTAINER=	adam@vectors.cx
 
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
 
