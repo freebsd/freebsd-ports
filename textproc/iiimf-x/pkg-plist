@@ -1,0 +1,7 @@
+lib/im/xiiimp.so.2
+lib/im/xiiimp.so
+lib/im/xiiimp.la
+lib/im/xiiimp.a
+lib/im/htt_xbe
+lib/im/httx
+@dirrm lib/im

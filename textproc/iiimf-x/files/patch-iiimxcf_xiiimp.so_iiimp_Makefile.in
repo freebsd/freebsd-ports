@@ -1,0 +1,22 @@
+--- iiimxcf/xiiimp.so/iiimp/Makefile.in.orig	Sun Dec  7 20:00:38 2003
++++ iiimxcf/xiiimp.so/iiimp/Makefile.in	Sun Dec  7 20:01:19 2003
+@@ -138,8 +138,7 @@
+ # you have to add the following by yourself to check undefined symbols.
+ #                   -Wl,-z -Wl,defs
+ xiiimp_la_LIBADD = $(X_LIBS) \
+-                   $(IM_LIBDIR)/iiimcf/libiiimcf.la \
+-                   $(IM_LIBDIR)/iiimp/libiiimp.la \
++		   -L$(prefix)/lib -liiimcf -liiimp \
+                    $(DLOPEN_LIBS) $(THREAD_LIBS)
+ 
+ xiiimp_la_SOURCES = \
+@@ -190,8 +189,7 @@
+ CONFIG_CLEAN_FILES =
+ LTLIBRARIES = $(module_LTLIBRARIES)
+ 
+-xiiimp_la_DEPENDENCIES = $(IM_LIBDIR)/iiimcf/libiiimcf.la \
+-	$(IM_LIBDIR)/iiimp/libiiimp.la
++xiiimp_la_DEPENDENCIES =
+ am_xiiimp_la_OBJECTS = xiiimp_la-genutil.lo xiiimp_la-KeyMap.lo \
+ 	xiiimp_la-guiIMLookup.lo xiiimp_la-XeIMWrap.lo \
+ 	xiiimp_la-guiIMPre.lo xiiimp_la-lookup.lo xiiimp_la-XimpConv.lo \
