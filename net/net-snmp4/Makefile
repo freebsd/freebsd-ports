@@ -83,10 +83,6 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may use the following build option(s):"
 	@${ECHO} ""
-	@${ECHO} "	WITH_PORTSSL=yes  Use the OpenSSL Version delivered by the ports."
-	@${ECHO} "	                  With FreeBSD 5, net-snmp4 requires automaticly"
-	@${ECHO} "	                  the OpenSSL ports-version. In the 5 case, you"
-	@${ECHO} "	                  don't need to define WITH_PORTSSL (default)."
 	@${ECHO} "	WITHOUT_SSL=yes   Disable the OpenSSL support."
 	@${ECHO} ""
 
