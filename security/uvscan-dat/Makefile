@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.nai.com/products/datfiles/4.x/nai/
 DISTNAME=	dat-${PORTVERSION}
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	jeh@FreeBSD.org
 
 NO_BUILD=	YES
 NO_WRKSUBDIR=	YES

@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/unix
 DISTNAME=	vbsd414e
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	jeh@FreeBSD.org
 
 RUN_DEPENDS+=	${LOCALBASE}/sbin/update_dat:${PORTSDIR}/security/uvscan-dat
 
