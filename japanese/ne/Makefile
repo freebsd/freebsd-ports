@@ -8,7 +8,7 @@
 
 DISTNAME=      ne-3.00pre17
 PKGNAME=       ja-ne-3.00p17
-CATEGORIES=    editors japanese
+CATEGORIES=	japanese editors
 MASTER_SITES= http://www3.justnet.ne.jp/~ele/
 
 MAINTAINER=    ele@pop17.odn.ne.jp
