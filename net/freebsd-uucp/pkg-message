@@ -10,3 +10,5 @@ daily_status_uucp_enable="YES"				# Check uucp status
 # 300.uucp
 weekly_uucp_enable="YES"				# Clean uucp weekly
 
+# in your sendmail.mc file you need to set the path:
+define(`UUCP_MAILER_PATH', `/usr/local/bin/uux')dnl
