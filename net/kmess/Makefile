@@ -27,6 +27,7 @@ pre-patch:
 		${WRKSRC}/kmess/kmessview.cpp
 	${REINPLACE_CMD} -e '20s/^.*$$/#include <ctype.h>/' \
 		${WRKSRC}/kmess/network/mimemessage.h
+	${REINPLACE_CMD} -e 's,-pedantic ,,g' ${WRKSRC}/configure
 
 .include "${PORTSDIR}/x11/kde3/Makefile.kde"
 .include <bsd.port.post.mk>
