@@ -32,8 +32,8 @@ DOCFILES=	Asmutils-HOWTO acknowledgements endorsements history \
 		index s-contrib s-debug s-include s-layout s-optimize
 
 post-patch:
-	@(${SED} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG > foo \
-		&& ${MV} foo ${WRKSRC}/MCONFIG)
+	@(${SED} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG > ${WRKDIR}/foo \
+		&& ${MV} ${WRKDIR}/foo ${WRKSRC}/MCONFIG)
 
 do-install:
 	${MKDIR} ${PREFIX}/bin/asmutils
