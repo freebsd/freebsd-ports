@@ -1,0 +1,65 @@
+bin/balsa
+etc/CORBA/servers/balsa.gnorba
+etc/sound/events/balsa.soundlist
+etc/sound/events/email.soundlist
+share/gnome/gnome/apps/Internet/balsa.desktop
+share/gnome/help/balsa/C/balsa.html
+share/gnome/help/balsa/C/g1100.html
+share/gnome/help/balsa/C/images/balsa_logo.png
+share/gnome/help/balsa/C/images/druid-start.png
+share/gnome/help/balsa/C/images/main-window-toolbar.png
+share/gnome/help/balsa/C/images/main-window.png
+share/gnome/help/balsa/C/images/newmsg-window-attachments.png
+share/gnome/help/balsa/C/images/newmsg-window-toolbar.png
+share/gnome/help/balsa/C/images/newmsg-window.png
+share/gnome/help/balsa/C/index.html
+share/gnome/help/balsa/C/t1.html
+share/gnome/help/balsa/C/topic.dat
+share/gnome/help/balsa/C/x1009.html
+share/gnome/help/balsa/C/x1066.html
+share/gnome/help/balsa/C/x396.html
+share/gnome/help/balsa/C/x61.html
+share/gnome/help/balsa/C/x698.html
+share/gnome/help/balsa/C/x83.html
+share/gnome/help/balsa/C/x965.html
+share/gnome/idl/balsa.idl
+share/gnome/pixmaps/balsa/attachment.png
+share/gnome/pixmaps/balsa/balsa-logo.png
+share/gnome/pixmaps/balsa/balsa-top.png
+share/gnome/pixmaps/balsa/balsa-watermark.png
+share/gnome/pixmaps/balsa/balsa_icon.png
+share/gnome/pixmaps/balsa/balsa_logo.png
+share/gnome/pixmaps/gnome-balsa2.png
+share/gnome/sounds/balsa/newmail.wav
+share/gnome/sounds/balsa/startup.wav
+share/locale/ca/LC_MESSAGES/balsa.mo
+share/locale/da/LC_MESSAGES/balsa.mo
+share/locale/de/LC_MESSAGES/balsa.mo
+share/locale/el/LC_MESSAGES/balsa.mo
+share/locale/es/LC_MESSAGES/balsa.mo
+share/locale/es_ES/LC_MESSAGES/balsa.mo
+share/locale/et/LC_MESSAGES/balsa.mo
+share/locale/fi/LC_MESSAGES/balsa.mo
+share/locale/fr/LC_MESSAGES/balsa.mo
+share/locale/ga/LC_MESSAGES/balsa.mo
+share/locale/it/LC_MESSAGES/balsa.mo
+share/locale/ja/LC_MESSAGES/balsa.mo
+share/locale/ko/LC_MESSAGES/balsa.mo
+share/locale/lt/LC_MESSAGES/balsa.mo
+share/locale/nl/LC_MESSAGES/balsa.mo
+share/locale/no/LC_MESSAGES/balsa.mo
+share/locale/pl/LC_MESSAGES/balsa.mo
+share/locale/pt_BR/LC_MESSAGES/balsa.mo
+share/locale/pt_PT/LC_MESSAGES/balsa.mo
+share/locale/ru/LC_MESSAGES/balsa.mo
+share/locale/sv/LC_MESSAGES/balsa.mo
+share/locale/tr/LC_MESSAGES/balsa.mo
+share/locale/uk/LC_MESSAGES/balsa.mo
+share/locale/zh_CN/LC_MESSAGES/balsa.mo
+@dirrm share/gnome/gnome/apps/Internet
+@dirrm share/gnome/help/balsa/C/images
+@dirrm share/gnome/help/balsa/C/stylesheet-images
+@dirrm share/gnome/help/balsa/C
+@dirrm share/gnome/help/balsa
+@dirrm share/gnome/pixmaps/balsa
+@dirrm share/gnome/sounds/balsa

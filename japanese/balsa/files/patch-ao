@@ -1,0 +1,20 @@
+--- libinit_balsa/balsa-druid-page-welcome.c.orig	Sun Jul 16 15:15:35 2000
++++ libinit_balsa/balsa-druid-page-welcome.c	Sun Jul 16 15:16:09 2000
+@@ -194,7 +194,7 @@
+ 			gnome_canvas_item_new (gnome_canvas_root (GNOME_CANVAS (druid_page_start->canvas)),
+ 				gnome_canvas_text_get_type (),
+ 				"text", druid_page_start->title,
+-				"font", "-adobe-helvetica-bold-r-normal-*-*-180-*-*-p-*-iso8859-1",
++				"fontset", "-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*",
+ 				NULL);
+ 
+ 		druid_page_start->text_item =
+@@ -202,7 +202,7 @@
+ 				gnome_canvas_text_get_type (),
+ 				"text", druid_page_start->text,
+ 				"justification", GTK_JUSTIFY_LEFT,
+-				"font", "-adobe-helvetica-medium-r-normal-*-*-120-*-*-p-*-iso8859-1",
++				"fontset", "-misc-fixed-medium-r-normal--14-*-*-*-*-*-*-*",
+ 				NULL );
+ 	}}
+ #line 209 "balsa-druid-page-welcome.c"

@@ -1,0 +1,13 @@
+--- idl/Makefile.in.orig	Tue Jan 19 02:21:53 1999
++++ idl/Makefile.in	Wed Feb 24 19:43:12 1999
+@@ -378,8 +378,8 @@
+ maintainer-clean-generic clean mostlyclean distclean maintainer-clean
+ 
+ 
+-$(BUILT_SOURCES): $(srcdir)/balsa.idl
+-	orbit-idl $(srcdir)/balsa.idl
++$(BUILT_SOURCES): $(srcdir)/balsa.idl $(ORBIT_IDL)
++	$(ORBIT_IDL) $(srcdir)/balsa.idl
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

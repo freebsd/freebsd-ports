@@ -1,0 +1,11 @@
+--- libinit_balsa/balsa-druid-page-directory.c.orig	Sun Jul 16 15:04:35 2000
++++ libinit_balsa/balsa-druid-page-directory.c	Sun Jul 16 15:04:45 2000
+@@ -222,7 +222,7 @@
+ 		else {
+ 		    preset = getenv( "USER" );
+ 		    preset = preset ? 
+-			g_strconcat( "/var/spool/mail/", preset, NULL ) :
++			g_strconcat( "/var/mail/", preset, NULL ) :
+ 			g_strdup(""); /* no clue what is the inbox location  */
+ 		}
+ 		balsa_init_add_table_entry( table, 0, _("Inbox:"), preset, 
