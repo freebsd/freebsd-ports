@@ -415,6 +415,7 @@
     SUBDIR += xwatch
     SUBDIR += xwipower
     SUBDIR += yawho
+    SUBDIR += zidrav
     SUBDIR += zisofs-tools
 
 .include <bsd.port.subdir.mk>
