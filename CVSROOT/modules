@@ -958,6 +958,7 @@ cider		ports/cad/cider
 cidr		ports/net-mgmt/cidr
 cil		ports/devel/cil
 cim		ports/lang/cim
+cimg		ports/graphics/cimg
 cinc		ports/emulators/cinc
 cinepaint	ports/graphics/cinepaint
 cingb		ports/emulators/cingb
