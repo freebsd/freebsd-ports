@@ -1,0 +1,15 @@
+*** libs/pgpcdk/pub/include/pgpSockets.h	2000/01/26 03:10:46	1.1.1.1
+--- libs/pgpcdk/pub/include/pgpSockets.h	2000/01/26 03:13:58	1.1.1.2
+***************
+*** 30,35 ****
+--- 30,39 ----
+  # include <netdb.h>
+  #endif
+  
++ #ifdef __FreeBSD__
++ # include <sys/ioctl.h>		/* Need FIONREAD */
++ #endif
++ 
+  #if PGP_WIN32
+  # include <winsock.h>
+  #endif

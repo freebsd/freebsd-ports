@@ -1,0 +1,19 @@
+*** libs/pgpcdk/priv/crypto/bignum/Makefile.in	2000/01/26 03:17:45	1.1
+--- libs/pgpcdk/priv/crypto/bignum/Makefile.in	2000/01/26 03:19:25	1.2
+***************
+*** 10,16 ****
+  # Architecture-dependent asm code
+  .SUFFIXES: .s
+  .s.o:
+! 	$(CC) -c $(CFLAGS) $<
+  
+  DEFS_sparc=-DBNINCLUDE=bnisparc.h
+  OBJS_sparc=bnisparc.o
+--- 10,16 ----
+  # Architecture-dependent asm code
+  .SUFFIXES: .s
+  .s.o:
+! 	$(CC) -c -O -g $<
+  
+  DEFS_sparc=-DBNINCLUDE=bnisparc.h
+  OBJS_sparc=bnisparc.o

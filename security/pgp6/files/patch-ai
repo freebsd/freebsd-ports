@@ -1,0 +1,25 @@
+*** libs/pgpcdk/priv/crypto/bignum/bni80386_aout.s	2000/01/26 03:23:29	1.1
+--- libs/pgpcdk/priv/crypto/bignum/bni80386_aout.s	2000/01/26 03:23:59	1.2
+***************
+*** 16,24 ****
+  
+  # Different assemblers have different conventions here
+  # These conventions are for a.out format assembler
+! align4=2	# could be 2 or 4
+! align8=3	# could be 3 or 8
+! align16=4	# cound be 4 or 16
+  
+  
+  .text
+--- 16,26 ----
+  
+  # Different assemblers have different conventions here
+  # These conventions are for a.out format assembler
+! 
+! # Changed from 2,3,4 to 4,8,16 for FreeBSD
+! align4=4	# could be 2 or 4
+! align8=8	# could be 3 or 8
+! align16=16	# cound be 4 or 16
+  
+  
+  .text

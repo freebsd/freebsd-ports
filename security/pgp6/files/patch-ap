@@ -1,0 +1,19 @@
+*** clients/pgp/cmdline/Makefile.in	2000/01/26 03:55:17	1.1
+--- clients/pgp/cmdline/Makefile.in	2000/01/26 03:55:41	1.2
+***************
+*** 51,57 ****
+  CFLAGS=@CFLAGS@
+  LDFLAGS=@LDFLAGS@
+  
+! CFLAGS+= -g
+  
+  TARGET=pgp
+  
+--- 51,57 ----
+  CFLAGS=@CFLAGS@
+  LDFLAGS=@LDFLAGS@
+  
+! CFLAGS+= -g -pthread
+  
+  TARGET=pgp
+  

@@ -1,0 +1,15 @@
+*** libs/network/ldaplib/liblber/io.c	2000/01/26 03:10:31	1.1.1.1
+--- libs/network/ldaplib/liblber/io.c	2000/01/26 03:12:55	1.1.1.2
+***************
+*** 14,19 ****
+--- 14,23 ----
+  #include <stdio.h>
+  #include <ctype.h>
+  
++ #ifdef __FreeBSD__
++ #include <sys/time.h>
++ #endif
++ 
+  #if PGPSOCKETSLDAP		/* jason */
+  #include "pgpSocketsLDAP.h"
+  

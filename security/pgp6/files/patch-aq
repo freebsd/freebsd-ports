@@ -1,0 +1,15 @@
+*** libs/network/ldaplib/include/ldap.h	2000/01/26 03:10:31	1.1.1.1
+--- libs/network/ldaplib/include/ldap.h	2000/01/26 03:12:53	1.1.1.2
+***************
+*** 90,95 ****
+--- 90,99 ----
+  #define GetThreadID		pthread_self
+  #endif
+  
++ #ifdef __FreeBSD__
++ #define GetThreadID		pthread_self
++ #endif
++ 
+  #if PGP_MACINTOSH
+  #define Debug( level, fmt, arg1, arg2, arg3 )	{}	/* Nothing */
+  #else

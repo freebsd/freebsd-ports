@@ -1,27 +1,34 @@
-# New ports collection makefile for: pgp5
-# Date created:         10 Feb 1998
-# Whom:                 markm
+# New ports collection makefile for:	pgp6
+# Date created:				25 Jan 2000
+# Whom:					mike@fate.com
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pgp
-PORTVERSION=	5.0i
+PORTVERSION=	6.5.1i
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/5.0/unix/ \
-		ftp://ftp.doc.ic.ac.uk/pub/Mirrors/ftp.ifi.uio.no/pub/pgp/5.0/unix/
-DISTNAME=	pgp50i
-EXTRACT_SUFX=	-unix-src.tar.gz
+MASTER_SITES=   ftp://ftp.no.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
+		ftp://ftp.fi.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
+		ftp://ftp.se.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
+		ftp://ftp.de.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
+		ftp://ftp.dk.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
+		ftp://ftp.nl.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
+		ftp://ftp.ch.pgpi.org/pub/pgp/6.5/6.5.1i/unix/ \
+		ftp://ftp.ru.pgpi.org/pub/pgp/6.5/6.5.1i/unix/
+EXTRACT_SUFX=   -beta2.tar.gz
 
-MAINTAINER=	markm@FreeBSD.org
+MAINTAINER=	mike@fate.com
 
-Y2K=		http://www.pgpi.com/faq/pgpi.shtml#Year2000
+WRKSRC=		${WRKDIR}/${DISTNAME}
+USE_GMAKE=      YES
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
-GNU_CONFIGURE=	yes
-RESTRICTED=	"Crypto"
-MAN1=		pgp5.1 pgpe.1 pgpk.1 pgps.1 pgpv.1
-MAN5=		pgp.cfg.5
-MAN7=		pgp-integration.7 pgp-intro.7
+RESTRICTED=     "Crypto"
+
+do-install:
+	cd ${WRKSRC}/clients/pgp/cmdline ; ${GMAKE} install
+
+post-extract:
+	${CP} ${FILESDIR}/build.Makefile ${WRKDIR}/${PKGNAME}/Makefile
 
 .include <bsd.port.mk>

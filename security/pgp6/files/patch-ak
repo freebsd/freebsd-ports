@@ -1,0 +1,70 @@
+*** libs/pgpcdk/priv/networklib/keyserver/CCRSEntrustServer.cpp	2000/01/26 03:10:44	1.1.1.1
+--- libs/pgpcdk/priv/networklib/keyserver/CCRSEntrustServer.cpp	2000/01/26 03:13:47	1.1.1.2
+***************
+*** 147,153 ****
+  		if (! PGPKeySetRefIsValid(inCAsKeySet)) {
+  			ThrowPGPError_(kPGPError_OptionNotFound);
+  		}
+! 		if (accumulatedCRLs == 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		pgpErr = PGPGetCRLDistributionPoints(inCAKey, inCAsKeySet, &numPoints, &points,
+--- 147,153 ----
+  		if (! PGPKeySetRefIsValid(inCAsKeySet)) {
+  			ThrowPGPError_(kPGPError_OptionNotFound);
+  		}
+! 		if (accumulatedCRLs == (StPGPDataRef) 0) {
+  			ThrowPGPError_(kPGPError_OutOfMemory);
+  		}
+  		pgpErr = PGPGetCRLDistributionPoints(inCAKey, inCAsKeySet, &numPoints, &points,
+***************
+*** 173,179 ****
+  #if PGP_COMPILER_SUN
+  			pgpCopyMemory(static_cast<PGPByte *>(crl), static_cast<PGPByte *>(accumulatedCRLs) + accumulatedSize, crlSize);
+  #else
+! 			pgpCopyMemory(crl, static_cast<PGPByte *>(accumulatedCRLs) + accumulatedSize, crlSize);
+  #endif
+  			accumulatedSize += crlSize;
+  			currPoint += *currPointSize;
+--- 173,179 ----
+  #if PGP_COMPILER_SUN
+  			pgpCopyMemory(static_cast<PGPByte *>(crl), static_cast<PGPByte *>(accumulatedCRLs) + accumulatedSize, crlSize);
+  #else
+! 			pgpCopyMemory((void *) crl, static_cast<PGPByte *>(accumulatedCRLs) + accumulatedSize, crlSize);
+  #endif
+  			accumulatedSize += crlSize;
+  			currPoint += *currPointSize;
+***************
+*** 215,221 ****
+  						PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  									GetMaxBase64EncodedBufferSize(inMessageLength),
+  									kPGPMemoryMgrFlags_None));
+! 	if (encodedBuffer == 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	}
+  	encodedSize = Base64Encode(	static_cast<const PGPByte *>(inMessage),
+--- 215,221 ----
+  						PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  									GetMaxBase64EncodedBufferSize(inMessageLength),
+  									kPGPMemoryMgrFlags_None));
+! 	if (encodedBuffer == (StPGPDataRef) 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	}
+  	encodedSize = Base64Encode(	static_cast<const PGPByte *>(inMessage),
+***************
+*** 226,232 ****
+  						PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  									GetMaxURLEncodedBufferSize(encodedSize) + bufSize,
+  									kPGPMemoryMgrFlags_None));
+! 	if (encodedBuffer == 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	}
+  	strcpy(urlEncodedBuffer, kMessagePrefix);
+--- 226,232 ----
+  						PGPNewData(	PGPGetContextMemoryMgr(mContext),
+  									GetMaxURLEncodedBufferSize(encodedSize) + bufSize,
+  									kPGPMemoryMgrFlags_None));
+! 	if (encodedBuffer == (StPGPDataRef) 0) {
+  		ThrowPGPError_(kPGPError_OutOfMemory);
+  	}
+  	strcpy(urlEncodedBuffer, kMessagePrefix);
