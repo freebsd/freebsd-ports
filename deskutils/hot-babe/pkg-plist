@@ -5,5 +5,7 @@ bin/hot-babe
 %%DATADIR%%/hb01/hb01_2.png
 %%DATADIR%%/hb01/hb01_3.png
 %%DATADIR%%/hb01/hb01_4.png
+share/pixmaps/hot-babe.xpm
+@unexec rmdir %D/share/pixmaps 2> /dev/null || true
 @dirrm %%DATADIR%%/hb01
 @dirrm %%DATADIR%%
