@@ -3,12 +3,12 @@
 # Date created:		8 April 1996
 # Whom:			Sujal Patel <smpatel@freebsd.org>
 #
-# $Id: Makefile,v 1.5 1996/12/07 09:28:47 max Exp $
+# $Id: Makefile,v 1.6 1996/12/08 01:04:18 max Exp $
 #
 
 DISTNAME=       jdk
 PKGNAME=	jdk-1.0.2
-CATEGORIES=	www devel
+CATEGORIES=	lang devel
 MASTER_SITES=   ftp://ftp.javasoft.com/pub/ \
 		ftp://www.blackdown.org/pub/Java/pub/
 DISTFILES=      JDK-1_0_2-solaris2-sparc.tar.Z

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.42 1997/02/16 01:25:51 obrien Exp $
+# $Id: Makefile,v 1.43 1997/02/16 19:45:23 obrien Exp $
 #
 
     SUBDIR += SWIG
@@ -41,6 +41,7 @@
     SUBDIR += p5-Resources
     SUBDIR += p5-Time
     SUBDIR += prcs
+    SUBDIR += sawt
     SUBDIR += tkcvs
     SUBDIR += uulib
     SUBDIR += xwpe
