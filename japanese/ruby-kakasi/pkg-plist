@@ -1,0 +1,11 @@
+bin/wdcnt
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/kakasi.so
+share/examples/ruby/kakasi/ja/test.rb
+@dirrm share/examples/ruby/kakasi/ja
+@dirrm share/examples/ruby/kakasi
+share/doc/ruby/kakasi/ChangeLog
+share/doc/ruby/kakasi/README
+share/doc/ruby/kakasi/wdcnt.html
+share/doc/ruby/kakasi/ja/README.jp
+@dirrm share/doc/ruby/kakasi/ja
+@dirrm share/doc/ruby/kakasi
