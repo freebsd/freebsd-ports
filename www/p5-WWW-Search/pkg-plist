@@ -3,7 +3,6 @@ bin/WebSearch
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search.pm.rej
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Crawler.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Excite/News.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/ExciteForWebServers.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Fireball.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/FolioViews.pm
@@ -25,6 +24,5 @@ lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Verity.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/VoilaFr.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Excite
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true

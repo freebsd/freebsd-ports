@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.26
+PORTVERSION=	2.33
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Spec/Functions.pm:${PORTSDIR}/devel/p5-File-Spec \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/User.pm:${PORTSDIR}/sysutils/p5-User
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -27,7 +30,6 @@ MAN1=		AutoSearch.1 \
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		WWW::Search.3 \
 		WWW::Search::Crawler.3 \
-		WWW::Search::Excite::News.3 \
 		WWW::Search::ExciteForWebServers.3 \
 		WWW::Search::Fireball.3 \
 		WWW::Search::FolioViews.3 \
