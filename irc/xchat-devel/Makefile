@@ -26,6 +26,10 @@ LIB_DEPENDS+=		gnome.4:${PORTSDIR}/x11/gnomelibs
 LIB_DEPENDS+=		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 .endif
 
+.if exists(${X11BASE}/bin/panel) && defined(WITH_GNOME)
+WITH_GDK_PIXBUF=	YES
+.endif
+
 GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=		${LOCALBASE}/bin/glib12-config
 GDK_PIXBUF_CONFIG?=	${X11BASE}/bin/gdk-pixbuf-config
