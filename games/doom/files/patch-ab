@@ -1,8 +1,6 @@
 --- linuxdoom-1.10/Makefile.orig	Mon Dec 22 11:55:36 1997
 +++ linuxdoom-1.10/Makefile	Sun Feb  6 16:26:51 2000
-@@ -4,11 +4,12 @@
- #
- # $Log:$
+@@ -6,9 +6,10 @@
  #
 -CC=  gcc  # gcc or g++
 +CC?=  gcc  # gcc or g++
@@ -16,7 +14,3 @@
  
  # subdirectory for objects
  O=linux
-@@ -92,4 +93,4 @@
- 
- #############################################################
- #
