@@ -8406,6 +8406,7 @@ postgresql7	ports/databases/postgresql7
 postgresql72	ports/databases/postgresql72
 postgresql73	ports/databases/postgresql73
 postgresql_autodoc	ports/databases/postgresql_autodoc
+postgrey	ports/mail/postgrey
 postilion	ports/mail/postilion
 postmark	ports/benchmarks/postmark
 postnuke	ports/www/postnuke
