@@ -7,18 +7,19 @@
 
 PORTNAME=	gnomeicu2
 PORTVERSION=	0.98.126
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnomeicu
 DISTNAME=	gnomeicu-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNOME2 ICQ client
 
 LIB_DEPENDS+=	glade-2.0.0:${PORTSDIR}/devel/libglade2 \
 		panel-applet-2.0:${PORTSDIR}/x11/gnomepanel \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gnet.1:${PORTSDIR}/net/gnet \
+		gnet-glib2.7:${PORTSDIR}/net/gnet-glib2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
@@ -52,6 +53,7 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|gnet|gnet-glib2|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
