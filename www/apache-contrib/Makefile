@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://archive.apache.org/dist/httpd/%SUBDIR%/
 MASTER_SITE_SUBDIR=	contrib/modules/1.3
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Third-party modules contributed to the Apache HTTP server project
 
 USE_APACHE=	yes
