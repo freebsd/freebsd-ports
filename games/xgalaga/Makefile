@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/X11/xgalaga \
 
 .if defined(NOSOUND)
 CONFIGURE_ARGS+=	--without-sound
-PLIST=			${PKGDIR}/PLIST.nosound
+PLIST=			${PKGDIR}/pkg-plist.nosound
 .else
 pre-configure:
 	@${ECHO} "*****************************************************"
