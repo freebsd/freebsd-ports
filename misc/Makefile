@@ -60,6 +60,7 @@
     SUBDIR += dog
     SUBDIR += dotfile
     SUBDIR += edonkey-tool-hash
+    SUBDIR += edonkey-tool-list
     SUBDIR += emma
     SUBDIR += estic
     SUBDIR += ewipe
