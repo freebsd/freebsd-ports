@@ -16,6 +16,9 @@ MAINTAINER=	knu@FreeBSD.org
 
 USE_OPENSSL=	yes
 USE_RUBY=	yes
+.if !defined(NOPORTDOCS)
+USE_RUBY_RD=	yes
+.endif
 USE_RUBY_EXTCONF=	yes
 
 CONFIGURE_ARGS=	--with-openssl-include="${OPENSSLBASE}/include/openssl" \
