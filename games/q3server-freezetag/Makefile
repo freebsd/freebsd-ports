@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	freezetag
-PORTVERSION=	1.42
-MASTER_SITES=	ftp://ftp.gigabell.net/pub/exp/q3/mod/freeztag/ \
+PORTVERSION=	1.50
+MASTER_SITES=	http://www.demohq.com/ \
 		ftp://ftp.task.gda.pl/vol/d33/ftp.extreme-players.de/exp/q3/mod/freeztag/
-DISTNAME=	q3freeze${PORTVERSION:S/.//}
+DISTNAME=	q3freeze15
 
 WRKSRC=		${WRKDIR}/freeze
 
