@@ -6,28 +6,45 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	3.22
+PORTVERSION=	4.00
 CATEGORIES=	security
 MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
 		ftp://stunnel.mirt.net/stunnel/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/opensores.thebunker.net/pub/mirrors/stunnel/
 
-MAINTAINER=	roam@freebsd.org
+MAINTAINER=	roam@FreeBSD.org
 
 USE_OPENSSL=	YES
+USE_REINPLACE=	YES
+IS_INTERACTIVE=	YES	# prompts for information while generating certificate
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=/var/run --with-pem-dir=${PEM_DIR}
+CONFIGURE_ARGS=	--localstatedir=/var/tmp --with-pem-dir=${PEM_DIR}
 
 MAN8=		stunnel.8
 
 PEM_DIR?=	${PREFIX}/etc
 
+post-patch:
+# place files under /var/tmp so that this can be run by an unprivileged user
+# user stunnel and group stunnel
+	@${REINPLACE_CMD} -E -e 's|\@prefix\@/var/run/stunnel/|/var/tmp/stunnel|; \
+		s|nobody|stunnel|;s|nogroup|stunnel|' \
+		${WRKSRC}/tools/stunnel.conf-sample.in
+	@${REINPLACE_CMD} -E -e 's|localstatedir/run/stunnel.pid|localstatedir/stunnel.pid|' \
+		${WRKSRC}/configure.ac ${WRKSRC}/configure
+.ifdef(NOPORTDOCS)
+	@${REINPLACE_CMD} -E -e 's/ install-docDATA/ /; s/^(SUBDIRS.+)doc/\1/' \
+		${WRKSRC}/Makefile.in
+.endif
+
 post-install:
 	@${SED} "s+!!PREFIX!!+${PREFIX}+g" < ${FILESDIR}/stunnel.sh \
 		> ${PREFIX}/etc/rc.d/stunnel.sh.sample
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/stunnel.sh.sample
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
+		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO} ""
 	@${ECHO} "**************************************************************************"
 	@${ECHO} "To create and install a new certificate, type \"make cert\""

@@ -1,3 +1,31 @@
 etc/rc.d/stunnel.sh.sample
-lib/stunnel.so
+etc/stunnel/stunnel.conf-sample
+etc/stunnel/stunnel.pem
+lib/libstunnel.so.0
+lib/libstunnel.so
+lib/libstunnel.la
+lib/libstunnel.a
 sbin/stunnel
+%%PORTDOCS%%share/doc/stunnel/stunnel.html
+%%PORTDOCS%%share/doc/stunnel/examples/ca.html
+%%PORTDOCS%%share/doc/stunnel/examples/ca.pl
+%%PORTDOCS%%share/doc/stunnel/examples/importCA.html
+%%PORTDOCS%%share/doc/stunnel/examples/importCA.sh
+%%PORTDOCS%%share/doc/stunnel/examples/stunnel.spec
+%%PORTDOCS%%share/doc/stunnel/examples/stunnel.init
+%%PORTDOCS%%share/doc/stunnel/AUTHORS
+%%PORTDOCS%%share/doc/stunnel/BUGS
+%%PORTDOCS%%share/doc/stunnel/ChangeLog
+%%PORTDOCS%%share/doc/stunnel/COPYING
+%%PORTDOCS%%share/doc/stunnel/COPYRIGHT.GPL
+%%PORTDOCS%%share/doc/stunnel/CREDITS
+%%PORTDOCS%%share/doc/stunnel/FAQ
+%%PORTDOCS%%share/doc/stunnel/INSTALL
+%%PORTDOCS%%share/doc/stunnel/INSTALL.W32
+%%PORTDOCS%%share/doc/stunnel/NEWS
+%%PORTDOCS%%share/doc/stunnel/PORTS
+%%PORTDOCS%%share/doc/stunnel/README
+%%PORTDOCS%%share/doc/stunnel/TODO
+%%PORTDOCS%%@dirrm share/doc/stunnel/examples
+%%PORTDOCS%%@dirrm share/doc/stunnel
+@unexec rmdir %D/etc/stunnel 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/stunnel`` to remove any configuration files left." | fmt

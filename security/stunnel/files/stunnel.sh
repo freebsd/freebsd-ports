@@ -10,8 +10,7 @@ STUNNEL="!!PREFIX!!/sbin/stunnel"
 
 case "$1" in
     start)
-        ${STUNNEL} -d 993 -r localhost:imap -p !!PREFIX!!/etc/stunnel.pem
-        ${STUNNEL} -d 995 -r localhost:pop3 -p !!PREFIX!!/etc/stunnel.pem
+        ${STUNNEL} !!PREFIX!!/etc/stunnel/stunnel.conf
         ;;
 
     stop)
