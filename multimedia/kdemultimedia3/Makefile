@@ -39,15 +39,15 @@ CONFIGURE_ARGS+=	--without-lame \
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-.if defined(WITHOUT_MIDI) || defined(WITHOUT_KMIDI)
-DO_NOT_COMPILE+=	kmidi
-.else
+.if defined(WITH_MIDI) || defined(WITH_KMIDI)
 PLIST_APPEND+=	plist.midi
 .if ${MACHINE_ARCH} == "alpha"
 USE_REINPLACE=	yes
 post-patch::
 	${REINPLACE_CMD} -e "s|-ffast-math||g" ${WRKSRC}/kmidi/Makefile.in
 .endif # ${MACHINE_ARCH} == "alpha"
+.else
+DO_NOT_COMPILE+=	kmidi
 .endif # defined(WITHOUT_MIDI)
 
 DO_NOT_COMPILE+=	xine-artsplugin
