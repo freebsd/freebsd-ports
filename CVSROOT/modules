@@ -4202,6 +4202,7 @@ jre		ports/java/jre
 jrefentry	ports/textproc/jrefentry
 jrtplib		ports/devel/jrtplib
 jruby		ports/lang/jruby
+jsap		ports/devel/jsap
 jsch		ports/net/jsch
 jsdk		ports/java/jsdk
 jslice		ports/graphics/jslice
