@@ -10,14 +10,12 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	5.9.13
+PORTVERSION=	6.1.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/
 
 MAINTAINER=	ve@sci.fi
-
-FORBIDDEN=	"Yet another remote buffer overflow. http://security.e-matters.de/advisories/032002.html"
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 .if defined(WITH_X11)
@@ -25,6 +23,7 @@ USE_PYTHON=	yes
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-opie --enable-RPA --enable-POP2 --enable-SDPS \
@@ -82,6 +81,8 @@ pre-patch:
 	@${MV} -f ${WRKDIR}/fetchmailconf.temp ${WRKSRC}/fetchmailconf
 	@${SED} -e "s,@PREFIX@,${PREFIX},g" \
 		${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
+	@${REINPLACE_CMD} -e "s,@l@,,;s,@GT_NO@,," \
+		${WRKSRC}/intl/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)

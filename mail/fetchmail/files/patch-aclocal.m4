@@ -2,11 +2,11 @@
 +++ aclocal.m4	Wed May 22 21:11:00 2002
 @@ -273,6 +273,9 @@
  
- 	     CATOBJEXT=.gmo
- 	   fi
-+	   if test "$gt_cv_func_gettext_libintl" = "yes"; then
-+		INTLLIBS='-lintl'
-+	   fi
- 	])
+         CATOBJEXT=.gmo
+       fi
++      if test "$gt_cv_func_gettext_libintl" = "yes"; then
++	    INTLLIBS='-lintl'
++      fi
+     ])
  
-         if test "$CATOBJEXT" = "NONE"; then
+     if test "$gt_use_preinstalled_gnugettext" = "yes" \
