@@ -1,5 +1,6 @@
 #!/bin/sh
 
+umask 027
 if [ -x /usr/local/sbin/delegated ]; then
         echo -n ' delegated'
         /usr/local/sbin/delegated -P8080 \
