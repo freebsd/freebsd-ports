@@ -3,7 +3,7 @@
 # Date created:		Fri Mar 27 10:32:46 KST 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.4 1998/12/12 21:03:35 jseger Exp $
+# $Id: Makefile,v 1.5 1998/12/22 08:12:20 asami Exp $
 #
 # based on print/ghostscript5 and japanese/vfghostscript5
 # use Adobe's CID-keyed font sameple(korean) because there are no
@@ -48,7 +48,7 @@ GS_SOURCES+=	ghostscript-5.10gnu.tar.gz
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
-GS_FONTS_STD=	ghostscript-fonts-std-5.10.tar.gz
+GS_FONTS_STD=	ghostscript-fonts-std-5.50.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-5.10.tar.gz
 
 # Additional driver HP 850, see http://bonk.ethz.ch/hp850/hp850.html
