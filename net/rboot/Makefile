@@ -20,10 +20,6 @@ MAN8=		netboot.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502108
-BROKEN=		"Does not install on FreeBSD >= 5.x"
-.endif
-
 post-install:
 	@${ECHO} ""
 	@${ECHO} "======================================================="
