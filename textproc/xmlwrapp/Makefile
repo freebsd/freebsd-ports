@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlwrapp
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://pmade.org/software/xmlwrapp/download/
 
@@ -26,10 +26,8 @@ INSTALLS_SHLIB=	yes
 
 .if ${HAVE_GNOME:Mlibxslt}!=""
 USE_GNOME+=	libxslt
-PLIST_SUB+=	XSLT=""
 .else
 CONFIGURE_ARGS+=	--disable-xslt
-PLIST_SUB+=	XSLT="@comment "
 .endif
 
 .include <bsd.port.post.mk>
