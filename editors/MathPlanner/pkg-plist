@@ -43,7 +43,6 @@ bin/MathPlanner3
 %%DATADIR%%/pixmaps/frame_graph.png
 %%DATADIR%%/pixmaps/frame_image.png
 %%DATADIR%%/pixmaps/frame_text.png
-%%DATADIR%%/pixmaps/gimp.png
 %%DATADIR%%/pixmaps/mathplannerapp.png
 %%DATADIR%%/pixmaps/reload.png
 %%DATADIR%%/pixmaps/text_block.png
