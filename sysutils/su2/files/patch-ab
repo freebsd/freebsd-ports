@@ -1,14 +1,17 @@
---- su2.c.orig	Thu Dec 19 20:41:50 1996
-+++ su2.c	Thu Dec 19 20:41:50 1996
-@@ -113,7 +113,7 @@
+--- su2.c.orig	Sun Mar  2 20:17:16 1997
++++ su2.c	Sun Mar  2 20:21:41 1997
+@@ -113,9 +113,9 @@
  #ifndef NOSU2RC
  char   *UsersNameFile = ".su2rc";
  #endif NOSU2RC
 -char   *SULog = "/usr/adm/sulog";
 +char   *SULog = SU2LOGFILE;
  
- char   *UtmpFile = "/etc/utmp";
+-char   *UtmpFile = "/etc/utmp";
++char   *UtmpFile = "/var/run/utmp";
  
+ #ifndef PATH
+ # ifdef BSD
 @@ -182,13 +182,15 @@
  
  char   *malloc ();
