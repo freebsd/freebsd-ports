@@ -171,24 +171,3 @@ share/bomberclone/gfx/font1.png
 share/bomberclone/gfx/font0.png
 @dirrm share/bomberclone/gfx
 @dirrm share/bomberclone
-include/bomberclone/udp.h
-include/bomberclone/sysfunc.h
-include/bomberclone/sound.h
-include/bomberclone/single.h
-include/bomberclone/player.h
-include/bomberclone/packets.h
-include/bomberclone/ogcache-client.h
-include/bomberclone/network.h
-include/bomberclone/menugui.h
-include/bomberclone/menu.h
-include/bomberclone/map.h
-include/bomberclone/keybinput.h
-include/bomberclone/keyb.h
-include/bomberclone/gfx.h
-include/bomberclone/flyingitems.h
-include/bomberclone/font.h
-include/bomberclone/chat.h
-include/bomberclone/bomberclone.h
-include/bomberclone/bomb.h
-include/bomberclone/basic.h
-@dirrm include/bomberclone
