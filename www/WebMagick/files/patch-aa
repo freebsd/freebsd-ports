@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.148
-diff -u -r1.117 -r1.148
+retrieving revision 1.149
+diff -u -r1.117 -r1.149
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	16 Jun 2004 14:47:03 -0000	1.148
++++ webmagick.in	20 Nov 2004 04:11:43 -0000	1.149
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.148 2004/06/16 14:47:03 ache Exp $
++# $Id: webmagick.in,v 1.149 2004/11/20 04:11:43 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -1076,6 +1076,23 @@ diff -u -r1.117 -r1.148
  			}
  
  			print( PICHTML "$opt_pichtmlbottom\n") if ("$opt_pichtmlbottom" ne '');
+@@ -2570,14 +2742,14 @@
+ 
+ 			unless ($opt_tables)
+ 			{				
+-				print( INDEX "  <AREA${target} HREF=\"",
++				print( INDEX "  <AREA${target} ALT=\"${altlabel}\" HREF=\"",
+ 				       escapeurl($pichtml), "\" SHAPE=RECT COORDS=", $imageThumbCoords[$pageNumber - 1][$imageNum],">\n" );
+ 			}
+ 	    } else 
+ 	    { 
+ 		    unless ($opt_tables) 
+ 		    {
+-				print( INDEX "  <AREA HREF=\"", escapeurl($pic),
++				print( INDEX "  <AREA ALT=\"${altlabel}\" HREF=\"", escapeurl($pic),
+ 				       "\" SHAPE=RECT COORDS=", $imageThumbCoords[$pageNumber - 1][$imageNum],">\n" );
+ 		    } 
+ 	    }
 @@ -2590,7 +2762,7 @@
  				print INDEX "<TR ALIGN=CENTER VALIGN=TOP>";
  			}
