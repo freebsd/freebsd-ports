@@ -1,17 +1,24 @@
---- Makefile	Mon Jan  3 21:53:07 2000
-+++ Makefile.new	Tue Jan  4 13:27:24 2000
-@@ -1,6 +1,11 @@
--QT = /usr/local/qt/include
--LIBS = -L/usr/X11R6/lib -lqt -lqimgio -lpng -ljpeg 
--LIBPATH = /usr/X11R6/lib
-+CXX ?= g++
-+QT = $(PREFIX)/include/qt2 -I$(PREFIX)/include
-+LIBS = -L$(PREFIX)/lib -lqt2 -lpng -ljpeg 
-+LIBPATH = $(PREFIX)/lib
-+LIBRARY = libPaintLib.so.%%VERSION%%
-+
-+all: Image.o
-+	$(CXX) -shared -Wl,-soname,libPaintLib.so -o $(LIBRARY)
+--- Makefile	Mon Jan 17 10:30:27 2000
++++ Makefile.new	Thu Apr  6 20:27:24 2000
+@@ -1,4 +1,7 @@
+-PATHLIBS = /usr/X11R6/lib
++X11BASE		?=	/usr/X11R6
++LOCALBASE	?=	/usr/local
++PATHLIBS	=	$(X11BASE)/lib
++TMAKE		=	$(LOCALBASE)/bin/tmake
  
- install: Image.o PaintLib.h
- 	clear
+ all: Makefile.twinlib 
+ 	make -f Makefile.twinlib
+@@ -7,10 +10,10 @@
+ 	make -f Makefile.example
+ 	
+ Makefile.twinlib: twinlib.pro 
+-	tmake twinlib.pro -o Makefile.twinlib
++	$(TMAKE) twinlib.pro -o Makefile.twinlib
+ 
+ Makefile.example: example.pro
+-	tmake example.pro -o Makefile.example
++	$(TMAKE) example.pro -o Makefile.example
+ 
+ clean:
+ 	make -f Makefile.twinlib clean

@@ -1,34 +1,34 @@
-# New ports collection makefile for:	paintlib
-# Version required:	0.2.1
+# New ports collection makefile for:	twinlib
+# Version required:	${VER}
 # Date created:		04 Jan 2000
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	paintlib.0.2.1
-PKGNAME=	paintlib-0.2.1
+DISTNAME=	twinlib.${VER}
+PKGNAME=	twinlib-${VER}
 CATEGORIES=	graphics devel
-MASTER_SITES=	http://rio.xdev.org/paintlib/
+MASTER_SITES=	http://rio.xdev.org/twinlib/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	will@FreeBSD.org
 
-USE_QT2=	yes
+BUILD_DEPENDS=	${LOCALBASE}/bin/tmake:${PORTSDIR}/devel/tmake
+
+VER=		0.2.3
+USE_QT=		yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/paintlib
+WRKSRC=		${WRKDIR}/twinlib
 MAKE_ENV+=	PREFIX=${PREFIX} CXX=${CXX}
 VERSION=	0
 PLIST_SUB+=	VERSION=${VERSION}
-
-post-patch:
-	@${PERL} -pi -e "s:%%VERSION%%:${VERSION}:g" ${WRKSRC}/Makefile
-	@${PERL} -pi -e "s:g\+\+:${CXX}:g" ${WRKSRC}/Makefile
+MAKE_ENV+=	TMAKEPATH="${LOCALBASE}/share/tmake/freebsd-g++" \
+		QTDIR="${X11BASE}"
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/PaintLib.h ${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/libPaintLib.so.${VERSION} ${PREFIX}/lib
-	@${LN} -sf libPaintLib.so.${VERSION} ${PREFIX}/lib/libPaintLib.so
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/TwinLib.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/libTwinlib.so.${VER} ${PREFIX}/lib/libTwinlib.so.${VERSION}
+	@${LN} -sf ${PREFIX}/libTwinlib.so.${VERSION} ${PREFIX}/lib/libTwinlib.so
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-include/PaintLib.h
-lib/libPaintLib.so
-lib/libPaintLib.so.%%VERSION%%
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+include/TwinLib.h
+lib/libTwinlib.so
+lib/libTwinlib.so.%%VERSION%%
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
