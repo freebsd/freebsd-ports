@@ -55,6 +55,7 @@
     SUBDIR += dansguardian-devel
     SUBDIR += decss
     SUBDIR += demoroniser
+    SUBDIR += dhttpd
     SUBDIR += dillo
     SUBDIR += djvuplugin
     SUBDIR += eddie
