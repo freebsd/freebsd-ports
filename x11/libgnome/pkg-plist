@@ -142,8 +142,6 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 @dirrm share/doc/libgnome
 @dirrm include/libgnome-2.0/libgnome
 @dirrm include/libgnome-2.0
-@dirrm etc/sound/events
-@dirrm etc/sound
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/unknown
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/man
 @dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/gnome/url-handlers/info
@@ -192,3 +190,5 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/accessibility
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome
 @dirrm etc/gconf/gconf.xml.defaults/desktop
+@unexec /bin/rmdir %D/etc/sound/events 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/etc/sound 2>/dev/null || /usr/bin/true

@@ -540,7 +540,6 @@ share/locale/zh_CN/LC_MESSAGES/gnome-libs.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-libs.mo
 @exec mkdir -p %D/share/gnome/games
 @dirrm share/gnome/type-convert
-@dirrm share/gnome/pixmaps
 @dirrm share/gnome/mime-info
 @dirrm share/gnome/idl
 @dirrm share/gnome/html/zvt
@@ -563,5 +562,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-libs.mo
 @dirrm include/gnome-1.0/libart_lgpl
 @dirrm include/gnome-1.0/gtk-xmhtml
 @dirrm include/gnome-1.0
-@dirrm etc/sound/events
-@dirrm etc/sound
+@unexec /bin/rmdir %D/share/gnome/pixmaps 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/etc/sound/events 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/etc/sound 2>/dev/null || /usr/bin/true
