@@ -38,7 +38,6 @@
     SUBDIR += emacs21
     SUBDIR += eshell-emacs20
     SUBDIR += fb
-    SUBDIR += fine
     SUBDIR += flim
     SUBDIR += flim-emacs20
     SUBDIR += flim-xemacs21-mule
@@ -72,7 +71,6 @@
     SUBDIR += joe-devel
     SUBDIR += jove
     SUBDIR += kile
-    SUBDIR += koffice
     SUBDIR += koffice-kde3
     SUBDIR += kxmleditor
     SUBDIR += le
