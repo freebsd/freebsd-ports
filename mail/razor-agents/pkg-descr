@@ -1,0 +1,14 @@
+Vipul's Razor is a distributed, collaborative, spam detection and filtering
+network. Razor establishes a distributed and constantly updating catalogue
+of spam in propagation. This catalogue is used by clients to filter out
+known spam. On receiving a spam, a Razor Reporting Agent (run by an end-user
+or a troll box) calculates and submits a 20-character unique identification
+of the spam (a SHA Digest) to its closest Razor Catalogue Server. The
+Catalogue Server echos this signature to other trusted servers after storing
+it in its database. Prior to manual processing or transport-level reception,
+Razor Filtering Agents (end-users and MTAs) check their incoming mail against
+a Catalogue Server and filter out or deny transport in case of a signature
+match. Catalogued spam, once identified and reported by a Reporting Agent,
+can be blocked out by the rest of the Filtering Agents on the network.
+
+WWW: http://razor.sourceforge.net/
