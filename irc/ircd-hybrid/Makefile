@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	ircd-hybrid
-PORTVERSION=	6.3
+PORTVERSION=	6.3.1
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ircd-hybrid
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	davidt@yadt.co.uk
+MAINTAINER=	so14k@so14k.com
 
 MAN8=		ircd.8
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
+CPIO?=		/usr/bin/cpio --quiet -pdum -R
 
 .if !defined(PACKAGE_BUILDING) && !defined(BATCH)
 IS_INTERACTIVE=	yes
@@ -38,11 +40,14 @@ pre-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${FIND} * -type f -print \
+		| ${CPIO} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	@${CHMOD} -R ${SHAREMODE} ${DOCSDIR}
+	@${CHMOD} -R a+X ${DOCSDIR}
 .endif
 	@${SED} -e "s#%PREFIX%#${PREFIX}#" ${FILESDIR}/ircd.sh \
 		> ${WRKDIR}/ircd.sh
 	@${INSTALL_SCRIPT} ${WRKDIR}/ircd.sh ${PREFIX}/etc/rc.d
-	@${CAT} ${PKGMESSAGE}
+	@${SED} -e "s#/usr/local/#${PREFIX}/#" ${PKGMESSAGE}
 
 .include <bsd.port.mk>
