@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
+# $Id: Makefile,v 1.90 1998/01/10 21:42:20 jdp Exp $
 #
 
     SUBDIR += Gofer
@@ -42,8 +42,6 @@
     SUBDIR += p5-ePerl
     SUBDIR += pbasic
     SUBDIR += perl5
-    SUBDIR += pgcc
-    SUBDIR += pgcc-current
     SUBDIR += python
     SUBDIR += rexx-imc
     SUBDIR += ruby
