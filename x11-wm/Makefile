@@ -29,6 +29,7 @@
     SUBDIR += icepref
     SUBDIR += icewm
     SUBDIR += ion
+    SUBDIR += kappdock
     SUBDIR += larswm
     SUBDIR += libdockapp
     SUBDIR += libepplet
