@@ -2,6 +2,7 @@
 #
 
     SUBDIR += Maaate
+    SUBDIR += ac3dec
     SUBDIR += afsp
     SUBDIR += agbrowser
     SUBDIR += amp
