@@ -16,14 +16,19 @@ DISTNAME=	ViewKlass-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Framework for Motif
 
+.include <bsd.port.pre.mk>
+
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
+.if ${XFREE86_VERSION} == 3
+BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake
+.else
+BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
+.endif
 
 USE_X_PREFIX=	yes
 USE_MOTIF=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile (bad C++ code)"
