@@ -10,9 +10,7 @@ PORTNAME=	transcalc
 PORTVERSION=	0.14
 PORTREVISION=	2
 CATEGORIES=	cad
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://transcalc.sourceforge.net/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://transcalc.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A analysis and synthesis tool for RF and microwave transmission lines
