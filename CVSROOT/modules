@@ -3855,6 +3855,7 @@ libcoro		ports/devel/libcoro
 libcroco	ports/textproc/libcroco
 libctl		ports/science/libctl
 libdbi		ports/databases/libdbi
+libdbi-drivers	ports/databases/libdbi-drivers
 libdict		ports/devel/libdict
 libdivxdecore	ports/multimedia/libdivxdecore
 libdivxdecore-devel	ports/multimedia/libdivxdecore-devel
