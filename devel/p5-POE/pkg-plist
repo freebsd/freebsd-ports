@@ -16,11 +16,6 @@
 %%SITE_PERL%%/POE/Filter/Stackable.pm
 %%SITE_PERL%%/POE/Filter/Stream.pm
 %%SITE_PERL%%/POE/Kernel.pm
-%%SITE_PERL%%/POE/Kernel/Event.pm
-%%SITE_PERL%%/POE/Kernel/Gtk.pm
-%%SITE_PERL%%/POE/Kernel/Poll.pm
-%%SITE_PERL%%/POE/Kernel/Select.pm
-%%SITE_PERL%%/POE/Kernel/Tk.pm
 %%SITE_PERL%%/POE/Loop.pm
 %%SITE_PERL%%/POE/Loop/Event.pm
 %%SITE_PERL%%/POE/Loop/Gtk.pm
@@ -49,7 +44,6 @@
 @unexec rmdir %D/%%SITE_PERL%%/POE/Component 2>/dev/null || true
 @dirrm %%SITE_PERL%%/POE/Driver
 @unexec rmdir %D/%%SITE_PERL%%/POE/Filter 2>/dev/null || true
-@dirrm %%SITE_PERL%%/POE/Kernel
 @dirrm %%SITE_PERL%%/POE/Loop
 @dirrm %%SITE_PERL%%/POE/Macro
 @dirrm %%SITE_PERL%%/POE/Pipe
