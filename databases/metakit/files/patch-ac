@@ -1,0 +1,15 @@
+--- ../tcl/mk4tcl.cpp.orig	Fri Jul 28 19:40:17 2000
++++ ../tcl/mk4tcl.cpp	Fri Jul 28 19:40:21 2000
+@@ -565,10 +565,12 @@
+ #include <fcntl.h>
+ #include <errno.h>
+ 
++#if !defined(__FreeBSD__)
+ #define LOCK_SH 1    /* Shared lock.  */
+ #define LOCK_EX 2    /* Exclusive lock.  */
+ #define LOCK_UN 8    /* Unlock.  */
+ #define LOCK_NB 4    /* Don't block when locking.  */
++#endif
+ 
+     static int my_flock(int fd, int type)
+     {
