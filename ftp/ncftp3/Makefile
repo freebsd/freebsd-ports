@@ -24,10 +24,10 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(INSTALL_AS_NCFTP)
-LATEST_LINK=	ncftp
-.else
+.if defined(INSTALL_AS_NCFTP3)
 LATEST_LINK=	ncftp3
+.else
+LATEST_LINK=	ncftp
 .endif
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 INSTALLS_SHLIB=	yes
@@ -44,7 +44,7 @@ LIBSTRN=	libStrn.so.1
 
 pre-fetch:
 	@${ECHO} ""
-	@${ECHO} "Use INSTALL_AS_NCFTP=yes to install ncftp3 as ${PREFIX}/bin/ncftp"
+	@${ECHO} "Use INSTALL_AS_NCFTP3=yes to install ncftp v3 as ${PREFIX}/bin/ncftp3"
 	@${ECHO} ""
 
 pre-build:
