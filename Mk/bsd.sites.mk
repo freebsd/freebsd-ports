@@ -344,7 +344,8 @@ MASTER_SITE_KDE+=	\
 
 MASTER_SITE_MOZILLA+= \
 	http://download.mozilla.org/pub/%SUBDIR%/ \
-	ftp://ftp.mozilla.org/pub/%SUBDIR%/ \
+	http://ftp.mozilla.org/pub/%SUBDIR%/ \
+	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 	ftp://sunsite.utk.edu/pub/netscape-source/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/www/mozilla/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.mozilla.org/pub/%SUBDIR%/ \
