@@ -1,0 +1,5 @@
+GtkMathView is a C++ rendering engine for MathML documents. This module is
+meant to be part of the Helm project, but the widget is independent from
+it and easily embeddable within GTK+ applications.
+
+WWW: http://helm.cs.unibo.it/mml-widget/
