@@ -1,0 +1,8 @@
+The Regex::Presuf module can be used to build regular expressions out
+of 'word lists', lists of strings.  The regular expression matches the
+same words as the word list.  These regular expressions normally run
+few dozen percentages faster than a simple-minded '|'-concatenation of
+the words.
+
+Author: Jarkko Hietaniemi <jhi@iki.fi>
+WWW: http://search.cpan.org/search?dist=Regex-PreSuf
