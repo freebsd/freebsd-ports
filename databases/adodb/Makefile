@@ -6,178 +6,123 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	3.60
-PORTREVISION=	1
+PORTVERSION=	4.11
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	abgoeree@wish.net
-COMMENT=	A database library for PHP4
+MAINTAINER=	martin@tradex.sk
+COMMENT=	Database library for PHP4
 
 .if defined(WITH_APACHE2)
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
 .else
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 
-ADODB_DIR=	www/data.default/php/adodb
-ADODB_DATADICT=	${ADODB_DIR}/datadict
-ADODB_DRIVERS=	${ADODB_DIR}/drivers
-ADODB_LANG=	${ADODB_DIR}/lang
-ADODB_TESTS=	${ADODB_DIR}/tests
-PLIST_SUB=	ADODB_DIR=${ADODB_DIR} \
-		ADODB_DATADICT=${ADODB_DATADICT} \
-		ADODB_DRIVERS=${ADODB_DRIVERS} \
-		ADODB_LANG=${ADODB_LANG} \
-		ADODB_TESTS=${ADODB_TESTS} \
-		DOCSDIR=share/doc/adodb
+ADODB_DIR=	share/adodb
+PLIST_SUB=	ADODB_DIR=${ADODB_DIR}
 
-DATADICT=	datadict/datadict-access.inc.php \
-		datadict/datadict-db2.inc.php \
-		datadict/datadict-generic.inc.php \
-		datadict/datadict-ibase.inc.php \
-		datadict/datadict-informix.inc.php \
-		datadict/datadict-mssql.inc.php \
-		datadict/datadict-mysql.inc.php \
-		datadict/datadict-oci8.inc.php \
-		datadict/datadict-postgres.inc.php
+.if defined(WITH_TESTS)
+PLIST_SUB+=	TESTS=
+.else
+PLIST_SUB+=	TESTS="@comment "
+.endif
 
-DOCS=		adodb-xmlschema.zip \
-		docs-adodb.htm \
-		docs-datadict.htm \
-		docs-session.htm \
-		readme.htm \
-		readme.txt \
-		tips_portable_sql.htm \
-		tute.htm
+DOCS=	docs-adodb.htm docs-datadict.htm docs-perf.htm docs-session.htm \
+	license.txt old-changelog.htm readme.htm readme.txt tips_portable_sql.htm \
+	tute.htm
 
-DRIVERS= 	drivers/adodb-access.inc.php \
-		drivers/adodb-ado.inc.php \
-		drivers/adodb-ado_access.inc.php \
-		drivers/adodb-ado_mssql.inc.php \
-		drivers/adodb-borland_ibase.inc.php \
-		drivers/adodb-csv.inc.php \
-		drivers/adodb-db2.inc.php \
-		drivers/adodb-fbsql.inc.php \
-		drivers/adodb-firebird.inc.php \
-		drivers/adodb-ibase.inc.php \
-		drivers/adodb-informix.inc.php \
-		drivers/adodb-informix72.inc.php \
-		drivers/adodb-mssql.inc.php \
-		drivers/adodb-mssqlpo.inc.php \
-		drivers/adodb-mysql.inc.php \
-		drivers/adodb-mysqlt.inc.php \
-		drivers/adodb-oci8.inc.php \
-		drivers/adodb-oci805.inc.php \
-		drivers/adodb-oci8po.inc.php \
-		drivers/adodb-odbc.inc.php \
-		drivers/adodb-odbc_mssql.inc.php \
-		drivers/adodb-odbc_oracle.inc.php \
-		drivers/adodb-oracle.inc.php \
-		drivers/adodb-postgres.inc.php \
-		drivers/adodb-postgres64.inc.php \
-		drivers/adodb-postgres7.inc.php \
-		drivers/adodb-proxy.inc.php \
-		drivers/adodb-sqlanywhere.inc.php \
-		drivers/adodb-sybase.inc.php \
-		drivers/adodb-vfp.inc.php \
+ICONS=	adodb.gif adodb.png adodb2.gif adodb2.png
 
-INCLUDES=	adodb-csvlib.inc.php \
-		adodb-datadict.inc.php \
-		adodb-error.inc.php \
-		adodb-errorhandler.inc.php \
-		adodb-errorpear.inc.php \
-		adodb-lib.inc.php \
-		adodb-pager.inc.php \
-		adodb-pear.inc.php \
-		adodb-time.inc.php \
-		adodb-xmlschema.inc.php \
-		adodb.inc.php \
-		crypt.inc.php \
-		pivottable.inc.php \
-		rsfilter.inc.php \
-		toexport.inc.php \
-		tohtml.inc.php
+BASE=	adodb-csvlib.inc.php adodb-datadict.inc.php adodb-error.inc.php \
+	adodb-errorhandler.inc.php adodb-errorpear.inc.php adodb-exceptions.inc.php \
+	adodb-iterator.inc.php adodb-lib.inc.php adodb-pager.inc.php \
+	adodb-pear.inc.php adodb-perf.inc.php adodb-php4.inc.php adodb-time.inc.php \
+	adodb-xmlschema.inc.php adodb-xmlschema.zip adodb.inc.php \
+	pivottable.inc.php rsfilter.inc.php server.php toexport.inc.php tohtml.inc.php
 
-LANG=		lang/adodb-en.inc.php \
-		lang/adodb-fr.inc.php
+DATADICT=datadict-access.inc.php datadict-db2.inc.php datadict-generic.inc.php \
+	datadict-ibase.inc.php datadict-informix.inc.php datadict-mssql.inc.php \
+	datadict-mysql.inc.php datadict-oci8.inc.php datadict-postgres.inc.php \
+	datadict-sybase.inc.php
 
-PICS=		cute_icons_for_site/adodb.gif \
-		cute_icons_for_site/adodb.png \
-		cute_icons_for_site/adodb2.gif \
-		cute_icons_for_site/adodb2.png
+DRIVERS=adodb-access.inc.php adodb-ado.inc.php adodb-ado_access.inc.php \
+	adodb-ado_mssql.inc.php adodb-borland_ibase.inc.php adodb-csv.inc.php \
+	adodb-db2.inc.php adodb-fbsql.inc.php adodb-firebird.inc.php \
+	adodb-ibase.inc.php adodb-informix.inc.php adodb-informix72.inc.php \
+	adodb-mssql.inc.php adodb-mssqlpo.inc.php adodb-mysql.inc.php \
+	adodb-mysqli.inc.php adodb-mysqlt.inc.php adodb-oci8.inc.php \
+	adodb-oci805.inc.php adodb-oci8po.inc.php adodb-odbc.inc.php \
+	adodb-odbc_mssql.inc.php adodb-odbc_oracle.inc.php adodb-oracle.inc.php \
+	adodb-postgres.inc.php adodb-postgres64.inc.php adodb-postgres7.inc.php \
+	adodb-proxy.inc.php adodb-sapdb.inc.php adodb-sqlanywhere.inc.php \
+	adodb-sqlite.inc.php adodb-sybase.inc.php adodb-vfp.inc.php
 
-SAMPLES=	adodb-cryptsession.php \
-		adodb-session-clob.php \
-		adodb-session.php \
-		server.php
+LANG=	adodb-ca.inc.php adodb-cn.inc.php adodb-cz.inc.php \
+	adodb-de.inc.php adodb-en.inc.php adodb-es.inc.php \
+	adodb-fr.inc.php adodb-it.inc.php adodb-pt-br.inc.php \
+	adodb-ru1251.inc.php adodb-sv.inc.php
 
-TESTS=		tests/benchmark.php \
-		tests/client.php \
-		tests/test-datadict.php \
-		tests/test.php \
-		tests/test2.php \
-		tests/test3.php \
-		tests/test4.php \
-		tests/test5.php \
-		tests/testcache.php \
-		tests/testdatabases.inc.php \
-		tests/testgenid.php \
-		tests/testmssql.php \
-		tests/testoci8.php \
-		tests/testoci8cursor.php \
-		tests/testpaging.php \
-		tests/testpear.php \
-		tests/testsessions.php \
-		tests/time.php \
-		tests/tmssql.php
+PERF=	perf-db2.inc.php perf-informix.inc.php perf-mssql.inc.php \
+	perf-mysql.inc.php perf-oci8.inc.php perf-postgres.inc.php
+
+SESSION=adodb-compress-bzip2.php adodb-compress-gzip.php \
+	adodb-cryptsession.php adodb-encrypt-mcrypt.php adodb-encrypt-md5.php \
+	adodb-encrypt-secret.php adodb-sess.txt adodb-session-clob.php \
+	adodb-session.php adodb-sessions.mysql.sql crypt.inc.php \
+	adodb-sessions.oracle.clob.sql adodb-sessions.oracle.sql \
+	old/adodb-cryptsession.php old/adodb-session-clob.php \
+	old/adodb-session.php old/crypt.inc.php
+
+TESTS=	benchmark.php client.php test-datadict.php test.php test2.php \
+	test3.php test4.php test5.php test_rs_array.php testcache.php \
+	testdatabases.inc.php testgenid.php testmssql.php testoci8.php \
+	testoci8cursor.php testpaging.php testpear.php testsessions.php \
+	time.php tmssql.php xmlschema.xml
 
 do-install:
-	@${MKDIR} ${PREFIX}/${ADODB_DATADICT}
-	@${MKDIR} ${PREFIX}/${ADODB_DRIVERS}
-	@${MKDIR} ${PREFIX}/${ADODB_LANG}
-	@${MKDIR} ${PREFIX}/${ADODB_TESTS}
-.for FILE in ${DATADICT}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DATADICT}
-.endfor
-.for FILE in ${DRIVERS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DRIVERS}
-.endfor
-.for FILE in ${INCLUDES}
+	@${MKDIR} ${PREFIX}/${ADODB_DIR} ${PREFIX}/${ADODB_DIR}/datadict \
+		${PREFIX}/${ADODB_DIR}/drivers ${PREFIX}/${ADODB_DIR}/lang \
+		${PREFIX}/${ADODB_DIR}/perf ${PREFIX}/${ADODB_DIR}/session/old
+.for FILE in ${BASE}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DIR}/${FILE}
 .endfor
+.for FILE in ${DATADICT}
+	${INSTALL_DATA} ${WRKSRC}/datadict/${FILE} ${PREFIX}/${ADODB_DIR}/datadict/${FILE}
+.endfor
+.for FILE in ${DRIVERS}
+	${INSTALL_DATA} ${WRKSRC}/drivers/${FILE} ${PREFIX}/${ADODB_DIR}/drivers/${FILE}
+.endfor
 .for FILE in ${LANG}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_LANG}
+	${INSTALL_DATA} ${WRKSRC}/lang/${FILE} ${PREFIX}/${ADODB_DIR}/lang/${FILE}
 .endfor
-.for FILE in ${PICS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DIR}
+.for FILE in ${PERF}
+	${INSTALL_DATA} ${WRKSRC}/perf/${FILE} ${PREFIX}/${ADODB_DIR}/perf/${FILE}
 .endfor
-.for FILE in ${SAMPLES}
-	if [ ! -f ${PREFIX}/${ADODB_DIR}/${FILE} ]; then \
-		${INSTALL_DATA} ${WRKSRC}/${FILE} \
-		${PREFIX}/${ADODB_DIR}/${FILE};\
-	fi
-	${INSTALL_DATA} ${WRKSRC}/${FILE} \
-		${PREFIX}/${ADODB_DIR}/${FILE}.sample
+.for FILE in ${SESSION}
+	${INSTALL_DATA} ${WRKSRC}/session/${FILE} ${PREFIX}/${ADODB_DIR}/session/${FILE}
 .endfor
+
+.if defined(WITH_TESTS)
+	@${MKDIR} ${PREFIX}/${ADODB_DIR}/tests
 .for FILE in ${TESTS}
-	if [ ! -f ${PREFIX}/${ADODB_DIR}/${FILE} ]; then \
-		${INSTALL_DATA} ${WRKSRC}/${FILE} \
-		${PREFIX}/${ADODB_DIR}/${FILE};\
-	fi
-	${INSTALL_DATA} ${WRKSRC}/${FILE} \
-	${PREFIX}/${ADODB_DIR}/${FILE}.sample
+	${INSTALL_DATA} ${WRKSRC}/tests/${FILE} ${PREFIX}/${ADODB_DIR}/tests
 .endfor
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/cute_icons_for_site
 .for FILE in ${DOCS}
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
+.endfor
+.for FILE in ${ICONS}
+	${INSTALL_MAN} ${WRKSRC}/cute_icons_for_site/${FILE} ${DOCSDIR}/cute_icons_for_site/${FILE}
 .endfor
 .endif
 	@${CAT} ${PKGMESSAGE}
