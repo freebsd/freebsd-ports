@@ -12,6 +12,7 @@ libexec/m_finger
 libexec/m_inmail
 libexec/m_muttalias
 libexec/m_passwd
+libexec/m_pine
 libexec/m_yppasswd
 libexec/tac
 etc/lbdb.rc
