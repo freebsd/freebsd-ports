@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	limewire
-PORTVERSION=	4.0.7
+PORTVERSION=	4.0.8
 CATEGORIES=	net java
 MASTER_SITES=	http://www9.limewire.com:82/download/
 DISTNAME=	LimeWireLinux
@@ -15,7 +15,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java based gnutella client
 
-USE_JAVA=	1.3+
+RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
@@ -23,17 +26,21 @@ RESTRICTED=	License does not allow redistribution of any kind
 NO_CDROM=	${RESTRICTED}
 NO_PACKAGE=	${RESTRICTED}
 
-JAR_DIR=	${PREFIX}/share/java/jar/limewire
-PLIST_SUB=	JAR_DIR="${JAR_DIR:S/${PREFIX}\///}"
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+DATAFILES=	LimeWire.jar MessagesBundle.properties MessagesBundles.jar \
+		ProgressTabs.jar collections.jar commons-httpclient.jar \
+		commons-logging.jar hashes i18n.jar icu4j.jar id3v2.jar \
+		jl011.jar logicrypto.jar mp3sp14.jar themes.jar update.ver \
+		xerces.jar xml.war
+PLIST_FILES=	bin/limewire ${DATAFILES:S,^,%%DATADIR%%/,}
 
 post-patch:
-	@${SED} 's|%%JAR_DIR%%|${JAR_DIR}|; s|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/runLime.sh > ${WRKSRC}/runLime.sh.sed
+	${SED} 's|%%DATADIR%%|${DATADIR}|; s|%%LOCALBASE%%|${LOCALBASE}|' \
+		${FILESDIR}/limewire.sh > ${WRKSRC}/limewire
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/runLime.sh.sed ${PREFIX}/bin/limewire
-	@${MKDIR} ${JAR_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/*.jar ${WRKSRC}/MessagesBundle.properties \
-		${WRKSRC}/xml.war ${WRKSRC}/update.ver ${WRKSRC}/hashes ${JAR_DIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/limewire ${PREFIX}/bin/
+	${MKDIR} ${DATADIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DATAFILES} ${DATADIR}/
 
 .include <bsd.port.mk>
