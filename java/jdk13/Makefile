@@ -196,9 +196,9 @@ post-patch:
 .endif
 .endif
 
-.if defined(WITH_LINUX_BOOTSTRAP)
-# Some checks for bootstrapping with a Linux JDK
 pre-build:
+.if defined(WITH_LINUX_BOOTSTRAP)
+	# Some checks for bootstrapping with a Linux JDK
 	@if [ `${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/check_wrkdir_links.sh "${WRKDIRPREFIX}" "${LINUXBASE}" 2>/dev/null` ]; \
 	then \
 		${ECHO_MSG} "Please set WRKDIRPREFIX to something which doesn't"; \
@@ -216,6 +216,13 @@ pre-build:
 		exit 1; \
 	fi
 .endif
+	@if [ "${CFLAGS:S/mcpu=k6//}" != "${CFLAGS:S///}" -a \
+	      "`${CC} -dumpversion`" \< "3" ]; \
+	then \
+		${ECHO_MSG} "Please remove the -mcpu=k6 option from CFLAGS as this triggers"; \
+		${ECHO_MSG} "an internal compiler in GCC 2.95.x when compiling JDK ${JDK_VERSION}."; \
+		exit 1; \
+	fi
 
 do-build:
 	# Start of jdk build
