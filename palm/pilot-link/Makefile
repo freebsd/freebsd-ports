@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	pilot-link
-PORTVERSION=	0.11.7
-PORTREVISION=	2
+PORTVERSION=	0.11.8
+PORTREVISION=	1
 CATEGORIES=	palm comms tk83
 MASTER_SITES=	http://www.pilot-link.org/source/
 
@@ -23,9 +23,9 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_PERL5=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
+CFLAGS+=	-I${LOCALBASE}/include
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-perl5=${PERL5} --with-libiconv=${LOCALBASE}
+CONFIGURE_ARGS+=--with-perl5=${PERL5} --with-libiconv=${LOCALBASE} --with-tclinclude=/usr/local/include/tcl8.3/ --with-tcl=/usr/local/lib/tcl8.3/ --program-transform-name= 
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .include "${.CURDIR}/manpages.mk"
