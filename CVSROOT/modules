@@ -10785,6 +10785,7 @@ tse3		ports/audio/tse3
 tsito		ports/games/tsito
 tsocks		ports/net/tsocks
 tt		ports/games/tt
+tta		ports/audio/tta
 ttcp		ports/benchmarks/ttcp
 ttf2pt1		ports/print/ttf2pt1
 ttfquery	ports/print/ttfquery
