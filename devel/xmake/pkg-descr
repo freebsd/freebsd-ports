@@ -1,0 +1,6 @@
+XMake is a make utility.  It is not compatible with other makes, but
+provides extended functionality over most standard makes.  Whereas most
+other makes have confusing rulesets and do not support many-to-many
+dependancy specifications, XMake has relatively few (basically no) rulesets
+and allows you to easily specify many:many dependencies.  This gives XMake
+the flexibility to deal with complex project hierarchies very simply.

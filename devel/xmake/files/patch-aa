@@ -1,0 +1,43 @@
+*** Makefile.orig	Thu Feb  6 08:00:00 1997
+--- Makefile	Mon Apr 28 13:47:27 1997
+***************
+*** 1,11 ****
+  
+  SRCS= include.c list.c main.c subs.c var.c wild.c
+  OBJS= include.o list.o main.o subs.o var.o wild.o
+! CFLAGS= -g -O2 -Wall -Wstrict-prototypes
+  LFLAGS=
+  EXE= xmake
+! IBDIR= /usr/local/bin
+! IMDIR= /usr/local/man/man1
+  
+  all: $(EXE)
+  
+--- 1,12 ----
+  
+  SRCS= include.c list.c main.c subs.c var.c wild.c
+  OBJS= include.o list.o main.o subs.o var.o wild.o
+! CFLAGS= -O2 -Wall
+  LFLAGS=
+  EXE= xmake
+! PREFIX?= /usr/local
+! IBDIR= ${PREFIX}/bin
+! IMDIR= ${PREFIX}/man/man1
+  
+  all: $(EXE)
+  
+***************
+*** 15,20 ****
+  clean:
+  	rm -f $(OBJS) $(EXE)
+  
+! install: all
+! 	install -c -s -m 755 $(EXE) $(IBDIR)/$(EXE)
+! 
+--- 16,21 ----
+  clean:
+  	rm -f $(OBJS) $(EXE)
+  
+! install:
+! 	install -c -s -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} $(EXE) $(IBDIR)
+! 	install -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE} xmake.1 $(IMDIR)
