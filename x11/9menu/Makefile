@@ -8,7 +8,7 @@
 PORTNAME=	9menu
 PORTVERSION=	1.6
 CATEGORIES=	x11-wm plan9
-MASTER_SITES=	ftp://quenix.dyndns.org/freebsd/ \
+MASTER_SITES=	http://quenix.ca.tc/freebsd/ \
 		http://mitglied.lycos.de/buran/linux/soft/9menu/
 EXTRACT_SUFX=	.shar.gz
 
