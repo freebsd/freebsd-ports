@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Archive
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	ports@oven.org
 COMMENT=	Perl module for creation and manipulation of tar files
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib

@@ -12,7 +12,7 @@ MASTER_SITES=	http://farm9.org/Cryptcat/
 DISTNAME=	cryptcat_linux2
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	ports@oven.org
 COMMENT=	Standard netcat enhanced with twofish encryption
 
 EXTRACT_AFTER_ARGS=	| ${PAX} -r

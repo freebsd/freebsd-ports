@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PORTREVISION=	1
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	ports@oven.org
 COMMENT=	Library for manipulating ID3v1/v1.1 and ID3v2 tags
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv

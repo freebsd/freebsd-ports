@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
 		http://monkey.org/~pilot/arirang/
 MASTER_SITE_SUBDIR=	UNIX/cgi-scanners
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	ports@oven.org
 COMMENT=	Powerful webserver security scanner
 
 do-install:

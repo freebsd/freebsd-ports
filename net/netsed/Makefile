@@ -14,7 +14,7 @@ MASTER_SITES=	http://dione.ids.pl/~lcamtuf/ \
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	ports@oven.org
 COMMENT=	Alters the contents of packets in real-time
 
 WRKSRC=		${WRKDIR}

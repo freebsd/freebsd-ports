@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/mksunbootcd/
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	ports@oven.org
 COMMENT=	Makes ISO images suitable to boot on sparc systems
 
 MAN1=		mksunbootcd.1
