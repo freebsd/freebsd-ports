@@ -1,11 +1,16 @@
---- ../sw/source/filter/ww8/ww8scan.cxx.orig	Wed Sep  3 04:12:28 2003
-+++ ../sw/source/filter/ww8/ww8scan.cxx	Wed Sep  3 04:12:49 2003
-@@ -163,7 +163,7 @@
-     {
-         ASSERT(mnNoElems && pWwSprmTab, "WW8: empty Array: Don't do that");
-         std::sort(mpWwSprmTab, mpWwSprmTab + mnNoElems);
--#if OSL_DEBUG_LEVEL > 1
-+#if OSL_DEBUG_LEVEL > 10 // XXX pass compilation with WITH_DEBUG=2
-         bool bBroken=false;
-         rtl::OUString sError;
-         const C *pIter = mpWwSprmTab;
+--- ../sw/source/filter/ww8/ww8scan.cxx.orig 2003-12-17 19:32:50.000000000 +0100
++++ ../sw/source/filter/ww8/ww8scan.cxx	2004-01-06 06:29:48.000000000 +0100
+@@ -198,8 +198,13 @@
+                 ++pIter;
+         }
+         if (bBroken)
++#if defined( UNX ) && !defined( DBG_UTIL )
++            DBG_ERROR(rtl::OUStringToOString(sError, RTL_TEXTENCODING_ASCII_US));
++#else
+             DbgError(rtl::OUStringToOString(sError, RTL_TEXTENCODING_ASCII_US));
+ #endif
++
++#endif
+     }
+ 
+     //Find an entry, return its address if found and 0 if not
