@@ -18,12 +18,13 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IA64 simulator (Intel(R) Architecture 64)
 
+BROKEN=		checksum mismatch
 USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501103
-BROKEN=		"does not build with latest gcc"
+BROKEN+=		"and does not build with latest gcc"
 .endif
 
 EXTRACT_BEFORE_ARGS=	-qLa
