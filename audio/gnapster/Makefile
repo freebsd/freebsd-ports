@@ -12,4 +12,6 @@ MASTER_SITES=	http://www.gotlinux.org/~jasta/files/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
+LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
+
 .include <bsd.port.mk>
