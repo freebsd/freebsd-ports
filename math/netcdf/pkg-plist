@@ -3,6 +3,7 @@ bin/ncgen
 include/ncvalues.h
 include/netcdf.h
 include/netcdf.hh
+include/netcdf.inc
 include/netcdfcpp.h
 lib/libnetcdf.a
 lib/libnetcdf.so
