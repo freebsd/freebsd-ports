@@ -7,6 +7,7 @@
 
 PORTNAME=	dcl
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	science graphics ruby
 MASTER_SITES=	http://www.gfd-dennou.org/arch/ruby/products/ruby-dcl/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -24,10 +25,10 @@ USE_RUBY_EXTCONF=	yes
 .if defined(WITH_GTK)
 PKGNAMESUFFIX=	-gtk
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
-		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
-		${X11BASE}/lib/libcdcl52.a:${PORTSDIR}/science/cdcl-gtk
+		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
+BUILD_DEPENDS=	${X11BASE}/lib/libcdcl52.a:${PORTSDIR}/science/cdcl-gtk
 .else
-RUN_DEPENDS+=	${X11BASE}/lib/libcdcl52.a:${PORTSDIR}/science/cdcl
+BUILD_DEPENDS=	${X11BASE}/lib/libcdcl52.a:${PORTSDIR}/science/cdcl
 .endif
 
 DOCS=		ChangeLog README ToDo
