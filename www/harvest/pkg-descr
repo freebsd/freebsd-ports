@@ -1,18 +1,17 @@
-Harvest is an integrated set of tools to gather, extract, organize, search,
-cache, and replicate relevant information across the Internet.  With modest
-effort users can tailor Harvest to digest information in many different
-formats, and offer custom search services on the Internet.  Moreover, Harvest
-makes very efficient use of network traffic, remote servers, and disk space.
+This is Harvest Indexer version 1.5, an updated version of the Indexing Code
+originally developed by the Harvest project (http://harvest.transarc.com/).
 
-You can learn more about and experiment with Harvest starting with the 
-Harvest Home Page at: 
+As they are no longer developing the code this version contains many 
+improvements and bug fixes over 1.4pl2, the last official release.
 
-	http://harvest.cs.colorado.edu/
+If you are interested in contributing patches or ideas, please mail
+harvest@tardis.ed.ac.uk.
 
-Source code fixes will occasionally be made available in the Fixes/
-directory.  Binary distributions will be rebuilt approximately every one
-to two months.  We urge you to compile the source code if you want to
-incorporate fixes immediately.
+Information on new releases will be sent to the harvest-announce mailing
+list. To subscribe send mail to harvest-announce-request@tardis.ed.ac.uk
+containing the message "subscribe"
 
-The Harvest documentation is on-line, and is available via the Home Page.
-For further assistance, see http://harvest.cs.colorado.edu/support.html.
+Bug reports can be mailed to harvest-bugs@tardis.ed.ac.uk
+
+Documentation: Information on this version of the Harvest software
+is available from http://www.tardis.ed.ac.uk/harvest/                                        
