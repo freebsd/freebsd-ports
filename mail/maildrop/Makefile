@@ -41,6 +41,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_GDBM)
 LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdb
 CONFIGURE_ARGS+=	--with-db=gdbm
@@ -112,4 +114,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
