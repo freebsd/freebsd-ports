@@ -856,6 +856,7 @@ cl-lml-clisp	ports/www/cl-lml-clisp
 cl-lml-cmucl	ports/www/cl-lml-cmucl
 cl-lml-sbcl	ports/www/cl-lml-sbcl
 cl-meta		ports/textproc/cl-meta
+cl-meta-clisp	ports/textproc/cl-meta-clisp
 cl-meta-cmucl	ports/textproc/cl-meta-cmucl
 cl-meta-sbcl	ports/textproc/cl-meta-sbcl
 cl-port		ports/devel/cl-port
