@@ -1,17 +1,17 @@
---- Makefile.in.orig	Fri Jul  9 22:17:31 1999
-+++ Makefile.in	Mon Jul 12 16:51:07 1999
-@@ -140,7 +140,7 @@
+--- Makefile.in.orig	Sun Mar 26 22:20:39 2000
++++ Makefile.in	Mon Mar 27 12:04:17 2000
+@@ -146,7 +146,7 @@
  perl_val = @perl_val@
  python_val = @python_val@
  
--SUBDIRS = intl po macros plugins src doc icons
-+SUBDIRS = intl po macros plugins src icons
+-SUBDIRS = intl po macros idl plugins wizards src graph doc icons
++SUBDIRS = intl po macros idl plugins wizards src graph icons
  
- EXTRA_DIST =  	gnumeric.desktop README HACKING gnumeric.spec.in 		gnumeric.keys.in gnumeric.mime $(appicon_DATA) 			gnumeric.gnorba
+ change_logs =  	OOChangeLog OChangeLog ChangeLog
  
-@@ -148,7 +148,7 @@
- appicondir = $(datadir)/pixmaps
- appicon_DATA = gnome-gnumeric.png gnome-gnumeric-xl.png
+@@ -158,7 +158,7 @@
+ appicon_DATA = gnome-gnumeric.png                gnome-application-x-gnumeric.png                gnome-application-x-xls.png
+ 
  
 -Applicationsdir = $(datadir)/gnome/apps/Applications
 +Applicationsdir = $(datadir)/apps/Applications
