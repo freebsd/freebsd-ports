@@ -31,6 +31,7 @@ OPTIONS=	CDPARANOIA "Ripper: Enable cdparanoia support" on \
 		BLADEENC "Encoder: bladeenc: Install audio/bladeenc" off \
 		FLAC "Encoder: flac: Install audio/flac" off \
 		GOGO "Encoder: gogo: Install audio/gogo" off \
+		MP3ENCODE "Encoder: mp3encode: Install audio/mp3encode" off \
 		VORBIS "Encoder: oggenc: Install audio/vorbis-tools" off
 
 .include <bsd.port.pre.mk>
@@ -68,6 +69,10 @@ RUN_DEPENDS+=	flac:${PORTSDIR}/audio/flac
 RUN_DEPENDS+=	gogo:${PORTSDIR}/audio/gogo
 .endif
 
+.if defined(WITH_MP3ENCODE)
+RUN_DEPENDS+=	encode:${PORTSDIR}/audio/mp3encode
+.endif
+
 .if !defined(WITHOUT_LAME)
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 .endif
@@ -90,5 +95,9 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/src/grip.c
+	@${REINPLACE_CMD} -e 's|{"xingmp3enc","-B %b -Q %w","mp3"},||; \
+		s|{"l3enc","-br %b %w %m","mp3"},||; \
+		s|mp3encode|encode|' \
+		${WRKSRC}/src/gripcfg.c
 
 .include <bsd.port.post.mk>
