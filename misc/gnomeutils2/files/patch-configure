@@ -1,36 +1,6 @@
---- configure.orig	Tue May  7 00:01:18 2002
-+++ configure	Tue May  7 00:01:47 2002
-@@ -7011,7 +7011,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpam -ldl $LIBS"
-+LIBS="-lpam $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line 7016 "configure"
- #include "confdefs.h"
-@@ -7066,7 +7066,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpam_misc -ldl -lpam $LIBS"
-+LIBS="-lpam_misc -lpam $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- #line 7071 "configure"
- #include "confdefs.h"
-@@ -7110,9 +7110,9 @@
- echo "$as_me:7110: result: $ac_cv_lib_pam_misc_pam_misc_setenv" >&5
- echo "${ECHO_T}$ac_cv_lib_pam_misc_pam_misc_setenv" >&6
- if test $ac_cv_lib_pam_misc_pam_misc_setenv = yes; then
--  PAM_LIBS="-ldl -lpam -lpam_misc"
-+  PAM_LIBS="-lpam -lpam_misc"
- else
--  PAM_LIBS="-ldl -lpam"
-+  PAM_LIBS="-lpam"
- fi
- 
- else
-@@ -8843,7 +8843,7 @@
+--- configure.orig	Sun May 12 01:05:15 2002
++++ configure	Sun May 12 01:08:20 2002
+@@ -8258,7 +8258,7 @@
  	< $srcdir/po/POTFILES.in > po/POTFILES
  
  cat >>confdefs.h <<EOF
@@ -38,4 +8,4 @@
 +#define GNOME_ICONDIR "${datadir}/pixmaps"
  EOF
  
- ac_config_files="$ac_config_files Makefile gnome-utils.spec po/Makefile.in idl/Makefile gcalc/Makefile gcalc/help/Makefile gcalc/help/C/Makefile logview/Makefile logview/gnome-system-log-security logview/pixmaps/Makefile logview/help/Makefile logview/help/C/Makefile gcharmap/Makefile gcharmap/src/Makefile gcharmap/pixmaps/Makefile gcharmap/help/Makefile gcharmap/help/C/Makefile gsearchtool/Makefile gsearchtool/help/Makefile gsearchtool/help/C/Makefile gdialog/Makefile gdialog/help/Makefile gdialog/help/C/Makefile gdictsrc/Makefile gdictsrc/help/Makefile gdictsrc/help/C/Makefile gfloppy/Makefile gfloppy/doc/Makefile gfloppy/doc/C/Makefile gfloppy/src/Makefile meat-grinder/Makefile meat-grinder/help/Makefile meat-grinder/help/C/Makefile exe-handler/Makefile"
+ ac_config_files="$ac_config_files Makefile gnome-utils.spec po/Makefile.in idl/Makefile gcalc/Makefile gcalc/help/Makefile gcalc/help/C/Makefile logview/Makefile logview/gnome-system-log-security logview/pixmaps/Makefile logview/help/Makefile logview/help/C/Makefile gcharmap/Makefile gcharmap/src/Makefile gcharmap/pixmaps/Makefile gcharmap/help/Makefile gcharmap/help/C/Makefile gsearchtool/Makefile gsearchtool/help/Makefile gsearchtool/help/C/Makefile gdialog/Makefile gdialog/help/Makefile gdialog/help/C/Makefile gdictsrc/Makefile gdictsrc/help/Makefile gdictsrc/help/C/Makefile gfloppy/Makefile gfloppy/doc/Makefile gfloppy/doc/C/Makefile gfloppy/src/Makefile meat-grinder/Makefile meat-grinder/help/Makefile meat-grinder/help/C/Makefile"

@@ -11,13 +11,10 @@ bin/gnome-settings-daemon
 bin/gnome-sound-properties
 bin/gnome-theme-properties
 bin/gnome-ui-properties
-etc/gconf/gconf.xml.defaults/apps/gnome_keybinding_properties/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/screensaver/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome_keybinding_properties/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/screensaver/%gconf.xml
-etc/gconf/schemas/apps_gnome_keybinding_properties.schemas
 etc/gconf/schemas/apps_gnome_settings_daemon_screensaver.schemas
 libdata/bonobo/servers/GNOME_SettingsDaemon.server
 share/gnome/applications/gnomecc.desktop
@@ -151,9 +148,8 @@ share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
 @dirrm share/gnome/control-center-2.0/pixmaps
 @dirrm share/gnome/control-center-2.0/interfaces
 @dirrm share/gnome/control-center-2.0/icons
+@dirrm share/gnome/applications
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/screensaver
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_keybinding_properties
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/screensaver
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome_keybinding_properties

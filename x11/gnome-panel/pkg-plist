@@ -10,8 +10,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck-applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck-applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/%gconf.xml
@@ -62,7 +60,6 @@ libdata/bonobo/servers/GNOME_FishApplet_Factory.server
 libdata/bonobo/servers/GNOME_GenUtilApplet_Factory.server
 libdata/bonobo/servers/GNOME_Panel.server
 libdata/pkgconfig/libpanelapplet-2.0.pc
-share/gnome/applications/gnome-panel-screenshot.desktop
 share/gnome/control-center-2.0/capplets/gnome-panel-preferences.desktop
 share/gnome/gen_util/pager.glade
 share/gnome/gen_util/tasklist.glade
@@ -212,7 +209,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/gnome-panel
 @dirrm share/gnome/control-center-2.0/capplets
 @dirrm share/gnome/control-center-2.0
-@dirrm share/gnome/applications
 @dirrm share/doc/panel-applet
 @dirrm include/panel-2.0
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/tasklist_applet/prefs
@@ -246,8 +242,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck-applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck-applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs
