@@ -1,0 +1,13 @@
+OASES is a general purpose computer code for modeling seismo-acoustic
+propagation in horizontally stratified waveguides using wavenumber
+integration in combination with the Direct Global Matrix solution technique.
+It is basically an upgraded version of SAFARI. Compared to SAFARI version 3.0
+distributed by SACLANTCEN , OASES provides improved numerical efficiency,
+and the global matrix mapping has been re-defined to ensure unconditional
+numerical stability in the few extreme cases where the original SAFARI has
+proved unstable. OASES is downward compatible with SAFARI, and the preparation
+of input files follows the guidelines of the SAFARI manual.
+However, there are several new options, and OASES is shipped with it's own,
+self-contained, documentation. 
+
+Latest OASES Release: Version 2.2 - 28 Mar 2002
