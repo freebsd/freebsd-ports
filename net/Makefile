@@ -108,6 +108,7 @@
     SUBDIR += docsis
     SUBDIR += domtools
     SUBDIR += driftnet
+    SUBDIR += dtcp
     SUBDIR += easysoap
     SUBDIR += echolot
     SUBDIR += echoping

@@ -1,0 +1,4 @@
+sbin/dtcpc
+sbin/dtcps
+etc/rc.d/dtcpc.sh.sample
+etc/rc.d/dtcps.sh.sample
