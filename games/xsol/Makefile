@@ -3,13 +3,14 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.8 1998/09/28 02:25:28 steve Exp $
+# $Id: Makefile,v 1.9 1999/03/08 21:03:08 steve Exp $
 #
 
 DISTNAME=       xsol-new
 PKGNAME=	xsol-2.1.1
 CATEGORIES=	games
-MASTER_SITES=	http://ftp.tu-clausthal.de/pub/unix.new/games/ \
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
+		http://ftp.tu-clausthal.de/pub/unix.new/games/ \
 		ftp://ftp.tu-clausthal.de/pub/unix.new/games/
 
 MAINTAINER=	swallace@FreeBSD.org
