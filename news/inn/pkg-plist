@@ -104,8 +104,9 @@ news/db/active
 news/db/active.times
 news/db/history
 news/db/history.dir
-news/db/history.hash
-news/db/history.index
+%%SUB_WITHOUT_TAGGED_HASH%%news/db/history.hash
+%%SUB_WITHOUT_TAGGED_HASH%%news/db/history.index
+%%SUB_WITH_TAGGED_HASH%%news/db/history.pag
 news/db/newsgroups
 news/doc/CONTRIBUTORS
 news/doc/GPL
@@ -186,15 +187,15 @@ news/lib/innshellvars.tcl
 news/lib/libinn.a
 news/lib/libinnhist.a
 news/lib/libstorage.a
-%%PORTDOCS%%share/doc/inn/CONTRIBUTORS
-%%PORTDOCS%%share/doc/inn/HACKING
-%%PORTDOCS%%share/doc/inn/INSTALL
-%%PORTDOCS%%share/doc/inn/LICENSE
-%%PORTDOCS%%share/doc/inn/MANIFEST
-%%PORTDOCS%%share/doc/inn/NEWS
-%%PORTDOCS%%share/doc/inn/README
-%%PORTDOCS%%share/doc/inn/TODO
-%%PORTDOCS%%@dirrm share/doc/inn
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/MANIFEST
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm news/tmp
 @dirrm news/spool/overview
 @dirrm news/spool/outgoing

@@ -1,12 +1,13 @@
 #!/bin/sh
 
 PKGNAME=$1
+[ ! -n PKG_PREFIX ] && exit 1
 
 case $2 in
     PRE-INSTALL)
 	;;
     POST-INSTALL)
-	NEWSBASE=${PKG_PREFIX:-/usr/local}/news
+	NEWSBASE=${PKG_PREFIX}/news
         install -d -o news -g news -m 755 \
 	    ${NEWSBASE}/run \
 	    ${NEWSBASE}/spool \
@@ -25,4 +26,3 @@ case $2 in
 	;;
 esac
 exit 0
-
