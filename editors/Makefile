@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.28 1996/04/09 11:00:13 asami Exp $
+# $Id: Makefile,v 1.29 1996/04/12 08:27:03 asami Exp $
 #
 
     SUBDIR += axe
@@ -14,6 +14,7 @@
     SUBDIR += vile
     SUBDIR += vim
     SUBDIR += xcoral
+    SUBDIR += xed
     SUBDIR += xemacs
     SUBDIR += xvile
 
