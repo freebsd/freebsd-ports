@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnuboy
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	emulators games
 MASTER_SITES=	http://gnuboy.unix-fu.org/src/ \
 		http://brightrain.aerifal.cx/~laguna/src/
