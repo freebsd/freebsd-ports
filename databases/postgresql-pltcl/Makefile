@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases tcl${TCLVERSION:S/.//}
 PKGNAMESUFFIX=	-pltcl
 
