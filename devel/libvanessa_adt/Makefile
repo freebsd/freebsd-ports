@@ -25,6 +25,5 @@ INSTALLS_SHLIB=	YES
 USE_LIBTOOL=	YES
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-WRKSRC=		${WRKDIR}/vanessa_adt-${PORTVERSION}
 
 .include <bsd.port.mk>
