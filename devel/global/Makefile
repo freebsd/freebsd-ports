@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.0.1
+PORTVERSION=	4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tamacom.com/global/
 
@@ -22,7 +22,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/global
 .for file in AUTHORS COPYING ChangeLog FAQ INSTALL LICENSE NEWS README \
-		THANKS VERSION
+		THANKS
 	${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/share/doc/global
 .endfor
 .endif
