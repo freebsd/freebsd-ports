@@ -1,17 +1,21 @@
---- Makefile	Mon Jun  5 01:37:50 2000
-+++ Makefile.new	Fri Jun  9 17:48:47 2000
-@@ -1,4 +1,4 @@
--CC      =	gcc
-+CC      ?=	gcc
- INSTALL	=	install
+--- Makefile.orig	Thu Jun 15 12:17:14 2000
++++ Makefile	Tue Jun 20 12:28:02 2000
+@@ -6,7 +6,7 @@
  
- SOURCES =	monitord.c 
-@@ -13,7 +13,7 @@
+ TARGET =	monitord
  
- .c.o:
+-MANDIR = 	/usr/local/man
++MANDIR = 	$(PREFIX)/man
  
--	$(CC) -O3 -c -pipe -Wall $<
-+	$(CC) $(CFLAGS) -c -pipe -Wall $<
- 
- $(TARGET): $(OBJECTS)
+ .SUFFIXES:
+ .SUFFIXES: .c .o
+@@ -28,6 +28,6 @@
  	$(CC) $(OBJECTS) -o $(TARGET)
+ 
+ install:
+-	$(INSTALL) -cs $(TARGET) /usr/local/bin
+-	$(INSTALL) -c $(TARGET).conf /usr/local/etc
+-	$(INSTALL) -c $(TARGET).8 $(MANDIR)/man8
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(PREFIX)/bin
++	$(BSD_INSTALL_DATA) $(TARGET).conf $(PREFIX)/etc
++	$(BSD_INSTALL_MAN) -c $(TARGET).8 $(MANDIR)/man8

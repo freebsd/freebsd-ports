@@ -1,12 +1,12 @@
 # New ports collection makefile for:	monitord
-# Date created:				June 5, 2000
+# Date created:				5 June 2000
 # Whom:					walt
 #
 # $FreeBSD$
 #
 
 PORTNAME=	monitord
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.erudition.net/pub/monitord/
 
