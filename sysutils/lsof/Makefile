@@ -4,11 +4,11 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.24 1998/08/07 16:28:08 obrien Exp $
+# $Id: Makefile,v 1.25 1998/09/16 04:14:26 obrien Exp $
 #
 
-DISTNAME=	lsof_4.37_W
-PKGNAME=	lsof-4.37
+DISTNAME=	lsof_4.38_W
+PKGNAME=	lsof-4.38
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/patches/4.37/ \
@@ -16,8 +16,6 @@ MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.auscert.org.au/pub/mirrors/vic.cc.purdue.edu/lsof/  \
 		ftp://ftp.web.ad.jp/pub/UNIX/tools/lsof/  \
 		ftp://ftp.sunet.se/pub/unix/admin/lsof/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} freebsd_3.0_patch
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=     obrien@FreeBSD.org
 
@@ -54,6 +52,15 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/lsof
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@/bin/chmod 0444 ${PREFIX}/share/lsof/00*
+
+post-install:
+	@${ECHO} "************************************************************"
+	@${ECHO} "*                      W a r n i n g                       *"
+	@${ECHO} "* A more capable version of LSOF is built if you have      *"
+	@${ECHO} "* kernel source installed and /sys exists.                 *"
+	@${ECHO} "* If this is the case, please ensure /sys is consistant    *"
+	@${ECHO} "* with respect to your running kernel (i.e. not new than). *"
+	@${ECHO} "************************************************************"
 
 
 .include <bsd.port.mk>
