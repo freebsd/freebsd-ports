@@ -7,19 +7,20 @@
 
 PORTNAME=	fortune-mod-futurama
 PORTVERSION=	0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	http://www.netmeister.org/apps/
 
 MAINTAINER=	vs@FreeBSD.org
 COMMENT=	Compilation of quotes from the TV series "Futurama"
 
-NO_BUILD=	yes
-
 USE_BZIP2=	yes
 
 PLIST_FILES=	share/games/fortune/futurama share/games/fortune/futurama.dat
 PLIST_DIRS=	share/games/fortune share/games
+
+do-build:
+	@cd ${WRKSRC} && strfile futurama
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/games
