@@ -15,24 +15,29 @@ DISTNAME=	${PORTNAME}_feb11_2001
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free explicit/implicit Finite Element Program
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c \
-		${LOCALBASE}/lib/libf77blas.a:${PORTSDIR}/math/atlas
+BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c
 .ifdef WITH_THREADS
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu_mt.a:${PORTSDIR}/math/superlu_mt
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu
 .endif
+LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 MAKEFILE=	makefile
 
+GIDDIR?=	share/gid
+PLIST_SUB+=	GIDDIR=${GIDDIR}
+
+GID_PREFIX?=	${PREFIX}/${GIDDIR}/problemtypes
+
 .ifdef WITH_THREADS
-BLAS_LIBS=	-L${LOCALBASE}/lib -lptf77blas -latlas_r
+BLAS_LIBS?=	-L${LOCALBASE}/lib -lptf77blas -latlas_r
 SUPERLU=	superlu_mt
 ALL_TARGET=	freebsd_parallel
 .else
-BLAS_LIBS=	-L${LOCALBASE}/lib -lf77blas -latlas
+BLAS_LIBS?=	-L${LOCALBASE}/lib -lf77blas -latlas
 SUPERLU=	superlu
 ALL_TARGET=	freebsd_old
 .endif
@@ -63,10 +68,17 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tochnog ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKDIR}/tochnog/tools/aba2tn ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKDIR}/tochnog/tools/*.awk ${PREFIX}/bin
+	${MKDIR} ${GID_PREFIX}/tochnog.gid
+	${INSTALL_DATA} ${WRKDIR}/tochnog/gid/tochnog.gid/tochnog.cnd	\
+	  ${GID_PREFIX}/tochnog.gid
+	${INSTALL_DATA} ${WRKDIR}/tochnog/gid/tochnog.gid/tochnog.mat	\
+	  ${GID_PREFIX}/tochnog.gid
+	${INSTALL_SCRIPT} ${WRKDIR}/tochnog/gid/tochnog.gid/tochnog.ba*	\
+	  ${GID_PREFIX}/tochnog.gid
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/test
+	${MKDIR} ${EXAMPLESDIR}/test
 	@${RM} -f ${WRKDIR}/tochnog/test/*.orig
-	${INSTALL_DATA} ${WRKDIR}/tochnog/test/* ${DOCSDIR}/test
+	${INSTALL_DATA} ${WRKDIR}/tochnog/test/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
