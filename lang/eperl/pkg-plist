@@ -27,4 +27,6 @@ share/examples/eperl/demo.pp.phtml
 share/examples/eperl/demo.pp.iphtml
 share/examples/eperl/demo.table.phtml
 share/examples/eperl/demo.table.iphtml
+share/examples/eperl/demo.text.phtml
+share/examples/eperl/demo.text.iphtml
 @dirrm share/examples/eperl
