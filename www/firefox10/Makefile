@@ -44,7 +44,7 @@ LIBS+=			${PTHREAD_LIBS}
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
 LOCAL_PREFIX=		${PREFIX}/lib/${PORTNAME}
-MAKE_ARGS+=		-DXP_UNIX
+MAKE_ARGS+=		XP_UNIX=1
 
 .include <bsd.port.pre.mk>
 
