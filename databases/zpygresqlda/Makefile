@@ -16,6 +16,8 @@ MAINTAINER=	nbm@FreeBSD.org
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope
 LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 
+PYTHON_VERSION=	python1.5
+
 # You can change this in the environment
 SZOPEBASEDIR?=		www/Zope
 
