@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	anholt@FreeBSD.org
 COMMENT=	An IA-32 (x86) PC emulator that runs DOS, Win 95, and more
@@ -29,11 +28,15 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--disable-split-hd \
 		--enable-all-optimizations \
 		--with-x11 \
-		--enable-pci
+		--enable-pci \
+		--enable-sb16=freebsd \
+		--enable-ne2000 \
+		--enable-vbe
 
 CFLAGS+=	-fno-rtti -fno-exceptions -fomit-frame-pointer
 
-MAN1=		bochs.1 bximage.1
+MANCOMPRESSED=	yes
+MAN1=		bochs.1 bxcommit.1 bximage.1
 MAN5=		bochsrc.5
 
 .include <bsd.port.pre.mk>
@@ -65,10 +68,6 @@ CONFIGURE_ARGS+=	--disable-mmx
 CONFIGURE_ARGS+=	--with-term
 .endif
 
-.if defined(WITH_BOCHS_VESA)
-CONFIGURE_ARGS+=	--enable-vbe
-.endif
-
 .if defined(WITH_BOCHS_AMD64)
 CONFIGURE_ARGS+=	--enable-x86-64
 .endif
@@ -81,29 +80,10 @@ CONFIGURE_ARGS+=	--enable-debugger --enable-disasm
 CONFIGURE_ARGS+=	--enable-x86-debugger
 .endif
 
-.if defined(WITH_NE2000)
-CONFIGURE_ARGS+=	--enable-ne2000
-.endif
-
-.if defined(WITH_SOUND)
-CONFIGURE_ARGS+=	--enable-sb16=freebsd
-.endif
-
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-# Local variables
-#
-
-BIOS_DIR=	${DATADIR}/bios
-FONT_DIR=	${DATADIR}/font
-
-MKFONTDIR?=	mkfontdir
-
-# Pre-everything
-#
-
-pre-everything::
+pre-patch::
 	@${ECHO_MSG}
 .if !defined(WITH_BOCHS_CPU_LEVEL)
 	@${ECHO_MSG} "If you want to change the processor level to emulate (default is 5, aka Pentium)"
@@ -144,99 +124,28 @@ pre-everything::
 	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_BOCHS_AMD64=yes\""
 	@${ECHO_MSG}
 .endif
-.if !defined(WITH_NE2000)
-	@${ECHO_MSG} "If you want to compile with networking (ne2000) support."
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_NE2000=yes\""
-	@${ECHO_MSG}
-.endif
-.if !defined(WITH_SOUND)
-	@${ECHO_MSG} "If you want to compile with sound (blaster 16) support."
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_SOUND=yes\""
-.endif
 	@${ECHO_MSG}
 
-# Post-configure
-#
-
-post-patch: patch-bochsrc patch-mans patch-wrapper patch-pkgmessage
-
-patch-bochsrc:
+post-patch:
 	@${REINPLACE_CMD} -E ' \
-		s|^vgaromimage: bios/|vgaromimage: ${BIOS_DIR}/|; \
-		s|^romimage: file=bios/|romimage: file=${BIOS_DIR}/|; \
+		s|file=bios/|file=${DATADIR}/|; \
+		s|bios/VGABIOS|file=${DATADIR}/VGABIOS|; \
 		' ${WRKSRC}/.bochsrc
-
-patch-mans:
 	@${REINPLACE_CMD} -e ' \
 		s|/usr/local/share/doc/bochs|${DOCSDIR}|; \
 		' ${WRKSRC}/doc/man/*.1 ${WRKSRC}/doc/man/*.5
+	@${SED} 's|%%DOCSDIR%%|${DOCSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
-patch-wrapper:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|;s|%%X11BASE%%|${X11BASE}|; \
-		 s|%%FONT_DIR%%|${FONT_DIR}| \
-		' ${FILESDIR}/bochs.sh > ${WRKDIR}/bochs.sh
-
-patch-pkgmessage:
-	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
-
-# Post-build
+# Post-install
 #
 
-post-build: compress-font-file
-
-compress-font-file:
-	@${GZIP_CMD} < ${WRKSRC}/font/vga.pcf > ${WRKSRC}/font/vga.pcf.gz
-
-# Install
-#
-
-do-install: install-bins install-mans install-bochsrc \
-	    install-bios install-fonts install-docs
-
-install-bins:
-	@${INSTALL_PROGRAM} ${WRKSRC}/bochs ${PREFIX}/libexec/bochs.bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/bximage ${PREFIX}/bin
-
-install-mans:
-.for mansect in 1 5
-.for man in ${MAN${mansect}}
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/${man} \
-		${MAN${mansect}PREFIX}/man/man${mansect}
-.endfor
-.endfor
-
-install-bochsrc:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/.bochsrc ${DATADIR}/bochsrc.sample
-
-install-bios:
-	@${MKDIR} ${BIOS_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/bios/VGABIOS-* ${BIOS_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/bios/BIOS-* ${BIOS_DIR}
-
-install-fonts:
-	@${MKDIR} ${FONT_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/font/vga.pcf.gz ${FONT_DIR}
-	@${MKFONTDIR} ${FONT_DIR}
-
-install-docs:
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.txt ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/html
 	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${DOCSDIR}/html
-	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.gif ${DOCSDIR}/html
 .endif
-
-# Post-install
-#
-
-post-install: install-script display-message
-
-install-script:
-	@${INSTALL_SCRIPT} ${WRKDIR}/bochs.sh ${PREFIX}/bin/bochs
-
-display-message:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}

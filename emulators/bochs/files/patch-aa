@@ -1,9 +1,36 @@
-
-$FreeBSD$
-
---- .bochsrc.orig	Thu May 31 22:55:33 2001
-+++ .bochsrc	Mon Jun  4 10:24:44 2001
-@@ -116,8 +116,8 @@
+--- .bochsrc.orig	Sat Jan 17 15:04:24 2004
++++ .bochsrc	Sat Jan 17 15:13:21 2004
+@@ -66,7 +66,7 @@
+ # You can also use the environment variable $BXSHARE to specify the
+ # location of the BIOS.
+ #=======================================================================
+-romimage: file=$BXSHARE/BIOS-bochs-latest, address=0xf0000
++romimage: file=bios/BIOS-bochs-latest, address=0xf0000
+ #romimage: file=bios/BIOS-bochs-2-processors, address=0xf0000
+ #romimage: file=bios/BIOS-bochs-4-processors, address=0xf0000
+ #romimage: file=bios/rombios.bin, address=0xf0000
+@@ -105,9 +105,9 @@
+ # VGAROMIMAGE
+ # You now need to load a VGA ROM BIOS into C0000.
+ #=======================================================================
+-#vgaromimage: bios/VGABIOS-lgpl-latest
++vgaromimage: bios/VGABIOS-lgpl-latest
++#vgaromimage: bios/VGABIOS-elpin-2.40
+ #vgaromimage: bios/VGABIOS-elpin-2.40
+-vgaromimage: $BXSHARE/VGABIOS-elpin-2.40
+ 
+ #=======================================================================
+ # FLOPPYA:
+@@ -286,7 +286,7 @@
+ # 
+ # Default value are sync=none, time0=local
+ #=======================================================================
+-#clock: sync=none, time0=local
++clock: sync=realtime, time0=local
+ 
+ 
+ #=======================================================================
+@@ -309,8 +309,8 @@
  #   log: ./bochs.out
  #   log: /dev/tty
  #=======================================================================
@@ -13,4 +40,22 @@ $FreeBSD$
 +#log: bochsout.txt
  
  #=======================================================================
- # LOG CONTROLS
+ # LOGPREFIX:
+@@ -350,7 +350,7 @@
+ # cause bochs to become unstable.  The panic is a "graceful exit," so
+ # if you disable it you may get a spectacular disaster instead.
+ #=======================================================================
+-panic: action=ask
++panic: action=fatal
+ error: action=report
+ info: action=report
+ debug: action=ignore
+@@ -395,7 +395,7 @@
+ #   parport1: enabled=1, file="/dev/lp0"
+ #   parport1: enabled=0
+ #=======================================================================
+-parport1: enabled=1, file="parport.out"
++#parport1: enabled=1, file="parport.out"
+ 
+ #=======================================================================
+ # SB16:

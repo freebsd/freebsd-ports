@@ -1,6 +1,6 @@
 $FreeBSD$
---- debug/lexer.l.orig	Tue Apr 10 03:57:02 2001
-+++ debug/lexer.l	Sun May 20 13:25:29 2001
+--- bx_debug/lexer.l.orig	Tue Apr 10 03:57:02 2001
++++ bx_debug/lexer.l	Sun May 20 13:25:29 2001
 @@ -105,7 +105,7 @@
  \/[0-9]+                           { bxlval.sval = strdup(bxtext); return(BX_TOKEN_XFORMAT); }
  0x[0-9a-fA-F]+  { bxlval.uval = strtoul(bxtext+2, NULL, 16); return(BX_TOKEN_NUMERIC); }
