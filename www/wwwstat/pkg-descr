@@ -9,3 +9,5 @@ Copyright (c) 1994, 1996 Regents of the University of California.
     splitlog processes a sequence of httpd Common Logfile Format access_log
     files (or CLF with a one-field prefix) and splits the entries into
     separate files according to the requested URL and/or vhost prefix.
+
+WWW: http://ftp.ics.uci.edu/pub/websoft/wwwstat/
