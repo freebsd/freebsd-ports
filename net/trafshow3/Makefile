@@ -7,18 +7,23 @@
 
 PORTNAME=	trafshow
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.sasknow.com/pub/trafshow/ \
 		ftp://ftp.nsk.su/pub/RinetSoftware/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ryan@sasknow.com
-COMMENT=	Full screen visualization of the network traffic
+COMMENT=	Full screen visualization of network traffic
 
 .include <bsd.port.pre.mk>
+.if defined(WITH_TRAFSHOW_SLANG) || \
+    (exists(${LOCALBASE}/lib/libslang.a) && !defined(WITHOUT_TRAFSHOW_SLANG))
+LIB_DEPENDS=   slang.1:${PORTSDIR}/devel/libslang
+.else
 .if ${OSVERSION} < 400010
 LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
+.endif
 .endif
 
 USE_REINPLACE=	yes
