@@ -1,0 +1,54 @@
+bin/spline
+bin/double
+bin/ode
+bin/plot
+bin/tek2plot
+bin/graph
+share/ode/README
+share/ode/atwoods.ode
+share/ode/bead.ode
+share/ode/chem.ode
+share/ode/coupled.ode
+share/ode/ddho.ode
+share/ode/dynamo.ode
+share/ode/henon.ode
+share/ode/limitcycle.ode
+share/ode/lorenz.ode
+share/ode/lunar.sh
+share/ode/orbit.ode
+share/ode/population.ode
+share/ode/qcd.ode
+share/ode/rumor.ode
+share/ode/soliton.ode
+share/ode/viscous.ode
+share/libplot/README
+share/libplot/colors.txt
+share/libplot/demo-page
+share/libplot/hershey-demo.c
+share/libplot/hershey-fonts
+share/libplot/hershey-number
+share/libplot/hershey.bib
+share/libplot/hershey.doc
+share/libplot/kana.doc
+share/libplot/kanji.doc
+share/tek2plot/README
+share/tek2plot/aitest.tek
+share/tek2plot/dmerc.tek
+share/tek2plot/fotest.tek
+share/tek2plot/imtesth.tek
+share/tek2plot/karney.tek
+share/tek2plot/ocpred.tek
+share/tek2plot/scale.tek
+share/tek2plot/skymap.tek
+share/tek2plot/usmap.tek
+lib/libplot.so.1.0
+lib/libplot.a
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+include/plot.h
+@unexec install-info --delete --info-dir=/usr/local/info /usr/local/info/plotutils.info
+info/plotutils.info
+@exec install-info --info-dir=/usr/local/info /usr/local/info/plotutils.info
+@dirrm share/tek2plot
+@dirrm share/libplot
+@dirrm share/ode
