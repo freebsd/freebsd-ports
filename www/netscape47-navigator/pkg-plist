@@ -1,4 +1,4 @@
-bin/navigator-4.5
+bin/navigator-4.5.1
 @exec ln -sf %f %B/navigator-4
 @exec ln -sf navigator-4 %B/netscape
 @unexec rm -f %B/netscape
@@ -10,7 +10,7 @@ lib/netscape/XKeysymDB
 lib/netscape/plugins/libnullplugin.so
 lib/netscape/bookmark.htm
 lib/netscape/vreg
-lib/netscape/navigator-4.5.bin
+lib/netscape/navigator-4.5.1.bin
 lib/netscape/mailcap
 lib/netscape/registry
 lib/netscape/java/classes/ifc11.jar
