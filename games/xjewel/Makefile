@@ -1,7 +1,16 @@
+# New ports collection makefile for:    xjewel
+# Version required:     1.6
+# Date created:         22 November 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	xjewel-1.6
-DISTFILES=	xjewel-1.6.tar.z
-MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
 CATEGORIES+=	games
+MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/x11/
+DISTFILES=	xjewel-1.6.tar.z
+
 USE_IMAKE=	yes
 
 pre-install:

@@ -3,12 +3,14 @@
 # Date created:         3 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.3 1995/03/28 04:13:27 gpalmer Exp $
+# $Id: Makefile,v 1.4 1995/04/01 12:45:18 jkh Exp $
 #
 
 DISTNAME=       xinvaders
-MASTER_SITES=	ftp://romulus.ucs.uoknor.edu/Linux/sunsite/games/x11/action/
+PKGNAME=	xinvaders-1.1
 CATEGORIES+=	games
+MASTER_SITES=	ftp://romulus.ucs.uoknor.edu/Linux/sunsite/games/x11/action/
+
 USE_IMAKE=	yes
 
 .include <bsd.port.mk>
