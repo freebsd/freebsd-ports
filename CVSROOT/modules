@@ -1014,6 +1014,7 @@ cuecat		ports/misc/cuecat
 cups		ports/print/cups
 cups-base	ports/print/cups-base
 cups-lpr	ports/print/cups-lpr
+cups-pstoraster	ports/print/cups-pstoraster
 curl		ports/ftp/curl
 cursive		ports/games/cursive
 custom-emacs	ports/editors/custom-emacs
