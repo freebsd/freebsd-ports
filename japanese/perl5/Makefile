@@ -3,7 +3,7 @@
 # Date created:		7 January 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.13 1999/02/12 14:41:58 kuriyama Exp $
+# $Id: Makefile,v 1.14 1999/03/01 09:38:14 shige Exp $
 #
 
 DISTNAME=	perl5.005_02
@@ -42,16 +42,16 @@ MAINTAINER=	shige@FreeBSD.ORG
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-sde -Dprefix=${PREFIX} -Duseshrplib \
-			-Dlibperl=libperl.so.${PERL_SHLIBVER}
+			-Dlibperl=libperl.so.${JPERL_SHLIBVER}
 
-PERL_VERSION=	5.00502
-PERL_VER=	5.005
+JPERL_VERSION=	5.00502
+JPERL_VER=	5.005
 .if ${PORTOBJFORMAT} == "aout"
-PERL_SHLIBVER=	1.0
+JPERL_SHLIBVER=	1.0
 .else
-PERL_SHLIBVER=	1
+JPERL_SHLIBVER=	1
 .endif
-PLIST_SUB=	PERL_VERSION=${PERL_VERSION} PERL_VER=${PERL_VER}
+PLIST_SUB=	JPERL_VERSION=${JPERL_VERSION} JPERL_VER=${JPERL_VER}
 
 MAN1= 	a2p.1 c2ph.1 h2ph.1 h2xs.1 perl.1 perl5004delta.1 \
 	perlapio.1 perlbook.1 perlbot.1 perlbug.1 perlcall.1 \
@@ -108,22 +108,22 @@ MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 B.3 B::Asmdata.3 \
 	strict.3 subs.3 vars.3 \
 	I18N::Japanese.3
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}/
+MAN3PREFIX=	${PREFIX}/lib/perl5/${JPERL_VERSION}/
 
 test:
 	@(cd ${WRKSRC}; make test)
 
 post-install:
-	@strip ${PREFIX}/bin/perl${PERL_VERSION}
-	@strip ${PREFIX}/bin/sperl${PERL_VERSION}
+	@strip ${PREFIX}/bin/perl${JPERL_VERSION}
+	@strip ${PREFIX}/bin/sperl${JPERL_VERSION}
 	@${RM} ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
-	@${LN} -sf ${PREFIX}/bin/perl${PERL_VERSION} ${PREFIX}/bin/perl
-	@${LN} -sf ${PREFIX}/bin/perl${PERL_VERSION} ${PREFIX}/bin/perl5
-	@${LN} -fs ${PREFIX}/bin/perl${PERL_VERSION} ${PREFIX}/bin/jperl5
-	@${LN} -fs ${PREFIX}/bin/perl${PERL_VERSION} ${PREFIX}/bin/jperl${PERL_VERSION}
-	@${LN} -fs ${PREFIX}/bin/sperl${PERL_VERSION} ${PREFIX}/bin/suidperl
-	@${LN} -fs ${PREFIX}/bin/sperl${PERL_VERSION} ${PREFIX}/bin/jsuidperl
-	@${LN} -fs ${PREFIX}/lib/perl5/${PERL_VERSION}/i386-freebsd/CORE/libperl.so.${PERL_SHLIBVER} ${PREFIX}/lib/perl5/${PERL_VERSION}/i386-freebsd/CORE/libperl.so
+	@${LN} -sf ${PREFIX}/bin/perl${JPERL_VERSION} ${PREFIX}/bin/perl
+	@${LN} -sf ${PREFIX}/bin/perl${JPERL_VERSION} ${PREFIX}/bin/perl5
+	@${LN} -fs ${PREFIX}/bin/perl${JPERL_VERSION} ${PREFIX}/bin/jperl5
+	@${LN} -fs ${PREFIX}/bin/perl${JPERL_VERSION} ${PREFIX}/bin/jperl${JPERL_VERSION}
+	@${LN} -fs ${PREFIX}/bin/sperl${JPERL_VERSION} ${PREFIX}/bin/suidperl
+	@${LN} -fs ${PREFIX}/bin/sperl${JPERL_VERSION} ${PREFIX}/bin/jsuidperl
+	@${LN} -fs ${PREFIX}/lib/perl5/${JPERL_VERSION}/i386-freebsd/CORE/libperl.so.${JPERL_SHLIBVER} ${PREFIX}/lib/perl5/${JPERL_VERSION}/i386-freebsd/CORE/libperl.so
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
