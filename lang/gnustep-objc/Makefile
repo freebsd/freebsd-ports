@@ -16,7 +16,7 @@ WANT_THREADS_SUPPORT=	yes
 MASTERDIR?=	${.CURDIR}/../../lang/gcc32
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		%%PREFIX%%/lib ${TARGLIB}
-LDFLAGS+=		-L${LCOALBASE}/lib
+LDFLAGS+=		-L${LOCALBASE}/lib
 
 # does not build on:
 NOT_FOR_ARCHS=		amd64
