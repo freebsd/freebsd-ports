@@ -32,7 +32,7 @@ PORTDOCS=	api guide images index.html relnotes tooldocs
 do-install:
 	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/* ${DOCSDIR}
+	@${CP} -R ${WRKSRC}/* ${DOCSDIR}
 	@${ECHO} " [ DONE ]"
 
 .include <bsd.port.post.mk>
