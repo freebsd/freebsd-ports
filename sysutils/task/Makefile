@@ -22,6 +22,12 @@ MAN1=		blockcalc.1 dcalc.1 dcat.1 dls.1 dstat.1 ffind.1 \
 		find_file.1 find_inode.1 fls.1 fsstat.1 icat.1 ifind.1 \
 		ils.1 istat.1 mactime.1 unrm.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not build on FreeBSD 6.x"
+.endif
+
 do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
@@ -32,4 +38,4 @@ do-install:
 		icat fls fsstat icat ifind ils istat ${PREFIX}/bin
 	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
