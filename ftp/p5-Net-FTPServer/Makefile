@@ -8,6 +8,7 @@
 
 PORTNAME=	Net-FTPServer
 PORTVERSION=	1.118
+PORTREVISION=	1
 CATEGORIES=	ftp perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -20,7 +21,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Authen/PAM.pm:${PORTSDIR}/security/p5-A
 		${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource \
 		${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/${PERL_ARCH}/File/Sync.pm:${PORTSDIR}/devel/p5-File-Sync \
-		${SITE_PERL}/${PERL_ARCH}/IO/Dir.pm:${PORTSDIR}/devel/p5-IO \
 		${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
@@ -29,6 +29,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_REINPLACE=	yes
 MAKE_ENV+=	NOCONF=1
 PERL_CONFIGURE=	yes
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAN3=	Net::FTPServer.3 \
 	Net::FTPServer::DBeg1::DirHandle.3 \
@@ -48,25 +50,25 @@ MAN3=	Net::FTPServer.3 \
 	Net::FTPServer::RO::FileHandle.3 \
 	Net::FTPServer::RO::Server.3
 
+DOCS=	FAQ README TODO doc/*
+
 post-patch:
 	@${REINPLACE_CMD} -e "s/root,root/root,wheel/" \
 		-e "s,/usr/sbin,${PREFIX}/sbin," \
 		${WRKSRC}/Net-FTPServer.spec.PL
 	@${REINPLACE_CMD} -e "s/-g root/-g wheel/" \
-		-e "s,/usr/sbin,${PREFIX}/sbin," \
+		-e "s,$$.PREFIX./sbin,${PREFIX}/sbin," \
+		-e "s,$$.SITEPREFIX./sbin,${PREFIX}/sbin," \
 		${WRKSRC}/Makefile.PL
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/Net-FTPServer
-	${INSTALL_DATA} ${WRKSRC}/ftpd.conf \
-		${PREFIX}/share/examples/Net-FTPServer
+	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ftpd.conf ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in FAQ README TODO doc/*
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${PERL} -pi -e 's,PREFIX,${PREFIX},g' ${PKGMESSAGE}
+	@${PERL} -p -e 's,PREFIX,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
@@ -74,6 +76,8 @@ post-install:
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI-137
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Dir.pm:${PORTSDIR}/devel/p5-IO
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Dir.pm:${PORTSDIR}/devel/p5-IO
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
