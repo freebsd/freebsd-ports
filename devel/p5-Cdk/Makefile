@@ -9,7 +9,7 @@ PORTNAME=	Cdk
 PORTVERSION=	4.9.6
 PORTREVISION=	1
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://www.vexus.ca/release/CDK/
+MASTER_SITES=	http://www.vexus.ca/products/CDK/
 PKGNAMEPREFIX=	p5-
 DISTNAME=	cdkperl
 
