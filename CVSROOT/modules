@@ -4973,6 +4973,7 @@ p5-Lingua-EN-MatchNames	ports/textproc/p5-Lingua-EN-MatchNames
 p5-Lingua-EN-NameCase	ports/textproc/p5-Lingua-EN-NameCase
 p5-Lingua-EN-NameParse	ports/textproc/p5-Lingua-EN-NameParse
 p5-Lingua-EN-Nickname	ports/textproc/p5-Lingua-EN-Nickname
+p5-Lingua-EN-Numbers	ports/textproc/p5-Lingua-EN-Numbers
 p5-Lingua-EN-Numbers-Ordinate	ports/textproc/p5-Lingua-EN-Numbers-Ordinate
 p5-Lingua-EN-Sentence	ports/textproc/p5-Lingua-EN-Sentence
 p5-Lingua-Ispell	ports/textproc/p5-Lingua-Ispell
