@@ -3,7 +3,7 @@
 # Date created:		December 10, 1996
 # Whom:			1wardd@airmail.net
 #
-# $Id: Makefile,v 1.18 1998/05/25 07:17:00 tg Exp $
+# $Id: Makefile,v 1.19 1998/06/05 06:33:35 tg Exp $
 #
 
 DISTNAME=	lesstif-0.85
@@ -20,6 +20,30 @@ GNU_CONFIGURE=  yes
 # comment this and remove the strip statement in post-install for debugging
 CONFIGURE_ARGS=	--disable-debug
 USE_X11=	yes
+
+MAN1=	mwm.1 xmbind.1 lesstif.1
+MAN3=	XmClipboard.3 LessTifInternals.3 \
+	XmArrowButton.3 XmArrowButtonGadget.3 XmBulletinBoard.3 \
+	XmCascadeButton.3 XmCascadeButtonGCacheObj.3 XmCascadeButtonGadget.3 \
+	XmComboBox.3 XmCommand.3 XmDesktop.3 \
+	XmDialogShell.3 XmDialogShellExt.3 XmDisplay.3 \
+	XmDragContext.3 XmDragIcon.3 XmDragOverShell.3 \
+	XmDrawingArea.3 XmDrawnButton.3 XmDropSiteManager.3 \
+	XmDropTransfer.3 XmFileSelectionBox.3 XmForm.3 \
+	XmFrame.3 XmGadget.3 XmGrabShell.3 \
+	XmIconGCacheObj.3 XmIconGadget.3 XmLabel.3 \
+	XmLabelGCacheObj.3 XmLabelGadget.3 XmList.3 \
+	XmMainWindow.3 XmManager.3 XmMenuShell.3 \
+	XmMessageBox.3 XmNotebook.3 XmPanedWindow.3 \
+	XmPrimitive.3 XmProtocol.3 XmPushButton.3 \
+	XmPushButtonGCacheObj.3 XmPushButtonGadget.3 XmRowColumn.3 \
+	XmSash.3 XmScale.3 XmScreen.3 \
+	XmScrollBar.3 XmScrolledWindow.3 XmSelectionBox.3 \
+	XmSeparator.3 XmSeparatorGCacheObj.3 XmSeparatorGadget.3 \
+	XmSpinBox.3 XmTearOffButton.3 XmText.3 \
+	XmTextField.3 XmToggleButton.3 XmToggleButtonGCacheObj.3 \
+	XmToggleButtonGadget.3 XmVendorShellExt.3 XmWorld.3
+MAN5=	mwmrc.5
 
 .if defined(HAVE_MOTIF)
 IS_INTERACTIVE=	yes
