@@ -1,0 +1,139 @@
+@comment $FreeBSD$
+bin/lndtool
+include/libnetdude/0.6/libnd.h
+include/libnetdude/0.6/libnd_types.h
+include/libnetdude/0.6/libnd_debug.h
+include/libnetdude/0.6/libnd_macros.h
+include/libnetdude/0.6/libnd_filter.h
+include/libnetdude/0.6/libnd_filter_factory.h
+include/libnetdude/0.6/libnd_filter_registry.h
+include/libnetdude/0.6/libnd_globals.h
+include/libnetdude/0.6/libnd_init.h
+include/libnetdude/0.6/libnd_misc.h
+include/libnetdude/0.6/libnd_null_protocol.h
+include/libnetdude/0.6/libnd_packet.h
+include/libnetdude/0.6/libnd_packet_iterator.h
+include/libnetdude/0.6/libnd_packet_recycler.h
+include/libnetdude/0.6/libnd_plugin.h
+include/libnetdude/0.6/libnd_prefs.h
+include/libnetdude/0.6/libnd_protocol.h
+include/libnetdude/0.6/libnd_protocol_inst.h
+include/libnetdude/0.6/libnd_protocol_plugin.h
+include/libnetdude/0.6/libnd_protocol_registry.h
+include/libnetdude/0.6/libnd_raw_protocol.h
+include/libnetdude/0.6/libnd_registry.h
+include/libnetdude/0.6/libnd_tcpdump.h
+include/libnetdude/0.6/libnd_timestamp.h
+include/libnetdude/0.6/libnd_tpm.h
+include/libnetdude/0.6/libnd_tp.h
+include/libnetdude/0.6/libnd_trace.h
+include/libnetdude/0.6/protocols/fddi/libnd_fddi.h
+include/libnetdude/0.6/protocols/icmp/libnd_icmp.h
+include/libnetdude/0.6/protocols/ip/libnd_ip.h
+include/libnetdude/0.6/protocols/snap/libnd_snap.h
+include/libnetdude/0.6/protocols/tcp/libnd_tcp.h
+include/libnetdude/0.6/protocols/tcp/libnd_tcb.h
+include/libnetdude/0.6/protocols/udp/libnd_udp.h
+include/libnetdude/0.6/plugins/libnd_cksumfix.h
+include/libnetdude/0.6/plugins/libnd_bpf.h
+lib/libnetdude.so.0
+lib/libnetdude.so
+lib/libnetdude.la
+lib/libnetdude.a
+%%PORTDOCS%%%%DOCSDIR%%/images/caution.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/note.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/warning.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/images/traceparts1.png
+%%PORTDOCS%%%%DOCSDIR%%/images/traceparts2.png
+%%PORTDOCS%%%%DOCSDIR%%/a7079.html
+%%PORTDOCS%%%%DOCSDIR%%/a7083.html
+%%PORTDOCS%%%%DOCSDIR%%/a7089.html
+%%PORTDOCS%%%%DOCSDIR%%/a7154.html
+%%PORTDOCS%%%%DOCSDIR%%/api.html
+%%PORTDOCS%%%%DOCSDIR%%/c23.html
+%%PORTDOCS%%%%DOCSDIR%%/c393.html
+%%PORTDOCS%%%%DOCSDIR%%/c394.html
+%%PORTDOCS%%%%DOCSDIR%%/c489.html
+%%PORTDOCS%%%%DOCSDIR%%/c493.html
+%%PORTDOCS%%%%DOCSDIR%%/c494.html
+%%PORTDOCS%%%%DOCSDIR%%/c551.html
+%%PORTDOCS%%%%DOCSDIR%%/c83.html
+%%PORTDOCS%%%%DOCSDIR%%/c84.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-debug.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-filter-factory.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-filter-registry.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-filter.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-globals.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-init.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-macros.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-misc.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-null-protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-packet-iterator.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-packet-recycler.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-packet.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-plugin.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-prefs.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-protocol-inst.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-protocol-plugin.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-protocol-registry.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-raw-protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-tcpdump.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-timestamp.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-tp.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-tpm.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd-trace.html
+%%PORTDOCS%%%%DOCSDIR%%/libnetdude-libnd.html
+%%PORTDOCS%%%%DOCSDIR%%/index.sgml
+%%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
+share/libnetdude/0.6/protocols/libnd_arp.so
+share/libnetdude/0.6/protocols/libnd_arp.la
+share/libnetdude/0.6/protocols/libnd_arp.a
+share/libnetdude/0.6/protocols/libnd_ethernet.so
+share/libnetdude/0.6/protocols/libnd_ethernet.la
+share/libnetdude/0.6/protocols/libnd_ethernet.a
+share/libnetdude/0.6/protocols/libnd_fddi.so
+share/libnetdude/0.6/protocols/libnd_fddi.la
+share/libnetdude/0.6/protocols/libnd_fddi.a
+share/libnetdude/0.6/protocols/libnd_icmp.so
+share/libnetdude/0.6/protocols/libnd_icmp.la
+share/libnetdude/0.6/protocols/libnd_icmp.a
+share/libnetdude/0.6/protocols/libnd_ip.so
+share/libnetdude/0.6/protocols/libnd_ip.la
+share/libnetdude/0.6/protocols/libnd_ip.a
+share/libnetdude/0.6/protocols/libnd_sll.so
+share/libnetdude/0.6/protocols/libnd_sll.la
+share/libnetdude/0.6/protocols/libnd_sll.a
+share/libnetdude/0.6/protocols/libnd_snap.so
+share/libnetdude/0.6/protocols/libnd_snap.la
+share/libnetdude/0.6/protocols/libnd_snap.a
+share/libnetdude/0.6/protocols/libnd_tcp.so
+share/libnetdude/0.6/protocols/libnd_tcp.la
+share/libnetdude/0.6/protocols/libnd_tcp.a
+share/libnetdude/0.6/protocols/libnd_udp.so
+share/libnetdude/0.6/protocols/libnd_udp.la
+share/libnetdude/0.6/protocols/libnd_udp.a
+share/libnetdude/0.6/plugins/libnd_cksumfix.so
+share/libnetdude/0.6/plugins/libnd_cksumfix.la
+share/libnetdude/0.6/plugins/libnd_cksumfix.a
+share/libnetdude/0.6/plugins/libnd_bpf.so
+share/libnetdude/0.6/plugins/libnd_bpf.la
+share/libnetdude/0.6/plugins/libnd_bpf.a
+@dirrm include/libnetdude/0.6/protocols/fddi
+@dirrm include/libnetdude/0.6/protocols/icmp
+@dirrm include/libnetdude/0.6/protocols/ip
+@dirrm include/libnetdude/0.6/protocols/snap
+@dirrm include/libnetdude/0.6/protocols/tcp
+@dirrm include/libnetdude/0.6/protocols/udp
+@dirrm include/libnetdude/0.6/protocols
+@dirrm include/libnetdude/0.6/plugins
+@dirrm include/libnetdude/0.6
+@dirrm include/libnetdude
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/libnetdude/0.6/plugins
+@dirrm share/libnetdude/0.6/protocols
+@dirrm share/libnetdude/0.6
+@dirrm share/libnetdude

@@ -1,0 +1,6 @@
+The core of the Netdude framework and the place where the packet manipulations
+are performed. It allows you to implement trace file manipulations at a much
+higher level of abstraction than code written directly on top of the pcap
+library.
+
+WWW: http://netdude.sourceforge.net/

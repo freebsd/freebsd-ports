@@ -266,6 +266,7 @@
     SUBDIR += libicq2000
     SUBDIR += libnet
     SUBDIR += libnet-devel
+    SUBDIR += libnetdude
     SUBDIR += libnids
     SUBDIR += libnss-mysql
     SUBDIR += libosip
