@@ -6100,6 +6100,7 @@ pdumpfs		ports/sysutils/pdumpfs
 peacock		ports/www/peacock
 pear		ports/devel/pear
 pear-Console_Getopt	ports/devel/pear-Console_Getopt
+pear-Date	ports/devel/pear-Date
 pear-File	ports/sysutils/pear-File
 pear-Log	ports/sysutils/pear-Log
 pear-Mail_Mime	ports/mail/pear-Mail_Mime
