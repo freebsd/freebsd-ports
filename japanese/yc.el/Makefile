@@ -6,28 +6,21 @@
 #
 
 PORTNAME=	yc.el
-PORTVERSION=	3.5.8
+PORTVERSION=	4.0.1
 PORTEPOCH=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://www.ceres.dti.ne.jp/~knak/
-EXTRACT_SUFX=	.gz
+DISTNAME=	yc-${PORTVERSION}
 
 MAINTAINER=	t@nakao.org
 COMMENT=	Yet another Canna client for Emacs/XEmacs
 
-EXTRACT_AFTER_ARGS=	> yc.el
-NO_WRKSUBDIR=	yes
-
 EMACS_PORT_NAME?=	emacs21
 YC_LISPDIR=		${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/yc
 
-do-build:
-	${EMACS_CMD} -batch -f batch-byte-compile ${WRKSRC}/yc.el
-
-do-install:
-	${MKDIR} ${YC_LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/yc.el ${YC_LISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/yc.elc ${YC_LISPDIR}
+MAKE_ARGS+=	LISPDIR=${YC_LISPDIR}
+MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+MAKE_ARGS+=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
 
 post-install:
 	@${CAT} ${MASTERDIR}/pkg-message
