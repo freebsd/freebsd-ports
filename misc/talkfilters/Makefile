@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	talkfilters
-PORTVERSION=	2.2
+PORTVERSION=	2.3.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www2.dystance.net:8080/software/talkfilters/
 
@@ -33,10 +33,11 @@ MLINKS=	talkfilters.1 austro.1 \
 	talkfilters.1 jive.1 \
 	talkfilters.1 kraut.1 \
 	talkfilters.1 pansy.1 \
+	talkfilters.1 pirate.1 \
 	talkfilters.1 postmodern.1 \
 	talkfilters.1 redneck.1 \
 	talkfilters.1 valspeak.1 \
-	talkfilters.1 warez.1 
+	talkfilters.1 warez.1
 INFO=	talkfilters
 
 post-patch:
