@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Config-Auto
-PORTVERSION=	0.05
+PORTVERSION=	0.06
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
@@ -30,9 +30,6 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Config::Auto.3
 
-post-patch:
-	@${RM} ${WRKSRC}/lib/Config/Auto.pm.orig
-
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 
@@ -41,7 +38,6 @@ post-patch:
 		     -e '$$_ = "" if (/5.006/);' \
 		     -e '$$_ = "" if (/use warnings/);' \
 		 ${WRKSRC}/lib/Config/Auto.pm
-	@${RM} ${WRKSRC}/lib/Config/Auto.pm.orig
 .endif
 
 .if ${PERL_LEVEL} <= 500503
