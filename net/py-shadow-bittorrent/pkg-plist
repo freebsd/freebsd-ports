@@ -116,10 +116,14 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTorrent/zurllib.pyo
 %%PORTDOCS%%%%DOCSDIR%%/BUILD.windows.txt
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/IMPORTANT-multitracker-readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.unix.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-experimental.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/credits.txt
+%%PORTDOCS%%%%DOCSDIR%%/multitracker-spec.txt
+%%PORTDOCS%%%%DOCSDIR%%/webseed-spec.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/BitTorrent
