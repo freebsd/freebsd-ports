@@ -97,6 +97,7 @@
     SUBDIR += ruby-xmlparser
     SUBDIR += sablotron
     SUBDIR += sarep
+    SUBDIR += sdf
     SUBDIR += se-ispell
     SUBDIR += sgmlformat
     SUBDIR += sgmls
