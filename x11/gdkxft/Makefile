@@ -18,6 +18,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -34,9 +35,9 @@ MAN8=		gdkxft_sysinstall.8
 IGNORE=		"requires XFree86-4.x or later to run"
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
+.if ${HAVE_GNOME:Mlibglade}!="" && ${HAVE_GNOME:Mlibcapplet}!=""
+USE_GNOME+=	gnomeprefix libglade libcapplet
+PKGNAMESUFFIX=	-gnome
 .else
 CONFIGURE_ARGS+=	--without-gnome
 .endif
