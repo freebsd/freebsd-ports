@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zip
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.1
 CATEGORIES=	archivers ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ruby${PORTNAME}
@@ -23,7 +23,7 @@ USE_RUBY=	yes
 WRKSRC=		${WRKDIR}/ruby${PORTNAME}
 NO_BUILD=	yes
 
-DOCS=		ChangeLog NEWS README.txt
+DOCS=		ChangeLog NEWS README TODO
 EXAMPLES=	example.rb NEWS		# NEWS is used as test data
 
 do-install:
