@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mypaedia-fpw
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/mypaedia/
 DISTNAME=	mypaedia-fpw${PORTVERSION}-src
@@ -14,7 +14,6 @@ DISTNAME=	mypaedia-fpw${PORTVERSION}-src
 MAINTAINER=	taoka@FreeBSD.org
 
 BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
-		catdump:${PORTSDIR}/japanese/epwutil \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Jcode.pm:${PORTSDIR}/japanese/p5-Jcode
 
 IS_INTERACTIVE= YES
@@ -49,7 +48,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/mypaedia-fpw
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mypaedia-fpw
-.for file in README.TXT README.PKG AUTHORS COPYING ChangeLog GAIJI.TXT TOBEDONE NEWS
+.for file in AUTHORS COPYING ChangeLog GAIJI.TXT MYPAEDIA-format.txt README.PKG README.TXT TOBEDONE
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/mypaedia-fpw
 .endfor
 .endif
