@@ -1,0 +1,20 @@
+   The game is played with 72 stones. There are 36 different  stones,
+each  occuring  twice. The stones are shuffled in a pouch. The player
+takes an arbitrary  stone from the pouch and must put it on the board
+somewhere. 
+
+   The following rules must be followed:
+
+   1. The stone must touch at least one other stone.
+
+   2. If the stone touches only 1 other stone, the colours or symbols
+      must be the same.
+
+   3. If  the  stone  touches  2  other stones, it must have the same 
+      colour as one of them, and the same symbol as the other.
+
+   4. If  the  stone  touches  3  other stones, it must have the same
+      colour  as one of them, and the same symbol as the other 2, and 
+      vice versa.
+
+   The object of the game is to place all 72 stones on the board.
