@@ -59,7 +59,7 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 EOF
 
 if [ "$MUTT_PORTDOCS" = "yes" ]; then
-cat >> $tmp_first <<EOF
+  cat >> $tmp_first <<EOF
 share/doc/mutt/ABOUT-NLS
 share/doc/mutt/COPYRIGHT
 share/doc/mutt/ChangeLog
@@ -111,51 +111,48 @@ share/doc/mutt/samples/iconv/iconv.solaris-2.6-cjk.rc
 share/doc/mutt/samples/iconv/iconv.solaris-2.6.rc
 share/doc/mutt/samples/iconv/iconv.solaris-2.7.rc
 EOF
-fi
 
-if [ "$MUTT_NNTP" = "yes" ]; then
-echo "share/doc/mutt/ChangeLog.nntp" >> $tmp_first
-fi
-if [ "$MUTT_SGML" = "yes" ]; then
-echo "share/doc/mutt/manual.latin1" >> $tmp_first
-echo "share/doc/mutt/manual.ps" >> $tmp_first
-fi
-
-if [ "$MUTT_HTML" = "yes" ]; then
-  html=366
-  if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
-    html=$(($html + 5))
-  fi
   if [ "$MUTT_NNTP" = "yes" ]; then
-    html=$(($html + 22))
+    echo "share/doc/mutt/ChangeLog.nntp" >> $tmp_first
   fi
-  if [ "$MUTT_QUOTE_PATCH" = "yes" ]; then
-    html=$(($html + 2))
+  if [ "$MUTT_SGML" = "yes" ]; then
+    echo "share/doc/mutt/manual.latin1" >> $tmp_first
+    echo "share/doc/mutt/manual.ps" >> $tmp_first
   fi
-  if [ "$MUTT_EDIT_THREADS" = "yes" ]; then
-    html=$(($html + 3))
-  fi
-  if [ "$MUTT_SIGNATURE_MENU" = "yes" ]; then
-    html=$(($html + 1))
-  fi
-  if [ "$MUTT_IFDEF_PATCH" = "yes" ]; then
-    html=$(($html + 1))
-  fi
-  if [ "$MUTT_PGP_PATCH" = "yes" ]; then
-    html=$(($html + 2))
-  fi
-  echo "share/doc/mutt/html/manual.html" >> $tmp_first
-  echo "share/doc/mutt/html/manual_toc.html" >> $tmp_first 
-  i=1
-  while [ $i -le $html ]; do
-    echo "share/doc/mutt/html/manual$i.html" >> $tmp_first 
-    i=$(($i + 1))
-  done
-  echo "@dirrm share/doc/mutt/html" >> $tmp_last
-fi
 
-if [ "$MUTT_PORTDOCS" = "yes" ]; then
-cat >> $tmp_last <<EOF
+  if [ "$MUTT_HTML" = "yes" ]; then
+    html=366
+    if [ "$MUTT_COMPRESSED_FOLDERS" = "yes" ]; then
+      html=$(($html + 5))
+    fi
+    if [ "$MUTT_NNTP" = "yes" ]; then
+      html=$(($html + 22))
+    fi
+    if [ "$MUTT_QUOTE_PATCH" = "yes" ]; then
+      html=$(($html + 2))
+    fi
+    if [ "$MUTT_EDIT_THREADS" = "yes" ]; then
+      html=$(($html + 3))
+    fi
+    if [ "$MUTT_SIGNATURE_MENU" = "yes" ]; then
+      html=$(($html + 1))
+    fi
+    if [ "$MUTT_IFDEF_PATCH" = "yes" ]; then
+      html=$(($html + 1))
+    fi
+    if [ "$MUTT_PGP_PATCH" = "yes" ]; then
+      html=$(($html + 2))
+    fi
+    echo "share/doc/mutt/html/manual.html" >> $tmp_first
+    echo "share/doc/mutt/html/manual_toc.html" >> $tmp_first 
+    i=1
+    while [ $i -le $html ]; do
+      echo "share/doc/mutt/html/manual$i.html" >> $tmp_first 
+      i=$(($i + 1))
+    done
+    echo "@dirrm share/doc/mutt/html" >> $tmp_last
+  fi
+  cat >> $tmp_last <<EOF
 @dirrm share/doc/mutt/samples/iconv
 @dirrm share/doc/mutt/samples
 @dirrm share/doc/mutt
