@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.bochs.com/bochs/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	ports@FreeBSD.org
 
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
