@@ -15,8 +15,7 @@ echo "</head><body>" >>$of
 
 touch .stamp
 
-#find . -name '*.log' | xargs grep -l '^list of extra files and directories' | xargs-exec sed -n -e '/^checking installed files/d' -e 's:^extra[:] :{} :p' -e 's:\(.*\) extra$:{} \1:p' '{}' ';' | sort | sed -e 's/^..//' -e 's/\.log//' | awk '{print $1 " " $2}' > .tmp
-find . -name '*.log' | xargs grep -l '^list of extra files and directories' | sort | sed -e 's/^..//' > .tmp
+find . -name '*.log' | xargs grep -l '^list of.*file' | sort | sed -e 's/^..//' > .tmp
 if [ $(echo $(cat .tmp | wc -l)) = 0 ]; then
   echo "No extra files (yet)" >> $of
 else
@@ -25,11 +24,11 @@ else
   if [ -s cvsdone ]; then
     echo "(cvs update finished at: $(cat cvsdone))<br>" >> $of
   fi
-  echo "(timestamp of newest log: $(ls -rtTl | grep 'log$' | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}'))<br><br>" >> $of
+  echo "(timestamp of newest log: $(ls -rtTl | grep '\.log$' | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}'))<br><br>" >> $of
   echo "<table border=1>" >>$of
   echo "<tr><th>Log</th><th>Aff.</th><th>Size</th><th>Repository</th><th>Maintainer</th><th>Pathname</th></tr>" >>$of
   while [ $# -gt 0 ]; do
-    log=$(echo $1 | basename $1 .log)
+    log=$(basename $1 .log)
     echo -n "<tr><td valign=\"top\">" >>$of
     echo -n "<a name=\"$log.log\"></a>" >> $of
     echo -n "<a href=\"$log.log\">" >>$of
