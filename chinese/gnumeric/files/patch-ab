@@ -1,6 +1,6 @@
---- src/style.c.orig	Fri Dec 14 13:16:08 2001
-+++ src/style.c	Fri Dec 14 13:18:30 2001
-@@ -79,13 +79,13 @@
+--- src/style.c.orig	Tue Jan 29 14:17:24 2002
++++ src/style.c	Sun Aug 18 02:52:37 2002
+@@ -80,13 +80,13 @@
  		}
  
  		/* Worst case scenario */

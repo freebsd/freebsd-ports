@@ -1,6 +1,6 @@
---- src/item-edit.c.orig	Mon Oct 30 23:06:00 2000
-+++ src/item-edit.c	Mon Oct 30 23:08:03 2000
-@@ -223,6 +223,11 @@
+--- src/item-edit.c.orig	Thu Dec 27 06:10:52 2001
++++ src/item-edit.c	Sun Aug 18 02:52:37 2002
+@@ -240,6 +240,11 @@
  		return;
  	top_pos += item_edit->font->ascent;
  
