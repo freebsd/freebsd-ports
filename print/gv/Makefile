@@ -35,8 +35,13 @@ INFO=		gv
 PLIST_FILES=	bin/gv \
 		lib/X11/app-defaults/GV \
 		lib/X11/gv/gv_class.ad \
+		lib/X11/gv/gv_copyright.dat \
+		lib/X11/gv/gv_spartan.dat \
 		lib/X11/gv/gv_system.ad \
-		lib/X11/gv/gv_user.ad
+		lib/X11/gv/gv_user.ad \
+		lib/X11/gv/gv_user_res.dat
+
+PLIST_DIRS=	lib/X11/gv
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
