@@ -1,33 +1,35 @@
 # New ports collection makefile for:   pcsc-lite
 # Date created:                15 Oct 2001
-# Whom:                        Toni Andjelkovic <toni@ants.at>
+# Whom:                        Toni Andjelkovic <toni@soth.at>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2.b.3
 CATEGORIES=	devel security
-MASTER_SITES=	http://www.linuxnet.com/middleware/files/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/muscle/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b./beta/}
 
 MAINTAINER=	toni@soth.at
 COMMENT=	A smartcard development library
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.b.3//}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES+=	build/aclocal.m4
 
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS+=	--enable-debug \
-			--enable-syslog \
-			--enable-runpid=/var/run/pcscd.pid \
-			--enable-confdir=${PREFIX}/etc \
-			--disable-threadsafe
+CONFIGURE_ARGS+=--enable-debug \
+		--enable-syslog \
+		--enable-runpid=/var/run/pcscd.pid \
+		--enable-ipcdir=/var/tmp/ \
+		--enable-confdir=${PREFIX}/etc \
+		--enable-threadsafe
 PKGMESSAGE=	${WRKDIR}/pkg-message
-MAN1=		bundleTool.1
-MAN8=		pcscd.8
+MAN1=		formaticc.1
+MAN8=		bundleTool.8 pcscd.8
 
 post-install:
 .if !defined(NOPORTDOCS)

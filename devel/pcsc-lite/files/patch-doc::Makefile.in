@@ -1,13 +1,12 @@
---- doc/Makefile.in.orig	Mon Jul  1 18:28:39 2002
-+++ doc/Makefile.in	Sat Feb 22 05:16:02 2003
-@@ -73,8 +73,8 @@
- RANLIB = @RANLIB@
- ac_aux_dir = @ac_aux_dir@
- 
+--- doc/Makefile.in.bak Mon Mar 17 03:44:22 2003
++++ doc/Makefile.in     Mon Mar 17 03:44:42 2003
+@@ -69,3 +69,3 @@
+
 -datadir = $(prefix)/doc
--data_DATA = pcsc-lite-0.8.7.pdf muscle-api-1.3.0.pdf README.DAEMON pcscd.startup
 +#datadir = $(prefix)/doc
-+#data_DATA = pcsc-lite-0.8.7.pdf muscle-api-1.3.0.pdf README.DAEMON pcscd.startup
- man_MANS = pcscd.8 bundleTool.1
- EXTRA_DIST = $(data_DATA) $(man_MANS)
- mkinstalldirs = $(SHELL) $(top_srcdir)/build/mkinstalldirs
+ AMTAR = @AMTAR@
+@@ -98,3 +98,3 @@
+ install_sh = @install_sh@
+-data_DATA = pcsc-lite-0.8.7.pdf muscle-api-1.3.0.pdf README.DAEMON
++#data_DATA = pcsc-lite-0.8.7.pdf muscle-api-1.3.0.pdf README.DAEMON
+ man_MANS = pcscd.8 bundleTool.8 formaticc.1
