@@ -6,7 +6,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/Editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-db/UI/%gconf.xml
 etc/gconf/schemas/libgnomedb.schemas
-etc/gnome-vfs-2.0/modules/database-module.conf
 include/libgnomedb/gnome-db-browser.h
 include/libgnomedb/gnome-db-combo.h
 include/libgnomedb/gnome-db-config.h
@@ -30,14 +29,13 @@ include/libgnomedb/gnome-db-login-dialog.h
 include/libgnomedb/gnome-db-login.h
 include/libgnomedb/gnome-db-model.h
 include/libgnomedb/gnome-db-provider-selector.h
+include/libgnomedb/gnome-db-query-builder.h
 include/libgnomedb/gnome-db-report-editor.h
 include/libgnomedb/gnome-db-stock.h
 include/libgnomedb/gnome-db-table-editor.h
 include/libgnomedb/gnome-db-util.h
-include/libgnomedb/gnome-db-window.h
 include/libgnomedb/libgnomedb.h
 lib/bonobo/monikers/libmoniker_database.so
-lib/gnome-vfs-2.0/modules/libdatabase.so
 lib/libglade/2.0/libgnomedb.so
 lib/libgnomedb-2.a
 lib/libgnomedb-2.so
@@ -86,6 +84,7 @@ share/doc/libgnomedb/libgnomedb-gnomedblist.html
 share/doc/libgnomedb/libgnomedb-gnomedblogin.html
 share/doc/libgnomedb/libgnomedb-gnomedblogindialog.html
 share/doc/libgnomedb/libgnomedb-gnomedbproviderselector.html
+share/doc/libgnomedb/libgnomedb-gnomedbquerybuilder.html
 share/doc/libgnomedb/libgnomedb-gnomedbreporteditor.html
 share/doc/libgnomedb/libgnomedb-gnomedbtableeditor.html
 share/doc/libgnomedb/libgnomedb-gnomedbwindow.html
@@ -93,7 +92,7 @@ share/doc/libgnomedb/libgnomedb-introduction.html
 share/doc/libgnomedb/libgnomedb-libgnomedb.html
 share/doc/libgnomedb/libgnomedb-widgets.html
 share/gnome/control-center-2.0/capplets/database-properties.desktop
-share/gnome/gnome-db/ui/gnome-components-shell.xml
+share/gnome/gnome-db/ui/db-shell.xml
 share/gnome/mime-info/libgnomedb.keys
 share/gnome/mime-info/libgnomedb.mime
 share/gnome/omf/libgnomedb/libgnomedb-C.omf
@@ -166,6 +165,7 @@ share/locale/zh_CN/LC_MESSAGES/libgnomedb-2.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomedb-2.mo
 @dirrm share/gnome/pixmaps/libgnomedb
 @dirrm share/gnome/omf/libgnomedb
+@dirrm share/gnome/gnome-db/ui
 @dirrm share/gnome/gnome-db
 @dirrm share/doc/libgnomedb
 @dirrm include/libgnomedb
