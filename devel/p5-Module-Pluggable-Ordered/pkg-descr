@@ -1,0 +1,5 @@
+This module behaves exactly the same as Module::Pluggable, supporting
+all of its options, but also mixes in the call_plugins method to
+your class.
+
+WWW: http://search.cpan.org/dist/Module-Pluggable-Ordered/
