@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="78348ea2-ec91-11d8-b913-000c41e2cdad">
+    <topic>acroread uudecoder input validation error</topic>
+    <affects>
+      <package>
+	<name>acroread</name>
+	<range><lt>5.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An iDEFENSE security advisory reports:</p>
+	<blockquote cite="www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities">
+          <p>Remote exploitation of an input validation error in the
+            uudecoding feature of Adobe Acrobat Reader (Unix) 5.0
+            allows an attacker to execute arbitrary code.</p>
+          <p>The Unix and Linux versions of Adobe Acrobat Reader 5.0
+            automatically attempt to convert uuencoded documents
+            back into their original format.  The vulnerability
+            specifically exists in the failure of Acrobat Reader to
+            check for the backtick shell metacharacter in the filename
+            before executing a command with a shell. This allows a
+            maliciously constructed filename to execute arbitrary
+            programs.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0630</cvename>
+      <url>www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities</url>
+    </references>
+    <dates>
+      <discovery>2004-08-12</discovery>
+      <entry>2004-08-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12c7b7ae-ec90-11d8-b913-000c41e2cdad">
     <topic>popfile file disclosure</topic>
     <affects>
