@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://benedict.isomedia.com/homes/stevencooper/files/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop pager for the Fluxbox Slit
 
 USE_X_PREFIX=	yes
