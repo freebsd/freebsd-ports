@@ -1,9 +1,9 @@
---- configure.orig	Wed Jun  7 02:49:17 2000
-+++ configure	Tue Oct 10 12:34:46 2000
-@@ -2065,11 +2065,11 @@
+--- configure.orig	Mon Nov  6 19:46:11 2000
++++ configure	Sat Nov 11 16:40:59 2000
+@@ -2080,11 +2080,11 @@
  
  echo $ac_n "checking your gtk version""... $ac_c" 1>&6
- echo "configure:2068: checking your gtk version" >&5
+ echo "configure:2083: checking your gtk version" >&5
 -case `gtk-config --version` in
 +case `$GTK_CONFIG --version` in
    *.*.*)

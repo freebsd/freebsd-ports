@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	glademm
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.10
 CATEGORIES=	devel gnome
 MASTER_SITES=   http://home.wtal.de/petig/Gtk/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/5./5_/}
 
 MAINTAINER=     fujie@tk.elec.waseda.ac.jp
 
