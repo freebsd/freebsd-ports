@@ -1,7 +1,7 @@
-# New ports collection makefile for:   xsokoban
-# Version required:    3.3b
-# Date created:        16 November 1996
-# Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
+# New ports collection makefile for:	xsokoban
+# Version required:	3.3c
+# Date created:		16 November 1996
+# Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
@@ -18,6 +18,9 @@ USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xsokoban
 ALL_TARGET=	xsokoban
 MAN1=		xsokoban.1
+
+post-patch:
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/config.h
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/xsokoban/scores \

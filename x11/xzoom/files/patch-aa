@@ -1,0 +1,12 @@
+--- Imakefile.orig	Wed Apr 17 18:04:51 1996
++++ Imakefile	Sat Jan 15 00:00:00 2000
+@@ -19,7 +19,7 @@
+ 
+ NAME = xzoom
+ 
+-BINDIR = /usr/local/bin
+-MANPATH = /usr/local/man
++XCOMM BINDIR = /usr/local/bin
++XCOMM MANPATH = /usr/local/man
+ 
+ SimpleProgramTarget($(NAME))

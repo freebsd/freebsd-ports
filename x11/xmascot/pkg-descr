@@ -19,5 +19,4 @@ PNM	*.pnm	PPM, PGM, or PBM
 XMascot distinguishes images from their suffix and can load other image formats
 when {suffix}topnm, *topgm, or *topbm commands are found in your system.
 
-WWW: http://cclub.tutcc.tut.ac.jp:1080/xmascot/
-     ftp://cclub.tutcc.tut.ac.jp/pub/xmascot/
+WWW: http://cclub-flying.dsl.gr.jp/products/xmascot/

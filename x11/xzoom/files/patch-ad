@@ -1,0 +1,21 @@
+--- xzoom.man.orig	Thu Apr 18 01:37:48 1996
++++ xzoom.man	Sat Jan 15 00:00:00 2000
+@@ -3,7 +3,7 @@
+ .\"
+ .TH XZOOM 1X
+ .SH NAME
+-xzoom \- 
++xzoom \- magnify part of the screen, with fast updates
+ .SH SYNOPSIS
+ .B xzoom
+ [ \-display \fIdisplayname\fP ] [ \-mag \fImag\fP [ \fImag\fP ] ]
+@@ -84,6 +84,9 @@
+ .B d
+ sets the delay between frame updates. 
+ Built-in delays are 200, 100, 50, 10 and 0 ms.
++.TP 5
++.B g
++toggle grid on and off.
+ .TP 5
+ .B Mouse buttons
+ To set the location of the magnified are click the left mouse

@@ -135,6 +135,7 @@ lib/X11/xsokoban/screens/screen.88
 lib/X11/xsokoban/screens/screen.89
 lib/X11/xsokoban/screens/screen.9
 lib/X11/xsokoban/screens/screen.90
+@unexec rm -f %D/lib/X11/xsokoban/scores/scores 2>/dev/null || true
 @dirrm lib/X11/xsokoban/bitmaps/defaults
 @dirrm lib/X11/xsokoban/bitmaps
 @dirrm lib/X11/xsokoban/saves
