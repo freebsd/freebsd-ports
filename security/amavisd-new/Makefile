@@ -7,9 +7,11 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	20030616.p7
+PORTVERSION=	20030616.p8
 CATEGORIES=	security
-MASTER_SITES=	http://www.ijs.si/software/amavisd/
+MASTER_SITES=   http://www.ijs.si/software/amavisd/ \
+		http://mirrors.catpipe.net/amavisd-new/ \
+		http://ftp.cfu.net/pub/amavisd-new/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
 
 MAINTAINER=	blaz@si.FreeBSD.org
