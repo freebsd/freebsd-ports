@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.82 1999/01/20 14:51:16 dirk Exp $
+# $Id: Makefile,v 1.83 1999/01/26 03:32:20 steve Exp $
 #
 
     SUBDIR += a2ps-a4
@@ -75,5 +75,8 @@
     SUBDIR += xmbibtex
     SUBDIR += xtem
     SUBDIR += yatex
+    SUBDIR += yatex-mule
+    SUBDIR += yatex-xemacs
+    SUBDIR += yatex-xemacs-mule
 
 .include <bsd.port.subdir.mk>
