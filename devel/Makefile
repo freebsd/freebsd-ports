@@ -611,6 +611,7 @@
     SUBDIR += p5-Date-Manip
     SUBDIR += p5-Date-Pcalc
     SUBDIR += p5-Date-Roman
+    SUBDIR += p5-Date-Set
     SUBDIR += p5-Date-Simple
     SUBDIR += p5-DateConvert
     SUBDIR += p5-DateTime
