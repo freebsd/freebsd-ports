@@ -1,10 +1,8 @@
-include/iiimf/iiimp/iiimp.h
-include/iiimf/iiimp/iiimp-opcode.h
-include/iiimf/iiimp/iiimp-keycode.h
-include/iiimf/iiimp/iiimp-data.h
-include/iiimf/iiimp/iiimp-character-subsets.h
-lib/libiiimp.so.0
-lib/libiiimp.so
 lib/libiiimp.a
-@dirrm include/iiimf/iiimp
-@unexec rmdir %D/include/iiimf 2>/dev/null || true
+lib/libiiimp.so
+lib/libiiimp.so.0
+include/iiimp-character-subsets.h
+include/iiimp-data.h
+include/iiimp-keycode.h
+include/iiimp-opcode.h
+include/iiimp.h

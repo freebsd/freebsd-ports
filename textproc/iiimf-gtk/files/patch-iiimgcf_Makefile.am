@@ -1,12 +1,20 @@
---- Makefile.am.orig	Tue Sep  7 22:44:25 2004
-+++ Makefile.am	Tue Sep  7 22:45:11 2004
-@@ -15,8 +15,7 @@
+--- iiimgcf/Makefile.am	Thu Jan 15 10:51:58 2004
++++ iiimgcf/Makefile.am	Thu Feb 17 22:05:59 2005
+@@ -9,14 +9,13 @@
+ moduledir = $(GTK2_LIBDIR)/gtk-2.0/$(GTK2_BINARY_VERSION)/immodules
+ 
+ im_iiim_la_CFLAGS = $(SHLIBCFLAGS) $(THREAD_CXX_CFLAGS) $(GTK_CFLAGS)
+-im_iiim_la_LDFLAGS = -rpath $(moduledir) -avoid-version -module -no-undefined
++im_iiim_la_LDFLAGS = -rpath $(moduledir) -avoid-version -module -no-undefined \
++		     -liiimcf -liiimp
+ 
+ im_iiim_la_SOURCES = IIIMGdkEventKey.c IIIMGdkEventKey.h \
                       gtkimcontextiiim.c gtkimcontextiiim.h \
                       imiiim.c imswitcher.c imaux.c
- im_iiim_la_LIBADD = $(X_LIBS) $(GTK_LIBS) \
+-im_iiim_la_LIBADD = $(X_LIBS) $(GTK_LIBS) \
 -                    $(IM_LIBDIR)/iiimcf/libiiimcf.la \
 -                    $(IM_LIBDIR)/iiimp/libiiimp.la
-+		    -L$(prefix)/lib -liiimcf -liiimp
++im_iiim_la_LIBADD = $(X_LIBS) $(GTK_LIBS)
  
  module_LTLIBRARIES = im-iiim.la
  

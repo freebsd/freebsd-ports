@@ -10,73 +10,60 @@ PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
-DISTNAME=	im-sdk
-DISTFILES=	${DISTNAME}-src-${IIIMF_VER}.tgz
+DISTNAME=	im-sdk-src-${IIIMF_VER}
+EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	Internet/Intranet Input Method Client Framework
 
 LIB_DEPENDS=	iiimp.0:${PORTSDIR}/textproc/iiimf-protocol-lib
 
-IIIMF_VER=	r12_0_1-svn1891
-WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}
-INSTALL_WRKSRC=	${WRKSRC}/lib/iiimcf
-USE_GMAKE=	yes
+IIIMF_VER=	r12_1-svn2002
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=  yes
+USE_GMAKE=	yes
+USE_GNOME=	intltool
 USE_ICONV=	yes
-USE_REINPLACE=	yes
-USE_AUTOCONF_VER=	259
-USE_AUTOHEADER_VER=	259
-USE_AUTOMAKE_VER=	19
-USE_LIBTOOL_VER=	15
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -liconv" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/iiimf
-DIRS=		lib/EIMIL lib/iiimcf
+WANT_AUTOCONF_VER=253
+WANT_AUTOHEADER_VER=253
+WANT_AUTOMAKE_VER=15
+WANT_LIBTOOL_VER=15
+
+WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}/lib/iiimcf
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME:S/src-//}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 503000
+IGNORE=         "It is supported on FreeBSD 5.3 and later"
+.endif
+
+.if ${ARCH} != "i386"
+IGNORE=	"${ARCH} is not support."
+.endif
+
+MAKE_ARGS+=	LIBTOOL="${LIBTOOL} --tag=CXX"
+UPDATE_ARGS+=	ACLOCAL=${ACLOCAL} AUTOMAKE=${AUTOMAKE} \
+		AUTOHEADER=${AUTOHEADER} AUTOCONF=${AUTOCONF} \
+		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE}
 
 post-patch:
-.for DIR in ${DIRS}
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
-		${WRKSRC}/${DIR}/configure.ac
-.endfor
-	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
-		${WRKSRC}/acfiles/im_common.m4
+		${WRKSRC}/../../acfiles/im_common.m4
 
 pre-configure:
-.for DIR in ${DIRS}
-	cd ${WRKSRC}/${DIR} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ../../acfiles
-	${TOUCH} ${WRKSRC}/${DIR}/config.h.in
-.endfor
-
-# XXX following are dup what bsd.*.mk do. how to deal this neatly?
-run-autotools:
-.for DIR in ${DIRS}
-	@(cd ${WRKSRC}/${DIR} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOMAKE} \
-		${AUTOMAKE_ARGS})
-	@(cd ${WRKSRC}/${DIR} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF} \
-		${AUTOCONF_ARGS})
-	@(cd ${WRKSRC}/${DIR} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTOHEADER} \
-		${AUTOHEADER_ARGS})
-.endfor
-
-patch-autotools:
-.for DIR in ${DIRS}
-	cd ${WRKSRC}/${DIR} && ${REINPLACE_CMD} -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
-		-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
-		-e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
-		${LIBTOOLFILES}
-.endfor
+	(cd ${WRKSRC}/../.. && ${GMAKE} ${UPDATE_ARGS} update-acfiles)
+	(cd ${WRKSRC}/../../acfiles/ && ${TOUCH} ltconfig)
 
 do-configure:
-.for DIR in ${DIRS}
-	cd ${WRKSRC}/${DIR} && ${SETENV} ${CONFIGURE_ENV} ${SH} configure ${CONFIGURE_ARGS}
-.endfor
+	(cd ${WRKSRC}/../EIMIL && ./autogen.sh)
+	(cd ${WRKSRC} && ./autogen.sh --prefix=${PREFIX})
 
-do-build:
-.for DIR in ${DIRS}
-	cd ${WRKSRC}/${DIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
-.endfor
+post-configure:
+	${REINPLACE_CMD} -e "s,\$${prefix}/var,/var,g" \
+		${WRKSRC}/Makefile
 
-.include <bsd.port.mk>
+pre-build:
+	(cd ${WRKSRC}/../EIMIL && ${GMAKE} ${MAKE_ARGS})
+
+.include <bsd.port.post.mk>

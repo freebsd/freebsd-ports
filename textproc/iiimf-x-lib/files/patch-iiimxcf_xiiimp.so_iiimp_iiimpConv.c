@@ -1,11 +1,11 @@
---- iiimp/iiimpConv.c.orig	Tue Sep  7 20:42:04 2004
-+++ iiimp/iiimpConv.c	Tue Sep  7 20:42:22 2004
-@@ -44,7 +44,7 @@
- #if defined(sun)
- #define USE_ICONV
- #else
--#define USE_ICONV
-+#define USE_CSCONV
- #endif
- #endif
- 
+--- iiimxcf/xiiimp.so/iiimp/iiimpConv.c	Wed Apr 28 18:28:59 2004
++++ iiimxcf/xiiimp.so/iiimp/iiimpConv.c	Wed Feb 16 20:41:07 2005
+@@ -68,7 +68,7 @@
+ #ifdef USE_CSCONV
+ #include <dlfcn.h>
+ #include "csconv.h"
+-#define CSC_PATH	"/usr/lib/im/csconv/csconv.so"
++#define CSC_PATH	"/usr/local/lib/im/csconv/csconv.so"
+ #define CSC_OPEN_LOCALE	"csconv_open_locale"
+ #define CSC_OPEN	"csconv_open"
+ #define CSC_CONV	"csconv"

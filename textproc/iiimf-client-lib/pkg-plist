@@ -1,4 +1,4 @@
-include/iiimf/iiimcf.h
-lib/libiiimcf.so.2
-lib/libiiimcf.so
 lib/libiiimcf.a
+lib/libiiimcf.so
+lib/libiiimcf.so.2
+include/iiimcf.h

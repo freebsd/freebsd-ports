@@ -1,3 +1,3 @@
-lib/im/xiiimp.so.2
 lib/im/xiiimp.so
-@unexec rmdir %D/lib/im 2>/dev/null || true
+lib/im/xiiimp.so.2
+@unexec rmdir %D/lib/im > /dev/null 2>&1 || true

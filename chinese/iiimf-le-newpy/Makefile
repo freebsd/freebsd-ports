@@ -10,54 +10,65 @@ PORTVERSION=	${IIIMF_VER:S/_/./g:C/-.*//}
 CATEGORIES=	chinese textproc
 MASTER_SITES=	http://www.openi18n.org/download/im-sdk/src/
 PKGNAMEPREFIX=	iiimf-
-DISTNAME=	im-sdk
-DISTFILES=	${DISTNAME}-src-${IIIMF_VER}.tgz
+DISTNAME=	im-sdk-src-${IIIMF_VER}
+EXTRACT_SUFX=	.tar.bz2
 
 MAINTAINER=	kcwu@csie.org
 COMMENT=	IIIMF New PinYin input method engine
 
 RUN_DEPENDS=	${LOCALBASE}/lib/im/htt:${PORTSDIR}/textproc/iiimf-server
 
-IIIMF_VER=	r12_0_1-svn1891
-WRKSRC=		${WRKDIR}/${DISTNAME}-${IIIMF_VER}/leif
-BUILD_WRKSRC=	${WRKSRC}/newpy
-INSTALL_WRKSRC=	${WRKSRC}/newpy
+IIIMF_VER=	r12_1-svn2002
 USE_REINPLACE=	yes
-USE_AUTOCONF_VER=	259
-USE_AUTOHEADER_VER=	259
-USE_AUTOMAKE_VER=	19
-USE_LIBTOOL_VER=	15
-AUTOMAKE_ARGS+=	--add-missing --copy --gnu
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=	yes
+USE_GNOME=	intltool
+WANT_AUTOCONF_VER=253
+WANT_AUTOHEADER_VER=253
+WANT_AUTOMAKE_VER=15
+WANT_LIBTOOL_VER=15
+
+WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}/leif
+PATCH_WRKSRC=	${WRKDIR}/${DISTNAME:S/src-//}
 
 .if !defined(WITHOUT_XAUX)
 USE_MOTIF=	yes
 PLIST_SUB+=	WANT_XAUX=""
-RUN_DEPENDS+=	${LOCALBASE}/csconv/csconv.so:${PORTSDIR}/textproc/iiimf-csconv
+RUN_DEPENDS+=	${LOCALBASE}/lib/im/csconv/csconv.so:${PORTSDIR}/textproc/iiimf-csconv
 .else
 CONFIGURE_ARGS+=--without-x
 PLIST_SUB+=	WANT_XAUX="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 503000
+IGNORE=		"It is supported on FreeBSD 5.3 and later"
+.endif
+
+.if ${ARCH} != "i386"
+IGNORE=	"${ARCH} is not support."
+.endif
+
+MAKE_ARGS+=	LIBTOOL="${LIBTOOL} --tag=CXX"
+UPDATE_ARGS+=	ACLOCAL=${ACLOCAL} AUTOMAKE=${AUTOMAKE} \
+		AUTOHEADER=${AUTOHEADER} AUTOCONF=${AUTOCONF} \
+		LIBTOOL=${LIBTOOL} LIBTOOLIZE=${LIBTOOLIZE}
+AUTOGEN_ARGS+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+		--prefix=${PREFIX} ${CONFIGURE_ARGS}
+
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
 		${WRKSRC}/../acfiles/im_common.m4 \
-		${WRKSRC}/configure.ac \
-		${WRKSRC}/newpy/NewPY.c \
-		${WRKSRC}/newpy/xaux/aux_so.c \
-		${WRKSRC}/newpy/xaux/aux_win.c
+		${WRKSRC}/../lib/CSConv/csconv.h
 
 pre-configure:
-	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ../acfiles
-	${TOUCH} ${WRKSRC}/config.h.in
-	cd ${WRKSRC} && ${LIBTOOLIZE} --copy --force --automake
+	(cd ${WRKSRC}/../ && ${GMAKE} ${UPDATE_ARGS} update-acfiles)
+	(cd ${WRKSRC}/../acfiles/ && ${TOUCH} ltconfig)
+	(cd ${WRKSRC}/ && ${TOUCH} ltconfig)
 
-.if !defined(WITHOUT_XAUX)
-post-build:
-	cd ${BUILD_WRKSRC}/xaux && ${MAKE} all
+do-configure:
+	(cd ${WRKSRC}/ && ./autogen.sh ${AUTOGEN_ARGS})
 
-post-install:
-	cd ${INSTALL_WRKSRC}/xaux && ${MAKE} install
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
