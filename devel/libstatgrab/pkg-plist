@@ -6,5 +6,5 @@ include/statgrab.h
 include/statgrab_deprecated.h
 lib/libstatgrab.a
 lib/libstatgrab.so
-lib/libstatgrab.so.5
+lib/libstatgrab.so.6
 libdata/pkgconfig/libstatgrab.pc

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libstatgrab
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
@@ -20,8 +20,8 @@ COMMENT=	Provides a useful interface to system statistics
 DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-USE_INC_LIBTOOL_VER=	13
-USE_GNOME=	gnomehack gnometarget pkgconfig lthack
+USE_LIBTOOL_VER=	15
+USE_GNOME=	gnomehack gnometarget pkgconfig
 
 MAN3=		sg_get_cpu_percents.3 sg_get_cpu_stats.3 \
 		sg_get_cpu_stats_diff.3 sg_get_disk_io_stats.3 \
