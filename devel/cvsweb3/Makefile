@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cvsweb
-PORTVERSION=	2.0.3
+PORTVERSION=	2.0.4
 CATEGORIES=	devel www
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.iDaemons.org/distfiles/
-MASTER_SITE_SUBDIR=	knu
+		http://people.FreeBSD.org/~scop/cvsweb/
+MASTER_SITE_SUBDIR=	scop
 
 MAINTAINER=	freebsd-cvsweb@FreeBSD.org
 
