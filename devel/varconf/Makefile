@@ -6,20 +6,15 @@
 #
 
 PORTNAME=	varconf
-PORTVERSION=	0.3.0
+PORTVERSION=	0.5.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ecs.soton.ac.uk/pub/worldforge/libs/varconf/ \
-		ftp://two.woovis.com/pub/worldforge/libs/varconf/ \
-		http://dreadnought.res.cmu.edu/worldforge/libs/varconf/ \
-		http://kafka.i-site.com/~novalis/mirrors/acorn/0.3/src/ \
-		http://65.100.132.89/wf/downloads/libs/varconf/
+MASTER_SITES=	ftp://victor.worldforge.org/pub/worldforge/libs/varconf/
 
 MAINTAINER=	lehmann@ans-netz.de
 
-LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++ \
-		Atlas.0:${PORTSDIR}/devel/atlas
+LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 
 USE_LIBTOOL=	YES
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+GNU_CONFIGURE=	YES
 
 .include <bsd.port.mk>
