@@ -19,7 +19,7 @@
      SOUNDS_DIR 			= $(XBOING_DIR)/sounds
      BACKUP_DIR 			= $(XBOING_DIR)/../backups
      HIGH_SCORE_FILE 	= $(XBOING_DIR)/.xboing.scr
-+#ifdef AlphaArchitecture
++#ifdef WITHOUT_AUDIO
      AUDIO_AVAILABLE 	= False
      AUDIO_SRC 			= audio/NOaudio.c
 +#else
