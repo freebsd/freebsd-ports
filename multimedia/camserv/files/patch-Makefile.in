@@ -1,0 +1,11 @@
+--- camserv/Makefile.in.orig	Sat Feb  7 00:23:59 2004
++++ camserv/Makefile.in	Sat Feb  7 00:24:04 2004
+@@ -85,7 +85,7 @@
+ datadir = @datadir@/camserv
+ 
+ CPPFLAGS =  -DDATDIR=\"${datadir}\" 
+-LDFLAGS =  -export-dynamic
++LDFLAGS =  -export-dynamic @LDFLAGS@
+ 
+ bin_PROGRAMS = camserv
+ camserv_LDADD = $(LIBLTDL) $(top_srcdir)/common/libcommon.a

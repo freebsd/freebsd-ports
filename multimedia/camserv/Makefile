@@ -6,40 +6,30 @@
 #
 
 PORTNAME=	camserv
-PORTVERSION=	0.42
+PORTVERSION=	0.5.0
+PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cserv.sourceforge.net/old/
 
 MAINTAINER=	chein@freebsd.org
 COMMENT=	Camserv is a free program to do streaming video via the web
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		Imlib2.2:${PORTSDIR}/graphics/imlib2 \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
-# Things that should get fixed
-#
-# imlib2 still needs to be ported
-# http://www.us.rasterman.com/files/imlib2-0.0.5.tar.gz
-# imlib2:${PORTSDIR}/graphics/imlib2
-#
-# gtk12 has broken includes ...
-# should look something like this :
-# include <gtk12/gdk/gdkprivate.h>
-# instead of <gdk/gdkprivate.h>
-
+USE_X_LIB=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+		-I${X11BASE}/include/gtk12 -I${X11BASE}/include/gdk-pixbuf-1.0 \
+		-I${LOCALBASE}/include/glib12" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-install:
-
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/camserv
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/camserv
-	${INSTALL_DATA} ${WRKSRC}/javascript.txt ${PREFIX}/share/doc/camserv
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/javascript.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
