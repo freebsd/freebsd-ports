@@ -1,5 +1,5 @@
---- configure.orig	Mon Jul  5 00:04:50 2004
-+++ configure	Tue Jul  6 12:56:33 2004
+--- configure.orig	Sun Oct 17 21:44:38 2004
++++ configure	Mon Dec 27 12:48:43 2004
 @@ -26348,13 +26348,15 @@
  # First of all, check if the user has set any of the PTHREAD_LIBS,
  # etcetera environment variables, and if threads linking works using
@@ -30,3 +30,12 @@
                  *solaris* | *-osf* | *-hpux*) flag="-D_REENTRANT";;
          esac
          echo "$as_me:$LINENO: result: ${flag}" >&5
+@@ -27570,7 +27572,7 @@
+ USE_LIBICAL="no"
+ OLD_LIBS="$LIBS"
+ OLD_CFLAGS="$CFLAGS"
+-LIBS="$LIBS $ICAL_LIBS -lpthread -lical"
++LIBS="$LIBS $ICAL_LIBS -L/usr/local %%PTHREAD_LIBS%% -lical"
+ CFLAGS="$CFLAGS $ICAL_CFLAGS"
+ echo "$as_me:$LINENO: checking whether libical is installed" >&5
+ echo $ECHO_N "checking whether libical is installed... $ECHO_C" >&6

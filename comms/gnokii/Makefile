@@ -43,6 +43,14 @@ WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/lib/libical.so.0)
+WITH_ICAL=	yes
+.endif
+
+.if defined(WITH_ICAL)
+LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
+.endif
+
 # If smsd is enabled check if MySQL or PostgreSQL are installed and
 # build the modules, no switches to make this port build those, if
 # you want them, just install them before this port. The port will
