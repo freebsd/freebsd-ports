@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/jakarta/jakarta-tomcat/release/v${PORTVERSION}/src/
 DISTNAME=	jakarta-tomcat-${PORTVERSION}-src
 
-MAINTAINER=	dirk@FreeBSD.org
+MAINTAINER=	znerd@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13 \
 		${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
