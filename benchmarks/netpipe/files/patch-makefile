@@ -1,0 +1,13 @@
+--- makefile.orig	Sun Oct 19 01:20:44 2003
++++ makefile	Sun Oct 19 01:20:53 2003
+@@ -20,8 +20,8 @@
+ #
+ ########################################################################
+ 
+-CC         = cc
+-CFLAGS     = -O 
++CC         ?= cc
++CFLAGS     ?= -O -pipe
+ SRC        = ./src
+ 
+ # For MPI, mpicc will set up the proper include and library paths
