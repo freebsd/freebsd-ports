@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	slrn
-PORTVERSION=	0.9.7.0
+PORTVERSION=	0.9.7.1
 CATEGORIES=	news ipv6
 MASTER_SITES=	ftp://slrn.sourceforge.net/pub/slrn/
-DISTNAME=	slrn-0.9.7.0a
+DISTNAME=	slrn-0.9.7.1
 
 MAINTAINER=	xaa+ports@timewasters.nl
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all slrnpull
 MAN1=		slrn.1
 
-CONFIGURE_ARGS=	--enable-ipv6
+CONFIGURE_ARGS=	--enable-ipv6 --disable-inews
 
 .if defined(WITH_SSL)
 USE_OPENSSL=	YES
@@ -33,12 +32,12 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/examples/slrn
 	${INSTALL_DATA} ${WRKSRC}/doc/slrn.rc ${PREFIX}/share/examples/slrn
 	@${MKDIR} ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/slrnpull/QUICK_INSTALL ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/slrnpull/README ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/slrnpull/score ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/slrnpull/slrn.rc ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/slrnpull/slrnpull.conf ${PREFIX}/share/examples/slrn/slrnpull
-	${INSTALL_DATA} ${WRKSRC}/slrnpull/slrnpull.sh ${PREFIX}/share/examples/slrn/slrnpull
+	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/README ${PREFIX}/share/examples/slrn/slrnpull
+	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/SETUP ${PREFIX}/share/examples/slrn/slrnpull
+	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/score ${PREFIX}/share/examples/slrn/slrnpull
+	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/slrn.rc ${PREFIX}/share/examples/slrn/slrnpull
+	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/slrnpull.conf ${PREFIX}/share/examples/slrn/slrnpull
+	${INSTALL_DATA} ${WRKSRC}/doc/slrnpull/slrnpull.sh ${PREFIX}/share/examples/slrn/slrnpull
 	${INSTALL_MAN} ${WRKSRC}/doc/slrn.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
