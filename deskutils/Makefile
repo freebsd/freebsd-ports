@@ -21,6 +21,7 @@
     SUBDIR += glabels
     SUBDIR += gmcal
     SUBDIR += gnofin
+    SUBDIR += gnomeblog
     SUBDIR += gnomepim
     SUBDIR += gnomeutils2
     SUBDIR += gnotime

@@ -1,0 +1,14 @@
+gnome-blog lets you post to bloggerAPI and MetaWeblog compatible blogs
+including blogger.com, blogspot.com, advogato.org, pyblosxom, moveable-type.
+
+Features:
+
+* Operates as a panel object ("applet") or a standalone application
+* Clean interface doesn't get in the way of what you're writing
+* WYSIWYG styled text support
+* Entries can be written gradually over the course of a day, popping
+  gnome blog open and closed as you have thoughts to jot down and
+  then posting at the end of the day
+* Supports many different kinds of blogs
+
+WWW: http://www.gnome.org/~seth/gnome-blog/
