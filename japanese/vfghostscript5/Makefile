@@ -1,13 +1,12 @@
 # New ports collection makefile for: Japanese Aladdin ghostscript + vector font library(FreeType)
-# Version required:	5.10
 # Date created:		26 Aug 1997
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ghostscript-5.10
-PKGNAME=	ja-vfghostscript-5.10
+PORTNAME=	vfghostscript
+PORTVERSION=	5.10
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/ \
 		ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
@@ -23,31 +22,32 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/ \
 		http://itohws03.ee.noda.sut.ac.jp/~matsuda/VFlib-FT/ \
 		http://www.necs.co.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
-		http://www.aial.hiroshima-u.ac.jp/~sakai/Linux/gs5.10/ \
+		http://www.aial.hiroshima-u.ac.jp/~sakai/Linux/gs${PORTVERSION}/ \
 		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/ \
 		ftp://ftp.humblesoft.com/pub/
 DISTFILES=	${GS_SOURCES} ${GS_DRIVERS} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
+DISTNAME=	ghostscript-${PORTVERSION}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
-EXTRACT_ONLY=	ghostscript-5.10.tar.gz jpegsrc.v6a.tar.gz libpng-0.96.tgz
-WRKSRC=		${WRKDIR}/gs5.10
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} jpegsrc.v6a.tar.gz libpng-0.96.tgz
+WRKSRC=		${WRKDIR}/gs${PORTVERSION}
 MAKEFILE=	unix-gcc.mak
 MAKE_FLAGS=	prefix=${PREFIX} zlibc_=-lz CFLAGS="${CFLAGS}" -f
 MAN1=		gs.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 pdf2dsc.1
 
 CFLAGS+=	-DA4
-GSINST_DIR=	${PREFIX}/share/ghostscript/5.10vflib
+GSINST_DIR=	${PREFIX}/share/ghostscript/${PORTVERSION}vflib
 DOC_DIR=	${GSINST_DIR}/doc
 PRINTER=	${WRKSRC}/jp-printers
-GS_SOURCES=	ghostscript-5.10.tar.gz
+GS_SOURCES=	${DISTNAME}.tar.gz
 GS_SOURCES+=	jpegsrc.v6a.tar.gz
 GS_SOURCES+=	libpng-0.96.tgz
-GS_DRIVERS=	gs5.10-vflib-1.2.tar.gz
-GS_DRIVERS+=	gs5.10-jpdf-0.2.tar.gz
-GS_DRIVERS+=	gs5.10-VFlibBM-PL2.diff.gz
+GS_DRIVERS=	gs${PORTVERSION}-vflib-1.2.tar.gz
+GS_DRIVERS+=	gs${PORTVERSION}-jpdf-0.2.tar.gz
+GS_DRIVERS+=	gs${PORTVERSION}-VFlibBM-PL2.diff.gz
 GS_DRIVERS+=	gdevlips-2.3.2-510.tar.gz
 GS_DRIVERS+=	gdevmjc-0.8.tar.gz
 GS_DRIVERS+=	gdev10v.tar.gz
@@ -62,7 +62,7 @@ GS_DRIVERS+=	epag-3.08.tar.gz
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
 GS_FONTS_STD=	ghostscript-fonts-std-5.50.tar.gz
-GS_FONTS_OTHER=	ghostscript-fonts-other-5.10.tar.gz
+GS_FONTS_OTHER=	ghostscript-fonts-other-${PORTVERSION}.tar.gz
 
 pre-fetch:
 .if !defined(PDFENCRYPT)
@@ -71,15 +71,15 @@ pre-fetch:
 .endif
 
 pre-patch:
-	@(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs5.10-vflib-1.2.tar.gz )
-	@(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs5.10-jpdf-0.2.tar.gz )
+	@(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs${PORTVERSION}-vflib-1.2.tar.gz )
+	@(cd ${WRKSRC} ; tar xzf ${DISTDIR}/gs${PORTVERSION}-jpdf-0.2.tar.gz )
 	@(cd ${WRKDIR} ; \
-	  ${PATCH} -p < ${WRKSRC}/gs5.10-vflib-1.2/gs5.10-vflib-1.2.diff \
+	  ${PATCH} -p < ${WRKSRC}/gs${PORTVERSION}-vflib-1.2/gs${PORTVERSION}-vflib-1.2.diff \
 		>/dev/null 2>&1)
 	@(cd ${WRKDIR} ; \
-	  ${PATCH} -p < ${WRKSRC}/gs5.10-jpdf-0.2/gs5.10-jpdf-0.2.diff \
+	  ${PATCH} -p < ${WRKSRC}/gs${PORTVERSION}-jpdf-0.2/gs${PORTVERSION}-jpdf-0.2.diff \
 		>/dev/null 2>&1)
-	@(cd ${WRKDIR} ;  zcat ${DISTDIR}/gs5.10-VFlibBM-PL2.diff.gz | \
+	@(cd ${WRKDIR} ;  zcat ${DISTDIR}/gs${PORTVERSION}-VFlibBM-PL2.diff.gz | \
 		${PATCH} -p >/dev/null 2>&1)
 
 post-patch:
@@ -106,7 +106,7 @@ post-patch:
 	  ${CP} gdevalps-0.2/gdevalps.c gdevalps-0.2/gdevalps.mak ${WRKSRC}; \
 	  ${CP} gdevmd2k-0.2a/gdevmd2k.c gdevmd2k-0.2a/gdevmd2k.mak ${WRKSRC}; \
 	  ${CP} gdevrpdl-1.2-510/gdevrpdl.c gdevrpdl-1.2-510/gdevrpdl.mak ${WRKSRC}; \
-	  ${PATCH} -d gdevnpdl < ${PRINTER}/gdevnpdl/gdevnpdl.patch-gs5.10 ; \
+	  ${PATCH} -d gdevnpdl < ${PRINTER}/gdevnpdl/gdevnpdl.patch-gs${PORTVERSION} ; \
 	  ${CP} gdevnpdl/gdevnpdl.c gdevnpdl/gdevnpdl.mak ${WRKSRC}; \
 	  )
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdev10v.mak.patch
@@ -137,11 +137,11 @@ post-install:
 	${INSTALL_PROGRAM} ${PRINTER}/epag-3.08/ert ${PREFIX}/bin
 	@strip ${PREFIX}/bin/gs
 	@( \
-	  ${CP} ${WRKSRC}/gs5.10-vflib-1.2/README ${DOC_DIR}/README.gs5.10-vflib ; \
-	  ${CP} ${WRKSRC}/gs5.10-vflib-1.2/README.CID ${DOC_DIR}/README.CID.gs5.10-vflib ; \
-	  ${CP} ${WRKSRC}/gs5.10-vflib-1.2/OLD-DOC/gs261d13-doc/* ${DOC_DIR} ; \
-	  ${CP} ${WRKSRC}/gs5.10-vflib-1.2/OLD-DOC/gs261j10-doc/* ${DOC_DIR} ; \
-	  ${CP} ${WRKSRC}/gs5.10-jpdf-0.2/README ${DOC_DIR}/README.gs5.10-jpdf ; \
+	  ${CP} ${WRKSRC}/gs${PORTVERSION}-vflib-1.2/README ${DOC_DIR}/README.gs${PORTVERSION}-vflib ; \
+	  ${CP} ${WRKSRC}/gs${PORTVERSION}-vflib-1.2/README.CID ${DOC_DIR}/README.CID.gs${PORTVERSION}-vflib ; \
+	  ${CP} ${WRKSRC}/gs${PORTVERSION}-vflib-1.2/OLD-DOC/gs261d13-doc/* ${DOC_DIR} ; \
+	  ${CP} ${WRKSRC}/gs${PORTVERSION}-vflib-1.2/OLD-DOC/gs261j10-doc/* ${DOC_DIR} ; \
+	  ${CP} ${WRKSRC}/gs${PORTVERSION}-jpdf-0.2/README ${DOC_DIR}/README.gs${PORTVERSION}-jpdf ; \
 	  ${CP} ${PRINTER}/gdev10v/gdev10v.jis ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevlips-2.3.2-510/Gdevlips.htm ${DOC_DIR} ; \
 	  ${CP} ${PRINTER}/gdevlips-2.3.2-510/gs_statd.dif ${DOC_DIR} ; \

@@ -1,17 +1,17 @@
 # New ports collection makefile for:	weblint97
-# Version required:	0.12
 # Date created:		27 Jun 1997
 # Whom:			Takayuki Ariga <a00821@cc.hc.keio.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	weblint-97-0.12
-PKGNAME=	ja-weblint97-0.12
+PORTNAME=	weblint97
+PORTVERSION=	0.12
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.sfc.keio.ac.jp/~mimasa/jweblint/ \
 		ftp://ftp.win.ne.jp/pub/network/www/weblint/ \
 		ftp://ftp.hipecs.hokudai.ac.jp/pub/network/WWW/contrib/
+DISTNAME=	weblint-97-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 

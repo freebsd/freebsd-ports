@@ -1,13 +1,12 @@
 # New ports collection makefile for:   xdvik + jp-patch
-# Version required:    22.15
 # Date created:        15 Jun 1998
 # Whom:                Kentaro Inagaki <inagaki@tg.rim.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xdvik-22.15
-PKGNAME?=	ja-xdvik-vflib-22.15
+PORTNAME=	xdvik-vflib
+PORTVERSION=	22.15
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.appi.keio.ac.jp/pub/xdvi/ \
 		ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
@@ -18,14 +17,14 @@ MASTER_SITES=	ftp://ftp.appi.keio.ac.jp/pub/xdvi/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/jvf/ \
 		ftp://ftp.tex.ac.uk/tex-archive/dviware/xdvik/ \
 		${MASTER_SITE_LOCAL}
-#DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+DISTNAME=	xdvik-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.appi.keio.ac.jp/pub/xdvi/ \
 		ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
 		ftp://komadori.planet.sci.kobe-u.ac.jp/pub/xdvi/ \
 		ftp://ftp.chem.eng.himeji-tech.ac.jp/pub/xdvi/ \
 		${MASTER_SITE_LOCAL}
-PATCHFILES=	xdvik-22.15-j1.03.patch.gz
+PATCHFILES=	${DISTNAME}-j1.03.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	inagaki@tg.rim.or.jp
@@ -111,6 +110,11 @@ MF_MODE=	${MAKETEX_MODE}
 .else
 MF_MODE=	${USEPK_MODE}
 CONFIGURE_ARGS+=--without-mktexpk-default
+.if ${FONTTYPE} == pkall
+PKGNAMESUFFIX=	-${FONTTYPE}
+.else
+PKGNAMESUFFIX=	-pk${BDPI}
+.endif
 .endif
 
 .BEGIN:

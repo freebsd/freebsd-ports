@@ -1,12 +1,10 @@
 # New ports collection makefile for:	ja-xv
-# Version required:	3.10a
 # Date created:		07 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAME=	ja-xv-3.10a
 CATEGORIES=	japanese graphics
 
 MAINTAINER=	shige@FreeBSD.org

@@ -1,13 +1,12 @@
 # New ports collection makefile for: word
-# Version required:	0.99.12
 # Date created:		30 August 1999
 # Whom:			sada
 #
 # $FreeBSD$
 #
 
-DISTNAME=	word-0.99.12
-PKGNAME=	ja-${DISTNAME}
+PORTNAME=	word
+PORTVERSION=	0.99.12
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.linet.gr.jp/~mituiwa/
 

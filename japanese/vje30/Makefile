@@ -1,16 +1,16 @@
 # New ports collection makefile for:	VJE-Delta 3.0
-# Version required:     3.0
 # Date created:		29 January 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vje-delta-3.0
-PKGNAME=	ja-vje-3.0
+PORTNAME=	vje
+PORTVERSION=	3.0
 CATEGORIES=	japanese
 MASTER_SITES=	file:${MOUNT_PT}/freebsd/
-EXTRACT_SUFX=	-${DISTOBJFORMAT}.tgz
+EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}-delta-${PORTVERSION}-${DISTOBJFORMAT}
 
 MAINTAINER=	knu@idaemons.org
 
