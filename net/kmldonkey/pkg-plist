@@ -27,8 +27,8 @@ include/kmldonkey/serverinfo.h
 include/kmldonkey/shareinfo.h
 lib/kde3/kcm_kcmdonkey.la
 lib/kde3/kcm_kcmdonkey.so
-lib/kde3/kded_mobilemule.la
-lib/kde3/kded_mobilemule.so
+lib/kde3/kded_kmldonkeyd.la
+lib/kde3/kded_kmldonkeyd.so
 lib/kde3/kio_mldonkey.la
 lib/kde3/kio_mldonkey.so
 lib/kde3/kmldonkey_debugpage.la
@@ -45,18 +45,35 @@ lib/libkmldonkeytools.so.0
 share/applnk/Internet/kmldonkey.desktop
 share/applnk/Settings/Network/kcmdonkey.desktop
 share/apps/kicker/applets/mldonkeyapplet.desktop
+share/apps/kmldonkey/eventsrc
 share/apps/kmldonkey/kmldonkeyui.rc
 share/apps/konqueror/servicemenus/ed2k_slurp.desktop
 share/apps/mldonkeyapplet/pics/mld-launchgui.png
 share/apps/mldonkeyapplet/pics/mld-mutedonkey.png
 share/apps/mldonkeyapplet/pics/mld-unmutedonkey.png
 share/doc/HTML/da/kmldonkey/common
+share/doc/HTML/da/kmldonkey/index.cache.bz2
 share/doc/HTML/da/kmldonkey/index.docbook
 share/doc/HTML/en/kmldonkey/common
+share/doc/HTML/en/kmldonkey/index.cache.bz2
 share/doc/HTML/en/kmldonkey/index.docbook
 share/doc/HTML/et/kmldonkey/common
+share/doc/HTML/et/kmldonkey/index.cache.bz2
 share/doc/HTML/et/kmldonkey/index.docbook
+share/doc/HTML/fr/kmldonkey/common
+share/doc/HTML/fr/kmldonkey/index.cache.bz2
+share/doc/HTML/fr/kmldonkey/index.docbook
+share/doc/HTML/it/kmldonkey/common
+share/doc/HTML/it/kmldonkey/index.cache.bz2
+share/doc/HTML/it/kmldonkey/index.docbook
+share/doc/HTML/pt/kmldonkey/common
+share/doc/HTML/pt/kmldonkey/index.cache.bz2
+share/doc/HTML/pt/kmldonkey/index.docbook
+share/doc/HTML/ru/kmldonkey/common
+share/doc/HTML/ru/kmldonkey/index.cache.bz2
+share/doc/HTML/ru/kmldonkey/index.docbook
 share/doc/HTML/sv/kmldonkey/common
+share/doc/HTML/sv/kmldonkey/index.cache.bz2
 share/doc/HTML/sv/kmldonkey/index.docbook
 share/icons/hicolor/128x128/apps/kmldonkey.png
 share/icons/hicolor/128x128/apps/mldonkey.png
@@ -70,8 +87,31 @@ share/icons/hicolor/48x48/apps/kmldonkey.png
 share/icons/hicolor/48x48/apps/mldonkey.png
 share/icons/hicolor/64x64/apps/kmldonkey.png
 share/icons/hicolor/64x64/apps/mldonkey.png
+share/locale/ca/LC_MESSAGES/kmldonkey.mo
+share/locale/da/LC_MESSAGES/kmldonkey.mo
+share/locale/de/LC_MESSAGES/kmldonkey.mo
+share/locale/en_GB/LC_MESSAGES/kmldonkey.mo
+share/locale/es/LC_MESSAGES/kmldonkey.mo
+share/locale/et/LC_MESSAGES/kmldonkey.mo
+share/locale/fr/LC_MESSAGES/kmldonkey.mo
+share/locale/hu/LC_MESSAGES/kmldonkey.mo
+share/locale/is/LC_MESSAGES/kmldonkey.mo
+share/locale/it/LC_MESSAGES/kmldonkey.mo
+share/locale/nb/LC_MESSAGES/kmldonkey.mo
+share/locale/nl/LC_MESSAGES/kmldonkey.mo
+share/locale/pl/LC_MESSAGES/kmldonkey.mo
+share/locale/pt/LC_MESSAGES/kmldonkey.mo
+share/locale/pt_BR/LC_MESSAGES/kmldonkey.mo
+share/locale/ro/LC_MESSAGES/kmldonkey.mo
+share/locale/ru/LC_MESSAGES/kmldonkey.mo
+share/locale/sr/LC_MESSAGES/kmldonkey.mo
+share/locale/sv/LC_MESSAGES/kmldonkey.mo
+share/locale/ta/LC_MESSAGES/kmldonkey.mo
+share/locale/tr/LC_MESSAGES/kmldonkey.mo
+share/locale/xx/LC_MESSAGES/kmldonkey.mo
+share/locale/zh_CN/LC_MESSAGES/kmldonkey.mo
 share/services/ed2k.protocol
-share/services/kded/mobilemule.desktop
+share/services/kded/kmldonkeyd.desktop
 share/services/kmldonkey_debugpage.desktop
 share/services/magnet.protocol
 share/services/mldonkey.protocol
@@ -96,6 +136,14 @@ share/servicetypes/kmldonkey_plugin.desktop
 @unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/doc/HTML/sv/kmldonkey
 @unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrm share/doc/HTML/ru/kmldonkey
+@unexec rmdir %D/share/doc/HTML/ru 2>/dev/null || true
+@dirrm share/doc/HTML/pt/kmldonkey
+@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@dirrm share/doc/HTML/it/kmldonkey
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@dirrm share/doc/HTML/fr/kmldonkey
+@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
 @dirrm share/doc/HTML/et/kmldonkey
 @unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
 @dirrm share/doc/HTML/en/kmldonkey
