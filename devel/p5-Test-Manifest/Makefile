@@ -20,7 +20,9 @@ PERL_CONFIGURE=	YES
 MAN3=		Test::Manifest.3
 
 .include <bsd.port.pre.mk>
-.if ${PERL_LEVEL} <= 500503
-EXTRA_PATCHES=	${FILESDIR}/5.005_03-lib::Manifest.pm
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		Requires perl 5.6.1 or above
 .endif
+
 .include <bsd.port.post.mk>
