@@ -1,108 +1,4 @@
 etc/rc.d/webmin.sh
-etc/webmin/acl/admin.acl
-etc/webmin/acl/config
-etc/webmin/admin.acl
-etc/webmin/apache/admin.acl
-etc/webmin/apache/config
-etc/webmin/bind8/admin.acl
-etc/webmin/bind8/config
-etc/webmin/bsdexports/admin.acl
-etc/webmin/bsdexports/config
-etc/webmin/config
-etc/webmin/cpan/admin.acl
-etc/webmin/cpan/config
-etc/webmin/cron/admin.acl
-etc/webmin/cron/config
-etc/webmin/custom/admin.acl
-etc/webmin/custom/config
-etc/webmin/dfsadmin/admin.acl
-etc/webmin/dfsadmin/config
-etc/webmin/dhcpd/admin.acl
-etc/webmin/dhcpd/config
-etc/webmin/dnsadmin/admin.acl
-etc/webmin/dnsadmin/config
-etc/webmin/exports/admin.acl
-etc/webmin/exports/config
-etc/webmin/fdisk/admin.acl
-etc/webmin/fdisk/config
-etc/webmin/file/admin.acl
-etc/webmin/file/config
-etc/webmin/format/admin.acl
-etc/webmin/format/config
-etc/webmin/help/admin.acl
-etc/webmin/help/config
-etc/webmin/hpuxexports/admin.acl
-etc/webmin/hpuxexports/config
-etc/webmin/inetd/admin.acl
-etc/webmin/inetd/config
-etc/webmin/init/admin.acl
-etc/webmin/init/config
-etc/webmin/inittab/admin.acl
-etc/webmin/inittab/config
-etc/webmin/lilo/admin.acl
-etc/webmin/lilo/config
-etc/webmin/lpadmin/admin.acl
-etc/webmin/lpadmin/config
-etc/webmin/majordomo/admin.acl
-etc/webmin/majordomo/config
-etc/webmin/man/admin.acl
-etc/webmin/man/config
-etc/webmin/miniserv.conf
-etc/webmin/miniserv.pem
-etc/webmin/miniserv.users
-etc/webmin/mount/admin.acl
-etc/webmin/mount/config
-etc/webmin/mysql/admin.acl
-etc/webmin/mysql/config
-etc/webmin/net/admin.acl
-etc/webmin/net/config
-etc/webmin/pap/admin.acl
-etc/webmin/pap/config
-etc/webmin/perl-path
-etc/webmin/postfix/admin.acl
-etc/webmin/postfix/config
-etc/webmin/postgresql/admin.acl
-etc/webmin/postgresql/config
-etc/webmin/proc/admin.acl
-etc/webmin/proc/config
-etc/webmin/quota/admin.acl
-etc/webmin/quota/config
-etc/webmin/raid/admin.acl
-etc/webmin/raid/config
-etc/webmin/samba/admin.acl
-etc/webmin/samba/config
-etc/webmin/sendmail/admin.acl
-etc/webmin/sendmail/config
-etc/webmin/servers/admin.acl
-etc/webmin/servers/config
-etc/webmin/software/admin.acl
-etc/webmin/software/config
-etc/webmin/squid/admin.acl
-etc/webmin/squid/config
-etc/webmin/start
-etc/webmin/status/admin.acl
-etc/webmin/status/config
-etc/webmin/stop
-etc/webmin/syslog/admin.acl
-etc/webmin/syslog/config
-etc/webmin/telnet/admin.acl
-etc/webmin/telnet/config
-etc/webmin/time/admin.acl
-etc/webmin/time/config
-etc/webmin/uninstall.sh
-etc/webmin/useradmin/admin.acl
-etc/webmin/useradmin/config
-etc/webmin/var-path
-etc/webmin/version
-etc/webmin/webmin.acl
-etc/webmin/webmin/admin.acl
-etc/webmin/webmin/config
-etc/webmin/webminlog/admin.acl
-etc/webmin/webminlog/config
-etc/webmin/wuftpd/admin.acl
-etc/webmin/wuftpd/config
-etc/webmin/xinetd/admin.acl
-etc/webmin/xinetd/config
 lib/webmin/LICENCE
 lib/webmin/README
 lib/webmin/acl/acl-lib.pl
@@ -113,6 +9,7 @@ lib/webmin/acl/cert_output.cgi
 lib/webmin/acl/config
 lib/webmin/acl/config-debian-linux
 lib/webmin/acl/config-freebsd
+lib/webmin/acl/config-open-linux-3.1e
 lib/webmin/acl/config-redhat-linux
 lib/webmin/acl/config.info
 lib/webmin/acl/config.info.de
@@ -121,10 +18,13 @@ lib/webmin/acl/config.info.hu
 lib/webmin/acl/config.info.pl
 lib/webmin/acl/config.info.sv
 lib/webmin/acl/config.info.tr
+lib/webmin/acl/config.info.zh_CN
 lib/webmin/acl/config.info.zh_TW.Big5
 lib/webmin/acl/defaultacl
+lib/webmin/acl/delete_group.cgi
 lib/webmin/acl/delete_user.cgi
 lib/webmin/acl/edit_acl.cgi
+lib/webmin/acl/edit_group.cgi
 lib/webmin/acl/edit_user.cgi
 lib/webmin/acl/images/empty.gif
 lib/webmin/acl/images/icon.gif
@@ -148,6 +48,7 @@ lib/webmin/acl/log_parser.pl
 lib/webmin/acl/module.info
 lib/webmin/acl/openssl.cnf
 lib/webmin/acl/save_acl.cgi
+lib/webmin/acl/save_group.cgi
 lib/webmin/acl/save_user.cgi
 lib/webmin/acl/useradmin_update.pl
 lib/webmin/acl_security.pl
@@ -171,6 +72,7 @@ lib/webmin/apache/config-open-linux-2.3
 lib/webmin/apache/config-open-linux-2.3e
 lib/webmin/apache/config-open-linux-2.4
 lib/webmin/apache/config-open-linux-2.5
+lib/webmin/apache/config-open-linux-3.1e
 lib/webmin/apache/config-openbsd
 lib/webmin/apache/config-openserver
 lib/webmin/apache/config-osf1
@@ -463,6 +365,7 @@ lib/webmin/bsdexports/config.info.fr
 lib/webmin/bsdexports/config.info.pl
 lib/webmin/bsdexports/config.info.sv
 lib/webmin/bsdexports/config.info.tr
+lib/webmin/bsdexports/config.info.zh_CN
 lib/webmin/bsdexports/config.info.zh_TW.Big5
 lib/webmin/bsdexports/delete_export.cgi
 lib/webmin/bsdexports/edit_export.cgi
@@ -472,6 +375,385 @@ lib/webmin/bsdexports/module.info
 lib/webmin/bsdexports/notes
 lib/webmin/bsdexports/restart_mountd.cgi
 lib/webmin/bsdexports/save_export.cgi
+lib/webmin/caldera/Alphabet.gif
+lib/webmin/caldera/acl/images/icon.gif
+lib/webmin/caldera/apache/images/icon.gif
+lib/webmin/caldera/bind8/images/icon.gif
+lib/webmin/caldera/bsdexports/images/icon.gif
+lib/webmin/caldera/config
+lib/webmin/caldera/cpan/images/icon.gif
+lib/webmin/caldera/cron/images/icon.gif
+lib/webmin/caldera/custom/images/icon.gif
+lib/webmin/caldera/dfsadmin/images/icon.gif
+lib/webmin/caldera/dhcpd/images/icon.gif
+lib/webmin/caldera/dnsadmin/images/icon.gif
+lib/webmin/caldera/exports/images/icon.gif
+lib/webmin/caldera/fdisk/images/icon.gif
+lib/webmin/caldera/file/images/icon.gif
+lib/webmin/caldera/format/images/icon.gif
+lib/webmin/caldera/help/images/icon.gif
+lib/webmin/caldera/hpuxexports/images/icon.gif
+lib/webmin/caldera/images/blue-bg.gif
+lib/webmin/caldera/images/folder-off.gif
+lib/webmin/caldera/images/folder-on.gif
+lib/webmin/caldera/images/gradient-bg.gif
+lib/webmin/caldera/images/letters/100.gif
+lib/webmin/caldera/images/letters/101.gif
+lib/webmin/caldera/images/letters/102.gif
+lib/webmin/caldera/images/letters/103.gif
+lib/webmin/caldera/images/letters/104.gif
+lib/webmin/caldera/images/letters/105.gif
+lib/webmin/caldera/images/letters/106.gif
+lib/webmin/caldera/images/letters/107.gif
+lib/webmin/caldera/images/letters/108.gif
+lib/webmin/caldera/images/letters/109.gif
+lib/webmin/caldera/images/letters/110.gif
+lib/webmin/caldera/images/letters/111.gif
+lib/webmin/caldera/images/letters/112.gif
+lib/webmin/caldera/images/letters/113.gif
+lib/webmin/caldera/images/letters/114.gif
+lib/webmin/caldera/images/letters/115.gif
+lib/webmin/caldera/images/letters/116.gif
+lib/webmin/caldera/images/letters/117.gif
+lib/webmin/caldera/images/letters/118.gif
+lib/webmin/caldera/images/letters/119.gif
+lib/webmin/caldera/images/letters/120.gif
+lib/webmin/caldera/images/letters/121.gif
+lib/webmin/caldera/images/letters/122.gif
+lib/webmin/caldera/images/letters/123.gif
+lib/webmin/caldera/images/letters/124.gif
+lib/webmin/caldera/images/letters/125.gif
+lib/webmin/caldera/images/letters/126.gif
+lib/webmin/caldera/images/letters/192.gif
+lib/webmin/caldera/images/letters/193.gif
+lib/webmin/caldera/images/letters/194.gif
+lib/webmin/caldera/images/letters/195.gif
+lib/webmin/caldera/images/letters/196.gif
+lib/webmin/caldera/images/letters/197.gif
+lib/webmin/caldera/images/letters/198.gif
+lib/webmin/caldera/images/letters/199.gif
+lib/webmin/caldera/images/letters/200.gif
+lib/webmin/caldera/images/letters/201.gif
+lib/webmin/caldera/images/letters/202.gif
+lib/webmin/caldera/images/letters/203.gif
+lib/webmin/caldera/images/letters/204.gif
+lib/webmin/caldera/images/letters/205.gif
+lib/webmin/caldera/images/letters/206.gif
+lib/webmin/caldera/images/letters/207.gif
+lib/webmin/caldera/images/letters/208.gif
+lib/webmin/caldera/images/letters/209.gif
+lib/webmin/caldera/images/letters/210.gif
+lib/webmin/caldera/images/letters/211.gif
+lib/webmin/caldera/images/letters/212.gif
+lib/webmin/caldera/images/letters/213.gif
+lib/webmin/caldera/images/letters/214.gif
+lib/webmin/caldera/images/letters/215.gif
+lib/webmin/caldera/images/letters/216.gif
+lib/webmin/caldera/images/letters/217.gif
+lib/webmin/caldera/images/letters/218.gif
+lib/webmin/caldera/images/letters/219.gif
+lib/webmin/caldera/images/letters/220.gif
+lib/webmin/caldera/images/letters/221.gif
+lib/webmin/caldera/images/letters/222.gif
+lib/webmin/caldera/images/letters/223.gif
+lib/webmin/caldera/images/letters/224.gif
+lib/webmin/caldera/images/letters/225.gif
+lib/webmin/caldera/images/letters/226.gif
+lib/webmin/caldera/images/letters/227.gif
+lib/webmin/caldera/images/letters/228.gif
+lib/webmin/caldera/images/letters/229.gif
+lib/webmin/caldera/images/letters/230.gif
+lib/webmin/caldera/images/letters/231.gif
+lib/webmin/caldera/images/letters/232.gif
+lib/webmin/caldera/images/letters/233.gif
+lib/webmin/caldera/images/letters/234.gif
+lib/webmin/caldera/images/letters/235.gif
+lib/webmin/caldera/images/letters/236.gif
+lib/webmin/caldera/images/letters/237.gif
+lib/webmin/caldera/images/letters/238.gif
+lib/webmin/caldera/images/letters/239.gif
+lib/webmin/caldera/images/letters/240.gif
+lib/webmin/caldera/images/letters/241.gif
+lib/webmin/caldera/images/letters/242.gif
+lib/webmin/caldera/images/letters/243.gif
+lib/webmin/caldera/images/letters/244.gif
+lib/webmin/caldera/images/letters/245.gif
+lib/webmin/caldera/images/letters/246.gif
+lib/webmin/caldera/images/letters/247.gif
+lib/webmin/caldera/images/letters/248.gif
+lib/webmin/caldera/images/letters/249.gif
+lib/webmin/caldera/images/letters/250.gif
+lib/webmin/caldera/images/letters/251.gif
+lib/webmin/caldera/images/letters/252.gif
+lib/webmin/caldera/images/letters/253.gif
+lib/webmin/caldera/images/letters/254.gif
+lib/webmin/caldera/images/letters/255.gif
+lib/webmin/caldera/images/letters/32.gif
+lib/webmin/caldera/images/letters/33.gif
+lib/webmin/caldera/images/letters/34.gif
+lib/webmin/caldera/images/letters/35.gif
+lib/webmin/caldera/images/letters/36.gif
+lib/webmin/caldera/images/letters/37.gif
+lib/webmin/caldera/images/letters/38.gif
+lib/webmin/caldera/images/letters/39.gif
+lib/webmin/caldera/images/letters/40.gif
+lib/webmin/caldera/images/letters/41.gif
+lib/webmin/caldera/images/letters/42.gif
+lib/webmin/caldera/images/letters/43.gif
+lib/webmin/caldera/images/letters/44.gif
+lib/webmin/caldera/images/letters/45.gif
+lib/webmin/caldera/images/letters/46.gif
+lib/webmin/caldera/images/letters/47.gif
+lib/webmin/caldera/images/letters/48.gif
+lib/webmin/caldera/images/letters/49.gif
+lib/webmin/caldera/images/letters/50.gif
+lib/webmin/caldera/images/letters/51.gif
+lib/webmin/caldera/images/letters/52.gif
+lib/webmin/caldera/images/letters/53.gif
+lib/webmin/caldera/images/letters/54.gif
+lib/webmin/caldera/images/letters/55.gif
+lib/webmin/caldera/images/letters/56.gif
+lib/webmin/caldera/images/letters/57.gif
+lib/webmin/caldera/images/letters/58.gif
+lib/webmin/caldera/images/letters/59.gif
+lib/webmin/caldera/images/letters/60.gif
+lib/webmin/caldera/images/letters/61.gif
+lib/webmin/caldera/images/letters/62.gif
+lib/webmin/caldera/images/letters/63.gif
+lib/webmin/caldera/images/letters/64.gif
+lib/webmin/caldera/images/letters/65.gif
+lib/webmin/caldera/images/letters/66.gif
+lib/webmin/caldera/images/letters/67.gif
+lib/webmin/caldera/images/letters/68.gif
+lib/webmin/caldera/images/letters/69.gif
+lib/webmin/caldera/images/letters/70.gif
+lib/webmin/caldera/images/letters/71.gif
+lib/webmin/caldera/images/letters/72.gif
+lib/webmin/caldera/images/letters/73.gif
+lib/webmin/caldera/images/letters/74.gif
+lib/webmin/caldera/images/letters/75.gif
+lib/webmin/caldera/images/letters/76.gif
+lib/webmin/caldera/images/letters/77.gif
+lib/webmin/caldera/images/letters/78.gif
+lib/webmin/caldera/images/letters/79.gif
+lib/webmin/caldera/images/letters/80.gif
+lib/webmin/caldera/images/letters/81.gif
+lib/webmin/caldera/images/letters/82.gif
+lib/webmin/caldera/images/letters/83.gif
+lib/webmin/caldera/images/letters/84.gif
+lib/webmin/caldera/images/letters/85.gif
+lib/webmin/caldera/images/letters/86.gif
+lib/webmin/caldera/images/letters/87.gif
+lib/webmin/caldera/images/letters/88.gif
+lib/webmin/caldera/images/letters/89.gif
+lib/webmin/caldera/images/letters/90.gif
+lib/webmin/caldera/images/letters/91.gif
+lib/webmin/caldera/images/letters/93.gif
+lib/webmin/caldera/images/letters/94.gif
+lib/webmin/caldera/images/letters/95.gif
+lib/webmin/caldera/images/letters/96.gif
+lib/webmin/caldera/images/letters/97.gif
+lib/webmin/caldera/images/letters/98.gif
+lib/webmin/caldera/images/letters/99.gif
+lib/webmin/caldera/images/main-bg-pixel.gif
+lib/webmin/caldera/images/nav2bg.gif
+lib/webmin/caldera/images/navbg.gif
+lib/webmin/caldera/images/pixel-white.gif
+lib/webmin/caldera/images/spacer.gif
+lib/webmin/caldera/images/top-grad-stretch.gif
+lib/webmin/caldera/images/webmin-header.gif
+lib/webmin/caldera/index.cgi
+lib/webmin/caldera/index_body.html
+lib/webmin/caldera/index_top.cgi
+lib/webmin/caldera/inetd/images/icon.gif
+lib/webmin/caldera/init/images/icon.gif
+lib/webmin/caldera/inittab/images/icon.gif
+lib/webmin/caldera/lilo/images/icon.gif
+lib/webmin/caldera/link/images/icon.gif
+lib/webmin/caldera/lpadmin/images/icon.gif
+lib/webmin/caldera/majordomo/images/icon.gif
+lib/webmin/caldera/man/images/icon.gif
+lib/webmin/caldera/mount/images/icon.gif
+lib/webmin/caldera/mysql/images/icon.gif
+lib/webmin/caldera/net/images/icon.gif
+lib/webmin/caldera/pam/images/icon.gif
+lib/webmin/caldera/pap/images/icon.gif
+lib/webmin/caldera/postfix/images/icon.gif
+lib/webmin/caldera/postgresql/images/icon.gif
+lib/webmin/caldera/proc/images/icon.gif
+lib/webmin/caldera/quota/images/icon.gif
+lib/webmin/caldera/raid/images/icon.gif
+lib/webmin/caldera/samba/images/icon.gif
+lib/webmin/caldera/sendmail/images/icon.gif
+lib/webmin/caldera/servers/images/icon.gif
+lib/webmin/caldera/software/images/icon.gif
+lib/webmin/caldera/squid/images/icon.gif
+lib/webmin/caldera/ssh/images/icon.gif
+lib/webmin/caldera/status/images/icon.gif
+lib/webmin/caldera/steed/apache_nav.html
+lib/webmin/caldera/steed/css/style.css
+lib/webmin/caldera/steed/hardware.html
+lib/webmin/caldera/steed/hardware/fdisk.html
+lib/webmin/caldera/steed/hardware/lilo.html
+lib/webmin/caldera/steed/hardware/lpadmin.html
+lib/webmin/caldera/steed/hardware/net.html
+lib/webmin/caldera/steed/hardware/raid.html
+lib/webmin/caldera/steed/hardware/time.html
+lib/webmin/caldera/steed/hardware_body.html
+lib/webmin/caldera/steed/hardware_nav.html
+lib/webmin/caldera/steed/home/authentication.html
+lib/webmin/caldera/steed/home/editcats.html
+lib/webmin/caldera/steed/home/indexpageopts.html
+lib/webmin/caldera/steed/home/ipaccesscontrol.html
+lib/webmin/caldera/steed/home/lang.html
+lib/webmin/caldera/steed/home/logging.html
+lib/webmin/caldera/steed/home/os.html
+lib/webmin/caldera/steed/home/portaddress.html
+lib/webmin/caldera/steed/home/proxys.html
+lib/webmin/caldera/steed/home/reassignmods.html
+lib/webmin/caldera/steed/home/upgradewebmin.html
+lib/webmin/caldera/steed/home/useri.html
+lib/webmin/caldera/steed/home/webminmods.html
+lib/webmin/caldera/steed/images/blue-bg.gif
+lib/webmin/caldera/steed/images/folder-off.gif
+lib/webmin/caldera/steed/images/folder-on.gif
+lib/webmin/caldera/steed/images/gradient-bg.gif
+lib/webmin/caldera/steed/images/icon01.gif
+lib/webmin/caldera/steed/images/icon02.gif
+lib/webmin/caldera/steed/images/icon03.gif
+lib/webmin/caldera/steed/images/icon04.gif
+lib/webmin/caldera/steed/images/icon05.gif
+lib/webmin/caldera/steed/images/icon06.gif
+lib/webmin/caldera/steed/images/icon07.gif
+lib/webmin/caldera/steed/images/icon08.gif
+lib/webmin/caldera/steed/images/icon09.gif
+lib/webmin/caldera/steed/images/icon10.gif
+lib/webmin/caldera/steed/images/icon11.gif
+lib/webmin/caldera/steed/images/iconT0-01.gif
+lib/webmin/caldera/steed/images/iconT0-02.gif
+lib/webmin/caldera/steed/images/iconT0-03.gif
+lib/webmin/caldera/steed/images/iconT0-04.gif
+lib/webmin/caldera/steed/images/iconT0-05.gif
+lib/webmin/caldera/steed/images/iconT0-06.gif
+lib/webmin/caldera/steed/images/iconT0-07.gif
+lib/webmin/caldera/steed/images/iconT0-08.gif
+lib/webmin/caldera/steed/images/iconT0-09.gif
+lib/webmin/caldera/steed/images/iconT0-10.gif
+lib/webmin/caldera/steed/images/iconT0-11.gif
+lib/webmin/caldera/steed/images/iconT0-12.gif
+lib/webmin/caldera/steed/images/iconT0-13.gif
+lib/webmin/caldera/steed/images/iconT1-02.gif
+lib/webmin/caldera/steed/images/iconT1-03.gif
+lib/webmin/caldera/steed/images/iconT1-04.gif
+lib/webmin/caldera/steed/images/iconT1-05.gif
+lib/webmin/caldera/steed/images/iconT3-01.gif
+lib/webmin/caldera/steed/images/iconT3-02.gif
+lib/webmin/caldera/steed/images/iconT3-04.gif
+lib/webmin/caldera/steed/images/iconT3-05.gif
+lib/webmin/caldera/steed/images/iconT3-06.gif
+lib/webmin/caldera/steed/images/iconT3-07.gif
+lib/webmin/caldera/steed/images/iconT3-08.gif
+lib/webmin/caldera/steed/images/iconT3-09.gif
+lib/webmin/caldera/steed/images/iconT3-10.gif
+lib/webmin/caldera/steed/images/iconT3-12.gif
+lib/webmin/caldera/steed/images/iconT3-13.gif
+lib/webmin/caldera/steed/images/iconT3-14.gif
+lib/webmin/caldera/steed/images/iconT4-01.gif
+lib/webmin/caldera/steed/images/iconT4-02.gif
+lib/webmin/caldera/steed/images/iconT4-03.gif
+lib/webmin/caldera/steed/images/iconT4-04.gif
+lib/webmin/caldera/steed/images/iconT4-05.gif
+lib/webmin/caldera/steed/images/iconT4-06.gif
+lib/webmin/caldera/steed/images/iconT5-01.gif
+lib/webmin/caldera/steed/images/iconT5-02.gif
+lib/webmin/caldera/steed/images/iconT5-03.gif
+lib/webmin/caldera/steed/images/iconblank.gif
+lib/webmin/caldera/steed/images/iconserverT3-01.gif
+lib/webmin/caldera/steed/images/iconserverT3-02.gif
+lib/webmin/caldera/steed/images/iconserverT3-03.gif
+lib/webmin/caldera/steed/images/iconserverT3-04.gif
+lib/webmin/caldera/steed/images/iconserverT3-05.gif
+lib/webmin/caldera/steed/images/iconserverT3-06.gif
+lib/webmin/caldera/steed/images/iconserverT3-07.gif
+lib/webmin/caldera/steed/images/iconserverT3-08.gif
+lib/webmin/caldera/steed/images/iconserverT3-09.gif
+lib/webmin/caldera/steed/images/main-bg-pixel.gif
+lib/webmin/caldera/steed/images/nav2bg.gif
+lib/webmin/caldera/steed/images/navbg.gif
+lib/webmin/caldera/steed/images/pixel-white.gif
+lib/webmin/caldera/steed/images/spacer.gif
+lib/webmin/caldera/steed/images/top-grad-stretch.gif
+lib/webmin/caldera/steed/images/webmin-header.gif
+lib/webmin/caldera/steed/index.html
+lib/webmin/caldera/steed/index_body.html
+lib/webmin/caldera/steed/index_nav.html
+lib/webmin/caldera/steed/others.html
+lib/webmin/caldera/steed/others/custom.html
+lib/webmin/caldera/steed/others/file.html
+lib/webmin/caldera/steed/others/telnet.html
+lib/webmin/caldera/steed/others_body.html
+lib/webmin/caldera/steed/others_nav.html
+lib/webmin/caldera/steed/servers.html
+lib/webmin/caldera/steed/servers/ap_apmods.html
+lib/webmin/caldera/steed/servers/ap_cgi.html
+lib/webmin/caldera/steed/servers/ap_editdefparam.html
+lib/webmin/caldera/steed/servers/ap_mime.html
+lib/webmin/caldera/steed/servers/ap_misc.html
+lib/webmin/caldera/steed/servers/ap_net_add.html
+lib/webmin/caldera/steed/servers/ap_pdoptfiles.html
+lib/webmin/caldera/steed/servers/ap_procs_limits.html
+lib/webmin/caldera/steed/servers/ap_reconknowmods.html
+lib/webmin/caldera/steed/servers/apache.html
+lib/webmin/caldera/steed/servers/apache_body.html
+lib/webmin/caldera/steed/servers/bind8.html
+lib/webmin/caldera/steed/servers/dhcpd.html
+lib/webmin/caldera/steed/servers/dnsadmin.html
+lib/webmin/caldera/steed/servers/inetd.html
+lib/webmin/caldera/steed/servers/majordomo.html
+lib/webmin/caldera/steed/servers/mysql.html
+lib/webmin/caldera/steed/servers/pap.html
+lib/webmin/caldera/steed/servers/postfix.html
+lib/webmin/caldera/steed/servers/postgresql.html
+lib/webmin/caldera/steed/servers/samba.html
+lib/webmin/caldera/steed/servers/sendmail.html
+lib/webmin/caldera/steed/servers/squid.html
+lib/webmin/caldera/steed/servers/wuftpd.html
+lib/webmin/caldera/steed/servers_body.html
+lib/webmin/caldera/steed/servers_nav.html
+lib/webmin/caldera/steed/system.html
+lib/webmin/caldera/steed/system/cron.html
+lib/webmin/caldera/steed/system/exports.html
+lib/webmin/caldera/steed/system/init.html
+lib/webmin/caldera/steed/system/inittab.html
+lib/webmin/caldera/steed/system/man.html
+lib/webmin/caldera/steed/system/mount.html
+lib/webmin/caldera/steed/system/proc.html
+lib/webmin/caldera/steed/system/quota.html
+lib/webmin/caldera/steed/system/software.html
+lib/webmin/caldera/steed/system/syslog.html
+lib/webmin/caldera/steed/system/useradmin.html
+lib/webmin/caldera/steed/system_body.html
+lib/webmin/caldera/steed/system_nav.html
+lib/webmin/caldera/steed/webmin.html
+lib/webmin/caldera/steed/webmin/webminacl.html
+lib/webmin/caldera/steed/webmin/webminhelp.html
+lib/webmin/caldera/steed/webmin/webminservers.html
+lib/webmin/caldera/steed/webmin/webminwebmin.html
+lib/webmin/caldera/steed/webmin/webminwebminlog.html
+lib/webmin/caldera/steed/webmin_body.html
+lib/webmin/caldera/steed/webmin_nav.html
+lib/webmin/caldera/style.css
+lib/webmin/caldera/syslog/images/icon.gif
+lib/webmin/caldera/telnet/images/icon.gif
+lib/webmin/caldera/template.gif
+lib/webmin/caldera/theme.info
+lib/webmin/caldera/time/images/icon.gif
+lib/webmin/caldera/useradmin/images/icon.gif
+lib/webmin/caldera/vnc/images/icon.gif
+lib/webmin/caldera/webmin/images/icon.gif
+lib/webmin/caldera/webminlog/images/icon.gif
+lib/webmin/caldera/wuftpd/images/icon.gif
+lib/webmin/caldera/xinetd/images/icon.gif
 lib/webmin/changepass.pl
 lib/webmin/chooser.cgi
 lib/webmin/config-aix
@@ -497,17 +779,23 @@ lib/webmin/config_save.cgi
 lib/webmin/copyconfig.pl
 lib/webmin/cpan/config
 lib/webmin/cpan/config.info
+lib/webmin/cpan/config.info.es
+lib/webmin/cpan/config.info.pl
+lib/webmin/cpan/config.info.sv
+lib/webmin/cpan/config.info.zh_CN
 lib/webmin/cpan/cpan-lib.pl
 lib/webmin/cpan/cpan.cgi
 lib/webmin/cpan/download.cgi
 lib/webmin/cpan/edit_mod.cgi
-lib/webmin/cpan/images/.xvpics/icon.gif
 lib/webmin/cpan/images/cat.gif
 lib/webmin/cpan/images/icon.gif
 lib/webmin/cpan/images/mod.gif
 lib/webmin/cpan/index.cgi
 lib/webmin/cpan/install.cgi
 lib/webmin/cpan/lang/en
+lib/webmin/cpan/lang/es
+lib/webmin/cpan/lang/pl
+lib/webmin/cpan/lang/zh_CN
 lib/webmin/cpan/module.info
 lib/webmin/cron/acl_security.pl
 lib/webmin/cron/config-aix
@@ -549,6 +837,7 @@ lib/webmin/cron/edit_allow.cgi
 lib/webmin/cron/edit_cron.cgi
 lib/webmin/cron/edit_env.cgi
 lib/webmin/cron/exec_cron.cgi
+lib/webmin/cron/help/help.es.html
 lib/webmin/cron/help/help.fr.html
 lib/webmin/cron/help/help.html
 lib/webmin/cron/help/help.sv.html
@@ -584,14 +873,17 @@ lib/webmin/custom/acl_security.pl
 lib/webmin/custom/custom-lib.pl
 lib/webmin/custom/defaultacl
 lib/webmin/custom/edit_cmd.cgi
+lib/webmin/custom/help/cmd.es.html
 lib/webmin/custom/help/cmd.fr.html
 lib/webmin/custom/help/cmd.html
 lib/webmin/custom/help/cmd.sv.html
 lib/webmin/custom/help/cmd.zh_TW.Big5.html
+lib/webmin/custom/help/command.es.html
 lib/webmin/custom/help/command.fr.html
 lib/webmin/custom/help/command.html
 lib/webmin/custom/help/command.sv.html
 lib/webmin/custom/help/command.zh_TW.Big5.html
+lib/webmin/custom/help/create.es.html
 lib/webmin/custom/help/create.fr.html
 lib/webmin/custom/help/create.html
 lib/webmin/custom/help/create.sv.html
@@ -601,22 +893,27 @@ lib/webmin/custom/help/desc.fr.html
 lib/webmin/custom/help/desc.html
 lib/webmin/custom/help/desc.sv.html
 lib/webmin/custom/help/desc.zh_TW.Big5.html
+lib/webmin/custom/help/edit.es.html
 lib/webmin/custom/help/edit.fr.html
 lib/webmin/custom/help/edit.html
 lib/webmin/custom/help/edit.sv.html
 lib/webmin/custom/help/edit.zh_TW.Big5.html
+lib/webmin/custom/help/intro.es.html
 lib/webmin/custom/help/intro.fr.html
 lib/webmin/custom/help/intro.html
 lib/webmin/custom/help/intro.sv.html
 lib/webmin/custom/help/intro.zh_TW.Big5.html
+lib/webmin/custom/help/raw.es.html
 lib/webmin/custom/help/raw.fr.html
 lib/webmin/custom/help/raw.html
 lib/webmin/custom/help/raw.sv.html
 lib/webmin/custom/help/raw.zh_TW.Big5.html
+lib/webmin/custom/help/run.es.html
 lib/webmin/custom/help/run.fr.html
 lib/webmin/custom/help/run.html
 lib/webmin/custom/help/run.sv.html
 lib/webmin/custom/help/run.zh_TW.Big5.html
+lib/webmin/custom/help/user.es.html
 lib/webmin/custom/help/user.fr.html
 lib/webmin/custom/help/user.html
 lib/webmin/custom/help/user.sv.html
@@ -650,6 +947,7 @@ lib/webmin/dfsadmin/config.info.fr
 lib/webmin/dfsadmin/config.info.pl
 lib/webmin/dfsadmin/config.info.sv
 lib/webmin/dfsadmin/config.info.tr
+lib/webmin/dfsadmin/config.info.zh_CN
 lib/webmin/dfsadmin/config.info.zh_TW.Big5
 lib/webmin/dfsadmin/delete_share.cgi
 lib/webmin/dfsadmin/dfs-lib.pl
@@ -749,6 +1047,7 @@ lib/webmin/dfsadmin/images/icon.gif
 lib/webmin/dfsadmin/images/share.gif
 lib/webmin/dfsadmin/index.cgi
 lib/webmin/dfsadmin/lang/en
+lib/webmin/dfsadmin/lang/es
 lib/webmin/dfsadmin/lang/sv
 lib/webmin/dfsadmin/lang/tr
 lib/webmin/dfsadmin/log_parser.pl
@@ -759,12 +1058,14 @@ lib/webmin/dfsadmin/medium.skill
 lib/webmin/dfsadmin/module.info
 lib/webmin/dfsadmin/restart_sharing.cgi
 lib/webmin/dfsadmin/save_share.cgi
+lib/webmin/dhcpd/acl_security.pl
 lib/webmin/dhcpd/config-cobalt-linux
 lib/webmin/dhcpd/config-corel-linux
 lib/webmin/dhcpd/config-debian-linux
 lib/webmin/dhcpd/config-freebsd
 lib/webmin/dhcpd/config-irix
 lib/webmin/dhcpd/config-open-linux
+lib/webmin/dhcpd/config-open-linux-3.1e
 lib/webmin/dhcpd/config-openbsd
 lib/webmin/dhcpd/config-openserver
 lib/webmin/dhcpd/config-osf1
@@ -789,6 +1090,9 @@ lib/webmin/dhcpd/config.info.sv
 lib/webmin/dhcpd/config.info.tr
 lib/webmin/dhcpd/config.info.zh_CN
 lib/webmin/dhcpd/config.info.zh_TW.Big5
+lib/webmin/dhcpd/confirm_delete.cgi
+lib/webmin/dhcpd/defaultacl
+lib/webmin/dhcpd/delete_all.cgi
 lib/webmin/dhcpd/delete_lease.cgi
 lib/webmin/dhcpd/dhcpd-lib.pl
 lib/webmin/dhcpd/edit_group.cgi
@@ -797,6 +1101,13 @@ lib/webmin/dhcpd/edit_options.cgi
 lib/webmin/dhcpd/edit_pool.cgi
 lib/webmin/dhcpd/edit_shared.cgi
 lib/webmin/dhcpd/edit_subnet.cgi
+lib/webmin/dhcpd/help/acl.html
+lib/webmin/dhcpd/help/acl_info.html
+lib/webmin/dhcpd/help/acl_info.pl.html
+lib/webmin/dhcpd/images/ctree0.gif
+lib/webmin/dhcpd/images/ctree1.gif
+lib/webmin/dhcpd/images/ctree2.gif
+lib/webmin/dhcpd/images/ctree3.gif
 lib/webmin/dhcpd/images/group.gif
 lib/webmin/dhcpd/images/host.gif
 lib/webmin/dhcpd/images/icon.gif
@@ -812,6 +1123,7 @@ lib/webmin/dhcpd/lang/pl
 lib/webmin/dhcpd/lang/pt
 lib/webmin/dhcpd/lang/ru_SU
 lib/webmin/dhcpd/lang/sv
+lib/webmin/dhcpd/lang/sv~
 lib/webmin/dhcpd/lang/tr
 lib/webmin/dhcpd/lang/zh_CN
 lib/webmin/dhcpd/lang/zh_TW.Big5
@@ -854,6 +1166,7 @@ lib/webmin/dnsadmin/config.info.pl
 lib/webmin/dnsadmin/config.info.ru_SU
 lib/webmin/dnsadmin/config.info.sv
 lib/webmin/dnsadmin/config.info.tr
+lib/webmin/dnsadmin/config.info.zh_CN
 lib/webmin/dnsadmin/config.info.zh_TW.Big5
 lib/webmin/dnsadmin/create_master.cgi
 lib/webmin/dnsadmin/create_slave.cgi
@@ -874,7 +1187,9 @@ lib/webmin/dnsadmin/images/dnsadmin.gif
 lib/webmin/dnsadmin/images/icon.gif
 lib/webmin/dnsadmin/index.cgi
 lib/webmin/dnsadmin/lang/en
+lib/webmin/dnsadmin/lang/es
 lib/webmin/dnsadmin/lang/sv
+lib/webmin/dnsadmin/lang/zh_CN
 lib/webmin/dnsadmin/log_parser.pl
 lib/webmin/dnsadmin/master_form.cgi
 lib/webmin/dnsadmin/module.info
@@ -1031,6 +1346,7 @@ lib/webmin/fdisk/defaultacl
 lib/webmin/fdisk/edit_hdparm.cgi
 lib/webmin/fdisk/edit_part.cgi
 lib/webmin/fdisk/fdisk-lib.pl
+lib/webmin/fdisk/fdisk-lib.pl~
 lib/webmin/fdisk/fsck.cgi
 lib/webmin/fdisk/fsck_form.cgi
 lib/webmin/fdisk/help/A.fr.html
@@ -1097,6 +1413,7 @@ lib/webmin/fdisk/help/u.fr.html
 lib/webmin/fdisk/help/u.html
 lib/webmin/fdisk/help/u.sv.html
 lib/webmin/fdisk/help/u.zh_TW.Big5.html
+lib/webmin/fdisk/images/ext.gif
 lib/webmin/fdisk/images/gap.gif
 lib/webmin/fdisk/images/icon.gif
 lib/webmin/fdisk/images/use.gif
@@ -1106,6 +1423,7 @@ lib/webmin/fdisk/lang/en
 lib/webmin/fdisk/lang/es
 lib/webmin/fdisk/lang/fr
 lib/webmin/fdisk/lang/hu
+lib/webmin/fdisk/lang/pl
 lib/webmin/fdisk/lang/pt
 lib/webmin/fdisk/lang/ru_SU
 lib/webmin/fdisk/lang/sv
@@ -1268,6 +1586,7 @@ lib/webmin/format/config.info.fr
 lib/webmin/format/config.info.pl
 lib/webmin/format/config.info.sv
 lib/webmin/format/config.info.tr
+lib/webmin/format/config.info.zh_CN
 lib/webmin/format/config.info.zh_TW.Big5
 lib/webmin/format/copy_part_form.cgi
 lib/webmin/format/defaultacl
@@ -1276,6 +1595,7 @@ lib/webmin/format/edit_part.cgi
 lib/webmin/format/format-lib.pl
 lib/webmin/format/fsck.cgi
 lib/webmin/format/fsck_form.cgi
+lib/webmin/format/help/help.es.html
 lib/webmin/format/help/help.html
 lib/webmin/format/help/help.sv.html
 lib/webmin/format/help/help.zh_TW.Big5.html
@@ -1288,6 +1608,7 @@ lib/webmin/format/lang/en
 lib/webmin/format/lang/es
 lib/webmin/format/lang/sv
 lib/webmin/format/lang/tr
+lib/webmin/format/lang/zh_CN
 lib/webmin/format/module.info
 lib/webmin/format/newfs.cgi
 lib/webmin/format/newfs_form.cgi
@@ -1296,37 +1617,6 @@ lib/webmin/format/tunefs.cgi
 lib/webmin/format/tunefs_form.cgi
 lib/webmin/group_chooser.cgi
 lib/webmin/help.cgi
-lib/webmin/help/help-lib.pl
-lib/webmin/help/help/intro.es.html
-lib/webmin/help/help/intro.fr.html
-lib/webmin/help/help/intro.html
-lib/webmin/help/help/intro.pl.html
-lib/webmin/help/help/intro.ru_SU.html
-lib/webmin/help/help/intro.sv.html
-lib/webmin/help/help/intro.zh_TW.Big5.html
-lib/webmin/help/help/search.es.html
-lib/webmin/help/help/search.fr.html
-lib/webmin/help/help/search.html
-lib/webmin/help/help/search.pl.html
-lib/webmin/help/help/search.ru_SU.html
-lib/webmin/help/help/search.sv.html
-lib/webmin/help/help/search.zh_TW.Big5.html
-lib/webmin/help/images/icon.gif
-lib/webmin/help/index.cgi
-lib/webmin/help/lang/de
-lib/webmin/help/lang/en
-lib/webmin/help/lang/es
-lib/webmin/help/lang/fr
-lib/webmin/help/lang/hu
-lib/webmin/help/lang/it
-lib/webmin/help/lang/pl
-lib/webmin/help/lang/ru_SU
-lib/webmin/help/lang/sv
-lib/webmin/help/lang/tr
-lib/webmin/help/lang/zh_CN
-lib/webmin/help/lang/zh_TW.Big5
-lib/webmin/help/module.info
-lib/webmin/help/search.cgi
 lib/webmin/hpuxexports/config-hpux
 lib/webmin/hpuxexports/config.info
 lib/webmin/hpuxexports/config.info.de
@@ -1336,9 +1626,11 @@ lib/webmin/hpuxexports/config.info.pl
 lib/webmin/hpuxexports/config.info.ru_SU
 lib/webmin/hpuxexports/config.info.sv
 lib/webmin/hpuxexports/config.info.tr
+lib/webmin/hpuxexports/config.info.zh_CN
 lib/webmin/hpuxexports/config.info.zh_TW.Big5
 lib/webmin/hpuxexports/delete_export.cgi
 lib/webmin/hpuxexports/edit_export.cgi
+lib/webmin/hpuxexports/help/help.es.html
 lib/webmin/hpuxexports/help/help.html
 lib/webmin/hpuxexports/help/help.sv.html
 lib/webmin/hpuxexports/help/help.zh_TW.Big5.html
@@ -1348,8 +1640,6 @@ lib/webmin/hpuxexports/index.cgi
 lib/webmin/hpuxexports/module.info
 lib/webmin/hpuxexports/restart_exporting.cgi
 lib/webmin/hpuxexports/save_export.cgi
-lib/webmin/images/.xvpics/eazel.gif
-lib/webmin/images/.xvpics/lc2.gif
 lib/webmin/images/back.gif
 lib/webmin/images/binary.gif
 lib/webmin/images/dir.gif
@@ -1406,6 +1696,7 @@ lib/webmin/images/letters/205.gif
 lib/webmin/images/letters/206.gif
 lib/webmin/images/letters/207.gif
 lib/webmin/images/letters/208.gif
+lib/webmin/images/letters/208.iso-8859-9.gif
 lib/webmin/images/letters/209.gif
 lib/webmin/images/letters/210.gif
 lib/webmin/images/letters/211.gif
@@ -1413,14 +1704,18 @@ lib/webmin/images/letters/211.iso-8859-2.gif
 lib/webmin/images/letters/212.gif
 lib/webmin/images/letters/213.gif
 lib/webmin/images/letters/214.gif
+lib/webmin/images/letters/214.iso-8859-9.gif
 lib/webmin/images/letters/215.gif
 lib/webmin/images/letters/216.gif
 lib/webmin/images/letters/217.gif
 lib/webmin/images/letters/218.gif
 lib/webmin/images/letters/219.gif
 lib/webmin/images/letters/220.gif
+lib/webmin/images/letters/220.iso-8859-9.gif
 lib/webmin/images/letters/221.gif
+lib/webmin/images/letters/221.iso-8859-9.gif
 lib/webmin/images/letters/222.gif
+lib/webmin/images/letters/222.iso-8859-9.gif
 lib/webmin/images/letters/223.gif
 lib/webmin/images/letters/224.gif
 lib/webmin/images/letters/225.gif
@@ -1431,6 +1726,7 @@ lib/webmin/images/letters/229.gif
 lib/webmin/images/letters/230.gif
 lib/webmin/images/letters/230.iso-8859-2.gif
 lib/webmin/images/letters/231.gif
+lib/webmin/images/letters/231.iso-8859-9.gif
 lib/webmin/images/letters/232.gif
 lib/webmin/images/letters/233.gif
 lib/webmin/images/letters/234.gif
@@ -1441,6 +1737,7 @@ lib/webmin/images/letters/237.gif
 lib/webmin/images/letters/238.gif
 lib/webmin/images/letters/239.gif
 lib/webmin/images/letters/240.gif
+lib/webmin/images/letters/240.iso-8859-9.gif
 lib/webmin/images/letters/241.gif
 lib/webmin/images/letters/241.iso-8859-2.gif
 lib/webmin/images/letters/242.gif
@@ -1449,13 +1746,16 @@ lib/webmin/images/letters/243.iso-8859-2.gif
 lib/webmin/images/letters/244.gif
 lib/webmin/images/letters/245.gif
 lib/webmin/images/letters/246.gif
+lib/webmin/images/letters/246.iso-8859-9.gif
 lib/webmin/images/letters/247.gif
 lib/webmin/images/letters/248.gif
 lib/webmin/images/letters/249.gif
 lib/webmin/images/letters/250.gif
 lib/webmin/images/letters/251.gif
 lib/webmin/images/letters/252.gif
+lib/webmin/images/letters/252.iso-8859-9.gif
 lib/webmin/images/letters/253.gif
+lib/webmin/images/letters/253.iso-8859-9.gif
 lib/webmin/images/letters/254.gif
 lib/webmin/images/letters/255.gif
 lib/webmin/images/letters/32.gif
@@ -1547,6 +1847,7 @@ lib/webmin/inetd/config-hpux
 lib/webmin/inetd/config-lfs-linux
 lib/webmin/inetd/config-macos
 lib/webmin/inetd/config-open-linux
+lib/webmin/inetd/config-open-linux-3.1e
 lib/webmin/inetd/config-openbsd
 lib/webmin/inetd/config-openserver
 lib/webmin/inetd/config-osf1
@@ -1575,6 +1876,7 @@ lib/webmin/inetd/delete_rpc.cgi
 lib/webmin/inetd/delete_serv.cgi
 lib/webmin/inetd/edit_rpc.cgi
 lib/webmin/inetd/edit_serv.cgi
+lib/webmin/inetd/help/help.es.html
 lib/webmin/inetd/help/help.html
 lib/webmin/inetd/help/help.sv.html
 lib/webmin/inetd/help/help.zh_TW.Big5.html
@@ -1722,6 +2024,7 @@ lib/webmin/lang/fr
 lib/webmin/lang/he
 lib/webmin/lang/hu
 lib/webmin/lang/it
+lib/webmin/lang/no
 lib/webmin/lang/pl
 lib/webmin/lang/pt
 lib/webmin/lang/ru_SU
@@ -1756,6 +2059,7 @@ lib/webmin/lilo/lang/en
 lib/webmin/lilo/lang/es
 lib/webmin/lilo/lang/fr
 lib/webmin/lilo/lang/hu
+lib/webmin/lilo/lang/pl
 lib/webmin/lilo/lang/pt
 lib/webmin/lilo/lang/ru_SU
 lib/webmin/lilo/lang/sv
@@ -1769,16 +2073,22 @@ lib/webmin/lilo/save_global.cgi
 lib/webmin/lilo/save_image.cgi
 lib/webmin/lilo/save_other.cgi
 lib/webmin/lpadmin/acl_security.pl
+lib/webmin/lpadmin/ascii.txt
 lib/webmin/lpadmin/base_coas_driver
+lib/webmin/lpadmin/bw.fig
+lib/webmin/lpadmin/bw.ps
 lib/webmin/lpadmin/caldera-driver.pl
 lib/webmin/lpadmin/cancel_all.cgi
 lib/webmin/lpadmin/cancel_job.cgi
+lib/webmin/lpadmin/colour.fig
+lib/webmin/lpadmin/colour.ps
 lib/webmin/lpadmin/config-corel-linux
 lib/webmin/lpadmin/config-debian-linux
 lib/webmin/lpadmin/config-freebsd
 lib/webmin/lpadmin/config-hpux
 lib/webmin/lpadmin/config-macos
 lib/webmin/lpadmin/config-open-linux
+lib/webmin/lpadmin/config-open-linux-3.1e
 lib/webmin/lpadmin/config-openbsd
 lib/webmin/lpadmin/config-redhat-linux
 lib/webmin/lpadmin/config-redhat-linux-7.0
@@ -1798,6 +2108,8 @@ lib/webmin/lpadmin/config.info.sv
 lib/webmin/lpadmin/config.info.tr
 lib/webmin/lpadmin/config.info.zh_CN
 lib/webmin/lpadmin/config.info.zh_TW.Big5
+lib/webmin/lpadmin/cups-driver.pl
+lib/webmin/lpadmin/cups-lib.pl
 lib/webmin/lpadmin/defaultacl
 lib/webmin/lpadmin/delete_printer.cgi
 lib/webmin/lpadmin/drivers
@@ -1830,12 +2142,15 @@ lib/webmin/lpadmin/module.info
 lib/webmin/lpadmin/old-caldera-driver.pl
 lib/webmin/lpadmin/openbsd-lib.pl
 lib/webmin/lpadmin/redhat-driver.pl
+lib/webmin/lpadmin/restart.cgi
 lib/webmin/lpadmin/save_printer.cgi
 lib/webmin/lpadmin/solaris-lib.pl
 lib/webmin/lpadmin/sortdrivers.pl
 lib/webmin/lpadmin/start.cgi
 lib/webmin/lpadmin/stop.cgi
 lib/webmin/lpadmin/suse-driver.pl
+lib/webmin/lpadmin/test_form.cgi
+lib/webmin/lpadmin/test_print.cgi
 lib/webmin/lpadmin/unixware-lib.pl
 lib/webmin/lpadmin/view_job.cgi
 lib/webmin/lpadmin/webmin-driver.pl
@@ -1890,8 +2205,10 @@ lib/webmin/majordomo/images/mod.gif
 lib/webmin/majordomo/images/subs.gif
 lib/webmin/majordomo/index.cgi
 lib/webmin/majordomo/lang/en
+lib/webmin/majordomo/lang/es
 lib/webmin/majordomo/lang/sv
 lib/webmin/majordomo/lang/tr
+lib/webmin/majordomo/lang/zh_CN
 lib/webmin/majordomo/log_parser.pl
 lib/webmin/majordomo/majordomo-lib.pl
 lib/webmin/majordomo/module.info
@@ -1911,10 +2228,12 @@ lib/webmin/man/config-cobalt-linux
 lib/webmin/man/config-corel-linux
 lib/webmin/man/config-debian-linux
 lib/webmin/man/config-freebsd
+lib/webmin/man/config-hpux
 lib/webmin/man/config-irix
 lib/webmin/man/config-lfs-linux
 lib/webmin/man/config-macos
 lib/webmin/man/config-open-linux
+lib/webmin/man/config-open-linux-3.1e
 lib/webmin/man/config-openbsd
 lib/webmin/man/config-redhat-linux
 lib/webmin/man/config-slackware-linux
@@ -1956,6 +2275,12 @@ lib/webmin/man/lang/zh_TW.Big5
 lib/webmin/man/man-lib.pl
 lib/webmin/man/module.info
 lib/webmin/man/search.cgi
+lib/webmin/man/view_doc.cgi
+lib/webmin/man/view_howto.cgi
+lib/webmin/man/view_kde.cgi
+lib/webmin/man/view_kernel.cgi
+lib/webmin/man/view_man.cgi
+lib/webmin/man/view_perl.cgi
 lib/webmin/mime.types
 lib/webmin/miniserv.pem
 lib/webmin/miniserv.pl
@@ -2318,6 +2643,48 @@ lib/webmin/net/unixware-lib.pl
 lib/webmin/newmods.pl
 lib/webmin/os_list.txt
 lib/webmin/oschooser.pl
+lib/webmin/pam/config-cobalt-linux
+lib/webmin/pam/config-corel-linux
+lib/webmin/pam/config-debian-linux
+lib/webmin/pam/config-open-linux
+lib/webmin/pam/config-redhat-linux
+lib/webmin/pam/config-suse-linux
+lib/webmin/pam/config-turbo-linux
+lib/webmin/pam/config.info
+lib/webmin/pam/create_form.cgi
+lib/webmin/pam/create_pam.cgi
+lib/webmin/pam/delete_pam.cgi
+lib/webmin/pam/edit_mod.cgi
+lib/webmin/pam/edit_pam.cgi
+lib/webmin/pam/images/down.gif
+lib/webmin/pam/images/gap.gif
+lib/webmin/pam/images/icon.gif
+lib/webmin/pam/images/up.gif
+lib/webmin/pam/index.cgi
+lib/webmin/pam/lang/en
+lib/webmin/pam/module.info
+lib/webmin/pam/move.cgi
+lib/webmin/pam/pam-lib.pl
+lib/webmin/pam/pam_cracklib.so.pl
+lib/webmin/pam/pam_deny.so.pl
+lib/webmin/pam/pam_env.so.pl
+lib/webmin/pam/pam_filter.so.pl
+lib/webmin/pam/pam_group.so.pl
+lib/webmin/pam/pam_listfile.so.pl
+lib/webmin/pam/pam_mail.so.pl
+lib/webmin/pam/pam_motd.so.pl
+lib/webmin/pam/pam_nologin.so.pl
+lib/webmin/pam/pam_permit.so.pl
+lib/webmin/pam/pam_pwdb.so.pl
+lib/webmin/pam/pam_rhosts_auth.so.pl
+lib/webmin/pam/pam_rootok.so.pl
+lib/webmin/pam/pam_securetty.so.pl
+lib/webmin/pam/pam_shells.so.pl
+lib/webmin/pam/pam_tally.so.pl
+lib/webmin/pam/pam_time.so.pl
+lib/webmin/pam/pam_wheel.so.pl
+lib/webmin/pam/save_mod.cgi
+lib/webmin/pam/template.pl
 lib/webmin/pap/config-corel-linux
 lib/webmin/pap/config-debian-linux
 lib/webmin/pap/config-freebsd
@@ -2339,8 +2706,10 @@ lib/webmin/pap/edit_secret.cgi
 lib/webmin/pap/images/icon.gif
 lib/webmin/pap/index.cgi
 lib/webmin/pap/lang/en
+lib/webmin/pap/lang/es
 lib/webmin/pap/lang/pl
 lib/webmin/pap/lang/sv
+lib/webmin/pap/lang/zh_CN
 lib/webmin/pap/log_parser.pl
 lib/webmin/pap/module.info
 lib/webmin/pap/pap-lib.pl
@@ -2359,6 +2728,7 @@ lib/webmin/postfix/config.info.fr
 lib/webmin/postfix/config.info.pl
 lib/webmin/postfix/config.info.sv
 lib/webmin/postfix/config.info.tr
+lib/webmin/postfix/config.info.zh_CN
 lib/webmin/postfix/debug.cgi
 lib/webmin/postfix/defaultacl
 lib/webmin/postfix/edit_alias.cgi
@@ -2657,6 +3027,7 @@ lib/webmin/postfix/lang/en
 lib/webmin/postfix/lang/es
 lib/webmin/postfix/lang/fr
 lib/webmin/postfix/lang/sv
+lib/webmin/postfix/lang/zh_CN
 lib/webmin/postfix/ldap.cgi
 lib/webmin/postfix/local_delivery.cgi
 lib/webmin/postfix/maps_edit.cgi
@@ -2690,7 +3061,9 @@ lib/webmin/postgresql/config-redhat-linux-7.0
 lib/webmin/postgresql/config-suse-linux
 lib/webmin/postgresql/config-suse-linux-7.0
 lib/webmin/postgresql/config.info
+lib/webmin/postgresql/config.info.es
 lib/webmin/postgresql/config.info.sv
+lib/webmin/postgresql/config.info.zh_CN
 lib/webmin/postgresql/create_table.cgi
 lib/webmin/postgresql/defaultacl
 lib/webmin/postgresql/drop_dbase.cgi
@@ -2726,7 +3099,9 @@ lib/webmin/postgresql/images/table.gif
 lib/webmin/postgresql/images/users.gif
 lib/webmin/postgresql/index.cgi
 lib/webmin/postgresql/lang/en
+lib/webmin/postgresql/lang/es
 lib/webmin/postgresql/lang/sv
+lib/webmin/postgresql/lang/zh_CN
 lib/webmin/postgresql/list_grants.cgi
 lib/webmin/postgresql/list_groups.cgi
 lib/webmin/postgresql/list_hosts.cgi
@@ -2748,6 +3123,7 @@ lib/webmin/postgresql/stop.cgi
 lib/webmin/postgresql/table_form.cgi
 lib/webmin/postgresql/view_table.cgi
 lib/webmin/proc/acl_security.pl
+lib/webmin/proc/config-aix
 lib/webmin/proc/config-cobalt-linux
 lib/webmin/proc/config-corel-linux
 lib/webmin/proc/config-debian-linux
@@ -2869,6 +3245,7 @@ lib/webmin/proc/help/sfs.hu.html
 lib/webmin/proc/help/sfs.pl.html
 lib/webmin/proc/help/sfs.sv.html
 lib/webmin/proc/help/sfs.zh_TW.Big5.html
+lib/webmin/proc/help/signore.html
 lib/webmin/proc/help/size.es.html
 lib/webmin/proc/help/size.fr.html
 lib/webmin/proc/help/size.html
@@ -3238,6 +3615,7 @@ lib/webmin/sendmail/config-irix
 lib/webmin/sendmail/config-macos
 lib/webmin/sendmail/config-open-linux
 lib/webmin/sendmail/config-open-linux-2.5
+lib/webmin/sendmail/config-open-linux-3.1e
 lib/webmin/sendmail/config-openbsd
 lib/webmin/sendmail/config-openserver
 lib/webmin/sendmail/config-redhat-linux
@@ -3260,6 +3638,7 @@ lib/webmin/sendmail/config.info.zh_CN
 lib/webmin/sendmail/config.info.zh_TW.Big5
 lib/webmin/sendmail/defaultacl
 lib/webmin/sendmail/del_mailq.cgi
+lib/webmin/sendmail/del_mailqs.cgi
 lib/webmin/sendmail/delete_mail.cgi
 lib/webmin/sendmail/detach.cgi
 lib/webmin/sendmail/domain-lib.pl
@@ -3442,6 +3821,7 @@ lib/webmin/sendmail/help/opt_Timeout.queuewarn.pl.html
 lib/webmin/sendmail/help/opt_Timeout.queuewarn.ru_SU.html
 lib/webmin/sendmail/help/opt_Timeout.queuewarn.sv.html
 lib/webmin/sendmail/help/opt_Timeout.queuewarn.zh_TW.Big5.html
+lib/webmin/sendmail/help/opt_dmode.es.html
 lib/webmin/sendmail/help/opt_dmode.html
 lib/webmin/sendmail/help/units.es.html
 lib/webmin/sendmail/help/units.fr.html
@@ -3463,6 +3843,8 @@ lib/webmin/sendmail/images/mailers.gif
 lib/webmin/sendmail/images/mailq.gif
 lib/webmin/sendmail/images/masq.gif
 lib/webmin/sendmail/images/opts.gif
+lib/webmin/sendmail/images/p1.gif
+lib/webmin/sendmail/images/p2.gif
 lib/webmin/sendmail/images/relay.gif
 lib/webmin/sendmail/images/trusts.gif
 lib/webmin/sendmail/images/virtusers.gif
@@ -3532,6 +3914,7 @@ lib/webmin/servers/config.info.hu
 lib/webmin/servers/config.info.pl
 lib/webmin/servers/config.info.sv
 lib/webmin/servers/config.info.tr
+lib/webmin/servers/config.info.zh_CN
 lib/webmin/servers/config.info.zh_TW.Big5
 lib/webmin/servers/defaultacl
 lib/webmin/servers/edit_serv.cgi
@@ -3558,6 +3941,7 @@ lib/webmin/servers/lang/en
 lib/webmin/servers/lang/es
 lib/webmin/servers/lang/fr
 lib/webmin/servers/lang/hu
+lib/webmin/servers/lang/pl
 lib/webmin/servers/lang/pt
 lib/webmin/servers/lang/ru_SU
 lib/webmin/servers/lang/sv
@@ -3730,6 +4114,7 @@ lib/webmin/squid/config-irix
 lib/webmin/squid/config-lfs-linux
 lib/webmin/squid/config-macos
 lib/webmin/squid/config-open-linux
+lib/webmin/squid/config-open-linux-3.1e
 lib/webmin/squid/config-openbsd
 lib/webmin/squid/config-openserver
 lib/webmin/squid/config-osf1
@@ -3890,6 +4275,10 @@ lib/webmin/status/config-solaris
 lib/webmin/status/config-suse-linux
 lib/webmin/status/config-turbo-linux
 lib/webmin/status/config.info
+lib/webmin/status/config.info.es
+lib/webmin/status/config.info.pl
+lib/webmin/status/config.info.sv
+lib/webmin/status/config.info.zh_CN
 lib/webmin/status/dhcpd-monitor.pl
 lib/webmin/status/dnsadmin-monitor.pl
 lib/webmin/status/edit_mon.cgi
@@ -3904,11 +4293,16 @@ lib/webmin/status/images/up.gif
 lib/webmin/status/index.cgi
 lib/webmin/status/inetd-monitor.pl
 lib/webmin/status/lang/en
+lib/webmin/status/lang/es
+lib/webmin/status/lang/pl
+lib/webmin/status/lang/sv
+lib/webmin/status/lang/zh_CN
 lib/webmin/status/module.info
 lib/webmin/status/monitor.pl
 lib/webmin/status/mysql-monitor.pl
 lib/webmin/status/nfs-monitor.pl
 lib/webmin/status/ping-monitor.pl
+lib/webmin/status/postfix-monitor.pl
 lib/webmin/status/postgresql-monitor.pl
 lib/webmin/status/proc-monitor.pl
 lib/webmin/status/samba-monitor.pl
@@ -3922,6 +4316,7 @@ lib/webmin/status/services/dnsadmin.serv
 lib/webmin/status/services/inetd.serv
 lib/webmin/status/services/mysql.serv
 lib/webmin/status/services/nfs.serv
+lib/webmin/status/services/postfix.serv
 lib/webmin/status/services/postgresql.serv
 lib/webmin/status/services/samba.serv
 lib/webmin/status/services/sendmail.serv
@@ -3948,6 +4343,7 @@ lib/webmin/syslog/config-slackware-linux
 lib/webmin/syslog/config-solaris
 lib/webmin/syslog/config-suse-linux
 lib/webmin/syslog/config-turbo-linux
+lib/webmin/syslog/config-unixware
 lib/webmin/syslog/config.info
 lib/webmin/syslog/config.info.de
 lib/webmin/syslog/config.info.es
@@ -3982,6 +4378,7 @@ lib/webmin/syslog/save_log.cgi
 lib/webmin/syslog/start.cgi
 lib/webmin/syslog/syslog-lib.pl
 lib/webmin/telnet/config
+lib/webmin/telnet/config-open-linux-3.1e
 lib/webmin/telnet/config.info
 lib/webmin/telnet/config.info.de
 lib/webmin/telnet/config.info.es
@@ -3992,7 +4389,6 @@ lib/webmin/telnet/config.info.sv
 lib/webmin/telnet/config.info.tr
 lib/webmin/telnet/config.info.zh_CN
 lib/webmin/telnet/config.info.zh_TW.Big5
-lib/webmin/telnet/cryptix.jar
 lib/webmin/telnet/images/icon.gif
 lib/webmin/telnet/index.cgi
 lib/webmin/telnet/jta20.jar
@@ -4015,6 +4411,8 @@ lib/webmin/thirdparty.pl
 lib/webmin/time/acl_security.pl
 lib/webmin/time/apply.cgi
 lib/webmin/time/config
+lib/webmin/time/config-hpux
+lib/webmin/time/config-solaris
 lib/webmin/time/config.info
 lib/webmin/time/config.info.de
 lib/webmin/time/config.info.es
@@ -4388,6 +4786,7 @@ lib/webmin/useradmin/osf1-lib.pl
 lib/webmin/useradmin/redhat-linux-lib.pl
 lib/webmin/useradmin/save_group.cgi
 lib/webmin/useradmin/save_user.cgi
+lib/webmin/useradmin/search_group.cgi
 lib/webmin/useradmin/search_user.cgi
 lib/webmin/useradmin/slackware-linux-lib.pl
 lib/webmin/useradmin/solaris-lib.pl
@@ -4407,9 +4806,11 @@ lib/webmin/webmin/change_lang.cgi
 lib/webmin/webmin/change_log.cgi
 lib/webmin/webmin/change_os.cgi
 lib/webmin/webmin/change_proxy.cgi
+lib/webmin/webmin/change_referers.cgi
 lib/webmin/webmin/change_session.cgi
 lib/webmin/webmin/change_ssl.cgi
 lib/webmin/webmin/change_startpage.cgi
+lib/webmin/webmin/change_syslet.cgi
 lib/webmin/webmin/change_theme.cgi
 lib/webmin/webmin/change_ui.cgi
 lib/webmin/webmin/clone_mod.cgi
@@ -4424,14 +4825,14 @@ lib/webmin/webmin/edit_log.cgi
 lib/webmin/webmin/edit_mods.cgi
 lib/webmin/webmin/edit_os.cgi
 lib/webmin/webmin/edit_proxy.cgi
+lib/webmin/webmin/edit_referers.cgi
 lib/webmin/webmin/edit_session.cgi
 lib/webmin/webmin/edit_ssl.cgi
 lib/webmin/webmin/edit_startpage.cgi
+lib/webmin/webmin/edit_syslet.cgi
 lib/webmin/webmin/edit_themes.cgi
 lib/webmin/webmin/edit_ui.cgi
 lib/webmin/webmin/edit_upgrade.cgi
-lib/webmin/webmin/images/.xvpics/session.gif
-lib/webmin/webmin/images/.xvpics/themes.gif
 lib/webmin/webmin/images/access.gif
 lib/webmin/webmin/images/assignment.gif
 lib/webmin/webmin/images/bind.gif
@@ -4443,9 +4844,11 @@ lib/webmin/webmin/images/log.gif
 lib/webmin/webmin/images/mods.gif
 lib/webmin/webmin/images/os.gif
 lib/webmin/webmin/images/proxy.gif
+lib/webmin/webmin/images/referers.gif
 lib/webmin/webmin/images/session.gif
 lib/webmin/webmin/images/ssl.gif
 lib/webmin/webmin/images/startpage.gif
+lib/webmin/webmin/images/syslet.gif
 lib/webmin/webmin/images/themes.gif
 lib/webmin/webmin/images/ui.gif
 lib/webmin/webmin/images/upgrade.gif
@@ -4481,10 +4884,12 @@ lib/webmin/webmin/webmin-lib.pl
 lib/webmin/webminlog/images/icon.gif
 lib/webmin/webminlog/index.cgi
 lib/webmin/webminlog/lang/en
+lib/webmin/webminlog/lang/es
 lib/webmin/webminlog/lang/hu
 lib/webmin/webminlog/lang/pl
 lib/webmin/webminlog/lang/sv
 lib/webmin/webminlog/lang/tr
+lib/webmin/webminlog/lang/zh_CN
 lib/webmin/webminlog/module.info
 lib/webmin/webminlog/search.cgi
 lib/webmin/webminlog/view.cgi
@@ -4634,15 +5039,19 @@ lib/webmin/xinetd/config-freebsd
 lib/webmin/xinetd/config-redhat-linux
 lib/webmin/xinetd/config-suse-linux
 lib/webmin/xinetd/config.info
+lib/webmin/xinetd/config.info.es
 lib/webmin/xinetd/config.info.pl
 lib/webmin/xinetd/config.info.sv
+lib/webmin/xinetd/config.info.zh_CN
 lib/webmin/xinetd/edit_defaults.cgi
 lib/webmin/xinetd/edit_serv.cgi
 lib/webmin/xinetd/images/icon.gif
 lib/webmin/xinetd/index.cgi
 lib/webmin/xinetd/lang/en
+lib/webmin/xinetd/lang/es
 lib/webmin/xinetd/lang/pl
 lib/webmin/xinetd/lang/sv
+lib/webmin/xinetd/lang/zh_CN
 lib/webmin/xinetd/log_parser.pl
 lib/webmin/xinetd/module.info
 lib/webmin/xinetd/restart.cgi
@@ -4650,44 +5059,190 @@ lib/webmin/xinetd/save_defaults.cgi
 lib/webmin/xinetd/save_serv.cgi
 lib/webmin/xinetd/start.cgi
 lib/webmin/xinetd/xinetd-lib.pl
-@dirrm lib/webmin/fdisk/lang
-@dirrm lib/webmin/fdisk/images
-@dirrm lib/webmin/fdisk/help
-@dirrm lib/webmin/majordomo/lang
-@dirrm lib/webmin/majordomo/images
-@dirrm lib/webmin/man/help
-@dirrm lib/webmin/man/lang
-@dirrm lib/webmin/man/images
-@dirrm lib/webmin/lilo/images
-@dirrm lib/webmin/lilo/lang
-@dirrm lib/webmin/inittab/images
-@dirrm lib/webmin/inittab/lang
+@dirrm lib/webmin/xinetd/images
+@dirrm lib/webmin/xinetd/lang
+@dirrm lib/webmin/init/images
+@dirrm lib/webmin/init/lang
+@dirrm lib/webmin/init/help
+@dirrm lib/webmin/acl/images
+@dirrm lib/webmin/acl/lang
 @dirrm lib/webmin/inittab/help
+@dirrm lib/webmin/inittab/lang
+@dirrm lib/webmin/inittab/images
+@dirrm lib/webmin/apache/images
+@dirrm lib/webmin/apache/lang
+@dirrm lib/webmin/bind8/images
+@dirrm lib/webmin/bind8/lang
+@dirrm lib/webmin/bsdexports/images
+@dirrm lib/webmin/caldera/time/images
+@dirrm lib/webmin/caldera/telnet/images
+@dirrm lib/webmin/caldera/tcpd/images
+@dirrm lib/webmin/caldera/syslog/images
+@dirrm lib/webmin/caldera/status/images
+@dirrm lib/webmin/caldera/ssh/images
+@dirrm lib/webmin/caldera/squid/images
+@dirrm lib/webmin/caldera/software/images
+@dirrm lib/webmin/caldera/servers/images
+@dirrm lib/webmin/caldera/sendmail/images
+@dirrm lib/webmin/caldera/samba/images
+@dirrm lib/webmin/caldera/raid/images
+@dirrm lib/webmin/caldera/quota/images
+@dirrm lib/webmin/caldera/proc/images
+@dirrm lib/webmin/caldera/postgresql/images
+@dirrm lib/webmin/caldera/postfix/images
+@dirrm lib/webmin/caldera/pap/images
+@dirrm lib/webmin/caldera/pam/images
+@dirrm lib/webmin/caldera/net/images
+@dirrm lib/webmin/caldera/mysql/images
+@dirrm lib/webmin/caldera/mount/images
+@dirrm lib/webmin/caldera/man/images
+@dirrm lib/webmin/caldera/majordomo/images
+@dirrm lib/webmin/caldera/lpadmin/images
+@dirrm lib/webmin/caldera/link/images
+@dirrm lib/webmin/caldera/lilo/images
+@dirrm lib/webmin/caldera/ipweb/images
+@dirrm lib/webmin/caldera/ipcache/images
+@dirrm lib/webmin/caldera/useradmin/images
+@dirrm lib/webmin/caldera/init/images
+@dirrm lib/webmin/caldera/inetd/images
+@dirrm lib/webmin/caldera/hpuxexports/images
+@dirrm lib/webmin/caldera/help/images
+@dirrm lib/webmin/caldera/format/images
+@dirrm lib/webmin/caldera/firewall/images
+@dirrm lib/webmin/caldera/file/images
+@dirrm lib/webmin/caldera/fdisk/images
+@dirrm lib/webmin/caldera/exports/images
+@dirrm lib/webmin/caldera/dnsadmin/images
+@dirrm lib/webmin/caldera/dhcpd/images
+@dirrm lib/webmin/caldera/dfsadmin/images
+@dirrm lib/webmin/caldera/custom/images
+@dirrm lib/webmin/caldera/cron/images
+@dirrm lib/webmin/caldera/cpan/images
+@dirrm lib/webmin/caldera/bsdexports/images
+@dirrm lib/webmin/caldera/bind8/images
+@dirrm lib/webmin/caldera/apache/images
+@dirrm lib/webmin/caldera/vnc/images
+@dirrm lib/webmin/caldera/webmin/images
+@dirrm lib/webmin/caldera/webminlog/images
+@dirrm lib/webmin/caldera/wuftpd/images
+@dirrm lib/webmin/caldera/steed/system
+@dirrm lib/webmin/caldera/steed/home
+@dirrm lib/webmin/caldera/steed/others
+@dirrm lib/webmin/caldera/steed/images
+@dirrm lib/webmin/caldera/steed/servers
+@dirrm lib/webmin/caldera/steed/webmin
+@dirrm lib/webmin/caldera/steed/hardware
+@dirrm lib/webmin/caldera/steed/css
+@dirrm lib/webmin/caldera/acl/images
+@dirrm lib/webmin/caldera/images/letters
+@dirrm lib/webmin/caldera/xinetd/images
+@dirrm lib/webmin/caldera/inittab/images
+@dirrm lib/webmin/caldera/time
+@dirrm lib/webmin/caldera/telnet
+@dirrm lib/webmin/caldera/tcpd
+@dirrm lib/webmin/caldera/syslog
+@dirrm lib/webmin/caldera/status
+@dirrm lib/webmin/caldera/ssh
+@dirrm lib/webmin/caldera/squid
+@dirrm lib/webmin/caldera/software
+@dirrm lib/webmin/caldera/servers
+@dirrm lib/webmin/caldera/sendmail
+@dirrm lib/webmin/caldera/samba
+@dirrm lib/webmin/caldera/raid
+@dirrm lib/webmin/caldera/quota
+@dirrm lib/webmin/caldera/proc
+@dirrm lib/webmin/caldera/postgresql
+@dirrm lib/webmin/caldera/postfix
+@dirrm lib/webmin/caldera/pap
+@dirrm lib/webmin/caldera/pam
+@dirrm lib/webmin/caldera/net
+@dirrm lib/webmin/caldera/mysql
+@dirrm lib/webmin/caldera/mount
+@dirrm lib/webmin/caldera/man
+@dirrm lib/webmin/caldera/majordomo
+@dirrm lib/webmin/caldera/lpadmin
+@dirrm lib/webmin/caldera/link
+@dirrm lib/webmin/caldera/lilo
+@dirrm lib/webmin/caldera/ipweb
+@dirrm lib/webmin/caldera/ipcache
+@dirrm lib/webmin/caldera/useradmin
+@dirrm lib/webmin/caldera/init
+@dirrm lib/webmin/caldera/inetd
+@dirrm lib/webmin/caldera/hpuxexports
+@dirrm lib/webmin/caldera/help
+@dirrm lib/webmin/caldera/format
+@dirrm lib/webmin/caldera/firewall
+@dirrm lib/webmin/caldera/file
+@dirrm lib/webmin/caldera/fdisk
+@dirrm lib/webmin/caldera/exports
+@dirrm lib/webmin/caldera/dnsadmin
+@dirrm lib/webmin/caldera/dhcpd
+@dirrm lib/webmin/caldera/dfsadmin
+@dirrm lib/webmin/caldera/custom
+@dirrm lib/webmin/caldera/cron
+@dirrm lib/webmin/caldera/cpan
+@dirrm lib/webmin/caldera/bsdexports
+@dirrm lib/webmin/caldera/bind8
+@dirrm lib/webmin/caldera/apache
+@dirrm lib/webmin/caldera/vnc
+@dirrm lib/webmin/caldera/webmin
+@dirrm lib/webmin/caldera/webminlog
+@dirrm lib/webmin/caldera/wuftpd
+@dirrm lib/webmin/caldera/steed
+@dirrm lib/webmin/caldera/acl
+@dirrm lib/webmin/caldera/images
+@dirrm lib/webmin/caldera/xinetd
+@dirrm lib/webmin/caldera/inittab
+@dirrm lib/webmin/sendmail/lang
+@dirrm lib/webmin/sendmail/help
+@dirrm lib/webmin/sendmail/images
+@dirrm lib/webmin/servers/images
+@dirrm lib/webmin/servers/lang
+@dirrm lib/webmin/lilo/lang
+@dirrm lib/webmin/lilo/images
+@dirrm lib/webmin/lpadmin/images
+@dirrm lib/webmin/lpadmin/lang
+@dirrm lib/webmin/majordomo/images
+@dirrm lib/webmin/majordomo/lang
+@dirrm lib/webmin/webminlog/images
+@dirrm lib/webmin/webminlog/lang
+@dirrm lib/webmin/time/images
+@dirrm lib/webmin/time/help
+@dirrm lib/webmin/time/lang
+@dirrm lib/webmin/webmin/images
+@dirrm lib/webmin/webmin/lang
 @dirrm lib/webmin/mount/help
 @dirrm lib/webmin/mount/images
 @dirrm lib/webmin/mount/lang
+@dirrm lib/webmin/mysql/lang
 @dirrm lib/webmin/mysql/images
 @dirrm lib/webmin/mysql/help
-@dirrm lib/webmin/mysql/lang
+@dirrm lib/webmin/man/images
+@dirrm lib/webmin/man/lang
+@dirrm lib/webmin/man/help
 @dirrm lib/webmin/net/images
 @dirrm lib/webmin/net/lang
-@dirrm lib/webmin/init/images
-@dirrm lib/webmin/init/help
-@dirrm lib/webmin/init/lang
+@dirrm lib/webmin/software/images
+@dirrm lib/webmin/software/lang
+@dirrm lib/webmin/software/help
+@dirrm lib/webmin/squid/images
+@dirrm lib/webmin/squid/lang
+@dirrm lib/webmin/squid/help
+@dirrm lib/webmin/status/images
+@dirrm lib/webmin/status/lang
+@dirrm lib/webmin/status/services
 @dirrm lib/webmin/inetd/lang
 @dirrm lib/webmin/inetd/images
 @dirrm lib/webmin/inetd/help
-@dirrm lib/webmin/images/.xvpics
-@dirrm lib/webmin/images/letters
-@dirrm lib/webmin/hpuxexports/images
-@dirrm lib/webmin/hpuxexports/help
+@dirrm lib/webmin/pam/lang
+@dirrm lib/webmin/pam/images
 @dirrm lib/webmin/pap/images
 @dirrm lib/webmin/pap/lang
-@dirrm lib/webmin/help/lang
-@dirrm lib/webmin/help/help
-@dirrm lib/webmin/help/images
-@dirrm lib/webmin/postfix/help
+@dirrm lib/webmin/wuftpd/images
+@dirrm lib/webmin/wuftpd/lang
+@dirrm lib/webmin/wuftpd/help
 @dirrm lib/webmin/postfix/lang
+@dirrm lib/webmin/postfix/help
 @dirrm lib/webmin/postfix/images
 @dirrm lib/webmin/postgresql/help
 @dirrm lib/webmin/postgresql/lang
@@ -4695,130 +5250,101 @@ lib/webmin/xinetd/xinetd-lib.pl
 @dirrm lib/webmin/proc/help
 @dirrm lib/webmin/proc/lang
 @dirrm lib/webmin/proc/images
-@dirrm lib/webmin/quota/images
-@dirrm lib/webmin/quota/lang
-@dirrm lib/webmin/quota/help
-@dirrm lib/webmin/raid/images
-@dirrm lib/webmin/raid/lang
-@dirrm lib/webmin/format/help
-@dirrm lib/webmin/format/images
-@dirrm lib/webmin/format/lang
-@dirrm lib/webmin/file/images
-@dirrm lib/webmin/file/lang
-@dirrm lib/webmin/samba/lang
-@dirrm lib/webmin/samba/images
-@dirrm lib/webmin/samba/help
-@dirrm lib/webmin/sendmail/images
-@dirrm lib/webmin/sendmail/help
-@dirrm lib/webmin/sendmail/lang
-@dirrm lib/webmin/lpadmin/lang
-@dirrm lib/webmin/lpadmin/images
-@dirrm lib/webmin/xinetd/lang
-@dirrm lib/webmin/xinetd/images
-@dirrm lib/webmin/exports/lang
-@dirrm lib/webmin/exports/images
-@dirrm lib/webmin/exports/help
-@dirrm lib/webmin/dnsadmin/lang
-@dirrm lib/webmin/dnsadmin/images
-@dirrm lib/webmin/dnsadmin/help
-@dirrm lib/webmin/software/help
-@dirrm lib/webmin/software/images
-@dirrm lib/webmin/software/lang
-@dirrm lib/webmin/squid/lang
-@dirrm lib/webmin/squid/help
-@dirrm lib/webmin/squid/images
-@dirrm lib/webmin/status/lang
-@dirrm lib/webmin/status/images
-@dirrm lib/webmin/status/services
-@dirrm lib/webmin/dhcpd/lang
-@dirrm lib/webmin/dhcpd/images
-@dirrm lib/webmin/dfsadmin/help
-@dirrm lib/webmin/dfsadmin/lang
-@dirrm lib/webmin/dfsadmin/images
-@dirrm lib/webmin/syslog/images
-@dirrm lib/webmin/syslog/lang
-@dirrm lib/webmin/telnet/lang
-@dirrm lib/webmin/telnet/images
-@dirrm lib/webmin/custom/lang
-@dirrm lib/webmin/custom/help
-@dirrm lib/webmin/custom/images
-@dirrm lib/webmin/time/help
-@dirrm lib/webmin/time/lang
-@dirrm lib/webmin/time/images
-@dirrm lib/webmin/cron/help
+@dirrm lib/webmin/cpan/lang
+@dirrm lib/webmin/cpan/images
 @dirrm lib/webmin/cron/images
 @dirrm lib/webmin/cron/lang
-@dirrm lib/webmin/useradmin/images
-@dirrm lib/webmin/useradmin/lang
+@dirrm lib/webmin/cron/help
+@dirrm lib/webmin/custom/images
+@dirrm lib/webmin/custom/lang
+@dirrm lib/webmin/custom/help
+@dirrm lib/webmin/quota/images
+@dirrm lib/webmin/quota/help
+@dirrm lib/webmin/quota/lang
+@dirrm lib/webmin/raid/images
+@dirrm lib/webmin/raid/lang
+@dirrm lib/webmin/dfsadmin/images
+@dirrm lib/webmin/dfsadmin/help
+@dirrm lib/webmin/dfsadmin/lang
+@dirrm lib/webmin/dhcpd/help
+@dirrm lib/webmin/dhcpd/images
+@dirrm lib/webmin/dhcpd/lang
+@dirrm lib/webmin/dnsadmin/images
+@dirrm lib/webmin/dnsadmin/help
+@dirrm lib/webmin/dnsadmin/lang
+@dirrm lib/webmin/exports/images
+@dirrm lib/webmin/exports/lang
+@dirrm lib/webmin/exports/help
+@dirrm lib/webmin/fdisk/images
+@dirrm lib/webmin/fdisk/lang
+@dirrm lib/webmin/fdisk/help
+@dirrm lib/webmin/file/lang
+@dirrm lib/webmin/file/images
+@dirrm lib/webmin/format/lang
+@dirrm lib/webmin/format/help
+@dirrm lib/webmin/format/images
+@dirrm lib/webmin/syslog/lang
+@dirrm lib/webmin/syslog/images
+@dirrm lib/webmin/telnet/images
+@dirrm lib/webmin/telnet/lang
+@dirrm lib/webmin/hpuxexports/images
+@dirrm lib/webmin/hpuxexports/help
+@dirrm lib/webmin/images/letters
+@dirrm lib/webmin/samba/images
+@dirrm lib/webmin/samba/lang
+@dirrm lib/webmin/samba/help
 @dirrm lib/webmin/useradmin/help
-@dirrm lib/webmin/cpan/images/.xvpics
-@dirrm lib/webmin/cpan/images
-@dirrm lib/webmin/cpan/lang
-@dirrm lib/webmin/bsdexports/images
-@dirrm lib/webmin/webmin/images/.xvpics
-@dirrm lib/webmin/webmin/lang
-@dirrm lib/webmin/webmin/images
-@dirrm lib/webmin/bind8/images
-@dirrm lib/webmin/bind8/lang
-@dirrm lib/webmin/apache/lang
-@dirrm lib/webmin/apache/images
-@dirrm lib/webmin/acl/images
-@dirrm lib/webmin/acl/lang
-@dirrm lib/webmin/webminlog/lang
-@dirrm lib/webmin/webminlog/images
-@dirrm lib/webmin/wuftpd/images
-@dirrm lib/webmin/wuftpd/lang
-@dirrm lib/webmin/wuftpd/help
-@dirrm lib/webmin/servers/images
-@dirrm lib/webmin/servers/lang
-@dirrm lib/webmin/fdisk
-@dirrm lib/webmin/majordomo
-@dirrm lib/webmin/man
-@dirrm lib/webmin/lilo
-@dirrm lib/webmin/lang
+@dirrm lib/webmin/useradmin/lang
+@dirrm lib/webmin/useradmin/images
+@dirrm lib/webmin/xinetd
+@dirrm lib/webmin/init
+@dirrm lib/webmin/acl
 @dirrm lib/webmin/inittab
+@dirrm lib/webmin/apache
+@dirrm lib/webmin/bind8
+@dirrm lib/webmin/bsdexports
+@dirrm lib/webmin/caldera
+@dirrm lib/webmin/sendmail
+@dirrm lib/webmin/lang
+@dirrm lib/webmin/servers
+@dirrm lib/webmin/lilo
+@dirrm lib/webmin/lpadmin
+@dirrm lib/webmin/majordomo
+@dirrm lib/webmin/webminlog
+@dirrm lib/webmin/time
+@dirrm lib/webmin/webmin
 @dirrm lib/webmin/mount
 @dirrm lib/webmin/mysql
+@dirrm lib/webmin/man
 @dirrm lib/webmin/net
-@dirrm lib/webmin/init
-@dirrm lib/webmin/inetd
-@dirrm lib/webmin/images
-@dirrm lib/webmin/hpuxexports
-@dirrm lib/webmin/pap
-@dirrm lib/webmin/help
-@dirrm lib/webmin/postfix
-@dirrm lib/webmin/postgresql
-@dirrm lib/webmin/proc
-@dirrm lib/webmin/quota
-@dirrm lib/webmin/raid
-@dirrm lib/webmin/format
-@dirrm lib/webmin/file
-@dirrm lib/webmin/samba
-@dirrm lib/webmin/sendmail
-@dirrm lib/webmin/lpadmin
-@dirrm lib/webmin/xinetd
-@dirrm lib/webmin/exports
-@dirrm lib/webmin/dnsadmin
 @dirrm lib/webmin/software
 @dirrm lib/webmin/squid
 @dirrm lib/webmin/status
-@dirrm lib/webmin/dhcpd
+@dirrm lib/webmin/inetd
+@dirrm lib/webmin/pam
+@dirrm lib/webmin/pap
+@dirrm lib/webmin/wuftpd
+@dirrm lib/webmin/postfix
+@dirrm lib/webmin/postgresql
+@dirrm lib/webmin/proc
+@dirrm lib/webmin/cpan
+@dirrm lib/webmin/cron
+@dirrm lib/webmin/custom
+@dirrm lib/webmin/quota
+@dirrm lib/webmin/raid
 @dirrm lib/webmin/dfsadmin
+@dirrm lib/webmin/dhcpd
+@dirrm lib/webmin/dnsadmin
+@dirrm lib/webmin/exports
+@dirrm lib/webmin/fdisk
+@dirrm lib/webmin/file
+@dirrm lib/webmin/format
 @dirrm lib/webmin/syslog
 @dirrm lib/webmin/telnet
-@dirrm lib/webmin/custom
-@dirrm lib/webmin/time
-@dirrm lib/webmin/cron
+@dirrm lib/webmin/hpuxexports
+@dirrm lib/webmin/images
+@dirrm lib/webmin/samba
 @dirrm lib/webmin/useradmin
-@dirrm lib/webmin/cpan
-@dirrm lib/webmin/bsdexports
-@dirrm lib/webmin/webmin
-@dirrm lib/webmin/bind8
-@dirrm lib/webmin/apache
-@dirrm lib/webmin/acl
-@dirrm lib/webmin/webminlog
-@dirrm lib/webmin/wuftpd
-@dirrm lib/webmin/servers
 @dirrm lib/webmin
 @dirrm etc/webmin/xinetd
 @dirrm etc/webmin/wuftpd
@@ -4840,6 +5366,7 @@ lib/webmin/xinetd/xinetd-lib.pl
 @dirrm etc/webmin/postgresql
 @dirrm etc/webmin/postfix
 @dirrm etc/webmin/pap
+@dirrm etc/webmin/pam
 @dirrm etc/webmin/net
 @dirrm etc/webmin/mysql
 @dirrm etc/webmin/mount
@@ -4851,7 +5378,6 @@ lib/webmin/xinetd/xinetd-lib.pl
 @dirrm etc/webmin/init
 @dirrm etc/webmin/inetd
 @dirrm etc/webmin/hpuxexports
-@dirrm etc/webmin/help
 @dirrm etc/webmin/format
 @dirrm etc/webmin/file
 @dirrm etc/webmin/fdisk
