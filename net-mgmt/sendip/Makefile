@@ -13,12 +13,6 @@ MASTER_SITES=	http://www.earth.li/projectpurple/files/
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	SendIP is a commandline tool to allow sending arbitrary IP packets
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_PERL5=	yes
@@ -26,4 +20,4 @@ INSTALLS_SHLIB=	yes
 
 MAN1=		sendip.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
