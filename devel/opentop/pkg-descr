@@ -1,0 +1,22 @@
+OpenTop contains framework classes that provide the features you need
+to write network-centric, web-enabled and internationalized applications
+in C++. It enables you to:
+
+* create network clients and servers using either raw socket facilities
+  or higher-level protocols such as HTTP and FTP. 
+* create multi-threaded applications and manage synchronization between
+  threads using simple but effective threading abstractions which are
+  common to all platforms. 
+* use the full Unicode character range, using built-in character types
+  and standard string classes. 
+* use byte and character streams and manipulate files using an API
+  inspired by the excellent java.io package. 
+* take advantage of its open architecture by registering your own
+  (or third-party) classes to perform custom processing. 
+* write portable applications and extension libraries. OpenTop is
+  an ideal base on which to deliver cross-platform solutions, benefitting
+  independent software vendors and corporate IT departments. 
+* integrate XML into your C++ applications with the C++ XML Toolkit
+  extension library. 
+
+WWW: http://www.elcel.com/products/opentop/
