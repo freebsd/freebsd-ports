@@ -1255,7 +1255,9 @@
 +    if (! pThis) dummy_can_throw_anything("xxx"); // address something
 +    
 +	volatile long edx = 0, eax = 0; // for register returns
++	void * stackptr;
 +	asm volatile (
++		"mov   %%esp, %6\n\t"
 +		// copy values
 +		"mov   %0, %%eax\n\t"
 +		"mov   %%eax, %%edx\n\t"
@@ -1279,13 +1281,11 @@
 + 		"mov   %%eax, %4\n\t"
 + 		"mov   %%edx, %5\n\t"
 +		// cleanup stack
-+ 		"mov   %0, %%eax\n\t"
-+ 		"shl   $2, %%eax\n\t"
-+ 		"add   %%eax, %%esp\n\t"
++		"mov   %6, %%esp\n\t"
 +		:
-+        : "m"(nStackLongs), "m"(pStackLongs), "m"(pThis), "m"(nVtableIndex), "m"(eax), "m"(edx)
-+        : "eax", "edx" );
-+    
++		: "m"(nStackLongs), "m"(pStackLongs), "m"(pThis), "m"(nVtableIndex),
++			"m"(eax), "m"(edx), "m"(stackptr)
++		: "eax", "edx" );
 +	switch( eReturnType )
 +	{
 +		case typelib_TypeClass_HYPER:
