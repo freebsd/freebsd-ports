@@ -33,7 +33,7 @@ DOCSDIR=	${PREFIX}/share/doc/py-pyPgSQL
 
 post-patch:
 	perl -i -p \
-		-e 's#^include_dirs  = \[ "/usr/local/pgsql/include" \]#include_dirs  = [ "${LOCALBASE}/include/pgsql" ]# ;' \
+		-e 's#^include_dirs  = \[ "/usr/local/pgsql/include" \]#include_dirs  = [ "${LOCALBASE}/include" ]# ;' \
 		-e 's#^library_dirs  = \[ "/usr/local/pgsql/lib" \]#library_dirs  = [ "${LOCALBASE}/lib" ]#' \
 		${WRKSRC}/setup.py
 
