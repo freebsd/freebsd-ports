@@ -20,6 +20,7 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
