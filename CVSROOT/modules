@@ -4094,6 +4094,7 @@ kdeutils3	ports/misc/kdeutils3
 kdevelop	ports/devel/kdevelop
 kdiff3		ports/textproc/kdiff3
 kdirstat	ports/sysutils/kdirstat
+kdissert	ports/deskutils/kdissert
 kenny		ports/misc/kenny
 kermit		ports/comms/kermit
 kexchange	ports/finance/kexchange
