@@ -18,6 +18,7 @@
     SUBDIR += dns_balance
     SUBDIR += dnsflood
     SUBDIR += dnsmasq
+    SUBDIR += dnsproxy
     SUBDIR += dnssecwalker
     SUBDIR += dnstop
     SUBDIR += dnstracer
