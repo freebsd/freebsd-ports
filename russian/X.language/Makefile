@@ -3,13 +3,13 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.11 1996/11/18 11:38:55 asami Exp $
+# $Id: Makefile,v 1.12 1997/08/09 19:47:47 fenner Exp $
 #
 
 DISTNAME=       xrus-2.0-bin
 PKGNAME=        ru-X11-3.2
 CATEGORIES=     russian x11
-MASTER_SITES=   ftp://ftp.relcom.ru/pub/misc/fonts/cyrillic/xwindows/
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/misc/fonts/cyrillic/xwindows/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	ache@FreeBSD.ORG

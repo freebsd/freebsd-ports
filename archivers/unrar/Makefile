@@ -3,12 +3,12 @@
 # Date created:         28 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.8 1997/05/19 20:29:08 ache Exp $
+# $Id: Makefile,v 1.9 1997/07/21 00:48:45 fenner Exp $
 #
 
 DISTNAME=       unrar-2.01
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.relcom.ru/pub/unix/arcers/
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .tgz
 
 MAINTAINER=     ache@FreeBSD.ORG

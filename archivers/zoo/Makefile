@@ -3,13 +3,13 @@
 # Date created:         18 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.6 1996/11/18 13:56:29 asami Exp $
+# $Id: Makefile,v 1.7 1997/07/21 00:48:48 fenner Exp $
 #
 
 DISTNAME=       zoo-2.10pl1
 PKGNAME=	zoo-2.10.1
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.kiae.su/pub/unix/arcers/
+MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/arcers/
 
 MAINTAINER=	jmz@FreeBSD.org
 
