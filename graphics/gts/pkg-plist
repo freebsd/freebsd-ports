@@ -9,7 +9,7 @@ include/gts.h
 include/gtsconfig.h
 lib/libgts.a
 lib/libgts.so
-lib/libgts.so.0
+lib/libgts.so.1
 share/aclocal/gts.m4
 %%PORTDOCS%%share/doc/gts/book1.html
 %%PORTDOCS%%share/doc/gts/c10143.html
