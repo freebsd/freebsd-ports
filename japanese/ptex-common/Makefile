@@ -3,7 +3,7 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.15 1997/01/22 04:35:58 max Exp $
+# $Id: Makefile,v 1.16 1997/02/04 11:09:38 max Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
@@ -79,8 +79,8 @@ DISTFILES+=	plib-jis.tar.gz plib-sj.tar.gz plib-euc.tar.gz
 EXTRACT_ONLY+=	${LIB_FILE}
 
 post-extract:
-	@mv ${WRKDIR}/web2c-6.1/web2c ${WRKDIR}/xdvik-18f
-	@mv ${WRKDIR}/xdvik-18f ${WRKDIR}/kpathsea-2.6
+	@${MV} ${WRKDIR}/web2c-6.1/web2c ${WRKDIR}/xdvik-18f
+	@${MV} ${WRKDIR}/xdvik-18f ${WRKDIR}/kpathsea-2.6
 	@${RM} -fr ${WRKDIR}/web2c-6.1 ${WRKDIR}/kpathsea-2.6/xdvik
 
 pre-patch:
