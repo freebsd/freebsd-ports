@@ -1,0 +1,33 @@
+%%SITE_PERL%%/Heap/Simple.pm
+%%SITE_PERL%%/Heap/Simple/Any.pm
+%%SITE_PERL%%/Heap/Simple/Array.pm
+%%SITE_PERL%%/Heap/Simple/Function.pm
+%%SITE_PERL%%/Heap/Simple/Hash.pm
+%%SITE_PERL%%/Heap/Simple/Key.pm
+%%SITE_PERL%%/Heap/Simple/Less.pm
+%%SITE_PERL%%/Heap/Simple/Method.pm
+%%SITE_PERL%%/Heap/Simple/Number.pm
+%%SITE_PERL%%/Heap/Simple/NumberReverse.pm
+%%SITE_PERL%%/Heap/Simple/Object.pm
+%%SITE_PERL%%/Heap/Simple/String.pm
+%%SITE_PERL%%/Heap/Simple/StringReverse.pm
+%%SITE_PERL%%/Heap/Simple/Wrapper.pm
+%%SITE_PERL%%/auto/Heap/Simple/autosplit.ix
+%%SITE_PERL%%/auto/Heap/Simple/extract_min.al
+%%SITE_PERL%%/auto/Heap/Simple/extract_upto.al
+%%SITE_PERL%%/auto/Heap/Simple/first.al
+%%SITE_PERL%%/auto/Heap/Simple/first_key.al
+%%SITE_PERL%%/auto/Heap/Simple/infinity.al
+%%SITE_PERL%%/auto/Heap/Simple/insert.al
+%%SITE_PERL%%/auto/Heap/Simple/key.al
+%%SITE_PERL%%/auto/Heap/Simple/keys.al
+%%SITE_PERL%%/auto/Heap/Simple/min_key.al
+%%SITE_PERL%%/auto/Heap/Simple/user_data.al
+%%SITE_PERL%%/auto/Heap/Simple/values.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap/Simple
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Heap 2>/dev/null || true
+@dirrm %%SITE_PERL%%/auto/Heap/Simple
+@unexec rmdir %D/%%SITE_PERL%%/auto/Heap 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Heap/Simple
+@unexec rmdir %D/%%SITE_PERL%%/Heap 2>/dev/null || true

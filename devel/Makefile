@@ -814,6 +814,7 @@
     SUBDIR += p5-Getopt-Mixed
     SUBDIR += p5-Glib2
     SUBDIR += p5-Heap
+    SUBDIR += p5-Heap-Simple
     SUBDIR += p5-Hook-LexWrap
     SUBDIR += p5-IO
     SUBDIR += p5-IO-All
