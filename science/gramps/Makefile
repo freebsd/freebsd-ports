@@ -11,7 +11,7 @@ CATEGORIES=	science gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gramps
 
-MAINTAINER=	fehlner@gmx.de
+MAINTAINER=	stefan.tell@crashmail.de
 COMMENT=	A GTK/GNOME-based genealogy program written in Python
 
 BUILD_DEPENDS=	${PYTHON_LIBDIR}/site-packages/_xmlplus/__init__.py:${PORTSDIR}/textproc/py-xml \
