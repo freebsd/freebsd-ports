@@ -132,6 +132,15 @@ pre-build:
 		echo "This is known to cause problems during bootstrapping."; \
 		exit 1; \
 	fi
+	@if [ `sysctl -n compat.linux.osname` != "Linux" ]; \
+	then \
+		echo "Please set the value of the sysctl compat.linux.osname"; \
+		echo "to 'Linux' with the command:"; \
+		echo "	sysctl compat.linux.osname=Linux"; \
+		echo "Having it set to other values, such as 'FreeBSD',"; \
+		echo "is known to cause problems during bootstrapping."; \
+		exit 1; \
+	fi
 .endif
 
 post-build:
