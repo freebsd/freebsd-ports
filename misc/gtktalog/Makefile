@@ -13,7 +13,7 @@ MASTER_SITES=	http://freesoftware.fsf.org/download/gtktalog/gtktalog/sources/
 MAINTAINER=	rael@vectorstar.net
 
 USE_GNOMENG=	yes
-USE_GNOME=	gnomelibs
+USE_GNOME=	gnomeprefix gnomelibs
 GNU_CONFIGURE=	yes
 
 MAN1=		gtktalog.1
