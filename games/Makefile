@@ -236,6 +236,7 @@
     SUBDIR += lincity
     SUBDIR += linux-nwserver
     SUBDIR += linux-q3ademo
+    SUBDIR += linux-steam
     SUBDIR += linux_nwnclient
     SUBDIR += linux_nwndata
     SUBDIR += lm-solve
@@ -370,7 +371,6 @@
     SUBDIR += spider
     SUBDIR += ssamtse
     SUBDIR += starlanes
-    SUBDIR += steam
     SUBDIR += stvef-paks
     SUBDIR += stvef-server
     SUBDIR += sxsame
