@@ -10,7 +10,7 @@
 # WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 #
-# configuration for generic FreeBSD
+# configuration for generic linux
 #
 CONFIG	= linux
 
@@ -23,7 +23,7 @@ XF86VIDMODE_LIB = -lXxf86vm
 #
 # install locations
 #
-INSTALL_DATA_DIR = ${PREFIX}/share/bzflag/data
+INSTALL_DATA_DIR = ${PORTPREFIX}/share/bzflag/data
 
 #
 # tools
@@ -52,8 +52,8 @@ PCXXDEFS = $(XF86VIDMODE_DEF)
 #
 PCOPTS   = -Wall -W -ansi $(ACOPTS)
 PCXXOPTS = -Wall -W -fno-exceptions -fno-rtti $(ACXXOPTS)
-COPT     = -DNDEBUG
-CXXOPT   = -DNDEBUG -ffast-math -fomit-frame-pointer \
+COPT     = -DNDEBUG ${PORTCFLAGS}
+CXXOPT   = -DNDEBUG ${PORTCXXFLAGS} -ffast-math -fomit-frame-pointer \
 	-fnonnull-objects -fexpensive-optimizations
 CDEBUG   = -DDEBUG -g
 CXXDEBUG = -DDEBUG -g
