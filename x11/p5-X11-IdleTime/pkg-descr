@@ -1,0 +1,8 @@
+X11::IdleTime has one sub routine, GetIdleTime() which returns the number of
+seconds that X11 has been idle (no mouse or keyboard activity).
+
+
+Copyright (C) 2003 Adam Wendt
+
+This library is free software; you can redistribute it and/or modify it under
+the same terms as Perl itself. 
