@@ -7,6 +7,7 @@
 
 PORTNAME=	gtk-sharp
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://mono2.ximian.com/archive/${PORTVERSION}/
 
