@@ -1,38 +1,59 @@
-*** Local.config.orig	Mon May 13 13:02:22 1996
---- Local.config	Wed Jun 26 12:41:21 1996
-***************
-*** 25,31 ****
-  #define	LocalGuru xpilot@cs.uit.no	/* The one to contact for problems */
-  #endif /* LocalGuru */
-  
-! PREFIX = /usr/local/games
-  
-  /* Manual pages for games usually go to section 6. */
-  MANSUFFIX = 6
---- 25,31 ----
-  #define	LocalGuru xpilot@cs.uit.no	/* The one to contact for problems */
-  #endif /* LocalGuru */
-  
-! PREFIX = /usr/X11R6
-  
-  /* Manual pages for games usually go to section 6. */
-  MANSUFFIX = 6
-*** src/config.h.orig	Sun Apr  7 10:05:02 1996
---- src/config.h	Wed Jun 26 12:36:51 1996
+*** config.h.orig	Fri Jul 14 17:10:05 1995
+--- config.h	Fri Jul 14 16:48:51 1995
 ***************
 *** 46,52 ****
-  #        define LIBPREFIX	"lib_disk:[lib.xgames.xpilot341.lib"
-  #        define LIBDIR		LIBPREFIX "]"
-  #    else
-! #        define LIBDIR		"/usr/local/games/lib/xpilot/"
-  #    endif
+  #    define LIBPREFIX		"esv1$dkb400:[user.graduate.hjorring.lib.xpilot"
+  #    define LIBDIR		LIBPREFIX "]"
+  #else
+! #    define LIBDIR		"/usr/local/games/lib/xpilot/"
+  #endif
   #endif
   
 --- 46,52 ----
-  #        define LIBPREFIX	"lib_disk:[lib.xgames.xpilot341.lib"
-  #        define LIBDIR		LIBPREFIX "]"
-  #    else
-! #        define LIBDIR		"/usr/X11R6/lib/xpilot/"
-  #    endif
+  #    define LIBPREFIX		"esv1$dkb400:[user.graduate.hjorring.lib.xpilot"
+  #    define LIBDIR		LIBPREFIX "]"
+  #else
+! #    define LIBDIR		"/usr/X11R6/lib/xpilot/"
+  #endif
   #endif
   
+*** Imakefile.orig	Fri Jul 14 16:59:25 1995
+--- Imakefile	Fri Jul 14 17:05:00 1995
+***************
+*** 29,37 ****
+  #
+  # This is where all installation changes are normally done:
+  #
+! PREFIX = /usr/local/games
+  INSTALLDIR = $(PREFIX)
+! BINDIR = $(PREFIX)
+  LIBDIR = $(PREFIX)/lib/xpilot
+  
+  # Manual pages for games usually go to section 6.
+--- 29,37 ----
+  #
+  # This is where all installation changes are normally done:
+  #
+! PREFIX = /usr/X11R6
+  INSTALLDIR = $(PREFIX)
+! BINDIR = $(PREFIX)/bin
+  LIBDIR = $(PREFIX)/lib/xpilot
+  
+  # Manual pages for games usually go to section 6.
+***************
+*** 147,153 ****
+  
+  /* Note that this doesn't really work well.  Dunno why.  Blame Alib & Aserver. */
+  /* #define HP_SOUND			/* Uncomment for HP sound support */
+! HPAUDIOINC = 
+  HPAUDIOLIB = -lAlib
+  
+  /*
+--- 147,153 ----
+  
+  /* Note that this doesn't really work well.  Dunno why.  Blame Alib & Aserver. */
+  /* #define HP_SOUND			/* Uncomment for HP sound support */
+! HPAUDIOINC =
+  HPAUDIOLIB = -lAlib
+  
+  /*
