@@ -1,40 +1,33 @@
-*** settergetter.h.orig	Thu Apr 17 15:07:13 1997
---- settergetter.h	Thu Apr 17 15:17:30 1997
+*** old/diskfile.C	Fri Apr 26 16:24:01 1996
+--- diskfile.C	Mon Jul 12 15:28:20 1999
 ***************
-*** 64,69 ****
---- 64,70 ----
-  			     Status (Object::*setfunc)(Type),
-  			     Type (Object::*getfunc)() const)
-  		: obj(objptr), setter(setfunc), getter(getfunc) {}
-+ 	~MethodSetterGetter() {}
-  	redefined boolean set(Type value) {
-  		return boolean((obj->*setter)(value));
-  	}
+*** 50,56 ****
+  #if defined(linux)
+  extern "C" void setbuffer(FILE*, char*, int);
+  #else
+! #if !defined( sgi ) && !defined( sun )
+  extern "C" int setbuffer(FILE*, char*, int);
+  #endif
+  #endif
+--- 50,56 ----
+  #if defined(linux)
+  extern "C" void setbuffer(FILE*, char*, int);
+  #else
+! #if !defined( sgi ) && !defined( sun ) && !defined( __FreeBSD__ )
+  extern "C" int setbuffer(FILE*, char*, int);
+  #endif
+  #endif
 ***************
-*** 82,94 ****
-  	return new MethodSetterGetter<Object, Status, Type>(objptr, setfunc, getfunc);
-  }
-  
-- //********
-- 
-  template <class Status, class Type>
-  class FunctionSetterGetter : public SetterGetter<Type> {
-  public:
-          FunctionSetterGetter(Status (*setfunc)(Type), Type (*getfunc)())
-  		: setter(setfunc), getter(getfunc) {}
-  	redefined boolean set(Type value) { (*setter)(value);  return true; }
-  	redefined Type get() const { return (*getter)(); }
-  private:
---- 83,94 ----
-  	return new MethodSetterGetter<Object, Status, Type>(objptr, setfunc, getfunc);
-  }
-  
-  template <class Status, class Type>
-  class FunctionSetterGetter : public SetterGetter<Type> {
-  public:
-          FunctionSetterGetter(Status (*setfunc)(Type), Type (*getfunc)())
-  		: setter(setfunc), getter(getfunc) {}
-+ 	~FunctionSetterGetter() {}
-  	redefined boolean set(Type value) { (*setter)(value);  return true; }
-  	redefined Type get() const { return (*getter)(); }
-  private:
+*** 193,198 ****
+--- 193,203 ----
+        rw &= ~01;
+      if (fp->_flags & _IO_NO_WRITES)
+        rw &= ~02;
++ #elif defined(__FreeBSD__)
++     if (fp->_flags & (__SRD|__SRW))
++       rw |= 01;
++     if (fp->_flags & (__SWR|__SRW|__SAPP))
++       rw |= 02;
+  #else
+      if (fp->_flag & (_IOREAD|_IORW))
+        rw |= 01;

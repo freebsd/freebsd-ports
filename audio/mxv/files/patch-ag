@@ -1,16 +1,22 @@
-*** smartmem.C.orig	Thu Apr 17 15:32:03 1997
---- smartmem.C	Thu Apr 17 15:33:41 1997
+*** old/settergetter.h	Wed Jan 17 03:57:37 1996
+--- settergetter.h	Mon Jul 12 15:28:20 1999
 ***************
-*** 64,70 ****
---- 64,74 ----
-  void
-  SmartMemory::free(void* ptr, unsigned size) {
-  	if(ptr) {
-+ #ifdef __FreeBSD__
-+ 		::free(ptr);
-+ #else
-  		::cfree(ptr);
-+ #endif
-  		totalBytes_Allocated -= size;
+*** 64,69 ****
+--- 64,70 ----
+  			     Status (Object::*setfunc)(Type),
+  			     Type (Object::*getfunc)() const)
+  		: obj(objptr), setter(setfunc), getter(getfunc) {}
++ 	~MethodSetterGetter() {}
+  	redefined boolean set(Type value) {
+  		return boolean((obj->*setter)(value));
   	}
-  }
+***************
+*** 89,94 ****
+--- 90,96 ----
+  public:
+          FunctionSetterGetter(Status (*setfunc)(Type), Type (*getfunc)())
+  		: setter(setfunc), getter(getfunc) {}
++ 	~FunctionSetterGetter() {}
+  	redefined boolean set(Type value) { (*setter)(value);  return true; }
+  	redefined Type get() const { return (*getter)(); }
+  private:

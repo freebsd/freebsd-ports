@@ -3,4 +3,4 @@ FreeBSD's voxware sound drivers written by doug@ccmrc.ucsb.edu.
 It supports the following sound file formats: IRCAM, SND/AU, Hybrid (CMIX),
 AIF-C, WAVE, and raw (headerless).
 
-Version 1.10.
+Version 1.20.

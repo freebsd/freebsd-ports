@@ -1,33 +1,19 @@
-*** diskfile.C.orig	Thu Apr 17 14:57:15 1997
---- diskfile.C	Thu Apr 17 15:06:28 1997
+*** old/dialogbox.C	Mon Jul 12 15:43:28 1999
+--- dialogbox.C	Mon Jul 12 15:43:56 1999
 ***************
-*** 50,56 ****
-  #if defined(linux)
-  extern "C" void setbuffer(FILE*, char*, int);
-  #else
-! #if !defined( sgi ) && !defined( sun )
-  extern "C" int setbuffer(FILE*, char*, int);
-  #endif
-  #endif
---- 50,56 ----
-  #if defined(linux)
-  extern "C" void setbuffer(FILE*, char*, int);
-  #else
-! #if !defined( sgi ) && !defined( sun ) && !defined( __FreeBSD__ )
-  extern "C" int setbuffer(FILE*, char*, int);
-  #endif
-  #endif
-***************
-*** 193,198 ****
---- 193,203 ----
-        rw &= ~01;
-      if (fp->_flags & _IO_NO_WRITES)
-        rw &= ~02;
-+ #elif defined(__FreeBSD__)
-+     if (fp->_flags & (__SRD|__SRW))
-+       rw |= 01;
-+     if (fp->_flags & (__SWR|__SRW|__SAPP))
-+       rw |= 02;
-  #else
-      if (fp->_flag & (_IOREAD|_IORW))
-        rw |= 01;
+*** 45,51 ****
+  #include "textinput.h"
+  
+  boolean DialogBox::override_WindowManager = false;
+! int DialogBox::beep_Level = 50;
+  
+  DialogBox::DialogBox(ButtonState* s, Interactor* u, Response r) 
+  		: Dialog(s, nil), defaultResponse(r), underlying(u), useBell(false) {
+--- 45,51 ----
+  #include "textinput.h"
+  
+  boolean DialogBox::override_WindowManager = false;
+! int DialogBox::beep_Level = 0;
+  
+  DialogBox::DialogBox(ButtonState* s, Interactor* u, Response r) 
+  		: Dialog(s, nil), defaultResponse(r), underlying(u), useBell(false) {

@@ -1,16 +1,16 @@
-*** vw_converter.C.orig	Thu Apr 17 14:49:48 1997
---- vw_converter.C	Thu Apr 17 14:50:17 1997
+*** old/smartmem.C	Thu May 25 00:39:35 1995
+--- smartmem.C	Mon Jul 12 15:28:20 1999
 ***************
-*** 27,33 ****
---- 27,37 ----
-  #pragma implementation
-  #endif
-  
+*** 64,70 ****
+--- 64,74 ----
+  void
+  SmartMemory::free(void* ptr, unsigned size) {
+  	if(ptr) {
 + #ifdef __FreeBSD__
-+ #include <machine/soundcard.h>
++ 		::free(ptr);
 + #else
-  #include <sys/soundcard.h>
+  		::cfree(ptr);
 + #endif
-  #include "localdefs.h"
-  #include "application.h"
-  #include "vw_converter.h"
+  		totalBytes_Allocated -= size;
+  	}
+  }
