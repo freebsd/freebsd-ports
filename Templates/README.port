@@ -26,7 +26,7 @@
 
     <p>If needed, you may contact the <a href=
     "mailto:%%EMAIL%%">maintainer</a> of this port or the port <a href=
-    "mailto:port@FreeBSD.org">mailing-list</a>.</p>
+    "mailto:ports@FreeBSD.org">mailing-list</a>.</p>
 
     <p>%%BUILD_DEPENDS%%</p>
 
