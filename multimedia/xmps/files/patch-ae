@@ -1,0 +1,11 @@
+--- Output/Makefile.in.orig	Thu Jun 15 11:44:17 2000
++++ Output/Makefile.in	Thu Jun 15 11:44:28 2000
+@@ -111,7 +111,7 @@
+ have_nasm = @have_nasm@
+ l = @l@
+ 
+-SUBDIRS = SDL X11 OpenGL
++SUBDIRS = SDL X11
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

@@ -1,0 +1,11 @@
+--- Output/X11/stretch.h.orig	Thu Jun 15 11:36:00 2000
++++ Output/X11/stretch.h	Thu Jun 15 11:36:11 2000
+@@ -27,7 +27,7 @@
+ #ifndef _STRETCH_H
+ #define _STRETCH_H
+ 
+-#include <SDL/SDL.h>
++#include <SDL.h>
+ 
+ /* setup scaling routine. must be called before AS_stretchBlit 
+    Returns 0 on success, nonzero if bit depth is invalid (not 16 nor 32),

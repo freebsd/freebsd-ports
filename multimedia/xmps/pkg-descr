@@ -1,0 +1,11 @@
+XMPS stands for X MPEG Player System. It's a simple Gtk program that will
+(hopefully) play MPEG-1 files with sound under the *nix platforms. It has very
+attractive skinnable user interface.
+                                                                        
+And what more?
+
+XMPS is built on top of the SMPEG library from Loki entertainment. It has full
+playlist support, can use OpenGL for the display if available, so that you can
+play full-screen MPEGs without having to change screen resolution.
+
+WWW: http://www-eleves.enst-bretagne.fr/~chavarri/xmps/
