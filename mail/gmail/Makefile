@@ -8,7 +8,7 @@
 PORTNAME=	gmail
 PORTVERSION=	0.7.0
 CATEGORIES=	mail
-MASTER_SITES=	http://gmail.linuxpower.org/
+MASTER_SITES=	http://bsltwr.dnsalias.org/ftp/pub/gmail/
 
 MAINTAINER=	baskruit@bsltwr.dnsalias.org
 
