@@ -11,7 +11,7 @@ yes)
 		echo "SSL check passed. We want SSL support, and cclient has it. Good."
 		exit 0
 	else
-		echo "SSL check failed. Wa want SSL support, but cclient doesn't have it."
+		echo "SSL check failed. We want SSL support, but cclient doesn't have it."
 		echo "Please recompile and reinstall the cclient port with WITH_SSL=yes set."
 		exit 1
 	fi
@@ -19,7 +19,7 @@ yes)
 *)
 	if [ "$sslenabled" = "yes" ]
 	then
-		echo "You did not want SSL (by not defining WANT_SSL). Funny thing is, your cclient"
+		echo "You did not want SSL (by not defining WITH_SSL). Funny thing is, your cclient"
 		echo "port has SSL support installed."
 		exit 0
 	fi
