@@ -1,4 +1,0 @@
-%%RUBY_SITELIBDIR%%/racc/parser.rb
-%%RUBY_SITEARCHLIBDIR%%/racc/cparse.so
-@dirrm %%RUBY_SITELIBDIR%%/racc
-@dirrm %%RUBY_SITEARCHLIBDIR%%/racc
