@@ -1,5 +1,7 @@
+%%DIVX%%bin/divxdec
 bin/glav
 bin/jpeg2yuv
+%%DIVX%%bin/lav2divx
 bin/lav2mpeg
 bin/lav2wav
 bin/lav2yuv
@@ -19,6 +21,7 @@ bin/transist.flt
 bin/y4mcolorbars
 bin/y4mtoppm
 bin/ypipe
+%%DIVX%%bin/yuv2divx
 bin/yuv2lav
 bin/yuvdenoise
 bin/yuvkineco
