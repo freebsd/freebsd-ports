@@ -151,6 +151,7 @@
     SUBDIR += racoon
     SUBDIR += radiusniff
     SUBDIR += rain
+    SUBDIR += rats
     SUBDIR += rid
     SUBDIR += rsaref
     SUBDIR += ruby-acl
