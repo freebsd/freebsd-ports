@@ -5136,6 +5136,7 @@ p5-File-DirSync	ports/devel/p5-File-DirSync
 p5-File-FTS	ports/devel/p5-File-FTS
 p5-File-Lock	ports/devel/p5-File-Lock
 p5-File-MMagic	ports/devel/p5-File-MMagic
+p5-File-NFSLock	ports/devel/p5-File-NFSLock
 p5-File-ReadBackwards	ports/devel/p5-File-ReadBackwards
 p5-File-Remove	ports/devel/p5-File-Remove
 p5-File-Rsync	ports/net/p5-File-Rsync
