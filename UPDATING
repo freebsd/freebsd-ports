@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041023:
+  AFFECTS: users of mail/dbmail
+  AUTHOR: seanc@FreeBSD.org
+
+  When upgrading from 1.X to 2.X, read the upgrading instructions.
+  The structure of the database has changed, please use the migration
+  scripts provided.  Many of the programs have been renamed and arguments
+  have been changed as well.
+
 20041020:
   AFFECTS: users of security/antivir-milter
   AUTHOR: marius@FreeBSD.org

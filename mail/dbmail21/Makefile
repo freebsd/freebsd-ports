@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	dbmail
-PORTVERSION=	1.2.9
+PORTVERSION=	2.0.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/
 PKGNAMESUFFIX=	-${DATABASE}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	An SQL database-based mail system (POP3 and IMAP)
 
 USE_REINPLACE=	YES
@@ -41,8 +41,9 @@ LDFLAGS+=		-L${LOCALBASE}/lib/mysql
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" LOCALBASE=${LOCALBASE}
 PORTDOCS=		INSTALL README EXTRAS
 
-MAN1=			dbmail-adduser.1 dbmail-imapd.1 \
-			dbmail-maintenance.1 dbmail-pop3d.1 dbmail-smtp.1
+MAN1=			dbmail-smtp.1
+MAN8=			dbmail-imapd.8 dbmail-lmtpd.8 dbmail-pop3d.8 \
+			dbmail-users.8 dbmail-util.8
 MANCOMPRESSED=		no
 
 pre-everything::
@@ -65,10 +66,17 @@ post-install:
 	@${MKDIR} ${DATADIR}/sql
 	@${INSTALL_DATA} ${WRKSRC}/sql/${DATABASE}/* ${DATADIR}/sql
 	@cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
-	@${RM} ${PREFIX}/bin/install-dbmail.sh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+	@${ECHO} ""
+	@${ECHO} "IMPORTANT NOTE FOR ADMINS UPGRADING FROM 1.X->2.X!!!"
+	@${ECHO} ""
+	@${ECHO} "	*) Don't forget to update the database using a script from"
+	@${ECHO} "	   ${DATADIR}/sql/"
+	@${ECHO} "	*) Many programs have been renamed and their arguments changed."
+	@${ECHO} "	*) Read the upgrading notes."
+	@${ECHO} "	*) Don't be careless with this upgrade or mail will be lost!"
 
 .include <bsd.port.mk>
