@@ -1,0 +1,5 @@
+--- usermin/config.orig	Sun Apr  6 14:02:33 2003
++++ usermin/config	Sun Apr  6 14:04:06 2003
+@@ -1 +1 @@
+-usermin_dir=/etc/usermin
++usermin_dir=%%PREFIX%%/etc/usermin
