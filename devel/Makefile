@@ -358,6 +358,7 @@
     SUBDIR += jclassinfo
     SUBDIR += jrtplib
     SUBDIR += jude_take
+    SUBDIR += judy
     SUBDIR += kaptain
     SUBDIR += kcachegrind
     SUBDIR += kdbg
