@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- rotorenv/bin/makefile.def.orig	Fri Mar 22 03:48:24 2002
++++ rotorenv/bin/makefile.def	Fri Mar 29 01:27:08 2002
+@@ -1676,7 +1676,8 @@
+ !endif
+ LINKER_FLAGS =  $(LINKER_FLAGS:/LARGEADDRESSAWARE=) \
+                 $(LINK_INCREMENTAL_FLAG) \
+-                $(REQUIRED_C_RUNTIME)
++                $(REQUIRED_C_RUNTIME) \
++		-lc_r -lc
+ !else
+ LINKER_FLAGS =  $(LINKER_FLAGS) \
+                 -MERGE:_PAGE=PAGE \

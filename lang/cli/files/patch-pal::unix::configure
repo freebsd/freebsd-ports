@@ -1,0 +1,27 @@
+
+$FreeBSD$
+
+--- pal/unix/configure	2002/03/28 22:31:47	1.1
++++ pal/unix/configure	2002/03/28 22:32:46
+@@ -1010,17 +1010,17 @@
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
+ 
+ 
+-CFLAGS="-Wall -fPIC -fno-builtin -fno-exceptions"
++CFLAGS="$CFLAGS -Wall -fPIC -fno-builtin -fno-exceptions -fno-rtti"
+ 
+ if test "$NTDEBUG" != "ntsdnodbg"; then
+-   CFLAGS="$CFLAGS -g"
++#   CFLAGS="$CFLAGS -g"
+ fi
+ 
+ if test "$BUILD_ALT_DIR" = "df"; then
+-   CFLAGS="$CFLAGS -O2"
++#   CFLAGS="$CFLAGS -O2"
+ fi
+ if test "$BUILD_ALT_DIR" = "r"; then
+-   CFLAGS="$CFLAGS -O2"
++#   CFLAGS="$CFLAGS -O2"
+ fi
+ 
+ 

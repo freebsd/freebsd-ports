@@ -1,0 +1,51 @@
+# New ports collection makefile for:	cli
+# Date Created:				28 March 2002
+# Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	cli
+PORTVERSION=	20020326
+CATEGORIES=	lang
+MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/Beta1/WXP/EN-US/
+DISTNAME=	sscli${PORTVERSION}
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	sobomax@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/sscli
+
+RESTRICTED=	"license terms need to be reviewed"
+NO_CDROM=	${RESTRICTED}
+NO_PACKAGE=	${RESTRICTED}
+
+GNU_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	env.sh ./configure
+MAKE_ENV=	CC_NAME="${CC}"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES!=	${ECHO_CMD} ${PKGDIR}/files.5/patch-*
+.endif
+
+post-extract:
+	@${CHMOD} 755 ${WRKSRC}/env.sh
+
+post-configure:
+	@for file in `/usr/bin/find ${WRKSRC} -type f -name "makefile*"`; do \
+		${LN} -sf $${file} `${ECHO_CMD} $${file} | ${SED} 's|makefile|Makefile|'` ; \
+	done
+
+do-build:
+	@${CHMOD} 700 ${WRKSRC} # <- we need this because build system creates world-writeable dirs
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${SH} env.sh ./buildall)
+
+do-install:
+	@${MKDIR} ${PREFIX}/cli-${PORTVERSION}
+	@${INSTALL_DATA} ${WRKSRC}/license.txt ${PREFIX}/cli-${PORTVERSION}
+	@${TAR} -C ${WRKSRC}/build/v1.x86fre.rotor -c -f - . | \
+		${TAR} -C ${PREFIX}/cli-${PORTVERSION} --unlink -x -f -
+
+.include <bsd.port.post.mk>

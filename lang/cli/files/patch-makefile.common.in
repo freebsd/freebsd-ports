@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- makefile.common.in.orig	Fri Mar 22 03:48:17 2002
++++ makefile.common.in	Fri Mar 29 00:54:26 2002
+@@ -38,7 +38,7 @@
+ CPP = @CPP@
+ # The flags should be adjusted based on the compiler, but we
+ # only support GCC so this will do for now.
+-CFLAGS = -g -O2 -Wall
++CFLAGS ?= -g -O2 -Wall
+ 
+ # Linker information
+ PAL_LIB = rotor_pal

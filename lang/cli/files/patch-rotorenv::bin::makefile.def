@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- rotorenv/bin/makefile.def.orig	Fri Mar 22 03:48:24 2002
++++ rotorenv/bin/makefile.def	Fri Mar 29 20:21:35 2002
+@@ -1428,7 +1428,7 @@
+ !ENDIF
+ 
+ !ifdef PLATFORM_UNIX
+-DEFAULT_MSC_OPT=-O2
++DEFAULT_MSC_OPT=$(CXXFLAGS)
+ !else
+ DEFAULT_MSC_OPT = /Oxs
+ !endif
