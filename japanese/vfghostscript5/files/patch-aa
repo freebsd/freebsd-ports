@@ -1,0 +1,100 @@
+*** unix-gcc.mak.orig	Sat Nov 30 21:51:31 1996
+--- unix-gcc.mak	Sat Nov 30 22:02:25 1996
+***************
+*** 159,165 ****
+  # XLDFLAGS can be set from the command line.
+  
+  #LDFLAGS=$(XLDFLAGS) -pg
+! LDFLAGS=$(XLDFLAGS)
+  
+  # Define any extra libraries to link into the executable.
+  # ISC Unix 2.2 wants -linet.
+--- 159,165 ----
+  # XLDFLAGS can be set from the command line.
+  
+  #LDFLAGS=$(XLDFLAGS) -pg
+! LDFLAGS=$(XLDFLAGS) -L/usr/local/lib
+  
+  # Define any extra libraries to link into the executable.
+  # ISC Unix 2.2 wants -linet.
+***************
+*** 167,173 ****
+  # SVR4 may need -lnsl.
+  # (Libraries required by individual drivers are handled automatically.)
+  
+! EXTRALIBS=
+  
+  # Define the include switch(es) for the X11 header files.
+  # This can be null if handled in some other way (e.g., the files are
+--- 167,173 ----
+  # SVR4 may need -lnsl.
+  # (Libraries required by individual drivers are handled automatically.)
+  
+! EXTRALIBS=-lz
+  
+  # Define the include switch(es) for the X11 header files.
+  # This can be null if handled in some other way (e.g., the files are
+***************
+*** 3354,3360 ****
+  zlibe_1.dev: $(ZLIB_MAK) $(ECHOGS_XE)
+  	$(SETMOD) zlibe_1 -lib gz
+  
+! zlibe_=adler32.$(OBJ) deflate.$(OBJ) trees.$(OBJ)
+  zlibe_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibe_)
+  	$(SETMOD) zlibe_0 $(zlibe_)
+  	$(ADDMOD) zlibe_0 -include zlibc
+--- 3354,3360 ----
+  zlibe_1.dev: $(ZLIB_MAK) $(ECHOGS_XE)
+  	$(SETMOD) zlibe_1 -lib gz
+  
+! zlibe_=
+  zlibe_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibe_)
+  	$(SETMOD) zlibe_0 $(zlibe_)
+  	$(ADDMOD) zlibe_0 -include zlibc
+***************
+*** 3378,3388 ****
+  
+  zlibd1_=infblock.$(OBJ) infcodes.$(OBJ) inffast.$(OBJ)
+  zlibd2_=inflate.$(OBJ) inftrees.$(OBJ) infutil.$(OBJ)
+! zlibd_ = $(zlibd1_) $(zlibd2_)
+! zlibd_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev $(zlibd_)
+! 	$(SETMOD) zlibd_0 $(zlibd1_)
+! 	$(ADDMOD) zlibd_0 -obj $(zlibd2_)
+! 	$(ADDMOD) zlibd_0 -include zlibc
+  
+  infblock.$(OBJ): $(ZSRC)infblock.c $(ZDEP)
+  	$(CCCZ) $(ZSRC)infblock.c
+--- 3378,3388 ----
+  
+  zlibd1_=infblock.$(OBJ) infcodes.$(OBJ) inffast.$(OBJ)
+  zlibd2_=inflate.$(OBJ) inftrees.$(OBJ) infutil.$(OBJ)
+! zlibd_=
+! zlibd_0.dev: $(ZLIB_MAK) $(ECHOGS_XE) zlibc.dev
+! 	$(SETMOD) zlibd_0
+! 	$(ADDMOD) zlibd_0
+! 	$(ADDMOD) zlibd_0
+  
+  infblock.$(OBJ): $(ZSRC)infblock.c $(ZDEP)
+  	$(CCCZ) $(ZSRC)infblock.c
+***************
+*** 4269,4277 ****
+  lbp8.dev: $(lbp8_) page.dev
+  	$(SETPDEV) lbp8 $(lbp8_)
+  
+- lips3.dev: $(lbp8_) page.dev
+- 	$(SETPDEV) lips3 $(lbp8_)
+- 
+  gdevlbp8.$(OBJ): gdevlbp8.c $(PDEVH)
+  
+  ### ----------- The DEC LN03/LA50/LA70/LA75 printer devices ------------ ###
+--- 4269,4274 ----
+***************
+*** 4793,4798 ****
+--- 4790,4796 ----
+  	$(ADDMOD) kfvflib -lib VFlib
+  
+  zkfvflib.$(OBJ): zkfvflib.c 
++ 	${CC} ${CFLAGS} -I${PREFIX}/include/ -c zkfvflib.c
+  
+  #    Copyright (C) 1990, 1995, 1996 Aladdin Enterprises.  All rights reserved.
+  # 

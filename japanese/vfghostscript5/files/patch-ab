@@ -1,0 +1,19 @@
+*** zkfvflib.c.orig	Sat Nov  9 19:23:11 1996
+--- zkfvflib.c	Sat Nov  9 19:23:26 1996
+***************
+*** 19,25 ****
+  #include "files.h"
+  
+  /* Including the header file for VFlib. */
+! #include "VF.h"
+  #ifdef __MSDOS__
+  #  include "dos_.h"
+  #endif
+--- 19,25 ----
+  #include "files.h"
+  
+  /* Including the header file for VFlib. */
+! #include <VF.h>
+  #ifdef __MSDOS__
+  #  include "dos_.h"
+  #endif
