@@ -10,6 +10,8 @@ if [ "$2" = "POST-INSTALL" ]; then
 	UID=92
 	GID=${UID}
 	PW=/usr/sbin/pw
+	CHMOD=/bin/chmod
+	CHOWN=/usr/sbin/chown
 
 	if ${PW} group show "${GROUP}" 2>/dev/null; then
 		echo "You already have a group \"${GROUP}\", so I will use it."
@@ -34,6 +36,8 @@ if [ "$2" = "POST-INSTALL" ]; then
 			exit 1
 		fi
 	fi
+	${CHOWN} -R ${USER}:${GROUP} ${PKG_PREFIX}/share/gnome/gdm ${PKG_PREFIX}/etc/gdm
+	${CHMOD} 0750 ${PKG_PREFIX}/share/gnome/gdm
 	exit 0
 fi
 

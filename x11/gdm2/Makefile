@@ -7,6 +7,7 @@
 
 PORTNAME=	gdm2
 PORTVERSION=	2.4.0.12
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=		sources/${PORTNAME:S/2$//}/2.4
@@ -61,12 +62,6 @@ post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/gdm.sh.sample ${PREFIX}/etc/rc.d
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@${CHOWN} -R gdm:gdm ${PREFIX}/share/gnome/gdm ${PREFIX}/etc/gdm
-.else
-	@${CHOWN} -R 92:92 ${PREFIX}/share/gnome/gdm ${PREFIX}/etc/gdm
-.endif
-	@${CHMOD} 0750 ${PREFIX}/share/gnome/gdm
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
