@@ -4805,6 +4805,7 @@ openjit		ports/java/openjit
 openldap12	ports/net/openldap12
 openldap20	ports/net/openldap20
 openldap21	ports/net/openldap21
+openldap22	ports/net/openldap22
 openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice	ports/editors/openoffice
