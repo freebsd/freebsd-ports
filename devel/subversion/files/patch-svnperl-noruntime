@@ -1,0 +1,82 @@
+--- subversion/bindings/swig/perl/Base.pm  (revision 10173)
++++ subversion/bindings/swig/perl/Base.pm  (revision 10174)
+@@ -60,6 +60,7 @@ sub import {
+ package SVN::_$pkg;
+ require DynaLoader;
+ bootstrap SVN::_$pkg;
++sub dl_load_flags { 0x01 }
+ 1;
+     ' or die $@;
+     };
+--- subversion/bindings/swig/perl/Makefile.PL  (revision 10173)
++++ subversion/bindings/swig/perl/Makefile.PL  (revision 10174)
+@@ -1,4 +1,5 @@
+-#!/usr/bin/perl
++#!/usr/bin/perl -w
++use strict;
+ use ExtUtils::MakeMaker;
+ use Cwd 'abs_path';
+ use Config;
+@@ -8,6 +9,12 @@ if ($^O ne 'VMS') {
+   $perl_path .= $Config{_exe} unless $perl_path =~ m/$Config{_exe}$/i;
+ }
+ 
++my $top_builddir = '../../../..';
++my $top_srcdir = '@top_srcdir@';
++my $svnlib_srcdir = "${top_srcdir}/subversion";
++my $swig_srcdir = "${svnlib_srcdir}/bindings/swig";
++
++
+ my $swig_version;
+ open TOPMAKE, "<../../../../Makefile";
+ while (<TOPMAKE>) {
+@@ -50,8 +57,7 @@ my %config = (
+     OBJECT => q/$(O_FILES)/,
+     LIBS => [join(' ', $apr_ldflags,
+                   (map {$_ = abs_path($_); "-L$_"} @ldpaths),
+-                  @ldmodules, '-lsvn_swig_perl-1',
+-                  `swig -perl -ldflags`)],
++                  @ldmodules)],
+ );
+ 
+ sub perlish {
+@@ -64,6 +70,7 @@ WriteMakefile(%config, NAME => 'SVN::_Co
+ 	      PM => {map { ("$_.pm" => "\$(INST_LIBDIR)/$_.pm") }
+ 		     map { perlish $_ }
+ 		     ('base', 'core', @modules)},
++              LDFROM => '$(O_FILES) '."../.libs/libsvn_swig_perl-1.a",
+ 	      clean => { FILES => "*.hi *.c *.bs".
+                          join(' Makefile.','',@modules) }
+ 	     );
+@@ -84,15 +91,19 @@ sub MY::postamble {
+    my $module_c_files = join (' ',map { "svn_$_.c"} @modules);
+    my $module_make_commands = join ('',map {"\tmake -f Makefile.$_\n"} @modules);
+ 
+-   my $flags;
++   my ($flags, $flags_runtime);
+    if ($swig_version >= 103020) {
+      $flags = '-noruntime -noproxy';
++     $flags_runtime = '-runtime -noproxy';
+    } else {
++     # XXX: prehaps deprecated
+      $flags = '-c';
+    }
+    
+-   my $swig_command = "swig $flags -nopm -perl " .
+-                      "-I.. -I../../../include $apr_cflags";
++   my ($swig_command, $swig_command_runtime) =
++       map {"swig $_ -nopm -perl " .
++            "-I.. -I../../../include $apr_cflags" }
++	   ($flags, $flags_runtime);
+ 
+    my $swig_modules_command = join ('',
+                                     map {"\nsvn_$_.c : ../svn_$_.i ".
+@@ -127,7 +138,7 @@ modules :: $module_c_files
+ $module_make_commands\t\$(NOECHO) \$(TOUCH) \$\@
+ 
+ core.c :: ../core.i
+-\t$swig_command -module SVN::_Core -o core.c ../core.i
++\t$swig_command_runtime -module SVN::_Core -o core.c ../core.i
+ 
+ $swig_modules_command
+ 

@@ -6,14 +6,14 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
 MAINTAINER=	lev@freebsd.org
 COMMENT=	Version control system
 
-LIB_DEPENDS=	neon.24:${PORTSDIR}/www/neon \
-		expat.5:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
 
@@ -29,6 +29,11 @@ MAN5=		svnserve.conf.5
 MAN8=		svnserve.8
 MANCOMPRESSED=	no
 
+TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
+.if !defined(NOPORTDOCS)
+PORTDOCS=	${TXT_DOCS}
+.endif
+
 .include <bsd.port.pre.mk>
 
 SVNREPOS?=	/home/svn/repos
@@ -37,6 +42,15 @@ SVNREPOS?=	/home/svn/repos
 CONFIGURE_ARGS+=--enable-maintainer-mode \
 		--enable-debug
 CFLAGS+=	-g
+.endif
+
+.if !defined(WITHOUT_NEON)
+LIB_DEPENDS+=	neon.24:${PORTSDIR}/www/neon \
+CONFIGURE_ARGS+=	--with-neon=${LOCALBASE}
+PLIST_SUB+=		WITHOUT_NEON=""
+.else
+CONFIGURE_ARGS+=	--without-neon
+PLIST_SUB+=		WITHOUT_NEON="@comment "
 .endif
 
 .if defined(WITH_PERL)
@@ -97,8 +111,6 @@ CONFIGURE_ARGS+=--with-apr=${LOCALBASE}/lib/apache2/apr-config \
 APR_APU_DIR=	${LOCALBASE}/lib/apache2
 APR_PORT=	www/apache2
 OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
-#LDFLAGS+=	-rpath ${LOCALBASE}/lib/apache2 -rpath ${LOCALBASE}/libexec/apache2
-#CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 .else
 LIB_DEPENDS+=	apr-0.9:${PORTSDIR}/devel/apr-svn
 CONFIGURE_ARGS+=--with-apr=${LOCALBASE} \
@@ -115,7 +127,20 @@ EXTRA_PATCHES=	${PATCHDIR}/build-outputs.mk.patch
 PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 .endif
 
+.if defined(WITH_BOOK_HTML)
+PORTDOCS+=	book
+BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
+.endif
+
 pre-extract:
+	@${ECHO_MSG} ""
+.if defined(WITHOUT_NEON)
+	@${ECHO_MSG} "WebDAV/Delta-V repository access module disabled."
+.else
+	@${ECHO_MSG} "WebDAV/Delta-V repository access module enabled."
+	@${ECHO_MSG} "To disable it define WITHOUT_NEON"
+.endif
 	@${ECHO_MSG} ""
 .if defined(WITH_MAINTAINER_DEBUG)
 	@${ECHO_MSG} "Build debug version."
@@ -178,6 +203,13 @@ pre-extract:
 	@${ECHO_MSG} ""
 .endif
 	@${ECHO_MSG} ""
+.if defined(WITH_BOOK_HTML)
+	@${ECHO_MSG} "Subversion Book (HTML) enabled."
+.else
+	@${ECHO_MSG} "You can install the Subversion Book (HTML) by defining"
+	@${ECHO_MSG} "WITH_BOOK_HTML."
+.endif
+	@${ECHO_MSG} ""
 
 post-extract:
 	@${RM} -r ${WRKSRC}/neon
@@ -223,6 +255,12 @@ post-build:
 	cd ${WRKSRC} ; \
 	  ${MAKE} swig-py
 .endif
+.if defined(WITH_BOOK_HTML)
+	cd ${WRKSRC}/doc/book/tools/ ; \
+	  ${LN} -s ${PREFIX}/share/xsl/docbook xsl
+	cd ${WRKSRC}/doc/book ; \
+	  ${MAKE} all-html
+.endif
 
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
@@ -232,9 +270,13 @@ pre-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	for f in BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README; do \
-		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+	for f in ${TXT_DOCS}; do \
+	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
+.if defined(WITH_BOOK_HTML)
+	cd ${WRKSRC}/doc/book ; \
+	  ${MAKE} install-book-html install-book-html-chunk INSTALL_DIR=${DOCSDIR}
+.endif
 .endif
 .if defined(WITH_PERL)
 	cd ${WRKSRC} ; \
