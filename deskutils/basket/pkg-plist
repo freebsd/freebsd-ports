@@ -8,6 +8,7 @@ share/icons/hicolor/16x16/apps/basket.png
 share/icons/hicolor/32x32/apps/basket.png
 share/locale/de/LC_MESSAGES/basket.mo
 share/locale/fr/LC_MESSAGES/basket.mo
+share/locale/nl/LC_MESSAGES/basket.mo
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
