@@ -96,6 +96,7 @@ bin/pyrexc
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex
 %%PORTDOCS%%share/doc/pyrex/About.html
 %%PORTDOCS%%share/doc/pyrex/FAQ.html
+%%PORTDOCS%%share/doc/pyrex/extension_types.html
 %%PORTDOCS%%share/doc/pyrex/index.html
 %%PORTDOCS%%share/doc/pyrex/old_news.html
 %%PORTDOCS%%share/doc/pyrex/overview.html
@@ -103,6 +104,7 @@ bin/pyrexc
 %%PORTDOCS%%share/doc/pyrex/special_methods.html
 %%PORTDOCS%%share/examples/pyrex/Makefile
 %%PORTDOCS%%share/examples/pyrex/Makefile.nodistutils
+%%PORTDOCS%%share/examples/pyrex/Setup.py
 %%PORTDOCS%%share/examples/pyrex/embed/Makefile
 %%PORTDOCS%%share/examples/pyrex/embed/README
 %%PORTDOCS%%share/examples/pyrex/embed/embedded.pxi
@@ -115,8 +117,19 @@ bin/pyrexc
 %%PORTDOCS%%share/examples/pyrex/run_numeric_demo.py
 %%PORTDOCS%%share/examples/pyrex/run_primes.py
 %%PORTDOCS%%share/examples/pyrex/run_spam.py
-%%PORTDOCS%%share/examples/pyrex/setup.py
 %%PORTDOCS%%share/examples/pyrex/spam.pyx
+%%PORTDOCS%%share/examples/pyrex/callback/cheese.pyx
+%%PORTDOCS%%share/examples/pyrex/callback/cheesefinder.h
+%%PORTDOCS%%share/examples/pyrex/callback/Makefile
+%%PORTDOCS%%share/examples/pyrex/callback/Makefile.nodistutils
+%%PORTDOCS%%share/examples/pyrex/callback/README.txt
+%%PORTDOCS%%share/examples/pyrex/callback/run_cheese.py
+%%PORTDOCS%%share/examples/pyrex/callback/Setup.py
+%%PORTDOCS%%share/examples/pyrex/callback/cheesefinder.c
+%%PORTDOCS%%share/examples/pyrex/embed/Makefile.msc
+%%PORTDOCS%%share/examples/pyrex/embed/Makefile.msc.static
+%%PORTDOCS%%share/examples/pyrex/embed/Makefile.unix
+%%PORTDOCS%%@dirrm share/examples/pyrex/callback
 %%PORTDOCS%%@dirrm share/examples/pyrex/embed
 %%PORTDOCS%%@dirrm share/examples/pyrex
 %%PORTDOCS%%@dirrm share/doc/pyrex
