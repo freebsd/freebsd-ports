@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zmysqlda
-PORTVERSION=	2.0.7
+PORTVERSION=	2.0.8
 CATEGORIES=	www databases zope
 MASTER_SITES=	http://www.zope.org/Members/adustman/Products/ZMySQLDA/ \
 		${MASTER_SITE_SOURCEFORGE}
