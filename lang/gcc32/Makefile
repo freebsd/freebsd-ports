@@ -197,8 +197,8 @@ post-install:
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
 	cd ${WRKDIR} ; ex < ex.script
 .if ${ARCH} != "sparc64" && ${ARCH} != ia64
-	# libgcj is built on all platforms except sparc64.
-	${CAT} pkg-plist.libgcj >> ${TMPPLIST}
+	# libgcj is built on all platforms except sparc64 and ia64.
+	${CAT} ${MASTERDIR}/pkg-plist.libgcj >> ${TMPPLIST}
 .endif
 
 cklatest:
