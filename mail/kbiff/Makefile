@@ -3,7 +3,7 @@
 # Date created:		So  14 Jun 1998 13:09:18 CEST
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.7 1998/10/02 08:16:56 brian Exp $
+# $Id: Makefile,v 1.8 1998/12/28 23:44:04 dirk Exp $
 #
 
 DISTNAME=	kbiff-2.0
@@ -12,9 +12,8 @@ MASTER_SITES=	http://home.sprintmail.com/~granroth/kbiff/
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	kdeui.1:${PORTSDIR}/x11/kdelibs \
-		kdecore.1:${PORTSDIR}/x11/kdelibs
+		intl.1:${PORTSDIR}/devel/gettext
 
 USE_QT=		yes
 GNU_CONFIGURE=	yes

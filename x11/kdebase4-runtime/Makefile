@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.32 1999/02/28 06:06:23 obrien Exp $
+# $Id: Makefile,v 1.33 1999/02/28 21:48:08 asami Exp $
 #
 
 DISTNAME=	kdebase-1.1
@@ -16,9 +16,8 @@ MAINTAINER=	se@freebsd.org
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
-		Xpm.4:${PORTSDIR}/graphics/xpm
-BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-RUN_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
+		Xpm.4:${PORTSDIR}/graphics/xpm \
+		intl.1:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_QT=		yes

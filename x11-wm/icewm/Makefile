@@ -3,7 +3,7 @@
 # Date created:		10 August 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.31 1999/01/17 19:48:00 vanilla Exp $
+# $Id: Makefile,v 1.32 1999/03/17 06:41:24 nectar Exp $
 #
 
 DISTNAME=	icewm-0.9.34
@@ -15,11 +15,10 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	nacai@iname.com
 
 .if defined(GNOME)
-BUILD_DEPENDS+=	gnome-config:${PORTSDIR}/x11/gnomelibs
-BUILD_DEPENDS+=	imlib-config:${PORTSDIR}/graphics/imlib
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext
-.endif
+LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs
+.else
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+.endif
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

@@ -3,7 +3,7 @@
 # Date created:		29 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id: Makefile,v 1.9 1998/10/10 14:35:08 vanilla Exp $
+# $Id: Makefile,v 1.10 1998/11/18 17:35:16 vanilla Exp $
 #
 
 DISTNAME=	glade-0.3.7
@@ -12,8 +12,8 @@ MASTER_SITES=   http://glade.pn.org/
 
 MAINTAINER=     dom@myrddin.demon.co.uk
 
-BUILD_DEPENS=	gettext:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11
+LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
+		intl.1:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
