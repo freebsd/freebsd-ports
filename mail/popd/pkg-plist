@@ -1,3 +1,4 @@
+etc/popd.conf.default
 include/poputil.h
 lib/libpoputil.a
 lib/libpoputil.so
