@@ -38,7 +38,6 @@
     SUBDIR += hlatexp-pkfonts600
     SUBDIR += hmconv
     SUBDIR += hpscat
-    SUBDIR += htexp
     SUBDIR += imhangul
     SUBDIR += imhangul_status_applet
     SUBDIR += johabfonts
