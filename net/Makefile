@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.159 1998/05/25 23:24:29 obrien Exp $
+# $Id: Makefile,v 1.160 1998/05/27 16:54:41 mph Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -119,6 +119,7 @@
     SUBDIR += xipmsg
     SUBDIR += yale-tftpd
     SUBDIR += ytalk
+    SUBDIR += zebra
     SUBDIR += zephyr
     SUBDIR += zircon
     SUBDIR += ztelnet
