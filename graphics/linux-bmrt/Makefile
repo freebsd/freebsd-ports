@@ -6,30 +6,40 @@
 #
 
 PORTNAME=	linux-bmrt
-PORTVERSION=	2.5.0.8
+PORTVERSION=	2.6beta
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://www.bmrt.org/BMRTdownload/
-DISTNAME=	BMRT2.5h.linux-glibc2
+MASTER_SITES=	#fetch manually
+DISTNAME=	BMRT${PORTVERSION}.linux-glibc2
 
 MAINTAINER=	rjoseph@mammalia.org
 
-RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
+RUN_DEPENDS=	/compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base \
+		/compat/linux/usr/X11R6/lib/libGL.so:${PORTSDIR}/graphics/linux_mesa3
 
-WRKSRC=		${WRKDIR}/BMRT2.5
+WRKSRC=		${WRKDIR}/BMRT2.6
 NO_BUILD=	yes
+ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"See the License"
 
 # Linux binary should not be stripped by INSTALL_PROGRAM as it uses
 # /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
 STRIP=
 
-# Linux binary should not be stripped by INSTALL_PROGRAM as it uses
-# /usr/bin/strip which then brands the binary as a FreeBSD ELF one.
-STRIP=
+.include <bsd.port.pre.mk>
 
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=        may not be automatically fetched due to licensing \
+               restrictions.  You must manually fetch the Linux version at \
+               http://www.exluna.com/bmrt/download/index.html. \
+               Once you have read and agreed to the license and \
+               ${DISTFILES} has been downloaded, move it to \
+               ${DISTDIR} and then restart this build.
+.endif
+
+INC_DIR=	${PREFIX}/include/bmrt
+LIB_DIR=	${PREFIX}/lib/bmrt
 DOC_DIR=	${PREFIX}/share/doc/bmrt
-FETCH_CMD=	/usr/bin/fetch -Ab
-PROGRAM=	composite mkmip mkmosaic rendrib rgl slc slctell
+PROGRAM=	composite iv mkmip mkmosaic rendrib rgl slc slctell
 SCRIPT=		farm frankenrender
 
 pre-install:
@@ -37,14 +47,17 @@ pre-install:
 	${SED} 's/\/usr\/local\/bin\/perl/\/usr\/bin\/perl/' ${WRKSRC}/bin/frankenrender.old > ${WRKSRC}/bin/frankenrender
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib
+	${MKDIR} ${LIB_DIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${PREFIX}/lib/bmrt
 	${MKDIR} ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/bmrtdoc.pdf ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/Changes ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/License ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOC_DIR}
 	${MKDIR} ${DOC_DIR}/html
 	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${DOC_DIR}/html
-	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include
+	${MKDIR} ${INC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/bmrt
 	${MKDIR} ${PREFIX}/share/examples/bmrt
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/bmrt
 	${MKDIR} ${PREFIX}/share/bmrt ${PREFIX}/share/bmrt/shaders
@@ -62,9 +75,6 @@ post-install:
 	@${ECHO} "";
 	@${ECHO} "************************************************************************";
 	@${ECHO} "";
-	@${ECHO} "      This is shareware that is free for non-commercial use.";
-	@${ECHO} "      Please read ${PREFIX}/share/doc/bmrt/License before proceeding.";
-	@${ECHO} "";
 	@${ECHO} "      Before using these programs, add the following";
 	@${ECHO} "      path to your shell environment:";
 	@${ECHO} "";
@@ -80,4 +90,4 @@ post-install:
 	@${ECHO} "************************************************************************";
 	@${ECHO} "";
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

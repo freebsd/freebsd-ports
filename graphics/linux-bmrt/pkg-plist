@@ -1,17 +1,18 @@
 bin/composite
 bin/farm
 bin/frankenrender
+bin/iv
 bin/mkmip
 bin/mkmosaic
 bin/rendrib
 bin/rgl
 bin/slc
 bin/slctell
-include/ri.h
-include/slc.h
-lib/libribout.a
-lib/libslcargs.a
-lib/rayserver.so
+include/bmrt/ri.h
+include/bmrt/slc.h
+lib/bmrt/libribout.a
+lib/bmrt/libslcargs.a
+lib/bmrt/rayserver.so
 share/bmrt/rendribrc.sample
 share/bmrt/shaders/Makefile
 share/bmrt/shaders/ambientlight.linux.slc
@@ -63,6 +64,9 @@ share/bmrt/shaders/displace.h
 share/bmrt/shaders/distantlight.linux.slc
 share/bmrt/shaders/distantlight.sl
 share/bmrt/shaders/distantlight.slc
+share/bmrt/shaders/fakesky.linux.slc
+share/bmrt/shaders/fakesky.sl
+share/bmrt/shaders/fakesky.slc
 share/bmrt/shaders/filterwidth.h
 share/bmrt/shaders/fog.linux.slc
 share/bmrt/shaders/fog.sl
@@ -171,23 +175,32 @@ share/bmrt/shaders/windowlight.slc
 share/bmrt/shaders/wood2.linux.slc
 share/bmrt/shaders/wood2.sl
 share/bmrt/shaders/wood2.slc
+share/doc/bmrt/Changes
 share/doc/bmrt/License
 share/doc/bmrt/README
 share/doc/bmrt/bmrtdoc.pdf
-share/doc/bmrt/html/About_this_document.html
-share/doc/bmrt/html/Bibliography.html
-share/doc/bmrt/html/Contents.html
-share/doc/bmrt/html/Detailed_Description_Render.html
-share/doc/bmrt/html/Introduction.html
-share/doc/bmrt/html/Miscellaneous_Tools.html
-share/doc/bmrt/html/Photo_realistic_rendering_w.html
-share/doc/bmrt/html/Previewing_RIB_files_with.html
-share/doc/bmrt/html/Shaders_Textures.html
-share/doc/bmrt/html/Using_BMRT_as_Ray.html
 share/doc/bmrt/html/bmrtdoc.css
 share/doc/bmrt/html/bmrtdoc.html
+share/doc/bmrt/html/contents.png
+share/doc/bmrt/html/crossref.png
+share/doc/bmrt/html/exluna-logo4.jpg
+share/doc/bmrt/html/exluna-logo5.jpg
 share/doc/bmrt/html/index.html
-share/examples/bmrt/Makefile
+share/doc/bmrt/html/next.png
+share/doc/bmrt/html/next_g.png
+share/doc/bmrt/html/node1.html
+share/doc/bmrt/html/node2.html
+share/doc/bmrt/html/node3.html
+share/doc/bmrt/html/node4.html
+share/doc/bmrt/html/node5.html
+share/doc/bmrt/html/node6.html
+share/doc/bmrt/html/node7.html
+share/doc/bmrt/html/node8.html
+share/doc/bmrt/html/node9.html
+share/doc/bmrt/html/prev.png
+share/doc/bmrt/html/prev_g.png
+share/doc/bmrt/html/up.png
+share/doc/bmrt/html/up_g.png
 share/examples/bmrt/README
 share/examples/bmrt/colorspheres.c
 share/examples/bmrt/cornell.rib
@@ -196,7 +209,9 @@ share/examples/bmrt/dresser.rib
 share/examples/bmrt/limbo.rib
 share/examples/bmrt/makemaps.rib
 share/examples/bmrt/shadtest.rib
+share/examples/bmrt/skylight.rib
 share/examples/bmrt/smokebox.rib
+share/examples/bmrt/snake.rib
 share/examples/bmrt/teapot.rib
 share/examples/bmrt/teapots.rib
 share/examples/bmrt/testmaps.rib
@@ -205,6 +220,8 @@ share/examples/bmrt/texbox1.rib
 share/examples/bmrt/tpdisp.rib
 share/examples/bmrt/vase.rib
 share/examples/bmrt/vasegallery1.rib
+@dirrm include/bmrt
+@dirrm lib/bmrt
 @dirrm share/bmrt/shaders
 @dirrm share/bmrt
 @dirrm share/doc/bmrt/html
