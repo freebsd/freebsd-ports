@@ -1,7 +1,7 @@
 # New ports collection makefile for:   abs
 # Version required:    0.5
 # Date created:        20 January 1999
-# Whom:                gmarco
+# Whom:                gmarco@giovannelli.it
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.ping.be/bertin/ \
 		http://www.giovannelli.it/~gmarco/files/
 
-MAINTAINER=	freebsd@scotty.masternet.it
+MAINTAINER=	gmarco@giovannelli.it
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
