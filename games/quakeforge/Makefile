@@ -18,7 +18,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${WADFILE}
 
 MAINTAINER=	darius@dons.net.au
 
-BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10 \
 		${GL_DEPENDS}
 
@@ -28,6 +27,7 @@ WADFILE=	quakesw-1.0.6.tar.gz
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=213
+USE_AUTOMAKE=	yes
 USE_XLIB=	yes
 PLIST=		${WRKDIR}/PLIST
 
