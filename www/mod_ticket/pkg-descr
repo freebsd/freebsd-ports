@@ -3,5 +3,3 @@ and, if the md5 signature is valid, makes it available as $TICKET
 in the environment of sub-processes. The signature is generated 
 from a shared secret combined with the ticket value and the IP of 
 the remote user.
-
-WWW: http://germ.semiotek.com/ticket/
