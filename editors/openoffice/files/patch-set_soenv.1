@@ -1,5 +1,5 @@
 --- set_soenv.1.orig	Wed Apr 17 22:41:31 2002
-+++ set_soenv.1	Tue Jun  4 12:13:21 2002
++++ set_soenv.1	Wed Jun  5 00:33:59 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
@@ -94,7 +94,28 @@
  {  $SOLARDEF         .= $D."GLIBC=".$GLIBC;
  }
  $SOLARDEF            .= $D."SUPD=$UPD".
-@@ -1039,7 +1054,7 @@
+@@ -959,7 +974,7 @@
+                         $L.$USR_DT.$LIB.
+                         $L.$USR_OPENWIN.$LIB.'"';
+ }
+-elsif (($platform eq "$Linux") || ($platform eq "$FreeBSD") || ($platform eq "$NetBSD") ||  ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64"))
++elsif (($platform eq "$Linux") || ($platform eq "$NetBSD") ||  ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64"))
+ {  $SOLAREXTRALIB     = '"'.$L.$par_dir.$LIB.
+                         $L.$LIB.
+                         $L.$USR.$LIB.
+@@ -969,6 +984,11 @@
+ {  $SOLAREXTRALIB     = '"'.$L.$LIB.
+                         $L.$USR.$LIB.'"';
+ }
++elsif ($platform eq "$FreeBSD")
++{
++    $SOLAREXTRALIB    = '"'.$L.$par_dir.$LIB.'"';
++}
++
+ # Compiler include search directory paths.
+ if (($platform eq "$Solaris") || ($platform eq "$Linux") || ($platform eq "$FreeBSD") || ($platform eq "$NetBSD") || ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64")) 
+ {  $SOLARINCLUDES     = '"'.$I.'$SOLARENV'.$INC.'"';
+@@ -1039,7 +1059,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
  }
@@ -103,7 +124,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1058,6 +1073,22 @@
+@@ -1058,6 +1078,22 @@
  			$ps.$USR.$ds."X11".$BIN.
                          $ps.$USR.$LIB;
  }
@@ -126,7 +147,32 @@
  elsif ($platform eq "$Winnt")
  { 
     my ( $noldPATH );
-@@ -1196,7 +1227,7 @@
+@@ -1155,7 +1191,7 @@
+ 			$L_STLPORT_LIB.
+                         $L.$XLIB.'"';
+ }
+-elsif (($platform eq "$Linux") || ($platform eq "$FreeBSD") || ($platform eq "$NetBSD") || ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64"))
++elsif (($platform eq "$Linux") || ($platform eq "$NetBSD") || ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64"))
+ {  $SOLARLIB          = '"'.$L.$par_dir.$LIB.
+ 			$L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
+                         $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
+@@ -1167,6 +1203,15 @@
+ 			$L_STLPORT_LIB.
+                         $L.$XLIB.'"';
+ }
++elsif ($platform eq "$FreeBSD")
++{  $SOLARLIB          = '"'.$L.$par_dir.$LIB.
++			$L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
++                        $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
++                        $L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
++                        $L.'$JAVA_HOME'.$LIB.
++			$L_STLPORT_LIB.
++                        $L.$XLIB.'"';
++}
+ elsif ($platform eq "$Winnt")
+ {  $SOLARLIB          = '"'.$L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
+                         $L.$par_dir.$LIB.
+@@ -1196,7 +1241,7 @@
  	$SOLARINC            .= $I.$USR.$INCLUDE;
  }
  $SOLARINC	     .= $STLPORT_stlport;
@@ -135,7 +181,7 @@
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1210,11 +1241,6 @@
+@@ -1210,11 +1255,6 @@
  {  $SOLARINC         .= $I.'$COMPATH'.$ds."include";
  }
  
@@ -147,7 +193,7 @@
  $SOLARINC            .= $I.'$SOLARENV'.$INC.$ds."Xp31".
                          $I.'$JAVA_HOME'.$INCLUDE;
  
-@@ -1407,6 +1433,12 @@
+@@ -1407,6 +1447,12 @@
  ToFile( "GUIENV",            $GUIENV,            "e" );
  ToFile( "GVER",              $GVER,              "e" );
  ToFile( "OS",                $OS,                "e" );
