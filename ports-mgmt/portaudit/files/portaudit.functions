@@ -153,8 +153,8 @@ audit_installed()
 fetch_locations()
 {
 	# site sort order is not overly smart
-	echo "${MASTER_SITE_LOCAL}" | awk "
-		BEGIN { RS=\"[ \\t\\n]\"; IGNORECASE=1; srand() }
+	echo "${MASTER_SITE_LOCAL}" | sed -e 'y/ 	/\n\n/' | awk "
+		BEGIN { IGNORECASE=1; srand() }
 		/^$/ { next }
 		{
 			if (\$0 ~ /${MASTER_SORT_REGEX}/ ) rank=0; else rank=rand()

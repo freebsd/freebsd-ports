@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.2
+PORTVERSION=	0.2.1
 CATEGORIES=	security
 DISTFILES=
 
@@ -18,8 +18,14 @@ MAN1=		portaudit.1
 PERIODICDIR?=	${PREFIX}/etc/periodic
 DATABASEDIR?=	/var/db/portaudit
 
+PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+
 PLIST_SUB+=	PERIODICDIR="${PERIODICDIR:S,^${PREFIX}/,,}" \
 		DATABASEDIR="${DATABASEDIR}"
+
+SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%DATABASEDIR%%,${DATABASEDIR},g'
 
 PKG_INFO_BASE?=	/usr/sbin/pkg_info
 BASEPKGVER!=	${PKG_INFO_BASE} -qP 2>/dev/null
@@ -44,6 +50,13 @@ do-build:
 		${FILESDIR}/${f} > ${WRKDIR}/${f}
 .endfor
 
+post-build:
+.for text in pkg-install pkg-deinstall
+	@if [ -f ${PKGDIR}/${text} ]; then \
+		${SED} ${SED_SCRIPT} ${PKGDIR}/${text} >${WRKDIR}/${text}; \
+	fi
+.endfor
+
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/portaudit-cmd.sh ${PREFIX}/bin/portaudit
 	@${INSTALL_MAN} ${WRKDIR}/portaudit.1 ${MAN1PREFIX}/man/man1
@@ -54,5 +67,10 @@ do-install:
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKDIR}/portaudit.functions ${DATADIR}
 	@${MKDIR} ${DATABASEDIR}
+
+post-install:
+	@if [ -f ${PKGINSTALL} ]; then \
+		${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; \
+	fi
 
 .include <bsd.port.post.mk>
