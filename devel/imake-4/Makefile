@@ -6,14 +6,11 @@
 #
 
 PORTNAME=	imake
-PORTVERSION=	4.0.3
+PORTVERSION=	4.1.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_XFREE}
-MASTER_SITE_SUBDIR=	4.0.2
-DISTFILES=	X402src-1.tgz
-
-PATCH_SITES=	${MASTER_SITE_XFREE:S,%SUBDIR%/source,4.0.3/patches,g}
-PATCHFILES=	4.0.2-4.0.3.diff.gz
+MASTER_SITE_SUBDIR=	4.1.0
+DISTFILES=	X410src-1.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -26,7 +23,8 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/Imakefile \
 			xc/Makefile \
 			xc/config \
 			xc/include \
-			xc/extras
+			xc/extras \
+			xc/programs/Xserver/hw/xfree86/xf86Version.h
 MAN1=		imake.1 \
 		lndir.1 \
 		makedepend.1 \

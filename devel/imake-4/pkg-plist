@@ -1,3 +1,5 @@
+bin/ccmakedep
+bin/cleanlinks
 bin/gccmakedep
 bin/imake
 bin/lndir
@@ -107,6 +109,7 @@ lib/X11/config/svr3.cf
 lib/X11/config/svr4.cf
 lib/X11/config/ultrix.cf
 lib/X11/config/usl.cf
+lib/X11/config/version.def
 lib/X11/config/x386.cf
 lib/X11/config/xf86.rules
 lib/X11/config/xf86.tmpl
