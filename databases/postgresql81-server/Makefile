@@ -24,6 +24,8 @@ MAINTAINER=	girgen@partitur.se
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
+IS_INTERACTIVE=	YES
+
 INSTALLS_SHLIB=	YES
 LDCONFIG_DIRS=	%%PREFIX%%/pgsql/lib
 
