@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	diacanvas2
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	diacanvas
@@ -15,11 +15,8 @@ MASTER_SITE_SUBDIR=	diacanvas
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general drawing canvas from dia dialog editor
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
-
 USE_GNOME=	gnomehack libgnomeprint libgnomeprintui libartlgpl2 \
-		libgnomecanvas
+		libgnomecanvas pygnome2
 USE_PYTHON=	2.2+
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
