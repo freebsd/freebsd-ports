@@ -2,4 +2,10 @@ include/libmonetra_compat.h
 include/monetra.h
 lib/libmonetra.a
 lib/libmonetra.la
+lib/libmonetra.so
 lib/libmonetra.so.4
+lib/libmcve.a
+lib/libmcve.la
+lib/libmcve.so
+lib/libmcve.so.3
+lib/libmcve.so.4
