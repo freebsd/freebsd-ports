@@ -1,5 +1,5 @@
 --- texk/web2c-j/Makefile.in.orig	Sun Mar  5 03:01:21 2000
-+++ texk/web2c-j/Makefile.in	Sat Jun 12 22:46:47 2004
++++ texk/web2c-j/Makefile.in	Tue Jan 11 11:57:29 2005
 @@ -23,7 +23,8 @@
  ac_include ../make/paths.mk
  # 
@@ -19,3 +19,12 @@
  
  mpware = mpware/dmp mpware/makempx mpware/mpto mpware/newer
  mpware_sources = mpware/dmp.c mpware/makempx.in mpware/mpto.c mpware/newer.c
+@@ -446,7 +447,7 @@
+ texin = $(newtexmf)/tex//
+ jtexin = $(newtexmflcl)/{jtex,tex}//
+ texfonts = $(newtexmf)/fonts/tfm//:$(newtexmflcl)/fonts/tfm//
+-dumpenv = TEXMFCNF=../kpathsea TEXINPUTS=$(jtexin):$(texin): TEXFONTS=$(texfonts):
++dumpenv = TEXMFCNF=../kpathsea TEXMF=\{${TEXMFDUMP},${TEXMFDISTDIR},$(texmf),${TEXMFLOCALDIR}\} TEXINPUTS=$(jtexin):$(texin): TEXFONTS=$(texfonts):
+ 
+ dumps: fmts efmts cfmts ofmts pdffmts pdfefmts bases mems
+ fmts: $(all_fmts)

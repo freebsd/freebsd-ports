@@ -6,7 +6,7 @@
 
 PORTNAME=	texfamily-vfn2a
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/
 DISTNAME=	vftool-${PORTVERSION}
@@ -15,24 +15,25 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Virtual fonts for NTT JTeX
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMF}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \
+		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \
 		jtex:${PORTSDIR}/japanese/texfamily
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${LOCALBASE}/${TEXMFDISTDIR}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
 		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${LOCALBASE}/${TEXMF}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \
+		${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex/min10.tfm:${PORTSDIR}/japanese/ptex-tetex \
 		jtex:${PORTSDIR}/japanese/texfamily
 
-MAKE_ENV=	JTEXTFMDIR=${LOCALBASE}/${TEXMFLOCAL}/fonts/tfm/muling/nttsub \
-		PTEXTFMDIR=${LOCALBASE}/${TEXMF}/fonts/tfm/ptex
+MAKE_ENV=	JTEXTFMDIR=${LOCALBASE}/${TEXMFLOCALDIR}/fonts/tfm/muling/nttsub \
+		PTEXTFMDIR=${LOCALBASE}/${TEXMFDIR}/fonts/tfm/ptex
 
-TEXMF=		share/texmf
-TEXMFLOCAL=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXMFDIR=	share/texmf
+TEXMFLOCALDIR=	share/texmf-local
+TEXMFDISTDIR=	share/texmf-dist
+TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-FONTSDIR=	${TEXMFLOCAL}/fonts
+FONTSDIR=	${TEXMFLOCALDIR}/fonts
 PLIST_SUB=	FONTSDIR=${FONTSDIR} \
 		MKTEXLSR=${MKTEXLSR}
 
