@@ -7,6 +7,7 @@
 
 PORTNAME=	opensched
 PORTVERSION= 	0.1.0
+PORTREVISION= 	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.m-tech.ab.ca/download/sched/
 DISTNAME=	${PORTNAME}-${PORTVERSION}

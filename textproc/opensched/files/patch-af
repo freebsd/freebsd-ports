@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Tue Oct 26 01:41:45 1999
++++ src/Makefile	Sat Oct 19 15:13:56 2002
+@@ -1,6 +1,6 @@
+-CFLAGS=-Wall -g
++CFLAGS+=-Wall -g
+ LIBS=-lm
+-CC=gcc
++CC?=cc
+ CDEPEND = $(CC) -M
+ CDEPENDFLAGS =
+ 
