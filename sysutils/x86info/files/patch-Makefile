@@ -1,18 +1,20 @@
---- Makefile.orig	Mon Oct 15 02:07:53 2001
-+++ Makefile	Mon Oct 15 02:08:22 2001
-@@ -1,4 +1,4 @@
+--- Makefile.orig	Fri Nov 23 01:07:07 2001
++++ Makefile	Fri Nov 23 01:06:46 2001
+@@ -1,4 +1,3 @@
 -CFLAGS = -Wall -W -g -O2
-+#CFLAGS = -Wall -W -g -O2
+ 
  all: x86info
  
- OBJS =\
-@@ -22,6 +22,9 @@
+@@ -30,10 +29,10 @@
+ 	eblcr.o
  
  x86info: $(OBJS)
- 	gcc -o x86info $(OBJS)
-+
-+.c.o:
-+	gcc $(CFLAGS) -o $@ -c $<
+-	gcc -o x86info $(OBJS)
++	$(CC) -o x86info $(OBJS)
+ 
+ .c.o:
+-	gcc $(CFLAGS) -o $@ -c $<
++	$(CC) $(CFLAGS) -o $@ -c $<
  
  clean:
- 	rm -f *.o x86info
+ 	find . -name "*.o" -exec rm {} \;
