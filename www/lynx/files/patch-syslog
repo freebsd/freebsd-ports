@@ -1,0 +1,11 @@
+--- src/LYUtils.c.orig	Mon Jun 11 10:04:20 2001
++++ src/LYUtils.c	Wed Jan 16 18:03:39 2002
+@@ -8163,7 +8163,7 @@
+ 	    buf[colon2 - arg + 1] = 0;
+ 	    StrAllocCat(buf, "******");
+ 	    StrAllocCat(buf, atsign);
+-	    syslog (LOG_INFO|LOG_LOCAL5, buf);
++	    syslog (LOG_INFO|LOG_LOCAL5, "%s", buf);
+ 	    CTRACE((tfp, "...alter %s\n", buf));
+ 	    FREE(buf);
+ 	    return;
