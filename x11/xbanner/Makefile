@@ -3,13 +3,14 @@
 # Date created:		13 Jan 1999
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/20 08:18:56 flathill Exp $
+# $Id: Makefile,v 1.2 1999/02/02 03:27:50 asami Exp $
 #
 
 DISTNAME=	XBanner1.31
 PKGNAME=	xbanner-1.31
 CATEGORIES=	x11
 MASTER_SITES=	ftp://physics.fullerton.edu/pub/Linux/XBanner/	\
+		ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=X11/xutils
 
@@ -19,6 +20,10 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
 #USE_IMAKE=	yes
+post-patch:
+	${MV} ${WRKSRC}/xres.c ${WRKSRC}/xres.c.input
+	${SED} "s:%%X11BASE%%:${X11BASE}:" ${WRKSRC}/xres.c.input > ${WRKSRC}/xres.c
+	${RM} -f ${WRKSRC}/xres.c.input
 
 post-install:
 	${INSTALL_DATA}	${WRKSRC}/samples/XBanner.ad \
