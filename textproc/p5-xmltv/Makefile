@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.18
+PORTVERSION=	0.5.21
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Set of programs to process TV (tvguide) listings in XML format
 
-BUILD_DEPENDS= \
+BUILD_DEPENDS=	\
 	${SITE_PERL}/XML/Twig.pm:${PORTSDIR}/textproc/p5-XML-Twig \
 	${SITE_PERL}/XML/Writer.pm:${PORTSDIR}/textproc/p5-XML-Writer \
 	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
@@ -52,11 +52,12 @@ MAN1PREFIX=	${PREFIX}/share
 MAN3PREFIX=	${MANPREFIX}
 .endif
 
-MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_en.1 tv_grab_de.1 tv_grab_dk.1 \
-	tv_grab_es.1 tv_grab_fi.1 tv_grab_hu.1 tv_grab_it.1 tv_grab_na.1 \
-	tv_grab_nl.1 tv_grab_nl_wolf.1 tv_grab_nz.1 tv_grab_sn.1 tv_grab_uk.1 \
-	tv_grab_uk_rt.1 tv_grep.1 tv_imdb.1 tv_sort.1 tv_split.1 tv_to_latex.1 \
-	tv_to_text.1
+MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_en.1 tv_grab_dk.1 \
+	tv_grab_es.1 tv_grab_fi.1 tv_grab_hu.1 tv_grab_it.1 \
+	tv_grab_na.1 tv_grab_nl.1 tv_grab_nl_wolf.1 tv_grab_nz.1 \
+	tv_grab_sn.1 tv_grab_uk.1 tv_grab_uk_rt.1 tv_grep.1 \
+	tv_imdb.1 tv_remove_some_overlapping.1 tv_sort.1 tv_split.1 \
+	tv_to_latex.1 tv_to_text.1
 MAN3=	XMLTV.3 XMLTV::Grab_XML.3 XMLTV::Gunzip.3 XMLTV::Summarize.3
 
 # idea taken from devel/cvsweb port
@@ -69,7 +70,7 @@ CGIDIR?=	www/cgi-bin
 ICONSDIR?=	www/icons
 .endif
 #
-PLIST_SUB+=      CGIDIR="${CGIDIR}"
+PLIST_SUB+=	CGIDIR="${CGIDIR}"
 
 post-patch:
 # fix man install location
@@ -91,4 +92,3 @@ post-install:
 .endif
 
 .include <bsd.port.post.mk>
-
