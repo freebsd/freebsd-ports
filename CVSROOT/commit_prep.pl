@@ -101,7 +101,7 @@ sub check_version {
 	my $filename = shift;
 	my $directory = shift;
 	my $hastag = shift;
-	my %cvsversion = @_;
+	my %versions = @_;
 
 	my $bareid;
 	my $exclude;
@@ -133,12 +133,12 @@ sub check_version {
 		open(EX, "<$exclude") || die("cannot open $exclude: $!");
 		while (<EX>) {
 			chop;
-			my $line = $_;
+			my $ex_entry = $_;
 
-			if ($line =~ /^#/) {
+			if ($ex_entry =~ /^#/) {
 				next;
 			}
-			if ($path =~ /$line/) {
+			if ($path =~ /$ex_entry/) {
 				close(EX);
 				return(0);
 			}
@@ -160,7 +160,7 @@ sub check_version {
 		return (0);
 	}
 	($id, $rname, $version) = split(' ', substr($line, $pos));
-	if ($cvsversion{$filename} eq '0') {
+	if ($versions{$filename} eq '0') {
 		if (!$bareid) {
 			printf($NoName, $filename);
 			return(1);
@@ -188,8 +188,8 @@ sub check_version {
 			return(1);
 		}
 	}
-	if ($cvsversion{$filename} ne $version) {
-		printf($BadVersion, $filename, $cvsversion{$filename},
+	if ($versions{$filename} ne $version) {
+		printf($BadVersion, $filename, $versions{$filename},
 		    $version, $filename);
 		return(1);
 	}
