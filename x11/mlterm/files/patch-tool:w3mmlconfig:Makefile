@@ -1,0 +1,18 @@
+--- tool/w3mmlconfig/Makefile.orig	Sat Feb 23 14:56:55 2002
++++ tool/w3mmlconfig/Makefile	Sat Feb 23 22:21:29 2002
+@@ -1,5 +1,5 @@
+ 
+-prefix		= /usr/local
++prefix		= %%PREFIX%%
+ BIN_DIR		= $(prefix)/bin
+ LIB_DIR		= $(prefix)/libexec/w3mmlconfig
+ 
+@@ -13,7 +13,7 @@
+ DISTFILES	= Makefile w3mmlconfig.in mlconfig.cgi.in	\
+ 		mk_mlconfig-data.pl mlconfig-data section key
+ 
+-PERL		= /usr/local/bin/perl
++PERL		= %%PERL%%
+ 
+ MKDIR		= mkdir -p
+ INSTALL		= install -c
