@@ -7,6 +7,7 @@
 
 PORTNAME=	PEAR
 PORTVERSION=	1.3.3.1
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
