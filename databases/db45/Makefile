@@ -1,6 +1,6 @@
 # ports collection makefile for:	Berkeley DB v4
 # Date created:				16 August 2000
-# Whom:					Sergey Osokin aka oZZ <ports@FreeBSD.org>
+# Whom:					Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ade@FreeBSD.org
 
 #PATCH_SITES=	${MASTER_SITES}
 #PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
