@@ -101,6 +101,7 @@
 @dirrm %%WWWROOT%%/graphics
 @dirrm %%WWWROOT%%/config
 @dirrm %%WWWROOT%%/help
+@dirrm %%WWWROOT%%/lib/font/makefont
 @dirrm %%WWWROOT%%/lib/font
 @dirrm %%WWWROOT%%/lib
 @dirrm %%WWWROOT%%/locale/de_DE/LC_MESSAGES

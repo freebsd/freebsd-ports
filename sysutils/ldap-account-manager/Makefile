@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
@@ -26,24 +26,17 @@ WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
 WWW_ROOT?=	www/lam
 PLIST_SUB+=	WWWROOT=${WWW_ROOT}
-WWW_DIR=	config graphics help lib locale sess style templates tmp
+WWW_DATA=	index.html config graphics help lib locale sess style templates tmp
 MYPORTDOCS=	HISTORY README TODO docs/*
 PORTDOCS=	*
-WWW_OWNED=	sess tmp config config config/profiles config/profiles/groups \
-		config/profiles/groups/default.prg config/profiles/hosts \
-		config/profiles/hosts/default.prh config/profiles/users \
-		config/profiles/users/default.pru config/language config/shells \
-		config/config.cfg config/lam.conf
-
 LAM_SCRIPTS=	lib/createntlm.pl lib/lamdaemon.pl
+
+do-configure:
+	@${RM} ${WRKSRC}/config/shells
 
 do-install:
 	@${MKDIR} ${PREFIX}/${WWW_ROOT}
-	@${INSTALL_DATA} ${WRKSRC}/index.html ${PREFIX}/${WWW_ROOT}
-.for DIR in ${WWW_DIR}
-	@${MKDIR} ${PREFIX}/${WWW_ROOT}/${DIR}
-	@${CP} -Rf ${WRKSRC}/${DIR} ${PREFIX}/${WWW_ROOT}
-.endfor
+	@cd ${WRKSRC} && ${TAR} cf - ${WWW_DATA} | ${TAR} xf - -C ${PREFIX}/${WWW_ROOT} 
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${MYPORTDOCS}
@@ -58,19 +51,11 @@ do-install:
 	@${ECHO_MSG} "===> Setting correct permissions"
 	@${FIND} ${PREFIX}/${WWW_ROOT} -type f -exec ${CHMOD} 644 {} \;
 	@${FIND} ${PREFIX}/${WWW_ROOT} -type d -exec ${CHMOD} 755 {} \;
-	@cd ${PREFIX}/${WWW_ROOT} ; ${CHOWN} ${WWWOWN}:${WWWGRP} ${WWW_OWNED}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WWW_ROOT}/*
 	@cd ${PREFIX}/${WWW_ROOT} ; ${CHMOD} 755 ${LAM_SCRIPTS}
+	@${LN} -sf /etc/shells ${PREFIX}/${WWW_ROOT}/config/shells
 
 post-install:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  To use LDAP-account-manager, you have to install"
-	@${ECHO_MSG} "  and set up Samba 2.x or 3.x schemas."
-	@${ECHO_MSG} "  Like this :"
-	@${ECHO_MSG} "     include       ${LOCALBASE}/etc/openldap/schema/core.schema"
-	@${ECHO_MSG} "     include       ${LOCALBASE}/etc/openldap/schema/cosine.schema"
-	@${ECHO_MSG} "     include       ${LOCALBASE}/etc/openldap/schema/inetorgperson.schema"
-	@${ECHO_MSG} "     include       ${LOCALBASE}/etc/openldap/schema/nis.schema"
-	@${ECHO_MSG} "     include       ${LOCALBASE}/etc/openldap/schema/samba.schema"
-	@${ECHO_MSG} ""
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
