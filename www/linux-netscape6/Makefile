@@ -7,6 +7,7 @@
 
 PORTNAME=	linux-netscape
 PORTVERSION?=	6.2.2
+PORTREVISION?=	1
 CATEGORIES?=	www linux
 MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.cica.es/pub6/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
@@ -59,9 +60,9 @@ NO_CDROM=	${RESTRICTED}
 USE_LINUX=	yes
 USE_XLIB=	yes
 WRKSRC=	${WRKDIR}/netscape-installer/xpi
-INSTALL_DIR=	${PREFIX}/lib/linux-netscape6
+INSTALL_DIR=	lib/linux-netscape6-${NETSCAPE6_LANG}
 PLIST=		${WRKDIR}/pkg-plist
-STARTUP_CMD=	${WRKDIR}/netscape6
+STARTUP_CMD=	${WRKDIR}/netscape6${NETSCAPE6_LANG}
 
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
@@ -143,22 +144,22 @@ do-configure:
 #	@${ECHO} \"Factory not found\" and \"cannot open display\" errors here are normal.
 	${ECHO_CMD}	"#!/bin/sh"		>  ${STARTUP_CMD}
 	${ECHO_CMD} -n	"cd "			>> ${STARTUP_CMD}
-	${ECHO_CMD}	${INSTALL_DIR}		>> ${STARTUP_CMD}
+	${ECHO_CMD}	${PREFIX}/${INSTALL_DIR}		>> ${STARTUP_CMD}
 	${ECHO_CMD}	'exec ./netscape $$*'	>> ${STARTUP_CMD}
 
 pre-install:
-	${ECHO_CMD} bin/netscape6 > ${PLIST}
+	${ECHO_CMD} bin/netscape6${NETSCAPE6_LANG} > ${PLIST}
 	cd ${WRKSRC}/bin; for i in `find * \! -type d | sort`; do \
-		${ECHO_CMD} lib/linux-netscape6/$${i} >> ${PLIST}; \
+		${ECHO_CMD} ${INSTALL_DIR}/$${i} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/plugins; for i in `find * \! -type d | sort`; do \
-		${ECHO_CMD} lib/linux-netscape6/plugins/$${i} >> ${PLIST}; \
+		${ECHO_CMD} ${INSTALL_DIR}/plugins/$${i} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/bin; \
 	for i in `find -d * -type d`; do \
-		${ECHO_CMD} @dirrm lib/linux-netscape6/$${i} >> ${PLIST}; \
+		${ECHO_CMD} @dirrm ${INSTALL_DIR}/$${i} >> ${PLIST}; \
 	done
-	${ECHO_CMD} @dirrm lib/linux-netscape6 >> ${PLIST}
+	${ECHO_CMD} @dirrm ${INSTALL_DIR} >> ${PLIST}
 
 pre-package:
 	@${ECHO_MSG} "*** WARNING ***"
@@ -166,8 +167,8 @@ pre-package:
 	@${ECHO_MSG} "* It is prohibited by the licensing."
 
 do-install:
-	${MKDIR} ${INSTALL_DIR}
-	${CP} -Rp ${WRKSRC}/bin/* ${WRKSRC}/plugins ${INSTALL_DIR}
+	${MKDIR} ${PREFIX}/${INSTALL_DIR}
+	${CP} -Rp ${WRKSRC}/bin/* ${WRKSRC}/plugins ${PREFIX}/${INSTALL_DIR}
 	${INSTALL_SCRIPT} ${STARTUP_CMD} ${PREFIX}/bin
 
 post-install:
