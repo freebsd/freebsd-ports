@@ -1,0 +1,11 @@
+--- doc/Makefile.in	Tue Feb 22 14:46:40 2000
++++ doc/Makefile.in.new	Wed Mar  1 06:11:30 2000
+@@ -86,7 +86,7 @@
+ VERSION = @VERSION@
+ X_BASE_LIBS = @X_BASE_LIBS@
+ 
+-htmldir = $(prefix)/@PACKAGE@/html
++htmldir = $(datadir)/@PACKAGE@/html
+ 
+ # Source code documentation tool
+ PERCEPS = perceps
