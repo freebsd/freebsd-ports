@@ -12,15 +12,13 @@ MASTER_SITES=	http://www.mit.edu/~ibaran/
 
 MAINTAINER=	kcwu@ck.tp.edu.tw
 
-BROKEN=		"Does not compile"
-
 USE_QT_VER=	2
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 
 pre-configure:
-	${REINPLACE_CMD} -e "s@\\$$\(QTDIR\)/include@${PREFIX}/include/qt2@" ${WRKSRC}/Makefile ${WRKSRC}/formula/Makefile
-	${REINPLACE_CMD} -e "s@\\$$\(QTDIR\)/lib -lqt@${PREFIX}/lib -lqt2@" ${WRKSRC}/Makefile 
+	${REINPLACE_CMD} -e "s@\\$$(QTDIR)/include@${PREFIX}/include/qt2@" ${WRKSRC}/Makefile ${WRKSRC}/formula/Makefile
+	${REINPLACE_CMD} -e "s@\\$$(QTDIR)/lib -lqt@${PREFIX}/lib -lqt2@" ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e "s@^MOC =.*@MOC = ${MOC}@" ${WRKSRC}/Makefile ${WRKSRC}/formula/Makefile
 	${REINPLACE_CMD} -e 's@"LanguageDir", "\."@"LanguageDir", "${PREFIX}/share/doc/kseg"@' ${WRKSRC}/main.cpp
 
