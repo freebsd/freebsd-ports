@@ -49,6 +49,7 @@ etc/DIR_COLORS
 etc/ld.so.conf
 etc/pam.d/su
 etc/redhat-release
+etc/yp.conf
 lib/ld-2.0.7.so
 lib/ld-linux.so.2
 lib/libBrokenLocale-2.0.7.so
