@@ -30,6 +30,7 @@ lib/zircon/help/Zircon/Windows/Channel
 lib/zircon/help/Zircon/Windows/Control
 lib/zircon/help/Zircon/Windows/Info
 lib/zircon/help/Zircon/Windows/Message
+lib/zircon/installed
 lib/zircon/lang/bulgar.tcl
 lib/zircon/lang/catala.tcl
 lib/zircon/lang/deutsch.tcl
@@ -66,15 +67,15 @@ lib/zircon/lib/Mac.tcl
 lib/zircon/lib/Message.tcl
 lib/zircon/lib/Monitor.tcl
 lib/zircon/lib/Net.tcl
-lib/zircon/lib/Notice.tcl
 lib/zircon/lib/Netspace.tcl
+lib/zircon/lib/Notice.tcl
 lib/zircon/lib/Notrace.tcl
 lib/zircon/lib/Object.tcl
 lib/zircon/lib/On.tcl
 lib/zircon/lib/Protect.tcl
+lib/zircon/lib/SOCKS.tcl
 lib/zircon/lib/Server.tcl
 lib/zircon/lib/Service.tcl
-lib/zircon/lib/SOCKS.tcl
 lib/zircon/lib/Sound.tcl
 lib/zircon/lib/Split.tcl
 lib/zircon/lib/Tags.tcl
@@ -102,6 +103,7 @@ lib/zircon/lib/initial.tcl
 lib/zircon/lib/main.tcl
 lib/zircon/lib/misc.tcl
 lib/zircon/lib/misc2.tcl
+lib/zircon/lib/pkgIndex.tcl
 lib/zircon/lib/plugin.tcl
 lib/zircon/lib/saverc.tcl
 lib/zircon/lib/servers.tcl
@@ -109,24 +111,23 @@ lib/zircon/lib/tcl75.tcl
 lib/zircon/lib/tcl76.tcl
 lib/zircon/lib/tcl80.tcl
 lib/zircon/lib/tcl81.tcl
+lib/zircon/lib/tcl82.tcl
 lib/zircon/lib/upgrade.tcl
 lib/zircon/lib/userCmds.tcl
 lib/zircon/lib/zircon.tcl
-lib/zircon/lib/pkgIndex.tcl
 lib/zircon/look/standard.tcl
 lib/zircon/plugins/Dcc/auto.tcl
 lib/zircon/plugins/Dcc/chat.tcl
 lib/zircon/plugins/Dcc/dcc.tcl
 lib/zircon/plugins/Dcc/dccget.tcl
 lib/zircon/plugins/Dcc/dccsend.tcl
-lib/zircon/plugins/Dcc/send.tcl
 lib/zircon/plugins/Dcc/pkgIndex.tcl
+lib/zircon/plugins/Dcc/send.tcl
 lib/zircon/plugins/MsgOps/setup.tcl
 lib/zircon/plugins/NoticeOps/setup.tcl
 lib/zircon/plugins/Sed/decrypt.tcl
 lib/zircon/plugins/Sed/pkgIndex.tcl
 lib/zircon/samples/zircon.ad
-lib/zircon/installed
 @exec mkdir -p %D/lib/zircon/help/Channels
 @exec mkdir -p %D/lib/zircon/help/Servers
 @exec mkdir -p %D/lib/zircon/help/Services
