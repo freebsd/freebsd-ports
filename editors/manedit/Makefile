@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	manedit
-PORTVERSION=	0.4.i
+PORTVERSION=	0.4.j
 CATEGORIES=	editors
 MASTER_SITES=	ftp://fox.mit.edu/pub/xsw/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.i/i/}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.j/j/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sobomax@FreeBSD.org
