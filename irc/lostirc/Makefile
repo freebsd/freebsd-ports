@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	lostirc
-PORTVERSION=	0.2.7
-PORTREVISION=	2
+PORTVERSION=	0.3.2
 CATEGORIES=	irc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://demian.dyndns.org/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rael@vectorstar.net
@@ -38,8 +38,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's|_nl_domain_bindings|libintl_nl_domain_bindings|' ${WRKSRC}/configure
 
 pre-install:
-	${REINPLACE_CMD} -E 's|MKINSTALLDIRS = \$$\(top_builddir\)/|MKINSTALLDIRS = |g' ${WRKSRC}/intl/Makefile
-	${REINPLACE_CMD} -E 's|MKINSTALLDIRS = \$$\(top_builddir\)/|MKINSTALLDIRS = |g' ${WRKSRC}/po/Makefile
+	${REINPLACE_CMD} -E 's|mkinstalldirs = $(SHELL) $(MKINSTALLDIRS)|mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) "${ECHO} $(MKINSTALLDIRS)" ;; *) "${ECHO} $(top_builddir)/$(MKINSTALLDIRS)" ;; esac`|g' ${WRKSRC}/intl/Makefile
+	${REINPLACE_CMD} -E 's|mkinstalldirs = $(SHELL) $(MKINSTALLDIRS)|mkinstalldirs = $(SHELL) `case "$(MKINSTALLDIRS)" in /*) "${ECHO} $(MKINSTALLDIRS)" ;; *) "${ECHO} $(top_builddir)/$(MKINSTALLDIRS)" ;; esac`|g' ${WRKSRC}/po/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
