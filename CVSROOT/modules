@@ -4241,7 +4241,6 @@ nbsmtp		ports/mail/nbsmtp
 nbtscan		ports/net/nbtscan
 nc		ports/net/nc
 ncal		src/usr.bin/ncal
-ncat		ports/net/ncat
 ncbi-toolkit	ports/biology/ncbi-toolkit
 ncftp		ports/ftp/ncftp
 ncftp2		ports/ftp/ncftp2
@@ -5572,7 +5571,6 @@ prom-mew	ports/mail/prom-mew
 prom-wl		ports/mail/prom-wl
 pronto		ports/mail/pronto
 props		ports/x11/props
-proxy		ports/net/proxy
 proxy-suite	ports/net/proxy-suite
 proxyper	ports/misc/proxyper
 proxytunnel	ports/security/proxytunnel
