@@ -252,6 +252,7 @@
     SUBDIR += mtr
     SUBDIR += mudix
     SUBDIR += mutella
+    SUBDIR += nagios
     SUBDIR += naim
     SUBDIR += nam
     SUBDIR += napshare
