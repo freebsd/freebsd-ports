@@ -1,9 +1,9 @@
 # New ports collection makefile for: w3 on Emacs
 # Version required:	2.2.26	
-# Date created:		30 November 1996
+# Date created:		31 December 1996
 # Whom:			MITA Yoshio <mita@ee.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/12/18 05:26:32 asami Exp $
 #
 
 DISTNAME=	w3-2.2.26
@@ -19,18 +19,20 @@ RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 WRKSRC=		${WRKDIR}/w3
 
 DOCDIR=		${PREFIX}/share/doc/w3
+SAMPLEDIR=	${PREFIX}/share/examples/w3
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@if [ ! -d ${DOCDIR} ]; then mkdir -p ${DOCDIR}; fi
-.for f in .emacs .mosaic-hotlist-default 
-	@${CP} ${FILESDIR}/${f} ${DOCDIR}
+	@${MKDIR} ${DOCDIR}
+	@${MKDIR} ${SAMPLEDIR}
+.for f in dot.emacs dot.mosaic-hotlist-default 
+	@${INSTALL_DATA} ${FILESDIR}/${f} ${SAMPLEDIR}
 .endfor
-	@${INSTALL_SCRIPT} ${FILESDIR}/user-install ${DOCDIR}
+	@${INSTALL_SCRIPT} ${FILESDIR}/user-install ${SAMPLEDIR}
 .for f in W3.ad clean-cache Makefile w3.txi
-	@${CP} ${WRKSRC}/${f}  ${DOCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f}  ${DOCDIR}
 .endfor
 .endif
-	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
