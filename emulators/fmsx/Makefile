@@ -3,6 +3,8 @@
 # Date created:         15 Oct 1996
 # Whom:                 dk
 #
+# $Id$
+#
 
 DISTNAME=       fMSX-1.5
 PKGNAME=	fmsx-1.5
