@@ -61,7 +61,6 @@ share/nab/examples/program_5.ata.in
 share/nab/examples/test.sup.pdb
 share/nab/examples/program_11.nab
 share/nab/examples/gcg10.pdb.save
-share/nab/examples/program_7.nab.orig
 share/nab/test/get_sugar_info.nab
 share/nab/test/get_pep_info.nab
 share/nab/test/read_obs_shifts.nab
