@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1.1.RC1
+PORTVERSION=	1.1.1.RC3
 CATEGORIES+=	editors
 MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/%SUBDIR%/ \
@@ -20,13 +20,13 @@ MASTER_SITES+=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,misc/openoffice/&,} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
-MASTER_SITE_SUBDIR=	contrib/rc/1.1.1rc
-DISTFILES+=	OOo_1.1.1rc_source.tar.bz2 gpc231.tar.Z:gpc \
+MASTER_SITE_SUBDIR=	contrib/rc/1.1.1rc3
+DISTFILES+=	OOo_1.1.1rc3_source.tar.bz2 gpc231.tar.Z:gpc \
 		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
-EXTRACT_ONLY=	OOo_1.1.1rc_source.tar.bz2
+EXTRACT_ONLY=	OOo_1.1.1rc3_source.tar.bz2
 
 ZIP?=	${PREFIX}/bin/zip
 UNZIP?=	${PREFIX}/bin/unzip
@@ -92,6 +92,7 @@ LANG_SORTED=`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 # OOo requires gcc 3.2 (currently 3.3 is not supported)
 BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
 USE_GCC=3.2
+# XXX dirty
 CC=	gcc32
 CXX=	g++32
 
@@ -155,7 +156,7 @@ DISPLAYHACK=localhost:1001
 
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
-CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-mozilla=no
+CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp --enable-mozilla=no --with-jdk-home=${JDKDIR}
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
@@ -304,6 +305,7 @@ pre-fetch:
 	@${ECHO}
 	@${FALSE}
 .endif
+	@${ECHO} "If you want SDK, please type make sdk"
 
 post-extract:
 	@for file in ${EXTRACT_REST}; do \
@@ -401,9 +403,9 @@ build-mozilla:
 		< ${WRKDIR}/mozilla/Makefile.new > ${WRKDIR}/mozilla/Makefile
 .endif
 .if defined(USE_GCC)
-	@cd ${WRKDIR}/mozilla && ${MAKE} CXX=${CXX} CC=${CC} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
+	@cd ${WRKDIR}/mozilla && ${MAKE} CXX="${CXX}" CC="${CC}" CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
 .else
-	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" build WRKDIRPREFIX=""
+	@cd ${WRKDIR}/mozilla && ${MAKE} CXX="${CXX}" CC="${CC}" CFLAGS="${CFLAGS}" build WRKDIRPREFIX=""
 .endif
 	@${CP} ${FILESDIR}/zipmoz.sh ${WRKDIR}
 	@${CHMOD} 755 ${WRKDIR}/zipmoz.sh
