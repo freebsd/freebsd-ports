@@ -38,11 +38,12 @@ BROKEN=		"Does not compile on sparc64"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| $$OPTFLAGS||g ; \
-		 s| $$OS_CXXFLAGS||g ; \
-		 s|-lpthread||g ; \
-		 s|#define GTK_DISABLE_DEPRECATED||' ${WRKSRC}/configure
+		s| $$OS_CXXFLAGS||g ; \
+		s|-lpthread||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| DOC||g ; \
-		 s| share||g' ${WRKSRC}/Makefile.in
+		s| share||g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|GtkCellRendererProgress|tCellRendererProgress|g' \
+		${WRKSRC}/main/face/lod.cc
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/DOC/nt.1 ${MANPREFIX}/man/man1
