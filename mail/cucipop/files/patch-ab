@@ -1,5 +1,5 @@
---- cucipop.8.orig	Fri Aug  1 05:05:59 1997
-+++ cucipop.8	Tue Oct  7 11:18:59 1997
+--- cucipop.8.orig	Tue May 12 00:35:19 1998
++++ cucipop.8	Tue Aug 25 17:41:00 1998
 @@ -48,12 +48,12 @@
  .SH NAME
  cucipop \- Cubic Circle POP3 daemon
@@ -26,16 +26,16 @@
  as follows:
  .Sx 1
 -pop-3           110/tcp
-+pop3            110/tcp
++pop3           110/tcp
  .Ex
  In order to start cucipop from within
  .BR inetd (8),
-@@ -145,26 +145,26 @@
+@@ -145,16 +145,16 @@
  .BR inetd.conf (5)
  would be suitable:
  .Sx 1
 -pop-3   stream  tcp     nowait  root    /usr/sbin/cucipop cucipop -Y
-+pop3    stream  tcp     nowait  root    !!PREFIX!!/libexec/cucipop cucipop -Y
++pop3   stream  tcp     nowait  root    /usr/sbin/cucipop cucipop -Y
  .Ex
  If your site gets many hits from popclients, it would be preferable
  to start cucipop standalone as in:
@@ -50,15 +50,35 @@
  .Ex
  .SH FILES
  .TP 2.3i
- .B /etc/passwd
- for the default authentication method
+@@ -166,25 +166,25 @@
+ .BR makevpopdb (8)
+ man page on how this file is created
+ .TP
+-.B /var/lib/cucipop/state.db
++.B !!PREFIX!!/lib/cucipop/state.db
+ AI state information and bulletin history
+ .TP
+-.B "/var/lib/cucipop/bulletins/\fInn\fP"
++.B "!!PREFIX!!/lib/cucipop/bulletins/\fInn\fP"
+ .B 00
+ through
+ .B 63
+ optional bulletin files in regular mailbox format
  .TP
 -.B /var/spool/mail/$LOGNAME
 +.B /var/mail/$LOGNAME
  system mailbox
  .TP
+-.B /var/spool/mail/virtual.dom.ain/$LOGNAME
++.B /var/mail/virtual.dom.ain/$LOGNAME
+ virtual host system mailbox
+ .TP
 -.B /var/spool/mail/$LOGNAME.lock
 +.B /var/mail/$LOGNAME.lock
  lockfile for the system mailbox
+ .TP
+-.B /var/spool/mail/virtual.dom.ain/$LOGNAME.lock
++.B /var/mail/virtual.dom.ain/$LOGNAME.lock
+ lockfile for the virtual host system mailbox
  .TP
  .B _????`hostname`
