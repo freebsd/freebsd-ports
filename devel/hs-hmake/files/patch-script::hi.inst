@@ -1,0 +1,11 @@
+--- script/hi.inst.orig	Fri Mar 11 16:38:05 2005
++++ script/hi.inst	Fri Mar 11 16:38:13 2005
+@@ -7,7 +7,7 @@
+ HMAKECONFDIR=${HMAKECONFDIR-ConfDir}
+ MACHINE=${MACHINE-"`$SCRIPTDIR/harch`"}
+ INSTALLVER="InstallVer"
+-export MACHINE INSTALLVER HMAKEDIR SCRIPTDIR
++export MACHINE INSTALLVER HMAKEDIR SCRIPTDIR HMAKECONFDIR
+ 
+ if [ ! -d $HMAKEDIR/$MACHINE ]
+ then
