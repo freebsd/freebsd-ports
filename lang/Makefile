@@ -129,6 +129,7 @@
     SUBDIR += rscheme
     SUBDIR += ruby
     SUBDIR += ruby-devel
+    SUBDIR += ruby-lua
     SUBDIR += ruby-man
     SUBDIR += ruby-mode.el
     SUBDIR += ruby-perl
