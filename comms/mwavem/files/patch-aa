@@ -1,0 +1,23 @@
+--- src/mwmutil/mwmutil.c.orig	Sun Mar 31 19:49:06 2002
++++ src/mwmutil/mwmutil.c	Sun Mar 31 19:49:52 2002
+@@ -62,20 +62,6 @@
+ static int fileSize=0;
+ static char file[0x10000];
+ 
+-static char * strcasestr (const char *big, const char *little)
+-{
+-char * p;
+-
+-p = big;
+-while (*p)
+-    {
+-    if (strncasecmp (p, little, strlen (little)) == 0)
+-	return p;
+-    p++;
+-    }
+-return 0;
+-}
+-
+ int   readFile(LPCTSTR lpFileName);
+ char *getKey(LPCTSTR lpKeyName, LPCTSTR lpSectionName, LPCTSTR lpFileName);
+ 
