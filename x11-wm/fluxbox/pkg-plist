@@ -12,6 +12,7 @@ share/fluxbox/nls/et_EE/blackbox.cat
 share/fluxbox/nls/fr_FR/blackbox.cat
 share/fluxbox/nls/it_IT/blackbox.cat
 share/fluxbox/nls/ja_JP/blackbox.cat
+share/fluxbox/nls/lv_LV/blackbox.cat
 share/fluxbox/nls/pt_BR/blackbox.cat
 share/fluxbox/nls/pt_PT/blackbox.cat
 share/fluxbox/nls/ru_RU/blackbox.cat
@@ -39,12 +40,14 @@ share/fluxbox/styles/Shade
 share/fluxbox/styles/Spiff
 share/fluxbox/styles/Twice
 share/fluxbox/styles/qnx-photon
+@unexec rm %D/share/fluxbox/nls/lv
 @unexec rm %D/share/fluxbox/nls/fr
 @unexec rm %D/share/fluxbox/nls/es
 @unexec rm %D/share/fluxbox/nls/en_US
 @unexec rm %D/share/fluxbox/nls/en
 @unexec rm %D/share/fluxbox/nls/US_ASCII
 @unexec rm %D/share/fluxbox/nls/POSIX
+@exec ln -s lv_LV %D/share/fluxbox/nls/lv
 @exec ln -s fr_FR %D/share/fluxbox/nls/fr
 @exec ln -s es_ES %D/share/fluxbox/nls/es
 @exec ln -s C %D/share/fluxbox/nls/en_US
@@ -54,11 +57,12 @@ share/fluxbox/styles/qnx-photon
 @dirrm share/fluxbox/styles
 @dirrm share/fluxbox/nls/tr_TR
 @dirrm share/fluxbox/nls/sv_SE
-@dirrm share/fluxbox/nls/pt_PT
 @dirrm share/fluxbox/nls/ru_RU
+@dirrm share/fluxbox/nls/pt_PT
 @dirrm share/fluxbox/nls/pt_BR
-@dirrm share/fluxbox/nls/it_IT
+@dirrm share/fluxbox/nls/lv_LV
 @dirrm share/fluxbox/nls/ja_JP
+@dirrm share/fluxbox/nls/it_IT
 @dirrm share/fluxbox/nls/fr_FR
 @dirrm share/fluxbox/nls/et_EE
 @dirrm share/fluxbox/nls/es_ES
