@@ -75,6 +75,9 @@ lib/%%PYTHON_VERSION%%/site-packages/quixote/sendmail.pyo
 lib/%%PYTHON_VERSION%%/site-packages/quixote/session.py
 lib/%%PYTHON_VERSION%%/site-packages/quixote/session.pyc
 lib/%%PYTHON_VERSION%%/site-packages/quixote/session.pyo
+share/examples/quixote/demo.cgi
+share/examples/quixote/demo.conf
+@dirrm share/examples/quixote
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/quixote/form
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/quixote/demo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/quixote
