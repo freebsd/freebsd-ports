@@ -37,6 +37,9 @@ MAN3=		\
 .if ${PERL_LEVEL} < 500600
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
 EXTRA_PATCHES=	${PATCHDIR}/5.005-Makefile.PL ${PATCHDIR}/5.005-lib::HTTP::Proxy.pm ${PATCHDIR}/5.005-lib::HTTP::Proxy::BodyFilter::htmltext.pm
+
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 .endif
 
 .include <bsd.port.post.mk>
