@@ -85,7 +85,7 @@ CONFIGURE_ARGS+=	--with-pcre=no
 .endif
 
 .if !defined(WITHOUT_SNMP) && !defined(LITE)
-LIB_DEPENDS+=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-net-snmp=${LOCALBASE}/bin/net-snmp-config
 .else
 CONFIGURE_ARGS+=	--enable-snmp=no --with-ucd-snmp=no --with-net-snmp=no
