@@ -156,6 +156,7 @@
     SUBDIR += p5-sqlrelay
     SUBDIR += pear-DB
     SUBDIR += pgaccess
+    SUBDIR += pgadmin3
     SUBDIR += php-sqlrelay
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
