@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysql-client
-PORTREVISION=	0
+PORTREVISION=	1
 
 MASTERDIR=	${.CURDIR}/../mysql323-server
 COMMENT=	${PKGDIR}/pkg-comment.client
