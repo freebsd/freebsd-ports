@@ -1,3 +1,4 @@
-bin/popauth3
-libexec/popper3
+bin/popauth
+libexec/popper
 @dirrm etc/popper
+@exec mkdir -p %D/etc/popper && chown pop.daemon %D/etc/popper && chmod 700 %D/etc/popper
