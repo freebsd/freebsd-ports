@@ -32,7 +32,7 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc
 	@${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc/system.fvwm2rc.dist
 	@if [ ! -e ${PREFIX}/etc/system.fvwm2rc ]; then \
-		${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc/system.fvwm2rc.dist; \
+		${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc/system.fvwm2rc; \
 	fi
 	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm \
