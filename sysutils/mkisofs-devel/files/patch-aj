@@ -1,0 +1,42 @@
+--- lib/cvt.c.orig	Wed Sep  8 15:03:20 1999
++++ lib/cvt.c	Sun Feb 25 10:06:50 2001
+@@ -31,7 +31,7 @@
+ #include <standard.h>
+ 
+ #ifdef	HAVE_DTOA	/* 4.4BSD floating point implementation */
+-extern	char *__dtoa	__PR((double value, int mode, int ndigit, int *decpt, int *sign, char **ep));
++extern	char *__dtoa	__PR((double value, int mode, int ndigit, int *decpt, int *sign, char **ep, char **resultp));
+ #endif
+ 
+ #ifndef	HAVE_ECVT
+@@ -57,7 +57,13 @@
+ static	char	*buf;
+ 	char	*bufend;
+ 	char	*ep;
+-	char	*bp = __dtoa(value, 2, ndigit, decpt, sign, &ep);
++	char	*bp;
++	static char *dtoaresult = NULL;
++
++	free(dtoaresult);
++	dtoaresult = NULL;
++
++	bp = __dtoa(value, 2, ndigit, decpt, sign, &ep, &dtoaresult);
+ 
+ 	if (value == 0.0) {
+ 		/*
+@@ -102,7 +108,13 @@
+ static	char	*buf;
+ 	char	*bufend;
+ 	char	*ep;
+-	char	*bp = __dtoa(value, 3, ndigit, decpt, sign, &ep);
++	char	*bp;
++	static char *dtoaresult = NULL;
++
++	free(dtoaresult);
++	dtoaresult = NULL;
++
++	bp = __dtoa(value, 3, ndigit, decpt, sign, &ep, &dtoaresult);
+ 
+ 	if (value == 0.0) {
+ 		/*
+
