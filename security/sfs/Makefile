@@ -28,7 +28,7 @@ CONFIGURE_ARGS+=--with-sfsuser=sfs \
 		--disable-uvfs
 
 .if ${OSVERSION} > 500000
-LIB_DEPENDS+=	gmp.5:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
 CONFIGURE_ARGS+=--with-gmp=${PREFIX}
 .else
 CONFIGURE_ARGS+=--with-gmp=/usr
