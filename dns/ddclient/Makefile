@@ -8,7 +8,7 @@
 PORTNAME=	ddclient
 PORTVERSION=	3.6.2
 CATEGORIES=	dns
-MASTER_SITES=	http://burry.ca:4141/ddclient/
+MASTER_SITES=	http://members.rogers.com/ddclient/pub/
 
 MAINTAINER=	dirk@FreeBSD.org
 COMMENT=	Update dynamic DNS entries
