@@ -167,6 +167,7 @@
     SUBDIR += scwm-icons
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
+    SUBDIR += seejpeg
     SUBDIR += sketch
     SUBDIR += smpeg
     SUBDIR += sodipodi
