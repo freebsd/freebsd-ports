@@ -3,7 +3,7 @@
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:30:56 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/28 02:08:56 steve Exp $
 #
 
 DISTNAME=	shhcards-1.0.3
@@ -32,5 +32,5 @@ do-install:
 .if ${PORTOBJFORMAT} == "elf"
 SOVERSION=	1
 .else
-SOVERSION=	1.0
+SOVERSION=	1.1
 .endif
