@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	offlineimap
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 CATEGORIES=	mail python
 MASTER_SITES=	http://gopher.quux.org:70/devel/offlineimap/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
-
-BROKEN=		Unfetchable
 
 .if !defined(WITHOUT_X11)
 RUN_DEPENDS=	${TKINTER}:${PORTSDIR}/x11-toolkits/py-tkinter
