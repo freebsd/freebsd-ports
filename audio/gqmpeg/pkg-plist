@@ -2,11 +2,13 @@ bin/gqmpeg
 bin/gqmpeg-shoutcast-plugin.sh
 %%GNOME:%%%%DATADIR%%/apps/Multimedia/gqmpeg.desktop
 %%GNOME:%%%%DATADIR%%/pixmaps/gqmpeg.png
+share/gqmpeg/skins/README
 share/gqmpeg/skins/SKIN-SPECS
 share/locale/cs/LC_MESSAGES/gqmpeg.mo
 share/locale/de/LC_MESSAGES/gqmpeg.mo
 share/locale/fr/LC_MESSAGES/gqmpeg.mo
 share/locale/ja/LC_MESSAGES/gqmpeg.mo
 share/locale/pt_BR/LC_MESSAGES/gqmpeg.mo
+share/locale/zh_TW/LC_MESSAGES/gqmpeg.mo
 @dirrm share/gqmpeg/skins
 @dirrm share/gqmpeg
