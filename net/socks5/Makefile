@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	net security
 DISTNAME=	socks5-v1.0r11
 
-MAINTAINER=	imp@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 NO_CDROM=	"NEC has a funky license for this software"
 RESTRICTED=	"no commercial use"
