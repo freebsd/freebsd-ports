@@ -4,12 +4,12 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.1.1.1 1997/04/11 10:02:49 obrien Exp $
+# $Id: Makefile,v 1.2 1997/04/11 10:04:49 obrien Exp $
 #
 
 DISTNAME=	bibcard.6.4
 PKGNAME=	bibcard-0.6.4
-CATEGORIES=	print
+CATEGORIES=	print database
 MASTER_SITES=	ftp://crl.nmsu.edu/pub/misc/
 EXTRACT_SUFX=	.tar.Z
 
