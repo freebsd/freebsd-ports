@@ -1,0 +1,19 @@
+*** config/configure_batch.orig	Wed May 12 01:11:18 1999
+--- config/configure_batch	Wed Jul 12 15:20:17 2000
+***************
+*** 1,7 ****
+  #! /bin/sh
+  # $Id: configure_batch,v 2.1 1999/05/12 06:11:18 ddr Exp $
+  
+! prefix=/usr/local
+  bindir=''
+  libdir=''
+  mandir=''
+--- 1,7 ----
+  #! /bin/sh
+  # $Id: configure_batch,v 2.1 1999/05/12 06:11:18 ddr Exp $
+  
+! prefix=$PREFIX
+  bindir=''
+  libdir=''
+  mandir=''
