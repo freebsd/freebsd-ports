@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gauche
-PORTVERSION=	0.7.2	# Keep databases/gauche-gdbm in sync with this
+PORTVERSION=	0.7.3	# Keep databases/gauche-gdbm in sync with this
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,20 +22,27 @@ GAUCHE_THREADS?=	no
 # Choices are: "utf-8", "euc-jp", "shift-jis" and "no"
 GAUCHE_ENCODING?=	utf-8
 
+# breaks in ext/uvecor.c on some locales
+MAKE_ENV=	LANG=C
+
 INFOSECTION=	The Algorithmic Language Scheme
 
 MAN1=		gosh.1 \
 		gauche-config.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-threads=${GAUCHE_THREADS} \
-		--enable-multibyte=${GAUCHE_ENCODING}
+		--enable-multibyte=${GAUCHE_ENCODING} \
+		--with-slib=${PREFIX}/share/slib
 PLIST_SUB=	VERSION="${PORTVERSION}" \
 		TARGET="${CONFIGURE_TARGET}" \
 		INFOSECTION="${INFOSECTION}"
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/gosh
-	-${PREFIX}/bin/gosh -u slib -e "(require 'logical)" -e "(exit 0)"
+	${RM} -f ${PREFIX}/share/gauche/${PORTVERSION}/lib/slibcat
+	${TOUCH} ${PREFIX}/share/gauche/site/lib/.keepme
+	${TOUCH} ${PREFIX}/lib/gauche/site/${PORTVERSION}/${CONFIGURE_TARGET}/.keepme
+
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1/
 	${INSTALL_DATA} ${WRKSRC}/doc/*.info ${PREFIX}/info/
