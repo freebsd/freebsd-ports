@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncbi.toolkit
-PORTVERSION=	2000.07.07
+PORTVERSION=	2000.10.31
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/toolbox/ncbi_tools/
 DISTNAME=	ncbi

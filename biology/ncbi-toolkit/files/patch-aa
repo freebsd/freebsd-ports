@@ -5,7 +5,7 @@
  	$(SRC11) $(SRC8) $(SRC7) $(SRC6) $(SRC5) $(SRC3) \
  	$(SRC2) $(SRC1) $(OTHERLIBS) -lsocket -lnsl
 +
-+EXE=	Cn3Dv3d Nentrez Psequin \
++EXE=	Nentrez Psequin \
 +		asn2fast asn2ff asndhuff asntool \
 +		bl2seq blast.REAL blastall blastcl3 blastclust blastpgp \
 +		cdscan checksub copymat \
