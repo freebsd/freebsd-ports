@@ -1,0 +1,28 @@
+--- configure.orig	Sun Aug 22 03:37:34 2004
++++ configure	Sat Aug 28 18:08:08 2004
+@@ -3216,13 +3216,13 @@
+ LINKER="$CXX"
+ if test x$GCC = xyes && test x$GXX = xyes; then
+ 
+-echo "$as_me:$LINENO: checking for main in -lsupc++" >&5
+-echo $ECHO_N "checking for main in -lsupc++... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for main in -lstdc++ -lsupc++" >&5
++echo $ECHO_N "checking for main in -lstdc++ -lsupc++... $ECHO_C" >&6
+ if test "${ac_cv_lib_supcpp_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lsupc++  $LIBS"
++LIBS="-lstdc++ -lsupc++  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -3276,7 +3276,7 @@
+ if test $ac_cv_lib_supcpp_main = yes; then
+ 
+       LINKER="$CC"
+-      LIBS="$LIBS -lsupc++"
++      LIBS="$LIBS -lstdc++ -lsupc++"
+ 
+ fi
+ 
