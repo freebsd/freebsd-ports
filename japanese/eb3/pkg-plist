@@ -43,9 +43,9 @@ info/ebzip.info
 @exec install-info %D/info/ebzip-ja.info %D/info/dir
 @exec install-info %D/info/ebzip.info %D/info/dir
 lib/libeb.a
-lib/libeb.la
 lib/libeb.so
 lib/libeb.so.7
+share/aclocal/eb3.m4
 share/eb/appendix/LIST
 share/eb/appendix/LIST-ja
 share/eb/appendix/cencro-1.0/catalog
@@ -221,18 +221,8 @@ share/eb/appendix/superdic98-1.0/kanjigen.app
 share/eb/appendix/superdic98-1.0/kanjigen/data/furoku
 share/eb/appendix/superdic98-1.0/koujien.app
 share/eb/appendix/superdic98-1.0/koujien/data/furoku
-share/locale/ja/LC_MESSAGES/eb.mo
-share/locale/ja/LC_MESSAGES/ebutils.mo
 @dirrm share/eb/appendix/cencro-1.0/cencro
 @dirrm share/eb/appendix/cencro-1.0
-@dirrm share/eb/appendix/genius-1.0/genius
-@dirrm share/eb/appendix/genius-1.0
-@dirrm share/eb/appendix/genius2-1.1/genius/data
-@dirrm share/eb/appendix/genius2-1.1/genius
-@dirrm share/eb/appendix/genius2-1.1
-@dirrm share/eb/appendix/gendai2000-1.0/gn00eb02
-@dirrm share/eb/appendix/gendai2000-1.0/gn00eb01
-@dirrm share/eb/appendix/gendai2000-1.0
 @dirrm share/eb/appendix/chujiten-2.3/eiwa
 @dirrm share/eb/appendix/chujiten-2.3/waei
 @dirrm share/eb/appendix/chujiten-2.3
@@ -244,15 +234,15 @@ share/locale/ja/LC_MESSAGES/ebutils.mo
 @dirrm share/eb/appendix/colloc-2.0/colloc/data
 @dirrm share/eb/appendix/colloc-2.0/colloc
 @dirrm share/eb/appendix/colloc-2.0
-@dirrm share/eb/appendix/crowngj-1.0/crger
-@dirrm share/eb/appendix/crowngj-1.0
-@dirrm share/eb/appendix/crownfj2-1.0/crfre
-@dirrm share/eb/appendix/crownfj2-1.0
 @dirrm share/eb/appendix/crownfj-2.0/crown_fj/data
 @dirrm share/eb/appendix/crownfj-2.0/crown_fj
 @dirrm share/eb/appendix/crownfj-2.0/daily_ei/data
 @dirrm share/eb/appendix/crownfj-2.0/daily_ei
 @dirrm share/eb/appendix/crownfj-2.0
+@dirrm share/eb/appendix/crownfj2-1.0/crfre
+@dirrm share/eb/appendix/crownfj2-1.0
+@dirrm share/eb/appendix/crowngj-1.0/crger
+@dirrm share/eb/appendix/crowngj-1.0
 @dirrm share/eb/appendix/daihyakka-1.0/dhk01
 @dirrm share/eb/appendix/daihyakka-1.0
 @dirrm share/eb/appendix/daijirin-2.0/dgx01/data
@@ -261,35 +251,43 @@ share/locale/ja/LC_MESSAGES/ebutils.mo
 @dirrm share/eb/appendix/dd75-2.0/chujiten
 @dirrm share/eb/appendix/dd75-2.0/koujien
 @dirrm share/eb/appendix/dd75-2.0
+@dirrm share/eb/appendix/gendai2000-1.0/gn00eb01
+@dirrm share/eb/appendix/gendai2000-1.0/gn00eb02
+@dirrm share/eb/appendix/gendai2000-1.0
+@dirrm share/eb/appendix/genius-1.0/genius
+@dirrm share/eb/appendix/genius-1.0
+@dirrm share/eb/appendix/genius2-1.1/genius/data
+@dirrm share/eb/appendix/genius2-1.1/genius
+@dirrm share/eb/appendix/genius2-1.1
 @dirrm share/eb/appendix/global-2.0/gejcje/data
 @dirrm share/eb/appendix/global-2.0/gejcje
 @dirrm share/eb/appendix/global-2.0
-@dirrm share/eb/appendix/heritage-2.2/roget
-@dirrm share/eb/appendix/heritage-2.2/dict
 @dirrm share/eb/appendix/heritage-2.2/abbrev
 @dirrm share/eb/appendix/heritage-2.2/bioentry
-@dirrm share/eb/appendix/heritage-2.2/geoentry
 @dirrm share/eb/appendix/heritage-2.2/colleges
-@dirrm share/eb/appendix/heritage-2.2/root
+@dirrm share/eb/appendix/heritage-2.2/dict
+@dirrm share/eb/appendix/heritage-2.2/geoentry
 @dirrm share/eb/appendix/heritage-2.2/info
+@dirrm share/eb/appendix/heritage-2.2/roget
+@dirrm share/eb/appendix/heritage-2.2/root
 @dirrm share/eb/appendix/heritage-2.2
 @dirrm share/eb/appendix/izumi-2.0/file1
 @dirrm share/eb/appendix/izumi-2.0
-@dirrm share/eb/appendix/jitenban-2.4/mypaedia/data
-@dirrm share/eb/appendix/jitenban-2.4/mypaedia
-@dirrm share/eb/appendix/jitenban-2.4/iwakoku/data
-@dirrm share/eb/appendix/jitenban-2.4/iwakoku
-@dirrm share/eb/appendix/jitenban-2.4/chujiten/data
-@dirrm share/eb/appendix/jitenban-2.4/chujiten
 @dirrm share/eb/appendix/jitenban-2.4/chiezo/data
 @dirrm share/eb/appendix/jitenban-2.4/chiezo
+@dirrm share/eb/appendix/jitenban-2.4/chujiten/data
+@dirrm share/eb/appendix/jitenban-2.4/chujiten
+@dirrm share/eb/appendix/jitenban-2.4/iwakoku/data
+@dirrm share/eb/appendix/jitenban-2.4/iwakoku
+@dirrm share/eb/appendix/jitenban-2.4/mypaedia/data
+@dirrm share/eb/appendix/jitenban-2.4/mypaedia
 @dirrm share/eb/appendix/jitenban-2.4
-@dirrm share/eb/appendix/jitenban97-2.1/iwakoku/data
-@dirrm share/eb/appendix/jitenban97-2.1/iwakoku
-@dirrm share/eb/appendix/jitenban97-2.1/chujiten/data
-@dirrm share/eb/appendix/jitenban97-2.1/chujiten
 @dirrm share/eb/appendix/jitenban97-2.1/chiezo/data
 @dirrm share/eb/appendix/jitenban97-2.1/chiezo
+@dirrm share/eb/appendix/jitenban97-2.1/chujiten/data
+@dirrm share/eb/appendix/jitenban97-2.1/chujiten
+@dirrm share/eb/appendix/jitenban97-2.1/iwakoku/data
+@dirrm share/eb/appendix/jitenban97-2.1/iwakoku
 @dirrm share/eb/appendix/jitenban97-2.1/mypaedia/data
 @dirrm share/eb/appendix/jitenban97-2.1/mypaedia
 @dirrm share/eb/appendix/jitenban97-2.1
@@ -300,18 +298,18 @@ share/locale/ja/LC_MESSAGES/ebutils.mo
 @dirrm share/eb/appendix/kanjigen2-2.0
 @dirrm share/eb/appendix/kojien-2.3/kojien
 @dirrm share/eb/appendix/kojien-2.3
-@dirrm share/eb/appendix/kojien2-2.0/koujien/data
-@dirrm share/eb/appendix/kojien2-2.0/koujien
 @dirrm share/eb/appendix/kojien2-2.0/furoku/data
 @dirrm share/eb/appendix/kojien2-2.0/furoku
+@dirrm share/eb/appendix/kojien2-2.0/koujien/data
+@dirrm share/eb/appendix/kojien2-2.0/koujien
 @dirrm share/eb/appendix/kojien2-2.0
-@dirrm share/eb/appendix/kojien4-2.2/koujien
 @dirrm share/eb/appendix/kojien4-2.2/furoku
+@dirrm share/eb/appendix/kojien4-2.2/koujien
 @dirrm share/eb/appendix/kojien4-2.2
+@dirrm share/eb/appendix/oxford-2.0/about
 @dirrm share/eb/appendix/oxford-2.0/oxford
 @dirrm share/eb/appendix/oxford-2.0/quick
 @dirrm share/eb/appendix/oxford-2.0/user
-@dirrm share/eb/appendix/oxford-2.0/about
 @dirrm share/eb/appendix/oxford-2.0
 @dirrm share/eb/appendix/plus-2.0/plus/data
 @dirrm share/eb/appendix/plus-2.0/plus
@@ -321,20 +319,22 @@ share/locale/ja/LC_MESSAGES/ebutils.mo
 @dirrm share/eb/appendix/readers2-2.0/readers/data
 @dirrm share/eb/appendix/readers2-2.0/readers
 @dirrm share/eb/appendix/readers2-2.0
-@dirrm share/eb/appendix/superdic98-1.0/koujien/data
-@dirrm share/eb/appendix/superdic98-1.0/koujien
-@dirrm share/eb/appendix/superdic98-1.0/kanjigen/data
-@dirrm share/eb/appendix/superdic98-1.0/kanjigen
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep03/data
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep03
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep02/data
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep02
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep01/data
-@dirrm share/eb/appendix/superdic98-1.0/gn98ep01
-@dirrm share/eb/appendix/superdic98-1.0/furoku/data
-@dirrm share/eb/appendix/superdic98-1.0/furoku
 @dirrm share/eb/appendix/superdic98-1.0/chujiten/data
 @dirrm share/eb/appendix/superdic98-1.0/chujiten
+@dirrm share/eb/appendix/superdic98-1.0/furoku/data
+@dirrm share/eb/appendix/superdic98-1.0/furoku
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep01/data
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep01
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep02/data
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep02
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep03/data
+@dirrm share/eb/appendix/superdic98-1.0/gn98ep03
+@dirrm share/eb/appendix/superdic98-1.0/kanjigen/data
+@dirrm share/eb/appendix/superdic98-1.0/kanjigen
+@dirrm share/eb/appendix/superdic98-1.0/koujien/data
+@dirrm share/eb/appendix/superdic98-1.0/koujien
 @dirrm share/eb/appendix/superdic98-1.0
 @dirrm share/eb/appendix
 @dirrm share/eb
+share/locale/ja/LC_MESSAGES/eb.mo
+share/locale/ja/LC_MESSAGES/ebutils.mo

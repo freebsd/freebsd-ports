@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	3.3
-PORTREVISION=	2
+PORTVERSION=	3.3.1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/network/ndtp/eb/
+		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
 DISTFILES=	${EBFILES} \
 		${LISTFILES} \
 		${APPENDIXFILES}
 EXTRACT_ONLY=	${EBFILES}
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${DISTNAME}+.diff ${DISTNAME}+2.diff
+#PATCHFILES=	${DISTNAME}+.diff ${DISTNAME}+2.diff
 
 MAINTAINER=	takamune@avrl.mei.co.jp
 COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
@@ -60,24 +59,22 @@ APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
 DIST_SUBDIR=	eb
 
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-nls \
-		--enable-pthread \
-		--with-pthread-cflags="${PTHREAD_CFLAGS}" \
-		--with-pthread-ldflags="${PTHREAD_LIBS}" \
-		--with-gettext-includes=${PREFIX}/include \
-		--with-gettext-libraries=${PREFIX}/lib \
-		--with-iconv-includes=${PREFIX}/include \
-		--with-iconv-libraries=${PREFIX}/lib
+		--with-gettext-includes=${LOCALBASE}/include \
+		--with-gettext-libraries=${LOCALBASE}/lib \
+		--with-iconv-includes=${LOCALBASE}/include \
+		--with-iconv-libraries=${LOCALBASE}/lib
 
-APPENDIXDIR=	${PREFIX}/share/eb/appendix
+APPENDIXDIR=	${DATADIR}/appendix
 
 post-extract:
-	@${RM} -fr ${WRKSRC}/zlib
-	@${MKDIR} ${WRKDIR}/appendix
+	${RM} -fr ${WRKSRC}/zlib
+	${MKDIR} ${WRKDIR}/appendix
 .for file in ${APPENDIXFILES}
-	@${TAR} --exclude CVS -C ${WRKDIR}/appendix -zxmf \
+	${TAR} --exclude CVS -C ${WRKDIR}/appendix -zxmf \
 	  ${DISTDIR}/${DIST_SUBDIR}/${file}
 .endfor
 
