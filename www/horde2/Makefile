@@ -31,7 +31,7 @@ LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 # Remark: pear-XML_sql2xml is included, but never used.
 RUN_DEPENDS=	${PHP_LIB}/Crypt/CBC.php:${PORTSDIR}/security/pear-Crypt_CBC	\
 		${PHP_LIB}/Date.php:${PORTSDIR}/devel/pear-Date			\
-		${PHP_LIB}/HTML/Select.php:${PORTSDIR}/devel/pear-HTML_Select_Common \
+		${PHP_LIB}/HTML/Select.php:${PORTSDIR}/devel/pear-HTML_Select \
 		${PHP_LIB}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
 		${PHP_LIB}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
