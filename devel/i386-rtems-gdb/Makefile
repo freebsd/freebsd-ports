@@ -7,7 +7,7 @@
 
 PORTNAME=	gdb
 PORTVERSION=	5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gdb
@@ -20,6 +20,8 @@ PATCHFILES=	${GDBNAME}-rtems-base-20020612.diff \
 		${GDBNAME}-rtems-rdbg-20020612.diff
 PATCH_SITES=	ftp://ftp.rtems.com/pub/rtems/snapshots/c_tools/source/ \
 		http://rtems.thehousleys.net/
+
+.include <bsd.port.pre.mk>
 
 LCLTARGET?=	i386-rtems
 
@@ -51,6 +53,17 @@ PATCHFILES+=	powerpc-gdb-5.2-hw_sem.c.diff:THN \
 PATCH_SITES+=	http://rtems.thehousleys.net/:THN
 .endif
 
+.if ${LCLTARGET} == sparc-rtems
+.if (${OSVERSION} >= 502000)
+CONFIGURE_ARGS+=	--verbose --disable-sim
+PLIST_SUB+=		SPARC_NOSIM='@comment '
+.else
+CONFIGURE_ARGS+=	--verbose --enable-sim
+PLIST_SUB+=		SPARC_NOSIM=''
+MAN1=		${LCLTARGET}-run.1
+.endif
+.endif
+
 MAN1+=		${LCLTARGET}-gdb.1
 
 pre-configure:
@@ -64,4 +77,4 @@ do-install:
 	@(cd ${WRKDIR}/build-${LCLTARGET} && \
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
