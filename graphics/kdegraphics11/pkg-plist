@@ -127,6 +127,15 @@ share/icons/mini/kiconedit.xpm
 share/icons/mini/kpaint.xpm
 share/icons/mini/ksnapshot.xpm
 share/icons/mini/kview.xpm
+share/locale/br/LC_MESSAGES/kdvi.mo
+share/locale/br/LC_MESSAGES/kfax.mo
+share/locale/br/LC_MESSAGES/kfract.mo
+share/locale/br/LC_MESSAGES/kghostview.mo
+share/locale/br/LC_MESSAGES/kiconedit.mo
+share/locale/br/LC_MESSAGES/kpaint.mo
+share/locale/br/LC_MESSAGES/ksnapshot.mo
+share/locale/br/LC_MESSAGES/kview.mo
+share/locale/ca/LC_MESSAGES/ksnapshot.mo
 share/locale/cs/LC_MESSAGES/kdvi.mo
 share/locale/cs/LC_MESSAGES/kfax.mo
 share/locale/cs/LC_MESSAGES/kfract.mo
@@ -160,7 +169,9 @@ share/locale/eo/LC_MESSAGES/kghostview.mo
 share/locale/eo/LC_MESSAGES/kpaint.mo
 share/locale/es/LC_MESSAGES/kdvi.mo
 share/locale/es/LC_MESSAGES/kfax.mo
+share/locale/es/LC_MESSAGES/kfract.mo
 share/locale/es/LC_MESSAGES/kghostview.mo
+share/locale/es/LC_MESSAGES/kiconedit.mo
 share/locale/es/LC_MESSAGES/kpaint.mo
 share/locale/es/LC_MESSAGES/ksnapshot.mo
 share/locale/es/LC_MESSAGES/kview.mo
@@ -184,9 +195,12 @@ share/locale/hr/LC_MESSAGES/kdvi.mo
 share/locale/hr/LC_MESSAGES/kfax.mo
 share/locale/hr/LC_MESSAGES/kghostview.mo
 share/locale/hr/LC_MESSAGES/kpaint.mo
+share/locale/hr/LC_MESSAGES/kview.mo
 share/locale/hu/LC_MESSAGES/kdvi.mo
 share/locale/hu/LC_MESSAGES/kghostview.mo
 share/locale/hu/LC_MESSAGES/kpaint.mo
+share/locale/hu/LC_MESSAGES/ksnapshot.mo
+share/locale/hu/LC_MESSAGES/kview.mo
 share/locale/is/LC_MESSAGES/kdvi.mo
 share/locale/is/LC_MESSAGES/kfax.mo
 share/locale/is/LC_MESSAGES/kfract.mo
@@ -234,6 +248,7 @@ share/locale/pt_BR/LC_MESSAGES/kfract.mo
 share/locale/pt_BR/LC_MESSAGES/kghostview.mo
 share/locale/pt_BR/LC_MESSAGES/kiconedit.mo
 share/locale/pt_BR/LC_MESSAGES/kpaint.mo
+share/locale/pt_BR/LC_MESSAGES/ksnapshot.mo
 share/locale/pt_BR/LC_MESSAGES/kview.mo
 share/locale/ru/LC_MESSAGES/kdvi.mo
 share/locale/ru/LC_MESSAGES/kfax.mo
@@ -286,4 +301,3 @@ share/locale/zh_TW.Big5/LC_MESSAGES/kpaint.mo
 @dirrm share/apps/kfax
 @dirrm share/apps/kdvi/toolbar
 @dirrm share/apps/kdvi
-@dirrm share/applnk/Graphics

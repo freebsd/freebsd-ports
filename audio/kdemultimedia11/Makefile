@@ -3,13 +3,13 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.30 1999/02/08 22:29:59 se Exp $
+# $Id: Makefile,v 1.31 1999/03/24 23:41:16 se Exp $
 #
 
-DISTNAME=	kdemultimedia-1.1
+DISTNAME=	kdemultimedia-1.1.1
 CATEGORIES=	audio kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.1/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
 
 MAINTAINER=	se@freebsd.org
 

@@ -169,10 +169,16 @@ share/icons/mini/kmid.xpm
 share/icons/mini/kmidi.xpm
 share/icons/mini/kmix.xpm
 share/icons/mini/kscd.xpm
+share/locale/br/LC_MESSAGES/kmedia.mo
+share/locale/br/LC_MESSAGES/kmid.mo
+share/locale/br/LC_MESSAGES/kmidi.mo
+share/locale/br/LC_MESSAGES/kmix.mo
+share/locale/br/LC_MESSAGES/kscd.mo
 share/locale/ca/LC_MESSAGES/kmedia.mo
 share/locale/ca/LC_MESSAGES/kmid.mo
 share/locale/ca/LC_MESSAGES/kmidi.mo
 share/locale/ca/LC_MESSAGES/kmix.mo
+share/locale/ca/LC_MESSAGES/kscd.mo
 share/locale/cs/LC_MESSAGES/kmedia.mo
 share/locale/cs/LC_MESSAGES/kmid.mo
 share/locale/cs/LC_MESSAGES/kmidi.mo
@@ -188,6 +194,9 @@ share/locale/de/LC_MESSAGES/kmid.mo
 share/locale/de/LC_MESSAGES/kmidi.mo
 share/locale/de/LC_MESSAGES/kmix.mo
 share/locale/de/LC_MESSAGES/kscd.mo
+share/locale/el/LC_MESSAGES/kmedia.mo
+share/locale/el/LC_MESSAGES/kmix.mo
+share/locale/el/LC_MESSAGES/kscd.mo
 share/locale/eo/LC_MESSAGES/kmedia.mo
 share/locale/eo/LC_MESSAGES/kmid.mo
 share/locale/eo/LC_MESSAGES/kmix.mo
@@ -209,6 +218,10 @@ share/locale/hr/LC_MESSAGES/kmedia.mo
 share/locale/hr/LC_MESSAGES/kmid.mo
 share/locale/hr/LC_MESSAGES/kmix.mo
 share/locale/hr/LC_MESSAGES/kscd.mo
+share/locale/hu/LC_MESSAGES/kmid.mo
+share/locale/hu/LC_MESSAGES/kmidi.mo
+share/locale/hu/LC_MESSAGES/kmix.mo
+share/locale/hu/LC_MESSAGES/kscd.mo
 share/locale/is/LC_MESSAGES/kmedia.mo
 share/locale/is/LC_MESSAGES/kmid.mo
 share/locale/is/LC_MESSAGES/kmix.mo
@@ -236,6 +249,7 @@ share/locale/pt/LC_MESSAGES/kmix.mo
 share/locale/pt/LC_MESSAGES/kscd.mo
 share/locale/pt_BR/LC_MESSAGES/kmedia.mo
 share/locale/pt_BR/LC_MESSAGES/kmid.mo
+share/locale/pt_BR/LC_MESSAGES/kmidi.mo
 share/locale/pt_BR/LC_MESSAGES/kmix.mo
 share/locale/pt_BR/LC_MESSAGES/kscd.mo
 share/locale/ro/LC_MESSAGES/kmedia.mo
@@ -263,8 +277,6 @@ share/locale/zh_TW.Big5/LC_MESSAGES/kmix.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/kscd.mo
 share/mimelnk/audio/x-karaoke.kdelnk
 share/mimelnk/text/xmcd.kdelnk
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/audio
 @dirrm share/doc/HTML/es/kmid
 @dirrm share/doc/HTML/en/kscd
 @dirrm share/doc/HTML/en/kmix
@@ -299,4 +311,3 @@ share/mimelnk/text/xmcd.kdelnk
 @dirrm share/apps/kmid
 @dirrm share/apps/kmedia/pics
 @dirrm share/apps/kmedia
-@dirrm share/applnk/Multimedia

@@ -3,13 +3,13 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.29 1999/02/28 05:56:15 obrien Exp $
+# $Id: Makefile,v 1.30 1999/02/28 21:48:05 asami Exp $
 #
 
-DISTNAME=	kdeutils-1.1
+DISTNAME=	kdeutils-1.1.1
 CATEGORIES=	misc kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.1/distribution/tar/generic/source/bz2
+MASTER_SITE_SUBDIR= stable/1.1.1/distribution/tar/generic/source/bz2
 
 MAINTAINER=	se@freebsd.org
 

@@ -1,15 +1,15 @@
-*** kvt/Makefile.in~	Sat Dec 19 22:29:29 1998
---- kvt/Makefile.in	Tue Dec 29 00:59:07 1998
+*** kvt/Makefile.in~	Wed Apr 21 18:22:35 1999
+--- kvt/Makefile.in	Wed Apr 21 18:33:46 1999
 ***************
-*** 166,170 ****
+*** 174,178 ****
   
-  INCLUDES= $(all_includes)
-! LDADD	=       $(LIBCURSES) $(LIB_KDEUI)
+  INCLUDES = $(all_includes)
+! LDADD = $(LIBCURSES) $(LIB_KDEUI)
   LDFLAGS = $(all_libraries) $(KDE_RPATH)
-  DISTCLEANFILES = main.moc
---- 166,170 ----
+  METASOURCES = main.moc
+--- 174,178 ----
   
-  INCLUDES= $(all_includes)
+  INCLUDES = $(all_includes)
 ! LDADD	= $(LIBUTIL) $(LIBCURSES) $(LIB_KDEUI)
   LDFLAGS = $(all_libraries) $(KDE_RPATH)
-  DISTCLEANFILES = main.moc
+  METASOURCES = main.moc
