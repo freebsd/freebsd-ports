@@ -3,7 +3,7 @@
 # Date created:         Nov 26 1997
 # Whom:                 msmith@FreeBSD.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/26 07:49:35 msmith Exp $
 #
 
 DISTNAME=	linux_kdump-1.0
@@ -13,6 +13,11 @@ MASTER_SITES=	ftp://ftp.gsoft.com.au/misc/
 MAINTAINER=	msmith@FreeBSD.org
 
 BUILD_DEPENDS=	/compat/linux/usr/bin/cpp:${PORTSDIR}/devel/linux_devel
+
+OSVERSION!=	sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=	"During build fails makesyscalls"
+.endif
 
 .if !exists(/sys/i386/linux/syscalls.master)
 BROKEN=		"requires kernel source present in /sys"
