@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Dec 14 14:08:27 2001
-+++ configure	Fri Dec 14 14:17:45 2001
+--- configure.orig	Fri Dec 14 19:13:12 2001
++++ configure	Fri Dec 14 19:20:26 2001
 @@ -9253,7 +9253,7 @@
  
  CPPFLAGS_save="$CPPFLAGS"
@@ -21,24 +21,6 @@ $FreeBSD$
  fi
  rm -f conftest*
  
-@@ -9347,7 +9347,7 @@
- 	ac_cv_db3_ldadd=""
- 
- 	for name in db db3 db-3.1; do
--		LIBS="$LIBS_save $with_db3_libs/lib${name}.a"
-+		LIBS="$LIBS_save $with_db3_libs/lib${name}.so"
- 		cat > conftest.$ac_ext <<EOF
- #line 9353 "configure"
- #include "confdefs.h"
-@@ -9368,7 +9368,7 @@
- if { (eval echo configure:9369: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-   rm -rf conftest*
-   
--			ac_cv_db3_ldadd="$with_db3_libs/lib${name}.a"
-+			ac_cv_db3_ldadd="$with_db3_libs/lib${name}.so"
- 			break
- 		
- else
 @@ -9438,7 +9438,7 @@
  
  echo "$ac_t""$ac_cv_db3_lib_version_match" 1>&6

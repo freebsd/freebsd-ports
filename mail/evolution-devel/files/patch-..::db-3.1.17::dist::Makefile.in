@@ -1,0 +1,44 @@
+
+$FreeBSD$
+
+--- ../db-3.1.17/dist/Makefile.in.orig	Tue Jul 18 18:37:57 2000
++++ ../db-3.1.17/dist/Makefile.in	Fri Dec 14 16:49:51 2001
+@@ -34,11 +34,11 @@
+ libdb=		libdb.a
+ 
+ libso_base=	libdb
+-libso_linkname=	$(libso_base)-$(SOVERSION).la
+-libso=		$(libso_base)-$(SOVERSION).@SOSUFFIX@
+-libso_target=	$(libso_base)-$(SOVERSION).la
++libso_linkname=	$(libso_base)$(SOMAJOR).la
++libso=		$(libso_base)$(SOMAJOR).@SOSUFFIX@
++libso_target=	$(libso_base)$(SOMAJOR).la
+ libso_default=	$(libso_base).@SOSUFFIX@
+-libso_major=	$(libso_base)-$(SOMAJOR).@SOSUFFIX@
++libso_major=	$(libso_base)$(SOMAJOR).@SOSUFFIX@.1
+ 
+ ##################################################
+ # C++
+@@ -49,10 +49,10 @@
+ ##################################################
+ libcxx=		libdb_cxx.a
+ libxso_base=	libdb_cxx
+-libxso=		$(libxso_base)-$(SOVERSION).@SOSUFFIX@
+-libxso_target=	$(libxso_base)-$(SOVERSION).la
++libxso=		$(libxso_base)$(SOMAJOR).@SOSUFFIX@
++libxso_target=	$(libxso_base)$(SOMAJOR).la
+ libxso_default=	$(libxso_base).@SOSUFFIX@
+-libxso_major=	$(libxso_base)-$(SOMAJOR).@SOSUFFIX@
++libxso_major=	$(libxso_base)$(SOMAJOR).@SOSUFFIX@.1
+ 
+ ##################################################
+ # JAVA
+@@ -112,7 +112,7 @@
+ bindir=	@bindir@
+ includedir=@includedir@
+ libdir=	@libdir@
+-docdir=	$(prefix)/docs
++docdir=	$(prefix)/share/doc/db3
+ 
+ dmode=	755
+ emode=	555
