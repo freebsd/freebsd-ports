@@ -8,7 +8,7 @@
 PORTNAME=	xvid
 PORTVERSION=	0.20020412
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.xvid.org/
+MASTER_SITES=	http://www.xvid.org/snapshots/
 DISTNAME=	xvid_snapshot_${PORTVERSION:S/^0.//}
 
 MAINTAINER=	michaelnottebrock@gmx.net
