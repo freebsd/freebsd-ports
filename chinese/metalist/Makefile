@@ -47,8 +47,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl
 
 DOCS=		README README.metalist INSTALL
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
-CONFLICTS=	slash
+CONFLICTS=	slash-[0-9]*
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		FZ.3 Slash.3 Slash::Apache.3 Slash::Apache::Banlist.3 \
@@ -82,9 +83,12 @@ do-patch:
 .if defined(WITH_APACHE2)
 	@(cd ${WRKDIR} && ${PATCH} < ${WRKSRC}/slash-2.2.6-modperl2.diff.txt 2>/dev/null)
 .endif
+	@${REINPLACE_CMD} -E -e 's,/usr/local,${PREFIX},g' \
+		-e 's,(\$\(PERL\) Makefile.PL),\1 PREFIX=\$$\(PREFIX\),g' \
+		${WRKSRC}/Makefile
 
 post-install:
-	@${FIND} ${PREFIX}/slash -name "*.orig" -delete
+	@${FIND} ${PREFIX}/slash -name "*.orig" -or -name "*.bak" -delete
 .if defined(WITH_APACHE2)
 	@${SED} -e s!%%LOCALBASE%%!${LOCALBASE}!g -e s!%%APACHE%%!apache2!g ${PKGMESSAGE}
 .else
