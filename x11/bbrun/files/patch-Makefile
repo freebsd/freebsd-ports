@@ -1,29 +1,18 @@
---- Makefile.orig	Sat Jul 20 12:47:49 2002
-+++ Makefile	Sat Jul 20 20:24:41 2002
-@@ -1,16 +1,15 @@
+--- Makefile.orig	Wed Jun  2 23:54:33 2004
++++ Makefile	Wed Jun  2 23:55:08 2004
+@@ -1,5 +1,4 @@
 -CC     = gcc
--LIBS   = -lXpm `gtk-config --libs`
--CFLAGS = `gtk-config --cflags`
-+LIBS   = -lXpm `${GTK_CONFIG} --libs` 
-+CFLAGS += `${GTK_CONFIG} --cflags` -Wall
- OBJS   = bbrun.o \
-          ../wmgeneral/wmgeneral.o \
-          ../wmgeneral/misc.o \
-          ../wmgeneral/list.o
+-LIBDIR = -L/usr/lib -L/usr/X11R6/lib
++LIBDIR = -L${LOCALBASE}/lib -L${X11BASE}/lib
+ LIBS   = -lXpm `pkg-config --libs gtk+-2.0`
+ CFLAGS = `pkg-config --cflags gtk+-2.0`
+ 
+@@ -11,7 +10,7 @@
+ all: bbrun
  
  .c.o:
 -	$(CC) -g -c -O2 -Wall $< -o $*.o $(CFLAGS)
-+	$(CC) -c $< -o $*.o $(CFLAGS)
++	$(CC) -g -c -Wall $< -o $*.o $(CFLAGS)
  
  bbrun: $(OBJS)
--	$(CC) -Wall -g -o bbrun $^ $(LIBS)
-+	$(CC) -o bbrun $^ $(LDFLAGS) $(LIBS)
- 
- install:
- 	cp bbrun /usr/local/bin/
-@@ -18,3 +17,5 @@
- clean:
- 	rm -f bbrun $(OBJS)
- 	rm -f core
-+
-+all: bbrun
+ 	$(CC) -Wall -g -o bbrun $^ $(LIBDIR) $(LIBS)

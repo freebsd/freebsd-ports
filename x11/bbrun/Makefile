@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	bbrun
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	x11
-MASTER_SITES=	http://www.dwave.net/~jking/bbrun/
+MASTER_SITES=	http://www.darkops.net/bbrun/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Run box for Blackbox
 
 USE_GETOPT_LONG=yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_XPM=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
