@@ -1,5 +1,5 @@
 %%DIVX%%bin/divxdec
-bin/glav
+%%GTK%%bin/glav
 bin/jpeg2yuv
 %%DIVX%%bin/lav2divx
 bin/lav2mpeg

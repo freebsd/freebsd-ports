@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	mjpeg
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
-BROKEN=		"Does not compile"
-
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
@@ -86,6 +84,9 @@ WITH_SDL=	yes
 # option activation
 .if ${HAVE_GNOME:Mgtk12}!=""
 USE_GNOME+=	gtk12
+PLIST_SUB+=	GTK=""
+.else
+PLIST_SUB+=	GTK="@comment "
 .endif
 #
 .ifdef(WITH_LIBDV)
