@@ -459,8 +459,8 @@ lib/libGL.so.1
 lib/libICE.a
 lib/libICE.so
 lib/libICE.so.6
-lib/libOSMesa.so
-lib/libOSMesa.so.3
+%%OSMESA:%%lib/libOSMesa.so
+%%OSMESA:%%lib/libOSMesa.so.3
 lib/libPEX5.a
 lib/libPEX5.so
 lib/libPEX5.so.6

@@ -34,6 +34,15 @@ MANCOMPRESSED=	yes
 MAN1=		libxrx.1
 MAN3=		Xaw.3
 
+.include <bsd.port.pre.mk>
+
+# BuildXF86DRI is false for FreeBSD < 4.1
+.if ${OSVERSION} < 410000
+PLIST_SUB+=     OSMESA:="@comment "
+.else
+PLIST_SUB+=     OSMESA:=""
+.endif
+
 .if defined(XDM_DES)
 .if ${USA_RESIDENT} == YES
 pre-fetch:
@@ -49,4 +58,4 @@ IGNOREFILES=	Wraphelp.c
 .endif
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
