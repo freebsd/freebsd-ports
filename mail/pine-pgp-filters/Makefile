@@ -7,7 +7,7 @@
 
 PORTNAME=	pine-pgp-filters
 PORTVERSION=	1.1
-CATEGORIES=	mail
+CATEGORIES=	mail security
 MASTER_SITES=	http://dougbarton.net/FreeBSD/Downloads/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dougb
