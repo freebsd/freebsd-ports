@@ -3,10 +3,11 @@
 # Date created:		Fr   4 Apr 1997 17:45:31 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1996/11/18 11:41:32 asami Exp $
+# $Id: Makefile,v 1.5 1997/04/04 19:36:35 andreas Exp $
 #
 
 DISTNAME=	mapedit2.24
+PKGNAME=	mapedit-2.24
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.boutell.com/pub/boutell/mapedit/
 EXTRACT_SUFX=	.freebsd.tar.Z
@@ -15,7 +16,6 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 USE_X11=		yes
 NO_BUILD=		yes
-NO_INSTALL_MANPAGES=	yes
 DOCDIR=		${PREFIX}/lib/X11/mapedit
 
 pre-install:
