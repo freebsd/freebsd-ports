@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.4 1998/08/12 06:29:24 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/25 09:13:01 asami Exp $
 #
 
 DISTNAME=	kmpg-0.3.3
@@ -16,6 +16,8 @@ MAINTAINER=	hanspb@persbraten.vgs.no
 
 LIB_DEPENDS=	kdecore\\.1\\.:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.1\\.:${PORTSDIR}/x11/kdelibs
+
+BROKEN_ELF=	depends on kdelibs
 
 USE_QT=		yes
 USE_GMAKE=	yes
