@@ -1,0 +1,11 @@
+--- ../cxx/cxx_app.cpp.orig	Wed Dec 16 14:53:47 1998
++++ ../cxx/cxx_app.cpp	Sat Sep 14 14:50:30 2002
+@@ -125,7 +125,7 @@
+ // db_env triggered the call.  A user that has multiple DB_ENVs
+ // will simply not be able to have different streams for each one.
+ //
+-void DbEnv::set_error_stream(class ostream *stream)
++void DbEnv::set_error_stream(ostream *stream)
+ {
+     error_stream_ = stream;
+ 

@@ -24,7 +24,6 @@ GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS=		--enable-compat185 \
 			--enable-dump185 --enable-cxx
-CFLAGS+=	-fpermissive
 
 post-install:
 	@-${RM} -fr ${PREFIX}/share/examples/db2
