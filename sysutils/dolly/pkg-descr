@@ -1,0 +1,21 @@
+[ excerpt taken from distfile's README ]
+
+Dolly is used to clone the installation of one machine to (possibly
+many) other machines. It can distribute image-files (even gnu-zipped),
+partitions or whole hard disk drives to other partitions or hard
+disk drives. As it forms a "virtual TCP ring" to distribute data,
+it works best with fast switched networks (we were able to clone a
+2 GB Windows NT partition to 15 machines in our cluster over Gigabit
+Ethernet in less than 4 minutes).
+
+As dolly clones whole partitions block-wise it works for most
+filesystems. We used it to clone partitions of the following type:
+Linux, Windows NT, Oberon, Solaris (most of our machines have multi
+boot setups). We have a small (additional) Linux installation on
+all of our machines or use a small one-floppy-disk-linux (e.g.
+muLinux) to do the cloning. On newer machines we use PXE to boot a
+small system in a RAM disk. From that system we then clone the hard
+disks in the machines.
+
+Author: Felix Rauch <rauch@inf.ethz.ch>
+WWW: http://www.cs.inf.ethz.ch/CoPs/patagonia/dolly.html
