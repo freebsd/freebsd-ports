@@ -1,0 +1,3 @@
+mesgui is a C++ library to make a simple GUI using OpenGL. It uses only
+OpenGL calls to draw. It features buttons, checkboxes, radioboxes, menus,
+progress bars, spinners, and textboxes.
