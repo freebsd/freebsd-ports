@@ -1,0 +1,19 @@
+bin/wily
+share/doc/wily/index.html
+share/doc/wily/intro.html
+share/doc/wily/download.html
+share/doc/wily/credits.html
+share/doc/wily/FAQ.txt
+share/doc/wily/onepage.html
+share/doc/wily/user.html
+share/doc/wily/idioms.html
+share/doc/wily/C.html
+share/doc/wily/python.html
+share/doc/wily/perl.txt
+share/doc/wily/hack.html
+share/doc/wily/changes.txt
+share/doc/wily/AcmeVsWily.html
+share/doc/wily/Tcl.html
+share/doc/wily/pythonpaper.html
+share/doc/wily/winmanager.html
+@dirrm share/doc/wily
