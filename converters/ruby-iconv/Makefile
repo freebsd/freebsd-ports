@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	An iconv wrapper class for Ruby
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 

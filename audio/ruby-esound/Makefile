@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby binding to the EsounD library
 
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
 

@@ -15,6 +15,7 @@ EXTRACT_SUFX=	# none
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A binary data dumper module for Ruby
 
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes

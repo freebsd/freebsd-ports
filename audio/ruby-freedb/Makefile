@@ -15,6 +15,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby library that provides access to Freedb/CDDB servers
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

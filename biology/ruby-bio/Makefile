@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Integrated environment for Bioinformatics written in Ruby
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes

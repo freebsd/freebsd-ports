@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	XMMS bindings for Ruby
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/multimedia/xmms
 

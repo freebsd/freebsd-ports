@@ -14,6 +14,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	A Ruby extension wrapping libvorbisfile
 
 LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
 

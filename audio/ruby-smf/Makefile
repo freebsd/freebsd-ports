@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
+COMMENT=	Ruby module to handle Standard MIDI Files
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
