@@ -1,8 +1,11 @@
---- Makefile.orig	Sun Dec  8 14:50:10 2002
-+++ Makefile	Sun Dec  8 14:50:17 2002
-@@ -1,4 +1,4 @@
+--- Makefile.orig	Sat Dec  7 23:49:52 2002
++++ Makefile	Tue Apr 15 02:32:25 2003
+@@ -1,6 +1,6 @@
 -CPPFLAGS=-W -Wall -O2 -finline-functions
 +CPPFLAGS=-W -Wall -O2 -finline-functions -I/usr/local/include -L/usr/local/lib
  #CPPFLAGS=-O0 -W -Wall
- DEBUG=-g
+-DEBUG=-g
++#DEBUG=-g
+ 
+ all: png2ico
  
