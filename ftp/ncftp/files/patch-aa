@@ -1,0 +1,36 @@
+*** Makefile.orig	Sun Oct  1 17:50:58 1995
+--- Makefile	Thu Nov 14 13:10:49 1996
+***************
+*** 13,19 ****
+  
+  # Program definitions.  See the README, part C.
+  #--------------------------------------------------------------------------
+! PDEFS =
+  #PDEFS = -DGETLINE
+  #PDEFS = -DREADLINE -DCURSES
+  #PDEFS = -DSOCKS
+--- 13,19 ----
+  
+  # Program definitions.  See the README, part C.
+  #--------------------------------------------------------------------------
+! PDEFS = -DREADLINE
+  #PDEFS = -DGETLINE
+  #PDEFS = -DREADLINE -DCURSES
+  #PDEFS = -DSOCKS
+***************
+*** 53,59 ****
+  # You'll need to know where the Rconnect.o object file is if you want
+  #   to use Socks.
+  #--------------------------------------------------------------------------
+! LIBS =
+  #LIBS = -ldbmalloc
+  #LIBS = -lgetline
+  #LIBS = -lreadline -lcurses
+--- 53,59 ----
+  # You'll need to know where the Rconnect.o object file is if you want
+  #   to use Socks.
+  #--------------------------------------------------------------------------
+! LIBS = -lreadline
+  #LIBS = -ldbmalloc
+  #LIBS = -lgetline
+  #LIBS = -lreadline -lcurses
