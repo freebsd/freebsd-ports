@@ -17,7 +17,7 @@ COMMENT=	Lynx-like text WWW browser
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-javascript --with-ssl --without-svgalib
-CONFIGURE_ENV+=	CPPFLAGS='-I${LOCALBASE}/include'
+CONFIGURE_ENV+=	CPPFLAGS='-I${LOCALBASE}/include' LDFLAGS='-L${LOCALBASE}/lib'
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_OPENSSL=	yes
