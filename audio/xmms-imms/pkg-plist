@@ -1,1 +1,4 @@
-lib/xmms/Visualization/libimms.so
+bin/analyzer
+bin/immsremote
+bin/immstool
+lib/xmms/General/libimms.so

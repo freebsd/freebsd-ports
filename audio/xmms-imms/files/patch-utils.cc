@@ -1,8 +1,8 @@
---- utils.cc.orig	Sat Aug 14 11:03:14 2004
-+++ utils.cc	Sat Aug 14 11:05:54 2004
-@@ -3,23 +3,6 @@
- 
- #include "utils.h"
+--- utils.cc.orig	Wed Aug 18 01:56:28 2004
++++ utils.cc	Tue Aug 31 15:44:15 2004
+@@ -11,23 +11,6 @@
+ using std::ofstream;
+ using std::ios_base;
  
 -// Random
 -int imms_random(int max)
