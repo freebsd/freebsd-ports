@@ -1,5 +1,13 @@
---- fr.orig	Mon Mar  9 14:20:12 1998
-+++ fr	Mon Mar  9 14:20:52 1998
+--- fr.orig	Mon Feb 16 04:09:54 1998
++++ fr	Thu Mar 12 09:49:30 1998
+@@ -1,6 +1,6 @@
+ #! /bin/sh
+ # -*- tcl -*- \
+-exec wish8.0 $0 wish8.0 $*
++exec wish8.1 $0 wish8.1 $*
+ 
+ set glob(version) 2.4.2
+ 
 @@ -3162,11 +3162,12 @@
  
  FindLibfr
