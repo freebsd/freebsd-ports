@@ -1,9 +1,9 @@
---- configure.orig	Wed Jul 17 17:49:15 2002
-+++ configure	Wed Jul 17 17:51:03 2002
-@@ -8531,6 +8532,8 @@
-   cat >conftest.$ac_ext <<_ACEOF
- #line 8532 "configure"
- #include "confdefs.h"
+--- configure.orig	Mon May  5 12:32:19 2003
++++ configure	Mon May  5 21:45:38 2003
+@@ -9772,6 +9772,8 @@
+ cat confdefs.h >>conftest.$ac_ext
+ cat >>conftest.$ac_ext <<_ACEOF
+ /* end confdefs.h.  */
 +#include <sys/types.h>
 +#include <sys/socket.h>
  $ac_includes_default

@@ -1,14 +1,19 @@
---- config/locale.alias.orig	Wed Jan  8 13:31:44 2003
-+++ config/locale.alias	Tue Jan 14 16:51:29 2003
-@@ -14,55 +14,36 @@
+--- config/locale.alias.orig	Sat Mar 15 05:31:02 2003
++++ config/locale.alias	Mon May  5 21:44:02 2003
+@@ -14,76 +14,36 @@
  #
  #		- George
  
--Azerbaijani		az_AZ.UTF-8,az_AZ
+-Albanian			sq_AL.UTF-8,sq_AL
+-Amharic			am_ET.UTF-8,am_ET
 -Arabic(Egypt)		ar_EG.UTF-8,ar_EG
 -Arabic(Lebanon)		ar_LB.UTF-8,ar_LB
--Amharic			am_ET.UTF-8,am_ET
+-Azerbaijani		az_AZ.UTF-8,az_AZ
 -Basque			eu_ES.UTF-8,eu_ES
+-Belarusian			be_BY.UTF-8,be_BY
+-Bengali			bn_BD.UTF-8,bn_BD
+-Bengali(India)			bn_IN.UTF-8,bn_IN
+-Bosnian			bs_BA.UTF-8,bs_BA
 -Bulgarian		bg_BG.UTF-8,bg_BG
 -Catalan			ca_ES.UTF-8,ca_ES
 -Chinese(simplified)	zh_CN.UTF-8,zh_CN
@@ -17,45 +22,61 @@
 -Czech			cs_CZ.UTF-8,cs_CZ
 -Danish			da_DK.UTF-8,da_DK
 -Dutch			nl_NL.UTF-8,nl_NL
--Estonian		et_EE.UTF-8,et_EE
 -English(American)	en_US.UTF-8,en_US
 -English(Australian)	en_AU.UTF-8,en_AU
 -English(British)	en_GB.UTF-8,en_GB
 -English(Ireland)	en_IE.UTF-8,en_IE
+-Estonian		et_EE.UTF-8,et_EE
 -Finnish			fi_FI.UTF-8,fi_FI
 -French			fr_FR.UTF-8,fr_FR
 -Galician		gl_ES.UTF-8,gl_ES
 -German			de_DE.UTF-8,de_DE
 -Greek			el_GR.UTF-8,el_GR
+-Gujarati			gu_IN.UTF-8,gu_IN
 -Hebrew			he_IL.UTF-8,he_IL
+-Hindi			hi_IN.UTF-8,hi_IN
 -Hungarian		hu_HU.UTF-8,hu_HU
 -Icelandic		is_IS.UTF-8,is_IS
+-Indonesian			id_ID.UTF-8,id_ID
+-Interlingua			ia.UTF-8,ia
 -Irish			ga_IE.UTF-8,ga_IE
 -Italian			it_IT.UTF-8,it_IT
 -Japanese		ja_JP.UTF-8,ja_JP
+-Kannada			kn_IN.UTF-8,kn_IN
 -Korean			ko_KR.UTF-8,ko_KR
 -Latvian			lv_LV.UTF-8,lv_LV
 -Lithuanian		lt_LT.UTF-8,lt_LT
 -Macedonian		mk_MK.UTF-8,mk_MK
+-Malayalam			ml_IN.UTF-8,ml_IN
 -Malay			ms_MY.UTF-8,ms_MY
+-Marathi			mr_IN.UTF-8,mr_IN
+-Mongolian		mn_MN.UTF-8,mn_MN
 -Norwegian(bokmal)	no_NO.UTF-8,no_NO
 -Norwegian(nynorsk)	nn_NO.UTF-8,nn_NO
+-Oriya			or_IN.UTF-8,or_IN
+-Panjabi			pa_IN.UTF-8,pa_IN
+-Persian			fa_IR.UTF-8,fa_IR
 -Polish			pl_PL.UTF-8,pl_PL
--Portuguese		pt_PT.UTF-8,pt_PT
 -Portuguese(Brazilian)	pt_BR.UTF-8,pt_BR
+-Portuguese		pt_PT.UTF-8,pt_PT
 -Romanian		ro_RO.UTF-8,ro_RO
 -Russian			ru_RU.UTF-8,ru_RU
+-Serbian			sr_YU.UTF-8,sr_YU
 -Slovak			sk_SK.UTF-8,sk_SK
 -Slovenian		sl_SI.UTF-8,sl_SI
 -Spanish			es_ES.UTF-8,es_ES
 -Spanish(Mexico)		es_MX.UTF-8,es_MX
--Swedish			sv_SE.UTF-8,sv_SE
 -Swedish(Finland)	sv_FI.UTF-8,sv_FI
+-Swedish			sv_SE.UTF-8,sv_SE
 -Tamil			ta_IN.UTF-8,ta_IN
+-Telugu			te_IN.UTF-8,te_IN
+-Thai			th_TH.UTF-8,th_TH
 -Turkish			tr_TR.UTF-8,tr_TR
 -Ukrainian		uk_UA.UTF-8,uk_UA
 -Vietnamese		vi_VN.UTF-8,vi_VN
 -Walloon			wa_BE.UTF-8,wa_BE
+-Welsh			cy_GB.UTF-8,cy_GB
+-Yiddish			yi.UTF-8,yi
 +Bulgarian              bg_BG.UTF-8,bg_BG.CP1251
 +Chinese(simplified)    zh_CN.UTF-8,zh_CN.EUC
 +Chinese(traditional)   zh_TW.UTF-8,zh_TW.Big5

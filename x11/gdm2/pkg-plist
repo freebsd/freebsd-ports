@@ -75,6 +75,7 @@ share/locale/ar/LC_MESSAGES/gdm-2.4.mo
 share/locale/az/LC_MESSAGES/gdm-2.4.mo
 share/locale/be/LC_MESSAGES/gdm-2.4.mo
 share/locale/bg/LC_MESSAGES/gdm-2.4.mo
+share/locale/bn/LC_MESSAGES/gdm-2.4.mo
 share/locale/ca/LC_MESSAGES/gdm-2.4.mo
 share/locale/cs/LC_MESSAGES/gdm-2.4.mo
 share/locale/da/LC_MESSAGES/gdm-2.4.mo
@@ -83,6 +84,7 @@ share/locale/el/LC_MESSAGES/gdm-2.4.mo
 share/locale/es/LC_MESSAGES/gdm-2.4.mo
 share/locale/et/LC_MESSAGES/gdm-2.4.mo
 share/locale/eu/LC_MESSAGES/gdm-2.4.mo
+share/locale/fa/LC_MESSAGES/gdm-2.4.mo
 share/locale/fi/LC_MESSAGES/gdm-2.4.mo
 share/locale/fr/LC_MESSAGES/gdm-2.4.mo
 share/locale/ga/LC_MESSAGES/gdm-2.4.mo
@@ -95,6 +97,7 @@ share/locale/ko/LC_MESSAGES/gdm-2.4.mo
 share/locale/lt/LC_MESSAGES/gdm-2.4.mo
 share/locale/lv/LC_MESSAGES/gdm-2.4.mo
 share/locale/mk/LC_MESSAGES/gdm-2.4.mo
+share/locale/ml/LC_MESSAGES/gdm-2.4.mo
 share/locale/mn/LC_MESSAGES/gdm-2.4.mo
 share/locale/ms/LC_MESSAGES/gdm-2.4.mo
 share/locale/nl/LC_MESSAGES/gdm-2.4.mo
@@ -107,11 +110,15 @@ share/locale/ro/LC_MESSAGES/gdm-2.4.mo
 share/locale/ru/LC_MESSAGES/gdm-2.4.mo
 share/locale/sk/LC_MESSAGES/gdm-2.4.mo
 share/locale/sl/LC_MESSAGES/gdm-2.4.mo
+share/locale/sr/LC_MESSAGES/gdm-2.4.mo
+share/locale/sr@Latn/LC_MESSAGES/gdm-2.4.mo
 share/locale/sv/LC_MESSAGES/gdm-2.4.mo
 share/locale/ta/LC_MESSAGES/gdm-2.4.mo
+share/locale/th/LC_MESSAGES/gdm-2.4.mo
 share/locale/tr/LC_MESSAGES/gdm-2.4.mo
 share/locale/uk/LC_MESSAGES/gdm-2.4.mo
 share/locale/vi/LC_MESSAGES/gdm-2.4.mo
+share/locale/wa/LC_MESSAGES/gdm-2.4.mo
 share/locale/zh_CN/LC_MESSAGES/gdm-2.4.mo
 share/locale/zh_TW/LC_MESSAGES/gdm-2.4.mo
 @dirrm share/gnome/gdm/themes/happygnome

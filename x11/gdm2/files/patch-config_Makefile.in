@@ -45,7 +45,7 @@
 +		if test '!' -f $(DESTDIR)$(sessdir)/Default; then \
 +		    	$(LN_S) -f $(sessdir)/Xsession $(DESTDIR)$(sessdir)/Default; \
  		fi; \
--		$(LN_S) -f $(sessdir)/Xsession $(DESTDIR)$(sessdir)/Default; \
+-		$(LN_S) -f Xsession $(DESTDIR)$(sessdir)/Default; \
  	fi
  
  	if test '!' -d $(DESTDIR)$(initdir); then \
