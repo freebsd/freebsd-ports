@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	panelmm
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/panelmm
@@ -18,9 +18,8 @@ LIB_DEPENDS=	gnomemm.9:${PORTSDIR}/x11-toolkits/gnome--
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
-USE_LIBTOOL=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static
 
 .include <bsd.port.mk>
