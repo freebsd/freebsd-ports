@@ -17,10 +17,6 @@ MAN1= snobol4.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 # Fix GCC 3.x from freaking out over some of our pointers.
 #
 # I had to patch gendata.sno, so I patched the changes it produces
