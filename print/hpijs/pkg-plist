@@ -156,6 +156,9 @@ bin/hpijs
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_2100M-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_2200-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_2300-hpijs.ppd.gz
+%%FOOMATIC%%share/ppd/HP/HP-LaserJet_2410-hpijs.ppd.gz
+%%FOOMATIC%%share/ppd/HP/HP-LaserJet_2420-hpijs.ppd.gz
+%%FOOMATIC%%share/ppd/HP/HP-LaserJet_2430-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_3200-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_3200m-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_3200se-hpijs.ppd.gz
@@ -169,7 +172,9 @@ bin/hpijs
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_4050-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_4100-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_4200-hpijs.ppd.gz
+%%FOOMATIC%%share/ppd/HP/HP-LaserJet_4250-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_4300-hpijs.ppd.gz
+%%FOOMATIC%%share/ppd/HP/HP-LaserJet_4350-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_4L-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_4M-hpijs.ppd.gz
 %%FOOMATIC%%share/ppd/HP/HP-LaserJet_4ML-hpijs.ppd.gz
