@@ -1,5 +1,5 @@
-*** src/Makefile.orig	Mon Apr  8 17:29:08 1996
---- src/Makefile	Tue Nov 26 11:41:31 1996
+*** src/Makefile.orig	Sat Feb  8 00:23:02 1997
+--- src/Makefile	Sat Feb  8 00:26:20 1997
 ***************
 *** 32,38 ****
   #   SONY_FSLIB = -L/usr/sony/lib -lFSlib
@@ -52,13 +52,13 @@
   
   
 ***************
-*** 82,102 ****
+*** 82,111 ****
   #endif
   
   default:
-! 	make libVFlib.a ttindex bdfindex
+! 	make libVFlib.a ttindex bdfindex fwindex
   all:
-! 	make libVFlib.a ttindex bdfindex
+! 	make libVFlib.a ttindex bdfindex fwindex
   
   install:
   	-$(RM) -f $(INSTALL_LIBDIR)/VFlib.a $(INSTALL_LIBDIR)/libVFlib.a
@@ -73,36 +73,47 @@
 ! 	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex *.o core
   veryclean:
   	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex\
-  	           *.o core *~ \#tz* 
---- 82,104 ----
+! 	           *.o core *~ \#tz* 
+  
+  
+  # Font drivers
+  DRV_OBJ=  VF_Sony.o VF_Zeit.o VF_Jg.o VF_TT.o VF_Bdf.o VF_Hbf.o hbf.o \
+  	  VF_Comp.o VF_BitOp.o VF_FNTWV.o VF_Null.o
+  
+  
+  # VFlib
+  libVFlib.a:	VFlib.o VFenc.o VFEtable.o VFcap.o fn2ent.o fman.o $(DRV_OBJ)
+--- 82,123 ----
   #endif
   
   default:
-! 	make libVFlib.a libVFlib.so.2.22 ttindex bdfindex
+! 	make libVFlib.a libVFlib.so.2.22 ttindex bdfindex fwindex
   all:
-! 	make libVFlib.a libVFlib.so.2.22 ttindex bdfindex
+! 	make libVFlib.a libVFlib.so.2.22 ttindex bdfindex fwindex
   
   install:
   	-$(RM) -f $(INSTALL_LIBDIR)/VFlib.a $(INSTALL_LIBDIR)/libVFlib.a
   	$(CP) VFlib.a $(INSTALL_LIBDIR)/VFlib.a
   	-$(RANLIB) $(INSTALL_LIBDIR)/VFlib.a
-+ 	$(INSTALL) -c -m 644 libVFlib.so.2.22 $(INSTALL_LIBDIR)/libVFlib.so.2.22
   	$(LN) $(INSTALL_LIBDIR)/VFlib.a $(INSTALL_LIBDIR)/libVFlib.a
++ 	$(INSTALL) -c -m 644 libVFlib.so.2.22 $(INSTALL_LIBDIR)/libVFlib.so.2.22
   	$(CP) VF.h $(INSTALL_INCDIR)/VF.h
   	$(CP) ttindex $(INSTALL_BINDIR)/ttindex
   	$(CP) bdfindex $(INSTALL_BINDIR)/bdfindex
++ 	$(CP) fwindex $(INSTALL_BINDIR)/fwindex
   
   clean:
 ! 	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex *.o core \
 ! 		*.so libVFlib.so.2.22
   veryclean:
   	-$(RM) -rf VFlib.a libVFlib.a ttindex bdfindex bdfjpindex\
-  	           *.o core *~ \#tz* 
-***************
-*** 106,111 ****
---- 108,121 ----
+! 	           *.o core *~ \#tz*  \
+! 		*.so libVFlib.so.2.22
+  
+  
+  # Font drivers
   DRV_OBJ=  VF_Sony.o VF_Zeit.o VF_Jg.o VF_TT.o VF_Bdf.o VF_Hbf.o hbf.o \
-  	  VF_Comp.o VF_BitOp.o VF_Null.o
+  	  VF_Comp.o VF_BitOp.o VF_FNTWV.o VF_Null.o
   
 + DRV_SOBJ=  VF_Sony.so VF_Zeit.so VF_Jg.so VF_TT.so VF_Bdf.so VF_Hbf.so hbf.so \
 + 	   VF_Comp.so VF_BitOp.so VF_Null.so
@@ -117,7 +128,7 @@
   libVFlib.a:	VFlib.o VFenc.o VFEtable.o VFcap.o fn2ent.o fman.o $(DRV_OBJ)
 ***************
 *** 168,173 ****
---- 178,253 ----
+--- 180,255 ----
   # Null font driver
   VF_Null.o:  	VF_Null.c
   	$(CC) $(CFLAGS)  -c VF_Null.c
