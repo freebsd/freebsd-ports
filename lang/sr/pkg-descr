@@ -1,0 +1,15 @@
+  SR is a programming language "Synchronization Resource", development
+  in the University of Arizona.
+
+  It is designed for writing concurrent programs. You can run
+  SR program in you local net (by installing SR daemons on startup
+  on all your machines), and specify a number of SR processes in one 
+  machine.
+
+  SR has nice interface with X11 and xtango.
+
+  Syntax of language  is pascal-like, for all references to documentation,
+  web links and examples please look at its own README, which situated
+  in /usr/local/share/doc/sr/notes/README.
+
+  Enjoy.
