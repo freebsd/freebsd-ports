@@ -7,19 +7,16 @@ share/texmf/tex/latex/hyperlatex/bluepanels.hlx
 share/texmf/tex/latex/hyperlatex/book.hlx
 share/texmf/tex/latex/hyperlatex/color.hlx
 share/texmf/tex/latex/hyperlatex/colortbl.hlx
-share/texmf/tex/latex/hyperlatex/cppdoc.hlx
 share/texmf/tex/latex/hyperlatex/dutch.hlx
 share/texmf/tex/latex/hyperlatex/english.hlx
 share/texmf/tex/latex/hyperlatex/fancyhdr.hlx
 share/texmf/tex/latex/hyperlatex/frames.hlx
 share/texmf/tex/latex/hyperlatex/french.hlx
 share/texmf/tex/latex/hyperlatex/german.hlx
-share/texmf/tex/latex/hyperlatex/hyperlatex.el
-share/texmf/tex/latex/hyperlatex/hyperlatex.elc
+share/texmf/tex/latex/hyperlatex/hyperxml.hlx
 share/texmf/tex/latex/hyperlatex/italian.hlx
 share/texmf/tex/latex/hyperlatex/longtable.hlx
 share/texmf/tex/latex/hyperlatex/makeidx.hlx
-share/texmf/tex/latex/hyperlatex/normalize-eps.awk
 share/texmf/tex/latex/hyperlatex/portuges.hlx
 share/texmf/tex/latex/hyperlatex/pstcol.hlx
 share/texmf/tex/latex/hyperlatex/report.hlx
@@ -27,4 +24,6 @@ share/texmf/tex/latex/hyperlatex/sequential.hlx
 share/texmf/tex/latex/hyperlatex/simplepanels.hlx
 share/texmf/tex/latex/hyperlatex/siteinit.hlx
 share/texmf/tex/latex/hyperlatex/tabularx.hlx
+share/texmf/tex/latex/hyperlatex/hyperlatex.el
+share/texmf/tex/latex/hyperlatex/hyperlatex.elc
 @dirrm share/texmf/tex/latex/hyperlatex
