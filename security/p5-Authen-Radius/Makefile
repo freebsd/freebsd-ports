@@ -7,6 +7,7 @@
 
 PORTNAME=	Authen-Radius
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Authen
@@ -23,7 +24,29 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PERL_CONFIGURE=	yes
 MAN3=		Authen::Radius.3
 
+RADDBFILES=	dictionary \
+		dictionary.ascend \
+		dictionary.cisco \
+		dictionary.compat \
+		dictionary.livingston \
+		dictionary.quintum \
+		dictionary.shiva \
+		dictionary.tunnel \
+		dictionary.usr \
+		dictionary.versanet \
+		dictionary.xtradius
+
 .include <bsd.port.pre.mk>
+
+pre-configure:
+	@${RM} ${WRKSRC}/install-radius-db.PL
+	@${PERL} -pi -e 's|/etc/raddb|${DATADIR}|' ${WRKSRC}/Radius.pm
+
+post-install:
+	@${MKDIR} ${DATADIR}
+.for FILE in ${RADDBFILES}
+	@${INSTALL_DATA} ${WRKSRC}/raddb/${FILE} ${DATADIR}/${FILE}
+.endfor
 
 .if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
