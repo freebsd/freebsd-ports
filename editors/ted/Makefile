@@ -18,7 +18,7 @@ COMMENT=	X11 based RTF editor
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/Fontmap:${PORTSDIR}/print/gsfonts
+RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/COPYING:${PORTSDIR}/print/gsfonts
 
 WRKSRC=		${WRKDIR}/Ted-${PORTVERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/Ted
@@ -31,12 +31,11 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAKE_ENV=	DEF_AFMDIR="-DAFMDIR=\"\\\"${AFMDIR}\\\"\"" \
 		DEF_INDDIR="-DINDDIR=\"\\\"${INDDIR}\\\"\"" \
-		DEF_DOCUMENT_DIR="-DDOCUMENT_DIR=\"\\\"${INFODIR}/\\\"\""
+		DEF_DOCUMENT_DIR="-DDOCUMENT_DIR=\"\\\"${DOCSDIR}/\\\"\""
 ALL_TARGET=	compile.shared
 
 AFMDIR=		${PREFIX}/share/Ted/afm
 INDDIR=		${PREFIX}/share/Ted/ind
-INFODIR=	${PREFIX}/share/doc/Ted
 
 post-extract:
 	cd ${WRKSRC}/tedPackage && ${TAR} xf TedBindist.tar
@@ -59,7 +58,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/afm/* ${AFMDIR}
 	@${MKDIR} ${INDDIR}
 	${INSTALL_DATA} ${WRKSRC}/tedPackage/ind/US_English.ind ${INDDIR}
-	@${MKDIR} ${INFODIR}
-	${INSTALL_DATA} ${WRKSRC}/tedPackage/Ted/TedDocument-en_US.rtf ${INFODIR}
 
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR}  ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/tedPackage/Ted/TedDocument-en_US.rtf ${DOCSDIR}
+.endif
 .include <bsd.port.mk>

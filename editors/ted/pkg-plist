@@ -13,8 +13,8 @@ share/Ted/afm/Times-BoldItalic.afm
 share/Ted/afm/Times-Italic.afm
 share/Ted/afm/Times-Roman.afm
 share/Ted/ind/US_English.ind
-share/doc/Ted/TedDocument-en_US.rtf
-@dirrm share/doc/Ted
+%%PORTDOCS%%%%DOCSDIR%%/TedDocument-en_US.rtf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/Ted/ind
 @dirrm share/Ted/afm
 @dirrm share/Ted
