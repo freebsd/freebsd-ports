@@ -1,5 +1,5 @@
---- modules_check/Makefile.orig	Mon Nov 26 07:31:09 2001
-+++ modules_check/Makefile	Tue May 14 14:16:16 2002
+--- modules_check/Makefile.orig	Sun Nov 25 17:31:09 2001
++++ modules_check/Makefile	Sat Feb 21 14:25:58 2004
 @@ -1,14 +1,15 @@
  # If you want to debug lmd comment out this line and recompile it
  # Launch lmd with -v option to see debug messages
@@ -16,7 +16,7 @@
  
  socket.o:
 -	gcc -c ../socket.c -o socket.o
-+	${CC} -c ../socket.c -o socket.o
++	${CC} ${OPTS} -c ../socket.c -o socket.o
  
  clean:
  	rm *.so *.o

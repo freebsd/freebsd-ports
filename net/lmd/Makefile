@@ -20,8 +20,6 @@ MODULES=	ldd_http_module.so
 DOCS=		INSTALL LICENSE README
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAKE_ENV+=	CPPFLAGS="-DPREFIX=\\\"${PREFIX}\\\""
-
 post-patch:
 	${REINPLACE_CMD} -i.bak -e 's|varargs.h|stdarg.h|' \
 		${WRKSRC}/chkmodules.h \
@@ -50,4 +48,10 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${ARCH} == "amd64"
+MAKE_ENV+=	CPPFLAGS="-DPREFIX=\\\"${PREFIX}\\\" -fPIC"
+.else
+MAKE_ENV+=	CPPFLAGS="-DPREFIX=\\\"${PREFIX}\\\""
+.endif
+.include <bsd.port.post.mk>
