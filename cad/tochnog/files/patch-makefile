@@ -1,0 +1,99 @@
+--- makefile.orig	Sun Aug 19 12:31:52 2001
++++ makefile	Wed Jun 18 12:57:01 2003
+@@ -1,6 +1,7 @@
+ #  ***********  fortran 2 c *******************
+ # Set F2C (for unix -lf2c and for MS windows to f2c.lib)
+-F2C=
++F2C= -lf2c -L%%LOCALBASE%%/lib
++F2C_INCLUDE= -I%%LOCALBASE%%/include
+ 
+ #  ***********  hypoplasticity ****************
+ # For hypoplasticity:
+@@ -8,8 +9,8 @@
+ #    set HYPO_USE to 1 in tnhypo.h
+ #    set HYPO_SRC to hypo.c below
+ #    set HYPO_OBJ to hypo.o below
+-HYPO_SRC=hypo_dum.c
+-HYPO_OBJ=hypo_dum.o
++HYPO_SRC=hypo.c
++HYPO_OBJ=hypo.o
+ 
+ #  ***********  profiler ***********************
+ # for the gnu profiler, use as follows:
+@@ -26,11 +27,11 @@
+ SYS_FILE=sysother
+ BCPP=-P
+ VCPP=
+-COMPILER_C=bcc32
+-COMPILER_CPP=bcc32
+-COMPILER_FLAGS= -c -O2 -w-
++COMPILER_C=$(CC)
++COMPILER_CPP=$(CXX)
++COMPILER_FLAGS=$(CFLAGS) -c
+ OBJ=obj
+-LINK_FLAGS_BEFORE= -l$(F2C)
++LINK_FLAGS_BEFORE= -l$(F2C) -L%%LOCALBASE%%/lib
+ LINK_FLAGS_AFTER=
+ 
+ #  ***********  SUPERLU library *******************
+@@ -39,9 +40,9 @@
+ #      Set SUPERLU_MT_USE to 1 in tnsuplu.h for the multi threaded version
+ #      Set SUPERLU_DIST_USE to 1 in tnsuplu.h for the distributed MPI version
+ #   2. Activate and adjust the next three lines
+-# SUPERLU=/home/programs/src/SuperLU
+-# SUPERLU_LIB=$(SUPERLU)/superlu.a $(SUPERLU)/blas.a
+-# SUPERLU_INCLUDE=-I$(SUPERLU)/SRC
++SUPERLU=%%LOCALBASE%%
++SUPERLU_LIB=$(SUPERLU)/lib/lib%%SUPERLU%%.a %%BLAS_LIBS%%
++SUPERLU_INCLUDE=-I$(SUPERLU)/include/%%SUPERLU%%
+ #   3. For SuperLU_MT be sure to compile a multi threaded version
+ #      of Tochnog (sparc_parallel, alpha_parallel, linux, etc.)
+ 
+@@ -65,7 +66,7 @@
+ ALL_LIB= $(PETSC_LIB) $(SUPERLU_LIB) $(F2C)
+ 
+ #  ***********  default platform  *******************
+-default: linux_old
++default: freebsd_old
+ 
+ # single and multi-processor windows; borland c++ compiler
+ # set SYS_FILE above to syswin32 for multi-processor
+@@ -101,18 +102,23 @@
+ 	"LINK_FLAGS_AFTER= /link $(F2C) $(PROFILE) /OUT:tochnog.exe"
+ 
+ # single processor linux; gnu gcc compiler
+-linux_old: 
++freebsd_old: 
+ 	make tochnog \
+ 	"SYS_FILE=sysother" \
+ 	"OBJ=o" \
+-	"BCPP=" \
+-	"VCPP=" \
+-	"COMPILER_C=gcc" \
+-	"COMPILER_CPP=g++" \
+-	"COMPILER_FLAGS= -ansi -c -O2 -Wall $(PROFILE) $(ALL_INCLUDE)" \
++	"COMPILER_FLAGS= -c ${CFLAGS} $(ALL_INCLUDE)" \
+ 	"LINK_FLAGS_BEFORE=" \
+ 	"LINK_FLAGS_AFTER= $(PROFILE) $(ALL_LIB) -static -lm -o tochnog"
+ 
++# Multithreaded FreeBSD
++freebsd_parallel:
++	make tochnog \
++	"SYS_FILE=sysposix" \
++	"OBJ=o" \
++	"COMPILER_FLAGS= -c ${CFLAGS} %%PTHREAD_CFLAGS%% -D_REENTRANT $(ALL_INCLUDE)" \
++	"LINK_FLAGS_BEFORE=" \
++	"LINK_FLAGS_AFTER=  $(ALL_LIB) %%PTHREAD_LIBS%% -static -lm -o tochnog"
++
+ # multi processor linux; gnu gcc compiler
+ linux: 
+ 	make tochnog \
+@@ -375,7 +381,7 @@
+ 	$(COMPILER_CPP) $(COMPILER_FLAGS) $(BCPP) $(VCPP)hyperela.$(SRC_CPP)
+ 
+ $(HYPO_OBJ): $(HYPO_SRC)
+-	$(COMPILER_C) $(COMPILER_FLAGS) $(HYPO_SRC)
++	$(COMPILER_C) $(COMPILER_FLAGS) $(HYPO_SRC) $(F2C_INCLUDE)
+ 
+ hypoplas.$(OBJ): hypoplas.$(SRC_CPP) tochnog.h
+ 	$(COMPILER_CPP) $(COMPILER_FLAGS) $(BCPP) $(VCPP)hypoplas.$(SRC_CPP)

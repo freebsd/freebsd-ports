@@ -41,6 +41,7 @@
     SUBDIR += slffea
     SUBDIR += spice
     SUBDIR += tkgate
+    SUBDIR += tochnog
     SUBDIR += transcalc
     SUBDIR += varkon
     SUBDIR += vipec

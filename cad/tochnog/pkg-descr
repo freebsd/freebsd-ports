@@ -1,0 +1,15 @@
+TOCHNOG is a free finite element program with many features. TOCHNOG
+accepts free format input. Boundary conditions can be imposed at
+geometrical entities, as well as nodes and elements.
+
+Among the FE models supported are: differential equations (materials),
+convection-diffusion equations, Stokes and Navier-Stokes (fluids),
+elasticity (isotropy and transverse isotropy), plasticity (Von-Mises,
+Mohr-Coulomb, etc.; plastic surfaces can be arbitrarily
+combined). Residues in equations and error estimates for all data can
+be printed or plotted using gnuplot/plotmtv, CalculiX or gmsh.
+
+TOCHNOG supports a choice of description frames including Lagrangian,
+Eulerian and arbitrary Eulerian-Lagrangian (AEL).
+
+WWW:	http://tochnog.sourceforge.net/
