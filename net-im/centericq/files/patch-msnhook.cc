@@ -39,7 +39,7 @@
  	em.store(immessage(ic, imevent::incoming, text));
  
  	if(c)
-@@ -453,3 +456,117 @@
+@@ -453,3 +456,121 @@
  	clist.get(contactroot)->playsound(imevent::email);
      }
  }
@@ -98,6 +98,7 @@
 +    iconv_t handle = iconv_open( "utf-8", guess_current_locale_charset() );
 +    ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
 +    
++    *outbuf = '\0';
 +    iconv_close( handle );
 +
 +    return outbuf_save;
@@ -115,6 +116,7 @@
 +    iconv_t handle = iconv_open( "utf-8", guess_current_locale_charset() );
 +    ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
 +    
++    *outbuf = '\0';
 +    iconv_close( handle );
 +
 +    std::string return_me = outbuf_save;
@@ -133,6 +135,7 @@
 +
 +    ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
 +    
++    *outbuf = '\0';
 +    iconv_close( handle );
 +
 +    return outbuf_save;
@@ -151,6 +154,7 @@
 +
 +    ret = safe_iconv( handle, (const char **) &inbuf, &length, &outbuf, &outmaxlength );
 +
++    *outbuf = '\0';
 +    iconv_close( handle );
 +
 +    std::string return_me = outbuf_save;
