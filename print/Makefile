@@ -71,6 +71,7 @@
     SUBDIR += pbm2ppa
     SUBDIR += pclprint
     SUBDIR += pdflib
+    SUBDIR += pdflib3
     SUBDIR += pdq
     SUBDIR += perlftlib
     SUBDIR += pips760
