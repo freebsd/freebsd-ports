@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		gaim
-PORTVERSION=		0.10.2
+PORTVERSION=		0.10.3
 CATEGORIES=		net
 MASTER_SITES=		ftp://ftp.marko.net/pub/gaim/ \
 			${MASTER_SITE_SOURCEFORGE}
