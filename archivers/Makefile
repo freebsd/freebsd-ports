@@ -5,6 +5,7 @@
     SUBDIR += arc
     SUBDIR += bzip
     SUBDIR += bzip2
+    SUBDIR += cabextract
     SUBDIR += deepforest
     SUBDIR += fastjar
     SUBDIR += freeze
