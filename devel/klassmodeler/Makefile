@@ -8,27 +8,29 @@
 
 PORTNAME=	klassmodeler
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.jameswells.net/KlassModeler/
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
-EXTRACT_SUFX=	.tgz
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}.bsd
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for visually creating and documenting classes
 
-BROKEN=		Unfetchable
-
 LIB_DEPENDS=	wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
+USE_ZIP=	yes
 USE_REINPLACE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}/Release
+WRKSRC=		${WRKDIR}/${PORTNAME}
 WX_CONFIG=	${X11BASE}/bin/wxgtk2-2.4-config
 USE_GNOME=	gnometarget
-GNU_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	../configure
+USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=	WXWINDOWS="yes"
 
 PLIST_FILES=	bin/klassmodeler
+
+DOS2FIX=	configure Makefile.in klassmodeler/docs/en/Makefile.in \
+		klassmodeler/docs/Makefile.in klassmodeler/Makefile.in \
+		admin/depcomp
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -36,18 +38,23 @@ PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000                
+.if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on 4.x"
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,\`wx-config,\`${WX_CONFIG}," ${WRKSRC}/../configure
+.for df in ${DOS2FIX}
+	${MV} ${WRKSRC}/${df} ${WRKSRC}/${df}.dos
+	${TR} -d '\r' < ${WRKSRC}/${df}.dos > ${WRKSRC}/${df}
+.endfor
+	@${REINPLACE_CMD} -e "s,\`wx-config,\`${WX_CONFIG}," ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${CHMOD} a+x ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/klassmodeler/klassmodeler ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/klassmodeler/klassmodeler ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/../klassmodeler/docs/en/*.html ${DOCSDIR}
+	${CP} ${WRKSRC}/klassmodeler/docs/en/*.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
