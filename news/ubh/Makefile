@@ -17,9 +17,9 @@ RUN_DEPENDS=	\
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/MIME/Decoder.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
+	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
 
 NO_BUILD=	YES
 
