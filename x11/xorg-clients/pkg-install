@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/X11R6}
+
+XDMCONFDIR=${PKG_PREFIX}/lib/X11/xdm
+XDMCONFFILES="GiveConsole TakeConsole Xaccess Xresources Xservers Xsession \
+	Xsetup_0 Xwilling xdm-config"
+for file in $XDMCONFFILES; do
+	if [ ! -f ${XDMCONFDIR}/$file ]; then
+		cp ${XDMCONFDIR}/$file.default ${XDMCONFDIR}/$file
+	fi
+done
+
+XINITCONFDIR=${PKG_PREFIX}/lib/X11/xinit
+if [ ! -f ${XINITCONFDIR}/xinitrc ]; then
+	cp ${XINITCONFDIR}/xinitrc.default ${XINITCONFDIR}/xinitrc
+fi
