@@ -73,6 +73,7 @@
     SUBDIR += kb2mb2
     SUBDIR += kde-lite
     SUBDIR += kde3
+    SUBDIR += kde31-apireference
     SUBDIR += kdebase3
     SUBDIR += kdelibs3
     SUBDIR += keylaunch
