@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 .ifdef DEBUG
-CONFIGURE_ARGS+=  --enable-debug
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-install:
