@@ -35,6 +35,7 @@ RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
 .endif
 RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
+USE_REINPLACE=	yes
 USE_IMAKE=	yes
 USE_X_PREFIX=	no
 USE_XLIB=	yes
@@ -65,7 +66,7 @@ move-instant.1:
 post-patch: patch-docbook-to-man
 
 patch-docbook-to-man:
-	@${PERL} -pi.fbsd -e 's|%%PREFIX%%|${PREFIX}|;s|%%NSGMLS%%|${NSGMLS}|' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|;s|%%NSGMLS%%|${NSGMLS}|' \
 		${WRKSRC}/cmd/docbook-to-man.sh
 
 .include <bsd.port.post.mk>

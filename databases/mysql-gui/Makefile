@@ -28,6 +28,7 @@ LIB_DEPENDS=	sqlplus.1:${PORTSDIR}/databases/mysql++ \
  		fleditor.1:${PORTSDIR}/x11-toolkits/fl_editor \
 		flvw.1:${PORTSDIR}/x11-toolkits/flvw
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-/-src-/}
@@ -57,7 +58,7 @@ remove-inc:
 #
 
 pre-patch: copy-inc
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/Fl_Help.cc
 
 copy-inc:

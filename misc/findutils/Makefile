@@ -17,13 +17,11 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ARGS=	--program-prefix=g # --localstatedir=${LOCALSTATEDIR}
 MAKE_ARGS=	INSTALL_SCRIPT="${INSTALL_SCRIPT}"
-
-USE_GMAKE=	yes
-# PREFIX isn't honored. force it w/ prefix.
-MAKE_ARGS+=	prefix=${PREFIX}
 
 MAN1=		gfind.1 gxargs.1 glocate.1 gupdatedb.1
 MAN5=		glocatedb.5
@@ -45,7 +43,7 @@ post-extract:
 #
 
 post-patch:
-	@${PERL} -pi.fbsd -e 's|makeinfo|makeinfo --no-split|g' \
+	@${REINPLACE_CMD} -e 's|makeinfo|makeinfo --no-split|g' \
 		${WRKSRC}/doc/Makefile.in
 
 # Post-configure
@@ -53,7 +51,7 @@ post-patch:
 
 # --localstatedir= isn't handled right now, so, do it manually.
 post-configure:
-	@${PERL} -pi.fbsd -e 's|\$$\(prefix\)/var|${LOCALSTATEDIR}|g' \
+	@${REINPLACE_CMD} -e 's|\$$\(prefix\)/var|${LOCALSTATEDIR}|g' \
 		${WRKSRC}/Makefile ${WRKSRC}/locate/Makefile
 
 # Post-install

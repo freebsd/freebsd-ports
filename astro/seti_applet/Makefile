@@ -21,6 +21,7 @@ LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
 		intl.2:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
@@ -43,16 +44,16 @@ post-patch: patch-configure patch-makefiles-in \
 	    patch-seti_applet patch-message
 
 patch-configure:
-	@${PERL} -pi.fbsd -e 's|-lpthread|${PTHREAD_LIBS}|g; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g;\
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 patch-makefiles-in:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} -pi.fbsd -e \
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g;\
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 patch-seti_applet:
-	@${PERL} -pi.fbsd -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/src/seti_applet.c
 
 patch-message:

@@ -17,10 +17,9 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-# PREFIX isn't honored. force it w/ prefix.
-MAKE_ARGS=	prefix=${PREFIX}
 
 MAN1=		gsed.1
 
@@ -39,7 +38,7 @@ post-configure: patch-makefiles
 
 patch-makefiles:
 .for subdir in ${PATCH_SUBDIRS}
-	@${PERL} -pi.fbsd -e 's/s,x,x,/s,^,g,/' ${WRKSRC}/${subdir}/Makefile
+	@${REINPLACE_CMD} -e 's|s,x,x,|s,^,g,|' ${WRKSRC}/${subdir}/Makefile
 .endfor
 
 # Post-install

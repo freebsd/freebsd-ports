@@ -8,7 +8,6 @@
 
 PORTNAME=	dhcp
 PORTVERSION=	3.0.1.r9
-PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/%SUBDIR%/ \
 		${US_MASTER_SITES} ${JAPAN_MASTER_SITES} \
@@ -32,6 +31,7 @@ MAINTAINER=	cyrille.lefevre@laposte.net
 # Global variables
 #
 
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 
 MAN1=		omshell.1
@@ -124,22 +124,22 @@ post-patch: patch-scripts patch-makefile-conf \
 	    patch-message
 
 patch-scripts:
-	@${PERL} -pi.fbsd -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/client/scripts/freebsd
 
 patch-makefile-conf:
-	@${PERL} -pi.fbsd -e 's|^DEBUG[ \t]*=|# DEBUG ?=|g' \
+	@${REINPLACE_CMD} -e 's|^DEBUG[ 	]*=|# DEBUG ?=|g' \
 		${WRKSRC}/Makefile.conf
 
 patch-makefiles-dist:
 .for subdir in ${PATCH_SUBDIRS}
-	@${PERL} -pi.fbsd -e 's|^CFLAGS[ \t]*=|CFLAGS +=|g' \
+	@${REINPLACE_CMD} -e 's|^CFLAGS[ 	]*=|CFLAGS +=|g' \
 		${WRKSRC}/${subdir}/Makefile.dist
 .endfor
 
 # temporary hack - no patch file needed for this typo.
 patch-man-pages:
-	@${PERL} -ni.fbsd -e '/^\.Fd$$/ or print;' ${WRKSRC}/dhcpctl/dhcpctl.3
+	@${REINPLACE_CMD} -e '/^\.Fd$$/d' ${WRKSRC}/dhcpctl/dhcpctl.3
 
 patch-message:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g;s|%%MAN1PREFIX%%|${MAN1PREFIX}|g' \
