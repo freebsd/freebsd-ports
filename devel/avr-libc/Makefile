@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	20010331
+PORTVERSION=	20010717
 CATEGORIES=	devel
 MASTER_SITES=	http://www.amelek.gda.pl/avr/libc/
 
@@ -28,7 +28,7 @@ MAKE_FLAGS=	prefix=${PREFIX}
 post-install:
 		${MKDIR} ${PREFIX}/share/doc/avr-libc
 		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples
-		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README \
+		${INSTALL_DATA} \
 			${WRKDIR}/${DISTNAME}/doc/LICENSE \
 			${WRKDIR}/${DISTNAME}/doc/register-usage.txt \
 			${PREFIX}/share/doc/avr-libc

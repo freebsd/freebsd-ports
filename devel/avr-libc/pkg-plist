@@ -74,7 +74,6 @@ avr/include/string.h
 avr/include/timer.h
 avr/include/twi.h
 avr/include/wdt.h
-share/doc/avr-libc/README
 share/doc/avr-libc/LICENSE
 share/doc/avr-libc/register-usage.txt
 share/doc/avr-libc/avr-lib.pdf
