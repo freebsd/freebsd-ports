@@ -1,0 +1,7 @@
+Xalan is an XSLT processor for transforming XML documents into HTML,
+text, or other XML document types. It implements the W3C
+Recommendations for XSL Transformations (XSLT) and the XML Path
+Language (XPath). It can be used from the command line, in an applet
+or a servlet, or as a module in other program.
+
+	WWW: http://xml.apache.org/xalan-j/
