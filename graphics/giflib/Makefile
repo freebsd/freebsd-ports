@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
+USE_LIBTOOL=	yes
+
 .ifdef (NO_X)
 PLIST_SUB+=	X11='@comment '
 CONFIGURE_ARGS+=--with-x=no
