@@ -7,6 +7,7 @@
 
 PORTNAME=	saxon
 PORTVERSION=	6.5.3
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	saxon
@@ -15,6 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XSLT processor for Java
 
+RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.1+
@@ -22,13 +25,17 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 JARFILES=	saxon-jdom.jar saxon.jar
-PLIST_FILES+=	${JARFILES:S,^,${JAVAJARDIR:S,^${PREFIX}/,,}/,}
+PLIST_FILES+=	${JARFILES:S,^,${JAVAJARDIR:S,^${PREFIX}/,,}/,} bin/saxon
 .if !defined(NOPORTDOCS)
 PORTDOCS=	api api-guide.html changes.html changes5.html conditions.html conformance.html dtdgen.html expressions.html extensibility.html extensions.html history.html index.html instant.html patterns.html samples.html saxon-style.css using-xsl.html xsl-elements.html
 .endif
 
 post-extract:
 	@${RMDIR} ${WRKSRC}/samples/ot
+
+do-configure:
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g ; s|%%JAVAJARDIR%%|${JAVAJARDIR}|g' \
+		${FILESDIR}/saxon.sh >${WRKSRC}/saxon
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}..."
@@ -53,5 +60,8 @@ do-install:
 	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@${ECHO_MSG} " [ DONE ]"
 .endif
+	@${ECHO_MSG} -n ">> Installing script in ${PREFIX}/bin..."
+	@${INSTALL_SCRIPT} ${WRKSRC}/saxon ${PREFIX}/bin/
+	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>
