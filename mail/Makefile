@@ -425,6 +425,7 @@
     SUBDIR += sqwebmail
     SUBDIR += ssmtp
     SUBDIR += stuphead
+    SUBDIR += swaks
     SUBDIR += sylpheed
     SUBDIR += sylpheed-claws
     SUBDIR += sylpheed-gtk2
