@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX \
 		texinfo:${PORTSDIR}/print/texinfo \
-		texti2html:${PORTSDIR}/print/texi2html
+		texti2html:${PORTSDIR}/textproc/texi2html
 
 USE_IMAKE=	yes
 MAN1=		pcb.1
