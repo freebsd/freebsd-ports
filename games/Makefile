@@ -305,6 +305,7 @@
     SUBDIR += solarwolf
     SUBDIR += sopwith
     SUBDIR += spacearyarya
+    SUBDIR += spacehulk
     SUBDIR += speak
     SUBDIR += spellcast
     SUBDIR += speyes
