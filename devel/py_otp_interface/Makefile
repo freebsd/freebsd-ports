@@ -7,6 +7,7 @@
 
 PORTNAME=	py_otp_interface
 PORTVERSION=	0.91
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.erlang.org/contrib/
 DISTNAME=	py_interface-${PORTVERSION}
@@ -32,12 +33,12 @@ do-install:
 	@for FILE in ${OTP_LIBS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE}* ${PYTHON_SITELIBDIR}; \
 	done
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	@for FILE in ${OTP_EXAMPLES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${EXAMPLESDIR}; \
 	done
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	@for FILE in ${OTP_DOCS}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${FILE} ${DOCSDIR}; \
 	done
