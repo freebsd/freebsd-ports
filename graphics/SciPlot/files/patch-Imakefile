@@ -1,12 +1,16 @@
 --- Imakefile.orig	Thu Sep  5 04:32:58 1996
-+++ Imakefile	Wed Jun  9 17:27:01 2004
++++ Imakefile	Sun Nov 28 18:14:34 2004
 @@ -1,3 +1,4 @@
 +# $FreeBSD$
  XCOMM Imakefile for widget demo programs
  
  #ifdef LinuxArchitecture
-@@ -17,10 +18,10 @@
-     CC = cc -std1
+@@ -14,13 +15,13 @@
+     HDOC = hdoc
+ #endif
+ #ifdef AlphaArchitecture
+-    CC = cc -std1
++#   CC = cc -std1
  #endif
  
 -MOTIF = $(LESSTIF) -lXm
