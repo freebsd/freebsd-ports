@@ -290,6 +290,7 @@ share/doc/%%INSTALL_DIR%%/README.fsync
 share/doc/%%INSTALL_DIR%%/Makefile
 share/doc/%%INSTALL_DIR%%/FAQ_Linux
 share/doc/%%INSTALL_DIR%%/FAQ_Irix
+share/doc/%%INSTALL_DIR%%/FAQ_HPUX
 share/doc/%%INSTALL_DIR%%/FAQ_FreeBSD
 share/doc/%%INSTALL_DIR%%/FAQ
 share/doc/%%INSTALL_DIR%%/README.locale
