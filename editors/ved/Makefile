@@ -21,6 +21,10 @@ MAN1=		ved.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+BROKEN=		"Does not compile on !i386 and !amd64"
+.endif
+
 post-patch:
 .for file in ved.h ved.1
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/ved/${file}
