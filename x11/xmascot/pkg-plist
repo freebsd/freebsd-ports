@@ -43,3 +43,5 @@ lib/X11/xmascot/virgo.gif
 lib/X11/xmascot/yubi.xbm
 lib/X11/xmascot/yubi.xbmmsk
 @dirrm lib/X11/xmascot
+@unexec rmdir %D/lib/X11/ja_JP.EUC/app-defaults 2>/dev/null || true
+@unexec rmdir %D/lib/X11/ja_JP.EUC 2>/dev/null || true
