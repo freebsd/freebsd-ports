@@ -1,0 +1,36 @@
+*** Makefile.Linux.orig	Thu Jul 18 04:10:55 1996
+--- Makefile.Linux	Wed Sep 17 03:51:48 1997
+***************
+*** 1,7 ****
+  
+  ### compiler section
+  CXX			= gcc -Wall -fstrength-reduce -fpcc-struct-return
+! CXXFLAGS	   = -g -DUSE_MIT_SHM
+  
+  ### default file to be used, when no options are set
+  
+--- 1,7 ----
+  
+  ### compiler section
+  CXX			= gcc -Wall -fstrength-reduce -fpcc-struct-return
+! CXXFLAGS	   += -DUSE_MIT_SHM -I${X_INCLUDE}
+  
+  ### default file to be used, when no options are set
+  
+*************** LDFLAGS		= -L$(XLIB_DIR)
+*** 20,26 ****
+  .SUFFIXES: .C .o
+  
+  .C.o:
+! 	$(CXX) -I$(X_INCLUDE) $(CXXFLAGS) -c $<
+  
+  LD	      = $(CXX)
+  
+--- 20,26 ----
+  .SUFFIXES: .C .o
+  
+  .C.o:
+! 	$(CXX) $(CXXFLAGS) -c $<
+  
+  LD	      = $(CXX)
+  
