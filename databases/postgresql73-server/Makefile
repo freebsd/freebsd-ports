@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.3.5
-PORTREVISION?=	1
+PORTVERSION?=	7.3.6
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -75,7 +75,7 @@ CONFLICTS=	postgresql-7*
 .else
 PKGMESSAGE=	${FILESDIR}/pkg-message.server
 PKGMSG=		${PKGMESSAGE}
-CONFLICTS=	postgresql-7*client
+CONFLICTS=	postgresql-client
 PLIST_SUB+=	SERVER=""
 INSTALL_TARGET+= install-all-headers
 MAKEFILE=	GNUmakefile
@@ -96,7 +96,7 @@ WITH_KRB5=	yes
 .if defined(WITH_KRB5)
 CONFIGURE_ARGS+=	--with-krb5="`${KRB5CONF} --prefix krb5`"
 LDFLAGS+=	`${KRB5CONF} --libs krb5`
-CONFIGURE_ENV=  LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 .endif
 
 .if defined(WITH_TESTS)
