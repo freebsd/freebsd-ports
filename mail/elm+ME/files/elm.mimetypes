@@ -1366,6 +1366,15 @@ pls		audio/x-scpls
 #??		inode/socket
 
 # ======================================================================
+# Known unregistered MIME types from Cult3D
+# ======================================================================
+
+# Application types
+# -----------------
+
+co		application/x-cult3d-object
+
+# ======================================================================
 # Known unregistered MIME types from RealAudio
 # ======================================================================
 
@@ -1422,13 +1431,24 @@ swf		application/x-shockwave-flash
 # -----------------
 
 sdc		application/x-scalc
-sda		application/x-sda
+sda		application/x-sdraw
+sdb		application/x-sdb
 sdf		application/x-sdf
-sdd		application/x-sdraw
-sds		application/x-sds
-sgl		application/x-sgl
-smf		application/x-smf
+sdd		application/x-simpress
+sdm		application/x-smail
+sds		application/x-schart
 sdw		application/x-swriter
+sgl		application/x-sgl
+smf		application/x-smath
+vor		application/x-stemplate
+
+#		application/x-starclac		[-> application/x-sclac]
+#		application/x-starchart		[-> application/x-schart]
+#		application/x-stardraw		[-> application/x-sdraw]
+#		application/x-starimpress	[-> application/x-simpress]
+#		application/x-starmath		[-> application/x-smath]
+#		application/x-starmail		[-> application/x-smail]
+#		application/x-starwriter	[-> application/x-swriter]
 
 # ======================================================================
 # Known unregistered MIME types from Links
@@ -1488,6 +1508,11 @@ btm		application/octet-stream
 #		application/tex			[-> application/x-tex]
 #		application/word		[-> application/msword]
 #		application/vnd.stardivision.calc	[-> application/x-scalc]
+#		application/vnd.stardivision.chart	[-> application/x-schart]
+#		application/vnd.stardivision.draw	[-> application/x-sdraw]
+#		application/vnd.stardivision.impress	[-> application/x-simpress]
+#		application/vnd.stardivision.math	[-> application/x-smath]
+#		application/vnd.stardivision.mail	[-> application/x-smail]
 #		application/vnd.stardivision.writer	[-> application/x-swriter]
 awk		application/x-awk
 ofm		application/x-font-tex-ofm
