@@ -20,6 +20,12 @@ USE_GL=		yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not build on amd64"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|malloc.h|stdlib.h|g' \
@@ -47,4 +53,4 @@ do-install:
 	@${MKDIR} ${PREFIX}/include/ode
 	@${INSTALL_DATA} ${WRKSRC}/include/ode/*.h ${PREFIX}/include/ode
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
