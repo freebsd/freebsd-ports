@@ -104,8 +104,6 @@
     SUBDIR += xcoral
     SUBDIR += xed
     SUBDIR += xemacs
-    SUBDIR += xemacs-mule
-    SUBDIR += xemacs-mule-common
     SUBDIR += xemacs-mule-packages
     SUBDIR += xemacs-mule-sumo
     SUBDIR += xemacs-mule-sumo-packages
