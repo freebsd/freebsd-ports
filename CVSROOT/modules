@@ -3893,6 +3893,7 @@ libdv		ports/multimedia/libdv
 libdvbpsi	ports/graphics/libdvbpsi
 libdvdcss	ports/multimedia/libdvdcss
 libdvdnav	ports/graphics/libdvdnav
+libdvdplay	ports/graphics/libdvdplay
 libdvdread	ports/multimedia/libdvdread
 libecc		ports/security/libecc
 libedit		src/lib/libedit
