@@ -1,0 +1,42 @@
+--- Makefile.in.orig	Sun Aug 31 23:59:38 2003
++++ Makefile.in	Mon Feb  2 22:02:10 2004
+@@ -124,13 +124,10 @@
+ 	@echo "Executable go in $(BINDIR)"
+ 	@echo "Scores     go in $(SCOREDIR)"
+ 	@echo "Defaults   go in $(RESOURCEDIR)/Xbl"
+-	@echo "Man pages  go in $(MANPATH)/mann or man1"
++	@echo "Man pages  go in $(MANPATH)/man6"
+ 	@-if [ "" != "$(USE_SETGID)" ] ; then \
+ 		echo "You use GID=$(GROUP_GID) protection" ; \
+ 		fi
+-	@echo "Type <Return> to continue installation"
+-	@echo "Type NO       to stop installation"
+-	@read LINE && test "" = "$$LINE"
+ 	#
+ 	# Remove old score file
+ 	#
+@@ -138,9 +135,7 @@
+ 		then \
+ 		echo "The scoring method and speeds of Xbl had change" ; \
+ 		echo "If your version is older than 0.2e, destroy score." ; \
+-		echo "Type <Return> to destroy old score files" ; \
+-		echo "Type NO       to hold old score files" ; \
+-		read LINE && test "" = "$$LINE" && rm $(SCOREDIR)/[1-9]* ; \
++		rm $(SCOREDIR)/[1-9]* ; \
+ 		exit 0 ; \
+ 		fi
+ 	#
+@@ -173,10 +168,10 @@
+ 	#
+ 	# Install manual pages
+ 	#
+-	-if [ -d $(MANPATH)/mann ] ; \
++	-if [ -d $(MANPATH)/man6 ] ; \
+ 		then \
+-		$(CP) xbl.man $(MANPATH)/mann/xbl.n ;\
+-		chmod 444 $(MANPATH)/mann/xbl.n ; \
++		$(CP) xbl.man $(MANPATH)/man6/xbl.6 ;\
++		chmod 444 $(MANPATH)/man6/xbl.6 ; \
+ 	   else \
+ 		$(CP) xbl.man $(MANPATH)/man1/xbl.1 ;\
+ 		chmod 444 $(MANPATH)/man1/xbl.1 ; \
