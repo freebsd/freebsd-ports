@@ -1,9 +1,11 @@
 etc/rc.d/squid.sh
 etc/squid/mib.txt
 etc/squid/squid.conf.default
-etc/squid/squid.conf
+@exec [ ! if -f %B/squid.conf ] && cp %B%f %B/squid.conf
+@unexec if cmp -s %D/etc/squid/squid.conf %D/etc/squid/squid.conf.default; then rm -f %D/etc/squid/squid.conf.default; fi
 etc/squid/mime.conf.default
-etc/squid/mime.conf
+@exec [ ! if -f %B/mime.conf ] && cp %B%f %B/mime.conf
+@unexec if cmp -s %D/etc/squid/mime.conf %D/etc/squid/mime.conf.default; then rm -f %D/etc/squid/mime.conf.default; fi
 etc/squid/icons/anthony-binhex.gif
 etc/squid/icons/anthony-bomb.gif
 etc/squid/icons/anthony-box.gif
