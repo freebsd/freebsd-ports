@@ -12,6 +12,7 @@ lib/msn/config.tcl
 lib/msn/ctadverts.tcl
 lib/msn/ctdegt.tcl
 lib/msn/ctthemes.tcl
+lib/msn/des.tcl
 lib/msn/dkffont.tcl
 lib/msn/dock.tcl
 lib/msn/groups.tcl
@@ -85,6 +86,7 @@ lib/msn/i/messenger.png
 lib/msn/i/miniinfo.gif
 lib/msn/i/miniwarn.gif
 lib/msn/i/msnbot.gif
+lib/msn/i/notifclose.gif
 lib/msn/i/notifico.gif
 lib/msn/i/offline.gif
 lib/msn/i/online.gif
@@ -140,6 +142,7 @@ lib/msn/lang/langee
 lib/msn/lang/langen
 lib/msn/lang/langeo
 lib/msn/lang/langes
+lib/msn/lang/langes.bak
 lib/msn/lang/langeu
 lib/msn/lang/langfi
 lib/msn/lang/langfr
@@ -156,6 +159,7 @@ lib/msn/lang/langja
 lib/msn/lang/langko
 lib/msn/lang/langmk
 lib/msn/lang/langmk2
+lib/msn/lang/langmn
 lib/msn/lang/langnl
 lib/msn/lang/langno
 lib/msn/lang/langpl
@@ -163,6 +167,7 @@ lib/msn/lang/langpt
 lib/msn/lang/langro
 lib/msn/lang/langru
 lib/msn/lang/langsi
+lib/msn/lang/langsk
 lib/msn/lang/langsr
 lib/msn/lang/langsw
 lib/msn/lang/langswa
