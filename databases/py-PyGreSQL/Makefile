@@ -4,21 +4,30 @@
 #
 # $FreeBSD$
 #
+POSTGRESQL_PORT?=	databases/postgresql7
 
 PORTNAME=	PyGreSQL
+PORTVERSION!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V PORTVERSION
+PORTREVISION?=	0
 CATEGORIES=	databases python
+MASTER_SITES=	${MASTER_SITE_PGSQL}
+MASTER_SITE_SUBDIR!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V MASTER_SITE_SUBDIR
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTFILES!=	cd ${.CURDIR}/../../${POSTGRESQL_PORT} && ${MAKE} -V DISTFILES
+DIST_SUBDIR=	postgresql
+WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 
-POSTGRESQL_SUBPORT=	YES
-.include <${.CURDIR}/../postgresql7/Makefile>
+MAINTAINER=	girgen@pingpong.net
 COMMENT=	A Python interface to PostgreSQL, including a DP-API 2.0 wrapper
 
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
-POSTGRESQL_PORT?=	databases/postgresql7
+MD5_FILE=	${.CURDIR}/../../${POSTGRESQL_PORT}/distinfo
 
+USE_GMAKE=	YES
+GNU_CONFIGURE=	YES
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-python --prefix=${PREFIX}
 MAKE_ARGS+=	-C src/interfaces/python

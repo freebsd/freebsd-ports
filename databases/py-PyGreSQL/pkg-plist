@@ -1,6 +1,6 @@
-%%PORTDOCS%%share/doc/PyGreSQL/Announce
-%%PORTDOCS%%share/doc/PyGreSQL/ChangeLog
-%%PORTDOCS%%share/doc/PyGreSQL/README
+%%PORTDOCS%%%%DOCSDIR%%/Announce
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PYTHON_SITELIBDIR%%/_pgmodule.so
 %%PYTHON_SITELIBDIR%%/pg.py
 %%PYTHON_SITELIBDIR%%/pg.pyc
@@ -8,4 +8,4 @@
 %%PYTHON_SITELIBDIR%%/pgdb.py
 %%PYTHON_SITELIBDIR%%/pgdb.pyc
 %%PYTHON_SITELIBDIR%%/pgdb.pyo
-%%PORTDOCS%%@dirrm share/doc/PyGreSQL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
