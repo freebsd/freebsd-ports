@@ -1,0 +1,11 @@
+--- examples/Makefile.in.orig	Sun Apr  3 23:38:30 2005
++++ examples/Makefile.in	Sun Apr  3 23:38:52 2005
+@@ -222,7 +222,7 @@
+ nonblocking_SOURCES = nonblocking.c
+ nonblocking_LDADD = $(top_builddir)/src/libshout.la
+ AM_CFLAGS = @XIPH_CFLAGS@
+-AM_CPPFLAGS = @XIPH_CPPFLAGS@ -I$(top_builddir)/include
++AM_CPPFLAGS = -I$(top_builddir)/include @XIPH_CPPFLAGS@
+ all: all-am
+ 
+ .SUFFIXES:

@@ -5,6 +5,8 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	4
+
 CATEGORIES=	audio
 
 GST_PLUGIN=	shout2

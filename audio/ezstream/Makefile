@@ -7,13 +7,14 @@
 
 PORTNAME=	ezstream
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://svn.xiph.org/releases/ezstream/
 
 MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	A command line utility for streaming to icecast servers
 
-LIB_DEPENDS=	shout.3:${PORTSDIR}/audio/libshout2 \
+LIB_DEPENDS=	shout.4:${PORTSDIR}/audio/libshout2 \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
