@@ -85,6 +85,7 @@
     SUBDIR += cricket
     SUBDIR += cryptcat
     SUBDIR += ct
+    SUBDIR += ctorrent
     SUBDIR += ctrace
     SUBDIR += cvsup
     SUBDIR += cvsup-mirror
