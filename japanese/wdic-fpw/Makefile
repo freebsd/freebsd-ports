@@ -36,8 +36,13 @@ post-extract:
 	${CP} ${LOCALBASE}/share/doc/freepwing/fpwutils.mk ${WRKSRC}
 	cd ${WRKSRC}/wdic${DICT_VERSION}; \
 	for i in ${DICTFILES}; do \
-		lha xqf ${DISTDIR}/$$i; \
+		echo $$i; \
+		lha xf ${DISTDIR}/$$i; \
 	done
+# for debugging on bento
+.if defined(PARALLEL_PACKAGE_BUILD)
+	ls ${WRKSRC}/wdic${DICT_VERSION}
+.endif
 
 post-build:
 	cd ${WRKSRC}; nkf -eSd catalogs.sjis > catalogs.txt; \
