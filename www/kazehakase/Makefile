@@ -15,23 +15,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/11115/
 MAINTAINER=	ahze@ahze.net
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
 
-BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
-RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
-
-MOZILLA=	mozilla
-HEADERS_SUFX=
-
-.if !defined(WITH_MOZILLA)
-MOZILLA=	mozilla
-HEADERS_SUFX=
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
+BUILD_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
+RUN_DEPENDS=	${X11BASE}/lib/firefox/lib/pkgconfig/firefox-plugin.pc:${PORTSDIR}/www/firefox
 .else
-.if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
-MOZILLA=	mozilla-devel
-HEADERS_SUFX=	-devel
-.else
-MOZILLA=	mozilla
-HEADERS_SUFX=
-.endif
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/mozilla-plugin${HEADERS_SUFX}.pc:${PORTSDIR}/www/mozilla${HEADERS_SUFX}
 .endif
 
 USE_LIBTOOL_VER=13
@@ -44,18 +33,34 @@ USE_REINPLACE=	yes
 USE_RUBY=	yes
 .endif
 
-CONFIGURE_ARGS=	--with-mozilla-includes="${X11BASE}/include/mozilla${HEADERS_SUFX}" \
-		--with-mozilla-libs="${X11BASE}/lib/${MOZILLA}" \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS=	MIGEMO "Enable Migemo (Japanese incremental search)" Off \
-		ESTRAIER "Enable a full-text search system (Japanese)" Off \
+		ESTRAIER "Enable a full-text search system" Off \
 		IMAGEMAGICK "Enable Thumbnail support (EXPERIMENTAL!)" Off
 
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
 
 .include <bsd.port.pre.mk>
+
+.if !defined(WITH_MOZILLA)
+WITH_MOZILLA=	mozilla
+.else
+.if ${WITH_MOZILLA}=="mozilla"
+HEADERS_SUFX=
+.else
+.if ${WITH_MOZILLA}=="mozilla-devel"
+HEADERS_SUFX=	-devel
+.else
+.if ${WITH_MOZILLA}=="firefox"
+CONFIGURE_ENV+=	PKG_CONFIG_PATH="${X11BASE}/lib/firefox/lib/pkgconfig"
+.else
+HEADERS_SUFX=
+.endif
+.endif
+.endif
+.endif
 
 .if exists(${LOCALBASE}/bin/migemo)
 .if exists(${RUBY_SITEARCHLIBDIR}/uconv.so)
@@ -88,16 +93,31 @@ RUN_DEPENDS+=	estxview:${PORTSDIR}/japanese/estraier
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " By default this port uses www/mozilla for Gecko support, but you can"
+	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
+	@${ECHO_MSG}
+	@${ECHO_MSG} " firefox "
+	@${ECHO_MSG} " mozilla "
+	@${ECHO_MSG} " mozilla-devel "
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} " Currently you are using ${WITH_MOZILLA}"
+
 post-patch:
+.if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
+	@${REINPLACE_CMD} -e 's|mozilla-|firefox-|g' ${WRKSRC}/configure
+.else
 	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g' \
 		${WRKSRC}/configure
+.endif
 	@${REINPLACE_CMD} -e 's|regex.h|gnuregex.h|' \
 		${WRKSRC}/src/prefs_ui/prefs_location_entry.c
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%FLASHPLAYER%%|${FLASHPLAYER}|; \
 		s|%%PREFIX%%|${PREFIX}|; s|%%X11BASE%%|${X11BASE}|; \
-		s|%%LOCALBASE%%|${LOCALBASE}|; s|%%MOZILLA%%|${MOZILLA}|' \
+		s|%%LOCALBASE%%|${LOCALBASE}|' \
 			${WRKSRC}/src/kazehakase
 
 post-install:
