@@ -3,7 +3,7 @@
 # Date created:		13 Mar 1998
 # Whom:			sada
 #
-# $Id: Makefile,v 1.2 1998/03/21 04:48:19 itojun Exp $
+# $Id: Makefile,v 1.3 1998/03/21 05:04:53 itojun Exp $
 #
 
 DISTNAME=	ja-netscape4
@@ -27,6 +27,8 @@ MSG_LANG=		-us
 .endif
 RUN_DEPENDS=	${X11BASE}/lib/X11/k12:${PORTSDIR}/japanese/k12 \
 		${X11BASE}/lib/X11/fonts/misc/5x10B.pcf.Z:${PORTSDIR}/japanese/k10
+
+MANUAL_PACKAGE_BUILD=	have to set ENGLISH and NAGIVATOR variables
 
 DISTFILES=	${DISTFILE}
 EXTRACT_ONLY=	${DISTFILE}
