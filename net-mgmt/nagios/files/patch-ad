@@ -1,5 +1,5 @@
---- configure.orig	Tue Jun  3 12:47:57 2003
-+++ configure	Thu Jul 31 16:35:45 2003
+--- configure.orig	Tue Feb  3 05:45:08 2004
++++ configure	Wed Feb  4 21:26:46 2004
 @@ -11,7 +11,7 @@
  ac_help=
  ac_default_prefix=/usr/local
@@ -40,30 +40,30 @@
  	
  fi
  
-@@ -2748,14 +2753,14 @@
- 	fi
+@@ -2692,14 +2697,14 @@
  
- 		if test x$GDLIBFOUND = x; then
--		echo $ac_n "checking for gdImagePng in -lgd (order 3)""... $ac_c" 1>&6
--echo "configure:2753: checking for gdImagePng in -lgd (order 3)" >&5
-+		echo $ac_n "checking for gdImagePng in -lgd1 (order 3)""... $ac_c" 1>&6
-+echo "configure:2753: checking for gdImagePng in -lgd1 (order 3)" >&5
- 					ac_lib_var=`echo gd'_'gdImagePng'_'3 | sed 'y%./+-%__p_%'`
+ 
+ 	
+-		echo $ac_n "checking for gdImagePng in -lgd (order 1)""... $ac_c" 1>&6
+-echo "configure:2697: checking for gdImagePng in -lgd (order 1)" >&5
++		echo $ac_n "checking for gdImagePng in -lgd1 (order 1)""... $ac_c" 1>&6
++echo "configure:2697: checking for gdImagePng in -lgd1 (order 1)" >&5
+ 					ac_lib_var=`echo gd'_'gdImagePng'_'1 | sed 'y%./+-%__p_%'`
  	if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
--	LIBS="-lgd -lpng -lz -lm $LIBS"
-+	LIBS="-lgd1 -lz -lm -lpng -ljpeg $LIBS"
+-	LIBS="-lgd $ICONV -lz -lm -lpng -ljpeg $LIBS"
++	LIBS="-lgd1 $ICONV -lz -lm -lpng -ljpeg $LIBS"
  	cat > conftest.$ac_ext <<EOF
- #line 2761 "configure"
+ #line 2705 "configure"
  #include "confdefs.h"
-@@ -2785,7 +2790,7 @@
+@@ -2729,7 +2734,7 @@
  	  echo "$ac_t""yes" 1>&6
  	  
  			GDLIBFOUND=yep
--			GDLIBS="-lgd -lpng -lz -lm"
-+			GDLIBS="-lgd1 -lz -lm -lpng"
+-			GDLIBS="-lgd $ICONV -lz -lm -lpng -ljpeg"
++			GDLIBS="-lgd1 $ICONV -lz -lm -lpng -ljpeg"
  	        	
  	else
  	  echo "$ac_t""no" 1>&6
