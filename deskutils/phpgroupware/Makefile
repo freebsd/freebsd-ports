@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpgroupware
-PORTVERSION=	0.9.16.003
+PORTVERSION=	0.9.16.005
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpgroupware
@@ -14,12 +14,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A web based GroupWare system
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+USE_BZIP2=	yes
+USE_PHP=	yes
+WANT_PHP_MOD=	yes
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phpgroupware
-
-USE_BZIP2=	yes
 
 post-extract:
 		@${FIND} ${WRKSRC} -name CVS -type d | ${XARGS} ${RM} -rf
