@@ -151,24 +151,3 @@ if [ "$BATCH" = "yes" ]; then
 	/bin/mkdir -p ${WRKDIRPREFIX}${CURDIR}
 	exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 fi
-echo "post-install:"
- echo "	@\${ECHO} \"========================================================\""
- echo "	@\${ECHO} \"************ Post Installation Tasks *******************\""
- echo "	@\${ECHO} \"========================================================\""
-if [ $TROFF ]
-then
- echo "	@\${ECHO} \"If running FreeBSD < 4.0 and you want to print troff    \""
- echo "	@\${ECHO} \"files then you have to install the grog utility         \""
- echo "	@\${ECHO} \"from the groff sources:                                 \""
- echo "	@\${ECHO} \"    cp /usr/src/contrib/groff/grog/grog.sh /usr/bin/grog\""
- echo "	@\${ECHO} \"    chmod 555 /usr/bin/grog                             \""
- echo "	@\${ECHO} \"--------------------------------------------------------\""
-fi
- echo "	@\${ECHO} \"*** Printer installation / apsfilter setup         ***  \""
- echo "	@\${ECHO} \"    cd ${PREFIX}/share/apsfilter; ./SETUP               \""
- echo "	@\${ECHO} \"--------------------------------------------------------\""
- echo "	@\${ECHO} \"*** In any case of trouble please read             ***  \""
- echo "	@\${ECHO} \"   the apsfilter handbook: handbook.html                \""
- echo "	@\${ECHO} \"   and FAQ, HOWTO-BUGREPORTS                            \""
- echo "	@\${ECHO} \"   under ${PREFIX}/share/doc/apsfilter/                 \""
- echo "	@\${ECHO} \"   or visit http://www.apsfilter.org/support.html       \""

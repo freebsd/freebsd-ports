@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apsfilter
-PORTVERSION=	6.1.0
+PORTVERSION=	6.1.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
@@ -18,7 +18,7 @@ MAINTAINER=	andreas@FreeBSD.org
 NO_X=		yes
 .endif
 
-.if defined(NO_X)   
+.if defined(NO_X)
 # XXX Hack.  If you've done something like "-DNO_X" on the command line
 # (instead of NO_X=true, or similar) gmake won't pick it up.  So make sure
 # that NO_X is defined *and* has a value.
@@ -101,5 +101,19 @@ post-clean:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 .endif
+
+post-install:
+.if defined(OSVERSION) && ${OSVERSION} < 400012
+	@${ECHO} "********************************************************"
+	@${ECHO} "* Please Note:                                         *"
+	@${ECHO} "********************************************************"
+	@${ECHO} "You have FreeBSD version <= 4.0. If you want to print   "
+	@${ECHO} "troff files then you have to install the grog utility   "
+	@${ECHO} "from groff sources:                                     "
+	@${ECHO} "    cp /usr/src/contrib/groff/grog/grog.sh /usr/bin/grog"
+	@${ECHO} "    chmod 555 /usr/bin/grog                             "
+	@${ECHO} "--------------------------------------------------------"
+.endif
+	@${CAT} ${.CURDIR}/pkg-message
 
 .include <bsd.port.mk>
