@@ -5774,6 +5774,7 @@ sbagen		ports/audio/sbagen
 sbin		src/sbin
 sbin_atm	src/sbin/atm
 sbin_i386	src/sbin/i386
+sbniconfig	ports/sysutils/sbniconfig
 sc		ports/math/sc
 scandoc		ports/devel/scandoc
 scanssh		ports/security/scanssh
