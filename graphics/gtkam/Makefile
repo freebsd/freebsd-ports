@@ -15,14 +15,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras
 
 LIB_DEPENDS=	exif-gtk.4:${PORTSDIR}/graphics/libexif-gtk \
-		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		bonoboui-2.0:${PORTSDIR}/x11-toolkits/libbonoboui
+		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GNOME=	libbonoboui
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--without-gnome
