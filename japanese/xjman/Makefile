@@ -28,6 +28,12 @@ SCRIPTS_ENV+=	MANSECS="${MANSECS}"
 
 MANSECS=	1 3 5
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-extract:
 .for i in Makefile Makefile.inc
 	@${CP} ${FILESDIR}/$i ${WRKSRC}
@@ -72,4 +78,4 @@ post-install:
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
