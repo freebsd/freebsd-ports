@@ -7,7 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	2.3.1
-PORTREVISION=	2
+PORTREVISION?=	2
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 		ftp://ftp.chg.ru/pub/X11/qt/source/
@@ -92,7 +92,7 @@ post-patch:
 .if ${MACHINE_ARCH} == "i386" && !defined(NO_QT_OBJPRELINK)
 .if !exists(${WRKDIR}/.${PKGNAME}.objprelink_patched)
 	@echo "Doing special objprelink patching..."
-	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/objprelink.patch
+	cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/objprelink.patch
 	${TOUCH} ${WRKDIR}/.${PKGNAME}.objprelink_patched
 .else
 	@echo "Already did the objprelink patching, skipping..."
@@ -116,19 +116,19 @@ pre-configure: qt-pre-configure
 .endif
 
 post-configure:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks)
+	@(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks)
 
 # Add hack to bring in support for GL.  The last line is necessary to ensure that
 # one can rebuild with the same tree and get the same results.
 do-build:
 	(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .if !defined(WANT_STATIC)
-	(cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} opengl/qgl.o opengl/qgl_x11.o opengl/moc_qgl.o)
+	(cd ${WRKSRC}/src ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} opengl/qgl.o opengl/qgl_x11.o opengl/moc_qgl.o)
 	${MV} ${WRKSRC}/lib/libqt2.so.4 ${WRKSRC}/lib/libqt2-real.so.4
 	${PERL} -pi.orig -e "s@		xml/qdom.o@xml/qdom.o opengl/qgl.o opengl/qgl_x11.o opengl/moc_qgl.o@g; \
 			     s@SYSCONF_LIBS_OPENGL =@SYSCONF_LIBS_OPENGL= ${PTHREAD_LIBS} -lGL -lGLU -lXmu@g ; \
 			     s@soname,lib[\\$$]\(TARGET\)\.so\.[\\$$]\(VER_MAJ\)@soname,libqtgl.so.4@g" ${WRKSRC}/src/Makefile
-	(cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all)
+	(cd ${WRKSRC}/src ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} all)
 	${CP} ${WRKSRC}/lib/libqt2.so.4 ${WRKSRC}/lib/libqtgl.so.4
 	${CP} ${WRKSRC}/lib/libqt2-real.so.4 ${WRKSRC}/lib/libqt2.so.4
 	${CP} ${WRKSRC}/src/Makefile.orig ${WRKSRC}/src/Makefile
