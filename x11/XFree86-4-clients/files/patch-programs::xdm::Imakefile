@@ -1,0 +1,14 @@
+--- programs/xdm/Imakefile.old	Wed Jun 30 22:11:46 2004
++++ programs/xdm/Imakefile	Wed Jun 30 22:12:12 2004
+@@ -31,7 +31,11 @@
+ #endif
+ 
+ #if HasSecureRPC
++#if defined(FreeBSDArchitecture) && (OSMajorVersion < 5)
++RPC_DEFINES = -DSECURE_RPC -DFREEBSD_OLD_RPC
++#else
+ RPC_DEFINES = -DSECURE_RPC
++#endif
+ RPCOBJS = rpcauth.o
+ RPCSRCS = rpcauth.c
+ RPCLIB = -lrpcsvc

@@ -10,7 +10,7 @@
 +    -listen_tcp)
 +        listen_tcp=""
 +        ;;
-     # '' required to prevent cpp from treating "/*" as a C comment.
+     XCOMM '' required to prevent cpp from treating "/*" as a C comment.
      /''*|\./''*)
  	if [ "$whoseargs" = "client" ]; then
 @@ -164,7 +168,7 @@

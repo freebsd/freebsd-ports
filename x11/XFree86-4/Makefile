@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XFree86
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.0
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	# none
@@ -18,7 +18,7 @@ COMMENT=	X11/XFree86 core distribution (complete, using mini/meta-ports)
 
 LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 RUN_DEPENDS=	xvinfo:${PORTSDIR}/x11/XFree86-4-clients \
-	${X11BASE}/lib/X11/doc/ddx.TXT:${PORTSDIR}/x11/XFree86-4-documents \
+	${X11BASE}/lib/X11/doc/ddx.txt:${PORTSDIR}/x11/XFree86-4-documents \
 	${FONT100DPI}:${PORTSDIR}/x11-fonts/XFree86-4-font100dpi \
 	${FONT75DPI}:${PORTSDIR}/x11-fonts/XFree86-4-font75dpi \
 	${FONTCYR}:${PORTSDIR}/x11-fonts/XFree86-4-fontCyrillic \

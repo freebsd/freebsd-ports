@@ -61,6 +61,7 @@ lib/X11/fonts/cyrillic/crox6to.pcf.gz
 lib/X11/fonts/cyrillic/encodings.dir
 lib/X11/fonts/cyrillic/fonts.alias
 lib/X11/fonts/cyrillic/fonts.dir
+lib/X11/fonts/cyrillic/fonts.scale
 lib/X11/fonts/cyrillic/koi10x16b.pcf.gz
 lib/X11/fonts/cyrillic/koi10x20.pcf.gz
 lib/X11/fonts/cyrillic/koi12x24.pcf.gz

@@ -1,5 +1,5 @@
---- lib/dps/Imakefile.orig	Tue Dec 31 13:15:41 2002
-+++ lib/dps/Imakefile	Fri Jan 10 21:24:35 2003
+--- lib/dps/Imakefile.orig	Thu Apr  8 23:12:39 2004
++++ lib/dps/Imakefile	Thu Apr  8 23:14:39 2004
 @@ -29,7 +29,6 @@
              SED = sed
              AWK = awk
@@ -31,7 +31,7 @@
 -
 -HostProgramTargetName($(PSWRAP)):
 -	@echo "checking $@ over in $(PSWRAPSRC) first..."; \
--	cd $(PSWRAPSRC) && $(MAKE); \
+-	cd $(PSWRAPSRC) && $(MAKE) pswraponly; \
 -	echo "okay, continuing in $(CURRENT_DIR)"
  
  includes :: $(HEADERS)

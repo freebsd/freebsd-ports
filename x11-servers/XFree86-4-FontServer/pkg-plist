@@ -1,2 +1,3 @@
+@unexec if cmp -s %D/lib/X11/fs/config %D/lib/X11/fs/config.default; then rm -f %D/lib/X11/fs/config; fi
 bin/xfs
-lib/X11/fs/config
+lib/X11/fs/config.default

@@ -1,6 +1,6 @@
---- config/cf/FreeBSD.cf.orig	Tue Jan 14 21:52:12 2003
-+++ config/cf/FreeBSD.cf	Thu Feb  5 12:33:53 2004
-@@ -89,14 +89,14 @@
+--- config/cf/FreeBSD.cf.orig	Thu Apr  8 05:39:06 2004
++++ config/cf/FreeBSD.cf	Thu Apr  8 06:04:59 2004
+@@ -108,14 +108,14 @@
  # endif
  # define HasPosixThreads	YES
  # define ThreadedX		YES
@@ -17,19 +17,20 @@
  # else
  #  if OSRelVersion >= 500043
  #   define BuildThreadStubLibrary  NO
-@@ -106,9 +106,9 @@
+@@ -125,10 +125,10 @@
  #   define NeedUIThrStubs          YES
  #  endif
  #  if (OSRelVersion >= 500016)
 -#   define ThreadsLibraries	-lc_r
 +#   define ThreadsLibraries	%%PTHREAD_LIBS%%
+ #   define SharedGLReqs		$(LDPRELIBS) $(XLIB) -lc
  #  else
 -#   define ThreadsLibraries	-pthread
 +#   define ThreadsLibraries	%%PTHREAD_LIBS%%
  #  endif
  #  define SharedX11Reqs		$(LDPRELIB) $(XTHRSTUBLIB)
- #  define SharedXtReqs		$(LDPRELIB) $(XLIBONLY) $(SMLIB) $(ICELIB) $(XTHRSTUBLIB)
-@@ -162,11 +162,11 @@
+ #  define SharedXtReqs		$(LDPRELIB) $(XONLYLIB) $(SMLIB) $(ICELIB) $(XTHRSTUBLIB)
+@@ -187,11 +187,11 @@
   *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
   */
  #if BuildThreadStubLibrary && (!defined(UseInstalledX11) || !UseInstalledX11)
@@ -45,79 +46,23 @@
  #endif
  
  #define CppCmd			/usr/bin/cpp
-@@ -177,7 +177,12 @@
- #if defined(UseInstalled)
- #define DefaultCCOptions	/**/
- #else
--#define DefaultCCOptions	-ansi -pedantic -Dasm=__asm GccWarningOptions
-+#if defined(HasGcc3) && HasGcc3
-+#define NoSystemWarn		-Wno-system-headers
-+#else
-+#define NoSystemWarn
-+#endif
-+#define DefaultCCOptions	-ansi -Dasm=__asm NoSystemWarn GccWarningOptions
- #endif
- #endif
- #ifndef ExtraLibraries
-@@ -228,21 +233,25 @@
- #endif
- 
- /*
-- * 4.1/i386 and 5.0/i386 have the AGP driver.
-+ * 4.1/i386 and 5.0/i386,alpha,ia64,amd64 have the AGP driver.
-  */
- #ifndef HasAgpGart
- #if defined(i386Architecture) && \
- 	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 1))
- #define HasAgpGart		YES
- #endif
-+#if (defined(AlphaArchitecture) || defined(ia64Architecture) || \
-+	defined(x86_64Architecture)) && (OSMajorVersion >= 5)
-+#define HasAgpGart		YES
-+#endif
- #endif
- 
- /*
-  * SSE and 3DNow will be autodetected, so binutils is the only 
-  * requirement for enabling this.  By 4.2 they were all supported.
-  */
--#if defined(i386Architecture) && \
--	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 2))
-+#if defined(x86_64Architecture) || (defined(i386Architecture) && \
-+	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 2)))
- # define HasX86Support          YES
- # define HasMMXSupport		YES
- # define Has3DNowSupport	YES
-@@ -299,7 +308,7 @@
- 
- #ifndef SharedLibraryLoadFlags
- #if UseElfFormat
--#define SharedLibraryLoadFlags	-shared -rpath $(USRLIBDIRPATH)
-+#define SharedLibraryLoadFlags	-shared -Wl,-rpath,$(USRLIBDIRPATH)
- #else
- #define SharedLibraryLoadFlags	-Bshareable -R $(USRLIBDIRPATH)
- #endif
-@@ -455,10 +464,8 @@
- #ifdef i386Architecture
- #define ServerExtraDefines GccGasOption XFree86ServerDefines
- #endif
--#ifdef AlphaArchitecture
--#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
--#endif
--#ifdef Sparc64Architecture
-+#if defined(AlphaArchitecture) || defined(Sparc64Architecture) || \
-+	defined(ia64Architecture) || defined(x86_64Architecture)
- #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
- #endif
- 
-@@ -482,18 +489,8 @@
+@@ -354,7 +354,7 @@
+ #ifndef LibraryRpathLoadFlags
+ # if UseRpath
+ #  if UseElfFormat
+-#   define LibraryRpathLoadFlags	-rpath $(USRLIBDIRPATH)
++#   define LibraryRpathLoadFlags	-Wl,-rpath,$(USRLIBDIRPATH)
+ #  else
+ #   define LibraryRpathLoadFlags	-R $(USRLIBDIRPATH)
+ #  endif
+@@ -439,18 +439,8 @@
  #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
  #endif
  
 -/* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
 -#ifndef DefaultGcc2i386Opt
 -#if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
--#define DefaultGcc2i386Opt -O2
+-#define DefaultGcc2i386Opt -O2 GccAliasingArgs
 -#endif
 -#endif
 -

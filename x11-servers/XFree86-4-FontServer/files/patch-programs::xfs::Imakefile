@@ -1,0 +1,11 @@
+--- programs/xfs/Imakefile.orig	Tue Apr 20 20:57:28 2004
++++ programs/xfs/Imakefile	Tue Apr 20 20:58:12 2004
+@@ -58,7 +58,7 @@
+ InstallManPage(xfs,$(MANDIR))
+ 
+ #if InstallFSConfig
+-InstallNonExecFile(config,$(FSLIBDIR))
++InstallNamedNonExec(config,config.default,$(FSLIBDIR))
+ #else
+ InstallNonExecFileNoClobber(config,$(FSLIBDIR))
+ #endif

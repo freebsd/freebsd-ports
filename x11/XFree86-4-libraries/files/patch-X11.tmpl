@@ -1,6 +1,6 @@
---- config/cf/X11.tmpl.orig	Tue Feb 25 13:57:52 2003
-+++ config/cf/X11.tmpl	Sun Mar  2 21:13:31 2003
-@@ -575,7 +575,7 @@
+--- config/cf/X11.tmpl.orig	Thu Apr  8 22:31:58 2004
++++ config/cf/X11.tmpl	Thu Apr  8 22:42:52 2004
+@@ -544,7 +544,7 @@
  #define BuildXft1Library	BuildRenderLibrary
  #endif
  #ifndef UseFontconfig
@@ -9,7 +9,7 @@
  #endif
  #ifndef BuildFontconfigLibrary
  #define BuildFontconfigLibrary	(UseFontconfig && !HasFontconfig)
-@@ -1497,7 +1497,14 @@
+@@ -1499,7 +1499,14 @@
  #endif
  
  #ifndef PsWrap
@@ -23,16 +23,4 @@
 +         PSWRAP = PsWrap
  #endif
  
- #ifndef ResourceConfigurationManagement 
-@@ -3028,7 +3035,10 @@
- 
- #endif /* else BuildFreetype2Library */
- 
--#if BuildFreetype2Library || HasFreetype2
-+#if HasFreetype2
-+FREETYPE2INCLUDES = -I$(FREETYPE2INCDIR) -I$(FREETYPE2DIR)/include
-+FREETYPE2DEFINES = -DFREETYPE2
-+#elif BuildFreetype2Library
- FREETYPE2INCLUDES = -I$(FREETYPE2INCDIR)
- FREETYPE2DEFINES = -DFREETYPE2
- #endif
+ #ifndef ResourceConfigurationManagement

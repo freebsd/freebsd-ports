@@ -1,14 +1,14 @@
---- programs/dpsinfo/Imakefile.orig	Mon Sep  2 12:57:28 2002
-+++ programs/dpsinfo/Imakefile	Mon Sep  2 13:27:26 2002
-@@ -4,7 +4,6 @@
-         DEPLIBS = $(DEPDPSLIB) $(DEPXTOOLLIB) $(DEPXLIB)
- LOCAL_LIBRARIES = $(DPSLIB) $(XTOOLLIB) $(XLIB)
-   SYS_LIBRARIES = MathLibrary
+--- programs/dpsinfo/Imakefile.orig	Thu Apr  8 23:17:22 2004
++++ programs/dpsinfo/Imakefile	Thu Apr  8 23:18:08 2004
+@@ -3,7 +3,6 @@
+ 
+         DEPLIBS = $(DEPDPSLIB) $(DEPXTOOLLIB) $(DEPXONLYLIB)
+ LOCAL_LIBRARIES = $(DPSLIB) $(XTOOLLIB) $(XONLYLIB)
 -         PSWRAP = PsWrap
  
  SRCS = iwraps.psw dpsinfo.c
  
-@@ -14,10 +13,10 @@
+@@ -13,10 +12,10 @@
  
  .SUFFIXES: .psw .h
  

@@ -1,15 +1,15 @@
---- lib/X11/Imakefile.orig	Thu Dec 20 11:03:47 2001
-+++ lib/X11/Imakefile	Sun Aug 25 01:18:53 2002
-@@ -943,7 +943,7 @@
+--- lib/X11/Imakefile.orig	Thu Apr  8 23:51:16 2004
++++ lib/X11/Imakefile	Thu Apr  8 23:53:08 2004
+@@ -10,7 +10,7 @@
+         HEADERS = Xlib.h Xresource.h Xutil.h cursorfont.h Xlibint.h \
+ 			Xcms.h Xlocale.h XKBlib.h
  
- OBJS = $(OBJS1) $(OBJS2) $(OBJS3)
+-#if BuildServersOnly && !XnestServer && !BuildGLXLibrary && !BuildClients
++#if BuildServersOnly && !XnestServer && !BuildGLXLibrary && !BuildClients && !FreeBSDBuildXxserv
+ all::
  
--#if !BuildServersOnly || XnestServer || BuildGLXLibrary || BuildClients
-+#if !BuildServersOnly || XnestServer || BuildGLXLibrary || BuildClients || FreeBSDBuildXxserv
- #include <Library.tmpl>
- 
- SpecialCLibObjectRule(ErrDes,$(ICONFIGFILES),$(EDB_DEFINES))
-@@ -983,8 +983,10 @@
+ BuildIncludes($(HEADERS),IncSubdir,..)
+@@ -1041,8 +1041,10 @@
  #if InstallXcmsTxt
  InstallNonExecFile(Xcms.txt,$(LIBDIR))
  #endif

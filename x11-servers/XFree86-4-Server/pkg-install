@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/X11R6}
+SECCONFDIR=${PKG_PREFIX}/lib/X11/xserver
+
+if [ ! -f ${SECCONFDIR}/SecurityPolicy ]; then
+	cp ${SECCONFDIR}/SecurityPolicy.default-Server \
+	    ${SECCONFDIR}/SecurityPolicy
+fi

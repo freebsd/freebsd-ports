@@ -10,6 +10,7 @@ MAN1=	Xmark.1 \
 	dpsexec.1 \
 	dpsinfo.1 \
 	editres.1 \
+	fonttosfnt.1 \
 	fslsfonts.1 \
 	fstobdf.1 \
 	glxgears.1 \

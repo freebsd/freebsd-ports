@@ -1,9 +1,0 @@
---- programs/Xserver/hw/xfree86/loader/Imakefile	Wed Feb 26 15:32:12 2003
-+++ programs/Xserver/hw/xfree86/loader/Imakefile	Wed Jun  4 19:14:55 2003
-@@ -35,5 +35,5 @@
- #endif
- 
--#if defined (x86_64Architecture)
-+#if defined (x86_64Architecture) && defined(linux)
- ARCHDEFINES = -DDoMMAPedMerge -DMmapPageAlign
- #endif

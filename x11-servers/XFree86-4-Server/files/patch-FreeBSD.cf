@@ -1,11 +1,39 @@
---- config/cf/FreeBSD.cf.orig	Tue May 20 05:10:21 2003
-+++ config/cf/FreeBSD.cf	Tue May 20 03:41:35 2003
-@@ -464,6 +464,8 @@
+--- config/cf/FreeBSD.cf.orig	Sat Nov  1 20:38:01 2003
++++ config/cf/FreeBSD.cf	Tue Nov 11 20:47:11 2003
+@@ -172,11 +172,11 @@
+  *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
+  */
+ #if BuildThreadStubLibrary && (!defined(UseInstalledX11) || !UseInstalledX11)
+-# define CcCmd			$(CLIENTENVSETUP) cc
+-# define CplusplusCmd		$(CLIENTENVSETUP) c++
++# define CcCmd			$(CLIENTENVSETUP) FreeBSDCC
++# define CplusplusCmd		$(CLIENTENVSETUP) FreeBSDCXX
+ #else
+-# define CcCmd			cc
+-# define CplusplusCmd		c++
++# define CcCmd			FreeBSDCC
++# define CplusplusCmd		FreeBSDCXX
  #endif
- #ifdef Sparc64Architecture
- #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
-+#define AsVISOption            -Av9a
-+#define AsOutputArchSize      64
+ 
+ #define CppCmd			/usr/bin/cpp
+@@ -393,18 +393,8 @@
+ #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
  #endif
- #ifdef ia64Architecture
- #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
+ 
+-/* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
+-#ifndef DefaultGcc2i386Opt
+-#if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
+-#define DefaultGcc2i386Opt -O2 GccAliasingArgs
+-#endif
+-#endif
+-
+-#ifdef i386Architecture
+-# define OptimizedCDebugFlags DefaultGcc2i386Opt
+-#else
+-# define OptimizedCDebugFlags -O
+-#endif
++#define DefaultGcc2i386Opt
++#define OptimizedCDebugFlags FreeBSDCFLAGS
+ 
+ #ifndef PreIncDir
+ # define PreIncDir	/usr/include

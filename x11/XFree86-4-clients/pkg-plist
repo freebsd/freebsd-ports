@@ -1,3 +1,12 @@
+@unexec if cmp -s %D/lib/X11/xdm/GiveConsole %D/lib/X11/xdm/default/GiveConsole; then rm -f %D/lib/X11/xdm/GiveConsole; fi
+@unexec if cmp -s %D/lib/X11/xdm/TakeConsole %D/lib/X11/xdm/default/TakeConsole; then rm -f %D/lib/X11/xdm/TakeConsole; fi
+@unexec if cmp -s %D/lib/X11/xdm/Xaccess %D/lib/X11/xdm/default/Xaccess; then rm -f %D/lib/X11/xdm/Xaccess; fi
+@unexec if cmp -s %D/lib/X11/xdm/Xresources %D/lib/X11/xdm/default/Xresources; then rm -f %D/lib/X11/xdm/Xresources; fi
+@unexec if cmp -s %D/lib/X11/xdm/Xservers %D/lib/X11/xdm/default/Xservers; then rm -f %D/lib/X11/xdm/Xservers; fi
+@unexec if cmp -s %D/lib/X11/xdm/Xsession %D/lib/X11/xdm/default/Xsession; then rm -f %D/lib/X11/xdm/Xsession; fi
+@unexec if cmp -s %D/lib/X11/xdm/Xsetup_0 %D/lib/X11/xdm/default/Xsetup_0; then rm -f %D/lib/X11/xdm/Xsetup_0; fi
+@unexec if cmp -s %D/lib/X11/xdm/Xwilling %D/lib/X11/xdm/default/Xwilling; then rm -f %D/lib/X11/xdm/Xwilling; fi
+@unexec if cmp -s %D/lib/X11/xdm/xdm-config %D/lib/X11/xdm/default/xdm-config; then rm -f %D/lib/X11/xdm/xdm-config; fi
 bin/Xmark
 bin/appres
 bin/atobm
@@ -11,6 +20,7 @@ bin/dga
 bin/dpsexec
 bin/dpsinfo
 bin/editres
+bin/fonttosfnt
 bin/fslsfonts
 bin/fstobdf
 bin/glxgears
@@ -138,6 +148,7 @@ lib/X11/app-defaults/XCalc
 lib/X11/app-defaults/XCalc-color
 lib/X11/app-defaults/XClipboard
 lib/X11/app-defaults/XClock
+lib/X11/app-defaults/XClock-color
 lib/X11/app-defaults/XConsole
 lib/X11/app-defaults/XFontSel
 lib/X11/app-defaults/XLoad
@@ -351,18 +362,18 @@ lib/X11/twm/system.twmrc
 lib/X11/x11perfcomp/fillblnk
 lib/X11/x11perfcomp/perfboth
 lib/X11/x11perfcomp/perfratio
-lib/X11/xdm/GiveConsole
-lib/X11/xdm/TakeConsole
-lib/X11/xdm/Xaccess
-lib/X11/xdm/Xresources
-lib/X11/xdm/Xservers
-lib/X11/xdm/Xsession
-lib/X11/xdm/Xsetup_0
-lib/X11/xdm/Xwilling
+lib/X11/xdm/default/GiveConsole
+lib/X11/xdm/default/TakeConsole
+lib/X11/xdm/default/Xaccess
+lib/X11/xdm/default/Xresources
+lib/X11/xdm/default/Xservers
+lib/X11/xdm/default/Xsession
+lib/X11/xdm/default/Xsetup_0
+lib/X11/xdm/default/Xwilling
 lib/X11/xdm/chooser
 lib/X11/xdm/pixmaps/XFree86.xpm
 lib/X11/xdm/pixmaps/XFree86bw.xpm
-lib/X11/xdm/xdm-config
+lib/X11/xdm/default/xdm-config
 lib/X11/xedit/lisp/indent.lsp
 lib/X11/xedit/lisp/lisp.lsp
 lib/X11/xedit/lisp/progmodes/c.lsp
@@ -371,6 +382,7 @@ lib/X11/xedit/lisp/progmodes/imake.lsp
 lib/X11/xedit/lisp/progmodes/lisp.lsp
 lib/X11/xedit/lisp/progmodes/make.lsp
 lib/X11/xedit/lisp/progmodes/man.lsp
+lib/X11/xedit/lisp/progmodes/patch.lsp
 lib/X11/xedit/lisp/progmodes/rpm.lsp
 lib/X11/xedit/lisp/progmodes/sgml.lsp
 lib/X11/xedit/lisp/progmodes/sh.lsp
@@ -406,6 +418,7 @@ lib/X11/xkb/geometry.dir
 lib/X11/xkb/geometry/README
 lib/X11/xkb/geometry/amiga
 lib/X11/xkb/geometry/ataritt
+lib/X11/xkb/geometry/chicony
 lib/X11/xkb/geometry/dell
 lib/X11/xkb/geometry/digital/lk
 lib/X11/xkb/geometry/digital/pc
@@ -413,6 +426,7 @@ lib/X11/xkb/geometry/digital/unix
 lib/X11/xkb/geometry/everex
 lib/X11/xkb/geometry/fujitsu
 lib/X11/xkb/geometry/hp
+lib/X11/xkb/geometry/ibm/thinkpad
 lib/X11/xkb/geometry/keytronic
 lib/X11/xkb/geometry/kinesis
 lib/X11/xkb/geometry/macintosh
@@ -509,6 +523,7 @@ lib/X11/xkb/symbols/README
 lib/X11/xkb/symbols/al
 lib/X11/xkb/symbols/altwin
 lib/X11/xkb/symbols/am
+lib/X11/xkb/symbols/apple
 lib/X11/xkb/symbols/ar
 lib/X11/xkb/symbols/az
 lib/X11/xkb/symbols/be
@@ -550,6 +565,7 @@ lib/X11/xkb/symbols/guj
 lib/X11/xkb/symbols/gur
 lib/X11/xkb/symbols/hp/us
 lib/X11/xkb/symbols/hr
+lib/X11/xkb/symbols/hr_US
 lib/X11/xkb/symbols/hu
 lib/X11/xkb/symbols/hu_US
 lib/X11/xkb/symbols/hu_qwerty
@@ -610,6 +626,7 @@ lib/X11/xkb/symbols/pc/de
 lib/X11/xkb/symbols/pc/dev
 lib/X11/xkb/symbols/pc/dk
 lib/X11/xkb/symbols/pc/dvorak
+lib/X11/xkb/symbols/pc/dz
 lib/X11/xkb/symbols/pc/ee
 lib/X11/xkb/symbols/pc/el
 lib/X11/xkb/symbols/pc/en_US
@@ -653,6 +670,9 @@ lib/X11/xkb/symbols/pc/ro
 lib/X11/xkb/symbols/pc/ru
 lib/X11/xkb/symbols/pc/sapmi
 lib/X11/xkb/symbols/pc/se
+lib/X11/xkb/symbols/pc/se_FI
+lib/X11/xkb/symbols/pc/se_NO
+lib/X11/xkb/symbols/pc/se_SE
 lib/X11/xkb/symbols/pc/si
 lib/X11/xkb/symbols/pc/sk
 lib/X11/xkb/symbols/pc/sk_qwerty
@@ -661,11 +681,15 @@ lib/X11/xkb/symbols/pc/syr
 lib/X11/xkb/symbols/pc/syr_phonetic
 lib/X11/xkb/symbols/pc/tel
 lib/X11/xkb/symbols/pc/th
+lib/X11/xkb/symbols/pc/th_pat
+lib/X11/xkb/symbols/pc/th_tis
 lib/X11/xkb/symbols/pc/tj
 lib/X11/xkb/symbols/pc/tml
 lib/X11/xkb/symbols/pc/tr
 lib/X11/xkb/symbols/pc/ua
 lib/X11/xkb/symbols/pc/us
+lib/X11/xkb/symbols/pc/us_intl
+lib/X11/xkb/symbols/pc/uz
 lib/X11/xkb/symbols/pc/yu
 lib/X11/xkb/symbols/pc104
 lib/X11/xkb/symbols/pl
@@ -673,8 +697,8 @@ lib/X11/xkb/symbols/pl2
 lib/X11/xkb/symbols/pt
 lib/X11/xkb/symbols/ralt
 lib/X11/xkb/symbols/ro
+lib/X11/xkb/symbols/ro2
 lib/X11/xkb/symbols/ru
-lib/X11/xkb/symbols/ru_yawerty
 lib/X11/xkb/symbols/sapmi
 lib/X11/xkb/symbols/se
 lib/X11/xkb/symbols/se_FI
@@ -689,10 +713,13 @@ lib/X11/xkb/symbols/sr
 lib/X11/xkb/symbols/srvr_ctrl
 lib/X11/xkb/symbols/sun/se
 lib/X11/xkb/symbols/sun/us
+lib/X11/xkb/symbols/sun/usb
 lib/X11/xkb/symbols/syr
 lib/X11/xkb/symbols/syr_phonetic
 lib/X11/xkb/symbols/tel
 lib/X11/xkb/symbols/th
+lib/X11/xkb/symbols/th_pat
+lib/X11/xkb/symbols/th_tis
 lib/X11/xkb/symbols/tj
 lib/X11/xkb/symbols/tml
 lib/X11/xkb/symbols/tr
@@ -702,6 +729,7 @@ lib/X11/xkb/symbols/us
 lib/X11/xkb/symbols/us_group2
 lib/X11/xkb/symbols/us_group3
 lib/X11/xkb/symbols/us_intl
+lib/X11/xkb/symbols/uz
 lib/X11/xkb/symbols/vn
 lib/X11/xkb/symbols/xfree68/amiga
 lib/X11/xkb/symbols/xfree68/ataritt
@@ -715,6 +743,7 @@ lib/X11/xkb/types/default
 lib/X11/xkb/types/extra
 lib/X11/xkb/types/iso9995
 lib/X11/xkb/types/mousekeys
+lib/X11/xkb/types/numpad
 lib/X11/xkb/types/pc
 lib/X11/xkb/xkbcomp
 lib/X11/xman.help
