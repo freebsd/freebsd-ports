@@ -16,6 +16,7 @@ MAINTAINER=	dr@domix.de
 USE_NEWGCC=	yes
 USE_LIBTOOL=	yes
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
+CONFIGURE_ARGS+=	--enable-shared
 
 post-install:
 	strip ${PREFIX}/bin/latte-html
