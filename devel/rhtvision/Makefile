@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rhtvision
-PORTVERSION=	1.1.4
-PORTREVISION=	2
+PORTVERSION=	2.0.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tvision
@@ -23,15 +22,12 @@ INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
-PATCHPERL_FILES=config.pl confignt.pl conflib.pl linux/compress \
-		linuxso/makemak.in linuxso/makemak.pl
-
 post-patch:
-.for f in ${PATCHPERL_FILES}
-	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL5},g' ${WRKSRC}/${f}
+.for f in config.pl confignt.pl conflib.pl linux/compress \
+	linuxso/makemak.in linuxso/makemak.pl
+	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL5},g' \
+		-e 's/\(soname.*\)intver/\1extver/g' \
+		${WRKSRC}/${f}
 .endfor
-
-post-install:
-	@cd ${PREFIX}/lib && ${LN} -sf librhtv.so.1.1.4 librhtv.so.1
 
 .include <bsd.port.mk>
