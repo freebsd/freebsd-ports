@@ -82,3 +82,15 @@
      }
      
      for (i = 0; i < NColors; i++) {
+@@ -3154,11 +3151,7 @@
+    * GDT: 950310: put dot font hack in.
+    */
+ 
+-#ifdef SDO
+   fputs("%!PS\n", fp);
+-#else
+-  fputs("%!PostScript\n", fp);
+-#endif
+   /* Bracket the PS program with gsave/grestore so these page descriptions
+      can be concatenated, then printed. */
+   fputs("%%BoundingBox: ", fp);
