@@ -1,38 +1,16 @@
-usr/doc/locale-ja-9/changelog
-usr/doc/locale-ja-9/control
-usr/doc/locale-ja-9/copyright
-usr/doc/locale-ja-9/gconv-modules.patch
-usr/doc/locale-ja-9/rules
+usr/doc/locale-ja-%%VER%%/changelog
+usr/doc/locale-ja-%%VER%%/control
+usr/doc/locale-ja-%%VER%%/copyright
+usr/doc/locale-ja-%%VER%%/dirs
+usr/doc/locale-ja-%%VER%%/rules
 usr/share/locale/ja_JP/LC_COLLATE
 usr/share/locale/ja_JP/LC_CTYPE
 usr/share/locale/ja_JP/LC_MESSAGES/SYS_LC_MESSAGES
 usr/share/locale/ja_JP/LC_MONETARY
 usr/share/locale/ja_JP/LC_NUMERIC
 usr/share/locale/ja_JP/LC_TIME
-usr/share/locale/ja_JP.EUC/LC_COLLATE
-usr/share/locale/ja_JP.EUC/LC_CTYPE
-usr/share/locale/ja_JP.EUC/LC_MESSAGES/SYS_LC_MESSAGES
-usr/share/locale/ja_JP.EUC/LC_MONETARY
-usr/share/locale/ja_JP.EUC/LC_NUMERIC
-usr/share/locale/ja_JP.EUC/LC_TIME
-usr/share/locale/ja_JP.eucJP/LC_COLLATE
-usr/share/locale/ja_JP.eucJP/LC_CTYPE
-usr/share/locale/ja_JP.eucJP/LC_MESSAGES/SYS_LC_MESSAGES
-usr/share/locale/ja_JP.eucJP/LC_MONETARY
-usr/share/locale/ja_JP.eucJP/LC_NUMERIC
-usr/share/locale/ja_JP.eucJP/LC_TIME
-usr/share/locale/ja_JP.ujis/LC_COLLATE
-usr/share/locale/ja_JP.ujis/LC_CTYPE
-usr/share/locale/ja_JP.ujis/LC_MESSAGES/SYS_LC_MESSAGES
-usr/share/locale/ja_JP.ujis/LC_MONETARY
-usr/share/locale/ja_JP.ujis/LC_NUMERIC
-usr/share/locale/ja_JP.ujis/LC_TIME
-@dirrm usr/share/locale/ja_JP.ujis/LC_MESSAGES
-@dirrm usr/share/locale/ja_JP.ujis
-@dirrm usr/share/locale/ja_JP.eucJP/LC_MESSAGES
-@dirrm usr/share/locale/ja_JP.eucJP
-@dirrm usr/share/locale/ja_JP.EUC/LC_MESSAGES
-@dirrm usr/share/locale/ja_JP.EUC
+@exec ln -sf ja_JP %D/usr/share/locale/ja_JP.EUC
+@unexec rm -f %D/usr/share/locale/ja_JP.EUC
 @dirrm usr/share/locale/ja_JP/LC_MESSAGES
 @dirrm usr/share/locale/ja_JP
-@dirrm usr/doc/locale-ja-9
+@dirrm usr/doc/locale-ja-%%VER%%
