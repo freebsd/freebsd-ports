@@ -1,0 +1,55 @@
+#!/bin/sh
+# This script will create the website catalog and will add entries to xml catalog.
+# WARNING: If you change this script, be sure to check pkg-deinstall.in!
+#
+# Based on http://xmlsoft.org/buildDocBookCatalog file.
+#
+# in vi/vim grab VERSIONS string with command:
+# :r!echo -n "VERSIONS='current ";fetch -qo - http://cvs.sf.net/cgi-bin/viewcvs.cgi/docbook/website/VERSION|sed -nE 's/.*Version (.*) released./\1/gp'|sort|sed -e '1,3d'|paste -sd ' ' -|tr \\n \'
+#
+# -- Rui Lopes <rui@ruilopes.com>
+
+XMLCATMGR=@XMLCATMGR@
+CATALOG_PORTS_XML=@CATALOG_PORTS_XML@
+XSL_DIR=${PKG_PREFIX}/@INSTDIR@
+CATALOG_XSL=${XSL_DIR}/catalog
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+fi
+
+VERSIONS='current 2.2 2.3 2.4.0 2.4.1 2.5.0'
+
+if [ ! -f ${CATALOG_XSL} ]; then
+	 ${XMLCATMGR} -c "${CATALOG_XSL}" create
+fi
+
+for version in ${VERSIONS}
+do
+	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
+		http://docbook.sourceforge.net/release/website/$version/xsl \
+		"file://${XSL_DIR}/xsl"
+	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
+		http://docbook.sourceforge.net/release/website/$version/xsl \
+		"file://${XSL_DIR}/xsl"
+	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
+		http://docbook.sourceforge.net/release/website/$version/schema/dtd \
+		"file://${XSL_DIR}/schema/dtd"
+	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
+		http://docbook.sourceforge.net/release/website/$version/schema/dtd \
+		"file://${XSL_DIR}/schema/dtd"
+	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
+		http://docbook.sourceforge.net/release/website/$version \
+		"file://${XSL_DIR}/schema/dtd"
+	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
+		http://docbook.sourceforge.net/release/website/$version \
+		"file://${XSL_DIR}/schema/dtd"
+done
+
+${XMLCATMGR} -c "${CATALOG_PORTS_XML}" add delegateSystem \
+	http://docbook.sourceforge.net/release/website/ \
+	"file://${CATALOG_XSL}"
+${XMLCATMGR} -c "${CATALOG_PORTS_XML}" add delegateURI \
+	http://docbook.sourceforge.net/release/website/ \
+	"file://${CATALOG_XSL}"
+
