@@ -29,22 +29,29 @@ include/click/click_icmp.h
 include/click/click_icmp6.h
 include/click/click_ip.h
 include/click/click_ip6.h
+include/click/click_fddi.h
 include/click/click_tcp.h
 include/click/click_udp.h
 include/click/clp.h
+include/click/config-bsdmodule.h
+include/click/config-linuxmodule.h
+include/click/config-userlevel.h
 include/click/config.h
 include/click/confparse.hh
 include/click/crc32.h
 include/click/cxxprotect.h
 include/click/cxxunprotect.h
+include/click/driver.hh
 include/click/element.hh
 include/click/elemfilter.hh
+include/click/ewma64.hh
 include/click/error.hh
 include/click/etheraddress.hh
 include/click/ewma.cc
 include/click/ewma.hh
 include/click/gaprate.hh
 include/click/glue.hh
+include/click/handlercall.hh
 include/click/hashmap.cc
 include/click/hashmap.hh
 include/click/integers.hh
@@ -55,18 +62,22 @@ include/click/ipaddress.hh
 include/click/ipaddressset.hh
 include/click/ipflowid.hh
 include/click/iptable.hh
-include/click/iptable2.hh
 include/click/lexer.hh
+include/click/lexertinfo.hh
 include/click/llrpc.h
 include/click/package.hh
 include/click/packet.hh
 include/click/packet_anno.hh
 include/click/pathvars.h
-include/click/perfctr.hh
-include/click/radix.hh
+include/click/perfctr-i586.hh
 include/click/router.hh
 include/click/routerthread.hh
 include/click/skbmgr.hh
+include/click/standard/addressinfo.hh
+include/click/standard/alignmentinfo.hh
+include/click/standard/drivermanager.hh
+include/click/standard/errorelement.hh
+include/click/standard/scheduleinfo.hh
 include/click/straccum.hh
 include/click/string.hh
 include/click/subvector.hh
@@ -79,6 +90,7 @@ include/click/vector.cc
 include/click/vector.hh
 include/clicktool/elementt.hh
 include/clicktool/lexert.hh
+include/clicktool/lexertinfo.hh
 include/clicktool/processingt.hh
 include/clicktool/routert.hh
 include/clicktool/toolutils.hh
@@ -96,6 +108,7 @@ lib/libclicktool.a
 share/click/elementmap
 share/click/srcdir
 share/click/src
+@dirrm include/click/standard
 @dirrm include/click
 @dirrm include/clicktool
 @dirrm share/click
