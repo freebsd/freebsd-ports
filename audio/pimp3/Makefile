@@ -12,12 +12,12 @@ MASTER_SITES=	ftp://pimp3.sourceforge.net/pub/pimp3/
 
 MAINTAINER=	rbt@zort.on.ca
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 WRKSRC=		${WRKDIR}/pimp3
 
 NO_BUILD=	yes
+USE_PYTHON=	yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${PREFIX}/bin/
