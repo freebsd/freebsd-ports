@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pcre++
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/pcre++/
 
