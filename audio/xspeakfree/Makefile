@@ -8,7 +8,7 @@
 PORTNAME=	xspeakfree
 PORTVERSION=	0.8.2
 CATEGORIES=	mbone net audio
-MASTER_SITES=	http://mybox.ngworld.net/distfiles/
+MASTER_SITES=	http://dark.ibroadcast.net/distfiles/
 
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	Tcl/Tk (wish) frontend to Speak Freely
