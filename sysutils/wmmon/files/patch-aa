@@ -25,10 +25,10 @@
 ! #
 ! # Makefile for FreeBSD 3.x and 4.0 versions of wmmon
 ! #
-! LIBDIR		= -L/usr/X11R6/lib
+! LIBDIR		= -L${X11BASE}/lib
 ! LIBS		= -lXpm -lXext -lX11 -lkvm -ldevstat
 ! CFLAGS		?= -O2
-! CFLAGS		+= -g -Wall -I/usr/X11R6/include
+! CFLAGS		+= -I${X11BASE}/include
 ! OBJS		=	wmmon.o \
 ! 			../wmgeneral/wmgeneral.o \
 ! 			../wmgeneral/misc.o \
