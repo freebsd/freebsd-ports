@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.11 1995/07/18 00:34:16 asami Exp $
+# $Id: Makefile,v 1.12 1995/07/29 11:31:33 asami Exp $
 #
 
     SUBDIR += ImageMagick
     BROKEN += Mesa              # doesn't install
+    SUBDIR += aero
     SUBDIR += dore
     SUBDIR += jpeg
     SUBDIR += mpeg-lib
