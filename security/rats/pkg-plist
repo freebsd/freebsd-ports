@@ -1,0 +1,6 @@
+bin/rats
+lib/rats-c.xml
+lib/rats-perl.xml
+lib/rats-python.xml
+%%PORTDOCS%%share/doc/rats/README
+%%PORTDOCS%%@dirrm share/doc/rats

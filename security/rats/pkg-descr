@@ -1,0 +1,11 @@
+This is RATS, a rough auditing tool for security, developed by
+Secure Software Solutions.  It is a tool for scanning source code
+(C, C++, Perl, and Python) and flagging common security related
+programming errors such as buffer overflows and TOCTOU (Time Of
+Check, Time Of Use) race conditions.  As its name implies, the tool
+performs only a rough analysis of source code.  It will not find
+every error and will also find things that are not errors.  Manual
+inspection of your code is still necessary, but greatly aided with
+this tool.
+
+WWW: http://www.securesw.com/rats/

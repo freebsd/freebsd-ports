@@ -1,0 +1,29 @@
+# Ports collection makefile for:  rats
+# Date created:			  22 August 2001
+# Whom:				  Kris Kennaway <kris@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	rats
+PORTVERSION=	1.1
+CATEGORIES=    	devel security
+MASTER_SITES=	http://www.securesw.com/rats/
+
+MAINTAINER=	kris@FreeBSD.org
+
+LIB_DEPENDS=	expat.1:${PORTSDIR}/textproc/expat
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-expat-lib=${LOCALBASE}/lib \
+		--with-expat-include=${LOCALBASE}/include/xml
+
+ALL_TARGET=	rats
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/rats
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/rats
+.endif
+
+.include <bsd.port.mk>
