@@ -1,6 +1,6 @@
 --- /usr/ports/distfiles/OpenSSH-1.2/src/usr.bin/ssh/Makefile.inc	Mon Oct 25 16:27:26 1999
-+++ ./Makefile.inc	Tue Nov 23 19:19:33 1999
-@@ -2,10 +2,9 @@
++++ Makefile.inc	Sun Nov 28 16:29:13 1999
+@@ -2,10 +2,13 @@
  
  .include <bsd.obj.mk>
  
@@ -12,6 +12,9 @@
 +KERBEROS?=	no
 +SKEY?=		no
 +TCP_WRAPPERS?=	yes
++.if !defined(MAKEFILE_INC_FIRST_PASS)
++MAKEFILE_INC_FIRST_PASS=	0
++CFLAGS+=	-DHAVE_OPENPTY -I${PREFIX}/include
  LDADD+=         -L${.CURDIR}/../lib -lssh
  DPADD+=         ${.CURDIR}/../lib/libssh.a
--.endif
+ .endif

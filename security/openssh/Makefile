@@ -22,7 +22,6 @@ RESTRICTED=	"Links with cryptographic code."
 CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
-CFLAGS+=	-DHAVE_OPENPTY -I${PREFIX}/include
 CVS_CMD?=	cvs -z3
 CVS_DATE=	Tue Nov 23 18:52:21 EST 1999
 SED?=		/usr/bin/sed
