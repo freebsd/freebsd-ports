@@ -150,7 +150,7 @@ MASTER_SITE_ISC+=	\
 MASTER_SITE_KDE+=	\
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://linux.dsi.internet2.edu/X11/kde/%SUBDIR%/ \
+	ftp://ftp.tuwien.ac.at/linux/kde/%SUBDIR%/ \
 	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/kde/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
@@ -230,7 +230,6 @@ MASTER_SITE_PERL_CPAN+=	\
 	http://www.cpan.dk/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://uiarchive.uiuc.edu/pub/ftp/cpan.cse.msu.edu/modules/by-module/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/perl/CPAN/modules/by-module/&,} \
 	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/lang/CPAN/modules/by-module/%SUBDIR%/ \
@@ -247,7 +246,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	ftp://cpan.pop-mg.com.br/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.is.co.za/programming/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	http://cpan.shellhung.org/modules/by-module/%SUBDIR%/ \
-	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	http://at.cpan.org/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/lang/perl/CPAN/modules/by-module/%SUBDIR%/
 
 MASTER_SITE_REDHAT_LINUX+= \
@@ -325,15 +324,10 @@ MASTER_SITE_SOURCEWARE+= \
 	http://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
 	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/sources.redhat.com/pub/%SUBDIR%/ \
-	ftp://ftp.pvv.ntnu.no/pub/cygnus/sourceware.cygnus.com/%SUBDIR%/ \
-	ftp://ftp1.sinica.edu.tw/pub3/CYGNUS/%SUBDIR%/ \
+	ftp://ftp1.sinica.edu.tw/pub3/GNU/CYGNUS/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
-	ftp://ftp.unina.it/pub/Unix/cygnus/%SUBDIR%/ \
-	ftp://ftp.sdn.co.za/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	http://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/
+	ftp://ftp.unina.it/pub/Unix/cygnus/%SUBDIR%/
 
 MASTER_SITE_SUNSITE+=	\
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
@@ -350,16 +344,11 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.informatik.rwth-aachen.de/pub/comp/Linux/sunsite.unc.edu/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub5/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.leidenuniv.nl/pub/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/%SUBDIR%/ \
-	ftp://ftp.icm.edu.pl/vol/rzm1/linux-sunsite/%SUBDIR%/ \
-	ftp://ftp.pku.edu.cn/pub/linux/%SUBDIR%/ \
+	ftp://ftp.icm.edu.pl/pub/Linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.cse.cuhk.edu.hk/pub4/Linux/%SUBDIR%/ \
 	ftp://ftp.kobe-u.ac.jp/pub/Linux/metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/Linux/metalab.unc.edu/%SUBDIR%/ \
-	ftp://ftp.dacom.co.kr/pub/mirrors/metalab.unc.edu/Linux/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/%SUBDIR%/ \
-	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/%SUBDIR%/ \
 	ftp://ftp.is.co.za/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/
 
@@ -403,7 +392,7 @@ MASTER_SITE_WINDOWMAKER+= \
 
 MASTER_SITE_XCONTRIB+=	\
 	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.net.ohio-state.edu/disk/d/X11/contrib/%SUBDIR%/ \
+	ftp://ftp.net.ohio-state.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://uiarchive.uiuc.edu/pub/ftp/ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
@@ -414,7 +403,7 @@ MASTER_SITE_XCONTRIB+=	\
 	ftp://mirror.xmission.com/X/contrib/%SUBDIR%/ \
 	ftp://ftp2.x.org/contrib/%SUBDIR%/ \
 	ftp://sunsite.tus.ac.jp/pub/archives/X11/contrib/%SUBDIR%/ \
-	ftp://ftp.is.co.za/x/contrib/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/hci/x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/contrib/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/opengroup/contrib/&,} \
 	ftp://ftp.mirror.ac.uk/sites/ftp.x.org/contrib/%SUBDIR%/ \
