@@ -6912,6 +6912,7 @@ p5-Metadata	ports/databases/p5-Metadata
 p5-Module-Build	ports/devel/p5-Module-Build
 p5-Module-CoreList	ports/devel/p5-Module-CoreList
 p5-Module-Info	ports/devel/p5-Module-Info
+p5-Module-Info-File	ports/devel/p5-Module-Info-File
 p5-Module-Reload	ports/devel/p5-Module-Reload
 p5-Module-ScanDeps	ports/devel/p5-Module-ScanDeps
 p5-Module-Signature	ports/security/p5-Module-Signature
