@@ -71,6 +71,7 @@
     SUBDIR += exmh2
     SUBDIR += expect
     SUBDIR += flower-fpw
+    SUBDIR += foldoc-fpw
     SUBDIR += freepwing
     SUBDIR += fumeikai-fpw
     SUBDIR += gal
