@@ -1,0 +1,13 @@
+--- configure.in.orig	Thu Sep  2 13:17:44 2004
++++ configure.in	Thu Sep  2 13:19:45 2004
+@@ -88,10 +88,6 @@
+ fi
+ 
+ if test x$WITHXMMS = xyes; then
+-  AC_CHECK_PROGS(XMMS_CONFIG, xmms-config,"not_found")
+-  if test "$XMMS_CONFIG" = "not_found"; then
+-    AC_MSG_ERROR("*** xmms-config not found - xmms plugin can't be build")
+-  fi
+   AC_CHECK_HEADER(pthread.h,,
+            AC_MSG_ERROR(*** pthread headers support not installed or not found))
+   AC_CHECK_HEADER(id3.h,,
