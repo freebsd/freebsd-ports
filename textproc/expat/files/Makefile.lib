@@ -18,7 +18,8 @@ SRCS=		xmltok/xmltok.c \
 INCS=		xmlparse/xmlparse.h \
 		xmltok/xmltok.h
 NOMAN=		YES
-INCDIR=		${LOCALBASE}/include/xml
+INCSDIR=	${LOCALBASE}/include/xml
+INCDIR=		${INCSDIR}		# for pre-bsd.incs.mk API
 LIBDIR=		${LOCALBASE}/lib
 
 .include <bsd.lib.mk>

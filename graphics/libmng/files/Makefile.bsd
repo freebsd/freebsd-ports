@@ -11,7 +11,8 @@ SRCS=		${LOBJS:.lo=.c}
 CFLAGS+=	-I${INCDIR} -DMNG_FULL_CMS
 
 INCS=		libmng.h libmng_conf.h libmng_types.h
-INCDIR=		${LOCALBASE}/include
+INCSDIR=	${LOCALBASE}/include
+INCDIR=		${INCSDIR}		# for pre-bsd.incs.mk API
 LIBDIR=		${LOCALBASE}/lib
 
 .include <bsd.lib.mk>
