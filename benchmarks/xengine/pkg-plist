@@ -1,2 +1,3 @@
 bin/xengine
 share/doc/xengine/README
+@dirrm share/doc/xengine
