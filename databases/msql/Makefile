@@ -3,16 +3,17 @@
 # Date created:		14 January 1995
 # Whom:			mr (original)
 #
-# $Id: Makefile,v 1.5 1995/04/01 12:44:31 jkh Exp $
+# $Id: Makefile,v 1.6 1995/04/11 20:44:46 asami Exp $
 #
 
 DISTNAME=	msql-1.0.5
 CATEGORIES+=	databases
 MASTER_SITES=	ftp://bond.edu.au/pub/Minerva/msql/
-EXTRACT_SUFX=	.tar.gz
 
-IS_INTERACTIVE=	YES
+IS_INTERACTIVE=	yes
 PREFIX=		/usr/local/Minerva
+# restrictive copyright (no commercial use)
+NO_PACKAGE=	yes
 
 .include <bsd.port.mk>
 
