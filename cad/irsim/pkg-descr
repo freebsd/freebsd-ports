@@ -1,6 +1,4 @@
-IRSIM version 9.2
-
-Irsim is an event-driven logic-level simulator for MOS circuits
+IRSIM is an event-driven logic-level simulator for MOS circuits.
 
 To run irsim, users should set CAD_HOME to the base installation directory
 where magic was installed, e.g. /usr/local.  Alternatively, the system
