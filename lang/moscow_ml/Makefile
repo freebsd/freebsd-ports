@@ -3,7 +3,7 @@
 # Date created:         26 July 1996
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.2 1996/07/28 02:54:06 chuckr Exp $
+# $Id: Makefile,v 1.3 1996/07/29 22:33:14 asami Exp $
 #
 
 DISTNAME=       mos14src
@@ -20,16 +20,16 @@ WRKSRC=		${WRKDIR}/mosml/src
 
 post-install:
 .if !defined(NOPORTDOCS)
-	mkdir -p ${PREFIX}/${PKGNAME}/doc
-	mkdir -p ${PREFIX}/${PKGNAME}/examples
+	mkdir -p ${PREFIX}/moscow_ml/doc
+	mkdir -p ${PREFIX}/moscow_ml/examples
 	for file in ${WRKDIR}/mosml/doc/*;do; \
-	install -c -m 0444 -g bin -o bin $${file} ${PREFIX}/${PKGNAME}/doc;done
+	install -c -m 0444 -g bin -o bin $${file} ${PREFIX}/moscow_ml/doc;done
 	(cd ${WRKDIR}/mosml/examples; \
-	install -c -m 0444 -g bin -o bin README ${PREFIX}/${PKGNAME}/examples; \
+	install -c -m 0444 -g bin -o bin README ${PREFIX}/moscow_ml/examples; \
 	for sdirs in manual mls helpsigs calc pretty lexyacc;do; \
-	mkdir -p ${PREFIX}/${PKGNAME}/examples/$${sdirs}; \
+	mkdir -p ${PREFIX}/moscow_ml/examples/$${sdirs}; \
 	for file in $${sdirs}/*;do; \
-	install -c -m 0444 -g bin -o bin $${file} ${PREFIX}/${PKGNAME}/examples/$${sdirs}; \
+	install -c -m 0444 -g bin -o bin $${file} ${PREFIX}/moscow_ml/examples/$${sdirs}; \
 	done; done;)
 .endif
 
