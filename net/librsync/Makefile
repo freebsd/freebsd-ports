@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	librsync
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rproxy
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 .if !exists(/usr/bin/bzip2)
@@ -25,10 +25,12 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 CONFIGURE_ARGS=	--enable-shared --disable-trace
 
 USE_GMAKE=	yes
-
 INSTALLS_SHLIB=	yes
 
 MAN1=	rdiff.1
 MAN3=	librsync.3
+
+pre-build:
+	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
 
 .include <bsd.port.mk>
