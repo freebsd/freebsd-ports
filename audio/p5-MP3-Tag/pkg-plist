@@ -1,0 +1,13 @@
+%%SITE_PERL%%/MP3/Tag.pm
+%%SITE_PERL%%/MP3/Tag/CDDB_File.pm
+%%SITE_PERL%%/MP3/Tag/ParseData.pm
+%%SITE_PERL%%/MP3/Tag/File.pm
+%%SITE_PERL%%/MP3/Tag/ID3v1.pm
+%%SITE_PERL%%/MP3/Tag/ID3v2.pm
+%%SITE_PERL%%/MP3/Tag/LastResort.pm
+%%SITE_PERL%%/MP3/Tag/Inf.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/.packlist
+@dirrm %%SITE_PERL%%/MP3/Tag
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/MP3 2>/dev/null || true
