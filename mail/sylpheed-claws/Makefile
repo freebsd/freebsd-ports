@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -66,8 +67,8 @@ PLIST_SUB+=	GNOME="@comment "
 
 CONFIGURE_ARGS+=	--program-suffix="-claws" --enable-ipv6
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 .if exists(${LOCALBASE}/include/clamav.h)
 WITH_CLAMAV=		yes
