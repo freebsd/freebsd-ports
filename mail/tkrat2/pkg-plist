@@ -3,12 +3,12 @@ lib/ratatosk/ratatoskrc
 lib/tkrat2.1/blt_busy1.0.so
 lib/tkrat2.1/pkgIndex.tcl
 lib/tkrat2.1/ratatosk2.1.so
-%%PORTDOCS%%share/doc/tkrat/CONFIGURATION
-%%PORTDOCS%%share/doc/tkrat/COPYRIGHT
-%%PORTDOCS%%share/doc/tkrat/README
-%%PORTDOCS%%share/doc/tkrat/interface
-%%PORTDOCS%%share/doc/tkrat/userproc.example
-%%PORTDOCS%%share/doc/tkrat/userprocs
+%%PORTDOCS%%%%DOCSDIR%%/CONFIGURATION
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/interface
+%%PORTDOCS%%%%DOCSDIR%%/userproc.example
+%%PORTDOCS%%%%DOCSDIR%%/userprocs
 share/tkrat2.1/alias.tcl
 share/tkrat2.1/client.tcl
 share/tkrat2.1/compose.tcl
@@ -85,7 +85,7 @@ share/tkrat2.1/vfolder.tcl
 share/tkrat2.1/vfolderdef.tcl
 share/tkrat2.1/watcher.tcl
 share/tkrat2.1/winctl.tcl
-%%PORTDOCS%%@dirrm share/doc/tkrat
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/tkrat2.1/util
 @dirrm share/tkrat2.1
 @dirrm lib/ratatosk

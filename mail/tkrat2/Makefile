@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkrat
-PORTVERSION=	2.1
+PORTVERSION=	2.1.2
 CATEGORIES=	mail tk83
 MASTER_SITES=	ftp://ftp.tkrat.org/pub/tkrat/
 
@@ -35,7 +35,7 @@ post-install:
 	@${ECHO_MSG} "===>  Copying documents to ${PREFIX}/${PORTDOCDIR}"
 	@${MKDIR} ${PREFIX}/share/doc/tkrat
 .for f in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/tkrat
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .else
 	@${ECHO_MSG} "===>  Not copying available documents"
