@@ -9,7 +9,7 @@
 DISTNAME=	dl-wnn-0.3.6
 PKGNAME=	ja-emacs20-dl-wnn6-0.3.6
 CATEGORIES=	japanese editors
-MASTER_SITES=	http://tt-www.cs.titech.ac.jp/~katsuya/emacs/
+MASTER_SITES=	http://tokuda-www.cs.titech.ac.jp/~katsuya/emacs/
 
 MAINTAINER=	shige@FreeBSD.org
 
