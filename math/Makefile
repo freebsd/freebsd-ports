@@ -38,6 +38,7 @@
     SUBDIR += fudgit
     SUBDIR += fung-calc
     SUBDIR += fxt
+    SUBDIR += galculator
     SUBDIR += gambit
     SUBDIR += gap
     SUBDIR += gcalctool
