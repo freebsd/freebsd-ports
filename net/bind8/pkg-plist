@@ -33,25 +33,51 @@ sbin/irpd
 sbin/named
 sbin/named-bootconf
 sbin/ndc
-share/doc/bind8/acl.html
-share/doc/bind8/address_list.html
-share/doc/bind8/comments.html
-share/doc/bind8/config.html
-share/doc/bind8/controls.html
-share/doc/bind8/docdef.html
-share/doc/bind8/example.html
-share/doc/bind8/include.html
-share/doc/bind8/index.html
-share/doc/bind8/key.html
-share/doc/bind8/logging.html
-share/doc/bind8/master.html
-share/doc/bind8/options.html
-share/doc/bind8/server.html
-share/doc/bind8/trusted-keys.html
-share/doc/bind8/zone.html
+%%PORTDOCS%%share/doc/bind8/CHANGES
+%%PORTDOCS%%share/doc/bind8/DNSSEC
+%%PORTDOCS%%share/doc/bind8/LICENSE
+%%PORTDOCS%%share/doc/bind8/LICENSE_RSA
+%%PORTDOCS%%share/doc/bind8/README
+%%PORTDOCS%%share/doc/bind8/SUPPORT
+%%PORTDOCS%%share/doc/bind8/TODO
+%%PORTDOCS%%share/doc/bind8/conf/README
+%%PORTDOCS%%share/doc/bind8/conf/recursive/keep-running
+%%PORTDOCS%%share/doc/bind8/conf/recursive/named-res1.conf
+%%PORTDOCS%%share/doc/bind8/conf/recursive/named.conf.rfc1918-stubs
+%%PORTDOCS%%share/doc/bind8/conf/recursive/pri/127.0.0
+%%PORTDOCS%%share/doc/bind8/conf/recursive/pri/localhost
+%%PORTDOCS%%share/doc/bind8/conf/recursive/root.cache
+%%PORTDOCS%%share/doc/bind8/conf/workstation/named.conf
+%%PORTDOCS%%share/doc/bind8/conf/workstation/pri/127.0.0
+%%PORTDOCS%%share/doc/bind8/conf/workstation/pri/localhost
+%%PORTDOCS%%share/doc/bind8/conf/workstation/root.cache
+%%PORTDOCS%%share/doc/bind8/conf/workstation/stub/README
+%%PORTDOCS%%share/doc/bind8/html/acl.html
+%%PORTDOCS%%share/doc/bind8/html/address_list.html
+%%PORTDOCS%%share/doc/bind8/html/comments.html
+%%PORTDOCS%%share/doc/bind8/html/config.html
+%%PORTDOCS%%share/doc/bind8/html/controls.html
+%%PORTDOCS%%share/doc/bind8/html/docdef.html
+%%PORTDOCS%%share/doc/bind8/html/example.html
+%%PORTDOCS%%share/doc/bind8/html/include.html
+%%PORTDOCS%%share/doc/bind8/html/index.html
+%%PORTDOCS%%share/doc/bind8/html/key.html
+%%PORTDOCS%%share/doc/bind8/html/logging.html
+%%PORTDOCS%%share/doc/bind8/html/master.html
+%%PORTDOCS%%share/doc/bind8/html/options.html
+%%PORTDOCS%%share/doc/bind8/html/server.html
+%%PORTDOCS%%share/doc/bind8/html/trusted-keys.html
+%%PORTDOCS%%share/doc/bind8/html/zone.html
 share/misc/nslookup.help
 @dirrm include/bind/arpa
 @dirrm include/bind/isc
 @dirrm include/bind/sys
 @dirrm include/bind
-@dirrm share/doc/bind8
+%%PORTDOCS%%@dirrm share/doc/bind8/conf/recursive/pri
+%%PORTDOCS%%@dirrm share/doc/bind8/conf/recursive
+%%PORTDOCS%%@dirrm share/doc/bind8/conf/workstation/pri
+%%PORTDOCS%%@dirrm share/doc/bind8/conf/workstation/stub
+%%PORTDOCS%%@dirrm share/doc/bind8/conf/workstation
+%%PORTDOCS%%@dirrm share/doc/bind8/conf
+%%PORTDOCS%%@dirrm share/doc/bind8/html
+%%PORTDOCS%%@dirrm share/doc/bind8/

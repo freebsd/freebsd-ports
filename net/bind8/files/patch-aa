@@ -1,24 +1,24 @@
---- src/port/freebsd/Makefile.set.orig Mon Jun 16 23:30:35 1997
-+++ src/port/freebsd/Makefile.set      Tue Nov 25 18:51:41 1997
+--- src/port/freebsd/Makefile.set.orig	Thu Aug  9 19:41:08 2001
++++ src/port/freebsd/Makefile.set	Mon Jan 21 01:24:25 2002
 @@ -1,12 +1,14 @@
  'CC=cc'
--'CDEBUG=-O2 -g'
+-'CDEBUG=-O2 -g -W -Wall -Wmissing-prototypes -Wcast-qual -Wwrite-strings -Wformat'
 -'DESTBIN=/usr/bin'
 -'DESTSBIN=/usr/sbin'
 -'DESTEXEC=/usr/libexec'
 -'DESTMAN=/usr/share/man'
 -'DESTHELP=/usr/share/misc'
 -'DESTETC=/etc'
-+'CDEBUG=${CFLAGS}'
++'CDEBUG=${CFLAGS} -W -Wall -Wmissing-prototypes -Wcast-qual -Wwrite-strings -Wformat'
 +'DESTBIN=${PREFIX}/bin'
 +'DESTSBIN=${PREFIX}/sbin'
 +'DESTEXEC=${PREFIX}/libexec'
 +'DESTMAN=${PREFIX}/man'
 +'DESTHELP=${PREFIX}/share/misc'
++'DESTETC=${PREFIX}/etc'
+ 'DESTRUN=/var/run'
 +'DESTINC=${PREFIX}/include/bind'
 +'DESTLIB=${PREFIX}/lib'
- 'DESTRUN=/var/run'
-+'DESTETC=/etc'
  'LEX=lex -I'
  'YACC=yacc -d'
  'SYSLIBS=-ll -lutil'
