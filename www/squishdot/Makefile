@@ -7,6 +7,7 @@
 
 PORTNAME=	squishdot
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://squishdot.org/Download/Squishdot/ \
 		http://www.zope.org/Members/chrisw/Squishdot/
@@ -20,12 +21,8 @@ RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 
-# You can change this in the environment if you like.
-SZOPEBASEDIR?=	www/Zope
-
 # Don't change these
 ZOPEPRODUCTNAME=	Squishdot
-ZOPEPRODUCTDIR=		lib/python/Products
 
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	znavigator
 PORTVERSION=	2.00
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.zope.org/Members/jonas/ZNavigator/
 DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
@@ -15,23 +16,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Zope product to simplify the construction of navigation bars
 
-RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
-
+USE_PYTHON=	YES
+USE_ZOPE=	YES
 NO_BUILD=	YES
-
-# You can change this in the environment if you like.
-SZOPEBASEDIR?=		www/Zope
+WRKSRC=		${WRKDIR}/lib/python
 
 # Don't change these
-ZOPEBASEDIR=		${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTNAME=	ZNavigator
-ZOPEPRODUCTDIR=		lib/python/Products
-
-ZOPEPRODUCTSRC=		${WRKDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+ZOPEPRODUCTSRC=		${WRKSRC}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 
 PKGMESSAGE=	${WRKDIR}/.pkg-message
-
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}/

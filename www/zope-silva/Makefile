@@ -7,6 +7,7 @@
 
 PORTNAME=	silva
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://zope.org/Members/infrae/%SUBDIR%/:silva,document,metadata
@@ -34,8 +35,7 @@ DIST_SUBDIR=	zope
 
 ZOPEPRODUCTNAME=Silva
 
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
-CPIO=		cpio --quiet -pdum -R
+CPIO_CMD=	${CPIO} --quiet -pdum -R
 
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
@@ -44,7 +44,7 @@ do-install:
 	@${CHMOD} -R og+rX ${WRKDIR}/
 	@${RM} -rf ${WRKDIR}/SilvaMetadata/Extensions/.svn
 	@ cd ${WRKDIR} && ${FIND} Silva* \
-	  | ${CPIO} ${BINOWN}:${BINGRP} \
+	  | ${CPIO_CMD} ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 
 post-install:

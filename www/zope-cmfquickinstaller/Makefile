@@ -7,6 +7,7 @@
 
 PORTNAME=	cmfquickinstaller
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	collective
@@ -31,7 +32,7 @@ do-build:
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
-	@${RM} ${WRKSRC}/.cvsignore
+	-@${RM} ${WRKSRC}/.cvsignore
 	@${CHMOD} -R og+rX ${WRKSRC}/
 	@${CP} -R ${WRKSRC} \
 		${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/

@@ -7,6 +7,7 @@
 
 PORTNAME=	zmysqlda
 PORTVERSION=	2.0.8
+PORTREVISION=	1
 CATEGORIES=	www databases zope
 MASTER_SITES=	http://www.zope.org/Members/adustman/Products/ZMySQLDA/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -17,22 +18,14 @@ DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 MAINTAINER=	wjv@FreeBSD.org
 COMMENT=	MySQL Database Adapter for the Zope web application framework
 
-RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope \
-		${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
+RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
 
 USE_PYTHON=	yes
+USE_ZOPE=	yes
 DIST_SUBDIR=	zope
 
-# You can change this in the environment if you like
-SZOPEBASEDIR?=		www/Zope
-
-# Don't change these
-ZOPEBASEDIR=		${PREFIX}/${SZOPEBASEDIR}
 ZOPEPRODUCTNAME=	ZMySQLDA
-ZOPEPRODUCTDIR=		lib/python/Products
-
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
-WRKSRC=		${WRKDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+WRKSRC=		${WRKDIR}/lib/python/Products/${ZOPEPRODUCTNAME}
 CPIO_OPTIONS=	--quiet -pdum -R
 
 do-build:

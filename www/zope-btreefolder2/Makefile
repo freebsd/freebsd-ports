@@ -7,6 +7,7 @@
 
 PORTNAME=	btreefolder2
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://hathaway.freezope.org/Software/BTreeFolder2/
 PKGNAMEPREFIX=	zope-
