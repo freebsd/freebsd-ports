@@ -31,6 +31,7 @@ libdata/pkgconfig/libsidplay2.pc
 libdata/pkgconfig/libsidutils.pc
 @dirrm lib/sidplay/builders
 @dirrm lib/sidplay
+@dirrm include/resid
 @dirrm include/sidplay/utils
 @dirrm include/sidplay/builders
 @dirrm include/sidplay
