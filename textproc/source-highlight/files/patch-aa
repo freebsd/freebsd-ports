@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Sat Aug 25 00:30:57 2001
++++ Makefile.in	Sat Aug 25 00:31:14 2001
+@@ -155,6 +155,7 @@
+ 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ 
+ install-source_highlightdocDATA: $(source_highlightdoc_DATA)
++.if !defined(NOPORTDOCS)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(source_highlightdocdir)
+ 	@list='$(source_highlightdoc_DATA)'; for p in $$list; do \
+@@ -166,6 +167,7 @@
+ 	    $(INSTALL_DATA) $$p $(DESTDIR)$(source_highlightdocdir)/$$p; \
+ 	  fi; fi; \
+ 	done
++.endif
+ 
+ uninstall-source_highlightdocDATA:
+ 	@$(NORMAL_UNINSTALL)
