@@ -3,18 +3,18 @@
 # Date created:		May 25 1997
 # Whom:			pgs (original)
 #
-# $Id: Makefile,v 1.2 1998/02/20 18:39:48 steve Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:30:57 asami Exp $
 #
 
-DISTNAME=	xbl-1.0h
+DISTNAME=	xbl-1.0i
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp710.univ-lyon1.fr/pub/xbl/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 HAS_CONFIGURE=	yes
-MANN=		xbl.n
+MANn=		xbl.n
 
 .include <bsd.port.mk>
