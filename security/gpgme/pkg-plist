@@ -1,8 +1,8 @@
 bin/gpgme-config
 include/gpgme.h
-lib/libgpgme-pth.a
-lib/libgpgme-pth.so
-lib/libgpgme-pth.so.14
+%%WITH_PTH%%lib/libgpgme-pth.a
+%%WITH_PTH%%lib/libgpgme-pth.so
+%%WITH_PTH%%lib/libgpgme-pth.so.14
 lib/libgpgme-pthread.a
 lib/libgpgme-pthread.so
 lib/libgpgme-pthread.so.14
