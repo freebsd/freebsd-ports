@@ -25,6 +25,7 @@
     SUBDIR += cadubi
     SUBDIR += camediaplay
     SUBDIR += chbg
+    SUBDIR += cinepaint
     SUBDIR += claraocr
     SUBDIR += compupic
     SUBDIR += cqcam
