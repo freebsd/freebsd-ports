@@ -4,9 +4,11 @@ bin/gonzui-db
 bin/gonzui-search
 bin/gonzui-server
 share/gonzui/catalog/catalog.ja
+share/gonzui/doc/favicon.ico
+share/gonzui/doc/folder.png
 share/gonzui/doc/gonzui.css
 share/gonzui/doc/gonzui.js
-share/gonzui/doc/index.html
+share/gonzui/doc/text.png
 %%RUBY_SITEARCHLIBDIR%%/langscan/c/c.so
 %%RUBY_SITEARCHLIBDIR%%/langscan/java/java.so
 %%RUBY_SITELIBDIR%%/gonzui.rb
@@ -20,22 +22,30 @@ share/gonzui/doc/index.html
 %%RUBY_SITELIBDIR%%/gonzui/extractor.rb
 %%RUBY_SITELIBDIR%%/gonzui/gettext.rb
 %%RUBY_SITELIBDIR%%/gonzui/importer.rb
+%%RUBY_SITELIBDIR%%/gonzui/logger.rb
 %%RUBY_SITELIBDIR%%/gonzui/package.rb
-%%RUBY_SITELIBDIR%%/gonzui/symbol.rb
+%%RUBY_SITELIBDIR%%/gonzui/plugin.rb
+%%RUBY_SITELIBDIR%%/gonzui/type.rb
 %%RUBY_SITELIBDIR%%/gonzui/util.rb
 %%RUBY_SITELIBDIR%%/gonzui/webapp.rb
+%%RUBY_SITELIBDIR%%/gonzui/webapp/_searcher.rb
+%%RUBY_SITELIBDIR%%/gonzui/webapp/_servlet.rb
+%%RUBY_SITELIBDIR%%/gonzui/webapp/_webrick.rb
+%%RUBY_SITELIBDIR%%/gonzui/webapp/filehandler.rb
 %%RUBY_SITELIBDIR%%/gonzui/webapp/jsfeed.rb
 %%RUBY_SITELIBDIR%%/gonzui/webapp/markup.rb
-%%RUBY_SITELIBDIR%%/gonzui/webapp/query.rb
 %%RUBY_SITELIBDIR%%/gonzui/webapp/search.rb
-%%RUBY_SITELIBDIR%%/gonzui/webapp/servlet.rb
 %%RUBY_SITELIBDIR%%/gonzui/webapp/source.rb
+%%RUBY_SITELIBDIR%%/gonzui/webapp/stat.rb
 %%RUBY_SITELIBDIR%%/gonzui/webapp/top.rb
-%%RUBY_SITELIBDIR%%/gonzui/webapp/util.rb
 %%RUBY_SITELIBDIR%%/langscan.rb
 %%RUBY_SITELIBDIR%%/langscan/_common.rb
 %%RUBY_SITELIBDIR%%/langscan/c.rb
 %%RUBY_SITELIBDIR%%/langscan/java.rb
+%%RUBY_SITELIBDIR%%/langscan/ruby.rb
+@dirrm share/gonzui/catalog
+@dirrm share/gonzui/doc
+@dirrm share/gonzui
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/java
 @dirrm %%RUBY_SITEARCHLIBDIR%%/langscan/c
 @dirrm %%RUBY_SITELIBDIR%%/langscan
