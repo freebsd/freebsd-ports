@@ -1,18 +1,18 @@
 # New ports collection makefile for:	gnomeutils
-# Version required:			1.0.12
+# Version required:			1.0.50
 # Date created:				03 July 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnome-utils-1.0.12
-PKGNAME=	gnomeutils-1.0.12
+DISTNAME=	gnome-utils-1.0.50
+PKGNAME=	gnomeutils-1.0.50
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-utils
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	nakai@FreeBSD.org
 
 BUILD_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore

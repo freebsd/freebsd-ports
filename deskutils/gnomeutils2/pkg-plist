@@ -31,10 +31,14 @@ share/gnome/help/ghex/C/index.html
 share/gnome/help/ghex/C/topic.dat
 share/gnome/help/ghex/es/index.html
 share/gnome/help/ghex/es/topic.dat
+share/gnome/help/ghex/sv/index.html
+share/gnome/help/ghex/sv/topic.dat
 share/gnome/help/gshutdown/C/index.html
 share/gnome/help/gshutdown/C/topic.dat
 share/gnome/help/gshutdown/es/index.html
 share/gnome/help/gshutdown/es/topic.dat
+share/gnome/help/gshutdown/no/index.html
+share/gnome/help/gshutdown/no/topic.dat
 share/gnome/help/gstripchart/C/gstripchart.html
 share/gnome/help/gstripchart/C/index.html
 share/gnome/help/gstripchart/C/topic.dat
@@ -45,11 +49,18 @@ share/gnome/help/gtt/de/topic.dat
 share/gnome/help/gtt/es/index.html
 share/gnome/help/gtt/es/topic.dat
 share/gnome/idl/gsu.idl
+share/gnome/pixmaps/gnome-fontsel.png
 share/gnome/pixmaps/gnome-ghex.png
+share/gnome/pixmaps/gnome-searchtool.png
+share/gnome/pixmaps/gnome-stripchart.png
+share/gnome/pixmaps/gnome-who.png
+share/locale/ca/LC_MESSAGES/gnome-utils.mo
 share/locale/cs/LC_MESSAGES/gnome-utils.mo
+share/locale/da/LC_MESSAGES/gnome-utils.mo
 share/locale/de/LC_MESSAGES/gnome-utils.mo
 share/locale/en_GB/LC_MESSAGES/gnome-utils.mo
 share/locale/es/LC_MESSAGES/gnome-utils.mo
+share/locale/et/LC_MESSAGES/gnome-utils.mo
 share/locale/fi/LC_MESSAGES/gnome-utils.mo
 share/locale/fr/LC_MESSAGES/gnome-utils.mo
 share/locale/ga/LC_MESSAGES/gnome-utils.mo
@@ -58,7 +69,9 @@ share/locale/it/LC_MESSAGES/gnome-utils.mo
 share/locale/ja/LC_MESSAGES/gnome-utils.mo
 share/locale/ko/LC_MESSAGES/gnome-utils.mo
 share/locale/no/LC_MESSAGES/gnome-utils.mo
+share/locale/pl/LC_MESSAGES/gnome-utils.mo
 share/locale/pt/LC_MESSAGES/gnome-utils.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-utils.mo
 share/locale/ru/LC_MESSAGES/gnome-utils.mo
 share/locale/sv/LC_MESSAGES/gnome-utils.mo
 share/locale/wa/LC_MESSAGES/gnome-utils.mo
@@ -69,9 +82,11 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-utils.mo
 @dirrm share/gnome/help/gtt
 @dirrm share/gnome/help/gstripchart/C
 @dirrm share/gnome/help/gstripchart
+@dirrm share/gnome/help/gshutdown/no
 @dirrm share/gnome/help/gshutdown/es
 @dirrm share/gnome/help/gshutdown/C
 @dirrm share/gnome/help/gshutdown
+@dirrm share/gnome/help/ghex/sv
 @dirrm share/gnome/help/ghex/es
 @dirrm share/gnome/help/ghex/C
 @dirrm share/gnome/help/ghex
