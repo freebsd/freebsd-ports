@@ -199,6 +199,7 @@
     SUBDIR += metapixel
     SUBDIR += ming
     SUBDIR += miniscrib
+    SUBDIR += mjpegtools
     SUBDIR += mmsclient
     SUBDIR += morpheus
     SUBDIR += mpeg

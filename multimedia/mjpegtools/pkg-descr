@@ -1,0 +1,16 @@
+[ edited excerpt from developer's README ]
+
+lavtools: Linux Audio and Video TOOLS for Motion JPEG and MPEG
+==============================================================
+
+Programs for MJPEG recording and playback and simple cut-and-paste
+editting and MPEG compression of audio and video under Linux (Now
+FreeBSD).
+
+N.b. Only the "lav" programs have been written whooly from scratch.
+The rest are from diverse open source originals, modified to work
+with the lav tools edit lists and AVI and quicktime files. Some
+(especially the MPEG tools) have had also more major perfomance and
+functionality enhancements.
+
+WWW: http://mjpeg.sourceforge.net/
