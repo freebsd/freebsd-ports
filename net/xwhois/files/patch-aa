@@ -1,0 +1,40 @@
+--- Makefile.orig	Fri Jan 29 17:41:21 1999
++++ Makefile	Fri Jan 29 18:10:44 1999
+@@ -1,11 +1,12 @@
+ # Xwhois Makefile
+ 
+ prefix = /usr/local
+-XWHOIS_SERVERS = $(prefix)/lib/xwhois/xwhois.servers
++XWHOIS_SERVERS = $(prefix)/share/xwhois/xwhois.servers
+ 
+ # - Standard -
+ CC	= gcc
+-CFLAGS	= -Wall -g -O2
++CFLAGS	?= -O2
++CFLAGS	+= -Wall -g
+ OBJECTS	= xwhois.c
+ DEFINES	= -DSTD -DHAVE_SNPRINTF
+ DEFINES	+= -DXWHOIS_SERVERS=\"$(XWHOIS_SERVERS)\"
+@@ -32,14 +33,14 @@
+ 	install -s -m 755 xwhois $(prefix)/bin
+ 	mkdir -p $(prefix)/share/apps/Network
+ 	install -m 644 Xwhois.desktop $(prefix)/share/apps/Network
+-	mkdir -p $(prefix)/share/pixmaps
+-	install -m 644 xwhois.xpm $(prefix)/share/pixmaps
+-	mkdir -p $(prefix)/lib/xwhois
+-	install -m 644 xwhois.servers $(prefix)/lib/xwhois
+-	mkdir -p $(prefix)/doc/xwhois
+-	install -m 644 README $(prefix)/doc/xwhois
+-	install -m 644 COPYING $(prefix)/doc/xwhois
+-	install -m 644 ChangeLog $(prefix)/doc/xwhois
++	mkdir -p $(prefix)/share/xwhois/pixmaps
++	install -m 644 xwhois.xpm $(prefix)/share/xwhois/pixmaps
++	mkdir -p $(prefix)/share/xwhois
++	install -m 644 xwhois.servers $(prefix)/share/xwhois
++	mkdir -p $(prefix)/share/doc/xwhois
++	install -m 644 README $(prefix)/share/doc/xwhois
++	install -m 644 COPYING $(prefix)/share/doc/xwhois
++	install -m 644 ChangeLog $(prefix)/share/doc/xwhois
+ 
+ clean:
+ 	rm -f xwhois
