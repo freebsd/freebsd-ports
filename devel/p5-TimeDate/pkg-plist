@@ -1,9 +1,6 @@
-lib/perl5/man/man3/Date::Format.3.gz
-lib/perl5/man/man3/Date::Parse.3.gz
-lib/perl5/man/man3/Time::Zone.3.gz
-lib/perl5/site_perl/Date/Format.pm
-lib/perl5/site_perl/Date/Language.pm
-lib/perl5/site_perl/Date/Parse.pm
-lib/perl5/site_perl/Time/Zone.pm
-lib/perl5/site_perl/i386-freebsd/auto/TimeDate/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/TimeDate
+lib/perl5/site_perl/%%PERL_VER%%/Date/Format.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Language.pm
+lib/perl5/site_perl/%%PERL_VER%%/Date/Parse.pm
+lib/perl5/site_perl/%%PERL_VER%%/Time/Zone.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/TimeDate/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/TimeDate

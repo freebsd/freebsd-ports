@@ -1,17 +1,17 @@
-lib/perl5/site_perl/Penguin.pm
-lib/perl5/site_perl/Penguin/Channel/TCP.pm
-lib/perl5/site_perl/Penguin/Channel/TCP/Client.pm
-lib/perl5/site_perl/Penguin/Channel/TCP/Server.pm
-lib/perl5/site_perl/Penguin/Compartment.pm
-lib/perl5/site_perl/Penguin/Frame/Code.pm
-lib/perl5/site_perl/Penguin/Frame/Data.pm
-lib/perl5/site_perl/Penguin/PGP.pm
-lib/perl5/site_perl/Penguin/Rights.pm
-lib/perl5/site_perl/Penguin/Trivial/Client.pm
-lib/perl5/site_perl/Penguin/Trivial/Server.pm
-lib/perl5/site_perl/Penguin/Wrapper/PGP.pm
-lib/perl5/site_perl/Penguin/Wrapper/Transparent.pm
-lib/perl5/site_perl/i386-freebsd/auto/Penguin/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Penguin.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Channel/TCP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Channel/TCP/Client.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Channel/TCP/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Compartment.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Frame/Code.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Frame/Data.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/PGP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Rights.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Trivial/Client.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Trivial/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Wrapper/PGP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Penguin/Wrapper/Transparent.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Penguin/.packlist
 lib/perl5/site_perl/Penguin/bin/.pen
 lib/perl5/site_perl/Penguin/bin/makeapplet
 lib/perl5/site_perl/Penguin/bin/pclient
@@ -31,13 +31,14 @@ lib/perl5/site_perl/Penguin/doc/MODULE_NOTES
 lib/perl5/site_perl/Penguin/doc/README
 lib/perl5/site_perl/Penguin/doc/SECURITY
 lib/perl5/site_perl/Penguin/doc/TODO
-@dirrm lib/perl5/site_perl/Penguin/Channel/TCP
-@dirrm lib/perl5/site_perl/Penguin/Channel
-@dirrm lib/perl5/site_perl/Penguin/Frame
-@dirrm lib/perl5/site_perl/Penguin/Trivial
-@dirrm lib/perl5/site_perl/Penguin/Wrapper
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Penguin/Channel/TCP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Penguin/Channel
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Penguin/Frame
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Penguin/Trivial
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Penguin/Wrapper
+@unexec rmdir lib/perl5/site_perl/%%PERL_VER%%/Penguin 2>/dev/null || true
 @dirrm lib/perl5/site_perl/Penguin/bin
 @dirrm lib/perl5/site_perl/Penguin/misc
 @dirrm lib/perl5/site_perl/Penguin/doc
-@dirrm lib/perl5/site_perl/Penguin
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Penguin
+@unexec rmdir lib/perl5/site_perl/Penguin 2>/dev/null || true
+@unexec rmdir lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Penguin 2>/dev/null || true

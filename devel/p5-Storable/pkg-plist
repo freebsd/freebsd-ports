@@ -1,20 +1,18 @@
-lib/perl5/man/man3/Storable.3.gz
-lib/perl5/site_perl/Storable.pm
-lib/perl5/site_perl/auto/Storable/_freeze.al
-lib/perl5/site_perl/auto/Storable/_store.al
-lib/perl5/site_perl/auto/Storable/_store_fd.al
-lib/perl5/site_perl/auto/Storable/autosplit.ix
-lib/perl5/site_perl/auto/Storable/freeze.al
-lib/perl5/site_perl/auto/Storable/nfreeze.al
-lib/perl5/site_perl/auto/Storable/nstore.al
-lib/perl5/site_perl/auto/Storable/nstore_fd.al
-lib/perl5/site_perl/auto/Storable/retrieve.al
-lib/perl5/site_perl/auto/Storable/retrieve_fd.al
-lib/perl5/site_perl/auto/Storable/store.al
-lib/perl5/site_perl/auto/Storable/store_fd.al
-lib/perl5/site_perl/auto/Storable/thaw.al
-lib/perl5/site_perl/i386-freebsd/auto/Storable/Storable.bs
-lib/perl5/site_perl/i386-freebsd/auto/Storable/Storable.so
-lib/perl5/site_perl/i386-freebsd/auto/Storable/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Storable
-@dirrm lib/perl5/site_perl/auto/Storable
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Storable.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/_freeze.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/_store.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/_store_fd.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/freeze.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/nfreeze.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/nstore.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/nstore_fd.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/retrieve.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/retrieve_fd.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/store.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/store_fd.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/thaw.al
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/Storable.bs
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/Storable.so
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Storable

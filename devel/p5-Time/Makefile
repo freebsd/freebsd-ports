@@ -3,7 +3,7 @@
 # Date created:				October 12th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1997/06/24 18:43:33 jfitz Exp $
+# $Id: Makefile,v 1.8 1998/03/11 03:05:06 vanilla Exp $
 #
 
 DISTNAME=	Time-modules-97.092101
@@ -18,7 +18,7 @@ USE_PERL5=	YES
 
 MAN3=		Time::CTime.3 Time::JulianDay.3 Time::ParseDate.3 \
 		Time::Timezone.3 Time::DaysInMonth.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

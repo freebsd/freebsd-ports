@@ -1,12 +1,7 @@
-lib/perl5/man/man3/Time::CTime.3.gz
-lib/perl5/man/man3/Time::DaysInMonth.3.gz
-lib/perl5/man/man3/Time::JulianDay.3.gz
-lib/perl5/man/man3/Time::ParseDate.3.gz
-lib/perl5/man/man3/Time::Timezone.3.gz
-lib/perl5/site_perl/Time/CTime.pm
-lib/perl5/site_perl/Time/DaysInMonth.pm
-lib/perl5/site_perl/Time/JulianDay.pm
-lib/perl5/site_perl/Time/ParseDate.pm
-lib/perl5/site_perl/Time/Timezone.pm
-lib/perl5/site_perl/i386-freebsd/auto/Time-modules/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Time-modules
+lib/perl5/site_perl/%%PERL_VER%%/Time/CTime.pm
+lib/perl5/site_perl/%%PERL_VER%%/Time/DaysInMonth.pm
+lib/perl5/site_perl/%%PERL_VER%%/Time/JulianDay.pm
+lib/perl5/site_perl/%%PERL_VER%%/Time/ParseDate.pm
+lib/perl5/site_perl/%%PERL_VER%%/Time/Timezone.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Time-modules/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Time-modules

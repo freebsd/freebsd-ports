@@ -3,7 +3,7 @@
 # Date created:			Mon Sep  1 17:03:41 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.2 1997/10/04 14:53:08 andreas Exp $
+# $Id: Makefile,v 1.3 1998/03/11 03:06:20 vanilla Exp $
 #
 
 DISTNAME=	TimeDate-1.08
@@ -18,7 +18,7 @@ USE_PERL5=	YES
 
 MAN3=		Date::Format.3 Date::Parse.3 Time::Zone.3
 
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 	@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL

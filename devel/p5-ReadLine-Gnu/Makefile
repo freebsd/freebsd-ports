@@ -3,7 +3,7 @@
 # Date created:				19 February 1998
 # Whom:	      				Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.3 1998/04/22 21:35:20 mph Exp $
+# $Id: Makefile,v 1.4 1998/06/15 04:48:36 mph Exp $
 #
 
 DISTNAME=	Term-ReadLine-Gnu-1.01
@@ -17,7 +17,7 @@ MAINTAINER=	mph@freebsd.org
 USE_PERL5=	YES
 
 MAN3=		Term::ReadLine::Gnu.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 # We override LDDLFLAGS and LDFLAGS to keep it from adding -L/usr/local/lib
 # automatically.  There is sometimes an old libreadline in /usr/local/lib
