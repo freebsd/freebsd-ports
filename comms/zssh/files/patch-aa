@@ -1,0 +1,18 @@
+--- zssh.h.old	Sun Jan 27 06:49:15 2002
++++ zssh.h	Sun Jan 27 06:49:25 2002
+@@ -33,6 +33,7 @@
+ #include "config.h"
+ 
+ #ifdef STDC_HEADERS
++#include <sys/types.h>
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <errno.h>
+@@ -45,7 +46,6 @@
+ 
+ //#include <term.h> /*alpha*/
+ 
+-#include <sys/types.h>
+ #include <sys/stat.h>
+ #endif /* STDC_HEADERS */
+ 

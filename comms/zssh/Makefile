@@ -7,6 +7,7 @@
 
 PORTNAME=	zssh
 PORTVERSION=	1.5a
+PORTREVISION=	1
 CATEGORIES=	comms security
 MASTER_SITES=	http://prdownloads.sf.net/zssh/
 EXTRACT_SUFX=	.tgz
