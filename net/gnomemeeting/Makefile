@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gnomemeeting
-PORTVERSION=	0.94.1
+PORTVERSION=	0.96.0
 CATEGORIES=	net gnome
-MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.94.1/sources/
+MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.96.0/sources/
 
 MAINTAINER=	roger@FreeBSD.org
 
