@@ -1,12 +1,12 @@
 # New ports collection makefile for:   vigor
-# Version required:    0.007
+# Version required:    0.014
 # Date created:        17 Jan 2000
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	vigor-0.007
+DISTNAME=	vigor-0.014
 CATEGORIES=	editors tk82 tcl82
 MASTER_SITES=	http://www.red-bean.com:8080/
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-transform-name="s,0,1,"
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 WRKSRC= 	${WRKDIR}/${DISTNAME}/build
 CFLAGS+= 	-I${LOCALBASE}/include/tcl8.2 -I${LOCALBASE}/include/tk8.2
