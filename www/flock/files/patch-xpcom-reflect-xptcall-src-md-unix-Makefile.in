@@ -1,5 +1,5 @@
---- xpcom/reflect/xptcall/src/md/unix/Makefile.in	Thu Aug 14 21:00:23 2003
-+++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sat Dec 13 13:02:49 2003
+--- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Thu Aug 14 21:00:23 2003
++++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sun Feb  1 15:06:40 2004
 @@ -49,6 +49,9 @@
  ifeq (86,$(findstring 86,$(OS_TEST)))
  CPPSRCS		:= xptcinvoke_unixish_x86.cpp xptcstubs_unixish_x86.cpp
@@ -10,6 +10,15 @@
  endif
  #
  # New code for Linux, et. al., with gcc
+@@ -60,7 +63,7 @@
+ endif
+ endif
+ # IA64 Linux
+-ifneq (,$(filter Linux,$(OS_ARCH)))
++ifneq (,$(filter Linux FreeBSD,$(OS_ARCH)))
+ ifneq (,$(findstring ia64,$(OS_TEST)))
+ CPPSRCS		:= xptcinvoke_ipf64.cpp xptcstubs_ipf64.cpp
+ ASFILES		:= xptcstubs_asm_ipf64.s xptcinvoke_asm_ipf64.s
 @@ -106,9 +109,15 @@
  ASFILES		:= xptcinvoke_asm_osf1_alpha.s xptcstubs_asm_osf1_alpha.s
  endif
