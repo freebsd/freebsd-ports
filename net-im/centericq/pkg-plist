@@ -37,3 +37,4 @@ include/libicq2000/libicq2000/version.h
 %%NLS%%share/locale/zh_TW.Big5/LC_MESSAGES/centericq.mo
 @dirrm include/libicq2000/libicq2000
 @dirrm include/libicq2000
+@dirrm %%DATADIR%%
