@@ -14,8 +14,9 @@ DISTNAME=	scheme-${PORTVERSION}-ix86-freebsd
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-ONLY_FOR_ARCHS=	i386
+LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
 
+ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
