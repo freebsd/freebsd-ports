@@ -1522,6 +1522,7 @@ dvipdfmx	ports/print/dvipdfmx
 dvipng		ports/graphics/dvipng
 dvips		ports/print/dvips
 dvips2ascii	ports/print/dvips2ascii
+dvipsk-tetex		ports/print/dvipsk-tetex
 dviselect	ports/print/dviselect
 dvorak7min	ports/misc/dvorak7min
 dvorakng	ports/misc/dvorakng
