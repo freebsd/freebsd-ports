@@ -39,7 +39,7 @@ my (%cap);
 
 chomp($initdir = `pwd`);
 
-$cap{"MAINTAINER"} = ($ENV{"MAINTAINER"} || "ports\@freebsd.org");
+$cap{"MAINTAINER"} = ($ENV{"MAINTAINER"} || $ENV{"PKGMAINTAINER"} || "ports\@freebsd.org");
 
 getopts('n');
 
@@ -49,6 +49,7 @@ $filename = $ARGV[0];
 
 if ($filename =~ m#^(f|ht)tp\://#) {
 	print `fetch $filename`;
+	$cap{"MASTER_SITES"} = dirname($filename) . '/';
 	$filename = basename($filename);
 }
 chdir(dirname($filename));
@@ -117,6 +118,11 @@ EOF
 			print MAKEFILE "$key=\t$tmp\n";
 			delete($tmp{$key});
 		}
+	}
+
+	if ($tmp{"MASTER_SITES"}) {
+		print MAKEFILE "MASTER_SITES= 	". $tmp{"MASTER_SITES"} . "\n\n";
+		delete($tmp{"MASTER_SITES"});
 	}
 
 	print MAKEFILE "\nMAINTAINER=\t" . $tmp{"MAINTAINER"} . "\n\n";
