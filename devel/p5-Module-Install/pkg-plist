@@ -1,0 +1,37 @@
+%%SITE_PERL%%/Module/Install.pm
+%%SITE_PERL%%/Module/Install-Cookbook.pod
+%%SITE_PERL%%/Module/Install-Philosophy.pod
+%%SITE_PERL%%/Module/Install/Metadata.pm
+%%SITE_PERL%%/Module/Install/Build.pm
+%%SITE_PERL%%/Module/Install/AutoInstall.pm
+%%SITE_PERL%%/Module/Install/Makefile.pm
+%%SITE_PERL%%/Module/Install/Bundle.pm
+%%SITE_PERL%%/Module/Install/Run.pm
+%%SITE_PERL%%/Module/Install/WriteAll.pm
+%%SITE_PERL%%/Module/Install/Include.pm
+%%SITE_PERL%%/Module/Install/Scripts.pm
+%%SITE_PERL%%/Module/Install/Admin.pm
+%%SITE_PERL%%/Module/Install/Can.pm
+%%SITE_PERL%%/Module/Install/PAR.pm
+%%SITE_PERL%%/Module/Install/Win32.pm
+%%SITE_PERL%%/Module/Install/Fetch.pm
+%%SITE_PERL%%/Module/Install/Base.pm
+%%SITE_PERL%%/Module/Install/MakeMaker.pm
+%%SITE_PERL%%/Module/Install/Inline.pm
+%%SITE_PERL%%/Module/Install/Admin/Bundle.pm
+%%SITE_PERL%%/Module/Install/Admin/WriteAll.pm
+%%SITE_PERL%%/Module/Install/Admin/Include.pm
+%%SITE_PERL%%/Module/Install/Admin/Makefile.pm
+%%SITE_PERL%%/Module/Install/Admin/Manifest.pm
+%%SITE_PERL%%/Module/Install/Admin/Metadata.pm
+%%SITE_PERL%%/Module/Install/Admin/ScanDeps.pm
+%%SITE_PERL%%/Module/Install/Admin/Find.pm
+%%SITE_PERL%%/Module/Install/Makefile/Version.pm
+%%SITE_PERL%%/Module/Install/Makefile/Name.pm
+%%SITE_PERL%%/inc/Module/Install.pm
+@dirrm %%SITE_PERL%%/Module/Install/Makefile
+@dirrm %%SITE_PERL%%/Module/Install/Admin
+@dirrm %%SITE_PERL%%/Module/Install
+@dirrm %%SITE_PERL%%/inc/Module
+@unexec rmdir %D/%%SITE_PERL%%/inc 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Module 2>/dev/null || true
