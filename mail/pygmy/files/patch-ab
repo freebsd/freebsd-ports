@@ -1,11 +1,14 @@
---- msg.py.orig	Tue Aug 29 14:59:10 2000
-+++ msg.py	Wed Aug 30 10:05:33 2000
-@@ -55,7 +55,7 @@
-        
- 	# Font styles
-         self.bold_font = load_font('-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1')
--        self.normal_font = load_font('-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1')
-+        self.normal_font = load_font('-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1')
-        
-         # Make a separate window to play in
-         self.vbox = GtkVBox()
+
+$FreeBSD$
+
+--- msg.py.orig	Mon Apr  2 13:51:06 2001
++++ msg.py	Tue Apr  3 14:13:46 2001
+@@ -13,7 +13,7 @@
+ 
+ ## Fonts
+ BOLD_FONT = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+-NORMAL_FONT = '-*-helvetica-medium-r-normal--12-120-75-75-p-70-iso8859-1'
++NORMAL_FONT = '-*-helvetica-bold-r-normal--12-120-75-75-p-70-iso8859-1'
+ 
+ ## Error messages from the GUI
+ err1 = """Error opening destination file"""
