@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	Log-Dispatch
-PORTVERSION=	2.01
+PORTVERSION=	2.03
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	A suite of OO modules for logging messages to multiple outputs
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_SUBMAKE=	yes
@@ -33,7 +34,6 @@ MAN3=	Log::Dispatch.3 \
 	Log::Dispatch::Output.3 \
 	Log::Dispatch::Screen.3 \
 	Log::Dispatch::Syslog.3
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 SCRIPTS_ENV+=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		MKDIR="${MKDIR}" \
