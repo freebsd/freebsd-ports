@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jlint
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	java
 MASTER_SITES=	http://artho.com/jlint/ \
 		http://jollem.com/~ernst/
@@ -15,8 +15,6 @@ MAINTAINER=	ernst@jollem.com
 
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 TARGET_DIR?=	${PREFIX}/bin
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
