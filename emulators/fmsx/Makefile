@@ -8,7 +8,8 @@
 PORTNAME=	fmsx
 PORTVERSION=	2.7
 CATEGORIES=	emulators
-MASTER_SITES=	http://fms.komkon.org/fMSX/
+MASTER_SITES=	http://www.mavetju.org/download/adopted/ \
+		http://fms.komkon.org/fMSX/
 DISTNAME=	fMSX27
 EXTRACT_SUFX=	.tar.Z
 
@@ -17,8 +18,6 @@ COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
-
-BROKEN=		"Distfile is unfetchable"
 
 USE_XLIB=	yes
 RESTRICTED=	Legal status of distributed ROM images unclear
