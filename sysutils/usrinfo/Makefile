@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	usrinfo
-PORTVERSION=	.09
+PORTVERSION=	.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -15,7 +15,6 @@ MAINTAINER?=	aaron@snaphat.com
 COMMENT=	Displays information about a user using either "<br>" or "\n" breaks
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 
 PLIST_FILES=	bin/usrinfo
 
