@@ -3,7 +3,7 @@
 # Date created:		Nov 28 ,1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
-# $Id: Makefile,v 1.3 1997/12/19 19:29:30 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/02/13 17:26:10 vanilla Exp $
 #
 
 DISTNAME=       xcin-2.3.02
@@ -15,6 +15,8 @@ MASTER_SITES=   ftp://ftp.ncu.edu.tw/OS/linux/chinese/xcin/ \
 MAINTAINER=     yssu@CCCA.NCTU.edu.tw
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/chinese/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts
+
+BROKEN=		fetch
 
 USE_X11=	yes
 HAS_CONFIGURE=	yes
