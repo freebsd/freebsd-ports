@@ -1,16 +1,16 @@
 # New ports collection makefile for:	wmbutton
 # Version required:		0.4
 # Date created:			10 Apr 1999
-# Whom:				Jim Mock <jim@phrantic.phear.net>
+# Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/11 12:53:10 jseger Exp $
 #
 
 DISTNAME=	wmbutton-0.4
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www-personal.ksu.edu/~ehflora/wmbutton/
 
-MAINTAINER=	jim@phrantic.phear.net
+MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
@@ -23,19 +23,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmbutton ${PREFIX}/bin
 
 post-install:
-	@${ECHO} "		"
-	@${ECHO} "----------------------------------------------------------------------"
-	@${ECHO} "===> Installing .wmbutton as ${PREFIX}/share/examples/wmbutton/wmbutton"
-	@${ECHO} "===> Modify if you wish and copy to ~/.wmbutton"
-	@${ECHO} "----------------------------------------------------------------------"
+	@${ECHO} "===>   Installing .wmbutton as ${PREFIX}/share/examples/wmbutton/wmbutton"
+	@${ECHO} "===>   Modify if you wish and copy to ~/.wmbutton"
 	@${MKDIR} ${PREFIX}/share/examples/wmbutton && chmod a+rx ${PREFIX}/share/examples/wmbutton
-	${INSTALL_DATA} ${WRKSRC}/.wmbutton ${PREFIX}/share/examples/wmbutton/wmbutton
-	@${ECHO} "		"
-	@${ECHO} "-----------------------------------------------------------"
-	@${ECHO} "===> Installing README in ${PREFIX}/share/doc/wmbutton"
-	@${ECHO} "===> Please read it for usage instructions"
-	@${ECHO} "-----------------------------------------------------------"
+	#${INSTALL_DATA} ${WRKSRC}/.wmbutton ${PREFIX}/share/examples/wmbutton/wmbutton
+	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/wmbutton"
+	@${ECHO} "===>   Please read it for usage instructions"
 	@${MKDIR} ${PREFIX}/share/doc/wmbutton && chmod a+rx ${PREFIX}/share/doc/wmbutton
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmbutton
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmbutton
 
 .include <bsd.port.mk>
