@@ -1,4 +1,4 @@
-libexec/%%APACHE%%/mod_security.%%SO%%
+libexec/%%APACHE%%/mod_security.so
 @exec %D/sbin/apxs -e -a -n security %D/%F
 @unexec %D/sbin/apxs -e -A -n security %D/%F
 %%PORTDOCS%%share/doc/mod_security/CHANGES
