@@ -1,0 +1,49 @@
+--- portell.py.orig	Mon Oct 22 07:18:32 2001
++++ portell.py	Mon Aug  4 16:34:27 2003
+@@ -11,8 +11,10 @@
+ 
+ try:
+ 	PORTELL_DB = os.environ['PORTELL_PATH']
++	PORTELL_DB_FILE = PORTELL_DB + ".db"
+ except KeyError:
+-	PORTELL_DB = "/var/db/portell.db"
++	PORTELL_DB = "/var/db/portell"
++	PORTELL_DB_FILE = "/var/db/portell.db"
+ 
+ PORTS_DIR = "/usr/ports/"
+ 
+@@ -23,13 +25,13 @@
+ 
+ 
+ def update_db():
+-	if os.access(PORTELL_DB, os.F_OK):
+-		os.unlink(PORTELL_DB) 
++	if os.access(PORTELL_DB_FILE, os.F_OK):
++		os.unlink(PORTELL_DB_FILE) 
+ 	try:
+-		d = shelve.open(PORTELL_DB)
+-		os.chmod(PORTELL_DB, 0666) 
++		d = shelve.open(PORTELL_DB_FILE)
++		os.chmod(PORTELL_DB_FILE, 0666) 
+ 	except:
+-		print "can't read or write %s. are you root?" % PORTELL_DB
++		print "can't read or write %s. are you root?" % PORTELL_DB_FILE
+ 		sys.exit(0)
+ 	os.path.walk(PORTS_DIR, write_pathname, d)
+ 	d.close()
+@@ -46,12 +48,12 @@
+ 	else:
+ 		portname = sys.argv[1]
+ 
+-	if not os.access(PORTELL_DB, os.F_OK):
+-		print >> sys.stderr, "you need to create %s first." % PORTELL_DB
++	if not os.access(PORTELL_DB_FILE, os.F_OK):
++		print >> sys.stderr, "you need to create %s first." % PORTELL_DB_FILE
+ 		print >> sys.stderr, "type: %s -u" % sys.argv[0]
+ 		sys.exit(0)
+ 
+-	d = shelve.open(PORTELL_DB)
++	d = shelve.open(PORTELL_DB_FILE)
+ 
+ 	if d.has_key(portname): 
+ 		descr_path = d[portname] + "/pkg-descr"
