@@ -5,8 +5,7 @@
 #
 # $FreeBSD$
 #
-
-SNAPDATE=2004-01-05
+SNAPDATE=2004-01-12
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.3
@@ -46,6 +45,10 @@ CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == sparc64
+BROKEN=	"libgcj is not supported/packaging is broken on this platform"
+.endif
 
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 
@@ -136,7 +139,7 @@ post-install:
 	  ${ECHO_CMD} 'echo "Not supported by GCC on this platform."' \
 		>> ${PREFIX}/bin/${f} ; \
 	  ${CHMOD} a+x ${PREFIX}/bin/${f}; \
-	fi 
+	fi
 	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}33
 	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
@@ -166,12 +169,12 @@ post-install:
 	    done
 	# Handle target libraries and GCJ include files.
 	${RM} -f ${WRKDIR}/PLIST.lib
-.for inc in ${TARGLIB} include/gcj include/gnu include/java include/javax
-	cd ${PREFIX} ;\
-	    ${FIND} ${inc:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>>${WRKDIR}/PLIST.lib ;\
-	    ${FIND} ${inc:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib
+.for d in ${TARGLIB:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
+	cd ${PREFIX} ; if [ -d $d ]; then \
+	    ${FIND} $d -type f -o -type l >>${WRKDIR}/PLIST.lib ;\
+	    ${FIND} $d -type d | sort -r \
+	        | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib ;\
+	fi
 .endfor
 	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
