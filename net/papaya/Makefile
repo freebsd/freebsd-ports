@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	papaya
-PORTVERSION=	0.90
+PORTVERSION=	0.96
 CATEGORIES=	net
 MASTER_SITES=	http://www.gtk-papaya.org/downloads/source/
 DISTNAME=	papaya-src-${PORTVERSION}
@@ -14,17 +14,18 @@ DISTNAME=	papaya-src-${PORTVERSION}
 MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	Graphical GTK mud client with plugin support
 
+BUILD_DEPENDS=	${LOCALBASE}/include/pygtk-2.0/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk2
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 WANT_GNOME=	yes
+USE_AUTOCONF=	yes
 USE_PERL5_BUILD=yes
+USE_PYTHON=	yes
+USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
 
 .if ${HAVE_GNOME:Mgnomelibs}!=""
 USE_GNOME+=	gnomeprefix gnomehack gnomelibs
@@ -33,16 +34,7 @@ CONFIGURE_ARGS+=	--disable-gnome
 .endif
 
 CONFIGURE_ENV+=	GLIBCONFIG=${GLIB_CONFIG} GTKCONFIG=${GTK_CONFIG}
+CONFIGURE_ARGS=	--with-interface=gtk2 --enable-plugins=no
 MAKE_ARGS+=	PTHREAD_LIBS=${PTHREAD_LIBS} CXX="${CXX}"
-
-post-patch:
-	@${PERL} -pi -e "s|/usr/local|${PREFIX}|"  \
-		${WRKSRC}/src/install-system.sh
-	@${PERL} -pi -e "s|\@INSTALL\@|${INSTALL_PROGRAM}|g; \
-		s|\@INSTALL_DATA\@|${INSTALL_DATA}|g" \
-		${WRKSRC}/src/install-system.sh ${WRKSRC}/po/Makefile.in.in
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

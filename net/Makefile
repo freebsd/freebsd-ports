@@ -539,7 +539,6 @@
     SUBDIR += packit
     SUBDIR += pancho
     SUBDIR += papaya
-    SUBDIR += papaya-plugins
     SUBDIR += partysip
     SUBDIR += passlogd
     SUBDIR += pathchar

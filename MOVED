@@ -746,3 +746,4 @@ textproc/xhtml-1.1|textproc/xhtml-11|2004-01-07|Renamed to fit naming convention
 textproc/rtf2htm||2004-01-09|renamed to unrtf, which already exists
 net/everybuddy|net/ayttm|2004-01-09|renamed port to ayttm
 sysutils/xw||2004-01-10|Project dead and disappeared
+net/papaya-plugins||2004-01-10|Integrated in net/papaya

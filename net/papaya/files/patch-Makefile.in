@@ -1,25 +1,11 @@
-$FreeBSD$
-
---- Makefile.in.orig	Mon Dec 17 22:13:42 2001
-+++ Makefile.in	Mon Dec 17 22:14:04 2001
-@@ -6,17 +6,17 @@
+--- Makefile.in.orig	Fri Jan  9 15:38:23 2004
++++ Makefile.in	Fri Jan  9 15:38:28 2004
+@@ -1,7 +1,7 @@
+ PACKAGE = @PACKAGE@
+ VERSION = @VERSION@
  
- all:
- 	for subdir in $(SUBDIRS); do \
--	  make -C $$subdir; \
-+	  ${MAKE} -C $$subdir; \
- 	done
+-SUBDIRS = src doc @INTLSUB@ @POSUB@
++SUBDIRS = src @INTLSUB@ @POSUB@
+ distdir = $(PACKAGE)-$(VERSION)
  
- clean:
- 	for subdir in $(SUBDIRS); do \
--	  make -C $$subdir clean; \
-+	  ${MAKE} -C $$subdir clean; \
- 	done
- 
- install:
- 	for subdir in $(SUBDIRS); do \
--	  make -C $$subdir install; \
-+	  ${MAKE} -C $$subdir install; \
- 	done
- 
- dist: Makefile
+ PREFIX = @prefix@
