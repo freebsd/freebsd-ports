@@ -3,5 +3,9 @@ including the new Basis library with a few minor omissions and discrepancies.
 
 See also:    http://cm.bell-labs.com/cm/cs/what/smlnj/index.html
 
+This port installs most parts of the ML system by default.  If you are 
+interested in a lighter implementation of ML, the Moscow-ML port is 
+recommended.
+
 - Joseph Koshy
   <jkoshy@freebsd.org>
