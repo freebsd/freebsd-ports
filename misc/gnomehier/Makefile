@@ -7,7 +7,7 @@
 
 PORTNAME=	gnomehier
 PORTVERSION=	1.0
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	misc gnome
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -29,10 +29,6 @@ pre-install:
 	@${TOUCH} -f ${PLIST}
 	@${CAT} ${FILESDIR}/dirlist | ${SORT} | ${SED} -e \
 		's|$$|/.keep_me|' >> ${PLIST}
-	@${ECHO_CMD} "etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml" \
-		>> ${PLIST}
-	@${ECHO_CMD} "etc/gconf/gconf.xml.defaults/apps/%gconf.xml" \
-		>> ${PLIST}
 	@${CAT} ${FILESDIR}/dirlist | ${SORT} -r | ${SED} -e \
 		's|^|@dirrm |' >> ${PLIST}
 
@@ -42,8 +38,6 @@ do-install:
 		${MKDIR} ${PREFIX}/$${dir}; \
 		${TOUCH} ${PREFIX}/$${dir}/.keep_me; \
 	done
-	${TOUCH} -f ${PREFIX}/etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
-	${TOUCH} -f ${PREFIX}/etc/gconf/gconf.xml.defaults/apps/%gconf.xml
 	${CHGRP} games ${PREFIX}/share/gnome/games
 	${CHMOD} g=rwXs ${PREFIX}/share/gnome/games
 
