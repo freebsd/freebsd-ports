@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	charm
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	deskutils net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ljcharm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	seawolf@marinewolf.net
 COMMENT=	A menu-driven python-based livejournal client
 
 USE_PYTHON=	yes
