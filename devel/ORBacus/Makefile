@@ -6,24 +6,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	OB-3.1.3
-PKGNAME=	ORBacus-3.1.3
+DISTNAME=	OB-3.2.1
+PKGNAME=	ORBacus-3.2.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.1/
+MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.2
 
 MAINTAINER=	ejc@bazzle.com
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400004
-LIBSTDC=	/usr/lib/libstdc++.a
-.else
-.if ${PORTOBJFORMAT} == "elf"
-LIBSTDC=	${PREFIX}/lib/gcc-lib/${ARCH}-portbld-freebsd${OSREL}/2.95.1/libstdc++.a
-.else
-LIBSTDC=	${PREFIX}/lib/gcc-lib/${ARCH}-portbld-freebsdaout${OSREL}/2.95.1/libstdc++.a
-.endif
-.endif
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
@@ -38,4 +26,4 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/ORBacus
 	${INSTALL_DATA} ${WRKSRC}/ob/LICENSE ${PREFIX}/share/doc/ORBacus
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
