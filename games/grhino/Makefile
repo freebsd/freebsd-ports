@@ -17,7 +17,7 @@ COMMENT=	GRhino Othello/Reversi Program
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gtk20 gnomeprefix
+USE_GNOME=	gtk20 gnomeprefix gnomelibs
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
