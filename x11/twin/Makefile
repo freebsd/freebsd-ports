@@ -9,7 +9,9 @@
 PORTNAME=	twin
 PORTVERSION=	0.4.4
 CATEGORIES=	x11
-MASTER_SITES=	http://linuz.sns.it/~max/twin/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://linuz.sns.it/~max/twin/
+MASTER_SITE_SUBDIR=	twin
 
 MAINTAINER=	ports@FreeBSD.org
 
