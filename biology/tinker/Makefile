@@ -3,7 +3,7 @@
 # Date Created:                26 August 1998
 # Whom:                        Glenn Johnson
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/17 04:53:17 jkoshy Exp $
 #
 
 DISTNAME=      tinker
@@ -15,9 +15,10 @@ MAINTAINER=    gjohnson@nola.srrc.usda.gov
 
 LIB_DEPENDS=	U77:${PORTSDIR}/devel/libU77
 
-# If you have EGCS installed you can uncomment the following
-# line and comment out the LIB_DEPENDS line above
+# If you have EGCS installed and wish to use it, do the following:
+# a) comment out the LIB_DEPENDS line above and uncomment the following line
 #BUILD_DEPENDS=	g77:${PORTSDIR}/lang/egcs
+# b) set env variable 'FC' to 'g77' before running `make'
 
 .include <bsd.port.pre.mk>
 
