@@ -1,0 +1,16 @@
+--- src/Makefile.in	2000/11/15 11:26:07	1.1
++++ src/Makefile.in	2000/11/15 11:26:24
+@@ -119,11 +119,11 @@
+ fidelio_SOURCES =  	bookmarks.c bookmarks.h 	chat.c chat.h 	files.c files.h 	filelist.c filelist.h 	filetransfer.c filetransfer.h 	guiprefs.c guiprefs.h 	guiutils.c guiutils.h 	hldat.c hldat.h hotline.h 	login.c login.h 	main.c main.h 	network.c network.h 	news.c news.h 	news15.c news15.h 	pixmap.c pixmap.h 	privchat.c privchat.h 	privs.c privs.h 	protocol.c protocol.h         server.c server.h 	smalltrans.c smalltrans.h 	tasks.c tasks.h 	threads.c threads.h 	trackers.c 	users.c users.h         userlist.c userlist.h 	userwidget.c userwidget.h
+ 
+ 
+-fidelio_LDADD = -lgthread
++fidelio_LDADD = 
+ 
+ hlforw_SOURCES = hlforw.c threads.c protocol.c network.c tasks.c guiprefs.c hldat.c pixmap.c
+ 
+-hlforw_LDADD = -lgthread
++hlforw_LDADD = 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 

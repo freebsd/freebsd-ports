@@ -1,0 +1,6 @@
+bin/fidelio
+share/gnome/fidelio.default
+share/locale/el/LC_MESSAGES/fidelio.mo
+share/locale/fr/LC_MESSAGES/fidelio.mo
+share/locale/it/LC_MESSAGES/fidelio.mo
+share/locale/pt_BR/LC_MESSAGES/fidelio.mo
