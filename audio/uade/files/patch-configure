@@ -1,5 +1,8 @@
---- configure.orig	Sat Oct 30 17:59:24 2004
-+++ configure	Sun Oct 31 13:33:21 2004
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
 @@ -198,8 +198,6 @@
  	--x-includes=*)
  		;;
@@ -9,3 +12,12 @@
  		;;
  	esac
  done
+@@ -411,7 +409,7 @@
+ 	docdir="$prefix/share/doc/uade-$VERSION"
+     fi
+     if test -z "$mandir"; then
+-	mandir="$prefix/share/man/man1"
++	mandir="$prefix/man/man1"
+     fi
+ else
+     # user installation
