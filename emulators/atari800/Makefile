@@ -74,7 +74,7 @@ post-install:
 	for file in ${DOC_FILES} ; do \
 		${INSTALL_DATA} ${WRKSRC}/$$file ${ATARI_DOC}/ ;\
 	done
-	${INSTALL_DATA} ${PKGDIR}/DESCR ${ATARI_DOC}/README.FreeBSD
+	${INSTALL_DATA} ${DESCR} ${ATARI_DOC}/README.FreeBSD
 .endif
 
 .include <bsd.port.mk>

@@ -53,7 +53,7 @@ post-build:
 
 do-install:
 	@-${MV} ${PREFIX}/dgd/bin/driver.net ${PREFIX}/dgd/bin/driver.net.old
-	@tar -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PKGDIR}/PLIST` \
+	@tar -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PLIST}` \
 		| tar -C ${PREFIX} -xpf -
 
 .include <bsd.port.mk>

@@ -8,6 +8,6 @@
 CANNA=		yes
 
 MASTERDIR=	${.CURDIR}/../jvim3
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 .include "${MASTERDIR}/Makefile"

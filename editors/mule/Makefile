@@ -144,8 +144,8 @@ pre-install:
 post-install:
 	strip ${PREFIX}/bin/${EMACS_EXECUTABLE}-${EMACS_VERSION}
 # for freewnn+sj3 or wnn6+sj3
-	@if [ -e ${PKGDIR}/INSTALL ]; then \
-		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL; \
+	@if [ -e ${PKGINSTALL} ]; then \
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; \
 	fi
 # Installing site-start.el
 #   (we redefun set-korean-environment etc)

@@ -38,7 +38,7 @@ post-install:
 .endif
 	${INSTALL_SCRIPT} ${WRKSRC}/nntpcached.sh \
 		${PREFIX}/etc/rc.d/nntpcached.sh.sample
-	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGDIR}/MESSAGE
+	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGMESSAGE}
 
 hardlink-pgp-files:
 	for i in ${PREFIX}/etc/nntpcache/*asc-dist ${PREFIX}/etc/nntpcache/*pgp-dist ; do \

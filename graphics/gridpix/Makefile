@@ -27,7 +27,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/gridpix
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gridpix
 	@${ECHO} "================================"
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO} "================================"
 
 .include <bsd.port.mk>

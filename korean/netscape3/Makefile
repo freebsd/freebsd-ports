@@ -57,6 +57,6 @@ do-install:
 # by sada@e-mail.ne.jp
 
 post-install:
-	@${CAT} ${PKGDIR}/DESCR
+	@${CAT} ${DESCR}
 
 .include <bsd.port.mk>

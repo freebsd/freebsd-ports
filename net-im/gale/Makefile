@@ -25,6 +25,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" INSTALL=""
 
 post-install:
-	${CAT} ${PKGDIR}/MESSAGE
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -25,7 +25,7 @@ USE_XLIB=	yes
 
 NO_CDROM=	Possible copyright infringement
 
-PKGDIR?=	${.CURDIR}/pkg
+PKGDIR?=	${.CURDIR}
 WRKSRC=		${WRKDIR}/ZAngband
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 PLIST=		${WRKDIR}/PLIST

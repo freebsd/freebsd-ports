@@ -29,7 +29,7 @@ post-install:
 .for f in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/$f ${PREFIX}/share/doc/cdrom2
 .endfor
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>

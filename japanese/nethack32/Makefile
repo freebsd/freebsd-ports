@@ -55,6 +55,6 @@ post-install:
 	${RM} ${PREFIX}/share/examples/ja/nethack/$i.bdf
 	${GZIP_CMD} ${PREFIX}/share/examples/ja/nethack/$i.pcf
 .endfor
-	${CAT} ${PKGDIR}/MESSAGE
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

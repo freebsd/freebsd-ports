@@ -39,6 +39,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm \
 		${PREFIX}/lib/X11/fvwm2/pixmaps
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -27,6 +27,6 @@ do-install:
 	${CHMOD} 644 ${PREFIX}/lib/X11/fonts/sharefont/*
 
 post-install:
-	@${CAT} ${PKGDIR}/DESCR
+	@${CAT} ${DESCR}
 
 .include <bsd.port.mk>

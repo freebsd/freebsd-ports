@@ -26,6 +26,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/doc/cweb
 	@${INSTALL_DATA} ${WRKDIR}/cwebman.tex ${PREFIX}/share/doc/cweb
 .endif
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

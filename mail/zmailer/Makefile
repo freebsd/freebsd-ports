@@ -60,7 +60,7 @@ PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 post-configure:
 	${SED} -e s:@PREFIX@:${PREFIX}:g -e s:@PORTSDIR@:${PORTSDIR}:g \
-		${PKGDIR}/MESSAGE > ${PKGMESSAGE}
+		${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 	@${INSTALL_SCRIPT} ${FILESDIR}/zmailer.sh.sample \

@@ -22,6 +22,6 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/mozilla-fonts
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/mozilla-fonts
 .endif
-	@ ${CAT} ${PKGDIR}/DESCR
+	@ ${CAT} ${DESCR}
 
 .include <bsd.port.mk>

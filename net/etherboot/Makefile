@@ -32,7 +32,7 @@ pre-build:
 	make
 
 do-install:
-	@${ECHO} Refer ${PKGDIR}/DESCR and ${WRKDIR}/${PKGNAME}/doc for how to
+	@${ECHO} Refer ${DESCR} and ${WRKDIR}/${PKGNAME}/doc for how to
 	@${ECHO} build and install the rom/floppy image.
 	@exit 1
 

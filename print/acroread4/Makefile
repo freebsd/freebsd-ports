@@ -44,7 +44,7 @@ pre-configure:
 	@${PERL} -pi.fbsd -e 's:Linux\):FreeBSD|Linux):g' ${WRKSRC}/INSTALL
 .elif ${ARCH} == "alpha"
 	@${PERL} -pi.fbsd -e 's:OSF1\):FreeBSD|OSF1):g' ${WRKSRC}/INSTALL
-	${SED} -e 's/@comment ALPHA-ONLY://g' ${PKGDIR}/PLIST > ${PLIST}
+	${SED} -e 's/@comment ALPHA-ONLY://g' ${PKGDIR}/pkg-plist > ${PLIST}
 .endif
 
 do-build:

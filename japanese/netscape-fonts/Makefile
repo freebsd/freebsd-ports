@@ -30,6 +30,6 @@ NO_BUILD=	yes
 
 do-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		/usr/bin/perl ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+		/usr/bin/perl ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

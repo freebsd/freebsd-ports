@@ -29,7 +29,7 @@ do-install:
 	cd ${WRKDIR}/${DISTNAME}/biffer_comsat && ${MAKE} ${MFLAGS} install
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} \
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} \
 	    POST-INSTALL
 
 .include <bsd.port.mk>

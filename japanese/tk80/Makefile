@@ -57,7 +57,7 @@ post-install:
 	${LN} -sf libtk80jp.so.1.5 ${PREFIX}/lib/libtk80jp.so
 	${RANLIB} ${PREFIX}/lib/libtk80jp.so
 .endif
-	@${CAT}	${PKGDIR}/MESSAGE
+	@${CAT}	${PKGMESSAGE}
 
 test:
 	cd ${WRKSRC} && ${SETENV} PORTOBJFORMAT=${PORTOBJFORMAT} ${MAKE} test

@@ -45,6 +45,6 @@ do-install:
 		${INSTALL_DATA} $${FILE} ${PREFIX}/uox3/docs ;\
 	done
 .endif
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

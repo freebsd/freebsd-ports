@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-im
 RUN_DEPENDS=	imput:${PORTSDIR}/mail/im
 
 MASTERDIR=	${.CURDIR}/../mnews
-COMMENT=	${.CURDIR}/pkg/COMMENT
+COMMENT=	${.CURDIR}/pkg-comment
 
 GNSPOOL=	0
 IMPUT=		1

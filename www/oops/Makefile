@@ -22,12 +22,12 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/sbin \
 		--enable-oops-user=oops
 
 pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 .include <bsd.port.pre.mk>
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@ ${ECHO} "------------------------------------------------------------"
 	@ ${ECHO} "Sample of configuration file placed at ${PREFIX}/etc/oops !"
 	@ ${ECHO} "Copy oops.cfg.sample to oops.cfg, then run server..."

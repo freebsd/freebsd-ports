@@ -10,7 +10,7 @@ CATALOGNAME=	rishu
 MAINTAINER=	issei@jp.FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../tcsh-nls-generic
-PKGDIR=		${.CURDIR}/pkg
-PLIST=		${MASTERDIR}/pkg/PLIST
+PKGDIR=		${.CURDIR}
+PLIST=		${MASTERDIR}/pkg-plist
 
 .include	"${MASTERDIR}/Makefile"

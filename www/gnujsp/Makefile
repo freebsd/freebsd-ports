@@ -36,7 +36,7 @@ do-install:
 .endif
 
 post-install:
-		@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGDIR}/MESSAGE > ${PKGMESSAGE}
+		@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386
 USE_XLIB=	yes
 NO_LATEST_LINK=	yes
 NO_WRKSUBDIR=	yes
-PKGREQ=		${PORTSDIR}/www/netscape4-communicator/pkg/REQ.aout
+PKGREQ=		${PORTSDIR}/www/netscape4-communicator/pkg-req.aout
 
 .if defined(WITH_128BIT)
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
@@ -48,6 +48,6 @@ post-install:
 	&& (${ECHO}; ${ECHO} yes; ${ECHO} no; ${ECHO} no) \
 	| ./Fortify.sh ${PREFIX}/lib/netscape/netscape.bin
 .endif
-	@${CAT} ${PKGDIR}/DESCR
+	@${CAT} ${DESCR}
 
 .include <bsd.port.mk>

@@ -27,6 +27,6 @@ CONFIGURE_ARGS=	--enable-static=yes \
 		--without-gnome
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

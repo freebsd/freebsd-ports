@@ -29,6 +29,6 @@ do-install:
 .endif
 
 post-install:
-	${SED} -e 's#/usr/local#${PREFIX}#' ${PKGDIR}/MESSAGE
+	${SED} -e 's#/usr/local#${PREFIX}#' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

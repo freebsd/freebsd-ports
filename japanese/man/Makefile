@@ -27,6 +27,6 @@ MANCOMPRESSED=	yes
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 .include <bsd.port.mk>

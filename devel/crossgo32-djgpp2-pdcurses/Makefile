@@ -52,7 +52,7 @@ do-install:
 	${INSTALL_DATA} ${PDDOC}/basics/intro.man ${DOCDIR}/intro.txt
 	${INSTALL_DATA} ${PDDOC}/basics/overview.man ${DOCDIR}/overview.txt
 	${INSTALL_DATA} ${PDDOC}/basics/xwindows.man ${DOCDIR}/xwindows.txt
-	${INSTALL_DATA} ${PKGDIR}/DESCR ${DOCDIR}/README.FreeBSD
+	${INSTALL_DATA} ${DESCR} ${DOCDIR}/README.FreeBSD
 .endif
 
 .include <bsd.port.mk>

@@ -34,6 +34,6 @@ MAN5=		transpec.5
 MANCOMPRESSED=	yes
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

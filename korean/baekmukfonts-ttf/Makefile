@@ -41,6 +41,6 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTDIR}/fonts.dir.baekmuk
 	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${FONTDIR}/fonts.alias.baekmuk
 	${INSTALL_DATA} ${FILESDIR}/hconfig.ps ${FONTDIR}/hconfig.ps.baekmuk
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

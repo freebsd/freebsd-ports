@@ -12,8 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 JAPANESE_EXMH=	yes
 
 MASTERDIR=	${.CURDIR}/../../mail/exmh2
-COMMENT=	${.CURDIR}/pkg/COMMENT
-DESCR=		${.CURDIR}/pkg/DESCR
+COMMENT=	${.CURDIR}/pkg-comment
+DESCR=		${.CURDIR}/pkg-descr
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 
 .include	"${MASTERDIR}/Makefile"

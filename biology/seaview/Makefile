@@ -28,6 +28,6 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/seaview.help ${PREFIX}/lib/X11/seaview
 
 post-install:
-	@ ${CAT} ${PKGDIR}/DESCR
+	@ ${CAT} ${DESCR}
 
 .include <bsd.port.mk>

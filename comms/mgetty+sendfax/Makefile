@@ -38,7 +38,7 @@ pre-install:
 
 .if !defined(BATCH)
 post-install:
-	@(cd ${PKGDIR}; export PKG_PREFIX=${PREFIX}; ${PERL5} INSTALL _ POST-INSTALL)
+	@(cd ${PKGDIR}; export PKG_PREFIX=${PREFIX}; ${PERL5} ${PKGINSTALL} _ POST-INSTALL)
 .endif
 
 .include <bsd.port.mk>

@@ -50,7 +50,7 @@ do-build:
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${X11BASE} \
-		${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 do-install:
 	@(cd ${WRKSRC}; \

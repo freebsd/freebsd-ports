@@ -38,6 +38,6 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${RULE} ${DIR}/rule
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -10,6 +10,6 @@ SJ3=		yes
 FREEWNN=	yes
 
 MASTERDIR=	${.CURDIR}/../kinput2-freewnn/
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 .include "${MASTERDIR}/Makefile"

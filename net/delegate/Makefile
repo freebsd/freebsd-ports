@@ -51,6 +51,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/Manual.htm \
 	  ${PREFIX}/share/doc/delegate
 .endif
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

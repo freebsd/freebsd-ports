@@ -26,6 +26,6 @@ MAN1=			atp.1 \
 MAN3=			editline.3
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

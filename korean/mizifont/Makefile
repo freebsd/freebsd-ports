@@ -54,6 +54,6 @@ do-install:
 	cd ${PREFIX}/lib/X11/fonts/local/ ; mkfontdir
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

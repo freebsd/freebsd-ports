@@ -18,6 +18,6 @@ MAN1=		xmitBin.1
 NO_WRKSUBDIR=	YES
 
 post-install:
-		@${CAT} ${PKGDIR}/MESSAGE
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

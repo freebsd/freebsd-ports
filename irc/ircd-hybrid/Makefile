@@ -18,7 +18,7 @@ IS_INTERACTIVE=	yes
 MAN8=		ircd.8
 
 pre-install:
-	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tools/buildm4 ${PREFIX}/bin

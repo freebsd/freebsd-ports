@@ -63,6 +63,6 @@ do-install:
 
 post-install:
 	@PKG_PREFIX=${PREFIX} PACKAGE_BUILDING=${PACKAGE_BUILDING} \
-		${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

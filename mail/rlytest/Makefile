@@ -25,6 +25,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/rlytest ${PREFIX}/bin/rlytest
 
 post-install:
-	${CAT} ${PKGDIR}/MESSAGE
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -36,7 +36,7 @@ MAN8=		ipopd.8 imapd.8
 
 pre-extract:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	@${SH} ${PKGDIR}/INSTALL foo PRE-INSTALL || ${FALSE}
+	@${SH} ${PKGINSTALL} foo PRE-INSTALL || ${FALSE}
 .endif
 
 post-build:

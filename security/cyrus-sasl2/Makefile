@@ -108,7 +108,7 @@ pre-configure:
 
 # Create Cyrus user and group
 pre-install:
-	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${SED} -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/pwcheck.sh \
@@ -128,7 +128,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${PREFIX}/share/doc/SASL/html
 .endfor
 .endif
-	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 post-clean:

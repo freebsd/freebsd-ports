@@ -26,7 +26,7 @@ do-install:
 	(cd ${WRKSRC} && ${TAR} -cf - * ) \
 	    | (cd ${PREFIX}/jdk${PORTVERSION}/docs/books/tutorial \
 	        && ${TAR} -xf -)
-	@${SED} s+!!PREFIX!!+${PREFIX}+g < ${PKGDIR}/MESSAGE > ${PKGMESSAGE}
+	@${SED} s+!!PREFIX!!+${PREFIX}+g < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 	@${RM} ${PKGMESSAGE}
 

@@ -10,7 +10,7 @@ CATEGORIES=	japanese
 RUN_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 MASTERDIR=	${.CURDIR}/../../print/tgif2tex
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 PORTSDOCDIR=	${PREFIX}/share/doc/ja-tgif2tex
 DOCSRC=		Makefile \
 		example.obj \

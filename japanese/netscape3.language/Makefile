@@ -67,7 +67,7 @@ post-install:
 	${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${FILESDIR}/setup.doc ${DOCDIR}
 .endif
-	@${CAT} ${PKGDIR}/DESCR
+	@${CAT} ${DESCR}
 
 .include <bsd.port.mk>
 

@@ -39,7 +39,7 @@ MAN8=		mcserv.8
 .if defined(WITH_SLANG)
 PLIST=		${WRKDIR}/PLIST
 pre-install:
-	@${CAT} ${PKGDIR}/PLIST > ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist > ${PLIST}
 	@${ECHO} bin/mcedit >> ${PLIST}
 .endif
 

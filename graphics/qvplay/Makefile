@@ -35,6 +35,6 @@ post-install:
 			${PREFIX}/share/doc/qvplay; \
 	done
 	@${ECHO} && ${ECHO}
-	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGDIR}/MESSAGE
+	@${SED} -e 's#/usr/local#${PREFIX}#' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

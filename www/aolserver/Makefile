@@ -43,6 +43,6 @@ post-install:
 			>${PREFIX}/etc/rc.d/aolserver.sh ; \
 		${CHMOD} 755 ${PREFIX}/etc/rc.d/aolserver.sh; \
 	fi
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

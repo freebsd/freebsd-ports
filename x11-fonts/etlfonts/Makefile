@@ -30,6 +30,6 @@ post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/*.gz
 
 post-install:
-	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 .include <bsd.port.post.mk>

@@ -100,6 +100,6 @@ post-install:
 	@${LN} -fs ${PREFIX}/man/man3/CAP.3${GZ} ${PREFIX}/man/man3/${f}.3${GZ}
 .endfor
 	@${LN} -fs ${PREFIX}/man/man8/papif.8${GZ} ${PREFIX}/man/man8/papof.8${GZ}
-	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include "bsd.port.mk"

@@ -17,6 +17,6 @@ EMACSCMD=	mule
 ELISPDIR=	${PREFIX}/lib/mule/site-lisp
 
 MASTERDIR=	${.CURDIR}/../../www/w3
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 .include "${MASTERDIR}/Makefile"

@@ -23,6 +23,6 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 post-install:
-	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

@@ -25,7 +25,7 @@ NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/INSTALL
 
 do-install:
-	${SED} -e "s/%%VERSION%%/${BSDPORTMKVERSION}/" ${PKGDIR}/INSTALL \
+	${SED} -e "s/%%VERSION%%/${BSDPORTMKVERSION}/" ${PKGDIR}/pkg-install \
 		> ${PKGINSTALL}
 
 deinstall:

@@ -80,6 +80,6 @@ do-install:
 	@${CHMOD} -f 777 ${PREFIX}/www/cgi-bin/ssserverdata
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ PKGMESSAGE=		${WRKSRC}/MESSAGE
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/juke.conf ${PREFIX}/etc/juke.conf.sample
-	@${SED} 's,PREFIX,${PREFIX},' ${PKGDIR}/MESSAGE > ${WRKSRC}/MESSAGE
+	@${SED} 's,PREFIX,${PREFIX},' ${PKGDIR}/pkg-message > ${WRKSRC}/MESSAGE
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

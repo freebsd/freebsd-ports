@@ -63,7 +63,7 @@ do-install:
 .endfor
 .endif
 .if !defined(WITHOUT_SENSOR)
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>

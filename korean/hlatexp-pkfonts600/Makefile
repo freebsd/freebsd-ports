@@ -7,7 +7,7 @@
 
 MASTERDIR=      ${.CURDIR}/../hlatexp-pkfonts300
 FILESDIR=	${.CURDIR}/files
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 # pkfonts dpi
 RESOLUTION=	600

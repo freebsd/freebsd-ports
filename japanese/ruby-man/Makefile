@@ -12,7 +12,7 @@ CATEGORIES=	japanese
 MAINTAINER=	knu@FreeBSD.org
 
 FILESDIR=	${.CURDIR}/files
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 LANGSUFFIX=	-jp
 

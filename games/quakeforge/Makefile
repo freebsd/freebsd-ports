@@ -56,7 +56,7 @@ pre-configure:
 .endif
 
 do-install:
-	@${CP} ${PKGDIR}/PLIST ${PLIST}
+	@${CP} ${PKGDIR}/pkg-plist ${PLIST}
 
 .if defined(WITH_GLX)
 	@${CAT} ${PKGDIR}/pkg-plist.glx >>${PLIST}

@@ -12,6 +12,6 @@ CANNA=		yes
 SJ3=		yes
 
 MASTERDIR=	${.CURDIR}/../../editors/mule
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 .include "${MASTERDIR}/Makefile"

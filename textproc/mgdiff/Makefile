@@ -21,6 +21,6 @@ MAN1=		mgdiff.1
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/mgdiff
 	@${INSTALL_DATA} ${WRKSRC}/mgdiff.x[bp]m ${PREFIX}/lib/X11/mgdiff
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

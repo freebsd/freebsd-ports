@@ -38,6 +38,6 @@ post-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/$i ${PREFIX}/share/doc/ja/actx
 .endfor
 .endif
-	@ ${CAT} ${PKGDIR}/MESSAGE
+	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

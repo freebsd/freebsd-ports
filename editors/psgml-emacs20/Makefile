@@ -15,7 +15,7 @@ MASTERDIR=	${.CURDIR}/../psgml-emacs
 # emacs port setup
 EMACS_PORT_NAME=	emacs20
 
-# pkg/* files are used in ${.CURDIR}
-PKGDIR=		${.CURDIR}/pkg
+# pkg-* files in ${.CURDIR} are used
+PKGDIR=		${.CURDIR}
 
 .include <${MASTERDIR}/Makefile>

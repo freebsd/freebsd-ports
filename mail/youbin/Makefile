@@ -25,10 +25,10 @@ MAN8=		youbind.8
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/youbind.sh.sample
 
 pre-build:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGDIR}/REQ ${PKGNAME} BUILD
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGREQ} ${PKGNAME} BUILD
 
 pre-install:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 post-install:
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
@@ -37,6 +37,6 @@ post-install:
 		  > ${STARTUP_SCRIPT} ; \
 		${CHMOD} 755 ${STARTUP_SCRIPT} ; \
 	fi
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@
 PKGNAMESUFFIX=	-lib
 CATEGORIES=	chinese
 MASTERDIR=	${.CURDIR}/../../japanese/FreeWnn-lib
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 WNN=		cWnn
 
 .include "${MASTERDIR}/Makefile"

@@ -33,6 +33,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.pdf \
 		${PREFIX}/share/doc/raproxy
 .endif
-	-cat ${PKGDIR}/MESSAGE
+	-cat ${PKGMESSAGE}
 
 .include <bsd.port.mk>

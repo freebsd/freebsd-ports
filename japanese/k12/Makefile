@@ -37,7 +37,7 @@ post-extract:
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 post-install:
 	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)

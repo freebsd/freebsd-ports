@@ -120,6 +120,6 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ezmlm-idx
 .endfor
 .endif
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -78,6 +78,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/console/tcltk/README ${PREFIX}/share/doc/tkppxp
 	@${MKDIR} ${PREFIX}/share/doc/xppxp
 	@${INSTALL_DATA} ${WRKSRC}/console/xppxp/README ${PREFIX}/share/doc/xppxp
-	csh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	csh ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

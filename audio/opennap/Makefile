@@ -34,6 +34,6 @@ post-install:
 	cd ${WRKSRC} ; for FILE in sample.*; do ${INSTALL_DATA} $${FILE} ${PREFIX}/share/opennap/examples ; done
 	@echo "===> Installing startup script into ${PREFIX}/etc/rc.d."
 	${INSTALL_SCRIPT} ${FILESDIR}/opennap.sh ${PREFIX}/etc/rc.d
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

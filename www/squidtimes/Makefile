@@ -27,6 +27,6 @@ do-install:
 		@ ${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/squidtimes
 
 post-install:
-		@ ${CAT} ${PKGDIR}/MESSAGE
+		@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

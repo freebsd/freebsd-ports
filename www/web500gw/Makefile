@@ -36,6 +36,6 @@ WEB500GWDIR=	${PREFIX}/etc/web500gw
 
 post-install:
 	strip ${INSTDIR}/web500gw
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -14,8 +14,8 @@ MAINTAINER=	sanpei@FreeBSD.org
 
 YOUBIN=		yes
 MASTERDIR=	${.CURDIR}/../xpbiff
-PKGDIR=		${.CURDIR}/pkg
-PLIST=		${MASTERDIR}/pkg/PLIST
+PKGDIR=		${.CURDIR}
+PLIST=		${MASTERDIR}/pkg-plist
 
 RUN_DEPENDS=	youbin:${PORTSDIR}/mail/youbin
 

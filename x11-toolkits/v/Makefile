@@ -41,6 +41,6 @@ post-install:
 	find ${PREFIX}/share/doc/v -type f -exec ${CHMOD} 644 {} \;
 	@${ECHO_MSG} "==> Extra docs installed.  Note, you will need *tex to read 'em."
 .endif
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

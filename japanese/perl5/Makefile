@@ -129,6 +129,6 @@ post-install:
 	@${LN} -fs ${PREFIX}/bin/sperl${JPERL_VERSION} ${PREFIX}/bin/suidperl
 	@${LN} -fs ${PREFIX}/bin/sperl${JPERL_VERSION} ${PREFIX}/bin/jsuidperl
 	@${LN} -fs ${PREFIX}/lib/perl5/${JPERL_VERSION}/i386-freebsd/CORE/libperl.so.${PERL_SHLIBVER} ${PREFIX}/lib/perl5/${JPERL_VERSION}/i386-freebsd/CORE/libperl.so
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

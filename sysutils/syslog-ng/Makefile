@@ -25,7 +25,7 @@ post-patch:
 	@${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/src/syslog-ng.h
 
 post-build:
-	@${SED} -e 's,__PREFIX__,${PREFIX},g' ${PKGDIR}/MESSAGE > ${PKGMESSAGE}
+	@${SED} -e 's,__PREFIX__,${PREFIX},g' ${PKGDIR}/pkg-message > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)

@@ -18,7 +18,7 @@ EMACS_PORT_NAME=	mule
 # whether emacs requires *-setupel.el
 REQUIRE_SETUPEL=	YES
 
-# use pkg/* files in ${.CURDIR}
-PKGDIR=		${.CURDIR}/pkg
+# use pkg-* files in ${.CURDIR}
+PKGDIR=		${.CURDIR}
 
 .include <${MASTERDIR}/Makefile>

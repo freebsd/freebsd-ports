@@ -24,8 +24,8 @@ CATEGORIES=	japanese
 
 MANLANG=	ja
 MAN1=		xemacs-ja.1
-COMMENT?=	${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/pkg/COMMENT
-DESCR=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/pkg/DESCR
+COMMENT?=	${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/pkg-comment
+DESCR=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/pkg-descr
 
 XEMACS_MAJOR_VER?=	21
 DESCR_TMPL=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/files/DESCR.tmpl

@@ -16,8 +16,8 @@ MAINTAINER=	taoka@FreeBSD.org
 RUN_DEPENDS+=	eblook:${PORTSDIR}/japanese/eblook
 
 FILESDIR=	${.CURDIR}/../lookup-mule/files
-PKGDIR=		${.CURDIR}/../lookup-mule/pkg
-PLIST=		${.CURDIR}/pkg/PLIST
+PKGDIR=		${.CURDIR}/../lookup-mule
+PLIST=		${.CURDIR}/pkg-plist
 EMACS_PORT_NAME?=	mule
 
 .if (${EMACS_PORT_NAME} == "xemacs21-mule")

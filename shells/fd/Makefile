@@ -33,6 +33,6 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/fd; \
 	done
 .endif
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

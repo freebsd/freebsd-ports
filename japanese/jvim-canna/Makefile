@@ -9,6 +9,6 @@ PKGNAMESUFFIX=	-canna
 CANNA=		yes
 
 MASTERDIR=	${.CURDIR}/../jvim
-PKGDIR=		${.CURDIR}/pkg
+PKGDIR=		${.CURDIR}
 
 .include "${MASTERDIR}/Makefile"

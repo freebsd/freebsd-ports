@@ -46,6 +46,6 @@ pre-install:
 	${MKDIR} ${PREFIX}/share/java/classes
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -46,6 +46,6 @@ pre-extract:
 	@${ECHO}
 
 post-install:
-	@cat ${PKGDIR}/MESSAGE
+	@cat ${PKGMESSAGE}
 
 .include <bsd.port.mk>

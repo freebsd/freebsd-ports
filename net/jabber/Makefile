@@ -19,7 +19,7 @@ USE_LIBTOOL=	yes
 rc=${PREFIX}/etc/rc.d
 
 post-install:
-	@PREFIX=${PREFIX} ${PERL5} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${INSTALL_SCRIPT} ${FILESDIR}/jserver.sh ${rc}
 
 .include <bsd.port.mk>

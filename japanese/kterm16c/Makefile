@@ -81,6 +81,6 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/dot.termcap ${DOCDIR}
 	@${INSTALL_DATA} ${FILESDIR}/kterm16c.doc ${DOCDIR}
 .endif
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

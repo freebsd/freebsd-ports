@@ -15,7 +15,7 @@ MASTERDIR=	${.CURDIR}/../../editors/wemi-emacs-current
 # emacs port setup
 EMACS_PORT_NAME=	xemacs20
 
-# use pkg/* files in ${.CURDIR}
-PKGDIR=		${.CURDIR}/pkg
+# use pkg-* files in ${.CURDIR}
+PKGDIR=		${.CURDIR}
 
 .include <${MASTERDIR}/Makefile>

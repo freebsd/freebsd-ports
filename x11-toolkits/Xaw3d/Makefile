@@ -26,7 +26,7 @@ post-extract:
 
 .if exists(${X11BASE}/bin/XFree86)
 post-build:
-	${CP} ${PKGDIR}/PLIST ${WRKDIR}/PLIST
+	${CP} ${PKGDIR}/pkg-plist ${PLIST}
 	${ECHO} "lib/libXaw3d.so.7" >> ${PLIST}
 .endif
 

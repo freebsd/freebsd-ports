@@ -31,6 +31,6 @@ pre-build:
 		${SED} -e s:/usr/local:${PREFIX}:g <Makefile~ >Makefile
 
 post-install:
-	@PREFIX=${PREFIX} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

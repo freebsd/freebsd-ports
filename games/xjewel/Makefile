@@ -31,7 +31,7 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 pre-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/bitmaps/seven_seg.pcf.gz ${PREFIX}/${FONTSDIR}

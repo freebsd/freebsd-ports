@@ -25,6 +25,6 @@ do-install:
 		@ ${INSTALL_DATA} ${WRKSRC}/Theory ${PREFIX}/share/bbjd/
 
 post-install:
-		@ ${CAT} ${PKGDIR}/MESSAGE
+		@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
