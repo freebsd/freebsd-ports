@@ -20,6 +20,7 @@ MAINTAINER=	obrien@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 PREFIX?=	/	# will install into ${PREFIX}/usr/X11R6
+NO_MTREE=	yes
 USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	# don't exact the tarball
