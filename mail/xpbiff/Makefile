@@ -3,7 +3,7 @@
 # Date created:         2 April 1997
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/09/15 11:13:29 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/17 00:32:46 asami Exp $
 
 DISTNAME=	xpbiff
 PKGNAME?=	xpbiff-1.27
@@ -26,14 +26,14 @@ YOUBINBINDIR= ${LOCALBASE}
 .endif
 
 do-extract:
-	@(cd ${DISTDIR}; \
-	  if [ ! -f ${DISTNAME}.tar.gz ]; then \
-	    uudecode ${DISTFILES} ; \
-	  fi)
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
-	@(cd ${WRKDIR}; tar -xzf \
-		${DISTDIR}/${DISTNAME}.tar.gz)
+	@(cd ${WRKDIR}; \
+	  if [ ! -f ${DISTDIR}/${DISTNAME}.tar.gz ]; then \
+	    uudecode -p ${DISTDIR}/${DISTFILES} | tar xzf -; \
+	  else \
+	    tar xzf ${DISTDIR}/${DISTNAME}.tar.gz; \
+	  fi)
 
 pre-patch:
 	@(${RM} -rf ${WRKSRC}/LocPixmap.c; \
