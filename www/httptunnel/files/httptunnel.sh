@@ -2,10 +2,12 @@
 #
 # $FreeBSD$
 
+HTS=%%PREFIX%%/bin/hts		# The installed hts program
 HTSPORT=			# [host:]port to listen for htc connection
 HTSFORWARD=			# Talk to this socket
 HTSDEVICE=			# *or* talk to this device
 
+HTC=%%PREFIX%%/bin/htc		# The installed htc program
 HTCPORT=			# host:port where hts is running
 HTCFORWARD=			# Talk to this socket
 HTCDEVICE=			# *or* talk to this device
@@ -21,7 +23,7 @@ start)
 	if [ -n "$HTSPORT" -a -x $HTS ]; then
 		[ -n "$HTSFORWARD" ] && args="-F $HTSFORWARD"
 		[ -n "$HTSDEVICE" ] && args="-d $HTSDEVICE"
-		/usr/local/bin/hts $args $HTSPORT && echo -n ' hts'
+		$HTS $args $HTSPORT && echo -n ' hts'
 	fi
 
 	if [ -n "$HTCPORT" -a -x $HTC ]; then
@@ -30,11 +32,21 @@ start)
 		[ -n "$HTCDEVICE" ] && set -- -d $HTCDEVICE
 		[ -n "$HTCBROWSER" ] && set -- -U "$HTCBROWSER" "$@"
 		if [ -n "$HTCPROXY" ]; then
-			[ -n "$HTCPROXYBUFFER" ] && set -- -B $HTCPROXYBUFFER "$@"
-			[ -n "$HTCPROXYAUTH" ] && set -- -A $HTCPROXYAUTH "$@"
+			[ -n "$HTCPROXYBUFFER" ] &&
+				set -- -B $HTCPROXYBUFFER "$@"
+			if [ -n "$HTCPROXYAUTH" ]
+			then
+				if [ -f "$HTCPROXYAUTH" ]
+				then
+					set -- --proxy-authorization-file \
+						$HTCPROXYAUTH "$@"
+				else
+					set -- -A $HTCPROXYAUTH "$@"
+				fi
+			fi
         		set -- -P $HTCPROXY "$@"
 		fi
-		/usr/local/bin/htc "$@" $HTCARGS $HTCPORT && echo -n ' htc'
+		$HTC "$@" $HTCARGS $HTCPORT && echo -n ' htc'
 	fi
 	;;
 stop)
