@@ -5,13 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	mod_frontpage
-PORTVERSION=	1.6
+PORTVERSION=	1.6.1
 CATEGORIES=	www
 MASTER_SITES=	http://people.freebsd.org/~mbr/distfiles/
 
 MAINTAINER=	mbr@FreeBSD.org
-
-FORBIDDEN=	"Buffer overflows in fpexec, exploitable locally. A fix is in work"
 
 AP_PORT?=	apache13
 
@@ -43,6 +41,25 @@ AP_LIBEXEC?=	${PREFIX}/libexec/apache
 .endif
 
 PERL_CONFIGURE= yes
+
+pre-fetch:
+	@${ECHO}
+	@${ECHO} ******************************************************
+	@${ECHO} IMPORTANT
+	@${ECHO}
+	@${ECHO} This port still has some security issues. Some buffer
+	@${ECHO} overflows have been fixed, but since the port depends
+	@${ECHO} on ENV[] variables, a local user can still gain a UID
+	@${ECHO} of another user. This is a design issue, and also
+	@${ECHO} present in the apache13-fp port.
+	@${ECHO}
+	@${ECHO} Check carefully that the Makefile has FP_UID_MIN and
+	@${ECHO} FP_GID_MIN set correctly. If you think security is
+	@${ECHO} very important for you, you shouldn't run frontpage
+	@${ECHO} at all.
+	@${ECHO} ******************************************************
+	@${ECHO}
+	
 
 post-install:
 		@${CAT} ${PKGMESSAGE}
