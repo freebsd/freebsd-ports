@@ -1,0 +1,9 @@
+gentoo is a modern, powerful, flexible, and utterly configurable file manager
+for UNIX systems, written using the GTK+ toolkit. It aims to be 100%
+graphically configurable; there's no need to edit config files by hand and then
+restart the application. gentoo is somewhat inspired in its look & feel by the
+classic Amiga program DirectoryOpus.
+
+WWW: http://www.obsession.se/gentoo/
+
+- Anders Nordby <anders@fix.no>

@@ -1,0 +1,32 @@
+--- src/Makefile.Dist	Sun Apr 29 02:43:21 2001
++++ src/Makefile	Sat Aug 11 22:38:12 2001
+@@ -71,25 +71,23 @@
+ 	  window.o menus.o\
+ 	  ../widgets/odemilbutton.o ../widgets/odscrolledbox.o ../widgets/odlabel.o
+ 
+-DEBUG	= -g -O2 #-Wno-unused
++DEBUG	= -g #-Wno-unused
+ 
+ # Feel free to add any compiler-specific flags you need here.
+ 
+-CC	= gcc
+-
+ # These flags should work even on files that contain code that deals with
+ # 64-bit stuff. Sorry for the possibly counter-intuitive name. :)
+-CFLAGS_64BIT = -Wall -Wmissing-prototypes $(DEBUG) `gtk-config --cflags`\
++CFLAGS_64BIT = $(DEBUG) `gtk-config --cflags`\
+ 		-I/usr/X11R6/include -I../widgets -DGENTOO_PACKAGE='"gentoo"'\
+ 		-DGENTOO_LOCALEDIR='"/home/emil/data/projects/gentoo/locale"'
+ 
+ # Most files compile with the flags that are 64-bit compliant, plus some
+ # more to ensure ANSI compatibility.
+-CFLAGS	+= $(CFLAGS_64BIT) -ansi -pedantic
++CFLAGS	+= $(CFLAGS_64BIT)
+ 
+ # Add names of any required libraries here (only included in final link).
+ #LIBINTL	= -lintl
+-LIBS	= -L/usr/lib -L/usr/X11R6/lib `gtk-config --libs` -rdynamic -ldl -lXi -lXext -lX11 -lm $(LIBINTL)
++LIBS	= -L/usr/lib -L/usr/X11R6/lib `gtk-config --libs` -rdynamic -lXi -lXext -lX11 -lm $(LIBINTL)
+ 
+ # ----------------------------------------- Targets
+ 
