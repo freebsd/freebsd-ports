@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/core/ \
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	${SYSLIBDIR}/${GNU_ARCH}/${OPSYS:L}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
 
 .include <bsd.port.pre.mk>
