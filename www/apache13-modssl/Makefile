@@ -8,22 +8,7 @@
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}
 CATEGORIES=	www security
-MASTER_SITES=	http://www.apache.org/dist/httpd/ \
-		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
-		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
-		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
-		ftp://apache.arctic.org/pub/apache/dist/httpd/ \
-		ftp://ftp.epix.net/pub/apache/dist/httpd/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/httpd/ \
-		ftp://ftp.connectnet.com/pub/www/apache/httpd/ \
-		ftp://apache.technomancer.com/mirrors/apache/dist/httpd/ \
-		ftp://ftp.raver.net/pub/ftp.apache.org/httpd/ \
-		ftp://www3.service.digital.com/apache/dist/httpd/ \
-		ftp://galileo.galilei.com/pub/apache/httpd/ \
-		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
-		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
-		ftp://apache.nextpath.com/pub/apache/dist/httpd/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd,} \
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:modssl/}
 DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

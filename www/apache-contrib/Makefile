@@ -8,13 +8,8 @@
 PORTNAME=	apache-contrib
 PORTVERSION=	1.0.8
 CATEGORIES=	www
-MASTER_SITES=	http://www.apache.org/dist/%SUBDIR%/ \
-		ftp://ftp.rge.com/pub/infosystems/apache/dist/%SUBDIR%/ \
-		ftp://ftp.epix.net/pub/apache/dist/%SUBDIR%/ \
-		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/%SUBDIR%/ \
-		ftp://ftp.sunet.se/pub/www/servers/apache/dist/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/&,}
-MASTER_SITE_SUBDIR=	httpd/contrib/modules/1.3
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
+MASTER_SITE_SUBDIR=	contrib/modules/1.3
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -11,12 +11,7 @@ PORTNAME=	apache+ssl
 PORTVERSION=	${APACHE_VERSION}.${APACHE_SSL_VERSION}
 PORTREVISION=	2
 CATEGORIES=	www security
-MASTER_SITES=	http://www.apache.org/dist/httpd/ \
-		ftp://src.doc.ic.ac.uk/packages/apache/dist/ \
-		ftp://ftp.gbnet.net/pub/apache/dist/ \
-		ftp://ftp.flirble.org/pub/web/apache/dist/ \
-		ftp://ukug.uk.freebsd.org/pub/mirrors/apache/dist/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd,} \
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		ftp://ftp.ox.ac.uk/pub/crypto/SSL/Apache-SSL/:ssl \
 		ftp://ftp.MASTER.pgp.net/pub/crypto/SSL/Apache-SSL/:ssl \
 		ftp://ftp.replay.com/pub/crypto/apache/Apache-SSL/:ssl \
