@@ -1,7 +1,5 @@
 bin/%%PYTHON_VERSION%%
-bin/python
 share/doc/%%PYTHON_VERSION%%/COPYRIGHT
-share/emacs/site-lisp/python-mode.el
 include/%%PYTHON_VERSION%%/Python.h
 include/%%PYTHON_VERSION%%/abstract.h
 include/%%PYTHON_VERSION%%/bitset.h
@@ -1011,4 +1009,3 @@ lib/%%PYTHON_VERSION%%/xmllib.pyo
 @dirrm lib/%%PYTHON_VERSION%%
 @exec mkdir -p %D/lib/%%PYTHON_VERSION%%/site-packages
 @dirrm share/doc/%%PYTHON_VERSION%%
-@unexec rmdir share/emacs/site-lisp 2>/dev/null || true

@@ -21,8 +21,8 @@ WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
-INSTALL_TARGET=	install
-MAN1=		python.1
+INSTALL_TARGET=	altinstall
+MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.1
@@ -78,8 +78,9 @@ pre-install:
 .endfor
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/emacs/site-lisp
-	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el ${PREFIX}/share/emacs/site-lisp
+	@${MKDIR} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
+		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 	@${MKDIR} ${PYTHON_SITELIBDIR}
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}; tar -c --exclude='*CVS*' -f - Tools | \
