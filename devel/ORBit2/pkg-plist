@@ -60,9 +60,9 @@ lib/libORBitCosNaming-2.so
 lib/libORBitCosNaming-2.so.0
 lib/libname-server-2.a
 libdata/pkgconfig/ORBit-2.0.pc
+libdata/pkgconfig/ORBit-CosNaming-2.0.pc
 libdata/pkgconfig/ORBit-idl-2.0.pc
 libdata/pkgconfig/ORBit-imodule-2.0.pc
-libdata/pkgconfig/ORBit-CosNaming-2.0.pc
 share/aclocal/ORBit2.m4
 %%DOCSDIR%%/ORBit2-orbit2-allocators.html
 %%DOCSDIR%%/ORBit2-orbit2-small.html
