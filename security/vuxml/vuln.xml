@@ -43,7 +43,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>An Hyperdose Security Advisory reports:</p>
+	<p>A Hyperdose Security Advisory reports:</p>
 	<blockquote cite="http://lists.horde.org/archives/announce/2005/000159.html">
 	  <p>Horde contains two XSS attacks that can be exploited
 	    through GET requests.  Once exploited, these requests
