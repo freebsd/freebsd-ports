@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipfm
-PORTVERSION=	0.11.4
+PORTVERSION=	0.11.5
 CATEGORIES=	net
 MASTER_SITES=	http://robert.cheramy.net/ipfm/archive/
 EXTRACT_SUFX=	.tgz
@@ -15,6 +15,7 @@ MAINTAINER=	roman@xpert.com
 COMMENT=	A bandwidth analysis tool
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--localstatedir=/var
 
 MAN5=		ipfm.conf.5
 MAN8=		ipfm.8
