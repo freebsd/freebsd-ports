@@ -27,7 +27,12 @@ BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 ONLY_FOR_ARCHS=	alpha
 
 PREFIX=		/
-CCC_ROOT=	${PREFIX}/usr/lib/compaq/ccc-6.2.9.506-1
+LIBOTS_REV=	libots-2.2.7
+CPML_REV=	cpml-5.1.0
+CCC_REV=	ccc-6.2.9.506-1
+CCC_DIR=	usr/lib/compaq/${CCC_REV}
+CCC_ROOT=	${PREFIX}/${CCC_DIR}
+PLIST_SUB=	CCC_REV=${CCC_REV} CPML_REV=${CPML_REV} LIBOTS_REV=${LIBOTS_REV}
 EXTRACT_CMD=		rpm2cpio
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|cpio -idum
@@ -49,7 +54,7 @@ do-install:
 		};\
 	fi
 .for F in ${DISTFILES}
-	cd ${PREFIX} ; rpm2cpio ${DISTDIR}/$F |cpio -idum
+	cd ${PREFIX} ; rpm2cpio ${DISTDIR}/$F |cpio -idum -R root:wheel
 .endfor
 .for F in ${CCC_ROOT}/alpha-linux/bin/lnxcc \
 	${CCC_ROOT}/alpha-linux/bin/lnxcc_driver
@@ -87,17 +92,17 @@ do-install:
 	${MKDIR} ${CCC_ROOT}/alpha-freebsd/include
 	${MKDIR} ${CCC_ROOT}/alpha-freebsd/lib
 	cd ${FILESDIR}/include ; \
-		tar  --exclude CVS -cf - . \
-		|(cd ${CCC_ROOT}/alpha-freebsd/include ; tar xpBf -)
+		find . -print0 \
+		| cpio -dump0 -R root:wheel ${CCC_ROOT}/alpha-freebsd/include
 	cd ${CCC_ROOT}/alpha-freebsd/include ; ${LN} -sf machine/stdarg.h .
 
 post-install:
 # fixup PLIST for the FreeBSD bits
 	cd ${PREFIX} ;\
-	    find ${CCC_ROOT}/alpha-freebsd -type f -o -type l \
+	    find ${CCC_DIR}/alpha-freebsd -type f -o -type l \
 	    					>${WRKDIR}/PLIST.alpha-freebsd
 	cd ${PREFIX} ;\
-	    find ${CCC_ROOT}/alpha-freebsd -type d \
+	    find ${CCC_DIR}/alpha-freebsd -type d \
 	    | sed -e 's/^/@dirrm /g' \
 	    | sort -r				>>${WRKDIR}/PLIST.alpha-freebsd
 	${ECHO} "r ${TMPPLIST}"				>  ${WRKDIR}/ex.script
@@ -107,5 +112,35 @@ post-install:
 	${ECHO} "x!"					>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-alpha-freebsd
 	cd ${WRKDIR} ; ex < ex.script
+# fixup PLIST for the AlphaLinux bits
+	cd ${PREFIX} ;\
+	    find ${CCC_DIR}/alpha-linux -type f -o -type l \
+	    					>${WRKDIR}/PLIST.alphalinux
+	cd ${PREFIX} ;\
+	    find ${CCC_DIR}/alpha-linux -type d \
+	    | sed -e 's/^/@dirrm /g' \
+	    | sort -r				>>${WRKDIR}/PLIST.alphalinux
+	${ECHO} "r ${TMPPLIST}"				>  ${WRKDIR}/ex.script2
+	${ECHO} "/Insert PLIST.alphalinux"		>> ${WRKDIR}/ex.script2
+	${ECHO} "d"					>> ${WRKDIR}/ex.script2
+	${ECHO} "r ${WRKDIR}/PLIST.alphalinux"		>> ${WRKDIR}/ex.script2
+	${ECHO} "x!"					>> ${WRKDIR}/ex.script2
+	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-alphalinux
+	cd ${WRKDIR} ; ex < ex.script2
+# fixup PLIST for the docs bits
+	cd ${PREFIX} ;\
+	    find usr/doc/${CCC_REV:C/-1$//} -type f -o -type l \
+	    					>${WRKDIR}/PLIST.docs
+	cd ${PREFIX} ;\
+	    find usr/doc/${CCC_REV:C/-1$//} -type d \
+	    | sed -e 's/^/@dirrm /g' \
+	    | sort -r				>>${WRKDIR}/PLIST.docs
+	${ECHO} "r ${TMPPLIST}"				>  ${WRKDIR}/ex.script3
+	${ECHO} "/Insert PLIST.docs"			>> ${WRKDIR}/ex.script3
+	${ECHO} "d"					>> ${WRKDIR}/ex.script3
+	${ECHO} "r ${WRKDIR}/PLIST.docs"		>> ${WRKDIR}/ex.script3
+	${ECHO} "x!"					>> ${WRKDIR}/ex.script3
+	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-docs
+	cd ${WRKDIR} ; ex < ex.script3
 
 .include <bsd.port.mk>
