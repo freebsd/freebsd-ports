@@ -1,0 +1,10 @@
+addttfont AUTOMATICALLY creates a Japanese fonts environment by
+TrueType fonts.
+
+The Japanese fonts environment means that a Japanese fonts are
+available to the following applications:
+
+* tgif (version 4)
+* X-TT
+* VFlib
+* Ghostscript supported VFlib
