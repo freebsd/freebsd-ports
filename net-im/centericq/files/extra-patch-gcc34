@@ -470,15 +470,6 @@
      }
 --- src/icqconf.cc.orig	Sat Jul 31 13:47:05 2004
 +++ src/icqconf.cc	Fri Aug 20 22:47:11 2004
-@@ -1,7 +1,7 @@
- /*
- *
- * centericq configuration handling routines
--* $Id: icqconf.cc,v 1.134 2004/07/31 10:47:05 konst Exp $
-+* $Id: icqconf.cc,v 1.1 2004/08/20 19:30:53 root Exp root $
- *
- * Copyright (C) 2001-2004 by Konstantin Klyagin <konst@konst.org.ua>
- *
 @@ -52,7 +52,7 @@
  
      savepwd = mailcheck = fenoughdiskspace = true;
