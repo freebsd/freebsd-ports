@@ -192,44 +192,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   </vuln>
 
   <vuln vid="e8c6ade2-6bcc-11d9-8e6f-000a95bc6fae">
-    <topic>phpbb -- multiple vulnerabilities include XSS and SQL injection</topic>
-    <affects>
-      <package>
-	<name>phpbb</name>
-	<range><lt>2.0.11</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The ChangeLog for phpBB 2.0.11 states:</p>
-	<blockquote cite="http://www.phpbb.com/support/documents.php?mode=changelog">
-	  <p>Changes since 2.0.10</p>
-	  <ul>
-	    <li>Fixed vulnerability in highlighting code (<strong>very
-	      high severity, please update your installation as soon
-	      as possible</strong>)</li>
-	    <li>Fixed unsetting global vars - <strong>Matt
-	      Kavanagh</strong></li>
-	    <li>Fixed XSS vulnerability in username handling
-	      - <strong>AnthraX101</strong></li>
-	    <li>Fixed not confirmed sql injection in username handling
-	      - <strong>warmth</strong></li>
-	    <li>Added check for empty topic id in topic_review
-	      function</li>
-	    <li>Added visual confirmation mod to code base</li>
-	  </ul>
-	</blockquote>
-      </body>
-    </description>
-    <references>
-      <url>http://www.phpbb.com/support/documents.php?mode=changelog</url>
-      <url>http://www.phpbb.com/phpBB/viewtopic.php?f=14&amp;t=240636</url>
-      <freebsdpr>ports/74106</freebsdpr>
-    </references>
-    <dates>
-      <discovery>2004-11-18</discovery>
-      <entry>2005-01-21</entry>
-    </dates>
+    <cancelled superseded="e3cf89f0-53da-11d9-92b7-ceadd4ac2edd" />
   </vuln>
 
   <vuln vid="1489df94-6bcb-11d9-a21e-000a95bc6fae">
@@ -12026,31 +11989,51 @@ misc.c:
     <cancelled/>
   </vuln>
 
-  <vuln vid="e3cf89f0-53da-11d9-92b7-ceadd4ac2edd"> 
-    <topic>phpbb -- arbitrary command execution vulnerability</topic>
+  <vuln vid="e3cf89f0-53da-11d9-92b7-ceadd4ac2edd">
+    <topic>phpbb -- arbitrary command execution and other vulnerabilities</topic>
     <affects>
       <package>
-	<name>phpbb</name> 
+	<name>phpbb</name>
 	<range><lt>2.0.11</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>A US-CERT Technical Cyber Security Alert reports:</p> 
+	<p>The ChangeLog for phpBB 2.0.11 states:</p>
+	<blockquote cite="http://www.phpbb.com/support/documents.php?mode=changelog">
+	  <p>Changes since 2.0.10</p>
+	  <ul>
+	    <li>Fixed vulnerability in highlighting code (<strong>very
+	      high severity, please update your installation as soon
+	      as possible</strong>)</li>
+	    <li>Fixed unsetting global vars - <strong>Matt
+	      Kavanagh</strong></li>
+	    <li>Fixed XSS vulnerability in username handling
+	      - <strong>AnthraX101</strong></li>
+	    <li>Fixed not confirmed sql injection in username handling
+	      - <strong>warmth</strong></li>
+	    <li>Added check for empty topic id in topic_review
+	      function</li>
+	    <li>Added visual confirmation mod to code base</li>
+	  </ul>
+	</blockquote>
+	<p>Additionally, a US-CERT Technical Cyber Security Alert reports:</p>
 	<blockquote
           cite="http://www.us-cert.gov/cas/techalerts/TA04-356A.html">
-          <p>phpBB contains an user input validation problem with regard to
-	    the parsing of the URL. An intruder can deface a phpBB website, execute
-	    arbitrary commands, or gain administrative privileges on a compromised
-	    bulletin board.</p>
+          <p>phpBB contains an user input validation problem with
+	    regard to the parsing of the URL. An intruder can deface a
+	    phpBB website, execute arbitrary commands, or gain
+	    administrative privileges on a compromised bulletin
+	    board.</p>
 	</blockquote>
       </body>
     </description>
-    <references> 
+    <references>
       <cvename>CAN-2004-1315</cvename>
-      <freebsdpr>ports/74106</freebsdpr> 
+      <freebsdpr>ports/74106</freebsdpr>
       <uscertta>TA04-356A</uscertta>
       <certvu>497400</certvu>
+      <url>http://www.phpbb.com/support/documents.php?mode=changelog</url>
       <mlist msgid="20041113030542.11396.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110029415208724</mlist>
       <mlist msgid="20041118123055.28647.qmail@mail.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110079436714518</mlist>
       <url>http://www.phpbb.com/phpBB/viewtopic.php?f=14&amp;t=240636</url>
@@ -12058,7 +12041,7 @@ misc.c:
     <dates>
       <discovery>2004-11-18</discovery>
       <entry>2004-12-22</entry>
-      <modified>2005-01-19</modified>
+      <modified>2005-01-24</modified>
     </dates>
   </vuln>
 
