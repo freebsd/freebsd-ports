@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gno3dtet
-PORTVERSION=	1.0.0
+PORTVERSION=	1.6.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://webdat.com/pub/seb/gno3dtet/
 EXTRACT_SUFX=	.tgz
