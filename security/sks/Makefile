@@ -7,11 +7,12 @@
 
 PORTNAME=	sks
 PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=sks
-EXTRACT_SUFX=	.tgz
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=	${DISTNAME}.tgz ${DISTNAME}.tgz.sig
+EXTRACT_ONLY=	${DISTNAME}.tgz
 
 MAINTAINER=	johans@stack.nl
 COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
@@ -19,8 +20,8 @@ COMMENT=	Synchronizing Key Server, a fast OpenPGP keyserver
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml-nox11
 LIB_DEPENDS=	db-4.2:${PORTSDIR}/databases/db42
 
-USE_GPG=	yes
-SIG_SUFFIX=	.sig
+USE_GPG?=	yes
+SIG_FILES=	${DISTNAME}.tgz.sig
 USE_GMAKE=	yes
 MAKE_ENV=	BDBINCLUDE="-I${LOCALBASE}/include/db42" \
 		BDBLIB="-L${LOCALBASE}/lib" \
