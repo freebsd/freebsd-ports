@@ -3,29 +3,29 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1995/11/15 10:27:38 asami Exp $
+# $Id: Makefile,v 1.2 1995/11/22 13:06:34 asami Exp $
 #
 
 DISTNAME=	platex2e
 PKGNAME=	jp-platex2e-95.09
 CATEGORIES+=	japanese print
-MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/ \
-	ftp://ftp.iij.ad.jp/pub/TeX/CTAN/systems/knuth/lib/ \
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ \
+	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/corresponding-sources/ \
+	ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/ \
 	ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/corresponding-sources/ \
+	ftp://ftp.iij.ad.jp/pub/TeX/CTAN/systems/knuth/lib/ \
 	ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII-pTeX-2.1.1/ \
 	ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII-pTeX-2.1.1/corresponding-sources/ \
-	ftp://ftp.riken.go.jp/pub/tex-archive/systems/knuth/lib/ \
-	ftp://ftp.ascii.co.jp/pub/TeX/ASCII-pTeX-2.1.1/ \
-	ftp://ftp.ascii.co.jp/pub/TeX/ASCII-pTeX-2.1.1/corresponding-sources/
+	ftp://ftp.riken.go.jp/pub/tex-archive/systems/knuth/lib/ 
 DISTFILES=	base-9506.tar.gz hyphen.tex
 EXTRACT_ONLY=	base-9506.tar.gz
 
-# base-9506.tar.gz is on */*2.1.1/coresponding-sources/ 
-# hyphen.tex is on */systems/knuth/lib/ 
-# pl2e-jis.tar.gz, pl2e-sj.tar.gz and pl2e-euc.tar.gz are on 
-# */*2.1.1/coresponding-sources/ 
+# base-9506.tar.gz is in */corresponding-sources/ 
+# hyphen.tex is in */systems/knuth/lib/ 
+# pl2e-jis.tar.gz, pl2e-sj.tar.gz and pl2e-euc.tar.gz are in 
+# */corresponding-sources/ 
 
-MAINTAINER=	ohmon@sfc.keio.ac.jp
+MAINTAINER=	max@sfc.wide.ad.jp
 
 BUILD_DEPENDS=  ptex:${PORTSDIR}/japanese/ptex2
 RUN_DEPENDS=    ptex:${PORTSDIR}/japanese/ptex2
@@ -36,7 +36,22 @@ WRKSRC=		${WRKDIR}/9509b
 pre-fetch:
 .if !defined(KANJI-CODE)
 	@echo "You can set KANJI-CODE value to JIS, SJIS or EUC."
-	@echo "Now default value JIS is set."
+	@echo "Now JIS is used as default."
+.if !defined(BATCH)
+	@echo -n "Is JIS OK? (y/n) ==> "
+	@(read ans; \
+	  case x"$$ans" in \
+	    xy*|xY*) \
+	        return 0; \
+	        ;; \
+	    *) \
+		echo "Ok, please rerun make with preferred KANJI-CODE specification"; \
+		echo " like following example."; \
+		echo "	make KANJI-CODE=EUC"; \
+	        return 1; \
+	        ;; \
+	  esac)
+.endif
 KANJI-CODE=	JIS
 .endif
 .if ${KANJI-CODE} == JIS
@@ -110,4 +125,3 @@ do-install:
 	@ln -s /usr/local/bin/virptex /usr/local/bin/platex
 
 .include <bsd.port.mk>
-
