@@ -35,6 +35,4 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/${DISTNAME}.1 ${PREFIX}/man/man1
 
-NEWLAYOUT=	yes
-
 .include <bsd.port.mk>
