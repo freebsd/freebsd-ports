@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/xyaku/
 
-MAINTAINER=	knu@idaemons.org
+MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${EDICT_FILE}:${PORTSDIR}/japanese/edict \
 		${RUBY_SITEARCHLIBDIR}/eb.so:${PORTSDIR}/japanese/ruby-eb
