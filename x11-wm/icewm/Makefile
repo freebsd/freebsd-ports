@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.2.17
+PORTVERSION=	1.2.18
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -81,6 +81,8 @@ PLIST_SUB+=	NLS=""
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e \
+		's|CXX_LINK=$${CC}|CXX_LINK=$${CXX}|g' ${WRKSRC}/configure
 .for file in src/gnome2.cc
 	@${REINPLACE_CMD} -e \
 		's|/usr/share/control|${X11BASE}/share/gnome/control|g ; \
