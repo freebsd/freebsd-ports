@@ -16,3 +16,5 @@ EXTRA_PATCHES=	${.CURDIR}/patches/patch-init.h  \
 		${.CURDIR}/patches/patch-sendlib.c 
 
 .include "${MASTERDIR}/Makefile"
+
+CONFIGURE_ARGS+= --enable-locales-fix
