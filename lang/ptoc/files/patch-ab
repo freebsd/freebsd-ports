@@ -1,0 +1,17 @@
+--- Xbgi/makefile	Thu Jun 26 14:43:30 1997
++++ /home/andy/tmp/wrk/Xbgi/makefile	Mon Dec  8 17:01:03 1997
+@@ -44,12 +44,12 @@
+ LIB = ../libXbgi.a
+ 
+ CC = gcc
+-CCFLAGS = -O2 -g
++CFLAGS+= -I/usr/X11R6/include
+ AR = ar
+ ARFLAGS = rc
+ 
+ .c.o:
+-	$(CC) $(CCFLAGS) -c $<
++	$(CC) $(CFLAGS) -c $<
+ 
+ ../libXbgi.a: $(OBJ)
+ 	$(AR) $(ARFLAGS) $(LIB) $(OBJ)

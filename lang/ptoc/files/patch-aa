@@ -1,0 +1,22 @@
+--- makefile	Tue Sep  2 08:49:02 1997
++++ /home/andy/tmp/wrk/makefile	Wed Dec 10 11:26:08 1997
+@@ -18,8 +18,8 @@
+ # Chose compiler You prefere.
+ #
+ 
+-CC =		gcc -O5 -g -Wall -c
+-CFLAGS =
++CC =		gcc
++CFLAGS+=	-c
+ 
+ DEFINES = 
+ INCLUDES =	-I.
+@@ -31,7 +31,7 @@
+ # Chose linker You prefere.
+ #
+ 
+-LD =		gcc -static 
++LD =		gcc
+ #LD =		cxx -non_shared
+ LDFLAGS =
+ 
