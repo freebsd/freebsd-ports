@@ -7,7 +7,7 @@
 
 PORTNAME=	cocoon
 PORTVERSION=	1.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc www java
 MASTER_SITES=	http://xml.apache.org/cocoon/dist/cocoon1/ \
 		http://www.metaverse.nl/~ernst/ \
