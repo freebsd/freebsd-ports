@@ -372,6 +372,7 @@
     SUBDIR += unquote
     SUBDIR += upsd
     SUBDIR += upsmon
+    SUBDIR += uptimec
     SUBDIR += uptimed
     SUBDIR += uschedule
     SUBDIR += userinfo
