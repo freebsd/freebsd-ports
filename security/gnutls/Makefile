@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.20
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	http://www.mirrors.wiretapped.net/security/network-security/gnutls/ \
@@ -37,7 +37,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-included-lzo
 
 MAN1=		certtool.1 gnutls-cli.1 gnutls-cli-debug.1 \
-       		gnutls-serv.1 gnutls-srpcrypt.1
+       		gnutls-serv.1 srptool.1
 DOCS=		AUTHORS NEWS README THANKS doc/tex/*.ps
 EXAMPLES=	doc/examples/*.c
 
