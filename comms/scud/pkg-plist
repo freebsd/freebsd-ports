@@ -1,0 +1,3 @@
+sbin/scud
+etc/rc.d/scud.sh.sample
+etc/scud.conf.sample
