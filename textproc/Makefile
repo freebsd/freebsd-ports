@@ -128,6 +128,7 @@
     SUBDIR += ruby-html-parser
     SUBDIR += ruby-qt2xml
     SUBDIR += ruby-rdtool
+    SUBDIR += ruby-sablot
     SUBDIR += ruby-xmlparser
     SUBDIR += rxp
     SUBDIR += sablotron
