@@ -17,6 +17,7 @@
     SUBDIR += blast
     SUBDIR += bricons
     SUBDIR += buttonbox
+    SUBDIR += cnslock
     SUBDIR += decurs
     SUBDIR += deskmenu
     SUBDIR += dgs
