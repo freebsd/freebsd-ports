@@ -7,7 +7,7 @@
 
 PORTNAME=	ftpmirror
 PORTVERSION=	1.96
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.intec.co.jp/pub/utils/ftpmirror/beta/
 
