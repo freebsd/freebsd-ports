@@ -1,11 +1,11 @@
 bin/mergeant
 share/doc/mergeant/C/topic.dat
-share/doc/mergeant/fr/topic.dat
-share/gnome/apps/Applications/mergeant.desktop
+share/gnome/applications/mergeant.desktop
 share/gnome/mergeant/dtd/mergeant.dtd
 share/gnome/mergeant/plugins/libPnetaddr.so
 share/gnome/mergeant/plugins/libPpicts.so
 share/gnome/mergeant/plugins/libPsample.so
+share/gnome/omf/mergeant/mergeant-C.omf
 share/gnome/pixmaps/mergeant/mergeant.png
 share/gnome/pixmaps/mergeant/mergeant_connect.png
 share/gnome/pixmaps/mergeant/mergeant_connect_small.png
@@ -18,19 +18,23 @@ share/gnome/pixmaps/mergeant/mergeant_rels.png
 share/gnome/pixmaps/mergeant/mergeant_rels_small.png
 share/gnome/pixmaps/mergeant/mergeant_sequences.png
 share/gnome/pixmaps/mergeant/mergeant_tables.png
+share/locale/da/LC_MESSAGES/mergeant.mo
 share/locale/de/LC_MESSAGES/mergeant.mo
+share/locale/es/LC_MESSAGES/mergeant.mo
 share/locale/fr/LC_MESSAGES/mergeant.mo
 share/locale/it/LC_MESSAGES/mergeant.mo
+share/locale/pl/LC_MESSAGES/mergeant.mo
+share/locale/pt_BR/LC_MESSAGES/mergeant.mo
 share/locale/ru/LC_MESSAGES/mergeant.mo
 share/locale/sk/LC_MESSAGES/mergeant.mo
+share/locale/sv/LC_MESSAGES/mergeant.mo
 share/locale/tr/LC_MESSAGES/mergeant.mo
+share/locale/vi/LC_MESSAGES/mergeant.mo
 @dirrm share/gnome/pixmaps/mergeant
+@dirrm share/gnome/omf/mergeant
 @dirrm share/gnome/mergeant/plugins
 @dirrm share/gnome/mergeant/dtd
 @dirrm share/gnome/mergeant
-@dirrm share/doc/mergeant/fr/stylesheet-images
-@dirrm share/doc/mergeant/fr/images
-@dirrm share/doc/mergeant/fr
 @dirrm share/doc/mergeant/C/stylesheet-images
 @dirrm share/doc/mergeant/C/images
 @dirrm share/doc/mergeant/C
