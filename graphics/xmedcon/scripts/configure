@@ -1,0 +1,92 @@
+#!/bin/sh
+
+if [ -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc ]; then
+	exit
+fi
+
+tempfile=`/usr/bin/mktemp -t checklist`
+
+if [ "${BATCH}" ]; then
+else
+	/usr/bin/dialog --title "Configuration options: (X)Medcon" --clear \
+		--checklist "\n\
+Please select desired options:" -1 -1 11 \
+x11		"With X11" ON \
+acr/nema	"With Acr/Nema 2.0" ON \
+analyze		"With Analyze (SPM)" ON \
+concorde	"With Concorde æPET" ON \
+dicom		"With DICOM 3.0 (implies acr/nema)" ON \
+dicom_ljpeg	"With DICOM 3.0 Lossless JPEG (implies acr/nema and dicom)" ON \
+ecat		"With ECAT 6.4" ON \
+gif		"With GIF87a/89a" ON \
+interfile	"With InterFile 3.3" ON \
+inw		"With INW (RUG)" ON \
+png		"With PNG" ON \
+2> $tempfile
+
+	retval=$?
+
+	if [ -s $tempfile ]; then
+		set `cat $tempfile`
+	fi
+	rm -f $tempfile
+
+	case $retval in
+		0)	if [ -z "$*" ]; then
+				echo "Nothing selected"
+			fi
+			;;
+		1)	echo "Cancel pressed."
+			exit 1
+			;;
+	esac
+fi
+
+${MKDIR} ${WRKDIRPREFIX}${REALCURDIR}
+echo "SCRIPT_RUN=yes" >${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+
+while [ "$1" ]; do
+	case $1 in
+		\"x11\")
+			echo "WITH_X11=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"acr/nema\")
+			echo "WITH_ACRNEMA=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"analyze\")
+			echo "WITH_ANALYZE=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"concorde\")
+			echo "WITH_CONCORDE=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"dicom\")
+			echo "WITH_DICOM=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"dicom_ljpeg\")
+			echo "WITH_ACRNEMA=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			echo "WITH_DICOM=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			echo "WITH_DICOM_LJPEG=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"ecat\")
+			echo "WITH_ECAT=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"gif\")
+			echo "WITH_GIF=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"interfile\")
+			echo "WITH_INTERFILE=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"inw\")
+			echo "WITH_INW=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		\"png\")
+			echo "WITH_PNG=YES" >>${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			;;
+		*)
+			echo "Invalid option: $1"
+			rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+			exit 1
+			;;
+	esac
+	shift
+done
