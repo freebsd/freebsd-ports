@@ -3,12 +3,13 @@
 # Date created:        12 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.5 1998/12/29 18:22:58 billf Exp $
+# $Id: Makefile,v 1.6 1999/01/22 22:15:39 nectar Exp $
 #
 
 DISTNAME=	mtr-0.28
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/
+MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
+		http://www.FreeBSD.org/~billf/distfiles/
 
 MAINTAINER=	billf@FreeBSD.org
 
