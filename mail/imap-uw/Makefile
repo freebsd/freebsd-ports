@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
-# $Id: Makefile,v 1.19 1998/10/13 23:25:06 jseger Exp $
+# $Id: Makefile,v 1.20 1998/10/23 18:42:49 asami Exp $
 #
 
 DISTNAME=	imap-4.2
@@ -15,10 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	imap-uw@freebsd.ady.ro
 
-VERSION!=	sysctl -n kern.osreldate
-.if ${VERSION} < 300000
-BROKEN=		build
-.endif
 ALL_TARGET=	bsf
 MAN8=		ipopd.8 imapd.8
 

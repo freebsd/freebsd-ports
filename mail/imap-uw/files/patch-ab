@@ -51,9 +51,9 @@
  
 +$(SHLIB): $(SOFILES)
 +.if $(PORTOBJFORMAT) == "elf"
-+	ld -Bshareable -x -o $(SHLIB) $(SOFILES)
++	ld -shared -x -soname $(SHLIB) -o $(SHLIB) $(SOFILES)
 +.else
-+	ld -Bshareable -x -soname $(SHLIB) -o $(SHLIB) $(SOFILES)
++	ld -Bshareable -x -o $(SHLIB) $(SOFILES)
 +.endif
 +
 +.c.so:	osdep.h
