@@ -48,6 +48,7 @@ share/locale/ko/LC_MESSAGES/bug-buddy.mo
 share/locale/lt/LC_MESSAGES/bug-buddy.mo
 share/locale/lv/LC_MESSAGES/bug-buddy.mo
 share/locale/mk/LC_MESSAGES/bug-buddy.mo
+share/locale/ml/LC_MESSAGES/bug-buddy.mo
 share/locale/mn/LC_MESSAGES/bug-buddy.mo
 share/locale/ms/LC_MESSAGES/bug-buddy.mo
 share/locale/nl/LC_MESSAGES/bug-buddy.mo
@@ -61,6 +62,8 @@ share/locale/ru/LC_MESSAGES/bug-buddy.mo
 share/locale/sk/LC_MESSAGES/bug-buddy.mo
 share/locale/sl/LC_MESSAGES/bug-buddy.mo
 share/locale/sq/LC_MESSAGES/bug-buddy.mo
+share/locale/sr/LC_MESSAGES/bug-buddy.mo
+share/locale/sr@Latn/LC_MESSAGES/bug-buddy.mo
 share/locale/sv/LC_MESSAGES/bug-buddy.mo
 share/locale/tr/LC_MESSAGES/bug-buddy.mo
 share/locale/uk/LC_MESSAGES/bug-buddy.mo
