@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  --sysconfdir=${PREFIX}/etc/squid \
 		--localstatedir=${PREFIX}/squid
-STRIP=		# won't install scripts correctly othervise.
+STRIP=		# won't install scripts correctly otherwise.
 MAKEFILE=	makefile
 NO_LATEST_LINK=	yes
 
