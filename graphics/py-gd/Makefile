@@ -16,7 +16,9 @@ COMMENT=	Python interface to the GD library
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
+.if defined(WITHOUT_X11)
 USE_XPM=	yes
+.endif
 USE_REINPLACE=  yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -29,6 +31,10 @@ post-patch:
 		-e 's,/usr/X11R6,${X11BASE},g' \
 		-e 's,/usr/include/X11,${LOCALBASE}/include,g' \
 		${WRKSRC}/${PYSETUP}
+.if defined(WITHOUT_X11)
+	${REINPLACE_CMD} -e 's/"X11", "Xpm",//' \
+		-e 's/"ttf", "freetype",//' ${WRKSRC}/${PYSETUP}
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
