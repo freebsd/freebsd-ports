@@ -1,8 +1,8 @@
-*** pico/makefile.bsf.orig	Fri Jun 14 00:15:20 1996
---- pico/makefile.bsf	Fri Jun 14 00:15:20 1996
+*** pico/makefile.bsf.orig	Sun May 23 18:49:12 1999
+--- pico/makefile.bsf	Sun May 23 18:54:45 1999
 ***************
 *** 0 ****
---- 1,95 ----
+--- 1,105 ----
 + #
 + #   Michael Seibel
 + #   Networks and Distributed Computing
@@ -51,6 +51,11 @@
 + 		pico.o random.o region.o search.o spell.o tcap.o window.o word.o hangul.o
 + 
 + # Lets be elite and not retype in the above
++ .if $(PORTOBJFORMAT) == "elf"
++ SOLIB=		libpico.so.1
++ .else
++ SOLIB=		libpico.so.1.3
++ .endif
 + SOFILES=	${OFILES:.o=.so}
 + 
 + CFILES=		attach.c ansi.c basic.c bind.c browse.c buffer.c \
@@ -79,13 +84,18 @@
 + 		$(LIBCMD) $(LIBARGS) libpico.a $(OFILES)
 + 		$(RANLIB) libpico.a
 + 
-+ libpico.so.1.3:	osdep.c osdep.h $(SOFILES)
++ $(SOLIB):	osdep.c osdep.h $(SOFILES)
++ .if $(PORTOBJFORMAT) == "elf"
++ 		ld -Bshareable -x -soname $(SOLIB) -o $(SOLIB) $(SOFILES)
++ 		ln -sf $(SOLIB) libpico.so
++ .else
 + 		ld -Bshareable -x -o libpico.so.1.3 $(SOFILES)
++ .endif
 + 
-+ pico:		main.c libpico.so.1.3
++ pico:		main.c $(SOLIB)
 + 		$(CC) $(CFLAGS) main.c -L. -lpico $(LIBS) -o pico
 + 
-+ pilot:		pilot.c libpico.so.1.3
++ pilot:		pilot.c $(SOLIB)
 + 		$(CC) $(CFLAGS) pilot.c -L. -lpico $(LIBS) -o pilot
 + 
 + .c.so:		; $(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
