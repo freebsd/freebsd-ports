@@ -1,14 +1,13 @@
-# ex:ts=8
 # Ports collection makefile for:  vnlpr
 # Version required:	2.0
 # Date created:		Sat Dec 7, 1996
 # Whom:			David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/08/09 04:17:16 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/12/09 02:02:49 obrien Exp $
 #
 
 DISTNAME=	vnlpr
-PKGNAME=	vn-vnlpr-2.0
+PKGNAME=	vi-vnlpr-2.0
 CATEGORIES=	vietnamese
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/

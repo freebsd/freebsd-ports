@@ -1,14 +1,13 @@
-# ex:ts=8
 # New ports collection makefile for:    vnelvis
 # Version required:     1.4
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.1.1.1 1996/12/06 12:37:38 obrien Exp $
+# $Id: Makefile,v 1.2 1996/12/06 23:55:27 asami Exp $
 #
 
 DISTNAME=	vnelvis
-PKGNAME=	vn-vnelvis-1.4
+PKGNAME=	vi-vnelvis-1.4
 CATEGORIES=	vietnamese
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/
