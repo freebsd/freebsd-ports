@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.196 1999/05/03 04:14:07 steve Exp $
+# $Id: Makefile,v 1.197 1999/05/06 14:30:10 taoka Exp $
 #
 
     SUBDIR += Canna
@@ -99,6 +99,7 @@
     SUBDIR += lesw
     SUBDIR += libicq
     SUBDIR += libimg
+    SUBDIR += libjcode
     SUBDIR += libslang
     SUBDIR += libxpg4-ns
     SUBDIR += lipsf
