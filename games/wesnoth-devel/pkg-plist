@@ -4,6 +4,7 @@
 bin/wesnoth
 %%EDITOR:%%bin/wesnoth_editor
 %%SERVER:%%bin/wesnothd
+bin/wmlxgettext
 share/locale/ca/LC_MESSAGES/wesnoth-editor.mo
 share/locale/ca/LC_MESSAGES/wesnoth-ei.mo
 share/locale/ca/LC_MESSAGES/wesnoth-httt.mo
@@ -265,6 +266,7 @@ share/wesnoth/data/maps/multiplayer/Blitz
 share/wesnoth/data/maps/multiplayer/Broken_Bridge
 share/wesnoth/data/maps/multiplayer/CastleHoppingIsle
 share/wesnoth/data/maps/multiplayer/Castles
+share/wesnoth/data/maps/multiplayer/Charge
 share/wesnoth/data/maps/multiplayer/ForestofFear
 share/wesnoth/data/maps/multiplayer/King_of_the_Hill
 share/wesnoth/data/maps/multiplayer/Three_Rivers
@@ -388,6 +390,7 @@ share/wesnoth/data/scenarios/multiplayer/An_Island.cfg
 share/wesnoth/data/scenarios/multiplayer/Blitz.cfg
 share/wesnoth/data/scenarios/multiplayer/BrokenBridge.cfg
 share/wesnoth/data/scenarios/multiplayer/CastleHoppingIsle.cfg
+share/wesnoth/data/scenarios/multiplayer/Charge.cfg
 share/wesnoth/data/scenarios/multiplayer/ForestOfFear.cfg
 share/wesnoth/data/scenarios/multiplayer/Random_Scenario.cfg
 share/wesnoth/data/scenarios/multiplayer/Random_Scenario_Desert.cfg
@@ -446,7 +449,6 @@ share/wesnoth/data/units/Blood_Bat.cfg
 share/wesnoth/data/units/Bone_Shooter.cfg
 share/wesnoth/data/units/Bowman.cfg
 share/wesnoth/data/units/Cavalier.cfg
-share/wesnoth/data/units/Cavalry.cfg
 share/wesnoth/data/units/Cavalryman.cfg
 share/wesnoth/data/units/Cave_Spider.cfg
 share/wesnoth/data/units/Chocobone.cfg
@@ -457,6 +459,7 @@ share/wesnoth/data/units/Dark_Adept.cfg
 share/wesnoth/data/units/Dark_Queen.cfg
 share/wesnoth/data/units/Dark_Spirit.cfg
 share/wesnoth/data/units/Death_Knight.cfg
+share/wesnoth/data/units/Deathblade.cfg
 share/wesnoth/data/units/Deathmaster.cfg
 share/wesnoth/data/units/Demilich.cfg
 share/wesnoth/data/units/Direwolf_Rider.cfg
@@ -473,6 +476,7 @@ share/wesnoth/data/units/Drake_Inferno.cfg
 share/wesnoth/data/units/Drake_Sky.cfg
 share/wesnoth/data/units/Drake_Slasher.cfg
 share/wesnoth/data/units/Drake_Warrior.cfg
+share/wesnoth/data/units/Draug.cfg
 share/wesnoth/data/units/Duelist.cfg
 share/wesnoth/data/units/Dwarvish_Berserker.cfg
 share/wesnoth/data/units/Dwarvish_Dragonguard.cfg
@@ -522,7 +526,6 @@ share/wesnoth/data/units/Ghost.cfg
 share/wesnoth/data/units/Ghoul.cfg
 share/wesnoth/data/units/Giant_Mudcrawler.cfg
 share/wesnoth/data/units/Giant_Scorpion.cfg
-share/wesnoth/data/units/Goblin_Direwolver.cfg
 share/wesnoth/data/units/Goblin_Impaler.cfg
 share/wesnoth/data/units/Goblin_Knight.cfg
 share/wesnoth/data/units/Goblin_Pillager.cfg
@@ -535,7 +538,6 @@ share/wesnoth/data/units/Gryphon.cfg
 share/wesnoth/data/units/Gryphon_Master.cfg
 share/wesnoth/data/units/Gryphon_Rider.cfg
 share/wesnoth/data/units/Halbardier.cfg
-share/wesnoth/data/units/Heavy_Infantry.cfg
 share/wesnoth/data/units/Heavy_Infantryman.cfg
 share/wesnoth/data/units/Horse_Lord.cfg
 share/wesnoth/data/units/Horseman.cfg
@@ -561,7 +563,6 @@ share/wesnoth/data/units/Merman_Fighter.cfg
 share/wesnoth/data/units/Merman_Hoplite.cfg
 share/wesnoth/data/units/Merman_Hunter.cfg
 share/wesnoth/data/units/Merman_Javelineer.cfg
-share/wesnoth/data/units/Merman_Lord.cfg
 share/wesnoth/data/units/Merman_Netcaster.cfg
 share/wesnoth/data/units/Merman_Spearman.cfg
 share/wesnoth/data/units/Merman_Triton.cfg
@@ -569,6 +570,9 @@ share/wesnoth/data/units/Merman_Warrior.cfg
 share/wesnoth/data/units/Mounted_Captain.cfg
 share/wesnoth/data/units/Mounted_Commander.cfg
 share/wesnoth/data/units/Mudcrawler.cfg
+share/wesnoth/data/units/Naga-Fighter.cfg
+share/wesnoth/data/units/Naga-Myrmidon.cfg
+share/wesnoth/data/units/Naga-Warrior.cfg
 share/wesnoth/data/units/Naga.cfg
 share/wesnoth/data/units/Necromancer.cfg
 share/wesnoth/data/units/Necrophage.cfg
@@ -580,7 +584,6 @@ share/wesnoth/data/units/Noble_Youth.cfg
 share/wesnoth/data/units/Ogre.cfg
 share/wesnoth/data/units/Orcish_Archer.cfg
 share/wesnoth/data/units/Orcish_Assassin.cfg
-share/wesnoth/data/units/Orcish_Crossbow.cfg
 share/wesnoth/data/units/Orcish_Crossbowman.cfg
 share/wesnoth/data/units/Orcish_Grunt.cfg
 share/wesnoth/data/units/Orcish_Leader.cfg
@@ -604,11 +607,13 @@ share/wesnoth/data/units/Revenant.cfg
 share/wesnoth/data/units/Rogue.cfg
 share/wesnoth/data/units/Royal_Guard.cfg
 share/wesnoth/data/units/Saurian.cfg
+share/wesnoth/data/units/Saurian_Ambusher.cfg
+share/wesnoth/data/units/Saurian_Flanker.cfg
 share/wesnoth/data/units/Saurian_Icecaster.cfg
+share/wesnoth/data/units/Saurian_Skirmisher.cfg
 share/wesnoth/data/units/Saurian_Soothsayer.cfg
 share/wesnoth/data/units/Saurian_Tribalist.cfg
 share/wesnoth/data/units/Saurian_Warrior.cfg
-share/wesnoth/data/units/Scout.cfg
 share/wesnoth/data/units/Sea_Hag.cfg
 share/wesnoth/data/units/Sea_Orc.cfg
 share/wesnoth/data/units/Sea_Serpent.cfg
@@ -673,10 +678,13 @@ share/wesnoth/images/attacks/axe.png
 share/wesnoth/images/attacks/baneblade.png
 share/wesnoth/images/attacks/battleaxe.png
 share/wesnoth/images/attacks/beak.png
+share/wesnoth/images/attacks/bone-arrow-stab.png
 share/wesnoth/images/attacks/bow.png
 share/wesnoth/images/attacks/claws.png
+share/wesnoth/images/attacks/cleaver.png
 share/wesnoth/images/attacks/club.png
 share/wesnoth/images/attacks/crossbow.png
+share/wesnoth/images/attacks/crush.png
 share/wesnoth/images/attacks/curse.png
 share/wesnoth/images/attacks/dagger.png
 share/wesnoth/images/attacks/dark-missile.png
@@ -704,6 +712,7 @@ share/wesnoth/images/attacks/lightingbolt.png
 share/wesnoth/images/attacks/longbow.png
 share/wesnoth/images/attacks/mace.png
 share/wesnoth/images/attacks/missile.png
+share/wesnoth/images/attacks/morning_star.png
 share/wesnoth/images/attacks/paladinsword.png
 share/wesnoth/images/attacks/pike.png
 share/wesnoth/images/attacks/pincers.png
@@ -756,24 +765,28 @@ share/wesnoth/images/buttons/slider.png
 share/wesnoth/images/buttons/uparrow-button-active.png
 share/wesnoth/images/buttons/uparrow-button-pressed.png
 share/wesnoth/images/buttons/uparrow-button.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story0a.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story0b.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story1.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story2.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story3.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story4.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story5.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story6.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story7.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story8.png
-share/wesnoth/images/campaigns/Heir_To_The_Throne/story9.png
-share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/sotbe.png
-share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/sotbe1.png
-share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/sotbe2.png
-share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/sotbe3.png
-share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/east.png
-share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/trow-logo.png
-share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/west.png
+share/wesnoth/images/campaigns/Eastern_Invasion/maps/eastern_invasion.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story0a.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story0b.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story1.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story2.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story3.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story4.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story5.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story6.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story7.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story8.png
+%%LITE:%%share/wesnoth/images/campaigns/Heir_To_The_Throne/story/story9.png
+%%LITE:%%share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/maps/sotbe.png
+%%LITE:%%share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/maps/sotbe1.png
+%%LITE:%%share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/maps/sotbe2.png
+%%LITE:%%share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/maps/sotbe3.png
+share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/maps/the_great_continent.png
+share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/maps/the_green_isle.png
+%%LITE:%%share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/east.png
+%%LITE:%%share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/the_duel.png
+%%LITE:%%share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/trow-logo.png
+%%LITE:%%share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story/west.png
 share/wesnoth/images/cavespider-defend.png
 share/wesnoth/images/cavespider.png
 share/wesnoth/images/cockatrice-attack1.png
@@ -1319,8 +1332,8 @@ share/wesnoth/images/human-cavalier.png
 share/wesnoth/images/human-dragoon-attack.png
 share/wesnoth/images/human-dragoon-defend.png
 share/wesnoth/images/human-dragoon-moving.png
-share/wesnoth/images/human-dragoon-range1.png
-share/wesnoth/images/human-dragoon-range2.png
+share/wesnoth/images/human-dragoon-ranged1.png
+share/wesnoth/images/human-dragoon-ranged2.png
 share/wesnoth/images/human-dragoon.png
 share/wesnoth/images/human-duelist-attack.png
 share/wesnoth/images/human-duelist-defend.png
@@ -1397,9 +1410,11 @@ share/wesnoth/images/human-swordman.png
 share/wesnoth/images/human-wallguard-attack.png
 share/wesnoth/images/human-wallguard-defense.png
 share/wesnoth/images/human-wallguard.png
+share/wesnoth/images/icons/icon-ai.png
 share/wesnoth/images/icons/icon-display.png
 share/wesnoth/images/icons/icon-general.png
 share/wesnoth/images/icons/icon-hostgame.png
+share/wesnoth/images/icons/icon-hotseat.png
 share/wesnoth/images/icons/icon-music.png
 share/wesnoth/images/icons/icon-server.png
 share/wesnoth/images/icons/icon-serverother.png
@@ -1480,9 +1495,6 @@ share/wesnoth/images/mage-attack2.png
 share/wesnoth/images/mage-attack3.png
 share/wesnoth/images/mage-defend.png
 share/wesnoth/images/mage.png
-share/wesnoth/images/maps/eastern_invasion.png
-share/wesnoth/images/maps/the_great_continent.png
-share/wesnoth/images/maps/the_green_isle.png
 share/wesnoth/images/maps/wesnoth.png
 share/wesnoth/images/mermaid-diviner.png
 share/wesnoth/images/mermaid-enchantress.png
@@ -1649,14 +1661,14 @@ share/wesnoth/images/misc/top-bg.png
 share/wesnoth/images/misc/topleft-corner.png
 share/wesnoth/images/misc/topright-corner.png
 share/wesnoth/images/misc/trapdoor.png
-%%LITE:%%share/wesnoth/images/misc/tutorial1.png
-%%LITE:%%share/wesnoth/images/misc/tutorial2.png
-%%LITE:%%share/wesnoth/images/misc/tutorial3.png
-%%LITE:%%share/wesnoth/images/misc/tutorial3b.png
-%%LITE:%%share/wesnoth/images/misc/tutorial4.png
-%%LITE:%%share/wesnoth/images/misc/tutorial5.png
-%%LITE:%%share/wesnoth/images/misc/tutorial6.png
-%%LITE:%%share/wesnoth/images/misc/tutorial7.png
+share/wesnoth/images/misc/tutorial1.png
+share/wesnoth/images/misc/tutorial2.png
+share/wesnoth/images/misc/tutorial3.png
+share/wesnoth/images/misc/tutorial3b.png
+share/wesnoth/images/misc/tutorial4.png
+share/wesnoth/images/misc/tutorial5.png
+share/wesnoth/images/misc/tutorial6.png
+share/wesnoth/images/misc/tutorial7.png
 share/wesnoth/images/misc/units.png
 share/wesnoth/images/misc/upkeep.png
 share/wesnoth/images/misc/villages.png
@@ -1665,6 +1677,24 @@ share/wesnoth/images/mudcrawler-defend.png
 share/wesnoth/images/mudcrawler.png
 share/wesnoth/images/naga-attack.png
 share/wesnoth/images/naga-defend.png
+share/wesnoth/images/naga-fighter+female-attack.png
+share/wesnoth/images/naga-fighter+female-defend.png
+share/wesnoth/images/naga-fighter+female.png
+share/wesnoth/images/naga-fighter-attack.png
+share/wesnoth/images/naga-fighter-defend.png
+share/wesnoth/images/naga-fighter.png
+share/wesnoth/images/naga-myrmidon+female-attack.png
+share/wesnoth/images/naga-myrmidon+female-defend.png
+share/wesnoth/images/naga-myrmidon+female.png
+share/wesnoth/images/naga-myrmidon-attack.png
+share/wesnoth/images/naga-myrmidon-defend.png
+share/wesnoth/images/naga-myrmidon.png
+share/wesnoth/images/naga-warrior+female-attack.png
+share/wesnoth/images/naga-warrior+female-defend.png
+share/wesnoth/images/naga-warrior+female.png
+share/wesnoth/images/naga-warrior-attack.png
+share/wesnoth/images/naga-warrior-defend.png
+share/wesnoth/images/naga-warrior.png
 share/wesnoth/images/naga.png
 share/wesnoth/images/neutral-bandit-attack.png
 share/wesnoth/images/neutral-bandit-defend.png
@@ -1766,6 +1796,7 @@ share/wesnoth/images/orcish-sovereign-attack1.png
 share/wesnoth/images/orcish-sovereign-attack2.png
 share/wesnoth/images/orcish-sovereign-defend.png
 share/wesnoth/images/orcish-sovereign.png
+share/wesnoth/images/orcish-warlord-defend.png
 share/wesnoth/images/orcish-warlord.png
 share/wesnoth/images/orcish-warrior-defend.png
 share/wesnoth/images/orcish-warrior-melee1.png
@@ -1792,14 +1823,28 @@ share/wesnoth/images/paladin.png
 share/wesnoth/images/parandra.png
 share/wesnoth/images/pirate-galleon.png
 share/wesnoth/images/portraits/Eastern_Invasion/dacyn.png
+share/wesnoth/images/portraits/Heir_To_The_Throne/asheviere.png
 share/wesnoth/images/portraits/Heir_To_The_Throne/delfador.png
 share/wesnoth/images/portraits/Heir_To_The_Throne/kalenz.png
 share/wesnoth/images/portraits/Heir_To_The_Throne/konrad.png
 share/wesnoth/images/portraits/Heir_To_The_Throne/lisar.png
 share/wesnoth/images/portraits/Heir_To_The_Throne/lisar_angry.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/addroran.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/aethyr.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/aryad.png
 share/wesnoth/images/portraits/The_Rise_of_Wesnoth/burin.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/dionli.png
 share/wesnoth/images/portraits/The_Rise_of_Wesnoth/edmond.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/eldaric.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/familiar.png
 share/wesnoth/images/portraits/The_Rise_of_Wesnoth/haldric.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/isomithir.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/jessica.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/jevyan.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/knight.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/logalmier.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/rithrandil.png
+share/wesnoth/images/portraits/The_Rise_of_Wesnoth/typhon.png
 share/wesnoth/images/projectiles/bone-n.png
 share/wesnoth/images/projectiles/bone-ne.png
 share/wesnoth/images/projectiles/bullet.png
@@ -1831,6 +1876,7 @@ share/wesnoth/images/projectiles/pitchfork-ne.png
 share/wesnoth/images/projectiles/spear-n.png
 share/wesnoth/images/projectiles/spear-ne.png
 share/wesnoth/images/projectiles/stone.png
+share/wesnoth/images/projectiles/thorns-ne.png
 share/wesnoth/images/projectiles/thorns.png
 share/wesnoth/images/projectiles/water-spray.png
 share/wesnoth/images/projectiles/water_spay.png
@@ -1850,16 +1896,27 @@ share/wesnoth/images/rogue-attack.png
 share/wesnoth/images/rogue-defend.png
 share/wesnoth/images/rogue-ranged.png
 share/wesnoth/images/rogue.png
-share/wesnoth/images/saurian-attack1.png
-share/wesnoth/images/saurian-attack2.png
-share/wesnoth/images/saurian-attack3.png
-share/wesnoth/images/saurian-defend.png
+share/wesnoth/images/saurian-ambusher-attack1.png
+share/wesnoth/images/saurian-ambusher-attack2.png
+share/wesnoth/images/saurian-ambusher-defend.png
+share/wesnoth/images/saurian-ambusher-ranged.png
+share/wesnoth/images/saurian-ambusher.png
+share/wesnoth/images/saurian-flanker-attack-ranged.png
+share/wesnoth/images/saurian-flanker-attack1.png
+share/wesnoth/images/saurian-flanker-attack2.png
+share/wesnoth/images/saurian-flanker-defend.png
+share/wesnoth/images/saurian-flanker.png
 share/wesnoth/images/saurian-icecaster-attack.png
 share/wesnoth/images/saurian-icecaster-defend.png
 share/wesnoth/images/saurian-icecaster-ranged1.png
 share/wesnoth/images/saurian-icecaster-ranged2.png
 share/wesnoth/images/saurian-icecaster-ranged3.png
 share/wesnoth/images/saurian-icecaster.png
+share/wesnoth/images/saurian-skirmisher-attack1.png
+share/wesnoth/images/saurian-skirmisher-attack2.png
+share/wesnoth/images/saurian-skirmisher-attack3.png
+share/wesnoth/images/saurian-skirmisher-defend.png
+share/wesnoth/images/saurian-skirmisher.png
 share/wesnoth/images/saurian-soothsayer-attack.png
 share/wesnoth/images/saurian-soothsayer-defend.png
 share/wesnoth/images/saurian-soothsayer-healing.png
@@ -1870,12 +1927,6 @@ share/wesnoth/images/saurian-tribalist-defend.png
 share/wesnoth/images/saurian-tribalist-heal.png
 share/wesnoth/images/saurian-tribalist-ranged1.png
 share/wesnoth/images/saurian-tribalist.png
-share/wesnoth/images/saurian-warrior-attack1.png
-share/wesnoth/images/saurian-warrior-attack2.png
-share/wesnoth/images/saurian-warrior-defend.png
-share/wesnoth/images/saurian-warrior-ranged.png
-share/wesnoth/images/saurian-warrior.png
-share/wesnoth/images/saurian.png
 share/wesnoth/images/scepter-princess-attack-scepter-1.png
 share/wesnoth/images/scepter-princess-attack-scepter-2.png
 share/wesnoth/images/scepter-princess-attack-scepter-3.png
@@ -2534,6 +2585,11 @@ share/wesnoth/images/undead-darkspirit-attack.png
 share/wesnoth/images/undead-darkspirit-attack1.png
 share/wesnoth/images/undead-darkspirit-defend.png
 share/wesnoth/images/undead-darkspirit.png
+share/wesnoth/images/undead-deathblade-attack1.png
+share/wesnoth/images/undead-deathblade-attack2.png
+share/wesnoth/images/undead-deathblade-attack3.png
+share/wesnoth/images/undead-deathblade-defend.png
+share/wesnoth/images/undead-deathblade.png
 share/wesnoth/images/undead-deathknight-attack.png
 share/wesnoth/images/undead-deathknight.png
 share/wesnoth/images/undead-deathmaster-attack1.png
@@ -2548,6 +2604,10 @@ share/wesnoth/images/undead-demilich-attack.png
 share/wesnoth/images/undead-demilich-ranged1.png
 share/wesnoth/images/undead-demilich-ranged2.png
 share/wesnoth/images/undead-demilich.png
+share/wesnoth/images/undead-draug-attack1.png
+share/wesnoth/images/undead-draug-attack2.png
+share/wesnoth/images/undead-draug-defend.png
+share/wesnoth/images/undead-draug.png
 share/wesnoth/images/undead-ghost-attack.png
 share/wesnoth/images/undead-ghost-attack1.png
 share/wesnoth/images/undead-ghost-defend.png
@@ -2632,10 +2692,11 @@ share/wesnoth/images/wolf-rider-attack.png
 share/wesnoth/images/wolf-rider-defend.png
 share/wesnoth/images/wolf-rider-moving.png
 share/wesnoth/images/wolf-rider.png
-share/wesnoth/images/wose-ancient-attack-1.png
-share/wesnoth/images/wose-ancient-attack-2.png
+share/wesnoth/images/wose-ancient-attack.png
+share/wesnoth/images/wose-ancient-defend.png
 share/wesnoth/images/wose-ancient.png
-share/wesnoth/images/wose-attack.png
+share/wesnoth/images/wose-attack-1.png
+share/wesnoth/images/wose-attack-2.png
 share/wesnoth/images/wose-defend.png
 share/wesnoth/images/wose-elder-attack.png
 share/wesnoth/images/wose-elder-defend.png
@@ -2729,9 +2790,15 @@ share/wesnoth/sounds/zombie-hit.wav
 @dirrm share/wesnoth/images/editor
 @dirrm share/wesnoth/images/cursors-bw
 @dirrm share/wesnoth/images/cursors
+%%LITE:%%@dirrm share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/story
+@dirrm share/wesnoth/images/campaigns/The_Rise_of_Wesnoth/maps
 @dirrm share/wesnoth/images/campaigns/The_Rise_of_Wesnoth
-@dirrm share/wesnoth/images/campaigns/Son_Of_The_Black_Eye
-@dirrm share/wesnoth/images/campaigns/Heir_To_The_Throne
+%%LITE:%%@dirrm share/wesnoth/images/campaigns/Son_Of_The_Black_Eye/maps
+%%LITE:%%@dirrm share/wesnoth/images/campaigns/Son_Of_The_Black_Eye
+%%LITE:%%@dirrm share/wesnoth/images/campaigns/Heir_To_The_Throne/story
+%%LITE:%%@dirrm share/wesnoth/images/campaigns/Heir_To_The_Throne
+@dirrm share/wesnoth/images/campaigns/Eastern_Invasion/maps
+@dirrm share/wesnoth/images/campaigns/Eastern_Invasion
 @dirrm share/wesnoth/images/campaigns
 @dirrm share/wesnoth/images/buttons
 @dirrm share/wesnoth/images/attacks
