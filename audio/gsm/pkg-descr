@@ -1,2 +1,4 @@
 gsm is a conversion package and library for converting u-law audio to
 gsm encoding (which is much more efficient) and back again.
+
+WWW: http://kbs.cs.tu-berlin.de/~jutta/toast.html
