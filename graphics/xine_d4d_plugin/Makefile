@@ -7,7 +7,7 @@
 
 PORTNAME=	xine_d4d_plugin
 PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://worldzone.net/technology/captaincss/ \
 		http://debianlinux.net/
@@ -15,7 +15,7 @@ DISTFILES=	d4d031.txt
 
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 
-LIB_DEPENDS=	xine.0:${PORTSDIR}/graphics/libxine
+LIB_DEPENDS=	xine.1:${PORTSDIR}/graphics/libxine
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=		yes
