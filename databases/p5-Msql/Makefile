@@ -1,9 +1,9 @@
-
+# New ports collection makefile for:    p5-Msql
 # Version required:			1.11
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/10/17 03:02:08 jfitz Exp $
+#   $Id: Makefile,v 1.1.1.1 1996/10/23 23:53:25 jfitz Exp $
 #
 
 DISTNAME=	MsqlPerl-1.11
