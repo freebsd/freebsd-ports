@@ -152,6 +152,11 @@ share/alisp/src/evaluate.l
 share/alisp/src/hanoi.l
 share/alisp/src/infix.l
 share/alisp/src/lvrename.l
+share/alisp/src/mexpr-append.m
+share/alisp/src/mexpr-fac.m
+share/alisp/src/mexpr-hanoi.m
+share/alisp/src/mexpr-queens.m
+share/alisp/src/mexprc.l
 share/alisp/src/prefix.l
 share/alisp/src/prolog.l
 share/alisp/src/queens.l

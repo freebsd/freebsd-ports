@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	alisp
-PORTVERSION=	20050124
+PORTVERSION=	20050212
 CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://www.holm-und-jeschag.de/files/
 
