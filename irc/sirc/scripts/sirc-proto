@@ -1,0 +1,17 @@
+#!/bin/sh
+
+PREFIX=
+SIRCLIB=${PREFIX}/libexec/sirc ; export SIRCLIB
+
+if test -z "$SIRCSERVER" && test -z "$IRCSERVER"
+then
+  SIRCSERVER="irc.dal.net"
+  export SIRCSERVER
+fi
+
+case "$1" in
+  -d) shift
+      exec ${PREFIX}/bin/perl5 ${SIRCLIB}/dsirc "$@"
+      ;;
+  *)  eval exec ${PREFIX}/bin/ssfe $SSFE ${PREFIX}/bin/perl5 ${SIRCLIB}/dsirc \"\$@\"
+esac
