@@ -441,6 +441,7 @@
     SUBDIR += ruby-byaccr
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
+    SUBDIR += ruby-dl
     SUBDIR += ruby-filelock
     SUBDIR += ruby-fnmatch
     SUBDIR += ruby-gemfinder
