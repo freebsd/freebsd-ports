@@ -537,6 +537,7 @@
     SUBDIR += p5-File-Flock
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-MMagic
+    SUBDIR += p5-File-NCopy
     SUBDIR += p5-File-NFSLock
     SUBDIR += p5-File-ReadBackwards
     SUBDIR += p5-File-Remove
