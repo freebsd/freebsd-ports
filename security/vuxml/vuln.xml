@@ -1603,7 +1603,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>unrtf</name>
-	<range><gt>0</gt></range>
+	<range><lt>0.19.3_1</lt></range>
       </package>
     </affects>
     <description>
@@ -1623,6 +1623,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-12-15</discovery>
       <entry>2005-01-16</entry>
+      <modified>2005-02-11</modified>
     </dates>
   </vuln>
 
