@@ -66,4 +66,8 @@ This file is in the public domain.
     </dates>
   </vuln>
 
+  <vuln vid="1ed556e6-734f-11d8-868e-000347dd607f">
+    <cancelled superseded="1a448eb7-6988-11d8-873f-0020ed76ef5a"/>
+  </vuln>
+
 </vuxml>
