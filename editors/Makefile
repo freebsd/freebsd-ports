@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.63 1999/01/07 12:12:03 asami Exp $
+# $Id: Makefile,v 1.64 1999/01/09 03:19:23 asami Exp $
 #
 
     SUBDIR += apel-emacs
@@ -13,6 +13,8 @@
     SUBDIR += emacs
     SUBDIR += emacs20
     SUBDIR += emacs20-dl
+    SUBDIR += flim-emacs20
+    SUBDIR += flim-emacs20-current
     SUBDIR += gxedit
     SUBDIR += hexedit
     SUBDIR += jed
