@@ -20,7 +20,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		gtar:${PORTSDIR}/archivers/gtar \
 		${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-jdk13 \
-		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif-devel
+		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif
 .if !defined(WITHOUT_PLUGIN)
 BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
@@ -62,7 +62,6 @@ ALL_TARGET=	all plugin images
 ALL_TARGET=	all images
 .endif
 TAR=		gtar	# Necessary for proper extraction of sources
-BSD_TAR=	/usr/bin/tar
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
 
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-i386/jdk-image-i386
