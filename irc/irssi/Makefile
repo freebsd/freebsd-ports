@@ -7,7 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.6
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES+=	irc	# `+=' is for slave ports
 MASTER_SITES=	http://irssi.org/files/
 
@@ -31,11 +31,14 @@ PLIST_SUB+=	WITH_PROXY=""
 PLIST_SUB+=	WITH_PROXY="@comment "
 .endif
 
-#.if ${OSVERSION} >= 400014
-#CONFIGURE_ARGS+= --enable-ipv6
-#.else
+if defined(WITH_IPV6)
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+= --enable-ipv6
+CATEGORIES+=	ipv6
+.endif
+.else
 CONFIGURE_ARGS+= --disable-ipv6
-#.endif
+.endif
 
 MAN1=		irssi.1
 
