@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/automake14/automake/install-sh:${PORTSDIR}/dev
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomelibs libglade gnomeprefix gnomehack
+USE_GNOME=	gnomelibs gnomeprefix gnomehack
 USE_GNOMENG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
