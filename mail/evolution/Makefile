@@ -7,6 +7,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	1.2.2
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -17,6 +18,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	An integrated mail, calendar and address book distributed suite
 
 LIB_DEPENDS=	bonobo_conf.0:${PORTSDIR}/devel/bonobo-conf \
 		nss3.1:${PORTSDIR}/security/nss \
