@@ -209,7 +209,7 @@ describe: ${SUBDIR:S/^/describe./}
 
 .for i in ${SUBDIR}
 describe.$i:
-	@${MAKE} -B ${i:S/^/_/:S/$/.describe/} > ${INDEX_TMPDIR}/${INDEXFILE}.desc.${i}
+	@cd ${.CURDIR}; ${MAKE} -B ${i:S/^/_/:S/$/.describe/} > ${INDEX_TMPDIR}/${INDEXFILE}.desc.${i}
 .endfor
 .else
 describe: ${SUBDIR:S/^/_/:S/$/.describe/}
@@ -220,9 +220,8 @@ describe:
 	if test -d ${.CURDIR}/$${sub}; then \
 		${ECHO_MSG} "===> ${DIRPRFX}$${sub}"; \
 		cd ${.CURDIR}/$${sub}; \
-		${MAKE} -B describe 2> /dev/null || \
-			(echo "===> ${DIRPRFX}$${sub} failed:" >&2 ; \
-			cd ${.CURDIR}/$${sub}; ${MAKE} -B describe >&2; \
+		${MAKE} -B describe || \
+			(echo "===> ${DIRPRFX}$${sub} failed" >&2; \
 			exit 1) ;\
 	else \
 		${ECHO_MSG} "===> ${DIRPRFX}$${sub} non-existent"; \
@@ -315,19 +314,89 @@ README.html:
 	PKGINSTALLVER="${PKGINSTALLVER:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
 .endif
 
-
+PORTSEARCH_DISPLAY_FIELDS?=name,path,info,maint,index,bdeps,rdeps
+PORTSEARCH_KEYLIM?=0
+PORTSEARCH_XKEYLIM?=0
+PORTSEARCH_IGNORECASE?=1
 
 search: ${PORTSDIR}/${INDEXFILE}
-	@here=`pwd`; \
+	@here=${.CURDIR}; \
 	cd ${PORTSDIR}; \
-	top=`pwd -P`; \
-	there=`echo "$$here/" | sed s%$$top%${PORTSDIR}%`; \
-	if [ -n "$$key" ]; then \
-	  grep $$there ${PORTSDIR}/${INDEXFILE} | grep -i "${key}" | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'; \
-	elif [ $$name ]; then \
-	  grep $$there ${PORTSDIR}/${INDEXFILE} | grep -i "^[^|]*${name}[^|]*|" | awk -F\| '{ printf("Port:\t%s\nPath:\t%s\nInfo:\t%s\nMaint:\t%s\nIndex:\t%s\nB-deps:\t%s\nR-deps:\t%s\n\n", $$1, $$2, $$4, $$6, $$7, $$8, $$9); }'; \
-	else \
+	if [ -z "$$key"   -a -z "$$xkey"   -a \
+	     -z "$$name"  -a -z "$$xname"  -a \
+	     -z "$$path"  -a -z "$$xpath"  -a \
+	     -z "$$info"  -a -z "$$xinfo"  -a \
+	     -z "$$maint" -a -z "$$xmaint" -a \
+	     -z "$$bdeps" -a -z "$$xbdeps" -a \
+	     -z "$$rdeps" -a -z "$$xrdeps" ]; \
+	then \
 	  echo "The search target requires a keyword parameter or name parameter,"; \
 	  echo "e.g.: \"make search key=somekeyword\""; \
 	  echo "or    \"make search name=somekeyword\""; \
-	fi;
+	  exit; \
+	fi; \
+	awk -F\| -v there="$$here/" -v top="$$(pwd -P)" \
+	    -v key="$$key"          -v xkey="$$xkey" \
+	    -v name="$$name"        -v xname="$$xname" \
+	    -v path="$$path"        -v xpath="$$xpath" \
+	    -v info="$$info"        -v xinfo="$$xinfo" \
+	    -v maint="$$maint"      -v xmaint="$$xmaint" \
+	    -v cat="$$cat"          -v xcat="$$xcat" \
+	    -v bdeps="$$bdeps"      -v xbdeps="$$xbdeps" \
+	    -v rdeps="$$rdeps"      -v xrdeps="$$xrdeps" \
+	    -v icase="$${icase:-${PORTSEARCH_IGNORECASE}}" \
+	    -v keylim="$${keylim:-${PORTSEARCH_KEYLIM}}" \
+	    -v xkeylim="$${xkeylim:-${PORTSEARCH_XKEYLIM}}"\
+	    -v display="$${display:-${PORTSEARCH_DISPLAY_FIELDS}}" \
+	'BEGIN { \
+	    sub(top, "${PORTSDIR}", there); \
+	    IGNORECASE=icase; \
+	    keylen = length(key); keylim = keylim && keylen; \
+	    if (!keylim && keylen) \
+	      parms[0] = key; \
+	    xkeylen = length(xkey); xkeylim = xkeylim && xkeylen; \
+	    if (!xkeylim && xkeylen) \
+	      xparms[0] = xkey; \
+	    if (length(name))  parms[1] = name;  if (length(xname))  xparms[1] = xname; \
+	    if (length(path))  parms[2] = path;  if (length(xpath))  xparms[2] = xpath; \
+	    if (length(info))  parms[4] = info;  if (length(xinfo))  xparms[4] = xinfo; \
+	    if (length(maint)) parms[6] = maint; if (length(xmaint)) xparms[6] = xmaint; \
+	    if (length(cat))   parms[7] = cat;   if (length(xcat))   xparms[7] = xcat; \
+	    if (length(bdeps)) parms[8] = bdeps; if (length(xbdeps)) xparms[8] = xbdeps; \
+	    if (length(rdeps)) parms[9] = rdeps; if (length(xrdeps)) xparms[9] = xrdeps; \
+	    fields["name"]  = 1; names[1] = "Port"; \
+	    fields["path"]  = 2; names[2] = "Path"; \
+	    fields["info"]  = 4; names[4] = "Info"; \
+	    fields["maint"] = 6; names[6] = "Maint"; \
+	    fields["cat"]   = 7; names[7] = "Index"; \
+	    fields["bdeps"] = 8; names[8] = "B-deps"; \
+	    fields["rdeps"] = 9; names[9] = "R-deps"; \
+	    split(display, d, /,[ \t]*/); \
+	    for (i in d) { \
+	      disp[fields[d[i]]] = 1; \
+	    } \
+	  } \
+	  { \
+	    if ($$2 !~ there) \
+	      next; \
+	    for (i in parms) \
+	      if ($$i !~ parms[i]) \
+	        next; \
+	    for (i in xparms) \
+	      if ($$i ~ xparms[i]) \
+	        next; \
+	    found = 0; \
+	    for (i = 1; i < 10; i++) \
+	      if (i in disp) { \
+	        if (xkeylim && $$i ~ xkey) \
+	          next; \
+	        if (!found && keylim && $$i ~ key) \
+	          found = 1; \
+	      } \
+	    if (keylim && !found) \
+	      next; \
+	    for (i = 1; i < 10; i++) \
+	      if (i in disp) \
+	        printf("%s:\t%s\n", names[i], $$i); \
+	    print(""); \
+	  }' ${PORTSDIR}/${INDEXFILE}

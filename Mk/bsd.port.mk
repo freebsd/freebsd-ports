@@ -208,8 +208,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_ICONV		- Says that the port uses libiconv.
 # USE_GETTEXT		- Says that the port uses GNU gettext (libintl).
 ##
-# USE_PERL5		- Says that the port uses perl5 for building and running.
-# USE_PERL5_BUILD	- Says that the port uses perl5 for building.
+# USE_PERL5		- Says that the port uses perl5 in one or more of the extract,
+#                         patch, build, install or run phases.
+# USE_PERL5_BUILD	- Says that the port uses perl5 in one or more of the extract,
+#                         patch, build or install phases.
 # USE_PERL5_RUN		- Says that the port uses perl5 for running.
 # PERL5			- Set to full path of perl5, either in the system or
 #				  installed from a port.
@@ -1113,7 +1115,7 @@ PERL_PORT?=	perl5
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
-.if exists(/usr/bin/perl5) && ${OSVERSION} >= 300000 && ${OSVERSION} < 500036
+.if ${PERL_LEVEL} < 500600
 PERL5=		/usr/bin/perl${PERL_VERSION}
 PERL=		/usr/bin/perl
 .else
@@ -1368,7 +1370,11 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 .endif
 
 .if defined(USE_GETTEXT)
-LIB_DEPENDS+=	intl.6:${PORTSDIR}/devel/gettext
+.	if ${USE_GETTEXT:L} == "yes"
+LIB_DEPENDS+=	intl:${PORTSDIR}/devel/gettext
+.	else
+LIB_DEPENDS+=	intl.${USE_GETTEXT}:${PORTSDIR}/devel/gettext
+.	endif
 .endif
 
 .if defined(USE_LINUX)
@@ -1392,7 +1398,7 @@ LIB_DEPENDS+=			ttf.4:${PORTSDIR}/print/freetype
 
 .if ${XFREE86_VERSION} == 3
 .if defined(USE_IMAKE)
-BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake
+BUILD_DEPENDS+=			imake:${PORTSDIR}/x11/XFree86
 .endif
 .if defined(USE_XPM)
 LIB_DEPENDS+=			Xpm.4:${PORTSDIR}/graphics/xpm
@@ -1452,15 +1458,10 @@ USE_PERL5=	yes
 USE_REINPLACE=yes
 .endif
 
-.if exists(/usr/bin/perl5) && ${OSVERSION} >= 300000 && ${OSVERSION} < 500036
-.if !exists(/usr/bin/perl${PERL_VERSION}) && ( defined(USE_PERL5) || \
-	defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) )
-check-depends::
-	@${ECHO_CMD} "Dependency error: you don't have the right version of perl in /usr/bin."
-	@${FALSE}
-.endif
-.else
+.if ${PERL_LEVEL} >= 500600
 .if defined(USE_PERL5) || defined(USE_PERL5_BUILD)
+EXTRACT_DEPENDS+=${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
+PATCH_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 BUILD_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .endif
 .if defined(USE_PERL5) || defined(USE_PERL5_RUN)
@@ -2564,10 +2565,7 @@ IGNORE=	"may not be placed on a CDROM: ${NO_CDROM}"
 .elif (defined(RESTRICTED) && defined(NO_RESTRICTED))
 IGNORE=	"is restricted: ${RESTRICTED}"
 .elif defined(BROKEN)
-.if defined(PARALLEL_PACKAGE_BUILD)
-# try building even if marked BROKEN
-TRYBROKEN=	yes
-.else
+.if !defined(TRYBROKEN)
 IGNORE=	"is marked as broken: ${BROKEN}"
 .endif
 .elif defined(FORBIDDEN)
@@ -2767,7 +2765,7 @@ check-deprecated:
 	@${ECHO_MSG} "${DEPRECATED}."
 	@${ECHO_MSG}
 .if defined(EXPIRATION_DATE)
-	@${ECHO_MSG} "It is scheduled to be removed ${EXPIRATION_DATE}."
+	@${ECHO_MSG} "It is scheduled to be removed on or after ${EXPIRATION_DATE}."
 	@${ECHO_MSG}
 .endif
 .endif
@@ -3498,9 +3496,9 @@ _INSTALL_SEQ=	install-message check-conflicts \
 			    run-depends lib-depends pre-install pre-install-script \
 				generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
-				pre-su-install-script do-install post-install add-plist-info \
-				post-install-script add-plist-docs compress-man run-ldconfig fake-pkg \
-				security-check
+				pre-su-install-script do-install post-install \
+				post-install-script add-plist-info add-plist-docs \
+				compress-man run-ldconfig fake-pkg security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
 				do-package post-package-script
@@ -4170,7 +4168,7 @@ ALL-DEPENDS-LIST= \
 	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':') $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':'); do \
 		if [ -d $$dir ]; then \
 			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
-				child=$$(cd $$dir; ${MAKE} PARENT_CHECKED="$$checked" run-depends-list); \
+				child=$$(cd $$dir; ${MAKE} PARENT_CHECKED="$$checked" all-depends-list); \
 				for d in $$child; do ${ECHO_CMD} $$d; done; \
 				${ECHO_CMD} $$dir; \
 				checked="$$dir $$child $$checked"; \
@@ -4375,13 +4373,13 @@ package-recursive: package
 
 .if !target(describe)
 describe:
-	@${ECHO_CMD} -n '${PKGNAME}|${.CURDIR}|${PREFIX}|'
+	@${ECHO_CMD} -n "${PKGNAME}|${.CURDIR}|${PREFIX}|"
 .if defined(COMMENT)
 	@${ECHO_CMD} -n ${COMMENT:Q}
 .else
 	@${ECHO_CMD} -n '** No Description'
 .endif
-	@${ECHO_CMD} "`perl -e ' \
+	@perl -e ' \
 		if ( -f q{${DESCR}} ) { \
 			print q{|${DESCR}}; \
 		} else { \
@@ -4402,6 +4400,7 @@ describe:
 					push @$$i, $$_; \
 				} else { \
 					print STDERR qq{${PKGNAME}: \"$$_\" non-existent -- dependency list incomplete\n}; \
+					exit(1); \
 				} \
 			} \
 		} \
@@ -4421,7 +4420,7 @@ describe:
 				} \
 			} \
 		} \
-		print qq{\n};'`"
+		print qq{\n};'
 .endif
 
 www-site:
@@ -4539,9 +4538,6 @@ generate-plist:
 .for dir in ${PLIST_DIRS}
 	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} | ${SED} -e 's,^,@dirrm ,' >> ${TMPPLIST}
 .endfor
-.if !defined(NO_MTREE)
-	@${ECHO_CMD} "@unexec if [ -f %D/info/dir ]; then if sed -e '1,/Menu:/d' %D/info/dir | grep -q '^[*] '; then true; else rm %D/info/dir; fi; fi" >> ${TMPPLIST}
-.endif
 .if defined(INSTALLS_SHLIB) && !defined(INSTALL_AS_USER)
 	@${ECHO_CMD} "@exec ${LDCONFIG} -m ${LDCONFIG_PLIST}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LDCONFIG} -R" >> ${TMPPLIST}
@@ -4590,6 +4586,9 @@ add-plist-info:
 	@${ECHO_CMD} "@exec install-info %D/${INFO_PATH}/$i.info %D/${INFO_PATH}/dir" \
 		>> ${TMPPLIST}
 .endfor
+.if !defined(NO_MTREE)
+	@${ECHO_CMD} "@unexec if [ -f %D/${INFO_PATH}/dir ]; then if sed -e '1,/Menu:/d' %D/${INFO_PATH}/dir | grep -q '^[*] '; then true; else rm %D/${INFO_PATH}/dir; fi; fi" >> ${TMPPLIST}
+.endif
 
 # Compress (or uncompress) and symlink manpages.
 .if !target(compress-man)
@@ -4716,7 +4715,7 @@ config:
 .endif
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>  Switching to root credentials to create `${DIRNAME} ${_OPTIONSFILE}`"
-	@(${SU_CMD} "${MKDIR} `${DIRNAME} ${_OPTIONSFILE}` 2> /dev/null") || \
+	@(${SU_CMD} "${SH} -c \"${MKDIR} `${DIRNAME} ${_OPTIONSFILE}` 2> /dev/null\"") || \
 		(${ECHO_MSG} "===> Cannot create `${DIRNAME} ${_OPTIONSFILE}`, check permissions"; exit 1)
 	@${ECHO_MSG} "===>  Returning to user credentials"
 .else

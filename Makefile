@@ -75,8 +75,16 @@ fetchindex:
 
 INDEX_JOBS?=	2
 
+.if !defined(INDEX_VERBOSE)
+INDEX_ECHO_MSG=		echo > /dev/null
+INDEX_ECHO_1ST=		echo -n
+.else
+INDEX_ECHO_MSG=		echo 1>&2
+INDEX_ECHO_1ST=		echo
+.endif
+
 ${.CURDIR}/${INDEXFILE}:
-	@echo -n "Generating ${INDEXFILE} - please wait.."; \
+	@${INDEX_ECHO_1ST} "Generating ${INDEXFILE} - please wait.."; \
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
 		export LOCALBASE=/nonexistentlocal; \
 		export X11BASE=/nonexistentx; \
@@ -84,7 +92,7 @@ ${.CURDIR}/${INDEXFILE}:
 	tmpdir=`/usr/bin/mktemp -d -t index` || exit 1; \
 	trap "rm -rf $${tmpdir}; exit 1" 1 2 3 5 10 13 15; \
 	( cd ${.CURDIR} && make -j${INDEX_JOBS} INDEX_TMPDIR=$${tmpdir} BUILDING_INDEX=1 \
-		ECHO_MSG="echo > /dev/null" describe ) || \
+		ECHO_MSG="${INDEX_ECHO_MSG}" describe ) || \
 		(rm -rf $${tmpdir} ; \
 		if [ "${INDEX_QUIET}" = "" ]; then \
 			echo; \
