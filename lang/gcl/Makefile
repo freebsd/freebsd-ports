@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	twp@unchi.org
 
+BROKEN=		"Dies with sig11 during build"
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-machine=FreeBSD
 MAKEFILE=	makefile
