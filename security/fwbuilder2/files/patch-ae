@@ -1,0 +1,23 @@
+--- src/compiler-framework/Makefile.in.orig	Sat Feb  3 23:11:36 2001
++++ src/compiler-framework/Makefile.in	Sat Feb  3 23:11:57 2001
+@@ -11,7 +11,7 @@
+ 
+ CC= @CC@
+ INSTALL = @INSTALL@
+-INSTALL_PROGRAM=@INSTALL_PROGRAM@
++INSTALL_DATA=@INSTALL_DATA@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+ XML_CFLAGS = @XML_CFLAGS@
+@@ -45,9 +45,9 @@
+ 
+ install: $(FWLIB) $(HEADERS)
+ 	$(mkinstalldirs) $(libdir)
+-	$(INSTALL_PROGRAM) $(FWLIB) $(libdir)
++	$(INSTALL_DATA) $(FWLIB) $(libdir)
+ 	$(mkinstalldirs) $(includedir)
+-	$(INSTALL_PROGRAM) $(HEADERS) $(includedir)
++	$(INSTALL_DATA) $(HEADERS) $(includedir)
+ 
+ 
+ uninstall: 

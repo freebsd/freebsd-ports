@@ -1,0 +1,24 @@
+--- etc/Makefile.in.orig	Sat Feb  3 23:10:14 2001
++++ etc/Makefile.in	Sat Feb  3 23:10:40 2001
+@@ -11,7 +11,7 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ 
+ INSTALL = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@ 
++INSTALL_DATA = @INSTALL_DATA@ 
+ 
+ all: fwbuilder_prefs.xml
+ 
+@@ -27,9 +27,9 @@
+ 
+ install: objects_init.xml fwbuilder_prefs.xml
+ 	$(mkinstalldirs) $(datadir)
+-	$(INSTALL_PROGRAM) objects_init.xml $(datadir)
+-	$(INSTALL_PROGRAM) fwbuilder_prefs.xml $(datadir)
+-	$(INSTALL_PROGRAM) fwbuilder.dtd $(datadir)
++	$(INSTALL_DATA) objects_init.xml $(datadir)
++	$(INSTALL_DATA) fwbuilder_prefs.xml $(datadir)
++	$(INSTALL_DATA) fwbuilder.dtd $(datadir)
+ 
+ uninstall: 
+ 	rm -f $(datadir)/objects_init.xml
