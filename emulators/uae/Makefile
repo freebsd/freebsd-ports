@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uae
-PORTVERSION=	0.8.20
+PORTVERSION=	0.8.21
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/
 
