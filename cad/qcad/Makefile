@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qcad
-PORTVERSION=	2.0.3.1.1
+PORTVERSION=	2.0.3.3.1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.ribbonsoft.com/archives/qcad/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/1.1/1-1/}.src
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1$/-1/}.src
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Professional CAD system
@@ -17,7 +17,7 @@ COMMENT=	Professional CAD system
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		qmake:${PORTSDIR}/devel/qmake
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1.1/.1-1/}.src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.1$/-1/}.src
 
 QTDIR?=		${X11BASE}
 
