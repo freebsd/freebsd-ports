@@ -1,6 +1,7 @@
 bin/gpasm
 bin/gpdasm
 bin/gpvc
+bin/gpvo
 share/gpasm/header/memory.inc
 share/gpasm/header/p12c508.inc
 share/gpasm/header/p12c508a.inc
@@ -118,6 +119,8 @@ share/gpasm/header/p18c452.inc
 share/gpasm/header/p18c658.inc
 share/gpasm/header/p18c858.inc
 share/doc/gpasm/gpasm.ps
+share/doc/gpasm/gpasm.pdf
+share/doc/gpasm/gpasm.lyx
 @dirrm share/doc/gpasm
 @dirrm share/gpasm/header
 @dirrm share/gpasm
