@@ -2,6 +2,7 @@ bin/rgettext
 %%RUBY_SITELIBDIR%%/gettext.rb
 %%RUBY_SITELIBDIR%%/mo.rb
 share/locale/ja/LC_MESSAGES/rgettext.mo
+@unexec rmdir -p %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hellogtk.rb
