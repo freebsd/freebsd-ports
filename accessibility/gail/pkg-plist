@@ -16,10 +16,12 @@ share/doc/gail-libgail-util/index.sgml
 share/doc/gail-libgail-util/left.png
 share/doc/gail-libgail-util/libgail-util-main.html
 share/doc/gail-libgail-util/right.png
+share/doc/gail-libgail-util/style.css
 share/doc/gail-libgail-util/up.png
 share/locale/ar/LC_MESSAGES/gail.mo
 share/locale/az/LC_MESSAGES/gail.mo
 share/locale/be/LC_MESSAGES/gail.mo
+share/locale/bg/LC_MESSAGES/gail.mo
 share/locale/bn/LC_MESSAGES/gail.mo
 share/locale/ca/LC_MESSAGES/gail.mo
 share/locale/cs/LC_MESSAGES/gail.mo
