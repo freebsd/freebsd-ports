@@ -1,0 +1,29 @@
+--- src/Makefile.orig	Mon Oct  8 03:57:06 2001
++++ src/Makefile	Wed Feb 18 12:30:44 2004
+@@ -1,23 +1,21 @@
+ # you need JFlex 1.2.2 and CUP 0.10j or later for this Makefile to work
+ 
+ JFLEX     = jflex -skel skeleton.nested
+-CUP       = java java_cup.Main 
++CUP       = java -classpath ${JAVAJARDIR}/java_cup.jar java_cup.Main 
+ 
+-JAVAC     = javac -target 1.1 -bootclasspath /usr/lib/jdk1.1/lib/classes.zip
+ #JAVAC     = jikes   
+-JAR       = jar
+ 
+ DEST      = ../lib
+ 
+ # jdk 1.2 
+-CLPATH    = -classpath /usr/lib/java/jre/lib/rt.jar:.
++CLPATH    = -classpath ${JAVA_CLASSES}:.
+ 
+ # jdk 1.1
+ #CLPATH    = -classpath /usr/lib/java/lib/classes.zip:.
+ 
+ # ------------------------------------------------------------
+ 
+-JAVAC_FLAGS = 
++JAVAC_FLAGS = -target 1.1
+ JARFILE     = JFlex.jar
+ 
+ 
