@@ -1,0 +1,6 @@
+Math::GMP is a perl interface to the high-speed arbitrary size integer
+math library libgmp (GNU MP lib).
+
+Author: Chip Turner <chip@zfx.com>
+
+--will
