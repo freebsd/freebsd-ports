@@ -306,6 +306,7 @@
     SUBDIR += p5-I18N-Charset
     SUBDIR += p5-I18N-LangTags
     SUBDIR += p5-LEGO-RCX
+    SUBDIR += p5-List-Compare
     SUBDIR += p5-Locale-Codes
     SUBDIR += p5-Locale-Msgcat
     SUBDIR += p5-Locale-SubCountry
