@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION= 	0.28.1
+PORTVERSION= 	0.29
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sawmill
@@ -34,17 +34,15 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share --with-readline
 .if !defined(NOGNOME)
 CONFIGURE_ARGS+=	--enable-capplet
+PLIST_SUB+=	GNOME:=""
 .else
 CONFIGURE_ARGS+=	--disable-capplet
+PLIST_SUB+=	GNOME:="@comment "
 .endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4"
-
-.if defined(NOGNOME)
-PLIST=		${PKGDIR}/PLIST.nognome
-.endif
 
 post-install:
 	if [ ! -f ${PREFIX}/info/dir ]; then \
