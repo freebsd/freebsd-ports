@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=			adtool
-PORTVERSION=		1.1
-CATEGORIES=			sysutils
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+PORTNAME=		adtool
+PORTVERSION=		1.2
+CATEGORIES=		sysutils
+MASTER_SITES=		http://dexy.mine.nu/adtool/
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	Active Directory administration tool
