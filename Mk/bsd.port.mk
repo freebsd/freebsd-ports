@@ -911,7 +911,11 @@ MTREE_FILE=	/etc/mtree/BSD.local.dist
 .endif
 .endif
 MTREE_CMD?=	/usr/sbin/mtree
+.if ${OSVERSION} >= 500010
+MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -p -L
+.else
 MTREE_ARGS?=	-U -f ${MTREE_FILE} -d -e -p
+.endif
 
 # A few aliases for *-install targets
 INSTALL_PROGRAM= \
@@ -1069,6 +1073,20 @@ PATCH_SITES:=	file:${CD_MOUNTPT}/ports/distfiles/${DIST_SUBDIR}/ ${PATCH_SITES}
 FETCH_BEFORE_ARGS+=	-l
 .endif
 .endif
+
+#
+# Sort the master site list according to the patterns in MASTER_SORT
+#
+MASTER_SORT?=
+MASTER_SORT_REGEX?=
+MASTER_SORT_REGEX+= ${MASTER_SORT:S|.|\\.|g:S|^|//[^/]*|:S|$|/|}
+
+MASTER_SORT_AWK= BEGIN { RS = " "; ORS = " "; IGNORECASE = 1 ; gl = "${MASTER_SORT_REGEX}"; }
+.for srt in ${MASTER_SORT_REGEX}
+MASTER_SORT_AWK+= /${srt:S^/^\\/^g}/ { good["${srt}"] = good["${srt}"] " " $$0 ; next; } 
+.endfor
+MASTER_SORT_AWK+= { rest = rest " " $$0; } END { n=split(gl, gla); for(i=1;i<=n;i++) { print good[gla[i]]; } print rest; }
+SORTED_MASTER_SITES_CMD= echo '${MASTER_SITES}' | ${AWK} '${MASTER_SORT_AWK}'
 
 DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 ALLFILES?=	${DISTFILES} ${PATCHFILES}
@@ -1535,7 +1553,7 @@ do-fetch:
 				fi; \
 			fi; \
 			${ECHO_MSG} ">> $$file doesn't seem to exist on this system."; \
-			for site in ${MASTER_SITES}; do \
+			for site in `${SORTED_MASTER_SITES_CMD}`; do \
 			    ${ECHO_MSG} ">> Attempting to fetch from $${site}."; \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
@@ -2134,7 +2152,7 @@ fetch-list:
 	@(cd ${_DISTDIR}; \
 	 for file in ${DISTFILES}; do \
 		if [ ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
-			for site in ${MASTER_SITES}; do \
+			for site in `${SORTED_MASTER_SITES_CMD}`; do \
 				DIR=${DIST_SUBDIR}; \
 				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${MD5_FILE} | ${AWK} '{print $$4}'`; \
 				case $${file} in \
@@ -2665,7 +2683,9 @@ generate-plist:
 .endif
 .endfor
 	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}
+.if !defined(NO_MTREE)
 	@${ECHO} "@unexec if [ -f %D/info/dir ]; then if sed -e '1,/Menu:/d' %D/info/dir | grep -q '^[*] '; then true; else rm %D/info/dir; fi; fi" >> ${TMPPLIST}
+.endif
 .if defined(INSTALLS_SHLIB)
 	@${ECHO} "@exec ${LDCONFIG} -m ${LDCONFIG_PLIST}" >> ${TMPPLIST}
 	@${ECHO} "@unexec ${LDCONFIG} -R" >> ${TMPPLIST}
