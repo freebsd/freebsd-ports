@@ -398,14 +398,18 @@ share/mime/video/x-sgi-movie.xml
 @unexec rmdir %D/share/mime/audio 2>/dev/null || true
 @unexec rmdir %D/share/mime/application 2>/dev/null || true
 @unexec rmdir %D/share/mime 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/video 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/text 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/packages 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/multipart 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/model 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/message 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/inode 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/image 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/audio 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime/application 2>/dev/null || true
-@unexec rmdir %%X11BASE%%/share/mime 2>/dev/null || true
+@cwd %%X11BASE%%
+share/mime/XMLnamespaces
+share/mime/globs
+share/mime/magic
+@unexec rmdir %D/share/mime/video 2>/dev/null || true
+@unexec rmdir %D/share/mime/text 2>/dev/null || true
+@unexec rmdir %D/share/mime/packages 2>/dev/null || true
+@unexec rmdir %D/share/mime/multipart 2>/dev/null || true
+@unexec rmdir %D/share/mime/model 2>/dev/null || true
+@unexec rmdir %D/share/mime/message 2>/dev/null || true
+@unexec rmdir %D/share/mime/inode 2>/dev/null || true
+@unexec rmdir %D/share/mime/image 2>/dev/null || true
+@unexec rmdir %D/share/mime/audio 2>/dev/null || true
+@unexec rmdir %D/share/mime/application 2>/dev/null || true
+@unexec rmdir %D/share/mime 2>/dev/null || true
