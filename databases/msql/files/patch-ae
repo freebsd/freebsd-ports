@@ -1,12 +1,31 @@
---- src/msql/msqldb.c.ORG	Wed Oct 23 19:19:06 1996
-+++ src/msql/msqldb.c	Wed Oct 23 19:20:51 1996
-@@ -1398,6 +1398,9 @@
- 		safeFree(entry->rowBuf);
- 		safeFree(entry->keyBuf);
- 		entry->def = NULL;
-+		*(entry->DB) = 0;
-+		*(entry->table) = 0;
-+		entry->age = 0;
- 	}
+--- src/Makefile.tmpl.orig	Mon Jan 13 10:14:52 1997
++++ src/Makefile.tmpl	Sun Jan 19 14:04:28 1997
+@@ -32,18 +32,18 @@
+ 	echo
  
- 	/*
+ install ::
+-	@cp -r ../../doc/* $(INST_DIR)/doc; \\
+-	cp -r ../../demos/w3-msql/* $(INST_DIR)/www; \\
+-	cp -r ../../misc/setup_* $(INST_DIR)/misc; \\
+-	cp ../../README* $(INST_DIR);\\
+-	cp makegen/* $(INST_DIR)/makegen;\\
+-	cp site.mm $(INST_DIR)/makegen;\\
+-        if test -f $(INST_DIR)/msql.conf;\
++	@cp -r ../../doc/* $(INST_DIR)/share/doc/msql; \\
++	cp -r ../../demos/w3-msql/* $(INST_DIR)/share/msql/www; \\
++	cp -r ../../misc/setup_* $(INST_DIR)/share/msql/misc; \\
++	cp ../../README* $(INST_DIR)/share/doc/msql;\\
++	cp makegen/* $(INST_DIR)/share/msql/makegen;\\
++	cp site.mm $(INST_DIR)/share/msql/makegen;\\
++        if test -f $(INST_DIR)/etc/msql2/msql.conf;\
+         then\
+-                rm -f $(INST_DIR)/msql.conf.old;\
+-                mv $(INST_DIR)/msql.conf $(INST_DIR)/msql.conf.old;\
++                rm -f $(INST_DIR)/etc/msql2/msql.conf.old;\
++                mv $(INST_DIR)/etc/msql2/msql.conf $(INST_DIR)/etc/msql2/msql.conf.old;\
+         fi;\
+-	cp ../../misc/msql.conf $(INST_DIR);\\
++	cp ../../misc/msql.conf $(INST_DIR)/etc/msql2;\\
+ 	echo ;\\
+ 	echo "Installation of mSQL-2 complete." ;\\
+ 	echo ;\\

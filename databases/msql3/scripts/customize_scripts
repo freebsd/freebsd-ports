@@ -1,0 +1,7 @@
+#!/usr/bin/perl
+#
+
+chop( $HOSTNAME=`hostname` );
+
+system( "/usr/bin/perl -pi -e 's|%%PREFIX%%|$ENV{'PREFIX'}|' $ENV{'WRKSRC'}/scripts/run_daemon $ENV{'WRKSRC'}/misc/msql.conf" );
+system( "/usr/bin/perl -pi -e 's|%%HOSTNAME%%|$HOSTNAME|' $ENV{'WRKSRC'}/scripts/run_daemon" );

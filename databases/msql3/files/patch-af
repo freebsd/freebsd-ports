@@ -1,0 +1,11 @@
+--- src/msql/Makefile.tmpl.orig	Mon Jan 13 10:15:48 1997
++++ src/msql/Makefile.tmpl	Sun Jan 19 14:47:28 1997
+@@ -78,7 +78,7 @@
+ !install msqldump $(INST_DIR)/bin/msqldump 0755 $(ROOT)
+ !libinstall libmsql.a $(INST_DIR)/lib/libmsql.a 744 $(ROOT)
+ !install msql.h $(INST_DIR)/include/msql.h 744 $(ROOT)
+-!install sample.acl $(INST_DIR)/msql.acl.sample 700 $(ROOT)
++!install sample.acl $(INST_DIR)/etc/msql2/msql.acl.sample 700 $(ROOT)
+ 
+ lextest :: msql_lex.c
+ 	$(CC) $(CC_FLAGS) -DDEBUG msql_lex.c -o lextest

@@ -1,54 +1,43 @@
---- src/setup.orig	Wed Jun 19 09:30:27 1996
-+++ src/setup	Thu Oct  3 20:11:48 1996
-@@ -28,47 +28,10 @@
- echo "	       or symbolic paths such as ~user/msql will not work"
- echo
- echo 
--$ECHO_N "	Top of install tree ? [/usr/local/Minerva] $ECHO_C"
--read INST_TOP
--if test "$INST_TOP." = "."
--then
--	INST_TOP=/usr/local/Minerva
--fi
--
--$ECHO_N "	Will this installation be running as root ? [y] $ECHO_C"
--read ANS
--if test "$ANS." = "."
--then
--	ANS="y"
--fi
--if echo $ANS | grep -i "y" > /dev/null
--then
--	ROOT_EXEC="-DROOT_EXEC"
--	ROOT="root"
--else
--	ROOT_EXEC=""
--	$ECHO_N "	What username will it run under ?  $ECHO_C"
--	read ROOT
--fi
--
--
--PID_DIRS="/var/adm /var/log /usr/adm /private/adm"
--PID_DIR=""
--for dir in $PID_DIRS
--do
--	if test -d $dir
--	then
--		PID_DIR=${dir}
--		break
--	fi
--done
--$ECHO_N "	Directory for pid file ? [${PID_DIR}] $ECHO_C"
--read RESPONSE
--if test "$RESPONSE." != "."
--then
--	PID_DIR=$RESPONSE
--fi
--
-+INST_TOP=$PREFIX/Minerva
-+ROOT_EXEC="-DROOT_EXEC"
-+ROOT="root"
-+PID_DIR=/var/run
+--- scripts/run_daemon.orig	Mon Dec 16 03:44:22 1996
++++ scripts/run_daemon	Sun Dec 22 15:54:18 1996
+@@ -9,23 +9,25 @@
+ #
+ #					bambi@Bond.edu.au
  
- echo
- echo
+-INST_DIR=/usr/local/Minerva
+-ADMIN="you@some.machine"
++umask 077
++
++INST_DIR=%%PREFIX%%
++ADMIN="root@%%HOSTNAME%%"
+ PROG=$1
+ 
+-if test ! -d "${INST_DIR}/debug"
++if test ! -d "/tmp/debug"
+ then
+-	mkdir ${INST_DIR}/debug
++	mkdir /tmp/debug
+ fi
+ 
+-if test ! -d "${INST_DIR}/debug/${PROG}"
++if test ! -d "/tmp/debug/${PROG}"
+ then
+-	mkdir ${INST_DIR}/debug/${PROG}
++	mkdir /tmp/debug/${PROG}
+ fi
+ 
+ while :
+ do
+-	cd ${INST_DIR}/debug/${PROG}
++	cd /tmp/debug/${PROG}
+ 	${INST_DIR}/bin/${PROG} > output 2>&1
+ 	echo "Program : ${PROG}
+ Time : `date`
+@@ -34,6 +36,6 @@
+ 
+ " > mail.tmp
+ 	cat output >> mail.tmp
+-	/usr/ucb/mail -s "Minerva Daemon Crash Report" ${ADMIN} < mail.tmp
++	/usr/bin/mail -s "Minerva Daemon Crash Report" ${ADMIN} < mail.tmp
+ 	sleep 15
+ done
