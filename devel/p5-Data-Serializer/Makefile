@@ -29,4 +29,10 @@ MAN3=		Data::Serializer.3 Data::Serializer::Config::General.3 \
 		Data::Serializer::Data::Dumper.3 Data::Serializer::FreezeThaw.3 \
 		Data::Serializer::Storable.3 Data::Serializer::YAML.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES=	${PATCHDIR}/500503-Makefile.PL
+.endif
+
+.include <bsd.port.post.mk>
