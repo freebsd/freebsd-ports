@@ -253,13 +253,6 @@ do-configure:
 .endfor
 	${LN} -s ${WRKSRC}/src/png.h ${WRKSRC}/src/mame_png.h
 
-.if ${MAMEMESS} == "mess"
-.if ${OSVERSION} < 500000
-	${REINPLACE_CMD} -e "s@-Wl,--allow-multiple-definition@@" \
-		${WRKSRC}/makefile.mes ${WRKSRC}/src/unix/unix.mak
-.endif
-.endif
-
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} SDL_VIDEODRIVER=aalib \
 		${GMAKE} doc/x${MAMEMESS}.6
