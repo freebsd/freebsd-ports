@@ -10,15 +10,15 @@
  
  #------------------------------------------------------------------------------
 @@ -113,7 +113,7 @@
- # directories if they don't exist. It will also install a default run time
+ # directories if they don't exist. It will also install a default runtime
  # configuration if this file does not exist.
  
 -CONFIGURE_FILE=/usr/exim/configure
 +CONFIGURE_FILE=XX_PREFIX_XX/etc/exim/configure
  
- 
- #------------------------------------------------------------------------------
-@@ -126,14 +126,14 @@
+ # It is possible to specify a colon-separated list of files for CONFIGURE_FILE.
+ # In this case, Exim will use the first of them that exists when it is run.
+@@ -131,14 +131,14 @@
  # owner of a local mailbox.) Specifying these values as root is very strongly
  # discouraged. These values are compiled into the binary.
  
@@ -35,7 +35,7 @@
  
  # Many sites define a user called "exim", with an appropriate default group,
  # and use
-@@ -257,6 +257,7 @@
+@@ -264,6 +264,7 @@
  # LDAP_LIB_TYPE=OPENLDAP2
  # LDAP_LIB_TYPE=NETSCAPE
  # LDAP_LIB_TYPE=SOLARIS
@@ -43,7 +43,7 @@
  
  # If you don't set any of these, Exim assumes the original University of
  # Michigan (OpenLDAP 1) library.
-@@ -269,8 +270,9 @@
+@@ -276,8 +277,9 @@
  # don't need to set LOOKUP_INCLUDE if the relevant directories are already
  # specified in INCLUDE.
  
@@ -55,7 +55,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -281,7 +283,7 @@
+@@ -288,7 +290,7 @@
  # files are defaulted in the OS/Makefile-Default file, but can be overridden in
  # local OS-specific make files.
  
@@ -64,16 +64,16 @@
  
  
  
-@@ -316,7 +318,7 @@
- # settings commented out.
- 
+@@ -326,7 +328,7 @@
  # SUPPORT_TLS=yes
+ 
+ # Uncomment this setting if you are using OpenSSL
 -# TLS_LIBS=-lssl -lcrypto
 +TLS_LIBS=-lssl -lcrypto
  
- # If you are running Exim as a server, note that just building it with TLS
- # support is not all you need to do. You also need to set up a suitable
-@@ -358,7 +360,7 @@
+ # Uncomment these settings if you are using GnuTLS
+ # USE_GNUTLS=yes
+@@ -377,7 +379,7 @@
  # Once you have done this, "make install" will build the info files and
  # install them in the directory you have defined.
  
@@ -82,7 +82,7 @@
  
  
  #------------------------------------------------------------------------------
-@@ -371,7 +373,7 @@
+@@ -390,7 +392,7 @@
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -91,7 +91,7 @@
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -474,12 +476,20 @@
+@@ -493,12 +495,20 @@
  
  #  USE_TCP_WRAPPERS=yes
  #  CFLAGS=-O -I/usr/local/include
@@ -111,9 +111,9 @@
 +
 +
  #------------------------------------------------------------------------------
- # The default action of the exim_install script is to install the Exim binary
- # with a unique name such as exim-4.00-1, and then set up a symbolic link
-@@ -695,7 +705,7 @@
+ # The default action of the exim_install script (which is run by "make
+ # install") is to install the Exim binary with a unique name such as
+@@ -726,7 +736,7 @@
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  

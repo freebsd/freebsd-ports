@@ -15,6 +15,7 @@ sbin/exim_dbmbuild
 sbin/exicyclog
 sbin/exigrep
 sbin/eximstats
+sbin/exiqgrep
 sbin/exiqsumm
 %%PORTDOCS%%share/doc/exim/POST-INSTALL-NOTES
 %%PORTDOCS%%share/doc/exim/Exim3.upgrade
