@@ -134,6 +134,7 @@
     SUBDIR += mod_ruby
     SUBDIR += mod_snake
     SUBDIR += mod_throttle
+    SUBDIR += mod_ticket
     SUBDIR += mod_zap
     SUBDIR += momspider
     SUBDIR += mozilla
