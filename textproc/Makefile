@@ -329,6 +329,7 @@
     SUBDIR += ruby-gdome
     SUBDIR += ruby-html-fillinform
     SUBDIR += ruby-html-parser
+    SUBDIR += ruby-html-template
     SUBDIR += ruby-htmlcompact
     SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
