@@ -18,6 +18,6 @@ cdlabelgen's purpose in life is twofold:
        cdlabelgen does not actually print anything--it just spits
        out postscript, which you can then do with as you please.
 
-(from the manual, type `perldoc cdlabelgen' to get the full one)
+(from the manual, see cdlabelgen(1) for the full one)
 
-WWW: http://www.red-bean.com/fitz/software-cdlabelgen.shtml
+WWW: http://www.aczone.com/tools/cdinsert/

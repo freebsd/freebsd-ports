@@ -6,15 +6,23 @@
 #
 
 PORTNAME=	cdlabelgen
-PORTVERSION=	1.5.0
-CATEGORIES=	print
-MASTER_SITES=	http://www.red-bean.com/fitz/software/cdlabelgen/
+PORTVERSION=	2.7.0
+CATEGORIES=	print perl5
+MASTER_SITES=	http://www.aczone.com/pub/tools/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	Generate postscript for frontcards and traycards for CDs
 
+MAN1=		cdlabelgen.1
+MANCOMPRESSED=	no
+
 USE_PERL5=	yes
-MAKE_ENV=	BASE_DIR=${PREFIX}
+MAKE_ENV=	BASE_DIR="${PREFIX}" \
+		INSTALL="${INSTALL_SCRIPT}" \
+		INSTALL_DIR="${MKDIR}" \
+		INSTALL_FILE="${INSTALL_DATA}" \
+		INSTALL_MAN="${INSTALL_MAN}"
 
 do-build:
 	${PERL5} -i.bak -p -e "if (1 .. 1) {s-^#!/usr/bin/perl-#!${PERL}-;}" ${WRKSRC}/cdlabelgen

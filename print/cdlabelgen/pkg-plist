@@ -1,11 +1,14 @@
 bin/cdlabelgen
 share/cdlabelgen/cd.eps
 share/cdlabelgen/cdda.eps
-share/cdlabelgen/debian-bw.eps
 share/cdlabelgen/debian-color.eps
+share/cdlabelgen/divx.eps
 share/cdlabelgen/mp3.eps
+share/cdlabelgen/music1.eps
+share/cdlabelgen/music2.eps
+share/cdlabelgen/ogg.eps
 share/cdlabelgen/penguin.eps
-share/cdlabelgen/recycle.epsi
-share/cdlabelgen/recycle.ps
+share/cdlabelgen/recycle.eps
 share/cdlabelgen/template.ps
+share/cdlabelgen/winamp.eps
 @dirrm share/cdlabelgen
