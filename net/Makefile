@@ -193,6 +193,7 @@
     SUBDIR += ncplib
     SUBDIR += nemesis
     SUBDIR += neoupdate
+    SUBDIR += net-http
     SUBDIR += net-snmp
     SUBDIR += netatalk
     SUBDIR += netatalk-asun
