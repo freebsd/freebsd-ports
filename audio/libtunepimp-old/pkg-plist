@@ -1,0 +1,11 @@
+bin/tp_tagger
+bin/trm
+include/tunepimp/context.h
+include/tunepimp/defs.h
+include/tunepimp/tp_c.h
+include/tunepimp/track.h
+include/tunepimp/tunepimp.h
+lib/libtunepimp.a
+lib/libtunepimp.so
+lib/libtunepimp.so.2
+@dirrm include/tunepimp

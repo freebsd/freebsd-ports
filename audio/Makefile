@@ -179,6 +179,7 @@
     SUBDIR += libsidplay2
     SUBDIR += libsndfile
     SUBDIR += libtremor
+    SUBDIR += libtunepimp
     SUBDIR += libvorbis
     SUBDIR += libvorbis-aotuv
     SUBDIR += libworkman
