@@ -9,9 +9,9 @@ PORTNAME=	m3gdb
 PORTVERSION=	4.17
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=jdp/m3gdb
-DISTFILES=	m3gdb-4.17.tar.gz \
-		m3gdb-fbsd-4.17.tar.gz
+MASTER_SITE_SUBDIR=jdp/${PORTNAME}
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
+		${PORTNAME}-fbsd-${PORTVERSION}.tar.gz
 
 MAINTAINER=	jdp@FreeBSD.org
 COMMENT=	The GNU debugger with support for Modula-3
@@ -23,16 +23,12 @@ PLIST_FILES=	bin/m3gdb
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not build"
-.endif
-
 .if ${PORTOBJFORMAT} == "aout"
 BROKEN=		does not support a.out systems
 .endif
 
 pre-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make depend
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} make libbuild
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} depend
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} libbuild
 
 .include <bsd.port.post.mk>
