@@ -22,7 +22,6 @@
     SUBDIR += ald
     SUBDIR += alf
     SUBDIR += allegro
-    SUBDIR += amulet
     SUBDIR += anjuta
     SUBDIR += anjuta-devel
     SUBDIR += antlr
