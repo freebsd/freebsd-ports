@@ -14,7 +14,6 @@ etc/xlogmaster/sound/notice
 etc/xlogmaster/sound/uniconify
 etc/xlogmaster/steelblue.gtkrc
 etc/xlogmaster/xlogmaster.gtkrc
-man/man1/xlogmaster.1.gz
 share/doc/xlogmaster/tutorial.txt
 @dirrm etc/xlogmaster/scripts
 @dirrm etc/xlogmaster/sound

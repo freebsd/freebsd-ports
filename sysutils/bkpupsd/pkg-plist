@@ -4,4 +4,3 @@ libexec/bkpupsd/bkpups.restored
 libexec/bkpupsd/bkpups.shutdown
 libexec/bkpupsd/bkpups.battlow
 @dirrm libexec/bkpupsd
-man/man8/bkpupsd.8.gz
