@@ -12,7 +12,7 @@ CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	troff@paranoia.ru
+MAINTAINER=	lioux@FreeBSD.org
 
 LIB_DEPENDS=	gtkmm:${PORTSDIR}/x11-toolkits/gtk-- \
 		iconv.3:${PORTSDIR}/converters/libiconv \
