@@ -10,7 +10,7 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
-20040721:
+20040723:
 AUTHOR: anholt@FreeBSD.org
   The XFREE86_VERSION variable is replaced by the X_WINDOW_SYSTEM variable.
   XFREE86_VERSION may no longer be used by ports Makefiles.  X_WINDOW_SYSTEM may
