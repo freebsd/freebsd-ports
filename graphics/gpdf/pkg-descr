@@ -1,0 +1,6 @@
+The GNOME PDF Viewer is an open source viewer for Portable Document
+Format (PDF) files.   (These are also sometimes called "Acrobat" files,
+from the name of Adobe's PDF software.)  The GNOME PDF viewer is based
+upon xpdf (ports/graphics/xpdf).
+
+WWW: http://www.gnome.org
