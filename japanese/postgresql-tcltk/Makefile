@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	7.0.2.20001025
+PORTVERSION=	7.0.3.20001204
 CATEGORIES=	japanese databases
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/cmd/postgres/${PORTVERSION:R}/ \
-		ftp://ftp.sra.co.jp/pub/cmd/postgres/${PORTVERSION:R}/patches/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/v${PORTVERSION:R}/ \
 		ftp://ftp.postgresql.org/pub/v${PORTVERSION:R}/ \
-		${MASTER_SITE_RINGSERVER}
+		${MASTER_SITE_RINGSERVER:R}
 MASTER_SITE_SUBDIR=	misc/db/postgresql-jp/${PORTVERSION:R}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} jumbo-${PORTVERSION:E}.patch.gz
 DIST_SUBDIR=	postgresql
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	ftp://ftp.sra.co.jp/pub/cmd/postgres/${PORTVERSION:R}/patches/ \
+		ftp://ftp.18software.co.jp/pub/postgres/
+PATCHFILES=	jumbo-${PORTVERSION:E}.patch.gz \
+		psqlj-${PORTVERSION:R}.diff.gz
+PATCH_DIST_STRIP=	-p0 -d ${WRKDIR}
 
 MAINTAINER=	saito@a2z.co.jp
+
+BUILD_DEPENDS=	${PATCH}:${PORTSDIR}/devel/patch
 
 .if ${MACHINE_ARCH} == "alpha"
 BROKEN=		doesn\'t build on the alpha yet
@@ -59,6 +64,7 @@ SCRIPTS_ENV+=	JAVA_HOME=${JAVA_HOME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 DOCDIR=		${WRKDIR}/${DISTNAME}/doc
 
+PATCH=		${LOCALBASE}/bin/patch
 USE_GMAKE=	YES
 MAKEFILE=	GNUmakefile
 HAS_CONFIGURE=	YES
@@ -134,7 +140,6 @@ pre-fetch:
 .endif
 
 post-patch:
-	@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/jumbo-${PORTVERSION:E}.patch.gz | ${PATCH} ${PATCH_ARGS} -d ${WRKDIR} 2> /dev/null || exit 0
 	@ ${MV} ${WRKSRC}/template/freebsd ${WRKSRC}/template/freebsd.orig
 	@ ${SED} -e 's#CFLAGS:-O2 -m486 -pipe#CFLAGS:${CFLAGS}#' \
 		-e 's#USE_LOCALE:no#USE_LOCALE:yes#' \

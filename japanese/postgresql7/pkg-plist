@@ -21,6 +21,7 @@ pgsql/bin/pg_version
 pgsql/bin/postgres
 pgsql/bin/postmaster
 pgsql/bin/psql
+pgsql/bin/psqlj
 pgsql/bin/vacuumdb
 pgsql/data/PG_VERSION
 pgsql/data/base/template1/PG_VERSION
