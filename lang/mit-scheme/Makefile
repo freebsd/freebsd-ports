@@ -8,7 +8,7 @@
 PORTNAME=	mit-scheme
 PORTVERSION=	7.5.5
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scheme-7.5/
+MASTER_SITES=	ftp://ftp.swiss.ai.mit.edu/pub/scheme-7.5/7.5.5/
 DISTNAME=	scheme-7.5.5-ix86-freebsd
 
 MAINTAINER= 	jmacd@FreeBSD.org
