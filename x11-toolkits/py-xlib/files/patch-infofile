@@ -1,0 +1,16 @@
+$FreeBSD$
+
+--- doc/info/python-xlib.info-orig	Fri Nov 30 04:33:14 2001
++++ doc/info/python-xlib.info	Wed Dec  5 17:01:26 2001
+@@ -1,6 +1,11 @@
+ This is python-xlib.info, produced by makeinfo version 4.0 from
+ ../src/python-xlib.texi.
+ 
++INFO-DIR-SECTION X11
++START-INFO-DIR-ENTRY
++* Python Xlib: (python-xlib).         Python library for X11.
++END-INFO-DIR-ENTRY
++
+    This file documents the Python X Library.
+ 
+    Copyright 2000 Peter Liljenberg
