@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	3.23.51
-PORTREVISION?=	2
+PORTVERSION=	3.23.52
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
@@ -78,6 +78,8 @@ RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysql
 
 PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
+
+ONLY_FOR_ARCHS=	i386 alpha
 
 pre-fetch:
 	@${ECHO} ""

@@ -1,6 +1,6 @@
---- configure.orig	Mon Jun  3 12:39:20 2002
-+++ configure	Mon Jun 17 19:16:58 2002
-@@ -4188,7 +4188,7 @@
+--- configure.orig	Wed Aug 14 00:14:46 2002
++++ configure	Mon Aug 19 14:10:52 2002
+@@ -4220,7 +4220,7 @@
    ;;
  esac
  fi
@@ -8,11 +8,14 @@
 +HOSTNAME="$ac_cv_path_HOSTNAME -s"
  
  if test -n "$HOSTNAME"; then
-   echo "$as_me:4194: result: $HOSTNAME" >&5
-@@ -4366,40 +4366,7 @@
- echo "$as_me:4366: checking \"how to check if pid exists\"" >&5
- echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
- PS=$ac_cv_path_PS
+   echo "$as_me:4226: result: $HOSTNAME" >&5
+@@ -4395,43 +4395,7 @@
+ echo "${ECHO_T}no" >&6
+ fi
+ 
+-echo "$as_me:4398: checking \"how to check if pid exists\"" >&5
+-echo $ECHO_N "checking \"how to check if pid exists\"... $ECHO_C" >&6
+-PS=$ac_cv_path_PS
 -# Linux style
 -if $PS p $$ 2> /dev/null | grep $0 > /dev/null
 -then
@@ -42,24 +45,24 @@
 -      FIND_PROC="$PS -e | grep mysqld | grep \" \$\$PID \" > /dev/null"
 -      ;;
 -    *)
--      { { echo "$as_me:4398: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&5
+-      { { echo "$as_me:4430: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&5
 -echo "$as_me: error: Could not find the right ps switches. Which OS is this ?. See the Installation chapter in the Reference Manual." >&2;}
 -   { (exit 1); exit 1; }; }
 -  esac
 -fi
 +FIND_PROC="$PS -uaxww | grep mysqld | grep \" \$\$PID \" > /dev/null"
  
- echo "$as_me:4404: result: \"$FIND_PROC\"" >&5
+ echo "$as_me:4436: result: \"$FIND_PROC\"" >&5
  echo "${ECHO_T}\"$FIND_PROC\"" >&6
-@@ -7907,7 +7874,6 @@
+@@ -7939,7 +7903,6 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lc_r  $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
- #line 7912 "configure"
+ #line 7944 "configure"
  #include "confdefs.h"
-@@ -7955,7 +7921,6 @@
+@@ -7987,7 +7950,6 @@
  #define HAVE_LIBC_R 1
  EOF
  
@@ -67,7 +70,7 @@
  
  fi
  
-@@ -8312,29 +8277,6 @@
+@@ -8344,29 +8306,6 @@
  
  fi
  
@@ -97,7 +100,7 @@
  # Check whether --with-debug or --without-debug was given.
  if test "${with_debug+set}" = set; then
    withval="$with_debug"
-@@ -10066,10 +10008,6 @@
+@@ -10098,10 +10037,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -107,8 +110,8 @@
 -fi
  mysql_cv_btype_last_arg_accept=none
  cat >conftest.$ac_ext <<_ACEOF
- #line 10075 "configure"
-@@ -12739,13 +12677,6 @@
+ #line 10107 "configure"
+@@ -12771,13 +12706,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -120,9 +123,9 @@
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat >conftest.$ac_ext <<_ACEOF
- #line 12750 "configure"
+ #line 12782 "configure"
  #include "confdefs.h"
-@@ -12822,10 +12753,6 @@
+@@ -12854,10 +12782,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -131,9 +134,9 @@
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat >conftest.$ac_ext <<_ACEOF
- #line 12830 "configure"
+ #line 12862 "configure"
  #include "confdefs.h"
-@@ -12901,10 +12828,6 @@
+@@ -12933,10 +12857,6 @@
  ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
@@ -142,5 +145,5 @@
 -  CXXFLAGS="$CXXFLAGS -Werror"
 -fi
  cat >conftest.$ac_ext <<_ACEOF
- #line 12909 "configure"
+ #line 12941 "configure"
  #include "confdefs.h"
