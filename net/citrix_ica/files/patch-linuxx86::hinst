@@ -1,6 +1,6 @@
 --- linuxx86/hinst.orig	Thu May 22 12:30:28 2003
-+++ linuxx86/hinst	Mon Aug 11 15:06:44 2003
-@@ -2132,10 +2132,32 @@
++++ linuxx86/hinst	Mon Aug 11 16:52:05 2003
+@@ -2132,10 +2132,34 @@
  #
  ###############################################################################
  
@@ -20,6 +20,8 @@
 +	/usr/local/netscape-linux \
 +	/usr/local/lib/netscape \
 +	/usr/local/lib/netscape-linux \
++	/usr/local/lib/linux-mozilla \
++	/usr/local/lib/mozilla \
 +	$MOZILLA_HOME"
 +
 +for dir in ${NSCP}; do
@@ -35,12 +37,12 @@
  PLUGIN_NAME=npica.so
  PLUGIN_CLASS=ICAClObj.class
  MAILCAP_FILE=mailcap
-@@ -2207,35 +2229,29 @@
+@@ -2206,36 +2230,29 @@
+ 
  netscape_integrate()
  {
-   $ECHO_CMD $integrate_netscape1
--  if test -z "$SU_INSTALL"
-+  if [ test -z "$SU_INSTALL" ];
+-  $ECHO_CMD $integrate_netscape1
+   if test -z "$SU_INSTALL"
    then
      set_npui_variables
      found_netscape 
@@ -81,7 +83,7 @@
  
      # Create utility script files in install root.
      create_wfica_script
-@@ -2866,37 +2882,6 @@
+@@ -2866,37 +2883,6 @@
      echo "$BINDIR"
  }
  
@@ -119,7 +121,7 @@
  BROWSER_LIST_KEY="BROWSER_DIR"
  ################################################################################
  #
-@@ -3119,6 +3104,8 @@
+@@ -3119,6 +3105,8 @@
  wfcmgr_NAME='Citrix ICA Client'
  DEFAULT_DT_TARGET_DIRS="/usr/share/applications \
                          /usr/share/applnk/Applications \
