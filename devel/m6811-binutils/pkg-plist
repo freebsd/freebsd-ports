@@ -11,6 +11,7 @@ bin/m6811-elf-strip
 bin/m6811-elf-as
 bin/m6811-elf-gasp
 bin/m6811-elf-ld
+bin/m6811-elf-readelf
 include/bfd.h
 include/ansidecl.h
 include/bfdlink.h
