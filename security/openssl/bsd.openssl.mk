@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/security/openssl/Attic/bsd.openssl.mk,v 1.4 2003-04-16 14:49:26 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/openssl/Attic/bsd.openssl.mk,v 1.5 2003-05-07 20:08:00 dinoex Exp $
 #
 # this substitutes USE_OPENSSL=yes
 # just include this makefile after bsd.ports.pre.mk
@@ -40,7 +40,8 @@ WITH_OPENSSL_PORT=yes
 .if	!defined(WITH_OPENSSL_BASE) && \
 	!defined(WITH_OPENSSL_BETA) && \
 	!defined(WITH_OPENSSL_PORT) && \
-	!exists(${LOCALBASE}/lib/libcrypto.so)
+	!exists(${LOCALBASE}/lib/libcrypto.so) && \
+	exists(/usr/include/openssl/opensslv.h)
 #	Security: version in base must be 0.9.7a
 OPENSSLVER!=	${AWK} '/OPENSSL_VERSION_NUMBER/ { print $$3 }' \
 		/usr/include/openssl/opensslv.h
