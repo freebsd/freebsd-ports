@@ -7,7 +7,7 @@
 
 PORTNAME=	firefox
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTVERSION}
@@ -138,8 +138,6 @@ pre-configure:
 post-build:
 # XXX This works around an install problem that is triggered when
 # toolkit/profile/src is built after profile/src.
-#	@(cd ${WRKSRC}/dist/lib && ${LN} -sf ../../profile/src/libprofile_s.a \
-#		.)
 	@${TOUCH} -f ${WRKSRC}/profile/build/libprofile.so
 
 pre-install:
@@ -148,6 +146,7 @@ pre-install:
 # package, replacing the traditional pkg-plist file.
 	@${RM} -rf ${FAKEDIR} ${PLIST}
 	@${MKDIR} ${FAKEDIR}/lib/browser_plugins
+	@${MKDIR} ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 		Makefile ${MAKE_ARGS} install
 .for ii in mac win
@@ -155,6 +154,8 @@ pre-install:
 	@${RM} -rf ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/chrome/en-${ii}${jj}
 .endfor
 .endfor
+	@${INSTALL_DATA} ${FILESDIR}/Extensions.rdf \
+		${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 
