@@ -133,6 +133,7 @@
     SUBDIR += p5-Archie
     SUBDIR += p5-Net
     SUBDIR += p5-Net-DNS
+    SUBDIR += p5-Net-Daemon
     SUBDIR += p5-Net-IPv4Addr
     SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-Telnet
