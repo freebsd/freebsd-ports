@@ -14,38 +14,33 @@ MASTER_SITE_SUBDIR=	jump-math
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for arbitrary precision computations
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
+USE_JAVA=	yes
+JAVA_VERSION=	1.2+
+USE_ANT=	yes
 
-USE_JAVA=	1.2+
-
-ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
-ANT_TARGET=	jar
+ALL_TARGET=	jar
 .else
-ANT_TARGET=	jar apidocs
+ALL_TARGET=	jar apidocs
 .endif
-JAVASHAREDIR=	${PREFIX}/share/java
-JARDIR=		${JAVASHAREDIR}/classes
 JARFILE=	${PORTNAME}.jar
-DESTJARFILE=	${PORTNAME}.jar
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	${WRKSRC}/build/apidocs
+PORTDOCS=	*
 .endif
 
-do-build:
-	cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILE}
 
 do-install:
-	@${ECHO} -n ">> Installing JAR as ${JARDIR}/${DESTJARFILE}..."
-	@${CP} ${WRKSRC}/build/${JARFILE} ${JARDIR}/${DESTJARFILE}
-	@${ECHO} " [ DONE ]"
-
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
+	@${INSTALL_DATA} ${WRKSRC}/build/${JARFILE} ${JAVAJARDIR}/${JARFILE}
+	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/build/apidocs/* ${DOCSDIR}
-	@${ECHO} " [ DONE ]"
+	@cd ${WRKSRC}/build/apidocs/ && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
