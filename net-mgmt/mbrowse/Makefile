@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mbrowse
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.kill-9.org/mbrowse/
 
