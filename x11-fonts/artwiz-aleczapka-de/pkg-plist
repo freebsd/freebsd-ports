@@ -1,0 +1,20 @@
+lib/X11/fonts/artwiz-aleczapka-de/anorexia.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/aqui.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/cure.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/drift.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/edges.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/fkp.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/gelly.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/glisp-bold.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/glisp.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/kates.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/lime.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/mints-mild.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/mints-strong.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/nu.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/smoothansi.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/snap.de.pcf
+lib/X11/fonts/artwiz-aleczapka-de/fonts.alias
+@unexec rm -f %D/lib/X11/fonts/artwiz-aleczapka-de/fonts.cache-1
+lib/X11/fonts/artwiz-aleczapka-de/fonts.dir
+@dirrm lib/X11/fonts/artwiz-aleczapka-de
