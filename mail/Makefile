@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.50 1997/11/04 08:09:44 tg Exp $
+# $Id: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
 
     SUBDIR += adcomplain
@@ -12,6 +12,7 @@
     SUBDIR += exmh2
     SUBDIR += faces
     SUBDIR += fetchmail
+    SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += mailagent
     SUBDIR += majorcool
