@@ -14,7 +14,6 @@ else
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
 GD		"GD library support" OFF \
-FreeType	"TrueType font rendering (implies GD)" OFF \
 zlib		"zlib library support" ON \
 mcrypt		"Encryption support" OFF \
 mhash		"Crypto-hashing support" OFF \
@@ -73,15 +72,13 @@ while [ "$1" ]; do
 	case $1 in
 		\"GD\")
 			echo "LIB_DEPENDS+=	gd.2:\${PORTSDIR}/graphics/gd"
-			echo "CONFIGURE_ARGS+=--with-gd=\${PREFIX}"
-			GD=1
-			;;
-		\"FreeType\")
-			echo "LIB_DEPENDS+=	ttf.4:\${PORTSDIR}/print/freetype"
-			echo "CONFIGURE_ARGS+=--with-ttf=\${PREFIX}"
-			if [ -z "$GD" ]; then
-				set $* \"GD\"
-			fi
+			echo "LIB_DEPENDS+=	freetype.7:\${PORTSDIR}/print/freetype2"
+			echo "LIB_DEPENDS+=	png.4:\${PORTSDIR}/graphics/png"
+			echo "LIB_DEPENDS+=	jpeg.9:\${PORTSDIR}/graphics/jpeg"
+			echo "CONFIGURE_ARGS+=--with-gd=\${PREFIX} \\"
+			echo "		--with-freetype-dir=\${PREFIX} \\"
+			echo "		--with-jpeg-dir=\${PREFIX} \\"
+			echo "		--with-png-dir=\${PREFIX}"
 			;;
 		\"zlib\")
 			echo "CONFIGURE_ARGS+=--with-zlib"
