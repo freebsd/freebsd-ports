@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		${MASTER_SITE_LOCAL}
@@ -51,7 +51,7 @@ CFLAGS+=	-DSYSTEM_THEMES_DIR='\"${PREFIX}/share/gkrellm/themes\"' \
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/gkrellm ${PREFIX}/bin/gkrellm
-	@cd ${WRKSRC}/locale && \
+	@cd ${WRKSRC}/po && \
 		${GMAKE} install enable_nls=1 LOCALEDIR=${PREFIX}/share/locale
 
 	@${MKDIR} ${PREFIX}/include/gkrellm

@@ -9,6 +9,7 @@ share/locale/es/LC_MESSAGES/gkrellm.mo
 share/locale/fr/LC_MESSAGES/gkrellm.mo
 share/locale/ja/LC_MESSAGES/gkrellm.mo
 share/locale/pl/LC_MESSAGES/gkrellm.mo
+share/locale/sv/LC_MESSAGES/gkrellm.mo
 %%PORTDOCS%%@dirrm share/doc/gkrellm
 @dirrm include/gkrellm
 @exec mkdir -p %D/libexec/gkrellm/plugins
