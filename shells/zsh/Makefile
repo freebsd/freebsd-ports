@@ -3,7 +3,7 @@
 # Date created:			11 Feb. 1995
 # Whom:				torstenb
 #
-# $Id: Makefile,v 1.14 1996/03/06 17:57:37 torstenb Exp $
+# $Id: Makefile,v 1.15 1996/05/15 18:39:29 torstenb Exp $
 #
 
 DISTNAME=       zsh-2.6-beta17
@@ -23,9 +23,11 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 GNU_CONFIGURE=	yes
 
 post-install:
-	gzip -9nf ${PREFIX}/man/man1/zsh.1 ${PREFIX}/man/man1/zshbuiltins.1 \
-	${PREFIX}/man/man1/zshcompctl.1 ${PREFIX}/man/man1/zshexpn.1 \
-	${PREFIX}/man/man1/zshmisc.1 ${PREFIX}/man/man1/zshoptions.1 \
-	${PREFIX}/man/man1/zshparam.1 ${PREFIX}/man/man1/zshzle.1
+.if !defined(NOMANCOMPRESS)
+.for man in zsh zshbuiltins zshcompctl zshexpn zshmisc zshoptions \
+	zshparam zshzle 
+	gzip -9nf ${PREFIX}/man/man1/${man}.1
+.endfor
+.endif
 
 .include <bsd.port.mk>
