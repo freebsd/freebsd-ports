@@ -30,7 +30,7 @@ post-extract:
 	${CP} ${DISTDIR}/${PORTNAME}-${PORTVERSION}-content.zip ${WRKSRC}/content/packages/
 
 do-configure:
-	cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ./build.sh uqm config
+	cd ${WRKSRC} && ${SETENV} LOCALBASE=${LOCALBASE} PREFIX=${PREFIX} ./build.sh uqm config
 
 do-build:
 	cd ${WRKSRC} && ./build.sh uqm
