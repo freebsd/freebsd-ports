@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -28,12 +28,15 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 LOG_DIR=	${APP_HOME}/log
 PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///}
+ADMIN_PASSWORD?=	admin
+DEFAULT_USER_PASSWORD?=	passw0rd
 APP_TITLE=	Orion Server
 APP_SHORTNAME=	${PORTNAME}
 CONTROL_SCRIPT_NAME=	${APP_SHORTNAME}ctl
 CONTROL_SCRIPT=	${PREFIX}/bin/${CONTROL_SCRIPT_NAME}
 STARTUP_ORDER=	020
-STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${PORTNAME}.sh
+STARTUP_SCRIPT_NAME=	${PORTNAME}.sh
+STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
 JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
 JAVA_PORT?=	${PORTSDIR}/java/jdk13
 JIKES_LOCATION=	${LOCALBASE}/bin/jikes
@@ -63,16 +66,22 @@ pre-install:
 	@${ECHO} "   HTTP port:               ${HTTP_PORT}"
 	@${ECHO} "   RMI port:                ${RMI_PORT}"
 	@${ECHO} "   Starting after install:  ${AUTO_START}"
-	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+	@${ECHO} "   Password for 'admin':    ${ADMIN_PASSWORD}"
+	@${ECHO} "   Password for 'user':     ${DEFAULT_USER_PASSWORD}"
+	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
+	@# Remove all .bat and .orig files from the work directory
+	${RM} -f `${FIND} ${WRKSRC} -name '*.bat'`
+	${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
+
 	@# Create the destination directory
 	${MKDIR} ${APP_HOME}
 
-	@# Copy all files except .bat and .orig files
-	${RM} -f `${FIND} ${WRKSRC} -name '*.bat'`
-	${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
+	@# Copy all files to the target directory
 	${CP} -R ${WRKSRC}/* ${APP_HOME}
+
+	@# Fix the permissions for all directories
 	${CHMOD} 755 `find ${APP_HOME} -type d`
 
 	@# Configure for use of Jikes, if necessary
@@ -92,57 +101,62 @@ do-install:
 	| ${SED} "/<rmi-server>/s//<rmi-server host=\"\[ALL\]\" port=\"${RMI_PORT}\">/" \
 	> ${APP_HOME}/config/rmi.xml
 
+	@# Apply all text replacements
+.for f in ${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT_NAME}.1 ${STARTUP_SCRIPT_NAME} principals.xml
+	@${ECHO} -n "Applying text replacements to $f..."
+	@${SED} \
+	-e "/%%ADMIN_PASSWORD%%/s//${ADMIN_PASSWORD}/" \
+	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/" \
+	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
+	-e "/%%APP_TITLE%%/s//${APP_TITLE}/" \
+	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/" \
+	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/" \
+	-e "/%%DEFAULT_USER_PASSWORD%%/s//${DEFAULT_USER_PASSWORD}/" \
+	-e "/%%GROUP%%/s//${GROUP}/" \
+	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
+	-e "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/" \
+	-e "/%%PORTNAME%%/s//${PORTNAME}/" \
+	-e "/%%PORTVERSION%%/s//${PORTVERSION}/" \
+	-e "/%%STARTUP_SCRIPT_NAME%%/s//${STARTUP_SCRIPT_NAME}/" \
+	-e "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/" \
+	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/" \
+	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/" \
+	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/" \
+	-e "/%%USER%%/s//${USER}/" \
+	${FILESDIR}/$f > ${WRKDIR}/$f
+	@${ECHO} " [ DONE ]"
+.endfor
+
 	@# Install the control script
-	${CAT} ${FILESDIR}/${CONTROL_SCRIPT_NAME} \
-	| ${SED} "/%%PORTNAME%%/s//${PORTNAME}/" \
-	| ${SED} "/%%PORTVERSION%%/s//${PORTVERSION}/" \
-	| ${SED} "/%%APP_TITLE%%/s//${APP_TITLE}/" \
-	| ${SED} "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
-	| ${SED} "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/" \
-	| ${SED} "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/" \
-	| ${SED} "/%%RC_SCRIPT_NAME%%/s//${PORTNAME}.sh/" \
-	| ${SED} "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
-	| ${SED} "/%%USER%%/s//${USER}/" \
-	| ${SED} "/%%GROUP%%/s//${GROUP}/" \
-	| ${SED} "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/" \
-	| ${SED} "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/" \
-	| ${SED} "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/" \
-	> ${CONTROL_SCRIPT}
-	${CHMOD} 755 ${CONTROL_SCRIPT}
+	${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
+	${CHMOD} 0755 ${CONTROL_SCRIPT}
+
+.if !defined(NOPORTDOCS)
+	@# Install the man page
+	${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
+.endif
 
 	@# Install the startup script
-	${CAT} ${FILESDIR}/${PORTNAME}.sh \
-	| ${SED} "/%%USER%%/s//${USER}/" \
-	| ${SED} "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
-	| ${SED} "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/" \
-	> ${STARTUP_SCRIPT}
-	${CHMOD} 0554 ${STARTUP_SCRIPT}
+	${CP} ${WRKDIR}/${STARTUP_SCRIPT_NAME} ${STARTUP_SCRIPT}
+	${CHMOD} 0544 ${STARTUP_SCRIPT}
 
-	@# Create the directories that the application will create it at the
+	@# Install the principals.xml file
+	${CP} ${WRKDIR}/principals.xml ${APP_HOME}/config/
+
+	@# Create any directories the application will create it at the
 	@# first run
 	${MKDIR} ${APP_HOME}/application-deployments
 
-	@# Install the tools.jar file from the JDK, since it is needed by Orion
-	${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/tools.jar
-
 	@# Change ownership for the files
 	${CHOWN} -R ${USER}:${GROUP} ${APP_HOME}
+
+	@# Link the tools.jar file from the JDK, since it is needed by Orion
+	${LN} -sf ${JAVA_HOME}/lib/tools.jar ${APP_HOME}/tools.jar
 
 	@# Create the PID file
 	${TOUCH} ${PID_FILE}
 	${CHOWN} ${USER}:${GROUP} ${PID_FILE}
 	${CHMOD} 0600 ${PID_FILE}
-
-	@# Install the man page
-.if !defined(NOPORTDOCS)
-	${CAT} ${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
-	| ${SED} "/%%APP_TITLE%%/s//${APP_TITLE}/" \
-	| ${SED} "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/" \
-	| ${SED} "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/" \
-	| ${SED} "/%%STARTUP_ORDER%%/s//${STARTUP_ORDER}.sh/" \
-	> ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1
-	${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
-.endif
 
 post-install:
 	@${ECHO} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
@@ -150,7 +164,6 @@ post-install:
 	@${ECHO} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${APP_TITLE}."
 .endif
 .if ${AUTO_START} == "YES"
-	@${ECHO} "Starting ${APP_TITLE}..."
 	@${CONTROL_SCRIPT} start || true
 .endif
 
