@@ -14,6 +14,9 @@ MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
+BROKEN=		Requires gdbm support which is not built\
+		by default by python
+
 WRKSRC=		${WRKDIR}/pimp3
 
 NO_BUILD=	yes
