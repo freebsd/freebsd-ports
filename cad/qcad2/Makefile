@@ -13,12 +13,10 @@ MASTER_SITES=	http://www2.active.ch/~ribbon/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	qt2.2:${PORTSDIR}/x11-toolkits/qt20
-
 USE_XLIB=	yes
-USE_NEWGCC=	yes
 MAKEFILE=	makefile
 MAKE_ENV=	CC="${CXX}"
+USE_QT2=	yes
 
 QCADDIR=	${PREFIX}/lib/qcad
 QCADDOCDIR=	${PREFIX}/share/doc/qcad
