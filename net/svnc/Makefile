@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	./:vnc trevor/:svnc
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz:svnc \
 		vnc-3.3.3r1_unixsrc.tgz:vnc
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VNC viewer for SVGAlib
 
 BUILD_DEPENDS=	${X11BASE}/include/X11/keysym.h:${PORTSDIR}/x11/XFree86
