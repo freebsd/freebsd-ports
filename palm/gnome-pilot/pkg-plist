@@ -70,6 +70,8 @@ share/locale/es/LC_MESSAGES/gnome-pilot.mo
 share/locale/fr/LC_MESSAGES/gnome-pilot.mo
 share/locale/ja/LC_MESSAGES/gnome-pilot.mo
 share/locale/no/LC_MESSAGES/gnome-pilot.mo
+share/locale/pl/LC_MESSAGES/gnome-pilot.mo
+share/locale/pt_PT/LC_MESSAGES/gnome-pilot.mo
 share/locale/sv/LC_MESSAGES/gnome-pilot.mo
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
