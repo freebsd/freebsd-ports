@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable/ \
 		ftp://ftp.netc.pt/pub/freeciv/stable/ \
 		ftp://ftp.pvv.ntnu.no/pub/freeciv/stable/
 
-MAINTAINER=	sheldonh@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
