@@ -230,6 +230,7 @@ bin/psmandup
 bin/psset
 @unexec install-info --delete --info-dir=%D/info %D/info/a2ps.info
 @unexec install-info --delete --info-dir=%D/info %D/info/ogonkify.info
+@unexec install-info --delete --info-dir=%D/info %D/info/regex.info
 info/ogonkify.info
 info/a2ps.info
 info/a2ps.info-1
@@ -244,6 +245,7 @@ info/regex.info-2
 info/regex.info-3
 @exec install-info --info-dir=%D/info %D/info/a2ps.info
 @exec install-info --info-dir=%D/info %D/info/ogonkify.info
+@exec install-info --info-dir=%D/info %D/info/regex.info
 include/liba2ps.h
 lib/liba2ps.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
@@ -290,3 +292,4 @@ lib/liba2ps.a
 @dirrm share/locale/sv
 @dirrm share/locale/tr/LC_MESSAGES
 @dirrm share/locale/tr
+@dirrm share/locale
