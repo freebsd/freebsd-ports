@@ -227,6 +227,7 @@
     SUBDIR += qkc
     SUBDIR += recjis
     SUBDIR += rogue_s
+    SUBDIR += ruby-kakasi
     SUBDIR += ruby-uconv
     SUBDIR += rubytk
     SUBDIR += rxvt
