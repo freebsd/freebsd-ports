@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	sudo-1.6.2p1
+DISTNAME=	sudo-1.6.2p3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/
 
@@ -20,6 +20,8 @@ CONFIGURE_ARGS=	--with-skey \
 		--with-ignore-dot \
 		--with-tty-tickets \
 		--with-env-editor \
+  		--with-insults \
+  		--with-all-insults \
 		--disable-root-sudo
 
 MAN5=		sudoers.5
