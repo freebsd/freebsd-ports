@@ -3,12 +3,12 @@
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
 #
-# $Id: Makefile,v 1.2 1995/08/26 05:57:08 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1995/08/26 05:59:21 asami Exp $
 #
 
 DISTNAME=       ast50unx
 PKGNAME=	astrolog-5.0
-CATEGORIES+=	games
+CATEGORIES+=	misc
 MASTER_SITES=	ftp://ftp.kiae.su/unix/magick/astrology/
 EXTRACT_SUFX=	.shar.gz
 
