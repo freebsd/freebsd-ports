@@ -1,0 +1,11 @@
+--- makefile.bsd.orig	Sat Nov  7 10:10:50 1998
++++ makefile.bsd	Sat Oct 21 05:54:55 2000
+@@ -131,7 +131,7 @@
+ 	$(LD) $(LDFLAGS) -o $@ $(OBJS)
+ 
+ libXbgi.a: 
+-	(cd Xbgi; make)
++	(cd Xbgi; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" X11BASE="$(X11BASE)")
+ 
+ all : $(BINS) $(LIBS) 
+ 
