@@ -6,16 +6,17 @@
 #
 
 DISTNAME=       imaze
-DISTFILES=	imaze1.3.tar.Z imaze.tar
 PKGNAME=	imaze-1.3
 CATEGORIES+=	games
 MASTER_SITES=	ftp://ftp.tu-clausthal.de/pub/unix/games/imaze/ \
 		ftp://ftp.tu-clausthal.de/pub/unix/games/imaze/sounds/
-EXTRACT_ONLY=	imaze1.3.tar.Z
-LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11/xview-lib
+DISTFILES=	imaze1.3.tar.Z imaze.tar
 
 MAINTAINER=	kuehn@rz.tu-clausthal.de
 
+LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11/xview-lib
+
+EXTRACT_ONLY=	imaze1.3.tar.Z
 NO_CONFIGURE=	yes
 USE_X11=	yes
 NO_CDROM=	yes
