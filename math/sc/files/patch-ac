@@ -1,0 +1,29 @@
+--- interp.c.orig	Mon May 11 13:43:36 1992
++++ interp.c	Tue Apr 20 18:55:25 1999
+@@ -476,7 +476,7 @@
+ dodts(mo, day, yr)
+ int mo, day, yr;
+ {
+-    long trial;
++    time_t trial;
+     register struct tm *tp; 
+     register int i;
+     register long jdate;
+@@ -551,15 +551,13 @@
+ int which;
+ double when;
+ {
+-	long time();
+-
+ 	static long t_cache;
+ 	static struct tm tm_cache;
+ 	struct tm *tp;
+-	long tloc;
++	time_t tloc;
+ 
+ 	if (which == NOW) 
+-	    return (double)time((long *)0);
++	    return (double)time(NULL);
+ 
+ 	tloc = (long)when;
+ 
