@@ -1,29 +1,36 @@
+bin/botti
 bin/irssi
-bin/irssi-bot
-bin/irssi-text
-lib/irssi/plugins/libbot.a
-lib/irssi/plugins/libbot.so
-lib/irssi/plugins/libbot.so.0
-lib/irssi/plugins/libexternal.a
-lib/irssi/plugins/libexternal.so
-lib/irssi/plugins/libexternal.so.0
-lib/irssi/plugins/libproxy.a
-lib/irssi/plugins/libproxy.so
-lib/irssi/plugins/libproxy.so.0
-lib/irssi/plugins/libsample.a
-lib/irssi/plugins/libsample.so
-lib/irssi/plugins/libsample.so.0
-lib/irssi/plugins/libspeech.a
-lib/irssi/plugins/libspeech.so
-lib/irssi/plugins/libspeech.so.0
-lib/irssi/plugins/libsound.a
-lib/irssi/plugins/libsound.so
-lib/irssi/plugins/libsound.so.0
 etc/irssi/colorless.theme
 etc/irssi/config
+etc/irssi/split.theme
+lib/irssi/plugins/libfe_common_irc_dcc.a
+lib/irssi/plugins/libfe_common_irc_dcc.so
+lib/irssi/plugins/libfe_common_irc_dcc.so.0
+lib/irssi/plugins/libfe_common_irc_flood.a
+lib/irssi/plugins/libfe_common_irc_flood.so
+lib/irssi/plugins/libfe_common_irc_flood.so.0
+lib/irssi/plugins/libfe_common_irc_notifylist.a
+lib/irssi/plugins/libfe_common_irc_notifylist.so
+lib/irssi/plugins/libfe_common_irc_notifylist.so.0
+lib/irssi/plugins/libirc_bot.a
+lib/irssi/plugins/libirc_bot.so
+lib/irssi/plugins/libirc_bot.so.0
+lib/irssi/plugins/libirc_dcc.a
+lib/irssi/plugins/libirc_dcc.so
+lib/irssi/plugins/libirc_dcc.so.0
+lib/irssi/plugins/libirc_flood.a
+lib/irssi/plugins/libirc_flood.so
+lib/irssi/plugins/libirc_flood.so.0
+lib/irssi/plugins/libirc_notifylist.a
+lib/irssi/plugins/libirc_notifylist.so
+lib/irssi/plugins/libirc_notifylist.so.0
 share/irssi/help/help
+share/locale/de/LC_MESSAGES/irssi.mo
+share/locale/fr/LC_MESSAGES/irssi.mo
+share/locale/pl/LC_MESSAGES/irssi.mo
+share/locale/pt_BR/LC_MESSAGES/irssi.mo
+@dirrm share/irssi/help
+@dirrm share/irssi
 @dirrm lib/irssi/plugins
 @dirrm lib/irssi
 @dirrm etc/irssi
-@dirrm share/irssi/help
-@dirrm share/irssi

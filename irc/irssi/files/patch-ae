@@ -1,9 +1,9 @@
---- plugins/perl/xs/Makefile.PL.in	Fri Feb 25 12:52:31 2000
-+++ plugins/perl/xs/Makefile.PL.in.new	Fri Feb 25 19:38:08 2000
+--- src/perl/xs/Makefile.PL.in	Fri Feb 25 12:52:31 2000
++++ src/perl/xs/Makefile.PL.in.new	Fri Feb 25 19:38:08 2000
 @@ -2,5 +2,5 @@
  
  WriteMakefile('NAME' => 'Irssi',
                'LIBS' => '',
 -              'INC' => '-I@top_srcdir@/src @GLIB_CFLAGS@',
-+              'INC' => '-I@top_srcdir@/src @GLIB_CFLAGS@ -I@proplist_dir@/include',
++              'INC' => '-I@top_srcdir@/src -I@top_srcdir@/src/core @GLIB_CFLAGS@ -I@proplist_dir@/include',
  	      'VERSION_FROM' => '@srcdir@/Irssi.pm');

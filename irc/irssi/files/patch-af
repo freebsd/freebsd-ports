@@ -1,5 +1,5 @@
---- plugins/perl/Makefile.in	Sat Mar 11 15:10:46 2000
-+++ plugins/perl/Makefile.in.new	Fri May 19 20:36:24 2000
+--- src/perl/Makefile.in	Sat Mar 11 15:10:46 2000
++++ src/perl/Makefile.in.new	Fri May 19 20:36:24 2000
 @@ -240,7 +240,7 @@
  	cd xs && if [ ! -f Makefile ]; then $(perlpath) Makefile.PL; fi && $(MAKE) && cd ..
  
