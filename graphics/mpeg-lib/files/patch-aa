@@ -1,5 +1,24 @@
-*** Makefile.orig	Wed Nov 16 13:25:19 1994
---- Makefile	Wed Nov 16 13:46:35 1994
+*** Makefile.orig	Mon Nov 14 19:05:36 1994
+--- Makefile	Sun Jan 29 22:00:58 1995
+***************
+*** 13,20 ****
+  RANLIB        = ranlib#   may need to set this to `true' for SGI's
+  
+  ARFLAGS       = ru#       this is supposed to replace only those .o files
+!                   #       than are newer than the .a file.  Should work
+!                   #       under most platforms. 
+  
+  #
+  # Step 2:
+--- 13,20 ----
+  RANLIB        = ranlib#   may need to set this to `true' for SGI's
+  
+  ARFLAGS       = ru#       this is supposed to replace only those .o files
+! #			  than are newer than the .a file.  Should work
+! #			  under most platforms. 
+  
+  #
+  # Step 2:
 ***************
 *** 33,42 ****
   #       
