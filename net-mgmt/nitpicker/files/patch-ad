@@ -1,5 +1,5 @@
---- tools/dumpit/Makefile.orig	Sat Aug 23 19:34:32 2003
-+++ tools/dumpit/Makefile	Sat Aug 23 19:35:43 2003
+--- tools/dumpit/Makefile.orig	Fri May 23 10:54:06 2003
++++ tools/dumpit/Makefile	Tue Sep 23 09:49:32 2003
 @@ -1,8 +1,7 @@
  TARGET = dumpit
  
@@ -11,3 +11,10 @@
 +CFLAGS   += $(INCLUDES) 
  
  #CFLAGS += -DDEBUG	# Debugging
+@@ -20,5 +19,5 @@
+ 
+ install:
+-	mkdirhier $(PREFIX)/bin && cp dumpit $(PREFIX)/bin
++	mkdir -p $(PREFIX)/bin && cp dumpit $(PREFIX)/bin
+ 
+ $(OBJS): $(HDRS)
