@@ -95,6 +95,7 @@
     SUBDIR += mew-mule
     SUBDIR += mew-xemacs21
     SUBDIR += mew-xemacs21-mule
+    SUBDIR += mew2
     SUBDIR += mew2-emacs20
     SUBDIR += mew2-xemacs21
     SUBDIR += mew2-xemacs21-mule
