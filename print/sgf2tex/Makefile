@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sgf2tex
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://match.stanford.edu/pub/
 
