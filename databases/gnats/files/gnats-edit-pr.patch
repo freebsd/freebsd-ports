@@ -1,5 +1,5 @@
---- gnats-edit-pr.sh.orig	Tue Apr 20 23:17:07 1999
-+++ gnats-edit-pr.sh	Mon Dec  3 21:36:18 2001
+--- gnats/gnats-edit-pr.sh.orig	Tue Apr 20 23:17:07 1999
++++ gnats/gnats-edit-pr.sh	Mon Dec  3 21:36:18 2001
 @@ -124,15 +124,21 @@
  
       *)
