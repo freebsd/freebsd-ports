@@ -172,7 +172,7 @@ do-install:
 		${RM} ${PREFIX}/$$F; \
 	done
 	@${LN} -s /var/tmp ${PREFIX}/usr/tmp
-	@${TOUCH} ${PREFIX}/CLE-0.9-PRE2
+	@${TOUCH} ${PREFIX}/CLE-0.9p1
 
 post-install:
 	@${ECHO} ''
