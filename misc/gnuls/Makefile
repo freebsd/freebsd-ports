@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	fileutils
 DISTNAME=	fileutils-${PORTVERSION}
 
-MAINTAINER=	bmc@WillsCreek.COM
+MAINTAINER=	bmc@clapper.org
 COMMENT=	GNU colorized `ls'
 
 GNU_CONFIGURE=	yes
