@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	whisker
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	2.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.wiretrip.net/rfp/bins/whisker/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	kris@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 COMMENT=	A sophisticated CGI (in)security scanner
 
 WRKSRC=		${WRKDIR}/v${PORTVERSION}

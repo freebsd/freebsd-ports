@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.silicondefense.com/software/snortsnarf/
 DISTNAME=	SnortSnarf-${PORTVERSION}.1
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate HTML report summaries from snort incident alerts
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Time/JulianDay.pm:${PORTSDIR}/devel/p5-Time-modules
