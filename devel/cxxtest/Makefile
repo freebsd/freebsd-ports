@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	cxxtest
-PORTVERSION=	3.0.1
+PORTVERSION=	3.7.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	drewish@katherinehouse.com
-COMMENT=	A simple yet powerful JUnit/CppUnit/xUnit-like framework for C++
+COMMENT=	Simple and powerful JUnit/CppUnit/xUnit-like framework for C++
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-EXTRACT_SUFX =	.tgz
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
+
+DOCS=		README TODO docs/*.html docs/*.png
+EXAMPLES=	sample/*.cpp sample/*.h sample/*.tpl \
+	  	sample/Construct sample/Makefile.unix \
 
 do-install:
 # scripts
@@ -25,27 +28,21 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cxxtest/* ${PREFIX}/include/cxxtest/
 	${INSTALL_SCRIPT} ${WRKSRC}/cxxtestgen.pl ${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/cxxtestgen.py ${PREFIX}/bin/
-
 # docs and examples (minus the win ddk stuff)
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/sample
-	@${MKDIR} ${DOCSDIR}/test
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.png ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/*.h ${DOCSDIR}/sample/
-	${INSTALL_DATA} ${WRKSRC}/sample/*.cpp ${DOCSDIR}/sample/
-	${INSTALL_DATA} ${WRKSRC}/sample/*.tpl ${DOCSDIR}/sample/
-	${INSTALL_DATA} ${WRKSRC}/sample/Construct ${DOCSDIR}/sample/
-	${INSTALL_DATA} ${WRKSRC}/sample/Makefile.unix ${DOCSDIR}/sample/Makefile
-	${INSTALL_DATA} ${WRKSRC}/test/*.h ${DOCSDIR}/test/
-	${INSTALL_DATA} ${WRKSRC}/test/*.cpp ${DOCSDIR}/test/
-	${INSTALL_DATA} ${WRKSRC}/test/*.tpl ${DOCSDIR}/test/
-	${INSTALL_DATA} ${WRKSRC}/test/*.out ${DOCSDIR}/test/
-	${INSTALL_DATA} ${WRKSRC}/test/test.pl ${DOCSDIR}/test/
-	@${ECHO_CMD} "* Documentation and samples have been installed in ${DOCSDIR}"
-	@${ECHO_CMD} "* NOTE: the makefiles provided with the samples aren't compatible with FreeBSD's make, use ${GMAKE} instead."
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${ECHO_MSG} "* Documentation has been installed in ${DOCSDIR}"
 .endif
+	@${MKDIR} ${EXAMPLESDIR}/test
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	cd ${WRKSRC}/test && ${TAR} -cf - * | \
+		(cd ${EXAMPLESDIR}/test && ${TAR} -xf -)
+	@${ECHO_MSG} "* Samples have been installed in ${EXAMPLESDIR}"
+	@${ECHO_MSG} "* Beware that the sample makefiles aren't compatible with FreeBSD's make,"
+	@${ECHO_MSG} "* use ${GMAKE} instead."
+	@${ECHO_MSG} "* The CxxTest scripts have been installed into ${PREFIX}/bin/."
+	@${ECHO_MSG} "* The include files are in ${PREFIX}/include/cxxtest/"
+	@${ECHO_MSG} "* The obvious reminder: don't forget to add ${PREFIX}/include to your include path."
 
 .include <bsd.port.mk>

@@ -1,15 +1,34 @@
---- sample/Makefile.unix.orig	Fri Aug 15 02:51:52 2003
-+++ sample/Makefile.unix	Fri Aug 15 03:03:55 2003
-@@ -5,9 +5,9 @@
+--- sample/Makefile.unix.orig	Sat Sep 20 07:25:49 2003
++++ sample/Makefile.unix	Sun Nov 23 02:42:12 2003
+@@ -3,23 +3,24 @@
+ #
+ 
+ # Change this line if you want a different compiler
+-CXXC = c++ -Wall -W -Werror -I..
++CXXC = c++ -Wall -W -I/usr/local/include 
+ 
+ # If you want to use python, specify USE_PYTHON=1 on the command line
+ ifdef USE_PYTHON
+-	TESTGEN = ../cxxtestgen.py
++TESTGEN = ../cxxtestgen.py
+ else
+-	TESTGEN = ../cxxtestgen.pl
++TESTGEN = ../cxxtestgen.pl
+ endif
+ 
  # For the X11 GUI
  X11_FLAGS = -I/usr/X11R6/include -L/usr/X11R6/lib -lX11
  
--# For the Qt GUI
+ # For the Qt GUI
 -#QTDIR = /usr/lib/qt
--QT_FLAGS = -I$(QTDIR)/include -L$(QTDIR)/lib -lqt -O2
-+# For the Qt 3.1 GUI
-+QTDIR = /usr/X11R6
-+QT_FLAGS = -I$(QTDIR)/include -L$(QTDIR)/lib -lqt-mt -O2
+-QTLIB = -lqt-mt
+-#QTLIB = -lqt
+-QT_FLAGS = -I$(QTDIR)/include -L$(QTDIR)/lib $(QTLIB) -O2
++#QTDIR = /usr/X11R6
++#QTLIB = -lqt-mt
++#QT_FLAGS = -I$(QTDIR)/include -L$(QTDIR)/lib $(QTLIB) -O2
++QT_FLAGS = -I/usr/X11R6/include -L/usr/X11R6/lib -lqt-mt -O2
++
  
  TARGETS = error_printer stdio_printer yes_no_runner file_printer aborter
  GUI_TARGETS = x11_runner qt_runner
