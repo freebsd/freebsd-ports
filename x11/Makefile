@@ -108,6 +108,7 @@
     SUBDIR += props
     SUBDIR += qrash
     SUBDIR += randrext
+    SUBDIR += resourceext
     SUBDIR += rox-wallpaper
     SUBDIR += ruby-X11
     SUBDIR += ruby-gnome

@@ -1,0 +1,2 @@
+include/X11/extensions/XResproto.h
+libdata/pkgconfig/resourceext.pc
