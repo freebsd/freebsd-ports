@@ -14,7 +14,8 @@ MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 
 MAINTAINER=	brian@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	dvdcss.1:${PORTSDIR}/graphics/libdvdcss
+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" \
@@ -22,12 +23,12 @@ CONFIGURE_ENV=	PATH_GTKCONFIG="${GTK_CONFIG}" \
 		INCLUDE="-I${LOCALBASE}/include" \
 		LIB="-L${LOCALBASE}/lib" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+CONFIGURE_ARGS+=--with-dvdcss=${LOCALBASE}
+
 USE_GTK=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-PLIST_SUB=	LIB_DATE="${LIB_DATE}"
-
-LIB_DATE!=	date +%Y-%m-%d
 
 post-patch:
 	${PERL} -pi.orig -e 's,-lpthread,${PTHREAD_LIBS},g' ${WRKSRC}/configure
