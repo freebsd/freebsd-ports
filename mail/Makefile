@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.60 1998/04/27 23:11:02 eivind Exp $
+# $Id: Makefile,v 1.61 1998/05/06 08:11:51 obrien Exp $
 #
 
     SUBDIR += adcomplain
@@ -13,6 +13,7 @@
     SUBDIR += exmh2
     SUBDIR += faces
     SUBDIR += fetchmail
+    SUBDIR += glbiff
     SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += mailagent
