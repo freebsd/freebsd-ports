@@ -1,4 +1,3 @@
-REALLY_WANT_SSH=1
 # New ports collection makefile for:	ssh
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.org
@@ -11,7 +10,7 @@ REALLY_WANT_SSH=1
 
 PORTNAME=	ssh
 PORTVERSION=	1.2.33
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.tokyonet.ad.jp/pub/security/ssh/ \
 		ftp://ftp.tokyonet.ad.jp/pub/security/ssh/old/ \
@@ -67,7 +66,6 @@ CONFIGURE_ARGS+= --without-idea
 
 .if ${OSVERSION} > 500023
 LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
-#LIB_DEPENDS+=	gmp.4:${PORTSDIR}/math/libgmp3
 MAKE_ENV+=	GMPINCDIR="${LOCALBASE}/include" \
 		GMPLIBDIR="${LOCALBASE}/lib"
 .endif
