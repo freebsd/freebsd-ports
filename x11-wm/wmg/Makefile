@@ -17,7 +17,7 @@ MAINTAINER=	nakai@FreeBSD.org
 LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		esd.2:${PORTSDIR}/audio/esound \
-		gnome.3:${PORTSDIR}/x11/gnomelibs
+		gnome.4:${PORTSDIR}/x11/gnomelibs
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
