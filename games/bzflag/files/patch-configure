@@ -1,15 +1,15 @@
---- configure.orig	Tue Dec  9 17:08:21 2003
-+++ configure	Thu Dec 11 00:55:53 2003
-@@ -2515,7 +2515,7 @@
- fi
- 
- 
--LDFLAGS=$X_LIBS
-+LDFLAGS="$X_LIBS $LDFLAGS"
- case $host_os in
-   solaris*)
-     GLIBS="-lresolv -laudio $GLIBS";
-@@ -2724,7 +2724,7 @@
+--- configure.orig	Sat Jan 24 20:15:57 2004
++++ configure	Sun Jan 25 00:24:23 2004
+@@ -323,7 +323,7 @@
+ prefix=NONE
+ program_prefix=NONE
+ program_suffix=NONE
+-program_transform_name=s,x,x,
++program_transform_name=
+ silent=
+ site=
+ srcdir=
+@@ -6065,7 +6065,7 @@
  
  # avoid using X11 in BeOS
  if test $host_os != beos; then

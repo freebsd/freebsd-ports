@@ -1,6 +1,6 @@
---- src/platform/XWindow.h.bak	Tue Jun  4 02:39:32 2002
-+++ src/platform/XWindow.h	Sun May  4 14:23:23 2003
-@@ -35,9 +35,14 @@
+--- src/platform/XWindow.h_orig	Sat Jan 24 23:22:56 2004
++++ src/platform/XWindow.h	Sat Jan 24 23:23:25 2004
+@@ -35,7 +35,12 @@
  extern "C" {
  #endif
  #ifdef __FreeBSD__
@@ -12,8 +12,5 @@
 +#  include <libusbhid.h>
 +# endif
  #else
--#include <usb.h>
-+# include <usb.h>
+ #include <usb.h>
  #endif
- #include <dev/usb/usb.h>
- #include <dev/usb/usbhid.h>
