@@ -1,0 +1,7 @@
+The JAI Image I/O Tools are not installed in JRE, so you have to add
+  %%TARGET_DIR%%/jar/clibwrapper_jiio.jar
+  %%TARGET_DIR%%/jar/jai_imageio.jar
+  %%TARGET_DIR%%/jar/mlibwrapper_jai.jar
+to the CLASSPATH environment variable, and add
+  %%TARGET_DIR%%/lib
+to the LD_LIBRARY_PATH environment variable.

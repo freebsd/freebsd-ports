@@ -1,0 +1,8 @@
+JAI Image I/O Tools provides reader, writer, and stream plug-ins for
+the Java Image I/O Framework and Image I/O-based read and write
+operations for Java Advanced Imaging.  Reader-writer plug-ins are
+supplied for the BMP, JPEG, JPEG 2000, PNG, PNM, Raw, TIFF, and WBMP
+image formats.  The supplied streams and associated service providers
+use the New I/O APIs.
+
+WWW: http://java.sun.com/products/java-media/jai/
