@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.2.3
+PORTVERSION=	5.2.7
 CATEGORIES=	graphics perl5
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
+MASTER_SITES=	ftp://ftp.simplesystems.org/pub/ImageMagick/ \
+		ftp://ftp.cdrom.com/pub/ImageMagick/ \
 		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
 		ftp://ftp.ms.mff.cuni.cz/MIRRORS/ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.oce.nl/pub/Internet/audio+video/ImageMagick/
-MASTER_SITE_SUBDIR=	jseger
 
 MAINTAINER=	jseger@FreeBSD.org
 
@@ -23,8 +22,10 @@ LIB_DEPENDS=	bz2.1:${PORTSDIR}/archivers/bzip2 \
 		df.1:${PORTSDIR}/graphics/hdf \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		wmf.1:${PORTSDIR}/graphics/libwmf \
 		png.4:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		freetype.6:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 		mpeg2decode:${PORTSDIR}/graphics/mpeg2codec \
 		picttoppm:${PORTSDIR}/graphics/netpbm \
@@ -36,14 +37,18 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
 
 USE_PERL5=	yes
 USE_XLIB=	yes
-USE_FREETYPE=	yes
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--enable-shared --enable-16bit-pixel --without-modules \
+CONFIGURE_ARGS=	--enable-shared --without-modules \
+		--with-threads --without-magick-plus-plus \
 		--with-perl=${PERL5} --without-xml
 INSTALLS_SHLIB=	yes
+
+.if defined(WITH_16BIT_PIXEL)
+CONFIGURE_ARGS+= --enable-16bit-pixel
+.endif
 
 .if defined(HAVE_UNISYS_LICENSE)
 CONFIGURE_ARGS+= --enable-lzw

@@ -1,0 +1,16 @@
+--- configure.in.orig	Fri Dec  1 02:14:22 2000
++++ configure.in	Tue Dec  5 02:43:13 2000
+@@ -471,10 +471,10 @@
+ LIB_THREAD=''
+ if test "$with_threads" != 'no'
+ then
+-  AC_CHECK_LIB(pthread,pthread_attr_init,
++  AC_CHECK_LIB(c_r,pthread_attr_init,
+     [AC_DEFINE(HasPTHREADS,,Define if you have Posix thread methods.)
+-     LIB_THREAD="-lpthread"
+-     DEF_THREAD="-D_REENTRANT"],,)
++     LIB_THREAD="-pthread"
++     DEF_THREAD="-D_THREAD_SAFE"],,)
+   LIBS="$LIB_THREAD $LIBS"
+   CPPFLAGS="$DEF_THREAD $CPPFLAGS"
+ fi
