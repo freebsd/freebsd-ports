@@ -33,7 +33,7 @@
     ("DocBook V3.0"
      "<!DOCTYPE DOCBOOK PUBLIC \"-//Davenport//DTD DocBook V3.0//EN\">")
     ("DocBook V3.1"
-     "<!DOCTYPE DOCBOOK PUBLIC \"-//OASYS//DTD DocBook V3.1//EN\">")
+     "<!DOCTYPE DOCBOOK PUBLIC \"-//OASIS//DTD DocBook V3.1//EN\">")
     ("LINUXDOC"
      "<!DOCTYPE LINUXDOC PUBLIC \"-//FreeBSD//DTD linuxdoc//EN\">")
     ("LINUXDOC 1.0"
