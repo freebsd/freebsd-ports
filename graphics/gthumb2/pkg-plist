@@ -188,6 +188,7 @@ share/locale/sv/LC_MESSAGES/gthumb.mo
 share/locale/uk/LC_MESSAGES/gthumb.mo
 share/locale/zh_CN/LC_MESSAGES/gthumb.mo
 share/locale/zh_TW/LC_MESSAGES/gthumb.mo
+@dirrm share/gnome/omf/gthumb
 @dirrm share/gnome/help/gthumb/C/figures
 @dirrm share/gnome/help/gthumb/C
 @dirrm share/gnome/help/gthumb
