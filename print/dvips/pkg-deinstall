@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ "$2" = "POST-DEINSTALL" ]; then
+  exit 0
+fi
+
 prefix=/usr/local
 
 cat << END
@@ -10,12 +14,15 @@ this file now.
 
 END
 
-echo -n "do you want to deinstall the package ? [y] "
-read answ; if [ "$answ" = "" ]; then answ=y; fi
+if [ -z "${PACKAGE_BUILDING}" ]; then
+  read -p "do you want to deinstall the package ? [y] " answ
+  if [ "$answ" = "" ]; then answ=y; fi
+else
+  answ="y"
+fi
 case $answ in
   y*|Y*) break;;
   *) exit 1;;
 esac
 
 exit 0
-
