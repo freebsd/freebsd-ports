@@ -1,2 +1,4 @@
 #!/bin/sh
-mv -f ${PKG_PREFIX}/bin/X.bck ${PKG_PREFIX}/bin/X
+if [ -e ${PKG_PREFIX}/bin/X.bck ]; then
+	mv ${PKG_PREFIX}/bin/X.bck ${PKG_PREFIX}/bin/X
+fi
