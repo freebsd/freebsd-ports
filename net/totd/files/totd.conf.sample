@@ -1,0 +1,6 @@
+; $NetBSD: totd.conf.sample,v 1.1.1.1 1999/11/22 21:04:01 itojun Exp $
+; Totd sample configuration file
+forwarder 192.168.0.1 port 5000
+forwarder 3ffe:2a00:100:3001::2 port 53
+prefix 3ffe:abcd:1234:9876::
+retry 300 

@@ -1,0 +1,14 @@
+--- config.h.in-	Sun Apr 23 22:17:36 2000
++++ config.h.in	Sun Apr 23 22:17:45 2000
+@@ -33,9 +33,9 @@
+ 
+ /* security aware -- seteuid if tot doesn't need priveledge.         */
+ /* the user/group name to use ... i recommend to make account of tot */
+-#define TOT_USER "tot"
++/*#define TOT_USER "tot"*/
+ /* define loglevel if you need log for each root priv action */
+-#define TOT_USER_LOGLVL LOG_INFO
++/*#define TOT_USER_LOGLVL LOG_INFO*/
+ 
+ /* if you use IPV6 */
+ /*#define USE_INET6*/
