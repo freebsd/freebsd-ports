@@ -8,8 +8,7 @@
 PORTNAME=	glpk
 PORTVERSION=	3.2
 CATEGORIES=	math
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		http://people.freebsd.org/~demon/distfiles/
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
 
 MAINTAINER=	demon@FreeBSD.org
