@@ -205,6 +205,11 @@ README=	${TEMPLATES}/README.category
 .endif
 COMMENT?=	${.CURDIR}/pkg/COMMENT
 DESCR?=		${.CURDIR}/pkg/DESCR
+.if ${OSVERSION} >= 500036
+INDEXFILE?=	INDEX-5
+.else
+INDEXFILE?=	INDEX
+.endif
 
 HTMLIFY=	sed -e 's/&/\&amp;/g' -e 's/>/\&gt;/g' -e 's/</\&lt;/g'
 
