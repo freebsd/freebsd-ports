@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/HTML/AsSubs.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Element.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/Parse.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTML/TreeBuilder.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML-Tree/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML-Tree
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTML 2>/dev/null || true
