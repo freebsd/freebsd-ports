@@ -1,0 +1,10 @@
+bin/moneydance
+%%MDSUBDIR%%/README.txt
+%%MDSUBDIR%%/license.jar
+%%MDSUBDIR%%/license.txt
+%%MDSUBDIR%%/moneydance
+%%MDSUBDIR%%/moneydance.cmd
+%%MDSUBDIR%%/moneydance.jar
+%%MDSUBDIR%%/moneydance.xpm
+%%MDSUBDIR%%/swingall.jar
+@dirrm %%MDSUBDIR%%
