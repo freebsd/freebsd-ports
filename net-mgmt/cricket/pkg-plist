@@ -83,3 +83,27 @@ cricket/FAQ
 cricket/COPYING
 cricket/CHANGES
 cricket/subtree-sets
+@dirrm cricket/lib/ConfigTree
+@dirrm cricket/lib/RRD
+@dirrm cricket/lib/Common
+@dirrm cricket/lib
+@dirrm cricket/images
+@dirrm cricket/doc/neta-paper
+@dirrm cricket/doc
+@dirrm cricket/sample-config/usr
+@dirrm cricket/sample-config/atm-interfaces/atm-intb-pvc
+@dirrm cricket/sample-config/atm-interfaces/atm-rtr-uni
+@dirrm cricket/sample-config/atm-interfaces/atm-trunks
+@dirrm cricket/sample-config/atm-interfaces
+@dirrm cricket/sample-config/http-performance
+@dirrm cricket/sample-config/news-server
+@dirrm cricket/sample-config/portmasters
+@dirrm cricket/sample-config/router-interfaces
+@dirrm cricket/sample-config/routers
+@dirrm cricket/sample-config/routing
+@dirrm cricket/sample-config/squid-proxy
+@dirrm cricket/sample-config/switch-ports
+@dirrm cricket/sample-config/switches
+@dirrm cricket/sample-config
+@dirrm cricket/util
+@dirrm cricket
