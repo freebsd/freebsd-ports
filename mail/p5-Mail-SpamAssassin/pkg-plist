@@ -23,11 +23,13 @@ etc/rc.d/spamd.sh-dist
 %%SITE_PERL%%/Mail/SpamAssassin/Locker.pm
 %%SITE_PERL%%/Mail/SpamAssassin/MailingList.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Message.pm
+%%SITE_PERL%%/Mail/SpamAssassin/NetSet.pm
 %%SITE_PERL%%/Mail/SpamAssassin/NoMailAudit.pm
 %%SITE_PERL%%/Mail/SpamAssassin/PerMsgLearner.pm
 %%SITE_PERL%%/Mail/SpamAssassin/PerMsgStatus.pm
 %%SITE_PERL%%/Mail/SpamAssassin/PersistentAddrList.pm
 %%SITE_PERL%%/Mail/SpamAssassin/PhraseFreqs.pm
+%%SITE_PERL%%/Mail/SpamAssassin/Received.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Replier.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Reporter.pm
 %%SITE_PERL%%/Mail/SpamAssassin/SHA1.pm
@@ -36,10 +38,27 @@ etc/rc.d/spamd.sh-dist
 %%SITE_PERL%%/Mail/SpamAssassin/Util.pm
 %%SITE_PERL%%/Mail/SpamAssassin/Win32Locker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.spamd
+%%PORTDOCS%%%%DOCSDIR%%/README.spamd-vpopmail
+%%PORTDOCS%%%%DOCSDIR%%/README.sql
+%%PORTDOCS%%%%DOCSDIR%%/TRADEMARK
+%%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%PORTDOCS%%%%DOCSDIR%%/procmailrc.example
+%%PORTDOCS%%%%DOCSDIR%%/sample-nonspam.txt
+%%PORTDOCS%%%%DOCSDIR%%/sample-spam.txt
+%%PORTDOCS%%%%DOCSDIR%%/spamassassin.sql
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/spamassassin/10_misc.cf
 share/spamassassin/20_anti_ratware.cf
 share/spamassassin/20_body_tests.cf
 share/spamassassin/20_compensate.cf
+share/spamassassin/20_dnsbl_tests.cf
+share/spamassassin/20_fake_helo_tests.cf
 share/spamassassin/20_head_tests.cf
 share/spamassassin/20_html_tests.cf
 share/spamassassin/20_meta_tests.cf
@@ -57,26 +76,12 @@ share/spamassassin/30_text_es.cf
 share/spamassassin/30_text_fr.cf
 share/spamassassin/30_text_it.cf
 share/spamassassin/30_text_pl.cf
+share/spamassassin/30_text_sk.cf
 share/spamassassin/50_scores.cf
 share/spamassassin/60_whitelist.cf
 share/spamassassin/languages
 share/spamassassin/triplets.txt
 share/spamassassin/user_prefs.template
-%%PORTDOCS%%%%DOCSDIR%%/BUGS
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/Changes
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.spamd
-%%PORTDOCS%%%%DOCSDIR%%/README.spamd-vpopmail
-%%PORTDOCS%%%%DOCSDIR%%/README.sql
-%%PORTDOCS%%%%DOCSDIR%%/TRADEMARK
-%%PORTDOCS%%%%DOCSDIR%%/USAGE
-%%PORTDOCS%%%%DOCSDIR%%/procmailrc.example
-%%PORTDOCS%%%%DOCSDIR%%/sample-nonspam.txt
-%%PORTDOCS%%%%DOCSDIR%%/sample-spam.txt
-%%PORTDOCS%%%%DOCSDIR%%/spamassassin.sql
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Mail/SpamAssassin
