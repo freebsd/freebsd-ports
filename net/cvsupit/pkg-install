@@ -182,6 +182,8 @@ this package was created (in alphabetical order by domain name).
     "cvsup.tw.FreeBSD.org" "Taiwan server." \
     "cvsup2.tw.FreeBSD.org" "Taiwan server." \
     "cvsup.uk.FreeBSD.org" "UK server." \
+    "cvsup2.uk.FreeBSD.org" "UK server." \
+    "cvsup3.uk.FreeBSD.org" "UK server." \
     "cvsup.za.FreeBSD.org" "South Africa server." 2>/tmp/menu.src.$$; then
 	C_HOST=`cat /tmp/menu.src.$$`;
 	rm -f /tmp/menu.src.$$;
