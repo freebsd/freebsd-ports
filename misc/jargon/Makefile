@@ -3,12 +3,13 @@
 # Date created: 	11 July 1998
 # Whom:			moeding
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/13 03:58:11 mph Exp $
+# $Id: Makefile,v 1.2 1999/04/15 20:44:56 mharo Exp $
 #
 
-DISTNAME=	jargon-4.1.0
+DISTNAME=	jargon-4.1.1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.tuxedo.org/~esr/jargon/
+MASTER_SITES=	http://www.tuxedo.org/~esr/jargon/                     \
+		http://www.nectar.com/distfiles/
 
 MAINTAINER=	s.moeding@ndh.net
 
@@ -27,7 +28,8 @@ do-install:
 .endfor
 	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${PREFIX}/www/data/jargon
 	@${CP} -R ${WRKSRC}/graphics ${PREFIX}/www/data/jargon/
-	@${CP} -R ${WRKSRC}/html ${PREFIX}/www/data/jargon/
+	@${CP} -R ${WRKSRC}/frames ${PREFIX}/www/data/jargon/
+	@${CP} -R ${WRKSRC}/noframes ${PREFIX}/www/data/jargon/
 	@${MKDIR} ${PREFIX}/share/doc/jargon
 	@${INSTALL_DATA} ${WRKSRC}/jargon-README ${PREFIX}/share/doc/jargon
 
