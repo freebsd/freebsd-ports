@@ -7,18 +7,13 @@
 #
 
 PORTNAME=	mixal
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	lang
-MASTER_SITES=	http://www.ccil.org/retro/  \
-		ftp://locke.ccil.org/pub/retro/
-EXTRACT_SUFX=	.shar.gz
+MASTER_SITES=	http://www.tuxedo.org/~esr/retro/ \
+		http://dl.droso.net/ports/
 
 MAINTAINER=	ports@FreeBSD.org
 
-EXTRACT_CMD=	zcat
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	| ${SED} -e '1,/^This ought/d' |sh
-NO_WRKSUBDIR=	yes
 ALL_TARGET=
 
 DOCDIR=		${PREFIX}/share/doc/mix
@@ -29,7 +24,7 @@ do-install:
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/READ.ME ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/MIX.DOC ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/notes ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/NOTES ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/opcodes ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.mix ${DOCDIR}
 .endif
