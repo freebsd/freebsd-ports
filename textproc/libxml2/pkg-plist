@@ -57,7 +57,6 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/xpath.py
 %%PYTHON:%%share/doc/libxml2-python/examples/xpathext.py
 %%PYTHON:%%share/doc/libxml2-python/examples/xpathret.py
-%%PYTHON:%%share/doc/libxml2-python/libxml2class.txt
 share/doc/libxml2/Copyright
 share/doc/libxml2/examples/testHTML.c
 share/doc/libxml2/examples/testSAX.c
@@ -68,6 +67,7 @@ share/doc/libxml2/html/FAQ.html
 share/doc/libxml2/html/book1.html
 share/doc/libxml2/html/encoding.html
 share/doc/libxml2/html/index.sgml
+share/doc/libxml2/html/libxml-c14n.html
 share/doc/libxml2/html/libxml-catalog.html
 share/doc/libxml2/html/libxml-debugxml.html
 share/doc/libxml2/html/libxml-docbparser.html
