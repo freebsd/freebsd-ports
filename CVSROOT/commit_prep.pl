@@ -31,7 +31,7 @@ require 5.003;	# to be sure.  log_accum needs perl5
 #
 ############################################################
 #
-# Check each file (except dot files) for an RCS "Id" keyword.
+# Check each file (except dot files) for an RCS "FreeBSD" keyword.
 #
 $check_id = 0;
 
@@ -49,12 +49,12 @@ $LAST_FILE     = "/tmp/#cvs.files.lastdir";
 $ENTRIES       = "CVS/Entries";
 
 $NoId = "
-%s - Does not contain a line with the keyword \"Id:\".
+%s - Does not contain a line with the keyword \"\$FreeBSD:\".
     Please see the template files for an example.\n";
 
 # Protect string from substitution by RCS.
 $NoName = "
-%s - The ID line should contain only \"\$\I\d\:\ \$\" for a newly created file.\n";
+%s - The ID line should contain only \"\$\FreeBSD\$\" for a newly created file.\n";
 
 $BadName = "
 %s - The file name '%s' in the ID line does not match
@@ -82,14 +82,14 @@ sub write_line {
 
 sub check_version {
     local($i, $id, $rname, $version);
-    local($filename, $cvsversion) = @_;
+    local($filename, $directory, $cvsversion) = @_;
 
     open(FILE, $filename) || die("Cannot open $filename, stopped");
-    for ($i = 1; $i < 10; $i++) {
+    for ($i = 1; $i < 30; $i++) {
 	$pos = -1;
 	last if eof(FILE);
 	$line = <FILE>;
-	$pos = index($line, "Id: ");
+	$pos = index($line, "\$\FreeBSD");
 	last if ($pos >= 0);
     }
 
@@ -100,14 +100,15 @@ sub check_version {
 
     ($id, $rname, $version) = split(' ', substr($line, $pos));
     if ($cvsversion{$filename} == 0) {
-	if ($rname ne "\$") {
+	if (index($line, "\$\FreeBSD: \$") == -1 &&
+		index($line, "\$\FreeBSD\$") == -1) {
 	    printf($NoName, $filename);
 	    return(1);
 	}
 	return(0);
     }
 
-    if ($rname ne "$filename,v") {
+    if ($rname ne "$directory/$filename,v") {
 	printf($BadName, $filename, substr($rname, 0, length($rname)-2));
 	return(1);
     }
@@ -154,7 +155,7 @@ if ($check_id != 0) {
     $failed = 0;
     foreach $arg (@ARGV) {
 	next if (index($arg, ".") == 0);
-	$failed += &check_version($arg);
+	$failed += &check_version($arg, $directory, $cvsversion);
     }
     if ($failed) {
 	print "\n";
