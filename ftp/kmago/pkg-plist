@@ -1,0 +1,9 @@
+bin/kmago
+share/apps/kmago/kmagoui.rc
+share/icons/locolor/16x16/apps/kmago.xpm
+share/icons/locolor/32x32/apps/kmago.xpm
+share/icons/hicolor/22x22/apps/kmago.png
+share/icons/hicolor/32x32/apps/kmago.png
+share/icons/hicolor/48x48/apps/kmago.png
+share/applnk/Internet/kmago.desktop
+@dirrm share/apps/kmago

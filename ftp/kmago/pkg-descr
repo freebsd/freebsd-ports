@@ -1,0 +1,13 @@
+KMago (KDE Multiple Automated Get Operations) is a download manager which works
+as a frontend to GNU wget or with the KDE kioslaves.  KMago features: 
+
+Drag'n'drop operations with other applications (Konqueror, Netscape, etc.)
+ and between KMago widgets (including drop targets and a panel tray icon); 
+Multiple prioritized downloads with a selectable priority policy; 
+Transfers grouping; 
+Multiple downloads control with priority and selectable priority policy; 
+A download resume capability; 
+Cookie and HTTP-related management offered by KDE I/O library; and 
+The stability and reliability of the venerable GNU wget. 
+
+WWW: http://kmago.sourceforge.net/
