@@ -1,0 +1,18 @@
+--- main.c.orig	Mon Oct 11 10:45:08 1999
++++ main.c	Mon Oct 11 10:46:19 1999
+@@ -11,6 +11,7 @@
+ 
+ #include "config.h"
+ #include "gqmpeg.h"
++#include "floatingpoint.h"
+ 
+ static gint update_timeout_id = -1;
+ 
+@@ -693,6 +694,7 @@
+ 	GList *list_buf = NULL;
+ 	GList *playlist_buf = NULL;
+ 
++	fpsetmask(0);
+ 	init_vars();
+ 
+ 	/* setup random seed for shuffle mode */
