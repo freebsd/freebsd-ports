@@ -37,7 +37,7 @@ BUILD_VER=	2237
 
 .include <bsd.port.pre.mk>
 
-if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000
 MOUNT_DEV?=	/dev/acd0c
 .else
 MOUNT_DEV?=	/dev/acd0
