@@ -25,6 +25,12 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKEFILE=	${FILESDIR}/Makefile.FreeBSD
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} -m 2755 -o root -g games ${WRKSRC}/Glasteroids ${PREFIX}/bin/glasteroids
 	@${MKDIR} ${DATADIR}
@@ -39,4 +45,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

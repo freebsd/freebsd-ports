@@ -52,6 +52,12 @@ GP_DOCS=	${WRKSRC}/Copyright.plus \
 		${WRKSRC}/gp+/plus.ps \
 		${WRKSRC}/gp+/plus.tex
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 post-extract:
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/gnuplot3.7.1+${PORTVERSION}.patch.tar.gz ${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
 
@@ -77,4 +83,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/demo/* ${PREFIX}/share/examples/gnuplot+
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

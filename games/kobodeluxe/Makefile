@@ -27,7 +27,13 @@ USE_AUTOMAKE_VER=	15
 AUTOCONF=	autoconf
 ACLOCAL=	aclocal
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
 pre-configure:
 	cd ${WRKDIR}/${DISTNAME} && ${ACLOCAL} && ${AUTOCONF} && ${AUTOHEADER}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
