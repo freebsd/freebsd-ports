@@ -3,7 +3,7 @@
 # Date created:		17 Aug 1998
 # Whom:			Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.4 1999/01/21 06:10:09 jkh Exp $
+# $Id: Makefile,v 1.5 1999/03/09 01:09:04 nectar Exp $
 #
 
 DISTNAME=	gnome-1.0.0
@@ -13,13 +13,28 @@ DISTFILES=	# empty
 
 MAINTAINER=	nacai@iname.com
 
-RUN_DEPENDS=	gtcd:${PORTSDIR}/audio/gnomemedia \
+LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12 \
+		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+		ORBit.2:${PORTSDIR}/devel/ORBit \
+		Imlib.4:${PORTSDIR}/graphics/imlib \
+		audiofile.0:${PORTSDIR}/audio/libaudiofile \
+		esd.1:${PORTSDIR}/audio/esound \
+		gnome.2:${PORTSDIR}/x11/gnomelibs \
+		gtop.1:${PORTSDIR}/devel/libgtop \
+		gnomeprint.0:${PORTSDIR}/print/gnomeprint \
+		ghttp.1:${PORTSDIR}/www/libghttp \
+		obgnome.1:${PORTSDIR}/lang/gnomeobjc \
+		xml.0:${PORTSDIR}/textproc/libxml
+RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio \
+		panel:${PORTSDIR}/x11/gnomecore \
+		gtcd:${PORTSDIR}/audio/gnomemedia \
 		gnomecard:${PORTSDIR}/deskutils/gnomepim \
 		gnomine:${PORTSDIR}/games/gnomegames \
 		ElectricEyes:${PORTSDIR}/graphics/electriceyes \
 		gnumeric:${PORTSDIR}/math/gnumeric \
 		gcalc:${PORTSDIR}/misc/gnomeutils \
 		gtalk:${PORTSDIR}/net/gnomenetwork \
+		ggv:${PORTSDIR}/print/ggv \
 		gulp:${PORTSDIR}/sysutils/gnomeadmin \
 		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		gtop:${PORTSDIR}/sysutils/gtop \
