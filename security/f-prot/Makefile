@@ -8,7 +8,8 @@
 PORTNAME=	prot
 PORTVERSION=	4.3.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.f-prot.com/pub/bsd/
+MASTER_SITES=	http://www.i-scream.org/pub/ftp.f-prot.com/pub/bsd/ \
+		ftp://ftp.i-scream.org/pub/ftp.f-prot.com/pub/bsd/
 PKGNAMEPREFIX=	f-
 DISTNAME=	fp-freebsd-ws-${PORTVERSION}
 
