@@ -1,9 +1,9 @@
 bin/muse
-%%PORTDOCS%%share/doc/muse/AUTHORS
-%%PORTDOCS%%share/doc/muse/ChangeLog
-%%PORTDOCS%%share/doc/muse/KNOWN-BUGS
-%%PORTDOCS%%share/doc/muse/NEWS
-%%PORTDOCS%%share/doc/muse/README
-%%PORTDOCS%%share/doc/muse/TODO
-%%PORTDOCS%%share/doc/muse/USAGE
-%%PORTDOCS%%@dirrm share/doc/muse
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/KNOWN-BUGS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/USAGE
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
