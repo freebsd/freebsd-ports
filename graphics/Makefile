@@ -108,6 +108,7 @@
     SUBDIR += libdjvu++
     SUBDIR += libflash
     SUBDIR += libggi
+    SUBDIR += libgrass5
     SUBDIR += libimg
     SUBDIR += liblug
     SUBDIR += libmng
