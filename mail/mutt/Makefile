@@ -60,7 +60,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOMAKE=	yes	# configure.in is patched by <PATCHFILES>
-AUTOMAKE_ARGS=	--include-deps
+USE_REINPLACE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-pop --enable-imap --enable-flock --disable-fcntl \
@@ -88,10 +88,11 @@ MAN5=		mbox.5 muttrc.5
 # this should be done automagically by aclocal but ....
 # for now, this will have to do
 pre-build:
-	@${PERL} -pi -e "s/^(ACLOCAL = ).+/\1${ACLOCAL}/; s/^(AUTOCONF = ).+/\1${AUTOCONF}/; \
-		s/^(AUTOMAKE = ).+/\1${AUTOMAKE}/; s/^(AUTOHEADER = ).+/\1${AUTOHEADER}/" \
+	${REINPLACE_CMD} -E -e "s|^(ACLOCAL = ).+|\1${ACLOCAL}|" \
+			-e "s|^(AUTOCONF = ).+|\1${AUTOCONF}|" \
+			-e "s|^(AUTOMAKE = ).+|\1${AUTOMAKE}|" \
+			-e "s|^(AUTOHEADER = ).+|\1${AUTOHEADER}|" \
 		${BUILD_WRKSRC}/Makefile
-	cd ${WRKSRC} && ${MAKE} keymap_defs.h
 
 .if !defined(NOPORTDOCS)
 post-build:
