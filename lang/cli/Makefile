@@ -7,7 +7,7 @@
 
 PORTNAME=	cli
 PORTVERSION=	20020326
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://download.microsoft.com/download/.netframesdk/CLI/Beta1/WXP/EN-US/ \
 		http://download.microsoft.com/download/.netframesdk/Beta1/WXP/EN-US/ \
@@ -43,7 +43,6 @@ post-configure:
 	done
 
 do-build:
-	@${CHMOD} 700 ${WRKSRC} # <- we need this because build system creates world-writeable dirs
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${SH} env.sh ./buildall)
 
 .if !defined(I_AGREE_TO_LICENSE_TERMS)
