@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	0.9.22
+PORTVERSION=	0.9.23
 CATEGORIES=	devel
 MASTER_SITES=	http://www.abridgegame.org/darcs/
 
@@ -20,7 +20,7 @@ OPTIONS=	SERVER "install server" off
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${PREFIX}/lib/" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${PREFIX}/lib/ ${PTHREAD_LIBS}" \
 		CFLAGS=""
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile

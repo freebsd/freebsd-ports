@@ -9,6 +9,7 @@ etc/darcs/bash_completion.d/darcs
 %%SERVER%%share/darcs/xslt/common.xslt
 %%SERVER%%share/darcs/xslt/errors.xslt
 %%SERVER%%share/darcs/xslt/patches.xslt
+%%SERVER%%share/darcs/xslt/repos.xslt
 %%SERVER%%share/darcs/xslt/styles.css
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_new
 %%PORTDOCS%%%%DOCSDIR%%/examples/zsh_completion_old
