@@ -21,8 +21,6 @@ MAINTAINER=	giffunip@asme.org
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
 
-BROKEN=		"Looks for pgm.h in the wrong place"
-
 EXTRACT_ONLY=	urt-3.1b.tar.Z
 
 USE_XLIB=	yes
