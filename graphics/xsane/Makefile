@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xsane
-PORTVERSION=	0.92
-PORTREVISION=	1
+PORTVERSION=	0.93
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xsane.org/download/ \
 		http://gd.tuwien.ac.at/hci/sane/xsane/ \
@@ -41,7 +40,7 @@ CONFIGURE_ARGS+=	--disable-gimp
 USE_GNOME=	gtk20
 .else
 USE_GNOME=	gtk12
-CONFIGURE_ARGS+= --disable-gtk2
+CONFIGURE_ARGS+=	--disable-gtk2
 .endif
 
 pre-everything::
