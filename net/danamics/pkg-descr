@@ -1,0 +1,14 @@
+The DaNAMiCS project is to build a Petri Net editor that allows for
+both correctness and performance analysis.  The performance analysis
+will be performed by Steady State anaylsis and by simulation.
+
+DaNAMiCS will also include support for Inhibitor Arcs.  This will
+allow for priorities to be modelled and will increase the modelling
+power of Petri Nets to that of Turing Machines.  DaNAMiCS will also
+enable the user to model with Coloured Tokens, which greatly reduce
+the complexity of the resultant nets. 
+
+WWW: http://www.cs.uct.ac.za/Research/DNA/DaNAMiCS/
+
+-- 
+mwest@uct.ac.za
