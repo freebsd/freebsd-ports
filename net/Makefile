@@ -231,6 +231,7 @@
     SUBDIR += slirp
     SUBDIR += smbtcpdump
     SUBDIR += sniffit
+    SUBDIR += sntop
     SUBDIR += socks5
     SUBDIR += sting
     SUBDIR += suckblow
