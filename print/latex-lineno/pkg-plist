@@ -1,9 +1,14 @@
 @comment $FreeBSD$
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
+%%PORTDOCS%%%%DOCSDIR%%/lineno.tex
+%%PORTDOCS%%%%DOCSDIR%%/lineno.pdf
+%%PORTDOCS%%%%DOCSDIR%%/ulineno.tex
+%%PORTDOCS%%%%DOCSDIR%%/ulineno.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CLASSDIR%%/lineno.sty
-%%CLASSDIR%%/lineno.tex
-%%CLASSDIR%%/ulineno.tex
+%%CLASSDIR%%/edtable.sty
+%%CLASSDIR%%/ednmath0.sty
 @dirrm %%CLASSDIR%%
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
