@@ -1,0 +1,28 @@
+# New ports collection makefile for:  	x3arth
+# Version required:	1.1
+# Date created:		15 April 1999
+# Whom:			Chris Piazza <cpiazza@home.net>
+#
+# $Id$
+#
+
+DISTNAME=	x3arth-1.1
+CATEGORIES=	astro
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	X11/desktop
+
+MAINTAINER=	cpiazza@home.net
+
+RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.0:${PORTSDIR}/lang/tcl80 \
+		${X11BASE}/bin/xv:${PORTSDIR}/graphics/xv
+
+USE_X_PREFIX=	yes
+WRKSRC=	${WRKDIR}/usr/local/bin
+NO_BUILD=	yes
+STRIP=
+USE_BZIP2=	yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/x3arth ${PREFIX}/bin
+
+.include <bsd.port.mk>

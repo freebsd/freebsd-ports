@@ -1,0 +1,8 @@
+A TCL script to download the latest high-res satellite views of
+earth and set it as the background image in the X root window.
+
+Author:
+Luc Deschenaux <lcd@gkb.com>
+
+-Chris Piazza
+cpiazza@home.net
