@@ -3,7 +3,7 @@
 # Date created:		?
 # Whom:			jmz (original)
 #
-# $Id: Makefile,v 1.7 1995/04/09 07:09:38 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/18 11:28:55 asami Exp $
 #
 
 DISTNAME=	netpbm
@@ -14,7 +14,7 @@ DISTFILES=	netpbm-1mar1994.tar.gz
 
 MAINTAINER=	asami@FreeBSD.ORG
 
-LIB_DEPENDS=	tiff\\.3\\.:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34
 
 USE_IMAKE=	yes
 
