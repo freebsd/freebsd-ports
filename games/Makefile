@@ -401,6 +401,7 @@
     SUBDIR += tank
     SUBDIR += taxipilot
     SUBDIR += teg
+    SUBDIR += tenebrae
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
     SUBDIR += textmaze
