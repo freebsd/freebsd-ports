@@ -1684,6 +1684,8 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/ssl-howto.html
 %%T%%/webapps/tomcat-docs/status.html
 @exec mkdir %D/%%T%%/work || true
+@exec mkdir %D/%%T%%/common/classes ||true
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
 @dirrm %%T%%/work
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/resources
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use
