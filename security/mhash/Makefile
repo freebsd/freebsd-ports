@@ -3,7 +3,7 @@
 # Date created:		Mon Jun 28 17:59:13 PDT 1999
 # Whom:			nsayer@freebsd.org
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/28 22:37:58 nsayer Exp $
+# $Id: Makefile,v 1.2 1999/06/29 01:00:49 nsayer Exp $
 #
 
 DISTNAME=	mhash-0.5.0
@@ -13,7 +13,7 @@ MASTER_SITES=	http://sasweb.de/mhash/data/
 MAINTAINER=	nsayer@freebsd.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --prefix=${PREFIX}
+CONFIGURE_ARGS= --prefix=${PREFIX} --disable-pthreads
 
 MAN3=		mhash.3
 
