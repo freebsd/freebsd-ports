@@ -16,7 +16,6 @@
     SUBDIR += kproject
     SUBDIR += offix-trash
     SUBDIR += plan
-    SUBDIR += recycler
     SUBDIR += sliderule
     SUBDIR += teapot
     SUBDIR += wmpinboard
