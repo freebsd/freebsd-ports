@@ -7,7 +7,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.79
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
@@ -15,12 +15,6 @@ PKGNAMESUFFIX=	-perl
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of vi/ex, with perl5 linked into
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
 
 # can't say PATCH_DIST_STRIP=-p1 because contains files outside ${WRKSRC}
 PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p0
@@ -39,4 +33,4 @@ MLINKS=		pnvi.1 pnex.1  pnvi.1 pnview.1
 post-patch:
 	${LN} -s /usr/include/sys/queue.h ${WRKSRC}/../include/sys/queue_dist.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
