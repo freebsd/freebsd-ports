@@ -6,7 +6,4 @@ MP3 collections.
 For more info on Napster, please visit http://www.napster.com/ and
 http://www.napster.com/FAQ/.
 
-This is a Linux binary port (sorry, no source is available) and requires
-the linux_base port to be installed.
-
 Donald Burr <dburr@FreeBSD.ORG>
