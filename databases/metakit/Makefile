@@ -9,7 +9,7 @@ PORTNAME=	metakit
 PORTVERSION=	2.4.9.2
 PORTREVISION=	2
 CATEGORIES=	databases
-MASTER_SITES=	http://www.equi4.com/pub/mk/
+MASTER_SITES=	http://www.equi4.com/pub/mk/older/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
