@@ -9,7 +9,7 @@ PORTNAME=	wdm
 PORTVERSION=	1.20
 PORTREVISION=	3
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://www.tcscs.com/wdm/wdm/ \
+MASTER_SITES=	http://voins.program.ru/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	tg
