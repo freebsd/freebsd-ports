@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.3.4
-PORTREVISION=		2
+PORTVERSION=		1.3.5
 CATEGORIES=		security
 # USE_TARBALL tells the port that the user has fetched the source
 # directly from MIT or crypto-publish.org (CRYTPO-PUBLISH).
@@ -21,7 +20,7 @@ PORTREVISION=		5
 MASTER_SITES=		http://www.crypto-publish.org/dist/mit-kerberos5/
 EXTRACT_SUFX=		.tar.gz
 .else
-MASTER_SITES=		http://web.mit.edu/kerberos/www/dist/krb5/${PORTVERSION:C/\.[0-9]*$//}/
+MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/\.[0-9]*$//}/
 EXTRACT_SUFX=		.tar
 .endif
 
