@@ -1,0 +1,14 @@
+*** rdb~	Wed Jul 16 10:23:13 1997
+--- rdb	Wed Feb  9 20:01:38 2000
+***************
+*** 155,158 ****
+  Jones   XY      77    47
+  EOF
+  $helpinfo .= "\n$RCS_ID\n" ;
+! system "echo \"$helpinfo\" | less" ;
+--- 155,159 ----
+  Jones   XY      77    47
+  EOF
+  $helpinfo .= "\n$RCS_ID\n" ;
+! $pager = $ENV{'PAGER'} ? $ENV{'PAGER'} : "more";
+! system "echo \"$helpinfo\" | $pager" ;
