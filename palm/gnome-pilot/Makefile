@@ -16,7 +16,7 @@ DISTNAME=	gnome-pilot-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	gob:${PORTSDIR}/x11-toolkits/gob
-LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link
+LIB_DEPENDS=	pisock.4:${PORTSDIR}/palm/pilot-link
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
