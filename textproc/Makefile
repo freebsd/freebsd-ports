@@ -98,6 +98,7 @@
     SUBDIR += htdig
     SUBDIR += html
     SUBDIR += html2fo
+    SUBDIR += html2text
     SUBDIR += htmldoc
     SUBDIR += htmlsection
     SUBDIR += htmltolatex
