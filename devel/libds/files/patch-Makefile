@@ -1,0 +1,22 @@
+--- Makefile.orig	Sun Oct 19 01:56:50 2003
++++ Makefile	Sun Oct 19 01:56:43 2003
+@@ -5,8 +5,8 @@
+ # Makefile for LibDS 2.0
+ #
+ 
+-CC		=  cc
+-CCOPTFLAGS	= -O2
++CC		?=  cc
++CCOPTFLAGS	= $(CFLAGS)
+ 
+ CCEXTRAFLAGS	= -DStandAlone
+ 
+@@ -42,7 +42,7 @@
+ 	$(TARGET)
+ 
+ gcc:
+-	@-$(MAKE) CC="gcc -pipe" CCWARNFLAGS="-Wall -W -Wshadow \
++	@-$(MAKE) CC=$(CC) CCWARNFLAGS="-Wall -W -Wshadow \
+ 	-Wnested-externs -Wwrite-strings -Wpointer-arith \
+ 	-Wmissing-declarations -Wredundant-decls -Winline \
+ 	-Wstrict-prototypes" SHARED="-shared" release
