@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	tux@pinguru.net
-COMMENT=	Regression testing framework for unit tests
+COMMENT=	PEAR regression testing framework for unit tests
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-FILES=		PHPUnit.php \
-		PHPUnit/Assert.php PHPUnit/RepeatedTest.php PHPUnit/TestCase.php \
-		PHPUnit/TestDecorator.php PHPUnit/TestFailure.php PHPUnit/TestListener.php \
-		PHPUnit/TestResult.php PHPUnit/TestSuite.php PHPUnit/Skeleton.php \
-		PHPUnit/GUI/HTML.php PHPUnit/GUI/HTML.tpl PHPUnit/GUI/SetupDecorator.php
+FILES=		PHPUnit.php PHPUnit/GUI/Gtk.php PHPUnit/GUI/HTML.php \
+		PHPUnit/GUI/HTML.tpl PHPUnit/GUI/SetupDecorator.php \
+		PHPUnit/Assert.php PHPUnit/RepeatedTest.php PHPUnit/Skeleton.php \
+		PHPUnit/TestCase.php PHPUnit/TestDecorator.php \
+		PHPUnit/TestFailure.php PHPUnit/TestListener.php \
+		PHPUnit/TestResult.php PHPUnit/TestSuite.php
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
