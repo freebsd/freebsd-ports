@@ -1,6 +1,6 @@
---- Makefile.orig	Thu Jan 13 13:04:47 2000
-+++ Makefile	Sun Oct 19 01:44:36 2003
-@@ -3,7 +3,8 @@
+--- Makefile.orig	Thu Jan 13 22:04:47 2000
++++ Makefile	Thu Nov  4 22:36:55 2004
+@@ -3,16 +3,17 @@
  # Date created:		13 January 2000
  # Whom:			Bill Ross <bross@nas.nasa.gov> <ross@cgl.ucsf.edu>
  #
@@ -10,8 +10,10 @@
  
  all:		libavltree.a
  
-@@ -12,7 +13,7 @@
- 		strip libavltree.a
+ libavltree.a:	avltree.o
+ 		$(AR) r  libavltree.a avltree.o
+-		strip libavltree.a
++		ranlib libavltree.a
  
  avltree.o: 	avltree.c avltree.h
 -		$(CC) -c avltree.c
