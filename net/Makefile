@@ -368,6 +368,7 @@
     SUBDIR += netspeed_applet
     SUBDIR += netstrain
     SUBDIR += nettest
+    SUBDIR += netwib
     SUBDIR += newsbot
     SUBDIR += ng_daphne
     SUBDIR += ng_netflow
