@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.109 1998/12/22 23:00:38 billf Exp $
+# $Id: Makefile,v 1.110 1998/12/23 19:15:41 vanilla Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -69,6 +69,7 @@
     SUBDIR += squid11
     SUBDIR += squid11-novm
     SUBDIR += squid20
+    SUBDIR += squid21
     SUBDIR += swish-e
     SUBDIR += tidy
     SUBDIR += transproxy
