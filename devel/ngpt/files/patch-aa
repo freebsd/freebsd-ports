@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Fri Nov 30 15:40:12 2001
++++ Makefile.in	Fri Nov 30 15:40:21 2001
+@@ -232,7 +232,6 @@
+ 	$(SHTOOL) mkdir -f -p -m 755 $(prefix)
+ 	$(SHTOOL) mkdir -f -p -m 755 $(bindir)
+ 	$(SHTOOL) mkdir -f -p -m 755 $(includedir)
+-	$(SHTOOL) mkdir -f -p -m 755 $(includedir)/bits
+ 	$(SHTOOL) mkdir -f -p -m 755 $(libdir)
+ 	$(SHTOOL) mkdir -f -p -m 755 $(mandir)/man1
+ 	$(SHTOOL) mkdir -f -p -m 755 $(mandir)/man3
