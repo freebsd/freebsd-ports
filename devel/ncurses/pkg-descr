@@ -1,11 +1,13 @@
 The ncurses software includes a SVr4 and XSI-Curses compatible
-curses library as well as terminfo tools include "tic", "infocmp",
+curses library as well as terminfo tools including "tic", "infocmp",
 and "captoinfo".  The library is used by other programs for text-mode
 support of color, multiple highlights, forms-drawing characters,
-automatic recognition of keybad and function-key sequences, and
+automatic recognition of keypad and function-key sequences, and
 more.
 
 The ncurses library uses a terminfo database (included), but can
 be configured to use BSD's /etc/termcap file instead.  This has
 been approved by the old 4.4BSD curses maintainer as the official
 4.4BSD curses successor.
+
+WWW:  http://invisible-island.net/ncurses/ncurses.html
