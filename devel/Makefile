@@ -285,6 +285,7 @@
     SUBDIR += libol
     SUBDIR += libole2
     SUBDIR += liboop
+    SUBDIR += libpdel
     SUBDIR += libredblack
     SUBDIR += libshbuf
     SUBDIR += libshhmsg
