@@ -9,7 +9,7 @@ PORTNAME=	gtksql
 PORTVERSION=	0.3
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.multimania.com/bbrox/GtkSQL/
+MASTER_SITES=	http://membres.lycos.fr/bbrox/GtkSQL/
 
 MAINTAINER=	domi@saargate.de
 
