@@ -1,7 +1,7 @@
 @mode 755
 @owner bin
 @group bin
-bin/cpm
+bin/cpmemu
 @mode 644
 lib/cpm/cpm.sys
 lib/cpm/cd.com
