@@ -3,16 +3,14 @@ share/doc/opera/LICENSE
 share/doc/opera/help
 share/icons/opera.xpm
 share/opera/bin/m2.so
+share/opera/bin/missingsyms.so
 share/opera/bin/opera
+share/opera/bin/works
 share/opera/chartables.bin
 share/opera/config/opera6rc
 share/opera/config/opera6rc.fixed
-share/opera/conmsg.html
-share/opera/console.html
-share/opera/contool.html
-share/opera/help/accessibility.html
 share/opera/help/advertising.html
-share/opera/help/context.html
+share/opera/help/background.png
 share/opera/help/dialogs.html
 share/opera/help/filetypes.html
 share/opera/help/fonts.html
@@ -21,27 +19,29 @@ share/opera/help/help.css
 share/opera/help/history.html
 share/opera/help/hotlist.html
 share/opera/help/index.html
+share/opera/help/input.html
 share/opera/help/keyboard.html
 share/opera/help/languages.html
+share/opera/help/layout.html
 share/opera/help/license.txt
-share/opera/help/look.html
 share/opera/help/m2.html
-share/opera/help/main.html
+share/opera/help/mail.html
+share/opera/help/menus.html
 share/opera/help/mouse.html
 share/opera/help/multimedia.html
 share/opera/help/network.html
 share/opera/help/page.html
 share/opera/help/paths.html
 share/opera/help/personal.html
+share/opera/help/preferences.html
 share/opera/help/privacy.html
 share/opera/help/search.html
 share/opera/help/security.html
+share/opera/help/skin.html
 share/opera/help/sounds.html
 share/opera/help/start.html
 share/opera/help/toc.html
 share/opera/help/toolbars.html
-share/opera/help/wand.html
-share/opera/help/welcome.html
 share/opera/help/windows.html
 share/opera/images/background.gif
 share/opera/images/blank.gif
@@ -56,7 +56,6 @@ share/opera/images/opera_32x32.png
 share/opera/images/opera_48x48.png
 share/opera/images/operabanner.png
 share/opera/images/shared.gif
-share/opera/images/splash.png
 share/opera/images/startup1.png
 share/opera/images/startup2.png
 share/opera/ini/dialog.ini
@@ -69,14 +68,18 @@ share/opera/ini/standard_toolbar.ini
 share/opera/ini/unix_keyboard.ini
 share/opera/java/opera.jar
 share/opera/java/opera.policy
+share/opera/jsconsole.html
+share/opera/lngcode.txt
+share/opera/locale/en/lngcode.txt
+share/opera/locale/en/search.ini
 share/opera/locale/english.lng
 share/opera/opera6.adr
 share/opera/plugins/libnpp.so
 share/opera/plugins/operamotifwrapper
 share/opera/plugins/operaplugincleaner
 share/opera/search.ini
-share/opera/skin/foreground.png
 share/opera/skin/standard_skin.zip
+share/opera/skin/windows_skin.zip
 share/opera/styles/OPF.css
 share/opera/styles/about.css
 share/opera/styles/cache.css
@@ -95,7 +98,6 @@ share/opera/styles/user/accessibility.css
 share/opera/styles/user/contrastbw.css
 share/opera/styles/user/contrastwb.css
 share/opera/styles/user/debugwithoutline.css
-share/opera/styles/user/defaultforms.css
 share/opera/styles/user/disabletables.css
 share/opera/styles/user/hidecertainsizes.css
 share/opera/styles/user/hidenonlinkimages.css
@@ -110,6 +112,7 @@ share/pixmaps/opera.xpm
 @dirrm share/opera/styles
 @dirrm share/opera/skin
 @dirrm share/opera/plugins
+@dirrm share/opera/locale/en
 @dirrm share/opera/locale
 @dirrm share/opera/java
 @dirrm share/opera/ini
@@ -120,13 +123,14 @@ share/pixmaps/opera.xpm
 @dirrm share/opera
 @dirrm share/doc/opera
 
-%%KDE:%%share/applnk/Internet/opera.desktop
-%%KDE2:%%share/applnk/Networking/WWW/opera.desktop
 %%GNOMELNK:%%share/gnome/apps/Internet/opera.desktop
 %%GNOME:%%share/gnome/pixmaps/opera.xpm
+
+@cwd %%LOCALBASE%%
+%%KDE:%%share/applnk/Internet/opera.desktop
+%%KDE2:%%share/applnk/Networking/WWW/opera.desktop
 %%KDE2:%%@dirrm share/applnk/Networking/WWW
 
 @cwd /etc/X11
 wmconfig/opera
 %%APPLNK:%%applnk/Internet/opera.desktop
-
