@@ -106,8 +106,6 @@ RPM_COMPAT_LIBSTDCXX=
 RPM_SETSERIAL=		setserial-2.17-3.alpha.rpm
 RPM_SETUP=		setup-2.4.7-2.noarch.rpm
 RPM_XFREE86_LIBS=	XFree86-libs-4.1.0-29.4hp.alpha.rpm
-.else
-.error			Unsupported architecture ${ARCH}.
 .endif
 
 DBPATH=			/var/lib/rpm
