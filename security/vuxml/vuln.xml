@@ -351,6 +351,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <freebsdsa>SA-04:16.fetch</freebsdsa>
       <cvename>CAN-2004-1053</cvename>
+      <bid>11702</bid>
     </references>
     <dates>
       <discovery>2004-11-14</discovery>
