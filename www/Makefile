@@ -342,6 +342,7 @@
     SUBDIR += p5-Sledge-Plugin-Dumper
     SUBDIR += p5-Sledge-Plugin-Log
     SUBDIR += p5-Sledge-Plugin-NoCache
+    SUBDIR += p5-Sledge-Plugin-SaveUpload
     SUBDIR += p5-Sledge-Plugin-ScratchPad
     SUBDIR += p5-Sledge-Plugin-SessionAutoCleanup
     SUBDIR += p5-Sledge-SessionManager-CookieStore
