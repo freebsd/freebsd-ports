@@ -8611,6 +8611,7 @@ zope-zmysqlda	ports/www/zope-zmysqlda
 zope-zpt	ports/www/zope-zpt
 zope-zwiki	ports/www/zope-zwiki
 zorro		ports/deskutils/zorro
+zphoto		ports/graphics/zphoto
 zpygresqlda	ports/databases/zpygresqlda
 zsh		ports/shells/zsh
 zsh+euc_hack	ports/shells/zsh+euc_hack
