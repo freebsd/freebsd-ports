@@ -42,7 +42,9 @@ LIBXMDIR=	${X11BASE}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+# XXX - configure is not detecting our streampos
+# provide better solution later
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-ddd::streampos.h
 .endif
 
 pre-patch:
