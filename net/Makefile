@@ -533,6 +533,7 @@
     SUBDIR += pythondirector
     SUBDIR += qadsl
     SUBDIR += qtella
+    SUBDIR += qtorrent
     SUBDIR += quagga
     SUBDIR += queso
     SUBDIR += radiator
