@@ -1,6 +1,7 @@
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTDDIR%%/catalog
+@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove %%DTDDIR%%/catalog.xml
 share/sgml/tei/p4/dummy.dtd
-share/sgml/tei/p4/teicatalog.xml
+share/sgml/tei/p4/catalog.xml
 share/sgml/tei/p4/tei2.dtd
 share/sgml/tei/p4/teiana2.dtd
 share/sgml/tei/p4/teiback2.dtd
