@@ -737,5 +737,5 @@ bin/resize
 bin/uxterm
 bin/xterm
 lib/X11/app-defaults/UXTerm
-lib/X11/app-defaults/XTerm
+lib/X11/app-defaults/XTerm-color
 lib/X11/app-defaults/XTerm

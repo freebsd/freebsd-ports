@@ -40,12 +40,12 @@ pre-everything::
 .endif
 
 post-install:
-	@${LN} -s ${X11BASE}/bin/resize-static ${X11BASE}/bin/resize
-	@${LN} -s ${X11BASE}/bin/xterm-static ${X11BASE}/bin/xterm
-	@${LN} -s ${X11BASE}/bin/uxterm-static ${X11BASE}/bin/uxterm
-	@${LN} -s ${X11BASE}/lib/X11/app-defaults/UXTerm-static ${X11BASE}/lib/X11/app-defaults/UXTerm
-	@${LN} -s ${X11BASE}/lib/X11/app-defaults/XTerm-static ${X11BASE}/lib/X11/app-defaults/XTerm
-	@${LN} -s ${X11BASE}/lib/X11/app-defaults/XTerm-color-static ${X11BASE}/lib/X11/app-defaults/XTerm-color
+	@${LN} -sf ${X11BASE}/bin/resize-static ${X11BASE}/bin/resize
+	@${LN} -sf ${X11BASE}/bin/xterm-static ${X11BASE}/bin/xterm
+	@${LN} -sf ${X11BASE}/bin/uxterm-static ${X11BASE}/bin/uxterm
+	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/UXTerm-static ${X11BASE}/lib/X11/app-defaults/UXTerm
+	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-static ${X11BASE}/lib/X11/app-defaults/XTerm
+	@${LN} -sf ${X11BASE}/lib/X11/app-defaults/XTerm-color-static ${X11BASE}/lib/X11/app-defaults/XTerm-color
 
 .if defined(WITH_SETUID_LUIT)
 	${CHOWN} root:wheel ${PREFIX}/bin/luit
