@@ -7820,6 +7820,7 @@ strace		ports/devel/strace
 stream		ports/benchmarks/stream
 streamripper	ports/audio/streamripper
 streamtuner	ports/audio/streamtuner
+streamtuner-live365	ports/audio/streamtuner-live365
 strings		src/usr.bin/strings
 strip		src/usr.bin/strip
 strobe		ports/security/strobe
