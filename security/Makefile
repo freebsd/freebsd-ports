@@ -56,6 +56,7 @@
     SUBDIR += donkey
     SUBDIR += drweb
     SUBDIR += drweb-postfix
+    SUBDIR += drweb-qmail
     SUBDIR += drweb-sendmail
     SUBDIR += drwebd
     SUBDIR += dsniff

@@ -1,0 +1,56 @@
+@unexec if [ -f %D/drweb/addresses.conf ] && cmp -s %D/drweb/addresses.conf %D/drweb/addresses.conf-dist; then rm -f %D/drweb/addresses.conf; fi
+drweb/addresses.conf-dist
+@exec if [ ! -f %D/drweb/addresses.conf ] ; then cp -p %D/%F %B/addresses.conf; fi
+drweb/doc/qmail/addresses_list.rus.txt
+drweb/doc/qmail/addresses_list.txt
+drweb/doc/qmail/conf_file.rus.txt
+drweb/doc/qmail/conf_file.txt
+drweb/doc/qmail/notify.rus.txt
+drweb/doc/qmail/notify.txt
+drweb/doc/qmail/readme
+drweb/doc/qmail/readme.rus
+drweb/doc/qmail/users_list.rus.txt
+drweb/doc/qmail/users_list.txt
+drweb/doc/qmail/viruses_list.rus.txt
+drweb/doc/qmail/viruses_list.txt
+@unexec if [ -f %D/drweb/drweb_qmail.conf ] && cmp -s %D/drweb/drweb_qmail.conf %D/drweb/drweb_qmail.conf-dist; then rm -f %D/drweb/drweb_qmail.conf; fi
+drweb/drweb_qmail.conf-dist
+@exec if [ ! -f %D/drweb/drweb_qmail.conf ] ; then cp -p %D/%F %B/drweb_qmail.conf; fi
+drweb/templates/en-ru/admin_archive.msg
+drweb/templates/en-ru/admin_error.msg
+drweb/templates/en-ru/admin_rule.msg
+drweb/templates/en-ru/admin_virus.msg
+drweb/templates/en-ru/qmail/archive-admin.msg
+drweb/templates/en-ru/qmail/archive-sender.msg
+drweb/templates/en-ru/qmail/error-admin.msg
+drweb/templates/en-ru/qmail/error-sender.msg
+drweb/templates/en-ru/qmail/rule-admin.msg
+drweb/templates/en-ru/qmail/skip-sender.msg
+drweb/templates/en-ru/qmail/virus-admin.msg
+drweb/templates/en-ru/qmail/virus-rcpts.msg
+drweb/templates/en-ru/qmail/virus-sender.msg
+drweb/templates/en-ru/rcpts_virus.msg
+drweb/templates/en-ru/sender_archive.msg
+drweb/templates/en-ru/sender_error.msg
+drweb/templates/en-ru/sender_skip.msg
+drweb/templates/en-ru/sender_virus.msg
+@unexec if [ -f %D/drweb/users.conf ] && cmp -s %D/drweb/users.conf %D/drweb/users.conf-dist; then rm -f %D/drweb/users.conf; fi
+drweb/users.conf-dist
+@exec if [ ! -f %D/drweb/users.conf ] ; then cp -p %D/%F %B/users.conf; fi
+@unexec if [ -f %D/drweb/viruses.conf ] && cmp -s %D/drweb/viruses.conf %D/drweb/viruses.conf-dist; then rm -f %D/drweb/viruses.conf; fi
+drweb/viruses.conf-dist
+@exec if [ ! -f %D/drweb/viruses.conf ] ; then cp -p %D/%F %B/viruses.conf; fi
+@dirrm drweb/templates/en-ru/qmail
+@dirrm drweb/templates/en-ru
+@dirrm drweb/templates
+@dirrm drweb/doc/qmail
+@cwd /var
+qmail/bin/qmail-queue.drweb
+@exec mkdir -m 755 %D/drweb
+@exec mkdir -m 770 %D/drweb/infected
+@exec mkdir -m 770 %D/drweb/spool
+@exec chown drweb:drweb %D/drweb
+@exec chown drweb:qnofiles %D/drweb/infected %D/drweb/spool
+@dirrm drweb/infected
+@dirrm drweb/spool
+@dirrm drweb

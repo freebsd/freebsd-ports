@@ -1,0 +1,9 @@
+This port based on proxing qmail-queue component of Qmail. You can
+enable this port by two different ways:
+
+1. Move qmail-queue to qmail-queue.original, then move
+   qmail-queue.drweb to qmail-queue.
+2. If Qmail built WITH_QMAILQUEUE_PATCH, You can set
+   QMAILQUEUE variable to full path of qmail-queue.drweb,
+   then specify old qmail-queue in drweb_qmail.conf instead
+   of default qmail-queue.original. Read Qmail docs for details.
