@@ -24,8 +24,7 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomehack
-CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome
+USE_GNOME=	gnomeprefix gnomehack
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
