@@ -6,6 +6,9 @@ It understands JIS/EUC/Shift-JIS. It display Kanji character with JIS
 code by default: if you want to display with EUC/Shift-JIS, add "-kdeuc"
 /"-ksjis" to the command line option.
 
+Also at startup time, jelvis read `.elvisrc', not `.exrc'.  If you use
+`.exrc', change config.h and recompile.
+
         You can obtain elvis 1.8 patchlevel 4, from:
 
 ftp://ftp.cs.pdx.edu/pub/elvis/
