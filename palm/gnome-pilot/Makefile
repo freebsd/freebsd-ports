@@ -1,32 +1,29 @@
-# New ports collection makefile for:	gnomepilot
-# Date created:		28th October 1999
-# Whom:			Ade Lovett <ade@lovett.com>
+# New ports collection makefile for:	gnomepilot2
+# Date created:		12 March 2003
+# Whom:			Joe Marcus Clarke <marcus@marcuscom.com>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnomepilot
-PORTVERSION=	0.1.71
+PORTNAME=	gnomepilot2
+PORTVERSION=	2.0.3
 CATEGORIES=	palm comms gnome
-MASTER_SITES=	${MASTER_SITE_GNOME} \
-		http://www.eskil.org/gnome-pilot/download/tarballs/
-MASTER_SITE_SUBDIR=	sources/gnome-pilot/0.1
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/gnome-pilot/2.0
 DISTNAME=	gnome-pilot-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	3Com PalmPilot conduit system for GNOME
+COMMENT=	3Com PalmPilot conduit system for GNOME 2
 
-BUILD_DEPENDS=	gob:${PORTSDIR}/x11-toolkits/gob
-LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
-RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2
+LIB_DEPENDS=	panel-applet-2.0:${PORTSDIR}/x11/gnomepanel
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs libglade gnomevfs libpanel \
-		libcapplet
+USE_GNOME=	gnomeprefix gnomehack
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}

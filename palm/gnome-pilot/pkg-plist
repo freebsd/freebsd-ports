@@ -1,12 +1,10 @@
 bin/gnome-pilot-make-password
-bin/gpilot-applet
 bin/gpilot-install-file
-bin/gpilotd
 bin/gpilotd-control-applet
 bin/gpilotd-session-wrapper
-etc/CORBA/servers/gpilot-applet.gnorba
-etc/CORBA/servers/gpilotd.gnorba
-etc/gpilotConf.sh
+etc/gconf/gconf.xml.defaults/schemas/apps/gpilot_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gpilot_applet/prefs/%gconf.xml
+etc/gconf/schemas/pilot.schemas
 include/gpilotd/gnome-pilot-client.h
 include/gpilotd/gnome-pilot-conduit-backup.h
 include/gpilotd/gnome-pilot-conduit-file.h
@@ -24,23 +22,26 @@ lib/gnome-pilot/conduits/libfile_conduit.so
 lib/gnome-pilot/conduits/libtest_conduit.so
 lib/libgpilotd.a
 lib/libgpilotd.so
-lib/libgpilotd.so.1
+lib/libgpilotd.so.2
 lib/libgpilotdcm.a
 lib/libgpilotdcm.so
-lib/libgpilotdcm.so.1
+lib/libgpilotdcm.so.2
 lib/libgpilotdconduit.a
 lib/libgpilotdconduit.so
-lib/libgpilotdconduit.so.1
-share/gnome/applets/Utility/gpilot-applet.desktop
-share/gnome/apps/Settings/Peripherals/gpilotd-control-applet.desktop
-share/gnome/control-center/Peripherals/gpilotd-control-applet.desktop
+lib/libgpilotdconduit.so.2
+libdata/bonobo/servers/GNOME_PilotApplet.server
+libdata/bonobo/servers/GNOME_Pilot_Daemon.server
+libdata/pkgconfig/gnome-pilot-2.0.pc
+libexec/gpilot-applet
+libexec/gpilotd
+share/gnome/control-center-2.0/capplets/gpilotd-control-applet.desktop
+share/gnome/gnome-pilot-2/glade/pilot-applet.glade
 share/gnome/gnome-pilot/conduits/backup.conduit
 share/gnome/gnome-pilot/conduits/file.conduit
 share/gnome/gnome-pilot/conduits/test.conduit
 share/gnome/gnome-pilot/glade/gnome-palm.png
 share/gnome/gnome-pilot/glade/gnome-pilot-watermark.png
 share/gnome/gnome-pilot/glade/gpilotd-capplet.glade
-share/gnome/gnome-pilot/glade/pilot-applet.glade
 share/gnome/idl/gnome-pilot.idl
 share/gnome/mime-info/palm.keys
 share/gnome/mime-info/palm.mime
@@ -50,8 +51,10 @@ share/gnome/pixmaps/sync_broken.png
 share/gnome/pixmaps/sync_icon.png
 share/gnome/pixmaps/sync_paused.png
 share/gnome/pixmaps/syncing_icon.png
+share/locale/am/LC_MESSAGES/gnome-pilot.mo
 share/locale/az/LC_MESSAGES/gnome-pilot.mo
 share/locale/ca/LC_MESSAGES/gnome-pilot.mo
+share/locale/cs/LC_MESSAGES/gnome-pilot.mo
 share/locale/da/LC_MESSAGES/gnome-pilot.mo
 share/locale/de/LC_MESSAGES/gnome-pilot.mo
 share/locale/el/LC_MESSAGES/gnome-pilot.mo
@@ -59,6 +62,7 @@ share/locale/es/LC_MESSAGES/gnome-pilot.mo
 share/locale/fi/LC_MESSAGES/gnome-pilot.mo
 share/locale/fr/LC_MESSAGES/gnome-pilot.mo
 share/locale/gl/LC_MESSAGES/gnome-pilot.mo
+share/locale/he/LC_MESSAGES/gnome-pilot.mo
 share/locale/hu/LC_MESSAGES/gnome-pilot.mo
 share/locale/ja/LC_MESSAGES/gnome-pilot.mo
 share/locale/nl/LC_MESSAGES/gnome-pilot.mo
@@ -72,7 +76,16 @@ share/locale/sk/LC_MESSAGES/gnome-pilot.mo
 share/locale/sv/LC_MESSAGES/gnome-pilot.mo
 share/locale/tr/LC_MESSAGES/gnome-pilot.mo
 share/locale/uk/LC_MESSAGES/gnome-pilot.mo
+share/locale/vi/LC_MESSAGES/gnome-pilot.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-pilot.mo
 @dirrm share/gnome/gnome-pilot/glade
+@dirrm share/gnome/gnome-pilot/conduits
+@dirrm share/gnome/gnome-pilot
+@dirrm share/gnome/gnome-pilot-2/glade
+@dirrm share/gnome/gnome-pilot-2
+@dirrm lib/gnome-pilot/conduits
+@dirrm lib/gnome-pilot
 @dirrm include/libgpilotdCM
 @dirrm include/gpilotd
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gpilot_applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gpilot_applet
