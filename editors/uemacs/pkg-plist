@@ -2,4 +2,22 @@
 @mode 755
 bin/uemacs
 @mode 644
-lib/uemacs
+lib/uemacs/.emacsrc
+lib/uemacs/bpage.cmd
+lib/uemacs/cpage.cmd
+lib/uemacs/cua.cmd
+lib/uemacs/dev.cmd
+lib/uemacs/ehelp.cmd
+lib/uemacs/ehelp1.txt
+lib/uemacs/ehelp2.txt
+lib/uemacs/epage.cmd
+lib/uemacs/error.cmd
+lib/uemacs/filter.cmd
+lib/uemacs/lpage.cmd
+lib/uemacs/mdi.cmd
+lib/uemacs/mewin.cmd
+lib/uemacs/newpage.cmd
+lib/uemacs/opage.cmd
+lib/uemacs/ppage.cmd
+lib/uemacs/shell.cmd
+lib/uemacs/wpage.cmd
