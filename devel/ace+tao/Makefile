@@ -5,17 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ace+tao
-PORTVERSION=	${ACE_VERSION}+${TAO_VERSION}
+PORTNAME?=	ace+tao
+PORTVERSION?=	${ACE_VERSION}+${TAO_VERSION}
 CATEGORIES=	devel
 # The distfile does not have version numbers, so try my mirror first
 MASTER_SITES=	http://deuce.doc.wustl.edu/ \
-		http://www.ciam.ru/~sem/FreeBSD/ \
 		http://www.navicon.dk/mirrors/ace/deuce.doc.wustl.edu/
-DISTNAME=	${PORTNAME:U}
+DISTNAME?=	${PORTNAME:U}
 
 MAINTAINER=	sem@ciam.ru
-COMMENT=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
+COMMENT?=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
+
+CONFLICTS=	ace-*
 
 ACE_VERSION=	5.3.6
 TAO_VERSION=	1.3.6
@@ -41,7 +42,7 @@ PLIST_SUB+=	TAO=${TAO} TESTS=${TESTS}
 
 .if defined(WITHOUT_TAO)
 TAO=	"@comment "
-PKGNAMESUFFIX=	-notao
+PKGNAMESUFFIX?=	-notao
 .endif
 
 .include <bsd.port.pre.mk>
