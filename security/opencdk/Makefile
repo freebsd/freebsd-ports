@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opencdk
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG} \
 		http://www.mirrors.wiretapped.net/security/network-security/gnutls/opencdk/ \
@@ -28,12 +28,11 @@ USE_REINPLACE=	yes
 DOCS=		AUTHORS NEWS README THANKS
 
 post-patch:
-.for file in encrypt.c main.c
+.for file in encrypt.c main.c misc.c
 	${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' ${WRKSRC}/src/${file}
 .endfor
 
 post-install:
-	${RM} -f ${PREFIX}/lib/libopencdk.la
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tests/*.c ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tests/*.gpg ${EXAMPLESDIR}
