@@ -3,12 +3,13 @@
 # Date Created:				23 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/28 15:54:53 vanilla Exp $
+# $Id: Makefile,v 1.2 1999/01/14 16:56:16 vanilla Exp $
 #
 
 DISTNAME=	gtk-engines-0.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
+MASTER_SITES=	ftp://freebsd.csie.nctu.edu.tw/Upload/  \
+		ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
 		ftp://ftp.gnome.org/pub/GNOME/sources/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
