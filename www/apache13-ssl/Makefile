@@ -37,7 +37,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	adam@algroup.co.uk
+MAINTAINER=	ports@freebsd.org
 
 APACHE_VERSION=		1.3.12
 APACHE_SSL_VERSION=	1.40
@@ -85,6 +85,8 @@ CONFIGURE_ENV+=	EXTRA_SSL_LIBS="-L${OPENSSLLIB} -L${LOCALBASE}/lib"
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 httpsdctl.8 apxs.8 httpsd.8 logresolve.8 rotatelogs.8
+
+BROKEN=		contains unpatched vulnerabilities (CAN-2001-0729, 0730, 0731)
 
 post-extract:
 	@cd ${WRKSRC} && tar xzf ${DISTDIR}/apache_${APACHE_VERSION}+ssl_${APACHE_SSL_VERSION}${EXTRACT_SUFX}
