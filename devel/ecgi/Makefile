@@ -18,6 +18,9 @@ INSTALLS_SHLIB=	yes
 
 HEADER_FILES=	ecgi.h ecgitk.h include/memfile.h
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/src/memfile.c
+
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/libecgi.a ${PREFIX}/lib
 	@${INSTALL_PROGRAM} ${WRKSRC}/libecgi.so ${PREFIX}/lib
