@@ -1,0 +1,25 @@
+--- Makefile.orig	Tue Jan 11 05:58:14 2005
++++ Makefile	Tue Jan 11 05:59:21 2005
+@@ -1,13 +1,19 @@
++TEX?=		etex
++PDFTEX?=	pdfetex
++
++all: betterdefault
++betterdefault: jadetex.fmt pdfjadetex.fmt
++
+ default: basic
+ 
+ basic: jadetex.ltx
+-	tex jadetex.ins
++	${TEX} jadetex.ins
+ 
+ jadetex.fmt: basic
+-	tex -ini -progname=jadetex "&latex" jadetex.ini
++	${TEX} -ini -progname=jadetex "&latex" jadetex.ini
+ 
+ pdfjadetex.fmt: basic
+-	pdftex -ini -progname=pdfjadetex "&pdflatex" pdfjadetex.ini
++	${PDFTEX} -ini -progname=pdfjadetex "&pdflatex" pdfjadetex.ini
+ 
+ install: jadetex.fmt pdfjadetex.fmt
+ 	(TT=$$DESTDIR/`kpsewhich -expand-var '$$TEXMFMAIN'`; \

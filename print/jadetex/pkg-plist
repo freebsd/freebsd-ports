@@ -1,6 +1,6 @@
 @comment $FreeBSD$
-@exec ln -sf %D/bin/tex %D/bin/jadetex
-@exec ln -sf %D/bin/pdftex %D/bin/pdfjadetex
+@exec ln -sf %D/bin/etex %D/bin/jadetex
+@exec ln -sf %D/bin/pdfetex %D/bin/pdfjadetex
 @unexec rm -f %D/bin/jadetex
 @unexec rm -f %D/bin/pdfjadetex
 share/texmf/tex/jadetex/dsssl.def

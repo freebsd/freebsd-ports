@@ -13,7 +13,7 @@ To use JadeTex, run your SGML document, its Document Type Definition
 (DSSSL) specification, through jade with the "-t tex" option.  Then,
 to produce a DVI file, run
 
-   tex "&jadetex" <file>.tex
+   etex "&jadetex" <file>.tex
 
 To produce a PDF file, run
 
