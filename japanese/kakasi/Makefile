@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	kakasi
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.3
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://kakasi.namazu.org/pub/kakasi/
+MASTER_SITES=	ftp://kakasi.namazu.org/pub/kakasi/stable/
 
 MAINTAINER=	max@FreeBSD.org
 

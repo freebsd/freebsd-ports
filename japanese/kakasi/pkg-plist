@@ -1,5 +1,6 @@
 bin/atoc_conv
 bin/kakasi
+bin/kakasi-config
 bin/mkkanwa
 bin/rdic_conv
 bin/wx2_conv
