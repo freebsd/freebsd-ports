@@ -257,6 +257,7 @@
     SUBDIR += java-beepcore
     SUBDIR += javadc
     SUBDIR += jumpgate
+    SUBDIR += junipoll
     SUBDIR += jwhois
     SUBDIR += kdenetwork3
     SUBDIR += kmerlin

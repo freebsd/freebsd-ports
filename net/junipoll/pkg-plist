@@ -1,0 +1,3 @@
+bin/junipoll
+lib/perl5/site_perl/%%PERL_VER%%/HCInterfaceTemplate.pl
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/junipoll/.packlist
