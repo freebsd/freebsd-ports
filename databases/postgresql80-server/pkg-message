@@ -10,7 +10,7 @@ installs into:
 /usr/local/include  (NOTE! Changed again in 7.2, since PostgreSQL
                            handles standard install nowadays)
 
-You *must* move away your old installation from users' and
+You *must* move away your pre-7.1 installation from users' and
 ldconfig(8)'s PATHs.
 
 The pgsql user's home dir is /usr/local/pgsql by default, but can be

@@ -6,7 +6,7 @@
 # Put this in /usr/local/etc/periodic/daily, and it will be run 
 # every night
 #
-# Written by Palle Girgensohn <girgen@partitur.se>
+# Written by Palle Girgensohn <girgen@pingpong.net>
 #
 # In public domain, do what you like with it,
 # and use it at your own risk... :)
@@ -34,8 +34,12 @@ PGDUMP_ARGS=${PGDUMP_ARGS:-"-b -F c"}
 
 # The directory where the backups will reside.
 # ${HOME} is pgsql's home directory
-# 
 PGBACKUPDIR=${PGBACKUPDIR:-${HOME}/backups}
+
+# If you want to keep a history of database backups, set
+# PGBACKUP_SAVE_DAYS in ~pgsql/.profile to the number of days. This is
+# used as "find ... -mtime +${PGBACKUP_SAVE_DAYS} -delete", see below
+PGBACKUP_SAVE_DAYS=${PGBACKUP_SAVE_DAYS:-7}
 
 # PGBACKUPDIR must be writeable by user pgsql
 # ~pgsql is just that under normal circumstances,
@@ -53,11 +57,12 @@ echo "PostgreSQL maintenance"
 umask 077
 dbnames=`psql -q -t -A -d template1 -c "SELECT datname FROM pg_database WHERE datname != 'template0'"`
 rc=$?
-file=${PGBACKUPDIR}/pgglobals_`date "+%Y%m%d"`
+now=`date "+%Y-%m-%dT%H:%M:%S"`
+file=${PGBACKUPDIR}/pgglobals_${now}
 pg_dumpall -g | gzip -9 > ${file}.gz
 for db in ${dbnames}; do
     echo -n " $db"
-    file=${PGBACKUPDIR}/pgdump_${db}_`date "+%Y%m%d"`
+    file=${PGBACKUPDIR}/pgdump_${db}_${now}
     pg_dump ${PGDUMP_ARGS} -f ${file} ${db}
     [ $? -gt 0 ] && rc=3
 done
@@ -78,6 +83,7 @@ then
 fi
 
 # cleaning up old data
-find ${PGBACKUPDIR} -name 'pgdump_*' -a -atime +7 -delete
+find ${PGBACKUPDIR} \( -name 'pgdump_*' -o -name 'pgglobals_*' \) \
+    -a -mtime +${PGBACKUP_SAVE_DAYS} -delete
 
 exit $rc

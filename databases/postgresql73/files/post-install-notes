@@ -22,7 +22,7 @@ ruby-postgres, py-PyGreSQL
   For client access to PostgreSQL databases using the ruby & python
   languages.
 
-postgresql-plperl, postgresql-pltcl & postgresql-plruby
+p5-postgresql-plperl, postgresql-pltcl & postgresql-plruby
   For using perl5, tcl & ruby as procedural languages.
 
 etc etc...

@@ -6,20 +6,24 @@ PATH=/bin:/usr/sbin
 
 DB_DIR=${PKG_PREFIX}/pgsql
 
+backupwarning() {
+	echo "
+  =========== BACKUP YOUR DATA! =============
+  As always, backup your data before
+  upgrading. If the upgrade leads to a higher
+  minor revision (e.g. 7.2.x -> 7.3), a dump
+  and restore of all databases is
+  required. This is *NOT* done by the port!
+
+  Press ctrl-C *now* if you need to pg_dump.
+  ===========================================
+"
+	sleep 5
+}
+
 case $2 in
 PRE-INSTALL)
-	echo "
-=========== BACKUP YOUR DATA! =============
-As always, backup your data before
-upgrading. If the upgrade leads to a higher
-minor revision (e.g. 7.1.x -> 7.2), a dump
-and restore of all databases is
-required. This is *NOT* done by the port!
-
-Press ctrl-C *now* if you need to pg_dump.
-===========================================
-"
-	sleep 3
+	backupwarning
 	USER=pgsql
 	GROUP=${USER}
 	UID=70
@@ -55,4 +59,7 @@ Press ctrl-C *now* if you need to pg_dump.
 	fi
 	;;
 
+BACKUPWARNING)
+	backupwarning
+	;;
 esac
