@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	nut
-PORTVERSION=	0.44.2
+PORTVERSION=	0.44.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.exploits.org/nut/release/
 
 MAINTAINER=	jeh@freebsd.org
 
 .if defined(CGI)
-LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 .endif
 
 GNU_CONFIGURE=	yes
@@ -22,29 +22,23 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-modelpath=${PREFIX}/libexec/nut \
 		--with-statepath=/var/db
 
-ALL_TARGET=	all
+MAN8=		powercom.8 apcsmart.8
 
-PLIST=		${WRKDIR}/PLIST.DYN
+ALL_TARGET=	all
 
 NDOCDIR=	${PREFIX}/share/doc/nut
 
 .if defined(CGI)
 NCGIDIR=	${PREFIX}/share/nut/cgi
 ALL_TARGET+=	cgi
+PLIST_SUB+=	CGIFILES=""
+.else
+PLIST_SUB+=	CGIFILES="@comment "
 .endif
 
 pre-fetch:
 .if !defined(CGI)
 	@${ECHO_MSG} "Type \"make CGI=yes\" if you want to build CGI scripts."
-.endif
-
-pre-install:
-	@cp ${PKGDIR}/pkg-plist ${WRKDIR}/PLIST.DYN
-.if !defined(NOPORSDOCS)
-	@cat ${PKGDIR}/pkg-plist.doc >> ${WRKDIR}/PLIST.DYN
-.endif
-.if defined(CGI)
-	@cat ${PKGDIR}/pkg-plist.cgi >> ${WRKDIR}/PLIST.DYN
 .endif
 
 post-install:
@@ -67,6 +61,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/clients/*.cgi ${NCGIDIR}
 	@${ECHO_MSG} "Look in ${NCGIDIR} for cgi scripts."
 .endif
+.if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "Look in ${NDOCDIR} for documentation."
+.endif
 
 .include <bsd.port.mk>
