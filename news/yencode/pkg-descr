@@ -1,0 +1,19 @@
+yencode is an encoder/decoder package for the Usenet yEnc encoding format.
+
+The source code is freely available under the GNU General Public License and
+should work on most modern Unix-like operating systems.
+
+Features:
+   - Full internationalization (multilingual) support provided by GNU gettext.
+   - Encoder can output single part or multipart encoded archives of any size.
+   - Smart decoder can handle multiple files, including files specified out of
+     order or with nonsense file names.
+   - Included Usenet posting software posts files to Usenet quickly and
+     easily, including automatic creation of encoded multipart archives and
+     SFV/CRC checksum files, if desired.
+   - Optional scan mode: automatically locate and decode single or multipart
+     encoded archives in specified directories or recursively.
+   - Supports SFV file creation for multiple-file archives.
+   - Fully compliant with the current yEnc specifications.
+
+WWW: http://www.yencode.org/
