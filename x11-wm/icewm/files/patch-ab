@@ -1,5 +1,5 @@
---- src/Makefile.orig	Mon Mar  9 00:28:12 1998
-+++ src/Makefile	Wed Mar 11 14:14:59 1998
+--- src/Makefile.orig	Fri Apr  3 17:12:54 1998
++++ src/Makefile	Fri Apr  3 17:14:33 1998
 @@ -1,8 +1,8 @@
  include ../VERSION
  
@@ -8,15 +8,15 @@
 -LIBSDIR     = -L/usr/X11R6/lib
 +INCSDIR     = -I$(PREFIX)/include
 +LIBSDIR     = -L$(PREFIX)/lib
+ 
  # HPUX
  #INCSDIR     = -I/usr/include/X11R5
- #LIBSDIR     = -L/usr/lib/X11R5
-@@ -32,7 +32,7 @@
+@@ -36,7 +36,7 @@
  #OPTIMIZE    = -g
  #OPTIMIZE   = -O -g
  #OPTIMIZE   = -O -g -pg
--OPTIMIZE   = -O -s
-+#OPTIMIZE   = -O -s
+-OPTIMIZE   = -O
++#OPTIMIZE   = -O
+ #OPTIMIZE   = -O2
+ #OPTIMIZE   = -O -s
  #OPTIMIZE   = -O2 -s
- 
- LIBS        = -lXpm $(SHAPELIB) -lX11

@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Dec  2 05:49:07 1997
-+++ Makefile	Wed Feb 18 01:30:17 1998
+--- Makefile.orig	Fri Apr  3 17:09:47 1998
++++ Makefile	Fri Apr  3 17:12:42 1998
 @@ -1,12 +1,12 @@
  
 -PREFIX      = /usr/local
@@ -19,12 +19,12 @@
  #INSTALLETC  = $(INSTALL) -m 644
  
 @@ -16,8 +16,7 @@
- XPMDIRS     = themes/nice themes/motif themes/win95 themes/warp3 themes/warp4 themes/win31 ledclock taskbar icons
+ XPMDIRS     = themes/nice themes/motif themes/win95 themes/warp3 themes/warp4 themes/win31 themes/metal ledclock taskbar icons
  
  all:
--	(cd doc ; make)
 -	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR))
+-	(cd doc ; make)
 +	(cd src ; make LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR) PREFIX=$(PREFIX))
  
- clean:
- 	(cd doc ; make clean)
+ doc:
+ 	(cd doc ; make)
