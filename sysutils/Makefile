@@ -24,6 +24,7 @@
     SUBDIR += cd9660_unicode
     SUBDIR += cdrtools
     SUBDIR += cfengine
+    SUBDIR += cfengine2
     SUBDIR += checkservice
     SUBDIR += clockspeed
     SUBDIR += colorize
