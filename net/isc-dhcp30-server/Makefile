@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1.r1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/%SUBDIR%/ \
 		${US_MASTER_SITES} ${JAPAN_MASTER_SITES} \
@@ -102,7 +102,7 @@ PATCH_SUBDIRS=	common minires dst omapip server client relay dhcpctl
 BIN_FILES=	dhclient dhcpd dhcrelay omshell
 CONF_FILES=	dhclient.conf
 RC_FILES=	isc-dhcpd isc-dhcrelay
-DOC_FILES=	CHANGES COPYRIGHT README RELNOTES
+DOC_FILES=	ANONCVS CHANGES COPYRIGHT README RELNOTES
 SAMP_FILES=	client/dhclient.conf server/dhcpd.conf
 DATA_FILES=	dhclient.leases dhcpd.leases
 
@@ -204,6 +204,8 @@ create-data-files:
 .endfor
 
 display-message:
+	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>

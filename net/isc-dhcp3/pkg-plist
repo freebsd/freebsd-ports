@@ -31,6 +31,7 @@ sbin/dhclient
 sbin/dhclient-script
 sbin/dhcpd
 sbin/dhcrelay
+%%PORTDOCS%%share/doc/isc-dhcp3/ANONCVS
 %%PORTDOCS%%share/doc/isc-dhcp3/CHANGES
 %%PORTDOCS%%share/doc/isc-dhcp3/COPYRIGHT
 %%PORTDOCS%%share/doc/isc-dhcp3/README
