@@ -17,6 +17,8 @@ COMMENT=	A set of command-line utilities for MP3 and wave files
 USE_GETOPT_LONG=yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
+USE_GCC=	2.95
+USE_REINPLACE=	yes
 
 MAN1=		qmp3check.1 qmp3cut.1 qmp3info.1 qmp3join.1 qmp3report.1 \
 		qwavcut.1 qwavfade.1 qwavheaderdump.1 qwavinfo.1 qwavjoin.1 \
@@ -24,8 +26,10 @@ MAN1=		qmp3check.1 qmp3cut.1 qmp3info.1 qmp3join.1 qmp3report.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-BROKEN=		"does not build on FreeBSD 5.x; cout.form cannot be used with GCC 3.x"
+post-patch:
+	${REINPLACE_CMD} -e 's,g++,${CXX},g' ${WRKSRC}/src/makefile
+.if ${OSVERSION} >= 500041
+	${REINPLACE_CMD} -e 's, -lgnugetopt,,g' ${WRKSRC}/src/makefile
 .endif
 
 do-install:
