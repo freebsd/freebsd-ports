@@ -43,6 +43,10 @@ MAN1=	k3d.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 post-install:
 .for dir in ${PREFIX}/include/k3d ${PREFIX}/share/k3d ${PREFIX}/lib/k3d
 	@${FIND} ${dir} ! -type d | \
