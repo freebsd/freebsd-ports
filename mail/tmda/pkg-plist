@@ -69,6 +69,8 @@ bin/tmda-sendmail
 %%PYTHON_SITELIBDIR%%/TMDA/FilterParser.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/HMAC.py
 %%PYTHON_SITELIBDIR%%/TMDA/HMAC.pyc
+%%PYTHON_SITELIBDIR%%/TMDA/Message.py
+%%PYTHON_SITELIBDIR%%/TMDA/Message.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/MTA.py
 %%PYTHON_SITELIBDIR%%/TMDA/MTA.pyc
 %%PYTHON_SITELIBDIR%%/TMDA/Pending.py
@@ -96,9 +98,11 @@ bin/tmda-sendmail
 %%PORTDOCS%%share/doc/tmda/contrib/printcdb
 %%PORTDOCS%%share/doc/tmda/contrib/printdbm
 %%PORTDOCS%%share/doc/tmda/contrib/sample.config
+%%PORTDOCS%%share/doc/tmda/contrib/sendit.sh
 %%PORTDOCS%%share/doc/tmda/contrib/tmda.el
 %%PORTDOCS%%share/doc/tmda/contrib/tmda.spec
 %%PORTDOCS%%share/doc/tmda/contrib/def2html
+%%PORTDOCS%%share/doc/tmda/contrib/vadduser-tmda
 %%PORTDOCS%%share/doc/tmda/htdocs/bugs.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-client.html
 %%PORTDOCS%%share/doc/tmda/htdocs/config-filter.html
