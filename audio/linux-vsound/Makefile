@@ -15,9 +15,9 @@ EXTRACT_ONLY=
 
 MAINTAINER=	kris@FreeBSD.org
 
-RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base/ \
-		sox:${PORTSDIR}/audio/sox/
+RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox/
 
+USE_LINUX=	yes
 NO_BUILD=	yes
 
 do-install:
