@@ -1,14 +1,15 @@
 # New ports collection makefile for:	imlib
-# Version required:	1.6
+# Version required:	1.7
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.21 1998/05/20 01:56:53 chuckr Exp $
+# $Id: Makefile,v 1.22 1998/06/23 06:43:12 vanilla Exp $
 #
 
-DISTNAME=	imlib-1.6
+DISTNAME=	imlib-1.7
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.enlightenment.org/pub/imlib/TAR/ \
+MASTER_SITES=	ftp://ftp.enlightenment.org/pub/enlightenment/enlightenment/ \
+		ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
 		ftp://ftp.labs.redhat.com/pub/imlib/TAR/
 
 MAINTAINER=	vanilla@FreeBSD.ORG

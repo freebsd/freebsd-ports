@@ -1,27 +1,5 @@
---- gdk_imlib/Makefile.in.orig	Wed Jun 10 03:52:33 1998
-+++ gdk_imlib/Makefile.in	Tue Jun 23 14:06:05 1998
-@@ -113,7 +113,7 @@
- utils.c      \
- save.c
- 
--libgdk_imlib_la_LDFLAGS      = -version-info 7:0:6
-+libgdk_imlib_la_LDFLAGS      = -version-info 1:6:0
- libgdk_imlib_la_LDDADD = $(LIBS)
- 
- DEFS = -DDJPEG_PROG=\"@DJPEG_PROG@\"  -DCJPEG_PROG=\"@CJPEG_PROG@\" \
---- Imlib/Makefile.in.orig	Wed Jun 10 03:52:33 1998
-+++ Imlib/Makefile.in	Tue Jun 23 14:05:43 1998
-@@ -111,7 +111,7 @@
- utils.c       \
- save.c
- 
--libImlib_la_LDFLAGS    = -version-info 7:0:6
-+libImlib_la_LDFLAGS    = -version-info 1:6:0
- libImlib_la_LDDADD     = $(LIBS)
- 
- DEFS = -DDJPEG_PROG=\"@DJPEG_PROG@\"  -DCJPEG_PROG=\"@CJPEG_PROG@\" \
---- config/Makefile.in.orig	Wed Jun 10 03:52:34 1998
-+++ config/Makefile.in	Tue Jun 23 14:04:38 1998
+--- config/Makefile.in.orig	Sun Jul 19 01:43:19 1998
++++ config/Makefile.in	Sun Jul 19 01:43:34 1998
 @@ -23,7 +23,7 @@
  sbindir = @sbindir@
  libexecdir = @libexecdir@
@@ -31,3 +9,25 @@
  sharedstatedir = @sharedstatedir@
  localstatedir = @localstatedir@
  libdir = @libdir@
+--- Imlib/Makefile.in.orig	Sun Jul 19 01:42:19 1998
++++ Imlib/Makefile.in	Sun Jul 19 01:42:45 1998
+@@ -117,7 +117,7 @@
+ utils.c       \
+ save.c
+ 
+-libImlib_la_LDFLAGS    = -version-info 8:0:7
++libImlib_la_LDFLAGS    = -version-info 1:7:0
+ libImlib_la_LDDADD     = $(LIBS)
+ 
+ DEFS = -DDJPEG_PROG=\"@DJPEG_PROG@\"  -DCJPEG_PROG=\"@CJPEG_PROG@\" \
+--- gdk_imlib/Makefile.in.orig	Sun Jul 19 01:42:51 1998
++++ gdk_imlib/Makefile.in	Sun Jul 19 01:43:02 1998
+@@ -119,7 +119,7 @@
+ utils.c      \
+ save.c
+ 
+-libgdk_imlib_la_LDFLAGS      = -version-info 8:0:7
++libgdk_imlib_la_LDFLAGS      = -version-info 1:7:0
+ libgdk_imlib_la_LDDADD = $(LIBS)
+ 
+ DEFS = -DDJPEG_PROG=\"@DJPEG_PROG@\"  -DCJPEG_PROG=\"@CJPEG_PROG@\" \
