@@ -1,0 +1,11 @@
+--- src/emacs.c.orig	Fri Sep  6 17:15:38 2002
++++ src/emacs.c	Fri Sep  6 17:16:33 2002
+@@ -427,8 +427,6 @@
+ {
+   char stack_bottom_variable;
+   int skip_args = 0;
+-  extern int errno;
+-  extern sys_nerr;
+ 
+ #ifdef LINUX_SBRK_BUG
+   __sbrk (1);
