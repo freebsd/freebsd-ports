@@ -1,0 +1,9 @@
+Keychain is a shell script which acts as user-friendly front-end to
+ssh-agent(1), allowing you to have one long-running ssh-agent process per
+system rather than per login session.
+
+Please study the documentation on the keychain website carefully since
+incorrect usage of this script may have certain security implementations.
+
+Author: Daniel Robbins <drobbins@gentoo.org>
+WWW:    http://www.gentoo.org/projects/keychain.html
