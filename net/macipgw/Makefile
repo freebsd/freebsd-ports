@@ -3,13 +3,12 @@
 # Date created:         25 Nov 1997
 # Whom:                 stb
 #
-# $Id: Makefile,v 1.2 1997/12/09 05:20:18 asami Exp $
+# $Id: Makefile,v 1.3 1998/12/02 01:02:37 stb Exp $
 #
 
 DISTNAME=       macipgw-1.0
 CATEGORIES=	net
-MASTER_SITES=   ftp://ftp.promo.de/pub/people/stefan/netatalk/	\
-		ftp://ftp.hanse.de/pub/people/stefan.bethke/netatalk/ \
+MASTER_SITES=	ftp://ftp.hanse.de/sites/transit/netatalk/ \
 		http://www.freebsd.org/~stb/netatalk/
 
 MAINTAINER=	stb@freebsd.org
