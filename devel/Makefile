@@ -245,6 +245,7 @@
     SUBDIR += libgetline
     SUBDIR += libgii
     SUBDIR += libglade
+    SUBDIR += libglade2
     SUBDIR += libgnugetopt
     SUBDIR += libgtop
     SUBDIR += libmalloc
