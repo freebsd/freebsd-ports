@@ -3,7 +3,7 @@
 # Date created:         1 May 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.2 1997/05/07 01:55:30 asami Exp $
+# $Id: Makefile,v 1.3 1997/05/19 21:28:26 jmz Exp $
 #
 
 DISTNAME=       cd-write-1.2
