@@ -21,6 +21,7 @@
     SUBDIR += boa
     SUBDIR += cgihtml
     SUBDIR += calamaris
+    SUBDIR += cgi-lib
     SUBDIR += cgiparse
     SUBDIR += cgiwrap
     SUBDIR += checkbot
