@@ -48,8 +48,8 @@ MAKEFILE=	GNUmakefile
 BROKEN=	"This port cannot be built when textproc/wv is installed because of a header conflict.  Please remove textproc/wv, and resume the build.  If textproc/wv is no longer installed, please remove ${LOCALBASE}/include/wv.h, and resume the AbiWord2 build"
 .endif
 
-.if ${HAVE_GNOME:Mnautilus2}!=""
-USE_GNOME+=		nautilus2
+.if ${HAVE_GNOME:Mnautilus2}!="" && ${HAVE_GNOME:Mlibgnomeprintui}!=""
+USE_GNOME+=		nautilus2 libgnomeprintui
 CONFIGURE_ARGS+=	--enable-gnome
 PKGNAMESUFFIX=		-gnome
 GNOME_ENABLED=		yes
