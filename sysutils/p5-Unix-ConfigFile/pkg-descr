@@ -1,0 +1,6 @@
+This port provides a set of modules that free a system administrator
+from having to deal with the trivial formatting of config files.
+
+Author: Steve Snodgrass <ssnodgra@fore.com>
+
+--will
