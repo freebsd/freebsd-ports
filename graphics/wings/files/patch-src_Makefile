@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.orig	Fri May 30 13:01:52 2003
++++ src/Makefile	Fri May 30 13:02:06 2003
+@@ -89,7 +89,7 @@
+ # ----------------------------------------------------
+ # FLAGS
+ # ----------------------------------------------------
+-ERL_FLAGS += -pa $(ESDL_PATH)/ebin +warn_unused_vars
++ERL_FLAGS += -pa $(ESDL_PATH)/ebin
+ ERL_COMPILE_FLAGS += -I$(ESDL_PATH)/include -I ../e3d -W $(TYPE_FLAGS) \
+  '-Dwings_version="$(WINGS_VSN)"'
+ 

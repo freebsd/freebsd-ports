@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- plugins_src/import_export/Makefile.orig	Fri May 30 12:58:09 2003
++++ plugins_src/import_export/Makefile	Fri May 30 12:59:06 2003
+@@ -44,7 +44,7 @@
+ # FLAGS
+ # ----------------------------------------------------
+ ERL_FLAGS += -I $(WINGS_SRC) -I $(WINGS_E3D) -I $(ESDL_PATH)/include
+-ERL_COMPILE_FLAGS += -W $(TYPE_FLAGS) -pa $(ESDL_PATH)/ebin +warn_unused_vars +debug_info
++ERL_COMPILE_FLAGS += -W $(TYPE_FLAGS) -pa $(ESDL_PATH)/ebin +debug_info
+ 
+ # ----------------------------------------------------
+ # Targets
