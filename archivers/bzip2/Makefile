@@ -4,13 +4,14 @@
 # Date created:		19 Nov 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1999/04/19 22:28:11 obrien Exp $
+# $Id: Makefile,v 1.11 1999/08/01 01:49:16 cpiazza Exp $
 #
 
-DISTNAME=	bzip2-0.9.0c
+DISTNAME=	bzip2-0.9.5b
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.bzip2.org/bzip2/v090/ \
-		http://www.digistar.com/bzip2/
+MASTER_SITES=	http://www.bzip2.org/bzip2/v095/ \
+		http://www.digistar.com/bzip2/ \
+		http://www.muraroa.demon.co.uk/
 
 MAINTAINER=	obrien@FreeBSD.org
 
