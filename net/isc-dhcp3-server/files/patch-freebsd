@@ -1,5 +1,5 @@
---- client/scripts/freebsd.orig	Wed May 10 01:51:09 2000
-+++ client/scripts/freebsd	Wed May 10 02:01:48 2000
+--- client/scripts/freebsd.orig	Wed Sep 20 02:38:03 2000
++++ client/scripts/freebsd	Wed Sep 27 03:33:29 2000
 @@ -1,5 +1,11 @@
  #!/bin/sh
  
@@ -47,15 +47,15 @@
    new_broadcast_arg="broadcast $new_broadcast_address"
  fi
  if [ x$old_broadcast_address != x ]; then
-@@ -76,6 +81,7 @@
-   if [ x$current_hostname = x ] || \
+@@ -77,6 +82,7 @@
       [ x$current_hostname = x$old_host_name ]; then
-     if [ x$new_host_name != x$old_host_name ]; then
+     if [ x$current_hostname = x ] || \
+        [ x$new_host_name != x$old_host_name ]; then
 +      $LOGGER "New Hostname: $new_host_name"
        hostname $new_host_name
      fi
    fi
-@@ -103,11 +109,18 @@
+@@ -105,11 +111,18 @@
       [ x$reason = xBOUND ] || [ x$reason = xREBOOT ]; then
      ifconfig $interface inet $new_ip_address $new_netmask_arg \
  					$new_broadcast_arg $medium
@@ -74,7 +74,7 @@
        set $new_static_routes
        while [ $# -gt 1 ]; do
  	route add $1 $2
-@@ -162,8 +175,12 @@
+@@ -161,8 +174,12 @@
    fi
    ifconfig $interface inet $new_ip_address $new_netmask_arg \
  					$new_broadcast_arg $medium
