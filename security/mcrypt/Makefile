@@ -8,11 +8,11 @@
 #
 
 PORTNAME=	mcrypt
-PORTVERSION=	2.5.5
+PORTVERSION=	2.5.6
 CATEGORIES=    	security
 MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
+		ftp://mcrypt.hellug.gr/pub/mcrypt/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/
-#		http://mcrypt.hellug.gr/mcrypt/
 
 MAINTAINER=	trevor@FreeBSD.org
 
