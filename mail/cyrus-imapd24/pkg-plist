@@ -29,6 +29,10 @@ cyrus/bin/reconstruct
 cyrus/bin/squatter
 cyrus/bin/timsieved
 cyrus/bin/tls_prune
+%%MURDER%%cyrus/bin/lmtpproxyd
+%%MURDER%%cyrus/bin/mupdate
+%%MURDER%%cyrus/bin/pop3proxyd
+%%MURDER%%cyrus/bin/proxyd
 @unexec if cmp -s %D/etc/cyrus.conf %D/etc/cyrus.conf.dist; then rm -f %D/etc/cyrus.conf; fi
 etc/cyrus.conf.dist
 @exec [ -f %B/cyrus.conf ] || cp %B/%f %B/cyrus.conf

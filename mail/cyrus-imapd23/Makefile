@@ -21,7 +21,6 @@ LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
 		db3.3:${PORTSDIR}/databases/db3
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	YES
@@ -31,6 +30,19 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 		--with-dbdir=${LOCALBASE} \
 		--with-auth=unix \
 		--with-com_err
+
+.if defined(WITH_SKIPLIST_MBOX)
+CONFIGURE_ARGS+=--with-mboxlist-db=skiplist
+.endif
+
+.if defined(WITH_MURDER)
+CONFIGURE_ARGS+=--enable-murder
+CFLAGS+=	${PTHREAD_CFLAGS}
+MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
+PLIST_SUB+=	MURDER=""
+.else
+PLIST_SUB+=	MURDER="@comment "
+.endif
 
 .if defined(WITH_SNMP)
 # It seems not compilable due to lack of auto_nlist_value() in libucdagent.
@@ -59,7 +71,10 @@ DOCS=		altnamespace anoncvs bugs changes faq feedback index \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
+.if ${PERL_LEVEL} < 500800
+RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+.if ${PERL_LEVEL} < 500600
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Parser.pm:${PORTSDIR}/textproc/p5-PodParser
 .endif
 
@@ -68,7 +83,7 @@ post-patch:
 			> ${WRKSRC}/tools/mkimap.new
 		@${MV} ${WRKSRC}/tools/mkimap.new ${WRKSRC}/tools/mkimap
 		@${CP} ${WRKSRC}/man/quota.8 ${WRKSRC}/man/cyrquota.8
-.if ${OSVERSION} < 500000
+.if ${PERL_LEVEL} < 500600
 		@${SED} -e "s|exec perl -x|exec perl -I${LOCALBASE}/lib/perl5/site_perl/${PERL_VER} -x|" \
 			${WRKSRC}/perl/sieve/scripts/sieveshell.pl \
 			> ${WRKSRC}/perl/sieve/scripts/sieveshell.pl.new

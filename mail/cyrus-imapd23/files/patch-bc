@@ -1,7 +1,7 @@
 Index: imap/Makefile.in
 diff -u imap/Makefile.in.orig imap/Makefile.in
---- imap/Makefile.in.orig	Fri Apr 19 02:35:26 2002
-+++ imap/Makefile.in	Thu May  2 04:02:37 2002
+--- imap/Makefile.in.orig	Fri Jul 26 06:07:05 2002
++++ imap/Makefile.in	Fri Sep 13 18:49:25 2002
 @@ -61,7 +61,7 @@
  CYRUS_USER=@cyrus_user@
  CYRUS_GROUP=@cyrus_group@
@@ -11,3 +11,18 @@ diff -u imap/Makefile.in.orig imap/Makefile.in
  CPPFLAGS = -I. -I.. -I../sieve -I$(srcdir) -I$(srcdir)/../lib -I$(srcdir)/../acap -I../acap @COM_ERR_CPPFLAGS@ @SIEVE_CPPFLAGS@ @CPPFLAGS@ @SASLFLAGS@
  IMAP_LIBS = @IMAP_LIBS@
  SIEVE_LIBS = @SIEVE_LIBS@
+@@ -244,12 +244,12 @@
+ mupdate: mupdate.o mupdate-slave.o mupdate-client.o libimap.a $(DEPLIBS)
+ 	$(CC) $(LDFLAGS) -o mupdate \
+ 	 $(SERVICETHREAD) mupdate.o mupdate-slave.o mupdate-client.o \
+-	 libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) -lpthread
++	 libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) $(PTHREAD_LIBS)
+ 
+ mupdate.pure: mupdate.o mupdate-slave.o mupdate-client.o libimap.a $(DEPLIBS)
+ 	$(PURIFY) $(PUREOPT) $(CC) $(LDFLAGS) -o mupdate.pure \
+ 	 $(SERVICETHREAD) mupdate.o mupdate-slave.o mupdate-client.o \
+-	 libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) -lpthread
++	 libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) $(PTHREAD_LIBS)
+ 
+ pop3d: pop3d.o tls.o libimap.a $(DEPLIBS) $(SERVICE)
+ 	$(CC) $(LDFLAGS) -o pop3d pop3d.o tls.o $(SERVICE) \
