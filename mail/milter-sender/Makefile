@@ -24,6 +24,10 @@ MAKEFILE=	makefile
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 .if ( ${OSVERSION} < 440000 )
 BUILD_DEPENDS=	gxargs:${PORTSBASE}/misc/findutils
 .endif

@@ -22,6 +22,12 @@ USE_GMAKE=	yes
 MAKEFILE=	nm_gnu.mak
 ALL_TARGET=	everything
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CXX,#CXX,g ; \
 		s,^CXXFLAGS,#CXXFLAGS,g" ${WRKSRC}/${MAKEFILE}
@@ -31,4 +37,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/libnewmat.a ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

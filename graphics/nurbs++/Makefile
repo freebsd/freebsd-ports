@@ -22,8 +22,14 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	nurbs++-config.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile with gcc 3.4.2"
+.endif
+
 pre-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/nurbs/nurbs.cpp ${WRKSRC}/nurbs/nurbsS.cpp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
