@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bless
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	editors
-MASTER_SITES=	http://home.gna.org/bless/
+MASTER_SITES=	http://download.gna.org/bless/
 
 MAINTAINER=	bsd-sharp-list@forge.novell.com
 COMMENT=	A high quality, full featured hex editor
@@ -21,13 +21,11 @@ USE_X_PREFIX=   yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-DOCS=		COPYING Changelog README
+DOCS=		AUTHORS Changelog NEWS README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|${GMAKE}|g' \
-			${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|function pkg_config_check|pkg_config_check()|g' \
-			${WRKSRC}/configure
+		${WRKSRC}/Makefile
 
 .ifndef (NOPORTDOCS)
 post-install:
