@@ -35,6 +35,8 @@ DEPENDS_ARGS+=	BATCH=yes
 
 OPTIONS=	LETTERSIZE "Use letter size by default" off
 
+CONFLICTS=	latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]*
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LETTERSIZE)

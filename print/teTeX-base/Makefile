@@ -46,7 +46,7 @@ PLIST_SUB=	MKTEXLSR=${MKTEXLSR} TEXMFCNF=${TEXMFCNF}
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
 PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
 PKGMESSAGE=	${WRKDIR}/pkg-message
-CONFLICTS=	ja-ptex-base*
+CONFLICTS=	ja-ptex-base* latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]*
 
 MAN1=		MakeTeXPK.1 access.1 allcm.1 allneeded.1 \
 		amstex.1 bibtex.1 cont-de.1 cont-en.1 cont-nl.1 dmp.1 \
