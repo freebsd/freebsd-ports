@@ -313,8 +313,8 @@ include/inti-1.0/inti/utf-string.h
 @dirrm include/inti-1.0/inti/gdk-pixbuf
 @dirrm include/inti-1.0/inti/atk/private
 @dirrm include/inti-1.0/inti/atk
-@unexec rmdir %D/include/inti-1.0/gdk 2>/dev/null || true
-@unexec rmdir %D/include/inti-1.0/gtk 2>/dev/null || true
+@unexec rmdir %D/include/inti-1.0/inti/gdk 2>/dev/null || true
+@unexec rmdir %D/include/inti-1.0/inti/gtk 2>/dev/null || true
 @unexec rmdir %D/include/inti-1.0/inti 2>/dev/null || true
 @unexec rmdir %D/include/inti-1.0 2>/dev/null || true
 lib/inti-1.0/include/inti-config.h
