@@ -88,6 +88,11 @@ pre-configure:
 	@${ECHO_MSG} !!!! Warning this option uses autoreconf !!!
 	(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOCONF_ENV} ${AUTORECONF} \
 		${AUTOCONF_ARGS})
+.else
+.if exists(/usr/include/krb5.h)
+CONFIGURE_ARGS+=        --with-kerberos5
+EXTRA_PATCHES+=         ${FILESDIR}/gss-serv.c.patch
+.endif
 .endif
 
 post-configure:

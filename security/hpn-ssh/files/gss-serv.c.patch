@@ -1,0 +1,18 @@
+--- gss-serv.c.DIST	Tue Sep  2 14:56:42 2003
++++ gss-serv.c	Mon Oct  6 17:56:23 2003
+@@ -138,6 +138,15 @@
+ 	OM_uint32 offset;
+ 	OM_uint32 oidl;
+ 
++#if defined(HEIMDAL)
++	if (strcmp(heimdal_version, "Heimdal 0.6") < 0) {
++	    name->length = ename->length;
++	    name->value = xmalloc(name->length+1);
++	    memcpy(name->value,ename->value,name->length);
++	    ((char *)name->value)[name->length] = 0;
++	    return GSS_S_COMPLETE;
++	}
++#endif
+ 	tok=ename->value;
+ 
+ 	/*
