@@ -9,10 +9,6 @@ sbin/getzone
 sbin/maradns
 sbin/zoneserver
 %%PORTDOCS%%%%DOCSDIR%%/00README.FIRST
-%%PORTDOCS%%%%DOCSDIR%%/TODO.done
-%%PORTDOCS%%%%DOCSDIR%%/TODO.first
-%%PORTDOCS%%%%DOCSDIR%%/TODO.second
-%%PORTDOCS%%%%DOCSDIR%%/TODO.third
 %%PORTDOCS%%%%DOCSDIR%%/en/QuickStart
 %%PORTDOCS%%%%DOCSDIR%%/en/README
 %%PORTDOCS%%%%DOCSDIR%%/en/examples/example_authoritative_mararc.txt
