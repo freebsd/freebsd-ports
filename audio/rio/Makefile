@@ -21,6 +21,8 @@ MAKEFILE=	makefile
 BINOWN=		root
 BINMODE=	4755
 
+PLIST_FILES=	bin/rio
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 501000
