@@ -17,7 +17,7 @@ COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 LIB_DEPENDS=	osp.3:${PORTSDIR}/textproc/opensp
 
 USE_GMAKE=	yes
-USE_GNOME=	gnometarge
+USE_GNOME=	gnometarget
 USE_LIBTOOL_VER=	15
 USE_GETOPT_LONG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
