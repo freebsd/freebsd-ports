@@ -1,0 +1,8 @@
+Establishes an RFC-2003 style IP encapsulation tunnel using a tun(4)
+kernel interface combined with divert sockets and IP firewall rules,
+implemented in a user-space daemon. No kernel mods are required,
+except enabling divert sockets, IPfirewalls, and a number of tun
+interfaces.
+
+- Joe Touch, Project Leader, X-Bone Group, USC/ISI
+	touch@isi.edu
