@@ -8,6 +8,8 @@ include/zipios++/fileentry.h
 include/zipios++/filepath.h
 include/zipios++/filterinputstreambuf.h
 include/zipios++/filteroutputstreambuf.h
+include/zipios++/gzipoutputstream.h
+include/zipios++/gzipoutputstreambuf.h
 include/zipios++/inflateinputstreambuf.h
 include/zipios++/meta-iostreams.h
 include/zipios++/simplesmartptr.h
@@ -17,9 +19,11 @@ include/zipios++/ziphead.h
 include/zipios++/zipheadio.h
 include/zipios++/zipinputstream.h
 include/zipios++/zipinputstreambuf.h
-include/zipios++/zipios-config.h
 include/zipios++/zipios_defs.h
 include/zipios++/zipoutputstream.h
 include/zipios++/zipoutputstreambuf.h
 @dirrm include/zipios++
 lib/libzipios.a
+lib/libzipios.la
+lib/libzipios.so
+lib/libzipios.so.0
