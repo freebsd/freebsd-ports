@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkspell2
-PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTVERSION=	2.0.4
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://gtkspell.sourceforge.net/download/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
@@ -24,7 +23,7 @@ USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
