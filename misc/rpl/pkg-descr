@@ -1,0 +1,10 @@
+rpl is a Unix text replacement utility. It will replace strings with new 
+strings in multiple text files. It can scan directories recursively and 
+replace strings in all files found. The search can be limited to files 
+with certain filename suffixes (e.g. '.html', '.c', etc.).
+
+WWW:		http://www.laffeycomputer.com/software.html
+AUTHOR:		Joe Laffey <software@laffeycomputer.com>
+
+	- Michael L. Hostbaek
+	mich@freebsdcluster.org
