@@ -1,11 +1,39 @@
---- Makefile.in.orig	Tue Aug  3 06:36:22 1999
-+++ Makefile.in	Sat Aug 14 04:20:32 1999
-@@ -12,7 +12,7 @@
- exec_prefix = @exec_prefix@
- srcdir = @srcdir@
+--- configure.in.org	Fri Sep  1 14:35:10 2000
++++ configure.in	Fri Sep  1 14:21:53 2000
+@@ -75,6 +75,7 @@
+ dnl ##### Checks for header files.
+ AC_PATH_XTRA
+ AC_HEADER_DIRENT
++AC_CHECK_HEADERS(unistd.h)
  
--INSTALL = @INSTALL@
-+INSTALL = @INSTALL_PROGRAM@
- INSTALL_DATA = @INSTALL_DATA@
+ dnl ##### Switch over to C++.  This will make the checks below a little
+ dnl ##### bit stricter (requiring function prototypes in include files).
+@@ -173,11 +174,27 @@
+ dnl # include file (e.g., in cygwin 1.1.2).
+ AC_CACHE_CHECK([for mkstemp],
+ xpdf_cv_func_mkstemp,
+-[AC_TRY_COMPILE([#include <stdlib.h>],
++[AC_TRY_COMPILE([#include <stdlib.h>
++#ifdef HAVE_UNISTD_H
++#include <unistd.h>
++#endif
++],
+ [mkstemp("foo");],
+ xpdf_cv_func_mkstemp=yes, xpdf_cv_func_mkstemp=no)])
+ if test "$xpdf_cv_func_mkstemp" = yes; then
+   AC_DEFINE(HAVE_MKSTEMP)
++fi
++dnl # Ditto mkstemps()
++AC_CACHE_CHECK([for mkstemps],
++xpdf_cv_func_mkstemps,
++[AC_TRY_COMPILE([#include <stdlib.h>
++#ifdef HAVE_UNISTD_H
++#include <unistd.h>
++#endif],
++[mkstemps("foo", 0);],
++xpdf_cv_func_mkstemps=yes, xpdf_cv_func_mkstemps=no)])
++if test "$xpdf_cv_func_mkstemps" = yes; then
++  AC_DEFINE(HAVE_MKSTEMPS)
+ fi
  
- EXE = @EXE@
+ dnl ##### Check select argument type: on HP-UX before version 10, select
