@@ -1,0 +1,7 @@
+bin/imapd
+bin/mtest
+bin/pico
+bin/pine
+man/man1/pico.1.gz
+man/man1/pine.1.gz
+
