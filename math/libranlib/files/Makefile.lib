@@ -6,12 +6,6 @@ SHLIB_MAJOR=	1
 SHLIB_MINOR=	0
 LIB=		ranlib
 
-SRCS =	advnst.f genbet.f genchi.f genexp.f genf.f gengam.f genmn.f \
-	genmul.f gennch.f gennf.f gennor.f genprm.f genunf.f getcgn.f \
-	getsd.f ignbin.f ignlgi.f ignnbn.f ignpoi.f ignuin.f initgn.f \
-	inrgcm.f lennob.f mltmod.f phrtsd.f qrgnin.f ranf.f setall.f \
-	setant.f setgmn.f setsd.f sexpo.f sgamma.f snorm.f
-
-CLEANFILES+= ${SRC:.f=.c}
+SRCS =	com.c ranlib.c
 
 .include <bsd.lib.mk>
