@@ -831,7 +831,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/gnibbles
 @dirrm share/gnome/gnect
 @dirrm share/gnome/blackjack
-@dirrm include/gdkcardimage
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/same-gnome
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mahjongg
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/iagno
