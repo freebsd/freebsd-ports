@@ -19,7 +19,9 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
 PLIST_SUB=	PYVERSION="python${PYVERSION}"
 
-PYVERSION!=	python -c 'import string, sys; print string.split(sys.version)[0][:3]' || echo "1.5"
+PYVERSION!=	(python -c 'import string, sys; \
+				print string.split(sys.version)[0][:3]') 2> /dev/null \
+		|| echo "1.5"
 
 do-build:
 	@(cd ${WRKSRC}; python setup.py build)

@@ -26,8 +26,8 @@ PLIST_SUB=	PYVERSION="python${PYVERSION}"
 
 DOCDIR=		${PREFIX}/share/doc/py-numeric
 EXAMPLEDIR=	${PREFIX}/share/examples/py-numeric
-PYVERSION!=	python -c 'import string, sys; \
-			   print string.split(sys.version)[0][:3]' \
+PYVERSION!=	(python -c 'import string, sys; \
+			   print string.split(sys.version)[0][:3]') 2> /dev/null \
 			|| echo "1.5"
 
 .if ${PYVERSION} == "2.0"
