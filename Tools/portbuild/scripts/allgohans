@@ -1,0 +1,50 @@
+#!/bin/sh
+
+doarch() {
+    arch=$1
+    shift
+
+    if [ -f "${pb}/${arch}/portbuild.conf" ]; then
+	. ${pb}/${arch}/portbuild.conf
+    else
+	echo "Invalid arch"
+	exit 1
+    fi
+    
+    machines=$(awk '{print $1}' ${pb}/${arch}/mlist)
+    
+    for i in ${machines}; do
+	if [ ${quiet} -eq 0 ]; then
+	    echo "[$i]"
+	fi
+	su ports-${arch} -c "ssh root@$i $@"
+    done
+}
+
+id=$(whoami)
+if [ "${id}" = "root" ]; then 
+	arch=$1
+	shift
+	root=1
+else
+	arch=$(echo $id | sed s,ports-,,)
+	root=0
+fi
+
+if [ "$1" = "-q" ]; then
+	quiet=1
+	shift
+else
+	quiet=0
+fi
+
+pb=/var/portbuild
+if [ "${arch}" = "all" ]; then
+    arches=$(find ${pb}/*/portbuild.conf)
+    for i in ${arches}; do
+	arch=$(basename $(dirname $i))
+	doarch $arch "$@"
+    done
+else
+    doarch $arch "$@"
+fi
