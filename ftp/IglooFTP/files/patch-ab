@@ -1,0 +1,33 @@
+--- src/Makefile	Thu Apr 15 20:05:15 1999
++++ /home/andy/tmp/wrk/src/Makefile	Mon May  3 12:59:28 1999
+@@ -1,14 +1,15 @@
+ SHELL=/bin/sh
+-CC = gcc
+-C_FLAGS = -Wall -g -O2 -m486 -fno-strength-reduce
+-GTK_CFLAGS = `gtk-config --cflags`
+-GTK_LIBS = `gtk-config --libs` 
+-LFLAGS = $(GTK_LIBS) -lresolv -lXmu -lXt -lSM -lICE
++CC?= gcc
++C_FLAGS = $(CFLAGS)
++# -Wall -g -O2 -m486 -fno-strength-reduce
++GTK_CFLAGS = `gtk12-config --cflags`
++GTK_LIBS = `gtk12-config --libs` 
++LFLAGS = $(GTK_LIBS) -lXmu -lXt -lSM -lICE
+ PROGNAME = IglooFTP
+ PROGNAME-STATIC = IglooFTP-static
+ VERSION = 0.6.1
+ VERSION_DATE = 1999
+-DESTDIR = /usr/local
++DESTDIR?= /usr/X11R6
+ BIN_PATH = $(DESTDIR)/bin
+ MAN_PATH = $(DESTDIR)/man
+ SHARE_PATH = $(DESTDIR)/share/$(PROGNAME)
+@@ -111,7 +112,7 @@
+ 	@echo "#define COMPILE_TIME \"`date +%T`\"" >> version.h
+ 	@echo "#define COMPILE_BY \"`whoami`\"" >> version.h
+ 	@echo "#define COMPILE_HOST \"`hostname`\"" >> version.h
+-	@echo "#define GTK_VERSION \"GTK+ `gtk-config --version`\"" >> version.h
++	@echo "#define GTK_VERSION \"GTK+ `gtk12-config --version`\"" >> version.h
+ 	@echo "#define CC_VERSION \"`$(CC) -v 2>&1 | tail -1`\"">>version.h
+ 	@echo "#define CODE_LINES \"`cat *.c *.h | grep -ch -e \"[[:alpha:]|[:punct:]]\"`\"">>version.h
+ 

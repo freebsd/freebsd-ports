@@ -1,0 +1,59 @@
+bin/IglooFTP
+share/IglooFTP/gtkrc
+share/IglooFTP/app_ass/app_ass.GNOME
+share/IglooFTP/app_ass/app_ass.KDE
+share/IglooFTP/app_ass/app_ass.default
+share/IglooFTP/bookmarks/default.bmk
+share/IglooFTP/docs/ChangeLog
+share/IglooFTP/docs/LICENSE
+share/IglooFTP/docs/README
+share/IglooFTP/docs/welcome.msg
+share/IglooFTP/html/default.html
+share/IglooFTP/html/images/amazon_mini.gif
+share/IglooFTP/html/images/banner.gif
+share/IglooFTP/html/images/bannerbg.gif
+share/IglooFTP/html/images/bannerbg_bottom.gif
+share/IglooFTP/html/images/bgsnow.gif
+share/IglooFTP/html/images/bookshelf.gif
+share/IglooFTP/html/images/hopbanner.gif
+share/IglooFTP/html/images/hot100.jpg
+share/IglooFTP/html/images/iglooftp.gif
+share/IglooFTP/html/images/iglooftp_now1.gif
+share/IglooFTP/html/images/iglooftp_now8.gif
+share/IglooFTP/html/images/join.gif
+share/IglooFTP/html/images/nav_books.gif
+share/IglooFTP/html/images/nav_booksG.gif
+share/IglooFTP/html/images/nav_download.gif
+share/IglooFTP/html/images/nav_downloadG.gif
+share/IglooFTP/html/images/nav_home.gif
+share/IglooFTP/html/images/nav_homeG.gif
+share/IglooFTP/html/images/nav_link.gif
+share/IglooFTP/html/images/nav_linkG.gif
+share/IglooFTP/html/images/nav_museum.gif
+share/IglooFTP/html/images/nav_museumG.gif
+share/IglooFTP/html/images/nav_news.gif
+share/IglooFTP/html/images/nav_newsG.gif
+share/IglooFTP/html/images/nav_search.gif
+share/IglooFTP/html/images/nav_searchG.gif
+share/IglooFTP/html/images/nav_soft.gif
+share/IglooFTP/html/images/nav_softG.gif
+share/IglooFTP/html/images/nav_tut.gif
+share/IglooFTP/html/images/nav_tutG.gif
+share/IglooFTP/html/images/search.gif
+share/IglooFTP/html/images/softwares.jpg
+share/IglooFTP/html/images/viglooftp.gif
+share/IglooFTP/xpm/iglooftp.xpm
+share/IglooFTP/xpm/little_igloo.xpm
+share/doc/IglooFTP/AUTHORS
+share/doc/IglooFTP/BUGS
+share/doc/IglooFTP/COPYRIGHT
+share/doc/IglooFTP/THANKS
+share/doc/IglooFTP/TODO
+@dirrm share/IglooFTP/app_ass
+@dirrm share/IglooFTP/bookmarks
+@dirrm share/IglooFTP/docs
+@dirrm share/IglooFTP/html/images
+@dirrm share/IglooFTP/html
+@dirrm share/IglooFTP/xpm
+@dirrm share/IglooFTP
+@dirrm share/doc/IglooFTP
