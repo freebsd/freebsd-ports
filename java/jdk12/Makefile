@@ -77,7 +77,7 @@ PLIST_SUB+=	DEBUG:=""
 .include <bsd.port.pre.mk>
 
 # Check for JDK sources
-.if !exists(${DISTDIR}/${SRCFILE})
+.if !exists(${DISTDIR}/${SRCFILE}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
 IGNORE= :\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
