@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-ant
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${ANT_VERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -79,10 +79,5 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 .endfor
 .endif
-
-	@${ECHO_CMD} -n ">> Installing additional JAR files..."
-	@${LN} -sf ../../classes/jaxp.jar ${PORTDESTDIR}/lib
-	@${LN} -sf ../../classes/crimson.jar ${PORTDESTDIR}/lib
-	@${ECHO_CMD} " [ DONE ]"
 
 .include <bsd.port.mk>
