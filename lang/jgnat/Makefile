@@ -29,6 +29,8 @@ USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C@-([^\-]+)$@/\1@}
 
+.include <bsd.port.pre.mk>
+
 LIBDIR=		${PREFIX}/lib/jgnat
 ADAINCDIR=	${LIBDIR}/adainclude
 ADALIBDIR=	${LIBDIR}/adalib
@@ -46,4 +48,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
