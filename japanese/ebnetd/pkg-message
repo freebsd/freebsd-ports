@@ -1,11 +1,19 @@
 ************************************************************************
-   To use `ndtpd', copy a sample configuration file `ndtpd.conf.sample'
-to `ndtpd.conf' in '${PREFIX}/etc' directory, and edit it.  Consult the
-"Configuration File" section of info file.
+You'll need manual configurations to actually activate `ndtpd'.
 
-   If you want to start `ndtpd' as a standalone daemon, copy a script
-`ndtpd.sh.sample' to `ndtpd.sh' in '${PREFIX}/etc/rc.d' directory, and
-exec it.  Otherwise, to start as a child process of `inetd', edit the
-file `/etc/inetd.conf'.  In either case, consult the "Start the Server"
-section of info file.
+**** IF YOU WANT TO SETUP PRIVATE SYSLOG, edit /etc/syslog.conf.
+
+1st) Copy a sample configuration file `ndtpd.conf.sample' to `ndtpd.conf'
+     in `${PREFIX}/etc' directory, and edit it.
+     Consult the "Configuration File" section of info file.
+
+2nd) Copy a sample startup script `ndtpd.sh.sample' to `ndtpd.sh'
+     in `${PREFIX}/etc/rc.d' directory, and edit it.
+
+     a) To start `ndtpd' as a standalone daemon, set the variable
+	`standalone' in the script to `YES', and exec it.
+
+     b) Otherwise, to start as a child process of `inetd',
+	set `standalone' to `NO', and edit the file `/etc/inetd.conf'.
+	Consult the "Run as a Child of inetd" section of info file.
 ************************************************************************

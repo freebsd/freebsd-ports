@@ -1,15 +1,49 @@
-#!/bin/sh -
-#
-# NDTPD: rc-file for FreeBSD.
-#
+#!/bin/sh -e -
+# startup script for ndtpd
 
-### NDTPD options: ###
-ndtpd_program=@prefix@/sbin/ndtpd	# path to ndtpd.
-ndtpd_enable=YES			# Run ndtpd (or NO).
-ndtpd_flags=				# Flags to ndtpd (if enabled).
-### End of NDTPD options: ###
+# Usage: ndtpd.sh [kill|restart|status|terminate|stop|start]
 
-if [ "x${ndtpd_enable}" = xYES -a -x ${ndtpd_program} ]; then
-    echo -n " ndtpd"
-    ${ndtpd_program} ${ndtpd_flags}
+command=$1
+standalone=YES		# Run ndtpd as a standalone daemon.
+#standalone=NO		# Run ndtpd as a child of inetd.
+
+GetDirective() {
+    directive=$1
+
+    awk '/^[ 	]*'${directive}'[ 	]+/ {print $2; exit}' ${conf}
+}
+
+MakeWorkingDirectory() {
+    user="`GetDirective user`"
+    group="`GetDirective group`"
+    work="`GetDirective work-path`"
+
+    rm -rf ${work:=@rundir@/ndtpd}
+    eval install -d ${user:+-o ${user}} ${group:+-g ${group}} ${work}
+}
+
+conf=@prefix@/etc/ndtpd.conf
+
+[ -f ${conf} ] || exit
+ndtpcheck || exit
+
+if [ "${standalone}" = YES ]; then
+    ctrl=ndtpcontrol
+    start="echo -n ' ndtpd'; ndtpd"
+else
+    ctrl="echo 'Error: inetd invokes ndtpd.' >&2; false"
 fi
+
+case "${command}" in
+kill|restart|status|terminate)
+    eval ${ctrl} ${command};;
+
+stop)
+    eval ${ctrl} terminate;;
+
+start|*)
+    MakeWorkingDirectory
+    eval ${start};;
+esac
+
+exit
