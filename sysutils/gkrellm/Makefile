@@ -9,7 +9,7 @@
 DISTNAME=	gkrellm-0.9.6
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
-		http://www.freebsd.org/~ume/gkrellm/
+		http://people.FreeBSD.org/~ume/gkrellm/
 
 MAINTAINER=	ume@FreeBSD.org
 
