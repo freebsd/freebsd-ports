@@ -1,5 +1,17 @@
-*** broadcast.c.orig	Mon May 17 01:46:22 1993
---- broadcast.c	Sat Jun 19 02:36:48 1999
+*** broadcast.c.orig	Mon May 17 03:46:22 1993
+--- broadcast.c	Sat Sep 18 15:07:04 1999
+***************
+*** 68,74 ****
+--- 68,76 ----
+  #include <sys/time.h>
+  #include <sys/stat.h>
+  
++ #ifndef __FreeBSD__
+  extern long time();
++ #endif
+  
+  #ifdef SUNHACKS
+  #include <sys/sockio.h>		/* For SIOCGIF* */
 ***************
 *** 490,496 ****
   			for (i = 0; i < nbcaddr; i++) {
@@ -9,7 +21,7 @@
   				                                HEADERSIZE+n) {
   					perror("sendto");
   				}
---- 490,496 ----
+--- 492,498 ----
   			for (i = 0; i < nbcaddr; i++) {
   				/* Send data packets to all bcast ports */
   				if (sendto(s, real_buf, HEADERSIZE+n, 0,
@@ -26,7 +38,7 @@
   				if (n < 0) {
   					perror("recvfrom");
   					exit(1);
---- 522,528 ----
+--- 524,530 ----
   			if (select(ctls+1, &inputav, 0, 0, &zerotime) == 1) {
   				ctlsinsize = sizeof(ctlsin);
   				n = recvfrom(ctls, buf, BUFFERSIZE, 0,
