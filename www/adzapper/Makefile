@@ -22,7 +22,7 @@ do-configure:
 		${WRKSRC}/rc.adzapper.sh
 
 do-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	-${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
 	${MKDIR} ${PREFIX}/share/adzapper
