@@ -6818,6 +6818,7 @@ py-fileutils	ports/devel/py-fileutils
 py-fngrab	ports/net/py-fngrab
 py-fonttools	ports/print/py-fonttools
 py-fortran	ports/devel/py-fortran
+py-fpconst	ports/math/py-fpconst
 py-freebsd	ports/devel/py-freebsd
 py-freetype	ports/print/py-freetype
 py-game		ports/devel/py-game
