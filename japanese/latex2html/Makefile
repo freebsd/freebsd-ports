@@ -10,7 +10,7 @@
 PORTNAME=	latex2html
 PORTVERSION=	${VERSION}j${JP_VERSION}
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://www.topstudio.co.jp/~kmuto/debian/private/dists/unstable/contrib/source/
+MASTER_SITES=	http://www.topstudio.co.jp/~kmuto/debian/private/dists/stable/contrib/source/
 DISTNAME=	jlatex2html_${VERSION}+${JP_VERSION}.orig
 
 PATCH_SITES=	http://www.topstudio.co.jp/~kmuto/software/latex2html/patch/99-1/
