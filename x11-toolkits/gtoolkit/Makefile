@@ -12,8 +12,8 @@ MASTER_SITES=	ftp://ftp.inf.uos.de/pub/elmar/gtk/objc-gtoolkit/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-BUILD_DEPENDS=  ${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
-RUN_DEPENDS=    ${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
+BUILD_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
+RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 
 PREFIX=		${LOCALBASE}/GNUstep
 USE_GMAKE=	yes
@@ -22,10 +22,10 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
 
-MAKE_ARGS=	GNUSTEP_SYSTEM_ROOT=$(PREFIX)/System
+MAKE_ARGS=	GNUSTEP_SYSTEM_ROOT=${PREFIX}/System
 CONFIGURE_ARGS+=	--with-gnustep
 INSTALLS_SHLIB=	yes
-WRKSRC= 	${WRKDIR}/${DISTNAME}/GToolKit
+WRKSRC=		${WRKDIR}/${DISTNAME}/GToolKit
 CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 
 post-patch:
