@@ -19,8 +19,6 @@ CONFIGURE_ARGS=	--quiet
 MAKE_ARGS=	LOCKFILE=/var/spool/lock/news/fetchnews.lck \
 		LIBDIR=${PREFIX}/lib/leafnode
 MAN1=		newsq.1
-MAN8=		fetch.8 applyfilter.8 leafnode.8 texpire.8 checkgroups.8
-MLINKS+=	fetch.8 fetch-news.8
-
+MAN8=		fetchnews.8 applyfilter.8 leafnode.8 texpire.8 checkgroups.8
 
 .include <bsd.port.mk>
