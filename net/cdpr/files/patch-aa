@@ -1,0 +1,14 @@
+--- cdpr.c.orig	Tue Jul  2 09:18:44 2002
++++ cdpr.c	Wed Jul  3 13:07:38 2002
+@@ -452,7 +452,10 @@
+ 
+ 	/* Get the next packet that comes in, we only need one */
+ 	printf("Waiting for CDP advertisement, default config is to transmit CDP packets every 60 seconds\n");
+-	packet = pcap_next(handle, &header);
++	do
++	{
++		packet = pcap_next(handle, &header);
++	} while (!packet);
+ 
+ 	/* Print its length */
+ 	if(verbose > 0)
