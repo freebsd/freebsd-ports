@@ -77,7 +77,6 @@
     SUBDIR += kdebase3
     SUBDIR += kdelibs3
     SUBDIR += keylaunch
-    SUBDIR += kgamma
     SUBDIR += libICE
     SUBDIR += libSM
     SUBDIR += libX11
