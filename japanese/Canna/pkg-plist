@@ -109,18 +109,15 @@ lib/libcanna16.so
 lib/libcanna16.so.1
 sbin/cannaserver
 sbin/cannakill
-@exec mkdir /var/run/canna
-@exec chown bin.bin /var/run/canna
 @exec mkdir -p %D/lib/canna/dic/user/user %D/lib/canna/dic/group
-@exec chown bin.bin %D/lib/canna/dic/user/user %D/lib/canna/dic/user %D/lib/canna/dic/group
+@exec chown bin:bin %D/lib/canna/dic/user/user %D/lib/canna/dic/user %D/lib/canna/dic/group
 @exec chmod 775 %D/lib/canna/dic/user/user %D/lib/canna/dic/user %D/lib/canna/dic/group
-@unexec /bin/rmdir /var/run/canna
 @dirrm lib/canna/sample/src
 @dirrm lib/canna/sample
-@dirrm lib/canna/dic/user/user
-@dirrm lib/canna/dic/user
-@dirrm lib/canna/dic/group
 @dirrm lib/canna/dic/canna
-@dirrm lib/canna/dic
-@dirrm lib/canna
 @dirrm include/canna
+@unexec rmdir %D/lib/canna/dic/user/user 2>/dev/null || true
+@unexec rmdir %D/lib/canna/dic/user      2>/dev/null || true
+@unexec rmdir %D/lib/canna/dic/group     2>/dev/null || true
+@unexec rmdir %D/lib/canna/dic           2>/dev/null || true
+@unexec rmdir %D/lib/canna               2>/dev/null || true
