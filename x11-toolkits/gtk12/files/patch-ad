@@ -29,4 +29,3 @@
 +      str = g_strdup_printf ("%s%s", GTK_SYSCONFDIR, "/gtkrc");
        gtk_rc_add_default_file (str);
        g_free (str);
- 
