@@ -33,14 +33,24 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 
-AMAVISUSER?=	vscan
 AMAVISGROUP?=	vscan
-
-CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc --with-amavisuser=${AMAVISUSER}:${AMAVISGROUP}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-
+AMAVISUSER?=	vscan
+SMTPPORT?=	10025
 STARTSCRIPT=	amavisd.sh
+WARNADMIN?=	yes
+WARNRECIP?=	no
+WARNSENDER?=	no
+
+CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc	\
+			--with-amavisuser=${AMAVISUSER}:${AMAVISGROUP}	\
+			--with-smtp-port=${SMTPPORT}	\
+			--with-warnsender=${WARNSENDER} \
+			--with-warnrecip=${WARNRECIP}	\
+			--with-warnadmin=${WARNADMIN}
+
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_POSTFIX)
 CONFIGURE_ARGS+=	--enable-postfix
