@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xwrits
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.pdos.lcs.mit.edu/~eddietwo/xwrits/
 
