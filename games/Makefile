@@ -213,6 +213,7 @@
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-COW3-bin
     SUBDIR += netris
+    SUBDIR += netspades
     SUBDIR += nettoe
     SUBDIR += newkind
     SUBDIR += newvox
