@@ -1,0 +1,3 @@
+bin/gcursor
+share/gnome/gcursor/gcursor.glade
+@dirrm share/gnome/gcursor

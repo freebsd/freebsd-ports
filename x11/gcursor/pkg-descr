@@ -1,0 +1,5 @@
+GCursor is a gtk+-2 xcursor selector. It tries to have the same look and feel
+as the theme-selector in the gnome-control-center. Gcursor is a temporary
+solution until a decent selector is included in the gnome-control-center.
+
+WWW: http://qballcow.nl/?s=17
