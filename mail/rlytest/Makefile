@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rlytest
-PORTVERSION=	1.20
-PORTREVISION=   1
+PORTVERSION=	1.22
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.unicom.com/sw/rlytest/
 DISTNAME=	${PORTNAME}
