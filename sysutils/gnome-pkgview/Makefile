@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gnome-pkgview
-PORTVERSION=	0.0.8
+PORTVERSION=	1.0.0
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://www.gtnorthern.demon.co.uk/packages/gnome-pkgview/
+MASTER_SITES=	http://www.greatnorthern.demon.co.uk/packages/gnome-pkgview/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Displays the version of GNOME 2 components installed
+COMMENT=	Displays the version of GNOME components installed
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -20,7 +20,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
