@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	panda
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	print ruby
 MASTER_SITES=	http://www2s.biglobe.ne.jp/~Nori/ruby/dist/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
