@@ -30,7 +30,6 @@ PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
 EXTRA_PATCHES+=		${.CURDIR}/files/${pf}
 .endfor
 SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
-			HasXdmAuth=${HasXdmAuth} \
 			HasSecureRPC=${HasSecureRPC} \
 			HasPam=${HasPam} \
 			ExtendedInputDevices=${ExtendedInputDevices} \
@@ -81,11 +80,9 @@ PKGMESSAGE=		${WRKDIR}/.pkg-message
 # ---
 # Name          Default		Meaning
 # ----------------------------------------------------------------------------
-# HasXdmAuth	YES		support XDM-AUTHORIZATION-1.
 # HasSecureRPC	YES		build with SecureRPC (require FreeBSD-3 or later)
 # HasPam	YES		support PAM (require FreeBSD-3.1 or later)
 # ExtendedInputDevices	YES	support extended input devices
-HasXdmAuth?=		YES
 HasSecureRPC?=		DEFAULT
 HasPam?=		DEFAULT
 ExtendedInputDevices?=	DEFAULT
@@ -97,7 +94,7 @@ MASTER_SITES+=		http://gladstone.uoregon.edu/~eanholt/dri/:glide
 DISTFILES+=		freebsd-glide3headers.tar.gz:glide
 HasGlide3=		YES
 
-post-extract:
+post-extract::
 	@(cd ${WRKSRC}/lib/GL/mesa/src/drv/tdfx/ ; \
 		tar xfpz ${DISTDIR}/${DIST_SUBDIR}/freebsd-glide3headers.tar.gz)
 .else
@@ -194,6 +191,9 @@ post-install::
 HaveMatroxHal=		NO
 PLIST_SUB+=		MATROX="@comment "
 .endif
+
+post-extract::
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c ${WRKSRC}/lib/Xdmcp/
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure

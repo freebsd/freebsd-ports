@@ -8,10 +8,15 @@
 PORTNAME=	FontServer
 PORTVERSION=	4.2.0
 CATEGORIES=	x11-servers x11-fonts
-MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITES=	${MASTER_SITE_XFREE} \
+		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/:wrap \
+		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/:wrap
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz
+DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
+EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
+IGNOREFILES=	Wraphelp.c
 
 MAINTAINER=	anholt@freebsd.org
 
@@ -24,6 +29,9 @@ MAKE_ENV=		MAN_INSTALL_TARGET=FreeBSDPortsInstall.man
 ALL_TARGET=		FreeBSDPortsBuild
 INSTALL_TARGET=		FreeBSDPortsInstall installXserver.man
 MAN1=			Xserver.1 xfs.1
+
+post-extract:
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c ${WRKSRC}/lib/Xdmcp/
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure

@@ -1,14 +1,14 @@
 #!/bin/sh
 
-# This scripts work as following:
-# (1) cp current xf86site.def (it may be created by imake-4 ports) 
+# This script does the following:
+# (1) cp current xf86site.def (it is created by the imake-4 port) 
 #       to ${WRKDIR}/xc/config/cf.
-#     this means this ports use imake-4's config defaultly.
+#     this means this port uses imake-4's config for defaults.
 # (2) Generate temporal config for compiling.
 #     Some configs, such as `ForceNormalLib', `FreeBSDBuildXprog', are
-#     used for compiling this ports localy. so these configs will be generated
-#     this scripts. these configs will be stored to `host.def' file.
-#     but this host.def will never install. use local only.
+#     used locally for compiling this port, so these configs will be generated
+#     by this script. These configs will be stored to the `host.def' file,
+#     but this host.def will never be installed.
 
 ORIGDEF=$PREFIX/lib/X11/config/xf86site.def
 DESTDEF=$WRKDIR/xc/config/cf/xf86site.def
@@ -58,6 +58,8 @@ configure () {
     echo "#define InstallFSConfig $InstallFSConfig" >> $LOCALDEF
     echo "#define FreeBSDBuildXfs YES" >> $LOCALDEF
 
+    # Copy ORIGDEF to DESTDEF
+    rm -f $DESTDEF
     cp -f $ORIGDEF $DESTDEF
 
     # copy generated config to host.def
