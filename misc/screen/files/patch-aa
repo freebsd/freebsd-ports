@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Sep  1 20:07:26 2000
-+++ Makefile.in	Tue Sep  5 18:49:17 2000
+--- Makefile.in.orig	Fri Sep  1 09:07:26 2000
++++ Makefile.in	Sun Sep 17 18:29:18 2000
 @@ -21,7 +21,7 @@
  ETCSCREENRC = `sed < config.h -n -e '/define ETCSCREENRC/s/^.*"\([^"]*\)"/\1/p'`
  
@@ -9,3 +9,20 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS =
  LIBS = @LIBS@
+@@ -68,14 +68,8 @@
+ 	$(CC) -c -I. -I$(srcdir) $(M_CFLAGS) $(DEFS) $(OPTIONS) $(CFLAGS) $<
+ 
+ install_bin: .version screen
+-	-if [ -f $(bindir)/$(SCREEN) ] && [ ! -f $(bindir)/$(SCREEN).old ]; \
+-		then mv $(bindir)/$(SCREEN) $(bindir)/$(SCREEN).old; fi
+-	$(INSTALL_PROGRAM) screen $(bindir)/$(SCREEN)
+-	-chown root $(bindir)/$(SCREEN) && chmod 4755 $(bindir)/$(SCREEN)
+-# This doesn't work if $(bindir)/screen is a symlink
+-	-if [ -f $(bindir)/screen ] && [ ! -f $(bindir)/screen.old ]; then mv $(bindir)/screen $(bindir)/screen.old; fi
+-	rm -f $(bindir)/screen
+-	ln -s $(SCREEN) $(bindir)/screen
++	$(INSTALL_PROGRAM) screen $(bindir)/screen
++	-chown root $(bindir)/screen && chmod 4755 $(bindir)/screen
+ 
+ ###############################################################################
+ install: installdirs install_bin
