@@ -18,6 +18,7 @@
     SUBDIR += auctex
     SUBDIR += axpoint
     SUBDIR += bibcard
+    SUBDIR += bibcursed
     SUBDIR += bibview
     SUBDIR += bjfilter360
     SUBDIR += bjfilter850
