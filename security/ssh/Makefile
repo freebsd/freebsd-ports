@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure shell client and server (remote login program)
 
 CONFLICTS=	openssh-* openssh-portable-* openssh-gssapi-* ssh2-3.*
+NO_LATEST_LINK=	YES
 USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	YES
 USE_PERL5=	YES
