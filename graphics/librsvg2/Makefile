@@ -7,7 +7,7 @@
 
 PORTNAME=	librsvg2
 PORTVERSION=	2.9.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.9
@@ -36,7 +36,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--with-svgz \
 		--disable-gtk-doc \
 		--without-gimp \
-		--with-croco
+		--with-croco \
+		--disable-gnome-vfs
 
 CROCO_VERSION=	0.6
 GTK_VERSION=	2.4.0
@@ -53,13 +54,6 @@ WITH_GNOME=	yes
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomevfs2}!=""
-USE_GNOME+=	gnomevfs2
-CONFIGURE_ARGS+=--enable-gnome-vfs
-.else
-CONFIGURE_ARGS+=--disable-gnome-vfs
-.endif
 
 .if defined(WITH_MOZILLA_PLUGIN)
 .if defined(WITH_MOZILLA) && ${WITH_MOZILLA}=="firefox"
