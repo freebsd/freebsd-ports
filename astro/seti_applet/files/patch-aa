@@ -18,7 +18,7 @@
  	if ( sa.separate_exe_dir == TRUE )
  	{
 -		sa.seti_exe_dir = gnome_config_get_string ( "setiapplet/setiexedir" );
-+		sa.seti_exe_dir = gnome_config_get_string ( "setiapplet/setiexedir=/usr/local/bin" );
++		sa.seti_exe_dir = gnome_config_get_string ( "setiapplet/setiexedir=/usr/local/sbin" );
  	}
  	sa.launch_on_start = gnome_config_get_int ( "setiapplet/launchonstart=0" );
  	gnome_config_pop_prefix();
