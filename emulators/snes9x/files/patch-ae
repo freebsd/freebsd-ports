@@ -1,30 +1,31 @@
---- port.h.orig	Fri Oct  6 17:02:39 2000
-+++ port.h	Fri Oct 13 18:37:38 2000
-@@ -56,15 +56,15 @@
- 
+--- port.h.orig	Fri Jul 25 23:20:20 2003
++++ port.h	Sat Aug  9 01:14:02 2003
+@@ -124,16 +124,16 @@
  #ifndef snes9x_types_defined
  #define snes9x_types_defined
+ 
+-typedef unsigned char bool8;
++typedef u_int8_t bool8;
+ 
+ #ifndef __WIN32__
 -typedef unsigned char uint8;
 -typedef unsigned short uint16;
--typedef unsigned int uint32;
--typedef unsigned char bool8;
 -typedef signed char int8;
 -typedef short int16;
+-typedef int int32;
+-typedef unsigned int uint32;
+-typedef long long int64;
 +typedef u_int8_t uint8;
 +typedef u_int16_t uint16;
-+typedef u_int32_t uint32;
-+typedef u_int8_t bool8;
 +typedef int8_t int8;
 +typedef int16_t int16;
- #ifndef __WIN32__
--typedef int int32;
--typedef long long int64;
 +typedef int32_t int32;
++typedef u_int32_t uint32;
 +typedef int64_t int64;
- #else
- #ifndef WSAAPI
- // winsock2.h typedefs int32 as well.
-@@ -162,6 +162,10 @@
+ #else /* __WIN32__ */
+ 
+ #ifdef __BORLANDC__
+@@ -255,6 +255,10 @@
  
  #ifdef __linux
  #define TITLE "Snes9X: Linux"

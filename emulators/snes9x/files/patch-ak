@@ -1,6 +1,6 @@
---- server.cpp.orig	Fri Oct 13 18:57:43 2000
-+++ server.cpp	Fri Oct 13 19:02:56 2000
-@@ -940,11 +940,18 @@
+--- SERVER.CPP.orig	Fri Jul 25 23:20:20 2003
++++ SERVER.CPP	Sat Aug  9 01:17:35 2003
+@@ -976,11 +976,18 @@
  void S9xNPSyncClient (int client)
  {
      char fname [L_tmpnam];

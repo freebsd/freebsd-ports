@@ -1,8 +1,7 @@
-diff -ru ../../work/release/memmap.cpp ./memmap.cpp
---- ../../work/release/memmap.cpp	Thu Sep 23 19:56:48 1999
-+++ ./memmap.cpp	Wed Dec 29 01:54:04 1999
-@@ -39,7 +39,7 @@
- #include <string.h>
+--- MEMMAP.CPP.orig	Fri Jul 25 23:20:19 2003
++++ MEMMAP.CPP	Sat Aug  9 01:08:05 2003
+@@ -79,7 +79,7 @@
+ #endif
  #include <ctype.h>
  
 -#ifdef __linux
@@ -10,12 +9,12 @@ diff -ru ../../work/release/memmap.cpp ./memmap.cpp
  #include <unistd.h>
  #endif
  
-@@ -737,7 +737,7 @@
- 	{
- 	    fwrite ((char *) ::SRAM, size, 1, file);
- 	    fclose (file);
+@@ -1443,7 +1443,7 @@
+ 		{
+ 			fwrite ((char *) ::SRAM, size, 1, file);
+ 			fclose (file);
 -#if defined(__linux)
 +#if defined(__linux) || defined(__FreeBSD__)
- 	    chown (filename, getuid (), getgid ());
+ 			chown (filename, getuid (), getgid ());
  #endif
- 	    return (TRUE);
+ 			if(Settings.SPC7110RTC)

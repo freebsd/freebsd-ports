@@ -6,48 +6,64 @@
 #
 
 PORTNAME=	snes9x
-PORTVERSION=	1.37c
+PORTVERSION=	1.40
 CATEGORIES=	emulators
-# MASTER_SITES=	http://www.snes9x.com/zips/ is nonexistant right now
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	green
-DISTNAME=	s9xs137c
+MASTER_SITES=	http://www.lysator.liu.se/snes9x/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src-2
 
 MAINTAINER=	green@FreeBSD.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
 
-.if ${MACHINE_ARCH} == i386
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-.elif ${MACHINE_ARCH} == alpha
-MAKEFILE=	Makefile.alpha
-BROKEN=	currently does not work on alpha
-.endif
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/snes9x
 
-USE_GMAKE=	YES
 USE_X_PREFIX=	YES
-MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
-		CXXFLAGS="${CXXFLAGS}"
-USE_ZIP=	YES
-WRKSRC=		${WRKDIR}/release
+USE_GMAKE=	YES
+MAKE_ARGS=	CC="${CC} ${CFLAGS}" CCC="${CXX} ${CXXFLAGS}" \
+		INCLUDES="-I${X11BASE}/include ${PTHREAD_CFLAGS}" \
+		LDLIBS="-L${X11BASE}/lib ${PTHREAD_LIBS}" \
+		THREAD_SOUND=1 NETPLAY=1 UNZIP=1
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+MAKE_ARGS+=	ZSNESFX=1 ZSNESC4=1 ASMCPU=1 NASM="nasm" I386SPC="i386/SPC.O"
+.if defined(WITH_MMX)
+MAKE_ARGS+=	ASMKREED=1
+.endif
+.endif
 
 .if exists(/usr/lib/libusbhid.a)
-MAKE_ENV+=	USB_JOYSTICK_SUPPORT=yes
+JOYDEFINES=	-DJOYSTICK_SUPPORT
+SYSLIBS=	-lusbhid
 .endif
 
-ONLY_FOR_ARCHS=	i386
-
-.if ${MACHINE_ARCH} == alpha
-post-patch:
-	@${SED} -e '/^ZSNESFX/d' \
-	    -e '/^ASMCPU/d' \
-	    -e '/^OPTIMISE/s/-mpentium //' \
-	    -e '/^-Ii386/d' \
-	    -e '/offsets >/s:i386/::' \
-	    < ${WRKSRC}/Makefile \
-	    > ${WRKSRC}/Makefile.alpha
-.endif
+do-configure:
+	@cd ${WRKSRC} && ${SED} \
+		's:@ZSNESFX@:: ; \
+		 s:@ZSNESC4@::g ; \
+		 s:@ASMCPU@::g ; \
+		 s:@SPC700ASM@::g ; \
+		 s:@GLIDE@::g ; \
+		 s:@OPENGL@::g ; \
+		 s:@AIDO@::g ; \
+		 s:@THREAD_SOUND@::g ; \
+		 s:@ASMKREED@::g ; \
+		 s:@I386SPC@:$${I386SPC}:g ; \
+		 s:@JOYDEFINES@:${JOYDEFINES}:g ; \
+		 s:@CXX@::g ; \
+		 s:@RTTIFLAG@::g ; \
+		 s:@CC@::g ; \
+		 s:@NASM@::g ; \
+		 s:@XINCLUDES@::g ; \
+		 s:@OPTIMIZE@::g ; \
+		 s:@CPUINC@::g ; \
+		 s:@SYSDEFINES@:-DZLIB:g ; \
+		 s:@SYSLIBS@:${SYSLIBS}:g ; \
+		 s: -lpthread::g ; \
+		 s: \.\./zlib/libz\.a::g' < Makefile.in > Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/snes9x ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

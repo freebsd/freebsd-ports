@@ -1,8 +1,8 @@
---- unix/unix.cpp.orig	Wed Feb 28 16:12:23 2001
-+++ unix/unix.cpp	Tue May 13 13:07:48 2003
-@@ -51,9 +51,11 @@
+--- unix/unix.cpp.orig	Fri Jul 25 23:20:19 2003
++++ unix/unix.cpp	Sat Aug  9 00:58:34 2003
+@@ -97,9 +97,11 @@
  #include <ctype.h>
- 
+ #include <dirent.h>
  
 -#if defined(__linux) || defined(__sun)
 +#if defined(__linux) || defined(__sun) || defined(__FreeBSD__)
@@ -13,7 +13,7 @@
  #include <unistd.h>
  #include <sys/types.h>
  #include <sys/ioctl.h>
-@@ -68,8 +70,12 @@
+@@ -114,8 +116,12 @@
  pthread_mutex_t mutex;
  #endif
  
@@ -27,9 +27,9 @@
  #include <sys/mman.h>
  #endif
  
-@@ -85,6 +91,11 @@
- typedef void (*SIG_PF)();
- #endif
+@@ -132,6 +138,11 @@
+ //typedef void (*SIG_PF)();
+ //#endif
  
 +#if defined(__FreeBSD__)
 +typedef sig_t SIG_PF;
@@ -37,9 +37,9 @@
 +#endif
 +
  #include "snes9x.h"
- #include "memmap.h"
+ #include "MEMMAP.H"
  #include "debug.h"
-@@ -111,7 +122,10 @@
+@@ -158,7 +169,10 @@
  int NumControllers = 5;
  
  #ifdef JOYSTICK_SUPPORT
@@ -50,7 +50,7 @@
  #include <linux/joystick.h>
  int js_fd [4] = {-1, -1, -1, -1};
  int js_map_button [4][16] = {
-@@ -158,6 +172,68 @@
+@@ -205,6 +219,68 @@
  char *js_device [4] = {"/dev/js0", "/dev/js1", "/dev/js2", "/dev/js3"};
  #endif
  
@@ -119,7 +119,7 @@
  void InitJoysticks ();
  void ReadJoysticks ();
  #endif
-@@ -168,7 +244,7 @@
+@@ -215,7 +291,7 @@
  char *rom_filename = NULL;
  char *snapshot_filename = NULL;
  
@@ -128,7 +128,7 @@
  static void sigbrkhandler(int)
  {
  #ifdef DEBUGGER
-@@ -195,91 +271,43 @@
+@@ -242,91 +318,43 @@
      if (strcmp (argv [i], "-j") == 0 ||
  	     strcasecmp (argv [i], "-nojoy") == 0)
  	Settings.JoystickEnabled = FALSE;
@@ -255,7 +255,7 @@
      }
      else 
  #endif
-@@ -418,7 +446,7 @@
+@@ -469,7 +497,7 @@
  #if !defined(__MSDOS) && defined(DEBUGGER)
  #if defined(__unix) && !defined(__NeXT__)
      struct sigaction sa;
@@ -264,7 +264,7 @@
      sa.sa_handler = sigbrkhandler;
  #else
      sa.sa_handler = (SIG_PF) sigbrkhandler;
-@@ -610,6 +638,7 @@
+@@ -661,6 +689,7 @@
  }
  
  #ifdef JOYSTICK_SUPPORT
@@ -272,7 +272,7 @@
  void InitJoysticks ()
  {
  #ifdef JSIOCGVERSION
-@@ -730,6 +759,189 @@
+@@ -781,6 +810,189 @@
      }
  #endif
  }
@@ -462,7 +462,7 @@
  #endif // defined (JOYSTICK_SUPPORT)
  
  const char *GetHomeDirectory ()
-@@ -1422,7 +1634,7 @@
+@@ -1568,7 +1780,7 @@
  }
  #endif
  
@@ -470,17 +470,26 @@
 +#if defined(__linux) || defined(__FreeBSD__)
  static int Rates[8] =
  {
-     0, 8192, 11025, 16500, 22050, 29300, 36600, 44000
-@@ -1541,7 +1753,7 @@
+     0, 8000, 11025, 16000, 22050, 32000, 44100, 48000
+@@ -1688,7 +1900,7 @@
+ #endif
+ 
+ 
+-#if defined (__linux) || defined (__sun) || defined(NOSOUND)
++#if defined(__linux) || defined(__sun) || defined(__FreeBSD__) || defined(NOSOUND)
+ void S9xUnixProcessSound (void)
+ {
+ }
+@@ -1729,7 +1941,7 @@
  }
  #endif
  
 -#if defined (__linux) || defined (__sun)
-+#if defined (__linux) || defined (__sun) || defined(__FreeBSD__)
- void S9xUnixProcessSound (void)
++#if defined(__linux) || defined(__sun) || defined(__FreeBSD__)
+ void S9xGenerateSound ()
  {
- }
-@@ -1640,7 +1852,7 @@
+     int bytes_so_far = so.sixteen_bit ? (so.samples_mixed_so_far << 1) :
+@@ -1814,7 +2026,7 @@
  
  void *S9xProcessSound (void *)
  {
