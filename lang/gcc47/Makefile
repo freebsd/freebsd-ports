@@ -3,7 +3,7 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.3 1998/01/14 07:24:54 obrien Exp $
+# $Id: Makefile,v 1.4 1998/01/23 17:49:35 jdp Exp $
 #
 
 DISTNAME=	egcs-1.0.1
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.cygnus.com/pub/egcs/releases/egcs-1.0.1/ \
 		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/egcs-1.0.1/
 
 MAINTAINER=	jdp@polstra.com
+
+MANUAL_PACKAGE_BUILD=	installs libstdc++.a which conflicts with system version
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
