@@ -1,4 +1,6 @@
+tomcat/KEYS
 tomcat/LICENSE
+tomcat/RELEASE-NOTES
 tomcat/bin/ant
 tomcat/bin/ant.bat
 tomcat/bin/antRun
@@ -30,9 +32,11 @@ tomcat/conf/web.dtd
 tomcat/conf/web.xml
 tomcat/conf/workers.properties
 tomcat/conf/wrapper.properties
+tomcat/doc/AJPv13.html
 tomcat/doc/JDBCRealm.howto
 tomcat/doc/NT-Service-howto.html
 tomcat/doc/Tomcat-Workers-HowTo.html
+tomcat/doc/Tomcat-on-NetWare-HowTo.html
 tomcat/doc/appdev/build.xml.txt
 tomcat/doc/appdev/contents.html
 tomcat/doc/appdev/deployment.html
@@ -46,6 +50,7 @@ tomcat/doc/appdev/sample/build.bat
 tomcat/doc/appdev/sample/build.sh
 tomcat/doc/appdev/sample/build.xml
 tomcat/doc/appdev/sample/etc/web.xml
+tomcat/doc/appdev/sample/src/Hello.java
 tomcat/doc/appdev/sample/web/hello.jsp
 tomcat/doc/appdev/sample/web/images/tomcat.gif
 tomcat/doc/appdev/sample/web/index.html
@@ -59,11 +64,13 @@ tomcat/doc/mod_jk-howto.html
 tomcat/doc/readme
 tomcat/doc/tomcat-apache-howto.html
 tomcat/doc/tomcat-iis-howto.html
+tomcat/doc/tomcat-localization-howto.html
 tomcat/doc/tomcat-netscape-howto.html
 tomcat/doc/tomcat-ssl-howto.html
 tomcat/doc/uguide/images/banner.gif
 tomcat/doc/uguide/images/tomcat.gif
 tomcat/doc/uguide/style.css
+tomcat/doc/uguide/tomcat-security-unix.html
 tomcat/doc/uguide/tomcat-security.html
 tomcat/doc/uguide/tomcat_ug.html
 tomcat/lib/ant.jar
@@ -77,12 +84,12 @@ tomcat/webapps/admin.war
 tomcat/webapps/examples.war
 tomcat/webapps/test.war
 @dirrm tomcat/webapps
-@dirrm tomcat/logs
 @dirrm tomcat/lib
 @dirrm tomcat/doc/uguide/images
 @dirrm tomcat/doc/uguide
 @dirrm tomcat/doc/appdev/sample/web/images
 @dirrm tomcat/doc/appdev/sample/web
+@dirrm tomcat/doc/appdev/sample/src
 @dirrm tomcat/doc/appdev/sample/etc
 @dirrm tomcat/doc/appdev/sample
 @dirrm tomcat/doc/appdev
