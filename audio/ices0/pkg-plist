@@ -1,0 +1,8 @@
+bin/ices
+doc/ices/icesmanual.html
+etc/ices.conf.dist
+etc/modules/ices.pm.dist
+etc/modules/ices.py.dist
+@dirrm etc/modules
+@dirrm doc/ices
+@dirrm doc
