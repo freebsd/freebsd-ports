@@ -1,0 +1,5 @@
+Ruby/Blowfish is an interface to the Blowfish cipher included in the
+OpenSSL library.
+
+WWW:	http://ruby.metabolix.de/
+Author:	Hans-Dieter Stich <hdstich@commplex-media.de>
