@@ -1,0 +1,133 @@
+bin/finchtv
+%%PORTDOCS%%%%DOCSDIR%%/License.txt
+%%PORTDOCS%%%%DOCSDIR%%/ReleaseNotes.txt
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/B-FinchTV_Interface/ToolBars-Toolbar.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/B-FinchTV_Interface/DataViews-Multi.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/B-FinchTV_Interface/DataViews-sMenu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/B-FinchTV_Interface/DataViews-Std.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/B-FinchTV_Interface/DataViews-ToolBar.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/B-FinchTV_Interface/DataViews-wMenu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/B-FinchTV_Interface/ResizingTheWindow.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/B-FinchTV_Interface/ScalingTraceData.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/B-FinchTV_Interface/Toolbars-Menu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/B-FinchTV_Interface/ContextualMenu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/Toolsbars2.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/BaseCalls2.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/basePosNumbers.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/basePosNumbers2.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/contextualMenus.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/Edit1.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/fileOpen1.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/fileOpen2.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/GoToBase.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/Info1.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/Info2.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/InfoDetails.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/InfoGen.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/InfoSeq.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/Print.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/Print2.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/PrintOptions.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/PrintOptions2.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/QuickStart.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/Qvals1.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/Qvals2.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/rangeSelection.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/save1.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/save2.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/save3.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/Searches.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/SelectBases.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/StatusBar.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/stdWrapped1.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/stdWrapped2.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/stdWrapped3.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/stdWrapped4.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/stdWrapped5.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/stdWrapped6.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/stdWrapped7.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/stdWrapped8.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/toolbars1.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Screens/BaseCalls1.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/SelectingBases.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/BLAST-menu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-Basecalls-Menu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-BaseCalls.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-Info-Menu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-Info.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-Q20.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-Qualities-Menu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-Qualities.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-Raw.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-RawView.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-RC-menu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/DisplayingData-RC.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/EditingData.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/ExportingData.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Info-Details.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Info-General.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Info-Seq.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Navigating-Compressed.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Navigating-Goto.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Navigating-Menu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Navigating-Numbers.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Navigating.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/OpeningChromats-Menu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/OpeningChromats.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/PrintingTraces-Menu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/PrintingTraces-Options-Menupng.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/PrintingTraces-OptionsDialog.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/PrintingTraces.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Save-Menu.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Save.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Search-Findbox.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/Search.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/SelectingBases-Status.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/C-WorkingWithYourData/BLAST-contextual.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/A-Introduction/about.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Geospiza-32mmHlogo.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Geospiza-32mmHlogo.psd
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Geospiza-lglogo.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Geospiza-smlogo.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/HelpTitle.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/MenuLine.gif
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/Title.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/VerNum.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/finch-bulllet.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/FinchTV-cover.jpg
+%%PORTDOCS%%%%DOCSDIR%%/Help/media/FinchTV_Mac_App.png
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/A-Introduction/01-About.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/A-Introduction/02-Features.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/A-Introduction/03-QuickStart.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/B-FinchTV_Interface/01-DataViews.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/B-FinchTV_Interface/02-ScalingTraces.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/B-FinchTV_Interface/03-ResizingTheWindow.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/B-FinchTV_Interface/04-ToolBars.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/B-FinchTV_Interface/05-ContextualMenus.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/C-WorkingWithYourData/10-SavingData.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/C-WorkingWithYourData/02-DisplayingData.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/C-WorkingWithYourData/03-PrintingATrace.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/C-WorkingWithYourData/04-ExportingData.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/C-WorkingWithYourData/05-NavigatingInTraces.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/C-WorkingWithYourData/06-SelectingData.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/C-WorkingWithYourData/07-SearchingForSequences.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/C-WorkingWithYourData/08-BLASTSearches.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/C-WorkingWithYourData/09-EditingData.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/pages/C-WorkingWithYourData/01-OpenFiles.html
+%%PORTDOCS%%%%DOCSDIR%%/Help/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/Help/style.css
+%%EXAMPLESDIR%%/78I21_1101.y1.ab1
+%%EXAMPLESDIR%%/G33P641RB11.scf.gz
+%%EXAMPLESDIR%%/G33P771FF3.scf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/media/B-FinchTV_Interface
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/media/Screens
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/media/C-WorkingWithYourData
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/media/A-Introduction
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/media
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/pages/A-Introduction
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/pages/B-FinchTV_Interface
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/pages/C-WorkingWithYourData
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help/pages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%
