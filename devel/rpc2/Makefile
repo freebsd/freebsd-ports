@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rpc2
-PORTVERSION=	1.22
+PORTVERSION=	1.23
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rpc2/src/
 
@@ -15,9 +15,9 @@ COMMENT=	An interprocess communication library
 
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
+USE_LIBTOOL_VER=	15
 USE_GMAKE=	yes
 USE_PERL5=	yes
-GNU_CONFIGURE=  yes
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
