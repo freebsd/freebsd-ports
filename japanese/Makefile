@@ -221,6 +221,7 @@
     SUBDIR += perl5
     SUBDIR += pgp.language
     SUBDIR += pine
+    SUBDIR += pips2200
     SUBDIR += pips760
     SUBDIR += pips770
     SUBDIR += pips800
