@@ -5289,6 +5289,7 @@ p5-CGI-SpeedyCGI	ports/www/p5-CGI-SpeedyCGI
 p5-CGI.pm	ports/www/p5-CGI.pm
 p5-CSS-SAC	ports/textproc/p5-CSS-SAC
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
+p5-Cache-Mmap	ports/devel/p5-Cache-Mmap
 p5-Carp-Assert	ports/devel/p5-Carp-Assert
 p5-Carp-Datum	ports/devel/p5-Carp-Datum
 p5-Cdk		ports/devel/p5-Cdk
