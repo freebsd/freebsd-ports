@@ -1,0 +1,9 @@
+PSI/88 Version 1.0  by W. L. Jorgensen & D. L. Severance
+
+To plot wavefunctions in three dimensions from
+semi-empirical and most popular ab initio basis sets.
+Valence semi-empirical, STO-3G, 3-21++G(*) and
+6-31++G(d,p) basis sets are implemented for atoms
+H-Ar.
+
+WWW: http://zarbi.chem.yale.edu/programs/psi88.html

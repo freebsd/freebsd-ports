@@ -1,0 +1,116 @@
+*** src/Makefile.orig	Sat May 25 04:04:15 1991
+--- src/Makefile	Thu Nov 12 11:20:18 1998
+***************
+*** 27,37 ****
+  # level and when it is working, increase the optimization level.  So far
+  # optimization has never caused problems with this program.
+  #
+! # SGI 4D series flags
+  #
+  f77 = f77
+! FFLAGS = -w0 -O4 -G 64
+! LFLAGS = -lfastm -lfpe -s
+  #
+  # SUN Sparc series flags version 1.3 or later compiler
+  #
+--- 27,43 ----
+  # level and when it is working, increase the optimization level.  So far
+  # optimization has never caused problems with this program.
+  #
+! # FreeBSD
+  #
+  f77 = f77
+! FFLAGS = -O3 -Wall
+! LFLAGS =
+! #
+! # SGI 4D series flags
+! #
+! #f77 = f77
+! #FFLAGS = -w0 -O4 -G 64
+! #LFLAGS = -lfastm -lfpe -s
+  #
+  # SUN Sparc series flags version 1.3 or later compiler
+  #
+***************
+*** 60,66 ****
+  #  Place your G88/G90 util library definition here if you wish to 
+  #  compile chk2psi
+  #
+! G90LIB = /usr/people/frisch/g90/libg90.a
+  #
+  # define the directory where the executables will reside
+  # usually /usr/local/bin or ~/bin to put it in your own directory
+--- 66,72 ----
+  #  Place your G88/G90 util library definition here if you wish to 
+  #  compile chk2psi
+  #
+! #G90LIB = /usr/people/frisch/g90/libg90.a
+  #
+  # define the directory where the executables will reside
+  # usually /usr/local/bin or ~/bin to put it in your own directory
+***************
+*** 84,96 ****
+  #######################################################################
+  #
+  
+!  all:  PSI1 PSICON PSI2CT PSI2HP PSI2PS PREPLOT chk2psi $(EXTRAS)
+  
+  #
+  # Install in the executable directory - may need to be superuser
+  # depending on where you decide to put it (/usr/local/bin for instance)
+  #
+! install: PSI1 PSICON PSI2CT PSI2HP PSI2PS PREPLOT chk2psi $(EXTRAS)
+  	mv PSI1 $(BIN)
+  	chmod +rx $(BIN)/PSI1
+  	mv PSICON $(BIN)
+--- 90,104 ----
+  #######################################################################
+  #
+  
+! # all:  PSI1 PSICON PSI2CT PSI2HP PSI2PS PREPLOT chk2psi $(EXTRAS)
+!  all:  PSI1 PSICON PSI2CT PSI2HP PSI2PS PREPLOT $(EXTRAS)
+  
+  #
+  # Install in the executable directory - may need to be superuser
+  # depending on where you decide to put it (/usr/local/bin for instance)
+  #
+! #install: PSI1 PSICON PSI2CT PSI2HP PSI2PS PREPLOT chk2psi $(EXTRAS)
+! install: PSI1 PSICON PSI2CT PSI2HP PSI2PS PREPLOT $(EXTRAS)
+  	mv PSI1 $(BIN)
+  	chmod +rx $(BIN)/PSI1
+  	mv PSICON $(BIN)
+***************
+*** 99,106 ****
+  	chmod +rx $(BIN)/PREPLOT
+  	mv PSI2* $(BIN)
+  	chmod +rx $(BIN)/PSI2*
+! 	mv chk2psi $(BIN)
+! 	chmod +rx $(BIN)/chk2psi
+  
+  #
+  # This is the Density matrix generation program (PSI1/88)
+--- 107,115 ----
+  	chmod +rx $(BIN)/PREPLOT
+  	mv PSI2* $(BIN)
+  	chmod +rx $(BIN)/PSI2*
+! 
+! #	mv chk2psi $(BIN)
+! #	chmod +rx $(BIN)/chk2psi
+  
+  #
+  # This is the Density matrix generation program (PSI1/88)
+***************
+*** 164,169 ****
+  # Clean up when done
+  #
+   clean :
+!         touch a.out foo.o core foo.u foo.f17 foo.22
+  	rm -f a.out *.o core *.u *.f17 *.f2*
+  
+--- 173,178 ----
+  # Clean up when done
+  #
+   clean :
+! 	touch a.out foo.o core foo.u foo.f17 foo.22
+  	rm -f a.out *.o core *.u *.f17 *.f2*
+  

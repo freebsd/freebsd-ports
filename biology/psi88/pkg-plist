@@ -1,0 +1,30 @@
+bin/PSI1
+bin/PSICON
+bin/PSI2CT
+bin/PSI2HP
+bin/PSI2PS
+bin/PSI2
+bin/PREPLOT
+bin/preplot
+bin/rpsi1
+bin/rpsi2
+bin/rpsicon
+share/doc/psi88/psi88.doc
+share/doc/psi88/README
+share/doc/psi88/examples/ad634a.psi1
+share/doc/psi88/examples/ad634a.psi2
+share/doc/psi88/examples/ad634a.psicon
+share/doc/psi88/examples/ad635a.psi1
+share/doc/psi88/examples/ad635a.psi2
+share/doc/psi88/examples/ad635a.psicon
+share/doc/psi88/examples/ad636a.psi1
+share/doc/psi88/examples/ad636a.psi2
+share/doc/psi88/examples/ad636a.psicon
+share/doc/psi88/examples/ch3cl.psi1
+share/doc/psi88/examples/ch3cl.psi2
+share/doc/psi88/examples/ch3cl.psicon
+share/doc/psi88/examples/test.psi1
+share/doc/psi88/examples/test.psi2
+share/doc/psi88/examples/test.psicon
+@dirrm share/doc/psi88/examples
+@dirrm share/doc/psi88
