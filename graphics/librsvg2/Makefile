@@ -32,26 +32,10 @@ USE_GNOME=	gnomehack gtk20 libartlgpl2 libxml2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-svgz \
-		--disable-gtk-doc
+		--disable-gtk-doc \
+		--without-gimp
 PLIST_SUB=	GTK_VERSION="2.2.0"
 
 MAN1=		rsvg.1
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_GIMP) || exists (${X11BASE}/libexec/gimp/1.3/plug-ins/AlienMap)
-LIB_DEPENDS+=		gimp-1.3:${PORTSDIR}/graphics/gimp-devel
-CONFIGURE_ARGS+=	--with-gimp
-PLIST_SUB+=		GIMP:=""
-.else
-CONFIGURE_ARGS=		--without-gimp
-PLIST_SUB+=		GIMP:="@comment "
-.endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Librsvg2 has the following tunable option(s):"
-	@${ECHO_MSG} "	WITH_GIMP=yes	Build an svg plugin for gimp-devel (default: auto)"
-	@${ECHO_MSG} ""
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

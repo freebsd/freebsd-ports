@@ -8,7 +8,6 @@ lib/librsvg-2.a
 lib/librsvg-2.so
 lib/librsvg-2.so.6
 libdata/pkgconfig/librsvg-2.0.pc
-%%GIMP:%%libexec/gimp/1.3/plug-ins/svg
 share/doc/librsvg/html/home.png
 share/doc/librsvg/html/i1013.html
 share/doc/librsvg/html/index.html
