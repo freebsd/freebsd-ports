@@ -123,9 +123,11 @@ share/vim/syntax/pov.vim
 share/vim/syntax/procmail.vim
 share/vim/syntax/prolog.vim
 share/vim/syntax/python.vim
+share/vim/syntax/rc.vim
 share/vim/syntax/sather.vim
 share/vim/syntax/scripts.vim
 share/vim/syntax/sh.vim
+share/vim/syntax/slang.vim
 share/vim/syntax/sm.vim
 share/vim/syntax/sql.vim
 share/vim/syntax/st.vim
