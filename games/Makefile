@@ -66,6 +66,7 @@
     SUBDIR += corewars
     SUBDIR += cosmo
     SUBDIR += cowsay
+    SUBDIR += crack-attack
     SUBDIR += crafty
     SUBDIR += crafty-open-large
     SUBDIR += crafty-open-medium

@@ -1,0 +1,10 @@
+A free OpenGL game for Windows and UNIX, based on the Super Nintendo
+classic Tetris Attack. Stack of blocks grows from the bottom, and you
+have got to make sure it will never reaches the top. To add
+to the excitement, chunks of red garbage will fall from above.
+
+For single player game use
+
+crack-attack --solo
+
+WWW: http://aluminumangel.org/attack/
