@@ -35,6 +35,10 @@ HAVE_EMACS!=	which emacs || echo nope
 PLIST=		${PKGDIR}/pkg-plist.emacs
 .endif
 
+.if ${MACHINE_ARCH:L} == "amd64"
+CFLAGS+=	-fPIC
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3|"${CFLAGS}"|' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
