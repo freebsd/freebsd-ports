@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	soribada
-PORTVERSION=	0.3
+PORTVERSION=	0.7
 CATEGORIES=	audio
-MASTER_SITES=	http://soribada.kldp.org/
+MASTER_SITES=	http://soribada.kldp.org/depot/
 
 MAINTAINER=	cjh@FreeBSD.org
 
