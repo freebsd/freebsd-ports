@@ -14,6 +14,6 @@ MAINTAINER=	coda@cs.cmu.edu
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

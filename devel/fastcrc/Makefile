@@ -16,7 +16,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 ONLY_FOR_ARCHS=	i386
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libfcrc.so.1 ${PREFIX}/lib

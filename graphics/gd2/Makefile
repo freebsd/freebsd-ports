@@ -22,7 +22,7 @@ LIB_DEPENDS+=	ttf.4:${PORTSDIR}/print/freetype \
 USE_XLIB=	yes
 .endif
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 pre-fetch:
 .if !defined(WITH_X11)

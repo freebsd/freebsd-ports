@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.djvu.com/open/
 
 MAINTAINER=	mi@aldan.algebra.com
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 IS_INTERACTIVE=	yes
 USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes

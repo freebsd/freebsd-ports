@@ -19,7 +19,7 @@ MICOVER=	`${ECHO} ${DISTNAME} | ${SED} 's/mico-//'`
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 USE_NEWGCC=	yes
 
 .if defined(QT2)

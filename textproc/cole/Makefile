@@ -14,6 +14,6 @@ MASTER_SITES=	http://arturo.directmail.org/filters/archive/ \
 MAINTAINER=	sobomax@FreeBSD.org
 
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

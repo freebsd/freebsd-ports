@@ -26,7 +26,7 @@ GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-pisock=${LOCALBASE}/pilot

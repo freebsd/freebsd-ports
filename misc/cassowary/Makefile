@@ -15,7 +15,7 @@ MAINTAINER=	nakai@FreeBSD.org
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 LIB_DEPENDS=	GTL.3:${PORTSDIR}/misc/gtl
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-guile-prefix=${LOCALBASE} \
 		--enable-guile-build \

@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 .if exists(${X11BASE}/bin/XFree86)
 PLIST=		${WRKDIR}/PLIST
 .endif

@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpbm.a:${PORTSDIR}/graphics/netpbm
 EXTRACT_ONLY=	urt-3.1b.tar.Z
 
 USE_XLIB=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 NO_WRKSUBDIR=   yes
 CONFIGURE_SCRIPT=Configure
 CONFIGURE_ARGS=	config/urt

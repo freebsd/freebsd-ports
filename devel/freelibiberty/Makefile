@@ -15,7 +15,7 @@ DISTNAME=	libiberty-${PORTVERSION}
 
 MAINTAINER=	howardjp@wam.umd.edu
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libiberty.a ${PREFIX}/lib

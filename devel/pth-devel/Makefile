@@ -16,7 +16,7 @@ MAINTAINER=	rse@engelschall.com
 NO_LATEST_LINK=	yes
 NO_CDROM=	yes
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-pthread \

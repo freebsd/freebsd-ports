@@ -20,7 +20,7 @@ GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 LIBTOOLFILES=	configure libIDL/configure popt/configure
 CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 CONFIGURE_ARGS= --disable-indent

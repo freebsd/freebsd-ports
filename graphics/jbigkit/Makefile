@@ -14,7 +14,7 @@ MAINTAINER=	mi@aldan.algebra.com
 
 WRKSRC= ${WRKDIR}/${PORTNAME}
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 MAN1=	jbgtopbm.1 pbmtojbg.1
 

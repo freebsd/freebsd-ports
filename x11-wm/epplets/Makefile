@@ -19,7 +19,7 @@ BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 WRKSRC=		${WRKDIR}/Epplets-0.5
 
 USE_X_PREFIX=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd
 CONFIGURE_ENV=	EROOT=${X11BASE}/share/enlightenment \

@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.urc.ac.ru/pub/OS/FreeBSD/converters/
 
 MAINTAINER=	joy@urc.ac.ru
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 MAN1=		iconv.1
 MAN3=		iconv.3 iconv_close.3 iconv_open.3

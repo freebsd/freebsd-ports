@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://sourceware.cygnus.com/pub/libffi/
 MAINTAINER=	horance@freedom.ie.cycu.edu.tw
 
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_TARGET=	# empty
 
 .include <bsd.port.mk>

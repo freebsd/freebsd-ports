@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.balabit.hu/downloads/libol/0.2/
 MAINTAINER=	vince@blue-box.net
 
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

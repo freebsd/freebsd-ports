@@ -21,7 +21,7 @@ MAINTAINER=	max@FreeBSD.org
 
 BROKEN_ELF=	yes
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 BUILD_DEPENDS=	${PREFIX}/lib/libcanna.a:${PORTSDIR}/japanese/Canna

@@ -15,6 +15,6 @@ MAINTAINER=	maurice@serc.rmit.edu.au
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

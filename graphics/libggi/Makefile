@@ -16,7 +16,7 @@ LIB_DEPENDS=	gii.0:${PORTSDIR}/devel/libgii
 
 USE_BZIP2=	yes
 USE_XLIB=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gii=${PREFIX}
 

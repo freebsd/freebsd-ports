@@ -17,7 +17,7 @@ LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3	\
 		tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/vtk31
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-mesa --with-shared --with-tcl --with-bsdmake
 CONFIGURE_ARGS+=	--with-contrib --with-tkwidget

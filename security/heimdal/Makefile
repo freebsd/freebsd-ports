@@ -30,7 +30,7 @@ MAN8=			ftpd.8 hprop.8 hpropd.8 kdc.8 kpasswdd.8 kstash.8 \
 			string2key.8
 
 USE_LIBTOOL=		yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS=		--prefix=${PREFIX} --enable-shared
 
 .if defined(HEIMDAL_HOME)

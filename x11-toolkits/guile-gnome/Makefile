@@ -23,7 +23,7 @@ GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-bonobo --without-gtkhtml --with-libglade
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

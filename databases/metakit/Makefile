@@ -15,7 +15,7 @@ MAINTAINER=	rcarter@pinyon.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/builds
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 LIBTOOLFILES=	../unix/aclocal.m4
 CONFIGURE_SCRIPT= ../unix/configure
 MAKE_ARGS=	CXXFLAGS="-Dq4_STD ${CFLAGS}"

@@ -20,7 +20,7 @@ LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_GMAKE=		yes
 USE_X_PREFIX=		yes
-INSTALLS_SHLIBS=		yes
+INSTALLS_SHLIB=		yes
 SOLIB=			libshhcards.so
 
 .include <bsd.port.pre.mk>

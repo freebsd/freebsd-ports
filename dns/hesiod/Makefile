@@ -23,7 +23,7 @@ MAN3=			hesiod.3 hesiod_end.3 hesiod_free_list.3 	\
 MAN5=			hesiod.conf.5
 
 GNU_CONFIGURE=		yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=		yes
 
 .include <bsd.port.pre.mk>
 

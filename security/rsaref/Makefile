@@ -23,7 +23,7 @@ MAINTAINER=	kris@FreeBSD.ORG
 WRKSRC=		${WRKDIR}/source
 RESTRICTED=	"Contains cryptography"
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 pre-extract:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)

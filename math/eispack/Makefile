@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 
 DIST_SUBDIR=	${PORTNAME}
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 NO_WRKSUBDIR=	yes
 
 SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \

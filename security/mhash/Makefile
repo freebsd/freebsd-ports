@@ -12,7 +12,7 @@ MASTER_SITES=	http://schumann.cx/mhash/dl/
 
 MAINTAINER=	nsayer@freebsd.org
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= --with-LDFLAGS='-lc_r'
 

@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	max@FreeBSD.org
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 EXTRACT_ONLY=	${DISTFILES:Ntexmflib-*}
 DIST_SUBDIR=	${PORTNAME}

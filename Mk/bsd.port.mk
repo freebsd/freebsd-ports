@@ -412,11 +412,11 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #				  (default: ${WRKDIR}/.PLIST.mktmp).
 # PLIST_SUB		- List of "variable=value" pair for substitution in ${PLIST}
 # 				  (default: see below).
-# INSTALLS_SHLIBS - If set, bsd.port.mk will automatically run ldconfig commands
+# INSTALLS_SHLIB - If set, bsd.port.mk will automatically run ldconfig commands
 #				  from post-install and also add appropriate @exec/@unexec
 #				  directives to directories listed in LDCONFIG_DIRS.
 # LDCONFIG_DIRS - List of directories to run ldconfig if
-#				  INSTALLS_SHLIBS is set (default: %%PREFIX%%/lib).
+#				  INSTALLS_SHLIB is set (default: %%PREFIX%%/lib).
 #				  Note that this is passed through sed just like the
 #				  rest of PLIST, so ${PLIST_SUB} substitutions also
 #				  apply here.  It is recommended that you use
@@ -1247,7 +1247,7 @@ _MANPAGES:=	${_MANPAGES:S/$/.gz/}
 
 # Put this for down as possible so it will catch all PLIST_SUB definitions.
 
-.if defined(INSTALLS_SHLIBS)
+.if defined(INSTALLS_SHLIB)
 LDCONFIG_DIRS?=	%%PREFIX%%/lib
 LDCONFIG_PLIST!=	${ECHO} ${LDCONFIG_DIRS} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
 LDCONFIG_RUNLIST!=	${ECHO} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!"
@@ -1875,7 +1875,7 @@ _PORT_USE: .USE
 .if make(real-install) && (defined(_MANPAGES) || defined(_MLINKS))
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} compress-man
 .endif
-.if make(real-install) && defined(INSTALLS_SHLIBS)
+.if make(real-install) && defined(INSTALLS_SHLIB)
 	@${ECHO_MSG} "===>   Running ldconfig"
 	${LDCONFIG} -m ${LDCONFIG_RUNLIST}
 .endif
@@ -2662,7 +2662,7 @@ generate-plist:
 .endfor
 	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}
 	@${ECHO} "@unexec if [ -f %D/info/dir ]; then if sed -e '1,/Menu:/d' %D/info/dir | grep -q '^[*] '; then true; else rm %D/info/dir; fi; fi" >> ${TMPPLIST}
-.if defined(INSTALLS_SHLIBS)
+.if defined(INSTALLS_SHLIB)
 	@${ECHO} "@exec ${LDCONFIG} -m ${LDCONFIG_PLIST}" >> ${TMPPLIST}
 	@${ECHO} "@unexec ${LDCONFIG} -R" >> ${TMPPLIST}
 .endif

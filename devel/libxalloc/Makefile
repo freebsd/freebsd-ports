@@ -14,7 +14,7 @@ DISTNAME=	xalloc-${PORTVERSION}
 MAINTAINER=	obrien@FreeBSD.org
 
 USE_GMAKE=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

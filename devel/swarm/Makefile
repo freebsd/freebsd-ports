@@ -19,7 +19,7 @@ LIB_DEPENDS=	ffi.2:${PORTSDIR}/devel/libffi \
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-defaultdir=${PREFIX} \
 		--with-tclincludedir=${PREFIX}/include/tcl8.2 \
 		--with-tkincludedir=${PREFIX}/include/tk8.2 \

@@ -16,7 +16,7 @@ MAINTAINER=	jmz@FreeBSD.org
 
 DIST_SUBDIR=	lapack
 
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 MANCOMPRESSED=	maybe
 MANL=	cbdsqr.l cgbbrd.l cgbcon.l cgbequ.l cgbmv.l cgbrfs.l cgbsv.l cgbsvx.l \

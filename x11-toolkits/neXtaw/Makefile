@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.inf.ufrgs.br/~casantos/neXtaw/
 MAINTAINER=	tg@FreeBSD.org
 
 USE_IMAKE=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 MAN1=		neXtclock.1
 

@@ -14,6 +14,6 @@ MASTER_SITE_SUBDIR=	devel/lang/c++
 MAINTAINER=	ssigala@globalnet.it
 
 USE_LIBTOOL=	yes
-INSTALLS_SHLIBS=	yes
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
