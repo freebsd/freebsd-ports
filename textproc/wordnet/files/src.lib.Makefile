@@ -1,7 +1,7 @@
 SRCS=		binsrch.c morph.c search.c setutil.c wnglobal.c \
 		wnhelp.c wnrtl.c wnutil.c
 
-CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/wordnet-1.7\"" \
+CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet-${VER}\"" \
 		-DDEFAULTBIN="\"${PREFIX}/bin\"" -Werror
 
 CFLAGS+=	-I${.CURDIR}/../../include

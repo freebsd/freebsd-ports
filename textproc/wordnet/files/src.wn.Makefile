@@ -1,7 +1,7 @@
 PROG=		wn
 NOMAN=		True	# man pages installed separately
 
-CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/wordnet-1.7\"" \
+CFLAGS+=	-DUNIX -DDEFAULTPATH="\"${PREFIX}/share/WordNet-${VER}\"" \
 		-DDEFAULTBIN="\"${PREFIX}/bin\""
 
 CFLAGS+=	-I${.CURDIR}/../../include

@@ -1,0 +1,7 @@
+--- src/wnb/wnb	Tue Aug 20 11:54:54 2002
++++ src/wnb/wnb	Tue Aug 20 11:57:02 2002
+@@ -99,3 +96,3 @@
+    if {[lsearch -exact [array names env] WNHOME] == -1} {
+-	set resourcedir "/usr/local/WordNet-1.7.1/lib/wnres"
++	set resourcedir "/usr/local/share/WordNet-1.7.1/wnres"
+    } else {

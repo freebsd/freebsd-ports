@@ -1,0 +1,7 @@
+--- include/wn.h	Thu Mar  7 14:59:59 2002
++++ include/wn.h	Tue Aug 20 11:24:43 2002
+@@ -32,3 +32,3 @@
+ /* Set bit for each search type that is valid for the search word
+    passed and return bit mask. */
+-extern unsigned int is_defined(char *, int); 
++extern unsigned long is_defined(char *, int); 
