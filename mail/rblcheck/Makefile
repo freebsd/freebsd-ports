@@ -8,9 +8,11 @@
 
 DISTNAME=	rblcheck-1.4
 CATEGORIES=	mail
-MASTER_SITES=	http://www.xnet.com/%7Eemarshal/rblcheck/
+MASTER_SITES=	http://download.sourceforge.net/rblcheck/ \
+		http://www.xnet.com/%7Eemarshal/rblcheck/
 
 MAINTAINER=	itojun@itojun.org
+HOMEPAGE=	http://rblcheck.sourceforge.net/
 
 DOCS=		BUGS CHANGES CREDITS INSTALL PLATFORMS TODO
 
