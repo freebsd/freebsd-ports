@@ -424,6 +424,7 @@
     SUBDIR += spat
     SUBDIR += spread
     SUBDIR += ssldump
+    SUBDIR += staticcharge
     SUBDIR += sting
     SUBDIR += stone
     SUBDIR += suckblow
