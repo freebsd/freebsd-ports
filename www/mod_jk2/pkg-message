@@ -1,0 +1,5 @@
+*****************************************************************************
+Make sure mod_jk.so is enabled in ${PREFIX}/etc/apache2/httpd.conf and
+mod_jk is configured.  Have a look at
+${PREFIX}/etc/apache2/mod_jk.conf.sample for an example.
+*****************************************************************************

@@ -1,0 +1,5 @@
+etc/apache2/mod_jk.conf.sample
+etc/apache2/workers.properties.sample
+libexec/apache2/mod_jk.so
+@exec %D/sbin/apxs -e -A -n jk %f
+@unexec %D/sbin/apxs -e -A -n jk %f
