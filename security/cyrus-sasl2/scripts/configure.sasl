@@ -13,6 +13,12 @@ if [ "${BATCH}" ]; then
 	else
 		OPTIONS="\"NDBM\""
 	fi
+	if [ "${WITH_MYSQL}" ]; then
+		OPTIONS="${OPTIONS} \"MySQL\""
+	fi
+	if [ "${WITH_LDAP}" ]; then
+		OPTIONS="${OPTIONS} \"OpenLDAP\""
+	fi
 	if [ "${OPTIONS}" != "x" ]; then
 		OPTIONS="${OPTIONS} \"SASLAUTHD\""
 		set ${OPTIONS}
@@ -25,12 +31,24 @@ else
 		SET_DB3="OFF"
 		SET_NDBM="ON"
 	fi
+	if [ "${WITH_MYSQL}" -o -f ${PREFIX}/lib/mysql/libmysqlclient.so ] ; then
+		SET_MYSQL="ON"
+	else
+		SET_MYSQL="OFF"
+	fi
+	if [ "${WITH_LDAP}" -o -f ${PREFIX}/lib/libldap.so.2 -a -f ${PREFIX}/lib/liblber.so.2 ] ; then
+		SET_LDAP="ON"
+	else
+		SET_LDAP="OFF"
+	fi
 
 	/usr/bin/dialog --title "Additional SASL options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
 NDBM		"ndbm DB" ${SET_NDBM} \
 DB3		"Berkeley DB, revision 3" ${SET_DB3} \
+MySQL		"MySQL password Authentication" ${SET_MYSQL} \
+OpenLDAP	"OpenLDAP 2.x password Authentication w/TLS" ${SET_LDAP} \
 SASLAUTHD       "Use saslauthd for password Authentication" ON \
 2> $tempfile
 
@@ -82,6 +100,18 @@ while [ "$1" ]; do
 			echo "SASLDB_NAME=	sasldb2"
 			DBLIB=1
 			;;
+		\"MySQL\")
+			echo "LIB_DEPENDS+=	mysqlclient.10:\${PORTSDIR}/databases/mysql323-client"
+			echo "CONFIGURE_ARGS+=	--with-mysql=\${PREFIX}"
+			echo "PLIST_SUB+=	MYSQL=\"\""
+			DEFMYSQL=1
+			;;
+		\"OpenLDAP\")
+			echo "LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap2"
+			echo "LIB_DEPENDS+=	lber.2:\${PORTSDIR}/net/openldap2"
+			echo "CONFIGURE_ARGS+=	--with-ldap=\${PREFIX}"
+			OPENLDAP=1
+			;;
 		\"SASLAUTHD\")
 			echo "PWCHECK_SUB+=	-e \"s;%%PWCHECK%%;saslauthd;g\""
 			PWCHECK=1
@@ -106,4 +136,7 @@ fi
 if [ ! "${DBLIB}" ]; then
 	echo "CONFIGURE_ARGS+=	--with-dblib=ndbm"
 	echo "SASLDB_NAME=	sasldb2.db"
+fi
+if [ ! "${DEFMYSQL}" ]; then
+	echo "PLIST_SUB+=	MYSQL=\"@comment \""
 fi
