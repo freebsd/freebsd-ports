@@ -14,6 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS=	${LOCALBASE}/libmk4.a:${PORTSDIR}/databases/metakit
+LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
+		expat.2:${PORTSDIR}/textproc/expat2
+
 USE_LIBTOOL=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/all
 CONFIGURE_ARGS=	--with-metakit=${PREFIX} \
