@@ -20,7 +20,6 @@
     SUBDIR += bluefish
     SUBDIR += boa
     SUBDIR += calamaris
-    SUBDIR += cgi-lib
     SUBDIR += cgic
     SUBDIR += cgihtml
     SUBDIR += cgiparse
