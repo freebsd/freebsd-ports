@@ -9952,7 +9952,6 @@ swish-e		ports/www/swish-e
 swisswatch	ports/x11-clocks/swisswatch
 swm		ports/x11-wm/swm
 sword		ports/misc/sword
-sword-modules	ports/misc/sword-modules
 sxm		ports/lang/sxm
 sxpc		ports/x11/sxpc
 sxsame		ports/games/sxsame
