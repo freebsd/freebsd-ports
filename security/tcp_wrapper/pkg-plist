@@ -3,7 +3,9 @@ libexec/tcpd
 sbin/tcpdchk
 sbin/tcpdmatch
 bin/safe_finger
+bin/try-from
 lib/libwrap.a
+lib/libwrap.so.7.2
 man/man3/hosts_access.3.gz
 man/man5/hosts_access.5.gz
 man/man5/hosts_options.5.gz
