@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- oRTP/src/Makefile.in.orig	Fri Jun 13 15:21:18 2003
++++ oRTP/src/Makefile.in	Fri Jun 13 15:21:48 2003
+@@ -98,7 +98,7 @@
+ 
+ EXTRA_DIST = master system LOAD export.c export.h
+ 
+-DEFS = @DEFS@ $(PTHREAD_CFLAGS) -DG_LOG_DOMAIN=\"oRTP\"
++DEFS = @DEFS@ $(PTHREAD_CFLAGS) -DG_LOG_DOMAIN=\"oRTP\" -DBUILD_SCHEDULER
+ CFLAGS = -I$(top_srcdir) $(GLIB_CFLAGS) $(IPV6_CFLAGS)
+ LDFLAGS = $(PTHREAD_LDFLAGS)
+ 

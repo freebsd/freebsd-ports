@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- osipua/configure	2003/02/27 23:48:28	1.1
++++ osipua/configure	2003/02/27 23:49:11
+@@ -8652,6 +8652,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
