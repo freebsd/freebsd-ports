@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-wxPython
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wxpython
@@ -29,6 +29,7 @@ SETUP_ARGS=	WX_CONFIG="${WX_CONFIG}"
 SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py \
 			${SETUP_ARGS}
 DEMO_DIR=	${PYTHON_SITELIBDIR:S/${LOCALBASE}/${PREFIX}/}/wxPython/demo
+PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}
 
 do-build:
 	@${SETUP_CMD} build
@@ -38,7 +39,7 @@ do-build:
 .endif
 
 do-install:
-	@${SETUP_CMD} install
+	@${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
 	@${MKDIR} ${DEMO_DIR}
 .for glob in *.py *.pyc
 	@${INSTALL_DATA} ${WRKSRC}/demo/${glob} ${DEMO_DIR}

@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Mon May 28 20:11:23 2001
-+++ configure	Mon May 28 20:14:20 2001
-@@ -7606,10 +7606,10 @@
+--- configure.orig	Tue Nov 27 13:14:10 2001
++++ configure	Tue Nov 27 13:18:58 2001
+@@ -7657,10 +7657,10 @@
    else
       echo "$ac_t""no" 1>&6
       if test "$GTK_CONFIG_2_0" = "no" ; then
@@ -18,14 +18,14 @@ $FreeBSD$
       else
         if test -f conf.gtktest ; then
          :
-@@ -7941,14 +7941,14 @@
+@@ -7992,14 +7992,14 @@
      TOOLKIT=GTK
      GUIDIST=GTK_DIST
  
 -        echo $ac_n "checking for gdk_im_open in -lgdk""... $ac_c" 1>&6
--echo "configure:7946: checking for gdk_im_open in -lgdk" >&5
+-echo "configure:7997: checking for gdk_im_open in -lgdk" >&5
 +        echo $ac_n "checking for gdk_im_open in -lgdk12""... $ac_c" 1>&6
-+echo "configure:7946: checking for gdk_im_open in -lgdk12" >&5
++echo "configure:7997: checking for gdk_im_open in -lgdk12" >&5
  ac_lib_var=`echo gdk'_'gdk_im_open | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -34,9 +34,9 @@ $FreeBSD$
 -LIBS="-lgdk  $LIBS"
 +LIBS="-lgdk12  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 7954 "configure"
+ #line 8005 "configure"
  #include "confdefs.h"
-@@ -9207,16 +9207,12 @@
+@@ -9258,16 +9258,12 @@
  WX_LIBRARY_NAME_STATIC="lib${WX_LIBRARY}.a"
  WX_LIBRARY_NAME_STATIC_GL="lib${WX_LIBRARY}_gl.a"
  
@@ -58,7 +58,7 @@ $FreeBSD$
  SHARED_LD=
  PIC_FLAG=
  WX_ALL=
-@@ -12945,6 +12941,7 @@
+@@ -13135,6 +13131,7 @@
    fi
  fi
  
@@ -66,7 +66,7 @@ $FreeBSD$
  if test "$WXGTK20" = 1 ; then
    cat >> confdefs.h <<EOF
  #define __WXGTK20__ $WXGTK20
-@@ -13115,24 +13112,6 @@
+@@ -13305,24 +13302,6 @@
  fi
  
  
@@ -91,7 +91,15 @@ $FreeBSD$
  ZLIB_INCLUDE=
  if test "$wxUSE_ZLIB" = "yes" -o "$wxUSE_ZLIB" = "sys" ; then
    cat >> confdefs.h <<\EOF
-@@ -15947,8 +15926,6 @@
+@@ -13526,6 +13505,7 @@
+   cat > conftest.$ac_ext <<EOF
+ #line 13528 "configure"
+ #include "confdefs.h"
++#undef HAVE_STDLIB_H
+ #include <jpeglib.h>
+ EOF
+ ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
+@@ -16156,8 +16136,6 @@
  s%@WX_LIBRARY@%$WX_LIBRARY%g
  s%@WX_TARGET_LIBRARY@%$WX_TARGET_LIBRARY%g
  s%@WX_LIBRARY_LINK1@%$WX_LIBRARY_LINK1%g
@@ -100,7 +108,7 @@ $FreeBSD$
  s%@PROGRAM_EXT@%$PROGRAM_EXT%g
  s%@WX_LIBRARY_NAME_GL@%$WX_LIBRARY_NAME_GL%g
  s%@WX_LIBRARY_NAME_STATIC_GL@%$WX_LIBRARY_NAME_STATIC_GL%g
-@@ -15956,8 +15933,6 @@
+@@ -16165,8 +16143,6 @@
  s%@WX_LIBRARY_GL@%$WX_LIBRARY_GL%g
  s%@WX_TARGET_LIBRARY_GL@%$WX_TARGET_LIBRARY_GL%g
  s%@WX_LIBRARY_LINK1_GL@%$WX_LIBRARY_LINK1_GL%g
