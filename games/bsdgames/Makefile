@@ -54,6 +54,8 @@ post-extract:
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' -or -name '*.6' -or \
 		-name 'index' | ${XARGS} ${REINPLACE_CMD} -e \
-		's|share/games|local/share/games|g' \
+		's|share/games|local/share/games|g'
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' \
+		"${WRKSRC}/hack/hack.unix.c"
 
 .include <bsd.port.mk>
