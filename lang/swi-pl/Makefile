@@ -15,19 +15,16 @@ DISTNAME=	pl-${PORTVERSION}
 MAINTAINER=	max@FreeBSD.org
 COMMENT=	Edinburgh-style Prolog compiler
 
-CONFLICTS=	ploticus-* slffea-* TenDRA-*
+CONFLICTS=	ploticus-[0-9]* slffea-[0-9]* TenDRA-[0-9]*
+NOPRECIOUSMAKEVARS=yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--host=${MACHINE_ARCH}-${OPSYS:L} --disable-mt
-STRIP=
 MAN1=		pl.1 plrc.1 plld.1
 PLIST_SUB=	DISTNAME=${DISTNAME} ARCH=${ARCH} OS=${OPSYS:L}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Broken pkg-plist"
-.endif
 
 .if (${ARCH} == "i386")
 PLIST_SUB+=	BITS=32
@@ -43,9 +40,8 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-src-configure
 BROKEN=		"Broken pkg-plist"
 .endif
 
-post-install:
-.for f in pl plld plrc
-	@${STRIP_CMD} ${PREFIX}/lib/${DISTNAME}/bin/${ARCH}-${OPSYS:L}/$f
-.endfor
+post-patch:
+	${REINPLACE_CMD} -e '/edit/s/INSTALL_PROGRAM/BSD_INSTALL_SCRIPT/g' \
+		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.post.mk>
