@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	shige@FreeBSD.org
 
+LATEST_LINK=	leim21
+
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs21
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs21
 

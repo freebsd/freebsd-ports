@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	shige@FreeBSD.org
 
+LATEST_LINK=	leim20
+
 BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 
