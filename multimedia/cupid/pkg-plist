@@ -1,0 +1,33 @@
+bin/cupid
+share/gnome/applications/cupid.desktop
+share/gnome/cupid/pixmaps/brightness.png
+share/gnome/cupid/pixmaps/contrast.png
+share/gnome/cupid/pixmaps/pause.png
+share/gnome/cupid/pixmaps/play.png
+share/gnome/cupid/pixmaps/record.png
+share/gnome/cupid/pixmaps/saturation.png
+share/gnome/cupid/pixmaps/slider.png
+share/gnome/cupid/pixmaps/stop.png
+share/gnome/help/cupid/C/cupid.xml
+share/gnome/help/cupid/C/figures/cupid_druid.png
+share/gnome/help/cupid/C/figures/cupid_window.png
+share/gnome/help/cupid/C/legal.xml
+share/gnome/omf/cupid/cupid-C.omf
+share/gnome/pixmaps/cupid.png
+@unexec rmdir %D/share/gnome/pixmaps 2>/dev/null || true
+@dirrm share/gnome/omf/cupid
+@unexec rmdir %D/share/gnome/omf 2>/dev/null || true
+@dirrm share/gnome/help/cupid/C/figures
+@dirrm share/gnome/help/cupid/C
+@dirrm share/gnome/help/cupid
+@unexec rmdir %D/share/gnome/help 2>/dev/null || true
+@dirrm share/gnome/cupid/pixmaps
+@dirrm share/gnome/cupid
+@unexec rmdir %D/share/gnome/applications 2>/dev/null || true
+@unexec rmdir %D/share/gnome 2>/dev/null || true
+@unexec rmdir %D/etc/gconf/schemas 2>/dev/null || true
+@unexec rmdir %D/etc/gconf/gconf.xml.defaults/schemas/apps 2>/dev/null || true
+@unexec rmdir %D/etc/gconf/gconf.xml.defaults/schemas 2>/dev/null || true
+@unexec rmdir %D/etc/gconf/gconf.xml.defaults/apps 2>/dev/null || true
+@unexec rmdir %D/etc/gconf/gconf.xml.defaults 2>/dev/null || true
+@unexec rmdir %D/etc/gconf 2>/dev/null || true
