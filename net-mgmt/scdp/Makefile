@@ -17,8 +17,9 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's,malloc.h,stdlib.h,' ${WRKSRC}/scdp.c
+	${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/scdp.c
 
 .include <bsd.port.mk>
