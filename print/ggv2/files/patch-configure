@@ -1,6 +1,6 @@
---- configure.orig	Sun Jul  7 18:20:21 2002
-+++ configure	Sun Jul  7 18:20:31 2002
-@@ -12015,12 +12015,12 @@
+--- configure.orig	Mon Jul 29 16:36:08 2002
++++ configure	Mon Jul 29 21:22:15 2002
+@@ -11833,12 +11833,12 @@
    echo "$as_me:$LINENO: \$? = $ac_status" >&5
    (exit $ac_status); }; }; then
    CATOBJEXT=.gmo
@@ -10,7 +10,7 @@
    echo "$as_me: failed program was:" >&5
  cat conftest.$ac_ext >&5
  CATOBJEXT=.mo
--	         DATADIRNAME=share
+-	         DATADIRNAME=lib
 +	         DATADIRNAME=share/gnome
  fi
  rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
