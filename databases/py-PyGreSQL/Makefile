@@ -3,7 +3,7 @@
 # Date created:				6/25/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.7 1998/10/09 10:05:48 asami Exp $
+# $Id: Makefile,v 1.8 1998/10/12 04:14:44 jseger Exp $
 #
 
 DISTNAME=		PyGreSQL-2.1
@@ -18,56 +18,16 @@ BUILD_DEPENDS=		python:${PORTSDIR}/lang/python
 RUN_DEPENDS=		python:${PORTSDIR}/lang/python
 LIB_DEPENDS=		pq.1:${PORTSDIR}/databases/postgresql
 
-BROKEN_ELF=     depends on postgresql
-
 WRKSRC=			${WRKDIR}
-HAS_CONFIGURE=		YES
-GNU_CONFIGURE=		YES
 
-PY_PREFIX=		python -c "import sys; print sys.prefix"
-PY_EXEC_PREFIX=		python -c "import sys; print sys.exec_prefix"
-PY_SITE_PYTHON=		python -c "import sys; import string; print (filter(lambda a: string.find(a, 'site-python') >= 0, sys.path) or [''])[0]"
-PY_HAVE_THREAD=		python -c "import thread"
+MAKE_ENV=		PYTHON=${PREFIX}/bin/python \
+			LN="${LN}" SETENV="${SETENV}" MKDIR="${MKDIR}"
 
 CHOWN?=			chown
 CHMOD?=			chmod
 
-do-configure:
-.if defined(BATCH)
-	@(if [ "`${PY_SITE_PYTHON}`" = "" ]; then               \
-	${MKDIR} ${PREFIX}/lib/site-python;                     \
-	${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/lib/site-python; \
-	${CHMOD} ${BINMODE} ${PREFIX}/lib/site-python;          \
-	fi)
-.else
-	@(if [ "`${PY_SITE_PYTHON}`" = "" ]; then                          \
-	${ECHO} "You must create a site-python directory in order to";     \
-	${ECHO} "build and install this port.  On most systems, creating"; \
-	${ECHO} "a directory called ${PREFIX}/lib/site-python will do.";   \
-	exit 1;                                                            \
-	fi)
-.endif
-.for f in Makefile Makefile.in configure.in
-	${CP} ${SCRIPTDIR}/${f} ${WRKSRC}
-.endfor
-	${INSTALL} -c -m 0555 ${SCRIPTDIR}/install-sh ${WRKSRC}
-	${INSTALL} -c -m 0555 ${SCRIPTDIR}/configure.local ${WRKSRC}/configure
-	@(if ${PY_HAVE_THREAD}; then                                  \
-		PTHREAD="-pthread";                                   \
-	fi;                                                           \
-	cd ${WRKSRC} && CC="${CC}" CXX="${CXX}" ac_cv_path_CC="${CC}" \
-	CFLAGS="${CFLAGS}"                                            \
-	INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}"             \
-	INSTALL_DATA="${INSTALL_DATA}"                                \
-	INSTALL_PROGRAM="${INSTALL_PROGRAM}"                          \
-	INSTALL_SCRIPT="${INSTALL_SCRIPT}"                            \
-	PY_EXEC_PREFIX=`${PY_EXEC_PREFIX}`                            \
-	PY_SITE_PYTHON=`${PY_SITE_PYTHON}`                            \
-	LDFLAGS="$$PTHREAD -L`${PY_PREFIX}`/lib/python1.5/config      \
-          -L${PREFIX}/pgsql/lib"                                      \
-	CPPFLAGS="-I`${PY_PREFIX}`/include/python1.5                  \
-          -I${PREFIX}/pgsql/include"                                  \
-	${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
+pre-build:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.PyGreSQL
