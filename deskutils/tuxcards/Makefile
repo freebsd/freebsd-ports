@@ -7,14 +7,14 @@
 
 PORTNAME=	tuxcards
 PORTVERSION=	0.8
-CATEGORIES=	misc kde
-MASTER_SITES=	http://tuxcards.de/src/ \
-		http://www.arved.de/bsd/src/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+PORTREVISION=	1
+CATEGORIES=	misc deskutils
+MASTER_SITES=	http://www.arved.de/bsd/src/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-ohneCactus
 
 MAINTAINER=	freebsdports@arved.de
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 USE_QT_VER=	2
 HAS_CONFIGURE=	yes
