@@ -17,5 +17,9 @@ LIB_DEPENDS=	mime.1:${PORTSDIR}/devel/mime:install
 
 GNU_CONFIGURE=	yes
 MAN3=		cgiclose.3 cgigetvalue.3 cginewquerystr.3
+INSTALLS_SHLIB=	yes
+
+post-install:
+	${LN} -sf libcgiparse.so.1 ${PREFIX}/lib/libcgiparse.so
 
 .include <bsd.port.mk>
