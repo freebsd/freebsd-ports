@@ -80,6 +80,7 @@
     SUBDIR += libX11
     SUBDIR += libXau
     SUBDIR += libXcursor
+    SUBDIR += libXdamage
     SUBDIR += libXdmcp
     SUBDIR += libXext
     SUBDIR += libXfixes
