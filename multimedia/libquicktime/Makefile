@@ -16,7 +16,6 @@ MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A library for reading and writing quicktime files
 
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		mp3lame.0:${PORTSDIR}/audio/lame \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
@@ -33,6 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS=	--disable-firewire
 CFLAGS+=	-fPIC
 
+OPTIONS=	LAME "Enable Lame mp3 encoding support" Off
+
 MAN1=	lqtplay.1
 PORTDOCS=	codecs.html \
 		qt4l_building.html \
@@ -47,6 +48,10 @@ PORTDOCS=	codecs.html \
 		qt4l_writing.html
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_LAME) || exists(${LOCALBASE}/lib/libmp3lame.a)
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+.endif
 
 .if ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=	--enable-mmx
