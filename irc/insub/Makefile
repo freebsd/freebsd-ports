@@ -12,7 +12,7 @@ CATEGORIES?=	irc
 MASTER_SITES=	http://gruntle.org/projects/irssi/insub/
 
 MAINTAINER?=	alfred@FreeBSD.org
-COMMENT?=	Some scripts for expressing how you really feel on irc
+COMMENT?=	Some scripts for expressing how you feel on irc and the web
 
 NO_BUILD=	YES
 
