@@ -7,7 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.4.3a
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	japanese mail www
 
