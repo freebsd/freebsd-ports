@@ -1,14 +1,14 @@
 # New ports collection makefile for:	fxtv
-# Version required:	0.47
+# Version required:	0.48
 # Date created:		Sun Sep  7 17:55:07 EDT 1997
 # Whom:			Randall Hopper <rhh@ct.picker.com>
 #
-# $Id: Makefile,v 1.13 1998/11/25 05:06:21 jseger Exp $
+# $Id: Makefile,v 1.14 1998/11/25 09:01:17 asami Exp $
 #
 
-DISTNAME=	fxtv-0.47
+DISTNAME=	fxtv-0.48
 CATEGORIES=	graphics
-MASTER_SITES=	http://multiverse.com/~rhh/fxtv/
+MASTER_SITES=	http://www.pagesz.net/~aa8vb/fxtv/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rhh@ct.picker.com

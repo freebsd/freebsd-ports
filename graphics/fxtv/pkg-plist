@@ -9,6 +9,5 @@ lib/X11/fxtv/bitmaps/mini-up.xbm
 lib/X11/fxtv/bitmaps/radio_off.xbm
 lib/X11/fxtv/bitmaps/radio_on.xbm
 lib/X11/fxtv/fxtv_cnvt.sh
-lib/X11/fxtv/moused.x10remote.patch
 @dirrm lib/X11/fxtv/bitmaps
 @dirrm lib/X11/fxtv
