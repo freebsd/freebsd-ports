@@ -16,6 +16,8 @@ DISTNAME=	pcre-ocaml-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl compatible regular expressions for Objective Caml
 
+BROKEN=		"Unfetchable"
+
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
