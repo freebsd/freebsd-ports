@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.213 1998/12/24 18:54:08 sada Exp $
+# $Id: Makefile,v 1.214 1998/12/30 04:34:00 obrien Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -115,6 +115,7 @@
     SUBDIR += portscanner
     SUBDIR += ppp-nt
     SUBDIR += pppload
+    SUBDIR += ppxp
     SUBDIR += proftpd
     SUBDIR += queso
     SUBDIR += radius
