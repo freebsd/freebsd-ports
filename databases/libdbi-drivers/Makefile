@@ -7,18 +7,20 @@
 #
 
 PORTNAME=	libdbi-drivers
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	databases devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	libdbi drivers
+COMMENT=	Drivers for libdbi
 
 LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-dbi-incdir=${LOCALBASE}/include/dbi
+USE_GNOME=	gnometarget lthack
+USE_LIBTOOL_VER=	13
+CONFIGURE_ARGS=	--disable-static \
+		--with-dbi-incdir=${LOCALBASE}/include/dbi
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
@@ -53,5 +55,8 @@ PLIST_SUB+=	SQLITE="@comment "
 #.else
 #PLIST_SUB+=	MSQL="@comment "
 #.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O20|$$CFLAGS|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
