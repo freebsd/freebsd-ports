@@ -8,8 +8,8 @@
 PORTNAME=	HTML-WebMake
 PORTVERSION=	2.3
 CATEGORIES=	www perl5
-MASTER_SITES=	http://webmake.sourceforge.net/devel/ \
-		http://webmake.taint.org/devel/
+MASTER_SITES=	http://webmake.sourceforge.net/released/ \
+		http://webmake.taint.org/released/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jkoshy@FreeBSD.org
