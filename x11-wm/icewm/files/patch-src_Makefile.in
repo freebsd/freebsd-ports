@@ -12,12 +12,3 @@
  	        @CORE_CFLAGS@ @IMAGE_CFLAGS@ @AUDIO_CFLAGS@ # `fc-config --cflags`
  LFLAGS =	@LDFLAGS@
  LIBS =          @LIBS@
-@@ -53,7 +53,7 @@
- 	genpref.o
- 
- icewm_LIBS = \
--	$(CORE_LIBS) $(IMAGE_LIBS)
-+	$(CORE_LIBS) $(IMAGE_LIBS) -lkvm
- icewm_OBJS = \
-         ymsgbox.o ydialog.o yurl.o \
-         wmsession.o wmwinlist.o wmtaskbar.o wmwinmenu.o \
