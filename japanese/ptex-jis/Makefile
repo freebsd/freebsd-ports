@@ -3,7 +3,7 @@
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.4 1997/11/22 01:38:54 asami Exp $
+# $Id: Makefile,v 1.5 1998/06/24 01:14:47 max Exp $
 #
 
 DISTNAME=	ptex218
@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 DIST_SUBDIR=	ptex
 CONFIGURE_ARGS=	jis
-WRKSRC=		${.CURDIR}/../ptex-common/work/web2c-7.2/web2c/${DISTNAME}
+WRKSRC=	${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/web2c-7.2/web2c/${DISTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 ALL_TARGET=	default
 

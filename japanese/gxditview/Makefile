@@ -3,7 +3,7 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.7 1997/09/14 21:34:40 max Exp $
+# $Id: Makefile,v 1.8 1997/12/25 22:29:34 asami Exp $
 #
 
 DISTNAME=	groff-1.09
@@ -19,7 +19,7 @@ DISTPATCHES=	950414.01.Z 950414.02.Z
 PATCH_DIST_ARGS?=	-d ${WRKSRC}/.. --forward --quiet -E -p1
 
 USE_IMAKE=	yes
-WRKSRC=${.CURDIR}/work/${DISTNAME}/xditview
+WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/work/${DISTNAME}/xditview
 
 pre-fetch: 
 	@(cd ${DISTDIR}; \

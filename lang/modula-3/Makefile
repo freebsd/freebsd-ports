@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.22 1998/08/20 08:57:47 hoek Exp $
+# $Id: Makefile,v 1.23 1998/09/18 01:02:00 jdp Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -14,7 +14,7 @@ MAINTAINER=	jdp@polstra.com
 
 DEPENDS=	${PORTSDIR}/lang/modula-3-lib
 
-WRKSRC=		${PORTSDIR}/lang/modula-3-lib/work
+WRKSRC=		${WRKDIRPREFIX}${PORTSDIR}/lang/modula-3-lib/work
 NO_CHECKSUM=	yes
 NO_BUILD=	yes
 MAN1=		analyze_coverage.1 m3browser.1 m3build.1 \
