@@ -1,0 +1,14 @@
+############################### Preferences ################################
+
+# List of features; see Pine's Setup/options menu for the current set.
+# e.g. feature-list= select-without-confirm, signature-at-bottom
+# Default condition for all of the features is no-.
+feature-list=dont-encode-8bit-text-and-subject,
+	enable-8bit-esmtp-negotiation,
+	enable-8bit-nntp-posting,
+	pass-control-characters-as-is
+
+# Reflects capabilities of the display you have. Default: US-ASCII.
+# Typical alternatives include ISO-8859-x, (x is a number between 1 and 9).
+character-set=KOI8-U
+
