@@ -251,7 +251,8 @@ post-install:
 	@${ECHO_MSG} "the user bacula."
 .endif
 	@${ECHO_MSG} "*********************************************************************"
-
+.if !defined(WITH_CLIENT_ONLY)
 	@$(CAT) pkg-message
+.endif
 
 .include <bsd.port.post.mk>
