@@ -16,7 +16,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	A collection of LaTeX files for making foils
 
-EXTRACT_DEPENDS=latex:${PORTSDIR}/print/teTeX
+BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 
 NO_CDROM=	redistribution on a not-for-profit basis only
