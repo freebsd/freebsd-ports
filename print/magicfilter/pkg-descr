@@ -1,10 +1,15 @@
-                          MAGICFILTER v 1.2
+MagicFilter
 
-                      H. Peter Anvin <hpa@zytor.com>
+magicfilter is an extensible and customizable automatic printer filter. 
+It selects an appropriate conversion technique for the input data by 
+seeking for magic numbers, and then utilizing the appropriate conversion 
+utility.
 
-MAGICFILTER is a customizable, extensible automatic printer filter.
-Although written for Linux, it should work on any UNIX system which
-has an ANSI C compiler.
+magicfilter is primarily intended for use as the `input filter' by the 
+lpd print spooler. The options accepted by magicfilter are exactly the 
+ones passed to the input filter by lpd (unless you build it on a LPRng 
+system -- in that case, magicfilter accepts no options.) 
 
 --
 CHOI Junho <cjh@FreeBSD.org>
+WWW: http://www.pell.portland.or.us/~orc/Code/magicfilter/
