@@ -262,6 +262,7 @@ lib/ocaml/weak.cmx
 lib/ocaml/weak.ml
 lib/ocaml/weak.mli
 lib/ocaml/weak.p.cmx
+share/doc/ocaml/LICENSE
 share/doc/ocaml/html/contents_motif.gif
 share/doc/ocaml/html/index.html
 share/doc/ocaml/html/libgraph.gif
