@@ -3,13 +3,13 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.6 1998/06/27 05:19:43 asami Exp $
+# $Id: Makefile,v 1.7 1998/09/29 17:28:34 jkh Exp $
 #
 
 DISTNAME=	isoENTS
 PKGNAME=	iso8879-1986
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_BACKUP}
+MASTER_SITES=	ftp://fallout.campusview.indiana.edu/pub/sgml/
 EXTRACT_SUFX=	.zip
 
 MAINTAINER=	jfieber@FreeBSD.ORG
