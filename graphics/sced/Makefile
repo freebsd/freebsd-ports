@@ -3,14 +3,13 @@
 # Date created:         27  Dec 1996
 # Whom:                 proff@iq.org
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/18 08:34:30 tg Exp $
+# $Id: Makefile,v 1.2 1997/02/18 10:09:08 obrien Exp $
 #
 
 DISTNAME=       sced-0.94
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.cs.su.oz.au/stephen/sced/src/
 
-CONFIGURE=	true
 GNU_CONFIGURE=	true
 IS_INTERACTIVE=	true
 
