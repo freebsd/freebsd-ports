@@ -7,7 +7,7 @@
 
 # This port does not work with another version of master port.
 #PORTVERSION=	2.2
-CATEGORIES=	japanese misc
+CATEGORIES=	japanese misc kde
 
 MASTERDIR=	${.CURDIR}/../../misc/kdeaddons
 MD5_FILE=	${.CURDIR}/distinfo
