@@ -15,6 +15,7 @@ MAINTAINER=	coda@cs.cmu.edu
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp
 
 USE_GMAKE=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=  yes
 INSTALLS_SHLIB=	yes
 
