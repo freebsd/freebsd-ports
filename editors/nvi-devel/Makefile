@@ -6,34 +6,33 @@
 #
 
 PORTNAME=	nvi
-PORTVERSION=	1.81.4
-PORTREVISION=	2
+PORTVERSION=	1.81.5
 CATEGORIES=	editors
-MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dd
+MASTER_SITES=	http://www.kotnet.org/~skimo/nvi/devel/
 
 MAINTAINER=	dd@FreeBSD.org
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/iconv
 LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
 
+USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
-PATCH_WRKSRC=		${WRKDIR}
 GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--with-db3=${PREFIX}
 CONFIGURE_SCRIPT=	../dist/configure
+MAN1=			ex.1 vi.1 view.1
 
-.include <bsd.port.pre.mk>
-
-# We need src/include/wchar.h and friends.  This isn't the exact
-# version we need, but it's close enough.
-.if ${OSVERSION} < 500019
-BROKEN=		"need wide character support"
-.endif
+# XXX: nvi doesn't really need sys/select.h, but I don't think the
+# build should break when it includes it (this happens on RELENG_4;
+# sys/select.h is effectively empty on -current).
+post-configure:
+	${ECHO_CMD} "#undef HAVE_SYS_SELECT_H" >> ${WRKSRC}/config.h
 
 post-install:
-	${MV} ${PREFIX}/bin/vi ${PREFIX}/bin/nvi-devel
+.for __p in ex vi view
+	@# XXX: Hack the Makefile in the distribution so this isn't necessary.
+	${RM} ${PREFIX}/man/cat1/${__p}.0
+.endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
