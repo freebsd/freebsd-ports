@@ -67,7 +67,7 @@ USRLOCAL_FILES_LIB=	\
 		rav-wrapper sophos-autoupdate
 
 post-extract:
-	cd ${WRKSRC} && tar xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}/* .
+	cd ${WRKSRC} && ${TAR} xzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}/* .
 
 do-build:
 	${PERL} -pi -e \
