@@ -18,7 +18,7 @@ MAINTAINER=	tom@eborcom.com
 # want these extensions installed, NO_GDBM must be defined.
 #
 .if !defined(NO_GDBM)
-BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 .endif
 
 ALL_TARGET=	config.h xconfig.h all
