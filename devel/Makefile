@@ -350,6 +350,7 @@
     SUBDIR += kdevelop
     SUBDIR += kimwitu
     SUBDIR += kimwitu++
+    SUBDIR += kodos
     SUBDIR += korelib
     SUBDIR += kprof
     SUBDIR += kscope
