@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=    2.8.4p2
+PORTVERSION=    2.8.5d1
 CATEGORIES=     www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=       ${PORTNAME}2.8.4pre.2
+DISTNAME=       ${PORTNAME}2.8.5dev.1
 
 MAINTAINER=	ache@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
-WRKSRC=		${WRKDIR}/${PORTNAME}2-8-4
+WRKSRC=		${WRKDIR}/${PORTNAME}2-8-5
 USE_BZIP2=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
