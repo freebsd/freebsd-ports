@@ -1,51 +1,27 @@
---- configure.in.orig	Tue Nov  9 10:48:20 1999
-+++ configure.in	Mon Jan 17 09:13:20 2000
-@@ -22,17 +22,17 @@
-   if test x$gtk_config_exec_prefix != x ; then
-      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
-      if test x${GTK_CONFIG+set} != xset ; then
--        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
-+        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config
-      fi
-   fi
-   if test x$gtk_config_prefix != x ; then
-      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
-      if test x${GTK_CONFIG+set} != xset ; then
--        GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
-+        GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config
-      fi
-   fi
- 
--  AC_PATH_PROG(GTK_CONFIG, gtk-config, no)
-+  AC_PATH_PROG(GTK_CONFIG, gtk12-config, no)
-   min_gtk_version=ifelse([$1], ,0.99.7,$1)
-   AC_MSG_CHECKING(for GTK - version >= $min_gtk_version)
-   no_gtk=""
-@@ -1501,7 +1501,7 @@
- if test "$wxUSE_GTK" = 1; then
-     dnl avoid calling AM_PATH_GTK twice, so check first for the newer version and
-     dnl only then, if it wasn't found, for an older one
--    AM_PATH_GTK(1.2.1, WXGTK12=1, AC_MSG_ERROR(Is gtk-config in path and GTK+ is version 1.2.1 or above?))
-+    AM_PATH_GTK(1.2.1, WXGTK12=1, AC_MSG_ERROR(Is gtk12-config in path and GTK+ is version 1.2.1 or above?))
- 
-     TOOLKIT_INCLUDE="$GTK_CFLAGS"
-     GUI_TK_LIBRARY="$GTK_LIBS"
-@@ -1701,12 +1701,10 @@
- WX_LIBRARY_NAME_STATIC="lib${WX_LIBRARY}.a"
+--- configure.in.orig	Sun Apr 23 07:59:54 2000
++++ configure.in	Sun Apr 23 08:04:06 2000
+@@ -1974,16 +1974,12 @@
+ WX_LIBRARY_NAME_STATIC_GL="lib${WX_LIBRARY}_gl.a"
  
  dnl the name of the shared library
 -WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}-${WX_RELEASE}.so.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
+-WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY}_gl-${WX_RELEASE}.so.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
 +WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.so.2"
++WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY}_gl.so.2"
  
  dnl the name of the links to the shared library
 -WX_LIBRARY_LINK1="lib${WX_LIBRARY}-${WX_RELEASE}.so.${WX_CURRENT}"
 -WX_LIBRARY_LINK2="lib${WX_LIBRARY}-${WX_RELEASE}.so"
 -WX_LIBRARY_LINK3="lib${WX_LIBRARY}.so"
+-WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY}_gl-${WX_RELEASE}.so.${WX_CURRENT}"
+-WX_LIBRARY_LINK2_GL="lib${WX_LIBRARY}_gl-${WX_RELEASE}.so"
+-WX_LIBRARY_LINK3_GL="lib${WX_LIBRARY}_gl.so"
 +WX_LIBRARY_LINK1="lib${WX_LIBRARY}.so"
++WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY}_gl.so"
  
  dnl shared library settings
  SHARED_LD=
-@@ -2964,8 +2962,6 @@
+@@ -3645,8 +3641,6 @@
  AC_SUBST(WX_LIBRARY)
  AC_SUBST(WX_TARGET_LIBRARY)
  AC_SUBST(WX_LIBRARY_LINK1)
@@ -53,4 +29,13 @@
 -AC_SUBST(WX_LIBRARY_LINK3)
  AC_SUBST(PROGRAM_EXT)
  
+ dnl global gl options
+@@ -3656,8 +3650,6 @@
+ AC_SUBST(WX_LIBRARY_GL)
+ AC_SUBST(WX_TARGET_LIBRARY_GL)
+ AC_SUBST(WX_LIBRARY_LINK1_GL)
+-AC_SUBST(WX_LIBRARY_LINK2_GL)
+-AC_SUBST(WX_LIBRARY_LINK3_GL)
+ 
  dnl are we supposed to create the links?
+ AC_SUBST(WX_ALL)

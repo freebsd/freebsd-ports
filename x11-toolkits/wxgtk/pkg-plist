@@ -1,4 +1,5 @@
 bin/wx-config
+bin/wxgtk-config
 include/wx/accel.h
 include/wx/app.h
 include/wx/arrimpl.cpp
@@ -8,12 +9,14 @@ include/wx/brush.h
 include/wx/buffer.h
 include/wx/busyinfo.h
 include/wx/button.h
+include/wx/calctrl.h
 include/wx/caret.h
 include/wx/checkbox.h
 include/wx/checklst.h
 include/wx/choicdlg.h
 include/wx/choice.h
 include/wx/clipbrd.h
+include/wx/cmdline.h
 include/wx/cmndata.h
 include/wx/colordlg.h
 include/wx/colour.h
@@ -25,6 +28,8 @@ include/wx/ctrlsub.h
 include/wx/cursor.h
 include/wx/dataobj.h
 include/wx/date.h
+include/wx/datetime.h
+include/wx/datetime.inl
 include/wx/datstrm.h
 include/wx/db.h
 include/wx/dbtable.h
@@ -39,6 +44,7 @@ include/wx/debug.h
 include/wx/defs.h
 include/wx/dialog.h
 include/wx/dialup.h
+include/wx/dir.h
 include/wx/dirdlg.h
 include/wx/dnd.h
 include/wx/docmdi.h
@@ -46,6 +52,7 @@ include/wx/docview.h
 include/wx/dragimag.h
 include/wx/dynarray.h
 include/wx/dynlib.h
+include/wx/encconv.h
 include/wx/event.h
 include/wx/expr.h
 include/wx/ffile.h
@@ -61,15 +68,18 @@ include/wx/fontmap.h
 include/wx/fontutil.h
 include/wx/frame.h
 include/wx/fs_inet.h
+include/wx/fs_mem.h
 include/wx/fs_zip.h
 include/wx/gauge.h
 include/wx/gdicmn.h
 include/wx/gdiobj.h
+include/wx/generic/calctrl.h
 include/wx/generic/caret.h
 include/wx/generic/choicdgg.h
 include/wx/generic/colrdlgg.h
 include/wx/generic/dcpsg.h
 include/wx/generic/dirdlgg.h
+include/wx/generic/dragimgg.h
 include/wx/generic/filedlgg.h
 include/wx/generic/fontdlgg.h
 include/wx/generic/grid.h
@@ -84,6 +94,7 @@ include/wx/generic/listctrl.h
 include/wx/generic/msgdlgg.h
 include/wx/generic/notebook.h
 include/wx/generic/panelg.h
+include/wx/generic/plot.h
 include/wx/generic/printps.h
 include/wx/generic/prntdlgg.h
 include/wx/generic/progdlgg.h
@@ -94,7 +105,10 @@ include/wx/generic/statusbr.h
 include/wx/generic/tabg.h
 include/wx/generic/textdlgg.h
 include/wx/generic/treectrl.h
+include/wx/generic/wizard.h
+include/wx/geometry.h
 include/wx/gifdecod.h
+include/wx/glcanvas.h
 include/wx/grid.h
 include/wx/gsocket.h
 include/wx/gtk/accel.h
@@ -126,6 +140,7 @@ include/wx/gtk/fontdlg.h
 include/wx/gtk/frame.h
 include/wx/gtk/gauge.h
 include/wx/gtk/gdiobj.h
+include/wx/gtk/glcanvas.h
 include/wx/gtk/icon.h
 include/wx/gtk/joystick.h
 include/wx/gtk/listbox.h
@@ -176,11 +191,20 @@ include/wx/html/htmprint.h
 include/wx/html/m_templ.h
 include/wx/html/winpars.h
 include/wx/icon.h
+include/wx/imagbmp.h
 include/wx/image.h
+include/wx/imaggif.h
+include/wx/imagjpeg.h
 include/wx/imaglist.h
+include/wx/imagpcx.h
+include/wx/imagpng.h
+include/wx/imagpnm.h
+include/wx/imagtiff.h
 include/wx/intl.h
 include/wx/ioswrap.h
 include/wx/ipcbase.h
+include/wx/isql.h
+include/wx/isqlext.h
 include/wx/joystick.h
 include/wx/layout.h
 include/wx/laywin.h
@@ -192,6 +216,7 @@ include/wx/log.h
 include/wx/longlong.h
 include/wx/matrix.h
 include/wx/mdi.h
+include/wx/memconf.h
 include/wx/memory.h
 include/wx/menu.h
 include/wx/menuitem.h
@@ -210,7 +235,7 @@ include/wx/palette.h
 include/wx/panel.h
 include/wx/paper.h
 include/wx/pen.h
-include/wx/pnghand.h
+include/wx/plot.h
 include/wx/print.h
 include/wx/printdlg.h
 include/wx/prntbase.h
@@ -253,9 +278,7 @@ include/wx/string.h
 include/wx/tab.h
 include/wx/tabctrl.h
 include/wx/taskbar.h
-include/wx/tbar95.h
 include/wx/tbarbase.h
-include/wx/tbarmsw.h
 include/wx/tbarsmpl.h
 include/wx/textctrl.h
 include/wx/textdlg.h
@@ -272,6 +295,8 @@ include/wx/txtstrm.h
 include/wx/types.h
 include/wx/unix/execute.h
 include/wx/unix/fontutil.h
+include/wx/unix/gsockunx.h
+include/wx/unix/mimetype.h
 include/wx/url.h
 include/wx/utils.h
 include/wx/valgen.h
@@ -282,6 +307,7 @@ include/wx/version.h
 include/wx/wave.h
 include/wx/wfstream.h
 include/wx/window.h
+include/wx/wizard.h
 include/wx/wx.h
 include/wx/wx_cw.h
 include/wx/wx_cw_cm.h
@@ -330,8 +356,8 @@ share/wx/gs_afm/TimesRo.afm
 @dirrm lib/wx/include/wx
 @dirrm lib/wx/include
 @dirrm lib/wx
-@dirrm share/wx/gs_afm
 @dirrm share/wx/afm
+@dirrm share/wx/gs_afm
 @dirrm share/wx
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
