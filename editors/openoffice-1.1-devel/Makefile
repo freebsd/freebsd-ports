@@ -7,6 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	644
+PORTREVISION=	1
 SNAPDATE=	20030412
 CATEGORIES+=	editors
 MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
@@ -523,7 +524,6 @@ pre-install:
 	-e 's#%%PORTVERSION%%#${BUILD_NR}#g' \
 	${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
 	@${MKDIR} -p ${WRKSRC}/../solver/644/unxfbsd.pro/bin/${LANG_EXT}/osl/
-	@${CP}	${WRKSRC}/../solver/644/unxfbsd.pro/bin/01/osl/* ${WRKSRC}/../solver/644/unxfbsd.pro/bin/${LANG_EXT}/osl/
 
 do-install:
 .if !defined(DISPLAY)
