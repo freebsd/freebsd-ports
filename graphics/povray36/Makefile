@@ -8,16 +8,18 @@
 PORTNAME=	povray
 PORTVERSION=	3.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.0/Unix/ \
-		ftp://www.hensa.ac.uk/mirrors/povray/Old-Versions/Official-3.0/Unix/
+MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
+		ftp://ftp.gigabell.net/pub/unix/apps/graphics/povray/%SUBDIR%/ \
+		ftp://www.hensa.ac.uk/mirrors/povray/%SUBDIR%/ \
+		ftp://ftp.fh-aachen.de/pub/mirror/ftp.povray.org/povray/%SUBDIR%/
+MASTER_SITE_SUBDIR=	Old-Versions/Official-3.0/Unix
 DISTNAME=	povray3
 DISTFILES=	povuni_s.tgz povuni_d.tgz
+DIST_SUBDIR=	povray30
 
 MAINTAINER=	kris@FreeBSD.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
-
-DIST_SUBDIR=	povray30
 
 USE_XLIB=	yes
 MAN1=		povray.1
@@ -26,13 +28,13 @@ NO_LATEST_LINK=	yes
 POVLIB=		${PREFIX}/lib/povray3
 
 do-build:
-	(cd ${WRKSRC}/source/unix; make newxwin)
+	(cd ${WRKSRC}/source/unix; ${SETENV} ${MAKE_ENV} ${MAKE} newxwin)
 
 do-install:
 	@${MKDIR} ${POVLIB}/allscene
 	@${INSTALL_PROGRAM} ${WRKSRC}/source/unix/x-povray ${PREFIX}/bin/povray
-	@(cd ${WRKSRC}; tar cpf - pov3demo povscn docsdemo include texsamps) | \
-		(cd ${POVLIB}; tar xpf -)
+	@(cd ${WRKSRC}; ${TAR} cpf - pov3demo povscn docsdemo include texsamps) | \
+		(cd ${POVLIB}; ${TAR} xpf -)
 	@${INSTALL_DATA} ${WRKSRC}/*.ini ${POVLIB}/
 	@${INSTALL_DATA} ${WRKSRC}/*.doc ${POVLIB}/
 	@${INSTALL_DATA} ${WRKSRC}/*.gif ${WRKSRC}/*.xpm ${POVLIB}/
