@@ -1,5 +1,4 @@
 bin/qstat
-%%PORTDOCS%%share/doc/qstat/qstat.txt
 %%PORTDOCS%%share/doc/qstat/qstatdoc.html
 %%PORTDOCS%%share/doc/qstat/template/README.txt
 %%PORTDOCS%%share/doc/qstat/template/broc.lst
