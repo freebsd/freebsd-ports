@@ -13,7 +13,7 @@ MASTER_SITES=	http://mtbook.net/download/
 DISTFILES=	MT-${PORTVERSION}-full-lib.new.tar.gz mt.diff mt.no-htmlarea.diff
 EXTRACT_ONLY=	MT-${PORTVERSION}-full-lib.new.tar.gz
 
-MAINTAINER=	leeym@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based personal publishing system like weblogs
 
 RUN_DEPENDS=	${LOCALBASE}/${CGIDIR}/mt.cgi:${PORTSDIR}/www/MT
@@ -45,7 +45,7 @@ post-extract:
 
 do-install:
 	@${REINPLACE_CMD} -e 's/# PublishCharset Shift_JIS/PublishCharset UTF-8/g' \
-		${PREFIX}/${CGIDIR}/mt.cfg
+		${LOCALBASE}/${CGIDIR}/mt.cgi
 	@cd ${WRKDIR} && ${CP} -R www ${PREFIX}
 	@${ECHO} "===>   Patching www/MT for ${PKGNAME}"
 	@${CAT} ${DISTDIR}/${MT_DIFF} | \
