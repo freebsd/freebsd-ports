@@ -30,6 +30,7 @@
     SUBDIR += qt-i18n
     SUBDIR += qt142
     SUBDIR += qt20
+    SUBDIR += rep-gtk
     SUBDIR += ruby-gtk
     SUBDIR += rubytk
     SUBDIR += slingshot
