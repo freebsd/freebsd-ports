@@ -1,43 +1,38 @@
+bin/app
+bin/grm
+bin/str
+bin/printstr
+bin/tra
+bin/cextract
 bin/print
+bin/prs
 bin/thot
-include/thot/app.h
-include/thot/appaction.h
-include/thot/application.h
-include/thot/attribute.h
-include/thot/browser.h
-include/thot/content.h
-include/thot/dialog.h
-include/thot/document.h
-include/thot/fileaccess.h
-include/thot/genericdriver.h
-include/thot/interface.h
-include/thot/labelAllocator.h
-include/thot/language.h
-include/thot/libmsg.h
-include/thot/message.h
-include/thot/pivot.h
-include/thot/plugin.h
-include/thot/presentation.h
-include/thot/presentdriver.h
-include/thot/print.h
-include/thot/pschema.h
-include/thot/reference.h
-include/thot/registry.h
-include/thot/selection.h
-include/thot/simx.h
-include/thot/specificdriver.h
-include/thot/sysdep.h
-include/thot/thot_gui.h
-include/thot/thot_sys.h
-include/thot/tree.h
-include/thot/typebase.h
-include/thot/view.h
-lib/libThotDraw.a
-lib/libThotEditor.a
-lib/libThotIndex.a
-lib/libThotKernel.a
-lib/libThotTable.a
+share/thot/batch/APP.GRM
+share/thot/batch/PRESEN.GRM
+share/thot/batch/STRUCT.GRM
+share/thot/batch/TRANS.GRM
+share/thot/batch/APP.LAN
+share/thot/batch/PRESEN.LAN
+share/thot/batch/STRUCT.LAN
+share/thot/batch/TRANS.LAN
+share/thot/batch/APP.LST
+share/thot/batch/PRESEN.LST
+share/thot/batch/STRUCT.LST
+share/thot/batch/TRANS.LST
+share/thot/applis/bin/grm
+share/thot/applis/bin/str
+share/thot/applis/bin/prs
+share/thot/applis/bin/tra
+share/thot/applis/bin/app
+share/thot/applis/bin/printstr
+share/thot/applis/bin/thot
+share/thot/applis/bin/print
 share/thot/config/XKeysymDB
+share/thot/config/thot.ini
+share/thot/config/thot.color
+share/thot/config/thot.pattern
+share/thot/config/thot.keyboard
+share/thot/config/fr-thotdialogue
 share/thot/config/en-appdialogue
 share/thot/config/en-compildialogue
 share/thot/config/en-corrdialogue
@@ -65,18 +60,17 @@ share/thot/config/fr-libdialogue
 share/thot/config/fr-printdialogue
 share/thot/config/fr-prsdialogue
 share/thot/config/fr-strdialogue
-share/thot/config/fr-thotdialogue
 share/thot/config/fr-thotmessage
 share/thot/config/fr-thotversion
 share/thot/config/fr-transdialogue
 share/thot/config/fr-typdialogue
-share/thot/config/thot.color
-share/thot/config/thot.ini
-share/thot/config/thot.keyboard
-share/thot/config/thot.pattern
-share/thot/dicopar/alphabet
+share/thot/fonts/Families.list
+share/thot/fonts/fonts.dir
+share/thot/fonts/icones.ff
+share/thot/fonts/icones.pcf
+share/thot/fonts/icones1.fb
+share/thot/fonts/icones11.fb
 share/thot/dicopar/american.ptn
-share/thot/dicopar/clavier
 share/thot/dicopar/deutsch.ptn
 share/thot/dicopar/english.ptn
 share/thot/dicopar/espanol.ptn
@@ -86,19 +80,18 @@ share/thot/dicopar/italiano.ptn
 share/thot/dicopar/nederl.ptn
 share/thot/dicopar/portug.ptn
 share/thot/dicopar/swedish.ptn
-share/thot/fonts/Families.list
-share/thot/fonts/fonts.dir
-share/thot/fonts/icones.ff
-share/thot/fonts/icones.pcf
-share/thot/fonts/icones1.fb
-share/thot/fonts/icones11.fb
+share/thot/dicopar/alphabet
+share/thot/dicopar/clavier
 share/thot/schemas/Makefile
 share/thot/schemas/Text_ASCII.inc
 share/thot/schemas/Text_SGML.inc
+share/thot/schemas/EDITOR.h
+share/thot/schemas/ExtCss.h
 share/thot/schemas/Arbre2.S
 share/thot/schemas/Draw2.S
 share/thot/schemas/Draw3.S
 share/thot/schemas/Expose.S
+share/thot/schemas/ExtCss.S
 share/thot/schemas/ExtIndex.S
 share/thot/schemas/Feuille.S
 share/thot/schemas/Fichier.S
@@ -113,6 +106,7 @@ share/thot/schemas/Arbre2.STR
 share/thot/schemas/Draw2.STR
 share/thot/schemas/Draw3.STR
 share/thot/schemas/Expose.STR
+share/thot/schemas/ExtCss.STR
 share/thot/schemas/ExtIndex.STR
 share/thot/schemas/Feuille.STR
 share/thot/schemas/Fichier.STR
@@ -127,6 +121,7 @@ share/thot/schemas/Arbre2P.P
 share/thot/schemas/Draw2P.P
 share/thot/schemas/Draw3P.P
 share/thot/schemas/ExposeP.P
+share/thot/schemas/ExtCssP.P
 share/thot/schemas/ExtIndexP.P
 share/thot/schemas/FeuilleP.P
 share/thot/schemas/FichierP.P
@@ -148,6 +143,7 @@ share/thot/schemas/ExposePINUS.PRS
 share/thot/schemas/ExposePIUS.PRS
 share/thot/schemas/ExposePP.PRS
 share/thot/schemas/ExposePPUS.PRS
+share/thot/schemas/ExtCssP.PRS
 share/thot/schemas/ExtIndexPP.PRS
 share/thot/schemas/ExtIndexPPE.PRS
 share/thot/schemas/ExtIndexPPEUS.PRS
@@ -204,7 +200,6 @@ share/thot/schemas/Draw2H.T
 share/thot/schemas/Draw2T.T
 share/thot/schemas/Draw2T1.T
 share/thot/schemas/Draw3A.T
-share/thot/schemas/MathH.T
 share/thot/schemas/Draw3H.T
 share/thot/schemas/Draw3T.T
 share/thot/schemas/Draw3T1.T
@@ -218,6 +213,7 @@ share/thot/schemas/FichierA.T
 share/thot/schemas/FichierH.T
 share/thot/schemas/FichierT.T
 share/thot/schemas/LettreA.T
+share/thot/schemas/MathH.T
 share/thot/schemas/MathT.T
 share/thot/schemas/ParagraphA.T
 share/thot/schemas/ParagraphH.T
@@ -280,6 +276,7 @@ share/thot/schemas/Arbre2.conf
 share/thot/schemas/Draw2.conf
 share/thot/schemas/Draw3.conf
 share/thot/schemas/Expose.conf
+share/thot/schemas/ExtCss.conf
 share/thot/schemas/ExtIndex.conf
 share/thot/schemas/Feuille.conf
 share/thot/schemas/Fichier.conf
@@ -292,12 +289,12 @@ share/thot/schemas/Table.conf
 share/thot/schemas/Arbre2.fr
 share/thot/schemas/Draw2.fr
 share/thot/schemas/Draw3.fr
+share/thot/schemas/Math.fr
 share/thot/schemas/Expose.fr
 share/thot/schemas/ExtIndex.fr
 share/thot/schemas/Feuille.fr
 share/thot/schemas/Fichier.fr
 share/thot/schemas/Lettre.fr
-share/thot/schemas/Math.fr
 share/thot/schemas/Paragraphe.fr
 share/thot/schemas/Rapport.fr
 share/thot/schemas/RefBib.fr
@@ -320,5 +317,8 @@ share/thot/schemas/Table.en
 @dirrm share/thot/doc
 @exec mkdir -p %D/share/thot/doc
 @dirrm share/thot/dicopar
+@dirrm share/thot/batch
+@dirrm share/thot/applis/bin
+@dirrm share/thot/applis
 @dirrm share/thot/config
 @dirrm share/thot

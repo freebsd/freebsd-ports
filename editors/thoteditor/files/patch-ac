@@ -1,11 +1,52 @@
---- ../makes/Makefile.template.orig	Tue May  6 23:55:03 1997
-+++ ../makes/Makefile.template	Fri Feb 12 15:06:58 1999
-@@ -56,7 +56,7 @@
- # MOTIFLIBS : how to grab Motif at link time.
- #             X11R6 probably need -lSM -lICE
- #
--MOTIFLIBS = -L/usr/X11/lib -lXm -lXt			# generic
-+MOTIFLIBS = ${MOTIFLIB} -L/usr/X11/lib -lXt -lXp			# generic
- #MOTIFLIBS = -L/usr/X11R6/lib -lXm -lXt -lSM -lICE	# Linux
- #MOTIFLIBS = -L/usr/dt/lib -L/usr/openwin/lib -lXm -lXt	# Solaris
- #MOTIFLIBS = -L/usr/X11/lib -lXm -lXt			# SunOs
+--- ../thot/Makefile.in.orig	Wed Nov 19 05:41:49 1997
++++ ../thot/Makefile.in	Sat Sep 25 11:53:28 1999
+@@ -54,30 +54,32 @@
+ 	$(RM) *.o EDITORAPP.c EDITOR.A
+ 
+ install : all
+-	@(if test ! -d $(datadir) ; then $(MKDIR) $(datadir) ; fi)
+-	@(if test ! -d $(datadir)/thot ; then $(MKDIR) $(datadir)/thot ; fi)
+-	@(if test ! -d $(datadir)/thot/config ; then $(MKDIR) $(datadir)/thot/config ; fi)
+-	@(if test ! -d $(datadir)/thot/fonts ; then $(MKDIR) $(datadir)/thot/fonts ; fi)
+-	@(if test ! -d $(datadir)/thot/dicopar ; then $(MKDIR) $(datadir)/thot/dicopar ; fi)
+-	@(if test ! -d $(datadir)/thot/applis ; then $(MKDIR) $(datadir)/thot/applis ; fi)
+-	@(if test ! -d $(datadir)/thot/applis/bin ; then $(MKDIR) $(datadir)/thot/applis/bin ; fi)
+-	@(if test ! -d $(datadir)/schemas ; then $(MKDIR) $(datadir)/schemas ; fi)
+-	$(INSTALL_BIN) ../bin/thot $(datadir)/thot/applis/bin
+-	$(INSTALL_BIN) ../bin/print $(datadir)/thot/applis/bin
+-	(for i in $(SCHEMAS) ; do \
++	@(set -x;if test ! -d $(datadir) ; then $(MKDIR) $(datadir) ; fi)
++	@(set -x;if test ! -d $(datadir)/thot ; then $(MKDIR) $(datadir)/thot ; fi)
++	@(set -x;if test ! -d $(datadir)/thot/config ; then $(MKDIR) $(datadir)/thot/config ; fi)
++	@(set -x;if test ! -d $(datadir)/thot/fonts ; then $(MKDIR) $(datadir)/thot/fonts ; fi)
++	@(set -x;if test ! -d $(datadir)/thot/dicopar ; then $(MKDIR) $(datadir)/thot/dicopar ; fi)
++	@(set -x;if test ! -d $(datadir)/thot/applis ; then $(MKDIR) $(datadir)/thot/applis ; fi)
++	@(set -x;if test ! -d $(datadir)/thot/applis/bin ; then $(MKDIR) $(datadir)/thot/applis/bin ; fi)
++	@(set -x;if test ! -d $(datadir)/thot/schemas ; then $(MKDIR) $(datadir)/thot/schemas ; fi)
++	@$(INSTALL_BIN) ../bin/thot $(datadir)/thot/applis/bin
++	@$(INSTALL_BIN) ../bin/print $(datadir)/thot/applis/bin
++	@$(INSTALL_DATA) EDITOR.h $(THOTDIR)/schemas
++	@$(INSTALL_DATA) ExtCss.h $(THOTDIR)/schemas
++	@(set -x;for i in $(SCHEMAS) ; do \
+ 	  for file in `$(ECHO) $(THOTDIR)/schemas/$$i` ; do \
+ 	    $(INSTALL_DATA) $$file $(datadir)/thot/schemas ; \
+ 	  done ; done)
+-	(for i in $(CONFIGFILES) ; do \
+-	  for file in `$(ECHO) $(THOTDIR)/thot/config/$$i` ; do \
++	@(set -x;for i in $(CONFIGFILES) ; do \
++	  for file in `$(ECHO) $(THOTDIR)/config/$$i` ; do \
+ 	    $(INSTALL_DATA) $$file $(datadir)/thot/config ; \
+ 	  done ; done)
+-	(for i in $(DICOFILES) ; do \
+-	  for file in `$(ECHO) $(THOTDIR)/thot/dicopar/$$i` ; do \
++	@(set -x;for i in $(DICOFILES) ; do \
++	  for file in `$(ECHO) $(THOTDIR)/dicopar/$$i` ; do \
+ 	    $(INSTALL_DATA) $$file $(datadir)/thot/dicopar ; \
+ 	  done ; done)
+-	(for i in $(FONTSFILES) ; do \
+-	  for file in `$(ECHO) $(THOTDIR)/thot/fonts/$$i` ; do \
++	@(set -x;for i in $(FONTSFILES) ; do \
++	  for file in `$(ECHO) $(THOTDIR)/fonts/$$i` ; do \
+ 	    $(INSTALL_DATA) $$file $(datadir)/thot/fonts ; \
+ 	  done ; done)
+ 
