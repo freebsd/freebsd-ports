@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyslsk
-PORTVERSION=	1.2.4a
+PORTVERSION=	1.2.4b
 CATEGORIES=	net
 MASTER_SITES=	http://www.sensi.org/~ak/pyslsk/
 
@@ -15,12 +15,15 @@ COMMENT=	"Client for SoulSeek filesharing system"
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
+
 .if !defined(WITHOUT_VORBIS)
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ogg/vorbismodule.so:${PORTSDIR}/audio/py-vorbis
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/ogg/vorbismodule.so:${PORTSDIR}/audio/py-vorbis
 .endif
+
 .if !defined(WITHOUT_BSDDB3)
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb3
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb3
 .endif
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
