@@ -1,0 +1,13 @@
+--- Makefile.orig	Sun Mar  2 15:15:34 2003
++++ Makefile	Sun Mar  2 15:15:48 2003
+@@ -5,7 +5,7 @@
+ 
+ install:
+ 	install -c -o root -g wheel -m 755 ./twander.py ${PREFIX}/bin
+-	mkdir ${PREFIX}/share/doc/twander
++#	mkdir ${PREFIX}/share/doc/twander
+ 	install -c -o root -g wheel -m 644 ./twander.1.gz ${PREFIX}/man/man1
+-	install -c -o root -g wheel -m 644 ./twander-license.txt ${PREFIX}/share/doc/twander
+-	install -c -o root -g wheel -m 644 ./.twander ${PREFIX}/share/doc/twander
++#	install -c -o root -g wheel -m 644 ./twander-license.txt ${PREFIX}/share/doc/twander
++#	install -c -o root -g wheel -m 644 ./.twander ${PREFIX}/share/doc/twander

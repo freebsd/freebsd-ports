@@ -1,0 +1,24 @@
+"twander" is a Filesystem Browser which runs on both Unix-like systems
+as well as Win32 systems.  It embraces the best ideas of both similar
+GUI-driven programs (Konqueror, Windows Explorer) as well as
+text-based interfaces (Midnight Commander, List, Sweep).
+
+While the "twander" interface is graphical, all the major navigation,
+selection, and execution commands can be entered from the keyboard,
+not just the mouse.  This means Power Users who are strong typists can
+minimize dependency on the mouse and materially speed up their
+interactions with the system.
+
+Moreover, unlike the other programs, "twander" does not have a
+built-in set of commands (which typically cannot be changed).
+Instead, "twander" supports a rich macro configuration language for
+virtually limitless user-definition of commands.  The configuration
+language provides a simple mechanism for communicating the list of
+items currently selected in the GUI to the user-defined commands.
+
+Each user is thus free to configure a command set unique and
+appropriate to their needs.  As with the navigation commands,
+user-defined commands can be invoked with either the keyboard (a
+single keystroke) or the mouse (a menu selection).
+
+WWW:  http://www.tundraware.com/Software/twander/
