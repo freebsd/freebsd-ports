@@ -1,108 +1,89 @@
---- configure.orig	Mon Jan 20 19:45:51 2003
-+++ configure	Fri Feb 14 03:16:36 2003
-@@ -2587,7 +2587,7 @@
+--- configure.orig	Mon Jun  9 00:09:09 2003
++++ configure	Sun Jun 15 09:49:49 2003
+@@ -5504,7 +5504,7 @@
  fi
  
  if test x"$with_sdl" = "xyes"; then
 -	for ac_prog in sdl-config
 +	for ac_prog in sdl11-config
  do
- # Extract the first word of "$ac_prog", so it can be a program name with args.
+   # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -3906,7 +3906,7 @@
- 	SOUND_DRIVERS="$SOUND_DRIVERS soundsdl.o"
- fi
+@@ -9255,7 +9255,7 @@
  
--for ac_hdr in linux/soundcard.h machine/soundcard.h
-+for ac_hdr in linux/soundcard.h machine/soundcard.h sys/soundcard.h
+ 
+ 
+-for ac_header in linux/soundcard.h machine/soundcard.h
++for ac_header in linux/soundcard.h machine/soundcard.h sys/soundcard.h
  do
- ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
- echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -4039,7 +4039,7 @@
- #include "confdefs.h"
- #include <$ac_hdr>
- EOF
--ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
-+ac_try="$ac_cpp `esd-config --cflags` conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:4044: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
- ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
- if test -z "$ac_err"; then
-@@ -4068,7 +4068,7 @@
- 
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -9825,7 +9825,7 @@
  
  if test x"$with_sdl" = "xyes"; then
--  for ac_hdr in SDL/SDL_audio.h
-+  for ac_hdr in SDL_audio.h
+ 
+-for ac_header in SDL/SDL_audio.h
++for ac_header in SDL_audio.h
  do
- ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
- echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
-@@ -4081,7 +4081,7 @@
- #include "confdefs.h"
- #include <$ac_hdr>
- EOF
--ac_try="$ac_cpp conftest.$ac_ext >/dev/null 2>conftest.out"
-+ac_try="$ac_cpp `sdl11-config --cflags` conftest.$ac_ext >/dev/null 2>conftest.out"
- { (eval echo configure:4086: \"$ac_try\") 1>&5; (eval $ac_try) 2>&5; }
- ac_err=`grep -v '^ *+' conftest.out | grep -v "^conftest.${ac_ext}\$"`
- if test -z "$ac_err"; then
-@@ -4342,7 +4342,7 @@
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
+@@ -10625,7 +10625,6 @@
  fi
  
  if test x"$with_sdl" = "xyes"; then
 -	LIBS="$LIBS `sdl-config --libs`"
-+	LIBS="$LIBS `sdl11-config --libs`"
- 	echo $ac_n "checking for SDL_OpenAudio in -lSDL""... $ac_c" 1>&6
- echo "configure:4348: checking for SDL_OpenAudio in -lSDL" >&5
- ac_lib_var=`echo SDL'_'SDL_OpenAudio | sed 'y%./+-%__p_%'`
-@@ -4350,7 +4350,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
+ 
+ echo "$as_me:$LINENO: checking for SDL_OpenAudio in -lSDL" >&5
+ echo $ECHO_N "checking for SDL_OpenAudio in -lSDL... $ECHO_C" >&6
+@@ -10633,7 +10632,8 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lSDL $SOUND_LIBS $LIBS"
-+LIBS="$SOUND_LIBS $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 4356 "configure"
- #include "confdefs.h"
-@@ -4384,7 +4384,8 @@
- #define $ac_tr_lib 1
- EOF
++LIBS="`sdl11-config --libs` $SOUND_LIBS $LIBS"
++CPPFLAGS="`sld11-config --cflags` $CPPFLAGS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -10686,7 +10686,7 @@
+ #define HAVE_LIBSDL 1
+ _ACEOF
  
 -  LIBS="-lSDL $LIBS"
 +  LIBS="`sdl11-config --libs` $LIBS"
-+  CPPFLAGS="`sdl11-config --cflags` $CPPFLAGS"
  
+ fi
+ 
+@@ -10827,7 +10827,8 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   echo "$ac_t""no" 1>&6
-@@ -4493,7 +4494,8 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lesd $SOUND_LIBS $LIBS"
 +LIBS="`esd-config --libs` $SOUND_LIBS $LIBS"
 +CPPFLAGS="`esd-config --cflags` $CPPFLAGS"
- cat > conftest.$ac_ext <<EOF
- #line 4499 "configure"
- #include "confdefs.h"
-@@ -4527,7 +4529,7 @@
- #define $ac_tr_lib 1
- EOF
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -10880,7 +10881,7 @@
+ #define HAVE_LIBESD 1
+ _ACEOF
  
 -  LIBS="-lesd $LIBS"
 +  LIBS="`esd-config --libs` $LIBS"
  
- else
-   echo "$ac_t""no" 1>&6
---- src/config.h.in.orig	Sat Jan 18 13:12:15 2003
-+++ src/config.h.in	Fri Feb 14 03:24:18 2003
-@@ -229,6 +229,9 @@
- /* Define if you have the <machine/soundcard.h> header file.  */
+ fi
+ 
+--- src/config.h.in.orig	Mon Jun  9 00:09:47 2003
++++ src/config.h.in	Sun Jun 15 09:35:16 2003
+@@ -200,6 +200,9 @@
+ /* Define to 1 if you have the <machine/soundcard.h> header file. */
  #undef HAVE_MACHINE_SOUNDCARD_H
  
-+/* Define if you have the <sys/soundcard.h> header file.  */
++/* Define to 1 if you have the <sys/soundcard.h> header file.  */
 +#undef HAVE_SYS_SOUNDCARD_H
 +
- /* Define if you have the <midasdll.h> header file.  */
- #undef HAVE_MIDASDLL_H
+ /* Define to 1 if you have the `memmove' function. */
+ #undef HAVE_MEMMOVE
  
 --- src/sound.c.orig	Sat Jan 11 16:38:57 2003
 +++ src/sound.c	Fri Feb 14 03:21:39 2003

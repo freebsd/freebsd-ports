@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	vice
-PORTVERSION=	1.11
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.funet.fi/pub/cbm/crossplatform/emulators/VICE/
 .if defined(VICE_WITH_GNOME)
@@ -26,6 +25,7 @@ NO_PACKAGE=	${RESTRICTED}
 
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
+MAKE_ENV+=	MAKEINFOFLAGS="--no-split"
 
 .if defined(VICE_WITH_GNOME)
 USE_GNOME=	gnomelibs
@@ -57,7 +57,9 @@ post-patch:
 		${WRKSRC}/man/vice.1.sed > ${WRKSRC}/man/vice.1
 
 pre-install:
-	@${MKDIR} ${DOCSDIR}/images ${DOCSDIR}/plain
+	${MKDIR} ${DOCSDIR} ${PREFIX}/lib/vice/fonts
+	${INSTALL_DATA} ${WRKSRC}/data/fonts/vice-cbm.bdf \
+		${PREFIX}/lib/vice/fonts/
 
 post-install:
 	@${LN} -sf vice_toc.html ${DOCSDIR}/index.html

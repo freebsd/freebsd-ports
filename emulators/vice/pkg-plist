@@ -10,14 +10,23 @@ bin/xvic
 @unexec install-info --delete %D/info/vice.info %D/info/dir
 info/vice.info
 @exec install-info %D/info/vice.info %D/info/dir
-lib/vice/C128/basic
 lib/vice/C128/basic64
+lib/vice/C128/basichi
+lib/vice/C128/basiclo
 lib/vice/C128/beos_pos.vkm
 lib/vice/C128/beos_sym.vkm
 lib/vice/C128/c64s.vpl
 lib/vice/C128/ccs64.vpl
-lib/vice/C128/charg64
+lib/vice/C128/chargde
 lib/vice/C128/chargen
+lib/vice/C128/chargfr
+lib/vice/C128/chargse
+lib/vice/C128/kernalde
+lib/vice/C128/kernalfi
+lib/vice/C128/kernalfr
+lib/vice/C128/kernalit
+lib/vice/C128/kernalno
+lib/vice/C128/kernalse
 lib/vice/C128/default.vpl
 lib/vice/C128/default.vrs
 lib/vice/C128/dos_pos.vkm
@@ -34,7 +43,6 @@ lib/vice/C128/win_pos.vkm
 lib/vice/C128/win_sym.vkm
 lib/vice/C128/x11_pos.vkm
 lib/vice/C128/x11_sym.vkm
-lib/vice/C128/z80bios
 lib/vice/C64/basic
 lib/vice/C64/beos_pos.vkm
 lib/vice/C64/beos_sym.vkm
@@ -163,15 +171,25 @@ lib/vice/VIC20/win_pos.vkm
 lib/vice/VIC20/win_sym.vkm
 lib/vice/VIC20/x11_pos.vkm
 lib/vice/VIC20/x11_sym.vkm
-lib/vice/fonts/cbm-directory-charset.fon
 lib/vice/fonts/fonts.dir
 lib/vice/fonts/vice-cbm.pcf
+share/doc/vice/64doc.txt
+share/doc/vice/BUGS
+share/doc/vice/COPYING
+share/doc/vice/NEWS
 share/doc/vice/NLS-Howto.txt
+share/doc/vice/PETdoc.txt
 share/doc/vice/Readme.beos
 share/doc/vice/Readme.dos
+share/doc/vice/TODO
 share/doc/vice/Win32-Howto.txt
+share/doc/vice/cbm_basic_tokens.txt
+share/doc/vice/drive_info.txt
 share/doc/vice/index.html
 share/doc/vice/mon.txt
+share/doc/vice/navbarlogo.gif
+share/doc/vice/new.gif
+share/doc/vice/serial.txt
 share/doc/vice/vice_1.html
 share/doc/vice/vice_10.html
 share/doc/vice/vice_11.html
@@ -189,21 +207,8 @@ share/doc/vice/vice_7.html
 share/doc/vice/vice_8.html
 share/doc/vice/vice_9.html
 share/doc/vice/vice_toc.html
-share/doc/vice/images/navbarlogo.gif
-share/doc/vice/images/new.gif
-share/doc/vice/images/vice-logo.jpg
-share/doc/vice/images/vice-sublogo.jpg
-share/doc/vice/plain/64doc.txt
-share/doc/vice/plain/BUGS
-share/doc/vice/plain/COPYING
-share/doc/vice/plain/NEWS
-share/doc/vice/plain/PETdoc.txt
-share/doc/vice/plain/TODO
-share/doc/vice/plain/cbm_basic_tokens.txt
-share/doc/vice/plain/drive_info.txt
-share/doc/vice/plain/serial.txt
-@dirrm share/doc/vice/plain
-@dirrm share/doc/vice/images
+share/doc/vice/vice-logo.jpg
+share/doc/vice/vice-sublogo.jpg
 @dirrm share/doc/vice
 @dirrm lib/vice/VIC20
 @dirrm lib/vice/PLUS4
