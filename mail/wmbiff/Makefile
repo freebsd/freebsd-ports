@@ -7,6 +7,7 @@
 
 PORTNAME=		wmbiff
 PORTVERSION=		0.4.26
+PORTREVISION=		1
 CATEGORIES=		mail windowmaker afterstep
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +22,7 @@ OPTIONS=		GNUTLS "Support for SSL" off
 .include <bsd.port.pre.mk>
 
 .ifdef WITH_GNUTLS
-LIB_DEPENDS+=		gcrypt.12:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS+=		gcrypt.13:${PORTSDIR}/security/libgcrypt \
 			gnutls.12:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--disable-crypto
