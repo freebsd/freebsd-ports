@@ -1,0 +1,4 @@
+safesh is an authentication manager for OpenSSH.  By automatically creating
+keys and starting ssh-agents, it makes it (fairly) convenient to use one key
+for each host pair (authenticator and authenticatee), it avoids the use of
+authentication theft with SSH.
