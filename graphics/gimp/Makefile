@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	2.0.pre4
-PORTEPOCH=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		ftp://ftp.fh-heilbronn.de/mirrors/ftp.gimp.org/%SUBDIR%/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
-#MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/v${PORTVERSION}
-MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/testing
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.pre/pre/}
+MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}
+#MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/testing
+#DISTNAME=	${PORTNAME}-${PORTVERSION:S/.pre/pre/}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program (unstable development version)
@@ -28,7 +27,7 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		wmf.2:${PORTSDIR}/graphics/libwmf
 
-SHLIBVER?=	27
+SHLIBVER?=	0
 
 NO_LATEST_LINK=	yes
 
@@ -51,8 +50,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 GIMP_DISTFILE=	${DISTDIR}/${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAN1=		gimp-1.3.1 gimptool-2.0.1 gimp-remote-1.3.1
-MAN5=		gimprc-1.3.5
+MAN1=		gimp gimp-2.0.1 gimptool gimptool-2.0.1 gimp-remote gimp-remote-2.0.1
+MAN5=		gimprc-2.0.5
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes

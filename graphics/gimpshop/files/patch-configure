@@ -1,21 +1,13 @@
 --- configure.orig	Sun Mar  7 02:08:10 2004
 +++ configure	Sun Mar  7 02:48:14 2004
-@@ -31396,6 +31396,7 @@
- #include <gimp-print/gimp-print.h>
- #include <stdio.h>
- #include <stdlib.h>
-+#include <string.h>
- 
- int
- main ()
 @@ -32869,8 +32870,8 @@
  fi
  fi;
  
--gimpdatadir="$datadir/$PACKAGE/1.3"
--gimpplugindir="$libdir/$PACKAGE/1.3"
+-gimpdatadir="$datadir/$PACKAGE/2.0"
+-gimpplugindir="$libdir/$PACKAGE/2.0"
 +gimpdatadir="$datadir/$PACKAGE"
-+gimpplugindir="$libexecdir/$PACKAGE/1.3"
- gimpsysconfdir="$sysconfdir/$PACKAGE/1.3"
++gimpplugindir="$libexecdir/$PACKAGE/2.0"
+ gimpsysconfdir="$sysconfdir/$PACKAGE/2.0"
  
  localedir='${prefix}/${DATADIRNAME}/locale'
