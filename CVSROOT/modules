@@ -1788,6 +1788,7 @@ fribidi		ports/converters/fribidi
 frink		ports/devel/frink
 frodo		ports/emulators/frodo
 from		src/usr.bin/from
+frontline	ports/graphics/frontline
 frontpage	ports/www/frontpage
 frontpage-ar	ports/www/frontpage-ar
 frontpage-de	ports/www/frontpage-de
