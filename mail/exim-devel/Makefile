@@ -23,16 +23,11 @@ USE_PERL5=	YES
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
-# Uncomment the USE_LDAP, USE_MYSQL and USE_PAM definitions to link against
-# libldap, libmysqlclient and libpam respectively.  The libpam linkage is
+# Uncomment the USE_MYSQL and USE_PAM definitions to link against
+# libmysqlclient and libpam respectively.  The libpam linkage is
 # required for SMTP AUTH support.
-#USE_LDAP=	YES
 #USE_MYSQL=	YES
 #USE_PAM=	YES
-
-# If USE_LDAP==YES then LDAP_LIB_TYPE should be one of UMICHIGAN, NETSCAPE or
-# SOLARIS7:
-LDAP_LIB_TYPE=	UMICHIGAN
 
 # If USE_PAM==YES then one or more of USE_CRAM_MD5 and USE_PLAINTEXT
 # must be left uncommented.
@@ -52,15 +47,6 @@ SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 SEDLIST+=	-e 's/^EXIM_MONITOR/\#EXIM_MONITOR/'
 .endif
 
-.if defined(USE_LDAP) && ${USE_LDAP} == YES
-SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${PREFIX}/lib -lber -lldap,' \
-		-e 's,XX_LDAP_INCLUDE_XX,-I${PREFIX}/include,' \
-		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE},'
-.else
-SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
-		-e 's,^LDAP_LIB_TYPE,\#LDAP_LIB_TYPE,'
-.endif
-
 .if defined(USE_MYSQL) && ${USE_MYSQL} == YES
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
 		-e 's,XX_MYSQL_INCLUDE_XX,-I${PREFIX}/include/mysql,'
@@ -68,8 +54,7 @@ SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .endif
 
-.if ( !defined(USE_LDAP) || ${USE_LDAP} != YES ) && \
-    ( !defined(USE_MYSQL) || ${USE_MYSQL} != YES )
+.if ( !defined(USE_MYSQL) || ${USE_MYSQL} != YES )
 SEDLIST+=	-e 's/^LOOKUP_LIBS/\#LOOKUP_LIBS/' \
 		-e 's/^LOOKUP_INCLUDE/\#LOOKUP_INCLUDE/'
 .endif
