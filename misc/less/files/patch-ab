@@ -1,0 +1,41 @@
+--- charset.c.orig	Thu Mar 23 05:36:33 2000
++++ charset.c	Mon Jun 19 22:33:43 2000
+@@ -267,6 +267,10 @@
+ control_char(c)
+ 	int c;
+ {
++#ifdef COLOR_LESS
++	if (c == ESC)
++		return 0;
++#endif
+ 	c &= 0377;
+ 	return (chardef[c] & IS_CONTROL_CHAR);
+ }
+@@ -281,6 +285,20 @@
+ {
+ 	static char buf[8];
+ 
++#ifdef COLOR_LESS
++	if(c == ESC)
++		sprintf(buf, "%c", ESC);
++	else
++	{
++		c &= 0377;
++		if (!control_char(c))
++			sprintf(buf, "%c", c);
++		else if (!control_char(c ^ 0100))
++			sprintf(buf, "^%c", c ^ 0100);
++		else
++			sprintf(buf, binfmt, c);
++	}
++#else
+ 	c &= 0377;
+ 	if (!control_char(c))
+ 		sprintf(buf, "%c", c);
+@@ -290,5 +308,6 @@
+ 		sprintf(buf, "^%c", c ^ 0100);
+ 	else
+ 		sprintf(buf, binfmt, c);
++#endif
+ 	return (buf);
+ }
