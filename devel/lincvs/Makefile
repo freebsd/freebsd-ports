@@ -23,6 +23,8 @@ QTDIR?=		${X11BASE}
 MAKE_ENV+=      QTDIR=${QTDIR}
 ALL_TARGET=	install
 
+BROKEN=		"Missing dependency on qmake"
+
 pre-build:
 	( cd ${WRKSRC} && ${QTDIR}/bin/qmake -o Makefile lincvs.pro )
 	
