@@ -1,19 +1,19 @@
+lib/libamanda-2.4.1p1.so.0
 lib/libamanda.a
 lib/libamanda.la
 lib/libamanda.so
-lib/libamanda.so.6
+lib/libamclient-2.4.1p1.so.0
 lib/libamclient.a
 lib/libamclient.la
 lib/libamclient.so
-lib/libamclient.so.1
+lib/libamserver-2.4.1p1.so.0
 lib/libamserver.a
 lib/libamserver.la
 lib/libamserver.so
-lib/libamserver.so.4
+lib/libamtape-2.4.1p1.so.0
 lib/libamtape.a
 lib/libamtape.la
 lib/libamtape.so
-lib/libamtape.so.2
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 libexec/amanda/amandad
@@ -31,7 +31,6 @@ libexec/amanda/chg-manual
 libexec/amanda/chg-mtx
 libexec/amanda/chg-multi
 libexec/amanda/chg-rth
-libexec/amanda/chg-scsi
 libexec/amanda/chg-zd-mtx
 libexec/amanda/driver
 libexec/amanda/dumper
