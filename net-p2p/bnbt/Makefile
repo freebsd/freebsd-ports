@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bnbt
-PORTVERSION=	7.5b3
+PORTVERSION=	7.7b3
 CATEGORIES=	net
 MASTER_SITES=	http://bnbt.go-dedicated.com/
-DISTNAME=	bnbt75b-3
+DISTNAME=	bnbt77b-3
 
 MAINTAINER=	flz@xbsd.org
 COMMENT=	A C++ BitTorrent Tracker
