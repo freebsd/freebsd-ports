@@ -288,6 +288,7 @@ share/ImageMagick/magic.mgk
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Image.fig
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Image.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Image.png
+%%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Image.svg
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/ImageDesign.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/ImageMagick.png
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Install.html
