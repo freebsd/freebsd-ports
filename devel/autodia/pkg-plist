@@ -1,4 +1,5 @@
-bin/autodia
+bin/autodia.pl
+bin/autodia_java.pl
 lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram.pm
 lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Class.pm
 lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram/Component.pm
@@ -10,7 +11,12 @@ lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler.pm
 lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/Cpp.pm
 lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/Java.pm
 lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/Perl.pm
+lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler/PHP.pm
 lib/perl5/site_perl/%%PERL_VER%%/Autodia.pm
+lib/perl5/site_perl/%%PERL_VER%%/autodia.pl
+lib/perl5/site_perl/%%PERL_VER%%/autodia_java.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Autodia/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Autodia
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Autodia/Diagram
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Autodia/Handler
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Autodia
