@@ -24,10 +24,9 @@ EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 
-.include <bsd.port.pre.mk>
+USE_REINPLACE=	yes
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|varargs.h|stdarg.h|' ${WRKSRC}/iprintf/idoprnt.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
