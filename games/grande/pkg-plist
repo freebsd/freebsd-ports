@@ -65,3 +65,4 @@ share/grande/wav/shot.wav
 @dirrm share/grande/score
 @dirrm share/grande/stg
 @dirrm share/grande/wav
+@dirrm share/grande
