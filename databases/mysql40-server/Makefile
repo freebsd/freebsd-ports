@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	3.23.46
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-comment='FreeBSD port: ${PKGNAME}'
 
 .if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db
+CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db --with-innodb
 .endif
 .if defined(WITH_CHARSET) && ${WITH_CHARSET} != ""
 CONFIGURE_ARGS+=--with-charset=${WITH_CHARSET}
