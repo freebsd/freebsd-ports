@@ -8,7 +8,7 @@
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Multicast/
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Net 2>/dev/null || true
 www/beacon-%%VERSION%%/beacon
-www/beacon-%%VERSION%%
+@dirrm www/beacon-%%VERSION%%
 etc/beacon.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

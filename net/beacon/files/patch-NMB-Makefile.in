@@ -1,0 +1,11 @@
+--- Net-Multicast-Beacon/Makefile.in.orig	Tue Jul 13 20:56:28 2004
++++ Net-Multicast-Beacon/Makefile.in	Sat Dec 18 16:52:21 2004
+@@ -300,7 +300,7 @@
+ 	$(PERL) Makefile.PL MAKEFILE=$@
+ 
+ install-data-local:
+-	$(MAKE) -fMakefile.perl install
++	$(MAKE) -fMakefile.perl pure_install
+ clean-local:
+ 	if test -f Makefile.perl; then $(MAKE) -fMakefile.perl realclean; fi
+ 	rm -f Makefile.perl Makefile.perl.old
