@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	divxcalc
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://tuxpower.f2g.net/divxcalc/
+MASTER_SITES=	http://members.ams.chello.nl/r.slooten2/divxcalc/
 
 MAINTAINER=	ports@FreeBSD.org
 
