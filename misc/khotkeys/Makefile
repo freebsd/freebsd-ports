@@ -16,6 +16,7 @@ LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11 \
 		kdeui.3:${PORTSDIR}/x11/kdelibs11 \
 		kfm.3:${PORTSDIR}/x11/kdelibs11 \
 		kfile.3:${PORTSDIR}/x11/kdelibs11
+RUN_DEPENDS=	kcontrol:${PORTSDIR}/x11/kdebase11
 
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
