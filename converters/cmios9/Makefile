@@ -5,15 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=      cmios9
-PORTVERSION=   1.6
-CATEGORIES=    converters
-MASTER_SITES=  http://www.spies.com/~kmi/
+PORTNAME=	cmios9
+PORTVERSION=	2.0
+CATEGORIES=	converters
+MASTER_SITES=	http://www.spies.com/~kmi/
 
-MAINTAINER=    M.Indlekofer@gmx.de
-COMMENT=       Ftp-like access to Fairlight OS9/MDR-DOS devices and image files
+MAINTAINER=	M.Indlekofer@gmx.de
+COMMENT=	Ftp-like access to Fairlight image files and devices
+
+MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+
 PLIST_FILES=	bin/cmios9
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin	
 
 .include <bsd.port.mk>
