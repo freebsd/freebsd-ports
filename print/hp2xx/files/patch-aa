@@ -32,7 +32,7 @@
   # For non-gcc compilers, simply set CFLAGS = -O (to start with)
   #
   #CC       = gcc
-! CFLAGS   += -Wall -ansi -fstrength-reduce -finline-functions
+! CFLAGS   += -Wall -ansi
 ! #CC       = cc
 ! #CFLAGS   = -O
   
