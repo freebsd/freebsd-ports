@@ -9,7 +9,8 @@
 DISTNAME=	nlxb318e
 PKGNAME=	vscan-3.1.8
 CATEGORIES=	security
-MASTER_SITES=   ftp://ftp.mcafee.com/pub/antivirus/unix/linux/
+MASTER_SITES=   ftp://ftp.mcafee.com/pub/antivirus/unix/linux/ \
+		http://www.freebsd.org/~steve/distfiles/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=     obrien@FreeBSD.org
