@@ -1,0 +1,27 @@
+--- Dclock.c.orig	Tue Jan  4 14:01:53 2000
++++ Dclock.c	Tue Jan  4 14:01:55 2000
+@@ -967,7 +967,7 @@
+ {
+     char datestr[128];
+     register char *datep = datestr, *p;
+-    int x;
++    int x, year = now->tm_year + 1900;
+ 
+     if (!w->dclock.display_time)
+ 	datep += strlen(strcpy(datep, "Push HERE to Set/Unset Alarm"));
+@@ -1000,11 +1000,12 @@
+                     *datep++ = (now->tm_mday / 10 + '0');
+                 *datep++ = now->tm_mday % 10 + '0';
+             when 'Y':
+-                *datep++ = '1', *datep++ = '9';
++		*datep++ = (year / 1000) % 10 + '0';
++		*datep++ = (year / 100) % 10 + '0';
+             /* fall thru */
+             case 'y':
+-                *datep++ = now->tm_year / 10 + '0';
+-                *datep++ = now->tm_year % 10 + '0';
++                *datep++ = (year / 10) % 10 + '0';
++                *datep++ = year % 10 + '0';
+             when '%':
+                 *datep++ = *p;
+             otherwise: ; /* nothing */
