@@ -24,6 +24,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line player for mpeg layer 1, 2 and 3 audio
 
+FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/9fccad5a-7096-11d8-873f-0020ed76ef5a.html
+
 WANT_GNOME=	yes
 
 .if defined(WITH_ICONV)

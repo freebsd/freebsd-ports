@@ -24,6 +24,8 @@ DIST_SUBDIR=	mutt
 MAINTAINER=	iwashita@cqmail.net
 COMMENT=	Text-based mail client (Japanised Version)
 
+FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/67c05283-5d62-11d8-80e3-0020ed76ef5a.html
+
 LIB_DEPENDS=	slang.2:${PORTSDIR}/japanese/libslang \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .if !defined(WITH_GETTEXT)

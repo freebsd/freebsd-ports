@@ -15,6 +15,8 @@ DISTFILES=	${DISTNAME}-${PHP_SUFX}${EXTRACT_SUFX}
 MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	A set of PHP-scripts to adminstrate MySQL over the web
 
+FORBIDDEN=	http://people.freebsd.org/~eik/portaudit/cc0fb686-6550-11d8-80e3-0020ed76ef5a.html
+
 .if defined(WITH_PHP3)
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
 .endif
