@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	latex2html
-PORTVERSION=	99.2b8
-PORTREVISION=	1
+PORTVERSION=	2002-2-1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 
-MAINTAINER=	brett@peloton.runet.edu
+MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 
@@ -29,7 +28,7 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-perl=${PERL} \
 		--disable-gif \
-		--libdir=${DATADIR}
+		--shlibdir=${DATADIR}
 
 MAN1=	latex2html.1
 

@@ -53,7 +53,6 @@ share/latex2html/XyMTeX-HTML/hetaromh.perl
 share/latex2html/XyMTeX-HTML/locant.perl
 share/latex2html/XyMTeX-HTML/lowcycle.perl
 share/latex2html/XyMTeX-HTML/xymman.perl
-share/latex2html/cfgcache.pm
 share/latex2html/cweb2html/Makefile
 share/latex2html/cweb2html/README
 share/latex2html/cweb2html/cweb.cls
@@ -161,7 +160,6 @@ share/latex2html/icons/up.png
 share/latex2html/icons/up_g.png
 share/latex2html/icons/whiteball.png
 share/latex2html/icons/yellowball.png
-share/latex2html/l2hconf.pm
 share/latex2html/makemap
 share/latex2html/makeseg/makeseg
 share/latex2html/makeseg/makeseg.tex
@@ -210,8 +208,11 @@ share/latex2html/styles/french.perl
 share/latex2html/styles/galician.perl
 share/latex2html/styles/german.perl
 share/latex2html/styles/germanb.perl
+share/latex2html/styles/getimagesize.perl
 share/latex2html/styles/graphics.perl
+share/latex2html/styles/graphics-support.perl
 share/latex2html/styles/graphicx.perl
+share/latex2html/styles/graphixx.perl
 share/latex2html/styles/harvard.perl
 share/latex2html/styles/havard.perl
 share/latex2html/styles/heqn.perl
@@ -276,13 +277,17 @@ share/latex2html/texinputs/verbatimfiles.sty
 share/latex2html/versions/cp1252.pl
 share/latex2html/versions/decmulti.pl
 share/latex2html/versions/frame.pl
+share/latex2html/versions/hebrew.pl
 share/latex2html/versions/html2_1.pl
 share/latex2html/versions/html2_2.pl
 share/latex2html/versions/html3_0.pl
 share/latex2html/versions/html3_1.pl
 share/latex2html/versions/html3_2.pl
 share/latex2html/versions/html4_0.pl
+share/latex2html/versions/html4_01.pl
+share/latex2html/versions/html4_1.pl
 share/latex2html/versions/i18n.pl
+share/latex2html/versions/koi8.pl
 share/latex2html/versions/lang.pl
 share/latex2html/versions/latin1.pl
 share/latex2html/versions/latin2.pl
