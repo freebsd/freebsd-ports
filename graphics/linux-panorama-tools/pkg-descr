@@ -1,0 +1,15 @@
+Software to View, Create, Edit and Remap Panoramic Images :
+ 
+
+* PTStitcher: High quality, simple to use, all format stitching software.
+* Panorama Tools: Photoshop plug-in for panorama creation, editing and
+    remapping.
+* PTViewer: High quality spherical viewer, Standalone and java versions
+    for many platforms.
+
+This port uses only PTStitcher as a dependency for hugin.
+
+WWW: http://www.path.unimelb.edu.au/~dersch/
+
+- Ported by Cartola
+cartola@openit.com.br

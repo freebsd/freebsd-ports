@@ -1,0 +1,6 @@
+bin/PTStitcher
+linux-panorama-tools/bin/PTStitcher
+linux-panorama-tools/lib/libpano12.so
+@dirrm linux-panorama-tools/bin
+@dirrm linux-panorama-tools/lib
+@dirrm linux-panorama-tools
