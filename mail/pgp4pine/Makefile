@@ -1,7 +1,7 @@
 # New ports collection makefile for: pgp4pine
 # Version required: 	1.74
-# Date created:		13 November 1999
-# Whom:			holger
+# Date created:		29 February 2000
+# Whom:			Holger Lamm <holger@flatline.de>
 #
 # $FreeBSD$
 #
