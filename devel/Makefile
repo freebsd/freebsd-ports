@@ -43,6 +43,7 @@
     SUBDIR += elftoaout
     SUBDIR += f77flow
     SUBDIR += fastcrc
+    SUBDIR += fhist
     SUBDIR += flick
     SUBDIR += fortran-utils
     SUBDIR += fpp

@@ -1,0 +1,24 @@
+--- common/compare.c--	Fri Oct  7 18:05:04 1994
++++ common/compare.c	Thu Apr 23 12:53:41 1998
+@@ -326,10 +326,10 @@
+ }
+ 
+ 
+-static int isblank _((char *s));
++static int isblank_ _((char *s));
+ 
+ static int
+-isblank(s)
++isblank_(s)
+ 	char	*s;
+ {
+ 	while (*s)
+@@ -387,7 +387,7 @@
+ 			((linenumber % READBLABINTERVAL) == 0)
+ 		)
+ 			error("[%ld lines]", linenumber);
+-		if (fc.blankflag && isblank(cp))
++		if (fc.blankflag && isblank_(cp))
+ 			continue;
+ 		if (linecount >= linesavail)
+ 		{

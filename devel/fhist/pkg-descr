@@ -1,0 +1,18 @@
+This package contains three source control utilities from Peter Miller
+<millerp@canb.auug.org.au>:
+
+    fhist: Keeps track of versions of a file.  
+    fcomp: Compares two versions of a file.
+    fmerge: Merges together edits from two descendants of a file.  
+
+This program is based on the algorithm in ``An O(ND) Difference
+Algorithm and Its Variations'', Eugene W. Myers, TR 85-6, 10-April-1985,
+Department of Computer Science, The University of Arizona, Tuscon,
+Arizona 85721.
+
+See also: ``A File Comparison Program, Webb Miller and Eugene W.
+Myers'', Software Practice and Experience, Volume 15, No. 11,
+November 1985.
+
+- Koshy
+  <jkoshy@acm.org>
