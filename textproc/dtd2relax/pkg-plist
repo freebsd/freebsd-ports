@@ -1,12 +1,6 @@
-share/java/classes/dtd2relax.jar
-%%EXAMPLESDIR%%/test01-utf8.rlx
-%%EXAMPLESDIR%%/test01.dtd
-%%EXAMPLESDIR%%/xmlspec-19990205-utf8.rlx
-%%EXAMPLESDIR%%/xmlspec-19990205.dtd
-@dirrm %%EXAMPLESDIR%%
-%%DOCSDIR%%/DTD2RELAX-j.html
-%%DOCSDIR%%/DTD2RELAX.html
-%%DOCSDIR%%/DTDtoRELAXConverterGUI.gif
-%%DOCSDIR%%/test01.dtd
-%%DOCSDIR%%/test01.rlx
-@dirrm %%DOCSDIR%%
+%%JAVAJARDIR%%/dtd2relax.jar
+%%PORTDOCS%%%%EXAMPLESDIR%%/test01-utf8.rlx
+%%PORTDOCS%%%%EXAMPLESDIR%%/test01.dtd
+%%PORTDOCS%%%%EXAMPLESDIR%%/xmlspec-19990205-utf8.rlx
+%%PORTDOCS%%%%EXAMPLESDIR%%/xmlspec-19990205.dtd
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
