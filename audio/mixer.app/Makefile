@@ -14,9 +14,15 @@ DISTNAME=	Mixer.app-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another mixer intended for the windowmaker dockapp
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 USE_XPM=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/Mixer.app ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
