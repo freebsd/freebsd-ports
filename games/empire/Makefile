@@ -16,8 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 MAN6=		empire.6
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vms-empire ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/vms-empire.6 ${PREFIX}/man/man6
+	${INSTALL_PROGRAM} ${WRKSRC}/vms-empire ${PREFIX}/bin/empire
+	${INSTALL_MAN} ${WRKSRC}/vms-empire.6 ${PREFIX}/man/man6/empire.6
 .if !defined(NOPORTDOCS)
 .for file in BUGS READ.ME
 	@${MKDIR} ${PREFIX}/share/doc/empire
