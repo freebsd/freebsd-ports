@@ -5,6 +5,7 @@
     SUBDIR += amp
     SUBDIR += ascd
     SUBDIR += aumix
+    SUBDIR += aureal-kmod
     SUBDIR += autozen
     SUBDIR += bladeenc
     SUBDIR += btc
