@@ -7,24 +7,29 @@
 #
 
 PORTNAME=	tpg
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1.3
 CATEGORIES=	devel python
 MASTER_SITES=	http://christophe.delord.free.fr/soft/tpg/
 DISTNAME=	${PORTNAME:U}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@kolobov.com
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 NO_BUILD=	yes
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tpg.py ${PYTHONPREFIX_SITELIBDIR}
-	${LN} -fs ${PYTHONPREFIX_SITELIBDIR}/tpg.py ${PREFIX}/bin/tpg
-.if !defined(NOPORTDOCS)
+EXAMPLES=	calc.g calc.py calc2.py notation.py
+
+post-install:
 	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/TPG/tpg_grammar.g ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/TPG/examples/* ${EXAMPLESDIR}
+.for file in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/examples/calc/${file} ${EXAMPLESDIR}
+.endfor
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/tpg.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.gif ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
