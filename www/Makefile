@@ -412,6 +412,7 @@
     SUBDIR += p5-Apache-Session-PHP
     SUBDIR += p5-Apache-Session-SharedMem
     SUBDIR += p5-Apache-Session-Wrapper
+    SUBDIR += p5-Apache-Singleton
     SUBDIR += p5-Apache-SubProcess
     SUBDIR += p5-Apache-Test
     SUBDIR += p5-ApacheBench
