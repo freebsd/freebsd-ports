@@ -1,0 +1,5 @@
+This is a Expectk script that allows you to save time connecting to different 
+hosts using ssh.  It saves your password, login ID, and other host info that 
+you have to type over and over again to connect.   Once you save your 
+connection information you can connect to a host with 2 clicks.   First you 
+choose the name and then hit connect. It will save you a lot of time. 
