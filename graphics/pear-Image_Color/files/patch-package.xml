@@ -1,0 +1,12 @@
+--- ../package.xml.orig	Tue May 25 07:07:47 2004
++++ ../package.xml	Thu Aug 26 19:52:55 2004
+@@ -30,9 +30,6 @@
+     <license>PHP License</license>
+     <state>stable</state>
+     <notes>* Removed newline at end of file.</notes>
+-    <deps>
+-      <dep type="ext" rel="has">gd</dep>
+-    </deps>
+     <filelist>
+       <file role="php" baseinstalldir="Image" name="Color.php"/>
+     </filelist>
