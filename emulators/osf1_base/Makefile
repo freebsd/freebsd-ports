@@ -18,6 +18,7 @@ MAINTAINER=	obrien@FreeBSD.org
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm2cpio
 
 ONLY_FOR_ARCHS=	alpha
+RESTRICTED=	Not allowed to redistribute on our FTP site or CDROMs
 
 PREFIX=			/compat/osf1
 EXTRACT_CMD=		rpm2cpio
