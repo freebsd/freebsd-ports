@@ -17,17 +17,6 @@ diff -ru work.old/mutt-1.5.6/OPS work/mutt-1.5.6/OPS
  OP_MAIN_NEXT_NEW "jump to the next new message"
  OP_MAIN_NEXT_NEW_THEN_UNREAD "jump to the next new or unread message"
  OP_MAIN_NEXT_SUBTHREAD "jump to the next subthread"
-diff -ru work.old/mutt-1.5.6/acconfig.h work/mutt-1.5.6/acconfig.h
---- acconfig.h	Tue Jan 21 11:50:49 2003
-+++ acconfig.h	Tue Feb 10 14:40:41 2004
-@@ -36,3 +36,7 @@
-  * all return values other than (size_t)(-1) as equivalent. */
- #undef ICONV_NONTRANS
- 
-+/* Do you want to use the rethreading functions with IMAP
-+ * (--enable-imap-edit-threads) */
-+#undef IMAP_EDIT_THREADS
-+
 diff -ru work.old/mutt-1.5.6/config.h.in work/mutt-1.5.6/config.h.in
 --- config.h.in	Sun Feb  1 18:18:21 2004
 +++ config.h.in	Tue Feb 10 14:40:41 2004
@@ -35,6 +24,13 @@ diff -ru work.old/mutt-1.5.6/config.h.in work/mutt-1.5.6/config.h.in
   * all return values other than (size_t)(-1) as equivalent. */
  #undef ICONV_NONTRANS
  
++/* Do you want to use the rethreading functions with IMAP
++ * (--enable-imap-edit-threads) */
++#undef IMAP_EDIT_THREADS
++
+--- /dev/null	Sun Feb 13 11:16:10 2005
++++ acconfig.h	Sun Feb 13 11:15:44 2005
+@@ -0,0 +1,4 @@
 +/* Do you want to use the rethreading functions with IMAP
 + * (--enable-imap-edit-threads) */
 +#undef IMAP_EDIT_THREADS

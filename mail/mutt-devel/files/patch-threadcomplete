@@ -138,9 +138,9 @@ diff -Nru a/pattern.c b/pattern.c
  
    /* actions for mutt_pattern_comp/mutt_pattern_exec */
    M_AND,
---- pattern.c.orig2	Mon Sep  6 09:24:10 2004
-+++ pattern.c	Mon Sep  6 09:30:02 2004
-@@ -44,6 +44,7 @@
+--- pattern.c.orig2	Sun Feb 13 09:05:57 2005
++++ pattern.c	Sun Feb 13 09:08:06 2005
+@@ -48,6 +48,7 @@
  }
  Flags[] =
  {
@@ -148,10 +148,10 @@ diff -Nru a/pattern.c b/pattern.c
    { 'A', M_ALL,			0,		NULL },
    { 'b', M_BODY,		M_FULL_MSG,	eat_regexp },
    { 'B', M_WHOLE_MSG,		M_FULL_MSG,	eat_regexp },
-@@ -1024,6 +1083,16 @@
- 					pat->alladdr, 2, h->env->to, h->env->cc));
+@@ -1085,6 +1086,16 @@
+ 					pat->alladdr, 2, h->env->to, h->env->cc)));
      case M_LIST:
-       return (pat->not ^ mutt_is_list_recipient (pat->alladdr, h->env->to, h->env->cc));
+       return (pat->not ^ (h->env && mutt_is_list_recipient (pat->alladdr, h->env->to, h->env->cc)));
 +    case M_THREADCOMPLETE:
 +      { static pattern_t tmp;
 +        static short pattern_set = 0;
@@ -160,8 +160,8 @@ diff -Nru a/pattern.c b/pattern.c
 +          tmp.op = M_TAG;
 +          pattern_set = 1;
 +        }
-+        return (pat->not ^ match_threadcomplete(&tmp, flags, ctx, h->thread, 1, 1, 1, 1));
++        return (pat->not ^ (h->env && match_threadcomplete(&tmp, flags, ctx, h->thread, 1, 1, 1, 1)));
 +      } 
      case M_PERSONAL_RECIP:
-       return (pat->not ^ match_user (pat->alladdr, h->env->to, h->env->cc));
+       return (pat->not ^ (h->env && match_user (pat->alladdr, h->env->to, h->env->cc)));
      case M_PERSONAL_FROM:

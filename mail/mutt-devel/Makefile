@@ -92,8 +92,8 @@
 #
 
 PORTNAME=	mutt-devel
-PORTVERSION=	1.5.7
-PORTREVISION=	1
+PORTVERSION=	1.5.8
+PORTREVISION=	0
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -363,6 +363,7 @@ SGML_NEEDED=	yes
 PATCHFILES+=	p0-patch-${DW_MBOX_PATCH_VERSION}.dw.mbox-hook.1:dw
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
+.error The WITH_MUTT_SIDEBAR_PATCH does not work at the moment.
 PATCHFILES+=	patch-1.5.7i.sidebar.20050203.txt:thomer
 .endif
 
@@ -397,6 +398,7 @@ CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
 .endif
 .if defined(WITH_MUTT_MAILDIR_HEADER_CACHE)
 SCRIPTS_ENV+=	MUTT_MAILDIR_HEADER_CACHE="yes"
+CONFIGURE_ARGS+=	 --disable-inodesort
 .endif
 .if defined(WITH_MUTT_SIDEBAR_PATCH)
 SCRIPTS_ENV+=	MUTT_SIDEBAR_PATCH="yes"
@@ -415,6 +417,9 @@ SCRIPTS_ENV+=	MUTT_HTML="yes"
 .endif
 .if !defined(WITHOUT_NLS)
 SCRIPTS_ENV+=	MUTT_NLS="yes"
+.endif
+.if defined(WITH_MUTT_IDN)
+SCRIPTS_ENV+=	MUTT_IDN="yes"
 .endif
 
 .if !defined(NOPORTDOCS)
