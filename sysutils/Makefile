@@ -29,6 +29,7 @@
     SUBDIR += gtop
     SUBDIR += idled
     SUBDIR += libretto-config
+    SUBDIR += lmmon
     SUBDIR += lsof
     SUBDIR += manck
     SUBDIR += mei
@@ -61,6 +62,7 @@
     SUBDIR += wmavgload
     SUBDIR += wmhm
     SUBDIR += wminet
+    SUBDIR += wmlmmon
     SUBDIR += wmmon
     SUBDIR += wmmount
     SUBDIR += xbatt
