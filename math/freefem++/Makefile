@@ -30,10 +30,6 @@ DOCS=		BUGS COPYRIGHT HISTORY README DOC/manual.pdf
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on alpha 5.x"
-.endif
-
 .if ${OSVERSION} < 501103
 USE_GCC=	3.2
 .endif
