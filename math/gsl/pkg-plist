@@ -221,6 +221,7 @@ info/gsl-ref.info-17
 info/gsl-ref.info-18
 info/gsl-ref.info-19
 info/gsl-ref.info-20
+info/gsl-ref.info-21
 @exec install-info %D/info/gsl-ref.info %D/info/dir
 lib/libgsl.a
 lib/libgsl.la
