@@ -1,72 +1,49 @@
-*** Makefile	Sun Dec 10 19:21:36 1995
---- Makefile.new	Wed Feb  7 22:53:33 1996
-***************
-** 6,14 ****
-  DEBUG=
-  CCFLAGS=-O2 $(DEFINES) $(DEBUG)
-  CFLAGS= -I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
-! LDFLAGS=
-! LIBS=
-! CC=	gcc
-  LD=	$(CC)
-  DMAKE=	make
-  BIN=	../bin
---- 3,14 ----
-  DEBUG=
-  CCFLAGS=-O2 $(DEFINES) $(DEBUG)
-  CFLAGS= -I. -Icomp -Ilex -Ied -Ikfun $(CCFLAGS)
-! LDFLAGS=-s
-! LIBS=-lcrypt
-! CC=	cc
-  LD=	$(CC)
-  DMAKE=	make
-  BIN=	../bin
-***************
-*** 20,25 ****
---- 20,27 ----
-  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
-  	interpret.o config.o
-  
-+ all: a.out comp/a.out
-+ 
-  a.out:	$(OBJ) always
-  	cd comp; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
-  	cd lex; $(MAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
-***************
-*** 38,44 ****
-  	-mv $(BIN)/driver $(BIN)/driver.old
-  	cp a.out $(BIN)/driver
-  
-! install: $(BIN)/driver
-  
-  comp.sub: $(COMPOBJ)
-  	@for i in $(COMPOBJ); do echo ../$$i; done > comp.sub
---- 40,50 ----
-  	-mv $(BIN)/driver $(BIN)/driver.old
-  	cp a.out $(BIN)/driver
-  
-! $(BIN)/precomp: comp/a.out
-! 	-mv $(BIN)/precomp $(BIN)/precomp.old
-! 	cp comp/a.out $(BIN)/precomp
-! 
-! install: $(BIN)/driver $(BIN)/precomp
-  
-  comp.sub: $(COMPOBJ)
-  	@for i in $(COMPOBJ); do echo ../$$i; done > comp.sub
-***************
-*** 54,60 ****
-  
-  comp/a.out:
-  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
-! 			  'LIBS=$(LIBS)' a.out
-  
-  clean:
-  	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
---- 60,66 ----
-  
-  comp/a.out:
-  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
-! 			'LDFLAGS=$(LDFLAGS)' 'LIBS=$(LIBS)' a.out
-  
-  clean:
-  	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
+--- Makefile.orig	Wed Dec 20 02:13:29 2000
++++ Makefile	Mon Mar 12 00:27:18 2001
+@@ -3,13 +3,12 @@
+ #
+ HOST=	NETBSD
+ DEFINES=-D$(HOST) #-DDUMP_FUNCS
+-DEBUG=	-O2
+ CCFLAGS=$(DEFINES) $(DEBUG)
+-CFLAGS=	-I. -Icomp -Ilex -Ied -Iparser -Ikfun $(CCFLAGS)
++CFLAGS+=	-I. -Icomp -Ilex -Ied -Iparser -Ikfun $(CCFLAGS)
+ LDFLAGS=
+ LIBS=
+ LINTFLAGS=-abcehpruz
+-CC=	gcc
++CC?=	gcc
+ LD=	$(CC)
+ DMAKE=	make
+ BIN=	../bin
+@@ -21,6 +20,8 @@
+ COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o data.o \
+ 	interpret.o config.o
+ 
++all: a.out comp/a.out
++
+ a.out:	$(OBJ) always
+ 	cd comp; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+ 	cd lex; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
+@@ -41,7 +42,11 @@
+ 	-mv $(BIN)/driver $(BIN)/driver.old
+ 	cp a.out $(BIN)/driver
+ 
+-install: $(BIN)/driver
++$(BIN)/precomp: comp/a.out
++	-mv $(BIN)/precomp $(BIN)/precomp.old
++	cp comp/a.out $(BIN)/precomp
++
++install: $(BIN)/driver $(BIN)/precomp
+ 
+ lint:
+ 	lint $(LINTFLAGS) $(CFLAGS) $(SRC)
+@@ -67,7 +72,7 @@
+ 
+ comp/a.out:
+ 	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
+-			  'LIBS=$(LIBS)' a.out
++			'LDFLAGS=$(LDFLAGS)' 'LIBS=$(LIBS)' a.out
+ 
+ clean:
+ 	rm -f a.out $(OBJ) comp.sub lex.sub ed.sub
