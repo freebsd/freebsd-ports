@@ -25,7 +25,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/docs/*.txt ${PREFIX}/share/doc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${PREFIX}/share/doc/${PORTNAME}
 .endif
 
 .include <bsd.port.mk>

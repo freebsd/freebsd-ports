@@ -1,11 +1,11 @@
 bin/gmolwt
 bin/molwt
-share/doc/xmolwt/Howtouse.jp
-share/doc/xmolwt/Readme
-share/doc/xmolwt/Xmolwt
-share/doc/xmolwt/dot.gtkrc
-share/doc/xmolwt/gmolwt.gif
-share/doc/xmolwt/xmolwt-e.html
-share/doc/xmolwt/xmolwt.gif
-share/doc/xmolwt/xmolwt.html
-@dirrm share/doc/xmolwt
+%%PORTDOCS%%share/doc/xmolwt/Howtouse.jp
+%%PORTDOCS%%share/doc/xmolwt/Readme
+%%PORTDOCS%%share/doc/xmolwt/Xmolwt
+%%PORTDOCS%%share/doc/xmolwt/dot.gtkrc
+%%PORTDOCS%%share/doc/xmolwt/gmolwt.gif
+%%PORTDOCS%%share/doc/xmolwt/xmolwt-e.html
+%%PORTDOCS%%share/doc/xmolwt/xmolwt.gif
+%%PORTDOCS%%share/doc/xmolwt/xmolwt.html
+%%PORTDOCS%%@dirrm share/doc/xmolwt
