@@ -55,4 +55,9 @@ install-sample-files:
 	@${INSTALL_DATA} ${WRKSRC}/testsuite/${file} ${SAMP_DIR}/${file}
 .endfor
 
+# Maintainer only
+#
+test:
+	@cd ${WRKSRC}/testsuite; ${MAKE} check
+
 .include <bsd.port.mk>
