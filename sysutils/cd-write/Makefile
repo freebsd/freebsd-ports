@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.FreeBSD.org/~jmz/
 
 MAINTAINER=     jmz@FreeBSD.org
 
-LIB_DEPENDS=	tixsam4180.1:${PORTSDIR}/x11-toolkits/tix
+LIB_DEPENDS=	tixsam4182.1:${PORTSDIR}/x11-toolkits/tix
 
 WRKSRC=		${WRKDIR}/cd-write
 
