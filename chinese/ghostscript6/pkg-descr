@@ -1,0 +1,24 @@
+This is Aladdin Ghostscript, the non-GPL version that comes with a licence
+different from the GPL. Read the file PUBLIC in the work/gsX.Y directory or
+in ${PREFIX}/share/ghostscript/X.Y/doc/PUBLIC after installation for details !
+
+Ghostscript is the well-known PostScript interpreter which is available for
+all common and most esoteric platforms and supports many different printers
+and some displays.
+
+This port includes add-on packages (not part of the official gs release)
+	o Support for pdfencrypt, see description on
+	  -  http://www.ozemail.com.au/~geoffk/pdfencrypt/
+	o Additional driver support
+	  - http://www.proaxis.com/~mgelhaus/linux/software/hp880c/hp880c.html
+	  - ftp://ftp.sbs.de/pub/graphics/ghostscript/pcl3/pcl3.html (HPDJ drv)
+	o Additional contributed uniprint driver profiles for
+	  - Epson Stylus Color 740 and Epson LQ-1170
+		
+Thomas Merz has written a Ghostscript manual in PDF format:
+	http://www.cs.wisc.edu/~ghost/merz.html
+
+The manual is also available in German language, see:
+	http://www.muc.de/~tm/free/free.html
+
+WWW: http://www.cs.wisc.edu/~ghost/index.html
