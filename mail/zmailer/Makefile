@@ -17,6 +17,8 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
+BROKEN=		Incomplete pkg-plist
+
 .include <bsd.port.pre.mk>
 
 .if ( ${PERL_LEVEL} < 500600 )
