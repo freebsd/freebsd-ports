@@ -9,7 +9,7 @@ PORTNAME=	privoxy+ipv6
 PORTVERSION=	20030523
 PORTREVISION=	1
 CATEGORIES=	www ipv6
-MASTER_SITES=	ftp://ftp.deepspace6.net/pub/sources/privoxy/
+MASTER_SITES=	ftp://ftp.deepspace6.net/pub/ds6/sources/privoxy/
 DISTNAME=	privoxy_CVS_${PORTVERSION}_ipv6_5
 
 MAINTAINER=	larse@isi.edu
