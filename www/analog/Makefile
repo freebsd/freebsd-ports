@@ -35,7 +35,7 @@ do-install:
 .if !exists(${PREFIX}/etc/analog.cfg)
 	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc
 .endif
-	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc/analog.cfg.dist
+	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc/analog.cfg-dist
 .if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/analog
 .endif
