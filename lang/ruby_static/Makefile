@@ -39,15 +39,6 @@ EXT_PORTS+=	converters/ruby-iconv
 BUILD_DEPENDS+=	${NONEXISTENT}:${_PORTSDIR}/${p}:patch
 .endfor
 
-.if defined(RUBY_VER)
-.if ${RUBY_VER} > 1.6
-NEWAUTOCONF=	yes
-.endif
-.endif
-
-.if defined(NEWAUTOCONF)
-BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
-.endif
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${RUBY_WRKSRC}
@@ -125,11 +116,6 @@ do-extract:
 		extdir=$${extdir%/extconf.rb}; \
 		echo $$extdir; \
 	done >> Setup
-
-.if defined(NEWAUTOCONF)
-pre-configure:
-	cd ${WRKSRC}; autoconf
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${RUBY_NAME} ${RUBY_WITH_SUFFIX}_s
