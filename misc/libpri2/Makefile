@@ -6,14 +6,20 @@
 #
 
 PORTNAME=	libpri
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.asterisk.org/pub/libpri/ \
 		ftp://ftp.asterisk.org/pub/libpri/old/
 
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-${BRIVER}.patch.gz
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	fjoe
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	gonzo@univ.kiev.ua
 COMMENT=	A C implementation of the Primary Rate ISDN specification
 
+BRIVER=		bristuff-0.2.0-RC7f
 USE_GMAKE=	yes
 INSTALLS_SHLIB= yes
 
@@ -22,8 +28,5 @@ INSTALLS_SHLIB= yes
 .if ${ARCH} == "alpha"
 BROKEN=		"Does not compile on alpha"
 .endif
-
-post-patch:
-	@${FIND} ${WRKSRC} -name \*.orig -or -name \*.bak -delete
 
 .include <bsd.port.post.mk>

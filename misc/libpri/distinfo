@@ -1,2 +1,4 @@
-MD5 (libpri-1.0.2.tar.gz) = 374c089bf3bdee3f8e2d7b315190022e
-SIZE (libpri-1.0.2.tar.gz) = 55451
+MD5 (libpri-1.0.4.tar.gz) = 82f3ac51101b456f9f916ed1ca774ebc
+SIZE (libpri-1.0.4.tar.gz) = 55677
+MD5 (libpri-1.0.4-bristuff-0.2.0-RC7f.patch.gz) = 3baf8a992d4aade33ed0347a994a3c94
+SIZE (libpri-1.0.4-bristuff-0.2.0-RC7f.patch.gz) = 28966

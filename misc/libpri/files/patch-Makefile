@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- Makefile.orig
-+++ Makefile
+--- Makefile.orig	Fri Feb 25 06:05:47 2005
++++ Makefile	Fri Feb 25 06:08:51 2005
 @@ -33,11 +33,11 @@
  TOBJS=testpri.o
  T2OBJS=testprilib.o
@@ -11,14 +8,14 @@ $FreeBSD$
 +DYNAMIC_LIBRARY=libpri.so.1
  STATIC_OBJS=pri.o q921.o prisched.o q931.o
  DYNAMIC_OBJS=pri.lo q921.lo prisched.lo q931.lo
--CFLAGS=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
+-CFLAGS=-Wall -Wstrict-prototypes -Wmissing-prototypes -g $(ALERTING) $(LIBPRI_COUNTERS)
 -INSTALL_PREFIX=
-+CFLAGS+=-Wall -Werror -Wstrict-prototypes -Wmissing-prototypes $(ALERTING) $(LIBPRI_COUNTERS)
++CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes $(ALERTING) $(LIBPRI_COUNTERS)
 +INSTALL_PREFIX=$(PREFIX)
  ifeq (${OSARCH},Linux)
  LDCONFIG_FLAGS=-n
  else
-@@ -62,20 +62,19 @@
+@@ -62,21 +62,19 @@
  	@cvs update -d
  
  install: $(STATIC_LIBRARY) $(DYNAMIC_LIBRARY)
@@ -26,6 +23,7 @@ $FreeBSD$
 -	mkdir -p $(INSTALL_PREFIX)/usr/include
 -	install -m 644 libpri.h $(INSTALL_PREFIX)/usr/include
 -	install -m 755 $(DYNAMIC_LIBRARY) $(INSTALL_PREFIX)/usr/lib
+-	if [ -x /usr/sbin/sestatus ] && ( /usr/sbin/sestatus | grep "SELinux status:" | grep -q "enabled"); then  restorecon -v $(INSTALL_PREFIX)/$(INSTALL_BASE)/lib/$(DYNAMIC_LIBRARY); fi
 -	( cd $(INSTALL_PREFIX)/usr/lib ; ln -sf libpri.so.1 libpri.so )
 -	install -m 644 $(STATIC_LIBRARY) $(INSTALL_PREFIX)/usr/lib
 -	/sbin/ldconfig
@@ -49,7 +47,7 @@ $FreeBSD$
  
  pritest: pritest.o
  	$(CC) -o pritest pritest.o -L. -lpri -lzap $(CFLAGS)
-@@ -100,11 +99,11 @@
+@@ -101,11 +99,11 @@
  
  $(DYNAMIC_LIBRARY): $(DYNAMIC_OBJS)
  	$(CC) -shared -Wl,-soname,libpri.so.1 -o $@ $(DYNAMIC_OBJS)
