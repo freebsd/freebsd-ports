@@ -51,6 +51,7 @@
     SUBDIR += ml
     SUBDIR += mmr
     SUBDIR += movemail
+    SUBDIR += mreport
     SUBDIR += mutt
     SUBDIR += newmail
     SUBDIR += nmh
