@@ -3,6 +3,7 @@
 
     SUBDIR += adcomplain
     SUBDIR += asmail
+    SUBDIR += autorespond
     SUBDIR += balsa
     SUBDIR += bbmail
     SUBDIR += biffer
@@ -30,6 +31,7 @@
     SUBDIR += imap-uw
     SUBDIR += kbiff
     SUBDIR += knewmail
+    SUBDIR += lbdb
     SUBDIR += mailagent
     SUBDIR += mailcrypt
     SUBDIR += maildrop
