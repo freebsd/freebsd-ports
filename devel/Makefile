@@ -303,6 +303,7 @@
     SUBDIR += imake-4
     SUBDIR += inilib
     SUBDIR += invitation_to_ruby
+    SUBDIR += ipython
     SUBDIR += ixlib
     SUBDIR += jakelib2
     SUBDIR += jam
