@@ -45,8 +45,11 @@ $check_id = 0;
 #
 ############################################################
 $ENTRIES       = "CVS/Entries";
-$HEADER        = 'FreeBSD';	# Our RCS header is '$ FreeBSD $', 
-				# (without the spaces.)
+
+
+# The "Id" header to check for.
+my $HEADER	= $cfg::IDHEADER;
+
 
 ############################################################
 #

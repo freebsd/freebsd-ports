@@ -12,7 +12,7 @@ package cfg;
 use strict;
 use vars qw($DEBUG $FILE_PREFIX $MAILADDRS $MAILBANNER $MAILCMD
 	    $MAIL_ON_DIR_CREATION $TMPDIR %TEMPLATE_HEADERS
-	    $LAST_FILE $PID);
+	    $LAST_FILE $PID $IDHEADER);
 
 
 ######################
@@ -56,6 +56,18 @@ $LAST_FILE = "$TMPDIR/$FILE_PREFIX.lastdir";
 	"PR"			=> '.*',
 	"MFC after"		=> '\d+(\s+(days?|weeks?|months?))?'
 );
+
+
+######################
+### commit_prep.pl ###
+######################
+
+# WARNING: You will also need to be running the version of cvs that
+# the FreeBSD project is using; I believe that we have some local patches
+# that aren't in the main 'cvs' source.
+# Additionally you'll need to tweak CVSROOT/options if you wish to use your
+# own ident header.
+$IDHEADER = 'FreeBSD';	# Our RCS header is '$ FreeBSD $', 
 
 
 ####################
