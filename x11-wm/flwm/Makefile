@@ -8,7 +8,8 @@
 PORTNAME=	flwm
 PORTVERSION= 	0.25
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.cinenet.net/users/spitzak/flwm/ \
+MASTER_SITES=	http://flwm.sourceforge.net/ \
+		http://www.cinenet.net/users/spitzak/flwm/ \
 		ftp://ftp.sai.msu.su/pub/X11/win_man/
 EXTRACT_SUFX=	.tgz
 
