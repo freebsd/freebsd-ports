@@ -1,0 +1,5 @@
+Sixpack is a bibliography and reference manager with both graphical
+(Tk-based) and command line interfaces.  Sixpack can import and export
+about a dozen different formats, including BibTeX.
+
+WWW: http://www.santafe.edu/~dirk/sixpack/
