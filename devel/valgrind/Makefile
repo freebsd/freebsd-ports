@@ -71,7 +71,6 @@ post-install:
 	@${ECHO} ""
 	@${ECHO} ""
 	@${CAT} ${PKGMESSAGE}
-++ pkg-plist	Wed Aug 25 11:23:09 2004
 	@${ECHO} ""
 
 .include <bsd.port.post.mk>
