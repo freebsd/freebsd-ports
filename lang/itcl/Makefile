@@ -7,7 +7,7 @@
 
 PORTNAME=	itcl
 PORTVERSION=	${MAJOR}.${MINOR}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=incrtcl
@@ -16,13 +16,13 @@ DISTNAME=	itcl${PORTVERSION}
 MAINTAINER=	ports@freebsd.org
 COMMENT=	[incr Tcl] (A.K.A. "itcl")
 
-LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/itcl
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
-PKGINSTALL=	${PORTSDIR}/lang/tcl84/pkg-install.tclsh
-PKGDEINSTALL=	${PORTSDIR}/lang/tcl84/pkg-deinstall.tclsh
+PKGINSTALL=	${PORTSDIR}/lang/tcl83/pkg-install.tclsh
+PKGDEINSTALL=	${PORTSDIR}/lang/tcl83/pkg-deinstall.tclsh
 MAKE_ENV+=	${PLIST_SUB} \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR}
 
@@ -57,7 +57,7 @@ post-patch:
 
 post-build test:
 	cd ${WRKSRC} && ${SETENV} ITCL_LIBRARY=${WRKSRC}/library \
-		${PREFIX}/bin/tclsh8.4 tests/all.tcl
+		${PREFIX}/bin/tclsh8.3 tests/all.tcl
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.n ${PREFIX}/man/mann/
