@@ -14,6 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_XPM=	YES
 USE_IMAKE=	YES
-MAKE_ARGS=	CC=g++
+MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}"
 
 .include <bsd.port.mk>
