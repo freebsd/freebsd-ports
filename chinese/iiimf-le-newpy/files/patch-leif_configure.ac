@@ -1,8 +1,28 @@
---- leif/configure.ac	Wed Oct  6 23:00:36 2004
-+++ leif/configure.ac	Thu Feb 17 23:32:54 2005
-@@ -61,25 +61,19 @@
- IM_CONSTRUCT_FLAGS
- IM_CONSTRUCT_THREAD_FLAGS
+--- leif/configure.ac.orig	Wed Oct  6 23:00:36 2004
++++ leif/configure.ac	Thu Mar 24 17:50:52 2005
+@@ -44,15 +44,15 @@
+ 
+ IM_CHECK_SYSTEM
+ IM_CHECK_DLOPEN
+-IM_CHECK_CANNA
+-IM_CHECK_FREEWNN
++dnl IM_CHECK_CANNA
++dnl IM_CHECK_FREEWNN
+ 
+ IM_CHECK_X
+-IM_CHECK_GTK
++dnl IM_CHECK_GTK
+ IM_CHECK_MOTIF
+-PKG_CHECK_MODULES(GTK2, gtk+-2.0 gtk+-x11-2.0)
+-AC_SUBST(GTK2_CFLAGS)
+-AC_SUBST(GTK2_LIBS)
++dnl PKG_CHECK_MODULES(GTK2, gtk+-2.0 gtk+-x11-2.0)
++dnl AC_SUBST(GTK2_CFLAGS)
++dnl AC_SUBST(GTK2_LIBS)
+ 
+ dnl --------------------------------------------------------------------------------
+ dnl                      Section 5: compilation options
+@@ -63,23 +63,17 @@
  
  CFLAGS="${COMMON_CXX_CFLAGS} ${COMMON_CFLAGS} \
          ${DEBUG_CXX_CFLAGS} ${DEBUG_CFLAGS} \
