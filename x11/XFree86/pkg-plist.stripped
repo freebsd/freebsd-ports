@@ -555,21 +555,6 @@ lib/X11/locale/zh_TW.Big5/XLC_LOCALE
 lib/X11/proxymngr/pmconfig
 lib/X11/rgb.txt
 lib/X11/xserver/SecurityPolicy
-lib/aout/libICE.so.6.3
-lib/aout/libPEX5.so.6.0
-lib/aout/libSM.so.6.0
-lib/aout/libX11.so.6.1
-lib/aout/libXIE.so.6.0
-lib/aout/libXaw.so.6.1
-lib/aout/libXext.so.6.3
-lib/aout/libXi.so.6.0
-lib/aout/libXmu.so.6.0
-lib/aout/libXp.so.6.2
-lib/aout/libXt.so.6.0
-lib/aout/libXtst.so.6.1
-lib/aout/liboldX.so.6.0
-@exec /usr/bin/env OBJFORMAT=aout /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=aout /sbin/ldconfig -R
 lib/libFS.a
 lib/libICE.a
 lib/libICE.so

@@ -293,6 +293,19 @@ fi
 # ELF detection
 if [ `sysctl -n kern.osreldate` -ge 300004 -a  X`objformat` = Xelf ]; then
   ELF=yes
+cat <<'END'
+
+ Some programs still require a.out X libraries.  Most noteable amongst
+ these is Nestcape, but it is reported to work best with older X libraries. 
+ You can build a.out libraries here, using the lastest sources and
+ compiler, or you can use the XFree86-aoutlibs port, which installs older
+ a.out compatibility libraries.
+ 
+ If you decide to build the libraries here they will not be uninstalled by
+ this port, and they will be overwritten by the XFree86-aoutlibs port, if
+ for some reason you install it.
+
+END
   noyes "Do you want to build and install a.out compatibility libraries?"
   if [ $answ = YES ]; then
     echo "#define BuildAoutLibraries		YES" >> $F
