@@ -62,12 +62,6 @@ SBIN=		snmpd snmptrapd
 
 STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS+= --enable-ipv6
-.endif
-
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+= --without-openssl
 .else
@@ -78,6 +72,12 @@ CFLAGS+=	-DOPENSSL_DES_LIBDES_COMPATIBILITY
 
 SHLIB_VERSION=	4
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+= --enable-ipv6
+.endif
 
 pre-everything::
 	@${ECHO} ""
