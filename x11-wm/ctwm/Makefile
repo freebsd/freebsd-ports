@@ -3,12 +3,17 @@
 # Date created:		13 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.18 1998/09/17 00:32:56 asami Exp $
+# $Id: Makefile,v 1.19 1998/10/04 04:03:14 steve Exp $
 #
 
 DISTNAME=	ctwm-3.5
+PKGNAME=	ctwm-3.5.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://slhp1.epfl.ch/pub/
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	ctwm-3.5-3.5.1.diffs.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
