@@ -36,6 +36,19 @@ share/gnome/pixmaps/gnomeicu/ok.xpm
 share/gnome/pixmaps/gnomeicu/rename.xpm
 share/gnome/pixmaps/gnomeicu/watermark.png
 share/gnome/sounds/gnomeicu/message.wav
+share/locale/da/LC_MESSAGES/gnomeicu.mo
+share/locale/de/LC_MESSAGES/gnomeicu.mo
+share/locale/es/LC_MESSAGES/gnomeicu.mo
+share/locale/fr/LC_MESSAGES/gnomeicu.mo
+share/locale/it/LC_MESSAGES/gnomeicu.mo
+share/locale/ja/LC_MESSAGES/gnomeicu.mo
+share/locale/ko/LC_MESSAGES/gnomeicu.mo
+share/locale/no/LC_MESSAGES/gnomeicu.mo
+share/locale/pl/LC_MESSAGES/gnomeicu.mo
+share/locale/pt_BR/LC_MESSAGES/gnomeicu.mo
+share/locale/tr/LC_MESSAGES/gnomeicu.mo
+share/locale/sv/LC_MESSAGES/gnomeicu.mo
+share/locale/uk/LC_MESSAGES/gnomeicu.mo
 @dirrm share/gnome/sounds/gnomeicu
 @dirrm share/gnome/pixmaps/gnomeicu
 @dirrm share/gnome/help/gnomeicu/C

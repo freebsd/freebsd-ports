@@ -20,7 +20,9 @@ GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=		YES
 USE_BZIP2=		YES
 GNU_CONFIGURE=		YES
-CONFIGURE_ENV=		GTK_CONFIG="${GTK_CONFIG}"
+CONFIGURE_ENV=		GTK_CONFIG="${GTK_CONFIG}" \
+			CPPFLAGS="-I${LOCALBASE}/include" \
+			LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		--datadir=${PREFIX}/share/gnome
 
 .include <bsd.port.mk>
