@@ -1,15 +1,12 @@
-%%PORTDOCS%%share/doc/libiodbc/AUTHORS
-%%PORTDOCS%%share/doc/libiodbc/COPYING
-%%PORTDOCS%%share/doc/libiodbc/ChangeLog
-%%PORTDOCS%%share/doc/libiodbc/NEWS
-%%PORTDOCS%%share/doc/libiodbc/README
 bin/iodbc-config
-bin/iodbctest
 %%GUI%%bin/iodbcadm-gtk
+%%GUI%%bin/iodbctest
+%%GUI%%bin/iodbctestw
 etc/libiodbc/odbc.ini.sample
 etc/libiodbc/odbcinst.ini.sample
 include/iodbcext.h
 include/iodbcinst.h
+include/iodbcunix.h
 include/isql.h
 include/isqlext.h
 include/isqltypes.h
@@ -35,5 +32,12 @@ lib/libiodbcinst.so
 lib/libiodbcinst.so.3
 lib/libodbc.a
 lib/libodbc.so
-%%PORTDOCS%%@dirrm share/doc/libiodbc
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/iodbctest.c
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/libiodbc
