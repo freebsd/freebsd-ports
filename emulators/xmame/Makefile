@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.56.2
+PORTVERSION?=	0.57.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/ \
 		http://www.mame.net/zips/ \
@@ -226,6 +226,23 @@ pre-everything::
 .endif
 .endif
 
+.if ${MAMEMESS} == "mame"
+# Network support - enabled by default because the penalty is low. There might
+# be a speedup without it though, so I've made it (yet another) option.
+.if !defined(WITH_NETWORK) || ${WITH_NETWORK} != "no"
+NETWORK=
+.else
+NETWORK=\#\ 
+.endif
+.if !defined(WITH_NETWORK)
+pre-everything::
+	@echo "===> If you want to build ${MAMEMESS:U} without network support,"
+	@echo "     use \"make WITH_NETWORK=no\""
+.endif
+.else
+NETWORK=\#\ 
+.endif
+
 # Some simple patches that don't warrant a separate patch
 post-patch:
 	${PERL} -pi -e 's@SDL/@SDL11/@' ${WRKSRC}/src/unix/video-drivers/SDL.c
@@ -241,17 +258,17 @@ post-patch:
 do-configure:
 	${SED} -e "s@= gcc@?=  ${CC}@g" \
 		-e "s@^CFLAGS.*@CFLAGS ?= ${CFLAGS}@g" \
-		-e "s@= cp@?=  ${INSTALL} ${COPY}@g" \
 		-e "s@lib/x\$$(TARGET)@share/x\$$(TARGET)@g" \
 		-e "s@/usr/X11R6@${X11BASE}@g" \
 		-e "s@-g bin@-g wheel@g" \
-		-e "s@ARCH  = linux@ARCH  = freebsd@g" \
+		-e "s@^ARCH  = linux@ARCH  = freebsd@g" \
 		-e "s@# X11_DGA@X11_DGA@g" \
 		-e "s@# JOY_USB@${JOYUSBCOMMENT}JOY_USB@g" \
 		-e "s@= x11@= ${DISPLAY_METHOD}@g" \
 		-e "s@= mame@= ${MAMEMESS}@g" \
 		-e "s@# X86_ASM@${ASM_COMMENT}X86_ASM@g" \
 		-e "s@# SOUND_ESOUND@${ESOUNDCOMMENT}SOUND_ESOUND@g" \
+		-e "s@# MAME_NET@${NETWORK}MAME_NET@g" \
 		-e "s@GLLIBS=.-ldl@GLLIBS= ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix > ${WRKSRC}/Makefile
 
