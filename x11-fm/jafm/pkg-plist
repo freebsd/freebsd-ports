@@ -1,0 +1,31 @@
+bin/jafm
+lib/jafm/appl/Applications
+lib/jafm/zic/core.zic
+lib/jafm/zic/trash.zic
+lib/jafm/zic/targz.zic
+lib/jafm/zic/skip.zic
+lib/jafm/zic/rubbish.zic
+lib/jafm/zic/printer2.zic
+lib/jafm/zic/printer.zic
+lib/jafm/zic/print.zic
+lib/jafm/zic/people.zic
+lib/jafm/zic/pencil.zic
+lib/jafm/zic/old-exec.zic
+lib/jafm/zic/object.zic
+lib/jafm/zic/null.zic
+lib/jafm/zic/netscape.zic
+lib/jafm/zic/netsc.zic
+lib/jafm/zic/nav.zic
+lib/jafm/zic/mail.zic
+lib/jafm/zic/folder.zic
+lib/jafm/zic/exec.zic
+lib/jafm/zic/edit.zic
+lib/jafm/zic/doc.zic
+lib/jafm/zic/dir.zic
+lib/jafm/zic/cswap.zic
+lib/jafm/zic/try.zic
+lib/jafm/system.jafmrules
+man/man8/jafm.8.gz
+@dirrm lib/jafm/zic
+@dirrm lib/jafm/appl
+@dirrm lib/jafm

@@ -1,0 +1,29 @@
+*** Makefile.bak	Thu Oct 23 22:44:05 1997
+--- Makefile	Fri Jul 31 17:38:01 1998
+***************
+*** 11,16 ****
+--- 11,17 ----
+  JAFMDIR=$(INSTALLDIR)/lib/jafm
+  ZICDIR=$(JAFMDIR)/zic
+  APPLDIR=$(JAFMDIR)/appl
++ QTDIR=/usr/X11R6
+  
+  
+  .SUFFIXES: .cc .o .cc.o
+***************
+*** 30,36 ****
+  MOC = ${QTDIR}/bin/moc
+  Cxx =g++ 
+  
+! INCFLAGS=-I${QTDIR}/include
+  CxxFLAGS= -Wall #-pipe
+  CFLAGS= -Wall #-pipe
+  OPT=-g
+--- 31,37 ----
+  MOC = ${QTDIR}/bin/moc
+  Cxx =g++ 
+  
+! INCFLAGS=-I${QTDIR}/include/X11/qt -I${QTDIR}/include
+  CxxFLAGS= -Wall #-pipe
+  CFLAGS= -Wall #-pipe
+  OPT=-g
