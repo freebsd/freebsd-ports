@@ -1,6 +1,7 @@
 bin/burlap
 bin/corduroy
 bin/felt
+bin/loom
 bin/patchwork
 bin/velvet
 bin/yardstick
