@@ -1,0 +1,7 @@
+--- m4/Makefile.in.orig	Wed Aug 22 22:49:56 2001
++++ m4/Makefile.in	Wed Feb 11 01:05:11 2004
+@@ -70,3 +70,3 @@
+ 
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(datadir)/aclocal15
+ m4data_DATA = as.m4 auxdir.m4 ccstdc.m4 cond.m4 depend.m4 depout.m4 \

@@ -7,20 +7,24 @@
 
 PORTNAME=	automake
 PORTVERSION=	1.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	automake
 
 MAINTAINER=	ade@FreeBSD.org
-COMMENT=	GNU Standards-compliant Makefile generator
+COMMENT=	GNU Standards-compliant Makefile generator (version 1.5)
 
-LATEST_LINK=	automake
+BUILD_VERSION=	15
+PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
+LATEST_LINK=	automake${BUILD_VERSION}
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL5}
-USE_PERL5=	yes
-
-STRIP=		# none
+CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=	yes
 
 .if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 pre-everything::
@@ -32,10 +36,12 @@ pre-everything::
 	@${FALSE}
 .endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
-pre-configure:
-	${PERL} -pi -e "s^%%X11BASE%%^${X11BASE}^" ${WRKSRC}/aclocal.in
-
-post-install:
-	@install-info ${PREFIX}/info/automake.info ${PREFIX}/info/dir
+post-patch:
+	@(cd ${WRKSRC} && \
+		${RM} -f *.info && \
+		${MV} automake.texi automake${BUILD_VERSION}.texi && \
+		${REINPLACE_CMD} -E 's,(automake)\.(info),\1${BUILD_VERSION}\.\2,g' automake${BUILD_VERSION}.texi && \
+		${REINPLACE_CMD} -E 's,(automake)\.(info|texi),\1${BUILD_VERSION}\.\2,g' Makefile.in \
+	)
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+--- doc/standards.texi.orig	Fri Nov  2 08:29:03 2001
++++ doc/standards.texi	Wed Feb 11 00:11:15 2004
+@@ -2,3 +2,3 @@
+ @c %**start of header
+-@setfilename standards.info
++@setfilename standards253.info
+ @settitle GNU Coding Standards
+@@ -11,3 +11,3 @@
+ START-INFO-DIR-ENTRY
+-* Standards: (standards).        GNU coding standards.
++* Standards253: (standards253).        GNU coding standards.
+ END-INFO-DIR-ENTRY

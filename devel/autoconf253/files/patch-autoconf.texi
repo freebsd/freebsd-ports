@@ -1,0 +1,14 @@
+--- doc/autoconf.texi.orig	Fri Mar  8 04:57:41 2002
++++ doc/autoconf.texi	Wed Feb 11 00:10:07 2004
+@@ -2,4 +2,4 @@
+ @c %**start of header
+-@setfilename autoconf.info
+-@settitle Autoconf
++@setfilename autoconf253.info
++@settitle Autoconf253
+ 
+@@ -36,3 +36,3 @@
+ @direntry
+-* Autoconf: (autoconf).         Create source code configuration scripts
++* Autoconf253: (autoconf253).         Create source code configuration scripts
+ @end direntry
