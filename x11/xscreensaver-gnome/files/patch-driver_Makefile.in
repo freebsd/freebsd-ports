@@ -1,20 +1,22 @@
---- driver/Makefile.in.orig	Wed Oct 23 23:26:18 2002
-+++ driver/Makefile.in	Sun Nov 10 01:07:33 2002
-@@ -23,11 +23,11 @@
+--- driver/Makefile.in.orig	Tue Mar 18 07:30:00 2003
++++ driver/Makefile.in	Mon May 19 22:01:49 2003
+@@ -24,11 +24,11 @@
  INTLTOOL_MERGE	= @INTLTOOL_MERGE@
  
  GNOME_DATADIR	= @GNOME_DATADIR@
 -GNOME_CCDIR_1	= $(GNOME_DATADIR)/control-center/Desktop
+-GNOME_CCDIR_2	= $(GNOME_DATADIR)/control-center/capplets
+-GNOME_CCDIR_3	= $(GNOME_DATADIR)/control-center-2.0/capplets
 +GNOME_CCDIR_1	= $(GNOME_DATADIR)/gnome/control-center/Desktop
- GNOME_CCDIR_2	= $(GNOME_DATADIR)/control-center/capplets
- GNOME_CCDIR_3	= $(GNOME_DATADIR)/control-center-2.0/capplets
++GNOME_CCDIR_2	= $(GNOME_DATADIR)/gnome/control-center/capplets
++GNOME_CCDIR_3	= $(GNOME_DATADIR)/gnome/control-center-2.0/capplets
  GNOME_PANELDIR1 = $(GNOME_DATADIR)/gnome/apps/Settings/Desktop
 -GNOME_PANELDIR2	= $(GNOME_DATADIR)/applications
 +GNOME_PANELDIR2 = $(GNOME_DATADIR)/gnome/applications
  GNOME_PANELDIR	= @GNOME_PANELDIR@
  GLADE_DATADIR	= @GLADE_DATADIR@
  GNOME_BINDIR	= $(bindir)
-@@ -475,8 +475,11 @@
+@@ -477,8 +477,11 @@
  	                                                                      \
             echo $(INSTALL_DATA) screensaver-properties.desktop		      \
               $(install_prefix)$(GNOME_CCDIR_1)/screensaver-properties.desktop;\

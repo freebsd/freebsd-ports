@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xscreensaver-gnome
-PORTVERSION=	4.09
-PORTREVISION=	2
+PORTVERSION=	4.10
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -17,21 +16,22 @@ COMMENT=	Save your screen while you entertain your cat (for GNOME users)
 
 LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle
 
+CONFLICTS=	xscreensaver-[0-9]*
+
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnomehier gnomelibs libcapplet gdkpixbuf
+USE_GNOME=	gnomehier libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks \
 		--with-configdir=${PREFIX}/share/xscreensaver/config \
-		--with-jpeg=${LOCALBASE} --without-motif --with-gnome \
+		--with-jpeg=${LOCALBASE} --without-motif \
 		--without-kerberos
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		X_CFLAGS="-I${LOCALBASE}/include/gnome-xml"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(XS_WITH_ALL_FORTUNES)
 CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
@@ -61,7 +61,7 @@ MAN1=   anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	xmatrix.1 xrayswarm.1 xspirograph.1 xsublim.1 xteevee.1 zoom.1 \
 	endgame.1 glblur.1 halftone.1 barcode.1 eruption.1 flurry.1 \
 	metaballs.1 atunnel.1 piecewise.1 bouncingcow.1 flyingtoasters.1 \
-	glslideshow.1 \
+	glslideshow.1 jigglypuff.1 klein.1 \
 	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
@@ -71,11 +71,8 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD}  -e 's|malloc[.]h|stdlib.h|g' \
 		${WRKSRC}/hacks/glx/extrusion.c
-
-.if !defined(PACKAGE_BUILDING)
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
+	@${REINPLACE_CMD} -e 's|||' \
+		${WRKSRC}/hacks/glx/klein.c
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/utils/images/logo-50.xpm \
