@@ -15,11 +15,18 @@ lib/ruby/%%RUBY_VER%%/tkpalette.rb
 lib/ruby/%%RUBY_VER%%/tkscrollbox.rb
 lib/ruby/%%RUBY_VER%%/tktext.rb
 lib/ruby/%%RUBY_VER%%/tkvirtevent.rb
+share/doc/ruby/tcltklib/MANUAL.euc
+share/doc/ruby/tcltklib/README.euc
+@dirrm share/doc/ruby/tcltklib
 share/examples/ruby/tcltklib/batsu.gif
 share/examples/ruby/tcltklib/maru.gif
 share/examples/ruby/tcltklib/sample0.rb
 share/examples/ruby/tcltklib/sample1.rb
 share/examples/ruby/tcltklib/sample2.rb
+share/examples/ruby/tcltklib/demo/lines0.tcl
+share/examples/ruby/tcltklib/demo/lines1.rb
+share/examples/ruby/tcltklib/demo/lines2.rb
+@dirrm share/examples/ruby/tcltklib/demo
 @dirrm share/examples/ruby/tcltklib
 share/examples/ruby/tk/tkbiff.rb
 share/examples/ruby/tk/tkbrowse.rb
