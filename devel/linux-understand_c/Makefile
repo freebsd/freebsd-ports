@@ -11,6 +11,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel linux
 MASTER_SITES=	http://www.scitools.com/ftp/pub/download/understand_c/%SUBDIR%/
 MASTER_SITE_SUBDIR=	latest pastbuilds
+PKGNAMEPREFIX=	linux-
 DISTNAME=	und_c-14b${PORTVERSION:E}-linux
 
 MAINTAINER=	lioux@FreeBSD.org

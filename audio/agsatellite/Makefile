@@ -10,6 +10,7 @@ PORTVERSION=	0.520
 PORTREVISION=	2
 CATEGORIES=	audio net linux
 MASTER_SITES=	http://www.audiogalaxy.com/downloads/
+PKGNAMEPREFIX=	linux-
 DISTNAME=	AGSatellite${PORTVERSION:S/.//}-glibc21
 
 MAINTAINER=	lioux@FreeBSD.org
