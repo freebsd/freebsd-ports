@@ -10,7 +10,7 @@ PORTVERSION=	0.3.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
 
-MAINTAINER=	patseal@hyperhost.net
+MAINTAINER=	stijn@win.tue.nl
 
 RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
