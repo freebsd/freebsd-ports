@@ -1,0 +1,5 @@
+#! /bin/sh
+
+perl -pi -e "s|!!PREFIX!!|$PREFIX|" ${WRKSRC}/bin/aps2file
+
+exit 0
