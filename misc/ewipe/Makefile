@@ -3,12 +3,12 @@
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.5 1997/10/28 22:39:03 itojun Exp $
+# $Id: Makefile,v 1.6 1997/12/05 03:14:59 itojun Exp $
 #
 
 DISTNAME=	ewipe0.6.0
 PKGNAME=	ja-ewipe-0.6.0
-CATEGORIES=	japanese x11
+CATEGORIES=	japanese misc
 MASTER_SITES=	http://al.ei.tuat.ac.jp/~sekisita/ewipe/
 
 MAINTAINER=	itojun@itojun.org
