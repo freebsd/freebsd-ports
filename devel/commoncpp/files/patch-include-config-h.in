@@ -1,0 +1,12 @@
+--- include/config.h.in.orig	Mon Feb 17 20:21:46 2003
++++ include/config.h.in	Mon Feb 17 20:22:01 2003
+@@ -16,6 +16,8 @@
+ #define	CCXX_CONFIG_H_
+ /* This is the top section */
+ 
++#include <sys/types.h>
++#include <math.h>
+ 
+ /* Define if you have <unistd.h>.  */
+ #undef HAVE_UNISTD_H
+
