@@ -111,6 +111,7 @@
     SUBDIR += gnump3d
     SUBDIR += gnupod
     SUBDIR += gogo
+    SUBDIR += gogo-petit
     SUBDIR += gqmpeg
     SUBDIR += gqradio
     SUBDIR += gramofile
