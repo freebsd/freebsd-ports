@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.163 1998/11/19 18:43:04 sada Exp $
+# $Id: Makefile,v 1.164 1998/11/20 04:14:16 asami Exp $
 #
 
     SUBDIR += Canna
@@ -119,6 +119,7 @@
     SUBDIR += netscape4-communicator
     SUBDIR += netscape4-navigator
     SUBDIR += newosaka
+    SUBDIR += ng
     SUBDIR += nkf
     SUBDIR += nvi-euc-jp
     SUBDIR += nvi-iso-2022-jp
