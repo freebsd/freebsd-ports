@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jmp
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	java devel
 MASTER_SITES=	http://www.khelekore.org/jmp/
 
