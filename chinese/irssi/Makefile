@@ -10,9 +10,9 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-config.h.in \
 		${.CURDIR}/files/patch-configure.in \
 		${.CURDIR}/files/patch-src_fe-text_gui-entry.c \
 		${.CURDIR}/files/patch-src_fe-text_screen.h \
-		${.CURDIR}/files/patch-src_fe-text_wrap.c
+		${.CURDIR}/files/patch-src_fe-text_window.c
 
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese
 
 MAINTAINER=	vanilla@FreeBSD.org
