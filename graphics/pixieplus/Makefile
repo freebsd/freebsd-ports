@@ -8,7 +8,7 @@
 PORTNAME=	pixieplus
 PORTVERSION=	0.5.4
 CATEGORIES=	graphics kde
-MASTER_SITES=	http://www.mosfet.org/pixie/
+MASTER_SITES=	http://people.fruitsalad.org/avleeuwen/distfiles/${PORTNAME}/
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A free, fast, and feature packed image browser and viewer for KDE
