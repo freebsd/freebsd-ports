@@ -1,0 +1,37 @@
+What is xcb?
+============
+Do you ever wish you could cut two or more separate pieces of text
+at once from a window?  Do you ever need to save the output from one
+command for reuse in several subsequent tasks?  Do you ever find
+yourself wanting some easy means of globally exporting data, e.g.
+to a parent shell, to another xterm or application, or to another
+machine or user?  If you answer yes to any of these questions, then
+xcb is for you.
+
+Xcb provides access to the cut buffers built into every X server.
+It allows the buffers to be manipulated either via the command line,
+or with the mouse in a point and click manner.  The buffers can be
+used as holding pens to store and retrieve arbitrary data fragments,
+so any number of different pieces of data can be saved and recalled later.
+The program is designed primarily for use with textual data.
+
+
+What is so good about this release?
+===================================
+Release 2.3 fixes a bug found in the XView code that prevented data
+from being pasted from xcb to XView applications such as cmdtool.
+
+The release also adds a Motif GUI, selectable as a compile-time option.
+Now you can choose between the Athena or the Motif look and feel.
+
+=============================================
+Blame me.  If you have any bug reports, porting problems, comments,
+more comments, suggestions, patches, unwanted cash etc. please tell me.
+I can be reached at the email address below.
+
+Better still, if you really like xcb, send me a postcard!
+(to P.O. Box 213, Belgrave, Victoria, Australia.  3160).
+
+Enjoy.
+Farrell McKay (Farrell.McKay@mpx.com.au)
+Nov 1994
