@@ -18,6 +18,7 @@ case "$USER" in
     exit 0	# ok
     ;;
   *)
+    echo "$USER is not a member of the release engineering team!" 1>&2
     echo "RELENG* tag operations are reserved for release engineering!" 1>&2
     echo "Use 'cvs add' or 'cvs rm' to add/remove files from branches!" 1>&2
     echo "$*" | /usr/bin/mail -s "NCVS TAG" cvs
