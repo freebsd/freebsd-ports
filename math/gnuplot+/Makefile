@@ -8,12 +8,12 @@
 PORTNAME=	gnuplot371+
 PORTVERSION=	1.2.0
 CATEGORIES=	math japanese graphics
-MASTER_SITES=	http://www.h2.dion.ne.jp/~yamaga/gnuplot/ \
-		ftp://ftp.hipecs.hokudai.ac.jp/pub/GNU/jp/pub.yamaga/gnuplot+/3.7base/ \
-		ftp://ftp.tohoku.ac.jp/mirror/gnuplot+/3.7base/ \
-		ftp://ftp.win.ne.jp/pub/graphics/gnuplot/gnuplot+/3.7base/ \
-		ftp://ftp.rc.tutrp.tut.ac.jp/pub/mirror/gnuplot+/3.7base/
-DISTFILES=	gnuplot-3.7.1.tar.gz gnuplot3.7.1+${PORTVERSION}.patch.tar.gz
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.yama-ga.com/gnuplot/:patch \
+		http://www.h2.dion.ne.jp/~yamaga/gnuplot/:patch
+MASTER_SITE_SUBDIR=	gnuplot
+DISTFILES=	gnuplot-3.7.1.tar.gz \
+		gnuplot3.7.1+${PORTVERSION}.patch.tar.gz:patch
 EXTRACT_ONLY=	gnuplot-3.7.1.tar.gz
 
 MAINTAINER=	nakaji@jp.freebsd.org
