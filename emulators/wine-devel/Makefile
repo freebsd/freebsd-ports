@@ -1,14 +1,14 @@
 # New ports collection makefile for:    wine
-# Version required:     960314
-# Date created:         Fri Mar 15 23:45:13 MET 1996
+# Version required:     960506
+# Date created:         Fri May 17 20:13:18 MET DST 1996
 # Whom:			se
 #
-# $Id: Makefile,v 1.23 1996/03/16 00:23:10 se Exp $
+# $Id: Makefile,v 1.24 1996/04/14 17:34:53 se Exp $
 #
 
-DATE=		960414
+DATE=		960516
 DISTNAME=	Wine-${DATE}
-PKGNAME=	wine-96.04.14
+PKGNAME=	wine-96.05.16
 CATEGORIES+=	emulators x11
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/development/ \
 		ftp://aris.com/pub/linux/ALPHA/Wine/development/ \
@@ -34,6 +34,8 @@ do-install:
 		|| cp ${WRKSRC}/wine.ini ${PREFIX}/etc/wine.conf
 	cp ${WRKSRC}/wine.sym ${PREFIX}/etc
 	cp ${WRKSRC}/wine.man ${PREFIX}/man/man1/wine.1
+.if !defined(NOMANCOMPRESS)
 	gzip -9f ${PREFIX}/man/man1/wine.1
+.endif
 
 .include <bsd.port.mk>
