@@ -339,5 +339,3 @@ share/locale/th/LC_MESSAGES/webarchiver.mo
 share/locale/th/charset
 share/locale/th/entry.desktop
 share/locale/th/flag.png
-@dirrm share/locale/th/LC_MESSAGES
-@dirrm share/locale/th

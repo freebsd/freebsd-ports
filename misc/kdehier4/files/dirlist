@@ -81,6 +81,8 @@ share/applnk/Utilities/XUtilities
 @comment share/apps/kate/pics
 @comment --------------------------------------------------------------------
 @comment -- There might be ports which install Kate scripts
+share/apps
+share/apps/kate
 share/apps/kate/scripts
 @comment share/apps/kbookmark
 @comment share/apps/kcmcss
@@ -117,6 +119,7 @@ share/apps/kdesktop/programs
 @comment share/apps/khelpcenter
 @comment -------------------------------------------------------------------
 @comment -- Hopefully we get more KHelpCenter plugins :-)
+share/apps/khelpcenter
 share/apps/khelpcenter/plugins
 @comment share/apps/khelpcenter/plugins/Applications
 @comment share/apps/khelpcenter/plugins/Manpages
@@ -146,9 +149,11 @@ share/apps/kicker/wallpapers
 @comment share/apps/konqlistview/kpartplugins
 @comment -------------------------------------------------------------------
 @comment -- Konqueror sidebar plugins could install stuff here.
+share/apps/konqsidebartng
 share/apps/konqsidebartng/add
 share/apps/konqsidebartng/dirtree
 share/apps/konqsidebartng/entries
+share/apps/konqsidebartng/virtual_folders
 share/apps/konqsidebartng/virtual_folders/remote
 share/apps/konqsidebartng/virtual_folders/remote/ftp
 share/apps/konqsidebartng/virtual_folders/remote/web
@@ -159,6 +164,7 @@ share/apps/konqsidebartng/virtual_folders/services
 @comment share/apps/konqueror/pic
 @comment -------------------------------------------------------------------
 @comment -- Konqueror profiles maybe, and additional service menus.
+share/apps/konqueror
 share/apps/konqueror/profiles
 share/apps/konqueror/servicemenus
 @comment share/apps/konqueror/tiles
@@ -175,6 +181,7 @@ share/apps/konsole/profiles
 @comment share/apps/kthememgr
 @comment -------------------------------------------------------------------
 @comment -- Additional kthememgr and kwin themes - not sure about kwin/pics
+share/apps/kthememgr
 share/apps/kthememgr/Themes
 share/apps/kwin
 share/apps/kwin/icewm-themes
@@ -189,6 +196,7 @@ share/config.kcfg
 @comment share/doc/HTML/en/kate
 @comment -------------------------------------------------------------------
 @comment -- Documentation for additional kcontrol modules could go here.
+share/doc/HTML/en
 share/doc/HTML/en/kcontrol
 @comment share/doc/HTML/en/kcontrol/arts
 @comment share/doc/HTML/en/kcontrol/background
@@ -410,106 +418,129 @@ share/wallpapers
 @comment -- Directories handpicked out of kdelibs
 lib/kde3
 share/applnk/Settings/Components
+share/apps
+share/apps/kabc
 share/apps/kabc/formats
 share/apps/kabc/plugins
+share/icons
 share/icons/crystalsvg
+share/icons/crystalsvg/128x128
 share/icons/crystalsvg/128x128/actions
 share/icons/crystalsvg/128x128/apps
 share/icons/crystalsvg/128x128/devices
 share/icons/crystalsvg/128x128/filesystems
 share/icons/crystalsvg/128x128/mimetypes
+share/icons/crystalsvg/16x16
 share/icons/crystalsvg/16x16/actions
 share/icons/crystalsvg/16x16/apps
 share/icons/crystalsvg/16x16/devices
 share/icons/crystalsvg/16x16/filesystems
 share/icons/crystalsvg/16x16/mimetypes
+share/icons/crystalsvg/22x22
 share/icons/crystalsvg/22x22/actions
 share/icons/crystalsvg/22x22/apps
 share/icons/crystalsvg/22x22/devices
 share/icons/crystalsvg/22x22/filesystems
 share/icons/crystalsvg/22x22/mimetypes
+share/icons/crystalsvg/32x32
 share/icons/crystalsvg/32x32/actions
 share/icons/crystalsvg/32x32/apps
 share/icons/crystalsvg/32x32/devices
 share/icons/crystalsvg/32x32/filesystems
 share/icons/crystalsvg/32x32/mimetypes
+share/icons/crystalsvg/48x48
 share/icons/crystalsvg/48x48/actions
 share/icons/crystalsvg/48x48/apps
 share/icons/crystalsvg/48x48/devices
 share/icons/crystalsvg/48x48/filesystems
 share/icons/crystalsvg/48x48/mimetypes
+share/icons/crystalsvg/64x64
 share/icons/crystalsvg/64x64/actions
 share/icons/crystalsvg/64x64/apps
 share/icons/crystalsvg/64x64/devices
 share/icons/crystalsvg/64x64/filesystems
 share/icons/crystalsvg/64x64/mimetypes
+share/icons/crystalsvg/scalable
 share/icons/crystalsvg/scalable/actions
 share/icons/crystalsvg/scalable/apps
 share/icons/crystalsvg/scalable/devices
 share/icons/crystalsvg/scalable/filesystems
 share/icons/crystalsvg/scalable/mimetype
 share/icons/hicolor
+share/icons/hicolor/128x128
 share/icons/hicolor/128x128/actions
 share/icons/hicolor/128x128/apps
 share/icons/hicolor/128x128/devices
 share/icons/hicolor/128x128/filesystems
 share/icons/hicolor/128x128/mimetypes
+share/icons/hicolor/16x16
 share/icons/hicolor/16x16/actions
 share/icons/hicolor/16x16/apps
 share/icons/hicolor/16x16/devices
 share/icons/hicolor/16x16/filesystems
 share/icons/hicolor/16x16/mimetypes
+share/icons/hicolor/22x22
 share/icons/hicolor/22x22/actions
 share/icons/hicolor/22x22/apps
 share/icons/hicolor/22x22/devices
 share/icons/hicolor/22x22/filesystems
 share/icons/hicolor/22x22/mimetypes
+share/icons/hicolor/32x32
 share/icons/hicolor/32x32/actions
 share/icons/hicolor/32x32/apps
 share/icons/hicolor/32x32/devices
 share/icons/hicolor/32x32/filesystems
 share/icons/hicolor/32x32/mimetypes
+share/icons/hicolor/48x48
 share/icons/hicolor/48x48/actions
 share/icons/hicolor/48x48/apps
 share/icons/hicolor/48x48/devices
 share/icons/hicolor/48x48/filesystems
 share/icons/hicolor/48x48/mimetypes
+share/icons/hicolor/64x64
 share/icons/hicolor/64x64/actions
 share/icons/hicolor/64x64/apps
 share/icons/hicolor/64x64/devices
 share/icons/hicolor/64x64/filesystems
 share/icons/hicolor/64x64/mimetypes
 share/icons/locolor
+share/icons/locolor/128x128
 share/icons/locolor/128x128/actions
 share/icons/locolor/128x128/apps
 share/icons/locolor/128x128/devices
 share/icons/locolor/128x128/filesystem
 share/icons/locolor/128x128/mimetypes
+share/icons/locolor/16x16
 share/icons/locolor/16x16/actions
 share/icons/locolor/16x16/apps
 share/icons/locolor/16x16/devices
 share/icons/locolor/16x16/filesystems
 share/icons/locolor/16x16/mimetypes
+share/icons/locolor/22x22
 share/icons/locolor/22x22/actions
 share/icons/locolor/22x22/apps
 share/icons/locolor/22x22/devices
 share/icons/locolor/22x22/filesystems
 share/icons/locolor/22x22/mimetypes
+share/icons/locolor/32x32
 share/icons/locolor/32x32/actions
 share/icons/locolor/32x32/apps
 share/icons/locolor/32x32/devices
 share/icons/locolor/32x32/filesystems
 share/icons/locolor/32x32/mimetypes
+share/icons/locolor/48x48
 share/icons/locolor/48x48/actions
 share/icons/locolor/48x48/apps
 share/icons/locolor/48x48/devices
 share/icons/locolor/48x48/filesystems
 share/icons/locolor/48x48/mimetypes
+share/icons/locolor/64x64
 share/icons/locolor/64x64/actions
 share/icons/locolor/64x64/apps
 share/icons/locolor/64x64/devices
 share/icons/locolor/64x64/filesystems
 share/icons/locolor/64x64/mimetypes
+share/mimelnk
 share/mimelnk/all
 share/mimelnk/application
 share/mimelnk/audio
