@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	200
+PORTVERSION=	202
 CATEGORIES=	lang
 MASTER_SITES=	http://download.plt-scheme.org/bundles/200/plt/ \
 		http://www.cs.utah.edu/plt/download/200/plt/ \
