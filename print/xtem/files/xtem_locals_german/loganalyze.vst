@@ -1,0 +1,10 @@
+ @
+ ja (TeX stoppt b. Fehler)  @ yes @  \
+
+ ja (TeX i. Nonstop-Modus)  @ yes @ \nonstopmode \input  \
+
+ nein                       @ no  @  \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+

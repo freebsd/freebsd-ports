@@ -1,0 +1,24 @@
+							     @ Tcl_7.3 @ Tcl_7.4 @ Tcl_7.5 @ Tcl_7.6 
+Sehr gute Effizienz                                          @             @ mkcommand.3 @             @   \
+
+Sehr gute Effizienz (Testversion, Nachfolger f. mkcommand.3) @             @ mkcommand.6 @ mkcommand.6 @ mkcommand.6   \
+
+Sehr gute Effizienz (Testversion, Nachfolger f. mkcommand.3) @             @ mkcommand.7 @ mkcommand.7 @ mkcommand.7   \
+
+Effizienzverluste bei viel Bildschirmausgabe (alle Systeme)  @ mkcommand.1 @ mkcommand.1 @ mkcommand.1 @ mkcommand.1   \
+
+Ein (permanentes) xterm-Fenster wird generiert               @ mkcommand.4 @ mkcommand.4 @ mkcommand.4 @ mkcommand.4   \
+
+Neues xterm-Fenster bei jedem Programmstart (alle Systeme)   @ mkcommand.5 @ mkcommand.5 @ mkcommand.5 @ mkcommand.5   \
+
+Nur Demonstration, keine Programmausführung (alle Systeme)   @ mkcommand.0 @ mkcommand.0 @ mkcommand.0 @ mkcommand.0   \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+
+*** diese Zeile löschen, folg. Zeilen ggfs. umordnen (s. Installation Guide!) @ mkcommand.9 @ mkcommand.9 @ mkcommand.9 @ mkcommand.9   \
+
+Gute Effizienz  (läuft nicht m. BSD-basiertem Unix)          @ mkcommand.2 @ mkcommand.2 @             @   \
+
+Sehr gute Effizienz (läuft nicht m. BSD-basiertem Unix)      @ mkcommand.3 @             @             @   \
+

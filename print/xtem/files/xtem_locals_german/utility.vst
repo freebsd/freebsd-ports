@@ -1,0 +1,46 @@
+ @
+Umlaute: ä ö .. ß --> \"a \"o ... {\ss}           @ changecode @ -u2t     @ file    @      @        @  \
+
+Umlaute: ä ö .. ß --> "a "o ... "s                @ changecode @ -u2gt    @ file    @      @        @  \
+
+Umlaute: "a \"a  ... "s {\ss} --> ä .. ß          @ changecode @ -tgt2u   @ file    @      @        @  \
+
+DOS-Datei --> Unix-Datei umwandeln                @ changecode @ -d2u     @ file    @      @        @  \
+
+Unix-Datei --> DOS-Datei umwandeln                @ changecode @ -u2d     @ file    @      @        @  \
+
+Umlaute: DOS-PC-Code --> 8 Bit-ISO-Code           @ changecode @ -ibm2iso @ file    @      @        @  \
+
+Umlaute: 8 Bit-ISO-Code --> DOS-PC-Code           @ changecode @ -iso2ibm @ file    @      @        @  \
+
+Tabulator durch Leerzeichen expandieren           @ changecode @ -tabexp  @ file    @      @        @  \
+
+Datei-Analyse                                     @ changecode @ -analyse @ file    @      @        @  \
+
+Zeichenprogramm xfig                              @ xfig&      @          @ optfile @ .fig @ * .fig @  \
+
+Zeichenprogramm xfig (in Verzeichnis ~/xfigdir)   @ xfig&      @          @ optfile @ .fig @ * .fig @ ~/xfigdir  \
+
+Zeichenprogramm xfig (in Verzeichnis abbildungen) @ xfig&      @          @ optfile @ .fig @ * .fig @ ./abbildungen  \
+
+Zeichenprogramm xfig (in Verzeichnis ${main_file}Abbildungen) @ xfig&      @          @ optfile @ .fig @ * .fig @ ./${main_file}Abbildungen  \
+
+more                                              @ xterm       @ -e more @ file    @ .tex @ * .tex @  \
+
+uudecode                                          @ uudecode   @          @ file     @ .uue @ * .uue @  \
+
+gunzip (de-komprimieren)                          @ gunzip     @          @ file    @ .gz  @ * .Z .gz .z .taz .tgz @  \
+
+tar (tar-Archiv auspacken)                        @ tar        @ -xvf     @ file    @ .tar @  * .tar @  \
+
+gtar (uncompress and unpack at once)              @ gtar       @ -xvzf    @ file    @ .tar.gz @ * .tar.gz .tar.Z .tgz .taz @  \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+
+Zeichenprogramm xpaint                            @ xpaint&    @          @ optfile @ .xpm @ * .xpm .xbm @  \
+
+netscaspe (in Verzeichnis $main_file @ netscape&      @          @ file @ .html @ .html * @ ./$main_file  \
+
+gnutar (de-komprimieren und auspacken)            @ gnutar     @ -xvzf    @ file    @ .tar.gz @ * .tar.gz .tar.Z .tgz .taz @  \
+

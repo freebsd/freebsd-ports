@@ -1,0 +1,20 @@
+ @
+gv& (im Hintergrund)                                 @ gv& @ .ps @ -center -magstep -1 @ A4_Hochformat{}{-a4},A4_Querformat{-t landscape}{-a4 -swap -landscape}   \
+
+gv (im Vordergrund)                                  @ gv @ .ps @ -center -magstep -1 @ A4_Hochformat{}{-a4},A4_Querformat{-t landscape}{-a4 -swap -landscape}   \
+
+ghostview& (im Hintergrund)  @ ghostview& @ .ps  @ -center -magstep -1 @ A4_Hochformat{}{-a4},A4_Querformat{-t landscape}{-a4 -swap -landscape}  \
+
+ghostview  (im Vordergrund)  @ ghostview  @ .ps  @ -center -magstep -1 @ A4_Hochformat{}{-a4},A4_Querformat{-t landscape}{-a4 -swap -landscape}  \
+
+xdvi&      (im Hintergrund)  @ xdvi&      @ .dvi @ -p 300              @ A4_Hochformat{}{-paper a4 -keep},A4_Querformat{}{-paper a4r -keep}  \
+
+xdvi       (im Vordergrund)  @ xdvi       @ .dvi @ -p 300              @ A4_Hochformat{}{-paper a4 -keep},A4_Querformat{}{-paper a4r -keep}  \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+
+TkDvi&     (im Hintergrund)  @ tkdvi&     @ .dvi @                     @ A4_Hochformat{}{}  \
+
+TkDvi      (im Vordergrund)  @ tkdvi      @ .dvi @                     @ A4_Hochformat{}{}  \
+

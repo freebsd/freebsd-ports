@@ -1,0 +1,22 @@
+ @
+Analyse der TeX-Protokolldatei  @          @ tla     @  \
+
+cat (komplette Liste)           @          @ cat     @  \
+
+identisch derzeit eingest.Editor@          @ $editor @  \
+
+pg  (Anlisten Seitenweise)      @ xterm -e @ pg      @  \
+
+pg& (Seitenw. "im Hintergrund") @ xterm -e @ pg&     @  \
+
+emacs  (Editor)                 @          @ emacs   @  \
+
+emacs& (Editor "im Hintergrund")@          @ emacs&  @  \
+
+vi   (nur Lesen"im Hintergrund")@ xterm +sb -e @ vi    @ -R  \
+
+vi&  (nur Lesen"im Hintergrund")@ xterm +sb -e @ vi&   @ -R  \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+

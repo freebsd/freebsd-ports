@@ -1,0 +1,15 @@
+--- locals_english.LRW/editor.vst.orig	Tue Jan 13 13:52:13 1998
++++ locals_english.LRW/editor.vst	Wed Feb  4 11:56:34 1998
+@@ -5,6 +5,12 @@
+ emacs                                                 @      @ emacs  @
+ vi&                                                   @ \
+     xterm +sb -title "vi $ed_file" -e @ vi& @
++xemacs&                                                @      @ xemacs& @
++xemacs                                                 @      @ xemacs  @
++xemacs&  80x60 (cols x lines)                          @      @ xemacs& @ \
++    -font lucidasanstypewriter-bold-12 -geometry 80x60+210+0
++xemacs   80x60 (cols x lines)                          @      @ xemacs  @ \
++    -font lucidasanstypewriter-bold-12 -geometry 80x60+210+0
+ vi                                                    @ \
+     xterm +sb -title "vi $ed_file" -e @ vi  @
+ vi&  (read only)                                      @ \

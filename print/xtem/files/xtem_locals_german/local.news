@@ -1,0 +1,13 @@
+Meldungen
+   '... file9 does not exist ...'
+(gelegentlich während xtem-Sitzungen nach Programm-Ausführungen)
+scheinen ihre Ursache in einem Synchronisationsproblem nach der
+Programm-Terminierung in TclX zu haben, sie scheinen systemabängig 
+(z.B. Linux) und abhängig von der Rechnerlast zu sein.
+Das Programm wurde aber beendet.
+Die Meldungen sollten mit der neuen Tcl/Tk-Version aber nicht mehr auftreten!
+Auszuführende Aktion: "OK"-Knopf mit der linken Maustaste anklicken.
+
+
+Hier können vom lokalen Administrator Neuigkeiten zur lokalen TeX-Installation 
+bekanntgegeben werden (wegen eines guten Umbruchs: max. 80 Zeichen/Zeile).

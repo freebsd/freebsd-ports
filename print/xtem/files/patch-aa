@@ -1,0 +1,29 @@
+--- xtem.orig	Mon Nov 10 15:04:09 1997
++++ xtem	Thu Nov 20 18:17:51 1997
+@@ -10,21 +10,21 @@
+ #      touch xtemInstalled
+ 
+ #####  command to call wishx (must include Tcl, Tk and TclX)
+-wishcall="/usr/local/bin/wishx"
++wishcall=@WISHX@
+ 
+ #####  command to call tcl (pure Tcl, without Tk)
+-tclcall="/usr/local/bin/tcl"
++tclcall=@TCLSH@
+ 
+ #####  path in which xtem is installed:
+ #####  can be set by the environment variable XTEMPATH; 
+ #####  if XTEMPATH doesn't exist, it will be set to the following default value:
+-: ${XTEMPATH=${XTEMPATH-/usr/local/lib/tex/xtem}}
++: ${XTEMPATH=${XTEMPATH-@XTEMPATH@}}
+ #####  (i.e. files      /usr/local/lib/tex/xtem/*.tcl     will be found)
+ 
+ #####  one of the following language defining lines must be made active! 
+ #defaultlanguage="german"
+-#defaultlanguage="english"
+-defaultlanguage="german"
++defaultlanguage="english"
++#defaultlanguage="german"
+ 
+ if [ ! -d "$XTEMPATH" ]
+ then

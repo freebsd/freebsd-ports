@@ -1,0 +1,10 @@
+ @
+LaTeX2e             @ latex    @ 1 @ 1 @ 1 @ latex @ .ltx @ \documentstyle[12pt]{article} @ \begin{document} @ \end{document} @ \
+
+TeX (plain-TeX)     @ tex      @ 1 @ 0 @ 0 @ tex   @ .tex @                               @ %end_preamble    @ \end           @ \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+
+LaTeX 2.09          @ latex209 @ 1 @ 1 @ 1 @ latex @ .ltx @ \documentclass[12pt]{article} @ \begin{document} @ \end{document} @ \
+

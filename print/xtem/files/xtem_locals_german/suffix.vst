@@ -1,0 +1,15 @@
+*
+.tex
+.ltx
+.dtx
+.doc
+.aux
+.idx
+.ind
+.ins
+.log
+.toc
+.vst
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+

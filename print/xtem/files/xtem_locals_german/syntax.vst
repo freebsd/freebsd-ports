@@ -1,0 +1,14 @@
+ @
+lacheck                                                @ lacheck @ \
+
+texchk  : ausführl. Ausgabe ohne Kommando-Prüfung      @ texchk  @  -v \
+
+texchk  : knappe Ausgabe    ohne Kommando-Prüfung      @ texchk  @ \
+
+texchk  : ausführl. Ausgabe mit Kommando-Prüfung       @ texchk  @  -v -c \
+
+texchk  : knappe Ausgabe    mit Kommando-Prüfung       @ texchk  @  -c \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+

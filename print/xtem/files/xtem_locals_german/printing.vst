@@ -1,0 +1,30 @@
+                 @ Drucker @ Emulation @ Treiber @  @  @  @  @  @  @  @ Format @ doppelseitig @ Auflösung @ Bereich @ Farbe/sw 
+                                                             @ * @ Postscript @ dvips @  @  @  @  @@@@ *  @ * @ * @ * @ sw  \
+
+HPLaserjet IV (SYSV/lp->lp1)     @ Prt1 @ Postscript @ dvips  @ .ps  @    @ lp    @ -c -dlp1  @@@@ A4_Hochformat{}{},A4_Querformat{-t landscape}{} @ einseitig{}{} @ 300dpi{}{},600dpi{-P lp1}{} @ LRW @ sw @ \
+
+HPLaserjet IIIP (SYSV/lp->xlw1)  @ Prt2 @ Postscript @ dvips  @ .ps  @ -r @ lp    @ -c -dxlw1 @@@@ A4_Hochformat{}{},A4_Querformat{-t landscape}{} @ einseitig{}{} @300dpi{}{} @ LRW @ sw @ \
+
+CanonColorLaser350 (SYSV/lp->lp0)@ Prt3 @ Postscript @ dvips  @ .ps  @    @ lp    @ -c -dlp0  @@@@ A4_Hochformat{}{},A4_Querformat{-t landscape}{}  @           einseitig{}{} @ 400dpi{-P lp1}{} @ LRW @ Farbe @ \
+
+HPLaserjet IVP (BSD/lpr->lp1)    @ Prt4 @ Postscript @ dvips  @ .ps  @ -O 0.0mm,0.0mm @ lpr @ -Plp1 @@@@ A4_Hochformat{}{},A4_Querformat{-t landscape}{} @ einseitig{}{} @ 300dpi{}{},600dpi{-P lp1}{} @ LRW @ sw @ \
+
+HPLaserjet III (via lpjep)       @ Prt5 @ PCL        @ dvijep @ .jep @ -b @ lpjep  @          @@@@ A4_Hochformat{}{} @ einseitig{}{} @ 300dpi{}{}  @ FB1 @ sw @ \
+
+HPLaserjet III (via lpjep1)      @ Prt5 @ PCL        @ dvilj  @ .lj  @    @ lpjep1 @          @@@@ A4_Hochformat{-s26}{},A4_Querformat{-s26 -l}{} @ einseitig{}{} @ 300dpi{}{}  @ ZfN @ sw @ \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+
+Musterzeile fuer SYSV-Unix (lp-Kommando, z.B. SOLARIS 2.5): \
+
+HPLaserjet IV (SYSV/lp->lp1)     @ Prt1 @ Postscript @ dvips  @ .ps  @    @ lp    @ -c -dlp1  @@@@ A4_Hochformat{}{},A4_Querformat{-t landscape}{} @ einseitig{}{} @ 300dpi{}{},600dpi{-P lp1}{} @ LRW @ sw @ \
+
+Musterzeile fuer BSD-Unix (lpr-Kommando, z.B. Linux): \
+
+HPLaserjet IVP (BSD/lpr->lp1)    @ Prt4 @ Postscript @ dvips  @ .ps  @ -O 0.0mm,0.0mm @ lpr @ -Plp1 @@@@ A4_Hochformat{}{},A4_Querformat{-t landscape}{} @ einseitig{}{} @ 300dpi{}{},600dpi{-P lp1}{} @ LRW @ sw @ \
+
+Musterzeile fuer dvilj-Druckertreiber: \
+
+HPLaserjet III (via lpjep1)      @ Prt5 @ PCL        @ dvilj  @ .lj  @    @ lpjep1 @          @@@@ A4_Hochformat{-s26}{},A4_Querformat{-s26 -l}{} @ einseitig{}{} @ 300dpi{}{}  @ ZfN @ sw @ \
+

@@ -1,0 +1,67 @@
+#fonts:
+fontbl             -adobe-helvetica-bold-r-normal--*-120-*-*-*-*-iso8859-1
+fontstdout         lucidasanstypewriter-10
+fonterr            -adobe-courier-bold-r-normal-*-140-*-*-*-*-iso8859-1
+fontdli            lucidasanstypewriter-12
+fontsli            -adobe-courier-medium-r-normal--*-100-*-*-*-*-iso8859-1
+fonterrtag         lucidasanstypewriter-8
+fonted             lucidasanstypewriter-10
+hlp_font(normal)   -*-new century schoolbook-medium-r-normal-*-120-*-*-*-*-iso8859-1
+hlp_font(tag)      -*-new century schoolbook-medium-r-normal-*-120-*-*-*-*-iso8859-1
+hlp_font(bold)     -*-new century schoolbook-bold-r-normal-*-120-*-*-*-*-iso8859-1
+hlp_font(boldlrge) -*-new century schoolbook-bold-r-normal-*-140-*-*-*-*-iso8859-1
+hlp_font(teletype) lucidasanstypewriter-12
+hlp_font(telelrge) lucidasanstypewriter-14
+hlp_font(telesmll) lucidasanstypewriter-10
+hlp_font(italic)   -*-new century schoolbook-medium-i-normal-*-120-*-*-*-*-iso8859-1
+################################################
+#fonts: if your have excellent eyes and a small screen, uncomment the following lines:
+#fontbl             -adobe-helvetica-bold-r-normal--*-80-*-*-*-*-iso8859-1
+#fontstdout         lucidasanstypewriter-8
+#fonterr            -adobe-courier-bold-r-normal-*-80-*-*-*-*-iso8859-1
+#fontdli            lucidasanstypewriter-8
+#fontsli            -adobe-courier-medium-r-normal--*-80-*-*-*-*-iso8859-1
+#fonterrtag         lucidasanstypewriter-8
+#fonted             lucidasanstypewriter-8
+#hlp_font(normal)   -*-new century schoolbook-medium-r-normal-*-100-*-*-*-*-iso8859-1
+#hlp_font(tag)      -*-new century schoolbook-medium-r-normal-*-100-*-*-*-*-iso8859-1
+#hlp_font(bold)     -*-new century schoolbook-bold-r-normal-*-100-*-*-*-*-iso8859-1
+#hlp_font(boldlrge) -*-new century schoolbook-bold-r-normal-*-120-*-*-*-*-iso8859-1
+#hlp_font(teletype) lucidasanstypewriter-10
+#hlp_font(telelrge) lucidasanstypewriter-12
+#hlp_font(telesmll) lucidasanstypewriter-8
+#hlp_font(italic)   -*-new century schoolbook-medium-i-normal-*-100-*-*-*-*-iso8859-1
+################################################
+vlerg          -LRW
+widthl         39
+widthr         48
+sizeds         90x10
+#prtselmaxl    30
+#prtselmaxc    100
+edsyntaxhelp   yes
+maxprintcops   100
+xtermcall      xterm -sb -sl 1024 -T xtem -n xtem
+bell_level     3
+texmax         1
+prtfilperm     nicht permanent
+b_quick        1
+b_spell        1
+b_syntax       1
+b_index        1
+b_bibliography 1
+b_additional   1
+b_logfile      1
+b_letters      0 Briefe/Gutachten (in Entwicklung)
+whichcheck     yes
+tlOverfull     0.0
+tlHBadness     500
+tlMaxLines     500
+tlDirIgnore    /usr/local/texmf/
+quickfile      XtemQuickDirty
+fsmenucols     2
+exallowset     0
+textxscroll    1
+unlockbutt     0
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+

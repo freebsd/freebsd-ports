@@ -1,0 +1,38 @@
+  @
+XtemQuickDirty.* @ 1  \
+
+*~       @ 1  \
+
+*.aux    @ 1  \
+
+*.bak    @ 1  \
+
+*.bbl    @ 0  \
+
+*.blg    @ 1  \
+
+*.dvi    @ 0  \
+
+*.glo    @ 1  \
+
+*.idx    @ 1  \
+
+*.ilg    @ 1  \
+
+*.ind    @ 0  \
+
+*.lof    @ 1  \
+
+*.log    @ 1  \
+
+*.lot    @ 1  \
+
+*.ps     @ 0  \
+
+*.toc    @ 1  \
+
+*.wb-erg @ 1  \
+
+
+*** ab hier "Kommentar" (Leerzeile beendet den ausgewerteten Teil der Datei!)
+
