@@ -1936,6 +1936,7 @@ gd2		ports/graphics/gd2
 gdal		ports/graphics/gdal
 gdb		src/gnu/usr.bin/gdb
 gdb52		ports/devel/gdb52
+gdb53		ports/devel/gdb53
 gdbm		ports/databases/gdbm
 gdbmods		ports/devel/gdbmods
 gdcalc		ports/math/gdcalc
