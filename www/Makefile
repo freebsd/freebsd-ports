@@ -39,6 +39,7 @@
     SUBDIR += g-gcl
     SUBDIR += gn
     SUBDIR += gnuinfo
+    SUBDIR += gnujsp
     SUBDIR += grail
     SUBDIR += harvest
     SUBDIR += hotjava

@@ -1,0 +1,10 @@
+===================================================================
+
+GNUJSP has been installed in %%PREFIX%%/share/java/classes.
+
+Please read the INSTALL document in %%PREFIX%%/share/doc/gnujsp for
+info on how to get started.
+
+Some examples can be found in %%PREFIX%%/share/examples/gnujsp.
+
+===================================================================
