@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -9305,7 +9306,10 @@
+@@ -9305,7 +9306,11 @@
    fi
    exec_prefix_save=$exec_prefix
    if test "x$exec_prefix" = "xNONE"; then
@@ -16,6 +16,7 @@
      exec_prefix=/usr/local
 +  else
 +    exec_prefix=${prefix}
++  fi
    fi
  
    full_var="$FROM_VAR"
