@@ -36,6 +36,6 @@ if ($pid1 = fork) {
 }
 else {
   # first child
-  print "executing @ARGV\n";
+  #print "executing @ARGV\n";
   exec @ARGV;
 }
