@@ -115,6 +115,7 @@
     SUBDIR += ktamaga
     SUBDIR += ladder
     SUBDIR += lbreakout
+    SUBDIR += lexter
     SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += linuxdoom

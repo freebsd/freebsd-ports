@@ -1,0 +1,4 @@
+bin/lexter
+share/lexter/dict.en
+share/lexter/dict.fr
+@dirrm share/lexter
