@@ -7,6 +7,7 @@
 
 PORTNAME=	gimageview
 PORTVERSION=	0.2.25
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkmmviewer
@@ -31,6 +32,10 @@ MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 USE_GNOME+=	imlib
 PKGNAMESUFFIX=	-imlib
 WITH_IMLIB=	yes
+.endif
+
+.if exists(${LOCALBASE}/lib/libexif.so.10)
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-exit_view.c
 .endif
 
 .if exists(${LOCALBASE}/lib/libmng.so.1)
