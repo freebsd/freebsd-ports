@@ -57,7 +57,11 @@ MAKE_ARGS+=	LIBS=-lxpg4
 MAKE_ARGS+=	CONF_OPT_MAX="--enable-max-features"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
 
-.if !defined(NO_GUI)
+.if defined(NO_GUI)
+WITHOUT_X11=	yes
+.endif
+
+.if !defined(WITHOUT_X11)
 .if defined(WITH_ATHENA)
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=athena" ${I18N}
 #MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=yes" ${I18N}
@@ -68,9 +72,9 @@ MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=gtk --with-gtk-prefix=${X11BASE}" ${I18N}
 USE_MOTIF=	yes
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=motif --with-motif-lib=\"${MOTIFLIB}\"" MOTIFHOME=${X11BASE} ${I18N}
 .endif
-.else  # NO_GUI
+.else  # WITHOUT_X11
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
-.endif # NO_GUI
+.endif # WITHOUT_X11
 
 .if defined(PACKAGE_BUILDING)
 MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tclinterp --enable-cscope"
