@@ -3,3 +3,10 @@ JPEG, TIFF, PBM, PGM, PPM, X11 bitmap, Utah Raster Toolkit
 RLE,  PDS/VICAR,  Sun Rasterfile, BMP, XPM, PCX, IRIS RGB,
 possibly PostScript, and PM formats  on  workstations  and
 terminals running the X Window System, Version 11.
+
+Note that this program is shareware except for personal use only.
+Please read the documentation in the directory
+
+  /usr/X11R6/share/doc/xv
+
+for proper usage.

@@ -3,7 +3,7 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.8 1995/05/13 23:57:44 asami Exp $
+# $Id: Makefile,v 1.9 1995/10/03 21:58:40 ache Exp $
 #
 
 DISTNAME=	xv-3.10a
@@ -15,7 +15,8 @@ LIB_DEPENDS=    jpeg\\.6\\.:${PORTSDIR}/graphics/jpeg \
 
 USE_IMAKE=	yes
 
-# Restrictive copyright
-NO_PACKAGE=	yes
+post-install:
+	mkdir -p ${PREFIX}/share/doc/xv
+	cp ${WRKSRC}/README ${PREFIX}/share/doc/xv
 
 .include <bsd.port.mk>
