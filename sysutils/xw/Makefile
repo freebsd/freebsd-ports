@@ -8,8 +8,7 @@
 PORTNAME=	xw
 PORTVERSION=	0.1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.spot.org/pub/xw/ \
-		ftp://ftp.databits.net/pub/xw/
+MASTER_SITES=	ftp://ftp.spot.org/pub/xw/
 
 MAINTAINER=	dan@BSDpro.com
 
