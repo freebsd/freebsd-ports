@@ -66,11 +66,7 @@ Gnome_Include_MAINTAINER=	reg@FreeBSD.org
 # HAVE_IMLIB:
 #	yes		- either found Imlib or WITH_IMLIB set to yes.
 # HAVE_GNOME:
-#	yes		- either found Gnome or WITH_GNOME set to yes.
-
-.if defined(PACKAGE_BUILDING) && !defined(WITH_ALL)
-WITHOUT_ALL=	yes
-.endif
+#	yes		- either found GNOME or WITH_GNOME set to yes.
 
 .if defined(WANT_ESOUND) && !defined(WITHOUT_ESOUND) && !defined(WITHOUT_ALL)
 .if defined(HAVE_ESOUND)
@@ -176,8 +172,11 @@ pre-everything::
 # End of optional part.
 
 .if defined(_POSTMKINCLUDED)
-# This section includes the USE_* definitions for bsd.port.mk, to allow them to
-# be updated outside of bsd.port.mk.
+# This section contains the USE_ definitions.  These also pass any HAVE_
+# options through to the build process so that ports can use them for
+# conditional building of components.  Also, if optional support has been
+# requested, add a packagename suffix, to indicate the change in the port's
+# behaviour.
 
 # USE_ESOUND	- Says that the port uses ESound.
 # USE_GLIB		- Says that the port uses the GLib package.
@@ -186,6 +185,12 @@ pre-everything::
 # USE_GNOMELIBS	- Says that the port uses the GNOME libraries.
 # USE_GNOMECTRL	- Says that the port uses the GNOME control center.
 # USE_GNOME		- Says that the port uses the GNOME desktop environment.
+
+# Ports outside of the offical GNOME distribution should probably not be
+# using USE_GNOMELIBS or USE_GNOMECTRL, unless they have a very good reason. 
+# Most GNOME ports require USE_GNOME for the correct remove of directories
+# in ${X11BASE}/share/gnome.  Ports using GNOME should also have
+# USE_X_PREFIX definied.
  
 .if defined(USE_GNOME)
 USE_GNOMECTRL=	yes
@@ -252,7 +257,7 @@ MAKE_ENV+=		HAVE_IMLIB=${HAVE_IMLIB}
 .endif
 .endif
 
-# Ports which optionally depend on Gnome can add '--datadir=${PREFIX}/share'
+# Ports which optionally depend on GNOME can add '--datadir=${PREFIX}/share'
 # to CONFIGURE_ARGS before including <bsd.port.post.mk> if they do not wish
 # to install their data files in /usr/X11R6/share/gnome.  Please be aware
 # that you will need to make non standard patches to get the rest of the
