@@ -58,6 +58,7 @@
     SUBDIR += kcfonts
     SUBDIR += kde3-i18n-zh_CN
     SUBDIR += kde3-i18n-zh_TW
+    SUBDIR += koffice-i18n-zh_TW
     SUBDIR += kon2
     SUBDIR += libtabe
     SUBDIR += links
