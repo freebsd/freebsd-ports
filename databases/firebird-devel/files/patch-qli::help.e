@@ -1,7 +1,7 @@
---- qli/help.c.orig	Tue Nov 12 16:03:39 2002
-+++ qli/help.c	Tue Nov 12 17:00:35 2002
-@@ -289,7 +289,7 @@
- 		  isc_25.isc_26))
+--- qli/help.e.orig	Fri Aug  4 06:53:52 2000
++++ qli/help.e	Mon Nov 18 19:22:44 2002
+@@ -160,7 +160,7 @@
+     if (!(l = p - X.TOPIC))
  	continue;
      if (++topics == 1 && banner)
 -	ib_printf ("%s\n", banner, string, parent);
