@@ -311,6 +311,7 @@
     SUBDIR += p5-OpenGL
     SUBDIR += p5-SWF-Builder
     SUBDIR += p5-SWF-File
+    SUBDIR += p5-Tk-JPEG-Lite
     SUBDIR += p5-VCG
     SUBDIR += p5-chart
     SUBDIR += p5-ming
