@@ -7,6 +7,7 @@
 
 PORTNAME=	helium
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.cs.uu.nl/~afie/helium/
 DISTNAME=	${PORTNAME}
@@ -18,7 +19,12 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e 's/hi$$(EXE)/helium-i/g' \
+		${WRKSRC}/heliumNT/src/Makefile.in
 
 do-configure:
 	@(cd ${WRKSRC}/lvm/src/  && ./configure)
