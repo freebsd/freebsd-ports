@@ -31,6 +31,10 @@ bin/smime_keys
 @unexec if cmp -s %D/etc/Muttrc.dist %D/etc/Muttrc; then rm -f %D/etc/Muttrc; fi
 etc/Muttrc.dist
 etc/mime.types
+EOF
+
+if [ "$MUTT_NLS" = "yes" ]; then
+  cat >> $tmp_first <<EOF
 share/locale/bg/LC_MESSAGES/mutt.mo
 share/locale/ca/LC_MESSAGES/mutt.mo
 share/locale/cs/LC_MESSAGES/mutt.mo
@@ -59,6 +63,7 @@ share/locale/uk/LC_MESSAGES/mutt.mo
 share/locale/zh_CN/LC_MESSAGES/mutt.mo
 share/locale/zh_TW/LC_MESSAGES/mutt.mo
 EOF
+fi
 
 if [ "$MUTT_PORTDOCS" = "yes" ]; then
   cat >> $tmp_first <<EOF
