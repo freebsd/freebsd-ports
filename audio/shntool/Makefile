@@ -8,7 +8,9 @@
 PORTNAME=	shntool
 PORTVERSION=	1.01
 CATEGORIES=	audio
-MASTER_SITES=	http://shnutils.freeshell.org/shntool/source/
+MASTER_SITES=	http://shnutils.freeshell.org/shntool/source/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	fenner
 EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	fenner@FreeBSD.Org
