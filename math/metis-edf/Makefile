@@ -7,7 +7,7 @@
 
 PORTNAME=	metis-edf
 PORTVERSION=	3.1
-CATEGORIES=	cad
+CATEGORIES=	math
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/metis/
 
 MAINTAINER=	ports@FreeBSD.org
