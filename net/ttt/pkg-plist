@@ -1,0 +1,8 @@
+bin/ttt
+bin/tttprobe
+bin/tttview
+lib/ttt/ttt.tcl
+man/man1/ttt.1.gz
+man/man1/tttprobe.1.gz
+man/man1/tttview.1.gz
+@dirrm lib/ttt

@@ -1,0 +1,16 @@
+
+	TTT: Tele Traffic Tapper (version 0.4.1)
+
+					97/11/18
+
+ttt is yet another decendant of tcpdump but it is capable of real-time,
+graphical, and remote traffic-monitoring.  ttt won't replace tcpdump,
+rather, it helps you find out what to look into with tcpdump.
+
+Features:
+    - Automatic Ranking of Protocols and Hosts
+    - Real-Time Monitoring
+    - Remote Monitoring with IP-Multicast support
+    - IPv6 Aware: (experimental)
+    - Portable
+    - Easy to customize
