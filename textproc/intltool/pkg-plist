@@ -14,7 +14,9 @@ share/intltool/intltool-po-Makefile.in.in-patch-2
 share/intltool/intltool-po-Makefile.in.in-patch-3
 share/intltool/intltool-po-Makefile.in.in-patch-4
 share/intltool/intltool-po-Makefile.in.in-patch-5
+share/intltool/intltool-po-Makefile.in.in-patch-6
 share/intltool/intltool-update.in
 share/intltool/xml-i18n-po-Makefile.in.in-patch-1
 share/intltool/xml-i18n-po-Makefile.in.in-patch-2
+share/intltool/xml-i18n-po-Makefile.in.in-patch-5
 @dirrm share/intltool
