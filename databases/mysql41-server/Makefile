@@ -107,6 +107,8 @@ USE_PERL5_RUN=	yes
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql41
 
+LATEST_LINK=	mysql41-server
+
 CONFLICTS=	mysql-server-3.* mysql-server-4.[02-9].* mysql-server-5.*
 
 PLIST_SUB=	DB_DIR=${DB_DIR}
@@ -179,6 +181,8 @@ post-install:
 
 # MySQL-Client part
 .else
+LATEST_LINK=	mysql41-client
+
 CONFLICTS=	mysql-client-3.* mysql-client-4.[02-9].* mysql-client-5.*
 
 MAN1=		isamchk.1 isamlog.1 mysql.1 mysql_zap.1 mysqlaccess.1  \
