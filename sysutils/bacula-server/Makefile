@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	bacula
 PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
-COMMENT=	The network backup solution (server)
+COMMENT?=	The network backup solution (server)
 
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
