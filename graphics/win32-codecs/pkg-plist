@@ -1,0 +1,66 @@
+include/avifile/audiodecoder.h
+include/avifile/audioencoder.h
+include/avifile/avifile.h
+include/avifile/avifmt.h
+include/avifile/aviplay.h
+include/avifile/aviutil.h
+include/avifile/config.h
+include/avifile/default.h
+include/avifile/except.h
+include/avifile/loader.h
+include/avifile/registry.h
+include/avifile/videodecoder.h
+include/avifile/videoencoder.h
+include/avifile/wine/basetsd.h
+include/avifile/wine/config.h
+include/avifile/wine/debugtools.h
+include/avifile/wine/driver.h
+include/avifile/wine/elfdll.h
+include/avifile/wine/heap.h
+include/avifile/wine/ldt.h
+include/avifile/wine/mmreg.h
+include/avifile/wine/module.h
+include/avifile/wine/msacm.h
+include/avifile/wine/msacmdrv.h
+include/avifile/wine/ntdef.h
+include/avifile/wine/pe_image.h
+include/avifile/wine/poppack.h
+include/avifile/wine/pshpack1.h
+include/avifile/wine/pshpack2.h
+include/avifile/wine/pshpack4.h
+include/avifile/wine/pshpack8.h
+include/avifile/wine/vfw.h
+include/avifile/wine/winbase.h
+include/avifile/wine/windef.h
+include/avifile/wine/windows.h
+include/avifile/wine/winerror.h
+include/avifile/wine/winestring.h
+include/avifile/wine/winnt.h
+include/avifile/wine/winreg.h
+include/avifile/wine/winuser.h
+@dirrm include/avifile/wine
+@dirrm include/avifile
+bin/aviplay
+bin/benchmark
+share/avifile/open.ppm
+share/avifile/pause.ppm
+share/avifile/play.ppm
+share/avifile/stop.ppm
+share/avifile/test.png
+@dirrm share/avifile
+lib/win32/ativcr2.dll
+lib/win32/divxa32.acm
+lib/win32/divxc32.dll
+lib/win32/divxc32f.dll
+lib/win32/i263_32.drv
+lib/win32/iccvid.dll
+lib/win32/ir32_32.dll
+lib/win32/ir41_32.dll
+lib/win32/ir41_qc.dll
+lib/win32/ir50_32.dll
+lib/win32/ir50_qc.dll
+lib/win32/mpg4c32.dll
+@dirrm lib/win32
+lib/libaviplay.so
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
