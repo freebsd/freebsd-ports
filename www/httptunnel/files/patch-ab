@@ -1,0 +1,32 @@
+--- tunnel.c.orig	Thu Aug 31 22:22:58 2000
++++ tunnel.c	Thu Aug 31 22:24:27 2000
+@@ -358,10 +358,10 @@
+   if (tunnel->out_fd == -1)
+     {
+       log_error ("tunnel_out_connect: do_connect (%d.%d.%d.%d:%u) error: %s",
+-		  tunnel->address.sin_addr.s_addr >> 24,
+-		 (tunnel->address.sin_addr.s_addr >> 16) & 0xff,
+-		 (tunnel->address.sin_addr.s_addr >>  8) & 0xff,
+-		  tunnel->address.sin_addr.s_addr        & 0xff,
++		  ntohl(tunnel->address.sin_addr.s_addr) >> 24,
++		 (ntohl(tunnel->address.sin_addr.s_addr) >> 16) & 0xff,
++		 (ntohl(tunnel->address.sin_addr.s_addr) >>  8) & 0xff,
++		  ntohl(tunnel->address.sin_addr.s_addr)        & 0xff,
+ 		 ntohs (tunnel->address.sin_port),
+ 		 strerror (errno));
+       return -1;
+@@ -1120,10 +1120,10 @@
+ 	}
+ 
+       log_notice ("connection from %d.%d.%d.%d:%u",
+-		  addr.sin_addr.s_addr >> 24,
+-		 (addr.sin_addr.s_addr >> 16) & 0xff,
+-		 (addr.sin_addr.s_addr >>  8) & 0xff,
+-		  addr.sin_addr.s_addr        & 0xff,
++		  ntohl(addr.sin_addr.s_addr) >> 24,
++		 (ntohl(addr.sin_addr.s_addr) >> 16) & 0xff,
++		 (ntohl(addr.sin_addr.s_addr) >>  8) & 0xff,
++		  ntohl(addr.sin_addr.s_addr)        & 0xff,
+                   ntohs (addr.sin_port));
+ 
+       m = http_parse_request (s, &request);
