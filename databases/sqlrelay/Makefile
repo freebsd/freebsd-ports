@@ -118,6 +118,7 @@ IF_FREETDS=	"@comment "
 
 .if defined(WITH_GTK) && ${WITH_GTK:L} != no
 LIB_DEPENDS+=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
 CONFIGURE_ARGS+=	--with-gtk-prefix="${X11BASE}"
 IF_GTK=		""
 .else
@@ -143,10 +144,6 @@ post-patch:
 		-e 's,/usr/local[[:>:]],${PREFIX},g;' \
 		-e 's,[[:<:]]gtk-config[[:>:]],${GTK_CONFIG:T},g;' \
 			${WRKSRC}/configure
-	${REINPLACE_CMD} -E \
-		-e 's,\.so\.\$$\(SQLR_VERSION\),\.so\.$$(basename $$(SQLR_VERSION)),g;' \
-			${WRKSRC}/src/api/c/src/Makefile \
-			${WRKSRC}/src/api/c++/src/Makefile
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
 		-e 's#-release \$$\(SQLR_VERSION\)##g;'
 

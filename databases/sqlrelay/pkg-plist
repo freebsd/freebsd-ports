@@ -39,6 +39,22 @@ include/sqlrelay/sqlrclient.h
 include/sqlrelay/sqlrclientwrapper.h
 @dirrm include/sqlrelay/private
 @dirrm include/sqlrelay
+lib/libmysql3sqlrelay.so.0
+lib/libmysql3sqlrelay.so
+lib/libmysql3sqlrelay.la
+lib/libmysql3sqlrelay.a
+lib/libmysql40sqlrelay.so.0
+lib/libmysql40sqlrelay.so
+lib/libmysql40sqlrelay.la
+lib/libmysql40sqlrelay.a
+lib/libmysql41sqlrelay.so.0
+lib/libmysql41sqlrelay.so
+lib/libmysql41sqlrelay.la
+lib/libmysql41sqlrelay.a
+lib/libmysql50sqlrelay.so.0
+lib/libmysql50sqlrelay.so
+lib/libmysql50sqlrelay.la
+lib/libmysql50sqlrelay.a
 lib/libsqlrclient.a
 lib/libsqlrclient.la
 lib/libsqlrclient.so
@@ -63,6 +79,8 @@ lib/libsqlrutil.a
 lib/libsqlrutil.la
 lib/libsqlrutil.so
 lib/libsqlrutil.so.0
+libdata/pkgconfig/sqlrelay-c.pc
+libdata/pkgconfig/sqlrelay-c++.pc
 share/doc/sqlrelay/api/c++/sqlrclient.h.html
 share/doc/sqlrelay/api/c/sqlrclientwrapper.h.html
 share/doc/sqlrelay/api/java/allclasses-frame.html
@@ -81,8 +99,8 @@ share/doc/sqlrelay/api/java/overview-tree.html
 share/doc/sqlrelay/api/java/package-list
 share/doc/sqlrelay/api/java/packages.html
 share/doc/sqlrelay/api/java/stylesheet.css
-share/doc/sqlrelay/api/perl/SQLRConnection.html
-share/doc/sqlrelay/api/perl/SQLRCursor.html
+share/doc/sqlrelay/api/perl/Connection.html
+share/doc/sqlrelay/api/perl/Cursor.html
 share/doc/sqlrelay/api/perl/SQLRelay.html
 share/doc/sqlrelay/api/perl/perl.html
 share/doc/sqlrelay/api/php/doc.html
@@ -94,6 +112,9 @@ share/doc/sqlrelay/clientapis.html
 share/doc/sqlrelay/configuring.html
 share/doc/sqlrelay/connections.html
 share/doc/sqlrelay/css/styles.css
+share/doc/sqlrelay/dropin/mysql.html
+share/doc/sqlrelay/dropin/postgresql.html
+share/doc/sqlrelay/faq.html
 share/doc/sqlrelay/gettingstarted/db2.html
 share/doc/sqlrelay/gettingstarted/interbase.html
 share/doc/sqlrelay/gettingstarted/lago.html
@@ -104,8 +125,6 @@ share/doc/sqlrelay/gettingstarted/oracle.html
 share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/5/805.html
 share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/6/8i.html
 share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/7/8i.html
-share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/7/9i.html
-share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/9/9iR2.html
 share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/7/8i.html
 share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/8/8i.html
 share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/8/9i.html
@@ -141,6 +160,8 @@ share/doc/sqlrelay/programming/zope/testzsqlmethod.gif
 share/doc/sqlrelay/programming/zope/zsqlmethod.gif
 share/doc/sqlrelay/programming/zope/zsqlmethodresultset.gif
 share/doc/sqlrelay/running.html
+share/doc/sqlrelay/tuning.html
+share/doc/sqlrelay/windows.html
 @dirrm sqlrelay/cache
 @dirrm sqlrelay
 @dirrm share/doc/sqlrelay/programming/zope
@@ -158,6 +179,7 @@ share/doc/sqlrelay/running.html
 @dirrm share/doc/sqlrelay/gettingstarted/oracle/linux
 @dirrm share/doc/sqlrelay/gettingstarted/oracle
 @dirrm share/doc/sqlrelay/gettingstarted
+@dirrm share/doc/sqlrelay/dropin
 @dirrm share/doc/sqlrelay/css
 @dirrm share/doc/sqlrelay/api/ruby
 @dirrm share/doc/sqlrelay/api/python

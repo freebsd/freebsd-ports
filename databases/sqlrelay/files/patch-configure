@@ -1,6 +1,6 @@
---- configure.orig	Mon Dec 22 02:27:22 2003
-+++ configure	Fri May 28 16:00:26 2004
-@@ -19395,8 +19395,8 @@
+--- configure.orig	Thu Aug  5 10:05:11 2004
++++ configure	Fri Aug 27 16:45:11 2004
+@@ -19412,8 +19412,8 @@
  
  
  HAVE_PTHREAD=""
@@ -11,7 +11,29 @@
  
  if ( test "$cross_compiling" = "yes" )
  then
-@@ -37573,13 +37573,7 @@
+@@ -19447,8 +19447,8 @@
+ STATIC=""
+ HEADERSANDLIBSPATH=""
+ 
+-eval "PTHREADINCLUDES=\"\""
+-eval "PTHREADLIBS=\"\""
++#eval "PTHREADINCLUDES=\"\""
++#eval "PTHREADLIBS=\"\""
+ eval "PTHREADLIBPATH=\"\""
+ eval "PTHREADSTATIC=\"\""
+ if ( test -n "" )
+@@ -20073,8 +20073,8 @@
+ INCLUDESTRING=`echo $INCLUDESTRING | sed -e "s|-I/usr/include$||g" -e "s|-I/usr/include ||g"`
+ LIBSTRING=`echo $LIBSTRING | sed -e "s|-L/usr/lib$||g" -e "s|-L/lib$||g" -e "s|-L/usr/lib ||g" -e "s|-L/lib ||g"`
+ 
+-eval "PTHREADINCLUDES=\"$INCLUDESTRING\""
+-eval "PTHREADLIBS=\"$LIBSTRING\""
++#eval "PTHREADINCLUDES=\"$INCLUDESTRING\""
++#eval "PTHREADLIBS=\"$LIBSTRING\""
+ eval "PTHREADLIBPATH=\"$LIBPATH\""
+ eval "PTHREADSTATIC=\"$STATIC\""
+ if ( test -n "" )
+@@ -34699,13 +34699,7 @@
  
  			if ( test -n "$JAVAINCLUDES" )
  			then
@@ -26,44 +48,7 @@
  			fi
  		fi
  
-@@ -37958,14 +37952,14 @@
- 		if ( test -n "$GTKPATH" )
- 		then
- 
--if ( test -r ""$GTKPATH/bin/gtk-config"" )
-+if ( test -r ""$GTKPATH/bin/gtk12-config"" )
- then
--	eval "GTKCONFIG=\"$GTKPATH/bin/gtk-config\""
-+	eval "GTKCONFIG=\"$GTKPATH/bin/gtk12-config\""
- fi
- 
- 		else
--			# Extract the first word of ""gtk-config"", so it can be a program name with args.
--set dummy "gtk-config"; ac_word=$2
-+			# Extract the first word of ""gtk12-config"", so it can be a program name with args.
-+set dummy "gtk12-config"; ac_word=$2
- echo "$as_me:$LINENO: checking for $ac_word" >&5
- echo $ECHO_N "checking for $ac_word... $ECHO_C" >&6
- if test "${ac_cv_prog_GTKCONFIG+set}" = set; then
-@@ -37981,7 +37975,7 @@
-   test -z "$as_dir" && as_dir=.
-   for ac_exec_ext in '' $ac_executable_extensions; do
-   if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
--    ac_cv_prog_GTKCONFIG=""gtk-config""
-+    ac_cv_prog_GTKCONFIG=""gtk12-config""
-     echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
-     break 2
-   fi
-@@ -38003,7 +37997,7 @@
- 			then
- 				for i in "/usr/bin" "/usr/local/bin" "/usr/pkg/bin" "/usr/local/gtk/bin" "/usr/local/gtk+/bin" "/opt/sfw/bin"
- 				do
--					for j in "gtk-config" "gtk12-config" "gtk10-config"
-+					for j in "gtk12-config" "gtk12-config" "gtk10-config"
- 					do
- 
- if ( test -r ""$i/$j"" )
-@@ -41269,7 +41263,7 @@
+@@ -38362,7 +38356,7 @@
  #define SQLR_VERSION "$SQLR_VERSION"
  _ACEOF
  
