@@ -1,0 +1,10 @@
+--- config.pl.in.orig	Fri Dec 22 07:18:01 2000
++++ config.pl.in	Fri Dec 22 07:18:29 2000
+@@ -92,7 +92,7 @@
+ $GIMP_LIBS_NOUI	=~ s%\$topdir%$topdir%g;
+ 
+ # $...1 variables should be put in front of the corresponding MakeMaker values.
+-$INC1    = "-I$topdir";
++$INC1    = "-I$topdir -I\$(PERL_INC)";
+ $DEFINE1 = $IN_GIMP ? "-DIN_GIMP" : "";
+ $DEFINE1 = " -Ddatadir=\"\\\"".expand($datadir)."\\\"\"";
