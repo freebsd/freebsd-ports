@@ -1,19 +1,26 @@
 Index: src/Makefile.src
 diff -u src/Makefile.src.orig src/Makefile.src
---- src/Makefile.src.orig	Thu May 11 01:58:22 2000
-+++ src/Makefile.src	Fri May 19 04:53:27 2000
-@@ -13,14 +13,9 @@
- GTK_LIB = `$(GTK_CONFIG) --libs`
+--- src/Makefile.src.orig	Thu Jun 22 01:54:28 2000
++++ src/Makefile.src	Thu Jun 22 09:38:17 2000
+@@ -13,19 +13,18 @@
+ GTK_LIB = `$(GTK_CONFIG) --libs gthread`
  IMLIB_LIB = `imlib-config --libs-gdk`
  
 -FLAGS = -O2 -I.. $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GTOP_INCLUDE)
 +CFLAGS += -I.. $(GTK_INCLUDE) $(IMLIB_INCLUDE) $(GTOP_INCLUDE) \
 +	-DPREFIX=\"$(PREFIX)\"
  LIBS = $(GTK_LIB) $(IMLIB_LIB) $(GTOP_LIBS) $(SYS_LIBS)
--
--ifeq ($(debug),1)
+ 
+ ifeq ($(debug),1)
 -    FLAGS += -g
--endif
++    CFLAGS += -g
+ endif
+ 
+ ifeq ($(enable_nls),1)
+-    FLAGS += -DENABLE_NLS -DLOCALEDIR=\"$(LOCALEDIR)\"
++    CFLAGS += -DENABLE_NLS -DLOCALEDIR=\"$(LOCALEDIR)\"
+ endif
+ 
 -
 -CC = gcc -Wall $(FLAGS)
  
