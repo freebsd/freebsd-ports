@@ -13,7 +13,7 @@ Understand for C++ quickly documents Class inheritance hierarchies
 and Include By Trees, as well as where and how everything in your
 source code is used (cross reference). Understand for C++ creates
 detailed automatic documentation about your source code in HTML
-and text reports  Using the PERL and C API you can write your own
+and text reports. Using the PERL and C API you can write your own
 documentation generators.
 
 You need a limited time period license to run the product in
