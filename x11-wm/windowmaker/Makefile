@@ -20,7 +20,8 @@ LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		PropList.2:${PORTSDIR}/devel/libPropList
+		PropList.2:${PORTSDIR}/devel/libPropList \
+		intl.1:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
@@ -30,7 +31,8 @@ WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} LIBS=-L${LOCALBASE}/lib \
-		CPPFLAGS=-I${LOCALBASE}/include
+		CPPFLAGS=-I${LOCALBASE}/include \
+		LINGUAS="cs da de el es fi fr gl hr it ja ko nl no pl pt ro ru se sk tr zh_CN zh_TW.Big5"
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 	--with-nlsdir=${PREFIX}/share/locale \
 	--with-libs-from="-L${LOCALBASE}/lib" \
