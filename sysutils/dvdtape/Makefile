@@ -11,8 +11,6 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.Awfulhak.org/pub/dvdtape/ \
 		http://people.FreeBSD.org/~brian/dvdtape/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	utils/disk-management
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create DVD master filesystems on DLT media
