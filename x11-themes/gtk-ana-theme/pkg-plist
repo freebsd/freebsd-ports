@@ -1,0 +1,79 @@
+%%GTK%%share/themes/%%THEME_NAME%%/gtk/gtkrc
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/ProstokatemPodszyte.txt
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/arrow-ad.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/arrow-al.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/arrow-ar.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/arrow-au.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/arrow-nd.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/arrow-nl.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/arrow-nr.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/arrow-nu.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/but-a.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/but-def.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/but-i.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/but-n.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/but-p.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/check-in.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/check-out.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/check-pin.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/check-pout.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/empty.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/fix-librsvg-engine-with-pixmap-engine
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/gtkrc
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/gtkrc (kopia)
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/handle-h.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/handle-v.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/line-h.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/line-v.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/list-a.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/list-n.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/list-p.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/menubar.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/menuborder.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/menuitem.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/notebook (kolejna kopia).svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/notebook (kopia).svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/notebook.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/option-in.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/option-out.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/option-pin.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/option-pout.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/panel.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/progress.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/shadow-e.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/shadow-gap-top.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/shadow-gap.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/shadow-out.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/shadow.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/slider-a.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/slider-i.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/slider-nh.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/slider-nv.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/slider-ph.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/slider-pv.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/spin-a.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/spin-id.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/spin-iu.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/spin-nd.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/spin-nu.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/spin-pd.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/spin-pu.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/tab-ab.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/tab-al.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/tab-ar.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/tab-au.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/tab-nb.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/tab-nl.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/tab-nr.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/tab-nu.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/toggle.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/toolbar.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/trough-h.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/gtk-2.0/trough-v.svg
+%%GTK20%%share/themes/%%THEME_NAME%%/index.theme
+%%GTK20%%@dirrm share/themes/%%THEME_NAME%%/gtk-2.0
+%%GTK20%%@dirrm share/themes/%%THEME_NAME%%/gtk
+%%GTK20%%@dirrm share/themes/%%THEME_NAME%%
+%%METACITY%%share/gnome/themes/Ana/metacity-1/metacity-theme-1.xml
+%%METACITY%%@dirrm share/gnome/themes/%%THEME_NAME%%/metacity-1
+%%METACITY%%@dirrm share/gnome/themes/%%THEME_NAME%%
