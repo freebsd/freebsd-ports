@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clex
-PORTVERSION=	3.1.7
+PORTVERSION=	3.1.8
 CATEGORIES=	misc
 MASTER_SITES=	http://www.clex.sk/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
