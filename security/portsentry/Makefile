@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.psionic.com/tools/
 
-MAINTAINER=	dan@freebsddiary.org
+MAINTAINER=	ports@freebsddiary.org
 
 ALL_TARGET=	freebsd
 
