@@ -6415,6 +6415,7 @@ tar		src/gnu/usr.bin/tar
 tas		ports/net/tas
 tcb		ports/misc/tcb
 tcl-Mysql	ports/databases/tcl-Mysql
+tcl-manual	ports/lang/tcl-manual
 tcl-memchan	ports/devel/tcl-memchan
 tcl-neo		ports/devel/tcl-neo
 tcl80		ports/lang/tcl80
