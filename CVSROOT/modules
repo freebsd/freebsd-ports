@@ -513,7 +513,6 @@ aview		ports/graphics/aview
 avifile		ports/multimedia/avifile
 avinfo		ports/multimedia/avinfo
 avltree		ports/devel/avltree
-avmailgate	ports/security/avmailgate
 avr-binutils	ports/devel/avr-binutils
 avr-gcc		ports/devel/avr-gcc
 avr-gdb		ports/devel/avr-gdb
