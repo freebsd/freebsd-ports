@@ -7844,6 +7844,7 @@ py-bulksms	ports/comms/py-bulksms
 py-bzip2	ports/archivers/py-bzip2
 py-cdb	ports/databases/py-cdb
 py-cddb		ports/audio/py-cddb
+py-cgkit	ports/graphics/py-cgkit
 py-chart	ports/graphics/py-chart
 py-cheetah	ports/devel/py-cheetah
 py-ciphon	ports/devel/py-ciphon
