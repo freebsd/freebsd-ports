@@ -35,6 +35,9 @@ CONFIGURE_ARGS+=	--enable-syslog=1 \
 		--with-etcdir="${PREFIX}/etc" \
 		--enable-maildrop-uid="${MAILDROP_SUID}" \
 		--enable-maildrop-gid="${MAILDROP_SGID}"
+.if defined(MAILDROPDEFAULT)
+CONFIGURE_ARGS+=	--with-default-maildrop=${MAILDROPDEFAULT}
+.endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${CPPFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
 GNU_CONFIGURE=	yes
