@@ -1,0 +1,9 @@
+@mode 755
+@owner bin
+@group bin
+bin/cpm
+@mode 644
+lib/cpm/cpm.sys
+lib/cpm/cd.com
+lib/cpm/link.com
+lib/cpm/xccp.com

@@ -1,0 +1,106 @@
+%
+%  Time-stamp: <06/06/94 23:08:26 Michael Bischoff moulder>
+%
+% CP/M emulator README
+%
+
+Introduction:
+=============
+
+Type 'UNIX' at the CCP prompt to leave the emulator.
+(Or ctrl-@, followed by 'q' any time the keyboard is polled)
+
+
+WARNING! This software runs only on 386 compatible processors
+and systems which allow nonaligned word/dword memory access.
+
+WARNING! This software has no documentation. If you want to use it, you're
+probably a Real Programmer; and Real Programmers don't read documentation.
+
+WARNING! This software is supplied AS IS. There is No Warranty!
+
+The software emulates an Intel 8080 CPU (quite accurate,
+except for the halfcarry flag for a couple of instructions)
+and a lot of Zilog Z80 instructions (not the complete set).
+Unimplemented instructions are input/output commands (IN A,(nn); OUT (nn),A;
+  INI, OUTI, INIR, OTIR, IND, OUTD, INDR, OTDR, IN C,(r), OUT r,(C)), and
+interrupt mode commands (IM 0, IM 1, IM 2, RETN, RETI), and the refresh
+register doesn't count at all.
+
+A 486DX2-66 emulates a Z80 clocked at 22 MHz, a 386DX-33 simulates a 6MHz
+Z80. (approximately)
+
+
+The BDOS emulator does only provide
+- user 0
+- a single drive (A:)
+- access to lowercase-files.
+
+A CCP-lookalike command interpreter is provided and the BDOS
+is emulated. The CCP is stored in the file /usr/local/lib/cpm/cpm.sys.
+Any CP/M .COM-files may also go in the directory /usr/local/lib/cpm.
+
+If you have an original CP/M, with CCP-address e800, BDOS-address f006,
+and put it in the file /usr/local/lib/cpm/cpm.sys, you can have an
+emulator quite near to the original thing, using the -e option.
+The -e option tells the emulator to use the BDOS from cpm.sys,
+instead of catching the BDOS-calls.
+Pros:
+- a real CP/M running
+- access to CP/M-formatted floppies (you have to set the DPB correctly)
+  Try "cpm -e -i /dev/fd1" with a 800 KB CP/M floppy in B:
+	 (bls = 2K, drm = 255)
+  after setting setfdprm -p /dev/fd1 800/1200 or the like.
+
+Cons:
+- no access to the Linux filesystem
+
+
+About the emulator:
+===================
+
+Type "cpm -h" for a short usage message.
+You can interrupt the emulator by typing ctrl-@. This will enter
+the debug mode, where you can disassemble z80 memory, dump memory,
+edit data, set listpoints, breakpoints, set counts for breakpoints
+and the like. Type '?' for a short summary.
+
+
+extensions:
+BDOS:
+ there is a new BDOS function (41), "change directory"
+ and a CP/M program CD.COM which calls this function.
+
+CCP:
+ ERA understands the /Q option (question!)
+ Example: ERA *.*/Q
+ TYPE understands the /W option (wait!)
+ Example: TYPE TEST.TXT/W
+ You can access files from other user numbers (image mode only)
+ Example: ERA *.BAS/2
+
+ Again: Type UNIX to leave the Emulator.
+
+
+
+TODO:
+=====
+- Improve the emulation of BDOS
+- Allow multiple drives (some as CP/M filesystem images?)
+- implement interrupt modes / signal catching to simulate NMI, INT
+- improve the accuracy of the emulator (but; after all, a Z80 isn't
+  8080-compatible as well; the sequence
+	XOR A
+	DEC A
+	JP PO,Z80_installed
+	/* an 8080, if we are here */
+  will find out...
+- merge the code with xtrs-80, to play GALAXY again!
+
+
+BUGS:
+=====
+
+Surely there are LOTS of bugs. Please send fixes to mbi@mo.math.nat.tu-bs.de
+Bug reports (without fixes) are also accepted, but it would be nice if you
+could track down the bad opcode.
