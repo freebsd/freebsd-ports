@@ -8118,6 +8118,7 @@ sshbuddy	ports/misc/sshbuddy
 ssldump		ports/net/ssldump
 sslproxy	ports/security/sslproxy
 sslsniffer	ports/security/sslsniffer
+ssltunnel-client	ports/net/ssltunnel-client
 ssltunnel-server	ports/net/ssltunnel-server
 sslwrap		ports/security/sslwrap
 ssmtp		ports/mail/ssmtp
