@@ -1,8 +1,6 @@
 --- kWnn/jlib/Imakefile.orig	Wed Aug 17 10:11:40 1994
 +++ kWnn/jlib/Imakefile	Tue Jan  5 23:06:15 1999
-@@ -1,7 +1,11 @@
- XCOMM
- XCOMM $Id: Imakefile,v 1.2 1994/08/17 01:11:40 kuwa Exp $
+@@ -3,5 +3,9 @@
  XCOMM
 +XCOMM For Mule, add sources (yincoding.c py_table.c zy_table.c) 1
 +XCOMM   -- S. Taoka

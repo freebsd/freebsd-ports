@@ -1,7 +1,6 @@
 --- ../../../work/Xsi/cWnn/jlib/Imakefile.~1~	Wed Aug 17 10:11:04 1994
 +++ cWnn/jlib/Imakefile	Tue Jan  5 22:43:30 1999
-@@ -2,6 +2,7 @@
- XCOMM $Id: Imakefile,v 1.9 1994/08/17 01:11:04 kuwa Exp $
+@@ -3,5 +3,6 @@
  XCOMM
  #define DoNormalLib YES
 +#define DoSharedLib YES

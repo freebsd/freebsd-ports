@@ -1,7 +1,6 @@
 --- ../../../work/Xsi/kWnn/romkan/Imakefile	Wed Aug 17 10:11:47 1994
 +++ kWnn/romkan/Imakefile	Tue Jan  5 22:57:27 1999
-@@ -2,6 +2,7 @@
- XCOMM $Id: Imakefile,v 1.2 1994/08/17 01:11:47 kuwa Exp $
+@@ -3,5 +3,6 @@
  XCOMM
  #define DoNormalLib YES
 +#define DoSharedLib YES
