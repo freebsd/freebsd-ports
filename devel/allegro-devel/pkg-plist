@@ -88,8 +88,8 @@ include/allegro/timer.h
 include/allegro/unicode.h
 include/linalleg.h
 include/xalleg.h
-lib/liballeg-4.0.0.so
-lib/liballeg_unsharable.a
+lib/liballeg.a
+lib/liballeg.so.4.0
 %%PORTDOCS%%share/doc/allegro/abi.html
 %%PORTDOCS%%share/doc/allegro/ahack.html
 %%PORTDOCS%%share/doc/allegro/alleg000.html
