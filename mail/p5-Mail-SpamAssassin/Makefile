@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	2.44
+PORTVERSION=	2.50
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://spamassassin.org/released/ \
 		${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dougb@FreeBSD.org
+MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	A highly efficient mail filter for identifying spam
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
@@ -27,22 +28,22 @@ RUN_DEPENDS+=	${PODPARSER}
 BUILD_DEPENDS+=	${PODPARSER}
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	SYSCONFDIR="${PREFIX}/etc"
+CONFIGURE_ARGS+=	SYSCONFDIR="${PREFIX}/etc" \
+			RUN_RAZOR1_TESTS="no" RUN_RAZOR2_TESTS="no"
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Mail::SpamAssassin.3 Mail::SpamAssassin::PerMsgStatus.3 \
 		Mail::SpamAssassin::Conf.3 \
-		Mail::SpamAssassin::PersistentAddrList.3
+		Mail::SpamAssassin::PersistentAddrList.3 \
+		Mail::SpamAssassin::PerMsgLearner.3 \
+		Mail::SpamAssassin::Bayes.3
 MAN1PREFIX=	${PREFIX}
-MAN1=		spamd.1 spamassassin.1 spamc.1
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples//${PKGNAMEPREFIX}${PORTNAME}
+MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1
 
-post-patch:
-	@${FIND} ${WRKSRC} -name \*.orig -delete
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 post-install:
-	@strip ${PREFIX}/bin/spamc
+	@${STRIP_CMD} ${PREFIX}/bin/spamc
 	${INSTALL_SCRIPT} ${FILESDIR}/spamd.sh ${PREFIX}/etc/rc.d/spamd.sh-dist
 
 .if !defined(NOPORTDOCS)
@@ -50,8 +51,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/sql/README ${DOCSDIR}/README.sql
 	cd ${WRKSRC} ; ${INSTALL_DATA} \
 	    BUGS COPYRIGHT Changes README TRADEMARK procmailrc.example sample* \
-	    spamd/README* sql/spamassassin.sql \
-	    ${DOCSDIR}
+	    spamd/README* sql/spamassassin.sql ${DOCSDIR}
 .endif
+
+	@${SED} -e 's#PREFIX#/usr/local#' pkg-message
 
 .include <bsd.port.mk>
