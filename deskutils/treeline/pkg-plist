@@ -1,6 +1,10 @@
 bin/treeline
 lib/python2.3/site-packages/sitecustomize.py
 lib/python2.3/site-packages/sitecustomize.pyc
+lib/treeline/__init__.py
+lib/treeline/__init__.pyc
+lib/treeline/cmdline.py
+lib/treeline/cmdline.pyc
 lib/treeline/docparam.py
 lib/treeline/docparam.pyc
 lib/treeline/fieldformat.py
@@ -17,12 +21,16 @@ lib/treeline/gentime.py
 lib/treeline/gentime.pyc
 lib/treeline/helpview.py
 lib/treeline/helpview.pyc
+lib/treeline/modsitecustom.py
+lib/treeline/modsitecustom.pyc
 lib/treeline/numbering.py
 lib/treeline/numbering.pyc
 lib/treeline/option.py
 lib/treeline/option.pyc
 lib/treeline/optiondlg.py
 lib/treeline/optiondlg.pyc
+lib/treeline/output.py
+lib/treeline/output.pyc
 lib/treeline/printpreview.py
 lib/treeline/printpreview.pyc
 lib/treeline/recentfiles.py
@@ -51,15 +59,22 @@ lib/treeline/treemainwin.py
 lib/treeline/treemainwin.pyc
 lib/treeline/treerightviews.py
 lib/treeline/treerightviews.pyc
+lib/treeline/treestates.py
+lib/treeline/treestates.pyc
 lib/treeline/treeview.py
 lib/treeline/treeview.pyc
 lib/treeline/undo.py
 lib/treeline/undo.pyc
+lib/treeline/uninstall.py
+lib/treeline/uninstall.pyc
 lib/treeline/xpm.py
 lib/treeline/xpm.pyc
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/readme.trl
-%%PORTDOCS%%%%DOCSDIR%%/sample.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_basic.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_bookmarks.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_char_format.trl
+%%PORTDOCS%%%%DOCSDIR%%/sample_color_items.trl
 %%PORTDOCS%%%%DOCSDIR%%/sample_table.trl
 @dirrm lib/treeline
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
