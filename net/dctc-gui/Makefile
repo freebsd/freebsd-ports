@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.35
+PORTVERSION=	0.41
 CATEGORIES=	net gnome
 MASTER_SITES=	http://ac2i.tzo.com/dctc/
 PKGNAMESUFFIX=	-gui
@@ -28,7 +28,20 @@ CONFIGURE_ARGS=	--with-gnome=${X11BASE} \
 		--with-gtk-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE}
 
-DOC_FILES=	COPYING ChangeLog
+DOC_FILES= COPYING ChangeLog README
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x ${PERL} -pi -e \
+		's|(hublist)|dc_\1|;s|(\$$\(datadir\))/gnome|\1|; \
+		s|include.+<linux/sem.h>|include <sys/ipc.h>\n#include <sys/sem.h>|'
+	@${PERL} -pi -e 's|(<stdio.h>.*)$$|\1\n#include <config.h>|' \
+		${WRKSRC}/src/init_fnc.c
+
+post-configure:
+	@${ECHO} '#include <sys/param.h>' >> ${CONFIGURE_WRKSRC}/config.h
+	@${ECHO} '#ifndef SEMVMX' >> ${WRKSRC}/config.h
+	@${ECHO} '#define SEMVMX 32767' >> ${WRKSRC}/config.h
+	@${ECHO} '#endif' >> ${WRKSRC}/config.h
 
 post-install:
 .ifndef(NOPORTDOCS)

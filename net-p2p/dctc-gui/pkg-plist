@@ -1,4 +1,16 @@
 bin/dc_gui
 %%PORTDOCS%%share/doc/dctc-gui/COPYING
 %%PORTDOCS%%share/doc/dctc-gui/ChangeLog
+%%PORTDOCS%%share/doc/dctc-gui/README
+share/gnome/help/dc_gui/C/index.html
+share/gnome/help/dc_gui/C/topic.dat
+share/locale/nl/LC_MESSAGES/dc_gui.mo
+@unexec %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec %D/share/locale/nl 2>/dev/null || true
+@unexec %D/share/locale 2>/dev/null || true
+@unexec %D/share/gnome/help/dc_gui/C/images 2>/dev/null || true
+@unexec %D/share/gnome/help/dc_gui/C 2>/dev/null || true
+@unexec %D/share/gnome/help/dc_gui 2>/dev/null || true
+@unexec %D/share/gnome/help 2>/dev/null || true
+@unexec %D/share/gnome 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/dctc-gui
