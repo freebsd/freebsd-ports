@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	adzap
-PORTVERSION=	20020916
+PORTVERSION=	20021116
 CATEGORIES=	www perl5
-MASTER_SITES=	http://www.zip.com.au/~cs/adzap/ \
+MASTER_SITES=	http://adzapper.sourceforge.net/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=kris
 
