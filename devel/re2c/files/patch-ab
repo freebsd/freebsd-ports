@@ -1,5 +1,5 @@
---- Makefile.orig	Thu May 14 16:36:54 1998
-+++ Makefile	Thu May 14 16:37:14 1998
+--- Makefile.orig	Fri Apr 15 20:23:55 1994
++++ Makefile	Sun Sep 26 09:42:57 1999
 @@ -15,7 +15,7 @@
  OBJS	= code.o dfa.o main.o parser.o actions.o scanner.o substr.o\
  	translate.o
@@ -9,3 +9,12 @@
  CFLAGS		= -O2 -Wall -I.
  YFLAGS		= -d
  LDFLAGS		= 
+@@ -30,7 +30,7 @@
+ 	mv -f y.tab.c parser.cc
+ 
+ re2c:	$(OBJS)
+-	$(CC) -o $@ $(OBJS) $(LDFLAGS) -lg++
++	$(CC) -o $@ $(OBJS) $(LDFLAGS) #-lg++
+ 
+ #
+ # generated with "gcc -I. -MM -x c++ *.cc *.y *.re"
