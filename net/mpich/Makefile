@@ -7,6 +7,7 @@
 
 PORTNAME=	mpich
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
@@ -14,6 +15,7 @@ DIST_SUBDIR=	mpich
 MAINTAINER=	dbader@eece.unm.edu
 
 PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
+PATCHFILES=	7073 7090 7096 7187 7201 7265 7276
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
