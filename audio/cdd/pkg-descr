@@ -1,0 +1,3 @@
+cdd is a program written by Charles Henrich to read audio tracks from CDs.
+It includes "jitter correction" to work with a number of drives
+which are not able to read reliably from audio disks.

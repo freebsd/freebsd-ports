@@ -1,0 +1,49 @@
+--- cdd_cdcmds.c.orig	Wed Aug  6 17:18:31 1997
++++ cdd_cdcmds.c	Thu Dec 31 12:09:33 1998
+@@ -48,6 +48,7 @@
+ #include <scsi.h>
+ #include "cdd.h"
+ #include "cdd_cdcmds.h"
++#include "cdd_atapicmds.h"
+ #include "cdd_plextorcmds.h"
+ #include "cdd_toshibacmds.h"
+ #include "cdd_hpcmds.h"
+@@ -178,6 +179,18 @@
+         }
+     ,
+         {
++        "ATAPI",
++        atapi_initcd,
++        atapi_resetcd,
++        atapi_getcdtoc,
++        atapi_cd_setblocksize,
++        atapi_cdrawread,
++        atapi_cddaread,
++        atapi_begin_cdda,
++        atapi_end_cdda
++        }
++    ,
++        {
+         "END-OF-DEVICES",
+         unsupported,
+         unsupported,
+@@ -189,6 +202,19 @@
+         unsupported
+         }
+     };
++
++void
++use_atapi()
++{
++    int count ;
++
++    for(count=0;
++	strcasecmp(F_dtable[count].productid, "END-OF-DEVICES") != 0;
++	count++) {
++	    if(strcasecmp(F_dtable[count].productid, "ATAPI") == 0) break;
++    }
++    F_pte = count ;
++}
+ 
+ void doinquiry(int scsifd)
+ {

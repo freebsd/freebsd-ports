@@ -1,0 +1,5 @@
+--- scsi.h.orig	Thu Dec 31 12:14:37 1998
++++ scsi.h	Thu Dec 31 12:15:05 1998
+@@ -0,0 +1,2 @@
++/* temporary placeholder for scsi.h awaiting for scsi->cam conversion */
++#include <sys/scsiio.h>

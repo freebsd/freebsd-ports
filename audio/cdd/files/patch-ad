@@ -1,0 +1,15 @@
+--- st/st.h.orig	Sat Nov 16 19:18:25 1996
++++ st/st.h	Wed Dec 23 11:00:43 1998
+@@ -27,10 +27,12 @@
+ #define SOCKOPT_ERROR               -14
+ #define DES_SET_KEY_FAILURE         -15
+ 
++#ifndef SUCCESS
+ #define SUCCESS                      1
+ #define TRUE                         1
+ #define FAILURE                     -1
+ #define FALSE                       -1
++#endif
+ #define MASSIVE_FAILURE             -2
+ 
+ #define st_NEW_CONNECTION            0
