@@ -3,7 +3,7 @@
 # Date created:         11 July 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1997/07/17 15:12:41 max Exp $
+# $Id: Makefile,v 1.11 1998/02/26 03:41:40 steve Exp $
 #
 
 DISTNAME=       slang0.99-38
@@ -11,7 +11,7 @@ PKGNAME=        libslang-0.99.38
 CATEGORIES=	devel
 MASTER_SITES=   ftp://ftp.clara.net/pub/unix/Usenet/
 
-MAINTAINER=     ache@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
 
 GNU_CONFIGURE=  yes
 ALL_TARGET=     all elf
