@@ -17,7 +17,7 @@
  #include <sys/times.h>
  extern	time_t	time();
  #endif
-+#ifdef __FreeBSD__
++#ifndef __FreeBSD__
  #include <sys/file.h>
 +#endif
  #include <fcntl.h>
