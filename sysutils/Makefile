@@ -5,6 +5,7 @@
     SUBDIR += LPRngTool
     SUBDIR += abck
     SUBDIR += afio
+    SUBDIR += ah-tty
     SUBDIR += and
     SUBDIR += anteater
     SUBDIR += apcupsd
