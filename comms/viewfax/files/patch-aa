@@ -5,7 +5,7 @@
  	n = *r++;
  	tot += n;
 +	/* Watch out for buffer overruns, e.g. when n == 65535.  */
-+	if (tot > pn->width)
++	if (tot >= pn->width)
 +	    break;
  	if (pix)
  	    acc |= (~(t32bits)0 >> nacc);
