@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gallery
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,20 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	jamie@hermans.ca
 
 RUN_DEPENDS=	${LOCALBASE}/share/netpbm:${PORTSDIR}/graphics/netpbm
+RUN_DEPENDS=	${LOCALBASE}/bin/jhead:${PORTSDIR}/graphics/jhead
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-post-extract:
-	cd ${WRKDIR}; \
-		${FETCH_CMD} http://www.sentex.net/~mwandel/jhead/jhead
-
 do-install:
-	${MKDIR} -v ${PREFIX}/www/data
+	${MKDIR} -v ${LOCALBASE}/www/data
 	cd ${WRKDIR}; \
-		${INSTALL_PROGRAM} jhead ${PREFIX}/bin
-	cd ${WRKDIR}; \
-		${CP} -R gallery ${PREFIX}/www/data
+		${CP} -R gallery ${LOCALBASE}/www/data
 
 post-install:
 	@${ECHO} ""

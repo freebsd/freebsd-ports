@@ -1,4 +1,3 @@
-bin/jhead
 www/data/gallery/add_comment.php
 www/data/gallery/add_photos.php
 www/data/gallery/album_permissions.php
@@ -18,6 +17,8 @@ www/data/gallery/classes/NobodyUser.php
 www/data/gallery/classes/nuke5/AdminUser.php
 www/data/gallery/classes/nuke5/User.php
 www/data/gallery/classes/nuke5/UserDB.php
+www/data/gallery/classes/postnuke/User.php
+www/data/gallery/classes/postnuke/UserDB.php
 www/data/gallery/classes/User.php
 www/data/gallery/classes/UserDB.php
 www/data/gallery/configure.bat
@@ -124,7 +125,7 @@ www/data/gallery/upgrade_album.php
 www/data/gallery/UPGRADING
 www/data/gallery/user_preferences.php
 www/data/gallery/util.php
-www/data/gallery/version.php
+www/data/gallery/Version.php
 www/data/gallery/view_album.php
 www/data/gallery/view_photo.php
 www/data/gallery/view_photo_properties.php
@@ -132,6 +133,7 @@ www/data/gallery/view_photo_properties.php
 @dirrm www/data/gallery/classes/database
 @dirrm www/data/gallery/classes/gallery
 @dirrm www/data/gallery/classes/nuke5
+@dirrm www/data/gallery/classes/postnuke
 @dirrm www/data/gallery/classes
 @dirrm www/data/gallery/css
 @dirrm www/data/gallery/errors
