@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Babelfish.pm
-lib/perl5/site_perl/%%PERL_VER%%/auto/WWW/Babelfish/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Babelfish/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Babelfish
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/WWW/Babelfish
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/WWW 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/WWW 2>/dev/null || true
+%%SITE_PERL%%/WWW/Babelfish.pm
+%%SITE_PERL%%/auto/WWW/Babelfish/autosplit.ix
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Babelfish/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Babelfish
+@dirrm %%SITE_PERL%%/auto/WWW/Babelfish
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/WWW 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/WWW 2>/dev/null || true
