@@ -19,7 +19,7 @@ EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser(developer version)
 
-SNAPDATE=	20050202
+SNAPDATE=	20050205
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20041016.tar.gz
@@ -33,6 +33,7 @@ USE_PERL5=	yes
 #USE_BISON=	yes #this bison should be later than bison1.875a
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
@@ -49,7 +50,7 @@ BROKEN=		"rtld depends on _end symbol. type make -DBROKEN to see how to upgrade 
 
 CODELINE=		680
 RELEASE_NR=		1.9
-MILESTONE=		76
+MILESTONE=		77
 INSTALLATION_BASEDIR=	openoffice.org${RELEASE_NR}m${MILESTONE}
 EXECBASE=		openoffice.org-${RELEASE_NR}m${MILESTONE}
 DIST_SUBDIR=		openoffice.org2.0

@@ -8,6 +8,14 @@ CONFIGURE_ARGS+=	--disable-java
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home=${LOCALBASE}/ant
 .endif
 
+.if defined(WITH_GTK)
+CONFIGURE_ARGS+=	--enable-gtk
+.endif
+
+.if defined(WITH_KDE)
+CONFIGURE_ARGS+=	--enable-kde
+.endif
+
 .if defined(WITHOUT_MOZILLA)
 CONFIGURE_ARGS+=	--disable-mozilla
 .endif
@@ -78,6 +86,16 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "You can compile OOo with CUPS support by"
 	@${ECHO} "make -DWITH_CUPS"
+.endif
+.if !defined(WITH_GTK)
+	@${ECHO}
+	@${ECHO} "You can compile OOo to use Gtk+ vclplug"
+	@${ECHO} "make -DWITH_GTK"
+.endif
+.if !defined(WITH_KDE)
+	@${ECHO}
+	@${ECHO} "You can compile OOo to use Qt/KDE vclplug"
+	@${ECHO} "make -DWITH_KDE"
 .endif
 	@${ECHO}
 	@${ECHO} "NOTICE:"
