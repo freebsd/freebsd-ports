@@ -20,12 +20,12 @@ MAN1=		tn3270.1 mset.1
 MAN5=		map3270.5
 MANCOMPRESSED=	maybe
 
+OLD_LIBTELNETDIR=	/usr/src/contrib/telnet
+
+.if exists(${OLD_LIBTELNETDIR})
+LIBTELNETDIR?=	/usr/src/contrib/telnet/libtelnet
+.else
 LIBTELNETDIR?=	/usr/src/lib/libtelnet
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
 .endif
 
 post-extract:
@@ -36,6 +36,12 @@ post-extract:
 	exit 1; \
 	fi
 	${CP} -rp ${LIBTELNETDIR} ${WRKSRC}
+.if exists(${OLD_LIBTELNETDIR})
+	${CP} ${LIBTELNETDIR}/../arpa/telnet.h ${WRKSRC}/libtelnet
+	${SED} -E '/^(TELNETDIR|\.PATH|CFLAGS|INCS)/d' \
+		${LIBTELNETDIR}/../../../lib/libtelnet/Makefile > \
+		${WRKSRC}/libtelnet/Makefile
+.endif
 
 do-configure:
 	${ECHO_CMD} "BINDIR=	${PREFIX}/bin" > ${WRKDIR}/Makefile.inc
@@ -45,4 +51,4 @@ do-build:
 	${MAKE} depend; \
 	${MAKE} all
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
