@@ -7760,6 +7760,7 @@ uisp		ports/devel/uisp
 uk-aspell	ports/ukrainian/aspell
 uk-gd		ports/ukrainian/gd
 uk-kde3-i18n	ports/ukrainian/kde3-i18n
+uk-koffice-i18n	ports/ukrainian/koffice-i18n
 uk-monacofonts	ports/ukrainian/monacofonts
 uk-ooodict-UA	ports/ukrainian/ooodict-uk_UA
 uk-phone	ports/misc/uk-phone
