@@ -3,7 +3,7 @@
 # Date created:		26 June 1998
 # Whom:			Horance C.H Chou <horance@freedom.ie.cycu.edu.tw>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 02:02:29 steve Exp $
+# $Id: Makefile,v 1.2 1999/04/08 17:54:37 steve Exp $
 #
 
 DISTNAME=	swarm-1.4.1
@@ -15,7 +15,7 @@ MAINTAINER=	horance@freedom.ie.cycu.edu.tw
 LIB_DEPENDS=	ffi.2:${PORTSDIR}/devel/libffi \
 		png.3:${PORTSDIR}/graphics/png \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
-		BLT.2:${PORTSDIR}/x11-toolkits/blt
+		BLT24.2:${PORTSDIR}/x11-toolkits/blt
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
