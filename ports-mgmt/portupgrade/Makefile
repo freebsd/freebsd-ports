@@ -7,6 +7,7 @@
 
 PORTNAME=	portupgrade
 PORTVERSION=	20020122
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
@@ -20,7 +21,6 @@ MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
 		${RUBY_SITEARCHLIBDIR}/fnmatch.so:${PORTSDIR}/devel/ruby-fnmatch \
-		${RUBY_SITELIBDIR}/uri.rb:${PORTSDIR}/net/ruby-uri \
 		${LOCALBASE}/sbin/pkg_tarup:${PORTSDIR}/misc/pkg_tarup
 
 USE_RUBY=	yes

@@ -1,6 +1,0 @@
-This is a Ruby interface to parse URIs according to RFC 2396.  FTP and
-HTTP URLs are supported for the present.
-
-
-Author:	Tomoyuki Kosimizu <greentea@fa2.so-net.ne.jp>
-WWW:	http://www02.so-net.ne.jp/%7Egreentea/ruby/uri/

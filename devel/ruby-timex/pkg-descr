@@ -1,6 +1,0 @@
-The timex library extends Time to provide leapseconds and localtime -
-UTC offset information.  It also provides stringization methods for
-RFC 2822 and ISO 8601 and a date string parser method.
-
-Author:	Tanaka Akira <akr@m17n.org>
-WWW:	http://cvs.m17n.org/~akr/timex/
