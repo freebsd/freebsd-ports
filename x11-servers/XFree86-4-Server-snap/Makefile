@@ -9,15 +9,13 @@ PORTNAME=	Server
 PORTVERSION=	4.2.0
 PORTREVISION=	4
 CATEGORIES=	x11-servers
-MASTER_SITES=	${MASTER_SITE_XFREE} \
-		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
-		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/:wrap \
-		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/:wrap
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
+			anholt/:local
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
+DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz:x Wraphelp.gz:local
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
-IGNOREFILES=	Wraphelp.c
 
 MAINTAINER=	anholt@freebsd.org
 
@@ -90,8 +88,7 @@ ExtendedInputDevices?=	DEFAULT
 .if ${ARCH} == i386
 BuildXF86DRI=		YES
 PLIST_SUB+=		DRI=""
-MASTER_SITES+=		http://gladstone.uoregon.edu/~eanholt/dri/:glide
-DISTFILES+=		freebsd-glide3headers.tar.gz:glide
+DISTFILES+=		freebsd-glide3headers.tar.gz:local
 HasGlide3=		YES
 
 post-extract::
@@ -193,7 +190,8 @@ PLIST_SUB+=		MATROX="@comment "
 .endif
 
 post-extract::
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c ${WRKSRC}/lib/Xdmcp/
+	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
+		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure

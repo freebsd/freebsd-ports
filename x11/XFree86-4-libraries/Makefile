@@ -9,15 +9,13 @@ PORTNAME=	libraries
 PORTVERSION=	4.2.0
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_XFREE} \
-		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
-		ftp://ftp.internat.FreeBSD.org/pub/FreeBSD/X11-Crypto/:wrap \
-		ftp://ftp3.za.FreeBSD.org/pub/FreeBSD/X11-Crypto/:wrap
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
+		${MASTER_SITE_LOCAL:S/$/:local/}
+MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
+			anholt/:local
 PKGNAMEPREFIX=	XFree86-
+DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz:x Wraphelp.gz:local
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
-DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz Wraphelp.c:wrap
-IGNOREFILES=	Wraphelp.c
 
 PATCH_SITES=		${MASTER_SITE_XFREE:S/source//g}
 PATCH_SITE_SUBDIR=	${PORTVERSION}/fixes
@@ -87,7 +85,8 @@ PLIST_SUB+=	OSMESA:=""
 .endif
 
 post-extract:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c ${WRKSRC}/lib/Xdmcp/
+	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
+		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
 post-patch:
 	cd ${WRKSRC}/nls; \
