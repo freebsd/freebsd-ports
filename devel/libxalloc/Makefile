@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:	libxalloc
 # Date created:				12 April 1998
 # Whom:					Andrey Zakhvatov
