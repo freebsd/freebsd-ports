@@ -42,4 +42,7 @@ bin/nickle
 %%DATADIR%%/scanf.5c
 %%DATADIR%%/socket.5c
 %%DATADIR%%/string.5c
+@dirrm %%DATADIR%%/examples/turtle/
+@dirrm %%DATADIR%%/examples/smlng
+@dirrm %%DATADIR%%/examples
 @dirrm %%DATADIR%%
