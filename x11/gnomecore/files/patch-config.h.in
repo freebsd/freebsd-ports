@@ -1,0 +1,12 @@
+--- config.h.in.orig	Sat Oct  5 13:48:12 2002
++++ config.h.in	Sat Oct  5 13:48:42 2002
+@@ -147,6 +147,9 @@
+ /* Define if you have the <nl_types.h> header file.  */
+ #undef HAVE_NL_TYPES_H
+ 
++/* Define if you have the <langinfo.h> header files. */
++#undef HAVE_LANGINFO_H
++
+ /* Define if you have the <stdlib.h> header file.  */
+ #undef HAVE_STDLIB_H
+ 
