@@ -5406,6 +5406,7 @@ llnlxftp	ports/ftp/llnlxftp
 lm-solve	ports/games/lm-solve
 lmbench		ports/benchmarks/lmbench
 lmmon		ports/sysutils/lmmon
+lmon		ports/sysutils/lmon
 lmtp2nntp	ports/mail/lmtp2nntp
 lmtpd		ports/mail/lmtpd
 lockdown	ports/security/lockdown
