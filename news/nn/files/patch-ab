@@ -1,33 +1,228 @@
-*** nntp.c.old	Thu Nov 25 12:39:37 1993
---- nntp.c	Tue Oct 11 09:19:31 1994
+*** config.h.orig	Sat Apr 15 04:57:46 1995
+--- config.h	Sat Apr 15 05:12:40 1995
 ***************
-*** 85,91 ****
---- 85,93 ----
-  import int silent, no_update;
+*** 32,38 ****
+  #define NOV
   
-  import int sys_nerr;
-+ #ifndef __FreeBSD__
-  import char *sys_errlist[];
-+ #endif
-  extern void nn_exitmsg();
-  extern void sys_error();
-  extern int sys_warning();
-*** global.h.old	Tue Oct 11 08:53:50 1994
---- global.h	Tue Oct 11 09:23:07 1994
+  /* Optional */
+! #define NOV_DIRECTORY "/usr/spool/news"
+  
+  /*********************** NETWORK DEPENDENT DEFINITIONS **********************
+   *
+--- 32,38 ----
+  #define NOV
+  
+  /* Optional */
+! #define NOV_DIRECTORY "/var/news"
+  
+  /*********************** NETWORK DEPENDENT DEFINITIONS **********************
+   *
 ***************
-*** 656,662 ****
-  int	nntp_set_group		__APROTO((group_header *gh));
-  int	nntp_get_active		__APROTO((void));
-  FILE *	nntp_get_newsgroups	__APROTO((void));
-! struct novgroup *nntp_get_overview	__APROTO((group_header *gh, int low, int high));
-  FILE *	nntp_fopen_list		__APROTO((char *cmd));
-  char *	nntp_fgets		__APROTO((char *buf, int size));
-  article_number *nntp_get_article_list	__APROTO((group_header *gh));
---- 656,662 ----
-  int	nntp_set_group		__APROTO((group_header *gh));
-  int	nntp_get_active		__APROTO((void));
-  FILE *	nntp_get_newsgroups	__APROTO((void));
-! struct novgroup *nntp_get_overview      __APROTO((group_header *gh, article_number low, article_number high));
-  FILE *	nntp_fopen_list		__APROTO((char *cmd));
-  char *	nntp_fgets		__APROTO((char *buf, int size));
-  article_number *nntp_get_article_list	__APROTO((group_header *gh));
+*** 69,75 ****
+   *	Consult the file NNTP for further information on the use of NNTP.
+   */
+  
+! #undef NNTP
+  
+  /*
+   *	Define NNTP_SERVER to the name of a file containing the name of the
+--- 69,75 ----
+   *	Consult the file NNTP for further information on the use of NNTP.
+   */
+  
+! #define NNTP
+  
+  /*
+   *	Define NNTP_SERVER to the name of a file containing the name of the
+***************
+*** 84,90 ****
+   *	NOTE: If you plan to use the included inews, it MUST be a full pathname
+   */
+  
+! #define NNTP_SERVER	"/usr/lib/nntp_server"
+  
+  /*
+   *	Define NNTP_POST if you want nn to reject attempts to post via
+--- 84,90 ----
+   *	NOTE: If you plan to use the included inews, it MUST be a full pathname
+   */
+  
+! #define NNTP_SERVER     "/usr/local/lib/news/nntp_server"
+  
+  /*
+   *	Define NNTP_POST if you want nn to reject attempts to post via
+***************
+*** 126,132 ****
+   *	conf/s-template.h as a starting point for writing you own.
+   */
+  
+! #include "s-sys5-4.h"
+  
+  /*
+   *	Define DEFAULT_PAGER as the initial value of the 'pager' variable.
+--- 126,132 ----
+   *	conf/s-template.h as a starting point for writing you own.
+   */
+  
+! #include "s-freebsd.h"
+  
+  /*
+   *	Define DEFAULT_PAGER as the initial value of the 'pager' variable.
+***************
+*** 141,148 ****
+   *	nn's :print command pipes text into this command.
+   */
+  
+! #define DEFAULT_PRINTER		"lp -s"			/* System V */
+! /* #define DEFAULT_PRINTER	"lpr -p -JNEWS"	*/ 	/* bsd */
+  
+  /*
+   * 	Define RESIZING to make nn understand dynamic window-resizing.
+--- 141,148 ----
+   *	nn's :print command pipes text into this command.
+   */
+  
+! /* #define DEFAULT_PRINTER         "lp -s"                 /* System V */
+! #define DEFAULT_PRINTER      "lpr -p -JNEWS"       /* bsd */
+  
+  /*
+   * 	Define RESIZING to make nn understand dynamic window-resizing.
+***************
+*** 270,276 ****
+   *	     (The file system must support long file names!!)
+   */
+  
+! #define DB_DIRECTORY	"/usr/spool/nn"
+  
+  
+  /*************************** NEWS TRANSPORT **************************
+--- 270,276 ----
+   *	     (The file system must support long file names!!)
+   */
+  
+! #define DB_DIRECTORY    "/var/spool/nn"
+  
+  
+  /*************************** NEWS TRANSPORT **************************
+***************
+*** 292,301 ****
+   *				  Default: NEWS_LIB_DIR/{rm,del}group
+   */
+  
+! #define NEWS_DIRECTORY		"/usr/spool/news"
+! #define NEWS_LIB_DIRECTORY	"/usr/lib/news"
+  
+! /* #define INEWS_PATH		"/usr/lib/news/inews"	*/
+  
+  
+  /*
+--- 292,301 ----
+   *				  Default: NEWS_LIB_DIR/{rm,del}group
+   */
+  
+! #define NEWS_DIRECTORY          "/var/news"
+! #define NEWS_LIB_DIRECTORY      "/usr/local/lib/news"
+  
+! /* #define INEWS_PATH           "/usr/local/lib/news/inews"   */
+  
+  
+  /*
+***************
+*** 317,323 ****
+   */
+  
+  /* #define REC_MAIL	"/usr/lib/news/recmail"	*/	/* non-sendmail */
+! #define REC_MAIL	"/usr/lib/sendmail -t"		/* sendmail */
+  
+  
+  /*
+--- 317,323 ----
+   */
+  
+  /* #define REC_MAIL	"/usr/lib/news/recmail"	*/	/* non-sendmail */
+! #define REC_MAIL        "/usr/sbin/sendmail -t"          /* sendmail */
+  
+  
+  /*
+***************
+*** 379,391 ****
+   *	DAEMON_MAN	- nnmaster
+   */
+  
+! #define USER_MAN_DIR 	"/usr/man/man1"
+  #define USER_MAN_SECTION 	"1"
+  
+! #define SYS_MAN_DIR 	"/usr/man/man1"
+! #define SYS_MAN_SECTION 	"1m"
+  
+! #define DAEMON_MAN_DIR 	"/usr/man/man8"
+  #define DAEMON_MAN_SECTION 	"8"
+  
+  
+--- 379,391 ----
+   *	DAEMON_MAN	- nnmaster
+   */
+  
+! #define USER_MAN_DIR    "/usr/local/man/man1"
+  #define USER_MAN_SECTION 	"1"
+  
+! #define SYS_MAN_DIR     "/usr/local/man/man1"
+! #define SYS_MAN_SECTION         "1"
+  
+! #define DAEMON_MAN_DIR  "/usr/local/man/man8"
+  #define DAEMON_MAN_SECTION 	"8"
+  
+  
+***************
+*** 445,451 ****
+   *	was accepted, whereas with INN, it only takes seconds.
+   */
+  
+! #define INEWS_IS_FAST		/* comment out for C-News */
+  
+  /*
+   *	Synchronous posting: If set this will cause NN to wait until a
+--- 445,451 ----
+   *	was accepted, whereas with INN, it only takes seconds.
+   */
+  
+! /*#define INEWS_IS_FAST           /* comment out for C-News */
+  
+  /*
+   *	Synchronous posting: If set this will cause NN to wait until a
+***************
+*** 457,463 ****
+   *	via some sort of NNTP.
+   */
+  
+! #define SYNCHRONOUS_POSTING	/* comment out for C-News */
+  
+  /*
+   *	PUT_TIMESTAMP_IN_SCRIPTS
+--- 457,463 ----
+   *	via some sort of NNTP.
+   */
+  
+! /*#define SYNCHRONOUS_POSTING     /* comment out for C-News */
+  
+  /*
+   *	PUT_TIMESTAMP_IN_SCRIPTS
+*** inews/conf.h.orig	Thu Nov 25 12:29:01 1993
+--- inews/conf.h	Sat Apr 15 04:57:55 1995
+***************
+*** 59,65 ****
+   *  DOMAIN as defined above).  If you don't want this, comment it out.
+   */
+  
+! #define	HIDDENNET
+  
+  /*
+   *  There are a number of ways that inews will try to figure out the
+--- 59,65 ----
+   *  DOMAIN as defined above).  If you don't want this, comment it out.
+   */
+  
+! /* #define HIDDENNET */
+  
+  /*
+   *  There are a number of ways that inews will try to figure out the
