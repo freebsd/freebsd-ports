@@ -2,3 +2,4 @@ bin/xli
 bin/xlito
 bin/xview
 bin/xsetbg
+lib/X11/app-defaults/Xli
