@@ -10,7 +10,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/
 
-MAINTAINER=	roman@xpert.com
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
