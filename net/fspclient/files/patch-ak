@@ -3,7 +3,8 @@
 @@ -92,7 +92,9 @@
  /* definitions missing from many system headers */
  extern int errno;
- extern int sys_nerr;
+-extern int sys_nerr;
++extern const int sys_nerr;
 +#ifndef __FreeBSD__
  extern char *sys_errlist[];
 +#endif
