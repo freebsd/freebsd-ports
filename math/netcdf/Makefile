@@ -24,6 +24,12 @@ INSTALLS_SHLIB=	yes
 MAN1=	ncdump.1 ncgen.1
 MAN3=	netcdf.3 netcdf.3f
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-build:
 	@(cd ${WRKSRC}/libsrc && \
 		${SETENV} ${MAKE_ENV} ${MAKE} linux_shared_library)
@@ -36,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/cxx/libnetcdf_c++.so ${PREFIX}/lib/libnetcdf_c++.so.1
 	${LN} -sf libnetcdf_c++.so.1 ${PREFIX}/lib/libnetcdf_c++.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
