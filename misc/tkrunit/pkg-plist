@@ -1,0 +1,3 @@
+bin/runit.tcl
+share/examples/tkrunit/runitrc.sample
+@dirrm share/examples/tkrunit
