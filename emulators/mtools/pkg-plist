@@ -20,6 +20,7 @@ bin/mtools
 @exec ln -fs %D/%F %B/mshowfat
 @exec ln -fs %D/%F %B/mtoolstest
 @exec ln -fs %D/%F %B/mtype
+@exec ln -fs %D/%F %B/mwrite
 @exec ln -fs %D/%F %B/mzip
 @unexec rm %B/mattrib
 @unexec rm %B/mbadblocks
@@ -42,6 +43,7 @@ bin/mtools
 @unexec rm %B/mshowfat
 @unexec rm %B/mtoolstest
 @unexec rm %B/mtype
+@unexec rm %B/mwrite
 @unexec rm %B/mzip
 bin/mcheck
 bin/mcomp
@@ -56,6 +58,8 @@ man/man1/mattrib.1.gz
 man/man1/mbadblocks.1.gz
 man/man1/mcd.1.gz
 man/man1/mcopy.1.gz
+@exec ln -fs %D/%F %B/mwrite.1.gz
+@unexec rm %B/mwrite.1.gz
 man/man1/mdel.1.gz
 man/man1/mdeltree.1.gz
 man/man1/mdir.1.gz
