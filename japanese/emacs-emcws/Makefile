@@ -8,6 +8,7 @@
 
 PORTNAME=	emcws
 PORTVERSION=	20.7
+PORTREVISION=	1
 CATEGORIES=	japanese editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
@@ -15,14 +16,14 @@ DISTNAME=	emacs-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.ki.nu/pub/emcws/ \
 		ftp://ftp.jpl.org/pub/misc/
-PATCHFILES=	emcws-${EMACS_VER}-20010622.gz
+PATCHFILES=	emcws-${EMACS_VER}-20011002.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nakaji@jp.freebsd.org
 
 Y2K=            http://www.gnu.org/software/year2000.html
 
-RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
+BUILD_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 
 WRKSRC=		${WRKDIR}/emacs-${EMACS_VER}
 
@@ -99,6 +100,16 @@ EMCWS_ELCS=	busyu.el \
 		wnn-egg.el \
 		wnn-egg.elc
 
+MULE_PATCHED_ELS=	ange-ftp.el ange-ftp.elc \
+			help.el help.elc \
+			international/ccl.el international/mule-cmds.el \
+			international/mule-conf.el international/mule.el \
+			international/titdic-cnv.el \
+			international/ccl.elc international/mule-cmds.elc \
+			international/mule.elc \
+			international/titdic-cnv.elc \
+			loaddefs.el loadup.el
+
 PLIST_SUB=	EMACS_VER=${EMACS_VER} EMACS_ARCH=${CONFIGURE_TARGET} \
 		DOC_FILE=${DOC_FILE}
 
@@ -121,6 +132,14 @@ pre-build:
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -rf ${WRKSRC}/info/*
 	${LN} -sf DOC ${WRKSRC}/etc/${DOC_FILE}
+	@(cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} emacs)
+	@(cd ${WRKSRC}/src/../lisp; \
+	${WRKSRC}/src/emacs -batch -q -f batch-byte-compile \
+	ange-ftp.el help.el international/ccl.el international/mule-cmds.el \
+	international/mule.el international/titdic-cnv.el)
+	${RM} -f ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}.1
+	${RM} -f ${WRKSRC}/etc/DOC-${EMACS_VER}.1
+	${RM} -f ${WRKSRC}/lib-src/fns-emcws-${EMACS_VER}.1.el
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/emacs ${PREFIX}/bin/emcws-${EMACS_VER}
@@ -132,15 +151,28 @@ do-install:
 	@test -d ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/its || \
 		${MKDIR} ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/its
 	@for i in ${EMCWS_ELCS}; do \
-		${CP} -p ${WRKSRC}/lisp/$$i \
+		${INSTALL_DATA} ${WRKSRC}/lisp/$$i \
 		${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/$$i; \
 	done
+	@test -d ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/international || \
+		${MKDIR} ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/international
+	@for i in ${MULE_PATCHED_ELS}; do \
+		${INSTALL_DATA} ${WRKSRC}/lisp/$$i \
+		${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/$$i; \
+	done
+	@${INSTALL_DATA} ${WRKSRC}/lib-src/fns-emcws-${EMACS_VER}.1.el \
+		${PREFIX}/libexec/emacs/${EMACS_VER}/${CONFIGURE_TARGET}/fns-emcws-${EMACS_VER}.1.el
 	@test -d ${PREFIX}/share/emacs/${EMACS_VER}-emcws/site-lisp || \
 		${MKDIR} ${PREFIX}/share/emacs/${EMACS_VER}-emcws/site-lisp
 	@if [ ! -f ${PREFIX}/share/emacs/${EMACS_VER}-emcws/site-lisp/subdirs.el ]; then \
 	  (${ECHO} "(if (fboundp 'normal-top-level-add-subdirs-to-load-path)"; \
 	   ${ECHO} "    (normal-top-level-add-subdirs-to-load-path))") \
 	  > ${PREFIX}/share/emacs/${EMACS_VER}-emcws/site-lisp/subdirs.el ; \
+	fi
+	@if [ ! -f ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/subdirs.el ]; then \
+	  (${ECHO} "(if (fboundp 'normal-top-level-add-subdirs-to-load-path)"; \
+	   ${ECHO} "    (normal-top-level-add-subdirs-to-load-path))") \
+	  > ${PREFIX}/share/emacs/${EMACS_VER}-emcws/lisp/subdirs.el ; \
 	fi
 
 post-install:
