@@ -13,4 +13,4 @@ cgicc performs the following functions:
    - Supports HTTP file upload. 
    - Compatible with FastCGI. 
 
-WWW: http://www.fsf.org/software/cgicc/cgicc.html
+WWW: http://www.gnu.org/software/cgicc/cgicc.html
