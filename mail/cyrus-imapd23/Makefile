@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=--enable-netscapehack
 .if defined(WITH_DRAC)
 EXTRA_PATCHES+=	${FILESDIR}/drac_auth.patch \
 	${FILESDIR}/extra-patch-acconfig.h ${FILESDIR}/extra-patch-aclocal.m4
-USE_AUTOCONF=	YES
+USE_AUTOHEADER=	YES
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
@@ -169,11 +169,6 @@ post-patch:
 .if ${PERL_LEVEL} < 500600
 		@${REINPLACE_CMD} -e "s|exec perl -x|exec perl -I${LOCALBASE}/lib/perl5/site_perl/${PERL_VER} -x|" \
 			${WRKSRC}/perl/sieve/scripts/sieveshell.pl
-.endif
-
-.if defined(WITH_DRAC)
-pre-configure:
-		cd ${WRKSRC} && ${AUTOHEADER}
 .endif
 
 post-install:
