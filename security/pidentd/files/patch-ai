@@ -1,0 +1,19 @@
+*** src/Makefile.orig	Mon Sep  1 15:47:04 1997
+--- src/Makefile	Mon Sep  1 15:47:11 1997
+***************
+*** 18,24 ****
+  	mv $(PREFIX)identd ..
+  
+  idecrypt:	idecrypt.o crypto.o
+! 	$(CC) $(LDFLAGS) -o idecrypt idecrypt.o crypto.o
+  	mv idecrypt ..
+  
+  identd.o:	 identd.c identd.h error.h crypto.h Makefile
+--- 18,24 ----
+  	mv $(PREFIX)identd ..
+  
+  idecrypt:	idecrypt.o crypto.o
+! 	$(CC) $(LDFLAGS) -o idecrypt idecrypt.o crypto.o $(LIBS)
+  	mv idecrypt ..
+  
+  identd.o:	 identd.c identd.h error.h crypto.h Makefile
