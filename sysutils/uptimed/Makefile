@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	uptimed
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	uptimed
+MASTER_SITES=	http://unixcode.org/downloads/uptimed/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=     . arved
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	andy@athame.co.uk
