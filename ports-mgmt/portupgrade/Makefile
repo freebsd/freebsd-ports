@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20021106
-PORTREVISION=	1
+PORTVERSION=	20021109
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +19,8 @@ DISTVERSION=	20021101
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
 PATCHFILES=	${DISTNAME}-20021103.diff.bz2 \
-		pkgtools-20021103-${PORTVERSION}.diff.bz2
+		pkgtools-20021103-20021106.diff.bz2 \
+		pkgtools-20021106-${PORTVERSION}.diff.bz2
 PATCH_DIST_STRIP=	-p1
 .endif
 
@@ -65,9 +65,6 @@ PKG_CREATE_OK!=	/usr/sbin/pkg_create 2>&1 | ${GREP} ' -b ' || ${TRUE}
 .if empty(PKG_CREATE_OK)
 IGNORE=	pkg_create does not support -b.  Please update /usr/sbin/pkg_* to those of the latest RELENG_4
 .endif
-
-post-patch:
-	${RUBY} -i -pe "gsub(/('\/bin\/)cp(', '-f', tmpfile, file)/, '\1mv\2')" ${WRKSRC}/lib/pkgtools.rb
 
 post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
