@@ -14,6 +14,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache2 module for use macros in config files
 
 WANT_APACHE=	2
+LATEST_LINK=	mod_macro2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 PORTDOCS=	${PORTNAME}.html

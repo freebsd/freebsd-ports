@@ -16,6 +16,7 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache 2 module to provide authentication via an IMAP mail server
 
 WANT_APACHE=	2
+LATEST_LINK=	mod_auth_imap2
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 
