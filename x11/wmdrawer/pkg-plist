@@ -1,6 +1,5 @@
-share/wmdrawer/daemon.xpm
-@dirrm share/wmdrawer
 bin/wmdrawer
+%%DATADIR%%/daemon.png
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
@@ -9,3 +8,4 @@ bin/wmdrawer
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/wmdrawerrc.example
 @dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
