@@ -5546,12 +5546,12 @@ nmapfe		ports/security/nmapfe
 nmh		ports/mail/nmh
 nml		ports/lang/nml
 nn		ports/news/nn
+nn-aspell	ports/textproc/nn-aspell
 nnap		ports/news/nnap
 nntp		ports/news/nntp
 nntpbtr		ports/news/nntpbtr
 nntpcache	ports/news/nntpcache
 nntpswitch	ports/news/nntpswitch
-no-aspell	ports/textproc/no-aspell
 no-login	ports/sysutils/no-login
 noattach	ports/mail/noattach
 noatun-plugins	ports/multimedia/noatun-plugins
