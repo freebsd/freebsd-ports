@@ -1,0 +1,11 @@
+bin/wmanager
+%%PORTDOCS%%share/doc/wmanager/FAQ
+%%PORTDOCS%%share/doc/wmanager/HISTORY
+%%PORTDOCS%%share/doc/wmanager/INSTALL
+%%PORTDOCS%%share/doc/wmanager/NEWS
+%%PORTDOCS%%share/doc/wmanager/README
+%%PORTDOCS%%share/doc/wmanager/TODO
+%%PORTDOCS%%share/examples/wmanager/wmanagerrc_sample
+%%PORTDOCS%%share/examples/wmanager/xinitrc_sample
+%%PORTDOCS%%@dirrm share/examples/wmanager
+%%PORTDOCS%%@dirrm share/doc/wmanager

@@ -1,0 +1,3 @@
+Docs have been installed in /usr/X11R6/share/wmanager/.
+You are advised to have a look at the sample .wmanagerrc
+and .xinitrc's available there.

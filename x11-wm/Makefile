@@ -82,6 +82,7 @@
     SUBDIR += windowmaker
     SUBDIR += wm2
     SUBDIR += wmakerconf
+    SUBDIR += wmanager
     SUBDIR += wmg
     SUBDIR += wmthemeinstall
     SUBDIR += wmx
