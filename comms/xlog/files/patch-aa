@@ -1,21 +1,11 @@
---- src/callbacks.c.orig	Tue Nov  5 08:44:15 2002
-+++ src/callbacks.c	Tue Nov  5 11:00:58 2002
-@@ -74,6 +74,9 @@
- 	extern RIG *myrig;
- #endif
- 
-+/* qsort/bsearch callback functions */
-+typedef int (*compar_callback_fn) (const void *, const void *);
-+
- /* ABOUT DIALOG */
- void on_aboutbutton_clicked (GtkButton *button, gpointer user_data)
- {
-@@ -1627,7 +1630,7 @@
- 		if (fields[i] != logw->logfields[i]) break;
- 
- 	/* copy and re-order the array */
--	qsort(fields, QSO_FIELDS, sizeof(gint), (__compar_fn_t)compare_fields);
-+	qsort(fields, QSO_FIELDS, sizeof(gint), (compar_callback_fn)compare_fields);
- 	if (i < QSO_FIELDS)
- 	{
- 		for (i = 0; i < QSO_FIELDS; i++)
+--- src/hamlib-utils.c.orig	Fri Jan 30 13:54:44 2004
++++ src/hamlib-utils.c	Fri Jan 30 13:55:08 2004
+@@ -604,7 +604,7 @@
+   if (preferences.round == 0)
+     g_string_printf (digits, "%Ld", state.rigfrequency);
+ 	else
+-	  g_string_printf (digits, "%Ld", (long long) rintl (state.rigfrequency /
++	  g_string_printf (digits, "%Ld", (long long) rint (state.rigfrequency /
+       pow (10, preferences.round)));
+ 	g_string_insert_c (digits, (digits->len) - 6 + preferences.round, '.');
+ 	g_strstrip (digits->str);
