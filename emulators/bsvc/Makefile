@@ -11,7 +11,7 @@ CATEGORIES=	emulators tk82
 MASTER_SITES=	ftp://ftp.redlinelabs.com/pub/bsvc/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/emulators
-DISTFILES=	${DISTNAME}-src.tar.gz
+DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible hardware simulation framework with MC68K support
@@ -26,16 +26,23 @@ MAKE_ENV=	PROJECT_BASE=${PREFIX} WRKSRC=${WRKSRC}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 pre-patch:
-	${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile
+	@${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile
+
 post-patch:
-	${FIND} ${WRKSRC} -name "*.[ch]xx" -exec \
-	  ${REINPLACE_CMD} -e 's/iostream\.h/iostream/; s/fstream\.h/fstream/' \{\} \;
-	${FIND} ${WRKSRC} -name Makefile -exec \
-	  ${REINPLACE_CMD} -e 's/make/$(MAKE)/' \{\} \;
+
+.for cfile in codegen.c listing.c object.c main.c
+	@${REINPLACE_CMD} -e 's|exit()|exit(1)|g' ${WRKSRC}/Assemblers/68kasm/${cfile}
+.endfor
+	@${REINPLACE_CMD} -e 's|^#endif.*$$|#endif|g' \
+		${WRKSRC}/Assemblers/68kasm/instlookup.c
+
+	@${FIND} ${WRKSRC} -name "*.[ch]xx" -exec \
+		${REINPLACE_CMD} -e \
+			's/iostream\.h/iostream/; \
+			 s/strstream\.h/strstream/; \
+			 s/fstream\.h/fstream/' \{\} \;
+	@${FIND} ${WRKSRC} -name Makefile -exec \
+		${REINPLACE_CMD} -e 's/make/$(MAKE)/' \{\} \;
 
 .include <bsd.port.post.mk>
