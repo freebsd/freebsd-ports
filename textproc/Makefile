@@ -281,7 +281,6 @@
     SUBDIR += word2x
     SUBDIR += wordnet
     SUBDIR += wv
-    SUBDIR += xerces
     SUBDIR += xerces-j
     SUBDIR += xhtml
     SUBDIR += xlhtml
