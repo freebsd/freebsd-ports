@@ -32,6 +32,7 @@ include/gretl/interact.h
 include/gretl/libgretl.h
 include/gretl/libprob.h
 include/gretl/libset.h
+include/gretl/loop_private.h
 include/gretl/missing.h
 include/gretl/modelprint.h
 include/gretl/modelspec.h
@@ -47,17 +48,21 @@ include/gretl/random.h
 include/gretl/strutils.h
 include/gretl/subsample.h
 include/gretl/system.h
+include/gretl/system_private.h
 include/gretl/texprint.h
 include/gretl/transforms.h
 include/gretl/var.h
 include/gretl/version.h
+@dirrm include/gretl
 lib/gretl-gtk2/arma.so
 lib/gretl-gtk2/arma_x12.so
 lib/gretl-gtk2/data/urcdata.gz
 lib/gretl-gtk2/excel_import.so
+lib/gretl-gtk2/fractals.so
 lib/gretl-gtk2/garch.so
 lib/gretl-gtk2/gnumeric_import.so
 lib/gretl-gtk2/johansen.so
+lib/gretl-gtk2/kernel.so
 lib/gretl-gtk2/lad.so
 lib/gretl-gtk2/leverage.so
 lib/gretl-gtk2/logistic.so
@@ -73,6 +78,8 @@ lib/gretl-gtk2/tobit.so
 lib/gretl-gtk2/tramo-x12a.so
 lib/gretl-gtk2/urcdist.so
 lib/gretl-gtk2/vif.so
+@dirrm lib/gretl-gtk2/data
+@dirrm lib/gretl-gtk2
 lib/libgretl-1.0.a
 lib/libgretl-1.0.so
 lib/libgretl-1.0.so.0
@@ -199,6 +206,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/hamilton.gdt
 %%DATADIR%%/data/misc/jgm-data.gdt
 %%DATADIR%%/data/misc/klein.gdt
+%%DATADIR%%/data/misc/kmenta.gdt
 %%DATADIR%%/data/misc/leverage.gdt
 %%DATADIR%%/data/misc/longley.gdt
 %%DATADIR%%/data/misc/mrw.gdt
@@ -239,9 +247,11 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/misc/garch.inp
 %%DATADIR%%/scripts/misc/jgm-1996.inp
 %%DATADIR%%/scripts/misc/klein.inp
+%%DATADIR%%/scripts/misc/kmenta.inp
 %%DATADIR%%/scripts/misc/leverage.inp
 %%DATADIR%%/scripts/misc/longley.inp
 %%DATADIR%%/scripts/misc/mrw.inp
+%%DATADIR%%/scripts/misc/perron97.inp
 %%DATADIR%%/scripts/misc/ps_descriptions
 %%DATADIR%%/scripts/misc/pscoin.inp
 %%DATADIR%%/scripts/misc/restrict.inp
@@ -323,6 +333,14 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/ps_descriptions
 %%DATADIR%%/scripts/testinp
 %%DATADIR%%/scripts/wg_ps_descriptions
+@dirrm %%DATADIR%%/data/greene
+@dirrm %%DATADIR%%/data/misc
+@dirrm %%DATADIR%%/data/nist
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/scripts/misc
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/db
+@dirrm %%DATADIR%%
 %%GNOME:%%share/gnome/gtksourceview-1.0/language-specs/gnuplot.lang
 %%GNOME:%%share/gnome/gtksourceview-1.0/language-specs/gretl.lang
 %%GNOME:%%share/gnome/help/gretl/C/chapters/appendices.xml
@@ -332,6 +350,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/chapters/cmdref.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/datafiles.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/functions.xml
+%%GNOME:%%share/gnome/help/gretl/C/chapters/genr.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/graphs.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/intro.xml
 %%GNOME:%%share/gnome/help/gretl/C/chapters/looping.xml
@@ -349,6 +368,15 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/figures/aic.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/arlags.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/autocorr.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/bk1.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/bk1a.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/bk1b.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/bk2.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/bk2a.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/bk2b.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/bk3.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/bk4.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/bk4a.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/caution.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/corc.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/cumulate.png
@@ -378,6 +406,8 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/figures/selector.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/session.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/simformula.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/syssigma1.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/syssigma2.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/tip.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/toolbar.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/tworootT.png
@@ -391,6 +421,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/it/chapters/cmdref.xml
 %%GNOME:%%share/gnome/help/gretl/it/chapters/datafiles.xml
 %%GNOME:%%share/gnome/help/gretl/it/chapters/functions.xml
+%%GNOME:%%share/gnome/help/gretl/it/chapters/genr.xml
 %%GNOME:%%share/gnome/help/gretl/it/chapters/graphs.xml
 %%GNOME:%%share/gnome/help/gretl/it/chapters/intro.xml
 %%GNOME:%%share/gnome/help/gretl/it/chapters/looping.xml
@@ -407,6 +438,15 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/it/figures/aic.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/arlags.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/autocorr.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/bk1.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/bk1a.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/bk1b.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/bk2.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/bk2a.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/bk2b.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/bk3.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/bk4.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/bk4a.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/caution.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/corc.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/cumulate.png
@@ -436,6 +476,8 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/it/figures/selector.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/session.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/simformula.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/syssigma1.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/syssigma2.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/tip.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/toolbar.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/tworootT.png
@@ -449,6 +491,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/pixmaps/gnome-application-x-gretlsession.png
 %%GNOME:%%share/gnome/pixmaps/gretl-logo.xpm
 %%GNOME:%%share/gnome/pixmaps/gretl.png
+share/locale/de/LC_MESSAGES/gretl.mo
 share/locale/es/LC_MESSAGES/gretl.mo
 share/locale/fr/LC_MESSAGES/gretl.mo
 share/locale/it/LC_MESSAGES/gretl.mo
@@ -462,14 +505,3 @@ share/locale/pl/LC_MESSAGES/gretl.mo
 %%GNOME:%%@dirrm share/gnome/help/gretl/C/chapters
 %%GNOME:%%@dirrm share/gnome/help/gretl/C
 %%GNOME:%%@dirrm share/gnome/help/gretl
-@dirrm %%DATADIR%%/scripts/misc
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/db
-@dirrm %%DATADIR%%/data/nist
-@dirrm %%DATADIR%%/data/misc
-@dirrm %%DATADIR%%/data/greene
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%
-@dirrm lib/gretl-gtk2/data
-@dirrm lib/gretl-gtk2
-@dirrm include/gretl
