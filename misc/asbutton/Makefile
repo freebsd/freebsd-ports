@@ -8,29 +8,27 @@
 PORTNAME=	asbutton
 PORTVERSION=	0.3
 CATEGORIES=	misc windowmaker afterstep
-MASTER_SITES=	http://www.tigr.net/afterstep/as-apps/download/asbutton/ \
-		ftp://ftp.afterstep.org/apps/asbutton/
+MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
+MASTER_SITE_SUBDIR=	apps/asbutton
 
 MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_X_PREFIX=	yes
-
-do-build:
-	(cd ${WRKSRC} && make)
+ALL_TARGET=	asbutton
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/asbutton ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/asbutton ${PREFIX}/bin
 	@${ECHO} "===>   Installing icons in ${PREFIX}/share/asbutton"
 	@${MKDIR} ${PREFIX}/share/asbutton && ${CHMOD} a+rx ${PREFIX}/share/asbutton
-	@${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/share/asbutton
+	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${PREFIX}/share/asbutton
 
 post-install:
 	@${ECHO} "===>   Installing sample asbuttonrc in ${PREFIX}/share/examples/asbutton"
 	@${ECHO} "===>   Copy to ~/.asbuttonrc and modify to desired config."
 	@${MKDIR} ${PREFIX}/share/examples/asbutton && ${CHMOD} a+rx ${PREFIX}/share/examples/asbutton
-	@${INSTALL_DATA} ${WRKSRC}/.asbuttonrc ${PREFIX}/share/examples/asbutton/asbuttonrc && ${CHMOD} u+rw ${PREFIX}/share/examples/asbutton/asbuttonrc
+	${INSTALL_DATA} ${WRKSRC}/.asbuttonrc ${PREFIX}/share/examples/asbutton/asbuttonrc && ${CHMOD} u+rw ${PREFIX}/share/examples/asbutton/asbuttonrc
 	@${ECHO} "===>   Use 'asbutton -h' for help."
 
 .include <bsd.port.mk>

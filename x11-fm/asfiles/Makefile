@@ -7,9 +7,9 @@
 
 PORTNAME=	asfiles
 PORTVERSION= 	1.0
-CATEGORIES=	x11-fm windowmaker
-MASTER_SITES=	ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/apps/ASFiles/ \
-		ftp://ftp.uni-trier.de/pub/unix/X11/window-manager/AfterStep/apps/ASFiles/
+CATEGORIES=	x11-fm afterstep windowmaker
+MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
+MASTER_SITE_SUBDIR=	apps/ASFiles
 DISTNAME=	ASFiles-${PORTVERSION}
 
 MAINTAINER=	lukin@okbmei.msk.su

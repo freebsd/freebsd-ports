@@ -3,7 +3,7 @@
 ***************
 *** 0 ****
 --- 1,20 ----
-+ LIBDIR = -L/usr/X11R6/lib
++ LIBDIR = -L${X11BASE}/lib
 + LIBS   = -lXpm -lXext -lX11 -lkvm
 + OBJS =  asmon/asmon.o \
 + 		wmgeneral/wmgeneral.o \
@@ -13,10 +13,10 @@
 + all: asmon
 + 
 + .c.o:
-+ 	cc -c -Wall -I/usr/X11R6/include $< -o $*.o
++ 	$(CC) $(CFLAGS) -c -Wall -I${X11BASE}/include $< -o $*.o
 + 
 + asmon: $(OBJS)
-+ 	cc -o asmon/asmon $^ $(LIBDIR) $(LIBS)
++ 	$(CC) -o asmon/asmon $^ $(LIBDIR) $(LIBS)
 + 
 + clean::
 + 	for i in $(OBJS) ; do \

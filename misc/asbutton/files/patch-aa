@@ -1,0 +1,33 @@
+--- Makefile.orig	Sat Jul 17 07:16:39 1999
++++ Makefile	Wed Jun 21 02:54:42 2000
+@@ -1,12 +1,12 @@
+-INCLUDES =-I/usr/X11R6/include/X11 -I/usr/local/include -I/usr/include/X11R6/X11 -I/usr/X11R6/include
+-LIBINC =-L/usr/X11R6/lib -L/usr/include/lib
++INCLUDES =-I${X11BASE}/include/X11 -I${X11BASE}/include
++LIBINC =-L${X11BASE}/lib
+ LIBS = -lm -lX11 -lXpm -lXext
+ #CCFLAGS = -O6 -mpentiumpro -march=pentiumpro
+-CCFLAGS = -O2 
++CCFLAGS = ${CFLAGS}
+ TARGET = asbutton
+ OBJECTS = asbutton.o readline.o
+-BINDIR = /usr/local/bin
+-ICONDIR = /usr/share/afterstep/desktop/icons/16bpp
++BINDIR = ${PREFIX}/bin
++ICONDIR = ${PREFIX}/share/asbutton
+ 
+ ICONS = asb4-1.xpm asb4-2.xpm asb4-3.xpm asb4-4.xpm asb4-blank.xpm asb4-bullethole.xpm \
+         asb4-filingcabinet.xpm asb4-gear.xpm asb4-gnu-button-thang.xpm \
+@@ -23,10 +23,10 @@
+ 		  asb9-corel.xpm asb9-gqview.xpm asb9-vim.xpm asb9-xmms.xpm
+ 
+ .c.o:
+-	gcc ${CCFLAGS} -c -Wall ${INCLUDES} ${FLAGS} $< -o $*.o
++	${CC} ${CCFLAGS} -c -Wall ${INCLUDES} ${FLAGS} $< -o $*.o
+ 
+ ${TARGET}: ${OBJECTS}
+-	gcc ${CCFLAGS} -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
++	${CC} ${CCFLAGS} -o ${TARGET} ${OBJECTS} ${LIBINC} ${LIBS}
+ 
+ clean::
+ 	for i in ${OBJECTS}; do if [ -e $$i ] ; then rm $$i; fi; done 

@@ -8,7 +8,8 @@
 PORTNAME=	asprint
 PORTVERSION=	1.0
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.afterstep.org/apps/asprint/
+MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
+MASTER_SITE_SUBDIR=	apps/asprint
 DISTNAME=	asprint
 
 MAINTAINER=	brett@peloton.runet.edu
