@@ -1,6 +1,4 @@
 bin/ascd
-lib/libworkman.so
-lib/libworkman.so.1
 include/workman/wm_cdda.h
 include/workman/wm_cdinfo.h
 include/workman/wm_cdrom.h
@@ -14,6 +12,10 @@ include/workman/wm_struct.h
 include/workman/wm_version.h
 include/workman/workman.h
 include/workman/workman_defs.h
+lib/libworkman.so
+lib/libworkman.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/ascd/clean/Theme
 share/ascd/clean/background.xpm
 share/ascd/clean/bar.xpm
