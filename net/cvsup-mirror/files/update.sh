@@ -1,10 +1,11 @@
 #! /bin/sh
 
-if ! export PREFIX=$(expr $0 : "\(/.*\)/etc/cvsup/update\.sh\$"); then
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/cvsup/update\.sh\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
     exit 1
 fi
 
+export PREFIX
 export CVSUP_ARGS="$*"
 export PATH=/bin:/usr/bin:${PREFIX}/bin
 

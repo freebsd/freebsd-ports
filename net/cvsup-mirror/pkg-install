@@ -117,10 +117,10 @@ make_account() {
 	    if yesno \
 		"Would you like me to create ${u}'s home directory (${home})" y
 	    then
-		(umask 77 && \
-		    mkdir -p ${home}/.cvsup && \
-		    touch ${home}/.cvsup/auth) || exit
+		mkdir -p ${home}/.cvsup || exit
+		touch ${home}/.cvsup/auth || exit
 		chown -R ${u}:${g} ${home} || exit
+		chmod -R go= ${home} || exit
 	    else
 		echo "Please create it, and try again."
 		exit 1
