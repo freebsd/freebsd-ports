@@ -1,36 +1,10 @@
-*** lib/seek.c~	Mon Nov 26 23:53:23 1990
---- lib/seek.c	Thu Oct  6 14:28:14 1994
-***************
-*** 25,31 ****
-  #include <sys/file.h>
-  #include <sys/stat.h>
-  
-! long	lseek();
-  char	*getenv();
-  
-  int
---- 25,31 ----
-  #include <sys/file.h>
-  #include <sys/stat.h>
-  
-! off_t	lseek();
-  char	*getenv();
-  
-  int
-***************
-*** 33,39 ****
-  	int fd;
-  {
-  
-! 	return (lseek(fd, 0L, 1) >= 0 && !isatty(fd));
-  }
-  
-  /*
---- 33,39 ----
-  	int fd;
-  {
-  
-! 	return (lseek(fd, (off_t) 0, 1) >= 0 && !isatty(fd));
-  }
-  
-  /*
+--- lib/seek.c~	Wed Nov 15 13:19:59 1989
++++ lib/seek.c	Tue Aug 19 18:46:13 1997
+@@ -25,7 +25,6 @@
+ #include <sys/file.h>
+ #include <sys/stat.h>
+ 
+-long	lseek();
+ char	*getenv();
+ 
+ int

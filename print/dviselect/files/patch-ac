@@ -1,14 +1,12 @@
-*** lib/font.c~	Tue Nov 27 08:53:20 1990
---- lib/font.c	Thu Oct  6 22:02:07 1994
-***************
-*** 67,75 ****
-   */
-  extern	int errno;
-  char	*getenv(), *malloc(), *strsave();
-- #ifndef sys5
-- char	*sprintf();
-- #endif
-  
-  static readconf();
-  static setfont();
---- 67,72 ----
+--- lib/font.c~	Thu Mar 14 21:57:06 1991
++++ lib/font.c	Tue Aug 19 18:43:47 1997
+@@ -67,9 +67,6 @@
+  */
+ extern	int errno;
+ char	*getenv(), *malloc(), *strsave();
+-#if	!(defined(sys5) || defined(_AIX))
+-char	*sprintf();
+-#endif
+ 
+ static readconf();
+ static setfont();
