@@ -223,6 +223,7 @@
     SUBDIR += xorg-fonts-75dpi
     SUBDIR += xorg-fonts-cyrillic
     SUBDIR += xorg-fonts-encodings
+    SUBDIR += xorg-fonts-miscbitmaps
     SUBDIR += xorg-libraries
     SUBDIR += xorg-manpages
     SUBDIR += xprompt
