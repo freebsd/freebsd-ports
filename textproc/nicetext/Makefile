@@ -10,7 +10,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ctgi.net/pub/ctgi/nicetext/src/ \
 		ftp://nicetext.com/pub/nicetext/src/
 
-MAINTAINER=	markc@ctgi.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert files to pseudo-natural-language text and back again
 
 .include <bsd.port.pre.mk>

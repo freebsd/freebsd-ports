@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.giram.org/pub/
 DISTNAME=	Giram-${PORTVERSION}
 
-MAINTAINER=	bfoz@glue.umd.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Giram is Really A Modeller
 
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31
