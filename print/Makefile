@@ -175,6 +175,7 @@
     SUBDIR += pips-sc85_86s
     SUBDIR += pips-sp2100_2200
     SUBDIR += pips-spr200_210
+    SUBDIR += pips-spr300_310
     SUBDIR += pips2200
     SUBDIR += pips3000
     SUBDIR += pips3300
