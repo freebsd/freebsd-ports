@@ -1,0 +1,9 @@
+This is a parser to replace UBB style tags with their html equivalents.
+It does not simply do some regex calls, but is complete stack based
+parse engine. This ensures that all tags are properly nested, if not,
+extra tags are added to maintain the nesting. This parser should only
+produce xhtml 1.0 compliant code. All tags are validated and so are all
+their attributes. It should be easy to extend this parser with your own
+tags.
+
+WWW: http://pear.php.net/package/HTML_BBCodeParser/

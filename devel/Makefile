@@ -975,6 +975,7 @@
     SUBDIR += pear-Console_Getopt
     SUBDIR += pear-Console_Table
     SUBDIR += pear-Date
+    SUBDIR += pear-HTML_BBCodeParser
     SUBDIR += pear-HTML_Common
     SUBDIR += pear-HTML_QuickForm
     SUBDIR += pear-HTML_Select_Common
