@@ -20,7 +20,7 @@ DIST_SUBDIR=	motoya
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Free Japanese TrueType fonts named 'MOTOYA'
 
-BUILD_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 
 RESTRICTED=	Personal, non-profit, and evaluation purpose only
 NO_CDROM=	Redistribution not permitted in any form
