@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	decompyle
-PORTVERSION=	2.2.b1
+PORTVERSION=	2.3
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.crazy-compilers.com/decompyle/
+MASTER_SITES=	http://stud.usv.ro/~rchiriliuc/asset/file/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/g}
 
 MAINTAINER=	perky@FreeBSD.org
@@ -17,6 +17,7 @@ COMMENT=	Python byte-code decompiler
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_REINPLACE=  yes
+USE_ZIP=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/bin/env python2,${PYTHON_CMD},' \
