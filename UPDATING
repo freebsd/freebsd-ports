@@ -7,6 +7,21 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 
+20050403:
+  AFFECTS: users of net/tac_plus4
+  AUTHOR: marcus@FreeBSD.org
+
+  Tac_plus4 now installs an rcNG script for starting the tac_plus daemon.
+  To enable tac_plus to start at boot time, add the following to /etc/rc.conf:
+
+  tac_plus_enable="YES"
+
+  You can also pass flags to tac_plus by setting the rc.conf variable
+  tac_plus_flags.  The default flags are "-C ${PREFIX}/etc/tac_plus.conf".
+
+  Additionally, the default version of IOS for tac_plus has been changed from
+  11.x to 12.x.
+
 20050324:
   AFFECTS: users of net/mDNSResponder,
   AUTHOR: brooks@FreeBSD.org
