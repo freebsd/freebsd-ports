@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.gnucash.org/pub/g-wrap/source/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	guile.6:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

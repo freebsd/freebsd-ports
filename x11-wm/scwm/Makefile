@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://scwm.mit.edu/pub/scwm/
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	guile.6:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.9:${PORTSDIR}/lang/guile \
 		Imlib.5:${PORTSDIR}/graphics/imlib \
 		esd.2:${PORTSDIR}/audio/esound
 RUN_DEPENDS=	${X11BASE}/share/scwm/pixmaps/Animator.xpm:${PORTSDIR}/graphics/scwm-icons

@@ -15,7 +15,7 @@ DISTNAME=	gnome-guile-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		guile.6:${PORTSDIR}/lang/guile \
+		guile.9:${PORTSDIR}/lang/guile \
 		guiledlopenhelper.0:${PORTSDIR}/x11-toolkits/guile-gtk \
 		glade.4:${PORTSDIR}/devel/libglade
 
