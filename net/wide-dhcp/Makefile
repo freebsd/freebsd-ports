@@ -3,7 +3,7 @@
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.5 1996/12/01 01:23:19 obrien Exp $
+# $Id: Makefile,v 1.6 1996/12/03 03:34:37 asami Exp $
 #
 
 DISTNAME=       dhcp-1.3beta
@@ -12,10 +12,11 @@ CATEGORIES=     net
 MASTER_SITES=   ftp://sh.wide.ad.jp/WIDE/free-ware/dhcp/ \
 		ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/src/lib/libc/stdtime/
 DISTFILES=	dhcp-1.3beta.tar.gz tzfile.h
-EXTRACT_ONLY=	dhcp-1.3beta.tar.gz
 
 MAINTAINER=     sanpei@yy.cs.keio.ac.jp
 
+EXTRACT_ONLY=	dhcp-1.3beta.tar.gz
+IGNOREFILES=	tzfile.h
 MAKE_ENV=	OSTYPE=`uname`
 
 post-patch:
