@@ -1,0 +1,26 @@
+# ex:ts=8
+# Ports collection makefile for:  tcplist
+# Version required:     	  2.1
+# Date created:			  Mon Apr 14, 1997
+# Whom:				  David O'Brien (obrien@FreeBSD.org)
+#
+# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+#
+
+DISTNAME=	tcplist-2.1
+CATEGORIES=	sysutils net
+MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/tcplist/
+EXTRACT_SUFX=	.shar.gz
+
+MAINTAINER=     obrien@NUXI.com
+
+RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
+
+EXTRACT_CMD=	zcat
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	|sh
+NO_WRKSUBDIR=	yes
+INSTALL_TARGET=	install install.man
+MAN1=		tcplist.1
+
+.include <bsd.port.mk>
