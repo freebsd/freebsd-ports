@@ -16,6 +16,7 @@ lib/X11/xfig/Libraries/Computers/desktop3.fig
 lib/X11/xfig/Libraries/Computers/desktop4.fig
 lib/X11/xfig/Libraries/Computers/desktop5.fig
 lib/X11/xfig/Libraries/Computers/film_digitizer.fig
+lib/X11/xfig/Libraries/Computers/film_digitizer.fig.orig
 lib/X11/xfig/Libraries/Computers/floppy.fig
 lib/X11/xfig/Libraries/Computers/generic_hardware.fig
 lib/X11/xfig/Libraries/Computers/high_speed_disk.fig
@@ -37,6 +38,23 @@ lib/X11/xfig/Libraries/Computers/tower3.fig
 lib/X11/xfig/Libraries/Computers/ultra2.fig
 lib/X11/xfig/Libraries/Computers/ultra30.fig
 lib/X11/xfig/Libraries/Computers/xterminal.fig
+lib/X11/xfig/Libraries/ERD/AUTHOR
+lib/X11/xfig/Libraries/ERD/Entity.fig
+lib/X11/xfig/Libraries/ERD/Entity_soft.fig
+lib/X11/xfig/Libraries/ERD/LICENSE
+lib/X11/xfig/Libraries/ERD/README
+lib/X11/xfig/Libraries/ERD/REL_many_many.fig
+lib/X11/xfig/Libraries/ERD/REL_many_many_h.fig
+lib/X11/xfig/Libraries/ERD/REL_many_many_v.fig
+lib/X11/xfig/Libraries/ERD/REL_one_many.fig
+lib/X11/xfig/Libraries/ERD/REL_one_many_h.fig
+lib/X11/xfig/Libraries/ERD/REL_one_many_v.fig
+lib/X11/xfig/Libraries/ERD/REL_specialization_d.fig
+lib/X11/xfig/Libraries/ERD/REL_specialization_l.fig
+lib/X11/xfig/Libraries/ERD/REL_specialization_r.fig
+lib/X11/xfig/Libraries/ERD/REL_specialization_u.fig
+lib/X11/xfig/Libraries/ERD/stick_h.fig
+lib/X11/xfig/Libraries/ERD/stick_v.fig
 lib/X11/xfig/Libraries/Electrical/Physical/conn_db15.fig
 lib/X11/xfig/Libraries/Electrical/Physical/conn_db25.fig
 lib/X11/xfig/Libraries/Electrical/Physical/conn_db9.fig
@@ -168,6 +186,69 @@ lib/X11/xfig/Libraries/Hospital/microscope.fig
 lib/X11/xfig/Libraries/Hospital/monitor.fig
 lib/X11/xfig/Libraries/Hospital/stethsoscope.fig
 lib/X11/xfig/Libraries/Hospital/ultrasound.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-1x1-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-1x1.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-2x1-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-2x1.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-2x2-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-2x2.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-2x2x2.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-3x1-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-3x3-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-3x3.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-4x2-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-4x4-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/left-4x4.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-1x1-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-1x1.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-2x1-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-2x1.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-2x2-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-2x2.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-2x2x2.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-3x1-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-3x3-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-3x3.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-4x2-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-4x4-purl.fig
+lib/X11/xfig/Libraries/Knitting/Cables/right-4x4.fig
+lib/X11/xfig/Libraries/Knitting/Colors/black.fig
+lib/X11/xfig/Libraries/Knitting/Colors/blue.fig
+lib/X11/xfig/Libraries/Knitting/Colors/cyan.fig
+lib/X11/xfig/Libraries/Knitting/Colors/gold.fig
+lib/X11/xfig/Libraries/Knitting/Colors/green.fig
+lib/X11/xfig/Libraries/Knitting/Colors/grey.fig
+lib/X11/xfig/Libraries/Knitting/Colors/magenta.fig
+lib/X11/xfig/Libraries/Knitting/Colors/red.fig
+lib/X11/xfig/Libraries/Knitting/Colors/white.fig
+lib/X11/xfig/Libraries/Knitting/Colors/yellow.fig
+lib/X11/xfig/Libraries/Knitting/Estonian/braid-one-color.fig
+lib/X11/xfig/Libraries/Knitting/Estonian/braid-two-color.fig
+lib/X11/xfig/Libraries/Knitting/Estonian/nupp.fig
+lib/X11/xfig/Libraries/Knitting/Estonian/three-color-twist.fig
+lib/X11/xfig/Libraries/Knitting/Grids/grid-big.fig
+lib/X11/xfig/Libraries/Knitting/Grids/grid-small.fig
+lib/X11/xfig/Libraries/Knitting/Grids/grid-squashed.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/bobble.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/decrease-left.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/decrease-right.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/double-decrease-center.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/double-decrease-left.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/double-decrease-right.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/increase-left.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/increase-m1.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/increase-right.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/knit-back-loop.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/no-stitch.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/purl-dash-white.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/purl-dash.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/purl-dot.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/purl-grey.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/slip-bar.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/slip-v.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/twist-left.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/twist-right.fig
+lib/X11/xfig/Libraries/Knitting/Symbols/yarn-over.fig
 lib/X11/xfig/Libraries/Logic/circle_large.fig
 lib/X11/xfig/Libraries/Logic/circle_med.fig
 lib/X11/xfig/Libraries/Logic/circle_small.fig
@@ -291,12 +372,19 @@ lib/X11/xfig/Libraries/Music/treble_clef.fig
 lib/X11/xfig/Libraries/Music/treble_staff.fig
 lib/X11/xfig/Libraries/Music/whole-dotted.fig
 lib/X11/xfig/Libraries/Music/whole.fig
+lib/X11/xfig/Libraries/Networks/3Com_CB5000.fig
 lib/X11/xfig/Libraries/Networks/at+t_emmi.fig
 lib/X11/xfig/Libraries/Networks/bridge.fig
+lib/X11/xfig/Libraries/Networks/cisco_7010.fig
+lib/X11/xfig/Libraries/Networks/cisco_7513.fig
+lib/X11/xfig/Libraries/Networks/cisco_catalyst.fig
+lib/X11/xfig/Libraries/Networks/cisco_catalyst4006.fig
+lib/X11/xfig/Libraries/Networks/cisco_catalyst6509.fig
 lib/X11/xfig/Libraries/Networks/concentrator1.fig
 lib/X11/xfig/Libraries/Networks/concentrator2.fig
 lib/X11/xfig/Libraries/Networks/concentrator3.fig
 lib/X11/xfig/Libraries/Networks/ether_switch.fig
+lib/X11/xfig/Libraries/Networks/ether10-100hub.fig
 lib/X11/xfig/Libraries/Networks/firewall.fig
 lib/X11/xfig/Libraries/Networks/forerunner_asx100.fig
 lib/X11/xfig/Libraries/Networks/gdc_apex.fig
@@ -552,7 +640,8 @@ lib/X11/xfig/html/images/join-style-round.gif
 lib/X11/xfig/html/images/korean-text.gif
 lib/X11/xfig/html/images/latin1-chars.gif
 lib/X11/xfig/html/images/library-button.gif
-lib/X11/xfig/html/images/library-panel.gif
+lib/X11/xfig/html/images/library-icon-view.gif
+lib/X11/xfig/html/images/library-list-view.gif
 lib/X11/xfig/html/images/line-style-button.gif
 lib/X11/xfig/html/images/line-style-panel.gif
 lib/X11/xfig/html/images/line-width-button.gif
@@ -604,6 +693,7 @@ lib/X11/xfig/html/images/spline-examples.gif
 lib/X11/xfig/html/images/spline-line-button.gif
 lib/X11/xfig/html/images/spline-sf-example.gif
 lib/X11/xfig/html/images/sun-meta-key.gif
+lib/X11/xfig/html/images/super_subscript.gif
 lib/X11/xfig/html/images/text-angle-button.gif
 lib/X11/xfig/html/images/text-button.gif
 lib/X11/xfig/html/images/text-flags-button.gif
@@ -713,9 +803,16 @@ lib/X11/xfig/xfig.html
 @dirrm lib/X11/xfig/Libraries/Mechanical_DIN/Loch
 @dirrm lib/X11/xfig/Libraries/Mechanical_DIN
 @dirrm lib/X11/xfig/Libraries/Logic
+@dirrm lib/X11/xfig/Libraries/Knitting/Symbols
+@dirrm lib/X11/xfig/Libraries/Knitting/Grids
+@dirrm lib/X11/xfig/Libraries/Knitting/Estonian
+@dirrm lib/X11/xfig/Libraries/Knitting/Colors
+@dirrm lib/X11/xfig/Libraries/Knitting/Cables
+@dirrm lib/X11/xfig/Libraries/Knitting
 @dirrm lib/X11/xfig/Libraries/Hospital
 @dirrm lib/X11/xfig/Libraries/Flowchart
 @dirrm lib/X11/xfig/Libraries/Flags
+@dirrm lib/X11/xfig/Libraries/ERD
 @dirrm lib/X11/xfig/Libraries/Electrical/Schematic
 @dirrm lib/X11/xfig/Libraries/Electrical/Physical
 @dirrm lib/X11/xfig/Libraries/Electrical
