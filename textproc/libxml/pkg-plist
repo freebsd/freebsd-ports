@@ -6,6 +6,7 @@ include/gnome-xml/SAX.h
 include/gnome-xml/debugXML.h
 include/gnome-xml/encoding.h
 include/gnome-xml/entities.h
+include/gnome-xml/libxml
 include/gnome-xml/nanoftp.h
 include/gnome-xml/nanohttp.h
 include/gnome-xml/parser.h
@@ -49,5 +50,4 @@ share/gnome-xml/html/gnome-xml/xml.html
 @dirrm share/gnome-xml/html/gnome-xml
 @dirrm share/gnome-xml/html
 @dirrm share/gnome-xml
-@dirrm include/gnome-xml/libxml
 @dirrm include/gnome-xml
