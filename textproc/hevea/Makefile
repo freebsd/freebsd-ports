@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		hevea
-PORTVERSION=		1.06
+PORTVERSION=		1.07
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://ftp.inria.fr/INRIA/moscova/hevea/
 DISTFILES=		${PORTNAME}-${PORTVERSION}.tar.gz \

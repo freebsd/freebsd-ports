@@ -39,6 +39,9 @@ lib/hevea/compat.hva
 lib/hevea/moreverb.hva
 lib/hevea/iso-symb.hva
 lib/hevea/underscore.hva
+lib/hevea/natbib-common.hva
+lib/hevea/multibib.hva
+lib/hevea/xxcharset.exe
 lib/hevea/html/article.hva
 lib/hevea/html/colortbl.hva
 lib/hevea/html/fancyvrb.hva
@@ -60,6 +63,8 @@ lib/hevea/html/fancysection.hva
 lib/hevea/html/color.hva
 lib/hevea/html/book.hva
 lib/hevea/html/png.hva
+lib/hevea/html/natbib.hva
+lib/hevea/html/xypic.hva
 lib/hevea/text/article.hva
 lib/hevea/text/fancysection.hva
 lib/hevea/text/color.hva
@@ -138,12 +143,13 @@ lib/hevea/info/colortbl.hva
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual041.html
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual042.html
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual043.html
-%%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual045.html
+%%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual044.html
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual046.html
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual047.html
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual048.html
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual049.html
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual050.html
+%%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/manual051.html
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/next_motif.gif
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/previous_motif.gif
 %%PORTDOCS%%share/doc/hevea/hevea-%%HEVEAVERSION%%-manual/symbol.html
