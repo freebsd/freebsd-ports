@@ -6,8 +6,8 @@
     this software.
 
     To activate this port, create a new profile in /etc/ppp/ppp.conf
-    called ``adsl'' using /usr/local/share/speedtouch/ppp.conf.sample
-    as a template, then copy /usr/local/etc/rc.d/asdl.sh.sample to
+    called ``adsl'' using /usr/local/share/doc/speedtouch/ppp.conf.sample
+    as a template, then copy /usr/local/etc/rc.d/adsl.sh.sample to
     /usr/local/etc/rc.d/adsl.sh.
 
     You may need to change the value of MODE in adsl.sh.
