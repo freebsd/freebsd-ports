@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI-Untaint
-PORTVERSION=	1.00
+PORTVERSION=	1.25
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
@@ -24,5 +24,14 @@ PERL_CONFIGURE=	yes
 
 MAN3=		CGI::Untaint.3 CGI::Untaint::hex.3 CGI::Untaint::integer.3 \
        		CGI::Untaint::object.3 CGI::Untaint::printable.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
