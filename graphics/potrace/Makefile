@@ -7,6 +7,7 @@
 
 PORTNAME=	potrace
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://potrace.sourceforge.net/download/
 
@@ -46,7 +47,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}/potrace.${doc}
+	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
 .endfor
 .endif
 
