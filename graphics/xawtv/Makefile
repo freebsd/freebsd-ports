@@ -15,7 +15,8 @@ MAINTAINER=	lehmann@ans-netz.de
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		png.5:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		aa.1:${PORTSDIR}/graphics/aalib
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 USE_MOTIF=	yes
