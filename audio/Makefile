@@ -133,6 +133,7 @@
     SUBDIR += gnapster
     SUBDIR += gnomeaudio2
     SUBDIR += gnomemedia2
+    SUBDIR += gnomoradio
     SUBDIR += gnowavcut
     SUBDIR += gnump3d
     SUBDIR += gnupod
