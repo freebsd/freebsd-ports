@@ -1,0 +1,15 @@
+bin/datum_strip
+lib/perl5/site_perl/%%PERL_VER%%/Carp/Datum.pm
+lib/perl5/site_perl/%%PERL_VER%%/Carp/Datum/Assert.pm
+lib/perl5/site_perl/%%PERL_VER%%/Carp/Datum/Cfg.pm
+lib/perl5/site_perl/%%PERL_VER%%/Carp/Datum/Flags.pm
+lib/perl5/site_perl/%%PERL_VER%%/Carp/Datum/MakeMaker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Carp/Datum/Makefile
+lib/perl5/site_perl/%%PERL_VER%%/Carp/Datum/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/Carp/Datum/Parser.y
+lib/perl5/site_perl/%%PERL_VER%%/Carp/Datum/Strip.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Carp/Datum/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Carp/Datum
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Carp/Datum
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Carp 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Carp 2>/dev/null || true
