@@ -7,7 +7,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.6.7.5
-PORTREVISION?=	0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://probsd.org/sudoftp/ \
@@ -55,6 +55,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|^|#|g' ${WRKSRC}/sample.sudoers
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${PREFIX}/etc/sudoers.sample
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample.sudoers ${EXAMPLESDIR}/sudoers
 
 .include <bsd.port.post.mk>
