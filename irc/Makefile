@@ -30,6 +30,7 @@
     SUBDIR += party
     SUBDIR += pure-emacs20
     SUBDIR += pure-xemacs21-mule
+    SUBDIR += py-irclib
     SUBDIR += quirc
     SUBDIR += roxirc
     SUBDIR += ruby-irc
