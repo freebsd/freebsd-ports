@@ -161,6 +161,7 @@
     SUBDIR += gkrellmwho
     SUBDIR += gkrellmwho2
     SUBDIR += gkrelltop
+    SUBDIR += gksu
     SUBDIR += glload
     SUBDIR += gnome-pkgview
     SUBDIR += gnomecontrolcenter
