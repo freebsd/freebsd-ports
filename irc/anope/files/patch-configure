@@ -389,3 +389,11 @@
  
  ###########################################################################
  
+@@ -830,6 +448,7 @@
+ 	fi
+ 	log cache supplied \`"$CC_LIBS'"
+ else
++	echo >tmp/test.c "int main(){return 1;}"
+ 	CC_LIBS=
+ 	if run $CC $CC_FLAGS tmp/test.c -lnsl -o tmp/test ; then
+ 		CC_LIBS="$CC_LIBS -lnsl"
