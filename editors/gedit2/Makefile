@@ -16,7 +16,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
-		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		eel-2.2:${PORTSDIR}/x11-toolkits/eel2
 
 WRKSRC=	${WRKDIR}/gedit-${PORTVERSION}
 
