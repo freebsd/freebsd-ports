@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	8.9.1
+PORTVERSION=	8.9.2
 CATEGORIES=	net www
 MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
 		ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	General purpose TCP/IP proxy system
 
 USE_BZIP2=	yes
