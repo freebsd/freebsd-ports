@@ -324,6 +324,7 @@
     SUBDIR += p5-Date-Manip
     SUBDIR += p5-Date-Pcalc
     SUBDIR += p5-DateConvert
+    SUBDIR += p5-Devel-Constants
     SUBDIR += p5-Devel-DProf
     SUBDIR += p5-Devel-Modlist
     SUBDIR += p5-Devel-Peek
