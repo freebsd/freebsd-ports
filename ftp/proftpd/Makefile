@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.10.r1
+PORTVERSION=	1.2.10.r3
 PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
@@ -24,7 +24,7 @@ MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://www.linuxceptional.com/proftpd/ \
 		ftp://ftp.ethereal.com/mirrors/ftp.proftpd.org/ \
 		ftp://mirror.cybercomm.nl/
-DISTNAME=	${PORTNAME}-1.2.10rc1
+DISTNAME=	${PORTNAME}-1.2.10rc3
 
 MAINTAINER?=	mharo@FreeBSD.org
 COMMENT?=	Highly configurable ftp daemon
@@ -105,6 +105,12 @@ LIBDIRS:=${LIBDIRS}:${PREFIX}/lib
 CFLAGS+=	-DHAVE_OPENSSL
 USE_OPENSSL=	yes
 PROFTPD_LIBS+=	-lssl -lcrypto
+.endif
+
+.if defined(WITH_CTRLS)
+CFLAGS+=	--enable-ctrls
+MAN8+=		ftpdctl.8
+.else
 .endif
 
 # Keep this here below, in case similar constructs need to be made
