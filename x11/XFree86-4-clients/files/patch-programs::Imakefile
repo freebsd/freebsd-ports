@@ -1,0 +1,19 @@
+--- programs/Imakefile.orig	Sat Aug 21 10:30:43 2004
++++ programs/Imakefile	Sat Aug 21 10:33:24 2004
+@@ -57,7 +57,6 @@
+        XRXSRCDIR = xrx
+ #endif
+        XSMSRCDIR = xsm
+-     XTERMSRCDIR = xterm
+       SCRIPTSDIR = scripts
+ #endif
+ #if BuildCID
+@@ -131,7 +130,7 @@
+ 	xlsclients xlsfonts xmag xman xmessage xmh xmodmap xprop xrdb \
+ 	xrefresh $(XRXSRCDIR) xset \
+ 	xsetroot $(XSMSRCDIR) xstdcmap $(XINPUTCLIENTDIRS) \
+-	$(XTERMSRCDIR) $(XTRAPCLIENTDIRS) $(XVIDTUNESRCDIR) xwd xwininfo xwud \
++	$(XTRAPCLIENTDIRS) $(XVIDTUNESRCDIR) xwd xwininfo xwud \
+ 	$(XPMCLIENTDIRS) $(XVINFOSRCDIR) \
+ 	$(XSSRCDIR) $(XASSRCDIR) $(LBXPROXYSRCDIR) $(SCRIPTSDIR) \
+ 	$(GLXCLIENTDIRS) $(XRANDRDIR) $(XCURSORGENDIR) 

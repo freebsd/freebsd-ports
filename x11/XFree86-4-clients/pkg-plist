@@ -169,8 +169,6 @@ lib/X11/app-defaults/Xmessage
 lib/X11/app-defaults/Xmessage-color
 lib/X11/app-defaults/Xmh
 lib/X11/app-defaults/Xvidtune
-lib/X11/etc/xterm.termcap
-lib/X11/etc/xterm.terminfo
 lib/X11/fonts/util/map-ISO8859-1
 lib/X11/fonts/util/map-ISO8859-10
 lib/X11/fonts/util/map-ISO8859-11
