@@ -1,0 +1,23 @@
+------------------------------------------------------------------------------
+The installation of SCIM table-based im engine has finished. Please note this
+port is only an engine for table-based input methods and does not contain any
+actual input methods.
+
+If you are using a 4.x system, please note there is no working scim-make-table
+command available in this port. Run `scim-make-table' command to get more
+information.
+
+The following ports can utilize this table-based imengine:
+
+ Chinese:
+  chinese/scim-tables	Array30, CangJie, Cantonese, Dayi, Erbi, EZ, Jyutping,
+                        Simplex, Stroke, Wubi, Ziranma, ZhuYin
+ Korean:
+  korean/scim-tables	Hangul, Hanja
+
+ Japanese:
+  japanese/scim-tables	HIRAGANA, KATAKANA, Nippon
+
+As a common rule, set XMODIFIERS to '@im=SCIM' and use `scim -d' to start the
+scim daemon.
+------------------------------------------------------------------------------

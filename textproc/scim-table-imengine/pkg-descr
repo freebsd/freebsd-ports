@@ -1,0 +1,7 @@
+Smart Common Input Method platform, in short SCIM, is a development platform to
+make Input Method developers live easier. It has very clear architecture and
+very simple programming interface.
+
+This is the im engine for table based input methods.
+
+WWW: http://www.scim-im.org

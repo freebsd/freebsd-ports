@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Sun Feb 27 07:54:20 2005
++++ src/Makefile.in	Tue Mar  1 16:51:10 2005
+@@ -40,7 +40,7 @@
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-bin_PROGRAMS = scim-make-table$(EXEEXT)
++bin_PROGRAMS = 
+ subdir = src
+ DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \
+ 	$(srcdir)/Makefile.in

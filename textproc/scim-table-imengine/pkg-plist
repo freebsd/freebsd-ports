@@ -1,0 +1,12 @@
+bin/scim-make-table
+lib/scim-1.0/IMEngine/table.so
+lib/scim-1.0/SetupUI/table-imengine-setup.so
+share/scim/icons/table.png
+share/locale/zh_CN/LC_MESSAGES/scim-tables.mo
+share/locale/zh_TW/LC_MESSAGES/scim-tables.mo
+share/locale/ja/LC_MESSAGES/scim-tables.mo
+share/locale/ko/LC_MESSAGES/scim-tables.mo
+share/locale/de/LC_MESSAGES/scim-tables.mo
+share/locale/fr/LC_MESSAGES/scim-tables.mo
+@unexec rmdir %D/lib/scim-1.0/IMEngine 2>/dev/null || true
+@unexec rmdir %D/lib/scim-1.0/SetupUI 2>/dev/null || true
