@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GraphViz
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	GraphViz
@@ -30,9 +30,9 @@ MAN3=		Devel::GraphVizProf.3 \
 		GraphViz::Parse::Yacc.3 \
 		GraphViz::Parse::Yapp.3 \
 		GraphViz::Regex.3 \
-		GraphViz::Remote.3 \
 		GraphViz::Small.3 \
 		GraphViz::XML.3
+
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
