@@ -5,9 +5,35 @@ if [ $# != 2 ]; then
 fi
 index=$1
 pkgdir=$2
+tmpindex=/tmp/index.$$
+
+# make a list of all pkgnames that don't have corresponding packages
+missing=$(/usr/bin/awk -v FS="|" -v pkgdir=$pkgdir '{
+        if (system(sprintf("test -e %s/All/%s.tgz\n", pkgdir, $1)))
+        print $1 ;
+}' $index)
+
+# make an index for only the ports that have packages
 /usr/bin/awk -v FS="|" -v pkgdir=$pkgdir '{
         if (system(sprintf("test ! -e %s/All/%s.tgz\n", pkgdir, $1)))
         print $0 ;
-}' $index | \
-	sed -e 's/XFree86-3\.3\.4//g' -e 's/Motif-2\.1\.10//g' \
-	  -e 's/  */ /g' -e 's/| /|/g' -e 's/ |/|/g'
+}' $index > $tmpindex
+
+# find missing ports still in the index as a dependency
+delete=""
+sed=""
+for i in $missing; do
+	if fgrep -q $i $tmpindex; then
+		delete="$delete $i"
+		sed="$sed -e s/$(echo $i | sed -e 's/\./\\./g')//g"
+	fi
+done
+
+# delete them
+if [ "$delete" != "" ]; then
+	echo "chopindex: deleting" $delete 1>&2
+fi
+
+sed $sed -e 's/  */ /g' -e 's/| /|/g' -e 's/ |/|/g' $tmpindex
+
+/bin/rm -f $tmpindex
