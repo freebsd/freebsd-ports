@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gd
-PORTVERSION=	2.0.1
-PORTREVISION=	3
+PORTVERSION=	2.0.11
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/ \
@@ -41,8 +40,12 @@ MAKE_ARGS+=	-j2
 MAKE_ARGS+=	$v="${$v}"
 .endfor
 
-pre-fetch:
+.if defined(HAVE_UNISYS_LICENSE)
+WITH_LZW=	yes
+.endif
+
 .if !defined(WITH_LZW)
+pre-fetch:
 	@${ECHO_CMD} "************************************************************"
 	@${ECHO_CMD} "*      If you live outside US and Canada, you can define   *"
 	@${ECHO_CMD} "*      WITH_LZW to enable GIF compression support.         *"

@@ -14,7 +14,7 @@ void gdImageGifToSink(gdImagePtr im, gdSinkPtr outSink)
 {
         gdIOCtx   *out = gdNewSSCtx(NULL,outSink);
         gdImageGifCtx(im, out);
-        out->free(out);
+        out->gd_free(out);
 }
 
 void gdImageGifCtx(gdImagePtr im, gdIOCtx *out)
