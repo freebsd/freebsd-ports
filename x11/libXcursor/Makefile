@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	libXcursor
-PORTVERSION=	1.1.1.p1
+PORTVERSION=	1.1.2
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~anholt/dist/
+MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X client-side cursor loading library
 
 LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/x11.pc:${PORTSDIR}/x11/libX11
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
-		${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
+BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto \
 		${LIB_PC_DEPENDS}
 RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
@@ -27,8 +26,7 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CFLAGS+=	-DMALLOC_0_RETURNS_NULL
 MAN3=		Xcursor.3
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.1.1
-
 INSTALLS_SHLIB=	yes
+USE_GNOME=	gnomehack pkgconfig
 
 .include <bsd.port.mk>
