@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
-		${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/${APACHE_PORT}
+		${LOCALBASE}/sbin/apxs:${APACHE_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-APACHE_PORT?=	apache13
+APACHE_PORT?=	${PORTSDIR}/www/apache13
 CURUSER?=	`whoami`
-CURGRP?=	`groups | awk '{print $1}'`
+CURGRP?=	`groups | ${AWK} '{print $$1}'`
 TESTPORT?=	8228
 PERL_CONFIGURE=	yes
 CONFIGURE_ENV+=	APACHE="${PREFIX}/sbin/apache" \
