@@ -11,7 +11,6 @@
 %%ELISP%%%%EMACS_LIBDIR%%/site-lisp/migemo.el
 %%ELISP%%%%EMACS_LIBDIR%%/site-lisp/migemo.elc
 %%MIGEMO%%share/doc/migemo/migemo.ja.html
-%%MIGEMO%%@dirrm share/doc/migemo
 %%MIGEMO%%share/migemo/migemo-dict
 %%MIGEMO%%share/migemo/migemo-dict.idx
 %%MIGEMO%%share/migemo/migemo-dict.cache
@@ -19,4 +18,5 @@
 %%MIGEMO%%share/migemo/migemo.ja.rd
 %%MIGEMO%%share/migemo/user-dict.sample
 %%MIGEMO%%share/migemo/regex-dict.sample
+%%MIGEMO%%@dirrm share/doc/migemo
 %%MIGEMO%%@dirrm share/migemo
