@@ -6,26 +6,54 @@
 #
 
 PORTNAME=	xmame
-PORTVERSION=	0.36b3.1
+PORTVERSION=	0.37b5.1
 CATEGORIES=	emulators
-MASTER_SITES=	http://xmame.retrogames.com/download/ \
+MASTER_SITES=	http://x.mame.net/download/ \
 		ftp://ftp.kaupp.cx/pub/xmame/ \
-		ftp://ftp.bingo-ev.de/pub/software/emulator/
+		http://www.ozemail.com.au/~knebauer/xmame/files/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=     dburr@FreeBSD.org
+MAINTAINER=     c9710216@studentmail.newcastle.edu.au
 
-USE_XPM=	YES
-USE_GMAKE=	YES
+USE_XPM=	yes
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
 MAKEFILE=	makefile.unix
 
 MAN6=		xmame.6
 
-post-install:
-	${MKDIR} ${PREFIX}/lib/xmame ${PREFIX}/lib/xmame/doc ${PREFIX}/lib/xmame/hi ${PREFIX}/lib/xmame/roms
-	${CHMOD} 777 ${PREFIX}/lib/xmame/hi
-	for file in cheat.dat history.dat README.unix gamelist.txt; do ${INSTALL} -C -o root -g wheel -m 444 ${WRKSRC}/doc/$${file} ${PREFIX}/lib/xmame/$${file}; done
-	${INSTALL} -C -o root -g wheel -m 644 ${WRKSRC}/doc/xmamerc.dist ${PREFIX}/lib/xmame/xmamerc
-	for file in Changes LEEME.unix MailList.notes README.fx README.xgl TODO cheat.doc credits.unix liesmich.unix multiplayer-readme.txt readme.dos whatsnew.txt; do ${INSTALL} -C -o root -g wheel -m 444 ${WRKSRC}/doc/$${file} ${PREFIX}/lib/xmame/doc/$${file}; done
+XMAMEDOCS=	changes.mame changes.unix credits.unix leeme.unix \
+		liesmich.unix maillist.txt multiplayer-readme.txt \
+		readme.fx readme.mame readme.unix readme.xgl todo
 
+.if !defined(NOPORTDOCS)
+PLIST_SUB+=	PORTDOCS=""
+.else
+PLIST_SUB+=	PORTDOCS="@comment "
+.endif
+
+# the large number of sed regexes here is intended to make this port a whole
+# lot easier to maintain - please don't convert them into a patch.
+post-patch:
+	${PERL} -pi -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/doc/xmamerc.dist
+	@${CP} ${WRKSRC}/makefile.unix ${WRKSRC}/makefile.unix.sed
+	${SED} -e "s@= gcc@?=  ${CC}@g" -e "s@= -O -Wall@s?=  ${CFLAGS}@g" \
+		-e "s@= cp@?=  ${INSTALL} ${COPY}@g" -e "s@/usr/games@${PREFIX}/bin@g" \
+		-e "s@/usr/local/man/man6@${PREFIX}/man/man6@g" \
+		-e "s@/usr/games/lib/\$\(NAME\)@${PREFIX}/share/\$\(NAME\)@g" \
+		-e "s@/usr/X11R6@${X11BASE}@g" -e "s@ARCH  = linux@ARCH  = freebsd@g" \
+			${WRKSRC}/makefile.unix.sed > ${WRKSRC}/makefile.unix
+
+post-install:
+	${MV} ${PREFIX}/bin/xmame.x11 ${PREFIX}/bin/xmame
+	${MKDIR} ${PREFIX}/share/xmame ${PREFIX}/share/xmame/hi ${PREFIX}/share/xmame/roms
+	${CHMOD} 777 ${PREFIX}/share/xmame/hi
+	${INSTALL_DATA} ${WRKSRC}/doc/xmamerc.dist ${PREFIX}/share/xmame/xmamerc
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/xmame
+.for file in ${XMAMEDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/xmame
+.endfor
+.endif
+	
 .include <bsd.port.mk>

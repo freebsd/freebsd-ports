@@ -1,47 +1,29 @@
---- doc/xmamerc.dist.orig	Mon Aug  9 23:49:19 1999
-+++ doc/xmamerc.dist	Sat Sep  4 22:38:22 1999
-@@ -23,16 +23,16 @@
+--- doc/xmamerc.dist.orig	Sat Apr  8 00:24:47 2000
++++ doc/xmamerc.dist	Wed May  3 21:00:00 2000
+@@ -60,7 +60,7 @@
+ samples                 1
+ samplefreq              22050
+ bufsize                 2.000000
+-volume                  -3
++volume                  -13
+ # audiodevice           <NULL> (not set)
+ # mixerdevice           <NULL> (not set)
  
- # Where does your Mame rom files reside? 
- # This option can be overriden by MAMEDIR environment variable
--rompath		/usr/games/lib/xmame:/usr/local/lib/xmame
-+rompath		/usr/local/lib/xmame
+@@ -70,12 +70,12 @@
+ mouse                   1
  
- # Also Mame needs a public-writable directory to store high scores
--spooldir        /usr/games/lib/xmame
-+spooldir        /usr/local/lib/xmame/hi
+ ### Fileio Related ###
+-rompath                 /usr/games/lib/xmame
+-spooldir                /usr/games/lib/xmame
++rompath                 %%PREFIX%%/share/xmake/roms
++spooldir                %%PREFIX%%/share/xmake/hi
+ screenshotdir           .
+-cheatfile               /usr/games/lib/xmame/cheat.dat
+-historyfile             /usr/games/lib/xmame/history.dat
+-mameinfofile            /usr/games/lib/xmame/mameinfo.dat
++cheatfile               %%PREFIX%%/share/xmake/cheat.dat
++historyfile             %%PREFIX%%/share/xmake/history.dat
++mameinfofile            %%PREFIX%%/share/xmake/mameinfo.dat
  
- # Where can xmame find the cheat database?
--cheatfile	/usr/games/lib/xmame/CHEAT.DAT
-+cheatfile	/usr/local/lib/xmame/cheat.dat
- 
- # What is your loved game? ( remember that mame defaults to "pacman" )
--defaultgame	galturbo
-+defaultgame	snowbros
- 
- # Type here the name of the display where play xmame
- # overriden by DISPLAY environment variable. Not usefull in config file but...
-@@ -43,7 +43,7 @@
- #
- 
- # Use sound if available. default is 0 (Don't)
--sound	 	0
-+sound	 	1
- 
- # Use stereo sound if available
- stereo		1
-@@ -105,11 +105,11 @@
- # Define X and Y axis scale related to original bitmap. Default is 1,
- # since xmame-0.34b5.3 also used to scale vector games, vector games also
- # except values like 1.5 and even 0.5 these are rounded for normal games
--widthscale	2
--heightscale	2
-+#widthscale	2
-+#heightscale	2
- 
- #scale sets both widthscale and heightscale in one option
--#scale 2
-+scale 2
- 
- # We want autoframeskip ;)
- autoframeskip	1
+ ### Mame Related ###
+ defaultgame             pacman
