@@ -460,6 +460,7 @@ lib/nessus/plugins/phorum.nasl
 lib/nessus/plugins/php.nasl
 lib/nessus/plugins/php3_path_disclosure.nasl
 lib/nessus/plugins/phpMyExplorer.nasl
+lib/nessus/plugins/phprocketaddin_traversal.nasl
 lib/nessus/plugins/php_file_upload.nasl
 lib/nessus/plugins/php_imap_overflow.nasl
 lib/nessus/plugins/php_log.nasl
@@ -531,6 +532,7 @@ lib/nessus/plugins/rpc_cmsd.nasl
 lib/nessus/plugins/rpc_database.nasl
 lib/nessus/plugins/rpc_etherstatd.nasl
 lib/nessus/plugins/rpc_fam.nasl
+lib/nessus/plugins/rpc_kcms.nasl
 lib/nessus/plugins/rpc_keyserv.nasl
 lib/nessus/plugins/rpc_llockmgr.nasl
 lib/nessus/plugins/rpc_nfsd.nasl
@@ -730,6 +732,7 @@ lib/nessus/plugins/ultraseek_dos.nasl
 lib/nessus/plugins/unicast_dos.nasl
 lib/nessus/plugins/upload_cgi.nasl
 lib/nessus/plugins/uploader_exe.nasl
+lib/nessus/plugins/upnp_xp.nasl
 lib/nessus/plugins/ustorekeeper.nasl
 lib/nessus/plugins/uw_imap_overflow.nasl
 lib/nessus/plugins/uw_imap_overflow_two.nasl
@@ -802,6 +805,7 @@ lib/nessus/plugins/yabb.nasl
 lib/nessus/plugins/yahoo_dos.nasl
 lib/nessus/plugins/yppasswdd.nasl
 lib/nessus/plugins/zeus.nasl
+lib/nessus/plugins/zml_cgi_traversal.nasl
 lib/nessus/plugins/zope.nasl
 lib/nessus/plugins/zope_dos.nasl
 lib/nessus/plugins/zope_img_updating.nasl
@@ -812,7 +816,3 @@ lib/nessus/plugins_factory/libtool
 lib/nessus/plugins_factory/nessus.tmpl
 sbin/nessus-update-plugins
 @dirrm lib/nessus/plugins_factory
-@dirrm lib/nessus/plugins
-@exec mkdir %D/lib/nessus/reports
-@unexec rmdir %D/lib/nessus/reports 2>/dev/null || true
-@dirrm lib/nessus
