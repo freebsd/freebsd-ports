@@ -1,16 +1,17 @@
+bin/t1mapper
 bin/xdvi
+bin/xdvizilla
 libexec/xdviprint
+share/texmf/xdvi/XDvi
 share/texmf/xdvi/vfontmap
+share/texmf/xdvi/xdvi.cfg
 share/texmf/xdvi/xdvipaper.dvi2ps-j
 share/texmf/xdvi/xdvipaper.dvips
 share/texmf/xdvi/xdvipaper.jdvi2kps
-share/doc/xdvi/FAQ
-share/doc/xdvi/xdvi.icon
 share/doc/xdvi/CHANGES.xdvik-jp
-share/doc/xdvi/README
-share/doc/xdvi/README.xdvik-jp
 share/doc/xdvi/ChangeLog.xdvik20a-j1.1
 share/doc/xdvi/ChangeLog.xdvik20c-j1.0
+share/doc/xdvi/FAQ
 share/doc/xdvi/HEADERS.DOC
 share/doc/xdvi/InternalVars
 share/doc/xdvi/README.jp+toc+hal2
@@ -19,11 +20,18 @@ share/doc/xdvi/README.markpage+toc+printdvi
 share/doc/xdvi/README.markpage+toc+printdvi+paper
 share/doc/xdvi/README.miyu-beta6
 share/doc/xdvi/README.ptex
+share/doc/xdvi/README.src-specials
+share/doc/xdvi/README.t1fonts
+share/doc/xdvi/README.t1mapper
 share/doc/xdvi/README.tasai-ussy
+share/doc/xdvi/README.vf2ft
+share/doc/xdvi/README.xdvik-jp
 share/doc/xdvi/README.xdvik18f-j1.0.patch
 share/doc/xdvi/README.xdvik18f-j1.1p5.patch
 share/doc/xdvi/README.xdvik20a-j1.1.patch
 share/doc/xdvi/README.xdvik20c-j1.0+hal2+dvisel
 share/doc/xdvi/README.xdvik20c-j1.0p1.patch 
+share/doc/xdvi/README.xdvik-22.15-j1.04.patch  
+share/doc/xdvi/xdvi.icon
 @dirrm share/texmf/xdvi
 @dirrm share/doc/xdvi
