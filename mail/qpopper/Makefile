@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 .if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	qpopper4.0.3-ipv6-20010504.diff.gz
+PATCHFILES=	qpopper4.0.4-ipv6-20020502.diff.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
