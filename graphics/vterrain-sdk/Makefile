@@ -10,33 +10,36 @@ PORTVERSION=	010423
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.vterrain.org/pub/vterrain/dist/ \
 		http://www.boost.org/libs/dir_it/
-DISTFILES=	TerrainSDK-${PORTVERSION}.zip \
-	        dir_it.zip
+DISTFILES=	${EXTRACT_ONLY} \
+		dir_it.zip
 EXTRACT_ONLY=	TerrainSDK-${PORTVERSION}.zip
 
 MAINTAINER=	aa8vb@nc.rr.com
 
-LIB_DEPENDS=    netcdf.1:${PORTSDIR}/math/netcdf \
+LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf \
 		shp.1:${PORTSDIR}/devel/shapelib \
 		png.4:${PORTSDIR}/graphics/png \
 		osg.1:${PORTSDIR}/graphics/osg \
-		projection.1:${PORTSDIR}/devel/projectionlib
+		projection.1:${PORTSDIR}/misc/projectionlib
 
 WRKSRC=		${WRKDIR}/TerrainSDK
+
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS+=	-a
 USE_X_PREFIX=	yes
 USE_MESA=	yes
-USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+USE_GMAKE=	yes
+MAKE_ENV=	CXX="${CXX}" \
+		COPT="${CXXFLAGS} -fpic -DPIC"
 
 post-extract:
 	cd ${WRKSRC}/vtdata && \
 		unzip -aj ${DISTDIR}/dir_it.zip boost/directory.h src/directory.cpp
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/vtdata/libvtdata.so ${PREFIX}/lib/libvtdata.so.1
-	${INSTALL_DATA} ${WRKSRC}/vtlib/vtosg/libvtosg.so ${PREFIX}/lib/libvtosg.so.1
+	${INSTALL_PROGRAM} ${WRKSRC}/vtdata/libvtdata.so ${PREFIX}/lib/libvtdata.so.1
+	${INSTALL_PROGRAM} ${WRKSRC}/vtlib/vtosg/libvtosg.so ${PREFIX}/lib/libvtosg.so.1
 	${LN} -sf libvtdata.so.1 ${PREFIX}/lib/libvtdata.so
 	${LN} -sf libvtosg.so.1 ${PREFIX}/lib/libvtosg.so
 	${MKDIR} ${PREFIX}/include/TerrainSDK
