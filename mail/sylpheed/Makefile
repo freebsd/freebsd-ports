@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	sylpheed-claws
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
+		iconv.3:${PORTSDIR}/converters/libiconv
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -25,7 +28,9 @@ USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${PREFIX}/lib -L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--enable-ipv6 --prefix=${PREFIX} --with-included-gettext \
+CONFIGURE_ARGS=	--enable-ipv6 \
+		--prefix=${PREFIX} \
+		--with-libintl-prefix=${LOCALBASE} \
 		--program-transform-name=''
 
 .if !defined(WITHOUT_SSL)
@@ -76,7 +81,7 @@ CONFIGURE_ARGS+=--enable-ssl
 .else
 CONFIGURE_ARGS+=--disable-ssl
 .endif
- 
+
 MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
 		faq/en/Makefile.in faq/es/Makefile.in faq/fr/Makefile.in \
 		faq/it/Makefile.in manual/Makefile.in manual/en/Makefile.in \

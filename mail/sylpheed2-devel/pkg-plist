@@ -1,5 +1,4 @@
 bin/sylpheed
-lib/charset.alias
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog.jp
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
@@ -21,7 +20,6 @@ share/locale/hu/LC_MESSAGES/sylpheed.mo
 share/locale/it/LC_MESSAGES/sylpheed.mo
 share/locale/ja/LC_MESSAGES/sylpheed.mo
 share/locale/ko/LC_MESSAGES/sylpheed.mo
-share/locale/locale.alias
 share/locale/nl/LC_MESSAGES/sylpheed.mo
 share/locale/pl/LC_MESSAGES/sylpheed.mo
 share/locale/pt_BR/LC_MESSAGES/sylpheed.mo
