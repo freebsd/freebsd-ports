@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bftpd
-PORTVERSION=	1.0.22
+PORTVERSION=	1.0.23
 CATEGORIES=	ftp
 MASTER_SITES=	http://bftpd.sourceforge.net/downloads/src/
 
@@ -24,6 +24,8 @@ post-patch:
 			s@touch /var@#touch /var@g; \
 			s@DESTDIR)/etc@prefix)/etc@g; \
 			s@bftpd.conf @bftpd.conf.sample @g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's,/etc/bftpd.conf,${PREFIX}/etc/bftpd.conf,' \
+		${WRKSRC}/mypaths.h
 	@${REINPLACE_CMD} -e "s@-ldl@@" ${WRKSRC}/configure
 	@${CP} ${WRKSRC}/bftpd.conf ${WRKSRC}/bftpd.conf.sample
 
