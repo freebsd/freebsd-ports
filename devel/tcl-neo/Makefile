@@ -16,7 +16,7 @@ DISTNAME=	neowebscript-3.3
 MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	tclx83:${PORTSDIR}/lang/tclX82 \
-		db2:${PORTSDIR}/databases/db
+		db2:${PORTSDIR}/databases/db2
 
 # Not yet -- openldap used db3, neo used db2 :(
 #		ldap.2:${PORTSDIR}/net/openldap2

@@ -23,7 +23,7 @@ LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe \
 .if !defined(USE_DB2)
 LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 .else
-LIB_DEPENDS+=	db2.0:${PORTSDIR}/databases/db
+LIB_DEPENDS+=	db2.0:${PORTSDIR}/databases/db2
 .endif
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/kc15f.pcf.gz:${PORTSDIR}/chinese/kcfonts \
 		${LOCALBASE}/share/tabe/libtabe-0.2.5:${PORTSDIR}/chinese/libtabe

@@ -20,7 +20,7 @@ PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	jharris@widomaker.com
 
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --datadir=${PREFIX}/share/pks --localstatedir=/var/pks \

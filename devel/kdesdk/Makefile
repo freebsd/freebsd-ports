@@ -16,7 +16,7 @@ MAINTAINER=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
-LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db
+LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2
 
 USE_KDEBASE_VER=2
 USE_BZIP2=	yes
