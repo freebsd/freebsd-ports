@@ -1,0 +1,703 @@
+--- vmmon-only/freebsd/driver.c.orig	Tue Oct 21 23:03:43 2003
++++ vmmon-only/freebsd/driver.c	Tue Oct 21 23:19:51 2003
+@@ -45,7 +45,7 @@
+ #include <sys/kernel.h>
+ #include <sys/module.h>
+ #include <sys/conf.h>
+-#include <sys/selinfo.h>
++#include <sys/select.h>
+ #include <sys/file.h>
+ #include <sys/filedesc.h>
+ #include <sys/fcntl.h>
+@@ -141,11 +141,10 @@
+  *----------------------------------------------------------------------
+  */
+ static d_open_t FreeBSD_Driver_Open;
+-static int FreeBSD_Driver_Close(struct file *, struct thread *);
++static int FreeBSD_Driver_Close(struct file *, struct proc *);
+ static int FreeBSD_Driver_Poll(struct file *, int,
+-			       struct ucred *, struct thread *);
+-static int FreeBSD_Driver_Ioctl(struct file *, u_long, void *,
+-				struct ucred *, struct thread *);
++			       struct ucred *, struct proc *);
++static int FreeBSD_Driver_Ioctl(struct file *, u_long, caddr_t, struct proc *);
+ 
+ static timeout_t FreeBSD_DriverSelectTimeout;
+ 
+@@ -156,6 +155,11 @@
+ 
+ #define CDEV_MINOR 0
+ 
++#define PROC_LOCK(p)
++#define PROC_UNLOCK(p)
++#define FILEDESC_LOCK(fd)
++#define FILEDESC_UNLOCK(fd)
++
+ /* todo01 - support for multiple vms. fileops for each vm opened. */
+ static struct fileops vmmon_fileops = {
+         .fo_ioctl = FreeBSD_Driver_Ioctl,
+@@ -169,12 +171,10 @@
+        .d_name =       DEVICE_NAME,
+        .d_maj =        CDEV_MAJOR
+ #else
+-        /* open */      FreeBSD_Driver_Open,
+-        /* close */     noclose,
+-        /* read */      noread,
+-        /* psize */     nopsize,
+-        /* flags */     0,
+-        /* bmaj */      -1
++	.d_open =	FreeBSD_Driver_Open,
++	.d_name =	DEVICE_NAME,
++	.d_maj =	CDEV_MAJOR,
++	.d_bmaj =	-1
+ #endif
+ };
+ 
+@@ -344,25 +344,22 @@
+  * Based on dev/streams/streams.c
+  */
+ static int
+-vmmon_clone(dev_t dev, int flags, void *data, struct thread *td)
++vmmon_clone(dev_t dev, int flags, void *data, struct proc *p)
+ {
+ 	/* XXX This has been tested with RELENG_5_1 only. */
+ 	int fd, error;
+ 	struct file *fp;
+-	struct proc *p;
+ 
+-	p = td->td_proc;
+-	
+ 	/* Ensure that the dupfd isn't already used! */
+ 	PROC_LOCK(p);
+-	if (td->td_dupfd >= 0) {
++	if (p->p_dupfd >= 0) {
+ 		PROC_UNLOCK(p);
+ 		return ENODEV;
+ 	}
+ 	PROC_UNLOCK(p);
+ 
+ 	/* Create a new file descriptor used as dupfd */
+-	if ((error = falloc(td, &fp, &fd)) != 0)
++	if ((error = falloc(p, &fp, &fd)) != 0)
+ 		return error;
+ 
+ 	FILEDESC_LOCK(p->p_fd);
+@@ -373,7 +370,7 @@
+ 	FILEDESC_UNLOCK(p->p_fd);
+ 
+ 	PROC_LOCK(p);
+-	td->td_dupfd = fd;
++	p->p_dupfd = fd;
+ 	PROC_UNLOCK(p);
+         
+ 	vmmon_ref_count++;
+@@ -396,7 +393,7 @@
+  *----------------------------------------------------------------------
+  */
+ static int
+-FreeBSD_Driver_Open(dev_t dev, int oflag, int devtype, struct thread *td)
++FreeBSD_Driver_Open(dev_t dev, int oflag, int devtype, struct proc *p)
+ {
+ 	VMFreeBSD *vmFreeBSD;
+ 	
+@@ -441,7 +438,7 @@
+ 	timespecclear(&vmFreeBSD->max_diff);
+ #endif
+ 	/* Clone device! */
+-	return vmmon_clone (dev, oflag, (void *)vmFreeBSD, td);
++	return vmmon_clone (dev, oflag, (void *)vmFreeBSD, p);
+ }
+ 
+ /*
+@@ -457,7 +454,7 @@
+  */
+ 
+ static int
+-FreeBSD_Driver_Close(struct file *fp, struct thread *td)
++FreeBSD_Driver_Close(struct file *fp, struct proc *p)
+ {
+ 	VMFreeBSD *vmFreeBSD = (VMFreeBSD *)fp->f_data;
+ 	MemRange *head, *first;
+@@ -472,8 +469,8 @@
+ #endif
+ 
+ 	VMDEBUG(DEVICE_NAME ": close fd %d for pid=%d vm=%p\n",
+-          td->td_dupfd,
+-        	td->td_proc->p_pid,
++          p->p_dupfd,
++        	p->p_pid,
+         	vmFreeBSD);
+ 
+ 	if (vmFreeBSD == NULL) {
+@@ -529,7 +526,7 @@
+ 
+ static int 
+ FreeBSD_Driver_Poll(struct file *fp, int events,
+-		    struct ucred *active_ucred, struct thread *td)
++		    struct ucred *active_ucred, struct proc *p)
+ {
+ 	VMFreeBSD *vmFreeBSD = (VMFreeBSD *)fp->f_data;
+ 	int revents = 0;
+@@ -559,7 +556,7 @@
+ #if POLL_TRACE
+ 		nanotime(&vmFreeBSD->time_sleep);
+ #endif
+-		selrecord(td, &vmFreeBSD->rsel);
++		selrecord(p, &vmFreeBSD->rsel);
+ 		vmFreeBSD->flags.twaiting = TRUE;
+ 		vmFreeBSD->thandle = timeout(FreeBSD_DriverSelectTimeout, vmFreeBSD, 1);
+ 	}
+@@ -608,12 +605,10 @@
+  *----------------------------------------------------------------------
+  */
+ static int 
+-FreeBSD_Driver_Ioctl(struct file *fp, u_long cmd, void *parg,
+-		     struct ucred *active_ucred, struct thread *td)
++FreeBSD_Driver_Ioctl(struct file *fp, u_long cmd, caddr_t parg, struct proc *p)
+ {
+ 	VMFreeBSD *vmFreeBSD = (VMFreeBSD *)fp->f_data;
+ 	VMDriver *vm;
+-	struct proc *p;
+ 	int error;
+ 	u_long numPages;
+ 	int32_t limit;
+@@ -633,7 +628,6 @@
+ #endif
+ 	caddr_t data = *(caddr_t *)parg;
+ 
+-	p = td->td_proc;
+ 	vm = vmFreeBSD->vm;
+ 
+ #ifdef SUPPORT_LINUXVMWARE
+@@ -643,7 +637,7 @@
+ 	switch (cmd) {
+ 		case VMIO_VERSION:
+ 			VMDEBUG(" ** VMIO_VERSION pid=%d\n", p->p_pid);
+-			td->td_retval[0] = (register_t)VMMON_VERSION;
++			p->p_retval[0] = (register_t)VMMON_VERSION;
+ 			break;
+ 
+ 		case VMIO_CREATE_VM:
+@@ -653,11 +647,11 @@
+ 			error = copyin(data, &wslimitsInfo, sizeof(wslimitsInfo));
+ 			if (error != 0)
+   				return error;
+-			vm = Vmx86_CreateVM((void *)td, (void*)p->p_pid, &wslimitsInfo);
++			vm = Vmx86_CreateVM((void *)p, (void*)p->p_pid, &wslimitsInfo);
+ 			if (vm == NULL)
+   				return ENOMEM;
+ 			vmFreeBSD->vm = vm;
+-			td->td_retval[0] = (register_t)vm->id;
++			p->p_retval[0] = (register_t)vm->id;
+ 			break;
+ 
+ 		case VMIO_BIND_VM:
+@@ -704,7 +698,7 @@
+ 			VMDEBUG(" ** VMIO_RUN_VM\n");
+ 			if (vm == NULL)
+ 				return EINVAL;
+-			td->td_retval[0] = (register_t)Vmx86_RunVM(vm);
++			p->p_retval[0] = (register_t)Vmx86_RunVM(vm);
+ 			break;
+ 
+ 		case VMIO_LOOK_UP_MPN:
+@@ -713,7 +707,7 @@
+ 				return EINVAL;
+       
+ 			mpn = HostIF_LookupUserMPN(vm, data);
+-			td->td_retval[0] = mpn;
++			p->p_retval[0] = mpn;
+ 			break;
+ 
+ 		case VMIO_LOCK_PAGE:
+@@ -721,7 +715,7 @@
+ 			if (vm == NULL)
+ 				return EINVAL;
+ 			mpn = Vmx86_LockPage(vm, data, TRUE);
+-			td->td_retval[0] = mpn;
++			p->p_retval[0] = mpn;
+ 			break;
+ 
+ 		case VMIO_UNLOCK_PAGE:
+@@ -729,12 +723,12 @@
+ 			if (vm == NULL)
+ 				return EINVAL;
+ 			mpn = Vmx86_UnlockPage(vm, data, TRUE);
+-			td->td_retval[0] = mpn;
++			p->p_retval[0] = mpn;
+ 			break;
+ 
+ 		case VMIO_GET_NUM_VMS:
+ 			VMDEBUG(" ** VMIO_GET_NUM_VMS\n");
+-			td->td_retval[0] = (register_t)Vmx86_GetNumVMs();
++			p->p_retval[0] = (register_t)Vmx86_GetNumVMs();
+ 			break;
+ 
+ 		case VMIO_APIC_BASE:
+@@ -752,14 +746,14 @@
+ 				ma = HostIF_APICEnable(vm);
+   			}
+ #endif
+-			td->td_retval[0] = (register_t)ma;
++			p->p_retval[0] = (register_t)ma;
+ 			break;
+ 
+ 		case VMIO_IOAPIC_BASE:
+ 			VMDEBUG(" ** VMIO_IOAPIC_BASE\n");
+ 			if (vm == NULL)
+ 				return EINVAL;
+-			td->td_retval[0] = (register_t)HostIF_IOAPICBase(vm);
++			p->p_retval[0] = (register_t)HostIF_IOAPICBase(vm);
+ 			break;
+ 
+ 		case VMIO_GET_STATS:
+@@ -782,7 +776,7 @@
+ 
+ 		case VMIO_GET_HARD_LIMIT:
+ 			VMDEBUG(" ** VMIO_GET_HARD_LIMIT\n");
+-			td->td_retval[0] = (register_t)Vmx86_GetLockedPagesLimit();
++			p->p_retval[0] = (register_t)Vmx86_GetLockedPagesLimit();
+ 			break;
+ 
+ 		case VMIO_SET_HARD_LIMIT:
+@@ -815,12 +809,12 @@
+ 
+ 		case VMIO_PAE_ENABLED:
+ 			VMDEBUG(" ** VMIO_PAE_ENABLED\n");
+-			td->td_retval[0] = (register_t)(int)Vmx86_PAEEnabled();
++			p->p_retval[0] = (register_t)(int)Vmx86_PAEEnabled();
+ 			break;
+ 
+ 		case VMIO_GET_TOTAL_MEM_USAGE:
+ 			VMDEBUG(" ** VMIO_GET_TOTAL_MEM_USAGE\n");
+-			td->td_retval[0] = (register_t)Vmx86_GetTotalMemUsage();
++			p->p_retval[0] = (register_t)Vmx86_GetTotalMemUsage();
+ 			break;
+ 
+ 		case VMIO_SET_UID:
+@@ -830,15 +824,15 @@
+ 		case VMIO_IS_MP_SAFE:
+ 			VMDEBUG(" ** VMIO_IS_MP_SAFE\n");
+ #ifdef SMP
+-			td->td_retval[0] = (register_t)TRUE;
++			p->p_retval[0] = (register_t)TRUE;
+ #else
+-			td->td_retval[0] = (register_t)FALSE;
++			p->p_retval[0] = (register_t)FALSE;
+ #endif
+ 			break;
+ 
+ 		case VMIO_GET_MHZ_ESTIMATE:
+ 			VMDEBUG(" ** VMIO_GET_MHZ_ESTIMATE\n");
+-			td->td_retval[0] = (register_t)Vmx86_GetMHzEstimate(&vmFreeBSD->startTime);
++			p->p_retval[0] = (register_t)Vmx86_GetMHzEstimate(&vmFreeBSD->startTime);
+ 			break;
+ 
+ 		case VMIO_ALLOW_CORE_DUMP:
+@@ -849,7 +843,7 @@
+ 			VMDEBUG(" ** VMIO_CHECK_MEMORY\n");
+ 			if (vm == NULL)
+ 				return EINVAL;
+-			td->td_retval[0] = (register_t)HostIF_CheckMemory(vm);
++			p->p_retval[0] = (register_t)HostIF_CheckMemory(vm);
+ 			break;
+ 
+ 		case VMIO_BROADCAST_IPI:
+@@ -862,7 +856,7 @@
+ 			error = copyin(data, &iorange, sizeof(iorange));
+ 			if (error)
+ 				return error;
+-			td->td_retval[0] =
++			p->p_retval[0] =
+ 				Passthrough_RegisterIORegion(iorange.ioBase, 
+ 					iorange.numPorts, "VMware");
+ #else
+@@ -872,7 +866,7 @@
+  		case VMIO_REGISTER_PASSTHROUGH_IRQ:
+ 			VMDEBUG(" ** VMIO_REGISTER_PASSTHROUGH_IRQ\n");
+ #ifdef SUPPORT_PASSTHROUGH
+-			td->td_retval[0] =
++			p->p_retval[0] =
+ 				Passthrough_RegisterIRQ((unsigned char)data, "VMware", vmFreeBSD);
+ #else
+ 			return EINVAL;
+@@ -884,7 +878,7 @@
+ 			error = copyin(data, &iorange, sizeof(iorange));
+ 			if (error)
+ 				return error;
+-			td->td_retval[0] =
++			p->p_retval[0] =
+ 				Passthrough_ReleaseIORegion(iorange.ioBase, iorange.numPorts);
+ #else
+ 			return EINVAL;
+@@ -901,7 +895,7 @@
+ 		case VMIO_START_PASSTHROUGH:
+ 			VMDEBUG(" ** VMIO_START_PASSTHROUGH\n");
+ #ifdef SUPPORT_PASSTHROUGH
+-			td->td_retval[0] = Passthrough_Init(vmFreeBSD);
++			p->p_retval[0] = Passthrough_Init(vmFreeBSD);
+ #else
+ 			return EINVAL;
+ #endif
+@@ -909,7 +903,7 @@
+ 		case VMIO_STOP_PASSTHROUGH:
+ 			VMDEBUG(" ** VMIO_STOP_PASSTHROUGH\n");
+ #ifdef SUPPORT_PASSTHROUGH
+-			td->td_retval[0] = Passthrough_Release(vmFreeBSD);
++			p->p_retval[0] = Passthrough_Release(vmFreeBSD);
+ #else
+ 			return EINVAL;
+ #endif
+@@ -920,7 +914,7 @@
+ 			if (vmFreeBSD->numPendingPassthroughIRQs > 0) {
+ 				--vmFreeBSD->numPendingPassthroughIRQs;
+ 				irq = vmFreeBSD->pendingPassthroughIRQs[vmFreeBSD->numPendingPassthroughIRQs];
+-				td->td_retval[0] = vmFreeBSD->numPendingPassthroughIRQs;
++				p->p_retval[0] = vmFreeBSD->numPendingPassthroughIRQs;
+ 			} else {
+ 				return EAGAIN;
+ 			}
+@@ -1049,7 +1043,7 @@
+ 	VMDriver *vm;
+ 	va_list args;
+ 
+-	vm = Vmx86_GetVMforProcess((void *)(curthread->td_proc->p_pid));
++	vm = Vmx86_GetVMforProcess((void *)(curproc->p_pid));
+ 
+ 	va_start(args, fmt);
+ 	vsprintf(freebsdState.buf, fmt, args); 
+@@ -1076,7 +1070,7 @@
+ 	VMDriver *vm;
+ 	va_list args;
+ 
+-	vm = Vmx86_GetVMforProcess((void *)(curthread->td_proc->p_pid));
++	vm = Vmx86_GetVMforProcess((void *)(curproc->p_pid));
+ 
+ 	va_start(args, fmt);
+ 	vsprintf(freebsdState.buf, fmt, args); 
+@@ -1107,7 +1101,7 @@
+ void
+ Panic(char *fmt, ...)
+ {
+-	VMDriver *vm = Vmx86_GetVMforProcess((void *)(curthread->td_proc->p_pid));
++	VMDriver *vm = Vmx86_GetVMforProcess((void *)(curproc->p_pid));
+ 	va_list args;
+ 
+ 	va_start(args, fmt);
+@@ -1128,13 +1122,13 @@
+ 		vLog(vm->logFD);
+ 		vWarning(vm);
+ 		sprintf(freebsdState.buf, "VMX86 driver panic. pid=%d\n\r",
+-			curthread->td_proc->p_pid);  
++			curproc->p_pid);  
+ 		vLog(vm->logFD);
+ 		vWarning(vm);
+ 	}
+ 
+ 	/* XXX  Why it's right */ 
+-	exit1(curthread, 0);
++	exit1(curproc, 0);
+ 	/* NOTREACHED */
+ }
+ 
+--- vmmon-only/freebsd/linux_emu.c.orig	Tue Oct 21 23:03:43 2003
++++ vmmon-only/freebsd/linux_emu.c	Tue Oct 21 23:03:45 2003
+@@ -31,16 +31,15 @@
+ #include <sys/param.h>
+ #include <sys/systm.h>
+ #include <sys/kernel.h>
+-#include <sys/stdint.h>
+ #include <sys/proc.h>
+ #include <sys/sysproto.h>
+ #include <sys/disklabel.h>
+ #include <sys/cdio.h>
+ #include <sys/file.h>
+ #include <sys/filedesc.h>
+-#include <sys/selinfo.h>
++#include <sys/select.h>
+ 
+-#include <sys/fdcio.h>
++#include <machine/ioctl_fd.h>
+ 
+ #include <i386/linux/linux.h>
+ #include <i386/linux/linux_proto.h>
+@@ -300,13 +299,13 @@
+ }
+ 
+ static int
+-linux_to_bsd_fdgetprm(struct thread *td, struct file *fp, struct linux_floppy_struct *flp)
++linux_to_bsd_fdgetprm(struct proc *p, struct file *fp, struct linux_floppy_struct *flp)
+ {
+ 	int error;
+ 	struct linux_floppy_struct fls;
+ 	struct fd_type fdt;
+ 
+-	if ((error = fo_ioctl(fp, FD_GTYPE, (caddr_t)&fdt, td->td_ucred, td)) != 0)
++	if ((error = fo_ioctl(fp, FD_GTYPE, (caddr_t)&fdt, p)) != 0)
+ 	    return error;
+ 	bzero(&fls, sizeof(fls));
+ 	
+@@ -324,13 +323,13 @@
+ }
+ 
+ static int
+-linux_to_bsd_get_geometry(struct thread *td, struct file *fp, struct linux_hd_geometry *geo)
++linux_to_bsd_get_geometry(struct proc *p, struct file *fp, struct linux_hd_geometry *geo)
+ {
+ 	int error;
+ 	struct linux_hd_geometry drive_geo;
+ 	struct disklabel dl;
+ 	
+-	if ((error = fo_ioctl(fp, DIOCGDINFO, (caddr_t)&dl, td->td_ucred, td)) != 0)
++	if ((error = fo_ioctl(fp, DIOCGDINFO, (caddr_t)&dl, p)) != 0)
+ 	    return error;
+ 
+ 	bzero(&drive_geo, sizeof(drive_geo));
+@@ -344,14 +343,14 @@
+ }
+ 
+ static int
+-linux_to_bsd_hdio_identity(struct thread *td, struct file *fp, struct linux_hd_driveid *id)
++linux_to_bsd_hdio_identity(struct proc *p, struct file *fp, struct linux_hd_driveid *id)
+ {
+ 	int error;
+ 	struct disklabel dl;
+ 	struct linux_hd_driveid driveid;
+ 	unsigned int capacity;
+ 
+-	if ((error = fo_ioctl(fp, DIOCGDINFO, (caddr_t)&dl, td->td_ucred, td)) != 0)
++	if ((error = fo_ioctl(fp, DIOCGDINFO, (caddr_t)&dl, p)) != 0)
+ 	    return error;
+ 
+ 	bzero(&driveid, sizeof(driveid));
+@@ -382,13 +381,13 @@
+ }
+ 
+ static int
+-linux_to_bsd_cdromvolread(struct thread *td, struct file *fp, struct linux_cdrom_volctrl *vol)
++linux_to_bsd_cdromvolread(struct proc *p, struct file *fp, struct linux_cdrom_volctrl *vol)
+ {
+ 	int error;
+ 	struct ioc_vol bsd_vol;
+ 	struct linux_cdrom_volctrl linux_vol;
+ 
+-	if ((error = fo_ioctl(fp, CDIOCGETVOL, (caddr_t)&bsd_vol, td->td_ucred, td)) != 0)
++	if ((error = fo_ioctl(fp, CDIOCGETVOL, (caddr_t)&bsd_vol, p)) != 0)
+ 	    return error;
+ 
+ 	linux_vol.channel0 = bsd_vol.vol[0];
+@@ -400,7 +399,7 @@
+ }
+ 
+ static int
+-linux_cdrom_get_multisession(struct thread *td, struct file *fp, struct linux_cdrom_multisession *muls)
++linux_cdrom_get_multisession(struct proc *p, struct file *fp, struct linux_cdrom_multisession *muls)
+ {
+ struct linux_cdrom_multisession ms;
+ struct ioc_toc_header h;
+@@ -411,7 +410,7 @@
+ 	if ((error = copyin(muls, &ms, sizeof(ms))) != 0)
+ 	    return error;
+ 
+-	if ((error = fo_ioctl(fp, CDIOREADTOCHEADER, (caddr_t)&h, td->td_ucred, td)) != 0)
++	if ((error = fo_ioctl(fp, CDIOREADTOCHEADER, (caddr_t)&h, p)) != 0)
+ 	    return error;
+ 	
+ 	bzero(&t, sizeof(t));
+@@ -419,7 +418,7 @@
+ 	t.address_format = ms.addr_format ; /* BSD and LINUX formats equal */
+ 	t.track = 0; /* get content from the first track */
+ 
+-	if ((error = fo_ioctl(fp, CDIOREADTOCENTRY, (caddr_t)&t, td->td_ucred, td)) != 0) 
++	if ((error = fo_ioctl(fp, CDIOREADTOCENTRY, (caddr_t)&t, p)) != 0) 
+ 	    return error;
+ 	    
+ 	bsd_to_linux_msf_lba(ms.addr_format, &t.entry.addr, &ms.addr);
+@@ -430,38 +429,38 @@
+ }
+ 
+ static int
+-linux_ioctl_hdfdcd(struct thread *td,  struct linux_ioctl_args *args)
++linux_ioctl_hdfdcd(struct proc *p,  struct linux_ioctl_args *args)
+ {
+-    struct file *fp = td->td_proc->p_fd->fd_ofiles[args->fd]; 
++    struct file *fp = p->p_fd->fd_ofiles[args->fd]; 
+ 
+     switch (args->cmd & 0xffff) {
+ 	    case LINUX_HDIO_GET_IDENTITY:
+ 	    case LINUX_HDIO_OBSOLETE_IDENTITY:
+-		    return linux_to_bsd_hdio_identity(td, fp, (struct linux_hd_driveid *)args->arg);
++		    return linux_to_bsd_hdio_identity(p, fp, (struct linux_hd_driveid *)args->arg);
+ 	    case LINUX_HDIO_GETGEO:	
+-		    return linux_to_bsd_get_geometry(td, fp, (struct linux_hd_geometry *)args->arg);
++		    return linux_to_bsd_get_geometry(p, fp, (struct linux_hd_geometry *)args->arg);
+ 
+ 	    case LINUX_FDTWADDLE:
+ 		    return 0;
+ 	    case LINUX_CDROMVOLREAD:
+-		    return linux_to_bsd_cdromvolread(td, fp, (struct linux_cdrom_volctrl*)args->arg);
++		    return linux_to_bsd_cdromvolread(p, fp, (struct linux_cdrom_volctrl*)args->arg);
+ 	    case LINUX_CDROMMULTISESSION:
+-		    return linux_cdrom_get_multisession(td, fp, (struct linux_cdrom_multisession *)args->arg);
++		    return linux_cdrom_get_multisession(p, fp, (struct linux_cdrom_multisession *)args->arg);
+ 	    case LINUX_CDROM_SET_OPTIONS:
+ 		    switch (args->arg) {
+ 			case 0:
+-				td->td_retval[0] = 0;
++				p->p_retval[0] = 0;
+ 				return 0;
+ 			default:
+ 				return ENOSYS;
+ 		    }
+ 		    break;
+ 	    case LINUX_CDROM_CLEAR_OPTIONS:
+-		    td->td_retval[0] = 0;
++		    p->p_retval[0] = 0;
+ 		    return 0;
+ 	    case LINUX_CDROM_LOCKDOOR:
+ 		    args->cmd = args->arg ? CDIOCPREVENT : CDIOCALLOW;
+-		    return ioctl(td, (struct ioctl_args *)args);
++		    return ioctl(p, (struct ioctl_args *)args);
+ 	    case LINUX_CDROM_MEDIA_CHANGED:
+ 	    case LINUX_CDROM_DRIVE_STATUS:
+ 	    case LINUX_CDROM_DISC_STATUS:
+@@ -471,7 +470,7 @@
+ 	    case LINUX_FDPOLLDRVSTAT:
+ 		    return linux_fdpolldrvstat((struct linux_floppy_drive_struct*)args->arg);
+ 	    case LINUX_FDGETPRM:
+-		    return linux_to_bsd_fdgetprm(td, fp, (struct linux_floppy_struct*)args->arg);
++		    return linux_to_bsd_fdgetprm(p, fp, (struct linux_floppy_struct*)args->arg);
+     }
+     return (ENOIOCTL);
+ }
+@@ -483,7 +482,7 @@
+ #define LINUX_TIOCLINUX		0x541C
+ 		
+ static int
+-linux_tioclinux(struct thread *td, struct linux_ioctl_args *args)
++linux_tioclinux(struct proc *p, struct linux_ioctl_args *args)
+ {
+ 	int type;
+ 	int error = ENOIOCTL;
+@@ -504,7 +503,7 @@
+ 
+ 
+ static int
+-linux_ioctl_video(struct thread *td, struct linux_ioctl_args *args)
++linux_ioctl_video(struct proc *p, struct linux_ioctl_args *args)
+ {
+ 	int error = ENOIOCTL;
+ 
+@@ -514,7 +513,7 @@
+ 		error = 0;
+ 		break;
+ 	case LINUX_TIOCLINUX:
+-		error = linux_tioclinux(td, args);
++		error = linux_tioclinux(p, args);
+ 		break;
+ 	default:
+ 		break;
+@@ -527,14 +526,14 @@
+ LINUX_IOCTL_SET(vmmon, IOCTLCMD_NONE, IOCTLCMD_LAST);
+ 
+ static int
+-linux_ioctl_vmmon(struct thread *td, struct linux_ioctl_args *args)
++linux_ioctl_vmmon(struct proc *p, struct linux_ioctl_args *args)
+ {
+ #define DEB(x)
+ 
+     switch (args->cmd & 0xffff) {
+ #define IOCTL(name) case IOCTLCMD_##name: args->cmd = VMIO_##name; \
+ 	    	    DEB(printf("vmmware: IOCTL %s arg %p\n", #name, (void *)args->arg)); \
+-	            return ioctl(td, (struct ioctl_args *)args);
++	            return ioctl(p, (struct ioctl_args *)args);
+ #include "ioctls.h"
+ #undef IOCTL
+     }
+--- vmnet-only/freebsd/vmnet_linux.c.orig	Tue Oct 21 23:25:05 2003
++++ vmnet-only/freebsd/vmnet_linux.c	Tue Oct 21 23:25:48 2003
+@@ -85,9 +85,9 @@
+ #endif
+ 
+ static int
+-linux_ioctl_setmacaddr(struct thread *td,  struct linux_ioctl_args *args)
++linux_ioctl_setmacaddr(struct proc *p,  struct linux_ioctl_args *args)
+ {
+-	struct file *fp = td->td_proc->p_fd->fd_ofiles[args->fd]; 
++	struct file *fp = p->p_fd->fd_ofiles[args->fd]; 
+ 	int error;
+ 	VNet_SetMacAddrIOCTL macAddr;
+ 
+@@ -99,7 +99,7 @@
+ 
+ 	switch (macAddr.version) {
+ 		case 1:
+-			error = fo_ioctl(fp, SIOCSIFADDR, (caddr_t)macAddr.addr, td->td_ucred, td);
++			error = fo_ioctl(fp, SIOCSIFADDR, (caddr_t)macAddr.addr, p);
+ 			DEB(printf("Get ethernet address: %6D\n", macAddr.addr, ":"));
+ 			break;
+ 		default:
+@@ -110,7 +110,7 @@
+ }
+ 
+ static int
+-linux_ioctl_net(struct thread *td,  struct linux_ioctl_args *args)
++linux_ioctl_net(struct proc *p,  struct linux_ioctl_args *args)
+ {
+ 	int error = ENOIOCTL;
+ 
+@@ -125,7 +125,7 @@
+ 		case LINUX_SIOCSIFADDR:
+ 			DEB(printf(__FUNCTION__ ": LINUX_SIOCSIFADDR\n"));
+ 			args->cmd = SIOCSIFADDR;
+-			error = ioctl(td, (struct ioctl_args *)args); 
++			error = ioctl(p, (struct ioctl_args *)args); 
+ 			break;
+ 		case LINUX_SIOCSLADRF:
+ 			DEB(printf(__FUNCTION__ ": LINUX_SIOCSLADRF\n"));
+@@ -146,21 +146,21 @@
+ 		case LINUX_SIOCPORT:
+ 			DEB(printf(__FUNCTION__ ": LINUX_SIOCPORT\n"));
+ 			args->cmd = VMIO_SIOCPORT;
+-			error = ioctl(td, (struct ioctl_args *)args);  
++			error = ioctl(p, (struct ioctl_args *)args);  
+ 			break;
+ 		case LINUX_SIOCBRIDGE:
+ 			DEB(printf(__FUNCTION__ ": LINUX_SIOCBRIDGE\n"));
+ 			args->cmd = VMIO_SIOCBRIDGE;
+-			error = ioctl(td, (struct ioctl_args *)args);  
++			error = ioctl(p, (struct ioctl_args *)args);  
+ 			break;
+ 		case LINUX_SIOCNETIF:
+ 			DEB(printf(__FUNCTION__ ": LINUX_SIOCNETIF\n"));
+ 			args->cmd = VMIO_SIOCNETIF;
+-			error = ioctl(td, (struct ioctl_args *)args);  
++			error = ioctl(p, (struct ioctl_args *)args);  
+ 			break;
+ 		case LINUX_SIOCSETMACADDR:
+ 			DEB(printf(__FUNCTION__ ": LINUX_SIOCSETMACADDR\n"));
+-			error = linux_ioctl_setmacaddr(td, args);
++			error = linux_ioctl_setmacaddr(p, args);
+ 			break;
+ 	}
+ 	DEB(printf(__FUNCTION__ ": return %d\n", error));
+@@ -171,16 +171,16 @@
+ 
+ /* What is the dumb idea to use SIOCSIFFLAGS ioctl, and directly pass flags? */
+ static int
+-linux_ioctl_net_sifflags(struct thread *td,  struct linux_ioctl_args *args)
++linux_ioctl_net_sifflags(struct proc *p,  struct linux_ioctl_args *args)
+ {
+ 	int error;
+ 
+ 	DEB(printf(__FUNCTION__ ": cmd 0x%04lx arg %p\n", args->cmd, (void*)args->arg));
+ 	args->cmd = SIOCGIFFLAGS; 
+-	error = ioctl(td, (struct ioctl_args *)args); /* First try standart */
++	error = ioctl(p, (struct ioctl_args *)args); /* First try standart */
+ 	if (error) { 
+ 		args->cmd = VMIO_SIOCSIFFLAGS;  /* Than vmnet */
+-		error = ioctl(td, (struct ioctl_args *)args); 
++		error = ioctl(p, (struct ioctl_args *)args); 
+ 	}
+ 	DEB(printf(__FUNCTION__ ": return %d\n", error));
+ 	return error;
