@@ -1,0 +1,13 @@
+--- doc/Makefile.in.orig	Thu Dec 30 00:42:11 2004
++++ doc/Makefile.in	Thu Jan  6 18:18:11 2005
+@@ -147,8 +147,8 @@
+              texi2html.ascii
+ 
+ #
+-texinfodata = $(datadir)/texinfo
+-texinfohtmldir = $(texinfodata)/html
++texinfodata = $(datadir)/doc/texinfo
++texinfohtmldir = $(texinfodata)
+ texinfohtml_DATA = texi2html.html
+ 
+ # use the script out of the distribution NOT
