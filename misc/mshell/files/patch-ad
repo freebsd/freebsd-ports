@@ -1,5 +1,58 @@
-*** mshell.c.orig	Sat Sep 24 00:51:51 1994
---- mshell.c	Sat Sep 24 00:52:20 1994
+*** mshell.c.orig	Sun Sep 19 11:00:53 1999
+--- mshell.c	Sun Sep 19 11:09:05 1999
+***************
+*** 26,33 ****
+  	     exec_string   [DESCLEN],
+  	     *args         [MAXARGS],
+  	     *menu_array   [LINES],
+! 	     tmpword       [WORDLEN],
+! 	     *malloc();
+  
+  	int  i, 
+  	     idx,
+--- 26,32 ----
+  	     exec_string   [DESCLEN],
+  	     *args         [MAXARGS],
+  	     *menu_array   [LINES],
+! 	     tmpword       [WORDLEN];
+  
+  	int  i, 
+  	     idx,
+***************
+*** 35,42 ****
+  	     firsttime = TRUE,
+  	     dontdisplay = FALSE,
+  	     unix_flag,
+! 	     menu_flag,
+! 	     exit();
+  
+  	static jmp_buf topenv;
+  	static int topenvset;
+--- 34,40 ----
+  	     firsttime = TRUE,
+  	     dontdisplay = FALSE,
+  	     unix_flag,
+! 	     menu_flag;
+  
+  	static jmp_buf topenv;
+  	static int topenvset;
+***************
+*** 49,55 ****
+  	signal (SIGPIPE, SIG_IGN);	/* ignore dead pipes */
+  	log("enter", m);
+  
+! 	while TRUE {
+  
+  		if (!topenvset) {
+  			topenvset = TRUE;
+--- 47,53 ----
+  	signal (SIGPIPE, SIG_IGN);	/* ignore dead pipes */
+  	log("enter", m);
+  
+! 	while (TRUE) {
+  
+  		if (!topenvset) {
+  			topenvset = TRUE;
 ***************
 *** 142,148 ****
   
@@ -9,7 +62,7 @@
   			}
   			else {
   				tmpword[0] = EOS;
---- 142,148 ----
+--- 140,146 ----
   
   			if ( strcmp (action_string, NULLSTR) == 0 ) {
   				invalid_option = TRUE;
