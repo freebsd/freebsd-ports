@@ -1,19 +1,19 @@
 
 $FreeBSD$
 
---- ltmain.sh	2001/08/27 09:51:26	1.1
-+++ ltmain.sh	2001/08/27 09:51:42
-@@ -2408,6 +2408,9 @@
- 	  *-*-netbsd*)
- 	    # Don't link with libc until the a.out ld.so is fixed.
- 	    ;;
-+	  *-*-freebsd*)
-+	    # FreeBSD doesn't need this...
-+	    ;;
- 	  *)
- 	    # Add libc to deplibs on all other systems if necessary.
- 	    if test "$build_libtool_need_lc" = "yes"; then
-@@ -4175,10 +4178,12 @@
+--- ltmain.sh.orig	Tue Jan 22 06:35:12 2002
++++ ltmain.sh	Fri Feb  8 01:27:17 2002
+@@ -1799,6 +1799,9 @@
+ 	  # rhapsody is a little odd...
+ 	  deplibs="$deplibs -framework System"
+ 	  ;;
++	*-*-freebsd*)
++	  # FreeBSD doesn't need this...
++	  ;;
+ 	*)
+ 	  # Add libc to deplibs on all other systems.
+ 	  deplibs="$deplibs -lc"
+@@ -3360,10 +3366,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
