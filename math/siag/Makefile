@@ -3,17 +3,17 @@
 # Date created:		27 Jan 1998
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.4 1998/07/06 17:41:14 itojun Exp $
+# $Id: Makefile,v 1.5 1998/08/05 09:31:29 asami Exp $
 #
 
 DISTNAME=	siag-2.80
 CATEGORIES=	math
-# Since 2.67 (latest version on 3/7/1998) is seriously broken, I asked
-# asami-san to put 2.80 into ftp.freebsd.org.  Thanks.
 MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} tsiag-2.80.tar.gz
 
 MAINTAINER=	itojun@itojun.org
+
+LIB_DEPENDS=	Xaw3d\\.6\\.:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/siag
