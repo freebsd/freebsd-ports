@@ -1,0 +1,11 @@
+--- doc/C/Makefile.in.orig	Sun Jun  2 22:17:05 2002
++++ doc/C/Makefile.in	Sun Jun  2 22:17:27 2002
+@@ -152,7 +152,7 @@
+ cxxflags_set = @cxxflags_set@
+ 
+ DOC_MODULE = libgda
+-HTML_DIR = $(datadir)/gtk-doc/html
++HTML_DIR = $(prefix)/share/doc
+ 
+ # The top-level SGML file. Change it if you want.
+ DOC_MAIN_SGML_FILE = $(DOC_MODULE)-docs.sgml
