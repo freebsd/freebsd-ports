@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	trackballs
-PORTVERSION=	0.9.2
-PORTREVISION=	3
+PORTVERSION=	1.0.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,25 +15,25 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL-based Marble Madness clone
 
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_X_PREFIX=	yes
-USE_GETOPT_LONG=yes
-USE_SDL=	mixer image ttf sdl
-GNU_CONFIGURE=	yes
+USE_SDL=	image mixer sdl ttf
+USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
+MAN6=		${PORTNAME}.6
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
 
-MAN6=		${PORTNAME}.6
-
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.h' -o -name '*.cc' | ${XARGS} \
-		${REINPLACE_CMD} -e "/^#include/s|SDL/SDL|SDL11/SDL|; \
+		${REINPLACE_CMD} -e "/^#include/s|SDL/SDL|SDL|; \
 			/stdint.h/d"
 	@${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
 		${WRKSRC}/share/icons/installIcons
