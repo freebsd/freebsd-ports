@@ -4680,6 +4680,7 @@ links1		ports/www/links1
 linneighborhood	ports/sysutils/linneighborhood
 linpack		ports/math/linpack
 linphone	ports/net/linphone
+linphone	ports/net/linphone-base
 linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
 linux-XFree86-libs	ports/x11/linux-XFree86-libs
