@@ -1,0 +1,37 @@
+diff -rc ../../xmix.orig/Imakefile ./Imakefile
+*** ../../xmix.orig/Imakefile	Fri Jun 30 18:49:35 1995
+--- ./Imakefile	Fri Jun 30 20:11:30 1995
+***************
+*** 14,17 ****
+  
+  LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
+  
+! NormalProgramTarget(xmix,$(OBJS1),,$(LOCAL_LIBRARIES),)
+--- 14,19 ----
+  
+  LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB)
+  
+! PROGRAM = $(PROGRAMS)
+! 
+! ComplexProgramTarget_1($(PROGRAM),$(LOCAL_LIBRARIES),)
+Only in ./: Imakefile.orig
+diff -rc ../../xmix.orig/xmix.c ./xmix.c
+*** ../../xmix.orig/xmix.c	Fri Jun 30 20:09:41 1995
+--- ./xmix.c	Fri Jun 30 20:11:49 1995
+***************
+*** 77,83 ****
+  #include "square_empty.bit"
+  #include "square_with_x.bit"
+  
+! #include <linux/soundcard.h>
+  
+  #define SOUND_FULL_SCALE 100.0
+  #define MAX_SOUND_VOL 95
+--- 77,83 ----
+  #include "square_empty.bit"
+  #include "square_with_x.bit"
+  
+! #include <machine/soundcard.h>
+  
+  #define SOUND_FULL_SCALE 100.0
+  #define MAX_SOUND_VOL 95
