@@ -19,6 +19,7 @@ MANUAL_PACKAGE_BUILD=	incompatible with other versions of jtex-*
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 EXTRACT_ONLY=	jtex-1.52.tar.gz
+USE_BISON=	yes
 
 # Which latex to be made at BATCH mode.  BOTH, ASCII, NTT are available.
 BATCH_TEX?=	BOTH
