@@ -255,6 +255,7 @@
     SUBDIR += py-exif
     SUBDIR += py-gd
     SUBDIR += py-gdchart
+    SUBDIR += py-graphviz
     SUBDIR += py-imaging
     SUBDIR += py-imaging-handbook
     SUBDIR += py-ming
