@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Nov  2 00:46:16 2004
++++ Makefile.in	Tue Nov  2 00:47:10 2004
+@@ -192,7 +192,7 @@
+ 	$(ACLOCAL_M4)
+ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
+  configure.lineno configure.status.lineno
+-mkinstalldirs = $(mkdir_p)
++mkinstalldirs = mkdir -p
+ CONFIG_HEADER = config.h
+ CONFIG_CLEAN_FILES =
+ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(pkglibdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man7dir)" "$(DESTDIR)$(includedir)" "$(DESTDIR)$(modincludedir)"

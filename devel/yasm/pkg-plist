@@ -1,6 +1,7 @@
 bin/yasm
 include/libyasm.h
 include/libyasm/arch.h
+include/libyasm/assocdat.h
 include/libyasm/bc-int.h
 include/libyasm/bitvect.h
 include/libyasm/bytecode.h
@@ -15,6 +16,7 @@ include/libyasm/floatnum.h
 include/libyasm/hamt.h
 include/libyasm/intnum.h
 include/libyasm/linemgr.h
+include/libyasm/listfmt.h
 include/libyasm/objfmt.h
 include/libyasm/optimizer.h
 include/libyasm/parser.h
@@ -31,6 +33,10 @@ lib/yasm/arch_x86.a
 lib/yasm/arch_x86.so
 lib/yasm/dbgfmt_null.a
 lib/yasm/dbgfmt_null.so
+lib/yasm/dbgfmt_stabs.a
+lib/yasm/dbgfmt_stabs.so
+lib/yasm/listfmt_nasm.a
+lib/yasm/listfmt_nasm.so
 lib/yasm/objfmt_bin.a
 lib/yasm/objfmt_bin.so
 lib/yasm/objfmt_coff.a
@@ -41,6 +47,8 @@ lib/yasm/objfmt_elf.a
 lib/yasm/objfmt_elf.so
 lib/yasm/objfmt_win32.a
 lib/yasm/objfmt_win32.so
+lib/yasm/objfmt_xdf.a
+lib/yasm/objfmt_xdf.so
 lib/yasm/optimizer_basic.a
 lib/yasm/optimizer_basic.so
 lib/yasm/parser_nasm.a
