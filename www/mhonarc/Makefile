@@ -11,7 +11,7 @@ PKGNAME=	mhonarc-2.3.3
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		ftp://hhobel.phl.univie.ac.at/MHonArc/ \
-		ftp://contrib.redhat.com/noarch/ \
+		ftp://ftp.redhat.com/contrib/noarch/noarch/ \
 		ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ \
 		http://www.perl.com/CPAN/authors/id/EHOOD/
 
