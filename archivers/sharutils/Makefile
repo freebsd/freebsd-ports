@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	sharutils
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Allow packing and unpacking of shell archives
+COMMENT=	Pack, send and unpack shell archives; synchronize via e-mail
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g --disable-uucode --disable-nls
