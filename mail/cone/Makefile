@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cone
-PORTVERSION=	0.52
+PORTVERSION=	0.54.20030915
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
-#MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/
+MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/
 # This is for release versions, leave it in please:
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	courier
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	courier
 
 MAINTAINER=	matthias.andree@gmx.de
 COMMENT=	"Console based mail client with POP3/IMAP/SMAP support"
@@ -36,6 +36,8 @@ MAN1=		cone.1 leaf.1 mailtool.1
 
 do-install:
 		cd ${WRKSRC} && make install-strip
+		${MKDIR} ${DOCSDIR}
+		${INSTALL_MAN} ${WRKSRC}/ChangeLog ${DOCSDIR}
 
 post-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/sysconftool ${PREFIX}/sbin/cone-sysconftool
