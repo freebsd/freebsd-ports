@@ -1,28 +1,23 @@
---- src/rad.kerberos.c.orig	Wed Sep 18 17:34:21 1996
-+++ src/rad.kerberos.c	Tue Aug 26 12:57:28 1997
-@@ -84,7 +84,7 @@
- extern int      mit_passwd_to_key ();
- extern int      afs_passwd_to_key ();
+--- src/rad.kerberos.c~	Fri Jun 26 00:40:50 1998
++++ src/rad.kerberos.c	Thu Sep 17 18:50:28 1998
+@@ -80,8 +80,8 @@
  
--static int      krb_pass PROTO((AUTH_REQ *, int, char *));
-+static int      krb_pass (AUTH_REQ *, int, char *);
+ #include	<krb.h>
  
- #if defined(A_KERB)
- static AATV     akrb_aatv =
-@@ -177,7 +177,8 @@
- #if defined(M_KERB)
- 	if (strcmp (authreq->direct_aatv->id, "MKERB") == 0)
- 	{
--		krbval = krb_get_in_tkt (userid, "", realm, "krbtgt", realm,
-+		krbval = krb_get_in_tkt (userid, KRB_INSTANCE, realm, "krbtgt",
-+					 realm,
- 					DEFAULT_TKT_LIFE, mit_passwd_to_key,
- 					NULL, passwd);
- 	}
-@@ -192,6 +193,12 @@
- 	}
- #endif	/* A_KERB */
+-static int      krb_pass PROTO((AUTH_REQ *, int, char *,
+-				int (*) (AUTH_REQ *, int, char *)));
++static int      krb_pass (AUTH_REQ *, int, char *,
++			  int (*) (AUTH_REQ *, int, char *));
  
+ extern int      debug_flag;
+ 
+@@ -225,8 +225,14 @@
+ 	krbval = INTK_BADPW;  /* Fail if type is bad somehow */
+ 
+ 	/* get the ticket */
+-	krbval = krb_get_in_tkt (userid, "", realm, "krbtgt", realm,
++	krbval = krb_get_in_tkt (userid, KRB_INSTANCE, realm, "krbtgt", realm,
+ 				DEFAULT_TKT_LIFE, passwd_to_key, NULL, passwd);
 +	/*
 +	 * XXX
 +	 * This can be spoofed fairly easily... Should attempt to authenticate
@@ -32,8 +27,8 @@
  	switch (krbval)
  	{
  	    case INTK_OK:
-@@ -207,6 +214,37 @@
- 			func, krbval);
+@@ -294,6 +300,37 @@
+ 			krbval, userid, realm);
  		break;
  	}
 +#ifdef M_KERB

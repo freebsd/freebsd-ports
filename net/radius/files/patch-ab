@@ -1,6 +1,6 @@
---- src/radiusd.c.ORG	Thu Sep 19 20:19:35 1996
-+++ src/radiusd.c	Wed Nov 20 22:41:39 1996
-@@ -700,6 +700,19 @@
+--- src/radiusd.c~	Mon Jul 27 22:52:37 1998
++++ src/radiusd.c	Thu Sep 17 18:31:50 1998
+@@ -793,6 +793,19 @@
  	sigaction (SIGIOT, &action, NULL); /* Perhaps also known as SIGABRT ! */
  	sigaction (SIGFPE, &action, NULL);
  
@@ -20,7 +20,7 @@
  #ifdef	_SC_OPEN_MAX
  	if ((dtablesize = sysconf (_SC_OPEN_MAX)) == -1)
  	{
-@@ -709,6 +722,7 @@
+@@ -802,6 +815,7 @@
  #else	/* Assume BSD */
  	dtablesize = getdtablesize ();
  #endif	/* _SC_OPEN_MAX */

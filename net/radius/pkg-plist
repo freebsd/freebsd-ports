@@ -1,6 +1,7 @@
+sbin/radiusd
+bin/radpass
 bin/radcheck
 bin/radpwtst
-bin/radpass
 bin/dnscheck
 lib/radius/db/authfile.sample
 lib/radius/db/clients.sample
@@ -8,7 +9,8 @@ lib/radius/db/conversion.pl.sample
 lib/radius/db/dictionary.sample
 lib/radius/db/users.sample
 lib/radius/db/xas.fsm.sample
-sbin/radiusd
+lib/radius/db/engine.config.sample
+lib/radius/db/vendors.sample
 @dirrm lib/radius/db
 @dirrm lib/radius/acct
 @dirrm lib/radius
