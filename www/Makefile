@@ -67,6 +67,7 @@
     SUBDIR += flashplugin
     SUBDIR += flashplugin-mozilla
     SUBDIR += frontpage
+    SUBDIR += frontpage-ar
     SUBDIR += fxhtml
     SUBDIR += g-gcl
     SUBDIR += galeon
