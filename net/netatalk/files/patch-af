@@ -1,12 +1,18 @@
-*** etc/atalkd/rtmp.c.orig	Wed Feb 25 18:28:16 1998
---- etc/atalkd/rtmp.c	Wed Feb 25 18:28:29 1998
-***************
-*** 7,12 ****
---- 7,13 ----
-  #include <sys/types.h>
-  #include <sys/socket.h>
-  #include <sys/ioctl.h>
-+ #include <sys/time.h>
-  #include <net/if.h>
-  #include <net/route.h>
-  #include <netatalk/endian.h>
+--- libatalk/cnid/cnid_nextid.c.orig	Fri Aug 17 00:30:29 2001
++++ libatalk/cnid/cnid_nextid.c	Wed Aug 29 15:50:04 2001
+@@ -7,6 +7,7 @@
+ #include "config.h"
+ #endif /* HAVE_CONFIG_H */
+ 
++#ifdef CNID_DB
+ #include <db.h>
+ 
+ #include <atalk/adouble.h>
+@@ -29,5 +30,6 @@
+   memcpy(&id, ad_entry(&db->rootinfo, ADEID_DID), sizeof(id));
+   return id;
+ }
++#endif /* CNID_DB */
+ #endif
+ 
+
