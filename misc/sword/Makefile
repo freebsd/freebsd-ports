@@ -9,7 +9,6 @@ PORTNAME=	sword
 PORTVERSION=	1.5.5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
-		http://www.crosswire.org/sword/download/ftpmirror/pub/sword/source/v1.5/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
