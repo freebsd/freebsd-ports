@@ -15,6 +15,8 @@ DISTNAME=	ue400dev
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full screen editor
 
+NO_CDROM=	"Resale allowed for media cost only"
+
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
