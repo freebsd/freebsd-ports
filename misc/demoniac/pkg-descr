@@ -1,0 +1,11 @@
+Demoniac is a tool for exploring and animating graphics effects.
+
+Demoniac is based on effects. An effect is a piece of software that computes
+an image, given some options. Demoniac allows you to create one or more
+instance. An instance is just a specific effect with values of it's options.
+An option (or a parameter) is some value that influence an effect. It can
+change during time. The way of producing animation in Demoniac is keyframing.
+Keyframing consists in making one or more value/time pairs and interpolating
+the value between the keys.
+
+WWW: http://www.calodox.org/demoniac/
