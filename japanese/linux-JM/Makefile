@@ -14,13 +14,13 @@ DISTFILES=	${DISTFILES_GNU} ${DISTFILES_OTHERS}
 MAINTAINER=	sada@FreeBSD.org
 
 DIST_SUBDIR=	${PORTNAME}
-MANSECS=	1 3 5 8
+MANSECS=	1 3 4 5 8
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
 PLIST=		${WRKDIR}/PLIST
 SCRIPTS_ENV+=	MANSECS="${MANSECS}"
 
-DATESPEC=	20010215
+DATESPEC=	20010415
 MANPAGES_GNU=	bash gdbm
 MANPAGES_OTHERS= \
 	bzip2 \
@@ -29,10 +29,11 @@ MANPAGES_OTHERS= \
 	eject expect \
 	fetchmail fort77 \
 	mpg123 \
-	ncftp \
+	ncftp netatalk \
 	rdate \
 	smbfs sudo \
-	uudeview
+	uudeview \
+	wu-ftpd
 
 .include <bsd.port.pre.mk>
 
