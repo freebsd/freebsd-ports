@@ -15,6 +15,7 @@ MASTER_SITES=	http://bbtools.windsofstorm.net/sources/contrib/ \
 
 MAINTAINER=	monkey@crackula.com
 
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 RUN_DEPENDS=	blackbox:${PORTSDIR}/x11-wm/blackbox
 
 USE_X_PREFIX=	yes
