@@ -2,19 +2,12 @@ include/fftw.h
 include/rfftw.h
 @unexec install-info --delete %D/info/fftw.info %D/info/dir
 info/fftw.info
-info/fftw.info-1
-info/fftw.info-2
-info/fftw.info-3
-info/fftw.info-4
-info/fftw.info-5
 @exec install-info %D/info/fftw.info %D/info/dir
 lib/libfftw.a
-lib/libfftw.la
 lib/libfftw.so
 lib/libfftw.so.2
 lib/librfftw.a
-lib/librfftw.la
 lib/librfftw.so
 lib/librfftw.so.2
-share/doc/fftw/fftw.ps
-@dirrm share/doc/fftw
+%%PORTDOCS%%%%DOCSDIR%%/fftw.ps
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
