@@ -41,19 +41,21 @@ include/libgimp/parasiteio.h
 lib/libgck.a
 lib/libgck.la
 lib/libgck.so
-lib/libgck.so.20
+lib/libgck.so.22
 lib/libgimp.a
 lib/libgimp.la
 lib/libgimp.so
-lib/libgimp.so.20
+lib/libgimp.so.22
 lib/libgimpui.a
 lib/libgimpui.la
 lib/libgimpui.so
-lib/libgimpui.so.20
+lib/libgimpui.so.22
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 libexec/gimp/1.1/modules/libcdisplay_gamma.la
 libexec/gimp/1.1/modules/libcdisplay_gamma.so
+libexec/gimp/1.1/modules/libcdisplay_highcontrast.la
+libexec/gimp/1.1/modules/libcdisplay_highcontrast.so
 libexec/gimp/1.1/modules/libcolorsel_gtk.la
 libexec/gimp/1.1/modules/libcolorsel_gtk.so
 libexec/gimp/1.1/modules/libcolorsel_triangle.la
@@ -292,6 +294,8 @@ share/gimp/devel-docs/html/libgimp/libgimp-gimpmenu.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpmodule.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpprotocol.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpquerybox.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpsignal.html
+share/gimp/devel-docs/html/libgimp/libgimp-gimpui.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimputils.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpunit.html
 share/gimp/devel-docs/html/libgimp/libgimp-gimpvector.html
