@@ -1,6 +1,6 @@
---- setup.py.orig	Tue Feb 17 13:31:30 2004
-+++ setup.py	Tue Feb 17 13:32:32 2004
-@@ -80,9 +80,9 @@
+--- setup.py.orig	Fri Feb 20 17:53:55 2004
++++ setup.py	Fri Feb 20 17:54:20 2004
+@@ -79,9 +79,9 @@
      '''Build list of data files to be installed'''
      images = glob.glob('images/*.png')
      files = [
