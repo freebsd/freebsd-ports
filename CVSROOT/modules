@@ -7637,7 +7637,6 @@ pdnmesh		ports/cad/pdnmesh
 pdnsd		ports/dns/pdnsd
 pdq		ports/print/pdq
 pdss		ports/lang/pdss
-pdtpd		ports/net/pdtpd
 pdumpfs		ports/sysutils/pdumpfs
 pdumpfs-clean	ports/sysutils/pdumpfs-clean
 pdumpfs-rsync	ports/sysutils/pdumpfs-rsync
