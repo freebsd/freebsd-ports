@@ -13,16 +13,17 @@ MASTER_SITES=	http://www.linuxhardware.org/nvclock/ \
 DISTNAME=	nvclock${PORTVERSION}
 
 MAINTAINER=	samy@kerneled.com
-COMMENT=	nVidia graphic card status and overclocking tool
+COMMENT=	The nVidia graphic card status and overclocking tool
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 
 .if defined(WITHOUT_GUI)
 PLIST_SUB+=	GTK="@comment "
-CONFIGURE_ARGS+= "--enable-gtk=no"
+CONFIGURE_ARGS+="--enable-gtk=no"
 .else
 USE_GNOME+=	gtk20
 PLIST_SUB+=	GTK=""
@@ -35,5 +36,10 @@ pre-everything::
 	@${ECHO_MSG} "* by defining WITHOUT_GUI.                     *"
 	@${ECHO_MSG} "************************************************"
 	@${ECHO_MSG} ""
+
+post-patch:
+.for i in src/gtk/Makefile.in src/backend/Makefile.in
+	@${REINPLACE_CMD} -e 's|"CFLAGS="|"CFLAGS+="|g' ${WRKSRC}/${i}
+.endfor
 
 .include <bsd.port.mk>
