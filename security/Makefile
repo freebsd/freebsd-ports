@@ -19,6 +19,7 @@
     SUBDIR += audit
     SUBDIR += authforce
     SUBDIR += authpf
+    SUBDIR += autossh
     SUBDIR += avcheck
     SUBDIR += avmailgate
     SUBDIR += bcwipe
