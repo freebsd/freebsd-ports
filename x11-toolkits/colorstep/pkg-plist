@@ -1,0 +1,6 @@
+lib/gtk/themes/engines/libcolorstep.so
+share/themes/ColorStep/ICON.png
+share/themes/ColorStep/README.html
+share/themes/ColorStep/gtk/gtkrc
+@dirrm share/themes/ColorStep/gtk
+@dirrm share/themes/ColorStep
