@@ -1,5 +1,5 @@
---- util/fluxbox-generate_menu.in	Mon Jan 12 13:14:55 2004
-+++ util/fluxbox-generate_menu.in	Sun Mar 14 12:02:01 2004
+--- util/fluxbox-generate_menu.in.orig	Sun Apr 25 12:15:49 2004
++++ util/fluxbox-generate_menu.in	Fri Apr 30 03:29:05 2004
 @@ -45,7 +45,7 @@
  
  
@@ -29,7 +29,7 @@
          }
  
          find_it_options() {
-@@ -614,19 +614,19 @@
+@@ -796,19 +796,19 @@
  # FBRUNOPTIONS='-font 10x20 -fg grey -bg black -title run'
  
  # --- PREFIX'es
@@ -56,7 +56,7 @@
  
  
  # --- Boolean variables.
-@@ -749,7 +749,7 @@
+@@ -931,7 +931,7 @@
  
  
  # gnome prefix
@@ -65,7 +65,7 @@
      if [ -n "${GNOME_PREFIX}" -a -d "$GNOME_PREFIX/share/gnome" ]; then
          break;
      fi
-@@ -757,7 +757,7 @@
+@@ -939,7 +939,7 @@
  # Will remain $PREFIX if all else fails
  
  # kde prefix
@@ -74,21 +74,40 @@
      if [ -n "${KDE_PREFIX}" -a -d "$KDE_PREFIX/share/applnk" ]; then
          break;
      fi
-@@ -840,7 +840,7 @@
+@@ -984,7 +984,7 @@
+ else
+     [ -n "$MY_BROWSER" ] && echo "Warning: you chose an invalid browser." >&2
+     #The precise order is up for debate.
+-    for browser in firefox mozilla-firebird MozillaFirebird opera skipstone mozilla galeon konqueror dillo netscape w3m links lynx; do
++    for browser in firefox mozilla-firebird MozillaFirebird linux-opera opera skipstone mozilla galeon konqueror dillo netscape w3m links lynx; do
+         if find_it $browser; then
+             DEFAULT_BROWSER=$browser
+             break
+@@ -1024,7 +1024,8 @@
      links|w3m|lynx)  append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_TERM} -e ${DEFAULT_BROWSER} ${HOMEPAGE}}" ;;
-     firebird|mozilla|phoenix|galeon|dillo|netscape) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
+     firefox|firebird|mozilla|phoenix|galeon|dillo|netscape) append "[exec] (${DEFAULT_BROWSERNAME}) {${DEFAULT_BROWSER}}" ;;
      konqueror) append "[exec] (konqueror) {kfmclient openProfile webbrowsing}" ;;
 -    opera) append "[exec] (opera) {env QT_XFT=true opera}" ;;
++    linux-opera) append "[exec] (linux-opera) {linux-opera}" ;;
 +    opera) append "[exec] (opera) {opera}" ;;
      MozillaFirebird) append "[exec] (firebird) {MozillaFirebird}" ;;
+     MozillaFirefox) append "[exec] (firefox) {MozillaFirefox}" ;;
      *) append "[exec] ($DEFAULT_BROWSERNAME) {$DEFAULT_BROWSER}" ;;
- esac
-@@ -856,7 +856,7 @@
+@@ -1041,7 +1042,8 @@
  append_submenu "${NETMENU}"
      append_submenu "${BROWSERMENU}"
-         normal_find mozilla-firebird MozillaFirebird galeon mozilla dillo netscape
+         normal_find firefox mozilla-firefox MozillaFirefox galeon mozilla dillo netscape
 -        find_it opera       append "[exec]   (opera) {env QT_XFT=true opera}"
++        find_it linux-opera append "[exec]   (linux-opera) {linux-opera}"
 +        find_it opera       append "[exec]   (opera) {opera}"
          find_it konqueror   append "[exec]   (konqueror) {kfmclient openProfile webbrowsing}"
          find_it links       append "[exec]   (links) {${DEFAULT_TERM} -e links ${HOMEPAGE}}"
          find_it w3m         append "[exec]   (w3m) {${DEFAULT_TERM} -e w3m ${HOMEPAGE}}"
+@@ -1199,7 +1201,6 @@
+ 
+     append_menu "[submenu] (${SYSTEMSTYLES}) {${STYLEMENUTITLE}}"
+         append "[stylesdir] (${PREFIX}/share/fluxbox/styles)"
+-	append "[stylesdir] (/usr/share/commonbox/styles/)"
+     append_menu_end
+ 
+     append_menu "[submenu] (${USERSTYLES}) {${STYLEMENUTITLE}}"

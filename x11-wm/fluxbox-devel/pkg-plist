@@ -6,22 +6,24 @@ bin/startfluxbox
 share/fluxbox/init
 share/fluxbox/keys
 share/fluxbox/menu
-share/fluxbox/nls/C/fluxbox.cat
-share/fluxbox/nls/bg_BG/fluxbox.cat
-share/fluxbox/nls/da_DK/fluxbox.cat
-share/fluxbox/nls/de_DE/fluxbox.cat
-share/fluxbox/nls/es_ES/fluxbox.cat
-share/fluxbox/nls/et_EE/fluxbox.cat
-share/fluxbox/nls/fr_FR/fluxbox.cat
-share/fluxbox/nls/it_IT/fluxbox.cat
-share/fluxbox/nls/ja_JP/fluxbox.cat
-share/fluxbox/nls/lv_LV/fluxbox.cat
-share/fluxbox/nls/nl_NL/fluxbox.cat
-share/fluxbox/nls/pt_BR/fluxbox.cat
-share/fluxbox/nls/pt_PT/fluxbox.cat
-share/fluxbox/nls/ru_RU/fluxbox.cat
-share/fluxbox/nls/sv_SE/fluxbox.cat
-share/fluxbox/nls/tr_TR/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/C/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/bg_BG/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/da_DK/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/de_DE/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/es_ES/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/et_EE/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/fr_FR/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/it_IT/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/ja_JP/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/lv_LV/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/nl_NL/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/pl_PL/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/pt_BR/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/pt_PT/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/ru_RU/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/sl_SI/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/sv_SE/fluxbox.cat
+%%NLS:%%share/fluxbox/nls/tr_TR/fluxbox.cat
 share/fluxbox/styles/Artwiz
 share/fluxbox/styles/BlueFlux/pixmaps/button_close_active.xpm
 share/fluxbox/styles/BlueFlux/pixmaps/button_close_pressed.xpm
@@ -83,40 +85,42 @@ share/fluxbox/styles/Shade
 share/fluxbox/styles/Spiff
 share/fluxbox/styles/Twice
 share/fluxbox/styles/qnx-photon
-@unexec rm %D/share/fluxbox/nls/lv 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/fr 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/es 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/en_US 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/en 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/US_ASCII 2>&1 >/dev/null || true
-@unexec rm %D/share/fluxbox/nls/POSIX 2>&1 >/dev/null || true
-@exec ln -s lv_LV %D/share/fluxbox/nls/lv
-@exec ln -s fr_FR %D/share/fluxbox/nls/fr
-@exec ln -s es_ES %D/share/fluxbox/nls/es
-@exec ln -s C %D/share/fluxbox/nls/en_US
-@exec ln -s C %D/share/fluxbox/nls/en
-@exec ln -s C %D/share/fluxbox/nls/US_ASCII
-@exec ln -s C %D/share/fluxbox/nls/POSIX
+%%NLS:%%@unexec rm %D/share/fluxbox/nls/lv 2>&1 >/dev/null || true
+%%NLS:%%@unexec rm %D/share/fluxbox/nls/fr 2>&1 >/dev/null || true
+%%NLS:%%@unexec rm %D/share/fluxbox/nls/es 2>&1 >/dev/null || true
+%%NLS:%%@unexec rm %D/share/fluxbox/nls/en_US 2>&1 >/dev/null || true
+%%NLS:%%@unexec rm %D/share/fluxbox/nls/en 2>&1 >/dev/null || true
+%%NLS:%%@unexec rm %D/share/fluxbox/nls/US_ASCII 2>&1 >/dev/null || true
+%%NLS:%%@unexec rm %D/share/fluxbox/nls/POSIX 2>&1 >/dev/null || true
+%%NLS:%%@exec ln -s lv_LV %D/share/fluxbox/nls/lv
+%%NLS:%%@exec ln -s fr_FR %D/share/fluxbox/nls/fr
+%%NLS:%%@exec ln -s es_ES %D/share/fluxbox/nls/es
+%%NLS:%%@exec ln -s C %D/share/fluxbox/nls/en_US
+%%NLS:%%@exec ln -s C %D/share/fluxbox/nls/en
+%%NLS:%%@exec ln -s C %D/share/fluxbox/nls/US_ASCII
+%%NLS:%%@exec ln -s C %D/share/fluxbox/nls/POSIX
 @dirrm share/fluxbox/styles/Emerge/pixmaps
 @dirrm share/fluxbox/styles/Emerge
 @dirrm share/fluxbox/styles/BlueFlux/pixmaps
 @dirrm share/fluxbox/styles/BlueFlux
 @dirrm share/fluxbox/styles
-@dirrm share/fluxbox/nls/tr_TR
-@dirrm share/fluxbox/nls/sv_SE
-@dirrm share/fluxbox/nls/ru_RU
-@dirrm share/fluxbox/nls/pt_PT
-@dirrm share/fluxbox/nls/pt_BR
-@dirrm share/fluxbox/nls/nl_NL
-@dirrm share/fluxbox/nls/lv_LV
-@dirrm share/fluxbox/nls/ja_JP
-@dirrm share/fluxbox/nls/it_IT
-@dirrm share/fluxbox/nls/fr_FR
-@dirrm share/fluxbox/nls/et_EE
-@dirrm share/fluxbox/nls/es_ES
-@dirrm share/fluxbox/nls/de_DE
-@dirrm share/fluxbox/nls/da_DK
-@dirrm share/fluxbox/nls/bg_BG
-@dirrm share/fluxbox/nls/C
-@dirrm share/fluxbox/nls
+%%NLS:%%@dirrm share/fluxbox/nls/tr_TR
+%%NLS:%%@dirrm share/fluxbox/nls/sv_SE
+%%NLS:%%@dirrm share/fluxbox/nls/sl_SI
+%%NLS:%%@dirrm share/fluxbox/nls/ru_RU
+%%NLS:%%@dirrm share/fluxbox/nls/pt_PT
+%%NLS:%%@dirrm share/fluxbox/nls/pt_BR
+%%NLS:%%@dirrm share/fluxbox/nls/pl_PL
+%%NLS:%%@dirrm share/fluxbox/nls/nl_NL
+%%NLS:%%@dirrm share/fluxbox/nls/lv_LV
+%%NLS:%%@dirrm share/fluxbox/nls/ja_JP
+%%NLS:%%@dirrm share/fluxbox/nls/it_IT
+%%NLS:%%@dirrm share/fluxbox/nls/fr_FR
+%%NLS:%%@dirrm share/fluxbox/nls/et_EE
+%%NLS:%%@dirrm share/fluxbox/nls/es_ES
+%%NLS:%%@dirrm share/fluxbox/nls/de_DE
+%%NLS:%%@dirrm share/fluxbox/nls/da_DK
+%%NLS:%%@dirrm share/fluxbox/nls/bg_BG
+%%NLS:%%@dirrm share/fluxbox/nls/C
+%%NLS:%%@dirrm share/fluxbox/nls
 @dirrm share/fluxbox
