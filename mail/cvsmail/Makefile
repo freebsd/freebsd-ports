@@ -3,6 +3,7 @@
 # Whom:			Ben Smithurst <ben@FreeBSD.org>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	cvsmail
 PORTVERSION=	1.4
@@ -16,8 +17,6 @@ ALL_TARGET=	cvsmail
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cvsmail ${PREFIX}/bin
-
-post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
