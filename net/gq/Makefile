@@ -24,7 +24,7 @@ USE_OPENSSL=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ldap=${LOCALBASE}
+CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}
 
 OPTIONS=	JPEG	"Enable jpegPhoto attr. handling" On \
 		DND	"Enable Drag and drop support in browse mode" On \
