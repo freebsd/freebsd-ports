@@ -60,11 +60,24 @@ ndtp	2010/tcp	#Network Dictionary Transfer Protocol
     これにより, OS ブート時に dserver が自動的に起動します.
 
 -----
+#!/bin/sh
 # dserver - dictionary server
-if [ -f /usr/local/lib/dserver/dserver ] ; then
-	/usr/local/lib/dserver/dserver&
-	echo -n 'dserver'
-fi
+case "$1" in
+start)
+	if [ -x /usr/local/lib/dserver/dserver ] ; then
+		/usr/local/lib/dserver/dserver &
+		echo -n ' dserver'
+	fi
+	;;
+stop)
+	;;
+*)
+	echo "Usage: setup.sh.standalone {start|stop}" >&2
+	exit 64
+	;;
+esac
+
+exit 0
 -----
 
 I.2. 辞書のコピー・マウント
