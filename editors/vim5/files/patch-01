@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Jan 16 06:03:04 2000
-+++ Makefile	Sat May  6 13:04:12 2000
-@@ -302,6 +302,7 @@
+--- Makefile.orig	Sat Jun  1 18:57:12 2002
++++ Makefile	Sat Jun  1 18:53:56 2002
+@@ -303,6 +303,7 @@
  
  # just an example:
  #CONF_ARGS = --exec-prefix=/usr
@@ -8,7 +8,7 @@
  
  # GUI - For creating Vim with GUI (gvim) (B)
  # Uncomment this line when you don't want to get the GUI version, although you
-@@ -1444,56 +1445,56 @@
+@@ -1446,56 +1447,56 @@
  installlinks: $(GUI_TARGETS) $(BINDIR)/$(EXTARGET) $(BINDIR)/$(VIEWTARGET) $(BINDIR)/$(RVIMTARGET) $(BINDIR)/$(RVIEWTARGET)
  
  $(BINDIR)/$(EXTARGET):
@@ -81,3 +81,14 @@
  
  uninstall: uninstall_runtime
  	-rm -f $(BINDIR)/$(VIMTARGET)
+@@ -1640,7 +1641,9 @@
+ 	-@echo '#include "vim.h"' >> pathdef.c
+ 	-@echo 'char_u *default_vim_dir = (char_u *)"$(VIMRCLOC)";' >> pathdef.c
+ 	-@echo 'char_u *default_vimruntime_dir = (char_u *)"$(VIMRUNTIMEDIR)";' >> pathdef.c
+-	-@echo 'char_u *all_cflags = (char_u *)"$(CC) -c -I$(srcdir) $(ALL_CFLAGS)";' >> pathdef.c
++	-@echo 'char_u *all_cflags = (char_u *)' >> pathdef.c
++	-@echo '$(CC) -c -I$(srcdir) $(ALL_CFLAGS)' | \
++		sed -e 's/"/\\"/g' | sed -e 's/^/"/; s/$$/";/' >> pathdef.c
+ 	-@echo 'char_u *all_lflags = (char_u *)"$(CC) $(LDFLAGS) -o $(VIMTARGET) $(ALL_LIBS)";' >> pathdef.c
+ 	-@echo 'char_u *compiled_user = (char_u *)"' | tr -d \\012 >>pathdef.c
+ 	-@whoami | tr -d \\012 >>pathdef.c
