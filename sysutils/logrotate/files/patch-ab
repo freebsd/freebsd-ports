@@ -11,8 +11,8 @@
  MAN = logrotate.8
  LOADLIBES = -lpopt
  
-+LOADLIBES += -L/usr/local/lib
-+CFLAGS += -I/usr/local/include
++LOADLIBES += -L${LOCALBASE}/lib
++CFLAGS += -I${LOCALBASE}/include
  #--------------------------------------------------------------------------
  
  OBJS = logrotate.o log.o config.o basenames.o
@@ -22,8 +22,8 @@
  
 -	install -s -m 755 $(PROG) $(PREFIX)/$(BINDIR)
 -	install -m 644 $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN)
-+	install -c -s -m 755 $(PROG) $(PREFIX)/$(BINDIR)
-+	install -c -m 644 $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN)
++	${BSD_INSTALL_PROGRAM} $(PROG) $(PREFIX)/$(BINDIR)
++	${BSD_INSTALL_MAN} $(MAN) $(PREFIX)/$(MANDIR)/man`echo $(MAN) | sed "s/.*\.//"`/$(MAN)
  
  co:
  	co RCS/*,v
