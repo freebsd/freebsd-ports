@@ -1,0 +1,13 @@
+Link Monitor Applet is a GNOME Panel Applet displaying the round-trip
+time to one or more hosts in a bar graph.
+
+Link Monitor Applet features include:
+
+	* Full ICMP and ICMPv6 support
+	* Configurable scale and delays
+	* HIG compliance
+
+WWW: http://lefort.be.eu.org/link-monitor-applet/
+
+- Jean-Yves Lefort
+jylefort@brutele.be
