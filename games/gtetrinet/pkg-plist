@@ -1,11 +1,13 @@
 bin/gtetrinet
+share/gnome/apps/Games/gtetrinet.desktop
 share/gnome/gtetrinet/themes/default/blocks.png
 share/gnome/gtetrinet/themes/default/theme.cfg
 share/gnome/gtetrinet/themes/small/blocks.png
 share/gnome/gtetrinet/themes/small/theme.cfg
 share/gnome/pixmaps/gtetrinet.png
-share/gnome/apps/Games/gtetrinet.desktop
-@dirrm share/gnome/gtetrinet/themes/default
+share/locale/ca/LC_MESSAGES/gtetrinet.mo
+share/locale/de/LC_MESSAGES/gtetrinet.mo
 @dirrm share/gnome/gtetrinet/themes/small
+@dirrm share/gnome/gtetrinet/themes/default
 @dirrm share/gnome/gtetrinet/themes
 @dirrm share/gnome/gtetrinet

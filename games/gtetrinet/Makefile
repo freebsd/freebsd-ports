@@ -5,36 +5,30 @@
 # $FreeBSD$
 
 PORTNAME=	gtetrinet
-PORTVERSION=	0.4.4
+PORTVERSION=	0.5.1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	gtetrinet
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+
 USE_X_PREFIX=	yes
-USE_GMAKE=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gtk12 gnomehack gnomeprefix esound gnomelibs gnomehier
+USE_GNOME=	gnomehack gnomeprefix esound
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
-		--bindir=${PREFIX}/bin
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--bindir=${PREFIX}/bin
 
 MAN6=		gtetrinet.6
 
-do-install:
-	cd ${WRKSRC}/src; ${INSTALL_PROGRAM} gtetrinet ${PREFIX}/bin
-	cd ${WRKSRC}/doc; ${INSTALL_MAN} gtetrinet.6 ${PREFIX}/man/man6
-	${MKDIR} ${PREFIX}/share/gnome/gtetrinet/themes/default
-	cd  ${WRKSRC}/themes/default/; ${INSTALL_DATA} blocks.png theme.cfg \
-		${PREFIX}/share/gnome/gtetrinet/themes/default
-	${MKDIR} ${PREFIX}/share/gnome/gtetrinet/themes/small
-	cd  ${WRKSRC}/themes/small/; ${INSTALL_DATA} blocks.png theme.cfg \
-		${PREFIX}/share/gnome/gtetrinet/themes/small
-	cd ${WRKSRC}; ${INSTALL_DATA} gtetrinet.png \
-		${PREFIX}/share/gnome/pixmaps
-	cd ${WRKSRC}; ${INSTALL_DATA} gtetrinet.desktop \
-		${PREFIX}/share/gnome/apps/Games
+post-patch:
+	@${REINPLACE_CMD} \
+		's|[(]prefix[)]/games|{bindir}|g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
