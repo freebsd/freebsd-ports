@@ -318,11 +318,11 @@ share/nml/contrib/emacs/n-compat.el
 share/nml/contrib/emacs/n-font.el
 share/nml/contrib/emacs/n.el
 share/nml/contrib/vim/nml.vim
-@dirrm lib/nml/caml
-@dirrm lib/nml/threads
-@dirrm lib/nml
-@dirrm share/doc/nml
-@dirrm share/nml/contrib/emacs
 @dirrm share/nml/contrib/vim
+@dirrm share/nml/contrib/emacs
 @dirrm share/nml/contrib
 @dirrm share/nml
+@dirrm share/doc/nml
+@dirrm lib/nml/threads
+@dirrm lib/nml/caml
+@dirrm lib/nml

@@ -1,17 +1,19 @@
 # New ports collection makefile for:	nML
 # Date created:		17 July 2001
-# Whom:			Jaeho Shin <netj@ropas.kaist.ac.kr>
+# Whom:			Jaeho Shin <netj@sparcs.kaist.ac.kr>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	nml
-PORTVERSION=	0.92
+PORTVERSION=	0.92a
 CATEGORIES=	lang
-MASTER_SITES=	http://ropas.kaist.ac.kr/n/
+MASTER_SITES=	http://ropas.snu.ac.kr/n/ \
+		http://sparcs.kaist.ac.kr/~netj/n/ \
+		http://ropas.kaist.ac.kr/n/
 
-MAINTAINER=	netj@ropas.kaist.ac.kr
-COMMENT=	A dialect/harmony of Standard ML of New Jersey and Objective Caml.
+MAINTAINER=	netj@sparcs.kaist.ac.kr
+COMMENT=	A dialect/harmony of Standard ML of New Jersey and Objective Caml
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	\
