@@ -30,6 +30,7 @@
     SUBDIR += romeo
     SUBDIR += sitescooper
     SUBDIR += syncal
+    SUBDIR += synce-dccm
     SUBDIR += synce-libsynce
     SUBDIR += synce-serial
     SUBDIR += syncmal
