@@ -3,7 +3,7 @@
 # Date created:		Oct 27, 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.14 1996/12/30 21:33:28 max Exp $
+# $Id: Makefile,v 1.15 1997/01/18 19:32:38 max Exp $
 #
 
 DISTNAME=	cku192src
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.th-darmstadt.de/pub/networking/kermit/ \
 		ftp://ftp.std.com/customers2/src/telcom/
 
-MAINTAINER=	pst@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 RESTRICTED=	"'No redistribution' copyright"
 NO_WRKSUBDIR=	yes
