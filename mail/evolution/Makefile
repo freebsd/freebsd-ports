@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	mail gnome
-MASTER_SITES=	${MASTER_SITE_GNOME} \
+MASTER_SITES=	http://people.FreeBSD.org/~sobomax/ \
+		${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
 #		${MASTER_SITE_LOCAL:S,$,:local,}
 MASTER_SITE_SUBDIR=	stable/sources/evolution \
 			sobomax/:local
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-homebrew-${PORTVERSION}${EXTRACT_SUFX} \
 		db-3.1.17${EXTRACT_SUFX}:local
 DIST_SUBDIR=	gnome
 
@@ -41,7 +41,8 @@ USE_BISON=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	yes
 USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure libical/configure
 CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--with-db3-includes=${DB3_WRKSRC} \
 		--with-html-dir=${PREFIX}/share/gnome/html \
