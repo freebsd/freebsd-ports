@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20040811
-PORTREVISION=	1
+PORTVERSION=	20040820
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 
@@ -26,6 +25,7 @@ OPTIONS=	AHBL "Check AHBL Blacklist" off \
 		EVILNUMBERS "Phone numbers, PO boxes, ... from spam " on \
 		FRENCH "Catches spam written in French" off \
 		GERMAN "Catches spam written in German" off \
+		MANGLED "Looks for obfuscated/gappy words" off \
 		RANDOM "Detects spamware mistakes like: %RANDOM_WORD" on \
 		SARE "Installs safe SARE rules" on \
 		SARE1 "Installs more restrictive SARE rules" off \
@@ -87,6 +87,10 @@ SPAMASS_FILES+=	french_rules.cf
 .for i in 24_de_wiki_BODY.cf 24_de_wiki_HEADER.cf 24_de_wiki_URI.cf
 SPAMASS_FILES+=	$i
 .endfor
+.endif
+
+.if defined(WITH_MANGLED)
+SPAMASS_FILES+=	mangled.cf
 .endif
 
 .if !defined(WITHOUT_RANDOM)
