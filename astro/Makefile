@@ -9,6 +9,7 @@
     SUBDIR += gkrellmoon
     SUBDIR += gkrellmseti
     SUBDIR += glunarclock
+    SUBDIR += gpsman
     SUBDIR += jday
     SUBDIR += ksetiwatch
     SUBDIR += kstars
