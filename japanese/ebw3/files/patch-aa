@@ -1,0 +1,48 @@
+*** Makefile.orig	Sat May 24 01:09:16 1997
+--- Makefile	Mon Jun 23 16:54:38 1997
+***************
+*** 1,13 ****
+  #
+  # $Id: Makefile,v 1.4 1996/04/22 01:19:40 root Exp $
+  #
+! DESTDIR	= /usr/local/etc
+  PROGS	= ebw3 ebw3d ebdp
+  SRCS	= main.c init.c func.c search.c html1.c html2.c image.c gif.c gif2.c\
+  	  kanji.c romatbl.c util.c
+  OBJS	= main.o init.o func.o search.o html1.o html2.o image.o gif.o gif2.o\
+  	  kanji.o romatbl.o util.o
+! CFLAGS	= -g -O # -DDEBUG
+  CC	= gcc
+  
+  all	: $(PROGS)
+--- 1,13 ----
+  #
+  # $Id: Makefile,v 1.4 1996/04/22 01:19:40 root Exp $
+  #
+! DESTDIR	= ${PREFIX}/libexec
+  PROGS	= ebw3 ebw3d ebdp
+  SRCS	= main.c init.c func.c search.c html1.c html2.c image.c gif.c gif2.c\
+  	  kanji.c romatbl.c util.c
+  OBJS	= main.o init.o func.o search.o html1.o html2.o image.o gif.o gif2.o\
+  	  kanji.o romatbl.o util.o
+! CFLAGS	= -g -O -DCONFIG_FILE=\"${PREFIX}/etc/ebw3d.conf\"
+  CC	= gcc
+  
+  all	: $(PROGS)
+***************
+*** 22,28 ****
+  	$(CC) $(CFLAGS) -o $@ ebdp.o
+  
+  install	:
+! 	install	-c -s $(PROGS) $(DESTDIR)
+  
+  clean	:
+  	-rm -f $(OBJS) $(PROGS) *.core core ebw3.o ebdp.o version.o
+--- 22,28 ----
+  	$(CC) $(CFLAGS) -o $@ ebdp.o
+  
+  install	:
+! 	install	-c -s -o bin -g bin -m 555 $(PROGS) $(DESTDIR)
+  
+  clean	:
+  	-rm -f $(OBJS) $(PROGS) *.core core ebw3.o ebdp.o version.o

@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ -f /usr/local/libexec/ebw3d \
+     -a -f /usr/local/etc/ebw3d.conf ]; then
+	/usr/local/libexec/ebw3d > /var/log/ebw3d.log 2>&1 &
+	echo -n ' ebw3d'
+fi

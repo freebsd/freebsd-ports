@@ -1,0 +1,11 @@
+libexec/ebw3
+libexec/ebw3d
+libexec/ebdp
+www/cgi-bin/cdsearch
+etc/ebw3d.conf.sample
+etc/rc.d/ebw3d.sh.sample
+share/doc/ebw3/INSTALL
+share/doc/ebw3/README
+share/doc/ebw3/README.port
+share/doc/ebw3/README.access
+@dirrm share/doc/ebw3
