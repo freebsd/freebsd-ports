@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.eecs.harvard.edu/~wkj/Software/9e/
 DISTNAME=	9e
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Explode Plan9 archives
 
 do-install:

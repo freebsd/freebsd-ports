@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to access and use ssh protocol
 
 PERL_CONFIGURE=	yes

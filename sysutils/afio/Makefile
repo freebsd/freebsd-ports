@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/backup
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Archiver & backup program w/ builtin compression
 
 ALL_TARGET=	${PORTNAME}

@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	# http://www.anzen.com/research/nidsbench/
 MASTER_SITE_SUBDIR=kris
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for testing network IDS implementations
 
 GNU_CONFIGURE=	yes

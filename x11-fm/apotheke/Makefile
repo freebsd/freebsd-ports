@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.berlios.de/pub/apotheke/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CVS view for Nautilus
 
 RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Image
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to the Imlib2 image library
 
 LIB_DEPENDS=	Imlib2.2:${PORTSDIR}/graphics/imlib2

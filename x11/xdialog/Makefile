@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://thgodef.nerim.net/xdialog/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 
 USE_BZIP2=	yes

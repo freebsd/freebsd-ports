@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cardiothink.com/downloads/ecg2png/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	"Converts scanned 12-lead electrocardiograms into PNGs"
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd

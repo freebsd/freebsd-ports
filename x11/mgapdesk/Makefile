@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.matrox.com/pub/mga/archive/linux/2001/powerdesk_1_00_7/
 DISTNAME=	${PORTNAME}-1_00-7beta_src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Matrox Powerdesk for *nix
 
 BUILD_DEPENDS=	XFree86:${PORTSDIR}/x11/XFree86-4

@@ -16,7 +16,7 @@ CATEGORIES=	x11 tk80
 #MASTER_SITES=	http://www-personal.umich.edu/~markcrim/tkgoodstuff/dists/
 DISTNAME=	${PORTNAME}${PORTVERSION}-final
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TkGoodstuff module for fvwm2 window manager - requires XPM and fvwm2
 
 RUN_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2

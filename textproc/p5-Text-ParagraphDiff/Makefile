@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visual difference for paragraphed text
 
 BUILD_DEPENDS=	${SITE_PERL}/Algorithm/Diff.pm:${PORTSDIR}/devel/p5-Algorithm-Diff \

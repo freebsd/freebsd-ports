@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp2.caldera.com/pub/skunkware/src/libraries/
 DISTNAME=	${PORTNAME}-39-src
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, portable, and easy to use command line library
 
 MAN3=		getline.3

@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	palm converters
 MASTER_SITES=	http://tirian.magd.ox.ac.uk/~dom/palm/files/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts plain text and HTML files to Palm Pilot Doc formats
 
 PREFIX=		${LOCALBASE}/

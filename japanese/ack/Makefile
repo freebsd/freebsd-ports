@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/util/text/conv/code/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kanji code converter
 
 ALL_TARGET=	ack

@@ -11,7 +11,7 @@ MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/beep/ \
 		ftp://ftp.megamirror.com/pub/ugh/unix/beep/ \
 		http://ftp.megamirror.com/pub/ugh/unix/beep/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Beeps a certain duration and pitch out of the PC Speaker
 
 MAN1=		beep.1

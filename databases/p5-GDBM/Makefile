@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../src
 DISTNAME=	perl5.005_03
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to use the GNU Data Base Manager (gdbm)
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm

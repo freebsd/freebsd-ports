@@ -11,7 +11,7 @@ CATEGORIES=	lang tcl80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 DISTNAME=	tcl8.0.5
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool Command Language
 
 NO_LATEST_LINK=	yes

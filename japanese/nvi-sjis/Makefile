@@ -13,7 +13,7 @@ LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 
 CATEGORIES=	japanese editors
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of vi/ex, with multilingual patch, default settings for sjis
 
 CONFIGURE_ARGS=        --enable-multibyte=sjis --program-prefix=n --enable-canna

@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small graphical configuration utility for the Ice Window Manager
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk

@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.apple.asimov.net/pub/apple_II/utility/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A ftp-like shell for accessing Apple II disk images
 
 MAN1=		aftp.1

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/compress
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for Apple Macintosh files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

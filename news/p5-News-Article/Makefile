@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	News
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object for handling Usenet articles in mail or news form
 
 RUN_DEPENDS=	${SITE_PERL}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net \

@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://crydee.sai.msu.ru/zeus/X11/contrib/ \
 		ftp://ftp.pconline.com/users/gjerde/enlightenment/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X program to make bottom of screen ripple like a pool of water
 
 USE_IMAKE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.16
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.westbend.net/pub/FreeBSD/ports/local-distfiles/rcNG/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common startup and shutdown subroutines used by scripts
 
 NO_BUILD=	yes

@@ -11,7 +11,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.bellz.org/flyway/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A VFR/IFR Route Planner for Pilots
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/qt.py:${PORTSDIR}/x11-toolkits/py-qt

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	accessreferer
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Apache module that provides access control based on Referer HTTP header
 
 USE_APACHE=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PGP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create detached PGP signatures for data
 
 PERL_CONFIGURE=	yes

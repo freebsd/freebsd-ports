@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Log
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Log::Agent::Logger - a logging interface for perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \

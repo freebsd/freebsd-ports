@@ -11,7 +11,7 @@ MASTERDIR=	${.CURDIR}/../../editors/nvi-m17n
 
 CATEGORIES=	korean editors
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of vi/ex, with multilingual patch, default settings for iso-2022-kr
 
 CONFIGURE_ARGS=        --enable-multibyte=iso-2022-kr --program-prefix=n

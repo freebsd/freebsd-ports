@@ -20,7 +20,7 @@ DISTFILES=	gnometheme.tar.gz \
 		tiny_and_simple.tar.gz \
 		LCD.tar.gz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Skins for gdeskcal
 
 RUN_DEPENDS=	${X11BASE}/bin/gdeskcal:${PORTSDIR}/deskutils/gdeskcal

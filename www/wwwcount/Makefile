@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.muquit.com/muquit/software/Count/src/wwwcount2.5/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access counter, clock and date for WWW pages
 
 GNU_CONFIGURE=	yes

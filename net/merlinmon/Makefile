@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	nsayer
 DISTNAME=	merlin-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses app that displays the status of a Novatel CDPD modem device
 
 NO_WRKSUBDIR=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	www textproc
 MASTER_SITES=	ftp://ftp.deva.net/pub/sources/ir/glimpse/
 DISTNAME=	${PKGNAME}.src
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW interface to Glimpse search engine
 
 RUN_DEPENDS+=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/${APACHE_PORT}
