@@ -1,3 +1,4 @@
+bin/qconfirm
 bin/qconfirm-accept
 bin/qconfirm-check
 bin/qconfirm-conf
@@ -5,6 +6,7 @@ bin/qconfirm-conf
 %%PORTDOCS%%share/doc/qconfirm/faq.html
 %%PORTDOCS%%share/doc/qconfirm/index.html
 %%PORTDOCS%%share/doc/qconfirm/install.html
+%%PORTDOCS%%share/doc/qconfirm/qconfirm.1.html
 %%PORTDOCS%%share/doc/qconfirm/qconfirm-accept.1.html
 %%PORTDOCS%%share/doc/qconfirm/qconfirm-check.1.html
 %%PORTDOCS%%share/doc/qconfirm/qconfirm-conf.1.html
