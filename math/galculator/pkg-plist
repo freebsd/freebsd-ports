@@ -19,3 +19,4 @@ share/locale/pt_BR/LC_MESSAGES/galculator.mo
 share/locale/ro/LC_MESSAGES/galculator.mo
 @dirrm share/galculator/glade
 @dirrm share/galculator
+@unexec rmdir %D/share/applications 2>/dev/null || true
