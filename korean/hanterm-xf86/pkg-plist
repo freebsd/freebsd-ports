@@ -1,2 +1,4 @@
 bin/hanterm
 lib/X11/app-defaults/Hanterm
+share/doc/hanterm-xf/README.xf
+share/doc/hanterm-xf/README.xf.old
