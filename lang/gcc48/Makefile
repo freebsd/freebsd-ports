@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-10-14
+SNAPDATE=	2003-03-24
 SNAPVER=	${SNAPDATE:S/-//g}
 #CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
@@ -25,9 +25,6 @@ DISTFILES=	\
 		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
 .endif
 
-PATCH_SITES=	ftp://relay.nuxi.com/obrien/
-PATCHFILES=	port_gcc33_${SNAPDATE}.diff
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.3 (inprogress version)
 
@@ -35,6 +32,7 @@ NO_CDROM=	'dated material'
 LATEST_LINK=	gcc33
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
@@ -48,12 +46,15 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
-#GCC_REV=	${PORTVERSION:C/\.0$//}
-GCC_REV=	3.3
+GCC_REV=	${PORTVERSION:C/\.0$//}
 #SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
 SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
 WRKSRC=		${WRKDIR}/build
 TARGLIB=	${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
+GCJINC=		${PREFIX}/include/gcj
+GNUINC=		${PREFIX}/include/gnu
+JAVAINC=	${PREFIX}/include/java
+JAVAINC2=	${PREFIX}/include/javax
 PLIST_SUB=	GCC_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}  \
 		SNAPVER=${SNAPVER}
 GNU_CONFIGURE=	yes
@@ -79,8 +80,8 @@ CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
 MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
-		gcj33.1 gcjh33.1 gij.1 grepjar33.1 jar33.1 \
-		jcf-dump33.1 jv-scan33.1 jv-convert.1
+		gcj33.1 gcjh33.1 gij33.1 grepjar33.1 jar33.1 \
+		jcf-dump33.1 jv-scan33.1 jv-convert33.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
@@ -108,14 +109,18 @@ do-fetch:
 		${ECHO_MSG} ">> Please try again later."; \
 		exit 1; \
 	fi
-	@test -e ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
+	@${TEST} -e ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
 	    || fetch -o ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} \
 		${PATCH_SITES}${PATCHFILES}
 
 do-extract:
 	${MKDIR} ${SRCDIR}
-	cd ${DISTDIR}/${DIST_SUBDIR}/gcc ; pax -pe -rwt . ${SRCDIR}
+	cd ${DISTDIR}/${DIST_SUBDIR}/${DIST_SUBDIR ; pax -pe -rwt . ${SRCDIR}
 .endif	# CVS_DATE
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|(experimental)|(experimental) [FreeBSD]|g' \
+	    ${SRCDIR}/gcc/version.c
 
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
@@ -141,7 +146,7 @@ post-install:
 	do \
 		strip $$prog ; \
 	done )
-.for file in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jar grepjar
+.for file in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
 	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}33
 	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
 		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
@@ -179,10 +184,37 @@ post-install:
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type d \
 	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcc-lib
 	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.gcc-lib
+	cd ${PREFIX} ;\
+	    ${FIND} ${GCJINC:S/^${PREFIX}\///} -type f -o -type l	\
+	    	>${WRKDIR}/PLIST.gcj-inc
+	cd ${PREFIX} ;\
+	    ${FIND} ${GNUINC:S/^${PREFIX}\///} -type f -o -type l	\
+	    	>>${WRKDIR}/PLIST.gcj-inc
+	cd ${PREFIX} ;\
+	    ${FIND} ${JAVAINC:S/^${PREFIX}\///} -type f -o -type l	\
+	    	>>${WRKDIR}/PLIST.gcj-inc
+	cd ${PREFIX} ;\
+	    ${FIND} ${JAVAINC2:S/^${PREFIX}\///} -type f -o -type l	\
+	    	>>${WRKDIR}/PLIST.gcj-inc
+	cd ${PREFIX} ;\
+	    ${FIND} ${GCJINC:S/^${PREFIX}\///} -type d \
+	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
+	cd ${PREFIX} ;\
+	    ${FIND} ${GNUINC:S/^${PREFIX}\///} -type d \
+	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
+	cd ${PREFIX} ;\
+	    ${FIND} ${JAVAINC:S/^${PREFIX}\///} -type d \
+	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
+	cd ${PREFIX} ;\
+	    ${FIND} ${JAVAINC2:S/^${PREFIX}\///} -type d \
+	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "r ${WRKDIR}/PLIST.gcc-lib"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "/Insert PLIST.gcj-inc"	>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
+	${ECHO_CMD} "r ${WRKDIR}/PLIST.gcj-inc"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
 	cd ${WRKDIR} ; ex < ex.script
