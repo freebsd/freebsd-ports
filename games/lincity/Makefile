@@ -17,6 +17,5 @@ BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 USE_XLIB=	yes
 ALL_TARGET=	freebsd
 MAN6=		lincity.6
-MANCOMPRESSED=	no
 
 .include <bsd.port.mk>
