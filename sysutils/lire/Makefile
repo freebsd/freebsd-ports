@@ -30,7 +30,7 @@ BUILD_DEPENDS=	\
 	${LOCALBASE}/share/xsl/docbook/fo/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 	${ARCH_PERL}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 	${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
-	${SITE_PERL}/Time/Timezone.pm:${PORTSDIR}/devel/p5-Time \
+	${SITE_PERL}/Time/Timezone.pm:${PORTSDIR}/devel/p5-Time-modules \
 	${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/GD/Graph.pm:${PORTSDIR}/graphics/p5-GD-Graph
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -18,7 +18,7 @@ COMMENT=	Perl-based LDAP log statistics generator
 
 RUN_DEPENDS=	${SITE_ARCH_PERL}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
-		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time
+		${SITE_PERL}/Time/ParseDate.pm:${PORTSDIR}/devel/p5-Time-modules
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
