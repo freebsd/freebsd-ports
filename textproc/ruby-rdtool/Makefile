@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rdtool
-PORTVERSION=	0.6.10
-PORTREVISION=	1
+PORTVERSION=	0.6.11
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www2.pos.to/~tosh/ruby/rdtool/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -31,8 +30,7 @@ EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
 XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
 DOCS_EN=	README.html	doc/rd-draft.rd		doc/rd-draft.html
-DOCS_JA=	README.ja.html	doc/dev-note.rd.ja	doc/rd-draft.rd.ja \
-		doc/dev-note.ja.html doc/rd-draft.ja.html
+DOCS_JA=	README.ja.html	doc/rd-draft.rd.ja	doc/rd-draft.ja.html
 
 do-configure:
 	@cd ${WRKSRC}; \
@@ -47,7 +45,7 @@ pre-build:
 
 .if !defined(NOPORTDOCS)
 post-build:
-.for f in README.rd.ja doc/dev-note.rd.ja doc/rd-draft.rd doc/rd-draft.rd.ja
+.for f in README.rd.ja doc/rd-draft.rd doc/rd-draft.rd.ja
 	cd ${WRKSRC} && ${RUBY} -I. rd2 -r rd/rd2html-lib.rb ${f} \
 		> ${f:S/.rd.ja$/.ja.html/:S/.rd$/.html/}
 .endfor
