@@ -1,0 +1,23 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Blogger/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Blogger
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+%%SITE_PERL%%/Net/Blogger.pm
+%%SITE_PERL%%/Net/Blogger/API/Extended.pm
+%%SITE_PERL%%/Net/Blogger/API/Core.pm
+%%SITE_PERL%%/Net/Blogger/Engine/Movabletype.pm
+%%SITE_PERL%%/Net/Blogger/Engine/Base.pm
+%%SITE_PERL%%/Net/Blogger/Engine/Blogger.pm
+%%SITE_PERL%%/Net/Blogger/Engine/Radio.pm
+%%SITE_PERL%%/Net/Blogger/Engine/Userland.pm
+%%SITE_PERL%%/Net/Blogger/Engine/Slash.pm
+%%SITE_PERL%%/Net/Blogger/Engine/Manila.pm
+%%SITE_PERL%%/Net/Blogger/Engine/Movabletype/mt.pm
+%%SITE_PERL%%/Net/Blogger/Engine/Slash/slashcode.pm
+%%SITE_PERL%%/Net/Blogger/Engine/Userland/metaWeblog.pm
+@dirrm %%SITE_PERL%%/Net/Blogger/API
+@dirrm %%SITE_PERL%%/Net/Blogger/Engine/Movabletype
+@dirrm %%SITE_PERL%%/Net/Blogger/Engine/Slash
+@dirrm %%SITE_PERL%%/Net/Blogger/Engine/Userland
+@dirrm %%SITE_PERL%%/Net/Blogger/Engine
+@dirrm %%SITE_PERL%%/Net/Blogger
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true

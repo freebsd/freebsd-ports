@@ -1,0 +1,4 @@
+Blogger.pm provides an OOP-ish interface for accessing a weblog via the
+Blogger XML-RPC API.
+
+WWW: http://search.cpan.org/dist/Net-Blogger/
