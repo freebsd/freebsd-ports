@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libquicktime
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,9 +25,9 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 USE_GL=		yes
-USE_GNOME=	gnometarget gtk12
+USE_GNOME=	gnometarget gtk12 gnomehack pkgconfig
 USE_GMAKE=	yes
-USE_INC_LIBTOOL_VER=15
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-firewire
@@ -49,29 +48,11 @@ PORTDOCS=	codecs.html \
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-WITHOUT_MMX=	yes
-WITHOUT_JPEGMMX=yes
-.endif
-
-.if !defined(WITHOUT_MMX) && (${ARCH} == "i386")
+.if ${MACHINE_CPU:Mmmx}
 CONFIGURE_ARGS+=	--enable-mmx
+LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
 .else
 CONFIGURE_ARGS+=	--disable-mmx
-.endif
-
-.if !defined(WITHOUT_MMX) && !defined(WITHOUT_JPEGMMX)
-LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
-.endif
-
-pre-everything::
-.if !defined(WITHOUT_MMX)
-	@${ECHO_MSG} "===> Define WITHOUT_MMX if your system does not support MMX"
-	@${ECHO_MSG} "===>"
-.endif
-.if !defined(WITHOUT_JPEGMMX)
-	@${ECHO_MSG} "===> Define WITHOUT_JPEGMMX to disable graphics/jpeg-mmx support"
-	@${ECHO_MSG} "===>"
 .endif
 
 post-extract:
