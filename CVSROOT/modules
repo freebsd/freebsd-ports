@@ -5365,11 +5365,9 @@ llnlxdir	ports/ftp/llnlxdir
 llnlxftp	ports/ftp/llnlxftp
 lm-solve	ports/games/lm-solve
 lmbench		ports/benchmarks/lmbench
-lmd		ports/net/lmd
 lmmon		ports/sysutils/lmmon
 lmtp2nntp	ports/mail/lmtp2nntp
 lmtpd		ports/mail/lmtpd
-loadd		ports/net/loadd
 lockdown	ports/security/lockdown
 lodju		ports/graphics/lodju
 log4c		ports/devel/log4c
