@@ -1,0 +1,19 @@
+*** configure.in.orig	Sun Apr  1 15:17:40 2001
+--- configure.in	Sun Apr  1 15:17:47 2001
+***************
+*** 43,49 ****
+  dnl Checks for header files.
+  
+  AC_HEADER_STDC
+! AC_CHECK_HEADERS(fcntl.h malloc.h sys/file.h sys/time.h unistd.h sys/types.h ctype.h X11/Xlib.h X11/xpm.h,,
+  AC_MSG_ERROR([Couldn't find some include files... aborting]))
+  AC_CHECK_HEADERS(netinet/in_systm.h netinet/in.h netinet/ip.h netinet/ip_icmp.h arpa/inet.h netdb.h sys/socket.h,,
+  AC_MSG_ERROR([Couldn't find network include files])) 
+--- 43,49 ----
+  dnl Checks for header files.
+  
+  AC_HEADER_STDC
+! AC_CHECK_HEADERS(fcntl.h stdlib.h sys/file.h sys/time.h unistd.h sys/types.h ctype.h X11/Xlib.h X11/xpm.h,,
+  AC_MSG_ERROR([Couldn't find some include files... aborting]))
+  AC_CHECK_HEADERS(netinet/in_systm.h netinet/in.h netinet/ip.h netinet/ip_icmp.h arpa/inet.h netdb.h sys/socket.h,,
+  AC_MSG_ERROR([Couldn't find network include files])) 

@@ -1,0 +1,14 @@
+*** Makefile.in.orig	Sat Jul 10 22:04:53 1999
+--- Makefile.in	Sun Apr  1 16:16:21 2001
+***************
+*** 11,19 ****
+  wmnetmon: $(OBJS)
+  	$(CC) $(OBJS) -o wmnetmon $(LDFLAGS)
+  	
+- .o:.c
+- 	$(CC) $(CFLAGS) -c $.c -o $.o
+- 
+  install: wmnetmon
+  	$(INSTALL) wmnetmon $(BINDIR) -o root --mode=4755
+  
+--- 11,16 ----

@@ -1,0 +1,19 @@
+*** configure.orig	Sun Apr  1 15:17:16 2001
+--- configure	Sun Apr  1 15:17:24 2001
+***************
+*** 1605,1611 ****
+  
+  fi
+  
+! for ac_hdr in fcntl.h malloc.h sys/file.h sys/time.h unistd.h sys/types.h ctype.h X11/Xlib.h X11/xpm.h
+  do
+  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+--- 1605,1611 ----
+  
+  fi
+  
+! for ac_hdr in fcntl.h stdlib.h sys/file.h sys/time.h unistd.h sys/types.h ctype.h X11/Xlib.h X11/xpm.h
+  do
+  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
