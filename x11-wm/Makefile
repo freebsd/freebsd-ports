@@ -8,6 +8,7 @@
     SUBDIR += afterstep-stable
     SUBDIR += amaterus
     SUBDIR += amiwm
+    SUBDIR += bbkeys
     SUBDIR += blackbox
     SUBDIR += ctwm
     SUBDIR += enlightenment
