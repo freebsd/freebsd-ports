@@ -5,28 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=		gnome-osd
-PORTVERSION=		0.6.0
-PORTREVISION=	1
-CATEGORIES=		misc
-MASTER_SITES=		http://yang.inescn.pt/~gjc/gnome-osd/
+PORTNAME=	gnome-osd
+PORTVERSION=	0.7.2
+CATEGORIES=	misc
+MASTER_SITES=	http://telecom.inescporto.pt/~gjc/gnome-osd/
 
-MAINTAINER=		jylefort@brutele.be
-COMMENT=		An On-Screen-Display infrastructure using Pango text rendering
+MAINTAINER=	jylefort@brutele.be
+COMMENT=	An On-Screen-Display infrastructure using Pango text rendering
 
-USE_X_PREFIX=		yes
-USE_BZIP2=		yes
-USE_GNOME=		gnomehack gnomeprefix intlhack pygnome2
-USE_PYTHON=		yes
-USE_REINPLACE=		yes
-USE_GMAKE=		yes
-GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+USE_X_PREFIX=	yes
+USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnomeprefix intlhack pygnome2
+USE_PYTHON=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+GCONF_SCHEMAS=	gnome-osd.schemas
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/^Icon=gnome-osd$$/&.png/' \
-		${WRKSRC}/gnome-osd-properties.desktop.in
+	@${REINPLACE_CMD} -e 's|control-center-2.0/capplets|applications|' \
+		${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -36,11 +36,6 @@ post-install:
 		${WRKSRC}/NEWS \
 		${WRKSRC}/README \
 		${DOCSDIR}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/rbosd.py \
-		${WRKSRC}/xchatosd.py \
-		${EXAMPLESDIR}
 .endif
 
 	@${CAT} ${PKGMESSAGE}
