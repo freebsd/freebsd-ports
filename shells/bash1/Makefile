@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	bash
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GNU Bourne Again Shell -- old version
 
+DEPRECATED=	Bash 1.x is EOL, please use shells/bash.
+EXPIRATION_DATE=	2004-08-25
+
 NO_LATEST_LINK=	yes
 WRKSRC=	${WRKDIR}/${DISTNAME}
 # Don't compress manpages or .so not works.
