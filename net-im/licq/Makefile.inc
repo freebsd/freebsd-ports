@@ -7,15 +7,16 @@ QT_LICQ_VER=		1.2.4
 RMS_LICQ_VER=		0.33
 CONSOLE_LICQ_VER=	1.2.4
 JONS_GTK_LICQ_VER=	0.20.2
+LICQ_PORT?=		${PORTSDIR}/current/licq
 .if ${PORTNAME} != "base"
-RUN_DEPENDS+=		licq:${PORTSDIR}/net/licq
+RUN_DEPENDS+=		licq:${LICQ_PORT}
 .endif
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	licq
 DISTNAME=		${PKGNAMEPREFIX}${LICQ_VER}
 DISTFILES=		${DISTNAME}.tar.bz2
 GNU_CONFIGURE=		yes
-MD5_FILE?=		${PORTSDIR}/net/licq/distinfo
+MD5_FILE?=		${LICQ_PORT}/distinfo
 # USE_LIBTOOL doesn't work for these ports
 #USE_LIBTOOL=		yes
 USE_GMAKE=		yes
