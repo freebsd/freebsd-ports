@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Broken by removal of values.h"
-
 .if ${MACHINE_ARCH} == alpha
 BROKEN=		will not build on alpha
 .endif
@@ -32,13 +30,13 @@ do-build:
 
 do-install:
 	@cd ${WRKSRC}/gcc ; make prefix=${PREFIX} INSTALLDIR=${PREFIX}/bin install
-	@strip ${PREFIX}/bin/dlxcc ${PREFIX}/bin/dlx-gcc-cc1 \
+	@${STRIP_CMD} ${PREFIX}/bin/dlxcc ${PREFIX}/bin/dlx-gcc-cc1 \
 		${PREFIX}/bin/dlx-gcc-cpp
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/dlxsim ${PREFIX}/bin
 	@cd ${WRKSRC}/man ; ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/dlx
-	@${INSTALL_DATA} ${WRKSRC}/dlxsim/doc/* ${PREFIX}/share/doc/dlx
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/dlxsim/doc/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
