@@ -2,8 +2,10 @@ bin/zenity
 share/gnome/omf/zenity/zenity-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/zenity/zenity-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/zenity/clothes/gnome-tshirt.png
+share/gnome/zenity/clothes/hawaii-shirt.png
 share/gnome/zenity/clothes/monk.png
 share/gnome/zenity/clothes/sunglasses.png
+share/gnome/zenity/clothes/surfboard.png
 share/gnome/zenity/help/C/figures/zenity-calendar-screenshot.png
 share/gnome/zenity/help/C/figures/zenity-entry-screenshot.png
 share/gnome/zenity/help/C/figures/zenity-error-screenshot.png
