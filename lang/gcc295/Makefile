@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.57 1999/08/05 16:05:55 obrien Exp $
+# $Id: Makefile,v 1.58 1999/08/05 16:07:53 obrien Exp $
 #
 
 DISTNAME=	gcc-2.95
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/releases/gc
 		ftp://egcs.cygnus.com/pub/egcs/releases/gcc-2.95/ \
 		ftp://ftp.nluug.nl/pub/languages/egcs/releases/gcc-2.95/ \
 		ftp://ftp.iij.ad.jp/pub/egcs/releases/gcc-2.95/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/gcc-2.95/ \
 		ftp://cambridge.cygnus.com/pub/egcs/releases/gcc-2.95/
 DISTFILES=	gcc-chill-2.95${EXTRACT_SUFX} \
 		gcc-core-2.95${EXTRACT_SUFX} \
