@@ -18,12 +18,13 @@ DIST_SUBDIR=	eclipse
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Scan Java source code and look for potential problems
 
-RUN_DEPENDS=    ${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
+RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
+JAVA_EXTRACT=	jre
 
 CPIO?=		cpio --quiet -pdmu -R
 
