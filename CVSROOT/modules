@@ -8898,6 +8898,7 @@ yawho		ports/sysutils/yawho
 yawm		ports/x11-wm/yawm
 yawmppp		ports/comms/yawmppp
 yaz		ports/net/yaz
+yaz++		ports/net/yaz++
 yelp		ports/x11/yelp
 yencode		ports/news/yencode
 yes		src/usr.bin/yes
