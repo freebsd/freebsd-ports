@@ -16,15 +16,16 @@ DISTFILES=	${PORTNAME}-sound-${PORTVERSION}.tar.gz \
 		${PORTNAME}-${PORTVERSION}.tar.gz
 .endif
 
-MAINTAINER=	mva121@gmx.net
+MAINTAINER=	mva@sysfault.org
 COMMENT=	A language teaching program with sound
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
+LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+
 .if defined(WITH_SOUND)
 RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	""
 USE_GMAKE=	yes
