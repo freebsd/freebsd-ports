@@ -1,0 +1,22 @@
+--- Makefile.orig	Wed Nov 13 05:06:28 2002
++++ Makefile	Thu Jan 16 04:47:43 2003
+@@ -7,9 +7,7 @@
+ # on Linux systems "make ; make install" (run as superuser) should do everything
+ #
+ 
+-
+-CCFLAGS = -m486 -O2
+-CPPFLAGS += $(CCFLAGS) -I /usr/openwin/include -I/usr/lib/g++-include -DMAIN
++CPPFLAGS += $(CCFLAGS) -I/usr/include -I/usr/local/include -I/usr/X11R6/include -I/usr/lib/g++-include -DMAIN
+ LDFLAGS += -L /usr/openwin/lib -L /usr/X11R6/lib 
+ LDLIBS +=  -lxview  -lX11 -lolgx
+ 
+@@ -17,7 +15,7 @@
+ 
+ PROGRAM = xdf
+ SOURCES.cc = xdf.cc
+-INSTALLPATH = /usr/local/bin
++INSTALLPATH = /usr/X11R6/bin
+ SOURCES.h =
+ SOURCES.c = 
+ SOURCES.G =
