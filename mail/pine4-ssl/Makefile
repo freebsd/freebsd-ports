@@ -47,4 +47,4 @@ post-extract:
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./build bsf EXTRAAUTHENTICATORS=ssl)
 
-.include <bsd.port.post.mk>
+.include "${MASTERDIR}/Makefile"
