@@ -9,6 +9,4 @@ kg.m-1.sec-1', and 'day' always becomes '86400 sec'. On the other hand, this
 library tries to keep the original expressions as much as possible by default,
 while allowing partial to complete decompositions if needed.
 
-Author:	Takeshi Horinouchi <horinout@kurasc.kyoto-u.ac.jp>
-	Eizi Toyoda
 WWW:	http://www.gfd-dennou.org/arch/ruby/products/numru-units/
