@@ -7,20 +7,20 @@
 
 PORTNAME=	adodb
 PORTVERSION=	1.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
 DISTNAME=	${PORTNAME}120
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	abgoeree@uwnet.nl
+MAINTAINER=	abgoeree@wish.net
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 
-ADODB_DIR=	share/doc/apache/php/adodb
+ADODB_DIR=	www/data.default/adodb
 ADODB_TEST=	share/examples/adodb/test
 PLIST_SUB=	ADODB_DIR=${ADODB_DIR} \
 		ADODB_TEST=${ADODB_TEST}
