@@ -9,12 +9,9 @@ PORTNAME=	firebird
 PORTVERSION=	0.6.1
 PORTREVISION=	1
 CATEGORIES=	www
-#MASTER_SITES=	${MASTER_SITE_MOZILLA}
-#MASTER_SITE_SUBDIR=	firebird/releases/${PORTVERSION}
-MASTER_SITES=	http://pryan.org/firebird/pryan/
-PKGNAMEPREFIX=	mozilla-
-#DISTNAME=	MozillaFirebird-source-${PORTVERSION}
-DISTNAME=	MozillaFirebird-${PORTVERSION}-source-pryan
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	firebird/releases/${PORTVERSION}
+DISTNAME=	MozillaFirebird-source-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Firebird is the next generation browser from the mozilla.org project
