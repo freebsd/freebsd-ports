@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dlume
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.6
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://clay.ll.pl/download/
 
@@ -14,11 +14,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 address book
 
 USE_X_PREFIX=	yes
+USE_GNOME=	gnometarget gtk20 libxml2
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20 libxml2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		${PORTNAME}.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
