@@ -32,6 +32,54 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ab9c559e-115a-11d9-bc4a-000c41e2cdad">
+    <topic>mozilla -- BMP decoder vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>0.7.3_1</lt></range>
+      </package>
+      <package>
+	<name>firefox</name>
+	<range><lt>0.9.3_1</lt></range>
+      </package>
+      <package>
+	<name>mozilla</name>
+	<range><lt>1.7.2_2,2</lt></range>
+	<range><ge>1.8.a,2</ge><lt>1.8.a3_1,2</lt></range>
+      </package>
+      <package>
+	<name>mozilla-gtk1</name>
+	<range><lt>1.7.2_3</lt></range>
+      </package>
+      <package>
+	<name>linux-mozilla</name>
+	<range><lt>1.7.3</lt></range>
+      </package>
+      <package>
+	<name>linux-mozillafirebird</name>
+	<range><ge>0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gael Delalleau discovered several integer overflows in
+	  Mozilla's BMP decoder that can result in denial-of-service or
+	  arbitrary code execution.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0904</cvename>
+      <url>http://bugzilla.mozilla.org/show_bug.cgi?id=255067</url>
+      <uscertta>TA04-261A</uscertta>
+      <certvu>847200</certvu>
+    </references>
+    <dates>
+      <discovery>2004-09-13</discovery>
+      <entry>2004-09-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="da690355-1159-11d9-bc4a-000c41e2cdad">
     <topic>mozilla -- vCard stack buffer overflow</topic>
     <affects>
