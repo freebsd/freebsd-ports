@@ -13,7 +13,7 @@
 # bsd.port.mk.  There are significant differences in those so you'll have
 # hard time upgrading this...
 #
-# $Id: portlint.pl,v 1.4 1999/04/02 03:24:13 steve Exp $
+# $Id: portlint.pl,v 1.5 1999/04/04 21:35:10 steve Exp $
 #
 
 $err = $warn = 0;
@@ -654,9 +654,11 @@ EOF
 	# for the rest of the checks, comment lines are not important.
 	#
 	for ($i = 0; $i < scalar(@sections); $i++) {
+		$sections[$i] = "\n" . $sections[$i];
 		$sections[$i] =~ s/\n#[^\n]*//g;
 		$sections[$i] =~ s/\n\n+/\n/g;
 		$sections[$i] =~ s/\\\n/ /g;
+		$sections[$i] =~ s/^\n//;
 	}
 
 	#
