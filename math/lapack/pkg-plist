@@ -647,7 +647,6 @@ man/manl/icmax1.l.gz
 man/manl/ilaenv.l.gz
 man/manl/izmax1.l.gz
 man/manl/lapack.l.gz
-man/manl/lsame.l.gz
 man/manl/lsamen.l.gz
 man/manl/sbdsqr.l.gz
 man/manl/scsum1.l.gz
@@ -921,7 +920,6 @@ man/manl/strti2.l.gz
 man/manl/strtri.l.gz
 man/manl/strtrs.l.gz
 man/manl/stzrqf.l.gz
-man/manl/xerbla.l.gz
 man/manl/zbcon.l.gz
 man/manl/zbdsqr.l.gz
 man/manl/zdrot.l.gz
