@@ -6,6 +6,7 @@
 # WANT_PHP_CLI=yes - Want the CLI version of PHP.
 # WANT_PHP_CGI=yes - Want the CGI version of PHP.
 # WANT_PHP_MOD=yes - Want the Apache Module for PHP.
+# WANT_PHP_WEB=yes - Want the Apache Module or the CGI version of PHP.
 #
 # You may combine multiple WANT_PHP_* knobs.
 # Don't specify any WANT_PHP_* knob if your port will work with every PHP SAPI.
@@ -45,6 +46,17 @@ PHP_PORT=	${PORTSDIR}/lang/php4
 	@${FALSE}
 .else
 PHP_PORT?=	${PORTSDIR}/lang/php4-cli
+.endif
+.endif
+
+.if defined(WANT_PHP_WEB)
+.if defined(HAVE_PHP) && !defined(HAVE_PHP_CGI) && !defined(HAVE_PHP_MOD)
+.BEGIN:
+        @${ECHO_CMD} "This port requires the Apache Module or the CGI version of PHP, but you have"
+        @${ECHO_CMD} "already installed a conflicting PHP port without them."
+        @${FALSE}
+.else
+PHP_PORT?=	${PORTSDIR}/www/mod_php4
 .endif
 .endif
 
