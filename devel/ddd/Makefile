@@ -4,10 +4,10 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/22 21:41:25 obrien Exp $
+# $Id: Makefile,v 1.2 1997/05/23 05:57:59 obrien Exp $
 #
 
-DISTNAME=	ddd-2.1
+DISTNAME=	ddd-2.1.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/  \
 		ftp://richb-pc.acc.qc.edu/pub/ddd/  \
