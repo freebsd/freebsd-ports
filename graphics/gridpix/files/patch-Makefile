@@ -1,0 +1,11 @@
+--- Makefile.old	Sun Jul  7 21:26:07 2002
++++ Makefile	Sun Jul  7 21:26:23 2002
+@@ -62,7 +62,7 @@
+ # Standard rules
+ CFLAGS=	-O -pipe -Wall -I/usr/X11R6/include -I${PREFIX}/include ${EXTRA_FLAGS} -DGRIDROOT=\"${GRIDROOT}\" -DGRIDSUBDIR=\"${GRIDSUBDIR}\"
+ LDFLAGS= -static -O
+-LDLIBS=	-L/usr/X11R6/lib -lppm -lpgm -lpbm -L${PREFIX}/lib -ljpeg -lm
++LDLIBS=	-L/usr/X11R6/lib -lnetpbm -L${PREFIX}/lib -ljpeg -lm
+ 
+ PROGS=	gridpack gridunpack mkhtml gpxinfo
+ OBJS=	${PROGS:S/$/.o/} utils.c

@@ -140,7 +140,7 @@
 -LIBPBMPLUS = $(PBMDIR)/ppm/libppm.a $(PBMDIR)/pgm/libpgm.a \
 -		$(PBMDIR)/pbm/libpbm.a 
 +INCPBMPLUS = -I${LOCALBASE}/include
-+LIBPBMPLUS = -L${LOCALBASE}/lib -lppm -lpgm -lpbm
++LIBPBMPLUS = -L${LOCALBASE}/lib -lnetpbm
  #endif
  
  #ifdef SUNRASTER|SUNTOOLS|TAAC1

@@ -1,0 +1,10 @@
+--- Makefile.old	Sun Jul  7 21:56:30 2002
++++ Makefile	Sun Jul  7 21:56:38 2002
+@@ -6,7 +6,7 @@
+ 
+ CFLAGS	= -O
+ CPPFLAGS = -I/usr/local/include
+-LIBS	= -L/usr/local/lib -lpnm
++LIBS	= -L/usr/local/lib -lnetpbm
+ 
+ default:	vid
