@@ -165,6 +165,7 @@
     SUBDIR += kde3-i18n-it
     SUBDIR += kde3-i18n-lt
     SUBDIR += kde3-i18n-lv
+    SUBDIR += kde3-i18n-mk
     SUBDIR += kde3-i18n-mt
     SUBDIR += kde3-i18n-nb
     SUBDIR += kde3-i18n-nl
