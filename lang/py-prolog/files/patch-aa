@@ -1,0 +1,26 @@
+--- setup.py.orig	Sun Jun 10 05:16:04 2001
++++ setup.py	Tue Nov 16 12:46:44 2004
+@@ -13,11 +13,13 @@
+ 
+ # TDB: this code only need run during 'build'.
+ arch = get_atom('arch')
+-#swipl_version =  get_atom('version')
++swipl_version =  get_atom('version')
+ swipl_home =  get_atom('home')
+ #print 'P>', arch, swipl_version, swipl_home
+ swipl_include_path = os.path.join(swipl_home, 'include')
+ swipl_library_path = os.path.join(swipl_home, 'runtime', arch)
++if swipl_version > '50400':
++   swipl_library_path = os.path.join(swipl_home, 'lib', arch)
+ #print 'I>', swipl_include_path, swipl_library_path
+ 
+ setup(name="PyProlog",
+@@ -25,7 +27,7 @@
+ 	  author="Glen Wilder",
+ 	  author_email="gwilder@best.com",
+ 	  url="http://pyprolog.sourceforge.net",
+-	  licence='LGPL',
++	  license='LGPL',
+ 	  description='SWI-Prolog extension module',
+ 	  packages=["pyprolog"],
+ 	  package_dir={"pyprolog":"Lib"},
