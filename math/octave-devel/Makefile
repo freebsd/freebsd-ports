@@ -1,14 +1,16 @@
 # New ports collection makefile for:	octave
-# Version required:	2.0.13
+# Version required:	2.0.14
 # Date created:		8 September 1998
 # Whom:			chuckr@freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	octave-2.0.13
+DISTNAME=	octave-2.0.14
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
+#MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
+MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/ \
+		ftp://ftp.eos.hokudai.ac.jp/pub/GNU/misc/octave/
 
 MAINTAINER=	chuckr@FreeBSD.org
 
@@ -22,7 +24,7 @@ GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
 .else
 GNU_HOST=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
-OCTAVE_VERSION=	2.0.13
+OCTAVE_VERSION=	2.0.14
 PLIST_SUB=	OCTAVE_VERSION=${OCTAVE_VERSION} GNU_HOST=${GNU_HOST}
 
 USE_GMAKE=	yes

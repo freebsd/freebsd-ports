@@ -79,7 +79,6 @@ include/octave-%%OCTAVE_VERSION%%/dRowVector.h
 include/octave-%%OCTAVE_VERSION%%/data-conv.h
 include/octave-%%OCTAVE_VERSION%%/data.h
 include/octave-%%OCTAVE_VERSION%%/dbleAEPBAL.h
-include/octave-%%OCTAVE_VERSION%%/dbleBessel.h
 include/octave-%%OCTAVE_VERSION%%/dbleCHOL.h
 include/octave-%%OCTAVE_VERSION%%/dbleDET.h
 include/octave-%%OCTAVE_VERSION%%/dbleGEPBAL.h
@@ -207,10 +206,10 @@ include/octave-%%OCTAVE_VERSION%%/variables.h
 include/octave-%%OCTAVE_VERSION%%/version.h
 include/octave-%%OCTAVE_VERSION%%/xdiv.h
 include/octave-%%OCTAVE_VERSION%%/xpow.h
+@exec /bin/ln -sf %D/include/octave-%%OCTAVE_VERSION%%/octave %D/include/octave
 @unexec /bin/rm -f %D/include/octave
-@exec /bin/ln -sf %D/include/octave-%%OCTAVE_VERSION%% %D/include/octave
-@unexec install-info --delete --defentry='* Octave: (octave).    Interactive language for numerical computations.' %D/info/octave.info %D/info/dir
-@unexec install-info --delete --defentry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/info/liboctave.info %D/info/dir
+@unexec install-info --delete --entry='* Octave: (octave).    Interactive language for numerical computations.' %D/info/octave.info %D/info/dir
+@unexec install-info --delete --entry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/info/liboctave.info %D/info/dir
 info/octave.info
 info/octave.info-1
 info/octave.info-2
@@ -228,8 +227,8 @@ info/liboctave.info
 info/liboctave.info-1
 info/liboctave.info-2
 info/liboctave.info-3
-@exec install-info --defentry='* Octave: (octave).    Interactive language for numerical computations.' %D/octave.info %D/info/dir
-@exec install-info --defentry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/liboctave.info %D/info/dir
+@exec install-info --entry='* Octave: (octave).    Interactive language for numerical computations.' %D/octave.info %D/info/dir
+@exec install-info --entry='* LibOctave: (liboctave).      C++ class library for Octave.' %D/liboctave.info %D/info/dir
 lib/octave-%%OCTAVE_VERSION%%/libcruft.a
 lib/octave-%%OCTAVE_VERSION%%/liboctave.a
 lib/octave-%%OCTAVE_VERSION%%/liboctinterp.a
@@ -274,6 +273,16 @@ share/octave/%%OCTAVE_VERSION%%/m/elfun/gcd.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/lcm.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/sec.m
 share/octave/%%OCTAVE_VERSION%%/m/elfun/sech.m
+share/octave/%%OCTAVE_VERSION%%/m/finance/fv.m
+share/octave/%%OCTAVE_VERSION%%/m/finance/fvl.m
+share/octave/%%OCTAVE_VERSION%%/m/finance/irr.m
+share/octave/%%OCTAVE_VERSION%%/m/finance/nper.m
+share/octave/%%OCTAVE_VERSION%%/m/finance/npv.m
+share/octave/%%OCTAVE_VERSION%%/m/finance/pmt.m
+share/octave/%%OCTAVE_VERSION%%/m/finance/pv.m
+share/octave/%%OCTAVE_VERSION%%/m/finance/pvl.m
+share/octave/%%OCTAVE_VERSION%%/m/finance/rate.m
+share/octave/%%OCTAVE_VERSION%%/m/finance/vol.m
 share/octave/%%OCTAVE_VERSION%%/m/general/columns.m
 share/octave/%%OCTAVE_VERSION%%/m/general/common_size.m
 share/octave/%%OCTAVE_VERSION%%/m/general/diff.m
@@ -323,6 +332,7 @@ share/octave/%%OCTAVE_VERSION%%/m/io/puts.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/commutation_matrix.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/cond.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/cross.m
+share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/dmult.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/dot.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/duplication_matrix.m
 share/octave/%%OCTAVE_VERSION%%/m/linear-algebra/kron.m
@@ -413,12 +423,40 @@ share/octave/%%OCTAVE_VERSION%%/m/set/complement.m
 share/octave/%%OCTAVE_VERSION%%/m/set/create_set.m
 share/octave/%%OCTAVE_VERSION%%/m/set/intersection.m
 share/octave/%%OCTAVE_VERSION%%/m/set/union.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/arch_fit.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/arch_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/arch_test.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/arma_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/autocor.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/autocov.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/autoreg_matrix.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/bartlett.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/blackman.m
 share/octave/%%OCTAVE_VERSION%%/m/signal/detrend.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/diffpara.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/durbinlevinson.m
 share/octave/%%OCTAVE_VERSION%%/m/signal/fftconv.m
 share/octave/%%OCTAVE_VERSION%%/m/signal/fftfilt.m
 share/octave/%%OCTAVE_VERSION%%/m/signal/fftshift.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/fractdiff.m
 share/octave/%%OCTAVE_VERSION%%/m/signal/freqz.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/hamming.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/hanning.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/hurst.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/periodogram.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/rectangle_lw.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/rectangle_sw.m
 share/octave/%%OCTAVE_VERSION%%/m/signal/sinc.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/sinetone.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/sinewave.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/spectral_adf.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/spectral_xdf.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/spencer.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/stft.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/synthesis.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/triangle_lw.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/triangle_sw.m
+share/octave/%%OCTAVE_VERSION%%/m/signal/yulewalker.m
 share/octave/%%OCTAVE_VERSION%%/m/specfun/bessel.m
 share/octave/%%OCTAVE_VERSION%%/m/specfun/beta.m
 share/octave/%%OCTAVE_VERSION%%/m/specfun/betai.m
@@ -433,16 +471,151 @@ share/octave/%%OCTAVE_VERSION%%/m/special-matrix/sylvester_matrix.m
 share/octave/%%OCTAVE_VERSION%%/m/special-matrix/toeplitz.m
 share/octave/%%OCTAVE_VERSION%%/m/special-matrix/vander.m
 share/octave/%%OCTAVE_VERSION%%/m/startup/octaverc
-share/octave/%%OCTAVE_VERSION%%/m/statistics/corrcoef.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/cov.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/gls.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/kurtosis.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/mahalanobis.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/mean.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/median.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/ols.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/skewness.m
-share/octave/%%OCTAVE_VERSION%%/m/statistics/std.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/center.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/cloglog.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/cor.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/corrcoef.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/cov.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/cut.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/gls.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/iqr.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/kendall.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/kurtosis.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/logit.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/mahalanobis.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/mean.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/meansq.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/median.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/moment.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/ols.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/ppplot.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/probit.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/qqplot.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/range.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/ranks.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/run_count.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/skewness.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/spearman.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/statistics.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/std.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/studentize.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/table.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/values.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/base/var.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/beta_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/beta_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/beta_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/beta_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/binomial_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/binomial_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/binomial_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/binomial_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/cauchy_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/cauchy_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/cauchy_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/cauchy_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/chisquare_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/chisquare_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/chisquare_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/chisquare_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/discrete_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/discrete_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/discrete_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/discrete_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/empirical_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/empirical_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/empirical_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/empirical_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/exponential_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/exponential_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/exponential_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/exponential_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/f_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/f_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/f_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/f_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/gamma_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/gamma_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/gamma_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/gamma_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/geometric_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/geometric_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/geometric_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/geometric_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/hypergeometric_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/hypergeometric_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/hypergeometric_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/hypergeometric_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/kolmogorov_smirnov_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/laplace_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/laplace_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/laplace_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/laplace_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/logistic_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/logistic_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/logistic_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/logistic_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/lognormal_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/lognormal_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/lognormal_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/lognormal_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/normal_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/normal_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/normal_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/normal_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/pascal_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/pascal_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/pascal_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/pascal_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/poisson_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/poisson_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/poisson_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/poisson_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/stdnormal_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/stdnormal_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/stdnormal_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/stdnormal_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/t_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/t_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/t_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/t_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/uniform_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/uniform_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/uniform_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/uniform_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/weibull_cdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/weibull_inv.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/weibull_pdf.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/weibull_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions/wiener_rnd.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/models/logistic_regression.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/models/logistic_regression_derivatives.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/models/logistic_regression_likelihood.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/anova.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/bartlett_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/chisquare_test_homogeneity.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/chisquare_test_independence.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/cor_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/f_test_regression.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/hotelling_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/hotelling_test_2.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/kolmogorov_smirnov_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/kolmogorov_smirnov_test_2.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/kruskal_wallis_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/manova.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/mcnemar_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/prop_test_2.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/run_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/sign_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/t_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/t_test_2.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/t_test_regression.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/u_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/var_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/welch_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/wilcoxon_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/z_test.m
+share/octave/%%OCTAVE_VERSION%%/m/statistics/tests/z_test_2.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/bin2dec.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/blanks.m
 share/octave/%%OCTAVE_VERSION%%/m/strings/deblank.m
@@ -491,6 +664,7 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/audio
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/control
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/elfun
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/finance
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/general
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/image
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/io
@@ -503,6 +677,10 @@ share/octave/site/m/startup/octaverc
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/specfun
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/special-matrix
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/startup
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/base
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/distributions
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/models
+@dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics/tests
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/statistics
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/strings
 @dirrm share/octave/%%OCTAVE_VERSION%%/m/time
