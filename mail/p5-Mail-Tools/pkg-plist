@@ -1,6 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Address.pm
-lib/perl5/site_perl/%%PERL_VER%%/Mail/Alias.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Cap.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Field.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Field/AddrList.pm
