@@ -1,4 +1,4 @@
-.\"	$Id: portlint.1,v 1.8 1997/11/25 14:53:14 itojun Exp $
+.\"	$Id: portlint.1,v 1.1 1999/01/05 12:23:28 itojun Exp $
 .\"
 .\" Copyright (c) 1997 by Jun-ichiro Itoh <itojun@itojun.org>.
 .\" All Rights Reserved.  Absolutely no warranty.
@@ -105,11 +105,19 @@ This type of messages are used in verbose mode
 .Pq Fl v .
 .El
 .Sh FILES
-.Bl -tag -width /usr/share/mk/bsd.port.mk -compact
-.It Pa /usr/share/mk/bsd.port.mk
+.Bl -tag -width bsd.port.mk -compact
+.It Pa bsd.port.mk
 master Makefile for ports
+.Po
+.Pa bsd.pkg.mk
+on NetBSD/OpenBSD
+.Pc
 .It Pa /usr/ports/*
 port collection
+.Po
+.Pa /usr/pkgsrc/*
+on NetBSD/OpenBSD
+.Pc
 .Sh AUTHORS
 Jun-ichiro Itoh <itojun@itojun.org>
 and
