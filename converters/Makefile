@@ -74,6 +74,5 @@
     SUBDIR += uulib
     SUBDIR += vda2fbd
     SUBDIR += xdeview
-    SUBDIR += xunicode
 
 .include <bsd.port.subdir.mk>
