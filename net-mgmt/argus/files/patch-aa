@@ -38,7 +38,7 @@
  	@for i in  $(DIRS) ; do \
  		if [ -d $$i ] ; then \
  		echo "making in $$i"; \
-@@ -94,23 +72,10 @@
+@@ -94,25 +72,10 @@
  		fi; \
  	done
  
@@ -55,6 +55,8 @@
 
 -	[ -d @mandir@ ] || \
 -		(mkdir -p @mandir@; chmod 755 @mandir@)
+-	[ -d @mandir@/man1 ] || \
+-		(mkdir -p @mandir@/man1; chmod 755 @mandir@/man1)
 -	[ -d @mandir@/man5 ] || \
 -		(mkdir -p @mandir@/man5; chmod 755 @mandir@/man5)
 -	[ -d @mandir@/man8 ] || \
