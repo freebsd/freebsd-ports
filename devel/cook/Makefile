@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	cook
-PORTVERSION=	2.17
-PORTREVISION=	1
+PORTVERSION=	2.18
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SUNSITE} http://www.canb.auug.org.au/~millerp/cook/
-MASTER_SITE_SUBDIR=	devel/make
+MASTER_SITES=	http://www.canb.auug.org.au/~millerp/cook/
 
 MAINTAINER=	jasone@freebsd.org
 
@@ -19,18 +17,11 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
 
-MAN1=	c_incl.1 cook.1 cook_bom.1 cook_lic.1 cookfp.1 cooktime.1 find_libs.1 \
-	make2cook.1 roffpp.1
+MAN1=	c_incl.1 cook.1 cook_bom.1 cook_lic.1 cook_rsh.1 cookfp.1 cooktime.1 \
+	find_libs.1 make2cook.1 roffpp.1
 MANPREFIX =	${PREFIX}/share/cook
 MANLANG =	"" en
 MANCOMPRESSED=	no
-
-strip_bins := c_incl cook cook_bom cookfp cooktime find_libs make2cook roffpp
-
-# cook's configure.in is in the etc subdirectory.  Move it to the main
-# directory so that USE_AUTOCONF works.
-post-patch:
-	@${MV} ${WRKSRC}/etc/configure.in ${WRKSRC}/
 
 # Make sure that the whole directory tree exists.
 pre-install:
@@ -50,9 +41,6 @@ post-install:
 	@${MKDIR} ${PREFIX}/share/cook/man/man1
 .for manpage in ${MAN1}
 	@${MV} ${PREFIX}/man/man1/${manpage} ${PREFIX}/share/cook/man/man1/
-.endfor
-.for bin in ${strip_bins}
-	@strip ${PREFIX}/bin/${bin}
 .endfor
 	@echo
 	@echo "Add ${PREFIX}/share/cook/man to your MANPATH in order to" \

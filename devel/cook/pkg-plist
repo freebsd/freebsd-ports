@@ -1,6 +1,7 @@
 bin/c_incl
 bin/cook
 bin/cook_bom
+bin/cook_rsh
 bin/cookfp
 bin/cooktime
 bin/find_libs
@@ -43,6 +44,7 @@ share/cook/functions
 share/cook/g77
 share/cook/gcc
 share/cook/home
+share/cook/host_lists.pl
 share/cook/lex
 share/cook/library
 share/cook/print
