@@ -88,6 +88,7 @@ USE_GNOME+=		gnomepanel desktopfileutils
 CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
 PKGNAMESUFFIX=		-gnome
 PLIST_SUB+=		GNOMEPANEL:=""
+GNOME_ENABLED=		yes
 .else
 PLIST_SUB+=		GNOMEPANEL:="@comment "
 .endif
@@ -110,7 +111,9 @@ pre-everything::
 	@${ECHO_MSG} "	WITH_MP=yes 		Turns on multiple-processor support"
 	@${ECHO_MSG} ""
 
+.if defined(GNOME_ENABLED)
 post-install:
 	@${X11BASE}/bin/update-desktop-database
+.endif
 
 .include <bsd.port.post.mk>
