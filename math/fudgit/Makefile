@@ -8,5 +8,5 @@ pre-install:
 	@mkdir -p ${PREFIX}/lib/fudgit
 	@mkdir -p ${PREFIX}/man/man1
 	@(cd ${WRKSRC}/examples; cp * ${PREFIX}/lib/fudgit)
-	
+
 .include <bsd.port.mk>
