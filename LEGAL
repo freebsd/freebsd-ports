@@ -144,7 +144,7 @@ jdk-tutorial-*		ports/java/jdk-tutorial	This software is under license and expor
 JRE-*			ports/java/jre		Put copyright on packaging!
 kaffe-*			ports/java/kaffe	Restrictive copyright
 ksh93			ports/shells/ksh93	User must agree to "regularly monitor the Website".
-l_cc_p*_6.0.*.tar	ports/lang/icc		No redistribution allowed
+l_cc_p*_7.0.*.tar	ports/lang/icc		No redistribution allowed
 l_fc_p*_6.0.*.tar	ports/lang/ifc		No redistribution allowed
 lgrind			ports/print/lgrind	Contains non-free code written by Van Jacobson
 limewire		ports/net/limewire	No redistribution allowed
