@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	past@noc.ntua.gr
 COMMENT=	Implementation of the ALC and NORM Reliable Multicast Protocols
 
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/imake-4
+
 USE_GMAKE=	yes
 MAN1=		fcast.1 fcastn.1 mclrecv2.1 mclsend2.1
 MAN2=		mcl_abort.2 mcl_close.2 mcl_ctl.2 mcl_open.2 mcl_recv.2 \
