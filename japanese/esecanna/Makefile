@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	esecanna
-PORTVERSION=	0.99.2
+PORTVERSION=	0.99.3
 CATEGORIES=	japanese
 MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		${MASTER_SITE_LOCAL}
