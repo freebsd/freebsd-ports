@@ -1,7 +1,5 @@
 bin/dvdauthor
 bin/dvddirgen
-bin/makedvd
-bin/makevob
 bin/mpeg2desc
 bin/submux
 bin/vob_dump
