@@ -1,12 +1,12 @@
 # New ports collection makefile for:	lftp
-# Version required:			0.13.2
+# Version required:			0.14.0
 # Date created:				11 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1997/11/30 00:24:02 jseger Exp $
+# $Id: Makefile,v 1.3 1997/12/06 15:44:53 jseger Exp $
 #
 
-DISTNAME=	lftp-0.13.2
+DISTNAME=	lftp-0.14.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/ \
 		${MASTER_SITE_SUNSITE}
