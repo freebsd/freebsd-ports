@@ -19,7 +19,7 @@ fi
   dists="$ports/distfiles"
    logs="$dir/gen"
    pkgs="$ports/packages/All"
-scripts="$dir/scripts"
+scripts="$dir"
    xdep="XFree86-3.3.6_10"
 
 #
