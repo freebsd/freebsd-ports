@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	koffice
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.rc1
 PORTEPOCH=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}-kde3/src
-DISTNAME=	${PORTNAME}-${PORTVERSION}-kde3
+MASTER_SITE_SUBDIR=	unstable/${PORTNAME}-${PORTVERSION:S/.rc1/-rc1/g}/src
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.rc1/-rc1/g}
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		art_lgpl.5:${PORTSDIR}/graphics/libart_lgpl2
 
 _NO_KDE_PATCHUP=yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/.rc1/-rc1/g}
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
