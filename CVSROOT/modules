@@ -5989,6 +5989,7 @@ ports_games	ports/games
 ports_german	ports/german
 ports_gperf	ports/devel/gperf
 ports_graphics	ports/graphics
+ports_gzip	ports/archivers/gzip
 ports_hebrew	ports/hebrew
 ports_irc	ports/irc
 ports_japanese	ports/japanese
