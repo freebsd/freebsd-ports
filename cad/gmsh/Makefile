@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	1.46.0
+PORTVERSION=	1.50.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/	\
-		http://www.cs.berkeley.edu/~jrc/:triangle
+		http://www.cs.berkeley.edu/~jrs/:triangle
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 EXTRACT_SUFX=	.tgz
-.ifdef USE_TRIANGLE
+.ifdef WITH_TRIANGLE
 DISTFILES= 	${DISTNAME}${EXTRACT_SUFX}	\
 		triangle.shar.gz:triangle
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -26,9 +26,9 @@ LIB_DEPENDS=	gsl.5:${PORTSDIR}/math/gsl \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.ifndef USE_TRIANGLE
+.ifndef WITH_TRIANGLE
 pre-everything::
-	@${ECHO_MSG} "You can make with USE_TRIANGLE for faster 2d meshing"
+	@${ECHO_MSG} "You can make with WITH_TRIANGLE for faster 2d meshing"
 .else
 NO_CDROM=	"Triangle must not be sold for profit"
 post-extract:
