@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	projectcenter.app
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.projectcenter.ch/
-DISTNAME=	ProjectCenter-000921
+DISTNAME=	ProjectCenter-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
