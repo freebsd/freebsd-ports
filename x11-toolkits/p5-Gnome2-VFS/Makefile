@@ -10,18 +10,12 @@ PORTNAME=	Gnome2-VFS
 PORTVERSION=	1.001
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnome perl5
-MASTER_SITES=	${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
-MASTER_SITE_SUBDIR=	../by-authors/id/R/RM/RMCFARLA/Gtk2-Perl/:cpan \
-		gtk2-perl/:sf
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	gtk2-perl
 PKGNAMEPREFIX=	p5-
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan \
-		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to use the GNOME Virtual File System library from Perl
-
-BROKEN=		"Unfetchable"
 
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
