@@ -19,6 +19,7 @@ USE_BZIP2=	yes
 NO_BUILD=	yes
 
 do-install:
+	-${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}
 	(cd ${WRKSRC} && tar --exclude '*.orig' -cf - *) \
 		| (cd ${PREFIX}/${PKGNAMEPREFIX:S/-$//} && tar xf -)
 	${LN} -sf ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/include/asm-mips \
