@@ -3,7 +3,7 @@
 # Date created:		19 October 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.8 1995/04/01 12:44:16 jkh Exp $
+# $Id: Makefile,v 1.9 1995/04/11 20:13:02 asami Exp $
 #
 
 DISTNAME=	pcb-1.2.patch_03
@@ -16,7 +16,7 @@ EXEC_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 MAKE_FLAGS=	-f
 MAKEFILE=	makefile
-USE_IMAKE=
+USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>
