@@ -20,7 +20,7 @@ NO_WRKSUBDIR=	true
 PATCH_STRIP=	-p1
 USE_AUTOMAKE=	true
 USE_GMAKE=	true
-AUTOMAKE=	automake --add-missing --foreign --include-deps
+AUTOMAKE_ARGS=	--add-missing --foreign --include-deps
 ACLOCAL=	aclocal
 MAKE_ARGS=	prefix=${PREFIX}
 MAN1=		dico.1
