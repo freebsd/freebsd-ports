@@ -3,7 +3,7 @@
 # Date created:		20 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.18 1997/09/19 09:34:31 asami Exp $
+# $Id: Makefile,v 1.19 1997/09/23 02:17:58 max Exp $
 #
 
 DISTNAME=	Wnn4.2
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.u-tokyo.ac.jp/pub/Japanese/Wnn/ \
 DISTFILES=	Wnn4.2.tar.gz Wnn4.2.patch.tar.gz
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+
+BUILD_DEPENDS=	imake:${PORTSDIR}/x11/XFree86
 
 EXTRACT_ONLY=	Wnn4.2.tar.gz
 PATCHDIR=	${.CURDIR}/../../japanese/Wnn/patches
@@ -32,7 +34,7 @@ DOC_FROM=	${WRKSRC}/cWnn
 post-extract:
 	${EXTRACT_CMD} -C ${WRKSRC} ${EXTRACT_BEFORE_ARGS} \
 		${_DISTDIR}/Wnn4.2.patch.tar.gz
-	/bin/ln -sf Project.tmpl ${WRKSRC}/config/X11.tmpl
+	${LN} -sf Project.tmpl ${WRKSRC}/config/X11.tmpl
 
 pre-patch:
 	cd ${WRKSRC}; ${PATCH} ${PATCH_DIST_ARGS} < ${WRKSRC}/Wnn4.2.patch
