@@ -39,7 +39,6 @@ bcwipe			ports/security/bcwipe	Non-Commercial Distribution and
 						Use Only
 bicom*			ports/archivers/bicom	Contact author personally
 						regarding commercial use
-bitstream-vera		ports/x11-fonts/bitstream-vera Preliminary version not for redistribution
 bnetd			ports/games/bnetd	has been disabled for legal issue
 bomb			ports/games/bomb	mixture of GPL and X license
 boodler-snd-*		ports/audio/boodler	not for commercial use
