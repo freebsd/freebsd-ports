@@ -33,6 +33,7 @@
     SUBDIR += p5-Chemistry-Elements
     SUBDIR += ruby-dcl
     SUBDIR += ruby-dcl-gtk
+    SUBDIR += ruby-gphys
     SUBDIR += vis5d+
     SUBDIR += xloops-ginac
     SUBDIR += xmakemol
