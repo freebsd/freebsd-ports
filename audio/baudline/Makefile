@@ -19,6 +19,8 @@ COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs
 
+BROKEN=		Unfetchable
+
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
