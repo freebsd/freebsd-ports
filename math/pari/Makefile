@@ -30,7 +30,7 @@ MLINKS=		gp.1 pari.1
 
 HAVE_EMACS!=	which emacs || echo nope
 .if ${HAVE_EMACS} != "nope"
-PLIST=		${PKGDIR}/PLIST.emacs
+PLIST=		${PKGDIR}/pkg-plist.emacs
 .endif
 
 .include <bsd.port.mk>
