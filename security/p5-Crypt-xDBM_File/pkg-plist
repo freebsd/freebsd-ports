@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Crypt/xDBM_File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/xDBM_File/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/xDBM_File
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Crypt 2>/dev/null || true
