@@ -1,0 +1,11 @@
+--- bogofilter/src/tests/t.frame~	Mon Dec  8 23:35:11 2003
++++ bogofilter/src/tests/t.frame	Thu Apr  8 13:08:38 2004
+@@ -32,7 +32,7 @@
+ export _POSIX2_VERSION
+ 
+ # Obtain data base file suffix
+-DB_NAME=`$BOGOFILTER -V 2>&1 | sed -n '2p;'`
++DB_NAME=`$BOGOFILTER -C -V 2>&1 | sed -n '2p;'`
+ case $DB_NAME in
+     *BerkeleyDB*)   DB_EXT=db ;;
+     *QDBM*)	    DB_EXT=qdbm ;;
