@@ -286,9 +286,8 @@ if ($cfg::CHECK_HEADERS) {
 
 		# Unexpand the rcsid if required.
 		fix_up_file($arg) if $cfg::UNEXPAND_RCSID and !$failed;
-
 	}
-	if ($failed) {
+	if ($failed and not $cfg::WARN_HEADERS) {
 		print "\n";
 		unlink($cfg::LAST_FILE);
 		exit(1);
