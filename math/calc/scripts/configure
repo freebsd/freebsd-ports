@@ -1,8 +1,6 @@
 #!/bin/sh
 
-if [ $# != 3 ]; then exit 1; fi
-
-F=$3/Makefile
+F=${WRKSRC}/Makefile
 
 chmod +w $F || exit 1;
 

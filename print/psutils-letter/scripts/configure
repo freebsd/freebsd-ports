@@ -1,3 +1,3 @@
 #!/bin/sh
-chmod +x $3/maketext
+chmod +x ${WRKSRC}/maketext
 exit 0
