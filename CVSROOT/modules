@@ -10956,6 +10956,7 @@ tex		ports/print/tex
 tex-omegaware-old	ports/print/tex-omegaware-old
 tex-texmflocal	ports/print/tex-texmflocal
 tex2im		ports/textproc/tex2im
+texcm-ttf	ports/x11-fonts/texcm-ttf
 texi2db		ports/textproc/texi2db
 texi2html	ports/textproc/texi2html
 texmacs		ports/editors/texmacs
