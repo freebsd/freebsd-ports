@@ -16,6 +16,7 @@ share/blackbox/nls/ru_RU/blackbox.cat
 share/blackbox/nls/sl_SI/blackbox.cat
 share/blackbox/nls/sv_SE/blackbox.cat
 share/blackbox/nls/tr_TR/blackbox.cat
+share/blackbox/nls/zh_CN/blackbox.cat
 share/blackbox/styles/Artwiz
 share/blackbox/styles/Cthulhain
 share/blackbox/styles/Flux
@@ -44,6 +45,7 @@ share/blackbox/styles/Twice
 @dirrm share/blackbox/nls/sl_SI
 @dirrm share/blackbox/nls/sv_SE
 @dirrm share/blackbox/nls/tr_TR
+@dirrm share/blackbox/nls/zh_CN
 @exec ln -s C %D/share/blackbox/nls/POSIX
 @unexec rm %D/share/blackbox/nls/POSIX
 @exec ln -s C %D/share/blackbox/nls/US_ASCII
