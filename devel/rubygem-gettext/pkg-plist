@@ -45,7 +45,6 @@ share/locale/ja/LC_MESSAGES/rmsgfmt.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/locale
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/config.rb
 %%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/html/en/ruby-gettext.html
 %%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/html/ja/ruby-gettext.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/style.css
