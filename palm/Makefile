@@ -6,6 +6,7 @@
     SUBDIR += gnomepilot-conduits
     SUBDIR += imgvtopgm
     SUBDIR += isilo
+    SUBDIR += jconv
     SUBDIR += jpilot
     SUBDIR += kpilot
     SUBDIR += malsync
