@@ -3,8 +3,10 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat/Expat.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/Japanese_Encodings.msg
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/README
+%%SJIS%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/Shift_JIS.enc
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/big5.enc
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/euc-kr.enc
+%%EUCJP%%lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/euc-jp.enc
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/iso-8859-2.enc
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/iso-8859-3.enc
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Encodings/iso-8859-4.enc
