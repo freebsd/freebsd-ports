@@ -10,7 +10,6 @@ bin/update-finance-quote
 etc/gnucash/config
 include/gnucash/Account.h
 include/gnucash/Backend.h
-include/gnucash/DateUtils.h
 include/gnucash/FreqSpec.h
 include/gnucash/GNCId.h
 include/gnucash/Group.h
@@ -420,14 +419,19 @@ share/gnome/gnucash/doc/html/SchedXaction_8h.html
 share/gnome/gnucash/doc/html/Transaction_8h.html
 share/gnome/gnucash/doc/html/annotated.html
 share/gnome/gnucash/doc/html/classes.html
+share/gnome/gnucash/doc/html/date_8h.html
 share/gnome/gnucash/doc/html/doxygen.css
 share/gnome/gnucash/doc/html/doxygen.gif
 share/gnome/gnucash/doc/html/files.html
 share/gnome/gnucash/doc/html/functions.html
 share/gnome/gnucash/doc/html/globals.html
 share/gnome/gnucash/doc/html/gnc-ofx-import_8h.html
+share/gnome/gnucash/doc/html/gnc-pricedb_8h.html
+share/gnome/gnucash/doc/html/gnc-ui-util_8h.html
+share/gnome/gnucash/doc/html/group__Date.html
 share/gnome/gnucash/doc/html/group__Engine.html
 share/gnome/gnucash/doc/html/group__Import__Export.html
+share/gnome/gnucash/doc/html/group__UI.html
 share/gnome/gnucash/doc/html/import-account-matcher_8h.html
 share/gnome/gnucash/doc/html/import-backend_8h.html
 share/gnome/gnucash/doc/html/import-commodity-matcher_8h.html
@@ -538,6 +542,7 @@ share/gnome/gnucash/guile-modules/gnucash/report/balance-sheet.scm
 share/gnome/gnucash/guile-modules/gnucash/report/business-reports.scm
 share/gnome/gnucash/guile-modules/gnucash/report/cash-flow.scm
 share/gnome/gnucash/guile-modules/gnucash/report/category-barchart.scm
+share/gnome/gnucash/guile-modules/gnucash/report/daily-reports.scm
 share/gnome/gnucash/guile-modules/gnucash/report/hello-world.scm
 share/gnome/gnucash/guile-modules/gnucash/report/iframe-url.scm
 share/gnome/gnucash/guile-modules/gnucash/report/invoice.scm
@@ -646,6 +651,7 @@ share/locale/pt_BR/LC_MESSAGES/gnucash.mo
 share/locale/ru/LC_MESSAGES/gnucash.mo
 share/locale/sk/LC_MESSAGES/gnucash.mo
 share/locale/sv/LC_MESSAGES/gnucash.mo
+share/locale/ta/LC_MESSAGES/gnucash.mo
 share/locale/uk/LC_MESSAGES/gnucash.mo
 share/locale/zh_CN/LC_MESSAGES/gnucash.mo
 share/locale/zh_TW/LC_MESSAGES/gnucash.mo
