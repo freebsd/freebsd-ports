@@ -5,10 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mc
+PORTNAME?=	mc
 PORTVERSION=	4.5.55
-PORTREVISION=	3
-CATEGORIES=	misc
+PORTREVISION?=	3
+CATEGORIES?=	misc
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/mc
 
@@ -25,21 +25,35 @@ LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
+.if ${PORTNAME} == "mc"
 USE_GNOME=	glib12
+.else
+USE_GNOME=	gnomeprefix gnomelibs
+.endif
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_SLANG)
-CONFIGURE_ARGS=	--with-slang --without-gnome
+CONFIGURE_ARGS=	--with-slang
 .else
-CONFIGURE_ARGS=	--with-ncurses --without-gnome
+CONFIGURE_ARGS=	--with-ncurses
 .endif
 .if !defined(WITHOUT_ICONV)
 CONFIGURE_ARGS+=--enable-charset --with-libiconv-prefix=${LOCALBASE}
+PLIST_SUB=	CHARSETS=""
+.else
+PLIST_SUB=	CHARSETS="@comment "
 .endif
-
+.if ${PORTNAME} == "mc"
+CONFIGURE_ARGS+=--without-gnome
+.endif
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+.if ${PORTNAME} == "mc"
+PLIST_SUB+=	GNOMEMC="@comment " SHARE_PATH="share"
+.else
+PLIST_SUB+=	GNOMEMC="" SHARE_PATH="share/gnome"
+.endif
 
 MAN1=		mc.1 mcedit.1
 

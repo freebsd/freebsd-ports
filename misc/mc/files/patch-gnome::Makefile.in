@@ -1,0 +1,11 @@
+--- gnome/Makefile.in.orig	Sun Aug 11 18:29:17 2002
++++ gnome/Makefile.in	Sun Aug 11 18:30:01 2002
+@@ -9,7 +9,7 @@
+ 
+ corbadir   = $(sysconfdir)/CORBA/servers
+ desktopdir = $(mclibdir)/desktop-scripts
+-gnewdir	   = $(prefix)/share/mc/templates
++gnewdir	   = $(mclibdir)/templates
+ gnomeicondir = @gnomeicondir@
+ icondir    = $(datadir)/pixmaps/mc
+ 
