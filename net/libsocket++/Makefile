@@ -20,6 +20,8 @@ INSTALLS_SHLIB=	yes
 USE_AUTOMAKE_VER=	15
 USE_LIBTOOL=	yes
 
+INFO=	socket++
+
 post-patch:
 	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen)
 
