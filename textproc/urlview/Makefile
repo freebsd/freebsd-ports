@@ -20,13 +20,14 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	URL extractor/launcher
 
-USE_PERL5_BUILD=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		urlview.1
 
 post-patch:
-	${PERL} -pi.prefix -e 's.!!PREFIX!!.${PREFIX}.g' \
-		${WRKSRC}/url_handler.sh
+	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" ${WRKSRC}/url_handler.sh
+	@${REINPLACE_CMD} -e \
+		"s,/etc/urlview.conf,${PREFIX}/etc/urlview.conf,g" ${WRKSRC}/*
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/url_handler.sh ${PREFIX}/bin
