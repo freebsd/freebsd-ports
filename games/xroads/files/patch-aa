@@ -1,5 +1,5 @@
---- Makefile	Fri Jul 16 21:37:03 1999
-+++ Makefile.new	Sat May 20 00:44:02 2000
+--- Makefile.orig	Sat Jul 17 10:37:03 1999
++++ Makefile	Fri Mar 30 21:19:14 2001
 @@ -5,8 +5,10 @@
  # the executable
  ###########################################################################
@@ -8,8 +8,8 @@
 -BINPATH = /usr/X11R6/bin/
 +PREFIX		?= /usr/X11R6
 +X11BASE		?= /usr/X11R6
-+DATAPATH	= ${PREFIX}/share/games/xroads/
-+BINPATH		= ${PREFIX}/bin/
++DATAPATH	= ${PREFIX}/share/xroads
++BINPATH		= ${PREFIX}/bin
  # I imagine you would use this BINPATH for Solaris:
  #BINPATH = /usr/openwin/bin/
  
@@ -18,7 +18,7 @@
  
  #CFLAGS = -fomit-frame-pointer -O2 -Wall -DXRMPATH=\"$(DATAPATH)\"
 -CFLAGS = -O6 -mpentium -g -Wall -DXRMPATH=\"$(DATAPATH)\"
-+CFLAGS += -Wall -DXRMPATH=\"$(DATAPATH)\" -I${X11BASE}/include
++CFLAGS += -DXRMPATH=\"$(DATAPATH)\" -I${X11BASE}/include
  
  ###########################################################################
  # Links necessary for X11                                                 

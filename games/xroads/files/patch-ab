@@ -1,5 +1,5 @@
---- config.h	Fri Jul 16 21:37:03 1999
-+++ config.h.new	Sat May 20 00:45:15 2000
+--- config.h.orig	Sat Jul 17 10:37:03 1999
++++ config.h	Fri Mar 30 21:11:09 2001
 @@ -30,7 +30,7 @@
  /* Comment this out to disable the joystick code. This code currently only
     works on Linux, and only uses one joystick */
@@ -9,12 +9,3 @@
  
  /* Don't enable the joystick by default. Otherwise, it defaults to
     controlling player 1. Uncomment this if your joystick doesn't work
-@@ -69,7 +69,7 @@
-    sure it's actually set to something) */
- 
- #ifndef XRMPATH
--#define XRMPATH "./"
-+#define XRMPATH DATADIR "./"
- #endif
- 
- /* Comment this out to use the P key to pause the game. If you used this
