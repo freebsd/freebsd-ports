@@ -3257,6 +3257,7 @@ hffzip		ports/archivers/hffzip
 hfs		ports/emulators/hfs
 hfsutils	ports/emulators/hfsutils
 hgrep		ports/textproc/hgrep
+hhm		ports/textproc/hhm
 hicolor-icon-theme	ports/misc/hicolor-icon-theme
 hidentd		ports/net/hidentd
 highlight	ports/textproc/highlight
