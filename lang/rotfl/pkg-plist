@@ -1,0 +1,10 @@
+bin/rotfl
+share/rotfl/examples/justify.rot
+share/rotfl/examples/list.rot
+share/rotfl/examples/many-records.rot
+share/rotfl/examples/misc.rot
+@dirrm share/rotfl/examples
+%%PORTDOCS%%share/rotfl/docs/HOWTO
+%%PORTDOCS%%share/rotfl/docs/README
+%%PORTDOCS%%@dirrm share/rotfl/docs
+@dirrm share/rotfl

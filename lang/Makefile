@@ -104,6 +104,7 @@
     SUBDIR += python15
     SUBDIR += ratfor
     SUBDIR += rexx-imc
+    SUBDIR += rotfl
     SUBDIR += ruby
     SUBDIR += ruby-man
     SUBDIR += ruby-perl
