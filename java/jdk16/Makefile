@@ -25,7 +25,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${X11BASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-PLIST=		${WRKDIR}/pkg-plist
 PKGINSTALL=	${WRKDIR}/pkg-install
 
 WRKSRC=		${WRKDIR}/control/make
@@ -256,23 +255,21 @@ pre-install:
 .endif
 
 do-install:
-	${RM} -f ${PLIST}
-	${TOUCH} ${PLIST}
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${JDKIMAGEDIR} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 	@${FIND} -s ${JDKIMAGEDIR} -not -type d | \
-	  ${SED} -ne 's#^${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${PLIST}
+	  ${SED} -ne 's#^${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${TMPPLIST}
 .if defined(WITH_DEBUG)
 	cd ${JDKIMAGEDIR_G} && ${FIND} . \
 	  | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
 	@${FIND} -s ${JDKIMAGEDIR_G} -not -type d | \
-	  ${SED} -ne 's#^${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${PLIST}
+	  ${SED} -ne 's#^${JDKIMAGEDIR}#jdk${JDK_VERSION}#p' >> ${TMPPLIST}
 .endif
 	@${FIND} -s -d ${PREFIX}/jdk${JDK_VERSION} -type d | \
-	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${PLIST}
-	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${PLIST}
-	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${PLIST}
+	  ${SED} -ne 's#^${PREFIX}/#@dirrm #p' >> ${TMPPLIST}
+	@${ECHO_MSG} "@exec ${LOCALBASE}/bin/registervm ${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}" >> ${TMPPLIST}
+	@${ECHO_MSG} "@unexec ${LOCALBASE}/bin/unregistervm ${PREFIX}/jdk${JDK_VERSION}/bin/java" >> ${TMPPLIST}
 
 # XXX: put unregistervm into install script ?
 post-install:
