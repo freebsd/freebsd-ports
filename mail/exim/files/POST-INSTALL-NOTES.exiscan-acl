@@ -2,7 +2,10 @@ This installation of Exim includes Exiscan content scanning support,
 from http://duncanthrax.net/exiscan-acl/, which is documented in
 ${PREFIX}/share/doc/exim/exiscan-acl-spec.txt.  The ports tree
 includes various content scanners that might be useful, e.g.
-mail/p5-Mail-SpamAssassin and security/vscan.
+mail/p5-Mail-SpamAssassin and security/clamav.
+
+Notes for enabling malware scanning with the excellent clamd scanner
+are in ${PREFIX}/share/doc/exim/POST-INSTALL-NOTES.clamd.
 
 When Exiscan is actually enabled in the Exim configure file, great
 care should be taken to test upgrades, since Exiscan updates tend

@@ -25,6 +25,7 @@ sbin/exiqsumm
 %%PORTDOCS%%%%DOCSDIR%%/pcrepattern.txt
 %%PORTDOCS%%%%DOCSDIR%%/pcretest.txt
 %%PORTDOCS%%%%DOCSDIR%%/spec.txt
+%%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/POST-INSTALL-NOTES.clamd
 %%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/exiscan-acl-examples.txt
 %%PORTDOCS%%%%EXISCAN_ACL%%%%DOCSDIR%%/exiscan-acl-spec.txt
 @dirrm etc/exim

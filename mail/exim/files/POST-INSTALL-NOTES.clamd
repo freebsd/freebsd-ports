@@ -1,0 +1,74 @@
+The following steps will enable clamd malware scanning using exiscan ACLs.
+It is important to follow them in sequence.
+
+*  Install security/clamav from the ports tree.
+
+*  Add user clamav to the mail group in /etc/group.
+
+*  Create /var/log/clamav and /var/run/clamav, and change the ownership
+   of both to clamav:clamav.
+
+*  In Exim's configure file, set av_scanner=clamd:/var/run/clamav/clamd
+
+*  Adjust the exiscan ACLs in Exim's configure file.  Make sure you use
+   the demime option with the malware check, e.g.:
+
+   deny message = This message contains malware ($malware_name)
+	demime  = *
+	malware = *
+
+*  Edit clamav.conf as follows:
+
+	LogFile /var/log/clamav/clamd.log
+	PidFile /var/run/clamav/clamd.pid
+	LocalSocket /var/run/clamav/clamd
+	User clamav
+	AllowSupplementaryGroups
+	ScanArchive
+
+   You may wish to make other changes as well.
+
+*  Install the shell script included at the end of these instructions as
+   /usr/local/etc/rc.d/clamd.sh, taking care to make it executable.
+
+*  Run freshclam.
+
+*  Add a cron job that runs freshclam --daemon-notify --quiet at least
+   once a day.
+
+*  Start clamd with /usr/local/etc/rc.d/clamd.sh start .
+
+*  Start Exim with /usr/local/etc/rc.d/exim.sh start .
+
+Sheldon Hearn <sheldonh@FreeBSD.org>
+
+#!/bin/sh
+#
+PREFIX=/usr/local
+CLAMAV_BIN=${PREFIX}/sbin
+
+case $1 in
+start)
+    [ -x ${CLAMAV_BIN}/clamd ] && {
+	${CLAMAV_BIN}/clamd
+	echo -n ' clamd'
+    }
+    ;;
+
+stop)
+	kill `cat /var/run/clamav/clamd.pid`
+	if [ $? = 0 ] ; then
+		echo -n ' clamd'
+	fi
+    ;;
+
+restart)
+	/usr/local/etc/rc.d/clamd.sh stop && \
+		/usr/local/etc/rc.d/clamd.sh start
+    ;;
+
+*)
+    echo "usage: `basename $0` {start|stop|restart}" >&2
+    exit 64
+    ;;
+esac
