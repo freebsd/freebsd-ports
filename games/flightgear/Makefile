@@ -37,7 +37,7 @@ pre-configure:
 	  cd ${WRKDIR}/gpc231; ${GMAKE}; \
 	  ${GMAKE} PREFIX=${WRKSRC}/gfcgpc install)
 .else
-PLIST=		${MASTERDIR}/pkg/PLIST.notools
+PLIST=		${MASTERDIR}/pkg-plist.notools
 ADDPATCHES=	${MASTERDIR}/patches.tools/disable-tools
 USE_AUTOCONF=	yes
 .endif
