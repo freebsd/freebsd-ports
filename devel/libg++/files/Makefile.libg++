@@ -6,6 +6,7 @@ LIB=		g++
 
 #SHLIB_MAJOR=	5
 #SHLIB_MINOR=	0
+NOPROFILE=	true
 
 DESTDIR=	${PREFIX}
 LIBDIR=		/lib

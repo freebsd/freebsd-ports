@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 lib/libg++.a
-lib/libg++_p.a
 include/libg++/ACG.h
 include/libg++/AVLMap.ccP
 include/libg++/AVLMap.hP
