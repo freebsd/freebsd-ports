@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1f738bda-c6ac-11d8-8898-000d6111a684">
+    <topic>Remote Denial of Service of HTTP server and client</topic>
+    <affects>
+      <package>
+	<name>giFT-FastTrack</name>
+	<range><lt>0.8.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>giFT-FastTrack is susceptible to a remote
+	  Denial of Service attack which could allow
+	  a remote attacker to render HTTP services
+	  unusable.  According to the developers, no
+	  code execution is possible; however, they
+	  recommend an immediate upgrade.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://developer.berlios.de/forum/forum.php?forum_id=5814</url>
+    </references>
+    <dates>
+      <discovery>2004-06-19</discovery>
+      <entry>2004-06-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="253ea131-bd12-11d8-b071-00e08110b673">
     <topic>Gallery 1.4.3 and ealier user authentication bypass</topic>
     <affects>
