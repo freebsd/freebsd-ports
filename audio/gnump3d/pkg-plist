@@ -70,6 +70,30 @@ etc/gnump3d/mime.types
 %%DATADIR%%/LaFrere/size.html
 %%DATADIR%%/LaFrere/stats.html
 %%DATADIR%%/LaFrere/tagbrowse.html
+%%DATADIR%%/Nomad/COPYING.html
+%%DATADIR%%/Nomad/ClubNomadLogo.gif
+%%DATADIR%%/Nomad/GNUMP3dLogo.jpg
+%%DATADIR%%/Nomad/Nomad_theme.css
+%%DATADIR%%/Nomad/SmallHome.gif
+%%DATADIR%%/Nomad/bg.gif
+%%DATADIR%%/Nomad/bug.html
+%%DATADIR%%/Nomad/config.ini
+%%DATADIR%%/Nomad/error.html
+%%DATADIR%%/Nomad/gnump3d_themes_footer.tmpl
+%%DATADIR%%/Nomad/gnump3d_themes_header.tmpl
+%%DATADIR%%/Nomad/index.html
+%%DATADIR%%/Nomad/info.html
+%%DATADIR%%/Nomad/logo.png
+%%DATADIR%%/Nomad/now.html
+%%DATADIR%%/Nomad/playlist.html
+%%DATADIR%%/Nomad/prefs.html
+%%DATADIR%%/Nomad/random.html
+%%DATADIR%%/Nomad/recent.html
+%%DATADIR%%/Nomad/results.html
+%%DATADIR%%/Nomad/search.html
+%%DATADIR%%/Nomad/size.html
+%%DATADIR%%/Nomad/stats.html
+%%DATADIR%%/Nomad/tagbrowse.html
 %%DATADIR%%/README
 %%DATADIR%%/SchwartzNGrau/AUTHOR
 %%DATADIR%%/SchwartzNGrau/COPYING.html
@@ -193,6 +217,13 @@ etc/gnump3d/mime.types
 %%DATADIR%%/dotNET/search.html
 %%DATADIR%%/dotNET/stats.html
 %%DATADIR%%/dotNET/style.css
+%%DATADIR%%/handheld/AUTHOR
+%%DATADIR%%/handheld/config.ini
+%%DATADIR%%/handheld/error.html
+%%DATADIR%%/handheld/index.html
+%%DATADIR%%/handheld/random.html
+%%DATADIR%%/handheld/results.html
+%%DATADIR%%/handheld/search.html
 %%DATADIR%%/nausicaa/AUTHOR
 %%DATADIR%%/nausicaa/COPYING.html
 %%DATADIR%%/nausicaa/bug.html
@@ -228,12 +259,14 @@ etc/gnump3d/mime.types
 %%DATADIR%%/redgrey/tagbrowse.html
 @dirrm %%DATADIR%%/redgrey
 @dirrm %%DATADIR%%/nausicaa
+@dirrm %%DATADIR%%/handheld
 @dirrm %%DATADIR%%/dotNET/images
 @dirrm %%DATADIR%%/dotNET
 @dirrm %%DATADIR%%/default
 @dirrm %%DATADIR%%/Thexder
 @dirrm %%DATADIR%%/Tabular
 @dirrm %%DATADIR%%/SchwartzNGrau
+@dirrm %%DATADIR%%/Nomad
 @dirrm %%DATADIR%%/LaFrere
 @dirrm %%DATADIR%%/Clean
 @dirrm %%DATADIR%%
