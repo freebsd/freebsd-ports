@@ -2920,6 +2920,7 @@ hostsentry	ports/security/hostsentry
 hotjava		ports/www/hotjava
 hotkeys		ports/misc/hotkeys
 hotwayd		ports/mail/hotwayd
+hourglass	ports/sysutils/hourglass
 howl		ports/net/howl
 howm		ports/deskutils/howm
 hp2xx		ports/print/hp2xx
