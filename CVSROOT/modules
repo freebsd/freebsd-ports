@@ -3851,6 +3851,7 @@ java-sqlrelay	ports/databases/java-sqlrelay
 java-tutorial	ports/java/java-tutorial
 java2html	ports/textproc/java2html
 java3d		ports/java/java3d
+java_jgraph	ports/java/jgraph
 javacc		ports/textproc/javacc
 javadc		ports/net/javadc
 javamail	ports/java/javamail
