@@ -1,0 +1,8 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/lynx
+@mode 444
+lib/lynx.cfg
+@mode 644
+man/man1/lynx.1
