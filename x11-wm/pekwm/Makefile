@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	pekwm
-DISTVERSION=	20050209-5
+PORTVERSION=	20050227
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://bsd-unix.org/downloads/
+MASTER_SITES=	http://bsd-unix.org/downloads/ \
+		http://pekwm.org/files/
+DISTNAME=	${PORTNAME}-dev-${PORTVERSION}
 
 MAINTAINER=	xcas@cox.net
 COMMENT=	A windowmanager based on aewm++
