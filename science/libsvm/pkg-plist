@@ -1,8 +1,7 @@
 bin/svm-predict
 bin/svm-scale
 bin/svm-train
+%%DATADIR%%/grid.py
+%%DATADIR%%/easy.py
 %%LIBSVM_PYTHON%%%%PYTHON_SITELIBDIR%%/svm.py
 %%LIBSVM_PYTHON%%%%PYTHON_SITELIBDIR%%/svmc.so
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,18 @@
+--- python/Makefile.orig	Wed Mar 24 19:33:46 2004
++++ python/Makefile	Tue Nov 16 01:14:32 2004
+@@ -1,11 +1,11 @@
+-CC = g++
++CC = $(CXX)
+ SWIG ?= swig
+ 
+ #Windows: see ../README ../Makefile.win
+-PYTHON_INCLUDEDIR ?= /usr/include/python2.3
++PYTHON_INCLUDEDIR ?= %%PYTHON_INCLUDEDIR%%
+ 
+-CFLAGS = -O3 -I$(PYTHON_INCLUDEDIR) -I..
+-LDFLAGS = -shared
++CFLAGS += -I$(PYTHON_INCLUDEDIR) -I..
++LDFLAGS += -shared
+ 
+ all: svmc.so
+ 
