@@ -7,9 +7,10 @@
 # $FreeBSD$
 #
 
-DISTNAME=	bzip2-0.9.5c
+DISTNAME=	bzip2-0.9.5d
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.bzip2.org/bzip2/v095/ \
+MASTER_SITES=	ftp://sourceware.cygnus.com/pub/bzip2/v095/ \
+		http://www.bzip2.org/bzip2/v095/ \
 		http://www.muraroa.demon.co.uk/ \
 		http://www.digistar.com/bzip2/
 
