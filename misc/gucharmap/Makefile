@@ -15,8 +15,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	A Unicode/ISO10646 character map and font viewer
 
-BROKEN=		"Does not configure"
-
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
@@ -28,7 +26,7 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-	       	LIBS="-L${LOCALBASE}/lib"
+	       	LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
