@@ -14,3 +14,8 @@ share/doc/HTML/en/kpictorial/index.docbook
 share/doc/HTML/en/kpictorial/index.cache.bz2
 share/doc/HTML/en/kpictorial/common
 @dirrm share/doc/HTML/en/kpictorial
+@dirrm share/apps/kpictorial
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/locolor 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Games 2>/dev/null || true
