@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	mkcatalog
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	textproc
 MASTER_SITES=	# none
 DISTFILES=	# none
