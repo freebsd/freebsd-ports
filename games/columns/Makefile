@@ -13,9 +13,9 @@ DISTNAME=	Columns-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
+LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
