@@ -8,7 +8,7 @@
 PORTNAME=	kmp3
 PORTVERSION=	1.0
 CATEGORIES=	audio kde
-MASTER_SITES=	http://www.kmp3.org/tarballs/
+MASTER_SITES=	http://area51.mfh-iserlohn.de/kmp3/tarballs/
 
 MAINTAINER=	mb@imp.ch
 
