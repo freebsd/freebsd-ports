@@ -193,8 +193,8 @@ foreach my $thisdir (@dirs) {
 
 	# Get the category name and make it suitable for use with cvs
 	my $category;
-	$_ = `grep CATEGORIES Makefile`;
-	m/\w+\W+([\w-]+)/;
+	$_ = `$make -V CATEGORIES`;
+	m/([\w-]+)/;
 	$category = $1;
 	chomp $category;
 	if ($interactive) {
