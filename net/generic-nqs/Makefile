@@ -123,10 +123,10 @@ post-install:
 			${PREFIX}/bin/qpr			${PREFIX}/bin/qrls \
 			${PREFIX}/bin/qstat			${PREFIX}/bin/qsub \
 			${PREFIX}/bin/qsuspend; \
-	${SYSINST} ${CONFIGFILE} ${FILESDIR}/${STARTUP} ${RCDIR}/${STARTUP}; \
-	${SYSLOGFIX}; \
-	${PLISTFIX} ${CONFIGFILE} ${WRKDIR}; \
-	${ECHO} "You may want run ${CREATEQ} to actually make some queues"; \
+	${SH} ${SYSINST} ${CONFIGFILE} ${FILESDIR}/${STARTUP} ${RCDIR}/${STARTUP}; \
+	${SH} ${SYSLOGFIX}; \
+	${SH} ${PLISTFIX} ${CONFIGFILE} ${WRKDIR}; \
+	${ECHO} "You may want run ${SH} ${CREATEQ} to actually make some queues"; \
 	${ECHO} ""
 
 .include <bsd.port.mk>
