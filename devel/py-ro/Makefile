@@ -25,6 +25,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-ro
 post-patch:
 	${ECHO} -e 'install-scripts=${PREFIX}/bin\n' \
 		'\n[install-options]\nunattended=1' >> ${WRKSRC}/setup.cfg
+	${RM} ${WRKSRC}/docs/3-install.html~
 
 .if !defined(NOPORTDOCS)
 post-install:
