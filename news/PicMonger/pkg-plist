@@ -1,0 +1,7 @@
+bin/picmonger
+share/PicMonger/pmlogo.xpm
+share/PicMonger/add.xpm
+share/PicMonger/del.xpm
+share/PicMonger/pmlogo_big.jpg
+share/PicMonger/db_rd.xpm
+@dirrm share/PicMonger
