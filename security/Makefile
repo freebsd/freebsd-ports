@@ -86,5 +86,6 @@
     SUBDIR += whisker
     SUBDIR += xinetd
     SUBDIR += zebedee
+    SUBDIR += zombiezapper
 
 .include <bsd.port.subdir.mk>

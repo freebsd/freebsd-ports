@@ -1,0 +1,56 @@
+--- zz.c.orig	Tue Feb 15 08:51:12 2000
++++ zz.c	Sun Feb 20 01:59:12 2000
+@@ -94,7 +94,7 @@
+   union
+   {
+     struct in_addr addr;
+-    ulong temp_ip;
++    u_long temp_ip;
+   } ip;
+   
+   for (i = 0; i < 256; i++)
+@@ -159,27 +159,27 @@
+     case 1:
+       data_len = strlen(TRINOO_DATA);
+       for (p=0;p<data_len;p++) data[p] = TRINOO_DATA[p];
+-      header = LIBNET_UDP_H;
++      header = UDP_H;
+       id = 41072;
+       proto = IPPROTO_UDP;
+       break;
+     case 2:
+       data_len = strlen(TFN_DATA);
+       for (p=0;p<data_len;p++) data[p] = TFN_DATA[p];
+-      header = LIBNET_ICMP_ECHO_H;
++      header = ICMP_ECHO_H;
+       id = 567;
+       proto = IPPROTO_ICMP;
+       break;
+     case 3:
+       data_len = 0;
+-      header = LIBNET_ICMP_ECHO_H;
++      header = ICMP_ECHO_H;
+       id = 3;
+       proto = IPPROTO_ICMP;
+       break;
+   }
+ 
+   /* compute packet size */
+-  packet_size = LIBNET_IP_H + header + data_len;
++  packet_size = IP_H + header + data_len;
+ 
+   /* get mem for packet */
+   libnet_init_packet(packet_size, &packet);
+@@ -207,10 +207,10 @@
+     switch (proto)
+     {
+       case IPPROTO_ICMP:
+-        libnet_build_icmp_echo(ICMP_ECHOREPLY,0,id,0,data,data_len,packet + LIBNET_IP_H);
++        libnet_build_icmp_echo(ICMP_ECHOREPLY,0,id,0,data,data_len,packet + IP_H);
+         break;        
+       case IPPROTO_UDP:
+-        libnet_build_udp(sport,27444,data,data_len,packet + LIBNET_IP_H);
++        libnet_build_udp(sport,27444,data,data_len,packet + IP_H);
+         break;
+     }
+ 

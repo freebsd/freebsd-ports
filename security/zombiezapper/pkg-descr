@@ -1,0 +1,12 @@
+Zombie Zapper works against Trinoo, TFN, and Stacheldraht. Assuming
+that the default passwords have not been changed, you can simply use
+the same commands that an attacker would use to stop the flood. On
+Trinoo, it does stop the daemon entirely (although it is typically
+set to be restarted by cron, silently awaiting more commands), but
+on TFN and Stacheldraht the flooding just stops. This gives you the
+advantage of telling the daemon to stop flooding without stopping
+the daemon, allowing you to take a little more time in tracking down
+where they are, and more importantly, how they got there in the first
+place.
+
+WWW: http://razor.bindview.com/tools/ZombieZapper_form.shtml
