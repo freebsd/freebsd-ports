@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=		ports@FreeBSD.org
 
-LIB_DEPENDS=		xforms.0:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=		forms.0:${PORTSDIR}/x11-toolkits/xforms
 
 USE_REINPLACE=		yes
 USE_X_PREFIX=		yes
