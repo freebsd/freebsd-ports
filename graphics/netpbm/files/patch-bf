@@ -1,6 +1,6 @@
---- pnm/Makefile.orig	Fri Aug  4 08:46:27 2000
-+++ pnm/Makefile	Sat Aug  5 00:00:00 2000
-@@ -47,6 +47,8 @@
+--- pnm/Makefile.orig	Sat Sep  2 13:03:27 2000
++++ pnm/Makefile	Tue Sep  5 00:00:00 2000
+@@ -48,6 +48,8 @@
    JPEGLD = -L$(JPEGLIB_DIR) -ljpeg
  endif
  
@@ -9,11 +9,12 @@
  # We tend to separate out the build targets so that we don't have
  # any more dependencies for a given target than it really needs.
  # That way, if there is a problem with a dependency, we can still
-@@ -54,21 +56,23 @@
+@@ -55,22 +57,23 @@
  # This package is so big, it's useful even when some parts won't 
  # build.
  
--PORTBINARIES =  fitstopnm gemtopnm giftopnm pamcut pamtopnm \
+-PORTBINARIES =  fitstopnm gemtopnm giftopnm pamchannel pamcut \
+-		pamfile pamtopnm \
 -		pnmalias pnmarith pnmcat pnmcomp pnmconvol pnmcrop \
 -		pnmcut pnmdepth pnmenlarge pnmfile pnmflip pnmhisteq \
 -		pnmhistmap pnminterp pnminvert pnmpad pnmpaste \
@@ -29,8 +30,8 @@
 +		pnmtosgi pnmtosir pnmtoxwd \
 +		rasttopnm sgitopnm sirtopnm zeisstopnm
  MATHBINARIES =	pnmgamma pnmnlfilt pnmrotate pnmscale pnmshear
-+SHHOPTBINARIES =	pamcut pamtopnm pnmcrop pnmcut pnmfile pnminterp \
-+			pnmsplit pstopnm xwdtopnm
++SHHOPTBINARIES =	pamchannel pamcut pamfile pamtopnm pnmcrop pnmcut \
++			pnmfile pnminterp pnmsplit pstopnm xwdtopnm
  
  # We don't include programs that have special library dependencies in the
  # merge scheme, because we don't want those dependencies to prevent us
@@ -41,7 +42,7 @@
  ifneq ($(PNGHDR_DIR),NONE)
    ifneq ($(PNGLIB_DIR),NONE)
      NOMERGEBINARIES += pnmtopng pngtopnm
-@@ -105,6 +109,8 @@
+@@ -107,6 +110,8 @@
  MERGE_OBJECTS = $(patsubst %,%.o2, $(MERGEBINARIES))
  
  LIBOBJECTS = libpnm1.o libpnm2.o libpnm3.o libpnm4.o libpam.o
@@ -50,7 +51,7 @@
  
  MANUALS1 = $(BINARIES) $(SCRIPTS)
  MANUALS3 = libpnm
-@@ -116,12 +122,12 @@
+@@ -118,12 +123,12 @@
  
  .PHONY: all
  all:      $(BINARIES)
@@ -67,7 +68,7 @@
  
  ifeq ($(TIFFLIB_DIR),$(TIFFDIR))
  # We're using the internal Tiff library, so make sure it's built
-@@ -132,18 +138,18 @@
+@@ -134,18 +139,18 @@
  endif
  
  # The Tiff library references math functions.
@@ -91,7 +92,7 @@
  
  ifeq ($(URTLIB_DIR),$(URTDIR))
  # We're using the internal URT library, so make sure it's built
-@@ -180,25 +186,20 @@
+@@ -182,25 +187,20 @@
  # backward compatibility: program used to be gemtopbm
  	rm -f $(INSTALLBINARIES)/gemtopbm
  	ln -s $(INSTALLBINARIES)/gemtopnm$(EXE) $(INSTALLBINARIES)/gemtopbm
