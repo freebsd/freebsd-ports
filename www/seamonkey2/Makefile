@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.4a
-PORTREVISION?=	1
+PORTVERSION=	1.4b
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -63,6 +63,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude .cvsignore \
 			--exclude makefile.win \
 			--exclude MANIFEST
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -138,7 +139,6 @@ CONFIGURE_ARGS+=	--disable-composer
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 PKGCONFIG_FILES=	mozilla-gtkmozembed mozilla-js mozilla-xpcom \
 			mozilla-nspr mozilla-nss mozilla-plugin
-EXTRA_PATCHES=		${FILESDIR}/xim_dekita2.patch
 .else
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
 .endif
@@ -264,6 +264,7 @@ do-install:
 .endif
 
 post-install:
+	@${CHMOD} -R u-w ${PREFIX}/lib/${MOZILLA}/components
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
