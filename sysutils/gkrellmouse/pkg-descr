@@ -1,0 +1,10 @@
+This is a simple plugin for gkrellm that shows you how fast your
+mouse is going (in the chart) and the total distance in pixels it
+has travelled since the plugin was started. It's pretty simple and
+mindless, and probably shouldn't be relied upon to produce
+ultra-accurate data, but it gets the point across.
+
+WWW: http://ssl.usu.edu/paul/gkrellmouse/
+Author: Paul Cannon <paul@cannon.cs.usu.edu>
+
+- Patrick Li <pat@databits.net>
