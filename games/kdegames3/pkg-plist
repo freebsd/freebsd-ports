@@ -879,6 +879,7 @@ share/apps/katomic/levels/.cvsignore
 share/apps/katomic/levels/CVS/Entries
 share/apps/katomic/levels/CVS/Repository
 share/apps/katomic/levels/CVS/Root
+share/apps/katomic/levels/CVS/Tag
 share/apps/katomic/levels/level_1
 share/apps/katomic/levels/level_10
 share/apps/katomic/levels/level_11
@@ -1890,7 +1891,10 @@ share/icons/locolor/32x32/apps/kjezz.png
 share/icons/locolor/32x32/apps/kspaceduel.png
 share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
 @dirrm share/icons/hicolor/32x32/apps
 @dirrm share/icons/hicolor/16x16/apps
@@ -1938,12 +1942,15 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/apps/kspaceduel/sprites
 @dirrm share/apps/kspaceduel/icons/locolor/16x16/actions
 @dirrm share/apps/kspaceduel/icons/locolor/16x16
+@dirrm share/apps/kspaceduel/icons/locolor
 @dirrm share/apps/kspaceduel/icons/hicolor/32x32/actions
 @dirrm share/apps/kspaceduel/icons/hicolor/32x32
 @dirrm share/apps/kspaceduel/icons/hicolor/22x22/actions
 @dirrm share/apps/kspaceduel/icons/hicolor/22x22
 @dirrm share/apps/kspaceduel/icons/hicolor/16x16/actions
 @dirrm share/apps/kspaceduel/icons/hicolor/16x16
+@dirrm share/apps/kspaceduel/icons/hicolor
+@dirrm share/apps/kspaceduel/icons
 @dirrm share/apps/kspaceduel
 @dirrm share/apps/ksnake/pics
 @dirrm share/apps/ksnake/levels
@@ -2019,3 +2026,4 @@ share/icons/locolor/32x32/apps/lskat.png
 @dirrm share/applnk/Games/Card
 @dirrm share/applnk/Games/Board
 @dirrm share/applnk/Games/Arcade
+@dirrm share/applnk/Games

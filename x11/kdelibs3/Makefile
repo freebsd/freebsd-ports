@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	2.2
-PORTREVISION=	3
+PORTVERSION=	2.2.1
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -33,7 +32,7 @@ USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-cups --disable-ltdl-install \
-		--enable-debug --disable-final
+		--disable-final
 
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS=		-O0 ${KDE_CFLAGS}

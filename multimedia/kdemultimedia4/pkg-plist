@@ -109,6 +109,8 @@ lib/libnoatunkaiman.la
 lib/libnoatunkaiman.so
 lib/libnoatunkeyz.la
 lib/libnoatunkeyz.so
+lib/libnoatunmain.la
+lib/libnoatunmain.so
 lib/libnoatunmarquis.la
 lib/libnoatunmarquis.so
 lib/libnoatunmonoscope.la
@@ -208,8 +210,6 @@ lib/mcop/noatunarts.mcopclass
 lib/mcop/noatunarts.mcoptype
 %%OGGVORBIS%%lib/mcop/oggarts.mcopclass
 %%OGGVORBIS%%lib/mcop/oggarts.mcoptype
-lib/noatun.la
-lib/noatun.so
 share/applnk/Multimedia/aktion.desktop
 share/applnk/Multimedia/artsbuilder.desktop
 share/applnk/Multimedia/artscontrol.desktop
@@ -800,6 +800,18 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/noatun/eq.preset
 @dirrm share/apps/noatun
 @dirrm share/apps/kscd/pics
+@dirrm share/apps/kscd/cddb/soundtrack
+@dirrm share/apps/kscd/cddb/rock
+@dirrm share/apps/kscd/cddb/reggae
+@dirrm share/apps/kscd/cddb/newage
+@dirrm share/apps/kscd/cddb/misc
+@dirrm share/apps/kscd/cddb/jazz
+@dirrm share/apps/kscd/cddb/folk
+@dirrm share/apps/kscd/cddb/data
+@dirrm share/apps/kscd/cddb/country
+@dirrm share/apps/kscd/cddb/classical
+@dirrm share/apps/kscd/cddb/blues
+@dirrm share/apps/kscd/cddb
 @dirrm share/apps/kscd
 @dirrm share/apps/kmix/pics
 @dirrm share/apps/kmix
@@ -820,6 +832,7 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/kmid/fm
 @dirrm share/apps/kmid
 @dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
 @dirrm share/apps/artscontrol
 @dirrm share/apps/artsbuilder/pics
 @dirrm share/apps/artsbuilder/examples/todo
@@ -827,14 +840,11 @@ share/servicetypes/audiomidi.desktop
 @dirrm share/apps/artsbuilder
 @dirrm share/apps/aktion/toolbar
 @dirrm share/apps/aktion
-@dirrm share/apps
 @dirrm share/applnk/Settings/Sound
+@dirrm share/applnk/Settings
 @dirrm share/applnk/Multimedia
 @dirrm lib/mcop/Noatun
 @dirrm lib/mcop/Arts
 @dirrm lib/mcop
-@dirrm lib
 @dirrm include/noatun
 @dirrm include/arts
-@dirrm include
-@dirrm bin

@@ -1,0 +1,16 @@
+--- noatun-plugins/blurscope/Makefile.in.orig	Sat Sep  8 09:52:51 2001
++++ noatun-plugins/blurscope/Makefile.in	Wed Oct 24 23:03:09 2001
+@@ -215,11 +215,11 @@
+ x_includes = @x_includes@
+ x_libraries = @x_libraries@
+ 
+-INCLUDES = -I$(kde_includes)/noatun  `sdl-config --cflags` $(all_includes)
++INCLUDES = -I$(kde_includes)/noatun  `$(SDL_CONFIG) --cflags` $(all_includes)
+ 
+ lib_LTLIBRARIES = libnoatunblurscope.la
+ libnoatunblurscope_la_SOURCES = sdlscope.cpp scopedisplayer.cpp
+-libnoatunblurscope_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined `sdl-config --libs`
++libnoatunblurscope_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined `$(SDL_CONFIG) --libs`
+ libnoatunblurscope_la_LIBADD = $(LIB_KFILE) -lnoatun -lm
+ #>- libnoatunblurscope_la_METASOURCES = AUTO
+ 

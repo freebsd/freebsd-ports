@@ -17,7 +17,10 @@ bin/lisa
 bin/mail.local
 bin/reslisa
 include/kmailIface.h
+include/mimelib/address.h
+include/mimelib/addrlist.h
 include/mimelib/binhex.h
+include/mimelib/body.h
 include/mimelib/bodypart.h
 include/mimelib/boyermor.h
 include/mimelib/config.h
@@ -369,6 +372,7 @@ share/apps/kppp/Rules/Germany/Callino_Surf_Plus.rst
 share/apps/kppp/Rules/Germany/City_Activ_Plus_Option.rst
 share/apps/kppp/Rules/Germany/Cityweb.rst
 share/apps/kppp/Rules/Germany/Freenet_Enterprise.rst
+share/apps/kppp/Rules/Germany/Freenet_special_call_by_call.rst
 share/apps/kppp/Rules/Germany/MSN.rst
 share/apps/kppp/Rules/Germany/Mobilcom_Freenet.rst
 share/apps/kppp/Rules/Germany/NGI_Call_By_Call.rst
@@ -377,6 +381,7 @@ share/apps/kppp/Rules/Germany/Nikoma.rst
 share/apps/kppp/Rules/Germany/Nikoma_Internet_by_Call.rst
 share/apps/kppp/Rules/Germany/Nikoma_Study_and_Surf.rst
 share/apps/kppp/Rules/Germany/Planet-Interkom_Internet_by_call.rst
+share/apps/kppp/Rules/Germany/Telekom_City.rst
 share/apps/kppp/Rules/Germany/Telekom_City_Select_5_30.rst
 share/apps/kppp/Rules/Germany/expressnet.rst
 share/apps/kppp/Rules/Germany/knUUt-by-Call.rst
@@ -478,6 +483,7 @@ share/apps/kppp/Rules/Singapore/SingTel_Local.rst
 share/apps/kppp/Rules/Slovakia/Internetovy_tarif_019XY.rst
 share/apps/kppp/Rules/Slovakia/ST_medzimesto.rst
 share/apps/kppp/Rules/Slovakia/ST_mesto.rst
+share/apps/kppp/Rules/Slovakia/Slovenske_Telekomunikacie_Internet.rst
 share/apps/kppp/Rules/South_Afrika/South_Afrika.rst
 share/apps/kppp/Rules/Spain/Infovia.rst
 share/apps/kppp/Rules/Spain/Infovia_IVA.rst
@@ -598,15 +604,19 @@ share/apps/ksirc/test.pl
 share/apps/ksirc/tester.pl
 share/apps/lisa/README
 share/config/ksircrc
+share/config/ktalkdrc
 share/doc/HTML/en/kdict/applet.png
 share/doc/HTML/en/kdict/common
 share/doc/HTML/en/kdict/conf.png
+share/doc/HTML/en/kdict/index.cache.bz2
 share/doc/HTML/en/kdict/index.docbook
 share/doc/HTML/en/kdict/mainwin.png
 share/doc/HTML/en/kdict/seteditor.png
 share/doc/HTML/en/kit/common
+share/doc/HTML/en/kit/index.cache.bz2
 share/doc/HTML/en/kit/index.docbook
 share/doc/HTML/en/kmail/common
+share/doc/HTML/en/kmail/index.cache.bz2
 share/doc/HTML/en/kmail/index.docbook
 share/doc/HTML/en/knewsticker/TODO
 share/doc/HTML/en/knewsticker/about-icon.png
@@ -615,6 +625,7 @@ share/doc/HTML/en/knewsticker/common
 share/doc/HTML/en/knewsticker/contextmenu.png
 share/doc/HTML/en/knewsticker/downarrow-icon.png
 share/doc/HTML/en/knewsticker/help-icon.png
+share/doc/HTML/en/knewsticker/index.cache.bz2
 share/doc/HTML/en/knewsticker/index.docbook
 share/doc/HTML/en/knewsticker/kcmnewsticker-general.png
 share/doc/HTML/en/knewsticker/kcmnewsticker-newssources.png
@@ -632,6 +643,7 @@ share/doc/HTML/en/knode/eyes.png
 share/doc/HTML/en/knode/german_original.docbook
 share/doc/HTML/en/knode/greyball.png
 share/doc/HTML/en/knode/greyballchk.png
+share/doc/HTML/en/knode/index.cache.bz2
 share/doc/HTML/en/knode/index.docbook
 share/doc/HTML/en/knode/knode-cleanup.png
 share/doc/HTML/en/knode/knode-colors-fonts.png
@@ -648,6 +660,7 @@ share/doc/HTML/en/knode/knode-mail-account.png
 share/doc/HTML/en/knode/knode-new-article.png
 share/doc/HTML/en/knode/knode-news-account.png
 share/doc/HTML/en/knode/knode-post-settings.png
+share/doc/HTML/en/knode/knode-read-news-appearance-dialog.png
 share/doc/HTML/en/knode/knode-read-news-settings.png
 share/doc/HTML/en/knode/knode-reply.png
 share/doc/HTML/en/knode/knode-search.png
@@ -659,6 +672,7 @@ share/doc/HTML/en/knode/redball.png
 share/doc/HTML/en/knode/redballchk.png
 share/doc/HTML/en/knode/translation.po
 share/doc/HTML/en/korn/common
+share/doc/HTML/en/korn/index.cache.bz2
 share/doc/HTML/en/korn/index.docbook
 share/doc/HTML/en/kppp/accounting.docbook
 share/doc/HTML/en/kppp/callback.docbook
@@ -670,6 +684,7 @@ share/doc/HTML/en/kppp/dialog-setup.docbook
 share/doc/HTML/en/kppp/getting-online.docbook
 share/doc/HTML/en/kppp/global-settings.docbook
 share/doc/HTML/en/kppp/hayes.docbook
+share/doc/HTML/en/kppp/index.cache.bz2
 share/doc/HTML/en/kppp/index.docbook
 share/doc/HTML/en/kppp/kppp-account-accounting-tab.png
 share/doc/HTML/en/kppp/kppp-account-dial-tab.png
@@ -692,10 +707,13 @@ share/doc/HTML/en/kppp/tricks.docbook
 share/doc/HTML/en/kppp/ttyS-cua.txt
 share/doc/HTML/en/kppp/wizard.docbook
 share/doc/HTML/en/ksirc/common
+share/doc/HTML/en/ksirc/index.cache.bz2
 share/doc/HTML/en/ksirc/index.docbook
 share/doc/HTML/en/ktalkd/common
+share/doc/HTML/en/ktalkd/index.cache.bz2
 share/doc/HTML/en/ktalkd/index.docbook
 share/doc/HTML/en/lisa/common
+share/doc/HTML/en/lisa/index.cache.bz2
 share/doc/HTML/en/lisa/index.docbook
 share/icons/hicolor/16x16/apps/kdict.png
 share/icons/hicolor/16x16/apps/kit.png
@@ -813,6 +831,8 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kppp/Provider
 @dirrm share/apps/kppp
 @dirrm share/apps/konqueror/dirtree/remote
+@dirrm share/apps/konqueror/dirtree
+@dirrm share/apps/konqueror
 @dirrm share/apps/knode/pics
 @dirrm share/apps/knode/icons/hicolor/32x32/actions
 @dirrm share/apps/knode/icons/hicolor/32x32
@@ -820,6 +840,8 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/knode/icons/hicolor/22x22
 @dirrm share/apps/knode/icons/hicolor/16x16/actions
 @dirrm share/apps/knode/icons/hicolor/16x16
+@dirrm share/apps/knode/icons/hicolor
+@dirrm share/apps/knode/icons
 @dirrm share/apps/knode/filters
 @dirrm share/apps/knode
 @dirrm share/apps/knewsticker
@@ -832,6 +854,7 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kit/icons
 @dirrm share/apps/kit
 @dirrm share/apps/kicker/applets
+@dirrm share/apps/kicker
 @dirrm share/apps/kdict/icons/hicolor/32x32/actions
 @dirrm share/apps/kdict/icons/hicolor/32x32
 @dirrm share/apps/kdict/icons/hicolor/22x22/actions
@@ -842,11 +865,12 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kdict/icons
 @dirrm share/apps/kdict
 @dirrm share/apps/kconf_update
-@dirrm share/apps
 @dirrm share/applnk/Utilities
 @dirrm share/applnk/Settings/Personalization
 @dirrm share/applnk/Settings/Network
+@dirrm share/applnk/Settings
 @dirrm share/applnk/Internet
 @dirrm share/applnk/.hidden
+@dirrm share/applnk
 @dirrm lib/kde2
 @dirrm include/mimelib
