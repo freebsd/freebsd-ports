@@ -258,6 +258,7 @@
     SUBDIR += rwhois
     SUBDIR += samba
     SUBDIR += samba-devel
+    SUBDIR += satellite
     SUBDIR += scotty
     SUBDIR += scotty3
     SUBDIR += sdl_net
