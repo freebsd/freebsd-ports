@@ -1,0 +1,10 @@
+The chrootuid command combines chroot(8) and su(1) into one program,
+so that there is no need to have commands such as /usr/bin/su in the
+restricted environment.  Access to the file system is restricted to
+the newroot subtree and privileges are restricted to those of the
+newuser account (which must be a known account in the unrestricted
+environment).
+
+See also jail(8) in FreeBSD 4.0.
+
+-- Don Lewis	(truckman@FreeBSD.org)

@@ -1,0 +1,8 @@
+--- chrootuid.1.orig	Wed Dec  8 20:52:03 1999
++++ chrootuid.1	Wed Dec  8 20:53:13 1999
+@@ -1,4 +1,4 @@
+-.TH CHROOTUID 1 
++.TH CHROOTUID 8 
+ .ad
+ .fi
+ .SH NAME
