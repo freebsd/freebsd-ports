@@ -1,0 +1,12 @@
+This is a window manager based on the Qt library.  It supports
+icons, keyboard controls, and virtual screens.  It comes with two
+applets:  a biff-like mail indicator and a clock, both designed to
+be swallowed by its toolbar.
+
+Caution!  This window manager will end your X session when it is
+killed, so finish up in all your X programs first.
+
+WWW:  http://www.netcologne.de/~nc-lindenal/qlwm
+
+Trevor Johnson
+trevor@FreeBSD.org

@@ -1,0 +1,11 @@
+--- mail/Makefile.orig	Tue Oct 17 05:05:20 2000
++++ mail/Makefile	Thu Jan 25 16:52:45 2001
+@@ -8,7 +8,7 @@
+ #CXXFLAGS	= -Wall -pipe
+ 
+ # include files
+-INCPATH		= -I$(QTDIR)/include
++INCPATH		= -I${X11BASE}/include/qt2 -I${X11BASE}/include
+ 
+ # libraries
+ LFLAGS		= -L$(QTDIR)/lib

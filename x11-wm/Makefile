@@ -37,6 +37,7 @@
     SUBDIR += olvwm
     SUBDIR += piewm
     SUBDIR += pwm
+    SUBDIR += qlwm
     SUBDIR += qvwm
     SUBDIR += sapphire
     SUBDIR += sapphire-themes

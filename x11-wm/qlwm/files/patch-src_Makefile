@@ -1,0 +1,20 @@
+--- src/Makefile.orig	Tue Oct 17 05:05:22 2000
++++ src/Makefile	Thu Jan 25 16:54:44 2001
+@@ -7,7 +7,7 @@
+ #CXXFLAGS	= -pipe -DDEBUGMSG
+ 
+ # include files
+-INCPATH		= -I/usr/X11R6/include -I$(QTDIR)/include
++INCPATH=		-I${X11BASE}/include/qt2 -I${X11BASE}/include
+ 
+ # libraries
+ LFLAGS		= -L/usr/X11R6/lib -L$(QTDIR)/lib
+@@ -30,7 +30,7 @@
+ .SUFFIXES: .cpp
+ 
+ .cpp.o:
+-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o $@ $<
++	$(CXX) $(CXXFLAGS) $(INCPATH) -o $@ -c $<
+ 	
+ ####### Build rules
+ 
