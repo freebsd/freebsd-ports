@@ -3,7 +3,7 @@
 # Date created:		19 November 1996
 # Whom:			Pedro Giffuni <pgiffuni@fps.biblos.unal.edu.co>
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/18 08:30:55 tg Exp $
+# $Id: Makefile,v 1.2 1997/02/18 10:08:02 obrien Exp $
 #
 
 DISTNAME=	freeWAIS-sf-2.1.2
@@ -13,7 +13,6 @@ MASTER_SITES=   ftp://ftp.wsct.wsc.com/pub/freeWAIS-sf/freeWAIS-sf-2.1/
 
 MAINTAINER=	pgiffuni@fps.biblos.unal.edu.co
 
-IS_INTERACTIVE= yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+= < ${FILESDIR}/configure.ans
 MAN1=	catalog.1 dictionary.1 inverted_file.1 makedb.1 mkfmt.1 waisindex.1 \
