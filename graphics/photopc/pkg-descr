@@ -1,0 +1,20 @@
+Author email: crosser@average.org
+
+(From README file):
+/*
+	Copyright (c) 1997 Eugene G. Crosser
+
+	You may do virtually what you wish with this software, as long
+	as the explicit reference to its original author is retained.
+
+	THIS SOFTWARE IS PROVIDED AS IS AND COME WITH NO WARRANTY OF ANY
+	KIND, EITHER EXPRESSED OR IMPLIED.  IN NO EVENT WILL THE
+	COPYRIGHT HOLDER BE LIABLE FOR ANY DAMAGES RESULTING FROM THE
+	USE OF THIS SOFTWARE.
+*/
+
+This is a library and a command-line frontend to manipulate an Epson
+PhotoPC digital still camera.  The camera comes with software for
+Windows and for Mac, and no description of the protocol.  With this
+tool, it is managable from a UNIX box.  It is quite probable that the
+program will also work with Olympus Camedia camera.
