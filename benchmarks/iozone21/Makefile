@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LATEST_LINK=	iozone21
 
-EXTRACT_CMD=	( gzcat | awk '{if (/^\#!/) x++} {if(x) print $$0'}| /bin/sh )
+EXTRACT_CMD=	( ${GZCAT} | ${AWK} '{if (/^\#!/) x++} {if(x) print $$0'}| ${SH} )
 EXTRACT_BEFORE_ARGS=	<
 EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	YES
