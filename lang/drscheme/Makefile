@@ -17,6 +17,7 @@ DISTNAME=	plt.src.x
 
 MAINTAINER=	jkoshy@freebsd.org
 
+DIST_SUBDIR=	drscheme/${PORTVERSION}
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/plt/src
 ALL_TARGET=	all install
