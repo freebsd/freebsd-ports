@@ -1,9 +1,9 @@
---- Makefile.in.orig	Sun Jul 29 08:18:38 2001
-+++ Makefile.in	Sun Jul 29 08:20:43 2001
-@@ -190,21 +190,21 @@
- 
+--- Makefile.in.orig	Sat Jun 29 11:57:34 2002
++++ Makefile.in	Sat Jun 29 12:00:28 2002
+@@ -257,23 +257,23 @@
  install: install-$(PLUGINS)
  	#Installing X Northern Captain...
+ 	$(INSD) $(INSTDIR)
 -	$(INS) ./users.xnc $(INSTDIR)
 -	$(INS) ./groups.xnc $(INSTDIR)
 +	$(INSTALL_PROGRAM) ./users.xnc $(INSTDIR)
@@ -15,20 +15,23 @@
  	$(INS) ./bzip.xnc $(INSTDIR)
 -	$(INS) ./nc $(INSTDIR)/xnc
 +	$(INSTALL_PROGRAM) ./nc $(INSTDIR)/xnc
+ 	$(INSD) $(INSTMAN)
  	$(INSM) ./yo-man/*.1 $(INSTMAN)/man1
 -	$(INS) ./ives/ives $(INSTDIR)
--	$(INS) ./ives/es $(INSTDIR)
--	$(INS) ./ives/vs $(INSTDIR)
+-	$(INS) ./ives/iedit $(INSTDIR)
+-	$(INS) ./ives/iview $(INSTDIR)
 -	$(INS) ./xsetup/xncsetup $(INSTDIR)
 -	$(INS) ./xjroot/xjpegroot $(INSTDIR)
 -	$(INS) ./launch/xnlaunch $(INSTDIR)
+-	$(INS) ./resloader/xncloader $(INSTDIR)
 -	/bin/sh ./replace.script
 +	$(INSTALL_PROGRAM) ./ives/ives $(INSTDIR)
-+	$(INSTALL_PROGRAM) ./ives/es $(INSTDIR)
-+	$(INSTALL_PROGRAM) ./ives/vs $(INSTDIR)
++	$(INSTALL_PROGRAM) ./ives/iedit $(INSTDIR)
++	$(INSTALL_PROGRAM) ./ives/iview $(INSTDIR)
 +	$(INSTALL_PROGRAM) ./xsetup/xncsetup $(INSTDIR)
 +	$(INSTALL_PROGRAM) ./xjroot/xjpegroot $(INSTDIR)
 +	$(INSTALL_PROGRAM) ./launch/xnlaunch $(INSTDIR)
++	$(INSTALL_PROGRAM) ./resloader/xncloader $(INSTDIR)
 +#	/bin/sh ./replace.script
  	@echo "Don't foget run 'xncsetup' before starting XNC"
  

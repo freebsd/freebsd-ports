@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnc
-PORTVERSION=	4.4.5
+PORTVERSION=	4.4.7
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.xnc.dubna.su/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -24,11 +24,13 @@ MAINTAINER=	demon@FreeBSD.org
 #RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 #.endif
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_X_PREFIX=	yes
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS+=--with-pty=BSD
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
@@ -36,16 +38,13 @@ INSTALLS_SHLIB=	yes
 MAN1=		es.1 ives.1 vs.1 xjpegroot.1 xnc.1 xnlaunch.1
 
 pre-patch:
-	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
-		${WRKSRC}/image/picinfo.h ${WRKSRC}/jpeg/jmemdos.c \
-		${WRKSRC}/libpng/ansi2knr.c ${WRKSRC}/libpng/pngconf.h \
-		${WRKSRC}/zlib/zutil.h
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' ${WRKSRC}/image2/picinfo.h
 
 post-install:
 .if !defined(NOPORTDOCS)
-		@${MKDIR} ${DOCSDIR}
-		@${INSTALL_DATA} ${WRKSRC}/Docs/* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Docs/* ${DOCSDIR}
 .endif
-		@${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
