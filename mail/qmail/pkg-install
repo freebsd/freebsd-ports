@@ -20,7 +20,7 @@ if ($ARGV[1] eq "POST-INSTALL") {
           'qmailq', "qmail", 'qmailr', "qmail", 'qmails', "qmail");
 # daemon, local, pop, queue, remote, deliver, respectively.
 # alias is a special case above...
-%gids = ("qmail", 80, "qnofiles", 81);
+%gids = ("qmail", 82, "qnofiles", 81);
 %uids = ('alias', 81, 'qmaild', 82, 'qmaill', 83, 'qmailp', 84, 'qmailq', 85,
          'qmailr', 86, 'qmails', 87);
 
