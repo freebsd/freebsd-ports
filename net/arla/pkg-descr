@@ -4,7 +4,7 @@ The main goal of the Arla project is to make a fully functional client with all
 capabilities of commercial AFS. Other planned and implemented things are
 all the normal management tools and a server.
 
-Version 0.33.1 status:
+Version 0.35.5 status:
 
 * Read/write support
 * Authentication (with kth-krb4)
