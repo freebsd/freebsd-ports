@@ -1,0 +1,15 @@
+--- cdda_d/Imakefile.orig	Fri Jun  7 13:33:15 2002
++++ cdda_d/Imakefile	Fri Jun  7 13:33:21 2002
+@@ -76,6 +76,12 @@
+ #endif  /* Linux Sun AIX Ultrix USL SVR4 */
+ #endif
+ 
++#if defined(FreeBSDArchitecture)
++/* The following is BSD-make specific */
++.if exists(/usr/include/camlib.h)
++DEFINES+= -DFREEBSD_CAM -DHAS_SETEUID
++.endif
++#endif
+ 
+ /*
+  * Add local include path
