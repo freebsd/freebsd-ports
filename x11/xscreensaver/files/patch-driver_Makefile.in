@@ -1,0 +1,119 @@
+--- driver/Makefile.in.Dist	Wed Oct 23 20:26:18 2002
++++ driver/Makefile.in	Thu Oct 24 23:20:33 2002
+@@ -216,8 +216,6 @@
+ EXTRAS		= README Makefile.in XScreenSaver.ad.in xscreensaver.pam \
+ 		  xscreensaver-demo.glade xscreensaver-demo.glade2 \
+ 		  xscreensaver-demo.glade2p \
+-		  screensaver-properties.desktop.in \
+-		  screensaver-properties-capplet \
+ 		  xscreensaver.kss.in \
+ 		  .gdbinit
+ VMSFILES	= compile_axp.com compile_decc.com link_axp.com link_decc.com \
+@@ -451,107 +449,6 @@
+  $$e ""									     ;\
+ 	  fi ;								\
+ 	fi
+-
+-install-gnome:: screensaver-properties.desktop
+-	@lost=""							     ;\
+-         if [ "$(GNOME_DATADIR)" != "" ]; then                                \
+-	                                                                      \
+-           if [ ! -d "$(install_prefix)$(GNOME_CCDIR_1)" ]; then              \
+-             echo $(INSTALL_DIRS) "$(install_prefix)$(GNOME_CCDIR_1)"        ;\
+-                  $(INSTALL_DIRS) "$(install_prefix)$(GNOME_CCDIR_1)"        ;\
+-           fi                                                                ;\
+-           if [ ! -d "$(install_prefix)$(GNOME_CCDIR_2)" ]; then              \
+-             echo $(INSTALL_DIRS) "$(install_prefix)$(GNOME_CCDIR_2)"        ;\
+-                  $(INSTALL_DIRS) "$(install_prefix)$(GNOME_CCDIR_2)"        ;\
+-           fi                                                                ;\
+-           if [ ! -d "$(install_prefix)$(GNOME_CCDIR_3)" ]; then              \
+-             echo $(INSTALL_DIRS) "$(install_prefix)$(GNOME_CCDIR_3)"        ;\
+-                  $(INSTALL_DIRS) "$(install_prefix)$(GNOME_CCDIR_3)"        ;\
+-           fi                                                                ;\
+-           if [ ! -d "$(install_prefix)$(GNOME_PANELDIR)" ]; then             \
+-             echo $(INSTALL_DIRS) "$(install_prefix)$(GNOME_PANELDIR)"       ;\
+-                  $(INSTALL_DIRS) "$(install_prefix)$(GNOME_PANELDIR)"       ;\
+-           fi                                                                ;\
+-	                                                                      \
+-           echo $(INSTALL_DATA) screensaver-properties.desktop		      \
+-             $(install_prefix)$(GNOME_CCDIR_1)/screensaver-properties.desktop;\
+-	                                                                      \
+-           if   $(INSTALL_DATA) screensaver-properties.desktop		      \
+-             $(install_prefix)$(GNOME_CCDIR_1)/screensaver-properties.desktop;\
+-             then true                                                       ;\
+-           else                                                               \
+-             lost="$$lost $(install_prefix)$(GNOME_CCDIR_1)"                 ;\
+-           fi                                                                ;\
+-	                                                                      \
+-           echo $(INSTALL_DATA) screensaver-properties.desktop		      \
+-             $(install_prefix)$(GNOME_CCDIR_2)/screensaver-properties.desktop;\
+-	                                                                      \
+-           if   $(INSTALL_DATA) screensaver-properties.desktop		      \
+-             $(install_prefix)$(GNOME_CCDIR_2)/screensaver-properties.desktop;\
+-             then true                                                       ;\
+-           else                                                               \
+-             lost="$$lost $(install_prefix)$(GNOME_CCDIR_2)"                 ;\
+-           fi                                                                ;\
+-	                                                                      \
+-           echo $(INSTALL_DATA) screensaver-properties.desktop		      \
+-             $(install_prefix)$(GNOME_CCDIR_3)/screensaver-properties.desktop;\
+-	                                                                      \
+-           if   $(INSTALL_DATA) screensaver-properties.desktop		      \
+-             $(install_prefix)$(GNOME_CCDIR_3)/screensaver-properties.desktop;\
+-             then true                                                       ;\
+-           else                                                               \
+-             lost="$$lost $(install_prefix)$(GNOME_CCDIR_3)"                 ;\
+-           fi                                                                ;\
+-	                                                                      \
+-           echo $(INSTALL_DATA) screensaver-properties.desktop		      \
+-            $(install_prefix)$(GNOME_PANELDIR)/screensaver-properties.desktop;\
+-           if   $(INSTALL_DATA) screensaver-properties.desktop		      \
+-            $(install_prefix)$(GNOME_PANELDIR)/screensaver-properties.desktop;\
+-             then true                                                       ;\
+-           else                                                               \
+-             lost="$$lost $(install_prefix)$(GNOME_PANELDIR)"                ;\
+-           fi                                                                ;\
+-	                                                                      \
+-           if [ "$$lost" != "" ]; then                                        \
+-             e=echo ;                                                         \
+- $$e ""                                                                      ;\
+- $$e "  ####################################################################";\
+- $$e "  Warning: unable to install screensaver-properties.desktop into:"     ;\
+-	set - $$lost							     ;\
+-	for f in $$@ ; do echo "             $$f/" ; done                    ;\
+- $$e '           This means the "Screen Saver" section of the Gnome'         ;\
+- $$e "           Control Center (gnomecc) may not work properly."	     ;\
+- $$e "  ####################################################################";\
+- $$e ""                                                                      ;\
+-             exit 1 ;                                                         \
+-           fi                                                                ;\
+-         fi
+-
+-install-gnome:: screensaver-properties-capplet
+-	@if [ "$(GNOME_DATADIR)" != "" ]; then                                \
+-           if [ ! -d "$(install_prefix)$(GNOME_BINDIR)" ]; then               \
+-             echo $(INSTALL_DIRS) "$(install_prefix)$(GNOME_BINDIR)"         ;\
+-                  $(INSTALL_DIRS) "$(install_prefix)$(GNOME_BINDIR)"         ;\
+-           fi                                                                ;\
+-	   program=screensaver-properties-capplet			     ;\
+-	   echo $(INSTALL_SCRIPT) $(srcdir)/$$program			      \
+-	          $(install_prefix)$(GNOME_BINDIR)/$$program		     ;\
+-	   if   $(INSTALL_SCRIPT) $(srcdir)/$$program			      \
+-	          $(install_prefix)$(GNOME_BINDIR)/$$program		     ;\
+-             then true                                                       ;\
+-           else                                                               \
+-             e=echo ;                                                         \
+- $$e ""                                                                      ;\
+- $$e "  ####################################################################";\
+- $$e "  Warning: unable to install $$program into"			     ;\
+- $$e "           $(install_prefix)$(GNOME_BINDIR)/."                         ;\
+- $$e "           Without this file, the Gnome session manager will not"      ;\
+- $$e "           launch xscreensaver properly at login time."                ;\
+- $$e "  ####################################################################";\
+- $$e ""                                                                      ;\
+-             exit 1 ;                                                         \
+-	   fi ;                                                               \
+-	 fi
+ 
+ # xscreensaver.xpm
+ install-gnome:: $(LOGO)
