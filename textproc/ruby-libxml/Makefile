@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxml
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.rubynet.org/modules/xml/libxml/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
