@@ -7,6 +7,7 @@
     SUBDIR += felt
     SUBDIR += geda
     SUBDIR += geda-symbols
+    SUBDIR += geda-symcheck
     SUBDIR += gerbv
     SUBDIR += gnetlist
     SUBDIR += gnucap
