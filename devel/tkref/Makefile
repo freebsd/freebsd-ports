@@ -19,8 +19,10 @@ RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes
 
+USE_REINPLACE=	yes
+
 do-patch:
-	perl -pi -e "s|/usr/local/bin/wish4.1|${PREFIX}/bin/wish8.2|;" \
+	${REINPLACE_CMD} -e "s|/usr/local/bin/wish4.1|${LOCALBASE}/bin/wish8.2|;" \
 		${WRKDIR}/TkRef
 
 do-install:

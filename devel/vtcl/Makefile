@@ -20,8 +20,10 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= ${PREFIX}
 NO_BUILD=	yes
 
+USE_REINPLACE=	yes
+
 pre-configure:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/vtcl ${PREFIX}/bin

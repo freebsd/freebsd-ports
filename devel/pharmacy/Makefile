@@ -15,6 +15,7 @@ MAINTAINER=	jedgar@FreeBSD.org
 COMMENT=	GNOME frontend for CVS
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -22,12 +23,12 @@ CONFIGURE_ENV+=	CPPCFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+		s|\(DATADIRNAME=\)lib|\1share|g ; \
+		s|USE_INCLUDED_LIBINTL=yes|#&|g ; \
+		s|\$$(top_builddir)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\(\$$(datadir)/\)gnome/|\1|g ; \
+		 s|\$$(datadir)/locale|$$(prefix)/share/locale|g'
 
 .include <bsd.port.mk>

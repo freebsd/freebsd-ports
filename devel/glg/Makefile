@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	kris
 MAINTAINER=	lo_gafet@users.sourceforge.net
 COMMENT=	Open Application Builder (code generator) for the GTK and/or GNOME
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
@@ -28,7 +29,7 @@ USE_GNOME+=	gnomelibs
 .endif
 
 pre-build:
-	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${PERL} \
-		-pi -e "s@gtk-config@${GTK_CONFIG}@g"
+	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
+		's@gtk-config@${GTK_CONFIG}@g'
 
 .include <bsd.port.post.mk>

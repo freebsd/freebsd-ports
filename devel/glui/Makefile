@@ -20,13 +20,13 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	# empty
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's:/unc/walk/lib/sgi_irix:${PREFIX}/lib:g' ${WRKSRC}/makefile
-	@${PERL} -pi -e 's:/unc/walk/include:${PREFIX}/include:g' ${WRKSRC}/makefile
-	@${PERL} -pi -e 's:^CFLAGS:#CFLAGS:g' ${WRKSRC}/makefile
-	@${PERL} -pi -e 's:^CC=:CC=gcc #:g' ${WRKSRC}/makefile
-	@${PERL} -pi -e 's:^libs =:libs=-pthread:g' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's:/unc/walk/lib/sgi_irix:${PREFIX}/lib:g; \
+		s:/unc/walk/include:${PREFIX}/include:g; \
+		s:^CFLAGS:#&:; s:^CC=:CC?=gcc #:; \
+		s:^libs =:&${PTHREAD_LIBS}:' ${WRKSRC}/makefile
 	@${MKDIR} ${WRKSRC}/lib ${WRKSRC}/bin
 
 do-install:
