@@ -1,0 +1,11 @@
+--- po/Makefile.in.in.orig	Sat Jan 31 09:31:19 2004
++++ po/Makefile.in.in	Thu Feb  5 17:26:28 2004
+@@ -106,7 +106,7 @@
+ 	@catalogs='$(CATALOGS)'; \
+ 	for cat in $$catalogs; do \
+ 	  cat=`basename $$cat`; \
+-	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
++	  lang=`echo $$cat | sed 's/\.mo$$//'`; \
+ 	  dir=$(localedir)/$$lang/LC_MESSAGES; \
+ 	  $(mkinstalldirs) $(DESTDIR)$$dir; \
+ 	  if test -r $$cat; then \

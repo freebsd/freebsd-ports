@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Thu Feb  5 03:10:13 2004
++++ Makefile.in	Thu Feb  5 17:22:51 2004
+@@ -521,7 +521,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-desktopDATA install-rubricadocDATA \
++install-data-am: install-desktopDATA \
+ 	install-schemas_DATA
+ 
+ install-exec-am:
