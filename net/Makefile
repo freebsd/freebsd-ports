@@ -141,6 +141,7 @@
     SUBDIR += libicq
     SUBDIR += libnet
     SUBDIR += libnids
+    SUBDIR += librsync
     SUBDIR += libsmi
     SUBDIR += libsocket++
     SUBDIR += libunp
