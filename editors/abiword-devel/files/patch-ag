@@ -1,13 +1,11 @@
---- config/abi_defs.mk.orig	Thu Apr 29 10:46:27 1999
-+++ config/abi_defs.mk	Sun May  9 10:40:19 1999
-@@ -230,8 +230,8 @@
- ## We should change this when get non-gtk versions on unix....
+--- wp/impexp/xp/ie_imp_AbiWord_1.h	Thu Jul 22 14:29:34 1999
++++ wp/impexp/xp/ie_imp_AbiWord_1.h.new	Sat Oct 30 21:37:43 1999
+@@ -22,7 +22,7 @@
+ #define IE_IMP_ABIWORD_1_H
  
- ifeq ($(ABI_NATIVE),unix)
--CFLAGS 		+=	`gtk-config --cflags`
--EXTRA_LIBS	+=	`gtk-config --libs`
-+CFLAGS 		+=	`gtk12-config --cflags`
-+EXTRA_LIBS	+=	`gtk12-config --libs`
- endif
- 
- ##################################################################
+ #include <stdio.h>
+-#include "xmlparse.h"
++#include <xmlparse.h>
+ #include "ut_vector.h"
+ #include "ut_stack.h"
+ #include "ie_imp.h"
