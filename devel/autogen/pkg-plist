@@ -16,7 +16,7 @@ lib/libguileopts.so.0
 lib/libopts.a
 lib/libopts.la
 lib/libopts.so
-lib/libopts.so.10
+lib/libopts.so.11
 lib/libsnprintfv.a
 lib/libsnprintfv.la
 lib/libsnprintfv.so
@@ -24,6 +24,7 @@ lib/libsnprintfv.so.1
 share/aclocal/autoopts.m4
 share/autogen/aginfo.tpl
 share/autogen/agman1.tpl
+share/autogen/config.tpl
 share/autogen/fsm-macro.tpl
 share/autogen/fsm-trans.tpl
 share/autogen/fsm.tpl
