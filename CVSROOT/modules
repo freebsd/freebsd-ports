@@ -7900,6 +7900,7 @@ postfix-current	ports/mail/postfix-current
 postfix1	ports/mail/postfix1
 postfix20	ports/mail/postfix20
 postfixadmin	ports/mail/postfixadmin
+postgis		ports/databases/postgis
 postgresql-contrib	ports/databases/postgresql-contrib
 postgresql-devel	ports/databases/postgresql-devel
 postgresql-docs	ports/databases/postgresql-docs
