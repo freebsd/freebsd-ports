@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asir
-PORTVERSION=	20030507
+PORTVERSION=	20030825
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.jssac.org/pub/distfiles/asir/ \
 		ftp://ftp.asir.org/pub/asir/src/
@@ -20,13 +20,14 @@ LIB_DEPENDS=	pari-2.2:${PORTSDIR}/math/pari-devel
 
 GNU_CONFIGURE=	yes
 USE_AUTOMAKE=	yes
-USE_AUTOCONF=   yes
+USE_AUTOCONF=	yes
 USE_AUTOMAKE_VER=	15
 USE_XLIB=	yes
-CONFIGURE_ARGS= --enable-shared --enable-plot --enable-fep --enable-interval --with-pari=new
+CONFIGURE_ARGS=	--enable-shared --enable-plot --enable-fep --enable-interval --with-pari=new
 ASIR_DOC_VERSION=	20030507
 ASIR_DOC=	asirdoc-${ASIR_DOC_VERSION}.tar.gz
 MAN1=		asir.1
+PREFIX?=	${LOCALBASE}
 WRKSRC=		${WRKDIR}/asir2000
 
 LIB_DATA=	alpi bfct bgk const cyclic defs.h dfff dmul fctrdata fctrtest \
