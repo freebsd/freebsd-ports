@@ -15,8 +15,7 @@ fi
 Please select desired options:" -1 -1 14 \
 tuning		"Apache: performance tuning" OFF \
 modssl		"Apache: SSL support" OFF \
-GD		"PHP:    GD library support" OFF \
-FreeType	"PHP:    TrueType font rendering (implies GD)" OFF \
+GD		"PHP:    GD support & FreeType font rendering" OFF \
 zlib		"PHP:    zlib library support" ON \
 mcrypt		"PHP:    Encryption support" OFF \
 mhash		"PHP:    Crypto-hashing support" OFF \
@@ -58,15 +57,9 @@ while [ "$1" ]; do
 			;;
 		\"GD\")
 			echo "LIB_DEPENDS+=	gd.0:\${PORTSDIR}/graphics/gd"
-			echo "PHP_CONF_ARGS+=	--with-gd=\${PREFIX}"
-			GD=1
-			;;
-		\"FreeType\")
 			echo "LIB_DEPENDS+=	ttf.4:\${PORTSDIR}/print/freetype"
+			echo "PHP_CONF_ARGS+=	--with-gd=\${PREFIX}"
 			echo "PHP_CONF_ARGS+=	--with-ttf=\${PREFIX}"
-			if [ -z "$GD" ]; then
-				set $* \"GD\"
-			fi
 			;;
 		\"zlib\")
 			echo "PHP_CONF_ARGS+=	--with-zlib"
