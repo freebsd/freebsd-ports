@@ -1,0 +1,20 @@
+[ excerpt from developer's web site ]
+
+Sch is a pure Java implementation of SSH2. JSch allows you to connect
+to an sshd server and use port forwarding, X11 forwarding, file
+transfer, etc., and you can integrate its functionality into your
+own Java programs. JSch is licensed under BSD style license.
+
+- Why JSch?
+Our intension in developing this stuff is to enable users of our
+pure java X servers, WiredX and WeirdX, to enjoy secure X sessions.
+Our efforts have mostly targeted the SSH2 protocol in relation to
+X window system and X11 forwarding. Of course, we are also interested
+in adding other functionality - port forward, file transfer, terminal
+emulation, etc.
+
+Visit these following web pages for more information:
+
+WWW: http://www.jcraft.com/jsch/
+
+-- lioux@FreeBSD.org
