@@ -8,7 +8,6 @@ etc/gconf/schemas/gnome-session.schemas
 share/gnome/control-center-2.0/capplets/session-properties.desktop
 share/gnome/default.session
 share/gnome/default.wm
-share/gnome/pixmaps/splash/gnome-splash-1.4.0.png
 share/gnome/pixmaps/splash/gnome-splash.png
 share/locale/az/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-session-2.0.mo

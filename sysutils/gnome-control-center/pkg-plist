@@ -1,6 +1,7 @@
 bin/gnome-accessibility-keyboard-properties
 bin/gnome-background-properties
 bin/gnome-control-center
+bin/gnome-default-applications-properties
 bin/gnome-file-types-properties
 bin/gnome-font-properties
 bin/gnome-keybinding-properties
@@ -12,15 +13,25 @@ bin/gnome-sound-properties
 bin/gnome-theme-properties
 bin/gnome-ui-properties
 etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/screensaver/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/editor/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/screensaver/%gconf.xml
+etc/gconf/schemas/apps_gnome_settings_daemon_default_editor.schemas
 etc/gconf/schemas/apps_gnome_settings_daemon_screensaver.schemas
+include/gnome-window-settings-2.0/gnome-window-manager.h
+include/gnome-window-settings-2.0/gnome-wm-manager.h
+lib/libgnome-window-settings.a
+lib/libgnome-window-settings.so
+lib/libgnome-window-settings.so.1
 libdata/bonobo/servers/GNOME_SettingsDaemon.server
+libdata/pkgconfig/gnome-window-settings-2.0.pc
 share/gnome/applications/gnomecc.desktop
 share/gnome/control-center-2.0/capplets/accessibility-keyboard.desktop
 share/gnome/control-center-2.0/capplets/background.desktop
 share/gnome/control-center-2.0/capplets/behavior.desktop
+share/gnome/control-center-2.0/capplets/default-applications.desktop
 share/gnome/control-center-2.0/capplets/file-types.desktop
 share/gnome/control-center-2.0/capplets/font-properties.desktop
 share/gnome/control-center-2.0/capplets/gnome-network-preferences.desktop
@@ -35,6 +46,7 @@ share/gnome/control-center-2.0/icons/advanced-directory.png
 share/gnome/control-center-2.0/icons/background-capplet.png
 share/gnome/control-center-2.0/icons/behavior-capplet.png
 share/gnome/control-center-2.0/icons/control-center.png
+share/gnome/control-center-2.0/icons/default-applications-capplet.png
 share/gnome/control-center-2.0/icons/font-capplet.png
 share/gnome/control-center-2.0/icons/mouse-capplet.png
 share/gnome/control-center-2.0/icons/sound-capplet.png
@@ -42,6 +54,7 @@ share/gnome/control-center-2.0/interfaces/background-properties.glade
 share/gnome/control-center-2.0/interfaces/file-types-properties.glade
 share/gnome/control-center-2.0/interfaces/font-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-accessibility-keyboard-properties.glade2
+share/gnome/control-center-2.0/interfaces/gnome-default-applications-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-keybinding-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-keyboard-properties.glade
 share/gnome/control-center-2.0/interfaces/gnome-mouse-properties.glade
@@ -68,29 +81,17 @@ share/gnome/control-center-2.0/pixmaps/mouse-cursor-white-large.png
 share/gnome/control-center-2.0/pixmaps/mouse-cursor-white.png
 share/gnome/control-center-2.0/pixmaps/mouse-left.png
 share/gnome/control-center-2.0/pixmaps/mouse-right.png
-share/gnome/cursor-fonts/cursor-large-white.pcf.gz
-share/gnome/cursor-fonts/cursor-large.pcf.gz
-share/gnome/cursor-fonts/cursor-white.pcf.gz
+share/gnome/cursor-fonts/cursor-large-white.pcf
+share/gnome/cursor-fonts/cursor-large.pcf
+share/gnome/cursor-fonts/cursor-white.pcf
 share/gnome/gnome-2.0/ui/gnomecc-ui.xml
-share/gnome/help/control-center-manual/C/config-accessibility-keyboard.xml
-share/gnome/help/control-center-manual/C/config-background.xml
-share/gnome/help/control-center-manual/C/config-behavior.xml
-share/gnome/help/control-center-manual/C/config-cds.xml
-share/gnome/help/control-center-manual/C/config-file-type.xml
-share/gnome/help/control-center-manual/C/config-hints.xml
-share/gnome/help/control-center-manual/C/config-html.xml
-share/gnome/help/control-center-manual/C/config-kbd.xml
-share/gnome/help/control-center-manual/C/config-keybindings.xml
-share/gnome/help/control-center-manual/C/config-mouse.xml
-share/gnome/help/control-center-manual/C/config-screensaver.xml
-share/gnome/help/control-center-manual/C/config-sound.xml
-share/gnome/help/control-center-manual/C/config-themes.xml
 share/gnome/idl/ConfigArchiver.idl
 share/gnome/idl/GNOME_SettingsDaemon.idl
 share/gnome/pixmaps/accessibility-keyboard-capplet.png
 share/gnome/pixmaps/background-capplet.png
 share/gnome/pixmaps/behavior-capplet.png
 share/gnome/pixmaps/control-center2.png
+share/gnome/pixmaps/default-applications-capplet.png
 share/gnome/pixmaps/font-capplet.png
 share/gnome/pixmaps/gnomecc-2/active.png
 share/gnome/pixmaps/gnomecc-2/bcg_top.png
@@ -102,7 +103,9 @@ share/gnome/pixmaps/mouse-capplet.png
 share/gnome/pixmaps/sound-capplet.png
 share/gnome/vfolders/Accessibility.directory
 share/gnome/vfolders/Advanced.directory
+share/locale/ar/LC_MESSAGES/control-center-2.0.mo
 share/locale/az/LC_MESSAGES/control-center-2.0.mo
+share/locale/bg/LC_MESSAGES/control-center-2.0.mo
 share/locale/ca/LC_MESSAGES/control-center-2.0.mo
 share/locale/cs/LC_MESSAGES/control-center-2.0.mo
 share/locale/da/LC_MESSAGES/control-center-2.0.mo
@@ -141,15 +144,15 @@ share/locale/wa/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/control-center-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/control-center-2.0.mo
 @dirrm share/gnome/pixmaps/gnomecc-2
-@dirrm share/gnome/help/control-center-manual/C/figures
-@dirrm share/gnome/help/control-center-manual/C
-@dirrm share/gnome/help/control-center-manual
 @dirrm share/gnome/cursor-fonts
 @dirrm share/gnome/control-center-2.0/pixmaps
 @dirrm share/gnome/control-center-2.0/interfaces
 @dirrm share/gnome/control-center-2.0/icons
 @dirrm share/gnome/applications
+@dirrm include/gnome-window-settings-2.0
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/screensaver
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon/editor
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome_settings_daemon
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/screensaver
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon/editor
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome_settings_daemon

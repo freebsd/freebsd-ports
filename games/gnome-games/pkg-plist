@@ -72,8 +72,8 @@ share/gnome/applications/gtali.desktop
 share/gnome/applications/iagno.desktop
 share/gnome/applications/mahjongg.desktop
 share/gnome/applications/same-gnome.desktop
+share/gnome/applications/sol.desktop
 share/gnome/applications/xbill.desktop
-share/gnome/apps/Games/sol.desktop
 share/gnome/games/glines.scores
 share/gnome/games/gnibbles.1.0.scores
 share/gnome/games/gnibbles.1.1.scores
@@ -829,7 +829,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/gnibbles
 @dirrm share/gnome/gnect
 @dirrm share/gnome/games
-@dirrm share/gnome/apps/Games
 @dirrm include/gdkcardimage
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/same-gnome
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mahjongg
