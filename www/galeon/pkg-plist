@@ -16,7 +16,6 @@ etc/gconf/gconf.xml.defaults/apps/galeon/Browsing/History/Session/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Handlers/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Handlers/Downloading/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Handlers/Help/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/galeon/Handlers/Mime/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Handlers/Programs/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Print/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/galeon/Rendering/%gconf.xml
@@ -48,7 +47,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Browsing/History/Session/%gconf
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Handlers/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Handlers/Downloading/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Handlers/Help/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Handlers/Mime/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Handlers/Programs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Print/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Rendering/%gconf.xml
@@ -75,6 +73,8 @@ share/gnome/galeon/babelfish.png
 share/gnome/galeon/bookmarks.glade
 share/gnome/galeon/bookmarks.png
 share/gnome/galeon/bug.png
+share/gnome/galeon/components/libgaleon-npl.la
+share/gnome/galeon/components/libgaleon-npl.so
 share/gnome/galeon/crash.png
 share/gnome/galeon/debian.png
 share/gnome/galeon/default.xpm
@@ -93,7 +93,9 @@ share/gnome/galeon/galeon-watermark.png
 share/gnome/galeon/galeon.glade
 share/gnome/galeon/galeon.png
 share/gnome/galeon/general.png
+share/gnome/galeon/gnome_icons.png
 share/gnome/galeon/google.png
+share/gnome/galeon/google_groups.png
 share/gnome/galeon/harddrive.png
 share/gnome/galeon/history.png
 share/gnome/galeon/i-bookmark.xpm
@@ -103,6 +105,7 @@ share/gnome/galeon/logo.png
 share/gnome/galeon/mime.png
 share/gnome/galeon/mouse.png
 share/gnome/galeon/myportal.css
+share/gnome/galeon/nautilus_icons.png
 share/gnome/galeon/network.png
 share/gnome/galeon/new_alias.xpm
 share/gnome/galeon/new_alias_small.xpm
@@ -190,6 +193,14 @@ share/gnome/galeon/themes/Glass/New.png
 share/gnome/galeon/themes/Glass/Refresh.png
 share/gnome/galeon/themes/Glass/Stop.png
 share/gnome/galeon/themes/Glass/Up.png
+share/gnome/galeon/themes/GnomeLarge/Back.png
+share/gnome/galeon/themes/GnomeLarge/Forward.png
+share/gnome/galeon/themes/GnomeLarge/Go.png
+share/gnome/galeon/themes/GnomeLarge/Home.png
+share/gnome/galeon/themes/GnomeLarge/New.png
+share/gnome/galeon/themes/GnomeLarge/Refresh.png
+share/gnome/galeon/themes/GnomeLarge/Stop.png
+share/gnome/galeon/themes/GnomeLarge/Up.png
 share/gnome/galeon/themes/Konqueror/Back.png
 share/gnome/galeon/themes/Konqueror/Forward.png
 share/gnome/galeon/themes/Konqueror/Home.png
@@ -202,6 +213,20 @@ share/gnome/galeon/themes/Micro/New.png
 share/gnome/galeon/themes/Micro/Refresh.png
 share/gnome/galeon/themes/Micro/Stop.png
 share/gnome/galeon/themes/Micro/Up.png
+share/gnome/galeon/themes/MicroPrelight/Back-prelight.png
+share/gnome/galeon/themes/MicroPrelight/Back.png
+share/gnome/galeon/themes/MicroPrelight/Forward-prelight.png
+share/gnome/galeon/themes/MicroPrelight/Forward.png
+share/gnome/galeon/themes/MicroPrelight/Home-prelight.png
+share/gnome/galeon/themes/MicroPrelight/Home.png
+share/gnome/galeon/themes/MicroPrelight/New-prelight.png
+share/gnome/galeon/themes/MicroPrelight/New.png
+share/gnome/galeon/themes/MicroPrelight/Refresh-prelight.png
+share/gnome/galeon/themes/MicroPrelight/Refresh.png
+share/gnome/galeon/themes/MicroPrelight/Stop-prelight.png
+share/gnome/galeon/themes/MicroPrelight/Stop.png
+share/gnome/galeon/themes/MicroPrelight/Up-prelight.png
+share/gnome/galeon/themes/MicroPrelight/Up.png
 share/gnome/galeon/themes/MozillaModern/Back.png
 share/gnome/galeon/themes/MozillaModern/Forward.png
 share/gnome/galeon/themes/MozillaModern/Go.png
@@ -258,14 +283,6 @@ share/gnome/galeon/themes/Ska/New.png
 share/gnome/galeon/themes/Ska/Refresh.png
 share/gnome/galeon/themes/Ska/Stop.png
 share/gnome/galeon/themes/Ska/Up.png
-share/gnome/galeon/themes/gnome-large/Back.png
-share/gnome/galeon/themes/gnome-large/Forward.png
-share/gnome/galeon/themes/gnome-large/Go.png
-share/gnome/galeon/themes/gnome-large/Home.png
-share/gnome/galeon/themes/gnome-large/New.png
-share/gnome/galeon/themes/gnome-large/Refresh.png
-share/gnome/galeon/themes/gnome-large/Stop.png
-share/gnome/galeon/themes/gnome-large/Up.png
 share/gnome/galeon/toolbars.png
 share/gnome/galeon/windows.png
 share/gnome/help/galeon/C/aboutbook.html
@@ -343,7 +360,6 @@ share/locale/zh_TW/LC_MESSAGES/galeon.mo
 @dirrm share/gnome/help/galeon/C/fig
 @dirrm share/gnome/help/galeon/C
 @dirrm share/gnome/help/galeon
-@dirrm share/gnome/galeon/themes/gnome-large
 @dirrm share/gnome/galeon/themes/Ska
 @dirrm share/gnome/galeon/themes/Remembrance
 @dirrm share/gnome/galeon/themes/PlastikLarge
@@ -352,14 +368,17 @@ share/locale/zh_TW/LC_MESSAGES/galeon.mo
 @dirrm share/gnome/galeon/themes/Netscape
 @dirrm share/gnome/galeon/themes/MozillaModernSmall
 @dirrm share/gnome/galeon/themes/MozillaModern
+@dirrm share/gnome/galeon/themes/MicroPrelight
 @dirrm share/gnome/galeon/themes/Micro
 @dirrm share/gnome/galeon/themes/Konqueror
+@dirrm share/gnome/galeon/themes/GnomeLarge
 @dirrm share/gnome/galeon/themes/Glass
 @dirrm share/gnome/galeon/themes
 @dirrm share/gnome/galeon/spinners/pipeon
 @dirrm share/gnome/galeon/spinners/galeon
 @dirrm share/gnome/galeon/spinners/crashcut
 @dirrm share/gnome/galeon/spinners
+@dirrm share/gnome/galeon/components
 @dirrm share/gnome/galeon
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/UI/Windows
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/UI/Toolbar
@@ -377,7 +396,6 @@ share/locale/zh_TW/LC_MESSAGES/galeon.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Rendering
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Print
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Handlers/Programs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Handlers/Mime
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Handlers/Help
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Handlers/Downloading
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/galeon/Handlers
@@ -409,7 +427,6 @@ share/locale/zh_TW/LC_MESSAGES/galeon.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Rendering
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Print
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Handlers/Programs
-@dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Handlers/Mime
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Handlers/Help
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Handlers/Downloading
 @dirrm etc/gconf/gconf.xml.defaults/apps/galeon/Handlers
