@@ -1,13 +1,13 @@
 # New ports collection makefile for:	socks5
-# Version required:			v1.0r8
+# Version required:			v1.0r10
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
 # $FreeBSD$
 #
 
-DISTNAME=	socks5-v1.0r9
-PKGNAME=	socks5-1.0.9
+DISTNAME=	socks5-v1.0r10
+PKGNAME=	socks5-1.0.10
 CATEGORIES=	net security
 EXTRACT_SUFX=	.tar.gz
 
@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--with-libconffile=${PREFIX}/etc/libsocks5.conf \
 		${EXTRA_CONFIGURE_ARGS}
 MAN1=		runsocks.1 socks5.1 stopsocks.1 socks5_clients.1
 MAN5=		libsocks5.conf.5 socks5.conf.5
+CONFIGURE_ENV=  LIBS=-lcrypt
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
@@ -46,17 +47,3 @@ do-fetch:
 	fi
 
 .include <bsd.port.mk>
-
-# the following need to be included after bsd.port.mk, since OPSYS
-# ARCH are defined in bsd.port.mk
-
-.if ${OPSYS} == "FreeBSD"
-CONFIGURE_ENV=  LIBS=-lcrypt
-.endif
-
-# OpenBSD/arc doesn't seem to have a working ldconfig
-
-.if ${OPSYS} != "OpenBSD" || ${ARCH} != "arc"
-post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-.endif

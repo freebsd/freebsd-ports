@@ -1,0 +1,55 @@
+
+The patch is for clients that do not have DNS resolution.  Sites that do not
+use the remote name resolution do not have to apply this patch.
+
+The fakehost files (/tmp/.s5fakehost-<uid>) created with releases prior to 
+release 10 are not compatible.  
+
+If the fakehost file has size 65284 bytes, it is the old version.  Delete the
+file, apply the following patch, and rebuild the clients.  The new fakehost
+file has size 32644 bytes.
+
+steve@syl.dl.nec.com
+
+Index: lib/hostname.c
+===================================================================
+RCS file: lib/hostname.c,v
+retrieving revision 1.31.4.12
+retrieving revision 1.31.4.17
+diff -c -r1.31.4.12 -r1.31.4.17
+*** hostname.c	1999/08/02 14:52:23	1.31.4.12
+--- hostname.c	1999/08/11 18:53:42	1.31.4.17
+***************
+*** 171,177 ****
+          strncpy(hostname, name, MIN(strlen(name), S5_HOSTNAME_SIZE-1));
+          hostname[MIN(strlen(name), S5_HOSTNAME_SIZE-1)] = '\0';
+  
+!         lseek(fd, (j-1)*256+sizeof(int), SEEK_SET);
+          if (REAL(write)(fd, hostname, sizeof(hostname)) != sizeof(hostname)) {
+              S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "GetHostFromFile: write table failed %m");
+              SetWriteLock(0);
+--- 170,176 ----
+          strncpy(hostname, name, MIN(strlen(name), S5_HOSTNAME_SIZE-1));
+          hostname[MIN(strlen(name), S5_HOSTNAME_SIZE-1)] = '\0';
+  
+!         lseek(fd, (j-1)*S5_HOSTNAME_SIZE+sizeof(int), SEEK_SET);
+          if (REAL(write)(fd, hostname, sizeof(hostname)) != sizeof(hostname)) {
+              S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "GetHostFromFile: write table failed %m");
+              SetWriteLock(0);
+***************
+*** 472,478 ****
+  
+      if (fd > 0) {
+          SetReadLock(1);
+!         lseek(fd, (i-1)*256+sizeof(int), SEEK_SET);
+  
+          if (REAL(read)(fd, hostname, len) != len) {
+              S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "lsGetCachedHostname: read fake table failed %m");
+--- 471,477 ----
+  
+      if (fd > 0) {
+          SetReadLock(1);
+!         lseek(fd, (i-1)*S5_HOSTNAME_SIZE+sizeof(int), SEEK_SET);
+  
+          if (REAL(read)(fd, hostname, len) != len) {
+              S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "lsGetCachedHostname: read fake table failed %m");
