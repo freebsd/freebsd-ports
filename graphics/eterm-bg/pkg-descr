@@ -1,0 +1,13 @@
+Image files for background of Eterm
+
+First you install Eterm and try to run:
+
+% Eterm
+(Choose "Eterm -> Background -> Pixmap -> Scaled -> Before the Storm")
+
+or
+
+% Esetroot -scale /usr/X11R6/share/Eterm/bg/scale/before_the_storm.jpg
+% Eterm --trans --shade 40
+
+WWW: http://www.eterm.org/
