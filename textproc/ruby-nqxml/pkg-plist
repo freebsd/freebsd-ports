@@ -1,0 +1,29 @@
+%%RUBY_SITELIBDIR%%/nqxml/document.rb
+%%RUBY_SITELIBDIR%%/nqxml/domparser.rb
+%%RUBY_SITELIBDIR%%/nqxml/entities.rb
+%%RUBY_SITELIBDIR%%/nqxml/error.rb
+%%RUBY_SITELIBDIR%%/nqxml/info.rb
+%%RUBY_SITELIBDIR%%/nqxml/parser.rb
+%%RUBY_SITELIBDIR%%/nqxml/streamingparser.rb
+%%RUBY_SITELIBDIR%%/nqxml/tokenizer.rb
+%%RUBY_SITELIBDIR%%/nqxml/treeparser.rb
+%%RUBY_SITELIBDIR%%/nqxml/utils.rb
+%%RUBY_SITELIBDIR%%/nqxml/writer.rb
+@dirrm %%RUBY_SITELIBDIR%%/nqxml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/data.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/doc.xml
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/dumpXML.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/parseTestStream.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/parseTestTree.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/printEntityClassNames.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/reverseTags.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/reverseText.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/write.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/writeManualDoc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/nqxml/writeParsedDoc.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/nqxml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/Credits
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/nqxml/TODO
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/nqxml

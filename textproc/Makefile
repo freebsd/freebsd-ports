@@ -135,6 +135,7 @@
     SUBDIR += ruby-csv
     SUBDIR += ruby-erb
     SUBDIR += ruby-html-parser
+    SUBDIR += ruby-nqxml
     SUBDIR += ruby-qt2xml
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-rss
