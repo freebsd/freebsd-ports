@@ -4,14 +4,13 @@
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.6 1997/07/21 00:48:40 fenner Exp $
+# $Id: Makefile,v 1.7 1997/08/10 22:31:27 fenner Exp $
 #
 
 DISTNAME=       rarbsd
 PKGNAME=        rar-2.01
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.inetpros.net/pub/rar/ \
-		ftp://ftp.kiarchive.ru/pub/unix/arcers/
+MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=   .exe
 
 MAINTAINER=     ache@FreeBSD.ORG
@@ -28,8 +27,8 @@ post-fetch:
 do-build:
 	cd ${WRKSRC} && \
 		for i in *.Txt *.Lst; do \
-			tr -d '\015' < $$i > $$i.tmp; \
-			mv $$i.tmp $$i; \
+			${TR} -d '\015' < $$i > $$i.tmp; \
+			${MV} $$i.tmp $$i; \
 		done
 
 do-install:
