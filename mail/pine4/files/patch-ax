@@ -17,7 +17,7 @@
 -LOCLIBS=     $(PICODIR)/libpico.a $(CCLIENTDIR)/c-client.a
 -LIBS=        $(EXTRALIBES) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS) \
 -             `cat $(CCLIENTDIR)/LDFLAGS`
-+STDLIBS=     -ltermlib -lpam -L$(PREFIX)/lib -lc-client4
++STDLIBS=     -ltermlib -lpam -L$(PREFIX)/lib -lc-client4 $(SSL_LINK)
 +LOCLIBS=     $(PICODIR)/libpico.a
 +LIBS=        $(EXTRALIBES) $(LOCLIBS) $(LDAPLIBS) $(STDLIBS)
  

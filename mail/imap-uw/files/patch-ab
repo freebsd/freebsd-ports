@@ -1,15 +1,33 @@
---- src/osdep/unix/Makefile.old	Tue Oct 31 22:55:01 2000
-+++ src/osdep/unix/Makefile	Sun Dec 31 19:11:17 2000
-@@ -23,7 +23,7 @@
+--- src/osdep/unix/Makefile.orig	Tue Mar  6 07:07:37 2001
++++ src/osdep/unix/Makefile	Tue Apr  3 23:48:08 2001
+@@ -22,16 +22,23 @@
+ 
  EXTRAAUTHENTICATORS=
- SPECIALAUTHENTICATORS=
  EXTRADRIVERS=mbox
 -PASSWDTYPE=std
 +PASSWDTYPE=pam
+ SSLTYPE=none
  
  
- # Extended flags needed for non-standard passwd types.  You may need to modify.
-@@ -37,7 +37,7 @@
+ # Extended flags needed for SSL.  You may need to modify.
+ 
+-SSLDIR=/usr/local/ssl
++.if ${OSVERSION} >= 400014
++SSLDIR=/usr
++SSLCERTS=$(PREFIX)/certs
++SSLINCLUDE=$(SSLDIR)/include/openssl
++SSLLIB=$(SSLDIR)/lib
++.else
++SSLDIR=$(PREFIX)
+ SSLCERTS=$(SSLDIR)/certs
+-SSLINCLUDE=$(SSLDIR)/include
++SSLINCLUDE=$(SSLDIR)/include/openssl
+ SSLLIB=$(SSLDIR)/lib
++.endif
+ 
+ SSLCRYPTO=-lcrypto
+ 
+@@ -60,7 +67,7 @@
  # AFSLDFLAGS may also need -L/usr/ucblib -lucb
  DCECFLAGS= -DDCE_MINIMAL -DPASSWD_OVERRIDE=\"/opt/pop3/passwd/passwd\"
  DCELDFLAGS= -ldce
@@ -18,7 +36,7 @@
  
  
  # Build parameters normally set by the individual port
-@@ -74,7 +74,7 @@
+@@ -97,7 +104,7 @@
  # Commands possibly overriden by the individual port
  
  ARRC=ar rc
@@ -27,7 +45,7 @@
  LN=ln -s
  RANLIB=ranlib
  
-@@ -92,7 +92,7 @@
+@@ -115,7 +122,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -36,12 +54,12 @@
  
  CAT=cat
  MAKE=make
-@@ -175,6 +175,15 @@
+@@ -198,6 +205,15 @@
  	 BASECFLAGS="-g -B/usr/lib/big/ -Dvoid=char -Dconst=" \
  	 RANLIB=true ARRC="ar -rc"
  
 +bfp:	# FreeBSD Pluggable Authentication Modules
-+	$(BUILD) `cat EXTRASPECIALS` OS=bsi SIGTYPE=psx CHECKPW=pam \
++	$(BUILD) `cat SPECIALS` OS=bsi SIGTYPE=psx CHECKPW=pam \
 +	 SPOOLDIR=/var \
 +	 ACTIVEFILE=/usr/local/news/lib/active \
 +	 RSHPATH=/usr/bin/rsh \
@@ -52,7 +70,7 @@
  bs3:	# BSD/i386 3.0 or higher
  	$(BUILD) `$(CAT) SPECIALS` OS=bsi \
  	 CHECKPW=bsi LOGINPW=bsi CRXTYPE=nfs \
-@@ -190,12 +199,13 @@
+@@ -213,12 +229,13 @@
  
  bsf:	# FreeBSD
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
@@ -69,7 +87,7 @@
  
  bsi:	# BSD/i386
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -704,7 +714,7 @@
+@@ -754,7 +771,7 @@
  
  build:	clean once $(ARCHIVE)
  

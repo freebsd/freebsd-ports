@@ -1,18 +1,19 @@
---- src/imapd/Makefile.orig	Tue Jan  9 16:08:17 2001
-+++ src/imapd/Makefile		Sun Feb  4 11:54:00 2001
-@@ -18,9 +18,9 @@
+--- src/imapd/Makefile.orig	Tue Apr  3 23:54:13 2001
++++ src/imapd/Makefile	Wed Apr  4 00:05:39 2001
+@@ -18,10 +18,10 @@
  # CPYRIGHT, included with this Distribution.
  
  
 -ALERT=/etc/imapd.alert
 +ALERT=$(PREFIX)/etc/imapd.alert
  USERALERT=.imapalert
+ SHUTDOWN=/etc/nologin
 -ANO=/etc/anonymous.newsgroups
 +ANO=$(PREFIX)/etc/anonymous.newsgroups
  SHELL= /bin/sh
  
  
-@@ -39,21 +39,23 @@
+@@ -40,22 +40,24 @@
  # Get local definitions from c-client directory
  
  C = ../c-client
@@ -22,13 +23,14 @@
 -CFLAGS = -I$C `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
 +.if defined(WITH_DRAC)
 +CFLAGS = `cat $C/CFLAGS` -DANOFILE=\"$(ANO)\" -DETC_DIR=\"$(PREFIX)/etc\" \
-+	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\" -DDRAC_AUTH
++	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\" -DDRAC_AUTH \
++	-DSHUTDOWNFILE=\"$(SHUTDOWN)\"
 +LDFLAGS = $(EXTRALDFLAGS) `cat $C/LDFLAGS` -ldrac
 +.else
 +CFLAGS = `cat $C/CFLAGS` -DANOFILE=\"$(ANO)\" \
- 	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\"
+ 	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\" \
+ 	-DSHUTDOWNFILE=\"$(SHUTDOWN)\"
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
-+
 +LDFLAGS = $(EXTRALDFLAGS) `cat $C/LDFLAGS`
 +.endif
  
