@@ -8572,6 +8572,7 @@ sredird		ports/comms/sredird
 srm		ports/security/srm
 srmt		ports/sysutils/srmt
 srp		ports/security/srp
+srvx		ports/irc/srvx
 ss		ports/math/ss
 ssamtse		ports/games/ssamtse
 sscalc		ports/astro/sscalc
