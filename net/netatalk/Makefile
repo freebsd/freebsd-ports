@@ -7,7 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	1.5p8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net print
 MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
@@ -82,7 +82,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/missing ${WRKSRC}/mkinstalldirs
 
 post-configure:
-	@${TOUCH} -f ${WRKSRC}/config/Makefile.in
+	@find ${WRKSRC} -type f | xargs ${TOUCH} -f
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/nu ${PREFIX}/bin/lp2pap.sh \
