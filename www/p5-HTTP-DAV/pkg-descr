@@ -1,0 +1,12 @@
+HTTP::GHTTP
+
+This module is a simple interface to the Gnome project's libghttp.
+
+It allows you to make very simple HTTP requests, without the weight
+of something like LWP. This makes it very useful in situations where
+memory and speed are at a premium, such as mod_perl.
+
+It has full support for proxy requests and authenticated requests.
+
+This is free software distributed under the same terms as Perl itself,
+and the code is Copyright AxKit.com Ltd, 2000.
