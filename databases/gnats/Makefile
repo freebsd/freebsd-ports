@@ -3,11 +3,11 @@
 # Date created:		28 October 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.1.1.1 1995/10/30 17:26:09 pst Exp $
+# $Id: Makefile,v 1.2 1995/11/02 08:07:29 asami Exp $
 #
 
 DISTNAME=       gnats-3.2
-CATEGORIES+=	development
+CATEGORIES+=	databases devel
 MASTER_SITES=   ftp://prep.ai.mit.edu/pub/gnu/ \
 		ftp://ftp.uu.net/systems/gnu/
 
