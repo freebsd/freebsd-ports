@@ -14,7 +14,7 @@
  man_MANS = cfengine.8 cfagent.8  cfenvd.8  cfenvgraph.8  cfexecd.8  cfkey.8  cfrun.8  cfservd.8
  info_TEXINFOS = cfengine-Reference.texinfo cfengine-Tutorial.texinfo cfengine-Anomalies.texinfo
 -docdir = $(prefix)/doc/$(PACKAGE)-$(VERSION)
-+docdir = $(prefix)/share/doc/cfengine2
++docdir = $(prefix)/share/doc/cfengine
  doc_DATA = 
  
  # Info used in building and installing HTML files

@@ -5,7 +5,7 @@
  top_srcdir = @top_srcdir@
  VPATH = @srcdir@
 -pkgdatadir = $(datadir)/@PACKAGE@
-+pkgdatadir = $(prefix)/share/examples/cfengine2
++pkgdatadir = $(prefix)/share/examples/cfengine
  pkglibdir = $(libdir)/@PACKAGE@
  pkgincludedir = $(includedir)/@PACKAGE@
  top_builddir = ..

@@ -6,6 +6,7 @@ sbin/cfexecd
 sbin/cfkey
 sbin/cfrun
 sbin/cfservd
+sbin/cfshow
 sbin/vicf
 %%EXAMPLESDIR%%/cf.chflags.example
 %%EXAMPLESDIR%%/cf.freebsd.example
