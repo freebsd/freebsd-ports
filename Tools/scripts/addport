@@ -334,7 +334,7 @@ foreach my $thisdir (@dirs) {
 	system("$cvs $n ci $commitfile Makefile $portname") && errx(1, "cvs commit failed, aborting.");
 	if (!$nomodules && ($n ne "-n")) {
 		print "*** If you have problems with the below modulesupdate command, PLEASE\n";
-		print "*** ensure that you can login to $h from $moduleshost\n!";
+		print "*** ensure that you can login to $h from $moduleshost!\n";
 		system("$sshmod env CVSROOT=$repo $perl /usr/local/bin/modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
 	}
 }
