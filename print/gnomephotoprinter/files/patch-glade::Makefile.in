@@ -1,0 +1,15 @@
+--- glade/Makefile.in.orig	Wed Nov 26 17:59:38 2003
++++ glade/Makefile.in	Wed Nov 26 18:00:19 2003
+@@ -80,10 +80,10 @@
+ am__include = @am__include@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+-glade_DATA = gpp.glade gpp.gladep
++glade_DATA = gpp.glade
+ gladedir = @GPP_DATADIR@
+ 
+-EXTRA_DIST = $(glade_DATA)
++EXTRA_DIST = $(glade_DATA) gpp.gladep
+ subdir = glade
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
