@@ -29,7 +29,7 @@
      gtk_init(&argc, &argv);
  
 -    xml = glade_xml_new(XSTR(UIDIR) "/tunesbrowser.glade", NULL, NULL);
-+    xml = glade_xml_new(XSTR(UIDIR) "/gnome/tunesbrowser/tunesbrowser.glade", NULL, NULL);
++    xml = glade_xml_new(XSTR(UIDIR) "/tunesbrowser/tunesbrowser.glade", NULL, NULL);
  
      glade_xml_signal_autoconnect(xml);
  
