@@ -1,0 +1,17 @@
+--- player/Makefile.orig	Thu Dec  2 09:35:44 1999
++++ player/Makefile	Sun Jan  2 13:08:58 2000
+@@ -4,10 +4,11 @@
+ # * This is total free software.
+ # */
+ 
+-WITH_ASM=1
++#WITH_ASM=1
+ 
+-CC=gcc
+-CFLAGS=-Wall -O3 -fomit-frame-pointer -ffast-math
++CC?=gcc
++INCS=-I$(PREFIX)/include
++CFLAGS+=-Wall -fomit-frame-pointer -ffast-math $(INCS)
+ 
+ OBJ=card.o mixer.o xm.o live_player.o wav.o
+ 

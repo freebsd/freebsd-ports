@@ -1,0 +1,33 @@
+--- main.c	Thu Dec  2 19:00:49 1999
++++ main.c.new	Wed Dec 22 21:13:11 1999
+@@ -22,6 +22,10 @@
+ #include "event.h"
+ #include "device.h"
+ 
++#ifndef MODULE_FILE_PREFIX
++#define MODULE_FILE_PREFIX "\"/usr/X11R6/share/rubix/\""
++#endif
++
+ char *the_screen;
+ device d;
+ 
+@@ -32,6 +36,10 @@
+   CUBE cube;
+   int i;
+   int rand=1;
++  char full_module_file[4096];
++  char *module_file = "module.xm";
++  strcpy(full_module_file, MODULE_FILE_PREFIX);
++  strcat(full_module_file, module_file);
+ 
+   the_screen=&screen.buffer[0];
+   d.buffer=screen.buffer;
+@@ -68,7 +76,7 @@
+     return -1;
+   }
+ 
+-  if (rubick_init_sound(&sound, "module.xm")==-1) {
++  if (rubick_init_sound(&sound, full_module_file)==1) {
+     fprintf(stderr, "Error with initing the sound, sorry pal, no sound no game.\n(I fucked my head with"
+ 	    " an xm player, this is not for nothing !)\n");
+     return 0;
