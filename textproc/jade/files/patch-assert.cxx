@@ -5,7 +5,7 @@
  
  #ifdef __GNUG__
 -void exit (int __status) __THROW __attribute__ ((__noreturn__));
-+void exit (int __status) throw () __attribute__ ((__noreturn__));
++//void exit (int) __attribute__ ((__noreturn__));
  #endif
  
  #ifdef SP_NAMESPACE
