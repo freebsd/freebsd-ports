@@ -8,7 +8,9 @@
 PORTNAME=	netraider
 PORTVERSION=	0.0.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.mandragon.org/raider/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+		http://www.mandragon.org/raider/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
