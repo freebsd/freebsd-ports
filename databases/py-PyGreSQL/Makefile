@@ -6,33 +6,37 @@
 #
 
 PORTNAME=	PyGreSQL
-PORTVERSION=	3.1
-PORTREVISION=	2
 CATEGORIES=	databases python
-MASTER_SITES=	ftp://ftp.druid.net/pub/distrib/
-PKGNAMEPREFIX=	py-
-DISTNAME=	PyGreSQL-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
+
+POSTGRESQL_SUBPORT=	YES
+.include <${.CURDIR}/../postgresql7/Makefile>
 
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 LIB_DEPENDS=	pq.2:${PORTSDIR}/databases/postgresql7
 
 USE_PYTHON=	yes
-MAKE_ENV=	PYTHON_VERSION=${PYTHON_VERSION} \
-		PYTHON_LIBDIR=${PYTHON_LIBDIR} \
-		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
-		PYTHON=${PYTHON_CMD} \
-		LN="${LN}" SETENV="${SETENV}" MKDIR="${MKDIR}"
+CONFIGURE_ARGS=	--with-python --prefix=${PREFIX}
+MAKE_ARGS+=	-C src/interfaces/python
+CFLAGS+=	-L${LOCALBASE}/lib
+MAKEFILE=	GNUmakefile
 
 DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
 
-pre-build:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.PyGreSQL
+	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -lf \
+	  ${PYTHONPREFIX_SITELIBDIR}
+	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -lf \
+	  ${PYTHONPREFIX_SITELIBDIR}
+.if !defined(NOPORTDOCS)
+.for docfile in Announce ChangeLog README
+	@ ${MKDIR} ${DOCSDIR}
+	  ${INSTALL_DATA} ${WRKSRC}/src/interfaces/python/${docfile} \
+	  ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
