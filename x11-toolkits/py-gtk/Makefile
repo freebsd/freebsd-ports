@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs gdkpixbuf libglade
 USE_PYTHON=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
