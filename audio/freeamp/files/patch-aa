@@ -1,5 +1,5 @@
---- configure.in.orig	Tue Dec 11 06:42:31 2001
-+++ configure.in	Sun Dec 16 23:03:03 2001
+--- configure.in.orig	Mon Dec 10 16:42:31 2001
++++ configure.in	Thu Mar 14 23:34:42 2002
 @@ -179,8 +179,8 @@
      ;;
    freebsd*)
@@ -71,7 +71,7 @@
    AC_DEFINE(HAVE_GTK)
  elif test "$host_os" = "beos"; then
    OSDEPPLUGINS="$OSDEPPLUGINS plugins/musicbrowser.ui"
-@@ -541,7 +541,7 @@
+@@ -541,17 +541,10 @@
  AC_SUBST(GTK_LIBS)
  AC_SUBST(EXTRALIBS)
  
@@ -79,8 +79,19 @@
 +AC_SUBST(CPPFLAGS)
  
  dnl orbit crap
- save_CPPFLAGS="$CPPFLAGS"
-@@ -661,7 +661,7 @@
+-save_CPPFLAGS="$CPPFLAGS"
+-CPPFLAGS="$CPPFLAGS $GTK_CFLAGS"
+-AC_LANG_SAVE
+-AC_LANG_C
+-AC_CHECK_HEADERS(orb/orbit.h, have_orbit="true", have_orbit="false")
+-CPPFLAGS="$save_CPPFLAGS"
+-AC_LANG_RESTORE
+-
++have_orbit="false"
+ ORBIT_LIBS=""
+ ORBIT_IDL=""
+ 
+@@ -661,7 +654,7 @@
    alsa_min_major_version=0
    alsa_min_minor_version=5
    alsa_min_micro_version=0
@@ -89,7 +100,7 @@
    ac_save_LIBS="$LIBS"
  
    LIBS="$LIBS -lasound"
-@@ -706,7 +706,7 @@
+@@ -706,7 +699,7 @@
  ], , have_alsa=false, have_alsa=false
  )
     AC_LANG_RESTORE
@@ -98,7 +109,7 @@
     LIBS="$ac_save_LIBS"
     if test "$have_alsa" = "false"; then
        AC_MSG_RESULT(no)
-@@ -726,6 +726,10 @@
+@@ -726,6 +719,10 @@
    AC_MSG_RESULT([compiling alsa pmo plugin])
  fi
  
@@ -109,7 +120,7 @@
  AC_CHECK_LIB(ogg, ogg_sync_init, have_ogg="yes",)
  AC_CHECK_LIB(vorbisfile, ov_info, have_vorbis="yes",, -lvorbis -logg)
  
-@@ -736,6 +740,7 @@
+@@ -736,6 +733,7 @@
       OSDEPPLUGINS="$OSDEPPLUGINS plugins/vorbis.mdf";
       AC_MSG_RESULT([compiling vorbis codec plugin])
    fi 
@@ -117,7 +128,7 @@
  fi 
  
  ID3_LIBS=""
-@@ -749,6 +754,9 @@
+@@ -749,6 +747,9 @@
  dnl Partly taken from SDL's configure.in
  dnl -------------------------------------------------------------
  
@@ -127,7 +138,7 @@
  AC_PATH_PROG(ARTSCCONFIG, artsc-config)
  if test x$ARTSCCONFIG = x -o x$ARTSCCONFIG = x'"$ARTSCCONFIG"'; then
  : # arts isn't installed
-@@ -765,6 +773,7 @@
+@@ -765,6 +766,7 @@
       AC_MSG_RESULT([compiling arts pmo plugin])
      ])
  fi
@@ -135,7 +146,7 @@
  
  AC_SUBST(ARTS_LIBS)
  AC_SUBST(EXTRALIBS)
-@@ -819,9 +828,9 @@
+@@ -819,9 +821,9 @@
    gdk_pixbuf_micro_version=`$GDK_PIXBUF_CONFIG $gdk_pixbuf_config_args --version | \
           sed 's/\([[0-9]]*\).\([[0-9]]*\).\([[0-9]]*\)/\3/'`
    if test "x$enable_gdk_pixbuftest" = "xyes" ; then
@@ -147,7 +158,7 @@
      LIBS="$LIBS $GDK_PIXBUF_LIBS"
  dnl
  dnl Now check if the installed GDK_PIXBUF is sufficiently new. (Also sanity
-@@ -883,7 +892,7 @@
+@@ -883,7 +885,7 @@
  }
  
  ],, no_gdk_pixbuf=yes,[echo $ac_n "cross compiling; assumed OK... $ac_c"])
@@ -156,7 +167,7 @@
       LIBS="$ac_save_LIBS"
     fi
  fi
-@@ -902,7 +911,7 @@
+@@ -902,7 +904,7 @@
        :
       else
          echo "*** Could not run GDK_PIXBUF test program, checking why..."
@@ -165,7 +176,7 @@
          LIBS="$LIBS $GDK_PIXBUF_LIBS"
          AC_TRY_LINK([
  #include <stdio.h>
-@@ -921,7 +930,7 @@
+@@ -921,7 +923,7 @@
          echo "*** exact error that occured. This usually means GDK_PIXBUF was incorrectly installed"
          echo "*** or that you have moved GDK_PIXBUF since it was installed. In the latter case, you"
          echo "*** may want to edit the gdk-pixbuf-config script: $GDK_PIXBUF_CONFIG" ])
@@ -174,7 +185,7 @@
          LIBS="$ac_save_LIBS"
       fi
     fi
-@@ -933,8 +942,8 @@
+@@ -933,8 +935,8 @@
  AC_SUBST(GDK_PIXBUF_LIBS)
  rm -f conf.gdk_pixbuftest
  
@@ -185,7 +196,7 @@
  
  AC_LANG_SAVE
  AC_LANG_CPLUSPLUS
-@@ -944,7 +953,7 @@
+@@ -944,7 +946,7 @@
      echo "*** Download the library from "
      echo "***     http://www.musicbrainz.org/download.html"
      echo "***"
