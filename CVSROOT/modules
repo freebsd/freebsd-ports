@@ -1679,6 +1679,7 @@ ftpcopy		ports/ftp/ftpcopy
 ftpcube		ports/ftp/ftpcube
 ftpfind		ports/ftp/ftpfind
 ftplocate	ports/ftp/ftplocate
+ftpmap		ports/security/ftpmap
 ftpmirror	ports/ftp/ftpmirror
 ftpproxy	ports/ftp/ftpproxy
 ftpq		ports/ftp/ftpq
