@@ -467,15 +467,6 @@ LIB_DEPENDS+=	Hermes.1:${PORTSDIR}/graphics/Hermes
 PLIST_SUB+=	HERMES=""
 .endif
 
-# http
-.ifndef(WITH_HTTP)
-CONFIGURE_ARGS+=	--disable-http
-PLIST_SUB+=	HTTP="@comment "
-.else
-USE_GNOME+=	libghttp
-PLIST_SUB+=	HTTP=""
-.endif
-
 # jpeg
 .ifndef(WITH_JPEG)
 CONFIGURE_ARGS+=	--disable-jpeg
@@ -846,10 +837,6 @@ pre-everything::
 .ifndef(WITH_HERMES)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_HERMES to enable Hermes colorspace plugin'
-.endif
-.ifndef(WITH_HTTP)
-	@${ECHO_MSG} '===>'
-	@${ECHO_MSG} '===> Define WITH_HTTP to enable http Network plugin'
 .endif
 .ifndef(WITH_JPEG)
 	@${ECHO_MSG} '===>'
