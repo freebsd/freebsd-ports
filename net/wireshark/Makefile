@@ -3,10 +3,10 @@
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.12 1999/07/15 12:13:43 obrien Exp $
+# $Id: Makefile,v 1.13 1999/08/05 20:14:20 billf Exp $
 #
 
-DISTNAME=	ethereal-0.7.1
+DISTNAME=	ethereal-0.7.2
 CATEGORIES=	net
 MASTER_SITES=	http://alpha1.linuxberg.com/files/x11/network/ \
 		http://www.linuxberg.com/files/x11/network/ \
