@@ -1,20 +1,11 @@
-*** pico/tcap.c.bak	Fri Mar 15 10:42:31 1996
---- pico/tcap.c	Thu Jan 29 22:04:28 1998
-***************
-*** 322,328 ****
-  	KPPU   = tgetstr("kP", &p);
-  	KPPD   = tgetstr("kN", &p);
-  	KPHOME = tgetstr("kh", &p);
-! 	KPEND  = tgetstr("kE", &p);
-  	KPDEL  = tgetstr("kD", &p);
-  	KU     = tgetstr("ku", &p);
-  	KD     = tgetstr("kd", &p);
---- 322,329 ----
-  	KPPU   = tgetstr("kP", &p);
-  	KPPD   = tgetstr("kN", &p);
-  	KPHOME = tgetstr("kh", &p);
-! 	if((KPEND = tgetstr("@7", &p)) == NULL)
-! 	  KPEND  = tgetstr("kE", &p);
-  	KPDEL  = tgetstr("kD", &p);
-  	KU     = tgetstr("ku", &p);
-  	KD     = tgetstr("kd", &p);
+--- pine/osdep/os-bsf.h.orig	Fri Jun 26 14:19:54 1998
++++ pine/osdep/os-bsf.h	Wed Jul 15 17:02:35 1998
+@@ -268,7 +268,7 @@
+        8
+        9 logs gross details of command execution
+  ----*/
+-#define DEFAULT_DEBUG 2
++#define DEFAULT_DEBUG 0
+ 
+ 
+ 

@@ -1,180 +1,675 @@
---- pine/mailview.c.orig	Fri Jul 12 06:49:32 1996
-+++ pine/mailview.c	Sat Jan 17 21:07:22 1998
-@@ -1955,12 +1955,12 @@
-  * is stored with each entry and it could be different for each.
-  */
- static struct key help_keys[] =
--       {{"M","Main Menu",KS_MAINMENU},	{NULL,NULL,KS_NONE},
--	{"E","Exit Help",KS_EXITMODE},	{NULL,NULL,KS_NONE},
-+       {{"M","主選單",KS_MAINMENU},	{NULL,NULL,KS_NONE},
-+	{"E","離開",KS_EXITMODE},	{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{"Y","prYnt",KS_PRINT},		{"Z","Print All",KS_NONE},
--	{"B","Report Bug",KS_NONE},	{"W","WhereIs",KS_WHEREIS}};
-+	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
-+	{"Y","列印",KS_PRINT},		{"Z","Print All",KS_NONE},
-+	{"B","錯誤回報",KS_NONE},	{"W","搜尋",KS_WHEREIS}};
- INST_KEY_MENU(help_keymenu, help_keys);
- #define	HLP_MAIN_KEY	0
- #define	HLP_ALL_KEY	9
-@@ -1968,34 +1968,34 @@
- 
- static struct key review_keys[] =
-        {{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
--	{"E","Exit",KS_EXITMODE},	{NULL,NULL,KS_NONE},
-+	{"E","離開",KS_EXITMODE},	{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{"Y","prYnt",KS_PRINT},		{NULL,NULL,KS_NONE},
--	{NULL,NULL,KS_NONE},		{"W","WhereIs",KS_WHEREIS}};
-+	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
-+	{"Y","列印",KS_PRINT},		{NULL,NULL,KS_NONE},
-+	{NULL,NULL,KS_NONE},		{"W","搜尋",KS_WHEREIS}};
- INST_KEY_MENU(review_keymenu, review_keys);
- 
- static struct key view_keys[] = 
--       {{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
--	{"M","Main Menu",KS_MAINMENU},	{"V","ViewAttch",KS_VIEW},
--	{"P","PrevMsg",KS_PREVMSG},	{"N","NextMsg",KS_NEXTMSG},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{"D","Delete",KS_DELETE},	{"U","Undelete",KS_UNDELETE},
--	{"R","Reply",KS_REPLY},		{"F","Forward",KS_FORWARD},
--
--	{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
--	{"Q","Quit",KS_EXIT},		{"C","Compose",KS_COMPOSER},
--	{"L","ListFldrs",KS_FLDRLIST},	{"G","GotoFldr",KS_GOTOFLDR},
--	{"I","Index",KS_FLDRINDEX},	{"W","WhereIs",KS_WHEREIS},
--	{"Y","prYnt",KS_PRINT},		{"T","TakeAddr",KS_TAKEADDR},
--	{"S","Save",KS_SAVE},		{"E","Export",KS_EXPORT},
-+       {{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
-+	{"M","主選單",KS_MAINMENU},	{"V","檢視附件",KS_VIEW},
-+	{"P","前一個",KS_PREVMSG},	{"N","後一個",KS_NEXTMSG},
-+	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
-+	{"D","刪除",KS_DELETE},		{"U","救回刪除",KS_UNDELETE},
-+	{"R","回信",KS_REPLY},		{"F","轉寄",KS_FORWARD},
-+
-+	{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
-+	{"Q","離開",KS_EXIT},		{"C","編輯",KS_COMPOSER},
-+	{"L","列出信件夾",KS_FLDRLIST},	{"G","進入信件夾",KS_GOTOFLDR},
-+	{"I","索引",KS_FLDRINDEX},	{"W","搜尋",KS_WHEREIS},
-+	{"Y","列印",KS_PRINT},		{"T","取得地址",KS_TAKEADDR},
-+	{"S","儲存",KS_SAVE},		{"E","匯出",KS_EXPORT},
- 
--	{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
-+	{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
--	{"J","Jump",KS_JUMPTOMSG},	{"TAB","NextNew",KS_NONE},
--	{"H","HdrMode",KS_HDRMODE},	{"B","Bounce",KS_BOUNCE},
--	{"*","Flag",KS_FLAG},		{"|","Pipe",KS_NONE}};
-+	{"J","跳至",KS_JUMPTOMSG},	{"TAB","下一個",KS_NONE},
-+	{"H","標頭模式",KS_HDRMODE},	{"B","Bounce",KS_BOUNCE},
-+	{"*","旗標",KS_FLAG},		{"|","Pipe",KS_NONE}};
- INST_KEY_MENU(view_keymenu, view_keys);
- #define VIEW_FULL_HEADERS_KEY 32
- #define BOUNCE_KEY 33
-@@ -2003,49 +2003,49 @@
- #define VIEW_PIPE_KEY 35
- 
- static struct key nr_anon_view_keys[] = 
--       {{"?","Help",KS_SCREENHELP},	{"W","WhereIs",KS_WHEREIS},
--	{"Q", "Quit",KS_EXIT},		{NULL,NULL,KS_NONE},
--	{"P","PrevMsg",KS_PREVMSG},	{"N","NextMsg",KS_NEXTMSG},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{"F","Fwd Email",KS_FORWARD},	{"J","Jump",KS_JUMPTOMSG},
--	{"I", "Index",KS_FLDRINDEX},	{NULL, NULL,KS_NONE}};
-+       {{"?","輔助說明",KS_SCREENHELP},	{"W","搜尋",KS_WHEREIS},
-+	{"Q", "離開",KS_EXIT},		{NULL,NULL,KS_NONE},
-+	{"P","前一個",KS_PREVMSG},	{"N","後一個",KS_NEXTMSG},
-+	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
-+	{"F","轉寄",KS_FORWARD},	{"J","跳至",KS_JUMPTOMSG},
-+	{"I", "索引",KS_FLDRINDEX},	{NULL, NULL,KS_NONE}};
- INST_KEY_MENU(nr_anon_view_keymenu, nr_anon_view_keys);
- 
- static struct key nr_view_keys[] = 
--       {{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
--	{"Q","Quit",KS_EXIT},		{NULL,NULL,KS_NONE},
--	{"P","PrevMsg",KS_PREVMSG},	{"N","NextMsg",KS_NEXTMSG},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{"F","Fwd Email",KS_FORWARD},	{"J","Jump",KS_JUMPTOMSG},
--	{"Y","prYnt",KS_PRINT},		{"S","Save",KS_SAVE},
-+       {{"?","輔助說明",KS_SCREENHELP},	{"O","其它命令",KS_NONE},
-+	{"Q","離開",KS_EXIT},		{NULL,NULL,KS_NONE},
-+	{"P","前一個",KS_PREVMSG},	{"N","後一個",KS_NEXTMSG},
-+	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
-+	{"F","轉寄",KS_FORWARD},	{"J","跳至",KS_JUMPTOMSG},
-+	{"Y","列印",KS_PRINT},		{"S","儲存",KS_SAVE},
- 
--	{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
--	{"E","Export",KS_EXPORT},	{"C","Compose",KS_COMPOSER},
-+	{"?","輔助說明",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
-+	{"E","匯出",KS_EXPORT},		{"C","編輯",KS_COMPOSER},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
--	{"I","Index",KS_FLDRINDEX},	{"W","WhereIs",KS_WHEREIS},
-+	{"I","索引",KS_FLDRINDEX},	{"W","搜尋",KS_WHEREIS},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE}};
- INST_KEY_MENU(nr_view_keymenu, nr_view_keys);
- 
- static struct key text_att_view_keys[] =
--       {{"?","Help",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
--	{"E","Exit Viewer",KS_EXITMODE},	{NULL,NULL,KS_NONE},
-+       {{"?","輔助說明",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
-+	{"E","離開",KS_EXITMODE},	{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{"Y","prYnt",KS_PRINT},		{"S","Save",KS_SAVE},
--	{"|","Pipe",KS_NONE},		{"W", "WhereIs",KS_WHEREIS}};
-+	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
-+	{"Y","列印",KS_PRINT},		{"S","儲存",KS_SAVE},
-+	{"|","Pipe",KS_NONE},		{"W", "搜尋",KS_WHEREIS}};
- INST_KEY_MENU(text_att_view_keymenu, text_att_view_keys);
- #define ATT_SAVE_KEY 9
- #define ATT_PIPE_KEY 10
- 
- 
- static struct key simple_view_keys[] =
--       {{"?","Help",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
--	{"Q","Quit Viewer",KS_NONE},	{NULL,NULL,KS_NONE},
-+       {{"?","輔助說明",KS_SCREENHELP},	{NULL,NULL,KS_NONE},
-+	{"Q","離開",KS_NONE},	{NULL,NULL,KS_NONE},
- 	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{"F","Fwd Email",KS_FORWARD},	{"S","Save",KS_SAVE},
--	{NULL,NULL,KS_NONE},		{"W","WhereIs",KS_WHEREIS}};
-+	{"-","上一頁",KS_PREVPAGE},	{"Spc","下一頁",KS_NEXTPAGE},
-+	{"F","轉寄",KS_FORWARD},	{"S","儲存",KS_SAVE},
-+	{NULL,NULL,KS_NONE},		{"W","搜尋",KS_WHEREIS}};
- INST_KEY_MENU(simple_view_keymenu, simple_view_keys);
- #define SAVE_KEY 9
- 
-@@ -2342,7 +2342,7 @@
+--- pine/send.c.orig	Thu Jul  2 02:32:53 1998
++++ pine/send.c	Wed Jul 15 17:24:57 1998
+@@ -366,14 +366,14 @@
+ 		    mail_close(stream);
+ 		    if(ret == 'x'){
+ 			q_status_message(SM_ORDER, 0, 3,
+-					 "Composition cancelled");
++					 "取消編輯");
+ 			return;
+ 		    }
+ 		}
  	    }
-             if(style == HelpText || style == MainHelpText
- 	       || style == ComposerHelpText) {
--                q_status_message(SM_ORDER, 0, 5, "Already in Help");
-+                q_status_message(SM_ORDER, 0, 5, "已經在輔助選單中");
+ 	    else{
+ 		q_status_message1(SM_ORDER | SM_DING, 3, 3,
+-				  "Can't open Interrupted mailbox: %s",
++				  "無法開被中斷的信箱：%s",
+ 				  file_path);
+ 		if(stream)
+ 		  mail_close(stream);
+@@ -442,14 +442,14 @@
+ 
+ 		    if(ret == 'x'){
+ 			q_status_message(SM_ORDER, 0, 3,
+-					 "Composition cancelled");
++					 "取消編輯");
+ 			done++;
+ 		    }
+ 		}
+ 	    }
+ 	    else{
+ 		q_status_message1(SM_ORDER | SM_DING, 3, 3,
+-				  "Can't open Postponed mailbox: %s", mbox);
++				  "無法開遭暫緩的信箱：%s", mbox);
+ 		if(stream)
+ 		  mail_close(stream);
+ 	    }
+@@ -524,7 +524,7 @@
+ 
+ 			if(ret == 'x'){
+ 			    q_status_message(SM_ORDER, 0, 3,
+-					     "Composition cancelled");
++					     "取消編輯");
+ 			    done++;
+ 			}
+ 		    }
+@@ -608,7 +608,7 @@
+ 	  fs_give((void **)&tmp_fcc);
+     }
+ 
+-    pine_send(outgoing, &body, "COMPOSE MESSAGE", fcc,
++    pine_send(outgoing, &body, "編輯信件", fcc,
+ 	      reply, redraft_pos, lcc, custom, fcc_is_sticky);
+ 
+     if(reply){
+@@ -675,7 +675,7 @@
+      */
+     if(!stream->nmsgs){
+ 	q_status_message(SM_ORDER | SM_DING, 3, 5,
+-			 "Empty folder.  No messages really postponed!");
++			 "空的信件匣。沒有信件真正被暫緩！");
+ 	return(redraft_cleanup(stream, TRUE));
+     }
+     else if(stream == ps_global->mail_stream){
+@@ -711,7 +711,7 @@
+ 	mn_give(&msgmap);
+ 
+ 	if(rv){
+-	    q_status_message(SM_ORDER, 0, 3, "Composition cancelled");
++	    q_status_message(SM_ORDER, 0, 3, "取消編輯");
+ 	    (void) redraft_cleanup(stream, FALSE);
+ 	    return(0);				/* special case */
+ 	}
+@@ -949,7 +949,7 @@
+ 	  if(b->type == TYPEMULTIPART){
+ 	      if(strucmp(b->subtype, "mixed")){
+ 		  q_status_message1(SM_INFO, 3, 4, 
+-				 "Converting Multipart/%s to Multipart/Mixed", 
++				 "轉換 Multipart/%s to Multipart/Mixed", 
+ 				 b->subtype);
+ 		  fs_give((void **)&b->subtype);
+ 		  b->subtype = cpystr("mixed");
+@@ -957,7 +957,7 @@
+ 	  }
+ 	  else{
+ 	      q_status_message2(SM_ORDER | SM_DING, 3, 4, 
+-				"Unable to resume type %s/%s message",
++				"無法繼續形態為 %s/%s 的信件",
+ 				body_types[b->type], b->subtype);
+ 	      return(redraft_cleanup(stream, TRUE));
+ 	  }
+@@ -971,7 +971,7 @@
+ 	    set_mime_type_by_grope(&part->body, NULL);
+ 	    if(part->body.type != TYPETEXT){
+ 		q_status_message2(SM_ORDER | SM_DING, 3, 4,
+-				  "Unable to resume; first part is non-text: %s/%s",
++				  "無法繼續；第一部份非純文字：%s/%s",
+ 				  body_types[part->body.type], 
+ 				  part->body.subtype);
+ 		return(redraft_cleanup(stream, TRUE));
+@@ -1299,7 +1299,7 @@
+ 
+ 	if(rc == 1 || (rc == 0 && !answer)) {
+ 	    q_status_message(SM_ORDER, 3, 4,
+-		   "Send cancelled (User-id must be provided before sending)");
++		   "取消寄件(寄件前必須提供使用者代號)");
+ 	    return(0);
+ 	}
+ 
+@@ -1388,7 +1388,7 @@
+ 
+ 	if(rc == 1 || (rc == 0 && !answer)) {
+ 	    q_status_message(SM_ORDER, 3, 4,
+-	  "Send cancelled (Host/domain name must be provided before sending)");
++	  "取消寄件(寄件前必須提供 主機/領域 名稱)");
+ 	    return(0);
+ 	}
+ 
+@@ -1444,7 +1444,7 @@
+ 
+         if(rc == 1 || (rc == 0 && answer[0] == '\0')) {
+             q_status_message(SM_ORDER, 3, 4,
+-	       "Send cancelled (SMTP server must be provided before sending)");
++	       "取消寄件(寄件前必須提供 SMTP 伺服器)");
+             return(0);
+         }
+ 
+@@ -1471,31 +1471,31 @@
+ */
+ static struct headerentry he_template[]={
+   {"From    : ",  "From",        h_composer_from,       10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK},
+   {"Reply-To: ",  "Reply To",    h_composer_reply_to,   10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK},
+   {"To      : ",  "To",          h_composer_to,         10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 0, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK},
+   {"Cc      : ",  "Cc",          h_composer_cc,         10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 0, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK},
+   {"Bcc     : ",  "Bcc",         h_composer_bcc,        10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK},
+   {"Newsgrps: ",  "Newsgroups",  h_composer_news,        10, 0, NULL,
+-   news_build,    NULL, NULL, news_group_selector,  "To NwsGrps",
++   news_build,    NULL, NULL, news_group_selector,  "新聞組群列表",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_NONE},
+   {"Fcc     : ",  "Fcc",         h_composer_fcc,        10, 0, NULL,
+-   NULL,          NULL, NULL, folders_for_fcc,      "To Fldrs",
++   NULL,          NULL, NULL, folders_for_fcc,      "資料匣列表",
+    0, 0, 0, 1, 1, 1, 0, 0, 0, 0, KS_NONE},
+   {"Lcc     : ",  "Lcc",         h_composer_lcc,        10, 0, NULL,
+-   build_addr_lcc, NULL, NULL, addr_book_compose_lcc,"To AddrBk",
++   build_addr_lcc, NULL, NULL, addr_book_compose_lcc,"地址簿",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_NONE},
+   {"Attchmnt: ",  "Attchmnt",    h_composer_attachment, 10, 0, NULL,
+-   NULL,          NULL, NULL, NULL,                 "To Files",
++   NULL,          NULL, NULL, NULL,                 "檔案列表",
+    0, 1, 1, 0, 0, 1, 0, 0, 0, 0, KS_NONE},
+   {"Subject : ",  "Subject",     h_composer_subject,    10, 0, NULL,
+    valid_subject, NULL, NULL, NULL,                 NULL,
+@@ -1530,7 +1530,7 @@
+ 
+ static struct headerentry he_custom_addr_templ={
+    NULL,          NULL,          h_composer_custom_addr,10, 0, NULL,
+-   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
++   build_address, NULL, NULL, addr_book_compose,    "地址簿",
+    0, 1, 0, 1, 0, 1, 0, 0, 0, 0, KS_TOADDRBOOK};
+ static struct headerentry he_custom_free_templ={
+    NULL,          NULL,          h_composer_custom_free,10, 0, NULL,
+@@ -1821,7 +1821,7 @@
+     ekey[0].ch    = ctrl('T');
+     ekey[0].rval  = 2;
+     ekey[0].name  = "^T";
+-    ekey[0].label = "To AddrBk";
++    ekey[0].label = "地址簿";
+     ekey[1].ch    = -1;
+ 
+     /*----------------------------------------------------------------------
+@@ -1932,12 +1932,12 @@
+ 			opts[i].ch      = 'y';
+ 			opts[i].rval    = 'y';
+ 			opts[i].name    = "Y";
+-			opts[i++].label = "Yes";
++			opts[i++].label = "是";
+ 
+ 			opts[i].ch      = 'n';
+ 			opts[i].rval    = 'n';
+ 			opts[i].name    = "N";
+-			opts[i++].label = "No";
++			opts[i++].label = "否";
+ 
+ 			verbose_requested = 0;
+ 			if(F_ON(F_VERBOSE_POST, ps_global)){
+@@ -1984,7 +1984,7 @@
+ 			    dsn_show = (dsn_requested & DSN_SHOW);
+ 			    sprintf(tmp_20k_buf,
+ 				    "%s%s%s%s%s%sto \"%s\" ? ",
+-				    prmpt_cnf ? prmpt_cnf : "Send message ",
++				    prmpt_cnf ? prmpt_cnf : "送信 ",
+ 				    (verbose_requested || dsn_show)
+ 				      ? "(" : "",
+ 				    (verbose_requested)
+@@ -2164,7 +2164,7 @@
+ 			}
+ 		    }
+ 		    else{
+-			q_status_message(SM_ORDER, 0, 3, "Send cancelled");
++			q_status_message(SM_ORDER, 0, 3, "取消寄件");
+ 			retval = -1;
+ 		    }
+ 		}
+@@ -2192,7 +2192,7 @@
+ 	    break;
+ 
+ 	  case 1:
+-	    q_status_message(SM_ORDER, 0, 3, "Send cancelled");
++	    q_status_message(SM_ORDER, 0, 3, "取消寄件");
+ 	    done++;
+ 	    retval = -1;
+ 	    break;
+@@ -2436,7 +2436,7 @@
+ 		break;
+ 
+ 	      case 'x': /* ^C */
+-		q_status_message(SM_ORDER, 0, 3, "Message cancelled");
++		q_status_message(SM_ORDER, 0, 3, "取消信件");
+ 		dprint(4, (debugfile, "=== send: cancelled\n"));
+ 		return;
+ 
+@@ -2853,7 +2853,7 @@
+ #endif
+ 		if(pf->canedit || !he->rich_header)
+ 		  q_status_message(SM_ORDER, 3, 3,
+-			"Not allowed to change header \"From\"");
++			"不允許\改變標頭 \"From\"");
+ 
+ 		memset(he, 0, (size_t)sizeof(*he));
+ 		pf->he = NULL;
+@@ -3196,7 +3196,7 @@
+ 				   ? "CANCEL" : "HUH?"));
+ 	    if((editor_result & COMP_CANCEL)
+ 	       && F_ON(F_QUELL_DEAD_LETTER, ps_global)){
+-		q_status_message(SM_ORDER, 0, 3, "Message cancelled");
++		q_status_message(SM_ORDER, 0, 3, "取消信件");
  		break;
  	    }
  
-@@ -2722,7 +2722,7 @@
- 		}
- 		else if((ch == 'z' || ch == PF10) && style == MainHelpText){
- 		    print_all_help();
--    	        }else if(!ps_global->nr_mode && (ch == PF3 || ch == 'e')) {
-+    	        }else if(!ps_global->nr_mode && (ch == PF3 || ch == 'e' || ch == KEY_LEFT)) {
-     	            /*----------- Done -----------*/
-                     done = 1;
-                 }else if((ch == 'y' && !ps_global->anonymous) ||
-@@ -2843,8 +2843,8 @@
-     int         rc;
-     static char search_string[MAX_SEARCH+1] = { '\0' };
-     static ESCKEY_S word_search_key[] = { { 0, 0, "", "" },
--					 {ctrl('Y'), 10, "^Y", "First Line"},
--					 {ctrl('V'), 11, "^V", "Last Line"},
-+					 {ctrl('Y'), 10, "^Y", "第一行"},
-+					 {ctrl('V'), 11, "^V", "最後一行"},
- 					 {-1, 0, NULL, NULL}
- 					};
+@@ -3474,15 +3474,15 @@
+ 		if(fcc_result && folder)
+ 		  lc = last_cmpnt(folder);
  
+-		q_status_message3(SM_ORDER, 0, 3, "Message cancelled%s%s%s",
+-				  (lc && *lc) ? " and copied to \"" : "",
++		q_status_message3(SM_ORDER, 0, 3, "取消信件%s%s%s",
++				  (lc && *lc) ? " 並複製到 \"" : "",
+ 				  (lc && *lc) ? lc : "",
+ 				  (lc && *lc) ? "\" file" : "");
+ 		break;
+             }
+ 	    else{
+ 		q_status_message(SM_ORDER, 0, 4,
+-		    "Continuing composition.  Message not postponed or sent");
++		    "繼續編輯。信件未被暫緩或送出");
+ 		body_start = 1;
+ 		continue; /* postpone failed, jump back in to composer */
+             }
+@@ -3547,8 +3547,8 @@
+ 	       && !filter_message_text(sending_filter_requested, outgoing,
+ 				       *body, &orig_so)){
+ 		q_status_message1(SM_ORDER, 3, 3,
+-				 "Problem filtering!  Nothing sent%s.",
+-				 fcc ? " or saved to fcc" : "");
++				 "過濾器有問題！沒有東西被送出%s。",
++				 fcc ? "或存至 fcc" : "");
+ 		continue;
+ 	    }
+ 
+@@ -3938,23 +3938,23 @@
+     char *buf;
+     int  *goodorbad;
+ {
+-    sprintf(buf, "Message %s%s%s%s%s%s%s.",
++    sprintf(buf, "信件 %s%s%s%s%s%s%s.",
+ 	    (result & P_NEWS_WIN)
+-	       ? "posted" 
++	       ? "已刊登" 
+ 	       : (result & P_NEWS_LOSE)
+-	            ? "NOT posted" : "",
++	            ? "未被刊登" : "",
+ 	    ((result & P_NEWS_BITS) && (result & P_MAIL_BITS)
+ 	     && (result & P_FCC_BITS))
+ 	      ? ", "
+ 	      : ((result & P_NEWS_BITS) && (result & P_MAIL_BITS))
+-	          ? " and " : "",
++	          ? " 並 " : "",
+ 	    (result & P_MAIL_WIN)
+-	      ? "sent"
++	      ? "已寄出"
+ 	      : (result & P_MAIL_LOSE)
+-	          ? "NOT SENT" : "",
++	          ? "未寄出" : "",
+ 	    ((result & (P_MAIL_BITS | P_NEWS_BITS)) && (result & P_FCC_BITS))
+-	      ? " and copied to " 
+-	      : (result & P_FCC_WIN) ? "ONLY copied to " : "",
++	      ? " 並被複製到 " 
++	      : (result & P_FCC_WIN) ? "僅被複製到 " : "",
+ 	    (result & P_FCC_WIN) ? "\"" : "",
+ 	    (result & P_FCC_WIN) ? fcc_name  : "",
+ 	    (result & P_FCC_WIN) ? "\"" : "");
+@@ -4281,12 +4281,12 @@
+     opts[i].ch      = 'y';
+     opts[i].rval    = 'y';
+     opts[i].name    = "Y";
+-    opts[i++].label = "Yes";
++    opts[i++].label = "是";
+ 
+     opts[i].ch      = 'n';
+     opts[i].rval    = 'n';
+     opts[i].name    = "N";
+-    opts[i++].label = "No";
++    opts[i++].label = "否";
+ 
+     if(filters){
+ 	/* set global_filter_pointer to desired filter or NULL if none */
+@@ -4294,12 +4294,12 @@
+ 	opts[i].ch      = ctrl('P');
+ 	opts[i].rval    = 10;
+ 	opts[i].name    = "^P";
+-	opts[i++].label = "Prev Filter";
++	opts[i++].label = "前一個過濾器";
+ 
+ 	opts[i].ch      = ctrl('N');
+ 	opts[i].rval    = 11;
+ 	opts[i].name    = "^N";
+-	opts[i++].label = "Next Filter";
++	opts[i++].label = "下一個過濾器";
+ 
+ 	if(F_ON(F_FIRST_SEND_FILTER_DFLT, ps_global))
+ 	  filters = filters->next;
+@@ -4369,23 +4369,23 @@
+ 	  p = NULL;
+ 
+ 	dsn_show = (dsn_requested & DSN_SHOW);
+-	sprintf(tmp_20k_buf, "Send message%s%s%s%s%s%s%s%s%s%s%s%s? ",
++	sprintf(tmp_20k_buf, "送出信件%s%s%s%s%s%s%s%s%s%s%s%s? ",
+ 		(filters || verbose_requested || background_requested
+ 					      || dsn_show)
+ 		  ? " (" : "",
+-		(filters && filters->filter) ? "filtered thru \"" : "",
++		(filters && filters->filter) ? "經由過濾器 \"" : "",
+ 		(filters)
+ 		  ? (filters->filter
+ 		      ? filters->filter
+-		      : "unfiltered")
++		      : "未經過濾")
+ 		  : "",
+ 		(filters && filters->filter) ? "\"" : "",
+ 		(filters && (verbose_requested || background_requested))
+ 		  ? " " : "",
+ 		(verbose_requested || background_requested)
+ 		  ? "in " : "",
+-		(verbose_requested) ? "verbose " : "",
+-		(background_requested) ? "background " : "",
++		(verbose_requested) ? "顯示細節 " : "",
++		(background_requested) ? "背景送出 " : "",
+ 		(verbose_requested || background_requested)
+ 		  ? "mode" : "",
+ 		(dsn_show
+@@ -4400,11 +4400,11 @@
+ 	  *p = ' ';
+ 
+ 	if(verbose_label)
+-	  opts[verbose_label].label = verbose_requested ? "Normal" : "Verbose";
++	  opts[verbose_label].label = verbose_requested ? "通常" : "顯示細節";
+ 
+ 	if(bg_label)
+ 	  opts[bg_label].label = background_requested
+-				   ? "Foreground" : "Background";
++				   ? "前景" : "背景";
+ 
+ 	if(F_ON(F_DSN, ps_global)){
+ 	    if(dsn_requested & DSN_SHOW){
+@@ -4428,11 +4428,11 @@
+ 	    break;
+ 	}
+ 	else if(rv == 'n'){			/* Declined! */
+-	    rstr = "No Message Sent";
++	    rstr = "沒有任何信件被送出";
+ 	    break;
+ 	}
+ 	else if(rv == 'z'){			/* Cancelled! */
+-	    rstr = "Send Cancelled";
++	    rstr = "取消送件";
+ 	    break;
+ 	}
+ 	else if(rv == 10)			/* PREVIOUS filter */
+@@ -4614,7 +4614,7 @@
+     if(body->type != TYPEOTHER){
+ 	rv = 1;
+ 	q_status_message3(SM_ORDER, 0, 3,
+-	    "File %s attached as type %s/%s", file,
++	    "檔案 %s 附加為 %s/%s", file,
+ 	    body_types[body->type],
+ 	    body->subtype ? body->subtype : rfc822_default_subtype(body->type));
+     }
+@@ -4663,7 +4663,7 @@
+ 	(void) close_system_pipe(&syspipe);
+ 	if((l = name_file_size(fname)) < 0L){
+ 	    q_status_message2(SM_ORDER | SM_DING, 3, 4,
+-			      "Error determining size of %s: %s", fname,
++			      "決定檔案 %s 大小時發生錯誤：%s", fname,
+ 			      fnp = error_description(errno));
+ 	    dprint(1, (debugfile,
+ 		       "!!! Upload cmd \"%s\" failed for \"%s\": %s\n",
+@@ -4675,7 +4675,7 @@
+ 	return(l >= 0);
+     }
+     else
+-      q_status_message(SM_ORDER | SM_DING, 3, 4, "Error opening pipe");
++      q_status_message(SM_ORDER | SM_DING, 3, 4, "開啟管線時發生錯誤");
+ 
+     return(0);
+ }
+@@ -4728,7 +4728,7 @@
+ 	else if(reply->flags == REPLY_MSGNO)
+ 	  return;
+ 
+-	we_cancel = busy_alarm(1, "Updating \"Answered\" Flags", NULL, 1);
++	we_cancel = busy_alarm(1, "正在更新 \"已回覆\" 旗標", NULL, 1);
+ 	if(!stream){
+ 	    if(stream = mail_open(NULL, reply->mailbox, OP_SILENT)){
+ 		ourstream++;
+@@ -4806,7 +4806,7 @@
+ 		so_give(&tmpf_so);
+ 	    }
+ 	    else
+-	      errstr = "Can't create space for filter temporary file.";
++	      errstr = "無法建立過濾器的暫存檔。";
+ 	}
+ 
+ 	if(!errstr){
+@@ -4830,13 +4830,13 @@
+ 				so_give(&tmpf_so);
+ 			    }
+ 			    else
+-			      errstr = "Can't open temp file filter wrote.";
++			      errstr = "無法開啟過濾器的暫存檔。";
+ 			}
+ 			else
+-			  errstr = "Filter command returned error.";
++			  errstr = "過濾器指令傳回錯誤值。";
+ 		    }
+ 		    else
+-		      errstr = "Can't exec filter text.";
++		      errstr = "無法執行過濾器。";
+ 		}
+ 		else
+ 		  errstr = gf_filter(cmd, key ? filter_session_key() : NULL,
+@@ -4847,7 +4847,7 @@
+ 		if(errstr){
+ 		    int ch;
+ 
+-		    fprintf(stdout, "\r\n%s  Hit return to continue.", errstr);
++		    fprintf(stdout, "\r\n%s  鍵入 return 繼續。", errstr);
+ 		    fflush(stdout);
+ 		    while((ch = read_char(300)) != ctrl('M')
+ 			  && ch != NO_OP_IDLE)
+@@ -4940,7 +4940,7 @@
+ 	if(tmp_so)
+ 	  so_give(&tmp_so);
+ 
+-	q_status_message1(SM_ORDER | SM_DING, 3, 6, "Problem filtering: %s",
++	q_status_message1(SM_ORDER | SM_DING, 3, 6, "過濾過程有問題：%s",
+ 			  errstr);
+ 	dprint(1, (debugfile, "Filter FAILED: %s\n", errstr));
+     }
+@@ -5072,7 +5072,7 @@
+ 
+     if(!pf){
+ 	q_status_message(SM_ORDER,3,3,
+-	    "Can't send message. No recipients specified!");
++	    "無法送信。尚未指定收信人！");
+ 	return(0);
+     }
+ 
+@@ -5081,7 +5081,7 @@
+     gf_filter_init();				/* zero piped byte count, 'n */
+     send_bytes_to_send = send_body_size(body);	/* count body bytes	     */
+     ps_global->c_client_error[0] = error_buf[0] = '\0';
+-    we_cancel = busy_alarm(1, "Sending mail",
++    we_cancel = busy_alarm(1, "正在寄信",
+ 			   send_bytes_to_send ? sent_percent : NULL, 1);
+ 
+     /* try posting via local "<mta> <-t>" if specified */
+@@ -5263,7 +5263,7 @@
+ 	    struct headerentry *last_he = NULL;
+ 
+ 	    sprintf(error_buf,
+-		    "Mail not sent. Sending error%s%.40s",
++		    "信件未被寄出。寄件錯誤%s%.40s",
+ 		    (sending_stream && sending_stream->reply) ? ": ": ".",
+ 		    (sending_stream && sending_stream->reply)
+ 		      ? sending_stream->reply : "");
+@@ -5334,7 +5334,7 @@
+ 	TIME_STAMP("smtp done", 1);
+     }
+     else if(!error_mess)
+-      sprintf(error_mess = error_buf, "Error sending: %.60s",
++      sprintf(error_mess = error_buf, "寄信時發生錯誤：%.60s",
+ 	      ps_global->c_client_error);
+ 
+     if(verbose_file){
+@@ -5431,12 +5431,12 @@
+         if(folder_index(fcc, *fcc_cntxt, FI_FOLDER) < 0){
+ 	    if(ps_global->context_list->next)
+ 	      sprintf(tmp_20k_buf,
+-		      "Folder \"%.20s\" in <%.30s> doesn't exist. Create",
++		      "信件匣 \"%.20s\" 在 <%.30s> 尚不存在。要新建",
+ 		      strsquish(tmp_20k_buf + 500, fcc, 20),
+ 		      strsquish(tmp_20k_buf + 1000,(*fcc_cntxt)->nickname,30));
+ 	    else
+ 	      sprintf(tmp_20k_buf,
+-		      "Folder \"%s\" doesn't exist.  Create",
++		      "信件匣 \"%s\" 尚不存在。要新建",
+ 		      strsquish(tmp_20k_buf + 500, fcc, 40));
+ 
+ 	    if(force || want_to(tmp_20k_buf,'y','n',NO_HELP,WT_NORM) == 'y'){
+@@ -5473,7 +5473,7 @@
+ 	    ok++;
+ 	}
+ 	else{
+-	    sprintf(tmp_20k_buf,"Folder \"%s\" doesn't exist.  Create",
++	    sprintf(tmp_20k_buf,"信件匣 \"%s\" 尚不存在。要新建",
+ 		    strsquish(tmp_20k_buf + 500, fcc, 40));
+ 	    if(force || want_to(tmp_20k_buf,'y','n',NO_HELP,WT_NORM) == 'y'){
+ 		/*
+@@ -5507,8 +5507,8 @@
+ 
+ 	if(ok == 0){
+ 	    if(ps_global->mm_log_error){
+-		s1 = err_prefix ? err_prefix : "Fcc Error: ";
+-		s2 = err_suffix ? err_suffix : " Message NOT sent or copied.";
++		s1 = err_prefix ? err_prefix : "Fcc 錯誤：";
++		s2 = err_suffix ? err_suffix : " 信件沒有被寄出或複製。";
+ 
+ 		l1 = strlen(s1);
+ 		l2 = strlen(s2);
+@@ -5526,10 +5526,10 @@
+ 
+ 	    }
+ 	    else
+-	      errstr = "Fcc creation error. Message NOT sent or copied.";
++	      errstr = "建立 Fcc 時發生錯誤。信件沒有被送出或複製。";
+ 	}
+ 	else
+-	  errstr = "Fcc creation rejected. Message NOT sent or copied.";
++	  errstr = "Fcc 之建立遭拒絕。信件沒有被送出或複製。";
+ 
+ 	q_status_message(SM_ORDER | SM_DING, 3, 3, errstr);
+     }
+@@ -5577,7 +5577,7 @@
+     if(label && *label){
+ 	char msg_buf[80];
+ 
+-	strncat(strcpy(msg_buf, "Writing "), label, 70);
++	strncat(strcpy(msg_buf, "正在寫入 "), label, 70);
+ 	we_cancel = busy_alarm(1, msg_buf, NULL, 1);
+     }
+     else
+@@ -5613,7 +5613,7 @@
+ 	we_cancel = 0;
+ 
+ 	q_status_message1(SM_ORDER | SM_DING, 3, 5,
+-			  "Write to \"%s\" FAILED!!!", fcc);
++			  "寫入 \"%s\" 失敗！！！", fcc);
+ 	dprint(1, (debugfile, "ERROR appending %s in \"%s\"",
+ 		   fcc, cntxt ? cntxt->context : "NULL"));
+ 	return(0);
+@@ -6089,7 +6089,7 @@
+ 	if((file_contents = (void *)so_get(FileStar, pa->filename,
+ 					   READ_ACCESS)) == NULL){
+             q_status_message2(SM_ORDER | SM_DING, 3, 4,
+-                              "Error \"%s\", couldn't attach file \"%s\"",
++                              "錯誤 \"%s\"，無法附加檔案 \"%s\"",
+                               error_description(errno), pa->filename);
+             display_message('x');
+             continue;
+@@ -6616,13 +6616,17 @@
+ 		body->subtype = cpystr("octet-stream");
+ 	    }
+ 
+-	    /*
+-	     * Apply maximal encoding regardless of previous
+-	     * setting.  This segment's either not text, or is 
+-	     * unlikely to be readable with > 30% of the
+-	     * text encoded anyway, so we might as well save space...
+-	     */
+-	    new_encoding = ENCBINARY;   /*  > 30% 8 bit chars */
++	    if(body->type == TYPETEXT)
++              /* Use ENC8BIT rather than ENCBINARY for TEXT */
++	      new_encoding = ENC8BIT;
++	    else
++	      /*
++	       * Apply maximal encoding regardless of previous
++	       * setting.  This segment's either not text, or is 
++	       * unlikely to be readable with > 30% of the
++	       * text encoded anyway, so we might as well save space...
++	       */
++	      new_encoding = ENCBINARY;   /*  > 30% 8 bit chars */
+ 	}
+     }
+ 
+@@ -6791,6 +6795,9 @@
+     value = rfc1522_encode(tmp_20k_buf, (unsigned char *) text,
+ 			   ps_global->VAR_CHAR_SET);
+     
++    if (!strcmp(field, "Subject"))
++	value = text;
++
+     if(value && value == text){	/* no encoding was done, have to fold */
+ 	int   fold_by = 75, len;
+ 	char *actual_field;
+@@ -7111,7 +7118,7 @@
+ 	    break;
+ 
+ 	  default:
+-	    q_status_message1(SM_ORDER,3,7,"Unknown header type: %s",pf->name);
++	    q_status_message1(SM_ORDER,3,7,"未知的標頭形態：%s",pf->name);
+ 	    break;
+ 	}
+     }
+@@ -7439,7 +7446,8 @@
+ 
+ 	switch (body->encoding) {	/* all else needs filtering */
+ 	  case ENC8BIT:			/* encode 8BIT into QUOTED-PRINTABLE */
+-	    gf_link_filter(gf_8bit_qp, NULL);
++	    if(F_OFF(F_ENABLE_8BIT, ps_global)) /* unless 8BIT enabled */
++		gf_link_filter(gf_8bit_qp, NULL);
+ 	    break;
+ 
+ 	  case ENCBINARY:		/* encode binary into BASE64 */
+@@ -7453,7 +7461,7 @@
+ 
+     if(encode_error = gf_pipe(gc, l_putc)){ /* shove body part down pipe */
+ 	q_status_message1(SM_ORDER | SM_DING, 3, 4,
+-			  "Encoding Error \"%s\"", encode_error);
++			  "編碼時發生錯誤 \"%s\"", encode_error);
+ 	display_message('x');
+     }
+ 
+@@ -7506,7 +7514,7 @@
+       sprintf (*dst += strlen (*dst),"Content-Transfer-Encoding: %s\015\012",
+ 	       body_encodings[(body->encoding == ENCBINARY)
+ 				? ENCBASE64
+-				: (body->encoding == ENC8BIT)
++				: (body->encoding == ENC8BIT && F_OFF(F_ENABLE_8BIT, ps_global))
+ 				    ? ENCQUOTEDPRINTABLE
+ 				    : (body->encoding <= ENCMAX)
+ 					? body->encoding : ENCOTHER]);
+@@ -8063,7 +8071,7 @@
+ 		   || (forbid = pine_header_forbidden(name))){
+ 		    if(forbid)
+ 		      q_status_message1(SM_ORDER, 3, 3,
+-			    "Not allowed to change header \"%s\"", name);
++			    "不允許\改變標頭 \"%s\"", name);
+ 
+ 		    *t = save;
+ 		    continue;

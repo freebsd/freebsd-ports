@@ -1,120 +1,307 @@
---- pico/display.c.orig	Sat Jan 31 15:57:10 1998
-+++ pico/display.c	Sat Jan 31 16:07:16 1998
-@@ -76,32 +76,32 @@
-  * Standard pico keymenus...
-  */
- static KEYMENU menu_pico[] = {
--    {"^G", "Get Help", KS_SCREENHELP},	{"^O", "WriteOut", KS_SAVEFILE},
--    {"^R", "Read File", KS_READFILE},	{"^Y", "Prev Pg", KS_PREVPAGE},
--    {"^K", "Cut Text", KS_NONE},	{"^C", "Cur Pos", KS_CURPOSITION},
--    {"^X", "Exit", KS_EXIT},		{"^J", "Justify", KS_JUSTIFY},
--    {"^W", "Where is", KS_WHEREIS},	{"^V", "Next Pg", KS_NEXTPAGE},
-+    {"^G", "輔助說明", KS_SCREENHELP},	{"^O", "暫停工作", KS_SAVEFILE},
-+    {"^R", "讀取檔案", KS_READFILE},	{"^Y", "上一頁", KS_PREVPAGE},
-+    {"^K", "剪下一行", KS_NONE},	{"^C", "目前位置", KS_CURPOSITION},
-+    {"^X", "離開", KS_EXIT},		{"^J", "重整段落", KS_JUSTIFY},
-+    {"^W", "搜尋", KS_WHEREIS},	{"^V", "下一頁", KS_NEXTPAGE},
-     {"^U", NULL, KS_NONE},
- #if defined(SPELLER) && !defined(__FreeBSD__)
--    {"^T", "To Spell", KS_SPELLCHK}
-+    {"^T", "拼字檢查", KS_SPELLCHK}
- #else
--    {"^D", "Del Char", KS_NONE}
-+    {"^D", "刪除字元", KS_NONE}
- #endif
- };
- #define	UNCUT_KEY	10
+--- pine/mailpart.c.orig	Fri Jun 26 02:28:42 1998
++++ pine/mailpart.c	Wed Jul 15 17:02:34 1998
+@@ -135,18 +135,18 @@
+        {HELP_MENU,
+ 	OTHER_MENU,
+ 	{"<",NULL,{MC_EXIT,2,{'<',','}},KS_EXITMODE},
+-	{">","[View]",{MC_VIEW_ATCH,5,{'v','>','.',ctrl('M'),ctrl('J')}},
++	{">","[檢視]",{MC_VIEW_ATCH,5,{'v','>','.',ctrl('M'),ctrl('J')}},
+ 	  KS_VIEW},
+-	{"P", "PrevAttch",{MC_PREVITEM,4,{'p',ctrl('B'),ctrl('P'),KEY_UP}},
++	{"P", "前一附件",{MC_PREVITEM,4,{'p',ctrl('B'),ctrl('P'),KEY_UP}},
+ 	  KS_PREVMSG},
+-	{"N", "NextAtch",
++	{"N", "次一附件",
+ 	 {MC_NEXTITEM, 5, {'n','\t',ctrl('F'),ctrl('N'), KEY_DOWN}},
+ 	 KS_NEXTMSG},
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+ 	DELETE_MENU,
+ 	UNDELETE_MENU,
+-	{"S", "Save", {MC_SAVETEXT,1,{'s'}}, KS_SAVE},
++	{"S", "存檔", {MC_SAVETEXT,1,{'s'}}, KS_SAVE},
+ 	{NULL, NULL, {MC_EXPORT, 1, {'e'}}, KS_EXPORT},
  
+ 	HELP_MENU,
+@@ -155,9 +155,9 @@
+ 	QUIT_MENU,
+ 	PIPE_MENU,
+ 	BOUNCE_MENU,
+-	{"A","AboutAttch",{MC_ABOUTATCH,1,{'a'}},KS_NONE},
++	{"A","關於附件",{MC_ABOUTATCH,1,{'a'}},KS_NONE},
+ 	WHEREIS_MENU,
+-	{"%", "Print", MC_PRINTMSG,1,{'%'}, KS_PRINT},
++	{"%", "列印", MC_PRINTMSG,1,{'%'}, KS_PRINT},
+ 	INDEX_MENU,
+ 	REPLY_MENU,
+ 	FORWARD_MENU};
+@@ -174,11 +174,11 @@
+ static struct key att_view_keys[] =
+        {HELP_MENU,
+ 	OTHER_MENU,
+-	{"<",NULL,{MC_EXIT,2,{'<',','}},KS_EXITMODE},
+-	{"Ret","[View Hilite]",{MC_VIEW_HANDLE,3,
++	{"<",NULL,{MC_EXIT,3,{'<',',',KEY_LEFT}},KS_EXITMODE},
++	{"Ret","[檢視 Hilite]",{MC_VIEW_HANDLE,3,
+ 				{ctrl('m'),ctrl('j'),KEY_RIGHT}},KS_NONE},
+-	{"^B","Prev URL",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
+-	{"^F","Next URL",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
++	{"^B","前一 URL",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
++	{"^F","次一 URL",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+ 	DELETE_MENU,
+@@ -194,7 +194,7 @@
+ 	BOUNCE_MENU,
+ 	NULL_MENU,
+ 	WHEREIS_MENU,
+-	{"%", "Print", MC_PRINTMSG,1,{'%'}, KS_PRINT},
++	{"%", "列印", MC_PRINTMSG,1,{'%'}, KS_PRINT},
+ 	NULL_MENU,
+ 	REPLY_MENU,
+ 	FORWARD_MENU};
+@@ -324,12 +324,12 @@
  
- static KEYMENU menu_compose[] = {
--    {"^G", "Get Help", KS_SCREENHELP},	{"^X", NULL, KS_SEND},
--    {"^R", "Read File", KS_READFILE},	{"^Y", "Prev Pg", KS_PREVPAGE},
--    {"^K", "Cut Text", KS_NONE},	{"^O", "Postpone", KS_POSTPONE},
--    {"^C", "Cancel", KS_CANCEL},	{"^J", "Justify", KS_JUSTIFY},
--    {NULL, NULL, KS_NONE},		{"^V", "Next Pg", KS_NEXTPAGE},
-+    {"^G", "輔助說明", KS_SCREENHELP},	{"^X", NULL, KS_SEND},
-+    {"^R", "讀取檔案", KS_READFILE},	{"^Y", "上一頁", KS_PREVPAGE},
-+    {"^K", "剪下一行", KS_NONE},	{"^O", "暫緩寫信", KS_POSTPONE},
-+    {"^C", "取消", KS_CANCEL},		{"^J", "重整段落", KS_JUSTIFY},
-+    {NULL, NULL, KS_NONE},		{"^V", "下一頁", KS_NEXTPAGE},
-     {"^U", NULL, KS_NONE},
- #ifdef	SPELLER
--    {"^T", "To Spell", KS_SPELLCHK}
-+    {"^T", "拼字檢查", KS_SPELLCHK}
- #else
--    {"^D", "Del Char", KS_NONE}
-+    {"^D", "刪除字元", KS_NONE}
- #endif
- };
- #define	EXIT_KEY	1
-@@ -737,12 +737,12 @@
+     if(mn_total_cur(ps->msgmap) > 1L){
+ 	q_status_message(SM_ORDER | SM_DING, 0, 3,
+-			 "Can only view one message's attachments at a time!");
++			 "同一時間僅能檢視一封信的附件！");
+ 	return;
+     }
+     else if(ps->atmts && !(ps->atmts + 1)->description)
+       q_status_message1(SM_ASYNC, 0, 3,
+-	"Message %s has only one part (the message body), and no attachments.",
++	"信件 %s 僅有一部分(信件本體)，沒有附件。",
+ 	long2string(mn_get_cur(ps->msgmap)));
+ 
+     /*
+@@ -465,7 +465,7 @@
+ 	  break;
+ 
+ 	if(ps->mangled_header){
+-	    set_titlebar("ATTACHMENT INDEX", ps->mail_stream,
++	    set_titlebar("附件索引", ps->mail_stream,
+ 			 ps->context_current, ps->cur_folder, ps->msgmap, 1,
+ 			 MessageNumber, 0, 0);
+ 	    ps->mangled_header = 0;
+@@ -529,7 +529,7 @@
+ 		  clrbitn(ATT_PRINT_KEY, bitmap);
+ 
+ 		km->keys[ATT_EXPORT_KEY].name  = "E";
+-		km->keys[ATT_EXPORT_KEY].label = "Export";
++		km->keys[ATT_EXPORT_KEY].label = "匯出";
  	    }
  
- 	    if(lastflag&CFFILL){
--		menu_pico[UNCUT_KEY].label = "UnJustify";
-+		menu_pico[UNCUT_KEY].label = "取消重整";
- 		emlwrite("Can now UnJustify!", NULL);
- 		mpresf = HUGE;	/* remove this after next keystroke! */
+ 	    if(km_popped){
+@@ -624,7 +624,7 @@
+ 	    if(ctmp = next_attline(current))
+ 	      current = ctmp;
+ 	    else
+-	      q_status_message(SM_ORDER, 0, 1, "Already on last attachment");
++	      q_status_message(SM_ORDER, 0, 1, "已經到最後一附件了");
+ 
+ 	    break;
+ 
+@@ -632,7 +632,7 @@
+ 	    if(ctmp = prev_attline(current))
+ 	      current = ctmp;
+ 	    else
+-	      q_status_message(SM_ORDER, 0, 1, "Already on first attachment");
++	      q_status_message(SM_ORDER, 0, 1, "已經到第一個附件了");
+ 
+ 	    break;
+ 
+@@ -646,7 +646,7 @@
  	    }
  	    else
--	      menu_pico[UNCUT_KEY].label = "UnCut Text";
-+	      menu_pico[UNCUT_KEY].label = "復原刪字";
+ 	      q_status_message(SM_ORDER, 0, 1,
+-			       "Already on last page of attachments");
++			       "已經在附件的最後一頁了");
+ 	    
  
- 	    wkeyhelp(menu_pico);
- 	    sgarbk = FALSE;
-@@ -932,18 +932,18 @@
- 	  ShowPrompt();
- 	else{
- 	    menu_compose[EXIT_KEY].label  = (Pmaster->headents)
--					      ? "Send" :"Exit";
-+					      ? "送出" :"離開";
- 	    menu_compose[PSTPN_KEY].name  = (Pmaster->headents)
- 					      ? "^O" : NULL;
- 	    menu_compose[PSTPN_KEY].label = (Pmaster->headents)
--					      ? "Postpone" : NULL;
-+					      ? "暫緩寫信" : NULL;
- 	    menu_compose[WHERE_KEY].name  = (Pmaster->alt_ed) ? "^_" : "^W";
- 	    menu_compose[WHERE_KEY].label = (Pmaster->alt_ed) ? "Alt Edit" 
--							      : "Where is";
-+							      : "搜尋";
- 	    KS_OSDATASET(&menu_compose[WHERE_KEY],
- 			 (Pmaster->alt_ed) ? KS_ALTEDITOR : KS_WHEREIS);
--	    menu_compose[UNCUT_KEY].label = (thisflag&CFFILL) ? "UnJustify"
--							      : "UnCut Text";
-+	    menu_compose[UNCUT_KEY].label = (thisflag&CFFILL) ? "取消重整"
-+							      : "復原刪字";
- 	    wkeyhelp(menu_compose);
- #ifdef _WINDOWS
- 	    /* When alt editor is available "Where is" is not on the menu
-@@ -1134,11 +1134,11 @@
+ 	    break;
+@@ -667,7 +667,7 @@
+ 	    }
+ 	    else
+ 	      q_status_message(SM_ORDER, 0, 1,
+-			       "Already on first page of attachments");
++			       "已經在附件的第一頁了");
+ 
+ 	    break;
+ 
+@@ -1035,7 +1035,7 @@
+ {
+     bitmap_t	 bitmap;
+ 
+-    set_titlebar("ATTACHMENT INDEX", ps_global->mail_stream,
++    set_titlebar("附件索引", ps_global->mail_stream,
+ 		 ps_global->context_current, ps_global->cur_folder,
+ 		 ps_global->msgmap, 1, FolderName,0,0);
+ 
+@@ -1204,7 +1204,7 @@
+     gf_io_t     pc;
+     STORE_S    *store;
+     static ESCKEY_S att_save_opts[] = {
+-	{ctrl('T'), 10, "^T", "To Files"},
++	{ctrl('T'), 10, "^T", "檔案列表"},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL}};
+@@ -1236,7 +1236,7 @@
+ 	att_save_opts[++r].ch  = ctrl('V');
+ 	att_save_opts[r].rval  = 12;
+ 	att_save_opts[r].name  = "^V";
+-	att_save_opts[r].label = "Downld Msg";
++	att_save_opts[r].label = "下載信件";
+     }
+ #endif	/* !(DOS || MAC) */
+ 
+@@ -1244,7 +1244,7 @@
+ 	att_save_opts[++r].ch  =  ctrl('I');
+ 	att_save_opts[r].rval  = 11;
+ 	att_save_opts[r].name  = "TAB";
+-	att_save_opts[r].label = "Complete";
++	att_save_opts[r].label = "完成";
      }
  
-     menu_yesno[1].name  = "Y";
--    menu_yesno[1].label = (dflt == TRUE) ? "[Yes]" : "Yes";
-+    menu_yesno[1].label = (dflt == TRUE) ? "[是]" : "是";
-     menu_yesno[6].name  = "^C";
-     menu_yesno[6].label = "Cancel";
-     menu_yesno[7].name  = "N";
--    menu_yesno[7].label = (dflt == FALSE) ? "[No]" : "No";
-+    menu_yesno[7].label = (dflt == FALSE) ? "[否]" : "否";
-     wkeyhelp(menu_yesno);		/* paint generic menu */
-     sgarbk = TRUE;			/* mark menu dirty */
-     if(Pmaster && curwp)
-@@ -1304,7 +1304,7 @@
- #endif
+     att_save_opts[++r].ch = -1;
+@@ -1597,7 +1597,7 @@
+     ATTACH_S *ap = a;
+     STORE_S  *store;
+     static ESCKEY_S opts[] = {
+-	{ctrl('T'), 10, "^T", "To Files"},
++	{ctrl('T'), 10, "^T", "檔案列表"},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL}};
  
-     menu_mlreply[0].name = "^G";
--    menu_mlreply[0].label = "Get Help";
-+    menu_mlreply[0].label = "輔助說明";
-     KS_OSDATASET(&menu_mlreply[0], KS_SCREENHELP);
-     for(j = 0, i = 1; i < 6; i++){	/* insert odd extras */
- 	menu_mlreply[i].name = NULL;
-@@ -1324,7 +1324,7 @@
+@@ -1605,7 +1605,7 @@
+ 	opts[i].ch    =  ctrl('I');
+ 	opts[i].rval  = 11;
+ 	opts[i].name  = "TAB";
+-	opts[i].label = "Complete";
++	opts[i].label = "完成";
      }
  
-     menu_mlreply[6].name = "^C";
--    menu_mlreply[6].label = "Cancel";
-+    menu_mlreply[6].label = "取消";
-     KS_OSDATASET(&menu_mlreply[6], KS_NONE);
-     for(j = 0, i = 7; i < 12; i++){	/* insert even extras */
- 	menu_mlreply[i].name = NULL;
+     filename[0] = full_filename[0] = '\0';
+@@ -1670,7 +1670,7 @@
+     ATTACH_S *ap;
+     STORE_S  *store;
+     static ESCKEY_S opts[] = {
+-	{ctrl('T'), 10, "^T", "To Files"},
++	{ctrl('T'), 10, "^T", "檔案列表"},
+ 	{-1, 0, NULL, NULL},
+ 	{-1, 0, NULL, NULL}};
+ 
+@@ -1678,7 +1678,7 @@
+ 	opts[i].ch    =  ctrl('I');
+ 	opts[i].rval  = 11;
+ 	opts[i].name  = "TAB";
+-	opts[i].label = "Complete";
++	opts[i].label = "完成";
+     }
+ 
+     filename[0] = full_filename[0] = '\0';
+@@ -1899,14 +1899,14 @@
+         /*----- Can't display this type ------*/
+ 	if(a->body->encoding < ENCOTHER)
+ 	  q_status_message4(SM_ORDER | SM_DING, 3, 5,
+-		     "Don't know how to display %s%s%s attachments.%s",
++		     "不知如何顯示 %s%s%s 的附件。%s",
+ 			    body_type_names(a->body->type),
+ 			    a->body->subtype ? "/" : "",
+ 			    a->body->subtype ? a->body->subtype :"",
+-			    (flags & DA_SAVE) ? " Try Save." : "");
++			    (flags & DA_SAVE) ? " 試試存檔。" : "");
+ 	else
+ 	  q_status_message1(SM_ORDER | SM_DING, 3, 5,
+-			    "Don't know how to unpack \"%s\" encoding",
++			    "不知如何解開 \"%s\" 的編碼",
+ 			    body_encodings[(a->body->encoding <= ENCMAX)
+ 					     ? a->body->encoding : ENCOTHER]);
+ 
+@@ -2095,7 +2095,7 @@
+ 	gf_set_so_writec(&pc, store);
+ 	(void) decode_text(a, msgno, pc, QStatus, FM_DISPLAY | FM_HANDLES);
+ 	gf_clear_so_writec(store);
+-	scroll_attachment("ATTACHED TEXT", store, src, handles, a, flags);
++	scroll_attachment("附件文字", store, src, handles, a, flags);
+ 	free_handles(&handles);
+ 	so_give(&store);	/* free resources associated with store */
+     }
+@@ -2270,22 +2270,22 @@
+     memset(&sargs, 0, sizeof(SCROLL_S));
+     sargs.text.text    = so_text(store);
+     sargs.text.src     = src;
+-    sargs.text.desc    = "attachment";
++    sargs.text.desc    = "附件";
+     sargs.text.handles = handles;
+     sargs.bar.title    = title;
+     sargs.proc.tool    = process_attachment_cmd;
+     sargs.proc.data.p  = (void *) a;
+     sargs.help.text    = h_mail_text_att_view;
+-    sargs.help.title   = "HELP FOR ATTACHED TEXT VIEW";
++    sargs.help.title   = "檢視附件文字的輔助說明";
+     sargs.keys.menu    = &att_view_keymenu;
+     setbitmap(sargs.keys.bitmap);
+ 
+     /* First, fix up "back" key */
+     if(flags & DA_FROM_VIEW){
+-	att_view_keymenu.keys[ATV_BACK_KEY].label = "MsgText";
++	att_view_keymenu.keys[ATV_BACK_KEY].label = "信件文字";
+     }
+     else{
+-	att_view_keymenu.keys[ATV_BACK_KEY].label = "AttchIndex";
++	att_view_keymenu.keys[ATV_BACK_KEY].label = "附件索引";
+     }
+ 
+     if(!handles){
+@@ -2698,10 +2698,10 @@
+     memset(&sargs, 0, sizeof(SCROLL_S));
+     sargs.text.text  = so_text(store);
+     sargs.text.src   = CharStar;
+-    sargs.text.desc  = "attachment info";
+-    sargs.bar.title  = "ABOUT ATTACHMENT";
++    sargs.text.desc  = "附件資訊";
++    sargs.bar.title  = "關於附件";
+     sargs.help.text  = h_simple_text_view;
+-    sargs.help.title = "HELP FOR \"ABOUT ATTACHMENT\"";
++    sargs.help.title = "\"關於附件\"的輔助說明";
+ 
+     scrolltool(&sargs);
+ 
+@@ -2763,7 +2763,7 @@
+ 		else		/* partially formatted outgoing message */
+ 		  pine_send(outgoing, &body,
+ 			    ps_global->nr_mode
+-			      ? "SEND MESSAGE" : "FORWARD MESSAGE",
++			      ? "送出信件" : "轉寄信件",
+ 			    NULL, NULL, NULL, NULL, NULL, FALSE);
+ 
+ 		ps_global->mangled_screen = 1;
+@@ -2849,7 +2849,7 @@
+ 		  pine_simple_send(outgoing, &body, NULL, NULL, NULL, 1);
+ 		else		/* partially formatted outgoing message */
+ 		  pine_send(outgoing, &body,
+-		      ps_global->nr_mode ? "SEND MESSAGE" : "FORWARD MESSAGE",
++		      ps_global->nr_mode ? "送出信件" : "轉寄信件",
+ 			    NULL, NULL, NULL, NULL, NULL, FALSE);
+ 
+ 		ps_global->mangled_screen = 1;
+@@ -2946,7 +2946,7 @@
+ 				 tp = body_partno(stream, msgno, a->body),
+ 				 msgtext, prefix, include_text)){
+ 		/* partially formatted outgoing message */
+-		pine_send(outgoing, &body, "COMPOSE MESSAGE REPLY",
++		pine_send(outgoing, &body, "編輯信件回函",
+ 			  fcc.tptr, NULL, NULL, NULL, NULL, 0);
+ 
+ 		pine_free_body(&body);
+@@ -3027,7 +3027,7 @@
+ 
+ 	sprintf(prompt, "Pipe %sattachment %s to %s: ", raw ? "RAW " : "",
+ 		a->number, capture ? "" : "(Free Output) ");
+-	pipe_opt[1].label = raw ? "DecodedData" : "Raw Data";
++	pipe_opt[1].label = raw ? "解碼後的資料" : "原始資料";
+ 	pipe_opt[2].label = capture ? "Free Output" : "Capture Output";
+ 	flags = OE_APPEND_CURRENT | OE_SEQ_SENSITIVE;
+ 	rc = optionally_enter(pipe_command, -FOOTER_ROWS(ps_global), 0,

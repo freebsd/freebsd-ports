@@ -1,84 +1,101 @@
---- pine/send.c.orig	Sat Jan 17 19:54:07 1998
-+++ pine/send.c	Sat Jan 17 21:22:38 1998
-@@ -50,6 +50,7 @@
- #include "../c-client/smtp.h"
- #include "../c-client/nntp.h"
+--- pine/help.c.orig	Wed Jul  1 06:22:26 1998
++++ pine/help.c	Wed Jul 15 17:02:33 1998
+@@ -50,15 +50,15 @@
  
-+#define bitstrip(x) (x)
+ static struct key help_keys[] =
+        {MAIN_MENU,
+-	{"E","Exit Help",{MC_EXIT,1,{'e'}}, KS_EXITMODE},
++	{"E","離開",{MC_EXIT,1,{'e'}}, KS_EXITMODE},
+ 	{NULL,NULL,{MC_EXIT,1,{'e'}}, KS_EXITMODE},
+ 	{NULL,NULL,{MC_VIEW_HANDLE,3,{'v',ctrl('m'),ctrl('j')}},KS_NONE},
+-	{"^B","PrevLink",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
+-	{"^F","NextLink",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
++	{"^B","前一連結",{MC_PREV_HANDLE,1,{ctrl('B')}},KS_NONE},
++	{"^F","次一連結",{MC_NEXT_HANDLE,1,{ctrl('F')}},KS_NONE},
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+ 	PRYNTMSG_MENU,
+-	{"Z","Print All",{MC_PRINTALL,1,{'z'}},KS_NONE},
++	{"Z","列印全部",{MC_PRINTALL,1,{'z'}},KS_NONE},
+ 	NULL_MENU,
+ 	WHEREIS_MENU};
+ INST_KEY_MENU(help_keymenu, help_keys);
+@@ -77,7 +77,7 @@
+ static struct key gripe_modal_keys[] = 
+        {NULL_MENU,
+ 	NULL_MENU,
+-	{"Ret","Finished",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
++	{"Ret","完畢",{MC_EXIT,2,{ctrl('m'),ctrl('j')}},KS_NONE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -269,7 +269,7 @@
+ 		memset(&sargs, 0, sizeof(SCROLL_S));
+ 		sargs.text.text	   = so_text(store);
+ 		sargs.text.src	   = CharStar;
+-		sargs.text.desc	   = "help text";
++		sargs.text.desc	   = "輔助說明文字";
+ 		sargs.text.handles = handles;
+ 		if(!(sargs.bar.title = title)){
+ 		    if(!struncmp(shown_text[0], "<html>", 6)){
+@@ -297,7 +297,7 @@
+ 		    }
  
- #ifndef TCPSTREAM
- #define TCPSTREAM void
-@@ -1076,31 +1077,31 @@
- */
- static struct headerentry he_template[]={
-   {"From    : ",  "From",        h_composer_from,       10, 0, NULL,
--   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
-+   build_address, NULL, NULL, addr_book_compose,    "地址列表",
-    0, 1, 0, 1, 0, 1, 0, 0, 0, KS_TOADDRBOOK},
-   {"Reply-To: ",  "Reply To",    h_composer_reply_to,   10, 0, NULL,
--   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
-+   build_address, NULL, NULL, addr_book_compose,    "地址列表",
-    0, 1, 0, 1, 0, 1, 0, 0, 0, KS_TOADDRBOOK},
-   {"To      : ",  "To",          h_composer_to,         10, 0, NULL,
--   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
-+   build_address, NULL, NULL, addr_book_compose,    "地址列表",
-    0, 1, 0, 0, 0, 1, 0, 0, 0, KS_TOADDRBOOK},
-   {"Cc      : ",  "Cc",          h_composer_cc,         10, 0, NULL,
--   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
-+   build_address, NULL, NULL, addr_book_compose,    "地址列表",
-    0, 1, 0, 0, 0, 1, 0, 0, 0, KS_TOADDRBOOK},
-   {"Bcc     : ",  "Bcc",         h_composer_bcc,        10, 0, NULL,
--   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
-+   build_address, NULL, NULL, addr_book_compose,    "地址列表",
-    0, 1, 0, 1, 0, 1, 0, 0, 0, KS_TOADDRBOOK},
-   {"Newsgrps: ",  "Newsgroups",  h_composer_news,        10, 0, NULL,
--   news_build,    NULL, NULL, news_group_selector,  "To NwsGrps",
-+   news_build,    NULL, NULL, news_group_selector,  "新聞組群列表",
-    0, 1, 0, 1, 0, 1, 0, 0, 0, KS_NONE},
-   {"Fcc     : ",  "Fcc",         h_composer_fcc,        10, 0, NULL,
--   NULL,          NULL, NULL, folders_for_fcc,      "To Fldrs",
-+   NULL,          NULL, NULL, folders_for_fcc,      "信夾列表",
-    0, 0, 0, 1, 1, 1, 0, 0, 0, KS_NONE},
-   {"Lcc     : ",  "Lcc",         h_composer_lcc,        10, 0, NULL,
--   build_addr_lcc, NULL, NULL, addr_book_compose_lcc,"To AddrBk",
-+   build_addr_lcc, NULL, NULL, addr_book_compose_lcc,"地址列表",
-    0, 1, 0, 1, 0, 1, 0, 0, 0, KS_NONE},
-   {"Attchmnt: ",  "Attchmnt",    h_composer_attachment, 10, 0, NULL,
--   NULL,          NULL, NULL, NULL,                 "To Files",
-+   NULL,          NULL, NULL, NULL,                 "檔案列表",
-    0, 1, 1, 0, 0, 1, 0, 0, 0, KS_NONE},
-   {"Subject : ",  "Subject",     h_composer_subject,    10, 0, NULL,
-    valid_subject, NULL, NULL, NULL,                 NULL,
-@@ -1132,7 +1133,7 @@
+ 		    if(!sargs.bar.title)
+-		      sargs.bar.title = "HELP TEXT";
++		      sargs.bar.title = "輔助說明文字";
+ 		}
  
- static struct headerentry he_custom_addr_templ={
-    NULL,          NULL,          h_composer_custom_addr,10, 0, NULL,
--   build_address, NULL, NULL, addr_book_compose,    "To AddrBk",
-+   build_address, NULL, NULL, addr_book_compose,    "地址列表",
-    0, 1, 0, 1, 0, 1, 0, 0, 0, KS_TOADDRBOOK};
- static struct headerentry he_custom_free_templ={
-    NULL,          NULL,          h_composer_custom_free,10, 0, NULL,
-@@ -1407,7 +1408,7 @@
-     ekey[0].ch    = ctrl('T');
-     ekey[0].rval  = 2;
-     ekey[0].name  = "^T";
--    ekey[0].label = "To AddrBk";
-+    ekey[0].label = "地址列表";
-     ekey[1].ch    = -1;
+ 		sargs.bar.style	   = TextPercent;
+@@ -313,13 +313,13 @@
+ 		setbitmap(sargs.keys.bitmap);
+ 		if(flags & HLPD_FROMHELP){
+ 		    km.keys[HLP_EXIT_KEY].name	     = "P";
+-		    km.keys[HLP_EXIT_KEY].label	     = "Prev Help";
++		    km.keys[HLP_EXIT_KEY].label	     = "前一說明";
+ 		    km.keys[HLP_EXIT_KEY].bind.cmd   = MC_FINISH;
+ 		    km.keys[HLP_EXIT_KEY].bind.ch[0] = 'p';
+ 		}
+ 		else{
+ 		    km.keys[HLP_EXIT_KEY].name	     = "E";
+-		    km.keys[HLP_EXIT_KEY].label	     = "Exit Help";
++		    km.keys[HLP_EXIT_KEY].label	     = "離開";
+ 		    km.keys[HLP_EXIT_KEY].bind.cmd   = MC_EXIT;
+ 		    km.keys[HLP_EXIT_KEY].bind.ch[0] = 'e';
+ 		    clrbitn(HLP_SUBEXIT_KEY, sargs.keys.bitmap);
+@@ -478,7 +478,7 @@
+ 	}
  
-     /*----------------------------------------------------------------------
-@@ -3419,12 +3420,12 @@
-     opts[i].ch      = 'y';
-     opts[i].rval    = 'y';
-     opts[i].name    = "Y";
--    opts[i++].label = "Yes";
-+    opts[i++].label = "是";
+ 	sparms->keys.menu->keys[HLP_VIEW_HANDLE].name  = "V";
+-	sparms->keys.menu->keys[HLP_VIEW_HANDLE].label = "[View Link]";
++	sparms->keys.menu->keys[HLP_VIEW_HANDLE].label = "[檢視連結]";
+     }
+ }
  
-     opts[i].ch      = 'n';
-     opts[i].rval    = 'n';
-     opts[i].name    = "N";
--    opts[i++].label = "No";
-+    opts[i++].label = "否";
+@@ -559,7 +559,7 @@
+ #endif
+ 	    if(ps_global->intr_pending){
+ 		q_status_message(SM_ORDER, 3, 3,
+-				 "Print of all help cancelled");
++				 "取消列印所有的輔助說明");
+ 		break;
+ 	    }
  
-     if(filters){
- 	/* set global_filter_pointer to desired filter or NULL if none */
+@@ -948,7 +948,7 @@
+     memset(&sargs, 0, sizeof(SCROLL_S));
+     sargs.text.text = tmp_text;
+     sargs.text.src  = CharStar;
+-    sargs.text.desc = "journal";
++    sargs.text.desc = "日誌";
+     sargs.bar.title = title;
+     sargs.start.on  = LastPage;
+ 
+@@ -1304,7 +1304,7 @@
+ #endif
+ 	    }
+ 	    else if(ch == 'x'){
+-		q_status_message(SM_ORDER, 0, 3, "Bug report cancelled.");
++		q_status_message(SM_ORDER, 0, 3, "取消錯誤回報。");
+ 		return(-1);
+ 	    }
+ 	}

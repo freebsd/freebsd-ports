@@ -1,17 +1,184 @@
-*** imap/ANSI/c-client/os_bsi.h.bak	Wed Feb  7 12:01:07 1996
---- imap/ANSI/c-client/os_bsi.h	Sun Jul 20 01:47:23 1997
-***************
-*** 36,42 ****
---- 36,47 ----
-  #include <stdlib.h>
-  #include <string.h>
-  #include <sys/types.h>
-+ #ifdef __FreeBSD__
-+ #include <dirent.h>
-+ #define direct dirent
-+ #else
-  #include <sys/dir.h>
-+ #endif
-  #include <sys/uio.h>		/* needed for writev() prototypes */
-  #include <fcntl.h>
-  #include <syslog.h>
+--- pico/display.c.orig	Sat Jun 20 01:19:53 1998
++++ pico/display.c	Wed Jul 15 17:02:30 1998
+@@ -71,32 +71,32 @@
+  * Standard pico keymenus...
+  */
+ static KEYMENU menu_pico[] = {
+-    {"^G", "Get Help", KS_SCREENHELP},	{"^O", "WriteOut", KS_SAVEFILE},
+-    {"^R", "Read File", KS_READFILE},	{"^Y", "Prev Pg", KS_PREVPAGE},
+-    {"^K", "Cut Text", KS_NONE},	{"^C", "Cur Pos", KS_CURPOSITION},
+-    {"^X", "Exit", KS_EXIT},		{"^J", "Justify", KS_JUSTIFY},
+-    {"^W", "Where is", KS_WHEREIS},	{"^V", "Next Pg", KS_NEXTPAGE},
++    {"^G", "輔助說明", KS_SCREENHELP}, {"^O", "寫入檔案", KS_SAVEFILE},
++    {"^R", "讀取檔案", KS_READFILE},   {"^Y", "上一頁", KS_PREVPAGE},
++    {"^K", "剪下一行", KS_NONE},       {"^C", "目前位置", KS_CURPOSITION},
++    {"^X", "離開", KS_EXIT},           {"^J", "重整段落", KS_JUSTIFY},
++    {"^W", "搜尋", KS_WHEREIS},        {"^V", "下一頁", KS_NEXTPAGE},
+     {"^U", NULL, KS_NONE},
+ #ifdef	SPELLER
+-    {"^T", "To Spell", KS_SPELLCHK}
++    {"^T", "拼字檢查", KS_SPELLCHK}
+ #else
+-    {"^D", "Del Char", KS_NONE}
++    {"^D", "刪除字元", KS_NONE}
+ #endif
+ };
+ #define	UNCUT_KEY	10
+ 
+ 
+ static KEYMENU menu_compose[] = {
+-    {"^G", "Get Help", KS_SCREENHELP},	{"^X", NULL, KS_SEND},
+-    {"^R", "Read File", KS_READFILE},	{"^Y", "Prev Pg", KS_PREVPAGE},
+-    {"^K", "Cut Text", KS_NONE},	{"^O", "Postpone", KS_POSTPONE},
+-    {"^C", "Cancel", KS_CANCEL},	{"^J", "Justify", KS_JUSTIFY},
+-    {NULL, NULL, KS_NONE},		{"^V", "Next Pg", KS_NEXTPAGE},
++    {"^G", "輔助說明", KS_SCREENHELP}, {"^X", NULL, KS_SEND},
++    {"^R", "讀取檔案", KS_READFILE},   {"^Y", "上一頁", KS_PREVPAGE},
++    {"^K", "剪下一行", KS_NONE},       {"^O", "暫緩寫信", KS_POSTPONE},
++    {"^C", "取消", KS_CANCEL},         {"^J", "重整段落", KS_JUSTIFY},
++    {NULL, NULL, KS_NONE},             {"^V", "下一頁", KS_NEXTPAGE},
+     {"^U", NULL, KS_NONE},
+ #ifdef	SPELLER
+-    {"^T", "To Spell", KS_SPELLCHK}
++    {"^T", "拼字檢查", KS_SPELLCHK}
+ #else
+-    {"^D", "Del Char", KS_NONE}
++    {"^D", "刪除字元", KS_NONE}
+ #endif
+ };
+ #define	EXIT_KEY	1
+@@ -152,7 +152,7 @@
+     (*term.t_rev)(FALSE);
+     vscreen = (VIDEO **) malloc((term.t_nrow+1)*sizeof(VIDEO *));
+     if (vscreen == NULL){
+-	emlwrite("Allocating memory for virtual display failed.", NULL);
++	emlwrite("配置記憶體給虛擬顯示器失敗。", NULL);
+         return(FALSE);
+     }
+ 
+@@ -160,7 +160,7 @@
+     pscreen = (VIDEO **) malloc((term.t_nrow+1)*sizeof(VIDEO *));
+     if (pscreen == NULL){
+ 	free((void *)vscreen);
+-	emlwrite("Allocating memory for physical display failed.", NULL);
++	emlwrite("配置記憶體給實體顯示器失敗。", NULL);
+         return(FALSE);
+     }
+ 
+@@ -171,7 +171,7 @@
+         if (vp == NULL){
+ 	    free((void *)vscreen);
+ 	    free((void *)pscreen);
+-	    emlwrite("Allocating memory for virtual display lines failed.",
++	    emlwrite("配置記憶體給虛擬顯示行失敗。",
+ 		     NULL);
+             return(FALSE);
+ 	}
+@@ -191,7 +191,7 @@
+ 
+ 	    free((void *)vscreen);
+ 	    free((void *)pscreen);
+-	    emlwrite("Allocating memory for physical display lines failed.",
++	    emlwrite("配置記憶體給實體顯示行失敗。",
+ 		     NULL);
+             return(FALSE);
+ 	}
+@@ -749,12 +749,12 @@
+ 	    }
+ 
+ 	    if(lastflag&CFFILL){
+-		menu_pico[UNCUT_KEY].label = "UnJustify";
+-		emlwrite("Can now UnJustify!", NULL);
++		menu_pico[UNCUT_KEY].label = "取消重整";
++		emlwrite("現在可以取消重整!", NULL);
+ 		mpresf = FARAWAY;	/* remove this after next keystroke! */
+ 	    }
+ 	    else
+-	      menu_pico[UNCUT_KEY].label = "UnCut Text";
++	      menu_pico[UNCUT_KEY].label = "復原刪字";
+ 
+ 	    wkeyhelp(menu_pico);
+ 	    sgarbk = FALSE;
+@@ -944,18 +944,18 @@
+ 	  ShowPrompt();
+ 	else{
+ 	    menu_compose[EXIT_KEY].label  = (Pmaster->headents)
+-					      ? "Send" :"Exit";
++					      ? "送出" :"離開";
+ 	    menu_compose[PSTPN_KEY].name  = (Pmaster->headents)
+ 					      ? "^O" : NULL;
+ 	    menu_compose[PSTPN_KEY].label = (Pmaster->headents)
+-					      ? "Postpone" : NULL;
++					      ? "暫緩寫信" : NULL;
+ 	    menu_compose[WHERE_KEY].name  = (Pmaster->alt_ed) ? "^_" : "^W";
+ 	    menu_compose[WHERE_KEY].label = (Pmaster->alt_ed) ? "Alt Edit" 
+-							      : "Where is";
++							      : "搜尋";
+ 	    KS_OSDATASET(&menu_compose[WHERE_KEY],
+ 			 (Pmaster->alt_ed) ? KS_ALTEDITOR : KS_WHEREIS);
+-	    menu_compose[UNCUT_KEY].label = (thisflag&CFFILL) ? "UnJustify"
+-							      : "UnCut Text";
++	    menu_compose[UNCUT_KEY].label = (thisflag&CFFILL) ? "取消重整"
++							      : "復原刪字";
+ 	    wkeyhelp(menu_compose);
+ #ifdef _WINDOWS
+ 	    /* When alt editor is available "Where is" is not on the menu
+@@ -1150,11 +1150,11 @@
+     }
+ 
+     menu_yesno[1].name  = "Y";
+-    menu_yesno[1].label = (dflt == TRUE) ? "[Yes]" : "Yes";
++    menu_yesno[1].label = (dflt == TRUE) ? "[是]" : "是";
+     menu_yesno[6].name  = "^C";
+-    menu_yesno[6].label = "Cancel";
++    menu_yesno[6].label = "取消";
+     menu_yesno[7].name  = "N";
+-    menu_yesno[7].label = (dflt == FALSE) ? "[No]" : "No";
++    menu_yesno[7].label = (dflt == FALSE) ? "[否]" : "否";
+     wkeyhelp(menu_yesno);		/* paint generic menu */
+     sgarbk = TRUE;			/* mark menu dirty */
+     if(Pmaster && curwp)
+@@ -1168,7 +1168,7 @@
+ 	switch(GetKey()){
+ 	  case (CTRL|'M') :		/* default */
+ 	    if(dflt >= 0){
+-		pputs((dflt) ? "Yes" : "No", 1);
++		pputs((dflt) ? "是" : "否", 1);
+ 		rv = dflt;
+ 	    }
+ 	    else
+@@ -1185,14 +1185,14 @@
+ 	  case 'y' :
+ 	  case 'Y' :
+ 	  case F3  :
+-	    pputs("Yes", 1);
++	    pputs("是", 1);
+ 	    rv = TRUE;
+ 	    break;
+ 
+ 	  case 'n' :
+ 	  case 'N' :
+ 	  case F4  :
+-	    pputs("No", 1);
++	    pputs("否", 1);
+ 	    rv = FALSE;
+ 	    break;
+ 
+@@ -1320,7 +1320,7 @@
+ #endif
+ 
+     menu_mlreply[0].name = "^G";
+-    menu_mlreply[0].label = "Get Help";
++    menu_mlreply[0].label = "輔助說明";
+     KS_OSDATASET(&menu_mlreply[0], KS_SCREENHELP);
+     for(j = 0, i = 1; i < 6; i++){	/* insert odd extras */
+ 	menu_mlreply[i].name = NULL;
+@@ -1340,7 +1340,7 @@
+     }
+ 
+     menu_mlreply[6].name = "^C";
+-    menu_mlreply[6].label = "Cancel";
++    menu_mlreply[6].label = "取消";
+     KS_OSDATASET(&menu_mlreply[6], KS_NONE);
+     for(j = 0, i = 7; i < 12; i++){	/* insert even extras */
+ 	menu_mlreply[i].name = NULL;

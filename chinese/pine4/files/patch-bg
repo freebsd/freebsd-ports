@@ -1,11 +1,56 @@
---- pine/screen.c.orig	Wed May  8 09:05:40 1996
-+++ pine/screen.c	Sat Jan 17 21:09:32 1998
-@@ -380,7 +380,7 @@
+--- pine/takeaddr.c.orig	Fri Jun 26 02:26:36 1998
++++ pine/takeaddr.c	Wed Jul 15 17:02:38 1998
+@@ -785,7 +785,7 @@
+     return;
  
+ take_to_addrbooks_cancel:
+-    cancel_warning(NO_DING, "addition");
++    cancel_warning(NO_DING, "新增");
+     if(tas && *tas){
+ 	restore_state(&((*tas)->state));
+ 	(*tas)->pab   = NULL;
+@@ -1267,7 +1267,7 @@
+ 	    break;
  
- static struct key cancel_keys[] = 
--     {{NULL,NULL,KS_NONE},            {"^C","Cancel",KS_NONE},
-+     {{NULL,NULL,KS_NONE},            {"^C","取消",KS_NONE},
-       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
-       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
-       {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
+ 	  case MC_EXIT:				/* exit takeaddr screen */
+-	    cancel_warning(NO_DING, "addition");
++	    cancel_warning(NO_DING, "新增");
+ 	    ret = 1;
+ 	    done++;
+ 	    break;
+@@ -2698,7 +2698,7 @@
+     
+     switch(j){
+       case 'x':
+-	cancel_warning(NO_DING, "save");
++	cancel_warning(NO_DING, "存檔");
+ 	return;
+ 
+       case 'e':
+@@ -2798,7 +2798,7 @@
+ 
+     switch(i){
+       case 'x':
+-	cancel_warning(NO_DING, "export");
++	cancel_warning(NO_DING, "匯出");
+ 	return;
+     
+       case 'a':
+@@ -4737,7 +4737,7 @@
+ 	    
+ 	    switch(j){
+ 	      case 'x':
+-		cancel_warning(NO_DING, "Save");
++		cancel_warning(NO_DING, "存檔");
+ 		break;
+ 
+ 	      case 'e':
+@@ -4957,7 +4957,7 @@
+ 	
+ 	switch(j){
+ 	  case 'x':
+-	    cancel_warning(NO_DING, "Export");
++	    cancel_warning(NO_DING, "匯出");
+ 	    break;
+ 	
+ 	  case 't':

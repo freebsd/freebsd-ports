@@ -1,48 +1,326 @@
---- pico/composer.c.orig	Sat Jan 17 20:06:00 1998
-+++ pico/composer.c	Sat Jan 17 20:09:52 1998
-@@ -164,12 +164,12 @@
+--- pine/mailindx.c.orig	Wed Jul  1 03:49:02 1998
++++ pine/mailindx.c	Wed Jul 15 17:02:33 1998
+@@ -55,10 +55,10 @@
+ /*
+  * Some common Command Bindings
+  */
+-#define	VIEWMSG_MENU	{">", "[ViewMsg]", \
++#define	VIEWMSG_MENU	{">", "[檢視信件]", \
+ 			 {MC_VIEW_TEXT, 5,{'v','.','>',ctrl('M'),ctrl('J')}}, \
+ 			 KS_VIEW}
+-#define	FLDRSORT_MENU	{"$", "SortIndex", {MC_SORT,1,{'$'}}, KS_SORT}
++#define	FLDRSORT_MENU	{"$", "排序索引", {MC_SORT,1,{'$'}}, KS_SORT}
  
  
- static KEYMENU menu_header[] = {
--    {"^G", "Get Help", KS_SCREENHELP},	{"^X", "Send", KS_SEND},
--    {"^R", "Rich Hdr", KS_RICHHDR},	{"^Y", "PrvPg/Top", KS_PREVPAGE},
--    {"^K", "Cut Line", KS_CURPOSITION},	{"^O", "Postpone", KS_POSTPONE},
--    {"^C", "Cancel", KS_CANCEL},	{"^D", "Del Char", KS_NONE},
--    {"^J", "Attach", KS_ATTACH},	{"^V", "NxtPg/End", KS_NEXTPAGE},
--    {"^U", "UnDel Line", KS_NONE},	{NULL, NULL}
-+    {"^G", "輔助說明", KS_SCREENHELP},  {"^X", "送出", KS_SEND},
-+    {"^R", "完整標頭", KS_RICHHDR},     {"^Y", "上一頁", KS_PREVPAGE},
-+    {"^K", "剪下一行", KS_CURPOSITION}, {"^O", "暫緩寫信", KS_POSTPONE},
-+    {"^C", "取消", KS_CANCEL},  {"^D", "刪除字元", KS_NONE},
-+    {"^J", "夾附件", KS_ATTACH},        {"^V", "下一頁", KS_NEXTPAGE},
-+    {"^U", "恢復刪除", KS_NONE},        {NULL, NULL}
- };
- #define	SEND_KEY	1
- #define	RICH_KEY	2
-@@ -3110,22 +3110,22 @@
- 	menu_header[DEL_KEY].name  = NULL;
- 	menu_header[UDEL_KEY].name = NULL;
- 	menu_header[SEND_KEY].label =  (gmode & MDHDRONLY)
--					 ? "eXit/Save" : "eXit";
-+					 ? "離開/儲存" : "離開";
-     }
-     else{
- 	menu_header[CUT_KEY].name  = "^K";
- 	menu_header[DEL_KEY].name  = "^D";
- 	menu_header[UDEL_KEY].name = "^U";
--	menu_header[SEND_KEY].label = "Send";
-+	menu_header[SEND_KEY].label = "送出";
+ /*
+@@ -67,7 +67,7 @@
+ static struct key index_keys[] = 
+        {HELP_MENU,
+ 	OTHER_MENU,
+-	{"<", "FldrList", {MC_FOLDERS,2,{'<',','}}, KS_NONE},
++	{"<", "信件匣列表", {MC_FOLDERS,2,{'<',','}}, KS_NONE},
+ 	VIEWMSG_MENU,
+ 	PREVMSG_MENU,
+ 	NEXTMSG_MENU,
+@@ -94,9 +94,9 @@
+ 	HELP_MENU,
+ 	OTHER_MENU,
+ 	{"X",NULL,{MC_EXPUNGE,1,{'x'}},KS_NONE},
+-	{"&","unXclude",{MC_UNEXCLUDE,1,{'&'}},KS_NONE},
+-	{";","Select",{MC_SELECT,1,{';'}},KS_SELECT},
+-	{"A","Apply",{MC_APPLY,1,{'a'}},KS_APPLY},
++	{"&","取消排除(exclude)",{MC_UNEXCLUDE,1,{'&'}},KS_NONE},
++	{";","選擇",{MC_SELECT,1,{';'}},KS_SELECT},
++	{"A","套用",{MC_APPLY,1,{'a'}},KS_APPLY},
+ 	FLDRSORT_MENU,
+ 	JUMP_MENU,
+ 	HDRMODE_MENU,
+@@ -106,8 +106,8 @@
+ 
+ 	HELP_MENU,
+ 	OTHER_MENU,
+-	{":","SelectCur",{MC_SELCUR,1,{':'}},KS_SELECTCUR},
+-	{"Z","ZoomMode",{MC_ZOOM,1,{'z'}},KS_NONE},
++	{":","選擇",{MC_SELCUR,1,{':'}},KS_SELECTCUR},
++	{"Z","縮放模式",{MC_ZOOM,1,{'z'}},KS_NONE},
+ 	LISTFLD_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -175,9 +175,9 @@
+   
+ static struct key simple_index_keys[] = 
+        {HELP_MENU,
+-	{"E","ExitSelect",{MC_EXIT,1,{'e'}},KS_EXITMODE},
++	{"E","離開",{MC_EXIT,1,{'e'}},KS_EXITMODE},
+ 	NULL_MENU,
+-	{"S","[Select]",{MC_SELECT,3,{'s',ctrl('M'),ctrl('J')}},KS_SELECT},
++	{"S","[選擇]",{MC_SELECT,3,{'s',ctrl('M'),ctrl('J')}},KS_SELECT},
+ 	PREVMSG_MENU,
+ 	NEXTMSG_MENU,
+ 	PREVPAGE_MENU,
+@@ -344,14 +344,14 @@
+     if(flags & INDX_HEADER)
+       set_titlebar((stream == ps_global->mail_stream)
+ 		     ? (style == MsgIndex || style == MultiMsgIndex)
+-		         ? "MESSAGE INDEX"
+-			 : "ZOOMED MESSAGE INDEX"
++		         ? "信件索引"
++			 : "縮放後的信件索引"
+ 		     : (!strcmp(folder, INTERRUPTED_MAIL))
+-			 ? "COMPOSE: SELECT INTERRUPTED"
++			 ? "編輯：選擇被中斷的"
+ 			 : (ps_global->VAR_FORM_FOLDER
+ 			    && !strcmp(ps_global->VAR_FORM_FOLDER, folder))
+-			     ? "COMPOSE: SELECT FORM LETTER"
+-			     : "COMPOSE: SELECT POSTPONED",
++			     ? "編輯：選擇樣版信件"
++			     : "編輯：選擇被暫緩的",
+ 		   stream, cntxt, folder, msgmap, 1, MessageNumber, 0, 0);
+ 
+     if(flags & INDX_FOOTER) {
+@@ -398,6 +398,7 @@
+ 
+ 	menu_clear_binding(km, KEY_LEFT);
+ 	menu_clear_binding(km, KEY_RIGHT);
++
+ 	if(F_ON(F_ARROW_NAV, ps_global)){
+ 	    if((cmd = menu_clear_binding(km, '<')) != MC_UNKNOWN){
+ 		menu_add_binding(km, '<', cmd);
+@@ -443,7 +444,7 @@
+ {
+     dprint(1, (debugfile, "\n\n ---- MAIL INDEX ----\n"));
+     if(!state->mail_stream) {
+-	q_status_message(SM_ORDER, 0, 3, "No folder is currently open");
++	q_status_message(SM_ORDER, 0, 3, "目前尚無已開啟的信件匣");
+         state->prev_screen = mail_index_screen;
+ 	state->next_screen = main_menu_screen;
+ 	return;
+@@ -624,7 +625,7 @@
+ 	if(F_ON(F_SHOW_CURSOR, state) && cur_row < 0){
+ 	    q_status_message(SM_ORDER,
+ 		(ch==NO_OP_IDLE || ch==NO_OP_COMMAND) ? 0 : 3, 5,
+-		"No messages in folder");
++		"信件匣中沒有信");
+ 	    cur_row = state->ttyo->screen_rows - FOOTER_ROWS(state);
+ 	    display_message(ch);
+ 	}
+@@ -741,7 +742,7 @@
+ 		    k = i;
+ 		    if(++j >= id.lines_per_page){
+ 			if((id.msg_at_top = i) == 1L)
+-			  q_status_message(SM_ORDER, 0, 1, "First Index page");
++			  q_status_message(SM_ORDER, 0, 1, "索引第一頁");
+ 
+ 			break;
+ 		    }
+@@ -750,7 +751,7 @@
+ 		if(i <= 1L){
+ 		    if(mn_get_cur(msgmap) == 1L)
+ 		      q_status_message(SM_ORDER, 0, 1,
+-			  "Already at start of Index");
++			  "已經在索引的起頭了");
+ 
+ 		    break;
+ 		}
+@@ -770,7 +771,7 @@
+ 		    k = i;
+ 		    if(++j >= id.lines_per_page){
+ 			if(i+id.lines_per_page >= mn_get_total(msgmap))
+-			  q_status_message(SM_ORDER, 0, 1, "Last Index page");
++			  q_status_message(SM_ORDER, 0, 1, "索引最終頁");
+ 
+ 			id.msg_at_top = i;
+ 			break;
+@@ -779,7 +780,7 @@
+ 
+ 		if(i >= mn_get_total(msgmap)){
+ 		    if(mn_get_cur(msgmap) == k)
+-		      q_status_message(SM_ORDER,0,1,"Already at end of Index");
++		      q_status_message(SM_ORDER,0,1,"已經在索引的結尾了");
+ 
+ 		    break;
+ 		}
+@@ -961,9 +962,9 @@
+ 			}
+ 
+ 			q_status_message2(SM_ORDER, 0, 1,
+-					  "Message %s %sdeleted",
++					  "信件 %s %s刪除",
+ 					  long2string(mn_get_cur(msgmap)),
+-					  (del) ? "" : "already ");
++					  (del) ? "" : "已");
+ 		    }
+ 
+ 		    break;
+@@ -985,9 +986,9 @@
+ 			}
+ 
+ 			q_status_message2(SM_ORDER, 0, 1,
+-					  "Message %s %sdeleted",
++					  "信件 %s %s刪除",
+ 					  long2string(mn_get_cur(msgmap)),
+-					  (del) ? "UN" : "NOT ");
++					  (del) ? "已遭復原" : "未被");
+ 		    }
+ 
+ 		    break;
+@@ -1787,7 +1788,7 @@
+ 	    dprint(1, (debugfile,
+ 		       "parse_index_format: unrecognized token: %s\n", q));
+ 	    q_status_message1(SM_ORDER | SM_DING, 0, 3,
+-			      "Unrecognized string in index-format: %s", q);
++			      "索引格式中出現無法辨識的字串：%s", q);
+ 	    continue;
+ 	}
+ 
+@@ -1829,7 +1830,7 @@
+     if(!column){
+ 	dprint(1, (debugfile, "Completely unrecognizable index-format\n"));
+ 	q_status_message(SM_ORDER | SM_DING, 0, 3,
+-		 "Configured \"index-format\" unrecognizable. Using default.");
++		 "無法辨識已設定的 \"index-format\"。使用預設值。");
+ 	return(0);
      }
  
-     if(gmode & MDHDRONLY){
--	menu_header[RICH_KEY].label = "RichView";
-+	menu_header[RICH_KEY].label = "完整標頭";
- 	menu_header[PONE_KEY].name  = NULL;
- 	menu_header[ATT_KEY].name   = NULL;
+@@ -2320,7 +2321,7 @@
+ 		    sprintf(str, "%ld", idata->msgno);
+ 		  else if(idata->bogus < 2 && cdesc->ctype == iSubject)
+ 		    sprintf(str, "%-*.*s", width, width,
+-			    "[ No Message Text Available ]");
++			    "[ 無法取得信件 ]");
+ 	      }
+ 	      else
+ 		switch(cdesc->ctype){
+@@ -2954,8 +2955,8 @@
+     HelpType	help;
+     static char search_string[MAX_SEARCH+1] = { '\0' };
+     static ESCKEY_S header_search_key[] = { {0, 0, NULL, NULL },
+-					    {ctrl('Y'), 10, "^Y", "First Msg"},
+-					    {ctrl('V'), 11, "^V", "Last Msg"},
++					    {ctrl('Y'), 10, "^Y", "第一封信"},
++					    {ctrl('V'), 11, "^V", "最後一封信"},
+ 					    {-1, 0, NULL, NULL} };
+ 
+     dprint(4, (debugfile, "\n - search headers - \n"));
+@@ -2964,7 +2965,7 @@
+ 	return;
      }
-     else{
--	menu_header[RICH_KEY].label = "Rich Hdr";
-+	menu_header[RICH_KEY].label = "完整標頭";
- 	menu_header[PONE_KEY].name  = "^O";
- 	menu_header[ATT_KEY].name   = "^J";
+     else if(mn_total_cur(msgmap) > 1L){
+-	q_status_message1(SM_ORDER, 0, 2, "%s msgs selected; Can't search",
++	q_status_message1(SM_ORDER, 0, 2, "已選擇 %s 封信件；無法搜尋",
+ 			  comatose(mn_total_cur(msgmap)));
+ 	return;
      }
+@@ -2975,13 +2976,13 @@
+     new_string[0] = '\0';
+ 
+     while(1) {
+-	sprintf(prompt, "Word to search for [%s] : ", search_string);
++	sprintf(prompt, "搜尋[%s]：", search_string);
+ 
+ 	if(F_ON(F_ENABLE_AGG_OPS, ps_global)){
+ 	    header_search_key[0].ch    = ctrl('X');
+ 	    header_search_key[0].rval  = 12;
+ 	    header_search_key[0].name  = "^X";
+-	    header_search_key[0].label = "Select Matches";
++	    header_search_key[0].label = "選取符合者";
+ 	}
+ 	else{
+ 	    header_search_key[0].ch   = header_search_key[0].rval  = 0;
+@@ -3000,7 +3001,7 @@
+             continue;
+         }
+ 	else if(rc == 10){
+-	    q_status_message(SM_ORDER, 0, 3, "Searched to First Message.");
++	    q_status_message(SM_ORDER, 0, 3, "搜尋至第一封信件。");
+ 	    if(any_lflagged(msgmap, MN_HIDE)){
+ 		do{
+ 		    selected = sorted_msg;
+@@ -3016,7 +3017,7 @@
+ 	    return;
+ 	}
+ 	else if(rc == 11){
+-	    q_status_message(SM_ORDER, 0, 3, "Searched to Last Message.");
++	    q_status_message(SM_ORDER, 0, 3, "搜尋至最後一封信件。");
+ 	    if(any_lflagged(msgmap, MN_HIDE)){
+ 		do{
+ 		    selected = sorted_msg;
+@@ -3041,7 +3042,7 @@
+     }
+ 
+     if(rc == 1 || (new_string[0] == '\0' && search_string[0] == '\0')) {
+-	cmd_cancelled("Search");
++	cmd_cancelled("搜尋");
+         return;
+     }
+ 
+@@ -3080,21 +3081,21 @@
+ 	}
+ 
+     if(ps_global->intr_pending){
+-	q_status_message1(SM_ORDER, 0, 3, "Search cancelled.%s",
++	q_status_message1(SM_ORDER, 0, 3, "取消搜尋。%s",
+ 			  select_all ? " Selected set may be incomplete.":"");
+     }
+     else if(select_all){
+-	q_status_message1(SM_ORDER, 0, 3, "%s messages found matching word",
++	q_status_message1(SM_ORDER, 0, 3, "共 %s 封信件找到符合的字串",
+ 			  long2string(selected));
+     }
+     else if(selected){
+-	q_status_message1(SM_ORDER, 0, 3, "Word found%s",
++	q_status_message1(SM_ORDER, 0, 3, "字串已找到%s",
+ 			  (i <= sorted_msg)
+-			    ? ". Search wrapped to beginning" : "");
++			    ? "。重頭搜尋" : "");
+ 	mn_set_cur(msgmap, i);
+     }
+     else
+-      q_status_message(SM_ORDER, 0, 3, "Word not found");
++      q_status_message(SM_ORDER, 0, 3, "找不到字串");
+ 
+ #ifndef	DOS
+     intr_handling_off();
+@@ -3232,7 +3233,7 @@
+ 		 && LEVELSORT(ps_global->mail_stream)))
+ 	      sort_func = percent_sorted;
+ 
+-	    sprintf(sort_msg, "Sorting \"%s\"",
++	    sprintf(sort_msg, "正在排序 \"%s\"",
+ 		    strsquish(tmp_20k_buf + 500, ps_global->cur_folder,
+ 			      ps_global->ttyo->screen_cols - 20));
+ 	    we_cancel = busy_alarm(1, sort_msg, sort_func, 1);
+@@ -3284,8 +3285,8 @@
+ 		new_sort = mn_get_sort(msgmap);
+ 		new_rev  = mn_get_revsort(msgmap);
+ 		q_status_message2(SM_ORDER, 3, 3,
+-				  "Sort %s!  Restored %s sort.",
+-				  g_sort_prog->abort ? "Canceled" : "Failed",
++				  "排序%s！回復至 %s 排序。",
++				  g_sort_prog->abort ? "已取消" : "失敗",
+ 				  sort_name(new_sort));
+ 	    }
+ 	    else if(mn_get_total(msgmap) < g_sort_prog->nmsgs)
+@@ -4043,7 +4044,7 @@
+ 	      icache.name = temp_nam(NULL, "pi");
+ 
+ 	    if((icache.cache = (void *)fopen(icache.name,"w+b")) == NULL){
+-		sprintf(tmp_20k_buf, "Can't open index cache: %s",icache.name);
++		sprintf(tmp_20k_buf, "無法開啟索引快取：%s",icache.name);
+ 		fatal(tmp_20k_buf);
+ 	    }
+ 
+@@ -4396,10 +4397,10 @@
+ 	   && format_message(mn_m2raw(ps_global->msgmap,
+ 				      mn_get_cur(ps_global->msgmap)),
+ 			     env, body, FM_NEW_MESS, pc)){
+-	    sprintf(title, "Folder %s  --  Message %ld of %ld",
++	    sprintf(title, "信件匣 %s  --  %ld 封信件中的第 %ld 封",
+ 		    strsquish(tmp_20k_buf + 500, ps_global->cur_folder, 50),
+-		    mn_get_cur(ps_global->msgmap),
+-		    mn_get_total(ps_global->msgmap));
++		    mn_get_total(ps_global->msgmap),
++		    mn_get_cur(ps_global->msgmap));
+ 	    *text  = so_text(so);
+ 	    *l     = strlen((char *)so_text(so));
+ 	    *style = GETTEXT_TEXT;

@@ -1,878 +1,1468 @@
---- pine/addrbook.c.orig	Sat Jan 17 20:28:24 1998
-+++ pine/addrbook.c	Sat Jan 17 21:01:08 1998
-@@ -514,9 +514,9 @@
+--- pine/other.c.orig	Thu Jul  9 05:35:12 1998
++++ pine/other.c	Wed Jul 15 17:02:36 1998
+@@ -51,16 +51,16 @@
  
- #define CLICKHERE       "[ Select Here to See Expanded List ]"
- #define NO_PERMISSION   "[ Permission Denied ]"
--#define EMPTY           "[ Empty ]"
--#define READONLY        "(ReadOnly)"
--#define NOACCESS        "(Un-readable)"
-+#define EMPTY           "[ 沒有任何項目 ]"
-+#define READONLY        "(唯讀)"
-+#define NOACCESS        "(無法讀取)"
- #define DISTLIST        "DISTRIBUTION LIST:"
+ #define	BODY_LINES(X)	((X)->ttyo->screen_rows -HEADER_ROWS(X)-FOOTER_ROWS(X))
  
- #define MAX_FCC     MAX_ADDRESS
-@@ -760,7 +760,7 @@
- 	      readonly_warning(NO_DING, NULL);
- 	    else if(pab->access == NoAccess)
- 	      q_status_message(SM_ORDER, 0, 4,
--		    "AddressBook not accessible, permission denied");
-+		    "禁止存取地址簿");
+-#define	CONFIG_SCREEN_TITLE		"SETUP CONFIGURATION"
+-#define	CONFIG_SCREEN_HELP_TITLE	"HELP FOR SETUP CONFIGURATION"
++#define	CONFIG_SCREEN_TITLE		"環境設定"
++#define	CONFIG_SCREEN_HELP_TITLE	"環境設定的輔助說明"
+ #define	R_SELD				'*'
+-#define	EXIT_PMT "Commit changes (\"Yes\" replaces settings, \"No\" abandons changes)"
+-static char *empty_val  = "Empty Value";
+-static char *empty_val2 = "<Empty Value>";
++#define	EXIT_PMT "送出改變 (\"是\" 取代設定，\"否\" 放棄改變)"
++static char *empty_val  = "空的設定值";
++static char *empty_val2 = "<空的設定值>";
+ #define EMPTY_VAL_LEN     11
+-static char *no_val     = "No Value Set";
++static char *no_val     = "尚未定義設定值";
+ #define NO_VAL_LEN        12
+-static char *fixed_val  = "Value is Fixed";
++static char *fixed_val  = "設定值已固定";
+ 
+ typedef struct proto_conf_line {
+     short   type,		                /* type of line treatment    */
+@@ -311,9 +311,9 @@
+ 	    char prompt[50];
+ 
+ 	    sprintf(prompt,
+-		"%s password to LOCK keyboard %s: ",
+-		i ? "Retype" : "Enter",
+-		i > 1 ? "(Yes, again) " : "");
++		"%s鎖定鍵盤的密碼 %s：",
++		i ? "重新輸入" : "輸入",
++		i > 1 ? "(是的，再一次) " : "");
+ 
+ 	    flags = OE_PASSWD;
+ 	    rc =  optionally_enter(pw, -FOOTER_ROWS(ps), 0, 30,
+@@ -322,7 +322,7 @@
+ 	    if(rc == 3)
+ 	      help = help == NO_HELP ? h_kb_lock : NO_HELP;
+ 	    else if(rc == 1 || pw[0] == '\0'){
+-		q_status_message(SM_ORDER, 0, 2, "Keyboard lock cancelled");
++		q_status_message(SM_ORDER, 0, 2, "取消鍵盤鎖定");
+ 		return(-1);
+ 	    }
+ 	    else if(rc != 4)
+@@ -333,14 +333,14 @@
+ 	  strcpy(inpasswd, pw);
+ 	else if(strcmp(inpasswd, pw)){
+ 	    q_status_message(SM_ORDER, 0, 2,
+-		"Mismatch with initial password: keyboard lock cancelled");
++		"和初始密碼不符：取消鍵盤鎖定");
+ 	    return(-1);
+ 	}
+     }
+ 
+-    if(want_to("Really lock keyboard with entered password", 'y', 'n',
++    if(want_to("確定以輸入的密碼鎖定鍵盤", 'y', 'n',
+ 	       NO_HELP, WT_NORM) != 'y'){
+-	q_status_message(SM_ORDER, 0, 2, "Keyboard lock cancelled");
++	q_status_message(SM_ORDER, 0, 2, "取消鍵盤鎖定");
+ 	return(-1);
+     }
+ 
+@@ -354,7 +354,7 @@
+     while(strcmp(inpasswd, passwd)){
+ 	if(passwd[0])
+ 	  q_status_message(SM_ORDER | SM_DING, 3, 3,
+-		     "Password to UNLOCK doesn't match password used to LOCK");
++		     "密碼不符");
+         
+         help = NO_HELP;
+         while(1){
+@@ -362,7 +362,7 @@
+ 
+ 	    flags = OE_PASSWD | OE_DISALLOW_CANCEL;
+ 	    rc =  optionally_enter(passwd, -FOOTER_ROWS(ps), 0, 30,
+-				   "Enter password to UNLOCK keyboard : ",NULL,
++				   "輸入解除鎖定的密碼：",NULL,
+ 				   help, &flags);
+ 	    if(rc == 3) {
+ 		help = help == NO_HELP ? h_oe_keylock : NO_HELP;
+@@ -377,7 +377,7 @@
+     if(old_suspend)
+       F_TURN_ON(F_CAN_SUSPEND, ps_global);
+ 
+-    q_status_message(SM_ORDER, 0, 3, "Keyboard Unlocked");
++    q_status_message(SM_ORDER, 0, 3, "解除鍵盤鎖定");
+     return(0);
+ }
+ 
+@@ -412,7 +412,7 @@
+     PICO     pbuf;
+ 
+     if(!signature_path(sigfile, sig_path, MAXPATH)){
+-        q_status_message(SM_ORDER, 3, 4, "No signature file defined.");
++        q_status_message(SM_ORDER, 3, 4, "尚未定義簽名檔。");
+ 	return;
+     }
+ 
+@@ -442,7 +442,7 @@
+     pbuf.browse_help   = h_composer_browse;
+     pbuf.attach_help   = h_composer_ctrl_j;
+ 
+-    pbuf.pine_anchor   = set_titlebar("SIGNATURE EDITOR",
++    pbuf.pine_anchor   = set_titlebar("簽名檔編輯器",
+ 				      ps_global->mail_stream,
+ 				      ps_global->context_current,
+ 				      ps_global->cur_folder,
+@@ -486,7 +486,7 @@
+      */
+     if(!(msgso = so_get(PicoText, NULL, EDIT_ACCESS))){
+         q_status_message(SM_ORDER | SM_DING, 3, 4,
+-			 "Error allocating space for signature file");
++			 "配置簽名檔空間時發生錯誤");
+ 	dprint(1, (debugfile, "Can't alloc space for signature_edit"));
+ 	return;
+     }
+@@ -496,7 +496,7 @@
+     if(can_access(sig_path, READ_ACCESS) == 0
+        && !(tmpso = so_get(FileStar, sig_path, READ_ACCESS))){
+ 	char *problem = error_description(errno);
+-	q_status_message2(SM_ORDER | SM_DING, 3, 3, "Error editing %s: %s",
++	q_status_message2(SM_ORDER | SM_DING, 3, 3, "編輯 %s 時發生錯誤：%s",
+ 			  sig_path, problem ? problem : "<NULL>");
+ 	dprint(1, (debugfile, "signature_edit: can't open %s: %s", sig_path,
+ 		   problem ? problem : "<NULL>"));
+@@ -508,7 +508,7 @@
+ 	gf_filter_init();		/* no filters needed */
+ 	if(errstr = gf_pipe(gc, pc)){
+ 	    q_status_message1(SM_ORDER | SM_DING, 3, 5,
+-			      "Error reading signature \"%s\"", errstr);
++			      "編輯簽名檔時發生錯誤 \"%s\"", errstr);
  	}
  
- 	/*
-@@ -921,7 +921,7 @@
+ 	gf_clear_so_readc(tmpso);
+@@ -547,7 +547,7 @@
+ 		gf_filter_init();		/* no filters needed */
+ 		if(errstr = gf_pipe(gc, pc)){
+ 		    q_status_message1(SM_ORDER | SM_DING, 3, 5,
+-				      "Error writing signature \"%s\"",
++				      "寫入簽名檔時發生錯誤 \"%s\"",
+ 				      errstr);
+ 		}
  
- 	    dprint(2, (debugfile, "parse_format: ignoring unrecognized word \"%s\" in address-book-formats\n", p));
- 	    q_status_message1(SM_ORDER, warnings++==0 ? 1 : 0, 4,
--		"Ignoring unrecognized word \"%s\" in address-book-formats", p);
-+		"在地址簿格式中忽略無法辨識的字 \"%s\"", p);
- 	    /* put back space */
- 	    if(r)
- 	      *r = SPACE;
-@@ -991,7 +991,7 @@
+@@ -557,7 +557,7 @@
+ 	    }
+ 	    else{
+ 		q_status_message1(SM_ORDER | SM_DING, 3, 3,
+-				  "Error writing %s", sig_path);
++				  "寫入 %s 時發生錯誤", sig_path);
+ 		dprint(1, (debugfile, "signature_edit: can't write %s",
+ 			   sig_path));
+ 	    }
+@@ -581,8 +581,8 @@
+     char     *rstr = NULL;
+     void    (*redraw)() = ps_global->redrawer;
+     static ESCKEY_S opts[] = {
+-	{'y', 'y', "Y", "Yes"},
+-	{'n', 'n', "N", "No"},
++	{'y', 'y', "Y", "是"},
++	{'n', 'n', "N", "否"},
+ 	{-1, 0, NULL, NULL}
+     };
  
-     if(column == 0){
- 	q_status_message(SM_ORDER, 0, 4,
--	"address-book-formats has no recognizable words, using default format");
-+	"由於在地址簿格式中找不到足以辨識的字, 因此使用預設模式");
- 	goto assign_default;
+@@ -590,18 +590,18 @@
+     fix_windsize(ps_global);
+ 
+     while(1){
+-	rv = radio_buttons("Exit editor and apply changes? ",
++	rv = radio_buttons("結束編輯並套用改變？",
+ 			   -FOOTER_ROWS(ps_global), opts,
+ 			   'y', 'x', NO_HELP, RB_NORM);
+ 	if(rv == 'y'){				/* user ACCEPTS! */
+ 	    break;
+ 	}
+ 	else if(rv == 'n'){			/* Declined! */
+-	    rstr = "No Changes Saved";
++	    rstr = "改變並未存檔";
+ 	    break;
+ 	}
+ 	else if(rv == 'x'){			/* Cancelled! */
+-	    rstr = "Exit Cancelled";
++	    rstr = "取消";
+ 	    break;
+ 	}
+     }
+@@ -616,24 +616,24 @@
+  *  * * * * *    Start of Config Screen Support Code   * * * * * 
+  */
+ 
+-#define PREV_MENU {"P", "Prev", {MC_PREVITEM, 1, {'p'}}, KS_NONE}
+-#define NEXT_MENU {"N", "Next", {MC_NEXTITEM, 2, {'n','\t'}}, KS_NONE}
++#define PREV_MENU {"P", "前一個", {MC_PREVITEM, 1, {'p'}}, KS_NONE}
++#define NEXT_MENU {"N", "後一個", {MC_NEXTITEM, 2, {'n','\t'}}, KS_NONE}
+ #define EXIT_SETUP_MENU \
+-	{"E", "Exit Setup", {MC_EXIT,1,{'e'}}, KS_EXITMODE}
++	{"E", "離開", {MC_EXIT,1,{'e'}}, KS_EXITMODE}
+ #define TOGGLE_MENU \
+-	{"X", "[Set/Unset]", {MC_TOGGLE,3,{'x',ctrl('M'),ctrl('J')}}, KS_NONE}
++	{"X", "[設定/解除設定]", {MC_TOGGLE,3,{'x',ctrl('M'),ctrl('J')}}, KS_NONE}
+ 
+ static struct key config_text_keys[] = 
+        {HELP_MENU,
+ 	NULL_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"C", "[Change Val]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"C", "[改變設定值]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+-	{"A", "Add Value", {MC_ADD,1,{'a'}}, KS_NONE},
+-	{"D", "Delete Val", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"A", "新增設定值", {MC_ADD,1,{'a'}}, KS_NONE},
++	{"D", "刪除設定值", {MC_DELETE,1,{'d'}}, KS_NONE},
+ 	PRYNTTXT_MENU,
+ 	WHEREIS_MENU};
+ INST_KEY_MENU(config_text_keymenu, config_text_keys);
+@@ -657,7 +657,7 @@
+        {HELP_MENU,
+ 	NULL_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"*", "[Select]", {MC_CHOICE,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"*", "[選擇]", {MC_CHOICE,3,{'*',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -672,7 +672,7 @@
+        {HELP_MENU,
+ 	NULL_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"C", "[Change]", {MC_TOGGLE,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"C", "[修改]", {MC_TOGGLE,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -1377,14 +1377,14 @@
+        {HELP_MENU,
+ 	PRYNTTXT_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"S", "[Select]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"S", "[選擇]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+-	{"A", "Add Printer", {MC_ADD,1,{'a'}}, KS_NONE},
+-	{"D", "DeletePrint", {MC_DELETE,1,{'d'}}, KS_NONE},
+-	{"C", "Change", {MC_EDIT,1,{'c'}}, KS_NONE},
++	{"A", "新增印表機", {MC_ADD,1,{'a'}}, KS_NONE},
++	{"D", "刪除印表機", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"C", "修改", {MC_EDIT,1,{'c'}}, KS_NONE},
+ 	WHEREIS_MENU};
+ INST_KEY_MENU(printer_edit_keymenu, printer_edit_keys);
+ 
+@@ -1392,7 +1392,7 @@
+        {HELP_MENU,
+ 	PRYNTTXT_MENU,
+ 	EXIT_SETUP_MENU,
+-	{"S", "[Select]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"S", "[選擇]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -1425,7 +1425,7 @@
+     char *saved_printer;
+     OPT_SCREEN_S screen;
+ 
+-    if(fixed_var(&ps_global->vars[V_PRINTER], "change", "printer"))
++    if(fixed_var(&ps_global->vars[V_PRINTER], "修改", "印表機"))
+       return;
+ 
+     saved_printer = cpystr(ps->VAR_PRINTER);
+@@ -1794,7 +1794,7 @@
+ 
+     vsave = save_config_vars(ps);
+     switch(conf_scroll_screen(ps, &screen, start_line,
+-			      "SETUP PRINTER", "printer config ", 1)){
++			      "設定印表機", "printer config ", 1)){
+       case 0:
+ 	break;
+     
+@@ -1835,8 +1835,8 @@
+       fs_give((void **)def_printer_line);
+ 
+     *def_printer_line = fs_get(36 + strlen(p) + 1);
+-    sprintf(*def_printer_line, "Default printer currently %s%s%s",
+-	set ? "set to \"" : "unset", set ? p : "", set ? "\"." : "."); 
++    sprintf(*def_printer_line, "預設印表機目前%s%s%s",
++	set ? "設定為 \"" : "未設定", set ? p : "", set ? "\"." : "."); 
+ 
+     fs_give((void **)&nick);
+     fs_give((void **)&cmd);
+@@ -1846,7 +1846,7 @@
+ static struct key flag_keys[] = 
+        {HELP_MENU,
+ 	NULL_MENU,
+-        {"E", "Exit Flags", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
++        {"E", "離開", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
+         TOGGLE_MENU,
+ 	PREV_MENU,
+ 	NEXT_MENU,
+@@ -2000,9 +2000,9 @@
+ 
+ static struct key addr_select_keys[] = 
+        {HELP_MENU,
+-        {"E", "ExitSelect", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
++        {"E", "離開", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
+ 	NULL_MENU,
+-        {"S", "[Select]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}}, KS_NONE},
++        {"S", "[選擇]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+@@ -2016,29 +2016,29 @@
+ static struct key addr_select_with_goback_keys[] = 
+        {HELP_MENU,
+ 	NULL_MENU,
+-        {"<", "AddbkList", {MC_ADDRBOOK,2,{'<',','}}, KS_NONE},
+-        {"S", "[Select]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}}, KS_NONE},
++        {"<", "地址簿列表", {MC_ADDRBOOK,2,{'<',','}}, KS_NONE},
++        {"S", "[選擇]", {MC_CHOICE,3,{'s',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+ 	NULL_MENU,
+ 	NULL_MENU,
+-        {"E", "ExitSelect", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
++        {"E", "離開", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
+ 	WHEREIS_MENU};
+ INST_KEY_MENU(addr_s_km_with_goback, addr_select_with_goback_keys);
+ 
+ static struct key addr_select_with_view_keys[] = 
+        {HELP_MENU,
+ 	NULL_MENU,
+-        {"<", "AddbkList", {MC_ADDRBOOK,2,{'<',','}}, KS_NONE},
+-        {">", "[View]",
++        {"<", "地址簿列表", {MC_ADDRBOOK,2,{'<',','}}, KS_NONE},
++        {">", "[檢視]",
+ 	   {MC_VIEW_TEXT,5,{'v','>','.',ctrl('M'),ctrl('J')}}, KS_NONE},
+ 	PREV_MENU,
+ 	NEXT_MENU,
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+-        {"C", "ComposeTo", {MC_COMPOSE,1,{'c'}}, KS_COMPOSER},
++        {"C", "編修", {MC_COMPOSE,1,{'c'}}, KS_COMPOSER},
+ 	FWDEMAIL_MENU,
+ 	SAVE_MENU,
+ 	WHEREIS_MENU};
+@@ -2047,7 +2047,7 @@
+ static struct key addr_select_exit_keys[] = 
+        {NULL_MENU,
+ 	NULL_MENU,
+-        {"E", "[Exit]", {MC_EXIT,3,{'e',ctrl('M'),ctrl('J')}},
++        {"E", "[離開]", {MC_EXIT,3,{'e',ctrl('M'),ctrl('J')}},
+ 	   KS_EXITMODE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -2063,7 +2063,7 @@
+ static struct key addr_select_goback_keys[] = 
+        {NULL_MENU,
+ 	NULL_MENU,
+-        {"E", "[Exit]", {MC_ADDRBOOK,3,{'e',ctrl('M'),ctrl('J')}},
++        {"E", "[離開]", {MC_ADDRBOOK,3,{'e',ctrl('M'),ctrl('J')}},
+ 	   KS_EXITMODE},
+ 	NULL_MENU,
+ 	NULL_MENU,
+@@ -2404,7 +2404,7 @@
+ 	  sprintf(ee+2, "%s, No Matches Returned",
+ 		  ldap_err2string(wp_err->ldap_errno));
+ 	else
+-	    strcat(ee, "No Matches");
++	    strcat(ee, "沒有符合的");
+ 
+ 	strcat(ee, " -- Choose Exit ]");
+ 	ctmpa->value      = cpystr(ee);
+@@ -2498,7 +2498,7 @@
+       case MC_CHOICE :
+ 	if(flags & CF_PRIVATE){
+ 	    q_status_message(SM_ORDER | SM_DING, 0, 3,
+-     "No email address available for this entry; choose another or ExitSelect");
++     "無法針對此項目獲得電子郵件地址；請選擇其他的或離開");
+ 	}
+ 	else if(some_selectable){
+ 	    (*cl)->d.a.ac->selected_ld    = (*cl)->d.a.ld;
+@@ -2561,15 +2561,15 @@
+ static struct key direct_config_keys[] = 
+        {HELP_MENU,
+ 	NULL_MENU,
+-        {"E", "Exit Setup", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
+-	{"C", "[Change]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
+-	{"P", "PrevDir", {MC_PREVITEM, 1, {'p'}}, KS_NONE},
+-	{"N", "NextDir", {MC_NEXTITEM, 2, {'n', TAB}}, KS_NONE},
++        {"E", "離開", {MC_EXIT,1,{'e'}}, KS_EXITMODE},
++	{"C", "[修改]", {MC_EDIT,3,{'c',ctrl('M'),ctrl('J')}}, KS_NONE},
++	{"P", "前一目錄", {MC_PREVITEM, 1, {'p'}}, KS_NONE},
++	{"N", "次一目錄", {MC_NEXTITEM, 2, {'n', TAB}}, KS_NONE},
+ 	PREVPAGE_MENU,
+ 	NEXTPAGE_MENU,
+-	{"A", "Add Dir", {MC_ADD,1,{'a'}}, KS_NONE},
+-	{"D", "Del Dir", {MC_DELETE,1,{'d'}}, KS_NONE},
+-	{"$", "Shuffle", {MC_SHUFFLE,1,{'$'}}, KS_NONE},
++	{"A", "新增目錄", {MC_ADD,1,{'a'}}, KS_NONE},
++	{"D", "刪除目錄", {MC_DELETE,1,{'d'}}, KS_NONE},
++	{"$", "重整", {MC_SHUFFLE,1,{'$'}}, KS_NONE},
+ 	WHEREIS_MENU};
+ INST_KEY_MENU(dir_conf_km, direct_config_keys);
+ 
+@@ -2655,7 +2655,7 @@
+      */
+     if(!ps->VAR_LDAP_SERVERS || !ps->VAR_LDAP_SERVERS[0] ||
+        !ps->VAR_LDAP_SERVERS[0][0]){
+-	if(!fixed_var(&ps->vars[V_LDAP_SERVERS], "modify", "directory list")){
++	if(!fixed_var(&ps->vars[V_LDAP_SERVERS], "修改", "地址列表")){
+ 	    unsigned flags = 0;
+ 
+ 	    opt_screen = &screen;
+@@ -2665,7 +2665,7 @@
+ #endif /* notdef */
+     
+     (void)conf_scroll_screen(ps, &screen, first_line,
+-			     "SETUP DIRECTORY SERVERS", "servers ", 1);
++			     "設定地址伺服器", "servers ", 1);
+     ps->mangled_screen = 1;
+ }
+ 
+@@ -2685,20 +2685,20 @@
+       case MC_DELETE :
+ 	if(first_one)
+ 	  q_status_message(SM_ORDER|SM_DING, 0, 3,
+-			   "Nothing to Delete, use Add");
++			   "沒有可供刪除的項目，請用新增");
+ 	else
+ 	  dir_config_del(ps, cl);
+ 
+ 	break;
+ 
+       case MC_ADD :
+-	if(!fixed_var((*cl)->var, NULL, "directory list"))
++	if(!fixed_var((*cl)->var, NULL, "地址列表"))
+ 	  dir_config_add(ps, cl);
+ 
+ 	break;
+ 
+       case MC_EDIT :
+-	if(!fixed_var((*cl)->var, NULL, "directory list")){
++	if(!fixed_var((*cl)->var, NULL, "地址列表")){
+ 	    if(first_one)
+ 	      dir_config_add(ps, cl);
+ 	    else
+@@ -2708,10 +2708,10 @@
+ 	break;
+ 
+       case MC_SHUFFLE :
+-	if(!fixed_var((*cl)->var, NULL, "directory list")){
++	if(!fixed_var((*cl)->var, NULL, "地址列表")){
+ 	    if(first_one)
+ 	      q_status_message(SM_ORDER|SM_DING, 0, 3,
+-			       "Nothing to Shuffle, use Add");
++			       "沒有可供重整的項目，請用新增");
+ 	    else
+ 	      dir_config_shuffle(ps, cl);
+ 	}
+@@ -2840,7 +2840,7 @@
+ 	    write_pinerc(ps);
+ 	}
+ 	else
+-	  q_status_message(SM_ORDER, 0, 3, "Add cancelled, no server name");
++	  q_status_message(SM_ORDER, 0, 3, "沒有伺服器名稱，取消新增");
      }
  
-@@ -1526,7 +1526,7 @@
- 		if(want_status == Open){
- 		    new_status = HalfOpen;  /* best we can do */
- 		    q_status_message1(SM_ORDER | SM_DING, *warning?1:3, 4,
--				      "Error opening/creating address book %s",
-+				      "於開啟/建立在地址簿 %s 時發生錯誤",
- 				      pab->nickname);
- 		    if(*warning)
- 			q_status_message2(SM_ORDER, 3, 4, "%s: %s",
-@@ -1603,7 +1603,7 @@
- 	    if(want_status == Open){
- 		new_status = HalfOpen;  /* best we can do */
- 		q_status_message1(SM_ORDER | SM_DING, 3, 4,
--		   "Insufficient permissions for opening address book %s",
-+		   "沒有足夠的權限開啟地址簿 %s",
- 		   pab->nickname);
+     free_ldap_server_info(&info);
+@@ -2870,7 +2870,7 @@
+     
+     if(cnt < 2){
+ 	q_status_message(SM_ORDER, 0, 3,
+-	 "Shuffle only makes sense when there is more than one server defined");
++	 "僅在定義了多個伺服器之後，重整才能發揮作用");
+ 	return;
+     }
+ 
+@@ -2881,12 +2881,12 @@
+     opts[i].ch      = 'u';
+     opts[i].rval    = 'u';
+     opts[i].name    = "U";
+-    opts[i++].label = "Up";
++    opts[i++].label = "上";
+ 
+     opts[i].ch      = 'd';
+     opts[i].rval    = 'd';
+     opts[i].name    = "D";
+-    opts[i++].label = "Down";
++    opts[i++].label = "下";
+ 
+     opts[i].ch = -1;
+     deefault = 'u';
+@@ -2898,11 +2898,11 @@
+     else if(current_num == cnt - 1)		/* no down */
+       opts[1].ch = -2;
+ 
+-    sprintf(tmp, "Shuffle \"%s\" %s%s%s ? ",
++    sprintf(tmp, "重整 \"%s\" %s%s%s ? ",
+ 	    (*cl)->value,
+-	    (opts[0].ch != -2) ? "UP" : "",
++	    (opts[0].ch != -2) ? "往上" : "",
+ 	    (opts[0].ch != -2 && opts[1].ch != -2) ? " or " : "",
+-	    (opts[1].ch != -2) ? "DOWN" : "");
++	    (opts[1].ch != -2) ? "往下" : "");
+     help = (opts[0].ch == -2) ? h_dir_shuf_down
+ 			      : (opts[1].ch == -2) ? h_dir_shuf_up
+ 						   : h_dir_shuf;
+@@ -2912,7 +2912,7 @@
+ 
+     switch(rv){
+       case 'x':
+-	q_status_message(SM_ORDER, 0, 3, "Shuffle cancelled");
++	q_status_message(SM_ORDER, 0, 3, "取消重整");
+ 	return;
+ 
+       case 'u':
+@@ -2950,7 +2950,7 @@
+     free_list_array(&new_list);
+     if(j){
+ 	q_status_message(SM_ORDER, 0, 3,
+-			 "Shuffle cancelled: couldn't save configuration file");
++			 "取消重整：無法存入設定檔");
+ 	set_current_val((*cl)->var, TRUE, FALSE);
+ 	return;
+     }
+@@ -3002,10 +3002,10 @@
+ 	info = break_up_ldap_server(raw_server);
+ 
+ 	if(strcmp((*cl)->var->current_val.l[(*cl)->varmem], raw_server) == 0)
+-	  q_status_message(SM_ORDER, 0, 3, "No change, cancelled");
++	  q_status_message(SM_ORDER, 0, 3, "沒有任何改變，取消");
+ 	else if(!(info && info->serv && *info->serv))
+ 	  q_status_message(SM_ORDER, 0, 3,
+-	      "Change cancelled, use Delete if you want to remove this server");
++	      "已取消改變，如欲刪除此伺服器，請用刪除");
+ 	else{
+ 	    char   tmp[900];
+ 	    char  *subtitle;
+@@ -3740,7 +3740,7 @@
+ 	}
+ 	else
+ 	  q_status_message(SM_ORDER, 3, 3,
+-			   "Can't delete sys-admin defined value");
++			   "無法刪除系統管理員定義的設定值。");
+     }
+     else{
+ 	int cnt, ans = 0;
+@@ -3763,8 +3763,8 @@
+ 	 */
+ 	if(!(*cl)->var->user_val.l && cnt > 1){
+ 	    static ESCKEY_S opts[] = {
+-		{'i', 'i', "I", "Ignore All"},
+-		{'r', 'r', "R", "Remove One"},
++		{'i', 'i', "I", "忽略全部"},
++		{'r', 'r', "R", "移除一個"},
+ 		{-1, 0, NULL, NULL}};
+ 	    ans = radio_buttons(
+ 	"Ignore all default directory servers or just remove this one ? ",
+@@ -3870,7 +3870,7 @@
+ 		    CONF_S   *first_line = NULL;
+ 
+ 		    q_status_message(SM_ORDER, 0, 3,
+-				 "Reverting to default directory server");
++				 "回復至預設的地址伺服器");
+ 		    dir_init_display(ps, cl, servers,
+ 				   &ps->vars[V_LDAP_SERVERS], &first_line);
+ 		    *cl = first_line;
+@@ -3910,7 +3910,7 @@
+ 	    }
+ 	}
+ 	else
+-	  q_status_message(SM_ORDER, 0, 3, "Server not deleted");
++	  q_status_message(SM_ORDER, 0, 3, "伺服器未被刪除");
+     }
+ 
+     if(rv == 1){
+@@ -4416,7 +4416,7 @@
+ 		ps->mangled_screen = 1;
  	    }
  	    else
-@@ -3929,7 +3929,7 @@
-     mailcap_free(); /* free resources we won't be using for a while */
+-	      q_status_message(SM_ORDER,0,3,"No help yet!");
++	      q_status_message(SM_ORDER,0,3,"輔助說明尚未存在！");
  
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "重設地址簿...");
- 	dprint(1, (debugfile, "RESETTING address book... addr_book_screen!\n"));
- 	addrbook_reset();
-     }
-@@ -3959,7 +3959,7 @@
- 
-     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
- 	dprint(1,
- 	    (debugfile, "RESETTING address book... addr_book_compose!\n"));
- 	addrbook_reset();
-@@ -4000,7 +4000,7 @@
- 
-     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
- 	dprint(1,
- 	    (debugfile, "RESETTING address book... addr_book_compose_lcc!\n"));
- 	addrbook_reset();
-@@ -4034,7 +4034,7 @@
- 
-     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
- 	dprint(1,
- 	    (debugfile, "RESETTING address book... addr_book_change_list!\n"));
- 	addrbook_reset();
-@@ -4081,7 +4081,7 @@
- 
-     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
- 	dprint(1,
- 	    (debugfile, "RESETTING address book...addr_book_takeaddr!\n"));
- 	addrbook_reset();
-@@ -4112,7 +4112,7 @@
- 
-     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
- 	dprint(1,
- 	    (debugfile, "RESETTING address book...addr_book_nick_for_edit!\n"));
- 	addrbook_reset();
-@@ -4143,7 +4143,7 @@
- 
-     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
- 	dprint(1,
- 	    (debugfile, "RESETTING address book...addr_book_selnick!\n"));
- 	addrbook_reset();
-@@ -4174,7 +4174,7 @@
- 
-     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
- 	dprint(1,
- 	    (debugfile, "RESETTING address book...addr_book_seladdr!\n"));
- 	addrbook_reset();
-@@ -4206,7 +4206,7 @@
- 
-     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
- 	dprint(1,
- 	    (debugfile,"RESETTING address book...addr_book_seladdr_nofull!\n"));
- 	addrbook_reset();
-@@ -4237,7 +4237,7 @@
- 
-     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
- 	dprint(1,
- 	    (debugfile, "RESETTING address book...addr_book_manynicks!\n"));
- 	addrbook_reset();
-@@ -4249,18 +4249,18 @@
- 
- 
- static struct key ab_keys[] =
--     {{"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
--      {NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
--      {"P","PrevEntry",KS_NONE},	{"N","NextEntry",KS_NONE},
--      {"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--      {"D","Delete",KS_DELETE},		{"A","AddNew",KS_NONE},
--      {"C","ComposeTo",KS_COMPOSER},	{"W","WhereIs",KS_WHEREIS},
--      {"?","Help",KS_SCREENHELP},	{"O","OTHER CMDS",KS_NONE},
--      {"Q","Quit",KS_EXIT},		{NULL,NULL,KS_NONE},
--      {"L","ListFldrs",KS_FLDRLIST},	{"G","GotoFldr",KS_GOTOFLDR},
--      {"I","Index",KS_FLDRINDEX},	{NULL,NULL,KS_NONE},
--      {"Y","prYnt",KS_PRINT},		{"T","TakeAddr",KS_TAKEADDR},
--      {"X","eXport",KS_EXPORT},		{"F","Forward",KS_NONE}};
-+     {{"?","輔助說明",KS_SCREENHELP},   {"O","其它命令",KS_NONE},
-+      {NULL,NULL,KS_NONE},              {NULL,NULL,KS_NONE},
-+      {"P","前一個",KS_NONE},           {"N","後一個",KS_NONE},
-+      {"-","上一頁",KS_PREVPAGE},       {"Spc","下一頁",KS_NEXTPAGE},
-+      {"D","刪除",KS_DELETE},           {"A","加入",KS_NONE},
-+      {"C","寫信",KS_COMPOSER},         {"W","搜尋",KS_WHEREIS},
-+      {"?","輔助說明",KS_SCREENHELP},   {"O","其它命令",KS_NONE},
-+      {"Q","離開",KS_EXIT},             {NULL,NULL,KS_NONE},
-+      {"L","列出信件夾",KS_FLDRLIST},   {"G","進入信件夾",KS_GOTOFLDR},
-+      {"I","索引",KS_FLDRINDEX},        {NULL,NULL,KS_NONE},
-+      {"Y","列印",KS_PRINT},            {"T","取得地址",KS_TAKEADDR},
-+      {"X","匯出",KS_EXPORT},           {"F","轉寄",KS_NONE}};
- INST_KEY_MENU(ab_keymenu, ab_keys);
- #define OTHER_KEY  1
- #define MAIN_KEY   2
-@@ -4376,7 +4376,7 @@
-     what         = FirstMenu;
- 
-     if(!init_addrbooks(HalfOpen, 1, 1, !are_selecting)){
--	q_status_message(SM_ORDER | SM_DING,3,4,"No Address Book Configured");
-+	q_status_message(SM_ORDER | SM_DING,3,4,"無法找到已設定的地址簿");
- 	if(!are_selecting)
- 	  ps_global->next_screen = ps_global->prev_screen;
+ 	    break;
  
 @@ -4473,7 +4473,7 @@
- 	    as.cur           = cur_addr_book();
- 	    pab              = &as.adrbks[as.cur];
- 	    if(as.cur != old_cur)
--	      q_status_message1(SM_ORDER, 0, 2, "Now in addressbook %s",
-+	      q_status_message1(SM_ORDER, 0, 2, "現在正在地址簿 %s 中",
- 						pab->nickname);
- #ifdef	_WINDOWS
- 	    {
-@@ -4506,7 +4506,7 @@
- 	    as.cur               = cur_addr_book();
- 	    pab                  = &as.adrbks[as.cur];
- 	    if(as.cur != old_cur)
--	      q_status_message1(SM_ORDER, 0, 2, "Now in addressbook %s",
-+	      q_status_message1(SM_ORDER, 0, 2, "現在正在地址簿 %s 中",
- 						pab->nickname);
-         }
- 
-@@ -4531,10 +4531,10 @@
- 	    if(are_selecting){
- 		km->how_many = 1;
- 		ab_keys[MAIN_KEY].name   = "E";
--		ab_keys[MAIN_KEY].label  = "ExitSelect";
-+		ab_keys[MAIN_KEY].label  = "離開";
- 		KS_OSDATASET(&ab_keys[MAIN_KEY], KS_EXITMODE);
- 		ab_keys[SELECT_KEY].name  = "S";
--		ab_keys[SELECT_KEY].label = "[Select]";
-+		ab_keys[SELECT_KEY].label = "[選擇]";
- 		def_cmd = F_ON(F_USE_FK,ps_global) ? PF4 : 's';
- 		KS_OSDATASET(&ab_keys[SELECT_KEY], KS_NONE);
- 		clrbitn(OTHER_KEY, bitmap);
-@@ -4545,18 +4545,18 @@
- 		KS_OSDATASET(&ab_keys[DELETE_KEY], KS_NONE);
- 		if(as.checkboxes){
- 		    ab_keys[DELETE_KEY].name  = "X";
--		    ab_keys[DELETE_KEY].label = "[Set/Unset]";
--		    ab_keys[SELECT_KEY].label = "Select";
-+		    ab_keys[DELETE_KEY].label = "[設定/取消設定]";
-+		    ab_keys[SELECT_KEY].label = "選擇";
- 		    def_cmd = F_ON(F_USE_FK,ps_global) ? PF9 : 'x';
- 		    if(entry_is_clickable(as.top_ent+as.cur_row)){
- 			def_cmd = F_ON(F_USE_FK,ps_global) ? PF4 : 's';
--			ab_keys[DELETE_KEY].label = "Set/Unset";
--			ab_keys[SELECT_KEY].label = "[Select]";
-+			ab_keys[DELETE_KEY].label = "設定/取消設定";
-+			ab_keys[SELECT_KEY].label = "[選擇]";
- 		    }
- 		}
- 		else if(listmode_ok){
- 		    ab_keys[DELETE_KEY].name   = "L";
--		    ab_keys[DELETE_KEY].label  = "ListMode";
-+		    ab_keys[DELETE_KEY].label  = "列表模式";
- 		}
+ 		if(i)
+ 		  config_scroll_up(i);
  		else
- 		  clrbitn(DELETE_KEY, bitmap);
-@@ -4564,23 +4564,23 @@
- 	    else{
- 		km->how_many = 2;
- 		ab_keys[MAIN_KEY].name   = "M";
--		ab_keys[MAIN_KEY].label  = "Main Menu";
-+		ab_keys[MAIN_KEY].label  = "主選單";
- 		KS_OSDATASET(&ab_keys[MAIN_KEY], KS_MAINMENU);
- 		if(entry_is_clickable(as.top_ent+as.cur_row)){
- 		    ab_keys[SELECT_KEY].name  = "S";
--		    ab_keys[SELECT_KEY].label = "[Select]";
-+		    ab_keys[SELECT_KEY].label = "[選擇]";
- 		    def_cmd = F_ON(F_USE_FK,ps_global) ? PF4 : 's';
- 		    KS_OSDATASET(&ab_keys[SELECT_KEY], KS_NONE);
- 		}
- 		else{
- 		    ab_keys[SELECT_KEY].name  = "V";
--		    ab_keys[SELECT_KEY].label = "[View/Edit]";
-+		    ab_keys[SELECT_KEY].label = "[檢視/編輯]";
- 		    def_cmd = F_ON(F_USE_FK,ps_global) ? PF4 : 'v';
- 		    KS_OSDATASET(&ab_keys[SELECT_KEY], KS_NONE);
- 		}
- 
- 		ab_keys[DELETE_KEY].name   = "D";
--		ab_keys[DELETE_KEY].label  = "Delete";
-+		ab_keys[DELETE_KEY].label  = "刪除";
- 		KS_OSDATASET(&ab_keys[DELETE_KEY], KS_DELETE);
- 		if(was_clickable_last_time)  /* it's still *this* time now */
- 		  clrbitn(SENDTO_KEY, bitmap);
-@@ -4648,7 +4648,7 @@
- #endif
-         orig_c = c;
- 
--	if(c == ctrl('M') || c == ctrl('J')) /* set up default */
-+	if(c == ctrl('M') || c == ctrl('J') || c == KEY_RIGHT) /* set up default */
- 	  c = def_cmd;
- 
- 	if(c < 'z' && isupper((unsigned char)c))
-@@ -4749,13 +4749,14 @@
- 
- 
-             /*------------- Back to main menu or exit to caller -------*/
-+	  case KEY_LEFT:
- 	  case PF3:
- 	  case 'm':
- 	  case 'e':
- 	    if(!are_selecting && c == 'e'){
- 	        /* backwards compatibility message */
- 		q_status_message(SM_ORDER | SM_DING, 0, 2,
--	      "Command \"E\" not defined.  Use \"View/Edit\" to edit an entry");
-+	      "\"E\" 這個命令尚未被定義.  請使用 \"View/Edit\" 編輯選項");
- 		break;
+-		  q_status_message(SM_ORDER,0,1, "Already at end of screen");
++		  q_status_message(SM_ORDER,0,1, "已經在畫面的結尾了");
  	    }
  
-@@ -4766,7 +4767,7 @@
-               ps_global->next_screen = main_menu_screen;
+ 	    break;
+@@ -4497,7 +4497,7 @@
+ 	    }
+ 	    else
+ 	      q_status_message(SM_ORDER, 0, 1,
+-			       "Already at start of screen");
++			       "已經在畫面的起始了");
  
- 	    if(!(are_selecting && as.checkboxes && checkedn > 0)
--	       || want_to("Really abandon your selections ",
-+	       || want_to("確定放棄你的選擇 ",
- 			  'y', 'x', NO_HELP, 0, 0) == 'y')
- 	      quit = 1;
+ 	    break;
  
-@@ -4780,7 +4781,7 @@
- 	    if(c == 's'
- 	      && !(are_selecting || entry_is_clickable(as.top_ent+as.cur_row))){
- 		q_status_message(SM_ORDER | SM_DING, 0, 2,
--		 "Command \"S\" not defined.  Use \"AddNew\" to create a list");
-+		 "\"S\" 這個命令尚未被定義.  請使用 \"AddNew\" 建立列表");
- 		break;
+@@ -4540,7 +4540,7 @@
+ 
+ 		    if(ctmpa == screen->current){
+ 			q_status_message(SM_ORDER,0,1,
+-					 "Already at end of screen");
++					 "已經在畫面的結尾了");
+ 			goto no_down;
+ 		    }
+ 
+@@ -4571,7 +4571,7 @@
+ 	    if(ctmpa){
+ 		if(ctmpa == screen->current)
+ 		  q_status_message(SM_ORDER, 0, 1,
+-				 "Already at start of screen");
++				 "已經在畫面的起始了");
+ 
+ 		screen->current = ctmpa;
+ 	    }
+@@ -4651,13 +4651,13 @@
+ 	     HelpType help;
+ 	     static ESCKEY_S ekey[] = {
+ 		{0, 0, "", ""},
+-		{ctrl('Y'), 10, "^Y", "Top"},
+-		{ctrl('V'), 11, "^V", "Bottom"},
++		{ctrl('Y'), 10, "^Y", "頂端"},
++		{ctrl('V'), 11, "^V", "底端"},
+ 		{-1, 0, NULL, NULL}};
+ 
+ 	     ps->mangled_footer = 1;
+ 	     buf[0] = '\0';
+-	     sprintf(tmp, "Word to find %s%s%s: ",
++	     sprintf(tmp, "欲搜尋的單字 %s%s%s: ",
+ 		     (last[0]) ? "[" : "",
+ 		     (last[0]) ? last : "",
+ 		     (last[0]) ? "]" : "");
+@@ -4779,7 +4779,7 @@
+ 		 result = "Searched to bottom";
+ 	     }
+ 	     else
+-	       result = "WhereIs cancelled";
++	       result = "取消搜尋";
+ 
+ 	     if((found & FOUND_IT) && ctmpa){
+ 		 strcpy(last, buf);
+@@ -4798,7 +4798,7 @@
+ 		 screen->current = ctmpa;
+ 	     }
+ 
+-	     q_status_message(SM_ORDER,0,3,result ? result : "Word not found");
++	     q_status_message(SM_ORDER,0,3,result ? result : "找不到該字");
  	    }
  
-@@ -4843,7 +4844,7 @@
-               /* Select an entry to mail to or a nickname to add to */
- 	      if(!any_addrs_avail(as.top_ent+as.cur_row)){
- 	          q_status_message(SM_ORDER | SM_DING, 0, 4,
--	   "No entries in address book. Use ExitSelect to leave address book");
-+	   "地址簿中找不到任何項目. 請以 離開選擇(E) 離開");
- 	          break;
- 	      }
+ 	    break;
+@@ -4813,10 +4813,10 @@
+ 	    if(edit_config
+ 	       && (ps_global->restricted || ps_global->readonly_pinerc)){
+ 		q_status_message1(SM_ORDER, 0, 3,
+-		     "%s can't change options or settings",
+-		     ps_global->restricted ? "Pine demo"
+-					   : "Config file not changeable,");
+-		if(cmd == MC_EXIT){
++		     "%s無法改變選項或設定",
++		     ps_global->restricted ? "Pine 展示版"
++					   : "設定檔無法改變，");
++		if(cmd == MC_EXIT || cmd == KEY_LEFT){
+ 		    retval = 0;
+ 		    done++;
+ 		}
+@@ -4831,9 +4831,9 @@
+ 		    &screen->current, flags)){
+ 		  case -1:
+ 		    q_status_message2(SM_ORDER, 0, 2,
+-		      "Command \"%s\" not defined here.%s",
++		      "命令 \"%s\" 未在此定義。%s",
+ 		      pretty_command(ch),
+-		      F_ON(F_BLANK_KEYMENU,ps) ? "" : "  See key menu below.");
++		      F_ON(F_BLANK_KEYMENU,ps) ? "" : "請參考下列的按鍵清單。");
+ 		    break;
  
-@@ -4874,7 +4875,7 @@
- 		  }
- 		  else if(as.checkboxes && checkedn <= 0){
- 		      q_status_message(SM_ORDER, 0, 1,
--			"Use \"X\" to mark addresses or lists");
-+			"使用 \"X\" 標記地址或列表");
- 		      break;
- 		  }
- 		  else if(as.checkboxes){
-@@ -4978,7 +4979,7 @@
- 		      if(selecting_mult_nicks){
- 			if(dl->type != ListHead && style == SelectAddrLccCom){
- 			    q_status_message(SM_ORDER, 0, 4,
--	  "You may only select lists for lcc, use bcc for other addresses");
-+	  "僅能選擇 lcc 列表, 其他的地址請用 bcc");
- 			    break;
+ 		  case 0:
+@@ -5368,11 +5368,11 @@
+ 	ekey[1].ch    = ctrl('P');
+ 	ekey[1].rval  = ctrl('P');
+ 	ekey[1].name  = "^P";
+-	ekey[1].label = "Decrease";
++	ekey[1].label = "減少";
+ 	ekey[2].ch    = ctrl('N');
+ 	ekey[2].rval  = ctrl('N');
+ 	ekey[2].name  = "^N";
+-	ekey[2].label = "Increase";
++	ekey[2].label = "增加";
+ 	ekey[3].ch    = KEY_DOWN;
+ 	ekey[3].rval  = ctrl('P');
+ 	ekey[3].name  = "";
+@@ -5387,12 +5387,12 @@
+     sval[0] = '\0';
+     switch(cmd){
+       case MC_ADD:				/* add to list */
+-	if(fixed_var((*cl)->var, "add to", NULL)){
++	if(fixed_var((*cl)->var, "新增", NULL)){
+ 	    break;
+ 	}
+ 	else if(!(*cl)->var->is_list && (*cl)->var->user_val.p){
+ 	    q_status_message(SM_ORDER, 3, 3,
+-			    "Only single value allowed.  Use \"Change\".");
++			    "僅允許\單一設定值。請用 \"Change\".");
+ 	}
+ 	else{
+ 	    int maxwidth =min(80,ps->ttyo->screen_cols) - 15;
+@@ -5416,7 +5416,7 @@
+ 		}
+ 
+ 		sprintf(prompt,
+-		    "Enter text to insert before \"%.*s\": ",k,tmpval);
++		    "輸入插在 \"%.*s\" 之前的字串：",k,tmpval);
+ 	    }
+ 	    else if((*cl)->var->is_list
+ 		    && !(*cl)->var->user_val.l
+@@ -5425,13 +5425,13 @@
+ 		ekey[0].ch    = 'r';
+ 		ekey[0].rval  = 'r';
+ 		ekey[0].name  = "R";
+-		ekey[0].label = "Replace";
++		ekey[0].label = "取代";
+ 		ekey[1].ch    = 'a';
+ 		ekey[1].rval  = 'a';
+ 		ekey[1].name  = "A";
+-		ekey[1].label = "Add To";
++		ekey[1].label = "加至";
+ 		ekey[2].ch    = -1;
+-		strcpy(prompt, "Replace or Add To default value ? ");
++		strcpy(prompt, "取代(R)或加至(A)預設值？");
+ 		switch(radio_buttons(prompt, -FOOTER_ROWS(ps), ekey, 'a', 'x',
+ 				     h_config_replace_add, RB_NORM)){
+ 		  case 'a':
+@@ -5445,25 +5445,25 @@
+ 		    }
+ 
+ add_text:
+-		    sprintf(prompt, "Enter the %stext to be added : ",
+-			flags&CF_NUMBER ? "numeric " : "");
++		    sprintf(prompt, "輸入想加入的%s字：",
++			flags&CF_NUMBER ? "數 " : "文");
+ 		    break;
+ 		    
+ 		  case 'r':
+ replace_text:
+-		    sprintf(prompt, "Enter the %sreplacement text : ",
+-			flags&CF_NUMBER ? "numeric " : "");
++		    sprintf(prompt, "輸入想取代的%s字：",
++			flags&CF_NUMBER ? "數 " : "文");
+ 		    break;
+ 		    
+ 		  case 'x':
+ 		    i = 1;
+-		    q_status_message(SM_ORDER,0,3,"Add cancelled");
++		    q_status_message(SM_ORDER,0,3,"取消新增");
+ 		    break;
+ 		}
+ 	    }
+ 	    else
+-	      sprintf(prompt, "Enter the %stext to be added : ",
+-		    flags&CF_NUMBER ? "numeric " : "");
++	      sprintf(prompt, "輸入想加入的%s字：",
++		    flags&CF_NUMBER ? "數 " : "文");
+ 
+ 	    ps->mangled_footer = 1;
+ 
+@@ -5480,7 +5480,7 @@
+ 		    ekey[0].ch    = ctrl('W');
+ 		    ekey[0].rval  = 5;
+ 		    ekey[0].name  = "^W";
+-		    ekey[0].label = after ? "InsertBefore" : "InsertAfter";
++		    ekey[0].label = after ? "插在前面" : "插在後面";
+ 		    ekey[1].ch    = -1;
+ 		}
+ 		else if(!(flags&CF_NUMBER))
+@@ -5534,7 +5534,7 @@
+ 			    }
+ 			    else{
+ 				q_status_message1(SM_ORDER, 0, 3,
+-					 "Can't add %s to list", empty_val);
++					 "無法將 %s 加至列表中", empty_val);
+ 				rv = ps->mangled_body = 0;
+ 			    }
+ 
+@@ -5542,7 +5542,7 @@
  			}
  			else{
-@@ -5004,7 +5005,7 @@
- 			  }
- 			  else if(dl->type == ListHead && no_fullname){
- 			      q_status_message(SM_ORDER, 0, 4,
--	  "You may not select a list, select a single address instead");
-+	  "無法選擇一個列表, 改以選擇單一地址取代之");
- 			      break;
- 			  }
- 			  else{
-@@ -5074,8 +5075,8 @@
- 		  return(addr);  /* Caller frees this */
- 	      }
- 	      else{
--	          q_status_message1(SM_ORDER, 3, 4, "No %s selected",
--		      selecting_nick ? "nickname" : "address");
-+	          q_status_message1(SM_ORDER, 3, 4, "尚未選取%s",
-+		      selecting_nick ? "暱稱" : "地址");
- 	          break;
- 	      }
- 	    }
-@@ -5092,7 +5093,7 @@
- edit:
- 	    if((c == 'v' || c == PF4 || c == KEY_MOUSE)
- 	      && !any_addrs_avail(as.top_ent+as.cur_row)){
--                q_status_message(SM_ORDER, 0, 4, "No entries to view");
-+                q_status_message(SM_ORDER, 0, 4, "沒有可供檢視的項目");
-                 break;
-             }
- 
-@@ -5161,7 +5162,7 @@
- 		}
- 		else{
- 		    q_status_message(SM_ORDER, 0, 3,
--				     "Current line is not editable");
-+				     "無法編輯本行");
- 		    break;
- 		}
- 	    }
-@@ -5212,7 +5213,7 @@
- 
- 		r = prev_selectable_line(as.cur_row+as.top_ent, &new_line);
- 		if(r == 0){
--		    q_status_message(SM_INFO, 0, 1, "Already on first line.");
-+		    q_status_message(SM_INFO, 0, 1, "已經到第一行了.");
- 		    break;
- 		}
- 
-@@ -5254,7 +5255,7 @@
- 
- 		r = next_selectable_line(as.cur_row+as.top_ent, &new_line);
- 		if(r == 0){
--		    q_status_message(SM_INFO, 0, 1, "Already on last line.");
-+		    q_status_message(SM_INFO, 0, 1, "已經到最後一行了.");
- 		    break;
- 		}
- 
-@@ -5341,7 +5342,7 @@
- 		    break;
- 
- 		if(as.top_ent == new_top_ent && as.cur_row == (fl-as.top_ent)){
--		    q_status_message(SM_INFO, 0, 1, "Already on first page.");
-+		    q_status_message(SM_INFO, 0, 1, "已經到第一頁了.");
- 		    break;
- 		}
- 
-@@ -5365,7 +5366,7 @@
- 		else{
- 		    new_top_ent = as.top_ent;
- 		    if(as.cur_row == (fl - as.top_ent)){ /* no change */
--			q_status_message(SM_INFO,0,1,"Already on last page.");
-+			q_status_message(SM_INFO,0,1,"已經到最後一頁了.");
- 			break;
+ 			    q_status_message1(SM_ORDER, 0, 3,
+-					 "Can't add %s to list", empty_val);
++					 "無法將 %s 加至列表中", empty_val);
+ 			}
+ 		    }
+ 		    else{
+@@ -5550,7 +5550,7 @@
+ 			  && !(isdigit((unsigned char)sval[0])
+ 			       || sval[0] == '-' || sval[0] == '+')){
+ 			    q_status_message(SM_ORDER,3,3,
+-				  "Entry must be numeric");
++				  "該項目必須是數字");
+ 			    i = 3; /* to keep loop going */
+ 			    continue;
+ 			}
+@@ -5563,7 +5563,7 @@
  		    }
  		}
-@@ -5398,7 +5399,7 @@
- 	      goto bleep;
+ 		else if(i == 1){
+-		    q_status_message(SM_ORDER,0,3,"Add cancelled");
++		    q_status_message(SM_ORDER,0,3,"取消新增");
+ 		}
+ 		else if(i == 3){
+ 		    help = help == NO_HELP ? h_config_add : NO_HELP;
+@@ -5586,8 +5586,8 @@
+ 		    }
  
- 	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
--                q_status_message(SM_ORDER, 0, 4, "No entries to delete");
-+                q_status_message(SM_ORDER, 0, 4, "沒有可供刪除的項目");
-                 break;
+ 		    sprintf(prompt,
+-			"Enter text to insert %s \"%.*s\": ",
+-			after ? "after" : "before", k, tmpval);
++			"輸入想要插在 \"%.*s\" %s的文字",
++			k, tmpval, after ? "之後" : "之前");
+ 		    continue;
+ 		}
+ 		else if(i == ctrl('P')){
+@@ -5607,7 +5607,7 @@
+ 			 */
+ 			if(++repeat_key > 0){
+ 			    q_status_message1(SM_ORDER,3,3,
+-				"Minimum value is %s", comatose(lowrange));
++				"最小值是 %s", comatose(lowrange));
+ 			    repeat_key = -5;
+ 			}
+ 		    }
+@@ -5631,7 +5631,7 @@
+ 		    if(numval == hirange){
+ 			if(++repeat_key > 0){
+ 			    q_status_message1(SM_ORDER,3,3,
+-				"Maximum value is %s", comatose(hirange));
++				"最大值是 %s", comatose(hirange));
+ 			    repeat_key = -5;
+ 			}
+ 		    }
+@@ -5684,7 +5684,7 @@
+ 	}
+ 	else if(((*cl)->var->is_list && !(*cl)->var->user_val.l)
+ 		|| (!(*cl)->var->is_list && !(*cl)->var->user_val.p)){
+-	    q_status_message(SM_ORDER, 0, 3, "No set value to delete");
++	    q_status_message(SM_ORDER, 0, 3, "沒有可供刪除的設定值");
+ 	}
+ 	else{
+ 	    if((*cl)->var->is_fixed)
+@@ -5700,7 +5700,8 @@
+ 		 	  : "<NULL VALUE>",
+ 		    (*cl)->var->name);
+ 	    else
+-	        sprintf(prompt, "Really delete %s%.20s from %.30s ",
++	        sprintf(prompt, "確定自 %.30s 刪除 %s%.20s ",
++		    (*cl)->var->name,
+ 		    (*cl)->var->is_list ? "item " : "", 
+ 		    (*cl)->var->is_list
+ 		      ? int2string((*cl)->varmem + 1)
+@@ -5708,8 +5709,7 @@
+ 			  ? (!*(*cl)->var->user_val.p)
+ 			      ? empty_val2
+ 			      : (*cl)->var->user_val.p
+-		 	  : "<NULL VALUE>",
+-		    (*cl)->var->name);
++		 	  : "<NULL VALUE>");
+ 
+ 	    ps->mangled_footer = 1;
+ 	    if(want_to(prompt, 'n', 'n', NO_HELP, WT_FLUSH_IN) == 'y'){
+@@ -5724,7 +5724,7 @@
+ 		}
+ 	    }
+ 	    else
+-	      q_status_message(SM_ORDER, 0, 3, "Value not deleted");
++	      q_status_message(SM_ORDER, 0, 3, "設定值未被刪除");
+ 	}
+ 
+ 	break;
+@@ -5853,7 +5853,7 @@
+ 			  && !(isdigit((unsigned char)sval[0])
+ 			       || sval[0] == '-' || sval[0] == '+')){
+ 			    q_status_message(SM_ORDER,3,3,
+-				  "Entry must be numeric");
++				  "該項目必須是數字");
+ 			    continue;
+ 			}
+ 
+@@ -5867,7 +5867,7 @@
+ 		    }
+ 		}
+ 		else if(i == 1){
+-		    q_status_message(SM_ORDER,0,3,"Change cancelled");
++		    q_status_message(SM_ORDER,0,3,"取消修改");
+ 		}
+ 		else if(i == 3){
+ 		    help = help == NO_HELP ? h_config_change : NO_HELP;
+@@ -5885,7 +5885,7 @@
+ 			 */
+ 			if(++repeat_key > 0){
+ 			    q_status_message1(SM_ORDER,3,3,
+-				"Minimum value is %s", comatose(lowrange));
++				"最小值是 %s", comatose(lowrange));
+ 			    repeat_key = -5;
+ 			}
+ 		    }
+@@ -5901,7 +5901,7 @@
+ 		    if(numval == hirange){
+ 			if(++repeat_key > 0){
+ 			    q_status_message1(SM_ORDER,3,3,
+-				"Maximum value is %s", comatose(hirange));
++				"最大值是 %s", comatose(hirange));
+ 			    repeat_key = -5;
+ 			}
+ 		    }
+@@ -5988,15 +5988,15 @@
+     if(flags & CF_CHANGES){
+       switch(want_to(EXIT_PMT, 'y', 'x', h_config_undo, WT_FLUSH_IN)){
+ 	case 'y':
+-	  q_status_message1(SM_ORDER,0,3,"%s changes saved", cmd);
++	  q_status_message1(SM_ORDER,0,3,"%s 的改變已存檔", cmd);
+ 	  return(2);
+ 
+ 	case 'n':
+-	  q_status_message1(SM_ORDER,3,5,"No %s changes saved", cmd);
++	  q_status_message1(SM_ORDER,3,5,"%s 改變未存檔", cmd);
+ 	  return(10);
+ 
+ 	case 'x':  /* ^C */
+-	  q_status_message(SM_ORDER,3,5,"Changes not yet saved");
++	  q_status_message(SM_ORDER,3,5,"改變尚未被存檔");
+ 	  return(0);
+       }
+     }
+@@ -6288,7 +6288,7 @@
+ 	       && want_to("Delete old unused personal option setting",
+ 			  'y', 'n', NO_HELP, WT_FLUSH_IN) == 'y'){
+ 		fs_give((void **)&(*cl)->var->user_val.p);
+-		q_status_message(SM_ORDER, 0, 3, "Deleted");
++		q_status_message(SM_ORDER, 0, 3, "已刪除");
+ 		rv = 1;
  	    }
  
-@@ -5467,7 +5468,7 @@
- 	      goto bleep;
- 
- 	    if(!any_addrs_avail(as.top_ent+as.cur_row)){
--                q_status_message(SM_ORDER, 0, 4, "No entries to select");
-+                q_status_message(SM_ORDER, 0, 4, "沒有可供選擇的項目");
-                 break;
+@@ -6427,7 +6427,7 @@
+ 	       && want_to("Delete old unused personal option setting",
+ 			  'y', 'n', NO_HELP, WT_FLUSH_IN) == 'y'){
+ 		fs_give((void **)&(*cl)->var->user_val.p);
+-		q_status_message(SM_ORDER, 0, 3, "Deleted");
++		q_status_message(SM_ORDER, 0, 3, "已刪除");
+ 		rv = 1;
  	    }
  
-@@ -5486,7 +5487,7 @@
+@@ -6517,15 +6517,15 @@
+ 			fs_give((void **)&q);
+ 		    }
  
- 		if(style == SelectAddrLccCom && dl->type != ListHead)
- 		  q_status_message(SM_ORDER, 0, 4,
--	  "You may only select lists for lcc, use bcc for personal entries");
-+	  "僅能選擇 lcc 列表, 個人項目請用 bcc");
- 		else if(dl->type == ListHead || dl->type == Simple){
-                     current_changed_flag++;
- 		    if(entry_is_checked(pab->address_book->checks,
-@@ -6803,7 +6804,7 @@
- 	if(full_to && *full_to)
- 	  fs_give((void **)full_to);
+-		    q_status_message3(SM_ORDER,0,3, "Default printer %s%s%s",
+-			p ? "set to \"" : "unset", p ? p : "", p ? "\"" : ""); 
++		    q_status_message3(SM_ORDER,0,3, "預設印表機目前%s%s%s",
++			p ? "設定為 \"" : "未設", p ? p : "", p ? "\"" : ""); 
  
--	q_status_message(SM_ORDER, 3, 5, "Resetting address book...");
-+	q_status_message(SM_ORDER, 3, 5, "正在重設地址簿...");
- 	dprint(1, (debugfile,
- 	    "RESETTING address book... verify_addr(%s)!\n", to));
- 	addrbook_reset();
-@@ -6849,12 +6850,12 @@
-     ps_global->redrawer = NULL;
-     fix_windsize(ps_global);
-     
--    switch(want_to("Exit and save changes ", 'y', 0, NO_HELP, 0, 0)){
-+    switch(want_to("離開並儲存改變 ", 'y', 0, NO_HELP, 0, 0)){
-       case 'y':
+ 		    if(p)
+ 		      fs_give((void **)&p);
+ 		}
+ 		else
+ 		  q_status_message(SM_ORDER,3,5,
+-			"Trouble setting default printer");
++			"有問題的預設印表機");
+ 
+ 		retval = 1;
+ 	    }
+@@ -6536,11 +6536,11 @@
+ 		    set_variable(V_PERSONAL_PRINT_CATEGORY, 
+ 			comatose(ps->printer_category), 0);
+ 		    q_status_message1(SM_ORDER,0,3,
+-			"Default printer set to \"%s\"", ANSI_PRINTER);
++			"預設印表機設定為 \"%s\"", ANSI_PRINTER);
+ 		}
+ 		else
+ 		  q_status_message(SM_ORDER,3,5,
+-			"Trouble setting default printer");
++			"有問題的預設印表機");
+ 
+ 		retval = 1;
+ 	    }
+@@ -6555,11 +6555,11 @@
+ 			set_variable(V_PERSONAL_PRINT_CATEGORY, 
+ 			    comatose(ps->printer_category), 0);
+ 			q_status_message1(SM_ORDER,0,3,
+-			    "Default printer set to \"%s\"", aname);
++			    "預設印表機設定為 \"%s\"", aname);
+ 		    }
+ 		    else
+ 		      q_status_message(SM_ORDER,3,5,
+-			    "Trouble setting default printer");
++			    "有問題的預設印表機");
+ 
+ 		    retval = 1;
+ 		}
+@@ -6609,7 +6609,7 @@
+     switch(cmd){
+       case MC_ADD:				/* add to list */
+ 	sval[0] = '\0';
+-	if(!fixed_var((*cl)->var, "add to", NULL)){
++	if(!fixed_var((*cl)->var, "新增", NULL)){
+ 
+ 	    if((*cl)->var->user_val.l && (*cl)->value){
+ 		strcpy(prompt, "Enter printer name : ");
+@@ -6641,17 +6641,17 @@
+ 		    ltmp[k + 1] = ltmp[k] = NULL;
+ 
+ add_text:
+-		    strcpy(prompt, "Enter name of printer to be added : ");
++		    strcpy(prompt, "欲新增的印表機名稱：");
+ 		    break;
+ 		    
+ 		  case 'r':
+ replace_text:
+ 		    strcpy(prompt,
+-			"Enter the name for replacement printer : ");
++			"欲取代的印表機名稱：");
+ 		    break;
+ 		    
+ 		  case 'x':
+-		    q_status_message(SM_ORDER,0,3,"Add cancelled");
++		    q_status_message(SM_ORDER,0,3,"取消新增");
+ 		    break;
+ 		}
+ 
+@@ -6659,7 +6659,7 @@
+ 		  break;
+ 	    }
+ 	    else
+-	      strcpy(prompt, "Enter name of printer to be added : ");
++	      strcpy(prompt, "欲新增的印表機名稱：");
+ 
+ 	    ps->mangled_footer = 1;
+ 	    help = NO_HELP;
+@@ -6671,7 +6671,7 @@
+ 		    ekey[0].ch    = ctrl('W');
+ 		    ekey[0].rval  = 5;
+ 		    ekey[0].name  = "^W";
+-		    ekey[0].label = after ? "InsertBefore" : "InsertAfter";
++		    ekey[0].label = after ? "插在之前" : "插在之後";
+ 		    ekey[1].ch    = -1;
+ 		}
+ 		else
+@@ -6688,7 +6688,7 @@
+ 		    removing_trailing_white_space(name);
+ 		}
+ 		else if(i == 1){
+-		    q_status_message(SM_ORDER,0,3,"Add cancelled");
++		    q_status_message(SM_ORDER,0,3,"取消新增");
+ 		}
+ 		else if(i == 3){
+ 		    help = (help == NO_HELP) ? h_config_insert_after : NO_HELP;
+@@ -6742,7 +6742,7 @@
+ 			     * Don't allow input of multiple entries at once.
+ 			     */
+ 			    q_status_message(SM_ORDER,3,5,
+-				"No commas allowed in command");
++				"命令中不可有逗號");
+ 			    i = 2;
+ 			    continue;
+ 			}
+@@ -6757,10 +6757,10 @@
+ 		    }
+ 		    else
+ 		      q_status_message1(SM_ORDER, 0, 3,
+-					 "Can't add %s to list", empty_val);
++					 "無法新增 %s 至列表中", empty_val);
+ 		}
+ 		else if(i == 1){
+-		    q_status_message(SM_ORDER,0,3,"Add cancelled");
++		    q_status_message(SM_ORDER,0,3,"取消新增");
+ 		}
+ 		else if(i == 3){
+ 		    help = help == NO_HELP ? h_config_print_cmd : NO_HELP;
+@@ -6798,19 +6798,19 @@
+ 	    }
+ 	}
+ 	else if(!(*cl)->var->user_val.l){
+-	    q_status_message(SM_ORDER, 0, 3, "No set value to delete");
++	    q_status_message(SM_ORDER, 0, 3, "沒有任何設定值遭刪除");
+ 	}
+ 	else{
+ 	    if((*cl)->var->is_fixed){
+ 		parse_printer((*cl)->var->user_val.l[(*cl)->varmem],
+ 		    &nick, &p, NULL, NULL, NULL, NULL);
+-	        sprintf(prompt, "Delete (unused) printer %.30s ",
++	        sprintf(prompt, "刪除 (未使用的) 印表機 %.30s ",
+ 		    *nick ? nick : (!*p) ? empty_val2 : p);
+ 		fs_give((void **)&nick);
+ 		fs_give((void **)&p);
+ 	    }
+ 	    else
+-	      sprintf(prompt, "Really delete item %.20s from printer list ",
++	      sprintf(prompt, "確定自印表機列表中刪除 %.20s",
+ 		    int2string((*cl)->varmem + 1));
+ 
+ 	    ps->mangled_footer = 1;
+@@ -6820,7 +6820,7 @@
+ 		config_del_list_item(cl, &newval);
+ 	    }
+ 	    else
+-	      q_status_message(SM_ORDER, 0, 3, "Printer not deleted");
++	      q_status_message(SM_ORDER, 0, 3, "印表機未被刪除");
+ 	}
+ 
+ 	break;
+@@ -6831,7 +6831,7 @@
+ 	  && !strucmp(ps->VAR_PRINTER,(*cl)->var->current_val.l[(*cl)->varmem]))
+ 	    changing_selected = 1;
+ 
+-	if(fixed_var((*cl)->var, NULL, "printer"))
++	if(fixed_var((*cl)->var, NULL, "印表機"))
+ 	  break;
+ 	else if(!(*cl)->var->user_val.l && (*cl)->var->current_val.l)
+ 	  goto replace_text;
+@@ -6843,22 +6843,22 @@
+ 	    ekey[0].ch    = 'n';
+ 	    ekey[0].rval  = 'n';
+ 	    ekey[0].name  = "N";
+-	    ekey[0].label = "Name";
++	    ekey[0].label = "名稱";
+ 	    ekey[1].ch    = 'c';
+ 	    ekey[1].rval  = 'c';
+ 	    ekey[1].name  = "C";
+-	    ekey[1].label = "Command";
++	    ekey[1].label = "命令";
+ 	    ekey[2].ch    = 'o';
+ 	    ekey[2].rval  = 'o';
+ 	    ekey[2].name  = "O";
+-	    ekey[2].label = "Options";
++	    ekey[2].label = "選項";
+ 	    ekey[3].ch    = -1;
+-	    strcpy(prompt, "Change Name or Command or Options ? ");
++	    strcpy(prompt, "修改名稱、命令或選項？");
+ 	    i = radio_buttons(prompt, -FOOTER_ROWS(ps), ekey, 'c', 'x',
+ 			      h_config_print_name_cmd, RB_NORM);
+ 
+ 	    if(i == 'x'){
+-		q_status_message(SM_ORDER,0,3,"Change cancelled");
++		q_status_message(SM_ORDER,0,3,"取消修改");
+ 		break;
+ 	    } 
+ 	    else if(i == 'c'){
+@@ -6867,7 +6867,7 @@
+ 		parse_printer((*cl)->var->user_val.l[(*cl)->varmem],
+ 		    NULL, &p, NULL, NULL, NULL, &all_but_cmd);
+ 		
+-		strcpy(prompt, "Change command : ");
++		strcpy(prompt, "修改命令：");
+ 		strcpy(sval, p ? p : "");
+ 		fs_give((void **)&p);
+ 
+@@ -6906,12 +6906,12 @@
+ 			     * Don't allow input of multiple entries at once.
+ 			     */
+ 			    q_status_message(SM_ORDER,3,5,
+-				"No commas allowed in command");
++				"命令中不可有逗號");
+ 			    continue;
+ 			}
+ 		    }
+ 		    else if(i == 1){
+-			q_status_message(SM_ORDER,0,3,"Change cancelled");
++			q_status_message(SM_ORDER,0,3,"取消修改");
+ 		    }
+ 		    else if(i == 3){
+ 			help = help == NO_HELP ? h_config_change : NO_HELP;
+@@ -6930,7 +6930,7 @@
+ 		parse_printer((*cl)->var->user_val.l[(*cl)->varmem],
+ 		    &p, NULL, NULL, NULL, &all_but_nick, NULL);
+ 		
+-		strcpy(prompt, "Change name : ");
++		strcpy(prompt, "修改名稱：");
+ 		strcpy(name, p ? p : "");
+ 		fs_give((void **)&p);
+ 
+@@ -6960,7 +6960,7 @@
+ 			newval = &(*cl)->value;
+ 		    }
+ 		    else if(i == 1){
+-			q_status_message(SM_ORDER,0,3,"Change cancelled");
++			q_status_message(SM_ORDER,0,3,"取消修改");
+ 		    }
+ 		    else if(i == 3){
+ 			help = help == NO_HELP ? h_config_change : NO_HELP;
+@@ -6981,18 +6981,18 @@
+ 		ekey[0].ch    = 'i';
+ 		ekey[0].rval  = 'i';
+ 		ekey[0].name  = "I";
+-		ekey[0].label = "Init";
++		ekey[0].label = "初始";
+ 		ekey[1].ch    = 't';
+ 		ekey[1].rval  = 't';
+ 		ekey[1].name  = "T";
+-		ekey[1].label = "Trailer";
++		ekey[1].label = "結束";
+ 		ekey[2].ch    = -1;
+-		strcpy(prompt, "Change Init string or Trailer string ? ");
++		strcpy(prompt, "修改初始或結束字串？");
+ 		j = radio_buttons(prompt, -FOOTER_ROWS(ps), ekey, 'i', 'x',
+ 				  h_config_print_opt_choice, RB_NORM);
+ 
+ 		if(j == 'x'){
+-		    q_status_message(SM_ORDER,0,3,"Change cancelled");
++		    q_status_message(SM_ORDER,0,3,"取消修改");
+ 		    break;
+ 		} 
+ 		else{
+@@ -7001,8 +7001,8 @@
+ 		    parse_printer((*cl)->var->user_val.l[(*cl)->varmem],
+ 			&nick, &p, &init, &trailer, NULL, NULL);
+ 		    
+-		    sprintf(prompt, "Change %s string : ",
+-			(j == 'i') ? "INIT" : "TRAILER");
++		    sprintf(prompt, "修改 %s 字串：",
++			(j == 'i') ? "初始" : "結束");
+ 		    strcpy(sval, (j == 'i') ? init : trailer);
+ 
+ 		    tmp = string_to_cstring(sval);
+@@ -7057,7 +7057,7 @@
+ 			    newval = &(*cl)->value;
+ 			}
+ 			else if(i == 1){
+-			    q_status_message(SM_ORDER,0,3,"Change cancelled");
++			    q_status_message(SM_ORDER,0,3,"取消修改");
+ 			}
+ 			else if(i == 3){
+ 			    help=(help == NO_HELP)?h_config_print_init:NO_HELP;
+@@ -7135,18 +7135,18 @@
+ 
+       case MC_DELETE :
+ 	if((*cl)->d.c.ct->use & CNTXT_INCMNG)
+-	  q_status_message1(SM_ORDER, 0, 3, "Sorry, Can't delete %s",
++	  q_status_message1(SM_ORDER, 0, 3, "很抱歉，無法刪除 %s",
+ 			    (*cl)->d.c.ct->nickname);
+-	else if(!fixed_var((*cl)->var, "delete", "collection"))
++	else if(!fixed_var((*cl)->var, "刪除", "總集"))
+ 	  context_select_delete(ps, cl);
+ 
  	break;
  
-       case 'n':
--	rstr = "Use ^C to abandon changes you've made";
-+	rstr = "以 ^C 放棄已經做過的改變";
+       case MC_EDIT :
+ 	if((*cl)->d.c.ct->use & CNTXT_INCMNG)
+-	  q_status_message1(SM_ORDER, 0, 3, "Sorry, Can't rename %s",
++	  q_status_message1(SM_ORDER, 0, 3, "很抱歉，無法更名 %s",
+ 			    (*cl)->d.c.ct->nickname);
+-	else if(!fixed_var((*cl)->var, "add to", "collection")){
++	else if(!fixed_var((*cl)->var, "新增", "總集")){
+ 	    context_select_edit(ps, cl);
+ 	    ps->mangled_screen = 1;
+ 	}
+@@ -7154,7 +7154,7 @@
  	break;
  
- #ifdef OLDWAY
-@@ -6884,8 +6885,8 @@
-     char *rstr = NULL;
-     void (*redraw)() = ps_global->redrawer;
+       case MC_ADD :
+-	if(!fixed_var((*cl)->var, "add to", "collection")){
++	if(!fixed_var((*cl)->var, "新增", "總集")){
+ 	    context_select_add(ps, cl);
+ 	    ps->mangled_screen = 1;
+ 	}
+@@ -7163,9 +7163,9 @@
  
--    strcat(strcat(strcpy(prompt, "Cancel "), word),
--	   " (answering \"Yes\" will abandon any changes made) ");
-+    strcat(strcat(strcpy(prompt, "取消 "), word),
-+	   " (回答 \"Yes\" 將放棄所有曾做過的改變) ");
-     ps_global->redrawer = NULL;
-     fix_windsize(ps_global);
-     
-@@ -7020,7 +7021,7 @@
-     abe = ae(cur_line);
+       case MC_SHUFFLE :
+ 	if((*cl)->d.c.ct->use & CNTXT_INCMNG)
+-	  q_status_message1(SM_ORDER, 0, 3, "Sorry, Can't Shuffle %s",
++	  q_status_message1(SM_ORDER, 0, 3, "很抱歉，無法重整 %s",
+ 			    (*cl)->d.c.ct->nickname);
+-	else if(!fixed_var((*cl)->var, "Shuffle", "collection"))
++	else if(!fixed_var((*cl)->var, "重整", "總集"))
+ 	  context_select_shuffle(ps, cl);
  
-     if(dl->type == ListHead && listmem_count_from_abe(abe) == 0){
--	error = "List is empty, nothing to export!";
-+	error = "列表是空的, 無法匯出任河東西!";
- 	good_addr = 0;
-     }
-     else if(dl->type == ListEnt){
-@@ -7073,7 +7074,7 @@
+ 	break;
+@@ -7232,7 +7232,7 @@
+     struct key_menu *km;
+     CONT_SCR_S	    *cs;
  
- 	if(addr && *addr){
- 	    static ESCKEY_S export_opts[] = {
--		{ctrl('T'), 10, "^T", "To Files"},
-+		{ctrl('T'), 10, "^T", "信夾列表"},
- 		{-1, 0, NULL, NULL}};
- 	    HelpType help;
- 	    char     filename[MAXPATH+1], full_filename[MAXPATH+1];
-@@ -8115,7 +8116,7 @@
- 			? (char *)rfc1522_decode((unsigned char *)tmp_20k_buf,
- 						    abe->fullname, NULL)
- 			: abe->nickname ? abe->nickname : "";
--        cmd   = "Really delete \"%.50s\"";
-+        cmd   = "確定刪除 \"%.50s\"";
-         break;
+-    if(raw_ctxt = context_edit_screen(ps, "ADD", NULL, NULL, NULL, NULL)){
++    if(raw_ctxt = context_edit_screen(ps, "新增", NULL, NULL, NULL, NULL)){
  
-       case ListHead:
-@@ -8123,13 +8124,13 @@
- 			? (char *)rfc1522_decode((unsigned char *)tmp_20k_buf,
- 						    abe->fullname, NULL)
- 			: abe->nickname ? abe->nickname : "";
--	cmd   = "Really delete ENTIRE list \"%.50s\"";
-+	cmd   = "確定刪除 \"整個\" 列表 \"%.50s\"";
-         break;
+ 	/* create a corresponding new CONF_S */
+ 	new_ctxt = new_context(raw_ctxt, NULL);
+@@ -7311,7 +7311,7 @@
  
-       case ListEnt:
-         dname = (char *)rfc1522_decode((unsigned char *)tmp_20k_buf,
- 					    listmem_from_dl(abook, dl), NULL);
--	cmd   = "Really delete \"%.100s\" from list";
-+	cmd   = "確定自列表中刪除 \"%.100s\"";
-         break;
-     } 
- 
-@@ -8198,7 +8199,7 @@
- 
- 	if(rc == 0){
- 	    q_status_message(SM_ORDER, 0, 3,
--		"Entry deleted, address book updated");
-+		"已刪除該項目並更新地址簿");
-             dprint(2, (debugfile, "abook: Entry %s\n",
- 		(dl->type == Simple || dl->type == ListHead) ? "deleted"
- 							     : "modified"));
-@@ -8215,7 +8216,7 @@
- 
- 	    if(rc != -5)
-               q_status_message1(SM_ORDER | SM_DING, 3, 5,
--			      "Error updating address book: %s",
-+			      "更新地址簿時發生錯誤: %s",
- 		    error_description(errno));
- 	    pab = &as.adrbks[as.cur];
-             dprint(1, (debugfile, "Error deleting entry from %s (%s): %s\n",
-@@ -8225,7 +8226,7 @@
- 	return 0;
-     }
-     else{
--	q_status_message(SM_INFO, 0, 2, "Entry not deleted");
-+	q_status_message(SM_INFO, 0, 2, "該項目並未被刪除");
- 	return 0;
+ 	/* Tell the user it was a huge success... */
+ 	q_status_message(SM_ORDER, 0, 3,
+-		      "New collection added!  Use \"$\" to adjust order.");
++		      "新的總集加入了！請用 \"$\" 調整順序。");
      }
  }
-@@ -8275,7 +8276,7 @@
-     ekey[0].ch    = ctrl('T');
-     ekey[0].rval  = 2;
-     ekey[0].name  = "^T";
--    ekey[0].label = "To AddrBk";
-+    ekey[0].label = "地址列表";
  
-     ekey[1].ch    = -1;
+@@ -7330,11 +7330,11 @@
  
-@@ -8305,7 +8306,7 @@
- 	    }
- 
-             q_status_message1(SM_ORDER, 0, 4,
--		    "Already an entry with nickname \"%s\"", edit_buf);
-+		    "已經有一個暱稱為 \"%s\" 的項目", edit_buf);
- 	}
- 
- 	if(rc == 3)
-@@ -8429,12 +8430,12 @@
-     ekey[1].ch    = ctrl('Y');
-     ekey[1].rval  = 10;
-     ekey[1].name  = "^Y";
--    ekey[1].label = "First Adr";
-+    ekey[1].label = "第一個地址";
- 
-     ekey[2].ch    = ctrl('V');
-     ekey[2].rval  = 11;
-     ekey[2].name  = "^V";
--    ekey[2].label = "Last Adr";
-+    ekey[2].label = "最後的地址";
- 
-     ekey[3].ch    = -1;
- 
-@@ -8450,11 +8451,11 @@
- 	    warp_to_beginning();  /* go to top of addrbooks */
- 	    if((nl=first_selectable_line(0L)) != NO_LINE){
- 		*new_line = nl;
--		q_status_message(SM_INFO, 0, 2, "Searched to first entry");
-+		q_status_message(SM_INFO, 0, 2, "搜尋至第一個項目");
- 		return 0;
- 	    }
- 	    else{
--		q_status_message(SM_INFO, 0, 2, "No entries");
-+		q_status_message(SM_INFO, 0, 2, "沒有任何項目");
- 		return -1;
- 	    }
- 	}
-@@ -8463,11 +8464,11 @@
- 	    warp_to_end();  /* go to bottom */
- 	    if((nl=first_selectable_line(0L)) != NO_LINE){
- 		*new_line = nl;
--		q_status_message(SM_INFO, 0, 2, "Searched to last entry");
-+		q_status_message(SM_INFO, 0, 2, "搜尋至最終項");
- 		return 0;
- 	    }
- 	    else{
--		q_status_message(SM_INFO, 0, 2, "No entries");
-+		q_status_message(SM_INFO, 0, 2, "沒有任何項目");
- 		return -1;
- 	    }
- 	}
-@@ -9016,7 +9017,7 @@
- 
-     memcpy(save_jmp_buf, addrbook_changed_unexpectedly, sizeof(jmp_buf));
-     if(setjmp(addrbook_changed_unexpectedly)){
--	q_status_message(SM_ORDER, 5, 10, "Resetting address book...");
-+	q_status_message(SM_ORDER, 5, 10, "正在重設地址簿...");
- 	dprint(1, (debugfile,
- 	    "RESETTING address book... take_to_addrbooks_frontend!\n"));
- 	addrbook_reset();
-@@ -9095,7 +9096,7 @@
- 	abe = adrbk_lookup_by_nick(abook, new_nickname, &entry_num);
- 	if(!abe){  /* this shouldn't happen */
- 	    q_status_message1(SM_ORDER, 0, 4,
--		"Already an entry %s in address book!",
-+		"已經在地址簿中發現 %s 這個項目!",
- 		new_nickname);
- 	    goto take_to_addrbooks_cancel;
- 	}
-@@ -9103,7 +9104,7 @@
- 	old_tag = abe->tag;
- 
- 	sprintf(prompt,
--	    "%s %s (%s) exists, replace or add addresses to it ? ",
-+	    "%s %s (%s) 已存在, 取代或加入新的地址於其中 ? ",
- 	    abe->tag == List ? "List" : "Entry",
- 	    new_nickname,
- 	    (abe->fullname && abe->fullname[0])
-@@ -9129,7 +9130,7 @@
-     if((long)abook->count > MAX_ADRBK_SIZE ||
-        (old_tag == NotSet && (long)abook->count >= MAX_ADRBK_SIZE)){
- 	q_status_message(SM_ORDER, 3, 5,
--	    "Address book is at maximum size. TakeAddr cancelled.");
-+	    "地址簿容量已達上限. 取消 TakeAddr.");
- 	dprint(2, (debugfile, "Addrbook at Max size, TakeAddr cancelled\n"));
- 	goto take_to_addrbooks_cancel;
+     if(!((*cl)->var->user_val.l && (*cl)->var->user_val.l[0])){
+ 	q_status_message(SM_ORDER | SM_DING, 3, 3,
+-			 "Can't delete default value.  Try rename.");
++			 "無法刪除預設值。試試更名。");
+ 	return;
      }
-@@ -9225,7 +9226,7 @@
-     save_state(state);
  
-     if(as.n_addrbk == 0){
--        q_status_message(SM_ORDER, 3, 4, "Can't open address book!");
-+        q_status_message(SM_ORDER, 3, 4, "無法開啟地址簿!");
-         return NULL;
+-    sprintf(tmp, "Delete the collection definition for \"%.40s\"",
++    sprintf(tmp, "刪除 \"%.40s\" 的總集定義",
+ 	    old_cl->value);
+     if(want_to(tmp, 'n', 'n', NO_HELP, WT_FLUSH_IN) == 'y'){
+ 	/* Remove from var list */
+@@ -7446,12 +7446,12 @@
+ 	ps->mangled_body = 1;
+ 	q_status_message(SM_ORDER, 0, 3,
+ 			 (old_cl == *cl)
+-			   ? "Last collection deleted.  Using default."
+-			   : "Collection deleted");
++			   ? "最後一個總集已被刪除。使用預設值。"
++			   : "褻陘w被刪除");
+ 
      }
      else
-@@ -9238,7 +9239,7 @@
-     init_abook(pab, Open);
- 
-     if(pab->ostatus != Open){
--        q_status_message(SM_ORDER, 3, 4, "Can't open address book!");
-+        q_status_message(SM_ORDER, 3, 4, "無法開啟地址簿!");
-         return NULL;
-     }
- 
-@@ -9247,7 +9248,7 @@
- 	  readonly_warning(NO_DING, NULL);
- 	else if(pab->access == NoAccess)
- 	  q_status_message(SM_ORDER, 3, 4,
--		"AddressBook not accessible, permission denied");
-+		"禁址存取地址簿");
- 
-         return NULL;
-     }
-@@ -9469,7 +9470,7 @@
- 	if(full_lcc && *full_lcc)
- 	  fs_give((void **)full_lcc);
- 
--	q_status_message(SM_ORDER, 3, 5, "Resetting address book...");
-+	q_status_message(SM_ORDER, 3, 5, "正在重設地址簿...");
- 	dprint(1, (debugfile,
- 	    "RESETTING address book... build_address(%s)!\n", lcc));
- 	addrbook_reset();
-@@ -9723,7 +9724,7 @@
- 	if(full_to && *full_to)
- 	  fs_give((void **)full_to);
- 
--	q_status_message(SM_ORDER, 3, 5, "Resetting address book...");
-+	q_status_message(SM_ORDER, 3, 5, "正在重設地址簿...");
- 	dprint(1, (debugfile,
- 	    "RESETTING address book... build_address(%s)!\n", to));
- 	addrbook_reset();
-@@ -10617,7 +10618,7 @@
- 	if(state.dlc_to_warp_to)
- 	  fs_give((void **)&(state.dlc_to_warp_to));
- 
--	q_status_message(SM_ORDER, 3, 5, "Resetting address book...");
-+	q_status_message(SM_ORDER, 3, 5, "正在重設地址簿...");
- 	dprint(1, (debugfile,
- 	    "RESETTING address book... get_nickname_from_addr()!\n"));
- 	addrbook_reset();
-@@ -10668,7 +10669,7 @@
- 	if(state.dlc_to_warp_to)
- 	  fs_give((void **)&(state.dlc_to_warp_to));
- 
--	q_status_message(SM_ORDER, 3, 5, "Resetting address book...");
-+	q_status_message(SM_ORDER, 3, 5, "正在重設地址簿...");
- 	dprint(1, (debugfile,
- 	    "RESETTING address book... get_fcc_from_addr()!\n"));
- 	addrbook_reset();
-@@ -11484,21 +11485,21 @@
- 
- 
- static struct key takeaddr_keys_listmode[] = 
--       {{"?","Help",KS_SCREENHELP},	{"W","WhereIs",KS_WHEREIS},
--	{"E","ExitTake",KS_EXITMODE},	{"T","Take",KS_NONE},
--	{"P","Prev",KS_NONE},		{"N","Next", KS_NONE},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{"X","[Set/Unset]",KS_NONE},	{"A","SetAll",KS_NONE},
--	{"U","UnSetAll",KS_NONE},	{"S","SinglMode",KS_NONE}};
-+       {{"?","輔助說明",KS_SCREENHELP}, {"W","搜尋",KS_WHEREIS},
-+        {"E","離開",KS_EXITMODE},       {"T","取得",KS_NONE},
-+        {"P","上一個",KS_NONE},         {"N","下一個", KS_NONE},
-+        {"-","前一頁",KS_PREVPAGE},     {"Spc","下一頁",KS_NEXTPAGE},
-+        {"X","[設定/取消設定]",KS_NONE},        {"A","設定全部",KS_NONE},
-+        {"U","取消設定全部",KS_NONE},   {"S","單一模式",KS_NONE}};
- INST_KEY_MENU(takeaddr_keymenu_listmode, takeaddr_keys_listmode);
- 
- static struct key takeaddr_keys_singlemode[] = 
--       {{"?","Help",KS_SCREENHELP},	{"W","WhereIs",KS_WHEREIS},
--	{"E","ExitTake",KS_EXITMODE},	{"T","[Take]",KS_NONE},
--	{"P","Prev",KS_NONE},		{"N","Next", KS_NONE},
--	{"-","PrevPage",KS_PREVPAGE},	{"Spc","NextPage",KS_NEXTPAGE},
--	{NULL,NULL,KS_NONE},		{NULL,NULL,KS_NONE},
--	{NULL,NULL,KS_NONE},		{"L","ListMode",KS_NONE}};
-+       {{"?","輔助說明",KS_SCREENHELP}, {"W","搜尋",KS_WHEREIS},
-+        {"E","離開",KS_EXITMODE},       {"T","[取得]",KS_NONE},
-+        {"P","上一個",KS_NONE},         {"N","下一個", KS_NONE},
-+        {"-","前一頁",KS_PREVPAGE},     {"Spc","下一頁",KS_NEXTPAGE},
-+        {NULL,NULL,KS_NONE},            {NULL,NULL,KS_NONE},
-+        {NULL,NULL,KS_NONE},            {"L","列表模式",KS_NONE}};
- INST_KEY_MENU(takeaddr_keymenu_singlemode, takeaddr_keys_singlemode);
- 
- 
-@@ -11692,6 +11693,7 @@
- 	    break;
- 
- 	  case 'e':				/* exit takeaddr screen */
-+	  case KEY_LEFT:
- 	  case PF3:
- 	  case ctrl('C'):
- 	    cancel_warning(NO_DING, "addition");
-@@ -11699,10 +11701,11 @@
- 	    break;
- 
- 	  case 't':  /* take */
-+	  case KEY_RIGHT:
- 	  case PF4:
- 	  case ctrl('M'):
- 	  case ctrl('J'):
--	  if((ch == ctrl('M') || ch == ctrl('J'))
-+	  if((ch == ctrl('M') || ch == ctrl('J') || ch == KEY_RIGHT)
- 	     && screen.mode == ListMode)
- 	    goto SelectCase;  /* default is different in this case */
- 
-@@ -11727,7 +11730,7 @@
- 	    if(ctmp = next_sel_taline(current))
- 	      current = ctmp;
- 	    else
--	      q_status_message(SM_INFO, 0, 1, "Already on last line.");
-+	      q_status_message(SM_INFO, 0, 1, "已經到最後一行了.");
- 
- 	    break;
- 
-@@ -11739,7 +11742,7 @@
- 	    if(ctmp = pre_sel_taline(current))
- 	      current = ctmp;
- 	    else
--	      q_status_message(SM_INFO, 0, 1, "Already on first line.");
-+	      q_status_message(SM_INFO, 0, 1, "已經到第一行了.");
- 
- 	    break;
- 
-@@ -11759,7 +11762,7 @@
- 	    }
- 
- 	    if(give_warn_message)
--	      q_status_message(SM_INFO, 0, 1, "Already on last page.");
-+	      q_status_message(SM_INFO, 0, 1, "已經在最後一頁了.");
- 
- 	    break;
- 
-@@ -11789,7 +11792,7 @@
- 	    }
- 
- 	    if(give_warn_message)
--	      q_status_message(SM_INFO, 0, 1, "Already on first page.");
-+	      q_status_message(SM_INFO, 0, 1, "已經在第一頁了.");
- 
- 	    break;
- 
-@@ -11873,25 +11876,25 @@
- 	  case PF12:
- 	    if(screen.mode == ListMode && ch == 'l'){
- 		q_status_message(SM_INFO, 0, 1,
--		   "Already in ListMode.  Press \"S\" for Single entry mode.");
-+		   "已經在列表模式.  以 \"S\" 進入單一選項模式.");
- 		break;
- 	    }
- 
- 	    if(screen.mode == SingleMode && ch == 's'){
- 		q_status_message(SM_INFO, 0, 1,
--		   "Already in SingleMode.  Press \"L\" for List entry mode.");
-+		   "已經在單一選項模式.  以 \"L\" 進入列表模式.");
- 		break;
- 	    }
- 
- 	    if(screen.mode == ListMode){
- 		screen.mode = SingleMode;
- 		q_status_message(SM_INFO, 0, 1,
--		  "Single mode: Use \"P\" or \"N\" to select desired address");
-+		  "單一選項模式: 以 \"P\" 或 \"N\" 選擇需要的地址");
- 	    }
- 	    else{
- 		screen.mode = ListMode;
- 		q_status_message(SM_INFO, 0, 1,
--	    "List mode: Use \"X\" to mark addresses to be included in list");
-+	    "列表模式: 以 \"X\" 標註欲加入列表中的地址");
- 
- 		if(how_many_selected <= 1){
- 		    how_many_selected =
-@@ -12083,24 +12086,24 @@
-     }
-     else if(rc == 10){
- 	current = first_sel_taline(current);
--	result = "Searched to top";
-+	result = "向前搜尋";
-     }
-     else if(rc == 11){
- 	current = last_sel_taline(current);
--	result = "Searched to bottom";
-+	result = "向後搜尋";
-     }
-     else{
- 	current = NULL;
--	result = "WhereIs cancelled";
-+	result = "取消搜尋";
-     }
- 
-     if(found){
- 	current = p;
--	result  = wrapped ? "Search wrapped to beginning" : "Word found";
-+	result  = wrapped ? "從頭搜尋" : "找不到該字";
- 	strcpy(last, buf);
-     }
- 
--    q_status_message(SM_ORDER,0,3,result ? result : "Word not found");
-+    q_status_message(SM_ORDER,0,3,result ? result : "找不到該字");
-     return(current);
+-      q_status_message(SM_ORDER, 0, 3, "No collections deleted");
++      q_status_message(SM_ORDER, 0, 3, "沒有任何總集被刪除");
  }
  
-@@ -12770,7 +12773,7 @@
- 				  &body);
- 	if(!env){
- 	    q_status_message(SM_ORDER | SM_DING, 3, 4,
--	       "Can't take address into address book. Error accessing folder");
-+	       "無法將地址存入地址簿中. 檔案夾存取錯誤");
- 	    goto bomb;
- 	}
  
-@@ -12809,7 +12812,7 @@
- 				  body_h);
- 	if(!env){
- 	    q_status_message(SM_ORDER | SM_DING, 3, 4,
--	       "Can't take address into address book. Error accessing folder");
-+	       "無法將地址存入地址簿中. 檔案夾存取錯誤");
- 	    goto bomb;
- 	}
+@@ -7473,7 +7473,7 @@
+     if(p = strstr(tpath, "%s"))
+       *p = '\0';
  
+-    if(raw_ctxt = context_edit_screen(ps, "EDIT", (*cl)->d.c.ct->nickname,
++    if(raw_ctxt = context_edit_screen(ps, "編輯", (*cl)->d.c.ct->nickname,
+ 				      (*cl)->d.c.ct->server, tpath,
+ 				      (*cl)->d.c.ct->dir->view.user)){
+ 
+@@ -7543,7 +7543,7 @@
+ 
+ 	set_current_val((*cl)->var, TRUE, FALSE);
+ 
+-	q_status_message(SM_ORDER, 0, 3, "Collection list entry updated");
++	q_status_message(SM_ORDER, 0, 3, "已更新總集列表");
+     }
+ }
+ 
+@@ -7585,7 +7585,7 @@
+ 	if((cmd = radio_buttons(prompt, -FOOTER_ROWS(ps), ekey,
+ 				(n == 1) ? 'd' : 0, 'x',
+ 				NO_HELP, RB_NORM)) == 'x'){
+-	    cmd_cancelled("Shuffle");
++	    cmd_cancelled("重整");
+ 	}
+ 	else if((cmd == 'u' && (ctmp = context_select_prev(*cl)))
+ 		|| (cmd == 'd' && (ctmp = context_select_next(*cl)))){
+@@ -7684,7 +7684,7 @@
+ 	}
+     }
+     else
+-      q_status_message(SM_ORDER, 0, 3, "Sorry, nothing to Shuffle");
++      q_status_message(SM_ORDER, 0, 3, "很抱歉，沒有東西可供重整");
+ }
+ 
+ 
+@@ -8146,7 +8146,7 @@
+ 	    if(cl->var->current_val.l){
+ 		int i, l, l2;
+ 
+-		sstrcpy(&p, ": using \"");
++		sstrcpy(&p, "：目前使用 \"");
+ 		for(i = 0; cl->var->current_val.l[i]; i++){
+ 		    if(i)
+ 		      *p++ = ',';
+@@ -8178,7 +8178,7 @@
+ 	sprintf(tmp, cl->var->is_fixed
+ 			? "<%s%s%s%s>%*s" : "<%s%s%s%s>%*s", 
+ 		cl->var->is_fixed ? fixed_val : no_val,
+-		(cl->var->current_val.p) ? ": using \"" : "",
++		(cl->var->current_val.p) ? "：目前使用 \"" : "",
+ 		(cl->var->current_val.p) ? cl->var->current_val.p : "",
+ 		(cl->var->current_val.p) ? "\"" : "",
+ 		max(0, ps->ttyo->screen_cols - cl->valoffset - 13
+@@ -8320,7 +8320,7 @@
+ 	p = (struncmp(*vp, "no-", 3)) ? *vp : *vp + 3;
+ 	if(!strucmp(p, f->name) || (og && !strucmp(p, "old-growth"))){
+ 	    q_status_message(SM_ORDER, 3, 3,
+-			     "Can't change value fixed by sys-admin.");
++			     "無法修改系統管理員定義的設定值。");
+ 	    return;
+ 	}
+     }
+@@ -8355,7 +8355,7 @@
+ 		      (void *)(F_ON(f->value,ps) ? 1 : 0));
+     else if(f->value == F_ENABLE_INCOMING &&  F_ON(f->value, ps)){
+ 	q_status_message(SM_ORDER | SM_DING, 3, 4,
+-	    "Folder List changes will take effect your next pine session.");
++	    "資料匣列表的改變將在下次啟動 pine 時生效。");
+     }
+     else if(f->value == F_PRESERVE_START_STOP){
+ 	/* toggle raw mode settings to make tty driver aware of new setting */
+@@ -8524,8 +8524,8 @@
+ {
+     if(v && v->is_fixed){
+ 	q_status_message2(SM_ORDER, 3, 3,
+-			  "Can't %s sys-admin defined %s.",
+-			  action ? action : "change", name ? name : "value");
++			  "無法%s系統管理員定義的%s。",
++			  action ? action : "修改", name ? name : "設定值");
+ 	return(1);
+     }
+ 
+@@ -8824,7 +8824,7 @@
+ 	    && var->is_list
+ 	    && !var->user_val.l
+ 	    && var->current_val.l)))
+-      q_status_message(SM_ORDER,0,3,"Using default value");
++      q_status_message(SM_ORDER,0,3,"使用預設值");
+ 
+     if(var == &ps->vars[V_USER_DOMAIN]){
+ 	char *p, *q;
+@@ -8835,7 +8835,7 @@
+ 	    if(*(++p)){
+ 		if(!revert)
+ 		  q_status_message2(SM_ORDER, 3, 5,
+-		    "User-domain (%s) cannot contain \"@\"; using %s",
++		    "User-domain (%s) 不可包括 \"@\"; 使用 %s",
+ 		    ps->VAR_USER_DOMAIN, p);
+ 		q = ps->VAR_USER_DOMAIN;
+ 		while((*q++ = *p++) != '\0')
+@@ -8844,7 +8844,7 @@
+ 	    else{
+ 		if(!revert)
+ 		  q_status_message1(SM_ORDER, 3, 5,
+-		    "User-domain (%s) cannot contain \"@\"; deleting",
++		    "User-domain (%s) 不可包括 \"@\"; 刪除中",
+ 		    ps->VAR_USER_DOMAIN);
+ 		fs_give((void **)&ps->USR_USER_DOMAIN);
+ 		set_current_val(&ps->vars[V_USER_DOMAIN], TRUE, TRUE);
+@@ -8904,7 +8904,7 @@
+     else if(var == &ps->vars[V_INIT_CMD_LIST]){
+ 	if(!revert)
+ 	  q_status_message(SM_ASYNC, 0, 3,
+-	    "Initial command changes will affect your next pine session.");
++	    "初始命令的改變將在下次啟動 pine 時生效。");
+     }
+     else if(var == &ps->vars[V_VIEW_HEADERS]){
+ 	ps->view_all_except = 0;
+@@ -8963,10 +8963,10 @@
+ 	}
+ 	else if(timeo == 0L && !revert){
+ 	    q_status_message(SM_ORDER, 4, 6,
+-"Warning: automatic new mail checking and mailbox checkpointing is disabled");
++"警告：已解除自動檢查新郵件與信箱檢查點");
+ 	    if(ps->VAR_INBOX_PATH && ps->VAR_INBOX_PATH[0] == '{')
+ 	      q_status_message(SM_ASYNC, 3, 6,
+-"Warning: mail-check-interval=0 may cause IMAP server connection to time out");
++"警告：mail-check-interval=0 可能導致 IMAP 伺服器連線作業逾時");
+ 	}
+     }
+ #if defined(DOS) || defined(OS2)

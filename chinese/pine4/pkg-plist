@@ -1,16 +1,16 @@
-bin/pico
-bin/pilot
-bin/pine
-lib/libpico.so.1.3
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 bin/pgpencrypt
 bin/pgpdecode
 bin/pgpsign
+bin/pico
+bin/pilot
+bin/pine
 etc/dot.pinerc.pgp.sample
-etc/pine.conf.fixed
+etc/dot.pinerc.sample
+etc/pine.conf
+lib/libpico.so.1.3
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 man/man1/pico.1.gz
 man/man1/pilot.1.gz
 man/man1/pine.1.gz
 share/doc/pine/tech-notes.txt
-@dirrm share/doc/pine

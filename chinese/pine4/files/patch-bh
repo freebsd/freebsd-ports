@@ -1,20 +1,52 @@
---- pine/signals.c.orig	Wed Jun  5 12:47:21 1996
-+++ pine/signals.c	Sat Jan 17 21:23:52 1998
-@@ -493,7 +493,7 @@
-     int retval = 1;
+--- build.orig	Tue Jun 16 01:35:10 1998
++++ build	Wed Jul 15 17:02:29 1998
+@@ -256,11 +256,11 @@
  
-     dprint(9,(debugfile, "busy_alarm(%d, %s, %p, %d)\n",
--	seconds, msg ? msg : "Busy", pc_func, init_msg));
-+	seconds, msg ? msg : "請稍後", pc_func, init_msg));
+         if [ -s c-client ] ; then rm -f c-client ; fi
+         ln -s imap/c-client c-client
+-        if [ -s mtest    ] ; then rm -f mtest    ; fi
+-        ln -s imap/mtest mtest
+-        if [ -s imapd    ] ; then rm -f imapd    ; fi
+-        ln -s imap/imapd imapd
+-        echo "Making c-client library, mtest and imapd"
++#       if [ -s mtest    ] ; then rm -f mtest    ; fi
++#       ln -s imap/mtest mtest
++#       if [ -s imapd    ] ; then rm -f imapd    ; fi
++#       ln -s imap/imapd imapd
++        echo "Making c-client library"
+         eval echo make "$makeargs" "$K1" "$K2" $ccltarg
+         cd $PHOME/imap
+         eval make "$makeargs" "$K1" "$K2" $ccltarg
+@@ -281,14 +281,16 @@
+         cd $PHOME/bin
+         rm -f pine mtest imapd pico pilot
+         if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
+-        if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
+-        if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
++#       if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
++#       if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
+         if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
+         if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
++        if [ -s ../pico/libpico.so.1.3 ] ;
++              then ln ../pico/libpico.so.1.3 libpico.so.1.3 ; fi
+         cd $PHOME
+         echo ''
+         echo "Links to executables are in bin directory:"
+-        size bin/pine bin/mtest bin/imapd bin/pico bin/pilot
++        size bin/pine bin/pico bin/pilot bin/libpico.so.1.3
+         echo "Done"
+         ;;
  
-     /*
-      * If we're already busy'ing, and we don't have something special,
-@@ -517,7 +517,7 @@
- 	    final_message = 1;
- 	}
- 	else{
--	    strcpy(busy_message, "Busy");
-+	    strcpy(busy_message, "請稍後");
- 	    final_message = 0;
- 	}
- 
+@@ -299,10 +301,10 @@
+ 	make clean
+         echo "Cleaning Pine"
+         cd $PHOME/pine
+-        make -f makefile.ult clean
++        make -f makefile.bsf clean
+         echo "Cleaning pico"
+         cd $PHOME/pico
+-        make $makeargs -f makefile.ult clean
++        make $makeargs -f makefile.bsf clean
+         echo "Done"
+         cd $PHOME
+         ;;

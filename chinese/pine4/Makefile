@@ -1,24 +1,46 @@
 # New ports collection makefile for:	pine
-# Version required:     3.96
+# Version required:     4.00
 # Date created:		19 Nov1997
 # Whom:			Wu Ching-hong <woju@FreeBSD.ee.Ntu.edu.TW>
 #
-# $Id: Makefile,v 1.1.1.1 1997/12/01 19:47:20 vanilla Exp $
+# $Id: Makefile,v 1.2 1997/12/02 04:23:43 asami Exp $
 #
 
-DISTNAME=       pine3.96
-PKGNAME=        zh-pine-3.96
+DISTNAME=       pine4.00
+PKGNAME=        zh-pine-4.00
 CATEGORIES=     chinese mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 
-MAINTAINER=	woju@FreeBSD.ee.Ntu.edu.TW
+MAINTAINER=	avatar@www.mmlab.cse.yzu.edu.tw
 
 MAN1= 		pine.1 pico.1 pilot.1
 
+do-build:
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ./build bsf)
+
+do-install:
+	${INSTALL} ${COPY} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
+		 ${WRKSRC}/bin/libpico.so.1.3 ${PREFIX}/lib/libpico.so.1.3
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pico ${PREFIX}/bin/pico
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pilot ${PREFIX}/bin/pilot
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pine ${PREFIX}/bin/pine
+	${INSTALL_SCRIPT} ${FILESDIR}/pgpencrypt ${PREFIX}/bin/pgpencrypt
+	${INSTALL_SCRIPT} ${FILESDIR}/pgpdecode ${PREFIX}/bin/pgpdecode
+	${INSTALL_SCRIPT} ${FILESDIR}/pgpsign ${PREFIX}/bin/pgpsign
+	${INSTALL_DATA} ${FILESDIR}/dot.pinerc.pgp.sample \
+			${PREFIX}/etc/dot.pinerc.pgp.sample
+	${INSTALL_DATA} ${FILESDIR}/dot.pinerc.sample \
+			${PREFIX}/etc/dot.pinerc.sample
+	${INSTALL_DATA} ${FILESDIR}/pine.conf ${PREFIX}/etc/pine.conf
+	${INSTALL_MAN} ${WRKSRC}/doc/pico.1 ${PREFIX}/man/man1/pico.1
+	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1/pilot.1
+	${INSTALL_MAN} ${WRKSRC}/doc/pine.1 ${PREFIX}/man/man1/pine.1
+.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} -d ${PREFIX}/share/doc/pine
+	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${PREFIX}/share/doc/pine
+.endif
+
 post-install:
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
-		${PREFIX}/share/doc/pine
-	cd ${WRKSRC} && \
-		${INSTALL_DATA} doc/tech-notes.txt ${PREFIX}/share/doc/pine
+	${LDCONFIG} -m ${PREFIX}/lib/
 
 .include <bsd.port.mk>
