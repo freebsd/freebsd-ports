@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/X11/Demos/blast-1.0/ \
 		ftp://ftp.univie.ac.at/systems/hpux/hpux/X11/Demos/blast-1.0/ \
 		ftp://hpftp.cict.fr/hpux/X11/Demos/blast-1.0/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-ss-10.20
+DISTNAME=	${PORTNAME}-${PORTVERSION}-ss-11.00
 
 MAINTAINER=	ports@FreeBSD.org
 
