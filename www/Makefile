@@ -185,6 +185,7 @@
     SUBDIR += p5-libapreq
     SUBDIR += p5-libwww
     SUBDIR += peacock
+    SUBDIR += pgdriver
     SUBDIR += plugger
     SUBDIR += pruby
     SUBDIR += publicfile

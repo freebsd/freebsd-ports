@@ -1,0 +1,11 @@
+--- postgres.c--	Fri Jun 30 01:42:10 2000
++++ postgres.c	Thu Mar  1 14:41:54 2001
+@@ -1139,7 +1139,7 @@
+ 			char* filename)
+ {
+ 	int			fd, i, j, segment, readlen;
+-	char		in_buf[6000], out_buf[8000], query[100];
++	char		in_buf[6001], out_buf[8001], query[8100];
+ 	char		*segment_pos;
+ 
+ 	fd = open (filename, O_RDONLY);
