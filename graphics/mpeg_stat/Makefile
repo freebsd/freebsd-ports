@@ -3,13 +3,13 @@
 # Date created:         Thu Aug  1 21:52:06 CDT 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1996/08/17 10:31:50 asami Exp $
+# $Id: Makefile,v 1.3 1996/11/18 11:28:44 asami Exp $
 #
 
 DISTNAME=	mpeg_stat-2.2b-src
 PKGNAME=	mpeg_stat-2.2b
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://s2k-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/stat/
+MASTER_SITES=	ftp://mm-ftp.CS.Berkeley.EDU/pub/multimedia/mpeg/stat/
 
 MAINTAINER=	erich@FreeBSD.org
 
