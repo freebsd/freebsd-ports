@@ -14,6 +14,8 @@ DISTNAME=	mozilla-l10n-fr-FR-${PORTVERSION}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mozilla French Language Pack (FLP)
 
+BROKEN=		"Size mismatch"
+
 USE_X_PREFIX=	yes	# Cannot be included after <bsd.port.pre.mk>.
 WRKSRC=		${WRKDIR}/bin
 
