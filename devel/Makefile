@@ -557,6 +557,7 @@
     SUBDIR += ruby-fnmatch
     SUBDIR += ruby-gconf
     SUBDIR += ruby-gemfinder
+    SUBDIR += ruby-gettext
     SUBDIR += ruby-gnustep
     SUBDIR += ruby-intl
     SUBDIR += ruby-lapidary
