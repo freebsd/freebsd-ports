@@ -21,6 +21,8 @@ EXTRACT_ONLY=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	xBase and Clipper language compatible compiler
 
+BROKEN=		Unfetchable
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}
 
 USE_GETTEXT=	yes
