@@ -15,7 +15,6 @@ MAINTAINER=	perky@fallin.lv
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
-USE_FREETYPE=	yes
 USE_PYTHON=	yes
 EXCMD=		/usr/bin/ex
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S,^${LOCALBASE}/,,g} \
@@ -27,7 +26,8 @@ USE_XPM=	yes
 .endif
 
 post-patch:
-	${EXCMD} -c 's,^\(gd.*\)$$,\1 -I${PREFIX}/include/gd,g|wq!' ${WRKSRC}/Setup
+	${EXCMD} -c 's,^\(gd.*\)$$,\1 -I${LOCALBASE}/include/gd,g|wq!' ${WRKSRC}/Setup
+	${EXCMD} -c 's,-lttf,,g|wq!' ${WRKSRC}/Setup
 .if defined(WITHOUT_X11)
 	${EXCMD} -c 's,-lX11 -lXpm,,g|wq!' ${WRKSRC}/Setup
 .endif
