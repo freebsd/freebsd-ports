@@ -1,3 +1,12 @@
 bin/fastdep
-%%PORTDOCS%%share/doc/fastdep/Using fastdep.txt
-%%PORTDOCS%%@dirrm share/doc/fastdep
+%%PORTDOCS%%%%DOCSDIR%%/book1.htm
+%%PORTDOCS%%%%DOCSDIR%%/c100.htm
+%%PORTDOCS%%%%DOCSDIR%%/c23.htm
+%%PORTDOCS%%%%DOCSDIR%%/c34.htm
+%%PORTDOCS%%%%DOCSDIR%%/c49.htm
+%%PORTDOCS%%%%DOCSDIR%%/c63.htm
+%%PORTDOCS%%%%DOCSDIR%%/c90.htm
+%%PORTDOCS%%%%DOCSDIR%%/fastdep.docbook
+%%PORTDOCS%%%%DOCSDIR%%/fastdep.html
+%%PORTDOCS%%%%DOCSDIR%%/fastdep.pdf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
