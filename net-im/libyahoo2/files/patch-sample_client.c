@@ -1,5 +1,5 @@
---- src/sample_client.c.orig	Sat May 17 03:33:06 2003
-+++ src/sample_client.c	Wed May 21 08:38:45 2003
+--- src/sample_client.c.orig	Sun Sep 28 10:40:03 2003
++++ src/sample_client.c	Tue Sep 30 21:35:55 2003
 @@ -52,7 +52,6 @@
  #include <yahoo2_callbacks.h>
  #include "yahoo_util.h"
@@ -8,7 +8,7 @@
  
  
  #define MAX_PREF_LEN 255
-@@ -186,7 +185,6 @@
+@@ -177,7 +176,6 @@
  
  FILE *popen(const char *command, const char *type);
  int pclose(FILE *stream);
@@ -16,3 +16,21 @@
  
  static char * get_local_addresses()
  {
+@@ -577,7 +575,7 @@
+ 	if(tm) {
+ 		char timestr[255];
+ 
+-		strncpy(timestr, ctime(&tm), sizeof(timestr));
++		strncpy(timestr, ctime((time_t *)&tm), sizeof(timestr));
+ 		timestr[strlen(timestr) - 1] = '\0';
+ 
+ 		print_message(("[Offline message at %s from %s]: %s", 
+@@ -654,7 +652,7 @@
+ }
+ 
+ void ext_yahoo_got_webcam_image(int id, const char *who,
+-		unsigned char *image, unsigned int image_size, unsigned int real_size,
++		const unsigned char *image, unsigned int image_size, unsigned int real_size,
+ 		unsigned int timestamp)
+ {
+ 	static unsigned char *cur_image = NULL;
