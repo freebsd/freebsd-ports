@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	supybot
-PORTVERSION=	0.77.2
+PORTVERSION=	0.80.1
 CATEGORIES=	irc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	supybot
@@ -19,11 +19,17 @@ COMMENT=	Supybot - A Superb Python IRC bot
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
 
-DOCS=	ACKS BUGS ChangeLog DEVS LICENSE README RELNOTES TODO
+DOCS=	ACKS BUGS ChangeLog DEVS INSTALL LICENSE README RELNOTES TODO
+
+MANCOMPRESSED=	no
+MAN1=	supybot.1 supybot-adduser.1 supybot-newplugin.1 supybot-wizard.1
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
+.for f in ${MAN1}
+	@${CP} ${WRKSRC}/docs/man/${f} ${PREFIX}/man/man1/
+.endfor
 .for f in ${DOCS}
 	@${CP} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
