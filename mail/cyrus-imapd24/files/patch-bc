@@ -1,13 +1,13 @@
 Index: imap/Makefile.in
 diff -u imap/Makefile.in.orig imap/Makefile.in
---- imap/Makefile.in.orig	Fri Feb 28 03:10:28 2003
-+++ imap/Makefile.in	Fri Mar 21 14:28:10 2003
-@@ -232,13 +232,13 @@
- 	libimap.a $(DEPLIBS)
+--- imap/Makefile.in.orig	Tue Jul 15 00:56:08 2003
++++ imap/Makefile.in	Fri Jul 18 00:35:34 2003
+@@ -241,13 +241,13 @@
  	$(CC) $(LDFLAGS) -o mupdate \
  	 $(SERVICETHREAD) mupdate.o mupdate-slave.o mupdate-client.o \
--	 mutex_pthread.o libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) -lpthread
-+	 mutex_pthread.o libimap.a $(DEPLIBS) $(LIBS) $(LIB_WRAP) $(PTHREAD_LIBS)
+ 	 mutex_pthread.o tls.o libimap.a \
+-	 $(DEPLIBS) $(LIBS) $(LIB_WRAP) -lpthread
++	 $(DEPLIBS) $(LIBS) $(LIB_WRAP) $(PTHREAD_LIBS)
  
  mupdate.pure: mupdate.o mupdate-slave.o mupdate-client.o mutex_pthread.o \
  	libimap.a $(DEPLIBS)

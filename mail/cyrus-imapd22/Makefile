@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.2.0.a
+PORTVERSION= 	2.2.1.b
 #PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/cyrus-mail/&,}
-DISTNAME=	${PORTNAME}-2.2.0-ALPHA
+DISTNAME=	${PORTNAME}-2.2.1-BETA
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
@@ -69,10 +69,6 @@ PLIST_SUB+=	MURDER=""
 PLIST_SUB+=	MURDER="@comment "
 .endif
 
-.if defined(WITH_FULLDIRHASH)
-CONFIGURE_ARGS+=--enable-fulldirhash
-.endif
-
 .if defined(WITH_LISTEXT)
 CONFIGURE_ARGS+=--enable-listext
 .endif
@@ -86,7 +82,7 @@ CONFIGURE_ARGS+=--enable-netscapehack
 .endif
 
 .if defined(WITH_DRAC)
-EXTRA_PATCHES+=	${FILESDIR}/drac_auth.patch \
+EXTRA_PATCHES+=	${WRKSRC}/contrib/drac_auth.patch \
 	${FILESDIR}/extra-patch-acconfig.h ${FILESDIR}/extra-patch-aclocal.m4
 USE_AUTOHEADER=	YES
 CONFIGURE_ARGS+=--with-drac=${LOCALBASE}
@@ -109,10 +105,11 @@ MAN1=		cyradm.1 imtest.1 installsieve.1 lmtptest.1 mupdatetest.1 \
 MAN3=		imclient.3
 MAN5=		cyrus.conf.5 imapd.conf.5 krb.equiv.5
 MAN8=		arbitron.8 chk_cyrus.8 nntpd.8 ctl_cyrusdb.8 ctl_deliver.8 \
-		ctl_mboxlist.8 cvt_cyrusdb.8 cyrquota.8 deliver.8 \
-		expirenews.8 fetchnews.8 fud.8 idled.8 imapd.8 ipurge.8 \
-		lmtpd.8 master.8 mbpath.8 notifyd.8 pop3d.8 reconstruct.8 \
-		rmnews.8 squatter.8 syncnews.8 timsieved.8 tls_prune.8
+		cyr_expire.8 ctl_mboxlist.8 cvt_cyrusdb.8 cyrquota.8 \
+		deliver.8 fetchnews.8 fud.8 idled.8 imapd.8 ipurge.8 \
+		lmtpd.8 master.8 mbexamine.8 mbpath.8 notifyd.8 pop3d.8 \
+		reconstruct.8 rmnews.8 squatter.8 syncnews.8 timsieved.8 \
+		tls_prune.8
 
 DOCS=		altnamespace anoncvs bugs changes faq feedback index \
 		install install-admin-mb install-auth install-compile \
