@@ -1,0 +1,7 @@
+DBIx::ContextualFetch redefines some of the various fetch methods to
+add context sensitivity.
+
+WWW: http://search.cpan.org/dist/DBIx-ContextualFetch/
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
