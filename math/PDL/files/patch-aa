@@ -1,0 +1,29 @@
+--- perldl.conf.orig	Mon Feb  8 18:21:45 1999
++++ perldl.conf	Mon Feb  8 20:04:29 1999
+@@ -14,7 +14,7 @@
+ # 0 -> don't use
+ # true -> force use
+ 
+-	WITH_POSIX_THREADS => undef,  	
++	WITH_POSIX_THREADS => 0,  	
+ 
+ # Try to build Graphics/TriD
+ 	WITH_3D => 1,	
+@@ -22,14 +22,14 @@
+ #  You can use e.g. '-lMesaGL -lMesaGLU' with the correct -L directory
+ #  to use Mesa.
+ 	OPENGL_LIBS => 
+-             '-L/usr/X11R6/lib -L/usr/lib/mesa -lMesaGL -lMesaGLU -lGL -lGLU -lXext -lX11',
++             '%%LIBPATH%% -lMesaGL -lMesaGLU -lGL -lGLU -lXext -lX11',
+ 	OPENGL_DEFINE => '',
+- 	OPENGL_INC => '-I/usr/X11R6/include',
++ 	OPENGL_INC => '%%INCPATH%%',
+ 
+ 
+ # Whether or not to build the Karma interface module
+ 
+-        WITH_KARMA => undef,    # Leave it up to PDL to decide
++        WITH_KARMA => 0,        # Leave it up to PDL to decide
+         WHERE_KARMA => undef,   # Can specific explicit directory location
+ 	
+ # Whether or not to build the PDL::Slatec module
