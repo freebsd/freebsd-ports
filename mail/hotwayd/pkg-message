@@ -1,0 +1,20 @@
+
+To run hotwayd you need to add it to inetd.conf.
+To use the standard pop3 port for hotwayd, add the following
+line to /etc/inetd.conf:
+
+pop3	stream	tcp	nowait	root	/usr/local/sbin/hotwayd	hotwayd
+
+You may also specify an arbitrary port for hotwayd.  Define it
+in /etc/services, and then use a line like this in /etc/inetd.conf:
+
+hotwayd	stream	tcp	nowait	root	/usr/local/sbin/hotwayd	hotwayd
+
+After making your changes, restart inetd. e.g.:
+
+killall -HUP inetd
+
+You can now use fetchmail or any pop3 mail client to read your e-mail.
+The POP username should be your full hotmail or msn e-mail address,
+and the password is your hotmail/msn password.
+

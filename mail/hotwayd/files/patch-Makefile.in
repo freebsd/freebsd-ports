@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Oct 29 08:13:59 2002
++++ Makefile.in	Tue Oct 29 08:14:43 2002
+@@ -101,7 +101,7 @@
+ DEFS = @DEFS@ -I. -I$(srcdir) 
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@
++LIBS = -L ${LOCALBASE}/lib -lm -lz -lxml2 -liconv
+ hotwayd_OBJECTS =  hotwayd.o commands.o xmlstuff.o inet.o
+ hotwayd_DEPENDENCIES =  libghttp-1.0.9-mod/ghttp.c \
+ libghttp-1.0.9-mod/http_date.c libghttp-1.0.9-mod/http_hdrs.c \

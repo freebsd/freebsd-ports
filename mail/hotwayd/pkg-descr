@@ -1,0 +1,6 @@
+Hotway uses HTTPMail (the same protocol that Outlook Express uses) to access
+Microsoft's Hotmail servers.  The software acts as a proxy mail server,
+allowing you to access hotmail and MSN accounts using a standard POP3 mail
+client.
+
+WWW: http://people.freenet.de/courierdave
