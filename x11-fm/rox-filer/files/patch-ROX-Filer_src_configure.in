@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- ROX-Filer/src/configure.in.orig	Tue Oct  1 12:40:56 2002
++++ ROX-Filer/src/configure.in	Sun Dec  8 21:29:55 2002
+@@ -53,6 +53,7 @@
+ ROX_REQUIRE(gtk+-2.0, 2.0.1)
+ ROX_REQUIRE(glib-2.0, 2.0.3)
+ ROX_REQUIRE(libxml-2.0, 2.0.0)
++ROX_REQUIRE(gnome-vfs-module-2.0, 2.0.0)
+ 
+ dnl Checks for programs.
+ AC_PROG_CC
+@@ -86,7 +87,7 @@
+ fi
+ 
+ AC_MSG_CHECKING(for large file support)
+-if getconf LFS64_CFLAGS > /dev/null 2> /dev/null; then
++if true > /dev/null 2> /dev/null; then
+   AC_MSG_RESULT(yes)
+   LFS_CFLAGS="`getconf LFS_CFLAGS`"
+   LFS_LDFLAGS="`getconf LFS_LDFLAGS`"

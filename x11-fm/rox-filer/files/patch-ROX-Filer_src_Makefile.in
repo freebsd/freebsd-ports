@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- ROX-Filer/src/Makefile.in.orig	Sat Dec  7 23:12:44 2002
++++ ROX-Filer/src/Makefile.in	Sat Dec  7 23:12:52 2002
+@@ -11,8 +11,8 @@
+ #PROF = -fprofile-arcs -pg
+ 
+ CFLAGS = ${PROF} @CFLAGS@ @LFS_CFLAGS@ \
+-	 `${PKG_CONFIG} --cflags gtk+-2.0 libxml-2.0`
+-LDFLAGS = ${PROF} @LDFLAGS@ ${LIBS} `${PKG_CONFIG} --libs gtk+-2.0 libxml-2.0`
++	 `${PKG_CONFIG} --cflags gtk+-2.0 libxml-2.0 gnome-vfs-module-2.0`
++LDFLAGS = ${PROF} @LDFLAGS@ ${LIBS} `${PKG_CONFIG} --libs gtk+-2.0 libxml-2.0 gnome-vfs-module-2.0`
+ EXEC = ${PLATFORM_DIR}/${PROG}
+ 
+ ############ Things to change for different programs

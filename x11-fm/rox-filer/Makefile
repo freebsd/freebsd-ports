@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -14,18 +14,23 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
+		autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+		xml2.5:${PORTSDIR}/textproc/libxml2 \
+		gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
 RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
 
 MAN1=		rox.1
+
+post-patch:
+	@cd ${WRKSRC}/ROX-Filer/src && ${LOCALBASE}/bin/autoconf
 
 .include <bsd.port.pre.mk>
 
 do-build:
 	# Run the custom build procedure
-	cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ROX-Filer/AppRun --compile
+	@cd ${WRKSRC} && GTK_CONFIG=${GTK_CONFIG} GLIB_CONFIG=${GLIB_CONFIG} ROX-Filer/AppRun --compile
 
 .if (${ARCH} == "i386")
 BINARIES=	FreeBSD-ix86
@@ -36,12 +41,13 @@ BINARIES=	FreeBSD-${ARCH}
 PLIST_SUB=	BINARIES="${BINARIES}"
 
 do-install:
-	${MKDIR} ${PREFIX}/apps/ROX-Filer
-	cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon Action.png AppInfo.xml AppRun ${BINARIES} Help Messages Options.xml images style.css ${PREFIX}/apps/ROX-Filer
-	cd ${WRKSRC} && ${CP} -r Choices ${PREFIX}/share/
-	${MKDIR} ${PREFIX}/share/mime/mime-info
-	${CAT} ${FILESDIR}/rox | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox
-	${CHMOD} 775 ${PREFIX}/bin/rox
-	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/apps/ROX-Filer
+	@cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon Action.png AppInfo.xml AppRun ${BINARIES} Help Messages Options.xml images style.css ${PREFIX}/apps/ROX-Filer
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/apps/ROX-Filer
+	@cd ${WRKSRC} && ${CP} -r Choices ${PREFIX}/share/
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/Choices
+	@${CAT} ${FILESDIR}/rox | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox
+	@${CHMOD} 775 ${PREFIX}/bin/rox
+	@${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
