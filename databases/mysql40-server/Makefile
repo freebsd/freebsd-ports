@@ -3,10 +3,10 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.57 1999/07/01 08:44:48 dirk Exp $
+# $Id: Makefile,v 1.58 1999/07/04 14:55:11 dirk Exp $
 #
 
-DISTNAME=	mysql-3.22.23b
+DISTNAME=	mysql-3.22.24
 PKGNAME?=	${DISTNAME:S/-/-server-/}
 CATEGORIES=	databases
 MASTER_SITES=	http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.22/ \
