@@ -7132,6 +7132,7 @@ pear-Net_URL	ports/net/pear-Net_URL
 pear-OLE	ports/devel/pear-OLE
 pear-PEAR	ports/devel/pear-PEAR
 pear-PHPUnit	ports/devel/pear-PHPUnit
+pear-Spreadsheet_Excel_Writer ports/textproc/pear-Spreadsheet_Excel_Writer
 pear-XML_Parser	ports/devel/pear-XML_Parser
 pear-XML_RPC	ports/devel/pear-XML_RPC
 pear-XML_RSS	ports/devel/pear-XML_RSS
