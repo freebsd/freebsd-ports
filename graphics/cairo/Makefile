@@ -15,7 +15,8 @@ COMMENT=	Vector graphics library with cross-device output support
 
 LIB_DEPENDS=	pixman.1:${PORTSDIR}/graphics/libpixman \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		png.5:${PORTSDIR}/graphics/png
+		png.5:${PORTSDIR}/graphics/png \
+		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_GNOME=	gnometarget gnomehack
 USE_LIBTOOL_VER=15
@@ -37,8 +38,12 @@ PLIST_SUB+=	GLITZ=""
 PLIST_SUB+=	GLITZ="@comment "
 .endif
 
-.if !defined(WITHOUT_X11)
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=--disable-xlib
+PLIST_SUB+=	X11="@comment "
+.else
 USE_XLIB=	yes
+PLIST_SUB+=	X11=""
 .endif
 
 post-patch:
