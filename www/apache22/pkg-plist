@@ -147,6 +147,7 @@ libexec/apache2/mod_auth.so
 libexec/apache2/mod_auth_anon.so
 libexec/apache2/mod_auth_dbm.so
 libexec/apache2/mod_auth_digest.so
+%%LDAP%%libexec/apache2/mod_auth_ldap.so
 libexec/apache2/mod_autoindex.so
 %%EXPERIMENTAL%%libexec/apache2/mod_bucketeer.so
 %%THREADS%%libexec/apache2/mod_cache.so
@@ -169,6 +170,7 @@ libexec/apache2/mod_headers.so
 libexec/apache2/mod_imap.so
 libexec/apache2/mod_include.so
 libexec/apache2/mod_info.so
+%%LDAP%%libexec/apache2/mod_ldap.so
 libexec/apache2/mod_log_config.so
 %%THREADS%%libexec/apache2/mod_mem_cache.so
 libexec/apache2/mod_mime.so
