@@ -1,0 +1,38 @@
+# New ports collection makefile for:	Java module for SQL Relay
+# Date created:		2 July 2001
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	${SQLRELAY_PORTNAME}
+PORTVERSION=	${SQLRELAY_PORTVERSION}
+CATEGORIES=	databases java
+MASTER_SITES=	# none
+PKGNAMEPREFIX=	java-
+DISTFILES=	# none
+
+MAINTAINER=	knu@FreeBSD.org
+
+BUILD_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:configure \
+		${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
+LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
+RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk
+
+JDK_VERSION?=		1.1.8
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+BUILD_WRKSRC=	${WRKSRC}/src/api/java
+INSTALL_WRKSRC=	${BUILD_WRKSRC}
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
+		--with-java-prefix="${LOCALBASE}/jdk${JDK_VERSION}"
+
+.include "${.CURDIR}/../sqlrelay/Makefile.common"
+
+do-extract:
+	${MKDIR} ${WRKDIR}
+	${LN} -fs `${SQLRELAY_WRKSRC_CMD}` ${WRKSRC}
+
+.include <bsd.port.mk>

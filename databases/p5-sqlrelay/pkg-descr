@@ -1,0 +1,4 @@
+This package provides Perl5 modules to access to SQL Relay, including
+a DBD interface.
+
+WWW:	http://www.firstworks.com/sqlrelay.html

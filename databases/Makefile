@@ -22,6 +22,7 @@
     SUBDIR += grass
     SUBDIR += gtksql
     SUBDIR += interbase4
+    SUBDIR += java-sqlrelay
     SUBDIR += jdbc-oracle816
     SUBDIR += libgda
     SUBDIR += libiodbc
@@ -63,6 +64,8 @@
     SUBDIR += p5-Text-Query-SQL
     SUBDIR += p5-Tie-DBI
     SUBDIR += p5-hp200lx-db
+    SUBDIR += p5-sqlrelay
+    SUBDIR += php-sqlrelay
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgresql-plruby
@@ -74,6 +77,7 @@
     SUBDIR += py-SQLDict
     SUBDIR += py-bsddb3
     SUBDIR += py-gdbm
+    SUBDIR += py-sqlrelay
     SUBDIR += rdb
     SUBDIR += ruby-bdb
     SUBDIR += ruby-cdb
@@ -91,7 +95,9 @@
     SUBDIR += ruby-o_dbm
     SUBDIR += ruby-odbc
     SUBDIR += ruby-postgres
+    SUBDIR += ruby-sqlrelay
     SUBDIR += sqlite
+    SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += tcl-Mysql
     SUBDIR += tkgnats

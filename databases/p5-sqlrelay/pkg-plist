@@ -1,0 +1,17 @@
+lib/perl5/site_perl/%%PERL_VER%%/DBD/SQLRelay.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/DBD 2>/dev/null || true
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/SQLRelay/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/SQLRelay
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Firstworks/SQLRConnection.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Firstworks/SQLRConnection/SQLRConnection.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Firstworks/SQLRConnection/SQLRConnection.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Firstworks/SQLRConnection/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Firstworks/SQLRConnection
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Firstworks/SQLRCursor.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Firstworks/SQLRCursor/SQLRCursor.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Firstworks/SQLRCursor/SQLRCursor.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Firstworks/SQLRCursor/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Firstworks/SQLRCursor
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Firstworks 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Firstworks 2>/dev/null || true
