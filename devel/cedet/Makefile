@@ -7,7 +7,7 @@
 
 PORTNAME=	cedet
 PORTVERSION=	1.0.b2.b
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cedet
@@ -22,7 +22,9 @@ EMACS_PORT_NAME?=	emacs21
 
 CEDET_LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
-INFO=		cogre ede eieio semantic speedbar
+INFO=		bovine cogre ede eieio grammar-fw semantic \
+		semantic-appdev semantic-langdev semantic-user \
+		wisent speedbar
 SEMANTIC_ELISP_SUBDIRS=	bovine wisent
 
 USE_GMAKE=	yes
