@@ -7,6 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=    1.3.29
+PORTREVISION=   1
 CATEGORIES=	www
 MASTER_SITES=   ${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	apache_${PORTVERSION}
@@ -136,6 +137,8 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
 		${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
+	@${TOUCH} ${DOCUMENT_ROOT}-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+	@${TOUCH} ${DATADIR}/cgi-bin-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
