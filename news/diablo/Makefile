@@ -3,7 +3,7 @@
 # Date created:					June 2nd 1997
 # Whom:						jfitz
 #
-# $Id: Makefile,v 1.3 1997/07/05 03:31:28 jfitz Exp $
+# $Id: Makefile,v 1.4 1998/04/18 12:32:30 itojun Exp $
 #
 
 DISTNAME=	diablo-1.15-rel
@@ -27,44 +27,52 @@ MAN8=		diablo.8 dclean.8 dicmd.8 dexpire.8 didump.8 \
 
 
 do-configure:
-		${CP} ${FILESDIR}/post-install-notes ${WRKSRC}
-		${SETENV} ${MAKE_ENV} /usr/bin/perl -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/post-install-notes
+	${CP} ${FILESDIR}/post-install-notes ${WRKSRC}
+	${SETENV} ${MAKE_ENV} /usr/bin/perl -pi -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${WRKSRC}/post-install-notes
 
 do-build:
-		cd ${WRKSRC} && ${PREFIX}/bin/xmake clean all
+	cd ${WRKSRC} && ${PREFIX}/bin/xmake clean all
 
 pre-install:
-		@ ${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
-		${MKDIR} ${PREFIX}/news ${PREFIX}/news/dbin ${PREFIX}/news/spool ${PREFIX}/news/spool/news ${PREFIX}/share/doc/diablo
-		${RM} -f /news
-		/bin/ln -sf ${PREFIX}/news /news
-		/usr/sbin/chown -R news.news ${PREFIX}/news
+	@ ${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/createuser
+	${MKDIR} ${PREFIX}/news ${PREFIX}/news/dbin ${PREFIX}/news/spool \
+		${PREFIX}/news/spool/news ${PREFIX}/share/doc/diablo
+	${RM} -f /news
+	${LN} -sf ${PREFIX}/news /news
+	/usr/sbin/chown -R news.news ${PREFIX}/news
 
 do-install:
-		cd ${WRKSRC} && ${PREFIX}/bin/xmake install
+	cd ${WRKSRC} && ${PREFIX}/bin/xmake install
 .for file in COPYRIGHT INSTALL README.READER README.SERVER RELEASE_NOTES
-		${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/diablo
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/diablo
 .endfor
-		${INSTALL_DATA} ${WRKSRC}/post-install-notes ${PREFIX}/share/doc/diablo
+	${INSTALL_DATA} ${WRKSRC}/post-install-notes ${PREFIX}/share/doc/diablo
 
 post-install:
-		${INSTALL} -c -o news -g news ${WRKSRC}/samples/* ${PREFIX}/news
-		@ echo "Installing ${PREFIX}/etc/rc.d/diablo.sh startup script"
-		@ echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "#" >> ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "" >> ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "# The line to run diablo is specifically commented out" >> ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "# so that you don't start up diablo with a generic config" >> ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "# Once you've configured diablo, uncomment the line below" >> ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "" >> ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "if [ -x ${PREFIX}/news/rc.news ]" >> ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "then" >> ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "#	${PREFIX}/news/rc.news && echo -n ' diablo'" >> ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "	echo -n ' diablo(disabled)'" >> ${PREFIX}/etc/rc.d/diablo.sh
-		@ echo "fi" >> ${PREFIX}/etc/rc.d/diablo.sh
-		/bin/chmod 0750 ${PREFIX}/etc/rc.d/diablo.sh
+	${INSTALL} -c -o news -g news ${WRKSRC}/samples/* ${PREFIX}/news
+	@ ${ECHO} "Installing ${PREFIX}/etc/rc.d/diablo.sh startup script"
+	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "# The line to run diablo is specifically commented out" >> \
+		${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "# so that you don't start up diablo with a generic config" >> \
+		${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "# Once you've configured diablo, uncomment the line below" >> \
+		${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "if [ -x ${PREFIX}/news/rc.news ]" >> \
+		${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "then" >> ${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "#	${PREFIX}/news/rc.news && echo -n ' diablo'" >> \
+		${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "	echo -n ' diablo(disabled)'" >> \
+		${PREFIX}/etc/rc.d/diablo.sh
+	@ ${ECHO} "fi" >> ${PREFIX}/etc/rc.d/diablo.sh
+	/bin/chmod 0750 ${PREFIX}/etc/rc.d/diablo.sh
 .if !defined(BATCH)
-		@ /usr/bin/more -e ${PREFIX}/share/doc/diablo/post-install-notes
+	@ /usr/bin/more -e ${PREFIX}/share/doc/diablo/post-install-notes
 .endif
 
 .include <bsd.port.mk>
