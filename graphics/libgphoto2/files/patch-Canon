@@ -1,0 +1,199 @@
+diff -u -r1.236.2.6 -r1.247
+--- camlibs/canon/canon.c	2004/01/15 12:30:11	1.236.2.6
++++ camlibs/canon/canon.c	2004/08/14 00:24:12	1.247
+@@ -15,7 +15,7 @@
+  * and usb.c, keeping the common protocols/busses support in this
+  * file.
+  *
+- * $Id: canon.c,v 1.236.2.6 2004/01/15 12:30:11 hun Exp $
++ * $Id: canon.c,v 1.247 2004/08/14 00:24:12 hfiguiere Exp $
+  */
+ 
+ #include "config.h"
+@@ -83,15 +83,17 @@
+  *   detection.
+  * - Newer Canon USB cameras also support a PTP mode. See ptp2 camlib.
+  * - No IEEE1394 cameras supported yet.
++ * - The size limit constants aren't used properly anywhere. We should
++ *   probably get rid of them altogether.
+  **/
+ 
+ /* SL_* - size limit constants */
+-#define KILOBYTE	(1024)
+-#define MEGABYTE	(1024 * KILOBYTE)
+-#define SL_THUMB	( 100 * KILOBYTE)
+-#define SL_PICTURE	(  10 * MEGABYTE)
+-#define SL_MOVIE_SMALL	( 100 * MEGABYTE)
+-#define SL_MOVIE_LARGE	(2048 * MEGABYTE)
++#define KILOBYTE	(1024U)
++#define MEGABYTE	(1024U * KILOBYTE)
++#define SL_THUMB	( 100U * KILOBYTE)
++#define SL_PICTURE	(  10U * MEGABYTE)
++#define SL_MOVIE_SMALL	( 100U * MEGABYTE)
++#define SL_MOVIE_LARGE	(2048U * MEGABYTE)
+ #define NO_USB  0
+ 
+ const struct canonCamModelData models[] = {
+@@ -171,8 +173,9 @@
+ 	/* 3078 and 307a are in MacOS Info.plist, but I don't know
+ 	 * what they are --swestin. */
+ 	{"Canon:PowerShot unknown 5",		CANON_PS_UNK5,	0x04A9, 0x307a, CAP_SUP, SL_MOVIE_SMALL, SL_THUMB, SL_PICTURE, NULL},
+-	/* MV630i seems to be a DV camcorder */
++	/* MV630i is a DV camcorder */
+ 	{"Canon:MV630i",		CANON_MV630I,		0x04A9, 0x307b, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
++	{"Canon:MV650i",		CANON_MV650I,		0x04A9, 0x3079, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
+ 	{"Canon:Optura 20",		CANON_OPT_20,		0x04A9, 0x307f, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
+ 	{"Canon:Optura 10",		CANON_OPT_10,		0x04A9, 0x3081, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
+ 
+@@ -184,6 +187,12 @@
+ 	/* PS G5 uses the same ProductID for PTP and Canon, with protocol autodetection */
+ 	{"Canon:PowerShot G5 (normal mode)",	CANON_PS_G5,	0x04A9, 0x3085, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
+ 	{"Canon:PowerShot A80 (normal mode)",CANON_PS_A80,      0x04A9, 0x309A, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
++	{"Canon:PowerShot S60 (normal mode)", CANON_PS_S60,     0x04A9, 0x30b2, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
++	{"Canon:Digital IXUS 500 (normal mode)",CANON_PS_S500,  0x04A9, 0x30b4, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
++	 {"Canon:PowerShot A75",        CANON_PS_A75, 	        0x04A9, 0x30b5, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
++	{"Canon:PowerShot A310",        CANON_PS_A310,          0x04A9, 0x30b8, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL}, 
++	{"Canon:PowerShot S410 (normal mode)",CANON_PS_S410,  0x04A9, 0x30ba, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
++	{"Canon:Digital IXUS 430 (normal mode)",CANON_PS_S410,  0x04A9, 0x30ba, CAP_SUP, SL_MOVIE_LARGE, SL_THUMB, SL_PICTURE, NULL},
+ 
+ 	{NULL}
+ 	/* *INDENT-ON* */
+@@ -1535,10 +1544,13 @@
+  * @path: gphoto2 path
+  * @context: context for error reporting
+  *
+- * convert gphoto2 path  (e.g.   "/DCIM/116CANON/IMG_1240.JPG")
++ * convert gphoto2 path  (e.g.   "/dcim/116CANON/img_1240.jpg")
+  * into canon style path (e.g. "D:\DCIM\116CANON\IMG_1240.JPG")
+  *
+- * Returns: string with converted path name
++ * Canon cameras use FAT with upper case internally, so we convert
++ * into that.
++ *
++ * Returns: immutable string with converted path name
+  *
+  */
+ const char *
+@@ -1562,13 +1574,14 @@
+ 
+ 	snprintf (tmp, sizeof (tmp), "%s%s", camera->pl->cached_drive, path);
+ 
+-	/* replace all slashes by backslashes */
++	/* replace all slashes by backslashes, change case to upper for FAT */
+ 	for (p = tmp; *p != '\0'; p++) {
+ 		if (*p == '/')
+ 			*p = '\\';
++		*p = (char) toupper(*p);
+ 	}
+ 
+-	/* remove trailing backslash */
++	/* remove trailing backslash, making sure buffer ends with \0 */
+ 	if ((p > tmp) && (*(p - 1) == '\\'))
+ 		*(p - 1) = '\0';
+ 
+@@ -1803,7 +1816,7 @@
+ 				 * that is not an error for serial cameras
+ 				 * (at least the A50 adds five zero bytes at the end)
+ 				 */
+-				for (temp_ch = pos; temp_ch < end_of_data && *temp_ch; temp_ch++) ;	/* do nothing */
++				for (temp_ch = pos; (temp_ch < end_of_data) && (!*temp_ch); temp_ch++) ;	/* do nothing */
+ 
+ 				if (temp_ch == end_of_data) {
+ 					GP_DEBUG ("canon_int_list_dir: "
+diff -u -r1.87.2.3 -r1.95
+--- camlibs/canon/canon.h	2004/01/15 12:29:40	1.87.2.3
++++ camlibs/canon/canon.h	2004/08/14 00:24:12	1.95
+@@ -3,7 +3,7 @@
+  *
+  * Written 1999 by Wolfgang G. Reissnegger and Werner Almesberger
+  *
+- * $Id: canon.h,v 1.87.2.3 2004/01/15 12:29:40 hun Exp $
++ * $Id: canon.h,v 1.95 2004/08/14 00:24:12 hfiguiere Exp $
+  *
+  */
+ 
+@@ -68,6 +68,7 @@
+  * @CANON_PS_A50: PowerShot A50
+  * @CANON_PS_A60: PowerShot A60
+  * @CANON_PS_A70: PowerShot A70
++ * @CANON_PS_A75: PowerShot A75
+  * @CANON_PS_A80: PowerShot A80
+  * @CANON_PS_PRO70: PowerShot Pro70
+  * @CANON_PS_S10: PowerShot S10
+@@ -91,11 +92,15 @@
+  * @CANON_PS_A300: PowerShot A300
+  * @CANON_PS_S200: PowerShot S200, Digital IXUS v2
+  * @CANON_PS_S330: Digital IXUS 330
++ * @CANON_PS_S410: Digital IXUS 430
++ * @CANON_PS_S500: Digital IXUS 500
+  * @CANON_PS_S45: PowerShot S45
++ * @CANON_PS_S60: PowerShot S60
+  * @CANON_PS_G3: PowerShot G3
+  * @CANON_PS_G5: PowerShot G5
+  * @CANON_PS_S230: PowerShot S230, Digital IXUS v3
+  * @CANON_MV630I: MV630i camcorder
++ * @CANON_MV650I: MV650i camcorder
+  * @CANON_EOS_10D: EOS 10D
+  * @CANON_OPT_10: Optura 10
+  * @CANON_OPT_20: Optura 20
+@@ -119,6 +124,7 @@
+ 	CANON_PS_A50,
+ 	CANON_PS_A60,
+ 	CANON_PS_A70,
++	CANON_PS_A75,
+ 	CANON_PS_A80,
+ 	CANON_PS_S10,
+ 	CANON_PS_S20,
+@@ -141,11 +147,13 @@
+ 	CANON_PS_A100,
+ 	CANON_PS_A200,
+ 	CANON_PS_A300,
++	CANON_PS_A310,
+ 	CANON_PS_S50,
+ 	CANON_PS_S45,
+ 	CANON_PS_G3,
+ 	CANON_PS_S230,
+ 	CANON_MV630I,
++	CANON_MV650I,
+ 	CANON_EOS_10D,
+ 	CANON_OPT_200,
+ 	/* In Mac OS Image Capture, but not yet seen in the wild. */
+@@ -156,6 +164,9 @@
+ 	CANON_PS_UNK5,
+ 	/* other cameras */
+ 	CANON_PS_S400,
++	CANON_PS_S410,
++	CANON_PS_S60,
++	CANON_PS_S500,
+ 	CANON_PS_SD100,
+ 	CANON_EOS_300D,
+ 	CANON_PS_G5,
+@@ -256,6 +267,7 @@
+ 	unsigned short usb_vendor;
+ 	unsigned short usb_product;
+ 	canonCaptureSupport usb_capture_support;
++	/* these three constants aren't used properly */
+ 	unsigned int max_movie_size;
+ 	unsigned int max_thumbnail_size;
+ 	unsigned int max_picture_size;
+diff -u -r1.83 -r1.85
+--- camlibs/canon/usb.c	2004/01/02 15:42:33	1.83
++++ camlibs/canon/usb.c	2004/02/03 18:24:39	1.85
+@@ -4,7 +4,7 @@
+  *
+  * USB communication layer.
+  *
+- * $Id: usb.c,v 1.83 2004/01/02 15:42:33 marcusmeissner Exp $
++ * $Id: usb.c,v 1.85 2004/02/03 18:24:39 hun Exp $
+  ****************************************************************************/
+ 
+ #include "config.h"
+@@ -1178,7 +1178,7 @@
+ 
+ 	/* the 1 is to show status */
+ 	res = canon_usb_long_dialogue (camera, CANON_USB_FUNCTION_GET_FILE, data, length,
+-				       camera->pl->md->max_picture_size, payload,
++				       camera->pl->md->max_movie_size, payload,
+ 				       payload_length, 1, context);
+ 	if (res != GP_OK) {
+ 		GP_DEBUG ("canon_usb_get_file: canon_usb_long_dialogue() "
