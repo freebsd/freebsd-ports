@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@freebsd.org
 COMMENT=	Perl module to alter the output of previous handlers
 
+BROKEN=		Does not build
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 
 PERL_CONFIGURE=	yes
