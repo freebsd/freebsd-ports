@@ -1,0 +1,77 @@
+%%RUBY_SITELIBDIR%%/ora_rdbc1.rb
+%%RUBY_SITELIBDIR%%/pg_rdbc1.rb
+%%RUBY_SITELIBDIR%%/rdbc1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rdbc1/test1.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/rdbc1
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/Composite.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/Connection.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ConnectionBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/DataTrancation.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/DatabaseMetaData.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/Date.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/Driver.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/DriverManager.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/DriverPropertyInfo.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/RDBC1.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ResultSet.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ResultSetBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ResultSetMetaData.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ResultSetMetaDataBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/SQLException.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/SQLWarning.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/Statement.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/StatementBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/Time.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/Timestamp.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/rdbc1.txt
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ora/ORA_ConnectionBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ora/ORA_Driver.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ora/ORA_RDBC1.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ora/ORA_ResultSetBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ora/ORA_ResultSetMetaDataBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ora/ORA_StatementBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/pg/PG_ConnectionBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/pg/PG_Driver.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/pg/PG_RDBC1.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/pg/PG_ResultSetBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/pg/PG_ResultSetMetaDataBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/pg/PG_StatementBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/Composite.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/Connection.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ConnectionBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/DataTrancation.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/DatabaseMetaData.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/Date.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/Driver.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/DriverManager.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/DriverPropertyInfo.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/RDBC1.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ResultSet.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ResultSetBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ResultSetMetaData.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ResultSetMetaDataBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/SQLException.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/SQLWarning.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/Statement.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/StatementBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/Time.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/Timestamp.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ora/ORA_ConnectionBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ora/ORA_Driver.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ora/ORA_RDBC1.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ora/ORA_ResultSetBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ora/ORA_ResultSetMetaDataBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/ora/ORA_StatementBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/pg/PG_ConnectionBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/pg/PG_Driver.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/pg/PG_RDBC1.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/pg/PG_ResultSetBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/pg/PG_ResultSetMetaDataBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/pg/PG_StatementBridge.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rdbc1/ja/rdbc1.txt
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rdbc1/ora
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rdbc1/pg
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rdbc1/ja/ora
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rdbc1/ja/pg
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rdbc1/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rdbc1
