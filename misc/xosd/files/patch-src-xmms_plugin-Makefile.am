@@ -1,10 +1,10 @@
---- src/xmms_plugin/Makefile.am~	Mon Aug 19 00:04:12 2002
-+++ src/xmms_plugin/Makefile.am	Wed Sep 18 17:18:37 2002
+--- src/xmms_plugin/Makefile.am.orig	Mon Dec 30 22:25:03 2002
++++ src/xmms_plugin/Makefile.am	Mon Dec 30 22:24:41 2002
 @@ -1,6 +1,6 @@
  # XMMS library
  
--CFLAGS=@CFLAGS@ @XMMS_CFLAGS@ @GTK_CFLAGS@ -I..
-+CFLAGS=-I.. @CFLAGS@ @XMMS_CFLAGS@ @GTK_CFLAGS@
+-CFLAGS=@CFLAGS@ @XMMS_CFLAGS@ @GTK_CFLAGS@ @GDK_PIXBUF_CFLAGS@ -I..
++CFLAGS=-I.. @CFLAGS@ @XMMS_CFLAGS@ @GTK_CFLAGS@ @GDK_PIXBUF_CFLAGS@
  
  xmmsplugindir = ${XMMS_PLUGIN_DIR}
  
