@@ -43,6 +43,7 @@
     SUBDIR += gnomelibs
     SUBDIR += gnomepanel
     SUBDIR += gnomeres_applet
+    SUBDIR += gnometerminal
     SUBDIR += gswitchit_applet
     SUBDIR += gtk-theme-switch
     SUBDIR += gvid
