@@ -4720,6 +4720,7 @@ netscape7	ports/www/netscape7
 netscript	ports/net/netscript
 netsed		ports/net/netsed
 netshow		ports/graphics/netshow
+netspoc		ports/net/netspoc
 netstat		src/usr.bin/netstat
 nettest		ports/net/nettest
 nettle		ports/security/nettle
