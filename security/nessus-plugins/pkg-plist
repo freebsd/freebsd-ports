@@ -593,5 +593,5 @@ sbin/nessus-update-plugins
 @dirrm lib/nessus/plugins_factory
 @dirrm lib/nessus/plugins
 @exec mkdir %D/lib/nessus/reports
-@unexec rmdir %D/lib/nessus/reports 2&gt;/dev/null || true
+@unexec rmdir %D/lib/nessus/reports 2>/dev/null || true
 @dirrm lib/nessus
