@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xinetd
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.8
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.xinetd.org/
@@ -18,16 +18,15 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	build
 CONFIGURE_ARGS+=	--with-loadavg --with-libwrap
 
-.if defined(WITH_INET6)
-CONFIGURE_ARGS+=	--with-inet6
-.endif
-
 MAN5=		xinetd.conf.5
 MAN8=		xconv.8 xinetd.8 xinetd.log.8
 
 post-patch:
 	${FIND} ${WRKSRC}/libs/src -name Makefile.in | ${XARGS} \
 		${PERL} -pi -e 's!\@INSTALL\@!/bin/cp!; s!-m 640!!'
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' < ${WRKSRC}/xinetd/xconfig.h \
+		> ${WRKSRC}/xinetd/xconfig.h.new
+	@${MV} ${WRKSRC}/xinetd/xconfig.h.new ${WRKSRC}/xinetd/xconfig.h
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/xinetd.sh ]; then \
