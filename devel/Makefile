@@ -1116,6 +1116,7 @@
     SUBDIR += rlwrap
     SUBDIR += robodoc
     SUBDIR += root
+    SUBDIR += root-doc
     SUBDIR += rpc2
     SUBDIR += rtplib
     SUBDIR += ruby-amstd
