@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	eclipse
-PORTVERSION=	2.1.1.1
+PORTVERSION=	2.1.2
 PORTREVISION=	1
 CATEGORIES=	java devel
-MASTER_SITES=	http://download2.eclipse.org/downloads/drops/L-2.1.x%20Translations-200307021300/:langpack \
-		http://people.debian.org/~tora/tmp/:jppack
+MASTER_SITES=	http://download2.eclipse.org/downloads/drops/L-${PORTVERSION}_Translations-200312151300/:langpack
 PKGNAMESUFFIX=	-langpack
-DISTNAME=	eclipse${PORTVERSION}-SDK-LanguagePackFeature-patch
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:langpack eclipse-2.1-NLS-menu${EXTRACT_SUFX}:jppack
+DISTNAME=	eclipse${PORTVERSION}.1-SDK-linux-gtk-LanguagePackFeature
+DISTFILES=	${DISTNAME}.zip:langpack
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	java@FreeBSD.ORG
@@ -23,12 +22,10 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+PLIST_SUB=	LANGPACKVER=${PORTVERSION}
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-
-post-extract:
-	@${MV} ${WRKSRC}/../plugins/org.eclipse.ui.workbench.nl1_2.1.0/ ${WRKSRC}/plugins/
 
 do-install:
 	@${SH} ${FILESDIR}/install.sh ${WRKSRC} ${PREFIX} ${SHAREOWN} ${SHAREGRP} 0755 0644 ${PLIST}
