@@ -8,7 +8,7 @@
 PORTNAME=	rc5pipe
 PORTVERSION=	1.1
 CATEGORIES=	security
-MASTER_SITES=	http://krazykiwi.homeip.net/FreeBSD/ports/rc5pipe/
+MASTER_SITES=	http://people.fruitsalad.org/bdavis/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	so14k@so14k.com
