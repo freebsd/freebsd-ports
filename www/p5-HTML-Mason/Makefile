@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5
 		${SITE_PERL}/Class/Container.pm:${PORTSDIR}/devel/p5-Class-Container \
 		${SITE_PERL}/Cache/Cache.pm:${PORTSDIR}/devel/p5-Cache-Cache
 RUN_DEPENDS=	${BUILD_DEPENDS} \
-		${SITE_PERL}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
+		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--no-prompts
