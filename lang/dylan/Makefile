@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	dylan
-PORTVERSION=	2.3.8
+PORTVERSION=	2.3.9
 CATEGORIES=	lang
-MASTER_SITES=	ftp://berlin.ccc.de/pub/gd/src/                        \
-		ftp://berlin.ccc.de/pub/gd/FreeBSD/                    \
+MASTER_SITES=	ftp://ftp.gwydiondylan.org/pub/gd/src/                 \
+		ftp://ftp.gwydiondylan.org/pub/gd/FreeBSD/             \
 		ftp://folk.federated.com/pub/gd/src/                   \
 		ftp://folk.federated.com/pub/gd/FreeBSD/               \
 		ftp://ftp.ntua.gr/pub/lang/gwydion/src/                \
@@ -29,10 +29,12 @@ MAINTAINER=	housel@acm.org
 RUN_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--srcdir=$(WRKSRC)
+CONFIGURE_ARGS=	--srcdir=$(WRKSRC) --enable-debug
 CONFIGURE_ENV=	D2C="$(WRKDIR)/d2c -p$(WRKSRC)/d2c/compiler/platforms.descr"
 
 PLIST_SUB=	DYLANVER="${PORTVERSION}" DYLANARCH="x86-freebsd-elf-gcc"
+
+ONLY_FOR_ARCHS=	i386
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/dylan/%%DYLANVER%%/%%DYLANARCH%%
@@ -43,7 +45,8 @@ ALL_TARGET=	default
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
 
-MAN1=		d2c.1 make-dylan-app.1 melange.1 mindy.1 mindycomp.1
+MAN1=		d2c.1 dybug.1 make-dylan-app.1 melange.1 mindy.1 mindycomp.1 \
+		mindyexec.1 parsergen.1
 MAN5=		platforms.descr.5
 MAN7=		dylan.7 gwydion.7
 
