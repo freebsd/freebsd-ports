@@ -7,6 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.0.10
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -16,12 +17,17 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wjv@FreeBSD.org
 
+.if defined(WITH_APACHE2)
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
+.else
 RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+.endif
 
 HAS_CONFIGURE=	yes
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
-		--with-username=${USERNAME} --with-groupname=${GROUPNAME} \
+		--with-username=${MM_USERNAME} \
+		--with-groupname=${MM_GROUPNAME} \
 		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
 PKGOPTS=	${FILESDIR}/pkg-opts
 
@@ -31,26 +37,26 @@ PKGOPTS=	${FILESDIR}/pkg-opts
 # build time.  Getting the values of some of them right is crucial!
 # Perform a "make options" to see more information on these variables.
 #
-USERNAME?=	mailman
-USERID?=	91
-GROUPNAME?=	${USERNAME}
-GROUPID?=	${USERID}
-MMDIR?=		mailman
+MM_USERNAME?=	mailman
+MM_USERID?=	91
+MM_GROUPNAME?=	${MM_USERNAME}
+MM_GROUPID?=	${MM_USERID}
+MM_DIR?=	mailman
 .if ${OSVERSION} >= 450000
 MAIL_GID?=	26
 .else
 MAIL_GID?=	1
 .endif
 CGI_GID?=	80
-IMGDIR=		${PREFIX}/www/icons
+IMGDIR=		www/icons
 #
 # End of user-configurable variables.
 
-MAILMANDIR=	${PREFIX}/${MMDIR}
+MAILMANDIR=	${PREFIX}/${MM_DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-PLIST_SUB=	MMDIR=${MMDIR} MMGRP=${GROUPNAME}
+PLIST_SUB=	MMDIR=${MM_DIR} MMGRP=${MM_GROUPNAME} IMGDIR=${IMGDIR}
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
@@ -66,16 +72,17 @@ post-extract:
 .endif
 
 pre-configure:
-	@ ${SED} -e 's#%%USER%%#${USERNAME}#g' -e 's#%%UID%%#${USERID}#g' \
-	  -e 's#%%GROUP%%#${GROUPNAME}#g' -e 's#%%GID%%#${GROUPID}#g' \
+	@ ${SED} \
+	  -e 's#%%USER%%#${MM_USERNAME}#g' -e 's#%%UID%%#${MM_USERID}#g' \
+	  -e 's#%%GROUP%%#${MM_GROUPNAME}#g' -e 's#%%GID%%#${MM_GROUPID}#g' \
 	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' pkg-install > \
 	  ${PKGINSTALL}
 # Mailman's configure script needs the "mailman" user/group to exist.
 	@ ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-configure:
-	@ ${SED} -e 's#%%USER%%#${USERNAME}#g' \
-	  -e 's#%%GROUP%%#${GROUPNAME}#g' \
+	@ ${SED} -e 's#%%USER%%#${MM_USERNAME}#g' \
+	  -e 's#%%GROUP%%#${MM_GROUPNAME}#g' \
 	  -e 's#%%PYTHON_CMD%%#${PYTHON_CMD}#g' \
 	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' pkg-deinstall > \
 	  ${PKGDEINSTALL}
@@ -89,12 +96,13 @@ post-install:
 .for dir in cron scripts
 	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${MAILMANDIR}/${dir}
 .endfor
-	@ ${CHGRP} -R ${GROUPNAME} ${MAILMANDIR}
-	@ ${MKDIR} ${IMGDIR}
+	@ ${CHGRP} -R ${MM_GROUPNAME} ${MAILMANDIR}
+	@ ${MKDIR} ${PREFIX}/${IMGDIR}
 .for imgfile in mailman.jpg PythonPowered.png gnu-head-tiny.jpg
-	@ ${CP} ${MAILMANDIR}/icons/${imgfile} ${IMGDIR}
+	@ ${CP} ${MAILMANDIR}/icons/${imgfile} ${PREFIX}/${IMGDIR}
 .endfor
-	@ uudecode -p ${FILESDIR}/powerlogo.gif.uue > ${IMGDIR}/powerlogo.gif
+	@ uudecode -p ${FILESDIR}/powerlogo.gif.uue > \
+	  ${PREFIX}/${IMGDIR}/powerlogo.gif
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 .for docfile in BUGS FAQ INSTALL NEWS README* UPGRADING
