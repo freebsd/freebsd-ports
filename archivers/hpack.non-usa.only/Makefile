@@ -4,12 +4,17 @@
 # Date created:         7 Jan 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1995/01/10 18:50:23 ache Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:43:24 jkh Exp $
 #
+
 DISTNAME=       hpack79src
-EXTRACT_SUFX=   .tar.Z
-MASTER_SITES=   ftp://src.doc.ic.ac.uk/packages/hpack/
+PKGNAME=        hpack-0.79a
 CATEGORIES+=	archivers
+MASTER_SITES=   ftp://src.doc.ic.ac.uk/packages/hpack/
+EXTRACT_SUFX=   .tar.Z
+
+MAINTAINER=     ache@FreeBSD.ORG
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=       makefile
 ALL_TARGET=     freebsd

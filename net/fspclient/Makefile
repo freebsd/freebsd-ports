@@ -3,14 +3,17 @@
 # Date created:         7 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1994/11/07 17:29:02 ache Exp $
+# $Id: Makefile,v 1.2 1995/04/01 12:47:55 jkh Exp $
 #
 
 DISTNAME=       fspclient.0.0-h+
-EXTRACT_SUFX=   .tar.z
-MASTER_SITES=   ftp://ftp.robots.ox.ac.uk/pub/ox.src/fspclient/
 CATEGORIES+=	networking
+MASTER_SITES=   ftp://ftp.robots.ox.ac.uk/pub/ox.src/fspclient/
+EXTRACT_SUFX=   .tar.z
+
+MAINTAINER=     ache@FreeBSD.ORG
+
 WRKSRC=		${WRKDIR}/fspclient
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

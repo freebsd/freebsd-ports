@@ -3,13 +3,16 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.19 1995/04/01 12:48:18 jkh Exp $
+# $Id: Makefile,v 1.20 1995/04/03 17:03:36 ache Exp $
 #
 
 DISTNAME=       ncftp-2.0.3
-EXTRACT_SUFX=   .tgz
-MASTER_SITES=   ftp://ftp.cs.unl.edu/pub/ncftp/
 CATEGORIES+=	networking
-GNU_CONFIGURE=  YES
+MASTER_SITES=   ftp://ftp.cs.unl.edu/pub/ncftp/
+EXTRACT_SUFX=   .tgz
+
+MAINTAINER=	ache@FreeBSD.ORG
+
+GNU_CONFIGURE=  yes
 
 .include <bsd.port.mk>
