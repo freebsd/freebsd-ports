@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emelfm2
-PORTVERSION=	0.0.4
+PORTVERSION=	0.0.5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://dasui.prima.de/~tooar/
 
