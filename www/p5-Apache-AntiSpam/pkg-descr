@@ -1,0 +1,10 @@
+    Apache::AntiSpam is a filter module to prevent e-mail addresses exposed
+    as is on web pages. The way to hide addresses from spammers are
+    implemented in each of Apache::Antispam::* subclasses.
+
+    This module is Filter aware, meaning that it can work within
+    Apache::Filter framework without modification.
+
+WWW: http://search.cpan.org/search?dist=Apache-AntiSpam
+
+- Erwin Lansing <erwin@lansing.dk>
