@@ -1,0 +1,11 @@
+--- ipaddr/Makefile.orig	Fri Feb 15 12:39:34 2002
++++ ipaddr/Makefile	Sat Nov 27 03:40:11 2004
+@@ -27,7 +27,7 @@
+ CC	= cc
+ CFLAGS	= -O2 -Wall
+
+-prefix	= /usr/local
++prefix	= ${PREFIX}
+ bindir	= $(prefix)/bin
+
+ SRCS	= ipaddr.c

@@ -1,0 +1,11 @@
+--- strpdate/Makefile.orig	Wed May 12 09:14:36 2004
++++ strpdate/Makefile	Sat Nov 27 03:40:53 2004
+@@ -27,7 +27,7 @@
+ CC	= cc
+ CFLAGS	= -O2 -Wall
+
+-prefix	= /usr/local
++prefix	= ${PREFIX}
+ bindir	= $(prefix)/bin
+
+ SRCS	= strpdate.c
