@@ -1,19 +1,21 @@
 bin/bakery-config
-include/bakery/App/App.h
-include/bakery/App/App_WithDoc.h
-include/bakery/App/Dialog_OfferSave.h
-include/bakery/Document/Document.h
-include/bakery/FileSelection/FileSelection.h
-include/bakery/View/View.h
-include/bakery/View/ViewBase.h
-include/bakery/View/View_Composite.h
-include/bakery/bakery.h
-lib/libbakery-0.7.so.4
+include/bakery-1.0/bakery/App/App.h
+include/bakery-1.0/bakery/App/App_WithDoc.h
+include/bakery-1.0/bakery/App/Dialog_OfferSave.h
+include/bakery-1.0/bakery/App/Dialog_OverwriteFile.h
+include/bakery-1.0/bakery/Document/Document.h
+include/bakery-1.0/bakery/FileSelection/FileSelection.h
+include/bakery-1.0/bakery/View/View.h
+include/bakery-1.0/bakery/View/ViewBase.h
+include/bakery-1.0/bakery/View/View_Composite.h
+include/bakery-1.0/bakery/bakery.h
 lib/libbakery.a
 lib/libbakery.so
+lib/libbakery-1.0.so.5
 share/aclocal/bakery.m4
-@dirrm include/bakery/View
-@dirrm include/bakery/FileSelection
-@dirrm include/bakery/Document
-@dirrm include/bakery/App
-@dirrm include/bakery
+@dirrm include/bakery-1.0/bakery/View
+@dirrm include/bakery-1.0/bakery/FileSelection
+@dirrm include/bakery-1.0/bakery/Document
+@dirrm include/bakery-1.0/bakery/App
+@dirrm include/bakery-1.0/bakery
+@dirrm include/bakery-1.0

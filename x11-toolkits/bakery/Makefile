@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bakery
-PORTVERSION=	0.7.0
+PORTVERSION=	1.0.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,17 +18,16 @@ LIB_DEPENDS=	gnomemm.9:${PORTSDIR}/x11-toolkits/gnome--
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
