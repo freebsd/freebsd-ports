@@ -3,7 +3,7 @@
 # Date created:		17 November 1997
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/02/03 11:11:48 asami Exp $
+# $Id: Makefile,v 1.6 1999/06/05 19:55:22 mharo Exp $
 #
 
 DISTNAME=	ja-netscape-3.04
@@ -85,4 +85,4 @@ post-install:
 # cf.	<http://www.bpel.tutics.tut.ac.jp/~take/>
 
 # This port is based on 'russian/netscape3.language(ru-netscape-3.01)'
-# by asami@FreeBSD.ORG
+# by asami@FreeBSD.org

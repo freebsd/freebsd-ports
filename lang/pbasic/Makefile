@@ -3,7 +3,7 @@
 # Date created:		13th August 1995
 # Whom:			Julian Stacey <jhs@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1996/11/19 01:17:45 asami Exp $
+# $Id: Makefile,v 1.7 1997/04/30 03:18:04 asami Exp $
 #
 
 DISTNAME=	pbasic-2.0-950813
@@ -11,7 +11,7 @@ PKGNAME=	pbasic-2.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 
-MAINTAINER=	asami@FreeBSD.ORG
+MAINTAINER=	asami@FreeBSD.org
 # Ask jhs@freebsd.org if you want newer sources or author's latest e-mail
 #  (which is currently "phil@gmrs.isar.de" but changes a lot)
 
