@@ -1,14 +1,69 @@
 bin/kmp3
-bin/kmp3player
 share/applnk/Multimedia/KMp3.kdelnk
-share/apps/kmp3/pics/dock_idle.xpm
-share/apps/kmp3/pics/dock_playing.xpm
-share/apps/kmp3/pics/logo.xpm
 share/icons/kmp3.xpm
 share/icons/mini/kmp3.xpm
-share/locale/de/LC_MESSAGES/kmp3.mo
-share/locale/es/LC_MESSAGES/kmp3.mo
+share/apps/kmp3/pics/add.xpm
+share/apps/kmp3/pics/addpl.xpm
+share/apps/kmp3/pics/clear.xpm
+share/apps/kmp3/pics/del.xpm
+share/apps/kmp3/pics/dock_idle.xpm
+share/apps/kmp3/pics/dock_idle2.xpm
+share/apps/kmp3/pics/dock_paused.xpm
+share/apps/kmp3/pics/dock_paused2.xpm
+share/apps/kmp3/pics/dock_playing.xpm
+share/apps/kmp3/pics/dock_playing2.xpm
+share/apps/kmp3/pics/down.xpm
+share/apps/kmp3/pics/logo.xpm
+share/apps/kmp3/pics/new.xpm
+share/apps/kmp3/pics/open.xpm
+share/apps/kmp3/pics/rename.xpm
+share/apps/kmp3/pics/save.xpm
+share/apps/kmp3/pics/saveas.xpm
+share/apps/kmp3/pics/shuff.xpm
+share/apps/kmp3/pics/up.xpm 
+share/apps/kmp3/plugins/plugMP3.so
+share/apps/kmp3/skins/.default/default_skin.xpm
+share/apps/kmp3/skins/winamp/Panic/cbuttons.bmp
+share/apps/kmp3/skins/winamp/Panic/eq_ex.bmp
+share/apps/kmp3/skins/winamp/Panic/eqmain.bmp
+share/apps/kmp3/skins/winamp/Panic/font.bmp
+share/apps/kmp3/skins/winamp/Panic/main.bmp
+share/apps/kmp3/skins/winamp/Panic/monoster.bmp
+share/apps/kmp3/skins/winamp/Panic/numbers.bmp
+share/apps/kmp3/skins/winamp/Panic/nums_ex.bmp
+share/apps/kmp3/skins/winamp/Panic/playpaus.bmp
+share/apps/kmp3/skins/winamp/Panic/pledit.bmp
+share/apps/kmp3/skins/winamp/Panic/pledit.txt
+share/apps/kmp3/skins/winamp/Panic/posbar.bmp
+share/apps/kmp3/skins/winamp/Panic/posbar_urk.bmp
+share/apps/kmp3/skins/winamp/Panic/shufrep.bmp
+share/apps/kmp3/skins/winamp/Panic/spec.bmp
+share/apps/kmp3/skins/winamp/Panic/text.bmp
+share/apps/kmp3/skins/winamp/Panic/titlebar.bmp
+share/apps/kmp3/skins/winamp/Panic/viscolor.txt
+share/apps/kmp3/skins/winamp/Panic/volume.bmp
+share/locale/cs/LC_MESSAGES/kmp3.mo
 share/locale/fr/LC_MESSAGES/kmp3.mo
+share/locale/fi/LC_MESSAGES/kmp3.mo
+share/locale/da/LC_MESSAGES/kmp3.mo
+share/locale/de/LC_MESSAGES/kmp3.mo
+share/locale/el/LC_MESSAGES/kmp3.mo
+share/locale/es/LC_MESSAGES/kmp3.mo
+share/locale/hu/LC_MESSAGES/kmp3.mo
+share/locale/hr/LC_MESSAGES/kmp3.mo
 share/locale/is/LC_MESSAGES/kmp3.mo
+share/locale/it/LC_MESSAGES/kmp3.mo
+share/locale/nl/LC_MESSAGES/kmp3.mo
+share/locale/no/LC_MESSAGES/kmp3.mo
+share/locale/pl/LC_MESSAGES/kmp3.mo
+share/locale/pt_BR/LC_MESSAGES/kmp3.mo
+share/locale/ro/LC_MESSAGES/kmp3.mo
+share/locale/ru/LC_MESSAGES/kmp3.mo
+share/apps/kmp3/formats
+@dirrm share/apps/kmp3/skins/.default
 @dirrm share/apps/kmp3/pics
+@dirrm share/apps/kmp3/skins/winamp/Panic
+@dirrm share/apps/kmp3/skins/winamp
+@dirrm share/apps/kmp3/plugins
+@dirrm share/apps/kmp3/skins
 @dirrm share/apps/kmp3

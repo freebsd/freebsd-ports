@@ -1,0 +1,14 @@
+--- src/mpeg/buffer.c	Sun Nov  7 17:17:03 1999
++++ src/mpeg/buffer.c	Sun Mar  5 13:28:11 2000
+@@ -63,11 +63,6 @@
+   for (;;) {
+     if (intflag) {
+       intflag = FALSE;
+-//#if defined(SOLARIS) || defined(__NetBSD__)
+-//      if (param.outmode == DECODE_AUDIO)
+-//	audio_queueflush (ai);
+-//#endif
+-//    xf->readindex = xf->freeindex;
+ #if defined(SOLARIS) || defined(__NetBSD__)
+ 	  if (param.outmode == DECODE_AUDIO)
+ 	      audio_queueflush (ai);
