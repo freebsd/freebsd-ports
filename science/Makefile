@@ -9,6 +9,7 @@
     SUBDIR += gchempaint
     SUBDIR += gchemutils
     SUBDIR += gdis
+    SUBDIR += ghemical
     SUBDIR += glens
     SUBDIR += libctl
     SUBDIR += libsvm

@@ -1,0 +1,8 @@
+Ghemical is a computational chemistry software package, 
+
+Ghemical relies on external code to provide the quantum-mechanical calculations.
+Semi-empirical methods MNDO, MINDO/3, AM1 and PM3 come from the MOPAC7 package,
+and are included in the source distribution. The
+MPQC package (GNU GPL) is used to provide ab initio methods.
+
+WWW: http://www.uku.fi/~thassine/ghemical/

@@ -1,0 +1,15 @@
+--- src/common/Makefile.in~	Thu Jun 20 06:19:02 2002
++++ src/common/Makefile.in	Wed Jul 17 21:39:28 2002
+@@ -24,7 +24,11 @@
+ 		-I$(top_srcdir)/src/common \
+ 		-I$(top_srcdir)/openbabel \
+ 		-I$(top_builddir)/src \
+-		@SC_CPPFLAGS@
++		@SC_CPPFLAGS@ \
++		@GTK_CFLAGS@ \
++		@GNOME_INCLUDEDIR@ \
++		@GTKGL_CFLAGS@ \
++		@LIBGLADE_INCLUDES@
+ LIBS=		@LIBS@
+ 
+ CFLAGS=		@CFLAGS@
