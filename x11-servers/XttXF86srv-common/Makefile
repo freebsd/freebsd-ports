@@ -8,9 +8,9 @@
 PORTNAME?=	xtt-common
 PORTVERSION=	${VERSION}.${PATCHLEVEL}
 CATEGORIES=	x11-servers
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.6/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/3.3.6/source/ \
+MASTER_SITES=	${MASTER_SITE_XFREE} \
 		http://X-TT.dsl.gr.jp/dists/1.x/${VERSION}/
+MASTER_SITE_SUBDIR=	3.3.6
 DISTFILES=	X336src-1.tgz xtt-${VERSION}.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
