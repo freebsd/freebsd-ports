@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.38 1996/12/08 22:27:01 obrien Exp $
+# $Id: Makefile,v 1.39 1996/12/11 22:52:31 obrien Exp $
 #
 
     SUBDIR += SWIG
@@ -11,6 +11,7 @@
     SUBDIR += dmake
     SUBDIR += gcc11
     SUBDIR += gdb
+    SUBDIR += gdbtk
     SUBDIR += gmake
     SUBDIR += id-utils
     SUBDIR += lclint
