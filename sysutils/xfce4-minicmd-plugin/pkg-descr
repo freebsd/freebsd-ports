@@ -1,0 +1,3 @@
+Displays a mini-command line on the xfce4-panel.  Uses the same history file as
+xfrun4.  Use <Up> and <Down> to scroll through history.  <Enter> executes the
+command and <Ctrl>-<Enter> executes the command in a terminal.
