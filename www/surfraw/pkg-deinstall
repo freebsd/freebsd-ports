@@ -37,12 +37,12 @@ fi
 #
 case $2 in
     DEINSTALL)
+        : nothing to deinstall for this port
+	;;
+    POST-DEINSTALL)
 	if [ -f ${CONFIG_FILE} ]; then
 	    do_notice "$1"
 	fi
-	;;
-    POST-DEINSTALL)
-        : nothing to post-deinstall for this port
         ;;
     *)
 	echo "usage: $0 distname { DEINSTALL | POST-DEINSTALL }" >&2
