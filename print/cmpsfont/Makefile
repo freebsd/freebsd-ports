@@ -8,7 +8,7 @@
 PORTNAME=	cmpsfont
 PORTVERSION=	1.0
 PORTREVISION=	1
-CATEGORIES=	print
+CATEGORIES=	print x11-fonts
 MASTER_SITES=	ftp://ftp.ams.org/pub/tex/psfonts/cm/
 DISTNAME=	cmps
 EXTRACT_SUFX=	-unix.tar.gz
@@ -18,13 +18,15 @@ COMMENT=	Computer Modern PostScript Fonts (Adobe Type 1 format)
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 
+SUB_FILES=	pkg-message
+
 WRKSRC=		${WRKDIR}/cmpsfont
-TEXDIR=		${PREFIX}/share/texmf
+TEXDIR?=	${PREFIX}/share/texmf
 
 IGNORE=		is already included in the teTeX distribution
 
 do-build:
-	(cd ${WRKSRC}/pfb; ${LOCALBASE}/bin/type1inst -nolog -q)
+	(cd ${WRKSRC}/pfb; ${LOCALBASE}/bin/type1inst -nolog)
 
 do-install:
 	@${MKDIR} ${TEXDIR}/fonts/type1
@@ -33,8 +35,11 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/afm/* ${PREFIX}/lib/afm
 
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cmpsfont
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/cmpsfont
+	@${MKDIR} ${DOCSDIR}/cmpsfont
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/cmpsfont
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

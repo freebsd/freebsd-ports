@@ -1,0 +1,15 @@
+============================================================
+Computer Modern Postscript fonts have been installed!
+============================================================
+
+Please add	%%PREFIX%%/share/texmf/fonts/type1
+to your X11 fonts path by either:
+
+$ xset fp+  %%PREFIX%%/share/texmf/fonts/type1
+$ xset fp rehash
+
+or by adding it to your X-server configuration file.
+Other utilities, like ghostscript, will probably also need
+configuration.
+
+============================================================

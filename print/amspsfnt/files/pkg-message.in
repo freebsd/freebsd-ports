@@ -1,0 +1,15 @@
+============================================================
+American Math Society Postscript fonts have been installed!
+============================================================
+
+Please add	%%PREFIX%%/share/texmf/fonts/ams
+to your X11 fonts path by either:
+
+$ xset fp+  %%PREFIX%%/share/texmf/fonts/ams
+$ xset fp rehash
+
+or by adding it to your X-server configuration file.
+Other utilities, like ghostscript, may also need
+additional configuration.
+
+============================================================

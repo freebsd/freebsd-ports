@@ -92,7 +92,7 @@ lib/afm/logo8.afm
 lib/afm/logo9.afm
 lib/afm/logobf10.afm
 lib/afm/logosl10.afm
-%%PORTDOCS%%share/doc/cmpsfont/README
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/texmf/fonts/type1/Fontmap
 share/texmf/fonts/type1/cmb10.pfb
 share/texmf/fonts/type1/cmbsy10.pfb
@@ -191,5 +191,5 @@ share/texmf/fonts/type1/logo9.pfb
 share/texmf/fonts/type1/logobf10.pfb
 share/texmf/fonts/type1/logosl10.pfb
 @dirrm lib/afm
-%%PORTDOCS%%@dirrm share/doc/cmpsfont
-@unexec rmdir share/texmf/fonts/type1 2>/dev/null || true
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %D/share/texmf/fonts/type1 2>/dev/null || true
