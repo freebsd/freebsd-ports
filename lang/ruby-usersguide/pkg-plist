@@ -28,6 +28,7 @@
 %%RUBY_DOCDIR%%/ruby-usersguide/redefinemethods.html
 %%RUBY_DOCDIR%%/ruby-usersguide/regexp.html
 %%RUBY_DOCDIR%%/ruby-usersguide/rescue.html
+%%RUBY_DOCDIR%%/ruby-usersguide/rubyguide.html
 %%RUBY_DOCDIR%%/ruby-usersguide/singletonmethods.html
 %%RUBY_DOCDIR%%/ruby-usersguide/strings.html
 %%RUBY_DOCDIR%%/ruby-usersguide/variables.html
