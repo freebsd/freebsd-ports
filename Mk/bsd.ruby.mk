@@ -392,21 +392,30 @@ RUN_DEPENDS+=		${DEPEND_RUBY}
 .if defined(USE_RUBY_FEATURES)
 shim=	${USE_RUBY_FEATURES:Mbenchmark} \
 	${USE_RUBY_FEATURES:Mbigdecimal} \
+	${USE_RUBY_FEATURES:Mdevel-logger} \
 	${USE_RUBY_FEATURES:Mdl} \
+	${USE_RUBY_FEATURES:Mdrb} \
 	${USE_RUBY_FEATURES:Merb} \
 	${USE_RUBY_FEATURES:Mfileutils} \
+	${USE_RUBY_FEATURES:Mgserver} \
 	${USE_RUBY_FEATURES:Mipaddr} \
 	${USE_RUBY_FEATURES:Mopen-uri} \
+	${USE_RUBY_FEATURES:Mopenssl} \
 	${USE_RUBY_FEATURES:Moptparse} \
 	${USE_RUBY_FEATURES:Mpp} \
 	${USE_RUBY_FEATURES:Mracc-runtime} \
+	${USE_RUBY_FEATURES:Mrexml} \
 	${USE_RUBY_FEATURES:Mruby18} \
 	${USE_RUBY_FEATURES:Mrunit} \
 	${USE_RUBY_FEATURES:Mset} \
+	${USE_RUBY_FEATURES:Msoap} \
 	${USE_RUBY_FEATURES:Mstringio} \
 	${USE_RUBY_FEATURES:Mstrscan} \
 	${USE_RUBY_FEATURES:Mtestunit} \
 	${USE_RUBY_FEATURES:Mtsort} \
+	${USE_RUBY_FEATURES:Mwebrick} \
+	${USE_RUBY_FEATURES:Mxmlrpc} \
+	${USE_RUBY_FEATURES:Myaml} \
 	${USE_RUBY_FEATURES:Mzlib}
 .if !empty(shim) && ${RUBY_VER} <= 1.6
 BUILD_DEPENDS+=		${DEPEND_RUBY_SHIM18}
