@@ -6,6 +6,7 @@ cannum front end and some others.
 
     canna=/usr/local/canna/bin/cannaserver
     if [ -f $canna ]; then
+      rm -f /var/spool/canna/lock/.CANNALOCK*
       echo -n " Canna"; $canna
     fi
 
