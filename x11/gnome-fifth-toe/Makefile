@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-fifth-toe
 PORTVERSION=	1.4.1b2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -36,7 +36,8 @@ RUN_DEPENDS=	gabber:${PORTSDIR}/net/gabber \
 		anjuta:${PORTSDIR}/devel/anjuta \
 		guppi-gnumeric:${PORTSDIR}/math/guppi \
 		gnomoku:${PORTSDIR}/games/gnomoku \
-		evolution:${PORTSDIR}/mail/evolution
+		evolution:${PORTSDIR}/mail/evolution \
+		gfax:${PORTSDIR}/comms/gfax
 
 # We're still missing a few things from the "official" distribution
 # All can be found in stable/sources on MASTER_SITE_GNOME
