@@ -61,7 +61,9 @@ include/directfb-internal/misc/tree.h
 include/directfb-internal/misc/utf8.h
 include/directfb-internal/misc/util.h
 include/directfb-internal/windows/idirectfbwindow.h
+lib/libdirectfb-0.9.so
 lib/libdirectfb-0.9.so.16
+lib/libdirectfb.la
 lib/libdirectfb.so
 lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBFont/libidirectfbfont_default.la
 lib/directfb-%%DIRECTFB_VERSION%%/interfaces/IDirectFBFont/libidirectfbfont_default.so
