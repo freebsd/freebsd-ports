@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	mtv
-PORTVERSION=	1.1.0.20
+PORTVERSION=	1.1.1.0
+
 CATEGORIES=	graphics linux
 MASTER_SITES=	ftp://ftp.mpegtv.com/pub/mpeg/mpegtv/player/x86-unknown-linux-glibc/packages/TGZ/
-DISTFILES=	mtv-1.1.0.20.tar.gz libSDLx11.so.tar.gz
+DISTFILES=	mtv-1.1.1.0.tar.gz libSDLx11.so.tar.gz
 
 MAINTAINER=	kris@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
 
-EXTRACT_ONLY=	mtv-1.1.0.20.tar.gz
+EXTRACT_ONLY=	mtv-1.1.1.0.tar.gz
 NO_PACKAGE=	"No redistribution"
 NO_CDROM=	"No redistribution"
 NO_BUILD=	yes
