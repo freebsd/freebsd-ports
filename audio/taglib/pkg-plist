@@ -1,5 +1,6 @@
 bin/taglib-config
 include/taglib/apefooter.h
+include/taglib/apeitem.h
 include/taglib/apetag.h
 include/taglib/attachedpictureframe.h
 include/taglib/audioproperties.h
