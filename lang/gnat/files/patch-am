@@ -1,6 +1,6 @@
---- ada/g-os_lib.adb.orig	Wed Jul 19 15:09:39 2000
-+++ ada/g-os_lib.adb	Fri Oct 13 09:09:33 2000
-@@ -173,25 +173,12 @@
+--- ada/g-os_lib.adb.orig	Fri Feb  1 23:18:26 2002
++++ ada/g-os_lib.adb	Fri Feb  1 23:22:08 2002
+@@ -192,26 +192,13 @@
       (FD   : out File_Descriptor;
        Name : out Temp_File_Name)
     is
@@ -16,7 +16,8 @@
 +      pragma Import (C, Open_New_Temp, "mkstemp");
  
     begin
-       Name := "GNAT-XXXXXX" & ASCII.NUL;
+       Name (1 .. Temp_File_Len - 1) := "GNAT-XXXXXX";
+       Name (Temp_File_Len)          := ASCII.NUL;
 -
 -      --  Check for NULL pointer returned by C
 -
