@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.63 1998/06/08 11:12:38 dburr Exp $
+# $Id: Makefile,v 1.64 1998/06/14 17:35:00 andreas Exp $
 #
 
     SUBDIR += adcomplain
@@ -24,6 +24,7 @@
     SUBDIR += mew
     SUBDIR += mew-common
     SUBDIR += mew-mule
+    SUBDIR += mew-xemacs
     SUBDIR += mh
     SUBDIR += mmr
     SUBDIR += movemail
