@@ -24,6 +24,7 @@ share/rdesktop/keymaps/de
 share/rdesktop/keymaps/da
 share/rdesktop/keymaps/pt-br
 share/rdesktop/keymaps/common
+share/rdesktop/keymaps/convert-map
 share/rdesktop/keymaps/modifiers
 @unexec rmdir %D/share/rdesktop/keymaps 2>/dev/null || true
 @unexec rmdir %D/share/rdesktop 2>/dev/null || true
