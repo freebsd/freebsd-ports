@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	devel
+PORTREVISION=	1
 
 GST_PLUGIN=	gconf
 

@@ -68,7 +68,6 @@ GST_ALL_PLUGINS= \
 		sidplay \
 		smoothwave \
 		sndfile \
-		sunaudio \
 		speex \
 		swfdec \
 		tarkin \
@@ -193,7 +192,8 @@ PLIST_FILES=	include/gstreamer-0.8/gst/gconf/gconf.h \
 		lib/libgstgconf-0.8.a \
 		lib/libgstgconf-0.8.so \
 		lib/libgstgconf-0.8.so.1 \
-		libdata/pkgconfig/gstreamer-gconf-0.8.pc
+		libdata/pkgconfig/gstreamer-gconf-0.8.pc \
+		'@unexec rmdir %D/include/gstreamer-0.8/gst/gconf 2>/dev/null || true'
 .endif
 
 # gdkpixbuf
