@@ -38,7 +38,7 @@ if [ ! -r ${samba_config} ]; then
     esac
 fi
 
-if checkyesno samba_enable; then
+if test -n ${samba_enable:-} && checkyesno samba_enable; then
     nmbd_enable=${nmbd_enable:-"YES"}
     smbd_enable=${smbd_enable:-"YES"}
 %%WINBIND%%    winbindd_enable=${winbindd_enable:-"YES"}
