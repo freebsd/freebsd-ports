@@ -6,17 +6,22 @@
 #
 
 PORTNAME=	libapreq
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	www perl5 devel
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=     ../../authors/id/J/JI/JIMW/
+MASTER_SITE_SUBDIR=     Apache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Generic Apache Request Library
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+.if defined(WITH_MODPERL2)
+IGNORE=		"This port does not support mod_perl2"
+.else
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		${SITE_PERL}/Apache/Test.pm::${PORTSDIR}/www/p5-Apache-Test
+.endif
 
 PERL_CONFIGURE=	yes
 
@@ -24,7 +29,7 @@ MAN3=		Apache::Cookie.3 Apache::Request.3 Apache::libapreq.3 \
 		libapreq.3
 
 post-patch:
-	@${PERL} -pi~ -e '$$_="" if $$. >8 && $$. <27' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi~ -e '$$_="" if $$. >32 && $$. <50' ${WRKSRC}/Makefile.PL
 
 post-install:
 .ifndef(NOPORTDOCS)
