@@ -20,7 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free CAD system and applications development tool
 
 .ifndef	NOPORTDOCS
-EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS+=		unzip:${PORTSDIR}/archivers/unzip
 .endif
 
 USE_GL=		yes
