@@ -1,0 +1,8 @@
+chk4mail - a utility to quickly check multiple folders for new mail
+
+This program lists the number of read and unread emails in the folders
+in your maildirectory and your incoming mailfolder.
+The chkimap program can be used to do the same on a remote IMAP server.
+
+The source code is available from:
+	ftp.stack.nl:/pub/users/johans/chk4mail/
