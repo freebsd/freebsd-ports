@@ -1,0 +1,18 @@
+bin/docsis
+share/examples/docsis/docsis20.cfg
+share/examples/docsis/docsis20_no_snmp.cfg
+share/examples/docsis/example-non-rfc2669.cfg
+share/examples/docsis/example.cfg
+share/examples/docsis/hoof-lab.cfg
+share/examples/docsis/hoof-lab1.cfg
+share/examples/docsis/keyfile
+share/examples/docsis/modem-b.cfg
+share/examples/docsis/modem-oid.cfg
+share/examples/docsis/modem-text.cfg
+share/examples/docsis/modem.cfg
+share/examples/docsis/modem1.cfg
+share/examples/docsis/rolab-oid.cfg
+share/examples/docsis/rolab-text.cfg
+share/examples/docsis/snmp20.cfg
+share/examples/docsis/testkey.key
+@dirrm share/examples/docsis

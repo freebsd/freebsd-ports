@@ -101,6 +101,7 @@
     SUBDIR += dnsutl
     SUBDIR += dnswalk
     SUBDIR += doc
+    SUBDIR += docsis
     SUBDIR += domtools
     SUBDIR += driftnet
     SUBDIR += easysoap
