@@ -106,6 +106,12 @@ LOCALPCAPFILES=	include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
 		lib/libpcap.a
 WRKPCAPDIR=	${WRKDIR}/libpcap-0.8.3
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 503000
+BROKEN=		"Broken dependency"
+.endif
+
 # When building tcpdump against a particular pcap version, it expects to
 # find a built, untarred source tree in the parent of the work tree.
 # Build a symlink farm which points to the installed versions of the
@@ -123,4 +129,4 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
