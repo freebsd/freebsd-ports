@@ -20,6 +20,7 @@
     SUBDIR += enlightenment
     SUBDIR += epplets
     SUBDIR += evilwm
+    SUBDIR += fluxbox
     SUBDIR += flwm
     SUBDIR += fvwm
     SUBDIR += fvwm-themes
