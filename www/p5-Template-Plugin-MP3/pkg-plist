@@ -1,4 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/MP3/.packlist
 %%SITE_PERL%%/Template/Plugin/MP3.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/MP3
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Template/Plugin 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Template 2>/dev/null || true
