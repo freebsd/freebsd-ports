@@ -116,7 +116,7 @@ ORBit2		ports/devel/ORBit2
 OpenEXR		ports/graphics/OpenEXR
 PDL		ports/math/PDL
 PicMonger	ports/news/PicMonger
-QNetChess	ports/games/QNetChess
+qnetchess	ports/games/qnetchess
 R		ports/math/R
 SETIsupport	ports/astro/SETIsupport
 STk		ports/lang/STk
