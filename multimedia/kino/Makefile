@@ -27,7 +27,8 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 CONFIGURE_ENV=	CPPFLAGS=-"I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"	\
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAN1=	kino.1
 
 .include <bsd.port.mk>
