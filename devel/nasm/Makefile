@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nasm
-PORTVERSION=	0.98.38
-PORTREVISION=	2
+PORTVERSION=	0.98.39
 PORTEPOCH=	1
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -17,6 +16,7 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 assembler
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	VERSION=${PORTVERSION}
@@ -24,6 +24,9 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 PLIST_FILES=	bin/nasm bin/nasm-%%VERSION%% bin/ndisasm
 
 MAN1=		nasm.1 ndisasm.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-std=c99||' ${WRKSRC}/configure
 
 post-install:
 	${LN} -sf nasm ${PREFIX}/bin/${DISTNAME}
