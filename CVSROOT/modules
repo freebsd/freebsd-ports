@@ -8910,7 +8910,7 @@ salias		ports/misc/salias
 sam		ports/editors/sam
 sam2p		ports/graphics/sam2p
 samba		ports/net/samba
-samba-devel	ports/net/samba-devel
+samba3		ports/net/samba3
 samba-libsmbclient	ports/net/samba-libsmbclient
 samba-vscan	ports/security/samba-vscan
 sambasentinel	ports/net/sambasentinel
