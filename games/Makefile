@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.135 1998/05/15 12:16:29 tg Exp $
+# $Id: Makefile,v 1.136 1998/05/15 12:34:47 tg Exp $
 #
 
     SUBDIR += 3dc
@@ -38,6 +38,7 @@
     SUBDIR += ladder
     SUBDIR += libshhcards
     SUBDIR += lincity
+    SUBDIR += maelstrom
     SUBDIR += nethack
     SUBDIR += nethack-qt
     SUBDIR += netris
