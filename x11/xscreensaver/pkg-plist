@@ -26,6 +26,7 @@ bin/xscreensaver-hacks/compass
 bin/xscreensaver-hacks/coral
 bin/xscreensaver-hacks/critical
 bin/xscreensaver-hacks/crystal
+bin/xscreensaver-hacks/cubenetic
 bin/xscreensaver-hacks/cynosure
 bin/xscreensaver-hacks/dangerball
 bin/xscreensaver-hacks/decayscreen
@@ -44,6 +45,7 @@ bin/xscreensaver-hacks/flag
 bin/xscreensaver-hacks/flame
 bin/xscreensaver-hacks/flipscreen3d
 bin/xscreensaver-hacks/flow
+bin/xscreensaver-hacks/fluidballs
 bin/xscreensaver-hacks/forest
 bin/xscreensaver-hacks/galaxy
 bin/xscreensaver-hacks/gears
@@ -177,6 +179,7 @@ share/xscreensaver/config/coral.xml
 share/xscreensaver/config/cosmos.xml
 share/xscreensaver/config/critical.xml
 share/xscreensaver/config/crystal.xml
+share/xscreensaver/config/cubenetic.xml
 share/xscreensaver/config/cynosure.xml
 share/xscreensaver/config/dangerball.xml
 share/xscreensaver/config/decayscreen.xml
