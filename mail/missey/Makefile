@@ -1,0 +1,27 @@
+# New ports collection makefile for:	missey
+# Date created:				30 April 2004
+# Whom:					delphij@FreeBSD.org.cn
+#
+# $FreeBSD$
+#
+
+PORTNAME=	missey
+PORTVERSION=	1.1.0
+CATEGORIES=	mail
+MASTER_SITES=	http://snofe.dot66.net/missey/
+
+MAINTAINER=	delphij@FreeBSD.org.cn
+COMMENT=	Secure small and high performance POP3 server
+
+USE_BZIP2=	yes
+
+WRKSRC=		${WRKDIR}/missey/src
+
+MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PREFIX="$(PREFIX)" INSTALL_PROGRAM="$(INSTALL_PROGRAM)" \
+		INSTALL_DATA="$(INSTALL_DATA)" MKDIR="$(MKDIR)" WRKSRC="$(WRKSRC)"
+
+post-patch:
+	@${CP}	${FILESDIR}/Makefile ${WRKSRC}/Makefile
+
+.include <bsd.port.mk>

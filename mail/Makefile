@@ -178,6 +178,7 @@
     SUBDIR += mimedefang
     SUBDIR += mini_sendmail
     SUBDIR += minimalist
+    SUBDIR += missey
     SUBDIR += ml
     SUBDIR += mls
     SUBDIR += mmc
