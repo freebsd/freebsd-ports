@@ -45,7 +45,6 @@
     SUBDIR += lib765
     SUBDIR += libspectrum
     SUBDIR += libvm68k
-    SUBDIR += linux-ePSXe
     SUBDIR += linux-geepee32
     SUBDIR += linux-mupen64
     SUBDIR += linux-peops-softgpu

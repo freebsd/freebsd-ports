@@ -537,7 +537,6 @@
     SUBDIR += ruby-tmpl
     SUBDIR += ruby-webunit
     SUBDIR += sarg
-    SUBDIR += scoop
     SUBDIR += scout
     SUBDIR += screem
     SUBDIR += sidplug
