@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \
 		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	support/xpdf
 
-MAINTAINER=	DougB@FreeBSD.org
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Display PDF files, and convert them to other formats
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
