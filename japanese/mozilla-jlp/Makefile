@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 #PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
-MASTER_SITES=	http://www.ash.ne.jp/~mal/mozilla/ \
-		http://dev.jp/ \
-		${MASTER_SITE_SOURCEFORGE} \
-		http://ryuzi.dyndns.org/ \
-		ftp://takuomix.homeip.net/pub/jlp/ \
-		http://www.mozilla.gr.jp/jlp/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www2.starcat.ne.jp/~unha/jlp/
 MASTER_SITE_SUBDIR=	jlpmoz
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}1.0-jajppack-2
+DISTNAME=	${PORTNAME}1.0.1rc1-jajppack-kv0.10
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
@@ -55,6 +51,8 @@ do-install:
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
 	${MV} -f unix.js unix.js.orig)
+	(cd ${PREFIX}/lib/mozilla/components; \
+	${MV} -f xpti.dat ../xpti.dat.orig)
 	${MV} -f ${PREFIX}/bin/mozilla ${PREFIX}/bin/mozilla.orig
 	${INSTALL_SCRIPT} ${WRKDIR}/mozilla ${PREFIX}/bin
 	(cd ${WRKDIR}/sp; ${TAR} -cf - *) | \
