@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wxgtk
-PORTVERSION=	2.3.0
+PORTVERSION=	2.2.7
+PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
-MASTER_SITE_SUBDIR=	wxpython
+MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/ \
+		http://www.mirror.ac.uk/sites/wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
 DISTNAME=	wxGTK-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -33,8 +33,7 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} \
 			  -I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib \
-			 -L${X11BASE}/lib" \
-		GTK_CONFIG_2_0="no"
+			 -L${X11BASE}/lib -lm"
 
 pre-patch:
 	@${PERL} -pi -e 's|-l\$$THREADS_LIB|${PTHREAD_LIBS}|g ; \
