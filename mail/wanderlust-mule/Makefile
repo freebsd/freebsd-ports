@@ -10,7 +10,7 @@ MAINTAINER=	nobutaka@nobutaka.com
 MASTERDIR=	${.CURDIR}/../../mail/wanderlust-emacs
 
 EMACS_NAME=		mule
-EMACS_PORT=		mule
+EMACS_PORT_NAME=	mule
 EMACS_VER=		19.34
 MULE_VER=		2.3
 EMACS_LIBDIR=		share/mule
