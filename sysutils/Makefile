@@ -82,6 +82,7 @@
     SUBDIR += symlinks
     SUBDIR += syslog-ng
     SUBDIR += tcplist
+    SUBDIR += truncate
     SUBDIR += tua
     SUBDIR += ucspi-tcp
     SUBDIR += upsd
