@@ -1,23 +1,5 @@
---- lib/font.c.orig	Sun Apr  2 18:56:50 2000
-+++ lib/font.c	Sun Apr  2 18:57:54 2000
-@@ -35,6 +35,7 @@
-     struct shmid_ds shmseg;
- 
-     shmkey = ftok(CONFIG_NAME, fnum);
-+    shmkey = 5000 + (fnum & 0x7F);
-     if ((shmid = shmget(shmkey, sizeof(struct fontInfo), 0444)) < 0)
- 	return;
-     shmctl(shmid, IPC_STAT, &shmseg);
-@@ -50,6 +51,7 @@
-     int shmid;
- 
-     shmkey = ftok(CONFIG_NAME, fnum);
-+    shmkey = 5000 + (fnum & 0x7F);
-     if ((shmid = shmget(shmkey, sizeof(struct fontInfo), 0444)) < 0) return(0);
-     return((u_char*)shmat(shmid, 0, SHM_RDONLY));
- }
---- fld/fld.c.orig	Sun Apr  2 18:59:37 2000
-+++ fld/fld.c	Sun Apr  2 19:01:18 2000
+--- fld/fld.c.orig	Wed May 20 17:49:32 1998
++++ fld/fld.c	Tue Nov 26 11:45:51 2002
 @@ -55,7 +55,7 @@
  	int	shmid;
  	struct shmid_ds shmseg;
