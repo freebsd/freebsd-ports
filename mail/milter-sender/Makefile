@@ -6,7 +6,7 @@
 #
 
 PORTNAME=       milter-sender
-PORTVERSION=    0.48
+PORTVERSION=    0.49
 CATEGORIES=     mail
 MASTER_SITES=   http://www.snert.com/Software/download/
 DISTFILES=      libsnert-1.29.tgz milter-sender-${PORTVERSION}.tgz
