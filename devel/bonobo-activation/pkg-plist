@@ -78,6 +78,7 @@ share/locale/cs/LC_MESSAGES/bonobo-activation.mo
 share/locale/da/LC_MESSAGES/bonobo-activation.mo
 share/locale/de/LC_MESSAGES/bonobo-activation.mo
 share/locale/el/LC_MESSAGES/bonobo-activation.mo
+share/locale/eo/LC_MESSAGES/bonobo-activation.mo
 share/locale/es/LC_MESSAGES/bonobo-activation.mo
 share/locale/fa/LC_MESSAGES/bonobo-activation.mo
 share/locale/fi/LC_MESSAGES/bonobo-activation.mo
@@ -93,6 +94,7 @@ share/locale/ja/LC_MESSAGES/bonobo-activation.mo
 share/locale/ko/LC_MESSAGES/bonobo-activation.mo
 share/locale/lv/LC_MESSAGES/bonobo-activation.mo
 share/locale/mk/LC_MESSAGES/bonobo-activation.mo
+share/locale/ml/LC_MESSAGES/bonobo-activation.mo
 share/locale/mn/LC_MESSAGES/bonobo-activation.mo
 share/locale/ms/LC_MESSAGES/bonobo-activation.mo
 share/locale/nl/LC_MESSAGES/bonobo-activation.mo
@@ -106,12 +108,15 @@ share/locale/ru/LC_MESSAGES/bonobo-activation.mo
 share/locale/sk/LC_MESSAGES/bonobo-activation.mo
 share/locale/sl/LC_MESSAGES/bonobo-activation.mo
 share/locale/sq/LC_MESSAGES/bonobo-activation.mo
+share/locale/sr/LC_MESSAGES/bonobo-activation.mo
+share/locale/sr@Latn/LC_MESSAGES/bonobo-activation.mo
 share/locale/sv/LC_MESSAGES/bonobo-activation.mo
 share/locale/ta/LC_MESSAGES/bonobo-activation.mo
 share/locale/tr/LC_MESSAGES/bonobo-activation.mo
 share/locale/uk/LC_MESSAGES/bonobo-activation.mo
 share/locale/vi/LC_MESSAGES/bonobo-activation.mo
 share/locale/wa/LC_MESSAGES/bonobo-activation.mo
+share/locale/yi/LC_MESSAGES/bonobo-activation.mo
 share/locale/zh_CN/LC_MESSAGES/bonobo-activation.mo
 share/locale/zh_TW/LC_MESSAGES/bonobo-activation.mo
 @dirrm share/idl/bonobo-activation-2.0

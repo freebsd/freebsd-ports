@@ -1,11 +1,11 @@
---- server/Makefile.in.orig	Fri Mar 14 19:52:50 2003
-+++ server/Makefile.in	Fri Mar 14 19:58:12 2003
-@@ -152,7 +152,7 @@
- libexec_PROGRAMS = bonobo-activation-server
- noinst_PROGRAMS = test-performance
- 
--INCLUDES =  	-I$(top_srcdir) 				-I$(top_builddir) 				-I$(top_builddir)/bonobo-activation		-I$(top_srcdir)/bonobo-activation		-DSERVERINFODIR=\"$(prefix)/libdata/bonobo/servers\"         -DSERVER_LOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\" 	$(SERVER_CFLAGS)				-DSERVER_CONFDIR=\"$(sysconfdir)\"		-DG_DISABLE_DEPRECATED				$(NULL)
-+INCLUDES =  	-I$(top_srcdir) 				-I$(top_builddir) 				-I$(top_builddir)/bonobo-activation		-I$(top_srcdir)/bonobo-activation		-DSERVERINFODIR=\"$(prefix)/libdata/bonobo/servers:${X11BASE}/libdata/bonobo/servers:${LOCALBASE}/libdata/bonobo/servers\"         -DSERVER_LOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\" 	$(SERVER_CFLAGS)				-DSERVER_CONFDIR=\"$(sysconfdir)\"		-DG_DISABLE_DEPRECATED				$(NULL)
- 
- 
- bonobo_activation_server_SOURCES =  	activation-server-corba-extensions.c				activation-server-corba-extensions.h				activation-context-query.h					activation-context-query.c					activation-context-query-lexer.c				activation-context-query-parser.c				activation-context-query-parser.h				activation-context-corba.c					object-directory-corba.c					object-directory-load.c						object-directory-activate.c					object-directory-config-file.c					object-directory-config-file.h					activation-server-main.c					server.h
+--- server/Makefile.in.orig	Mon May 26 20:51:01 2003
++++ server/Makefile.in	Mon May 26 20:51:23 2003
+@@ -169,7 +169,7 @@
+ 	-I$(top_builddir) 			\
+ 	-I$(top_builddir)/bonobo-activation	\
+ 	-I$(top_srcdir)/bonobo-activation	\
+-	-DSERVERINFODIR=\"$(prefix)/libdata/bonobo/servers\" \
++	-DSERVERINFODIR=\"$(prefix)/libdata/bonobo/servers:${X11BASE}/libdata/bonobo/servers:${LOCALBASE}/libdata/bonobo/servers\" \
+         -DSERVER_LOCALEDIR=\""${prefix}/${DATADIRNAME}/locale"\" \
+ 	$(SERVER_CFLAGS)			\
+ 	-DSERVER_CONFDIR=\"$(sysconfdir)\"	\

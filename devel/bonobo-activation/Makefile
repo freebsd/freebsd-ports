@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bonobo-activation
-PORTVERSION=	2.2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
@@ -15,7 +14,7 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	An object activation framework for GNOME 2.0
+COMMENT=	An object activation framework for GNOME 2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
