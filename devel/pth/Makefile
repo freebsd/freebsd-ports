@@ -1,19 +1,21 @@
 # New ports collection makefile for:   pth
-# Version required:		1.0b4
+# Version required:		1.0b5
 # Date Created:			23 May 1999
 # Whom:				Ralf S. Engelschall
 #
-# $Id: Makefile,v 1.17 1999/07/07 19:57:59 rse Exp $
+# $Id: Makefile,v 1.18 1999/07/08 11:08:13 rse Exp $
 #
 
-DISTNAME=	pth-1.0b4
+DISTNAME=	pth-1.0b5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/pth/
 
 MAINTAINER=	rse@engelschall.com
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-batch
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--enable-syscall-soft \
+		--enable-batch
 
 MAN1=		pth-config.1
 MAN3=		pth.3
