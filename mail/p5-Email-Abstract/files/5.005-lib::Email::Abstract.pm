@@ -7,8 +7,8 @@
 -use 5.006;
  use strict;
  use warnings;
--our $VERSION = '1.0';
-+use vars '$VERSION'; $VERSION = '1.0';
+-our $VERSION = '2.0';
++use vars '$VERSION'; $VERSION = '2.0';
  use Module::Pluggable search_path => [ __PACKAGE__ ], require => 1;
  my @plugins = __PACKAGE__->plugins(); # Requires them.
  for my $func (qw(get_header get_body 
