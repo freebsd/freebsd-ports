@@ -171,7 +171,7 @@ pre-install:
 	@${ECHO_CMD} @cwd ${PREFIX} >>${PLIST}
 	@${ECHO_CMD} @dirrm share/doc/${PORTNAME} >>${PLIST}
 .endif
-	@$(PKGINSTALL_ENV) ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SETENV} ${PKGINSTALL_ENV} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(NO_AUTOKEY)
