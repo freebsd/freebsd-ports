@@ -4,11 +4,11 @@
 # Date created:		2 Apr 1997
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1997/04/27 00:56:11 asami Exp $
+# $Id: Makefile,v 1.3 1997/05/18 07:06:41 asami Exp $
 #
 
 DISTNAME=       pine3.96
-PKGNAME=        kr-pine-3.96k
+PKGNAME=        ko-pine-3.96k
 CATEGORIES=     korean mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/mail/Others/ \

@@ -3,11 +3,11 @@
 # Date created:		6 Apr 1995
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 08:53:13 asami Exp $
+# $Id: Makefile,v 1.2 1997/09/22 15:46:27 max Exp $
 #
 
 DISTNAME=       netscape-3.01
-PKGNAME=	kr-netscape-3.01intl
+PKGNAME=	ko-netscape-3.01intl
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://ftp.kreonet.re.kr/pub/Netscape/navigator/3.01/unix/ \
 		ftp://archive.netscape.com/archive/navigator/intl/3.01/unix/ko/ \

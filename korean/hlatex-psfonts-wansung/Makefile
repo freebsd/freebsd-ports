@@ -3,11 +3,11 @@
 # Date created:		2 Apr 1997
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 08:29:47 asami Exp $
 #
 
 DISTNAME=       PS-HLaTeX-pfb
-PKGNAME=	kr-hlatexpsfonts-0.95
+PKGNAME=	ko-hlatexpsfonts-0.95
 CATEGORIES=	korean
 MASTER_SITES=	ftp://sunsite.kren.nm.kr/pub/packages/TeX/languages/korean/HLaTeX/fonts/ \
 		ftp://ftp.kornet.nm.kr/pub/Tex/language/korean/HLaTeX/fonts/

@@ -3,11 +3,11 @@
 # Date created:		22 Mar 1997
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/04/18 08:45:50 asami Exp $
 #
 
 DISTNAME=       hanterm304beta3
-PKGNAME=	kr-hanterm-304b3
+PKGNAME=	ko-hanterm-304b3
 CATEGORIES=	korean x11
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/terminal/hanterm/ \
 		ftp://sunsite.kren.nm.kr/pub/packages/hangul/terminal/hanterm/

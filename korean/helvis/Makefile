@@ -3,11 +3,11 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/04/28 04:10:16 max Exp $
 #
 
 DISTNAME=	helvis-1.8h2-
-PKGNAME=	kr-helvis-1.8h2-
+PKGNAME=	ko-helvis-1.8h2-
 CATEGORIES=	korean editors
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/editor/HElvis/ \
 		ftp://sunsite.kren.nm.kr/pub/packages/hangul/editor/HElvis/

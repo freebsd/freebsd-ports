@@ -3,11 +3,11 @@
 # Date created:         31 Mar 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/03 21:43:56 max Exp $
+# $Id: Makefile,v 1.2 1997/05/03 21:50:46 max Exp $
 #
 
 DISTNAME=	hcode2.1-mailpatch2
-PKGNAME=	kr-hcode-2.1.2
+PKGNAME=	ko-hcode-2.1.2
 CATEGORIES=	korean
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/code/hcode/ \
 		ftp://sunsite.kren.nm.kr/pub/packages/hangul/code/hcode/

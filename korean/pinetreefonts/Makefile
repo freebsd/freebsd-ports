@@ -3,11 +3,11 @@
 # Date created:		22 Mar 1997
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/29 12:58:32 max Exp $
+# $Id: Makefile,v 1.2 1997/07/13 18:49:21 max Exp $
 #
 
 DISTNAME=       pinetree.precomposed-1.0
-PKGNAME=	kr-pinetreefonts-1.0
+PKGNAME=	ko-pinetreefonts-1.0
 CATEGORIES=	korean x11
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
 		ftp://cglab.snu.ac.kr/pub/hangul/n3f/fonts/ \

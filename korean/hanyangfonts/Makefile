@@ -3,11 +3,11 @@
 # Date created:         22 Mar 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/30 00:04:10 max Exp $
+# $Id: Makefile,v 1.2 1997/07/13 18:49:20 max Exp $
 #
 
 DISTNAME=       hanyang-font-pcf
-PKGNAME=        kr-hanyangfonts-1.0
+PKGNAME=        ko-hanyangfonts-1.0
 CATEGORIES=     korean x11
 MASTER_SITES=   ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
                 ftp://sunsite.kren.nm.kr/pub/packages/hangul/fonts/
@@ -40,6 +40,6 @@ do-install:
 	${INSTALL_DATA} fonts.dir ${PREFIX}/lib/X11/fonts/korean/hanyang
 
 post-install:
-	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL;
+	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
 	
 .include <bsd.port.mk>

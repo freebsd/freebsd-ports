@@ -3,11 +3,11 @@
 # Date created:		22 Mar 1997
 # Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/04/18 08:45:48 asami Exp $
 #
 
 DISTNAME=       hanterm-xf86-v32
-PKGNAME=	kr-hanterm-xf86-3.2
+PKGNAME=	ko-hanterm-xf86-3.2
 CATEGORIES=	korean x11
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/incoming/ \
 		ftp://jazz.snu.ac.kr/pub/unix/util/X11/
