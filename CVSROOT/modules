@@ -9427,6 +9427,7 @@ squsq		ports/archivers/squsq
 sqwebmail	ports/mail/sqwebmail
 sr		ports/lang/sr
 sredird		ports/comms/sredird
+srg		ports/www/srg
 srilm		ports/textproc/srilm
 srm		ports/security/srm
 srmt		ports/sysutils/srmt
