@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	tidy22oct99
-PKGNAME=	tidy-0.10.99.1
+DISTNAME=	tidy30nov99
+PKGNAME=	tidy-0.11.99.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
 EXTRACT_SUFX=	.tgz
