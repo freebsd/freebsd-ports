@@ -7,13 +7,15 @@
 
 PORTNAME=	sj3
 PORTVERSION=	2.0.1.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.sony.co.jp/pub/unsupported/src/ \
 		ftp://ftp.cs.titech.ac.jp/pub/japanese/sj3/
+MASTER_SITES+=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nork
 
 PATCH_SITES=	http://oikumene.que.ne.jp/misc/
-PATCHFILES=	${PORTNAME}-patches-20040724.bz2
+PATCHFILES=	${PORTNAME}-patches-20040916.bz2
 
 MAINTAINER=	hiroo+freebsd@oikumene.gcd.org
 COMMENT=	A Japanese input method
