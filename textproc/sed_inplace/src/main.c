@@ -36,7 +36,6 @@
  */
 
 #include <sys/cdefs.h>
-__FBSDID("$FreeBSD: /tmp/pcvs/ports/textproc/sed_inplace/src/Attic/main.c,v 1.1 2002-06-17 08:46:11 sobomax Exp $");
 
 #ifndef lint
 static const char copyright[] =
