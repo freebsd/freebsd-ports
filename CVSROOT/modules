@@ -2004,6 +2004,7 @@ geda-utils	ports/cad/geda-utils
 gedit		ports/editors/gedit
 gedit2		ports/editors/gedit2
 geekcode	ports/misc/geekcode
+geeklog		ports/www/geeklog
 geg		ports/math/geg
 geheimnis	ports/security/geheimnis
 geist		ports/graphics/geist
