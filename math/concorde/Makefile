@@ -1,6 +1,6 @@
 # New ports collection makefile for:	concorde
 # Date created:				3 July 2000
-# Whom:					dbader@eece.unm.edu
+# Whom:					dbader@ece.unm.edu
 #
 # $FreeBSD$
 #
@@ -8,12 +8,11 @@
 PORTNAME=	concorde
 PORTVERSION=	20031219
 CATEGORIES=	math parallel
-MASTER_SITES=	http://www.tsp.gatech.edu/concorde/ \
-		http://www.math.princeton.edu/tsp/concorde/
+MASTER_SITES=	http://www.tsp.gatech.edu/concorde/downloads/codes/src/
 DISTNAME=	co031219
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	dbader@eece.unm.edu
+MAINTAINER=	dbader@ece.unm.edu
 COMMENT=	Combinatorial Optimization package
 
 WRKSRC=		${WRKDIR}/concorde
