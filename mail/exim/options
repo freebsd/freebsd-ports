@@ -145,6 +145,15 @@
 #WITHOUT_READLINE
 # readline(3) library for the test expansion option.
 
+#WITH_SUID
+# Install the exim binary suid root (usually required)
+
+#WITH_DAEMON
+# Don't install scripts to run exim as a daemon
+
+#WITH_ICONV
+# Link with libiconv to enable header charset conversion
+
 ## AUTOMATICALLY GENERATED FILE - DO NOT CHANGE ANYTHING BELOW THIS LINE ##
 # use `make config' to edit the local configuration
 # use `make makeconfig' to edit the defaults (MAINTAINER only)
@@ -257,4 +266,13 @@ WITHOUT_RCORDER?=yes
 .endif
 .ifndef WITH_READLINE
 WITHOUT_READLINE?=yes
+.endif
+.ifndef WITHOUT_SUID
+WITH_SUID?=yes
+.endif
+.ifndef WITHOUT_DAEMON
+WITH_DAEMON?=yes
+.endif
+.ifndef WITHOUT_ICONV
+WITH_ICONV?=yes
 .endif
