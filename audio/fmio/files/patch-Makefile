@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Apr  4 07:10:07 2001
++++ Makefile	Fri Aug 10 23:25:54 2001
+@@ -26,7 +26,7 @@
+ install: lib fmio man
+ 	install -d -o root -g bin $(PREFIX)/bin
+ 	install -d -o root -g wheel $(PREFIX)/man/man1
+-	install -c -s -o root -g bin -m 4555 fmio $(PREFIX)/bin/fmio
++	install -c -s -o root -g bin -m 555 fmio $(PREFIX)/bin/fmio
+ 	install -c -o root -g bin -m 444 fmio.0 $(PREFIX)/man/cat1/fmio.0
+ 
+ deinstall:
