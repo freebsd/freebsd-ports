@@ -11,6 +11,8 @@ bin/sq
 bin/tryaffix
 bin/unsq
 @mode 644
+lib/emacs/site-lisp/ispell.el
+lib/emacs/site-lisp/ispell.elc
 lib/american.hash
 lib/americanmed+.hash
 lib/english.aff
