@@ -3,7 +3,7 @@
 # Date created:				3 May 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/07 17:43:08 flathill Exp $
 #
 
 DISTNAME=		IglooFTP-0.6.1.src
@@ -15,11 +15,8 @@ MASTER_SITE_SUBDIR=	system/network/file-transfer
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-LIB_DEPENDS=		gdk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
-			glib12:${PORTSDIR}/devel/glib12 \
-			gmodule12:${PORTSDIR}/devel/glib12 \
-			gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
-			intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+			intl.1:${PORTSDIR}/devel/gettext
 
 USE_X_PREFIX=		yes
 

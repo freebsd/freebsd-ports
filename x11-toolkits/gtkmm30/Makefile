@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.7 1999/05/07 02:20:32 mharo Exp $
+# $Id: Makefile,v 1.8 1999/05/12 11:37:22 asami Exp $
 #
 
 DISTNAME=	Gtk---1.0.0
@@ -13,15 +13,25 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/gtk--/
 
 MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400004
+BUILD_DEPENDS=  eg++:${PORTSDIR}/lang/egcs
+CC=		egcc
+CXX=		eg++
+.endif
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static=yes \
 		--without-gnome
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 MAN3=  G_IntList.3 G_IntList_Iterator.3 G_List.3 G_List_Cpp_Iterator.3 \
 	G_List_Iterator.3 G_SList_Iterator.3 GtkBase.3 GtkBaseClass.3 \
@@ -58,4 +68,4 @@ MAN3=  G_IntList.3 G_IntList_Iterator.3 G_List.3 G_List_Cpp_Iterator.3 \
 	ToolbarConnector.3 ToolbarConnectorBase.3 Toolbar_Child.3 \
 	_gtk_string.3 gtkmm_add_signal_class.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

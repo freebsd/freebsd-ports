@@ -3,7 +3,7 @@
 # Date created:				5 August 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/13 14:43:17 taoka Exp $
 #
 
 DISTNAME=	garith-2.1
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.cnm-vra.com/micah/garith/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	gdk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gdk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 ALL_TARGET=
 USE_X_PREFIX=	yes

@@ -3,7 +3,7 @@
 # Date created:			14 Apr 1999
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/30 17:08:24 taoka Exp $
+# $Id: Makefile,v 1.2 1999/05/09 14:29:10 flathill Exp $
 #
 
 DISTNAME=	irssi-0.7.9
@@ -12,7 +12,10 @@ MASTER_SITES=	http://www.sicom.fi/~ikioma/irssi/
 
 MAINTAINER=	jim@phrantic.phear.net
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -22,8 +25,8 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gnome --without-dock --without-pthreads \
 		--without-socks --with-textui=none
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib12-config"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
+		GLIB_CONFIG="${GLIB_CONFIG}"
 
 post-install:
 	@${ECHO} "		"

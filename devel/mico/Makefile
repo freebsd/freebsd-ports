@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.31 1999/05/02 21:21:57 mharo Exp $
+# $Id: Makefile,v 1.32 1999/05/13 00:15:48 asami Exp $
 #
 
 DISTNAME=	mico-2.2.3
@@ -20,8 +20,10 @@ CXX=		eg++
 BUILD_DEPENDS=	egcc:${PORTSDIR}/lang/egcs
 .endif
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		tcl80.1:${PORTSDIR}/lang/tcl80
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_QT=		yes
 USE_AUTOCONF=	yes
@@ -31,13 +33,13 @@ WRKSRC=		${WRKDIR}/mico
 
 CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl \
 		--disable-optimize --disable-mini-stl
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5
 MAN8=		ird.8 micod.8 nsd.8
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.post.mk>

@@ -3,7 +3,7 @@
 # Date created:		08-March-1999
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/30 08:33:54 taoka Exp $
+# $Id: Makefile,v 1.2 1999/05/09 16:29:36 steve Exp $
 #
 
 DISTNAME=	gnotepad+-1.1.4
@@ -13,10 +13,12 @@ MASTER_SITES=	http://ack.netpedia.net/gnp/
 MAINTAINER=	brett@peloton.physics.montana.edu
 
 LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm \
-		gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  GTK_CONFIG="${X11BASE}/bin/gtk12-config"
+CONFIGURE_ENV=  GTK_CONFIG="${GTK_CONFIG}"
 
 MAN1=	gnp.1
 

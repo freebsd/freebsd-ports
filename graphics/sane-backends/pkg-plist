@@ -19,6 +19,7 @@ etc/sane.d/net.conf
 etc/sane.d/ricoh.conf
 etc/sane.d/s9036.conf
 etc/sane.d/saned.conf
+etc/sane.d/sharp.conf
 etc/sane.d/snapscan.conf
 etc/sane.d/tamarack.conf
 etc/sane.d/umax.conf
@@ -112,6 +113,10 @@ lib/sane/libsane-s9036.a
 lib/sane/libsane-s9036.la
 lib/sane/libsane-s9036.so
 lib/sane/libsane-s9036.so.1
+lib/sane/libsane-sharp.a
+lib/sane/libsane-sharp.la
+lib/sane/libsane-sharp.so
+lib/sane/libsane-sharp.so.1
 lib/sane/libsane-snapscan.a
 lib/sane/libsane-snapscan.la
 lib/sane/libsane-snapscan.so

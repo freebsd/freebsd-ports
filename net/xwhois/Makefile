@@ -3,7 +3,7 @@
 # Date created:        31 December 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.4 1999/04/24 14:13:34 kris Exp $
+# $Id: Makefile,v 1.5 1999/05/27 12:49:55 kris Exp $
 #
 
 DISTNAME=	xwhois-0.3.5
@@ -17,11 +17,13 @@ MASTER_SITES=	http://c64.org/~nr/ \
 
 MAINTAINER=	kris@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xwhois ${PREFIX}/bin

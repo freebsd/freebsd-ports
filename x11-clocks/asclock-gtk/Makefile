@@ -3,7 +3,7 @@
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/08 14:09:31 kuriyama Exp $
 #
 
 DISTNAME=	asclock-gtk-2.1.10beta
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.asclock.org/tar/
 
 MAINTAINER=	kuriyama@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 HAS_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}/asclock-gtk

@@ -3,7 +3,7 @@
 # Date created:        12 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id:$
+# $Id: Makefile,v 1.8 1999/04/13 20:53:16 billf Exp $
 #
 
 DISTNAME=	mtr-0.37
@@ -26,7 +26,7 @@ pre-fetch:
 CONFIGURE_ARGS=--with-gtk-prefix=/nopath
 .else
 USE_XLIB=	yes
-LIB_DEPENDS=    gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=    gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 .endif
 

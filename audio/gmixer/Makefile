@@ -3,7 +3,7 @@
 # Date created:        25 February 1999
 # Whom:                Chris Piazza <cpiazza@home.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 01:48:17 steve Exp $
+# $Id: Makefile,v 1.2 1999/04/06 09:36:42 jseger Exp $
 #
 
 DISTNAME=	gmixer-0.98c
@@ -12,7 +12,7 @@ MASTER_SITES=	http://junior.technion.ac.il/~sergey/linux/
 
 MAINTAINER=	cpiazza@home.net
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 ALL_TARGET=	gmixer
 

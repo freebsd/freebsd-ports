@@ -3,7 +3,7 @@
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.9 1999/04/22 07:53:01 mharo Exp $
+# $Id: Makefile,v 1.10 1999/05/25 18:24:34 mharo Exp $
 #
 
 DISTNAME=	ethereal-0.6.2
@@ -13,12 +13,13 @@ MASTER_SITES=	http://ethereal.zing.org/distribution/ \
 
 MAINTAINER=	billf@FreeBSD.ORG
 
-LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
-		GLIB_CONFIG="${LOCALBASE}/bin/glib12-config"
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 
 MAN1=		ethereal.1
 
