@@ -6463,7 +6463,6 @@ py-spreadmodule	ports/net/py-spreadmodule
 py-sqlrelay	ports/databases/py-sqlrelay
 py-tarfile	ports/archivers/py-tarfile
 py-tkinter	ports/x11-toolkits/py-tkinter
-py-trex		ports/textproc/py-trex
 py-twisted	ports/devel/py-twisted
 py-twofish	ports/security/py-twofish
 py-ui		ports/devel/py-ui
