@@ -3,7 +3,7 @@
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.2 1996/10/24 09:59:16 jfitz Exp $
+#   $Id: Makefile,v 1.3 1996/11/18 08:47:28 asami Exp $
 #
 
 DISTNAME=	libwww-perl-5.03
@@ -19,6 +19,7 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 		${PREFIX}/lib/perl5/site_perl/Net/FTP.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
+MAN1=		lwp-mirror.1 lwp-request.1 lwp-rget.1
 MAN3=		File::CounterFile.3 File::Listing.3 Font::AFM.3 \
 		HTML::AsSubs.3 HTML::Element.3 HTML::Entities.3 \
 		HTML::FormatPS.3 HTML::FormatText.3 HTML::Formatter.3 \
@@ -32,16 +33,9 @@ MAN3=		File::CounterFile.3 File::Listing.3 Font::AFM.3 \
 		MIME::Base64.3 MIME::QuotedPrint.3 URI::Escape.3 \
 		URI::URL.3 WWW::RobotRules.3 \
 		WWW::RobotRules::AnyDBM_File.3 lwpcook.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MAN3PREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-		@ for file in lwp-mirror lwp-request lwp-rget; do \
-			gzip -9nf ${PREFIX}/man/man1/$$file.1; \
-		done
-.endif
 
 .include <bsd.port.mk>

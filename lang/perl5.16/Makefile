@@ -3,7 +3,7 @@
 # Date created:		16 April 1995
 # Whom:			markm
 #
-# $Id: Makefile,v 1.14 1996/12/07 14:23:25 asami Exp $
+# $Id: Makefile,v 1.15 1996/12/10 06:43:36 asami Exp $
 #
 
 DISTNAME=	perl5.003
@@ -33,9 +33,7 @@ MAN1= 	perlbook.1 perlbot.1 perlcall.1 perldata.1 perldebug.1 perldiag.1  \
 	perlrun.1 perlsec.1 perlstyle.1 perlsub.1 perlsyn.1 perltie.1  \
 	perltoc.1 perltrap.1 perlvar.1 perlxs.1 perlxstut.1 perl.1
 MAN1+=	a2p.1 s2p.1
-
-# Note this can't be called "MAN3" because that's a standard variable
-MANTHREE=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 Benchmark.3 \
+MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 Benchmark.3 \
 	Carp.3 Cwd.3 DirHandle.3 ExtUtils::Manifest.3 Devel::SelfStubber.3 \
 	English.3 Env.3 Exporter.3 Term::Cap.3 Shell.3 ExtUtils::Install.3 \
 	ExtUtils::Liblist.3 ExtUtils::MM_OS2.3 ExtUtils::MM_Unix.3 \
@@ -53,16 +51,12 @@ MANTHREE=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 Benchmark.3 \
 	integer.3 less.3 lib.3 overload.3 sigtrap.3 strict.3 vars.3 \
 	Config.3 DynaLoader.3 DB_File.3 Fcntl.3 FileHandle.3 \
 	NDBM_File.3 POSIX.3 SDBM_File.3 Safe.3 Socket.3
+MAN3PREFIX=	${PREFIX}/lib/perl5
 
 test:
 	@(cd ${WRKSRC}; make test)
 
 post-install:
 	@strip ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
-.if !defined(NOMANCOMPRESS)
-.for man in ${MANTHREE}
-	@${GZIP_CMD} ${PREFIX}/lib/perl5/man/man3/${man}
-.endfor
-.endif
 
 .include <bsd.port.mk>

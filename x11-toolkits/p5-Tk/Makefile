@@ -3,7 +3,7 @@
 # Date created:				October 21st 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.3 1996/10/24 09:59:32 jfitz Exp $
+#   $Id: Makefile,v 1.4 1996/11/18 08:47:32 asami Exp $
 #
 
 DISTNAME=	Tk400.200
@@ -20,6 +20,7 @@ BUILD_DEPENDS= 	perl5.003:${PORTSDIR}/lang/perl5 \
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 RUN_DEPENDS=	perl5.003:${PORTSDIR}/lang/perl5
 
+MAN1=		tkweb.1
 MAN3=		Tk::After.3 Tk::Axis.3 Tk::ColorEditor.3 Tk::Dial.3 \
 		Tk::DragDrop::Common.3 Tk::DragDrop::SunConst.3 \
 		Tk::FileDialog.3 Tk::FileSelect.3 Tk::Font.3 \
@@ -27,16 +28,9 @@ MAN3=		Tk::After.3 Tk::Axis.3 Tk::ColorEditor.3 Tk::Dial.3 \
 		Tk::Internals.3 Tk::Parse.3 Tk::ROText.3 \
 		Tk::Table.3 Tk::Tcl-perl.3 Tk::TextUndo.3 \
 		Tk::UserGuide.3 Tk::WaitBox.3 Tk::pTk.3 blib.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MAN3PREFIX=	${PREFIX}/lib/perl5
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-		@ for file in tkweb; do \
-			gzip -9nf ${PREFIX}/man/man1/$$file.1; \
-		done
-.endif
 
 .include <bsd.port.mk>
