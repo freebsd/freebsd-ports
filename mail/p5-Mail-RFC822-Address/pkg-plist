@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/Mail/RFC822/Address.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/RFC822/Address/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/RFC822
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/RFC822/Address
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/RFC822
