@@ -1,8 +1,19 @@
-This patch is not neccessary, since the Qt support in Mozilla appears
-broken anyway (Perhaps, it needs Qt-2?). But it should stir the
-configure to the right direction...
---- configure.orig	Tue Sep 28 17:46:31 1999
-+++ configure	Mon Oct 11 15:12:52 1999
-@@ -5342 +5342 @@
+--- configure.orig	Tue Jan 18 04:16:15 2000
++++ configure	Fri Jan 28 23:28:19 2000
+@@ -5403,7 +5403,7 @@
+ 	echo $ac_n "checking for Qt insanity""... $ac_c" 1>&6
+ echo "configure:5405: checking for Qt insanity" >&5
+ 
 -    QT_CFLAGS="-I${QTDIR}/include/qt"
 +    QT_CFLAGS="-I${QTDIR}/include/X11/qt"
+     QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
+ 
+     # Check whether --with-static-qt or --without-static-qt was given.
+@@ -6683,6 +6683,7 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
++CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
+ for ac_hdr in sys/byteorder.h compat.h getopt.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
