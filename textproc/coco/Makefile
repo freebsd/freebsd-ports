@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.24 1996/11/11 05:07:15 obrien Exp $
+# $Id: Makefile,v 1.25 1996/11/17 07:01:29 obrien Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -21,7 +21,7 @@ CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit \
 		--terminal-face \
 		--locallisppath=${PREFIX}/lib/mule/site-lisp:${PREFIX}/share/emacs/site-lisp
 STRIP=
-MAN1=		coco.1 m2ps.1 mule.1
+MAN1=		coco.1 ctags.1 etags.1 m2ps.1 mule.1
 
 pre-build:
 	find ${WRKSRC} -name \*.orig -exec /bin/rm -f \{} \;
@@ -30,6 +30,8 @@ post-install:
 # note that any2ps is a script
 	strip ${PREFIX}/bin/b2m
 	strip ${PREFIX}/bin/coco
+	strip ${PREFIX}/bin/ctags
+	strip ${PREFIX}/bin/etags
 	strip ${PREFIX}/bin/m2ps
 	strip ${PREFIX}/bin/mule-19.28
 
