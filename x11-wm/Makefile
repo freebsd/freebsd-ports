@@ -12,6 +12,7 @@
     SUBDIR += bbconf
     SUBDIR += bbkeys
     SUBDIR += bbpager
+    SUBDIR += bbrun
     SUBDIR += blackbox
     SUBDIR += ctwm
     SUBDIR += e16utils
