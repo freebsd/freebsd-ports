@@ -16,6 +16,8 @@ PATCHFILES=		freebsd-mntent.patch # freebsd-build.patch
 
 MAINTAINER=		ports@geeksrus.net
 
+CFLAGS+=		-Wno-deprecated
+
 USE_AUTOMAKE_VER=15
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
