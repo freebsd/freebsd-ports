@@ -7,6 +7,7 @@
 
 PORTNAME=	pam_pwdfile
 PORTVERSION=	0.95
+PORTREVERSION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://cpbotha.net/files/pam_pwdfile/
 
