@@ -4,7 +4,7 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.62 1998/08/18 09:34:56 obrien Exp $
+# $Id: Makefile,v 1.63 1998/10/14 04:06:31 jseger Exp $
 #
 
 DISTNAME=       tinpre-1.4-980818
@@ -16,10 +16,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     ache@FreeBSD.org
 
-BROKEN_ELF=	yes
-
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 # Curses support too buggy to activate
 #                 --enable-curses \
