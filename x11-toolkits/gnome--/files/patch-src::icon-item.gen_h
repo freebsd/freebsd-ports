@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- src/gnome--/icon-item.cc	2002/07/16 10:42:28	1.1
-+++ src/gnome--/icon-item.cc	2002/07/16 10:42:56
-@@ -27,7 +27,7 @@
+--- src/icon-item.gen_h	2002/07/16 15:35:39	1.1
++++ src/icon-item.gen_h	2002/07/16 15:35:50
+@@ -101,7 +101,7 @@
  void Gnome::IconTextItem::configure(int x, int y, int width,
  			      const Gtk::string &fontname,
  			      const Gtk::string &text,
