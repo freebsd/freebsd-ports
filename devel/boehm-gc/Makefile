@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gc5.0alpha3
-PKGNAME=	boehm-gc-5.0a3
+DISTNAME=	gc5.0alpha4
+PKGNAME=	boehm-gc-5.0a4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/	\
 		http://reality.sgi.com/boehm_mti/gc_source/
