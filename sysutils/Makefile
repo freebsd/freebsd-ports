@@ -70,6 +70,7 @@
     SUBDIR += wmapm
     SUBDIR += wmavgload
     SUBDIR += wmbattery
+    SUBDIR += wmfire
     SUBDIR += wmhm
     SUBDIR += wminet
     SUBDIR += wmlmmon
