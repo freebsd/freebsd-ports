@@ -10614,6 +10614,7 @@ tcpblast	ports/benchmarks/tcpblast
 tcpcat		ports/net/tcpcat
 tcpdstat	ports/net/tcpdstat
 tcpflow		ports/net/tcpflow
+tcpick		ports/net/tcpick
 tcpillust	ports/net/tcpillust
 tcping		ports/net/tcping
 tcplist		ports/sysutils/tcplist
