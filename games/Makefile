@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.90 1997/11/09 09:25:44 asami Exp $
+# $Id: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
     SUBDIR += acm
@@ -26,6 +26,7 @@
     SUBDIR += jetpack
     SUBDIR += kdegames
     SUBDIR += klondike
+    SUBDIR += ktamaga
     SUBDIR += lincity
     SUBDIR += nethack
     SUBDIR += nethack-qt
