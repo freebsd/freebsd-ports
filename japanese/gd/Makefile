@@ -3,7 +3,7 @@
 # Date created:				19 Aug 1998
 # Whom:					ichiro@ichiro.org
 #
-# $Id: Makefile,v 1.3 1998/10/07 06:08:23 asami Exp $
+# $Id: Makefile,v 1.4 1998/11/14 09:43:14 asami Exp $
 #
 
 DISTNAME=	gd1.3
@@ -18,9 +18,9 @@ PATCH_DIST_STRIP=	# empty
 
 MAINTAINER=	ichiro@ichiro.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libVFlib2.a:${PORTSDIR}/japanese/vflib
+BUILD_DEPENDS=	${PREFIX}/lib/libVFlib2.so:${PORTSDIR}/japanese/vflib
 
-BROKEN_ELF=	linker command line
+#BROKEN_ELF=	linker command line
 
 FETCH_BEFORE_ARGS=	-b
 
@@ -31,16 +31,11 @@ pre-install:
 	${MKDIR} ${PREFIX}/share/examples/gd
 
 do-install:
-	for i in libgd.a libgd.so.1.3; do \
+	for i in libgd.a libgd.so.1; do \
 		${INSTALL} -c -o bin -g bin -m 555 ${WRKSRC}/$$i \
 			${PREFIX}/lib; \
 	done
-.if ${PORTOBJFORMAT} == "aout"
-	cd ${PREFIX}/lib; ${LN} -sf libgd.so.1.3 libgd.so
-.else
-	cd ${PREFIX}/lib; ${MV} -sf libgd.so.1.3 libgd.so.1
-	${LN} -sf libgd.so.1 libgd.so
-.endif
+	( cd ${PREFIX}/lib; ${LN} -sf libgd.so.1 libgd.so )
 	for i in gddemo giftogd webgif; do \
 	${INSTALL} -c -o bin -g bin -m 755 ${WRKSRC}/$$i \
 		${PREFIX}/bin; \
