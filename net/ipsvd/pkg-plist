@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 sbin/ipsvd-cdb
 sbin/tcpsvd
 sbin/udpsvd
