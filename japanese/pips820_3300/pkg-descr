@@ -1,0 +1,22 @@
+Photo Image Print System for Linux is the Printer filter for EPSON
+PM-820C PM-3300C. By using this driver you can print out as high quality as you
+use Windows driver.  See the below URL:
+
+WWW: http://www.epkowa.co.jp/
+
+And this port has a modified filter "filter820_3300.rev" when you print out
+more than one page useful.  For example, if you use it, you add the
+next entry into /etc/printcap.
+
+pm820c_3300c|EPSON PM-820C PM-3300C:\
+        :lp=/dev/lpt0:\
+        :sh:\
+        :if=/usr/local/libexec/pips820_3300/filter820_3300.rev:\
+        :sd=/var/spool/lpd/pm820c_3300c:\
+        :mx#0:\
+        :lf=/var/log/lpd-errs
+
+*************************************************************
+To run with Japanese messages, you should execute as follows:
+  env LANG=ja_JP pips820_3300 -la JP
+*************************************************************
