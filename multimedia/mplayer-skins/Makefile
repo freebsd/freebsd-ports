@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	mplayer
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www2.mplayerhq.hu/MPlayer/Skin/ \
+MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp.lug.udel.edu/MPlayer/Skin/ \
-		ftp://ftp2.mplayerhq.hu/MPlayer/Skin/ \
+		ftp://ftp.mplayerhq.hu/MPlayer/Skin/ \
 		ftp://ftp.lug.udel.edu/MPlayer/Skin/
 PKGNAMESUFFIX=	-skins
 DISTFILES=
@@ -22,18 +22,14 @@ COMMENT=	Skins for MPlayer's Graphical User Interface (GUI)
 
 USE_SUBMAKE=	yes
 USE_BZIP2=	yes
-USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}"
-PLIST_SUB=	myDATADIR="${myDATADIR}" \
-		TOP_myDATADIR="${myDATADIR:S!Skin/$!!}" \
-		PKGNAME="${PKGNAME}"
 
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 SORT?=		/usr/bin/sort
 
-myDATADIR=	share/${PORTNAME}/Skin/
+myDATADIR=	share/${PORTNAME}/Skin
 # Used by other ports to detect if this is installed
 SKIN_DETECTION_FILE=	${LOCALBASE}/${myDATADIR}/${PKGNAME}
 
@@ -73,12 +69,12 @@ WITH_SKIN_AVIFILE=yes
 WITH_SKIN_BLUEHEART=yes
 WITH_SKIN_CORNERMP=yes
 WITH_SKIN_CORNERMP_AGUA=yes
-WITH_SKIN_CUBICPLAYER=yes
 WITH_SKIN_CYRUS=yes
+WITH_SKIN_GNOME=yes
+WITH_SKIN_HAYRAPHON=yes
 WITH_SKIN_HWSW_SKIN=yes
 WITH_SKIN_MENTALIC=yes
 WITH_SKIN_MIDNIGHTLOVE=yes
-WITH_SKIN_NETSCAPE4=yes
 WITH_SKIN_NEUTRON=yes
 WITH_SKIN_PHONY=yes
 WITH_SKIN_PLASTIC=yes
@@ -93,233 +89,139 @@ WITH_SKIN_XINE_LCD=yes
 #
 # files to fetch
 #
-DISTFILES+=	default.tar.bz2
+DISTFILES+=	default-1.7.tar.bz2
 .ifdef(WITH_SKIN_DEFAULT)
-EXTRACT_ONLY+=	default.tar.bz2
-
-PLIST_SUB+=	DEFAULT=""
-.else
-PLIST_SUB+=	DEFAULT="@comment "
+EXTRACT_ONLY+=	default-1.7.tar.bz2
 .endif
 
-DISTFILES+=	AlienMind.tar.bz2
+DISTFILES+=	AlienMind-1.0.tar.bz2
 .ifdef(WITH_SKIN_ALIENMIND)
-EXTRACT_ONLY+=	AlienMind.tar.bz2
-
-PLIST_SUB+=	ALIENMIND=""
-.else
-PLIST_SUB+=	ALIENMIND="@comment "
+EXTRACT_ONLY+=	AlienMind-1.0.tar.bz2
 .endif
 
-DISTFILES+=	avifile.tar.bz2
+DISTFILES+=	avifile-1.5.tar.bz2
 .ifdef(WITH_SKIN_AVIFILE)
-EXTRACT_ONLY+=	avifile.tar.bz2
-
-PLIST_SUB+=	AVIFILE=""
-.else
-PLIST_SUB+=	AVIFILE="@comment "
+EXTRACT_ONLY+=	avifile-1.5.tar.bz2
 .endif
 
-DISTFILES+=	BlueHeart.tar.bz2
+DISTFILES+=	BlueHeart-1.4.tar.bz2
 .ifdef(WITH_SKIN_BLUEHEART)
-EXTRACT_ONLY+=	BlueHeart.tar.bz2
-
-PLIST_SUB+=	BLUEHEART=""
-.else
-PLIST_SUB+=	BLUEHEART="@comment "
+EXTRACT_ONLY+=	BlueHeart-1.4.tar.bz2
 .endif
 
-DISTFILES+=	CornerMP.tar.bz2
+DISTFILES+=	CornerMP-1.0.tar.bz2
 .ifdef(WITH_SKIN_CORNERMP)
-EXTRACT_ONLY+=	CornerMP.tar.bz2
-
-PLIST_SUB+=	CORNERMP=""
-.else
-PLIST_SUB+=	CORNERMP="@comment "
+EXTRACT_ONLY+=	CornerMP-1.0.tar.bz2
 .endif
 
-DISTFILES+=	CornerMP-aqua.tar.bz2
+DISTFILES+=	CornerMP-aqua-1.0.tar.bz2
 .ifdef(WITH_SKIN_CORNERMP_AGUA)
-EXTRACT_ONLY+=	CornerMP-aqua.tar.bz2
-
-PLIST_SUB+=	CORNERMP_AGUA=""
-.else
-PLIST_SUB+=	CORNERMP_AGUA="@comment "
+EXTRACT_ONLY+=	CornerMP-aqua-1.0.tar.bz2
 .endif
 
-DISTFILES+=	CubicPlayer.tar.bz2
-.ifdef(WITH_SKIN_CUBICPLAYER)
-EXTRACT_ONLY+=	CubicPlayer.tar.bz2
-
-PLIST_SUB+=	CUBICPLAYER=""
-.else
-PLIST_SUB+=	CUBICPLAYER="@comment "
-.endif
-
-DISTFILES+=	Cyrus.tar.bz2
+DISTFILES+=	Cyrus-1.0.tar.bz2
 .ifdef(WITH_SKIN_CYRUS)
-EXTRACT_ONLY+=	Cyrus.tar.bz2
-
-PLIST_SUB+=	CYRUS=""
-.else
-PLIST_SUB+=	CYRUS="@comment "
+EXTRACT_ONLY+=	Cyrus-1.0.tar.bz2
 .endif
 
-DISTFILES+=	hwswskin.tar.bz2
+DISTFILES+=	gnome-1.1.tar.bz2
+.ifdef(WITH_SKIN_CYRUS)
+EXTRACT_ONLY+=	gnome-1.1.tar.bz2
+.endif
+
+DISTFILES+=	hayraphon-1.0.tar.bz2
+.ifdef(WITH_SKIN_CYRUS)
+EXTRACT_ONLY+=	hayraphon-1.0.tar.bz2
+.endif
+
+DISTFILES+=	hwswskin-1.0.tar.bz2
 .ifdef(WITH_SKIN_HWSW_SKIN)
-EXTRACT_ONLY+=	hwswskin.tar.bz2
-
-PLIST_SUB+=	HWSW_SKIN=""
-.else
-PLIST_SUB+=	HWSW_SKIN="@comment "
+EXTRACT_ONLY+=	hwswskin-1.0.tar.bz2
 .endif
 
-DISTFILES+=	mentalic.tar.bz2
+DISTFILES+=	mentalic-1.1.tar.bz2
 .ifdef(WITH_SKIN_MENTALIC)
-EXTRACT_ONLY+=	mentalic.tar.bz2
-
-PLIST_SUB+=	MENTALIC=""
-.else
-PLIST_SUB+=	MENTALIC="@comment "
+EXTRACT_ONLY+=	mentalic-1.1.tar.bz2
 .endif
 
-DISTFILES+=	MidnightLove.tar.bz2
+DISTFILES+=	MidnightLove-1.5.tar.bz2
 .ifdef(WITH_SKIN_MIDNIGHTLOVE)
-EXTRACT_ONLY+=	MidnightLove.tar.bz2
-
-PLIST_SUB+=	MIDNIGHTLOVE=""
-.else
-PLIST_SUB+=	MIDNIGHTLOVE="@comment "
+EXTRACT_ONLY+=	MidnightLove-1.5.tar.bz2
 .endif
 
-DISTFILES+=	netscape4.tar.bz2
-.ifdef(WITH_SKIN_NETSCAPE4)
-EXTRACT_ONLY+=	netscape4.tar.bz2
-
-PLIST_SUB+=	NETSCAPE4=""
-.else
-PLIST_SUB+=	NETSCAPE4="@comment "
-.endif
-
-DISTFILES+=	neutron.tar.bz2
+DISTFILES+=	neutron-1.4.tar.bz2
 .ifdef(WITH_SKIN_NEUTRON)
-EXTRACT_ONLY+=	neutron.tar.bz2
-
-PLIST_SUB+=	NEUTRON=""
-.else
-PLIST_SUB+=	NEUTRON="@comment "
+EXTRACT_ONLY+=	neutron-1.4.tar.bz2
 .endif
 
-DISTFILES+=	phony.tar.bz2
+DISTFILES+=	phony-1.0.tar.bz2
 .ifdef(WITH_SKIN_PHONY)
-EXTRACT_ONLY+=	phony.tar.bz2
-
-PLIST_SUB+=	PHONY=""
-.else
-PLIST_SUB+=	PHONY="@comment "
+EXTRACT_ONLY+=	phony-1.0.tar.bz2
 .endif
 
-DISTFILES+=	plastic.tar.bz2
+DISTFILES+=	plastic-1.1.1.tar.bz2
 .ifdef(WITH_SKIN_PLASTIC)
-EXTRACT_ONLY+=	plastic.tar.bz2
-
-PLIST_SUB+=	PLASTIC=""
-.else
-PLIST_SUB+=	PLASTIC="@comment "
+EXTRACT_ONLY+=	plastic-1.1.1.tar.bz2
 .endif
 
-DISTFILES+=	proton.tar.bz2
+DISTFILES+=	proton-1.1.tar.bz2
 .ifdef(WITH_SKIN_PROTON)
-EXTRACT_ONLY+=	proton.tar.bz2
-
-PLIST_SUB+=	PROTON=""
-.else
-PLIST_SUB+=	PROTON="@comment "
+EXTRACT_ONLY+=	proton-1.1.tar.bz2
 .endif
 
-DISTFILES+=	slim.tar.bz2
+DISTFILES+=	slim-1.0.tar.bz2
 .ifdef(WITH_SKIN_SLIM)
-EXTRACT_ONLY+=	slim.tar.bz2
-
-PLIST_SUB+=	SLIM=""
-.else
-PLIST_SUB+=	SLIM="@comment "
+EXTRACT_ONLY+=	slim-1.0.tar.bz2
 .endif
 
-DISTFILES+=	trium.tar.bz2
+DISTFILES+=	trium-1.0.tar.bz2
 .ifdef(WITH_SKIN_TRIUM)
-EXTRACT_ONLY+=	trium.tar.bz2
-
-PLIST_SUB+=	TRIUM=""
-.else
-PLIST_SUB+=	TRIUM="@comment "
+EXTRACT_ONLY+=	trium-1.0.tar.bz2
 .endif
 
-DISTFILES+=	WindowsMediaPlayer6.tar.bz2
+DISTFILES+=	WindowsMediaPlayer6-1.2.tar.bz2
 .ifdef(WITH_SKIN_WINDOWSMEDIAPLAYER6)
-EXTRACT_ONLY+=	WindowsMediaPlayer6.tar.bz2
-
-PLIST_SUB+=	WINDOWSMEDIAPLAYER6=""
-.else
-PLIST_SUB+=	WINDOWSMEDIAPLAYER6="@comment "
+EXTRACT_ONLY+=	WindowsMediaPlayer6-1.2.tar.bz2
 .endif
 
-DISTFILES+=	xanim.tar.bz2
+DISTFILES+=	xanim-1.5.tar.bz2
 .ifdef(WITH_SKIN_XANIM)
-EXTRACT_ONLY+=	xanim.tar.bz2
-
-PLIST_SUB+=	XANIM=""
-.else
-PLIST_SUB+=	XANIM="@comment "
+EXTRACT_ONLY+=	xanim-1.5.tar.bz2
 .endif
 
-DISTFILES+=	xine-lcd.tar.bz2
+DISTFILES+=	xine-lcd-1.0.tar.bz2
 .ifdef(WITH_SKIN_XINE_LCD)
-EXTRACT_ONLY+=	xine-lcd.tar.bz2
-
-PLIST_SUB+=	XINE_LCD=""
-.else
-PLIST_SUB+=	XINE_LCD="@comment "
+EXTRACT_ONLY+=	xine-lcd-1.0.tar.bz2
 .endif
 
-pre-install:
-# marker file
-	@${CP} /dev/null ${WRKSRC}/${PKGNAME}
-
-# Following idea borrowed from halflifeserver port
-
-# Parses PLIST
-# creates dirs from @dirrm entries
-# copies files from non ^@ entries
-do-install: install-parse-plist install-run-scripts
-
-# kaboom, ashes to ashes, .... The problem is dead :)
-# Contributed by <lioux@FreeBSD.org>
-install-parse-plist: generate-plist
-	@${PERL} -e 'open(FHANDLER,"${TMPPLIST}");' \
-		-e 'open(FDIR,">${WRKDIR}/dirs.sh.tmp");' \
-		-e 'open(FFILES,">${WRKDIR}/files.sh");' \
-		-e 'while (!eof(FHANDLER)) {' \
-			-e 'chop($$file = <FHANDLER>);' \
-			-e '$$dir = $$file_partial = $$file;' \
-			-e '$$file_partial =~ s!^${myDATADIR}!!;' \
-			-e 'print FDIR "${INSTALL_DIR}", \
-				" ", "\"${PREFIX}/$$dir\"", \
-				"\n" if $$dir =~ s!(^\@dirrm\s+)!!;' \
-			-e 'print FFILES "${INSTALL_DATA}", \
-				" ", "\"${WRKDIR}/$$file_partial\"", \
-				" ", "\"${PREFIX}/$$file\"", \
-				"\n" if ($$file !~ m!^\@!);' \
-		-e '}' \
-		-e 'close(FFILES);' \
-		-e 'close(FDIR);' \
-		-e 'close(FHANDLER);'
-# we want it sorted
-	@${SORT} ${WRKDIR}/dirs.sh.tmp > ${WRKDIR}/dirs.sh
-
-install-run-scripts:
-.for script in dirs files
-	@${SH} ${WRKDIR}/${script}.sh
-.endfor
+# Automatically create PLIST
+# creates @dirrm entries
+# copies file entries
+do-install: generate-plist
+# remove temporary dirs' file
+	@${RM} -f ${WRKDIR}/dirs.plist
+# create target directories
+	@${MKDIR} ${PREFIX}/${myDATADIR}
+# both anotate and create target directories
+	@for dir in `cd ${WRKDIR} && ${FIND} . -type d ! -name ".*" | ${SORT} -r` ; do \
+		${ECHO_CMD} "@dirrm ${myDATADIR}/$${dir#./}" >> ${WRKDIR}/dirs.plist ; \
+		${MKDIR} "${PREFIX}/${myDATADIR}/$${dir#./}" ; \
+	done
+# anotate holding dir
+	@${ECHO_CMD} '@dirrm ${myDATADIR}' >> ${WRKDIR}/dirs.plist
+# anotate super dir
+	@${ECHO_CMD} '@unexec rmdir ${myDATADIR:S!Skin$!!} 2>/dev/null || true' >> ${WRKDIR}/dirs.plist
+# remove temporary files' file
+	@${RM} -f ${WRKDIR}/files.plist
+# both anotate installed and install files
+	@for file in `cd ${WRKDIR} && ${FIND} . -type f ! -name ".*" | ${SORT}` ; do \
+		${ECHO_CMD} "${myDATADIR}/$${file#./}" >> ${WRKDIR}/files.plist ; \
+		${INSTALL_DATA} "${WRKDIR}/$${file#./}" ${PREFIX}/${myDATADIR}/$${file#./} ; \
+	done
+# add marker file
+	@${CP} /dev/null ${PREFIX}/${myDATADIR}/${PKGNAME}
+	@${ECHO_CMD} '${myDATADIR}/${PKGNAME}' >> ${WRKDIR}/files.plist
+# add anotations to temporary plist file
+	@${CAT} ${WRKDIR}/files.plist ${WRKDIR}/dirs.plist > ${TMPPLIST}
 
 .include <bsd.port.mk>
