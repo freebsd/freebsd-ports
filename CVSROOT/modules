@@ -2878,7 +2878,6 @@ ja-ghostscript-gnu-jpnfont	ports/japanese/ghostscript-gnu-jpnfont
 ja-gicq		ports/japanese/gicq
 ja-gn-gnspool	ports/japanese/gn-gnspool
 ja-gnome	ports/japanese/gnome
-ja-gnomecore	ports/japanese/gnomecore
 ja-gnomelibs	ports/japanese/gnomelibs
 ja-gnumeric	ports/japanese/gnumeric
 ja-gorua	ports/japanese/gorua
