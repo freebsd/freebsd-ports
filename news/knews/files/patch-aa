@@ -1,5 +1,5 @@
---- configure.h.orig	Fri Jan  9 18:16:11 1998
-+++ configure.h	Sat Mar 14 16:36:46 1998
+--- configure.h.orig	Tue Dec 29 11:47:02 1998
++++ configure.h	Thu Jan  7 21:02:56 1999
 @@ -14,7 +14,7 @@
   *
   *  If you don't have sendmail, use /bin/false :-).
@@ -9,30 +9,18 @@
  /* #define MAIL_COMMAND "/usr/lib/sendmail -t"  */
  
  
-@@ -34,7 +34,10 @@
- /* #define DOMAIN_FILE "/your/file/here"  */
- /* #define DOMAIN_NAME "your_domain_here" */
- 
--#define DOMAIN_HACK	1
-+#define DOMAIN_HACK	0	/* if set to 1 and if you have a dialup 
-+				   connection to internet and use the 
-+				   resolver, then knews causes a dialup 
-+				   on start */
- 
- 
- 
-@@ -86,8 +89,8 @@
-  *  library search paths in knews.tmpl for libjpeg and libpng.
+@@ -84,8 +84,8 @@
+  *  libcompface.
   */
  
 -#define HAVE_JPEG	0
 -#define HAVE_PNG	0
 +#define HAVE_JPEG	1
 +#define HAVE_PNG	1
+ #define HAVE_COMPFACE	0
  
  
- 
-@@ -139,7 +142,7 @@
+@@ -138,7 +138,7 @@
   *
   *  Knews*backgroundPixmap:	~/dir/texture.xpm
   */
