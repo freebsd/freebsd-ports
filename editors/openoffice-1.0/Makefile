@@ -289,7 +289,7 @@ post-extract:
 	done
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
-	@${MAKE} extract-mozilla WRKDIRPREFIX=""
+	@${MAKE} extract-mozilla
 	@-${RM} ${WRKSRC}/../moz/zipped/*.zip
 .if defined(L10NHELP)
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
@@ -299,7 +299,7 @@ post-extract:
 .endif
 
 post-patch:
-	@${MAKE} patch-mozilla WRKDIRPREFIX=""
+	@${MAKE} patch-mozilla
 .if defined(WITH_TTF_BYTECODE_ENABLED)
 	@if [ "`echo ${PATCHDIR}/optpatch-*`" != "${PATCHDIR}/optpatch-*" ]; then \
 		${ECHO_MSG} "===>  Applying additional TTF bytecode patches for ${PKGNAME}" ; \
