@@ -20,7 +20,8 @@ BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc \
 		${GMAKE}:${PORTSDIR}/devel/gmake \
 		doxygen:${PORTSDIR}/devel/doxygen \
-		latex:${PORTSDIR}/print/teTeX
+		latex:${PORTSDIR}/print/teTeX \
+		fig2dev:${PORTSDIR}/print/transfig
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		avr-gcc:${PORTSDIR}/devel/avr-gcc
