@@ -1,6 +1,5 @@
 @comment $FreeBSD$
 bin/drweb
-drweb/CHANGES
 drweb/ChangeLog
 drweb/README
 drweb/README.RUS
