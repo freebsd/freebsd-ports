@@ -1,5 +1,5 @@
 --- set_soenv.in.orig	Thu Feb 27 14:12:36 2003
-+++ set_soenv.in	Fri Mar 28 07:16:24 2003
++++ set_soenv.in	Fri Mar 28 12:54:52 2003
 @@ -52,7 +52,7 @@
  #-------------------------------------------------
  #
@@ -28,16 +28,32 @@
  $WRAPCMD	= "";				# Wrapper (only for winnt)
  
  #
-@@ -982,6 +983,8 @@
- {  $SOLAREXTRALIB     = $L.$LIB.
-                         $L.$USR.$LIB;
+@@ -1184,7 +1185,7 @@
+                         $L_STLPORT_LIB.
+                         $L.$XLIB;
  }
-+if ($platform eq "$FreeBSD")
-+{  $SOLAREXTRALIB     = $L.$JAVA_HOME/jre/lib/i386;
- 
- # Compiler include search directory paths.
- if (($platform eq "$Solaris") || ($platform eq "$Linux") || ($platform eq "$FreeBSD") ||
-@@ -1265,7 +1268,13 @@
+-elsif (($platform eq "$Linux") || ($platform eq "$NetBSD") || ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64"))
++elsif (($platform eq "$Linux") || ($platform eq "$NetBSD") || ($platform eq "$Tru64") || ($platform eq "$Irix") || ($platform eq "$Irix64") || ($platform eq "$FreeBSD"))
+ {  $SOLARLIB          = $L.$par_dir.$LIB.
+ 			$L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
+                         $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
+@@ -1196,15 +1197,6 @@
+                         $L_STLPORT_LIB.
+                         $L.$XLIB;
+ }
+-elsif ($platform eq "$FreeBSD")
+-{  $SOLARLIB          = $L.$par_dir.$LIB.
+-			$L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
+-                        $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
+-                        $L.'$SOLARENV'.$ds.'$OUTPATH'.$LIB.
+-                        $L.'$JAVA_HOME'.$LIB.
+-			$L_STLPORT_LIB.
+-                        $L.$XLIB;
+-}
+ elsif ($platform eq "$Winnt")
+ {  $SOLARLIB          = $L.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB.
+                         $L.$par_dir.$LIB.
+@@ -1265,7 +1257,13 @@
  {  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
  }
  elsif ($platform eq "$FreeBSD")
