@@ -4,8 +4,8 @@
  fontdir=$(datasubdir)/font
  
  # fontpath says where to look for dev*/*.
--fontpath=.:$(fontdir):/usr/lib/font
-+fontpath=.:$(fontdir):/usr/share/groff_font
+-fontpath=$(fontdir):/usr/lib/font
++fontpath=$(fontdir):/usr/share/groff_font
  
  # tmacdir says where to install macros.
  tmacdir=$(datasubdir)/tmac
