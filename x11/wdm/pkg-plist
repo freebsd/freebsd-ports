@@ -22,6 +22,7 @@ lib/X11/wdm/pixmaps/GnuLinux-logo.jpg
 lib/X11/wdm/pixmaps/README
 lib/X11/wdm/pixmaps/Stars.jpg
 lib/X11/wdm/pixmaps/StarsLogo.jpg
+lib/X11/wdm/pixmaps/beastie.xpm
 lib/X11/wdm/pixmaps/daemon1-HQ-1280x960.jpg
 lib/X11/wdm/pixmaps/gnuLogo.xpm
 @unexec if cmp -s %D/lib/X11/wdm/wdm-config.dist %D/lib/X11/wdm/wdm-config; then rm -f %D/lib/X11/wdm/wdm-config; fi
