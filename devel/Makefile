@@ -907,6 +907,7 @@
     SUBDIR += ruby-mock
     SUBDIR += ruby-ncurses
     SUBDIR += ruby-nodedump
+    SUBDIR += ruby-p4
     SUBDIR += ruby-pcsc-lite
     SUBDIR += ruby-poll
     SUBDIR += ruby-property
