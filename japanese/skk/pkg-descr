@@ -1,0 +1,13 @@
+This is Skk-8.6, a Japanese input method based emacs-lisp for mule.
+When you use this, you can choose to use skkserv or not.
+If you use skkserv, you must add a following entry into
+/etc/services file or NIS/YP services map.
+
+skkserv		1178/tcp
+
+This also include some patches for FreeBSD or others.
+(Fix a bug of emacs-lisp and change make rule.)
+If there are any problem in this patches, please know me via E-mail.
+
+Hidekazu Kuroki
+(hidekazu@cs.titech.ac.jp)
