@@ -9,26 +9,28 @@ if [ -f $of ]; then exit; fi
 
 if [ -e .stamp -a $(echo $(find . -newer .stamp -type f -name '*.log' 2>/dev/null | wc -l)) = "0" ]; then exit; fi
 
-echo "<html><head><title>List of extra files and directories</title>" >$of
-echo "<h1>List of extra files and directories</h1>" >>$of
+echo "<html><head><title>List of files and directories that do not match their mtree description</title>" >$of
+echo "<h1>List of files and directories that do not match their mtree description</h1>" >>$of
 echo "</head><body>" >>$of
 
 touch .stamp
 
-find . -name '*.log' | sort | xargs grep '^extra: ' /dev/null | sed -e 's/^..//' > .tmp
+#find . -name '*.log' | xargs grep -l '^list of extra files and directories' | xargs-exec sed -n -e '/^checking installed files/d' -e 's:^extra[:] :{} :p' -e 's:\(.*\) extra$:{} \1:p' '{}' ';' | sort | sed -e 's/^..//' -e 's/\.log//' | awk '{print $1 " " $2}' > .tmp
+find . -name '*.log' | xargs grep -l '^list of extra files and directories' | sort | sed -e 's/^..//' > .tmp
 if [ $(echo $(cat .tmp | wc -l)) = 0 ]; then
   echo "No extra files (yet)" >> $of
 else
   set $(cat .tmp)
-  num=$(($# / 2))
+  num=$#
   if [ -s cvsdone ]; then
     echo "(cvs update finished at: $(cat cvsdone))<br>" >> $of
   fi
-  echo "(timestamp of newest log: $(ls -rtTl *.log | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}'))<br><br>" >> $of
+  echo "(timestamp of newest log: $(ls -rtTl | grep 'log$' | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}'))<br><br>" >> $of
   echo "<table border=1>" >>$of
   echo "<tr><th>Log</th><th>Aff.</th><th>Size</th><th>Repository</th><th>Maintainer</th><th>Pathname</th></tr>" >>$of
   while [ $# -gt 0 ]; do
-    log=$(echo $1 | sed -e 's/\.log:extra://')
+    log=$(echo $1 | basename $1 .log)
+    for file in $(cat $log.log | sed -e '1,/^list of extra files and directories/d' -e '/^list of all files and directories/,$d' -e '/^	/d' -e 's/^extra: //' -e 's/^missing: //' -e 's/://' | awk '{print $1}'); do
     echo -n "<tr><td>" >>$of
     echo -n "<a name=\"$log.log\"></a>" >> $of
     echo -n "<a href=\"$log.log\">" >>$of
@@ -47,11 +49,12 @@ else
     maint=$(sed -n -e '4p' $log.log | awk '{print $3}')
     maints="$maints $maint"
     echo -n "<a href=\"mailto:$maint\">$maint</a>" >>$of
-    echo "</td><td>$2</td></tr>" >>$of
-    shift 2
+    echo "</td><td>$file</td></tr>" >>$of
+    done
+    shift
   done
   echo "</table><br>" >> $of
-  echo "$num extra files<br>" >> $of
+  echo "$num errors<br>" >> $of
 fi
 
 rm .tmp
