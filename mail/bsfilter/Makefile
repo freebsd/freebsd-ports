@@ -21,7 +21,6 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 
 OPTIONS=	MECAB "Use japanese/mecab" off \
-		CHASEN "Use japanese/chasen" off \
 		KAKASI "Use japanese/kakasi" off
 
 .include <bsd.port.pre.mk>
@@ -32,12 +31,6 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/MeCab.so:${PORTSDIR}/japanese/ruby-mecab
 .if defined(WITH_KAKASI)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/kakasi.so:${PORTSDIR}/japanese/ruby-kakasi
 .endif
-
-pre-build:
-	@${ECHO_MSG} "specify algorithm of a tokenizer for Japanese language"
-	@${ECHO_MSG} "WITH_CHASEN=yes (japanese/chasen)"
-	@${ECHO_MSG} "WITH_KAKASI=yes (japanese/kakasi)"
-	@${ECHO_MSG} "WITH_MECAB=yes (japanese/mecab)"
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bsfilter/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
