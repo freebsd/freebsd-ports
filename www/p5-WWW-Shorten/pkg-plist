@@ -1,4 +1,5 @@
 %%SITE_PERL%%/WWW/Shorten.pm
+%%SITE_PERL%%/WWW/Shorten/BabyURL.pm
 %%SITE_PERL%%/WWW/Shorten/EkDk.pm
 %%SITE_PERL%%/WWW/Shorten/MakeAShorterLink.pm
 %%SITE_PERL%%/WWW/Shorten/Metamark.pm
@@ -10,6 +11,8 @@
 %%SITE_PERL%%/WWW/Shorten/TinyClick.pm
 %%SITE_PERL%%/WWW/Shorten/TinyURL.pm
 %%SITE_PERL%%/WWW/Shorten/Tinylink.pm
+%%SITE_PERL%%/WWW/Shorten/URLjr.pm
+%%SITE_PERL%%/WWW/Shorten/V3.pm
 %%SITE_PERL%%/WWW/Shorten/generic.pm
 %%SITE_PERL%%/WWW/Shorten/qURL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/.packlist
@@ -20,7 +23,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/Changes
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/LICENCE
 %%PORTDOCS%%%%DOCSDIR%%/MANIFEST
 %%PORTDOCS%%%%DOCSDIR%%/MANIFEST.SKIP
 %%PORTDOCS%%%%DOCSDIR%%/META.yml
