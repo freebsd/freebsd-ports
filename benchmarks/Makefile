@@ -26,6 +26,7 @@
     SUBDIR += tcpblast
     SUBDIR += tmetric
     SUBDIR += ubench
+    SUBDIR += webbench
     SUBDIR += xengine
 
 .include <bsd.port.subdir.mk>
