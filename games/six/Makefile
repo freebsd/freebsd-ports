@@ -10,7 +10,7 @@ PORTREVISION=	2
 CATEGORIES=	games kde
 MASTER_SITES=	http://six.retes.hu/download/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	KDE HEX clone
 
 USE_KDELIBS_VER=	3
