@@ -21,6 +21,15 @@ MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
+USE_IMAKE=	yes
+USE_XPM=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	kterm
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/ \
@@ -28,9 +37,6 @@ PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/ \
 PATCHFILES=	${DISTNAME}.NFS-xauth.patch \
 		${DISTNAME}-wpr1.patch.gz
 PATCH_DIST_STRIP= -p1
-
-USE_IMAKE=	yes
-USE_XPM=	yes
 
 DOCDIR=		${PREFIX}/share/doc/kterm16c
 
@@ -77,4 +83,4 @@ post-install:
 .endif
 	@${CAT} ${PKGDIR}/MESSAGE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
