@@ -21,8 +21,8 @@ MAN1=		sipp.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		"Does not compile on alpha - patch for call.cpp needed"
+.if ((${ARCH} == "alpha") || (${ARCH} == "ia64"))
+BROKEN=		"Does not compile - patch needed by someone who can test it"
 .endif
 
 pre-install:
