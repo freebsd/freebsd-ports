@@ -121,6 +121,7 @@
     SUBDIR += lyx
     SUBDIR += lyx-doc
     SUBDIR += magicpoint
+    SUBDIR += makejvf
     SUBDIR += man
     SUBDIR += man-doc
     SUBDIR += mendexk-euc
