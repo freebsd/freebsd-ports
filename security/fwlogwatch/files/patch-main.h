@@ -1,5 +1,5 @@
---- main.h.orig	Wed Aug 21 04:53:51 2002
-+++ main.h	Fri Oct 25 03:09:26 2002
+--- main.h.orig	Sun Mar 23 02:41:37 2003
++++ main.h	Mon Mar 31 10:37:08 2003
 @@ -9,9 +9,15 @@
  
  /* Paths */
@@ -15,3 +15,4 @@
 +#endif
  
  /* i18n */
+ 
