@@ -17,6 +17,7 @@ COMMENT=	Online presence and instant messaging server
 
 LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn
 
+FORBIDDEN=	"http://www.vuxml.org/freebsd/553224e7-4325-11d9-a3d5-000c6e8f12ef.html"
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
