@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sftp
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	ftp security
 MASTER_SITES=	ftp://ftp.xbill.org/pub/sftp/
 
