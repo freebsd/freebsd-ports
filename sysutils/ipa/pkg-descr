@@ -8,8 +8,7 @@ like "end of day", "end of week", "end of month", etc.
 
 ipastat(8) is a viewer for IP accounting database made by ipa(8).
 
-WWW: http://www.simon.org.ua/ipa/
+WWW: http://ipa-system.sourceforge.net/
 
 - Andrey Simonenko
-simon@simon.org.ua
 simon@comsys.ntu-kpi.kiev.ua
