@@ -14,11 +14,15 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
-		${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc \
-		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
-		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui \
-		${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+RUN_DEPENDS=	${PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
+RUN_DEPENDS+=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
+RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
+RUN_DEPENDS+=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui
+.if defined(GNUSTEP_GUI_DEVEL)
+RUN_DEPENDS+=	${XGPSBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
+.else
+RUN_DEPENDS+=	${BACKBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+.endif
 
 PREFIX=		${LOCALBASE}/GNUstep
 NO_BUILD=	yes
@@ -38,6 +42,7 @@ GNU_ARCH=	${MACHINE_ARCH}
 SYSTEMDIR=	${LOCALBASE}/GNUstep/System
 SYSLIBDIR=	${SYSTEMDIR}/Libraries/${GNU_ARCH}/${OPSYS:L}
 COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
+BACKBUNDLEDIR=	${SYSTEMDIR}/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/
 XGPSBUNDLEDIR=	${SYSTEMDIR}/Library/Bundles/libgnustep-xgps.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/
 
 do-install:	# empty
