@@ -1,15 +1,15 @@
 # New ports collection makefile for:	dnews
-# Version required:     27q
-# Date created:		Sa  22 Feb 1997 14:38:05 MET
+# Version required:     42j
+# Date created:		Thu May 29 17:16:36 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/02/22 14:56:45 andreas Exp $
+# $Id$
 #
 
 DISTNAME=	dnews
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.netwinsite.com/pub/netwinsite/dnews/oldversions/
-DISTFILES=	dnews27q_freebsd.tar.Z
+MASTER_SITES=	ftp://ftp.netwinsite.com/pub/netwinsite/dnews/
+DISTFILES=	dnews42j_freebsd.tar.Z
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
@@ -43,44 +43,76 @@ INST_SCR=${INSTALL} ${COPY} -o news -g news -m 554
 INST_DAT=${INSTALL} ${COPY} -o news -g news -m 644
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/tellnews ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/dnews
-	@chown news.news ${PREFIX}/dnews
-	@chmod 0755 ${PREFIX}/dnews
-	@${INST_PRG} ${WRKSRC}/dnews ${PREFIX}/dnews
-	@${INST_PRG} ${WRKSRC}/dnews_start ${PREFIX}/dnews
-	@${INST_PRG} ${WRKSRC}/dposter ${PREFIX}/dnews
-	@${INST_PRG} ${WRKSRC}/xmit ${PREFIX}/dnews
-	@${INST_SCR} ${WRKSRC}/fixowner.sh ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/access.conf ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/control.conf ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/dnews.conf ${PREFIX}/etc
-	@ln -sf ${PREFIX}/etc/dnews.conf /etc
-	@${INST_DAT} ${WRKSRC}/expire.conf ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/fts.conf ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/moderators.conf ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/newsfeeds.conf ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/nocached.body ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/nocached.head ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/install.txt ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/license.txt ${PREFIX}/dnews
-	@${INST_DAT} ${WRKSRC}/manual.txt ${PREFIX}/dnews
-	@${MKDIR} /var/spool/dnews
-	@chown news.news /var/spool/dnews
-	@chmod 755 /var/spool/dnews
-	@${INSTALL_SCRIPT} ${FILESDIR}/dnews.sh ${PREFIX}/etc/rc.d
+	${MKDIR} ${PREFIX}/lib/dnews/scripts
+	${MKDIR} ${PREFIX}/lib/dnews/doc
+		@chmod -R 0755 ${PREFIX}/lib/dnews
+		@chown -R news.news ${PREFIX}/lib/dnews
+	${MKDIR} /var/log/dnews
+		@chmod 0755 /var/log/dnews
+		@chown news.news /var/log/dnews
+	${MKDIR} /var/spool/dnews
+		@chmod 0755 /var/spool/dnews
+		@chown news.news /var/spool/dnews
+	@${ECHO_MSG} ">> Installing tellnews control program in ${PREFIX}/bin"
+	@${INSTALL_PROGRAM} ${WRKSRC}/tellnews \
+				${PREFIX}/bin
+	@${ECHO_MSG} ">> Installing runtime programs in ${PREFIX}/lib/dnews"
+	@${INST_PRG} ${WRKSRC}/dnews \
+				${PREFIX}/lib/dnews
+	@${INST_PRG} ${WRKSRC}/dnews_start \
+				${PREFIX}/lib/dnews
+	@${INST_PRG} ${WRKSRC}/dposter \
+				${PREFIX}/lib/dnews
+	@${INST_PRG} ${WRKSRC}/xmit \
+				${PREFIX}/lib/dnews
+	@${INST_DAT} ${WRKSRC}/nocached.body \
+				${PREFIX}/lib/dnews
+	@${INST_DAT} ${WRKSRC}/nocached.head \
+				${PREFIX}/lib/dnews
+	@${ECHO_MSG} ">> Installing scripts in ${PREFIX}/lib/dnews/scripts"
+	@${INST_SCR} ${WRKSRC}/newver.sh ${PREFIX}/lib/dnews/scripts
+	@${ECHO_MSG} ">> Installing config files in ${PREFIX}/lib/dnews"
+	@${INST_DAT} ${WRKSRC}/access.conf \
+				${PREFIX}/lib/dnews/access.conf.sample
+	@${INST_DAT} ${WRKSRC}/control.conf \
+				${PREFIX}/lib/dnews/control.conf.sample
+	@${INST_DAT} ${WRKSRC}/dnews.conf \
+				${PREFIX}/lib/dnews/dnews.conf.sample
+	@ln -sf ${PREFIX}/lib/dnews/dnews.conf /etc
+	@${INST_DAT} ${WRKSRC}/expire.conf \
+				${PREFIX}/lib/dnews/expire.conf.sample
+	@${INST_DAT} ${WRKSRC}/fts.conf \
+				${PREFIX}/lib/dnews/fts.conf.sample
+	@ln -sf ${PREFIX}/lib/dnews/fts.conf /var/spool/dnews/fts.conf
+	@${INST_DAT} ${WRKSRC}/hp.conf \
+				${PREFIX}/lib/dnews/hp.conf.sample
+	@${INST_DAT} ${WRKSRC}/moderators.conf \
+				${PREFIX}/lib/dnews/moderators.conf.sample
+	@${INST_DAT} ${WRKSRC}/newsfeeds.conf \
+				${PREFIX}/lib/dnews/newsfeeds.conf.sample
+	@${ECHO_MSG} ">> Installing doc files in ${PREFIX}/etc/dnews/doc"
+	@${INST_DAT} ${WRKSRC}/install.txt \
+				${PREFIX}/lib/dnews/doc
+	@${INST_DAT} ${WRKSRC}/license.txt \
+				${PREFIX}/lib/dnews/doc
+	@${INST_DAT} ${WRKSRC}/manual.txt \
+				${PREFIX}/lib/dnews/doc
+	@${INST_DAT} ${FILESDIR}/faq.html \
+				${PREFIX}/lib/dnews/doc
+	@${ECHO_MSG} ">> Installing doc files in ${PREFIX}/etc/rc.d"
+	@${INST_SCR} ${FILESDIR}/dnews.sh \
+				${PREFIX}/etc/rc.d
 .if defined(DNEWSWEB)
 	@${INSTALL_PROGRAM} ${WRKSRC}/dnewsweb ${PREFIX}/www/cgi-bin
 	@${INSTALL_DATA} ${WRKSRC}/dnewsweb.ini ${PREFIX}/www/cgi-bin
 	@${INSTALL_DATA} ${WRKSRC}/dnewsweb.txt ${PREFIX}/www/cgi-bin
 .endif
-	@${ECHO_MSG} ""
 	@${ECHO_MSG} "*** DNEWS is NOT free !!!"
-	@${ECHO_MSG} "*** Please read ${PREFIX}/dnews/license.txt"
-	@${ECHO_MSG} "*** Edit the following config files before use:"
-	@${ECHO_MSG} "/etc/dnews.conf, ${PREFIX}/dnews/*.conf"
+	@${ECHO_MSG} "*** Please read ${PREFIX}/lib/dnews/doc/license.txt"
+	@${ECHO_MSG} "*** Create and Edit the config files in:"
+	@${ECHO_MSG} "***      ${PREFIX}/etc/dnews"
 .if defined(DNEWSWEB)
-	@${ECHO_MSG} "and ${PREFIX}/www/cgi-bin/dnewsweb.ini !"
+	@${ECHO_MSG} "***      and ${PREFIX}/www/cgi-bin/dnewsweb.ini !"
 .endif
 
 .include <bsd.port.mk>
