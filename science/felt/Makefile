@@ -29,12 +29,6 @@ MAN1=		burlap.1 corduroy.1 felt.1 patchwork.1 velvet.1 yardstick.1
 MAN3=		Drawing.3
 MAN4=		corduroy.4 felt.4
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>, ; s,"malloc.h",<stdlib.h>,' \
 	${WRKSRC}/lib/Felt/parser.c \
@@ -53,4 +47,4 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/FElt
 	${CP} ${WRKSRC}/*.html ${PREFIX}/share/doc/FElt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

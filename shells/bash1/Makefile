@@ -22,13 +22,7 @@ NOMANCOMPRESS=	yes
 MAN1=		bash.1 bash_builtins.1
 INFO=		bash
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-install:
 	@install-info ${PREFIX}/info/bash.info ${PREFIX}/info/dir
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -23,12 +23,6 @@ USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cn-locale=EUC
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/xsim/IMdkit/IMConn.c
@@ -41,4 +35,4 @@ post-install:
 	@${CP} -R ${WRKDIR}/usr/local/xsim/dat/* ${DATADIR}/dat
 	@${SED} -e 's,%%X11BASE%%,${X11BASE},g' < ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
