@@ -2105,6 +2105,7 @@ gmcal		ports/deskutils/gmcal
 gmessage	ports/x11/gmessage
 gmime		ports/mail/gmime
 gmixer		ports/audio/gmixer
+gmrun		ports/x11/gmrun
 gmysql		ports/databases/gmysql
 gn		ports/www/gn
 gnapster	ports/audio/gnapster
