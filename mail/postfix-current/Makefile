@@ -15,7 +15,7 @@
 # NOTE: PCRE is enabled by default unless you specifically disable it.
 
 PORTNAME=	postfix
-PORTVERSIONRAW=	2.2-20040721
+PORTVERSIONRAW=	2.2-20040801
 PORTVERSION=	${PORTVERSIONRAW:S/-/./}
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
