@@ -105,9 +105,19 @@ while [ "$1" ]; do
 			SUB_TEST=""
 			;;
 		\"IPv6\")
+			if [ `uname -m` != "i386" ]; then
+				/usr/bin/dialog --msgbox "IPv6 patch currently only supported on i386!" 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			exit 1
+			fi
+			if [ X$SUB_TLS = "X" ]; then
+				/usr/bin/dialog --msgbox "IPv6 and TLS patch cannot be used simultaneously!" 5 60 > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
 			echo "PATCH_SITES+=	ftp://ftp.kame.net/pub/kame/misc/"
 			echo "PATCH_SITES+=	\${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}"
-			echo "PATCHFILES+=	postfix-20010228release-v6-20010415a.diff.gz"
+			echo "PATCHFILES+=	postfix-20010228release-v6-20010424a.diff.gz"
 			echo "PATCH_DIST_STRIP= -p1"
 			echo ""
 			;;
