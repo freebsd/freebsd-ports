@@ -7,12 +7,12 @@
 #
 
 DISTNAME=	rtpmon-1.0a7
-CATEGORIES=	mbone tk42
+CATEGORIES=	mbone tk82
 MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/rtpmon/
 
 MAINTAINER=	fenner@FreeBSD.org
 
-LIB_DEPENDS=	tk42.1:${PORTSDIR}/x11-toolkits/tk42
+LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 GNU_CONFIGURE=	yes
