@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8e2e6ad8-1720-11d9-9fb9-00902788733b">
+    <topic>tor -- remote DoS and loss of anonymity</topic>
+    <affects>
+      <package>
+	<name>tor</name>
+	<range><lt>0.0.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tor has various remote crashes which could lead to a remote
+	  denial-of-service and be used to defeat clients anonymity.
+	  It is not expected that these vulnerabilities are
+	  exploitable for arbitrary code execution.</p>
+      </body>
+    </description>
+    <references>
+      <mlist>http://archives.seul.org/or/announce/Aug-2004/msg00001.html</mlist>
+      <mlist>http://archives.seul.org/or/announce/Oct-2004/msg00000.html</mlist>
+    </references>
+    <dates>
+      <discovery>2004-08-25</discovery>
+      <entry>2004-10-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b2cfb400-1df0-11d9-a859-0050fc56d258">
     <topic>icecast -- Cross-Site Scripting Vulnerability</topic>
     <affects>
@@ -1024,7 +1050,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>samba</name>
 	<name>ja-samba</name>
 	<range><lt>2.2.12</lt></range>
-	<range><ge>3.a</ge><lt>3.0.6,1</lt></range>
+	<range><ge>3.a</ge><le>3.0.2a_1,1</le></range>
       </package>
     </affects>
     <description>
@@ -1036,6 +1062,13 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             attacker may be able to gain access to files which exist
             outside of the share's defined path. Such files must still
             be readable by the account used for the connection.</p>
+        </blockquote>
+	<blockquote cite="http://www.samba.org/samba/news/#errata_05oct">
+          <p>The original notice for CAN-2004-0815 indicated that
+            Samba 3.0.x &lt;= 3.0.5 was vulnerable to the security
+            issue. After further research, Samba developers have
+            confirmed that only Samba 3.0.2a and earlier releases
+            contain the exploitable code.</p>
 	</blockquote>
       </body>
     </description>
@@ -1046,6 +1079,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-09-30</discovery>
       <entry>2004-09-30</entry>
+      <modified>2004-10-15</modified>
     </dates>
   </vuln>
 
