@@ -1,0 +1,28 @@
+# New ports collection makefile for:	p5-ResourcePool-Resource-DBI
+# Date created:			February 06th, 2003
+# Whom:	      			erwin@lansing.dk
+#
+# $FreeBSD$
+#
+
+PORTNAME=	ResourcePool-Resource-DBI
+PORTVERSION=	1.0000
+CATEGORIES=	databases perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+		http://www.fatalmind.com/projects/ResourcePool/
+MASTER_SITE_SUBDIR=	../by-authors/id/M/MW/MWS
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	erwin@lansing.dk
+COMMENT=	ResourcePool::Resource::DBI - A ResourcePool wrapper for DBI
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/ResourcePool.pm:${PORTSDIR}/devel/p5-ResourcePool \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		ResourcePool::Resource::DBI.3 ResourcePool::Factory::DBI.3
+
+.include <bsd.port.mk>

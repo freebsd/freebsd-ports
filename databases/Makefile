@@ -111,6 +111,7 @@
     SUBDIR += p5-Msql
     SUBDIR += p5-Mysql
     SUBDIR += p5-Pg
+    SUBDIR += p5-ResourcePool-Resource-DBI
     SUBDIR += p5-SQL-Statement
     SUBDIR += p5-Search-Namazu
     SUBDIR += p5-Tangram
