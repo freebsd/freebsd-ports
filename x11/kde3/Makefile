@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	kde
-PORTVERSION= 	1.1.2
+PORTVERSION=	1.1.2
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
-DISTFILES=	# empty
+DISTFILES=	# none
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	se@freebsd.org
 
@@ -21,7 +22,6 @@ RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase11 \
 		kmail:${PORTSDIR}/net/kdenetwork11 \
 		kmedia:${PORTSDIR}/audio/kdemultimedia11
 
-EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
 
 do-install:	# empty
