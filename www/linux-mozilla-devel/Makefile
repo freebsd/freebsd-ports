@@ -8,6 +8,7 @@
 
 PORTNAME=	mozilla
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
@@ -125,7 +126,7 @@ do-configure:
 	${ECHO_CMD} "cd ${PREFIX}/lib/linux-mozilla/plugins"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} -n "${FIND} ../../netscape-linux/plugins/*"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
-	${ECHO_CMD} -n "${FIND} ../../linux-netscape6*/plugins"	>>${WRKDIR}/linkfarm
+	${ECHO_CMD} -n "${FIND} ../../linux-netscape*/plugins"	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} " -maxdepth 1 -exec ${LN} -s {} \; 2>/dev/null"	>>${WRKDIR}/linkfarm
 
 pre-install:
