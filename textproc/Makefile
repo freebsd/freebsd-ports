@@ -140,6 +140,7 @@
     SUBDIR += p5-PDF-API2
     SUBDIR += p5-PDF-Create
     SUBDIR += p5-Parse-Syslog
+    SUBDIR += p5-PodParser
     SUBDIR += p5-RADIUS-UserFile
     SUBDIR += p5-RDF-Notation3
     SUBDIR += p5-Regexp-Common
