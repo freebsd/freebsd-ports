@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A highly configurable IRC Proxy
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		ezbounce.1
 
@@ -35,10 +36,6 @@ PLIST_SUB+=	SSL="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile with gcc 3.4.2"
-.endif
-
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
@@ -51,6 +48,7 @@ pre-everything::
 post-patch:
 	@${SED} -e "s:/path/to:${PREFIX}/sbin:" ${WRKSRC}/sample.conf > \
 		${WRKSRC}/ezb.conf.default
+	${REINPLACE_CMD} -e "s,-O2,${CFLAGS}," ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ezbounce ${PREFIX}/sbin
