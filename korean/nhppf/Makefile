@@ -8,10 +8,9 @@
 PORTNAME=	nhppf
 PORTVERSION=	2.1
 CATEGORIES=	korean
-MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/nhppf/ \
-		ftp://jazz.snu.ac.kr/pub/unix/util/nhppf/
+MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/nhppf/
 
-MAINTAINER=	cjh@kr.freebsd.org
+MAINTAINER=	cjh@FreeBSD.org
 
 RUN_DEPENDS=    ${PREFIX}/share/texmf/fonts/type1/korean/pkmj/pkmjm0.pfb:$(PORTSDIR)/korean/hlatexpsfonts-wansungstd
 
@@ -19,13 +18,8 @@ NO_BUILD=	yes
 
 USE_PERL5=	yes
 
-do-configure:
-	${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		${WRKSRC}/nhppf > ${WRKSRC}/nhppf.perl
-
 do-install:
-	@cd ${WRKSRC}; \
-	${INSTALL_SCRIPT} nhppf.perl ${PREFIX}/bin/nhppf
+	${INSTALL_SCRIPT} ${WRKSRC}/nhppf ${PREFIX}/bin/nhppf
 	${MKDIR} ${PREFIX}/share/doc/nhppf
 .for DOC in ChangeLog README charlist test.html
 	${INSTALL_DATA} ${WRKSRC}/${DOC} ${PREFIX}/share/doc/nhppf

@@ -2,7 +2,7 @@
 +++ nhppf	Sun Aug  9 19:47:09 1998
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
-+#!%%PREFIX%%/bin/perl
++#!/usr/bin/perl
  # 
  # Netscape 3.0 Hangul Print Filter - for using only "Print" menu
  #
