@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.ghgcorp.com/clips/download/other/
 DISTNAME=	clips6
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=    yotta@dougdidit.com
+MAINTAINER=	ports@dougdidit.com
 COMMENT=	CLIPS is a productive development and delivery expert system tool
 
 USE_AUTOCONF=	yes
