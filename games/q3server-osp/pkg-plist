@@ -4,6 +4,7 @@
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-ClientReadme-RUS.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-Commands-RUS.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-README-RUS.txt
+%%PORTDOCS%%%%Q3DIR%%Docs/RUS/osp-q3-Variables-RUS.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-ClientReadme.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Commands.txt
 %%PORTDOCS%%%%Q3DIR%%Docs/osp-q3-Decal-Editing.txt
@@ -41,7 +42,7 @@
 %%Q3DIR%%cfg-maps/1v1arenamaps.txt
 %%Q3DIR%%cfg-maps/1v1maps.txt
 %%Q3DIR%%cfg-maps/Map_Config_Info.txt
-%%Q3DIR%%cfg-maps/badlands.txt
+%%Q3DIR%%cfg-maps/caltdmmaps.txt
 %%Q3DIR%%cfg-maps/ctfmaps.txt
 %%Q3DIR%%cfg-maps/ffamaps.txt
 %%Q3DIR%%cfg-maps/teammaps.txt
@@ -54,7 +55,10 @@
 %%Q3DIR%%cfg-reference/team.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-japanctf.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-overkill.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-pro-q3dm13.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-pro-q3dm6.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-pro-q3tourney2.cfg
+%%Q3DIR%%cfg-viewcam/viewcam-pro-q3tourney4.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3ctf1.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3ctf2.cfg
 %%Q3DIR%%cfg-viewcam/viewcam-q3ctf3.cfg
@@ -95,15 +99,18 @@
 %%Q3DIR%%ffa.cfg
 %%Q3DIR%%filters.txt
 %%Q3DIR%%instagib.cfg
-%%Q3DIR%%paks/z-osp-game099v1.pk3
+%%Q3DIR%%locs/pro-q3dm6.cfg
+%%Q3DIR%%locs/q3dm6.cfg
+%%Q3DIR%%paks/z-osp-game099v2.pk3
 %%Q3DIR%%spectool.cfg
 %%Q3DIR%%team.cfg
 %%Q3DIR%%vm/qagame.qvm
-%%Q3DIR%%z-osp-cgame099v1.pk3
+%%Q3DIR%%z-osp-cgame099v2.pk3
 %%Q3DIR%%z-osp-extra099u.pk3
 %%Q3DIR%%z-osp-players-099u.pk3
 @dirrm %%Q3DIR%%vm
 @dirrm %%Q3DIR%%paks
+@dirrm %%Q3DIR%%locs
 @dirrm %%Q3DIR%%cfg-viewcam
 @dirrm %%Q3DIR%%cfg-reference
 @dirrm %%Q3DIR%%cfg-modes
