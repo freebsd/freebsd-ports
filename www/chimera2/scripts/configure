@@ -1,0 +1,12 @@
+#!/bin/sh
+
+jpegdir=`ldconfig -r | grep -wF -e "-ljpeg.9" | sed -e 's#^.*=> ##' | \
+	sed -e 's#/lib/libjpeg\..*$##'`
+pngdir=`ldconfig -r | grep -wF -e "-lpng.2" | sed -e 's#^.*=> ##' | \
+	sed -e 's#/lib/libpng\..*$##'`
+
+sed -e 's#^CHIMERA_PREFIX = /usr/local$#CHIMERA_PREFIX = ${PREFIX}#' < ${WRKSRC}/Common.tmpl.dist > ${WRKSRC}/Common.tmpl.a
+sed -e "s#^JPEGDIR = /usr/local#JPEGDIR = $jpegdir#" < ${WRKSRC}/Common.tmpl.a > ${WRKSRC}/Common.tmpl.b
+sed -e "s#^PNGDIR = /usr/local#PNGDIR = $pngdir#" < ${WRKSRC}/Common.tmpl.b > ${WRKSRC}/Common.tmpl
+
+ln -s ${WRKSRC}/chimera ${WRKSRC}/main
