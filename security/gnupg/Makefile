@@ -1,17 +1,18 @@
 # New ports collection makefile for:	gnupg
-# http://www.gnupg.org/
-# Version required:	1.0.0
+# Version required:	1.0.1
 # Date created:		Sep 30, 1998
 # Whom:			kuriyama@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnupg-1.0.0
+DISTNAME=	gnupg-1.0.1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.guug.de/pub/gcrypt/gnupg/ \
-		ftp://pgp.iijlab.net/pub/gnupg/gnupg/ \
-		ftp://ftp.win.or.jp/pub/network/gnupg/gnupg/
+MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/gnupg/ \
+		ftp://pgp.iijlab.net/pub/gnupg/ \
+		ftp://ring.aist.go.jp/pub/net/gnupg/gnupg/
+DISTFILES=	${DISTNAME}.tar.gz gpg.1.gz
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
@@ -27,6 +28,9 @@ MLINKS=		gpg.1 gpgm.1
 CONFIGURE_ARGS+=--disable-asm
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
+
+post-extract:
+	${GZIP_CMD} -c -d ${DISTDIR}/gpg.1.gz > ${WRKSRC}/doc/gpg.1
 
 post-install:
 .if !defined(NOPORTDOCS)
