@@ -13,6 +13,7 @@ die () {
 delete_modules () {
     modules="
 	dl
+	erb
 	fileutils
 	fnmatch
 	optparse
