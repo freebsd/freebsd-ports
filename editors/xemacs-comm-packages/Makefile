@@ -16,17 +16,17 @@ MASTER_SITES=	\
 		ftp://ftp.lab.kdd.co.jp/xemacs/packages/ \
 		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/packages/
 DISTFILES=	\
-		xemacs-base-1.30-pkg.tar.gz xemacs-devel-1.21-pkg.tar.gz \
-		c-support-1.12-pkg.tar.gz   os-utils-1.15-pkg.tar.gz \
-		cc-mode-1.15-pkg.tar.gz     prog-modes-1.19-pkg.tar.gz \
-		debug-1.09-pkg.tar.gz       psgml-1.12-pkg.tar.gz \
-		dired-1.05-pkg.tar.gz       sgml-1.04-pkg.tar.gz \
-		edit-utils-1.39-pkg.tar.gz  text-modes-1.19-pkg.tar.gz \
-		efs-1.14-pkg.tar.gz         time-1.07-pkg.tar.gz \
-		fsf-compat-1.05-pkg.tar.gz  viper-1.15-pkg.tar.gz \
-		mail-lib-1.23-pkg.tar.gz    net-utils-1.11-pkg.tar.gz \
-		mailcrypt-1.08-pkg.tar.gz   vc-1.17-pkg.tar.gz \
-		sh-script-1.08-pkg.tar.gz  \
+		xemacs-base-1.32-pkg.tar.gz xemacs-devel-1.23-pkg.tar.gz \
+		c-support-1.13-pkg.tar.gz   os-utils-1.18-pkg.tar.gz \
+		cc-mode-1.16-pkg.tar.gz     prog-modes-1.21-pkg.tar.gz \
+		debug-1.10-pkg.tar.gz       psgml-1.14-pkg.tar.gz \
+		dired-1.06-pkg.tar.gz       sgml-1.05-pkg.tar.gz \
+		edit-utils-1.41-pkg.tar.gz  text-modes-1.21-pkg.tar.gz \
+		efs-1.15-pkg.tar.gz         time-1.08-pkg.tar.gz \
+		fsf-compat-1.06-pkg.tar.gz  viper-1.17-pkg.tar.gz \
+		mail-lib-1.24-pkg.tar.gz    net-utils-1.12-pkg.tar.gz \
+		mailcrypt-2.02-pkg.tar.gz   vc-1.19-pkg.tar.gz \
+		sh-script-1.10-pkg.tar.gz  \
 		${MULEDISTFILES}
 
 MAINTAINER=	me@FreeBSD.org
@@ -51,9 +51,11 @@ post-install:
 	@${ECHO_MSG} "You can install additional packages yourself from within xemacs by"
 	@${ECHO_MSG} "running it as root and using the 'Manage Packes' menu within"
 	@${ECHO_MSG} "the 'Options' menu of the menubar."
+	@${ECHO_MSG} "To install all packages, consider using the xemacs-sumo-packages"
+	@${ECHO_MSG} "and xemacs-mule-sumo-packages ports."
 
 .if defined(USE_MULE)
-MULEDISTFILES=	mule-base-1.30-pkg.tar.gz
+MULEDISTFILES=	mule-base-1.32-pkg.tar.gz
 PLIST=		${PKGDIR}/PLIST.mule
 .endif
 
