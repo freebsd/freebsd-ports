@@ -17,7 +17,7 @@ name=mailgraph
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/mailgraph.pl > /dev/null 2>&1
-command_interpreter=perl
+command_interpreter=/usr/bin/perl
 stop_postcmd=stop_postcmd
 
 stop_postcmd()
