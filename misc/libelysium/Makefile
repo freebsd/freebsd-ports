@@ -8,7 +8,9 @@
 PORTNAME=	libelysium
 PORTVERSION=	0.3.5
 CATEGORIES=	misc gnome
-MASTER_SITES=	http://elysium.zoned.net/${PORTNAME}/
+# The master_site doesn't hold the 0.3.5 tarballs anymore, but is
+# a reference for the person who wants to upgrade this port - edwin 20021227
+MASTER_SITES=	http://elysium-project.sourceforge.net/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
