@@ -1,22 +1,25 @@
 @comment $FreeBSD$
-%%FONTSDIR%%/fonts.alias.ipa
-%%FONTSDIR%%/fonts.dir.ipa
-%%FONTSDIR%%/ipag.ttf 
-%%FONTSDIR%%/ipagp.ttf
-%%FONTSDIR%%/ipagui.ttf
-%%FONTSDIR%%/ipam.ttf 
-%%FONTSDIR%%/ipamp.ttf
-%%PORTDOCS%%/license-ipafonts.eucjp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %%LOCALFONTSDIR%%
-@exec ln -s -f %D/%%FONTSDIR%%/ipag.ttf   %%LOCALFONTSDIR%%/ipag.ttf 
-@exec ln -s -f %D/%%FONTSDIR%%/ipagp.ttf  %%LOCALFONTSDIR%%/ipagp.ttf
-@exec ln -s -f %D/%%FONTSDIR%%/ipagui.ttf %%LOCALFONTSDIR%%/ipagui.ttf
-@exec ln -s -f %D/%%FONTSDIR%%/ipam.ttf   %%LOCALFONTSDIR%%/ipam.ttf 
-@exec ln -s -f %D/%%FONTSDIR%%/ipamp.ttf  %%LOCALFONTSDIR%%/ipamp.ttf
-@unexec rm -f %%LOCALFONTSDIR%%/ipag.ttf 
-@unexec rm -f %%LOCALFONTSDIR%%/ipagp.ttf
-@unexec rm -f %%LOCALFONTSDIR%%/ipagui.ttf
-@unexec rm -f %%LOCALFONTSDIR%%/ipam.ttf 
-@unexec rm -f %%LOCALFONTSDIR%%/ipamp.ttf
-@unexec rmdir %%LOCALFONTSDIR%% 2> /dev/null || true
+@exec mkdir -p %%LOCAL_FONTSDIR%%
+@exec ln -s -f %%GRASS_FONTSDIR%%/ipag.ttf   %%LOCAL_FONTSDIR%%/ipag.ttf
+@exec ln -s -f %%GRASS_FONTSDIR%%/ipagp.ttf  %%LOCAL_FONTSDIR%%/ipagp.ttf
+@exec ln -s -f %%GRASS_FONTSDIR%%/ipagui.ttf %%LOCAL_FONTSDIR%%/ipagui.ttf
+@exec ln -s -f %%GRASS_FONTSDIR%%/ipam.ttf   %%LOCAL_FONTSDIR%%/ipam.ttf
+@exec ln -s -f %%GRASS_FONTSDIR%%/ipamp.ttf  %%LOCAL_FONTSDIR%%/ipamp.ttf
+@exec mkdir -p %%X_FONTSDIR%%
+@exec ln -s -f %%GRASS_FONTSDIR%%/ipag.ttf   %%X_FONTSDIR%%/ipag.ttf
+@exec ln -s -f %%GRASS_FONTSDIR%%/ipagp.ttf  %%X_FONTSDIR%%/ipagp.ttf
+@exec ln -s -f %%GRASS_FONTSDIR%%/ipagui.ttf %%X_FONTSDIR%%/ipagui.ttf
+@exec ln -s -f %%GRASS_FONTSDIR%%/ipam.ttf   %%X_FONTSDIR%%/ipam.ttf
+@exec ln -s -f %%GRASS_FONTSDIR%%/ipamp.ttf  %%X_FONTSDIR%%/ipamp.ttf
+@unexec rm -f %%LOCAL_FONTSDIR%%/ipag.ttf
+@unexec rm -f %%LOCAL_FONTSDIR%%/ipagp.ttf
+@unexec rm -f %%LOCAL_FONTSDIR%%/ipagui.ttf
+@unexec rm -f %%LOCAL_FONTSDIR%%/ipam.ttf
+@unexec rm -f %%LOCAL_FONTSDIR%%/ipamp.ttf
+@unexec rmdir %%LOCAL_FONTSDIR%% 2> /dev/null || true
+@unexec rm -f %%X_FONTSDIR%%/ipag.ttf
+@unexec rm -f %%X_FONTSDIR%%/ipagp.ttf
+@unexec rm -f %%X_FONTSDIR%%/ipagui.ttf
+@unexec rm -f %%X_FONTSDIR%%/ipam.ttf
+@unexec rm -f %%X_FONTSDIR%%/ipamp.ttf
+@unexec rmdir %%X_FONTSDIR%% 2> /dev/null || true
