@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	fugu
-PORTVERSION=	1.0
+PORTVERSION=	1.1.6
 CATEGORIES=	net python
 MASTER_SITES=	http://fugu.gale.org/dist/
 
 MAINTAINER=	peterh@sapros.com
 
 RUN_DEPENDS+= 	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw
-LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
 
+USE_OPENSSL=	yes
 USE_PYTHON=	yes
 USE_XLIB=	yes
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
