@@ -1,0 +1,11 @@
+bin/snort
+share/snort/CREDITS
+share/snort/RULES.SAMPLE
+share/snort/USAGE
+share/snort/backdoor-lib
+share/snort/misc-lib
+share/snort/overflow-lib
+share/snort/scan-lib
+share/snort/snort-lib
+share/snort/web-lib
+@dirrm share/snort
