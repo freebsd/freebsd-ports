@@ -7909,6 +7909,7 @@ weblint		ports/www/weblint
 webmin		ports/sysutils/webmin
 webredirect	ports/www/webredirect
 webresolve	ports/www/webresolve
+websieve	ports/mail/websieve
 webstone	ports/www/webstone
 webstone-ssl	ports/www/webstone-ssl
 wget		ports/ftp/wget
