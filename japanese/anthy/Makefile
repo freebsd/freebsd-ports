@@ -7,6 +7,7 @@
 
 PORTNAME=	anthy
 PORTVERSION=	6300
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/13543
@@ -19,7 +20,7 @@ COMMENT=	Another kana-kanji conversion system
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
-USE_GNOME=	lthack
+USE_GNOME=	gnometarget lthack pkgconfig
 
 DOCSDIR=	share/doc/ja/anthy
 ELISPDIR=	share/emacs/site-lisp/anthy
@@ -54,6 +55,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's| install-lispLISP||g' ${WRKSRC}/src-util/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
 post-install:
 	${MKDIR} ${PREFIX}/${ELISPDIR}
