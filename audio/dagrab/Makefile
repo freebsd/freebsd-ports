@@ -3,7 +3,7 @@
 # Date created:		2nd, Jan 1999
 # Whom:			Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/02 19:40:28 hoek Exp $
 #
 
 DISTNAME=	dagrab-0.3
@@ -15,8 +15,6 @@ PATCH_SITES=	http://ken.csie.ntu.edu.tw/~clkao/
 PATCHFILES=	dagrab-freebsd.patch.gz
 
 MAINTAINER=	clkao@CirX.ORG
-
-USE_GMAKE=	yes
 
 MAN1=		dagrab.1
 
