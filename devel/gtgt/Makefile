@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gtgt
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.karubik.de/gtgt/
