@@ -14,7 +14,6 @@ PORTVERSION=	3.2
 PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}  \
-		ftp://ftp.netwinder.org/pub/build/gcc/i386/${SNAPVER}/ \
 		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/
 MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
 #DISTFILES=	\
