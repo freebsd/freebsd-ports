@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue Sep 16 00:00:15 1997
-+++ Makefile.in	Fri Sep 19 21:42:41 1997
+--- Makefile.in.orig	Thu Oct 12 18:55:53 2000
++++ Makefile.in	Thu Oct 12 18:56:31 2000
 @@ -3,7 +3,7 @@
  #
  
  TITLE	= FD-
 -PREFIX	= /usr/local
 +PREFIX	?= /usr/local
+ MANSEC	= 1
  TOPDIR	= $(PREFIX)
  BINDIR	= $(TOPDIR)/bin
- MANDIR	= $(TOPDIR)/man__LANGDIR__/man$(MANSEC)
