@@ -3,7 +3,7 @@
 # Date created:		28 Jan 1999
 # Whom:			Chip Marshall <chip@eboai.org>
 #
-# $Id: Makefile,v 1.2 1999/04/07 17:58:42 jseger Exp $
+# $Id: Makefile,v 1.3 1999/04/08 17:44:43 steve Exp $
 #
 
 DISTNAME=	icecast-1.1.3
@@ -12,8 +12,6 @@ MASTER_SITES=	http://icecast.linuxpower.org/releases/	\
 		ftp://ftp.eboai.org/pub/icecast/
 
 MAINTAINER=	chip@eboai.org
-
-WWW_SITE=	http://icecast.linuxpower.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-crypt --with-libwrap

@@ -3,3 +3,5 @@ server.  It will accept encoding streams from either iceplay or WinAmp.
 It can also add itself to a directory server such as our own
 icecast.linuxpower.org or Nullsoft's yp.shoutcast.com.  It does not yet 
 support redirection of streams from other icecast servers, but soon will.
+
+WWW: http://icecast.linuxpower.org
