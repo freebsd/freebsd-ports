@@ -7,6 +7,7 @@
 
 PORTNAME=	hlds
 PORTVERSION=	3.1.0.8.0a
+PORTREVISION=	1
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://files.ausgamers.com/half-life/linux/ \
 		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/action/half-life/official/ \
@@ -23,6 +24,7 @@ USE_LINUX_PREFIX=	yes
 NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/hlds_l
+STRIP=
 PLIST_SUB=	${PLIST_SUB_FOR_THIS_PORT}
 PLIST_SUB_FOR_THIS_PORT=	HLDSDIR="${HLDSDIR:S/^\///}" LDCONFIG="${LDCONFIG_LINUX}"
 
@@ -32,6 +34,9 @@ LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 HLDSDIR=	/usr/games/hlds_l/
 HL_PROGRAM=	hlds_run
 SORT?=		/usr/bin/sort
+
+# files which should be installed with executables perms
+EXECUTABLES=	${HL_PROGRAM} hltv
 
 pre-patch:
 # remove trailing ^M
@@ -53,10 +58,21 @@ install-parse-plist: generate-plist
 			-e 'print FDIR "${INSTALL_DIR}", \
 				" ", "\"${PREFIX}/$$dir\"", \
 				"\n" if $$dir =~ s!(^\@dirrm\s+)!!;' \
-			-e 'print FFILES "${INSTALL_DATA}", \
-				" ", "\"${WRKSRC}/$$file_partial\"", \
-				" ", "\"${PREFIX}/$$file\"", \
-				"\n" if ($$file !~ m!^\@!);' \
+			-e 'if ($$file !~ m!^\@!) {' \
+				-e '$$program_flag = 0;' \
+				-e 'if ("${EXECUTABLES}" ne "") {' \
+					-e 'foreach $$program_pattern \
+						(split (/\s+/,"${EXECUTABLES}")) {' \
+						-e '($$program_flag = 1 , break) \
+							if ($$file =~ /$$program_pattern$$/);' \
+					-e '}' \
+				-e '}' \
+				-e 'print FFILES ($$program_flag == 0) ? \
+					"${INSTALL_DATA}" : "${INSTALL_PROGRAM}";' \
+				-e 'print FFILES " ", "\"${WRKSRC}/$$file_partial\"", \
+					" ", "\"${PREFIX}/$$file\"", \
+					"\n";' \
+			-e '}' \
 		-e '}' \
 		-e 'close(FFILES);' \
 		-e 'close(FDIR);' \
@@ -67,6 +83,10 @@ install-run-scripts:
 .for script in dirs files
 	@${SH} ${WRKDIR}/${script}.sh
 .endfor
+	@if ! (${GREP} -E \"^${HLDSDIR}$$\" ${PREFIX}/etc/ld.so.conf 1>/dev/null 2>&1) ;\
+	then \
+		${ECHO} ${HLDSDIR} >> ${PREFIX}/etc/ld.so.conf ;\
+	fi
 
 scan-libs:
 	@${LDCONFIG_LINUX}
