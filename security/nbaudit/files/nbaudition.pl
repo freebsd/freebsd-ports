@@ -1,6 +1,8 @@
 #!/usr/bin/perl
 use strict;
 
+# $FreeBSD$
+
 # run nmap -oX logfile <host> -p 139 to create the log for this script
 
 # run audition.pl log.xml to begin the great enterprise.
