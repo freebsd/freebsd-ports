@@ -1720,6 +1720,7 @@ fmt		src/usr.bin/fmt
 fnccheck	ports/devel/fnccheck
 fnlib		ports/graphics/fnlib
 fnorb		ports/devel/fnorb
+fo-aspell	ports/textproc/fo-aspell
 fold		src/usr.bin/fold
 fontedit	ports/sysutils/fontedit
 fooseti		ports/astro/fooseti
