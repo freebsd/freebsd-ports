@@ -7,6 +7,7 @@
     SUBDIR += cn2jp
     SUBDIR += dumpasn1
     SUBDIR += fconv
+    SUBDIR += gb2jis
     SUBDIR += i18ntools
     SUBDIR += iconv
     SUBDIR += iconv-extra
