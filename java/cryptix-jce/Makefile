@@ -8,7 +8,9 @@
 PORTNAME=	cryptix-jce
 PORTVERSION=	20000211
 CATEGORIES=	java security
-MASTER_SITES=	http://cvs.cryptix.org/~gelderen/
+MASTER_SITES=	http://www.metaverse.nl/~ernst/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	znerd
 
 MAINTAINER=	greg@greg.rim.or.jp
 
