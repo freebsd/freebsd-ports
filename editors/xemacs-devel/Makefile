@@ -13,7 +13,7 @@ MASTER_SITES=	\
 		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/xemacs-${XEMACS_REL}/ \
 		ftp://ftp.lab.kdd.co.jp/xemacs/xemacs-${XEMACS_REL}/ \
 		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/xemacs-${XEMACS_REL}/
-DISTFILES=	${DISTNAME}a${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-elc${EXTRACT_SUFX} ${DISTNAME}-info${EXTRACT_SUFX}
 
 MAINTAINER?=	gj@FreeBSD.org
 
@@ -24,7 +24,7 @@ LIB_DEPENDS+=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 XEMACS_REL=	21.1
-XEMACS_VER=	21.1.10
+XEMACS_VER=	21.1.11
 DIST_SUBDIR=	xemacs
 
 SLAVEDIRS+=	editors/xemacs21-mule
