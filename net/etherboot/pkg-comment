@@ -1,2 +1,1 @@
-Netboot FreeBSD a.out or ELF kernels.  Has menu support and several device
-drivers.
+Netboot FreeBSD a.out/ELF kernels.
