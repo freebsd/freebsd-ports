@@ -1,12 +1,15 @@
---- Makefile.orig	Sat Jun  5 16:31:00 1999
-+++ Makefile	Sat Jun  5 16:31:25 1999
-@@ -1,6 +1,6 @@
--CC = gcc
--LIBS = `gtk-config --libs` `glib-config --libs` -L/usr/X11R6/lib -lX11
--CFLAGS = -g -O2 -Wall `gtk-config --cflags` `glib-config --cflags` -I/usr/X11R6/include
-+CC ?= gcc
-+LIBS = `gtk12-config --libs` `glib12-config --libs` -L/usr/X11R6/lib -lX11
-+CFLAGS += `gtk12-config --cflags` `glib12-config --cflags` -I/usr/X11R6/include
+--- Makefile.orig	Sat Sep  4 13:25:58 1999
++++ Makefile	Sat Sep  4 13:26:38 1999
+@@ -1,8 +1,8 @@
+ CXX?=		g++
+-QTDIR =		/usr/local/qt
+-MOC =		moc
+-LIBS =		-L$(QTDIR)/lib -lqt
+-CXXFLAGS =	-g -I$(QTDIR)/include -I/usr/X11R6/include
++QTDIR =		/usr/X11R6
++MOC =		moc2
++LIBS =		-L$(QTDIR)/lib -lqt2
++CXXFLAGS =	-g -I$(QTDIR)/include/X11/qt2 -I/usr/X11R6/include
  
- OBJECTS = toolbox.o sigfunc.o widget.o tree.o uibox.o color.o io.o parser.o
- SOURCES = toolbox.c sigfunc.c widget.c tree.c uibox.c color.c io.c parser.c
+ TARGET =	toolbox
+ OBJECTS =	misc.o font.o color.o uibox.o menu.o tree.o style.o toolbox.o
