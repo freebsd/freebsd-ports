@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gerbv
-PORTVERSION=	0.12
+PORTVERSION=	0.13
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,9 @@ MAN1=	gerbv.1
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.if !exists(/usr/include/getopt.h)
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500041
 LIB_DEPENDS+=   gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 LDFLAGS+=       -lgnugetopt
 .endif
@@ -44,4 +46,4 @@ post-install:
 		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
