@@ -9,11 +9,14 @@ PORTNAME=	gxedit
 PORTVERSION=	1.23
 PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	http://www.cyberspace.org/~elfguy00/
+MASTER_SITES=	# http://www.cyberspace.org/~elfguy00/
 DISTNAME=	GXedit-${PORTVERSION}
 
 MAINTAINER=	dom@happygiraffe.net
 COMMENT=	A simple GTK+ editor
+
+DEPRECATED=	"project no longer exists"
+EXPIRATION_DATE=2005-06-01
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
