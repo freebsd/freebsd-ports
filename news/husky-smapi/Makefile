@@ -13,8 +13,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}-${PORTREVISION}
 
 MAINTAINER=	fjoe@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/etc/fido/huskymak.cfg:${PORTSDIR}/news/husky-base
-
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
