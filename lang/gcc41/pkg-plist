@@ -1,5 +1,4 @@
 @comment $FreeBSD$
-bin/chill
 bin/eg++filt
 bin/eg++
 bin/eg77
@@ -80,6 +79,7 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/map.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/memory
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/multimap.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/multiset.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/new.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/numeric
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/ostream.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/pair.h
@@ -166,8 +166,6 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/vector.h
 @unexec install-info --delete %D/info/gcc.info %D/info/dir
 @unexec install-info --delete %D/info/g77.info %D/info/dir
 @unexec install-info --delete %D/info/cpp.info %D/info/dir
-@unexec install-info --delete %D/info/chill.info %D/info/dir
-info/chill.info
 info/cpp.info
 info/cpp.info-1
 info/cpp.info-2
@@ -218,6 +216,7 @@ info/gcc.info-27
 info/gcc.info-28
 info/gcc.info-29
 info/gcc.info-30
+info/gcc.info-31
 info/gcc.info-3
 info/gcc.info-4
 info/gcc.info-5
@@ -225,16 +224,13 @@ info/gcc.info-6
 info/gcc.info-7
 info/gcc.info-8
 info/gcc.info-9
-@exec install-info %D/info/chill.info %D/info/dir
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/g77.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/SYSCALLS.c.X
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1chill
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1obj
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cc1plus
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/chillrt0.o
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/cpp
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/collect2
 @comment ELF-only:lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/crtbegin.o
@@ -244,6 +240,7 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/collect2
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/f771
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/README
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/assert.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/curses.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/exception
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/float.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g2c.h
@@ -252,6 +249,37 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/limits.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/math.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/new
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/new.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/proto.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/stdarg.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/stdbool.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/stddef.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/stdlib.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/stdio.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/syslimits.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/typeinfo
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/values.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/varargs.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/zconf.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/net/netisr.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/net/zlib.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netatm/atm_if.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netatm/atm_ioctl.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netatm/atm_var.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netatm/kern_include.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netatm/port.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netinet/ip_compat.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netinet/ip_fil.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netinet/ip_nat.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netipx/ipx.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netns/ns.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netns/spp_var.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/rpc/auth.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/rpc/svc.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/rpc/types.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/security/_pam_compat.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/sys/file.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/sys/types.h
+lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/sys/vnioctl.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/NXConstStr.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/Object.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/Protocol.h
@@ -263,35 +291,8 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/objc.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/sarray.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/thr.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc/typedstream.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/proto.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/stdarg.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/stdbool.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/stddef.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/syslimits.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/typeinfo
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-alpha.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-arc.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-c4x.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-clipper.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-h8300.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-i860.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-i960.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-m32r.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-m88k.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-mips.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-mn10200.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-mn10300.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-pa.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-ppc.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-pyr.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-sh.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-sparc.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-spur.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/va-v850.h
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/varargs.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/jc1
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/jvgenmain
-lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libchill.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libgcc.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libobjc.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/specs
@@ -302,6 +303,14 @@ lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libiberty.a
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/libstdc++.a
 @dirrm %%GNU_HOST%%/include
 @dirrm %%GNU_HOST%%
+@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/net
+@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netatm
+@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netinet
+@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netipx
+@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/netns
+@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/rpc
+@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/security
+@dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/sys
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/objc
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/std
 @dirrm lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++
