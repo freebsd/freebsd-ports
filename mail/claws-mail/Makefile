@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.4
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -192,13 +192,14 @@ post-install:
 .endif
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/tools && \
-		${INSTALL_SCRIPT} OOo2sylpheed.pl calypso_convert.pl \
-		convert_mbox.pl eud2gc.py filter_conv.pl freshmeat_search.pl \
-		gif2xface.pl google_msgid.pl google_search.pl \
-		gpg-sign-syl kmail2sylpheed.pl kmail2sylpheed_v2.pl \
-		maildir2sylpheed.pl multiwebsearch.conf multiwebsearch.pl \
-		nautilus2sylpheed.sh outlook2sylpheed.pl tb2sylpheed\
-		textviewer.sh update-po uudec vcard2xml.py ${DATADIR}
+		${INSTALL_SCRIPT} OOo2sylpheed.pl acroread2sylpheed.pl \
+		calypso_convert.pl convert_mbox.pl eud2gc.py filter_conv.pl \
+		freshmeat_search.pl gif2xface.pl google_msgid.pl \
+		google_search.pl gpg-sign-syl kmail2sylpheed.pl \
+		kmail2sylpheed_v2.pl maildir2sylpheed.pl multiwebsearch.conf \
+		multiwebsearch.pl nautilus2sylpheed.sh outlook2sylpheed.pl \
+		tb2sylpheed textviewer.sh update-po uudec vcard2xml.py \
+		${DATADIR}
 
 .if ${HAVE_GNOME:Mgnomehier} != ""
 	@${MKDIR} ${PREFIX}/share/gnome/apps/Internet

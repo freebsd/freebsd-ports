@@ -356,6 +356,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/sylpheed-claws.mo
 share/pixmaps/sylpheed-claws.png
 %%GNOME%%share/gnome/apps/Internet/sylpheed-claws.desktop
 %%DATADIR%%/OOo2sylpheed.pl
+%%DATADIR%%/acroread2sylpheed.pl
 %%DATADIR%%/calypso_convert.pl
 %%DATADIR%%/convert_mbox.pl
 %%DATADIR%%/eud2gc.py
