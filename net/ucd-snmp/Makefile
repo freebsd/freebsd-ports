@@ -11,12 +11,14 @@ CATEGORIES=	net
 MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
 		ftp://ftp.win.or.jp/pub/network/snmp/ucd-snmp/
+PATCH_SITES=	http://ucd-snmp.ucdavis.edu/patches/
+PATCHFILES=	012.patch
+PATCH_DIST_STRIP=	-p0 -d ${WRKSRC}/agent
 
 MAINTAINER=	gpalmer@FreeBSD.org
 
 CONFIGURE_ARGS=	--enable-shared
 
-USE_CONFIGURE=	YES
 GNU_CONFIGURE=	YES
 .if defined(BATCH)
 CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
@@ -47,16 +49,18 @@ BROKEN=		"aout build breaks: ld: internal error: RRS relocs exceed allocation 34
 BROKEN=		"Uses the old VM system interfaces"
 .endif
 
-SHLIB_VERSION=3
+SHLIB_VERSION=4
 PLIST_SUB= shlib=${SHLIB_VERSION}
 
 post-patch:
 	@${CP} ${FILESDIR}/freebsd4.h ${WRKSRC}/s
 
 post-install:
-	( cd ${PREFIX}/bin && strip ${BIN} )
-	( cd ${PREFIX}/sbin && strip ${SBIN} )
-	( cd ${PREFIX}/lib && ${LN} -f libsnmp.so.${SHLIB_VERSION} libsnmp.so )
+	@( cd ${PREFIX}/bin && strip ${BIN} )
+	@( cd ${PREFIX}/sbin && strip ${SBIN} )
+	@( cd ${PREFIX}/include/ucd-snmp && ${CHMOD} 644 * )
+	@( cd ${PREFIX}/share/snmp/mibs && ${CHMOD} 644 * )
+	@( cd ${PREFIX}/lib && ${LN} -f libsnmp.so.${SHLIB_VERSION} libsnmp.so )
 	@${MKDIR} ${PREFIX}/share/examples/ucd-snmp
 	@for F in ${WRKSRC}/etc/* ; do \
 		${INSTALL_DATA} $$F ${PREFIX}/share/examples/ucd-snmp ; done

@@ -1,0 +1,8 @@
+--- local/tkmib.orig	Wed Jul 21 19:06:52 1999
++++ local/tkmib	Sat Aug 28 02:37:57 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl -w
++#!/usr/bin/perl -w
+ 
+ require 5;
+ 
