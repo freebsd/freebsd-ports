@@ -5,83 +5,80 @@ lib/libQt2Geometry.a
 lib/libQt2Misc.a
 lib/libQt2Network.a
 lib/libQt2Widgets.a
-share/QtEZ/.configs
-share/QtEZ/acinclude.m4
-share/QtEZ/am_edit
-share/QtEZ/autogen.sh
-share/QtEZ/automoc
-share/QtEZ/doc/compcret.html
-share/QtEZ/doc/index-1.html
-share/QtEZ/doc/index-2.html
-share/QtEZ/doc/index-3.html
-share/QtEZ/doc/index-4.html
-share/QtEZ/doc/index-5.html
-share/QtEZ/doc/index-6.html
-share/QtEZ/doc/index.html
-share/QtEZ/doc/qtezlogo.png
-share/QtEZ/doc/tutorial/attribs.html
-share/QtEZ/doc/tutorial/compons.html
-share/QtEZ/doc/tutorial/faq.html
-share/QtEZ/doc/tutorial/images/AttributesEditor.png
-share/QtEZ/doc/tutorial/images/FormsView.png
-share/QtEZ/doc/tutorial/images/MainMenu.png
-share/QtEZ/doc/tutorial/images/MenuEditor.png
-share/QtEZ/doc/tutorial/images/Options.png
-share/QtEZ/doc/tutorial/images/SigSlotEditor.png
-share/QtEZ/doc/tutorial/images/SourceEditor.png
-share/QtEZ/doc/tutorial/images/fndlgcap.png
-share/QtEZ/doc/tutorial/menubar.html
-share/QtEZ/doc/tutorial/mnuedit.html
-share/QtEZ/doc/tutorial/projects.html
-share/QtEZ/doc/tutorial/projview.html
-share/QtEZ/doc/tutorial/sigslot.html
-share/QtEZ/doc/tutorial/srcedit.html
-share/QtEZ/doc_Makefile.am
-share/QtEZ/fine/.editor
-share/QtEZ/fine/C++.template
-share/QtEZ/fine/C++.template.blue
-share/QtEZ/fine/C++.template.white
-share/QtEZ/fine/LaTeX.template
-share/QtEZ/fine/am.template
-share/QtEZ/fine/blue/C++.template
-share/QtEZ/fine/blue/am.template
-share/QtEZ/fine/blue/h.template
-share/QtEZ/fine/blue/html.template
-share/QtEZ/fine/blue/lsm.template
-share/QtEZ/fine/blue/po.template
-share/QtEZ/fine/blue/qtz.template
-share/QtEZ/fine/html.template
-share/QtEZ/fine/lsm.template
-share/QtEZ/fine/po.template
-share/QtEZ/fine/qtz.template
-share/QtEZ/fine/white/C++.template
-share/QtEZ/fine/white/am.template
-share/QtEZ/fine/white/h.template
-share/QtEZ/fine/white/html.template
-share/QtEZ/fine/white/lsm.template
-share/QtEZ/fine/white/po.template
-share/QtEZ/fine/white/qtz.template
-share/QtEZ/icons/qtez-project.png
-share/QtEZ/icons/qtez.png
-share/QtEZ/icons/qtez48x48.png
-share/QtEZ/img/about.gif
-share/QtEZ/img/bwiz.png
-share/QtEZ/img/tm.png
-share/QtEZ/img/unstable.gif
-share/QtEZ/locale/it.qm
-share/QtEZ/locale/sk.qm
-share/QtEZ/po_KDE_Makefile.am
-share/QtEZ/po_Makefile.am
-share/QtEZ/prepare.sh
-@exec mkdir -p %D/share/QtEZ/plugins
-@unexec rmdir %D/share/QtEZ/plugins
-@dirrm share/QtEZ/locale
-@dirrm share/QtEZ/img
-@dirrm share/QtEZ/icons
-@dirrm share/QtEZ/fine/white
-@dirrm share/QtEZ/fine/blue
-@dirrm share/QtEZ/fine
-@dirrm share/QtEZ/doc/tutorial/images
-@dirrm share/QtEZ/doc/tutorial
-@dirrm share/QtEZ/doc
-@dirrm share/QtEZ
+share/qtez/.configs
+share/qtez/acinclude.m4
+share/qtez/am_edit
+share/qtez/autogen.sh
+share/qtez/automoc
+share/qtez/doc/compcret.html
+share/qtez/doc/index-1.html
+share/qtez/doc/index-2.html
+share/qtez/doc/index-3.html
+share/qtez/doc/index-4.html
+share/qtez/doc/index-5.html
+share/qtez/doc/index-6.html
+share/qtez/doc/index.html
+share/qtez/doc/qtezlogo.png
+share/qtez/doc/tutorial/attribs.html
+share/qtez/doc/tutorial/compons.html
+share/qtez/doc/tutorial/faq.html
+share/qtez/doc/tutorial/images/AttributesEditor.png
+share/qtez/doc/tutorial/images/FormsView.png
+share/qtez/doc/tutorial/images/MainMenu.png
+share/qtez/doc/tutorial/images/MenuEditor.png
+share/qtez/doc/tutorial/images/Options.png
+share/qtez/doc/tutorial/images/SigSlotEditor.png
+share/qtez/doc/tutorial/images/SourceEditor.png
+share/qtez/doc/tutorial/images/fndlgcap.png
+share/qtez/doc/tutorial/menubar.html
+share/qtez/doc/tutorial/mnuedit.html
+share/qtez/doc/tutorial/projects.html
+share/qtez/doc/tutorial/projview.html
+share/qtez/doc/tutorial/sigslot.html
+share/qtez/doc/tutorial/srcedit.html
+share/qtez/doc_Makefile.am
+share/qtez/fine/.editor
+share/qtez/fine/C++.template
+share/qtez/fine/C++.template.blue
+share/qtez/fine/C++.template.white
+share/qtez/fine/LaTeX.template
+share/qtez/fine/am.template
+share/qtez/fine/blue/C++.template
+share/qtez/fine/blue/am.template
+share/qtez/fine/blue/h.template
+share/qtez/fine/blue/html.template
+share/qtez/fine/blue/lsm.template
+share/qtez/fine/blue/po.template
+share/qtez/fine/blue/qtz.template
+share/qtez/fine/html.template
+share/qtez/fine/lsm.template
+share/qtez/fine/po.template
+share/qtez/fine/qtz.template
+share/qtez/fine/white/C++.template
+share/qtez/fine/white/am.template
+share/qtez/fine/white/h.template
+share/qtez/fine/white/html.template
+share/qtez/fine/white/lsm.template
+share/qtez/fine/white/po.template
+share/qtez/fine/white/qtz.template
+share/qtez/icons/qtez-project.png
+share/qtez/icons/qtez.png
+share/qtez/icons/qtez48x48.png
+share/qtez/img/about.gif
+share/qtez/img/bwiz.png
+share/qtez/img/tm.png
+share/qtez/img/unstable.gif
+share/qtez/po_KDE_Makefile.am
+share/qtez/po_Makefile.am
+share/qtez/prepare.sh
+@exec mkdir -p %D/share/qtez/plugins
+@unexec rmdir %D/share/qtez/plugins
+@dirrm share/qtez/img
+@dirrm share/qtez/icons
+@dirrm share/qtez/fine/white
+@dirrm share/qtez/fine/blue
+@dirrm share/qtez/fine
+@dirrm share/qtez/doc/tutorial/images
+@dirrm share/qtez/doc/tutorial
+@dirrm share/qtez/doc
+@dirrm share/qtez
