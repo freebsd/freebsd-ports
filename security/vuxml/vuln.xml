@@ -1572,7 +1572,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <mlist msgid="20021229205023.GA5216@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=2796226</mlist>
       <mlist msgid="20021229205023.GA5216@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/8</mlist>
       <bid>6490</bid>
-      <freebsdpr>46613</freebsdpr>
+      <freebsdpr>ports/46613</freebsdpr>
     </references>
     <dates>
       <discovery>2002-11-06</discovery>
@@ -1601,7 +1601,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <mlist msgid="20030904011904.GB12350@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=5975563</mlist>
       <mlist msgid="20030904011904.GB12350@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/21</mlist>
       <bid>8541</bid>
-      <freebsdpr>53838</freebsdpr>
+      <freebsdpr>ports/53838</freebsdpr>
     </references>
     <dates>
       <discovery>2003-06-20</discovery>
@@ -1632,7 +1632,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <url>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=873149&amp;group_id=57767&amp;atid=485349</url>
       <mlist msgid="20040109015625.GA12319@merlin.emma.line.org">http://article.gmane.org/gmane.network.leafnode.announce/32</mlist>
       <mlist msgid="20040109015625.GA12319@merlin.emma.line.org">http://sourceforge.net/mailarchive/message.php?msg_id=6922570</mlist>
-      <freebsdpr>61105</freebsdpr>
+      <freebsdpr>ports/61105</freebsdpr>
     </references>
     <dates>
       <discovery>2004-01-08</discovery>
