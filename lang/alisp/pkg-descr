@@ -4,3 +4,6 @@ considered an implementation of pure LISP (plus DEFINE and DEFUN).
 
 This package contains the ArrowLISP interpreter and library, the
 reference manual, and some example programs.
+
+WWW: www.t3x.org/scipl/
+
