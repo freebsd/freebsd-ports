@@ -1,0 +1,31 @@
+# $FreeBSD$
+
+all:
+	cd lib && ${MAKE}
+	cd web2c && ${MAKE}
+	${LN} -s omegaware/ovp2ovf.web ./ovp2ovf.web
+	${LN} -s omegaware/ovp2ovf.ch ./ovp2ovf.ch
+	${LOCALBASE}/bin/tangle ovp2ovf.web ovp2ovf.ch
+	/bin/sh ./web2c/convert ovp2ovf
+	${CC} -o ovp2ovf -I ../ ovp2ovf.c ./lib/lib.a ../kpathsea/STATIC/libkpathsea.a
+	${LN} -s omegaware/ovf2ovp.web ovf2ovp.web
+	ln -s omegaware/ovf2ovp.ch ovf2ovp.ch
+	${LOCALBASE}/bin/tangle ovf2ovp.web ovf2ovp.ch
+	/bin/sh ./web2c/convert ovf2ovp
+	${CC} -o ovf2ovp -I ../ ovf2ovp.c ./lib/lib.a ../kpathsea/STATIC/libkpathsea.a
+	${LN} -s omegaware/ofm2opl.web ofm2opl.web
+	${LN} -s omegaware/ofm2opl.ch ofm2opl.ch
+	${LOCALBASE}/bin/tangle ofm2opl.web ofm2opl.ch
+	/bin/sh ./web2c/convert ofm2opl
+	${CC} -o ofm2opl -I ../ ofm2opl.c ./lib/lib.a ../kpathsea/STATIC/libkpathsea.a 
+	${LN} -s omegaware/opl2ofm.ch opl2ofm.ch
+	${LN} -s omegaware/opl2ofm.web opl2ofm.web
+	${LOCALBASE}/bin/tangle opl2ofm.web opl2ofm.ch
+	/bin/sh ./web2c/convert opl2ofm
+	${CC} -o opl2ofm -I ../ opl2ofm.c ./lib/lib.a ../kpathsea/STATIC/libkpathsea.a
+
+install:
+	${INSTALL_PROGRAM} ovf2ovp ${PREFIX}/bin/ovf2ovp-old
+	${INSTALL_PROGRAM} ovp2ovf ${PREFIX}/bin/ovp2ovf-old
+	${INSTALL_PROGRAM} ofm2opl ${PREFIX}/bin/ofm2opl-old
+	${INSTALL_PROGRAM} opl2ofm ${PREFIX}/bin/opl2ofm-old
