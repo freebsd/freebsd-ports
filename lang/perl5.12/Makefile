@@ -7,7 +7,6 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	8
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -15,12 +14,12 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 MASTER_SITE_SUBDIR=	../../src \
 			tobez/:local ./:local
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		BSDPAN-${PORTVERSION}_${BSDPAN_REVISION}${EXTRACT_SUFX}:local
+		BSDPAN-5.8.0_${BSDPAN_REVISION}${EXTRACT_SUFX}:local
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Practical Extraction and Report Language
 
-PERL_VER=	5.8.0
+PERL_VER=	5.8.1
 PERL_ARCH=	mach
 PERL_VERSION=	${PERL_VER}
 
@@ -30,12 +29,19 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Darchlib=${PREFIX}/lib/perl5/${PERL_VER}/${PERL_ARCH} \
 	-Dprivlib=${PREFIX}/lib/perl5/${PERL_VER} \
 	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
-	-Dsitearch=${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH} \
-	-Dsitelib=${PREFIX}/lib/perl5/site_perl/${PERL_VER} \
-	-Dscriptdir=${PREFIX}/bin \
+	-Dsitearch=${SITE_PERL}/${PERL_ARCH} \
+	-Dsitelib=${SITE_PERL} -Dscriptdir=${PREFIX}/bin \
 	-Ui_malloc -Ui_iconv -Uinstallusrbinperl \
 	-Dcc="${CC}" \
 	-Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
+
+.if defined(ENABLE_SUIDPERL)
+CONFIGURE_ARGS+=	-Dd_dosuid=true
+PLIST_SUB+=		ENABLE_SUIDPERL=""
+.else
+CONFIGURE_ARGS+=	-Ud_dosuid
+PLIST_SUB+=		ENABLE_SUIDPERL="@comment "
+.endif
 # INSTALLS_SHLIB=	yes
 
 .if defined(WITH_GDBM)
@@ -47,17 +53,25 @@ CONFIGURE_ARGS+=	-Ui_gdbm
 PLIST_SUB+=		GDBM="@comment "
 .endif
 
-.if defined(WITH_PERL_MALLOC)
-CONFIGURE_ARGS+=	-Dusemymalloc=y
+.if defined(WITHOUT_PERL_MALLOC)
+.undef WITH_PERL_MALLOC
 .else
-CONFIGURE_ARGS+=	-Dusemymalloc=n
+WITH_PERL_MALLOC=	yes
 .endif
 
 .if defined(WITH_THREADS)
 CONFIGURE_ARGS+=	-Dusethreads=y
 PKGNAMESUFFIX=		-threaded
+# it seems perl malloc has problems with threaded perl on FreeBSD
+.undef WITH_PERL_MALLOC
 .else
 CONFIGURE_ARGS+=	-Dusethreads=n
+.endif
+
+.if defined(WITH_PERL_MALLOC)
+CONFIGURE_ARGS+=	-Dusemymalloc=y
+.else
+CONFIGURE_ARGS+=	-Dusemymalloc=n
 .endif
 
 INCLUDEDIR=	/usr/include
@@ -92,13 +106,12 @@ MAN1=	a2p.1 c2ph.1 dprofpp.1 enc2xs.1 find2perl.1 h2ph.1 h2xs.1 \
 	perlvmesa.1 perlvms.1 perlvos.1 perlwin32.1 perlxs.1 perlxstut.1 \
 	piconv.1 pl2pm.1 pod2html.1 pod2latex.1 pod2man.1 pod2text.1 \
 	pod2usage.1 podchecker.1 podselect.1 psed.1 pstruct.1 s2p.1 \
-	splain.1 xsubpp.1
+	splain.1 xsubpp.1 cpan.1  perl573delta.1 perl58delta.1 \
+	perlartistic.1 perlcheat.1 perlgpl.1 perlmacosx.1 perlos400.1 \
+	perlreref.1
 
-MAN3=	AnyDBM_File.3 Attribute::Handlers.3 \
-	Attribute::Handlers::demo::Demo.3 \
-	Attribute::Handlers::demo::Descriptions.3 \
-	Attribute::Handlers::demo::MyClass.3 \
-	AutoLoader.3 AutoSplit.3 B.3 B::Asmdata.3 B::Assembler.3 \
+MAN3=	AnyDBM_File.3 Attribute::Handlers.3 AutoLoader.3 AutoSplit.3 \
+	B.3 B::Asmdata.3 B::Assembler.3 \
 	B::Bblock.3 B::Bytecode.3 B::C.3 B::CC.3 B::Concise.3 \
 	B::Debug.3 B::Deparse.3 B::Disassembler.3 B::Lint.3 B::Showlex.3 \
 	B::Stackobj.3 B::Stash.3 B::Terse.3 B::Xref.3 Benchmark.3 \
@@ -115,15 +128,17 @@ MAN3=	AnyDBM_File.3 Attribute::Handlers.3 \
 	Encode::JP.3 Encode::JP::H2Z.3 Encode::JP::JIS7.3 Encode::KR.3 \
 	Encode::KR::2022_KR.3 Encode::MIME::Header.3 Encode::PerlIO.3 \
 	Encode::Supported.3 Encode::Symbol.3 Encode::TW.3 \
-	Encode::Unicode.3 English.3 Env.3 Errno.3 Exporter.3 \
-	Exporter::Heavy.3 ExtUtils::Command.3 ExtUtils::Command::MM.3 \
-	ExtUtils::Constant.3 ExtUtils::Embed.3 ExtUtils::Install.3 \
-	ExtUtils::Installed.3 ExtUtils::Liblist.3 ExtUtils::Liblist::Kid.3 \
+	Encode::Unicode.3 Encode::Unicode::UTF7.3 English.3 Env.3 Errno.3 \
+	Exporter.3 Exporter::Heavy.3 ExtUtils::Command.3 \
+	ExtUtils::Command::MM.3 ExtUtils::Constant.3 ExtUtils::Embed.3 \
+	ExtUtils::Install.3 ExtUtils::Installed.3 ExtUtils::Liblist.3 \
 	ExtUtils::MM.3 ExtUtils::MM_Any.3 ExtUtils::MM_BeOS.3 \
 	ExtUtils::MM_Cygwin.3 ExtUtils::MM_DOS.3 ExtUtils::MM_MacOS.3 \
 	ExtUtils::MM_NW5.3 ExtUtils::MM_OS2.3 ExtUtils::MM_UWIN.3 \
 	ExtUtils::MM_Unix.3 ExtUtils::MM_VMS.3 ExtUtils::MM_Win32.3 \
 	ExtUtils::MM_Win95.3 ExtUtils::MY.3 ExtUtils::MakeMaker.3 \
+	ExtUtils::MakeMaker::FAQ.3 ExtUtils::MakeMaker::Tutorial.3 \
+	ExtUtils::MakeMaker::bytes.3 ExtUtils::MakeMaker::vmsish.3 \
 	ExtUtils::Manifest.3 ExtUtils::Miniperl.3 ExtUtils::Mkbootstrap.3 \
 	ExtUtils::Mksymlists.3 ExtUtils::Packlist.3 ExtUtils::testlib.3 \
 	Fatal.3 Fcntl.3 File::Basename.3 File::CheckTree.3 File::Compare.3 \
@@ -141,20 +156,23 @@ MAN3=	AnyDBM_File.3 Attribute::Handlers.3 \
 	Locale::Constants.3 Locale::Country.3 Locale::Currency.3 \
 	Locale::Language.3 Locale::Maketext.3 Locale::Maketext::TPJ13.3 \
 	Locale::Script.3 MIME::Base64.3 MIME::QuotedPrint.3 \
-	Math::BigFloat.3 Math::BigFloat::Trace.3 Math::BigInt.3 \
-	Math::BigInt::Calc.3 Math::BigInt::Trace.3 Math::BigRat.3 \
+	Math::BigFloat.3 Math::BigInt.3 Math::BigInt::Calc.3 \
+	Math::BigInt::Scalar.3 Math::BigRat.3 \
 	Math::Complex.3 Math::Trig.3 Memoize.3 Memoize::AnyDBM_File.3 \
 	Memoize::Expire.3 Memoize::ExpireFile.3 Memoize::ExpireTest.3 \
 	Memoize::NDBM_File.3 Memoize::SDBM_File.3 Memoize::Storable.3 \
 	NDBM_File.3 NEXT.3 Net::Cmd.3 Net::Config.3 Net::Domain.3 \
-	Net::FTP.3 Net::FTP::A.3 Net::FTP::E.3 Net::FTP::I.3 Net::FTP::L.3 \
-	Net::FTP::dataconn.3 Net::NNTP.3 Net::Netrc.3 Net::POP3.3 \
+	Net::FTP.3 Net::NNTP.3 Net::Netrc.3 Net::POP3.3 \
 	Net::Ping.3 Net::SMTP.3 Net::Time.3 Net::hostent.3 \
 	Net::libnetFAQ.3 Net::netent.3 Net::protoent.3 Net::servent.3 \
 	O.3 Opcode.3 POSIX.3 PerlIO.3 PerlIO::encoding.3 PerlIO::scalar.3 \
 	PerlIO::via.3 PerlIO::via::QuotedPrint.3 Pod::Checker.3 \
 	Pod::Find.3 Pod::Html.3 Pod::InputObjects.3 Pod::LaTeX.3 \
 	Pod::Man.3 Pod::ParseLink.3 Pod::ParseUtils.3 Pod::Parser.3 \
+	Pod::Perldoc::ToChecker.3 Pod::Perldoc::ToMan.3 \
+	Pod::Perldoc::ToNroff.3 Pod::Perldoc::ToPod.3 Pod::Perldoc::ToRtf.3 \
+	Pod::Perldoc::ToText.3 Pod::Perldoc::ToTk.3 Pod::Perldoc::ToXml.3 \
+	Pod::PlainText.3 \
 	Pod::Plainer.3 Pod::Select.3 Pod::Text.3 Pod::Text::Color.3 \
 	Pod::Text::Overstrike.3 Pod::Text::Termcap.3 Pod::Usage.3 \
 	SDBM_File.3 Safe.3 Scalar::Util.3 Search::Dict.3 SelectSaver.3 \
@@ -190,7 +208,7 @@ test:
 BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 		ExtUtils/MM_Unix.pm ExtUtils/Packlist.pm
-BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-${PORTVERSION}
+BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-5.8.0
 BSDPAN_REVISION=1
 
 post-patch:
@@ -202,16 +220,17 @@ post-patch:
 		> ${WRKDIR}/use.perl
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/perl ${PREFIX}/bin/suidperl
+	@${STRIP_CMD} ${PREFIX}/bin/perl
 	@${LN} -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl5
 	@${LN} -sf ${PREFIX}/bin/perl ${PREFIX}/bin/perl${PERL_VER}
 	${INSTALL_SCRIPT} ${WRKDIR}/use.perl ${PREFIX}/bin/use.perl
-.for file in ${BSDPAN_FILES}
-	${MKDIR} ${BSDPAN_DEST}/${file:H}
+.for files in ${BSDPAN_FILES}
+	${MKDIR} ${BSDPAN_DEST}/${files:H}
 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${NOBINMODE} \
-		${BSDPAN_WRKSRC}/${file} ${BSDPAN_DEST}/${file}
+		${BSDPAN_WRKSRC}/${files} ${BSDPAN_DEST}/${files}
 .endfor
 	@(cd ${INCLUDEDIR} && ${PREFIX}/bin/h2ph *.h machine/*.h sys/*.h)
+	${MKDIR} ${SITE_PERL}/${PERL_ARCH}/auto
 	@fmt ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
