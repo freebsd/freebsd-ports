@@ -31,6 +31,8 @@ lib/zinf/plugins/wavout.pmo
 lib/zinf/plugins/winamp.ftf
 lib/zinf/plugins/winamp_theme.xml
 lib/zinf/plugins/xingmp3.lmc
+share/gnome/apps/Audio/Zinf.desktop
+share/pixmaps/zinf.png
 share/zinf/themes/Aquatica.fat
 share/zinf/themes/Zinf.fat
 share/zinf/themes/ZinfClassic.fat

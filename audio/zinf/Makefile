@@ -15,11 +15,13 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	musicbrainz.2:${PORTSDIR}/audio/musicbrainz \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		ttf.4:${PORTSDIR}/print/freetype
+		ttf.4:${PORTSDIR}/print/freetype \
+		id3:${PORTSDIR}/audio/id3lib
 
+USE_PERL5=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk12 gdkpixbuf gnomehier
+USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=213
@@ -45,7 +47,7 @@ PLIST_SUB+=	ESOUND="@comment "
 .endif
 
 .if defined(WITH_LIBARTS) || defined(WITH_ALL_PLUGINS)
-LIB_DEPENDS+=	artsc.0:${PORTSDIR}/x11/kdelibs2
+LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 PLIST_SUB+=	LIBARTS=""
 .else
 CONFIGURE_ARGS+=	--disable-arts
@@ -81,6 +83,12 @@ post-install:
 	@${MKDIR} ${PREFIX}/etc/sdr/plugins
 	${INSTALL_DATA} ${FILESDIR}/sdr2.plugin.S100.audio.rtp.mpa.zinf \
 		${PREFIX}/etc/sdr/plugins
+	-${MKDIR} ${PREFIX}/share/gnome/apps/Audio
+	${INSTALL_DATA} ${WRKSRC}/installer/unix/linux/Zinf.desktop \
+		${PREFIX}/share/gnome/apps/Audio/
+	-${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/installer/unix/linux/zinf.png \
+		${PREFIX}/share/pixmaps/zinf.png
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/zinf
 
 .include <bsd.port.post.mk>
