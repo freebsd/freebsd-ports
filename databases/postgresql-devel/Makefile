@@ -144,6 +144,12 @@ CONFIGURE_ARGS+=	--with-rendezvous
 CONFIGURE_ARGS+=	--with-tcl
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Coredump during build on alpha 4.x"
+.endif
+
 pre-everything::
 	@${SH} ${PKGDIR}/pkg-install ${PORTNAME} BACKUPWARNING
 	@${ECHO} ""
@@ -246,5 +252,5 @@ check:
 		${ECHO} "Clean and rebuild the port as a regular user to run the tests." ;\
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
 .endif
