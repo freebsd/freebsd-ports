@@ -11,8 +11,12 @@ bin/cnv2rdic
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.keymap
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.xselection
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/xselection.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/etc/eliminate.default
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/etc/keymap.default
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/etc/rdic.conf.sample
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/xselection.html.ja
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.jp
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/xselection.rd.jp
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/etc
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
