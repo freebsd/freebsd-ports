@@ -7,7 +7,6 @@
 
 PORTNAME=	ruby${RUBY_R}
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY} \
 			${ONIGURUMA_MASTER_SITES:S,$,:oniguruma,}
@@ -47,7 +46,12 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared
-MAKE_ENV=	LANG=C	# prevent bison 1.33 w/ gettext 0.10.35 from coredumping
+
+.if defined(DEBUG)
+CFLAGS+=	-g
+STRIP=		# none
+.endif
+
 MAKE_ARGS=	-j3
 INSTALLS_SHLIB=	yes
 MAN1=		ruby${_RUBY_SUFFIX}.1
@@ -77,6 +81,7 @@ PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
 		RUBYLIB=${RUBYLIB}
 
 INSTALLED_SCRIPTS=	${PREFIX}/bin/irb \
+			${PREFIX}/bin/erb \
 			${PREFIX}/bin/h2rb
 
 OBSOLETED_MODULES=	dl \
@@ -92,6 +97,7 @@ OBSOLETED_MODULES=	dl \
 			uri
 
 post-extract:
+	${MV} ${WRKSRC}/ext/dl/h2rb ${WRKSRC}/bin/
 .if defined(WITH_ONIGURUMA)
 	${TAR} -zxvf ${DISTDIR}/${DIST_SUBDIR}/${ONIGURUMA_DISTFILE} -C ${WRKDIR}
 .endif
@@ -113,22 +119,15 @@ pre-install:
 	${RM} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} \
 		${PREFIX}/man/man1/ruby${RUBY_R}.1 \
 		${PREFIX}/man/man1/ruby${RUBY_R}.1.gz
-	for f in ${INSTALLED_SCRIPTS}; do \
-		${RM} -f $${f}${RUBY_R}; \
-	done
 
 post-install:
 .if defined(STRIP) && ${STRIP} == -s
-	strip ${RUBY}
+	${STRIP_CMD} ${RUBY}
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/ext/dl/h2rb ${PREFIX}/bin/
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 	${MV} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} ${RUBY_WITH_SUFFIX}
 	${MV} -f ${PREFIX}/man/man1/ruby${RUBY_R}.1 ${PREFIX}/man/man1/ruby${_RUBY_SUFFIX}.1
 .endif
-	for f in ${INSTALLED_SCRIPTS}; do \
-		${MV} -f $${f} $${f}${_RUBY_SUFFIX}; \
-	done
 	if [ -x ${RUBY_WITHOUT_SUFFIX}${RUBY_DEFAULT_SUFFIX}${RUBY_R} ]; then \
 		${LN} -fs ${RUBY_WITHOUT_SUFFIX}${RUBY_DEFAULT_SUFFIX}${RUBY_R} ${RUBY_WITHOUT_SUFFIX}${RUBY_R}; \
 		${LN} -fs ruby${RUBY_DEFAULT_SUFFIX}${RUBY_R}.1${MANEXT} ${PREFIX}/man/man1/ruby${RUBY_R}.1${MANEXT}; \
@@ -146,18 +145,6 @@ post-install:
 	fi
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib
-.for f in ${INSTALLED_SCRIPTS}
-	${RUBY_WITH_SUFFIX} ${RUBY_FLAGS} -i -p \
-		-e 'if $$. == 1; ' \
-		-e ' if /^#!/; ' \
-		-e '  sub /^#!\s*\S*(\benv\s+)?\bruby/, "#!${RUBY_WITH_SUFFIX}";' \
-		-e ' else;' \
-		-e '  $$_ = "#!${RUBY_WITH_SUFFIX}\n" + $$_;' \
-		-e ' end;' \
-		-e 'end' \
-		${f}${_RUBY_SUFFIX}
-	${CHMOD} ${BINMODE} ${f}${_RUBY_SUFFIX}
-.endfor
 	${MKDIR} ${RUBY_ELISPDIR}
 	${TOUCH} ${RUBY_ELISPDIR}/.keep_me
 	${MKDIR} ${RUBY_EXAMPLESDIR}
