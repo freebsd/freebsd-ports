@@ -1,6 +1,14 @@
 @comment $FreeBSD$
 bin/gnump3d
 bin/gnump3d-top
+etc/gnump3d/LaFrere/config.ini
+etc/gnump3d/LaFrere/error.html
+etc/gnump3d/LaFrere/index.html
+etc/gnump3d/LaFrere/logo.png
+etc/gnump3d/LaFrere/plugin.html
+etc/gnump3d/LaFrere/results.html
+etc/gnump3d/LaFrere/search.html
+etc/gnump3d/LaFrere/stats.html
 etc/gnump3d/default/error.html
 etc/gnump3d/default/index.html
 etc/gnump3d/default/plugin.html
@@ -18,6 +26,12 @@ etc/gnump3d/nausicaa/results.html
 etc/gnump3d/nausicaa/search.html
 etc/gnump3d/nausicaa/stats.html
 etc/gnump3d/nausicaa/style.css
+etc/gnump3d/redgrey/error.html
+etc/gnump3d/redgrey/index.html
+etc/gnump3d/redgrey/plugin.html
+etc/gnump3d/redgrey/results.html
+etc/gnump3d/redgrey/search.html
+etc/gnump3d/redgrey/stats.html
 etc/gnump3d/simple/config.ini
 etc/gnump3d/simple/error.html
 etc/gnump3d/simple/index.html
@@ -36,6 +50,10 @@ lib/gnump3d/bug.la
 lib/gnump3d/bug.so
 lib/gnump3d/last20.la
 lib/gnump3d/last20.so
+lib/gnump3d/now.la
+lib/gnump3d/now.so
+lib/gnump3d/playlist.la
+lib/gnump3d/playlist.so
 lib/gnump3d/search.la
 lib/gnump3d/search.so
 lib/gnump3d/stats.la
@@ -49,6 +67,8 @@ lib/gnump3d/version.so
 @unexec rmdir /var/log/gnump3d 2>/dev/null || true
 @dirrm etc/gnump3d/split
 @dirrm etc/gnump3d/simple
+@dirrm etc/gnump3d/redgrey
 @dirrm etc/gnump3d/nausicaa
 @dirrm etc/gnump3d/default
+@dirrm etc/gnump3d/LaFrere
 @dirrm etc/gnump3d

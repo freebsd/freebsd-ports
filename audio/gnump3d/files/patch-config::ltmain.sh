@@ -11,12 +11,3 @@ $FreeBSD$
  	avoid_version=yes
  	continue
  	;;
-@@ -1061,7 +1062,7 @@
- 	  esac
- 	 elif test "X$arg" = "X-lc_r"; then
- 	  case $host in
--	 *-*-openbsd* | *-*-freebsd*)
-+	 *-*-openbsd*)
- 	    # Do not include libc_r directly, use -pthread flag.
- 	    continue
- 	    ;;

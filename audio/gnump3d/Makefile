@@ -7,26 +7,26 @@
 #
 
 PORTNAME=	gnump3d
-PORTVERSION=	1.0.p1
+PORTVERSION=	1.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-1.0-pre1
 
 MAINTAINER=	ports@FreeBSD.org
-
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF_VER=	253
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/gnump3d
+# Avoid triggering automake
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
+		AUTOMAKE="${TRUE}"
 
 MAN1=	gnump3d.1 gnump3d.conf.1 gnump3d-top.1
 
@@ -44,15 +44,13 @@ pre-everything::
 .endif
 
 post-patch:
-	@${TOUCH} -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/aclocal.m4.time
 	@${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
 		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/aclocal.m4
-# Avoid triggering automake
-	@${TOUCH} -r ${WRKSRC}/aclocal.m4.time ${WRKSRC}/aclocal.m4
 
 pre-configure:
-.for dir in . mplib libltdl
-	@cd ${WRKSRC}/${dir} && ${LOCALBASE}/bin/autoconf
+.for dir in libltdl mplib
+	@(cd ${WRKSRC}/${dir} && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
+		${AUTOCONF_ARGS})
 .endfor
 
 post-install:
