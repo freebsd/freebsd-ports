@@ -11,46 +11,46 @@ bin/mysql_install_db
 bin/mysql_tzinfo_to_sql
 bin/mysql_waitpid
 bin/mysqld_safe
-bin/ndb_delete_all
-bin/ndb_desc
-bin/ndb_drop_index
-bin/ndb_drop_table
-bin/ndb_mgm
-bin/ndb_restore
-bin/ndb_select_all
-bin/ndb_select_count
-bin/ndb_show_tables
-bin/ndb_waiter
+%%NDB%%bin/ndb_delete_all
+%%NDB%%bin/ndb_desc
+%%NDB%%bin/ndb_drop_index
+%%NDB%%bin/ndb_drop_table
+%%NDB%%bin/ndb_mgm
+%%NDB%%bin/ndb_restore
+%%NDB%%bin/ndb_select_all
+%%NDB%%bin/ndb_select_count
+%%NDB%%bin/ndb_show_tables
+%%NDB%%bin/ndb_waiter
 bin/pack_isam
 bin/perror
 bin/replace
 bin/resolve_stack_dump
 bin/resolveip
 etc/rc.d/mysql-server.sh
-include/mysql/ndb/mgmapi/mgmapi.h
-include/mysql/ndb/mgmapi/mgmapi_debug.h
-include/mysql/ndb/ndb_types.h
-include/mysql/ndb/ndb_version.h
-include/mysql/ndb/ndbapi/Ndb.hpp
-include/mysql/ndb/ndbapi/NdbApi.hpp
-include/mysql/ndb/ndbapi/NdbBlob.hpp
-include/mysql/ndb/ndbapi/NdbConnection.hpp
-include/mysql/ndb/ndbapi/NdbCursorOperation.hpp
-include/mysql/ndb/ndbapi/NdbDictionary.hpp
-include/mysql/ndb/ndbapi/NdbError.hpp
-include/mysql/ndb/ndbapi/NdbEventOperation.hpp
-include/mysql/ndb/ndbapi/NdbIndexOperation.hpp
-include/mysql/ndb/ndbapi/NdbIndexScanOperation.hpp
-include/mysql/ndb/ndbapi/NdbOperation.hpp
-include/mysql/ndb/ndbapi/NdbPool.hpp
-include/mysql/ndb/ndbapi/NdbRecAttr.hpp
-include/mysql/ndb/ndbapi/NdbReceiver.hpp
-include/mysql/ndb/ndbapi/NdbResultSet.hpp
-include/mysql/ndb/ndbapi/NdbScanFilter.hpp
-include/mysql/ndb/ndbapi/NdbScanOperation.hpp
-include/mysql/ndb/ndbapi/ndb_cluster_connection.hpp
-include/mysql/ndb/ndbapi/ndbapi_limits.h
-include/mysql/ndb/ndbapi/ndberror.h
+%%NDB%%include/mysql/ndb/mgmapi/mgmapi.h
+%%NDB%%include/mysql/ndb/mgmapi/mgmapi_debug.h
+%%NDB%%include/mysql/ndb/ndb_types.h
+%%NDB%%include/mysql/ndb/ndb_version.h
+%%NDB%%include/mysql/ndb/ndbapi/Ndb.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbApi.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbBlob.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbConnection.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbCursorOperation.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbDictionary.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbError.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbEventOperation.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbIndexOperation.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbIndexScanOperation.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbOperation.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbPool.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbRecAttr.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbReceiver.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbResultSet.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbScanFilter.hpp
+%%NDB%%include/mysql/ndb/ndbapi/NdbScanOperation.hpp
+%%NDB%%include/mysql/ndb/ndbapi/ndb_cluster_connection.hpp
+%%NDB%%include/mysql/ndb/ndbapi/ndbapi_limits.h
+%%NDB%%include/mysql/ndb/ndbapi/ndberror.h
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
@@ -58,15 +58,15 @@ lib/mysql/libmyisam.a
 lib/mysql/libmyisammrg.a
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
-lib/mysql/libndbclient.a
-lib/mysql/libndbclient.so
-lib/mysql/libndbclient.so.0
+%%NDB%%lib/mysql/libndbclient.a
+%%NDB%%lib/mysql/libndbclient.so
+%%NDB%%lib/mysql/libndbclient.so.0
 lib/mysql/libnisam.a
 lib/mysql/libvio.a
 libexec/mysqld
-libexec/ndb_cpcd
-libexec/ndb_mgmd
-libexec/ndbd
+%%NDB%%libexec/ndb_cpcd
+%%NDB%%libexec/ndb_mgmd
+%%NDB%%libexec/ndbd
 %%DATADIR%%/Description.plist
 %%DATADIR%%/Info.plist
 %%DATADIR%%/MySQL-shared-compat.spec
@@ -156,9 +156,9 @@ libexec/ndbd
 %%DATADIR%%/swedish/errmsg.txt
 %%DATADIR%%/ukrainian/errmsg.sys
 %%DATADIR%%/ukrainian/errmsg.txt
-@dirrm include/mysql/ndb/mgmapi
-@dirrm include/mysql/ndb/ndbapi
-@dirrm include/mysql/ndb
+%%NDB%%@dirrm include/mysql/ndb/mgmapi
+%%NDB%%@dirrm include/mysql/ndb/ndbapi
+%%NDB%%@dirrm include/mysql/ndb
 @unexec rmdir %D/include/mysql 2> /dev/null || true
 @unexec rmdir %D/lib/mysql 2> /dev/null || true
 @dirrm %%DATADIR%%/charsets

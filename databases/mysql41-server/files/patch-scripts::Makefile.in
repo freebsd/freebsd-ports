@@ -1,9 +1,9 @@
---- scripts/Makefile.in.orig	Fri May 28 21:38:37 2004
-+++ scripts/Makefile.in	Mon May 31 15:14:31 2004
-@@ -276,26 +276,7 @@
+--- scripts/Makefile.in.orig	Tue Dec 14 13:41:31 2004
++++ scripts/Makefile.in	Sun Dec 19 11:52:42 2004
+@@ -316,26 +316,7 @@
  vio_dir = @vio_dir@
  vio_libs = @vio_libs@
- 
+ zlib_dir = @zlib_dir@
 -bin_SCRIPTS = @server_scripts@ \
 -			msql2mysql \
 -			mysql_config \
@@ -26,18 +26,18 @@
 -			mysql_create_system_tables
 +bin_SCRIPTS =
  
- 
  EXTRA_SCRIPTS = make_binary_distribution.sh \
-@@ -329,7 +310,7 @@
+ 			make_sharedlib_distribution.sh \
+@@ -366,7 +347,7 @@
+ 			mysqlaccess.conf \
  			mysqlbug
- 
  
 -dist_pkgdata_DATA = fill_help_tables.sql mysql_fix_privilege_tables.sql
 +dist_pkgdata_DATA =
  
  # mysqlbug should be distributed built so that people can report build
  # failures with it.
-@@ -605,8 +586,6 @@
+@@ -652,8 +633,6 @@
  
  all: fill_help_tables.sql make_win_src_distribution make_binary_distribution make_sharedlib_distribution
  
