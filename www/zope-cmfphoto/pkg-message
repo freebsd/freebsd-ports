@@ -1,0 +1,11 @@
+To complete the installation of CMFPhoto:
+
+- Restart Zope.  This may be done from the Zope Control Panel.
+
+- Add an External Method with the following settings in your
+  CMF/Plone root using the Zope Management Interface (ZMI):
+
+id: install_photo
+title: Install Photo (optional)
+module: CMFPhoto.Install
+function: install
