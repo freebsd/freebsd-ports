@@ -280,7 +280,7 @@ sub cvs($;@) {
 sub make($@) {
     my $port = shift;		# Port category/name
     my @args = @_;
-    
+
     push(@args, "PORTSDIR=$portsdir")
 	unless ($portsdir eq "/usr/ports");
     cd("$portsdir/$port");
@@ -304,7 +304,7 @@ sub ecks() {
 # Update the index file
 #
 sub update_index() {
-    
+
     my $parent;		# Parent directory
 
     $parent = $portsdir;
@@ -355,7 +355,7 @@ sub find_port($) {
     my $port = shift;		# Port to find
 
     my @suggest;		# Suggestions
-    
+
     stderr("Can't find required port '$port'");
     @suggest = grep(/^$port/i, keys(%ports));
     if (@suggest == 1 && $suggest[0] =~ m/^$port[0-9.-]/) {
@@ -377,7 +377,7 @@ sub add_port($$) {
     my $req = shift;		# Requirement (explicit or implicit)
 
     my $realport;		# Real port name
-    
+
     if ($port =~ m|^([^/]+/[^/]+)$|) {
 	$realport = $1;
     } else {
@@ -410,7 +410,7 @@ sub get_origin($) {
     my $origin;			# Origin
 
     if (!sysopen(FILE, "$dbdir/$port/+CONTENTS", O_RDONLY)) {
-        bsd::warn("can't read manifest for $port");
+	bsd::warn("can't read manifest for $port");
 	return undef;
     }
     while (<FILE>) {
@@ -434,7 +434,7 @@ sub add_installed() {
     local *DIR;			# Directory handle
     my $port;			# Installed port
     my $origin;			# Port's origin
-    
+
     opendir(DIR, $dbdir)
 	or bsd::err(1, "can't read database directory");
     foreach $port (readdir(DIR)) {
@@ -445,7 +445,7 @@ sub add_installed() {
 		read_index();
 	    }
 	    if (!defined($origin = $ports{$port})) {
-	        bsd::warnx("installed port %s is unknown", $port);
+		bsd::warnx("installed port %s is unknown", $port);
 	    }
 	}
 	if (defined($installed{$port} = $origin)) {
@@ -467,7 +467,7 @@ sub find_master($) {
     if ($masterport{$port}) {
 	return $masterport{$port};
     }
-    
+
     # Look for MASTERDIR in the Makefile. We can't use 'make -V'
     # because the Makefile might try to include the master port's
     # Makefile, which might not be checked out yet.
@@ -486,7 +486,7 @@ sub find_master($) {
 	    1 while ($master =~ s|/[^\./]*/\.\./|/|);
 	    $master =~ s|^/||;
 	    if ($master !~ m|^[^/]+/[^/]+$|) {
-	        bsd::warn("invalid master for %s: %s", $port, $master);
+		bsd::warn("invalid master for %s: %s", $port, $master);
 		next;
 	    }
 	    close(FILE);
@@ -592,7 +592,7 @@ sub find_dependencies($) {
 #
 sub update_ports_tree(@) {
     my @ports = @_;		# Ports to update
-    
+
     my $port;			# Port name
     my $category;		# Category name
     my %upd_cat;		# Hash of updated categories
@@ -610,7 +610,7 @@ sub update_ports_tree(@) {
 	my $item;		# Iterator
 	my $master;		# Master port
 	my $dependency;		# Dependency
-	
+
 	# Determine which ports need updating
 	foreach $item (@additional) {
 	    next if $processed{$item};
@@ -625,11 +625,11 @@ sub update_ports_tree(@) {
 	}
 	last unless @update_now;
 	info("Pass $n:", @update_now);
-	
+
 	# Update the relevant sections of the ports tree
 	foreach $category (keys(%upd_port)) {
 	    my @ports;		# Ports to update
-	    
+
 	    if (!$upd_cat{$category}) {
 		cd($portsdir);
 		cvs("update", "-l", $category)
@@ -658,7 +658,7 @@ sub update_ports_tree(@) {
 		# Need to process master before we continue
 		next;
 	    }
-	    
+
 	    # Find the port's package name
 	    if (!exists($pkgname{$port})) {
 		$makev = capture(\&make, ($port, "-VPKGNAMEPREFIX",
@@ -697,7 +697,7 @@ sub find_port_file($$) {
     my $file = shift;		# File to look for
 
     my $master;			# Master port
-    
+
     $master = $port;
     while (!-f "$portsdir/$master/$file") {
 	if (!($master = $masterport{$master})) {
@@ -741,7 +741,7 @@ sub show_port_website($) {
     }
     close(FILE);
     if (!defined($website)) {
-        bsd::warnx("No website for $port");
+	bsd::warnx("No website for $port");
     } else {
 	print("$website\n");
     }
@@ -874,7 +874,7 @@ sub clean_port($) {
 sub clean_tree() {
 
     my $port;			# Port name
-    
+
     # We could just cd to $portsdir and 'make clean', but it'd
     # be extremely noisy due to only having a partial tree
     foreach $port (keys(%ports)) {
@@ -987,14 +987,14 @@ MAIN:{
     if (!@ARGV) {
 	usage();
     }
-    
+
     # Get option defaults
     if ($ENV{'PORTEASY_OPTIONS'}) {
 	foreach (split(' ', $ENV{'PORTEASY_OPTIONS'})) {
 	    unshift(@ARGV, $_);
 	}
     }
-    
+
     # Scan command line options
     Getopt::Long::Configure("auto_abbrev", "bundling");
     GetOptions(
@@ -1029,7 +1029,7 @@ MAIN:{
 	($build || $fetch || $list || $packages || $plist || $website)) {
 	usage();
     }
-        
+
     if ($portsdir !~ m/^\//) {
 	$portsdir = `pwd` . $portsdir;
 	$portsdir =~ s/\n/\//s;
@@ -1038,7 +1038,7 @@ MAIN:{
     if ($portsdir !~ m/\/ports\/?$/) {
 	bsd::errx(1, "ports directory must be named 'ports'");
     }
-    
+
     $index = "$portsdir/INDEX";
 
     # 'package' implies 'build'
@@ -1050,7 +1050,7 @@ MAIN:{
     if ($status) {
 	$installed = 1;
     }
-    
+
     # Set and check CVS root
     if ($anoncvs && !$cvsroot) {
 	$cvsroot = &ANONCVS_ROOT;
@@ -1092,7 +1092,7 @@ MAIN:{
 	    }
 	}
     }
-    
+
     # Step 5: list selected ports
     if ($list) {
 	foreach $port (sort(keys(%reqd))) {
@@ -1106,7 +1106,7 @@ MAIN:{
     if ($status) {
 	list_installed();
     }
-    
+
     # Step 7: show info
     if ($info) {
 	foreach $port (keys(%reqd)) {
@@ -1133,7 +1133,7 @@ MAIN:{
 	    }
 	}
     }
-    
+
     # Step A: clean the ports directories (or the entire tree)
     if ($clean) {
 	if (!@ARGV) {
@@ -1146,7 +1146,7 @@ MAIN:{
 	    }
 	}
     }
-    
+
     # Step B: fetch distfiles
     if ($fetch) {
 	foreach $port (keys(%reqd)) {
