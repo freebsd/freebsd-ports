@@ -16,10 +16,10 @@ DISTNAME=	${PORTNAME}-${OPERAVERSION}.1-static-qt.i386
 
 MAINTAINER=	des@FreeBSD.org
 
-RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
-		${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif \
+RUN_DEPENDS=	${LINUXBASE}/usr/X11R6/lib/libXm.so.2:${PORTSDIR}/x11-toolkits/linux-openmotif \
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png
 
+USE_LINUX=	yes
 ONLY_FOR_ARCHS=	i386
 
 NO_BUILD=	yes
