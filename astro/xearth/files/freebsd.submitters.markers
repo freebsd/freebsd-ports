@@ -1,0 +1,12 @@
+# $Id$
+#
+# FreeBSD Project Submitters, for us mere mortals who contribute 
+# via send-pr :)
+#
+# In case you don't know the exact coordinates, you might find it at 
+# http://www.heavens-above.com/
+#
+# Style (sorted from east to west): sort -n -r -k 2
+# Lat,		Long,		"name"	opt			# location
+
+ 39.536,        -76.349         "erik@smluc.org"                # Bel Air, MD, USA

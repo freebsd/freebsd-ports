@@ -23,7 +23,7 @@ MAN1=		xearth.1
 # Copy the list of FreeBSD sites & committers locations
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/xearth
-.for marker in freebsd.committers.markers freebsd.ftp.markers
+.for marker in freebsd.committers.markers freebsd.submitters.markers freebsd.ftp.markers
 	@${INSTALL_DATA} ${FILESDIR}/${marker} ${PREFIX}/lib/X11/xearth
 .endfor
 
