@@ -213,6 +213,7 @@
     SUBDIR += mozilla-headers
     SUBDIR += mozilla-headers-devel
     SUBDIR += nautilus-gtkhtml
+    SUBDIR += nd
     SUBDIR += neon
     SUBDIR += neowebscript
     SUBDIR += netraider
