@@ -1,0 +1,13 @@
+--- configure.orig	Thu Nov  7 10:33:08 2002
++++ configure	Thu Nov  7 10:34:30 2002
+@@ -3457,6 +3457,10 @@
+ 	WGET_FLAGS=-o
+ 
+ 	;;
++fetch)
++	WGET_FLAGS=-o
++
++	;;
+ *)
+ 	{ { echo "$as_me:3461: error: No proper wget or curl were found \
+ on your system.  CURRENTLY OpenAG cannot compile without a command \
