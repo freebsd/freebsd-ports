@@ -1,0 +1,9 @@
+PatchReader is a set of utilities for reading in, transforming, and doing
+various other things with a patch.  It basically allows you to create a chain of
+readers that can read a patch, remove files from a patch, add CVS context, fix
+up the patch root according to CVS, and output the patch as raw unified or
+through a template processor (used in some places to output a patch as HTML).
+
+Author:	John Keiser <john@johnkeiser.com>
+
+WWW:	http://search.cpan.org/dist/PatchReader/
