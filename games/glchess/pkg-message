@@ -8,7 +8,7 @@ is in the Module section
 of your X config file.
 
 glChess supports the use of chess playing programs like
-www/crafty and www/gnuchess for you to play against so
+games/crafty and games/gnuchess for you to play against so
 install them manually if you want them.
 -----------------------------------------------------------
 
