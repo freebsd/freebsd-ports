@@ -1,9 +1,14 @@
 bin/FvwmCommand
+bin/fvwm-bug
 bin/fvwm-config
+bin/fvwm-convert-2.4
+bin/fvwm-convert-2.6
 bin/fvwm-menu-desktop
 bin/fvwm-menu-directory
 bin/fvwm-menu-headlines
 bin/fvwm-menu-xlock
+bin/fvwm-root
+bin/fvwm
 bin/fvwm2
 bin/xpmroot
 @unexec if cmp -s %D/etc/system.fvwm2rc %D/etc/system.fvwm2rc.dist; then rm -f %D/etc/system.fvwm2rc; fi

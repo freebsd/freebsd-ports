@@ -55,7 +55,8 @@ MAN1=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
 	FvwmSave.1 FvwmSaveDesk.1 FvwmScript.1 FvwmScroll.1 FvwmTaskBar.1 \
 	FvwmTheme.1 FvwmWharf.1 FvwmWinList.1 fvwm-menu-desktop.1 \
 	fvwm-menu-directory.1 fvwm-menu-headlines.1 fvwm-menu-xlock.1 \
-	fvwm2.1 xpmroot.1 fvwm-config.1
+	fvwm2.1 xpmroot.1 fvwm-config.1 fvwm-root.1 fvwm-bug.1 \
+	fvwm.1 fvwm-convert-2.2.1 fvwm-convert-2.4.1 fvwm-convert-2.6.1
 
 post-extract:
 	@${MKDIR} ${WRKDIR}/icons
