@@ -37,7 +37,4 @@ do-install:
 		${X11BASE}/share/sapphire/themes/
 	${INSTALL_DATA} ${WRKDIR}/menu/default ${X11BASE}/share/sapphire/menu/
 
-post-install:
-	${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
