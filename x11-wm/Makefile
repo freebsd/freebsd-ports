@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.14 1999/05/04 22:31:01 steve Exp $
+# $Id: Makefile,v 1.15 1999/07/18 21:02:32 cpiazza Exp $
 #
 
     SUBDIR += 9menu
@@ -11,6 +11,7 @@
     SUBDIR += blackbox
     SUBDIR += ctwm
     SUBDIR += enlightenment
+    SUBDIR += enlightenment-conf
     SUBDIR += flwm
     SUBDIR += fvwm
     SUBDIR += fvwm2
