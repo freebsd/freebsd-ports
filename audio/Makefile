@@ -3,6 +3,7 @@
 
     SUBDIR += Maaate
     SUBDIR += abcde
+    SUBDIR += abcmidi
     SUBDIR += abcselect
     SUBDIR += ac3dec
     SUBDIR += adpcm

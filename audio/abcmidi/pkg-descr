@@ -1,0 +1,22 @@
+abcMIDI is James Allwright's collection of abc <-> MIDI
+conversion utilities, plus YAPS to convert abc files to
+PostScript for printing music scores.
+
+midi2abc - program to convert MIDI format files to abc notation. 
+abc2midi  - converts abc file to MIDI file(s).
+abc2abc - a simple abc checker/re-formatter/transposer.
+mftext - gives a verbose description of what is in a MIDI file.
+yaps - an abc to PostScript converter.
+
+Also includes:
+abcguide.txt - how to write abc files for these programs
+demo.abc - a collection of sample abc tunes
+Check ${PREFIX}/share/doc/abcmidi/ for these and other docs.
+
+The abc format is plain text, but you might optionally install
+a MIDI player (timidity) and a PostScript viewer (gv with ghostscript).
+
+WWW: http://abc.sourceforge.net/abcMIDI/
+
+- Sue Blake
+sue@freebsd.org
