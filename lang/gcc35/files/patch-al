@@ -1,5 +1,5 @@
 --- gcc/configure.in.orig	Wed Apr 14 18:50:50 1999
-+++ gcc/configure.in	Mon Apr 19 15:16:14 1999
++++ gcc/configure.in	Wed Apr 21 17:34:09 1999
 @@ -606,6 +606,15 @@
   			thread_file='posix'
   		fi
@@ -21,16 +21,16 @@
  		;;
  changequote(,)dnl
 -	i[34567]86-*-freebsdelf*)
-+	i[34567]86-*-freebsdaout*)
++	i[34567]86-*-freebsd[12].* | i[34567]86-*-freebsd[12] | i[34567]86-*-freebsdaout*)
  changequote([,])dnl
 -		tm_file="i386/i386.h i386/att.h linux.h i386/freebsd-elf.h i386/perform.h"
 +		tm_file=i386/freebsd-aout.h
 +		tmake_file=t-freebsd
 +		;;
 +changequote(,)dnl
-+	i[34567]86-*-freebsd*)
++	i[34567]86-*-freebsd[3-9].* | i[34567]86-*-freebsd[3-9] | i[34567]86-*-freebsd* | i[34567]86-*-freebsdelf*)
 +changequote([,])dnl
-+		tm_file="i386/i386.h i386/att.h i386/freebsd.h i386/perform.h"
++		tm_file="i386/i386.h i386/freebsd.h i386/perform.h"
  		# On FreeBSD, the headers are already ok, except for math.h.
  		fixincludes=fixinc.wrap
  		extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"

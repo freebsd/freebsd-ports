@@ -1,9 +1,11 @@
---- gcc/config/i386/freebsd.h.orig	Tue Feb 16 15:51:31 1999
-+++ gcc/config/i386/freebsd.h	Mon Apr 19 09:22:46 1999
-@@ -21,6 +21,15 @@
+--- gcc/config/i386/freebsd.h.orig	Fri Apr  9 13:31:31 1999
++++ gcc/config/i386/freebsd.h	Wed Apr 21 17:36:21 1999
+@@ -21,6 +21,17 @@
  the Free Software Foundation, 59 Temple Place - Suite 330,
  Boston, MA 02111-1307, USA.  */
  
++
++#include "i386/att.h"	/* Use the i386 AT&T assembler syntax */
 +
 +/* Use stabs instead of DWARF debug format.  */
 +#undef PREFERRED_DEBUGGING_TYPE
@@ -16,7 +18,7 @@
  #undef TARGET_VERSION
  #define TARGET_VERSION fprintf (stderr, " (i386 FreeBSD/ELF)");
  
-@@ -113,22 +122,19 @@
+@@ -113,22 +124,19 @@
   : ((n) >= FIRST_STACK_REG && (n) <= LAST_STACK_REG) ? (n)+3 \
   : (-1))
  
@@ -43,7 +45,7 @@
      }									\
  }
  
-@@ -145,27 +151,31 @@
+@@ -145,27 +153,31 @@
  #define WCHAR_TYPE_SIZE BITS_PER_WORD
      
  #undef CPP_PREDEFINES
@@ -91,7 +93,7 @@
  /* Provide a LINK_SPEC appropriate for FreeBSD.  Here we provide support
     for the special GCC options -static and -shared, which allow us to
     link things in one of these three modes by applying the appropriate
-@@ -181,13 +191,23 @@
+@@ -181,13 +193,23 @@
     done.  */
  
  #undef	LINK_SPEC
@@ -121,7 +123,7 @@
  
  /* Get perform_* macros to build libgcc.a.  */
  
-@@ -204,3 +224,15 @@
+@@ -204,3 +226,15 @@
      else fprintf ((FILE), "\t.p2align %d,,%d\n", (LOG), (MAX_SKIP)); \
    }
  #endif
