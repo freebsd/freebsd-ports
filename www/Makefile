@@ -60,6 +60,7 @@
     SUBDIR += junkbuster
     SUBDIR += kdreamsite
     SUBDIR += kwebsearch
+    SUBDIR += libapreq
     SUBDIR += libghttp
     SUBDIR += libwww
     SUBDIR += libxpg4-ns
