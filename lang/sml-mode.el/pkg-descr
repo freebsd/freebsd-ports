@@ -1,0 +1,11 @@
+An EMACS major mode for editing SML programs.  Supports interaction
+with SML/NJ and other ML compilers.
+
+To use this, put the following into your ~/.emacs:
+
+	(require 'sml-site)
+
+- Koshy
+  jkoshy@freebsd.org
+
+WWW: http://cm.bell-labs.com/cm/cs/what/smlnj/doc/Emacs/sml-mode.html
