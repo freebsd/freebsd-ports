@@ -1,11 +1,11 @@
---- configure.orig	Mon May 10 23:49:46 1999
-+++ configure	Mon May 10 23:50:31 1999
+--- configure.orig	Sat Apr 10 18:02:18 1999
++++ configure	Fri Sep 10 09:47:29 1999
 @@ -2246,7 +2246,7 @@
  		fi ;;
  	Linux*) LDSHARED="gcc -shared";;
  	dgux*) LDSHARED="ld -G";;
 -	FreeBSD*/3*) LDSHARED="gcc -shared";;
-+	FreeBSD*/3*|FreeBSD*/4*) LDSHARED="gcc -shared";;
++	FreeBSD*/3*|FreeBSD*/4*) LDSHARED='gcc -shared ${LDFLAGS}';;
  	FreeBSD*|OpenBSD*) LDSHARED="ld -Bshareable";;
  	NetBSD*)
  		if [ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]
