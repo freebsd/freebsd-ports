@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Module
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@freebsd.org
+MAINTAINER=	fbsdports@commit.it
 COMMENT=	Refresh %INC files when updated on disk
 
 PERL_CONFIGURE=	yes
