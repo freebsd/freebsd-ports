@@ -7,6 +7,7 @@
 
 PORTNAME=	cannadic
 PORTVERSION=	0.94f
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://cannadic.oucrc.org/
 
@@ -19,7 +20,7 @@ ALL_TARGET=	maindic
 
 DICS=		gcanna.cbd gcanna.cld gcannaf.t
 DICSFILE=	dics.dir.gpl_canna
-DICDIR=		${PREFIX}/lib/canna/dic/canna
+DICDIR=		${PREFIX}/share/canna/dic/canna
 
 do-install:
 	cd ${WRKSRC};\
