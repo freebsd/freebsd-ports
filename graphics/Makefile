@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.59 1998/01/09 14:42:00 tg Exp $
+# $Id: Makefile,v 1.60 1998/01/28 20:20:08 jseger Exp $
 #
 
     SUBDIR += ImageMagick
@@ -9,6 +9,7 @@
     SUBDIR += camediaplay
     SUBDIR += dc3play
     SUBDIR += dore
+    SUBDIR += fli2gif
     SUBDIR += fxtv
     SUBDIR += gd
     SUBDIR += geomview
