@@ -39,7 +39,7 @@ PREFIX=		${X11BASE}
 .else
 IS_INTERACTIVE=	yes	# configure script asks questions
 .endif
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
 .if (${MACHINE} == "pc98")
 SCRIPTS_ENV+=	MACHINE=pc98
 PLIST=		${PKGDIR}/pkg-plist.pc98
