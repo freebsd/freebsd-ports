@@ -7,14 +7,14 @@
  fi 
  echo "aclocal..."
 -aclocal
-+aclocal15
++${ACLOCAL}
  echo "autoheader..."
 -autoheader
-+autoheader253
++${AUTOHEADER}
  echo "automake..."
 -automake --add-missing
-+automake15 --add-missing
++${AUTOMAKE} --add-missing
  echo "autoconf..."
 -autoconf
-+autoconf253
++${AUTOCONF}
  
