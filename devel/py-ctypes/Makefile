@@ -43,6 +43,8 @@ post-patch:
 		-e 's|\(Extension(.*\)$$|\1 define_macros=[("ffi_type_schar", \
 		"ffi_type_sint8"), ("ffi_type_sshort","ffi_type_sint16")],|' \
 		${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e 's,\(alpha\*-.*-osf.*\)),\1 | alpha*-*-freebsd*),' \
+                ${LIBFFIWRKSRC}/configure
 .if ${ARCH} == "ia64"
 	${LN} -sf ${LIBFFIWRKSRC}/${ARCH}/${ARCH}_flags.h ${LIBFFIWRKSRC}/
 	${REINPLACE_CMD} -e 's|defined(IA64)|defined(__ia64__)|' \
