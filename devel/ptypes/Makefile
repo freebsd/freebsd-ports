@@ -8,6 +8,7 @@
 
 PORTNAME=	ptypes
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.melikyan.com/ptypes/ \
 		http://ptypes.sourceforge.net/ \
@@ -28,8 +29,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/ptypes
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libptypes.a ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${WRKSRC}/index.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/doc
 .endif
 
 .include <bsd.port.mk>
