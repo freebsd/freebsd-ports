@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	AbiWord2
-PORTVERSION=	2.0.3
-PORTREVISION=	2
+PORTVERSION=	2.0.4
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -88,6 +87,7 @@ post-patch:
 	@${FIND} ${WRKSRC}/src/config/platforms -name "*.mk" | ${XARGS} \
 		${REINPLACE_CMD} 's|-ansi||g ; \
 		s|-pedantic||g'
+	@${RM} -rf ${WRKSRC}/autom4te.cache
 
 pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog INSTALL
