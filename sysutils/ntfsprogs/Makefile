@@ -22,7 +22,8 @@ INSTALLS_SHLIB=	yes
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-MAN8=		mkntfs.8	\
+MAN8=		libntfs-gnomevfs.8 \
+		mkntfs.8	\
 		ntfscat.8	\
 		ntfsclone.8	\
 		ntfscluster.8	\
