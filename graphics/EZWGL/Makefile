@@ -3,7 +3,7 @@
 # Date created:				4 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.8 1998/09/15 11:45:51 asami Exp $
+# $Id: Makefile,v 1.9 1998/09/19 01:27:52 hoek Exp $
 #
 
 DISTNAME=	EZWGL-1.39
@@ -20,9 +20,6 @@ USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
 .include "files/manpages"
-
-checkm:
-	@echo ${_MLINKS}
 
 pre-install:
 	-@ ${RM} ${WRKSRC}/examples/Makefile.orig
