@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	1.4.4
+PORTVERSION=	1.4.5
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	ftp://ftp.gnucash.org/pub/gnucash/gnucash/sources/stable/ \
-		http://www.gnucash.org/pub/gnucash/sources/stable/ \
+MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
+		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
 		http://www.linas.org/pub/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gnucash
