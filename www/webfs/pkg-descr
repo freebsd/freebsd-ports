@@ -17,7 +17,7 @@ Features/Design:
  * serves byte ranges.
  * optional logging in common log file format.
 
-WWW: http://www.IN-Berlin.DE/User/kraxel/webfs.html
+WWW: http://me.IN-Berlin.DE/~kraxel/webfs.html
 
 - Chris D. Faulhaber
 jedgar@FreeBSD.org
