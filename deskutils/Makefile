@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.1.1.1 1998/08/07 22:08:20 asami Exp $
+# $Id: Makefile,v 1.2 1998/08/10 02:51:42 obrien Exp $
 #
 
+    SUBDIR += abacus
     SUBDIR += cal
     SUBDIR += cbb
     SUBDIR += gnucash
