@@ -3,29 +3,33 @@
 # Date created:		12 November 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.10 1999/03/06 22:40:21 wosch Exp $
+# $Id: Makefile,v 1.11 1999/07/04 20:50:33 steve Exp $
 #
 
 DISTNAME=	cvsup-bin-16.0
 CATEGORIES=	devel net
-MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/
-DISTFILES=	cvsup-bin-16.0.tar.gz
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/binaries/
 
 MAINTAINER=	jdp@freebsd.org
 
-ONLY_FOR_ARCHS=	i386
+.if ${MACHINE_ARCH} == "i386"
+DISTFILES=	cvsup-freebsd-ix86-aout-16.0${EXTRACT_SUFX}
+.else
+DISTFILES=	cvsup.nogui-freebsd-${MACHINE_ARCH}-16.0${EXTRACT_SUFX}
+WRKSRC=		${WRKDIR}/cvsup.nogui-bin-16.0
+.endif
 
 NO_BUILD=	yes
 
-MAN1=	cvpasswd.1 cvsup.1
+MAN1=		cvpasswd.1 cvsup.1
+MANCOMPRESSED=	yes
 STRIP=
-
-do-configure:
-	cd ${WRKSRC}; gunzip ${MAN1:S/$/.gz/}
 
 do-install:
 	cd ${WRKSRC}; \
-	    ${INSTALL_PROGRAM} cvpasswd cvsup ${PREFIX}/bin; \
-	    ${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
+	    ${INSTALL_PROGRAM} cvpasswd cvsup ${PREFIX}/bin
+.for file in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${file}.gz ${PREFIX}/man/man1
+.endfor
 
 .include <bsd.port.mk>
