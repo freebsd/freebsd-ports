@@ -2,9 +2,12 @@ bin/limewire
 %%JAR_DIR%%/LimeWire.jar
 %%JAR_DIR%%/MessagesBundle.properties
 %%JAR_DIR%%/MessagesBundles.jar
-%%JAR_DIR%%/RunLime.jar
 %%JAR_DIR%%/collections.jar
 %%JAR_DIR%%/jl011.jar
+%%JAR_DIR%%/logicrypto.jar
+%%JAR_DIR%%/themes.jar
+%%JAR_DIR%%/update.ver
 %%JAR_DIR%%/xerces.jar
+%%JAR_DIR%%/xml.war
 @dirrm %%JAR_DIR%%
 @unexec rmdir %D/share/java/jar 2>/dev/null || true
