@@ -15,7 +15,7 @@
 +DEFAULT_V_LOCKDIR	= /var/spool/fidogate/lock
  DEFAULT_V_SPOOLDIR	= /var/spool/fidogate
 -DEFAULT_V_BTBASEDIR	= /var/spool/bt
-+DEFAULT_V_BTBASEDIR	= /var/spool/fidogate/out
++DEFAULT_V_BTBASEDIR	= /var/spool/fidogate/bt
  DEFAULT_V_INBOUND	= $(DEFAULT_V_BTBASEDIR)/in
  DEFAULT_V_PINBOUND	= $(DEFAULT_V_BTBASEDIR)/pin
  DEFAULT_V_UUINBOUND	= $(DEFAULT_V_BTBASEDIR)/uuin
