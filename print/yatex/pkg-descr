@@ -18,8 +18,7 @@ Yahtml is a brand new package for writing HTML files with Emacs. It is
 very far from html-mode, html-helper-mode or other existing HTML modes.
 It is a good successor of YaTeX in HTML world.
 
-To install yahtml, see the guidance in the beginning of
-site-lisp/yatex/yahtml.el.
-
 - S. Taoka
 taoka@FreeBSD.org
+
+WWW: http://www.yatex.org/

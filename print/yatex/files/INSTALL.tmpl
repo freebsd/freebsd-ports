@@ -40,10 +40,12 @@ if [ "X$2" = X"POST-INSTALL" ]; then
 	fi
 	count=`${EXPR} $count + 1`
     done
-    ${ECHO} "Adding entry for \"${pkgname}\" to ${infodir}/dir"
-    for file in `${ECHO}  ${infofiles} | ${SED} "s,:, ,g"`; do
-	    install-info ${infodir}/${file} ${infodir}/dir
-    done
+    if [ %%EMACS%% != xemacs ]; then
+	${ECHO} "Adding entry for \"${pkgname}\" to ${infodir}/dir"
+	for file in `${ECHO}  ${infofiles} | ${SED} "s,:, ,g"`; do
+		install-info ${infodir}/${file} ${infodir}/dir
+	done
+    fi
     exit 0
 else
     exit 0

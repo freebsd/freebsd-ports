@@ -1,42 +1,52 @@
 # New ports collection makefile for: YaTeX
-# Version required:	1.66
+# Version required:	1.67
 # Date created:		98/11/17
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	yatex1.66
-PKGNAME?=	yatex-1.66
+DISTNAME=	yatex1.67
+PKGNAME?=	yatex-1.67
 CATEGORIES?=	print elisp
-MASTER_SITES=	http://www.comp.ae.keio.ac.jp/~yuuji/yatex/ \
-		http://www.comp.ae.keio.ac.jp/~yuuji/tmp/
+MASTER_SITES=	http://www.yatex.org/
 
 MAINTAINER=	taoka@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/yatex${VERSION}
 .if defined(XEMACS-MULE)
 BUILD_DEPENDS=	xemacs:${PORTSDIR}/editors/xemacs-mule \
+		${PREFIX}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc:${PORTSDIR}/editors/xemacs-sumo-packages \
 		nkf:${PORTSDIR}/japanese/nkf
 .endif
 PKGINSTALL=	${WRKDIR}/INSTALL
 PKGDEINSTALL=	${WRKDIR}/DEINSTALL
 PKGMESSAGE=	${WRKDIR}/MESSAGE
-VERSION=	1.66
+VERSION=	1.67
 TARGETNAME=	YaTeX
 DIRSECTION=	The Emacs editor and associated tools
 
 # Note that 'INFODIR' is defined in bsd.info.mk
-.if defined(XEMACS) || defined(XEMACS-MULE)
+.if defined(XEMACS)
 EMACS=		xemacs
-EMACSDIR=	${PREFIX}/lib/xemacs
+EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
 INFODIR=	${EMACSDIR}/info
+PLIST=		${PKGDIR}/PLIST.xemacs
+MANIFEST=	MANIFEST.yatex
+.elif defined(XEMACS-MULE)
+EMACS=		xemacs
+EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
+INFODIR=	${EMACSDIR}/info
+PLIST=		${PKGDIR}/PLIST.xemacs-mule
+MANIFEST=	MANIFEST.yatex
 .elif defined(MULE)
 EMACSDIR=	${PREFIX}/share/mule
 INFODIR=	${PREFIX}/info
+PLIST=		${PKGDIR}/PLIST.mule
 .else
 EMACSDIR=	${PREFIX}/share/emacs
 INFODIR=	${PREFIX}/info
+PLIST=		${PKGDIR}/PLIST.emacs
 .endif
 .if defined(XEMACS)
 NEW=
@@ -49,16 +59,23 @@ NEW=		yatex.new
 HELP=		help/YATEXHLP.jp help/YATEXHLP.eng
 DOCSRC=		docs/yatexj.tex \
 		docs/yatex.ref \
+		docs/yahtmlj.tex docs/htmlqa \
 		docs/yatexadd.doc docs/yatexgen.doc \
 		docs/qanda
-INFOFILES=	yatexj:yatexe
-INFONODES=	YaTeX-jp:YaTeX
-INFONODEEXPS=	Yet Another tex-mode for Emacs. (Japanese):Yet Another tex-mode for Emacs.
+INFOFILES=	yatexj:yatexe:yahtmlj
+INFONODES=	YaTeX-jp:YaTeX:yahtml-jp
+INFONODEEXPS=	Yet Another tex-mode for Emacs. (Japanese):Yet Another tex-mode for Emacs.:Yet Another HTML mode. (Japanese)
 .endif
 DOCSRC+=	docs/yatexe.tex \
 		docs/yatexref.eng \
 		docs/qanda.eng
+.if defined(XEMACS) || defined(XEMACS-MULE)
+ELISPDIR=	${EMACSDIR}/lisp
+HELPDIR=	${EMACSDIR}/../site-lisp
+.else
 ELISPDIR=	${EMACSDIR}/site-lisp
+HELPDIR=	${ELISPDIR}
+.endif
 PORTSDOCDIR=	${PREFIX}/share/doc/yatex
 EL_FILES=	comment.el yatex.el yatexadd.el yatexgen.el \
 		yatexenv.el yatexlib.el \
@@ -86,6 +103,7 @@ do-build:
 		 -e 's,%%INFONODES%%,${INFONODES},g' \
 		 -e 's,%%INFONODEEXPS%%,${INFONODEEXPS},g' \
 		 -e 's,%%DIRSECTION%%,${DIRSECTION},g' \
+		 -e 's,%%EMACS%%,${EMACS},g' \
 		< ${FILESDIR}/$${file}.tmpl > ${WRKDIR}/$${file}; \
 	done
 # For XEmacs-mule 20.4, yatexj.info (in Japanese) should be remade
@@ -96,19 +114,26 @@ do-build:
 	${MV} yatexj.tex yatexj.tex.org; \
 	nkf -e yatexj.tex.org > yatexj.tex; \
 	${SETENV} LANG=ja_JP.EUC ${EMACS} -no-site-file -no-init-file \
-		-batch yatexj.tex -e texinfo-format-buffer -f save-buffer; \
+		-batch -l texinfmt -f batch-texinfo-format yatexj.tex; \
 	)
 .endif
 
 do-install:
 	(cd ${WRKSRC}; \
 	${MKDIR} ${ELISPDIR}/yatex; \
+	${MKDIR} ${HELPDIR} ${INFODIR}; \
 	${INSTALL_DATA} ${EL_FILES} ${ELISPDIR}/yatex; \
-	${INSTALL_DATA} ${HELP} ${ELISPDIR}; \
+	${INSTALL_DATA} ${HELP} ${HELPDIR}; \
 	${MKDIR} ${INFODIR}; \
+.if defined(XEMACS) || defined(XEMACS-MULE)
+	for file in `${ECHO} ${INFOFILES} | ${SED} "s,:, ,g"`; do \
+		${INSTALL_DATA} ${WRKSRC}/docs/$${file} ${INFODIR}.info; \
+	done; \
+.else
 	for file in `${ECHO} ${INFOFILES} | ${SED} "s,:, ,g"`; do \
 		${INSTALL_DATA} ${WRKSRC}/docs/$${file} ${INFODIR}; \
 	done; \
+.endif
 	)
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PORTSDOCDIR}
@@ -122,5 +147,14 @@ post-install:
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${INSTALL_DATA} ${WRKDIR}/yatex-startup.el ${ELISPDIR}
 	@${CAT} ${PKGMESSAGE}
+.if defined(XEMACS) || defined(XEMACS-MULE)
+	${RM} -f ${WRKDIR}/${MANIFEST}
+	emacsdir=`${ECHO} ${EMACSDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
+	${CAT} ${PLIST} | ${GREP} -e "^$${emacsdir}" | \
+		${SED} -e "s;^${EMACSDIR}/;;" > ${WRKDIR}/${MANIFEST}
+	${MKDIR} ${EMACSDIR}/pkginfo
+	${INSTALL_DATA} ${WRKDIR}/${MANIFEST} \
+		${EMACSDIR}/pkginfo/
+.endif
 
 .include <bsd.port.mk>
