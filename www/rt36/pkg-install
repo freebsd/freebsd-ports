@@ -1,0 +1,20 @@
+#!/bin/sh
+# $FreeBSD$
+#
+
+if [ "$2" != "PRE-INSTALL" ]; then
+    exit 0
+fi
+
+GROUP=rt
+
+if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
+	if pw groupadd ${GROUP}; then
+		echo "Added group \"${GROUP}\"."
+	else
+		echo "Adding group \"${GROUP}\" failed..."
+		exit 1
+	fi
+fi
+
+exit 0
