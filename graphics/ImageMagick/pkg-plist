@@ -32,6 +32,7 @@ include/magick/blob.h
 include/magick/cache.h
 include/magick/cache_view.h
 include/magick/classify.h
+include/magick/command.h
 include/magick/compress.h
 include/magick/delegate.h
 include/magick/draw.h
@@ -269,6 +270,7 @@ share/ImageMagick/magic.mgk
 %%PORTDOCS%%share/doc/ImageMagick/images/right_triangle_option.png
 %%PORTDOCS%%share/doc/ImageMagick/images/screen.png
 %%PORTDOCS%%share/doc/ImageMagick/www/Changelog.html
+%%PORTDOCS%%share/doc/ImageMagick/www/Copyright.html
 %%PORTDOCS%%share/doc/ImageMagick/www/ImageMagick.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Blob.html
 %%PORTDOCS%%share/doc/ImageMagick/www/Magick++/Cache.fig
@@ -317,6 +319,7 @@ share/ImageMagick/magic.mgk
 %%PORTDOCS%%share/doc/ImageMagick/www/api/cache.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/cache_view.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/color.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/composite.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/constitute.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/decorate.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/display.html
@@ -324,6 +327,7 @@ share/ImageMagick/magic.mgk
 %%PORTDOCS%%share/doc/ImageMagick/www/api/effect.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/enhance.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/error.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/fx.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/image.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/list.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/magick.html
@@ -333,6 +337,7 @@ share/ImageMagick/magic.mgk
 %%PORTDOCS%%share/doc/ImageMagick/www/api/quantize.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/registry.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/render.html
+%%PORTDOCS%%share/doc/ImageMagick/www/api/resize.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/segment.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/shear.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/signature.html
@@ -352,7 +357,6 @@ share/ImageMagick/magic.mgk
 %%PORTDOCS%%share/doc/ImageMagick/www/api/types/QuantizeInfo.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/types/RectangleInfo.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api/widget.html
-%%PORTDOCS%%share/doc/ImageMagick/www/api/zoom.html
 %%PORTDOCS%%share/doc/ImageMagick/www/api.html
 %%PORTDOCS%%share/doc/ImageMagick/www/archives.html
 %%PORTDOCS%%share/doc/ImageMagick/www/cd.html
@@ -378,6 +382,7 @@ share/ImageMagick/magic.mgk
 %%PORTDOCS%%share/doc/ImageMagick/www/smile.c
 %%PORTDOCS%%share/doc/ImageMagick/www/sponsor.html
 %%PORTDOCS%%share/doc/ImageMagick/www/tools.html
+%%PORTDOCS%%share/doc/ImageMagick/www/windows.html
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/api/types
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/api
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/www/Magick++
