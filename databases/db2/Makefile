@@ -9,7 +9,8 @@ PORTNAME=	db2
 PORTVERSION=	2.7.7
 PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
+#MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
+MASTER_SITES=	ftp://sleepycat1.inetu.net/releases/
 DISTNAME=	db-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,6 +23,11 @@ GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS=		--enable-compat185 \
 			--enable-dump185 --enable-cxx
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+INSTALL_TARGET=	install install_docs
+.endif
 
 post-install:
 	@-${RM} -fr ${PREFIX}/share/examples/db2
