@@ -11,8 +11,10 @@ COMMENT=	Multisync backup plugin
 
 RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync
 
-MD5_FILE=	${.CURDIR}/../multisync/distinfo
+MD5_FILE=	${MASTERDIR}/distinfo
 
 WRKSRC=		${WRKDIR}/multisync-${PORTVERSION}/plugins/backup_plugin
 
-.include "${.CURDIR}/../multisync/Makefile"
+MASTERDIR=	${.CURDIR}/../multisync
+
+.include "${MASTERDIR}/Makefile"
