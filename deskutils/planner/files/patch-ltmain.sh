@@ -1,11 +1,15 @@
---- ltmain.sh.orig	Sun Jan 20 16:11:07 2002
-+++ ltmain.sh	Thu Jan 24 17:07:06 2002
-@@ -1058,8 +1058,13 @@
+
+$FreeBSD$
+
+--- ltmain.sh.orig	Sat Jan 26 02:53:27 2002
++++ ltmain.sh	Tue Jan 29 09:13:29 2002
+@@ -1037,8 +1037,14 @@
  	continue
  	;;
  
 +      -pthread)
 +	compiler_flags="$compiler_flags -pthread"
++	continue
 +	;;
 +
        -module)
@@ -14,9 +18,9 @@
  	continue
  	;;
  
-@@ -2442,6 +2447,9 @@
- 	  *-*-openbsd*)
- 	    # Do not include libc due to us having libc/libc_r.
+@@ -2416,6 +2422,9 @@
+ 	  *-*-netbsd*)
+ 	    # Don't link with libc until the a.out ld.so is fixed.
  	    ;;
 +	  *-*-freebsd*)
 +	    # FreeBSD doesn't need this...
@@ -24,7 +28,7 @@
  	  *)
  	    # Add libc to deplibs on all other systems if necessary.
  	    if test $build_libtool_need_lc = "yes"; then
-@@ -4208,10 +4216,12 @@
+@@ -4183,10 +4192,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
