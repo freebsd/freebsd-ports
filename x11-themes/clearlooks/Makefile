@@ -16,7 +16,7 @@ COMMENT=	GTK+ 2.x engine based on Bluecurve
 
 USE_BZIP2=	yes
 USE_LIBTOOL_VER=15
-USE_GNOME=	gtk20 gnomehier
+USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 
 
