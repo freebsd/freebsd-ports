@@ -1,15 +1,34 @@
---- Makefile.orig	Thu Feb  7 21:33:59 2002
-+++ Makefile	Tue Nov 19 12:55:52 2002
-@@ -26,9 +26,9 @@
+--- Makefile.orig	Thu Feb  7 13:33:59 2002
++++ Makefile	Tue Apr 29 02:57:00 2003
+@@ -26,10 +26,6 @@
  
  # Please use a reasonably recent GNU make.
  
 -CXX=g++
 -CXXFLAGS=-g -O2 -Wall -W -Wwrite-strings -Wmissing-prototypes
 -LDFLAGS=
-+CXX?=g++
-+CXXFLAGS=-g -O2 -Wall -W -Wwrite-strings -Wmissing-prototypes -I/usr/local/include
-+LDFLAGS= -L/usr/local/lib -lgnugetopt
- 
+-
  OBJS=main.o picport.o hexfile.o program.o
  PROG=picprog
+ 
+@@ -38,6 +34,9 @@
+ $(PROG): $(OBJS)
+ 	$(CXX) $(LDFLAGS) $(OBJS) -o $@
+ 
++.cc.o:
++	$(CXX) -c $(CXXFLAGS) $(CPPFLAGS) $>
++
+ dep:
+ 	$(CXX) -M $(CXXFLAGS) *.cc > .depend
+ 
+@@ -55,10 +54,3 @@
+ install: all
+ 	install -c -o 0 -g 0 -m 755 $(PROG) /usr/local/bin/
+ 	install -c -o 0 -g 0 -m 644 *.1 /usr/local/man/man1/
+-
+-#
+-# include a dependency file if one exists
+-#
+-ifeq (.depend,$(wildcard .depend))
+-include .depend
+-endif

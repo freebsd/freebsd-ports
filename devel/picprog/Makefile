@@ -7,22 +7,26 @@
 
 PORTNAME=	picprog
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://hyvatti.iki.fi/~jaakko/pic/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serial port pic16c84 programmer
 
-LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+USE_GETOPT_LONG=	yes
 
-USE_GMAKE=	yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+
 MAN1=		picprog.1
+DOCS=		README picprog.html *.gif
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/picprog ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/picprog.1 ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/picprog.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.gif ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
