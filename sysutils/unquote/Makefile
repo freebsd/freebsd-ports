@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unquote
-PORTVERSION=	1.0.b3
+PORTVERSION=	1.0.b4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/misc/unquote/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
