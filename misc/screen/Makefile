@@ -1,14 +1,15 @@
 # New ports collection makefile for:	screen
-# Version required:	3.5.2
-# Date created:		20 November 1994
-# Whom:			torstenb
+# Version required:     3.5.16beta
+# Date created:         25 Nov 1994
+# Whom:                 ache
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1994/11/20 17:04:03 torstenb Exp $
 #
 
-DISTNAME=	screen-3.5.2
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+DISTNAME=       screen-3.5.16beta
+NCFTPFLAGS=     -PN
+MASTER_SITES=   ftp://ftp.uni-erlangen.de/pub/utilities/screen/
 GNU_CONFIGURE=	YES
-
+WRKSRC=         ${WRKDIR}/screen-3.5.16
 
 .include <bsd.port.mk>
