@@ -443,6 +443,7 @@
     SUBDIR += spike-proxy
     SUBDIR += srm
     SUBDIR += srp
+    SUBDIR += sscep
     SUBDIR += ssh
     SUBDIR += ssh-gui
     SUBDIR += ssh-multiadd
