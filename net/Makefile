@@ -420,7 +420,6 @@
     SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += ntp-devel
-    SUBDIR += nttcp
     SUBDIR += nvnet
     SUBDIR += nylon
     SUBDIR += obnc
@@ -740,7 +739,6 @@
     SUBDIR += tridiavnc
     SUBDIR += tsclient
     SUBDIR += tsocks
-    SUBDIR += ttcp
     SUBDIR += ttlscan
     SUBDIR += ttt
     SUBDIR += tund

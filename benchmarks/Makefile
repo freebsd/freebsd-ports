@@ -13,6 +13,7 @@
     SUBDIR += nbench
     SUBDIR += netperf
     SUBDIR += netpipe
+    SUBDIR += nttcp
     SUBDIR += pipebench
     SUBDIR += polygraph
     SUBDIR += postal
@@ -25,6 +26,7 @@
     SUBDIR += stream
     SUBDIR += tcpblast
     SUBDIR += tmetric
+    SUBDIR += ttcp
     SUBDIR += ubench
     SUBDIR += webbench
     SUBDIR += xengine
