@@ -36,6 +36,10 @@ CONFIGURE_ENV=  SEND_PR=/usr/bin/false
 # just install gnats
 INSTALL_TARGET=	install-gnats install-send-pr
 
+.if defined(WANT_FREEFALL_CFG)
+EXTRA_PATCHES=	${FILESDIR}/gnats-edit-pr.patch ${FILESDIR}/file-pr.c.patch
+.endif
+
 post-build:
 	(cd ${WRKSRC}/gnats;   ${MAKE} info)
 	(cd ${WRKSRC}/send-pr; ${MAKE} info)
