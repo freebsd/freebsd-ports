@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://unidata.ucar.edu/pub/netcdf/
-#DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
-EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for machine-independent, array-oriented data access
@@ -20,6 +18,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 CONFLICTS=	hdf-4.*
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-fPIC -DPIC -Df2cFortran"
 INSTALLS_SHLIB=	yes
 
@@ -41,7 +40,7 @@ post-install:
 	${LN} -sf libnetcdf_c++.so.1 ${PREFIX}/lib/libnetcdf_c++.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in COMPATIBILITY COPYRIGHT README RELEASE_NOTES
+.for file in COPYRIGHT README RELEASE_NOTES
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif

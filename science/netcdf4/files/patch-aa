@@ -1,9 +1,9 @@
---- rules.make.orig	Mon Mar 12 22:31:55 2001
-+++ rules.make	Mon Apr 30 14:02:44 2001
+--- rules.make.orig	Sat Dec 18 05:34:48 2004
++++ rules.make	Thu Jan  6 15:12:59 2005
 @@ -145,14 +145,8 @@
- 	cp $(MANUAL) $@
+ 	$(INSTALL) $(MANUAL) $@
  $(MANDIR)/man3/$(MANUAL):	$(MANDIR)/man3 $(MANUAL)
- 	cp $(MANUAL) $@
+ 	$(INSTALL) $(MANUAL) $@
 -$(MANDIR)/man3f/$(MANUAL):	$(MANDIR)/man3 $(MANDIR)/man3/$(MANUAL) \
 -				$(MANDIR)/man3f
 -	rm -f $@
