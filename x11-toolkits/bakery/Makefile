@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	bakery
-PORTVERSION=	1.0.2
+PORTVERSION=	1.3.11
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A C++ Application Framework for use with Gnome--
+COMMENT=	A C++ Application Framework for use with Gtkmm
 
-LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
-
-IGNORE=		"Obsolete; will be upgraded to 1.3.x after the 5.2 freeze"
+LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2 \
+		gconfmm-2.0:${PORTSDIR}/devel/gconfmm \
+		glademm-2.0:${PORTSDIR}/devel/libglademm \
+		xml\\+\\+-0.1:${PORTSDIR}/textproc/libxml++
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack
+USE_GNOME=	gnomeprefix gnomehack gnometarget
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
