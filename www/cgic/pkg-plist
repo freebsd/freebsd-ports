@@ -1,8 +1,6 @@
 include/cgic.h
 lib/libcgic.so
 lib/libcgic.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/cgic/cgic.html
 share/doc/cgic/cgic.txt
 share/doc/cgic/license.txt

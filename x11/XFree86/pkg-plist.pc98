@@ -1521,8 +1521,6 @@ lib/liboldX.so
 lib/liboldX.so.6
 lib/libxkbfile.a
 lib/libxkbui.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/modules/pex5.so
 lib/modules/xf86AceCad.so
 lib/modules/xf86Calcomp.so

@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
+INSTALL_SHLIBS=	yes
 .if exists(${X11BASE}/bin/XFree86)
 PLIST=		${WRKDIR}/PLIST
 .endif
@@ -37,7 +38,6 @@ post-configure:
 .endif
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/share/doc/Xaw3d
 	${CP} ${WRKSRC}/README.XAW3D ${PREFIX}/share/doc/Xaw3d
 .if exists(${X11BASE}/bin/XFree86)

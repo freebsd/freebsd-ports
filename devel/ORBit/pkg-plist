@@ -90,8 +90,6 @@ lib/libORBitutil.so
 lib/libORBitutil.so.2
 lib/libname-server.a
 lib/liborbit-c-backend.a
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/ORBit.m4
 share/aclocal/libIDL.m4
 @dirrm include/IIOP

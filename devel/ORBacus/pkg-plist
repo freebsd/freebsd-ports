@@ -76,6 +76,3 @@ lib/libOBX11.a
 share/doc/ORBacus/LICENSE
 @dirrm share/doc/ORBacus
 @dirrm include/OB
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
-

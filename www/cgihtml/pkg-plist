@@ -5,8 +5,6 @@ include/string-lib.h
 lib/libcgihtml.a
 lib/libcgihtml.so
 lib/libcgihtml.so.1
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/doc/cgihtml/CHANGES
 share/doc/cgihtml/CREDITS
 share/doc/cgihtml/html/cgihtml-1.html

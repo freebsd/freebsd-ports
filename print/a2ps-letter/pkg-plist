@@ -248,8 +248,6 @@ info/regex.info-3
 @exec install-info --info-dir=%D/info %D/info/regex.info
 include/liba2ps.h
 lib/liba2ps.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm share/a2ps/ppd
 @dirrm share/a2ps/ps
 @dirrm share/a2ps/afm

@@ -52,8 +52,6 @@ lib/libswigpy.so
 lib/libswigpl.la
 lib/libswigpy.la
 lib/libswigtcl8.la
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
 @dirrm lib/swig%%VER%%/guile
 @dirrm lib/swig%%VER%%/java
 @dirrm lib/swig%%VER%%/python

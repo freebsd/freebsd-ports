@@ -10,8 +10,6 @@ lib/libamserver.so.0
 lib/libamtape.a
 lib/libamtape.so
 lib/libamtape.so.0
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 libexec/amanda/amandad
 libexec/amanda/amcat.awk
 libexec/amanda/amidxtaped

@@ -607,8 +607,6 @@ lib/liboldX.a
 lib/liboldX.so
 lib/liboldX.so.6
 lib/libxkbfile.a
-@exec /usr/bin/env OBJFORMAT=elf /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=elf /sbin/ldconfig -R
 lib/modules/pex5.so
 lib/modules/xf86Elo.so
 lib/modules/xf86Jstk.so

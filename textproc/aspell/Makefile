@@ -18,6 +18,7 @@ LIB_DEPENDS=	pspell.2:${PORTSDIR}/textproc/pspell
 
 USE_NEWGCC=	yes
 USE_LIBTOOL=	yes
+INSTALL_SHLIBS=	yes
 CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes

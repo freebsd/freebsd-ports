@@ -14,13 +14,14 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
+INSTALL_SHLIBS=	yes
+
 ALL_TARGET=	libcgic.so.1
 
 do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/cgic.h ${PREFIX}/include
 	@ ${INSTALL_DATA} ${WRKSRC}/libcgic.so.1 ${PREFIX}/lib
 	@ ${LN} -s ${PREFIX}/lib/libcgic.so.1 ${PREFIX}/lib/libcgic.so
-	@ ${LDCONFIG} -m ${PREFIX}/lib
 	@ ${MKDIR} ${PREFIX}/share/examples/cgic
 	@ ${INSTALL_DATA} ${WRKSRC}/capture.c ${PREFIX}/share/examples/cgic
 	@ ${INSTALL_DATA} ${WRKSRC}/cgictest.c ${PREFIX}/share/examples/cgic

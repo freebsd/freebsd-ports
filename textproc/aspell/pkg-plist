@@ -82,8 +82,6 @@ lib/libaspell.so.6
 lib/libpspell_aspell.a
 lib/libpspell_aspell.so
 lib/libpspell_aspell.so.1
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aspell/ASCII.dat
 share/aspell/ASCII.map
 share/aspell/SGML.map

@@ -16,6 +16,7 @@ MASTER_SITES=	http://tzo.linux.tucows.com/files/x11/dev/ \
 MAINTAINER=	will@FreeBSD.org
 
 USE_LIBTOOL=	yes
+INSTALL_SHLIBS=	yes
 USE_GMAKE=	yes
 
 post-install:
@@ -31,6 +32,5 @@ post-install:
 .endfor
 	@ ${INSTALL_DATA} ${WRKSRC}/docs/api/sgml/api.sgml ${PREFIX}/share/doc/Hermes/API
 .endif
-	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

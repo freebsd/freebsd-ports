@@ -452,8 +452,6 @@ lib/modules/fonts/libfreetype.a
 lib/modules/fonts/libspeedo.a
 lib/modules/fonts/libtype1.a
 lib/modules/fonts/libxtt.a
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @unexec rm -f %D/lib/X11/rstart/commands/x
 @unexec rm -f %D/lib/X11/rstart/commands/x11
 @unexec rm -f %D/lib/X11/rstart

@@ -30,8 +30,6 @@ lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
 lib/libMagick.so.5
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Image/Magick.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs

@@ -14,6 +14,7 @@ DISTNAME=	OB-${PORTVERSION}
 MAINTAINER=	ejc@bazzle.com
 
 USE_XLIB=	yes
+INSTALL_SHLIBS=	yes
 HAS_CONFIGURE=	yes
 USE_NEWGCC=	yes
 CONFIGURE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
@@ -22,7 +23,6 @@ MLINKS=		idl.1 hidl.1	- irdel.1	- irfeed.1 \
 		- irgen.1	- irserv.1	- jidl.1
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
 	${MKDIR} ${PREFIX}/share/doc/ORBacus
 	${INSTALL_DATA} ${WRKSRC}/ob/LICENSE ${PREFIX}/share/doc/ORBacus
 

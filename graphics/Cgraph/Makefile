@@ -15,6 +15,8 @@ MAINTAINER=	tobez@plab.ku.dk
 
 WRKSRC=		${WRKDIR}/Cgraph/source
 
+INSTALL_SHLIBS=	yes
+
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
@@ -31,6 +33,5 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../examples/loglog/TFopt-lrLog.c ${PREFIX}/share/examples/cgraph
 	@${INSTALL_DATA} ${WRKSRC}/../examples/loglog/TFampspect.dat ${PREFIX}/share/examples/cgraph
 .endif
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

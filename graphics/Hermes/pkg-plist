@@ -10,8 +10,6 @@ include/Hermes/Types.h
 lib/libHermes.a
 lib/libHermes.so
 lib/libHermes.so.1
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/Hermes/AUTHORS
 share/doc/Hermes/ChangeLog
 share/doc/Hermes/COPYING

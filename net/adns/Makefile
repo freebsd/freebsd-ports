@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	adns
 MAINTAINER=	lukin@okbmei.msk.su
 
 GNU_CONFIGURE=	yes
+INSTALL_SHLIBS=	yes
 USE_GMAKE=	yes
 
 post-install:
