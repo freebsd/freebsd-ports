@@ -11,7 +11,7 @@ PORTREVISION=	13
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.mpg123.de/mpg123/ \
 		http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123/
-DISTFILES=	mpg123-0.59r-pl1.tar.gz
+DISTNAME=	mpg123-0.59r-pl1
 
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/:ipv6 \
 		http://www.unix-ag.org/Linux-Alpha/Packages/:l3 \
@@ -21,10 +21,11 @@ PATCHFILES=	mpg123-059r-v6-20000713b.diff.gz:ipv6 \
 		l3.diff.gz:l3
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	Command-line player for mpeg layer 1, 2 and 3 audio
 
 WANT_GNOME=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if defined(WITH_ICONV)
 MAKE_ARGS+=	WITH_ICONV=yes
@@ -75,7 +76,7 @@ pre-fetch:
 	@${ECHO_MSG} "also specify DEFAULT_RECODE in 'from:to' format"
 	@${ECHO_MSG}
 .endif
-.if ${MACHINE_ARCH} == "i386"
+.if ${ARCH} == "i386"
 .if ${OSVERSION} >= 430000
 .if ${MACHINE_CPU:M3dnow}
 OPT_ARCH=	3dnow
