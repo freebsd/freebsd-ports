@@ -19,11 +19,12 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 PATCH_SITES=	http://www.mod-snmp.com/distr/:modsnmp
 MODSNMP_FILE=	mod_snmp_${VERSION_MODSNMP}.tar.gz
 PATCHFILES=	${MODSNMP_FILE}:modsnmp
-EXTRA_PATCH=	${WRKSRC}/src/module/snmp_agt/mod_snmp.patch
 .endif
 .if defined(APACHE_WITH_IPV6) || make(makesum) || defined(FETCH_ALL)
 PATCH_SITES+=	ftp://ftp.42.org/pub/orphan/
 PATCHFILES+=	apache-1.3.29modssl-v6-20031204.diff.gz
+.else
+EXTRA_PATCHES+=	${FILESDIR}/mod_access.c.patch
 .endif
 
 MAINTAINER=	dinoex@FreeBSD.org
