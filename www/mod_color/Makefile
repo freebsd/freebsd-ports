@@ -8,7 +8,8 @@
 PORTNAME=	mod_color
 PORTVERSION=	0.3
 CATEGORIES=	www
-MASTER_SITES=	http://www.dimensional.com/~bgiles/mod_color/
+# mastersite disappeared in 2001
+MASTER_SITES=	# http://www.dimensional.com/~bgiles/mod_color/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.l
 
