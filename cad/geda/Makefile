@@ -7,6 +7,7 @@
 
 PORTNAME=	geda
 PORTVERSION=	20040111
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -15,7 +16,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	bruno@tinkerbox.org
 COMMENT=	The "meta-port" for gEDA
 
-BUILD_DEPENDS=	${LOCALBASE}/share/gEDA/sym:${PORTSDIR}/cad/geda-symbols \
+RUN_DEPENDS=	${LOCALBASE}/share/gEDA/sym:${PORTSDIR}/cad/geda-symbols \
 		gschem:${PORTSDIR}/cad/gschem \
 		gnetlist:${PORTSDIR}/cad/gnetlist \
 		gmk_sym:${PORTSDIR}/cad/geda-utils \
