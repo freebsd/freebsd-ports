@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ocamlweb
-PORTVERSION=	1.3
+PORTVERSION=	1.31
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/ocamlweb/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCFILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	jkoshy@FreeBSD.Org
+MAINTAINER=	jkoshy@FreeBSD.ORG
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
@@ -20,7 +20,7 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 GNU_CONFIGURE= yes
 
 .if !defined(NOPORTDOCS)
-DOCFILES=	${PORTNAME}-man.ps.gz
+DOCFILES=	${PORTNAME}-${PORTVERSION}-man.ps.gz
 .endif
 
 MAN1=		ocamlweb.1
