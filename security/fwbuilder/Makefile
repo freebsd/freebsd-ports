@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	fwbuilder
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	2.0.2
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}/fwbuilder/
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -15,27 +15,33 @@ MASTER_SITE_SUBDIR=	fwbuilder
 MAINTAINER=	vadim@fwbuilder.org
 COMMENT=	Firewall Builder GUI and policy compilers
 
-LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		fwbuilder.5:${PORTSDIR}/security/libfwbuilder
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+LIB_DEPENDS=	fwbuilder.6:${PORTSDIR}/security/libfwbuilder
 
-USE_GNOME=	glib12 gtk12
+USE_QT_VER=	3
+
+QTDIR?=		${X11BASE}
+
+USE_OPENSSL=	yes
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=13
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
+CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR} --with-qtdir=${QTDIR}
+MAKE_ARGS+=	QTDIR="${QTDIR}" \
+		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 INSTALLS_SHLIB=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-MAN1=		fwbuilder.1 fwblookup.1 fwbedit.1 fwb_ipt.1 fwb_ipf.1 fwb_ipfw.1 fwb_pf.1 \
-		fwb_install.1 fwb_compile_all.1
+MAN1=		fwbuilder.1 \
+		fwblookup.1 \
+		fwbedit.1 \
+		fwb_compile_all.1 \
+		fwb_install.1 \
+		fwb_ipt.1 \
+		fwb_ipf.1 \
+		fwb_ipfw.1 \
+		fwb_pf.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
