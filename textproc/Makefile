@@ -316,6 +316,7 @@
     SUBDIR += ruby-htmlrepair
     SUBDIR += ruby-htmlsplit
     SUBDIR += ruby-libxml
+    SUBDIR += ruby-libxslt
     SUBDIR += ruby-mwdom
     SUBDIR += ruby-nqxml
     SUBDIR += ruby-qt2xml

@@ -1,0 +1,6 @@
+ruby-libxslt provies an interface into the libxslt library, a
+feature complete XSLT library.
+
+Author:	Sean Chittenden <sean@chittenden.org>
+
+WWW: http://www.rubynet.org/modules/xml/libxslt/
