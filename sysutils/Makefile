@@ -330,6 +330,7 @@
     SUBDIR += uwatch
     SUBDIR += vcp
     SUBDIR += videogen
+    SUBDIR += virtualmin
     SUBDIR += vobcopy
     SUBDIR += wait_on
     SUBDIR += watchdog
