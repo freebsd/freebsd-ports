@@ -1,6 +1,6 @@
 
-# $Id: Makefile,v 1.3 1994/10/27 15:06:51 ljo Exp $
+# $Id: Makefile,v 1.4 1994/10/31 14:37:36 ljo Exp $
 #
-SUBDIR=	blas eispack gnuplot linpack oleo
+SUBDIR=	blas eispack gnuplot fudgit linpack oleo
 
 .include <bsd.port.subdir.mk>
