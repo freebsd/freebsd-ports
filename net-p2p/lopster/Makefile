@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lopster
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://lopster.sourceforge.net/download/
 
@@ -15,7 +14,6 @@ MAINTAINER=	ports@oven.org
 COMMENT=	GTK+ client for Napster
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
