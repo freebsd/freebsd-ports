@@ -7,6 +7,14 @@ time you update your ports collection, before attempting any port
 upgrades.
 
 20040420:
+  AFFECTS: users of sysutils/cdrtools
+
+  The cdrecord program now uses ${PREFIX}/etc (e.g. /usr/local/etc) instead
+  of /etc/default as the location of the global configuration file. If you
+  created such a configuration file you need to copy it over to the new
+  location.
+
+20040420:
   AFFECTS: users of x11/kdebase3
 
   If you update KDE from version 3.2.1 or earlier to version 3.2.2 while

@@ -1,0 +1,13 @@
+===========================================================================
+
+Note: The location of the cdrtools `defaults' files has been set to
+
+	%%PREFIX%%/etc
+
+This is the FreeBSD ports standard config file location, NOT the cdrtools
+standard location, which is /etc/default.
+
+The reason for this is that FreeBSD ports and packages should not use
+configuration files outside of %%PREFIX%%.
+
+===========================================================================
