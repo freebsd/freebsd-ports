@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nap
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 CATEGORIES=	audio net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nap
@@ -18,10 +18,6 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 MAN1=	nap.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,install-man install-htmlDATA,install-man,' \
-		${WRKSRC}/doc/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
