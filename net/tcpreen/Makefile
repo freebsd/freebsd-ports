@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	tcpreen
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.2
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://rdenisc.free.fr/tcpreen/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	A simple TCP session re-engineering tool
 
-LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -22,6 +22,12 @@ CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib -lgnu
 MAN1=		tcpreen.1
 
 DOC_FILES=	README
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+.endif
 
 post-install:
 .ifndef(NOPORTDOCS)
@@ -31,4 +37,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
