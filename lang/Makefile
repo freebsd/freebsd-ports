@@ -274,6 +274,7 @@
     SUBDIR += tensile
     SUBDIR += tinycobol
     SUBDIR += treecc
+    SUBDIR += tuareg-mode.el
     SUBDIR += visualworks
     SUBDIR += wamcc
     SUBDIR += xsb
