@@ -1,3 +1,7 @@
-Multi Threaded Wget
+mGet is a command line download manager. It splits the file into a number
+of segments and uses several separate threads to download each segment.
+It can handle proxies and can tunnel through them to get files blocked by
+proxies.  Currently mGet only handles HTTP downloads directly, while FTP
+downloads must go through a proxy.
 
-WWW: http://www.cse.iitk.ac.in/users/dbera/mget.php
+WWW: http://cs-people.bu.edu/dbera/activities/projects/mget/mget.php
