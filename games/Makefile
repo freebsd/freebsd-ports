@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.104 1998/02/15 17:04:58 jseger Exp $
+# $Id: Makefile,v 1.105 1998/02/15 22:54:16 se Exp $
 #
 
     SUBDIR += acm
@@ -89,6 +89,7 @@
     SUBDIR += xroach
     SUBDIR += xrobots
     SUBDIR += xrubik
+    SUBDIR += xscavenger
     SUBDIR += xscrabble
     SUBDIR += xshisen
     SUBDIR += xshogi
