@@ -13,6 +13,7 @@ ac_add_options --disable-composer
 # FBSD specific
 export CFLAGS="@CFLAGS@"
 export LIBS="@LIBS@"
+export CONFIG_SH=/bin/sh
 test -x /usr/bin/perl && export PERL=/usr/bin/perl \
     || export PERL=/usr/local/bin/perl
 mk_add_options PERL=$PERL

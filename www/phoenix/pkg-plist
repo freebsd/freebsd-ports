@@ -1,3 +1,5 @@
+@comment 20021102 on wwweasel.geeksrus.net by AlanE@FreeBSD.org.
+@comment ====files/links
 bin/phoenix
 bin/phoenix-config
 lib/phoenix/bin/mozilla-config
@@ -2862,6 +2864,7 @@ lib/phoenix/share/idl/mozilla-1.2b/nsrootidl.idl
 lib/phoenix/share/idl/mozilla-1.2b/xpccomponents.idl
 lib/phoenix/share/idl/mozilla-1.2b/xpcexception.idl
 lib/phoenix/share/idl/mozilla-1.2b/xpcjsid.idl
+@comment ====create empty dirs
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/browser-region
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/communicator-region/wallet
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/global-region
@@ -3018,6 +3021,164 @@ lib/phoenix/share/idl/mozilla-1.2b/xpcjsid.idl
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/content/venkman/tests
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/locale/en-US/venkman
 @exec /bin/mkdir -p %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin/modern/venkman/images
+@comment ====remove empty dirs?
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin/modern/venkman/images || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/locale/en-US/venkman || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/venkman/content/venkman/tests || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global/widgets || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global/bindings || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global-region || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global-platform || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/pippki/content/pippki || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/pipnss/content/pipnss || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/modern/skin/modern/communicator/help || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/modern/skin/modern/communicator/cookie || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers/xblBindings || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers/styleRules || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers/domNode || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers/dom || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers/boxModel || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers/xblBindings || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers/styleRules || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers/domNode || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers/dom || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers/boxModel || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/locale/en-US/inspector/viewers || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/locale/en-US/inspector/search || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/xblBindings || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/stylesheets || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/styleRules || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/jsObject || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/domNode || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/dom || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/computedStyle || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/boxModel || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/tests || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/search/modules/junkImgs || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/search/modules/findFiles || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/prefs || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil/xul || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil/xpcom || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil/system || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil/rdf || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil/events || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/extensions || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/help/content/help || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/forms/skin/classic/forms || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/forms/content/forms || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-win/locale/en-US/navigator-platform || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-win/locale/en-US/global-platform || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-win/locale/en-US/communicator-platform/pref || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-unix/locale/en-US/navigator-platform || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-unix/locale/en-US/global-platform || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-unix/locale/en-US/communicator-platform/pref || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-mac/locale/en-US/navigator-platform || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-mac/locale/en-US/global-platform || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-mac/locale/en-US/communicator-platform/pref || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/wallet || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/pippki || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/pipnss || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/necko || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/navigator || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/help/images || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/global || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/forms || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/cookie || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/content-packs || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/xpinstall || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/wallet || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/timebomb || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/sidebar || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/security || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/search || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/regviewer || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/profile || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/pref || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/layout || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/history || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/dom || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/directory || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/bookmarks || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser/pref || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser/history || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser/downloads || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser/console || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser/bookmarks || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/autoconfig || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/skin/classic/embed || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/locale/en-US/embed || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/content/embed || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/content-packs/content/content-packs || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/xbl-marquee || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/wallet || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/necko || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/navigator-region || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/navigator-platform || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/navigator || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/cookie || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/xpinstall || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/xml || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/wallet || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/timebomb || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/sidebar || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/search || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/related || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/regviewer || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/profile || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/pref || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/history || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/directory || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/bookmarks || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/alerts || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator-region || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator-platform || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/autoconfig || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/navigator/icons || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/navigator/btn1 || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger/smime/icons || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger/messengercompose || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger/icons || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger/addressbook/icons || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/tree || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/toolbar || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/splitter || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/scrollbar || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/radio || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/progressmeter || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/menu || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/icons || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/filepicker || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/console || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/checkbox || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/arrow || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/editor/icons || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/xpinstall || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/taskbar || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/sidebar || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/search || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/related || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/profile || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/icons || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/directory || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/cookie || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/brand || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/bookmarks || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/alerts || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/browser/downloads || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/skin/modern/chatzilla/images || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/locale/en-US/chatzilla || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/content/chatzilla/lib/xul || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/content/chatzilla/lib/js || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser/pref || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser/history || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser/downloads || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser/console || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser/bookmarks || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/navigator-region || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/global-region || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/communicator-region/wallet || true
+@unexec /bin/rmdir %D/lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/browser-region || true
+@comment ====remove non-empty dirs
 @dirrm lib/phoenix/share/idl/mozilla-1.2b
 @dirrm lib/phoenix/share/idl
 @dirrm lib/phoenix/share/aclocal
@@ -3047,257 +3208,101 @@ lib/phoenix/share/idl/mozilla-1.2b/xpcjsid.idl
 @dirrm lib/phoenix/lib/mozilla-1.2b/defaults/autoconfig
 @dirrm lib/phoenix/lib/mozilla-1.2b/defaults
 @dirrm lib/phoenix/lib/mozilla-1.2b/components
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin/modern/venkman/images
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin/modern/venkman
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin/modern
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/skin
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/locale/en-US/venkman
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/locale/en-US
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/locale
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/content/venkman/tests
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/content/venkman
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/venkman
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global/widgets
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global/bindings
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global-region
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global-platform
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content/global
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/toolkit/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/toolkit
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/pippki/content/pippki
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/pippki/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/pippki
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/pipnss/content/pipnss
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/pipnss/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/pipnss
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/modern/skin/modern/communicator/help
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/modern/skin/modern/communicator/cookie
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/modern/skin/modern/communicator
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/modern/skin/modern
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/modern/skin
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/modern
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers/xblBindings
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers/styleRules
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers/domNode
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers/dom
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers/boxModel
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector/viewers
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern/inspector
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/modern
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers/xblBindings
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers/styleRules
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers/domNode
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers/dom
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers/boxModel
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector/viewers
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic/inspector
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin/classic
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/skin
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/locale/en-US/inspector/viewers
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/locale/en-US/inspector/search
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/locale/en-US/inspector
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/locale/en-US
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/locale
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/xblBindings
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/stylesheets
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/styleRules
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/jsObject
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/domNode
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/dom
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/computedStyle
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers/boxModel
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/viewers
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/tests
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/search/modules/junkImgs
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/search/modules/findFiles
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/search/modules
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/search
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/prefs
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil/xul
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil/xpcom
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil/system
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil/rdf
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil/events
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/jsutil
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector/extensions
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content/inspector
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/inspector
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/help/content/help
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/help/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/help
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/forms/skin/classic/forms
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/forms/skin/classic
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/forms/skin
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/forms/content/forms
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/forms/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/forms
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-win/locale/en-US/navigator-platform
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-win/locale/en-US/global-platform
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-win/locale/en-US/communicator-platform/pref
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-win/locale/en-US/communicator-platform
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-win/locale/en-US
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-win/locale
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-win
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-unix/locale/en-US/navigator-platform
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-unix/locale/en-US/global-platform
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-unix/locale/en-US/communicator-platform/pref
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-unix/locale/en-US/communicator-platform
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-unix/locale/en-US
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-unix/locale
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-unix
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-mac/locale/en-US/navigator-platform
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-mac/locale/en-US/global-platform
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-mac/locale/en-US/communicator-platform/pref
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-mac/locale/en-US/communicator-platform
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-mac/locale/en-US
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-mac/locale
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-mac
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/wallet
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/pippki
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/pipnss
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/necko
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/navigator
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/help/images
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/help
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/global
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/forms
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/cookie
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/content-packs
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/xpinstall
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/wallet
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/timebomb
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/sidebar
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/security
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/search
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/regviewer
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/profile
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/pref
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/layout
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/history
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/dom
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/directory
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator/bookmarks
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/communicator
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser/pref
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser/history
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser/downloads
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser/console
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser/bookmarks
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/browser
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US/autoconfig
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale/en-US
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US/locale
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/en-US
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/skin/classic/embed
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/skin/classic
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/skin
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/locale/en-US/embed
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/locale/en-US
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/locale
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/content/embed
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/embed-sample
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/content-packs/content/content-packs
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/content-packs/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/content-packs
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/xbl-marquee
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/wallet
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/necko
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/navigator-region
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/navigator-platform
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/navigator
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/cookie
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/xpinstall
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/xml
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/wallet
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/timebomb
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/sidebar
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/search
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/related
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/regviewer
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/profile
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/pref
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/history
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/directory
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/bookmarks
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator/alerts
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator-region
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator-platform
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/communicator
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content/autoconfig
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/comm
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/navigator/icons
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/navigator/btn1
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/navigator
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger/smime/icons
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger/smime
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger/messengercompose
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger/icons
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger/addressbook/icons
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger/addressbook
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/messenger
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/tree
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/toolbar
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/splitter
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/scrollbar
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/radio
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/progressmeter
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/menu
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/icons
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/filepicker
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/console
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/checkbox
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global/arrow
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/global
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/editor/icons
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/editor
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/xpinstall
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/taskbar
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/sidebar
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/search
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/related
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/profile
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/icons
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/directory
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/cookie
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/brand
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/bookmarks
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator/alerts
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/communicator
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/browser/downloads
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic/browser
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin/classic
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic/skin
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/classic
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/skin/modern/chatzilla/images
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/skin/modern/chatzilla
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/skin/modern
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/skin
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/locale/en-US/chatzilla
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/locale/en-US
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/locale
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/content/chatzilla/lib/xul
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/content/chatzilla/lib/js
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/content/chatzilla/lib
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/content/chatzilla
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/chatzilla
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser/pref
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser/history
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser/downloads
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser/console
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser/bookmarks
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/browser/content/browser
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/browser/content
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/browser
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/navigator-region
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/global-region
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/communicator-region/wallet
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/communicator-region
-@dirrm lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US/browser-region
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/US/locale/US
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/US/locale
 @dirrm lib/phoenix/lib/mozilla-1.2b/chrome/US
@@ -3416,3 +3421,4 @@ lib/phoenix/share/idl/mozilla-1.2b/xpcjsid.idl
 @dirrm lib/phoenix/include
 @dirrm lib/phoenix/bin
 @dirrm lib/phoenix
+@comment ====end====
