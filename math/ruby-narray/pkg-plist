@@ -1,4 +1,6 @@
+%%RUBY_SITEARCHLIBDIR%%/narray.h
 %%RUBY_SITEARCHLIBDIR%%/narray.so
+%%RUBY_SITEARCHLIBDIR%%/narray_config.h
 %%RUBY_SITELIBDIR%%/narray_ext.rb
 %%RUBY_SITELIBDIR%%/nmatrix.rb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/narray/ja/README.jp
