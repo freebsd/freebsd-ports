@@ -1256,3 +1256,4 @@ security/keyprint|security/opieprint|2004-08-28|newer version with a new name
 www/quanta|www/kdewebdev|2004-08-30|renamed
 net/kontact-plugins||2004-08-30|removed
 palm/kpilot|deskutils/kdepim3|2004-08-30|kpilot has been reintegrated into kdepim
+devel/calltree|devel/callgrind|2004-09-01|renamed by author

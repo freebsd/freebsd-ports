@@ -1,11 +1,13 @@
---- src/Makefile.in.orig	Thu Jun  3 05:08:28 2004
-+++ src/Makefile.in	Thu Jun  3 05:08:54 2004
-@@ -116,7 +116,7 @@
+--- src/Makefile.in.orig	Thu Aug 19 22:46:55 2004
++++ src/Makefile.in	Wed Aug 25 10:07:20 2004
+@@ -167,8 +167,8 @@
+ target_alias = @target_alias@
  SUBDIRS = .
- 
  AM_CFLAGS = $(WERROR) -DVG_LIBDIR="\"$(libdir)"\" \
-- -Winline -Wall -Wshadow -O -fomit-frame-pointer @PREFERRED_STACK_BOUNDARY@ -g
-+ -fomit-frame-pointer @PREFERRED_STACK_BOUNDARY@
- 
+- -Winline -Wall -Wshadow -O2 -fomit-frame-pointer \
+- @PREFERRED_STACK_BOUNDARY@ -g
++ -fomit-frame-pointer \
++ @PREFERRED_STACK_BOUNDARY@
  
  valdir = $(libdir)/valgrind
+ incincdir = $(includedir)/valgrind

@@ -7,6 +7,7 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	352
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.rabson.org/
 PKGNAMESUFFIX=	-snapshot
@@ -58,5 +59,9 @@ pre-patch:
 	${FIND} ${WRKSRC} -name "Makefile.in" -exec \
 		${REINPLACE_CMD} -e "s/docs//g" {} \;
 .endif
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/coregrind/vg_unistd.h \
+		${PREFIX}/include/valgrind
 
 .include <bsd.port.post.mk>

@@ -7,6 +7,7 @@ include/valgrind/valgrind.h
 include/valgrind/vg_constants_skin.h
 include/valgrind/vg_kerneliface.h
 include/valgrind/vg_skin.h
+include/valgrind/vg_unistd.h
 lib/valgrind/default.supp
 lib/valgrind/glibc-2.1.supp
 lib/valgrind/glibc-2.2.supp

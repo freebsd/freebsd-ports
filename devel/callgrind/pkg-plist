@@ -1,7 +1,7 @@
-bin/calltree
-bin/ct_annotate
-bin/ct_control
-include/valgrind/calltree.h
-lib/valgrind/vgskin_calltree.so
+bin/callgrind
+bin/callgrind_annotate
+bin/callgrind_control
+include/valgrind/callgrind.h
+lib/valgrind/vgskin_callgrind.so
 share/doc/valgrind/ct_main.html
 share/doc/valgrind/ct_techdocs.html
