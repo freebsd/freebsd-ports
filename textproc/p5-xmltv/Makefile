@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	xmltv
-PORTVERSION=	0.5.33
-CATEGORIES=	textproc perl5 python
+PORTVERSION=	0.5.34
+CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	xmltv
 PKGNAMEPREFIX=	p5-
@@ -35,11 +35,11 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
 	${SITE_PERL}/HTML/TreeBuilder.pm:${PORTSDIR}/www/p5-HTML-Tree \
 	${SITE_PERL}/HTML/LinkExtractor.pm:${PORTSDIR}/www/p5-HTML-LinkExtractor \
+	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_PYTHON=	yes
 USE_REINPLACE=	yes
 PERL_CONFIGURE=	yes
 
@@ -65,9 +65,9 @@ IGNORE=	"perl 5.6 or higher is required to build this port"
 
 MAN1=	tv_cat.1 tv_check.1 tv_extractinfo_en.1 \
 	tv_grab_de_tvtoday.1 tv_grab_dk.1 tv_grab_es.1 \
-	tv_grab_es_digital.1 tv_grab_fi.1 tv_grab_fr.1 tv_grab_hu.1 \
+	tv_grab_es_digital.1 tv_grab_fi.1 tv_grab_fr.1 tv_grab_huro.1 \
 	tv_grab_it.1 tv_grab_jp.1 tv_grab_na_dd.1 tv_grab_na_icons.1 \
-	tv_grab_nl.1 tv_grab_nl_wolf.1 tv_grab_no.1 tv_grab_nz.1 \
+	tv_grab_nl.1 tv_grab_nl_wolf.1 tv_grab_no.1 \
 	tv_grab_pt.1 tv_grab_se.1 tv_grab_uk_rt.1 tv_grep.1 \
 	tv_imdb.1 tv_remove_some_overlapping.1 tv_sort.1 tv_split.1 \
 	tv_to_latex.1 tv_to_text.1
