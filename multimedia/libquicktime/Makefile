@@ -8,6 +8,7 @@
 
 PORTNAME=	libquicktime
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -48,10 +49,29 @@ PORTDOCS=	codecs.html \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MMX) && (${ARCH} == "i386")
+.if ${ARCH} != "i386"
+WITHOUT_MMX=	yes
+WITHOUT_JPEGMMX=yes
+.endif
+
+.if !defined(WITHOUT_MMX) && (${ARCH} == "i386")
 CONFIGURE_ARGS+=	--enable-mmx
 .else
 CONFIGURE_ARGS+=	--disable-mmx
+.endif
+
+.if !defined(WITHOUT_MMX) && !defined(WITHOUT_JPEGMMX)
+LIB_DEPENDS+=	jpeg-mmx.62:${PORTSDIR}/graphics/jpeg-mmx
+.endif
+
+pre-everything::
+.if !defined(WITHOUT_MMX)
+	@${ECHO_MSG} "===> Define WITHOUT_MMX if your system does not support MMX"
+	@${ECHO_MSG} "===>"
+.endif
+.if !defined(WITHOUT_JPEGMMX)
+	@${ECHO_MSG} "===> Define WITHOUT_JPEGMMX to disable graphics/jpeg-mmx support"
+	@${ECHO_MSG} "===>"
 .endif
 
 post-extract:
