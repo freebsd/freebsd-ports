@@ -1,8 +1,10 @@
 # Exclusions list for header checking.
 # $FreeBSD$
 #
-^\.
-/\.
+
+# Skip dot files.
+^(.*/)?\.
+
 ^src/contrib/.*/FREEBSD-Xlist
 ^src/contrib/nvi/catalog
 ^src/etc/motd
