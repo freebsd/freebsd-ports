@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.33 1995/06/21 10:47:38 asami Exp $
+# $Id: Makefile,v 1.34 1995/07/05 14:08:49 jmz Exp $
 #
 # BROKEN: expect (no package file yet)
 # BROKEN: gnat (not really broken, just requires existing gnat compiler)
@@ -19,6 +19,7 @@
    SUBDIR += p2c
    SUBDIR += pTk
    SUBDIR += perl5
+   SUBDIR += python
    SUBDIR += scheme48
    SUBDIR += schemetoc
    SUBDIR += scm
