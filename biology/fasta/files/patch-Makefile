@@ -1,15 +1,16 @@
 --- Makefile.orig	Mon Jan 29 15:10:42 2001
 +++ Makefile	Mon Jan 29 15:15:08 2001
-@@ -3,13 +3,13 @@
+@@ -3,14 +3,14 @@
  # for mips, also use: -mips2 -O2
  #
  
 -CC= cc -O
 +#CC= cc -O
  #CC=cc -g
+ #CC=insure -g
  
--CFLAGS= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS
-+CFLAGS+= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS
+-CFLAGS= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS -DGAP_OPEN
++CFLAGS+= -DUNIX -DBIGMEM -DSFCHAR="':'" -DEXPM1 -DPROGRESS -DGAP_OPEN
  LFLAGS= -lm -o
  
 -BIN = /seqprg/slib/bin

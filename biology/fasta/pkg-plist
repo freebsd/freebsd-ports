@@ -10,6 +10,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/readme.v20u4
 %%PORTDOCS%%%%DOCSDIR%%/readme.v20u5
 %%PORTDOCS%%%%DOCSDIR%%/readme.v20u6
+%%PORTDOCS%%%%DOCSDIR%%/readme.v21u0
 bin/aacomp
 bin/align
 bin/align0
@@ -30,6 +31,7 @@ bin/prss
 bin/psgrease
 bin/randseq
 bin/relate
+bin/revcomp
 bin/ssearch
 bin/tfasta
 bin/tfastx
