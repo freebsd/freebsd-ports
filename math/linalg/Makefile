@@ -17,7 +17,9 @@ ALL_TARGET=	lib
 INSTALL_TARGET=	lib
 USE_GMAKE=	yes
 
-BROKEN=		"Tries to run eg++"
+post-patch:
+	@( cd ${WRKSRC}; ${SED} -e 's/%%CXXFLAGS%%/${CXXFLAGS}/g' \
+	    -e 's/%%CXX%%/${CXX}/g' c++ > c++.sed; mv c++.sed c++; ${CHMOD} +x c++ )
 
 post-install:
 	$(INSTALL_DATA) ${WRKSRC}/libla.a ${PREFIX}/lib
