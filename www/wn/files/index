@@ -1,5 +1,5 @@
 Owner=$MAINTAINER
-Subdirs=docs
+Subdirs=docs,images
 Indexfile=index.html
 Title=Welcome to the Web server at $SITENAME
 Link=/docs/index.html
