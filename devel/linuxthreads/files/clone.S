@@ -44,6 +44,7 @@ ENTRY(_clone)
 	movl	12(%ebp), %esi		/* get stack addr */
 
 	subl	$4, %esi
+	andl	$-16, %esi		/* Align stack addr */		
 	movl	20(%ebp), %eax		/* get __arg */
 	movl	%eax, (%esi)
 
