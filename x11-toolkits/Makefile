@@ -41,6 +41,7 @@
     SUBDIR += gtkextra
     SUBDIR += gtkextra--
     SUBDIR += gtkglarea
+    SUBDIR += gtkglarea--
     SUBDIR += gtkscintilla
     SUBDIR += gtkstep
     SUBDIR += gtkstep-pastel
