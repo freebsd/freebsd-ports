@@ -3,13 +3,13 @@
 # Date created:		4 Mar 1997
 # Whom:			Igor Vinokurov <igor@zynaps.ru>
 #
-# $Id$
+# $Id: Makefile,v 1.2 1997/09/17 04:51:30 max Exp $
 #
 
 DISTNAME=	tac_plus.2.1
 PKGNAME=	tac_plus-2.1
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftpeng.cisco.com/pub/tacacs/
+MASTER_SITES=	ftp://ftpeng.cisco.com/pub/tacacs/old/
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	igor@zynaps.ru
