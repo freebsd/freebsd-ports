@@ -391,6 +391,7 @@
     SUBDIR += ssh-gui
     SUBDIR += ssh-multiadd
     SUBDIR += ssh2
+    SUBDIR += ssh2-nox11
     SUBDIR += ssh_askpass_gtk2
     SUBDIR += sslproxy
     SUBDIR += sslsniffer
