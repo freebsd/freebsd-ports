@@ -6,33 +6,39 @@
 
 PORTNAME=	alex
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	devel haskell
-MASTER_SITES=	http://www.syntaxpolice.org/~ijones/alex/
-DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
-
+MASTER_SITES=	http://www.haskell.org/alex/dist/
 PKGNAMEPREFIX=	hs-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	obraun@FreeBSD.org
-COMMENT=	Alex is a Lex-like package for generating Haskell scanners
+MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+COMMENT=	Alex is a tool for generating lexical analysers in Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS+=	jade:${PORTSDIR}/textproc/jade
+.endif
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
-BUILD_WRKSRC=	${WRKSRC}/src
-MAKEFILE=	makefile
-ALL_TARGET=	alex
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/alex ${PREFIX}/bin
+PLIST_SUB=	"PORTVERSION=${PORTVERSION}"
+
+.if !defined(NOPORTDOCS)
+post-build:
+	${GMAKE} -C ${WRKSRC}/alex/doc ps
+.endif
+
+post-install:
 	${MKDIR} ${EXAMPLESDIR}
-.for i in Alex.hs ctx.x lit.lx pp.x tiny.y xscan.x Tokens.x examples.x makefile state.x tkns.hs
-	${INSTALL_DATA} ${WRKSRC}/examples/$i ${EXAMPLESDIR}
-.endfor
+	${FIND} ${WRKSRC}/alex/examples -type f -exec ${INSTALL_DATA} \{\} ${EXAMPLESDIR} \;
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/alex.ps ${WRKSRC}/doc/alex.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/alex/doc/alex.ps ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

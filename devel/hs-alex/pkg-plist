@@ -1,16 +1,29 @@
 bin/alex
+bin/alex-%%PORTVERSION%%
+lib/alex-%%PORTVERSION%%/alex.bin
+lib/alex-%%PORTVERSION%%/AlexTemplate
+lib/alex-%%PORTVERSION%%/AlexTemplate-ghc
+lib/alex-%%PORTVERSION%%/AlexTemplate-ghc-debug
+lib/alex-%%PORTVERSION%%/AlexTemplate-debug
+lib/alex-%%PORTVERSION%%/AlexWrapper-basic
+lib/alex-%%PORTVERSION%%/AlexWrapper-posn
+lib/alex-%%PORTVERSION%%/AlexWrapper-monad
+lib/alex-%%PORTVERSION%%/AlexWrapper-gscan
+@dirrm lib/alex-%%PORTVERSION%%
 %%PORTDOCS%%share/doc/alex/alex.ps
-%%PORTDOCS%%share/doc/alex/alex.pdf
 %%PORTDOCS%%@dirrm share/doc/alex
-share/examples/alex/Alex.hs
+share/examples/alex/Makefile
 share/examples/alex/Tokens.x
-share/examples/alex/ctx.x
+share/examples/alex/Tokens_gscan.x
+share/examples/alex/Tokens_posn.x
 share/examples/alex/examples.x
-share/examples/alex/lit.lx
-share/examples/alex/makefile
+share/examples/alex/haskell.x
+share/examples/alex/lit.x
 share/examples/alex/pp.x
 share/examples/alex/state.x
 share/examples/alex/tiny.y
 share/examples/alex/tkns.hs
-share/examples/alex/xscan.x
+share/examples/alex/words.x
+share/examples/alex/words_monad.x
+share/examples/alex/words_posn.x
 @dirrm share/examples/alex
