@@ -7,7 +7,7 @@
 
 PORTNAME=	gcursor
 PORTVERSION=	0.061
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://download.qballcow.nl/programs/gcursor/
 
@@ -27,9 +27,9 @@ DOCS=		AUTHORS COPYING ChangeLog INSTALL TODO
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%X11BASE%%|${X11BASE}|g' \
-			${WRKSRC}/src/gcursor.c
-	@${REINPLACE_CMD} -e 's|share/applications|share/gnome/capplets|g' \
-			${WRKSRC}/data/Makefile.in
+		${WRKSRC}/src/gcursor.c
+	@${REINPLACE_CMD} -e 's|share/applications|share/gnome/applications|g' \
+		${WRKSRC}/data/Makefile.in
 
 .ifndef (NOPORTDOCS)
 post-install:
