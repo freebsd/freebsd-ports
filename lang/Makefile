@@ -208,6 +208,7 @@
     SUBDIR += sml-nj
     SUBDIR += sml-nj-devel
     SUBDIR += snobol
+    SUBDIR += spidermonkey
     SUBDIR += spl
     SUBDIR += squeak2
     SUBDIR += squeak3
