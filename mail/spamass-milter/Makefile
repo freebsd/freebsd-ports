@@ -31,6 +31,14 @@ RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 .include <bsd.port.pre.mk>
 
+.if exists(${LOCALBASE}/lib/libldap.so)
+WITH_LDAP=yes
+.endif
+
+.if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
+USE_OPENLDAP=		yes
+.endif
+
 .if !defined(WITH_SENDMAIL_BASE) && \
     !defined(WITH_SENDMAIL_PORT) && \
     !exists(${LOCALBASE}/lib/libmilter.a)
@@ -57,6 +65,8 @@ LDFLAGS+=	-L${MILTERLIB}
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+USE_REINPLACE=	yes
+
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
@@ -67,6 +77,9 @@ post-patch:
 		${FILESDIR}/activation.txt > ${WRKDIR}/activation.txt
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/spamass-milter.sh > ${WRKDIR}/spamass-milter.sh
+.if !defined(WITHOUT_LDAP) && defined(WITH_LDAP)
+	@${REINPLACE_CMD} -e 's|-lmilter|-lmilter -lldap|g' ${WRKSRC}/configure
+.endif
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/spamass-milter.sh ${PREFIX}/etc/rc.d/spamass-milter.sh
