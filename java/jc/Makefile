@@ -41,6 +41,9 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${dir} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@if [ -f ${PREFIX}/lib/libjc.a ]; then \
+		${ECHO} lib/libjc.a >> ${TMPPLIST}; \
+	fi
 .endfor
 
 .include <bsd.port.post.mk>

@@ -3,6 +3,5 @@ bin/jc
 bin/jcgen
 bin/jcjavah
 etc/jc.conf
-lib/libjc.a
 lib/libjc.so
 lib/libjc.so.1
