@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.5.6
+PORTVERSION=	1.6.1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
 DISTNAME=	pam_ldap-${PORTVERSION:S/.//g}
 
 MAINTAINER=	marcus@FreeBSD.org
+COMMENT=	A pam module for authenticating with LDAP
 
 .include <bsd.port.pre.mk>
 
