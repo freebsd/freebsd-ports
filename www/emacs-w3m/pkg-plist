@@ -150,7 +150,7 @@
 %%LISPDIR%%/w3m-search.el
 %%LISPDIR%%/w3m-search.elc
 %%LISPDIR%%/w3m-ucs.el
-%%XEMACS_ONLY%%%%LISPDIR%%/w3m-ucs.elc
+@unexec rm -f %D/%%LISPDIR%%/w3m-ucs.elc
 %%LISPDIR%%/w3m-weather.el
 %%LISPDIR%%/w3m-weather.elc
 %%LISPDIR%%/w3m-xmas.el
