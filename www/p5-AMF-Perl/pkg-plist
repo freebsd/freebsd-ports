@@ -1,0 +1,18 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flash/FLAP/.packlist
+%%SITE_PERL%%/Flash/FLAP.pm
+%%SITE_PERL%%/Flash/FLAP/App/Executive.pm
+%%SITE_PERL%%/Flash/FLAP/IO/Deserializer.pm
+%%SITE_PERL%%/Flash/FLAP/IO/InputStream.pm
+%%SITE_PERL%%/Flash/FLAP/IO/OutputStream.pm
+%%SITE_PERL%%/Flash/FLAP/IO/Serializer.pm
+%%SITE_PERL%%/Flash/FLAP/Sql/MysqlRecordSet.pm
+%%SITE_PERL%%/Flash/FLAP/Util/Object.pm
+%%SITE_PERL%%/Flash/FLAP/Util/RemotingService.pm
+@dirrm %%SITE_PERL%%/Flash/FLAP/App
+@dirrm %%SITE_PERL%%/Flash/FLAP/IO
+@dirrm %%SITE_PERL%%/Flash/FLAP/Sql
+@dirrm %%SITE_PERL%%/Flash/FLAP/Util
+@dirrm %%SITE_PERL%%/Flash/FLAP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flash/FLAP
+@unexec rmdir %D/%%SITE_PERL%%/Flash 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flash 2>/dev/null || true
