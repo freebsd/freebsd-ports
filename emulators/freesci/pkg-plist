@@ -1,7 +1,15 @@
 bin/sciconsole
 bin/scidisasm
 bin/sciunpack
+bin/scipack
+bin/freesci
+bin/freesci-setup
 bin/sciv
-lib/libsciengine.a
-%%PORTDOCS%%share/freesci/sci.sgml
-%%PORTDOCS%%@dirrm share/freesci
+share/applnk/Games/Adventure/FreeSCI.desktop
+share/icons/hicolor/48x48/apps/freesci.png
+share/games/freesci/config.template
+%%PORTDOCS%%share/games/freesci/sci.sgml
+%%PORTDOCS%%share/games/freesci/sci-kernel.sgml
+%%PORTDOCS%%share/games/freesci/freesci.sgml
+%%PORTDOCS%%share/games/freesci/game-list.sgml
+@dirrm share/games/freesci
