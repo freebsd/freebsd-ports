@@ -38,6 +38,7 @@
     SUBDIR += java-commapi-freebsd
     SUBDIR += kallers
     SUBDIR += kermit
+    SUBDIR += klog
     SUBDIR += kpsk
     SUBDIR += libirman
     SUBDIR += libticables
