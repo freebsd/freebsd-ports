@@ -1,0 +1,6 @@
+etc/yptransitd/yptransitd.conf
+sbin/yptransitd
+etc/yptransitd/modules/ldap.so
+etc/yptransitd/ldap.conf
+@dirrm etc/yptransitd/modules
+@dirrm etc/yptransitd
