@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkdiff
-PORTVERSION= 	1.0.2
+PORTVERSION=	1.0.2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/gtkdiff/
 

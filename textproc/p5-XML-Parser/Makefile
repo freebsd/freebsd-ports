@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Parser
-PORTVERSION= 	2.30
+PORTVERSION=	2.30
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://wwwx.netheaven.com/~coopercc/xmlparser/

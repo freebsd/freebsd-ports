@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xhtml
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.w3.org/TR/xhtml1/
 DISTNAME=	xhtml1

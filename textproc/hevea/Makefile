@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		hevea
-PORTVERSION= 		1.04
+PORTVERSION=		1.04
 CATEGORIES=		textproc
 MASTER_SITES=		ftp://ftp.inria.fr/INRIA/Projects/para/hevea/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nfbtrans
-PORTVERSION= 	7.55
+PORTVERSION=	7.55
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://nfb.org/braille/nfbtrans/
 DISTNAME=	nfbtr755

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	par
-PORTVERSION= 	1.51
+PORTVERSION=	1.51
 CATEGORIES=	textproc
 MASTER_SITES=   http://www.cs.berkeley.edu/~amc/Par/
 DISTNAME=	Par151

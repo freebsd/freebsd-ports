@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tth
-PORTVERSION= 	2.78
+PORTVERSION=	2.78
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://hutchinson.belmont.ma.us/tth/tth-noncom/

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	urlview
-PORTVERSION= 	0.9
+PORTVERSION=	0.9
 CATEGORIES=	textproc www
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/contrib/ \
 		ftp://ftp.cs.hmc.edu/pub/me/ \

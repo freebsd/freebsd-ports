@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sgrep
-PORTVERSION= 	0.99
+PORTVERSION=	0.99
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cs.helsinki.fi/pub/Software/Local/Sgrep/
 

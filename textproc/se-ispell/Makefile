@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	se-ispell
-PORTVERSION= 	1.2.1
+PORTVERSION=	1.2.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sslug.dk/locale/ispell/iswedish/
 DISTNAME=	iswedish-1.2.1

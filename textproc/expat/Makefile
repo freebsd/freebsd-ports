@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	expat
-PORTVERSION= 	1.2
+PORTVERSION=	1.2
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/xml/
 

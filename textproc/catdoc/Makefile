@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	catdoc
-PORTVERSION= 	0.91.4
+PORTVERSION=	0.91.4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ice.ru/pub/vitus/
