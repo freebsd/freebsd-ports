@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	snownews
-PORTVERSION=	1.4.4
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	www
 MASTER_SITES=	http://home.kcore.de/~kiza/software/snownews/download/
 
@@ -20,8 +19,12 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/xml2-config:${PORTSDIR}/textproc/libxml2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
+USE_REINPLACE=	yes
 
 MAN1=		snownews.1
 MANLANG=	"" de nl fr it
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS +=|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
