@@ -3324,6 +3324,7 @@ linux-esound	ports/audio/linux-esound
 linux-flashplugin	ports/www/linux-flashplugin
 linux-gtk	ports/x11-toolkits/linux-gtk
 linux-ibm-jdk13	ports/java/linux-ibm-jdk13
+linux-imlib	ports/graphics/linux-imlib
 linux-jdk	ports/java/linux-jdk
 linux-jdk13	ports/java/linux-jdk13
 linux-jdk14	ports/java/linux-jdk14
