@@ -3886,6 +3886,7 @@ mpgtx		ports/graphics/mpgtx
 mpich		ports/net/mpich
 mplayer		ports/graphics/mplayer
 mplayer-fonts	ports/graphics/mplayer-fonts
+mplayer-skins	ports/graphics/mplayer-skins
 mplex		ports/graphics/mplex
 mpmf20		ports/audio/mpmf20
 mpqc		ports/science/mpqc
