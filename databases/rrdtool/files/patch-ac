@@ -1,26 +1,23 @@
---- Makefile.in.orig	Sun Apr 14 11:47:46 2002
-+++ Makefile.in	Wed May  1 16:04:06 2002
-@@ -392,12 +392,17 @@
- 
+--- Makefile.in.orig	Mon Oct 20 22:43:34 2003
++++ Makefile.in	Mon Oct 20 22:43:25 2003
+@@ -393,13 +393,13 @@
  # lets schedule the perl stuff for installation
  # the special call to install-sh is because the -d switch is not portable
+ # mac os X has its perl module in bundles so it seems
 -install-data-local:
 -	$(top_srcdir)/config/mkinstalldirs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
 -	$(INSTALL) -m 644 perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl
 -	$(INSTALL) -m 644 perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl
 -	$(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
--	$(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
-+
-+
+-	test -f perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@  && $(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true
+-	test -f perl-shared/blib/arch/auto/RRDs/RRDs.bundle  && $(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.bundle $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true
 +install-data-local: site-perl-inst
-+#      ./config/mkinstalldirs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
-+#      $(INSTALL) -m 644 perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl
-+#      $(INSTALL) -m 644 perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl
-+#      $(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
-+#      $(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
-+
-+
-+
++#	$(top_srcdir)/config/mkinstalldirs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
++#	$(INSTALL) -m 644 perl-piped/RRDp.pm $(DESTDIR)$(prefix)/lib/perl
++#	$(INSTALL) -m 644 perl-shared/RRDs.pm $(DESTDIR)$(prefix)/lib/perl
++#	$(INSTALL) -m 644 perl-shared/blib/arch/auto/RRDs/RRDs.bs $(DESTDIR)$(prefix)/lib/perl/auto/RRDs
++#	test -f perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@  && $(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.@SO_EXT@ $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true
++#	test -f perl-shared/blib/arch/auto/RRDs/RRDs.bundle  && $(INSTALL) -m 755 perl-shared/blib/arch/auto/RRDs/RRDs.bundle $(DESTDIR)$(prefix)/lib/perl/auto/RRDs || true
  
  perl_piped:: $(top_builddir)/perl-piped
  	test -d perl-piped \
