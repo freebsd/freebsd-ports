@@ -11,7 +11,7 @@
 
 PORTNAME=	junkbuster
 PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://server44.hypermart.net/f2org/ \
 		http://f2.org/download/ \
@@ -19,7 +19,7 @@ MASTER_SITES=	http://server44.hypermart.net/f2org/ \
 DISTNAME=	ijb-zlib-10
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	# yes, an empty target.
 JDIR=		${PREFIX}/etc/junkbuster
