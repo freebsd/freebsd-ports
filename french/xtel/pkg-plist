@@ -29,12 +29,12 @@ lib/X11/fonts/xtel/g18x10.pcf.gz
 lib/X11/fonts/xtel/g1s16x20.pcf.gz
 lib/X11/fonts/xtel/g1s8x10.pcf.gz
 lib/X11/fonts/xtel/xteldigit.pcf.gz
-%%PORTDOCS%%share/doc/xtel/COPYING
-%%PORTDOCS%%share/doc/xtel/COPYRIGHT
-%%PORTDOCS%%share/doc/xtel/FAQ.txt
-%%PORTDOCS%%share/doc/xtel/HISTOIRE.txt
-%%PORTDOCS%%share/doc/xtel/LISEZMOI.txt
-%%PORTDOCS%%share/doc/xtel/README_IMINITEL.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/HISTOIRE.txt
+%%PORTDOCS%%%%DOCSDIR%%/LISEZMOI.txt
+%%PORTDOCS%%%%DOCSDIR%%/README_IMINITEL.txt
 @dirrm lib/X11/xtel
 @dirrm lib/X11/fonts/xtel
-%%PORTDOCS%%@dirrm share/doc/xtel
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
