@@ -7,7 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	3.0.5
-PORTREVISION?=  3
+PORTREVISION?=  4
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 		ftp://ftp.chg.ru/pub/X11/qt/source/
@@ -23,10 +23,10 @@ LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 .if defined(WITH_IMAGE_PLUGINS)
 IMAGELIB_TYPE=	plugin
 PLIST_SUB+=	IMAGE_PLUGINS=""
-.else
+.else # WITHOUT_IMAGE_PLUGINS [default]
 IMAGELIB_TYPE=	qt
 PLIST_SUB+=	IMAGE_PLUGINS="@comment "
-.endif
+.endif # WITHOUT_IMAGE_PLUGINS [default]
 
 QT_PREFIX?=		${PREFIX}
 USE_BZIP2=		yes
@@ -46,18 +46,24 @@ CONFIGURE_ARGS=	-prefix ${QT_PREFIX} \
 		-no-nas-sound -sm \
 		-docdir ${QT_PREFIX}/share/doc/qt \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
+
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=-debug
-.endif
+.endif # defined(WITH_DEBUG)
+
+# backward compatibility
 .if defined(WITH_OPENGL)
+.undef WITHOUT_OPENFL
+.endif # defined(WITH_OPENGL)
+
+.if !defined(WITHOUT_OPENGL)
 USE_MESA=	yes
 PLIST_SUB+=	OPENGL=""
-PKGNAMESUFFIX=	-opengl
-BROKEN=	"Using WITH_OPENGL causes DRI to fail in mysterious ways"
-.else
+.else # WITHOUT_OPENGL
 PLIST_SUB+=	OPENGL="@comment "
 CONFIGURE_ARGS+=-disable-opengl
-.endif
+.endif # WITHOUT_OPENGL
+
 CONFIGURE_ENV=	${ECHO} yes | QTDIR="${WRKSRC}" \
 		CFLAGS="${CXXFLAGS}"
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib
@@ -67,11 +73,11 @@ ALL_TARGET=	symlinks sub-src sub-tools
 
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
-.endif
+.endif # ${MACHINE_ARCH} == "alpha"
 
 .if ${XFREE86_VERSION} < 4
 BROKEN=		"The QT 3.x port does not support any XFree86 < 4.x"
-.endif
+.endif # ${XFREE86_VERSION} < 4
 
 pre-fetch:
 .if exists(${X11BASE}/include/qt2/qapp.h)
