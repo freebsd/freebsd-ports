@@ -19,11 +19,10 @@ modify_cyrus_user() {
 	uhome=${PKG_PREFIX}/cyrus
 
 	if ! ${PW} mod user ${USER} -d "${uhome}" -s "${shell}"; then
-			e=$?
-			echo "*** Failed to update user \`${USER}'."
-			exit ${e}
+		echo "*** Failed to update user \`${USER}'."
+	else
+		echo "*** Updated user \`${USER}'."
 	fi
-	echo "*** Updated user \`${USER}'."
 }
 
 

@@ -41,11 +41,10 @@ modify_cyrus_user() {
 	uhome=/nonexistent
 
 	if ! ${PW} mod user ${USER} -d "${uhome}" -s "${shell}"; then
-		e=$?
 		echo "*** Failed to update user \`${USER}'."
-		exit ${e}
+	else
+		echo "*** Updated user \`${USER}'."
 	fi
-	echo "*** Updated user \`${USER}'."
 }
 
 case $2 in
