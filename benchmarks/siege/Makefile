@@ -6,29 +6,32 @@
 #
 
 PORTNAME=	siege
-PORTVERSION=	2.56
+PORTVERSION=	2.57
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://sid.joedog.org/pub/siege/ \
 		http://www.cus.org.uk/~dom/distfiles/siege/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	A http regression testing and benchmarking utility
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl=/usr --disable-shared
-MAN1=	siege.1 siege.config.1 layingsiege.1 urls_txt.1 bombardment.1 \
-	siege2csv.1
+USE_OPENSSL=	YES
+
+CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --disable-shared
+
+MAN1=		siege.1 siege.config.1 layingsiege.1 urls_txt.1 bombardment.1 \
+		siege2csv.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/siege ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/bombardment ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/siege.config ${PREFIX}/bin
-	@${MV} ${WRKSRC}/utils/siege2csv.pl ${WRKSRC}/utils/siege2csv
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/siege2csv ${PREFIX}/bin
-.for F in bombardment.1 layingsiege.1 siege.1 siege.config.1 \
-	siege2csv.1 urls_txt.1
-	${INSTALL_MAN} ${WRKSRC}/doc/${F} ${PREFIX}/man/man1
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/siege ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/utils/bombardment ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/utils/siege2csv.pl ${PREFIX}/bin/siege2csv
+.for F in ${MAN1}
+	@${INSTALL_MAN} ${WRKSRC}/doc/${F} ${PREFIX}/man/man1
 .endfor
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/siegerc ${DATADIR}
+	@${SED} -e "s,%%DATADIR%%,${DATADIR}," ${FILESDIR}/siege.config.in > ${PREFIX}/bin/siege.config
+	@${CHMOD} 555 ${PREFIX}/bin/siege.config
 
 .include <bsd.port.mk>
