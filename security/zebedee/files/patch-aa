@@ -1,0 +1,52 @@
+--- Makefile.orig	Fri Nov 19 13:36:27 1999
++++ Makefile	Sat Jan  8 01:51:44 2000
+@@ -28,29 +28,30 @@
+ #   the use of bzip2 compression
+ 
+ #DEFINES =						# Win32
+-DEFINES = -DHAVE_DEV_RANDOM -DHAVE_PTHREADS		# Linux
++#DEFINES = -DHAVE_DEV_RANDOM -DHAVE_PTHREADS		# Linux
++DEFINES = -DHAVE_DEV_RANDOM				# FreeBSD
+ #DEFINES = -DHAVE_PROC_FS -DHAVE_PTHREADS		# Solaris
+ 
+ # Location of gmp include and library
+ 
+-GMPINC = -I../gmp-2.0.2
+-GMPLIB = ../gmp-2.0.2/libgmp.a
++GMPINC = 
++GMPLIB = -lgmp
+ 
+ # Location of Blowfish include and library
+ 
+-BFINC = -I../blowfish
+-BFLIB = ../blowfish/libblowfish.a
++BFINC = -I${PREFIX}/include/openssl
++BFLIB = ${PREFIX}/lib/libcrypto.a
+ 
+ # Location of zlib include and library
+ 
+-ZINC = -I../zlib-1.1.3
+-ZLIB = ../zlib-1.1.3/libz.a
++ZINC =
++ZLIB = -lz
+ 
+ # Location of bzlib include and library
+ # Set these empty if you don't want bzib2 support
+ 
+-BZINC = -I../bzip2-0.9.5d
+-BZLIB = ../bzip2-0.9.5d/libbz2.a
++BZINC = -I${PREFIX}/include
++BZLIB = ${PREFIX}/lib/libbz2.a
+ 
+ 
+ # Suffix for executables
+@@ -61,7 +62,8 @@
+ # Extra OS-specific libraries
+ 
+ #OSLIBS = -lwsock32 -lwinmm		# Win32
+-OSLIBS = -lpthread			# Linux
++#OSLIBS = -lpthread			# Linux
++OSLIBS =				# FreeBSD
+ #OSLIBS = -lsocket -lnsl -lthread	# Solaris
+ 
+ # Supplementary object files (Win32 ONLY)
