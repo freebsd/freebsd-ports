@@ -13,11 +13,17 @@ MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert PostScript to other vector graphic formats
 
-BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
+BUILD_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 LIB_DEPENDS=	Magick++.5:${PORTSDIR}/graphics/ImageMagick \
 		ming.3:${PORTSDIR}/graphics/ming \
 		plotter.4:${PORTSDIR}/graphics/plotutils
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
+RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 USE_GNOME=	gnometarget pkgconfig
 USE_LIBTOOL=	yes
@@ -29,6 +35,14 @@ MAN1=	pstoedit.1
 CPPFLAGS=	-I${LOCALBASE}/include/ming -I${LOCALBASE}/include \
 		-I${X11BASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+
+pre-fetch:
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} ""
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+	@${ECHO} ""
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pstoedit.1 ${MANPREFIX}/man/man1
