@@ -19,6 +19,8 @@ BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		gpgsm:${PORTSDIR}/security/gnupg-devel
 LIB_DEPENDS=	gpg-error:${PORTSDIR}/security/libgpg-error
 
+CONFLICTS=	gpgme-0.*
+
 USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
