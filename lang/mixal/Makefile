@@ -17,7 +17,7 @@ MAINTAINER=     obrien@FreeBSD.org
 
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|/usr/bin/sed -e '1,/^This ought/d' |sh
+EXTRACT_AFTER_ARGS=	| ${SED} -e '1,/^This ought/d' |sh
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
 

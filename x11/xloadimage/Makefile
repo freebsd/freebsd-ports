@@ -3,7 +3,7 @@
 # Date created:         9 January 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.13 1998/10/15 11:10:02 jseger Exp $
+# $Id: Makefile,v 1.14 1998/10/16 02:12:34 jseger Exp $
 #
 
 DISTNAME=	xloadimage.4.1
@@ -28,6 +28,6 @@ do-configure:
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} xloadimage uufilter ${X11BASE}/bin
 	cd ${WRKSRC} && ${INSTALL_DATA} xloadimagerc ${X11BASE}/lib/X11/app-defaults/Xloadimage
-	cd ${WRKSRC} && sed -e s:/usr/lib/X11/Xloadimage:${X11BASE}/lib/X11/app-defaults/Xloadimage: < xloadimage.man |${GZIP_CMD} >${X11BASE}/man/man1/xloadimage.1.gz
+	cd ${WRKSRC} && ${SED} -e s:/usr/lib/X11/Xloadimage:${X11BASE}/lib/X11/app-defaults/Xloadimage: < xloadimage.man |${GZIP_CMD} >${X11BASE}/man/man1/xloadimage.1.gz
 
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ USE_XLIB=	yes
 
 post-configure:
 	@(cd ${WRKSRC} && ./configure < options.FreeBSD)
-	@(sed -e "s#%prefix%#${PREFIX}#g" < ${FILESDIR}/snns > ${WRKSRC}/snns)
+	@(${SED} -e "s#%prefix%#${PREFIX}#g" < ${FILESDIR}/snns > ${WRKSRC}/snns)
 
 do-build:
 	@(cd ${WRKSRC} && ./build all)

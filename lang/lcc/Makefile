@@ -25,14 +25,14 @@ LCCDESTDIR=	lib/${DISTNAME}/${UNAME_M}-${OPSYS}
 pre-configure:
 	@${MKDIR} ${LCCBUILDDIR}
 	@${CP} ${FILESDIR}/${OPSYS}.md ${WRKSRC}/src
-	@sed -e "s:%%PREFIX%%:${PREFIX}:g"  \
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g"  \
 	     -e "s:%%LCCDESTDIR%%:${LCCDESTDIR}:g"  \
 	     -e "s:%%VERSION%%:${DISTNAME}:g"  \
 		${FILESDIR}/${OPSYS}.c.in > ${WRKSRC}/etc/${OPSYS}.c
 	@#	below can be used to patchup PLIST file for diff os/arch
-	@#sed -e "s:%%LCCDESTDIR%%:${LCCDESTDIR}:g"  \
+	@#${SED} -e "s:%%LCCDESTDIR%%:${LCCDESTDIR}:g"  \
 		#${PKGDIR}/PLIST.in > ${PKGDIR}/PLIST
-	@sed -e "s:%%OPSYS%%:${OPSYS}:g"  \
+	@${SED} -e "s:%%OPSYS%%:${OPSYS}:g"  \
 		${WRKSRC}/makefile > ${WRKSRC}/makefile.configured
 	@/bin/mv -f ${WRKSRC}/makefile.configured ${WRKSRC}/makefile
 

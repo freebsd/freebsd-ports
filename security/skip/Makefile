@@ -3,7 +3,7 @@
 # Date created:         		26 November 1997
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
-# $Id: Makefile,v 1.9 1999/07/31 21:48:34 archie Exp $
+# $Id: Makefile,v 1.10 1999/08/23 04:23:42 mharo Exp $
 
 DISTNAME=		skip-1.0
 CATEGORIES=		security
@@ -52,7 +52,7 @@ post-patch:
 	@cd ${WRKSRC}; \
 	FILES=`find . -type f -print | xargs ${GREP} -l @@PREFIX@@`; \
 	for FILE in $$FILES; do \
-	  sed 's!@@PREFIX@@!${PREFIX}!g' < $$FILE > $$FILE.new ; \
+	  ${SED} 's!@@PREFIX@@!${PREFIX}!g' < $$FILE > $$FILE.new ; \
 	  mv $$FILE.new $$FILE; \
 	done
 
