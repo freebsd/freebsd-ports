@@ -18,6 +18,7 @@ PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	giffunip@asme.org
 
+USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 MAN1=		yorick.1 gist.1
