@@ -49,6 +49,10 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 WITHOUT_LIBJAVA=	yes
 .endif
 
+.if ${ARCH} == alpha
+USE_GCC=	3.3+
+.endif
+
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
 SUFFIX=		34
