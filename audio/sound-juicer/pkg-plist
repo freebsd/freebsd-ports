@@ -1,4 +1,5 @@
 bin/sound-juicer
+etc/gconf/gconf.xml.defaults/apps/sound-juicer/%gconf.xml
 etc/gconf/schemas/sound-juicer.schemas
 share/gnome/applications/sound-juicer.desktop
 share/gnome/help/sound-juicer/C/fdl-appendix.xml
@@ -16,4 +17,5 @@ share/gnome/sound-juicer/sound-juicer.glade
 @dirrm share/gnome/help/sound-juicer/C/figures
 @dirrm share/gnome/help/sound-juicer/C
 @dirrm share/gnome/help/sound-juicer
+@dirrm etc/gconf/gconf.xml.defaults/apps/sound-juicer
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/sound-juicer/sound-juicer-manual-C.omf 2>/dev/null || /usr/bin/true
