@@ -1937,6 +1937,7 @@ fotaq		ports/games/fotaq
 fox		ports/x11-toolkits/fox
 fox-devel		ports/x11-toolkits/fox-devel
 fpc		ports/lang/fpc
+fpc-base	ports/lang/fpc-base
 fpc-demo	ports/lang/fpc-demo
 fpc-devel	ports/lang/fpc-devel
 fpc-docs	ports/lang/fpc-docs
