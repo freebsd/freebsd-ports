@@ -1,0 +1,12 @@
+--- config.h.in.orig	Fri May 14 13:02:47 1999
++++ config.h.in	Fri Feb 15 14:17:49 2002
+@@ -301,4 +301,9 @@
+ 
++#ifdef __FreeBSD__
++#include <sys/param.h>
++#endif
++#if __FreeBSD_version < 430000
+ /* Define if you have the <sys/select.h> header file.  */
+ #undef HAVE_SYS_SELECT_H
++#endif
+ 
