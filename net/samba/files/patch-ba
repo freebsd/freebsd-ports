@@ -1,27 +1,5 @@
---- configure.in.orig	Sat Oct 13 22:09:16 2001
-+++ configure.in	Tue Oct 16 17:21:21 2001
-@@ -406,21 +406,6 @@
- AC_CHECK_TYPE(ssize_t, int)
- AC_CHECK_TYPE(wchar_t, unsigned short)
- 
--############################################
--# for cups support we need libcups, and a handful of header files
--
--AC_CHECK_LIB(cups,httpConnect)
--
--# I wonder if there is a nicer way of doing this?
--
--if test x"$ac_cv_lib_cups_httpConnect" = x"yes"; then
--        AC_CHECK_HEADERS(cups/cups.h cups/language.h)
--        if test x"$ac_cv_header_cups_cups_h" = x"yes"; then
--                if test x"$ac_cv_header_cups_language_h" = x"yes"; then
--                        AC_DEFINE(HAVE_CUPS)
--                fi
--        fi
--fi
- 
- ############################################
- # we need libdl for PAM and the new VFS code
+--- configure.in.orig	Sat Oct 13 17:09:16 2001
++++ configure.in	Fri Jan 11 19:58:14 2002
 @@ -1622,7 +1607,7 @@
    yes)
      AC_MSG_RESULT(yes)
@@ -31,24 +9,3 @@
      CFLAGS="$CFLAGS -I$withval/include"
      LDFLAGS="$LDFLAGS -L$withval/lib"
      ;;
-@@ -1961,6 +1946,20 @@
-     ;;
-   esac ],
-   AC_MSG_RESULT(no)
-+)
-+
-+#################################################
-+# check for CUPS printing support
-+AC_MSG_CHECKING(whether to use CUPS printing)
-+AC_ARG_WITH(cups,
-+[  --with-cups=base-dir		Include CUPS printing support
-+   --without-cups		Don't include CUPS printing support (default)],
-+[  AC_MSG_RESULT(yes)
-+   LIBS="$LIBS -lcups"
-+   CFLAGS="$CFLAGS -I$withval/include"
-+   LDFLAGS="$LDFLAGS -L$withval/lib"
-+   AC_CHECK_LIB(cups,httpConnect)],
-+ AC_MSG_RESULT(no)
- )
- 
- 
