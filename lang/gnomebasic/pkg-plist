@@ -12,8 +12,10 @@ include/gb/gb.h
 include/gb/libgb.h
 include/gbrun/gbrun-eval.h
 include/gbrun/gbrun-file.h
+include/gbrun/gbrun-global.h
 include/gbrun/gbrun-object.h
 include/gbrun/gbrun-project.h
+include/gbrun/gbrun-value.h
 include/gbrun/gbrun.h
 include/gbrun/libgbrun.h
 include/gbrun/objects/gbrun-form.h
