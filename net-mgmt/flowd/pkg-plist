@@ -1,0 +1,17 @@
+bin/flowd-reader
+etc/flowd.conf.sample
+lib/libflowd.a
+include/flowd/addr.h
+include/flowd/crc32.h
+include/flowd/store.h
+sbin/flowd
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/Flowd.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Flowd.pm
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Flowd
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/flowd_serialiser.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/flowd.pyc
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/flowd.py
+@dirrm include/flowd

@@ -46,6 +46,7 @@
     SUBDIR += ettercap
     SUBDIR += flow-extract
     SUBDIR += flow-tools
+    SUBDIR += flowd
     SUBDIR += flowscan
     SUBDIR += fprobe
     SUBDIR += gps
