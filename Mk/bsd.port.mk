@@ -375,6 +375,7 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #
 # For build and install:
 #
+# ALL_TARGET	- Default target for sub-make in build stage (default: all).
 # MAKE_ENV		- Additional environment vars passed to sub-make in build
 #				  and install stages (default: see below).
 # MAKE_ARGS		- Any extra arguments to sub-make in build and install
@@ -382,6 +383,8 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #
 # For install:
 #
+# INSTALL_TARGET - Default target for sub-make in install stage 
+# 				  (default: install).
 # NO_MTREE		- If set, will not invoke mtree from bsd.port.mk from
 #				  the "install" target.
 # MTREE_FILE	- The name of the mtree file (default: /etc/mtree/BSD.x11.dist
@@ -783,7 +786,7 @@ MD5_FILE=		${FILESDIR}/md5
 
 MAKE_FLAGS?=	-f
 MAKEFILE?=		Makefile
-MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" CFLAGS="${CFLAGS}" LIBDIR="${LIBDIR}"
+MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
 .if exists(/usr/bin/fetch)
 # avoid -A for 2.2 -- it's not ported to that branch
@@ -1697,7 +1700,7 @@ do-configure:
 		fi)
 .endif
 .if defined(USE_IMAKE)
-	@(cd ${WRKSRC} && ${XMKMF})
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${XMKMF})
 .endif
 .endif
 
@@ -1707,7 +1710,7 @@ do-configure:
 do-build:
 .if defined(USE_GMAKE)
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
-.else defined(USE_GMAKE)
+.else
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .endif
 .endif
@@ -1871,6 +1874,9 @@ _PORT_USE: .USE
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 .endif
+.if make(real-configure) && defined(USE_LIBTOOL)
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-libtool
+.endif
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.TARGET:S/^real-/pre-/}
 	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
@@ -1886,9 +1892,6 @@ _PORT_USE: .USE
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 			${SCRIPTDIR}/${.TARGET:S/^real-/post-/}; \
 	fi
-.if make(real-patch) && defined(USE_LIBTOOL)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-libtool
-.endif
 .if make(real-install) && (defined(_MANPAGES) || defined(_MLINKS))
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} compress-man
 .endif
@@ -2014,19 +2017,18 @@ post-${name}:
 
 .if !target(patch-libtool)
 patch-libtool:
-	@(if ${LIBTOOL} --version | grep -vq "1\.3\.3-freebsd-ports"; then \
+	@(if ${LIBTOOL} --version | grep -vq "1\.3\.4-freebsd-ports"; then \
 		(${ECHO} "Your libtool installation is out of date. Please remove"; \
 		 ${ECHO} "and reinstall ${PORTSDIR}/devel/libtool."; \
 		 exit 1); \
 	  fi; \
-	 LIBTOOLDIR=`which ${LIBTOOL} | sed -e 's^/bin/libtool^/share/libtool^'` || ${LOCALBASE}/share/libtool; \
+	 LIBTOOLDIR=`${WHICH} ${LIBTOOL} | ${SED} -e 's^/bin/libtool^/share/libtool^'` || ${LOCALBASE}/share/libtool; \
 	 cd ${WRKSRC}; \
 	 for file in ${LIBTOOLFILES}; do \
 		${CP} $$file $$file.tmp; \
 		${SED} -e "s^\$$ac_aux_dir/ltconfig^$${LIBTOOLDIR}/ltconfig^g" \
-			$$file.tmp | \
-		${SED} -e "s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} $${LIBTOOLDIR}/ltmain.sh^g" \
-			> $$file; \
+			-e "s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} $${LIBTOOLDIR}/ltmain.sh^g" \
+			$$file.tmp > $$file; \
 	 done);
 .endif
 
@@ -2449,7 +2451,7 @@ CLEAN-DEPENDS-LIST= \
 
 .if !target(clean-depends)
 clean-depends:
-	@for dir in `${CLEAN-DEPENDS-LIST}`; do \
+	@for dir in $$(${CLEAN-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} NOCLEANDEPENDS=yes clean); \
 	done
 .endif
@@ -2501,7 +2503,7 @@ PACKAGE-DEPENDS-LIST= \
 	done | sort -u
 
 package-depends:
-	@for dir in `${PACKAGE-DEPENDS-LIST}`; do \
+	@for dir in $$(${PACKAGE-DEPENDS-LIST}); do \
 		(cd $$dir; ${MAKE} package-name); \
 	done
 
