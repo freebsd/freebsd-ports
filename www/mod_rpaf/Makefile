@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	www
 MASTER_SITES=	http://stderr.net/apache/rpaf/download/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Make proxied requests appear with client IP
 
 AP_FAST_BUILD=	YES

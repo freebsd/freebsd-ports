@@ -10,7 +10,7 @@ PORTVERSION=	0.5.91
 CATEGORIES=	www
 MASTER_SITES=	http://resare.com/noa/mod_cvs/dist/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A module that makes Apache 2 CVS aware
 
 USE_APACHE=	yes

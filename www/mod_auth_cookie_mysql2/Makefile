@@ -11,7 +11,7 @@ MASTER_SITES=	http://home.digithi.de/digithi/dev/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows authentication against a MySQL database via a secure cookie
 
 USE_MYSQL=	YES

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.cotds.org/${PORTNAME}/
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that can make proxied requests appear with client IP
 
 USE_APACHE=	yes

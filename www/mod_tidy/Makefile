@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://home.snafu.de/tusk/mod_tidy/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Validates the HTML output of your apache2 webserver
 
 LIB_DEPENDS=	tidy:${PORTSDIR}/www/tidy-lib

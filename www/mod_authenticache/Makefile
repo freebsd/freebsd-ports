@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://killa.net/infosec/mod_authenticache/
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	A generic credential caching module for Apache 2.0.x
 
 USE_APACHE=	YES

@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/
 DIST_SUBDIR=	apache2
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows Apache 2 to log to a MySQL database
 
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_log_config-st.so:${PORTSDIR}/www/mod_log_config-st

@@ -10,7 +10,7 @@ PORTVERSION=	3.2.1
 CATEGORIES=	www
 MASTER_SITES=	http://software.tangent.org/download/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to wrap served pages with a header and/or footer
 
 USE_APACHE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://ben.brillat.net/files/projects/mod_auth_imap/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module to provide authentication via an IMAP mail server
 
 WANT_APACHE=	13

@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 CATEGORIES=	www
 MASTER_SITES=	http://software.tangent.org/download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to make debugging server-side scripts easier
 
 USE_APACHE=	yes

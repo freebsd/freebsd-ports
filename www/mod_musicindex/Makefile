@@ -12,7 +12,7 @@ CATEGORIES=	www audio
 MASTER_SITES=	http://www.esiee.fr/~puffin/musicindex/
 DISTNAME=	libapache-mod-musicindex_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module in C implements Perl module Apache::MP3
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT}

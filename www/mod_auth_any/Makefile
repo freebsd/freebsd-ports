@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	www
 MASTER_SITES=	http://www.itlab.musc.edu/webNIS/dist/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to use any command line program to authenticate a user
 
 AP_FAST_BUILD=	yes

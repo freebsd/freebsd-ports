@@ -11,7 +11,7 @@ PORTVERSION=	0.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.happygiraffe.net/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An apache module that embeds a copy of the sed(1) command
 
 USE_APACHE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.1.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.cri.ensmp.fr/~coelho/mod_macro/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache2 module for use macros in config files
 
 WANT_APACHE=	2

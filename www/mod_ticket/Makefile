@@ -13,7 +13,7 @@ MASTER_SITES=	# http://germ.semiotek.com/ticket/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.c
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for a digitally signed ticket in URL
 
 USE_APACHE=	yes

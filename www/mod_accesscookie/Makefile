@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://etweb.wkv.at/himself/Programming/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Supply access control based cookies stored in a MySQL database
 
 USE_MYSQL=	YES

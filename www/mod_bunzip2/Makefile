@@ -4,19 +4,19 @@
 #
 # $FreeBSD$
 
-PORTNAME=		mod_bunzip2
-PORTVERSION=		1
-CATEGORIES=		www
-MASTER_SITES=		http://www.oldach.net/
-DISTNAME=		${PORTNAME}
+PORTNAME=	mod_bunzip2
+PORTVERSION=	1
+CATEGORIES=	www
+MASTER_SITES=	http://www.oldach.net/
+DISTNAME=	${PORTNAME}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for server-side decompression of bzip2 files
 
-PLIST_FILES=		libexec/apache/mod_bunzip2.so
-USE_APACHE=		yes
-USE_BZIP2=		yes
-WRKSRC=			${WRKDIR}/${PORTNAME}-2
+PLIST_FILES=	libexec/apache/mod_bunzip2.so
+USE_APACHE=	yes
+USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-2
 
 do-build:
 	cd ${WRKSRC}; ${APXS} -c -lbz2 mod_bunzip2.c

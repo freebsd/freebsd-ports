@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.c
 # Original location: http://web.god.net.ru/projects/mod_traf_thief/dist/
 DIST_SUBDIR=	apache
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows you to redirect part of the traffic to your url
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2

@@ -10,7 +10,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://pmade.org/software/mod_injection/download/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Injects text in the HTTP response after a HTML tag
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache2
