@@ -70,7 +70,7 @@ BDB_MAJOR=	0
 BROKEN=		"WITH_BDB_VER must be 3, 4, 41, 42 or 43"
 .endif
 BDB_SUFFIX?=	${WITH_BDB_VER}
-LIB_DEPENDS=	db${BDB_SUFFIX}.${BDB_MAJOR}:${PORTSDIR}/databases/db${WITH_BDB_VER}
+LIB_DEPENDS+=	db${BDB_SUFFIX}.${BDB_MAJOR}:${PORTSDIR}/databases/db${WITH_BDB_VER}
 CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib \
 		--with-bdb-incdir=${LOCALBASE}/include/db${WITH_BDB_VER} \
 		--with-bdb=db${BDB_SUFFIX}
