@@ -20,8 +20,9 @@ LIB_DEPENDS=	gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
 USE_GNOME=	gtk12
 USE_MESA=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	\
-	CPPFLAGS="${PTHREAD_CFLAGS} `${GTK_CONFIG} --cflags`" \
+	CPPFLAGS="${PTHREAD_CFLAGS} `${GTK_CONFIG} --cflags` -fPIC" \
 	LDFLAGS="${PTHREAD_LIBS} `${GTK_CONFIG} --libs` -lGL -lGLU -lglut"
 
 .include <bsd.port.mk>
