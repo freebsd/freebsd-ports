@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--with-ming=${LOCALBASE}
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=		pdf.6:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=		pdf.7:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE}
 .endif
 

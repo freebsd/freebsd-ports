@@ -91,7 +91,7 @@ WITH_IODBC=	yes
 WITH_SANE=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libpdf.so.5)
+.if exists(${LOCALBASE}/lib/libpdf.so.7)
 WITH_PDF=	yes
 .endif
 
@@ -165,7 +165,7 @@ CONFIGURE_ARGS+= --without-sane
 .endif
 
 .if defined(WITH_PDF)
-LIB_DEPENDS+=	pdf.6:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=	pdf.7:${PORTSDIR}/print/pdflib
 CONFIGURE_ARGS+= --with-libpdf
 .else
 CONFIGURE_ARGS+= --without-libpdf
