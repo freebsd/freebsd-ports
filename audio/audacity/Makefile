@@ -25,7 +25,7 @@ USE_LIBTOOL_VER=	15
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501103
+.if ${ARCH} == "i386" && ${OSVERSION} >= 501103
 SSE_CFLAGS=	-mno-sse -mno-sse2
 .endif
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
