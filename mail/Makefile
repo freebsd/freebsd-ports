@@ -93,6 +93,7 @@
     SUBDIR += qmail
     SUBDIR += qmail-contrib
     SUBDIR += qmailanalog
+    SUBDIR += qpopper
     SUBDIR += rblcheck
     SUBDIR += rblsmtpd
     SUBDIR += rftp
