@@ -1,18 +1,16 @@
 bin/lafontaine
+share/lafontaine/animator.png
+share/lafontaine/animator.xcf
+share/lafontaine/execute.xpm
 share/lafontaine/gypsum.flower.2.fr.logo
 share/lafontaine/gypsum.flower.fr.logo
+share/lafontaine/help.xpm
+share/lafontaine/open.xpm
+share/lafontaine/quit.xpm
+share/lafontaine/save.xpm
 share/lafontaine/spirelo.fr.logo
 share/lafontaine/stars.en.logo
 share/lafontaine/test1.logo
-share/pixmaps/lafontaine/animator.png
-share/pixmaps/lafontaine/animator.xcf
-share/pixmaps/lafontaine/execute.xpm
-share/pixmaps/lafontaine/help.xpm
-share/pixmaps/lafontaine/open.xpm
-share/pixmaps/lafontaine/quit.xpm
-share/pixmaps/lafontaine/save.xpm
-share/pixmaps/lafontaine/turtle2.png
-share/pixmaps/lafontaine/turtle3.png
+share/lafontaine/turtle2.png
+share/lafontaine/turtle3.png
 @dirrm share/lafontaine
-@dirrm share/pixmaps/lafontaine
-@dirrm share/pixmaps
