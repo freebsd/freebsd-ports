@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \

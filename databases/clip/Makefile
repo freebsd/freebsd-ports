@@ -8,6 +8,7 @@
 
 PORTNAME=	clip
 PORTVERSION=	0.99
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.lastik.ru/clip/ \
 		ftp://ftp.linux.ru.net/mirrors/clip/

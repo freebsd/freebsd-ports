@@ -9,6 +9,7 @@
 
 PORTNAME=	mcrypt
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
 		ftp://mcrypt.hellug.gr/pub/mcrypt/ \

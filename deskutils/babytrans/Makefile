@@ -8,6 +8,7 @@
 
 PORTNAME=	babytrans
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://fjolliton.free.fr/babytrans/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	korean print
 MASTER_SITES=	http://master.debian.or.kr/~cwryu/archive/texinfo-ko/
 DISTNAME=	${PORTNAME}-ko-${PORTVERSION}

@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://stone.phys.pusan.ac.kr/pub/CJK-LyX/
 PKGNAMEPREFIX=	cjk-

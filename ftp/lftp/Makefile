@@ -7,6 +7,7 @@
 
 PORTNAME=	lftp
 PORTVERSION=	2.6.6
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/ \
 		ftp://ftp.phear.org/pub/linux/networking/ftp/client/lftp/old/ \

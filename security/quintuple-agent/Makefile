@@ -7,6 +7,7 @@
 
 PORTNAME=	quintuple-agent
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.vibe.at/tools/q-agent/
 

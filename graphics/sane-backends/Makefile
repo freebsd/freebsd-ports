@@ -7,7 +7,7 @@
 
 PORTNAME=	sane-backends
 PORTVERSION=	1.0.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.de.mostang.com/pub/sane/%SUBDIR%/ \

@@ -7,7 +7,7 @@
 
 PORTNAME=	Search-Namazu
 PORTVERSION=	0.92
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.namazu.org/~knok/
 PKGNAMEPREFIX=	p5-

@@ -8,7 +8,7 @@
 
 PORTNAME=	axel
 PORTVERSION=	1.0a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.lintux.cx/downloads/
 

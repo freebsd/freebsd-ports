@@ -7,6 +7,7 @@
 
 PORTNAME=	macopix
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/macopix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${RESTRICTED_FILES}

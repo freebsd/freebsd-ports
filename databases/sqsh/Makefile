@@ -6,7 +6,7 @@
 
 PORTNAME=	sqsh
 PORTVERSION=	2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqsh.org/
 EXTRACT_SUFX=	-src.tar.gz

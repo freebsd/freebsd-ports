@@ -11,6 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.2.2
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.catb.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/ \

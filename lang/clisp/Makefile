@@ -7,6 +7,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.30
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cvs2.cons.org/pub/lisp/clisp/source/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
