@@ -23,7 +23,7 @@ PATCHDIR=	${.CURDIR}/patches
 EMACS?=		mule
 
 .if (${EMACS} == "xemacs")
-BUILD_DEPENDS+=	xemacs:${PORTSDIR}/japanese/xemacs-canna \
+BUILD_DEPENDS+=	xemacs:${PORTSDIR}/japanese/xemacs21-canna \
 		${PREFIX}/lib/xemacs/xemacs-packages/pkginfo/MANIFEST.zenirc:${PORTSDIR}/editors/xemacs-sumo-packages
 EMACSDIR=	${PREFIX}/lib/xemacs/site-packages
 ELISPDIR=	${EMACSDIR}/lisp/lookup
