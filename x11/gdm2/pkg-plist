@@ -16,6 +16,7 @@ etc/gdm/factory-gdm.conf
 etc/gdm/gdm.conf
 etc/gdm/gnomerc
 etc/gdm/locale.alias
+sbin/gdmaskpass
 sbin/gdm-restart
 sbin/gdm-safe-restart
 share/gnome/apps/Settings/gdmphotosetup.desktop

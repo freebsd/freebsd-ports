@@ -19,6 +19,9 @@ MAINTAINER=	gnome@FreeBSD.org
 .if !defined(WITHOUT_PILOT)
 BUILD_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
 RUN_DEPENDS=	${X11BASE}/lib/gnome-pilot/conduits/libemail_conduit.so:${PORTSDIR}/palm/gnomepilot-conduits
+PLIST_SUB=	GNOME_PILOT=""
+.else
+PLIST_SUB=	GNOME_PILOT="@comment "
 .endif
 
 USE_X_PREFIX=	yes
