@@ -39,6 +39,7 @@ SDL_DestroyCond.3
 SDL_DestroyMutex.3
 SDL_DestroySemaphore.3
 SDL_DisplayFormat.3
+SDL_DisplayFormatAlpha.3
 SDL_DisplayYUVOverlay.3
 SDL_EnableKeyRepeat.3
 SDL_EnableUNICODE.3
@@ -59,12 +60,16 @@ SDL_GLattr.3
 SDL_GetAppState.3
 SDL_GetAudioStatus.3
 SDL_GetCursor.3
+SDL_GetGamma.3
+SDL_GetGammaRamp.3
 SDL_GetKeyName.3
 SDL_GetKeyState.3
 SDL_GetModState.3
 SDL_GetMouseState.3
 SDL_GetRGB.3
+SDL_GetRGBA.3
 SDL_GetRelativeMouseState.3
+SDL_GetThreadID.3
 SDL_GetTicks.3
 SDL_GetVideoInfo.3
 SDL_GetVideoSurface.3
@@ -98,6 +103,7 @@ SDL_LockAudio.3
 SDL_LockSurface.3
 SDL_LockYUVOverlay.3
 SDL_MapRGB.3
+SDL_MapRGBA.3
 SDL_MixAudio.3
 SDL_MouseButtonEvent.3
 SDL_MouseMotionEvent.3
@@ -124,12 +130,15 @@ SDL_SemValue.3
 SDL_SemWait.3
 SDL_SemWaitTimeout.3
 SDL_SetAlpha.3
-SDL_SetClipping.3
+SDL_SetClipRect.3
 SDL_SetColorKey.3
 SDL_SetColors.3
 SDL_SetCursor.3
 SDL_SetEventFilter.3
+SDL_SetGamma.3
+SDL_SetGammaRamp.3
 SDL_SetModState.3
+SDL_SetPalette.3
 SDL_SetTimer.3
 SDL_SetVideoMode.3
 SDL_ShowCursor.3
@@ -153,6 +162,7 @@ SDL_WM_ToggleFullScreen.3
 SDL_WaitEvent.3
 SDL_WaitThread.3
 SDL_WarpMouse.3
+SDL_WasInit.3
 SDL_keysym.3
 SDL_mutexP.3
 SDL_mutexV.3

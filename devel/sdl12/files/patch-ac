@@ -1,15 +1,15 @@
---- configure.orig	Wed Sep 27 09:15:44 2000
-+++ configure	Thu Sep 28 09:38:24 2000
-@@ -607,7 +607,7 @@
+--- configure.orig	Tue Oct  3 19:01:18 2000
++++ configure	Thu Oct  5 19:49:53 2000
+@@ -609,7 +609,7 @@
  SDL_MAJOR_VERSION=1
  SDL_MINOR_VERSION=1
- SDL_MICRO_VERSION=5
--SDL_INTERFACE_AGE=0
+ SDL_MICRO_VERSION=6
+-SDL_INTERFACE_AGE=1
 +SDL_INTERFACE_AGE=2
- SDL_BINARY_AGE=5
+ SDL_BINARY_AGE=6
  SDL_VERSION=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION.$SDL_MICRO_VERSION
  
-@@ -620,9 +620,9 @@
+@@ -622,9 +622,9 @@
  
  # libtool versioning
  LT_RELEASE=$SDL_MAJOR_VERSION.$SDL_MINOR_VERSION
@@ -21,7 +21,7 @@
  
  
  
-@@ -3002,7 +3002,7 @@
+@@ -3012,7 +3012,7 @@
  
  
  SDL_CFLAGS=""
@@ -30,20 +30,3 @@
  
  
  case "$target" in
-@@ -4788,8 +4788,6 @@
-          #include <vga.h>
-          #include <vgamouse.h>
-          #include <vgakeyboard.h>
--         #include <linux/kd.h>
--         #include <linux/keyboard.h>
-         
- int main() {
- 
-@@ -5538,6 +5536,7 @@
-         ARCH=freebsd
-         CheckNASM
-         CheckESD
-+        CheckSVGA
-         CheckX11
-         CheckDGA
-         CheckAAlib

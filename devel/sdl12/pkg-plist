@@ -110,6 +110,7 @@ share/doc/SDL11/docs/html/sdlgetmousestate.html
 share/doc/SDL11/docs/html/sdlgetrelativemousestate.html
 share/doc/SDL11/docs/html/sdlgetrgb.html
 share/doc/SDL11/docs/html/sdlgetrgba.html
+share/doc/SDL11/docs/html/sdlgetthreadid.html
 share/doc/SDL11/docs/html/sdlgetticks.html
 share/doc/SDL11/docs/html/sdlgetvideoinfo.html
 share/doc/SDL11/docs/html/sdlgetvideosurface.html
@@ -180,7 +181,6 @@ share/doc/SDL11/docs/html/sdlsemvalue.html
 share/doc/SDL11/docs/html/sdlsemwait.html
 share/doc/SDL11/docs/html/sdlsemwaittimeout.html
 share/doc/SDL11/docs/html/sdlsetalpha.html
-share/doc/SDL11/docs/html/sdlsetclipping.html
 share/doc/SDL11/docs/html/sdlsetcliprect.html
 share/doc/SDL11/docs/html/sdlsetcolorkey.html
 share/doc/SDL11/docs/html/sdlsetcolors.html
@@ -207,6 +207,7 @@ share/doc/SDL11/docs/html/sdlvideomodeok.html
 share/doc/SDL11/docs/html/sdlwaitevent.html
 share/doc/SDL11/docs/html/sdlwaitthread.html
 share/doc/SDL11/docs/html/sdlwarpmouse.html
+share/doc/SDL11/docs/html/sdlwasinit.html
 share/doc/SDL11/docs/html/sdlwmgetcaption.html
 share/doc/SDL11/docs/html/sdlwmgrabinput.html
 share/doc/SDL11/docs/html/sdlwmiconifywindow.html
