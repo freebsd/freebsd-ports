@@ -1,5 +1,5 @@
 *** pop_pass.c.orig	Fri May 24 22:26:25 1996
---- pop_pass.c	Thu Dec  5 02:31:23 1996
+--- pop_pass.c	Tue Dec 10 23:52:23 1996
 ***************
 *** 482,497 ****
   POP     *   p;
@@ -51,7 +51,7 @@
 ! 	if (pass_ok)
 ! 	    sleep(SLEEP_SECONDS);
 ! 	return (pop_msg(p,POP_FAILURE,
-! 		"Password supplied for \"%s\" is incorrect. %s%s",
+! 		"\"%s\" %s%s, password is incorrect.",
 ! 		p->user, buf,
 ! 		pass_ok ? "" : " (required)"));
       }
