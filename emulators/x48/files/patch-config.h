@@ -1,5 +1,5 @@
---- config.h.orig	Tue Jun 29 07:36:58 1999
-+++ config.h	Tue Aug 15 20:52:55 2000
+--- config.h.orig	Mon Jun 28 17:36:58 1999
++++ config.h	Sat Jun 28 21:40:54 2003
 @@ -56,12 +56,12 @@
  /*
   * Which Compiler to use:

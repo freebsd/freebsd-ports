@@ -3,6 +3,8 @@ bin/dump2rom
 bin/mkcard
 bin/x48
 lib/X11/app-defaults/X48
+share/x48/gxrom-r
+@dirrm share/x48
 %%PORTDOCS%%share/doc/x48/CARDS.doc
 %%PORTDOCS%%share/doc/x48/README
 %%PORTDOCS%%share/doc/x48/ROMDump.doc
