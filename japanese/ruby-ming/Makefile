@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	japanese
+PKGNAMEPREFIX=	ja-${RUBY_PKGNAMEPREFIX}
 
 COMMENT=	Yet another Ming module for Ruby built with Japanese support
 
@@ -14,5 +15,3 @@ LIB_DEPENDS=	ming.3:${PORTSDIR}/japanese/ming
 MASTERDIR=	${.CURDIR}/../../graphics/ruby-ming
 
 .include "${MASTERDIR}/Makefile"
-
-PKGNAMEPREFIX=	ja-ruby-
