@@ -1,15 +1,21 @@
---- glib-config.in.orig	Thu Jun 11 07:21:14 1998
-+++ glib-config.in	Thu Aug 13 17:46:26 1998
-@@ -42,10 +42,10 @@
-       if test @includedir@ != /usr/include ; then
-         includes=-I@includedir@
-       fi
--      echo -I@libdir@/glib/include $includes
-+      echo $includes
-       ;;
-     --libs)
--      echo -L@libdir@ -lglib-@LT_RELEASE@
-+      echo -L@libdir@ -lglib11
-       ;;
-     *)
-       echo "${usage}" 1>&2
+--- glib-config.in.orig	Sun Sep 20 15:22:58 1998
++++ glib-config.in	Tue Sep 22 21:04:26 1998
+@@ -83,15 +83,15 @@
+ 	echo $exec_prefix
+ fi
+ if test "$echo_cflags" = "yes"; then
+-	echo -I@libdir@/glib/include $includes
++	echo $includes
+ fi
+ if test "$echo_libs" = "yes"; then
+ 	libs=""
+ 	if test "$lib_glib" = "yes"; then
+-		libs="$libs -lglib"
++		libs="$libs -lglib11"
+ 	fi
+ 	if test "$lib_gmodule" = "yes"; then
+-		libs="@G_MODULE_LDFLAGS@ -lgmodule $libs @G_MODULE_LIBS@"
++		libs="@G_MODULE_LDFLAGS@ -lgmodule11 $libs @G_MODULE_LIBS@"
+ 	fi
+ 	echo "-L@libdir@ $libs"
+ fi
