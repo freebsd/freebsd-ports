@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	ftp://ftp.dhis.org/pub/dhis/
 
-MAINTAINER=	marius@alchemy.franken.de
+MAINTAINER=	marius@FreeBSD.org
 COMMENT=	DHIS server for dynamic updates on the server using specific engines
 
 .include <bsd.port.pre.mk>
