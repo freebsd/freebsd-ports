@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portdowngrade
-PORTVERSION=	0.5
+PORTVERSION=	0.6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,7 +38,9 @@ pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Press CTRL-C and define DEFAULT_CVS_SERVER"
 	@${ECHO_MSG} "(e.g. make DEFAULT_CVS_SERVER=\":pserver:anoncvs@anoncvs. ... .FreeBSD.org:/home/ncvs\" install)"
-	@${ECHO_MSG} "if you want to use a special CVS server as default."
+	@${ECHO_MSG} "if you want to use a special CVS server as default. See"
+	@${ECHO_MSG} "http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/anoncvs.html"
+	@${ECHO_MSG} "for a list of possible cvs server"
 	@${ECHO_MSG} ""
 	@sleep 3
 .endif
