@@ -11,6 +11,8 @@ share/sgml/docbook/dsssl/modular/common/Oldversion.sgm
 share/sgml/docbook/dsssl/modular/common/README
 share/sgml/docbook/dsssl/modular/common/dbcommon.dsl
 share/sgml/docbook/dsssl/modular/common/dbl10n.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1ca.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1ca.ent
 share/sgml/docbook/dsssl/modular/common/dbl1da.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1da.ent
 share/sgml/docbook/dsssl/modular/common/dbl1de.dsl
@@ -64,6 +66,7 @@ share/sgml/docbook/dsssl/modular/print/dbgraph.dsl
 share/sgml/docbook/dsssl/modular/print/dbindex.dsl
 share/sgml/docbook/dsssl/modular/print/dbinfo.dsl
 share/sgml/docbook/dsssl/modular/print/dbinline.dsl
+share/sgml/docbook/dsssl/modular/print/dbl1ca.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1da.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1de.dsl
 share/sgml/docbook/dsssl/modular/print/dbl1en.dsl
@@ -121,6 +124,7 @@ share/sgml/docbook/dsssl/modular/html/dbindex.dsl
 share/sgml/docbook/dsssl/modular/html/dbinfo.dsl
 share/sgml/docbook/dsssl/modular/html/dbinline.dsl
 share/sgml/docbook/dsssl/modular/html/dbl10n.dsl
+share/sgml/docbook/dsssl/modular/html/dbl1ca.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1da.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1de.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1en.dsl
@@ -230,6 +234,7 @@ share/sgml/docbook/dsssl/modular/doc/html/gentext-nav-use-tables.html
 share/sgml/docbook/dsssl/modular/doc/html/graphic-default-extension.html
 share/sgml/docbook/dsssl/modular/doc/html/graphic-extensions.html
 share/sgml/docbook/dsssl/modular/doc/html/header-navigation.html
+share/sgml/docbook/dsssl/modular/doc/html/honorific-punctuation.html
 share/sgml/docbook/dsssl/modular/doc/html/html-ext.html
 share/sgml/docbook/dsssl/modular/doc/html/html-header-tags.html
 share/sgml/docbook/dsssl/modular/doc/html/html-index-filename.html
@@ -281,10 +286,10 @@ share/sgml/docbook/dsssl/modular/doc/html/r1116.htm
 share/sgml/docbook/dsssl/modular/doc/html/r1174.htm
 share/sgml/docbook/dsssl/modular/doc/html/r1258.htm
 share/sgml/docbook/dsssl/modular/doc/html/r1336.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1630.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1705.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1774.htm
-share/sgml/docbook/dsssl/modular/doc/html/r1944.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1647.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1722.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1791.htm
+share/sgml/docbook/dsssl/modular/doc/html/r1961.htm
 share/sgml/docbook/dsssl/modular/doc/html/r22.htm
 share/sgml/docbook/dsssl/modular/doc/html/r228.htm
 share/sgml/docbook/dsssl/modular/doc/html/r396.htm
@@ -295,6 +300,7 @@ share/sgml/docbook/dsssl/modular/doc/html/r995.htm
 share/sgml/docbook/dsssl/modular/doc/html/refentry-function.html
 share/sgml/docbook/dsssl/modular/doc/html/refentry-generate-name.html
 share/sgml/docbook/dsssl/modular/doc/html/root-filename.html
+share/sgml/docbook/dsssl/modular/doc/html/rootchunk.html
 share/sgml/docbook/dsssl/modular/doc/html/section-autolabel.html
 share/sgml/docbook/dsssl/modular/doc/html/shade-verbatim-attr.html
 share/sgml/docbook/dsssl/modular/doc/html/shade-verbatim.html
@@ -475,6 +481,7 @@ share/sgml/docbook/dsssl/modular/doc/print/guilabel-font-family.html
 share/sgml/docbook/dsssl/modular/doc/print/head-after-factor.html
 share/sgml/docbook/dsssl/modular/doc/print/head-before-factor.html
 share/sgml/docbook/dsssl/modular/doc/print/header-margin.html
+share/sgml/docbook/dsssl/modular/doc/print/honorific-punctuation.html
 share/sgml/docbook/dsssl/modular/doc/print/hsize-bump-factor.html
 share/sgml/docbook/dsssl/modular/doc/print/hyphenation.html
 share/sgml/docbook/dsssl/modular/doc/print/image-library-filename.html
