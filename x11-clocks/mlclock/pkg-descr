@@ -1,0 +1,4 @@
+Mlclock is the best clock for the mlvwm window manager.
+
+Use 'make -DKANJIMODE' when compiling if you want the Japanese
+kanji mode enabled.
