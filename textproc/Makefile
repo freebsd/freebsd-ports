@@ -441,6 +441,7 @@
     SUBDIR += xerces-c2
     SUBDIR += xerces-j
     SUBDIR += xhtml
+    SUBDIR += xhtml-1.1
     SUBDIR += xincluder
     SUBDIR += xlhtml
     SUBDIR += xls2xml
