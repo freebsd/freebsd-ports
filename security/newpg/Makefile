@@ -7,7 +7,7 @@
 
 PORTNAME=	newpg
 PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	alpha/aegypten
@@ -21,8 +21,9 @@ LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt \
 		ksba.7:${PORTSDIR}/security/libksba \
 		pth.20:${PORTSDIR}/devel/pth
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
-		pinentry-curses:${PORTSDIR}/security/pinentry
-
+		pinentry-curses:${PORTSDIR}/security/pinentry \
+		dirmngr:${PORTSDIR}/security/dirmngr
+		
 USE_AUTOCONF_VER=253
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
