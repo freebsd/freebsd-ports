@@ -5,80 +5,70 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	netscape-${BROWSER_ARC}
-PORTVERSION?=	${BROWSER_VER}
-CATEGORIES?=	www
-MASTER_SITES?=	ftp://ftp.netscape.com/pub/communicator/4.08/english/unix/unsupported/freebsd/professional_edition/
-DISTFILES?=	communicator-v408-export.x86-unknown-freebsd.tar.gz
+PORTNAME?=	linux-netscape-${BROWSER_NAME}
+PORTVERSION=	${BROWSER_VER}
+CATEGORIES=	www linux
+MASTER_SITES=	ftp://ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.bu.edu/pub/mirrors/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.cuhk.edu.hk/pub/www/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.spin.ad.jp/pub/WWW/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://sunsite.tus.ac.jp/pub/archives/WWW/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.kmitl.ac.th/pub/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.tuwien.ac.at/z134/infosys/browsers/netscape/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.euronet.be/pub/mirror/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.uni-heidelberg.de/pub/Netscape/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.darenet.dk/mirrors/ftp2.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.cica.es/pub5/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.calvacom.fr/pub1/browser/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.ciril.fr/pub1/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.uniroma2.it/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.nluug.nl/vol/2/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.ntnu.no/pub/www/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://sunsite.uio.no/pub/network/web/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.man.poznan.pl/vols/vol1/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.sunet.se/pub/www/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.uakom.sk/pub/WWW/Netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.hi.is/pub/mirrors/ftp.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.unicamp.br/pub6/netscape/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.mox.uniandes.edu.co/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.nsu.ru/pub/mirrors/ftp-de.netscape.com/pub/${NETSCAPE_DIST_SUBDIR}/ \
+		ftp://ftp.curtin.edu.au/pub/internet/netscape/${NETSCAPE_DIST_SUBDIR}/
+DISTFILES=	${BROWSER_NAME}-v${BROWSER_V}-us.${NETSCAPE_DIST_TAG}.tar.gz
 
-MAINTAINER?=	sada@FreeBSD.org
+MAINTAINER=	sada@FreeBSD.org
 
 RUN_DEPENDS+=	netscape:${PORTSDIR}/www/netscape-wrapper
 
-.if (!defined(BROWSER_VER) || ${PORTVERSION} == "4.76")
-FORBIDDEN=	"Has a serious security hole, use 4.77 or later instead.\
- (These ports are available only for linux version and alpha arch.\
- Looks Netscape has stopped to release new FreeBSD native binary)"
-.endif
-
-.if !defined(INFILE_HEAD)
-# not included from master ports
-NO_LATEST_LINK=	yes
-.endif
-
+WRKSRC=		${WRKDIR}/${BROWSER_NAME}-v${BROWSER_V}.${NETSCAPE_DIST_TAG}
+ONLY_FOR_ARCHS=	i386
+USE_LINUX=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
-STRIP=
-WRKSRC?=	${WRKDIR}/${BROWSER_NAME}-v408.x86-unknown-freebsd
-PKGDIR=		${.CURDIR}
-
-AUTOADMIN?=	autoadmin-v408.x86-unknown-freebsd.tar.gz
-BROWSER_NAME?=	communicator
-BROWSER_ARC?=	${BROWSER_NAME}
-BROWSER_VER?=	4.08
-FORTIFY=	Fortify-1.4.6-unix-x86
-NDIR=		${PREFIX}/${NSUBDIR}
-NSUBDIR?=	lib/netscape
-BINDIR=		${PREFIX}/bin
-INFILE_HEAD?=	'Communicator,4.08.0.98306'
-WRAPPER_TEMPLATE=	${MASTERDIR}/files/netscape.sh
-MAILCAP?=	${MASTERDIR}/files/mailcap
-
+STRIP=		# null
+#PKGDIR=	${.CURDIR}
 PLIST_SUB=	BROWSER=${BROWSER_ARC} BROWSER_VER=${BROWSER_VER} \
 		NSUBDIR=${NSUBDIR}
 
-.if (${BROWSER_NAME} == "communicator") && !defined(NO_AUTOADMIN)
-DISTFILES+=	${AUTOADMIN}
-.endif
 
-.if defined(WITH_128BIT) && !defined(NO_FORTIFY)
-MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
-		ftp://ftp.za.freebsd.org/pub/Fortify/
-DISTFILES+=	${FORTIFY}.tar.gz
-RESTRICTED=	"Contains strong cryptography"
+BROWSER_NAME?=	communicator
+BROWSER_ARC=	${BROWSER_NAME}-linux
+BROWSER_VER?=	4.8
+BROWSER_V?=	48
+.if defined(BROWSER_NAME) && ${BROWSER_NAME} == "navigator"
+NETSCAPE_DIST_GRADE=	navigator_standalone
 .endif
-
-.if !defined(_PREMKINCLUDED)
-.include <bsd.port.pre.mk>
-.endif
-
-.if ${ARCH} == "alpha"
-RUN_DEPENDS+=	/compat/osf1/usr/shlib/libc.so:${PORTSDIR}/emulators/osf1_base
-.endif
-
-.if (${ARCH} == "i386") && !defined(USE_LINUX) && !defined(WITHOUT_AOUT)
-USE_AOUT_LIB=	yes
-PKGREQ=		${MASTERDIR}/pkg-req.aout
-RUN_DEPENDS+=	${X11BASE}/lib/aout/libX11.so.6.1:${PORTSDIR}/x11/XFree86-aoutlibs
-.endif
-
-.SILENT:
-
-.if !defined(WITH_128BIT) && !defined(NO_FORTIFY)
-pre-extract:
-	${ECHO} "You can make Netscape use 128-bit encryption by defining WITH_128BIT"
-.endif
+NETSCAPE_DIST_GRADE?=	complete_install
+NETSCAPE_DIST_ARCH=	supported/linux22
+NETSCAPE_DIST_SUBDIR=	communicator/english/${BROWSER_VER}/unix/${NETSCAPE_DIST_ARCH}/${NETSCAPE_DIST_GRADE}
+NETSCAPE_DIST_TAG=	x86-unknown-linux2.2
+NDIR=		${PREFIX}/${NSUBDIR}
+NSUBDIR=	lib/netscape-linux
+BINDIR=		${PREFIX}/bin
+INFILE_HEAD=	'Communicator,4.8.0.20020722'
+WRAPPER_TEMPLATE=	${MASTERDIR}/files/netscape.sh
+MAILCAP=	${MASTERDIR}/files/mailcap
 
 post-configure:
 	${SED}	-e "s;@PREFIX@;${PREFIX};g" -e "s;@NSUBDIR@;${NSUBDIR};g" \
@@ -88,44 +78,25 @@ post-configure:
 	${CHMOD} +x ${WRKSRC}/netscape
 	${ECHO_CMD} -n ${INFILE_HEAD},${NDIR} >${WRKSRC}/infile
 
-.if defined(USE_AOUT_LIB)
-pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
-.endif
-
 do-install:
 	${MKDIR} ${NDIR}/java/classes
-	${INSTALL_DATA} ${WRKSRC}/*.jar ${NDIR}/java/classes
-	${INSTALL_PROGRAM} ${WRKSRC}/vreg ${NDIR}
 	for i in ${WRKSRC}/*.nif; do \
 		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} $${i} ${EXTRACT_AFTER_ARGS} -C ${NDIR}; \
 	done
+	${INSTALL_DATA} ${WRKSRC}/*.jar ${NDIR}/java/classes
+	${INSTALL_PROGRAM} ${WRKSRC}/vreg ${NDIR}
 	${WRKSRC}/vreg ${NDIR}/registry ${WRKSRC}/infile
 	${MV} -f ${NDIR}/netscape ${NDIR}/${BROWSER_ARC}-${BROWSER_VER}.bin
-	${INSTALL_SCRIPT} ${WRKSRC}/netscape \
-		${BINDIR}/${BROWSER_ARC}-${BROWSER_VER}
+	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/${BROWSER_ARC}-${BROWSER_VER}
 	${LN} -sf ${BROWSER_ARC}-${BROWSER_VER} ${BINDIR}/${BROWSER_ARC}-4
 	${LN} -sf ${BROWSER_ARC}-4 ${BINDIR}/netscape.run
 	if [ ! -f ${NDIR}/mailcap ] ; then \
 		${INSTALL_DATA} ${MAILCAP} ${NDIR}; \
 	fi
 	${RM} -rf ${NDIR}/movemail-src
-.if (${BROWSER_NAME} == "communicator") && !defined(NO_AUTOADMIN)
-	tar zxf ${DISTDIR}/${AUTOADMIN} -C ${NDIR}
-.endif
-.if defined(WITH_128BIT) && !defined(NO_FORTIFY)
-	cd ${WRKDIR}/${FORTIFY} \
-	&& (${ECHO_CMD}; ${ECHO_CMD} yes; ${ECHO_CMD} no; ${ECHO_CMD} no) \
-	| ./Fortify.sh ${NDIR}/${BROWSER_ARC}-${BROWSER_VER}.bin
-.endif
 	${CHOWN} -R root:wheel ${NDIR}
 
 post-install:
 	${CAT} ${DESCR}
 
-# hack to allow slave ports to include bsd.port.pre.mk and then this file
-.if defined(_PREMKINCLUDED)
-.include <bsd.port.post.mk>
-.else
 .include <bsd.port.mk>
-.endif
