@@ -3,13 +3,13 @@
 # Date created:         1 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1995/04/23 13:02:37 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1995/05/01 11:47:15 ache Exp $
 #
 
-DISTNAME=       d1489-1.2
-EXTRACT_SUFX=   .tgz
-CATEGORIES+=    utilities
+DISTNAME=       ru-d1489-1.2
+CATEGORIES+=    russian utilities
 MASTER_SITES=   ftp://ftp.kiae.su/unix/convert/char/
+EXTRACT_SUFX=   .tgz
 
 MAINTAINER=	ache@FreeBSD.ORG
 

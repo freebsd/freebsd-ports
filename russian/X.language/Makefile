@@ -3,11 +3,11 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1995/08/31 20:01:49 ache Exp $
+# $Id: Makefile,v 1.2 1995/09/23 17:19:06 ache Exp $
 #
 
-PKGNAME=        russian-X11
-CATEGORIES+=    x11
+PKGNAME=        ru-X11
+CATEGORIES+=    russian x11
 
 MAINTAINER=	ache@FreeBSD.ORG
 
