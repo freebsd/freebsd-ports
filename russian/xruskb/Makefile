@@ -1,21 +1,21 @@
 # New ports collection makefile for:	xruskb
-# Version required:	1.7.0
+# Version required:	1.9.3
 # Date created:		14 Jan 1998
 # Whom:			Igor Vinokurov <igor@zynaps.ru>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/06 12:19:18 flathill Exp $
 
-DISTNAME=	xruskb-1.7.0
+DISTNAME=	xruskb-1.9.3
 CATEGORIES=	russian x11
-MASTER_SITES=	ftp://ftp.kiae.su/pub/x11/cyrillic/ \
-		ftp://ftp.yars.free.net/pub/software/unix/X11/
+MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/X11/ \
+		ftp://ftp.kiae.su/pub/x11/cyrillic/
 
-MAINTAINER=	igor@zynaps.ru
+MAINTAINER=	ports@freebsd.org
 
 USE_X_PREFIX=	yes
 
 GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS=	--datadir=${PREFIX}/share/examples
+CONFIGURE_ARGS=	--datadir=${PREFIX}/share
 
 MAN1=		xrus.1
 

@@ -1,20 +1,27 @@
 bin/xrus
+bin/xrusmodmap
 lib/X11/app-defaults/Xrus
+share/xruskb/DocumentL.xpm
+share/xruskb/DocumentY.xpm
+share/xruskb/jcuken-cp1251.xmm
+share/xruskb/jcuken-cp866.xmm
+share/xruskb/jcuken-cyr.xmm
+share/xruskb/jcuken-iso5.xmm
+share/xruskb/jcuken-koi8.xmm
+share/xruskb/kbeng.tiff
+share/xruskb/kbeng.xpm
+share/xruskb/kbeng8.xpm
+share/xruskb/kbrus.tiff
+share/xruskb/kbrus.xpm
+share/xruskb/kbrus8.xpm
+share/xruskb/rus.xpm
+share/xruskb/usa.xpm
+share/xruskb/yawerty-cp1251.xmm
+share/xruskb/yawerty-cp866.xmm
+share/xruskb/yawerty-cyr.xmm
+share/xruskb/yawerty-iso5.xmm
+share/xruskb/yawerty-koi8.xmm
 share/doc/xruskb/xrus.doc-english
 share/doc/xruskb/xrus.doc-koi8
-share/examples/xruskb/DocumentL.xpm
-share/examples/xruskb/DocumentY.xpm
-share/examples/xruskb/jcuken-cp1251.xmm
-share/examples/xruskb/jcuken-cp866.xmm
-share/examples/xruskb/jcuken-cyr.xmm
-share/examples/xruskb/jcuken-iso5.xmm
-share/examples/xruskb/jcuken-koi8.xmm
-share/examples/xruskb/rus.xpm
-share/examples/xruskb/usa.xpm
-share/examples/xruskb/yawerty-cp1251.xmm
-share/examples/xruskb/yawerty-cp866.xmm
-share/examples/xruskb/yawerty-cyr.xmm
-share/examples/xruskb/yawerty-iso5.xmm
-share/examples/xruskb/yawerty-koi8.xmm
 @dirrm share/doc/xruskb
-@dirrm share/examples/xruskb
+@dirrm share/xruskb
