@@ -11,7 +11,6 @@
     SUBDIR += bedic-data
     SUBDIR += bibtex2html
     SUBDIR += br-aspell
-    SUBDIR += br-ispell
     SUBDIR += british-ispell
     SUBDIR += c2html
     SUBDIR += ca-aspell
