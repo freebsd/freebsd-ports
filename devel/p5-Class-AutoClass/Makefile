@@ -16,18 +16,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	Automatically define simple get and set methods in an inheritance structure
 
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Class::AutoClass::Root.3 Class::AutoClass.3 Class::AutoClass::Args.3
-#NOMANCOMPRESS=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500601
-IGNORE=		This port requires perl 5.6.x or later.
-.endif
-.if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Data/Dumper.pm:${PORTSDIR}/devel/p5-Data-Dumper
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
