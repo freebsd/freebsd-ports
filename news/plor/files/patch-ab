@@ -1,7 +1,7 @@
 diff -ud work/plor/main.c src/main.c
 --- work/plor/main.c	Sun Oct 27 09:24:00 1996
 +++ ./main.c	Mon Dec 30 09:40:07 1996
-@@ -19,10 +19,15 @@
+@@ -19,10 +19,20 @@
  
   */
  
@@ -13,6 +13,11 @@ diff -ud work/plor/main.c src/main.c
  #include <stdlib.h>
 +#if !defined(BSD)
  #include <getopt.h>
++#else
++#if BSD >= 199506
++/* Lite2, need getopt() prototypes */
++#include <unistd.h>
++#endif
 +#endif
  
  /* will be included when we will have locale support
