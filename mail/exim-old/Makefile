@@ -6,13 +6,13 @@
 # $FreeBSD$
 #
 
-DISTNAME=	exim-3.11
+DISTNAME=	exim-3.12
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		ftp://ftp.quite.net/pub/exim/ \
 		http://www.exim.org/ftp/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
-DISTFILES=	exim-3.11.tar.gz exim-texinfo-3.10.tar.gz
+DISTFILES=	exim-3.12.tar.gz exim-texinfo-3.10.tar.gz
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
