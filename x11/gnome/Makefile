@@ -3,7 +3,7 @@
 # Date created:		17 Aug 1998
 # Whom:			Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.5 1999/03/09 01:09:04 nectar Exp $
+# $Id: Makefile,v 1.6 1999/05/30 04:05:59 steve Exp $
 #
 
 DISTNAME=	gnome-1.0.0
@@ -21,17 +21,17 @@ LIB_DEPENDS=	glib12.2:${PORTSDIR}/devel/glib12 \
 		esd.1:${PORTSDIR}/audio/esound \
 		gnome.2:${PORTSDIR}/x11/gnomelibs \
 		gtop.1:${PORTSDIR}/devel/libgtop \
-		gnomeprint.0:${PORTSDIR}/print/gnomeprint \
+		xml.4:${PORTSDIR}/textproc/libxml \
+		gnomeprint.1:${PORTSDIR}/print/gnomeprint \
 		ghttp.1:${PORTSDIR}/www/libghttp \
-		obgnome.1:${PORTSDIR}/lang/gnomeobjc \
-		xml.0:${PORTSDIR}/textproc/libxml
+		obgnome.1:${PORTSDIR}/lang/gnomeobjc
+#		glade.1:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeaudio \
 		panel:${PORTSDIR}/x11/gnomecore \
 		gtcd:${PORTSDIR}/audio/gnomemedia \
 		gnomecard:${PORTSDIR}/deskutils/gnomepim \
 		gnomine:${PORTSDIR}/games/gnomegames \
 		ElectricEyes:${PORTSDIR}/graphics/electriceyes \
-		gnumeric:${PORTSDIR}/math/gnumeric \
 		gcalc:${PORTSDIR}/misc/gnomeutils \
 		gtalk:${PORTSDIR}/net/gnomenetwork \
 		ggv:${PORTSDIR}/print/ggv \
@@ -39,6 +39,7 @@ RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeau
 		gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter \
 		gtop:${PORTSDIR}/sysutils/gtop \
 		gmc:${PORTSDIR}/x11-fm/gnomemc
+#		gnumeric:${PORTSDIR}/math/gnumeric
 
 EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
