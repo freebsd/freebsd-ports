@@ -46,7 +46,7 @@ JA_VERSION=	.j${PATCH_VERSION}
 JA_DISTFILE=	z${E_VERSION:S/.//g}j104src.tgz
 
 pre-patch:
-	(cd ${WRKSRC} ; ${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/${JA_DISTFILE})
+	(cd ${WRKSRC} ; ${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/${JA_DISTFILE} --no-same-owner)
 	(cd ${WRKSRC}/src ; ${PATCH} -p1 -l -s < ../zj${E_VERSION:S/.//g}.patch ; ${PATCH} -p1 -l -s < ${FILESDIR}/makefile-adjust.patch)
 
 pre-build:
