@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gtkballs
-# Version required:			1.02
+# Version required:			1.04
 # Date created:				11 November 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/24 07:23:02 steve Exp $
+# $Id: Makefile,v 1.2 1999/01/22 21:34:35 nectar Exp $
 #
 
-DISTNAME=		gtkballs-1.02
+DISTNAME=		gtkballs-1.04
 CATEGORIES=		games
 MASTER_SITES=		ftp://lucifer.dorms.spbu.ru/pub/Linux/games/ \
 			http://lucifer.dorms.spbu.ru/gtkballs/ \
@@ -15,12 +15,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=		andy@icc.surw.chel.su
 
-LIB_DEPENDS=		gtk10.1:${PORTSDIR}/x11-toolkits/gtk10
-
-ALL_TARGET=		gtkballs
-MAKEFILE=		makefile
-USE_X_PREFIX=		yes
-WRKSRC=			${WRKDIR}/gtkballs
+LIB_DEPENDS=		gtk12.1:${PORTSDIR}/x11-toolkits/gtk12
 
 MAN6=			gtkballs.6
 
@@ -29,7 +24,7 @@ do-install:
 	@ ${INSTALL_MAN} ${WRKSRC}/gtkballs.6 ${PREFIX}/man/man6
 	@ ${MKDIR} ${PREFIX}/share/gtkballs
 	@ ${INSTALL_DATA} ${WRKSRC}/gtkballs-data/*.xpm ${PREFIX}/share/gtkballs
-	@ ${INSTALL_DATA} ${WRKSRC}/gtkballs-data/.gtkballs-score ${PREFIX}/share/gtkballs/score
+	@ ${INSTALL_DATA} ${WRKSRC}/score ${PREFIX}/share/gtkballs/score
 	@ chmod a+rw ${PREFIX}/share/gtkballs/score
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${PREFIX}/share/doc/gtkballs
