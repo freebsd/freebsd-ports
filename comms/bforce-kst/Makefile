@@ -21,8 +21,6 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
-CONFIGDIR=	etc/fido/bforce
-
 CONTRIBS=	bfha/README bfha/bfha.pl bflan callout.sh outman timesync.tcl \
 		u-srif/conf/report.footer u-srif/conf/report.header u-srif/conf/u-srif.aliases \
 		u-srif/conf/u-srif.conf u-srif/conf/u-srif.dirs u-srif/lib/uconfig.py \
@@ -45,24 +43,23 @@ FIXME=		include/bforce.h include/util.h include/logger.h \
 		bforce/u_plock.c bfutil/bfindex.c
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
-PLIST_SUB+=	CONFIGDIR=${CONFIGDIR}
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/bin
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/etc/bforce,/${CONFIGDIR},g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's,/etc/bforce,/etc/fido/bforce,g' ${WRKSRC}/Makefile.in
 .for i in ${FIXME}
 	@${REINPLACE_CMD} -e 's,log(,bf_log(,g' ${WRKSRC}/${i}
 .endfor
 
 do-install:
-	${MKDIR} ${PREFIX}/${CONFIGDIR}
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.conf ${PREFIX}/${CONFIGDIR}/bforce.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.passwd ${PREFIX}/${CONFIGDIR}/bforce.passwd.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.subst ${PREFIX}/${CONFIGDIR}/bforce.subst.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/freq.aliases ${PREFIX}/${CONFIGDIR}/freq.aliases.sample
-	${INSTALL_DATA} ${WRKSRC}/../examples/freq.dirs ${PREFIX}/${CONFIGDIR}/freq.dirs.sample
+	${MKDIR} ${PREFIX}/etc/fido/bforce
+	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.conf ${PREFIX}/etc/fido/bforce/bforce.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.passwd ${PREFIX}/etc/fido/bforce/bforce.passwd.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/bforce.subst ${PREFIX}/etc/fido/bforce/bforce.subst.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/freq.aliases ${PREFIX}/etc/fido/bforce/freq.aliases.sample
+	${INSTALL_DATA} ${WRKSRC}/../examples/freq.dirs ${PREFIX}/etc/fido/bforce/freq.dirs.sample
 
 	${MKDIR} ${DATADIR} ${DATADIR}/bfha ${DATADIR}/u-srif/conf ${DATADIR}/u-srif/lib
 .for i in ${CONTRIBS}
@@ -78,6 +75,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfindex ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/bfstat ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nlookup ${PREFIX}/bin
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' -e 's|%%CONFIGDIR%%|${CONFIGDIR}|' ${PKGMESSAGE}
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|' -e 's|%%CONFIGDIR%%|etc/fido/bforce|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

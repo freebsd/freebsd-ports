@@ -2,11 +2,11 @@ bin/bforce
 bin/bfindex
 bin/bfstat
 bin/nlookup
-%%CONFIGDIR%%/bforce.conf.sample
-%%CONFIGDIR%%/bforce.passwd.sample
-%%CONFIGDIR%%/bforce.subst.sample
-%%CONFIGDIR%%/freq.aliases.sample
-%%CONFIGDIR%%/freq.dirs.sample
+etc/fido/bforce/bforce.conf.sample
+etc/fido/bforce/bforce.passwd.sample
+etc/fido/bforce/bforce.subst.sample
+etc/fido/bforce/freq.aliases.sample
+etc/fido/bforce/freq.dirs.sample
 %%DATADIR%%/bfha/README
 %%DATADIR%%/bfha/bfha.pl
 %%DATADIR%%/bflan
@@ -33,7 +33,8 @@ bin/nlookup
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.kst
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%CONFIGDIR%%
+@dirrm etc/fido/bforce
+@dirrm etc/fido
 @dirrm %%DATADIR%%/u-srif/lib
 @dirrm %%DATADIR%%/u-srif/conf
 @dirrm %%DATADIR%%/u-srif
