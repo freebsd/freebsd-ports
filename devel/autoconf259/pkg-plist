@@ -48,6 +48,13 @@ share/autoconf/m4sugar/version.m4
 share/autoconf/mdate-sh
 share/autoconf/missing
 share/autoconf/mkinstalldirs
+%%EMACS%%%%EMACSDIR%%/site-lisp/autoconf-mode.el
+%%EMACS%%%%EMACSDIR%%/site-lisp/autoconf-mode.elc
+%%EMACS%%%%EMACSDIR%%/site-lisp/autotest-mode.el
+%%EMACS%%%%EMACSDIR%%/site-lisp/autotest-mode.elc
+@comment directories
+%%EMACS%%@dirrm %%EMACSDIR%%/site-lisp
+%%EMACS%%@dirrm %%EMACSDIR%%
 @dirrm share/autoconf/m4sugar
 @dirrm share/autoconf/autotest
 @dirrm share/autoconf/autoscan
