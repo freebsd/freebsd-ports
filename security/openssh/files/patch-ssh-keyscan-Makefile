@@ -1,6 +1,6 @@
---- ssh-keyscan/Makefile.orig	Sun Mar  4 00:59:39 2001
-+++ ssh-keyscan/Makefile	Sat May 26 16:14:05 2001
-@@ -7,8 +7,8 @@
+--- ssh-keyscan/Makefile.orig	Sun Mar  4 08:59:39 2001
++++ ssh-keyscan/Makefile	Thu Jul 12 18:57:39 2001
+@@ -7,12 +7,12 @@
  
  BINMODE?=555
  
@@ -11,3 +11,8 @@
  
  SRCS=	ssh-keyscan.c
  
+ .include <bsd.prog.mk>
+ 
+-LDADD+=	-lcrypto
++LDADD+=	${CRYPTOLIBS}
+ DPADD+=	${LIBCRYPTO}
