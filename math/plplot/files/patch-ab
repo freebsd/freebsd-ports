@@ -1,58 +1,38 @@
---- cf/install.in.orig	Wed Jun  7 03:13:09 1995
-+++ cf/install.in	Wed Jan  5 02:26:56 2000
-@@ -31,19 +31,18 @@
- 	-if test ! -d $(DOC_DIR); then mkdir -p $(DOC_DIR); fi
- 	-if test ! -d $(BIN_DIR); then mkdir -p $(BIN_DIR); fi
- 	-if test ! -d $(INFO_DIR); then mkdir -p $(INFO_DIR); fi
--	-cd $(top_srcdir)/lib; cp *.fnt *.map $(LIB_DIR)
--	-cp $(PLLIB_BASE)* $(LIB_DIR); \
--	 for file in $(PLLIB_BASE)*; do $(RANLIB) $(LIB_DIR)/$$file; done
-+	-if test ! -d $(DATA_DIR); then mkdir -p $(DATA_DIR); fi
-+	-cd $(top_srcdir)/lib; ${BSD_INSTALL_DATA} *.fnt *.map $(DATA_DIR)
-+	${BSD_INSTALL_DATA} $(PLLIB_BASE)* $(LIB_DIR); \
-+	 for file in $(PLLIB_BASE)*.a; do $(RANLIB) $(LIB_DIR)/$$file; done
- 	-cd $(top_srcdir); \
--	 cp README NEWS CHANGES Copyright COPYING.LIB FAQ ToDo \
--	    mklinks $(DOC_DIR)
-+	 ${BSD_INSTALL_DATA} README NEWS CHANGES FAQ ToDo mklinks $(DOC_DIR)
- 	-if test ! -f $(DOC_DIR)/README.local; then \
--	 cp $(top_srcdir)/doc/README.local $(DOC_DIR); fi
--	-cp $(top_srcdir)/doc/*.info $(INFO_DIR)
--	-cd $(top_srcdir)/scripts; cp pl* $(BIN_DIR)
-+	 ${BSD_INSTALL_DATA} $(top_srcdir)/doc/README.local $(DOC_DIR); fi
-+	-cd $(top_srcdir)/scripts; ${BSD_INSTALL_SCRIPT} pl* $(BIN_DIR)
- 	-cd $(top_srcdir)/include; \
--	 cp plplotP.h plplot.h plxwd.h plevent.h plstrm.h pdf.h \
--	    $(INCLUDE_DIR)
-+	 ${BSD_INSTALL_DATA} plplotP.h plplot.h plxwd.h plevent.h plstrm.h \
-+	    pdf.h $(INCLUDE_DIR)
- 
+--- cf/install.in.orig	Tue Mar 27 10:01:46 2001
++++ cf/install.in	Sat Apr 28 07:55:00 2001
+@@ -32,28 +32,26 @@
  install_demos:
- 	-if test ! -d $(DEMOS_DIR); then mkdir -p $(DEMOS_DIR); fi
-@@ -56,11 +55,11 @@
- 	-$(LN) $(DEMOS_DIR)/Makefile $(DEMOS_DIR)/c
- 	-$(LN) $(DEMOS_DIR)/Makefile $(DEMOS_DIR)/f77
- 	-$(LN) $(DEMOS_DIR)/Makefile $(DEMOS_DIR)/tk
--	-cd $(top_srcdir)/examples/c; cp * $(DEMOS_DIR)/c
--	-cd $(top_srcdir)/examples/f77; cp * $(DEMOS_DIR)/f77
--	-cd $(top_srcdir)/examples/python; cp * $(DEMOS_DIR)/python
--	-cd $(top_srcdir)/examples/tcl; cp * $(DEMOS_DIR)/tcl
--	-cd $(top_srcdir)/examples/tk; cp * $(DEMOS_DIR)/tk
-+	-cd $(top_srcdir)/examples/c; ${BSD_INSTALL_DATA} * $(DEMOS_DIR)/c
-+	-cd $(top_srcdir)/examples/f77; ${BSD_INSTALL_DATA} * $(DEMOS_DIR)/f77
-+	-cd $(top_srcdir)/examples/python; ${BSD_INSTALL_DATA} * $(DEMOS_DIR)/python
-+	-cd $(top_srcdir)/examples/tcl; ${BSD_INSTALL_DATA} * $(DEMOS_DIR)/tcl
-+	-cd $(top_srcdir)/examples/tk; ${BSD_INSTALL_DATA} * $(DEMOS_DIR)/tk
- 	-$(LN) $(DEMOS_DIR)/tcl/x??.tcl $(DEMOS_DIR)/tk
+ 	@-if test ! -d $(DEMOS_DIR); then mkdir -p $(DEMOS_DIR); fi; \
+ 	  if test ! -d $(DEMOS_DIR)/c; then mkdir -p $(DEMOS_DIR)/c; fi; \
+-	  $(CP) Makedemo $(DEMOS_DIR)/Makefile; \
+-	  $(CP) ../test/test_*.sh plplot-test.sh $(DEMOS_DIR); \
++	  ${BSD_INSTALL_DATA} Makedemo $(DEMOS_DIR)/Makefile; \
++	  ${BSD_INSTALL_DATA} ../test/test_*.sh plplot-test.sh $(DEMOS_DIR); \
+ 	  chmod a+x $(DEMOS_DIR)/plplot-test.sh; \
+ 	  $(LN) ../Makefile $(DEMOS_DIR)/c; \
+ 	  cd $(top_srcdir)/examples/c; \
+-	  $(CP) *.c $(DEMOS_DIR)/c; \
+-	  $(CP) *.h $(INCLUDE_DIR)
++	  ${BSD_INSTALL_DATA} *.c $(DEMOS_DIR)/c; \
++	  ${BSD_INSTALL_DATA} *.h $(INCLUDE_DIR)
  
- install_utils:
-@@ -72,8 +71,7 @@
- 	 $(LDC) $(LDC_FLAGS) pltek$O $(LIB_INSTALL) \
- 		-o pltek$E; \
- 	 fi
--	-strip plrender$E pltek$E
--	-cp plrender$E pltek$E $(BIN_DIR)
-+	${BSD_INSTALL_PROGRAM} plrender$E pltek$E $(BIN_DIR)
+ install_plrender:
+ 	@-if test $(SHARED) = 1; then \
+ 	  $(LDC) $(LDC_FLAGS) plrender$O $(LIB_INSTALL) \
+ 		-o plrender$E $(LDC_LIBS) $(INSTALL_RPATH); \
+ 	  fi; \
+-	  strip plrender$E; \
+-	  $(CP) plrender$E $(BIN_DIR)
++	  ${BSD_INSTALL_PROGRAM} plrender$E $(BIN_DIR)
  
- # Remember, this is bogus...
- #	 $(LDC) $(LDC_FLAGS) pltek$O $(LIB_INSTALL) \
+ install_pltek:
+-	@-strip pltek$E; $(CP) pltek$E $(BIN_DIR)
++	@${BSD_INSTALL_PROGRAM} pltek$E $(BIN_DIR)
+ 
+ install_plplot_config:
+-	 @$(CP) plplot-config $(BIN_DIR); \
+-	 chmod a+x $(BIN_DIR)/plplot-config
++	 @${BSD_INSTALL_SCRIPT} plplot-config $(BIN_DIR)
+ 
+ install_utils: install_plrender install_pltek install_plplot_config
+ 

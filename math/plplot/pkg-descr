@@ -12,4 +12,4 @@ scaled to any desired size.  A variety of output devices are supported and
 new devices can be easily added by writing a small number of device
 dependent routines.
 
-WWW: http://emma.la.asu.edu/plplot/
+WWW: http://plplot.sourceforge.net/

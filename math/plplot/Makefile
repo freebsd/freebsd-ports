@@ -6,30 +6,35 @@
 #
 
 PORTNAME=	plplot
-PORTVERSION=	4.99j
+PORTVERSION=	5.0.3
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.uniovi.es/pub6/graphics/plotting/ \
-		ftp://dino.ph.utexas.edu/plplot/distrib/alpha/ \
-		ftp://ftp.che.utexas.edu/pub/graphics/
-DISTNAME=	${PORTNAME}4p99j
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+PATCH_SITES=	${MASTER_SITES}
+PATCHFILES=	${DISTNAME}.patch1.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gcc=yes --with-double=yes
+CONFIGURE_ENV=	F77="${FC}" FFLAGS="${FFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		GDINCDIR="${LOCALBASE}/include/gd" \
+		GDLIBDIR="${LOCALBASE}/lib" \
+		XINCDIR="${X11BASE}/include" \
+		XLIBDIR="${X11BASE}/lib" \
+		PLPLOT_PREFIX="${PREFIX}/share/plplot" \
+		DEMOS_DIR="${PREFIX}/share/examples/plplot" \
+		INFO_DIR="${PREFIX}/info" \
+		M4="${LOCALBASE}/bin/gm4"
+CONFIGURE_ARGS=	--disable-tk --disable-tcl --disable-itcl --disable-python \
+		--with-double
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/*.c
-
-post-install:
-.if ${PORTOBJFORMAT} == "elf"
-	${LN} -sf libplplotdX.so.4 ${PREFIX}/lib/libplplotdX.so
-.else
-	${LN} -sf libplplotdX.so.4.99 ${PREFIX}/lib/libplplotdX.so
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

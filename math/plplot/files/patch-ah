@@ -1,0 +1,23 @@
+--- cf/pkg_cxx.in.orig	Sat Feb  3 09:36:16 2001
++++ cf/pkg_cxx.in	Sat Apr 28 07:11:10 2001
+@@ -32,17 +32,17 @@
+ # Targets
+ 
+ install_cxx_includes:
+-	@-cd $(top_srcdir)/bindings/c++; $(CP) plstream.h $(INCLUDE_DIR)
++	@-cd $(top_srcdir)/bindings/c++; ${BSD_INSTALL_DATA} plstream.h $(INCLUDE_DIR)
+ 
+ install_cxx_demos:
+ 	@-if test ! -d $(DEMOS_DIR)/c++; then mkdir -p $(DEMOS_DIR)/c++; fi; \
+ 	  $(LN) ../Makefile $(DEMOS_DIR)/c++; \
+-	  cd $(top_srcdir)/examples/c++; $(CP) *.cc $(DEMOS_DIR)/c++
++	  cd $(top_srcdir)/examples/c++; ${BSD_INSTALL_DATA} *.cc $(DEMOS_DIR)/c++
+ 
+ install_cxx: install_cxx_includes install_cxx_demos
+ 
+ install_cxxlib:
+-	@-$(CP) $(CXXLIB_BASE)* $(LIB_DIR); \
++	@-${BSD_INSTALL_DATA} $(CXXLIB_BASE)* $(LIB_DIR); \
+ 	  if test -r $(CXXLIB_BASE)$(LIB_TAG)$A; then \
+ 	      $(RANLIB) $(LIB_DIR)/$(CXXLIB_BASE)$(LIB_TAG)$A; \
+ 	  fi
