@@ -17,7 +17,7 @@ PATCHFILES=	patch.20.gz patch.21e.gz patch.22e.gz patch.23e.gz \
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libmimekit.a:${PORTSDIR}/japanese/mimekit
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmimekit.a:${PORTSDIR}/japanese/mimekit
 
 WRKSRC=		${WRKDIR}/distribute-pl19
 MAN1=		distribute.1
@@ -26,13 +26,13 @@ DIST_SUBDIR=	distribute
 IS_INTERACTIVE=	YES
 
 # customize below if you would like to
-MAILINGLIST_DIR=	${PREFIX}/majordomo/lists
-MAJORDOMO_DIR=		${PREFIX}/majordomo	# mail/majordomo likes this
-MAJORDOMO_LIST_DIR=	${MAJORDOMO_DIR}/lists
-ARCHIVE_DIR=		/var/spool/mail-list
-DEF_DOMAINNAME=		your.domain.here
-DISTRIBUTE_OWNER=	majordom		# owner of distribute
-DISTRIBUTE_GROUP=	majordom		# group of distribute
+MAILINGLIST_DIR?=	${PREFIX}/majordomo/lists
+MAJORDOMO_DIR?=		${PREFIX}/majordomo	# mail/majordomo likes this
+MAJORDOMO_LIST_DIR?=	${MAJORDOMO_DIR}/lists
+ARCHIVE_DIR?=		/var/spool/mail-list
+DEF_DOMAINNAME?=	your.domain.here
+DISTRIBUTE_OWNER?=	majordom		# owner of distribute
+DISTRIBUTE_GROUP?=	majordom		# group of distribute
 
 MAKE_ENV+=	DEFAULTCONFIG="-DDEF_SEQ_PATH=\\\"$(MAILINGLIST_DIR)\\\" \
 			-DDEF_RECIPIENT_PATH=\\\"$(MAILINGLIST_DIR)\\\" \
