@@ -430,6 +430,7 @@ awk		src/gnu/usr.bin/awk
 awka		ports/lang/awka
 axe		ports/editors/axe
 axel		ports/ftp/axel
+axpoint		ports/print/axpoint
 axyftp		ports/ftp/axyftp
 babel		ports/biology/babel
 backfract	ports/graphics/backfract
