@@ -10,7 +10,12 @@ PORTVERSION=	6.1.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.apsfilter.org/download/
 
+PATCH_SITES=	http://www.apsfilter.org/download/
+PATCHFILES=	diff-6.1.1-01.12.2001.gz
+
 MAINTAINER=	andreas@FreeBSD.org
+
+DIST_SUBDIR=	apsfilter
 
 # special arrangement for package building, build stuff without X11
 # to make memory footprint of apsfilter package smaller
