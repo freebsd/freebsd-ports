@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Apr 13 17:51:14 2002
-+++ Makefile	Fri Jun 27 02:02:00 2003
+--- Makefile.orig	Sun Apr 14 09:51:14 2002
++++ Makefile	Wed Aug 27 22:16:03 2003
 @@ -9,19 +9,18 @@
  # November 30, 2001 - April 13, 2002
  
@@ -11,14 +11,15 @@
  JOY=YES
  TARGET_DEF=LINUX
 -SDL_LIB=$(shell sdl-config --libs) $(MIXER) -lSDL_image
-+SDL_LIB=$(shell sdl11-config --libs) $(MIXER) -lSDL_image
++SDL_LIB=$(shell $(SDL_CONFIG) --libs) $(MIXER) -lSDL_image
  
  NOSOUNDFLAG=__SOUND
  MIXER=-lSDL_mixer
  
- CFLAGS=-Wall -Wno-long-long -pedantic -ansi -O2 \
+-CFLAGS=-Wall -Wno-long-long -pedantic -ansi -O2 \
 -	$(shell sdl-config --cflags) -D$(NOSOUNDFLAG) \
-+	$(shell sdl11-config --cflags) -D$(NOSOUNDFLAG) \
++CFLAGS+= \
++	$(shell $(SDL_CONFIG) --cflags) -D$(NOSOUNDFLAG) \
  	-DDATA_PREFIX=\"$(DATA_PREFIX)\" -DJOY_$(JOY) -D$(TARGET_DEF)
  
  
