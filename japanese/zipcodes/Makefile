@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20020201
+PORTVERSION=	20020301
 CATEGORIES=	japanese misc
 MASTER_SITES=	http://www.post.yusei.go.jp/newnumber/lzh/s/
-EXTRACT_SUFX=	.lzh
 DISTNAME=	ken_all
+EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	ports@freebsd.org
 
