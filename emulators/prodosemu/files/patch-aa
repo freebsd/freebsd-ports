@@ -1,6 +1,5 @@
-diff -rc prodosemu-v0.1/Makefile prodosemu/Makefile
-*** Makefile	Tue Jan  9 15:00:03 1996
---- Makefile	Tue Feb 18 09:40:38 1997
+*** Makefile.orig	Tue Jan  9 13:00:03 1996
+--- Makefile	Mon Jan 10 04:44:20 2000
 ***************
 *** 1,12 ****
   #
@@ -15,57 +14,76 @@ diff -rc prodosemu-v0.1/Makefile prodosemu/Makefile
   
   # Necessary libraries
   LIB = -lcurses -ltermcap
---- 1,28 ----
+--- 1,23 ----
   #
 ! # Makefile for ProDOS Emulator v0.1
 ! # FreeBSD modifications by Joel Sutton 18th Feb, 1997
 ! 
 ! # Paths to various places
 ! PREFIX?=	/usr/local
-! BINDIR=	${PREFIX}/bin
-! LIBDIR=	${PREFIX}/lib
-! MANDIR=	${PREFIX}/man
+! BINDIR=		${PREFIX}/bin
+! LIBDIR=		${PREFIX}/libdata
 ! ROMDIR=		${LIBDIR}/apple2
 ! ROM=		prodos-2e.rom
 ! 
 ! # Certain programs
-! INSTALL=	install -c
-! INSTALL_BIN=	${INSTALL} -s -o bin -g bin
-! INSTALL_DATA=	${INSTALL} -m 664
-! INSTALL_MAN=	${INSTALL} -m 444
-! CP?=		/bin/cp
-! MKDIR?=		-/bin/mkdir
+! CC?=		cc
+! MKDIR?=		mkdir -p
   
   all : prodos
   
   # Linux doesn't seem to like Randy Frank's beep code,
   # if you're compiling on something else, you could try not defining NOBEEP
-! OPT = -O2 -DNOBEEP -DROMFILE=\"${ROMDIR}/${ROM}\"
+! OPT = ${CFLAGS} -DNOBEEP -DROMFILE=\"${ROMDIR}/${ROM}\"
   
   # Necessary libraries
   LIB = -lcurses -ltermcap
 ***************
-*** 30,35 ****
+*** 16,35 ****
+  
+  # Build modules from source:
+  main.o: main.c apple.h
+! 	cc -c  $(OPT) main.c
+  6502.o: 6502.c apple.h
+! 	cc -c  $(OPT) 6502.c
+  mega2.o: mega2.c apple.h
+! 	cc -c  $(OPT) mega2.c
+  debug.o: debug.c apple.h
+! 	cc -c  $(OPT) debug.c
+  prodos.o: prodos.c apple.h
+! 	cc -c  $(OPT) prodos.c
+  
+  # Build the executale
   prodos  : $(OBJ)
-  	cc $(OPT) -o prodos $(OBJ) $(LIB)
+! 	cc $(OPT) -o prodos $(OBJ) $(LIB)
   
   # Clean up
   clean:
 ! 	rm *.o *~
---- 46,61 ----
-  prodos  : $(OBJ)
-  	cc $(OPT) -o prodos $(OBJ) $(LIB)
+--- 27,52 ----
   
-+ # Install the program
-+ install: all
-+ 	${MKDIR} ${BINDIR}
-+ 	${MKDIR} ${LIBDIR}
-+ 	${MKDIR} ${ROMDIR}
-+ 
-+ 	${INSTALL_BIN} prodos ${BINDIR}/
-+ 	${CP} apple.rom ${ROM}
-+ 	${INSTALL_DATA} ${ROM} ${ROMDIR}/
-+ 
+  # Build modules from source:
+  main.o: main.c apple.h
+! 	$(CC) -c  $(OPT) main.c
+  6502.o: 6502.c apple.h
+! 	$(CC) -c  $(OPT) 6502.c
+  mega2.o: mega2.c apple.h
+! 	$(CC) -c  $(OPT) mega2.c
+  debug.o: debug.c apple.h
+! 	$(CC) -c  $(OPT) debug.c
+  prodos.o: prodos.c apple.h
+! 	$(CC) -c  $(OPT) prodos.c
+  
+  # Build the executale
+  prodos  : $(OBJ)
+! 	$(CC) $(OPT) -o prodos $(OBJ) $(LIB)
+! 
+! # Install the program
+! install: all
+! 	if [ ! -f ${ROMDIR} ]; then ${MKDIR} ${ROMDIR}; fi
+! 	${BSD_INSTALL_PROGRAM} prodos ${BINDIR}
+! 	${BSD_INSTALL_DATA} apple.rom ${ROMDIR}/${ROM}
+  
   # Clean up
   clean:
 ! 	rm *.o 
