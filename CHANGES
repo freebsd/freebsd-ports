@@ -10,6 +10,57 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040504:
+	Over the past few weeks, we have been testing the next
+	incarnation of ports/Mk/bsd.autotools.mk on the road to bringing
+	at least some semblance of sanity back to this corner of the
+	ports collection.
+
+	By far and away the easiest way to see the changes will be to
+	view the new file once committed, but here is a summary of the
+	changes:
+
+	1. USE_LIBTOOL, USE_AUTOCONF, USE_AUTOHEADER, USE_AUTOMAKE have
+	been fully deprecated.  Ports attempting to use these variables
+	after the commit will error out, and most obviously break INDEX
+	generation, with a helpful error message.  Instead, ports must
+	now specifically choose the version of any of these tools that
+	they need with the corresponding USE_*_VER variables.  Note that
+	these variables understand any and all versions of autotools ports
+	in the tree, there is no longer a need to have specific version
+	numbers hardcoded in the infrastructure of bsd.autotools.mk
+	(as there is now).  In particular, this will immediately open up
+	automake18 and autoconf259 for general use and beating.
+
+	2. Similarly for WANT_LIBTOOL, WANT_AUTOCONF, and WANT_AUTOMAKE.
+	Again, these have been fully deprecated, and the equivalent
+	WANT_*_VER versions should be used.
+
+	In order to preserve existing behavior for these variables, please
+	note the 20040314 entry in ports/CHANGES for the appropriate
+	version numbers to use for any ports in the GNATS queue.
+
+	Both WANT_* and USE_* bring in the relevant tool as a build
+	dependency, and set up a reasonably large number of variables
+	pointing to the right programs to be using in the port.  The
+	only difference at the moment, is that USE_* will run an extra
+	autotools-related configuration step, whereas WANT_* merely
+	requests the environment.
+
+	3. The helper knob USE_LIBLTDL has been added which currently
+	simply adds a LIB dependency on the libltdl port.
+
+	4. Three new variables have been introduced,
+	WANT_{LIBTOOL,AUTOCONF,AUTOMAKE}_RUN=yes.  These variables will
+	do nothing by themselves (a Work-In-Progress), but if the
+	appropriate autotool version is defined (either through
+	WANT_*_VER or USE_*_VER), this will add the relevant dependency
+	to RUN_DEPENDS.
+
+	Steps 3 and 4 now essentially negate the need for any kind of
+	direct dependency within a non-autotools port Makefile on
+	devel/autoconf*, devel/automake*, devel/libtool*, and devel/libltdl.
+
 20040416:
 	There has been a couple of bsd.java.mk tweaks and fixes.
 
