@@ -3,22 +3,19 @@
 # Date created:				28 Oct 1997
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.9 1997/10/29 14:43:32 jfitz Exp $
+# $Id: Makefile,v 1.10 1997/11/18 19:05:12 jfitz Exp $
 #
 
 DISTNAME=	mysql-3.20.32a
 CATEGORIES=	databases
 MASTER_SITES=	http://www.tcx.se/ \
 		http://www.buoy.com/mysql/ \
-		http://web.tryc.on.ca/mysql/ \
-		http://mysql.staufen.de/ \
-		http://mysql.acer.net/
+		http://web.tryc.on.ca/mysql/
 
 MAINTAINER=	josh@ican.net
 
-RUN_DEPENDS=	perl5.00404:${PORTSDIR}/lang/perl5
-
 USE_GMAKE=	YES
+USE_PERL5=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--with-MAKE=gmake \
@@ -33,13 +30,13 @@ pre-install:
 post-install:
 	cd ${WRKSRC} && ${WRKSRC}/scripts/mysql_install_db
 	@ /usr/bin/killall mysqld
-	@ echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql.sh
-	@ echo "#" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ echo "" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ echo "if [ -x /usr/local/bin/safe_mysqld ]" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ echo "then" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ echo "	/usr/local/bin/safe_mysqld & && echo -n ' mysql'" >> ${PREFIX}/etc/rc.d/mysql.sh
-	@ echo "fi" >> ${PREFIX}/etc/rc.d/mysql.sh
+	@ ${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/mysql.sh
+	@ ${ECHO} "#" >> ${PREFIX}/etc/rc.d/mysql.sh
+	@ ${ECHO} "" >> ${PREFIX}/etc/rc.d/mysql.sh
+	@ ${ECHO} "if [ -x ${PREFIX}/bin/safe_mysqld ]" >> ${PREFIX}/etc/rc.d/mysql.sh
+	@ ${ECHO} "then" >> ${PREFIX}/etc/rc.d/mysql.sh
+	@ ${ECHO} "	${PREFIX}/bin/safe_mysqld & && ${ECHO} -n ' mysql'" >> ${PREFIX}/etc/rc.d/mysql.sh
+	@ ${ECHO} "fi" >> ${PREFIX}/etc/rc.d/mysql.sh
 	@ /bin/chmod 750 ${PREFIX}/etc/rc.d/mysql.sh
 	${MKDIR} ${PREFIX}/share/doc/mysql
 .for doc in mysql-faq.html mysql-faq.ps mysql-faq_toc.html mysql-faq.txt mysql-faq.texi
