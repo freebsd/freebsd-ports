@@ -14,7 +14,7 @@ DISTFILES=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/www/mozilla:build \
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla:build \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	${MAKE} -V LIB_DEPENDS -f ${MAINDIR}/${MAKEFILE}

@@ -14,7 +14,7 @@ DISTNAME=	skk${PORTVERSION}
 MAINTAINER=	matusita@jp.FreeBSD.org
 
 BUILD_DEPENDS=	mule:${.CURDIR}/../../editors/mule \
-		/nonexistent:${SKK_MASTERDIR}:configure
+		${NONEXISTENT}:${SKK_MASTERDIR}:configure
 RUN_DEPENDS=	${PREFIX}/share/skk/${SKKJISYO}:${SKK_MASTERDIR}
 
 SKKJISYO_SIZE?=	L

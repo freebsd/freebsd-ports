@@ -14,7 +14,7 @@ DISTFILES=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/www/mozilla:configure
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla:configure
 
 USE_X_PREFIX=	yes
 

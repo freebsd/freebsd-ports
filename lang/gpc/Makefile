@@ -13,7 +13,7 @@ DISTNAME=	gpc-19990118
 
 MAINTAINER=	antonz@library.ntu-kpi.kiev.ua
 
-BUILD_DEPENDS=	nonexistent:${PORTSDIR}/lang/gcc28:patch
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/lang/gcc28:patch
 
 WRKSRC=		${WRKDIR}/gpc
 MAKE_ARGS=	LANGUAGES=pascal
