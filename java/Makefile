@@ -98,6 +98,7 @@
     SUBDIR += openjit
     SUBDIR += phpeclipse
     SUBDIR += phpeclipse_sql
+    SUBDIR += phpeclipse_tidy
     SUBDIR += proguard
     SUBDIR += sablevm
     SUBDIR += shujit
