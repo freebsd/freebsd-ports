@@ -1,0 +1,10 @@
+--- ppgen.c.orig	Tue Aug 29 05:10:45 1995
++++ ppgen.c	Sat Aug 12 19:55:51 2000
+@@ -29,6 +29,7 @@
+ #else
+ char *optarg;
+ #endif
++#include <errno.h>
+ 
+ #include "ppg_random.h"
+ 

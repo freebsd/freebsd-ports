@@ -1,0 +1,3 @@
+bin/ppgen
+share/ppgen/en
+@dirrm share/ppgen
