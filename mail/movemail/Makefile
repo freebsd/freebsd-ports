@@ -8,7 +8,7 @@
 PORTNAME=	movemail
 PORTVERSION=	1.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
+MASTER_SITES=	http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Move your mail box to annother location
