@@ -3,7 +3,7 @@
 # Date created:		17 November 1996
 # Whom:			mi
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/03 12:10:42 tg Exp $
 #
 
 DISTNAME=	HDF4.1r1
@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/HDF/HDF_Current/tar/
 MAINTAINER=	mi@aldan.ziplink.net
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+
+BROKEN=		build
 
 GNU_CONFIGURE=	yes
 MAKE_FLAGS=	CC="$(CC)" -f
