@@ -1,0 +1,4 @@
+bin/phdecode
+bin/numchar
+share/doc/numchar/numchar.html
+@dirrm share/doc/numchar
