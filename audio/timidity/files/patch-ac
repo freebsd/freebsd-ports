@@ -1,40 +1,23 @@
-*** timidity.cfg.bak	Mon May 22 02:40:27 1995
---- timidity.cfg	Sun Nov 17 10:50:44 1996
-***************
-*** 34,42 ****
-  # This sets up the default patches in the TiMidity support package
-  # "timidity-lib-0.1.tar.gz":
-  
-! bank 0
-!    0 patch/acpiano.pat
-!   24 patch/nylongt2.pat
-  
-  ##############################################################################
-  # If you have Dustin McCartney's "wowpats" patches, you can source the 
---- 34,42 ----
-  # This sets up the default patches in the TiMidity support package
-  # "timidity-lib-0.1.tar.gz":
-  
-! #bank 0
-! #   0 patch/acpiano.pat
-! #  24 patch/nylongt2.pat
-  
-  ##############################################################################
-  # If you have Dustin McCartney's "wowpats" patches, you can source the 
-***************
-*** 67,73 ****
-  # Note that midia.cfg sources gravis.cfg in turn, since the filenames are 
-  # almost identical.
-  #
-! #source midia.cfg
-  #
-  
-  
---- 67,73 ----
-  # Note that midia.cfg sources gravis.cfg in turn, since the filenames are 
-  # almost identical.
-  #
-! source midia.cfg
-  #
-  
-  
+--- timidity.cfg.orig	Mon May 22 02:40:27 1995
++++ timidity.cfg	Mon Jan  4 03:55:42 1999
+@@ -34,9 +34,9 @@
+ # This sets up the default patches in the TiMidity support package
+ # "timidity-lib-0.1.tar.gz":
+ 
+-bank 0
+-   0 patch/acpiano.pat
+-  24 patch/nylongt2.pat
++#bank 0
++#   0 patch/acpiano.pat
++#  24 patch/nylongt2.pat
+ 
+ ##############################################################################
+ # If you have Dustin McCartney's "wowpats" patches, you can source the 
+@@ -70,6 +70,7 @@
+ #source midia.cfg
+ #
+ 
++source goemon.cfg
+ 
+ ##############################################################################
+ # End of configuration file
