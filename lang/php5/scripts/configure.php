@@ -56,7 +56,6 @@ OPENSSL		"OpenSSL support" ${WITH_OPENSSL:-OFF} \
 ORACLE		"Oracle support" ${WITH_ORACLE:-OFF} \
 PCNTL		"pcntl support (CLI only)" ${WITH_PCNTL:-OFF} \
 PCRE		"Perl Compatible Regular Expression support" ${WITH_PCRE:-OFF} \
-PDFLIB		"PDFlib support" ${WITH_PDFLIB:-OFF} \
 POSIX		"POSIX-like functions" ${WITH_POSIX:-OFF} \
 POSTGRESQL	"PostgreSQL database support" ${WITH_POSTGRESQL:-OFF} \
 PSPELL		"pspell support" ${WITH_PSPELL:-OFF} \
