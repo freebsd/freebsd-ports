@@ -1,14 +1,7 @@
-*** conf/access.conf-dist	Fri Sep 29 09:50:58 1995
---- conf/access.conf-dist	Fri Sep 29 09:51:50 1995
+*** conf/access.conf-dist.orig	Wed Jul  3 21:18:11 1996
+--- conf/access.conf-dist	Fri Jul  5 06:32:54 1996
 ***************
-*** 10,23 ****
-  
-  # Originally by Rob McCool
-  
-! # /usr/local/etc/httpd/ should be changed to whatever you set ServerRoot to.
-! <Directory /usr/local/etc/httpd/cgi-bin>
-  Options Indexes FollowSymLinks
-  </Directory>
+*** 12,18 ****
   
   # This should be changed to whatever you set DocumentRoot to.
   
@@ -16,14 +9,7 @@
   
   # This may also be "None", "All", or any combination of "Indexes",
   # "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
---- 10,23 ----
-  
-  # Originally by Rob McCool
-  
-! # /usr/local/www/ should be changed to whatever you set ServerRoot to.
-! <Directory /usr/local/www/cgi-bin>
-  Options Indexes FollowSymLinks
-  </Directory>
+--- 12,18 ----
   
   # This should be changed to whatever you set DocumentRoot to.
   
@@ -31,10 +17,27 @@
   
   # This may also be "None", "All", or any combination of "Indexes",
   # "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
-*** conf/httpd.conf-dist.orig	Tue Aug  1 04:45:22 1995
---- conf/httpd.conf-dist	Fri Sep 29 09:52:42 1995
 ***************
-*** 29,40 ****
+*** 38,44 ****
+  # /usr/local/etc/httpd/cgi-bin should be changed to whatever your ScriptAliased
+  # CGI directory exists, if you have that configured.
+  
+! <Directory /usr/local/etc/httpd/cgi-bin>
+  AllowOverride None
+  Options None
+  </Directory>
+--- 38,44 ----
+  # /usr/local/etc/httpd/cgi-bin should be changed to whatever your ScriptAliased
+  # CGI directory exists, if you have that configured.
+  
+! <Directory /usr/local/www/cgi-bin>
+  AllowOverride None
+  Options None
+  </Directory>
+*** conf/httpd.conf-dist.orig	Sat Jun  8 00:56:47 1996
+--- conf/httpd.conf-dist	Fri Jul  5 06:25:42 1996
+***************
+*** 33,44 ****
   # ServerAdmin: Your address, where problems with the server should be
   # e-mailed.
   
@@ -47,7 +50,7 @@
   
   # BindAddress: You can support virtual hosts with this option. This option
   # is used to tell the server which IP address to listen to. It can either
---- 29,40 ----
+--- 33,44 ----
   # ServerAdmin: Your address, where problems with the server should be
   # e-mailed.
   
@@ -61,7 +64,7 @@
   # BindAddress: You can support virtual hosts with this option. This option
   # is used to tell the server which IP address to listen to. It can either
 ***************
-*** 124,130 ****
+*** 161,167 ****
    
   #<VirtualHost host.foo.com>
   #ServerAdmin webmaster@host.foo.com
@@ -69,7 +72,7 @@
   #ServerName host.foo.com
   #ErrorLog logs/host.foo.com-error_log
   #TransferLog logs/host.foo.com-access_log
---- 124,130 ----
+--- 161,167 ----
    
   #<VirtualHost host.foo.com>
   #ServerAdmin webmaster@host.foo.com
@@ -77,8 +80,8 @@
   #ServerName host.foo.com
   #ErrorLog logs/host.foo.com-error_log
   #TransferLog logs/host.foo.com-access_log
-*** conf/srm.conf-dist	Sun Aug 20 18:23:53 1995
---- conf/srm.conf-dist	Fri Sep 29 09:50:45 1995
+*** conf/srm.conf-dist.orig	Thu Jun 13 06:04:43 1996
+--- conf/srm.conf-dist	Fri Jul  5 06:37:24 1996
 ***************
 *** 12,18 ****
   # documents. By default, all requests are taken from this directory, but
@@ -97,20 +100,20 @@
   # UserDir: The name of the directory which is appended onto a user's home
   # directory if a ~user request is recieved.
 ***************
-*** 118,129 ****
+*** 131,142 ****
   # Aliases: Add here as many aliases as you need (with no limit). The format is 
   # Alias fakename realname
   
-! Alias /icons/ /usr/local/etc/httpd/icons/
+! #Alias /icons/ /usr/local/etc/httpd/icons/
   
   # ScriptAlias: This controls which directories contain server scripts.
   # Format: ScriptAlias fakename realname
   
-! ScriptAlias /cgi-bin/ /usr/local/etc/httpd/cgi-bin/
+! #ScriptAlias /cgi-bin/ /usr/local/etc/httpd/cgi-bin/
   
   # If you want to use server side includes, or CGI outside
   # ScriptAliased directories, uncomment the following lines.
---- 118,129 ----
+--- 131,142 ----
   # Aliases: Add here as many aliases as you need (with no limit). The format is 
   # Alias fakename realname
   
