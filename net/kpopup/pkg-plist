@@ -1,0 +1,18 @@
+bin/kpopup
+share/applnk/Applications/kpopup.desktop
+share/icons/hicolor/16x16/apps/kpopup.png
+share/icons/hicolor/32x32/apps/kpopup.png
+share/icons/hicolor/48x48/apps/kpopup.png
+share/icons/locolor/16x16/apps/kpopup.png
+share/icons/locolor/32x32/apps/kpopup.png
+share/locale/de/LC_MESSAGES/kpopup.mo
+%%PORTDOCS%%share/doc/HTML/en/kpopup/common
+%%PORTDOCS%%share/doc/HTML/en/kpopup/index-1.html
+%%PORTDOCS%%share/doc/HTML/en/kpopup/index-2.html
+%%PORTDOCS%%share/doc/HTML/en/kpopup/index-3.html
+%%PORTDOCS%%share/doc/HTML/en/kpopup/index-4.html
+%%PORTDOCS%%share/doc/HTML/en/kpopup/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/en/kpopup/index.docbook
+%%PORTDOCS%%share/doc/HTML/en/kpopup/index.html
+%%PORTDOCS%%share/doc/HTML/en/kpopup/logotp3.png
+@dirrm share/doc/HTML/en/kpopup
