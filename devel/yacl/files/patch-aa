@@ -1,0 +1,187 @@
+*** control/gnuc/linux.cfg.orig	Fri Jun 20 14:53:10 1997
+--- control/gnuc/linux.cfg	Tue Feb  3 23:35:11 1998
+***************
+*** 4,13 ****
+  # Default symbol definitions for YACL GNU C++ make under Linux
+  #
+  
+! YACLPLATFORM  = linux
+  
+  # Add any compiler options  you feel necessary and uncommen this line.
+! EXTRA_CCOPTS  = -pipe
+  
+  #
+  # Various path names/libs: change as necessary, but only if your
+--- 4,13 ----
+  # Default symbol definitions for YACL GNU C++ make under Linux
+  #
+  
+! YACLPLATFORM  = FreeBSD
+  
+  # Add any compiler options  you feel necessary and uncommen this line.
+! EXTRA_CCOPTS  = $(CFLAGS) -fno-implicit-templates
+  
+  #
+  # Various path names/libs: change as necessary, but only if your
+***************
+*** 17,25 ****
+  
+  
+  # Name of the GNU C++ library. Use g++ for GCC versions 2.6.3 and
+! # earlier, and stdc++ for versions 2.7.0 and later.
+! CPLUSPLUSLIB = g++
+! # CPLUSPLUSLIB = stdc++
+  
+  
+  # Directory containing the C++ include files (iostream.h and the like). Set
+--- 17,25 ----
+  
+  
+  # Name of the GNU C++ library. Use g++ for GCC versions 2.6.3 and
+! # earlier, and stdc++ for versions 2.7.0 and later. Assuming at least FreeBSD-2.2.
+! # CPLUSPLUSLIB = g++
+! CPLUSPLUSLIB = stdc++
+  
+  
+  # Directory containing the C++ include files (iostream.h and the like). Set
+***************
+*** 27,48 ****
+  # CPP_INC      = -I/optx/PD/lib/g++-include
+  
+  # Directory under which the X11 include files live.
+! X11INC       = -I/usr/include/X11
+  
+  # Directory under which the Motif include files live. Bear in mind
+  # that, if you set this directory to d, then the YACL source code will
+  # expect the Motif header files to be in the directory d/Xm.
+  # MOTIFINC     = -I/usr/local/motif1.2/include
+! MOTIFINC     = -I/usr/local/motif2.0/include
+  
+  
+  # Directory in which the X libraries live. 
+! X11LIBPATH       = /usr/X11/lib
+  X11LIBS          = -lXt -lX11
+  
+  # Directory in which the Motif library lives.
+  # MOTIFLIBPATH = /usr/local/motif1.2/lib
+! MOTIFLIBPATH = /usr/local/motif2.0/lib
+! MOTIFLIBS    = -lXm -lXmu -lXpm
+  
+  # Some Unixes need libraries to be ranlib'ed in order to be
+--- 27,48 ----
+  # CPP_INC      = -I/optx/PD/lib/g++-include
+  
+  # Directory under which the X11 include files live.
+! X11INC       = -I${X11BASE}/include
+  
+  # Directory under which the Motif include files live. Bear in mind
+  # that, if you set this directory to d, then the YACL source code will
+  # expect the Motif header files to be in the directory d/Xm.
+  # MOTIFINC     = -I/usr/local/motif1.2/include
+! MOTIFINC     = -I${X11BASE}/include
+  
+  
+  # Directory in which the X libraries live. 
+! X11LIBPATH       = ${X11BASE}/lib
+  X11LIBS          = -lXt -lX11
+  
+  # Directory in which the Motif library lives.
+  # MOTIFLIBPATH = /usr/local/motif1.2/lib
+! MOTIFLIBPATH = ${X11BASE}/lib
+! MOTIFLIBS    = ${MOTIFLIB} -lXmu
+  
+  # Some Unixes need libraries to be ranlib'ed in order to be
+
+  
+*** control/gnuc.ctl.orig	Wed Feb  4 22:04:17 1998
+--- control/gnuc.ctl	Wed Feb  4 22:03:50 1998
+***************
+*** 9,15 ****
+  
+  # Include the symbol definition file for the platform on which you
+  # want to compile YACL:
+! include $(YACLPATH)/control/gnuc/linux.cfg
+  # include $(YACLPATH)/control/gnuc/sunos.cfg
+  # include $(YACLPATH)/control/gnuc/solaris.cfg
+  # include $(YACLPATH)/control/gnuc/sgi.cfg
+--- 9,15 ----
+  
+  # Include the symbol definition file for the platform on which you
+  # want to compile YACL:
+! include $(YACLPATH)/control/gnuc/FreeBSD.cfg
+  # include $(YACLPATH)/control/gnuc/sunos.cfg
+  # include $(YACLPATH)/control/gnuc/solaris.cfg
+  # include $(YACLPATH)/control/gnuc/sgi.cfg
+***************
+*** 25,31 ****
+  #
+  # Derived path names
+  #
+! YACLLIB      = $(YACLPATH)/lib/$(YACLPLATFORM)
+  YACLINC      = -I$(YACLPATH)
+  
+  
+--- 25,31 ----
+  #
+  # Derived path names
+  #
+! YACLLIB      = $(YACLPATH)/lib
+  YACLINC      = -I$(YACLPATH)
+
+
+***************
+*** 43,49 ****
+  
+  # Processors
+  
+! CC          = gcc -fno-implicit-templates
+  LINK        = gcc
+  
+  
+--- 43,49 ----
+  
+  # Processors
+  
+! #CC          = gcc -fno-implicit-templates
+  LINK        = gcc
+  
+  
+*** gnuc.mak.orig	Fri Apr  4 15:46:02 1997
+--- gnuc.mak	Thu Feb  5 01:20:49 1998
+***************
+*** 8,18 ****
+  include $(YACLPATH)/control/gnuc.ctl
+  
+  
+! LIBS = libdir make_base make_io make_ui
+  
+! .PHONY: libdir make_base make_io make_ui
+  
+! yacl: banner libdir $(LIBS)
+  
+  
+  
+--- 8,18 ----
+  include $(YACLPATH)/control/gnuc.ctl
+  
+  
+! LIBS = make_base make_io make_ui
+  
+! .PHONY: make_base make_io make_ui
+  
+! yacl: banner $(LIBS)
+  
+  
+  
+***************
+*** 22,30 ****
+  	-@echo " ***************************************************"
+  
+          
+- libdir:
+- 	-mkdir $(YACLPATH)/lib
+- 	-mkdir $(YACLPATH)/lib/$(YACLPLATFORM)
+  
+  
+  
+--- 22,27 ----

@@ -1,0 +1,66 @@
+*** base/memory.cxx.orig     Wed Mar 11 22:26:14 1998
+--- base/memory.cxx  Wed Mar 11 22:26:31 1998
+***************
+*** 57,63 ****
+  
+  
+  #if !(defined(__GNUC__) && defined(WIN32))
+! #    include <malloc.h>
+  #endif
+  
+  const  ulong magic_cookie = 0xf9a42bb1; // Used to indicate "allocated" state
+--- 57,63 ----
+  
+  
+  #if !(defined(__GNUC__) && defined(WIN32))
+! #    include <stdlib.h>
+  #endif
+  
+  const  ulong magic_cookie = 0xf9a42bb1; // Used to indicate "allocated" state
+
+
+*** base/string.cxx.orig	Tue Feb  3 23:41:14 1998
+--- base/string.cxx	Tue Feb  3 23:46:15 1998
+***************
+*** 964,970 ****
+              return;
+          }
+      }
+!     gcvt (d, _capacity-1, _string);
+      _size = strlen (_string);
+      Notify();
+  }
+--- 964,971 ----
+              return;
+          }
+      }
+!     // man page doesn't state the release where snprintf() was introduced.
+!     snprintf(_string, _capacity-1, "%d", d);
+      _size = strlen (_string);
+      Notify();
+  }
+
+
+*** ui/bitmap.cxx.orig     Tue Feb  3 23:46:21 1998
+--- ui/bitmap.cxx  Tue Feb  3 23:48:08 1998
+***************
+*** 54,62 ****
+  #    endif
+  #    include <X11/Intrinsic.h>
+  #    include <iostream.h> // DEBUG
+! #    include <malloc.h>
+  #elif defined(__X_YACL__)
+! #    include <malloc.h>
+  #    include <X11/Intrinsic.h>
+  #endif
+  
+--- 54,62 ----
+  #    endif
+  #    include <X11/Intrinsic.h>
+  #    include <iostream.h> // DEBUG
+! #    include <stdlib.h>
+  #elif defined(__X_YACL__)
+! #    include <stdlib.h>
+  #    include <X11/Intrinsic.h>
+  #endif
+
