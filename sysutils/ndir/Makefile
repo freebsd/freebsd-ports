@@ -13,6 +13,7 @@ DISTNAME=	NDir-${PORTVERSION}
 EXTRACT_SUFX=	-1.tar.gz
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A featureful directory lister
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -22,7 +23,7 @@ MAN1=		ndir.1
 MLINKS=		ndir.1 lv.1 ndir.1 lw.1
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/^export GLOBAL.+//g" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -E "s/^export GLOBAL.+//g" ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ndir ${PREFIX}/bin
