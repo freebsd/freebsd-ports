@@ -1,5 +1,6 @@
 bin/cfgmaker
 bin/cfgmaker_ip
+bin/cfgmaker_phys
 bin/indexmaker
 bin/mrtg
 bin/rateup
@@ -12,12 +13,17 @@ share/mrtg/mrtg-l.gif
 share/mrtg/mrtg-m.gif
 share/mrtg/mrtg-r.gif
 share/mrtg/mrtg-ti.gif
+share/mrtg/mrtg-l.png
+share/mrtg/mrtg-m.png
+share/mrtg/mrtg-r.png
+share/mrtg/mrtg-ti.png
 share/doc/mrtg/ANNOUNCE
 share/doc/mrtg/CHANGES
 share/doc/mrtg/COPYING
 share/doc/mrtg/COPYRIGHT
 share/doc/mrtg/MANIFEST
 share/doc/mrtg/README
+share/doc/mrtg/UPGRADING
 share/doc/mrtg/config.html
 share/doc/mrtg/config.pod
 share/doc/mrtg/config.txt
