@@ -63,11 +63,6 @@ pre-configure:
 	${REINPLACE_CMD} -e "s|doc=no|doc=yes|" ${WRKSRC}/GNUmakefile
 .endif
 
-post-install:
-.if defined(PARALLEL_PACKAGE_BUILD) || defined(BATCH) || defined(CLEAN_ROOT)
-	${RM} -rf /root/GNUstep
-.endif
-
 test:
 	@(cd ${WRKSRC}/Tools/gsnd/portaudio/pa_unix_oss && \
 		${GMAKE} && ./patest)
