@@ -10485,6 +10485,7 @@ zope-cmfquickinstaller	ports/www/zope-cmfquickinstaller
 zope-epoz	ports/www/zope-epoz
 zope-exuserfolder	ports/www/zope-exuserfolder
 zope-formulator	ports/www/zope-formulator
+zope-groupuserfolder	ports/www/zope-groupuserfolder
 zope-guf	ports/www/zope-guf
 zope-parsedxml	ports/www/zope-parsedxml
 zope-proxyindex	ports/www/zope-proxyindex
