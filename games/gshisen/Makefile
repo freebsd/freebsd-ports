@@ -9,6 +9,9 @@ PORTNAME=	gshisen
 PORTVERSION=	1.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnustep.it/enrico/gshisen/
+.if defined(GNUSTEP_GUI_DEVEL)
+PKGNAMESUFFIX?=	-devel
+.endif
 
 MAINTAINER=	dinoex@FreeBSD.org
 
