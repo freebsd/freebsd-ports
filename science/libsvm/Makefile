@@ -15,14 +15,11 @@ COMMENT=	A library for Support Vector Machines
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
-PLIST=		${WRKDIR}/pkg-plist
 ALL_TARGET=	all py
 MAKE_ARGS+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR}
-.endif
-
-.if defined(WITH_PYTHON)
-pre-install:
-	@${CAT} ${PKGDIR}/pkg-plist.python ${PKGDIR}/pkg-plist > ${PLIST}
+PLIST_SUB+=	LIBSVM_PYTHON=""
+.else
+PLIST_SUB+=	LIBSVM_PYTHON="@comment "
 .endif
 
 pre-everything::

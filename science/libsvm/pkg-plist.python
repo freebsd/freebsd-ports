@@ -1,2 +1,0 @@
-lib/%%PYTHON_VERSION%%/site-packages/svm.py
-lib/%%PYTHON_VERSION%%/site-packages/svmc.so
