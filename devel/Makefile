@@ -184,6 +184,7 @@
     SUBDIR += gconf2
     SUBDIR += gcvs
     SUBDIR += gdb52
+    SUBDIR += gdb53
     SUBDIR += gdbmods
     SUBDIR += gengameng
     SUBDIR += gengetopt
