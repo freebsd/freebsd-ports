@@ -23,6 +23,7 @@ RUN_DEPENDS=	kjumpingcube:${PORTSDIR}/games/kdegames2 \
 
 USE_KDEBASE_VER=2
 NO_BUILD=	yes
+LATEST_LINK=	kde2
 
 do-install:	# empty
 
