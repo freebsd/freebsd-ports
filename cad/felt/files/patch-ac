@@ -1,28 +1,16 @@
-*** ../FElt-3.00/src/Velvet/velvet.c	Wed May 31 19:03:06 1995
---- ./src/Velvet/velvet.c	Wed Dec 18 20:50:30 1996
+*** src/Burlap/allocate.h.orig	Sat Jun 14 22:32:22 1997
+--- src/Burlap/allocate.h	Sat Jun 14 22:35:28 1997
 ***************
-*** 73,78 ****
---- 73,81 ----
-  # include "popup.xbm"
-  # include "FElt.icon"
+*** 28,34 ****
+--- 28,38 ----
   
-+ #ifdef __FreeBSD__
-+ #include <floatingpoint.h>
+  # ifndef _ALLOCATE_H
+  # define _ALLOCATE_H
++ #ifdef __STDC__
++ #include <stdlib.h>
++ #else
+  # include <malloc.h>
 + #endif
+  # include <string.h>
   
-  static char *defaults [ ] = {
-  # include "velvet.ad.h"
-***************
-*** 595,600 ****
---- 598,608 ----
-      static String  output_buttons [ ]  = {"dismiss", "save"};
-      static String  proceed_buttons [ ] = {"okay", "cancel"};
-      static String  qsave_buttons [ ]   = {"yes", "no", "cancel"};
-+ 
-+ #ifdef __FreeBSD__
-+   fpsetmask (0);
-+ #endif
-+ 
-  
-  
-      /* Parse the initial command line options */
+  # define New(type) \

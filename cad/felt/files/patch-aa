@@ -1,5 +1,5 @@
---- configure.orig	Fri Aug  4 23:57:09 1995
-+++ configure	Sat Jan 11 12:14:28 1997
+--- configure.orig	Tue May 30 15:29:15 1995
++++ configure	Mon Jun 16 14:18:42 1997
 @@ -221,8 +221,10 @@
  CONTRIBDIR	= $CONTRIBDIR
  CONTRIBFLAGS	= $CONTRIBFLAGS
@@ -11,4 +11,4 @@
 +DESTLIB		= $DEST/share/felt
  DESTMAN		= $DEST/man
  INSTALL		= sh \$(TOPDIR)/etc/install.sh -c
- LDOPTS		= -s
+ LDOPTS		=
