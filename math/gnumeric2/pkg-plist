@@ -734,6 +734,7 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnome/gnumeric/%%VERSION%%/autoformat-templates/3D
 @dirrm share/gnome/gnumeric/%%VERSION%%/autoformat-templates
 @dirrm share/gnome/gnumeric/%%VERSION%%
+@dirrm share/gnome/gnumeric
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xml_sax
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xbase
 @dirrm lib/gnumeric/%%VERSION%%/plugins/uihello
