@@ -1,0 +1,168 @@
+--- filelight/Makefile.in.orig	Fri Aug 29 17:42:18 2003
++++ filelight/Makefile.in	Fri Aug 29 20:42:07 2003
+@@ -239,12 +239,12 @@
+ ####### kdevelop will overwrite this part!!! (begin)##########
+ bin_PROGRAMS = filelight
+ 
+-#>- filelight_SOURCES = settingsdlg.cpp settingsdialog.ui filemap.cpp segmenttip.cpp scanbox.cpp filetree.cpp filelightcanvas.cpp filelight.cpp main.cpp 
++#>- filelight_SOURCES = settingsdlg.cpp settingsdialog.ui filemap.cpp segmenttip.cpp scanbox.cpp filetree.cpp filelightcanvas.cpp filelight.cpp main.cpp mntent_compat.cpp
+ #>+ 1
+-filelight_SOURCES=settingsdlg.cpp  filemap.cpp segmenttip.cpp scanbox.cpp filetree.cpp filelightcanvas.cpp filelight.cpp main.cpp  settingsdialog.cpp
++filelight_SOURCES=settingsdlg.cpp  filemap.cpp segmenttip.cpp scanbox.cpp filetree.cpp filelightcanvas.cpp filelight.cpp main.cpp mntent_compat.cpp settingsdialog.cpp
+ filelight_LDADD = $(LIB_KFILE) $(LIB_KDEUI) $(LIB_KDECORE) $(LIB_QT) $(LIBSOCKET)
+ 
+-EXTRA_DIST = main.cpp filelight.cpp filelight.h filelightcanvas.h filelightcanvas.cpp filetree.h filetree.cpp TODO CHANGELOG scanbox.h scanbox.cpp segmenttip.cpp segmenttip.h filemap.cpp filemap.h settingsdialog.ui settingsdlg.cpp settingsdlg.h 
++EXTRA_DIST = main.cpp filelight.cpp filelight.h filelightcanvas.h filelightcanvas.cpp filetree.h filetree.cpp TODO CHANGELOG scanbox.h scanbox.cpp segmenttip.cpp segmenttip.h filemap.cpp filemap.h settingsdialog.ui settingsdlg.cpp settingsdlg.h mntent_compat.cpp mntent.h
+ 
+ ####### kdevelop will overwrite this part!!! (end)############
+ # These paths are KDE specific. Use them:
+@@ -291,14 +291,16 @@
+ 
+ am_filelight_OBJECTS = settingsdlg.$(OBJEXT) filemap.$(OBJEXT) \
+ 	segmenttip.$(OBJEXT) scanbox.$(OBJEXT) filetree.$(OBJEXT) \
+-	filelightcanvas.$(OBJEXT) filelight.$(OBJEXT) main.$(OBJEXT)
++	filelightcanvas.$(OBJEXT) filelight.$(OBJEXT) main.$(OBJEXT) \
++	mntent_compat.$(OBJEXT)
+ #>- filelight_OBJECTS = $(am_filelight_OBJECTS)
+-#>+ 7
++#>+ 8
+ filelight_final_OBJECTS = filelight.all_cpp.o 
+ filelight_nofinal_OBJECTS = settingsdlg.$(OBJEXT) filemap.$(OBJEXT) \
+ 	segmenttip.$(OBJEXT) scanbox.$(OBJEXT) filetree.$(OBJEXT) \
+-	filelightcanvas.$(OBJEXT) filelight.$(OBJEXT) main.$(OBJEXT) settingsdialog.$(OBJEXT)\
+-filelightcanvas.moc.o scanbox.moc.o segmenttip.moc.o filelight.moc.o settingsdlg.moc.o 
++	filelightcanvas.$(OBJEXT) filelight.$(OBJEXT) main.$(OBJEXT) \
++	mntent_compat.$(OBJEXT) settingsdialog.$(OBJEXT)\
++filelightcanvas.moc.o settingsdlg.moc.o segmenttip.moc.o filelight.moc.o scanbox.moc.o 
+ @KDE_USE_FINAL_FALSE@filelight_OBJECTS = $(filelight_nofinal_OBJECTS)
+ @KDE_USE_FINAL_TRUE@filelight_OBJECTS = $(filelight_final_OBJECTS)
+ filelight_DEPENDENCIES =
+@@ -309,21 +311,21 @@
+ #>- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/filelight.Po \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/filelightcanvas.Po \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/filemap.Po ./$(DEPDIR)/filetree.Po \
+-#>- @AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/scanbox.Po \
+-#>- @AMDEP_TRUE@	./$(DEPDIR)/segmenttip.Po \
++#>- @AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/mntent_compat.Po \
++#>- @AMDEP_TRUE@	./$(DEPDIR)/scanbox.Po ./$(DEPDIR)/segmenttip.Po \
+ #>- @AMDEP_TRUE@	./$(DEPDIR)/settingsdlg.Po
+ #>+ 13
+-@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@DEP_FILES =  $(DEPDIR)/settingsdialog.P $(DEPDIR)/filelightcanvas.moc.P $(DEPDIR)/scanbox.moc.P $(DEPDIR)/segmenttip.moc.P $(DEPDIR)/filelight.moc.P $(DEPDIR)/settingsdlg.moc.P  $(DEPDIR)/filelight.all_cpp.P  ./$(DEPDIR)/filelight.Po \
++@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@DEP_FILES =  $(DEPDIR)/settingsdialog.P $(DEPDIR)/filelightcanvas.moc.P $(DEPDIR)/settingsdlg.moc.P $(DEPDIR)/segmenttip.moc.P $(DEPDIR)/filelight.moc.P $(DEPDIR)/scanbox.moc.P  $(DEPDIR)/filelight.all_cpp.P  ./$(DEPDIR)/filelight.Po \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/filelightcanvas.Po \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/filemap.Po ./$(DEPDIR)/filetree.Po \
+-@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/scanbox.Po \
+-@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/segmenttip.Po \
++@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/mntent_compat.Po \
++@AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/scanbox.Po ./$(DEPDIR)/segmenttip.Po \
+ @AMDEP_TRUE@@KDE_USE_FINAL_TRUE@	@AMDEP_TRUE@	./$(DEPDIR)/settingsdlg.Po
+-@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@DEP_FILES =  $(DEPDIR)/settingsdialog.P $(DEPDIR)/filelightcanvas.moc.P $(DEPDIR)/scanbox.moc.P $(DEPDIR)/segmenttip.moc.P $(DEPDIR)/filelight.moc.P $(DEPDIR)/settingsdlg.moc.P  ./$(DEPDIR)/filelight.Po \
++@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@DEP_FILES =  $(DEPDIR)/settingsdialog.P $(DEPDIR)/filelightcanvas.moc.P $(DEPDIR)/settingsdlg.moc.P $(DEPDIR)/segmenttip.moc.P $(DEPDIR)/filelight.moc.P $(DEPDIR)/scanbox.moc.P  ./$(DEPDIR)/filelight.Po \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/filelightcanvas.Po \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/filemap.Po ./$(DEPDIR)/filetree.Po \
+-@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/scanbox.Po \
+-@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/segmenttip.Po \
++@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/mntent_compat.Po \
++@AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/scanbox.Po ./$(DEPDIR)/segmenttip.Po \
+ @AMDEP_TRUE@@KDE_USE_FINAL_FALSE@	@AMDEP_TRUE@	./$(DEPDIR)/settingsdlg.Po
+ 
+ #>- CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+@@ -362,7 +364,7 @@
+ #>+ 3
+ 	cd $(top_srcdir) && \
+ 	  $(AUTOMAKE) --gnu  filelight/Makefile
+-	cd $(top_srcdir) && perl admin/am_edit filelight-0.6.0/filelight/Makefile.in
++	cd $(top_srcdir) && perl admin/am_edit filelight/Makefile.in
+ Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+@@ -409,6 +411,7 @@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filemap.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filetree.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main.Po@am__quote@
++@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mntent_compat.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/scanbox.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/segmenttip.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/settingsdlg.Po@am__quote@
+@@ -532,7 +535,7 @@
+ 	-rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+ #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ #>+ 4
+-KDE_DIST=filelight.desktop cr22-app-filelight.png filelight.xcf cr48-app-filelight.png cr64-app-filelight.png 
++KDE_DIST=cr64-app-filelight.png cr48-app-filelight.png cr22-app-filelight.png filelight.xcf filelight.desktop 
+ 
+ DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
+ 
+@@ -689,7 +692,6 @@
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
+ 
+-
+ #>+ 14
+ settingsdialog.cpp: $(srcdir)/settingsdialog.ui settingsdialog.h settingsdialog.moc
+ 	rm -f settingsdialog.cpp
+@@ -710,8 +712,8 @@
+ 	$(MOC) $(srcdir)/filelightcanvas.h -o filelightcanvas.moc.cpp
+ 
+ #>+ 3
+-scanbox.moc.cpp: $(srcdir)/scanbox.h
+-	$(MOC) $(srcdir)/scanbox.h -o scanbox.moc.cpp
++settingsdlg.moc.cpp: $(srcdir)/settingsdlg.h
++	$(MOC) $(srcdir)/settingsdlg.h -o settingsdlg.moc.cpp
+ 
+ #>+ 3
+ segmenttip.moc.cpp: $(srcdir)/segmenttip.h
+@@ -722,12 +724,12 @@
+ 	$(MOC) $(srcdir)/filelight.h -o filelight.moc.cpp
+ 
+ #>+ 3
+-settingsdlg.moc.cpp: $(srcdir)/settingsdlg.h
+-	$(MOC) $(srcdir)/settingsdlg.h -o settingsdlg.moc.cpp
++scanbox.moc.cpp: $(srcdir)/scanbox.h
++	$(MOC) $(srcdir)/scanbox.h -o scanbox.moc.cpp
+ 
+ #>+ 3
+ clean-metasources:
+-	-rm -f  filelightcanvas.moc.cpp scanbox.moc.cpp segmenttip.moc.cpp filelight.moc.cpp settingsdlg.moc.cpp
++	-rm -f  filelightcanvas.moc.cpp settingsdlg.moc.cpp segmenttip.moc.cpp filelight.moc.cpp scanbox.moc.cpp
+ 
+ #>+ 4
+ clean-ui:
+@@ -755,15 +757,15 @@
+ force-reedit:
+ 		cd $(top_srcdir) && \
+ 	  $(AUTOMAKE) --gnu  filelight/Makefile
+-	cd $(top_srcdir) && perl admin/am_edit filelight-0.6.0/filelight/Makefile.in
++	cd $(top_srcdir) && perl admin/am_edit filelight/Makefile.in
+ 
+ 
+ #>+ 11
+-filelight.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/settingsdlg.cpp $(srcdir)/filemap.cpp $(srcdir)/segmenttip.cpp $(srcdir)/scanbox.cpp $(srcdir)/filetree.cpp $(srcdir)/filelightcanvas.cpp $(srcdir)/filelight.cpp $(srcdir)/main.cpp $(srcdir)/settingsdialog.cpp segmenttip.moc.cpp scanbox.moc.cpp filelightcanvas.moc.cpp filelight.moc.cpp settingsdlg.moc.cpp  settingsdialog.moc
++filelight.all_cpp.cpp: $(srcdir)/Makefile.in $(srcdir)/settingsdlg.cpp $(srcdir)/filemap.cpp $(srcdir)/segmenttip.cpp $(srcdir)/scanbox.cpp $(srcdir)/filetree.cpp $(srcdir)/filelightcanvas.cpp $(srcdir)/filelight.cpp $(srcdir)/main.cpp $(srcdir)/mntent_compat.cpp $(srcdir)/settingsdialog.cpp filelightcanvas.moc.cpp settingsdlg.moc.cpp segmenttip.moc.cpp filelight.moc.cpp scanbox.moc.cpp  settingsdialog.moc
+ 	@echo 'creating filelight.all_cpp.cpp ...'; \
+ 	rm -f filelight.all_cpp.files filelight.all_cpp.final; \
+ 	echo "#define KDE_USE_FINAL 1" >> filelight.all_cpp.final; \
+-	for file in settingsdlg.cpp filemap.cpp segmenttip.cpp scanbox.cpp filetree.cpp filelightcanvas.cpp filelight.cpp main.cpp settingsdialog.cpp segmenttip.moc.cpp scanbox.moc.cpp filelightcanvas.moc.cpp filelight.moc.cpp settingsdlg.moc.cpp ; do \
++	for file in settingsdlg.cpp filemap.cpp segmenttip.cpp scanbox.cpp filetree.cpp filelightcanvas.cpp filelight.cpp main.cpp mntent_compat.cpp settingsdialog.cpp filelightcanvas.moc.cpp settingsdlg.moc.cpp segmenttip.moc.cpp filelight.moc.cpp scanbox.moc.cpp ; do \
+ 	  echo "#include \"$$file\"" >> filelight.all_cpp.files; \
+ 	  test ! -f $(srcdir)/$$file || egrep '^#pragma +implementation' $(srcdir)/$$file >> filelight.all_cpp.final; \
+ 	done; \
+@@ -794,12 +796,13 @@
+ kde-rpo-clean:
+ 	-rm -f *.rpo
+ 
+-#>+ 9
+-$(srcdir)/filelight.cpp: settingsdialog.h 
+-$(srcdir)/settingsdlg.cpp: settingsdialog.h 
++#>+ 10
+ $(srcdir)/filetree.cpp: settingsdialog.h 
+-$(srcdir)/filemap.cpp: settingsdialog.h 
+-$(srcdir)/segmenttip.cpp: settingsdialog.h 
++$(srcdir)/filelight.cpp: settingsdialog.h 
++$(srcdir)/mntent_compat.cpp: settingsdialog.h 
+ $(srcdir)/scanbox.cpp: settingsdialog.h 
++$(srcdir)/segmenttip.cpp: settingsdialog.h 
++$(srcdir)/settingsdlg.cpp: settingsdialog.h 
+ $(srcdir)/main.cpp: settingsdialog.h 
++$(srcdir)/filemap.cpp: settingsdialog.h 
+ $(srcdir)/filelightcanvas.cpp: settingsdialog.h 
