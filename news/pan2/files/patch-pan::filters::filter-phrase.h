@@ -1,12 +1,12 @@
 
 $FreeBSD$
 
---- pan/filters/filter-phrase.h	2001/08/21 15:06:27	1.1
-+++ pan/filters/filter-phrase.h	2001/08/21 15:06:43
-@@ -24,7 +24,7 @@
- #ifndef __FILTER_PHRASE_H__
+--- pan/filters/filter-phrase.h.orig	Thu Oct 25 18:49:53 2001
++++ pan/filters/filter-phrase.h	Tue Nov 13 12:33:06 2001
+@@ -25,7 +25,7 @@
  #define __FILTER_PHRASE_H__
  
+ #include <sys/types.h>
 -#include <regex.h>
 +#include <gnuregex.h>
  
