@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	2.5.30.b
+PORTVERSION=	2.5.30.c
 CATEGORIES+=	net
 MASTER_SITES=	http://download.berlios.de/pub/mldonkey/spiralvoice/cvs/
 PKGNAMESUFFIX=	-devel
@@ -26,7 +26,7 @@ NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey-[0-9]* mldonkey-{core,gui}-[0.9]*
 
 USE_BZIP2=	yes
-WANT_AUTOCONF_VER=	213
+WANT_AUTOCONF_VER=	259
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
