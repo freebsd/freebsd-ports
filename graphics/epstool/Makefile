@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	epstool
-PORTVERSION=	2.00
+PORTVERSION=	2.10
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
-DISTNAME=	gsv41src
+DISTNAME=	gsv42src
 
 MAINTAINER=	ports@FreeBSD.org
 
