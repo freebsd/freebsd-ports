@@ -10,7 +10,7 @@ DISTNAME=	aalib-1.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ta.jcu.cz/pub/aa/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
 

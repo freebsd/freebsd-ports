@@ -10,7 +10,7 @@ DISTNAME=	cmatrix-0.98c
 CATEGORIES=	misc
 MASTER_SITES=	http://www.plattsburgh.edu/faculty/allegrcr/cmatrix/dist/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/cmatrix ${PREFIX}/bin

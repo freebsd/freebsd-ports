@@ -12,7 +12,7 @@ MASTER_SITES=		ftp://ftp.netsw.org/netsw/SoftEng/Lang/Pascal/ \
 			ftp://ftp.u-aizu.ac.jp/pub/lang/netsw/Pascal/ \
 			ftp://ftp.ecrc.net/pub/netsw/SoftEng/Lang/Pascal/
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 MAKEFILE=		makefile
 

@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			http://www.osk.3web.ne.jp/~moody/tcbj/
 MASTER_SITE_SUBDIR=	utils/file
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 USE_GMAKE=		yes
 

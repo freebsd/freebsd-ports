@@ -11,7 +11,7 @@ PKGNAME=	xchain-1.0.2
 CATEGORIES=	games
 MASTER_SITES=	http://thor.cam.ac.uk/~ac212/xchain/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

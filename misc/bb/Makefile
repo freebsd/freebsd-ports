@@ -12,7 +12,7 @@ MASTER_SITES=		ftp://ftp.ta.jcu.cz/pub/aa/bb/ \
 			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		aa.1:${PORTSDIR}/graphics/aalib
 

@@ -10,7 +10,7 @@ DISTNAME=		cyrproxy-1.4.2
 CATEGORIES=		russian net www
 MASTER_SITES=		ftp://ftp.lexa.ru/pub/domestic/lexa/
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 do-install:
 	@ ${MKDIR} ${PREFIX}/share/cyrproxy

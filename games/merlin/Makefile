@@ -11,7 +11,7 @@ PKGNAME=	merlin-1.0
 CATEGORIES=	games
 MASTER_SITES=	http://outoften.doc.ic.ac.uk/~np2/software/download/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

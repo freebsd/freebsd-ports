@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.paru.cas.cz/~hubicka/koules/packages/ \
 		${MASTER_SITE_SUNSITE}
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 .if ${MACHINE_ARCH} == "alpha"
 PLIST=		${PKGDIR}/PLIST.alpha

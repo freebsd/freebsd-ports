@@ -11,7 +11,7 @@ PKGNAME=	3dpong-0.3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/3dpong/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 MAKEFILE=	makefile
 USE_X_PREFIX=	yes

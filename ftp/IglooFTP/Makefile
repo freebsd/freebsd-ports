@@ -13,7 +13,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			ftp://littleigloo.org/pub/iglooftp/
 MASTER_SITE_SUBDIR=	system/network/file-transfer
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 			intl.1:${PORTSDIR}/devel/gettext

@@ -12,7 +12,7 @@ MASTER_SITES=		http://www.redestb.es/personal/ragnar/ \
 			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/multiplayer
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 USE_X_PREFIX=		yes
 MAN6=			spellcast.6

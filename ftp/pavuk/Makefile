@@ -16,7 +16,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	X11/gtkbuffet/apps/pavuk
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 USE_AUTOCONF=		yes
 

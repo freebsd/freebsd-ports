@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://www.mps.de/pub/unix/ \
 		http://www.nectar.com/distfiles/
 DISTFILES=	ppinst-0.01.tar.gz ppsrc-0.01.tar.gz
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 USE_QT=		yes
 USE_X_PREFIX=	yes

@@ -10,7 +10,7 @@ DISTNAME=	sol-1.0.6
 CATEGORIES=	games
 MASTER_SITES=	http://home.sol.no/~sverrehu/pub-unix/files/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		shhopt.1:${PORTSDIR}/devel/libshhopt \

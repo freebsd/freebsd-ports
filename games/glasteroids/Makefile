@@ -11,7 +11,7 @@ PKGNAME=	glasteroids-1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.honors.montana.edu/~jjc/Glasteroids/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3 \
 		GLU.14:${PORTSDIR}/graphics/Mesa3 \

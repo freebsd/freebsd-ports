@@ -12,7 +12,7 @@ MASTER_SITES=		ftp://ftp.tux.org/pub/people/david-bagley/xabacus/ \
 			${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 GNU_CONFIGURE=		yes
 USE_X_PREFIX=		yes

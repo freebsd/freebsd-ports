@@ -10,7 +10,7 @@ DISTNAME=	xcogitate-1.02
 CATEGORIES=	games
 MASTER_SITES=	http://people.FreeBSD.org/~mph/distfiles/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

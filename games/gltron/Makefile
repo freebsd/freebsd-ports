@@ -10,7 +10,7 @@ DISTNAME=	gltron-0.53
 CATEGORIES=	games
 MASTER_SITES=	http://www.ards.net/Andreas/gltron/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3 \
 		GLU.14:${PORTSDIR}/graphics/Mesa3 \

@@ -14,7 +14,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			http://people.FreeBSD.org/~mph/distfiles/
 MASTER_SITE_SUBDIR=	libs/ui
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
 

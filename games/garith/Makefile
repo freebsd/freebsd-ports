@@ -10,7 +10,7 @@ DISTNAME=	garith-2.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.cnm-vra.com/micah/garith/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gdk12.2:${PORTSDIR}/x11-toolkits/gtk12
 

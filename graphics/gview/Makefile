@@ -13,7 +13,7 @@ MASTER_SITES=	http://gview.netpedia.net/ \
 		ftp://ftp.petech.ac.za/pub/viewers/ \
 		http://www.geocities.com/ResearchTriangle/Facility/1468/sg/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib \
 		intl.1:${PORTSDIR}/devel/gettext

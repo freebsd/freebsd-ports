@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.boutell.com/cgic/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	libcgic.so.1
 

@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://makosteszta.sote.hu/linux/othello/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 

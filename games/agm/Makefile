@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			http://users.gtn.net/fraserm/
 MASTER_SITE_SUBDIR=	games/amusements
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 MAN6=			agm.6
 

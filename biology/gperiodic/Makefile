@@ -10,7 +10,7 @@ DISTNAME=	gperiodic-1.2.2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.seul.org/pub/gperiodic/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 

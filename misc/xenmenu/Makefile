@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.cs.purdue.edu/homes/steinkf/software/xenmenu/
 MASTER_SITE_SUBDIR=	apps/misc
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 GNU_CONFIGURE=	yes

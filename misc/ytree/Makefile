@@ -12,7 +12,7 @@ CATEGORIES=		misc
 #			http://www.han.de/~werner/
 #MASTER_SITE_SUBDIR=	utils/file/managers
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 ALL_TARGET=
 MAN1=			ytree.1
