@@ -585,6 +585,7 @@
     SUBDIR += zope-formulator
     SUBDIR += zope-guf
     SUBDIR += zope-parsedxml
+    SUBDIR += zope-xmlwidgets
     SUBDIR += zope-zmysqlda
     SUBDIR += zope-zpt
     SUBDIR += zope-zwiki
