@@ -1,6 +1,6 @@
---- gcc/c-common.c.orig	Mon Jan 24 12:10:00 2000
-+++ gcc/c-common.c	Tue Feb  1 02:43:39 2000
-@@ -152,7 +152,7 @@
+--- gcc/c-common.c.orig	Wed Mar  8 03:21:26 2000
++++ gcc/c-common.c	Tue Mar 14 21:46:03 2000
+@@ -154,7 +154,7 @@
  						 int, int, int));
  static void init_attributes		PARAMS ((void));
  static void record_function_format	PARAMS ((tree, tree, enum format_type,
@@ -9,15 +9,15 @@
  static void record_international_format	PARAMS ((tree, tree, int));
  static tree c_find_base_decl            PARAMS ((tree));
  static int default_valid_lang_attribute PARAMS ((tree, tree, tree, tree));
-@@ -812,6 +812,7 @@
- 	      = TREE_VALUE (TREE_CHAIN (TREE_CHAIN (args)));
- 	    int format_num;
- 	    int first_arg_num;
-+	    int null_format_ok;
+@@ -786,6 +786,7 @@
  	    enum format_type format_type;
  	    tree argument;
- 	    int arg_num;
-@@ -825,7 +826,7 @@
+ 	    unsigned int arg_num;
++	    int null_format_ok;
+ 
+ 	    if (TREE_CODE (decl) != FUNCTION_DECL)
+ 	      {
+@@ -796,7 +797,7 @@
  
  	    if (TREE_CODE (format_type_id) != IDENTIFIER_NODE)
  	      {
@@ -26,7 +26,7 @@
  		continue;
  	      }
  	    else
-@@ -833,12 +834,26 @@
+@@ -804,12 +805,26 @@
  		const char *p = IDENTIFIER_POINTER (format_type_id);
  
  		if (!strcmp (p, "printf") || !strcmp (p, "__printf__"))
@@ -53,7 +53,7 @@
  		else
  		  {
  		    warning ("`%s' is an unrecognized format function type", p);
-@@ -909,7 +924,8 @@
+@@ -882,7 +897,8 @@
  
  	    record_function_format (DECL_NAME (decl),
  				    DECL_ASSEMBLER_NAME (decl),
@@ -63,7 +63,7 @@
  	    break;
  	  }
  
-@@ -1213,6 +1229,11 @@
+@@ -1186,6 +1202,11 @@
  } format_char_info;
  
  static format_char_info print_char_table[] = {
@@ -75,7 +75,7 @@
    { "di",	0,	T_I,	T_I,	T_I,	T_L,	T_LL,	T_LL,	T_ST,	"-wp0 +"	},
    { "oxX",	0,	T_UI,	T_UI,	T_UI,	T_UL,	T_ULL,	T_ULL,	T_ST,	"-wp0#"		},
    { "u",	0,	T_UI,	T_UI,	T_UI,	T_UL,	T_ULL,	T_ULL,	T_ST,	"-wp0"		},
-@@ -1273,6 +1294,7 @@
+@@ -1246,6 +1267,7 @@
    tree name;			/* identifier such as "printf" */
    tree assembler_name;		/* optional mangled identifier (for C++) */
    enum format_type format_type;	/* type of format (printf, scanf, etc.) */
@@ -83,7 +83,7 @@
    int format_num;		/* number of format argument */
    int first_arg_num;		/* number of first arg (zero for varargs) */
  } function_format_info;
-@@ -1305,25 +1327,25 @@
+@@ -1278,25 +1300,25 @@
  init_function_format_info ()
  {
    record_function_format (get_identifier ("printf"), NULL_TREE,
@@ -119,7 +119,7 @@
  
    record_international_format (get_identifier ("gettext"), NULL_TREE, 1);
    record_international_format (get_identifier ("dgettext"), NULL_TREE, 2);
-@@ -1340,11 +1362,12 @@
+@@ -1313,11 +1335,12 @@
     (e.g. for varargs such as vfprintf).  */
  
  static void
@@ -133,7 +133,7 @@
        int format_num;
        int first_arg_num;
  {
-@@ -1368,6 +1391,7 @@
+@@ -1341,6 +1364,7 @@
      }
  
    info->format_type = format_type;
@@ -141,7 +141,7 @@
    info->format_num = format_num;
    info->first_arg_num = first_arg_num;
  }
-@@ -1521,7 +1545,8 @@
+@@ -1494,7 +1518,8 @@
  
    if (integer_zerop (format_tree))
      {
@@ -151,7 +151,7 @@
        return;
      }
    if (TREE_CODE (format_tree) != ADDR_EXPR)
-@@ -1710,12 +1735,13 @@
+@@ -1683,12 +1708,13 @@
  		     It will work on most machines, because size_t and int
  		     have the same mode.  But might as well warn anyway,
  		     since it will fail on other machines.  */
@@ -166,7 +166,7 @@
  		}
  	    }
  	  else
-@@ -1760,6 +1786,53 @@
+@@ -1733,6 +1759,53 @@
  		}
  	    }
  	}
@@ -220,7 +220,7 @@
  
        aflag = 0;
  
-@@ -1828,7 +1901,8 @@
+@@ -1801,7 +1874,8 @@
        switch (info->format_type)
  	{
  	case printf_format_type:
