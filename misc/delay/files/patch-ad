@@ -1,0 +1,13 @@
+--- curses.c.orig	Thu Dec 30 22:02:46 1999
++++ curses.c	Mon Jan 24 00:20:19 2000
+@@ -1,7 +1,7 @@
+-#ifdef HAVE_LIBCURSES
+-#ifdef HAVE_CURSES_H
++#ifdef HAVE_LIBNCURSES
++#ifdef HAVE_NCURSES_H
+ 
+-#include <curses.h>
++#include <ncurses.h>
+ 
+ #define FWIDTH 6
+ #define FHEIGHT 7
