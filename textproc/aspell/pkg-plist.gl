@@ -1,4 +1,4 @@
-share/aspell/gl.dat
+lib/aspell-%%VER%%/gl_phonet.dat
+lib/aspell-%%VER%%/gl.dat
 share/aspell/gl.multi
 share/aspell/gl.rws
-share/aspell/gl_phonet.dat

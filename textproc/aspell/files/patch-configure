@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Wed Aug 28 11:02:51 2002
-+++ configure	Sat Sep 14 11:42:16 2002
-@@ -8592,13 +8592,6 @@
+--- configure.orig	Sat Jul 31 17:06:43 2004
++++ configure	Wed Aug  4 22:48:38 2004
+@@ -9795,13 +9795,6 @@
  	;;
      esac
  
@@ -17,7 +14,7 @@ $FreeBSD$
      # Update the list of available tags.
      if test -n "$tagname"; then
        echo appending configuration tag \"$tagname\" to $ofile
-@@ -16819,6 +16812,10 @@
+@@ -19301,6 +19294,10 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -28,3 +25,22 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -21191,16 +21188,16 @@
+ /* end confdefs.h.  */
+ #include <libintl.h>
+ extern int _nl_msg_cat_cntr;
++extern int *libintl_nl_domain_bindings;
+ extern
+ #ifdef __cplusplus
+ "C"
+ #endif
+-const char *_nl_expand_alias ();
+ int
+ main ()
+ {
+ bindtextdomain ("", "");
+-return (int) gettext ("") + _nl_msg_cat_cntr + *_nl_expand_alias (0)
++return (int) gettext ("") + _nl_msg_cat_cntr + *libintl_nl_domain_bindings
+   ;
+   return 0;
+ }

@@ -1,0 +1,6 @@
+lib/aspell-%%VER%%/lt.dat
+lib/aspell-%%VER%%/lt_affix.dat
+share/aspell/lietuviu.alias
+share/aspell/lithuanian.alias
+share/aspell/lt.multi
+share/aspell/lt.rws

@@ -1,5 +1,7 @@
-share/aspell/nb.dat
-share/aspell/nb.multi
-share/aspell/nb.rws
+lib/aspell-%%VER%%/nb.dat
 share/aspell/bokmal.alias
 share/aspell/bokmål.alias
+share/aspell/nb.multi
+share/aspell/nb.rws
+share/aspell/no.alias
+share/aspell/norsk.alias

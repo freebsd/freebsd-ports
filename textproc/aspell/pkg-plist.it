@@ -1,4 +1,4 @@
-share/aspell/it.dat
+lib/aspell-%%VER%%/it.dat
 share/aspell/it.multi
 share/aspell/it.rws
 share/aspell/italian.alias

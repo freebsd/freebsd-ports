@@ -1,0 +1,9 @@
+lib/aspell-%%VER%%/be.dat
+share/aspell/be-common.rws
+share/aspell/be-only.rws
+share/aspell/be.multi
+share/aspell/be_BY.alias
+share/aspell/be_SU-only.rws
+share/aspell/be_SU.multi
+share/aspell/belarusian-soviet.alias
+share/aspell/belarusian.alias

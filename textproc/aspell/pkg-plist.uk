@@ -1,4 +1,4 @@
-share/aspell/uk.dat
+lib/aspell-%%VER%%/uk.dat
 share/aspell/uk.multi
 share/aspell/uk.rws
 share/aspell/ukrainian.alias

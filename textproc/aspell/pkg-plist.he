@@ -1,0 +1,7 @@
+lib/aspell-%%VER%%/he.dat
+lib/aspell-%%VER%%/he_affix.dat
+lib/aspell-%%VER%%/iso-8859-8-nl.cmap
+lib/aspell-%%VER%%/iso-8859-8-nl.cset
+share/aspell/he.multi
+share/aspell/he.rws
+share/aspell/hebrew.alias

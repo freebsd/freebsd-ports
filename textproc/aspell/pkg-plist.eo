@@ -1,4 +1,4 @@
-share/aspell/eo.dat
+lib/aspell-%%VER%%/eo.dat
 share/aspell/eo.multi
 share/aspell/eo.rws
 share/aspell/esperanto.alias

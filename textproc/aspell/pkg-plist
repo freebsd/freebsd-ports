@@ -1,110 +1,137 @@
 bin/aspell
 bin/aspell-import
+%%SCRIPTS%%bin/ispell
+bin/precat
+bin/preunzip
+bin/prezip
+bin/prezip-bin
 bin/pspell-config
 bin/run-with-aspell
+%%SCRIPTS%%bin/spell
 bin/word-list-compress
 include/aspell.h
 include/pspell/pspell.h
+lib/aspell-%%VER%%/cp1250.cmap
+lib/aspell-%%VER%%/cp1250.cset
+lib/aspell-%%VER%%/cp1251.cmap
+lib/aspell-%%VER%%/cp1251.cset
+lib/aspell-%%VER%%/cp1252.cmap
+lib/aspell-%%VER%%/cp1252.cset
+lib/aspell-%%VER%%/cp1253.cmap
+lib/aspell-%%VER%%/cp1253.cset
+lib/aspell-%%VER%%/cp1254.cmap
+lib/aspell-%%VER%%/cp1254.cset
+lib/aspell-%%VER%%/cp1255.cmap
+lib/aspell-%%VER%%/cp1255.cset
+lib/aspell-%%VER%%/cp1256.cmap
+lib/aspell-%%VER%%/cp1256.cset
+lib/aspell-%%VER%%/cp1257.cmap
+lib/aspell-%%VER%%/cp1257.cset
+lib/aspell-%%VER%%/cp1258.cmap
+lib/aspell-%%VER%%/cp1258.cset
+lib/aspell-%%VER%%/dvorak.kbd
+lib/aspell-%%VER%%/iso-8859-1.cmap
+lib/aspell-%%VER%%/iso-8859-1.cset
+lib/aspell-%%VER%%/iso-8859-10.cmap
+lib/aspell-%%VER%%/iso-8859-10.cset
+lib/aspell-%%VER%%/iso-8859-11.cmap
+lib/aspell-%%VER%%/iso-8859-11.cset
+lib/aspell-%%VER%%/iso-8859-13.cmap
+lib/aspell-%%VER%%/iso-8859-13.cset
+lib/aspell-%%VER%%/iso-8859-14.cmap
+lib/aspell-%%VER%%/iso-8859-14.cset
+lib/aspell-%%VER%%/iso-8859-15.cmap
+lib/aspell-%%VER%%/iso-8859-15.cset
+lib/aspell-%%VER%%/iso-8859-16.cmap
+lib/aspell-%%VER%%/iso-8859-16.cset
+lib/aspell-%%VER%%/iso-8859-2.cmap
+lib/aspell-%%VER%%/iso-8859-2.cset
+lib/aspell-%%VER%%/iso-8859-3.cmap
+lib/aspell-%%VER%%/iso-8859-3.cset
+lib/aspell-%%VER%%/iso-8859-4.cmap
+lib/aspell-%%VER%%/iso-8859-4.cset
+lib/aspell-%%VER%%/iso-8859-5.cmap
+lib/aspell-%%VER%%/iso-8859-5.cset
+lib/aspell-%%VER%%/iso-8859-6.cmap
+lib/aspell-%%VER%%/iso-8859-6.cset
+lib/aspell-%%VER%%/iso-8859-7.cmap
+lib/aspell-%%VER%%/iso-8859-7.cset
+lib/aspell-%%VER%%/iso-8859-8.cmap
+lib/aspell-%%VER%%/iso-8859-8.cset
+lib/aspell-%%VER%%/iso-8859-9.cmap
+lib/aspell-%%VER%%/iso-8859-9.cset
+lib/aspell-%%VER%%/ispell
+lib/aspell-%%VER%%/koi8-r.cmap
+lib/aspell-%%VER%%/koi8-r.cset
+lib/aspell-%%VER%%/koi8-u.cmap
+lib/aspell-%%VER%%/koi8-u.cset
+lib/aspell-%%VER%%/spell
+lib/aspell-%%VER%%/split.kbd
+lib/aspell-%%VER%%/standard.kbd
 lib/libaspell.a
 lib/libaspell.so
-lib/libaspell.so.15
+lib/libaspell.so.16
 lib/libpspell.a
 lib/libpspell.so
-lib/libpspell.so.15
-share/aspell/ASCII.dat
-share/aspell/cp1250.dat
-share/aspell/cp1251.dat
-share/aspell/cp1252.dat
-share/aspell/cp1253.dat
-share/aspell/cp1254.dat
-share/aspell/cp1255.dat
-share/aspell/cp1256.dat
-share/aspell/cp1257.dat
-share/aspell/cp1258.dat
-share/aspell/dvorak.kbd
-share/aspell/iso8859-1.dat
-share/aspell/iso8859-10.dat
-share/aspell/iso8859-13.dat
-share/aspell/iso8859-14.dat
-share/aspell/iso8859-15.dat
-share/aspell/iso8859-2.dat
-share/aspell/iso8859-3.dat
-share/aspell/iso8859-4.dat
-share/aspell/iso8859-5.dat
-share/aspell/iso8859-6.dat
-share/aspell/iso8859-7.dat
-share/aspell/iso8859-8.dat
-share/aspell/iso8859-9.dat
-share/aspell/ispell
-share/aspell/koi8-f.dat
-share/aspell/koi8-r.dat
-share/aspell/koi8-u.dat
-share/aspell/spell
-share/aspell/split.kbd
-share/aspell/standard.kbd
-share/aspell/viscii.dat
-%%PORTDOCS%%%%DOCSDIR%%/dev-html/devel.css
-%%PORTDOCS%%%%DOCSDIR%%/dev-html/devel.html
-%%PORTDOCS%%%%DOCSDIR%%/dev-html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/dev-html/nx_grp_g.png
-%%PORTDOCS%%%%DOCSDIR%%/dev-html/prev_g.png
-%%PORTDOCS%%%%DOCSDIR%%/dev-html/up_g.png
-%%PORTDOCS%%%%DOCSDIR%%/dev-text/devel.txt
-%%PORTDOCS%%%%DOCSDIR%%/dev-text/index.txt
-%%PORTDOCS%%%%DOCSDIR%%/devel.aux
-%%PORTDOCS%%%%DOCSDIR%%/devel.dvi
-%%PORTDOCS%%%%DOCSDIR%%/devel.tex
-%%PORTDOCS%%%%DOCSDIR%%/devel2.lyx
-%%PORTDOCS%%%%DOCSDIR%%/man-html/1_Introduction.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/2_Getting.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/3_Basic.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/4_Customizing.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/5_Working.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/6_Writing.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/7_Adding.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/8_How.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/A_Changelog.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/About_this.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/B_Do.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/C_Credits.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/Contents.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/D_Glossary.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/E_Copyright.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/contents.png
-%%PORTDOCS%%%%DOCSDIR%%/man-html/crossref.png
-%%PORTDOCS%%%%DOCSDIR%%/man-html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/manual.css
-%%PORTDOCS%%%%DOCSDIR%%/man-html/manual.html
-%%PORTDOCS%%%%DOCSDIR%%/man-html/next.png
-%%PORTDOCS%%%%DOCSDIR%%/man-html/next_g.png
-%%PORTDOCS%%%%DOCSDIR%%/man-html/prev.png
-%%PORTDOCS%%%%DOCSDIR%%/man-html/prev_g.png
-%%PORTDOCS%%%%DOCSDIR%%/man-html/up.png
-%%PORTDOCS%%%%DOCSDIR%%/man-html/up_g.png
-%%PORTDOCS%%%%DOCSDIR%%/man-text/1_Introduction.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/2_Getting.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/3_Basic.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/4_Customizing.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/5_Working.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/6_Writing.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/7_Adding.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/8_How.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/A_Changelog.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/About_this.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/B_Do.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/C_Credits.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/Contents.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/D_Glossary.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/E_Copyright.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/index.txt
-%%PORTDOCS%%%%DOCSDIR%%/man-text/manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/manual.aux
-%%PORTDOCS%%%%DOCSDIR%%/manual.dvi
-%%PORTDOCS%%%%DOCSDIR%%/manual.tex
-%%PORTDOCS%%%%DOCSDIR%%/manual2.lyx
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/man-text
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/man-html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/dev-text
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/dev-html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+lib/libpspell.so.16
+share/aspell/ccpp.amf
+share/aspell/comment.amf
+share/aspell/email.amf
+share/aspell/html.amf
+share/aspell/none.amf
+share/aspell/perl.amf
+share/aspell/sgml.amf
+share/aspell/tex.amf
+share/aspell/url.amf
+%%NLS%%share/locale/be/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/da/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/de/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/es/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/mn/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/tg/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/aspell.mo
+%%NLS%%share/locale/wa/LC_MESSAGES/aspell.mo
 @dirrm include/pspell
+%%NLS%%@unexec rmdir %D/share/locale/be/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/be 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/da 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/de 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/en/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/en 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/es 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ga/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ga 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/mn/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/mn 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/pt 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/ru 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/sr 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/tg/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/tg 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/uk 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/wa/LC_MESSAGES 2>/dev/null || true
+%%NLS%%@unexec rmdir %D/share/locale/wa 2>/dev/null || true

@@ -1,3 +1,5 @@
+lib/aspell-%%VER%%/fr.dat
+lib/aspell-%%VER%%/fr_phonet.dat
 share/aspell/fr-40-only.rws
 share/aspell/fr-40.multi
 share/aspell/fr-60-only.rws
@@ -8,7 +10,6 @@ share/aspell/fr-lrg.alias
 share/aspell/fr-med.alias
 share/aspell/fr-sml.alias
 share/aspell/fr.multi
-share/aspell/fr.dat
 share/aspell/fr_CH-40.multi
 share/aspell/fr_CH-60.multi
 share/aspell/fr_CH-80.multi
@@ -24,7 +25,6 @@ share/aspell/fr_FR-lrg.alias
 share/aspell/fr_FR-med.alias
 share/aspell/fr_FR-sml.alias
 share/aspell/fr_FR.multi
-share/aspell/fr_phonet.dat
 share/aspell/francais-40.alias
 share/aspell/francais-60.alias
 share/aspell/francais-80.alias
