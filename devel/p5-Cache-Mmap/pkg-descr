@@ -1,0 +1,7 @@
+This module provides a shared cache, using a memory mapped file. Very useful
+for mod_perl applications. If routines are provided which interact with the
+underlying data, access to the cache is completely transparent, and the module
+handles all the details of refreshing cache contents, and updating underlying
+data, if necessary.
+
+WWW:  http://search.cpan.org/dist/Cache-Mmap/

@@ -433,6 +433,7 @@
     SUBDIR += p5-BSD-stat
     SUBDIR += p5-C-Scan
     SUBDIR += p5-Cache-Cache
+    SUBDIR += p5-Cache-Mmap
     SUBDIR += p5-Carp-Assert
     SUBDIR += p5-Carp-Datum
     SUBDIR += p5-Cdk
