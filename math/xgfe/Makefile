@@ -3,13 +3,12 @@
 # Date created:        24 March 1998
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.8 1998/11/08 20:27:52 mph Exp $
+# $Id: Makefile,v 1.9 1999/03/08 00:18:18 mph Exp $
 #
 
 DISTNAME=		xgfe-2.0
 CATEGORIES=		math
-MASTER_SITES=		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/visualization
+MASTER_SITES=		http://www.freebsd.org/~mph/distfiles/
 
 MAINTAINER=	mph@freebsd.org
 
