@@ -18,6 +18,7 @@ System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Engl
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/English.lproj/BrowserViewerPref.nib/info.nib
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/English.lproj/BrowserViewerPref.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/English.lproj/CVS/Entries
+System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/English.lproj/CVS/Entries.Log
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/English.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/English.lproj/CVS/Root
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Info-gnustep.plist
@@ -38,6 +39,7 @@ System/Applications/GWorkspace.app/Resources/CVS/Entries
 System/Applications/GWorkspace.app/Resources/CVS/Repository
 System/Applications/GWorkspace.app/Resources/CVS/Root
 System/Applications/GWorkspace.app/Resources/CellHighlight.tiff
+System/Applications/GWorkspace.app/Resources/CellHighlight_osx.tiff
 System/Applications/GWorkspace.app/Resources/ComputeSize.tiff
 System/Applications/GWorkspace.app/Resources/ComputeSize_dimm.tiff
 System/Applications/GWorkspace.app/Resources/Date-0.tiff
@@ -55,19 +57,9 @@ System/Applications/GWorkspace.app/Resources/Date.tiff
 System/Applications/GWorkspace.app/Resources/Dimple.tiff
 System/Applications/GWorkspace.app/Resources/DragableDocument.tiff
 System/Applications/GWorkspace.app/Resources/Dutch.lproj/CVS/Entries
+System/Applications/GWorkspace.app/Resources/Dutch.lproj/CVS/Entries.Log
 System/Applications/GWorkspace.app/Resources/Dutch.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Dutch.lproj/CVS/Root
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib/CVS/Root
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib/classes.nib
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib/info.nib
-System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/Dutch.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/English.lproj/AttributesPanel.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/English.lproj/AttributesPanel.gorm/CVS/Repository
@@ -81,6 +73,7 @@ System/Applications/GWorkspace.app/Resources/English.lproj/AttributesPanel.nib/c
 System/Applications/GWorkspace.app/Resources/English.lproj/AttributesPanel.nib/info.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/AttributesPanel.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/CVS/Entries
+System/Applications/GWorkspace.app/Resources/English.lproj/CVS/Entries.Log
 System/Applications/GWorkspace.app/Resources/English.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/English.lproj/CVS/Root
 System/Applications/GWorkspace.app/Resources/English.lproj/ContentsPanel.gorm/CVS/Entries
@@ -282,47 +275,30 @@ System/Applications/GWorkspace.app/Resources/FileIcon_Directory.tiff
 System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open.tiff
 System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_Small.tiff
 System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_Small_alt.tiff
+System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_Small_osx.tiff
 System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_alt.tiff
+System/Applications/GWorkspace.app/Resources/FileIcon_Directory_Open_osx.tiff
 System/Applications/GWorkspace.app/Resources/FileManager.tiff
 System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/Resources/InspectorInfo.plist
 System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/FolderViewer
 System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/French.lproj/CVS/Entries
+System/Applications/GWorkspace.app/Resources/French.lproj/CVS/Entries.Log
 System/Applications/GWorkspace.app/Resources/French.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/French.lproj/CVS/Root
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.nib/CVS/Entries
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.nib/CVS/Repository
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.nib/CVS/Root
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.nib/classes.nib
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.nib/info.nib
-System/Applications/GWorkspace.app/Resources/French.lproj/Finder.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/French.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/GWorkspace.desktop
 System/Applications/GWorkspace.app/Resources/German.lproj/CVS/Entries
+System/Applications/GWorkspace.app/Resources/German.lproj/CVS/Entries.Log
 System/Applications/GWorkspace.app/Resources/German.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/German.lproj/CVS/Root
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.nib/CVS/Entries
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.nib/CVS/Repository
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.nib/CVS/Root
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.nib/classes.nib
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.nib/info.nib
-System/Applications/GWorkspace.app/Resources/German.lproj/Finder.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/German.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/CVS/Entries
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/CVS/Repository
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/CVS/Root
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/English.lproj/CVS/Entries
+System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/English.lproj/CVS/Entries.Log
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/English.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/English.lproj/CVS/Root
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/English.lproj/IconsViewerPref.gorm/CVS/Entries
@@ -360,19 +336,9 @@ System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/Resources
 System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/InspectorViewer
 System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/Italian.lproj/CVS/Entries
+System/Applications/GWorkspace.app/Resources/Italian.lproj/CVS/Entries.Log
 System/Applications/GWorkspace.app/Resources/Italian.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Italian.lproj/CVS/Root
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.nib/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.nib/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.nib/CVS/Root
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.nib/classes.nib
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.nib/info.nib
-System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/Italian.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Kill.tiff
 System/Applications/GWorkspace.app/Resources/LED-0.tiff
@@ -411,6 +377,11 @@ System/Applications/GWorkspace.app/Resources/Month-8.tiff
 System/Applications/GWorkspace.app/Resources/Month-9.tiff
 System/Applications/GWorkspace.app/Resources/Month.tiff
 System/Applications/GWorkspace.app/Resources/MultipleSelection.tiff
+System/Applications/GWorkspace.app/Resources/PasteboardViewer.inspector/Resources/Info-gnustep.plist
+System/Applications/GWorkspace.app/Resources/PasteboardViewer.inspector/Resources/InspectorInfo.plist
+System/Applications/GWorkspace.app/Resources/PasteboardViewer.inspector/PasteboardViewer
+System/Applications/GWorkspace.app/Resources/PasteboardViewer.inspector/stamp.make
+System/Applications/GWorkspace.app/Resources/Pboard.tiff
 %%PDFVIEW%%System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/Resources/CVS/Entries
 %%PDFVIEW%%System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/Resources/CVS/Repository
 %%PDFVIEW%%System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/Resources/CVS/Root
@@ -430,33 +401,13 @@ System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/Resources/Ins
 System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/PlistViewer
 System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/Portuguese.lproj/CVS/Entries
+System/Applications/GWorkspace.app/Resources/Portuguese.lproj/CVS/Entries.Log
 System/Applications/GWorkspace.app/Resources/Portuguese.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Portuguese.lproj/CVS/Root
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.nib/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.nib/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.nib/CVS/Root
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.nib/classes.nib
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.nib/info.nib
-System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/REWArrow.tiff
 System/Applications/GWorkspace.app/Resources/Recycler.tiff
 System/Applications/GWorkspace.app/Resources/RecyclerFull.tiff
-System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/AttributesPanel.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/AttributesPanel.gorm/CVS/Repository
@@ -639,87 +590,17 @@ System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.g
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/XTermPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Localizable.strings
-System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/RightArr.tiff
 System/Applications/GWorkspace.app/Resources/Romanian.lproj/CVS/Entries
+System/Applications/GWorkspace.app/Resources/Romanian.lproj/CVS/Entries.Log
 System/Applications/GWorkspace.app/Resources/Romanian.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Romanian.lproj/CVS/Root
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.nib/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.nib/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.nib/CVS/Root
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.nib/classes.nib
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.nib/info.nib
-System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/Romanian.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/Resources/InspectorInfo.plist
@@ -746,19 +627,9 @@ System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/Resources/sto
 System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/SoundViewer
 System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/stamp.make
 System/Applications/GWorkspace.app/Resources/Spanish.lproj/CVS/Entries
+System/Applications/GWorkspace.app/Resources/Spanish.lproj/CVS/Entries.Log
 System/Applications/GWorkspace.app/Resources/Spanish.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Spanish.lproj/CVS/Root
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.nib/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.nib/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.nib/CVS/Root
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.nib/classes.nib
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.nib/info.nib
-System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/Spanish.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/Resources/InspectorInfo.plist
@@ -773,18 +644,24 @@ System/Applications/GWorkspace.app/Resources/Weekday-4.tiff
 System/Applications/GWorkspace.app/Resources/Weekday-5.tiff
 System/Applications/GWorkspace.app/Resources/Weekday-6.tiff
 System/Applications/GWorkspace.app/Resources/Weekday.tiff
+System/Applications/GWorkspace.app/Resources/colorPboard.tiff
 System/Applications/GWorkspace.app/Resources/common_ArrowLeftH.tiff
 System/Applications/GWorkspace.app/Resources/common_ArrowRightH.tiff
+System/Applications/GWorkspace.app/Resources/filecontsPboard.tiff
+System/Applications/GWorkspace.app/Resources/gormPboard.tiff
 System/Applications/GWorkspace.app/Resources/littleArrowDown.tiff
 System/Applications/GWorkspace.app/Resources/littleArrowRight.tiff
 System/Applications/GWorkspace.app/Resources/page.tiff
 System/Applications/GWorkspace.app/Resources/pause.tiff
 System/Applications/GWorkspace.app/Resources/play.tiff
+System/Applications/GWorkspace.app/Resources/rtfPboard.tiff
+System/Applications/GWorkspace.app/Resources/rtfdPboard.tiff
 System/Applications/GWorkspace.app/Resources/stop.tiff
 System/Applications/GWorkspace.app/Resources/stop_16.tiff
 System/Applications/GWorkspace.app/Resources/stop_24.tiff
 System/Applications/GWorkspace.app/Resources/stop_32.tiff
 System/Applications/GWorkspace.app/Resources/stop_48.tiff
+System/Applications/GWorkspace.app/Resources/stringPboard.tiff
 System/Applications/GWorkspace.app/Resources/switchMultiple.tiff
 System/Applications/GWorkspace.app/Resources/switchOff.tiff
 System/Applications/GWorkspace.app/Resources/switchOn.tiff
@@ -795,6 +672,7 @@ System/Applications/GWorkspace.app/Resources/tabUnSelectedJunction.tiff
 System/Applications/GWorkspace.app/Resources/tabUnSelectToSelectedJunction.tiff
 System/Applications/GWorkspace.app/Resources/tabUnSelectedLeft.tiff
 System/Applications/GWorkspace.app/Resources/tabUnSelectedRight.tiff
+System/Applications/GWorkspace.app/Resources/tiffPboard.tiff
 System/Applications/GWorkspace.app/library_paths.openapp
 System/Applications/GWorkspace.app/stamp.make
 System/Library/Bundles/AppViewer.inspector/Resources/Info-gnustep.plist
@@ -816,6 +694,7 @@ System/Library/Bundles/BrowserViewer.viewer/Resources/English.lproj/BrowserViewe
 System/Library/Bundles/BrowserViewer.viewer/Resources/English.lproj/BrowserViewerPref.nib/info.nib
 System/Library/Bundles/BrowserViewer.viewer/Resources/English.lproj/BrowserViewerPref.nib/objects.nib
 System/Library/Bundles/BrowserViewer.viewer/Resources/English.lproj/CVS/Entries
+System/Library/Bundles/BrowserViewer.viewer/Resources/English.lproj/CVS/Entries.Log
 System/Library/Bundles/BrowserViewer.viewer/Resources/English.lproj/CVS/Repository
 System/Library/Bundles/BrowserViewer.viewer/Resources/English.lproj/CVS/Root
 System/Library/Bundles/BrowserViewer.viewer/Resources/Info-gnustep.plist
@@ -840,6 +719,7 @@ System/Library/Bundles/IconsViewer.viewer/Resources/CVS/Entries
 System/Library/Bundles/IconsViewer.viewer/Resources/CVS/Repository
 System/Library/Bundles/IconsViewer.viewer/Resources/CVS/Root
 System/Library/Bundles/IconsViewer.viewer/Resources/English.lproj/CVS/Entries
+System/Library/Bundles/IconsViewer.viewer/Resources/English.lproj/CVS/Entries.Log
 System/Library/Bundles/IconsViewer.viewer/Resources/English.lproj/CVS/Repository
 System/Library/Bundles/IconsViewer.viewer/Resources/English.lproj/CVS/Root
 System/Library/Bundles/IconsViewer.viewer/Resources/English.lproj/IconsViewerPref.gorm/CVS/Entries
@@ -878,6 +758,10 @@ System/Library/Bundles/InspectorViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/InspectorViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/InspectorViewer.inspector/InspectorViewer
 System/Library/Bundles/InspectorViewer.inspector/stamp.make
+System/Library/Bundles/PasteboardViewer.inspector/PasteboardViewer
+System/Library/Bundles/PasteboardViewer.inspector/Resources/Info-gnustep.plist
+System/Library/Bundles/PasteboardViewer.inspector/Resources/InspectorInfo.plist
+System/Library/Bundles/PasteboardViewer.inspector/stamp.make
 %%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/Resources/CVS/Entries
 %%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/Resources/CVS/Repository
 %%PDFVIEW%%System/Library/Bundles/PdfViewer.inspector/Resources/CVS/Root
@@ -962,6 +846,8 @@ System/Tools/wopen
 @dirrm System/Library/Bundles/PdfViewer.inspector/Resources/CVS
 @dirrm System/Library/Bundles/PdfViewer.inspector/Resources
 @dirrm System/Library/Bundles/PdfViewer.inspector
+@dirrm System/Library/Bundles/PasteboardViewer.inspector/Resources
+@dirrm System/Library/Bundles/PasteboardViewer.inspector
 @dirrm System/Library/Bundles/InspectorViewer.inspector/Resources
 @dirrm System/Library/Bundles/InspectorViewer.inspector
 @dirrm System/Library/Bundles/ImageViewer.inspector/Resources
@@ -1004,10 +890,6 @@ System/Tools/wopen
 @dirrm System/Library/Bundles/AppViewer.inspector
 @dirrm System/Applications/GWorkspace.app/Resources/StringsViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/StringsViewer.inspector
-@dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.nib/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.nib
-@dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Spanish.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/SoundViewer.inspector/Resources/CVS
@@ -1018,41 +900,13 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/SmallIconsViewer.viewer
 @dirrm System/Applications/GWorkspace.app/Resources/RtfViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/RtfViewer.inspector
-@dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.nib/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.nib
-@dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/German.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/French.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/XTermPref.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/XTermPref.gorm
@@ -1127,16 +981,8 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/AttributesPanel.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/Resources
-@dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.nib/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.nib
-@dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Portuguese.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/PlistViewer.inspector/Resources
@@ -1144,10 +990,8 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/Resources/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/PdfViewer.inspector
-@dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.nib/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.nib
-@dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj/Finder.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/PasteboardViewer.inspector/Resources
+@dirrm System/Applications/GWorkspace.app/Resources/PasteboardViewer.inspector
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Italian.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/InspectorViewer.inspector/Resources
@@ -1169,16 +1013,8 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer
-@dirrm System/Applications/GWorkspace.app/Resources/German.lproj/Finder.nib/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/German.lproj/Finder.nib
-@dirrm System/Applications/GWorkspace.app/Resources/German.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/German.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/German.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/German.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/French.lproj/Finder.nib/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/French.lproj/Finder.nib
-@dirrm System/Applications/GWorkspace.app/Resources/French.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/French.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/French.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/French.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/FolderViewer.inspector/Resources
@@ -1259,10 +1095,6 @@ System/Tools/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/AttributesPanel.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/AttributesPanel.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj
-@dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.nib
-@dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Dutch.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/CVS
