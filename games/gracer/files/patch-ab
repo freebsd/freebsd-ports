@@ -1,0 +1,23 @@
+Index: src/sound.cxx
+@@ -30,6 +30,21 @@
+ int Sound_Init (Tcl_Interp *interp)
+ {
+   sched = new slScheduler (8000);
++  /*
++   * check for sound working, otherwise we get a segfault in
++   * sched->addSampleEnvelope below if /dev/dsp is not configured
++   */
++  if (sched->not_working()) {
++#if 0
++    /* XXX this gets a few
++     * `gracer in free(): warning: junk pointer, too high to make sense.'
++     * don't ask me why.  So we'll just leak memory, it should only
++     * be allocated once per process...
++     */
++    delete sched;
++#endif
++    sched = NULL;
++  }
+   if (sched) {
+     sched->setSafetyMargin (0.2);
+   }

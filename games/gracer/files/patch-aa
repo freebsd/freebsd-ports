@@ -1,6 +1,6 @@
---- configure.in.orig	Thu Oct 21 21:58:10 1999
-+++ configure.in	Wed Nov  3 16:51:22 1999
-@@ -236,7 +236,7 @@
+--- configure.in.orig	Wed Nov 24 04:33:25 1999
++++ configure.in	Mon Dec 27 18:07:12 1999
+@@ -237,7 +237,7 @@
    tcl_prefix=$with_tcl)
  
  for tcl_prefix in $tcl_prefix $exec_prefix /usr/local /usr NONE; do
@@ -9,7 +9,7 @@
      break;
    fi
  done
-@@ -245,18 +245,18 @@
+@@ -246,18 +246,18 @@
    AC_MSG_ERROR([could't find tclConfig.sh])
  fi
  
@@ -27,7 +27,7 @@
  fi
  
 -TCL_CFLAGS="-I$TCL_SRC_DIR"
-+TCL_CFLAGS="-I$tcl_prefix/lib/tcl8.2"
++TCL_CFLAGS="-I$tcl_prefix/include/tcl8.2"
  TCL_LDFLAGS="$TCL_LIB_SPEC"
  AC_SUBST(TCL_CFLAGS)
  AC_SUBST(TCL_LDFLAGS)
