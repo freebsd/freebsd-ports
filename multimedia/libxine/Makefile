@@ -7,12 +7,12 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.0.r3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	lib
-DISTNAME=	${PORTNAME}-lib-1-rc3a
+DISTNAME=	${PORTNAME}-lib-1-rc3c
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
@@ -30,9 +30,9 @@ LIB_DEPENDS=	FLAC.5:${PORTSDIR}/audio/flac \
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_X_PREFIX=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 WANT_GNOME=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	lthack gnomehack gnometarget
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl
@@ -49,17 +49,12 @@ MAN1=		xine-config.1
 
 .include <bsd.port.pre.mk>
 
-# PRId64 macro is not defined
-.if ${OSVERSION} < 500028
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src:xine-engine:audio_out.c
-.endif
-
-# FBIOVERTICAL macro is not defined
-.if ${OSVERSION} < 500023
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-src:video_out:Makefile.in
-PLIST_SUB+=	PGX64="@comment "
-.else
-PLIST_SUB+=	PGX64=""
+# PRId64, INT16_MAX macro are not defined
+.if ${OSVERSION} < 500040
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src:xine-engine:audio_out.c \
+		${PATCHDIR}/extra-patch-src:xine-engine:video_out.c \
+		${PATCHDIR}/extra-patch-src:xine-engine:metronom.c \
+		${PATCHDIR}/extra-patch-src:demuxers:demux_ogg.c
 .endif
 
 # CDIOCREADAUDIO macro is not defined
