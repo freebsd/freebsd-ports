@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	xtail
-PORTVERSION=	0.1
+PORTVERSION=	2.1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.giovannelli.it/~gmarco/files/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://www.unicom.com/sw/xtail/ \
+ 		http://www.giovannelli.it/~gmarco/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gmarco@giovannelli.it
 
-NO_WRKSUBDIR=	yes
+PATCHDIR=
+HAS_CONFIGURE=	yes
 
 MAN1=	xtail.1
 
