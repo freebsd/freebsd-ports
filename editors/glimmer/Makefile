@@ -6,20 +6,19 @@
 #
 
 PORTNAME=	glimmer
-PORTVERSION= 	0.9.17
+PORTVERSION= 	0.9.19
 CATEGORIES=	editors gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python15
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
-RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
-		python:${PORTSDIR}/lang/python15
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
+USE_PYTHON=	yes
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
