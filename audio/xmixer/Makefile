@@ -15,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_REINPLACE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_AUTOCONF=	yes
 
 MAN1=		xmixer.1

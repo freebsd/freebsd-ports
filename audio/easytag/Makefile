@@ -17,7 +17,8 @@ MAINTAINER=	dominic_marks@btinternet.com
 LIB_DEPENDS=	id3-3.7.13:${PORTSDIR}/audio/id3lib \
 		vorbis.2:${PORTSDIR}/audio/libvorbis
 
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIG_SHELL="${SH}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \

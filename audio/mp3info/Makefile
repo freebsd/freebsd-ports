@@ -14,7 +14,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	petef@FreeBSD.org
 
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 MAN1=		mp3info.1
 
@@ -22,9 +23,11 @@ MAN1=		mp3info.1
 
 ALL_TARGET=	doc mp3info
 
-.if defined(HAVE_GTK)
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
 ALL_TARGET+=	gmp3info
 PLIST_SUB+=	WITH_GTK=""
+PKGNAMESUFFIX=	-gtk
 .else
 PLIST_SUB+=	WITH_GTK="@comment "
 .endif

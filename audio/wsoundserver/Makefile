@@ -20,7 +20,8 @@ LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 RUN_DEPENDS=	wmaker:${PORTSDIR}/x11-wm/windowmaker
 
 USE_X_PREFIX=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/WINGs"
@@ -36,9 +37,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}
+USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-esd
+PKGNAMESUFFIX=	-esound
 .endif
 
 .include <bsd.port.post.mk>

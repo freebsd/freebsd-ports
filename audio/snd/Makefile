@@ -72,7 +72,8 @@ MAKEFILE=	makefile
 PLIST=		${WRKDIR}/pkg-plist
 .if !defined(WITHOUT_X11)
 PREFIX=		${X11BASE}
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_XLIB=	yes
 .endif
 WRKSRC=		${WRKDIR}/snd-5

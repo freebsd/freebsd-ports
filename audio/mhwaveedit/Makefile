@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	sndfile.0:${PORTSDIR}/audio/libsndfile
 
 USE_REINPLACE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -14,7 +14,7 @@ MAINTAINER=	cpiazza@FreeBSD.org
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -22,9 +22,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mimlib}!=""
+USE_GNOME=	imlib
 CONFIGURE_ARGS+=	--datadir=${PREFIX}/share
+PKGNAMESUFFIX=	-imlib
 .else
 CONFIGURE_ARGS+=--disable-gnome --disable-gdk-pixbuf
 .endif

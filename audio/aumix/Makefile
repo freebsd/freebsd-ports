@@ -18,7 +18,8 @@ MAINTAINER=	cpiazza@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir="${LOCALBASE}/include" \
 		--enable-own-labels \
@@ -30,8 +31,9 @@ MAN1=		aumix.1 xaumix.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GTK)
-USE_GTK=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME=	gtk12
+PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS+=--without-gtk
 .endif

@@ -19,9 +19,8 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_ESOUND=	yes
-USE_GTK=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	esound imlib
 USE_XPM=	yes
 
 DOC_FILES=	Changelog README Themes

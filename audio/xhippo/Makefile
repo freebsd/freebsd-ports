@@ -16,7 +16,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_XLIB=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
@@ -26,8 +26,9 @@ DOCS=		ChangeLog gnu-xhippo.html screenshot.jpeg xhippo.html.gz \
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME=	gtk12
+PKGNAMESUFFIX=	-gtk
 .endif
 
 post-install:

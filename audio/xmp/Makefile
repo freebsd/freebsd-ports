@@ -21,16 +21,19 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" CFLAGS="-I${LOCALBASE}/include"
 USE_AUTOCONF=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500013 || ${MACHINE_ARCH} == "alpha"
-USE_ESOUND=	yes
+USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--disable-oss --enable-esd
-.elif defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+PKGNAMESUFFIX=	-esound
+.elif ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--enable-esd
+PKGNAMESUFFIX=	-esound
 .endif
 
 MAN1=		xmp.1

@@ -41,7 +41,8 @@ CONFIGURE_ARGS=	--enable-nasm \
 		--enable-mp3rtp
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 
 MAN1=		lame.1
 
@@ -49,10 +50,11 @@ NO_LATEST_LINK=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GTK)
-USE_GTK=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
 CONFIGURE_ARGS+=	--enable-mp3x
 PLIST_SUB+=		GTK=
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
 .else
 CONFIGURE_ARGS+=	--disable-gtktest
 PLIST_SUB+=		GTK="@comment "

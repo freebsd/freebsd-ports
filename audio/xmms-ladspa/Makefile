@@ -17,7 +17,8 @@ LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
 
 WRKSRC=		${WRKDIR}/xmms_ladspa
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/ladspa.so ${PREFIX}/lib/xmms/Effect/

@@ -23,7 +23,8 @@ SLAVEDIRS+=	audio/timidity++-gtk audio/timidity++-motif \
 		audio/timidity++-xaw audio/timidity++-xskin \
 		japanese/timidity++-slang japanese/timidity++-tcltk
 USE_BZIP2=	yes
-WANT_ESOUND=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
@@ -52,9 +53,10 @@ DOCLANG=	C ja_JP.ujis
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_ESOUND)
-USE_ESOUND=	yes
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME=	esound
 CONFIGURE_ARGS+=--enable-audio=oss,esd
+PKGNAMESUFFIX=	-esound
 .else
 CONFIGURE_ARGS+=--enable-audio=oss
 .endif

@@ -20,14 +20,16 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-WANT_GTK=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
 CONFIGURE_ARGS=	--enable-nasm
 
 .include <bsd.port.pre.mk>
 
-.if (defined(HAVE_GTK) || defined(WITH_GTK)) && !defined(WITHOUT_GTK)
-USE_GTK=	yes
+.if (${HAVE_GNOME:Mgtk12}!="" || defined(WITH_GTK)) && !defined(WITHOUT_GTK)
+USE_GNOME+=	gtk12
 PLIST_SUB+=	WITH_GTK=''
+PKGNAMESUFFIX=	-gtk
 .else
 PLIST_SUB+=	WITH_GTK='@comment '
 .endif
@@ -35,12 +37,12 @@ PLIST_SUB+=	WITH_GTK='@comment '
 MAN1=		lame.1
 
 post-build:
-.if defined(HAVE_GTK) && !defined(WITHOUT_GTK)
+.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITHOUT_GTK)
 	cd ${WRKSRC}/frontend && make mp3x
 .endif
 
 post-install:
-.if defined(HAVE_GTK) && !defined(WITHOUT_GTK)
+.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITHOUT_GTK)
 	${INSTALL_PROGRAM} ${WRKSRC}/frontend/mp3x ${PREFIX}/bin/
 .endif
 

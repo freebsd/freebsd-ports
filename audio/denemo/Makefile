@@ -22,7 +22,8 @@ PLIST=		${WRKDIR}/pkg-plist
 SHARED=		denemo.conf denemo.keymaprc english.keymaprc french.keymaprc
 DOCS=		AUTHORS ChangeLog DESIGN GOALS NEWS README TODO
 DOCDIR=		share/doc/${PORTNAME}
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 
 post-configure:

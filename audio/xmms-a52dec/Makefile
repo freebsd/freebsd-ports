@@ -19,7 +19,8 @@ RUN_DEPENDS=	${X11BASE}/lib/xmms/Output/libOSSSurround.so:${PORTSDIR}/audio/xmms
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/liba52dec.so ${PREFIX}/lib/xmms/Input/
