@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce
 PORTVERSION=	3.8.18
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xfce.org/archive/
@@ -43,6 +43,7 @@ MAN1=		glob.1 xfbd.1 xfce.1 xfclock.1 xfglob.1 xfgnome.1 xfhelp.1 \
 
 .if ${XFREE86_VERSION} == 4
 .if defined(WITH_XFT)
+LIB_DEPENDS+=		Xft.2:${PORTSDIR}/x11-fonts/Xft
 CONFIGURE_ARGS+=	--enable-xft
 .endif
 CONFIGURE_ARGS+=	--enable-xinerama
