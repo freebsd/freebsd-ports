@@ -17,10 +17,16 @@ COMMENT=	GUI Ports Collection management tool
 BUILD_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 do-install:
 	${MKDIR} ${PREFIX}/lib/pib
 	${INSTALL_SCRIPT} ${WRKSRC}/*.tcl ${PREFIX}/lib/pib
 	${INSTALL_DATA} ${WRKSRC}/libTkSteal.so.2* ${PREFIX}/lib/pib
 	${LN} -fs ${PREFIX}/lib/pib/pib.tcl ${PREFIX}/bin/pib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
