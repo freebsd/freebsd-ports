@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Tue Jan 18 21:48:30 2005
++++ Makefile.in	Tue Jan 18 21:54:30 2005
+@@ -25,6 +25,7 @@
+ exec_prefix = @exec_prefix@
+ bindir = @bindir@
+ libdir = @libdir@
++exampledir= @prefix@/share/examples/dact
+ 
+ CONF = $(sysconfdir)/dact.conf
+ CFLAGS += -DDACT_CONFIG_FILE=\"$(CONF)\" -DEXEEXT=\"$(EXEEXT)\"
+@@ -87,7 +88,10 @@
+ 	$(INSTALL) -m 755 dact$(EXEEXT) $(bindir)/dact$(EXEEXT)
+ 
+ install: all install-bin
+-	$(INSTALL) -m 644 dact.conf $(CONF)
++	mkdir -p $(exampledir)
++	$(INSTALL) -m 644 dact.conf $(exampledir)
++	if [ ! -f $(CONF) ] ; then \
++	$(INSTALL) -m 644 $(exampledir)/dact.conf $(CONF) ; fi 
+ 	$(INSTALL) -m 644 Docs/dact.1 $(mandir)/man1/dact.1
+ @MODS@	-$(INSTALL) -m 755 libdact.so $(libdir)/libdact.so
+ 	-$(INSTALL) -m 644 libdact.a $(libdir)/libdact.a

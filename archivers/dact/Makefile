@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	dact
-PORTVERSION=	0.8.35
-PORTREVISION=	1
+PORTVERSION=	0.8.39
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.rkeene.org/files/oss/dact/
+MASTER_SITES=	http://www.rkeene.org/files/oss/dact/release/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Adaptive Compression Tool
@@ -24,11 +23,13 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
+			--libdir=${PREFIX}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		dact.1
+INSTALLS_SHLIB=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)

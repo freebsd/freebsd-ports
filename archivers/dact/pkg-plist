@@ -1,5 +1,9 @@
 bin/dact
-etc/dact.conf
+@unexec if cmp -s %D/etc/dact.conf %D/%%EXAMPLESDIR%%/dact.conf; then rm -f %D/etc/dact.conf; fi
+%%EXAMPLESDIR%%/dact.conf
+@exec [ -f %D/etc/dact.conf ] || cp %D/%%EXAMPLESDIR%%/dact.conf %D/etc/dact.conf
+lib/libdact.a
+lib/libdact.so
 %%DATADIR%%/cipher_chaos.so
 %%DATADIR%%/cipher_psub.so
 %%DATADIR%%/cipher_serpent.so
@@ -15,7 +19,9 @@ etc/dact.conf
 %%DATADIR%%/comp_snibble.so
 %%DATADIR%%/comp_text.so
 %%DATADIR%%/comp_zlib.so
+%%DATADIR%%/libdact.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/dact.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
