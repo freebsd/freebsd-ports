@@ -1,0 +1,4 @@
+etc/missey/pop3d.conf-dist
+sbin/bent
+sbin/missey
+@dirrm etc/missey
