@@ -3,7 +3,7 @@
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/10 13:37:21 shige Exp $
 #
 
 DISTNAME=	wemi-${WEMI_VER}
