@@ -3,7 +3,7 @@
 # Date created:        4 November 1997
 # Whom:                Satoshi Asami <asami@freebsd.org>
 #
-# $Id: Makefile,v 1.10 1998/05/09 18:08:03 se Exp $
+# $Id: Makefile,v 1.11 1998/05/21 21:35:19 se Exp $
 #
 
 DISTNAME=	kde-4.1b
@@ -22,7 +22,6 @@ RUN_DEPENDS=	kwm:${PORTSDIR}/x11/kdebase \
 #		kmedia:${PORTSDIR}/audio/kdemultimedia
 
 EXTRACT_ONLY=	# empty
-NO_PATCH=	yes
 NO_BUILD=	yes
 
 do-install:	# empty

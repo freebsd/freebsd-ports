@@ -3,7 +3,7 @@
 # Date created:         22 November 1997
 # Whom:                 Peter Wemm <peter@netplex.com.au>
 #
-# $Id: Makefile,v 1.4 1998/03/22 10:54:36 asami Exp $
+# $Id: Makefile,v 1.5 1998/03/22 11:47:19 peter Exp $
 #
 
 DISTNAME=	conserver-5.21-Beta
@@ -19,7 +19,6 @@ EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 NO_WRKSUBDIR=	yes
-NO_CONFIGURE=	yes
 MAN5=		conserver.cf.5
 MAN8=		console.8 conserver.8
 

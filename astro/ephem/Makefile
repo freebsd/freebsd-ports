@@ -3,7 +3,7 @@
 # Date created:		3 April 1997
 # Whom:			eserte
 #
-# $Id: $
+# $Id: Makefile,v 1.1.1.1 1997/06/03 09:14:13 asami Exp $
 #
 
 DISTNAME=	ephem_4.28_unix
@@ -14,7 +14,6 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MAINTAINER=	eserte@cs.tu-berlin.de
 
 NO_WRKSUBDIR=	yes
-NO_CONFIGURE=	yes
 ALL_TARGET=
 
 CFLAGS+=	-Wno-implicit

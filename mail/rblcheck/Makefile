@@ -3,7 +3,7 @@
 # Date created:		28 January 1998
 # Whom:			itojun@itojun.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/01/30 04:52:11 itojun Exp $
 #
 
 DISTNAME=	rblcheck-1.2
@@ -12,8 +12,6 @@ MASTER_SITES=	http://www.xnet.com/%7Eemarshal/rblcheck/
 
 MAINTAINER=	itojun@itojun.org
 
-NO_PATCH=	yes
-NO_CONFIGURE=	yes
 DOCS=		BUGS CHANGES CREDITS INSTALL PLATFORMS TODO
 
 do-install:

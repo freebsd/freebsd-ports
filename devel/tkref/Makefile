@@ -3,7 +3,7 @@
 # Date created:         3 August 1997
 # Whom:                 Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.3 1998/02/21 22:38:09 fenner Exp $
+# $Id: Makefile,v 1.5 1998/03/20 14:35:21 tg Exp $
 #
 
 DISTNAME=	tkref-1.01
@@ -16,7 +16,6 @@ MAINTAINER=	bgingery@gtcs.com
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
 
 NO_BUILD=	yes
-NO_CONFIGURE=	yes
 
 do-patch:
 	perl -pi -e "s|/usr/local/bin/wish4.1|${PREFIX}/bin/wish8.0|;" \

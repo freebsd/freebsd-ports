@@ -3,7 +3,7 @@
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.11 1998/02/21 22:37:55 fenner Exp $
+# $Id: Makefile,v 1.12 1998/04/12 02:21:16 itojun Exp $
 #
 
 DISTNAME=	ewipe-1.0.0
@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/
 MAINTAINER=	itojun@itojun.org
 
 #RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11/tk42
-
-NO_CONFIGURE=	yes
 
 TCLLIBS=	definefont.tcl edittable.tcl setpointer.tcl viewer.tcl tclIndex
 DOCS=		README Changes dot.ewipe

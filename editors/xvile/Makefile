@@ -3,7 +3,7 @@
 # Date created:         Wed Nov 26, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.14 1997/12/10 20:30:14 gj Exp $
+# $Id: Makefile,v 1.15 1998/06/04 20:42:03 gj Exp $
 #
 
 DISTNAME=	vile-8.0
@@ -20,7 +20,6 @@ MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-screen=${SCREEN_TYPE} ${WITH_PERL}
 MAN1=		xvile.1
-NO_PATCH=	yes
 
 pre-configure:
 .if ! defined(USE_MENUS)

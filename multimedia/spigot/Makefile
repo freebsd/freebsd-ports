@@ -3,7 +3,7 @@
 # Date Created:		Fri Sep 15 10:04:46 CDT 1995
 # Whom:			james@cs.uwm.edu
 #
-# $Id: Makefile,v 1.4 1997/08/11 16:12:19 fenner Exp $
+# $Id: Makefile,v 1.5 1998/01/27 17:10:05 fenner Exp $
 #
 
 DISTNAME= 	spigot-1.7
@@ -15,7 +15,6 @@ MAINTAINER=	james@cs.uwm.edu
 
 # binary package
 NO_BUILD=	yes
-NO_CONFIGURE=	yes
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.mk>

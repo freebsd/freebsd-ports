@@ -3,7 +3,7 @@
 # Date created:		15 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.18 1997/09/10 07:55:31 asami Exp $
+# $Id: Makefile,v 1.19 1997/09/19 09:30:04 asami Exp $
 #
 
 DISTNAME=	OMRONWnn6
@@ -24,8 +24,6 @@ RESTRICTED=	"You should buy from Omron Software Co., Ltd."
 NO_CDROM=	"You should buy from Omron Software Co., Ltd."
 NO_PACKAGE=	"You should buy from Omron Software Co., Ltd."
 NO_BUILD=	yes
-NO_CONFIGURE=	yes
-NO_PATCH=	yes
 IS_INTERACTIVE=	yes
 
 # If ${.CURDIR}/work/.build_done (which will be ${BUILD_COOKIE}) exists,

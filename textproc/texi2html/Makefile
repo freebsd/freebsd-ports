@@ -3,7 +3,7 @@
 # Date created:				5 Nov 1997
 # Whom:					Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
-# $Id: Makefile,v 1.2 1997/12/15 05:50:39 max Exp $
+# $Id: Makefile,v 1.3 1998/01/19 13:18:44 vanilla Exp $
 #
 
 DISTNAME=	texi2html
@@ -18,7 +18,6 @@ EXTRACT_CMD=	uncompress
 EXTRACT_BEFORE_ARGS=	-c
 EXTRACT_AFTER_ARGS=	| sh
 NO_WRKSUBDIR=	yes
-NO_CONFIGURE=	yes
 NO_BUILD=	yes
 
 MAN1=		texi2html.1

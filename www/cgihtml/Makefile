@@ -3,7 +3,7 @@
 # Date created:		3 Nov 1997
 # Whom:			Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/14 12:38:55 jseger Exp $
 #
 
 DISTNAME=	cgihtml-1.69
@@ -11,8 +11,6 @@ CATEGORIES=	devel www
 MASTER_SITES=	ftp://ftp.eekim.com/users/eekim/cgihtml/
 
 MAINTAINER=	i.vaudrey@bigfoot.com
-
-NO_CONFIGURE=	yes
 
 post-extract:
 	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.dist
