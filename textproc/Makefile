@@ -365,6 +365,7 @@
     SUBDIR += p5-Text-Reform
     SUBDIR += p5-Text-Repository
     SUBDIR += p5-Text-Shellwords
+    SUBDIR += p5-Text-Similarity
     SUBDIR += p5-Text-SimpleTemplate
     SUBDIR += p5-Text-Striphigh
     SUBDIR += p5-Text-Table

@@ -1,0 +1,9 @@
+bin/text_compare.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Similarity/.packlist
+%%SITE_PERL%%/Text/OverlapFinder.pm
+%%SITE_PERL%%/Text/Similarity.pm
+%%SITE_PERL%%/Text/Similarity/Overlaps.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Similarity
+@dirrm %%SITE_PERL%%/Text/Similarity
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
