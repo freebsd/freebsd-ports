@@ -1,0 +1,9 @@
+--- gthread.pc.in.orig	Wed Aug 20 22:07:53 2003
++++ gthread.pc.in	Wed Aug 20 22:08:33 2003
+@@ -7,5 +7,5 @@
+ Description: Thread support for GLib
+ Requires: glib
+ Version: @VERSION@
+-Libs: -L${libdir} -lgthread @G_THREAD_LIBS@
++Libs: -L${libdir} -lgthread12 @G_THREAD_LIBS@
+ Cflags: @G_THREAD_CFLAGS@
