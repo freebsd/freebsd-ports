@@ -7,7 +7,7 @@
 
 PORTNAME=	wmstock
 PORTVERSION=	0.11
-CATEGORIES=	misc windowmaker
+CATEGORIES=	misc windowmaker finance
 MASTER_SITES=	http://mattfischer.com/wmstock/src/
 
 MAINTAINER=	ports@FreeBSD.org
