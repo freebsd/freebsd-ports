@@ -1,9 +1,9 @@
 # New ports collection makefile for: YaTeX
 # Version required:	1.66
 # Date created:		98/11/17
-# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1998/12/01 03:06:25 asami Exp $
+# $Id: Makefile,v 1.6 1999/03/17 06:57:38 taoka Exp $
 #
 
 PKGNAME=	yatex-xemacs-mule-1.66

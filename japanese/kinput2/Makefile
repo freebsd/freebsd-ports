@@ -1,9 +1,9 @@
 # New ports collection makefile for:	kinput2-wnn4
 # Version required:	2.0p4
 # Date created:		19 Dec 1997
-# Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/27 12:49:25 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/09/21 22:33:24 steve Exp $
 #
 
 DISTNAME=	kinput2-v2-fix4
@@ -11,7 +11,7 @@ PKGNAME?=	ja-kinput2-wnn4-2.0.4
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/ 
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	taoka@FreeBSD.org
 
 LIB_DEPENDS=	${LIB_INPUT_METHOD}
 BUILD_DEPENDS=	${BUILD_INPUT_METHOD}

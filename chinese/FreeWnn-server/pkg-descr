@@ -45,4 +45,4 @@ $X11BASE is not '/usr/X11R6' then you should properly change two lines
 $PORTSDIR/chinese/Wnn/pkg/PLIST.
 
 -- S. Taoka
-<taoka@infonets.hiroshima-u.ac.jp>
+<taoka@FreeBSD.org>

@@ -1,9 +1,9 @@
 # New ports collection makefile for: YaTeX
 # Version required:	1.66
 # Date created:		98/11/17
-# Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1998/12/13 08:47:42 asami Exp $
+# $Id: Makefile,v 1.8 1999/03/17 06:57:36 taoka Exp $
 #
 
 DISTNAME=	yatex1.66
@@ -12,7 +12,7 @@ CATEGORIES?=	print elisp
 MASTER_SITES=	http://www.comp.ae.keio.ac.jp/~yuuji/yatex/ \
 		http://www.comp.ae.keio.ac.jp/~yuuji/tmp/
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	taoka@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/yatex${VERSION}
 .if defined(XEMACS-MULE)

@@ -1,9 +1,9 @@
 # New ports collection makefile for: jhd
 # Version required:	2.3
 # Date created:		Feb 5, 1998
-# Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
+# Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/22 03:55:03 kuriyama Exp $
 #
 
 DISTNAME=	jhd-2.3
@@ -11,7 +11,7 @@ PKGNAME=	ja-jhd-2.3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.iamas.ac.jp/pub1/UNIX/File/
 
-MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
+MAINTAINER=	taoka@FreeBSD.org
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
