@@ -1,5 +1,5 @@
-From: Paul Rubin <phr@fsf.org>
-Subject: Re:  Bison documentation?
+Bison is a tool used to write parsers, such as the parser for GNU cc.
+It is similar to Yacc, which is included in the base FreeBSD system.
 
 The main difference between Bison and Yacc that I know of is that
 Bison supports the @N construction, which gives you access to
