@@ -1,5 +1,5 @@
 mod_layout is a utility to wrap served webpages. This means it can
-add a footer ot header to a document. This allows you to create a
+add a footer or header to a document. This allows you to create a
 standard look and feel throughout a website without using SSI.
 Some example uses are adding standard disclaimers to the bottom of
 all pages, banner ads to the top of all pages, or even a menu at
