@@ -1,0 +1,30 @@
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Change.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Merge.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Repair.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Repair/ResourceMapper.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Repair/Substitutor.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/Compile.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/HTML.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/LongList.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/RepairForm.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/Text.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter/junk
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Selector.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Test.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Test/Validate.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester/Adaptive.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester/Complex.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester/Complex.pm.extra
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester/Simple.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW-Link/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW-Link
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Tester
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Test
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Reporter
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Link/Repair
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Link
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/WWW 2>/dev/null || true
