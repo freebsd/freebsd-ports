@@ -1,6 +1,8 @@
 --- dist/wgfilter-index.orig	Tue Jun 16 02:16:17 1998
-+++ dist/wgfilter-index	Wed Nov  4 07:56:02 1998
-@@ -1,17 +1,58 @@
++++ dist/wgfilter-index	Wed Nov 17 18:52:30 1999
+@@ -1,17 +1,65 @@
++Deny \.ico$
++Deny \.ICO$
  Deny \.gif$
 +Deny \.GIF$
  Deny \.jpeg$
@@ -15,7 +17,9 @@
 +Deny \.jpe$
 +Deny \.JPG$
  Deny \.jpg$
++Deny \.MP3$
 +Deny \.mp3$
++Deny \.M3U$
 +Deny \.m3u$
 +Deny \.ra$
 +Deny \.rv$
@@ -33,7 +37,9 @@
 +Deny \.WAV$
  Deny \.wav$
  Deny \.pdf$
++Deny \.PDF$
  Deny \.mov$
++Deny \.MOV$
 +Deny \.AVI$
 +Deny \.avi$
  Deny \.gz$
@@ -53,13 +59,14 @@
 +Deny \.map$
 +Deny \.css$
 +Deny \.cgi$
++Deny \.EXE$
  Deny \.exe$
 +Deny \.wrl$
 +Deny \.vrml$
  Deny (^|/)wgindex\.html$
  Deny \.wg
  Deny \.glimpse_
-@@ -23,4 +64,5 @@
+@@ -23,4 +71,5 @@
  Deny ~$
  Deny (^|/)_vti
  Deny (^|/)\.htpasswd$
