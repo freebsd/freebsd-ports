@@ -2,6 +2,7 @@ bin/gthumb
 @unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gthumb.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gthumb.schemas
 @exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gthumb.schemas > /dev/null || /usr/bin/true
+lib/gthumb/libgthumb.a
 lib/gthumb/libgthumb.so
 lib/gthumb/modules/libduplicates.so
 lib/gthumb/modules/libjpegtran.so
