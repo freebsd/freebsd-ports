@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0a18
+PORTVERSION=	3.0a19
 CATEGORIES=	net
 MASTER_SITES=	http://us4.samba.org/samba/ftp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	alpha old
@@ -43,7 +43,7 @@ CONFIGURE_ARGS=	--libdir=${SAMBA_CONFDIR} \
 		--with-sambabook=${PREFIX}/share/swat/using_samba \
 		--with-lockdir=${VARDIR}/lock --with-privatedir=${SAMBA_PRIVATE} \
 		--exec-prefix=${PREFIX} --with-pam --without-manpages-langs \
-		--with-piddir=${VARDIR}/run
+		--with-piddir=${VARDIR}/run --with-logfilebase=${VARDIR}/log
 
 .include <bsd.port.pre.mk>
 

@@ -12,14 +12,3 @@
  #ifdef AIX
  #define DEFAULT_PRINTING PRINT_AIX
  #define PRINTCAP_NAME "/etc/qconfig"
-@@ -1119,6 +1124,10 @@
-    for snprintf and vsnprintf */
- #define slprintf snprintf
- #define vslprintf vsnprintf
-+
-+#ifndef PAM_AUTHTOK_RECOVER_ERR
-+#define PAM_AUTHTOK_RECOVER_ERR PAM_AUTHTOK_RECOVERY_ERR
-+#endif
- 
- #endif /* _INCLUDES_H */
- 
