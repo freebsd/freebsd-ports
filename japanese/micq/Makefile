@@ -3,24 +3,24 @@
 # Date created:				31 Oct 1998
 # Whom:					flathill
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/19 08:01:50 flathill Exp $
+# $Id: Makefile,v 1.2 1999/01/12 05:22:53 flathill Exp $
 #
 
-DISTNAME=	micq
-PKGNAME=	ja-micq-0.3.3
+DISTNAME=	micq-0.4.0
+PKGNAME=	ja-micq-0.4.0
 CATEGORIES=	japanese net
-MASTER_SITES=	ftp://micq.chatzone.org/pub/micq/V0.3.3/ \
+MASTER_SITES=	ftp://micq.chatzone.org/pub/micq/V0.4.0/ \
 		http://www.freebsd.org/~flathill/distfiles/
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	http://flos.kuee.kyoto-u.ac.jp/soft/ \
+PATCH_SITES=	http://www.tahoo.org/~taku/soft/micq-0.4.0-jp.patch \
 		http://www.freebsd.org/~flathill/distfiles/
-PATCHFILES=	micq981218ja.patch
+PATCHFILES=	micq-0.4.0-jp.patch
 PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/micq981218
+WRKSRC=		${WRKDIR}/micq-0.4.0
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/micq ${PREFIX}/bin
