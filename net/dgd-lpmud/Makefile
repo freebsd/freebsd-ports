@@ -3,7 +3,7 @@
 # Date created:		10 November 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.10 1996/06/16 15:42:43 adam Exp $
+# $Id: Makefile,v 1.11 1996/06/17 14:06:32 adam Exp $
 #
 
 DISTNAME=	dgd-lpmud
@@ -12,6 +12,7 @@ CATEGORIES+=	net devel games
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/
 DISTFILES=	2.4.5-for-1.0.37.tgz
 #DISTFILES=	sim-2.4.5.tar.gz
+DIST_SUBDIR=	dgd
 
 MAINTAINER=	adam@veda.is
 
