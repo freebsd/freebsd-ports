@@ -27,6 +27,12 @@
 # If you define this, there are several additional knobs to explicitly
 # disable some possible CPU features. See below.
 #
+# WITH_NVIDIA
+# default: disabled
+# Enable nvidia XVMC support for nvidia video cards
+# Note: This is highly experimental at the moment and works only for
+#       MPEG1/2 using -vo xvmc -vc ffmpeg12mc
+#
 # WITHOUT_MENCODER
 # default: undefined
 # the default is to build mplayer with mencoder. If you're sure that you
@@ -49,6 +55,12 @@
 # normally mplayer comes with gmplayer if gtk is installed on the system.
 # If you want to force mplayer to disable the graphical user interface and
 # build without gui ability, define this.
+#
+# WITHOUT_SKINS
+# default: undefined
+# removes the run dependency on the mplayer-skins port, _even if_ built with
+# GUI. This is useful e.g. if you don't want the skins installed system-wide.
+# Please note that 'gmplayer' *must* have at least one default skin to run.
 #
 # WITHOUT_FREETYPE
 # default: undefined
@@ -231,7 +243,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.99.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -304,6 +316,10 @@ PLIST_SUB+=	VIDIX="@comment "
 
 #.if exists(${LOCALBASE}/modules/rtc.ko)
 #WITH_RTC=	yes
+#.endif
+
+#.if exists(${X11BASE}/lib/libXvMCNVIDIA.so.1)
+#WITH_NVIDIA=	yes
 #.endif
 
 .if exists(${LOCALBASE}/lib/libfribidi.so.0)
@@ -409,7 +425,9 @@ WITH_GTK1=	yes
 
 .if !defined(WITHOUT_GUI)
 PLIST_SUB+=	GMPLAYER=""
+.if !defined(WITHOUT_SKINS)
 RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
+.endif
 .else
 PLIST_SUB+=	GMPLAYER="@comment "
 .endif
@@ -463,7 +481,13 @@ CONFIGURE_ARGS+=	--disable-mencoder
 PLIST_SUB+=	MENCODER="@comment "
 .endif
 
-.if defined(WITH_ARTS) && !defined(WITHOUT_ARTS) && defined(WITHOUT_GUI)
+.if defined(WITH_NVIDIA)
+LIB_DEPENDS+=	XvMCNVIDIA.1:${PORTSDIR}/x11/nvidia-driver
+CONFIGURE_ARGS+=	--enable-xvmc \
+			--enable-xvmclib=XvMCNVIDIA
+.endif
+
+.if defined(WITH_ARTS) && !defined(WITHOUT_ARTS) && !defined(WITH_GTK1)
 LIB_DEPENDS+=	artsc.0:${PORTSDIR}/audio/arts
 
 CONFIGURE_ARGS+=	--enable-arts
@@ -516,7 +540,7 @@ CONFIGURE_ARGS+=	--disable-mad
 
 .if defined(WITH_MATROSKA)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
-CONFIGURE_ARGS+=	--enable-external-matroska
+CONFIGURE_ARGS+=	--enable-external-matroska=${LOCALBASE}/lib
 .else
 CONFIGURE_ARGS+=	--disable-external-matroska
 .endif
