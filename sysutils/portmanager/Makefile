@@ -7,6 +7,7 @@
 
 PORTNAME=		portmanager
 PORTVERSION=		0.2.0
+PORTREVISION=		1
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	portmanager
@@ -53,7 +54,7 @@ post-install:
 	@${ECHO}	"*             -u   upgrade installed ports           *"
 	@${ECHO}	"* *WARNING*                                          *"
 	@${ECHO}	"* the formant of                                     *"
-	@${ECHO}	"* ${PREFIX}/etc/portmanager/portmanager.conf is      *"
+	@${ECHO}	"* /usr/local/etc/portmanager/portmanager.conf is     *"
 	@${ECHO}	"* changed in version 0.2.0 and has been renamed to   *"
 	@${ECHO}	"* pm-020.conf                                        *"
 	@${ECHO}	"*                                                    *"
