@@ -21,6 +21,7 @@
     SUBDIR += keyprint
     SUBDIR += kmap
     SUBDIR += krb5
+    SUBDIR += krb5-beta
     SUBDIR += l0pht-watch
     SUBDIR += libident
     SUBDIR += libmcrypt
