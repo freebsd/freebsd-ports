@@ -1,6 +1,6 @@
---- map.h.orig	Mon Jun  7 16:12:02 2004
-+++ map.h	Mon Jun  7 16:11:50 2004
-@@ -39,7 +39,7 @@
+--- map.h.orig	Mon Nov 29 16:33:53 2004
++++ map.h	Sun Dec  5 21:14:18 2004
+@@ -171,7 +171,7 @@
  #endif
  
  #ifdef USE_MING_FLASH

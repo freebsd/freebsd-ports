@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		mapserver
-PORTVERSION=		4.2.3
-PORTREVISION=		1
+PORTVERSION=		4.4.0
+PORTREVISION=		0
 CATEGORIES=		graphics www misc
 MASTER_SITES=		http://cvs.gis.umn.edu/dist/
 
@@ -16,8 +16,6 @@ COMMENT=		System for developing web-based GIS applications
 
 LIB_DEPENDS=		gd.4:${PORTSDIR}/graphics/gd \
 			proj.5:${PORTSDIR}/graphics/proj
-
-BROKEN=			"Does not install"
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
@@ -33,7 +31,8 @@ OPTIONS=		TIFF "Support for TIFF (but not GeoTIFF) files" off \
 			PHP "Support for MapScript/PHP" off \
 			PERL "Support for MapScript/PERL" off \
 			WMS "Support for web map service server and client" off \
-			WFS "Support for web feature service" off \
+			WFS "Support for web feature service (req: GDAL)" off \
+			MAPSERV "Install mapserv cgi interface" on \
 			DEBUG "Enable debugging output" off
 
 .include <bsd.port.pre.mk>
@@ -111,6 +110,13 @@ LIB_DEPENDS+=		curl.3:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl=${LOCALBASE}
 .endif
 
+.if defined(WITH_MAPSERV)
+USE_APACHE=		YES
+PLIST_SUB+=		WITH_MAPSERV=""
+.else
+PLIST_SUB+=		WITH_MAPSERV="@comment "
+.endif
+
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
@@ -126,8 +132,11 @@ do-install:
 .for f in ${PROG_FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/mapserv ${LOCALBASE}/www/cgi-bin/mapserv
 	${INSTALL_SCRIPT} ${WRKSRC}/shp2mysql.pl ${PREFIX}/bin/shp2mysql
+.if defined(WITH_MAPSERV)
+	${MKDIR} ${LOCALBASE}/www/cgi-bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/mapserv ${LOCALBASE}/www/cgi-bin/mapserv
+.endif
 .if defined(WITH_PHP)
 	@${MKDIR} ${LOCALBASE}/${PHP_EXTENSION_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php3/php_mapscript.so ${LOCALBASE}/${PHP_EXTENSION_DIR}/
