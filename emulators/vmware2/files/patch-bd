@@ -1,6 +1,6 @@
 --- vmmon-only/freebsd/driver.c.orig	Thu Jun 29 21:06:18 2000
-+++ vmmon-only/freebsd/driver.c	Thu Sep 14 14:03:42 2000
-@@ -73,6 +73,22 @@
++++ vmmon-only/freebsd/driver.c	Sat Sep 23 01:41:34 2000
+@@ -73,6 +73,24 @@
  #include "private.h"
  #endif
  
@@ -18,6 +18,8 @@
 +    INTR_EXCL =	256,			/* exclusive interrupt */
 +    INTR_MPSAFE = 512			/* this interrupt is SMP safe */
 +};
++
++typedef void driver_intr_t(void*);
 +#endif
 +
  #ifdef SUPPORT_PASSTHROUGH

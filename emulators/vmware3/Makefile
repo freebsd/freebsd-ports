@@ -8,7 +8,7 @@
 
 PORTNAME=	vmware2
 PORTVERSION=	2.0.2.621
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		http://vmware-svca.www.conxion.com/software/ \
@@ -29,12 +29,11 @@ PATCHFILES=	vmmon-freebsd-0.98.tar.gz \
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
 MAINTAINER=	vns@delta.odessa.ua
 
-RUN_DEPENDS=	${LINUX_DIR}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
-		${LINUX_DIR}/dev/rtc:${PORTSDIR}/emulators/rtc
+RUN_DEPENDS=	${LINUXBASE}/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	"Not sure if we can redistribute it"
 
-LINUX_DIR=	/compat/linux
+USE_LINUX=	yes
 VMDIR=		${PREFIX}/lib/vmware
 
 ONLY_FOR_ARCHS=	i386
@@ -61,7 +60,7 @@ BROKEN=         "Kernel source files required"
 .include "${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net"
 .endif
 
-SCRIPTS_ENV+=	LINUX_DIR="${LINUX_DIR}" \
+SCRIPTS_ENV+=	LINUX_DIR="${LINUXBASE}" \
 		VMNET_HOST_IP="${VMNET_HOST_IP}" \
 		VMNET_NETMASK="${VMNET_NETMASK}"
 MAKE_ARGS=	KMODDIR="${VMDIR}/lib/modules"
@@ -82,14 +81,14 @@ setoptions:
 		${FILESDIR}/config > ${WRKDIR}/config
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
-		-e 's;@@LINUX_DIR@@;${LINUX_DIR};' \
+		-e 's;@@LINUX_DIR@@;${LINUXBASE};' \
 		-e 's;@@NETWORKING@@;${VMNET_NETWORKING};' \
 		-e 's;@@HOST_IP@@;${VMNET_HOST_IP};' \
 		-e 's;@@NETMASK@@;${VMNET_NETMASK};' \
 		${FILESDIR}/vmware.sh > ${WRKDIR}/vmware.sh
 
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
-		-e 's;@@LINUX_DIR@@;${LINUX_DIR};' \
+		-e 's;@@LINUX_DIR@@;${LINUXBASE};' \
 		${FILESDIR}/vmware > ${WRKDIR}/vmware
 
 pre-install: setoptions
@@ -103,7 +102,7 @@ pre-install: setoptions
 
 	${MKDIR} ${VMDIR}/bin
 	${INSTALL_SCRIPT} ${FILESDIR}/df ${VMDIR}/bin
-	[ -f ${LINUX_DIR}/bin/df ] || ${LN} -s ${VMDIR}/bin/df ${LINUX_DIR}/bin/
+	[ -f ${LINUXBASE}/bin/df ] || ${LN} -s ${VMDIR}/bin/df ${LINUXBASE}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.pl ${VMDIR}/bin
 	for i in \
 		 vmnet-bridge vmnet-dhcpd vmnet-sniffer \
