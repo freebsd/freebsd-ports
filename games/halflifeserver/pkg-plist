@@ -1,3 +1,4 @@
+%%PORTDOCS%%%%HLDSDIR%%ChangeLog
 %%PORTDOCS%%%%HLDSDIR%%EULA.txt
 %%PORTDOCS%%%%HLDSDIR%%HLTV-Readme.txt
 %%HLDSDIR%%core_i386.so
@@ -385,14 +386,21 @@
 %%HLDSDIR%%dmc/sprites/yelflare2.spr
 %%HLDSDIR%%dmc/sprites/zerogxplode.spr
 %%HLDSDIR%%dmc/titles.txt
+%%HLDSDIR%%engine_amd.so
 %%HLDSDIR%%engine_i386.so
+%%HLDSDIR%%engine_i486.so
+%%HLDSDIR%%engine_i686.so
 %%HLDSDIR%%filesystem_stdio_i386.so
 %%HLDSDIR%%hlds
+%%HLDSDIR%%hlds_amd
+%%HLDSDIR%%hlds_i486
+%%HLDSDIR%%hlds_i686
 %%HLDSDIR%%hlds_run
 %%HLDSDIR%%hltv
 %%HLDSDIR%%hltv.cfg
 %%HLDSDIR%%kver.kp
 %%HLDSDIR%%libSteamValidateUserIDTickets.so
+%%HLDSDIR%%libSteamValidateUserIDTickets_i386.so
 %%HLDSDIR%%libhlwon.so
 %%PORTDOCS%%%%HLDSDIR%%linuxreadme.txt
 %%HLDSDIR%%proxy_i386.so
@@ -768,7 +776,7 @@
 @unexec rmdir %D/%%HLDSDIR%%tfc 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%ricochet 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%dmc 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%cstrike 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%cstrike 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%cstrike`` to remove any configuration files and logs left." | fmt
 @unexec rmdir %D/%%HLDSDIR%% 2>/dev/null || echo "If you are permanently removing this port and its mods, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%`` to remove any configuration files and logs left." | fmt
 @mode 0444
 @exec grep -E "^/%%HLDSDIR%%$" %D/etc/ld.so.conf >/dev/null || ( echo /%%HLDSDIR%% >> %D/etc/ld.so.conf ; %%LDCONFIG%% )

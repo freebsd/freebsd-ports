@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	hlds
-PORTVERSION=	3.1.1.1
+PORTVERSION=	3.1.1.1.d
 CATEGORIES=	games linux
-DISTNAME=	hlds_l_${PORTVERSION:S/.//g}_full
+MASTER_SITES=	http://www.isis.de/members/~hmenze/cs/server/linux/
+DISTFILES=	hlds_l_3111_full.tar.gz \
+		hlds_l_3111d_update.tar.gz
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Half-Life Dedicated Server for Linux
@@ -29,10 +31,10 @@ HLDSDIR=	/usr/games/hlds_l/
 SORT?=		/usr/bin/sort
 
 # files which should be installed with executables perms
-EXECUTABLES=	hltv hlds hlds_run
+EXECUTABLES=	hltv hlds hlds_run hlds_amd hlds_i486 hlds_i686
 
 .include <bsd.port.pre.mk>
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+.if !exists(${DISTDIR}/hlds_l_${PORTVERSION:R:S/.//g}_full${EXTRACT_SUFX})
 IGNORE=	"Please download and execute ${DISTNAME}.bin to read valve\'s \
 	agreement and if you agree to the terms, then it will dump the \
 	tarball ${DISTNAME}${EXTRACT_SUFX} to your current directory. \
