@@ -16,6 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@geeksrus.net
 
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
@@ -24,7 +25,7 @@ PLIST_SUB+=	DOCSDIR=${DOCSDIR:S@^${PREFIX}/@@}
 PLIST_SUB+=	EXAMPLESDIR=${EXAMPLESDIR:S@^${PREFIX}/@@}
 
 post-patch:
-	@${PERL} -pi -e 's@/usr/bin/perl@${PERL}@' ${WRKDIR}/envelope
+	@${REINPLACE_CMD} -e 's@/usr/bin/perl@${PERL}@' ${WRKDIR}/envelope
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/envelope ${PREFIX}/bin
