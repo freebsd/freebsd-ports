@@ -1,30 +1,22 @@
-# New ports collection makefile for:    unzip.with_encryption
-# http://infozip.cdrom.com/pub/infozip/
-#
+# New ports collection makefile for:    unzip
 # Version required:     5.3
-# Date created:         22 Dec 1994
-# Whom:                 ache
+# Date created:         17 October 1994
+# Whom:                 jmz
 #
-# $Id: Makefile,v 1.22 1997/01/06 21:40:46 ache Exp $
+# $Id: Makefile,v 1.8 1997/01/06 21:43:22 ache Exp $
 #
 
-DISTNAME=       unzip53
-PKGNAME=        unzip+crypt-5.3
+DISTNAME=       unzip-5.3
 CATEGORIES=	archivers
-MASTER_SITES=   ftp://ftp.icce.rug.nl/infozip/OLD/beta/
-DISTFILES=      unzip53.zip zcrypt27.zip
+MASTER_SITES=   ftp://ftp.cdrom.com/pub/infozip/src/
+DISTFILES=      unzip53.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
-
-RESTRICTED=	"This program can't be imported/re-exported from USA"
-EXTRACT_CMD=    unzip
-EXTRACT_ARGS=   -oq
-NO_WRKSUBDIR=   yes
+NO_WRKSUBDIR=   YES
 MAKEFILE=       unix/Makefile
 ALL_TARGET=     bsd
-MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS} -DUSE_SMITH_CODE -DUSE_UNSHRINK" -f
+MAKE_FLAGS=     LOCAL_UNZIP="${CFLAGS}" -f
 MAN1=           funzip.1 unzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 do-install:

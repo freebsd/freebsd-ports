@@ -1,8 +1,10 @@
 bin/unzip
-@exec ln -f %D/%F %B/zipinfo
+@exec ln -f %F %B/zipinfo
 bin/funzip
 bin/unzipsfx
+bin/zipgrep
 man/man1/funzip.1.gz
 man/man1/unzip.1.gz
 man/man1/unzipsfx.1.gz
+man/man1/zipgrep.1.gz
 man/man1/zipinfo.1.gz
