@@ -302,6 +302,7 @@
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
     SUBDIR += libtcp4u
+    SUBDIR += libtorrent
     SUBDIR += libunp
     SUBDIR += libunpipc
     SUBDIR += libvncserver
