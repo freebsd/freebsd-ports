@@ -12,14 +12,14 @@ MASTER_SITES=	http://www.kr.FreeBSD.org/~hwang/hanterm/
 PKGNAMESUFFIX=	-xf
 DISTNAME=	hanterm-xf-p18
 
-MAINTAINER=	cjh@kr.freebsd.org
+MAINTAINER=	cjh@FreeBSD.org
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
 
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--with-x --build=i386--freebsd --prefix=${PREFIX} \
-			--enable-16-color
+CONFIGURE_ARGS+=	--with-x --enable-16-color
+CONFIGURE_ENV+=		LIBS="-lxpg4"
 NO_INSTALL_MANPAGES=	yes
 
 post-install:
