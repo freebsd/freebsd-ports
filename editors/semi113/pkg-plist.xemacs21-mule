@@ -37,3 +37,5 @@
 %%EMACS_PACKAGESDIR%%/man/semi/mime-ui-en.texi
 %%EMACS_PACKAGESDIR%%/man/semi/mime-ui-ja.texi
 @dirrm %%EMACS_PACKAGESDIR%%/man/semi
+share/semi/%%SEMI_COOKIE%%
+@unexec /bin/rmdir %D/share/semi || true

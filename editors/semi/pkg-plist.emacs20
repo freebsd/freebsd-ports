@@ -31,3 +31,5 @@
 @unexec install-info --delete %D/info/mime-ui-en.info %D/info/dir
 info/mime-ui-en.info
 @exec install-info %D/info/mime-ui-en.info %D/info/dir
+share/semi/%%SEMI_COOKIE%%
+@unexec /bin/rmdir %D/share/semi || true
