@@ -3212,6 +3212,7 @@ honeyd		ports/net/honeyd
 hope		ports/lang/hope
 horde-passwd	ports/www/horde-passwd
 horde2		ports/www/horde2
+hostapd		ports/security/hostapd
 hostsentry	ports/security/hostsentry
 hot-babe	ports/deskutils/hot-babe
 hotjava		ports/www/hotjava
@@ -11324,6 +11325,7 @@ workrave	ports/x11/workrave
 worldtools	ports/sysutils/worldtools
 wots		ports/sysutils/wots
 wotsap		ports/misc/wotsap
+wpa_supplicant	ports/security/wpa_supplicant
 wping		ports/net/wping
 wprint		ports/print/wprint
 wput		ports/ftp/wput
