@@ -1,0 +1,20 @@
+*** /dev/null	Fri Sep 26 14:42:02 1997
+--- Makefile	Fri Sep 26 15:43:17 1997
+***************
+*** 0 ****
+--- 1,15 ----
++ all:
++ 	bdftopcf elisau10.bdf | compress > elisau10.pcf.Z
++ 	cp ${DISTDIR}/clR5x8.bdf .
++ 	patch --quiet < clR5x8-s5x8.diff
++ 	bdftopcf clR5x8.bdf |  compress > clR5x8.pcf.Z
++ 
++ install:
++ 	mkdir -p ${PREFIX}/lib/X11/fonts/misc
++ 	cp elisau10.pcf.Z ${PREFIX}/lib/X11/fonts/misc/
++ 	cp clR5x8.pcf.Z ${PREFIX}/lib/X11/fonts/misc/
++ 	cd ${PREFIX}/lib/X11/fonts/misc/ ; mkfontdir ; \
++ 	touch fonts.alias ; cp fonts.alias fonts.alias.orig ; \
++ 	(cat fonts.alias.orig ; \
++ 	echo "elisa -elisa-fixed-medium-r-normal--10-70-75-75-c-100-jisx0208.1983-0" ; echo "s5x8 -schumacher-descent2clean-medium-r-normal--8-80-75-75-c-50-iso646.1991-irv") > fonts.alias ; \
++ 	rm fonts.alias.orig

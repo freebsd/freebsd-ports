@@ -1,0 +1,6 @@
+Japanese 8 dot font named `elisa font'.
+
+You can use 'elisa' as an alias for elisau10.pcf.Z, and 's5x8' for s5x8.pcf.Z.
+
+A simple usage:
+	% kterm -fn s5x8 -fr s5x8 -fk elisa

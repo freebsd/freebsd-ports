@@ -1,0 +1,11 @@
+lib/X11/fonts/misc/elisau10.pcf.Z
+lib/X11/fonts/misc/clR5x8.pcf.Z
+share/doc/elisa8/elisa100.doc
+share/doc/elisa8/elisau10.doc
+share/doc/elisa8/hosoku.txt
+@exec cd %D/lib/X11/fonts/misc ; mkfontdir
+@exec  echo "Updating misc/fonts.alias"
+@exec cd %D/lib/X11/fonts/misc ; touch fonts.alias ; cp fonts.alias fonts.alias.orig ; (cat fonts.alias.orig ; echo "elisa -elisa-fixed-medium-r-normal--10-70-75-75-c-100-jisx0208.1983-0" ; echo "s5x8 -schumacher-descent2clean-medium-r-normal--8-80-75-75-c-50-iso646.1991-irv") > fonts.alias ; rm fonts.alias.orig
+@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
+@unexec echo "updating fonts.alias" ; cd %D/lib/X11/fonts/misc; cp fonts.alias fonts.alias.orig; grep -v 'elisa\-fixed\-medium\-r\-normal' fonts.alias.orig | grep -v 'schumacher\-descent2clean\-medium\-r\-normal' > fonts.alias; rm fonts.alias.orig
+@dirrm share/doc/elisa8
