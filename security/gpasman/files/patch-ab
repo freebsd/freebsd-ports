@@ -1,13 +1,14 @@
---- configure.orig	Thu May  6 05:46:20 1999
-+++ configure	Mon May 10 19:06:10 1999
-@@ -871,8 +871,8 @@
- done
- test -n "$strip" || strip="/usr/bin/strip"
+--- src/Makefile.in.orig	Sun Sep 19 13:56:52 1999
++++ src/Makefile.in	Sun Sep 19 13:57:20 1999
+@@ -26,9 +26,9 @@
  
--# Extract the first word of "gtk-config", so it can be a program name with args.
--set dummy gtk-config; ac_word=$2
-+# Extract the first word of "gtk12-config", so it can be a program name with args.
-+set dummy gtk12-config; ac_word=$2
- echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
- echo "configure:878: checking for $ac_word" >&5
- if eval "test \"`echo '$''{'ac_cv_path_GTKCONFIG'+set}'`\" = set"; then
+ 
+ CC = @CC@
+-CFLAGS = @DEFS@ @CFLAGS@ $(shell @GTKCONFIG@ --cflags)
++CFLAGS = @DEFS@ @CFLAGS@ `@GTKCONFIG@ --cflags`
+ LDFLAGS = @LDFLAGS@
+-LIBS = @LIBS@ $(shell @GTKCONFIG@ --libs)
++LIBS = @LIBS@ `@GTKCONFIG@ --libs`
+ INSTALL = @INSTALL@
+ 
+ SRCS = librc2.c file.c gpasman.c
