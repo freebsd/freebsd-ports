@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	codeville
-PORTVERSION=	0.1.9
+PORTVERSION=	0.1.10
 CATEGORIES=	devel python
 MASTER_SITES=	http://codeville.org/download/
 DISTNAME=	Codeville-${PORTVERSION}
