@@ -7,11 +7,15 @@
 
 PORTNAME=	sqlobject
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLObject-${PORTVERSION}
+
+PATCH_SITES=	http://www.comdongin.com/
+PATCHFILES=	sqlobject-0.6.1.patch
 
 MAINTAINER=	whitekid@gmail.com
 COMMENT=	A python object for manipulation with SQL table row

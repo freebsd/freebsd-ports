@@ -1,2 +1,4 @@
 MD5 (SQLObject-0.6.1.tar.gz) = 0dbb6ea429aa40eee734751ad48fbfbb
 SIZE (SQLObject-0.6.1.tar.gz) = 147871
+MD5 (sqlobject-0.6.1.patch) = 9be5cf6a70fd8acd4ea7eab17f4bf06b
+SIZE (sqlobject-0.6.1.patch) = 1829
