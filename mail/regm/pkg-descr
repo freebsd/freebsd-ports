@@ -1,0 +1,9 @@
+regm is a Python script to extract messages from a mbox-style
+mailbox using a regular expression.  There are advanced options to
+specify multiple regular expressions, different output formats,
+and more.
+
+WWW: http://perso.linuxfr.org/jdumont/regm/
+
+- Pete
+petef@databits.net
