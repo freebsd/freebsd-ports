@@ -1,0 +1,9 @@
+from the README:
+
+GNU Denemo is a graphical music notation program.  It is intended
+to be used in conjunction with GNU Lilypond.
+
+WWW:  http://www.gnu.org/software/denemo/denemo.html
+      http://denemo.sourceforge.net/
+
+Trevor Johnson <trevor@FreeBSD.org>
