@@ -18,9 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Multimedia applications for the GNOME 2.0 desktop
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
-LIB_DEPENDS=	gnome-desktop-2.3:${PORTSDIR}/x11/gnomedesktop \
-		gailutil.17:${PORTSDIR}/x11-toolkits/gail \
-		gstplay-0.6.0:${PORTSDIR}/multimedia/gstreamer-plugins
+LIB_DEPENDS=	gstplay-0.6.0:${PORTSDIR}/multimedia/gstreamer-plugins
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -28,10 +26,9 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier
+USE_GNOME=	gnomeprefix gnomehack gnomehier gail gnomedesktop
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
