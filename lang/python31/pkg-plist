@@ -2382,6 +2382,9 @@ lib/%%PYTHON_VERSION%%/test/test_userstring.pyo
 lib/%%PYTHON_VERSION%%/test/test_uu.py
 lib/%%PYTHON_VERSION%%/test/test_uu.pyc
 lib/%%PYTHON_VERSION%%/test/test_uu.pyo
+lib/%%PYTHON_VERSION%%/test/test_warnings.py
+lib/%%PYTHON_VERSION%%/test/test_warnings.pyc
+lib/%%PYTHON_VERSION%%/test/test_warnings.pyo
 lib/%%PYTHON_VERSION%%/test/test_wave.py
 lib/%%PYTHON_VERSION%%/test/test_wave.pyc
 lib/%%PYTHON_VERSION%%/test/test_wave.pyo
@@ -2983,7 +2986,6 @@ lib/%%PYTHON_VERSION%%/zipfile.pyo
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/suff.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/texcheck.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/texi2html.py
-%%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/trace.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/treesync.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/untabify.py
 %%PORTDOCS%%share/%%PYTHON_VERSION%%/Tools/scripts/which.py
