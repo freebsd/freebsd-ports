@@ -7,7 +7,7 @@
 
 PORTNAME=	xdeview
 PORTVERSION=	0.5.18
-CATEGORIES=	converters tk83
+CATEGORIES=	converters tcl84 tk84
 MASTER_SITES=	http://www.fpx.de/fp/Software/UUDeview/download/
 DISTNAME=	uudeview-${PORTVERSION}
 
@@ -15,7 +15,7 @@ MAINTAINER=	hoek@FreeBSD.org
 COMMENT=	An X11 program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
 LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib \
-		tk83.1:${PORTSDIR}/x11-toolkits/tk83
+		tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 GNU_CONFIGURE=	yes
 # Explicitly disable Tcl otherwise the configure script picks-up
@@ -23,9 +23,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tcl --disable-tk
 # Season to taste --- anything better or equal to tcl8.0 is probably okay
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib \
-			-lX11 -ltcl83 -ltk83 -lm" \
-		CPPFLAGS="-I${LOCALBASE}/include/tcl8.3 -DHAVE_TCL \
-			-I${LOCALBASE}/include/tk8.3 -DHAVE_TK \
+			-lX11 -ltcl84 -ltk84 -lm" \
+		CPPFLAGS="-I${LOCALBASE}/include/tcl8.4 -DHAVE_TCL \
+			-I${LOCALBASE}/include/tk8.4 -DHAVE_TK \
 			-I${X11BASE}/include"
 
 ALL_TARGET=	xdeview
