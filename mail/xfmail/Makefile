@@ -8,9 +8,9 @@
 PORTNAME=	xfmail
 PORTVERSION=	1.5.3
 CATEGORIES=	mail
-MASTER_SITES=	ftp://xfmail.ufies.org/pub/xfmail/release/%SUBDIR%/	       \
-		ftp://cupido.geophys.nat.tu-bs.de/pub/xfmail/release/%SUBDIR%/ \
-		ftp://ftp.cfreeze.com/pub/xfmail/release/%SUBDIR%/
+MASTER_SITES=	ftp://xfmail.cfreeze.com/pub/xfmail/release/%SUBDIR%/	\
+		ftp://cupido.geophys.nat.tu-bs.de/pub/xfmail/release/%SUBDIR%/	\
+		ftp://xfmail.ufies.org/pub/xfmail/release/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 
 MAINTAINER=	mikeh@FreeBSD.org
