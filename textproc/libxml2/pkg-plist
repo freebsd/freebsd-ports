@@ -18,6 +18,7 @@ include/libxml2/libxml/nanoftp.h
 include/libxml2/libxml/nanohttp.h
 include/libxml2/libxml/parser.h
 include/libxml2/libxml/parserInternals.h
+include/libxml2/libxml/schemasInternals.h
 include/libxml2/libxml/threads.h
 include/libxml2/libxml/tree.h
 include/libxml2/libxml/uri.h
@@ -25,8 +26,13 @@ include/libxml2/libxml/valid.h
 include/libxml2/libxml/xinclude.h
 include/libxml2/libxml/xlink.h
 include/libxml2/libxml/xmlIO.h
+include/libxml2/libxml/xmlautomata.h
 include/libxml2/libxml/xmlerror.h
 include/libxml2/libxml/xmlmemory.h
+include/libxml2/libxml/xmlregexp.h
+include/libxml2/libxml/xmlschemas.h
+include/libxml2/libxml/xmlschemastypes.h
+include/libxml2/libxml/xmlunicode.h
 include/libxml2/libxml/xmlversion.h
 include/libxml2/libxml/xmlwin32version.h
 include/libxml2/libxml/xpath.h
