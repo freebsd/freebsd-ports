@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3e4ffe76-e0d4-11d8-9b0a-000347a4fa7d">
+    <topic>SoX buffer overflows when handling .WAV files</topic>
+    <affects>
+      <package>
+        <name>sox</name>
+        <range><gt>12.17.1</gt><le>12.17.4_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ulf Härnhammar discovered a pair of buffer overflows in the
+	  WAV file handling code of SoX.  If an attacker can cause her
+	  victim to process a specially-crafted WAV file with SoX (e.g.
+	  through social engineering or through some other program that
+	  relies on SoX), arbitrary code can be executed with the
+	  privileges of the victim.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0557</cvename>
+      <url>http://archives.neohapsis.com/archives/vulnwatch/2004-q3/0014.html</url>
+      <url>http://secunia.com/advisories/12175</url>
+      <url>http://www.osvdb.org/8267</url>
+    </references>
+    <dates>
+      <discovery>2004-07-28</discovery>
+      <entry>2004-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2797b27a-f55b-11d8-81b0-000347a4fa7d">
     <topic>kdelibs -- konqueror cross-domain cookie injection</topic>
     <affects>
