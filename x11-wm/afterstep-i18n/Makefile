@@ -27,14 +27,15 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
 
+RUN_DEPENDS=	asclock:${PORTSDIR}/x11-clocks/asclock
+
 DIST_SUBDIR=	afterstep
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.man
 MANCOMPRESSED=	yes
-MAN1=		afterstep.1 asclock.1 Animate.1 Audio.1 Auto.1 Banner.1 \
-		Pager.1 Wharf.1
+MAN1=		afterstep.1 Animate.1 Audio.1 Auto.1 Banner.1 Pager.1 Wharf.1
 AFTERSTEPDIR=	${PREFIX}/lib/X11/afterstep
 ICONDIR=	${PREFIX}/include/X11/pixmaps
 

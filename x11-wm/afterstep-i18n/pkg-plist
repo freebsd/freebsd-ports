@@ -1,5 +1,4 @@
 bin/afterstep
-bin/asclock
 lib/X11/afterstep/Animate
 lib/X11/afterstep/Audio
 lib/X11/afterstep/Auto

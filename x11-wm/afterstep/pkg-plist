@@ -1,5 +1,4 @@
 bin/afterstep
-bin/asclock
 include/X11/pixmaps/3dpaint.xpm
 include/X11/pixmaps/AFstep.xpm
 include/X11/pixmaps/AfterStep.xpm
