@@ -9,7 +9,7 @@
 
 PORTNAME=	mcrypt
 PORTVERSION=	2.6.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://argeas.cs-net.gr/pub/unix/mcrypt/attic/ \
@@ -22,8 +22,6 @@ COMMENT=	Replacement for crypt(1)
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/
-
-BROKEN=		Incomplete pkg-plist
 
 WANT_AUTOCONF_VER=	259
 USE_GETTEXT=		yes
@@ -46,6 +44,8 @@ pre-install:
 	${ECHO_CMD} bin/${PORTNAME} > ${PLIST}
 .for i in cs de el es_AR pl
 	${ECHO_CMD} share/locale/${i}/LC_MESSAGES/mcrypt.mo >> ${PLIST}
+	${ECHO_CMD} @unexec rmdir %D/share/locale/${i}/LC_MESSAGES '2>/dev/null | true' >> ${PLIST}
+	${ECHO_CMD} @unexec rmdir %D/share/locale/${i} '2>/dev/null | true' >> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
 	${ECHO_CMD} share/examples/${PORTNAME}/sample.mcryptrc >> ${PLIST}
