@@ -17,6 +17,7 @@ MASTER_SITE_SUBDIR=	experimental/alpha/stages
 DISTNAME=	stage1-alpha-20030721
 .endif
 .if (${PORTARCH} == "amd")
+BROKEN=	"unfetchable, will be updated later"
 MASTER_SITE_SUBDIR=	experimental/amd64/stages
 DISTNAME=	stage1-amd64-20030728
 .endif
@@ -25,6 +26,7 @@ MASTER_SITE_SUBDIR=	experimental/ia64
 DISTNAME=		stage1-ia64-20030912
 .endif
 .if (${PORTARCH} == "i386")
+BROKEN=	"unfetchable, will be updated later"
 MASTER_SITE_SUBDIR=	releases/x86/${PORTVERSION}/stages/x86
 DISTNAME=	stage1-x86-1.4-20030806
 .endif
