@@ -7,22 +7,33 @@
 #
 
 PORTNAME=	dbconnect
-PORTVERSION=	0.2.4
+PORTVERSION=	0.3.4
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sem@ciam.ru
 COMMENT=	Use C++ object API to allow applications to connect to databases
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_AUTOCONF_VER=	257
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+INSTALLS_SHLIB=	yes
 
-.if defined(WITH_MYSQL)
+CXXFLAGS+=	${PTHREAD_CFLAGS} -fPIC -DFREEBSD
+LDFLAG+=	${PTHREAD_LIBS}
+
+OPTIONS=	MYSQL "With MySQL driver" on \
+		PGSQL "With PostgreSQL driver" off
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_MYSQL)
 USE_MYSQL=		YES
-CONFIGURE_ARGS+=	--with-mysql=yes \
-			--with-mysqlinclude=${LOCALBASE}/include/mysql \
-			--with-mysqllib=${LOCALBASE}/lib/mysql
+CONFIGURE_ARGS+=	--enable-mysql=yes \
+			--with-mysql_include=${LOCALBASE}/include/mysql \
+			--with-mysql_lib=${LOCALBASE}/lib/mysql
 PLIST_SUB+=	MYSQL=""
 .else
 PLIST_SUB+=	MYSQL="@comment "
@@ -30,28 +41,27 @@ PLIST_SUB+=	MYSQL="@comment "
 
 .if defined(WITH_PGSQL)
 LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql7
-CONFIGURE_ARGS+=	--with-pgsql=yes \
-			--with-pgsqlinclude=${LOCALBASE}/include \
-			--with-pgsqllib=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--enable-pgsql=yes \
+			--with-pgsql_include=${LOCALBASE}/include \
+			--with-pgsql_lib=${LOCALBASE}/lib
 PLIST_SUB+=	PGSQL=""
 .else
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
-.if defined(WITH_UNIXODBC)
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=	--with-unixodbc=yes \
-			--with-unixodbcinclude=${LOCALBASE}/include \
-			--with-unixodbclib=${LOCALBASE}/lib
-PLIST_SUB+=	UNIXODBC=""
-.else
-PLIST_SUB+=	UNIXODBC="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|g++|${CXX}|g ; \
-		 s|@CFLAGS@|${CXXFLAGS} -fPIC|g ; \
-		 s|gcc|${CXX}|g ; \
-		 s|cp -f \.|${INSTALL_DATA} .|g' ${WRKSRC}/Makefile.in
+	@${RM} -f ${WRKSRC}/include/dbconn/README
 
-.include <bsd.port.mk>
+do-install:
+	@cd ${WRKSRC}; \
+	${CP} -r include/dbconn ${PREFIX}/include/; \
+	for lib in `find lib -type l -name *.so`; do \
+		libpath=`${DIRNAME} $${lib}`; \
+		libname=`${BASENAME} $${lib}|${SED} -e 's/\.so$$//'`; \
+		${INSTALL_DATA} $${libpath}/$${libname}-${PORTVERSION}.so \
+			${PREFIX}/lib; \
+		(cd ${PREFIX}/lib; ${LN} -fs $${libname}-${PORTVERSION}.so \
+			$${libname}.so); \
+	done
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,11 @@
+--- configure.in.orig	Fri Mar  5 22:34:26 2004
++++ configure.in	Fri Mar  5 22:34:40 2004
+@@ -76,8 +76,6 @@
+                  [AC_MSG_ERROR([Unable to find required header file])])
+ 
+ AC_C_BIGENDIAN
+-FIND_DYN_LIB(pthread, pthread_create)
+-FIND_DYN_LIB(dl, dlopen)
+ 
+ 
+ dnl Checks for Programs.
