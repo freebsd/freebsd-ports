@@ -39,6 +39,10 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 CFLAGS+=	-DMIX_ANSI_IOSTREAMS -fpermissive
 .endif
 
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/mixkit/src/getopt.h
 
