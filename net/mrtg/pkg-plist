@@ -4,8 +4,8 @@ bin/indexmaker
 bin/mrtg
 bin/rateup
 etc/mrtg/mrtg.cfg-dist
-lib/perl5/site_perl/BER.pm
-lib/perl5/site_perl/SNMP_Session.pm
+lib/perl5/site_perl/%%PERL_VER%%/BER.pm
+lib/perl5/site_perl/%%PERL_VER%%/SNMP_Session.pm
 share/mrtg/mrtg-l.gif
 share/mrtg/mrtg-m.gif
 share/mrtg/mrtg-r.gif
