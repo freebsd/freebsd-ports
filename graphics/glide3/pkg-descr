@@ -1,0 +1,9 @@
+This library is necessary in order to build XFree86's 3dfx DRI/DRM shim
+(lib/modules/dri/tdfx_dri.so). It probably has other uses as well. :-)
+
+The main distfile is unofficial. It was created by simply checking out
+from CVS and tarring up the result on the date indicated in the filename.
+This was done simply to make the port easier to deal with.
+
+You will need to make sure to get the configure options right for the hardware
+you will be using. This is left as an exercise to the reader. :-)

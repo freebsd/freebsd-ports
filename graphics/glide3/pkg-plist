@@ -1,0 +1,12 @@
+lib/libglide3.so.13
+lib/libglide3.so
+lib/libglide3.a
+include/glide3/3dfx.h
+include/glide3/linutil.h
+include/glide3/texus.h
+include/glide3/sst1vid.h
+include/glide3/g3ext.h
+include/glide3/glide.h
+include/glide3/glideutl.h
+include/glide3/glidesys.h
+@dirrm include/glide3
