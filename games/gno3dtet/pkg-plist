@@ -5,5 +5,17 @@ share/gnome/help/gno3dtet/C/gno3dtet.html
 share/gnome/help/gno3dtet/C/copying.html
 share/pixmaps/gno3dtet.png
 var/games/gno3dtet.hof
+share/sounds/gno3dtet/danger.wav
+share/sounds/gno3dtet/fall.wav
+share/sounds/gno3dtet/hof.wav
+share/sounds/gno3dtet/land.wav
+share/sounds/gno3dtet/layer.wav
+share/sounds/gno3dtet/level.wav
+share/sounds/gno3dtet/move.wav
+share/sounds/gno3dtet/new.wav
+share/sounds/gno3dtet/pause.wav
+share/sounds/gno3dtet/score.wav
+share/sounds/gno3dtet/screwd.wav
 @dirrm share/gnome/help/gno3dtet/C
 @dirrm share/gnome/help/gno3dtet
+@dirrm share/sounds/gno3dtet
