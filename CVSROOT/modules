@@ -1832,6 +1832,7 @@ games_crimson	ports/games/crimson
 ganglia-monitor-core	ports/sysutils/ganglia-monitor-core
 gap		ports/math/gap
 garith		ports/games/garith
+garlic		ports/biology/garlic
 gate		ports/editors/gate
 gatekeeper	ports/net/gatekeeper
 gauche		ports/lang/gauche
