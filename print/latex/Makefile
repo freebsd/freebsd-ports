@@ -10,7 +10,7 @@ VERSION=	99.12
 DISTNAME=	latex
 PKGNAME=	latex2e-${VERSION}
 CATEGORIES=     print
-MASTER_SITES=   ftp://ftp.cdrom.com/pub/tex/package/
+MASTER_SITES=   ftp://ftp.freesoftware.com/pub/tex/package/
 DISTFILES=	latex_mf-${VERSION}.tar.gz latex_tfm-${VERSION}.tar.gz \
 		latex_base-${VERSION}.tar.gz latex_tools-${VERSION}.tar.gz \
 		latex_graphics-${VERSION}.tar.gz latex_psnfss-${VERSION}.tar.gz
