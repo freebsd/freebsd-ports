@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	winhelpcgi
-PORTVERSION=	0.99
+PORTVERSION=	1.0r3
 CATEGORIES=	www textproc
 MASTER_SITES=	http://www.herdsoft.com/ftp/
-DISTNAME=	${PORTNAME}_0.99-3
+DISTNAME=	${PORTNAME}_1.0rc3-1
 
 MAINTAINER=	endx7@users.sf.net
 COMMENT=	A winhelp converter cgi program
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.0rc3
 GNU_CONFIGURE=	yes
 USE_AUTOMAKE_VER=	14
 USE_GETTEXT=		yes
+USE_APACHE=		yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-pre-patch:
-	(cd ${WRKSRC}; ${TOUCH} config.h)
 
 post-build:
 	@${CAT} ${PKGDIR}/pkg-message | ${SED} -e 's:%%PREFIX%%:${PREFIX}:' > ${PKGMESSAGE}
