@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/rep/${ARCH}--freebsd${OSREL}/libgtk.so:${PORTS
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
-PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} ${VERSION}
+PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} VERSION=${VERSION}
 VERSION=	0.24
 
 USE_X_PREFIX=	yes
