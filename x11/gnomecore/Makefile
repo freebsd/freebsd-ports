@@ -15,7 +15,8 @@ DISTNAME=	gnome-core-${PORTVERSION}
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	capplet.4:${PORTSDIR}/sysutils/gnomecontrolcenter \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		xml.5:${PORTSDIR}/textproc/libxml
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
