@@ -1,0 +1,11 @@
+--- cdromlow.c.orig	Sun Apr  8 11:30:36 2001
++++ cdromlow.c	Sun Apr  8 11:30:39 2001
+@@ -323,7 +323,7 @@
+ #ifndef __FreeBSD__
+ 	if (track.cdte_ctrl&CDROM_DATA_TRACK)
+ #else
+-	  if (entry.entry.control & CDROM_DATA_TRACK)
++	  if (track.entry.control & CDROM_DATA_TRACK)
+ #endif
+ 	    result=TRACKTYPE_DATA;
+ 	else

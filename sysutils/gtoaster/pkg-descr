@@ -1,5 +1,3 @@
-description from freshmeat.net -
-
 Gnometoaster is a full CD creation suite for X11 and GNOME. It can be used to
 copy and create data, audio, and mixed mode CDs on the fly or with precaching
 in both TAO and DAO mode. Data tracks can easily be created with the built-in
@@ -7,3 +5,5 @@ file manager. GNOME drag-and-drop is supported throughout the program.
 Gnometoaster can also write mp3 files on the fly, it is fully multisession
 capable, and can be used to encode all sorts of filetypes directly from audio
 tracks on a CD.
+
+WWW: http://gnometoaster.rulez.org/
