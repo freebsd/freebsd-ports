@@ -1,0 +1,35 @@
+--- Makefile.orig	Wed Dec 20 00:57:35 2000
++++ Makefile	Wed Dec 20 00:59:15 2000
+@@ -10,12 +10,12 @@
+ # debugging
+ # DFLAGS = -DTEST -DDEBUG
+ DFLAGS = -DGAPING_SECURITY_HOLE
+-CFLAGS = -O
++CFLAGS ?= -O
+ XFLAGS = 	# xtra cflags, set by systype targets
+ XLIBS =		# xtra libs if necessary?
+ # -Bstatic for sunos,  -static for gcc, etc.  You want this, trust me.
+ STATIC =
+-CC = cc $(CFLAGS)
++CC ?= cc
+ LD = $(CC) -s	# linker; defaults to stripped executables
+ o = o		# object extension
+ 
+@@ -29,7 +29,7 @@
+ ### HARD TARGETS
+ 
+ cryptcat:	netcat.c farm9crypt.o twofish2.o
+-	$(LD) $(DFLAGS) $(XFLAGS) $(STATIC) -o cryptcat netcat.c farm9crypt.o twofish2.o $(XLIBS)
++	$(LD) $(CFLAGS) $(DFLAGS) $(XFLAGS) $(STATIC) -o cryptcat netcat.c farm9crypt.o twofish2.o $(XLIBS)
+ 
+ nc-dos:
+ 	@echo "DOS?!  Maybe someday, but not now"
+@@ -82,7 +82,7 @@
+ 
+ # virtually the same as netbsd/bsd44lite/whatever
+ freebsd:
+-	make -e $(ALL) $(MFLAGS) XFLAGS='-DFREEBSD' STATIC=-static
++	make -e $(ALL) $(MFLAGS) XFLAGS='-DFREEBSD -DGAPING_SECURITY_HOLE -DTELNET' STATIC=-static
+ 
+ bsdi:
+ 	make -e $(ALL) $(MFLAGS) XFLAGS='-DBSDI' STATIC=-Bstatic

@@ -47,6 +47,7 @@
     SUBDIR += coda_server
     SUBDIR += crescendo
     SUBDIR += cricket
+    SUBDIR += cryptcat
     SUBDIR += cvsup
     SUBDIR += cvsup-bin
     SUBDIR += cvsup-mirror
