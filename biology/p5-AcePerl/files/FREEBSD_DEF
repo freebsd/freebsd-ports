@@ -8,10 +8,10 @@
 #####   following the explanations given in wmake/truemake  #####
 #################################################################
 
-CFLAGS+= -g -Wall -O2 -DACEDB4
 NAME = FREEBSD
-COMPILER = gcc ${CFLAGS}
-LINKER = gcc -g
+CFLAGS+= -g -Wall -O2 -DACEDB4
+COMPILER = XX__CC__XX ${CFLAGS}
+LINKER = XX__CC__XX -g
 
 LIBS = -lm
 Xt_LIBS = -L/usr/X11R6/lib -lXaw -lXt -lXmu -lXext -lX11
