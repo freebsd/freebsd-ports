@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.32 1998/10/07 21:57:56 asami Exp $
+# $Id: Makefile,v 1.33 1998/10/08 23:51:59 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -62,7 +62,7 @@ EMACS_EXECUTABLE =	mule
 CONFIGURE_ARGS=	i386--freebsd --with-executable=${EMACS_EXECUTABLE} \
 		--with-emacs-prefix=${EMACS_PREFIX} \
 		--with-terminal-face \
-		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib \
+		--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
 STRIP=
 MAN1=		coco.1 ctags.1 etags.1 m2ps.1 emacs.1 mule.1
 
