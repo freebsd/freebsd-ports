@@ -1,8 +1,17 @@
 $FreeBSD$
 
---- src/bubblemon.c.orig	Mon Jul 22 10:19:32 2002
-+++ src/bubblemon.c	Sun May  4 16:31:56 2003
-@@ -170,7 +170,7 @@
+--- src/bubblemon.c.orig	Sun Oct 27 07:45:31 2002
++++ src/bubblemon.c	Wed Jun 18 03:35:13 2003
+@@ -169,7 +169,7 @@ const char *bubblemon_getTooltip(void)
+   if (sysload.swapSize > 0)
+   {
+     usage2string(swapstring, sysload.swapUsed, sysload.swapSize);
+-    snprintf(loadstring, 90,
++    snprintf(loadstring, sizeof loadstring,
+ 	     _("\nSwap used: %s"),
+ 	     swapstring);
+     strcat(tooltipstring, loadstring);
+@@ -177,7 +177,7 @@ const char *bubblemon_getTooltip(void)
  
    if (sysload.nCpus == 1)
      {
@@ -11,7 +20,7 @@ $FreeBSD$
                 _("\nCPU load: %d%%"),
                 bubblemon_getCpuLoadPercentage(0));
        strcat(tooltipstring, loadstring);
-@@ -181,7 +181,7 @@
+@@ -188,7 +188,7 @@ const char *bubblemon_getTooltip(void)
             cpu_number < sysload.nCpus;
             cpu_number++)
          {
