@@ -84,6 +84,7 @@ include/ray++/worlds/scene.h
 include/ray++/worlds/hmakers/hmaker.h
 include/ray++/worlds/hmakers/pov_hmaker.h
 include/ray++/worlds/hmakers/sort_entry.h
+lib/ray++.so
 @dirrm include/ray++/cameras
 @dirrm include/ray++/config
 @dirrm include/ray++/kernel
