@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	patchutils
-PORTVERSION=	0.2.22
-PORTREVISION=	1
+PORTVERSION=	0.2.23
 CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
@@ -17,6 +16,7 @@ COMMENT=	A small collection of programs that operate on patch files
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
+USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
@@ -25,9 +25,7 @@ MAN1=	combinediff.1 dehtmldiff.1 editdiff.1 espdiff.1 filterdiff.1 \
 	rediff.1 splitdiff.1 unwrapdiff.1
 
 post-patch:
-	@${PERL} -pi.bak -e "s,#!/bin/bash,#!/bin/sh," \
-		${WRKSRC}/dehtmldiff.in \
-		${WRKSRC}/editdiff.in \
-		${WRKSRC}/move-to-front
+	@${GREP} -lR "#!/bin/bash" ${WRKSRC} | ${XARGS} ${PERL} -pi.bak -e \
+		"s,#!/bin/bash,#!/bin/sh,"
 
 .include <bsd.port.mk>
