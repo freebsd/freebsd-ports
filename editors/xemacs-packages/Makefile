@@ -6,43 +6,43 @@
 #
 
 PORTNAME=	xemacs-packages
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	packages
 DISTFILES=	\
-		apel-1.18-pkg.tar.gz \
-		auctex-1.21-pkg.tar.gz \
-		c-support-1.14-pkg.tar.gz \
-		cc-mode-1.20-pkg.tar.gz \
-		debug-1.11-pkg.tar.gz \
-		dired-1.07-pkg.tar.gz \
-		edit-utils-1.52-pkg.tar.gz \
-		efs-1.20-pkg.tar.gz \
+		apel-1.19-pkg.tar.gz \
+		auctex-1.22-pkg.tar.gz \
+		c-support-1.15-pkg.tar.gz \
+		cc-mode-1.21-pkg.tar.gz \
+		debug-1.12-pkg.tar.gz \
+		dired-1.08-pkg.tar.gz \
+		edit-utils-1.53-pkg.tar.gz \
+		efs-1.21-pkg.tar.gz \
 		fsf-compat-1.07-pkg.tar.gz \
-		hm--html-menus-1.14-pkg.tar.gz \
-		ispell-1.19-pkg.tar.gz \
-		mail-lib-1.30-pkg.tar.gz \
-		mailcrypt-2.04-pkg.tar.gz \
-		net-utils-1.13-pkg.tar.gz \
-		os-utils-1.23-pkg.tar.gz \
-		pcl-cvs-1.49-pkg.tar.gz \
-		prog-modes-1.29-pkg.tar.gz \
-		ps-print-nomule-1.03-pkg.tar.gz \
-		psgml-1.19-pkg.tar.gz \
-		sgml-1.06-pkg.tar.gz \
+		hm--html-menus-1.15-pkg.tar.gz \
+		ispell-1.21-pkg.tar.gz \
+		mail-lib-1.33-pkg.tar.gz \
+		mailcrypt-2.06-pkg.tar.gz \
+		net-utils-1.14-pkg.tar.gz \
+		os-utils-1.24-pkg.tar.gz \
+		pcl-cvs-1.50-pkg.tar.gz \
+		prog-modes-1.30-pkg.tar.gz \
+		ps-print-nomule-1.04-pkg.tar.gz \
+		psgml-1.20-pkg.tar.gz \
+		sgml-1.07-pkg.tar.gz \
 		sh-script-1.12-pkg.tar.gz \
 		texinfo-1.19-pkg.tar.gz \
-		text-modes-1.25-pkg.tar.gz \
-		time-1.09-pkg.tar.gz \
-		vc-1.23-pkg.tar.gz \
-		viper-1.21-pkg.tar.gz \
-		w3-1.15-pkg.tar.gz \
-		xemacs-base-1.43-pkg.tar.gz \
-		xemacs-devel-1.28-pkg.tar.gz
+		text-modes-1.28-pkg.tar.gz \
+		time-1.10-pkg.tar.gz \
+		vc-1.24-pkg.tar.gz \
+		viper-1.22-pkg.tar.gz \
+		w3-1.16-pkg.tar.gz \
+		xemacs-base-1.46-pkg.tar.gz \
+		xemacs-devel-1.30-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xemacs-packages
@@ -68,7 +68,7 @@ post-install:
 	@${ECHO_MSG} "XEmacs packages except for xemacs-packages, xemacs-mule-basic-packages and"
 	@${ECHO_MSG} "xemacs-additional-packages. Where xemacs-additional-packages is a meta ports for"
 	@${ECHO_MSG} "packages out of xemacs, xemacs mule-basic and xemacs mule category packages."
-	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packes'"
+	@${ECHO_MSG} "    You can also install with running it as root and using the 'Manage Packages'"
 	@${ECHO_MSG} "menu within the 'Options' menu of the menubar. But using this xemacs package"
 	@${ECHO_MSG} "managing, you could not control under ports managing ;-)"
 
