@@ -20,6 +20,8 @@ MAINTAINER=	narvi@haldjas.folklore.ee
 GNU_CONFIGURE=	yes
 #NOPROFILE=	true
 
+BROKEN=		"Compiler error"
+
 post-configure:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
