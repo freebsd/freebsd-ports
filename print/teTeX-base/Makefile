@@ -7,6 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -39,7 +40,8 @@ CONFIGURE_ARGS=	--disable-multiplatform \
 		--with-t1lib-include=${LIBT1_PREFIX}/include
 CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} TEXMFCNF=${TEXMFCNF}
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
 PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
