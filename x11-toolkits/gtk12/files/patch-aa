@@ -1,5 +1,5 @@
 --- Makefile.in.orig	Sat Oct 31 18:05:09 1998
-+++ Makefile.in	Mon Nov  2 23:45:35 1998
++++ Makefile.in	Tue Nov 10 23:27:32 1998
 @@ -97,7 +97,7 @@
  SRC_SUBDIRS = gdk gtk
  SUBDIRS = $(SRC_SUBDIRS) docs
@@ -49,7 +49,7 @@
  
  uninstall: uninstall-recursive uninstall-am
 --- docs/Makefile.in.orig	Sat Oct 31 18:05:18 1998
-+++ docs/Makefile.in	Mon Nov  2 23:45:35 1998
++++ docs/Makefile.in	Tue Nov 10 23:27:32 1998
 @@ -96,7 +96,7 @@
  
  info_TEXINFOS = gdk.texi gtk.texi 
@@ -93,7 +93,7 @@
  distclean:  distclean-aminfo distclean-generic clean
  	-rm -f config.status
 --- gdk/Makefile.in.orig	Sat Oct 31 18:05:12 1998
-+++ gdk/Makefile.in	Mon Nov  2 23:46:22 1998
++++ gdk/Makefile.in	Tue Nov 10 23:27:47 1998
 @@ -96,9 +96,9 @@
  
  gdkincludedir = $(includedir)/gdk
@@ -128,15 +128,6 @@
  gdkdraw.lo gdkfont.lo gdkgc.lo gdkglobals.lo gdkimage.lo gdkinput.lo \
  gdkpixmap.lo gdkproperty.lo gdkrgb.lo gdkrectangle.lo gdkregion.lo \
  gdkselection.lo gdkthreads.lo gdkvisual.lo gdkwindow.lo gdkxid.lo \
-@@ -185,7 +185,7 @@
- gxid_OBJECTS =  gxid.o
- gxid_DEPENDENCIES = 
- gxid_LDFLAGS = 
--CFLAGS = @CFLAGS@
-+CFLAGS = @CFLAGS@ -DX_LOCALE
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
- LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
 @@ -198,8 +198,8 @@
  
  TAR = tar
@@ -160,7 +151,7 @@
  mostlyclean-binPROGRAMS:
  
 --- gtk/Makefile.in.orig	Sat Oct 31 18:05:14 1998
-+++ gtk/Makefile.in	Tue Nov  3 00:08:14 1998
++++ gtk/Makefile.in	Tue Nov 10 23:28:11 1998
 @@ -98,9 +98,9 @@
  
  gtkincludedir = $(includedir)/gtk
@@ -212,15 +203,6 @@
  gtkalignment.lo gtkarg.lo gtkarrow.lo gtkaspectframe.lo gtkbin.lo \
  gtkbindings.lo gtkbbox.lo gtkbox.lo gtkbutton.lo gtkcalendar.lo \
  gtkcheckbutton.lo gtkcheckmenuitem.lo gtkclist.lo gtkcolorsel.lo \
-@@ -458,7 +458,7 @@
- simple_SOURCES = simple.c
- simple_OBJECTS =  simple.o
- simple_LDFLAGS = 
--CFLAGS = @CFLAGS@
-+CFLAGS = @CFLAGS@ -DX_LOCALE
- COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
- LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
- LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
 @@ -471,10 +471,10 @@
  
  TAR = tar
