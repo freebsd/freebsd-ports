@@ -1,12 +1,14 @@
---- vfs/Make-mc.in.orig	Wed Mar 14 20:05:53 2001
-+++ vfs/Make-mc.in	Wed Mar 28 18:11:44 2001
-@@ -20,3 +20,3 @@
+
+$FreeBSD$
+
+--- vfs/Make-mc.in.orig	Wed Aug  1 19:15:22 2001
++++ vfs/Make-mc.in	Tue Sep 11 18:20:08 2001
+@@ -18,7 +18,7 @@
+ DEFS     = $(XDEFS)
+ LIBS     = @SHADOWLIB@ $(XLIBS) @TERMNET@ @PAMLIBS@ @LCRYPT@ $(XLIB)
  INSTALL  = @INSTALL@
 -INSTALL_PROGRAM = @INSTALL_PROGRAM@ -m 755
 +INSTALL_PROGRAM = @INSTALL_PROGRAM@
  INSTALL_DATA = @INSTALL_DATA@
-@@ -242,4 +242,2 @@
- install_mcserv:
--	$(mkinstalldirs) $(DESTDIR)$(bindir)
--	$(INSTALL_PROGRAM) mcserv $(DESTDIR)$(bindir)/$(binprefix)mcserv
+ AR = @AR@
  

@@ -1,49 +1,25 @@
---- Makefile.in.orig	Sun Mar 18 12:20:52 2001
-+++ Makefile.in	Wed Mar 28 18:16:22 2001
-@@ -159,3 +159,3 @@
+
+$FreeBSD$
+
+--- Makefile.in.orig	Fri Aug 24 11:05:06 2001
++++ Makefile.in	Tue Sep 11 18:25:56 2001
+@@ -155,8 +155,8 @@
+ smbfs = @smbfs@
+ undelfs_o = @undelfs_o@
  
--SUBDIRS = vfs lib doc slang gtkedit edit src gnome new_icons 	idl syntax intl doc-gnome po pc
-+SUBDIRS = vfs lib gtkedit gnome new_icons idl syntax intl po
+-SUBDIRS = intl po vfs slang edit src lib doc syntax pc \
+-	gtkedit gnome new_icons idl doc-gnome
++SUBDIRS = intl po vfs lib syntax pc \
++	gtkedit gnome new_icons idl
  
-@@ -174,3 +174,3 @@
+ 
+ ACLOCAL_AMFLAGS = -I macros
+@@ -181,7 +181,7 @@
  CONFIG_HEADER = config.h
--CONFIG_CLEAN_FILES =  Make.common mc.spec mcfn_install
-+CONFIG_CLEAN_FILES =  Make.common mc.spec
- DATA =  $(noinst_DATA)
---- lib/Makefile.in.orig	Sun Mar 18 12:20:57 2001
-+++ lib/Makefile.in	Wed Mar 28 18:19:55 2001
-@@ -161,4 +161,2 @@
- desktopdir = $(mclibdir)/desktop-scripts
--suppbindir = $(mclibdir)/bin
--tidir = $(mclibdir)/term
- confdir = $(sysconfdir)
-@@ -176,5 +174,3 @@
- conf_DATA = mc.global
--suppbin_SCRIPTS = mc.csh mc.sh
- desktop_DATA = startup.links README.desktop
--ti_DATA = README.xterm linux.ti xterm.ad xterm.ti ansi.ti vt100.ti xterm.tcap
- 
-@@ -188,6 +184,5 @@
- CONFIG_CLEAN_FILES =  mc.ext mc.sh mc.csh
--SCRIPTS =  $(noinst_SCRIPTS) $(suppbin_SCRIPTS)
-+SCRIPTS =  $(noinst_SCRIPTS)
- 
--DATA =  $(conf_DATA) $(desktop_DATA) $(mclib_DATA) $(noinst_DATA) \
--$(ti_DATA)
-+DATA =  $(conf_DATA) $(desktop_DATA) $(mclib_DATA) $(noinst_DATA)
- 
-@@ -340,4 +335,4 @@
- 
--install-data-am: install-suppbinSCRIPTS install-confDATA \
--		install-desktopDATA install-mclibDATA install-tiDATA
-+install-data-am: install-confDATA \
-+		install-desktopDATA install-mclibDATA
- install-data: install-data-am
-@@ -356,5 +351,4 @@
- installdirs:
--	$(mkinstalldirs)  $(DESTDIR)$(suppbindir) $(DESTDIR)$(confdir) \
--		$(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir) \
--		$(DESTDIR)$(tidir)
-+	$(mkinstalldirs)  $(DESTDIR)$(confdir) \
-+		$(DESTDIR)$(desktopdir) $(DESTDIR)$(mclibdir)
+ CONFIG_CLEAN_FILES = Make.common mc.spec gnome/Makefile gnome/mc.keys.in \
+ 	src/Makefile slang/Makefile edit/Makefile gtkedit/Makefile \
+-	mcfn_install intl/Makefile
++	intl/Makefile
+ DIST_SOURCES =
+ DATA = $(noinst_DATA)
  
