@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pyrex
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	devel lang python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
-DISTNAME=	Pyrex${PORTVERSION}
+DISTNAME=	Pyrex-${PORTVERSION}
 
 MAINTAINER=	perky@FreeBSD.org
 
