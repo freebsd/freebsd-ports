@@ -30,6 +30,8 @@ CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc/diskcheckd.conf\"'
 
 .if ${OSVERSION} < 500000
 IGNORE=		"Not tested on anything less than 5.0, use at discretion"
+.else
+IGNORE=		"Does not work on 5.x, see PR ports/45911"
 .endif
 
 do-extract:
