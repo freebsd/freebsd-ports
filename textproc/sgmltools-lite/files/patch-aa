@@ -1,0 +1,26 @@
+--- Makefile.in.old	Sat Jun 17 20:10:39 2000
++++ Makefile.in	Sat Jun 17 20:10:55 2000
+@@ -29,7 +29,7 @@
+ ETCDIR=@etcsgml@
+ PERL=@PERL@      
+ INSTALL=@INSTALL@
+-INSTALL_PROGRAM=@INSTALL_PROGRAM@
++INSTALL_SCRIPT=@INSTALL_SCRIPT@
+ INSTALL_DATA=@INSTALL_DATA@
+ MKDIRHIER=mkdir -p
+ 
+@@ -38,10 +38,10 @@
+ .PHONY: install
+ install:
+ 	-$(MKDIRHIER) $(BINDIR)
+-	$(INSTALL_PROGRAM) bin/sgmltools $(BINDIR)/sgmltools
+-	$(INSTALL_PROGRAM) bin/buildcat $(BINDIR)/buildcat
+-	$(INSTALL_PROGRAM) bin/gensgmlenv $(BINDIR)/gensgmlenv
+-	$(INSTALL_PROGRAM) bin/sgmlwhich $(BINDIR)/sgmlwhich
++	$(INSTALL_SCRIPT) bin/sgmltools $(BINDIR)/sgmltools
++	$(INSTALL_SCRIPT) bin/buildcat $(BINDIR)/buildcat
++	$(INSTALL_SCRIPT) bin/gensgmlenv $(BINDIR)/gensgmlenv
++	$(INSTALL_SCRIPT) bin/sgmlwhich $(BINDIR)/sgmlwhich
+ 	-umask 022;$(MKDIRHIER) $(SHAREDIR)/stylesheets/sgmltools
+ 	  set -e; for i in dsssl/*.dsl dsssl/*.cat; do \
+ 	    $(INSTALL_DATA) $$i $(SHAREDIR)/stylesheets/sgmltools; \

@@ -1,0 +1,11 @@
+--- python/backends/Pdf.py	Fri Mar 24 20:36:07 2000
++++ python/backends/Pdf.py.new	Sat Jun 17 20:20:25 2000
+@@ -50,7 +50,7 @@
+ 	    #
+ 	    (pdfbase, junk) = os.path.splitext(outfile)
+ 	    destfile = pdfbase + '.pdf'
+-	    cmdline = 'pdfjadetex ' + outfile
++	    cmdline = 'pdftex "&pdfjadetex" ' + outfile
+ 	    for run in range(3):
+ 		try:
+ 		    os.unlink(destfile)
