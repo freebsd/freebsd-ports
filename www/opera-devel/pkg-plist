@@ -1,6 +1,6 @@
 bin/opera
-%%PORTDOCS%%share/doc/opera/LICENSE
-%%PORTDOCS%%share/doc/opera/help
+share/doc/opera/LICENSE
+share/doc/opera/help
 share/opera/bin/opera
 share/opera/buttons/DefSmall
 share/opera/buttons/Default
@@ -389,4 +389,4 @@ share/opera/styles/wml.css
 @dirrm share/opera/buttons
 @dirrm share/opera/bin
 @dirrm share/opera
-%%PORTDOCS%%@dirrm share/doc/opera
+@dirrm share/doc/opera
