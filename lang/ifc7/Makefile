@@ -40,6 +40,10 @@ IFC_SITE=	http://www.intel.com/software/products/compilers/
 IGNORE=	"Please manually download ${DISTFILES} from ${IFC_SITE}, e.g. from ${IFC_SITE}f60l/noncom.htm or from https://premier.intel.com/. Registration is required!! Put it into ${DISTDIR} and run make again."
 .endif
 
+.if exists(${PREFIX}/intel/compiler60/bin/icc)
+BROKEN= Can not coexist with icc
+.endif
+
 post-extract:
 .for i in \
 	intel-ifc6-6.0.1-304.i386.rpm \
