@@ -1,4 +1,5 @@
 bin/taglib-config
+include/taglib/attachedpictureframe.h
 include/taglib/audioproperties.h
 include/taglib/commentsframe.h
 include/taglib/fileref.h
@@ -17,8 +18,10 @@ include/taglib/mpegfile.h
 include/taglib/mpegheader.h
 include/taglib/mpegproperties.h
 include/taglib/oggfile.h
+include/taglib/oggflacfile.h
 include/taglib/oggpage.h
 include/taglib/oggpageheader.h
+include/taglib/relativevolumeframe.h
 include/taglib/tag.h
 include/taglib/tag_c.h
 include/taglib/taglib.h
@@ -40,10 +43,8 @@ include/taglib/xingheader.h
 include/taglib/xiphcomment.h
 lib/libtag.la
 lib/libtag.so
-lib/libtag.so.1
+lib/libtag.so.3
 lib/libtag_c.la
 lib/libtag_c.so
 lib/libtag_c.so.0
-share/nls/POSIX
-share/nls/en_US.US-ASCII
 @dirrm include/taglib
