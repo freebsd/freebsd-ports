@@ -1,6 +1,0 @@
---- other/xfsoundrc.in.orig	Tue May 22 05:04:07 2001
-+++ other/xfsoundrc.in	Sat Jun  9 22:03:03 2001
-@@ -1,5 +1,5 @@
- Play
--xfplay
-+internal
