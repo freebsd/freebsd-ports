@@ -1,0 +1,15 @@
+--- Makefile.orig	Mon Nov  6 17:30:23 2000
++++ Makefile	Sat Dec 16 20:53:51 2000
+@@ -2,10 +2,9 @@
+ # Copyright (c) 1998-2000 Decklin Foster <decklin@red-bean.com>
+ # Free software! Please see README for details and license. --
+ 
+-CC       = gcc
+-CFLAGS   = -g -O2 -Wall
++CC       ?= gcc
+ 
+-XROOT    = $(DESTDIR)/usr/X11R6
++XROOT    = $(X11BASE)
+ INCLUDES = -I$(XROOT)/include
+ LDPATH   = -L$(XROOT)/lib
+ LIBS     = -lXext -lX11

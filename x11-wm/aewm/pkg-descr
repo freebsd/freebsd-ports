@@ -1,0 +1,9 @@
+This is a minimalist window manager which implements the ICCCM.
+It provides titlebars, and allows raising, lowering, resizing, and
+hiding (but not un-hiding) windows.  Placement of new windows
+depends on the position of the pointer.  It is partly based on 9wm.
+
+WWW:  http://www.red-bean.com/~decklin/aewm/
+
+Trevor Johnson
+trevor@FreeBSD.org
