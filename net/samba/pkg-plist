@@ -15,6 +15,9 @@ bin/smbtar
 bin/tdbbackup
 bin/testparm
 bin/testprns
+etc/codepages/codepage.1125
+etc/codepages/unicode_map.1125
+etc/codepages/unicode_map.KOI8-U
 etc/codepages/codepage.1251
 etc/codepages/codepage.437
 etc/codepages/codepage.737
@@ -337,6 +340,7 @@ share/swat/images/samba.gif
 share/swat/images/shares.gif
 share/swat/images/status.gif
 share/swat/images/viewconfig.gif
+share/swat/images/wizard.gif
 share/swat/include/footer.html
 share/swat/include/header.html
 share/swat/using_samba/appa_01.html
