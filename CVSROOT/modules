@@ -6276,6 +6276,7 @@ salias		ports/misc/salias
 sam		ports/editors/sam
 samba		ports/net/samba
 samba-devel	ports/net/samba-devel
+samba-tng	ports/net/samba-tng
 sambasentinel	ports/net/sambasentinel
 samefile	ports/sysutils/samefile
 samplicator	ports/net/samplicator
