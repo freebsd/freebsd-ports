@@ -1,0 +1,11 @@
+***********************************************************
+ 
+	Please copy %%PREFIX%%/etc/ipaudit.conf.sample to
+	%%PREFIX%%/ipaudit.conf by yourself and modify it,
+	then start ipaudit with
+
+	'ipaudit -g /usr/local/etc/ipaudit.conf' command.
+
+	Thanks.
+
+***********************************************************
