@@ -6,6 +6,7 @@
     SUBDIR += ascd
     SUBDIR += aumix
     SUBDIR += bladeenc
+    SUBDIR += btc
     SUBDIR += cam
     SUBDIR += ccaudio
     SUBDIR += cd-console
