@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	healthd
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/
@@ -35,12 +35,14 @@ HDDOCDIR=	${PREFIX}/share/doc/healthd
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
 
+.if ${OSVERSION} >= 500038
+RC_SUBR?=	/etc/rc.subr
+.else
+USE_RC_SUBR=	yes
+.endif
+
 post-install:
-	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh.sample
-	@if [ ! -f ${PREFIX}/etc/rc.d/healthd.sh ]; then \
-		${ECHO} "Installing ${PREFIX}/etc/rc.d/healthd.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh; \
-	fi
+	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/healthd.sh ${PREFIX}/etc/rc.d/healthd.sh
 	@if [ ! -f ${PREFIX}/etc/healthd.conf ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/healthd.conf configuration file."; \
 		${ECHO} "It is recommended you edit this file to match your system"; \
