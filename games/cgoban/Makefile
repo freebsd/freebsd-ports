@@ -3,10 +3,10 @@
 # Date created:        28 October 1996
 # Whom:                simonm@dcs.gla.ac.uk
 #
-# $Id: Makefile,v 1.3 1997/06/03 18:48:25 max Exp $
+# $Id: Makefile,v 1.4 1997/08/01 13:13:07 tg Exp $
 #
 
-DISTNAME=	cgoban-1.8.0
+DISTNAME=	cgoban-1.8.2
 CATEGORIES=	games
 MASTER_SITES=	ftp://igs.nuri.net/Go/clients/
 
