@@ -18,8 +18,6 @@ LIB_DEPENDS=	xforms:${PORTSDIR}/x11-toolkits/xforms \
 		tiff:${PORTSDIR}/graphics/tiff \
 		png:${PORTSDIR}/graphics/png
 
-BROKEN=		"Does not find libforms.a to link against"
-
 USE_MESA=	yes
 USE_XLIB=	yes
 CONFIGURE_WRKSRC=	${WRKSRC}/mixkit/build
@@ -30,6 +28,9 @@ CONFIGURE_ENV=	\
 BUILD_WRKSRC=	${WRKSRC}/mixkit/src
 USE_GMAKE=	yes
 ALL_TARGET=	# empty
+
+post-patch:
+	@${PERL} -pi -e "s,\@XFORMS_LIBS\@,${X11BASE}/lib/libforms.a,g" ${CONFIGURE_WRKSRC}/mix-config.in
 
 post-build:
 	@(cd ${BUILD_WRKSRC}/../../tools/qslim ; ${GMAKE} all)
