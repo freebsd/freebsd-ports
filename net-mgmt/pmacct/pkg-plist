@@ -1,5 +1,5 @@
 bin/pmacct
-bin/pmacctd
+sbin/pmacctd
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/EXAMPLES
 %%PORTDOCS%%%%DOCSDIR%%/INTERNALS
