@@ -1,5 +1,5 @@
---- drweb32.ini-tmpl.orig	Sat Oct  6 07:36:56 2001
-+++ drweb32.ini-tmpl	Sat Oct  6 07:39:10 2001
+--- drweb32.ini-tmpl.orig	Mon Oct 15 19:26:56 2001
++++ drweb32.ini-tmpl	Mon Oct 15 19:30:53 2001
 @@ -5,7 +5,7 @@
  
  [BSD]
@@ -22,13 +22,13 @@
  FilesTypes = INI,MBR,IMG,CSC,CPL,MBP,SHS,SHB,PIF
  LogTime = Yes
  LogFileName = "syslog"
-+PidFile = "__INSTALL_DIR__/drwebd.pid"
++PidFile = "__INSTALL_DIR__/run/drwebd.pid"
  ;BusyFile = "/var/run/drwebd.bsy"
 -SocketMode = TCP
 -;SocketMode = Unix
 +;SocketMode = TCP
 +SocketMode = Unix
-+SocketFile = "__INSTALL_DIR__/drwebd.sock"
++SocketFile = "__INSTALL_DIR__/run/drwebd.sock"
  DaemonPort = 3000
  SocketTimeout = 40
  SocketReuseAddr = Yes

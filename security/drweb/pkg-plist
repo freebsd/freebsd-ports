@@ -110,5 +110,6 @@ drweb/update/update.pl
 @dirrm drweb/clients
 @dirrm drweb/doc
 @dirrm drweb/infected.!!!
+@dirrm drweb/run
 @dirrm drweb/update
 @dirrm drweb
