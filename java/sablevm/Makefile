@@ -18,7 +18,7 @@ MAINTAINER=	archie@freebsd.org
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		ffi.2:${PORTSDIR}/devel/libffi \
-		gmp.5:${PORTSDIR}/math/libgmp4 \
+		gmp.6:${PORTSDIR}/math/libgmp4 \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 PATCH_WRKSRC=	${WRKDIR}
@@ -35,7 +35,7 @@ CLASSESDIR=	${PORTNAME}-class-library-${PORTVERSION}
 
 pre-configure:
 		@echo "===>    ${NATIVEDIR}"
-		( cd ${.CURDIR} && ${MAKE} do-configure \
+		@( cd ${.CURDIR} && ${MAKE} do-configure \
 		    CONFIGURE_WRKSRC=${WRKDIR}/${NATIVEDIR} \
 		    CFLAGS="-I${X11BASE}/include/gtk12 \
 			-I${PREFIX}/include/glib12" )
