@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.17 1996/02/15 00:53:15 jmz Exp $
+# $Id: Makefile,v 1.18 1996/07/19 14:35:11 jmz Exp $
 #
 
 #######################################################################
@@ -39,6 +39,7 @@ IS_INTERACTIVE=		yes
 
 MAINTAINER=		jmz@FreeBSD.ORG
 
+USE_X11		=	yes
 DIST_SUBDIR	=	xc
 
 .if defined(DISTDIR)
