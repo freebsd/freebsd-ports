@@ -1,0 +1,8 @@
+lib/common-lisp/port/clispfasl/ext.fasl
+lib/common-lisp/port/clispfasl/gray.fasl
+lib/common-lisp/port/clispfasl/net.fasl
+lib/common-lisp/port/clispfasl/path.fasl
+lib/common-lisp/port/clispfasl/proc.fasl
+lib/common-lisp/port/clispfasl/shell.fasl
+lib/common-lisp/port/clispfasl/sys.fasl
+@dirrm lib/common-lisp/port/clispfasl
