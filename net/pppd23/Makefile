@@ -18,4 +18,10 @@ GNU_CONFIGURE=	yes
 MAN8=		pppd.8 pppstats.8 chat.8
 MANCOMPRESSED=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64"
+.endif
+
+.include <bsd.port.post.mk>
