@@ -1,0 +1,4 @@
+This package contains a generic and very simple stack implementation
+written in C for speed. For full documentation see the home page.
+
+WWW: http://starship.skyport.net/~lemburg/mxStack.html
