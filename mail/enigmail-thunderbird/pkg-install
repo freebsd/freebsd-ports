@@ -1,7 +1,12 @@
 #!/bin/sh
 
 if test "$2" = "POST-INSTALL"; then
-cat << EOF >> ${PKG_PREFIX}/lib/thunderbird/lib/thunderbird-0.7/chrome/installed-chrome.txt
+cat << EOF >> ${PKG_PREFIX}/lib/thunderbird/lib/thunderbird-0.8/chrome/installed-chrome.txt
+skin,install,url,jar:resource:/chrome/enigmime.jar!/content/enigmime/
+locale,install,url,jar:resource:/chrome/enigmime.jar!/content/enigmime/
+content,install,url,jar:resource:/chrome/enigmime.jar!/content/enigmime/
+skin,install,url,jar:resource:/chrome/enigmail.jar!/content/enigmail/
+locale,install,url,jar:resource:/chrome/enigmail.jar!/content/enigmail/
 content,install,url,jar:resource:/chrome/enigmail.jar!/content/enigmail/
 skin,install,url,jar:resource:/chrome/enigmail-skin-tbird.jar!/skin/classic/enigmail/
 locale,install,url,jar:resource:/chrome/enigmail.jar!/locale/en-US/enigmail/
