@@ -172,7 +172,7 @@ post-install:
 	@${LOCALBASE}/bin/registervm "${PREFIX}/jdk${JDK_VERSION}/bin/java # FREEBSD-JDK${JDK_VERSION}"
 .if !defined(WITHOUT_PLUGIN)
 	@${ECHO_MSG}
-	@${ECHO_MSG} The use the Java plugin with Mozilla you must create a
+	@${ECHO_MSG} To use the Java plugin with Mozilla you must create a
 	@${ECHO_MSG} symbolic link from
 	@${ECHO_MSG}
 	@${ECHO_MSG} ${PREFIX}/jdk${JDK_VERSION}/jre/plugin/i386/ns600/libjavaplugin_oji.so
