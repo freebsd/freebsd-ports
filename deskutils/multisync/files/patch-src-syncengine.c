@@ -1,5 +1,5 @@
---- src/syncengine.c.orig	Mon Apr 12 06:23:21 2004
-+++ src/syncengine.c	Thu Apr 29 00:11:08 2004
+--- src/syncengine.c.orig	Mon Apr 12 14:23:21 2004
++++ src/syncengine.c	Sat Sep 11 22:53:29 2004
 @@ -1097,6 +1097,7 @@
      for (n = 0; n < g_list_length(remotechanges); n++) {
        changed_object *robj, *lobj;
@@ -17,3 +17,11 @@
  	      sync_compare_objects(robj->comp, lobj->comp, lobj->object_type);
  	    if (compare == SYNC_COMPARE_EQUAL) {
  	      sync_insert_idpair(lobj->uid, robj->uid, 
+@@ -1714,6 +1715,7 @@
+ 	    plugin = g_malloc0(sizeof(sync_plugin));
+ 	    g_assert(plugin);
+ 	    plugin->plugin = mod;
++            dlerror(); /* Clear previous errors */
+ 	    plugin->shortname = CALL_PLUGIN(plugin, "short_name", ());
+             ptr=dlerror();
+             if (ptr != 0) {
