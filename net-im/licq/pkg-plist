@@ -108,7 +108,7 @@ share/licq/utilities/talk.utility
 share/licq/utilities/traceroute.utility
 share/licq/utilities/vnc.utility
 share/licq/utilities/xtraceroute.utility
-share/locale/de/LC_MESSAGES/licq.mo
+%%NLS%%share/locale/de/LC_MESSAGES/licq.mo
 @dirrm include/licq
 @dirrm lib/licq
 @dirrm share/licq/sounds/fun
