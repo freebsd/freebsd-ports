@@ -9,10 +9,10 @@
 #        databases/unixODBC.
 
 PORTNAME=	libiodbc
-PORTVERSION=	3.0.5
-PORTREVISION=	2
+PORTVERSION=	3.51.1
+PORTREVISION=	3
 CATEGORIES=	databases
-MASTER_SITES=	http://www.iodbc.org/dist/
+MASTER_SITES=	http://www.iodbc.org/downloads/iODBC/
 
 MAINTAINER=	ebakke@trolltech.com
 COMMENT=	An ODBC 3.x driver manager, for universal data source access
@@ -25,6 +25,7 @@ INSTALLS_SHLIB=	yes
 INIDIR=		${PREFIX}/etc/${PORTNAME}
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-iodbc-inidir=${INIDIR} --with-pthread
+CFLAGS += -D_BSD_WCHAR_T_DEFINED_
 
 .if !defined(WITHOUT_GUI)
 USE_GNOME=	gtk12
@@ -35,8 +36,6 @@ PLIST_SUB+=	GUI="@comment "
 .endif
 
 post-install:
-	@ ${MKDIR} ${PREFIX}/bin && ${INSTALL_PROGRAM} \
-	  ${WRKSRC}/samples/odbctest ${PREFIX}/bin/iodbc-odbctest
 	@ ${MKDIR} ${INIDIR} && \
 	  ${INSTALL_DATA} ${WRKSRC}/etc/odbc*.ini.sample ${INIDIR}
 .if !defined(NOPORTDOCS)

@@ -4,10 +4,11 @@
 %%PORTDOCS%%share/doc/libiodbc/NEWS
 %%PORTDOCS%%share/doc/libiodbc/README
 bin/iodbc-config
-bin/iodbc-odbctest
+bin/iodbctest
 %%GUI%%bin/iodbcadm-gtk
 etc/libiodbc/odbc.ini.sample
 etc/libiodbc/odbcinst.ini.sample
+include/iodbcext.h
 include/iodbcinst.h
 include/isql.h
 include/isqlext.h
@@ -15,8 +16,7 @@ include/isqltypes.h
 include/sql.h
 include/sqlext.h
 include/sqltypes.h
-%%GUI%%lib/libdrvproxy-gtk.a
-%%GUI%%lib/libdrvproxy-gtk.la
+include/sqlucode.h
 %%GUI%%lib/libdrvproxy.a
 %%GUI%%lib/libdrvproxy.la
 %%GUI%%lib/libdrvproxy.so
@@ -25,8 +25,6 @@ lib/libiodbc.a
 lib/libiodbc.la
 lib/libiodbc.so
 lib/libiodbc.so.3
-%%GUI%%lib/libiodbcadm-gtk.a
-%%GUI%%lib/libiodbcadm-gtk.la
 %%GUI%%lib/libiodbcadm.a
 %%GUI%%lib/libiodbcadm.la
 %%GUI%%lib/libiodbcadm.so
@@ -36,3 +34,4 @@ lib/libiodbcinst.la
 lib/libiodbcinst.so
 lib/libiodbcinst.so.3
 %%PORTDOCS%%@dirrm share/doc/libiodbc
+@dirrm etc/libiodbc
