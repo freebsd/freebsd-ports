@@ -3307,6 +3307,7 @@ jsdk		ports/java/jsdk
 jslice		ports/graphics/jslice
 juke		ports/audio/juke
 jump		ports/java/jump
+jumpnbump	ports/games/jumpnbump
 jumpgate	ports/net/jumpgate
 junglemonkey	ports/ftp/junglemonkey
 junit		ports/java/junit
