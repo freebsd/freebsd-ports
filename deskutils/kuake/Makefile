@@ -18,9 +18,10 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|-O2||g; s|-lpthread|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+
+.include <bsd.port.mk>
