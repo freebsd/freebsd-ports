@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	tintin
-PORTVERSION=	1.8.4
+PORTVERSION=	1.8.6b
 CATEGORIES=	net games
 MASTER_SITES=	http://mail.newclear.net/tintin/download/ \
-		http://freebsd.hanirc.org/~jhp/tintin++/ 
-DISTNAME=	tintin++v1.84
+		http://freebsd.hanirc.org/~jhp/tintin++/ \
+		http://www.stud.ntnu.no/~sverreno/tintin/
+DISTNAME=	tintin++v1.86b
 
 MAINTAINER=	jhp@cocoja.holywar.net
-COMMENT=	A client program to help playing muds
+COMMENT=	"a client program specialized to help playing muds(devel version)"
 
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/tintin++/src
