@@ -13,6 +13,7 @@ rt3/etc/acl.Oracle
 rt3/etc/acl.Pg
 rt3/etc/acl.mysql
 rt3/etc/initialdata
+rt3/etc/schema.Informix
 rt3/etc/schema.Oracle
 rt3/etc/schema.Pg
 rt3/etc/schema.SQLite
@@ -263,6 +264,7 @@ rt3/share/html/Admin/Elements/SelectRights
 rt3/share/html/Admin/Elements/SelectScrip
 rt3/share/html/Admin/Elements/SelectScripAction
 rt3/share/html/Admin/Elements/SelectScripCondition
+rt3/share/html/Admin/Elements/SelectStage
 rt3/share/html/Admin/Elements/SelectSingleOrMultiple
 rt3/share/html/Admin/Elements/SelectTemplate
 rt3/share/html/Admin/Elements/SelectUsers
