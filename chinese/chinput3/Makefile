@@ -28,6 +28,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 BROKEN=		"Does not compile on FreeBSD-4.x/Alpha"
 .endif
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (needs -fPIC)"
+.endif
+
 pre-build:
 	@${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|-lc_r|${PTHREAD_CFLAGS} ${PTHREAD_LIBS}|'
