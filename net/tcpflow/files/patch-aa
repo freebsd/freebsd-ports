@@ -1,0 +1,154 @@
+--- main.c.orig	Wed Apr 21 03:40:14 1999
++++ main.c	Thu Aug 19 16:36:06 1999
+@@ -63,7 +63,7 @@
+   fprintf(stderr, "%s version %s by Jeremy Elson <jelson@circlemud.org>\n\n",
+ 		 PACKAGE, VERSION);
+   fprintf(stderr, "usage: %s [-chpsv] [-b max_bytes] [-d debug_level] [-f max_fds]\n", progname);
+-  fprintf(stderr, "          [-i iface] [expression]\n\n");
++  fprintf(stderr, "          [-i iface] [-r file] [expression]\n\n");
+   fprintf(stderr, "        -b: max number of bytes per flow to save\n");
+   fprintf(stderr, "        -c: console print only (don't create files)\n");
+   fprintf(stderr, "        -d: debug level; default is %d\n", DEFAULT_DEBUG_LEVEL);
+@@ -72,6 +72,7 @@
+   fprintf(stderr, "        -i: network interface on which to listen\n");
+   fprintf(stderr, "            (type \"ifconfig -a\" for a list of interfaces)\n");
+   fprintf(stderr, "        -p: don't use promiscuous mode\n");
++  fprintf(stderr, "        -r: read packets from file\n");
+   fprintf(stderr, "        -s: strip non-printable characters (change to '.')\n");
+   fprintf(stderr, "        -v: verbose operation equivalent to -d 10\n");
+   fprintf(stderr, "expression: tcpdump-like filtering expression\n");
+@@ -89,6 +90,7 @@
+   int need_usage = 0;
+ 
+   char *device = NULL;
++  char *infile = NULL;
+   char *expression = NULL;
+   pcap_t *pd;
+   struct bpf_program fcode;
+@@ -98,7 +100,7 @@
+ 
+   opterr = 0;
+ 
+-  while ((arg = getopt(argc, argv, "b:cd:f:hi:psv")) != EOF) {
++  while ((arg = getopt(argc, argv, "b:cd:f:hi:pr:sv")) != EOF) {
+     switch (arg) {
+     case 'b':
+       if ((bytes_per_flow = atoi(optarg)) < 0) {
+@@ -140,6 +142,9 @@
+       no_promisc = 1;
+       DEBUG(10) ("NOT turning on promiscuous mode");
+       break;
++    case 'r':
++      infile = optarg;
++      break;
+     case 'v':
+       debug_level = 10;
+       break;
+@@ -160,23 +165,32 @@
+   DEBUG(10) ("%s version %s by Jeremy Elson <jelson@circlemud.org>",
+ 	     PACKAGE, VERSION);
+ 
+-  /* if the user didn't specify a device, try to find a reasonable one */
+-  if (device == NULL)
+-    if ((device = pcap_lookupdev(error)) == NULL)
++  if (infile != NULL) {
++    /* Since we don't need network access, drop root privileges */
++    setuid(getuid());
++
++    /* open the capture file */
++    if ((pd = pcap_open_offline(infile, error)) == NULL)
+       die(error);
+ 
+-  /* make sure we can open the device */
+-  if ((pd = pcap_open_live(device, SNAPLEN, !no_promisc, 1000, error)) == NULL)
+-    die(error);
++    /* get the handler for this kind of packets */
++    handler = find_handler(pcap_datalink(pd), infile);
++  } else {
++    /* if the user didn't specify a device, try to find a reasonable one */
++    if (device == NULL)
++      if ((device = pcap_lookupdev(error)) == NULL)
++	die(error);
+ 
+-  /* drop root privileges - we don't need them any more */
+-  setuid(getuid());
++    /* make sure we can open the device */
++    if ((pd = pcap_open_live(device, SNAPLEN, !no_promisc, 1000, error)) == NULL)
++      die(error);
+ 
+-  /* remember what datalink type the selected network interface is */
+-  dlt = pcap_datalink(pd);
++    /* drop root privileges - we don't need them any more */
++    setuid(getuid());
+ 
+-  /* get the handler for this network interface */
+-  handler = find_handler(dlt, device);
++    /* get the handler for this kind of packets */
++    handler = find_handler(pcap_datalink(pd), device);
++  }
+ 
+   /* get the user's expression out of argv */
+   expression = copy_argv(&argv[optind]);
+@@ -223,7 +237,8 @@
+   init_flow_state();
+ 
+   /* start listening! */
+-  DEBUG(1) ("listening on %s", device);
++  if (infile == NULL)
++    DEBUG(1) ("listening on %s", device);
+   if (pcap_loop(pd, -1, handler, NULL) < 0)
+     die(pcap_geterr(pd));
+ 
+--- tcpflow.1.in.orig	Wed Apr 21 10:57:20 1999
++++ tcpflow.1.in	Thu Aug 19 19:36:04 1999
+@@ -21,6 +21,9 @@
+ .BI \-i \ iface\fR\c
+ ]
+ [\c
++.BI \-r \ file\fR\c
++]
++[\c
+ .BI expression\fR\c
+ ]
+ .SH DESCRIPTION
+@@ -29,7 +32,7 @@
+ is a program that captures data transmitted as part of TCP connections
+ (flows), and stores it in a way that is convenient for protocol
+ analysis or debugging.  A program like
+-.IR tcpdump (4)
++.IR tcpdump (1)
+ only shows a summary of packets seen on the wire, but usually doesn't
+ store the data that's actually being transmitted.  In contrast,
+ tcpflow reconstructs the actual data streams and stores each flow in a
+@@ -93,6 +96,13 @@
+ .B \-i
+ , a reasonable default will be used by libpcap automatically.
+ .TP
++.B \-r
++Read packets from \fIfile\fP, which was created using the
++.B \-w
++option of
++.IR tcpdump (1).
++Standard input is used if \fIfile\fP is ``-''.
++.TP
+ .B \-p
+ No promiscuous mode.  Normally, tcpflow attempts to put the network
+ interface into promiscuous mode before capturing packets.  The
+@@ -118,7 +128,7 @@
+ specified on the command-line specifies which packets should be
+ captured.  Because tcpflow uses the the libpcap library, tcpflow has
+ the same powerful filtering language available as programs such as
+-.IR tcpdump (4).
++.IR tcpdump (1).
+ .LP
+ .B The following part of the man page is excerpted from the tcpdump man page.
+ .LP
+@@ -259,7 +269,7 @@
+ .IP "\fBdst net \fInet\fR"
+ True if the IP destination address of the packet has a network
+ number of \fInet\fP. \fINet\fP may be either a name from /etc/networks
+-or a network number (see \fInetworks(4)\fP for details).
++or a network number (see \fInetworks(5)\fP for details).
+ .IP "\fBsrc net \fInet\fR"
+ True if the IP source address of the packet has a network
+ number of \fInet\fP.
