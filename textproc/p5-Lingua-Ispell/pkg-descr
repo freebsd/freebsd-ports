@@ -1,0 +1,6 @@
+Lingua::Ispell.pm - a module encapsulating access to the Ispell program.
+
+ispell, when reporting on misspelled words, indicates the string it was 
+unable to verify, as well as its starting offset in the input line. 
+No such information is returned for words which are deemed to be 
+correctly spelled. 
