@@ -2,14 +2,13 @@
 # Version required:		1.00
 # Date created:			Sat Jul 19 16:23:10 MET DST 1997
 # Whom:				gary@hotlava.com
-#				obrien@FreeBSD.org
 #
-# $Id: Makefile,v 1.14 1999/04/03 14:55:00 flathill Exp $
+# $Id: Makefile,v 1.15 1999/04/07 19:10:45 fenner Exp $
 #
 
-DISTNAME=       sane-1.00
+DISTNAME=	sane-1.0.1
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
+MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/  \
 		ftp://ftp.lahn.de/pub/platforms/linux/libs/
 
 MAINTAINER=	gary@hotlava.com
