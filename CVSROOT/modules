@@ -5967,6 +5967,7 @@ p5-Devel-Constants	ports/devel/p5-Devel-Constants
 p5-Devel-Cover	ports/devel/p5-Devel-Cover
 p5-Devel-Cycle	ports/devel/p5-Devel-Cycle
 p5-Devel-DProf	ports/devel/p5-Devel-DProf
+p5-Devel-Diagram	ports/devel/p5-Devel-Diagram
 p5-Devel-Leak	ports/devel/p5-Devel-Leak
 p5-Devel-Modlist	ports/devel/p5-Devel-Modlist
 p5-Devel-ObjectTracker	ports/devel/p5-Devel-ObjectTracker
