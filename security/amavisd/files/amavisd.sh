@@ -7,7 +7,7 @@ fi
 
 case "$1" in
 start)
-	[ -x ${PREFIX}/amavisd ] && su - %%AMAVISUSER%% -c ${PREFIX}/amavisd > /dev/null 2>&1 && echo -n ' amavisd'
+	[ -x ${PREFIX}/sbin/amavisd ] && su - %%AMAVISUSER%% -c ${PREFIX}/sbin/amavisd > /dev/null 2>&1 && echo -n ' amavisd'
 	;;
 stop)
 	echo -n ' amavisd'
