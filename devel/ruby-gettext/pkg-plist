@@ -6,9 +6,11 @@ share/locale/ja/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hello2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hellogtk.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/hellotk.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hello.mo
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hello2.mo
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hellogtk.mo
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/locale/ja/LC_MESSAGES/hellotk.mo
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/hello.pot
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/hello2.pot
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/gettext/po/hellogtk.pot
