@@ -20,19 +20,10 @@ RESTRICTED=	"license required for commercial use"
 
 DIST_SUBDIR=	dgd
 WRKSRC=		${WRKDIR}/dgd/src
-.if defined(PATCH_DEBUG)
-PATCH_DIST_ARGS=	-d ${WRKDIR} -E ${PATCH_DIST_STRIP}
-.else
-PATCH_DIST_ARGS=	-d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
-.endif
-
-post-build:
-	@cd ${WRKSRC}; ${MAKE} install
-	@${CHMOD} o+r ${WRKDIR}/dgd/doc/kfun/*
+ALL_TARGET=	install
 
 do-install:
-	@-${MV} ${PREFIX}/dgd/bin/driver ${PREFIX}/dgd/bin/driver.old
-	@tar -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PLIST}` \
-		| tar -C ${PREFIX} -xpf -
+	@${TAR} -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PLIST}` \
+		| ${TAR} -C ${PREFIX} -xpf -
 
 .include <bsd.port.mk>
