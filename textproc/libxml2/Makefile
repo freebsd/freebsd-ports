@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.5.3
+PORTVERSION=	2.5.4
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.5
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	Xml parser library for GNOME
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
