@@ -1,5 +1,5 @@
 --- session.c.orig	Wed Jun 26 14:23:47 2002
-+++ session.c	Wed Jun 26 14:24:03 2002
++++ session.c	Wed Jun 26 16:38:27 2002
 @@ -58,6 +58,13 @@
  #include "session.h"
  #include "monitor_wrap.h"
@@ -239,7 +239,36 @@
  	return 0;
  }
  
-@@ -812,6 +965,10 @@
+@@ -806,12 +959,39 @@
+ 	fclose(f);
+ }
+ 
++void copy_environment(char **source, char ***env, u_int *envsize)
++{
++	char *var_name, *var_val;
++	int i;
++
++	if (source == NULL)
++		return;
++
++	for(i = 0; source[i] != NULL; i++) {
++		var_name = xstrdup(source[i]);
++		if ((var_val = strstr(var_name, "=")) == NULL) {
++			xfree(var_name);
++			continue;
++		}
++		*var_val++ = '\0';
++
++		debug3("Copy environment: %s=%s", var_name, var_val);
++		child_set_env(env, envsize, var_name, var_val);
++		
++		xfree(var_name);
++	}
++}
++
+ static char **
+ do_setup_env(Session *s, const char *shell)
+ {
  	char buf[256];
  	u_int i, envsize;
  	char **env;
@@ -250,7 +279,7 @@
  	struct passwd *pw = s->pw;
  
  	/* Initialize the environment. */
-@@ -820,16 +977,33 @@
+@@ -820,16 +1000,33 @@
  	env[0] = NULL;
  
  	if (!options.use_login) {
@@ -287,7 +316,7 @@
  
  		snprintf(buf, sizeof buf, "%.200s/%.50s",
  			 _PATH_MAILDIR, pw->pw_name);
-@@ -882,6 +1056,10 @@
+@@ -882,6 +1079,10 @@
  		child_set_env(&env, &envsize, "KRB5CCNAME",
  		    s->authctxt->krb5_ticket_file);
  #endif
@@ -298,7 +327,7 @@
  	if (auth_sock_name != NULL)
  		child_set_env(&env, &envsize, SSH_AUTHSOCKET_ENV_NAME,
  		    auth_sock_name);
-@@ -998,7 +1176,7 @@
+@@ -998,7 +1199,7 @@
  	if (getuid() == 0 || geteuid() == 0) {
  #ifdef HAVE_LOGIN_CAP
  		if (setusercontext(lc, pw, pw->pw_uid,
@@ -307,7 +336,7 @@
  			perror("unable to set user context");
  			exit(1);
  		}
-@@ -1038,6 +1216,36 @@
+@@ -1038,6 +1239,36 @@
  	exit(1);
  }
  
@@ -344,7 +373,7 @@
  /*
   * Performs common processing for the child, such as setting up the
   * environment, closing extra file descriptors, setting the user and group
-@@ -1116,7 +1324,7 @@
+@@ -1116,7 +1347,7 @@
  	 * initgroups, because at least on Solaris 2.3 it leaves file
  	 * descriptors open.
  	 */
@@ -353,7 +382,7 @@
  		close(i);
  
  	/*
-@@ -1146,6 +1354,31 @@
+@@ -1146,6 +1377,31 @@
  			exit(1);
  #endif
  	}
