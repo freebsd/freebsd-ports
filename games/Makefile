@@ -443,6 +443,7 @@
     SUBDIR += xvier
     SUBDIR += xvmahjongg
     SUBDIR += xvmines
+    SUBDIR += xword
     SUBDIR += xworm
     SUBDIR += xzip
     SUBDIR += yadex
