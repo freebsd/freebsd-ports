@@ -23,8 +23,6 @@ RUN_DEPENDS=	\
 	${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango \
 	${LINUXBASE}/usr/lib/libfontconfig.so.1:${PORTSDIR}/x11-fonts/linux-fontconfig
 
-BROKEN=			"Conflicting dependencies (linux_base 7.x and 8.x)"
-
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 ONLY_FOR_ARCHS=		i386
