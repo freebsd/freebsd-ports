@@ -1,5 +1,8 @@
---- configure.orig	Mon Feb 10 01:26:24 2003
-+++ configure	Fri Feb 14 13:11:41 2003
+
+$FreeBSD$
+
+--- configure.orig	Mon Feb 10 00:26:24 2003
++++ configure	Mon Feb 17 17:54:58 2003
 @@ -3535,10 +3535,10 @@
  #include "confdefs.h"
  #include <libintl.h>
@@ -49,6 +52,15 @@
  ; return 0; }
  EOF
  if { (eval echo configure:3967: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -11328,7 +11328,7 @@
+   withval="$with_help_prefix"
+   GNC_HELPDIR="$with_help_prefix/gnome/help/gnucash"
+ else
+-  GNC_HELPDIR="\${datadir}/gnome/help/gnucash"
++  GNC_HELPDIR="\${datadir}/help/gnucash"
+ fi
+ 
+ 
 @@ -13115,7 +13115,7 @@
  echo "configure:13116: checking for gtkhtml < 1.1" >&5
      GTKHTML_LIBS=`$GNOME_CONFIG --libs gtkhtml`

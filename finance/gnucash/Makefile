@@ -7,7 +7,7 @@
 
 PORTNAME=	gnucash
 PORTVERSION=	1.8.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	finance gnome
 MASTER_SITES=	http://www.gnucash.org/pub/gnucash/sources/stable/ \
 		ftp://ftp.gnucash.org/pub/gnucash/sources/stable/ \
@@ -28,7 +28,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/slib/Template.scm:${PORTSDIR}/lang/slib \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${site_perl}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${site_perl}/Finance/Quote.pm:${PORTSDIR}/misc/p5-Finance-Quote \
-		${site_perl}/Finance/QuoteHist.pm:${PORTSDIR}/misc/p5-Finance-QuoteHist
+		${site_perl}/Finance/QuoteHist.pm:${PORTSDIR}/misc/p5-Finance-QuoteHist \
+		${X11BASE}/share/gnome/omf/gnucash-docs/gnucash-guide-C.omf:${PORTSDIR}/finance/gnucash-docs
 
 site_perl=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
