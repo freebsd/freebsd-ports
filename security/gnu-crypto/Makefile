@@ -7,7 +7,7 @@
 
 PORTNAME=	gnu-crypto
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security java
 MASTER_SITES=   ${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -47,7 +47,7 @@ post-extract:
 
 post-configure:
 	@${REINPLACE_CMD} -E \
-		-e 's|(\$$\(MAKEINFOFLAGS\))|\1 --no-split|' \
+		-e 's|(\$$\(MAKEINFOFLAGS\))|\1 ${MAKEINFOFLAGS}|' \
 		${BUILD_WRKSRC}/docs/${MAKEFILE}
 
 post-build:
@@ -60,5 +60,9 @@ do-install:
 	@${MKDIR} ${PREFIX}/${INFO_PATH}
 	@${INSTALL_DATA} ${WRKSRC}/docs/${PORTNAME}.info \
 		${PREFIX}/${INFO_PATH}
+
+post-install:
+	@install-info ${PREFIX}/${INFO_PATH}/${PORTNAME}.info \
+		${PREFIX}/${INFO_PATH}/dir
 
 .include <bsd.port.mk>
