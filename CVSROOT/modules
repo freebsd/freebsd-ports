@@ -847,6 +847,7 @@ camediaplay	ports/graphics/camediaplay
 caml-light	ports/lang/caml-light
 camserv		ports/multimedia/camserv
 cantus		ports/audio/cantus
+cantus_3	ports/audio/cantus_3
 cap		ports/net/cap
 cardpics	ports/games/cardpics
 carthage	ports/textproc/carthage
