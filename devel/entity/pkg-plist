@@ -1,46 +1,66 @@
-bin/gregex-config
 bin/entity
-include/gregex.h
+bin/entity-config
+lib/libentitynjs.so.1
+lib/libentitynjs.so
+lib/libentitynjs.la
+lib/entity/include/gextensions.h
+lib/entity/include/gslist.h
+lib/entity/include/gqueue.h
+lib/entity/include/x31hash.h
+lib/entity/include/ebuffer.h
+lib/entity/include/econfig.h
+lib/entity/include/edebug.h
+lib/entity/include/elements.h
+lib/entity/include/enode.h
+lib/entity/include/entity.h
+lib/entity/include/enode-base.h
+lib/entity/include/enode-attribs.h
+lib/entity/include/enode-call.h
+lib/entity/include/enode-data.h
+lib/entity/include/enode-destroy.h
+lib/entity/include/enode-event.h
+lib/entity/include/enode-kv.h
+lib/entity/include/enode-search.h
+lib/entity/include/enode-treewalk.h
+lib/entity/include/enode-xml.h
+lib/entity/include/erend.h
+lib/entity/include/eutils.h
+lib/entity/include/rargv.h
+lib/entity/include/mainloop.h
+lib/entity/include/renderers.h
+lib/entity/include/xml-parser.h
+lib/entity/include/entity-config.h
 lib/entity/clib/librendcoregtk.so
 lib/entity/clib/librendcoregtk.la
 lib/entity/clib/librendextragtk.so
 lib/entity/clib/librendextragtk.la
-@exec /sbin/ldconfig -m %D/lib/entity/clib
-@unexec /sbin/ldconfig -R
+lib/entity/clib/librendcembed.so
+lib/entity/clib/librendcembed.la
+lib/entity/clib/librendnjs.so
+lib/entity/clib/librendnjs.la
+lib/entity/clib/librendsystem.so
+lib/entity/clib/librendsystem.la
 lib/entity/Entity.pl
 lib/entity/E-init.pl
 lib/entity/ENode.pl
-lib/entity/config/rendnet.conf
+lib/entity/csink_dns_resolve
 lib/entity/config/rendcoregtk.conf
 lib/entity/config/rendextragtk.conf
-lib/entity/elib/Net/http.e
-lib/entity/elib/Net/patterns
-lib/entity/elib/Net/poptest.e
-lib/entity/elib/Net/smtp.e
-lib/entity/elib/Net/socketaccept.e
-lib/entity/elib/Net/socketconn.e
-lib/entity/elib/Net/sockettest.e
-lib/entity/elib/Net/url-pop-code.e
-lib/entity/elib/Net/url-renderer.e
-lib/entity/elib/Net/url-smtp-code.e
-lib/entity/elib/Net/url-socket-code.e
-lib/entity/elib/Net/urltest.e
-lib/entity/elib/Net/pop-control-app
-lib/libgregex.so.0
-lib/libgregex.so
-lib/libgregex.la
-lib/libgregex.a
-share/entity/bugme.e
-share/entity/bugme.todo
+lib/entity/config/rendcembed.conf
+lib/entity/config/rendnjs.conf
+lib/entity/config/rendsystem.conf
+lib/entity/libtool
+lib/libentity.so.0
+lib/libentity.so
+lib/libentity.la
+share/entity/element-browser.e
+share/entity/enview.e
+share/entity/ev.e
 share/entity/freaky-coo.e
-share/entity/stemwinder.e
-share/entity/stemwinder.pl
-share/entity/tagrefgen.e
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R
-@dirrm share/entity
+share/entity/omega-race-tags.e
+share/entity/omega-race.e
+@dirrm lib/entity/include
 @dirrm lib/entity/clib
 @dirrm lib/entity/config
-@dirrm lib/entity/elib/Net
-@dirrm lib/entity/elib
 @dirrm lib/entity
+@dirrm share/entity

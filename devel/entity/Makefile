@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	entity
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.2
 CATEGORIES=	devel
 MASTER_SITES=	http://entity.evilplan.org/Download/files/all-versions/
 
@@ -14,14 +14,14 @@ MAINTAINER=	jesse@cylant.com
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-PREFIX=		${LOCALBASE}
-
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-tcl=no \
+CONFIGURE_ARGS+=	--enable-tcl=no \
 		--enable-python=no
 USE_GMAKE=	yes
 USE_GTK=	yes
 INSTALLS_SHLIB=	yes
+
+MAN1=		entity.1
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib/entity/clib ${PREFIX}/lib
