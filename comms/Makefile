@@ -15,7 +15,6 @@
     SUBDIR += mlan
     SUBDIR += mserver
     SUBDIR += qpage
-    SUBDIR += rzsz
     SUBDIR += seyon
     SUBDIR += snooper
     SUBDIR += sredird
