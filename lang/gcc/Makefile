@@ -29,7 +29,7 @@ PATCH_SITES=	ftp://relay.nuxi.com/obrien/
 PATCHFILES=	port_gcc33_${SNAPDATE}.diff
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GNU Compiler Collection 3.2 (inprogress version)
+COMMENT=	GNU Compiler Collection 3.3 (inprogress version)
 
 NO_CDROM=	'dated material'
 LATEST_LINK=	gcc33
@@ -38,7 +38,7 @@ USE_BZIP2=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
-NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
+NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
