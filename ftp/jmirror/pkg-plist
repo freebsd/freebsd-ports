@@ -1,0 +1,3 @@
+bin/jmirror
+lib/jmirror/sample.jmirror.conf
+@dirrm lib/jmirror
