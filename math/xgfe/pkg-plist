@@ -1,7 +1,8 @@
 bin/xgfe
 share/doc/xgfe/CHANGES
+share/doc/xgfe/curve-fitting.gif
 share/doc/xgfe/features.html
-share/doc/xgfe/file-cols-formats.gif
+share/doc/xgfe/file-options.gif
 share/doc/xgfe/filelegendtitle.gif
 share/doc/xgfe/filemenu.gif
 share/doc/xgfe/fileplottypes.gif
@@ -19,6 +20,7 @@ share/doc/xgfe/psterm.gif
 share/doc/xgfe/rawgnu.gif
 share/doc/xgfe/screenshots.html
 share/doc/xgfe/terminals.gif
+share/doc/xgfe/ticsoptions.gif
 share/doc/xgfe/xgfe-abb.jpg
 share/doc/xgfe/xgfe-docs.html
 share/doc/xgfe/xgfe-main.jpg

@@ -1,5 +1,5 @@
---- Makefile.common.orig	Mon Feb 23 17:31:22 1998
-+++ Makefile.common	Tue Mar 24 14:17:39 1998
+--- Makefile.common.orig	Tue May 26 22:09:43 1998
++++ Makefile.common	Wed Jun 10 15:00:13 1998
 @@ -2,8 +2,8 @@
  
  # modify starting here
@@ -16,12 +16,11 @@
  
  install:
 -	cp $(TARGET) $(INSTALL_BIN)
--	mkdir $(INSTALL_DOC)
--	cp ../doc/* $(INSTALL_DOC)/
--	strip $(INSTALL_BIN)/$(TARGET)
 +	$(BSD_INSTALL_PROGRAM) $(TARGET) $(INSTALL_BIN)
 +.if !defined(NOPORTDOCS)
-+	mkdir -p $(INSTALL_DOC)
+ 	mkdir -p $(INSTALL_DOC)
+-	cp ../doc/* $(INSTALL_DOC)/
+-	strip $(INSTALL_BIN)/$(TARGET)
 +	$(BSD_INSTALL_DATA) ../doc/* $(INSTALL_DOC)/
 +.endif
  

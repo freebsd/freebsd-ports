@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xgfe
-# Version required:    1.3
+# Version required:    2.0
 # Date created:        24 March 1998
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.2 1998/04/12 01:05:55 hoek Exp $
+# $Id: Makefile,v 1.3 1998/04/18 00:08:43 mph Exp $
 #
 
-DISTNAME=	xgfe-1.3
+DISTNAME=	xgfe-2.0
 CATEGORIES=	math
 MASTER_SITES=	http://www2.msstate.edu/~dmi1/xgfe/download/
 
