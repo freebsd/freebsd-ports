@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rmagic
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.3
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://home.nc.rr.com/rmagick/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
