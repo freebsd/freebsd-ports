@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.143 1999/08/16 09:22:26 jim Exp $
+# $Id: Makefile,v 1.144 1999/08/17 08:08:13 dirk Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -34,7 +34,6 @@
     SUBDIR += gn
     SUBDIR += grail
     SUBDIR += gwstat
-    SUBDIR += gyroscope
     SUBDIR += harvest
     SUBDIR += hotjava
     SUBDIR += htmlpp
