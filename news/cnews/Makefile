@@ -3,7 +3,7 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.8 1995/04/24 09:10:36 asami Exp $
+# $Id: Makefile,v 1.9 1995/04/24 09:15:30 asami Exp $
 #
 
 DISTNAME=	cnews
@@ -24,7 +24,7 @@ do-install:
 	cp ${WRKSRC}/libdbz/dbz.h ${PREFIX}/include
 	cp ${WRKSRC}/libcnews.a ${PREFIX}/lib
 	mkdir -p ${NEWSSPOOL}
-	ln -s ${NEWSSPOOL} /var/news
+	-ln -s ${NEWSSPOOL} /var/news
 	mkdir -p ${NEWSBIN} ${NEWSLIB}
 	chown news.news ${NEWSSPOOL} ${NEWSLIB}
 	chown bin.bin ${NEWSBIN}
