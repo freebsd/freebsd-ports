@@ -23,14 +23,14 @@
 %%DATADIR%%/aswiki.cgi
 %%DATADIR%%/aswiki.conf
 %%DATADIR%%/default.css
-%%DATADIR%%/setup
+%%DATADIR%%/setup.sh
 %%DATADIR%%/plugin/2chbbs.rb
 %%DATADIR%%/plugin/attach.rb
 %%DATADIR%%/plugin/core.rb
 %%DATADIR%%/plugin/demo.rb
-%%DATADIR%%/templete/Node.html
-%%DATADIR%%/templete/PageBase.html
-%%DATADIR%%/templete/RSS.xml
+%%DATADIR%%/template/Node.html
+%%DATADIR%%/template/PageBase.html
+%%DATADIR%%/template/RSS.xml
 %%DATADIR%%/template/Page/Edit.html
 %%DATADIR%%/template/Page/Error.html
 %%DATADIR%%/template/Page/History.html
@@ -49,6 +49,6 @@
 %%DATADIR%%/template/plugin/reverselinklist.html
 @dirrm %%DATADIR%%/template/plugin
 @dirrm %%DATADIR%%/template/Page
-@dirrm %%DATADIR%%/templete
+@dirrm %%DATADIR%%/template
 @dirrm %%DATADIR%%/plugin
 @dirrm %%DATADIR%%
