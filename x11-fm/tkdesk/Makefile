@@ -3,10 +3,10 @@
 # Date created:         30 Jul 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.9 1998/08/07 23:56:50 asami Exp $
+# $Id: Makefile,v 1.10 1998/09/26 23:11:02 steve Exp $
 #
 
-DISTNAME=	tkdesk-1.0
+DISTNAME=	tkdesk-1.1
 CATEGORIES=	x11-fm tk42
 MASTER_SITES=	http://people.mainz.netsurf.de/~bolik/tkdesk/
 
