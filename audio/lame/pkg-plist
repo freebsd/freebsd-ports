@@ -1,12 +1,18 @@
 bin/lame
-%%PORTDOCS%%share/doc/lame/contributors.html
-%%PORTDOCS%%share/doc/lame/examples.html
-%%PORTDOCS%%share/doc/lame/history.html
-%%PORTDOCS%%share/doc/lame/id3.html
-%%PORTDOCS%%share/doc/lame/index.html
-%%PORTDOCS%%share/doc/lame/lame.css
-%%PORTDOCS%%share/doc/lame/node5.html
-%%PORTDOCS%%share/doc/lame/node6.html
-%%PORTDOCS%%share/doc/lame/node7.html
-%%PORTDOCS%%share/doc/lame/switchs.html
+include/lame/lame.h
+lib/libmp3lame.a
+lib/libmp3lame.la
+lib/libmp3lame.so
+lib/libmp3lame.so.0
+%%PORTDOCS%%share/doc/lame/html/basic.html
+%%PORTDOCS%%share/doc/lame/html/contributors.html
+%%PORTDOCS%%share/doc/lame/html/examples.html
+%%PORTDOCS%%share/doc/lame/html/history.html
+%%PORTDOCS%%share/doc/lame/html/id3.html
+%%PORTDOCS%%share/doc/lame/html/index.html
+%%PORTDOCS%%share/doc/lame/html/lame.css
+%%PORTDOCS%%share/doc/lame/html/modes.html
+%%PORTDOCS%%share/doc/lame/html/node6.html
+%%PORTDOCS%%share/doc/lame/html/switchs.html
+%%PORTDOCS%%@dirrm share/doc/lame/html
 %%PORTDOCS%%@dirrm share/doc/lame
