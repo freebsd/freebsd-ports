@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.05
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gs_fonts/} \
 		${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gprint,bjc250/} \
