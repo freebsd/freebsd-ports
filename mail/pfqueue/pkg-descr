@@ -1,0 +1,18 @@
+A console-based tool for handling postfix queues
+
+pfqueue is an effort to give postqueue/mailq/postsuper a console
+(ncurses) interface: it won't add any particular functionality 
+to those provided with postfix itself, but will hopefully make 
+them to use.
+
+It's a real-time queue scanner, that show per-queue lists of 
+existing messages; the messages can be deleted, put on hold or 
+released
+
+Just for example, it may be useful to inspect a traffic jam at a
+given time, to see what is falling into and unexpectedly crowding
+you deferred queue
+
+WWW: http://pfqueue.sourceforge.net/
+
+Marcus Grando <marcus@corp.grupos.com.br>
