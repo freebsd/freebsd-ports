@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Pod-Tree
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Pod
@@ -35,10 +35,4 @@ MAN3=	Pod::Tree.3 \
 	Pod::Tree::PerlTop.3 \
 	Pod::Tree::Pod.3
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try again
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
