@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	alleg
 
 MAINTAINER=	olgeni@FreeBSD.org
 
+BROKEN=		"plist is incorrect"
+
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
