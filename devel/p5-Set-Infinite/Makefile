@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Set-Infinite
-PORTVERSION=	0.59
+PORTVERSION=	0.61
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Set
@@ -22,5 +22,14 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 
 MAN3=		Set::Infinite.3 Set::Infinite::Basic.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
