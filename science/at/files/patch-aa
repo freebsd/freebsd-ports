@@ -1,0 +1,85 @@
+*** Kraken/Makefile
+***************
+*** 1,4 ****
+! FFLAGS = -O -bytereclen
+  
+  #FC  = f90
+  #F77 = f90
+--- 1,4 ----
+! FFLAGS = -O -ff90
+  
+  #FC  = f90
+  #F77 = f90
+*** misc/Makefile
+***************
+*** 1,4 ****
+! FFLAGS = -O -bytereclen
+  
+  #FC  = f90
+  #F77 = f90
+--- 1,4 ----
+! FFLAGS = -O -ff90
+  
+  #FC  = f90
+  #F77 = f90
+*** Bellhop/Makefile
+***************
+*** 1,4 ****
+! FFLAGS = -O -bytereclen
+  # note: SGI, use -trapuv, -lfpe in link to trap overflows
+  
+  #FC  = f90
+--- 1,4 ----
+! FFLAGS = -O -ff90
+  # note: SGI, use -trapuv, -lfpe in link to trap overflows
+  
+  #FC  = f90
+*** Scooter/Makefile
+***************
+*** 1,4 ****
+! FFLAGS= -O -bytereclen
+  
+  #FC  = f90
+  #F77 = f90
+--- 1,4 ----
+! FFLAGS = -O -ff90
+  
+  #FC  = f90
+  #F77 = f90
+*** global/Makefile
+***************
+*** 1,4 ****
+! FFLAGS = -O -bytereclen
+  
+  #FC  = f90
+  #F77 = f90
+--- 1,4 ----
+! FFLAGS = -O -ff90
+  
+  #FC  = f90
+  #F77 = f90
+*** tslib/Makefile
+***************
+*** 1,4 ****
+! FFLAGS = -O
+  
+  #FC  = f90
+  #F77 = f90
+--- 1,4 ----
+! FFLAGS = -O -ff90
+  
+  #FC  = f90
+  #F77 = f90
+*** KrakenZ/Makefile
+***************
+*** 1,4 ****
+! #FFLAGS= -C -trapuv -check_bounds -g -old_rl
+  #FFLAGS = +E1   # for HP machines
+  #FFLAGS = -O -trapuv -old_rl -mips2 # old_rl forces SGI to use RECL in bytes
+
+--- 1,4 ----
+! FFLAGS = -O -ff90
+  #FFLAGS = +E1   # for HP machines
+  #FFLAGS = -O -trapuv -old_rl -mips2 # old_rl forces SGI to use RECL in bytes
+
+
