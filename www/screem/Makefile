@@ -6,36 +6,36 @@
 #
 
 PORTNAME=	screem
-PORTVERSION=	0.4.1
-PORTREVISION=	3
+PORTVERSION=	0.5.5
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.screem.org/src/ \
-		http://www.borgsdemons.com/distfiles/screem/
+		http://www.screem.org/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-docs${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	coop9211@uidaho.edu
+
+LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
+		zvt-2.0.0:${PORTSDIR}/x11-toolkits/libzvt \
+		neon.22:${PORTSDIR}/www/neon
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomevfs gtkhtml
+USE_GNOME=	gnomeprefix gnomehack
 USE_LIBTOOL=	yes
 USE_OPENSSL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/gnome-vfs-1.0" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gnomevfs --with-ssl --with-included-neon
+CONFIGURE_ARGS=	--with-gnomevfs --with-ssl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${REINPLACE_CMD} -e \
 		's|\@GNOME_DATA_PREFIX\@|\$$\(datadir\)|g'
-
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/../${PORTNAME}-docs/* \
-		${PREFIX}/share/gnome/help/screem/C/
 
 .include <bsd.port.mk>

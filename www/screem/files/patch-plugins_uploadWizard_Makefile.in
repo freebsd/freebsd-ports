@@ -1,0 +1,11 @@
+--- plugins/uploadWizard/Makefile.in.orig	Thu Nov 14 23:37:10 2002
++++ plugins/uploadWizard/Makefile.in	Thu Nov 14 23:37:37 2002
+@@ -169,7 +169,7 @@
+ 
+ 
+ uploadWizard_la_LDFLAGS = -avoid-version -module
+-uploadWizard_la_LIBADD = $(NEONOBJS) $(SCREEM_LIBS)	
++uploadWizard_la_LIBADD = $(NEONOBJS) $(NEON_LIBS) $(SCREEM_LIBS)	
+ 
+ config_h = $(top_builddir)/config.h
+ obj_ext = o
