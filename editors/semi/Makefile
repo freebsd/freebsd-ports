@@ -90,7 +90,7 @@ pre-install:
 .endif
 
 post-install:
-	@${MKDIR} -p ${LOCALBASE}/share/semi
+	@${MKDIR} ${LOCALBASE}/share/semi
 	@${TOUCH} ${LOCALBASE}/share/semi/${SEMI_COOKIE}
 .if defined(REQUIRE_SETUPEL) && (${REQUIRE_SETUPEL} == "YES")
 	@${MAKE} setupel-install
@@ -104,7 +104,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MAKE} doc-install
 .endif
-
 
 ###############################################################################
 #
@@ -186,7 +185,7 @@ info-package-install:
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
 			${LOCALBASE}/${EMACS_PACKAGESDIR}/info ; \
 	done ; \
-	${MKDIR} -p ${LOCALBASE}/${EMACS_PACKAGESDIR}/man/semi ; \
+	${MKDIR} ${LOCALBASE}/${EMACS_PACKAGESDIR}/man/semi ; \
 	for i in mime-ui-en.texi mime-ui-ja.texi; do \
 		${INSTALL_DATA} ${WRKSRC}/$${i} \
 			${LOCALBASE}/${EMACS_PACKAGESDIR}/man/semi ; \
