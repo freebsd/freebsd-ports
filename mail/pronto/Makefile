@@ -35,4 +35,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-Mysq
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		Perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again.
+.endif
+
+.include <bsd.port.post.mk>
