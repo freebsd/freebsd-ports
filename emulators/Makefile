@@ -29,6 +29,7 @@
     SUBDIR += grustibus
     SUBDIR += gsnes9x
     SUBDIR += gxmame
+    SUBDIR += hatari
     SUBDIR += hercules
     SUBDIR += hfs
     SUBDIR += hfsplusutils
