@@ -9,7 +9,9 @@ PORTNAME=	arirang
 PORTVERSION=	1.6
 PORTEPOCH=	1
 CATEGORIES=	security www
-MASTER_SITES=	http://monkey.org/~pilot/arirang/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
+		http://monkey.org/~pilot/arirang/
+MASTER_SITE_SUBDIR=	UNIX/cgi-scanners
 
 MAINTAINER=	roman@xpert.com
 

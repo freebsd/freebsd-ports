@@ -8,7 +8,9 @@
 PORTNAME=	rats
 PORTVERSION=	2.1
 CATEGORIES=	security devel
-MASTER_SITES=	http://www.securesoftware.com/rats/
+MASTER_SITES=	${MASTER_SITE_PACKETSTORM} \
+		http://www.securesoftware.com/rats/
+MASTER_SITE_SUBDIR=	UNIX/security
 
 MAINTAINER=	kris@FreeBSD.org
 
