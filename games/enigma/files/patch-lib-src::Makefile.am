@@ -1,0 +1,5 @@
+--- lib-src/Makefile.am.orig	Mon Nov 22 10:29:58 2004
++++ lib-src/Makefile.am	Mon Nov 22 10:30:03 2004
+@@ -1 +1 @@
+-SUBDIRS = oxydlib lua zipios++
++SUBDIRS = oxydlib

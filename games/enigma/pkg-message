@@ -3,4 +3,6 @@ This game is installed as ${LOCALBASE}/bin/enigma (most likely
 /usr/bin/enigma (very simple file encryption). Also, read enigma(6)
 instead of enigma(1).
 
+Please note that this program used LUA4, not LUA5.
+
 To play the game, please use "/usr/local/bin/enigma"

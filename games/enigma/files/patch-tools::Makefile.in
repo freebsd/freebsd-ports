@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	Mon Nov 22 10:35:56 2004
++++ tools/Makefile.in	Mon Nov 22 10:36:11 2004
+@@ -181,7 +181,7 @@
+ 
+ tolua_SOURCES = tolua.c tolualua.c tolualua.h
+ tolua_CFLAGS = -I$(top_srcdir)/lib-src/lua
+-tolua_LDADD = -L$(top_builddir)/lib-src/lua -llua 
++tolua_LDADD = -L$(top_builddir)/lib-src/lua -llua -llualib -ltolua
+ subdir = tools
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
