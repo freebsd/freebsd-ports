@@ -158,6 +158,9 @@ EOF
     if [ "$MUTT_PGP_PATCH" = "yes" ]; then
       html=$(($html + 3))
     fi
+    if [ "$MUTT_SLAVE_HTML_PAGES" != "" ]; then
+      html=$(($html + $MUTT_SLAVE_HTML_PAGES))
+    fi
     echo "%%DOCSDIR%%/html/manual.html" >> $tmp_first
     echo "%%DOCSDIR%%/html/manual_toc.html" >> $tmp_first 
     i=1
