@@ -1,0 +1,11 @@
+bin/de-webalizer
+share/doc/de-webalizer/CHANGES
+share/doc/de-webalizer/COPYING
+share/doc/de-webalizer/Copyright
+share/doc/de-webalizer/README
+share/doc/de-webalizer/TODO
+share/doc/de-webalizer/webalizer.LSM
+@dirrm share/doc/de-webalizer
+share/examples/de-webalizer/msfree.gif
+share/examples/de-webalizer/sample.conf
+@dirrm share/examples/de-webalizer
