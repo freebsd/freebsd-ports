@@ -1,0 +1,16 @@
+--- ./src/error.c.orig	Sat Jan 11 19:09:35 2003
++++ ./src/error.c	Sat Jan 11 19:09:54 2003
+@@ -51,11 +51,11 @@
+ /* ----------------------------------------------------------------------
+  * some external identifiers
+  */
+-extern	int		errno,			/* system error code */
+-				sys_nerr;		/* number of messages available from array */
+ 
+ /* the list is already defined for some OS */
+ #if !defined(__NetBSD__) && !defined(__FreeBSD__) && !defined(__linux__) 
++extern	int		errno,			/* system error code */
++				sys_nerr;		/* number of messages available from array */
+ 	extern	char	*sys_errlist[];	/* array of error messages */
+ #endif
+ 
