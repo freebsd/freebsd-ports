@@ -17,4 +17,4 @@ items by deriving from the `PlotItem' class.
 
 For a demonstration, run the python file by typing `python demo.py'. 
 
-WWW: http://monsoon.harvard.edu/~mhagger/Gnuplot/Gnuplot.html
+WWW: http://gnuplot-py.sourceforge.net/
