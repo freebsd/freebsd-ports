@@ -1,0 +1,11 @@
+--- automake.in.orig	Wed Nov 24 16:04:56 1999
++++ automake.in	Wed Nov 24 16:07:15 1999
+@@ -6907,7 +6907,7 @@
+ 				$trailer = "; error while making link: $!\n";
+ 			    }
+ 			}
+-			elsif (! system ('cp', $am_dir . '/' . $file, $errfile))
++			elsif (system ('cp', $am_dir . '/' . $file, $errfile))
+ 			{
+ 			    $suppress = 0;
+ 			    $trailer = "\n    error while copying\n";
