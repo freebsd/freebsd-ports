@@ -1,13 +1,13 @@
 # New ports collection makefile for:    mendexk-sjis
-# Version required:     2.4b
+# Version required:     2.4c
 # Date created:         1 Dec 1997
 # Whom:                 Makoto WATANABE <watanabe@zlab.phys.nagoya-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/25 16:04:07 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/07/20 03:12:27 steve Exp $
 #
 
-DISTNAME=	mendexk2.4b
-PKGNAME=	ja-mendexk-sjis-2.4b
+DISTNAME=	mendexk2.4c
+PKGNAME=	ja-mendexk-sjis-2.4c
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/web2c/
