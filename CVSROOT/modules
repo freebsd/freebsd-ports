@@ -5311,6 +5311,7 @@ py-csv		ports/textproc/py-csv
 py-curl		ports/ftp/py-curl
 py-cxx		ports/devel/py-cxx
 py-distutils	ports/misc/py-distutils
+py-dsv		ports/textproc/py-dsv
 py-expat	ports/textproc/py-expat
 py-fchksum	ports/security/py-fchksum
 py-fileutils	ports/devel/py-fileutils
