@@ -1,0 +1,11 @@
+This is a port of MMTK (Molecular Modeling ToolKit).  In addition to
+providing ready-to-use implementations of standard algorithms, MMTK
+serves as a code basis that can be easily extended and modified to deal
+with standard and non-standard problems in molecular simulations.
+
+MMTK consists of nothing more than a collection of Python modules, most
+of which written in Python itself, with only a small time-critical part
+(e.g. energy evaluation) written in C. MMTK applications are Python
+programs that make use of these modules.
+
+WWW: http://starship.python.net/crew/hinsen/MMTK/index.html

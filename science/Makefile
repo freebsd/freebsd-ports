@@ -9,6 +9,7 @@
     SUBDIR += glens
     SUBDIR += libsvm
     SUBDIR += mayavi
+    SUBDIR += mmtk
     SUBDIR += mpqc
     SUBDIR += mpqc-mpich
     SUBDIR += oases
