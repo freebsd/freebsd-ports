@@ -25,7 +25,9 @@ www/postfixadmin/admin/list-admin.php
 www/postfixadmin/admin/list-domain.php
 www/postfixadmin/admin/list-virtual.php
 www/postfixadmin/admin/viewlog.php
+@unexec if cmp -s %D/www/postfixadmin/config.inc.php %D/www/postfixadmin/config.inc.php.sample; then rm -f %D/www/postfixadmin/config.inc.php; fi
 www/postfixadmin/config.inc.php.sample
+@exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
 www/postfixadmin/create-alias.php
 www/postfixadmin/create-mailbox.php
 www/postfixadmin/delete.php
