@@ -7,7 +7,7 @@ cksfv (Check SFV) can both create simple file verification (SFV) files, and
 test file integrity against existing SFV files.
 
 Licence: GPL
-Author: Bryan Call <bc@fodder.org>
-WWW: http://www.fodder.org/cksfv/
+Author:  Bryan Call <bc@fodder.org>
+WWW:     http://www.fodder.org/cksfv/
 
 -- Johann Visagie <johann@egenetics.com>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cksfv
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.fodder.org/cksfv/
 
@@ -15,7 +15,8 @@ MAINTAINER=	johann@egenetics.com
 BUILD_WRKSRC=	${WRKSRC}/src
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 USE_GMAKE=	yes
-ALL_TARGET=	cksfv
+ALL_TARGET=	${PORTNAME}
+MAKE_ENV+=	VERSION=${PORTVERSION}
 
 post-install:
 .if !defined(NOPORTDOCS)
