@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue Feb 10 21:32:49 2004
-+++ Makefile.in	Tue Feb 10 21:33:01 2004
-@@ -86,7 +86,7 @@
+--- Makefile.in.orig	Sat Mar 20 06:43:22 2004
++++ Makefile.in	Tue Mar 23 00:28:57 2004
+@@ -148,7 +148,7 @@
  
  AUTOMAKE_OPTIONS = foreign dist-zip
  
--SUBDIRS = lib include examples debian
-+SUBDIRS = lib include debian
+-SUBDIRS = lib include doc examples debian
++SUBDIRS = lib include doc debian
  
- EXTRA_DIST = COPYING autogen.sh 
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ EXTRA_DIST = COPYING autogen.sh win32
+ subdir = .

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	libtheora
-PORTVERSION=	1.0.a2
+PORTVERSION=	1.0.a3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.theora.org/files/ \
-		http://download.videolan.org/pub/videolan/vlc/0.7.0/contrib/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a2/alpha2/}
+MASTER_SITES=	http://www.theora.org/files/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a3/alpha3/}
 
 MAINTAINER=	kwm@rainbow-runner.nl
 COMMENT=	Theora video codec for the Ogg multimedia streaming system
