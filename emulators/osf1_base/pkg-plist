@@ -1,0 +1,25 @@
+@comment $FreeBSD$
+usr/shlib/libXm.so
+usr/shlib/libXmu.so
+usr/shlib/libXt.so
+usr/shlib/libX11.so
+usr/shlib/libXext.so
+usr/shlib/libdnet_stub.so
+usr/shlib/libm.so
+usr/shlib/libots.so
+usr/shlib/libc.so
+usr/shlib/libcxx.so
+usr/shlib/libexc.so
+usr/shlib/libSM.so
+usr/shlib/libICE.so
+usr/shlib/LICENSE
+etc/svc.conf
+etc/sia/OSFC2_matrix.conf
+etc/sia/bsd_matrix.conf
+etc/sia/siainitgood
+sbin/loader
+@dirrm sbin
+@dirrm etc/sia
+@dirrm etc
+@dirrm usr/shlib
+@dirrm usr

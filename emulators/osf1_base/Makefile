@@ -1,0 +1,51 @@
+# ex:ts=8
+# Ports collection makefile for:  osf1_base
+# Version required:     	  5.0
+# Date created:			  Mon Feb 03, 1998
+# Whom:				  David O'Brien (obrien@NUXI.com)
+#
+# $FreeBSD$
+#
+
+DISTNAME=	netscape-4.7-1.alpha
+PKGNAME=	osf1_base-5.0
+CATEGORIES=	emulators
+MASTER_SITES=	ftp://ftp.digital.com/private/netscape/
+EXTRACT_SUFX=	.rpm
+
+MAINTAINER=	obrien@FreeBSD.org
+
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm2cpio
+
+ONLY_FOR_ARCHS=	alpha
+RESTRICTED=	Not allowed to redistribute on our FTP site or CDROMs
+
+PREFIX=			/usr/compat/osf1
+EXTRACT_CMD=		rpm2cpio
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	|cpio -idumv
+NO_WRKSUBDIR=		yes
+NO_BUILD=		yes
+NO_FILTER_SHLIBS=	yes
+NO_MTREE=		yes
+
+do-install:
+	@if [ -z "`kldstat -v | ${GREP} -E 'osf1_ecoff'`" ]; then \
+		${ECHO} 'OSF/1 (Digital Unix / Tru64) mode is not enabled.\
+			Loading OSF/1 kernel module...' | fmt; \
+		osf1 || { \
+		${ECHO} 'The OSF/1 kernel module could not be loaded.\
+			Please manually load the module and retry.\
+			See "man osf1" for details.' | fmt; \
+		${FALSE}; \
+		};\
+	fi
+	@${MKDIR} ${PREFIX}/usr/lib
+	@${LN} -sf ${X11BASE}/lib/X11 ${PREFIX}/usr/lib
+	@${TAR} --exclude usr/local/* -xpzf \
+		${WRKSRC}/usr/local/netscape/netscape-all-4.7.tar.gz \
+		-C ${PREFIX}
+	@${RM} ${PREFIX}/usr/bin/netscape
+	@${RMDIR} ${PREFIX}/usr/bin
+
+.include <bsd.port.mk>
