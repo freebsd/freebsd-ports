@@ -55,10 +55,12 @@ share/aclocal/libxslt.m4
 %%DOCSDIR%%/html/APIchunk6.html
 %%DOCSDIR%%/html/APIchunk7.html
 %%DOCSDIR%%/html/APIchunk8.html
+%%DOCSDIR%%/html/APIchunk9.html
 %%DOCSDIR%%/html/APIconstructors.html
 %%DOCSDIR%%/html/APIfiles.html
 %%DOCSDIR%%/html/APIfunctions.html
 %%DOCSDIR%%/html/APIsymbols.html
+%%DOCSDIR%%/html/EXSLT/exslt.html
 %%DOCSDIR%%/html/FAQ.html
 %%DOCSDIR%%/html/Libxslt-Logo-180x168.gif
 %%DOCSDIR%%/html/Libxslt-Logo-90x34.gif
@@ -114,6 +116,7 @@ share/aclocal/libxslt.m4
 %%DOCSDIR%%/html/xsltproc.html
 %%DOCSDIR%%/html/xsltproc2.html
 @dirrm %%DOCSDIR%%/html/tutorial
+@dirrm %%DOCSDIR%%/html/EXSLT
 @dirrm %%DOCSDIR%%/html
 %%PYTHON:%%@dirrm %%DOCSDIR%%-python/examples
 %%PYTHON:%%@dirrm %%DOCSDIR%%-python
