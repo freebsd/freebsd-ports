@@ -5,6 +5,8 @@ if [ -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc ]; then
 	exit
 fi
 
+tempfile=`/usr/bin/mktemp -t checklist`
+
 if [ "${BATCH}" ]; then
 	set \"zlib\" \"MySQL\"
 else
@@ -39,14 +41,14 @@ sockets		"sockets support" OFF \
 sysvsem		"System V semaphore support" OFF \
 sysvshm		"System V shared memory support" OFF \
 transsid	"Transparent session id" OFF \
-2> /tmp/checklist.tmp.$$
+2> $tempfile
 
 	retval=$?
 
-	if [ -s /tmp/checklist.tmp.$$ ]; then
-		set `cat /tmp/checklist.tmp.$$`
+	if [ -s $tempfile ]; then
+		set `cat $tempfile`
 	fi
-	rm -f /tmp/checklist.tmp.$$
+	rm -f $tempfile
 
 	case $retval in
 		0)	if [ -z "$*" ]; then
