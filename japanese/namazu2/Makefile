@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	namazu
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.12
 CATEGORIES=	japanese databases www textproc
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	2
@@ -15,7 +15,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	nmz.5:${PORTSDIR}/databases/namazu2
+LIB_DEPENDS=	nmz.6:${PORTSDIR}/databases/namazu2
 RUN_DEPENDS=	${PM_BASE}/${PERL_ARCH}/NKF.pm:${PORTSDIR}/japanese/p5-nkf \
 		${PM_BASE}/${PERL_ARCH}/Text/${MODULE_NAME}.pm:${PORTSDIR}/japanese/p5-Text-${MODULE_NAME}
 
