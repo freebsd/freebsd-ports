@@ -1,3 +1,4 @@
+etc/rc.d/rwhoisd.sh
 lib/rwhois/a.com/attribute_defs/asn.tmpl
 lib/rwhois/a.com/attribute_defs/contact.tmpl
 lib/rwhois/a.com/attribute_defs/domain.tmpl
