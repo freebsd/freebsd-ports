@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.6.0s.20041020
-PORTREVISION=	2
+PORTVERSION=	0.6.1s.20041115
+PORTREVISION=	0
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.fuqn.ca/distfiles/ \
+MASTER_SITES=	http://www.fruitsalad.org/qemu/ \
 		http://dad-answers.com/qemu/
-DISTNAME=	${PORTNAME}-snapshot-2004-10-20_23
+DISTNAME=	${PORTNAME}-snapshot-2004-11-15_23
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
@@ -26,10 +26,9 @@ USE_GETOPT_LONG=	yes
 USE_SDL=	sdl
 USE_GCC=	3.4
 USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/${DISTNAME}
 PATCH_STRIP=	-p1
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}\ -I${PREFIX}/include
-MAN1=		qemu.1
+MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	i386 amd64 powerpc
 
 post-install:
