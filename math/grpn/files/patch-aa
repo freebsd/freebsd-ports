@@ -1,0 +1,32 @@
+--- Makefile.orig	Mon May 31 21:46:31 1999
++++ Makefile	Mon Oct 25 19:52:03 1999
+@@ -3,7 +3,7 @@
+ # Please read the next few lines and enter the correct values.
+ 
+ # What compiler should be used
+-CC = gcc 
++CC?= gcc 
+ 
+ # Where to find the gtk-config script
+ GTK_DIR =
+@@ -17,9 +17,9 @@
+ # add -DUSE_GNOME if you want to make grpn GNOME compliant.
+ 
+ 
+-CFLAGS = -g -O2 -I/usr/X11/include  `$(GTK_DIR)gtk-config --cflags` -DGTK_VER_1_1
++CFLAGS+= -I${X11BASE}/include -I${PREFIX}/include  `${GTK_CONFIG} --cflags` -DGTK_VER_1_1
+ 
+-DFLAGS =  -L/usr/X11/lib 
++DFLAGS = -L${X11BASE}/lib -L${PREFIX}/lib
+ 
+ # end of user configurable section
+ 
+@@ -34,7 +34,7 @@
+ 
+ 
+ 
+-LIBS   = `$(GTK_DIR)gtk-config --libs` -lX11 -lm 
++LIBS   = `${GTK_CONFIG} --libs` -lX11 -lm 
+ 
+ 
+ grpn:	$(OBJS)
