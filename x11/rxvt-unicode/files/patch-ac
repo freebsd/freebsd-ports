@@ -1,13 +1,13 @@
---- doc/Makefile.in.orig	Wed Nov 18 01:20:14 1998
-+++ doc/Makefile.in	Sun Jan 10 18:54:05 1999
-@@ -63,8 +63,8 @@
+--- doc/Makefile.in.orig	Tue Jun  8 02:53:55 1999
++++ doc/Makefile.in	Tue Jun  8 11:12:40 1999
+@@ -66,8 +66,8 @@
  rxvt.tbl: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
  	yodl2man -orxvt.tbl yodl/rxvt.yo
  
--rxvt.1: rxvt.tbl
--	tbl rxvt.tbl > $@
-+#rxvt.1: rxvt.tbl
-+#	tbl rxvt.tbl > $@
+-rxvt.1: rxvt.tbl Makefile
+-	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
++#rxvt.1: rxvt.tbl Makefile
++#	@if test x$(TBL) = x; then : ; else echo "Making rxvt.1"; $(TBL) $(srcdir)/rxvt.tbl > rxvt.1 ; fi
  
  rxvt.html: yodl/rxvt.yo $(YODL_RXVT) yodl/versioninfo.yo yodl/masonyodl.yo
  	yodl2html -o$@ yodl/rxvt.yo
