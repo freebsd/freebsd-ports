@@ -1,0 +1,14 @@
+--- data/rhythmbox.pc.in.orig	Fri Aug 20 00:38:45 2004
++++ data/rhythmbox.pc.in	Fri Aug 20 00:39:21 2004
+@@ -1,7 +1,8 @@
+ prefix=@prefix@
+-libdir=${prefix}/lib
+-includedir=${prefix}/include
+-idldir=${prefix}/share/idl
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++idldir=@datadir@/idl
+ 
+ Name: Rhythmbox
+ Description: Rhythmbox
