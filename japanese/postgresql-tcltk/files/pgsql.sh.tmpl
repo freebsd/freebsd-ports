@@ -1,39 +1,34 @@
 #!/bin/sh
 
 # $FreeBSD$
-
-# pgsql.sh - postgresql startup file for FreeBSD and possibly *BSD (untested)
-
-# Changes:
-# - renamed startup script to be in sync with INSTALL file
-# - merged ldconfig start sequence from former postgrsql.sh script (andreas)
-# - modified the postmaster startup sequence as suggested in the 
-#   INSTALL file which was given as example for FreeBSD 2.2 (andreas)
-# - removed the commandline option
-#		-D!!PG_PATH!!/data \
-#   because the postmaster process, which starts up under the
-#   environment of the pgsql user, sets this with the PGDATA
-#   environment variable in !!PG_PATH!!/.profile
 #
+# For postmaster startup options, edit $PGDATA/postmaster.opts.default
+# Preinstalled options are -i -o "-F"
 
-case "$1" in
+case $1 in
 start)
-	[ -d !!PG_PATH!!/lib ] && /sbin/ldconfig -m !!PG_PATH!!/lib
+    [ -d !!PREFIX!!/pgsql/lib ] && /sbin/ldconfig -m !!PREFIX!!/pgsql/lib
+    [ -x !!PREFIX!!/pgsql/bin/pg_ctl ] && {
+	su -l pgsql -c \
+	    'exec !!PREFIX!!/pgsql/bin/pg_ctl -w start > !!PREFIX!!/pgsql/errlog 2>&1'
+	echo -n ' pgsql'
+    }
+    ;;
 
-	[ -x !!PG_PATH!!/bin/postmaster ] && {
-		su -l !!PGSQL_UID!! -c 'exec !!PG_PATH!!/bin/postmaster -i -S -o -F \
-			-D!!PG_PATH!!/data > !!PG_PATH!!/errlog'
-		echo -n ' PostgreSQL' 
-	}
-	;;
 stop)
-	# XXX some pgsql user should check this --tg
-	killall !!PG_PATH!!/bin/postmaster
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	exit 64
-	;;
-esac
+    [ -x !!PREFIX!!/pgsql/bin/pg_ctl ] && {
+	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/pg_ctl -w -m fast stop'
+    }
+    ;;
 
-exit 0
+status)
+    [ -x !!PREFIX!!/pgsql/bin/pg_ctl ] && {
+	su -l pgsql -c 'exec !!PREFIX!!/pgsql/bin/pg_ctl status'
+    }
+    ;;
+
+*)
+    echo "usage: `basename $0` {start|stop|status}" >&2
+    exit 64
+    ;;
+esac

@@ -1,0 +1,50 @@
+#!/usr/bin/perl
+#
+
+eval '(exit $?0)' && eval 'exec /usr/bin/perl -S $0 ${1+"$@"}'
+& eval 'exec /usr/bin/perl -S $0 $argv:q'
+if 0;
+
+if( $> ) {
+	print "\nYou must be root to run this step!\n\n";
+	exit 1;
+} 
+
+if( getpwnam( "pgsql" ) ) {
+	( $null, $null, $pgUID ) = getpwnam( "pgsql" );
+} else {
+	$pgUID = 70;
+	while( getpwuid( $pgUID ) ) {
+		$pgUID++;
+	}
+}
+
+if( getgrnam( "pgsql" ) ) {
+	( $null, $null, $pgGID ) = getgrnam( "pgsql" );
+} else {
+	$pgGID = 70;
+	while( getgrgid( $pgGID ) ) {
+		$pgGID++;
+	}
+	&append_file( "/etc/group", "pgsql:*:$pgGID:" );
+}
+
+print "pgsql user using uid $pgUID\n";
+print "pgsql user using gid $pgGID\n";
+
+system( "/usr/bin/chpass -a \"pgsql:*:$pgUID:$pgGID\:\:0:0:PostgreSQL pseudo-user:$ENV{'PREFIX'}/pgsql:/bin/sh\"" );
+
+sub append_file {
+	local($file,@list) = @_;
+	local($LOCK_EX) = 2;
+	local($LOCK_NB) = 4;
+	local($LOCK_UN) = 8;
+
+	open(F, ">> $file") || die "$file: $!\n";
+	while( ! flock( F, $LOCK_EX | $LOCK_NB ) ) {
+		exit 1;
+	}
+	print F join( "\n", @list) . "\n";
+	close F;
+	flock( F, $LOCK_UN );
+}

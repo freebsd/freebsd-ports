@@ -1,7 +1,8 @@
-%%INSTALL_DIR%%/lib/libpsqlodbc.a
-%%INSTALL_DIR%%/lib/libpsqlodbc.so
-%%INSTALL_DIR%%/lib/libpsqlodbc.so.0
-%%INSTALL_DIR%%/include/iodbc/iodbc.h
-%%INSTALL_DIR%%/include/iodbc/isql.h
-%%INSTALL_DIR%%/include/iodbc/isqlext.h
-%%INSTALL_DIR%%/odbcinst.ini
+pgsql/include/iodbc/iodbc.h
+pgsql/include/iodbc/isql.h
+pgsql/include/iodbc/isqlext.h
+pgsql/lib/libpsqlodbc.a
+pgsql/lib/libpsqlodbc.so
+pgsql/lib/libpsqlodbc.so.0
+pgsql/odbcinst.ini
+@dirrm pgsql/include/iodbc

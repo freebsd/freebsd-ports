@@ -1,0 +1,11 @@
+--- ../doc/Makefile.orig	Mon Dec  6 06:23:00 1999
++++ ../doc/Makefile	Wed May 10 03:50:13 2000
+@@ -12,7 +12,7 @@
+ #
+ #----------------------------------------------------------------------------
+ 
+-PGDOCS= $(POSTGRESDIR)/doc
++PGDOCS= $(POSTDOCDIR)
+ SRCDIR= ../src
+ 
+ TAR= tar

@@ -1,0 +1,7 @@
+#! /bin/sh
+
+# $FreeBSD: /tmp/pcvs/ports/japanese/postgresql7/scripts/Attic/configure,v 1.1 2000-07-19 01:18:08 kuriyama Exp $
+
+cd $WRKSRC || exit 1
+
+perl -pi -e "s=!!JAVA_HOME!!=${JAVA_HOME}=; s=!!PREFIX!!=${PREFIX}=" ${WRKSRC}/interfaces/jdbc/Makefile

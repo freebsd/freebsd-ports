@@ -1,0 +1,25 @@
+--- interfaces/jdbc/Makefile.orig	Tue May  9 12:47:50 2000
++++ interfaces/jdbc/Makefile	Wed May 10 03:53:41 2000
+@@ -10,10 +10,10 @@
+ 
+ FIND		= find
+ IDL2JAVA	= idltojava -fno-cpp -fno-tie
+-JAR		= jar
+-JAVA		= java
+-JAVAC		= javac -g
+-JAVADOC		= javadoc
++JAR		= !!JAVA_HOME!!/bin/jar
++JAVA		= !!JAVA_HOME!!/bin/java
++JAVAC		= !!JAVA_HOME!!/bin/javac
++JAVADOC		= !!JAVA_HOME!!/bin/javadoc
+ RM		= rm -f
+ TOUCH		= touch
+ 
+@@ -49,6 +49,7 @@
+ 	@echo JVM.
+ 	@echo
+ 	@echo ------------------------------------------------------------
++	$(MAKE) jdbc1
+ 
+ msg:	
+ 	@echo ------------------------------------------------------------

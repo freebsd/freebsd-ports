@@ -1,0 +1,13 @@
+share/examples/pgsql/jdbc/ImageViewer.java
+share/examples/pgsql/jdbc/basic.java
+share/examples/pgsql/jdbc/blobtest.java
+share/examples/pgsql/jdbc/datestyle.java
+share/examples/pgsql/jdbc/metadata.java
+share/examples/pgsql/jdbc/psql.java
+share/examples/pgsql/jdbc/threadsafe.java
+share/examples/pgsql/jdbc/README
+share/examples/pgsql/jdbc/README_6.3
+@dirrm share/examples/pgsql/jdbc
+@dirrm share/examples/pgsql
+share/java/postgresql.jar
+@unexec rmdir %D/share/java 2>/dev/null || true

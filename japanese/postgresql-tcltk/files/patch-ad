@@ -1,13 +1,11 @@
---- pl/tcl/Makefile.org	Mon Dec 14 08:47:17 1998
-+++ pl/tcl/Makefile	Thu Feb 25 22:20:28 1999
-@@ -55,8 +55,8 @@
- SHLIB_EXTRA_LIBS=
- endif
+--- Makefile.global.in.orig	Wed May 10 03:47:24 2000
++++ Makefile.global.in	Wed May 10 03:48:37 2000
+@@ -87,7 +87,7 @@
+ POSTMANDIR= $(POSTGRESDIR)/man
  
--%$(TCL_SHLIB_SUFFIX):	%.o
--	$(TCL_SHLIB_LD) -o $@ $< $(TCL_LIB_SPEC) $(SHLIB_EXTRA_LIBS)
-+#%$(TCL_SHLIB_SUFFIX):	%.o
-+#	$(TCL_SHLIB_LD) -o $@ $< $(TCL_LIB_SPEC) $(SHLIB_EXTRA_LIBS)
+ # Where the formatted documents (e.g., the reference manual) get installed.
+-POSTDOCDIR= $(POSTGRESDIR)/doc
++POSTDOCDIR= !!PREFIX!!/share/doc/pgsql
  
- 
- #
+ # Where the header files necessary to build frontend programs get installed.
+ HEADERDIR= $(POSTGRESDIR)/include
