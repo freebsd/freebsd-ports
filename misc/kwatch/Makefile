@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <zerium@webindex.no>
 #
-# $Id: Makefile,v 1.9 1998/11/21 07:27:38 steve Exp $
+# $Id: Makefile,v 1.10 1999/03/15 01:58:39 steve Exp $
 #
 
 DISTNAME=	kwatch-0.3
@@ -14,8 +14,8 @@ MASTER_SITE_SUBDIR= stable/1.1/apps/utils
 MAINTAINER=	zerium@webindex.no
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs
+		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11
 
 USE_QT=		yes
 GNU_CONFIGURE=	yes

@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/01 01:13:16 taoka Exp $
+# $Id: Makefile,v 1.2 1999/05/05 14:07:39 taoka Exp $
 #
 
 DISTNAME=	ktranslator-0.4.0
@@ -17,9 +17,9 @@ BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt142 \
 		msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	qt.2:${PORTSDIR}/x11-toolkits/qt142 \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs \
-		kfm.1:${PORTSDIR}/x11/kdelibs
+		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
+		kfm.2:${PORTSDIR}/x11/kdelibs11
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

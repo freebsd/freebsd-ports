@@ -3,7 +3,7 @@
 # Date created:        1 March 1999
 # Whom:                Tom Hukins <tom@eborcom.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/27 13:42:12 taoka Exp $
 #
 
 DISTNAME=	kmikmod-2.04
@@ -14,8 +14,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	tom@eborcom.com
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs
+LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11
 
 WRKSRC=		${WRKDIR}/kmikmod
 USE_QT=		yes

@@ -3,7 +3,7 @@
 # Date created:        09 April 1998
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.20 1998/11/06 21:17:17 nectar Exp $
+# $Id: Makefile,v 1.21 1999/01/09 08:52:26 asami Exp $
 #
 
 DISTNAME=	kpilot-3.0.2
@@ -14,12 +14,12 @@ MAINTAINER=	dima@freebsd.org
 
 LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs \
-		jscript.0:${PORTSDIR}/x11/kdelibs \
-		khtmlw.1:${PORTSDIR}/x11/kdelibs \
-		kfm.1:${PORTSDIR}/x11/kdelibs \
-		mediatool.1:${PORTSDIR}/x11/kdelibs
+		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11 \
+		jscript.2:${PORTSDIR}/x11/kdelibs11 \
+		khtmlw.2:${PORTSDIR}/x11/kdelibs11 \
+		kfm.2:${PORTSDIR}/x11/kdelibs11 \
+		mediatool.2:${PORTSDIR}/x11/kdelibs11
 
 USE_QT=		yes
 KDEDIR?=	$(PREFIX)

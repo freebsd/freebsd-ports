@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.7 1998/10/02 18:21:29 brian Exp $
+# $Id: Makefile,v 1.8 1998/11/07 18:29:09 fenner Exp $
 #
 
 DISTNAME=	kproject-0.1
@@ -15,8 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	hanspb@persbraten.vgs.no
 
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	kdecore.1:${PORTSDIR}/x11/kdelibs \
-		kdeui.1:${PORTSDIR}/x11/kdelibs
+LIB_DEPENDS=	kdecore.2:${PORTSDIR}/x11/kdelibs11 \
+		kdeui.2:${PORTSDIR}/x11/kdelibs11
 
 USE_QT=		yes
 WRKSRC=		${WRKDIR}/kproject
