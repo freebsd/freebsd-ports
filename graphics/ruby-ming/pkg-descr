@@ -1,4 +1,10 @@
-This is a Ruby module for the Ming library based on Python module.
-Ming allows you to create Flash 4/5 (TM) movies.
+Ming/Ruby is yet another implementation of Ming embedding for Ruby
+extension library without SWIG. Ming/Ruby also supports JaMing which
+is an improvement of Ming to display Japanese characters and to play
+sounds. To use Japanese fonts with JaMing, the letters must be
+followed the UTF-8 formats. Uconv, which is an UTF-8 extension library
+for Ruby, can be used to convert other Kanji encodings into Unicode.
 
-Author:	Kazuki Sakamoto <sakamoto@splhack.org>
+WWW: http://madscientist.jp/~ikegami/ruby/ming/
+
+Author: Daisuke Ikegami <ikegami@madscientist.jp>
