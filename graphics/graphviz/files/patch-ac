@@ -4,7 +4,7 @@
  #include <fcntl.h>
  #include <signal.h>
  #include <sys/wait.h>
-+#ifndef __FreeBSD__
++#ifndef HAVE_TERMIOS
  #include <termio.h>
 +#else
 +#include <termios.h>
@@ -16,7 +16,7 @@
  static int findpty (int *fd) {
      char *majorp, *minorp;
      char pty[32], tty[32];
-+#ifndef __FreeBSD__
++#ifndef HAVE_TERMIOS
      struct termio tio;
 +#else
 +    struct termios tio;
@@ -28,7 +28,7 @@
              if ((fd[0] = open (pty, O_RDWR)) >= 0) {
                  sprintf (tty, "/dev/tty%c%c", *majorp, *minorp);
                  if ((fd[1] = open (tty, O_RDWR)) >= 0) {
-+#ifndef __FreeBSD__
++#ifndef HAVE_TERMIOS
                      ioctl (fd[1], TCGETA, &tio);
                      tio.c_lflag &= ~ECHO;
                      ioctl (fd[1], TCSETA, &tio);
