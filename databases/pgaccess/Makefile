@@ -6,9 +6,9 @@
 # $FreeBSD$
 #
 
-DISTNAME=	pgaccess-0.96
+DISTNAME=	pgaccess-0.98
 CATEGORIES=	databases
-MASTER_SITES=	http://www.flex.ro/pgaccess/
+MASTER_SITES	ftp://ftp.flex.ro/pub/pgaccess/
 
 MAINTAINER=	andreas@FreeBSD.org
 
@@ -20,6 +20,12 @@ NO_BUILD=		yes
 FETCH_BEFORE_ARGS=	-b
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pgaccess.tcl ${PREFIX}/bin/pgaccess
-
+	@${MKDIR} ${PREFIX}/share/pgaccess
+	@cd ${WRKSRC} && /bin/pax -rwp p copyright.html main.tcl lib images ${PREFIX}/share/pgaccess
+.if !defined(NOPORTDOCS)
+	@cd ${WRKSRC} && /bin/pax -rwp p README demo doc ${PREFIX}/share/pgaccess
+.endif
+	@${SED} -e 's:!!LOCALBASE!!:${LOCALBASE}:' ${WRKSRC}/pgaccess |\
+	 ${SED} -e 's:!!PREFIX!!:${PREFIX}:' > ${PREFIX}/bin/pgaccess
+	@${CHMOD} 555 ${PREFIX}/bin/pgaccess
 .include <bsd.port.mk>
