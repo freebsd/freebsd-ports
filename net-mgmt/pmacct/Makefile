@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.6.2
-PORTREVISION=	1
+PORTVERSION=	0.6.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -33,10 +32,11 @@ PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
 GNU_CONFIGURE=	yes
-USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
+GNUCONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GETOPT_LONG=yes
+USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/configure
