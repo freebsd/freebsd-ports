@@ -578,6 +578,14 @@ share/gnome/help/char-palette/it/figures/charpick_applet.png
 share/gnome/help/char-palette/it/figures/charpick_characters.png
 share/gnome/help/char-palette/it/figures/charpick_chargroup.png
 share/gnome/help/char-palette/it/legal.xml
+share/gnome/help/char-palette/ja/char-palette.xml
+share/gnome/help/char-palette/ja/figures/charpalette_applet.png
+share/gnome/help/char-palette/ja/figures/charpalette_chargroup.png
+share/gnome/help/char-palette/ja/figures/charpick_applet.png
+share/gnome/help/char-palette/ja/figures/charpick_characters.png
+share/gnome/help/char-palette/ja/figures/charpick_chargroup.png
+share/gnome/help/char-palette/ja/figures/mailcheck_applet.png
+share/gnome/help/char-palette/ja/legal.xml
 share/gnome/help/char-palette/ko/char-palette.xml
 share/gnome/help/char-palette/ko/figures/charpalette_applet.png
 share/gnome/help/char-palette/ko/figures/charpalette_chargroup.png
@@ -936,11 +944,6 @@ share/gnome/help/mailcheck/it/figures/mailcheck-properties-mailcheck.png
 share/gnome/help/mailcheck/it/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/it/legal.xml
 share/gnome/help/mailcheck/it/mailcheck.xml
-share/gnome/help/mailcheck/ja/figures/charpalette_applet.png
-share/gnome/help/mailcheck/ja/figures/charpalette_chargroup.png
-share/gnome/help/mailcheck/ja/figures/charpick_applet.png
-share/gnome/help/mailcheck/ja/figures/charpick_characters.png
-share/gnome/help/mailcheck/ja/figures/charpick_chargroup.png
 share/gnome/help/mailcheck/ja/figures/mailcheck_applet.png
 share/gnome/help/mailcheck/ja/legal.xml
 share/gnome/help/mailcheck/ja/mailcheck.xml
@@ -1238,6 +1241,8 @@ share/gnome/omf/gnome-applets/char-palette-fr.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-fr.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-it.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-it.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-applets/char-palette-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-ko.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-applets/char-palette-ko.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-applets/char-palette-sv.omf
@@ -2107,6 +2112,8 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/help/char-palette/sv
 @dirrm share/gnome/help/char-palette/ko/figures
 @dirrm share/gnome/help/char-palette/ko
+@dirrm share/gnome/help/char-palette/ja/figures
+@dirrm share/gnome/help/char-palette/ja
 @dirrm share/gnome/help/char-palette/it/figures
 @dirrm share/gnome/help/char-palette/it
 @dirrm share/gnome/help/char-palette/fr/figures
@@ -2218,6 +2225,7 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-eu.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-fr.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-it.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-ko.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-sv.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-applets/char-palette-zh_CN.omf 2>/dev/null || /usr/bin/true

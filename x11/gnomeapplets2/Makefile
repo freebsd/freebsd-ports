@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeapplets2
-PORTVERSION=	2.6.2
+PORTVERSION=	2.6.2.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-applets/2.6
@@ -24,9 +24,9 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNOME_DESKTOP_VERSION=2
-USE_GNOME=	gnomehier gnomeprefix gnomehack intlhack lthack gnomepanel \
+USE_GNOME=	gnomehier gnomeprefix gnomehack intlhack gnomepanel \
 		gstreamerplugins gail
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
