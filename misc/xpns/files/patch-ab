@@ -5,9 +5,9 @@
 -setenv XAPPLRESDIR $PWD/
 -pns
 +#!/bin/csh
-+setenv XAPPLRESDIR /usr/X11R6/lib/xpns/
++setenv XAPPLRESDIR %%PREFIX%%/share/xpns/
 +# Note pns will dump core if environment is not correct
-+/usr/X11R6/lib/xpns/pns
++%%PREFIX%%/libexec/xpns/pns
  
  
  

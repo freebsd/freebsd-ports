@@ -13,22 +13,24 @@ DISTFILES=	pns_source.tar.Z
 
 MAINTAINER=	giffunip@asme.org
 
-USE_X_PREFIX=	yes
 NO_WRKSUBDIR=	yes
+USE_X_PREFIX=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	pns
 
-do-install:
-	${MKDIR} ${PREFIX}/lib/xpns
-	${INSTALL_PROGRAM} ${WRKSRC}/pns ${PREFIX}/lib/xpns/
-	${INSTALL_DATA} ${WRKSRC}/pns.hlp ${PREFIX}/lib/xpns/
-	${INSTALL_DATA} ${WRKSRC}/pns.shell ${PREFIX}/lib/xpns/
-	${INSTALL_SCRIPT} ${WRKSRC}/xpns ${PREFIX}/bin/xpns
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/xpns
 
-post-install:
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/xpns ${PREFIX}/bin/xpns
+	${MKDIR} ${PREFIX}/libexec/xpns
+	${INSTALL_PROGRAM} ${WRKSRC}/pns ${PREFIX}/libexec/xpns
+	${MKDIR} ${PREFIX}/share/xpns
+	${INSTALL_DATA} ${WRKSRC}/pns.hlp ${PREFIX}/share/xpns
+	${INSTALL_DATA} ${WRKSRC}/pns.shell ${PREFIX}/share/xpns
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/xpns
-	${CP} ${WRKSRC}/*.net ${PREFIX}/share/doc/xpns/
+	${INSTALL_DATA} ${WRKSRC}/*.net ${PREFIX}/share/doc/xpns
 .endif
 
 .include <bsd.port.mk>
