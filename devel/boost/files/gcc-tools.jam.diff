@@ -1,0 +1,16 @@
+*** tools/build/gcc-tools.jam.orig	Tue Oct 14 21:38:52 2003
+--- tools/build/gcc-tools.jam	Tue Oct 14 21:50:16 2003
+***************
+*** 122,127 ****
+--- 122,132 ----
+          GCC ?= cc ;
+          GXX ?= c++ ;
+          }
++     case FreeBSD :
++         {
++ 	# for current which doesn't support -pthread
++         flags gcc LINKFLAGS <threading>multi : -lc_r ;
++         }
+      case *BSD :
+          {
+          flags gcc CFLAGS <threading>multi : -pthread ;

@@ -7,40 +7,46 @@
 #
 
 PORTNAME=	boost
-PORTVERSION=	1.30.0
-PORTREVISION=	1
+PORTVERSION=	1.30.2
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	pmarquis@pobox.com
 COMMENT=	Free peer-reviewed portable C++ source libraries
 
-BROKEN=		"Does not build, will be removed after Feb 2"
-
 MAKE_ENV+=	BOOST_ROOT=${WRKSRC} BUILD="debug release"
-MAKE_ENV+=	BOOST_BUILD_PATH="${WRKDIR}/gcc-custom" TOOLS="gcc-custom"
-COMPILED_LIBS=	regex signals thread
-.if defined(WITHOUT_PYTHON)
-PLIST_SUB+=	BOOST_PYTHON="@comment "
-.else
-PLIST_SUB+=	BOOST_PYTHON=""
+
+.if defined(WITH_PYTHON)
 USE_PYTHON=	yes
-MAKE_ENV+=	PYTHON="${PYTHON_CMD}" PYTHON_VERSION="${_PYTHON_VERSION}"
-MAKE_ENV+=	PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"
-MAKE_ENV+=	PYTHON_STDLIB_PATH="${PYTHON_LIBDIR}"
+# 1.30.2 doesn't support python2.3
+PYTHON_VERSION=	python2.2
 COMPILED_LIBS+=	python
+PLIST_SUB+=	BOOST_PYTHON=""
+.else
+PLIST_SUB+=	BOOST_PYTHON="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
+
+MAKE_ENV+=	PYTHON_ROOT="${PREFIX}"
+MAKE_ENV+=	PYTHON_VERSION="${_PYTHON_VERSION}"
+MAKE_ENV+=	PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"
+MAKE_ENV+=	PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 INSTALLS_SHLIB=	yes
 DOCFILES=	*.css *.gif *.htm *.html *.jpeg *.jpg *.png
+
 BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsd/bjam
+  
+COMPILED_LIBS+=	date_time filesystem regex signals test thread
 
 do-configure:
-	${MKDIR} ${WRKDIR}/gcc-custom
-	${SED} -E -e 's/%%GXX%%/${CXX}/g' -e 's/%%GCC%%/${CC}/g' < \
-	    ${FILESDIR}/gcc-custom-tools.jam > \
-	    ${WRKDIR}/gcc-custom/gcc-custom-tools.jam
+# for -pthread options
+.if ${OSVERSION} >= 500016
+	cd ${WRKSRC} && patch < ${FILESDIR}/gcc-tools.jam.diff
+.endif
 
 do-build:
 	cd ${WRKSRC}/tools/build/jam_src && ./build.sh gcc
@@ -60,4 +66,4 @@ do-install:
 	cd ${WRKSRC} && ${FIND} libs -type d -name example\* | ${TAR} cTf - - | ${TAR} xUCf ${EXAMPLESDIR} -
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
