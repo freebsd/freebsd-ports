@@ -30,6 +30,9 @@ CONFIGURE_ARGS+=	--enable-syslog
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
+MMAN_CACHE=	/var/cache/mman
+PLIST_SUB+=	MMAN_CACHE=${MMAN_CACHE}
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr/bin/mman|${PREFIX}/bin/mman|g' \
@@ -37,6 +40,7 @@ post-patch:
 		${WRKSRC}/scripts/mman.init
 
 do-install:
+	@${MKDIR} ${MMAN_CACHE}
 	${INSTALL_PROGRAM} ${WRKSRC}/mman ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/config.xml ${PREFIX}/etc/mman.xml
 	${INSTALL_DATA} ${WRKSRC}/scripts/mman.init ${PREFIX}/etc/rc.d/mman.sh.sample

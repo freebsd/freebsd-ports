@@ -4,3 +4,7 @@ etc/mman.xml
 %%PORTDOCS%%share/doc/middleman/README.html
 %%PORTDOCS%%share/doc/middleman/filter.pl
 @dirrm %%PORTDOCS%%share/doc/middleman
+@cwd /
+@exec mkdir -p %%MMAN_CACHE%%
+@unexec rm -rf %%MMAN_CACHE%%
+@dirrm /var/cache
