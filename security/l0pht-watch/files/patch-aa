@@ -1,22 +1,22 @@
---- Makefile.orig	Tue Dec 29 03:57:35 1998
-+++ Makefile	Sun Apr 11 20:32:06 1999
-@@ -8,12 +8,13 @@
- # pick gcc if you'd rather , and/or do -g instead of -O if debugging
+--- Makefile.orig	Thu Sep 23 10:18:18 1999
++++ Makefile	Sat Dec  4 00:53:05 1999
+@@ -9,12 +9,13 @@
  # debugging
  # DFLAGS = -DTEST -DDEBUG
+ DFLAGS = -DREGEX
 -CFLAGS =-O -Wall
-+CFLAGS ?= -O
-+CFLAGS += -Wall
++CFLAGS ?=-O -Wall
  XFLAGS =        # xtra cflags, set by systype targets
  XLIBS =         # xtra libs if necessary?
  # -Bstatic for sunos,  -static for gcc, etc.  You want this, trust me.
  STATIC =
 -CC = cc $(CFLAGS)
 +CC ?= cc
++CC += $(CFLAGS)
  LD = $(CC) -s   # linker; defaults to stripped executables
  o = o           # object extension
  CKTEMP_OBJS=check_tmp.o daemon.o list_utils.o usage.o
-@@ -59,7 +60,8 @@
+@@ -60,7 +61,8 @@
  
  OpenBSD:
  	make -e $(ALL) $(MFLAGS) \
