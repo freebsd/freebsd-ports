@@ -3,18 +3,19 @@ bin/gcolorsel
 bin/gdialog
 bin/gdiskfree
 bin/gfontsel
-bin/ghex
 bin/gless
 bin/gnome-run
 bin/grun
 bin/gsearchtool
 bin/gshutdown
 bin/gstripchart
+bin/gstripchart_applet
 bin/gtt
 bin/gw
 bin/splac
 bin/splash
-share/gnome/apps/Applications/ghex.desktop
+etc/CORBA/servers/gstripchart_applet.gnorba
+share/gnome/applets/Monitors/gstripchart_applet.desktop
 share/gnome/apps/Applications/gtt.desktop
 share/gnome/apps/System/gshutdown.desktop
 share/gnome/apps/Utilities/gcalc.desktop
@@ -27,19 +28,39 @@ share/gnome/apps/Utilities/gstripchart.desktop
 share/gnome/apps/Utilities/gw.desktop
 share/gnome/apps/gnome-run.desktop
 share/gnome/gstripchart/gstripchart.conf
-share/gnome/help/ghex/C/index.html
-share/gnome/help/ghex/C/topic.dat
-share/gnome/help/ghex/es/index.html
-share/gnome/help/ghex/es/topic.dat
-share/gnome/help/ghex/sv/index.html
-share/gnome/help/ghex/sv/topic.dat
+share/gnome/help/gdiskfree/C/authors.html
+share/gnome/help/gdiskfree/C/docbook.css
+share/gnome/help/gdiskfree/C/images/gdiskfree.png
+share/gnome/help/gdiskfree/C/index.html
+share/gnome/help/gdiskfree/C/topic.dat
+share/gnome/help/gdiskfree/C/usage.html
+share/gnome/help/gfontsel/C/authors.html
+share/gnome/help/gfontsel/C/filter.html
+share/gnome/help/gfontsel/C/fontinfo.html
+share/gnome/help/gfontsel/C/index.html
+share/gnome/help/gfontsel/C/ln7.html
+share/gnome/help/gfontsel/C/mainshot.png
+share/gnome/help/gfontsel/C/mainwin.html
+share/gnome/help/gfontsel/C/stylesheet-images/warning.gif
+share/gnome/help/gfontsel/C/topic.dat
+share/gnome/help/gfontsel/C/xlfd.html
+share/gnome/help/gsearchtool/C/authors.html
+share/gnome/help/gsearchtool/C/criteria.html
+share/gnome/help/gsearchtool/C/gsearch.png
+share/gnome/help/gsearchtool/C/index.html
+share/gnome/help/gsearchtool/C/ln7.html
+share/gnome/help/gsearchtool/C/locate.html
+share/gnome/help/gsearchtool/C/locate.png
+share/gnome/help/gsearchtool/C/mainwin.png
+share/gnome/help/gsearchtool/C/results.png
+share/gnome/help/gsearchtool/C/topic.dat
+share/gnome/help/gsearchtool/C/usage.html
 share/gnome/help/gshutdown/C/index.html
 share/gnome/help/gshutdown/C/topic.dat
 share/gnome/help/gshutdown/es/index.html
 share/gnome/help/gshutdown/es/topic.dat
 share/gnome/help/gshutdown/no/index.html
 share/gnome/help/gshutdown/no/topic.dat
-share/gnome/help/gstripchart/C/gstripchart.html
 share/gnome/help/gstripchart/C/index.html
 share/gnome/help/gstripchart/C/topic.dat
 share/gnome/help/gtt/C/index.html
@@ -50,14 +71,15 @@ share/gnome/help/gtt/es/index.html
 share/gnome/help/gtt/es/topic.dat
 share/gnome/idl/gsu.idl
 share/gnome/pixmaps/gnome-fontsel.png
-share/gnome/pixmaps/gnome-ghex.png
 share/gnome/pixmaps/gnome-searchtool.png
+share/gnome/pixmaps/gnome-shutdown.png
 share/gnome/pixmaps/gnome-stripchart.png
 share/gnome/pixmaps/gnome-who.png
 share/locale/ca/LC_MESSAGES/gnome-utils.mo
 share/locale/cs/LC_MESSAGES/gnome-utils.mo
 share/locale/da/LC_MESSAGES/gnome-utils.mo
 share/locale/de/LC_MESSAGES/gnome-utils.mo
+share/locale/el/LC_MESSAGES/gnome-utils.mo
 share/locale/en_GB/LC_MESSAGES/gnome-utils.mo
 share/locale/es/LC_MESSAGES/gnome-utils.mo
 share/locale/et/LC_MESSAGES/gnome-utils.mo
@@ -74,7 +96,9 @@ share/locale/pt/LC_MESSAGES/gnome-utils.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-utils.mo
 share/locale/ru/LC_MESSAGES/gnome-utils.mo
 share/locale/sv/LC_MESSAGES/gnome-utils.mo
+share/locale/uk/LC_MESSAGES/gnome-utils.mo
 share/locale/wa/LC_MESSAGES/gnome-utils.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-utils.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gnome-utils.mo
 @dirrm share/gnome/help/gtt/es
 @dirrm share/gnome/help/gtt/de
@@ -86,8 +110,12 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-utils.mo
 @dirrm share/gnome/help/gshutdown/es
 @dirrm share/gnome/help/gshutdown/C
 @dirrm share/gnome/help/gshutdown
-@dirrm share/gnome/help/ghex/sv
-@dirrm share/gnome/help/ghex/es
-@dirrm share/gnome/help/ghex/C
-@dirrm share/gnome/help/ghex
+@dirrm share/gnome/help/gsearchtool/C
+@dirrm share/gnome/help/gsearchtool
+@dirrm share/gnome/help/gfontsel/C/stylesheet-images
+@dirrm share/gnome/help/gfontsel/C
+@dirrm share/gnome/help/gfontsel
+@dirrm share/gnome/help/gdiskfree/C/images
+@dirrm share/gnome/help/gdiskfree/C
+@dirrm share/gnome/help/gdiskfree
 @dirrm share/gnome/gstripchart

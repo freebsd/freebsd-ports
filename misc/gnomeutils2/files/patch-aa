@@ -1,6 +1,6 @@
---- configure.orig	Tue Sep 28 17:45:40 1999
-+++ configure	Mon Oct  4 17:32:08 1999
-@@ -2409,7 +2409,7 @@
+--- configure.orig	Wed Mar  8 09:07:49 2000
++++ configure	Sat Mar 11 15:35:52 2000
+@@ -2480,7 +2480,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -9,16 +9,16 @@
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
-@@ -3165,7 +3165,7 @@
+@@ -3277,7 +3277,7 @@
    
  	echo $ac_n "checking for an obGnomeConf.sh""... $ac_c" 1>&6
- echo "configure:3168: checking for an obGnomeConf.sh" >&5
+ echo "configure:3280: checking for an obGnomeConf.sh" >&5
 -	my_gnome_libdir=`$GNOME_CONFIG --libdir`
 +	my_gnome_libdir=`$GNOME_CONFIG --sysconfdir`
  	if test -f $my_gnome_libdir/obGnomeConf.sh; then
  	    . $my_gnome_libdir/obGnomeConf.sh
  	    echo "$ac_t""found $my_gnome_libdir" 1>&6
-@@ -5419,7 +5419,7 @@
+@@ -5531,7 +5531,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
