@@ -5574,6 +5574,7 @@ pardiff		ports/textproc/pardiff
 pari		ports/math/pari
 pari-devel	ports/math/pari-devel
 parmetis	ports/math/parmetis
+parrot		ports/devel/parrot
 party		ports/irc/party
 pash		ports/shells/pash
 passivetex	ports/print/passivetex
