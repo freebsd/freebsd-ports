@@ -1,5 +1,5 @@
---- scripts/exim_install.orig	Tue Feb 25 11:12:33 1997
-+++ scripts/exim_install	Wed Feb 26 15:17:09 1997
+--- scripts/exim_install.orig	Thu Aug 21 16:48:58 1997
++++ scripts/exim_install	Fri Aug 29 15:22:04 1997
 @@ -8,6 +8,8 @@
  # This script also installs a default configuration file in CONFIGURE_FILE
  # if there is no configuration file there.
@@ -12,9 +12,9 @@
 @@ -65,10 +67,12 @@
  fi
  
- BIN_DIRECTORY=`grep -h "^ *BIN_DIRECTORY" $files | tail -1 | cut -c15-99`
-+INFO_DIRECTORY=`grep -h "^ *INFO_DIRECTORY" $files | tail -1 | cut -c16-99`
- CONFIGURE_FILE=`grep -h "^ *CONFIGURE_FILE" $files | tail -1 | cut -c16-99`
+ BIN_DIRECTORY=`grep "^ *BIN_DIRECTORY=" $files | tail -1 | cut -f2-99 -d: | cut -c15-99`
++INFO_DIRECTORY=`grep "^ *INFO_DIRECTORY=" $files | tail -1 | cut -f2-99 -d: | cut -c16-99`
+ CONFIGURE_FILE=`grep "^ *CONFIGURE_FILE=" $files | tail -1 | cut -f2-99 -d: | cut -c16-99`
  
  # Allow INST_xx to over-ride xx
  case "$INST_BIN_DIRECTORY" in ?*) BIN_DIRECTORY="$INST_BIN_DIRECTORY";; esac
@@ -51,7 +51,7 @@
  # If no arguments, install everything
  
  if [ $# -gt 0 ]; then
-@@ -166,12 +185,30 @@
+@@ -167,12 +186,30 @@
    fi
  done
  
