@@ -3,7 +3,7 @@
 # Date created:		10 November 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.12 1996/06/17 17:34:16 adam Exp $
+# $Id: Makefile,v 1.13 1996/06/19 14:57:21 adam Exp $
 #
 
 DISTNAME=	dgd-lpmud
@@ -16,8 +16,8 @@ DIST_SUBDIR=	dgd
 
 MAINTAINER=	adam@veda.is
 
-NO_CDROM=	depends on DGD, which is NO_CDROM
-RESTRICTED=	no monetary gain
+NO_PACKAGE=	depends on DGD, which is NO_CDROM
+RESTRICTED=	no monetary gain, tarball OK for CDROM
 
 RUN_DEPENDS=	${PREFIX}/dgd/bin/driver:${PORTSDIR}/net/dgd
 
