@@ -1250,6 +1250,7 @@ ehnt		ports/net/ehnt
 eieio		ports/devel/eieio
 eieio-emacs20	ports/devel/eieio-emacs20
 eiffel		ports/lang/eiffel
+eights		ports/games/eights
 eispack		ports/math/eispack
 eject		ports/sysutils/eject
 electric	ports/cad/electric
