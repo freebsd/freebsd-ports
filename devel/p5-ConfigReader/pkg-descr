@@ -1,0 +1,22 @@
+       The ConfigReader library is a set of classes which reads
+       directives from a configuration file.  The library is
+       completely object oriented, and it is envisioned that
+       parsers for new styles of configuration files can be
+       easily added.
+
+       ConfigReader::Spec encapsulates a specification for
+       configuration directives.  You can specify which
+       directives can be in the configuration file, aliases for
+       the directive, whether the directive is required or has a
+       default value, and how to parse the directive value.
+
+       Here's an example of how one directive might be specified:
+
+            required $spec 'HomePage', 'new URI::URL';
+
+       This defines a required directive called 'HomePage'.  To
+       parse the value from the configuration file, the
+       URI::URL::new() method will be called with the string
+       value as its argument.
+
+       use 'perldoc ConfigReader' for more information.
