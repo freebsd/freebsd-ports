@@ -1,4 +1,24 @@
 bin/wrap
 lib/libswig.a
 include/swig.h
-lib/swig_lib
+@exec mkdir %D/lib/swig_lib/tcl
+@exec mkdir %D/lib/swig_lib/perl4
+@exec mkdir %D/lib/swig_lib/perl5
+@exec mkdir %D/lib/swig_lib/python
+@exec mkdir %D/lib/swig_lib/guile-iii
+@unexec rmdir %D/lib/swig_lib/tcl
+@unexec rmdir %D/lib/swig_lib/perl4
+@unexec rmdir %D/lib/swig_lib/perl5
+@unexec rmdir %D/lib/swig_lib/python
+@unexec rmdir %D/lib/swig_lib/guile-iii
+lib/swig_lib/carray.i
+lib/swig_lib/malloc.i
+lib/swig_lib/math.i
+lib/swig_lib/stdlib.i
+lib/swig_lib/timers.i
+lib/swig_lib/expect.i
+lib/swig_lib/expectk.i
+lib/swig_lib/tclsh.i
+lib/swig_lib/wish.i
+lib/swig_lib/userinit.i
+lib/swig_lib/interpreter.i
