@@ -184,6 +184,7 @@
     SUBDIR += python21
     SUBDIR += python22
     SUBDIR += qscheme
+    SUBDIR += quack
     SUBDIR += ratfor
     SUBDIR += rexx-imc
     SUBDIR += rscheme
