@@ -24,10 +24,6 @@ MAN3=		libjit.3
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64"
-.endif
-
 post-patch:
 .if ${OSVERSION} >=	502128
 	@${REINPLACE_CMD} -e 's|#undef HAVE_TGMATH_H||' \
@@ -35,7 +31,7 @@ post-patch:
 .endif
 
 post-configure:
-.if ${OSVERSION} >=	502123
+.if ${OSVERSION} >=	502123 && ${ARCH} != "amd64"
 	@${REINPLACE_CMD} -e 's|$$pic_flag -DPIC||' \
 		${WRKSRC}/libtool
 .endif
