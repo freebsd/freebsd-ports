@@ -70,6 +70,14 @@ share/licq/qt-gui/dock.pli/pli.dock
 share/licq/qt-gui/dock.pli/regmsg.xpm
 share/licq/qt-gui/dock.pli/statusmask.xpm
 share/licq/qt-gui/dock.pli/sysmsg.xpm
+share/licq/qt-gui/extended.icons.basic/basic.icons
+share/licq/qt-gui/extended.icons.basic/itemCollapsed.xpm
+share/licq/qt-gui/extended.icons.basic/itemExpanded.xpm
+share/licq/qt-gui/extended.icons.basic/pixBirthday.xpm
+share/licq/qt-gui/extended.icons.basic/pixCellular.xpm
+share/licq/qt-gui/extended.icons.basic/pixCustomAR.xpm
+share/licq/qt-gui/extended.icons.basic/pixInvisible.xpm
+share/licq/qt-gui/extended.icons.basic/pixPhone.xpm
 share/licq/qt-gui/icons.computer/chat.xpm
 share/licq/qt-gui/icons.computer/chess.xpm
 share/licq/qt-gui/icons.computer/computer.icons
@@ -104,6 +112,7 @@ share/licq/qt-gui/icons.icq2/na.xpm
 share/licq/qt-gui/icons.icq2/occ.xpm
 share/licq/qt-gui/icons.icq2/offline.xpm
 share/licq/qt-gui/icons.icq2/online.xpm
+share/licq/qt-gui/icons.icq2/sms.xpm
 share/licq/qt-gui/icons.icq2/url.xpm
 share/licq/qt-gui/icons.mark/away.ppm
 share/licq/qt-gui/icons.mark/chat.ppm
@@ -167,7 +176,9 @@ share/licq/qt-gui/skin.shale/status.png
 @dirrm share/licq/qt-gui/icons.mark
 @dirrm share/licq/qt-gui/icons.icq2
 @dirrm share/licq/qt-gui/icons.icq
+@dirrm share/licq/qt-gui/icons.dots
 @dirrm share/licq/qt-gui/icons.computer
+@dirrm share/licq/qt-gui/extended.icons.basic
 @dirrm share/licq/qt-gui/dock.pli
 @dirrm share/licq/qt-gui/dock.kde2
 @dirrm share/licq/qt-gui/dock.glicq

@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PKGNAMEPREFIX=		licq-
-LICQ_VER=		1.2.0a
-QT_LICQ_VER=		1.2.0
+LICQ_VER=		1.2.3
+QT_LICQ_VER=		1.2.3
 RMS_LICQ_VER=		0.33
-CONSOLE_LICQ_VER=	1.2.0
-JONS_GTK_LICQ_VER=	0.20
+CONSOLE_LICQ_VER=	1.2.3
+JONS_GTK_LICQ_VER=	0.20.1
 .if ${PORTNAME} != "base"
 RUN_DEPENDS+=		licq:${PORTSDIR}/net/licq
 .endif
@@ -20,7 +20,7 @@ MD5_FILE?=		${PORTSDIR}/net/licq/distinfo
 #USE_LIBTOOL=		yes
 USE_GMAKE=		yes
 USE_BZIP2=		yes
-WRKSRC?=		${WRKDIR}/${DISTNAME}/plugins/${PORTNAME}-${PORTVERSION}
+WRKSRC?=		${WRKDIR}/${DISTNAME}/plugins/${PORTNAME}
 PLIST_SUB+=		LICQ_DEVEL="@comment "
 .if ${OSVERSION} > 500030
 CPPFLAGS+=		-Wno-deprecated
