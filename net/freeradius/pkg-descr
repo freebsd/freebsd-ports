@@ -1,5 +1,4 @@
   All code in this server was written from scratch.
-
   The server is mostly compatible with livingston radiusd-2.01
   (no menus or s/key support though) but with more feautures, such as:
 
