@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	holyshout
-PORTVERSION=	0.1.3
+PORTVERSION=	0.2
 CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 
 MAINTAINER=	hollywar@mail.holywar.net
 COMMENT=	Streaming audio to Icecast/shoutcast supports multiple bitrate stream
 
+LIB_DEPENDS=	shout.2:${PORTSDIR}/audio/libshout
+
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 post-patch:
-	(${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
-		"s@-O20@${CFLAGS}@g ; s@-O2@${CFLAGS}@g")
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
 		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's,,\r,g' ${WRKSRC}/holyshout.c
 
 .include <bsd.port.mk>
