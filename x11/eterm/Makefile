@@ -1,13 +1,13 @@
 # New ports collection makefile for:	eterm
-# Version required:    0.8.8
+# Version required:    0.8.9
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Eterm-0.8.8
-PKGNAME=	eterm-0.8.8
+DISTNAME=	Eterm-0.8.9
+PKGNAME=	eterm-0.8.9
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.eterm.org/pub/Eterm/ \
 		http://eterm.is.nontoxic.org/download/ \
@@ -31,19 +31,20 @@ pre-patch:
 	${CP} ${FILESDIR}/patch-kanji ${PATCHDIR}
 .endif
 
+# this is needed to remove leftover files from applied patches.
+pre-install:
+.for i in Eterm emacs irc mutt tn3270 trans
+	@${RM} -f ${WRKSRC}/themes/$i/*.orig
+.endfor
+
 post-install:
-	${CHOWN} root.wheel ${PREFIX}/bin/Eterm
-	${CHMOD} 4755 ${PREFIX}/bin/Eterm
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/colortest.sh ${PREFIX}/share/Eterm
+	@${CHMOD} 4711 ${PREFIX}/bin/Eterm
 .ifndef NOPORTDOCS
-	${MKDIR} ${PREFIX}/share/doc/Eterm
-	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/doc/Eterm
-	${INSTALL_DATA} ${WRKSRC}/doc/Eterm.help ${PREFIX}/share/doc/Eterm
-	${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ref ${PREFIX}/share/doc/Eterm
-	${INSTALL_DATA} ${WRKSRC}/doc/Eterm.tcap ${PREFIX}/share/doc/Eterm
-	${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
-	${INSTALL_DATA} ${WRKSRC}/doc/FAQ.html ${PREFIX}/share/doc/Eterm
-	${INSTALL_DATA} ${WRKSRC}/doc/menu_cmd ${PREFIX}/share/doc/Eterm
+	@${MKDIR} ${PREFIX}/share/doc/Eterm
+	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/doc/Eterm
+	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.tcap ${PREFIX}/share/doc/Eterm
+	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
+	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ.html ${PREFIX}/share/doc/Eterm
 .endif
 
 .include <bsd.port.mk>

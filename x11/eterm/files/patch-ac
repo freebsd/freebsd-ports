@@ -1,14 +1,13 @@
-*** src/Makefile.in	Wed Jan 13 05:54:45 1999
---- src/Makefile.in~	Sun Feb  7 23:00:35 1999
-***************
-*** 123,128 ****
---- 123,131 ----
-               system.h threads.h graphics/Makefile.am graphics/Makefile.in \
-               graphics/README graphics/data graphics/grxlib.c graphics/grxlib.h \
-               graphics/qplot.c Eterm.xpm
-+ ifeq ($(PORTOBJFORMAT),elf)
-+ LDFLAGS+=-Wl,-rpath,$(X11BASE)/lib
-+ endif
-  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-  CONFIG_HEADER = ../config.h
-  CONFIG_CLEAN_FILES = 
+--- src/Makefile.in	Mon Apr 26 10:53:52 1999
++++ src/Makefile.in.new	Wed Sep  1 14:34:27 1999
+@@ -121,6 +121,10 @@
+ 
+ EXTRA_DIST = activeconfig.h activeeterm.h activetags.h command.h debug.h              eterm_imlib.h feature.h.in graphics.h grkelot.h grx.h main.h              menubar.h misc.h options.h pixmap.h profile.h screen.h scrollbar.h              system.h threads.h graphics/Makefile.am graphics/Makefile.in              graphics/README graphics/data graphics/grxlib.c graphics/grxlib.h              graphics/qplot.c Eterm.xpm
+ 
++ifeq ($(PORTOBJFORMAT),elf)
++LDFLAGS+=-Wl,-rpath,$(X11BASE)/lib
++endif
++
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
