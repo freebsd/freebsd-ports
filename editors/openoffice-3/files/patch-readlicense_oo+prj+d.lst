@@ -1,0 +1,8 @@
+--- ../readlicense_oo/prj/d.lst~	Thu Jul 17 03:00:51 2003
++++ ../readlicense_oo/prj/d.lst	Sun Jul 27 17:23:26 2003
+@@ -206,4 +206,4 @@
+ ..\%__SRC%\misc\99\readme99.txt %_DEST%\bin%_EXT%\99\osl\README99
+ ..\%__SRC%\misc\99\readme99.html %_DEST%\bin%_EXT%\99\osl\README99.html
+ 
+-..\%__SRC%\misc\THIRDPARTYLICENSEREADME.html %_DEST%\bin%_EXT%\THIRDPARTYLICENSEREADME.html
++..\%__SRC%\html\THIRDPARTYLICENSEREADME.html %_DEST%\bin%_EXT%\THIRDPARTYLICENSEREADME.html
