@@ -112,6 +112,8 @@ eijiro*.txt		ports/japanese/eijiro-fpw The original dictionary is not
 						free
 emc2			ports/math/emc2		Contact author personally
 						regarding commercial use
+et-linux-*		ports/games/linux-enemyterritory	Redistribution
+						prohibited.
 ezmlm			ports/mail/ezmlm	no license--see
 						http://cr.yp.to/softwarelaw.html
 ezmlm-idx		ports/mail/ezmlm-idx	no license--see
