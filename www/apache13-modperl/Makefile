@@ -7,6 +7,7 @@
 
 PORTNAME=	apache+mod_perl
 PORTVERSION=	${VERSION_APACHE}
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD:S/$/:apache/} \
 		${MASTER_SITE_PERL_CPAN:S/$/Apache\/:modperl/}
@@ -14,7 +15,7 @@ DISTNAME=	apache_${VERSION_APACHE}
 DISTFILES=	apache_${VERSION_APACHE}${EXTRACT_SUFX}:apache \
 		mod_perl-${VERSION_MODPERL}${EXTRACT_SUFX}:modperl
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The Apache 1.3 webserver with a statically embedded perl interpreter
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
@@ -145,7 +146,7 @@ MAN3=	Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::RegistryLoader.3 Apache::StatINC.3 Apache::Include.3 \
 		Apache::PerlSections.3 cgi_to_mod_perl.3 \
 		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
-		mod_perl_tuning.3
+		mod_perl_tuning.3 Apache::MyConfig.3
 
 MAN8=	ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
 		${SUEXEC_MAN}
