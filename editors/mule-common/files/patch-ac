@@ -1,5 +1,5 @@
---- orig/s/freebsd.h	Mon Jun 10 05:14:32 1996
-+++ src/s/freebsd.h	Tue Sep 29 11:35:32 1998
+--- src/s/freebsd.h.orig	Mon Jun 10 05:14:32 1996
++++ src/s/freebsd.h	Sat Jan 16 22:17:58 1999
 @@ -1,5 +1,15 @@
  /* s/ file for freebsd system.  */
  
@@ -24,16 +24,21 @@
  
  #define SYSV_SYSTEM_DIR
  
-@@ -42,12 +51,28 @@
+@@ -42,12 +51,33 @@
  #undef BSD_PGRPS
  #define GETPGRP_NO_ARG
  
 +#ifdef __ELF__
 +
 +#define LD_SWITCH_SYSTEM
++#ifdef i386
 +#define START_FILES pre-crt0.o /usr/lib/crt1.o /usr/lib/crti.o /usr/lib/crtbegin.o
-+#define UNEXEC unexelf.o
 +#define LIB_STANDARD -lgcc -lc -lgcc /usr/lib/crtend.o /usr/lib/crtn.o
++#else
++#define START_FILES pre-crt0.o /usr/lib/crt1.o /usr/lib/crtbegin.o
++#define LIB_STANDARD -lgcc -lc -lgcc /usr/lib/crtend.o
++#endif
++#define UNEXEC unexelf.o
 +#undef LIB_GCC
 +#define LIB_GCC
 +
@@ -54,7 +59,7 @@
  
  #ifndef N_TRELOFF
  #define N_PAGSIZ(x) __LDPGSZ
-@@ -63,6 +88,8 @@
+@@ -63,6 +93,8 @@
  #endif /* __FreeBSD__ */
  #endif /* NO_SHARED_LIBS */
  
@@ -63,7 +68,7 @@
  #define HAVE_WAIT_HEADER
  #define HAVE_GETLOADAVG
  /*#define HAVE_GETPAGESIZE  /* configure now puts this in config.h */
-@@ -80,6 +107,8 @@
+@@ -80,6 +112,8 @@
  #define BSD 199103
  #elif __FreeBSD__ == 2
  #define BSD 199306

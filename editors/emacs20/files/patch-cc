@@ -1,5 +1,5 @@
---- configure.in.orig	Sat Nov 21 08:59:52 1998
-+++ configure.in	Sat Nov 21 08:58:16 1998
+--- configure.in.orig	Wed Jul  1 07:15:05 1998
++++ configure.in	Sun Jan  3 21:44:02 1999
 @@ -57,6 +57,9 @@
  AC_ARG_WITH(gssapi,
  [  --with-gssapi           support GSSAPI-authenticated POP],
@@ -10,3 +10,27 @@
  dnl This should be the last --with option, because --with-x is
  dnl added later on when we find the path of X, and it's best to
  dnl keep them together visually.
+@@ -162,6 +165,15 @@
+ machine='' opsys='' unported=no
+ case "${canonical}" in
+ 
++  ## FreeBSD ports
++  *-*-freebsd* )
++    opsys=freebsd
++    case "${canonical}" in
++      alpha*-*-freebsd*)	machine=alpha ;;
++      i[3456]86-*-freebsd*)	machine=intel386 ;;
++    esac
++  ;;
++
+   ## NetBSD ports
+   *-*-netbsd* )
+     opsys=netbsd
+@@ -939,7 +951,6 @@
+ 				;;
+       *-sysv4.2uw* )	  	opsys=unixware; NON_GNU_CPP=/lib/cpp ;;
+       *-386bsd* )	        opsys=386bsd ;;
+-      *-freebsd* )	        opsys=freebsd ;;
+       *-nextstep* )             opsys=nextstep ;;
+       ## Otherwise, we'll fall through to the generic opsys code at the bottom.
+     esac

@@ -113,18 +113,18 @@ info/viper-4
 @exec install-info %D/info/ediff %D/info/dir
 @exec install-info %D/info/ccmode %D/info/dir
 @exec install-info %D/info/message %D/info/dir
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/cvtmail
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/digest-doc
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/emacsserver
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/fakemail
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/hexl
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/movemail
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/profile
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/rcs2log
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/sorted-doc
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/vcdiff
-libexec/emacs/%%EMACS_VERSION%%/i386--freebsd/yow
-@dirrm libexec/emacs/%%EMACS_VERSION%%/i386--freebsd
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/cvtmail
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/digest-doc
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/emacsserver
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/fakemail
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/hexl
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/movemail
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/profile
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/rcs2log
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/sorted-doc
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/vcdiff
+libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%/yow
+@dirrm libexec/emacs/%%EMACS_VERSION%%/%%EMACS_ARCH%%
 @dirrm libexec/emacs/%%EMACS_VERSION%%
 @unexec rmdir %D/libexec/emacs 2>/dev/null || true
 share/emacs/%%EMACS_VERSION%%/etc/3B-MAXMEM

@@ -1,0 +1,31 @@
+--- src/m/alpha.h.orig	Wed Oct 29 16:47:37 1997
++++ src/m/alpha.h	Sun Jan  3 20:05:49 1999
+@@ -239,7 +239,7 @@
+ 
+ #ifndef NOT_C_CODE
+ /* We need these because pointers are larger than the default ints.  */
+-#if !defined(__NetBSD__) && !defined(__OpenBSD__)
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #include <alloca.h>
+ #else
+ #include <stdlib.h>
+@@ -308,7 +308,8 @@
+    termio and struct termios are mutually incompatible.  */
+ #define NO_TERMIO
+ 
+-#if defined (LINUX) || defined (__NetBSD__) || defined (__OpenBSD__)
++#if defined (LINUX) || \
++	defined(__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__)
+ # define TEXT_END ({ extern int _etext; &_etext; })
+ # ifndef __ELF__
+ #  define COFF
+@@ -316,7 +317,8 @@
+ # endif /* notdef __ELF__ */
+ #endif
+ 
+-#if (defined (__NetBSD__) || defined (__OpenBSD__)) && defined (__ELF__)
++#if (defined (__FreeBSD__) || defined (__NetBSD__) || defined (__OpenBSD__)) \
++	&& defined (__ELF__)
+ #define HAVE_TEXT_START
+ #endif
+ 
