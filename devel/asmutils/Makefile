@@ -1,17 +1,16 @@
-# New ports collection makefile for:   asmutils
-# Date created:        22 January 2001
-# Whom:                George Reid <greid@ukug.uk.freebsd.org>
+# New ports collection makefile for:	asmutils
+# Date created:				22 January 2001
+# Whom:					George Reid <greid@ukug.uk.freebsd.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	asmutils
 PORTVERSION=	0.17
-PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://linuxassembly.org/asmutils/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A set of UNIX utilities written in assembly language
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
@@ -19,6 +18,7 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib/asmutils
@@ -34,15 +34,12 @@ PORTDOCS=	Asmutils-HOWTO.html acknowledgements.html endorsements.html \
 		history.html index.html s-contrib.html s-debug.html \
 		s-include.html s-layout.html s-optimize.html
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502119
-BROKEN=		"Does not install on FreeBSD >= 5.x"
-.endif
-
 post-patch:
-	@(${SED} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG > ${WRKDIR}/foo \
-		&& ${MV} ${WRKDIR}/foo ${WRKSRC}/MCONFIG)
+	@${REINPLACE_CMD} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG
+	@${REINPLACE_CMD} -e 's,m386,march=i386,' ${WRKSRC}/lib/Makefile
+
+# Stripping binaries will break install
+.undef STRIP
 
 do-install:
 	${MKDIR} ${PREFIX}/bin/asmutils
@@ -68,4 +65,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
