@@ -1,0 +1,25 @@
+--- Makefile.orig	Sat Dec 15 01:59:31 2001
++++ Makefile	Sat Dec 15 02:01:26 2001
+@@ -1,16 +1,14 @@
+-GTK_INCLUDE = `gtk-config --cflags`
+-GTK_LIB = `gtk-config --libs`
++GTK_INCLUDE = `${GTK_CONFIG} --cflags`
++GTK_LIB = `${GTK_CONFIG} --libs`
+ 
+-IMLIB_INCLUDE = `imlib-config --cflags-gdk`
+-IMLIB_LIB = `imlib-config --libs-gdk`
++IMLIB_INCLUDE = `${IMLIB_CONFIG} --cflags-gdk`
++IMLIB_LIB = `${IMLIB_CONFIG} --libs-gdk`
+ 
+-CFLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) $(IMLIB_INCLUDE) -I/usr/pkg/include
++CFLAGS += -Wall $(GTK_INCLUDE) $(IMLIB_INCLUDE)
+ 
+ LIBS = $(GTK_LIB) $(IMLIB_LIB)
+ 
+-LFLAGS = -shared -L/usr/pkg/lib
+-
+-CC = gcc
++LFLAGS = -shared
+ 
+ all: reminder.so
+ 
