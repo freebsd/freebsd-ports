@@ -9,7 +9,8 @@ PORTNAME=	terminus-font
 PORTVERSION=	4.11
 PORTREVISION=	0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://www.is-vn.bg/hamster/
+MASTER_SITES=	http://www.is-vn.bg/hamster/ \
+		http://mr700.cjb.net/pub/fc3/2do/
 
 MAINTAINER=	gugod@gugod.org
 COMMENT=	Terminus Font - a clean fixed width font
