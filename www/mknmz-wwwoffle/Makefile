@@ -7,7 +7,7 @@
 
 PORTNAME=	mknmz-wwwoffle
 PORTVERSION=	0.7.2
-CATEGORIES=	databases www textproc
+CATEGORIES=	www databases textproc
 MASTER_SITES=	http://www.naney.org/comp/distrib/mknmz-wwwoffle/archive/
 
 MAINTAINER=	vasallia@ukr.net
