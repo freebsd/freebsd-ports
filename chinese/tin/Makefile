@@ -1,31 +1,36 @@
+# ex:ts=8
 # New ports collection makefile for:	tin
-# Version required:	tin1.4-980730
-# Date created:		2 Dec 1997
+# Version required:     tinpre-1.4
+# Date created:		2 Dev 1997
 # Whom:			Yen-Shuo Su <yssu@CCCA.NCTU.edu.tw>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       tinpre-1.4-980818
-PKGNAME=        zh-tin-1.4.980818
+DISTNAME=	tin-1.4.2
+PKGNAME=	zh-tin-1.4.2
 CATEGORIES=	chinese news
-MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
-		ftp://nuxi.ucdavis.edu/pub/tin/ \
-		ftp://ftp.nuxi.com/pub/tin/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/v1.4/ \
+		ftp://nuxi.ucdavis.edu/pub/tin/v1.4/ \
+		ftp://ftp.nuxi.com/pub/tin/v1.4/
 
 MAINTAINER=     yssu@CCCA.NCTU.edu.tw
 
+LIB_DEPENDS=    uu.1:${PORTSDIR}/converters/uulib
+
+USE_BZIP2=      yes
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
 
 # Curses support too buggy to activate
-#		 --enable-curses \
-#		 --with-ncurses \
+#                 --enable-curses \
+#                 --with-ncurses \
 #
 CONFIGURE_ARGS=  --with-nntp-default-server=news  \
 		 --with-spooldir=/var/news  \
 		 --with-libdir=${PREFIX}/news/lib \
+		 --with-defaults-dir=${PREFIX}/etc \
+		 --with-editor=/usr/bin/ee \
 		 --with-mime-default-charset=ISO-8859-1 \
 		 --enable-forgery \
 		 --enable-break-long-lines \
@@ -33,7 +38,10 @@ CONFIGURE_ARGS=  --with-nntp-default-server=news  \
 		 --with-ispell=${PREFIX}/bin/ispell \
 		 --with-metamail=${PREFIX}/bin/metamail \
 		 --disable-locale
-MAKEFILE=	makefile
+CONFIGURE_ENV=  CFLAGS='${CFLAGS} -I${PREFIX}/include -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver\""' \
+		CPPFLAGS='${CPPFLAGS} -I${PREFIX}/include' \
+		LDFLAGS='${LDFLAGS} -L${PREFIX}/lib'
+MAKEFILE=       makefile
 ALL_TARGET=     build
 MAN1=		tin.1
 
@@ -48,8 +56,10 @@ post-patch:
 		-e 's:/usr/lib/news:${PREFIX}/news/lib:' \
 		<${WRKSRC}/doc/tin.1.dist >${WRKSRC}/doc/tin.1
 
-post-configure:
-	${ECHO} '#define NNTP_SERVER_FILE "${PREFIX}/etc/nntpserver"' >>${WRKSRC}/include/autoconf.h
-	${ECHO} '#define SMTP_SERVER_FILE "${PREFIX}/etc/smtpserver"' >>${WRKSRC}/include/autoconf.h
+post-install:
+	cd ${WRKSRC}/doc; ${INSTALL_DATA} tin.defaults ${PREFIX}/etc/tin.defaults.dist
+	if [ ! -f ${PREFIX}/etc/tin.defaults ] ; then \
+		${CP} ${PREFIX}/etc/tin.defaults.dist ${PREFIX}/etc/tin.defaults; \
+	fi
 
 .include <bsd.port.mk>
