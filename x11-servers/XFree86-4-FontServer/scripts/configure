@@ -51,6 +51,7 @@ if [ X$InstallFSConfig = "X" ]; then
 fi
 echo "#define InstallFSConfig $InstallFSConfig" >> $LOCALDEF
 echo "#define FreeBSDBuildXfs YES"		>> $LOCALDEF
+echo "#define BuildFontCacheLib YES"		>> $LOCALDEF
 echo "#define UseInstalledPrograms YES"		>> $LOCALDEF
 echo "#define FreeBSDCC ${CC}"			>> $LOCALDEF
 echo "#define FreeBSDCXX ${CXX}"		>> $LOCALDEF

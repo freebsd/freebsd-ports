@@ -7,7 +7,7 @@
 
 PORTNAME=	FontServer
 PORTVERSION=	4.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-servers x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -26,8 +26,15 @@ XBUILD_DIRS=		programs/xfs
 XINCLUDE_DIRS=		lib/xtrans programs/Xserver
 XINSTALL_MAN_DIRS=	programs/xfs
 EXTRA_PATCHES+=		${FILESDIR}/patch-programs::xfs::Imakefile
+USE_RC_SUBR=		yes
+
+post-build:
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%RC_SUBR%%|${RC_SUBR}|g' \
+		${FILESDIR}/xfs.sh >${WRKDIR}/xfs.sh
 
 post-install:
+	@${INSTALL_SCRIPT} ${WRKDIR}/xfs.sh ${PREFIX}/etc/rc.d
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
