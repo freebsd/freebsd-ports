@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bz2
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	archivers ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ USE_RUBY_RDTOOL=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		README.en	bz2.html	bz2.rd	\
+DOCS=		Changes		README.en	bz2.html	bz2.rd	\
 		docs/doc
 
 post-build:
