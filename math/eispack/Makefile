@@ -3,7 +3,7 @@
 # Date created:         31 October 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.11 1997/04/03 01:14:20 fenner Exp $
+# $Id: Makefile,v 1.12 1997/07/17 15:12:52 max Exp $
 #
 
 DISTNAME=	eispack
@@ -17,7 +17,7 @@ DIST_SUBDIR=	${DISTNAME}
 RUN_DEPENDS=	${PREFIX}/lib/libcor.so.1.0:${PORTSDIR}/math/blas
 
 EXTRACT_CMD=	${SCRIPTDIR}/uncomp
-EXTRACT_SUFX=	.Z
+EXTRACT_SUFX=	.gz
 EXTRACT_ARGS=	${WRKDIR}
 
 NO_WRKSUBDIR=	yes
@@ -33,7 +33,7 @@ SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
 	tql2.f tqlrat.f trbak1.f trbak3.f tred1.f tred2.f tred3.f tridib.f \
 	tsturm.f cdiv.f
 
-DISTFILES=	${SRCS:.f=.f.Z}
+DISTFILES=	${SRCS:.f=.f.gz}
 
 pre-build:
 	cp Makefile.lib ${WRKDIR}/Makefile
