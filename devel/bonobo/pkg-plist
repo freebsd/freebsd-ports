@@ -18,7 +18,6 @@ etc/CORBA/servers/audio-ulaw.gnorba
 etc/CORBA/servers/bonobo-calculator-control.gnorba
 etc/CORBA/servers/bonobo-clock-control.gnorba
 etc/CORBA/servers/echo.gnorba
-etc/CORBA/servers/hello.gnorba
 etc/CORBA/servers/item.gnorba
 etc/CORBA/servers/paint-component-simple.gnorba
 etc/CORBA/servers/text-plain.gnorba
@@ -79,6 +78,48 @@ lib/libstorage_efs.so
 lib/libstorage_fs.so
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+share/gnome/bonobo/html/bonobo-api.sgml
+share/gnome/bonobo/html/bonobo-decl.txt
+share/gnome/bonobo/html/bonobo-sections.txt
+share/gnome/bonobo/html/bonobo.hierarchy
+share/gnome/bonobo/html/bonobo.signals
+share/gnome/bonobo/html/bonobo.types
+share/gnome/bonobo/html/bonobo/bonobo-api-index.html
+share/gnome/bonobo/html/bonobo/bonobo-gnome-component-io.html
+share/gnome/bonobo/html/bonobo/bonobo-gnome-embeddable-client.html
+share/gnome/bonobo/html/bonobo/bonobo-gnome-main.html
+share/gnome/bonobo/html/bonobo/bonobo-gnome-storage-driver.html
+share/gnome/bonobo/html/bonobo/bonobo-gnome-storage-private.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomebonoboselector.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeclientsite.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomecompositemoniker.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomecontainer.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeembeddable.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeembeddablefactory.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomefilemoniker.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeinplaceembeddable.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeinplacesite.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeitemmoniker.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomemoniker.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeobject.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeobjectclient.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomepersist.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomepersistfile.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomepersiststream.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeprogressivedatasink.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomesimpledatasource.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomestorage.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomestoragefs.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomestoragerepo.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomestream.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomestreamfs.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomestreammem.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomestreamrepo.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeuihandler.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeview.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomeviewframe.html
+share/gnome/bonobo/html/bonobo/bonobo-gnomewrapper.html
+share/gnome/bonobo/html/bonobo/book1.html
 share/gnome/idl/Bonobo.idl
 share/gnome/idl/Echo.idl
 share/gnome/idl/bonobo-advise.idl
@@ -103,6 +144,7 @@ share/gnome/oaf/audio-ulaw.oafinfo
 share/gnome/oaf/bonobo-calculator-control.oafinfo
 share/gnome/oaf/bonobo-clock-control.oafinfo
 share/gnome/oaf/echo.oafinfo
+share/gnome/oaf/hello.oafinfo
 share/gnome/oaf/paint-component-simple.oafinfo
 share/gnome/oaf/text-plain.oafinfo
 share/locale/da/LC_MESSAGES/bonobo.mo
@@ -123,5 +165,11 @@ share/locale/sv/LC_MESSAGES/bonobo.mo
 share/locale/tr/LC_MESSAGES/bonobo.mo
 share/locale/uk/LC_MESSAGES/bonobo.mo
 share/locale/wa/LC_MESSAGES/bonobo.mo
-@dirrm share/gnome/oaf
+@dirrm share/gnome/bonobo/html/bonobo
+@dirrm share/gnome/bonobo/html
+@dirrm share/gnome/bonobo/docs/audio_ulaw/C/images
+@dirrm share/gnome/bonobo/docs/audio_ulaw/C
+@dirrm share/gnome/bonobo/docs/audio_ulaw
+@dirrm share/gnome/bonobo/docs
+@dirrm share/gnome/bonobo
 @dirrm include/bonobo
