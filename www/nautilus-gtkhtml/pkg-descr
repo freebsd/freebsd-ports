@@ -1,4 +1,0 @@
-This is a simple NautilusView component which embeds a GtkHTML2 widget,
-used to display HTML files.
-
-WWW: http://www.gnome.org/
