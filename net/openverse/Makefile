@@ -32,8 +32,10 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/OpenVerse/${DIR}
 	${INSTALL_DATA} ${WRKSRC}/${DIR}/* ${PREFIX}/lib/OpenVerse/${DIR}
 .endfor
-	${INSTALL_PROGRAM} ${WRKSRC}/OpenVerse.tcl ${WRKSRC}/server.cfg ${WRKSRC}/server.tcl \
-		${WRKSRC}/passageways.txt ${PREFIX}/lib/OpenVerse/
+	${INSTALL_PROGRAM} ${WRKSRC}/OpenVerse.tcl ${WRKSRC}/server.tcl \
+		${PREFIX}/lib/OpenVerse/
+	${INSTALL_DATA} ${WRKSRC}/server.cfg ${WRKSRC}/passageways.txt \
+		${PREFIX}/lib/OpenVerse/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/help
 	${INSTALL_DATA} ${WRKSRC}/help/* ${PREFIX}/share/doc/OpenVerse/help
