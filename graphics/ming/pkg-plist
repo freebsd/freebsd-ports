@@ -1,3 +1,12 @@
+bin/gif2dbl
+bin/gif2mask
+bin/listfdb
+bin/listjpeg
+bin/listmp3
+bin/listswf
+bin/makefdb
+bin/png2dbl
+bin/swftophp
 include/ming/blocklist.h
 include/ming/blocktypes.h
 include/ming/displaylist.h
@@ -20,6 +29,9 @@ share/doc/ming/CHANGES
 share/doc/ming/CREDITS
 share/doc/ming/README
 share/doc/ming/TODO
+share/doc/ming/utils/README
+share/doc/ming/utils/TODO
+@dirrm share/doc/ming/utils
 @dirrm share/doc/ming
 share/examples/ming/c/action.c
 share/examples/ming/c/alphafill.c

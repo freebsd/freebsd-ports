@@ -7,23 +7,40 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.0.9b
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.opaque.net/ming/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	knu@FreeBSD.org
 
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+		ungif.5:${PORTSDIR}/graphics/libungif
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ARGS=	NOPROFILE=true
 
+UTILS=		gif2dbl \
+		gif2mask \
+		listfdb \
+		listjpeg \
+		listmp3 \
+		listswf \
+		makefdb \
+		png2dbl \
+		swftophp
 DOCS=		CHANGES \
 		CREDITS \
 		README \
+		TODO
+DOCS_UTIL=	README \
 		TODO
 
 post-extract:
 	${MKDIR} ${WRKSRC}/c++
 	${CP} ${WRKSRC}/../c++_ext/ming.h ${WRKSRC}/c++/
+	cd ${WRKSRC}/../util && \
+	${RM} bindump.c hexdump.c
 
 post-patch:
 	${PERL} -i -p \
@@ -37,11 +54,39 @@ post-patch:
 pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 
+post-build:
+	cd ${WRKSRC}/../util && \
+	${CC} ${CFLAGS} -I${PREFIX}/include -I${PREFIX}/include/ming -c *.c
+	cd ${WRKSRC}/../util && \
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o gif2dbl gif2dbl.o -lm -lz -lungif
+	cd ${WRKSRC}/../util && \
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o gif2mask gif2mask.o -lm -lz -lungif
+	cd ${WRKSRC}/../util && \
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o listfdb listfdb.o blocktypes.o
+	cd ${WRKSRC}/../util && \
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o listjpeg listjpeg.o
+	cd ${WRKSRC}/../util && \
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o listmp3 listmp3.o
+	cd ${WRKSRC}/../util && \
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o listswf listswf.o blocktypes.o decompile.o read.o -lz
+	cd ${WRKSRC}/../util && \
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o makefdb makefdb.o blocktypes.o read.o
+	cd ${WRKSRC}/../util && \
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o png2dbl png2dbl.o -lm -lz -lpng
+	cd ${WRKSRC}/../util && \
+	${CC} ${CFLAGS} -L${PREFIX}/lib -o swftophp swftophp.o blocktypes.o decompile.o read.o -lm
+
 post-install:
+.for f in ${UTILS}
+	${INSTALL_PROGRAM} ${WRKSRC}/../util/${f} ${PREFIX}/bin/
+.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ming
+	${MKDIR} ${PREFIX}/share/doc/ming/utils
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/../${f} ${PREFIX}/share/doc/ming/
+.endfor
+.for f in ${DOCS_UTIL}
+	${INSTALL_DATA} ${WRKSRC}/../util/${f} ${PREFIX}/share/doc/ming/utils/
 .endfor
 	${MKDIR} ${PREFIX}/share/examples/ming/common
 	${INSTALL_DATA} ${WRKSRC}/../examples/common/* \
