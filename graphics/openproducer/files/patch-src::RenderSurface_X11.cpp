@@ -4,7 +4,7 @@
  using namespace Producer; 
  
  // HP, SGI and SUN don't implement glXGetProcAddressARB...
--#if defined (__sgi) || defined (sun) || defined( __hpux )
+-#if defined (__sgi) || defined (sun) || defined( __hpux ) 
 +#if defined (__sgi) || defined (sun) || defined( __hpux ) || defined(__FreeBSD__)
  #include <dlfcn.h>
  void (*glXGetProcAddressARB(const GLubyte *procName))(void)

@@ -6,23 +6,24 @@
 #
 
 PORTNAME=	openproducer
-PORTVERSION=	0.8.4.2
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.andesengineering.com/Producer/Download/
-DISTNAME=	Producer-${PORTVERSION:R}-${PORTVERSION:E}
+DISTNAME=	Producer-${PORTVERSION}-3
 
-MAINTAINER=	yinjieh@csie.nctu.edu.tw
+MAINTAINER=	boris@brooknet.com.au
 COMMENT=	A cross-platform C++/OpenGL library focused on camera control
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libOpenThreads.so:${PORTSDIR}/devel/openthreads
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
-ONLY_FOR_ARCHS=         i386
+ONLY_FOR_ARCHS=	i386
+PORTDOCS=	*
+INSTALLS_SHLIB=	yes
 
 WRKSRC=		${WRKDIR}/Producer
 MAKEFILE=	GNUmakefile
