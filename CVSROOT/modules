@@ -1269,6 +1269,7 @@ diskpart	src/usr.sbin/diskpart
 diskusage	ports/sysutils/diskusage
 display		ports/misc/display
 distcc		ports/devel/distcc
+distel		ports/devel/distel
 distrib		distrib
 distrib_cvsup	distrib/cvsup
 distrib_cvsup_sup	distrib/cvsup/sup
