@@ -18,10 +18,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby binding for Pango
 
-LIB_DEPENDS=	pango-1.0.200:${PORTSDIR}/x11-toolkits/pango
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
 USE_RUBY=	yes
+USE_GNOME=	pango
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
 

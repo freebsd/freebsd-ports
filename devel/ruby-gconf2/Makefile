@@ -18,10 +18,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby interface to GConf2
 
-LIB_DEPENDS=	gconf-2.5:${PORTSDIR}/devel/gconf2
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
 USE_RUBY=	yes
+USE_GNOME=	gconf2
 USE_RUBY_EXTCONF=	yes
 
 .include "${.CURDIR}/../../x11/ruby-gnome2/Makefile.common"
