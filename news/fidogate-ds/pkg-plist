@@ -56,6 +56,7 @@ etc/fido/gate/passwd.sample
 etc/fido/gate/routing.sample
 etc/fido/gate/spyes.sample
 etc/fido/gate/uplinks.sample
+libexec/fidogate/charsetc
 libexec/fidogate/charset.bin
 libexec/fidogate/confval
 libexec/fidogate/ftn2ftn
@@ -79,6 +80,7 @@ var/fidogate/areas.bbs.sample
 var/fidogate/fareas.bbs.sample
 %%PORTDOCS%%%%DOCSDIR%%/README.ru
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.ru
+%%PORTDOCS%%%%DOCSDIR%%/FIDOGATE+tracker.ru
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/Changes.ru
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
