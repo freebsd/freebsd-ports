@@ -25,7 +25,7 @@
      OS="-DMAV_LINUX -DMAV_FREEBSD" # The Linux defs also work for FreeBSD with a few exceptions
 -    CFLAG=`echo $OS $OT`
 -    LD="ld -shared"
-+    CFLAG=`echo $OS $OT %%CFLAGS%%`
++    CFLAG=`echo $OS -fPIC %%CFLAGS%%`
 +    LD="${CC} -shared %%PTHREAD_LIBS%%"
      LEX="flex"
 -    YACC="bison -y"
