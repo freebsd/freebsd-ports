@@ -1,5 +1,5 @@
---- src/mozilla/mozilla.cpp.orig	Mon Apr  7 23:44:18 2003
-+++ src/mozilla/mozilla.cpp	Mon Apr  7 23:44:29 2003
+--- src/mozilla/mozilla.cpp.orig	Sat Feb 15 14:19:59 2003
++++ src/mozilla/mozilla.cpp	Thu Apr 10 13:01:20 2003
 @@ -1041,17 +1041,17 @@
   * mozilla_list_cookies: get a list of all saved cookies
   */
@@ -81,12 +81,15 @@
  	return cookies;
  }
  
-@@ -1102,16 +1102,16 @@
+@@ -1102,16 +1102,20 @@
   */
  
  extern "C" GList *
--mozilla_get_permissions (int type)
++#if MOZILLA_SNAPSHOT > 6
 +mozilla_get_permissions (guint type)
++#else
+ mozilla_get_permissions (int type)
++#endif
  {
  	GList *permissions = NULL;
  	nsresult result;
@@ -102,7 +105,7 @@
  	PRBool enumResult;
  	for (permissionEnumerator->HasMoreElements(&enumResult) ;
  	     enumResult == PR_TRUE ;
-@@ -1119,32 +1119,50 @@
+@@ -1119,32 +1123,50 @@
  	{
  		nsCOMPtr<nsIPermission> nsPermission;
  		result = permissionEnumerator->
@@ -168,7 +171,7 @@
  	return permissions;
  };
  
-@@ -1152,16 +1170,25 @@
+@@ -1152,16 +1174,25 @@
   * mozilla_set_url_permission: change permissions for a URL
   */
  extern "C" void
@@ -200,7 +203,7 @@
  #endif
  }
  
-@@ -1172,10 +1199,10 @@
+@@ -1172,10 +1203,10 @@
   */
   
  extern "C" void
@@ -213,7 +216,7 @@
  }
  
  /**
-@@ -1188,17 +1215,17 @@
+@@ -1188,17 +1219,17 @@
  {
  	nsresult result;
  	nsCOMPtr<nsICookieManager> cookieManager =
@@ -236,7 +239,7 @@
  		if (NS_FAILED(result)) return FALSE;
  	};
  	return TRUE;
-@@ -1210,21 +1237,21 @@
+@@ -1210,21 +1241,21 @@
   * @type: type of permissions ( cookies or images )
   */
  extern "C" gboolean 
@@ -263,7 +266,7 @@
  #endif
  		if (NS_FAILED(result)) return FALSE;
  	};
-@@ -1374,7 +1401,7 @@
+@@ -1374,7 +1405,7 @@
  	nsresult result = NS_ERROR_FAILURE;
  
  	nsCOMPtr<nsIPasswordManager> passwordManager =
@@ -272,7 +275,7 @@
  	nsCOMPtr<nsISimpleEnumerator> passwordEnumerator;
  	if (type == PASSWORD_PASSWORD)
  		result = passwordManager->GetEnumerator 
-@@ -1392,24 +1419,24 @@
+@@ -1392,24 +1423,24 @@
  		nsCOMPtr<nsIPassword> nsPassword;
  		result = passwordEnumerator->GetNext 
  					(getter_AddRefs(nsPassword));
@@ -305,7 +308,7 @@
  	return passwords;
  }
  
-@@ -1423,7 +1450,7 @@
+@@ -1423,7 +1454,7 @@
  {
  	nsresult result = NS_ERROR_FAILURE;
  	nsCOMPtr<nsIPasswordManager> passwordManager =
@@ -314,7 +317,7 @@
  
  	for (GList *passwords = g_list_first(gone) ; passwords!=NULL ; 
  	     passwords = g_list_next(passwords))
-@@ -1435,14 +1462,14 @@
+@@ -1435,14 +1466,14 @@
  							(p->username);
  
  			nsDependentString unicodeString(unicodeName);
