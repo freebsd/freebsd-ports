@@ -3,7 +3,7 @@
 # Date created:         2 Apr 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1997/06/05 00:06:32 asami Exp $
+# $Id: Makefile,v 1.3 1997/09/22 16:22:09 max Exp $
 #
 
 DISTNAME=	nh2ps-1.0p1
@@ -16,6 +16,7 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 # it depends on HLaTeX-0.95(ps) fonts
 RUN_DEPENDS=    ${PREFIX}/share/fonts/HLaTeX-0.95-pfb:${PORTSDIR}/korean/hlatexpsfonts
 
+MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter A4
 MAKE_FLAGS?=	WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
 MAN1=		nh2ps.1
 
