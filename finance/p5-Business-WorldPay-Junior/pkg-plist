@@ -1,0 +1,17 @@
+lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/WorldPay/Junior.pm
+lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/WorldPay/get-rates.pl
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay/Junior/authorised.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay/Junior/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay/Junior/callback.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay/Junior/db_connect.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay/Junior/errstr.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay/Junior/exchange_rate.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay/Junior/new.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay/Junior/register.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay/Junior/valid_callback_host.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/WorldPay/Junior/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/WorldPay/Junior
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Business/OnlinePayment/WorldPay
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay/Junior
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Business/OnlinePayment/WorldPay
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Business/OnlinePayment/WorldPay
