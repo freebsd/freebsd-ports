@@ -1,10 +1,4 @@
 bin/gringotts
-include/libgringotts.h
-lib/libgringotts.so.2
-lib/libgringotts.so
-lib/libgringotts.la
-lib/libgringotts.a
-libdata/pkgconfig/libgringotts.pc
 share/pixmaps/gringotts.xpm
 share/locale/de/LC_MESSAGES/gringotts.mo
 share/locale/fr/LC_MESSAGES/gringotts.mo
