@@ -30,9 +30,12 @@ MAN1=		pth-config.1 pthread-config.1
 MAN3=		pth.3 pthread.3
 
 post-patch:
+.if !defined(WITH_OPTIMIZED_CFLAGS) || defined(WITHOUT_OPTIMIZED_CFLAGS)
 	${REINPLACE_CMD} -e \
 		"s,-funroll-loops -fstrength-reduce -fomit-frame-pointer -ffast-math,${CFLAGS}," \
 		${WRKSRC}/configure
+.endif
+
 post-build:
 	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
 
