@@ -7,6 +7,7 @@
     SUBDIR += dbf2mysql
     SUBDIR += dbmetrix
     SUBDIR += dbview
+    SUBDIR += edb
     SUBDIR += freetds
     SUBDIR += gadfly
     SUBDIR += gdbm

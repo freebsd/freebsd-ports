@@ -1,0 +1,6 @@
+bin/edb-config
+include/Edb.h
+lib/libedb.so.1
+lib/libedb.so
+lib/libedb.la
+lib/libedb.a
