@@ -15,8 +15,6 @@ COMMENT=	An irc client for the X Window System that uses TCL/TK
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
-.include <bsd.port.pre.mk>
-
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -pedantic"
@@ -41,4 +39,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
