@@ -6830,7 +6830,7 @@ spice		ports/cad/spice
 spider		ports/games/spider
 spigot		ports/graphics/spigot
 spim		ports/emulators/spim
-spin		ports/math/spin
+spin		ports/devel/spin
 spiralsynth	ports/audio/spiralsynth
 spiralsynthbaby	ports/audio/spiralsynthbaby
 spirit		ports/devel/spirit
