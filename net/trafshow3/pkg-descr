@@ -1,17 +1,8 @@
-TrafShow continuously display the information regarding packet
-traffic on the configured network interface that match the boolean
-expression. It periodically sort and updates this information. It
+TrafShow continuously displays the information regarding packet
+traffic on the configured network interface that matches the boolean
+expression. It periodically sorts and updates this information. It
 may be useful for locating suspicious network traffic on the net.
 
-To use TrafShow, your kernel must be rebuilt with the following line
-added to your kernel config file (/sys/i386/conf/<YourMachine>):
+WWW: http://soft.risp.ru/trafshow/index_en.shtml
 
-pseudo-device   bpfilter        4       # Berkeley packet filter
-
-The number after bpfilter is the number of interfaces that can be
-examined simultaneously. See section 5.8.3 of Handbook for details.
-
-WWW: http://www.rinetsoft.nsk.su/trafshow/index_en.html
-
-- Igor
-igor@zynaps.ru
+- Ryan Thompson <ryan@sasknow.com>
