@@ -1,0 +1,12 @@
+#!/bin/sh
+# -*-shell-script-*-
+#
+# leo
+#
+# Copyright (c) 2002 Alan Eldridge.
+# All rights reserved. Licensed under BSD license.
+#
+# 2002/11/17 alane@freebsd.org
+#
+exec python @LOCALBASE@/share/@DISTNAME@/leo.py ${1:+"$@"}
+
