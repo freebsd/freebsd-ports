@@ -1,0 +1,16 @@
+--- rio107/rio.cpp.orig	Fri Feb 18 11:07:32 2000
++++ rio107/rio.cpp	Fri Feb 18 11:08:13 2000
+@@ -79,6 +79,13 @@
+ 	#include	<fcntl.h>
+ 	#include	<unistd.h>
+ 	#include	<machine/cpufunc.h>
++	#if defined(__alpha__)
++		#include <sys/types.h>
++		extern "C" {
++			u_int8_t inb(u_int32_t);
++			void outb(u_int32_t, u_int8_t);
++		}
++	#endif
+ 	#define		OUTPORT(p,v)			outb( p, v )
+ 	#define		INPORT(p)				inb( p )
+ 	#define		CLOCK_SECOND			CLOCKS_PER_SEC
