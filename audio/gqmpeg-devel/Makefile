@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gqmpeg
-PORTVERSION=	0.19.0
-PORTREVISION=	1
+PORTVERSION=	0.20.0
 CATEGORIES+=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +14,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER?=	lyngbol@wheel.dk
 COMMENT?=	Another gtk-based MP3 frontend
 
+RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools \
+		xmp:${PORTSDIR}/audio/xmp
+
 .if defined(WITH_MPG321)
-RUN_DEPENDS=	mpg321:${PORTSDIR}/audio/mpg321
+RUN_DEPENDS+=	mpg321:${PORTSDIR}/audio/mpg321
 .else
-RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
 .endif
 
 USE_REINPLACE=	yes
