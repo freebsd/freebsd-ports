@@ -1,0 +1,33 @@
+*** Docs/tracker.texinfo.orig	Thu Apr 11 21:21:05 1996
+--- Docs/tracker.texinfo	Tue Nov 12 07:08:17 1996
+***************
+*** 979,992 ****
+  * Other Architectures: Porting tracker.
+  @end menu
+  
+! @node Aix, Amiga, Architecture dependent problems, Architecture Dependent problems
+  @subsection Aix
+  
+  The Aix port is slightly outdated and won't run with most recent versions of
+  Aix. There is nothing I can do about it until somebody sends me an up-to-date
+  version as I don't have access to Aix machines.
+  
+! @node Amiga, DECstation, Architecture dependent problems, Architecture dependent problems
+  @subsection Amiga
+  
+  There is currently one Amiga version running under AmigaDos. 
+--- 979,992 ----
+  * Other Architectures: Porting tracker.
+  @end menu
+  
+! @node Aix, Amiga, Architecture dependent problems, Architecture dependent problems
+  @subsection Aix
+  
+  The Aix port is slightly outdated and won't run with most recent versions of
+  Aix. There is nothing I can do about it until somebody sends me an up-to-date
+  version as I don't have access to Aix machines.
+  
+! @node Amiga, DECstation, Aix, Architecture dependent problems
+  @subsection Amiga
+  
+  There is currently one Amiga version running under AmigaDos. 
