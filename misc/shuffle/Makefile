@@ -8,8 +8,7 @@
 PORTNAME=	shuffle
 PORTVERSION=	20010603
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.unixfreak.org/~dima/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dd
 
 MAINTAINER=	dd@FreeBSD.org
