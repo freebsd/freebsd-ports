@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	pybook
-PORTVERSION=	0.6f
+PORTVERSION=	0.8c
 CATEGORIES=	textproc python
-MASTER_SITES=	http://silmarill.org/pybook/
+MASTER_SITES=	http://silmarill.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
