@@ -13,7 +13,8 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/cyrus-mail/&,}
 
-PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
+PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
+		http://home.jp.FreeBSD.org/~ume/ipv6/
 PATCHFILES=	${DISTNAME}-ipv6-20021205.diff.gz
 
 MAINTAINER=	ume@FreeBSD.org
