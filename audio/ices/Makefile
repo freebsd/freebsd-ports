@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	ices
-PORTVERSION=	2.0.b.2.20030811
-PORTREVISION=	2
+PORTVERSION=	2.0.0
 PORTEPOCH=	1
 CATEGORIES=	audio net
-MASTER_SITES=	http://tigress.com/lofi/ \
-		http://lofi.dyndns.org/
-DISTNAME=	${PORTNAME}-2.0-Beta2-20030811
+MASTER_SITES=	http://svn.xiph.org/releases/ices/
 
 MAINTAINER=	lofi@freebsd.org
 COMMENT=	A streaming source client for icecast 2
@@ -25,8 +22,7 @@ CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=	13
-
-WRKSRC=		${WRKDIR}/ices-2.0-Beta2
+USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 

@@ -1,4 +1,14 @@
 bin/ices
 %%PORTDOCS%%%%DOCSDIR%%/ices-live.xml
 %%PORTDOCS%%%%DOCSDIR%%/ices-playlist.xml
+%%DATADIR%%/basic.html
+%%DATADIR%%/config.html
+%%DATADIR%%/faq.html
+%%DATADIR%%/ices-live.xml
+%%DATADIR%%/ices-playlist.xml
+%%DATADIR%%/index.html
+%%DATADIR%%/inputs.html
+%%DATADIR%%/intro.html
+%%DATADIR%%/style.css
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
