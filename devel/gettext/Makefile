@@ -3,7 +3,7 @@
 # Date created:        16 March 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.2 1998/08/31 13:54:50 vanilla Exp $
+# $Id: Makefile,v 1.3 1998/09/23 17:58:38 vanilla Exp $
 #
 
 DISTNAME=	gettext-0.10
@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MAINTAINER=	Nakai@technologist.com
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-gnu-gettext
 
 pre-configure:
 	${RM} ${WRKSRC}/doc/gettext.info*
