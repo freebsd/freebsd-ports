@@ -1,6 +1,24 @@
---- ./src/s/freebsd.h.org	Sun Jun  9 13:14:32 1996
-+++ ./src/s/freebsd.h	Thu Apr  3 04:15:46 1997
-@@ -80,6 +80,8 @@
+--- src/s/freebsd.h.orig	Mon Jun 10 04:14:32 1996
++++ src/s/freebsd.h	Mon May 26 21:21:55 1997
+@@ -33,9 +33,16 @@
+ 
+ #define LIBS_DEBUG
+ #define LIBS_SYSTEM -lutil
+-#define LIBS_TERMCAP -ltermcap
+ #define LIB_GCC -lgcc
+ 
++#ifdef HAVE_LIBNCURSES
++#define TERMINFO
++#define LIBS_TERMCAP -lncurses
++#else
++#define LIBS_TERMCAP -ltermcap
++#endif
++
++
+ #define SYSV_SYSTEM_DIR
+ 
+ /* freebsd has POSIX-style pgrp behavior. */
+@@ -80,6 +87,8 @@
  #define BSD 199103
  #elif __FreeBSD__ == 2
  #define BSD 199306
