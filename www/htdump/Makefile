@@ -1,6 +1,6 @@
 # Ports collection makefile for:  htdump
 # Date created:                   Tue Feb 20, 2001
-# Whom:                           Maxime Henrion (mux@qualys.com)
+# Whom:                           Maxime Henrion (mux@FreeBSD.org)
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	0.9x
 CATEGORIES=	www
 MASTER_SITES=	http://arak.cs.hro.nl/~ren/linux/htdump/bin/
 
-MAINTAINER=	mux@qualys.com
+MAINTAINER=	mux@FreeBSD.org
 
 LIB_DEPENDS=    gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
