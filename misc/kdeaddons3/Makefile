@@ -27,7 +27,7 @@ RUN_DEPENDS=	${ATLANTIKDESIGNER_DEP}:${PORTSDIR}/games/atlantikdesigner \
 		${KSIG_DEP}:${PORTSDIR}/misc/ksig \
 		${NOATUNPLUG_DEP}:${PORTSDIR}/multimedia/noatun-plugins \
 		${RENAMEDLGPLUG_DEP}:${PORTSDIR}/misc/renamedlgplugins \
-		${KVIM_DEP}:${PORTSDIR}/editors/vimpart
+		${VIMPART_DEP}:${PORTSDIR}/editors/vimpart
 
 NO_BUILD=	yes
 USE_KDELIBS_VER=3
