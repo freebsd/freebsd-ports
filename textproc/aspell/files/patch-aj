@@ -1,0 +1,11 @@
+--- data/Makefile.in.orig	Sat Jun 10 23:53:37 2000
++++ data/Makefile.in	Tue Jun 13 14:13:47 2000
+@@ -82,7 +82,7 @@
+ pkgdata_DATA =    *.dat *.map
+ 
+ 
+-pspelldatadir = `${bindir}/pspell-config pkgdatadir`
++pspelldatadir = ${datadir}/pspell
+ 
+ pspelldata_DATA = en-american-aspell.pwli en-aspell.pwli
+ 
