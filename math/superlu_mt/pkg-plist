@@ -1,0 +1,12 @@
+include/superlu_mt/Cnames.h
+include/superlu_mt/colamd.h
+include/superlu_mt/machines.h
+include/superlu_mt/pdsp_defs.h
+include/superlu_mt/pxgstrf_synch.h
+include/superlu_mt/supermatrix.h
+include/superlu_mt/util.h
+lib/libsuperlu_mt.a
+@dirrm include/superlu_mt
+%%PORTDOCS%%share/doc/superlu_mt/simax97.ps.gz
+%%PORTDOCS%%share/doc/superlu_mt/ug.ps.gz
+%%PORTDOCS%%@dirrm share/doc/superlu_mt

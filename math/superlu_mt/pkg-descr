@@ -1,0 +1,23 @@
+			SuperLU_MT (version 1.0)
+			========================
+
+SuperLU_MT contains a set of subroutines to solve a sparse linear system 
+A*X=B. It uses Gaussian elimination with partial pivoting (GEPP). 
+The columns of A may be preordered before factorization; the 
+preordering for sparsity is completely separate from the factorization.
+
+SuperLU_MT is a parallel extension to the serial SuperLU library.
+SuperLU_MT is implemented in ANSI C, with multithreading extension,
+for example, using POSIX threads. Currently, only the LU factorization 
+routine, which is the most time-consuming part of the solution process, 
+is parallelized on machines with a shared address space. The other
+routines, such as column preordering and the forward and back substitutions
+are performed sequentially. This "alpha" release contains only 
+double-precision real data type.
+
+WWW: http://www.nersc.gov/~xiaoye/SuperLU/
+____
+Xiaoye S. Li,    Lawrence Berkeley National Lab, xiaoye@nersc.gov
+James Demmel,    Univ. of California Berkeley, demmel@cs.berkeley.edu
+John R. Gilbert, Xerox Palo Alto Research Center, gilbert@parc.xerox.com
+NOTE: This library has to be linked with BLAS or a thread safe replacement.
