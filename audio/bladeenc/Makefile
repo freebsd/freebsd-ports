@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bladeenc
-PORTVERSION=	0.94.1
+PORTVERSION=	0.94.2
 CATEGORIES=	audio
 MASTER_SITES=	http://bladeenc.mp3.no/source/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
