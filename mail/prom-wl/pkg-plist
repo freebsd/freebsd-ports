@@ -1,0 +1,10 @@
+share/emacs/site-lisp/prom-wl.el
+lib/xemacs/site-packages/lisp/prom-wl/prom-wl.el
+lib/xemacs/site-packages/pkginfo/MANIFEST.prom-wl
+share/doc/prom-wl/ChangeLog
+share/doc/prom-wl/prom-wl-usage.jis
+share/doc/prom-wl/byte-compile
+share/examples/prom-wl/dot.emacs
+share/examples/prom-wl/dot.procmailrc
+@dirrm lib/xemacs/site-packages/lisp/prom-wl
+@dirrm share/doc/prom-wl
