@@ -2414,6 +2414,7 @@ glimpse		ports/textproc/glimpse
 gliv		ports/graphics/gliv
 glload		ports/sysutils/glload
 glmaze		ports/games/glmaze
+glob2		ports/games/glob2
 global		ports/devel/global
 globus2		ports/misc/globus2
 glove		ports/math/glove
