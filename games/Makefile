@@ -235,6 +235,7 @@
     SUBDIR += sl
     SUBDIR += slashem-tty
     SUBDIR += smacx
+    SUBDIR += smiley
     SUBDIR += sokoban
     SUBDIR += sol
     SUBDIR += solarwolf

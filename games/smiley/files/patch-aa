@@ -1,0 +1,23 @@
+*** Makefile.orig	Mon Nov 29 13:03:11 1993
+--- Makefile	Sat Dec 15 10:51:48 2001
+***************
+*** 32,40 ****
+  		ltoa.o		\
+  		smiley.o
+  
+! CFLAGS	      = -O
+  
+! LDFLAGS       = -s
+  
+  all:		$(TARGET)
+  
+--- 32,40 ----
+  		ltoa.o		\
+  		smiley.o
+  
+! CFLAGS	      = -O -pipe
+  
+! LDFLAGS       =
+  
+  all:		$(TARGET)
+  
