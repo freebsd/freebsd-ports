@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	\
 		--with-lpd_perms_path=${PREFIX}/etc/lpd.perms \
 		--with-printcap_path=/etc/printcap \
 		--enable-gdbm=${LOCALBASE}
+USE_LIBTOOL=	yes
 
 MAN1=		cancel.1 lp.1 lpbanner.1 lpf.1 \
 		lpq.1 lpr.1 lprm.1 lpstat.1 monitor.1 \

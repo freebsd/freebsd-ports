@@ -9,7 +9,12 @@ etc/lpd.conf.sample
 @unexec if [ -f %D/etc/lpd.perms ]; then cmp -s %D/etc/lpd.perms.sample %D/etc/lpd.perms && rm -f %D/etc/lpd.perms || echo "If you are permanently removing this port, you should do a ``rm ${PKG_PREFIX}/etc/lpd.perms`` to remove config files left." | fmt ; fi
 etc/lpd.perms.sample
 etc/lprng.sh
+etc/printcap.sample
 etc/rc.d/lprng.sh
+lib/liblpr.a
+lib/liblpr.la
+lib/liblpr.so
+lib/liblpr.so.0
 libexec/filters/lpbanner
 libexec/filters/lpf
 libexec/filters/pclbanner
