@@ -371,6 +371,7 @@
     SUBDIR += today
     SUBDIR += truetypefonts
     SUBDIR += typist
+    SUBDIR += uim
     SUBDIR += vera-fpw
     SUBDIR += vflib
     SUBDIR += vftool

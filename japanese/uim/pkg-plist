@@ -1,0 +1,40 @@
+bin/uim-xim
+include/uim/uim.h
+%%GNOME%%lib/bonobo/servers/GNOME_UimApplet.server
+%%GTK%%lib/gtk-2.0/2.2.0/immodules/im-uim.a
+%%GTK%%lib/gtk-2.0/2.2.0/immodules/im-uim.la
+%%GTK%%lib/gtk-2.0/2.2.0/immodules/im-uim.so
+lib/libuim.a
+lib/libuim.la
+lib/libuim.so
+lib/libuim.so.0
+%%PORTDOCS%%%%DOCSDIR_JA%%/README.ja
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/locale/ja/LC_MESSAGES/uim.mo
+share/uim/PY.scm
+share/uim/anthy.scm
+share/uim/canna.scm
+share/uim/default.scm
+share/uim/generic-key.scm
+share/uim/generic.scm
+share/uim/hangul.scm
+share/uim/hangul2.scm
+share/uim/hangul3.scm
+share/uim/im.scm
+share/uim/ipa.scm
+share/uim/japanese.scm
+share/uim/key.scm
+share/uim/loader.scm
+share/uim/prime.scm
+share/uim/rk.scm
+share/uim/skk.scm
+share/uim/tcode.scm
+share/uim/tutcode.scm
+share/uim/util.scm
+share/uim/viqr.scm
+@dirrm include/uim
+%%PORTDOCS%%@dirrm %%DOCSDIR_JA%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm share/uim
+%%GTK%%@exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+%%GTK%%@unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
