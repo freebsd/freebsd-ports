@@ -28,6 +28,7 @@ share/scm/slib/byte.scm
 share/scm/slib/chap.scm
 share/scm/slib/charplot.scm
 share/scm/slib/cltime.scm
+share/scm/slib/coerce.scm
 share/scm/slib/collect.scm
 share/scm/slib/comlist.scm
 share/scm/slib/comparse.scm
@@ -117,6 +118,7 @@ share/scm/slib/scmacro.scm
 share/scm/slib/scmactst.scm
 share/scm/slib/selfset.scm
 share/scm/slib/sierpinski.scm
+share/scm/slib/simetrix.scm
 share/scm/slib/sort.scm
 share/scm/slib/soundex.scm
 share/scm/slib/stdio.scm
@@ -137,6 +139,7 @@ share/scm/slib/tree.scm
 share/scm/slib/trnscrpt.scm
 share/scm/slib/tsort.scm
 share/scm/slib/tzfile.scm
+share/scm/slib/uri.scm
 share/scm/slib/values.scm
 share/scm/slib/withfile.scm
 share/scm/slib/wttest.scm
