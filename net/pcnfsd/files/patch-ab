@@ -2,11 +2,11 @@
 --- Makefile.44bsd	Thu Oct  6 17:18:19 1994
 ***************
 *** 0 ****
---- 1,20 ----
+--- 1,21 ----
 + #
 + # @(#)Makefile
 + # Makefile for rpc.pcnfsd for BSD/386 or similar
-+ # $Id$
++ # $Id: patch-ab,v 1.1.1.1 1994/10/07 00:23:56 pst Exp $
 + #
 + 
 + PROG=	rpc.pcnfsd
@@ -20,6 +20,7 @@
 + LDADD+=	-lcrypt
 + 
 + beforeinstall:
-+ 	-mkdir ${PRDIR}
++ 	-mkdir -p ${BINDIR}
++ 	-mkdir -p ${PRDIR}
 + 
 + .include <bsd.prog.mk>
