@@ -1,0 +1,22 @@
+--- configure.ac.orig	Mon Jan 19 00:58:13 2004
++++ configure.ac	Wed Dec  8 22:58:29 2004
+@@ -441,7 +441,7 @@
+ 
+ # If we are compiling with gcc, enable all warning and make warnings errors.
+ if test "$GCC" = yes; then
+-    ENABLE_WARNINGS="-Wall -Winline -Werror"
++    ENABLE_WARNINGS="-Wall"
+ fi
+ AC_SUBST(ENABLE_WARNINGS,$ENABLE_WARNINGS)
+ 
+--- configure.orig	Mon Jan 19 00:58:28 2004
++++ configure	Wed Dec  8 22:58:03 2004
+@@ -6804,7 +6804,7 @@
+ 
+ # If we are compiling with gcc, enable all warning and make warnings errors.
+ if test "$GCC" = yes; then
+-    ENABLE_WARNINGS="-Wall -Winline -Werror"
++    ENABLE_WARNINGS="-Wall"
+ fi
+ ENABLE_WARNINGS=$ENABLE_WARNINGS
+ 
