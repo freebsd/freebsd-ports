@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-crossfade
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mynetcologne.de/~nc-eisenlpe2/xmms-crossfade/ \
 		ftp://ftp.falsehope.com/pub/xmms-crossfade/
