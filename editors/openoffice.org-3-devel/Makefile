@@ -78,6 +78,9 @@ post-extract:
 	done
 	${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
+	${CP} ${WRKDIR}/NETBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/FREEBSDGCCIinc.zip
+	${CP} ${WRKDIR}/NETBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/FREEBSDGCCIlib.zip
+	${CP} ${WRKDIR}/NETBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/FREEBSDGCCIruntime.zip
 
 do-build:
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
