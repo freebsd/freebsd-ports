@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmtimer
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://home.dwave.net/~jking/wmtimer/
 
@@ -18,6 +18,8 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GTK=	yes
+MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .if !defined(BATCH)
 HAS_CONFIGURE=	yes
@@ -25,14 +27,6 @@ IS_INTERACTIVE=	yes
 .endif # !BATCH
 
 pre-patch:
-	@${PERL} -pi -n \
-		-e "s!CFLAGS =! CFLAGS \+=!;" \
-		-e "s!-I/usr/lib/glib/include!`${GTK_CONFIG} --cflags` `${GLIB_CONFIG} --cflags`!;" \
-		-e "s!-lgtk -lgdk -rdynamic -lgmodule -lglib -ldl!`${GTK_CONFIG} --libs` `${GLIB_CONFIG} --libs`!;" \
-		-e "s!/usr/X11R6/lib!${X11BASE}/lib!;" \
-		-e "s!/usr/X11R6/include!${X11BASE}/include!;" \
-		-e "s!/usr/lib!${LOCALBASE}/lib!;" \
-		${WRKSRC}/Makefile
 .if defined(IS_INTERACTIVE)
 	@${PERL} -pi -ne "s!/bin/bash!${SH}!" ${WRKSRC}/configure
 .endif # IS_INTERACTIVE
