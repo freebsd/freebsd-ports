@@ -15,6 +15,7 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 MAINTAINER=	vanilla@FreeBSD.org
 
 USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --release-suffix
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/glib12
 
 MAN1=		glib12-config.1
