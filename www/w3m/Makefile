@@ -121,6 +121,7 @@ post-install:
 	done
 .endif
 	@cd ${WRKSRC}/doc; \
+	${MKDIR} ${PREFIX}/share/doc/w3m/; \
 	for i in ${DOCS} ; do \
 		${INSTALL_DATA} $$i ${PREFIX}/share/doc/w3m/ ; \
 	done
