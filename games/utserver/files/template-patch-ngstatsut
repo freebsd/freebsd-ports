@@ -1,0 +1,21 @@
+--- NetGamesUSA.com/ngStats/ngStatsUT	Tue Aug  7 15:24:12 2001
++++ NetGamesUSA.com/ngStats/ngStatsUT	Tue Aug  7 15:32:36 2001
+@@ -5,13 +5,16 @@
+ ## to ensure that the files are actually found
+ ## this has not really been tested, hence the debug.
+ ## modified by abfackeln, 2000-10-10
++##
++## FreeBSD directories added by RebuM, 2001-08-07
++##
+ #######
+ 
+-INSTALL_DIR=`cat $HOME/.loki/ut/install_dir`
++INSTALL_DIR="%%LINUXBASE%%/%%UTDIR%%"
+ 
+ JAVA1=`which java`
+ JAVA2="/usr/local/java/bin/java"
+-JAVA3="/usr/jdk1.2/bin/java"
++JAVA3="%%LOCALBASE%%/linux-jdk1.2.2/bin/java"
+ NGHOME1="../NetGamesUSA.com/ngStats"
+ NGHOME2="$INSTALL_DIR/../NetGamesUSA.com/ngStats"
+ NGHOME3="$HOME/UnrealTournament/NetGamesUSA.com/ngStats"
