@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X430src-4.tgz X430src-1.tgz
 EXTRACT_ONLY=	X430src-4.tgz
 
-MAINTAINER=	anholt@freebsd.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XFree86-4 default bitmap fonts
 
 BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients

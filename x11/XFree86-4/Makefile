@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	anholt@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X11/XFree86 core distribution (complete, using mini/meta-ports)
 
 LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
