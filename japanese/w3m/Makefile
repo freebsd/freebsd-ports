@@ -6,6 +6,8 @@
 #
 
 CATEGORIES=	japanese
+
+MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A pager/text-based WWW browser with Japanese support
 
 MASTERDIR=	${.CURDIR}/../../www/w3m

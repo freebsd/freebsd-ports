@@ -5,6 +5,9 @@
 # $FreeBSD$
 #
 
+PKGNAMESUFFIX=	-m17n
+
+MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A pager/text-based WWW browser with multilingualization support
 
 MASTERDIR=	${.CURDIR}/../w3m
