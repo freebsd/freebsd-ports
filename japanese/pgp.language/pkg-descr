@@ -1,0 +1,5 @@
+Japanese language module for PGP 2.6.3ia.
+
+ This package depends on original PGP 2.6.3ia (International version),
+and replaces some distributed files.
+(config.txt is modified, language.txt is replaced.)

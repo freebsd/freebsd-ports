@@ -1,0 +1,10 @@
+lib/pgp/ja.hlp
+lib/pgp/README.ja
+lib/pgp/memo.ja
+@exec mv %D/lib/pgp/config.txt %D/lib/pgp/config.txt.bak
+lib/pgp/config.txt
+@unexec mv %D/%F.bak %D/%F
+@exec mv %D/lib/pgp/language.txt %D/lib/pgp/language.txt.bak
+lib/pgp/language.txt
+@unexec mv %D/%F.bak %D/%F
+lib/pgp/language.idx
