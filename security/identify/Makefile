@@ -3,11 +3,11 @@
 # Date created:		13 March 1999
 # Whom:			nsayer@quack.kfu.com
 #
-# $Id: Makefile,v 1.2 1999/04/02 19:19:55 nsayer Exp $
+# $Id: Makefile,v 1.3 1999/04/11 22:42:07 jseger Exp $
 #
 
 DISTNAME=	identify-0.7
-CATEGORIES=	net security
+CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/tools/
 
 MAINTAINER=	nsayer@quack.kfu.com
