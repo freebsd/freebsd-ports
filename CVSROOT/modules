@@ -8199,6 +8199,7 @@ tconv		src/usr.bin/tconv
 tcopy		src/usr.bin/tcopy
 tcpblast	ports/benchmarks/tcpblast
 tcpcat		ports/net/tcpcat
+tcpdstat	ports/net/tcpdstat
 tcpdump		src/usr.sbin/tcpdump
 tcpflow		ports/net/tcpflow
 tcpillust	ports/net/tcpillust
