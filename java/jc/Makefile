@@ -21,7 +21,9 @@ COMMENT=	JVM that converts class files to C source and compiles them with GCC
 BUILD_DEPENDS=	jikes:${PORTSDIR}/java/jikes \
 		zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-		ffi.2:${PORTSDIR}/devel/libffi
+		ffi.2:${PORTSDIR}/devel/libffi \
+		gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
+		art_lgpl_2:${PORTSDIR}/graphics/libart_lgpl2
 
 USE_LIBTOOL_VER=15
 LIBTOOLFILES=	${CLASSPATHDIR}/configure
@@ -35,8 +37,6 @@ PATCH_WRKSRC=	${WRKDIR}
 INFO=		jc
 ONLY_FOR_ARCHS=	i386
 
-PLIST_SUB+=	GNOME:="@comment "
-
 # Directories for the two source components
 JCDIR=		${PORTNAME}-${PORTVERSION}
 CLASSPATHDIR=	classpath-${CLASSPATHVERSION}
@@ -48,7 +48,7 @@ CLASSPATHVERSION=0.10
 JIKESVERSION=	1.21
 
 # Configure args
-CLASSPATH_CONF=	--prefix=${PREFIX}/jc --enable-jni --with-jikes --disable-gtk-peer
+CLASSPATH_CONF=	--prefix=${PREFIX}/jc --enable-jni --with-jikes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 pre-configure:
