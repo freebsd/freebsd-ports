@@ -9,7 +9,7 @@
 DISTNAME=	cftp-0.9.3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.giga.or.at/pub/nih/cftp/ \
-		http://www.FreeBSD.org/~andy/distfiles/
+		http://people.FreeBSD.org/~andy/distfiles/
 
 MAINTAINER=	andy@icc.surw.chel.su
 

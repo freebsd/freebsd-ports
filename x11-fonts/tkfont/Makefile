@@ -9,7 +9,7 @@
 DISTNAME=	tkfont-1.1
 CATEGORIES=	x11-fonts tk82
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/linux/tsx-11/sources/usr.bin.X11/ \
-		http://www.FreeBSD.org/~billf/
+		http://people.FreeBSD.org/~billf/
 
 MAINTAINER=	brett@peloton.runet.edu
 

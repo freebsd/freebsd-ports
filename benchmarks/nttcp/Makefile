@@ -9,7 +9,7 @@
 DISTNAME=	nttcp-1.45
 CATEGORIES=	net benchmarks
 MASTER_SITES=	http://users.leo.org/~bartel/nttcp/ \
-		http://www.FreeBSD.org/~billf/
+		http://people.FreeBSD.org/~billf/
 
 MAINTAINER=	billf@FreeBSD.org
 

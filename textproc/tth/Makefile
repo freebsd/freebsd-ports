@@ -9,7 +9,7 @@
 DISTNAME=       tth_C
 PKGNAME=	tth-2.22
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.freebsd.org/~tg/ \
+MASTER_SITES=	http://people.FreeBSD.org/~tg/ \
 		http://hutchinson.belmont.ma.us/tth/tth-noncom/
 EXTRACT_SUFX=	.tgz
 

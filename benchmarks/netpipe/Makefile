@@ -8,7 +8,7 @@
 DISTNAME=	netpipe-2.3
 CATEGORIES=	benchmarks net
 MASTER_SITES=	ftp://ftp.scl.ameslab.gov/pub/netpipe/ \
-		http://www.freebsd.org/~jkoshy/PORTS/
+		http://people.FreeBSD.org/~jkoshy/PORTS/
 
 MAINTAINER=	jkoshy@freebsd.org
 

@@ -8,7 +8,7 @@
 
 DISTNAME=	kmpg-0.4.3a
 CATEGORIES=	audio kde
-MASTER_SITES=	http://www.freebsd.org/~tom/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~tom/distfiles/
 
 MAINTAINER=	tom@FreeBSD.org
 

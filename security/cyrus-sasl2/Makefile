@@ -9,7 +9,7 @@
 DISTNAME=	cyrus-sasl-${SASL_VER}
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		http://www.freebsd.org/~stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
+		http://people.FreeBSD.org/~stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
 
 MAINTAINER=	hetzels@westbend.net

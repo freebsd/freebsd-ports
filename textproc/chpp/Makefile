@@ -8,7 +8,7 @@
 
 DISTNAME=	chpp-0.3.5
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.FreeBSD.org/~andy/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~andy/distfiles/
 
 MAINTAINER=	andy@icc.surw.chel.su
 

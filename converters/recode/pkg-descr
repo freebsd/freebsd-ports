@@ -19,5 +19,5 @@ character sets:
 	[also known as 8-Bit ANSEL, used by USMARC]
 	http://www.niso.org/pccodes.htm
 
-See http://www.freebsd.org/~wosch/src/recode-3.4-bib.tar.gz
+See http://people.FreeBSD.org/~wosch/src/recode-3.4-bib.tar.gz
 Extract the archive and follow the instructions in README.bib.

@@ -10,7 +10,7 @@ DISTNAME=	FD-1.03l
 PKGNAME=	fd-1.03l
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/FDclone/ \
-		http://www.freebsd.org/~steve/distfiles/
+		http://people.FreeBSD.org/~steve/distfiles/
 
 MAINTAINER=	nobu@psrc.isac.co.jp
 

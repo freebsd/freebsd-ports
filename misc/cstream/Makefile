@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.cons.org/cracauer/download/ \
 		http://www2.cons.org/cracauer/download/ \
 		http://www3.cons.org/cracauer/download/ \
 		http://www.hanse.de/~cracauer/homepage-mirror/download/ \
-		http://www.freebsd.org/~cracauer/homepage-mirror/download/
+		http://people.FreeBSD.org/~cracauer/homepage-mirror/download/
 
 MAINTAINER=	cracauer@cons.org
 

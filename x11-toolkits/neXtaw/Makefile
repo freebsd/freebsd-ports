@@ -8,7 +8,7 @@
 
 DISTNAME=	neXtaw-0.5.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.freebsd.org/~tg/		
+MASTER_SITES=	http://people.FreeBSD.org/~tg/		
 EXTRACT_SUFX=	.tar.gz.bin
 
 MAINTAINER=	tg@FreeBSD.org

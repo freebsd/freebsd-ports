@@ -9,7 +9,7 @@
 DISTNAME=	wmbiff-0.2
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	http://ccat.elect.ru:8100/wmbiff/ \
-		http://www.freebsd.org/~jim/distfiles/
+		http://people.FreeBSD.org/~jim/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 

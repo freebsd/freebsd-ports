@@ -10,7 +10,7 @@ DISTNAME=	cyrus-imapd-v1.5.19
 PKGNAME=	cyrus-1.5.19
 CATEGORIES=	mail tcl82
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		http://www.freebsd.org/~stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
+		http://people.FreeBSD.org/~stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
 
 MAINTAINER=	stb@FreeBSD.org

@@ -9,7 +9,7 @@
 DISTNAME=       objc-3.1.5
 CATEGORIES=     lang
 MASTER_SITES=   http://metalab.unc.edu/pub/Linux/devel/lang/objc/ \
-		http://www.freebsd.org/~chuckr/
+		http://people.FreeBSD.org/~chuckr/
 DISTFILES=	objc-3.1.5-bootstrap.tar.gz objc-3.1.5.tar.gz
 
 MAINTAINER=     chuckr@freebsd.org

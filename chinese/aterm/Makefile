@@ -11,7 +11,7 @@ PKGNAME=	zh-aterm-0.3.6
 CATEGORIES=	chinese
 MASTER_SITES=	http://members.xoom.com/sashav/aterm/ \
 		http://www.tigr.net/afterstep/as-apps/download/aterm/	\
-		http://www.freebsd.org/~foxfair/
+		http://people.FreeBSD.org/~foxfair/
 
 MAINTAINER=	davidyu@ken.csie.ntu.edu.tw
 

@@ -8,7 +8,7 @@
 
 DISTNAME=	tkdiff-3.04
 CATEGORIES=	textproc tk82
-MASTER_SITES=	http://www.freebsd.org/~kevlo/
+MASTER_SITES=	http://people.FreeBSD.org/~kevlo/
 
 MAINTAINER=	kevlo@FreeBSD.org
 

@@ -9,10 +9,10 @@
 DISTNAME=	gicq-0.33
 PKGNAME=	ja-gicq-0.33
 CATEGORIES=	japanese net
-MASTER_SITES=	http://www.freebsd.org/~flathill/distfiles/ \
+MASTER_SITES=	http://people.FreeBSD.org/~flathill/distfiles/ \
 		ftp://ftp.korsoft.com/pub/gicq/
 
-PATCH_SITES=	http://www.freebsd.org/~flathill/distfiles/ \
+PATCH_SITES=	http://people.FreeBSD.org/~flathill/distfiles/ \
 		http://www-nagao.kuee.kyoto-u.ac.jp/member/taku/soft/
 PATCHFILES=	gicq-0.33ja.patch
 PATCH_DIST_STRIP=	-p1

@@ -10,7 +10,7 @@ DISTNAME=	libxpg4-3.3
 PKGNAME=	libxpg4-ns-3.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://WWW.FreeBSD.ORG/~sada/distfiles/
+		http://people.FreeBSD.org/~sada/distfiles/
 
 MAINTAINER=	sada@FreeBSD.ORG
 

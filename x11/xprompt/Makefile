@@ -8,7 +8,7 @@
 
 DISTNAME=	xprompt-1.4
 CATEGORIES=	x11
-MASTER_SITES=   http://www.freebsd.org/~mph/distfiles/
+MASTER_SITES=   http://people.FreeBSD.org/~mph/distfiles/
 
 MAINTAINER=	mph@freebsd.org
 

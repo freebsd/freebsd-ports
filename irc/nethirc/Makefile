@@ -9,7 +9,7 @@
 DISTNAME=	nethirc-0.04
 CATEGORIES=	irc
 # broken - MASTER_SITES=	ftp://ftp.nog.net/pub/tony/nethirc/
-MASTER_SITES=	http://www.freebsd.org/~cpiazza/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~cpiazza/distfiles/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	andrews@technologist.com

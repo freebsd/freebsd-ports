@@ -10,7 +10,7 @@ DISTNAME=	lynx2.8.3dev.16
 PKGNAME=	ja-lynx-2.8.3dev.16
 CATEGORIES=	japanese www
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://www.freebsd.org/~shige/ports/distfiles/ \
+		http://people.FreeBSD.org/~shige/ports/distfiles/ \
 		http://sol.slcc.edu/lynx/current/
 
 MAINTAINER=	shige@FreeBSD.org

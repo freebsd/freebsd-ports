@@ -8,7 +8,7 @@
 
 DISTNAME=       keyprint-1.0
 CATEGORIES=	security
-MASTER_SITES=	http://www.freebsd.org/~mharo/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~mharo/distfiles/
 
 MAINTAINER=	mharo@FreeBSD.org
 

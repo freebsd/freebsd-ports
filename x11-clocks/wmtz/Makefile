@@ -9,7 +9,7 @@
 DISTNAME=	wmtz-0.5
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://www.algonet.se/~jlin/wmtz/ \
-		http://www.freebsd.org/~jim/distfiles/
+		http://people.FreeBSD.org/~jim/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 

@@ -8,7 +8,7 @@
 
 DISTNAME=	fortran-utils-1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.freebsd.org/~kris/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~kris/distfiles/
 
 MAINTAINER=	kris@FreeBSD.org
 

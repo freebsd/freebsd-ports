@@ -8,7 +8,7 @@
 
 DISTNAME= 	spigot-1.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.freebsd.org/~fenner/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~fenner/distfiles/
 DISTFILES=	spigot.1.7.tar.gz
 
 MAINTAINER=	james@cs.uwm.edu

@@ -8,7 +8,7 @@
 
 DISTNAME=	m3gdb-4.17
 CATEGORIES=	lang devel
-MASTER_SITES=	http://www.freebsd.org/~jdp/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~jdp/distfiles/
 DISTFILES=	m3gdb-4.17.tar.gz \
 		m3gdb-fbsd-4.17.tar.gz
 

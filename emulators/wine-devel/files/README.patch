@@ -54,7 +54,7 @@ can also look in my current wine port tree at
 http://www.jelal.kn-bremen.de/freebsd/ports/emulators/wine/files/
 
 -current users:
-A LDT patch for -current is at http://www.freebsd.org/~luoqi/
+A LDT patch for -current is at http://people.FreeBSD.org/~luoqi/
 (well in a recent posting on the -current list,
 http://www.freebsd.org/cgi/mid.cgi?db=&id=199911150745.CAA27884@lor.watermarkgroup.com
 he said that version is outdated, seems you have to mail him to

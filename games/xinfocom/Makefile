@@ -9,7 +9,7 @@
 DISTNAME=		unix8m
 PKGNAME=		xinfocom-1.8m
 CATEGORIES=		games
-MASTER_SITES=   	http://www.freebsd.org/~mph/distfiles/
+MASTER_SITES=   	http://people.FreeBSD.org/~mph/distfiles/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		mph@freebsd.org

@@ -8,7 +8,7 @@
 
 DISTNAME=	fconv-0.1
 CATEGORIES=	converters
-MASTER_SITES=	http://www.FreeBSD.org/~chris/distfiles/
+MASTER_SITES=	http://people.FreeBSD.org/~chris/distfiles/
 
 MAINTAINER=	chris@FreeBSD.org
 

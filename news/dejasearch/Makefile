@@ -10,7 +10,7 @@ DISTNAME=	dejasearch-1.7.2
 CATEGORIES=	news
 MASTER_SITES=	http://homemade.hypermart.net/dejasearch/ \
 		http://homemade.virtualave.net/dejasearch/ \
-		http://www.freebsd.org/~kris/distfiles/
+		http://people.FreeBSD.org/~kris/distfiles/
 
 MAINTAINER=	kris@FreeBSD.org
 

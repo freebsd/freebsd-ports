@@ -8,7 +8,7 @@
 
 DISTNAME=	cvsweb-1.0
 CATEGORIES=	devel www
-MASTER_SITES=	http://www.freebsd.org/~fenner/cvsweb/
+MASTER_SITES=	http://people.FreeBSD.org/~fenner/cvsweb/
 
 MAINTAINER=	sada@FreeBSD.org
 

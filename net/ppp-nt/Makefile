@@ -10,10 +10,10 @@ DISTNAME=	ppp-2.2.7
 PKGNAME=	ppp-nt-2.2.7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://www.freebsd.org/~sada/distfiles/
+		http://people.FreeBSD.org/~sada/distfiles/
 
 PATCH_SITES=	http://www.rr.iij4u.or.jp/~sada/patches/ \
-		http://www.freebsd.org/~sada/distfiles/
+		http://people.FreeBSD.org/~sada/distfiles/
 PATCHFILES=	nat-980920.patch.gz ppp-2.2.7-telehoudai.diff.gz
 PATCH_DIST_STRIP= -p1
 

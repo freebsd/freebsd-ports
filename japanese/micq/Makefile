@@ -10,10 +10,10 @@ DISTNAME=	micq-0.4.3
 PKGNAME=	ja-micq-0.4.3
 CATEGORIES=	japanese net
 MASTER_SITES=	ftp://micq.chatzone.org/pub/micq/V0.4.3/ \
-		http://www.freebsd.org/~flathill/distfiles/
+		http://people.FreeBSD.org/~flathill/distfiles/
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	http://www.freebsd.org/~flathill/distfiles/
+PATCH_SITES=	http://people.FreeBSD.org/~flathill/distfiles/
 PATCHFILES=	micq-0.4.3-jp.patch
 PATCH_DIST_STRIP= -p1
 

@@ -10,7 +10,7 @@ DISTNAME=	xscrabble
 PKGNAME=	xscrabble-1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.belgarath.demon.co.uk/programs/ \
-		http://www.freebsd.org/~mph/distfiles/
+		http://people.FreeBSD.org/~mph/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 

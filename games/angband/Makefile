@@ -10,7 +10,7 @@ DISTNAME=	angband-283
 PKGNAME=	angband-2.8.3
 CATEGORIES=	games
 MASTER_SITES=	ftp://export.andrew.cmu.edu/angband/Source/ \
-		http://www.freebsd.org/~mph/distfiles/
+		http://people.FreeBSD.org/~mph/distfiles/
 DISTFILES=	angband-283.tar.gz ext-x11-283.tar.gz angband-data.tar.gz
 
 MAINTAINER=	mph@freebsd.org

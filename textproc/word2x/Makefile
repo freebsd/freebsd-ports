@@ -10,7 +10,7 @@ PKGNAME=	word2x-0.003
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gu.net/pub/unix/viewers/ \
 		ftp://ftp.afti.nsu.ru/pub/source/utils/word2x/ \
-		http://www.FreeBSD.org/~billf/
+		http://people.FreeBSD.org/~billf/
 
 MAINTAINER=	billf@FreeBSD.org
 

@@ -12,7 +12,7 @@ CATEGORIES=	japanese net
 MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/ \
 		http://www.nectar.com/distfiles/
 
-PATCH_SITES=	http://www.freebsd.org/~flathill/distfiles/ \
+PATCH_SITES=	http://people.FreeBSD.org/~flathill/distfiles/ \
 		http://www-nagao.kuee.kyoto-u.ac.jp/member/taku/soft/
 PATCHFILES=	libicq-0.33ja.patch
 PATCH_DIST_STRIP= -p1
