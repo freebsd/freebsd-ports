@@ -10,13 +10,11 @@
 PORTNAME=	crack
 PORTVERSION=	5.0
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.win.tue.nl/pub/security/  \
-		ftp://ftp.ox.ac.uk/pub/comp/security/software/crackers/  \
-		ftp://ftp.auscert.org.au/pub/coast/mirrors/cert.org/tools/crack/ \
-		ftp://ftp.riken.go.jp/pub/net/cert_security_tools/crack/
+MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/unix/pwdutils/crack/ \
+		ftp://ftp.cert.dfn.de/pub/tools/password/Crack/
 DISTNAME=	${PORTNAME}${PORTVERSION}	
 
-MAINTAINER=	obrien@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/c50a
 
