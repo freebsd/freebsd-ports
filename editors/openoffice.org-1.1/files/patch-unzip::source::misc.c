@@ -1,5 +1,5 @@
---- work/oo_641c_src/unzip/source/misc.c.orig	Tue Mar  5 18:52:16 2002
-+++ work/oo_641c_src/unzip/source/misc.c	Tue Mar  5 18:53:03 2002
+--- ../unzip/source/misc.c.orig	Tue Mar  5 18:52:16 2002
++++ ../unzip/source/misc.c	Tue Mar  5 18:53:03 2002
 @@ -301,8 +301,8 @@
      int yr, mo, dy, hh, mm, ss, leap;
      long m_time, days=0;
