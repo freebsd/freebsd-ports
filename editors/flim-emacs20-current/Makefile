@@ -1,67 +1,26 @@
 # New ports collection makefile for:	flim-current for emacs20
 # Version required:	1.12.5
 # Date created:		23 September 1998
-# Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
+# Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/03/09 04:34:34 shige Exp $
+# $Id: Makefile,v 1.6 1999/04/18 05:01:14 sada Exp $
 #
-
-DISTNAME=	flim-${FLIM_VER}
-PKGNAME=	flim-${EMACS_PORT}-${FLIM_VER}
-CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/elisp/flim/flim-current/
 
 MAINTAINER=	shige@FreeBSD.ORG
 
-BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT} \
-		nkf:${PORTSDIR}/japanese/nkf \
-		${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
-RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT} \
-		${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
+# This is a slave port.
+PORTCLASS=	slave
 
-NO_LATEST_LINK=	YES
-ALL_TARGET?=	elc
-SCRIPTS_ENV=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER}
-PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} EMACS_VER=${EMACS_VER} \
-		FLIMDOCDIR=${FLIMDOCDIR}
-MAKE_FLAGS=	EMACS=${EMACS_CMD}
+MASTERDIR=	${.CURDIR}/../../editors/flim-emacs-current
 
-# distfile version
-FLIM_VER=	1.12.5
-FLIMDOCDIR=	share/doc/flim
-
-# emacs20
+# emacs port setup
 EMACS_NAME=	emacs
 EMACS_PORT=	emacs20
 EMACS_VER=	20.3
 EMACS_LIBDIR=	share/${EMACS_NAME}
 EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 
-.include <bsd.port.pre.mk>
+# use pkg/* files in ${.CURDIR}
+PKGDIR=		${.CURDIR}/pkg
 
-MAKEINFO=	makeinfo --no-split --no-validate
-
-post-build:
-	@(cd ${WRKSRC} ; \
-	for i in mime-en.texi mime-ja.texi; do \
-		${MV} $${i} $${i}.jis ; \
-		${CAT} $${i}.jis | nkf -e > $${i} ; \
-		${ECHO_MSG} "===>   Please ignore the following errors." ; \
-		${MAKEINFO} $${i} || ${TRUE} ; \
-	done)
-
-post-install:
-	@(cd ${WRKSRC} ; \
-	for i in mime-en.info mime-ja.info; do \
-		${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/info ; \
-		install-info ${PREFIX}/info/$${i} ${PREFIX}/info/dir ; \
-	done)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/${FLIMDOCDIR}
-	@(cd ${WRKSRC} ; \
-	for i in ChangeLog NEWS README.* VERSION ; do \
-		${INSTALL_DATA} $${i} ${PREFIX}/${FLIMDOCDIR}/ ; \
-	done)
-.endif
-
-.include <bsd.port.post.mk>
+.include <${MASTERDIR}/Makefile>
