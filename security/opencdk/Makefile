@@ -12,7 +12,7 @@ MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/gnutls/opencdk/ \
 		http://www.mirrors.wiretapped.net/security/network-security/gnutls/opencdk/ \
 		ftp://ftp.gnupg.org/pub/gcrypt/alpha/gnutls/opencdk/ \
 		ftp://ftp.mirrors.wiretapped.net/security/network-security/gnutls/opencdk/ \
-		ftp://ftp.gnutls.org/pub/gnutls/opencdk/ 
+		ftp://ftp.gnutls.org/pub/gnutls/opencdk/
 
 MAINTAINER=	sergei@kolobov.com
 
@@ -27,10 +27,12 @@ USE_REINPLACE=	yes
 DOCS=		AUTHORS NEWS README THANKS
 
 post-patch:
-	${REINPLACE_CMD} -e 's,#include <malloc.h>,#include<stdlib.h>,' \
-		${WRKSRC}/src/encrypt.c ${WRKSRC}/src/main.c
+.for file in encrypt.c main.c
+	${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' ${WRKSRC}/src/${file}
+.endfor
 
 post-install:
+	${RM} -f ${PREFIX}/lib/libopencdk.la
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tests/*.c ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/tests/*.gpg ${EXAMPLESDIR}
