@@ -1,0 +1,48 @@
+include/dynamechs/dm/dm.h
+include/dynamechs/dm/dmActuator.hpp
+include/dynamechs/dm/dmArticulation.hpp
+include/dynamechs/dm/dmClosedArticulation.hpp
+include/dynamechs/dm/dmContactModel.hpp
+include/dynamechs/dm/dmEnvironment.hpp
+include/dynamechs/dm/dmForce.hpp
+include/dynamechs/dm/dmIntegEuler.hpp
+include/dynamechs/dm/dmIntegRK4.hpp
+include/dynamechs/dm/dmIntegRK45.hpp
+include/dynamechs/dm/dmIntegrator.hpp
+include/dynamechs/dm/dmLink.hpp
+include/dynamechs/dm/dmMDHLink.hpp
+include/dynamechs/dm/dmMobileBaseLink.hpp
+include/dynamechs/dm/dmObject.hpp
+include/dynamechs/dm/dmPrismaticLink.hpp
+include/dynamechs/dm/dmQuaternionLink.hpp
+include/dynamechs/dm/dmRevDCMotor.hpp
+include/dynamechs/dm/dmRevoluteLink.hpp
+include/dynamechs/dm/dmRigidBody.hpp
+include/dynamechs/dm/dmSecondaryForce.hpp
+include/dynamechs/dm/dmSecondaryJoint.hpp
+include/dynamechs/dm/dmSecondaryPrismaticJoint.hpp
+include/dynamechs/dm/dmSecondaryRevoluteJoint.hpp
+include/dynamechs/dm/dmSecondarySphericalJoint.hpp
+include/dynamechs/dm/dmSphericalLink.hpp
+include/dynamechs/dm/dmStaticRootLink.hpp
+include/dynamechs/dm/dmSystem.hpp
+include/dynamechs/dm/dmTime.h
+include/dynamechs/dm/dmTreadmill.hpp
+include/dynamechs/dm/dmZScrewTxLink.hpp
+include/dynamechs/dmu/dmLoadFile.h
+include/dynamechs/dmu/dmu.h
+include/dynamechs/dmu/glLoadModels.h
+include/dynamechs/dmGL/dmGL.h
+include/dynamechs/dmGL/dmGLCamera.hpp
+include/dynamechs/dmGL/dmGLFlyCamera.hpp
+include/dynamechs/dmGL/dmGLMouse.hpp
+include/dynamechs/dmGL/dmGLPolarCamera.hpp
+include/dynamechs/dmGL/dmGLPolarCamera_yup.hpp
+include/dynamechs/dmGL/dmGLPolarCamera_zup.hpp
+@dirrm include/dynamechs/dm
+@dirrm include/dynamechs/dmu
+@dirrm include/dynamechs/dmGL
+@dirrm include/dynamechs
+lib/libdm.so
+lib/libdmu.so
+lib/libdmGL.so
