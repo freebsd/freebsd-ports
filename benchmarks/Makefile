@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.7 1998/08/01 23:36:52 jkoshy Exp $
+# $Id: Makefile,v 1.8 1999/02/21 00:05:45 jkoshy Exp $
 #
 
     SUBDIR += bonnie
@@ -10,6 +10,7 @@
     SUBDIR += nbench
     SUBDIR += netperf
     SUBDIR += netpipe
+    SUBDIR += polygraph
     SUBDIR += tcpblast
     SUBDIR += xengine
 
