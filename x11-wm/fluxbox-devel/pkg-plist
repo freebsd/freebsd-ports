@@ -14,6 +14,7 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/app-debugging.html
 %%DOCHTML:%%%%DOCSDIR%%/html/app-setup.html
 %%DOCHTML:%%%%DOCSDIR%%/html/app-themeref.html
+%%DOCHTML:%%%%DOCSDIR%%/html/book1.html
 %%DOCHTML:%%%%DOCSDIR%%/html/bsetroot-man.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c152.html
 %%DOCHTML:%%%%DOCSDIR%%/html/c28.html
@@ -55,6 +56,8 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/x812.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x813.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x814.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x817.html
+%%DOCHTML:%%%%DOCSDIR%%/html/x820.html
 %%DOCPDF:%%%%DOCSDIR%%/pdf/fluxbook.pdf
 share/fluxbox/init
 share/fluxbox/keys
