@@ -16,7 +16,7 @@ CONFIGURE_ARGS+=--enable-objprelink
 .endif
 
 .if !defined(_NO_KDE_FINAL)
-.if defined(PARALLEL_PACKAGE_BUILD) || !defined(NO_KDE_FINAL)
+.if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_FINAL)
 CONFIGURE_ARGS+=--enable-final
 .endif
 .endif
