@@ -17,13 +17,13 @@ COMMENT=	"meta-port" for administrative tools to maintain ports
 
 # note: portuprade is brought in by pkg_cutleaves
 RUN_DEPENDS=	\
-		cvsup:${PORTSDIR}/net/cvsup-without-gui \
-		fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
-		pkg_cutleaves:${PORTSDIR}/sysutils/pkg_cutleaves \
-		pkg_tree:${PORTSDIR}/sysutils/pkg_tree \
-		porteasy:${PORTSDIR}/misc/porteasy \
-		portell:${PORTSDIR}/misc/portell \
-		portdowngrade:${PORTSDIR}/sysutils/portdowngrade
+		${LOCALBASE}/bin/cvsup:${PORTSDIR}/net/cvsup-without-gui \
+		${LOCALBASE}/bin/fastest_cvsup:${PORTSDIR}/sysutils/fastest_cvsup \
+		${LOCALBASE}/sbin/pkg_cutleaves:${PORTSDIR}/sysutils/pkg_cutleaves \
+		${LOCALBASE}/bin/pkg_tree:${PORTSDIR}/sysutils/pkg_tree \
+		${LOCALBASE}/bin/porteasy:${PORTSDIR}/misc/porteasy \
+		${LOCALBASE}/bin/portell:${PORTSDIR}/misc/portell \
+		${LOCALBASE}/sbin/portdowngrade:${PORTSDIR}/sysutils/portdowngrade
 
 NO_BUILD=	yes
 
