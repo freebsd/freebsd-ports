@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	py-tconfpy
-PORTVERSION=	1.185
+PORTVERSION=	2.112
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tundraware.com/Software/tconfpy/
 
