@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.2 1994/11/24 00:08:17 asami Exp $
+# $Id: Makefile,v 1.3 1994/11/26 23:07:02 ats Exp $
 #
 
 DISTNAME=	mule-2.1
@@ -22,6 +22,8 @@ PATCHSITE=	sh.wide.ad.jp:/JAPAN/mule/
 PATCHSITE=	${MASTER_SITE_OVERRIDE}
 .endif
 DEPENDS=	${PORTSDIR}/utils/Wnn
+PREPATCH_COOKIE=	${.CURDIR}/work/.prepatch_done
+PREBUILD_COOKIE=	${.CURDIR}/work/.prebuild_done
 
 pre-fetch:
 	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
@@ -33,7 +35,9 @@ pre-fetch:
 	    	fi \
 	 done
 
-pre-patch:
+pre-patch:	${PREPATCH_COOKIE}
+
+${PREPATCH_COOKIE}:
 	/bin/rm -f ${WRKSRC}/src/unexsunos4.c ${WRKSRC}/src/s/freebsd.h
 # I took these two files from emacs-19.28 and added -lcrypt
 	cp ${FILESDIR}/unexsunos4.c ${WRKSRC}/src
@@ -42,8 +46,12 @@ pre-patch:
 	@for file in ${PATCHFILES}; do \
 		gzip -c -d ${DISTDIR}/$$file | patch -d ${WRKSRC} -p1 -s; \
 	done
+	@${TOUCH} ${TOUCH_FLAGS} ${PREPATCH_COOKIE}
 
-pre-build:
+pre-build:	${PREBUILD_COOKIE}
+
+${PREBUILD_COOKIE}:
 	find ${WRKSRC} -name \*.orig -exec /bin/rm -f \{} \;
+	@${TOUCH} ${TOUCH_FLAGS} ${PREBUILD_COOKIE}
 
 .include <bsd.port.mk>
