@@ -18,7 +18,11 @@ BUILD_DEPENDS=	${APXS}:${PORTSDIR}/${APACHE_PORT} \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PERL5=	YES
+PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	USE_APXS=1 EVERYTHING=1 INSTALLSITELIB=${SITE_PERL} \
+			INSTALLSITEARCH=${SITE_PERL}/${PERL_ARCH} \
+			WITH_APXS=${APXS} \
+			PERL_EXTRA_CFLAGS='-DDEFAULT_PATH=\"/bin:/usr/bin:/usr/local/bin\"'
 
 MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::FakeRequest.3 Apache::File.3 Apache::Leak.3 \
@@ -35,18 +39,8 @@ MAN3=		Apache.3 Apache::Constants.3  Apache::ExtUtils.3 \
 		Apache::PerlSections.3 cgi_to_mod_perl.3 \
 		mod_perl_cvs.3 mod_perl_method_handlers.3 mod_perl_traps.3 \
 		mod_perl_tuning.3
-PERLSITEDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 
 .include <bsd.port.pre.mk>
-
-do-configure:
-	@ cd ${WRKSRC}; \
-	${PERL5} Makefile.PL USE_APXS=1 EVERYTHING=1 \
-	    PREFIX=${PREFIX} INSTALLSITELIB=${PERLSITEDIR} \
-	    INSTALLSITEARCH=${PERLSITEDIR}/${PERL_ARCH} \
-	    INSTALLMAN3DIR=${MANPREFIX}/man/man3 \
-	    WITH_APXS=${APXS} \
-	    PERL_EXTRA_CFLAGS='-DDEFAULT_PATH=\"/bin:/usr/bin:/usr/local/bin\"'
 
 post-install:
 	${MKDIR} ${PREFIX}/include/apache/modules/perl
