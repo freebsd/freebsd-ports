@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	tetrinet
-PORTVERSION=	0.7a
+PORTVERSION=	0.11
 CATEGORIES=	games net
-MASTER_SITES=	http://achurch.org/tetrinet/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://tetrinet.or.cz/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A console tetrinet client
+
+PORTDOCS=	README tetrinet.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tetrinet ${PREFIX}/bin

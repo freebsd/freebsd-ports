@@ -1,5 +1,2 @@
 bin/tetrinet
 bin/tetrinet-server
-%%PORTDOCS%%share/doc/tetrinet/README
-%%PORTDOCS%%share/doc/tetrinet/tetrinet.txt
-%%PORTDOCS%%@dirrm share/doc/tetrinet
