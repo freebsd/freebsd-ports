@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A Perl interface to the Sablotron XSLT processor
 
-BROKEN=		Does not build
-
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
@@ -36,7 +34,7 @@ MAN3=		XML::Sablotron.3 XML::Sablotron::DOM.3 \
 
 post-patch:
 .if ${PERL_LEVEL} < 500600
-	@${PERL} -pi -e 's/^our //; $$_="use vars qw(\$$libs \@extras);\n" if $$.==43' ${WRKSRC}/Makefile.PL
+	@${PERL} -pi -e 's/^our //; $$_="use vars qw(\$$libs \@extras);\n" if $$.==47' ${WRKSRC}/Makefile.PL
 .endif
 
 .include <bsd.port.post.mk>
