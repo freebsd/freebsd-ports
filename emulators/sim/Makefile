@@ -27,9 +27,9 @@ BIN_FILES=	altair eclipse h316 nova pdp1 pdp10 pdp11 pdp15 pdp4 pdp7 pdp8 \
 
 pre-patch:
 	@${MKDIR} ${WRKSRC}/BIN
-	@for i in `find . -name "*.[hc]"`; \
-	do \
-		${PERL} -pi -e 's@\r@@g' $$i ;\
+	@for i in `find ${WRKSRC} -name "*.[hc]"`; do \
+		cat $$i | tr -d '\r' > $$i.new; \
+		mv $$i.new $$i; \
 	done
 
 do-install:
