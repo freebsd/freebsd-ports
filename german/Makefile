@@ -5,6 +5,7 @@
     SUBDIR += cheapcall
     SUBDIR += citrix_ica
     SUBDIR += dict
+    SUBDIR += ding
     SUBDIR += ispell
     SUBDIR += ispell-alt
     SUBDIR += ispell-neu

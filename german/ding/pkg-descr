@@ -1,0 +1,13 @@
+Ding is a Dictionary lookup  program for X windows/Unix. It comes with
+a  German-English  Dictionary  with  ca. 120,000 entries.   It  is  an
+offline version of the dictionary found at:
+    <URL:http://dict.tu-chemnitz.de/>.
+
+It is based on Tk version >= 8.0 and uses the agrep for searching.
+
+It  has  many  configuration  options,  such  as  search  preferences,
+interface  language (English  or German),  colors. It has  history and
+help functions and comes with useful  key and mouse bindings for quick
+and easy lookups.
+
+WWW: http://www-user.tu-chemnitz.de/~fri/ding/
