@@ -163,7 +163,6 @@
     SUBDIR += wmicons
     SUBDIR += xanim
     SUBDIR += xaos
-    SUBDIR += xbm2gif
     SUBDIR += xbmbrowser
     SUBDIR += xdgagrab
     SUBDIR += xdl
