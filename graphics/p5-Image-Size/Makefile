@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.13 1998/08/19 14:32:13 vanilla Exp $
+# $Id: Makefile,v 1.14 1998/09/15 21:31:45 asami Exp $
 #
 
 DISTNAME=	Image-Size-2.7
@@ -15,6 +15,11 @@ MASTER_SITE_SUBDIR=	Image
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 USE_PERL5=	YES
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         perl paths
+.endif
 
 MAN1=		imgsize.1
 MAN3=		Image::Size.3
