@@ -3,12 +3,15 @@
 # Date created:         23 Jul 1997
 # Whom:                 stb
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/27 22:23:04 stb Exp $
+# $Id: Makefile,v 1.2 1997/08/18 19:04:07 stb Exp $
 #
 
 DISTNAME=       netatalk-1.4b2
 CATEGORIES=	net print
 MASTER_SITES=   ftp://terminator.rs.itd.umich.edu/unix/netatalk/
+
+PATCH_SITES=	http://www.umich.edu/~rsug/netatalk/patches/1.4b2/
+PATCHFILES=	afpd-macos8.diff
 
 MAINTAINER=	stb@freebsd.org
 
@@ -17,3 +20,4 @@ NOMANCOMPRESS=	true
 # man pages work.
 
 .include <bsd.port.mk>
+
