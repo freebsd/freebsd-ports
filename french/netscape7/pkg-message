@@ -1,0 +1,15 @@
+* WARNING *********************************************************************
+*    Users should back up their bookmark files (bookmarks.html).  There are
+* reports that this file can be clobbered the first time Netscape 6 is run.
+*    Problems may also exist when one launches Mozilla and Netscape 6
+* simultaneously.  Both use $HOME/.mozilla for preferences, but some
+* configuration files may be incompatible.
+
+* D'AVERTISSEMENT *************************************************************
+*    Les utilisateurs devraient sauvegarder leurs fichiers de signet
+* (bookmarks.html).  Il y a eu des rapports que cette fichier peut
+* être détruit la première fois Netscape 6 est exécuté.
+*    Il peut également y avoir des problèmes quand on lance Mozilla et Netscape
+* simultanément.  Tous les deux utilisent $$HOME/.mozilla pour des préférences,
+* mais certains des fichiers de configuration peut être incompatibles.
+*******************************************************************************
