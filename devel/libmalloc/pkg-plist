@@ -3,5 +3,5 @@ lib/libmalloc.a
 lib/libmalloc_d.a
 @exec ranlib %D/%F
 include/malloc.h
-lib/libmalloc_d.so.1.13
+lib/libmalloc_d.so.1.18
 @exec /sbin/ldconfig -m %B

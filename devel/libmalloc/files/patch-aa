@@ -25,7 +25,7 @@
   RANLIB = ranlib
   
   LDFLAGS=#-Bstatic
-+ VERSION=1.13
++ VERSION=1.18
   
   # only developers should have to change stuff below this line
   
@@ -134,3 +134,14 @@
   .id: $(SRCS)
   	mkid $(SRCS) $(SPLAYSRC) $(HDRS) $(SPLAYHDR)
   	touch .id
+--- externs.h.orig	Fri Jul 12 13:00:12 1996
++++ externs.h	Fri Jul 12 13:01:21 1996
+@@ -39,7 +39,7 @@
+ 
+ extern int fputs proto((const char *, FILE *));
+ extern int fflush proto((FILE *));
+-extern int setvbuf proto((FILE *, char *, int, memsize_t));
++extern int setvbuf proto((FILE *, char *, int, size_t));
+ 
+ /* Character Handling: <string.h> */
+ 
