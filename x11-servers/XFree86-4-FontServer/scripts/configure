@@ -57,6 +57,7 @@ configure () {
     echo "#define BuildServersOnly YES" >> $LOCALDEF
     echo "#define InstallFSConfig $InstallFSConfig" >> $LOCALDEF
     echo "#define FreeBSDBuildXfs YES" >> $LOCALDEF
+    echo "#define UseInstalledPrograms YES" >> $LOCALDEF
 
     # Copy ORIGDEF to DESTDEF
     rm -f $DESTDEF

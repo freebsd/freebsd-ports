@@ -70,6 +70,11 @@ configure () {
     echo "#define LibInstallBuild  YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXlib NO" >> $LOCALDEF
     echo "#define FreeBSDBuildXbin YES" >> $LOCALDEF
+    echo "#define StandardIncludes -I$PREFIX/include" >> $LOCALDEF
+    echo "#define DontUseLibPathVar YES" >> $LOCALDEF
+    echo "#define PreloadSetup" >> $LOCALDEF
+    echo "#define BuildPlugin NO" >> $LOCALDEF
+    echo "#define UseInstalledPrograms YES" >> $LOCALDEF
 
     # Copy ORIGDEF to DESTDEF
     rm -f $DESTDEF

@@ -7,6 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_XFREE:S/source//g:S/$/:x421patch/} \
@@ -41,9 +42,6 @@ SCRIPTS_ENV=		OSVERSION=${OSVERSION} \
 			BuildXF86DRI=${BuildXF86DRI} \
 			HasGlide3=${HasGlide3} \
 			HaveMatroxHal=${HaveMatroxHal}
-MAKE_ENV=		MAN_INSTALL_TARGET=FreeBSDPortsInstall.man
-ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET=		FreeBSDPortsInstall  FreeBSDPortsInstall.man
 MAN1=			XFree86.1 \
 			Xserver.1 \
 			kbd_mode.1 \
@@ -78,6 +76,10 @@ MAN4=			mga.4 \
 			mouse.4
 MAN5=			XF86Config.5
 PKGMESSAGE=		${WRKDIR}/.pkg-message
+XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
+XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
+XINSTALL_DIRS=		lib/font programs/Xserver
+XINSTALL_MAN_DIRS=	programs/Xserver
 
 .include <bsd.port.pre.mk>
 
@@ -97,7 +99,8 @@ BuildXF86DRI=		YES
 PLIST_SUB+=		DRI=""
 DISTFILES+=		freebsd-glide3headers.tar.gz:local
 HasGlide3=		YES
-
+XBUILD_DIRS+=		lib/XThrStub lib/X11 lib/GL
+XINSTALL_DIRS+=		lib/GL/mesa/src/drv
 post-extract::
 	@(cd ${WRKSRC}/lib/GL/mesa/src/drv/tdfx/ ; \
 		tar xfpz ${DISTDIR}/${DIST_SUBDIR}/freebsd-glide3headers.tar.gz)
@@ -204,10 +207,6 @@ pre-patch::
 	-@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/4.2.0-4.2.1.diff.gz \
 		| ${PATCH} -d ${PATCH_WRKSRC} --forward --quiet -E -p1 --batch
 
-do-configure:
-	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
-
 post-build:
 	@${RM} -f ${PKGMESSAGE}
 	@${CAT} ${.CURDIR}/pkg-message >> ${PKGMESSAGE}
@@ -216,4 +215,5 @@ post-install::
 	@${SED} -e s,/usr/X11R6,${PREFIX}, ${PKGMESSAGE}
 	strip ${PREFIX}/bin/XFree86
 
+.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.post.mk>

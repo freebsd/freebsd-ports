@@ -48,6 +48,8 @@ configure () {
     echo "#define BuildServer YES" >> $LOCALDEF
     echo "#define XVirtualFramebufferServer YES" >> $LOCALDEF
     echo "#define BuildServersOnly YES" >> $LOCALDEF
+    echo "#define UseInstalledPrograms YES" >> $LOCALDEF
+    echo "#define StandardIncludes -I${PREFIX}/include" >> $LOCALDEF
 
     # Copy ORIGDEF to DESTDEF
     rm -f $DESTDEF

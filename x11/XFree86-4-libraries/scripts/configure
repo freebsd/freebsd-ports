@@ -72,6 +72,7 @@ configure () {
     echo "#define Freetype2Dir ${LOCALBASE}" >> $LOCALDEF
     echo "#define FreeBSDBuildXlib  YES" >> $LOCALDEF
     echo "#define FreeBSDBuildXbin   NO" >> $LOCALDEF
+    echo "#define UseInstalledPrograms YES" >> $LOCALDEF
 
     # Copy ORIGDEF to DESTDEF
     rm -f $DESTDEF

@@ -28,17 +28,15 @@ USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
-ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET=		installXvfb installXserver.man
-MAKE_ENV=		MAN_INSTALL_TARGET=installXvfb.man
 MAN1=			Xserver.1 Xvfb.1
+XBUILD_DIRS=		lib/font lib/lbxutil/ lib/Xdmcp lib/Xau programs/Xserver
+XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
+XINSTALL_DIRS=		programs/Xserver
+XINSTALL_MAN_DIRS=	${XINSTALL_DIRS}
 
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
-do-configure:
-	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
-
+.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.mk>

@@ -1,6 +1,21 @@
---- config/cf/X11.tmpl.orig	Sat Jun  2 07:21:30 2001
-+++ config/cf/X11.tmpl	Fri Jun  8 00:44:19 2001
-@@ -2453,7 +2453,7 @@
+--- config/cf/X11.tmpl.orig	Tue Jan 15 14:55:26 2002
++++ config/cf/X11.tmpl	Mon Sep  2 13:28:05 2002
+@@ -1380,7 +1380,14 @@
+ #endif
+ 
+ #ifndef PsWrap
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
++#define PsWrap pswrap
++#define PsWrapDependency /**/
++#else
+ #define PsWrap $(PSWRAPSRC)/pswrap
++#define PsWrapDependency ProgramTargetName($(PSWRAP))
++#endif
++         PSWRAP = PsWrap
+ #endif
+ 
+ #ifndef ResourceConfigurationManagement 
+@@ -2622,7 +2629,7 @@
  FREETYPE2DIR = Freetype2Dir
  FREETYPE2LIBDIR = Freetype2LibDir
  FREETYPE2INCDIR = Freetype2IncDir

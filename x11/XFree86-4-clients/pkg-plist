@@ -125,8 +125,6 @@ include/X11/bitmaps/black6
 include/X11/bitmaps/box6
 include/X11/bitmaps/ldblarrow
 include/X11/bitmaps/rdblarrow
-lib/X11/XErrorDB
-lib/X11/XKeysymDB
 lib/X11/app-defaults/Beforelight
 lib/X11/app-defaults/Bitmap
 lib/X11/app-defaults/Bitmap-color

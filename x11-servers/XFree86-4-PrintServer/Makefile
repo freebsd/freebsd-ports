@@ -23,16 +23,16 @@ USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
-MAKE_ENV=		MAN_INSTALL_TARGET=NOOP
-ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET=		installXprt
+XBUILD_DIRS=		lib/font lib/lbxutil lib/Xdmcp lib/Xau programs/Xserver
+XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
+XINSTALL_DIRS=		programs/Xserver
 
 post-extract:
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
-do-configure:
-	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
+do-install:
+	$(INSTALL_PROGRAM) ${WRKSRC}/programs/Xserver/Xprt ${PREFIX}/bin/Xprt
 
+.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.mk>

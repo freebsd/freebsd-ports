@@ -1,19 +1,19 @@
---- lib/X11/Imakefile.orig	Tue May  1 19:35:05 2001
-+++ lib/X11/Imakefile	Wed Jun  6 23:35:50 2001
-@@ -905,7 +905,7 @@
- REQUIREDLIBS = -lcygipc
- #endif
+--- lib/X11/Imakefile.orig	Thu Dec 20 11:03:47 2001
++++ lib/X11/Imakefile	Sun Aug 25 01:18:53 2002
+@@ -943,7 +943,7 @@
+ 
+ OBJS = $(OBJS1) $(OBJS2) $(OBJS3)
  
 -#if !BuildServersOnly || XnestServer || BuildGLXLibrary || BuildClients
 +#if !BuildServersOnly || XnestServer || BuildGLXLibrary || BuildClients || FreeBSDBuildXxserv
  #include <Library.tmpl>
  
  SpecialCLibObjectRule(ErrDes,$(ICONFIGFILES),$(EDB_DEFINES))
-@@ -944,8 +944,10 @@
+@@ -983,8 +983,10 @@
  #if InstallXcmsTxt
  InstallNonExecFile(Xcms.txt,$(LIBDIR))
  #endif
-+#if !defined(FreeBSDBuildXlib) || !FreeBSDBuildXlib
++#if defined(FreeBSDBuildXlib) && FreeBSDBuildXlib
  InstallNonExecFile(XErrorDB,$(LIBDIR))
  InstallNonExecFile(XKeysymDB,$(LIBDIR))
 +#endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	libraries
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_XFREE:S/source//g:S/$/:x421patch/} \
@@ -46,10 +47,16 @@ SCRIPTS_ENV=		HasSecureRPC=${HasSecureRPC} \
 MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
 			PORTNAME=${PORTNAME} \
 			PORTVERSION=${PORTVERSION}
-ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET=	FreeBSDPortsInstall FreeBSDPortsInstall.man installXlib
-MAN1=		libxrx.1
-MAN3=		Xaw.3 Xft.3
+MAN1=			libxrx.1
+MAN3=			Xaw.3 Xft.3
+XBUILD_DIRS=		lib nls programs/Xserver/include \
+			programs/Xserver/hw/xfree86/parser \
+			programs/xrx
+XINCLUDE_DIRS=		programs/proxymngr
+XINSTALL_DIRS=		include lib nls programs/Xserver/include \
+			programs/xrx/plugin \
+			programs/Xserver/hw/xfree86/parser
+XINSTALL_MAN_DIRS=	${XINSTALL_DIRS}
 
 # XFree86 User Config:
 # ---
@@ -101,11 +108,12 @@ post-patch:
 		${LN} -s zh_TW.big5 $$i/zh_TW.Big5; \
 	done
 
-do-configure:
-	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
-
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PM.h \
+		${PREFIX}/include/X11/PM
+	${INSTALL_DATA} ${WRKSRC}/programs/proxymngr/PMproto.h \
+		${PREFIX}/include/X11/PM
 	@${MKHTMLINDEX} ${X11BASE}/lib/X11/doc/html
 
+.include "Makefile.inc"
 .include <bsd.port.post.mk>

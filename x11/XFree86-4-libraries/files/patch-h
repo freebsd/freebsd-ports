@@ -1,5 +1,23 @@
---- config/cf/Imake.rules.orig	Tue Dec 18 05:00:37 2001
-+++ config/cf/Imake.rules	Sat Jan 19 22:47:40 2002
+--- config/cf/Imake.rules.orig	Mon Dec 17 12:00:37 2001
++++ config/cf/Imake.rules	Sun Sep  1 22:20:08 2002
+@@ -1369,7 +1369,7 @@
+  * this Imakefile is within the source tree.
+  */
+ #ifndef RmanDependency
+-#ifdef UseInstalled
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
+ #define RmanDependency() /**/
+ #else
+ #define RmanDependency() 						@@\
+@@ -1384,7 +1384,7 @@
+ #endif /* RmanDependency */
+ 
+ #ifndef RmanCmdDependency
+-#ifdef UseInstalled
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
+ #define RmanCmdDependency	/**/
+ #else
+ #define RmanCmdDependency	ProgramTargetName($(RMAN))
 @@ -1399,7 +1399,7 @@
  dest.suffix.html: file.$(MANNEWSUFFIX) RmanCmdDependency		@@\
  	RemoveFiles(dest.suffix.html dest.suffix-html)			@@\
@@ -27,3 +45,30 @@
  		sed -e 's:^.::' -e 's:[^/.][^/]*:..:'g`; \		@@\
  	  cd Concat($(DESTDIR),opath); \				@@\
  	  if [ -f lfile -a ! -h lfile ]; then \ 			@@\
+@@ -1833,7 +1833,7 @@
+  * this Imakefile is within the source tree.
+  */
+ #ifndef DependDependency
+-#ifdef UseInstalled
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
+ #define DependDependency() /**/
+ #else
+ #define DependDependency() 						@@\
+@@ -1928,7 +1928,7 @@
+  * within the source tree.
+  */
+ #ifndef ImakeDependency
+-#ifdef UseInstalled
++#if defined(UseInstalled) || defined(UseInstalledPrograms)
+ #define ImakeDependency(target) /**/
+ #else
+ #define ImakeDependency(target)						@@\
+@@ -3077,6 +3077,8 @@
+ 
+ #ifdef UseInstalled
+ #define ImakeSubCmdHelper $(IMAKE_CMD)
++#elif defined(UseInstalledPrograms)
++#define ImakeSubCmdHelper $(IMAKE) -I$(IMAKEPREFIX)$(IRULESRC) $(IMAKE_DEFINES)
+ #else
+ #define ImakeSubCmdHelper $(IMAKEPREFIX)$(IMAKE) -I$(IMAKEPREFIX)$(IRULESRC) $(IMAKE_DEFINES)
+ #endif
