@@ -1,0 +1,16 @@
+--- Wnn/jserver/dispatch.c~	Tue Sep 22 13:49:00 1992
++++ Wnn/jserver/dispatch.c	Fri Mar 10 00:24:44 2000
+@@ -308,9 +308,11 @@
+  */
+ 
+ void
+-get_file_name(p) register char *p;
++get_file_name(p, len)
++register char *p;
++int len;
+ {
+- gets_cur(p);
++ gets_cur(p, len);
+  if(p[0] == 0){
+      return;
+  }

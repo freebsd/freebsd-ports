@@ -1,0 +1,13 @@
+--- Wnn/jserver/do_dic_env.c~	Wed Sep 30 14:25:06 1992
++++ Wnn/jserver/do_dic_env.c	Fri Mar 10 00:25:25 2000
+@@ -78,8 +78,8 @@
+     nice=get4_cur();
+     rw=get4_cur();
+     hrw=get4_cur();
+-    gets_cur(pw);
+-    gets_cur(pw1);
++    gets_cur(pw, WNN_PASSWD_LEN);
++    gets_cur(pw1, WNN_PASSWD_LEN);
+     rev=get4_cur();		/* rev is to add it as reverse dict */
+     
+     error1("dic_add: eid=%d,fid=%d,hfid=%d",eid,fid,hfid);
