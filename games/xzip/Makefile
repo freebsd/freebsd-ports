@@ -3,7 +3,7 @@
 # Date created:				28 June 1998
 # Whom:					Matthew Hunt <mph@FreeBSD.org>
 #
-# $Id: Makefile,v 1.5 1998/07/20 17:28:41 asami Exp $
+# $Id: Makefile,v 1.6 1998/07/20 18:42:57 mph Exp $
 #
 
 DISTNAME=		xzip180
@@ -16,6 +16,8 @@ MAINTAINER=		mph@freebsd.org
 
 WRKSRC=			${WRKDIR}/xzip
 ALL_TARGET=
+
+USE_XLIB=		yes
 
 MAN1=			xzip.1
 
