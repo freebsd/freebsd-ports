@@ -10573,6 +10573,7 @@ xmms-status-plugin	ports/multimedia/xmms-status-plugin
 xmms-tfmx	ports/audio/xmms-tfmx
 xmms-uade	ports/audio/xmms-uade
 xmms-volnorm	ports/audio/xmms-volnorm
+xmms-weasel	ports/multimedia/xmms-weasel
 xmms-wma	ports/audio/xmms-wma
 xmms-xvs	ports/graphics/xmms-xvs
 xmold		ports/x11/xmold
