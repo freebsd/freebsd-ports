@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 NO_BUILD=	yes
 USE_PERL5=	yes
 
-MAN1=		colorize.1
+MAN1=		colorize.pl.1
 
 FMT?=	/usr/bin/fmt
 
@@ -33,12 +33,12 @@ post-patch:
 	@${PERL} -pi -e 's!colorize.pl!colorize!g' ${WRKSRC}/colorize.pl.1
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/colorize.pl ${PREFIX}/bin/colorize
+	@${INSTALL_SCRIPT} ${WRKSRC}/colorize.pl ${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/colorizerc ${PREFIX}/etc/colorizerc.dist
 .if !exists(${PREFIX}/etc/colorizerc)
 	@${INSTALL_DATA} ${WRKSRC}/colorizerc ${PREFIX}/etc/colorizerc
 .endif
-	@${INSTALL_MAN} ${WRKSRC}/colorize.pl.1 ${PREFIX}/man/man1/colorize.1
+	@${INSTALL_MAN} ${WRKSRC}/colorize.pl.1 ${PREFIX}/man/man1/colorize.pl.1
 	@${PERL} -pi -e 's,PREFIX,${PREFIX},' ${PKGMESSAGE}
 	@${SED} s!/usr/local/!${PREFIX}/! ${PKGMESSAGE} | ${FMT}
 
