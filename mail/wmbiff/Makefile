@@ -6,12 +6,12 @@
 #
 
 PORTNAME=		wmbiff
-PORTVERSION=		0.4.15
+PORTVERSION=		0.4.16
 CATEGORIES=		mail windowmaker afterstep
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		simon@nitro.dk
+MAINTAINER=		simon@FreeBSD.org
 COMMENT=		An xbiff-like Window Maker dock app
 
 .ifdef WITH_GNUTLS
