@@ -49,10 +49,6 @@ BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
 BROKEN=	"Calendar requires Composer and Mailnews support."
 .endif
 
-.if defined(WITH_CALENDAR)
-LIB_DEPENDS+=	ical.0:${PORTSDIR}/devel/libical
-.endif
-
 LATEST_LINK=	${MOZILLA}
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude */macbuild/*\
