@@ -3,7 +3,7 @@
 # Date created:         23 Jul 1997
 # Whom:                 stb
 #
-# $Id: Makefile,v 1.2 1997/08/18 19:04:07 stb Exp $
+# $Id: Makefile,v 1.3 1998/01/21 15:00:55 jfieber Exp $
 #
 
 DISTNAME=       netatalk-1.4b2
@@ -20,4 +20,3 @@ NOMANCOMPRESS=	true
 # man pages work.
 
 .include <bsd.port.mk>
-
