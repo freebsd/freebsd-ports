@@ -26,22 +26,17 @@ COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
 .if !defined(WITHOUT_COMPILE)
 
-BUILD_DEPENDS=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant \
-		${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit
+BUILD_DEPENDS=	${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit
 USE_JAVA=	yes
+USE_ANT=	yes
 JAVA_VERSION=	1.4+
-JAVA_BUILD=	yes
-
-ANT_CMD?=	${LOCALBASE}/bin/ant
-ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
-ANT_TARGET=	clean compile-driver
+ALL_TARGET=	clean compile-driver
 BUILDDIR=	${WRKDIR}/build-mysql-jdbc/${DISTNAME}
 
 .else
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
-JAVA_RUN=	yes
 BUILDDIR=	${WRKDIR}/${DISTNAME}
 
 .endif
@@ -73,13 +68,14 @@ pre-fetch:
 
 do-build:
 .if !defined(WITHOUT_COMPILE)
-	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET}
+	@(cd ${BUILD_WRKSRC}; \
+	    ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${ALL_TARGET})
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${BUILDDIR}/doc && cd ${WRKSRC} && \
-	 ${JAVADOC} -d ${BUILDDIR}/doc -package      \
-	     -classpath  ${JDCLASSPATH}              \
-	      com.mysql.jdbc org.gjt.mm.mysql
+	@${MKDIR} ${BUILDDIR}/doc && (cd ${BUILD_WRKSRC};  \
+	    ${JAVADOC} -d ${BUILDDIR}/doc -package         \
+	        -classpath  ${JDCLASSPATH}                 \
+	         com.mysql.jdbc org.gjt.mm.mysql)
 .endif
 
 do-install: do-install-jar do-install-apidocs
