@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
-DISTNAME=	${PORTNAME}-source-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
