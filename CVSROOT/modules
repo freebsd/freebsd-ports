@@ -7336,8 +7336,8 @@ p5-ePerl	ports/lang/p5-ePerl
 p5-enum		ports/devel/p5-enum
 p5-hp200lx-db	ports/databases/p5-hp200lx-db
 p5-libapreq	ports/www/p5-libapreq
-p5-libapreq2	ports/www/p5-libapreq2
 p5-libapreq-static	ports/www/p5-libapreq-static
+p5-libapreq2	ports/www/p5-libapreq2
 p5-libservlet	ports/www/p5-libservlet
 p5-libvorbis	ports/audio/p5-libvorbis
 p5-libwww	ports/www/p5-libwww
@@ -8952,9 +8952,9 @@ salias		ports/misc/salias
 sam		ports/editors/sam
 sam2p		ports/graphics/sam2p
 samba		ports/net/samba
-samba3		ports/net/samba3
 samba-libsmbclient	ports/net/samba-libsmbclient
 samba-vscan	ports/security/samba-vscan
+samba3		ports/net/samba3
 sambasentinel	ports/net/sambasentinel
 samefile	ports/sysutils/samefile
 samhain		ports/security/samhain
