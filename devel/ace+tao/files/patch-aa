@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Dec  2 10:18:36 2003
++++ Makefile	Tue Dec  2 10:18:52 2003
+@@ -20,8 +20,6 @@
+           netsvcs \
+           tests \
+           apps \
+-          examples \
+-          performance-tests \
+           websvcs \
+ 	  Kokyu
+ 

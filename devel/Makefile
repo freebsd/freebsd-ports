@@ -9,6 +9,7 @@
     SUBDIR += a2dev
     SUBDIR += aap
     SUBDIR += ac-archive
+    SUBDIR += ace+tao
     SUBDIR += acpicatools
     SUBDIR += activitymail
     SUBDIR += adabindx

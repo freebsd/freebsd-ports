@@ -1,0 +1,100 @@
+--- tests/run_test.pl.orig	Tue Dec  2 08:49:53 2003
++++ tests/run_test.pl	Tue Dec  2 10:05:36 2003
+@@ -100,7 +100,7 @@
+     my $program = shift;
+ 
+     unlink <log/$program*.log>;
+-    unlink "core";
++    unlink "$program.core";
+ 
+     my $P = new PerlACE::Process ($program);
+ 
+@@ -121,9 +121,11 @@
+         print STDERR "Error: $program FAILED (time out)\n";
+         $P->Kill ();
+         $P->TimedWait (1);
++	$failed_tests{$program}++;
+     }
+     elsif ($status != 0) {
+         print STDERR "Error: $program FAILED with exit status $status\n";
++	$failed_tests{$program}++;
+     }
+ 
+     check_log ($program);
+@@ -179,13 +181,15 @@
+ 
+     local $log = "log/".$program.".log";
+ 
+-    if (-e "core") {
++    if (-e "$program.core") {
+         print STDERR "Error: $program dumped core\n";
+-        unlink "core";
++        unlink "$program.core";
++	$failed_tests{$program}++;
+     }
+ 
+     if (! -e $log ) {
+         print STDERR "Error: No log file ($log) is present\n";
++	$failed_tests{$program}++;
+     }
+     else {
+         if (open (LOG, "<".$log) == 0) {
+@@ -222,11 +226,13 @@
+             if ($starting_matched == 0) {
+                 print STDERR "Error ($log): no line with 'starting'\n";
+                 $print_log = 1;
++		$failed_tests{$program}++;
+             }
+ 
+             if ($ending_matched == 0) {
+                 print STDERR "Error ($log): no line with 'Ending'\n";
+                 $print_log = 1;
++		$failed_tests{$program}++;
+             }
+ 
+             if ($print_log == 1) {
+@@ -240,6 +246,7 @@
+                     close (LOG);
+                 }
+                 print STDERR "======= End Log File \n";
++		$failed_tests{$program}++;
+             }
+ 
+             # Now check for any sub-logs. If either the main log or a
+@@ -278,6 +285,7 @@
+                             close (LOG);
+                         }
+                         print STDERR "======= End Sublog File \n";
++			$failed_tests{$program}++;
+                     }
+ 		}
+             }
+@@ -379,6 +387,9 @@
+             "#    % ./run_tests.check log/*.log\n\n";
+ }
+ 
++%failed_tests=();
++$total=0;
++
+ foreach $test (@tests) {
+     if (defined $opt_d) {
+         print "Would run test $test now\n";
+@@ -391,9 +402,18 @@
+     }
+     else {
+         run_program ($test);
++	$total++;
+     }
+ }
+ 
+ check_resources ($oh) if (!defined $opt_d);
+ 
+ delete_temp_files ();
++
++print "=====================================================================\n";
++print "Total test runned: $total\n";
++print "Successed: ", $total-scalar (keys %failed_tests), "\n";
++print "Failed: ", scalar (keys %failed_tests), " :\n";
++foreach (sort keys %failed_tests) {
++    print "  $_\n";
++}

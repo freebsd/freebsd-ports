@@ -1,0 +1,14 @@
+--- TAO/Makefile.orig	Fri Jun 13 22:12:42 2003
++++ TAO/Makefile	Fri Dec  5 10:34:27 2003
+@@ -23,10 +23,7 @@
+           TAO_IDL \
+           tests \
+           orbsvcs \
+-          examples \
+-          performance-tests \
+-          utils \
+-	  docs/tutorials/Quoter
++          utils
+ 
+ CLONE   = Makefile \
+           tao \
