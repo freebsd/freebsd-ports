@@ -1,0 +1,6 @@
+Java Development Kit 1.5 Documentation. Contains release information,
+API documentation, guides to new features and tool documentation.
+
+The documentation will be installed in ${PREFIX}/share/doc/jdk1.5/
+
+WWW: http://java.sun.com/j2se/1.5/
