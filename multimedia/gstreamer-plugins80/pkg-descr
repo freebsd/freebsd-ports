@@ -1,0 +1,17 @@
+[ excerpt from developer's site ]
+
+This is a collection of plugins written with the GStreamer framework.
+Some features of these plugins are:
+
+- Dynamically loaded plugins provide elements and media types,
+  demand-loaded via an XML registry, similar to ld.so.cache
+- Element interface handles all known types of sources, filters,
+  sinks
+- Capabilities system allows verification of element compatibility
+  using MIME types and media-specific properties
+- Autoplugging uses capabilities system to complete complex paths
+  automatically
+- Pipelines can be saved to XML and loaded back to working state
+- Resource friendly plugins don't waste RAM
+
+WWW: http://gstreamer.sourceforge.net/

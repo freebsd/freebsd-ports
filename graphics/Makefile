@@ -110,6 +110,7 @@
     SUBDIR += gridpix
     SUBDIR += gsculpt
     SUBDIR += gstreamer
+    SUBDIR += gstreamer-plugins
     SUBDIR += gsubedit
     SUBDIR += gthumb
     SUBDIR += gtkdps
