@@ -3,6 +3,8 @@
 # Date created:         17 January 1996
 # Whom:                 igor@pkaub.ru
 #
+# $Id$
+#
 
 DISTNAME=	trafshow-2.0
 CATEGORIES+=	net
@@ -10,8 +12,6 @@ MASTER_SITES=	ftp://ftp.kiae.su/unix/tcpip/netmaint/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=     igor@pkaub.ru
-
-NO_CONFIGURE=   YES
 
 post-install:
 	strip ${PREFIX}/bin/trafshow
