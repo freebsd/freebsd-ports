@@ -1,0 +1,4 @@
+pdumpfs-clean is a utility to clean up old backup files of a pdumpfs archive.
+
+Author:	Taku YASUI <tach@debian.or.jp>
+WWW-ja:	http://tach.arege.net/software/pdumpfs-clean/
