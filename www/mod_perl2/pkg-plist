@@ -86,6 +86,7 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Base64.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Brigade.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Bucket.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/BucketAlloc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/BucketType.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Const.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Date.pm
@@ -171,6 +172,8 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Brigade/Brigade.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Bucket/Bucket.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Bucket/Bucket.so
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/BucketAlloc/BucketAlloc.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/BucketAlloc/BucketAlloc.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/BucketType/BucketType.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/BucketType/BucketType.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Const/Const.bs
@@ -309,6 +312,7 @@ libexec/apache2/mod_perl.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Date
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Const
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/BucketType
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/BucketAlloc
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Bucket
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Brigade
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/APR/Base64

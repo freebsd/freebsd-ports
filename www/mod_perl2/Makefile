@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	mod_perl
-# internally, this still calls itself r19, but we go with the RC numbers now
-PORTVERSION=	2.0.0r2
+PORTVERSION=	2.0.0r3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
 PKGNAMESUFFIX=	2
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-RC/}-XMas
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/-RC/}
 
 MAINTAINER=	lars.eggert@gmx.net
 COMMENT=	Embeds a Perl interpreter in the Apache2 server
