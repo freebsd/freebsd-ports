@@ -2112,3 +2112,4 @@ share/doc/gtkmm-2.0/tutorial/html/index.html
 @dirrm include/gtkmm-2.0/gdkmm
 @dirrm include/gtkmm-2.0/atkmm/private
 @dirrm include/gtkmm-2.0/atkmm
+@dirrm include/gtkmm-2.0
