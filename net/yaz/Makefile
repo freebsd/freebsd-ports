@@ -9,7 +9,8 @@ PORTNAME=	yaz
 PORTVERSION=	1.6
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/ \
-		http://people.FreeBSD.org/~jeh/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jeh
 
 MAINTAINER=	dima@Chg.RU
 

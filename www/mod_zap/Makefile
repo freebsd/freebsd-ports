@@ -9,7 +9,8 @@ PORTNAME=	mod_zap
 PORTVERSION=	1.0
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.indexdata.dk/pub/yaz/ \
-		http://people.FreeBSD.org/~jeh/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jeh
 DISTNAME=	zap-${PORTVERSION}
 
 MAINTAINER=	dima@Chg.RU
