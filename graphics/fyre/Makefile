@@ -16,10 +16,11 @@ COMMENT=	Chaos map rendering system with GTK+-2 interface
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	libglade2
+USE_GETOPT_LONG=yes
 
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
-MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}"
+MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 
