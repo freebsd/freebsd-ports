@@ -19,10 +19,4 @@ LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 USE_IMAKE=	YES
 USE_XPM=	YES
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
