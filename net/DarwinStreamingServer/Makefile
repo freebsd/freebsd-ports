@@ -43,6 +43,7 @@ pre-fetch:
 	${ECHO} "Please get ${DISTNAME}${EXTRACT_SUFX} from";				\
 	${ECHO} "	http://developer.apple.com/darwin/projects/streaming/source/";	\
 	${ECHO} "And, you must accept APSL (Apple Public Source License).";		\
+	${ECHO} "Then, put in ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.";			\
 	${ECHO} "********************************************************************";	\
 	${FALSE}                                                                        \
 	)
