@@ -1,12 +1,12 @@
 # New ports collection makefile for:	pcre
-# Version required:			1.09
+# Version required:			2.05
 # Date created:				08 July 1998
 # Whom:					dom
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/12 22:59:19 steve Exp $
 #
 
-DISTNAME=       pcre-1.09
+DISTNAME=       pcre-2.05
 CATEGORIES=     devel
 MASTER_SITES=   ftp://ftp.cus.cam.ac.uk/pub/software/programs/pcre/
 
@@ -25,7 +25,9 @@ do-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pgrep ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/libpcre.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libpcreposix.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/pcre.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/pcreposix.h ${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/pcre.3 ${PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/pcreposix.3 ${PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKSRC}/pgrep.1 ${PREFIX}/man/man1
