@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	osd
-PORTVERSION=	0.2.9
+PORTVERSION=	0.2.11
 CATEGORIES=	misc python
 MASTER_SITES=	http://repose.cx/pyosd/ \
 		http://damien.kangaweb.com/moving/stuff/pyosd/
@@ -27,6 +27,6 @@ post-patch:
 		${REINPLACE_CMD} -e 's;_X11BASE_;${X11BASE};g' ${WRKSRC}/setup.py
 
 post-extract:
-		${MV} ${WRKSRC}/pyosd ${WRKSRC}/osd
+		@${MV} ${WRKSRC}/pyosd ${WRKSRC}/osd
 
 .include <bsd.port.mk>
