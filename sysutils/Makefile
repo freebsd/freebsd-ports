@@ -74,6 +74,7 @@
     SUBDIR += p5-Schedule-Cron
     SUBDIR += p5-Schedule-Match
     SUBDIR += p5-SyslogScan
+    SUBDIR += p5-Unix-ConfigFile
     SUBDIR += p5-Unix-Syslog
     SUBDIR += pib
     SUBDIR += pkg_remove

@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/Unix/AliasFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/Unix/AutomountFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/Unix/ConfigFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/Unix/GroupFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/Unix/PasswdFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix/ConfigFile/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unix/ConfigFile
