@@ -7,7 +7,8 @@
 
 PORTNAME=	gpsman
 PORTVERSION=	6.0.1
-CATEGORIES=	astro tk83
+PORTREVISION=	1
+CATEGORIES=	astro tk84
 MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/ \
 		http://www.ncc.up.pt/~mig/ \
 		${MASTER_SITE_SUNSITE}
@@ -20,7 +21,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	david@catwhisker.org
 COMMENT=	A Tcl/Tk-based GPS management utility
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes
