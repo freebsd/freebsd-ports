@@ -12,7 +12,8 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/	\
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/	\
 		http://pubweb.bnl.gov/people/hoff/midi/1.10/	\
-		ftp://ftp.netscape.com/pub/sdk/plugin/unix/
+		${MASTER_SITE_NETSCAPE}
+MASTER_SITE_SUBDIR=	sdk/plugin/unix
 DISTFILES=	${BZ2DIST} ${ZDIST}
 
 PATCH_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
