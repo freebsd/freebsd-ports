@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tcpwatch
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3
 CATEGORIES=	net python
-MASTER_SITES=	http://hathaway.freezope.org/Software/TCPWatch/
+MASTER_SITES=	http://hathawaymix.org/Software/TCPWatch/
 
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	TCP monitoring and logging tool with support for HTTP 1.1
