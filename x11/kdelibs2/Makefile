@@ -7,7 +7,7 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	20000829A
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11
 MASTER_SITES=	http://www.physics.purdue.edu/~will/
 
 MAINTAINER=	will@FreeBSD.org
@@ -44,11 +44,11 @@ pre-configure:
 .endfor
 
 post-install:
-.for LIB in DCOP kab kdecore kdesu kdeui kfile kformula kio kjs kmid \
+.for LIB in DCOP kab kdecore kdesu kdeui kfile kformula kio kjs \
 	    kparts kspell ksycoca kjava
 	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.${SOMAJOR} ${PREFIX}/lib/lib${LIB}.so
 .endfor
-.for LIB in artsc artsflow artsflow_idl kmedia2_idl qtmcop soundserver_idl
+.for LIB in artsc artsflow artsflow_idl kmid kmedia2_idl qtmcop soundserver_idl
 	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.0 ${PREFIX}/lib/lib${LIB}.so
 .endfor
 
