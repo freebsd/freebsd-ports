@@ -22,7 +22,6 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	High performance MTA for Unix systems on the Internet
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 .if defined(WITH_EXIMON)
 RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
 .endif
@@ -37,6 +36,7 @@ CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}${suffix}*
 .endfor
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
 MAN8=		exim.8
