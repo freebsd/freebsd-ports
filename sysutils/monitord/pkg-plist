@@ -1,4 +1,3 @@
-@unexec if cmp -s %D/etc/monitord.conf %D/etc/monitord.conf.dist; then rm -f %D/etc/monitord.conf; fi
-etc/monitord.conf.dist
-@exec [ -f %B/monitord.conf ] || cp %B/%f %B/monitord.conf
-bin/monitord
+@unexec if cmp -s %D/etc/monitord.conf %D/etc/monitord.conf.sample; then rm -f %D/etc/monitord.conf; fi
+etc/monitord.conf.sample
+sbin/monitord

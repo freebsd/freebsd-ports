@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Jun 15 11:17:14 2000
-+++ Makefile	Sun Jun 17 14:56:30 2001
+--- Makefile.orig	Fri Aug 22 06:36:42 2003
++++ Makefile	Fri Aug 22 15:07:34 2003
 @@ -6,7 +6,7 @@
  
  TARGET =	monitord
@@ -13,9 +13,9 @@
  	$(CC) $(OBJECTS) -o $(TARGET)
  
  install:
--	$(INSTALL) -cs $(TARGET) /usr/local/bin
--	$(INSTALL) -c $(TARGET).conf /usr/local/etc
+-	$(INSTALL) -cs $(TARGET) /usr/local/sbin
+-	$(INSTALL) -c $(TARGET).conf.sample /usr/local/etc
 -	$(INSTALL) -c $(TARGET).8 $(MANDIR)/man8
-+	$(BSD_INSTALL_PROGRAM) $(TARGET) $(PREFIX)/bin
-+	if [ ! -e $(PREFIX)/etc/$(TARGET).conf ] ; then $(BSD_INSTALL_DATA) $(TARGET).conf $(PREFIX)/etc; fi
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(PREFIX)/sbin
++	if [ ! -e $(PREFIX)/etc/$(TARGET).conf.sample ] ; then $(BSD_INSTALL_DATA) $(TARGET).conf.sample $(PREFIX)/etc; fi
 +	$(BSD_INSTALL_MAN) -c $(TARGET).8 $(MANDIR)/man8
