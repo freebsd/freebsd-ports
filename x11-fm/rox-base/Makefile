@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	rox
 DISTNAME=	rox-base-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	olgeni@freebsd.org
+MAINTAINER=	olgeni@FreeBSD.org
 
 NO_BUILD= 	yes
 
