@@ -1,0 +1,10 @@
+NEdit is a GUI (Graphical User Interface) style text editor for
+programs and plain-text files.  Users of Macintosh and MS Windows
+based text editors will find NEdit a familiar and comfortable
+environment.  NEdit provides all of the standard menu, dialog,
+editing, and mouse support, as well as all of the standard shortcuts
+to which the users of modern GUI based environments are accustomed.
+For users of older style Unix editors, welcome to the world of
+mouse-based editing!
+
+This port requires Motif to build.

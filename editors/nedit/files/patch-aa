@@ -1,0 +1,135 @@
+*** Makefile.orig	Sun Apr  7 17:30:29 1996
+--- Makefile	Sun Apr  7 20:07:04 1996
+***************
+*** 2,8 ****
+  # Makefile for NEdit text editor
+  #
+  # targets: sgi_nedit, hp_nedit, ultrix_nedit, ibm_nedit, sunos_nedit,
+! #	   solaris_nedit, dec_nedit, linux_nedit
+  #
+  # Builds an intermediate library in util directory, then builds
+  # the nedit executable in the source directory
+--- 2,8 ----
+  # Makefile for NEdit text editor
+  #
+  # targets: sgi_nedit, hp_nedit, ultrix_nedit, ibm_nedit, sunos_nedit,
+! #	   solaris_nedit, dec_nedit, linux_nedit, freebsd_nedit
+  #
+  # Builds an intermediate library in util directory, then builds
+  # the nedit executable in the source directory
+***************
+*** 39,41 ****
+--- 39,53 ----
+  linux_nedit:
+  	(cd util; make -f Makefile.linux libNUtil.a)
+  	(cd source; make -f Makefile.linux nedit nc)
++ 
++ freebsd_nedit:
++ 	(cd util; make -f Makefile.freebsd libNUtil.a)
++ 	(cd source; make -f Makefile.freebsd nedit nc)
++ 	
++ all: freebsd_nedit
++ 
++ install::
++ 	(cd source; make -f Makefile.freebsd install)
++ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 nedit.man ${PREFIX}/man/man1/nedit.1
++ 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 nc.man ${PREFIX}/man/man1/nc.1
++ 	${INSTALL} ${COPY} -m 644 NEdit ${X11BASE}/lib/X11/app-defaults/NEdit
+*** util/Makefile.freebsd.orig	Sun Apr  7 18:09:19 1996
+--- util/Makefile.freebsd	Sun Apr  7 17:32:32 1996
+***************
+*** 0 ****
+--- 1,8 ----
++ CC=cc
++ AR=ar
++ 
++ # For editres, add -DEDITRES to CFLAGS and -lXmu to LIBS
++ CFLAGS=-O -I${PREFIX}/include -DUSE_DIRENT -DUSE_LPR_PRINT_CMD
++ LIBS= -L${PREFIX}/lib -lm ${PREFIX}/lib/libXm.a -lXpm -lXext -lXt -lSM -lICE -lX11
++ 
++ include Makefile.common
+*** util/Makefile.common.orig	Sun Apr  7 17:33:24 1996
+--- util/Makefile.common	Sun Apr  7 17:33:42 1996
+***************
+*** 10,16 ****
+  all: libNUtil.a
+  
+  libNUtil.a: $(OBJS)
+! 	$(AR) -urs libNUtil.a $(OBJS)
+  
+  printUtils.o: printUtils.c
+  	$(CC) -c $(CFLAGS) $(PRINTFLAGS) printUtils.c
+--- 10,16 ----
+  all: libNUtil.a
+  
+  libNUtil.a: $(OBJS)
+! 	$(AR) -ur libNUtil.a $(OBJS)
+  
+  printUtils.o: printUtils.c
+  	$(CC) -c $(CFLAGS) $(PRINTFLAGS) printUtils.c
+*** source/Makefile.freebsd.orig	Sun Apr  7 18:10:29 1996
+--- source/Makefile.freebsd	Sun Apr  7 17:38:04 1996
+***************
+*** 0 ****
+--- 1,8 ----
++ CC=cc
++ AR=ar
++ 
++ # For editres, add -DEDITRES to CFLAGS and -lXmu to LIBS
++ CFLAGS=-O -I${PREFIX}/include -DUSE_DIRENT -DUSE_LPR_PRINT_CMD
++ LIBS= -L${PREFIX}/lib -lm ${PREFIX}/lib/libXm.a -lXpm -lXext -lXt -lSM -lICE -lX11
++ 
++ include Makefile.common
+*** source/Makefile.common.orig	Sun Apr  7 17:51:54 1996
+--- source/Makefile.common	Sun Apr  7 20:07:48 1996
+***************
+*** 16,21 ****
+--- 16,25 ----
+  nc: nc.o
+  	$(CC) $(CFLAGS) nc.o ../util/libNUtil.a $(LIBS) -o $@
+  
++ install:: nedit nc
++ 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} nedit ${PREFIX}/bin
++ 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} nc ${PREFIX}/bin
++ 
+  help.o: help.c
+  	$(CC) $(CFLAGS) $(BIGGER_STRINGS) -c help.c -o $@
+  
+*** source/preferences.c.orig	Mon Apr  8 10:35:00 1996
+--- source/preferences.c	Mon Apr  8 10:35:22 1996
+***************
+*** 104,110 ****
+  #else
+      {"shellCommands", "ShellCommands", PREF_STRING, "spell:Alt+B:s:ED:\n\
+      	(cat;echo \"\") | spell\nwc::w:ED:\nwc\nsort::o:EX:\nsort\n\
+! 	number lines::n:AW:\nnl -ba\nmake:Alt+Z:m:W:\nmake\n\
+  	expand::p:EX:\nexpand\nunexpand::u:EX:\nunexpand\n",
+      	NULL, (void *)MAX_SHELL_CMDS_LEN, True},
+  #endif /* linux */
+--- 104,110 ----
+  #else
+      {"shellCommands", "ShellCommands", PREF_STRING, "spell:Alt+B:s:ED:\n\
+      	(cat;echo \"\") | spell\nwc::w:ED:\nwc\nsort::o:EX:\nsort\n\
+! 	number lines::n:AW:\npr -tn\nmake:Alt+Z:m:W:\nmake\n\
+  	expand::p:EX:\nexpand\nunexpand::u:EX:\nunexpand\n",
+      	NULL, (void *)MAX_SHELL_CMDS_LEN, True},
+  #endif /* linux */
+*** source/textDisp.c.orig	Sun Apr  7 17:35:04 1996
+--- source/textDisp.c	Sun Apr  7 17:35:44 1996
+***************
+*** 1556,1562 ****
+         line number, and the number of visible lines respectively.  The scroll
+         bar maximum value is chosen to generally represent the size of the whole
+         buffer, with minor adjustments to keep the scroll bar widget happy */
+!     sliderSize = textD->nVisibleLines;
+      sliderValue = textD->topLineNum;
+      sliderMax = max(textD->nBufferLines + 2, sliderSize + sliderValue);
+      XtVaSetValues(textD->vScrollBar,
+--- 1556,1562 ----
+         line number, and the number of visible lines respectively.  The scroll
+         bar maximum value is chosen to generally represent the size of the whole
+         buffer, with minor adjustments to keep the scroll bar widget happy */
+!     sliderSize = max(textD->nVisibleLines, 1);
+      sliderValue = textD->topLineNum;
+      sliderMax = max(textD->nBufferLines + 2, sliderSize + sliderValue);
+      XtVaSetValues(textD->vScrollBar,
