@@ -10,7 +10,7 @@ PORTVERSION=	1.6.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cronolog.org/download/
 
-MAINTAINER=	tmb_ports@maddog.u-net.com
+MAINTAINER=	freebsd-ports@blackmans.org
 
 MAN1=		cronolog.1m cronosplit.1m
 
