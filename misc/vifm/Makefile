@@ -32,7 +32,4 @@ pre-build:
 		${BUILD_WRKSRC}/src/vifmrc0.1
 .endif
 
-post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/vifm
-
 .include <bsd.port.mk>
