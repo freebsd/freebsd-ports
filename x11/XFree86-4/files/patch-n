@@ -1,0 +1,10 @@
+--- programs/Xserver/hw/xfree86/xf86cfg/vidmode.c.orig	Thu May 18 18:30:00 2000
++++ programs/Xserver/hw/xfree86/xf86cfg/vidmode.c	Mon Nov 13 17:32:10 2000
+@@ -34,7 +34,6 @@
+  */
+ 
+ #include "vidmode.h"
+-#include <X11/extensions/Xinerama.h>
+ #include <X11/Xaw/Command.h>
+ #include <X11/Xaw/Form.h>
+ #include <X11/Xaw/Label.h>
