@@ -34,7 +34,7 @@ pre-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/osgconv ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/sgv ${PREFIX}/bin
-	${FIND} ${WRKSRC}/include -name '*.orig' --delete
+	${FIND} ${WRKSRC}/include -name '*.orig' -delete
 	${CP} -r ${WRKSRC}/include/ ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/lib/libosg.so ${PREFIX}/lib/libosg.so.1
 	${INSTALL_DATA} ${WRKSRC}/lib/libosgDB.so ${PREFIX}/lib/libosgDB.so.1
