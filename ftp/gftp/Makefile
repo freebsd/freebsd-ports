@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A free multithreaded GTK-based GUI ftp and sftp client
 
+BROKEN=		"Broken pkg-plist"
+
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--without-included-gettext
