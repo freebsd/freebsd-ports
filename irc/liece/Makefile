@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liece
-PORTVERSION=	1.4.9
+PORTVERSION=	1.4.10
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://www.unixuser.org/~ueno/liece/dist/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -50,6 +50,7 @@ post-build:
 	(cd ${WRKSRC}/etc/po ; msgfmt -o liece.mo ja.po)
 post-install:
 	(cd ${WRKSRC}/etc ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install)
+	${INSTALL_DATA} ${WRKSRC}/etc/gnu-emacs-user-config ${PREFIX}/${LIECE_ETCDIR}
 	${MKDIR} ${PREFIX}/${LIECE_ETCDIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/etc/icons/*.xpm ${PREFIX}/${LIECE_ETCDIR}/icons
 	${LN} -sf ja ${PREFIX}/${LIECE_ETCDIR}/locale/ja_JP.EUC
