@@ -1,0 +1,62 @@
+--- freebsd_system.c.orig	Sun Jan 19 18:43:41 1997
++++ freebsd_system.c	Sun Jan 19 18:42:59 1997
+@@ -75,6 +75,7 @@
+ #include <sys/sysctl.h>
+ #include <sys/dkstat.h>
+ #include <sys/buf.h>
++#include <sys/time.h>
+ #include <sys/vmmeter.h>
+ #include <vm/vm.h>
+ #include <net/if.h>
+@@ -310,7 +311,8 @@
+     Collect the Network-Traffic
+ */
+ 
+-    if (nl[N_IFNET].n_value != 0) {
++    if ((ifnetaddr = nl[N_IFNET].n_value) != 0) {
++#if __FreeBSD_version <= 199701
+ 	struct ifnet ifnet;
+ 	kread(N_IFNET, &ifnetaddr, sizeof(ifnetaddr));
+ 	old_packets = packets;
+@@ -322,6 +324,41 @@
+ 	    packets.collisions += ifnet.if_collisions;
+ 	    ifnetaddr = (u_long) ifnet.if_next;
+ 	}
++#else /* 3.0-current, Jan 1997 */
++	/* Stolen from netstat/if.c */
++        struct ifnet ifnet;
++        struct ifnethead ifnethead;
++        u_long ifaddraddr, ifnetfound;
++	struct ifaddr ifa;
++
++        if(kvm_read(kd, ifnetaddr, (char *)&ifnethead, sizeof ifnethead) == -1)
++	    return;
++        ifnetaddr = (u_long)ifnethead.tqh_first;
++        if(kvm_read(kd, ifnetaddr, (char *)&ifnet, sizeof ifnet) == -1)
++	    return;
++
++	old_packets = packets;
++	packets.input = packets.output = packets.collisions = 0;
++        ifaddraddr = 0;
++        while (ifnetaddr || ifaddraddr) {
++	    if (ifaddraddr == 0) {
++		ifnetfound = ifnetaddr;
++		if(kvm_read(kd, ifnetaddr, (char *)&ifnet, sizeof ifnet) == -1)
++		    return;
++		ifnetaddr = (u_long)ifnet.if_link.tqe_next;
++		ifaddraddr = (u_long)ifnet.if_addrhead.tqh_first;
++	    }
++	    if (kvm_read(kd, ifaddraddr, (char *)&ifa, sizeof ifa) == -1) {
++	      ifaddraddr = 0;
++	      continue;
++	    }
++	    ifaddraddr = (u_long)ifa.ifa_link.tqe_next;
++
++	    packets.input += ifnet.if_ipackets;
++	    packets.output += ifnet.if_opackets;
++	    packets.collisions += ifnet.if_collisions;
++	}
++#endif
+     }
+ 
+ /*

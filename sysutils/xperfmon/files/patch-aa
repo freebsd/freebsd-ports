@@ -11,7 +11,7 @@ diff -c -N ../xperfmon++/freebsd_system.c ./freebsd_system.c
 +  * Copyright 1989, PCS Computer Systeme GmbH, West Germany
 +  * Copyright 1994, Sterling Software @ NASA-Ames Research Center
 +  * Copyright 1995, Regents of the University of California,
-+  *                 Lars Kler <Lars_Koeller@odie.physik2.uni-rostock.de
++  *                 Lars Koeller <Lars_Koeller@odie.physik2.uni-rostock.de
 +  *
 +  * Permission to use, copy, modify, distribute, and sell this software and its
 +  * documentation for any purpose is hereby granted without fee, provided that
