@@ -1,0 +1,11 @@
+--- Makefile.orig	Sun Dec 19 01:48:45 1999
++++ Makefile	Sun Dec 19 01:49:31 1999
+@@ -623,7 +623,7 @@
+ #
+ CCWARN= -Wall -Wno-implicit -Wno-comment
+ CCOPT= ${DEBUG} ${NO_SHARED}
+-CCMISC=
++CCMISC= -O
+ #
+ CFLAGS= ${CCWARN} ${CCOPT} ${CCMISC}
+ ICFLAGS= ${CCWARN} ${CCMISC}
