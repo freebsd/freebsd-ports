@@ -360,6 +360,7 @@
     SUBDIR += mips-rtems-g77
     SUBDIR += mips-rtems-gcc
     SUBDIR += mips-rtems-gcj
+    SUBDIR += mips-rtems-gdb
     SUBDIR += mips-rtems-objc
     SUBDIR += mipsel-linux-binutils
     SUBDIR += mipsel-linux-gcc
