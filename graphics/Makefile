@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.45 1997/05/05 12:38:30 tg Exp $
+# $Id: Makefile,v 1.46 1997/05/20 06:29:26 asami Exp $
 #
 
     SUBDIR += ImageMagick
@@ -16,6 +16,7 @@
     SUBDIR += gimp-devel
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hpscan
+    SUBDIR += imlib
     SUBDIR += jbigkit
     SUBDIR += jpeg
     SUBDIR += mpeg-lib
