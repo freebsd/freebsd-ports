@@ -1,0 +1,8 @@
+       w3mir is a all purpose HTTP copying and mirroring tool.
+       The main focus of w3mir is to create and maintain a
+       browsable copy of one, or several, remote WWW site(s).
+
+       Used to the max w3mir can retrive the contents of several
+       related sites and leave the mirror browseable via a local
+       web server, or from a filesystem, such as directly from a
+       CDROM.
