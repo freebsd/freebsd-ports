@@ -4185,6 +4185,7 @@ linux-expat	ports/textproc/linux-expat
 linux-flashplugin	ports/www/linux-flashplugin
 linux-flashplugin6	ports/www/linux-flashplugin6
 linux-fontconfig	ports/x11-fonts/linux-fontconfig
+linux-glib2	ports/devel/linux-glib2
 linux-gnomelibs	ports/x11/linux-gnomelibs
 linux-gtk	ports/x11-toolkits/linux-gtk
 linux-gtk2	ports/x11-toolkits/linux-gtk2
