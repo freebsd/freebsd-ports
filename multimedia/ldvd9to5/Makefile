@@ -7,6 +7,7 @@
 
 PORTNAME=	ldvd9to5
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.gff-clan.net/hdr/ldvd9to5/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -33,8 +34,8 @@ NO_BUILD=	yes
 DATA=		INSTALL.de INSTALL.en README.de README.en COPYING
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LSDVD=/opt|LSDVD=${LOCALBASE}|g' ${WRKSRC}/ldvd9to5.conf
-	@${REINPLACE_CMD} -e 's|/opt|${LOCALBASE}|g' -e 's|/etc|${LOCALBASE}/etc|g' ${WRKSRC}/ldvd9to5
+	@${REINPLACE_CMD} -e 's|LSDVD=/opt|LSDVD=${LOCALBASE}/share|g' ${WRKSRC}/ldvd9to5.conf
+	@${REINPLACE_CMD} -e 's|/opt|${LOCALBASE}/share|g' -e 's|/etc|${LOCALBASE}/etc|g' ${WRKSRC}/ldvd9to5
 
 do-install:
 	${MKDIR} ${DATADIR}
