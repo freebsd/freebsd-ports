@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 		ftp://gd.tuwien.ac.at/office/openoffice/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/
-DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z
+DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
+		oo_moz1.0RC3_includes.tgz
 
 .include <bsd.port.pre.mk>
 
@@ -63,6 +64,8 @@ EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc3.1-ports.tar.gz
 EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
 .endif
 .endif
+
+EXTRACT_REST+=	oo_moz1.0RC3_includes.tgz
 
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
 JAVAVM=         ${JDK13DIR}/bin/java
