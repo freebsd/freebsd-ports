@@ -1,18 +1,19 @@
-*** arpwatch.c.orig	Thu Jan  2 04:57:42 1997
---- arpwatch.c	Sun Mar 30 13:21:09 1997
+*** arp2ethers.orig	Tue Mar 29 11:44:52 1994
+--- arp2ethers	Tue Jul  1 02:34:40 1997
 ***************
-*** 43,48 ****
---- 43,55 ----
-  #endif
-  #include <net/if.h>
+*** 14,20 ****
+  #
   
-+ #ifdef __FreeBSD__
-+ #include <osreldate.h>
-+ #if __FreeBSD_version >= 300000
-+ #include <net/if_var.h>
-+ #endif
-+ #endif
-+ 
-  #include <netinet/in.h>
-  #include <netinet/if_ether.h>
+  sort +2rn arp.dat | \
+!     awk -e 'NF == 4 { print }' | \
+      awk -f p.awk | \
+      egrep -v '\.[0-9][0-9]*$' | \
+      sed -e 's/	.*	/	/' | \
+--- 14,20 ----
+  #
   
+  sort +2rn arp.dat | \
+!     awk 'NF == 4 { print }' | \
+      awk -f p.awk | \
+      egrep -v '\.[0-9][0-9]*$' | \
+      sed -e 's/	.*	/	/' | \
