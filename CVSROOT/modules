@@ -6087,6 +6087,7 @@ pear-Net_NNTP	ports/net/pear-Net_NNTP
 pear-Net_SMTP	ports/net/pear-Net_SMTP
 pear-Net_Sieve	ports/net/pear-Net_Sieve
 pear-Net_Socket	ports/net/pear-Net_Socket
+pear-Net_URL	ports/net/pear-Net_URL
 pear-PEAR	ports/devel/pear-PEAR
 pear-mailparse	ports/mail/pear-mailparse
 pedisassem	ports/devel/pedisassem
