@@ -102,7 +102,6 @@ share/servicetypes/kmldonkey_plugin.desktop
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @dirrm share/doc/HTML/da/kmldonkey
 @unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
-@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/mldonkeyapplet/pics
 @dirrm share/apps/mldonkeyapplet
