@@ -5,22 +5,25 @@
 # $FreeBSD$
 #
 
-PORTNAME=	poptop
-PORTVERSION=	1.1.2
-CATEGORIES=	net
-MASTER_SITES=	http://poptop.lineo.com/releases/
-DISTNAME=	pptpd-${PORTVERSION}
+PORTNAME=		poptop
+PORTVERSION=		1.1.2
+CATEGORIES=		net
+MASTER_SITES=		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	nsayer
+DISTNAME=		pptpd-${PORTVERSION}
 
-MAINTAINER=	nsayer@freebsd.org
+MAINTAINER=		nsayer@freebsd.org
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-bsdppp
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS=		--with-bsdppp
 
-MAN5=		pptpd.conf.5
-MAN8=		pptpd.8 pptpctrl.8
+MAN5=			pptpd.conf.5
+MAN8=			pptpd.8 pptpctrl.8
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf ${PREFIX}/etc/pptpd.conf.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/pptpd.sh ${PREFIX}/etc/rc.d/pptpd.sh
+	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \
+		${PREFIX}/etc/pptpd.conf.sample
+	${INSTALL_SCRIPT} ${FILESDIR}/pptpd.sh \
+		${PREFIX}/etc/rc.d/pptpd.sh.sample
 
 .include <bsd.port.mk>
