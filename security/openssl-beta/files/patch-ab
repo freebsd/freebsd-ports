@@ -1,5 +1,14 @@
 --- Makefile.org.orig	Thu Apr  5 13:08:02 2001
-+++ Makefile.org	Mon Apr 23 01:08:26 2001
++++ Makefile.org	Sat Oct 12 22:10:18 2002
+@@ -171,7 +171,7 @@
+ MAKEFILE= Makefile.ssl
+ MAKE=     make -f Makefile.ssl
+ 
+-MANDIR=$(OPENSSLDIR)/man
++MANDIR?=$(MANPREFIX)/man
+ MAN1=1
+ MAN3=3
+ SHELL=/bin/sh
 @@ -178,7 +178,7 @@
  ONEDIRS=out tmp
  EDIRS=  times doc bugs util include certs ms shlib mt demos perl sf dep VMS
