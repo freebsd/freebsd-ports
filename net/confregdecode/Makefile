@@ -14,11 +14,9 @@ DISTNAME=	confregdecode-src-${PORTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
-RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk \
-		${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
-
+USE_JAVA=	1.1+
 ALL_TARGET=	jar
+MAKE_ENV=	JAVAC="${JAVAC}" JAR="${JAR}"
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/java
