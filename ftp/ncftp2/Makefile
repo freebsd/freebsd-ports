@@ -3,7 +3,7 @@
 # Date created:         4 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.33 1996/10/17 22:22:08 ache Exp $
+# $Id: Makefile,v 1.34 1996/10/18 15:55:37 ache Exp $
 #
 
 DISTNAME=       ncftp-2.4.1
@@ -17,7 +17,10 @@ GNU_CONFIGURE=  yes
 CONFIGURE_ENV=  ac_cv_func_getmaxyx=yes
 
 do-install:
-	cd ${WRKSRC}; $(INSTALL) -c $(STRIP) -o $(BINOWN) -g $(BINGRP) -m $(BINMODE) ncftp $(PREFIX)/bin/ncftp2
-	cd ${WRKSRC}; $(INSTALL) -c -o $(BINOWN) -g $(BINGRP) -m 644 ncftp.1 $(PREFIX)/man/man1/ncftp2.1
+	$(INSTALL_PROGRAM) $(WRKSRC)/ncftp $(PREFIX)/bin/ncftp2
+	$(INSTALL_MAN) $(WRKSRC)/ncftp.1 $(PREFIX)/man/man1/ncftp2.1
+.if !defined(NOMANCOMPRESS)
+	gzip -9nf ${PREFIX}/man/man1/ncftp2.1
+.endif
 
 .include <bsd.port.mk>
