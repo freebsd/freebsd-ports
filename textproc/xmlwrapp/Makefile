@@ -15,11 +15,8 @@ MASTER_SITES=	http://pmade.org/pjones/software/xmlwrapp/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern style C++ library for working with XML data
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig    
-RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig    
-
 USE_PERL5_BUILD=	yes
-USE_GNOME=	libxml2
+USE_GNOME=	libxml2 pkgconfig
 WANT_GNOME=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.pl
