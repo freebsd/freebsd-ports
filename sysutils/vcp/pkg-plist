@@ -1,4 +1,4 @@
 bin/vcp
-etc/vcp.sample
+etc/vcp.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
