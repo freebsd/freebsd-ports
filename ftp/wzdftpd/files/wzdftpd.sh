@@ -13,7 +13,7 @@ prefix=%%PREFIX%%
 
 wzdftpd_enable=${wzdftpd_enable:-"NO"}		# Enable wzdftpd
 wzdftpd_program="${prefix}/sbin/wzdftpd"	# Location of wzdftpd
-wzdftpd_flags=${gkrellmd_flags:-""}		# Flags to wzdftpd
+wzdftpd_flags=${wzdftpd_flags:-""}		# Flags to wzdftpd
 
 . %%RC_SUBR%%
 
