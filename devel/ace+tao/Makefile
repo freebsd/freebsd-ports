@@ -46,9 +46,12 @@ TAO=	"@comment "
 PKGNAMESUFFIX?=	-notao
 .endif
 
+# Linker error on sparc64
+NOT_FOR_ARCH=	sparc64
+
 .if !defined(WITHOUT_TAO)
 # ld: failed: IFR_BasicS.o: .got subsegment exceeds 64K (size 67984)
-NOT_FOR_ARCHS=	alpha
+NOT_FOR_ARCHS+=	alpha
 .endif
 
 .include <bsd.port.pre.mk>
