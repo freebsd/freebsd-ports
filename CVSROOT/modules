@@ -5123,6 +5123,7 @@ libpcd		ports/graphics/libpcd
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
 libpdtp		ports/net/libpdtp
+libpeak		ports/devel/libpeak
 libpixman	ports/graphics/libpixman
 libprelude	ports/security/libprelude
 libpreps	ports/devel/libpreps
