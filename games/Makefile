@@ -30,6 +30,7 @@
     SUBDIR += cgoban
     SUBDIR += columns
     SUBDIR += connect4
+    SUBDIR += corewars
     SUBDIR += cosmo
     SUBDIR += crafty
     SUBDIR += crafty-open-large
