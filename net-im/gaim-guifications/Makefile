@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	guifications
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	2.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,5 +22,21 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
 USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ENV+="CPPFLAGS=-I${LOCALBASE}/include" "LIBS=-L${LOCALBASE}/lib"
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+post-extract:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
+		-e 's#\([@(]\)GAIM_LIBDIR\([@)]\)#\1libdir\2#' \
+		-e 's#\([@(]\)GAIM_DATADIR\([@)]\)#\1datadir\2#'
 
 .include <bsd.port.mk>
