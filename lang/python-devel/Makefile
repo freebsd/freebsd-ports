@@ -38,7 +38,7 @@ TOOLSDIR=	${PREFIX}/share/${PYTHON_VERSION}
 
 OPTIONS=	THREADS "Enable thread support" on \
 		HUGE_STACK_SIZE "Use a larger thread stack" off \
-		UCS2 "Use UCS2 instead of UCS4 for unicode support" off \
+		UCS4 "Use UCS4 for unicode support" on \
 		PYMALLOC "Uses python's internal malloc" on
 
 .include <bsd.port.pre.mk>
