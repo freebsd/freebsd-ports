@@ -21,6 +21,7 @@
     SUBDIR += c_c++_reference
     SUBDIR += c_c++_reference-i18n
     SUBDIR += cbrowser
+    SUBDIR += cc65
     SUBDIR += cccc
     SUBDIR += cdecl
     SUBDIR += cdk

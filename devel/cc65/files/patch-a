@@ -1,0 +1,12 @@
+diff -ur3 samples/Makefile samples/Makefile
+--- samples/Makefile	Mon May  8 18:07:09 2000
++++ samples/Makefile	Mon May  8 18:08:49 2000
+@@ -1,6 +1,8 @@
+ #
+ # Makefile for cc65 samples
+ #
++# This Makefile requires GNU make
++#
+ 
+ # Enter the target system here
+ SYS	= c64
