@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.17 1995/04/22 12:39:19 asami Exp $
+# $Id: Makefile,v 1.18 1995/04/23 10:35:30 asami Exp $
 #
 
 DISTNAME=	mule-2.2
@@ -29,7 +29,8 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	i386--freebsd --prefix=${PREFIX} --with-x-toolkit \
 		--wnn --wnn-libraries=/usr/X11R6/lib \
-		--wnn-includes=/usr/X11R6/include/wnn --terminal-face
+		--wnn-includes=/usr/X11R6/include/wnn --terminal-face \
+		--locallisppath=${PREFIX}/share/emacs/site-lisp:${PREFIX}/lib/mule/site-lisp
 STRIP=
 
 pre-build:
