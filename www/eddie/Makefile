@@ -7,14 +7,14 @@
 
 PORTNAME=	eddie
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://eddie.sourceforge.net/release/
+MASTER_SITES=	http://www.aims.com.au/chris/
+DISTNAME=	eddie-1.5.1-20020619
 
 MAINTAINER=	sam@inf.enst.fr
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
-
-BROKEN=		"Missing header driver.h"
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
