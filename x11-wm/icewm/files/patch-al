@@ -1,19 +1,12 @@
---- sysdep.in.orig	Sat Jan  1 17:26:22 2000
-+++ sysdep.in	Sat Jan  1 17:26:32 2000
-@@ -3,4 +3,4 @@
- SYS_CFLAGS = @CXXFLAGS@ @DEFS@
+--- sysdep.in.orig	Mon Jan 15 06:49:39 2001
++++ sysdep.in	Mon Jan 15 22:18:06 2001
+@@ -1,7 +1,7 @@
+ CXX = @CXX@
+ LD = @CXX_LINK@
+ DEBUG = @debug_flags@
+-SYS_CFLAGS = @CXXFLAGS@ @DEFS@
++SYS_CFLAGS = @CXXFLAGS@ @CPPFLAGS@ @DEFS@
  SYS_INCDIRS =
  SYS_LIBDIRS =
 -SYS_LIBS = @LIBS@
 +SYS_LIBS = @LIBS@ -lxpg4
---- src/Makefile.orig	Sat Jan  1 17:29:50 2000
-+++ src/Makefile	Sat Jan  1 17:30:04 2000
-@@ -10,7 +10,7 @@
- CXXFLAGS    = \
- 	$(I18N) $(DEBUG) $(OS2)\
- 	-DLIBDIR='"$(LIBDIR)"' \
--	-DCONFIGDIR='"/etc/X11/icewm"' \
-+	-DCONFIGDIR='"$(LIBDIR)"' \
- 	-DVERSION='"$(VERSION)"' \
- 	-DEXEEXT='"$(EXEEXT)"' \
-         $(SYS_CFLAGS) $(SYS_INCDIRS)

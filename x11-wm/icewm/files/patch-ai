@@ -1,6 +1,19 @@
---- src/wmtaskbar.cc.orig	Wed Dec  1 16:46:05 1999
-+++ src/wmtaskbar.cc	Wed Dec  1 16:46:15 1999
-@@ -72,9 +72,9 @@
+--- src/wmtaskbar.cc.orig	Mon Jan 15 06:49:41 2001
++++ src/wmtaskbar.cc	Mon Jan 15 22:18:04 2001
+@@ -47,6 +47,12 @@
+ YPixmap *windowsPixmap = 0;
+ YPixmap *taskbackPixmap = 0;
+ 
++#ifdef __FreeBSD__
++#define APMDEV "/dev/apm"
++#else
++#define APMDEV "/proc/apm"
++#endif
++
+ static void initPixmaps() {
+     static const char *home = getenv("HOME");
+     const char *base = 0;
+@@ -74,9 +80,9 @@
  
  /** Use Linux 2.0 Penguin as start button */
  #ifndef START_PIXMAP
@@ -12,15 +25,12 @@
  //#define START_PIXMAP "start.xpm"
  //#define START_PIXMAP "xfree86os2.xpm"
  #endif
-@@ -253,7 +253,11 @@
+@@ -256,7 +262,7 @@
      } else
          fClock = 0;
- #ifdef CONFIG_APM
-+#ifdef __FreeBSD__
-+    if (taskBarShowApm && access("/dev/apm", 0) == 0) {
-+#else
-     if (taskBarShowApm && access("/proc/apm", 0) == 0) {
-+#endif
- 	fApm = new YApm(this);
- 	if (fApm->height() + ADD1 > ht) ht = fApm->height() + ADD1;
+ #ifdef CONFIG_APPLET_APM
+-    if (taskBarShowApm && access("/proc/apm", 0) == 0) {
++    if (taskBarShowApm && access(APMDEV, 0) == 0) {
+         fApm = new YApm(this);
+         if (fApm->height() + ADD1 > ht) ht = fApm->height() + ADD1;
      } else

@@ -1,12 +1,11 @@
---- Makefile.orig	Sat May  1 23:20:32 1999
-+++ Makefile	Sun May 16 09:33:07 1999
-@@ -12,8 +12,7 @@
- GNOMEFILES  = src/icewm-gnome
+--- Makefile.in.orig	Mon Jan 15 06:49:38 2001
++++ Makefile.in	Mon Jan 15 23:07:09 2001
+@@ -14,7 +14,7 @@
+ GUIEVENTSFILES = src/icesound
+ GNOMEFILES  = lib/IceWM.desktop
  
- all:
--	cd src ; $(MAKE) LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR)
--	cd doc ; $(MAKE)
-+	cd src ; $(MAKE) LIBDIR=$(LIBDIR) ETCDIR=$(ETCDIR) PREFIX=$(PREFIX)
+-WMPROPDIR   = $(shell gnome-config --datadir)/gnome/wm-properties/
++WMPROPDIR   = $(shell gnome-config --datadir)/wm-properties/
  
- docs:
- 	cd doc ; $(MAKE)
+ all:		@TARGETS@
+ install:	@TARGETS_INSTALL@

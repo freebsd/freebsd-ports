@@ -1,0 +1,28 @@
+--- configure.in.orig	Mon Jan 15 06:49:39 2001
++++ configure.in	Mon Jan 15 22:18:06 2001
+@@ -66,7 +66,7 @@
+ AC_FUNC_SELECT_ARGTYPES
+ 
+ dnl Configuring features
+-TARGETS='base docs'
++TARGETS='base'
+ 
+ dnl Checking for X11
+ AC_PATH_XTRA
+@@ -94,7 +94,7 @@
+   [  --enable-nls            Enable internationalized message],
+   [ if test "$enable_nls" != "no"; then
+       AC_CHECK_LIB(intl, gettext)
+-      localedir='${datadir}/locale'
++      localedir='${prefix}/share/locale'
+       AC_DEFINE(ENABLE_NLS, 1,
+         [Define to enable internationalized message])
+       TARGETS=$TARGETS' nls'
+@@ -190,7 +190,7 @@
+ 
+ 	AC_DEFINE(GNOME, 1, [Define to make IceWM more GNOME-friendly])
+       else
+-	AC_MSG_ERROR([gnome-config can not be found])
++	AC_MSG_WARN([gnome-config can not be found])
+       fi
+     fi ])
