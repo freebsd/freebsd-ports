@@ -1,0 +1,7 @@
+Liece is an IRC client which runs under Emacsen.
+
+Put the expression below into your ~/.emacs.
+
+(autoload 'liece "liece" nil t)
+
+WWW: http://www.unixuser.org/~ueno/liece/index.html.en
