@@ -1,6 +1,15 @@
 #! /bin/sh
 #
-# $FreeBSD$
+# $Id$
+
+case "`hostname`" in
+freefall*)
+	:
+	;;
+*)
+	echo "Please commit on freefall...."
+	exit 1
+esac
 
 if /usr/bin/perl $CVSROOT/CVSROOT/cvs_acls.pl ${1+"$@"}; then
    if /usr/bin/perl $CVSROOT/CVSROOT/commit_prep.pl ${1+"$@"}; then

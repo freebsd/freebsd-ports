@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #
-# $Id: log_accum.pl,v 1.12 1995/11/02 09:30:21 peter Exp $
+# $Id: log_accum.pl,v 1.13 1995/11/02 10:03:09 peter Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -255,10 +255,10 @@ sub mail_notification {
     local(@text) = @_;
     local($names);
     local($mailing_lists); 
-    $commiters = "CVS-commiters"; 
+    $committers = "CVS-committers"; 
     print "Mailing commit message...\n";
     dbmopen(MAILFILE, "$MAIL_FILE.$id", 0666);
-    $mailing_lists = join(' ', $mlist, $commiters);
+    $mailing_lists = join(' ', $mlist, $committers);
     $names = join(" ", keys %MAILFILE) . " $mailing_lists";
     $names =~ s,\n,,;
     dbmclose(MAILFILE);
