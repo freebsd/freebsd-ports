@@ -1,0 +1,28 @@
+arm-aout/bin/ar
+arm-aout/bin/as
+arm-aout/bin/ld
+arm-aout/bin/nm
+arm-aout/bin/ranlib
+arm-aout/bin/strip
+arm-aout/lib/ldscripts/armaoutl.x
+arm-aout/lib/ldscripts/armaoutl.xbn
+arm-aout/lib/ldscripts/armaoutl.xn
+arm-aout/lib/ldscripts/armaoutl.xr
+arm-aout/lib/ldscripts/armaoutl.xu
+bin/arm-aout-ld
+bin/arm-aout-gasp
+bin/arm-aout-as
+bin/arm-aout-nm
+bin/arm-aout-strip
+bin/arm-aout-addr2line
+bin/arm-aout-objcopy
+bin/arm-aout-c++filt
+bin/arm-aout-ranlib
+bin/arm-aout-ar
+bin/arm-aout-strings
+bin/arm-aout-objdump
+bin/arm-aout-size
+@dirrm arm-aout/bin
+@dirrm arm-aout/lib/ldscripts
+@dirrm arm-aout/lib
+@dirrm arm-aout

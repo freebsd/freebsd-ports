@@ -1,0 +1,10 @@
+FSF binutils for embedded ARM cross-development
+
+This is used to generate code that is independent of any operating system.
+In particular, it is used to compile the kernel, since there is no operating
+system that it can depend on.
+
+devel/arm-aout-gcc295 uses this port as a dependency.
+--------------------------------------------------------------------------
+Paul Becke
+pbecke@javagear.com

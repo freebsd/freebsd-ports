@@ -11,6 +11,7 @@
     SUBDIR += a2dev
     SUBDIR += adabroker
     SUBDIR += amulet
+    SUBDIR += arm-aout-binutils
     SUBDIR += asis
     SUBDIR += asl
     SUBDIR += astyle
