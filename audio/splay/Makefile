@@ -3,7 +3,7 @@
 # Date created:         1 Apr 1997
 # Whom:                 junker@jazz.snu.ac.kr
 #
-# $Id: Makefile,v 1.5 1998/01/08 18:52:01 fenner Exp $
+# $Id: Makefile,v 1.6 1998/04/19 15:40:42 steve Exp $
 #
 # pthread library can be used, but sound quality is buggy
 #
@@ -15,7 +15,7 @@ MASTER_SITES=		http://cain.kaist.ac.kr/~jwj95/
 MAINTAINER=		junker@jazz.snu.ac.kr
 
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		i386--freebsd --without-xsplay --without-pthread
+CONFIGURE_ARGS=		--without-xsplay --without-pthread
 MAN1=			splay.1
 
 .include <bsd.port.mk>

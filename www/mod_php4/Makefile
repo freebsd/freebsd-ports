@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.64 1999/01/08 17:22:06 dirk Exp $
+# $Id: Makefile,v 1.66 1999/01/13 17:31:09 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -29,8 +29,9 @@ VERSION_PHP3=	3.0.6
 # Set APACHE_PERF_TUNING env. variable to YES to get maximum performance
 #
 
-GNU_CONFIGURE=	yes
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS= \
+		 --prefix=${PREFIX} \
 		 --with-layout=GNU \
 		 --sysconfdir=${PREFIX}/etc/apache \
 		 --includedir=${PREFIX}/include/apache \

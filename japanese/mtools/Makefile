@@ -3,7 +3,7 @@
 # Date created:		6 October 1997
 # Whom:			WATANABE junya <junya-w@remus.dti.ne.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/28 15:19:54 kuriyama Exp $
 #
 
 DISTNAME=	mtools-3.6
@@ -19,6 +19,7 @@ EXTRACT_ONLY=	mtools-3.6.tar.gz
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS=	--enable-xdf
+CONFIGURE_TARGET=	# empty
 
 USE_GMAKE=	yes
 

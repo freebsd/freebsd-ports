@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.46 1999/02/28 10:50:50 obrien Exp $
+# $Id: Makefile,v 1.47 1999/02/28 12:18:36 obrien Exp $
 #
 
 DISTNAME=	egcs-1.1.2-pre2
@@ -44,6 +44,7 @@ CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld ${GNUHOST} \
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .endif
+CONFIGURE_TARGET=	# empty
 ALL_TARGET=	bootstrap
 MAN1=		cccp.1 g++.1 g77.1 gcc.1
 
