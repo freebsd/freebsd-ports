@@ -1637,6 +1637,7 @@ faces		ports/mail/faces
 factor		src/games/factor
 faithd		src/usr.sbin/faithd
 fakebo		ports/security/fakebo
+fakeident	ports/security/fakeident
 falconseye	ports/games/falconseye
 false		src/usr.bin/false
 fam		ports/devel/fam
