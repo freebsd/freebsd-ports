@@ -1,0 +1,140 @@
+.TH UCSIM 1 
+.SH NAME
+s51, savr, sz80 \- 8051, AVR and Z80 microcontrollers simulator for SDCC. 
+.SH SYNOPSIS
+.B s51
+.I "[options] filenames"
+.br
+.B savr
+.I "[options] filenames"
+.br
+.B sz80
+.I "[options] filenames"
+.SH WARNING
+The information in this man page is an extract from the full
+documentation of 
+.B SDCC\c
+\&, and is limited to the meaning of the options.
+.PP
+For complete and current documentation, refer to the
+.B
+ucSim simulator User Guide\c
+\&.
+.SH "DESCRIPTION"
+.B ucSim\c
+\& is a microcontroller simulator. It is extensible to support
+different microcontroller families. 
+.PP
+.B MCS51\c
+\& family is simulated by
+.B s51\c
+\&.
+.br
+.B AVR\c
+\& family is simulated by
+.B savr\c
+\&.
+.br
+.B Z80\c
+\& processor is simulated by
+.B sz80\c
+\&.
+.PP
+Specified files must be names of Intel hex files. Simulator loads them in 
+specified order into the ROM of the simulated system.
+.SH OPTIONS
+.TP
+.BI "\-t " "CPU"
+Type of CPU. Recognized types are: 51, 8051, 8751, C51, 80C51, 87C51, 31, 8031,
+C31, 80C31, 52, 8052, 8752, C52, 80C52, 87C52, 32, 8032, C32, 80C32, 51R, 51RA,
+51RB, 51RC, C51R, C51RA, C51RB, C51RC, 89C51R, 251, C251, DS390, DS390F. Note 
+that recongition of a CPU type as option does not mean that the simulator can 
+simulate that kind of CPU. Default type is C51. DS390 supports Dallas DS80C390 
+dual-dptr operations, DS390F supports minimal flat24 mode code and dual-dptr 
+operations.
+.TP
+.BI "\-X " "freq[k|M]"
+XTAL frequency is 
+.I freq\c
+\& Hertz. 
+.B k\c
+\& or
+.B M\c
+\& can be used to specify frequency in kHZ or MHz. Space is not allowed between
+the number and the 
+.B k\c
+\& or
+.B M\c
+\&. Default value is 11059200 Hz. 
+.TP
+.BI "\-c " "file"
+Open command console on 
+.I file\c
+\&. Command consoles are on standard input and output
+by default. Using this option the console can be opened on any file for example
+on the serial interface of the computer. 
+.TP
+.BI "\-Z " "portnum"
+Listen for incoming connections on port 
+.I portnum\c
+\&. Using this option uCsim can 
+serve multiple consoles. You can get a console by simply telnet into machine 
+running 
+.B uCsim\c
+\&to port 
+.I portnumber\c
+\&. This option is not available on platforms which doesn't support BSD 
+networking.
+.TP
+.BI "\-s " "file"
+Connect serial interface of the simulated microcontroller to the 
+.I file\c
+\&. Nothing is used by default which means that characters transmitted by 
+serial interface of the simulated microcontroller go to nowhere and it will 
+never receive anything. If you are going to communicate with serial interface 
+interactively the best idea is to specify a teminal with 
+.B -s\c
+\& option.
+.TP
+.BI "-S " "in=file,out=file"
+Using this option you can specify different files for input and output streams 
+that 
+.B uCsim\c
+\& uses to simulate microprocessor's serial interface.
+.TP
+.BI "\-p prompt"
+Using this option you can specify any string to be the prompt of command 
+interpreter, for example:
+.nf
+$ s51 -p "s51> "
+ucsim 0.2.12, Copyright (C) 1997 Daniel Drotos, Talker Bt.
+ucsim comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+This is free software, and you are welcome to redistribute it
+under certain conditions; type `show c' for details.
+s51> 
+.fi
+.TP
+.BI "\-P"
+Prompt will be a null ('\\0') character. This feature can be useful for 
+programs which controlls simulator through a pipe. 
+.TP
+.BI "\-V"
+Verbose mode. The simulator notifies you about some kind of internal actions 
+for example interrupts. Messages are printed on command console. 
+.TP
+.BI "\-v"
+Print out version number and stop. 
+.TP
+.BI "\-H"
+Print out types of known CPUs. Names printed out by this option can be used to 
+determine CPU type using -t option. 
+.TP
+.BI "\-h"
+Print out a short help about the options and stop.
+.SH COPYING
+ucSim is distributed under the GNU General Public License.
+.SH SEE ALSO
+sdcc(1), s51(1), savr(1), sz80(1).
+.SH AUTHOR
+This manual page was written by Aurelien Jarno <aurel32@debian.org>,
+for the Debian GNU/Linux system (but may be used by others).

@@ -1,0 +1,445 @@
+.TH SDCC 1
+.SH NAME
+sdcc \- Small Device C Compiler
+.SH SYNOPSIS
+.B sdcc
+.I "[options] filename"
+.SH WARNING
+The information in this man page is an extract from the full
+documentation of SDCC, and is limited to the meaning of the 
+options.
+.PP
+For complete and current documentation, refer to the 
+.B
+SDCC Compiler User Guide\c
+\&.
+.SH "DESCRIPTION"
+.B SDCC
+is a Freeware, retargettable, optimizing ANSI-C compiler. The current 
+version targets Intel MCS51 based Microprocessors(8051, 8052, etc), Zilog 
+Z80 based MCUs, and the Dallas DS80C390 variant. It can be retargetted for 
+other microprocessors, support for PIC, AVR and 186 is under development. 
+.PP
+.B SDCC\c
+\& uses 
+.B ASXXXX\c
+\& & 
+.B ASLINK\c
+\&, a Freeware, retargettable assembler & linker.
+.B SDCC\c
+\& has extensive language extensions suitable for utilizing various
+microcontrollers and underlying hardware effectively.
+.PP
+The compiler also allows inline assembler code to be embedded anywhere in a
+function. In addition, routines developed in assembly can also be called.
+.SH PROCESSOR SELECTION OPTIONS
+.TP
+.BI "\-mmcs51"
+Generate code for the MCS51 (8051) family of processors. This is the default 
+processor target.
+.TP
+.BI "\-mds390"
+Generate code for the DS80C390 processor.
+.TP
+.BI "\-mz80"
+Generate code for the Z80 family of processors.
+.TP
+.BI "\-mgbz80"
+Generate code for the GameBoy Z80 processor.
+.TP
+.BI "\-mavr"
+Generate code for the Atmel AVR processor (In development, not complete).
+.TP
+.BI "\-mpic14"
+Generate code for the PIC 14-bit processors (In development, not complete).
+.TP
+.BI "\-mtlcs900h"
+Generate code for the Toshiba TLCS-900H processor (In development, not 
+complete). 
+.SH PREPROCESSOR OPTIONS
+.TP
+.BI "\-I" "<path>"
+The additional location where the pre processor will look for `<..h>' or 
+`..h' files.
+.TP
+.BI "\-D " "<macro[=value]>"
+Command line definition of macros. Passed to the pre processor.
+.TP
+.BI "\-M"
+Tell the preprocessor to output a rule suitable for make describing the 
+dependencies of each object file. For each source file, the preprocessor 
+outputs one make-rule whose target is the object file name for that source 
+file and whose dependencies are all the files `#include'd in it. This rule 
+may be a single line or may be continued with `\\'-newline if it is long. 
+The list of rules is printed on standard output instead of the preprocessed 
+C program. 
+.B `-M'\c
+\& implies 
+.B `-E'\c
+\&.
+.TP
+.BI "-C"
+Tell the preprocessor not to discard comments. Used with the 
+.B `-E' 
+option.
+.TP
+.BI "\-MM"
+Like 
+.B `-M'\c
+\& but the output mentions only the user header files included with
+`#include "file"'. System header files included with `#include <file>' 
+are omitted.
+.TP
+.BI "\-A " "question(answer)"
+Assert the answer answer for question, in case it is tested with a 
+preprocessor conditional such as `#if #question(answer)'. 
+.B `-A-'\c
+\& disables the standard assertions that normally describe the target machine.
+.TP
+.BI "\-A " "question"
+(answer) Assert the answer answer for question, in case it is tested with a 
+preprocessor conditional such as `#if #question(answer)'. 
+.B `-A-'\c
+\& disables the standard assertions that normally describe the target machine.
+.TP
+.BI "-Umacro"
+Undefine macro macro. 
+.B `-U'\c
+\& options are evaluated after all 
+.B `-D'\c
+\& options, but before any 
+.B `-include'\c
+\& and 
+.B `-imacros'\c
+\& options.
+.TP
+.BI "\-dM"
+Tell the preprocessor to output only a list of the macro definitions that 
+are in effect at the end of preprocessing. Used with the 
+.B '-E'\c
+\& option.
+.TP
+.BI "\-dD"
+Tell the preprocessor to pass all macro definitions into the output, in their 
+proper sequence in the rest of the output.
+.TP
+.BI "\-dN"
+Like 
+.B `-dD'\c
+\&except that the macro arguments and contents are omitted. Only 
+`#define name' is included in the output.
+.SH LINKER OPTIONS
+.TP
+.BI "\-L, \-lib\-path" "<absolute path to additional libraries>"
+This option is passed to the linkage editor's additional libraries search 
+path. The path name must be absolute. Additional library files may be 
+specified in the command line. See section Compiling programs for more 
+details.
+.TP
+.BI "\-\-xram-loc " "<Value>"
+The start location of the external ram, default value is 0. The value entered 
+can be in Hexadecimal or Decimal format, e.g.: 
+.B --xram-loc 0x8000\c
+\& or
+.B --xram-loc 32768\c
+\&.
+.TP
+.BI "\-\-code-loc " "<Value>"
+The start location of the code segment, default value 0. Note when this 
+option is used the interrupt vector table is also relocated to the given 
+address. The value entered can be in Hexadecimal or Decimal format, e.g.: 
+.B --code-loc 0x8000\c
+\& or
+.B --code-loc 32768\c
+\&.
+.TP
+.BI "\-\-stack-loc " "<Value>" 
+The initial value of the stack pointer. The default value of the stack pointer 
+is 
+.B 0x07\c
+\& if only register bank 0 is used, if other register banks are used then the 
+stack pointer is initialized to the location above the highest register bank 
+used. eg. if register banks 1 & 2 are used the stack pointer will default to 
+location 
+.B 0x18\c
+\&. The value entered can be in Hexadecimal or Decimal format, eg. 
+.B --stack-loc 0x20 
+or 
+.B --stack-loc 32\c
+\&. If all four register banks are used the stack will be placed after the data 
+segment (equivalent to 
+.B --stack-after-data\c
+\&)
+.TP
+.BI "\-\-stack-after-data" 
+This option will cause the stack to be located in the internal ram after the 
+data segment.
+.TP
+.BI "\-\-data-loc " "<Value>"
+The start location of the internal ram data segment, the default value is 
+.B 0x30\c
+\&. The value entered can be in Hexadecimal or Decimal format, eg. 
+.B --data-loc 0x20\c
+\& or 
+.B --data-loc 32\c
+\&.
+.TP
+.BI "--idata-loc " "<Value>"
+The start location of the indirectly addressable internal ram, default value is
+.B 0x80\c
+\&. The value entered can be in Hexadecimal or Decimal format, eg. 
+.B --idata-loc 0x88\c
+\& or
+.B --idata-loc 136\c
+\&.
+.TP
+.BI "\-\-out\-fmt\-ihx"
+The linker output (final object code) is in Intel Hex format. (This is the 
+default option).
+.TP
+.BI "\-\-out\-fmt\-s19"
+The linker output (final object code) is in Motorola S19 format.
+.SH MCS51 OPTIONS
+.TP
+.BI "\-\-model\-large"
+Generate code for Large model programs see section Memory Models for more 
+details. If this option is used all source files in the project should be 
+compiled with this option. In addition the standard library routines are 
+compiled with small model, they will need to be recompiled.
+.TP
+.BI "\-\-model\-small"
+Generate code for Small Model programs see section Memory Models for more 
+details. This is the default model.
+.SH
+.TP
+.SH DS390 OPTIONS
+.TP
+.BI "\-\-model\-flat24"
+Generate 24-bit flat mode code. This is the one and only that the ds390 code 
+generator supports right now and is default when using 
+.B -mds390\c
+\&.
+.TP
+.BI "\_-\-stack\-10bit"
+Generate code for the 10 bit stack mode of the Dallas DS80C390 part. This is 
+the one and only that the ds390 code generator supports right now and is 
+default when using 
+.B -mds390\c
+\&. In this mode, the stack is located in the lower 1K of the internal RAM, 
+which is mapped to 
+.B 0x400000
+\&. Note that the support is incomplete, since it still uses a single byte as 
+the stack pointer. This means that only the lower 256 bytes of the potential 
+1K stack space will actually be used. However, this does allow you to reclaim 
+the precious 256 bytes of low RAM for use for the DATA and IDATA segments. The 
+compiler will not generate any code to put the processor into 10 bit stack 
+mode. It is important to ensure that the processor is in this mode before 
+calling any re-entrant functions compiled with this option. In principle, this 
+should work with the 
+.B --stack-auto option\c
+\&, but that has not been tested. It is incompatible with the 
+.B --xstack\c
+\& option. It also only makes sense if the processor is in 24 bit contiguous 
+addressing mode (see the 
+.B --model-flat24\c
+\& option).
+.SH OPTIMIZATIONS OPTIONS
+.TP
+.BI "\-\-nogcse"
+Will not do global subexpression elimination, this option may be used when the 
+compiler creates undesirably large stack/data spaces to store compiler 
+temporaries. A warning message will be generated when this happens and the 
+compiler will indicate the number of extra bytes it allocated. It recommended 
+that this option NOT be used, 
+.B #pragma NOGCSE\c
+\& can be used to turn off global subexpression elimination for a given 
+function only.
+.TP
+.BI "\-\-noinvariant"
+Will not do loop invariant optimizations, this may be turned off for reasons 
+explained for the previous option. For more details of loop optimizations 
+performed see section Loop Invariants.It recommended that this option NOT be 
+used, 
+.B #pragma NOINVARIANT\c
+\& can be used to turn off invariant optimizations for a given function only.
+.TP
+.BI "\-\-noinduction"
+Will not do loop induction optimizations, see section strength reduction for 
+more details. It is recommended that this option is NOT used, 
+.B #pragma NOINDUCTION\c
+\& can be used to turn off induction optimizations for a given function only.
+.TP
+.BI "\-\-nojtbound"
+Will not generate boundary condition check when switch statements are 
+implemented using jump-tables. It is recommended that this option is NOT used, 
+.B #pragma NOJTBOUND\c
+\& can be used to turn off boundary checking for jump tables for a given 
+function only.
+.TP
+.BI "\-\-noloopreverse"
+Will not do loop reversal optimization.
+.SH OTHER OPTIONS
+.TP
+.BI "\-c, \-\-compile\-only"
+will compile and assemble the source, but will not call the linkage editor.
+.TP
+.BI "\-E"
+Run only the C preprocessor. Preprocess all the C source files specified and 
+output the results to standard output.
+.TP
+.BI "\-\-stack-auto"
+All functions in the source file will be compiled as reentrant, i.e. the 
+parameters and local variables will be allocated on the stack. If this option 
+is used all source files in the project should be compiled with this option.
+.TP
+.BI "\-\-xstack"
+Uses a pseudo stack in the first 256 bytes in the external ram for allocating 
+variables and passing parameters.
+.TP
+.BI "\-\-callee-saves " "function1[,function2][,function3]...."
+The compiler by default uses a caller saves convention for register saving 
+across function calls, however this can cause unneccessary register pushing & 
+popping when calling small functions from larger functions. This option can be 
+used to switch the register saving convention for the function names specified.
+The compiler will not save registers when calling these functions, no extra 
+code will be generated at the entry & exit for these functions to save & 
+restore the registers used by these functions, this can 
+.I SUBSTANTIALLY\c
+\& reduce code & improve run time performance of the generated code. In the 
+future the compiler (with interprocedural analysis) will be able to determine 
+the appropriate scheme to use for each function call. 
+.I DO NOT\c
+\& use this option for built-in functions such as 
+.B _muluint\c
+\&..., if this option is used for a library function the appropriate library 
+function needs to be recompiled with the same option. If the project consists 
+of multiple source files then all the source file should be compiled with the 
+same 
+.B --callee-saves\c
+\& option string. 
+.TP
+.BI "\-\-debug"
+When this option is used the compiler will generate debug information, that can
+be used with the 
+.B SDCDB\c
+\&. The debug information is collected in a file with .cdb extension.  
+.TP
+.BI "\-\-regextend" 
+This option is obsolete and isn't supported anymore.
+.TP
+.BI "\-\-noregparms"
+This option is obsolete and isn't supported anymore.
+.TP
+.BI "\-\-peep-file" "<filename>
+This option can be used to use additional rules to be used by the peep hole 
+optimizer. 
+.TP
+.BI "\-S"
+Stop after the stage of compilation proper; do not assemble. The output is an 
+assembler code file for the input file specified.
+.TP
+.BI "\-Wa_" "asmOption[,asmOption]...]"
+Pass the asmOption to the assembler.
+.TP
+.BI "\-Wl_" "linkOption[,linkOption]...]"
+Pass the linkOption to the linker.
+.TP
+.BI "\-\-int-long-reent" 
+Integer (16 bit) and long (32 bit) libraries have been compiled as reentrant. 
+Note by default these libraries are compiled as non-reentrant. 
+.TP
+.BI "\-\-cyclomatic"
+This option will cause the compiler to generate an information message for each
+function in the source file. The message contains some important information 
+about the function. The number of edges and nodes the compiler detected in the 
+control flow graph of the function, and most importantly the cyclomatic complexity.
+.TP
+.BI "\-\-float\-reent" 
+Floating point library is compiled as reentrant.
+.TP
+.BI "\-\-nooverlay" 
+The compiler will not overlay parameters and local variables of any function, 
+see section Parameters and local variables for more details.
+.TP
+.BI "\-\-main\-return"
+This option can be used when the code generated is called by a monitor program.
+The compiler will generate a 'ret' upon return from the 'main' function. The 
+default option is to lock up i.e. generate a 'ljmp '.
+.TP
+.BI "\-\-no\-peep" 
+Disable peep-hole optimization.
+.TP
+.BI "\-\-peep\-asm" 
+Pass the inline assembler code through the peep hole optimizer. This can cause 
+unexpected changes to inline assembler code, please go through the peephole 
+optimizer rules defined in the source file tree '<target>/peeph.def' before 
+using this option.
+.TP
+.BI "\-\-iram\-size " "<Value>"
+Causes the linker to check if the interal ram usage is within limits of the 
+given value.
+.TP
+.BI "\-\-nostdincl"
+This will prevent the compiler from passing on the default include path to the 
+preprocessor.
+.TP
+.BI "\-\-nostdlib"
+This will prevent the compiler from passing on the default library path to the 
+linker.
+.TP
+.BI "\-\-verbose"
+Shows the various actions the compiler is performing.
+.TP
+.BI "\-V"
+Shows the actual commands the compiler is executing.
+.SH INTERMEDIATE DUMP OPTIONS
+The following options are provided for the purpose of retargetting and 
+debugging the compiler. These provided a means to dump the intermediate code 
+(iCode) generated by the compiler in human readable form at various stages of 
+the compilation process.
+.TP
+.BI "\-\-dumpraw"
+This option will cause the compiler to dump the intermediate code into a file 
+of named <source filename>. 
+.B dumpraw\c
+\& just after the intermediate code has been generated for a function, i.e. 
+before any optimizations are done. The basic blocks at this stage ordered in 
+the depth first number, so they may not be in sequence of execution.
+.TP
+.BI "\-\-dumpgcse"
+Will create a dump of iCode's, after global subexpression elimination, into a 
+file named <source filename>.dumpgcse.
+.TP
+.BI "\-\-dumpdeadcode"
+Will create a dump of iCode's, after deadcode elimination, into a file named 
+<source filename>.dumpdeadcode.
+.TP
+.BI "\-\-dumploop"
+Will create a dump of iCode's, after loop optimizations, into a file named 
+<source filename>.dumploop.
+.TP
+.BI "\-\-dumprange"
+Will create a dump of iCode's, after live range analysis, into a file named 
+<source filename>.dumprange.
+.TP
+.BI "\-\-dumlrange"
+Will dump the life ranges for all symbols.
+.TP
+.BI "\-\-dumpregassign"
+Will create a dump of iCode's, after register assignment, into a file named 
+<source filename>.dumprassgn.
+.TP
+.BI "\-\-dumplrange"
+Will create a dump of the live ranges of iTemp's
+.TP
+.BI "\-\-dumpall"
+Will cause all the above mentioned dumps to be created.
+.SH COPYING
+The entire source code for the compiler is distributed under GNU General Public
+License.
+.SH SEE ALSO
+sdcpp(1), asxxxx(1), aslink(1).
+.SH AUTHOR
+This manual page was written by Aurelien Jarno <aurel32@debian.org>,
+for the Debian GNU/Linux system (but may be used by others).
+

@@ -1,0 +1,13 @@
+--- debugger/mcs51/Makefile.in.orig	Wed Nov 10 13:47:11 2004
++++ debugger/mcs51/Makefile.in	Wed Nov 10 13:48:52 2004
+@@ -58,8 +58,8 @@
+ install: all installdirs
+ 	$(INSTALL) $(TARGET) $(bindir)/sdcdb$(EXEEXT)
+ 	$(STRIP) $(bindir)/sdcdb$(EXEEXT)
+-	cp $(PRJDIR)/debugger/mcs51/sdcdb.el $(bindir)/sdcdb.el
+-	cp $(PRJDIR)/debugger/mcs51/sdcdbsrc.el $(bindir)/sdcdbsrc.el
++	cp $(PRJDIR)/debugger/mcs51/sdcdb.el $(datadir)/emacs/site-lisp/sdcdb.el
++	cp $(PRJDIR)/debugger/mcs51/sdcdbsrc.el $(datadir)/emacs/site-lisp/sdcdbsrc.el
+ 
+ 
+ # Deleting all the installed files
