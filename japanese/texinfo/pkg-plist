@@ -41,3 +41,6 @@ share/locale/cs/LC_MESSAGES/texinfo.mo
 share/locale/de_AT/LC_MESSAGES/texinfo.mo
 share/locale/eo/LC_MESSAGES/texinfo.mo
 share/locale/ru/LC_MESSAGES/texinfo.mo
+@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/* 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true

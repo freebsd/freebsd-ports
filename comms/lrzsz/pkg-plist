@@ -1,7 +1,10 @@
-bin/lrz
-bin/lrx
 bin/lrb
-bin/lsz
-bin/lsx
+bin/lrx
+bin/lrz
 bin/lsb
+bin/lsx
+bin/lsz
 share/locale/de/LC_MESSAGES/lrzsz.mo
+@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/* 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
