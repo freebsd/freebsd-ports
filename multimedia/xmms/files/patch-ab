@@ -1,26 +1,7 @@
-*** Makefile.in.org	Wed Feb  2 13:36:47 2000
---- Makefile.in	Wed Feb  2 13:37:01 2000
+*** Visualization/Makefile.in.org	Wed Jun 14 13:21:50 2000
+--- Visualization/Makefile.in	Wed Jun 14 13:22:09 2000
 ***************
-*** 125,131 ****
-  sidplay_library = @sidplay_library@
-  xmmsdir = @xmmsdir@
-  
-! SUBDIRS = libxmms xmms Output Input Effect General Visualization wmxmms gnomexmms
-  
-  bin_SCRIPTS = xmms-config
-  
---- 125,131 ----
-  sidplay_library = @sidplay_library@
-  xmmsdir = @xmmsdir@
-  
-! SUBDIRS = libxmms xmms Output Input Effect General Visualization wmxmms
-  
-  bin_SCRIPTS = xmms-config
-  
-*** Visualization/Makefile.in.org	Wed Feb  2 13:37:14 2000
---- Visualization/Makefile.in	Wed Feb  2 13:37:26 2000
-***************
-*** 125,131 ****
+*** 148,154 ****
   sidplay_library = @sidplay_library@
   xmmsdir = @xmmsdir@
   
@@ -28,49 +9,11 @@
   mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
   CONFIG_HEADER = ../config.h
   CONFIG_CLEAN_FILES = 
---- 125,131 ----
+--- 148,154 ----
   sidplay_library = @sidplay_library@
   xmmsdir = @xmmsdir@
   
 ! SUBDIRS = blur_scope sanalyzer
-  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-  CONFIG_HEADER = ../config.h
-  CONFIG_CLEAN_FILES = 
-*** Input/Makefile.in.org	Wed Feb  2 13:38:23 2000
---- Input/Makefile.in	Wed Feb  2 13:38:40 2000
-***************
-*** 125,131 ****
-  sidplay_library = @sidplay_library@
-  xmmsdir = @xmmsdir@
-  
-! SUBDIRS = wav mpg123 mikmod cdaudio idcin
-  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-  CONFIG_HEADER = ../config.h
-  CONFIG_CLEAN_FILES = 
---- 125,131 ----
-  sidplay_library = @sidplay_library@
-  xmmsdir = @xmmsdir@
-  
-! SUBDIRS = wav mpg123 cdaudio idcin
-  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-  CONFIG_HEADER = ../config.h
-  CONFIG_CLEAN_FILES = 
-*** Output/Makefile.in.org	Wed Feb  2 13:39:06 2000
---- Output/Makefile.in	Wed Feb  2 13:39:17 2000
-***************
-*** 125,131 ****
-  sidplay_library = @sidplay_library@
-  xmmsdir = @xmmsdir@
-  
-! SUBDIRS = OSS esd disk_writer
-  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-  CONFIG_HEADER = ../config.h
-  CONFIG_CLEAN_FILES = 
---- 125,131 ----
-  sidplay_library = @sidplay_library@
-  xmmsdir = @xmmsdir@
-  
-! SUBDIRS = OSS disk_writer
   mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
   CONFIG_HEADER = ../config.h
   CONFIG_CLEAN_FILES = 
