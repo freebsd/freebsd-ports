@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.3 1997/10/05 21:36:10 max Exp $
+# $Id: Makefile,v 1.4 1997/11/10 11:22:44 asami Exp $
 #
 
 DISTNAME=	pl970702e
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-euc \
 RUN_DEPENDS=	ptex:${PORTSDIR}/japanese/ptex-euc \
 		platex-common:${PORTSDIR}/japanese/platex-common
 
+MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 WRKSRC=		${WRKDIR}/970702
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	platex2e
@@ -39,7 +40,5 @@ do-install:
 	@${CP} ${WRKSRC}/* ${TEXMF}/tex/platex/base
 	${MV} -f ${TEXMF}/tex/platex/base/platex.fmt ${TEXMF}/web2c
 	/bin/ln -fs ptex ${PREFIX}/bin/platex
-
-MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 
 .include <bsd.port.mk>

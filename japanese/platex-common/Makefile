@@ -3,7 +3,7 @@
 # Date created:			05 Oct 1997
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.20 1997/10/05 21:33:09 max Exp $
+# $Id: Makefile,v 1.21 1997/11/10 11:22:41 asami Exp $
 #
 
 DISTNAME=	base-9706
@@ -20,6 +20,7 @@ MAINTAINER=	max@FreeBSD.ORG
 BUILD_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 
+MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 WRKSRC=		${WRKDIR}/base
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ecfonts-1.0.tar.gz  \
 		amsfonts-sources.tar.Z
@@ -48,7 +49,5 @@ do-install:
 	${CP} ${WRKDIR}/ec/src/* ${TEXMF}/fonts/source/public/ec
 	@/bin/ln -fs tex ${PREFIX}/bin/latex
 	@/bin/ln -s latex ${PREFIX}/bin/platex-common
-
-MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 
 .include <bsd.port.mk>
