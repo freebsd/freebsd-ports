@@ -29,12 +29,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=	halifax.1 ghfaxviewer.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
@@ -42,4 +36,4 @@ pre-patch:
 		's|\(\$$(datadir)/\)gnome/|\1|g ; \
 		 s|\$$(datadir)/locale|$$(prefix)/share/locale|g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
