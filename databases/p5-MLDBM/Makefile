@@ -3,11 +3,11 @@
 # Date created:                         December 3 1997
 # Whom:                                 ache@freebsd.org
 #
-#   $Id: Makefile,v 1.10 1997/09/13 17:53:19 jfitz Exp $
+#   $Id: Makefile,v 1.1.1.1 1997/12/03 07:11:18 ache Exp $
 #
 
 DISTNAME=       MLDBM-1.24
-PKGNAME=        p5-${DISTNAME}
+PKGNAME=        p5-MLDBM-1.24
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     MLDBM
