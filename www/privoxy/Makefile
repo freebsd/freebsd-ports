@@ -7,6 +7,7 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ijbswa
@@ -19,6 +20,8 @@ WRKSRC=		${WRKDIR}/privoxy-${PORTVERSION}-stable
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} # stolen from net/nylon
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	253
 USE_REINPLACE=	yes
@@ -26,6 +29,10 @@ USE_REINPLACE=	yes
 MAKEFILE=	GNUmakefile
 
 MAN1=		privoxy.1
+
+post-extract:
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/privoxy.sh.in > ${WRKSRC}/privoxy.sh
 
 post-patch:
 	${REINPLACE_CMD} \
@@ -58,6 +65,7 @@ do-install:
 .endif
 
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/privoxy.sh ${PREFIX}/etc/rc.d/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
