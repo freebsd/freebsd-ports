@@ -10,6 +10,7 @@ bin/nt
 %%PORTDOCS%%share/doc/downloader/PLANS
 %%PORTDOCS%%share/doc/downloader/README
 %%PORTDOCS%%share/doc/downloader/README.de
+%%PORTDOCS%%share/doc/downloader/README.en
 %%PORTDOCS%%share/doc/downloader/README.es
 %%PORTDOCS%%share/doc/downloader/README.gr
 %%PORTDOCS%%share/doc/downloader/README.pl
@@ -25,6 +26,7 @@ share/locale/el_GR/LC_MESSAGES/nt.mo
 share/locale/es/LC_MESSAGES/nt.mo
 share/locale/fi/LC_MESSAGES/nt.mo
 share/locale/fr/LC_MESSAGES/nt.mo
+share/locale/he/LC_MESSAGES/nt.mo
 share/locale/hu/LC_MESSAGES/nt.mo
 share/locale/id/LC_MESSAGES/nt.mo
 share/locale/it/LC_MESSAGES/nt.mo

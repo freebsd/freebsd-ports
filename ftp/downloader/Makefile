@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	1.23
+PORTVERSION=	1.24.1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.server51.freshmeat.net/pub/d4x/ \
@@ -24,7 +24,7 @@ MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" DEST="${PREFIX}" \
 MAN1=		nt.1
 
 PORTDOCS=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE     \
-		NAMES PLANS README README.de README.es README.gr      \
+		NAMES PLANS README README.de README.en README.es README.gr \
 		README.pl README.pt_BR README.ru THANKS TODO TROUBLES
 
 post-install:
