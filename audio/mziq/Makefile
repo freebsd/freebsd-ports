@@ -7,6 +7,7 @@
 
 PORTNAME=	mziq
 PORTVERSION=	0.2.49
+PORTVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://cseg.lucidx.com/projects/src/mziq/
 
@@ -16,21 +17,18 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123
 
 WRKSRC=		${WRKDIR}/MZiq
 
-BINS=		gmziq jukebox mziq
-DOCS=		LASTLOG README TODO rcfile
-
 NO_BUILD=	yes
 USE_PERL5=	yes
 
 do-install:
-.for FILE in ${BINS}
+.for FILE in gmziq junkbox mziq
 	@${INSTALL_SCRIPT} ${WRKSRC}/${FILE} ${PREFIX}/bin
 .endfor
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
+.for FILE in LASTLOG README TODO rcfile
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
