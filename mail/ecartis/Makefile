@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	ecartis
-PORTVERSION=	1.0.0-bm1
+PORTVERSION=	1.0.0-snap20020514
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ecartis.org/pub/ecartis/snapshots/tar/
-DISTNAME=	ecartis-1.0.0-snap20020508
+DISTNAME=	ecartis-1.0.0-snap20020514
 
 MAINTAINER=	trish@bsdunix.net
 
 USE_GMAKE=	yes
 
 NO_PACKAGE=	"Requires ecartis uid"
+IS_INTERACTIVE=	"Stops to ask to create ecartis user/group"
 WRKSRC=		${WRKDIR}/ecartis-1.0.0/src
 
 pre-patch:
