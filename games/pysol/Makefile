@@ -1,12 +1,12 @@
 # New ports collection makefile for:    PySol
-# Version required:     2.99
+# Version required:     3.00
 # Date created:         11 September 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       pysol-2.99
+DISTNAME=       pysol-3.00
 CATEGORIES=	games
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/ \
 		http://wildsau.idv.uni-linz.ac.at/mfx/download/beta/
@@ -20,10 +20,11 @@ NO_BUILD=	yes
 
 MAN6=	pysol.6
 
-CARDSETS=	pysol-cardsets-2.99
+CARDSETS=	pysol-cardsets-3.00
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pysol.py ${PREFIX}/bin/pysol
+	${SED} -e "s|@pkgdatadir@|${PREFIX}/share/pysol|" < ${WRKSRC}/pysol > ${PREFIX}/bin/pysol
+	${CHMOD} +x ${PREFIX}/bin/pysol
 	${INSTALL_DATA} ${WRKSRC}/pysol.6 ${PREFIX}/man/man6
 	@${MKDIR} ${PREFIX}/share/pysol
 	(cd ${WRKSRC}/data; tar cf - *) | \
