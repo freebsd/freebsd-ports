@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 1999/01/17 03:03:43 billf Exp $
+# $Id: Makefile,v 1.11 1999/03/15 01:16:08 billf Exp $
 #
 
     SUBDIR += 9menu
@@ -31,5 +31,6 @@
     SUBDIR += wm2
     SUBDIR += wmx
     SUBDIR += xfce
+    SUBDIR += xfce-common
 
 .include <bsd.port.subdir.mk>
