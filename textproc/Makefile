@@ -552,6 +552,7 @@
     SUBDIR += sgrep2
     SUBDIR += silvercity
     SUBDIR += sk-aspell
+    SUBDIR += skim
     SUBDIR += skribe
     SUBDIR += sl-aspell
     SUBDIR += slides
