@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.28.5
+PORTVERSION=	4.28.6
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	MailScanner-${PORTVERSION}-${PATCHLEVEL}
@@ -36,7 +36,7 @@ CONFLICTS=	MailScanner-devel-*
 
 USE_PERL5=	yes
 
-PATCHLEVEL=	2
+PATCHLEVEL=	1
 WRKSRC=		${WRKDIR}/MailScanner-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
