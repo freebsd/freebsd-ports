@@ -7084,6 +7084,7 @@ tpg		ports/devel/tpg
 tpop3d		ports/mail/tpop3d
 tput		src/usr.bin/tput
 tr		src/usr.bin/tr
+tr-ircd		ports/irc/tr-ircd
 tr2latex	ports/print/tr2latex
 traceroute	src/usr.sbin/traceroute
 traceroute6	src/usr.sbin/traceroute6
