@@ -1199,7 +1199,13 @@ PATCH_SITES PATCHFILES PATCH_DIST_STRIP
 
 	&checkearlier($file, $tmp, @varnames);
 	$tmp = "\n" . $tmp;
-	if ($tmp =~ /\nMAINTAINER\??=[^\n]+/) {
+	if ($tmp =~ /\nMAINTAINER\??=([^\n]+)/) {
+		my $addr = $1;
+		$addr =~ s/^\s*//;
+		$addr =~ s/\s*$//;
+		if ($addr =~ /[\s,<>()]/) {
+			&perror("FATAL: MAINTAINER should be a single address without comment.");
+		}
 		$tmp =~ s/\nMAINTAINER\??=[^\n]+//;
 	} elsif ($whole !~ /\nMAINTAINER[?]?=/) {
 		&perror("FATAL: no MAINTAINER listed in $file.") unless ($slaveport && $makevar{MAINTAINER} ne '');
