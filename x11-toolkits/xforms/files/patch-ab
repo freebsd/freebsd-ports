@@ -10,7 +10,7 @@
  		  $(SNPINC) \
  		  -I$(BUILDINCDIR) \
 --- demos/Imakefile.orig	Fri Sep 27 16:11:45 2002
-+++ demos/Imakefile	Mon Oct  7 01:27:39 2002
++++ demos/Imakefile	Tue Oct  8 18:33:33 2002
 @@ -97,6 +97,9 @@
  DEPOBJS		= $(DEPSRCS:.c=.o)
  PROGRAMS	= $(DEMOSRCS:.c=)
@@ -21,18 +21,25 @@
  #if Solaris64Bit
  LDPRELIB	= -L/usr/openwin/lib/sparcv9 -L/usr/local/lib/sparcv9
  CCENVSETUP	= LD_RUN_PATH=/usr/openwin/lib/sparcv9
-@@ -125,6 +128,8 @@
+@@ -125,6 +128,10 @@
  DEPSNPLIB	= $(SNPLIBDIR)/libformssnp.a
  #endif
  
-+EXTRA_LDOPTIONS	= $(FORMSLIB)
++EXTRA_LDOPTIONS	= $(FORMSLIB) \
++		  $(IMAGELIB) \
++		  $(SNPLIB)
 +
  EXTRA_INCLUDES  = \
  		  $(SNPINC) \
  		  -I$(BUILDINCDIR) \
-@@ -143,7 +148,7 @@
+@@ -138,12 +145,9 @@
+ 
+ EXTRA_LIBRARIES	= \
+ 		  $(STATIC) \
+-		  $(IMAGELIB) \
+-		  $(FORMSLIB) \
  		  $(XPMLIB) \
- 		  $(SNPLIB) \
+-		  $(SNPLIB) \
  		  $(UNSTATIC) \
 -		  $(JPEG) \
 +		  $(JPEGLIB) \
