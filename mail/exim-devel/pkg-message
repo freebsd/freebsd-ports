@@ -1,23 +1,7 @@
-The following documentation has been installed:
 
-    info 'Exim Overview'	-> Overview of Exim
-    info Exim			-> Exim Specification (User Guide)
-    info 'Exim Filtering'	-> Exim Filter Specification (for end-users)
+IMPORTANT NOTE:
+===============
 
-Postscript, PDF, HTML and plain text versions of these documents, as well
-as a comprehensive FAQ list, are available at http://www.exim.org/ .
-
-To run Exim instead of sendmail on startup:
-
-1) Create exim/configure from exim/configure.default .
-2) Stop the sendmail daemon.
-3) Adjust mailer.conf(5) and set 'sendmail_enable' and 'sendmail_flags'
-   as appropriate in rc.conf(5).
-4) Start exim with appropriate command-line options.
-
-You may also want to configure newsyslog(8) to rotate Exim log files:
-
-# Only HUP Exim once when rejectlog and mainlog are rotated.
-/var/log/exim/mainlog	exim:mail 640 7 * @T00 Z /var/run/exim.pid
-/var/log/exim/rejectlog	exim:mail 640 7 * @T00 Z
+Please read ${PREFIX}/share/doc/exim/POST-INSTALL-NOTES for important
+information regarding your Exim installation.
 

@@ -14,6 +14,7 @@ sbin/exicyclog
 sbin/exigrep
 sbin/eximstats
 sbin/exiqsumm
+%%PORTDOCS%%share/doc/exim/POST-INSTALL-NOTES
 @unexec install-info --delete %D/info/exim_overview.info %D/info/dir
 @unexec install-info --delete %D/info/exim.info %D/info/dir
 @unexec install-info --delete %D/info/exim_filter.info %D/info/dir
@@ -21,3 +22,4 @@ sbin/exiqsumm
 @exec install-info --section="Exim" --entry "* Exim Specification: (exim).       Exim manual" %D/info/exim.info %D/info/dir
 @exec install-info --section="Exim" --entry "* Exim Filtering: (exim_filter).    Filtering mail with Exim" %D/info/exim_filter.info %D/info/dir
 @dirrm etc/exim
+@dirrm share/doc/exim

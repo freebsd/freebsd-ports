@@ -16,7 +16,10 @@ DISTFILES=	exim-3.33.tar.bz2 exim-texinfo-3.30.tar.bz2
 MAINTAINER=	sheldonh@FreeBSD.org
 
 USE_BZIP2=	yes
-USE_PERL5=	yes
+
+.if !defined(NOPORTDOCS)
+PKGMESSAGE=	${FILESDIR}/POST-INSTALL-NOTES
+.endif
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
@@ -187,6 +190,10 @@ pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/exim
+	${INSTALL_DATA} ${FILESDIR}/POST-INSTALL-NOTES ${PREFIX}/share/doc/exim
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
