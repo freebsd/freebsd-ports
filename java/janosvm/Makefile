@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://www.cs.utah.edu/flux/janos/${DISTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	znerd@FreeBSD.org
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
