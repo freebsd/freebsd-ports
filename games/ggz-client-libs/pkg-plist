@@ -4,7 +4,7 @@ include/ggzmod-ggz.h
 include/ggzmod.h
 lib/libggzcore.a
 lib/libggzcore.so
-lib/libggzcore.so.4
+lib/libggzcore.so.5
 lib/libggzmod.a
 lib/libggzmod.so
-lib/libggzmod.so.1
+lib/libggzmod.so.2
