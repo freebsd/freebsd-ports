@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Socket6
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ume@FreeBSD.org
+COMMENT=	Perl module to support getaddrinfo() and getnameinfo()
 
 PERL_CONFIGURE=	yes
 

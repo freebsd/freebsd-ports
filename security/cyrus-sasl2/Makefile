@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
 
 MAINTAINER=	ume@FreeBSD.org
+COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 USE_SUBMAKE=	yes
 USE_OPENSSL=	yes

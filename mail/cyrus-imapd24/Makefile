@@ -16,6 +16,7 @@ PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
 PATCHFILES=	${DISTNAME}-ipv6-20030204.diff.gz
 
 MAINTAINER=	ume@FreeBSD.org
+COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
 		db3.3:${PORTSDIR}/databases/db3

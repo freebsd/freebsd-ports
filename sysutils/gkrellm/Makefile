@@ -14,6 +14,7 @@ MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 MASTER_SITE_SUBDIR=	ume
 
 MAINTAINER=	ume@FreeBSD.org
+COMMENT=	A GTK based system monitor
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

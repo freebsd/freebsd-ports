@@ -14,6 +14,7 @@ MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 MASTER_SITE_SUBDIR=	ume
 
 MAINTAINER=	ume@FreeBSD.org
+COMMENT=	A GTK based system monitor
 
 .if defined(GKRELLM_SERVER_ONLY)
 BUILD_WRKSRC=	${WRKSRC}/server
