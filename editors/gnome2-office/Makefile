@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnome2-office
-PORTVERSION=	2.8.1
-PORTREVISION=	2
+PORTVERSION=	2.8.2
 CATEGORIES=	editors gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
