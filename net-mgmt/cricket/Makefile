@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cricket
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4.p1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://cricket.sourceforge.net/download/beta/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -23,22 +23,37 @@ RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session \
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 SITE_PERL_ARCH=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 
-NO_PACKAGE=	"needs customization"
+HAS_CONFIGURE=	yes
 USE_PERL5=	yes
-SCRIPTS_ENV+=	PERL5=${PERL5}
-
-do-build:
+NO_BUILD=	yes
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_SUB+=	VERSION=${PORTVERSION}
+CRICKET_USER=	cricket
+CRICKET_GROUP=	www
 
 do-install:
-	@${MKDIR} -m 755 ${PREFIX}/cricket
-	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket
-	@find ${PREFIX}/cricket -name \*.orig -or -name \*.bak | xargs ${RM} -f
+	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+	@${MKDIR} -m 755 ${PREFIX}/cricket/cricket-${PORTVERSION}
+	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket/cricket-${PORTVERSION}
+	@find ${PREFIX}/cricket/cricket-${PORTVERSION} -name \*.orig -or \
+		-name \*.bak | xargs ${RM} -f
+	${CHOWN} -R ${CRICKET_USER}:${CRICKET_GROUP} ${PREFIX}/cricket
+	@if [ -L ${PREFIX}/cricket/cricket ]; then \
+		${ECHO} "Updating ${PREFIX}/cricket/cricket symbolic link" ; \
+		${RM} ${PREFIX}/cricket/cricket ; \
+	fi
+	${LN} -s ${PREFIX}/cricket/cricket-${PORTVERSION} \
+		${PREFIX}/cricket/cricket
+	@if [ -f ${LOCALBASE}/cricket/compile ] ; then \
+		${ECHO} "You should migrate manually to use new cricket" ; \
+		${ECHO} "installation scheme." ; \
+	fi
 
 post-install:
-	@${ECHO} ""
-	@${ECHO} "Cricket has been installed in ${PREFIX}/cricket. You'll find"
-	@${ECHO} "executables and configfiles there. Please take a look at"
-	@${ECHO} "http://cricket.sourceforge.net/. The documentation can"
-	@${ECHO} "be found in ${PREFIX}/cricket/doc/ too."
+	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/cricket-conf.pl.sample \
+		>${PREFIX}/etc/cricket-conf.pl.dist 
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${FILESDIR}/pkg-message.in > \
+		${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

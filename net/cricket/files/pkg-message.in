@@ -1,0 +1,7 @@
+Sample config installed at:
+        %%PREFIX%%/etc/cricket-conf.pl.dist
+
+Cricket has been installed in %%PREFIX%%/cricket. You'll find
+executables and configfiles there. Please take a look at
+http://cricket.sourceforge.net/. The documentation can be
+found in %%PREFIX%%/cricket/cricket/doc/ too.
