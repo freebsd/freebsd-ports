@@ -1,3 +1,4 @@
+bin/mips64orion-rtems-c++filt
 bin/cpp
 bin/mips64orion-rtems-gcc
 bin/mips64orion-rtems-g++

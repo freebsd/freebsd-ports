@@ -1,3 +1,4 @@
+bin/powerpc-rtems-c++filt
 bin/cpp
 bin/powerpc-rtems-gcc
 bin/powerpc-rtems-g++
