@@ -1,6 +1,5 @@
-diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/rc work.new/skip/freebsd/rc
---- skipsrc-1.0.orig/skip/freebsd/rc	Fri Oct 25 13:13:19 1996
-+++ work.new/skip/freebsd/rc	Mon Jan 24 12:35:39 2000
+--- work/skip/freebsd/rc.orig	Wed Nov  1 20:12:36 2000
++++ work/skip/freebsd/rc	Wed Nov  1 20:17:37 2000
 @@ -44,22 +44,30 @@
   
  #pragma ident "@(#)rc	1.5 96/10/08 Sun Microsystems"
@@ -72,7 +71,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/rc work.new/ski
  		echo "skip: not enough space available in $SKIP_VAR"
  		echo "skip: $VAR_SIZE kbytes will be required to run the product"
  	exit 1
-@@ -98,45 +109,47 @@
+@@ -98,48 +109,70 @@
  
  load_driver()
  {
@@ -80,10 +79,9 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/rc work.new/ski
 -
 -	# load pseudo-drivers
 -	for driver in $PSEUDO_DRVS; do
-+	kldstat | awk '{ print $5 }' | grep ${SKIP_MOD} > /dev/null 2>&1
- 
+-
 -		awk '{ print $8 }' $SKIP_VAR/modules | grep $driver > /dev/null 2>&1
-+	if [ $? -ne 0 ]; then
++	kldstat | awk '{ print $5 }' | grep ${SKIP_MOD} > /dev/null 2>&1
  
 -		if [ $? -eq 0 ]; then
 -			echo "skip: driver already loaded"
@@ -92,13 +90,8 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/rc work.new/ski
 -			modload -o $SKIP_VAR/$driver \
 -				-p $SKIP_ETC/$driver.mkdev \
 -				$SKIP_PATH/drv/$driver.o> /dev/null
--
--
--			if [ $? -ne 0 ]; then
--				echo "skip: failed to load driver"
--				echo "skip: perhaps too many drivers are loaded?"
--				exit 1
--			fi
++	if [ $? -ne 0 ]; then
+ 
 +		# Load KLD
 +		kldload ${SKIP_LKM}/${SKIP_MOD} > /dev/null
 +		if [ $? -ne 0 ]; then
@@ -107,17 +100,24 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/rc work.new/ski
 +			exit 1
 +		fi
  
+-			if [ $? -ne 0 ]; then
+-				echo "skip: failed to load driver"
+-				echo "skip: perhaps too many drivers are loaded?"
 +		# Absurd hack to find out device major number
-+		DEV_MAJOR=`/sbin/dmesg | grep 'skip: device major=' | tail -1 | sed 's/^.*=\([0-9]\{1,\}\),.*$/\1/g'`
-+		if [ "${DEV_MAJOR}" = "" ]; then
-+			echo ""
-+			echo "skip: can't determine skip device major number"
-+			exit 1
++		# Check for devfs first
++		if [ -z "`mount | grep /dev | grep devfs`" ]; then
++			DEV_MAJOR=`/sbin/dmesg | grep 'skip: device major=' | tail -1 | sed 's/^.*=\
+([0-9]\{1,\}\),.*$/\1/g'`
++			if [ "${DEV_MAJOR}" = "" ]; then
++				echo ""
++				echo "skip: can't determine skip device major number"
+ 				exit 1
+ 			fi
+ 
++			# Create device nodes
++			${SKIP_MKDEV} ${DEV_MAJOR}
  		fi
 -	done
-+
-+		# Create device nodes
-+		${SKIP_MKDEV} ${DEV_MAJOR}
 +	fi
 +
  }
@@ -137,10 +137,35 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/rc work.new/ski
  }
  
  # main
+-verify_owner
+-pre_checks
+-load_driver
+-start_daemons
+ 
+-exit 0
++if [ $? -ne 0 ]; then
++  cmd=start
++else
++  cmd=$1
++fi
 +
-+# keep console output pretty
-+echo -n " skip"
++case "$1" in
++start)
++	# keep console output pretty
++        echo -n " skip"
 +
- verify_owner
- pre_checks
- load_driver
++        verify_owner
++        pre_checks
++        load_driver
++        start_daemons
++        ;;
++
++stop)
++        ;;
++
++*)
++        echo "Usage: `basename $0` {start|stop}" >&2
++        ;;
++
++esac
++
