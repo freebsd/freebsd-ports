@@ -1,4 +1,5 @@
 #! /usr/bin/perl
+# ex:ts=4
 #
 # portlint - lint for port directory
 # implemented by:
@@ -14,12 +15,17 @@
 # hard time upgrading this...
 #
 # $FreeBSD$
+# $Id: portlint.pl,v 1.4 2000/03/28 05:36:07 mharo Exp $
 #
 
 $err = $warn = 0;
 $extrafile = $parenwarn = $committer = $verbose = $newport = 0;
 $contblank = 1;
 $portdir = '.';
+
+$l = '[{(]';
+$r = '[)}]';
+$s = '[ \t]';
 
 # default setting - for FreeBSD
 $portsdir = '/usr/ports';
@@ -115,21 +121,81 @@ $sharedocused = 0;
 %manlangs = ();
 
 %predefined = ();
+# historical, no longer in FreeBSD's bsd.port.mk
 foreach $i (split("\n", <<EOF)) {
 XCONTRIB	ftp://ftp.x.org/contrib/
-XCONTRIB	ftp://crl.dec.com/pub/X11/contrib/
-GNU		ftp://prep.ai.mit.edu/pub/gnu/
+GNU 	ftp://prep.ai.mit.edu/pub/gnu/
 GNU		ftp://wuarchive.wustl.edu/systems/gnu/
-PERL_CPAN	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/
 PERL_CPAN	ftp://ftp.cdrom.com/pub/perl/CPAN/modules/by-module/
+SUNSITE		ftp://sunsite.unc.edu/pub/Linux/
+SUNSITE		ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/
 TEX_CTAN	ftp://ftp.cdrom.com/pub/tex/ctan/
+TEX_CTAN	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/
+EOF
+	($j, $k) = split(/\t+/, $i);
+	$predefined{$k} = $j;
+}
+
+# This list should be in sync with bsd.port.mk
+foreach $i (split("\n", <<EOF)) {
+XCONTRIB	ftp://crl.dec.com/pub/X11/contrib/
+XCONTRIB	ftp://uiarchive.uiuc.edu/pub/X11/contrib/
+XCONTRIB	ftp://ftp.duke.edu/pub/X11/contrib/
+XCONTRIB	ftp://ftp.sunet.se/pub/X11/contrib/
+XCONTRIB	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/
+GNU	ftp://ftp.gnu.org/gnu/
+GNU	ftp://ftp.freesoftware.com/pub/gnu/
+GNU	ftp://ftp.digital.com/pub/GNU/
+GNU	ftp://ftp.uu.net/archive/systems/gnu/
+GNU	ftp://ftp.de.uu.net/pub/gnu/
+GNU	ftp://ftp.ecrc.net/pub/gnu/
+GNU	ftp://ftp.funet.fi/pub/gnu/prep/
+GNU	ftp://ftp.leo.org/pub/comp/os/unix/gnu/
+GNU	ftp://ftp.digex.net/pub/gnu/
+GNU	ftp://ftp.wustl.edu/systems/gnu/
+GNU	ftp://ftp.kddlabs.co.jp/pub/gnu/
+PERL_CPAN	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/
+PERL_CPAN	ftp://ftp.freesoftware.com/pub/perl/CPAN/modules/by-module/
+TEX_CTAN	ftp://ftp.freesoftware.com/pub/tex/ctan/
 TEX_CTAN	ftp://wuarchive.wustl.edu/packages/TeX/
 TEX_CTAN	ftp://ftp.funet.fi/pub/TeX/CTAN/
-TEX_CTAN	ftp://ftp.tex.ac.uk/public/ctan/tex-archive/
+TEX_CTAN	ftp://ftp.tex.ac.uk/tex-archive/
 TEX_CTAN	ftp://ftp.dante.de/tex-archive/
-SUNSITE		ftp://sunsite.unc.edu/pub/Linux/
-SUNSITE		ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/
-SUNSITE		ftp://ftp.funet.fi/pub/mirrors/sunsite.unc.edu/pub/Linux/
+SUNSITE	ftp://metalab.unc.edu/pub/Linux/
+SUNSITE	ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/
+SUNSITE	ftp://ftp.freesoftware.com/pub/linux/sunsite/
+KDE	ftp://ftp.us.kde.org/pub/kde/
+KDE	ftp://ftp.kde.org/pub/kde/
+KDE	ftp://ftp.tuniv.szczecin.pl/pub/kde/
+KDE	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
+KDE	ftp://ftp.dataplus.se/pub/linux/kde/
+COMP_SOURCES	ftp://gatekeeper.dec.com/pub/usenet/comp.sources.
+COMP_SOURCES	ftp://ftp.uu.net/usenet/comp.sources.
+COMP_SOURCES	ftp://rtfm.mit.edu/pub/usenet/comp.sources.
+GNOME	ftp://ftp.gnome.org/pub/GNOME/
+GNOME	ftp://download.sourceforge.net/pub/mirrors/gnome/
+GNOME	ftp://ftp.cybertrails.com/pub/gnome/
+GNOME	ftp://ftp.snoopy.net/pub/mirrors/GNOME/
+AFTERSTEP	ftp://ftp.afterstep.org/
+AFTERSTEP	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/
+AFTERSTEP	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/
+AFTERSTEP	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/
+AFTERSTEP	ftp://ftp.dti.ad.jp/pub/X/AfterStep/
+AFTERSTEP	ftp://casper.yz.yamagata-u.ac.jp/pub/X11/apps/afterstep/
+WINDOWMAKER	ftp://ftp.windowmaker.org/pub/
+WINDOWMAKER	ftp://ftp.goldweb.com.au/pub/WindowMaker/
+WINDOWMAKER	ftp://ftp.io.com/pub/
+WINDOWMAKER	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/
+PORTS_JP	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+PORTS_JP	ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+PORTS_JP	ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+TCLTK	ftp://ftp.scriptics.com/pub/tcl/
+TCLTK	ftp://mirror.neosoft.com/pub/tcl/mirror/ftp.scriptics.com/
+TCLTK	ftp://sunsite.utk.edu/pub/tcl/
+TCLTK	ftp://ftp.funet.fi/pub/languages/tcl/tcl/
+TCLTK	ftp://ftp.cs.tu-berlin.de/pub/tcl/distrib/
+TCLTK	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/
+TCLTK	ftp://ftp.lip6.fr/pub/tcl/distrib/
 EOF
 	($j, $k) = split(/\t+/, $i);
 	$predefined{$k} = $j;
@@ -232,7 +298,7 @@ sub checkdescr {
 			"plain ascii file.");
 	}
 	if ($file =~ m/COMMENT/) {
-		if (($tmp !~ /^[A-Z].*$/) || ($tmp =~ m/\.$/)) {
+		if (($tmp !~ /^[0-9A-Z].*$/) || ($tmp =~ m/\.$/)) {
 			&perror("WARN: pkg/COMMENT should begin with a capital, and end without a period");
 		}
 	}
@@ -307,6 +373,11 @@ sub checkplist {
 		if ($_ =~ /^\//) {
 			&perror("FATAL: $file $.: use of full pathname ".
 				"disallowed.");
+		}
+
+		if ($_ =~ /\.la$/) {
+			&perror("WARN: $file $.: installing libtool archives, ".
+				"please use USE_LIBTOOL in Makefile if possible");
 		}
 
 		if ($_ =~ /^info\/.*info(-[0-9]+)?$/) {
@@ -574,11 +645,12 @@ sub checkmakefile {
 	#
 	print "OK: checking direct use of command names.\n" if ($verbose);
 	foreach $i (split(/\s+/, <<EOF)) {
-awk basename cat cp echo false gmake grep gzcat
-ldconfig md5 mkdir mv patch rm rmdir sed setenv touch tr xmkmf
+awk basename cat chmod chown cp echo expr false gmake grep gzcat
+ldconfig ln md5 mkdir mv patch rm rmdir sed sh touch tr which xmkmf
 EOF
 		$cmdnames{$i} = "\$\{\U$i\E\}";
 	}
+	$cmdnames{'env'} = '${SETENV}';
 	$cmdnames{'gunzip'} = '${GUNZIP_CMD}';
 	$cmdnames{'gzip'} = '${GZIP_CMD}';
 	$cmdnames{'install'} = '${INSTALL_foobaa}';
@@ -606,6 +678,15 @@ EOF
 	}
 
 	#
+	# whole file: ${GZIP_CMD} -9 (or any other number)
+	#
+	if ($j =~ /\${GZIP_CMD}\s+-(\w+(\s+-)?)*(\d)/) {
+		&perror("WARN: possible use of \"\${GZIP_CMD} -$3\" ".
+			"found. \${GZIP_CMD} includes \"-\${GZIP}\" which ".
+			"sets the compression level.");
+	}
+
+	#
 	# whole file: ${MKDIR} -p
 	#
 	if ($j =~ /\${MKDIR}\s+-p/) {
@@ -621,7 +702,10 @@ EOF
 	#
 	# break the makefile into sections.
 	#
-	@sections = split(/\n\n+/, $rawwhole);
+	$tmp = $rawwhole;
+	# keep comment, blank line, comment in the same section
+	$tmp =~ s/(#.+\n)\n(#.+)/$1$2/g;
+	@sections = split(/\n\n+/, $tmp);
 	for ($i = 0; $i < scalar(@sections); $i++) {
 		if ($sections[$i] !~ /\n$/) {
 			$sections[$i] .= "\n";
@@ -758,9 +842,9 @@ EOF
 					&perror("FATAL: URL \"$i\" contains ".
 						"extra \":\".");
 				}
-				if ($i =~ m#www.freebsd.org/~.+/#i) {
-					&perror("WARN: URL \"$i\" ".
-						"www.FreeBSD.org should be ".
+				if ($osname == 'FreeBSD' && $i =~ m#(www.freebsd.org)/~.+/#i) {
+					&perror("WARN: URL \"$i\", ".
+						"$1 should be ".
 						"people.FreeBSD.org");
 				}
 				unless (&is_predefined($i)) {
@@ -863,7 +947,7 @@ EOF
 		}
 
 		# make an advice only in certain cases.
-		if ($pkgname ne '' && $distfiles =~ /^$pkgname([-\.].+)$/) {
+		if ($pkgname ne '' && $distfiles =~ /^\Q$pkgname\E([-\.].+)$/) {
 			&perror("WARN: how about \"DISTNAME=$pkgname\"".
 				(($1 eq '.tar.gz')
 					? ""
@@ -935,7 +1019,7 @@ EOF
 	$tmp = "\n" . $tmp;
 	if ($tmp =~ /\nMAINTAINER\??=[^\n]+/) {
 		$tmp =~ s/\nMAINTAINER\??=[^\n]+//;
-	} else {
+	} elsif ($whole !~ /\nMAINTAINER[?]?=/) {
 		&perror("FATAL: no MAINTAINER listed in $file.");
 	}
 	$tmp =~ s/\n\n+/\n/g;
