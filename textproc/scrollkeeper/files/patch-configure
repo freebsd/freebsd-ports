@@ -15,8 +15,8 @@
 -	echo $ac_n "checking for docbook-dtd412-xml""... $ac_c" 1>&6
 -echo "configure:6282: checking for docbook-dtd412-xml" >&5
 -	if xmlcatalog /etc/xml/catalog "-//OASIS//DTD DocBook XML V4.1.2//EN" | grep "No entry" >/dev/null ; then
-+	echo $ac_n "checking for docbook-dtd42-xml""... $ac_c" 1>&6
-+echo "configure:6282: checking for docbook-dtd42-xml" >&5
++	echo $ac_n "checking for docbook-dtd412-xml""... $ac_c" 1>&6
++echo "configure:6282: checking for docbook-dtd412-xml" >&5
 +	if test ! -f $LOCALBASE/share/sk/docbook/catalog ; then
  		echo "* ERROR * "
  		echo " "

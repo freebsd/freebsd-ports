@@ -76,7 +76,7 @@ post-patch:
 		${WRKSRC}/libs/Makefile.in
 
 pre-configure:
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+.if !defined(PACKAGE_BUILDING)
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
