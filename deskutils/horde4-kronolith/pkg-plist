@@ -57,13 +57,17 @@
 %%KRONOLITHDIR%%/lib/base.php
 %%KRONOLITHDIR%%/lib/version.php
 %%KRONOLITHDIR%%/locale/cs_CZ/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/da_DK/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/de_DE/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/el_GR/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/es_ES/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/fi_FI/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/fr_FR/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/hu_HU/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/it_IT/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/ko_KR/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/nl_NL/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/nn_NO/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/pl_PL/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/pt_BR/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/ru_RU/LC_MESSAGES/kronolith.mo
@@ -76,14 +80,18 @@
 %%KRONOLITHDIR%%/po/Makefile
 %%KRONOLITHDIR%%/po/README
 %%KRONOLITHDIR%%/po/cs_CZ.po
+%%KRONOLITHDIR%%/po/da_DK.po
 %%KRONOLITHDIR%%/po/de_DE.po
 %%KRONOLITHDIR%%/po/el_GR.po
 %%KRONOLITHDIR%%/po/es_ES.po
 %%KRONOLITHDIR%%/po/extract.pl
 %%KRONOLITHDIR%%/po/fi_FI.po
 %%KRONOLITHDIR%%/po/fr_FR.po
+%%KRONOLITHDIR%%/po/hu_HU.po
 %%KRONOLITHDIR%%/po/it_IT.po
+%%KRONOLITHDIR%%/po/ko_KR.po
 %%KRONOLITHDIR%%/po/nl_NL.po
+%%KRONOLITHDIR%%/po/nn_NO.po
 %%KRONOLITHDIR%%/po/pl_PL.po
 %%KRONOLITHDIR%%/po/pt_BR.po
 %%KRONOLITHDIR%%/po/ru_RU.po
@@ -131,6 +139,8 @@
 @dirrm %%KRONOLITHDIR%%/lib
 @dirrm %%KRONOLITHDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/cs_CZ
+@dirrm %%KRONOLITHDIR%%/locale/da_DK/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/da_DK
 @dirrm %%KRONOLITHDIR%%/locale/de_DE/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/de_DE
 @dirrm %%KRONOLITHDIR%%/locale/el_GR/LC_MESSAGES
@@ -141,10 +151,16 @@
 @dirrm %%KRONOLITHDIR%%/locale/fi_FI
 @dirrm %%KRONOLITHDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/fr_FR
+@dirrm %%KRONOLITHDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/hu_HU
 @dirrm %%KRONOLITHDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/it_IT
+@dirrm %%KRONOLITHDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/ko_KR
 @dirrm %%KRONOLITHDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/nl_NL
+@dirrm %%KRONOLITHDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/nn_NO
 @dirrm %%KRONOLITHDIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/pl_PL
 @dirrm %%KRONOLITHDIR%%/locale/pt_BR/LC_MESSAGES
@@ -177,3 +193,4 @@
 @dirrm %%KRONOLITHDIR%%
 etc/horde/httpd.conf.kronolith
 %%PORTDOCS%%@dirrm share/doc/kronolith
+@unexec if cmp -s %D/www/horde/config/registry.php %D/www/horde/config/registry.php.afterKronolith; then rm -f %D/www/horde/config/registry.php.afterKronolith; mv %D/www/horde/config/registry.php.beforeKronolith %D/www/horde/config/registry.php; fi

@@ -7,10 +7,10 @@
 
 PORTNAME=	kronolith
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils www
-MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/tarballs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
+MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/tarballs/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 
 MAINTAINER=	thierry@pompo.net
 
@@ -62,8 +62,12 @@ do-install:
 	@${CP} -p ${FILESDIR}/httpd.conf.kronolith ${HORDE_INC}
 	@${PERL} -pi -e "s:/home/httpd/html/horde/kronolith:${KRONOLITHDIR}:g" \
 		${HORDE_INC}/httpd.conf.kronolith
+	@${CP} -p ${HORDEDIR}/config/registry.php		\
+		${HORDEDIR}/config/registry.php.beforeKronolith
 	@${PERL} -pi -e "s://UNCOMMENTWHENINSTKRONOLITH::" \
 		${HORDEDIR}/config/registry.php
+	@${CP} -p ${HORDEDIR}/config/registry.php		\
+		${HORDEDIR}/config/registry.php.afterKronolith
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
