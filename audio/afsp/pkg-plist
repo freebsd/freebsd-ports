@@ -7,7 +7,6 @@ bin/InfoAudio
 bin/LPanal
 bin/LPsyn
 bin/ResampAudio
-include/AD.h
 include/AO.h
 include/AObase.h
 include/libtsp.h
