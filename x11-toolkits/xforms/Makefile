@@ -3,11 +3,11 @@
 # Date created:		28 March 1997
 # Whom:			gena
 #
-# $Id: Makefile,v 1.11 1997/05/16 12:53:20 max Exp $
+# $Id: Makefile,v 1.12 1997/07/17 15:13:02 max Exp $
 #
 
-DISTNAME=	bxform-086
-PKGNAME=	xforms-0.86
+DISTNAME=	bxform-088
+PKGNAME=	xforms-0.88
 CATEGORIES=	graphics x11
 MASTER_SITES=	ftp://einstein.phys.uwm.edu/pub/xforms/freeBSD/
 EXTRACT_SUFX=	.tgz
