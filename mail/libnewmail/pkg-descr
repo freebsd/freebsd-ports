@@ -1,0 +1,10 @@
+libnewmail is a generic mail checking library for Unix/Linux
+and other operating systems. It supports a simple API, an
+extensible plugin architecture and asynchronous queries among
+other features. Applications linking to libnewmail may enumerate
+configured mailboxes, query mail box information and status and
+request a mail spool auto-detection for users without any
+libnewmail specific configuration. The library offers a clean
+API to implement your own mail checking plugins.
+
+WWW: http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail
