@@ -21,27 +21,3 @@ processing config.c.in.
  
  MAKEINFO = `if [ -f $$r/texinfo/makeinfo/Makefile ] ; \
  	then echo $$r/texinfo/makeinfo/makeinfo ; \
-
-The top level Makefile overrides the use of BISON to just "bison" instead
-of bison -y, so use YACC, since that's what we're trying to define anyway.
-
---- gnats/Makefile.in	Mon Aug 18 14:52:44 1997
-+++ gnats/Makefile.in	Tue Aug 26 14:45:55 1997
-@@ -118,7 +118,7 @@
- # Set RANLIB = echo if your system doesn't have or need ranlib.
- RANLIB = @RANLIB@
- 
--BISON = @YACC@
-+YACC = @YACC@
- DIFFOPT = @DIFFOPT@
- 
- # These are set by autoconf.
-@@ -435,7 +435,7 @@
- 
- getdate.c: getdate.y
- 	@echo expect 10 shift/reduce conflicts
--	$(BISON) -d $(srcdir)/getdate.y
-+	$(YACC) -d $(srcdir)/getdate.y
- 	mv y.tab.c getdate.c
- 	mv y.tab.h getdate.h
- 
