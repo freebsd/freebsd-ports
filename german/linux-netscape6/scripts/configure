@@ -9,13 +9,7 @@ fi
 
 tempfile=`/usr/bin/mktemp -t checklist`
 
-if [ "${BATCH}" ]; then
-	if [ "${NETSCAPE6_OPTIONS}" ]; then
-		set ${NETSCAPE6_OPTIONS}
-	else
-		set \"zlib\" \"MySQL\"
-	fi
-else
+if [ -z "${BATCH}" ]; then
 
 /usr/bin/dialog --title "Netscape 6 component selection" --clear \
 	--checklist "\n\
