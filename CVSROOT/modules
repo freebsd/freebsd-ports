@@ -412,6 +412,7 @@ aterm		ports/x11/aterm
 atk		ports/devel/atk
 atlas		ports/devel/atlas
 atlast		ports/lang/atlast
+atlc		ports/cad/atlc
 atm		src/sbin/atm/atm
 atmarpd		src/usr.sbin/atm/atmarpd
 atomix		ports/games/atomix
