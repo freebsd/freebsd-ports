@@ -1,4 +1,3 @@
-bin/GnomeScott
 bin/ctali
 bin/freecell
 bin/gataxx
@@ -12,7 +11,6 @@ bin/gnomine
 bin/gnotravex
 bin/gnotski
 bin/gtali
-bin/gturing
 bin/iagno
 bin/mahjongg
 bin/same-gnome
@@ -36,7 +34,6 @@ share/gnome/apps/Games/gnomine.desktop
 share/gnome/apps/Games/gnotravex.desktop
 share/gnome/apps/Games/gnotski.desktop
 share/gnome/apps/Games/gtali.desktop
-share/gnome/apps/Games/gturing.desktop
 share/gnome/apps/Games/iagno.desktop
 share/gnome/apps/Games/mahjongg.desktop
 share/gnome/apps/Games/same-gnome.desktop
@@ -147,16 +144,6 @@ share/gnome/gnome-stones/objects/libgnome-stones.so
 share/gnome/gnome-stones/objects/libgnomekoban.a
 share/gnome/gnome-stones/objects/libgnomekoban.so
 share/gnome/gnome-stones/tutorial.caves
-share/gnome/gturing/examples/3ones2zeroes.tur
-share/gnome/gturing/examples/add.tur
-share/gnome/gturing/examples/addbin.tur
-share/gnome/gturing/examples/bb2.tur
-share/gnome/gturing/examples/bb3.tur
-share/gnome/gturing/examples/bb5.tur
-share/gnome/gturing/examples/bin2dec.tur
-share/gnome/gturing/examples/dashnumbers.tur
-share/gnome/gturing/examples/dec2bin.tur
-share/gnome/gturing/examples/subst.tur
 share/gnome/help/aisleriot/C/agnes.sgml
 share/gnome/help/aisleriot/C/aisleriot.sgml
 share/gnome/help/aisleriot/C/auld_lang_syne.sgml
@@ -217,6 +204,7 @@ share/gnome/help/aisleriot/C/spider.sgml
 share/gnome/help/aisleriot/C/spiderette.sgml
 share/gnome/help/aisleriot/C/straight_up.sgml
 share/gnome/help/aisleriot/C/streets_and_alleys.sgml
+share/gnome/help/aisleriot/C/ten_across.sgml
 share/gnome/help/aisleriot/C/thieves.sgml
 share/gnome/help/aisleriot/C/thirteen.sgml
 share/gnome/help/aisleriot/C/thumb_and_pouch.sgml
@@ -340,16 +328,9 @@ share/gnome/help/gnotravex/es/topic.dat
 share/gnome/help/gtali/C/figures/mainwindow.png
 share/gnome/help/gtali/C/figures/preferences.png
 share/gnome/help/gtali/C/gtali.sgml
-share/gnome/help/gtali/C/index.html
 share/gnome/help/gtali/C/topic.dat
 share/gnome/help/gtali/da/index.html
 share/gnome/help/gtali/da/topic.dat
-share/gnome/help/gturing/C/figures/mainwin.png
-share/gnome/help/gturing/C/gturing.sgml
-share/gnome/help/gturing/C/topic.dat
-share/gnome/help/gturing/it/figures/mainwin.png
-share/gnome/help/gturing/it/gturing.sgml
-share/gnome/help/gturing/it/topic.dat
 share/gnome/help/iagno/C/figures/ANIMATION.png
 share/gnome/help/iagno/C/figures/BLOCK.png
 share/gnome/help/iagno/C/figures/FIRST.png
@@ -405,8 +386,6 @@ share/gnome/omf/gnome-games/gnome-stones-it.omf
 share/gnome/omf/gnome-games/gnotravex-C.omf
 share/gnome/omf/gnome-games/gnotravex-es.omf
 share/gnome/omf/gnome-games/gtali-C.omf
-share/gnome/omf/gnome-games/gturing-C.omf
-share/gnome/omf/gnome-games/gturing-it.omf
 share/gnome/omf/gnome-games/iagno-C.omf
 share/gnome/omf/gnome-games/iagno-it.omf
 share/gnome/omf/gnome-games/mahjongg-C.omf
@@ -476,7 +455,6 @@ share/gnome/pixmaps/gnome-aisleriot.png
 share/gnome/pixmaps/gnome-gnobots2.png
 share/gnome/pixmaps/gnome-gtali.png
 share/gnome/pixmaps/gnome-gtetris.png
-share/gnome/pixmaps/gnome-gturing.png
 share/gnome/pixmaps/gnome-mahjongg.png
 share/gnome/pixmaps/gnome-nibbles.png
 share/gnome/pixmaps/gnome-stones-file.png
@@ -592,6 +570,7 @@ share/gnome/sol-games/spider.scm
 share/gnome/sol-games/spiderette.scm
 share/gnome/sol-games/straight_up.scm
 share/gnome/sol-games/streets_and_alleys.scm
+share/gnome/sol-games/ten_across.scm
 share/gnome/sol-games/thieves.scm
 share/gnome/sol-games/thirteen.scm
 share/gnome/sol-games/thumb_and_pouch.scm
@@ -781,13 +760,6 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/iagno/C/figures
 @dirrm share/gnome/help/iagno/C
 @dirrm share/gnome/help/iagno
-@dirrm share/gnome/help/gturing/it/stylesheet-images
-@dirrm share/gnome/help/gturing/it/figures
-@dirrm share/gnome/help/gturing/it
-@dirrm share/gnome/help/gturing/C/stylesheet-images
-@dirrm share/gnome/help/gturing/C/figures
-@dirrm share/gnome/help/gturing/C
-@dirrm share/gnome/help/gturing
 @dirrm share/gnome/help/gtali/da
 @dirrm share/gnome/help/gtali/C/stylesheet-images
 @dirrm share/gnome/help/gtali/C/figures
@@ -839,8 +811,6 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-games.mo
 @dirrm share/gnome/help/aisleriot/C/figures
 @dirrm share/gnome/help/aisleriot/C
 @dirrm share/gnome/help/aisleriot
-@dirrm share/gnome/gturing/examples
-@dirrm share/gnome/gturing
 @dirrm share/gnome/gnome-stones/objects
 @dirrm share/gnome/gnome-stones
 @dirrm share/gnome/gnobots2
