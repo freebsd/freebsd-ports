@@ -7,6 +7,7 @@
 
 PORTNAME=	libiconv
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	converters devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -34,10 +35,17 @@ MAN3=		iconv.3 iconv_open.3 iconv_close.3
 CONFIGURE_ARGS+=	--enable-extra-encodings
 .endif
 
+.if defined(WITH_EXTRA_PATCHES)
+PATCH_SITES+=	http://www2d.biglobe.ne.jp/~msyk/software/libiconv/
+PATCHFILES+=	${DISTNAME}-cp932.patch.gz
+PATCH_DIST_STRIP+=	-p1
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "libiconv has the following tunable option(s):"
 	@${ECHO_MSG} "	WITHOUT_EXTRA_ENCODINGS=yes	Disable extra character sets"
+	@${ECHO_MSG} "	WITH_EXTRA_PATCHES=yes		Apply extra patches (fixes cp932, adds EUCJP-MS)"
 	@${ECHO_MSG} ""
 
 post-patch:
