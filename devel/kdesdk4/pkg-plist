@@ -380,43 +380,22 @@ share/icons/hicolor/48x48/mimetypes/gettext.png
 share/icons/locolor/16x16/apps/catalogmanager.png
 share/icons/locolor/16x16/apps/kbabel.png
 share/icons/locolor/16x16/apps/kbabeldict.png
+share/icons/locolor/16x16/apps/kbugbuster.png
 share/icons/locolor/16x16/apps/kompare.png
 share/icons/locolor/16x16/mimetypes/gettext.png
 share/icons/locolor/32x32/apps/catalogmanager.png
 share/icons/locolor/32x32/apps/kbabel.png
 share/icons/locolor/32x32/apps/kbabeldict.png
+share/icons/locolor/32x32/apps/kbugbuster.png
 share/icons/locolor/32x32/apps/kompare.png
 share/icons/locolor/32x32/mimetypes/gettext.png
 share/mimelnk/application/x-gettext.desktop
 share/services/kompare_part.desktop
 share/services/pothumbnail.desktop
-@comment directories
-@dirrm share/services
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
 @dirrm share/icons/locolor/32x32/mimetypes
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/mimetypes
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/mimetypes
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/mimetypes
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor/16x16/mimetypes
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kbabel
 %%CERVISIA%%@dirrm share/doc/HTML/en/cervisia
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/apps/komparepart
 @dirrm share/apps/kompare/icons/locolor/32x32/apps
 @dirrm share/apps/kompare/icons/locolor/32x32
@@ -478,8 +457,4 @@ share/services/pothumbnail.desktop
 @dirrm share/apps/catalogmanager/icons/hicolor
 @dirrm share/apps/catalogmanager/icons
 @dirrm share/apps/catalogmanager
-@dirrm share/apps
-@dirrm share/applnk/Development
-@dirrm share/applnk
-@dirrm lib/kde3
 @dirrm include/kbabel

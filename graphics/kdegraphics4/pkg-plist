@@ -275,17 +275,10 @@ share/services/kfile_ps.desktop
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
 %%KAMERA%%@dirrm share/icons/hicolor/32x32/filesystems
 %%KAMERA%%@dirrm share/icons/hicolor/32x32/devices
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
 %%KAMERA%%@dirrm share/icons/hicolor/16x16/devices
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16/actions
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kview
 @dirrm share/doc/HTML/en/kuickshow
 @dirrm share/doc/HTML/en/ksnapshot
@@ -297,9 +290,6 @@ share/services/kfile_ps.desktop
 @dirrm share/doc/HTML/en/kfract
 @dirrm share/doc/HTML/en/kdvi
 @dirrm share/doc/HTML/en/kcoloredit
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/apps/kviewshell
 @dirrm share/apps/kviewerpart
 @dirrm share/apps/kview/toolbar
@@ -320,9 +310,7 @@ share/services/kfile_ps.desktop
 @dirrm share/apps/kfax
 @dirrm share/apps/kdvi/toolbar
 @dirrm share/apps/kdvi
-@dirrm share/apps
 %%KAMERA%%@dirrm share/applnk/Settings/Peripherals
 %%KAMERA%%@dirrm share/applnk/Settings
 @dirrm share/applnk/Graphics
 @dirrm share/applnk
-@dirrm lib/kde3

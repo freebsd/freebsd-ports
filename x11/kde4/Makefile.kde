@@ -15,6 +15,8 @@ COPY=	-c -p
 .if defined(KDE_I18N)
 _NO_KDE_FINAL=	yes
 _NO_KDE_NDEBUG=	yes
+DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PKGNAMEPREFIX:S/-$//}
 .endif
 
 # Unfortunately, this feature doesn't work right now due to binary files.

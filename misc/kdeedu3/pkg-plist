@@ -663,9 +663,6 @@ share/icons/locolor/32x32/apps/kmessedwords.png
 share/icons/locolor/32x32/apps/kstars.png
 share/icons/locolor/48x48/apps/kstars.png
 share/mimelnk/application/x-edu.desktop
-@comment directories
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
 @dirrm share/icons/locolor/48x48/apps
 @dirrm share/icons/locolor/48x48
 @dirrm share/icons/locolor/32x32/apps
@@ -674,26 +671,15 @@ share/mimelnk/application/x-edu.desktop
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/apps
-@dirrm share/icons/hicolor/22x22
-@dirrm share/icons/hicolor/16x16/apps
-@dirrm share/icons/hicolor/16x16
-@dirrm share/icons/hicolor
-@dirrm share/icons
 @dirrm share/doc/HTML/en/kvoctrain
-@dirrm share/doc/HTML/en/kuickshow
 @dirrm share/doc/HTML/en/ktouch
 @dirrm share/doc/HTML/en/kstars
 @dirrm share/doc/HTML/en/kmessedwords
 @dirrm share/doc/HTML/en/klettres
 @dirrm share/doc/HTML/en/khangman
 @dirrm share/doc/HTML/en/kgeo
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/doc
 @dirrm share/apps/kvoctrain/examples
 @dirrm share/apps/kvoctrain
 @dirrm share/apps/ktouch
@@ -717,7 +703,6 @@ share/mimelnk/application/x-edu.desktop
 @dirrm share/apps/keduca/icons/hicolor
 @dirrm share/apps/keduca/icons
 @dirrm share/apps/keduca
-@dirrm share/apps
 @dirrm share/applnk/Edutainment/French
 @dirrm share/applnk/Edutainment
 @dirrm share/applnk

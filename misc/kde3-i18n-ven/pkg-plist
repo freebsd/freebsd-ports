@@ -16,6 +16,7 @@ share/locale/ven/LC_MESSAGES/kate.mo
 share/locale/ven/LC_MESSAGES/katehelloworld.mo
 share/locale/ven/LC_MESSAGES/katehtmltools.mo
 share/locale/ven/LC_MESSAGES/kateopenheader.mo
+share/locale/ven/LC_MESSAGES/katepart.mo
 share/locale/ven/LC_MESSAGES/katetextfilter.mo
 share/locale/ven/LC_MESSAGES/kcmaccess.mo
 share/locale/ven/LC_MESSAGES/kcmarts.mo
@@ -41,14 +42,18 @@ share/locale/ven/LC_MESSAGES/kcmkio.mo
 share/locale/ven/LC_MESSAGES/kcmkonq.mo
 share/locale/ven/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/ven/LC_MESSAGES/kcmkonsole.mo
+share/locale/ven/LC_MESSAGES/kcmktalkd.mo
 share/locale/ven/LC_MESSAGES/kcmkurifilt.mo
 share/locale/ven/LC_MESSAGES/kcmkwindecoration.mo
 share/locale/ven/LC_MESSAGES/kcmkwintheme.mo
 share/locale/ven/LC_MESSAGES/kcmkwm.mo
+share/locale/ven/LC_MESSAGES/kcmkxmlrpcd.mo
+share/locale/ven/LC_MESSAGES/kcmlanbrowser.mo
 share/locale/ven/LC_MESSAGES/kcmlaunch.mo
 share/locale/ven/LC_MESSAGES/kcmlayout.mo
 share/locale/ven/LC_MESSAGES/kcmlocale.mo
 share/locale/ven/LC_MESSAGES/kcmmidi.mo
+share/locale/ven/LC_MESSAGES/kcmnewsticker.mo
 share/locale/ven/LC_MESSAGES/kcmnic.mo
 share/locale/ven/LC_MESSAGES/kcmnotify.mo
 share/locale/ven/LC_MESSAGES/kcmsamba.mo
@@ -69,6 +74,8 @@ share/locale/ven/LC_MESSAGES/kdeprintfax.mo
 share/locale/ven/LC_MESSAGES/kdesktop.mo
 share/locale/ven/LC_MESSAGES/kdesu.mo
 share/locale/ven/LC_MESSAGES/kdesud.mo
+share/locale/ven/LC_MESSAGES/kdict.mo
+share/locale/ven/LC_MESSAGES/kdictapplet.mo
 share/locale/ven/LC_MESSAGES/kdmchooser.mo
 share/locale/ven/LC_MESSAGES/kdmconfig.mo
 share/locale/ven/LC_MESSAGES/kdmgreet.mo
@@ -84,6 +91,7 @@ share/locale/ven/LC_MESSAGES/kio_finger.mo
 share/locale/ven/LC_MESSAGES/kio_floppy.mo
 share/locale/ven/LC_MESSAGES/kio_help.mo
 share/locale/ven/LC_MESSAGES/kio_imap4.mo
+share/locale/ven/LC_MESSAGES/kio_lan.mo
 share/locale/ven/LC_MESSAGES/kio_man.mo
 share/locale/ven/LC_MESSAGES/kio_nfs.mo
 share/locale/ven/LC_MESSAGES/kio_nntp.mo
@@ -98,6 +106,7 @@ share/locale/ven/LC_MESSAGES/klegacyimport.mo
 share/locale/ven/LC_MESSAGES/klettres.mo
 share/locale/ven/LC_MESSAGES/klipper.mo
 share/locale/ven/LC_MESSAGES/klock.mo
+share/locale/ven/LC_MESSAGES/kmcop.mo
 share/locale/ven/LC_MESSAGES/kmenuedit.mo
 share/locale/ven/LC_MESSAGES/kminipagerapplet.mo
 share/locale/ven/LC_MESSAGES/knotify.mo
@@ -124,9 +133,11 @@ share/locale/ven/LC_MESSAGES/kwin_icewm_config.mo
 share/locale/ven/LC_MESSAGES/kwin_modernsys_config.mo
 share/locale/ven/LC_MESSAGES/kwin_quartz_config.mo
 share/locale/ven/LC_MESSAGES/kxkb.mo
+share/locale/ven/LC_MESSAGES/kxmlrpcd.mo
 share/locale/ven/LC_MESSAGES/libkicker.mo
 share/locale/ven/LC_MESSAGES/libkickermenu_kdeprint.mo
 share/locale/ven/LC_MESSAGES/libkonq.mo
+share/locale/ven/LC_MESSAGES/libkscreensaver.mo
 share/locale/ven/LC_MESSAGES/libtaskbar.mo
 share/locale/ven/LC_MESSAGES/libtaskmanager.mo
 share/locale/ven/LC_MESSAGES/lockout.mo

@@ -98,7 +98,7 @@ CONFIGURE_ENV+=        MOC="${MOC}" QTDIR="${QTDIR}"
 
 # Yeah, it's namespace pollution, but this is really the best place for this
 # stuff since arts/kdelibs use it.
-KDE_VERSION=	3.0.2
+KDE_VERSION=	3.0.3
 KDE_ORIGVER=	3.0.1
 KDE_PREFIX?=	${LOCALBASE}
 

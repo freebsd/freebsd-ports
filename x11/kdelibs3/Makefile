@@ -7,7 +7,6 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES?=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -25,6 +24,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		cups.2:${PORTSDIR}/print/cups-base \
 		xslt.1:${PORTSDIR}/textproc/libxslt
+RUN_DEPENDS=	${FONTSCALE}:${PORTSDIR}/x11-fonts/XFree86-4-fontScalable \
+		${FONTENCOD}:${PORTSDIR}/x11-fonts/XFree86-4-fontEncodings
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
@@ -38,6 +39,8 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 PREFIX?=	${KDE_PREFIX}
 CONFIGURE_ARGS+=--enable-cups --disable-ltdl-install
+FONTSCALE=	${X11BASE}/lib/X11/fonts/PEX/Roman.phont
+FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
 
 .include "${.CURDIR}/../kde3/Makefile.kde"
 
