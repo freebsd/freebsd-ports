@@ -6,8 +6,6 @@
     SUBDIR += apel-emacs
     SUBDIR += apel-emacs20
     SUBDIR += apel-mule
-    SUBDIR += apel-xemacs
-    SUBDIR += apel-xemacs20
     SUBDIR += apel-xemacs21-mule
     SUBDIR += asedit
     SUBDIR += axe
@@ -41,10 +39,6 @@
     SUBDIR += flim-emacs20-current
     SUBDIR += flim-mule
     SUBDIR += flim-mule-current
-    SUBDIR += flim-xemacs
-    SUBDIR += flim-xemacs-current
-    SUBDIR += flim-xemacs20
-    SUBDIR += flim-xemacs20-current
     SUBDIR += flim-xemacs21-mule
     SUBDIR += flim-xemacs21-mule-current
     SUBDIR += fte
@@ -104,10 +98,6 @@
     SUBDIR += semi-emacs20-current
     SUBDIR += semi-mule
     SUBDIR += semi-mule-current
-    SUBDIR += semi-xemacs
-    SUBDIR += semi-xemacs-current
-    SUBDIR += semi-xemacs20
-    SUBDIR += semi-xemacs20-current
     SUBDIR += semi-xemacs21-mule
     SUBDIR += semi-xemacs21-mule-current
     SUBDIR += staroffice5
@@ -134,17 +124,12 @@
     SUBDIR += wemi-emacs20-current
     SUBDIR += wemi-mule
     SUBDIR += wemi-mule-current
-    SUBDIR += wemi-xemacs
-    SUBDIR += wemi-xemacs-current
-    SUBDIR += wemi-xemacs20
-    SUBDIR += wemi-xemacs20-current
     SUBDIR += wemi-xemacs21-mule
     SUBDIR += wemi-xemacs21-mule-current
     SUBDIR += wily
     SUBDIR += wordperfect
     SUBDIR += xcoral
     SUBDIR += xed
-    SUBDIR += xemacs
     SUBDIR += xemacs-additional-packages
     SUBDIR += xemacs-basic-mule-packages
     SUBDIR += xemacs-comm-packages
@@ -155,7 +140,6 @@
     SUBDIR += xemacs-packages
     SUBDIR += xemacs-prog-packages
     SUBDIR += xemacs-wp-packages
-    SUBDIR += xemacs20
     SUBDIR += xemacs21
     SUBDIR += xemacs21-mule
     SUBDIR += xemacs21-mule-common
