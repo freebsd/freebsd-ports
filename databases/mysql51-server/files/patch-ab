@@ -1,15 +1,6 @@
---- scripts/mysql_install_db.sh.orig	Fri Sep  8 09:50:24 2000
-+++ scripts/mysql_install_db.sh	Sat Sep 23 21:13:37 2000
-@@ -21,8 +21,6 @@
-    case "$1" in
-    -*) eqvalue="`echo $1 |sed 's/[-_a-zA-Z0-9]*=//'`"
-        case "$1" in
--       -IN-RPM) IN_RPM=1
--                ;;
-        --force) force=1
-                 ;;
-        --no-defaults)     defaults="$1"; CONFIG_FILES=/nonexistent
-@@ -304,12 +302,6 @@
+--- scripts/mysql_install_db.sh.orig	Sat Dec 16 22:49:02 2000
++++ scripts/mysql_install_db.sh	Mon Dec 18 11:55:07 2000
+@@ -301,12 +301,6 @@
  END_OF_DATA
  then
    echo ""

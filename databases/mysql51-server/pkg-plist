@@ -16,6 +16,7 @@ bin/mysql_zap
 bin/mysqlaccess
 bin/mysqlbinlog
 bin/mysqlbug
+bin/mysqld_multi
 bin/mysqldumpslow
 bin/mysqlhotcopy
 bin/pack_isam
