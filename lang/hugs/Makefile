@@ -22,9 +22,14 @@ USE_SIZE=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --enable-ffi
+CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	default ffihugs
 
 MAN1=		hugs.1 hugs-package.1
+
+.if ${MACHINE_ARCH:L} == "amd64"
+CFLAGS+=       "-fPIC"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^install		:: install_notes/d ; \
@@ -32,7 +37,7 @@ post-patch:
 		${WRKSRC}/MkInstal.in
 
 do-configure:
-	@(cd ${WRKSRC}/unix && ./configure ${CONFIGURE_ARGS})
+	@(cd ${WRKSRC}/unix && ${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS})
 
 .if !defined(NOPORTDOCS)
 post-install:
