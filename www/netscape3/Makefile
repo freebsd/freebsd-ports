@@ -29,7 +29,7 @@ DISTFILES+=	${FORTIFY}.tar.gz
 RESTRICTED=     "Contains strong cryptography"
 .endif
 
-FORTIFY=	Fortify-1.4.5-unix-x86
+FORTIFY=	Fortify-1.4.6-unix-x86
 
 .if !defined(USE_128BIT)
 pre-extract:
