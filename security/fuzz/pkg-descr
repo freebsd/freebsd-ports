@@ -1,0 +1,4 @@
+Fuzz is a tool for testing other software. It does this by bombarding
+the program being evaluated with random data.
+
+WWW: http://fuzz.sourceforge.net/
