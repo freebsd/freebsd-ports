@@ -3077,6 +3077,7 @@ jakarta-tomcat3	ports/www/jakarta-tomcat3
 jakarta-tomcat4	ports/www/jakarta-tomcat4
 jakarta-tomcat41	ports/www/jakarta-tomcat41
 jam		ports/devel/jam
+jamlib		ports/mail/jamlib
 janosvm		ports/java/janosvm
 jargon		ports/misc/jargon
 jarl		ports/net/jarl
