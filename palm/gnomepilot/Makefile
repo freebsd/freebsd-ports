@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomepilot
-PORTVERSION=	0.1.50
+PORTVERSION=	0.1.51
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	http://www.gnome.org/gnome-pilot/download/
 DISTNAME=	gnome-pilot-${PORTVERSION}
