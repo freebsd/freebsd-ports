@@ -1,0 +1,16 @@
+--- Imakefile.orig	Fri May 19 18:21:44 2000
++++ Imakefile	Sun Dec 10 18:01:18 2000
+@@ -6,12 +6,5 @@
+  OSMINORVERSION = OSMinorVersion
+       DEFINES = -DOSMAJORVERSION=$(OSMAJORVERSION) -DOSMINORVERSION=$(OSMINORVERSION) 
+ 
+-AllTarget(xwipower)
+-NormalProgramTarget(xwipower,$(OBJS),$(DEPLIBS),$(LOCAL_LIBRARIES),NullParameter)
+-InstallProgram(xwipower,$(BINDIR))
+-
++ComplexProgramTargetNoMan(xwipower)
+ InstallAppDefaults(Xwipower)
+-
+-###InstallManPage(xwipower,$(MANDIR))
+-
+-DependTarget()
