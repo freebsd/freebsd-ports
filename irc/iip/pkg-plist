@@ -1,0 +1,15 @@
+sbin/isproxy
+sbin/isproxy-real
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/protocol/cs-iip1.txt
+%%PORTDOCS%%%%DOCSDIR%%/protocol/cs-iip11.txt
+%%PORTDOCS%%%%DOCSDIR%%/protocol/spurt.txt
+%%PORTDOCS%%%%DOCSDIR%%/protocol/steady.txt
+%%PORTDOCS%%%%DATADIR%%/node.ref
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/protocol
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -1,0 +1,20 @@
+[ excerpt from developer's www site ]
+
+Invisible IRC Project (IIP) is a three-tier, peer distributed network
+designed to be a secure and private transport medium for high speed,
+low volume, dynamic content.
+
+IIP is Internet Relay Chat privacy software designed for anonymity
+and security. It acts as an advanced proxy between your IRC client
+and servers by utilizing an encrypted mixnet with fake traffic and
+three-layered (user, relay, and broadcast) protection.
+
+IIP was originally created so that people interested in facilitating
+privacy and free speech could work to these ends in an equally
+secure and anonymous environment. It has now become a haven for
+anyone seeking anonymous, encrypted Internet Relay Chat. The project's
+inspiration arose primarily from a shared interest in the FreeNet
+Project and a desire to provide the real-time communications
+capabilities that FreeNet could not.
+
+WWW: http://www.invisiblenet.net/iip/
