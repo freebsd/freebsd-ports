@@ -9,8 +9,8 @@
 CATEGORIES=	korean net
 
 PATCH_SITES=	http://master.debian.or.kr/~alee/patch/
-PATCHFILES=	gaim-0.55-i18n.diff
-PATCH_DIST_STRIP= -p1
+PATCHFILES=	gaim-0.57-i18n.diff
+#PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	cjh@FreeBSD.org
 
