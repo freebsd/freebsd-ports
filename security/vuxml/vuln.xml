@@ -4176,6 +4176,10 @@ misc.c:
         <name>{de-,fr-,pt_BR-}netscape7</name>
         <range><le>7.02</le></range>
       </package>
+      <package>
+        <name>ImageMagick{,-nox11}</name>
+        <range><lt>6.0.4.2</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -4204,11 +4208,12 @@ misc.c:
       <url>http://secunia.com/advisories/12219</url>
       <url>http://secunia.com/advisories/12232</url>
       <url>http://bugzilla.mozilla.org/show_bug.cgi?id=251381</url>
+      <url>http://secunia.com/advisories/12236</url>
     </references>
     <dates>
       <discovery>2004-08-04</discovery>
       <entry>2004-08-04</entry>
-      <modified>2004-08-06</modified>
+      <modified>2004-08-09</modified>
     </dates>
   </vuln>
 
