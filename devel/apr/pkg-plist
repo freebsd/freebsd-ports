@@ -67,8 +67,8 @@ include/apr-1/apr_xml.h
 include/apr-1/apu.h
 include/apr-1/apu_version.h
 include/apr-1/apu_want.h
-lib/pkgconfig/apr-1.pc
-lib/pkgconfig/apr-util-1.pc
+libdata/pkgconfig/apr-1.pc
+libdata/pkgconfig/apr-util-1.pc
 lib/apr.exp
 lib/aprutil.exp
 lib/libapr-1.a
@@ -77,6 +77,6 @@ lib/libapr-1.so.0
 lib/libaprutil-1.a
 lib/libaprutil-1.so
 lib/libaprutil-1.so.0
-@unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm build-1
 @dirrm include/apr-1
