@@ -5856,6 +5856,7 @@ sigit		ports/mail/sigit
 sigrot		ports/mail/sigrot
 silc-client	ports/net/silc-client
 silc-server	ports/net/silc-server
+silc-toolkit	ports/devel/silc-toolkit
 sim		ports/emulators/sim
 sim4		ports/biology/sim4
 sim6811		ports/emulators/sim6811
