@@ -653,6 +653,7 @@
     SUBDIR += socketbind
     SUBDIR += socks5
     SUBDIR += spread
+    SUBDIR += spread-j
     SUBDIR += ssldump
     SUBDIR += staticcharge
     SUBDIR += sting
