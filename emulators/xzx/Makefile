@@ -3,10 +3,10 @@
 # Date created:         13 Nov 1997
 # Whom:                 Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.10 1999/05/09 14:15:00 flathill Exp $
+# $Id: Makefile,v 1.11 1999/06/21 11:06:58 sheldonh Exp $
 #
 
-DISTNAME=	xzx-2.8.1
+DISTNAME=	xzx-2.9.0
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/emulators/zx
