@@ -1,7 +1,1 @@
 bin/wmtop
-%%PORTDOCS%%share/doc/wmtop/BUGS
-%%PORTDOCS%%share/doc/wmtop/CHANGES
-%%PORTDOCS%%share/doc/wmtop/COPYING
-%%PORTDOCS%%share/doc/wmtop/README
-%%PORTDOCS%%share/doc/wmtop/TODO
-%%PORTDOCS%%@dirrm share/doc/wmtop
