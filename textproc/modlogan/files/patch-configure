@@ -1,0 +1,40 @@
+--- configure.orig	Wed Sep  5 16:56:33 2001
++++ configure	Thu Sep  6 14:00:42 2001
+@@ -260,7 +260,6 @@
+ : ${ac_max_here_lines=38}
+ 
+ ac_unique_file="src/main.c"
+-ac_subdirs_all="$ac_subdirs_all libltdl"
+ # Factoring default headers for most tests.
+ ac_includes_default="\
+ #include <stdio.h>
+@@ -7610,6 +7609,9 @@
+   	# PORTME does your system automatically load deplibs for dlopen()?
+ 	libltdl_cv_sys_dlopen_deplibs=unknown
+ 	case "$host_os" in
++	freebsd*)
++	  libltdl_cv_sys_dlopen_deplibs=yes
++	  ;;
+ 	linux*)
+ 	  libltdl_cv_sys_dlopen_deplibs=yes
+ 	  ;;
+@@ -11850,7 +11852,7 @@
+ 
+ CFLAGS="${ac_save_CFLAGS}"  # don't use CFLAGS from libtool
+ 
+-subdirs="$subdirs libltdl"
++subdirs="$subdirs"
+ 
+ echo "$as_me:11855: checking for dmalloc.h" >&5
+ echo $ECHO_N "checking for dmalloc.h... $ECHO_C" >&6
+@@ -14476,7 +14478,9 @@
+ 	    if test "$gt_cv_func_gettext_libintl" = "yes"; then
+ 	      INTLLIBS='-lintl'
+ 	    fi
+-
++	if test "$gt_cv_func_gettext_libintl" = "yes"; then
++		INTLLIBS='-lintl'
++	fi
+ fi
+ 
+         if test "$CATOBJEXT" = "NONE"; then
