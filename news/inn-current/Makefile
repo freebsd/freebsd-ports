@@ -17,9 +17,9 @@ MAINTAINER=	des@FreeBSD.org
 USE_GMAKE=YES
 USE_PERL5=	yes
 
-.if exists(/var/news)
+.if exists(/var/news) && !defined(PACKAGE_BUILDING)
 INN_NEWSSPOOL?=/var/news
-.elif exists(/var/spool/news)
+.elif exists(/var/spool/news) && !defined(PACKAGE_BUILDING)
 INN_NEWSSPOOL?=/var/spool/news
 .else
 INN_NEWSSPOOL?=${PREFIX}/news/spool
