@@ -11,12 +11,13 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.vterrain.org/pub/vterrain/dist/
 MASTER_SITE_SUBDIR=	rhh
-DISTFILES=	TerrainSDK-${PORTVERSION}.zip
+DISTNAME=	TerrainSDK-${PORTVERSION}
 
 MAINTAINER=	aa8vb@nc.rr.com
 
+BUILD_DEPENDS=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
+RUN_DEPENDS=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
 LIB_DEPENDS=    netcdf.1:${PORTSDIR}/math/netcdf \
-		osg.1:${PORTSDIR}/graphics/osg \
 		png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/TerrainSDK
