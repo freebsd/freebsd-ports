@@ -11,9 +11,9 @@ share/wmbattery/icons/smallfont.xpm
 share/wmbattery/icons/unplugged.xpm
 share/wmbattery/icons/plugged.xpm
 share/wmbattery/icons/bigfont.xpm
-share/wmbattery/INSTALL
-share/wmbattery/README
-share/wmbattery/TODO
+%%PORTDOCS%%share/doc/wmbattery/README
+%%PORTDOCS%%share/doc/wmbattery/TODO
 @dirrm share/wmbattery/icons
 @dirrm share/wmbattery
+%%PORTDOCS%%@dirrm share/doc/wmbattery
 bin/wmbattery

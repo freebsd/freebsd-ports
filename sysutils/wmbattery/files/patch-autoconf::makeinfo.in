@@ -1,0 +1,24 @@
+--- autoconf/makeinfo.in.orig	Wed Mar  7 13:04:40 2001
++++ autoconf/makeinfo.in	Tue May 29 14:11:06 2001
+@@ -1,6 +1,6 @@
+ bindir=@bindir@
+ exec_prefix=@exec_prefix@
+-icondir=@datadir@/icons/wmbattery
++icondir=@datadir@/wmbattery/icons
+ man1dir=@mandir@/man1
+ prefix=@prefix@
+ srcdir=@srcdir@
+@@ -33,7 +33,7 @@
+ install: all
+ 	$(INSTALL) -d $(bindir) $(man1dir) $(icondir)
+ 	$(INSTALL_PROGRAM) wmbattery $(bindir)
+-	$(INSTALL_DATA) $(srcdir)/wmbattery.1x $(man1dir)/wmbattery.1x
++	$(INSTALL_DATA) $(srcdir)/wmbattery.1x $(man1dir)/wmbattery.1
+ 	$(INSTALL_DATA) $(srcdir)/*.xpm $(icondir)
+ 
+ uninstall:
+@@ -43,3 +43,4 @@
+ 	$(CC) $(LDFLAGS) $(LIBS) wmbattery.o -o wmbattery
+ 
+ wmbattery.o: wmbattery.c wmbattery.h
++	$(CC) $(CFLAGS) $(CPPFLAGS) -c $<
