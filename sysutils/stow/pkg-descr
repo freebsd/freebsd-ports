@@ -12,4 +12,4 @@ never delete any files, directories, or links that appear in a Stow
 directory (e.g., /usr/local/stow/emacs), so it's always possible to
 rebuild the target tree (e.g., /usr/local).
 
-WWW: http://www.gnu.ai.mit.edu/software/stow/stow.html
+WWW: http://www.gnu.org/software/stow/
