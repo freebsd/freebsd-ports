@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	petit
 DISTNAME=	petit311p1
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	aquatique@rusunix.org
+MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	New variant of well-known GOGO-no-coda mp3 encoder
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm

@@ -25,7 +25,7 @@ MASTER_SITE_SUBDIR=	client/sources
 PKGNAMESUFFIX=	-client
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
-MAINTAINER=	aquatique@rusunix.org
+MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Secure Internet Live Conferencing (SILC) network client
 
 USE_BZIP2=	yes

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	ircd-hybrid-ru
 PKGNAMESUFFIX=	-hybrid-ru
 DISTNAME=	ircd-hybrid-ru-7.1rc2
 
-MAINTAINER=	aquatique@rusunix.org
+MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Russian version of well known hybrid IRC server
 
 CONFLICTS=	ircd*

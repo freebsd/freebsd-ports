@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://rusunix.org/pub/FreeBSD/distfiles/ \
 		http://aquatique.rusunix.org/
 DISTNAME=	${PORTNAME}v${PORTVERSION:S/./_/g}
 
-MAINTAINER=	aquatique@rusunix.org
+MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 
 USE_ICONV=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
 MASTER_SITE_SUBDIR=	silky
 
-MAINTAINER=	aquatique@rusunix.org
+MAINTAINER=	aquatique-ports@rambler.ru
 COMMENT=	A simple and easy to use graphical, os-independent SILC client
 
 LIB_DEPENDS=	silcclient-1.0.3:${PORTSDIR}/devel/silc-toolkit
