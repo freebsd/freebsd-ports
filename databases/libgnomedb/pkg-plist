@@ -38,9 +38,10 @@ include/libgnomedb/gnome-db-window.h
 include/libgnomedb/libgnomedb.h
 lib/bonobo/monikers/libmoniker_database.so
 lib/gnome-vfs-2.0/modules/libdatabase.so
+lib/libglade/2.0/libgnomedb.so
 lib/libgnomedb-2.a
 lib/libgnomedb-2.so
-lib/libgnomedb-2.so.2
+lib/libgnomedb-2.so.3
 libdata/pkgconfig/libgnomedb.pc
 libdata/bonobo/servers/GNOME_Database_Components.server
 libdata/bonobo/servers/GNOME_Database_Monikers.server
@@ -152,6 +153,8 @@ share/locale/pt_BR/LC_MESSAGES/libgnomedb-2.mo
 share/locale/ru/LC_MESSAGES/libgnomedb-2.mo
 share/locale/sk/LC_MESSAGES/libgnomedb-2.mo
 share/locale/sl/LC_MESSAGES/libgnomedb-2.mo
+share/locale/sr/LC_MESSAGES/libgnomedb-2.mo
+share/locale/sr@Latn/LC_MESSAGES/libgnomedb-2.mo
 share/locale/sv/LC_MESSAGES/libgnomedb-2.mo
 share/locale/ta/LC_MESSAGES/libgnomedb-2.mo
 share/locale/tr/LC_MESSAGES/libgnomedb-2.mo
