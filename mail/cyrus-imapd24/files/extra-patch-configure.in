@@ -1,21 +1,13 @@
 Index: configure.in
 diff -u configure.in.orig configure.in
---- configure.in.orig	Wed Jan  7 07:08:07 2004
-+++ configure.in	Sun Mar  7 23:53:03 2004
-@@ -925,6 +925,8 @@
- dnl and compile perl/cyradm
-     PERL_SUBDIRS="imap"
-     PERL="${with_perl}"
+--- configure.in.orig	Sat May 29 04:59:21 2004
++++ configure.in	Sat May 29 05:03:04 2004
+@@ -933,7 +933,7 @@
+ dnl add perl cccdlflags when building libraries -- this ensures that the
+ dnl libraries will be compiled as PIC if perl requires PIC objects
+ dnl -- this is needed on NetBSD, but seems to cause problems on atleast Solaris --
+-dnl    eval `${PERL} -V:cccdlflags`
 +    eval `${PERL} -V:cccdlflags`
-+    PERL_CCCDLFLAGS="$cccdlflags"
+     PERL_CCCDLFLAGS="$cccdlflags"
+     AC_SUBST(PERL_CCCDLFLAGS)
  fi
- 
- dnl for timsieved
-@@ -999,6 +1001,7 @@
- AC_SUBST(PERL_SUBDIRS)
- AC_SUBST(PERL_DEPSUBDIRS)
- AC_SUBST(PERL)
-+AC_SUBST(PERL_CCCDLFLAGS)
- 
- AH_TOP([
- /* $Id: configure.in,v 1.277 2004/01/06 22:08:07 rjs3 Exp $ */

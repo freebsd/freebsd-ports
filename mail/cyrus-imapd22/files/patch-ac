@@ -1,16 +1,7 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Mon May 17 06:05:03 2004
-+++ configure	Wed May 19 00:29:21 2004
-@@ -308,7 +308,7 @@
- # include <unistd.h>
- #endif"
- 
--ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os MAKEDEPEND cyrus_prefix service_path cyrus_user cyrus_group CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT RANLIB ac_ct_RANLIB SET_MAKE INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CPP EGREP AWK LIBOBJS LIB_SOCKET IPV6_OBJS PRE_SUBDIRS EXTRA_SUBDIRS DEPLIBS LOCALDEFS WITH_AUTH BDB_INC BDB_LIB CYRUSDB_OBJS SIEVE_OBJS SIEVE_LIBS SIEVE_CPPFLAGS YACC LEX LEXLIB LEX_OUTPUT_ROOT SIEVE_SUBDIRS WITH_NONBLOCK WITH_GMTOFF WITH_MAP WITH_LOCK cyrus_sigveclib WITH_PTS AFS_LIBS AFS_LDFLAGS LDAP_CPPFLAGS LDAP_LDFLAGS LDAP_LIBS SERVER_SUBDIRS OPENSSL_INC OPENSSL_LIB ZEPHYR_LIBS ZEPHYR_CPPFLAGS WITH_IDLE IMAP_PROGS COMPILE_ET COM_ERR_LIBS COM_ERR_LDFLAGS COM_ERR_CPPFLAGS LIB_CRYPT GSSAPI_LIBS GSSAPIBASE_LIBS LIB_DYN_SASL DYNSASLFLAGS LIB_SASL SASLFLAGS PERL MD5OBJ SNMP_SUBDIRS LIB_WRAP LIB_UCDSNMP LIB_RT IMAP_COM_ERR_LIBS IMAP_LIBS PERL_SUBDIRS PERL_DEPSUBDIRS LTLIBOBJS'
-+ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os host host_cpu host_vendor host_os MAKEDEPEND cyrus_prefix service_path cyrus_user cyrus_group CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT RANLIB ac_ct_RANLIB SET_MAKE INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CPP EGREP AWK LIBOBJS LIB_SOCKET IPV6_OBJS PRE_SUBDIRS EXTRA_SUBDIRS DEPLIBS LOCALDEFS WITH_AUTH BDB_INC BDB_LIB CYRUSDB_OBJS SIEVE_OBJS SIEVE_LIBS SIEVE_CPPFLAGS YACC LEX LEXLIB LEX_OUTPUT_ROOT SIEVE_SUBDIRS WITH_NONBLOCK WITH_GMTOFF WITH_MAP WITH_LOCK cyrus_sigveclib WITH_PTS AFS_LIBS AFS_LDFLAGS LDAP_CPPFLAGS LDAP_LDFLAGS LDAP_LIBS SERVER_SUBDIRS OPENSSL_INC OPENSSL_LIB ZEPHYR_LIBS ZEPHYR_CPPFLAGS WITH_IDLE IMAP_PROGS COMPILE_ET COM_ERR_LIBS COM_ERR_LDFLAGS COM_ERR_CPPFLAGS LIB_CRYPT GSSAPI_LIBS GSSAPIBASE_LIBS LIB_DYN_SASL DYNSASLFLAGS LIB_SASL SASLFLAGS PERL MD5OBJ SNMP_SUBDIRS LIB_WRAP LIB_UCDSNMP LIB_RT IMAP_COM_ERR_LIBS IMAP_LIBS PERL_SUBDIRS PERL_DEPSUBDIRS LTLIBOBJS PERL_CCCDLFLAGS'
- ac_subst_files=''
- 
- # Initialize some variables set by options.
+--- configure.orig	Sat May 29 03:08:17 2004
++++ configure	Sat May 29 04:38:20 2004
 @@ -6551,7 +6551,7 @@
  	    BDB_LIBADD=""
  	fi
@@ -34,29 +25,20 @@ diff -u configure.orig configure
    ;
    return 0;
  }
-@@ -13183,6 +13183,8 @@
+@@ -13502,6 +13502,7 @@
      EXTRA_SUBDIRS="${EXTRA_SUBDIRS} perl"
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
 +    eval `${PERL} -V:cccdlflags`
-+    PERL_CCCDLFLAGS="$cccdlflags"
- fi
+     PERL_CCCDLFLAGS="$cccdlflags"
  
- if test "$sievedir" != "no"; then
-@@ -13850,7 +13852,7 @@
+ fi
+@@ -14251,7 +14252,7 @@
  #define HAVE_UCDSNMP 1
  _ACEOF
  
--    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
-+    LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
-     echo "$as_me:$LINENO: checking for rpmdbOpen in -lrpm" >&5
+-      LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
++      LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
+       echo "$as_me:$LINENO: checking for rpmdbOpen in -lrpm" >&5
  echo $ECHO_N "checking for rpmdbOpen in -lrpm... $ECHO_C" >&6
  if test "${ac_cv_lib_rpm_rpmdbOpen+set}" = set; then
-@@ -14657,6 +14659,7 @@
- s,@LIB_SASL@,$LIB_SASL,;t t
- s,@SASLFLAGS@,$SASLFLAGS,;t t
- s,@PERL@,$PERL,;t t
-+s,@PERL_CCCDLFLAGS@,$PERL_CCCDLFLAGS,;t t
- s,@MD5OBJ@,$MD5OBJ,;t t
- s,@SNMP_SUBDIRS@,$SNMP_SUBDIRS,;t t
- s,@LIB_WRAP@,$LIB_WRAP,;t t

@@ -2,15 +2,6 @@ Index: lib/Makefile.in
 diff -u lib/Makefile.in.orig lib/Makefile.in
 --- lib/Makefile.in.orig	Thu Mar 11 06:25:39 2004
 +++ lib/Makefile.in	Wed May 19 00:34:19 2004
-@@ -60,7 +60,7 @@
- CPPFLAGS = -I.. @CPPFLAGS@ @COM_ERR_CPPFLAGS@ @SASLFLAGS@
- LIBS = @LIBS@
- 
--CFLAGS = @CFLAGS@
-+CFLAGS = @CFLAGS@ @PERL_CCCDLFLAGS@
- LDFLAGS = @LDFLAGS@
- 
- SHELL = /bin/sh
 @@ -102,7 +102,7 @@
  all: $(BUILTSOURCES) libcyrus_min.a libcyrus.a
  
