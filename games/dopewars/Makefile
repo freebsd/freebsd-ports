@@ -20,7 +20,18 @@ USE_X_PREFIX=	yes
 
 CONFIGURE_ARGS=	--enable-nls
 
-DOPEWARS=	${PKGNAME}
-PLIST_SUB=	DOPEWARS=${DOPEWARS}
+.if defined(NOPORTDOCS)
+MAKE_ENV+=	NOPORTDOCS=yes
+.endif
+
+PLIST_SUB=	DOPEWARS=${PKGNAME}
+
+MAN6=	dopewars.6
+
+post-patch:
+	@${PERL} -pi -e 's!/pixmaps!/dopewars/pixmaps!' \
+		${WRKSRC}/src/Makefile.in
+	@${PERL} -pi -e 's!dopewars.sco!dopewars/dopewars.sco!g' \
+		${WRKSRC}/src/dopewars.c ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
