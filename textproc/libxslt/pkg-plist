@@ -34,8 +34,10 @@ lib/libxsltbreakpoint.so.1
 %%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxslt.py
 %%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxsltmod.so
 libdata/pkgconfig/libxslt.pc
+share/aclocal/libxslt.m4
 %%PYTHON:%%share/doc/libxslt-python/TODO
 %%PYTHON:%%share/doc/libxslt-python/examples/basic.py
+%%PYTHON:%%share/doc/libxslt-python/examples/exslt.py
 %%PYTHON:%%share/doc/libxslt-python/examples/extfunc.py
 %%PYTHON:%%share/doc/libxslt-python/examples/pyxsltproc.py
 %%PYTHON:%%share/doc/libxslt-python/examples/test.xml
@@ -48,6 +50,7 @@ share/doc/libxslt/html/APIchunk3.html
 share/doc/libxslt/html/APIchunk4.html
 share/doc/libxslt/html/APIchunk5.html
 share/doc/libxslt/html/APIchunk6.html
+share/doc/libxslt/html/APIchunk7.html
 share/doc/libxslt/html/APIconstructors.html
 share/doc/libxslt/html/APIfiles.html
 share/doc/libxslt/html/APIfunctions.html
