@@ -1,0 +1,9 @@
+include/shapefil.h
+lib/libshp.la
+lib/libshp.so.1
+lib/libshp.so
+lib/libshp.a
+share/doc/shapelib/shapelib.html
+share/doc/shapelib/shp_api.html
+share/doc/shapelib/dbf_api.html
+@dirrm share/doc/shapelib
