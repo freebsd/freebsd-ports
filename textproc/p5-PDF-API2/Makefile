@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	PDF-API2
-PORTVERSION=	0.3r77
+PORTVERSION=	0.40.91
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	PDF
@@ -22,14 +22,10 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 PERL_CONFIGURE=	yes
 PERL_SITELIBDIR=	${SITE_PERL}
 
-FILES=		API2.pm API2/IOString.pm API2/UniMap.pm  \
-		API2/PDF/FileAPI.pm API2/TTF/Font.pm
+.include <bsd.port.pre.mk>
 
-pre-patch:
-.for i in ${FILES}
-	@${PERL} -pi -e '$$_="" if /require 5/;' \
-		-e '$$_="" if /no warnings/;' \
-		${WRKSRC}/lib/PDF/${i}
-.endfor
+.if ${PERL_LEVEL} < 500800
+IGNORE=		Port requires perl 5.8.x or later. Install lang/perl5.8 then try again
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
