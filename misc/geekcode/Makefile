@@ -8,9 +8,7 @@
 PORTNAME=	geekcode
 PORTVERSION=	1.7
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://seymour.lazygenes.net/ \
-		http://www.zort.on.ca/software/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	geekcode
 
 MAINTAINER=	cpiazza@FreeBSD.org
