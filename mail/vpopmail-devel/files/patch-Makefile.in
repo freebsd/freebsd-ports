@@ -1,20 +1,5 @@
---- Makefile.in.old	Thu Nov 27 11:26:31 2003
-+++ Makefile.in	Thu Nov 27 11:28:06 2003
-@@ -43,10 +43,10 @@
- 
- top_builddir = .
- 
--ACLOCAL = @ACLOCAL@
--AUTOCONF = @AUTOCONF@
--AUTOMAKE = @AUTOMAKE@
--AUTOHEADER = @AUTOHEADER@
-+ACLOCAL = /usr/bin/true
-+AUTOCONF = /usr/bin/true
-+AUTOMAKE = /usr/bin/true
-+AUTOHEADER = /usr/bin/true
- 
- INSTALL = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@ $(AM_INSTALL_PROGRAM_FLAGS)
+--- Makefile.in.old	Fri Nov 28 09:45:59 2003
++++ Makefile.in	Fri Nov 28 09:46:37 2003
 @@ -723,6 +723,8 @@
  	echo "-I@vpopmaildir@/include" > @vpopmaildir@/etc/inc_deps
  	echo "-L@vpopmaildir@/lib -lvpopmail @auth_libs@ @LIBS@" > @vpopmaildir@/etc/lib_deps
@@ -24,7 +9,7 @@
  	if test ! -r $(VLIMITS); then \
  	  $(INSTALL) -o @vpopuser@ -m 0644 -g @vpopgroup@ \
  	    vlimits.default $(VLIMITS); \
-@@ -740,12 +742,15 @@
+@@ -740,7 +742,6 @@
  	    echo "# settings for each line:" >> $(MYSQLCONF); \
  	    echo "# host|port|user|password|database" >> $(MYSQLCONF); \
  	    echo "#" >> $(MYSQLCONF); \
@@ -32,12 +17,3 @@
  	    echo "#" >> $(MYSQLCONF); \
  	    echo "# Note:" >> $(MYSQLCONF); \
  	    echo "#   The value of host may be either a hostname or an IP address." >> $(MYSQLCONF); \
- 	    echo "#   If host is 'localhost', then sockets (Unix) or named pipes (Windows)" >> $(MYSQLCONF); \
- 	    echo "#   will be used instead of TCP/IP to connect to the server."   >> $(MYSQLCONF); \
-+	  fi ; \
-+	  chown @vpopuser@  $(MYSQLCONF) ; \
-+	  chgrp @vpopgroup@ $(MYSQLCONF) ; \
-+	  chmod 0600        $(MYSQLCONF) ; \
- 	  fi ; \
- 	  chown @vpopuser@  $(MYSQLCONF) ; \
- 	  chgrp @vpopgroup@ $(MYSQLCONF) ; \
