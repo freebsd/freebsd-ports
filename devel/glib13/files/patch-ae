@@ -37,7 +37,7 @@
  	esac
  	LIBS_orig="$LIBS"
  	LDFLAGS_orig="$LDFLAGS"
-@@ -5057,11 +5063,14 @@
+@@ -5057,11 +5063,17 @@
              	        G_THREAD_CFLAGS="$G_THREAD_CFLAGS -mthreads"
  		fi
  		;;
@@ -50,7 +50,10 @@
 +		if test x"$G_THREAD_LIBS" = x"-lc_r"; then
 +			G_THREAD_CFLAGS="-D_THREAD_SAFE"
 +			G_THREAD_LIBS="-pthread"
-+			have_poll=no
++			case $host in
++			*-*-freebsd4*) ;;
++			default) have_poll=no ;;
++			esac
 +		else
 +			G_THREAD_CFLAGS="-D_THREAD_SAFE -DLINUXTHREADS"
 +		fi
