@@ -1,14 +1,1 @@
-xmcd-1.4-patchlevel 1 - Motif CD player - includes
-statically (xmcd) and dynamically (xmcd-sh) linked 
-with Motif-2.0 library xmcd binary
-and dynamically linked cda and wm2xmcd binaries.
-
-this package works only on 2.1.0 ( or higher )
-versions of FreeBSD due to SCSI system requirements.
-
-it also could be run on 1.1.5.1 or 2.0 with appropriate
-kernel patches.
-
-After installation go to /usr/X11R6/lib/X11/xmcd/config
-and type 'sh configure.sh' to reconfigure xmcd to use
-your CD-ROM settings.
+xmcd-1.4-patchlevel 1 - Motif CD player
