@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Business/OCV.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OCV/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/OCV
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Business 2>/dev/null || true
