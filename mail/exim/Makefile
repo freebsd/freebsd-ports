@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 		http://www.exim.org/ftp/exim4/ \
@@ -29,7 +29,7 @@ MAN8=		exim.8
 
 EXIM_VERSION=	4.12
 EXIM_DOCVERSION=	4.10
-EXISCAN_VERSION=	4.12-20
+EXISCAN_VERSION=	4.12-22
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
 
