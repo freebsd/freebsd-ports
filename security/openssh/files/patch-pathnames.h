@@ -1,5 +1,5 @@
---- pathnames.h.orig	Sat Jun 22 12:40:30 2002
-+++ pathnames.h	Mon Jun 24 23:05:59 2002
+--- pathnames.h.orig	Thu Jul 11 21:52:45 2002
++++ pathnames.h	Mon Jul 22 07:19:30 2002
 @@ -12,7 +12,7 @@
   * called by a name other than "ssh" or "Secure Shell".
   */
@@ -18,8 +18,13 @@
  
  /*
   * The process id of the daemon listening for connections is saved here to
-@@ -123,8 +123,8 @@
+@@ -120,11 +120,13 @@
+ #define _PATH_UNIX_X "/tmp/.X11-unix/X%u"
+ 
+ /* for scp */
++#ifndef _PATH_CP
  #define _PATH_CP			"cp"
++#endif
  
  /* for sftp */
 -#define _PATH_SFTP_SERVER		"/usr/libexec/sftp-server"
