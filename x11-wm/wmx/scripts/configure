@@ -1,3 +1,0 @@
-#!/bin/sh
-
-/usr/bin/perl -pi -e 's|%%PREFIX%%|'${X11BASE}'|g' ${WRKSRC}/*.h ${WRKSRC}/*.C

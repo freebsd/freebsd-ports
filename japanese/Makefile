@@ -298,7 +298,6 @@
     SUBDIR += platex-jsclasses
     SUBDIR += platex-otf
     SUBDIR += platex209
-    SUBDIR += postgresql
     SUBDIR += postgresql-tcltk
     SUBDIR += postgresql7-man
     SUBDIR += postgresql73-man
@@ -397,7 +396,6 @@
     SUBDIR += wwasw-fpw
     SUBDIR += xchat
     SUBDIR += xdvik
-    SUBDIR += xemacs-devel-canna
     SUBDIR += xemacs-devel-canna+freewnn
     SUBDIR += xemacs-devel-canna+wnn6
     SUBDIR += xemacs-devel-freewnn

@@ -18,7 +18,6 @@
     SUBDIR += fl_editor
     SUBDIR += fltk
     SUBDIR += fltk-threads
-    SUBDIR += flu
     SUBDIR += flvw
     SUBDIR += fox
     SUBDIR += fox-devel
@@ -64,7 +63,6 @@
     SUBDIR += guis
     SUBDIR += hs-frantk
     SUBDIR += hs-gio
-    SUBDIR += hs-gtk+hs
     SUBDIR += hs-gtk2hs
     SUBDIR += hs-port
     SUBDIR += inti
@@ -110,7 +108,6 @@
     SUBDIR += open-motif-jdk
     SUBDIR += p5-GdkImlib
     SUBDIR += p5-GdkPixbuf
-    SUBDIR += p5-Glade
     SUBDIR += p5-Glade2
     SUBDIR += p5-Gnome
     SUBDIR += p5-Gnome2

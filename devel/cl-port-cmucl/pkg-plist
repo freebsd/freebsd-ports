@@ -1,8 +1,0 @@
-lib/common-lisp/port/cmuclfasl/ext.fasl
-lib/common-lisp/port/cmuclfasl/gray.fasl
-lib/common-lisp/port/cmuclfasl/net.fasl
-lib/common-lisp/port/cmuclfasl/path.fasl
-lib/common-lisp/port/cmuclfasl/proc.fasl
-lib/common-lisp/port/cmuclfasl/shell.fasl
-lib/common-lisp/port/cmuclfasl/sys.fasl
-@dirrm lib/common-lisp/port/cmuclfasl

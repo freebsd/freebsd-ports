@@ -6,7 +6,6 @@
     SUBDIR += abook
     SUBDIR += adcomplain
     SUBDIR += addresses
-    SUBDIR += aileron
     SUBDIR += akpop3d
     SUBDIR += altermime
     SUBDIR += althea
@@ -47,7 +46,6 @@
     SUBDIR += crm114
     SUBDIR += cucipop
     SUBDIR += cvsmail
-    SUBDIR += cyrus-imapd
     SUBDIR += cyrus-imapd2
     SUBDIR += cyrus-imapd22
     SUBDIR += dbmail
@@ -432,7 +430,6 @@
     SUBDIR += silkymail
     SUBDIR += sma
     SUBDIR += smail
-    SUBDIR += smtp-vilter
     SUBDIR += smtpclient
     SUBDIR += smtpd
     SUBDIR += smtpfeed

@@ -1,2 +1,0 @@
-%%RUBY_SITELIBDIR%%/DBD/SQLRelay/SQLRelay.rb
-@dirrm %%RUBY_SITELIBDIR%%/DBD/SQLRelay

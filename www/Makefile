@@ -142,7 +142,6 @@
     SUBDIR += gnome-user-share
     SUBDIR += gnuinfo
     SUBDIR += goose
-    SUBDIR += grail
     SUBDIR += gtkhtml
     SUBDIR += gtkhtml3
     SUBDIR += guile-www

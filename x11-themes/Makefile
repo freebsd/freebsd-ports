@@ -4,7 +4,6 @@
 
     COMMENT = X Windows System themes
 
-    SUBDIR += aquaosk
     SUBDIR += baghira
     SUBDIR += buffy
     SUBDIR += clean-theme-gtk
@@ -91,7 +90,6 @@
     SUBDIR += kde-icons-umicons
     SUBDIR += kde-icons-wasp
     SUBDIR += kdeartwork3
-    SUBDIR += kwin_flatcurve
     SUBDIR += lila-xfwm4
     SUBDIR += linux-gtk-bluecurve-theme
     SUBDIR += metacity-aluminumalloy-cryogenic-theme

@@ -42,7 +42,6 @@
     SUBDIR += synce-rra
     SUBDIR += synce-serial
     SUBDIR += synce-trayicon
-    SUBDIR += syncmal
     SUBDIR += txt2pdbdoc
     SUBDIR += uppc-kmod
 

@@ -136,7 +136,6 @@
     SUBDIR += mit-scheme
     SUBDIR += mixal
     SUBDIR += ml-pnet
-    SUBDIR += mlton
     SUBDIR += mmix
     SUBDIR += mono
     SUBDIR += moscow_ml
@@ -229,7 +228,6 @@
     SUBDIR += ruby-perl
     SUBDIR += ruby-programmingruby
     SUBDIR += ruby-reference
-    SUBDIR += ruby-ri
     SUBDIR += ruby-tcltklib
     SUBDIR += ruby-usersguide
     SUBDIR += ruby16

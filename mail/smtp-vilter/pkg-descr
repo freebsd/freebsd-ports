@@ -1,5 +1,0 @@
-Smtp-vilter is a high performance content filter for sendmail
-with backends to various virus scanning engines. Author of this
-excellent milter filter is Marc Balmer from Msys Software.
-
-WWW: http://www.etc.msys.ch/software/smtp-vilter

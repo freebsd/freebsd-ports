@@ -19,7 +19,6 @@
     SUBDIR += libstocks
     SUBDIR += mybudget
     SUBDIR += myphpmoney
-    SUBDIR += opale
     SUBDIR += openhbci
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-OCV

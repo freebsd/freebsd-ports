@@ -94,7 +94,6 @@
     SUBDIR += mysql-administrator
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-editor
-    SUBDIR += mysql-gui
     SUBDIR += mysql-navigator
     SUBDIR += mysql2pgsql
     SUBDIR += mysql323-client
@@ -312,7 +311,6 @@
     SUBDIR += ruby-dbd_pg
     SUBDIR += ruby-dbd_proxy
     SUBDIR += ruby-dbd_sqlite
-    SUBDIR += ruby-dbd_sqlrelay
     SUBDIR += ruby-dbdbd
     SUBDIR += ruby-dbi
     SUBDIR += ruby-gdbm
@@ -328,7 +326,6 @@
     SUBDIR += ruby-search-namazu
     SUBDIR += ruby-sqlite
     SUBDIR += ruby-sqlite3
-    SUBDIR += ruby-sqlrelay
     SUBDIR += slony1
     SUBDIR += sqlite2
     SUBDIR += sqlite3
