@@ -18,11 +18,11 @@ DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+USE_AUTOCONF=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_BISON=	yes
@@ -107,7 +107,7 @@ post-patch:
 
 pre-configure:
 	@${CP} ${FILESDIR}/configure.in ${WRKDIR}
-	@cd ${WRKDIR}; autoconf
+	@cd ${WRKDIR}; ${AUTOCONF}
 
 post-configure:
 .for i in ${CONFIGURE_PREPROCESSING_FILES}

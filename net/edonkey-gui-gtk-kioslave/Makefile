@@ -19,10 +19,9 @@ DISTFILES=	ed2k_kde2_kioslave.tar.gz \
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
-		automake:${PORTSDIR}/devel/automake
 RUN_DEPENDS=	ed2k_gui:${PORTSDIR}/net/edonkey-gui-gtk
 
+USE_AUTOMAKE_VER=	15
 USE_KDELIBS_VER=	3
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
