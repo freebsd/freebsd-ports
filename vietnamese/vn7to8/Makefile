@@ -3,7 +3,7 @@
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1997/09/22 16:54:16 max Exp $
+# $Id: Makefile,v 1.3 1997/10/10 06:53:37 obrien Exp $
 #
 #	version # is VISCII version supported + .<edit_revision>
 
@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     obrien@FreeBSD.org
+
+BROKEN_ELF=	yes
 
 CFLAGS+=	-I../../include
 MAN1=		vn7to8.1 vn8to7.1 vn80to81.1
