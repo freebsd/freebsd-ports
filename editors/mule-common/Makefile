@@ -117,7 +117,7 @@ WRKDIR=	${WRKDIRBASE}/editors/mule/work
 pre-build::
 	@cd ${.CURDIR}/../mule; make
 .else
-BROKEN=		First you should build install a port for mule except mule-common
+IGNORE=		First you should build install a port for mule except mule-common
 .endif
 .endif
 
