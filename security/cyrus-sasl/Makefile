@@ -7,6 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.24
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		${MASTER_SITE_LOCAL} \
@@ -19,8 +20,6 @@ USE_OPENSSL=	RSA
 
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
 Y2K=		http://asg.web.cmu.edu/cyrus/imapd/y2k.html
 
 MAN3=		sasl.3 sasl_authorize_t.3 sasl_callbacks.3 sasl_checkpass.3 \
@@ -32,8 +31,11 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_callbacks.3 sasl_checkpass.3 \
 		sasl_setprop.3 sasl_usererr.3
 MAN8=		sasldblistusers.8 saslpasswd.8
 
-USE_AUTOCONF=	YES
+USE_AUTOMAKE=	YES
 USE_LIBTOOL=	YES
+AUTOHEADER=	autoheader
+AUTOMAKE=	automake --add-missing --include-deps
+
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-plugindir=${PREFIX}/lib/sasl \
 		--with-dbpath=${PREFIX}/etc/sasldb \
@@ -43,7 +45,12 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-pwcheck=/var/pwcheck \
 		--with-rc4=openssl
 
-# JavaSASL is currently Broken
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		PREFIX="${PREFIX}" \
+		TOUCH="${TOUCH}" \
+		MKDIR="${MKDIR}"
+
+# JavaSASL needs someone to look at to get it to build
 #JAVADIR=        jdk1.1.8
 #JAVALIBDIR=     ${PREFIX}/${JAVADIR}/lib/i386/green_threads/
 
@@ -93,12 +100,18 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		EBONES=${EBONES} \
 		NOPORTDOCS=${NODOCS}
 
+pre-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.sasl
+
+pre-configure:
+	@(cd ${WRKSRC} && ${AUTOHEADER})
+
 # Create Cyrus user and group
 pre-install:
 	@${SH} ${PKGDIR}/INSTALL ${PKGNAME} PRE-INSTALL
 
 post-install:
-	@${SED}  -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/pwcheck.sh \
+	@${SED} -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/pwcheck.sh \
 		> ${PREFIX}/etc/rc.d/pwcheck.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh
 	${INSTALL} -d -m 700 -o cyrus -g cyrus /var/pwcheck
@@ -110,20 +123,19 @@ post-install:
 .for file in ${DOC2}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/SASL
 .endfor
+	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${PREFIX}/share/doc
 .for file in ${HTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${PREFIX}/share/doc/SASL/html
 .endfor
 .endif
+	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.elif ${PREFIX} != ${LOCALBASE}
-# Save PREFIX so that it can be used during make install
-.BEGIN:
-	@echo "PREFIX=	${PREFIX}" > ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -7,11 +7,15 @@
 
 #set -vx
 
+PKG_BATCH=${BATCH:=NO}
+
+PKG_PREFIX=${PKG_PREFIX:=/usr/local}
+
 #
 # create 'cyrus' user and group before installing
 #
 
-create() {
+create_user() {
 	if [ ! -x /usr/sbin/pw ]; then
 		echo "*** Please add a user and a group named \`cyrus' before installing this package."
 		exit 69
@@ -65,9 +69,31 @@ create() {
 	fi
 }
 
+create_sasldb() {
+	if [ ! -f ${PGK_PREFIX}/etc/sasldb.db ]; then
+		touch ${PGK_PREFIX}/etc/sasldb.db
+		chown cyrus:mail ${PGK_PREFIX}/etc/sasldb.db
+		chmod 640 ${PGK_PREFIX}/etc/sasldb.db
+	fi
+}
+
+# This should really be installed by Sendmail
+
+sendmail_conf() {
+	if [ ! -f ${PKG_PREFIX}/lib/sasl/Sendmail.conf ]; then
+		echo "pwcheck_method: pwcheck" > ${PKG_PREFIX}/lib/sasl/Sendmail.conf
+	fi
+}
+
 case $2 in
 	PRE-INSTALL)
-		create
+		create_user
+		;;
+	POST-INSTALL)
+		if [ "${PKG_BATCH}" = "NO" ]; then
+			create_sasldb
+			sendmail_conf
+		fi
 		;;
 
 esac

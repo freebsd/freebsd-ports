@@ -1,5 +1,7 @@
 @unexec %D/etc/rc.d/pwcheck.sh stop ; echo "pwcheck stopped."
 etc/rc.d/pwcheck.sh
+@comment remove ../etc/sasldb.db only if it exists and has a zero size.
+@unexec [ -f %D/etc/sasldb.db -a ! -s %D/etc/sasldb.db ] && rm %D/etc/sasldb.db
 include/sasl/hmac-md5.h
 include/sasl/md5.h
 include/sasl/md5global.h
@@ -31,7 +33,10 @@ lib/sasl/liblogin.so.0
 lib/sasl/libplain.a
 lib/sasl/libplain.so
 lib/sasl/libplain.so.1
-@dirrm lib/sasl
+@comment Sendmail.conf should be installed/uninstalled by Sendmail 8.11.
+@comment We install it here because Sendmail 8.11 is in the base system.
+@unexec echo "pwcheck_method: pwcheck" > %B/Sendmail.conf.tmp
+@unexec if cmp -s %B/Sendmail.conf %B/Sendmail.conf.tmp; then rm -f %B/Sendmail.conf %B/Sendmail.conf.tmp; else rm -f %B/Sendmail.conf.tmp fi
 sbin/sasldblistusers
 sbin/saslpasswd
 sbin/pwcheck
@@ -41,6 +46,7 @@ sbin/pwcheck
 %%NOPORTDOCS%%share/doc/SASL/INSTALL
 %%NOPORTDOCS%%share/doc/SASL/NEWS
 %%NOPORTDOCS%%share/doc/SASL/README
+%%NOPORTDOCS%%share/doc/SASL/Sendmail.README
 %%NOPORTDOCS%%share/doc/SASL/TODO
 %%NOPORTDOCS%%share/doc/SASL/draft-leach-digest-sasl-05.txt
 %%NOPORTDOCS%%share/doc/SASL/draft-newman-auth-scram-03.txt
@@ -55,12 +61,13 @@ sbin/pwcheck
 %%NOPORTDOCS%%share/doc/SASL/html/sysadmin.html
 %%NOPORTDOCS%%@dirrm share/doc/SASL/html
 %%NOPORTDOCS%%@dirrm share/doc/SASL
+@dirrm lib/sasl
 @mode u=rwx,go=
 @cwd /var
 @exec mkdir pwcheck
 @exec chown cyrus:cyrus pwcheck
 @exec chmod go= pwcheck
-@comment This file gets create by the pwcheck program
-@unexec rm -f pwcheck/pwcheck
+@comment This file gets created by the pwcheck program
+@unexec rm -f /var/pwcheck/pwcheck
 @dirrm pwcheck
 @cwd %%PREFIX%%
