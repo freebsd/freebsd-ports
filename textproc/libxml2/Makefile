@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
@@ -17,14 +17,17 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+MAKE_FLAGS+=	LIBTOOL="${LIBTOOL}" -ELIBTOOL
+.if defined(MAKE_JOBS)
+MAKE_FLAGS+=	AM_MAKEFLAGS=-j${MAKE_JOBS}
+.endif
 
 CONFIGURE_ARGS=	--with-iconv \
 		--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lgiconv"
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		xml2-config.1 xmllint.1
 MAN4=		libxml.4
@@ -32,5 +35,10 @@ MAN4=		libxml.4
 pre-patch:
 	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
 		's|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g'
+
+post-patch:
+	@${PERL} -pi -e 's/([^g])iconv.h/\1giconv.h/g;' \
+		-e 's/-liconv/-lgiconv/g' ${WRKSRC}/${CONFIGURE_SCRIPT} \
+		${WRKSRC}/include/libxml/encoding.h
 
 .include <bsd.port.mk>

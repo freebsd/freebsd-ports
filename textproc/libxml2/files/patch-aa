@@ -1,32 +1,20 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Thu Feb  8 13:47:28 2001
-+++ Makefile.in	Fri Feb  9 02:04:41 2001
-@@ -124,7 +124,7 @@
+--- work/libxml2-2.4.2/Makefile.in	Wed Aug 15 08:26:06 2001
++++ Makefile.in	Thu Aug 23 17:02:39 2001
+@@ -137,5 +137,5 @@
  lib_LTLIBRARIES = libxml2.la
- libxml2_la_LIBADD = @Z_LIBS@
+-libxml2_la_LIBADD = @Z_LIBS@ -lm
++libxml2_la_LIBADD = @Z_LIBS@ -lm @ICONV_LIBS@
  
 -libxml2_la_LDFLAGS = -version-info @LIBXML_VERSION_INFO@
 +libxml2_la_LDFLAGS = -version-info 5:0:0
  
- libxml2_la_SOURCES =  		SAX.c 		entities.c 		encoding.c 		error.c 		parserInternals.c 		parser.c 		tree.c 		hash.c 		xmlIO.c 		xmlmemory.c 		uri.c 		valid.c 		xlink.c 		HTMLparser.c 		HTMLtree.c 		debugXML.c 		xpath.c 		xpointer.c 		xinclude.c 		nanohttp.c 		nanoftp.c
- 
-@@ -162,7 +162,7 @@
- testURI_DEPENDENCIES = $(DEPS)
- testURI_LDADD = $(LDADDS)
+@@ -187,3 +187,3 @@
  
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = xml2Conf.sh
- 
- CLEANFILES = xml2Conf.sh
-@@ -836,7 +836,7 @@
- 		uninstall-confexecDATA uninstall-m4dataDATA \
- 		uninstall-pkgconfigDATA
+@@ -772,3 +772,3 @@
  uninstall: uninstall-recursive
 -all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) \
 +all-am: Makefile $(LTLIBRARIES) $(SCRIPTS) $(MANS) $(DATA) \
  		config.h
- all-redirect: all-recursive-am
- install-strip:
