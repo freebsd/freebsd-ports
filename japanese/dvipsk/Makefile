@@ -66,6 +66,7 @@ CONFLICTS=	ja-ptex-base-[0-9]* \
 		dvips-[0-9]*
 
 MAN1=		dvips.1 afm2tfm.1
+MLINKS=		dvips.1 odvips.1
 INFO=		dvips
 
 TETEX_SRC=	tetex-src-3.0
