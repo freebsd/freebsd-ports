@@ -8,7 +8,7 @@
 PORTNAME=	getbdf
 PORTVERSION=	1.0
 CATEGORIES=	x11-fonts
-MASTER_SITES=	ftp://ftp.ipa.fhg.de/pub/X/
+MASTER_SITES=   ftp://ftp.nstu.ru/pub/sources/x/fonts/utils/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
