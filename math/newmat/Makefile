@@ -10,7 +10,7 @@ PORTNAME=	newmat
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://www.robertnz.com/ftp/
+MASTER_SITES=	http://www.robertnz.net/ftp/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
