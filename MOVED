@@ -1358,3 +1358,5 @@ net/gabber||2004-12-12|removed obsolete port
 x11-toolkits/gnome--||2004-12-12|removed obsolete port
 dns/dnssecwalker|dns/walker|2004-12-13|duplicate ports
 lang/gcc34|lang/gcc-ooo|2004-12-15|finished repocopy and required by OOo port
+print/pxfonts||2004-12-19|already included in the teTeX distribution
+print/txfonts||2004-12-19|already included in the teTeX distribution

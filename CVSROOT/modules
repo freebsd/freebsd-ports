@@ -8893,7 +8893,6 @@ pwm		ports/x11-wm/pwm
 pwman		ports/security/pwman
 pwsafe		ports/sysutils/pwsafe
 pxe		ports/net/pxe
-pxfonts		ports/print/pxfonts
 pxtools		ports/databases/pxtools
 pxytest		ports/security/pxytest
 py-4suite	ports/textproc/py-4suite
@@ -10845,7 +10844,6 @@ twiki		ports/www/twiki
 twin		ports/emulators/twin
 twitch		ports/games/twitch
 twoftpd		ports/ftp/twoftpd
-txfonts		ports/print/txfonts
 txt2html	ports/textproc/txt2html
 txt2man		ports/textproc/txt2man
 txt2pdbdoc	ports/palm/txt2pdbdoc
