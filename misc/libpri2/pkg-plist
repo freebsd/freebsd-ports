@@ -1,0 +1,4 @@
+include/libpri.h
+lib/libpri.a
+lib/libpri.so.1
+lib/libpri.so
