@@ -74,6 +74,7 @@
     SUBDIR += musixtex
     SUBDIR += nenscript
     SUBDIR += offix-printer
+    SUBDIR += p5-GnomePrint
     SUBDIR += p5-Text-PDF
     SUBDIR += pnm2ppa
     SUBDIR += pclprint
