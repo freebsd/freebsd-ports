@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pgpdump
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	security
-MASTER_SITES=	ftp://pgp.iijlab.net/pub/pgp/tools/
+MASTER_SITES=	ftp://pgp.iijlab.net/pub/pgp/tools/	\
+		ftp://ftp.mew.org/pub/pgp/tools/
 
 MAINTAINER=	kaoru@kaisei.org
 COMMENT=	PGP packet visualizer
