@@ -6,6 +6,7 @@ share/doc/HTML/en/potracegui/index.cache.bz2
 share/doc/HTML/en/potracegui/index.docbook
 share/icons/hicolor/16x16/apps/potracegui.png
 share/icons/hicolor/32x32/apps/potracegui.png
+share/locale/de/LC_MESSAGES/potracegui.mo
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
