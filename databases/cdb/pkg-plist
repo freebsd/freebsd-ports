@@ -1,0 +1,13 @@
+bin/cdbget
+bin/cdbmake
+bin/cdbdump
+bin/cdbstats
+bin/cdbtest
+lib/libcdb.a
+lib/libcdbmake.a
+man/man1/cdbget.1.gz
+man/man1/cdbmake.1.gz
+man/man1/cdbdump.1.gz
+man/man1/cdbstats.1.gz
+man/man1/cdbtest.1.gz
+man/man3/cdb.3.gz
