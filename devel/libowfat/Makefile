@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libowfat
-PORTVERSION=	0.19.2
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	devel ipv6
 MASTER_SITES=	http://dl.fefe.de/
 
@@ -30,11 +29,10 @@ CFLAGS+=	-O2 -fomit-frame-pointer
 
 .include "${FILESDIR}/manpages"
 
-examples=	test/client.c test/dllink.c test/httpd.c test/readhttp.c \
-		test/server.c test/uudecode.c test/vd.c
+examples=	examples/byte.c examples/str.c
 examplesdir=	${EXAMPLESDIR:S,^${PREFIX}/,,}
 PLIST_DIRS=	${examplesdir}
-PLIST_FILES=	lib/libowfat.a ${examples:S,^test/,${examplesdir}/,}
+PLIST_FILES=	lib/libowfat.a ${examples:S,^examples/,${examplesdir}/,}
 .if!defined(NOPORTDOCS)
 PORTDOCS=	CHANGES README TODO
 .endif
