@@ -1,0 +1,21 @@
+HTML_Template_IT:
+Simple template API.
+The Isotemplate API is somewhat tricky for a beginner although it is the best
+one you can build. template::parse() [phplib template = Isotemplate] requests
+you to name a source and a target where the current block gets parsed into.
+Source and target can be block names or even handler names.
+
+Features :
+  * Nested blocks
+  * Include external file
+  * Custom tags format (default {mytag})
+      
+HTML_Template_ITX :
+With this class you get the full power of the phplib template class.
+You may have one file with blocks in it but you have as well one main file
+and multiple files one for each block. This is quite usefull when you have
+user configurable websites. Using blocks not in the main template allows
+you to modify some parts of your layout easily.
+
+
+WWW: http://pear.php.net/package-info.php?package=HTML_Template_IT
