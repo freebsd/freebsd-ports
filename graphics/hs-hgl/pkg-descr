@@ -1,0 +1,15 @@
+From homepage of HGL:
+
+The HGL gives the programmer access to the most interesting parts of
+the Win32 and X11 library without exposing the programmer to the pain
+and anguish usually associated with using these interfaces. The library
+library is distributed as open source and is suitable for use in
+teaching and in applications.
+
+...
+
+WWW: http://haskell.org/graphics/
+
+
+  - Byunghyun Oh
+  octaphial@yahoo.com

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+hugs -P{Hugs}/lib/x11: $@
