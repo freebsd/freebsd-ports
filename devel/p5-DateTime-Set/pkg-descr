@@ -1,0 +1,16 @@
+DateTime::Set is a module for date/time sets. It can be used to handle two
+different types of sets.
+
+The first is a fixed set of predefined datetime objects. For example, if we
+wanted to create a set of dates containing the birthdays of people in our
+family.
+
+The second type of set that it can handle is one based on the idea of a
+recurrence, such as "every Wednesday", or "noon on the 15th day of every
+month". This type of set can have fixed starting and ending datetimes, but
+neither is required. So our "every Wednesday set" could be "every Wednesday
+from the beginning of time until the end of time", or "every Wednesday after
+2003-03-05 until the end of time", or "every Wednesday between 2003-03-05 and
+2004-01-07".
+
+WWW: http://datetime.perl.org/
