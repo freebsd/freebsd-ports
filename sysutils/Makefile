@@ -138,6 +138,7 @@
     SUBDIR += symlinks
     SUBDIR += syslog-ng
     SUBDIR += tcplist
+    SUBDIR += timelimit
     SUBDIR += truncate
     SUBDIR += tua
     SUBDIR += ucspi-tcp
