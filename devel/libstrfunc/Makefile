@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libstrfunc
-PORTVERSION=	7.4.5
+PORTVERSION=	7.4.6
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.spelio.net.ru/soft/
 
