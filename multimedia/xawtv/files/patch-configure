@@ -40,8 +40,8 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
--LIBS="-lquicktime -ldl -lglib $LIBPTHREAD $LIBS"
-+LIBS="-lquicktime -lglib12 $LIBPTHREAD $LIBS"
+-LIBS="-lquicktime -ldl $dashlglib $LIBPTHREAD $LIBS"
++LIBS="-lquicktime $dashlglib $LIBPTHREAD $LIBS"
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
@@ -49,8 +49,8 @@
  fi
  QTLIBS=""
  if test "$FOUND_LQT" = "yes"; then
--    QTLIBS="-lquicktime -ldl -lglib -lm"
-+    QTLIBS="-lquicktime -lglib12 $LIBPTHREAD $LIBS"
+-    QTLIBS="-lquicktime -ldl $dashlglib -lm"
++    QTLIBS="-lquicktime $dashlglib $LIBPTHREAD $LIBS"
  fi
  
  
