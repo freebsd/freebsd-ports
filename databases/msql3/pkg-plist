@@ -1,4 +1,5 @@
 @cd /usr/local/Minerva
+run_daemon
 bin/msql
 bin/msqld
 bin/msqladmin
@@ -7,10 +8,13 @@ bin/msqldump
 include/msql.h
 lib/libmsql.a
 doc/HISTORY
+doc/Commercial
 doc/License
-doc/Rates.txt
 doc/acl.txt
 doc/mSQL-1.0.11.ps
 doc/mSQL-Invoice.txt
+doc/msql-pwr.README
+doc/msql-pwr.gif
+doc/msql-pwr2.gif
 msql.acl.sample
 @exec mkdir -p %D/msqldb/.tmp
