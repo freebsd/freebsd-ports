@@ -21,14 +21,15 @@ share/gnome/help/stickynotes_applet/C/stickynotes_applet.xml
 share/gnome/omf/stickynotes_applet/stickynotes_applet-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/stickynotes_applet/stickynotes_applet-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/stickynotes/close.png
-share/gnome/pixmaps/stickynotes/lock.png
+share/gnome/pixmaps/stickynotes/locked.png
 share/gnome/pixmaps/stickynotes/resize_se.png
 share/gnome/pixmaps/stickynotes/resize_sw.png
 share/gnome/pixmaps/stickynotes/stickynotes.png
 share/gnome/pixmaps/stickynotes/stickynotes_prelight.png
-share/gnome/pixmaps/stickynotes/unlock.png
 share/gnome/stickynotes/stickynotes.glade
+share/gnome/pixmaps/stickynotes/unlocked.png
 share/locale/am/LC_MESSAGES/stickynotes_applet.mo
+share/locale/az/LC_MESSAGES/stickynotes_applet.mo
 share/locale/cs/LC_MESSAGES/stickynotes_applet.mo
 share/locale/de/LC_MESSAGES/stickynotes_applet.mo
 share/locale/es/LC_MESSAGES/stickynotes_applet.mo
@@ -37,9 +38,13 @@ share/locale/fi/LC_MESSAGES/stickynotes_applet.mo
 share/locale/fr/LC_MESSAGES/stickynotes_applet.mo
 share/locale/he/LC_MESSAGES/stickynotes_applet.mo
 share/locale/it/LC_MESSAGES/stickynotes_applet.mo
+share/locale/ja/LC_MESSAGES/stickynotes_applet.mo
+share/locale/mk/LC_MESSAGES/stickynotes_applet.mo
 share/locale/ms/LC_MESSAGES/stickynotes_applet.mo
 share/locale/nl/LC_MESSAGES/stickynotes_applet.mo
 share/locale/pt/LC_MESSAGES/stickynotes_applet.mo
+share/locale/pt_BR/LC_MESSAGES/stickynotes_applet.mo
+share/locale/ru/LC_MESSAGES/stickynotes_applet.mo
 share/locale/sr/LC_MESSAGES/stickynotes_applet.mo
 share/locale/sr@Latn/LC_MESSAGES/stickynotes_applet.mo
 share/locale/sv/LC_MESSAGES/stickynotes_applet.mo
