@@ -6,4 +6,4 @@ to /usr/local/lib/lua/luasocket.
 
 Note that this port requires Lua v4 and does not compile with Lua v5.
 
-WWW: http://www.tecgraf.puc-rio.br/~diego/luasocket/
+WWW: http://www.cs.princeton.edu/~diego/professional/luasocket/

@@ -9,7 +9,7 @@ PORTNAME=	psiconv
 PORTVERSION=	0.8.3
 PORTREVISION=	1
 CATEGORIES=	converters devel
-MASTER_SITES=	http://huizen.dds.nl/~frodol/psiconv/
+MASTER_SITES=	http://www.frodol.dds.nl/psiconv/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A conversion utility to convert Psion 5(MX) files into other formats
