@@ -28,7 +28,6 @@ LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		wv2:${PORTSDIR}/textproc/wv2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		xslt:${PORTSDIR}/textproc/libxslt
-RUN_DEPENDS=	wn:${PORTSDIR}/textproc/wordnet
 
 USE_KDELIBS_VER=	3
 PREFIX=			${KDE_PREFIX}
