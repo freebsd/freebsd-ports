@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.164 1997/11/02 11:30:28 se Exp $
+# $Id: Makefile,v 1.165 1997/11/03 00:40:48 se Exp $
 #
 
     SUBDIR += FWF
@@ -7,6 +7,7 @@
     SUBDIR += Xaw3d
     SUBDIR += afterstep
     SUBDIR += asfiles
+    SUBDIR += asmail
     SUBDIR += auis
     SUBDIR += bclock
     SUBDIR += blast
