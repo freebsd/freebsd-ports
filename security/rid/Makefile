@@ -9,9 +9,9 @@
 PORTNAME=	rid
 PORTVERSION=	1.0
 CATEGORIES=	security
-MASTER_SITES=	http://packetstorm.securify.com/distributed/  \
+MASTER_SITES=	http://www.phreak.org/archives/exploits/denial/  \
 		ftp://ftp.ntua.gr/pub/security/technotronic/denial/
-DISTFILES=	${PORTNAME}-1_0.tgz
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/./_/}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
