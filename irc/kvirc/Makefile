@@ -3,7 +3,7 @@
 # Date created:		Mon Feb 15 02:53:29 CET 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/10 19:08:24 jseger Exp $
 #
 
 DISTNAME=	kvirc-0.9.0
@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 KDEDIR=		${PREFIX}
 
 CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include --x-libraries=$(X11BASE)/lib \
-		--datadir=$(PREFIX)/share/kde --includedir=$(PREFIX)/include \
-		--libdir=$(PREFIX)/lib
+		--datadir=$(PREFIX)/share/kde
+CONFIGURE_ENV=	MOC=${X11BASE}/bin/moc
 
 .include <bsd.port.mk>
