@@ -1,0 +1,47 @@
+--- emil.man~	Tue Jun  4 04:42:42 1996
++++ emil.man	Tue Apr 21 04:08:04 1998
+@@ -1,4 +1,4 @@
+-.TH EMIL 8 "19 December 1994"
++.TH EMIL 1 "19 December 1994"
+ 
+ .SH NAME
+ 
+@@ -63,7 +63,7 @@
+ .BR no 
+ spooling. 
+ 
+-Emil can be applied by sendmail, if specified as a delviery agent, and can also
++Emil can be applied by sendmail, if specified as a delivery agent, and can also
+ invoke sendmail or other programs for it's output. 
+ When used like this, emil does not close the connection with the calling 
+ sendmail until it returns an EX_OK from the called program, 
+@@ -151,17 +151,17 @@
+ .TP
+ .BI "\-H " Recipient_header_encoding
+ Recipient header encoding. One of Se, 7bit, 8bit, BAse64 or Quoted-printable.
+-See also emil.cf(8).
++See also emil.cf(1).
+ .TP
+ .BI "\-T " Recipient_text_encoding
+ Recipient text encoding. One of Se, 7bit, 8bit, BAse64, BInhex, Quoted-printable
+-or Uuencode. See also emil.cf(8).
++or Uuencode. See also emil.cf(1).
+ .TP
+ .BI "\-G " Target_Group
+ Use Target_Group to specify use of a conversion group, as declared in emil.cf.
+ If Target_Group is specified Emil will not try to resolve conversion group
+ using recipient, sender and recipient host, instead it performs a case 
+-sensitive match on the conversion groups as declared in emil.cf. See also emil.cf(8).
++sensitive match on the conversion groups as declared in emil.cf. See also emil.cf(1).
+ 
+ .RE
+ Beware, when applying the Sender_charset option, there is no
+@@ -243,7 +243,7 @@
+ 
+ .SH "SEE ALSO"
+ 
+-emil.cf(8)
++emil.cf(1)
+ 
+ .SH BUGS
+ 

@@ -1,0 +1,31 @@
+--- Makefile.in.orig	Tue Jun  4 07:54:32 1996
++++ Makefile.in	Wed Apr 22 16:30:47 1998
+@@ -41,9 +41,10 @@
+ #manprefix =
+ 
+ bindir = @bindir@
++datadir = @datadir@
+ libdir = @libdir@
+ mandir = @mandir@
+-manext = 8
++manext = 1
+ 
+ MAINCF = $(libdir)/emil.cf
+ CHARFILE = $(libdir)/charsets.cpl
+@@ -262,10 +263,15 @@
+ 		$(INSTALL_DATA) emil.cf.$(manext) $(mandir)/man$(manext); \
+ 	fi ;
+ 	@echo " " ;
++.if !defined(NOPORTDOCS)
++	@echo "Installing doc files in $(datadir)/doc/emil" ;
++	@$(INSTALL_DATA) $(DOCS) $(datadir)/doc/emil/
++.endif
++	@echo " " ;
+ 	@echo "Installation done." ;
+ 
+ installdirs:
+-	$(srcdir)/mkinstalldirs $(bindir) $(libdir) $(mandir)/man$(manext)
++	$(srcdir)/mkinstalldirs $(bindir) $(datadir)/doc/emil $(libdir) $(mandir)/man$(manext)
+ 
+ uninstall: 
+ 	if test -f $(bindir)/emil ; then \
