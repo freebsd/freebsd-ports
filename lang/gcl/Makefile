@@ -46,6 +46,10 @@ PLIST_SUB=	GCL_VER=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 pre-configure:
 	${RM} -f ${WRKSRC}/configure
 	${SED} -i '' \

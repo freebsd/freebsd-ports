@@ -28,6 +28,12 @@ MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 CONFIGURE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/' ${WRKSRC}/common.pro
 	@${REINPLACE_CMD} -e 's,bin/bash,bin/sh,' ${WRKSRC}/configure
@@ -41,4 +47,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/evolvotron.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
