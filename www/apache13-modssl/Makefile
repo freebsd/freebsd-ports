@@ -7,7 +7,7 @@
 
 PORTNAME=	apache+mod_ssl
 PORTVERSION=	${VERSION_APACHE}+${VERSION_MODSSL}${PVERSION_MODSNMP}${PVERSION_MODACCEL}${PVERSION_MODDEFLATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITES_MODSSL:S/$/:mod_ssl/} \
@@ -52,12 +52,20 @@ MODSSL_FILE=	mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 MODSNMP_FILE=	mod_snmp_${VERSION_MODSNMP}${EXTRACT_SUFX}
 MODACCEL_FILE=	mod_accel-${VERSION_MODACCEL}${EXTRACT_SUFX}
 MODDEFLATE_FILE=	mod_deflate-${VERSION_MODDEFLATE}${EXTRACT_SUFX}
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 .include <bsd.port.pre.mk>
 
 DATADIR=	${PREFIX}/www
 DOCSDIR=	${PREFIX}/share/doc/apache
 DOCUMENT_ROOT=	${DATADIR}/data
+
+.if !exist(${PREFIX}/etc/rc.d/apache.sh && !defined(WITHOUT_RC_SUBR)
+USE_RC_SUBR=	yes
+PLIST_FILES+=	etc/rc.d/apache.sh
+.else
+PLIST_FILES+=	etc/rc.d/apache.sh.sample
+.endif
 
 .if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
 
@@ -310,6 +318,8 @@ pre-fetch:
 post-extract:
 
 post-extract:
+	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/rcng.sh > ${WRKSRC}/rcng.sh
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/apache.sh \
 		> ${WRKSRC}/apache.sh
 .if defined(APACHE_WITH_MODSNMP)
@@ -356,11 +366,11 @@ pre-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh-dist
-	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
-		${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
-	fi
+.if defined(USE_RC_SUBR)
+	${INSTALL_SCRIPT} ${WRKSRC}/rcng.sh ${PREFIX}/etc/rc.d/apache.sh
+.else
+	${INSTALL_SCRIPT} ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh.sample
+.endif
 .if defined(APACHE_WITH_MODSNMP)
 	@${MKDIR} ${DATADIR}/buckets
 	@${CHOWN} www:www ${DATADIR}/buckets

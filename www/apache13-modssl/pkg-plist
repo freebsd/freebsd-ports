@@ -38,8 +38,6 @@ etc/apache/ssl.key/snakeoil-rsa.key
 etc/apache/ssl.prm/README.PRM
 etc/apache/ssl.prm/snakeoil-ca-dsa.prm
 etc/apache/ssl.prm/snakeoil-dsa.prm
-@unexec if cmp -s %D/etc/rc.d/apache.sh %D/etc/rc.d/apache.sh-dist; then rm -f %D/etc/rc.d/apache.sh; fi
-etc/rc.d/apache.sh-dist
 include/apache/ap.h
 include/apache/ap_alloc.h
 include/apache/ap_compat.h
