@@ -1,0 +1,14 @@
+from the README:
+
+This is a small command-line utility to turn one file into two, each
+indistinguishable from noise, and put them back together into
+the original.
+
+from the maintainer:
+
+Note that the resulting files are the same size as the original.
+
+WWW:  http://www.lammah.com/pad/
+
+Trevor Johnson
+trevor@jpj.net

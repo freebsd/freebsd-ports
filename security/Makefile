@@ -68,6 +68,7 @@
     SUBDIR += p5-Net-SSLeay
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
+    SUBDIR += pad
     SUBDIR += pgp
     SUBDIR += pgp5
     SUBDIR += pgp6
