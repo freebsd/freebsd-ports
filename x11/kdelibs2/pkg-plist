@@ -1133,7 +1133,7 @@ share/doc/HTML/en/common/warning.png
 share/doc/HTML/en/common/x11-license.html
 share/doc/HTML/en/common/xml.dcl
 share/doc/HTML/en/kspell/.anchors
-share/doc/HTML/en/kspell/common
+@unexec %%RM%% -rf share/doc/HTML/en/kspell/common
 share/doc/HTML/en/kspell/configuration-dialog-.html
 share/doc/HTML/en/kspell/contact-information.html
 share/doc/HTML/en/kspell/encodings.html
@@ -2429,9 +2429,11 @@ share/servicetypes/kurifilterplugin.desktop
 @dirrm share/icons/hicolor/32x32
 @dirrm share/icons/hicolor/22x22/actions/kde
 @dirrm share/icons/hicolor/22x22/actions
+@dirrm share/icons/hicolor/22x22
 @dirrm share/icons/hicolor/16x16/mimetypes
 @dirrm share/icons/hicolor/16x16/filesystems
 @dirrm share/icons/hicolor/16x16/actions
+@dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
 @dirrm share/doc/HTML/en/kspell
 @dirrm share/doc/HTML/en/common

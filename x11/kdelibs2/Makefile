@@ -31,7 +31,7 @@ CFLAGS=		-O0 ${KDE_CFLAGS}
 
 USE_GMAKE=	yes
 MAKE_ENV=	SOMAJOR="${SOMAJOR}" SOMINOR="${SOMINOR}"
-PLIST_SUB+=	LIBVER="${SOMAJOR}"
+PLIST_SUB+=	LIBVER="${SOMAJOR}" RM="${RM}"
 
 .include <bsd.port.pre.mk>
 
