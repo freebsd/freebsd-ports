@@ -3,14 +3,18 @@
 # Date created:        15 Jun 1998
 # Whom:                Kentaro Inagaki <inagaki@tg.rim.or.jp>
 #
-# $Id: Makefile,v 1.5 1999/01/18 03:07:17 steve Exp $
+# $Id: Makefile,v 1.6 1999/06/11 19:03:24 steve Exp $
 #
 
 DISTNAME=	xdvik-22.02
 PKGNAME=	ja-vfxdvik-22.02
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
+MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/dviware/xdvik/ \
+		ftp://ftp.iij.ad.jp/pub/TeX/CTAN/dviware/xdvik/ \
+		ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ptex218/web2c/ \
 		${MASTER_SITE_LOCAL}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ptex/plib-1.4-euc.tar.gz
 
 PATCH_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-22/ \
 		${MASTER_SITE_LOCAL}
@@ -20,7 +24,7 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	inagaki@tg.rim.or.jp
 
 #RUN_DEPENDS=	mf:${PORTSDIR}/japanese/ptex-common
-#LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
+LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -28,23 +32,31 @@ USE_GMAKE=YES
 GNU_CONFIGURE=YES
 #CONFIGURE_ARGS= --enable-shared=yes \
 CONFIGURE_ARGS= \
-		--enable-bdpi=300 --enable-shrink=8 \
+		--enable-a4 --enable-bdpi=300 --enable-shrink=8 \
 		--enable-xdviprint=${PREFIX}/libexec/xdviprint
 CONFIGURE_ENV= INSTALL="${INSTALL}" \
 	INSTALL_PROGRAM="${INSTALL_PROGRAM}" INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 	INSTALL_DATA="${INSTALL_DATA}" INSTALL_MAN="${INSTALL_MAN}"
 SCRIPTS_ENV=	MV=${MV} SED=${SED}
 VFFONTS=	.:${PREFIX}/share/fonts/makejvf//
-TFMFONTS=	.:${PREFIX}/share/fonts/makejvf//
-PKFONTS=	.:${PREFIX}/lib/fonts/pk300//
+TFMFONTS=	.:${PREFIX}/share/fonts/{makejvf:tfm/ptex}//
+PKFONTS=	.:${PREFIX}/lib/fonts/pk{118:240:300:360:400:600}//
 MAKE_ENV=	XDEFS="-DDEFAULT_VFFONTS='"\"\\\"${VFFONTS}\\\""\"' -DDEFAULT_TFMFONTS='"\"\\\"${TFMFONTS}\\\""\"' -DDEFAULT_PKFONTS='"\"\\\"${PKFONTS}\\\""\"'"
 MAN1=xdvi.1
 
 TEXMF=		${PREFIX}/share/texmf
 VARTEXFONTS=/var/tmp/texfonts
 XDVIDIR=	${TEXMF}/xdvi
-MAKETEX_MODE?=ljfour
-DVIPS?=	dvipsk
+PTEXTFMDIR=	${PREFIX}/share/fonts/tfm/ptex
+MAKETEX_MODE?=	ljfour
+DVIPS?=		dvipsk
+
+PTEXTFM=goth10.tfm goth5.tfm goth6.tfm goth7.tfm goth8.tfm goth9.tfm \
+		min10.tfm min5.tfm min6.tfm min7.tfm min8.tfm min9.tfm \
+		ngoth10.tfm ngoth5.tfm ngoth6.tfm ngoth7.tfm ngoth8.tfm ngoth9.tfm \
+		nmin10.tfm nmin5.tfm nmin6.tfm nmin7.tfm nmin8.tfm nmin9.tfm \
+		tgoth10.tfm tgoth5.tfm tgoth6.tfm tgoth7.tfm tgoth8.tfm tgoth9.tfm \
+		tmin10.tfm tmin5.tfm tmin6.tfm tmin7.tfm tmin8.tfm tmin9.tfm
 
 DOCS=		FAQ \
 		xdvi.icon \
@@ -81,17 +93,13 @@ DOCS=		FAQ \
 # ******************
 
 .if ${DVIPS} == dvi2ps
-RUN_DEPENDS+=	dvi2ps:${PORTSDIR}/japanese/dvi2ps
 CONFIGURE_ARGS+= --with-dvifilter=dvi2ps
 .elif ${DVIPS} == dvipsk-vflib
-RUN_DEPENDS+=	dvips:${PORTSDIR}/japanese/dvipsk-vflib
 CONFIGURE_ARGS+= --with-dvifilter=dvips
 .elif ${DVIPS} == dvipsk
-RUN_DEPENDS+=	dvips:${PORTSDIR}/japanese/dvipsk
 CONFIGURE_ARGS+= --with-dvifilter=dvips
 .else
 DVIPS=dvipsk
-RUN_DEPENDS+=	dvips:${PORTSDIR}/japanese/dvipsk
 CONFIGURE_ARGS+= --with-dvifilter=dvips
 .endif
 
@@ -104,11 +112,26 @@ pre-fetch:
 	${ECHO} "*          Please refer to Makefile about a change.        *"; \
 	${ECHO} "************************************************************")
 
+post-extract:
+	@${TAR} -C ${WRKDIR}/ -zxf ${DISTDIR}/ptex/plib-1.4-euc.tar.gz \
+		texmf/fonts/tfm/ptex
+
+post-patch:
+	@${CAT} ${FILESDIR}/zeit.c.diff | ${PATCH} -p1 -s -d ${WRKSRC}
+
 pre-build:
 	@(cd ${WRKSRC} ; find . -name '*.orig' -exec ${RM} -f {} \;)
 
+pre-install:
+	@${MKDIR} ${PTEXTFMDIR}
+	@for i in ${PTEXTFM} ; do \
+	    ${INSTALL_DATA} ${WRKDIR}/texmf/fonts/tfm/ptex/$$i \
+			${PTEXTFMDIR} ; \
+	done
+
 do-install:
-	@(cd ${WRKSRC}/texk/xdvik ; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+	@(cd ${WRKSRC}/texk/xdvik ; ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 post-install:
 	@$(INSTALL_DATA) $(FILESDIR)/vfontmap $(XDVIDIR)
@@ -118,5 +141,6 @@ post-install:
 	    ${INSTALL_DATA} ${WRKSRC}/texk/xdvik/$$i ${PREFIX}/share/doc/xdvi ; \
 	done
 .endif
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
