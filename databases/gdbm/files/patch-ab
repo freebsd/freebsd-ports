@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sun May 15 13:28:49 1994
++++ Makefile.in	Sat Feb 14 16:37:46 1998
+@@ -88,7 +88,7 @@
+ 
+ DISTFILES = $(SRCS) $(HDRS) $(MSCFILES)
+ 
+-all: libgdbm.a
++all: libgdbm.a info
+ 
+ progs: $(PROGS)
+ 
+@@ -149,7 +149,7 @@
+ 
+ info: gdbm.info
+ 
+-gdbm.info:
++gdbm.info: gdbm.texinfo
+ 	$(MAKEINFO) $(srcdir)/gdbm.texinfo
+ 
+ dvi: gdbm.dvi
