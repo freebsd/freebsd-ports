@@ -2,6 +2,7 @@ bin/communicator-4.04
 @exec ln -sf %f %B/communicator-4
 @exec ln -sf communicator-4 %B/netscape
 @unexec rm -f %B/netscape
+@unexec rm -f %B/communicator-4
 lib/netscape/README
 lib/netscape/LICENSE
 lib/netscape/Netscape.ad
@@ -123,3 +124,19 @@ lib/netscape/vreg
 lib/netscape/registry
 lib/netscape/communicator-4.04.bin
 lib/netscape/mailcap
+@dirrm lib/netscape/spell
+@dirrm lib/netscape/plugins
+@dirrm lib/netscape/nethelp/netscape/shared
+@dirrm lib/netscape/nethelp/netscape/nscal
+@dirrm lib/netscape/nethelp/netscape/netcastr
+@dirrm lib/netscape/nethelp/netscape/navigatr
+@dirrm lib/netscape/nethelp/netscape/messengr
+@dirrm lib/netscape/nethelp/netscape/home
+@dirrm lib/netscape/nethelp/netscape/confernc
+@dirrm lib/netscape/nethelp/netscape/composer
+@dirrm lib/netscape/nethelp/netscape/collabra
+@dirrm lib/netscape/nethelp/netscape
+@dirrm lib/netscape/nethelp
+@dirrm lib/netscape/java/classes
+@dirrm lib/netscape/java
+@dirrm lib/netscape
