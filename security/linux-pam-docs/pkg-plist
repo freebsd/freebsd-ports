@@ -1,0 +1,56 @@
+%%DOCSDIR%%/html/index.html
+%%DOCSDIR%%/html/pam-1.html
+%%DOCSDIR%%/html/pam-10.html
+%%DOCSDIR%%/html/pam-11.html
+%%DOCSDIR%%/html/pam-12.html
+%%DOCSDIR%%/html/pam-2.html
+%%DOCSDIR%%/html/pam-3.html
+%%DOCSDIR%%/html/pam-4.html
+%%DOCSDIR%%/html/pam-5.html
+%%DOCSDIR%%/html/pam-6.html
+%%DOCSDIR%%/html/pam-7.html
+%%DOCSDIR%%/html/pam-8.html
+%%DOCSDIR%%/html/pam-9.html
+%%DOCSDIR%%/html/pam.html
+%%DOCSDIR%%/html/pam_appl-1.html
+%%DOCSDIR%%/html/pam_appl-10.html
+%%DOCSDIR%%/html/pam_appl-11.html
+%%DOCSDIR%%/html/pam_appl-12.html
+%%DOCSDIR%%/html/pam_appl-13.html
+%%DOCSDIR%%/html/pam_appl-14.html
+%%DOCSDIR%%/html/pam_appl-2.html
+%%DOCSDIR%%/html/pam_appl-3.html
+%%DOCSDIR%%/html/pam_appl-4.html
+%%DOCSDIR%%/html/pam_appl-5.html
+%%DOCSDIR%%/html/pam_appl-6.html
+%%DOCSDIR%%/html/pam_appl-7.html
+%%DOCSDIR%%/html/pam_appl-8.html
+%%DOCSDIR%%/html/pam_appl-9.html
+%%DOCSDIR%%/html/pam_appl.html
+%%DOCSDIR%%/html/pam_modules-1.html
+%%DOCSDIR%%/html/pam_modules-10.html
+%%DOCSDIR%%/html/pam_modules-11.html
+%%DOCSDIR%%/html/pam_modules-12.html
+%%DOCSDIR%%/html/pam_modules-2.html
+%%DOCSDIR%%/html/pam_modules-3.html
+%%DOCSDIR%%/html/pam_modules-4.html
+%%DOCSDIR%%/html/pam_modules-5.html
+%%DOCSDIR%%/html/pam_modules-6.html
+%%DOCSDIR%%/html/pam_modules-7.html
+%%DOCSDIR%%/html/pam_modules-8.html
+%%DOCSDIR%%/html/pam_modules-9.html
+%%DOCSDIR%%/html/pam_modules.html
+%%DOCSDIR%%/ps/README
+%%DOCSDIR%%/ps/pam.ps
+%%DOCSDIR%%/ps/pam_appl.ps
+%%DOCSDIR%%/ps/pam_modules.ps
+%%DOCSDIR%%/specs/draft-morgan-pam-current.txt
+%%DOCSDIR%%/txts/README
+%%DOCSDIR%%/txts/pam.txt
+%%DOCSDIR%%/txts/pam_appl.txt
+%%DOCSDIR%%/txts/pam_modules.txt
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%/ps
+@dirrm %%DOCSDIR%%/specs
+@dirrm %%DOCSDIR%%/txts
+@dirrm %%DOCSDIR%%
