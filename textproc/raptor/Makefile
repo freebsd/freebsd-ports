@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	raptor
-PORTVERSION=	0.9.5
-PORTREVISION=	2
+PORTVERSION=	0.9.6
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.redland.opensource.ac.uk/dist/source/
@@ -25,6 +24,9 @@ LIBWWW_CONFIG=	${LOCALBASE}/bin/libwww-config
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
+
+MAN1=		rdfdump.1
+MAN3=		libraptor.3
 
 CPPFLAGS=	-I${LOCALBASE}/include `${LIBWWW_CONFIG} --cflags`
 LDFLAGS=	-L${LOCALBASE}/lib -lgnugetopt `${LIBWWW_CONFIG} --libs`
