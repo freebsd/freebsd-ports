@@ -1,4 +1,23 @@
 @comment $FreeBSD$
+@unexec if cmp -s %D/%%T%%/conf/jk/mod_jk.conf %D/%%T%%/conf/jk/mod_jk.conf.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk/mod_jk.conf; fi
+@unexec if cmp -s %D/%%T%%/conf/jk/mod_jk.conf-jni %D/%%T%%/conf/jk/mod_jk.conf-jni.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk/mod_jk.conf-jni; fi
+@unexec if cmp -s %D/%%T%%/conf/jk/obj.conf %D/%%T%%/conf/jk/obj.conf.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk/obj.conf; fi
+@unexec if cmp -s %D/%%T%%/conf/jk/uriworkermap.properties %D/%%T%%/conf/jk/uriworkermap.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk/uriworkermap.properties; else fi
+@unexec if cmp -s %D/%%T%%/conf/jk/workers.properties %D/%%T%%/conf/jk/workers.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk/workers.properties; fi
+@unexec if cmp -s %D/%%T%%/conf/jk/wrapper.properties %D/%%T%%/conf/jk/wrapper.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk/wrapper.properties; fi
+@unexec if cmp -s %D/%%T%%/conf/jserv/tomcat.conf %D/%%T%%/conf/jserv/tomcat.conf.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jserv/tomcat.conf; fi
+@unexec if cmp -s %D/%%T%%/conf/jserv/tomcat.properties %D/%%T%%/conf/jserv/tomcat.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jserv/tomcat.properties; fi
+@unexec if cmp -s %D/%%T%%/conf/jk2.properties %D/%%T%%/conf/jk2.properties.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/jk2.properties; fi
+@unexec if cmp -s %D/%%T%%/conf/apps-127.0.0.1.xml %D/%%T%%/conf/apps-127.0.0.1.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/apps-127.0.0.1.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/apps-admin.xml %D/%%T%%/conf/apps-admin.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/apps-admin.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/apps-examples.xml %D/%%T%%/conf/apps-examples.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/apps-examples.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/tomcat.policy %D/%%T%%/conf/tomcat.policy.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/tomcat.policy; fi
+@unexec if cmp -s %D/%%T%%/conf/modules.xml %D/%%T%%/conf/modules.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/modules.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/server.xml %D/%%T%%/conf/server.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/server.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/users/admin-users.xml %D/%%T%%/conf/users/admin-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/users/admin-users.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/users/example-users.xml %D/%%T%%/conf/users/example-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/users/example-users.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/users/global-users.xml %D/%%T%%/conf/users/global-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/users/global-users.xml; fi
+@unexec if cmp -s %D/%%T%%/conf/users/tomcat-users.xml %D/%%T%%/conf/users/tomcat-users.xml.%%CONF_EXT%%; then rm -f %D/%%T%%/conf/users/tomcat-users.xml; fi
 bin/tomcat3ctl
 etc/rc.d/020.jakarta-tomcat3.sh
 %%T%%/logs/stdout.log
@@ -98,25 +117,25 @@ etc/rc.d/020.jakarta-tomcat3.sh
 %%T%%/webapps/ROOT.war
 %%T%%/webapps/admin.war
 %%T%%/webapps/examples.war
-%%T%%/conf/jk/mod_jk.conf
-%%T%%/conf/jk/mod_jk.conf-jni
-%%T%%/conf/jk/obj.conf
-%%T%%/conf/jk/uriworkermap.properties
-%%T%%/conf/jk/workers.properties
-%%T%%/conf/jk/wrapper.properties
-%%T%%/conf/jserv/tomcat.conf
-%%T%%/conf/jserv/tomcat.properties
-%%T%%/conf/users/admin-users.xml
-%%T%%/conf/users/example-users.xml
-%%T%%/conf/users/global-users.xml
-%%T%%/conf/users/tomcat-users.xml
-%%T%%/conf/jk2.properties
-%%T%%/conf/modules.xml
-%%T%%/conf/server.xml
-%%T%%/conf/tomcat.policy
-%%T%%/conf/apps-127.0.0.1.xml
-%%T%%/conf/apps-admin.xml
-%%T%%/conf/apps-examples.xml
+%%T%%/conf/jk/mod_jk.conf.%%CONF_EXT%%
+%%T%%/conf/jk/mod_jk.conf-jni.%%CONF_EXT%%
+%%T%%/conf/jk/obj.conf.%%CONF_EXT%%
+%%T%%/conf/jk/uriworkermap.properties.%%CONF_EXT%%
+%%T%%/conf/jk/workers.properties.%%CONF_EXT%%
+%%T%%/conf/jk/wrapper.properties.%%CONF_EXT%%
+%%T%%/conf/jserv/tomcat.conf.%%CONF_EXT%%
+%%T%%/conf/jserv/tomcat.properties.%%CONF_EXT%%
+%%T%%/conf/users/admin-users.xml.%%CONF_EXT%%
+%%T%%/conf/users/example-users.xml.%%CONF_EXT%%
+%%T%%/conf/users/global-users.xml.%%CONF_EXT%%
+%%T%%/conf/users/tomcat-users.xml.%%CONF_EXT%%
+%%T%%/conf/jk2.properties.%%CONF_EXT%%
+%%T%%/conf/modules.xml.%%CONF_EXT%%
+%%T%%/conf/server.xml.%%CONF_EXT%%
+%%T%%/conf/tomcat.policy.%%CONF_EXT%%
+%%T%%/conf/apps-127.0.0.1.xml.%%CONF_EXT%%
+%%T%%/conf/apps-admin.xml.%%CONF_EXT%%
+%%T%%/conf/apps-examples.xml.%%CONF_EXT%%
 %%T%%/bin/jspc
 %%T%%/bin/shutdown
 %%T%%/bin/startup
@@ -124,6 +143,14 @@ etc/rc.d/020.jakarta-tomcat3.sh
 %%T%%/ant/tomcat-ant.jar
 %%T%%/LICENSE
 %%T%%/KEYS
+@exec mkdir -p %D/%%T%%/conf/auto || true
+@exec mkdir -p %D/%%T%%/modules || true
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/
+@unexec rmdir %D/%%T%%/conf/users 2>/dev/null || true
+@unexec rmdir %D/%%T%%/conf/auto 2>/dev/null || true
+@unexec rmdir %D/%%T%%/conf/jserv 2>/dev/null || true
+@unexec rmdir %D/%%T%%/conf/jk 2>/dev/null || true
+@unexec rmdir %D/%%T%%/conf 2>/dev/null || true
 @dirrm %%T%%/logs
 @dirrm %%T%%/doc/images
 @dirrm %%T%%/doc/appdev/sample/etc
@@ -143,11 +170,6 @@ etc/rc.d/020.jakarta-tomcat3.sh
 @dirrm %%T%%/lib/endorsed
 @dirrm %%T%%/lib
 @dirrm %%T%%/webapps
-@dirrm %%T%%/conf/jk
-@dirrm %%T%%/conf/jserv
-@dirrm %%T%%/conf/users
-@dirrm %%T%%/conf/auto
-@dirrm %%T%%/conf
 @dirrm %%T%%/bin
 @dirrm %%T%%/ant
-@dirrm %%T%%
+@unexec rmdir %D/%%T%% 2>/dev/null || true
