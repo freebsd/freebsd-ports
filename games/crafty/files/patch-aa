@@ -1,5 +1,5 @@
---- Makefile.orig	Tue May 18 09:23:36 1999
-+++ Makefile	Sat Jun 19 16:31:54 1999
+--- Makefile.orig	Wed Jul 28 16:54:47 1999
++++ Makefile	Fri Aug  6 10:52:33 1999
 @@ -23,7 +23,7 @@
  #     SGI      {SGI Workstation running Irix (SYSV/R4) Unix}
  #     SUN      {Sun SparcStation running Solaris (SYSV/R4) Unix}
@@ -9,20 +9,19 @@
  #   
  #   The next options are optimizations inside Crafty that you will have
  #   test to see if they help.  on some machines, these will slow things
-@@ -69,13 +69,15 @@
- #           -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B
+@@ -75,14 +75,16 @@
  # asm     = X86.o
  
--# FreeBSD (gcc 2.6.3)
+ # FreeBSD (gcc 2.6.3)
 -#target  = FreeBSD
-+# FreeBSD (gcc 2.7.2.1)
 +target  = FreeBSD
  #CC      = gcc
--#CFLAGS  = -fomit-frame-pointer -m486 -O3 -Wall
+ #CFLAGS  = -fomit-frame-pointer -m486 -O3 -Wall
+ #CXX	 = $(CC)
+ #CXXFLAGS= $(CFLAGS)
 -#LDFLAGS = 
--#opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
+-#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 -#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST
-+#CFLAGS  = -pipe -O -Wall
 +LDFLAGS = 
 +opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS
 +.if ${MACHINE_ARCH} == "i386"
@@ -31,38 +30,43 @@
  
  # FreeBSD (pgcc)
  #target  = FreeBSD
-@@ -95,18 +97,23 @@
+@@ -106,20 +108,25 @@
   
  # LINUX (pgcc)
  # Note: You have to uncomment exactly ONE of the `asm' lines below.
 -target  = LINUX
 -CC      = gcc
 -CFLAGS  = -Wall -pipe -D_REENTRANT -mpentium -O
+-CXX	= $(CC)
+-CXXFLAGS= -pipe -D_REENTRANT -mpentium -O 
 -LDFLAGS = -lpthread
--opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
+-opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 -          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
 +#target  = LINUX
 +#CC      = gcc
 +#CFLAGS  = -Wall -pipe -D_REENTRANT -mpentium -O
++#CXX	= $(CC)
++#CXXFLAGS= -pipe -D_REENTRANT -mpentium -O 
 +#LDFLAGS = -lpthread
-+#opt     = -DCOMPACT_ATTACKS -DUSE_SPLIT_SHIFTS -DUSE_ATTACK_FUNCTIONS \
++#opt     = -DCOMPACT_ATTACKS -DUSE_ATTACK_FUNCTIONS \
 +#          -DUSE_ASSEMBLY_A -DUSE_ASSEMBLY_B -DFAST -DSMP -DCPUS=4 -DDGT
  
  # Uncomment the FIRST `asm' line for a.out systems.
  # Uncomment the SECOND `asm' line for ELF systems.
  #
 -#asm     = X86-aout.o
+-asm     = X86-elf.o
 +.if ${MACHINE_ARCH} == "i386"
 +.if ${PORTOBJFORMAT} == "aout"
-+asm     = X86-aout.o
++asm	= X86-aout.o
 +.else
- asm     = X86-elf.o
++asm	= X86-elf.o
 +.endif
 +.endif
   
  # LINUX (gcc)
  # Note: You have to uncomment exactly ONE of the `asm' lines below.
-@@ -162,7 +169,7 @@
+@@ -185,7 +192,7 @@
  
  # Do not change anything below this line!
  
@@ -71,12 +75,3 @@
  
  objects = searchr.o search.o thread.o searchmp.o repeat.o next.o nexte.o      \
          nextr.o history.o quiesce.o evaluate.o movgen.o make.o unmake.o       \
-@@ -189,7 +196,7 @@
- 
- egtb.o: egtb.cpp
- 	@echo $(CC) -c $(CFLAGS) egtb.cpp
--	@$(CC) -c -pipe -D_REENTRANT -mpentium -O $(opts) egtb.cpp
-+	@$(CC) -c -pipe -D_REENTRANT -O $(opts) egtb.cpp
- clean:
- 	-rm -f *.o crafty X86-elf.X X86-aout.S
- 
