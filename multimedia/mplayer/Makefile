@@ -140,6 +140,9 @@
 # WITH_LZO
 # default: autodetect
 #
+# WITH_XMMS
+# default: autodetect
+#
 # WITHOUT_WIN32_CODECS
 # default: undefined
 # By default, mplayer depends on and uses the win32-codecs collection.
@@ -199,6 +202,7 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--disable-tv-v4l
 
 WANT_GNOME=	yes
+USE_REINPLACE=	yes
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
 INSTALLS_SHLIB=	yes
@@ -284,6 +288,10 @@ WITH_XVID=	yes
 
 .if exists(${LOCALBASE}/lib/libfaad.so)
 WITH_FAAD=	yes
+.endif
+
+.if exists(${X11BASE}/lib/libxmms.so)
+WITH_XMMS=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/liblzo.so)
@@ -422,6 +430,11 @@ LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
 CONFIGURE_ARGS+=	--disable-liblzo
 .endif
 
+.if defined(WITH_XMMS)
+CONFIGURE_ARGS+=	--enable-xmms
+LIB_DEPENDS+=	xmms.3:${PORTSDIR}/multimedia/xmms
+.endif
+
 .if defined(WITH_FAAD)
 CONFIGURE_ARGS+=	--enable-faad
 LIB_DEPENDS+=	faad.0:${PORTSDIR}/audio/faad
@@ -499,6 +512,11 @@ pre-everything::
 	@${ECHO_MSG} "You can download official skin collections from"
 	@${ECHO_MSG} "http://www.mplayerhq.hu/homepage/dload.html"
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|libxmms.so.1|libxmms.so|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
 .if defined(WITH_LIBDVDREAD)
