@@ -1,0 +1,11 @@
+--- src/tkobjc/Makefile.in.orig	Mon Apr 10 15:28:04 2000
++++ src/tkobjc/Makefile.in	Fri Oct 10 06:06:05 2003
+@@ -1270,7 +1270,7 @@
+ @CONSERVATIVE_OPTIMIZATION_TRUE@	$(OBJCCOMPILE) -O0 -c -o $@ $<
+ 
+ %_tcl.x: %.tcl
+-	(echo 'const char *$(notdir $(basename $<))_tcl = "' ; cat $< | sed -e 's/\\/\\\\/g' -e 's/"/\\"/g' ; echo '";' ) > $@ 
++	(echo 'const char *$(notdir $(basename $<))_tcl = "\\' ; cat $< | sed -e 's/\\/\\\\/g' -e 's/"/\\"\\\\/g' -e 's/$$/\\n\\/' ; echo '";' ) > $@ 
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
