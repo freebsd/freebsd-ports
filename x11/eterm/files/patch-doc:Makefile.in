@@ -1,0 +1,25 @@
+--- doc/Makefile.in.orig	Wed Aug 29 03:23:41 2001
++++ doc/Makefile.in	Fri Sep  7 01:40:20 2001
+@@ -267,15 +267,15 @@
+ 	$(SED) -e 's%@''VERSION''@%$(VERSION)%g' -e 's%@''DATE''@%$(DATE)%g' -e 's%@THEMEDIR@%$(pkgdatadir)/themes%g' $(top_srcdir)/doc/$@.in > $@
+ 
+ Eterm.1.html: Eterm.1
+-	(nroff -man $< | man2html -title Eterm > $@) || :
++	(nroff -man Eterm.1 | man2html -title Eterm > $@) || :
+ 
+ install-data-hook:
+-	$(TIC) Eterm.ti || (mkinstalldirs $(HOME)/.terminfo && $(TIC) -o$(HOME)/.terminfo Eterm.ti) || :
+-	-infocmp -C -sc Eterm | sed -e '/Reconstructed/d' -e '/\.\.sa=/d' > Eterm.tcap.new && mv Eterm.tcap.new Eterm.tcap || rm -f Eterm.tcap.new
+-	-if test -f /usr/share/misc/termcap && test -f Eterm.tcap ; then \
+-	    grep 'Eterm-color' /usr/share/misc/termcap || cat Eterm.tcap >> /usr/share/misc/termcap ; \
+-	    cap_mkdb termcap ; \
+-	fi || :
++#	$(TIC) Eterm.ti || (mkinstalldirs $(HOME)/.terminfo && $(TIC) -o$(HOME)/.terminfo Eterm.ti) || :
++#	-infocmp -C -sc Eterm | sed -e '/Reconstructed/d' -e '/\.\.sa=/d' > Eterm.tcap.new && mv Eterm.tcap.new Eterm.tcap || rm -f Eterm.tcap.new
++#	-if test -f /usr/share/misc/termcap && test -f Eterm.tcap ; then \
++#	    grep 'Eterm-color' /usr/share/misc/termcap || cat Eterm.tcap >> /usr/share/misc/termcap ; \
++#	    cap_mkdb termcap ; \
++#	fi || :
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

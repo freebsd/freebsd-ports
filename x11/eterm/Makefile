@@ -6,28 +6,34 @@
 #
 
 PORTNAME=	eterm
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	eterm
+MASTER_SITES=	http://www.eterm.org/download/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Eterm-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
 
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
 
-USE_GMAKE=	yes
+LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2 \
+		ast.1:${PORTSDIR}/devel/libast
+
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--enable-trans=imlib --enable-utmp \
+CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
-		--with-backspace=bs
-CONFIGURE_ENV=	LIBS="-lxpg4"
+		--with-backspace=bs --without-terminfo
 
 MAN1=		Eterm.1
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MMX) && (${ARCH} == "i386")
+CONFIGURE_ARGS+=--enable-mmx
+.endif
 
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/Eterm
@@ -40,4 +46,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
