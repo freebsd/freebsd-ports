@@ -6,7 +6,7 @@ include/stringprep.h
 include/tld.h
 lib/libidn.a
 lib/libidn.so
-lib/libidn.so.13
+lib/libidn.so.14
 libdata/pkgconfig/libidn.pc
 share/emacs/site-lisp/idna.el
 share/emacs/site-lisp/punycode.el
