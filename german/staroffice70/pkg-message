@@ -21,7 +21,7 @@ Workaround:
 # chmod +s $PREFIX/staroffice6.0/share/config/registry/instance/org/openoffice/Office
 
 $PREFIX is in most cases "/usr/local". Adding +s on the
-config directory does make if writable for later.
+config directory does make it writable for later.
 
 This should only be done as urgent workaround if you don't
 want to work as root and really like to test Staroffice6.0-Beta.
