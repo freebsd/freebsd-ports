@@ -6412,6 +6412,7 @@ phpgroupware	ports/deskutils/phpgroupware
 phplot		ports/graphics/phplot
 phpmyadmin	ports/databases/phpmyadmin
 phpnuke		ports/www/phpnuke
+phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
 phraze		ports/misc/phraze
 phylip		ports/biology/phylip
