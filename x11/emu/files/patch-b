@@ -1,0 +1,30 @@
+*** client/Imakefile.orig	Wed May 22 03:07:51 1996
+--- client/Imakefile	Wed May 22 03:16:11 1996
+***************
+*** 11,22 ****
+  
+  #ifdef USE_MOTIF
+  TOOLKIT_LIBS = XmClientDepLibs
+! EXTRA_DEFINES = -DMOTIF
+  EXTRA_SRCS = aux_motif.c
+  EXTRA_OBJS = aux_motif.o
+  
+  #else
+  TOOLKIT_LIBS = XawClientDepLibs
+  EXTRA_SRCS = aux_athena.c
+  EXTRA_OBJS = aux_athena.o
+  #endif
+--- 11,23 ----
+  
+  #ifdef USE_MOTIF
+  TOOLKIT_LIBS = XmClientDepLibs
+! EXTRA_DEFINES = -DMOTIF -DDECORATIONS
+  EXTRA_SRCS = aux_motif.c
+  EXTRA_OBJS = aux_motif.o
+  
+  #else
+  TOOLKIT_LIBS = XawClientDepLibs
++ EXTRA_DEFINES = -DDECORATIONS
+  EXTRA_SRCS = aux_athena.c
+  EXTRA_OBJS = aux_athena.o
+  #endif
