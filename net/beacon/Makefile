@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	beacon
-PORTVERSION=	0.9.55
+PORTVERSION=	1.1
 CATEGORIES=	net perl5 mbone ipv6
 MASTER_SITES=	http://dast.nlanr.net/Projects/Beacon/releases/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-0
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Beacon active measurement tool to monitor multicast
@@ -16,14 +17,19 @@ COMMENT=	Beacon active measurement tool to monitor multicast
 BUILD_DEPENDS=	${SITE_PERL}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Unfetchable
-
 WWW_DIR?=	${PREFIX}/www/
 PLIST_SUB+=	VERSION=${PORTVERSION}
 USE_PERL5=	yes
 USE_AUTOCONF_VER=	259
-CONFIGURE_ARGS=	--enable-ipv6 --bindir=${WWW_DIR}/${PORTNAME}-${PORTVERSION}
+CONFIGURE_ARGS=	--bindir=${WWW_DIR}/${PORTNAME}-${PORTVERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+.ifdef(WITH_IPV6)
+#enable IPv6 name lookup, and sending IPv6 multicast
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Socket6.pm:${PORTSDIR}/net/p5-Socket6
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src_beacon.in
+CONFUGURE_ARGS+=	--enable-ipv6
+.endif
 
 .include <bsd.port.pre.mk>
 

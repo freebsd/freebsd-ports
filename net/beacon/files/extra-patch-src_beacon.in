@@ -1,0 +1,95 @@
+
+$FreeBSD$
+
+--- src/beacon.in.orig
++++ src/beacon.in
+@@ -34,6 +34,7 @@
+ use Net::Multicast::Beacon;		# Make rtp.c RTP calls available in Perl
+ use Getopt::Long;				# Allow both -g -p and --group --port cmd lines
+ use IO::Socket;					# For reverse IP lookups to get hostname
++use Socket6;					# For reverse IPv6 lookup
+ use IO::Select;
+ use Net::Domain;				# For getting the FQDN of the current host
+ use Sys::Hostname;				# Other way of getting the name of the current host
+@@ -3387,21 +3388,41 @@
+ $thishost	= $host;
+ $thisuser	= $user;
+ 
+-my $packed = gethostbyname($host);
+-if (! defined $packed) {			# Couldn't get it - Mark it bad
+-	$thisip = "UNKN";
+-} else {							# Unpack it into a string var
+-	$thisip = inet_ntoa($packed);	# "141.142.2.168"
+-}
++#if group address an IPv6 address, we have to find IPv6 addresses
+ 
+-# Do the best job we can do for getting FQDN for  the hostname
+-my $lookup = gethostbyaddr(inet_aton($thisip), AF_INET);
+-if (defined $lookup) {		# Only update if it worked
+-	$thishost	= $host = $lookup;
++if ($GROUP =~ ":" ) {
++	my @res=getaddrinfo($host,'daytime',AF_INET6);
++	my($packed,$port) = getnameinfo($res[3],NI_NUMERICHOST);
++	my($packed2,$port2) = getnameinfo($res[3]);
++
++	if( !defined $packed) {
++		$thisip = "UNKN";
++	} else {
++		$thisip = $packed;
++	}
++	if (!defined $packed2) {
++		$thishost = $host = $packed2;
++	} else {
++		$thishost = $thisip;
++	}
+ } else {
+-	$thishost	= $thisip;
++	my $packed = gethostbyname($host);
++	if (! defined $packed) {	# Couldn't get i t - Mark it bad
++		$thisip = "UNKN";
++	} else {	# Unpack it into a string var
++		$thisip = inet_ntoa($packed);   # "141.142.2.168"
++	}
++
++	# Do the best job we can do for getting FQDN for  the hostname
++	my $lookup = gethostbyaddr(inet_aton($thisip), AF_INET);
++	if (defined $lookup) {          # Only update if it worked
++		$thishost       = $host = $lookup;
++	} else {
++		$thishost       = $thisip;
++	}
+ }
+ 
++
+ # If host still "UNKN" at this point, things are too confused to continue
+ if ($thishost eq "UNKN") {
+ 	die "Unable to resolve hostname -- Please check your system 
+@@ -3642,11 +3663,23 @@
+ 
+ 			# Get the IP address of the hostname given in $h
+ 			my $hostip;
+-			my $packed = gethostbyname($h);
+-			if (! defined $packed) {		# Couldn't get it - Mark it bad
+-				$hostip = "UNKN";
+-			} else {						# Unpack it into a string var
+-				$hostip = inet_ntoa($packed);
++			if ( $GROUP =~ ":" ) {
++				my @res = getaddrinfo($h,'daytime', AF_INET6);
++				my ($packed,$port) = getnameinfo($res[3],NI_NUMERICHOST);
++				my ($packed2,$port2) = getnameinfo($res[3]);
++				if(defined $packed) {
++					$hostip = $packed;
++				}
++				if(defined $packed2) {
++					$hostip = $packed2;
++				}
++			} else {
++				my $packed = gethostbyname($h);
++				if (! defined $packed) {		# Couldn't get it - Mark it bad
++					$hostip = "UNKN";
++				} else {						# Unpack it into a string var
++					$hostip = inet_ntoa($packed);
++				}
+ 			}
+ 
+ 			# Create a sortname using hostname and SSRC
