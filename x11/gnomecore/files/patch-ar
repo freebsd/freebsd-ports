@@ -1,0 +1,23 @@
+--- gsm/logout.c	2000/08/11 06:51:52	1.1
++++ gsm/logout.c	2000/08/11 07:07:38
+@@ -34,12 +34,20 @@
+ 
+ static gchar *halt_command[] =
+ {
++#ifdef __FreeBSD__
++  "/sbin/shutdown", "-h", "now", NULL
++#else
+   "/usr/bin/shutdown", "-h", "now", NULL
++#endif
+ };
+ 
+ static gchar *reboot_command[] =
+ {
++#ifdef __FreeBSD__
++  "/sbin/shutdown", "-r", "now", NULL
++#else
+   "/usr/bin/shutdown", "-r", "now", NULL
++#endif
+ };
+ 
+ /* What action to take upon shutdown */
