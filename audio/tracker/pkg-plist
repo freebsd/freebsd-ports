@@ -1,7 +1,6 @@
 @cwd /usr/local
 bin/tracker
 bin/randomize
-bin/analyzer
 bin/splitmod
 bin/tcheck
 etc/compression_methods
