@@ -11,4 +11,6 @@ commands:
 	$ autoload -U compinstall
 	$ compinstall
 
-See also zshcompsys(1) manpages. :)
+See also zshcompsys(1) manpage. :)
+
+WWW: http://www.zsh.org/
