@@ -81,6 +81,7 @@ include/sp/NamedResource.h
 include/sp/NamedResourceTable.h
 include/sp/NamedTable.h
 include/sp/Notation.h
+include/sp/NotationStorage.h
 include/sp/OpenElement.h
 include/sp/Options.cxx
 include/sp/Options.h
@@ -130,6 +131,7 @@ include/sp/Vector.cxx
 include/sp/Vector.h
 include/sp/Win32CodingSystem.h
 include/sp/WinInetStorage.h
+include/sp/WinApp.h
 include/sp/XcharMap.cxx
 include/sp/XcharMap.h
 include/sp/config.h
@@ -139,12 +141,6 @@ include/sp/rtti.h
 include/sp/sptchar.h
 include/sp/types.h
 include/sp/xnew.h
-lib/libgrove.a
-@comment lib/libgrove.so.1.4
-lib/libspgrove.a
-@comment lib/libspgrove.so.1.4
-lib/libstyle.a
-@comment lib/libstyle.so.1.4
 lib/libsp.a
 @comment lib/libsp.so.1.4
 share/doc/jade/TeX.htm
