@@ -1,0 +1,7 @@
+`xcolor' provides easy driver-independent access to several kinds of
+color tints, shades, tones, and mixes of arbitrary colors.
+It allows to select a document-wide target color model and offers tools
+for automatic color schemes, conversion between eight color models,
+and alternating table row colors.
+
+WWW: http://latex-beamer.sourceforge.net/
