@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xmedcon
-PORTVERSION=		0.9.7.3
+PORTVERSION=		0.9.8.1
 CATEGORIES=		graphics
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ OPTIONS=	X11 "With X11" on \
 		CONCORDE "With Concorde µPET" on \
 		DICOM "With DICOM 3.0" on \
 		DICOM_LJPEG "With DICOM 3.0 Lossless JPEG" on \
-		ECAT "With ECAT 6.4 / 7.2" on \
+		ECAT "With CTI ECAT 6/7" on \
 		GIF "With GIF87a/89a" on \
 		INTERFILE "With InterFile 3.3" on \
 		INW "With INW (RUG)" on \
@@ -36,8 +36,10 @@ WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ARGS=	--enable-llcheck
+
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS=	--disable-gui
+CONFIGURE_ARGS+=	--disable-gui
 PLIST_SUB+=	X11="@comment "
 .else
 USE_GNOME+=	gtk12 gdkpixbuf
