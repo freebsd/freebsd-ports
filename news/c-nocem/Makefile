@@ -14,15 +14,15 @@ MASTER_SITES=	http://sites.inka.de/~bigred/sw/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	NoCeM for C News and INN
 
-BUILD_DEPENDS=	${CNEWSWRK}/conf/substitutions:${PORTSDIR}/${CNEWSSRC}:configure
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/${CNEWSSRC} \
+BUILD_DEPENDS=	${CNEWSWRK}/conf/substitutions:${PORTSDIR}/${CNEWS_PORT}:configure
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/${CNEWS_PORT} \
 		gpg:${PORTSDIR}/security/gnupg
 
 WRKSRC=		${WRKDIR}/c-nocem
-CNEWSSRC?=	news/cnews
-#CNEWSWRK?=	${WRKDIRPREFIX}${PORTSDIR}/${CNEWSSRC}/work
+CNEWS_PORT?=	news/cnews
+#CNEWSWRK?=	${WRKDIRPREFIX}${PORTSDIR}/${CNEWS_PORT}/work
 # ${.CURDIR}/../.. can be diffrent from ${PORTSDIR}
-CNEWSWRK?=	${WRKDIRPREFIX}${.CURDIR}/../../${CNEWSSRC}/work
+CNEWSWRK?=	${WRKDIRPREFIX}${.CURDIR}/../../${CNEWS_PORT}/work
 NEWSBIN?=	${PREFIX}/libexec/cnews
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
