@@ -1,0 +1,20 @@
+--- servers/slapd/schema/krb5-kdc.schema.orig	Tue Sep  5 13:28:34 2000
++++ servers/slapd/schema/krb5-kdc.schema	Mon Oct 30 13:09:19 2000
+@@ -96,7 +96,7 @@
+ attributetype ( 1.3.6.1.4.1.5322.10.1.10
+ 	NAME 'krb5Key'
+ 	DESC 'Encoded ASN1 Key as an octet string'
+-	SYNTAX 1.3.6.1.4.1.1466.115.121.1.5 )
++	SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )
+ 
+ attributetype ( 1.3.6.1.4.1.5322.10.1.11
+ 	NAME 'krb5PrincipalRealm'
+@@ -112,7 +112,7 @@
+ 
+ objectclass ( 1.3.6.1.4.1.5322.10.2.1
+ 	NAME 'krb5Principal'
+-	SUP top
++	SUP person
+ 	AUXILIARY
+ 	MUST ( krb5PrincipalName )
+ 	MAY ( cn $ krb5PrincipalRealm ) )
