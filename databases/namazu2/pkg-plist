@@ -35,6 +35,7 @@ lib/libnmz.so.3
 libexec/namazu.cgi
 share/locale/ja/LC_MESSAGES/namazu.mo
 share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
+share/namazu/doc/en/nmz.html
 share/namazu/doc/en/manual.html
 @dirrm share/namazu/doc/en
 share/namazu/doc/ja/manual.html
