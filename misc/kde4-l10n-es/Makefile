@@ -7,11 +7,11 @@
 
 PORTNAME=	kde-i18n
 PORTVERSION=	2.1.1
-CATEGORIES=	misc kde
+CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER?=	demon@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
