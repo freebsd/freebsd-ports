@@ -487,6 +487,7 @@
     SUBDIR += wmnetmon
     SUBDIR += wmq3
     SUBDIR += wmwave
+    SUBDIR += wol
     SUBDIR += xarchie
     SUBDIR += xbone
     SUBDIR += xferstats
