@@ -5,28 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bookcase
-PORTVERSION=	0.9.3
+PORTNAME=	tellico
+PORTVERSION=	0.12
 CATEGORIES=	misc kde
-MASTER_SITES=	http://www.periapsis.org/bookcase/download/
+MASTER_SITES=	http://www.periapsis.org/tellico/download/
 
 MAINTAINER=	markus@FreeBSD.org
-COMMENT=	Personal book collection manager for KDE
+COMMENT=	Collection manager for KDE
+
+LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
+		cdda_paranoia:${PORTSDIR}/audio/cdparanoia \
+		kcddb:${PORTSDIR}/multimedia/kdemultimedia3
 
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-post-extract:
-	${TOUCH} ${WRKSRC}/config.h.in
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-CFLAGS+=	-D__LIBSTDCPP_PARTIAL_SUPPORT__
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

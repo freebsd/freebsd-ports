@@ -1,76 +1,82 @@
-bin/bookcase
-share/applnk/Applications/bookcase.desktop
-share/apps/bookcase/bibtex-translation.xml
-share/apps/bookcase/bookcase-by-author.xsl
-share/apps/bookcase/bookcase-by-title.xsl
-share/apps/bookcase/bookcase-common.xsl
-share/apps/bookcase/bookcase-printing.xsl
-share/apps/bookcase/bookcase.dtd
-share/apps/bookcase/bookcase.tips
-share/apps/bookcase/bookcase2html.xsl
-share/apps/bookcase/bookcaseui.rc
-share/apps/bookcase/cassette-logo.png
-share/apps/bookcase/cd-logo.png
-share/apps/bookcase/dvd-logo.png
-share/apps/bookcase/entry-templates/Album.xsl
-share/apps/bookcase/entry-templates/Compact.xsl
-share/apps/bookcase/entry-templates/Default.xsl
-share/apps/bookcase/entry-templates/Fancy.xsl
-share/apps/bookcase/entry-templates/Video.xsl
-share/apps/bookcase/mods2bookcase.xsl
-share/apps/bookcase/pics/album.png
-share/apps/bookcase/pics/bibtex.png
-share/apps/bookcase/pics/book.png
-share/apps/bookcase/pics/bookcase.png
-share/apps/bookcase/pics/card.png
-share/apps/bookcase/pics/coin.png
-share/apps/bookcase/pics/comic.png
-share/apps/bookcase/pics/person-open.png
-share/apps/bookcase/pics/person.png
-share/apps/bookcase/pics/stamp.png
-share/apps/bookcase/pics/video.png
-share/apps/bookcase/pics/wine.png
-share/apps/bookcase/record-logo.png
-share/apps/bookcase/shadowAlpha.png
-share/apps/bookcase/vhs-logo.png
-share/doc/HTML/en/bookcase/bibtex-options.png
-share/doc/HTML/en/bookcase/common
-share/doc/HTML/en/bookcase/configuration.docbook
-share/doc/HTML/en/bookcase/csv-dialog.png
-share/doc/HTML/en/bookcase/details.docbook
-share/doc/HTML/en/bookcase/entry-editor1.png
-share/doc/HTML/en/bookcase/entry-editor2.png
-share/doc/HTML/en/bookcase/entry-editor3.png
-share/doc/HTML/en/bookcase/entry-editor4.png
-share/doc/HTML/en/bookcase/faqs.docbook
-share/doc/HTML/en/bookcase/fields-dialog.png
-share/doc/HTML/en/bookcase/filter-dialog.png
-share/doc/HTML/en/bookcase/fundamentals.docbook
-share/doc/HTML/en/bookcase/general-options.png
-share/doc/HTML/en/bookcase/hacking.docbook
-share/doc/HTML/en/bookcase/importing-exporting.docbook
-share/doc/HTML/en/bookcase/index.cache.bz2
-share/doc/HTML/en/bookcase/index.docbook
-share/doc/HTML/en/bookcase/main-window.png
-share/doc/HTML/en/bookcase/menus.docbook
-share/doc/HTML/en/bookcase/print-options.png
-share/doc/HTML/en/bookcase/template-options.png
-share/icons/hicolor/16x16/apps/bookcase.png
-share/icons/hicolor/32x32/apps/bookcase.png
-share/locale/bg/LC_MESSAGES/bookcase.mo
-share/locale/cs/LC_MESSAGES/bookcase.mo
-share/locale/de/LC_MESSAGES/bookcase.mo
-share/locale/ee/LC_MESSAGES/bookcase.mo
-share/locale/es/LC_MESSAGES/bookcase.mo
-share/locale/fi/LC_MESSAGES/bookcase.mo
-share/locale/fr/LC_MESSAGES/bookcase.mo
-share/locale/hu/LC_MESSAGES/bookcase.mo
-share/locale/it/LC_MESSAGES/bookcase.mo
-share/locale/nb/LC_MESSAGES/bookcase.mo
-share/locale/nl/LC_MESSAGES/bookcase.mo
-share/locale/ro/LC_MESSAGES/bookcase.mo
-share/locale/sv/LC_MESSAGES/bookcase.mo
-share/mimelnk/application/x-bookcase.desktop
+bin/tellico
+share/applnk/Applications/tellico.desktop
+share/apps/kconf_update/tellico-rename.upd
+share/apps/tellico/amazon2bookcase.xsl
+share/apps/tellico/bibtex-translation.xml
+share/apps/tellico/bookcase-by-author.xsl
+share/apps/tellico/bookcase-by-title.xsl
+share/apps/tellico/bookcase-common.xsl
+share/apps/tellico/bookcase-printing.xsl
+share/apps/tellico/bookcase2html.xsl
+share/apps/tellico/cassette-logo.png
+share/apps/tellico/cd-logo.png
+share/apps/tellico/dvd-logo.png
+share/apps/tellico/entry-templates/Album.xsl
+share/apps/tellico/entry-templates/Compact.xsl
+share/apps/tellico/entry-templates/Default.xsl
+share/apps/tellico/entry-templates/Fancy.xsl
+share/apps/tellico/entry-templates/Video.xsl
+share/apps/tellico/mods2bookcase.xsl
+share/apps/tellico/pics/album.png
+share/apps/tellico/pics/bibtex.png
+share/apps/tellico/pics/book.png
+share/apps/tellico/pics/card.png
+share/apps/tellico/pics/coin.png
+share/apps/tellico/pics/comic.png
+share/apps/tellico/pics/person-open.png
+share/apps/tellico/pics/person.png
+share/apps/tellico/pics/stamp.png
+share/apps/tellico/pics/tellico.png
+share/apps/tellico/pics/video.png
+share/apps/tellico/pics/wine.png
+share/apps/tellico/record-logo.png
+share/apps/tellico/shadowAlpha.png
+share/apps/tellico/tellico.dtd
+share/apps/tellico/tellico.tips
+share/apps/tellico/tellicoui.rc
+share/apps/tellico/vhs-logo.png
+share/doc/HTML/en/tellico/bibtex-options.png
+share/doc/HTML/en/tellico/common
+share/doc/HTML/en/tellico/configuration.docbook
+share/doc/HTML/en/tellico/csv-dialog.png
+share/doc/HTML/en/tellico/details.docbook
+share/doc/HTML/en/tellico/entry-editor1.png
+share/doc/HTML/en/tellico/entry-editor2.png
+share/doc/HTML/en/tellico/entry-editor3.png
+share/doc/HTML/en/tellico/entry-editor4.png
+share/doc/HTML/en/tellico/export-csv.png
+share/doc/HTML/en/tellico/export-html.png
+share/doc/HTML/en/tellico/export-options.png
+share/doc/HTML/en/tellico/faqs.docbook
+share/doc/HTML/en/tellico/fetch-dialog.png
+share/doc/HTML/en/tellico/fields-dialog.png
+share/doc/HTML/en/tellico/filter-dialog.png
+share/doc/HTML/en/tellico/fundamentals.docbook
+share/doc/HTML/en/tellico/general-options.png
+share/doc/HTML/en/tellico/hacking.docbook
+share/doc/HTML/en/tellico/importing-exporting.docbook
+share/doc/HTML/en/tellico/index.cache.bz2
+share/doc/HTML/en/tellico/index.docbook
+share/doc/HTML/en/tellico/main-window.png
+share/doc/HTML/en/tellico/menus.docbook
+share/doc/HTML/en/tellico/print-options.png
+share/doc/HTML/en/tellico/template-options.png
+share/icons/hicolor/16x16/apps/tellico.png
+share/icons/hicolor/32x32/apps/tellico.png
+share/locale/bg/LC_MESSAGES/tellico.mo
+share/locale/cs/LC_MESSAGES/tellico.mo
+share/locale/de/LC_MESSAGES/tellico.mo
+share/locale/ee/LC_MESSAGES/tellico.mo
+share/locale/es/LC_MESSAGES/tellico.mo
+share/locale/fi/LC_MESSAGES/tellico.mo
+share/locale/fr/LC_MESSAGES/tellico.mo
+share/locale/hu/LC_MESSAGES/tellico.mo
+share/locale/it/LC_MESSAGES/tellico.mo
+share/locale/nb/LC_MESSAGES/tellico.mo
+share/locale/nl/LC_MESSAGES/tellico.mo
+share/locale/ro/LC_MESSAGES/tellico.mo
+share/locale/sv/LC_MESSAGES/tellico.mo
+share/mimelnk/application/x-tellico.desktop
 @unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
 @unexec rmdir %D/share/mimelnk 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
@@ -79,12 +85,13 @@ share/mimelnk/application/x-bookcase.desktop
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
-@dirrm share/doc/HTML/en/bookcase
+@dirrm share/doc/HTML/en/tellico
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@dirrm share/apps/bookcase/pics
-@dirrm share/apps/bookcase/entry-templates
-@dirrm share/apps/bookcase
+@dirrm share/apps/tellico/pics
+@dirrm share/apps/tellico/entry-templates
+@dirrm share/apps/tellico
+@unexec rmdir %D/share/apps/kconf_update 2>/dev/null || true
 @unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
