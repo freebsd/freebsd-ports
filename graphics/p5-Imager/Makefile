@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	Imager
-PORTVERSION=	0.39
+PORTVERSION=	0.41
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.eecs.umich.edu/~addi/perl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
 
 LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \
 		tiff:${PORTSDIR}/graphics/tiff \
@@ -34,6 +34,8 @@ MAN3=	Imager.3 Imager::Color.3 Imager::Color::Float.3 Imager::Expr.3 \
 	Imager::Font::FreeType2.3 Imager::Font::Truetype.3 \
 	Imager::Font::Type1.3 Imager::Font::Win32.3 Imager::Fountain.3 \
 	Imager::Matrix2d.3 Imager::Regops.3 Imager::Transform.3 \
-	Imager::interface.3 Imager::regmach.3
+	Imager::interface.3 Imager::regmach.3 Imager::Engines.3 \
+	Imager::Transformations.3 Imager::Draw.3 Imager::Files.3 \
+	Imager::ImageTypes.3 Imager::Filters.3
 
 .include <bsd.port.mk>
