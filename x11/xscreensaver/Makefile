@@ -18,27 +18,29 @@ MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
 MAINTAINER?=	DougB@FreeBSD.org
 
-LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle
+LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle \
+		xml.5:${PORTSDIR}/textproc/libxml
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	libxml gtk12
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-pam --with-gl --with-gle --with-xpm --with-xml \
 		--with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
 		--with-configdir=${PREFIX}/share/xscreensaver/config/ \
-		--with-jpeg=${LOCALBASE} \
-		--without-gnome --without-motif --without-pixbuf
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		X_CFLAGS="-I${LOCALBASE}/include/gnome-xml"
+		--with-jpeg=${LOCALBASE} --without-gnome --without-kerberos
+
+.include <bsd.port.pre.mk>
 
 .if defined(XS_WITH_ALL_FORTUNES)
 CONFIGURE_ARGS+=	--with-fortune="/usr/games/fortune -sa"
 .endif
+
+.undef HAVE_GNOME
+
+CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include/gnome-xml
 
 MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	blitspin.1 bouboule.1 boxed.1 braid.1 bsod.1 bubble3d.1 bubbles.1 \
@@ -67,6 +69,18 @@ MAN1=	anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
 
+pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	@(/usr/bin/dialog --textbox ${MASTERDIR}/pkg-libwarning 15 70 || \
+		/usr/bin/true)
+	@${ECHO} ''
+	@${ECHO} '*** This is the non-gnome version of the port.'
+	@${ECHO} '    If you want gnome support, hit Ctrl-C now,'
+	@${ECHO} '    and cd ../xscreensaver-gnome.'
+	@${ECHO} ''
+	@sleep 2
+.endif
+
 post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
@@ -77,4 +91,10 @@ post-patch:
 		${WRKSRC}/hacks/glx/${file}
 .endfor
 
-.include <bsd.port.mk>
+post-install:
+	@(if test -x ${X11BASE}/bin/xscreensaver-hacks/webcollage-helper; then \
+		${ECHO} "bin/xscreensaver-hacks/webcollage-helper" | \
+			${CAT} - ${TMPPLIST} > ${TMPPLIST}.cat && \
+			${MV} ${TMPPLIST}.cat ${TMPPLIST}; fi)
+
+.include <bsd.port.post.mk>
