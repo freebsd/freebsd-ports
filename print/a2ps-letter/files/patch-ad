@@ -1,0 +1,11 @@
+--- ogonkify/Makefile.in.orig	Tue Apr 20 00:07:03 1999
++++ ogonkify/Makefile.in	Tue Apr 20 00:07:07 1999
+@@ -37,7 +37,7 @@
+ 
+ DESTDIR =
+ 
+-pkgdatadir = $(datadir)/@PACKAGE@
++pkgdatadir = $(datadir)/a2ps/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+ 

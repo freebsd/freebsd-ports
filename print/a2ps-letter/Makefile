@@ -3,7 +3,7 @@
 # Date created:         15 July 1998
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.25 1999/03/20 02:56:04 chuckr Exp $
+# $Id: Makefile,v 1.26 1999/04/17 16:12:02 chuckr Exp $
 #
 
 DISTNAME=	a2ps-4.12
@@ -17,12 +17,12 @@ MAINTAINER=	chuckr@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1
+MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1 psset.1
 
 PAPERSIZE?=	letter
 PAPERSIZECNF=	${PAPERSIZE:S/l/L/:S/a/A/}
 STRIP=
-CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=$(PREFIX)/share/a2ps --sysconfdir=$(PREFIX)/share/a2ps --datadir=$(PREFIX)/share/a2ps --localstatedir=$(PREFIX)/share/a2ps
+CONFIGURE_ARGS=	--with-medium=${PAPERSIZECNF} --sharedstatedir=$(PREFIX)/share --sysconfdir=$(PREFIX)/etc --datadir=$(PREFIX)/share --localstatedir=$(PREFIX)/share
 
 .if ${PAPERSIZE} != a4 && ${PAPERSIZE} != letter && ${PAPERSIZE} != letterdj
 .BEGIN:
