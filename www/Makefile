@@ -469,6 +469,7 @@
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-IMDB-Movie
     SUBDIR += p5-Kwiki
+    SUBDIR += p5-Kwiki-UserPreferences
     SUBDIR += p5-LWP-Authen-Wsse
     SUBDIR += p5-MasonX-Apache2Handler
     SUBDIR += p5-MasonX-Interp-WithCallbacks
