@@ -1,0 +1,8 @@
+--- c-nocem.in.orig	Wed Nov  3 00:47:28 1999
++++ c-nocem.in	Sat Mar 11 12:07:58 2000
+@@ -1,4 +1,4 @@
+-#!@PERL@ -w
++#!@PERL@
+ # and once again for Emacs: -*-perl-*-
+ 
+ # NoCeM in the spool for C News and INN - grand unified program
