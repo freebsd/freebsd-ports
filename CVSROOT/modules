@@ -6408,6 +6408,7 @@ rot		ports/textproc/rot
 rotate		ports/sysutils/rotate
 rotix		ports/textproc/rotix
 roundup		ports/www/roundup
+rox-archive	ports/archivers/rox-archive
 rox-edit	ports/editors/rox-edit
 rox-filer	ports/x11-fm/rox-filer
 rox-memo	ports/deskutils/rox-memo
