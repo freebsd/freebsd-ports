@@ -58,6 +58,7 @@
     SUBDIR += iselect
     SUBDIR += jargon
     SUBDIR += jive
+    SUBDIR += kcd
     SUBDIR += kdeutils11
     SUBDIR += kdeutils11-i18n
     SUBDIR += kp
