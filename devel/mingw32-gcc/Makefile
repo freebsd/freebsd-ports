@@ -75,6 +75,10 @@ BINARIES=	gcc cpp g++ g77 gcov gcj gcjh jcf-dump jv-scan grepjar jar
 BROKEN=		"Does not compile on amd64 die to platform rename"
 .endif
 
+.if ${ARCH} == "alpha"
+BROKEN=		"C++ could not be compiled on Alphas"
+.endif
+
 post-configure:
 	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=\s*).+$$,\1libstdc++-v3 libf2c libobjc mingw,' ${WRKSRC}/Makefile
 	@${PERL} -pi.bak -e 's,^(install-info:),\1\ndonot-\1,' ${WRKSRC}/gcc/Makefile
