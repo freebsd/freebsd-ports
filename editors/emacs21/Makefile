@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	21.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors ipv6
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -24,7 +24,7 @@ USE_XLIB=	yes
 USE_XPM=	yes
 .endif
 
-.if !defined(WITHOUT_MENUBAR_FONTSET)
+.if defined(WITH_MENUBAR_FONTSET)
 PATCH_SITES=		http://www.nijino.com/ari/patches/
 PATCHFILES=		emacs-21.1-fontset-20011109.patch.gz
 PATCH_DIST_STRIP=	-p1
@@ -50,6 +50,13 @@ TEXIFILES=	ada-mode autotype cc-mode cl dired-x ebrowse ediff \
 		viper widget woman
 
 LATEST_LINK=	emacs21
+
+pre-everything::
+.if !defined(WITH_MENUBAR_FONTSET)
+	@${ECHO_MSG} "====>"
+	@${ECHO_MSG} "====> To enable menubar fontset support, define WITH_MENUBAR_FONTSET"
+	@${ECHO_MSG} "====>"
+.endif
 
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
