@@ -1,13 +1,13 @@
 # Ports collection makefile for:	nessus-libnasl
-# Version required:			0.98.4
+# Version required:			0.99.2
 # Date created:				07 November 1999
 # Whom:					Anders Nordby <anders@fix.no>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libnasl-0.99.1
-PKGNAME=	nessus-libnasl-0.99.1
+DISTNAME=	libnasl-0.99.2
+PKGNAME=	nessus-libnasl-0.99.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \
