@@ -46,7 +46,7 @@ PHP_VER?=	${DEFAULT_PHP_VER}
 .if ${PHP_VER} == 4
 PHP_EXT_DIR=	20020429
 .else
-PHP_EXT_DIR=	20040412
+PHP_EXT_DIR=	20041030
 .endif
 .if exists(${LOCALBASE}/include/apache2/httpd.h)
 APACHE_MPM!=	${APXS} -q MPM_NAME

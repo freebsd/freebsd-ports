@@ -7,7 +7,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.0.3
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP:S,$,:release,} \
 		http://downloads.php.net/ilia/:rc \
@@ -78,7 +78,7 @@ OPTIONS=	APACHE2 "Use apache 2.x instead of apache 1.3.x" off
 OPTIONS+=	DEBUG "Enable debug" off \
 		IPV6 "Enable ipv6 support" on
 
-EXT_DIR=	20040412
+EXT_DIR=	20041030
 
 CONFLICTS?=	php5-cli-5* mod_php5-5* php5-cgi-5*
 CONFLICTS+=	php4-4* php4-cli-4* mod_php4-4* php4-cgi-4*
