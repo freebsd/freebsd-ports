@@ -31,6 +31,7 @@ PLIST=		${PKGDIR}/PLIST.noshared
 ALL_TARGET=	freebsd-shared all
 SHLIBVER=	1
 MAKE_ENV+=	SHLIBVER=${SHLIBVER}
+INSTALLS_SHLIB=	yes
 .endif
 
 MANPREFIX=	${PREFIX}/openssl
