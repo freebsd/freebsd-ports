@@ -78,6 +78,8 @@ saint/html/auth/saint_auth_action.pl
 saint/html/auth/saint_auth_form.pl
 saint/html/admin/saint_cf_action.pl
 saint/html/admin/saint_cf_form.pl
+saint/html/admin/saint_custom_action.pl
+saint/html/admin/saint_custom_form.pl
 saint/html/data/saint_data_form.pl
 saint/html/data/saint_merge_action.pl
 saint/html/data/saint_open_action.pl
@@ -124,6 +126,7 @@ saint/html/images/saint.gif
 saint/html/images/saint.old.jpg
 saint/html/images/saint_logo.jpg
 saint/html/images/santa.gif
+saint/html/images/cve.gif
 saint/html/images/stoplights/brown.gif
 saint/html/images/stoplights/red.gif
 saint/html/images/stoplights/yellow.gif
@@ -170,8 +173,6 @@ saint/html/reporting/saint_severity_counts.pl
 saint/html/reporting/saint_severity_hosts.pl
 saint/html/reporting/saint_severity_types.pl
 saint/html/reporting/sort_hosts.pl
-saint/html/running/.saint_run_action.pl.swp
-saint/html/running/.saint_run_form.pl.swp
 saint/html/running/saint_run_action.pl
 saint/html/running/saint_run_form.pl
 saint/html/saint.pl
@@ -272,6 +273,9 @@ saint/html/tutorials/vulnerability/Vulnerability_Exploits.html
 saint/html/tutorials/vulnerability/CFEngine_detected.html
 saint/html/tutorials/vulnerability/Net_Tools_PKI_Server.html
 saint/html/tutorials/vulnerability/finger_vulnerabilities.html
+saint/html/tutorials/vulnerability/JRun_vulnerabilities.html
+saint/html/tutorials/vulnerability/http_put.html
+saint/html/tutorials/vulnerability/http_server_read_access.html
 saint/include/netinet/if_ether.h
 saint/include/netinet/igmp.h
 saint/include/netinet/in.h
