@@ -124,7 +124,7 @@ lib/libedataserver.so
 lib/libedataserver.so.5
 lib/libegroupwise.a
 lib/libegroupwise.so
-lib/libegroupwise.so.6
+lib/libegroupwise.so.7
 libdata/bonobo/servers/GNOME_Evolution_DataServer_%%VERSION%%.server
 libdata/pkgconfig/evolution-data-server-%%VERSION%%.pc
 libdata/pkgconfig/libebook-%%VERSION%%.pc
