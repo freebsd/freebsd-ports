@@ -23,8 +23,8 @@ NO_BUILD=	YES
 .include <bsd.port.pre.mk>
 
 do-install:
-	${TAR} -xzf ${DISTDIR}/cwtexmain.tgz -C ${PREFIX}/share/
-	${TAR} -xzf ${DISTDIR}/cwtexbin-16.6.tgz -C ${PREFIX}/bin/
+	-${TAR} -kxzf ${DISTDIR}/cwtexmain.tgz -C ${PREFIX}/share/
+	-${TAR} -kxzf ${DISTDIR}/cwtexbin-16.6.tgz -C ${PREFIX}/bin/
 	${CAT} ${FILESDIR}/config.ps  >> ${PREFIX}/share/texmf/dvips/config/config.ps
 	mktexlsr
 
