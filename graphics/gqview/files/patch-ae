@@ -1,0 +1,11 @@
+--- src/main.c.orig	Wed Apr  5 23:24:00 2000
++++ src/main.c	Thu Apr 13 04:09:49 2000
+@@ -370,7 +370,7 @@
+ 	editor_command[0] = g_strdup("gimp");
+ 
+ 	editor_name[1] = g_strdup(_("Electric Eyes"));
+-	editor_command[1] = g_strdup("ee");
++	editor_command[1] = g_strdup("ElectricEyes");
+ 
+ 	editor_name[2] = g_strdup(_("XV"));
+ 	editor_command[2] = g_strdup("xv");

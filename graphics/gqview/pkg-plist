@@ -1,3 +1,9 @@
 bin/gqview
 share/doc/gqview/README
+share/locale/de/LC_MESSAGES/gqview.mo
+share/locale/ja/LC_MESSAGES/gqview.mo
+share/locale/pt_BR/LC_MESSAGES/gqview.mo
+share/locale/ru/LC_MESSAGES/gqview.mo
+share/locale/tr/LC_MESSAGES/gqview.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gqview.mo
 @dirrm share/doc/gqview
