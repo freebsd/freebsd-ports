@@ -1679,6 +1679,7 @@ elk		ports/lang/elk
 elm		ports/mail/elm
 elm+ME		ports/mail/elm+ME
 elmo		ports/mail/elmo
+elmo-devel	ports/mail/elmo-devel
 elscreen	ports/misc/elscreen
 elvis		ports/editors/elvis
 em		ports/editors/em
