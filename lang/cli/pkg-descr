@@ -21,4 +21,5 @@ o The Platform Adaptation Layer (PAL) used to port the Shared Source CLI from
 o Build environment tools (nmake, build, and others);
 o Documentation for the implementation;
 o Test suites used to verify the implementation.
+
 WWW: http://msdn.microsoft.com/net/sscli/
