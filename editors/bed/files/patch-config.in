@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- config.in.orig	Tue Oct  7 13:47:25 2003
++++ config.in	Tue Oct  7 13:47:35 2003
+@@ -13,7 +13,7 @@
+ SYSTEM=@SYSTEM@
+ CYGWIN=@CYGWIN@
+ export CONFFILE=$(PROGRAM)rc
+-export CONFLASTDIR=$(PROGRAM)-$(VERSION)
++export CONFLASTDIR=$(PROGRAM)
+ export ROOTDIR=
+ LN_S=@LN_S@
+ # compile support for the use of plugins. Needs libdl

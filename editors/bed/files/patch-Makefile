@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- Makefile.orig	Tue Oct  7 13:57:29 2003
++++ Makefile	Tue Oct  7 13:58:03 2003
+@@ -57,7 +57,7 @@
+ 	-mv  $(ROOTDIR)$(CONFDIRLINK) $(CONFDIRLINK).bak
+ 	-$(MKDIR) $(ROOTDIR)$(CONFDIR)
+ ifneq ($(CYGWIN),yes)
+-	$(SYMLINK)  $(CONFLASTDIR) $(ROOTDIR)$(CONFDIRLINK)
++#	$(SYMLINK)  $(CONFLASTDIR) $(ROOTDIR)$(CONFDIRLINK)
+ 	-mv  $(ROOTDIR)$(CONFDIR)/$(CONFFILE) $(ROOTDIR)$(CONFDIR)/~$(CONFFILE)
+ endif
+ 	$(CP) $(CONFFILE) $(ROOTDIR)$(CONFDIR)
