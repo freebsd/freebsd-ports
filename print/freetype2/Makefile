@@ -7,6 +7,7 @@
 
 PORTNAME=	freetype2
 PORTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/%SUBDIR%/ \
@@ -30,6 +31,24 @@ USE_REINPLACE=	yes
 LIBTOOLFILES=	builds/unix/configure
 CONFIGURE_ARGS=	--disable-nls
 CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
+
+.if !defined(WITHOUT_TTF_BYTECODE_ENABLED)
+CFLAGS+=	-DTT_CONFIG_OPTION_BYTECODE_INTERPRETER
+.endif
+
+pre-everything::
+.if !defined(WITHOUT_TTF_BYTECODE_ENABLED)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "You may want not to compile a bytecode interpreter into the"
+	@${ECHO_MSG} "TrueType driver. Without this you will only compile the code"
+	@${ECHO_MSG} "necessary to load TrueType glyphs without hinting."
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Hit Ctrl-C now and use \"make WITHOUT_TTF_BYTECODE_ENABLED=yes\""
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Note that there are important patent issues related to the"
+	@${ECHO_MSG} "use of the interpreter."
+	@${ECHO_MSG}
+.endif
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
