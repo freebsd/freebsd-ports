@@ -7,9 +7,12 @@
 
 PORTNAME=	vpopmail
 PORTVERSION=	5.4.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PATCH_SITES=	http://people.FreeBSD.org/~roam/ports/patches/mail/
+PATCHFILES=	vpopmail-547-snap.patch
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Easy virtual domain and authentication package for use with qmail
