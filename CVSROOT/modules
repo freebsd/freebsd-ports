@@ -846,6 +846,7 @@ contrib_patch	src/contrib/patch
 contrib_perl	src/contrib/perl5
 contrib_pnpinfo	src/contrib/pnpinfo
 contrib_sendmail	src/contrib/sendmail
+contrib_smbfs   src/contrib/smbfs
 contrib_softupdates	src/contrib/sys/softupdates
 contrib_sys	src/contrib/sys
 contrib_tcp_wrappers	src/contrib/tcp_wrappers
