@@ -1,0 +1,53 @@
+diff -urN pointless-0.5.orig/config.h.in pointless-0.5/config.h.in
+--- pointless-0.5.orig/config.h.in	Tue Jan 27 21:35:08 2004
++++ config.h.in	Thu Dec  2 17:14:28 2004
+@@ -199,6 +199,9 @@
+ /* Define as 1 if you have libpython2.3 */
+ #undef HAVE_PYTHON2_3
+ 
++/* Define as 1 if you have libpython2.4 */
++#undef HAVE_PYTHON2_4
++
+ /* Define as 1 if you have libsdl */
+ #undef HAVE_SDL
+ 
+diff -urN pointless-0.5.orig/configure.in pointless-0.5/configure.in
+--- pointless-0.5.orig/configure.in	Sat Jan 24 15:17:50 2004
++++ configure.in	Thu Dec  2 17:13:59 2004
+@@ -517,6 +517,12 @@
+ if test x$PYTHON_VERSION = x2.3; then
+ 	AC_DEFINE([HAVE_PYTHON2_3])
+ fi
++AH_TEMPLATE([HAVE_PYTHON2_4],
++	[Define as 1 if you have libpython2.4])
++AM_PATH_PYTHON_DEV 
++if test x$PYTHON_VERSION = x2.4; then
++	AC_DEFINE([HAVE_PYTHON2_4])
++fi
+ 
+ # *****************************************************************************
+ # Checks for typedefs, structures, and compiler characteristics.
+diff -urN pointless-0.5.orig/src/nodecontroller.h pointless-0.5/src/nodecontroller.h
+--- pointless-0.5.orig/src/nodecontroller.h	Tue Dec 16 23:33:21 2003
++++ src/nodecontroller.h	Thu Dec  2 16:50:16 2004
+@@ -34,6 +34,8 @@
+ #  include <python2.2/Python.h>
+ #elif HAVE_PYTHON2_3
+ #  include <python2.3/Python.h>
++#elif HAVE_PYTHON2_4
++#  include <python2.4/Python.h>
+ #endif
+ 
+ #include "common.h"
+diff -urN pointless-0.5.orig/src/pointless_wrap.cpp pointless-0.5/src/pointless_wrap.cpp
+--- pointless-0.5.orig/src/pointless_wrap.cpp	Tue Jan  6 22:18:36 2004
++++ src/pointless_wrap.cpp	Thu Dec  2 16:50:44 2004
+@@ -42,6 +42,8 @@
+ # endif
+ #elif HAVE_PYTHON2_3
+ #  include <python2.3/Python.h>
++#elif HAVE_PYTHON2_4
++#  include <python2.4/Python.h>
+ #endif
+ 
+ #ifndef HAVE_SDL

@@ -29,8 +29,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 USE_GL=		yes
 USE_PYTHON=	yes
 
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+USE_AUTOCONF_VER=	259
+CONFIGURE_ARGS+=	--prefix=${PREFIX} --program-transform-name=""
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib/${PYTHON_VERSION}/config/
 
 MAN1=		pointless.1
