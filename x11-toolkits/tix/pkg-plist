@@ -19,7 +19,7 @@ include/tix/unix/tixUnixInt.h
 include/tix/unix/tixUnixPort.h
 lib/libtix8184.so.1
 lib/libtix8184.so
-lib/libtixsam84.so.1
+lib/libtixsam8184.so.1
 lib/libtixsam8184.so
 lib/tix8.1/bitmaps/act_fold.gif
 lib/tix8.1/bitmaps/act_fold.xbm
