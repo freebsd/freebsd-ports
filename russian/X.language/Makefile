@@ -3,13 +3,19 @@
 # Date created:         31 Aug 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.17 1998/06/27 05:19:26 asami Exp $
+# $Id: Makefile,v 1.18 1998/07/29 16:11:22 ache Exp $
 #
 
 DISTNAME=       ru-X11-3.3
 CATEGORIES=     russian x11
 MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/misc/fonts/cyrillic/xwindows/
-DISTFILES=      x6rus-2.2.0-bin.tgz Type1.koi8-r.tgz
+DISTFILES=      x6rus-2.2.0-bin.tgz
+
+.if defined(NON_FREE_FONTS)
+DISTFILES += Type1.koi8-r.tgz
+.else
+DISTFILES += Type1.koi8-r.free.tgz
+.endif
 
 MAINTAINER=	ache@FreeBSD.ORG
 
@@ -19,6 +25,7 @@ NO_WRKSUBDIR=   YES
 NO_BUILD=       YES
 USE_X11=        YES
 
+PKGTMP = ${X11BASE}/.Xinstmp
 XLIB = ${X11BASE}/lib/X11
 CYRF = ${XLIB}/fonts/cyrillic
 T1DIR = ${XLIB}/fonts/Type1/fonts.dir
@@ -34,22 +41,16 @@ do-install:
 	-mkdir -p ${CYRF}/misc
 	cd ${WRKSRC}; \
 	${INSTALL_DATA} *.pfb ${XLIB}/fonts/Type1
-	grep -q cokoi8n ${T1DIR} || { \
-		cp ${T1DIR} ${T1DIR}.bak; \
-		d_cnt=`grep '^[1-9][0-9]*$$' ${T1DIR}.bak`; \
+	for i in ${T1DIR} ${T1SCALE}; do \
+	grep -q cokoi8n $$i || { \
+		cp $$i $$i.bak; \
+		d_cnt=`grep '^[1-9][0-9]*$$' $$i.bak`; \
 		d_add=`wc -l < ${WRKSRC}/fonts.dir-scale.add`; \
 		d_new=`expr $$d_cnt + $$d_add`; \
-		sed 's/^[1-9][0-9]*$$/'$$d_new/ < ${T1DIR}.bak > ${T1DIR}; \
-		cat ${WRKSRC}/fonts.dir-scale.add >> ${T1DIR}; \
-	}
-	grep -q cokoi8n ${T1SCALE} || { \
-		cp ${T1SCALE} ${T1SCALE}.bak; \
-		d_cnt=`grep '^[1-9][0-9]*$$' ${T1SCALE}.bak`; \
-		d_add=`wc -l < ${WRKSRC}/fonts.dir-scale.add`; \
-		d_new=`expr $$d_cnt + $$d_add`; \
-		sed 's/^[1-9][0-9]*$$/'$$d_new/ < ${T1SCALE}.bak > ${T1SCALE}; \
-		cat ${WRKSRC}/fonts.dir-scale.add >> ${T1SCALE}; \
-	}
+		sed 's/^[1-9][0-9]*$$/'$$d_new/ < $$i.bak > $$i; \
+		cat ${WRKSRC}/fonts.dir-scale.add >> $$i; \
+	}; \
+	done
 	cd ${WRKSRC}/cyrillic; \
 	${INSTALL_DATA} xrus.info ${CYRF}; \
 	for i in 100dpi 75dpi misc; do \
@@ -113,5 +114,15 @@ do-install:
 			cat ${FILESDIR}/nls_alias_list >> ${XLIB}/nls/nls.alias; \
 		}; \
 	fi
+
+pre-package:
+	-mkdir -p ${PKGTMP}
+	cd ${FILESDIR}; \
+	$(CP) nls_dir_list nls_alias_list replace_nls_list ${PKGTMP}
+	cd ${WRKSRC}; \
+	$(CP) fonts.dir-scale.add ${PKGTMP}
+
+post-package:
+	${RM} -rf ${PKGTMP}
 
 .include <bsd.port.mk>
