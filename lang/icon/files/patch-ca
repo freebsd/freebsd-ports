@@ -25,17 +25,17 @@
   ##################################################################
 + 
 + install:
-+ 	@bin/patchstr bin/iconc ${PREFIX}/lib/icon/
++ 	@bin/patchstr bin/iconc ${PREFIX}/share/icon/
 + 	@bin/patchstr bin/icont ${PREFIX}/bin/iconx
 + 	install -c -s -g bin -o bin -m 755 bin/iconc ${PREFIX}/bin/iconc
 + 	install -c -s -g bin -o bin -m 755 bin/icont ${PREFIX}/bin/icont
 + 	install -c -s -g bin -o bin -m 755 bin/iconx ${PREFIX}/bin/iconx
-+ 	install -c -s -g bin -o bin -m 755 bin/rtt ${PREFIX}/bin/rtt
-+ 	@mkdir -p ${PREFIX}/lib/icon
-+ 	install -c -g bin -o bin -m 644 bin/dlrgint.o ${PREFIX}/lib/icon/dlrgint.o
-+ 	install -c -g bin -o bin -m 644 bin/rt.a ${PREFIX}/lib/icon/rt.a
-+ 	install -c -g bin -o bin -m 644 bin/rt.db ${PREFIX}/lib/icon/rt.db
-+ 	install -c -g bin -o bin -m 644 bin/rt.h ${PREFIX}/lib/icon/rt.h
++ 	install -c -s -g bin -o bin -m 755 bin/patchstr ${PREFIX}/bin/patchstr
++ 	@mkdir -p ${PREFIX}/share/icon
++ 	install -c -g bin -o bin -m 644 bin/dlrgint.o ${PREFIX}/share/icon/dlrgint.o
++ 	install -c -g bin -o bin -m 644 bin/rt.a ${PREFIX}/share/icon/rt.a
++ 	install -c -g bin -o bin -m 644 bin/rt.db ${PREFIX}/share/icon/rt.db
++ 	install -c -g bin -o bin -m 644 bin/rt.h ${PREFIX}/share/icon/rt.h
 + 	@mkdir -p ${PREFIX}/man/man1
 + 	install -c -g bin -o bin -m 444 docs/icon.1 ${PREFIX}/man/man1/icon.1
 + 	@gzip -9fn ${PREFIX}/man/man1/icon.1

@@ -1,13 +1,9 @@
-@cwd /usr/local
-@mode 755
 bin/iconc
 bin/icont
 bin/iconx
-bin/rtt
-@mode 644
-lib/icon/dlrgint.o
-lib/icon/rt.a
-lib/icon/rt.db
-lib/icon/rt.h
-@mode 444
+bin/patchstr
+share/icon/dlrgint.o
+share/icon/rt.a
+share/icon/rt.db
+share/icon/rt.h
 man/man1/icon.1.gz

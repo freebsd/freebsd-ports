@@ -18,3 +18,10 @@ in numerical computations without explicit conversion.  Icon has
 an expression-based syntax with reserved words; in appearance,
 Icon programs resemble those of Pascal and C.
 
+The language is described in R. E. Griswold and M. T. Griswold, The
+Icon Programming Language, Prentice-Hall, Inc., Englewood Cliffs,
+NJ, second edition, 1990.
+
+For further documentation see the docs directory in the
+unpacked source tree (make extract; cd work/docs).
+
