@@ -3,7 +3,7 @@
 # Date created:		27 July 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1998/09/15 11:13:18 asami Exp $
+# $Id: Makefile,v 1.3 1998/09/17 00:32:39 asami Exp $
 #
 
 DISTNAME=	xscrabble
@@ -19,9 +19,9 @@ USE_IMAKE=		yes
 NO_INSTALL_MANPAGES=	yes
 
 post-patch:
-	@/usr/bin/perl -pi.bak -e "s|@XSCRABBLEDIR@|${PREFIX}/lib/X11/xscrabble|;" \
+	@/usr/bin/perl -pi.bak -e "s|\@XSCRABBLEDIR\@|${PREFIX}/lib/X11/xscrabble|;" \
 		${WRKSRC}/Imakefile
-	@/usr/bin/perl -pi.bak -e "s|@XSCRABBLEDIR@|${PREFIX}/lib/X11/xscrabble|;" \
+	@/usr/bin/perl -pi.bak -e "s|\@XSCRABBLEDIR\@|${PREFIX}/lib/X11/xscrabble|;" \
 		${WRKSRC}/XScrabble.ad
 
 .include <bsd.port.mk>
