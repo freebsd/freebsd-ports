@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	razor-agents
-PORTVERSION=    1.20
+PORTVERSION=    2.14
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	razor
@@ -16,17 +16,18 @@ MAINTAINER=	leeym@leeym.com
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/DNS.pm:${PORTSDIR}/net/p5-Net-DNS \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Digest/Nilsimsa.pm:${PORTSDIR}/security/p5-Digest-Nilsimsa \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN1=		razor-check.1 razor-discover.1 razor-report.1 \
-		razor-whitelist.1 razor.conf.1
+MAN1=		razor-revoke.1 razor-admin.1 razor-report.1 razor-check.1
+MAN3=		Razor2::Errorhandler.3
+MAN5=		razor-agents.5 razor-whitelist.5 razor-agent.conf.5
 
-post-build:
-	pod2man ${WRKSRC}/man/razor-whitelist.pod > ${WRKSRC}/blib/man1/razor-whitelist.1
-	pod2man ${WRKSRC}/man/razor.conf.pod > ${WRKSRC}/blib/man1/razor.conf.1
+post-install:
+	@${PREFIX}/bin/razor-client
 
 .include <bsd.port.mk>
