@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.5 1999/03/16 10:48:32 kris Exp $
+# $Id: Makefile,v 1.6 1999/03/31 06:19:09 taoka Exp $
 #
 
     SUBDIR += asclock
@@ -12,6 +12,7 @@
     SUBDIR += rclock
     SUBDIR += swisswatch
     SUBDIR += t3d
+    SUBDIR += tclock
     SUBDIR += wmcalclock
     SUBDIR += wmdate
     SUBDIR += wmitime
