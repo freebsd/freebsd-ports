@@ -305,121 +305,12 @@
 		<ant antfile="build.xml" dir="features/org.eclipse.platform/" target="gather.bin.parts">
 			<property name="feature.base" value="${eclipse.base}"/>
 		</ant>
+
+		<!-- This shouldn't be changed ever -->
 		<exec executable="zip" dir="${assemblyTempDir}">
 			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.platform.doc.isv_3.0.0"/>
-		</exec>
-		<exec executable="zip" dir="${assemblyTempDir}">
-			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.update.scheduler_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ltk.ui.refactoring_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.pde.ui_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.pde.doc.user_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.osgi_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.debug.ui_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.core.runtime_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.intro_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.platform.source_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.core_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.junit_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.help.base_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.osgi.services_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.core.boot_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.sdk_3.0.0"/>
-		</exec>
-		<exec executable="zip" dir="${assemblyTempDir}">
-			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.swt.gtk_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.core.filebuffers_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.apache.lucene_1.3.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.workbench_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.core.runtime.compatibility_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ant.core_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ant.ui_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.views_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.pde.source_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.platform.doc.user_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.junit.runtime_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.core.expressions_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.source_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.ide_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.externaltools_3.0.0"/>
-		</exec>
-		<exec executable="zip" dir="${assemblyTempDir}">
-			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ltk.core.refactoring_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.help.ide_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.team.cvs.ssh_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.help_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jface.text_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.compare_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.doc.user_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jface_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.junit_3.8.1"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.core.resources.freebsd_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.debug.core_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.core.resources_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.doc.isv_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.update.ui_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.help.webapp_3.0.0"/>
-		</exec>
-		<exec executable="zip" dir="${assemblyTempDir}">
-			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.ui_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.help.appserver_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.team.cvs.ssh2_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.pde_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.pde.junit.runtime_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.help.ui_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.core.variables_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.search_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.debug_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.console_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.update.core.freebsd_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.team.cvs.ui_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.presentations.r21_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.text_3.0.0"/>
-		</exec>
-		<exec executable="zip" dir="${assemblyTempDir}">
-			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.platform_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.tomcat_4.1.30"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.launching_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.update.core_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.team.cvs.core_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.swt_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.team.ui_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.pde.build_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.editors_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.debug.ui_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.osgi.util_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.apache.ant_1.6.1"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.pde.runtime_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.platform.source.freebsd.gtk.x86_3.0.0"/>
-		</exec>
-		<exec executable="zip" dir="${assemblyTempDir}">
-			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.team.core_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.workbench.texteditor_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.cheatsheets_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.pde.core_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.workbench.compatibility_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.update.configurator_3.0.0"/>
-			<arg line="${pluginArchivePrefix}/org.eclipse.ui.forms_3.0.0"/>
-		</exec>
-		<exec executable="zip" dir="${assemblyTempDir}">
-			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
-			<arg line="${featureArchivePrefix}/org.eclipse.jdt.source_3.0.0"/>
-		</exec>
-		<exec executable="zip" dir="${assemblyTempDir}">
-			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
-			<arg line="${featureArchivePrefix}/org.eclipse.platform.source_3.0.0"/>
-			<arg line="${featureArchivePrefix}/org.eclipse.sdk_3.0.0"/>
-			<arg line="${featureArchivePrefix}/org.eclipse.jdt_3.0.0"/>
-			<arg line="${featureArchivePrefix}/org.eclipse.pde_3.0.0"/>
-			<arg line="${featureArchivePrefix}/org.eclipse.platform_3.0.0"/>
+			<arg line="${featureArchivePrefix}"/>
+			<arg line="${pluginArchivePrefix}"/>
 		</exec>
 		<exec executable="zip" dir="${eclipse.base}/freebsd.gtk.x86">
 			<arg line="-r -q ${zipargs} ${archiveFullPath} . "/>
