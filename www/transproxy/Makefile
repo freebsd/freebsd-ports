@@ -1,30 +1,28 @@
 # New ports collection makefile for:	transproxy
-# Version required:		0.3
+# Version required:		1.0
 # Date created:			Fri Mar 27 21:24:13 WST 1998
 # Whom:				Peter Wemm <peter@netplex.com.au>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	transproxy-0.3
+DISTNAME=	transproxy-1.0
 CATEGORIES=	www net
-MASTER_SITES=	ftp://ftp.nlc.net.au/pub/linux/www/
+MASTER_SITES=	ftp://ftp.nlc.net.au/pub/unix/transproxy/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	peter@FreeBSD.org
 
-ALL_TARGET=	tproxy
+MAN8=		tproxy.8
 
 .include <bsd.port.pre.mk>
 
-# This has only been tested with -current, although it might work if you
-# can get the ipfilter package to build on a 2.2.x system. YMMV.
-# ftp://cheops.anu.edu.au/pub/net/firewall/ip-filter/
+# Requires FreeBSD-3.0 or higher because of a feature it uses to ignore
+# the death of child processes. Also later versions of FreeBSD have the
+# ipfw fwd rule, and IPFILTER ipnat command, which is needed for this
+# sort of program anyway.
 .if ${OSVERSION} < 300000
-BROKEN=		"transproxy requires ipfilter, available in 3.0 or later"
+BROKEN=		"transproxy requires SA_NOCLDWAIT, available in 3.x or later"
 .endif
-
-do-install:
-	cd ${WRKSRC}; ${INSTALL_PROGRAM} ${WRKSRC}/tproxy ${PREFIX}/sbin
 
 .include <bsd.port.post.mk>
