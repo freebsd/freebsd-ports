@@ -8,7 +8,8 @@
 PORTNAME=	wminet
 PORTVERSION=	2.0.2
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.neotokyo.org/illusion/
+# All previous master sites no longer carry the tarball
+# MASTER_SITES=
 
 MAINTAINER=	sk-ports@vegamuse.org
 
