@@ -1,5 +1,4 @@
 bin/xmovie
-bin/mpeg2toc
 share/doc/xmovie/README
 share/doc/xmovie/index.html
 @dirrm share/doc/xmovie

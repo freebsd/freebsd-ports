@@ -8,9 +8,6 @@ WWW: http://heroine.linuxave.net/xmovie.html
 
 * Tips
 
-  - Pentium II binary are distributed from below URL:
-	http://heroine.linuxbox.com/xmovie-i686.tar.gz
-
   - If you use with 3.2-RELEASE, 3.3-RELEASE, 3.4-RELEASE,
     it need to update /module/linux.ko file.
 
