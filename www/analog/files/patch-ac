@@ -1,12 +1,12 @@
---- analog.cfg.orig	Wed Nov 25 22:49:33 1998
-+++ analog.cfg	Tue Jan 19 21:24:09 1999
-@@ -8,7 +8,8 @@
- # REQINCLUDE pages
+--- analog.cfg.orig	Tue Nov 16 14:40:33 1999
++++ analog.cfg	Thu Dec  9 06:53:56 1999
+@@ -7,7 +7,8 @@
+ # There is a much more extensive configuration file in examples/big.cfg
  #
- # If you have a LOGFORMAT command it must go here, above the LOGFILE command.
--LOGFILE logfile.log
+ # If you need a LOGFORMAT command it must go here, above the LOGFILE command.
+-# LOGFILE logfile.log
 +LOGFORMAT COMBINED
 +LOGFILE /var/log/httpd-access.log
- HOSTNAME "[my organisation]"
+ # HOSTNAME "[my organisation]"
+ # REQINCLUDE pages
  LINKINCLUDE pages
- UNCOMPRESS *.gz,*.Z "gzip -cd"

@@ -1,14 +1,14 @@
 # New ports collection makefile for: analog
 # http://www.statslab.cam.ac.uk/~sret1/analog/
-# Version required:     3.*
+# Version required:     4.*
 # Date created:		October 21st 1996
 # Whom:			jfitz
 #
 # $FreeBSD$
 #
 
-DISTNAME=       analog3.32
-PKGNAME=        analog-3.32
+DISTNAME=       analog4.0
+PKGNAME=        analog-4.0
 CATEGORIES=	www
 MASTER_SITES=   http://www.statslab.cam.ac.uk/~sret1/analog/ \
 		http://brendanr.simplenet.com/analog/ \
@@ -25,6 +25,7 @@ MAINTAINER=     ache@freebsd.org
 Y2K=		http://www.statslab.cam.ac.uk/~sret1/analog/
 
 MAKE_FLAGS=     -DPREFIX=${PREFIX} -f
+ALL_TARGET=     analog
 
 do-install:
 	install -d -o ${SHAREOWN} -g ${SHAREGRP} -m 555 \
