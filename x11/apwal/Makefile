@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	apwal
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.4
 CATEGORIES=	x11
 MASTER_SITES=	http://apwal.free.fr/download/
 
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
 COMMENT=	Simple and powerful application launcher
 
+USE_SIZE=	yes
 USE_GNOME=	gtk20 libxml2
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
+
+PLIST_FILES=	bin/apwal bin/apwal-editor
 
 post-patch:
 	@${CP} ${FILESDIR}/group_member.c ${WRKSRC}
