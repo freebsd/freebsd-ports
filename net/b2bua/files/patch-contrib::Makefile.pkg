@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- contrib/Makefile.pkg.orig	Sat Feb  1 02:15:57 2003
++++ contrib/Makefile.pkg	Fri Apr  4 13:06:17 2003
+@@ -49,9 +49,9 @@
+ #                         libxml
+ 
+ ifeq ($(VOCAL_USE_SYSTEM_LIBXML),true)
+-  LIBXML_INCLUDEDIRS := /usr/local/include/libxml2 /usr/local/include/libxml2/libxml /usr/local/include
+-  LIBXML_LIBDIRS := /usr/local/lib
+-  LIBXML_LDLIBS_LAST := -lxml
++  LIBXML_INCLUDEDIRS := ${LOCALBASE}/include/libxml2 ${LOCALBASE}/include/libxml2/libxml ${LOCALBASE}/include
++  LIBXML_LIBDIRS := ${LOCALBASE}/lib
++  LIBXML_LDLIBS_LAST := -lxml2
+ else
+   LIBXML_INCLUDEDIRS := $(ROOT)/contrib/libxml2.$(OS_ARCH) $(ROOT)/contrib/libxml2.$(OS_ARCH)/include/libxml $(ROOT)/contrib/libxml2.$(OS_ARCH)/include
+   LIBXML_LIBDIRS := $(ROOT)/contrib/libxml2.$(OS_ARCH)/.libs 

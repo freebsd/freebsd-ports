@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- contrib/Makefile	2002/12/18 08:31:42	1.1
-+++ contrib/Makefile	2002/12/18 08:32:44
+--- contrib/Makefile.orig	Thu Feb 20 06:22:29 2003
++++ contrib/Makefile	Fri Apr  4 13:06:17 2003
 @@ -26,7 +26,7 @@
  
  INSTALL = install

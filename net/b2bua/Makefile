@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	b2bua
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.vovida.org/downloads/b2bua/
+MASTER_SITES=	http://www.vovida.org/downloads/sip/${PORTVERSION}/
+DISTNAME=	sip-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	A back-to-back (B2B) SIP user agent
@@ -18,11 +18,10 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 USE_GMAKE=	yes
 ALL_TARGET=	b2bua
-CFLAGS+=	-I${LOCALBASE}/include/libxml2 \
-		-I${LOCALBASE}/include/libxml2/libxml \
-		-I${LOCALBASE}/include -Wno-deprecated
+CFLAGS+=	-Wno-deprecated
 MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LIBS}" \
-		PTHREAD_LIBNAME="${PTHREAD_LIBNAME}"
+		PTHREAD_LIBNAME="${PTHREAD_LIBNAME}" \
+		VOCAL_USE_SYSTEM_LIBXML=true
 
 .if !exists(/usr/include/getopt.h)
 LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
@@ -33,7 +32,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sip/b2b/bin.nodebug.FreeBSD.i386/b2bua \
 		${PREFIX}/bin
 	${MKDIR} ${DOCSDIR}
-.for file in README HOWTO b2bdesign.pdf Doc/B2BUA.pdf
+.for file in LICENSE HOWTO HOWTO.PROV b2bdesign.pdf
 	${INSTALL_DATA} ${WRKSRC}/sip/b2b/${file} ${DOCSDIR}
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/sip/b2b/b2bConfig.xml \
