@@ -15,7 +15,6 @@ bin/understand_c
 @exec %%LN%% understand_c %D/bin/repc
 @exec %%LN%% understand_c %D/bin/undc
 @unexec %%RM%% %D/bin/almd %D/bin/almhostid %D/bin/almstatus %D/bin/almtest %D/bin/repc %D/bin/undc
-%%PORTDOCS%%share/doc/understand_c/help/keymappings.txt
 %%PORTDOCS%%share/doc/understand_c/html/understand_api/apiref.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_api/apiref10.htm
 %%PORTDOCS%%share/doc/understand_c/html/understand_api/apiref11.htm
@@ -429,7 +428,6 @@ share/understand_c/fonts/cetus.ttf
 %%PORTDOCS%%@dirrm share/doc/understand_c/html/understand_api/wwhgifs
 %%PORTDOCS%%@dirrm share/doc/understand_c/html/understand_api
 %%PORTDOCS%%@dirrm share/doc/understand_c/html
-%%PORTDOCS%%@dirrm share/doc/understand_c/help
 %%PORTDOCS%%@dirrm share/doc/understand_c
 %%PORTDOCS%%@exec %%MKDIR%% %D/lib/understand_c/doc/manuals
 %%PORTDOCS%%@exec %%LN%% %D/share/doc/understand_c/html %D/lib/understand_c/doc/manuals/html
