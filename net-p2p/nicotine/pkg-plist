@@ -18,6 +18,12 @@ bin/nicotine-import-winconfig
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/chatrooms.py
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/chatrooms.pyc
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/chatrooms.pyo
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/checklatest.py
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/checklatest.pyc
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/checklatest.pyo
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/gtkexcepthook.py
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/gtkexcepthook.pyc
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/gtkexcepthook.pyo
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/dirchooser.py
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/dirchooser.pyc
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/dirchooser.pyo
