@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	siag
-PORTVERSION=	3.3.3
+PORTVERSION=	3.3.8
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/ \
+MASTER_SITES=	ftp://ftp.siag.nu/pub/siag/ \
+		ftp://ftp.edu.stockholm.se/pub/siag/ \
 		ftp://ftp.icm.edu.pl/site/siag/
 
 MAINTAINER=	mi@aldan.algebra.com
@@ -40,9 +41,9 @@ LIB_DEPENDS+=	t1:${PORTSDIR}/devel/t1lib
 
 .if !defined(NOTCL)
 # Feel free to try other versions of TCL here:
-LIB_DEPENDS+=	tcl82:${PORTSDIR}/lang/tcl82
-CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.2
-CONFIGURE_ARGS+=--with-tcl=tcl82
+LIB_DEPENDS+=	tcl83:${PORTSDIR}/lang/tcl83
+CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.3
+CONFIGURE_ARGS+=--with-tcl=tcl83
 .endif
 
 CONFIGURE_ENV+= LOCALBASE=${LOCALBASE} \
