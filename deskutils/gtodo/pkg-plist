@@ -1,7 +1,7 @@
 bin/gtodo
-@unexec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gtodo.schemas > /dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gtodo.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gtodo.schemas
-@exec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gtodo.schemas > /dev/null || /usr/bin/true
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gtodo.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/gtodo.desktop
 share/gnome/pixmaps/gtodo-about.png
 share/gnome/pixmaps/gtodo-edit.png
