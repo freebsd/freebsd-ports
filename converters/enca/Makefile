@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enca
-PORTVERSION=	0.10.3
+PORTVERSION=	0.10.6
 CATEGORIES=	converters textproc
 MASTER_SITES=	http://web.dkm.cz/yeti/enca/
 
@@ -21,6 +21,8 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc/enca \
 		--without-librecode \
 		--with-libiconv=${LOCALBASE}
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
+		LDFLAGS=-L${LOCALBASE}/lib
 
 MAN1=	enca.1
 MLINKS=	enca.1 enconv.1
