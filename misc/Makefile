@@ -194,6 +194,7 @@
     SUBDIR += koffice-i18n-eo
     SUBDIR += koffice-i18n-es
     SUBDIR += koffice-i18n-et
+    SUBDIR += koffice-i18n-it
     SUBDIR += kp
     SUBDIR += kwatch
     SUBDIR += lc
