@@ -16,6 +16,8 @@ COMMENT=	Framework and a set of libraries for developing operating systems
 BUILD_DEPENDS=	gcc295:${PORTSDIR}/lang/gcc295
 RUN_DEPENDS=	gcc295:${PORTSDIR}/lang/gcc295
 
+USE_PERL5_BUILD=	yes
+
 OSKITDIR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes
