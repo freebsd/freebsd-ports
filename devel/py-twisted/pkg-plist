@@ -21,7 +21,6 @@ bin/manhole
 bin/mapeditor
 bin/mktap
 bin/runtests
-bin/runtests.orig
 bin/tap2deb
 bin/twistd
 bin/twistd-debug
