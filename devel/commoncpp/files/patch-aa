@@ -1,0 +1,15 @@
+--- posix/xml.cpp.orig	Sat Mar 30 21:16:37 2002
++++ posix/xml.cpp	Sat Mar 30 21:17:00 2002
+@@ -47,9 +47,9 @@
+ 
+ #ifdef	HAVE_LIBXML
+ 
+-#include <parser.h>
+-#include <parserInternals.h>
+-#include <xmlIO.h>
++#include <libxml2/libxml/parser.h>
++#include <libxml2/libxml/parserInternals.h>
++#include <libxml2/libxml/xmlIO.h>
+ #include <stdarg.h>
+ 
+ extern "C" {
