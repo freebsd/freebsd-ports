@@ -15,7 +15,8 @@ MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
 		ORBit.2:${PORTSDIR}/devel/ORBit \
-		popt.0:${PORTSDIR}/devel/popt
+		popt.0:${PORTSDIR}/devel/popt \
+		xml.5:${PORTSDIR}/textproc/libxml
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 
