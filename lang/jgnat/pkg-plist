@@ -628,7 +628,7 @@ lib/jgnat/adalib/s-strops.ali
 lib/jgnat/adalib/s-taasde.ali
 lib/jgnat/adalib/s-tadeca.ali
 lib/jgnat/adalib/s-tadert.ali
-lib/jgnat/adalib/s-taenca
+lib/jgnat/adalib/s-taenca.ali
 lib/jgnat/adalib/s-taprob.ali
 lib/jgnat/adalib/s-taprop.ali
 lib/jgnat/adalib/s-tarest.ali
