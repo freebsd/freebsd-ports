@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	dotconf
-PORTVERSION=	1.0.0p2
+PORTVERSION=	1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.azzit.de/dotconf/download/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	ijliao@FreeBSD.org
 
@@ -22,12 +21,12 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 post-install:
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/${PORTNAME}
+.if !defined(NOPORTDOCS)
 .for f in dotconf-api.txt dotconf-features.txt
 	@${INSTALL_DATA} ${WRKSRC}/doc/$f ${PREFIX}/share/${PORTNAME}
 .endfor
-	${CP} -R ${WRKSRC}/examples ${PREFIX}/share/${PORTNAME}
 .endif
+	${CP} -R ${WRKSRC}/examples ${PREFIX}/share/${PORTNAME}
 
 .include <bsd.port.mk>
