@@ -9,7 +9,8 @@ PORTNAME=	gnokii
 PORTVERSION=	0.4.3
 PORTEPOCH=	1
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.gnokii.org/pub/gnokii/ \
+MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
+		ftp://ftp.gnokii.org/pub/gnokii/ \
 		http://freesoftware.fsf.org/download/gnokii/
 
 MAINTAINER=	anders@FreeBSD.org
