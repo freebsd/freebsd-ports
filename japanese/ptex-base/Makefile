@@ -3,7 +3,10 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.3 1996/03/25 04:31:33 asami Exp $
+# Date Updated: 	26 Mar. 1996
+# Whom:			Masafumi NAKANE <masafumi@pobox.com>
+#
+# $Id: Makefile,v 1.4 1996/03/25 04:35:49 asami Exp $
 #
 
 DISTNAME=	ptex3.1415.p2.1.4
@@ -11,14 +14,15 @@ PKGNAME=	jp-ptex-2.1.4
 CATEGORIES+=	japanese print
 MASTER_SITES=			ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/ \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/corresponding-sources/ \
-ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII-pTeX-2.1.1/ \
-		ftp://bash.cc.keio.ac.jp/pub/TeX/ASCII-pTeX-2.1.1/corresponding-sources/ \
-		ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/ \
-		ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/corresponding-sources/ 
+ftp://bash.cc.keio.ac.jp/pub/TeX/ascii-ptex/ \
+		ftp://bash.cc.keio.ac.jp/pub/TeX/ascii-ptex/corresponding-sources/ 
+
 # ptex-2.1.4.tar.gz, plib-jis.tar.gz,  plib-sj.tar.gz and  plib-euc.tar.gz 
-# are on */*2.1.1/
+# are in */ascii-ptex/ and
 # web-6.1.tar.gz, web2c-6.1.tar.gz, web2c.kpathsea-2.6.help, 
-# xdvik-18f.tar.gz and lib-6.9.tar.gz are on */*2.1.1/corresponding-sources/ 
+# xdvik-18f.tar.gz and lib-6.9.tar.gz are in 
+#  */ascii-ptex/corresponding-sources/ 
+
 DISTFILES=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
 		web2c.kpathsea-2.6.help xdvik-18f.tar.gz lib-6.9.tar.gz
 EXTRACT_ONLY=	ptex-2.1.4.tar.gz web-6.1.tar.gz web2c-6.1.tar.gz \
@@ -140,4 +144,3 @@ post-install:
 .endif
 
 .include <bsd.port.mk>
-
