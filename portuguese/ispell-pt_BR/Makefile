@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	br-ispell
+PORTNAME=	ispell
 PORTVERSION=	2.4
-CATEGORIES=	textproc
+CATEGORIES=	portuguese textproc
 MASTER_SITES=	ftp://ftp.ime.usp.br/pub/ueda/br.ispell/
+PKGNAMEPREFIX=	pt_BR-
 DISTNAME=	br.ispell-2.4
 
 MAINTAINER=	jonny@jonny.eng.br
