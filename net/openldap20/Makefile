@@ -25,7 +25,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source LDAP client and server software
 
-.if exists(${LOCALBASE}/lib/libdb4.a)
+.if exists(${LOCALBASE}/lib/libdb41.a)
 DB_CFLAGS=      -I${LOCALBASE}/include/db4
 LIB_DEPENDS=	db41:${PORTSDIR}/databases/db4
 .else
