@@ -2,5 +2,5 @@
 *   Please set the env variable BABEL_DIR to            *
 *   /usr/local/share/babel before running babel.        *
 *   For example, put the next line in your .cshrc file: *
-*       setenv BABEL_DIR /usr/loacl/share/babel         *
+*       setenv BABEL_DIR /usr/local/share/babel         *
 *********************************************************
