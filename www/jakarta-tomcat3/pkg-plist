@@ -1,34 +1,17 @@
 bin/tomcat3ctl
 etc/rc.d/020.jakarta-tomcat3.sh
-%%T%%/KEYS
-%%T%%/LICENSE
-%%T%%/bin/jspc.sh
-%%T%%/bin/shutdown.sh
-%%T%%/bin/startup.sh
-%%T%%/bin/tomcat.sh
-%%T%%/conf/apps-127.0.0.1.xml
-%%T%%/conf/apps-admin.xml
-%%T%%/conf/apps-examples.xml
-%%T%%/conf/jk/mod_jk.conf
-%%T%%/conf/jk/mod_jk.conf-jni
-%%T%%/conf/jk/obj.conf
-%%T%%/conf/jk/uriworkermap.properties
-%%T%%/conf/jk/workers.properties
-%%T%%/conf/jk/wrapper.properties
-%%T%%/conf/jserv/tomcat.conf
-%%T%%/conf/jserv/tomcat.properties
-%%T%%/conf/modules.xml
-%%T%%/conf/server.xml
-%%T%%/conf/tomcat.policy
-%%T%%/conf/users/admin-users.xml
-%%T%%/conf/users/example-users.xml
-%%T%%/conf/users/global-users.xml
-%%T%%/conf/users/tomcat-users.xml
-%%T%%/doc/AJPv13.html
-%%T%%/doc/JDBCRealm-howto.html
-%%T%%/doc/NT-Service-howto.html
-%%T%%/doc/Tomcat-Workers-HowTo.html
-%%T%%/doc/Tomcat-on-NetWare-HowTo.html
+%%T%%/logs/stdout.log
+%%T%%/logs/stderr.log
+%%T%%/doc/images/banner.gif
+%%T%%/doc/images/tomcat.gif
+%%T%%/doc/appdev/sample/etc/web.xml
+%%T%%/doc/appdev/sample/lib/README
+%%T%%/doc/appdev/sample/src/Hello.java
+%%T%%/doc/appdev/sample/web/images/tomcat.gif
+%%T%%/doc/appdev/sample/web/hello.jsp
+%%T%%/doc/appdev/sample/web/index.html
+%%T%%/doc/appdev/sample/build.sh
+%%T%%/doc/appdev/sample/build.xml
 %%T%%/doc/appdev/build.xml.txt
 %%T%%/doc/appdev/contents.html
 %%T%%/doc/appdev/deployment.html
@@ -38,20 +21,14 @@ etc/rc.d/020.jakarta-tomcat3.sh
 %%T%%/doc/appdev/installation.html
 %%T%%/doc/appdev/introduction.html
 %%T%%/doc/appdev/processes.html
-%%T%%/doc/appdev/sample/build.sh
-%%T%%/doc/appdev/sample/build.xml
-%%T%%/doc/appdev/sample/etc/web.xml
-%%T%%/doc/appdev/sample/lib/README
-%%T%%/doc/appdev/sample/src/Hello.java
-%%T%%/doc/appdev/sample/web/hello.jsp
-%%T%%/doc/appdev/sample/web/images/tomcat.gif
-%%T%%/doc/appdev/sample/web/index.html
 %%T%%/doc/appdev/source.html
 %%T%%/doc/appdev/tomcat.gif
 %%T%%/doc/appdev/web.xml.txt
+%%T%%/doc/JDBCRealm-howto.html
+%%T%%/doc/NT-Service-howto.html
+%%T%%/doc/Tomcat-Workers-HowTo.html
+%%T%%/doc/Tomcat-on-NetWare-HowTo.html
 %%T%%/doc/faq
-%%T%%/doc/images/banner.gif
-%%T%%/doc/images/tomcat.gif
 %%T%%/doc/in-process-howto.html
 %%T%%/doc/index.html
 %%T%%/doc/internal.html
@@ -59,6 +36,7 @@ etc/rc.d/020.jakarta-tomcat3.sh
 %%T%%/doc/perfNumbers.txt
 %%T%%/doc/readme
 %%T%%/doc/readme-3.3.1
+%%T%%/doc/readme-3.3.2
 %%T%%/doc/serverxml.html
 %%T%%/doc/style.css
 %%T%%/doc/tomcat-apache-howto.html
@@ -67,90 +45,8 @@ etc/rc.d/020.jakarta-tomcat3.sh
 %%T%%/doc/tomcat-security.html
 %%T%%/doc/tomcat-ssl-howto.html
 %%T%%/doc/tomcat-ug.html
-%%T%%/lib/apps/README
-%%T%%/lib/common/README
-%%T%%/lib/common/connector_util.jar
-%%T%%/lib/common/core_util.jar
-%%T%%/lib/common/etomcat.jar
-%%T%%/lib/common/jasper-runtime.jar
-%%T%%/lib/common/servlet.jar
-%%T%%/lib/common/tomcat_core.jar
-%%T%%/lib/container/README
-%%T%%/lib/container/crimson.jar
-%%T%%/lib/container/facade22.jar
-%%T%%/lib/container/jasper.jar
-%%T%%/lib/container/tomcat_modules.jar
-%%T%%/lib/container/tomcat_util.jar
-%%T%%/lib/container/xalan.jar
-%%T%%/lib/stop-tomcat.jar
-%%T%%/lib/tomcat.jar
-%%T%%/logs/stderr.log
-%%T%%/logs/stdout.log
-%%T%%/native/mod_jk/README
-%%T%%/native/mod_jk/apache1.3/Makefile.freebsd
-%%T%%/native/mod_jk/apache1.3/Makefile.linux
-%%T%%/native/mod_jk/apache1.3/Makefile.nw
-%%T%%/native/mod_jk/apache1.3/README.hpux
-%%T%%/native/mod_jk/apache1.3/README.solaris
-%%T%%/native/mod_jk/apache1.3/build-hpux-cc.sh
-%%T%%/native/mod_jk/apache1.3/build-hpux.sh
-%%T%%/native/mod_jk/apache1.3/build-solaris.sh
-%%T%%/native/mod_jk/apache1.3/build-unix.sh
-%%T%%/native/mod_jk/apache1.3/install-unix.sh
-%%T%%/native/mod_jk/apache1.3/mod_jk.c
-%%T%%/native/mod_jk/apache1.3/mod_jk.dsp
-%%T%%/native/mod_jk/common/jk_ajp12_worker.c
-%%T%%/native/mod_jk/common/jk_ajp12_worker.h
-%%T%%/native/mod_jk/common/jk_ajp13.c
-%%T%%/native/mod_jk/common/jk_ajp13.h
-%%T%%/native/mod_jk/common/jk_ajp13_worker.c
-%%T%%/native/mod_jk/common/jk_ajp13_worker.h
-%%T%%/native/mod_jk/common/jk_connect.c
-%%T%%/native/mod_jk/common/jk_connect.h
-%%T%%/native/mod_jk/common/jk_global.h
-%%T%%/native/mod_jk/common/jk_jni_worker.c
-%%T%%/native/mod_jk/common/jk_jni_worker.h
-%%T%%/native/mod_jk/common/jk_lb_worker.c
-%%T%%/native/mod_jk/common/jk_lb_worker.h
-%%T%%/native/mod_jk/common/jk_logger.h
-%%T%%/native/mod_jk/common/jk_map.c
-%%T%%/native/mod_jk/common/jk_map.h
-%%T%%/native/mod_jk/common/jk_msg_buff.c
-%%T%%/native/mod_jk/common/jk_msg_buff.h
-%%T%%/native/mod_jk/common/jk_mt.h
-%%T%%/native/mod_jk/common/jk_nwmain.c
-%%T%%/native/mod_jk/common/jk_pool.c
-%%T%%/native/mod_jk/common/jk_pool.h
-%%T%%/native/mod_jk/common/jk_service.h
-%%T%%/native/mod_jk/common/jk_sockbuf.c
-%%T%%/native/mod_jk/common/jk_sockbuf.h
-%%T%%/native/mod_jk/common/jk_uri_worker_map.c
-%%T%%/native/mod_jk/common/jk_uri_worker_map.h
-%%T%%/native/mod_jk/common/jk_util.c
-%%T%%/native/mod_jk/common/jk_util.h
-%%T%%/native/mod_jk/common/jk_version.h
-%%T%%/native/mod_jk/common/jk_worker.c
-%%T%%/native/mod_jk/common/jk_worker.h
-%%T%%/native/mod_jk/common/jk_worker_list.h
-%%T%%/native/mod_jk/iis/isapi.def
-%%T%%/native/mod_jk/iis/isapi.dsp
-%%T%%/native/mod_jk/iis/isapi.dsw
-%%T%%/native/mod_jk/iis/jk_isapi_plugin.c
-%%T%%/native/mod_jk/jni/Makefile.nw
-%%T%%/native/mod_jk/jni/Makefile.solaris
-%%T%%/native/mod_jk/jni/jk_jnicb.c
-%%T%%/native/mod_jk/jni/jk_jnicb.exp
-%%T%%/native/mod_jk/jni/jk_jnicb.h
-%%T%%/native/mod_jk/jni/jni_connect.dsp
-%%T%%/native/mod_jk/jni/jni_connect.dsw
-%%T%%/native/mod_jk/netscape/Makefile.nw
-%%T%%/native/mod_jk/netscape/Makefile.solaris
-%%T%%/native/mod_jk/netscape/jk_nsapi_plugin.c
-%%T%%/native/mod_jk/netscape/nsapi.dsp
-%%T%%/native/mod_jk/netscape/nsapi.dsw
-%%T%%/native/mod_jk/nt_service/jk_nt_service.c
-%%T%%/native/mod_jk/nt_service/nt_service.dsp
-%%T%%/native/mod_jserv/Makefile.am
+%%T%%/doc/AJPv13.html
+%%T%%/native/mod_jserv/mod_jserv.c
 %%T%%/native/mod_jserv/Makefile.libdir
 %%T%%/native/mod_jserv/Makefile.tmpl
 %%T%%/native/mod_jserv/Makefile.win32
@@ -170,40 +66,90 @@ etc/rc.d/020.jakarta-tomcat3.sh
 %%T%%/native/mod_jserv/jserv_wrapper_unix.c
 %%T%%/native/mod_jserv/jserv_wrapper_win.c
 %%T%%/native/mod_jserv/libjserv.module
-%%T%%/native/mod_jserv/mod_jserv.c
+%%T%%/native/mod_jserv/Makefile.am
+%%T%%/lib/apps/README
+%%T%%/lib/common/tomcat_core.jar
+%%T%%/lib/common/commons-logging-api.jar
+%%T%%/lib/common/core_util.jar
+%%T%%/lib/common/etomcat.jar
+%%T%%/lib/common/jasper-runtime.jar
+%%T%%/lib/common/servlet.jar
+%%T%%/lib/common/tomcat-util.jar
+%%T%%/lib/common/tomcat33-resource.jar
+%%T%%/lib/common/README
+%%T%%/lib/container/xalan.jar
+%%T%%/lib/container/container_util.jar
+%%T%%/lib/container/crimson.jar
+%%T%%/lib/container/facade22.jar
+%%T%%/lib/container/jakarta-regexp-1.3.jar
+%%T%%/lib/container/jasper.jar
+%%T%%/lib/container/mx4j-jmx.jar
+%%T%%/lib/container/mx4j-tools.jar
+%%T%%/lib/container/tomcat-coyote.jar
+%%T%%/lib/container/tomcat-http11.jar
+%%T%%/lib/container/tomcat-jk2.jar
+%%T%%/lib/container/tomcat33-coyote.jar
+%%T%%/lib/container/tomcat_modules.jar
+%%T%%/lib/container/README
+%%T%%/lib/endorsed/README
+%%T%%/lib/stop-tomcat.jar
+%%T%%/lib/tomcat.jar
 %%T%%/webapps/ROOT.war
 %%T%%/webapps/admin.war
 %%T%%/webapps/examples.war
+%%T%%/conf/jk/mod_jk.conf
+%%T%%/conf/jk/mod_jk.conf-jni
+%%T%%/conf/jk/obj.conf
+%%T%%/conf/jk/uriworkermap.properties
+%%T%%/conf/jk/workers.properties
+%%T%%/conf/jk/wrapper.properties
+%%T%%/conf/jserv/tomcat.conf
+%%T%%/conf/jserv/tomcat.properties
+%%T%%/conf/users/admin-users.xml
+%%T%%/conf/users/example-users.xml
+%%T%%/conf/users/global-users.xml
+%%T%%/conf/users/tomcat-users.xml
+%%T%%/conf/jk2.properties
+%%T%%/conf/modules.xml
+%%T%%/conf/server.xml
+%%T%%/conf/tomcat.policy
+%%T%%/conf/apps-127.0.0.1.xml
+%%T%%/conf/apps-admin.xml
+%%T%%/conf/apps-examples.xml
+%%T%%/bin/jspc
+%%T%%/bin/shutdown
+%%T%%/bin/startup
+%%T%%/bin/tomcat
+%%T%%/ant/tomcat-ant.jar
+%%T%%/LICENSE
+%%T%%/KEYS
 man/man1/tomcat3ctl.1
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 @dirrm %%T%%/logs
 @dirrm %%T%%/doc/images
+@dirrm %%T%%/doc/appdev/sample/etc
 @dirrm %%T%%/doc/appdev/sample/lib
+@dirrm %%T%%/doc/appdev/sample/src
 @dirrm %%T%%/doc/appdev/sample/web/images
 @dirrm %%T%%/doc/appdev/sample/web
-@dirrm %%T%%/doc/appdev/sample/src
-@dirrm %%T%%/doc/appdev/sample/etc
 @dirrm %%T%%/doc/appdev/sample
 @dirrm %%T%%/doc/appdev
 @dirrm %%T%%/doc
 @dirrm %%T%%/native/mod_jserv
-@dirrm %%T%%/native/mod_jk/iis
-@dirrm %%T%%/native/mod_jk/netscape
-@dirrm %%T%%/native/mod_jk/apache1.3
-@dirrm %%T%%/native/mod_jk/common
-@dirrm %%T%%/native/mod_jk/jni
-@dirrm %%T%%/native/mod_jk/nt_service
-@dirrm %%T%%/native/mod_jk
 @dirrm %%T%%/native
 @dirrm %%T%%/modules
+@dirrm %%T%%/lib/apps
 @dirrm %%T%%/lib/common
 @dirrm %%T%%/lib/container
-@dirrm %%T%%/lib/apps
+@dirrm %%T%%/lib/endorsed
 @dirrm %%T%%/lib
 @dirrm %%T%%/webapps
-@dirrm %%T%%/conf/users
 @dirrm %%T%%/conf/jk
 @dirrm %%T%%/conf/jserv
+@dirrm %%T%%/conf/users
 @dirrm %%T%%/conf/auto
 @dirrm %%T%%/conf
 @dirrm %%T%%/bin
+@dirrm %%T%%/ant
 @dirrm %%T%%
