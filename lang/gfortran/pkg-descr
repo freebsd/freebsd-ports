@@ -1,8 +1,4 @@
-GNU Fortran compiler supporting 90/95
-from tree-ssa-20020619-branch
-you can invoke this Fortran by gfortran.
+GNU Compiler collection with Fortran 90/95.
 
 WWW: http://gcc.gnu.org/fortran/
      http://gcc.gnu.org/projects/tree-ssa/
---
- NAKATA Maho (maho@FreeBSD.org)
