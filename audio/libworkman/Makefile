@@ -9,7 +9,8 @@
 DISTNAME=	libworkman-1999-06-20
 PKGNAME=	libworkman-1.4
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.midwinter.com/WorkMan/SNAPSHOTS/
+MASTER_SITES=	ftp://ftp.midwinter.com/WorkMan/SNAPSHOTS/ \
+		http://www.FreeBSD.org/~jim/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 
