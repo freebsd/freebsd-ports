@@ -1,0 +1,15 @@
+--- Makefile.orig	Sun Jun 17 01:59:03 2001
++++ Makefile	Sun Jun 17 02:01:47 2001
+@@ -4,10 +4,10 @@
+ LIBS = 
+ 
+ project: $(OBJS)
+-	gcc -s -o datedif $(LIBS) $(OBJS)
++	${CC} ${CFLAGS} -o datedif $(LIBS) $(OBJS)
+ 
+ main.o: main.c
+-	gcc -O2 -c -o main.o main.c
++	${CC} ${CFLAGS} -c -o main.o main.c
+ 
+ clean:
+ 	rm -f main.o

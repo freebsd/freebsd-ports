@@ -36,6 +36,7 @@
     SUBDIR += cstream
     SUBDIR += cuecat
     SUBDIR += cwish
+    SUBDIR += datedif
     SUBDIR += deco
     SUBDIR += dejagnu
     SUBDIR += delay
