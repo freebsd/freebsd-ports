@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.217 1998/07/13 02:27:43 steve Exp $
+# $Id: Makefile,v 1.218 1998/07/14 17:53:53 mph Exp $
 #
 
     SUBDIR += FWF
@@ -69,6 +69,7 @@
     SUBDIR += q3dmenu
     SUBDIR += qt
     SUBDIR += qt133
+    SUBDIR += qt140
     SUBDIR += qvwm
     SUBDIR += rclock
     SUBDIR += rxvt
