@@ -1,0 +1,20 @@
+--- src/modules/rlm_mschap/rlm_mschap.c.orig	Mon Jan 21 11:20:42 2002
++++ src/modules/rlm_mschap/rlm_mschap.c	Fri Jul  5 00:44:19 2002
+@@ -258,11 +258,15 @@
+ {
+ 	SHA1_CTX Context;
+ 	char hash[20];
+-	
++	const char *name;
++
++	name = strchr(user_name, '\\');
++	name = name == NULL ? user_name : name + 1;
++
+ 	SHA1Init(&Context);
+ 	SHA1Update(&Context, peer_challenge, 16);
+ 	SHA1Update(&Context, auth_challenge, 16);
+-	SHA1Update(&Context, user_name, strlen(user_name));
++	SHA1Update(&Context, name, strlen(name));
+ 	SHA1Final(hash, &Context);
+ 	memcpy(challenge, hash, 8);
+ }
