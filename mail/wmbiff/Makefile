@@ -23,7 +23,7 @@ WITH_GNUTLS=		yes
 .endif
 
 .ifdef WITH_GNUTLS
-LIB_DEPENDS+=		gcrypt.10:${PORTSDIR}/security/libgcrypt-devel \
+LIB_DEPENDS+=		gcrypt.12:${PORTSDIR}/security/libgcrypt \
 			gnutls.13:${PORTSDIR}/security/gnutls
 .endif
 

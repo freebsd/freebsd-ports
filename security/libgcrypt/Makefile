@@ -5,24 +5,22 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.1.12
+PORTVERSION=	1.2.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
-MASTER_SITE_SUBDIR=	alpha/libgcrypt
+MASTER_SITE_SUBDIR=	libgcrypt
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sig
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	"General purpose crypto library based on code used in GnuPG"
 
-CONFLICTS=	libgcrypt-1.1.9*
 USE_REINPLACE=	yes
 USE_PERL5=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
-NO_LATEST_LINK=yes
 
 INFO=	gcrypt
 
@@ -43,7 +41,7 @@ pre-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|" \
-		${WRKSRC}/scripts/ltmain.sh
+		${WRKSRC}/ltmain.sh
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/doc/gcrypt.info*
