@@ -7,6 +7,7 @@
 
 PORTNAME=	phpbb
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -83,7 +84,7 @@ do-install:
 post-install:
 #	@ cd ${DATADIR} && ${INSTALL} -c -o ${WWWOWN} -g ${WWWGRP} \
 #	  ${EXCEPTFILES} ${PREFIX}/${PHPBBDIR}
-.if !defined(NOPORTOCS)
+.if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
 	@ cd ${WRKSRC}/docs && ${FIND} * -type f -maxdepth 0 \! -name \*.bak \
 	  \! -name COPYING -exec ${INSTALL_DATA} {} ${DOCSDIR} \;
