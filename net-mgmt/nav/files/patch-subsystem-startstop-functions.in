@@ -1,0 +1,22 @@
+--- subsystem/startstop/functions.in.orig	Thu Nov 18 13:10:22 2004
++++ subsystem/startstop/functions.in	Thu Nov 18 13:10:26 2004
+@@ -84,6 +84,10 @@
+         return 1
+ }
+ 
++pidexists() {
++	ps -p $1 | tail +2
++}
++
+ pidofproc() {
+     local base=${1##*/}
+     local PIDOF=/sbin/pidof
+@@ -99,7 +103,7 @@
+             local line p pid=
+             read line < $pidfile
+             for p in $line ; do
+-                [ -z "${p//[0-9]/}" -a -d /proc/$p ] && pid="$pid $p"
++                [ -z "${p//[0-9]/}" -a -n "`pidexists $p`" ] && pid="$pid $p"
+             done
+             if [ -n "${pid-:}" ] ; then
+                 echo $pid

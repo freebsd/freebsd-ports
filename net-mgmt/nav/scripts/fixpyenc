@@ -1,0 +1,12 @@
+#! /bin/sh
+
+encstr="# -*- coding: ISO8859-1 -*-"
+
+if [ -z "`head -1 $1 | egrep '#.*!.*python'`" ]
+then
+	(echo $encstr; cat $1) >$1.tmp
+else
+	(head -1 $1; echo $encstr; tail +2 $1) >$1.tmp
+fi
+cp $1.tmp $1
+rm -f $1.tmp

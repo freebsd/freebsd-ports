@@ -1,0 +1,72 @@
+#! /bin/sh
+
+pw="/usr/sbin/pw"
+users="navcron:nav:${PKG_PREFIX}/nav"
+
+setname() {
+	# $1: username $2: real name
+	$pw usermod "$1" -c "$2" 2>/dev/null
+}
+
+cruser() {
+	username=`echo $1 | awk -F : '{print $1}'`
+	group=`echo $1 | awk -F : '{print $2}'`
+	homedir=`echo $1 | awk -F : '{print $3}'`
+	name=`echo $1 | awk -F : '{print $4}'`
+	shell="/bin/sh"
+	
+	if ($pw groupshow $group >/dev/null 2>&1)
+	then
+		echo "Group $group exists, so I will use it."
+	else
+		if ($pw groupadd $group)
+		then
+			echo "Added group $group."
+		else
+			echo "Could not add group $group. Aborting."
+			exit 1
+		fi
+	fi
+
+	if ($pw usershow $username >/dev/null 2>&1)
+	then
+		echo "User $username exists, so I will use it."
+	else
+		if ($pw useradd $username -g $group -d $homedir -s $shell -w no)
+		then
+			echo "Added user $username."
+		else
+			echo "Could not add user $username. Aborting."
+			exit 1
+		fi
+	fi
+}
+
+deluser() {
+	username=`echo $1 | awk -F : '{print $1}'`
+	group=`echo $1 | awk -F : '{print $2}'`
+	homedir=`echo $1 | awk -F : '{print $3}'`
+
+	printf "Attempting to delete user $username: "
+	if (printf "" | $pw userdel $username 2>/dev/null)
+	then
+		echo OK
+	else
+		echo FAIL
+	fi
+	printf "Attempting to delete group $group: "
+	if ($pw groupdel $group 2>/dev/null)
+	then
+		echo OK
+	else
+		echo FAIL
+	fi
+}
+
+case "$2" in
+PRE-INSTALL)
+	for user in $users; do cruser $user; done
+	setname navcron "NAV User"
+	;;
+DEINSTALL) for user in $users; do deluser $user; done;;
+esac
