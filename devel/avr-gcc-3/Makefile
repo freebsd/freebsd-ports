@@ -22,7 +22,6 @@ MAINTAINER=	joerg@freebsd.org
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		autoheader:${PORTSDIR}/devel/autoconf \
-		perl:${PORTSDIR}/lang/perl5 \
 		gettext:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils
@@ -31,6 +30,7 @@ WRKSRC=		${WRKDIR}/gcc-${PORTVERSION}
 
 # Unfortunately, only some mirrors have it as a .bz2 file, while
 # the original master site still uses .gz.
+USE_PERL5_BUILD=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes

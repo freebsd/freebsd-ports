@@ -15,8 +15,8 @@ MASTER_SITE_SUBDIR=	wget
 MAINTAINER=	sf@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
-BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
 
+USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

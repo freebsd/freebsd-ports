@@ -15,8 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	cy@FreeBSD.org
 
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
-		mkcmd:${PORTSDIR}/devel/mkcmd \
-		perl:${PORTSDIR}/lang/perl5
+		mkcmd:${PORTSDIR}/devel/mkcmd
+
+USE_PERL5_BUILD=	yes
 
 MAN5=		conserver.cf.5
 MAN8=		autologin.8 console.8 conserver.8
