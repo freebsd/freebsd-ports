@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Device/Modem/Log/File.pm
+%%SITE_PERL%%/Device/Modem/Log/Syslog.pm
+%%SITE_PERL%%/Device/Modem.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Modem/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/examples/active.pl
+%%PORTDOCS%%%%DOCSDIR%%/examples/dial.pl
+%%PORTDOCS%%%%DOCSDIR%%/examples/shell.pl
+%%PORTDOCS%%@dirrm share/doc/Device-Modem/examples
+%%PORTDOCS%%@dirrm share/doc/Device-Modem
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Device/Modem
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Device 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Device 2>/dev/null || true
