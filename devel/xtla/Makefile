@@ -7,6 +7,7 @@
 
 PORTNAME=	xtla
 PORTVERSION=	20040719
+PORTREVISION=	1
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://xsteve.nit.at/prg/emacs/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -15,7 +16,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	An Emacs front-end to tla
 
-BUILD_DEPENDS+=	tla:${PORTSDIR}/devel/tla
+BUILD_DEPENDS+=	tla:${PORTSDIR}/devel/tla \
+		${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/tree-widget/tree-widget.el:${PORTSDIR}/editors/tree-widget
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 EMACS_PORT_NAME?=	emacs21
