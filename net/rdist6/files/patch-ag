@@ -1,8 +1,18 @@
-*** config/os-freebsd2.h.dist	Fri Feb 16 02:53:50 1996
---- config/os-freebsd2.h	Fri May 17 16:40:31 1996
+*** config/os-freebsd2.h.dist	Mon Nov  9 21:59:55 1998
+--- config/os-freebsd2.h	Fri Dec 31 15:49:02 1999
 ***************
-*** 157,159 ****
---- 157,160 ----
+*** 116,121 ****
+--- 116,122 ----
+   */
+  #define HAVE_FCHOWN			/* Have fchown() */
+  #define HAVE_FCHMOD			/* Have fchmod() */
++ #define HAVE_PATHS_H			/* Have paths.h */
+  #define HAVE_SELECT			/* Have select() */
+  #define HAVE_SAVED_IDS			/* Have POSIX style saved [ug]id's */
+  #define POSIX_SIGNALS			/* Have POSIX signals */
+***************
+*** 131,133 ****
+--- 132,135 ----
    * that which appears in "include/paths.h".
    */
   #define _PATH_REMSH	"/usr/bin/rsh"			/**/
