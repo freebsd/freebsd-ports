@@ -7,6 +7,7 @@
 
 PORTNAME=		vmd
 PORTVERSION=		1.8.2
+PORTREVISION=		1
 CATEGORIES=		science graphics python tcl84 tk84
 MASTER_SITES=		#
 DISTFILES=		${PORTNAME}-${PORTVERSION}.src.tar.gz
