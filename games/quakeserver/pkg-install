@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case "$2" in
+	PRE-INSTALL)
+		if ! pw user show quakerun >/dev/null 2>&1
+		then
+			echo "===>   Creating user quakerun"
+			pw add user quakerun -s /sbin/nologin -c "QuakeServer User" -d /nonexistent
+		fi
+	;;
+esac

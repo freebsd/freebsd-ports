@@ -57,8 +57,5 @@ do-install:
 		/usr/bin/mkfifo ${PREFIX}/quakeserver/quakeserver.in
 		@ ${CHMOD} 660 ${PREFIX}/quakeserver/quakeserver.in
 		@ ${CHOWN} :quakerun ${PREFIX}/quakeserver/quakeserver.in
-.if !defined(BATCH)
-		@ /usr/bin/more -e ${PREFIX}/quakeserver/readme.port
-.endif
 
 .include <bsd.port.mk>

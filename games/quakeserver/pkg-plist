@@ -15,3 +15,4 @@ quakeserver/quakeserver.log
 @unexec rm -f %D/quakeserver/quakeserver.in %D/quakeserver/quakeserver.log
 @dirrm quakeserver/id1
 @dirrm quakeserver
+@unexec pw user del quakerun
