@@ -27,12 +27,10 @@ lib/X11/afterstep/doc/README
 lib/X11/afterstep/doc/README.8bit
 lib/X11/afterstep/doc/FAQ
 lib/X11/afterstep/doc/module-interface.txt
-lib/X11/afterstep/sounds/beaming.au
 lib/X11/afterstep/sounds/bong.au
 lib/X11/afterstep/sounds/clink.au
 lib/X11/afterstep/sounds/cowbell.au
 lib/X11/afterstep/sounds/crash.au
-lib/X11/afterstep/sounds/doorbell.au
 lib/X11/afterstep/sounds/drip.au
 lib/X11/afterstep/sounds/gong.au
 lib/X11/afterstep/sounds/meepmeep.au
