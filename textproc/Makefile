@@ -73,6 +73,7 @@
     SUBDIR += glark
     SUBDIR += glimpse
     SUBDIR += gmat
+    SUBDIR += gmetadom
     SUBDIR += gnomespell
     SUBDIR += gpp
     SUBDIR += grap

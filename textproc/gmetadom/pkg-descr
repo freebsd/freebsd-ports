@@ -1,0 +1,25 @@
+GMetaDOM is a collection of librares, each library providing a DOM
+implementation. Currently available bindings are for C++ (smart pointers)
+and Objective Caml.
+
+The basic idea is that, given the availability of DOM implementations for
+the C programming language (like Gdome2), and given the uniformity of the
+DOM interfaces, bindings for various programming languages based on the C
+implementation can be built automatically, providing a small number of hand-
+coded classes and a set of scripts for the automatic generation of the
+remaining ones.
+
+Furthermore, since a XML description of the DOM interfaces is provided as
+part of the documentation in the W3C DOM specification, GMetaDOM adopts XSLT
+as the transformation language for the automatic generation of the interfaces,
+and uses the xsltproc utility as the XSLT processor.
+
+The advantages of such approach should be evident. In particular, for
+languages like C++ where a number of different alternative DOM implementations
+are feasible, each with different characteristics like easiness of use,
+runtime flexibility, resource requirements, the approach of automatic
+generation permits to create a set of coherent implementations addressing
+such issues separately, ultimately allowing the developer to choose the
+library which fits best her needs.
+
+WWW: http://gmetadom.sourceforge.net/
