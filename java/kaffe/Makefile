@@ -8,7 +8,7 @@
 
 DISTNAME=	kaffe-1.0.5
 CATEGORIES=	java
-MASTER_SITES=	ftp://ftp.transvirtual.com/pub/kaffe/
+MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
 
 MAINTAINER=	xaa@xaa.iae.nl
 
