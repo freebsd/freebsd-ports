@@ -42,10 +42,6 @@ LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-CFLAGS+=        -O0  
-.endif
-
 .if ${HAVE_GNOME:Mesound}!=""
 USE_GNOME+=	esound
 PKGNAMESUFFIX=	-esound
