@@ -106,6 +106,7 @@ share/examples/mysql++/simple1.cc
 share/examples/mysql++/sinisa_ex.cc
 share/examples/mysql++/updel_x_.cc
 share/examples/mysql++/util.cc
+share/examples/mysql++/README
 @unexec rmdir include/mysql 2>/dev/null || true
 @dirrm share/doc/mysql++
 @dirrm share/examples/mysql++
