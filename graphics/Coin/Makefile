@@ -18,7 +18,7 @@ LIB_DEPENDS=	simage.22:${PORTSDIR}/graphics/simage \
 		openal.0:${PORTSDIR}/audio/openal
 
 USE_REINPLACE=	yes
-USE_MESA=	yes
+USE_GL=		yes
 USE_XLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--program-transform-name="s/x/x/" --with-pthread=yes --enable-threadsafe \
