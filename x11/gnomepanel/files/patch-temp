@@ -5,19 +5,10 @@ so that it doesn't put its icons under the panel(s). For some reason,
 advertized in ChangeLog _NET_WM_WORKAREA isn't recognised by Nautilus-2.0.0
 available at this time.
 
---- gnome-panel/xstuff.c.orig	Wed Jun 26 02:46:44 2002
-+++ gnome-panel/xstuff.c	Wed Jul 17 16:36:57 2002
-@@ -1,53 +1,101 @@
- /*
-  * GNOME panel x stuff
-+ * Copyright 2000,2001 Eazel, Inc.
-  *
-- * Copyright (C) 2000, 2001 Eazel, Inc.
-- *               2002 Sun Microsystems Inc.
-- *
-- * Authors: George Lebl <jirka@5z.com>
-- *          Mark McLoughlin <mark@skynet.ie>
-+ * Authors: George Lebl
+--- gnome-panel/xstuff.c.orig	Sun Aug  4 18:30:21 2002
++++ gnome-panel/xstuff.c	Thu Aug  8 22:19:15 2002
+@@ -8,46 +8,97 @@
+  *          Mark McLoughlin <mark@skynet.ie>
   */
  #include <config.h>
 -#include <string.h>
@@ -48,7 +39,7 @@ available at this time.
 +extern GSList *panel_list;
 +
 +static void xstuff_setup_global_desktop_area (int left, int right,
-+					      int top, int bottom);
++					int top, int bottom);
 +
 +#define ATOM(name) xstuff_atom_intern(GDK_DISPLAY(),name)
 +/* Once we have multiple display support we need to only use
@@ -70,63 +61,65 @@ available at this time.
  	g_return_val_if_fail (display != NULL, None);
 -	g_return_val_if_fail (atom_name != NULL, None);
 +	g_return_val_if_fail (name != NULL, None);
++
++	if (cache == 0)
++	    cache = g_hash_table_new (g_str_hash, g_str_equal);
  
 -	if (!atom_hash)
 -		atom_hash = g_hash_table_new_full (
 -				g_str_hash, g_str_equal, g_free, NULL);
-+	if (cache == 0)
-+		cache = g_hash_table_new (g_str_hash, g_str_equal);
- 
+-
 -	retval = GPOINTER_TO_UINT (g_hash_table_lookup (atom_hash, atom_name));
 -	if (!retval) {
 -		retval = XInternAtom (display, atom_name, FALSE);
-+	key = g_strdup_printf ("%p %s", display, name);
- 
+-
 -		if (retval != None)
 -			g_hash_table_insert (atom_hash, g_strdup (atom_name),
 -					     GUINT_TO_POINTER (retval));
++	key = g_strdup_printf ("%p %s", display, name);
++
 +	atom = (Atom)g_hash_table_lookup (cache, key);
 +	if (atom == 0) {
-+		atom = XInternAtom (display, name, False);
++	    	atom = XInternAtom (display, name, False);
 +		g_hash_table_insert (cache, key, (gpointer)atom);
 +	} else {
-+		g_free (key);
++	   	g_free (key);
  	}
  
 -	return retval;
-+	return atom;
++    	return atom;
 +}
 +
 +void
 +xstuff_init (void)
 +{
-+	/* setup the keys filter */
-+	gdk_window_add_filter (gdk_get_default_root_window (),
-+			       panel_global_keys_filter,
-+			       NULL);
++       /* setup the keys filter */
++       gdk_window_add_filter (gdk_get_default_root_window (),
++                              panel_global_keys_filter,
++                              NULL);
 +
-+	gdk_error_trap_push ();
++       gdk_error_trap_push ();
 +
-+	xstuff_setup_global_desktop_area (0, 0, 0, 0);
++       xstuff_setup_global_desktop_area (0, 0, 0, 0);
 +
-+	gdk_error_trap_pop ();
++       gdk_error_trap_pop ();
 +}
 +
 +void
 +xstuff_set_simple_hint (GdkWindow *w, const char *name, long val)
 +{
-+	Atom atom = ATOMGDK (w, name);
++       Atom atom = ATOMGDK (w, name);
 +
-+	gdk_error_trap_push ();
++       gdk_error_trap_push ();
 +
-+	XChangeProperty (GDK_DISPLAY (),
-+			 GDK_WINDOW_XWINDOW (w),
-+			 atom, atom,
-+			 32, PropModeReplace,
-+			 (unsigned char*)&val, 1);
++       XChangeProperty (GDK_DISPLAY (),
++                        GDK_WINDOW_XWINDOW (w),
++                        atom, atom,
++                        32, PropModeReplace,
++                        (unsigned char*)&val, 1);
 +
-+	gdk_flush ();
-+	gdk_error_trap_pop ();
++       gdk_flush ();
++       gdk_error_trap_pop ();
  }
  
  /* Stolen from deskguide */
@@ -135,7 +128,7 @@ available at this time.
  get_typed_property_data (Display *xdisplay,
  			 Window   xwindow,
  			 Atom     property,
-@@ -156,7 +204,7 @@
+@@ -156,7 +207,7 @@
          
  	data = get_typed_property_data (GDK_DISPLAY (),
  					GDK_ROOT_WINDOW (),
@@ -144,7 +137,7 @@ available at this time.
  					XA_ATOM,
  					&size, 32);
  	if (data != NULL) {
-@@ -176,11 +224,9 @@
+@@ -176,11 +227,9 @@
  
  	XDeleteProperty (GDK_WINDOW_XDISPLAY (win),
  			 GDK_WINDOW_XWINDOW (win),
@@ -158,7 +151,7 @@ available at this time.
  	/* General paranoia */
  	if (old_wmhints != NULL) {
  		memcpy (&wmhints, old_wmhints, sizeof (XWMHints));
-@@ -197,16 +243,122 @@
+@@ -197,16 +246,124 @@
  		wmhints.input = False;
  		wmhints.initial_state = NormalState;
  	}
@@ -169,137 +162,139 @@ available at this time.
  		     &wmhints);
  }
  
++
 +static void
 +xstuff_setup_global_desktop_area (int left, int right, int top, int bottom)
 +{
-+	long vals[4];
-+	static int old_left = -1, old_right = -1, old_top = -1, old_bottom = -1;
++       long vals[4];
++       static int old_left = -1, old_right = -1, old_top = -1, old_bottom = -1;+
++       left = left >= 0 ? left : old_left;
++       right = right >= 0 ? right : old_right;
++       top = top >= 0 ? top : old_top;
++       bottom = bottom >= 0 ? bottom : old_bottom;
 +
-+	left = left >= 0 ? left : old_left;
-+	right = right >= 0 ? right : old_right;
-+	top = top >= 0 ? top : old_top;
-+	bottom = bottom >= 0 ? bottom : old_bottom;
++      if (old_left == left &&
++           old_right == right &&
++           old_top == top &&
++           old_bottom == bottom)
++               return;
 +
-+	if (old_left == left &&
-+	    old_right == right &&
-+	    old_top == top &&
-+	    old_bottom == bottom)
-+		return;
++       vals[0] = left;
++       vals[1] = right;
++       vals[2] = top;
++       vals[3] = bottom;
 +
-+	vals[0] = left;
-+	vals[1] = right;
-+	vals[2] = top;
-+	vals[3] = bottom;
++       XChangeProperty (GDK_DISPLAY (),
++                        GDK_ROOT_WINDOW (),
++                        ATOM ("GNOME_PANEL_DESKTOP_AREA"),
++                        XA_CARDINAL,
++                        32, PropModeReplace,
++                        (unsigned char *)vals, 4);
 +
-+	XChangeProperty (GDK_DISPLAY (),
-+			 GDK_ROOT_WINDOW (), 
-+			 ATOM ("GNOME_PANEL_DESKTOP_AREA"),
-+			 XA_CARDINAL,
-+			 32, PropModeReplace,
-+			 (unsigned char *)vals, 4);
-+
-+	old_left = left;
-+	old_right = right;
-+	old_top = top;
-+	old_bottom = bottom;
++       old_left = left;
++       old_right = right;
++       old_top = top;
++       old_bottom = bottom;
 +}
 +
 +void
 +xstuff_setup_desktop_area (int screen, int left, int right, int top, int bottom)
 +{
-+	char *screen_atom;
-+	long vals[4];
-+	static int screen_width = -1, screen_height = -1;
++       char *screen_atom;
++       long vals[4];
++       static int screen_width = -1, screen_height = -1;
 +
-+	if (screen_width < 0)
-+		screen_width = gdk_screen_width ();
-+	if (screen_height < 0)
-+		screen_height = gdk_screen_height ();
++       if (screen_width < 0)
++               screen_width = gdk_screen_width ();
++       if (screen_height < 0)
++               screen_height = gdk_screen_height ();
 +
-+	vals[0] = left;
-+	vals[1] = right;
-+	vals[2] = top;
-+	vals[3] = bottom;
++       vals[0] = left;
++       vals[1] = right;
++       vals[2] = top;
++       vals[3] = bottom;
 +
-+	gdk_error_trap_push ();
++       gdk_error_trap_push ();
 +
-+	/* Note, when we do standard multihead and we have per screen
-+	 * root window, this should just set the GNOME_PANEL_DESKTOP_AREA */
-+	screen_atom = g_strdup_printf ("GNOME_PANEL_DESKTOP_AREA_%d",
-+				       screen);
-+	XChangeProperty (GDK_DISPLAY (),
-+			 GDK_ROOT_WINDOW (), 
-+			 ATOM (screen_atom),
-+			 XA_CARDINAL,
-+			 32, PropModeReplace,
-+			 (unsigned char *)vals, 4);
++       /* Note, when we do standard multihead and we have per screen
++        * root window, this should just set the GNOME_PANEL_DESKTOP_AREA */
++       screen_atom = g_strdup_printf ("GNOME_PANEL_DESKTOP_AREA_%d",
++                                      screen);
++       XChangeProperty (GDK_DISPLAY (),
++                        GDK_ROOT_WINDOW (),
++                        ATOM (screen_atom),
++                        XA_CARDINAL,
++                        32, PropModeReplace,
++                        (unsigned char *)vals, 4);
 +
-+	g_free (screen_atom);
++       g_free (screen_atom);
 +
-+	xstuff_setup_global_desktop_area
-+		((multiscreen_x (screen)      == 0)             ? left   : -1,
-+		 (multiscreen_x (screen) +
-+		  multiscreen_width (screen)  == screen_width)  ? right  : -1,
-+		 (multiscreen_y (screen)      == 0)             ? top    : -1,
-+		 (multiscreen_y (screen) +
-+		  multiscreen_height (screen) == screen_height) ? bottom : -1);
++       xstuff_setup_global_desktop_area
++               ((multiscreen_x (screen)      == 0)             ? left   : -1,
++                (multiscreen_x (screen) +
++                 multiscreen_width (screen)  == screen_width)  ? right  : -1,
++                (multiscreen_y (screen)      == 0)             ? top    : -1,
++                (multiscreen_y (screen) +
++                 multiscreen_height (screen) == screen_height) ? bottom : -1);
 +
-+	gdk_flush ();
-+	gdk_error_trap_pop ();
++       gdk_flush ();
++       gdk_error_trap_pop ();
 +}
 +
 +void
 +xstuff_unsetup_desktop_area (void)
 +{
-+	int i;
-+	char *screen_atom;
++       int i;
++       char *screen_atom;
 +
-+	gdk_error_trap_push ();
++       gdk_error_trap_push ();
 +
-+	XDeleteProperty (GDK_DISPLAY (),
-+			 GDK_ROOT_WINDOW (),
-+			 ATOM ("GNOME_PANEL_DESKTOP_AREA"));
++       XDeleteProperty (GDK_DISPLAY (),
++                        GDK_ROOT_WINDOW (),
++                        ATOM ("GNOME_PANEL_DESKTOP_AREA"));
 +
-+	for (i = 0; i < multiscreen_screens (); i++) {
-+		screen_atom =
-+			g_strdup_printf ("GNOME_PANEL_DESKTOP_AREA_%d", i);
++       for (i = 0; i < multiscreen_screens (); i++) {
++               screen_atom =
++                       g_strdup_printf ("GNOME_PANEL_DESKTOP_AREA_%d", i);
 +
-+		XDeleteProperty (GDK_DISPLAY (),
-+				 GDK_ROOT_WINDOW (),
-+				 ATOM (screen_atom));
++               XDeleteProperty (GDK_DISPLAY (),
++                                GDK_ROOT_WINDOW (),
++                                ATOM (screen_atom));
 +
-+		g_free (screen_atom);
-+	}
++               g_free (screen_atom);
++       }
 +
-+	gdk_flush ();
-+	gdk_error_trap_pop ();
++       gdk_flush ();
++       gdk_error_trap_pop ();
 +}
++
++
 +
  /* This is such a broken stupid function. */   
  void
  xstuff_set_pos_size (GdkWindow *window, int x, int y, int w, int h)
  {
-+       Window win = GDK_WINDOW_XWINDOW (window);
-        XSizeHints size_hints;
++	Window win = GDK_WINDOW_XWINDOW (window);
+ 	XSizeHints size_hints;
+ 	int old_x, old_y, old_w, old_h;
  
-        /* Do not add USPosition / USSize here, fix the damn WM */
-@@ -222,9 +374,7 @@
+@@ -231,9 +388,7 @@
    
-        gdk_error_trap_push ();
+ 	gdk_error_trap_push ();
  
--       XSetWMNormalHints (GDK_WINDOW_XDISPLAY (window),
--			  GDK_WINDOW_XWINDOW (window),
--			  &size_hints);
-+       XSetWMNormalHints (GDK_DISPLAY (), win, &size_hints);
+-	XSetWMNormalHints (GDK_WINDOW_XDISPLAY (window),
+-			   GDK_WINDOW_XWINDOW (window),
+-			   &size_hints);
++	XSetWMNormalHints (GDK_DISPLAY (), win, &size_hints);
  
-        gdk_window_move_resize (window, x, y, w, h);
+ 	gdk_window_move_resize (window, x, y, w, h);
  
-@@ -236,62 +386,48 @@
+@@ -250,33 +405,29 @@
  xstuff_set_wmspec_dock_hints (GdkWindow *window,
  			      gboolean autohide)
  {
 -        Atom atoms [2] = { None, None };
-+        Atom atoms[2] = { None, None };
++	Atom atoms[2] = { None, None };
          
 -	if (!autohide)
 -		atoms [0] = panel_atom_get (GDK_WINDOW_XDISPLAY (window),
@@ -323,7 +318,7 @@ available at this time.
 +			 ATOMGDK (window, "_NET_WM_WINDOW_TYPE"),
                           XA_ATOM, 32, PropModeReplace,
 -                         (unsigned char *) atoms, 
-+                         (guchar *)atoms, 
++			 (guchar *)atoms,
  			 autohide ? 2 : 1);
  }
  
@@ -333,22 +328,14 @@ available at this time.
 -			 int        right,
 -			 int        top,
 -			 int        bottom)
-+			 int left,
-+			 int right,
-+			 int top,
-+			 int bottom)
++			int left,
++			int right,
++			int top,
++			int bottom)
  {
--	long vals [4];
-+	long vals[4];
+ 	long vals [4];
          
--	vals [0] = left;
--	vals [1] = right;
--	vals [2] = top;
--	vals [3] = bottom;
-+	vals[0] = left;
-+	vals[1] = right;
-+	vals[2] = top;
-+	vals[3] = bottom;
+@@ -287,25 +438,15 @@
  
          XChangeProperty (GDK_WINDOW_XDISPLAY (window),
                           GDK_WINDOW_XWINDOW (window),
@@ -357,7 +344,7 @@ available at this time.
 +			 ATOMGDK (window, "_NET_WM_STRUT"),
                           XA_CARDINAL, 32, PropModeReplace,
 -                         (unsigned char *) vals, 4);
-+                         (guchar *)vals, 4);
++			 (guchar *)vals, 4);
  }
  
  void
@@ -375,13 +362,13 @@ available at this time.
 -{
 -	gdk_window_add_filter (gdk_get_default_root_window (),
 -			       panel_global_keys_filter, NULL);
-+        XDeleteProperty (GDK_WINDOW_XDISPLAY (window),
-+                         GDK_WINDOW_XWINDOW (window),
-+			 ATOMGDK (window, name));
++	XDeleteProperty (GDK_WINDOW_XDISPLAY (window),
++			GDK_WINDOW_XWINDOW (window),
++			ATOMGDK (window, name));
  }
---- gnome-panel/xstuff.h.orig	Fri Jun 21 08:28:10 2002
-+++ gnome-panel/xstuff.h	Wed Jul 17 16:36:57 2002
-@@ -1,15 +1,35 @@
+--- gnome-panel/xstuff.h.orig	Fri Jun 21 02:07:59 2002
++++ gnome-panel/xstuff.h	Thu Aug  8 22:11:31 2002
+@@ -1,15 +1,36 @@
 -#ifndef __XSTUFF_H__
 -#define __XSTUFF_H__
 +#ifndef XSTUFF_H
@@ -394,41 +381,42 @@ available at this time.
 +#include <X11/Xatom.h>
  
  void xstuff_init			(void);
-+Atom xstuff_atom_intern			(Display *display,
-+					 const char *name);
-+void xstuff_set_simple_hint		(GdkWindow *w,
-+					 const char *name,
-+					 long val);
++Atom xstuff_atom_intern                        (Display *display,
++					const char *name);
++void xstuff_set_simple_hint            (GdkWindow *w,
++					const char *name,
++					long val);
  void xstuff_delete_property		(GdkWindow *window,
  					 const char *name);
  gboolean xstuff_is_compliant_wm		(void);
  
-+gpointer get_typed_property_data	(Display *xdisplay,
-+					 Window   xwindow,
-+					 Atom     property,
-+					 Atom     requested_type,
-+					 gint    *size_p,
-+					 guint    expected_format);
++gpointer get_typed_property_data       (Display *xdisplay,
++					Window   xwindow,
++					Atom     property,
++					Atom     requested_type,
++					gint    *size_p,
++					guint    expected_format);
 +
  void xstuff_set_no_group_and_no_input	(GdkWindow *win);
  
-+void xstuff_setup_desktop_area		(int screen,
-+					 int left,
-+					 int right,
-+					 int top,
-+					 int bottom);
++void xstuff_setup_desktop_area         (int screen,
++					int left,
++					int right,
++					int top,
++					int bottom);
++
  void xstuff_unsetup_desktop_area	(void);
  void xstuff_set_pos_size		(GdkWindow *window,
  					 int x, int y,
-@@ -22,4 +42,4 @@
+@@ -22,4 +43,4 @@
  					 int top,
  					 int bottom);
  
 -#endif /* __XSTUFF_H__ */
 +#endif
---- gnome-panel/basep-widget.c	2002/07/17 14:28:52	1.1
-+++ gnome-panel/basep-widget.c	2002/07/17 14:31:46
-@@ -2521,6 +2521,11 @@
+--- gnome-panel/basep-widget.c.orig	Sun Aug  4 18:29:17 2002
++++ gnome-panel/basep-widget.c	Thu Aug  8 22:11:37 2002
+@@ -2508,6 +2508,11 @@
  		    BASEP_WIDGET (panel)->screen == screen)
  			gtk_widget_queue_resize (panel);
  	}
@@ -440,8 +428,8 @@ available at this time.
  }
  
  static guint  queue_recalc_id = 0;
---- gnome-panel/session.c	2002/07/17 14:31:48	1.1
-+++ gnome-panel/session.c	2002/07/17 14:32:03
+--- gnome-panel/session.c.orig	Wed Jul 31 20:02:15 2002
++++ gnome-panel/session.c	Thu Aug  8 22:11:41 2002
 @@ -242,6 +242,8 @@
  
  	gnome_config_sync ();
