@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION= 	2.2.3
-PORTREVISION=	3
+PORTVERSION= 	2.2.4
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -24,7 +24,6 @@ BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LATEST_LINK=	${PORTNAME}22
 
 USE_RC_SUBR=	YES
-
 USE_OPENSSL=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	YES
@@ -93,10 +92,6 @@ PLIST_SUB+=	IDLED="@comment "
 
 .if defined(WITH_LISTEXT)
 CONFIGURE_ARGS+=--enable-listext
-.endif
-
-.if defined(WITH_ANNOTATEMORE)
-CONFIGURE_ARGS+=--enable-annotatemore
 .endif
 
 .if defined(WITH_NETSCAPEHACK)
@@ -188,21 +183,15 @@ post-patch:
 			${WRKSRC}/perl/sieve/scripts/sieveshell.pl
 .endif
 
-.if !defined(NOPORTDOCS)
-post-build:
-		@/usr/bin/groff -man -Thtml ${WRKSRC}/man/imapd.conf.5 \
-			> ${WRKSRC}/doc/man/imapd.conf.5.html
-.endif
-
 post-install:
-.for file in ${CYRUS_MAN3}
-		@${GZIP_CMD} ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/${file}
-		@${ECHO_CMD} lib/perl5/${PERL_VERSION}/man/man3/${file}.gz \
+.for f in ${CYRUS_MAN3}
+		@${GZIP_CMD} ${PREFIX}/lib/perl5/${PERL_VERSION}/man/man3/${f}
+		@${ECHO_CMD} lib/perl5/${PERL_VERSION}/man/man3/${f}.gz \
 			>>${TMPPLIST}
 .endfor
-.for file in ${CYRUS_MAN8}
-		@${GZIP_CMD} ${PREFIX}/cyrus/man/man8/${file}
-		@${ECHO_CMD} cyrus/man/man8/${file}.gz >>${TMPPLIST}
+.for f in ${CYRUS_MAN8}
+		@${GZIP_CMD} ${PREFIX}/cyrus/man/man8/${f}
+		@${ECHO_CMD} cyrus/man/man8/${f}.gz >>${TMPPLIST}
 .endfor
 		@${ECHO_CMD} "@dirrm cyrus/man/man8" >>${TMPPLIST}
 		@${ECHO_CMD} "@dirrm cyrus/man" >>${TMPPLIST}
@@ -210,25 +199,25 @@ post-install:
 .if !defined(NOPORTDOCS)
 		@${MKDIR} ${DOCSDIR}/man
 		@${MKDIR} ${DOCSDIR}/text
-.for file in ${DOCS}
-		@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
-		@${ECHO_CMD} share/doc/${PORTNAME}/${file}.html >>${TMPPLIST}
+.for f in ${DOCS}
+		@${INSTALL_DATA} ${WRKSRC}/doc/${f}.html ${DOCSDIR}
+		@${ECHO_CMD} share/doc/${PORTNAME}/${f}.html >>${TMPPLIST}
 .endfor
-.for file in ${MAN1} ${MAN3} ${MAN5} ${CYRUS_MAN8}
-		@if [ -f ${WRKSRC}/doc/man/${file}.html ]; then \
-		${INSTALL_DATA} ${WRKSRC}/doc/man/${file}.html \
-			${DOCSDIR}/man/${file}.html; \
-		${ECHO_CMD} share/doc/${PORTNAME}/man/${file}.html \
+.for f in ${MAN1} ${MAN3} ${MAN5} ${CYRUS_MAN8}
+		@if [ -f ${WRKSRC}/doc/man/${f}.html ]; then \
+		${INSTALL_DATA} ${WRKSRC}/doc/man/${f}.html \
+			${DOCSDIR}/man/${f}.html; \
+		${ECHO_CMD} share/doc/${PORTNAME}/man/${f}.html \
 			>>${TMPPLIST}; \
 		fi
 .endfor
-.for file in cyrusv2.mc murder.fig murder.png netnews.fig netnews.png
-		@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
-		@${ECHO_CMD} share/doc/${PORTNAME}/${file} >>${TMPPLIST}
+.for f in cyrusv2.mc murder.fig murder.png netnews.fig netnews.png
+		@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+		@${ECHO_CMD} share/doc/${PORTNAME}/${f} >>${TMPPLIST}
 .endfor
-.for file in ${DOCS}
-		@${INSTALL_DATA} ${WRKSRC}/doc/text/${file} ${DOCSDIR}/text
-		@${ECHO_CMD} share/doc/${PORTNAME}/text/${file} >>${TMPPLIST}
+.for f in ${DOCS}
+		@${INSTALL_DATA} ${WRKSRC}/doc/text/${f} ${DOCSDIR}/text
+		@${ECHO_CMD} share/doc/${PORTNAME}/text/${f} >>${TMPPLIST}
 .endfor
 		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/text" >>${TMPPLIST}
 		@${ECHO_CMD} "@dirrm share/doc/${PORTNAME}/man" >>${TMPPLIST}
