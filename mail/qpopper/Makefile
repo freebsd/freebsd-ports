@@ -3,13 +3,13 @@
 # Date created:		1 April 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.21 1997/12/24 01:21:35 alex Exp $
+# $Id: Makefile,v 1.23 1998/06/30 19:14:04 ache Exp $
 #
 
 DISTNAME=       qpopper2.5
 PKGNAME=        qpopper-2.5
 CATEGORIES=	mail
-MASTER_SITES=   ftp://ftp.qualcomm.com/eudora/servers/unix/popper/
+MASTER_SITES=   ftp://ftp.qualcomm.com/oldeudora/servers/unix/popper/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ache@freebsd.org
