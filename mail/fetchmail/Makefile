@@ -11,6 +11,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	5.6.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/
@@ -48,6 +49,10 @@ CONFIGURE_ARGS += --with-kerberos=/usr/include
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libkrb5.a)
 CONFIGURE_ARGS += --with-kerberos5=${KRB5_HOME}
+.endif
+
+.if defined(WITH_NTLM)
+CONFIGURE_ARGS += --enable-NTLM
 .endif
 
 FDOC=	${PREFIX}/share/doc/fetchmail
