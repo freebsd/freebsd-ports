@@ -1,5 +1,5 @@
 --- Imakefile.orig	Wed Dec 11 18:36:32 1996
-+++ Imakefile	Wed Jan  8 20:07:52 1997
++++ Imakefile	Thu Jan  9 18:17:25 1997
 @@ -17,13 +17,13 @@
  
  XCOMM If you get an error "Cannot find xpm.h" while compiling, set
@@ -16,7 +16,21 @@
  
  #endif
  
-@@ -329,9 +329,9 @@
+@@ -255,7 +255,12 @@
+      PIXMAPTYPE = x11
+        FLAGTYPE = sysv
+ #else
+-#if defined(FreeBSDArchitecture) || defined(NetBSDArchitecture) || defined(i386BsdArchitecture)
++#if defined(FreeBSDArchitecture) 
++       SLEEPDEF = -DHAS_USLEEP
++     BITMAPTYPE = bsd
++     PIXMAPTYPE = bsd
++       FLAGTYPE = freebsd
++#elif defined(NetBSDArchitecture) || defined(i386BsdArchitecture)
+        SLEEPDEF = -DHAS_USLEEP
+      BITMAPTYPE = bsd
+      PIXMAPTYPE = bsd
+@@ -329,9 +334,9 @@
  XCOMM  -DSTAFF_NETGROUP=\"/etc/xlock.netgroup\"  netgroup that is exempt
  
  XCOMM May have to combine in one long line if "+=" does not work
@@ -28,7 +42,7 @@
  XCOMM        OPTDEF += -DMULTIPLE_ROOT
  XCOMM        OPTDEF += -DOLD_EVENT_LOOP
  XCOMM        0PTDEF += -DUSE_XLOCKRC
-@@ -357,8 +357,8 @@
+@@ -357,8 +362,8 @@
      IMAGEBITMAP = $(MEDIUMBITMAP)
  XCOMM    IMAGEBITMAP = l-bob
  XCOMM    IMAGEBITMAP = m-xlock
