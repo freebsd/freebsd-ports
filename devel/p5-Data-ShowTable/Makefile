@@ -3,7 +3,7 @@
 # Date created:				September 10th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1998/11/11 05:37:10 asami Exp $
+# $Id: Makefile,v 1.8 1999/01/21 17:51:49 vanilla Exp $
 #
 
 DISTNAME=	Data-ShowTable-3.3
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	Data
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 USE_PERL5=	YES
-CONFIGURE_ARGS=	PREFIX=${PREFIX}
+CONFIGURE_ARGS=	PREFIX=${PREFIX} INSTALLSCRIPT=${PREFIX}/bin INSTALLMAN1DIR=${PREFIX}/man/man1
 
 MAN1=		showtable.1
 MAN3=		Data::ShowTable.3
