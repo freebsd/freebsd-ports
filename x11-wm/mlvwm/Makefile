@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	mlvwm
-PORTVERSION= 	0.9.0
+PORTVERSION= 	0.9.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www2u.biglobe.ne.jp/~y-miyata/mlvwm/
-DISTNAME=	mlvwm090
+DISTNAME=	mlvwm091
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} mini-icons.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAN1=		mlvwm.1
 
 MLVWMLIBDIR=	${PREFIX}/lib/X11/mlvwm
