@@ -1,8 +1,11 @@
---- Makefile~	Wed Aug 21 17:19:11 1991
-+++ Makefile	Thu Dec 30 17:22:01 1999
-@@ -1,5 +1,4 @@
+--- Makefile.orig	Wed Aug 21 08:19:11 1991
++++ Makefile	Sun Jan 23 16:28:09 2000
+@@ -1,6 +1,6 @@
  
- CC = cc
+-CC = cc
 -CFLAGS = -O2
++CC ?= cc
++CFLAGS ?= -O2
  
  all:	Bonnie 
+ 
