@@ -9,6 +9,7 @@ sbin/portversion
 %%RUBY_SITELIBDIR%%/portsdb.rb
 share/zsh/site-functions/_portupgrade
 share/zsh/site-functions/_portversion
-@unexec if [ ! -x %D/bin/zsh ]; then rmdir -p %D/share/zsh/site-functions; fi
+@unexec rmdir %D/share/zsh/site-functions 2>/dev/null || true
+@unexec rmdir %D/share/zsh 2>/dev/null || true
 %%PORTDOCS%%share/doc/portupgrade/README
 %%PORTDOCS%%@dirrm share/doc/portupgrade
