@@ -69,7 +69,8 @@ $MINCVSVERSION = "1090900";  # 1.9.9p0
 
 # Additional commit time checks.  This is an anonymous subroutine
 # that gets called early on in the validation process to see whether
-# the committer is allowed to commit.
+# the committer is allowed to commit.  It should return true if
+# everything is ok, otherwise the commit will be terminated.
 $COMMITCHECK_EXTRA = "";
 
 

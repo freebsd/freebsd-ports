@@ -38,7 +38,8 @@ $COMMITCHECK_EXTRA = sub {
 	chomp $GRP;
 	unless ( $GRP =~ /^ncvs$/ ) {
 		print "You do not have group ncvs (commitcheck)!\n";
-		#exit 1;
+		exit 1;	# We could return false here.  But there's
+			# nothing to stop us taking action here instead.
 	}
 	return 1;
 };
