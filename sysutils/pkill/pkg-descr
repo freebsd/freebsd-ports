@@ -1,0 +1,12 @@
+[ excerpt from commands' man page ]
+
+Port of NetBSD's pgrep(1) and pkill(1) commands which either find
+or signal processes matching criteria.
+
+The pgrep command searches the process table on the running system
+and prints the process IDs of all processes that match the criteria
+given on the command line.
+
+The pkill command searches the process table on the running system
+and signals all processes that match the criteria given on the
+command line.
