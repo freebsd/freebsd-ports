@@ -1,0 +1,11 @@
+--- Makefile.in	2000/11/20 14:46:22	1.1
++++ Makefile.in	2000/11/20 14:46:25
+@@ -493,7 +493,7 @@
+ install-exec-am: install-binSCRIPTS
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-m4dataDATA install-pkgconfigDATA
++install-data-am: install-m4dataDATA
+ install-data: install-data-recursive
+ 
+ install-am: all-am

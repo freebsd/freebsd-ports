@@ -1,6 +1,6 @@
---- docs/Makefile.in.orig	Sat Jul 15 03:51:14 2000
-+++ docs/Makefile.in	Tue Jul 18 13:45:44 2000
-@@ -116,7 +116,7 @@
+--- docs/Makefile.in.orig	Sat Nov 18 03:17:12 2000
++++ docs/Makefile.in	Mon Nov 20 15:32:30 2000
+@@ -120,7 +120,7 @@
  LT_RELEASE = @LT_RELEASE@
  LT_REVISION = @LT_REVISION@
  MAINT = @MAINT@
@@ -9,14 +9,14 @@
  MATH_LIB = @MATH_LIB@
  MKINSTALLDIRS = @MKINSTALLDIRS@
  OBJDUMP = @OBJDUMP@
-@@ -158,13 +158,13 @@
+@@ -162,13 +162,13 @@
  
  SUBDIRS = tutorial faq reference
  
 -man_MANS = gtk-config.1
 +man_MANS = gtk-config-2.0.1
  
- EXTRA_DIST =  	Changes-1.2.txt				Changes-2.0.txt				debugging.txt				developers.txt				dnd_internals.txt			make-todo				refcounting.txt				styles.txt				text_widget.txt 			widget_system.txt 			generation.txt			        gtk-config.txt  	        	gtk-config.1.in				gtkdocs_fix
+ EXTRA_DIST =  	Changes-1.2.txt				Changes-2.0.txt				debugging.txt				defsformat.txt				developers.txt				dnd_internals.txt			make-todo				refcounting.txt				styles.txt				text_widget.txt 			widget_system.txt 			generation.txt			        gtk-config.txt  	        	gtk-config.1.in				gtkdocs_fix
  
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
@@ -25,7 +25,7 @@
  man1dir = $(mandir)/man1
  MANS = $(man_MANS)
  
-@@ -187,6 +187,9 @@
+@@ -191,6 +191,9 @@
  
  gtk-config.1: $(top_builddir)/config.status gtk-config.1.in
  	cd $(top_builddir) && CONFIG_FILES=$(subdir)/$@ CONFIG_HEADERS= $(SHELL) ./config.status

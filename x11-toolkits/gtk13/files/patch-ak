@@ -1,0 +1,11 @@
+--- gdk/Makefile.in	2000/11/20 14:59:03	1.1
++++ gdk/Makefile.in	2000/11/20 15:01:41
+@@ -228,7 +228,7 @@
+ #
+ # Rule to install gdkconfig.h header file
+ #
+-configexecincludedir = $(libdir)/gtk-2.0/include
++configexecincludedir = $(prefix)/include/gtk-2.0/gtk
+ 
+ BUILT_SOURCES = stamp-gc-h #note: not gdkconfig.h
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
