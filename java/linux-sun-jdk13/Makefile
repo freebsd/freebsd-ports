@@ -7,6 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}.${JDK_REVISION}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-sun-
@@ -20,10 +21,6 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
 NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
-
-EXTRACT_CMD=		# empty
-EXTRACT_BEFORE_ARGS=	# empty
-EXTRACT_AFTER_ARGS=	# empty
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${JDK_VERSION}_${JDK_REVISION}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
@@ -57,8 +54,12 @@ pre-extract:
 		};\
 	fi
 
-post-fetch:
-	@${CHMOD} +x ${DISTDIR}/${DISTFILES}
+do-extract:
+	@${MKDIR} ${WRKDIR}
+	@cd ${WRKDIR} \
+	&& ${TAIL} +291 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
+	&& ${WRKDIR}/install.sfx > /dev/null
 
 post-patch:
 	@find ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
