@@ -8,9 +8,11 @@
 PORTNAME=	sane-frontends
 PORTVERSION=	1.0.12
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
-		ftp://ftp.de.mostang.com/pub/sane/%SUBDIR%/ \
-		ftp://ftp.no.mostang.com/pub/sane/%SUBDIR%/
+MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
+		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
+		ftp://ftp3.sane-project.org/pub/sane/%SUBDIR%/ \
+		ftp://gd.tuwien.ac.at/hci/sane/%SUBDIR%/ \
+		http://gd.tuwien.ac.at/hci/sane/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
