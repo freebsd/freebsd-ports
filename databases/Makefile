@@ -31,6 +31,7 @@
     SUBDIR += py-MySQL
     SUBDIR += py-PyGreSQL
     SUBDIR += ruby-postgres
+    SUBDIR += sqsh
     SUBDIR += tcl-Mysql
     SUBDIR += tkgnats
     SUBDIR += typhoon
