@@ -1,0 +1,19 @@
+--- support/Makefile.in.orig	Sat Jan 17 16:24:05 2004
++++ support/Makefile.in	Sat Jan 17 16:24:25 2004
+@@ -264,13 +264,13 @@
+ # Targets
+ 
+ all: ode
+-	(cd ode && make configure ode-lib)
++	(cd ode && ${MAKE} configure ode-lib)
+ 
+ clean: ode
+-	(cd ode && make clean)
++	(cd ode && ${MAKE} clean)
+ 
+ distclean: ode
+-	(cd ode && make clean)
++	(cd ode && ${MAKE} clean)
+ 
+ dist-hook: clean
+ 	for dir in $(ODE_CLEAN); do $(RM) -rf $(ODE_DIR)/$$dir; done

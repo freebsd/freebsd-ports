@@ -1,0 +1,14 @@
+bin/ssc
+%%DATADIR%%/ssc.conf
+%%DATADIR%%/ast.png
+%%DATADIR%%/astr.png
+%%DATADIR%%/Vera.ttf
+%%DATADIR%%/boom.wav
+%%DATADIR%%/exploBig.wav
+%%DATADIR%%/exploPop.wav
+%%DATADIR%%/life_lose.wav
+%%DATADIR%%/power.wav
+%%DATADIR%%/trance.wav
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
