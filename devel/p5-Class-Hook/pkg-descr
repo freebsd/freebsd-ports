@@ -1,0 +1,16 @@
+Class::Hook enables you to trace methods calls from your code to other classes.
+
+Instead of putting 'use Foo;' in your code, simply type 'use Class::Hook;'.
+The class Foo is unknown in your code. It will be magically catched by
+Class::Hook which will call Foo itself. You can see Class::Hook as a kind of
+relay.
+
+You can setup a subroutine to be called before any call to Foo->amethod and a
+subroutine to be called after the call. Your subs will receive all the
+information that Foo->amethod will receive, so you can trace everything
+between your code and Foo.
+
+WWW: http://search.cpan.org/search?dist=Class-Hook
+
+~brian skrab
+ brian@quynh-and-brian.org
