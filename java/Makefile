@@ -44,6 +44,7 @@
     SUBDIR += jlint
     SUBDIR += jre
     SUBDIR += jsdk
+    SUBDIR += jump
     SUBDIR += junit
     SUBDIR += kaffe
     SUBDIR += linux-blackdown-jdk12
