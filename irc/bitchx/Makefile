@@ -36,15 +36,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		BitchX.1
 
-OPTIONS=	ESOND "With ESOUND support" off \
-		GNOME "With GTK/GNOME1 Frontend" off \
-		IPV6 "With IPV6 support" off \
-		LATIN "Recommended if you are using an ISO-8859-1 display" off \
-		PLUGINS "With BitchX Plugins" off \
-		SOCKS5 "With SOCKS5 support" off \
-		SSL "With SSL" off \
-		TCL "With TCL support" off \
-		XMMS "With XMMS plugin" off
+#OPTIONS=	ESOND "With ESOUND support" off \
+#		GNOME "With GTK/GNOME1 Frontend" off \
+#		IPV6 "With IPV6 support" off \
+#		LATIN "Recommended if you are using an ISO-8859-1 display" off \
+#		PLUGINS "With BitchX Plugins" off \
+#		SOCKS5 "With SOCKS5 support" off \
+#		SSL "With SSL" off \
+#		TCL "With TCL support" off \
+#		XMMS "With XMMS plugin" off
 		
 .include <bsd.port.pre.mk>
 
