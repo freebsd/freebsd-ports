@@ -1,0 +1,11 @@
+--- backends/services-conf.in.orig	Tue Aug 24 14:06:32 2004
++++ backends/services-conf.in	Tue Aug 24 14:06:53 2004
+@@ -55,7 +55,7 @@
+               "pld-1.0", "pld-1.1", "pld-1.99",
+               "slackware-9.1.0", "slackware-10.0.0",
+               "vine-3.0", "vine-3.1",
+-              "gentoo", "freebsd-5", "suse-9.0");
++              "gentoo", "freebsd-5", "freebsd-6", "suse-9.0");
+ 
+ $description =<<"end_of_description;";
+        Configures which services are to be started or stopped at which runlevels
