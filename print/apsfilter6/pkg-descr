@@ -1,21 +1,23 @@
-New in apsfilter 4.9.5: printing of HTML files !
+Have fun using apsfilter by typing:
 
-Have fun using apsfilter by saying:
-
-	lpr ascii.Z test.gif picture.tiff TeX.dvi.gz webpage.html
+    lpr ascii.Z test.gif picture.tiff TeX.dvi.gz webpage.html docu.pdf
 
 That's what apsfilter is designed for ;-)
 
-apsfilter is a printfilter, that saves you the work to a) look for
-and b) use filter programs, that convert your file into something
-suitable for your printer.
-
-Everything will be translated into Postscript, first. So you need
-ghostscript, if you don't have a PS printer.
+apsfilter is a magic printfilter, that saves you the work to a) look for
+and b) use filter programs, that convert your file into something suitable
+for your printer. Apsfilter first translates every document into Postscript
+and then pipes it through ghostscript, if you don't have a PS printer.
 
 Printer Setup is done with the SETUP program. It saves your current
 printcap entries and creates printcap entries for one or more of
-your local printers. Please note, that such a magic printcap filter
-only works on locally connected printers.
+your local printers. 
 
-Have fun !			Andreas Klemm <andreas@klemm.gtn.com>
+New features: 
+	- supports LPRng as printer scheduler
+	- supports ghostscript5.x uniprint driver
+	- writes the first 8k of a print job to /tmp for file type
+	  recognition, so file(1) doesn't need to be able to read from
+	  a pipe (stdin) and rewindstadin isn't needed anymore for dvips.
+
+Have fun !	Andreas Klemm <andreas@klemm.gtn.com>	Febr 1999
