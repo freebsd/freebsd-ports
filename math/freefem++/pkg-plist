@@ -52,7 +52,8 @@ bin/FreeFem++-nw
 %%PORTDOCS%%%%EXAMPLESDIR%%/testadp.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/teste.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/FE.edp
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LapDG.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LapDG2.edp
+%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/Laplace.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LaplaceP1.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LaplaceP1P2h.edp
 %%PORTDOCS%%%%EXAMPLESDIR%%/tutorial/LaplaceP1bis.edp

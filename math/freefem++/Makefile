@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freefem++
-PORTVERSION=	1.37
+PORTVERSION=	1.38
 PORTREVISION=	1
 CATEGORIES=	math science
 MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/Gamma/freefem/	\
