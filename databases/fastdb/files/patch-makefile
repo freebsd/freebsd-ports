@@ -1,5 +1,5 @@
---- makefile.orig	Fri Apr  6 12:13:44 2001
-+++ makefile	Wed Aug  8 02:04:05 2001
+--- makefile.orig	Thu Jul  4 23:46:37 2002
++++ makefile	Thu Jul  4 23:50:24 2002
 @@ -2,13 +2,13 @@
  # Makefile for Generic Unix with GCC compiler
  
@@ -28,18 +28,20 @@
  endif
  SUFF=_r
  endif
-@@ -60,19 +60,18 @@
+@@ -60,7 +60,6 @@
  
  WEB_EXAMPLES = cgistub bugdb clidb
  
 -CC = g++
- #DEFS =-DTHROW_EXCEPTION_ON_ERROR -DUSE_QUEUE_MANAGER
- DEFS = -DUSE_QUEUE_MANAGER -DUSE_LOCALE_SETTINGS
  
--CFLAGS = $(TFLAGS) -c -Wall -O5 -g $(TFLAGS) 
-+CFLAGS += -c $(TFLAGS) 
+ # Possible FastDB compile time parameters (-Dxxx should be added to DEFS macro):
+ # 1. USE_LOCALE_SETTING - use C locale for string comparison operations
+@@ -93,13 +92,13 @@
  
- #CFLAGS = -c -Wall -O0 -g $(DEFS) $(TFLAGS)
+ #CFLAGS = $(TFLAGS) -c -Wall -O5 -g $(TFLAGS) 
+ 
+-CFLAGS = -c -Wall -O0 -g $(DEFS) $(TFLAGS)
++CFLAGS += -c $(TFLAGS)
  #CFLAGS = -c -Wall -O0 -DDEBUG=DEBUG_TRACE -g $(DEFS) $(TFLAGS)
 -SHFLAGS=-shared
 +SHFLAGS=-shared -Wl,-soname,$@
@@ -51,7 +53,7 @@
  
  AR = ar
  ARFLAGS = -cru
-@@ -255,16 +254,15 @@
+@@ -302,14 +301,13 @@
  
  installlib: $(FASTDB_LIB) $(CLI_LIB) $(FASTDB_SHARED) $(CLI_SHARED)
  	mkdir -p $(INCSPATH)
@@ -65,9 +67,7 @@
  	ln -f -s $(LIBSPATH)/$(CLI_SHARED) $(LIBSPATH)/libcli$(SUFF).so
  	mkdir -p $(BINSPATH)
 -	cp subsql $(BINSPATH)
- 
- 
 +	${BSD_INSTALL_PROGRAM} subsql $(BINSPATH)
  
- cleanobj:
- 	rm -fr *.o *.tgz core *~ cxx_repository
+ 
+ 
