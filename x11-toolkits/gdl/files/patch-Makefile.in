@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/07/24 11:08:03	1.1
++++ Makefile.in	2001/07/24 11:09:14
+@@ -146,10 +146,10 @@
+ 
+ SUBDIRS = idl gdl scintilla-control po intl
+ 
+-m4datadir = $(datadir)/aclocal
++m4datadir = $(prefix)/share/aclocal
+ m4data_DATA = gdl.m4
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = gdlConf.sh 
+ 
+ EXTRA_DIST =  	gdl.m4          	gdlConf.sh.in		MAINTAINERS		AUTHORS		
