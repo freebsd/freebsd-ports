@@ -190,46 +190,6 @@ diff -c /var/tmp/sup/log.c sup/log.c
   	opened++;
   }
   
-diff -c /var/tmp/sup/run.c sup/run.c
-*** run.c	Fri Aug 20 17:46:33 1993
---- sup/run.c	Thu Apr  6 13:32:15 1995
-***************
-*** 95,100 ****
---- 95,101 ----
-  #include <signal.h>
-  #include <sys/wait.h>
-  #include <varargs.h>
-+ #define MAXARGS 100
-  
-  static int dorun();
-  
-***************
-*** 123,132 ****
-  {
-  	int val;
-  	va_list ap;
-! 
-  	va_start(ap);
-! 	val = runvp (name,ap);
-  	va_end(ap);
-  	return (val);
-  }
-  
---- 124,137 ----
-  {
-  	int val;
-  	va_list ap;
-! 	char *args[MAXARGS];
-! 	int argno=0;
-! 	
-  	va_start(ap);
-!         while (argno < MAXARGS 
-! 	       && (args[argno++] = va_arg(ap, char *)) != (char *)0);
-  	va_end(ap);
-+ 	val = runvp (name,args);
-  	return (val);
-  }
-  
 diff -c /var/tmp/sup/scan.c sup/scan.c
 *** scan.c	Fri Aug 20 17:46:33 1993
 --- sup/scan.c	Sun Aug 13 18:44:51 1995
