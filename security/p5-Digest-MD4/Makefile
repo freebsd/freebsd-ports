@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Digest-MD4
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Digest
@@ -20,5 +20,14 @@ PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INSTALLDIRS=site
 
 MAN3=		Digest::MD4.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes rfc1320.txt
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
