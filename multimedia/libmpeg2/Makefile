@@ -7,6 +7,7 @@
 
 PORTNAME=	libmpeg2
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 DISTNAME=	mpeg2dec-${PORTVERSION}
@@ -63,5 +64,6 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/libvo.txt ${DOCSDIR}
 .endif
+	@${INSTALL_DATA} ${WRKSRC}/libvo/libvo.a ${PREFIX}/lib
 
 .include <bsd.port.mk>
