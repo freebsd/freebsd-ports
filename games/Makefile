@@ -1,9 +1,8 @@
-# $Id: Makefile,v 1.13 1995/04/02 15:51:57 asami Exp $
+# $Id: Makefile,v 1.14 1995/04/16 09:07:56 asami Exp $
 #
-# BROKEN = acm (missing data files in PLIST) 
-#		xchomp xmine xmj xpipeman xrobots
+# BROKEN = xchomp xmine xmj xpipeman xrobots
 #
-SUBDIR= golddig jetpack oneko nethack xasteroids xboard xboing \
+SUBDIR= acm golddig jetpack oneko nethack xasteroids xboard xboing \
 	xemeraldia xinvaders \
 	xjewel xlife xmille xminesweep xmris xsol \
 	xtetris
