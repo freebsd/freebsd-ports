@@ -1,0 +1,15 @@
+Apache JMeter is a 100% pure Java desktop application designed to
+load test functional behavior and measure performance. It was
+originally designed for testing Web Applications but has since
+expanded to other test functions.
+
+Apache JMeter may be used to test performance both on static and
+dynamic resources (files, Servlets, Perl scripts, Java Objects,
+Data Bases and Queries, FTP Servers and more). It can be used to
+simulate a heavy load on a server, network or object to test its
+strength or to analyze overall performance under different load
+types. You can use it to make a graphical analysis of performance
+or to test your server/script/object behavior under heavy
+concurrent load.
+
+WWW:	http://jakarta.apache.org/jmeter/
