@@ -7,6 +7,7 @@
 
 PORTNAME=	gnumeric2
 PORTVERSION=	1.1.20
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.1
@@ -16,11 +17,14 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui gal2 libgda2 libgsf
+USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeprintui gal2 libgnomedb libgsf
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
