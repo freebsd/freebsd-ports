@@ -1,5 +1,6 @@
 @exec %%LOCALBASE%%/bin/registervm "%D/%%TARGET_PREFIX%%/bin/java"
 @unexec %%LOCALBASE%%/bin/unregistervm "%D/%%TARGET_PREFIX%%/bin/java"
+%%TARGET_PREFIX%%/bin/HtmlConverter
 %%TARGET_PREFIX%%/bin/java
 %%TARGET_PREFIX%%/bin/java_g
 %%TARGET_PREFIX%%/bin/javaw
@@ -20,10 +21,12 @@
 %%TARGET_PREFIX%%/bin/rmiregistry_g
 %%TARGET_PREFIX%%/bin/tnameserv
 %%TARGET_PREFIX%%/bin/tnameserv_g
+%%TARGET_PREFIX%%/lib/htmlconverter.jar
 %%TARGET_PREFIX%%/lib/tools.jar
 %%TARGET_PREFIX%%/lib/orb.idl
 %%TARGET_PREFIX%%/lib/ir.idl
 %%TARGET_PREFIX%%/lib/dt.jar
+%%TARGET_PREFIX%%/jre/lib/TraceFormat.dat
 %%TARGET_PREFIX%%/jre/lib/tzmappings
 %%TARGET_PREFIX%%/jre/lib/security/java.security
 %%TARGET_PREFIX%%/jre/lib/security/java.policy
@@ -272,34 +275,54 @@
 %%TARGET_PREFIX%%/jre/bin/awt_robot_g
 %%TARGET_PREFIX%%/jre/bin/awt_robot
 %%TARGET_PREFIX%%/jre/bin/JavaPluginControlPanel
-%%TARGET_PREFIX%%/javasrc.jar
+%%TARGET_PREFIX%%/src.jar
 %%TARGET_PREFIX%%/include/jvmpi.h
 %%TARGET_PREFIX%%/include/jvmdi.h
+%%TARGET_PREFIX%%/include/jvmmi.h
 %%TARGET_PREFIX%%/include/jni_md.h
 %%TARGET_PREFIX%%/include/jni.h
 %%TARGET_PREFIX%%/include/jawt_md.h
 %%TARGET_PREFIX%%/include/jawt.h
-%%TARGET_PREFIX%%/docs/rmi-iiop/toJavaPortableUG.htm
-%%TARGET_PREFIX%%/docs/rmi-iiop/rmi_iiop_pg.html
-%%TARGET_PREFIX%%/docs/READMEFIRST.htm
-%%TARGET_PREFIX%%/docs/README.SDK.HTML
-%%TARGET_PREFIX%%/docs/LICENSE_zh.html
-%%TARGET_PREFIX%%/docs/LICENSE_tw.html
-%%TARGET_PREFIX%%/docs/LICENSE_sv.html
-%%TARGET_PREFIX%%/docs/LICENSE_ru.html
-%%TARGET_PREFIX%%/docs/LICENSE_no.html
-%%TARGET_PREFIX%%/docs/LICENSE_nl.html
-%%TARGET_PREFIX%%/docs/LICENSE_ko.html
-%%TARGET_PREFIX%%/docs/LICENSE_jp.html
-%%TARGET_PREFIX%%/docs/LICENSE_it.html
-%%TARGET_PREFIX%%/docs/LICENSE_fr.html
-%%TARGET_PREFIX%%/docs/LICENSE_fi.html
-%%TARGET_PREFIX%%/docs/LICENSE_es.html
-%%TARGET_PREFIX%%/docs/LICENSE_en.html
-%%TARGET_PREFIX%%/docs/LICENSE_dk.html
-%%TARGET_PREFIX%%/docs/LICENSE_de.html
-%%TARGET_PREFIX%%/docs/LICENSE_br.html
+%%TARGET_PREFIX%%/include/ras.h
 %%TARGET_PREFIX%%/docs/COPYRIGHT
+%%TARGET_PREFIX%%/docs/LICENSE_da.html
+%%TARGET_PREFIX%%/docs/LICENSE_de.html
+%%TARGET_PREFIX%%/docs/LICENSE_en.html
+%%TARGET_PREFIX%%/docs/LICENSE_es.html
+%%TARGET_PREFIX%%/docs/LICENSE_fi.html
+%%TARGET_PREFIX%%/docs/LICENSE_fr.html
+%%TARGET_PREFIX%%/docs/LICENSE_it.html
+%%TARGET_PREFIX%%/docs/LICENSE_ja.html
+%%TARGET_PREFIX%%/docs/LICENSE_ko.html
+%%TARGET_PREFIX%%/docs/LICENSE_nl.html
+%%TARGET_PREFIX%%/docs/LICENSE_no.html
+%%TARGET_PREFIX%%/docs/LICENSE_pl.html
+%%TARGET_PREFIX%%/docs/LICENSE_pt.html
+%%TARGET_PREFIX%%/docs/LICENSE_ru.html
+%%TARGET_PREFIX%%/docs/LICENSE_sv.html
+%%TARGET_PREFIX%%/docs/LICENSE_tc.html
+%%TARGET_PREFIX%%/docs/LICENSE_zh.html
+%%TARGET_PREFIX%%/docs/README-BR.JRE.HTML
+%%TARGET_PREFIX%%/docs/README-CN.JRE.HTML
+%%TARGET_PREFIX%%/docs/README-DE.JRE.HTML
+%%TARGET_PREFIX%%/docs/README-EN.JRE.HTML
+%%TARGET_PREFIX%%/docs/README-ES.JRE.HTML
+%%TARGET_PREFIX%%/docs/README-FR.JRE.HTML
+%%TARGET_PREFIX%%/docs/README-IT.JRE.HTML
+%%TARGET_PREFIX%%/docs/README-JP.JRE.HTML
+%%TARGET_PREFIX%%/docs/README-KO.JRE.HTML
+%%TARGET_PREFIX%%/docs/README-ZH.JRE.HTML
+%%TARGET_PREFIX%%/docs/README.SDK.HTML
+%%TARGET_PREFIX%%/docs/READMEFIRST.TXT
+%%TARGET_PREFIX%%/demo/sound/media/ambient.rmf
+%%TARGET_PREFIX%%/demo/sound/media/bark.aiff
+%%TARGET_PREFIX%%/demo/sound/media/bong.wav
+%%TARGET_PREFIX%%/demo/sound/media/classical.rmf
+%%TARGET_PREFIX%%/demo/sound/media/modern-rock.rmf
+%%TARGET_PREFIX%%/demo/sound/media/sfx-medley.rmf
+%%TARGET_PREFIX%%/demo/sound/media/spacemusic.au
+%%TARGET_PREFIX%%/demo/sound/media/trance.rmf
+%%TARGET_PREFIX%%/demo/sound/media/trippygaia1.mid
 %%TARGET_PREFIX%%/demo/sound/src/TempoDial.java
 %%TARGET_PREFIX%%/demo/sound/src/MidiSynth.java
 %%TARGET_PREFIX%%/demo/sound/src/Juke.java
@@ -325,476 +348,6 @@
 %%TARGET_PREFIX%%/demo/rmi-iiop/hello/RemoteHello.java
 %%TARGET_PREFIX%%/demo/misc/JavaMemory.java
 %%TARGET_PREFIX%%/demo/jpda/examples.jar
-%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableSorter.java
-%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableMap.java
-%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableExample4.java
-%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableExample3.java
-%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableExample2.java
-%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableExample.java
-%%TARGET_PREFIX%%/demo/jfc/TableExample/src/OldJTable.java
-%%TARGET_PREFIX%%/demo/jfc/TableExample/src/JDBCAdapter.java
-%%TARGET_PREFIX%%/demo/jfc/TableExample/TableExample.jar
-%%TARGET_PREFIX%%/demo/jfc/TableExample/README.txt
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/TreeDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ToolTipDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/TableDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/TabbedPaneDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/SwingSet2Applet.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/SwingSet2.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/SplitPaneDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/SliderDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ScrollPaneDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/RubyTheme.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ProgressBarDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/Permuter.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/OptionPaneDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ListDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/LayoutControlPanel.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/InternalFrameDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/HtmlDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/FileChooserDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ExampleFileView.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ExampleFileFilter.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/EmeraldTheme.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/DirectionPanel.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/DemoModule.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ContrastTheme.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ComboBoxDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ColorChooserDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/CodeViewer.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/CharcoalTheme.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ButtonDemo.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/BezierAnimationPanel.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/AquaTheme.java
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/tree.txt
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/title.html
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/swingset_zh.properties
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/swingset.properties
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/seaweed.html
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/preface.html
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/king.html
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/index.html
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tooltip/cow.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/ToolTip.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JTree.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JTable.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JTabbedPane.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JSplitPane.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JSlider.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JScrollPane.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JScrollBar.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JRadioButton.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JProgressBar.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JOptionPane.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JMenu.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JList.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JFileChooser.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JEditorPane.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JDialog.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JDesktop.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JComboBox.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JColorChooser.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar/JButton.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tabbedpane/stephen.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tabbedpane/matthew.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tabbedpane/laine.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tabbedpane/hania.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tabbedpane/ewan.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tabbedpane/ewan.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tabbedpane/david.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tabbedpane/brooke.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tabbedpane/blake.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/splitpane/moon.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/splitpane/earth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/splitpane/README
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/scrollpane/upperright.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/scrollpane/upperleft.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/scrollpane/rowheader.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/scrollpane/lowerleft.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/scrollpane/crayons.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/scrollpane/colheader.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/scrollpane/COPYRIGHT
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/optionpane/ibu.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/optionpane/ibd.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/optionpane/bottle.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/list/yellow.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/list/red.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/list/magenta.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/list/green.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/list/gray.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/list/cyan.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/list/blue.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/htmldemo/header.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/htmldemo/forward.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/htmldemo/back.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/filechooser/jpgIcon.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/filechooser/help.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/filechooser/gifIcon.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/filechooser/find.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/scottmouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/scotthair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/scotteyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/philipmouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/philiphair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/philipeyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/michaelmouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/michaelhair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/michaeleyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/lisamouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/lisahair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/lisaeyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/larrymouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/larryhair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/larryeyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/laramouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/larahair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/laraeyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/jonmouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/jonhair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/joneyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/jeffmouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/jeffhair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/jeffeyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/jamesmouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/jameshair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/jameseyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/howardmouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/howardhair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/howardeyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/hansmouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/hanshair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/hanseyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/georgesmouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/georgeshair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/georgeseyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/brentmouth.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/brenthair.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox/brenteyes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/trdn.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/tr.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/toggledn.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/toggle.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/tmdn.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/tm.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/tldn.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/tl.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/rbs.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/rbrs.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/rbr.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/rbp.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/rb.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/mrdn.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/mr.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/mldn.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/ml.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/cdn.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/cbs.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/cbrs.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/cbr.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/cb.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/c.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/brdn.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/br.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/bmdn.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/bm.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/bldn.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/bl.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b3r.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b3p.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b3d.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b3.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b2r.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b2p.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b2d.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b2.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b1r.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b1p.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b1d.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons/b1.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Splash.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Octavo/seaweed.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Octavo/micro.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Octavo/king.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Octavo/crest.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Octavo/bug2.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Octavo/bug.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Octavo/book.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Octavo/ant.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Octavo/COPYRIGHT
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/misc/sun_small.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/misc/sun.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/misc/moon_small.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/misc/moon.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/misc/fish_small.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/misc/fish.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/misc/cab_small.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/misc/cab.gif
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/watermelon.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/tomato.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/strawberry.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/raspberry.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/pineapple.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/pickle.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/pepper.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/pear.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/peach.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/onion.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/kiwi.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/grapes.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/grapefruit.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/corn.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/carrot.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/cantaloupe.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/broccoli.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/banana.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/asparagus.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food/apple.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/COPYRIGHT
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/About.jpg
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/bug.html
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/ant.html
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/SwingSet2Plugin.html
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/SwingSet2.jar
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/SwingSet2.html
-%%TARGET_PREFIX%%/demo/jfc/SwingSet2/README.txt
-%%TARGET_PREFIX%%/demo/jfc/SwingApplet/src/SwingApplet.java
-%%TARGET_PREFIX%%/demo/jfc/SwingApplet/SwingApplet.jar
-%%TARGET_PREFIX%%/demo/jfc/SwingApplet/SwingApplet.html
-%%TARGET_PREFIX%%/demo/jfc/SwingApplet/README.txt
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/src/Wonderland.java
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/src/Stylepad.java
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/src/Notepad.java
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/src/HelloWorld.java
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/src/ElementTreePanel.java
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/underline.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/save.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/right.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/rabbit2.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/rabbit.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/paste.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/open.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/new.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/left.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/italic.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/hatter.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/fg.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/cut.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/copy.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/center.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/caterpillar.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/bullets.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/bold.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/alice.gif
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Stylepad_zh.properties
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Stylepad_sv.properties
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Stylepad.properties
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Notepad_sv.properties
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Notepad_fr.properties
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Notepad.properties
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/Stylepad.jar
-%%TARGET_PREFIX%%/demo/jfc/Stylepad/README.txt
-%%TARGET_PREFIX%%/demo/jfc/SimpleExample/src/SimpleExample.java
-%%TARGET_PREFIX%%/demo/jfc/SimpleExample/SimpleExample.jar
-%%TARGET_PREFIX%%/demo/jfc/SimpleExample/README.txt
-%%TARGET_PREFIX%%/demo/jfc/SampleTree/src/SampleTreeModel.java
-%%TARGET_PREFIX%%/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
-%%TARGET_PREFIX%%/demo/jfc/SampleTree/src/SampleTree.java
-%%TARGET_PREFIX%%/demo/jfc/SampleTree/src/SampleData.java
-%%TARGET_PREFIX%%/demo/jfc/SampleTree/src/DynamicTreeNode.java
-%%TARGET_PREFIX%%/demo/jfc/SampleTree/images/expanded.gif
-%%TARGET_PREFIX%%/demo/jfc/SampleTree/images/collapsed.gif
-%%TARGET_PREFIX%%/demo/jfc/SampleTree/SampleTree.jar
-%%TARGET_PREFIX%%/demo/jfc/SampleTree/README.txt
-%%TARGET_PREFIX%%/demo/jfc/Notepad/src/Notepad.java
-%%TARGET_PREFIX%%/demo/jfc/Notepad/src/ElementTreePanel.java
-%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/save.gif
-%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/paste.gif
-%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/open.gif
-%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/new.gif
-%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/cut.gif
-%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/copy.gif
-%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/Notepad_zh.properties
-%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/Notepad_sv.properties
-%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/Notepad_fr.properties
-%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/Notepad.properties
-%%TARGET_PREFIX%%/demo/jfc/Notepad/README.txt
-%%TARGET_PREFIX%%/demo/jfc/Notepad/Notepad.jar
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/UISwitchListener.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/PropertiesMetalTheme.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalworksPrefs.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalworksInBox.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalworksHelp.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalworksFrame.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalworksDocumentFrame.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/Metalworks.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalThemeMenu.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/KhakiMetalTheme.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/GreenMetalTheme.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/DemoMetalTheme.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/ContrastMetalTheme.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/BigContrastMetalTheme.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/AquaMetalTheme.java
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_zoom.gif
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_text.gif
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_select.gif
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_hand.gif
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_draw.gif
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_crop.gif
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/README.txt
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/MyTheme.theme
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/Metalworks.jar
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/toc.html
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/swing.html
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/metalworks.html
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/metal.html
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/javalogo.gif
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/duke.gif
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/credits.html
-%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/back.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Transforms/TransformAnim.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Transforms/SelectTx.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Transforms/Rotate.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paths/WindingRule.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paths/FillStroke.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paths/CurveQuadTo.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paths/Append.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paint/TextureAnim.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paint/Texture.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paint/Gradient.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paint/GradAnim.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Mix/Stars3D.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Mix/JavaMedia.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Mix/BezierScroller.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Mix/Balls.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Lines/LineAnim.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Lines/Joins.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Lines/Dash.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Lines/Caps.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Images/WarpImage.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Images/JPEGFlip.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Images/ImageOps.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Images/DukeAnim.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts/Tree.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts/Outline.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts/Highlighting.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts/AttributedStr.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts/AllFonts.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Composite/FadeAnim.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Composite/ACrules.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Composite/ACimages.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Colors/Rotator3D.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Colors/ColorConvert.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Colors/BullsEye.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Clipping/Text.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Clipping/Intersection.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Clipping/ClipAnim.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Clipping/Areas.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Ellipses.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Curves.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Arcs_Curves/BezierAnim.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Arcs.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Tools.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/TextureChooser.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Surface.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/RunWindow.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/PerformanceMonitor.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/MemoryMonitor.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Java2DemoApplet.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Java2Demo.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Intro.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/GlobalPanel.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/GlobalControls.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/DemoPanel.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/DemoImages.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/DemoGroup.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/DemoFonts.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/CustomControlsContext.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/CustomControls.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/ControlsSurface.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/CloningFeature.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/AnimatingSurface.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/src/AnimatingControlsSurface.java
-%%TARGET_PREFIX%%/demo/jfc/Java2D/media/trippygaia1.mid
-%%TARGET_PREFIX%%/demo/jfc/Java2D/media/trance.rmf
-%%TARGET_PREFIX%%/demo/jfc/Java2D/media/spacemusic.au
-%%TARGET_PREFIX%%/demo/jfc/Java2D/media/sfx-medley.rmf
-%%TARGET_PREFIX%%/demo/jfc/Java2D/media/modern-rock.rmf
-%%TARGET_PREFIX%%/demo/jfc/Java2D/media/classical.rmf
-%%TARGET_PREFIX%%/demo/jfc/Java2D/media/bong.wav
-%%TARGET_PREFIX%%/demo/jfc/Java2D/media/bark.aiff
-%%TARGET_PREFIX%%/demo/jfc/Java2D/media/ambient.rmf
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/tip.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/thumbsup.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/surfing.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/stop2.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/stop.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/start2.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/start.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/star7.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/snooze.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/remove.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/print.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/painting.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/magnify.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/looping.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/loop.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/jumptojavastrip.png
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/jumptojavastrip.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/java_logo.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/globe.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/fight.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/dukeplug.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/duke.running.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/duke.png
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/duke.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/cupanim.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/clouds.jpg
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/clone.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/boxwave.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/box.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/boat.png
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/boat.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/bld.jpg
-%%TARGET_PREFIX%%/demo/jfc/Java2D/images/HotJava-16.gif
-%%TARGET_PREFIX%%/demo/jfc/Java2D/fonts/A.ttf
-%%TARGET_PREFIX%%/demo/jfc/Java2D/README.txt
-%%TARGET_PREFIX%%/demo/jfc/Java2D/Java2Demo.jar
-%%TARGET_PREFIX%%/demo/jfc/Java2D/Java2Demo.html
-%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
-%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/src/ExampleFileView.java
-%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
-%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/images/jpgIcon.jpg
-%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/images/gifIcon.gif
-%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/README.txt
-%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/FileChooserDemo.jar
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/private.fls
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/README.txt
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/JavaDB/CAFEJAVA.ldb
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/JavaDB/CAFEJAVA.MDB
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/runnit.bat
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.java
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.class
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/runnit.bat
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.java
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.class
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/Sybase/runnit.bat
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.java
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.class
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/runnit.bat
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.java
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.class
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/runnit.bat
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.java
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.class
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/runnit.bat
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.java
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.class
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/Sybase/runnit.bat
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.java
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.class
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/runnit.bat
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.java
-%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.class
 %%TARGET_PREFIX%%/demo/jdbcodbc/sqlext.h
 %%TARGET_PREFIX%%/demo/jdbcodbc/sql.h
 %%TARGET_PREFIX%%/demo/jdbcodbc/odbctest.c
@@ -1077,6 +630,247 @@
 %%TARGET_PREFIX%%/bin/exe/appletviewer
 %%TARGET_PREFIX%%/bin/appletviewer_g
 %%TARGET_PREFIX%%/bin/appletviewer
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.class
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/CreateCoffees.java
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/MSAccess/runnit.bat
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.class
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/Sybase/CreateCoffees.java
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/Sybase/runnit.bat
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.class
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/CreateSuppliers.java
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess/runnit.bat
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.class
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/CreateSuppliers.java
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/Sybase/runnit.bat
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.class
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/InsertCoffees.java
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr/runnit.bat
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.class
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/Sybase/InsertCoffees.java
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/Sybase/runnit.bat
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.class
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/InsertSuppliers.java
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess/runnit.bat
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.class
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/InsertSuppliers.java
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/Sybase/runnit.bat
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/JavaDB/CAFEJAVA.MDB
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/JavaDB/CAFEJAVA.ldb
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/README.txt
+%%TARGET_PREFIX%%/demo/jfc/DBDemos/private.fls
+%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/FileChooserDemo.jar
+%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/README.txt
+%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/images/gifIcon.gif
+%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/images/jpgIcon.jpg
+%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/src/ExampleFileFilter.java
+%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/src/ExampleFileView.java
+%%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/src/FileChooserDemo.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/Java2Demo.html
+%%TARGET_PREFIX%%/demo/jfc/Java2D/Java2Demo.jar
+%%TARGET_PREFIX%%/demo/jfc/Java2D/README.txt
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/AnimatingContext.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/AnimatingControlsSurface.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/AnimatingSurface.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/CloningFeature.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/ControlsSurface.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Copyright.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/CustomControls.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/CustomControlsContext.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/DemoFonts.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/DemoGroup.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/DemoImages.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/DemoPanel.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/GlobalControls.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/GlobalPanel.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Intro.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Java2Demo.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Java2DemoApplet.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/MemoryMonitor.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/PerformanceMonitor.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/RunWindow.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Surface.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/TextureChooser.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/Tools.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Arcs.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Arcs_Curves/BezierAnim.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Curves.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Arcs_Curves/Ellipses.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Clipping/Areas.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Clipping/ClipAnim.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Clipping/Intersection.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Clipping/Text.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Colors/BullsEye.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Colors/ColorConvert.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Colors/Rotator3D.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Composite/ACimages.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Composite/ACrules.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Composite/FadeAnim.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts/AllFonts.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts/AttributedStr.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts/Highlighting.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts/Outline.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts/Tree.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Images/DukeAnim.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Images/ImageOps.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Images/JPEGFlip.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Images/WarpImage.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Lines/Caps.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Lines/Dash.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Lines/Joins.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Lines/LineAnim.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Mix/Balls.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Mix/BezierScroller.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Mix/Stars3D.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paint/GradAnim.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paint/Gradient.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paint/Texture.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paint/TextureAnim.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paths/Append.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paths/CurveQuadTo.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paths/FillStroke.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paths/WindingRule.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Transforms/Rotate.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Transforms/SelectTx.java
+%%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Transforms/TransformAnim.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/back.gif
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/credits.html
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/duke.gif
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/javalogo.gif
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/metal.html
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/metalworks.html
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/swing.html
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles/toc.html
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/Metalworks.jar
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/MyTheme.theme
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/README.txt
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_crop.gif
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_draw.gif
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_hand.gif
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_select.gif
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_text.gif
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/images/palette_zoom.gif
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/AquaMetalTheme.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/BigContrastMetalTheme.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/ContrastMetalTheme.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/DemoMetalTheme.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/GreenMetalTheme.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/KhakiMetalTheme.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalThemeMenu.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/Metalworks.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalworksDocumentFrame.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalworksFrame.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalworksHelp.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalworksInBox.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/MetalworksPrefs.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/PropertiesMetalTheme.java
+%%TARGET_PREFIX%%/demo/jfc/Metalworks/src/UISwitchListener.java
+%%TARGET_PREFIX%%/demo/jfc/Notepad/Notepad.jar
+%%TARGET_PREFIX%%/demo/jfc/Notepad/README.txt
+%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/Notepad.properties
+%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/Notepad_fr.properties
+%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/Notepad_sv.properties
+%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/Notepad_zh_CN.properties
+%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/copy.gif
+%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/cut.gif
+%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/new.gif
+%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/open.gif
+%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/paste.gif
+%%TARGET_PREFIX%%/demo/jfc/Notepad/resources/save.gif
+%%TARGET_PREFIX%%/demo/jfc/Notepad/src/ElementTreePanel.java
+%%TARGET_PREFIX%%/demo/jfc/Notepad/src/Notepad.java
+%%TARGET_PREFIX%%/demo/jfc/SampleTree/README.txt
+%%TARGET_PREFIX%%/demo/jfc/SampleTree/SampleTree.jar
+%%TARGET_PREFIX%%/demo/jfc/SampleTree/images/collapsed.gif
+%%TARGET_PREFIX%%/demo/jfc/SampleTree/images/expanded.gif
+%%TARGET_PREFIX%%/demo/jfc/SampleTree/src/DynamicTreeNode.java
+%%TARGET_PREFIX%%/demo/jfc/SampleTree/src/SampleData.java
+%%TARGET_PREFIX%%/demo/jfc/SampleTree/src/SampleTree.java
+%%TARGET_PREFIX%%/demo/jfc/SampleTree/src/SampleTreeCellRenderer.java
+%%TARGET_PREFIX%%/demo/jfc/SampleTree/src/SampleTreeModel.java
+%%TARGET_PREFIX%%/demo/jfc/SimpleExample/README.txt
+%%TARGET_PREFIX%%/demo/jfc/SimpleExample/SimpleExample.jar
+%%TARGET_PREFIX%%/demo/jfc/SimpleExample/src/SimpleExample.java
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/README.txt
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/Stylepad.jar
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Notepad.properties
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Notepad_fr.properties
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Notepad_sv.properties
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Stylepad.properties
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Stylepad_sv.properties
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/Stylepad_zh_CN.properties
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/alice.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/bold.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/bullets.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/caterpillar.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/center.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/copy.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/cut.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/fg.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/hatter.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/italic.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/left.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/new.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/open.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/paste.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/rabbit.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/rabbit2.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/right.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/save.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/resources/underline.gif
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/src/ElementTreePanel.java
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/src/HelloWorld.java
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/src/Notepad.java
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/src/Stylepad.java
+%%TARGET_PREFIX%%/demo/jfc/Stylepad/src/Wonderland.java
+%%TARGET_PREFIX%%/demo/jfc/SwingApplet/README.txt
+%%TARGET_PREFIX%%/demo/jfc/SwingApplet/SwingApplet.html
+%%TARGET_PREFIX%%/demo/jfc/SwingApplet/SwingApplet.jar
+%%TARGET_PREFIX%%/demo/jfc/SwingApplet/src/SwingApplet.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/README.txt
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/SwingSet2.html
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/SwingSet2.jar
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/SwingSet2Plugin.html
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/AquaTheme.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/BezierAnimationPanel.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ButtonDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/CharcoalTheme.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/CodeViewer.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ColorChooserDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ComboBoxDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ContrastTheme.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/DemoModule.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/DirectionPanel.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/EmeraldTheme.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ExampleFileFilter.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ExampleFileView.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/FileChooserDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/HtmlDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/InternalFrameDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/LayoutControlPanel.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ListDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/OptionPaneDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/Permuter.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ProgressBarDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/RubyTheme.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ScrollPaneDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/SliderDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/SplitPaneDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/SwingSet2.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/SwingSet2Applet.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/TabbedPaneDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/TableDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/ToolTipDemo.java
+%%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/TreeDemo.java
+%%TARGET_PREFIX%%/demo/jfc/TableExample/README.txt
+%%TARGET_PREFIX%%/demo/jfc/TableExample/TableExample.jar
+%%TARGET_PREFIX%%/demo/jfc/TableExample/src/JDBCAdapter.java
+%%TARGET_PREFIX%%/demo/jfc/TableExample/src/OldJTable.java
+%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableExample.java
+%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableExample2.java
+%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableExample3.java
+%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableExample4.java
+%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableMap.java
+%%TARGET_PREFIX%%/demo/jfc/TableExample/src/TableSorter.java
 @dirrm %%TARGET_PREFIX%%/lib
 @dirrm %%TARGET_PREFIX%%/jre/lib/security
 @dirrm %%TARGET_PREFIX%%/jre/lib/images/ftp
@@ -1092,8 +886,8 @@
 @dirrm %%TARGET_PREFIX%%/jre/bin
 @dirrm %%TARGET_PREFIX%%/jre
 @dirrm %%TARGET_PREFIX%%/include
-@dirrm %%TARGET_PREFIX%%/docs/rmi-iiop
 @dirrm %%TARGET_PREFIX%%/docs
+@dirrm %%TARGET_PREFIX%%/demo/sound/media
 @dirrm %%TARGET_PREFIX%%/demo/sound/src
 @dirrm %%TARGET_PREFIX%%/demo/sound
 @dirrm %%TARGET_PREFIX%%/demo/rmi-iiop/idl
@@ -1101,98 +895,6 @@
 @dirrm %%TARGET_PREFIX%%/demo/rmi-iiop
 @dirrm %%TARGET_PREFIX%%/demo/misc
 @dirrm %%TARGET_PREFIX%%/demo/jpda
-@dirrm %%TARGET_PREFIX%%/demo/jfc/TableExample/src
-@dirrm %%TARGET_PREFIX%%/demo/jfc/TableExample
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/tooltip
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/toolbar
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/tabbedpane
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/splitpane
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/scrollpane
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/optionpane
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/list
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/htmldemo
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/filechooser
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/combobox
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/buttons
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/Octavo
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/misc
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/ImageClub/food
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images/ImageClub
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources/images
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src/resources
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tooltip
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/toolbar
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/tabbedpane
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/splitpane
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/scrollpane
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/optionpane
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/list
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/htmldemo
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/filechooser
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/combobox
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/buttons
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/Octavo
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/misc
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub/food
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images/ImageClub
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources/images
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/resources
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingApplet/src
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingApplet
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Stylepad/src/resources
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Stylepad/src
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Stylepad/resources
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Stylepad
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SimpleExample/src
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SimpleExample
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SampleTree/src
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SampleTree/images
-@dirrm %%TARGET_PREFIX%%/demo/jfc/SampleTree
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Notepad/src/resources
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Notepad/src
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Notepad/resources
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Notepad
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Metalworks/src
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Metalworks/images
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Metalworks
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Transforms
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paths
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paint
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Mix
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Lines
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Images
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Composite
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Colors
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Clipping
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Arcs_Curves
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/media
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/images
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/fonts
-@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D
-@dirrm %%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/src
-@dirrm %%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/images
-@dirrm %%TARGET_PREFIX%%/demo/jfc/FileChooserDemo
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/JavaDB
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/Sybase
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/Sybase
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/Sybase
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/Sybase
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/MSAccess
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees
-@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos
-@dirrm %%TARGET_PREFIX%%/demo/jfc
 @dirrm %%TARGET_PREFIX%%/demo/jdbcodbc
 @dirrm %%TARGET_PREFIX%%/demo/bigdecimal
 @dirrm %%TARGET_PREFIX%%/demo/applets/WireFrame/models
@@ -1229,6 +931,61 @@
 @dirrm %%TARGET_PREFIX%%/demo/applets/Animator/audio
 @dirrm %%TARGET_PREFIX%%/demo/applets/Animator
 @dirrm %%TARGET_PREFIX%%/demo/applets
+@dirrm %%TARGET_PREFIX%%/demo/jfc/TableExample/src
+@dirrm %%TARGET_PREFIX%%/demo/jfc/TableExample
+@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2/src
+@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingSet2
+@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingApplet/src
+@dirrm %%TARGET_PREFIX%%/demo/jfc/SwingApplet
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Stylepad/src/resources
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Stylepad/src
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Stylepad/resources
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Stylepad
+@dirrm %%TARGET_PREFIX%%/demo/jfc/SimpleExample/src
+@dirrm %%TARGET_PREFIX%%/demo/jfc/SimpleExample
+@dirrm %%TARGET_PREFIX%%/demo/jfc/SampleTree/src
+@dirrm %%TARGET_PREFIX%%/demo/jfc/SampleTree/images
+@dirrm %%TARGET_PREFIX%%/demo/jfc/SampleTree
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Notepad/src/resources
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Notepad/src
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Notepad/resources
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Notepad
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Metalworks/src
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Metalworks/images
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Metalworks/HelpFiles
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Metalworks
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Transforms
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paths
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Paint
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Mix
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Lines
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Images
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Fonts
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Composite
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Colors
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Clipping
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos/Arcs_Curves
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src/demos
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D/src
+@dirrm %%TARGET_PREFIX%%/demo/jfc/Java2D
+@dirrm %%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/src
+@dirrm %%TARGET_PREFIX%%/demo/jfc/FileChooserDemo/images
+@dirrm %%TARGET_PREFIX%%/demo/jfc/FileChooserDemo
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/JavaDB
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/Sybase
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers/MSAccess
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertSuppliers
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/Sybase
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees/SQLSrvr
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/InsertCoffees
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/Sybase
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers/MSAccess
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateSuppliers
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/Sybase
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees/MSAccess
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos/CreateCoffees
+@dirrm %%TARGET_PREFIX%%/demo/jfc/DBDemos
+@dirrm %%TARGET_PREFIX%%/demo/jfc
 @dirrm %%TARGET_PREFIX%%/demo
 @dirrm %%TARGET_PREFIX%%/bin/exe
 @dirrm %%TARGET_PREFIX%%/bin
