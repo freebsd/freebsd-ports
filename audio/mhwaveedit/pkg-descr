@@ -1,0 +1,14 @@
+mhWaveEdit is a graphical program for editing sound files.
+
+Features
+   - Loads, plays, records and saves wav-files and a few other formats as well.
+   - If the file is small, it's loaded into memory. Otherwise, it's edited on
+     disc.
+   - Cut, copy and paste.
+   - Zooming
+   - Volume and speed adjustment
+   - Convert between sample rates, sample sizes, stereo and mono
+   - You can always undo, all the way back to the original state of the file
+     (even when editing large files.)
+
+WWW: http://www.mtek.chalmers.se/~hjormagn/mhwaveedit.html
