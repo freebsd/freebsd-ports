@@ -1,9 +1,18 @@
+lib/%%PYTHON_VERSION%%/site-packages/dsml.py
+lib/%%PYTHON_VERSION%%/site-packages/dsml.pyc
+lib/%%PYTHON_VERSION%%/site-packages/dsml.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldap/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/ldap/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ldap/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldap/async.py
 lib/%%PYTHON_VERSION%%/site-packages/ldap/async.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ldap/async.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ldap/cidict.py
+lib/%%PYTHON_VERSION%%/site-packages/ldap/cidict.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/cidict.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ldap/filter.py
+lib/%%PYTHON_VERSION%%/site-packages/ldap/filter.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/filter.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldap/functions.py
 lib/%%PYTHON_VERSION%%/site-packages/ldap/functions.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ldap/functions.pyo
@@ -13,6 +22,21 @@ lib/%%PYTHON_VERSION%%/site-packages/ldap/ldapobject.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldap/modlist.py
 lib/%%PYTHON_VERSION%%/site-packages/ldap/modlist.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ldap/modlist.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ldap/sasl.py
+lib/%%PYTHON_VERSION%%/site-packages/ldap/sasl.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/sasl.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/models.py
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/models.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/models.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/subentry.py
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/subentry.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/subentry.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/tokenizer.py
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/tokenizer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ldap/schema/tokenizer.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ldapurl.py
 lib/%%PYTHON_VERSION%%/site-packages/ldapurl.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ldapurl.pyo
@@ -20,4 +44,5 @@ lib/%%PYTHON_VERSION%%/site-packages/ldif.py
 lib/%%PYTHON_VERSION%%/site-packages/ldif.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ldif.pyo
 lib/%%PYTHON_VERSION%%/site-packages/_ldap.so
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/ldap/schema
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/ldap
