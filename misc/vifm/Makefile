@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	vifm
-PORTVERSION=	0.2
+PORTVERSION=	0.2a
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vifm
 
-MAINTAINER=	swalter@lettermax.de
+MAINTAINER=	sw@gegenunendlich.de
 COMMENT=	Ncurses based file manager with vi like keybindings
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
