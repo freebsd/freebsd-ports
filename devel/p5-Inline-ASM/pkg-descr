@@ -1,0 +1,10 @@
+Inline::ASM allows you to write Perl subroutines in assembly language.
+Of course, many C compilers allow you to put assembly right in your C
+code, so this module does not provide any new functionality. It does,
+however, provide a feature most C compilers don't: you can mix different
+assembler syntaxes in the same file!
+
+WWW: http://search.cpan.org/search?dist=Inline-ASM
+
+-- Sergey Skvortsov
+skv@protey.ru
