@@ -193,6 +193,7 @@
     SUBDIR += ksamba
     SUBDIR += kxicq
     SUBDIR += kxicq2
+    SUBDIR += lam
     SUBDIR += lambdamoo
     SUBDIR += ldapmodule
     SUBDIR += ldapsdk
