@@ -17,6 +17,7 @@ RUN_DEPENDS=	${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-g
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_XLIB=		yes
 BREAKS_IF_PEDANTIC=	yes
 CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
