@@ -34,7 +34,7 @@ LIB_DEPENDS=		mp3lame.0:${PORTSDIR}/audio/lame
 .if ${HAVE_GNOME:Mgnomelibs} != ""
 USE_GNOME=		gnomelibs
 LIB_DEPENDS+=		gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
-LIB_DEPENDS+=		gnomemm.9:${PORTSDIR}/x11-toolkits/gnome--
+LIB_DEPENDS+=		gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 CONFIGURE_ARGS=		--with-gtkmm-prefix=${X11BASE}
 PKGNAMESUFFIX?=		-gnome
 PLIST_SUB=		GNOME=""
