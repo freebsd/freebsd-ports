@@ -1,3 +1,4 @@
 lib/perl5/man/man3/FreezeThaw.3.gz
 lib/perl5/site_perl/FreezeThaw.pm
 lib/perl5/site_perl/i386-freebsd/auto/FreezeThaw/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/FreezeThaw

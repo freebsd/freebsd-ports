@@ -3,7 +3,7 @@
 # Date created:				September 10th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id$
+# $Id: Makefile,v 1.1.1.1 1997/09/13 17:44:00 jfitz Exp $
 #
 
 DISTNAME=	FreezeThaw-0.3
