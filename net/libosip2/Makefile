@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libosip2
-PORTVERSION=	2.0.9
+PORTVERSION=	2.2.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	osip
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	osip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
-USE_GNOME=	gnometarget
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=	15
 CONFIGURE_ARGS=	--disable-debug --disable-trace
@@ -23,5 +23,6 @@ INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "/^SUBDIRS/s| help | |g" ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
