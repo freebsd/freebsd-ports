@@ -125,6 +125,9 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/log/Logger.py
 %%PYTHON_SITELIBDIR%%/linkcheck/log/Logger.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/log/Logger.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/log/NoneLogger.py
+%%PYTHON_SITELIBDIR%%/linkcheck/log/NoneLogger.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/log/NoneLogger.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/log/SQLLogger.py
 %%PYTHON_SITELIBDIR%%/linkcheck/log/SQLLogger.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/log/SQLLogger.pyo
@@ -144,6 +147,9 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/parser/htmllib.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/parser/htmllib.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/parser/htmlsax.so
+%%PYTHON_SITELIBDIR%%/linkcheck/optcomplete.py
+%%PYTHON_SITELIBDIR%%/linkcheck/optcomplete.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/optcomplete.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.py
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.pyo
@@ -170,6 +176,8 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 %%EXAMPLESDIR%%/leer.html.de
 %%EXAMPLESDIR%%/leer.html.en
 %%EXAMPLESDIR%%/linkchecker.bat
+%%EXAMPLESDIR%%/linkchecker-completion
+%%EXAMPLESDIR%%/linkcheck-cron.sh
 %%DATADIR%%/linkcheckerrc
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
