@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	ike-scan
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	http://berlin.ccc.de/~cryx/ike-scan/
+MASTER_SITES=	http://www.nta-monitor.com/ike-scan/download/ \
+		http://berlin.ccc.de/~cryx/ike-scan/
 
 MAINTAINER=	Yonatan@xpert.com
 COMMENT=	VPN scanner and identifier
