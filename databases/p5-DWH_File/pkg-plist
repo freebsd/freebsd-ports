@@ -24,6 +24,8 @@
 %%SITE_PERL%%/DWH_File/Reference.pm
 %%SITE_PERL%%/DWH_File/Cache.pm
 %%SITE_PERL%%/DWH_File/Slot.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DWH_File/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DWH_File
 @dirrm %%SITE_PERL%%/DWH_File/Registry
 @dirrm %%SITE_PERL%%/DWH_File/Value
 @dirrm %%SITE_PERL%%/DWH_File/Tie/Array
