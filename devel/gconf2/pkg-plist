@@ -1,5 +1,3 @@
-bin/gconf-sanity-check-2
-bin/gconfd-2
 bin/gconftool-2
 etc/gconf/2/path
 include/gconf/2/gconf/gconf-changeset.h
@@ -16,6 +14,8 @@ lib/libgconf-2.a
 lib/libgconf-2.so
 lib/libgconf-2.so.5
 libdata/pkgconfig/gconf-2.0.pc
+libexec/gconf-sanity-check-2
+libexec/gconfd-2
 share/aclocal/gconf-2.m4
 share/doc/gconf/c120.html
 share/doc/gconf/c21.html
@@ -49,6 +49,7 @@ share/doc/gconf/x462.html
 share/doc/gconf/x485.html
 share/locale/ar/LC_MESSAGES/GConf2.mo
 share/locale/az/LC_MESSAGES/GConf2.mo
+share/locale/bg/LC_MESSAGES/GConf2.mo
 share/locale/ca/LC_MESSAGES/GConf2.mo
 share/locale/cs/LC_MESSAGES/GConf2.mo
 share/locale/da/LC_MESSAGES/GConf2.mo
@@ -86,19 +87,3 @@ share/locale/zh_TW/LC_MESSAGES/GConf2.mo
 @dirrm include/gconf/2/gconf
 @dirrm include/gconf/2
 @dirrm etc/gconf/2
-@exec   /bin/mkdir -p %D/etc/gconf/gconf.xml.defaults/apps
-@exec   /bin/mkdir -p %D/etc/gconf/gconf.xml.defaults/schemas/apps
-@exec   /bin/mkdir -p %D/etc/gconf/schemas
-@unexec /bin/rmdir    %D/lib/GConf 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/include/gconf 2>/dev/null || /usr/bin/true
-@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/%%gconf.xml 2>/dev/null || true
-@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/apps/%%gconf.xml 2>/dev/null || true
-@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/schemas/%%gconf.xml 2>/dev/null || true
-@unexec /bin/rm    -f %D/etc/gconf/gconf.xml.defaults/schemas/apps/%%gconf.xml 2>/dev/null || true
-@unexec /bin/rmdir    %D/etc/gconf/schemas 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.mandatory 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults/schemas/apps 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults/schemas 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults/apps 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf/gconf.xml.defaults 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir    %D/etc/gconf 2>/dev/null || /usr/bin/true
