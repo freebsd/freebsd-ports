@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yudit
-PORTVERSION=	2.7.2
+PORTVERSION=	2.7.5
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		${MASTER_SITE_SUNSITE}
@@ -19,7 +19,9 @@ COMMENT=	Multi-lingual unicode text editor with TTF support
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
 USE_XLIB=	YES
-CONFIGURE_ENV=	LC_ALL=
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LDFLAGS="-L${X11BASE}/lib" \
+		LC_ALL=
 GNU_CONFIGURE=	YES
 MAKE_ENV=	LC_ALL=
 MAN1=		mytool.1 uniconv.1 uniprint.1
