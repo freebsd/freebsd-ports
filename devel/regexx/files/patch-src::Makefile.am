@@ -1,11 +1,11 @@
---- src/Makefile.am.orig	Tue Aug 22 21:54:30 2000
-+++ src/Makefile.am	Wed Mar  7 19:25:48 2001
+--- src/Makefile.am.orig	Thu Mar 15 14:40:46 2001
++++ src/Makefile.am	Tue Mar 13 22:42:21 2001
 @@ -5,6 +5,7 @@
  ##
  
-+INCLUDES=-I/usr/local/include
++INCLUDES=`pcre-config --cflags`
  lib_LTLIBRARIES = libregexx.la
  libregexx_la_SOURCES = regexx.cc regexx.hh split.cc split.hh
--libregexx_la_LDFLAGS = -version-info 1:1:1 ../pcre/maketables.lo ../pcre/get.lo ../pcre/study.lo ../pcre/pcre.lo
-+libregexx_la_LDFLAGS = -version-info 1:1:1 -lpcre -L/usr/local/lib
+-libregexx_la_LDFLAGS = -version-info 2:0:1 ../pcre/maketables.lo ../pcre/get.lo ../pcre/study.lo ../pcre/pcre.lo
++libregexx_la_LDFLAGS = -version-info 2:0:1 `pcre-config --libs`
  include_HEADERS = regexx.hh split.hh
