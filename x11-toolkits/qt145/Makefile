@@ -15,7 +15,7 @@ PATCH_SITES=	ftp://ftp.kde.gr.jp/pub/qt/patch/
 PATCHFILES=	qt-1.45-i18n-20000531.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	unstable/koffice-${PORTVERSION:S/.rc1/-rc1/}/src
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.rc1/-rc1/}
 
-MAINTAINER=	will@FreeBSD.org
+MAINTAINER=	kde@FreeBSD.org
 
 LIB_DEPENDS=	iconv.2:${PORTSDIR}/converters/iconv
 
