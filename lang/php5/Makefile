@@ -542,7 +542,7 @@ CONFIGURE_ARGS+=--with-zlib
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-.if exists(${LOCALBASE}/include/apache2/apr.h)
+.if exists(${LOCALBASE}/include/apache2/httpd.h)
 WITH_APACHE2=	yes
 APACHE_MPM!=	${APXS} -q MPM_NAME
 .endif
