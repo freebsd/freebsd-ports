@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.94 1999/06/23 20:11:59 sada Exp $
+# $Id: Makefile,v 1.95 1999/06/25 21:24:33 sada Exp $
 #
 
     SUBDIR += adcomplain
@@ -46,6 +46,7 @@
     SUBDIR += movemail
     SUBDIR += mutt
     SUBDIR += nmh
+    SUBDIR += p5-MIME-Lite
     SUBDIR += p5-MIME-Tools
     SUBDIR += p5-Mail-Folder
     SUBDIR += p5-Mail-POP3Client
