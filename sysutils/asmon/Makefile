@@ -15,9 +15,10 @@ MAINTAINER=	jack@germanium.xtalwind.net
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
+USE_X_PREFIX=	yes
+
 .include <bsd.port.pre.mk>
 
-USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	clean all
 
