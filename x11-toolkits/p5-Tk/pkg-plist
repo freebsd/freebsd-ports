@@ -59,6 +59,7 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DragDrop/XDNDSite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DropSite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/DropSite.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/DummyEncode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/English.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Entry.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Entry.pod
@@ -89,12 +90,15 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Internals.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Item.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/ItemStyle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/JPEG.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/LabEntry.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/LabFrame.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/LabFrame.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/LabRadio.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Label.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Label.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Labelframe.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Labelframe.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Listbox.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Listbox.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/MMtry.pm
@@ -117,7 +121,10 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/NoteBook.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Optionmenu.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Optionmenu.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/PNG.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Pane.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Panedwindow.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Panedwindow.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Photo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Photo.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Pixmap.pm
@@ -139,6 +146,8 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Scrollbar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Scrollbar.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Scrolled.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Spinbox.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/Spinbox.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Stats.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Submethods.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/Submethods.pod
@@ -193,11 +202,13 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/callbacks.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/cbxarrow.xbm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/chooseColor.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/chooseDirectory.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/composite.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/LabEnLabRad.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/QuitPB.xpm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/QuitPBa.xpm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/c.icon
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/cursor.cur
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/cursor.mask
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/cursor.xbm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/images/dir.icon
@@ -234,6 +245,7 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/dialog2.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/entry1.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/entry2.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/entry3.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/filebox.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/floor.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/form.pl
@@ -242,11 +254,14 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/image1.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/image2.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/items.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/labelframe.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/labels.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/menbut.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/menus.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/menus2.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/msgBox.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/paned1.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/paned2.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/plot.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/puzzle.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/radio.pl
@@ -254,11 +269,13 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/sayings.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/search.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/showVars.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/spin.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/states.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/style.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/texts.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/transtile.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/twind.pl
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/unicodeout.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widget_lib/vscale.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/Gedi.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/demos/widtrib/HList.pl
@@ -303,7 +320,6 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/Lang.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/Lang.m
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/Lang.t
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/LangIO.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/Lang_f.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/Tcl-pTk
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/Xlib.h
@@ -321,9 +337,18 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/imgInt_f.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/ks_names.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/mkVFunc
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/moredefs.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/patchlevel.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/port.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tclMath.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tcl.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tclDecls.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tclDecls.m
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tclDecls.t
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tclDecls_f.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tclIntDecls.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tclIntPlatDecls.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tclPlatDecls.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tix.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tix.m
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tix.t
@@ -355,6 +380,10 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkCanvases.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkColor.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkConfig.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkDecls.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkDecls.m
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkDecls.t
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkDecls_f.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkEvent.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkEvent.m
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkEvent.t
@@ -370,26 +399,38 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkInt.m
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkInt.t
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkInt_f.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntDecls.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntDecls.m
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntDecls.t
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntDecls_f.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntPlatDecls.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntPlatDecls.m
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntPlatDecls.t
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntPlatDecls_f.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntXlibDecls.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntXlibDecls.m
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntXlibDecls.t
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkIntXlibDecls_f.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkMenu.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkMenubutton.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkOption.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkOption.m
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkOption.t
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkOption_f.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkPlatDecls.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkPlatDecls.m
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkPlatDecls.t
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkPlatDecls_f.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkPort.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkScale.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkScrollbar.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkSelect.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkText.h
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkUndo.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkUnixDefault.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkUnixInt.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkUnixPort.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkVMacro.h
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkWin.m
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkWin.t
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkWinInt.m
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkWinInt.t
-%%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkWin_f.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tkXrm.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/tk_f.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pack.pod
@@ -410,14 +451,13 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/tkvars.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/tranicon.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/typemap
+%%SITE_PERL%%/%%PERL_ARCH%%/Tk/vtab.def
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/widgets.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/widgets.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/win.xbm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/winfolder.xpm
 %%SITE_PERL%%/%%PERL_ARCH%%/Tk/wintext.xpm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Bitmap/Bitmap.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Bitmap/Bitmap.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/CancelRepeat.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Canvas/Canvas.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Canvas/Canvas.so
@@ -453,6 +493,8 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/InputO/InputO.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/ImageNames.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/ImageTypes.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/JPEG.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG/JPEG.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Listbox/AutoScan.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Listbox/BeginExtend.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Listbox/BeginSelect.al
@@ -481,8 +523,8 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Mwm/Mwm.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/NBFrame/NBFrame.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/NBFrame/NBFrame.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Photo/Photo.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Photo/Photo.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/PNG/PNG.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/PNG/PNG.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Pixmap/Pixmap.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Pixmap/Pixmap.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Receive.al
@@ -563,6 +605,7 @@ bin/widget
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/focusFollowsMouse.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/focusNext.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/focusPrev.al
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/getEncoding.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/interps.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/lsearch.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/pTk/extralibs.ld
@@ -582,7 +625,6 @@ bin/widget
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk/compat
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Tk/pTk
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Tk
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Bitmap
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Canvas
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Clipboard
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Compound
@@ -592,11 +634,12 @@ bin/widget
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/HList
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/IO
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/InputO
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/JPEG
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Listbox
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Menubutton
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Mwm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/NBFrame
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Photo
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/PNG
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Pixmap
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Scale
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Scrollbar
