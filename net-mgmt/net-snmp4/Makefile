@@ -78,6 +78,10 @@ PLIST_SUB+=	shlib=${SHLIB_VERSION}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not build on FreeBSD >= 6.x"
+.endif
+
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+= --enable-ipv6
 .endif
