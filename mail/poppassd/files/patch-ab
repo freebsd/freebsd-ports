@@ -1,5 +1,5 @@
---- poppassd.c.orig	Thu Sep  5 11:44:07 2002
-+++ poppassd.c	Thu Sep  5 16:07:09 2002
+--- poppassd.c.orig	Sun Jul  6 03:40:55 2003
++++ poppassd.c	Sun Jul  6 03:41:49 2003
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -32,7 +32,7 @@
   * back to the client in the final 500 response, and a new version of the
   * code to find the next free pty, is by Norstad.
   *        
-@@ -145,8 +145,9 @@
+@@ -145,14 +145,17 @@
  static char *P1[] =
     {"Old password:",
      "Changing password for *.\nOld password:",
@@ -41,9 +41,22 @@
 -    "Changing NIS password for * on *.\nOld password:",
 +    "Changing NIS password for * on *.\nOld Password:",
      "Changing password for *\n*'s Old password:",
++    "Changing local password for *\nOld Password:",
      ""};
  
-@@ -165,7 +166,10 @@
+ static char *P2[] =
+    {"\nNew password:",
+     "\n*'s New password:",
++    "\nNew Password:",
+     ""};
+ 
+ static char *P3[] =
+@@ -161,11 +164,15 @@
+     "\nEnter the new password again:",
+     "\n*Re-enter *'s new password:",
+     "\nVerify:",
++    "\nRetype New Password:",
+     ""};
      
  static char *P4[] =
     {"\n",
@@ -54,7 +67,7 @@
      ""};
  
  
-@@ -186,11 +190,7 @@
+@@ -186,11 +193,7 @@
       
       *user = *oldpass = *newpass = 0;
       
@@ -67,7 +80,7 @@
       
       WriteToClient ("200 poppassd v%s hello, who are you?", VERSION);
       ReadFromClient (line);
-@@ -212,12 +212,16 @@
+@@ -212,12 +215,16 @@
       
       if ((pw = getpwnam (user)) == NULL)
       {
@@ -85,7 +98,7 @@
  	  WriteToClient ("500 Old password is incorrect.");
  	  exit(1);
       }
-@@ -264,28 +268,28 @@
+@@ -264,28 +271,28 @@
  
  	  if ((wpid = waitpid (pid, &wstat, 0)) < 0)
  	  {
@@ -118,7 +131,7 @@
  	       WriteToClient ("500 Server error (abnormal exit), get help!");
  	       exit (1);
  	  }
-@@ -304,17 +308,19 @@
+@@ -304,17 +311,19 @@
       }
       else      /* Child */
       {
@@ -149,7 +162,7 @@
  	  setuid (pw->pw_uid);
  	  setgid (pw->pw_gid);
  	  dochild (master, slavedev, user);
-@@ -324,7 +330,7 @@
+@@ -324,7 +333,7 @@
  /*
   * dochild
   *
@@ -158,7 +171,7 @@
   *
   * Code adapted from "Advanced Programming in the UNIX Environment"
   * by W. Richard Stevens.
-@@ -338,13 +344,6 @@
+@@ -338,13 +347,6 @@
     int slave;
     struct termios stermios;
  
@@ -172,7 +185,7 @@
     /* Open slave pty and acquire as new controlling terminal. */
  
     if ((slave = open(slavedev, O_RDWR)) < 0) {
-@@ -387,10 +386,10 @@
+@@ -387,10 +389,10 @@
        return(0);
     }
  
@@ -186,7 +199,7 @@
        return(0);
     }
  }
-@@ -408,15 +407,20 @@
+@@ -408,15 +410,20 @@
   *
   * Modified by Norstad to remove assumptions about number of pty's allocated
   * on this UNIX box.
@@ -208,7 +221,7 @@
     dirp = opendir("/dev");
     while ((dp = readdir(dirp)) != NULL) {
        if (strncmp(dp->d_name, "pty", 3) == 0 && strlen(dp->d_name) == 5) {
-@@ -485,8 +489,10 @@
+@@ -485,8 +492,10 @@
       }
  
       writestring(master, pswd);
