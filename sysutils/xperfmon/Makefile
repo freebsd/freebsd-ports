@@ -20,6 +20,12 @@ USE_IMAKE=	yes
 MAN1=		xperfmon++.1
 WRKSRC=		${WRKDIR}/xperfmon++
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BROKEN=		"5.X or newer systems should use xperfmon3"
+.endif
+
 pre-configure:
 	if [ -e /usr/lib/libdevstat.a -o -e /usr/lib/aout/libdevstat.a ]; then \
 		cd ${WRKSRC} ; \
@@ -28,4 +34,4 @@ pre-configure:
 		${SED} -e "s:FreeBSDFLAGS=:FreeBSDFLAGS= -ldevstat:" Imakefile.i1 > Imakefile ; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
