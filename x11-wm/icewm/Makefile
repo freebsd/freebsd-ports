@@ -3,10 +3,10 @@
 # Date created:		10 August 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.30 1999/01/17 10:04:44 vanilla Exp $
+# $Id: Makefile,v 1.31 1999/01/17 19:48:00 vanilla Exp $
 #
 
-DISTNAME=	icewm-0.9.29
+DISTNAME=	icewm-0.9.34
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.kiss.uni-lj.si/~k4fr0235/icewm/devel/ \
 		http://www.freebsd.org/~vanilla/
@@ -49,7 +49,7 @@ do-configure:
 	( cd ${WRKSRC}; ${SH} config ${ICEOPTION} )
 
 post-install:
-	${CP} ${FILESDIR}/bsd-daemon.xpm ${PREFIX}/lib/X11/icewm/taskbar
+	${CP} ${FILESDIR}/bsd-daemon.xpm ${PREFIX}/share/icewm/taskbar
 	strip ${PREFIX}/bin/icewm
 	strip ${PREFIX}/bin/icewmbg
 	strip ${PREFIX}/bin/icewmhint
