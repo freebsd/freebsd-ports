@@ -1,7 +1,7 @@
-*** Makefile.in.old	Tue Oct 22 02:26:19 1996
---- Makefile.in	Tue Oct 22 02:30:18 1996
+*** Makefile.in.orig	Wed Oct 30 15:27:56 1996
+--- Makefile.in	Thu Jan 30 23:00:03 1997
 ***************
-*** 159,170 ****
+*** 188,199 ****
   SHELL = /bin/sh
   
   GMPDIR 		= gmp-2.0.2-ssh-2
@@ -14,7 +14,7 @@
   
   RSAREFDIR	= rsaref2
   RSAREFSRCDIR 	= $(RSAREFDIR)/source
---- 159,176 ----
+--- 188,205 ----
   SHELL = /bin/sh
   
   GMPDIR 		= gmp-2.0.2-ssh-2
@@ -34,7 +34,7 @@
   RSAREFDIR	= rsaref2
   RSAREFSRCDIR 	= $(RSAREFDIR)/source
 ***************
-*** 248,254 ****
+*** 275,281 ****
   	$(CC) -o rfc-pg rfc-pg.c
   
   .c.o:
@@ -42,7 +42,7 @@
   
   sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
   	-rm -f sshd
---- 254,260 ----
+--- 281,287 ----
   	$(CC) -o rfc-pg rfc-pg.c
   
   .c.o:
@@ -51,9 +51,9 @@
   sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
   	-rm -f sshd
 ***************
-*** 292,310 ****
-  	./gen_minfd $(USER_SHELLS) > minfd.h~
-  	mv -f minfd.h~ minfd.h
+*** 310,328 ****
+  	sed "s#&PERL&#$(PERL)#" <$(srcdir)/make-ssh-known-hosts.pl >make-ssh-known-hosts
+  	chmod +x make-ssh-known-hosts
   
 ! GMP_COPY_SOURCES = mpz_gcd.c mpz_powm.c mpz_pow_ui.c mpz_add.c mpz_sub.c \
 ! 		mpz_mul.c mpz_cmp.c mpz_sqrtrem.c
@@ -71,9 +71,9 @@
   
   $(RSAREFSRCDIR)/librsaref.a:
   	-if test '!' -d $(RSAREFDIR); then \
---- 298,316 ----
-  	./gen_minfd $(USER_SHELLS) > minfd.h~
-  	mv -f minfd.h~ minfd.h
+--- 316,334 ----
+  	sed "s#&PERL&#$(PERL)#" <$(srcdir)/make-ssh-known-hosts.pl >make-ssh-known-hosts
+  	chmod +x make-ssh-known-hosts
   
 ! #GMP_COPY_SOURCES = mpz_gcd.c mpz_powm.c mpz_pow_ui.c mpz_add.c mpz_sub.c \
 ! #		mpz_mul.c mpz_cmp.c mpz_sqrtrem.c
@@ -92,7 +92,7 @@
   $(RSAREFSRCDIR)/librsaref.a:
   	-if test '!' -d $(RSAREFDIR); then \
 ***************
-*** 361,367 ****
+*** 379,385 ****
   # (otherwise it can only log in as the user it runs as, and must be
   # bound to a non-privileged port).  Also, password authentication may
   # not be available if non-root and using shadow passwords.
@@ -100,7 +100,7 @@
   	$(INSTALL_PROGRAM) -o root -m 04711 ssh $(install_prefix)$(bindir)/ssh
   	-if test "`echo ssh | sed '$(transform)'`" '!=' ssh; then \
   	  rm -f $(install_prefix)$(bindir)/`echo ssh | sed '$(transform)'`; \
---- 367,373 ----
+--- 385,391 ----
   # (otherwise it can only log in as the user it runs as, and must be
   # bound to a non-privileged port).  Also, password authentication may
   # not be available if non-root and using shadow passwords.
@@ -109,7 +109,7 @@
   	-if test "`echo ssh | sed '$(transform)'`" '!=' ssh; then \
   	  rm -f $(install_prefix)$(bindir)/`echo ssh | sed '$(transform)'`; \
 ***************
-*** 462,488 ****
+*** 480,506 ****
   
   clean:
   	-rm -f *.o gmon.out *core $(PROGRAMS) rfc-pg
@@ -137,7 +137,7 @@
   	tar pcf $(DISTNAME).tar $(DISTNAME)
   	-rm -f $(DISTNAME).tar.gz
   	gzip $(DISTNAME).tar
---- 468,494 ----
+--- 486,512 ----
   
   clean:
   	-rm -f *.o gmon.out *core $(PROGRAMS) rfc-pg
@@ -162,11 +162,11 @@
   #	cd $(DISTNAME)/$(RSAREFSRCDIR); rm -f *.o *.a
 ! #       tar pcf - $(ZLIBDIR) | (cd $(DISTNAME); tar pxf -)
 ! #       cd $(DISTNAME)/$(ZLIBDIR); rm -f *.o *.a
-  	tar cf $(DISTNAME).tar $(DISTNAME)
+  	tar pcf $(DISTNAME).tar $(DISTNAME)
   	-rm -f $(DISTNAME).tar.gz
   	gzip $(DISTNAME).tar
 ***************
-*** 494,500 ****
+*** 512,518 ****
   	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed version.h >/dev/null
   
   depend:
@@ -174,7 +174,7 @@
   
   tags:
   	find config.h $(srcdir) -name '*.[chly]' -print | xargs etags -a
---- 500,506 ----
+--- 518,524 ----
   	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed version.h >/dev/null
   
   depend:
