@@ -120,7 +120,7 @@
     SUBDIR += mhonarc
     SUBDIR += micro_httpd
     SUBDIR += mmosaic
-    SUBDIR += mnoGoSearch-current
+    SUBDIR += mnogosearch
     SUBDIR += mod_access_identd
     SUBDIR += mod_access_referer
     SUBDIR += mod_auth_any
