@@ -23,25 +23,26 @@ sunclock-1.3|/usr/ports/astro/sunclock|/usr/X11R6|Shows which portion of the Ear
 xearth-1.0|/usr/ports/astro/xearth|/usr/X11R6|Set the root window to the image of earth.|/usr/ports/astro/xearth/pkg/DESCR|ports@FreeBSD.ORG|astro x11||
 xephem-2.7.1|/usr/ports/astro/xephem|/usr/X11R6|an interactive astronomical ephemeris program|/usr/ports/astro/xephem/pkg/DESCR|erich@FreeBSD.org|astro||
 xphoon-91.9.18|/usr/ports/astro/xphoon|/usr/X11R6|Set the root window to the moon in its current phase|/usr/ports/astro/xphoon/pkg/DESCR|asami@FreeBSD.ORG|astro x11||
-xgmod-2.0.2|/usr/ports/audio/gmod|/usr/X11R6|Gravis Ultrasound .MOD player with X Interface.|/usr/ports/audio/gmod/pkg/DESCR|ports@FreeBSD.ORG|audio|fwf-3.8 gmake-3.75 xpm-3.4i|
-gsm-1.0.10|/usr/ports/audio/gsm|/usr/local|Audio converter and library for converting u-law to gsm encoding.|/usr/ports/audio/gsm/pkg/DESCR|ports@FreeBSD.ORG|audio||
-maplay-1.2|/usr/ports/audio/maplay|/usr/local|An MPEG audio player/decoder that decodes layer I and II MPEG audio streams.|/usr/ports/audio/maplay/pkg/DESCR|ports@FreeBSD.ORG|audio||
+cam-1.02|/usr/ports/audio/cam|/usr/local|Cpu's Audio Mixer [curses based]|/usr/ports/audio/cam/pkg/DESCR|ports@FreeBSD.ORG|audio||
+xgmod-2.0.2|/usr/ports/audio/gmod|/usr/X11R6|Gravis Ultrasound .MOD player with X Interface.|/usr/ports/audio/gmod/pkg/DESCR|pst@FreeBSD.org|audio|fwf-3.8 gmake-3.75 xpm-3.4i|
+gsm-1.0.10|/usr/ports/audio/gsm|/usr/local|Audio converter and library for converting u-law to gsm encoding.|/usr/ports/audio/gsm/pkg/DESCR|pst@FreeBSD.org|audio||
+maplay-1.2|/usr/ports/audio/maplay|/usr/local|An MPEG audio player/decoder that decodes layer I and II MPEG audio streams.|/usr/ports/audio/maplay/pkg/DESCR|jkh@FreeBSD.org|audio||
 mpegaudio-3.9|/usr/ports/audio/mpegaudio|/usr/local|An MPEG/audio Layer 1 and Layer 2 encoder/decoder package.|/usr/ports/audio/mpegaudio/pkg/DESCR|torstenb@FreeBSD.ORG|audio||
-nas-1.2.5|/usr/ports/audio/nas|/usr/X11R6|Network Audio System.|/usr/ports/audio/nas/pkg/DESCR|ports@FreeBSD.ORG|audio||
-playmidi-1.1|/usr/ports/audio/playmidi|/usr/local|MIDI player.|/usr/ports/audio/playmidi/pkg/DESCR|ache@FreeBSD.ORG|audio||
-radio-2.0.4|/usr/ports/audio/radio|/usr/local|Radio over the Internet.|/usr/ports/audio/radio/pkg/DESCR|ports@FreeBSD.ORG|audio net||
-rosegarden-2.0|/usr/ports/audio/rosegarden|/usr/local|The Rosegarden Editor and Sequencer suite.|/usr/ports/audio/rosegarden/pkg/DESCR|shanee@rabbit.augusta.de|audio|Xaw3d-1.3|Xaw3d-1.3 playmidi-1.1
-rplay-3.2.0b5|/usr/ports/audio/rplay|/usr/local|Network audio player.|/usr/ports/audio/rplay/pkg/DESCR|ports@FreeBSD.ORG|audio|gmake-3.75|
-rsynth-2.0|/usr/ports/audio/rsynth|/usr/local|Speech synthesizer.|/usr/ports/audio/rsynth/pkg/DESCR|ports@FreeBSD.ORG|audio|nas-1.2.5|nas-1.2.5
-s3mod-1.08a|/usr/ports/audio/s3mod|/usr/local|MOD/S3M player.|/usr/ports/audio/s3mod/pkg/DESCR|ports@FreeBSD.ORG|audio||
+nas-1.2.5|/usr/ports/audio/nas|/usr/X11R6|Network Audio System.|/usr/ports/audio/nas/pkg/DESCR|jkh@FreeBSD.org|audio||
+playmidi-2.3|/usr/ports/audio/playmidi|/usr/local|MIDI player.|/usr/ports/audio/playmidi/pkg/DESCR|ache@FreeBSD.ORG|audio||
+radio-2.0.4|/usr/ports/audio/radio|/usr/local|Radio over the Internet.|/usr/ports/audio/radio/pkg/DESCR|janek@gaja.ipan.lublin.pl|audio net||
+rosegarden-2.0|/usr/ports/audio/rosegarden|/usr/local|The Rosegarden Editor and Sequencer suite.|/usr/ports/audio/rosegarden/pkg/DESCR|shanee@rabbit.augusta.de|audio|Xaw3d-1.3|Xaw3d-1.3 playmidi-2.3
+rplay-3.2.0b5|/usr/ports/audio/rplay|/usr/local|Network audio player.|/usr/ports/audio/rplay/pkg/DESCR|rmallory@csusb.edu|audio|gmake-3.75|
+rsynth-2.0|/usr/ports/audio/rsynth|/usr/local|Speech synthesizer.|/usr/ports/audio/rsynth/pkg/DESCR|faulkner@mpd.tandem.com|audio|gdbm-1.7.3 nas-1.2.5|nas-1.2.5
+s3mod-1.08a|/usr/ports/audio/s3mod|/usr/local|MOD/S3M player.|/usr/ports/audio/s3mod/pkg/DESCR|ugen@FreeBSD.org|audio||
 sox-10.11|/usr/ports/audio/sox|/usr/local|SOund eXchange - universal sound sample translator.|/usr/ports/audio/sox/pkg/DESCR|torstenb@FreeBSD.ORG|audio||
 tracker-5.3|/usr/ports/audio/tracker|/usr/local|MOD player.|/usr/ports/audio/tracker/pkg/DESCR|ache@FreeBSD.ORG|audio|gmake-3.75|
 workman-1.3|/usr/ports/audio/workman|/usr/X11R6|Open Look-based CD player tool|/usr/ports/audio/workman/pkg/DESCR|d_burr@ix.netcom.com|audio|xview-config-3.2.1 xview-lib-3.2.1|xview-config-3.2.1 xview-lib-3.2.1
 xcd-1.5|/usr/ports/audio/xcd|/usr/local|A Tcl/Tk CD player.|/usr/ports/audio/xcd/pkg/DESCR|jmz@FreeBSD.org|audio||tk-4.1
-xcdplayer-2.2|/usr/ports/audio/xcdplayer|/usr/X11R6|CD player for X.|/usr/ports/audio/xcdplayer/pkg/DESCR|ports@FreeBSD.ORG|audio||
+xcdplayer-2.2|/usr/ports/audio/xcdplayer|/usr/X11R6|CD player for X.|/usr/ports/audio/xcdplayer/pkg/DESCR|swallace@FreeBSD.org|audio||
 xmcd-2.0|/usr/ports/audio/xmcd|/usr/X11R6|Motif CD player.|/usr/ports/audio/xmcd/pkg/DESCR|deischen@iworks.InterWorks.org|audio||
-xmix-2.1|/usr/ports/audio/xmix|/usr/X11R6|Mixer for X Window System.|/usr/ports/audio/xmix/pkg/DESCR|ports@FreeBSD.ORG|audio||
-xmmix-1.2|/usr/ports/audio/xmmix|/usr/X11R6|a Motif based audio mixer|/usr/ports/audio/xmmix/pkg/DESCR|ports@FreeBSD.ORG|audio||
+xmix-2.1|/usr/ports/audio/xmix|/usr/X11R6|Mixer for X Window System.|/usr/ports/audio/xmix/pkg/DESCR|janek@gaja.ipan.lublin.pl|audio||
+xmmix-1.2|/usr/ports/audio/xmmix|/usr/X11R6|a Motif based audio mixer|/usr/ports/audio/xmmix/pkg/DESCR|erich@FreeBSD.org|audio||
 bonnie-1.0|/usr/ports/benchmarks/bonnie|/usr/local|Performance Test of Filesystem I/O.|/usr/ports/benchmarks/bonnie/pkg/DESCR|se@FreeBSD.org|benchmarks||
 bytebench-3.1|/usr/ports/benchmarks/bytebench|/usr/local|The BYTE magazine benchmark suite.|/usr/ports/benchmarks/bytebench/pkg/DESCR|se@FreeBSD.org|benchmarks||
 iozone-2.01|/usr/ports/benchmarks/iozone|/usr/local|Performance Test of Sequential File I/O.|/usr/ports/benchmarks/iozone/pkg/DESCR|jmz@FreeBSD.org|benchmarks||
@@ -50,10 +51,11 @@ netperf-2.1.1|/usr/ports/benchmarks/netperf|/usr/local|Rick Jones' <raj@cup.hp.c
 tcpblast-1.0|/usr/ports/benchmarks/tcpblast|/usr/local|Measures the throughput of a tcp connection.|/usr/ports/benchmarks/tcpblast/pkg/DESCR|ports@FreeBSD.ORG|net benchmarks||
 acs-0.21|/usr/ports/cad/acs|/usr/local|A general purpose circuit simulator.|/usr/ports/cad/acs/pkg/DESCR|tg@freebsd.org|cad||
 chipmunk-5.10|/usr/ports/cad/chipmunk|/usr/local|An electronic CAD system.|/usr/ports/cad/chipmunk/pkg/DESCR|ports@FreeBSD.ORG|cad|gmake-3.75|
-irsim-9.2|/usr/ports/cad/irsim|/usr/local|An event-driven logic-level simulator for MOS circuis.|/usr/ports/cad/irsim/pkg/DESCR|ports@FreeBSD.ORG|cad||
-magic-6.4.4|/usr/ports/cad/magic|/usr/local|An interactive editor for VLSI layouts.|/usr/ports/cad/magic/pkg/DESCR|ports@FreeBSD.ORG|cad|gmake-3.75|
+irsim-9.2|/usr/ports/cad/irsim|/usr/local|An event-driven logic-level simulator for MOS circuis.|/usr/ports/cad/irsim/pkg/DESCR|swallace@FreeBSD.org|cad||
+magic-6.4.4|/usr/ports/cad/magic|/usr/local|An interactive editor for VLSI layouts.|/usr/ports/cad/magic/pkg/DESCR|swallace@FreeBSD.org|cad|gmake-3.75|
 pcb-1.4.0|/usr/ports/cad/pcb|/usr/X11R6|X11 interactive printed circuit board layout system|/usr/ports/cad/pcb/pkg/DESCR|janek@gaja.ipan.lublin.pl|cad|m4-1.4|
 spice-3f4|/usr/ports/cad/spice|/usr/local|A general-purpose circuit simulator.|/usr/ports/cad/spice/pkg/DESCR|kaveman@magna.com.au|cad||
+cn-Wnn-4.2|/usr/ports/chinese/Wnn|/usr/local|A Japanese/Chinese/Korean input method (only Chinese built)|/usr/ports/chinese/Wnn/pkg/DESCR|asami@FreeBSD.ORG|chinese||
 cn-cless-290|/usr/ports/chinese/cless|/usr/local|A better pager utility (and it speaks Chinese)|/usr/ports/chinese/cless/pkg/DESCR|obrien@cs.ucdavis.edu|chinese misc||
 cn-celvis-1.3|/usr/ports/chinese/celvis|/usr/local|A vi/ex clone that speaks Chinese|/usr/ports/chinese/celvis/pkg/DESCR|obrien@cs.ucdavis.edu|chinese editors||
 cn-cxterm-5.0.3|/usr/ports/chinese/cxterm|/usr/X11R6|An xterm that speaks Chinese|/usr/ports/chinese/cxterm/pkg/DESCR|obrien@cs.ucdavis.edu|chinese x11||
@@ -80,6 +82,7 @@ xfsql-1.0|/usr/ports/databases/xfsql|/usr/X11R6|An xforms based mSQL interactive
 swig-1.0|/usr/ports/devel/SWIG|/usr/local|Simplified Wrapper and Interface Generator.|/usr/ports/devel/SWIG/pkg/DESCR|erich@FreeBSD.org|devel||
 autoconf-2.10|/usr/ports/devel/autoconf|/usr/local|Automatically configure source code on many Un*x platforms|/usr/ports/devel/autoconf/pkg/DESCR|torstenb@FreeBSD.ORG|devel||m4-1.4
 bcc-95.3.12|/usr/ports/devel/bcc|/usr/local|Bruce's C compiler (with as and ld); can do 16-bit code|/usr/ports/devel/bcc/pkg/DESCR|joerg@FreeBSD.org|devel lang||
+boehm-gc-4.10|/usr/ports/devel/boehm-gc|/usr/local|Garbage collection and memory leak detection for C and C++.|/usr/ports/devel/boehm-gc/pkg/DESCR|mmcg@cs.monash.edu.au|devel||
 cflow-2.0|/usr/ports/devel/cflow|/usr/local|A call graph generator for C code.|/usr/ports/devel/cflow/pkg/DESCR|dchapes@zeus.leitch.com|devel|gmake-3.75|bash-1.14.7
 cxref-1.2b|/usr/ports/devel/cxref|/usr/local|C program cross-referencing & documentation tool.|/usr/ports/devel/cxref/pkg/DESCR|tg@freebsd.org|devel|gmake-3.75|
 dmake-4.0|/usr/ports/devel/dmake|/usr/local|Another hyper make utility.|/usr/ports/devel/dmake/pkg/DESCR|nils@guru.ims.uni-stuttgart.de|devel|gmake-3.75|
@@ -130,17 +133,20 @@ vile-6.1|/usr/ports/editors/vile|/usr/local|VI Like Emacs.  a vi "workalike", wi
 vim-4.5|/usr/ports/editors/vim|/usr/local|A vi "workalike", with many additional features.|/usr/ports/editors/vim/pkg/DESCR|obrien@cs.ucdavis.edu|editors|gmake-3.75|
 xcoral-2.5|/usr/ports/editors/xcoral|/usr/X11R6|A multiwindow mouse-based text editor for X.|/usr/ports/editors/xcoral/pkg/DESCR|erich@FreeBSD.ORG|editors||
 xed-1.3|/usr/ports/editors/xed|/usr/X11R6|A text editor for X.|/usr/ports/editors/xed/pkg/DESCR|shanee@rabbit.augusta.de|editors x11|xpm-3.4i|xpm-3.4i
-xemacs-19.14|/usr/ports/editors/xemacs|/usr/local|XEmacs text editor binaries|/usr/ports/editors/xemacs/pkg/DESCR|me@FreeBSD.org|editors|gmake-3.75 jpeg-6 xpm-3.4i|jpeg-6 xpm-3.4i
+xemacs-19.14|/usr/ports/editors/xemacs|/usr/local|XEmacs text editor binaries|/usr/ports/editors/xemacs/pkg/DESCR|me@FreeBSD.org|editors|gmake-3.75 jpeg-6a xpm-3.4i|jpeg-6a xpm-3.4i
 xvile-6.1|/usr/ports/editors/xvile|/usr/local|VI Like Emacs, X11 version -- a fully "X aware" vi work-alike|/usr/ports/editors/xvile/pkg/DESCR|ports@FreeBSD.org|editors||
 cpmemu-0.2|/usr/ports/emulators/cpmemu|/usr/local|Cpm emulator.|/usr/ports/emulators/cpmemu/pkg/DESCR|ports@FreeBSD.org|emulators||
 cpmtools-1.1|/usr/ports/emulators/cpmtools|/usr/local|Utility to transfer files from/to CP/M (R) diskettes.|/usr/ports/emulators/cpmtools/pkg/DESCR|joerg@FreeBSD.org|emulators||
 hfs-0.37|/usr/ports/emulators/hfs|/usr/local|Read Macintosh HFS floppy disks, hard drives and CDROMs.|/usr/ports/emulators/hfs/pkg/DESCR|jmz@FreeBSD.org|emulators|gmake-3.75|
+ines-0.5|/usr/ports/emulators/ines|/usr/X11R6|Nintendo Entertainment System emlator for X|/usr/ports/emulators/ines/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|emulators||
 linux_lib-2.1|/usr/ports/emulators/linux_lib|/compat/linux/|These are the libraries necessary for linux compatibility.|/usr/ports/emulators/linux_lib/pkg/DESCR|erich@FreeBSD.org|emulators||
+mastergear-0.8|/usr/ports/emulators/mastergear|/usr/X11R6|SEGA Master System and Game Gear emulator for X|/usr/ports/emulators/mastergear/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|emulators||
 mtools-3.0|/usr/ports/emulators/mtools|/usr/local|A collection of tools for manipulating MSDOS files.|/usr/ports/emulators/mtools/pkg/DESCR|jmz@FreeBSD.org|emulators||
 pcemu-1.01a|/usr/ports/emulators/pcemu|/usr/local|An 8086 PC emulator, by David Hedley|/usr/ports/emulators/pcemu/pkg/DESCR|joerg@FreeBSD.org|emulators||
 sim6811-1.6|/usr/ports/emulators/sim6811|/usr/local|A Motorola 6811 simulator.|/usr/ports/emulators/sim6811/pkg/DESCR|erich@FreeBSD.ORG|emulators||
 spim-5.8|/usr/ports/emulators/spim|/usr/local|MIPS R2000 Simulator|/usr/ports/emulators/spim/pkg/DESCR|obrien@cs.ucdavis.edu|emulators||
 tkhfs-1.27|/usr/ports/emulators/tkhfs|/usr/local|A Tcl/Tk front end to the hfs program. |/usr/ports/emulators/tkhfs/pkg/DESCR|jmz@FreeBSD.org|emulators x11||hfs-0.37 tk-4.1
+vgb-0.7|/usr/ports/emulators/vgb|/usr/X11R6|Nintendo GameBoy(tm) emulator|/usr/ports/emulators/vgb/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|emulators||
 vmsbackup-3.0|/usr/ports/emulators/vmsbackup|/usr/local|Reads VMS BACKUP tapes.|/usr/ports/emulators/vmsbackup/pkg/DESCR|jmb@FreeBSD.org|emulators sysutils||
 wine-96.11.02|/usr/ports/emulators/wine|/usr/local|MS-Windows 3.1 emulator for Unix (Alpha release).|/usr/ports/emulators/wine/pkg/DESCR|se@FreeBSD.ORG|emulators x11|xpm-3.4i|xpm-3.4i
 x48-0.4.0|/usr/ports/emulators/x48|/usr/X11R6|an HP48sx emulator|/usr/ports/emulators/x48/pkg/DESCR|erich@FreeBSD.org|emulators||
@@ -161,6 +167,7 @@ xblackjack-2.2|/usr/ports/games/xblackjack|/usr/X11R6|an X11/Motif blackjack gam
 xboard-3.4.1|/usr/ports/games/xboard|/usr/local|X frontend for GNU Chess and the Internet Chess Server|/usr/ports/games/xboard/pkg/DESCR|markm@FreeBSD.ORG|games|autoconf-2.10|
 xboing-2.3|/usr/ports/games/xboing|/usr/X11R6|X windows arcade game.|/usr/ports/games/xboing/pkg/DESCR|ports@FreeBSD.ORG|games|xpm-3.4i|xpm-3.4i
 xchomp-pl1|/usr/ports/games/xchomp|/usr/X11R6|Pac-man-like game under X Windows|/usr/ports/games/xchomp/pkg/DESCR|ports@FreeBSD.ORG|games||
+xdino-5.3|/usr/ports/games/xdino|/usr/X11R6|dino puzzle game for X-Window|/usr/ports/games/xdino/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|games||
 xemeraldia-0.3|/usr/ports/games/xemeraldia|/usr/X11R6|A game of breaking blocks|/usr/ports/games/xemeraldia/pkg/DESCR|asami@FreeBSD.ORG|games||
 xevil-1.5|/usr/ports/games/xevil|/usr/local|A side-view, fast-action, kill everything type of game. |/usr/ports/games/xevil/pkg/DESCR|jmz@FreeBSD.org|games x11||
 xgalaga-1.6b|/usr/ports/games/xgalaga|/usr/X11R6|Galaga resurrected on X|/usr/ports/games/xgalaga/pkg/DESCR|asami@FreeBSD.ORG|games||
@@ -179,6 +186,7 @@ xonix-1.4|/usr/ports/games/xonix|/usr/X11R6|Try to win land without colliding wi
 xpacman-1.0|/usr/ports/games/xpacman|/usr/X11R6|An old action game.|/usr/ports/games/xpacman/pkg/DESCR|joerg@FreeBSD.org|games|unzip-5.2|
 xpilot-3.3.1|/usr/ports/games/xpilot|/usr/X11R6|xpilot(client) and xpilots(server).|/usr/ports/games/xpilot/pkg/DESCR|ports@FreeBSD.ORG|games||
 xpipeman-1.0|/usr/ports/games/xpipeman|/usr/X11R6|Connect the pipes to stop the leaks.|/usr/ports/games/xpipeman/pkg/DESCR|ports@FreeBSD.ORG|games||
+xpuyo-0.0|/usr/ports/games/xpuyo|/usr/X11R6|puyo-puyo, tetris like puzzle game for X-Window.|/usr/ports/games/xpuyo/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|games||
 xrisk-2.13|/usr/ports/games/xrisk|/usr/X11R6|A game for X Windows, much like the popular board game.|/usr/ports/games/xrisk/pkg/DESCR|ports@FreeBSD.ORG|games||
 xripple-1.0|/usr/ports/games/xripple|/usr/X11R6|Nifty X program to make the screen bottom ripple like a pool of water.|/usr/ports/games/xripple/pkg/DESCR|oly@world.std.com|games||
 xroach-4.4|/usr/ports/games/xroach|/usr/X11R6|Cockroaches hide under your windows.|/usr/ports/games/xroach/pkg/DESCR|markm@FreeBSD.ORG|x11 games||
@@ -189,16 +197,17 @@ xskat-1.6|/usr/ports/games/xskat|/usr/X11R6|Play the card game Skat.|/usr/ports/
 xsol-2.1.1|/usr/ports/games/xsol|/usr/X11R6|Solitaire.|/usr/ports/games/xsol/pkg/DESCR|ports@FreeBSD.ORG|games||
 xtetris-2.6|/usr/ports/games/xtetris|/usr/X11R6|X Window block dropping game.|/usr/ports/games/xtetris/pkg/DESCR|ports@FreeBSD.ORG|games||
 xtic-1.12|/usr/ports/games/xtic|/usr/X11R6|An X version of a simple but tricky board game|/usr/ports/games/xtic/pkg/DESCR|asami@FreeBSD.ORG|games||
+xtriangles-5.3|/usr/ports/games/xtriangles|/usr/X11R6|Triangles puzzle|/usr/ports/games/xtriangles/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|games||
 yamsweeper-1.9|/usr/ports/games/yamsweeper|/usr/X11R6|Yet Another Mine Sweeper.|/usr/ports/games/yamsweeper/pkg/DESCR|hidekazu@cs.titech.ac.jp|games||
-ImageMagick-3.7.7|/usr/ports/graphics/ImageMagick|/usr/local|An X11 package for display and interactive manipulation of images.|/usr/ports/graphics/ImageMagick/pkg/DESCR|ports@freebsd.org|graphics|jpeg-6 mpeg_lib-1.1 png-0.89c tiff-3.3|jpeg-6 mpeg_lib-1.1 png-0.89c tiff-3.3
+ImageMagick-3.7.7|/usr/ports/graphics/ImageMagick|/usr/local|An X11 package for display and interactive manipulation of images.|/usr/ports/graphics/ImageMagick/pkg/DESCR|ports@freebsd.org|graphics|jpeg-6a mpeg_lib-1.1 png-0.89c tiff-3.3|jpeg-6a mpeg_lib-1.1 png-0.89c tiff-3.3
 Mesa-1.2.7|/usr/ports/graphics/Mesa|/usr/X11R6|A graphics library similar to SGI's OpenGL.|/usr/ports/graphics/Mesa/pkg/DESCR|ports@FreeBSD.ORG|graphics||
 aero-1.5.2|/usr/ports/graphics/aero|/usr/X11R6|An X11 based modeler for povray|/usr/ports/graphics/aero/pkg/DESCR|erich@FreeBSD.org|graphics|fwf-3.8 xpm-3.4i|povray-2.2 xpm-3.4i
 pdore-6.0|/usr/ports/graphics/dore|/usr/X11R6|The Dynamic Object Rendering Environment.|/usr/ports/graphics/dore/pkg/DESCR|ports@FreeBSD.ORG|graphics|gmake-3.75|
 giftool-0.9|/usr/ports/graphics/giftool|/usr/local|a tool for GIF89a transparent option and interlace mode|/usr/ports/graphics/giftool/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|graphics||
 giftrans-1.12|/usr/ports/graphics/giftrans|/usr/local|a tool for GIF89a transparent option and inerlace mode.|/usr/ports/graphics/giftrans/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|graphics||
-gimp-0.54.1|/usr/ports/graphics/gimp|/usr/X11R6|General Image Manipulation Program|/usr/ports/graphics/gimp/pkg/DESCR|moro@race.u-tokyo.ac.jp|graphics|jpeg-6 png-0.89c tiff-3.3 xpm-3.4i|jpeg-6 png-0.89c tiff-3.3 xpm-3.4i
-hpscan-1.0|/usr/ports/graphics/hpscan|/usr/X11R6|HP scanner driver.|/usr/ports/graphics/hpscan/pkg/DESCR|nate@FreeBSD.org|graphics|jpeg-6|jpeg-6
-jpeg-6|/usr/ports/graphics/jpeg|/usr/local|IJG's jpeg compression utilities.|/usr/ports/graphics/jpeg/pkg/DESCR|ports@FreeBSD.ORG|graphics||
+gimp-0.54.1|/usr/ports/graphics/gimp|/usr/X11R6|General Image Manipulation Program|/usr/ports/graphics/gimp/pkg/DESCR|moro@race.u-tokyo.ac.jp|graphics|jpeg-6a png-0.89c tiff-3.3 xpm-3.4i|jpeg-6a png-0.89c tiff-3.3 xpm-3.4i
+hpscan-1.0|/usr/ports/graphics/hpscan|/usr/X11R6|HP scanner driver.|/usr/ports/graphics/hpscan/pkg/DESCR|nate@FreeBSD.org|graphics|jpeg-6a|jpeg-6a
+jpeg-6a|/usr/ports/graphics/jpeg|/usr/local|IJG's jpeg compression utilities.|/usr/ports/graphics/jpeg/pkg/DESCR|ports@FreeBSD.ORG|graphics||
 mpeg_lib-1.1|/usr/ports/graphics/mpeg-lib|/usr/local|A collection of C routines to decode MPEG movies.|/usr/ports/graphics/mpeg-lib/pkg/DESCR|ports@FreeBSD.ORG|graphics||
 mpeg2codec-1.1a|/usr/ports/graphics/mpeg2codec|/usr/X11R6|An MPEG-2 Encoder and Decoder.|/usr/ports/graphics/mpeg2codec/pkg/DESCR|charnier@lirmm.fr|graphics||
 mpeg2play-1.1b|/usr/ports/graphics/mpeg2play|/usr/X11R6|A program to play mpeg-2 movies on X displays.|/usr/ports/graphics/mpeg2play/pkg/DESCR|charnier@lirmm.fr|graphics||
@@ -220,16 +229,17 @@ vcg-1.30|/usr/ports/graphics/vcg|/usr/X11R6|A Visualization Tool for compiler gr
 xanim-2.70.6.3|/usr/ports/graphics/xanim|/usr/X11R6|play most popular animation formats and show pictures|/usr/ports/graphics/xanim/pkg/DESCR|ports@FreeBSD.ORG|graphics x11||
 xbmbrowser-5.1|/usr/ports/graphics/xbmbrowser|/usr/X11R6|View complete directories of X bitmaps and X pixmaps.|/usr/ports/graphics/xbmbrowser/pkg/DESCR|thomas@ghpc8.ihf.rwth-aachen.de|graphics|gmake-3.75 xpm-3.4i|xpm-3.4i
 xdl-2.1|/usr/ports/graphics/xdl|/usr/X11R6|Display DL animations on an X screen|/usr/ports/graphics/xdl/pkg/DESCR|asami@FreeBSD.ORG|graphics x11||
-xfig-3.1.4|/usr/ports/graphics/xfig|/usr/X11R6|A drawing program for X11|/usr/ports/graphics/xfig/pkg/DESCR|asami@FreeBSD.ORG|graphics x11|jpeg-6 xpm-3.4i|jpeg-6 xpm-3.4i
+xfig-3.1.4|/usr/ports/graphics/xfig|/usr/X11R6|A drawing program for X11|/usr/ports/graphics/xfig/pkg/DESCR|asami@FreeBSD.ORG|graphics x11|jpeg-6a xpm-3.4i|jpeg-6a xpm-3.4i
 xfractint-3.00|/usr/ports/graphics/xfractint|/usr/local|The Unix port of fractint.|/usr/ports/graphics/xfractint/pkg/DESCR|ports@FreeBSD.ORG|graphics||
 xgrasp-1.7d|/usr/ports/graphics/xgrasp|/usr/X11R6|Display GL animations on X screen|/usr/ports/graphics/xgrasp/pkg/DESCR|asami@FreeBSD.ORG|graphics x11||
 xli-1.16|/usr/ports/graphics/xli|/usr/X11R6|xli, xsetbg, xview, xlito - utilities to display images on X11.|/usr/ports/graphics/xli/pkg/DESCR|ports@FreeBSD.ORG|graphics x11||
+xmandel-1.0|/usr/ports/graphics/xmandel|/usr/X11R6|Window based interface to Mandelbrot sets and Julia sets|/usr/ports/graphics/xmandel/pkg/DESCR|andreas@marvin.robin.de|graphics||
 xmfract-1.4|/usr/ports/graphics/xmfract|/usr/X11R6|the dos based `fractint' with an X/Motif front end|/usr/ports/graphics/xmfract/pkg/DESCR|erich@FreeBSD.org|graphics||
-xmorph-96.07.12|/usr/ports/graphics/xmorph|/usr/X11R6|a digital image warping program|/usr/ports/graphics/xmorph/pkg/DESCR|erich@FreeBSD.org|graphics||
-xpaint-2.4.6|/usr/ports/graphics/xpaint|/usr/X11R6|A simple paint program.|/usr/ports/graphics/xpaint/pkg/DESCR|ports@FreeBSD.ORG|graphics x11|jpeg-6 png-0.89c tiff-3.3 xpm-3.4i|jpeg-6 png-0.89c tiff-3.3 xpm-3.4i
+xmorph-96.10.02|/usr/ports/graphics/xmorph|/usr/X11R6|a digital image warping program|/usr/ports/graphics/xmorph/pkg/DESCR|erich@FreeBSD.org|graphics||
+xpaint-2.4.6|/usr/ports/graphics/xpaint|/usr/X11R6|A simple paint program.|/usr/ports/graphics/xpaint/pkg/DESCR|ports@FreeBSD.ORG|graphics x11|jpeg-6a png-0.89c tiff-3.3 xpm-3.4i|jpeg-6a png-0.89c tiff-3.3 xpm-3.4i
 xpdf-0.5|/usr/ports/graphics/xpdf|/usr/X11R6|Display tool for PDF files|/usr/ports/graphics/xpdf/pkg/DESCR|chuckr@glue.umd.edu|graphics||
 xpm-3.4i|/usr/ports/graphics/xpm|/usr/X11R6|The X Pixmap library.|/usr/ports/graphics/xpm/pkg/DESCR|ports@FreeBSD.ORG|graphics x11||
-xv-3.10a|/usr/ports/graphics/xv|/usr/X11R6|An X11 program that displays images of various formats.|/usr/ports/graphics/xv/pkg/DESCR|ports@FreeBSD.ORG|graphics x11|jpeg-6 tiff-3.3|jpeg-6 tiff-3.3
+xv-3.10a|/usr/ports/graphics/xv|/usr/X11R6|An X11 program that displays images of various formats.|/usr/ports/graphics/xv/pkg/DESCR|ports@FreeBSD.ORG|graphics x11|jpeg-6a tiff-3.3|jpeg-6a tiff-3.3
 jp-Canna-3.2.2|/usr/ports/japanese/Canna|/usr/local|Kana-Kanji conversion system|/usr/ports/japanese/Canna/pkg/DESCR|max@FreeBSD.ORG|japanese||
 jp-Wnn-4.2|/usr/ports/japanese/Wnn|/usr/local|A Japanese/Chinese/Korean input method (only Japanese built)|/usr/ports/japanese/Wnn/pkg/DESCR|asami@FreeBSD.ORG|japanese||
 jp-chimera-1.65|/usr/ports/japanese/chimera|/usr/X11R6|X/Athena World-Wide Web client + kanji patch|/usr/ports/japanese/chimera/pkg/DESCR|asami@FreeBSD.ORG|japanese www||
@@ -326,7 +336,7 @@ tclX-7.4a1|/usr/ports/lang/tclX74|/usr/local|Extended TCL|/usr/ports/lang/tclX74
 tclX-7.5.2|/usr/ports/lang/tclX75|/usr/local|Extended TCL|/usr/ports/lang/tclX75/pkg/DESCR|jkh@FreeBSD.org|lang|tk-4.1|tk-4.1
 xpl486-4.1|/usr/ports/lang/xpl|/usr/local|The XPL compiler generator system|/usr/ports/lang/xpl/pkg/DESCR|imdave@synet.net|lang|gmake-3.75|
 elm-2.4ME+28|/usr/ports/mail/elm|/usr/local|ELM Mail User Agent|/usr/ports/mail/elm/pkg/DESCR|ache@FreeBSD.ORG|mail||
-exim-0.57|/usr/ports/mail/exim|/usr/local|High performance MTA for Unix systems on the Internet.|/usr/ports/mail/exim/pkg/DESCR|markm@FreeBSD.ORG|mail||
+exim-1.58|/usr/ports/mail/exim|/usr/local|High performance MTA for Unix systems on the Internet.|/usr/ports/mail/exim/pkg/DESCR|markm@FreeBSD.ORG|mail||
 exmh-1.6.9|/usr/ports/mail/exmh|/usr/local|X11/TK based mail reader front end to MH.|/usr/ports/mail/exmh/pkg/DESCR|peter@FreeBSD.org|mail||mh-6.8.4 mm-2.7 tk-4.1
 fetchmail-1.9.9|/usr/ports/mail/fetchmail|/usr/local|batch mail retrieval/forwarding utility for pop2, pop3, apop, imap|/usr/ports/mail/fetchmail/pkg/DESCR|ve@sci.fi|mail||
 mailagent-3.0.44|/usr/ports/mail/mailagent|/usr/local|A sophisticated automatic mail-processing tool.|/usr/ports/mail/mailagent/pkg/DESCR|max@FreeBSD.ORG|mail|perl-5.003|perl-5.003
@@ -367,7 +377,7 @@ xvgr-2.10.1|/usr/ports/math/xvgr|/usr/X11R6|ACE/gr - graphics for exploratory da
 imm-3.3|/usr/ports/mbone/imm|/usr/local|Internet Image Multicaster (and receiver).|/usr/ports/mbone/imm/pkg/DESCR|ports@FreeBSD.ORG|mbone|tcl-7.3 tk-3.6|tcl-7.3 tk-3.6
 mbone_vcr-1.3a2|/usr/ports/mbone/mbone_vcr|/usr/X11R6|A tool to record and play back multicast sessions|/usr/ports/mbone/mbone_vcr/pkg/DESCR|fenner@FreeBSD.org|mbone|tk-4.1|tk-4.1
 nte-1.5a23|/usr/ports/mbone/nte|/usr/X11R6|Multicast Network Text Editor|/usr/ports/mbone/nte/pkg/DESCR|fenner@FreeBSD.org|mbone|gmake-3.75 tk-4.1|tk-4.1
-nv-3.3b|/usr/ports/mbone/nv|/usr/local|MBONE video tool.|/usr/ports/mbone/nv/pkg/DESCR|ports@FreeBSD.ORG|mbone|tcl-7.3 tk-3.6|tcl-7.3 tk-3.6
+nv-3.3b|/usr/ports/mbone/nv|/usr/local|MBONE video tool.|/usr/ports/mbone/nv/pkg/DESCR|ports@FreeBSD.ORG|mbone|spigot-1.6 tcl-7.3 tk-3.6|spigot-1.6 tcl-7.3 tk-3.6
 rtpmon-1.0a5|/usr/ports/mbone/rtpmon|/usr/X11R6|A program to montior loss in multicast sessions|/usr/ports/mbone/rtpmon/pkg/DESCR|fenner@FreeBSD.org|mbone|tk-4.1|tk-4.1
 sdr-2.3a1|/usr/ports/mbone/sdr|/usr/X11R6|MBone Session Directory|/usr/ports/mbone/sdr/pkg/DESCR|fenner@FreeBSD.org|mbone|gmake-3.75 tk-4.1|tk-4.1
 speak_freely-6.1b|/usr/ports/mbone/speak_freely|/usr/local|Voice Communication Over Data Networks.|/usr/ports/mbone/speak_freely/pkg/DESCR|ache@FreeBSD.ORG|mbone audio security|gsm-1.0.10|gsm-1.0.10
@@ -396,6 +406,7 @@ less-321|/usr/ports/misc/less|/usr/local|a better pager utility|/usr/ports/misc/
 linuxls-3.12.0.2|/usr/ports/misc/linuxls|/usr/local|FreeBSD port of Linux Slackware colorized GNU `ls'.|/usr/ports/misc/linuxls/pkg/DESCR|bmc@WillsCreek.COM|misc||
 logsurfer-1.41|/usr/ports/misc/logsurfer|/usr/local|Processes logfiles and perform certain actions.|/usr/ports/misc/logsurfer/pkg/DESCR|shanee@rabbit.augusta.de|misc||
 mc-3.2.1|/usr/ports/misc/mc|/usr/local|Midnight Commander, a free Norton Commander Clone|/usr/ports/misc/mc/pkg/DESCR|torstenb@FreeBSD.ORG|misc||
+mgdiff-1.0|/usr/ports/misc/mgdiff|/usr/X11R6|A graphical front end to the Unix diff command|/usr/ports/misc/mgdiff/pkg/DESCR|andreas@marvin.robin.de|misc||
 mmv-1.01b|/usr/ports/misc/mmv|/usr/local|move/copy/append/link multiple files with sophisticated wildcard matching|/usr/ports/misc/mmv/pkg/DESCR|me@FreeBSD.org|misc||
 mshell-1.0|/usr/ports/misc/mshell|/usr/local|A Unix menuing shell.|/usr/ports/misc/mshell/pkg/DESCR|jmz@FreeBSD.org|misc||
 p5-Array-PrintCols-1.2|/usr/ports/misc/p5-Array-PrintCols|/usr/local|perl5 module to print arrays of elements in sorted columns.|/usr/ports/misc/p5-Array-PrintCols/pkg/DESCR|jfitz@FreeBSD.ORG|misc|perl-5.003|perl-5.003
@@ -413,13 +424,14 @@ tkman-1.8|/usr/ports/misc/tkman|/usr/local|A Tcl/Tk based manual browser|/usr/po
 trans-1.11|/usr/ports/misc/trans|/usr/local|Character Encoding Converter Generator Package.|/usr/ports/misc/trans/pkg/DESCR|ache@astral.msk.su|misc russian||
 unclutter-8|/usr/ports/misc/unclutter|/usr/X11R6|Remove idle cursor image from screen.|/usr/ports/misc/unclutter/pkg/DESCR|shanee@rabbit.augusta.de|misc||
 xcalendar-4.0|/usr/ports/misc/xcalendar|/usr/X11R6|calendar with a notebook for X11|/usr/ports/misc/xcalendar/pkg/DESCR|mita@jp.FreeBSD.org|misc||
+xgas-1.0|/usr/ports/misc/xgas|/usr/X11R6|The animated simulation of an ideal gas|/usr/ports/misc/xgas/pkg/DESCR|nakai@mlab.t.u-tokyo.ac.jp|misc||
 zorro-1.1.8|/usr/ports/misc/zorro|/usr/local|A simple to-do list manager.|/usr/ports/misc/zorro/pkg/DESCR|shanee@rabbit.augusta.de|misc|tk-4.1|tk-4.1
 archie-1.4.1|/usr/ports/net/archie|/usr/local|Prospero client for the archie service.|/usr/ports/net/archie/pkg/DESCR|torstenb@FreeBSD.ORG|net||
 ascend-radius-961015|/usr/ports/net/ascend-radius|/usr/local|The Ascend modified Radius Daemon|/usr/ports/net/ascend-radius/pkg/DESCR|jfitz@FreeBSD.ORG|net||
 cvsup-13.5|/usr/ports/net/cvsup|/usr/local|A network file distribution and update system for CVS repositories.|/usr/ports/net/cvsup/pkg/DESCR|jdp@FreeBSD.org|devel net|modula-3-3.6 modula-3-lib-3.6|modula-3-lib-3.6
-dgd-1.0.91|/usr/ports/net/dgd|/usr/local|Dworkin's Generic Driver (network server)|/usr/ports/net/dgd/pkg/DESCR|adam@veda.is|net lang||
-dgd-lpmud-2.4.5|/usr/ports/net/dgd-lpmud|/usr/local|LPmud mudlib, for use with DGD.|/usr/ports/net/dgd-lpmud/pkg/DESCR|adam@veda.is|net devel games||dgd-1.0.91
-dgd-net-1.0.91|/usr/ports/net/dgd-net|/usr/local|Dworkin's Generic Driver (network server) + extra networking support|/usr/ports/net/dgd-net/pkg/DESCR|adam@veda.is|net lang||
+dgd-1.0.93|/usr/ports/net/dgd|/usr/local|Dworkin's Generic Driver (network server)|/usr/ports/net/dgd/pkg/DESCR|adam@veda.is|net lang||
+dgd-lpmud-2.4.5|/usr/ports/net/dgd-lpmud|/usr/local|LPmud mudlib, for use with DGD.|/usr/ports/net/dgd-lpmud/pkg/DESCR|adam@veda.is|net devel games||dgd-1.0.93
+dgd-net-1.0.93|/usr/ports/net/dgd-net|/usr/local|Dworkin's Generic Driver (network server) + extra networking support|/usr/ports/net/dgd-net/pkg/DESCR|adam@veda.is|net lang||
 bsddip-1.02|/usr/ports/net/dip|/usr/local|Dialup IP program|/usr/ports/net/dip/pkg/DESCR|joerg@FreeBSD.ORG|net||
 fspclient.0.0.h|/usr/ports/net/fspclient|/usr/local|A client for the fsp service.|/usr/ports/net/fspclient/pkg/DESCR|ache@FreeBSD.ORG|net||
 ftptool-4.6|/usr/ports/net/ftptool|/usr/X11R6|Graphic ftp shell based on xview|/usr/ports/net/ftptool/pkg/DESCR|janek@gaja.ipan.lublin.pl|net|xview-config-3.2.1 xview-lib-3.2.1|xview-config-3.2.1 xview-lib-3.2.1
@@ -452,7 +464,7 @@ tintin-1.5.6|/usr/ports/net/tintin++|/usr/local|A client program to help playing
 tf-35a16|/usr/ports/net/tinyfugue|/usr/local|A popular programmable MUD client, with macro support and more.|/usr/ports/net/tinyfugue/pkg/DESCR|mike@binghamton.edu|net games||
 trafshow-2.0|/usr/ports/net/trafshow|/usr/local|Full screen visualization of the network traffic.|/usr/ports/net/trafshow/pkg/DESCR|igor@zynaps.ru|net||
 ucd-snmp-3.1|/usr/ports/net/ucd-snmp|/usr/local|An extendable SNMP implimentation |/usr/ports/net/ucd-snmp/pkg/DESCR|gpalmer@FreeBSD.ORG|net||
-freeWAIS-0.3|/usr/ports/net/wais|/usr/local|freeWAIS from CNIDR|/usr/ports/net/wais/pkg/DESCR|ports@FreeBSD.ORG|net|gmake-3.75|
+freeWAIS-0.5|/usr/ports/net/wais|/usr/local|freeWAIS from CNIDR|/usr/ports/net/wais/pkg/DESCR|ports@FreeBSD.ORG|net||
 wide-dhcp-1.3b|/usr/ports/net/wide-dhcp|/usr/local|Dynamic Host Configuration Protocol, WIDE-Implimentation.|/usr/ports/net/wide-dhcp/pkg/DESCR|sanpei@yy.cs.keio.ac.jp|net||
 wu-ftpd-2.4|/usr/ports/net/wu-ftpd|/usr/local|A replacement ftp server for Un*x systems.|/usr/ports/net/wu-ftpd/pkg/DESCR|ports@FreeBSD.ORG|net||
 xarchie-2.0.10|/usr/ports/net/xarchie|/usr/X11R6|X11 front-end program for the archie network search service|/usr/ports/net/xarchie/pkg/DESCR|ports@FreeBSD.ORG|net||
@@ -482,7 +494,7 @@ sam-4.3|/usr/ports/plan9/sam|/usr/local|A unix version of Rob Pike's editor for 
 libXgFonts-1.0|/usr/ports/plan9/Xg|/usr/X11R6|These are the UNICODE fonts for use with 9term and sam.|/usr/ports/plan9/Xg/pkg/DESCR|erich@FreeBSD.org|plan9||
 a2ps-a4-4.3|/usr/ports/print/a2ps|/usr/local|Formats an ascii file for printing on a postscript printer.|/usr/ports/print/a2ps/pkg/DESCR|jmz@FreeBSD.org|print||
 afm-1.0|/usr/ports/print/afm|/usr/local|Adobe Font Metrics.|/usr/ports/print/afm/pkg/DESCR|ports@FreeBSD.ORG|print||
-apsfilter-4.9.3|/usr/ports/print/apsfilter|/usr/local|lpd magic print filter with auto file type recognition|/usr/ports/print/apsfilter/pkg/DESCR|andreas@klemm.gtn.com|print||ghostscript-4.03 jpeg-6 netpbm-94.3.1 tiff-3.3 transfig-3.1.2 xpm-3.4i
+apsfilter-4.9.3|/usr/ports/print/apsfilter|/usr/local|lpd magic print filter with auto file type recognition|/usr/ports/print/apsfilter/pkg/DESCR|andreas@klemm.gtn.com|print||ghostscript-4.03 jpeg-6a netpbm-94.3.1 tiff-3.3 transfig-3.1.2 xpm-3.4i
 dvi2xx-0.51a9|/usr/ports/print/dvi2xx|/usr/local|Convert dvi files to HP LaserJet or IBM 3812 format.|/usr/ports/print/dvi2xx/pkg/DESCR|jmz@FreeBSD.ORG|print||
 dvips-5.58|/usr/ports/print/dvips|/usr/local|Convert a TeX DVI file to PostScript.|/usr/ports/print/dvips/pkg/DESCR|jmz@FreeBSD.org|print||
 dviselect-1.3|/usr/ports/print/dviselect|/usr/local|Extract pages from DVI files.|/usr/ports/print/dviselect/pkg/DESCR|jmz@FreeBSD.org|print||
@@ -495,7 +507,7 @@ html2latex-0.9|/usr/ports/print/html2latex|/usr/local|convert HTML document into
 latex2e-96.06|/usr/ports/print/latex|/usr/local|LaTeX2e <1995/12/01>|/usr/ports/print/latex/pkg/DESCR|jmz@FreeBSD.org|print|tex-3.1415|tex-3.1415
 latex-2.09|/usr/ports/print/latex209|/usr/local|LaTeX and slitex, the ``old'' version.|/usr/ports/print/latex209/pkg/DESCR|jmz@FreeBSD.org|print|tex-3.1415|tex-3.1415
 lout-3.08|/usr/ports/print/lout|/usr/local|A document creation system like LaTeX, but smaller|/usr/ports/print/lout/pkg/DESCR|oly@world.std.com|print|gmake-3.75|
-lyx-0.10.6|/usr/ports/print/lyx|/usr/local|LyX - A graphical frontend for LaTeX|/usr/ports/print/lyx/pkg/DESCR|andreas@klemm.gtn.com|print|gmake-3.75 teTeX-0.4 xforms-0.81 xpm-3.4i|ispell-3.1.20 teTeX-0.4 xforms-0.81 xpm-3.4i
+lyx-0.10.7|/usr/ports/print/lyx|/usr/local|LyX - A graphical frontend for LaTeX|/usr/ports/print/lyx/pkg/DESCR|andreas@klemm.gtn.com|print|gmake-3.75 teTeX-0.4 xforms-0.81 xpm-3.4i|ispell-3.1.20 teTeX-0.4 xforms-0.81 xpm-3.4i
 makeindex-3.0.8|/usr/ports/print/makeindex|/usr/local|A general purpose, formatter-independent index processor.|/usr/ports/print/makeindex/pkg/DESCR|jmz@FreeBSD.org|print||
 mltex-3.1415|/usr/ports/print/mltex|/usr/local|Multilingual TeX, METAFONT, LaTeX 2e + french.sty|/usr/ports/print/mltex/pkg/DESCR|jmz@FreeBSD.org|print||
 mp-letter-3.0.1|/usr/ports/print/mp|/usr/local|A PostScript printing util for ASCII files, email, USENET news articles, etc.|/usr/ports/print/mp/pkg/DESCR|obrien@cs.ucdavis.edu|print|gmake-3.75|
@@ -507,22 +519,22 @@ teTeX-0.4|/usr/ports/print/teTeX|/usr/local|TeX distribution for UNIX compatible
 tex-3.1415|/usr/ports/print/tex|/usr/local|TeX and METAFONT.|/usr/ports/print/tex/pkg/DESCR|jmz@FreeBSD.org|print||
 texinfo-2.124|/usr/ports/print/texinfo|/usr/local|Typeset Texinfo files for printing. Uses TeX.|/usr/ports/print/texinfo/pkg/DESCR|jmz@FreeBSD.org|print|tex-3.1415|tex-3.1415
 tr2latex-2.2|/usr/ports/print/tr2latex|/usr/local|Convert a document from troff to LaTeX.|/usr/ports/print/tr2latex/pkg/DESCR|thomas@ghpc8.ihf.rwth-aachen.de|print||
-transfig-3.1.2|/usr/ports/print/transfig|/usr/X11R6|Tools to convert Xfig's .fig files.|/usr/ports/print/transfig/pkg/DESCR|chuckr@freebsd.org|print|jpeg-6 xpm-3.4i|jpeg-6 xpm-3.4i
+transfig-3.1.2|/usr/ports/print/transfig|/usr/X11R6|Tools to convert Xfig's .fig files.|/usr/ports/print/transfig/pkg/DESCR|chuckr@freebsd.org|print|jpeg-6a xpm-3.4i|jpeg-6a xpm-3.4i
 unroff-1.0|/usr/ports/print/unroff|/usr/local|A programmable troff translator with backend for HTML.|/usr/ports/print/unroff/pkg/DESCR|thomas@ghpc8.ihf.rwth-aachen.de|print|elk-3.0.2|elk-3.0.2
 virtualpaper-1.4|/usr/ports/print/virtualpaper|/usr/local|Virtual Paper document storage and viewing software.|/usr/ports/print/virtualpaper/pkg/DESCR|jdp@FreeBSD.org|print|modula-3-3.6 modula-3-lib-3.6|modula-3-lib-3.6
 xdvi-pl20|/usr/ports/print/xdvi|/usr/X11R6|A DVI Previewer for the X Window System.|/usr/ports/print/xdvi/pkg/DESCR|jmz@FreeBSD.org|print|gmake-3.75|
 xtexshell-0.91|/usr/ports/print/xtexshell|/usr/local|A graphical TeX shell.|/usr/ports/print/xtexshell/pkg/DESCR|ports@FreeBSD.ORG|print|tcl-7.3 tclX-7.3b tk-3.6|tcl-7.3 tclX-7.3b tk-3.6
 ru-d1489-1.2|/usr/ports/russian/d1489|/usr/local|point-to-point Alt(cp866)<->koi8-r decoder and font converter acc. to RFC1489|/usr/ports/russian/d1489/pkg/DESCR|ache@FreeBSD.ORG|russian||
-ru-X11-3.1.2|/usr/ports/russian/X.language|/usr/X11R6|Setup X locale/nls/keyboard/fonts for russian language (koi8-r)|/usr/ports/russian/X.language/pkg/DESCR|ache@FreeBSD.ORG|russian x11||XFree86-3.2
+ru-X11-3.2|/usr/ports/russian/X.language|/usr/X11R6|Setup X locale/nls/keyboard/fonts for russian language (koi8-r)|/usr/ports/russian/X.language/pkg/DESCR|ache@FreeBSD.ORG|russian x11||XFree86-3.2
 ru-elm-2.4ME|/usr/ports/russian/elm.language|/usr/local|Tune Elm with MIME for KOI8-R defaults|/usr/ports/russian/elm.language/pkg/DESCR|ache@FreeBSD.org|russian mail||elm-2.4ME+28
-ru-netscape-2.02|/usr/ports/russian/netscape2.language|/usr/X11R6|Tune netscape2 to work with russian (koi8-r) fonts|/usr/ports/russian/netscape2.language/pkg/DESCR|ache@FreeBSD.ORG|russian www x11||XFree86-3.2 netscape-2.02 ru-X11-3.1.2
-ru-netscape-3.01|/usr/ports/russian/netscape3.language|/usr/X11R6|Tune netscape3.01 to work with russian (koi8-r) fonts|/usr/ports/russian/netscape3.language/pkg/DESCR|ache@FreeBSD.ORG|russian www x11||XFree86-3.2 netscape-3.01 ru-X11-3.1.2
+ru-netscape-2.02|/usr/ports/russian/netscape2.language|/usr/X11R6|Tune netscape2 to work with russian (koi8-r) fonts|/usr/ports/russian/netscape2.language/pkg/DESCR|ache@FreeBSD.ORG|russian www x11||XFree86-3.2 netscape-2.02 ru-X11-3.2
+ru-netscape-3.01|/usr/ports/russian/netscape3.language|/usr/X11R6|Tune netscape3.01 to work with russian (koi8-r) fonts|/usr/ports/russian/netscape3.language/pkg/DESCR|ache@FreeBSD.ORG|russian www x11||XFree86-3.2 netscape-3.01 ru-X11-3.2
 ru-pgp-2.6.3ia|/usr/ports/russian/pgp.language|/usr/local|Russian language module for PGP|/usr/ports/russian/pgp.language/pkg/DESCR|ache@FreeBSD.ORG|russian|unzip-5.2|pgp-2.6.2
 bash-1.14.7|/usr/ports/shells/bash|/usr/local|The GNU Borne Again Shell.|/usr/ports/shells/bash/pkg/DESCR|ache@FreeBSD.ORG|shells||
 es-0.9a1|/usr/ports/shells/es|/usr/local|An extensible shell, derived from plan9's rc|/usr/ports/shells/es/pkg/DESCR|erich@FreeBSD.org|shells||
 pdksh-5.2.12|/usr/ports/shells/pdksh|/usr/local|The Public Domain Korn Shell.|/usr/ports/shells/pdksh/pkg/DESCR|tg@freebsd.org|shells||
 tcsh-6.06|/usr/ports/shells/tcsh|/usr/local|An extended C-shell with many useful features.|/usr/ports/shells/tcsh/pkg/DESCR|ache@FreeBSD.ORG|shells||
-zsh-3.0.0|/usr/ports/shells/zsh|/usr/local|The Z shell.|/usr/ports/shells/zsh/pkg/DESCR|torstenb@FreeBSD.ORG|shells||
+zsh-3.0.1|/usr/ports/shells/zsh|/usr/local|The Z shell.|/usr/ports/shells/zsh/pkg/DESCR|torstenb@FreeBSD.ORG|shells||
 SSLeay-0.6.4|/usr/ports/security/SSLeay|/usr/local|SSL and crypto library (Excluding DES, MD2 and MD5)|/usr/ports/security/SSLeay/pkg/DESCR|markm@FreeBSD.ORG|devel security||
 donkey-0.5|/usr/ports/security/donkey|/usr/local|An alternative for S/KEY's key command|/usr/ports/security/donkey/pkg/DESCR|max@FreeBSD.ORG|security||
 fwtk-1.3|/usr/ports/security/fwtk|/usr/local|A toolkit used for building firewalls based on proxy services|/usr/ports/security/fwtk/pkg/DESCR|gpalmer@FreeBSD.ORG|security net||
@@ -532,8 +544,8 @@ p5-Crypt-IDEA-1.0|/usr/ports/security/p5-Crypt-IDEA|/usr/local|perl5 interface t
 p5-MD5-1.7|/usr/ports/security/p5-MD5|/usr/local|perl5 interface to the RSA Data Security Inc. MD5 Message-Digest Algorithm|/usr/ports/security/p5-MD5/pkg/DESCR|jfitz@FreeBSD.ORG|security|perl-5.003|perl-5.003
 p5-PGP-0.2a|/usr/ports/security/p5-PGP|/usr/local|perl5 module to work with PGP messages.|/usr/ports/security/p5-PGP/pkg/DESCR|jfitz@FreeBSD.ORG|security|gmake-3.75 perl-5.003 pgp-2.6.2 unzip-5.2|perl-5.003
 pgp-2.6.2|/usr/ports/security/pgp|/usr/local|PGP MIT or International version - Public-Key encryption for the masses|/usr/ports/security/pgp/pkg/DESCR|ache@FreeBSD.ORG|security|gmake-3.75 unzip-5.2|
-pidentd-2.7.1|/usr/ports/security/pidentd|/usr/local|A RFC1413 identification server.|/usr/ports/security/pidentd/pkg/DESCR|torstenb@FreeBSD.ORG|security net||
-ssh-1.2.16|/usr/ports/security/ssh|/usr/local|Secure shell client and server (remote login program).|/usr/ports/security/ssh/pkg/DESCR|torstenb@FreeBSD.ORG|security net|perl-5.003 tcp_wrappers-7.4|tcp_wrappers-7.4
+pidentd-2.7.2|/usr/ports/security/pidentd|/usr/local|A RFC1413 identification server.|/usr/ports/security/pidentd/pkg/DESCR|torstenb@FreeBSD.ORG|security net||
+ssh-1.2.16|/usr/ports/security/ssh|/usr/local|Secure shell client and server (remote login program).|/usr/ports/security/ssh/pkg/DESCR|torstenb@FreeBSD.ORG|security net||
 sudo-1.5|/usr/ports/security/sudo|/usr/local|Allow others to run commands as root.|/usr/ports/security/sudo/pkg/DESCR|erich@rrnet.com|security||
 tcp_wrappers-7.4|/usr/ports/security/tcp_wrapper|/usr/local|This is the TCP/IP daemon wrapper package.|/usr/ports/security/tcp_wrapper/pkg/DESCR|torstenb@FreeBSD.ORG|security net||
 vscan-1.0.2|/usr/ports/security/vscan|/usr/local|scan MS-DOS files for viruses|/usr/ports/security/vscan/pkg/DESCR|obrien@cs.ucdavis.edu|security||
@@ -551,15 +563,15 @@ xdu-3.0|/usr/ports/sysutils/xdu|/usr/X11R6|Graphically display output of du|/usr
 xperfmon++-1.33|/usr/ports/sysutils/xperfmon|/usr/X11R6|A graphical X11 system performance monitor.|/usr/ports/sysutils/xperfmon/pkg/DESCR|Lars_Koeller@odie.physik2.uni-rostock.de|sysutils x11||
 xsysinfo-1.3|/usr/ports/sysutils/xsysinfo|/usr/X11R6|A system information display tool.|/usr/ports/sysutils/xsysinfo/pkg/DESCR|jdli@csie.nctu.edu.tw|sysutils||
 xsysstats-1.34|/usr/ports/sysutils/xsysstats|/usr/X11R6|A system information display tool|/usr/ports/sysutils/xsysstats/pkg/DESCR|asami@FreeBSD.ORG|sysutils x11||
-mosaic-2.7b5|/usr/ports/www/Mosaic|/usr/X11R6|A World Wide Web browser.|/usr/ports/www/Mosaic/pkg/DESCR|ports@FreeBSD.ORG|www|jpeg-6 png-0.89c|jpeg-6 png-0.89c
+mosaic-2.7b5|/usr/ports/www/Mosaic|/usr/X11R6|A World Wide Web browser.|/usr/ports/www/Mosaic/pkg/DESCR|ports@FreeBSD.ORG|www|jpeg-6a png-0.89c|jpeg-6a png-0.89c
 analog-1.92.1|/usr/ports/www/analog|/usr/local|An extremely fast program for analysing WWW logfiles.|/usr/ports/www/analog/pkg/DESCR|jfitz@freebsd.org|www||
 apache-1.1.1|/usr/ports/www/apache|/usr/local|The extremely popular Apache http server.  Very fast, very clean.|/usr/ports/www/apache/pkg/DESCR|ache@freebsd.org|www||
-arena-b2b|/usr/ports/www/arena|/usr/local|Experimental HTML 3 browser, supports math and style sheets.|/usr/ports/www/arena/pkg/DESCR|ache@FreeBSD.ORG|www|jpeg-6 png-0.89c|jpeg-6 png-0.89c
+arena-i18n-beta3b|/usr/ports/www/arena|/usr/local|Experimental HTML 3 browser, supports math and style sheets.|/usr/ports/www/arena/pkg/DESCR|ache@FreeBSD.ORG|www|jpeg-6a png-0.89c|jpeg-6a png-0.89c
 ashe-1.1.2|/usr/ports/www/ashe|/usr/X11R6|A simple HTML editor.|/usr/ports/www/ashe/pkg/DESCR|ports@FreeBSD.ORG|www||
 cached-1.4.3|/usr/ports/www/cached|/usr/local|Harvest cached - high performance proxy caching for Mosaic, Netscape, ...|/usr/ports/www/cached/pkg/DESCR|andreas@klemm.gtn.com|www||
 chimera-1.65|/usr/ports/www/chimera|/usr/X11R6|X/Athena World-Wide Web client|/usr/ports/www/chimera/pkg/DESCR|asami@FreeBSD.ORG|www||
 comline-4.0D|/usr/ports/www/comline|/usr/local|W3C Command Line WWW Tool|/usr/ports/www/comline/pkg/DESCR|ache@freebsd.org|www||
-gn-2.24|/usr/ports/www/gn|/usr/local|GN gopher and http server|/usr/ports/www/gn/pkg/DESCR|adam@veda.is|www net|freeWAIS-0.3 gmake-3.75|
+gn-2.24|/usr/ports/www/gn|/usr/local|GN gopher and http server|/usr/ports/www/gn/pkg/DESCR|adam@veda.is|www net|freeWAIS-0.5|
 harvest-1.4.2|/usr/ports/www/harvest|/usr/local|Collect information from all over the Internet|/usr/ports/www/harvest/pkg/DESCR|andreas@klemm.gtn.com|www||
 javac_netscape-1.0.1|/usr/ports/www/javac_netscape|/usr/local|Java compiler using Netscape 3.0+.|/usr/ports/www/javac_netscape/pkg/DESCR|smpatel@umiacs.umd.edu|www||jdk-1.0.2 netscape-3.01
 jdk-1.0.2|/usr/ports/www/jdk|/usr/local|Java Developers Kit, Class Libraries|/usr/ports/www/jdk/pkg/DESCR|smpatel@freebsd.org|www devel||
@@ -572,7 +584,7 @@ netscape-2.02|/usr/ports/www/netscape2|/usr/local|netscape-2 web-surfboard|/usr/
 netscape-3.01|/usr/ports/www/netscape3|/usr/local|netscape-3.01 web-surfboard|/usr/ports/www/netscape3/pkg/DESCR|ache@FreeBSD.ORG|www||
 slang-lynx-2.6|/usr/ports/www/slang-lynx|/usr/local|Color Lynx (without keypad) - An alphanumeric display oriented WWW Client.|/usr/ports/www/slang-lynx/pkg/DESCR|ache@FreeBSD.ORG|www|libslang-0.99.35 unzip-5.2|libslang-0.99.35
 squid-1.0.20|/usr/ports/www/squid|/usr/local|Post-Harvest_cached WWW proxy cache and accelerator|/usr/ports/www/squid/pkg/DESCR|stesin@elvisti.kiev.ua|www||
-squid-1.1b13|/usr/ports/www/squid11|/usr/local|Post-Harvest_cached WWW proxy cache and accelerator|/usr/ports/www/squid11/pkg/DESCR|peter@freebsd.org|www||
+squid-1.1b19|/usr/ports/www/squid11|/usr/local|BETA Post-Harvest_cached WWW proxy cache and accelerator|/usr/ports/www/squid11/pkg/DESCR|peter@freebsd.org|www||
 tkHTML-2.3|/usr/ports/www/tkHTML|/usr/local|A Tk based HTML editor|/usr/ports/www/tkHTML/pkg/DESCR|jkh@FreeBSD.org|www|tcl-7.3 tk-3.6 wwwish-1.0|tcl-7.3 tk-3.6 wwwish-1.0
 tkWWW-0.12|/usr/ports/www/tkWWW|/usr/local|A WWW client based on Tcl/Tk.|/usr/ports/www/tkWWW/pkg/DESCR|ports@FreeBSD.ORG|www|tcl-7.3 tk-3.6|tcl-7.3 tk-3.6 xli-1.16
 w3-msql-1.0|/usr/ports/www/w3-msql|/usr/local|An interface between HTML pages and the MiniSQL database engine|/usr/ports/www/w3-msql/pkg/DESCR|jfitz@FreeBSD.ORG|www databases|msql-1.0.16|
@@ -601,6 +613,7 @@ fvwm-1.24r|/usr/ports/x11/fvwm|/usr/X11R6|the fvwm window manager|/usr/ports/x11
 fvwm-2.0.43|/usr/ports/x11/fvwm2|/usr/X11R6|beta of the fvwm window manager - requires XPM|/usr/ports/x11/fvwm2/pkg/DESCR|peter@FreeBSD.org|x11|xpm-3.4i|xpm-3.4i
 fvwm95-2.0.41f|/usr/ports/x11/fvwm95|/usr/X11R6|Win95 lookalike version of the fvwm2 window manager.|/usr/ports/x11/fvwm95/pkg/DESCR|andreas@klemm.gtn.com|x11|xpm-3.4i|xpm-3.4i
 getbdf-1.0|/usr/ports/x11/getbdf|/usr/X11R6|convert any X server font to .bdf format|/usr/ports/x11/getbdf/pkg/DESCR|ache@FreeBSD.org|x11||
+gwm-1.8c|/usr/ports/x11/gwm|/usr/X11R6|Generic Window Manager|/usr/ports/x11/gwm/pkg/DESCR|markm@FreeBSD.ORG|x11||
 iv-3.1|/usr/ports/x11/iv|/usr/local|A toolkit from Stanford University and Silicon Graphics.|/usr/ports/x11/iv/pkg/DESCR|ports@FreeBSD.ORG|x11||
 olvwm-4.1|/usr/ports/x11/olvwm|/usr/X11R6|OpenLook Virtual Window manager |/usr/ports/x11/olvwm/pkg/DESCR|ports@FreeBSD.ORG|x11|xview-config-3.2.1 xview-lib-3.2.1|xview-config-3.2.1 xview-lib-3.2.1
 piewm-1.0|/usr/ports/x11/piewm|/usr/X11R6|A tvtwm with pie (circular) menus.|/usr/ports/x11/piewm/pkg/DESCR|asami@FreeBSD.ORG|x11|xpm-3.4i|xpm-3.4i
@@ -631,6 +644,7 @@ xgrab-2.41|/usr/ports/x11/xgrab|/usr/X11R6|An X-Windows image grabber.|/usr/port
 xkeycaps-2.31|/usr/ports/x11/xkeycaps|/usr/X11R6|Graphically display and edit the keyboard mapping.|/usr/ports/x11/xkeycaps/pkg/DESCR|jmz@FreeBSD.org|x11||
 xloadimage-3.03|/usr/ports/x11/xloadimage|/usr/X11R6|X11 Image Loading Utility.|/usr/ports/x11/xloadimage/pkg/DESCR|jmz@FreeBSD.org|x11||
 xlockmore-3.11|/usr/ports/x11/xlockmore|/usr/X11R6|Like XLock session locker/screen saver, but just more.|/usr/ports/x11/xlockmore/pkg/DESCR|ports@freebsd.org|x11|xpm-3.4i|xpm-3.4i
+xmold-1.0|/usr/ports/x11/xmold|/usr/X11R6|mold spreading over your X-Window screen|/usr/ports/x11/xmold/pkg/DESCR|Nakai@Mlab.t.u-tokyo.ac.jp|x11||
 xpostit-3.3.1|/usr/ports/x11/xpostit|/usr/X11R6|PostIt (R) messages onto your X11 screen|/usr/ports/x11/xpostit/pkg/DESCR|joerg@FreeBSD.ORG|x11||
 xscreensaver-1.25|/usr/ports/x11/xscreensaver|/usr/X11R6|Save your screen while you entertain your cat|/usr/ports/x11/xscreensaver/pkg/DESCR|asami@FreeBSD.ORG|x11|xpm-3.4i|xpm-3.4i
 xsnow-1.40|/usr/ports/x11/xsnow|/usr/X11R6|Create a snowy and Santa-y desktop.|/usr/ports/x11/xsnow/pkg/DESCR|jmz@FreeBSD.org|x11||
