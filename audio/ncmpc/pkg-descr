@@ -1,0 +1,5 @@
+ncmpc is a ncurses client for the Music Player Daemon (audio/musicpd).
+ncmpc connects to a musicpd running on a machine via a network.
+The interface was inspired by cplay.
+
+WWW:	http://hem.bredband.net/kaw/ncmpc/

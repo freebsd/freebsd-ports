@@ -1,0 +1,4 @@
+bin/ncmpc
+%%EXAMPLESDIR%%/ncmpcrc
+%%EXAMPLESDIR%%/ncmpc.lirc
+@dirrm %%EXAMPLESDIR%%

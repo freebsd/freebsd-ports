@@ -229,6 +229,7 @@
     SUBDIR += mziq
     SUBDIR += napster
     SUBDIR += nas
+    SUBDIR += ncmpc
     SUBDIR += net-rhythmbox
     SUBDIR += nogger
     SUBDIR += normalize
