@@ -41,6 +41,17 @@ How to enable SMTP AUTH with FreeBSD default Sendmail
    dnl Use the following for Sendmail 8.10 - 8.11
    define(`confDONT_BLAME_SENDMAIL',`GroupReadableSASLFile')dnl
 
+5) Add the following before FEATURE(msp) in your sendmail 8.12 submit.mc file:
+
+   DAEMON_OPTIONS(`Name=NoMTA, Addr=127.0.0.1, M=EA')dnl
+
+   This disables SMTP AUTH on the loopback interface. Otherwise you may get
+   the following error in the log:
+
+	error: safesasl(/usr/local/etc/sasldb) failed: Group readable file
+
+   when sending mail locally (seen when using pine locally on same server).
+
  ----
 
    Additional AUTH Mechanisms are LOGIN, PLAIN, GSSAPI, and KERBEROS_V4.
