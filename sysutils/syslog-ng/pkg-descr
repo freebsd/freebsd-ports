@@ -4,7 +4,7 @@ syslogd.  Features include:
   - ability to filter messages based on content using regular expressions
   - forwarding logs on TCP
 
-WWW: http://www.balabit.hu/products/syslog-ng/
+WWW: http://www.balabit.hu/en/downloads/syslog-ng/downloads/
 
 -Vince
 vince@blue-box.net
