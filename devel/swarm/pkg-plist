@@ -4,6 +4,7 @@ bin/make-h2x
 etc/swarm/Makefile.appl
 etc/swarm/Makefile.common
 etc/swarm/Makefile.lib
+etc/swarm/Makefile.rules
 etc/swarm/config.swarm
 include/activity.h
 include/activity/Action.h
@@ -28,12 +29,14 @@ include/collections/Array.h
 include/collections/Collection.h
 include/collections/InputStream.h
 include/collections/List.h
+include/collections/ListShuffler.h
 include/collections/List_GEN.h
 include/collections/List_linked.h
 include/collections/List_mlinks.h
 include/collections/Map.h
 include/collections/OrderedSet.h
 include/collections/OutputStream.h
+include/collections/Permutation.h
 include/collections/Set.h
 include/collections/StringObject.h
 include/collections/classes.h
@@ -41,10 +44,13 @@ include/collections/collections.h
 include/collections/predicates.h
 include/collections/types.h
 include/defobj.h
+include/defobj/Archiver.h
+include/defobj/Arguments.h
 include/defobj/Create.h
 include/defobj/Customize.h
 include/defobj/DefClass.h
 include/defobj/DefObject.h
+include/defobj/HDF5Object.h
 include/defobj/Program.h
 include/defobj/Symbol.h
 include/defobj/Zone.h
@@ -52,13 +58,13 @@ include/defobj/classes.h
 include/defobj/defalloc.h
 include/defobj/deftype.h
 include/defobj/types.h
+include/defobj/version.h
 include/gui.h
 include/misc.h
 include/misc/argp.h
 include/misc/getopt.h
 include/objectbase.h
 include/objectbase/ActivityControl.h
-include/objectbase/Arguments.h
 include/objectbase/CompleteProbeMap.h
 include/objectbase/CompleteVarMap.h
 include/objectbase/CustomProbeMap.h
@@ -73,7 +79,6 @@ include/objectbase/SwarmObject.h
 include/objectbase/VarProbe.h
 include/objectbase/probing.h
 include/objectbase/swarm_rts_routines.h
-include/objectbase/version.h
 include/random.h
 include/random/ACGgen.h
 include/random/BernoulliDist.h
@@ -96,8 +101,6 @@ include/random/PSWBgen.h
 include/random/RWC2gen.h
 include/random/RWC8gen.h
 include/random/RandomBitDist.h
-include/random/RandomDefs.h
-include/random/RandomVars.h
 include/random/SCGgen.h
 include/random/SWBgen.h
 include/random/TGFSRgen.h
@@ -106,11 +109,11 @@ include/random/UniformIntegerDist.h
 include/random/UniformUnsignedDist.h
 include/random/distributions.h
 include/random/generators.h
+include/random/randomdefs.h
+include/random/randomvars.h
 include/simtools.h
 include/simtools/AppendFile.h
-include/simtools/Archiver.h
 include/simtools/InFile.h
-include/simtools/ListShuffler.h
 include/simtools/NSelect.h
 include/simtools/ObjectLoader.h
 include/simtools/ObjectSaver.h
@@ -134,7 +137,6 @@ include/simtoolsgui/ProbeDisplayManager.h
 include/simtoolsgui/SimpleProbeDisplay.h
 include/simtoolsgui/SingleProbeDisplay.h
 include/simtoolsgui/VarProbeWidget.h
-include/simtoolsgui/global.h
 include/space.h
 include/space/Ca2d.h
 include/space/ConwayLife2d.h
@@ -197,19 +199,19 @@ include/tkobjc/win32dib.h
 lib/libactivity.a
 lib/libactivity.la
 lib/libactivity.so
-lib/libactivity.so.1
+lib/libactivity.so.3
 lib/libanalysis.a
 lib/libanalysis.la
 lib/libanalysis.so
-lib/libanalysis.so.2
+lib/libanalysis.so.3
 lib/libcollections.a
 lib/libcollections.la
 lib/libcollections.so
-lib/libcollections.so.1
+lib/libcollections.so.2
 lib/libdefobj.a
 lib/libdefobj.la
 lib/libdefobj.so
-lib/libdefobj.so.0
+lib/libdefobj.so.2
 lib/libmisc.a
 lib/libmisc.la
 lib/libmisc.so
@@ -217,19 +219,19 @@ lib/libmisc.so.2
 lib/libobjectbase.a
 lib/libobjectbase.la
 lib/libobjectbase.so
-lib/libobjectbase.so.2
+lib/libobjectbase.so.3
 lib/librandom.a
 lib/librandom.la
 lib/librandom.so
-lib/librandom.so.0
+lib/librandom.so.1
 lib/libsimtools.a
 lib/libsimtools.la
 lib/libsimtools.so
-lib/libsimtools.so.2
+lib/libsimtools.so.3
 lib/libsimtoolsgui.a
 lib/libsimtoolsgui.la
 lib/libsimtoolsgui.so
-lib/libsimtoolsgui.so.2
+lib/libsimtoolsgui.so.4
 lib/libspace.a
 lib/libspace.la
 lib/libspace.so
@@ -237,13 +239,13 @@ lib/libspace.so.2
 lib/libtclobjc.a
 lib/libtclobjc.la
 lib/libtclobjc.so
-lib/libtclobjc.so.0
+lib/libtclobjc.so.1
 lib/libtkobjc.a
 lib/libtkobjc.la
 lib/libtkobjc.so
-lib/libtkobjc.so.2
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+lib/libtkobjc.so.4
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm etc/swarm
 @dirrm include/activity
 @dirrm include/analysis
