@@ -7,6 +7,7 @@
 
 PORTNAME=	libwmf
 PORTVERSION=	0.2.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	wvware
@@ -14,26 +15,26 @@ MASTER_SITE_SUBDIR=	wvware
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-.ifndef (WITHOUT_X11)
-USE_XLIB=	yes
-PLIST_SUB+=	X11=''
-.else
-PKGNAMESUFFIX=	-nox11
-PLIST_SUB+=	X11='@comment '
-.endif
-
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	# none
-CONFIGURE_ARGS=	--build=${ARCH}-portbld-freebsd${OSREL} \
-		--enable-magick --with-sys-gd=no \
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-magick --with-sys-gd=no \
 		--with-png=${LOCALBASE} --with-jpeg=${LOCALBASE} \
 		--with-gsfontdir=${LOCALBASE}/share/ghostscript/fonts
 INSTALLS_SHLIB=	yes
+
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-nox11
+CONFIGURE_ARGS+=	--with-x=no
+PLIST_SUB+=	X11='@comment '
+.else
+USE_XLIB=	yes
+PLIST_SUB+=	X11=''
+.endif
 
 pre-patch:
 	@${PERL} -pi -e 's|src include fonts doc|src include fonts|g' \
