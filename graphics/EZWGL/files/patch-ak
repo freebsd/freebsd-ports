@@ -1,0 +1,11 @@
+--- include/Makefile.in.orig	Sat Dec  4 06:49:18 1999
++++ include/Makefile.in	Sat Apr  8 18:00:00 2000
+@@ -9,7 +9,7 @@
+ install-shared install-static: install
+ 
+ install:
+-	$(CP) EZ.h $(destincludedir)
++	$(INSTALL_DATA) EZ.h $(destincludedir)
+ 
+ clean realclean:
+ 

@@ -6,70 +6,43 @@
 #
 
 PORTNAME=	EZWGL
-PORTVERSION=	1.40c
+PORTVERSION=	1.50
 CATEGORIES=	graphics devel
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
-DISTFILES=	EZWGL-1.40-doc.tgz ${DISTNAME}-src.tgz
+DISTFILES=	${DISTNAME}-demo.tgz ${DISTNAME}-doc.tgz ${DISTNAME}-src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
+		png.3:${PORTSDIR}/graphics/png
 
-ALL_TARGET=	shared clean static
+EXTRACT_AFTER_ARGS=	| ${TAR} --exclude 'CVS' -xf -
+
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/${PKGNAME}
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 .include "files/manpages"
 
-.include <bsd.port.pre.mk>
-
-.if ${PORTOBJFORMAT} == "elf"
-VERSION=	1
-.else
-VERSION=	1.4
-.endif
-
-pre-install:
-.for file in Makefile.orig animate btnbox clock counter hanoi locator meter puzzle
-	-@ ${RM} ${WRKSRC}/demos/${file}
-.endfor
-.for file in Makefile.orig src1 src2 target1 target2
-	-@ ${RM} ${WRKSRC}/demos/DnD/${file}
-.endfor
-.for file in setroot transparent
-	-@ ${RM} ${WRKSRC}/demos/Glass/${file}
-.endfor
-.for file in Makefile.orig gears image julia pendulum
-	-@ ${RM} ${WRKSRC}/demos/GL/${file}
-.endfor
-.for file in Makefile.orig client server
-	-@ ${RM} ${WRKSRC}/demos/Message/${file}
-.endfor
-	-@ ${RMDIR} ${WRKDIR}/EZWGL-1.40/doc/html/misc
-	-@ ${MV} ${WRKDIR}/EZWGL-1.40/doc/man3/EZ_RegisterCompositeWidget,3 ${WRKDIR}/EZWGL-1.40/doc/man3/EZ_RegisterCompositeWidget.3
-	-@ ${RM} ${WRKSRC}/examples/Makefile.orig
-
-do-install:
-	@ ${INSTALL_DATA} ${WRKSRC}/include/EZ.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/libEZ.a ${PREFIX}/lib
-	@ ${INSTALL_DATA} ${WRKSRC}/lib/libEZ.so.${VERSION} ${PREFIX}/lib
-	@ ${LN} -sf libEZ.so.${VERSION} ${PREFIX}/lib/libEZ.so
-.for file in ${MAN3}
-	@ ${INSTALL_MAN} ${WRKDIR}/EZWGL-1.40/doc/man3/${file} ${PREFIX}/man/man3
-.endfor
-	@ ${MKDIR} ${PREFIX}/share/examples/EZ
-	@ cd ${WRKSRC}/examples; tar cf - * | \
-		(cd ${PREFIX}/share/examples/EZ; tar --unlink -xf - )
-	@ ${MKDIR} ${PREFIX}/share/examples/EZ/demos
-	@ cd ${WRKSRC}/demos; tar cf - * | \
-		(cd ${PREFIX}/share/examples/EZ/demos; tar --unlink -xf - )
-
 post-install:
+.for file in ${MAN3}
+	${INSTALL_MAN} ${WRKSRC}/doc/man3/${file} ${PREFIX}/man/man3
+.endfor
+	@${MKDIR} ${PREFIX}/share/examples/EZ
+	${TAR} -C ${WRKSRC}/examples --exclude 'Makefile.in' -cf - . | \
+		${TAR} -C ${PREFIX}/share/examples/EZ --unlink -xf -
+	${TAR} -C ${WRKSRC} --exclude 'Makefile.in' -cf - demos | \
+		${TAR} -C ${PREFIX}/share/examples/EZ --unlink -xf -
+	find ${PREFIX}/share/examples/EZ | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	find ${PREFIX}/share/examples/EZ -type f | xargs ${CHMOD} ${SHAREMODE}
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/EZ
-	@ cd ${WRKDIR}/EZWGL-1.40/doc; tar cf - html ps | \
-		(cd ${PREFIX}/share/doc/EZ; tar --unlink -xf - )
+	@${MKDIR} ${PREFIX}/share/doc/EZ
+	${TAR} -C ${WRKSRC}/doc --exclude 'misc' -cf - html ps | \
+		${TAR} -C ${PREFIX}/share/doc/EZ --unlink -xf -
+	find ${PREFIX}/share/doc/EZ | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	find ${PREFIX}/share/doc/EZ -type f | xargs ${CHMOD} ${SHAREMODE}
 .endif
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
