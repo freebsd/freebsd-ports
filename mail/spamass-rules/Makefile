@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamass-rules
-PORTVERSION=	20040820
+PORTVERSION=	20040903
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ranner.jawa.at/stuff/
 
@@ -146,7 +146,7 @@ pre-install:
 	@${SED} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${.CURDIR}/pkg-message > ${PKGMESSAGE}
 
 do-install:
-	@${INSTALL} -d -o root -g wheel -m 0755 ${INSTALL_DIR}
+	@${MKDIR} ${INSTALL_DIR}
 	@${INSTALL_DATA} ${SPAMASS_FILES:S/^/${WRKSRC}\//} ${INSTALL_DIR}
 
 post-install:
