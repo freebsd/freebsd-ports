@@ -1,0 +1,64 @@
+[afio.2.4.1/README:]
+
+This is afio 2.4.1.  
+
+The current maintainer is Koen Holtman (koen@stack.urc.tue.nl).
+
+--------------------------------------------------------------------------
+
+Afio makes cpio-format archives.  It deals somewhat gracefully with
+input data corruption.  Supports multi-volume archives during
+interactive operation.  Afio can make compressed archives that are
+much safer than compressed tar or cpio archives.  Afio is best used as
+an `archive engine' in a backup script.
+
+--------------------------------------------------------------------------
+
+See the file SCRIPTS for more information on backup scripts that use
+afio.
+
+See the file PORTING for information on compiling afio on non-Linux
+machines.
+
+---------------------------------------------------------------------------
+
+This afio version is based on a Linux port of afio 2.3.  Since the
+original port, significant functionality has been added and some bugs
+were removed.  While primarily intended for use under Linux, this code
+should be portable to other UNIX versions.  As far as I know, there
+has been no afio development beyond 2.3 outside the Linux community.
+Thus, it should be safe to advertise ports of this code to other UNIX
+versions as ports of afio version 2.4.1.
+
+---------------------------------------------------------------------------
+     
+Afio has far too many options and features (some of which are not even
+in the manual page).  Anything in afio that doesn't relate to reading
+or writing an archive from/to a simple file or pipe or backing up and
+restoring from floppies remains untested.
+
+In particular, nobody has verified if the options -p -b -d -e -g -h
+-j -l -m -u and -R and the special case archive names `!command'
+and `system:file' really do what they claim to do.
+
+Typical `tested' afio uses are
+ ... | afio -o -v -f -b 1024 -s 1440x -F -Z /dev/fd0H1440
+ ... | afio -o -v -s 1440k -F -V -Z -G1 /dev/fd0H1440
+ afio -oZvx /tmp/pipe1 </tmp/pipe2
+ afio -i -Z -k -v -x -n /tmp/pipe1
+ ... | afio -s 512m -c 1024 -Z -T 20k -G 1 -E /backup/compressed -v -o \
+       -L /backup/LOG -z /dev/tape 2>/dev/tty8 >/var/adm/backup
+
+WARNING1: The Linux floppy drivers below kernel version 1.1.54 do not
+allow afio to find out if a floppy write error has happened.  If you
+are running a kernel below 1.1.54, afio will happily fail to backup to
+(say) a write protected disk and not report anything wrong!  The only
+way to find out about write errors in this case is by watching the
+kernel messages, or by switching on the verify option.
+
+WARNING2: the code for -F (and -f and -K) is a complete mess.  It will
+probably work in the normal case, but don't expect it to handle a
+write/verify error correctly.  If you get such an error, best thing is
+to restart afio completely.
+
+---------------------------------------------------------------------------
