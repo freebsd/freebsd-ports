@@ -176,6 +176,7 @@
     SUBDIR += ipfw-graph
     SUBDIR += iplog
     SUBDIR += ipsorc
+    SUBDIR += ipv6calc
     SUBDIR += ipw
     SUBDIR += isc-dhcp3
     SUBDIR += isic
