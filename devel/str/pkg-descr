@@ -1,10 +1,11 @@
-Str - Generic String Library
-Copyright (c) 1999-2001 Ralf S. Engelschall <rse@engelschall.com>
+OSSP str - Generic String Library
+Copyright (c) 1999-2002 Ralf S. Engelschall <rse@engelschall.com>
+Copyright (c) 1999-2002 The OSSP Project <http://www.ossp.org/>
 
-The Str library is a generic string library written in ANSI C which
+OSSP str is a generic string library written in ISO-C which
 provides functions for handling, matching, parsing, searching and
-formatting of C strings. So it can be considered as a superset of POSIX
+formatting of ISO-C strings. So it can be considered as a superset of POSIX
 string(3), but its main intention is to provide a more convinient and
 compact API plus a more generalized functionality.
 
-WWW: http://www.engelschall.com/sw/str/
+WWW: http://www.ossp.org/pkg/lib/str/

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	str
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.7
 CATEGORIES=	devel
-MASTER_SITES=	http://www.engelschall.com/sw/str/ \
-		ftp://ftp.engelschall.com/sw/str/
+MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/str/
 
 MAINTAINER=	rse@engelschall.com
 
