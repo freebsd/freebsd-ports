@@ -3,7 +3,7 @@
 # Date created:        13 November 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1997/12/03 00:39:43 se Exp $
+# $Id: Makefile,v 1.3 1997/12/27 09:38:12 vanilla Exp $
 #
 
 DISTNAME=	ktamaga-0.2
@@ -16,6 +16,8 @@ MAINTAINER=	se@freebsd.org
 BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
 LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11/qt \
 		kdecore\\.0\\.1[1-9]:${PORTSDIR}/x11/kdelibs
+
+BROKEN=		upgrade
 
 WRKSRC=		${WRKDIR}/tamaga-0.2
 
