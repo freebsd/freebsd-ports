@@ -569,6 +569,7 @@
     SUBDIR += p5-DateTime-Format-Mail
     SUBDIR += p5-DateTime-Format-MySQL
     SUBDIR += p5-DateTime-Format-Pg
+    SUBDIR += p5-DateTime-Format-Roman
     SUBDIR += p5-DateTime-Format-Strptime
     SUBDIR += p5-DateTime-LeapSecond
     SUBDIR += p5-DateTime-Precise
