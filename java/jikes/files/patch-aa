@@ -1,23 +1,11 @@
-diff -ur --unidirectional-new-file jikes.orig/src/Makefile.in work/jikes/src/Makefile.in
---- jikes.orig/src/Makefile.in	Tue Sep 14 11:32:51 1999
-+++ work/jikes/src/Makefile.in	Wed Sep 15 10:33:19 1999
-@@ -35,12 +35,13 @@
- 	$(ERASE) config.cache config.log config.status
- 	$(ERASE) Makefile
+--- doc/Makefile.in.orig	Mon Jul 31 15:54:07 2000
++++ doc/Makefile.in	Mon Jul 31 15:54:21 2000
+@@ -80,7 +80,7 @@
  
--install: all
--	mkdir -p $(prefix)/bin
--	strip $(EXECUTABLE)
--	cp $(EXECUTABLE) $(prefix)/bin
--	mkdir -p $(prefix)/man/man1
--	cp ../jikes.1 $(prefix)/man/man1
-+install:
-+	${INSTALL} -c ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
-+	  ${EXECUTABLE} ${PREFIX}/bin/jikes
-+	${INSTALL} -c -o ${MANOWN} -g ${MANGRP} -m ${MANMODE} \
-+	  ${WRKDIR}/jikes/jikes.1 ${PREFIX}/man/man1
-+
-+.include <bsd.own.mk>
+ man_MANS = jikes.1
  
- OBJECTS=jikes.@O@ scanner.@O@ code.@O@ zip.@O@ unzip.@O@ \
-         ast.@O@ diagnose.@O@ parser.@O@ lpginput.@O@ javaact.@O@ \
+-docdir = $(prefix)/doc/${PACKAGE}-${VERSION}
++docdir = $(prefix)/share/doc/${PACKAGE}-${VERSION}
+ 
+ doc_DATA = \
+ contrib.html \
