@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.51 2004-07-13 16:23:12 pav Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.52 2004-08-18 15:33:08 mat Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -24,6 +24,7 @@ SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" "$status_SASL" \
 SASL2		"Cyrus SASLv2 (Simple Authentication and Security Layer)" "$status_SASL2" \
 SASLKRB		"If your SASL requires Kerberos select this option" "$status_SASLKRB" \
 SASLKRB5	"If your SASL requires Kerberos5 select this option" "$status_SASLKRB5" \
+SPF		"SPF support" "$status_SPF" \
 TLS		"SSL and TLS" "$status_TLS" \
 IPv6		"IPv6 support" "$status_IPv6" \
 IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
@@ -65,6 +66,7 @@ echo "PREFIX=	${PREFIX}"
 SUB_TLS="@comment "
 SUB_TEST="@comment "
 SUB_IPV6="@comment "
+SUB_SPF="@comment "
 
 while [ "$1" ]; do
 	case $1 in
@@ -204,6 +206,19 @@ while [ "$1" ]; do
 #			echo "MAN1+=		smtp-sink.1 smtp-source.1 qmqp-sink.1 qmqp-source.1"
 			SUB_TEST=""
 			;;
+		SPF)
+			# see http://www.ipnet6.org/postfix/spf/
+			echo "LIB_DEPENDS+=	spf2.1:\${PORTSDIR}/mail/libspf2"
+			echo "PATCH_SITES+=	ftp://ftp.stack.nl/pub/postfix/spf/p4/"
+			echo "PATCHFILES+=	postfix-libspf2-2.1.3-4.patch"
+			echo "PATCH_DIST_STRIP=	-p1"
+			echo "POSTFIX_CCARGS+=	-I\${LOCALBASE}/include"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lspf2"
+			echo "SPF_SUFFIX=	+spf"
+##			echo "README+=	SPF_README"
+			echo ""
+			SUB_SPF=""
+			;;
 		IPv6)
 			if [ X$SUB_TLS = "X" ]; then
 				/usr/bin/dialog --msgbox "Select exactly one of the IPv6 and TLS patches" 5 60 > /dev/stderr
@@ -247,9 +262,10 @@ done
 echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""
 echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""
 echo "PLIST_SUB+=	SUB_IPV6=\"${SUB_IPV6}\""
+echo "PLIST_SUB+=	SUB_SPF=\"${SUB_SPF}\""
 
 # for some reason, if we alter the pkg name this way, the first build (where
 # we ask the configure questions) doesn't pick up the extensions, but
 # any subsequent build will.  so "make; make install" will build twice.
 # don't do this for now.
-#echo "PKGNAMESUFFIX=	\${NOPCRE_SUFFIX}\${SASL_SUFFIX}\${DB_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}"
+#echo "PKGNAMESUFFIX=	\${NOPCRE_SUFFIX}\${SASL_SUFFIX}\${DB_SUFFIX}\${MYSQL_SUFFIX}\${PGSQL_SUFFIX}\${OPENLDAP_SUFFIX}\${TLS_SUFFIX}\${IPv6_SUFFIX}\${SPF_SUFFIX}"
