@@ -1,0 +1,8 @@
+bin/bookinfo
+bin/catdump
+bin/squeeze
+share/doc/epwutil/epwutil.doc
+man/ja/cat1/bookinfo.1.gz
+man/ja/cat1/catdump.1.gz
+man/ja/cat1/squeeze.1.gz
+@dirrm share/doc/epwutil

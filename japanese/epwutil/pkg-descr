@@ -1,0 +1,13 @@
+Epwutil contains following utilities:
+
+bookinfo - view a component of the book to know how to downsize it.
+catdump - edit and concatenate the CD-ROM catalogue files.
+squeeze - remove multi-media data(image or audio) and indexes for conditional
+          or compound search from the book.
+
+Bookinfo and squeeze can not be used for EPWING V4 and later.
+See "Section 5: Restriction" in epwutil.doc.
+
+In use of this programs, you have to check the agreement of your CD-ROM books
+on making copies or modifying books for personal use.
+See "Section 2: Before using epwutil" in epwutil.doc.
