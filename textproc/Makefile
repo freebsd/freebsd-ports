@@ -535,6 +535,7 @@
     SUBDIR += unrtf
     SUBDIR += urlview
     SUBDIR += wdiff
+    SUBDIR += webcpp
     SUBDIR += website
     SUBDIR += word2x
     SUBDIR += wordnet
