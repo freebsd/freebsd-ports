@@ -19,7 +19,11 @@ include/wintypes.h
 lib/libpcsclite.a
 lib/libpcsclite.so
 lib/libpcsclite.so.0
+lib/libmusclecard.a
+lib/libmusclecard.so
+lib/libmusclecard.so.0
 lib/pkgconfig/libpcsclite.pc
+lib/pkgconfig/libmusclecard.pc
 sbin/pcscd
 %%PORTDOCS%%@dirrm share/doc/pcsc-lite
 @dirrm share/examples/pcsc-lite
