@@ -1,18 +1,31 @@
 # New ports collection Makefile for:    exmh2
-# Version required:		2.0gamma
+# Version required:		2.0delta
 # Date released:		1 Jan 97
 # Whom:				Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.7 1997/02/03 16:27:23 peter Exp $
+# $Id: Makefile,v 1.8 1997/04/20 13:19:17 wosch Exp $
 #
 
-DISTNAME=	exmh-2.0gamma
-PKGNAME=	exmh-2.0g
+DISTNAME=	exmh-2.0delta
+PKGNAME=	exmh-2.0d
 CATEGORIES=	mail tk41
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/exmh/
 EXTRACT_SUFX=	.tar.Z
 
+# Note: due to apparent weaknesses in bsd.port.mk, we have to override the
+# PATCH_DIST_ARGS variable *after* .include <bsd.port.mk> in order to supply
+# second "-d directory" arg to patch (to override the one that's not optional
+# and unusable for us here).  These patches are relative to the ${WRKSRC}/lib
+# subdir, bsd.port.mk can't handle that.
+PATCH_SITES=	http://www.sunlabs.com/~bwelch/exmh/patches/2.0delta/
+PATCHFILES=	getnews.patch ispell.patch addr.patch post.patch \
+		fontsel.patch html_get_http.patch sedit.patch \
+		html_formtag.patch editor.patch thread.patch \
+		pgp.patch mime.patch fcache.patch
+
 MAINTAINER=	peter@FreeBSD.org
+
+DIST_SUBDIR=	${PKGNAME}
 
 RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
 WISH=		wish4.1
@@ -42,3 +55,5 @@ do-install:
 		WRKSRC=${WRKSRC} ${SCRIPTDIR}/install
 
 .include <bsd.port.mk>
+
+PATCH_DIST_ARGS+=	-d ${WRKSRC}/lib

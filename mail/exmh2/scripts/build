@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: build,v 1.1.1.1 1996/10/10 15:00:53 peter Exp $
+# $Id: build,v 1.2 1996/12/31 21:27:02 peter Exp $
 #
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
@@ -17,6 +17,9 @@ PLAY="{}"
 
 if [ -f ${PREFIX}/bin/expect ]; then
   EXPECT=${PREFIX}/bin/expect		#executable
+fi
+if [ -f ${PREFIX}/bin/expectk ]; then
+  EXPECTK=${PREFIX}/bin/expectk		#executable
 fi
 
 if [ -d ${PREFIX}/share/faces ]; then
@@ -50,6 +53,7 @@ sed <${FILESDIR}/config \
 	-e "s+!!PREFIX!!+${PREFIX}+g" \
 	-e "s+!!WISH!!+${WISH}+g" \
 	-e "s+!!EXPECT!!+${EXPECT}+g" \
+	-e "s+!!EXPECTK!!+${EXPECTK}+g" \
 	-e "s+!!FACES!!+${FACES}+g" \
 	-e "s+!!DOMAIN!!+${DOMAIN}+g" \
 	-e "s+!!PGP!!+${PGP}+g" \
