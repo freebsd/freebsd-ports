@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
 MAINTAINER=	brett@peloton.runet.edu
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX \
-		${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript55 \
+		${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript-gnu \
 		${LOCALBASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

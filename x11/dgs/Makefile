@@ -16,7 +16,7 @@ MAINTAINER=	nakai@FreeBSD.org
 LIB_DEPENDS= 	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
