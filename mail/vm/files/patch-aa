@@ -1,0 +1,16 @@
+--- vm.texinfo.bak	Wed Feb 20 11:34:13 2002
++++ vm.texinfo	Wed Feb 20 12:06:58 2002
+@@ -1,9 +1,10 @@
+ \input texinfo  @comment -*-Text-*-
+ @setfilename vm.info
+ @settitle VM User's Manual
+-@c @direntry
+-@c * VM::			A mail reader.
+-@c @end direntry
++@dircategory The Emacs editor and associated tools
++@direntry
++* VM: (vm)		A mail reader.
++@end direntry
+ @iftex
+ @finalout
+ @end iftex
