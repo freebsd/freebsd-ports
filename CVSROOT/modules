@@ -8145,7 +8145,6 @@ phpicalendar	ports/deskutils/phpicalendar
 phpldapadmin	ports/net/phpldapadmin
 phplot		ports/graphics/phplot
 phpmyadmin	ports/databases/phpmyadmin
-phpnuke		ports/www/phpnuke
 phppdflib	ports/print/phppdflib
 phppgadmin	ports/databases/phppgadmin
 phptags		ports/devel/phptags
