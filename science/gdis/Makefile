@@ -18,7 +18,8 @@ LIB_DEPENDS=	gtkextra:${PORTSDIR}/x11-toolkits/gtkextra \
 		gtkgl:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_REINPLACE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 USE_MESA=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
