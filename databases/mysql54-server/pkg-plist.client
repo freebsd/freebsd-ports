@@ -1,0 +1,23 @@
+bin/mysql
+bin/mysqladmin
+bin/mysqldump
+bin/mysqlimport
+bin/mysqlshow
+etc/rc.d/mysql-client.sh
+include/mysql/dbug.h
+include/mysql/errmsg.h
+include/mysql/m_ctype.h.in
+include/mysql/m_string.h
+include/mysql/my_list.h
+include/mysql/my_sys.h
+include/mysql/mysql.h
+include/mysql/mysql_com.h
+include/mysql/mysql_version.h
+include/mysql/mysqld_error.h
+lib/mysql/libmysqlclient.a
+lib/mysql/libmysqlclient.so
+lib/mysql/libmysqlclient.so.6
+@dirrm include/mysql
+@dirrm lib/mysql
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib/mysql
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
