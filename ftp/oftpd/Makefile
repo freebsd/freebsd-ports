@@ -7,7 +7,7 @@
 
 PORTNAME=	oftpd
 PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://atreides.freenix.no/~anders/
@@ -22,6 +22,11 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LIBS="-pthread"
 
 MAN8=		oftpd.8
+
+post-patch:
+.if defined(MAX_NUM_CLIENTS)
+	@${PERL} -pi -e "s,MAX_NUM_CLIENTS 300,MAX_NUM_CLIENTS ${MAX_NUM_CLIENTS}," ${WRKSRC}/src/oftpd.h
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/oftpd ${PREFIX}/sbin/oftpd
