@@ -11,7 +11,7 @@ MASTER_SITES=	http://www-2.cs.cmu.edu/afs/cs/project/amulet/amulet3/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	bovynf@awe.be
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free C++ GUI library
 
 USE_GCC=	2.95
