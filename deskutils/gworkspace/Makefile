@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gworkspace
-PORTVERSION=	0.5
+PORTVERSION=	0.5.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.gnustep.it/enrico/gworkspace/ \
 		http://www.imago.ro/gworkspace/
@@ -16,7 +16,7 @@ COMMENT=	GNUstep workspace manager
 
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/GWorkspace-${PORTVERSION}
 GUN_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
