@@ -5,7 +5,7 @@
  
  $XB_Defs::XBONE_VERSION_DATE =	    # Date this version was created.
 -  "30/10/2001";                     # "<day_num>/<month_num>/<year_num>"
-+  "1/1/2003";                       # "<day_num>/<month_num>/<year_num>"
++  "10/1/2003";                      # "<day_num>/<month_num>/<year_num>"
  # `date "+%d/%m/%Y"`;               # <- for development
  
  $XB_Defs::XBONE_OBSOLETE_LIMIT =    # Seconds after the version date
