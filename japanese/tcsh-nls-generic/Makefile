@@ -1,30 +1,35 @@
 # New ports collection makefile for:	ja-tcsh NLS catalog (Generic Japanese)
-# Version required:	6.07.12
+# Version required:	6.08.0
 # Date created:		19 August 1998
-# Whom:			issei <issei@jp.FreeBSD.ORG>
+# Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
 # $Id$
 #
 
 .if !defined(NLSSRC)
-DISTNAME=	tcsh-6.07.12
-PKGNAME=	ja-tcsh-nls-generic-6.07.12
+DISTNAME=	tcsh-6.08
+PKGNAME=	ja-tcsh-nls-generic-6.08.00
 CATEGORIES=	japanese shells
-MASTER_SITES=	ftp://ftp.astron.com/pri/
+MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/ \
+		http://www2.wbs.ne.jp/~znc/tcsh/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.00.add${EXTRACT_SUFX}
 
 MAINTAINER=	issei@jp.FreeBSD.ORG
 
 PATCH_DIST_STRIP=	-p1
-NLSSRC=		${DISTNAME}/nls/ja
+NLSSRC=		${DISTNAME}.00/nls/ja
 .endif
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 RUN_DEPENDS=	tcsh:${PORTSDIR}/japanese/tcsh
 
+WRKSRC=		${WRKDIR}/tcsh-6.08.00.add
+
 NLSDIR=		${PREFIX}/share/nls
 GENCAT=		/usr/bin/gencat
 NKF=		${PREFIX}/bin/nkf
 NLSSRC_FULL=	${WRKDIR}/${NLSSRC}
+PORTDOCS=	HISTORY.additional HowToMakeNLS.euc README.additional
 
 post-patch:
 	@${MKDIR} ${NLSSRC_FULL}_sjis
@@ -45,9 +50,14 @@ do-build:
 	)
 
 do-install:
-	${INSTALL_DATA} ${NLSSRC_FULL}/tcsh.cat ${NLSDIR}/ja_JP.EUC/tcsh.cat; \
-	${INSTALL_DATA} ${NLSSRC_FULL}/tcsh.m ${NLSDIR}/ja_JP.EUC/tcsh.m; \
-	${INSTALL_DATA} ${NLSSRC_FULL}_sjis/tcsh.cat ${NLSDIR}/ja_JP.SJIS/tcsh.cat; \
-	${INSTALL_DATA} ${NLSSRC_FULL}_sjis/tcsh.m ${NLSDIR}/ja_JP.SJIS/tcsh.m; \
+	${INSTALL_DATA} ${NLSSRC_FULL}/tcsh.cat ${NLSDIR}/ja_JP.EUC/tcsh.cat
+	${INSTALL_DATA} ${NLSSRC_FULL}/tcsh.m ${NLSDIR}/ja_JP.EUC/tcsh.m
+	${INSTALL_DATA} ${NLSSRC_FULL}_sjis/tcsh.cat ${NLSDIR}/ja_JP.SJIS/tcsh.cat
+	${INSTALL_DATA} ${NLSSRC_FULL}_sjis/tcsh.m ${NLSDIR}/ja_JP.SJIS/tcsh.m
+.if !defined(NOPORTDOCS)
+.for i in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/share/doc/tcsh
+.endfor
+.endif
 
 .include <bsd.port.mk>

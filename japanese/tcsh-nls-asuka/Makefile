@@ -1,19 +1,19 @@
 # New ports collection makefile for: ja-tcsh NLS catalog (Soryu Asuka Langley)
-# Version required:	6.07.09b5
+# Version required:	6.08.00
 # Date created:		19 August 1998
-# Whom:			issei <issei@jp.FreeBSD.ORG>
+# Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/30 21:27:34 max Exp $
 #
 
-DISTNAME=	tcsh-6.07.06.nls-ja.asuka
-PKGNAME=	ja-tcsh-nls-asuka-6.07.09b5
+DISTNAME=	tcsh-6.08.00.add
+PKGNAME=	ja-tcsh-nls-asuka-6.08.00
 CATEGORIES=	japanese shells
-MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/catalogs/ja.asuka/
+MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/
 
 MAINTAINER=	issei@jp.FreeBSD.ORG
 
 PLIST=		../tcsh-nls-generic/pkg/PLIST
-NLSSRC=		ja.asuka
+NLSSRC=		${DISTNAME}/nls/ja.asuka
 
 .include "../tcsh-nls-generic/Makefile"
