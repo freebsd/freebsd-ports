@@ -35,11 +35,13 @@ share/gnome/gthumb/albumthemes/Classic/background.gif
 share/gnome/gthumb/albumthemes/Classic/bot.png
 share/gnome/gthumb/albumthemes/Classic/image.gthtml
 share/gnome/gthumb/albumthemes/Classic/index.gthtml
+share/gnome/gthumb/albumthemes/Classic/layout.css
 share/gnome/gthumb/albumthemes/Classic/left.png
 share/gnome/gthumb/albumthemes/Classic/next.png
 share/gnome/gthumb/albumthemes/Classic/prev.png
 share/gnome/gthumb/albumthemes/Classic/preview.png
 share/gnome/gthumb/albumthemes/Classic/right.png
+share/gnome/gthumb/albumthemes/Classic/style.css
 share/gnome/gthumb/albumthemes/Classic/thumbnail.gthtml
 share/gnome/gthumb/albumthemes/Classic/top.png
 share/gnome/gthumb/albumthemes/ClassicClips/1.gif
@@ -48,11 +50,13 @@ share/gnome/gthumb/albumthemes/ClassicClips/background.gif
 share/gnome/gthumb/albumthemes/ClassicClips/bot.png
 share/gnome/gthumb/albumthemes/ClassicClips/image.gthtml
 share/gnome/gthumb/albumthemes/ClassicClips/index.gthtml
+share/gnome/gthumb/albumthemes/ClassicClips/layout.css
 share/gnome/gthumb/albumthemes/ClassicClips/left.png
 share/gnome/gthumb/albumthemes/ClassicClips/next.png
 share/gnome/gthumb/albumthemes/ClassicClips/prev.png
 share/gnome/gthumb/albumthemes/ClassicClips/preview.png
 share/gnome/gthumb/albumthemes/ClassicClips/right.png
+share/gnome/gthumb/albumthemes/ClassicClips/style.css
 share/gnome/gthumb/albumthemes/ClassicClips/thumbnail.gthtml
 share/gnome/gthumb/albumthemes/ClassicClips/top.png
 share/gnome/gthumb/albumthemes/Clean/1.gif
@@ -125,6 +129,7 @@ share/gnome/help/gthumb/C/gthumb.xml
 share/gnome/help/gthumb/C/legal.xml
 share/gnome/omf/gthumb/gthumb-C.omf
 share/gnome/pixmaps/gthumb.png
+share/gnome/pixmaps/gthumb-logo.png
 share/locale/am/LC_MESSAGES/gthumb.mo
 share/locale/az/LC_MESSAGES/gthumb.mo
 share/locale/be/LC_MESSAGES/gthumb.mo
