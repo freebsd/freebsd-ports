@@ -25,7 +25,6 @@ PATCH_WRKSRC=	${WRKDIR}/STLport-${PORTVERSION:S/.b/b/}
 USE_GMAKE=	yes
 MAKEFILE=	gcc-freebsd.mak
 MAKE_ARGS=	INSTALLDIR=${PREFIX}
-ALL_TARGET=	clean all
 INSTALL_TARGET=	install_unix
 INSTALLS_SHLIB=	yes
 
@@ -40,5 +39,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/../doc/images/* ${DOCSDIR}/images
 .endif
+
+post-build test:
+	cd ${WRKSRC}/../test/eh && ${GMAKE} -f ${MAKEFILE}
 
 .include <bsd.port.post.mk>
