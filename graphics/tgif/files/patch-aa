@@ -4,8 +4,8 @@
  .\"
  .\"
  .\"
--.TH tgif n "Version 4.1 Patchlevel 3 and Above" "Tgif"
-+.TH tgif 1L "Version 4.1 Patchlevel 3 and Above" "Tgif"
+-.TH tgif n "Version 4.1 Patchlevel 5 and Above" "Tgif"
++.TH tgif 1L "Version 4.1 Patchlevel 5 and Above" "Tgif"
  .\"
  .SH NAME
  .\"
