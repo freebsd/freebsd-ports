@@ -243,8 +243,8 @@
 %%CGIDIR%%/tmpl/cms/upload_confirm.tmpl
 %%CGIDIR%%/tmpl/cms/view_log.tmpl
 %%CGIDIR%%/tmpl/error.tmpl
-%%DATADIR%%/LICENSE
-%%DATADIR%%/LICENSE-COMMERCIAL
+%%OLD%%%%DATADIR%%/LICENSE
+%%OLD%%%%DATADIR%%/LICENSE-COMMERCIAL
 %%DATADIR%%/docs/755.gif
 %%DATADIR%%/docs/777.gif
 %%DATADIR%%/docs/box.gif

@@ -9,7 +9,9 @@ PORTNAME=	MT
 PORTVERSION=	2.661
 PORTREVISION=	1
 CATEGORIES=	www
+.if defined(WITH_OLD_DISTFILE)
 DISTNAME=	${PORTNAME}-${PORTVERSION}-full-lib
+.endif
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A web-based personal publishing system like weblogs
@@ -34,13 +36,21 @@ USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	"License does not permit distribution"
 
+.if defined(WITH_OLD_DISTFILE)
+PLIST_SUB+=	OLD=""
+.else
+WRKSRC=		${WRKDIR}/MT-${PORTVERSION}-full-lib
+PLIST_SUB+=	OLD="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 ECHO_MSG=/usr/bin/printf
 IGNORE=	:\n\
 Because of licensing restrictions, you must fetch the source distribution\n\
-manually.  Unfortunately there is no offical download URL anymore.\n\
+manually.  Goto http://www.movabletype.org/ register as if you are going\n\
+to download 3.x, and then choosing 2.661 from the list after you log on.\n\
 Download the file into ${DISTDIR}/, and then run make again.\n
 .endif
 
@@ -60,9 +70,13 @@ do-install:
 	  ${WRKSRC}/mt-load.cgi > ${PREFIX}/${CGIDIR}/mt-load.cgi
 	@${ECHO_MSG} "Installing data ${PREFIX}/${DATADIR}"
 	@${MKDIR} ${PREFIX}/${DATADIR}
-	@cd ${WRKSRC} && ${CP} -R LICENSE LICENSE-COMMERCIAL docs images \
+	@cd ${WRKSRC} && ${CP} -R docs images \
 	  index.html schemas styles.css \
 	  ${PREFIX}/${DATADIR}
+.if defined(WITH_OLD_DISTFILE)
+	@cd ${WRKSRC}; ${INSTALL_DATA} LICENSE LICENSE-COMMERCIAL \
+		${PREFIX}/${DATADIR}
+.endif
 .if defined(WITH_DEFAULTDB)
 	@${MKDIR} -m 755 ${DB_DIR}
 	@${CHOWN} -R www:www ${DB_DIR}
