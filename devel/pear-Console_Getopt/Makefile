@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	${PEARDIR}.DIST_PHP:${PORTSDIR}/devel/pear-install
 RUN_DEPENDS=	${PEARDIR}.DIST_PHP:${PORTSDIR}/devel/pear-install \
-		${LOCALBASE}/bin/php:${PORTSDIR}/lang/php4
+		${LOCALBASE}/bin/php:${PORTSDIR}/www/mod_php4
 
 NO_BUILD=	yes
 
