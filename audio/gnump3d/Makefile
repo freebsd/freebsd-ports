@@ -15,9 +15,9 @@ DISTNAME=	${PORTNAME}-1.0-pre1
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A streaming server for MP3\'s, OGG vorbis, and other streamable audio files
-
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
+
+PORTCOMMENT=	A streaming server for MP3, OGG vorbis, and other streamable audio files
 
 USE_BZIP2=	yes
 USE_PERL5=	yes

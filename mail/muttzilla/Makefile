@@ -13,7 +13,7 @@ MASTER_SITES=	http://www3.bc.sympatico.ca/brian_winters/mutt/
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Mutt MUA plugin for Netscape for use on "mailto:" URL\'s
+PORTCOMMENT=	Mutt MUA plugin for Netscape for use on "mailto:" URLs
 
 USE_REINPLACE=	yes
 

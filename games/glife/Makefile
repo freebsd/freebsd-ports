@@ -15,8 +15,6 @@ DISTNAME=	gLife-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Conway\'s Game of Life for GNOME
-
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes

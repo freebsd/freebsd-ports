@@ -18,8 +18,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:site1 \
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	C++ library for SDTS related development
-
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-boost=${WRKDIR}/boost_1_27_0
 

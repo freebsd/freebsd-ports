@@ -14,8 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	John Horton Conway\'s Game of Life
-
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.patterns
 MAN1=		xlife.1

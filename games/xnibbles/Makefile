@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/BETA/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A simple X11 snake game, like one seen in MS-DOS\'s qbasic
+PORTCOMMENT=	A simple X11 snake game, like one seen in MS-DOS qbasic
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

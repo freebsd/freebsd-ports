@@ -14,8 +14,6 @@ DISTNAME=	xerces-c-src${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Xerces-C++ is a validating XML parser written in a subset of C++
-
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	${PREFIX}/lib
 

@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-byte-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	BYTE Magazine\'s native benchmarks
-
 ALL_TARGET=	# empty
 
 do-install:

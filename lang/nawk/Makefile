@@ -14,8 +14,6 @@ DISTNAME=	awk
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Brian Kernighan\'s pattern scanning and processing language
-
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	a.out

@@ -15,8 +15,6 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A replacement for the official Freenet Project\'s freenet_request
-
 BUILD_DEPENDS=	${PYXML}
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

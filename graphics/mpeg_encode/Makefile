@@ -13,8 +13,6 @@ DISTNAME=	${PKGNAME}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	UCB\'s MPEG-I video stream encoder
-
 MAN1=		mpeg_encode.1
 
 USE_REINPLACE=	yes

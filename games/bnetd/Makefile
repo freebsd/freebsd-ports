@@ -17,8 +17,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A program that attempts to emulate Blizzard\'s Battle.net service
-
 IGNORE=		"has been disabled for legal issue"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/bnetd \

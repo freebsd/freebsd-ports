@@ -15,8 +15,6 @@ DISTNAME=	dxsamples-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Example files for IBM\'s OpenDX
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SHELL=/bin/sh
 

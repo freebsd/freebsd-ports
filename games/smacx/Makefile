@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.run
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	Free demo of Sid Meier\'s Alpha Centauri
-
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 LINESKIP=	170

@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	San Le\'s Free Finite Element Analysis
-
 USE_REINPLACE=	yes
 USE_MESA=	yes
 CFLAGS+=	-I${X11BASE}/include ${PTHREAD_CFLAGS}

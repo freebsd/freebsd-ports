@@ -13,9 +13,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A dockapp that keeps track of time you\'ve spent working on something
-
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+
+PORTCOMMENT=	A dockapp that keeps track of time you have spent on something
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

@@ -15,8 +15,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	C++ Signal/Slot Library
-
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

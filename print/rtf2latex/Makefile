@@ -14,7 +14,7 @@ DISTNAME=	rtf2LaTeX.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	A filter that converts RTF (MS\'s Rich Text Format) into LaTeX
+PORTCOMMENT=	A filter that converts RTF (MS Rich Text Format) into LaTeX
 
 WRKSRC=		${WRKDIR}/rtf2LaTeX
 

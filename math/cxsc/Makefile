@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-2-0-beta
 
 MAINTAINER=	ports@FreeBSD.org
 
-PORTCOMMENT=	C++ class library for eXtended Scientific Computing
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
