@@ -1,3 +1,4 @@
+@unexec	%%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/COPYRIGHT
 %%T%%/LICENSE
 %%T%%/README
@@ -1536,7 +1537,6 @@
 @exec	mkdir -p %D/share/doc/java
 @unexec	rmdir %D/share/doc/java 2>/dev/null || true
 @exec	%%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java # Linux-Sun-JDK%%PORTVERSION%%"
-@unexec	%%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 @dirrm %%T%%/man/man1
 @dirrm %%T%%/man/ja_JP.eucJP/man1
 @dirrm %%T%%/man/ja_JP.eucJP
