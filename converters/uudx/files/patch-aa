@@ -1,0 +1,14 @@
+--- uudx-299.orig/uudx.c	Sun Jan 29 16:44:42 1995
++++ uudx-299/uudx.c	Sun Jun  2 16:04:27 1996
+@@ -89,7 +89,11 @@
+ #else
+ #define strchr		index
+ extern char	*strchr();
++#ifndef __FreeBSD__
+ extern char	*sprintf();
++#else
++extern int	sprintf();
++#endif
+ extern char	*strcpy();
+ #endif /* BSD */
+ 
