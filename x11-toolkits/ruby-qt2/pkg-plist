@@ -8,10 +8,8 @@
 %%RUBY_EXAMPLESDIR%%/qt/application/fileopen.xpm
 %%RUBY_EXAMPLESDIR%%/qt/application/fileprint.xpm
 %%RUBY_EXAMPLESDIR%%/qt/application/filesave.xpm
-%%RUBY_EXAMPLESDIR%%/qt/classbrows/rbbr_rb.rb
-%%RUBY_EXAMPLESDIR%%/qt/classbrows/rbbr_qt.rb
-%%RUBY_EXAMPLESDIR%%/qt/classbrows/qtbrows2.rb
-%%RUBY_EXAMPLESDIR%%/qt/classbrows/splitter.rb
+%%RUBY_EXAMPLESDIR%%/qt/classbrows/classtree.rb
+%%RUBY_EXAMPLESDIR%%/qt/classbrows/qtbrows3.rb
 %%RUBY_EXAMPLESDIR%%/qt/connect/connect.rb
 %%RUBY_EXAMPLESDIR%%/qt/connect/README.orig
 %%RUBY_EXAMPLESDIR%%/qt/cursor/README.orig
@@ -34,6 +32,7 @@
 %%RUBY_EXAMPLESDIR%%/qt/movies/trolltech.gif
 %%RUBY_EXAMPLESDIR%%/qt/pinguin/pinguin.xpm
 %%RUBY_EXAMPLESDIR%%/qt/pinguin/pixbutton.rb
+%%RUBY_EXAMPLESDIR%%/qt/rubyedit/NewFile
 %%RUBY_EXAMPLESDIR%%/qt/rubyedit/rubyedit.rb
 %%RUBY_EXAMPLESDIR%%/qt/rubyedit/rubyedit_lib.rb
 %%RUBY_EXAMPLESDIR%%/qt/rubyedit/editcopy.xpm
