@@ -1,0 +1,4 @@
+This installation of Exim includes Exiscan content scanning support,
+from http://duncanthrax.net/exiscan/, which is documented in
+${PREFIX}/share/doc/exim/exiscan-readme.txt.
+
