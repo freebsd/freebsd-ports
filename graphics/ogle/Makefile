@@ -48,6 +48,8 @@ post-patch:
 		${WRKSRC}/configure.in
 .endif
 	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|" ${WRKSRC}/scripts/ogle.in
+	@${PERL} -pi -e 's|(xmlversion.h>)|libxml/\1|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 pre-configure:
 	@${TOUCH} `find -E ${WRKSRC} -regex ".*Makefile\.(am|in)"`
