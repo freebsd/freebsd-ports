@@ -7,6 +7,7 @@
 
 PORTNAME=	multitail
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/
 EXTRACT_SUFX=	.tgz
@@ -20,6 +21,7 @@ MAN1=		multitail.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d ; /^CFLAGS/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's/--follow=name/-F/' ${WRKSRC}/mt.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multitail ${PREFIX}/bin/
