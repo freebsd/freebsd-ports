@@ -1,0 +1,21 @@
+*** nslint.c.orig	Wed Sep 24 20:41:28 1997
+--- nslint.c	Mon Oct 27 09:18:05 1997
+***************
+*** 127,134 ****
+  
+  int	debug;
+  int	errors;
+! char	*bootfile = "/etc/named.boot";
+! char	*conffile = "/etc/named.conf";
+  char	*nslintboot;
+  char	*nslintconf;
+  char	*prog;
+--- 127,134 ----
+  
+  int	debug;
+  int	errors;
+! char	*bootfile = "/etc/namedb/named.boot";
+! char	*conffile = "/etc/namedb/named.conf";
+  char	*nslintboot;
+  char	*nslintconf;
+  char	*prog;

@@ -1,0 +1,13 @@
+*** Makefile.in.orig	Tue Jul 22 19:22:58 1997
+--- Makefile.in	Mon Oct 27 09:13:15 1997
+***************
+*** 77,82 ****
+--- 77,84 ----
+  
+  CLEANFILES = $(PROG) $(OBJ) $(GENSRC)
+  
++ all: $(PROG)
++ 
+  $(PROG): $(OBJ)
+  	@rm -f $@
+  	$(CC) $(CFLAGS) -o $@ $(OBJ) $(LIBS)

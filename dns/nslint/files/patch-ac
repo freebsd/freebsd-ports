@@ -1,0 +1,53 @@
+*** nslint.8.orig	Wed Sep 24 20:11:08 1997
+--- nslint.8	Mon Oct 27 09:54:44 1997
+***************
+*** 101,107 ****
+  Specify an alternate
+  .I named.boot
+  file. The default is
+! .I /etc/named.boot
+  (just like
+  .IR named (8)).
+  .TP
+--- 101,107 ----
+  Specify an alternate
+  .I named.boot
+  file. The default is
+! .I /etc/namedb/named.boot
+  (just like
+  .IR named (8)).
+  .TP
+***************
+*** 110,116 ****
+  Specify an alternate
+  .I named.conf
+  file. The default is
+! .IR /etc/named.conf .
+  .TP
+  .B -B
+  Specify an alternate
+--- 110,116 ----
+  Specify an alternate
+  .I named.conf
+  file. The default is
+! .IR /etc/namedb/named.conf .
+  .TP
+  .B -B
+  Specify an alternate
+***************
+*** 399,405 ****
+  .na
+  .nh
+  .nf
+! /etc/named.boot - default named configuration file
+  nslint.boot - default nslint configuration file
+  .ad
+  .hy
+--- 399,405 ----
+  .na
+  .nh
+  .nf
+! /etc/namedb/named.boot - default named configuration file
+  nslint.boot - default nslint configuration file
+  .ad
+  .hy
