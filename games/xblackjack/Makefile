@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1998/09/28 02:16:36 steve Exp $
+# $Id: Makefile,v 1.6 1998/10/13 14:18:50 jseger Exp $
 #
 
 DISTNAME=	xblackjack-2.2
@@ -13,8 +13,6 @@ MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	erich@FreeBSD.org
-
-BROKEN_ELF=	lesstif does not work for this one
 
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
