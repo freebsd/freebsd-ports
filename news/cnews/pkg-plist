@@ -1,0 +1,35 @@
+@cwd /usr/local
+lib/news
+libexec/news
+@comment Package is not complete without minimal /var/news installation :-(
+@comment Basically just in.* and out.*    /var/news might be a symbolic link
+@comment and it might not exist yet :-(
+@exec ln -s /usr/local/newsspool /var/news
+@exec mkdir -p /usr/local/newsspool/in.coming/bad
+@exec cd /usr/local/newsspool; mkdir -p out.going out.master out.nntp
+@cwd man/man1
+checknews.1cn
+inews.1cn
+postnews.1cn
+readnews.1cn
+@cwd ../man5
+controlperm.5
+news.5
+newsctl.5
+newsdb.5
+newsoverview.5
+newssys.5
+@cwd ../man8
+cnewsdo.8cn
+expire.8cn
+explode.8cn
+mergeactive.8
+mkhistory.8cn
+newsaux.8cn
+newsbatch.8cn
+newsmail.8cn
+newsmaint.8cn
+newsoverview.8
+relaynews.8cn
+report.8cn
+rnews.8cn
