@@ -222,7 +222,7 @@
   /* uchar should be 8 bits or more */
   /* typedef unsigned char  uchar;   -- already in zoo.h */
   
-+ #if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
++ #if !(defined(__FreeBSD__) && __FreeBSD__ < 3) && !defined(__OpenBSD__) && !defined(__NetBSD__)
   typedef unsigned int   uint;    /* 16 bits or more */
   #if !defined(__386BSD__) || !defined(_TYPES_H_)
   typedef unsigned short ushort;  /* 16 bits or more */
