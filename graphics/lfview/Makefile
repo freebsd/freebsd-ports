@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://hoshina.denpa.org/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	s974123@cc.matsuyama-u.ac.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphic viewer for Leaf products
 
 USE_IMAKE=	yes
