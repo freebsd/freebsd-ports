@@ -1,19 +1,20 @@
 # New ports collection makefile for:	prom-mew
-# Version required:     1.93.3
+# Version required:     1.93.4
 # Date created:		28 Jun 1999
 # Whom:			KIRIYAMA Kazuhiko<kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       prom-mew-1.93.3
+DISTNAME=       prom-mew-1.93.4
 CATEGORIES=	mail elisp
 MASTER_SITES=	http://www02.so-net.ne.jp/~murata/software/pub/
 
 MAINTAINER=     kiri@pis.toba-cmt.ac.jp
 
-# This port requires Mew and procmail. But for conveniency, there is NO RUN_DEPNDS
-# ediotrs/mew* nor mail/procmail.
+# This port requires Mew. But we can't decide which mew to depends, there is
+# NO RUN_DEPNDS mail/mew*.
+RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
 
 NO_BUILD=	yes
 
