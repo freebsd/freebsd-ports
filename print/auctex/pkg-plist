@@ -13,6 +13,9 @@
 %%LISPDIR%%/auctex/context-en.el
 %%LISPDIR%%/auctex/context-nl.el
 %%LISPDIR%%/auctex/tex-fold.el
+%%LISPDIR%%/auctex/bib-cite.el
+%%LISPDIR%%/auctex/tex-fptex.el
+%%LISPDIR%%/auctex/tex-jp.el
 %%LISPDIR%%/auctex/auto/.nosearch
 %%LISPDIR%%/auctex/style/.nosearch
 %%LISPDIR%%/auctex/style/prosper.el
@@ -164,6 +167,9 @@
 %%LISPDIR%%/auctex/context-en.elc
 %%LISPDIR%%/auctex/context-nl.elc
 %%LISPDIR%%/auctex/tex-fold.elc
+%%LISPDIR%%/auctex/bib-cite.elc
+%%LISPDIR%%/auctex/tex-fptex.elc
+%%LISPDIR%%/auctex/tex-jp.elc
 @dirrm %%LISPDIR%%/auctex/style
 @dirrm %%LISPDIR%%/auctex/auto
 @dirrm %%LISPDIR%%/auctex
