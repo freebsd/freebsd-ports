@@ -143,7 +143,6 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%CONDITIONAL%%%%EXAMPLESDIR%%/test/slur-dash.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/test/slur-manual.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/test/slur-minimum-length.ly
-%%CONDITIONAL%%%%EXAMPLESDIR%%/test/slur-shape.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/test/slur-ugly.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/test/smart-transpose.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/test/spacing-2.ly
@@ -176,6 +175,8 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%CONDITIONAL%%%%EXAMPLESDIR%%/test/version-output.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/test/vertical-extent.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/test/engraver-example.lyinc
+%%CONDITIONAL%%%%EXAMPLESDIR%%/regression/collision-merge-dots.ly
+%%CONDITIONAL%%%%EXAMPLESDIR%%/regression/multi-measure-rest-multi-staff-center.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/accidental-cautionary.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/accidental-double.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/accidental-ledger.ly
@@ -305,12 +306,12 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/instrument-name-partial.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/key-clefs.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/key-signature-scordatura.ly
-%%CONDITIONAL%%%%EXAMPLESDIR%%/regression/lyric-align.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/lyric-combine.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/lyric-combine-polyphonic.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/lyric-extender.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/lyric-hyphen.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/lyric-phrasing.ly
+%%CONDITIONAL%%%%EXAMPLESDIR%%/regression/lyric-phrasing-new.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/lyrics-bar.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/lyrics-extender.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/regression/lyrics-melisma-beam.ly
@@ -476,6 +477,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%CONDITIONAL%%%%EXAMPLESDIR%%/mutopia/J.S.Bach/baerenreiter-sarabande.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/mutopia/J.S.Bach/bwv940.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/mutopia/J.S.Bach/wtk1-fugue2.ly
+%%CONDITIONAL%%%%EXAMPLESDIR%%/mutopia/F.Schubert/morgenlied.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/mutopia/F.Schubert/standchen.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/mutopia/E.Satie/petite-ouverture-a-danser.ly
 %%CONDITIONAL%%%%EXAMPLESDIR%%/mutopia/W.A.Mozart/mozart-hrn3-allegro.ly
@@ -564,7 +566,6 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta14.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta16.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta18.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta19.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta20.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta23.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta26.mf
@@ -601,7 +602,6 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/afm/feta14.afm
 %%DATADIR%%/%%PORTVERSION%%/fonts/afm/feta16.afm
 %%DATADIR%%/%%PORTVERSION%%/fonts/afm/feta18.afm
-%%DATADIR%%/%%PORTVERSION%%/fonts/afm/feta19.afm
 %%DATADIR%%/%%PORTVERSION%%/fonts/afm/feta20.afm
 %%DATADIR%%/%%PORTVERSION%%/fonts/afm/feta23.afm
 %%DATADIR%%/%%PORTVERSION%%/fonts/afm/feta26.afm
@@ -662,7 +662,6 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/tfm/feta14.tfm
 %%DATADIR%%/%%PORTVERSION%%/fonts/tfm/feta16.tfm
 %%DATADIR%%/%%PORTVERSION%%/fonts/tfm/feta18.tfm
-%%DATADIR%%/%%PORTVERSION%%/fonts/tfm/feta19.tfm
 %%DATADIR%%/%%PORTVERSION%%/fonts/tfm/feta20.tfm
 %%DATADIR%%/%%PORTVERSION%%/fonts/tfm/feta23.tfm
 %%DATADIR%%/%%PORTVERSION%%/fonts/tfm/feta26.tfm
@@ -710,12 +709,12 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/tfm/parmesan20.tfm
 %%DATADIR%%/%%PORTVERSION%%/fonts/tfm/parmesan23.tfm
 %%DATADIR%%/%%PORTVERSION%%/fonts/tfm/parmesan26.tfm
+%%DATADIR%%/%%PORTVERSION%%/fonts/type1/cmbxti8.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta11.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta13.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta14.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta16.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta18.pfa
-%%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta19.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta20.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta23.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta26.pfa
@@ -750,7 +749,6 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta-nummer23.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta-nummer26.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta-nummer4.pfa
-%%DATADIR%%/%%PORTVERSION%%/fonts/type1/cmbxti7.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta-nummer5.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta-nummer6.pfa
 %%DATADIR%%/%%PORTVERSION%%/fonts/type1/feta-nummer7.pfa
@@ -770,7 +768,6 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/tex/feta14.tex
 %%DATADIR%%/%%PORTVERSION%%/tex/feta16.tex
 %%DATADIR%%/%%PORTVERSION%%/tex/feta18.tex
-%%DATADIR%%/%%PORTVERSION%%/tex/feta19.tex
 %%DATADIR%%/%%PORTVERSION%%/tex/feta20.tex
 %%DATADIR%%/%%PORTVERSION%%/tex/feta23.tex
 %%DATADIR%%/%%PORTVERSION%%/tex/feta26.tex
