@@ -8,6 +8,7 @@ include/smapi/patmat.h
 include/smapi/prog.h
 include/smapi/progprot.h
 include/smapi/stamp.h
+include/smapi/semaphor.h
 include/smapi/typedefs.h
 include/smapi/unused.h
 @dirrm include/smapi

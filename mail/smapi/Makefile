@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smapi
-PORTVERSION=	000823
+PORTVERSION=	000919
 CATEGORIES=	mail
 MASTER_SITES=	http://cvs.physcip.uni-stuttgart.de/cvs2/
 
@@ -18,7 +18,7 @@ MAKEFILE=	makefile.bsd
 ALL_TARGET=	libsmapibsd.a
 
 FILES=		alc.h api_brow.h compiler.h ffind.h msgapi.h patmat.h prog.h  \
-		progprot.h stamp.h typedefs.h unused.h
+		progprot.h stamp.h typedefs.h unused.h semaphor.h
 
 do-install:
 	${MKDIR} ${PREFIX}/include/smapi
