@@ -7712,6 +7712,7 @@ php4-pear	ports/devel/php4-pear
 php4-pgsql	ports/databases/php4-pgsql
 php4-readline	ports/devel/php4-readline
 php4-recode	ports/converters/php4-recode
+php4-shmop	ports/devel/php4-shmop
 php4-sybase	ports/databases/php4-sybase
 php4-sybase_ct	ports/databases/php4-sybase_ct
 php4-xml	ports/textproc/php4-xml
