@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.61 2004/09/01 04:08:34 marcus Exp $
+# $Id: portlint.pl,v 1.63 2004/10/12 04:12:46 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_C $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 6;
-my $micro = 7;
+my $micro = 8;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -174,7 +174,8 @@ my @varlist =  qw(
 	MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR PATCHDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE MD5_FILE .CURDIR INSTALLS_SHLIB USE_LIBTOOL_VER
-	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER
+	INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION PKGINSTALLVER PLIST_FILES
+	OPTIONS
 );
 
 my $cmd = join(' -V ', "make $makeenv MASTER_SITE_BACKUP=''", @varlist);
@@ -694,7 +695,7 @@ sub checkplist {
 				"for the preferred way to handle gconf schemas.");
 		}
 
-		if ($_ =~ m|^lib/pkgconfig/[^\.]+.pc$|) {
+		if ($_ =~ m|lib/pkgconfig/[^\.]+.pc$|) {
 			&perror("FATAL: $file [$.]: installing pkg-config files into ".
 				"lib/pkgconfig.  All pkg-config files must be installed ".
 				"into libdata/pkgconfig for them to be found by pkg-config.");
@@ -753,6 +754,10 @@ sub checkplist {
 
 		if ($_ =~ /^share\/examples\//) {
 			&perror("WARN: $file [$.]: consider using EXAMPLESDIR macro");
+		}
+
+		if ($_ =~ /^share\/$makevar{PORTNAME}\//) {
+			&perror("WARN: $file [$.]: consider using DATADIR macro");
 		}
 
 		if ($_ =~ m#man/([^/]+/)?man([$manchapters])/([^\.]+\.[$manchapters])(\.gz)?$#) {
@@ -1020,6 +1025,7 @@ sub checkmakefile {
 	my $use_gnome_hack = 0;
 	my($realwrksrc, $wrksrc, $nowrksubdir) = ('', '', '');
 	my(@mman, @pman);
+	my(@mopt, @oopt);
 	my($pkg_version, $versiondir, $versionfile) = ('', '', '');
 	my $useindex = 0;
 	my %deprecated = ();
@@ -1117,6 +1123,16 @@ sub checkmakefile {
 			&perror("WARN: $file [$lineno]: You may remove pkg-plist ".
 					"if you use PLIST_FILES and/or PLIST_DIRS.");
 		}
+		my @plist_files = split(/\s+/, $makevar{PLIST_FILES});
+		foreach my $plist_file (@plist_files) {
+			if ($plist_file =~ m|^lib/lib[^\/]+\.so(\.\d+)?$| &&
+				$makevar{INSTALLS_SHLIB} eq '') {
+				&perror("WARN: PLIST_FILES: installing shared libraries, ".
+					"please define INSTALLS_SHLIB as appropriate");
+				last;
+			}
+		}
+
 	}
 
 	#
@@ -2196,6 +2212,12 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	foreach my $i (keys %plistmanall) {
 		print "OK: pkg-plist MAN$i=$plistmanall{$i}\n" if ($verbose);
 	}
+	if ($tmp =~ /PERL_CONFIGURE=\s*/
+		&& $tmp =~ /MAN3PREFIX=\s*\${PREFIX}\/lib\/perl5\/\${PERL_VERSION}/) {
+		&perror("WARN: $file: MAN3PREFIX is ".
+			"\"\${PREFIX}/lib/perl5/\${PERL_VERSION}\" ".
+			"when PERL_CONFIGURE is set.  You do not need to specify it.");
+	}
 	foreach my $i (split(//, $manchapters)) {
 		if ($tmp =~ /MAN\U$i\E=\s*([^\n]*)\n/) {
 			print "OK: Makefile MAN\U$i\E=$1\n" if ($verbose);
@@ -2304,6 +2326,26 @@ FETCH_DEPENDS DEPENDS DEPENDS_TARGET
 	if ($tmp =~ /^pre-patch:/m && $use_gnome_hack) {
 		&perror("FATAL: $file: pre-patch target overwrites gnomehack component. ".
 			"use post-patch instead.");
+	}
+
+	# check OPTIONS
+	print "OK: checking OPTIONS.\n" if ($verbose);
+	@oopt = ($makevar{OPTIONS} =~ /(\w+)\s+\".*?\"\s+\w+/sg);
+	@mopt = ($tmp =~ /^\s*\.\s*(?:ifdef\s+|if\s+defined\s*)\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg);
+	foreach my $i (@oopt) {
+		if (!grep(/^$i$/, @mopt)) {
+			&perror("WARN: $file: $i is listed in OPTIONS, ".
+				"but neither WITH_$i nor WITHOUT_$i appears.");
+		}
+	}
+	foreach my $i (@mopt) {
+		next if ($i eq 'NLS'); # skip WITHOUT_NLS
+		if (!grep(/^$i$/, @oopt)) {
+			# XXX: disabled temporarily.
+			# OPTIONS is still "in flux"
+			#&perror("WARN: $file: WITH_$i or WITHOUT_$i appears, ".
+			#	"consider using OPTIONS macro.");
+		}
 	}
 
 	1;
