@@ -1,0 +1,47 @@
+bin/mod
+bin/monodoc
+@unexec gacutil /u monodoc.dll /f /package monodoc /gacdir %D/lib > /dev/null || /usr/bin/true
+lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll
+@exec gacutil /i monodoc.dll /f /package monodoc /gacdir %D/lib > /dev/null || /usr/bin/true
+lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756/monodoc.dll.config
+lib/mono/gtk-sharp/monodoc.dll
+lib/monodoc/assembler.exe
+lib/monodoc/browser.exe
+lib/monodoc/mod.exe
+lib/monodoc/monodoc.xml
+lib/monodoc/normalize.exe
+lib/monodoc/sources/Mono.source
+lib/monodoc/sources/Mono.tree
+lib/monodoc/sources/Mono.zip
+lib/monodoc/sources/Novell.source
+lib/monodoc/sources/Novell.tree
+lib/monodoc/sources/Novell.zip
+lib/monodoc/sources/cs-errors.source
+lib/monodoc/sources/cs-errors.tree
+lib/monodoc/sources/cs-errors.zip
+lib/monodoc/sources/ecma334.source
+lib/monodoc/sources/ecma334.tree
+lib/monodoc/sources/ecma334.zip
+lib/monodoc/sources/gecko-sharp-docs.source
+lib/monodoc/sources/gecko-sharp-docs.tree
+lib/monodoc/sources/gecko-sharp-docs.zip
+lib/monodoc/sources/gtk-sharp-docs.source
+lib/monodoc/sources/gtk-sharp-docs.tree
+lib/monodoc/sources/gtk-sharp-docs.zip
+lib/monodoc/sources/monohb.source
+lib/monodoc/sources/monohb.tree
+lib/monodoc/sources/monohb.zip
+lib/monodoc/sources/netdocs.source
+lib/monodoc/sources/netdocs.tree
+lib/monodoc/sources/netdocs.zip
+lib/monodoc/sources/nunit-docs.source
+lib/monodoc/sources/nunit-docs.tree
+lib/monodoc/sources/nunit-docs.zip
+lib/monodoc/updater.exe
+libdata/pkgconfig/monodoc.pc
+share/applications/monodoc.desktop
+share/pixmaps/monodoc.png
+@dirrm lib/mono/gac/monodoc/1.0.0.0__0738eb9f132ed756
+@dirrm lib/mono/gac/monodoc
+@dirrm lib/monodoc/sources
+@dirrm lib/monodoc

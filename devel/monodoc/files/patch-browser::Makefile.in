@@ -1,0 +1,11 @@
+--- browser/Makefile.in.orig	Fri Aug 13 10:08:12 2004
++++ browser/Makefile.in	Fri Aug 13 10:10:04 2004
+@@ -147,7 +147,7 @@
+ 	$(srcdir)/Contributions.cs
+ 
+ 
+-browser_assemblies = -pkg:gtkhtml-sharp -pkg:glade-sharp -r:System.Web.Services
++browser_assemblies = `pkg-config --libs gtkhtml-sharp glade-sharp` -r:System.Web.Services
+ 
+ EXTRA_DIST = \
+ 	$(monodoc_sources) $(assembler_sources) \
