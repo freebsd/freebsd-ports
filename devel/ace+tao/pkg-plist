@@ -337,6 +337,9 @@ include/ace/Framework_Component_T.inl
 include/ace/Free_List.cpp
 include/ace/Free_List.h
 include/ace/Free_List.i
+include/ace/Functor_String.cpp
+include/ace/Functor_String.h
+include/ace/Functor_String.inl
 include/ace/Functor.cpp
 include/ace/Functor.h
 include/ace/Functor.i
@@ -2163,6 +2166,8 @@ include/ace/svc_export.h
 %%TAO%%include/orbsvcs/FtRtEvent/EventChannel/IOGR_Maker.h
 %%TAO%%include/orbsvcs/FtRtEvent/EventChannel/Identification_Service.cpp
 %%TAO%%include/orbsvcs/FtRtEvent/EventChannel/Identification_Service.h
+%%TAO%%include/orbsvcs/FtRtEvent/EventChannel/ObjectGroupManagerHandler.cpp
+%%TAO%%include/orbsvcs/FtRtEvent/EventChannel/ObjectGroupManagerHandler.h
 %%TAO%%include/orbsvcs/FtRtEvent/EventChannel/ProxyConsumerStateWorker.cpp
 %%TAO%%include/orbsvcs/FtRtEvent/EventChannel/ProxyConsumerStateWorker.h
 %%TAO%%include/orbsvcs/FtRtEvent/EventChannel/ProxySupplierStateWorker.cpp
@@ -2187,6 +2192,12 @@ include/ace/svc_export.h
 %%TAO%%include/orbsvcs/FtRtEvent/Utils/FTEC_Gateway.cpp
 %%TAO%%include/orbsvcs/FtRtEvent/Utils/FTEC_Gateway.h
 %%TAO%%include/orbsvcs/FtRtEvent/Utils/FTEC_Gateway.inl
+%%TAO%%include/orbsvcs/FtRtEvent/Utils/Log.cpp
+%%TAO%%include/orbsvcs/FtRtEvent/Utils/Log.h
+%%TAO%%include/orbsvcs/FtRtEvent/Utils/Log.inl
+%%TAO%%include/orbsvcs/FtRtEvent/Utils/Safe_InputCDR.cpp
+%%TAO%%include/orbsvcs/FtRtEvent/Utils/Safe_InputCDR.h
+%%TAO%%include/orbsvcs/FtRtEvent/Utils/Safe_InputCDR.inl
 %%TAO%%include/orbsvcs/FtRtEvent/Utils/ScopeGuard.h
 %%TAO%%include/orbsvcs/FtRtEvent/Utils/UUID.cpp
 %%TAO%%include/orbsvcs/FtRtEvent/Utils/UUID.h
@@ -2375,6 +2386,12 @@ include/ace/svc_export.h
 %%TAO%%include/orbsvcs/LoadBalancing/LB_LoadAlertMap.h
 %%TAO%%include/orbsvcs/LoadBalancing/LB_LoadAlert_Handler.cpp
 %%TAO%%include/orbsvcs/LoadBalancing/LB_LoadAlert_Handler.h
+%%TAO%%include/orbsvcs/LoadBalancing/LB_LoadAverage.cpp
+%%TAO%%include/orbsvcs/LoadBalancing/LB_LoadAverage.h
+%%TAO%%include/orbsvcs/LoadBalancing/LB_LoadAverage.inl
+%%TAO%%include/orbsvcs/LoadBalancing/LB_LoadMinimum.cpp
+%%TAO%%include/orbsvcs/LoadBalancing/LB_LoadMinimum.h
+%%TAO%%include/orbsvcs/LoadBalancing/LB_LoadMinimum.inl
 %%TAO%%include/orbsvcs/LoadBalancing/LB_LoadListMap.cpp
 %%TAO%%include/orbsvcs/LoadBalancing/LB_LoadListMap.h
 %%TAO%%include/orbsvcs/LoadBalancing/LB_LoadManager.cpp
@@ -2831,6 +2848,7 @@ include/ace/svc_export.h
 %%TAO%%include/orbsvcs/PortableGroup/PG_Operators.h
 %%TAO%%include/orbsvcs/PortableGroup/PG_Properties_Encoder.cpp
 %%TAO%%include/orbsvcs/PortableGroup/PG_Properties_Encoder.h
+%%TAO%%include/orbsvcs/PortableGroup/PG_Properties_Encoder.inl
 %%TAO%%include/orbsvcs/PortableGroup/PG_Properties_Support.cpp
 %%TAO%%include/orbsvcs/PortableGroup/PG_Properties_Support.h
 %%TAO%%include/orbsvcs/PortableGroup/PG_PropertyManager.cpp
@@ -2992,7 +3010,6 @@ include/ace/svc_export.h
 %%TAO%%include/orbsvcs/Runtime_Scheduler.cpp
 %%TAO%%include/orbsvcs/Runtime_Scheduler.h
 %%TAO%%include/orbsvcs/Runtime_Scheduler.i
-%%TAO%%include/orbsvcs/SECIOP.idl
 %%TAO%%include/orbsvcs/SSLIOP.idl
 %%TAO%%include/orbsvcs/SSLIOP/IIOP_SSL_Acceptor.cpp
 %%TAO%%include/orbsvcs/SSLIOP/IIOP_SSL_Acceptor.h
@@ -3356,6 +3373,12 @@ include/ace/svc_export.h
 %%TAO%%include/tao/Block_Flushing_Strategy.h
 %%TAO%%include/tao/Blocked_Connect_Strategy.cpp
 %%TAO%%include/tao/Blocked_Connect_Strategy.h
+%%TAO%%include/tao/BooleanSeq.pidl
+%%TAO%%include/tao/BooleanSeqA.cpp
+%%TAO%%include/tao/BooleanSeqC.cpp
+%%TAO%%include/tao/BooleanSeqC.h
+%%TAO%%include/tao/BooleanSeqC.i
+%%TAO%%include/tao/BooleanSeqS.h
 %%TAO%%include/tao/Bounds.pidl
 %%TAO%%include/tao/BoundsA.cpp
 %%TAO%%include/tao/BoundsA.h
@@ -3583,6 +3606,12 @@ include/ace/svc_export.h
 %%TAO%%include/tao/Fixed_Size_SArgument_T.cpp
 %%TAO%%include/tao/Fixed_Size_SArgument_T.h
 %%TAO%%include/tao/Fixed_Size_SArgument_T.inl
+%%TAO%%include/tao/FloatSeq.pidl
+%%TAO%%include/tao/FloatSeqA.cpp
+%%TAO%%include/tao/FloatSeqC.cpp
+%%TAO%%include/tao/FloatSeqC.h
+%%TAO%%include/tao/FloatSeqC.i
+%%TAO%%include/tao/FloatSeqS.h
 %%TAO%%include/tao/Flushing_Strategy.cpp
 %%TAO%%include/tao/Flushing_Strategy.h
 %%TAO%%include/tao/GIOP.pidl
@@ -3969,6 +3998,8 @@ include/ace/svc_export.h
 %%TAO%%include/tao/Parser_Registry.cpp
 %%TAO%%include/tao/Parser_Registry.h
 %%TAO%%include/tao/Parser_Registry.i
+%%TAO%%include/tao/PICurrent_Copy_Callback.cpp
+%%TAO%%include/tao/PICurrent_Copy_Callback.h
 %%TAO%%include/tao/Pluggable_Messaging.cpp
 %%TAO%%include/tao/Pluggable_Messaging.h
 %%TAO%%include/tao/Pluggable_Messaging.i
@@ -4068,6 +4099,8 @@ include/ace/svc_export.h
 %%TAO%%include/tao/PortableServer/Object_Adapter.i
 %%TAO%%include/tao/PortableServer/Operation_Table.cpp
 %%TAO%%include/tao/PortableServer/Operation_Table.h
+%%TAO%%include/tao/PortableServer/PICurrent_Guard.cpp
+%%TAO%%include/tao/PortableServer/PICurrent_Guard.h
 %%TAO%%include/tao/PortableServer/POA.cpp
 %%TAO%%include/tao/PortableServer/POA.h
 %%TAO%%include/tao/PortableServer/POA.i
@@ -4165,6 +4198,7 @@ include/ace/svc_export.h
 %%TAO%%include/tao/RTCORBA/Priority_Mapping_Manager.cpp
 %%TAO%%include/tao/RTCORBA/Priority_Mapping_Manager.h
 %%TAO%%include/tao/RTCORBA/Priority_Mapping_Manager.i
+%%TAO%%include/tao/RTCORBA/RTCORBA_includeS.h
 %%TAO%%include/tao/RTCORBA/RTCORBA.cpp
 %%TAO%%include/tao/RTCORBA/RTCORBA.h
 %%TAO%%include/tao/RTCORBA/RTCORBA.pidl
@@ -4323,6 +4357,12 @@ include/ace/svc_export.h
 %%TAO%%include/tao/ServicesS_T.i
 %%TAO%%include/tao/Services_Activate.cpp
 %%TAO%%include/tao/Services_Activate.h
+%%TAO%%include/tao/ShortSeq.pidl
+%%TAO%%include/tao/ShortSeqA.cpp
+%%TAO%%include/tao/ShortSeqC.cpp
+%%TAO%%include/tao/ShortSeqC.h
+%%TAO%%include/tao/ShortSeqC.i
+%%TAO%%include/tao/ShortSeqS.h
 %%TAO%%include/tao/SmartProxies/Smart_Proxies.cpp
 %%TAO%%include/tao/SmartProxies/Smart_Proxies.h
 %%TAO%%include/tao/SmartProxies/Smart_Proxies.inl
@@ -4443,6 +4483,7 @@ include/ace/svc_export.h
 %%TAO%%include/tao/StringSeqC.cpp
 %%TAO%%include/tao/StringSeqC.h
 %%TAO%%include/tao/StringSeqC.i
+%%TAO%%include/tao/StringSeqS.h
 %%TAO%%include/tao/Stub.cpp
 %%TAO%%include/tao/Stub.h
 %%TAO%%include/tao/Stub.i
@@ -4562,7 +4603,20 @@ include/ace/svc_export.h
 %%TAO%%include/tao/UB_String_SArgument_T.inl
 %%TAO%%include/tao/UB_String_SArguments.cpp
 %%TAO%%include/tao/UB_String_SArguments.h
+%%TAO%%include/tao/ULongSeq.pidl
+%%TAO%%include/tao/ULongSeqA.cpp
+%%TAO%%include/tao/ULongSeqC.cpp
+%%TAO%%include/tao/ULongSeqC.h
+%%TAO%%include/tao/ULongSeqC.i
+%%TAO%%include/tao/ULongSeqS.h
+%%TAO%%include/tao/ULongSeqS.i
 %%TAO%%include/tao/UShortSeq.pidl
+%%TAO%%include/tao/UShortSeqA.cpp
+%%TAO%%include/tao/UShortSeqC.cpp
+%%TAO%%include/tao/UShortSeqC.h
+%%TAO%%include/tao/UShortSeqC.i
+%%TAO%%include/tao/UShortSeqS.h
+%%TAO%%include/tao/UShortSeqS.i
 %%TAO%%include/tao/Utils/Implicit_Deactivator.cpp
 %%TAO%%include/tao/Utils/Implicit_Deactivator.h
 %%TAO%%include/tao/Utils/ORB_Destroyer.cpp
@@ -5304,6 +5358,7 @@ lib/libClient_Test.so.%%ACE_VERSION%%
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/releasenotes/orbcore.html
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/releasenotes/rtc10_sched.html
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/releasenotes/trader.html
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/releasenotes/ftcorba_services.html
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/rtcorba/architecture.html
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/rtcorba/content.html
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/rtcorba/faq.html
@@ -5314,6 +5369,55 @@ lib/libClient_Test.so.%%ACE_VERSION%%
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/rtcorba/queue-per-lane.gif
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/rtcorba/reactor-per-lane.gif
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/rtcorba/status.html
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/Conformance.html
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/Download.html
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/FAQ.html
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/SSLIOP-INSTALL.html
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/SSLIOP-USAGE.html
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/SSLIOP.html
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/Security_Service.html
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/Templates/TAO_Security.dwt
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/h_bar.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar.html
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r01_c1.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r02_c1.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r02_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r02_c2_f2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r02_c2_f3.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r02_c2_f4.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r02_c3.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r03_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r04_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r04_c2_f2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r04_c2_f3.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r04_c2_f4.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r05_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r06_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r06_c2_f2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r06_c2_f3.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r06_c2_f4.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r07_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r08_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r08_c2_f2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r08_c2_f3.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r08_c2_f4.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r09_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r10_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r10_c2_f2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r10_c2_f3.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r10_c2_f4.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r11_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r12_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r12_c2_f2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r12_c2_f3.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r12_c2_f4.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/nav_bar_r13_c2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/fireworks/shim.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/images/CORBA_Security.jpg
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/images/CORBA_Security.png
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/images/openssl_button.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/images/tao2.gif
+%%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/Security/index.html
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/tutorials/Quoter/AMI/AMI.dsw
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/tutorials/Quoter/AMI/Handler_i.cpp
 %%TAO%%%%PORTDOCS%%%%DOCSDIR%%/TAO/tutorials/Quoter/AMI/Handler_i.h
@@ -5454,6 +5558,10 @@ lib/libClient_Test.so.%%ACE_VERSION%%
 %%TAO%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/TAO/pluggable_protocols
 %%TAO%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/TAO/releasenotes
 %%TAO%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/TAO/rtcorba
+%%TAO%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/TAO/Security/images
+%%TAO%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/TAO/Security/fireworks
+%%TAO%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/TAO/Security/Templates
+%%TAO%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/TAO/Security
 %%TAO%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/TAO/tutorials/Quoter/AMI
 %%TAO%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/TAO/tutorials/Quoter/idl
 %%TAO%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/TAO/tutorials/Quoter/Event_Service

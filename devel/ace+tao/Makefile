@@ -7,7 +7,6 @@
 
 PORTNAME?=	ace+tao
 PORTVERSION?=	${ACE_VERSION}+${TAO_VERSION}
-PORTREVISION?=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://deuce.doc.wustl.edu/pub/previous_versions/ \
 		http://deuce.doc.wustl.edu/old_distribution/ \
@@ -19,8 +18,8 @@ COMMENT?=	The Adaptive Communication Environment (ACE) with The ACE ORB (TAO)
 
 CONFLICTS?=	ace-*
 
-ACE_VERSION=	5.4.0
-TAO_VERSION=	1.4.0
+ACE_VERSION=	5.4.1
+TAO_VERSION=	1.4.1
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -60,7 +59,6 @@ post-patch:
 	   ${ACE_ROOT}/include/makeinclude/platform_macros.GNU; \
 	${CP} ${FILESDIR}/config.h ${ACE_ROOT}/ace; \
 	cd ${TAO_ROOT}/orbsvcs; \
-	${CHMOD} a-x default.bld; \
 	${CHMOD} a-x Logging_Service/Event_Logging_Service/*; \
 	${CHMOD} a-x Logging_Service/Notify_Logging_Service/*; \
 	${CHMOD} a-x Logging_Service/RTEvent_Logging_Service/*; \
@@ -134,7 +132,7 @@ test:
 do-install:
 	@${ECHO_MSG} "Installing ACE headers into ${PREFIX}/include/ace"; \
 	cd ${ACE_ROOT}; \
-	${FIND} ace -not -name .shobj -type d -exec \
+	${FIND} ace -not -path "*.shobj*" -type d -exec \
 		${MKDIR} ${PREFIX}/include/\{\} \; ; \
 	${FIND} ace -type f \( -name "*.h" -o -name "*.i" -o -name "*.inl" \
 		-o -name "*.cpp" \) \( -not -name "config-*.h" \
@@ -144,13 +142,13 @@ do-install:
 .if !defined(WITHOUT_TAO)
 	@${ECHO_MSG} "Installing TAO headers into ${PREFIX}/include/tao"; \
 	cd ${TAO_ROOT}; \
-	${FIND} tao -not -name .shobj -not -name diffs -type d -exec \
+	${FIND} tao -not -path "*.shobj*" -not -name diffs -type d -exec \
 		${MKDIR} ${PREFIX}/include/\{\} \; ; \
 	${FIND} tao -type f \( -name "*.h" -o -name "*.i" -o -name "*.inl" \
 		-o -name "*.idl" -o -name "*.pidl" -o -name "*.cpp" \) -exec \
 		${INSTALL_DATA} \{\} ${PREFIX}/include/\{\} \; ; \
 	cd ${TAO_ROOT}/orbsvcs; \
-	${FIND} orbsvcs -not -name .shobj -type d -exec \
+	${FIND} orbsvcs -not -path "*.shobj*" -type d -exec \
 		${MKDIR} ${PREFIX}/include/\{\} \; ; \
 	${FIND} orbsvcs -type f \( -name "*.h" -o -name "*.i" -o -name "*.inl" \
 		-o -name "*.idl" -o -name "*.pidl" -o -name "*.cpp" \) -exec \
