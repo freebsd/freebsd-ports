@@ -26,6 +26,7 @@
     SUBDIR += jfc
     SUBDIR += jikes
     SUBDIR += jlex
+    SUBDIR += jlint
     SUBDIR += jre
     SUBDIR += jsdk
     SUBDIR += junit
