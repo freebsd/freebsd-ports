@@ -93,11 +93,7 @@ pre-configure:
 # End of the DB3 stuff
 
 post-install:
-	@${SED} -e 's|%%X11BASE%%|${X11BASE}|; \
-		s|%%LOCALBASE%%|${LOCALBASE}|' < ${FILESDIR}/pkg-install.in \
-		> ${PKGINSTALL}
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
+	@${FIND} ${PREFIX}/share/gnome/evolution/${EVO_VERSION}/default_user \
+		-type f | ${XARGS} ${CHMOD} 0644
 
 .include <bsd.port.mk>
