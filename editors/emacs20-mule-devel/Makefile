@@ -80,10 +80,21 @@ pre-patch:
 pre-build:
 	@${RM} -rf ${WRKSRC}/info/*
 	@${LN} -sf DOC ${WRKSRC}/etc/${DOC_FILE}
+
+post-build:
+# NEED twice times byte-compile mule.elc.
 	@(cd ${WRKSRC}/lisp ; \
-		${PREFIX}/bin/emacs-${EMACS_VER} -batch -q -f \
-			batch-byte-compile ${MULE_PATCHED_ELS} ; \
+		${WRKSRC}/src/emacs -batch -q -no-init-file \
+			-f batch-byte-compile ${MULE_PATCHED_ELS} ; \
 	)
+	@${RM} -f ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}*
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+	@(cd ${WRKSRC}/lisp ; \
+		${WRKSRC}/src/emacs -batch -q -no-init-file \
+			-f batch-byte-compile ${MULE_PATCHED_ELS} ; \
+	)
+	@${RM} -f ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-${EMACS_VER}*
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
 # Install ${MULE} binary.
