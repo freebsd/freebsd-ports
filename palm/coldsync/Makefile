@@ -7,7 +7,7 @@
 
 PORTNAME=	coldsync
 PORTVERSION=	2.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	palm comms
 MASTER_SITES=	http://www.coldsync.org/download/
 
@@ -42,6 +42,8 @@ MAN3=		libpconn.3 DlpAddSyncLogEntry.3 DlpCallApplication.3 \
 		pdb_LoadHeader.3 pdb_Read.3
 MAN8=		coldsync.8
 MANCOMPRESSED=	no
+
+INFO=		conduits
 
 .include <bsd.port.pre.mk>
 
