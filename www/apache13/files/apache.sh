@@ -27,6 +27,6 @@ load_rc_config $name
 
 pidfile="${apache_pidfile}"
 
-start_cmd="echo \"Starting ${name}.\"; /usr/bin/limits -U www ${command} ${rc_flags} ${command_args}"
+start_cmd="echo \"Starting ${name}.\"; /usr/bin/limits -U www ${command} ${apache_flags} ${command_args}"
 
 run_rc_command "$1"
