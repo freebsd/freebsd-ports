@@ -84,7 +84,7 @@ do-install:
 	@${ECHO_CMD} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
-	@${ECHO_CMD} ">> Installing manpages..."
+	@${ECHO_CMD} -n ">> Installing manpages..."
 	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/ant.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/build.xml.5 ${PREFIX}/man/man5
 	@${ECHO_CMD} " [ DONE ]"
