@@ -5,6 +5,29 @@
 #
 # $Id: Makefile,v 1.11 1999/02/11 08:57:13 jkoshy Exp $
 #
+# Makefile variables of interest:
+#
+# NMH_MTS - pass an MTS specification through to nmh's configure
+#           script's "--with-mts" option.  Do a "make extract" and check
+#           the NMH distribution's "INSTALL" file for more info.
+#           Currently, the valid choices are
+#    "smtp" - [the default] Open a connection to the SMTP port on
+#           the configured server, default - localhost.  The server would
+#           be specified in the etc/nmh/mts.conf file after installation.
+#           This requires access to a SMTP daemon on the localhost or the
+#           specified server system.
+#    "sendmail" - Fork a copy of sendmail to handle the message. This
+#           will have different behavior than "smtp" depending on your
+#           local MTA and its configuration.  For example, some of the
+#           rewriting facilities of "qmail-inject", if you are using qmail,
+#           may be available this way, but not via NMH_MTS=smtp.
+#
+# NMH_EDITOR - pass an EDITOR specification through to nmh's configure
+#           script's '--with-editor' option.
+#
+# NMH_PAGER - pass an PAGER specification through to nmh's configure
+#           script's '--with-pager' option.
+#
 
 DISTNAME=	nmh-1.0
 CATEGORIES=	mail
@@ -15,8 +38,16 @@ MAINTAINER=     Scott.Blachowicz@seaslug.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --libexecdir=${PREFIX}/libexec/nmh \
-		--sysconfdir=${PREFIX}/etc/nmh --enable-nmh-pop \
-		--with-mts=sendmail
+		--sysconfdir=${PREFIX}/etc/nmh --enable-nmh-pop
+.ifdef NMH_MTS
+CONFIGURE_ARGS+= --with-mts=${NMH_MTS}
+.endif
+.ifdef NMH_EDITOR
+CONFIGURE_ARGS+= --with-editor=${NMH_EDITOR}
+.endif
+.ifdef NMH_PAGER
+CONFIGURE_ARGS+= --with-pager=${NMH_PAGER}
+.endif
 
 MAN1= ali.1 anno.1 burst.1 comp.1 dist.1 flist.1 folder.1 forw.1 \
       inc.1 mark.1 mh-chart.1 mhbuild.1 mhl.1 mhlist.1 mhmail.1 \
