@@ -19,7 +19,6 @@ libdata/pkgconfig/gconf-2.0.pc
 libexec/gconf-sanity-check-2
 libexec/gconfd-2
 share/aclocal/gconf-2.m4
-share/doc/gconf/GConfClient.html
 share/doc/gconf/ch01.html
 share/doc/gconf/ch01s02.html
 share/doc/gconf/ch02.html
@@ -31,6 +30,7 @@ share/doc/gconf/ch06s02.html
 share/doc/gconf/ch06s03.html
 share/doc/gconf/ch07.html
 share/doc/gconf/conventions.html
+share/doc/gconf/gconf-GConfClient.html
 share/doc/gconf/gconf-client-reference.html
 share/doc/gconf/gconf-client.html
 share/doc/gconf/gconf-gconf-backend.html
@@ -53,6 +53,7 @@ share/doc/gconf/index.html
 share/doc/gconf/index.sgml
 share/doc/gconf/left.png
 share/doc/gconf/right.png
+share/doc/gconf/style.css
 share/doc/gconf/up.png
 share/locale/am/LC_MESSAGES/GConf2.mo
 share/locale/ar/LC_MESSAGES/GConf2.mo
