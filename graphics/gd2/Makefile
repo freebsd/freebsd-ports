@@ -19,11 +19,14 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	ports@FreeBSD.org
 
-USE_FREETYPE2=	yes
-BUILD_DEPENDS=	bzip2:${PORTSDIR}/archivers/bzip2
+.if !exists(/usr/bin/bzip2)
+BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
+.endif
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		freetype:${PORTSDIR}/print/freetype2
+
+USE_FREETYPE2=	yes
 
 .if defined(WITH_X11)
 USE_XLIB=	yes
@@ -32,7 +35,7 @@ USE_XPM=	yes
 
 INSTALLS_SHLIB=	yes
 
-post-extract:	
+post-extract:
 	bzip2 -d < ${_DISTDIR}/gd_gif_in.c.bz2 > ${WRKSRC}/gd_gif_in.c
 
 pre-everything:
