@@ -8,7 +8,8 @@
 PORTNAME=	intel2gas
 PORTVERSION=	1.2
 CATEGORIES=	lang
-MASTER_SITES=	http://hermes.terminal.at/intel2gas/
+MASTER_SITES=	http://hermes.terminal.at/intel2gas/ \
+		ftp://ftp.scene.org/pub/resources/code/libs/ptc/hermes/intel2gas/
 
 MAINTAINER=	adam@whizkidtech.net
 
