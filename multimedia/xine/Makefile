@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.9.18
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	An X11 multimedia player
 
-LIB_DEPENDS=	xine.3:${PORTSDIR}/multimedia/libxine \
+LIB_DEPENDS=	xine.4:${PORTSDIR}/multimedia/libxine \
 		aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png \
 		intl.4:${PORTSDIR}/devel/gettext
@@ -43,6 +44,10 @@ RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 .endif
+.endif
+
+.if (${OSVERSION} == 500043)
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src:xitk:common.h
 .endif
 
 post-patch:
