@@ -3,11 +3,11 @@ lib/libshout.a
 lib/libshout.la
 lib/libshout.so
 lib/libshout.so.3
-%%WITH_PKGCONFIG%%libdata/pkgconfig/shout.pc
+libdata/pkgconfig/shout.pc
 share/aclocal/shout.m4
 share/doc/libshout/COPYING
 share/doc/libshout/README
 share/doc/libshout/example.c
 @dirrm share/doc/libshout
-%%WITH_PKGCONFIG%%@dirrm libdata/pkgconfig
+@dirrm libdata/pkgconfig
 @dirrm include/shout

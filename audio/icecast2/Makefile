@@ -22,8 +22,6 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		vorbis.2:${PORTSDIR}/audio/libvorbis \
 		xslt.1:${PORTSDIR}/textproc/libxslt
 
-CONFIGURE_ENV=	CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 
