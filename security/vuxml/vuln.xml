@@ -44,7 +44,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>Erik Sj&ouml;lund discovered several issues in enscript:
+	<p>Erik Sjölund discovered several issues in enscript:
 	  it suffers from several buffer overflows, quotes and shell
 	  escape characters are insufficiently sanitized in filenames,
 	  and it supported taking input from an arbitrary command
