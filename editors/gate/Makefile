@@ -6,26 +6,33 @@
 #
 
 PORTNAME=	gate
-PORTVERSION=	2.04c
+PORTVERSION=	2.05
 CATEGORIES=	editors
-MASTER_SITES=   http://www.wwnet.net/~janc/software/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://www.unixpapa.com/software/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and unobtrusive line-oriented text editor
 
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
+RUN_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-aspell=${LOCALBASE}/bin/aspell
 ALL_TARGET=	gate gate.1
 
 MAN1=		gate.1
 
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|$${res_datadir}|${DATADIR}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|^char \*malloc();||g' ${WRKSRC}/term.c
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gate ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gate.1 ${PREFIX}/man/man1
-	${MKDIR} ${PREFIX}/share/gate
-	${INSTALL_DATA} ${WRKSRC}/gate.help ${PREFIX}/share/gate
+	${INSTALL_MAN} ${WRKSRC}/gate.1 ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/gate.help ${DATADIR}
 
 .include <bsd.port.mk>
