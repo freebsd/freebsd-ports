@@ -3,12 +3,15 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.8 1996/11/18 11:42:32 asami Exp $
+# $Id: Makefile,v 1.9 1997/01/06 12:14:26 jkh Exp $
 #
 
 DISTNAME=	fwf-3.8
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.let.rug.nl/pub/FWF/
+MASTER_SITES=   ${MASTER_SITE_XCONTRIB}
+MASTER_SITE_SUBDIR=     widgets
+
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
