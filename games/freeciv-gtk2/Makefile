@@ -6,17 +6,29 @@
 # $FreeBSD$
 #
 
-DISTNAME=	freeciv-1.8.1
+DISTNAME=	freeciv-1.8.3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.freeciv.org/pub/freeciv/stable_version/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 
 MAINTAINER=	ada@bsd.org
 
+# If USE_GTK is defined, freeciv will be built with a prettier look and
+# feel:
+#USE_GTK=	yes
+
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+.if defined(USE_GTK)
+LIB_DEPENDS+=	Imlib.4:${PORTSDIR}/graphics/imlib
+.endif
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+.if defined(USE_GTK)
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
+CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+.else
 CONFIGURE_ARGS=	--disable-gtktest
+.endif
 
 .include <bsd.port.mk>
