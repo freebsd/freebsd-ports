@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	addttfont
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
 EXTRACT_SUFX=	# none
