@@ -56,8 +56,8 @@ lib/samba/charset/CP850.so
 lib/libsmbclient.a
 lib/libsmbclient.so
 lib/libsmbclient.so.0
-%%WINBIND%%lib/nss_winbind.so.1
-%%WINBIND%%lib/nss_wins.so.1
+%%WINBIND_NSS%%lib/nss_winbind.so.1
+%%WINBIND_NSS%%lib/nss_wins.so.1
 %%WINBIND%%lib/pam_winbind.so
 %%SMBPASS%%lib/pam_smbpass.so
 %%PYTHON%%lib/%%PYTHON_VERSION%%/site-packages/samba/__init__.py
