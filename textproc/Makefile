@@ -620,6 +620,7 @@
     SUBDIR += spellutils
     SUBDIR += srilm
     SUBDIR += stardict2
+    SUBDIR += stardict2-dictd_mova
     SUBDIR += stardict2-quick
     SUBDIR += sv-aspell
     SUBDIR += sw-aspell
