@@ -79,6 +79,7 @@
     SUBDIR += qt22-static
     SUBDIR += rep-gtk
     SUBDIR += ruby-fltk
+    SUBDIR += ruby-fox
     SUBDIR += ruby-gtk
     SUBDIR += ruby-qt
     SUBDIR += ruby-qt2
