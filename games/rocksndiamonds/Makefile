@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rocksndiamonds
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.artsoft.org/RELEASES/unix/rocksndiamonds/ \
 		http://homepages.compuserve.de/rocksndiamonds/
@@ -22,6 +22,7 @@ MAKE_ARGS+=	sdl
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 MAKE_ENV+=	RO_GAME_DIR=${GAME_DIR} RW_GAME_DIR=${GAME_DIR}/scores \
 		X11_PATH=${X11BASE} OPTIONS="${CFLAGS}"
 .if ${MACHINE_ARCH} == "alpha"
@@ -33,7 +34,7 @@ DOC_DIR=${PREFIX}/share/doc/rocksndiamonds
 
 .if defined(WITH_SDL)
 pre-patch:
-	@${PERL} -pi.orig -e 's:sdl-config:sdl11-config:g' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e 's:sdl-config:sdl11-config:g' ${WRKSRC}/src/Makefile
 .endif
 
 do-install:
