@@ -1,12 +1,15 @@
---- Makefile.orig	Tue Dec 29 08:10:44 1998
-+++ Makefile	Tue Dec 29 08:11:02 1998
-@@ -4,7 +4,7 @@
+--- sounds/Makefile.orig	Tue Jan 26 23:56:12 1999
++++ sounds/Makefile	Fri Jan 29 14:28:41 1999
+@@ -6,9 +6,9 @@
  
- install:
+ install-files:
  	for I in $(shell find . -name '*.wav'); do \
 -		install -d $(prefix)/share/sounds/`dirname $$I`; \
 -		install -m444 $$I $(prefix)/share/sounds/$$I; \
-+		install -d $(prefix)/share/gnome/sounds/`dirname $$I`; \
-+		install -m444 $$I $(prefix)/share/gnome/sounds/$$I; \
++		mkdir -p $(prefix)/share/gnome/sounds/`dirname $$I`; \
++		${INSTALL_DATA} $$I $(prefix)/share/gnome/sounds/$$I; \
  	done
  
+ install-default-links:
+-	ln -sf startup1.wav $(prefix)/share/sounds/startup.wav
++	ln -sf startup1.wav $(prefix)/share/gnome/sounds/startup.wav
