@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-fifth-toe
 PORTVERSION=	1.4.1b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -16,6 +16,7 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	gnome@FreeBSD.org
 
 RUN_DEPENDS=	gabber:${PORTSDIR}/net/gabber \
+		galeon:${PORTSDIR}/www/galeon \
 		pan:${PORTSDIR}/news/pan \
 		gnumeric:${PORTSDIR}/math/gnumeric \
 		sodipodi:${PORTSDIR}/graphics/sodipodi \
@@ -49,8 +50,7 @@ USE_PYTHON=	yes
 .if defined(WITH_MOZILLA_DEVEL)
 RUN_DEPENDS+=	${X11BASE}/lib/mozilla-devel/run-mozilla.sh:${PORTSDIR}/www/mozilla-devel
 .else
-RUN_DEPENDS+=	${X11BASE}/lib/mozilla/run-mozilla.sh:${PORTSDIR}/www/mozilla \
-		galeon:${PORTSDIR}/www/galeon
+RUN_DEPENDS+=	${X11BASE}/lib/mozilla/run-mozilla.sh:${PORTSDIR}/www/mozilla
 .endif
 
 do-install:	# empty
