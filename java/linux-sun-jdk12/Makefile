@@ -31,8 +31,7 @@ NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
 APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}jdk1.2.2
-SUN_BUNDLE_ID?=	9153
-DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=${SUN_BUNDLE_ID}
+DOWNLOAD_URL?=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22&PartDetailId=7740-j2sdk-1.2.2_017-oth-JPR&SiteId=JSC&TransactionId=noreg
 
 .include <bsd.port.pre.mk>
 
