@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/Net/AIM.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/AIM/Connection.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/AIM/Event.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/AIM/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/AIM
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/AIM
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true

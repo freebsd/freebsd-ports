@@ -367,6 +367,7 @@
     SUBDIR += p5-JUNOScript
     SUBDIR += p5-Mon
     SUBDIR += p5-Net
+    SUBDIR += p5-Net-AIM
     SUBDIR += p5-Net-AOLIM
     SUBDIR += p5-Net-BGP4
     SUBDIR += p5-Net-CIDR
