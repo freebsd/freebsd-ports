@@ -688,6 +688,7 @@ bluefish	ports/www/bluefish
 bluefish-devel	ports/www/bluefish-devel
 bluej		ports/java/bluej
 blwm		ports/x11-wm/blwm
+bmeps		ports/graphics/bmeps
 bmf		ports/mail/bmf
 bmon		ports/net/bmon
 bnbt		ports/net/bnbt
