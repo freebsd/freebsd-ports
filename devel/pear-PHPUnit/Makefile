@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	PHPUnit
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tux@pinguru.net
 COMMENT=	Regression testing framework for unit tests
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
