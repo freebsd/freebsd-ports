@@ -8,7 +8,10 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/TODO
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ENVIRONMENT
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ja/MEMO.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ja/BUGS.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/gimp/ja/API.ja.html
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gimp/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/gimp
 @cwd %%X11BASE%%
@@ -16,6 +19,7 @@ libexec/gimp/1.2/plug-ins/clothify.rb
 libexec/gimp/1.2/plug-ins/coolmetal-logo.rb
 libexec/gimp/1.2/plug-ins/erase-rows.rb
 libexec/gimp/1.2/plug-ins/eval.rb
+libexec/gimp/1.2/plug-ins/gimp-druby.rb
 libexec/gimp/1.2/plug-ins/list_images.rb
 libexec/gimp/1.2/plug-ins/raindrop.rb
 libexec/gimp/1.2/plug-ins/rendermap.rb

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	20000227
+PORTVERSION=	20010315
 CATEGORIES=	graphics ruby
 MASTER_SITES=	http://homepage1.nifty.com/susho/software/gimp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -15,6 +15,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
+BUILD_DEPENDS=	gimptool:${.CURDIR}/../gimp1
 LIB_DEPENDS=	gimp.1:${.CURDIR}/../gimp1
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 
@@ -25,10 +26,19 @@ WRKSRC=		${WRKDIR}/ruby-${PORTNAME}
 INSTALL_TARGET=	site-install
 PLIST_SUB=	X11BASE="${X11BASE}"
 
-DOCS_EN=	ENVIRONMENT \
+DOCS_EN=	ChangeLog \
+		ENVIRONMENT \
 		README \
 		TODO
-DOCS_JA=	MEMO.ja
+DOCS_JA=	doc/API.ja.html \
+		doc/BUGS.ja \
+		doc/MEMO.ja
+
+#post-build:
+#	cd ${WRKSRC}/embed && ${SETENV} CC='${CC}' \
+#	CFLAGS='-I${RUBY_ARCHLIBDIR} -DMODULE_COMPILATION' \
+#	LDFLAGS='-L${PREFIX}/lib -lruby' \
+#	gimptool --build rubymod.c
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/plug-ins/*.rb ${X11BASE}/libexec/gimp/1.2/plug-ins/
