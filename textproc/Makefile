@@ -27,6 +27,7 @@
     SUBDIR += expat
     SUBDIR += fr-ispell
     SUBDIR += freegrep
+    SUBDIR += gaspell
     SUBDIR += gdict
     SUBDIR += glimpse
     SUBDIR += grap
