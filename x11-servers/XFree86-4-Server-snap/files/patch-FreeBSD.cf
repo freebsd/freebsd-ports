@@ -1,6 +1,6 @@
---- config/cf/FreeBSD.cf.orig	Wed Sep 10 11:00:01 2003
-+++ config/cf/FreeBSD.cf	Thu Sep 18 01:04:05 2003
-@@ -167,11 +167,11 @@
+--- config/cf/FreeBSD.cf.orig	Sat Nov  1 20:38:01 2003
++++ config/cf/FreeBSD.cf	Tue Nov 11 20:47:11 2003
+@@ -172,11 +172,11 @@
   *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
   */
  #if BuildThreadStubLibrary && (!defined(UseInstalledX11) || !UseInstalledX11)
@@ -16,72 +16,14 @@
  #endif
  
  #define CppCmd			/usr/bin/cpp
-@@ -182,7 +182,13 @@
- #if defined(UseInstalled)
- #define DefaultCCOptions	/**/
- #else
--#define DefaultCCOptions	-ansi -pedantic -Dasm=__asm GccWarningOptions
-+#if defined(HasGcc3) && HasGcc3
-+#define NoSystemWarn		-Wno-system-headers
-+#else
-+#define NoSystemWarn
-+#endif
-+#define DefaultCCOptions	-ansi -pedantic NoSystemWarn -Dasm=__asm \
-+	GccWarningOptions
- #endif
- #endif
- #ifndef ExtraLibraries
-@@ -233,20 +239,24 @@
- #endif
- 
- /*
-- * 4.1/i386 and 5.0/i386 have the AGP driver.
-+ * 4.1/i386 and 5.0/i386,alpha,ia64,amd64 have the AGP driver.
-  */
- #ifndef HasAgpGart
- #if defined(i386Architecture) && \
- 	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 1))
- #define HasAgpGart		YES
- #endif
-+#if (defined(AlphaArchitecture) || defined(ia64Architecture) || \
-+	defined(x86_64Architecture)) && (OSMajorVersion >= 5)
-+#define HasAgpGart		YES
-+#endif
- #endif
- 
- /*
-  * SSE and 3DNow will be autodetected, so binutils is the only 
-  * requirement for enabling this.  By 4.2 they were all supported.
-  */
--#if defined(i386Architecture) && \
-+#if defined(x86_64Architecture) || defined(i386Architecture) && \
- 	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 2))
- # define HasX86Support          YES
- # define HasMMXSupport		YES
-@@ -349,11 +359,13 @@
- #ifdef i386Architecture
- #define ServerExtraDefines GccGasOption XFree86ServerDefines
- #endif
--#ifdef AlphaArchitecture
-+#if defined(AlphaArchitecture) || defined(Sparc64Architecture) || \
-+	defined(ia64Architecture) || defined(x86_64Architecture)
- #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
- #endif
- #ifdef Sparc64Architecture
--#define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
-+#define AsVISOption		-Av9a
-+#define AsOutputArchSize	64
- #endif
- 
- #define StandardDefines       -DCSRG_BASED
-@@ -376,18 +388,8 @@
+@@ -393,18 +393,8 @@
  #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
  #endif
  
 -/* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
 -#ifndef DefaultGcc2i386Opt
 -#if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)
--#define DefaultGcc2i386Opt -O2
+-#define DefaultGcc2i386Opt -O2 GccAliasingArgs
 -#endif
 -#endif
 -
