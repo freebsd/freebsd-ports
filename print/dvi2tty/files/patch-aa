@@ -1,0 +1,65 @@
+
+--- Makefile.orig	Fri Mar 12 01:05:10 1993
++++ Makefile	Mon May  6 03:03:51 1996
+@@ -6,17 +6,20 @@
+ # This Makefile does not work for MSDOS. Make your 
+ # own one, or compile by hand.
+ #
+-CFLAGS = 
++CFLAGS = -O2
++CC     = gcc
+ 
+ all:	dvi2tty disdvi
+ 
+-dvi2tty:dvi2tty.o dvistuff.o
+-	cc -o dvi2tty dvi2tty.o dvistuff.o
++dvi2tty: dvi2tty.o dvistuff.o
++	$(CC) $(CFLAGS) -o dvi2tty dvi2tty.o dvistuff.o
+ 
+-disdvi:disdvi.c commands.h
+-	cc -o disdvi disdvi.o
++disdvi: disdvi.c commands.h
++	$(CC) $(CFLAGS) -o disdvi disdvi.c
+ 
+ dvi2tty.o: dvi2tty.c dvi2tty.h
+ 
+ dvistuff.o: dvistuff.c dvi2tty.h commands.h
+ 
++clean:
++	rm -f dvi2tty disdvi *.o
+--- dvistuff.c.orig	Fri Mar 12 01:05:35 1993
++++ dvistuff.c	Mon May  6 04:48:49 1996
+@@ -996,13 +996,14 @@
+     }
+     else
+         free(fnt->name);    /* free old name */
+-    if ((name = (char *) malloc(namelen * sizeof(char))) == NULL) {
++    if ((name = (char *) malloc((namelen + 1) * sizeof(char))) == NULL) {
+         perror("fontdef");
+         exit(1);
+     }
+     
+     for (i = 0; i < namelen; i++)
+         name[i] = get1();
++    name[namelen] = '\0';
+     fnt->name = name;
+     if (new) {
+         fnt->next = fonts;
+--- disdvi.c.orig	Fri Mar 12 01:05:11 1993
++++ disdvi.c	Mon May  6 04:47:36 1996
+@@ -348,13 +348,14 @@
+     }
+     else
+         free(fnt->name);    /* free old name */
+-    if ((name = (char *) malloc(namelen * sizeof(char))) == NULL) {
++    if ((name = (char *) malloc((namelen + 1) * sizeof(char))) == NULL) {
+         perror("fontdef");
+         exit(1);
+     }
+     
+     for (i = 0; i < namelen; i++)
+         name[i] = get1();
++    name[namelen] = '\0';
+     fnt->name = name;
+     if (new) {
+         fnt->next = fonts;
