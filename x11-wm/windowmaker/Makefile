@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	windowmaker
-PORTVERSION=	0.65.0
-PORTREVISION=	2
+PORTVERSION=	0.65.1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	beta/srcs
@@ -15,6 +14,7 @@ DISTNAME=	WindowMaker-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BUILD_DEPENDS=	msgfmt-new:${PORTSDIR}/devel/gettext-devel
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -31,9 +31,11 @@ WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	X11BASE=${X11BASE} \
-		LIBS="-L${LOCALBASE}/lib" \
+		LIBS="-L${LOCALBASE}/lib -lintl" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
-		LINGUAS="${LINGUAS}"
+		LINGUAS="${LINGUAS}" \
+		MSGFMT=${LOCALBASE}/bin/msgfmt-new \
+		XGETTEXT=${LOCALBASE}/bin/xgettext-new
 CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--with-nlsdir=${PREFIX}/share/locale \
 		--with-libs-from="-L${LOCALBASE}/lib" \
@@ -42,6 +44,7 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 		--enable-hermes \
 		--disable-debug
 
+MANLANG=	"" sk
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 		wmaker.1x wmsetbg.1x wsetfont.1x wxcopy.1x wxpaste.1x
 
@@ -56,7 +59,6 @@ CONFIGURE_ARGS+=	--enable-gnome
 .if defined(WITH_KDE)
 CONFIGURE_ARGS+=	--enable-kde
 .else
-.SILENT:
 pre-extract:
 	@${ECHO} "You can add hooks for KDE by defining WITH_KDE"
 .endif
