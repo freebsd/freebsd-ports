@@ -14,7 +14,7 @@
 --- 25,34 ----
   ID="@(#)Makefile:3.9 -- 5/15/91 19:30:15";
   SHELL = /bin/sh
-! HZ = 100
+! HZ = 128
   CFLAGS = -DTIME
 ! OPTON = -s -static -O -m486 -finline-functions -funroll-loops -fomit-frame-pointer
 !                           #optimization on (give it your best shot) 
@@ -96,6 +96,27 @@
   cd $TMPDIR
   TMPDIR=`pwd`
 ***************
+*** 304,312 ****
+    C)  
+      logmsg="C Compiler Test"
+!     prog="looper ${looper-60} cc cctest.c"
+      stdout=/dev/null
+      repeat="$shortloop"
+      cleanopt="-m $TMPTIMES"
+!     rm -f ${TESTDIR}/cctest.o ${TESTDIR}/a.out
+      ;;
+  
+--- 304,312 ----
+    C)  
+      logmsg="C Compiler Test"
+!     prog="looper ${looper-60} cc cctest.c -o ${TMPDIR}/a.out"
+      stdout=/dev/null
+      repeat="$shortloop"
+      cleanopt="-m $TMPTIMES"
+!     rm -f ${TESTDIR}/cctest.o ${TMPDIR}/a.out
+      ;;
+  
+***************
 *** 418,426 ****
             if test "$stdin" = ""  
             then # without redirected stdin
@@ -115,3 +136,30 @@
             fi 
   	  ###############################################
   	  cd $pwd                    # move back home
+*** pgms/cleanup.sh.orig	Wed Feb  5 11:08:37 1992
+--- pgms/cleanup.sh	Wed Jan  3 19:27:21 1996
+***************
+*** 87,92 ****
+      
+      -r) : reason for failure
+! 	echo $1
+! 	echo $1 >>$LOGFILE
+  	shift
+  	;;
+--- 87,92 ----
+      
+      -r) : reason for failure
+! 	echo -e $1
+! 	echo -e $1 >>$LOGFILE
+  	shift
+  	;;
+*** pgms/multi.sh.orig	Thu Jan  4 15:16:20 1996
+--- pgms/multi.sh	Thu Jan  4 15:17:26 1996
+***************
+*** 15,18 ****
+--- 15,19 ----
+  ###############################################################################
+  ID="@(#)multi.sh:3.4 -- 5/15/91 19:30:24";
++ cd $TMPDIR
+  for i
+  do
