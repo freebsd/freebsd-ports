@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${EBFILES}
 PATCH_SITES=	${MASTER_SITES}
 #PATCHFILES=	${DISTNAME}+.diff ${DISTNAME}+2.diff
 
-MAINTAINER=	takamune@avrl.mei.co.jp
+MAINTAINER=	takamune2004@yahoo.co.jp
 COMMENT=	C library for accessing EB, EBG, EBXA and EPWING CD-ROM dictionaries
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
