@@ -251,6 +251,7 @@
     SUBDIR += tracker
     SUBDIR += umix
     SUBDIR += vorbis-tools
+    SUBDIR += vsound
     SUBDIR += waveplay
     SUBDIR += wavplay
     SUBDIR += wmcdplay
