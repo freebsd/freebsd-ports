@@ -1,18 +1,37 @@
 
 $FreeBSD$
 
---- configure.orig	Fri May 18 10:51:10 2001
-+++ configure	Fri May 18 10:52:30 2001
-@@ -823,9 +823,9 @@
- MESA_MAJOR=3
- MESA_MINOR=4
- MESA_TINY=2
--LIBGL_VERSION=1:2:0${MESA_MAJOR}0${MESA_MINOR}0${MESA_TINY}
--LIBGLU_VERSION=1:1:0${MESA_MAJOR}0${MESA_MINOR}0${MESA_TINY}
--LIBGLUT_VERSION=3:7:0
-+LIBGL_VERSION=${GLVER}:0
-+LIBGLU_VERSION=${GLVER}:0
-+LIBGLUT_VERSION=${GLUTVER}:0
+--- configure.orig	Thu May  1 22:01:58 2003
++++ configure	Thu May  1 22:03:29 2003
+@@ -1406,10 +1406,10 @@
  
+ # For Mesa-specific libs like libOSMesa.
+ LIBMESA_VERSION_INFO=4:${MESA_VERSION}:0    # Mesa 5.0.1
+-LIBGL_VERSION_INFO=5:${MESA_VERSION}:4      # OpenGL 1.4
+-LIBGLU_VERSION_INFO=2:${MESA_VERSION}:1     # GLU 1.1
+-SI_GLU_VERSION_INFO=4:${MESA_VERSION}:3     # GLU 1.3
+-LIBGLUT_VERSION_INFO=10:1:7                 # GLUT 3.7
++LIBGL_VERSION_INFO=${GLVER}:0
++LIBGLU_VERSION_INFO=${GLVER}:0
++SI_GLU_VERSION_INFO=${GLVER}:0
++LIBGLUT_VERSION_INFO=${GLUTVER}:0
  
+ ac_config_headers="$ac_config_headers conf.h"
  
+@@ -6453,6 +6453,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7221,7 +7222,7 @@
+ 
+     echo "$as_me:7222: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+-    CFLAGS="$CFLAGS -D_REENTRANT -DPTHREADS"
++    CFLAGS="$CFLAGS -D_THREAD_SAFE -D_REENTRANT -DPTHREADS"
+     THREAD_LIBS="$THREAD_LIBS -lc_r"
+ else
+   echo "$as_me: failed program was:" >&5
