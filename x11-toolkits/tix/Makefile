@@ -17,6 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+BROKEN=	"Bus error (core dumped) with tk82"
+
 WRKSRC=		${WRKDIR}/Tix4.1.0.007/unix/tk8.0
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
