@@ -12,4 +12,13 @@
 +TK_INCPATH  = %%LOCALBASE%%/include/tk8.3/generic
  
  # The path to the X11 include files
+
+@@ -12,7 +12,7 @@
  
+ # Install SNACK package here
+ 
+-SNACK_INSTALL_PATH = @SNACK_INSTALL_PATH@
++SNACK_INSTALL_PATH = %%PREFIX%%/lib
+ SNACK_HINSTALL_PATH = @SNACK_HINSTALL_PATH@
+ 
+ # 
