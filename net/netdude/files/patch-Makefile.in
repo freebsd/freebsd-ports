@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Feb  4 13:46:55 2004
++++ Makefile.in	Wed Feb  4 13:47:24 2004
+@@ -116,7 +116,7 @@
+ lndtool = @lndtool@
+ version_major = @version_major@
+ version_minor = @version_minor@
+-SUBDIRS = libltdl src plugins protocols intl po pixmaps doc m4
++SUBDIRS = src plugins protocols intl po pixmaps doc m4
+ 
+ MAINTAINERCLEANFILES = Makefile.in aclocal.m4 config.guess \
+                        config.h.in config.sub configure install-sh \
