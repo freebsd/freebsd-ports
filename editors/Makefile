@@ -22,6 +22,7 @@
     SUBDIR += custom-emacs
     SUBDIR += custom-mule
     SUBDIR += dedit
+    SUBDIR += dte
     SUBDIR += e93
     SUBDIR += elvis
     SUBDIR += emacs

@@ -1,0 +1,11 @@
+--- hwlinux.c.orig	Sun Feb 13 04:07:04 2000
++++ hwlinux.c	Thu Nov  2 17:32:22 2000
+@@ -636,7 +636,7 @@
+      *  keep track of which version is being used where.
+      * Once "dte" becomes more stable, this may not be useful.
+      */
+-    printf("\n\ndte version %s for Linux\n", VERSION);
++    printf("\n\ndte version %s for FreeBSD\n", VERSION);
+ }
+ 
+ /*

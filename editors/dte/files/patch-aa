@@ -1,0 +1,25 @@
+--- Makefile.orig	Mon Jan 18 07:04:04 1999
++++ Makefile	Thu Nov  2 17:36:28 2000
+@@ -1,15 +1,17 @@
+ # Make dte for UNIX [Debian Linux] systems
+ 
+-BINDIR = $(DESTDIR)/usr/bin
+-LIBDIR = $(DESTDIR)/usr/lib
+-MANDIR = $(DESTDIR)/usr/man/man1
++BINDIR = $(PREFIX)/bin
++LIBDIR = $(PREFIX)/share/doc/dte
++MANDIR = $(PREFIX)/man/man1
+ OBJECTS = ed.o utils.o findrep.o block.o hwind.o hwlinux.o window.o
+ 
+-CCFLAGS = -O2 -m486 -Wall -DHELPFILE='"'${LIBDIR}/dte.hlp'"' -DPROTO -DCURSOR_PS2_MOUSE
++CCFLAGS += -DHELPFILE='"'${LIBDIR}/dte.hlp'"' -DPROTO -DCURSOR_PS2_MOUSE ${CFLAGS}
+ 
+ .c.o:           ; cc $(CCFLAGS) -c -DUNIX $*.c
+ 
+-dte: $(OBJECTS) ; cc $(CCFLAGS) -o dte $(OBJECTS) -lncurses
++all: dte
++
++dte: $(OBJECTS) ; cc $(CCFLAGS) -o dte $(OBJECTS) -lncurses -lcompat
+ 
+ install:        dte ;\
+                 strip dte ;\

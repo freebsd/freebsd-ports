@@ -1,0 +1,5 @@
+bin/dte
+share/doc/dte/dte.hlp
+share/doc/dte/dte.doc
+share/doc/dte/dte.rc
+@dirrm share/doc/dte
