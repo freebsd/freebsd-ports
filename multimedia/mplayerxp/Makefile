@@ -7,6 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.90.0.8
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://ftp.mplayerhq.hu/MPlayer/releases/ \
 		http://www.mplayerhq.hu/MPlayer/releases/ \
@@ -74,6 +75,10 @@ LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 WITH_XANIM=	yes
 .endif
 
+.if exists(${LOCALBASE}/lib/RealPlayer8/realplay)
+WITH_REALPLAYER=	yes
+.endif
+
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=       -O3 -ffast-math -fomit-frame-pointer
 .endif
@@ -109,6 +114,13 @@ LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
 .if defined(WITH_VORBIS)
 LIB_DEPENDS+=	vorbis.2:${PORTSDIR}/audio/libvorbis
+.endif
+
+.if defined(WITH_REALPLAYER)
+CONFIGURE_ARGS+=	--enable-real \
+			--with-reallibdir=${LOCALBASE}/lib/RealPlayer8/Codecs
+RUN_DEPENDS+=		realplay:${PORTSDIR}/audio/linux-realplayer
+BUILD_DEPENDS+=		realplay:${PORTSDIR}/audio/linux-realplayer
 .endif
 
 .if defined(WITH_XANIM)
@@ -192,6 +204,10 @@ pre-everything::
 .if !defined(WITHOUT_WIN32_CODECS)
 	@${ECHO_MSG} "You can disable support (this turns this into a X86 only port)"
 	@${ECHO_MSG} "for Win32 codecs by defining WITHOUT_WIN32_CODECS"
+.if !defined(WITH_REALPLAYER)
+	@${ECHO_MSG} \
+		"You can enable RealPlayer DLL support by defining WITH_REALPLAYER."
+.endif
 .endif
 .if defined(WITHOUT_RUNTIME_CPUDETECTION)
 .if !defined(WITHOUT_SSE)
@@ -216,7 +232,7 @@ pre-everything::
 
 pre-configure:
 .if defined(WITH_LIBDVDREAD)
-	@${RM} -Rf ${WRKSRC}/libmpdvdkit/
+	@${RM} -Rf ${WRKSRC}/libmpdvdkit2/
 .endif
 
 post-install:
