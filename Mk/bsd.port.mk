@@ -760,6 +760,22 @@ NO_MTREE=		yes
 PREFIX?=		${LOCALBASE}
 .endif
 
+.if !defined(PERL_LEVEL) && defined(PERL_VERSION)
+perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
+_perl_minor=	00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
+perl_minor=		${_perl_minor:C|^.*(...)|\1|}
+.if ${perl_minor} >= 100
+perl_minor=		${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
+perl_patch=		${PERL_VERSION:C|^.*(..)|\1|}
+.else # ${perl_minor} < 100
+_perl_patch=	0${PERL_VERSION:C|^([1-9]+)\.([0-9]+)\.*|0|}
+perl_patch=		${_perl_patch:C|^.*(..)|\1|}
+.endif # ${perl_minor} < 100
+PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
+.else
+PERL_LEVEL=0
+.endif # !defined(PERL_LEVEL) && defined(PERL_VERSION)
+
 .if defined(USE_OPENSSL)
 .if ${OSVERSION} >= 400014
 .if !exists(/usr/lib/libcrypto.so)
@@ -1142,20 +1158,6 @@ PERL_VER?=		5.005
 PERL_ARCH?=		${ARCH}-freebsd
 .endif
 .endif
-
-.if !defined(PERL_LEVEL)
-perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
-_perl_minor=	00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
-perl_minor=		${_perl_minor:C|^.*(...)|\1|}
-.if ${perl_minor} >= 100
-perl_minor=		${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
-perl_patch=		${PERL_VERSION:C|^.*(..)|\1|}
-.else # ${perl_minor} < 100
-_perl_patch=	0${PERL_VERSION:C|^([1-9]+)\.([0-9]+)\.*|0|}
-perl_patch=		${_perl_patch:C|^.*(..)|\1|}
-.endif # ${perl_minor} < 100
-PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
-.endif # !defined(PERL_LEVEL)
 
 SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
