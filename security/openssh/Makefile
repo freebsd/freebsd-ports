@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -36,6 +36,7 @@ PRECIOUS=	ssh_config sshd_config \
 		ssh_host_key ssh_host_key.pub \
 		ssh_host_rsa_key ssh_host_rsa_key.pub \
 		ssh_host_dsa_key ssh_host_dsa_key.pub
+# PAM ist broken, use openssh-portable instead.
 PAM=no
 
 .include <bsd.port.pre.mk>
