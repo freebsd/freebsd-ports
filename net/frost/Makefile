@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	frost
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.0.20040225
 PORTEPOCH=	1
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jtcfrost
-DISTNAME=	${PORTNAME}-wot-${VERSION_DATE}
+DISTNAME=	${PORTNAME}-25-Feb-2004
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	File-sharing tool for FreeNet with Usenet like forum support
@@ -32,11 +32,19 @@ SHARE_DIR=	share/${PORTNAME}
 JAR_DIR=	share/java/jar/${PORTNAME}
 JAR_FILE=	frost.jar
 JAR_FILES=	frost.jar lib/fecImpl.jar \
+		lib/BCastle.jar \
 		lib/genChkImpl.jar lib/xercesImpl.jar \
-		lib/xml-apis.jar lib/xmlParserAPIs.jar
+		lib/jocache.jar \
+		lib/mailapi.jar lib/smtp.jar \
+		lib/skinlf.jar lib/skinlfFix.jar \
+		lib/xml-apis.jar
 
 DOC_FILES=	doc/Frost.tex doc/authors.txt doc/gpl.txt \
+		doc/SkinLFLicense.txt \
 		help/faq.txt help/history.txt
+
+SHARE_FILES=	config/boards.xml.default \
+		themes/themepack.zip
 
 post-patch:
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|; \
@@ -61,8 +69,9 @@ do-install:
 .endfor
 # default boards
 	@${MKDIR} ${PREFIX}/${SHARE_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/config/boards.xml.default \
-		${PREFIX}/${SHARE_DIR}
+.for file in ${SHARE_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${SHARE_DIR}
+.endfor
 # wrapper
 	@${INSTALL_SCRIPT} ${WRKDIR}/wrapper.sh ${PREFIX}/bin/${PORTNAME:L}
 
