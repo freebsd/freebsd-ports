@@ -6,20 +6,15 @@
 #
 
 PORTNAME=	tasks
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.alexking.org/software/tasks/download/
 DISTNAME=	tasks
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	gioria@FreeBSD.org
 COMMENT=	A web based, hierarchical task manager
 
 RESTRICTED=	No redistribution or repackaging allowed
-
-BROKEN=		"Size mismatch"
-DEPRECATED=	${BROKEN}
-EXPIRATION_DATE=2004-06-18
 
 USE_APACHE=	yes
 USE_MYSQL=	yes
