@@ -7,7 +7,7 @@
 
 PORTNAME=	sdocbook-xml
 PORTVERSION= 	4.1.2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/xml/simple/4.1.2.5/
 DISTNAME=	simple${PORTVERSION:S/.//g}
@@ -23,9 +23,10 @@ WRKSRC=		${WRKDIR}
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR}\
 		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML}\
 		CATALOG_PORTS_XML=${CATALOG_PORTS_XML}\
-		XMLDIR=${SDOCBOOKDIR}
+		XMLDIR=${SDOCBOOKDIR}\
+		VERSION=${PORTVERSION}
 
-SDOCBOOKDIR=	${PREFIX}/share/xml/sdocbook
+SDOCBOOKDIR=	${PREFIX}/share/xml/${PORTNAME:S/-xml//}/${PORTVERSION}
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
@@ -44,7 +45,7 @@ post-patch:
 do-install:
 	${MKDIR} ${SDOCBOOKDIR}
 .for i in ${FILES}
-	$(INSTALL_DATA) $(WRKDIR)/${i} $(SDOCBOOKDIR)
+	${INSTALL_DATA} $(WRKDIR)/${i} ${SDOCBOOKDIR}
 .endfor
 	${INSTALL_DATA} ${FILESDIR}/catalog ${SDOCBOOKDIR}
 	${INSTALL_DATA} ${WRKDIR}/catalog.xml ${SDOCBOOKDIR}

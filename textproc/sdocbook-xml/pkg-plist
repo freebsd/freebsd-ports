@@ -1,16 +1,17 @@
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%XMLDIR%%/catalog
-share/xml/sdocbook/catalog
+share/xml/sdocbook/%%VERSION%%/catalog
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%XMLDIR%%/catalog
 @unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove %%XMLDIR%%/catalog.xml
-share/xml/sdocbook/catalog.xml
+share/xml/sdocbook/%%VERSION%%/catalog.xml
 @exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add nextCatalog %%XMLDIR%%/catalog.xml
-share/xml/sdocbook/sdbcent.mod
-share/xml/sdocbook/sdbhier.mod
-share/xml/sdocbook/sdbpool.mod
-share/xml/sdocbook/sdocbook-custom.dtd
-share/xml/sdocbook/sdocbook.css
-share/xml/sdocbook/sdocbook.dtd
-share/xml/sdocbook/sdocbookref-custom.dtd
-share/xml/sdocbook/sdocbookref.dtd
-share/xml/sdocbook/sinclist.mod
+share/xml/sdocbook/%%VERSION%%/sdbcent.mod
+share/xml/sdocbook/%%VERSION%%/sdbhier.mod
+share/xml/sdocbook/%%VERSION%%/sdbpool.mod
+share/xml/sdocbook/%%VERSION%%/sdocbook-custom.dtd
+share/xml/sdocbook/%%VERSION%%/sdocbook.css
+share/xml/sdocbook/%%VERSION%%/sdocbook.dtd
+share/xml/sdocbook/%%VERSION%%/sdocbookref-custom.dtd
+share/xml/sdocbook/%%VERSION%%/sdocbookref.dtd
+share/xml/sdocbook/%%VERSION%%/sinclist.mod
+@dirrm share/xml/sdocbook/%%VERSION%%
 @dirrm share/xml/sdocbook
