@@ -7,6 +7,7 @@
 
 PORTNAME=	qlogtools
 PORTVERSION=	3.1
+PORTCOMMENT=	Tools for processing logs from qmail and other packages
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/qlogtools/
 

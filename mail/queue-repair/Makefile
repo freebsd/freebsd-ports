@@ -8,6 +8,7 @@
 PORTNAME=	queue-repair
 PORTVERSION=	0.8.6
 PORTREVISION=	1
+PORTCOMMENT=	A qmail queue diagnostic and repair tool
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/queue_repair/
 
