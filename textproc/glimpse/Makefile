@@ -19,6 +19,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -DISO_CHAR_SET=1"
 MAN1=		glimpse.1 glimpseindex.1 glimpseserver.1 agrep.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 pre-configure:
 	${RM} ${WRKSRC}/config.cache
 	${CHMOD} ugo+x ${WRKSRC}/configure
@@ -29,4 +35,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/glimpse
 	${INSTALL_PROGRAM} ${WRKSRC}/index/wgconvert ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

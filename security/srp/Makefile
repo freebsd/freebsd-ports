@@ -27,6 +27,12 @@ PORTDOCS=	Acknowledgements Copyrights LICENSE copyright.c \
 		rfc2944.txt rfc2945.txt rfc2946.txt rfc2947.txt rfc2948.txt \
 		rfc2949.txt rfc2950.txt rfc2952.txt rfc2953.txt srp.ps
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 .if !defined(NOPORTDOCS)
 post-install:
 .for f in ${PORTDOCS}
@@ -37,4 +43,4 @@ post-install:
 	@${ECHO_CMD} @dirrm share/doc/srp >> ${TMPPLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

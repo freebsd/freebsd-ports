@@ -17,4 +17,10 @@ COMMENT=	A Motorola 6811 simulator
 
 NO_WRKSUBDIR=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>

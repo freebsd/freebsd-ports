@@ -20,6 +20,10 @@ COMMENT=	Bruce Force Attack Utility working on multiple network services
 
 GNU_CONFIGURE=	yes
 
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 .if !target(post-install) && (${PORTNAME} == "hydra")
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/hydra

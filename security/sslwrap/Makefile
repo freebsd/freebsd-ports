@@ -19,6 +19,12 @@ USE_REINPLACE=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's/SSL_OP_NON_EXPORT_FIRST/SSL_OP_CIPHER_SERVER_PREFERENCE/g' ${WRKSRC}/s_server.c
 
@@ -30,4 +36,4 @@ do-install:
 			${PREFIX}/share/doc/sslwrap
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

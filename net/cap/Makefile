@@ -57,6 +57,12 @@ DOCS2=		CAP.faq CAP60.README NOTICE README
 READMES=	applications/papif applications/lwsrv applications/aufs \
 		doc applications support/uab support/ethertalk
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 pre-patch:
 	@(cd ${WRKSRC}; \
 	  for f in ../cap60.patch* ; do ${PATCH} -s -p < $$f ; done)
@@ -107,4 +113,4 @@ post-install:
 	@${LN} -fs ${PREFIX}/man/man8/papif.8${GZ} ${PREFIX}/man/man8/papof.8${GZ}
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include "bsd.port.mk"
+.include "bsd.port.post.mk"

@@ -42,6 +42,12 @@ HTDOCS=			command.php command_html.inc command_wml.inc \
 			login_html.php login_wml.php scroll_wml.php \
 			shortcuts_wml.php
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/htshd/htshd.c > ${WRKDIR}/foo && \
 		${MV} ${WRKDIR}/foo ${WRKSRC}/htshd/htshd.c
@@ -96,4 +102,4 @@ post-install:
 	fi
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

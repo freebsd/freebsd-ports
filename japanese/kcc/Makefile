@@ -18,4 +18,10 @@ INSTALL_TARGET=	install install.man
 MANLANG=	ja
 MAN1=		kcc.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>

@@ -23,8 +23,14 @@ WRKSRC=			${WRKDIR}/poppassd
 ALL_TARGET=	poppassd
 MAN8=		poppassd.8
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	@ ${STRIP_CMD} ${PREFIX}/libexec/poppassd
 	@ ${INSTALL_MAN} ${FILESDIR}/poppassd.8 ${PREFIX}/man/man8/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -17,4 +17,10 @@ MAN1=	amin.1 helpers.1 huh.1 mesg.1 write.1
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
