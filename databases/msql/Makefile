@@ -3,7 +3,7 @@
 # Date created:		December 17th 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.28 1999/03/12 15:16:59 scrappy Exp $
+# $Id: Makefile,v 1.29 1999/04/08 19:05:44 billf Exp $
 #
 
 DISTNAME=	msql-2.0.4.1
@@ -11,8 +11,6 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.hughes.com.au/software/msql2/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
-
-WWW_SITE=	http://www.hughes.com.au/
 
 # Not free for commercial use.  Must create a user on the local system
 NO_PACKAGE=	YES

@@ -32,3 +32,5 @@ distribution and all its components.
 *** should do just fine (put it in your ftpusers file!).
 ***
 *** Don't forget to run /usr/local/libexec/gnats/mkcat as gnats.
+
+WWW: http://sourceware.cygnus.com/gnats

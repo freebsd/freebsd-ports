@@ -3,7 +3,7 @@
 # Date created:				18th July 1998
 # Whom:					Gary Palmer <gpalmer@freebsd.org>
 #
-# $Id: Makefile,v 1.3 1998/07/21 22:16:24 asami Exp $
+# $Id: Makefile,v 1.4 1999/03/12 15:16:58 scrappy Exp $
 #
 
 DISTNAME=	cdb-0.55
@@ -11,8 +11,6 @@ CATEGORIES=	databases
 MASTER_SITES=	ftp://koobera.math.uic.edu/www/software/
 
 MAINTAINER=	ports@FreeBSD.ORG
-
-WWW_SITE=	http://pobox.com/~djb/cdb.html
 
 ALL_TARGET=	it
 MAN1=		cdbget.1 cdbmake.1 cdbdump.1 cdbstats.1 cdbtest.1
