@@ -20,6 +20,31 @@ EXTRACT_ONLY=	# none
 MAINTAINER=	marshall@chezmarshall.com
 COMMENT=	Perforce client and server
 
+#
+# This is a kludge.  I don't know a better way to set PORTVERSION and
+# PORTREVISION such that pkg_version figures out an update is needed
+#
+ARCH!= /usr/bin/uname -p
+ARCH?= i386
+
+.if ${ARCH} == i386
+VERSION=	03.1
+REVISION=	2
+PLATFORM=	freebsd4
+BIN_FILES=	p4 p4web
+SBIN_FILES=	p4d p4ftpd p4p
+.elif ${ARCH} == alpha
+VERSION=	99.1
+REVISION=	1
+PLATFORM=	freebsdaxp
+BIN_FILES=	p4
+SBIN_FILES=	p4d
+.else
+IGNORE=		"Unsupported platform, sorry."
+.endif
+
+# End of kludge
+
 NO_PACKAGE=	Restricted distribution
 NO_CDROM=	Restricted distribution
 MAN1=		p4.1 p4d.1
@@ -40,21 +65,9 @@ PERFORCE_PORT?=		1666
 PERFORCE_CACHE?=      ${PERFORCE_HOME}/cache
 PERFORCE_TARGET?=     perforce:1666
 
-.if ${ARCH} == i386
-VERSION=	03.1
-REVISION=	1
-PLATFORM=	freebsd4
-BIN_FILES=	p4 p4web
-SBIN_FILES=	p4d p4ftpd p4p
-.elif ${ARCH} == alpha
-VERSION=	99.1
-REVISION=	1
-PLATFORM=	freebsdaxp
-BIN_FILES=	p4
-SBIN_FILES=	p4d
-.else
-IGNORE=		"Unsupported platform, sorry."
-.endif
+pre-everything::
+	@${ECHO} "If the checksums fail, try doing 'make distclean'"
+	@${ECHO} "to force getting the latest binaries from Perforce."
 
 do-build:
 	${SED}	-e "s,@PERFORCE_ROOT@,${PERFORCE_ROOT},g" \
