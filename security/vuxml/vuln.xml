@@ -30,6 +30,73 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5d36ef32-a9cf-11d8-9c6d-0020ed76ef5a">
+    <topic>subversion date parsing vulnerability</topic>
+    <affects>
+      <package>
+	<name>subversion</name>
+	<range><lt>1.0.2_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser reports:</p>
+	<blockquote
+	  cite="http://security.e-matters.de/advisories/082004.html">
+          <p>Subversion versions up to 1.0.2 are vulnerable to a date
+            parsing vulnerability which can be abused to allow remote
+            code execution on Subversion servers and therefore could
+            lead to a repository compromise.</p>
+	</blockquote>
+	<p><em>NOTE:</em> This vulnerability is similar to the date
+	  parsing issue that affected neon.  However, it is a different
+	  and distinct bug.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0397</cvename>
+      <url>http://security.e-matters.de/advisories/082004.html</url>
+    </references>
+    <dates>
+      <discovery>2004-05-19</discovery>
+      <entry>2004-05-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8d075001-a9ce-11d8-9c6d-0020ed76ef5a">
+    <topic>neon date parsing vulnerability</topic>
+    <affects>
+      <package>
+	<name>neon</name>
+	<range><lt>0.24.5_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser reports:</p>
+	<blockquote
+	  cite="http://security.e-matters.de/advisories/062004.html">
+          <p>A vulnerability within a libneon date parsing function
+            could cause a heap overflow which could lead to remote
+            code execution, depending on the application using
+            libneon.</p>
+	</blockquote>
+        <p>The vulnerability is in the function ne_rfc1036_parse,
+          which is in turn used by the function ne_httpdate_parse.
+          Applications using either of these neon functions may be
+          vulnerable.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0398</cvename>
+      <url>http://security.e-matters.de/advisories/062004.html</url>
+    </references>
+    <dates>
+      <discovery>2004-05-19</discovery>
+      <entry>2004-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f93be979-a992-11d8-aecc-000d610a3b12">
     <topic>cvs pserver remote heap buffer overflow</topic>
     <affects>
