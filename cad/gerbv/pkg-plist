@@ -1,8 +1,4 @@
 bin/gerbv
-%%DATADIR%%/scheme/gerb-debug.scm
-%%DATADIR%%/scheme/gerb-ps.scm
-@dirrm %%DATADIR%%/scheme
-@dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/PNG-print/PNGPrintMiniHowto.txt
 %%PORTDOCS%%%%DOCSDIR%%/PNG-print/gimp-window.jpg
 %%PORTDOCS%%%%DOCSDIR%%/eagle/eagle2exc.pl
