@@ -1,0 +1,6 @@
+The V3D IO Library (commonly known as libv3d) is used by third party
+applications to read and write .v3d model files. You do need this library
+if you have other programs that depend on libv3d to read and write .v3d
+files.
+
+WWW: http://wolfpack.twu.net/Vertex/libv3d.html
