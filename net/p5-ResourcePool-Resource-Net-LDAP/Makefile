@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-ResourcePool-Resourse-Net-LDAP
 # Date created:			February 06th, 2003
-# Whom:	      			erwin@lansing.dk
+# Whom:	      			erwin@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MW/MWS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	A ResourcePool wrapper for Net::LDAP
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/ResourcePool.pm:${PORTSDIR}/devel/p5-ResourcePool \

@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	A Perl module for manipulating gray, color and rgba format images
 
 LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib \

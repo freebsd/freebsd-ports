@@ -1,6 +1,6 @@
 # New ports collection makefile for:	p5-Text-Quoted
 # Date created:				Mon April 14th, 2003
-# Whom:					Erwin Lansing <erwin@lansing.dk>
+# Whom:					Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Text::Quoted - Extract the structure of a quoted mail message
 
 BUILD_DEPENDS=	${SITE_PERL}/Text/Autoformat.pm:${PORTSDIR}/textproc/p5-Text-Autoformat \

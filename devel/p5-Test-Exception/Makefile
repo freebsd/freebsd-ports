@@ -1,6 +1,6 @@
 # New ports collection makefile for:    p5-Test-Exception
 # Date created:				January 27th 2003
-# Whom:	      				Erwin Lansing <erwin@lansing.dk>
+# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Test::Exception - test functions for exception based code 
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/Builder/Tester.pm:${PORTSDIR}/devel/p5-Test-Builder-Tester \

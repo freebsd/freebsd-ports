@@ -11,7 +11,7 @@ CATEGORIES=	mail perl5
 MASTER_SITES=	http://savannah.nongnu.org/download/gotmail/stable.pkg/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	A script to fetch mail from a Hotmail or MSN mailbox
 
 RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \

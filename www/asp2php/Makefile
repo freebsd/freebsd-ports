@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.mikekohn.com/asp2php/ \
 		http://dl.droso.net/ports/
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Converts ASP scripts to PHP
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}/src

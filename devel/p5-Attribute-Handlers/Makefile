@@ -1,6 +1,6 @@
 # New ports collection makefile for:    p5-Attribute-Handlers
 # Date created:				January 27th 2003
-# Whom:	      				Erwin Lansing <erwin@lansing.dk>
+# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Attribute
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Attribute::Handlers - Simpler definition of attribute handlers
 
 PERL_CONFIGURE=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://dl.droso.net/ports/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	An implementation of new/posix awk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

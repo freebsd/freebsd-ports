@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://gopher.quux.org:70/give-me-gopher/ \
 		http://dl.droso.net/ports/
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Client and server for access to a distributed document service
 
 GNU_CONFIGURE=	yes

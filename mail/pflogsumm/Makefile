@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://jimsun.LinxNet.com/downloads/ \
 		ftp://jimsun.LinxNet.com/pub/postfix_contrib/
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Postfix Log Entry Summarizer
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Date/Calc.pm:${PORTSDIR}/devel/p5-Date-Calc

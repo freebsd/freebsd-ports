@@ -1,6 +1,6 @@
 # New ports collection makefile for:    p5-Sub-Uplevel
 # Date created:				January 27th 2003
-# Whom:	      				Erwin Lansing <erwin@lansing.dk>
+# Whom:	      				Erwin Lansing <erwin@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	Sub
 PKGNAMEPREFIX=	p5-
 DISTFILES=	${DISTNAME}-2${EXTRACT_SUFX}
 
-MAINTAINER=	erwin@lansing.dk
+MAINTAINER=	erwin@FreeBSD.org
 COMMENT=	Sub::Uplevel - apparently run a function in a higher stack frame
 
 PERL_CONFIGURE=	yes
