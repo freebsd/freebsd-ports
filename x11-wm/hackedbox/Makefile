@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	hackedbox
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.0
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://scrudgeware.org/hackedbox/
+MASTER_SITES=	http://scrudgeware.org/downloads/hackedbox/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
 
