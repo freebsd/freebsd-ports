@@ -27,6 +27,7 @@
     SUBDIR += logjam
     SUBDIR += loserjabber
     SUBDIR += mcal
+    SUBDIR += mencal
     SUBDIR += mhc
     SUBDIR += mhc-emacs20
     SUBDIR += mhc-xemacs21-mule

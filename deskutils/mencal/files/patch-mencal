@@ -1,0 +1,22 @@
+--- mencal.orig	Fri Mar 29 08:14:03 2002
++++ mencal	Wed Sep 18 18:19:07 2002
+@@ -1,4 +1,4 @@
+-#!/usr/bin/perl -w
++#!/usr/bin/env perl -w
+ 
+ ##< month object >##
+ 
+@@ -271,13 +271,6 @@
+     }
+   }
+   
+-  my @locales=split("\n", `locale -c LC_TIME`);
+-  if(($#locales>=1) && length($locales[1])) {
+-    $config{'topline'}='';
+-    foreach my $day (split(';', $locales[1])) { $day=~s/^(..).+$/$1/; $config{'topline'}.=$day.' '; }
+-    $config{'topline'}=~s/ +$//;
+-  }
+-  $config{'topline'}=~s/;/ /g;
+   $config{'monday_first'} && $config{'topline'}=~s/^(..) (.+)$/$2 $1/;
+ 
+   $config{'show_type'}=~/^(1|3|y)$/ || ($config{'show_type'}='1');

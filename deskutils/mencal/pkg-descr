@@ -1,0 +1,9 @@
+Mencal is a simple variation of the well-known unix command cal.
+The main difference is that you can have some periodically
+repeating days highlighted in color. This can be used to track
+menstruation (or other) cycles conveniently.
+
+WWW: http://mencal.kyberdigi.cz/english.html
+
+- Christian Brueffer
+chris@unixpages.org
