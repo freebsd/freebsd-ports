@@ -54,9 +54,9 @@ bin/makeindex
 bin/makempx
 bin/makempy
 bin/mf
-bin/mf-nowin
+%%X11BITS%%bin/mf-nowin
 bin/mft
-bin/mfw
+%%X11BITS%%bin/mfw
 bin/mkfontdesc
 bin/mkindex
 bin/mkocp
