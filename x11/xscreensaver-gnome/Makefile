@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscreensaver-gnome
-PORTVERSION=	4.06
+PORTVERSION=	4.07
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -58,7 +58,8 @@ MAN1=   anemone.1 ant.1 apollonian.1 atlantis.1 attraction.1 blaster.1 \
 	vermiculate.1 vidwhacker.1 vines.1 wander.1 webcollage.1 \
 	whirlwindwarp.1 whirlygig.1 worm.1 xflame.1 xjack.1 xlyap.1 \
 	xmatrix.1 xrayswarm.1 xspirograph.1 xsublim.1 xteevee.1 zoom.1 \
-	endgame.1 glblur.1 halftone.1 \
+	endgame.1 glblur.1 halftone.1 barcode.1 eruption.1 flurry.1 \
+	metaballs.1 \
 	xscreensaver-command.1 xscreensaver-demo.1 \
 	xscreensaver-getimage-file.1 xscreensaver-getimage-video.1 \
 	xscreensaver-getimage.1 xscreensaver-gl-helper.1 xscreensaver.1
