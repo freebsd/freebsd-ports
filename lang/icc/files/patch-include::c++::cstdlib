@@ -1,0 +1,11 @@
+--- include/c++/cstdlib.orig	Sat Dec 13 19:29:45 2003
++++ include/c++/cstdlib	Sat Dec 13 19:32:21 2003
+@@ -12,7 +12,7 @@
+ #else /* _STD_USING */
+  #include <stdlib.h>
+ 
+- #if defined(__GLIBC__)
++ #if defined(__GLIBC__) || defined(__FreeBSD__)
+ _STD_BEGIN
+ 		/* long OVERLOADS */
+ inline long (abs)(long _Left)
