@@ -3,7 +3,7 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.21 1998/06/01 23:31:36 vanilla Exp $
+# $Id: Makefile,v 1.22 1998/06/04 04:04:29 vanilla Exp $
 #
 
 DISTNAME=	mc-4.1.35
@@ -15,8 +15,8 @@ MAINTAINER=	ports@FreeBSD.ORG
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-ncurses --without-edit --with-dusum --disable-nls
-CONFIGURE_ENV=	INSTALL="$${INSTALL} -c"
-MAKE_ENV=	CCOPTS="$(CFLAGS)"
+CONFIGURE_ENV=	CCOPTS="$(CFLAGS)" INSTALL="$${INSTALL} -c"
+
 MAN1=		midc.1
 MAN8=		mcserv.8
 
