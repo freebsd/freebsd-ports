@@ -1,0 +1,13 @@
+--- contrib/camlmode/Makefile--	Mon Dec  2 22:13:37 1996
++++ contrib/camlmode/Makefile	Tue Jul 28 08:48:02 1998
+@@ -11,8 +11,9 @@
+ all:
+ 
+ install:
++	mkdir -p $(EMACSLISPDIR)
+ 	cp $(FILES) $(EMACSLISPDIR)
+-	dir=`pwd`; cd $(EMACSLISPDIR); $(EMACS) -batch -l $$dir/compile
++	-dir=`pwd`; cd $(EMACSLISPDIR); $(EMACS) -batch -l $$dir/compile
+ 
+ clean:
+ 	rm -f *~ #*#

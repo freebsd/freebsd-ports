@@ -1,0 +1,37 @@
+--- src/Makefile.orig	Thu Apr 24 20:21:03 1997
++++ src/Makefile	Tue Jul 28 08:30:13 1998
+@@ -24,19 +24,19 @@
+ # not all Unix C preprocessors define it.
+ # If your cpp is too fussy, make tools/clprepro and use this:
+ # CPP=../../src/tools/clprepro -Dunix
+-CPP=/lib/cpp -P -Dunix
++CPP=/usr/bin/cpp -P -Dunix
+ 
+ # The directory where public executables will be installed
+-BINDIR=/usr/local/bin
++BINDIR=${PREFIX}/bin
+ 
+ # The directory where the Caml Light standard library will be installed
+-LIBDIR=/usr/local/lib/caml-light
++LIBDIR=${PREFIX}/lib/caml-light
+ 
+ # The manual section where the manual pages will be installed
+ MANEXT=1
+ 
+ # The directory where the manual pages will be installed
+-MANDIR=/usr/local/man/man$(MANEXT)
++MANDIR=${PREFIX}/man/man$(MANEXT)
+ 
+ # Some "make"s need this to ensure that they call the Bourne shell,
+ # not the C shell. Seems harmless on most other "make"s.
+@@ -118,8 +118,8 @@
+ 
+ # Install the Caml Light system
+ install:
+-	if test -d $(BINDIR); then : ; else mkdir $(BINDIR); fi
+-	if test -d $(LIBDIR); then : ; else mkdir $(LIBDIR); fi
++	if test -d $(BINDIR); then : ; else mkdir -p $(BINDIR); fi
++	if test -d $(LIBDIR); then : ; else mkdir -p $(LIBDIR); fi
+ 	cd runtime; make BINDIR=$(BINDIR) LIBDIR=$(LIBDIR) install
+ 	cd launch; make BINDIR=$(BINDIR) LIBDIR=$(LIBDIR) install
+ 	cd lib; make BINDIR=$(BINDIR) LIBDIR=$(LIBDIR) install

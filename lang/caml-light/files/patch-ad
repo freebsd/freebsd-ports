@@ -1,0 +1,8 @@
+--- src/man/Makefile--	Tue Nov  1 23:06:06 1994
++++ src/man/Makefile	Tue Jul 28 08:50:22 1998
+@@ -3,4 +3,5 @@
+ MANDIR=/usr/man/man$(MANEXT)
+ 
+ install:
++	mkdir -p ${MANDIR}
+ 	for f in $(MAN); do cp $$f $(MANDIR)/`basename $$f .m`.$(MANEXT); done
