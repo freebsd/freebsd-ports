@@ -1,0 +1,47 @@
+--- src/output/modlogan/generate.c	18 Mar 2004 13:54:20 -0000	1.99
++++ src/output/modlogan/generate.c	13 Aug 2004 10:26:16 -0000
+@@ -53,6 +53,8 @@
+ #include "pictures.h"
+ #include "plugin_config.h"
+ 
++#include "generate.h"
++
+ #define HIGHLIGHT	1
+ #define GROUPING	2
+ #define VISITS		4
+--- src/output/modlogan/generate.h	26 Sep 2002 13:10:27 -0000	1.6
++++ src/output/modlogan/generate.h	13 Aug 2004 10:26:16 -0000
+@@ -30,7 +30,7 @@
+ #include "plugin_config.h"
+ #include "mhash.h"
+ 
+-mhash *get_visit_path_length(mhash *h);
+-mhash *get_visit_duration(mhash *h);
++mhash *get_visit_path_length(mconfig *ext_config, mhash *h);
++mhash *get_visit_duration(mconfig *ext_config, mhash *h);
+ 
+ #endif
+--- src/output/modlogan/pictures_vd.c	29 Jul 2003 12:38:37 -0000	1.17
++++ src/output/modlogan/pictures_vd.c	13 Aug 2004 10:26:16 -0000
+@@ -88,7 +89,7 @@
+ 		GRAPH_CUTOFF_TEXT
+ 		);
+ 
+-	h = get_visit_duration(staweb->visits);
++	h = get_visit_duration(ext_conf, staweb->visits);
+ 
+ 	max = 0;
+ 
+--- src/output/modlogan/pictures_vpl.c	1 Aug 2003 21:30:01 -0000	1.20
++++ src/output/modlogan/pictures_vpl.c	13 Aug 2004 10:26:16 -0000
+@@ -87,7 +87,7 @@
+ 		GRAPH_CUTOFF_TEXT
+ 		);
+ 
+-	h = get_visit_path_length(staweb->visits);
++	h = get_visit_path_length(ext_conf, staweb->visits);
+ 
+ 	max = 0;
+ 
+
+
