@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xqf
-PORTVERSION=	0.9.13
-PORTREVISION=	1
+PORTVERSION=	0.9.14
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,8 +16,10 @@ COMMENT=	Find quake servers
 
 RUN_DEPENDS=	qstat:${PORTSDIR}/games/qstat
 
+USE_GNOME=	gnometarget intlhack
 USE_GETOPT_LONG=	yes
-USE_GNOME=	gnometarget
+USE_GETTEXT=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -31,6 +32,7 @@ LDFLAGS=	-L${LOCALBASE}/lib
 .if defined(WITH_GTK2)
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--enable-gtk2
+PKGNAMESUFFIX=	-gtk2
 .else
 USE_GNOME+=	gdkpixbuf
 .endif
@@ -48,7 +50,14 @@ RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 .endif
 
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|: install-ApplicationsDATA|:|g ; \
+		 s|$$(datadir)/pixmaps|$$(pkgdatadir)/pixmaps|g'
+
 post-install:
+	@${MKDIR} ${DATADIR}/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/xqf_48x48.png ${DATADIR}/pixmaps
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/xqfdocs.html ${DOCSDIR}

@@ -8,7 +8,9 @@ share/locale/es/LC_MESSAGES/xqf.mo
 share/locale/fr/LC_MESSAGES/xqf.mo
 %%DATADIR%%/default/flags/lan.png
 %%DATADIR%%/default/splash.png
+%%DATADIR%%/pixmaps/xqf_48x48.png
 %%DATADIR%%/qstat.cfg
+@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/default/flags
 @dirrm %%DATADIR%%/default
 @dirrm %%DATADIR%%
