@@ -1,5 +1,5 @@
-*** makefile.FreeBSD.orig	Fri Apr 17 02:36:13 1998
---- makefile.FreeBSD	Fri Apr 17 02:39:37 1998
+*** makefile.FreeBSD.orig	Sun Jan  3 17:42:56 1999
+--- makefile.FreeBSD	Sun Jan  3 18:15:02 1999
 ***************
 *** 1,5 ****
   #
@@ -78,7 +78,7 @@
   
   # Libraries that move about or may require special specification.
   #
---- 62,87 ----
+--- 62,90 ----
   # fired up on a system where the fifos are absent.  Other than this, the
   # standalone operation is unhindered.
   
@@ -92,6 +92,9 @@
 + #   -DMIRIAD - extras
   
 ! MFLAGS = -DLSB -DSUN -DPSCRIPT -DQUIT
+! .if ${MACHINE_ARCH} == "alpha"
+! MFLAGS += -DLONG64
+! .endif
   
   # OFLAGS: compiler optimization/debug options.
   
@@ -130,7 +133,7 @@
   
   # SAOimage libraries that live in subdirectories with their own makefiles.
   # This definition must be kept in correspondence with the DEPLIBS target.
---- 89,112 ----
+--- 92,115 ----
   # usual link search path, i.e., it is not in /usr/lib, it may be necessary
   # to specify its path fully in XLIB.
   
@@ -156,7 +159,7 @@
   # SAOimage libraries that live in subdirectories with their own makefiles.
   # This definition must be kept in correspondence with the DEPLIBS target.
 ***************
-*** 299,305 ****
+*** 306,312 ****
   	$(MAKE) ARCFILE=$(TAPEDEV) tar
   
   
@@ -164,7 +167,7 @@
   STRUCT = hfiles/struct.h hfiles/buffer.h hfiles/color.h hfiles/control.h \
   	 hfiles/coord.h hfiles/cursor.h hfiles/image.h hfiles/window.h
   WORKS = $(XLIBH) $(STRUCT) hfiles/constant.h hfiles/extern.h hfiles/wcs.h
---- 301,307 ----
+--- 311,317 ----
   	$(MAKE) ARCFILE=$(TAPEDEV) tar
   
   
@@ -173,7 +176,7 @@
   	 hfiles/coord.h hfiles/cursor.h hfiles/image.h hfiles/window.h
   WORKS = $(XLIBH) $(STRUCT) hfiles/constant.h hfiles/extern.h hfiles/wcs.h
 ***************
-*** 408,415 ****
+*** 415,422 ****
   		defs/dispbox.def defs/magnibox.def defs/panbox.def \
   		defs/btnbox.def defs/colorbox.def defs/graphbox.def \
   		defs/desktop.def defs/cursor.def
@@ -182,7 +185,7 @@
   mainslct.o	: $(WORKS)
   mainutil.o	: $(XLIBH) $(STRUCT) hfiles/extern.h
   menuctrl.o	: $(WORKS) btnlib/buttons.h
---- 410,417 ----
+--- 420,427 ----
   		defs/dispbox.def defs/magnibox.def defs/panbox.def \
   		defs/btnbox.def defs/colorbox.def defs/graphbox.def \
   		defs/desktop.def defs/cursor.def

@@ -1,0 +1,11 @@
+--- disppsct.c.orig	Thu May  4 06:18:00 1995
++++ disppsct.c	Sun Jan  3 17:50:42 1999
+@@ -589,7 +589,7 @@
+   char *getenv();
+ #endif
+ 
+-#ifdef SUN
++#if defined(SUN) && defined(sun)
+   long time();		/* should be in time.h, but not in SunOS */
+ #endif
+   long clock;
