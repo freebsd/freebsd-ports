@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.17 1999/04/20 20:28:48 steve Exp $
+# $Id: Makefile,v 1.18 1999/05/05 17:17:01 flathill Exp $
 #
 
     SUBDIR += aish
@@ -6,6 +6,7 @@
     SUBDIR += i18ntools
     SUBDIR += ish
     SUBDIR += kdesupport
+    SUBDIR += kdesupport-i18n-11
     SUBDIR += kdesupport11
     SUBDIR += libutf-8
     SUBDIR += mimepp
