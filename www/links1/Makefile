@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	links
-PORTVERSION=	0.97
-PORTREVISION=	1
+PORTVERSION=	0.98
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://atrey.karlin.mff.cuni.cz/~clock/twibright/links/download/ \
+MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~mikulas/vyplody/links/download/ \
 		http://ice.dammit.lt/links/download/ \
 		http://links.sourceforge.net/download/ \
 		ftp://ftp.fu-berlin.de/unix/network/www/links/
