@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mmap
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.8
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -14,13 +14,27 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
+.if !defined(NOPORTDOCS)
+BUILD_DEPENDS=	rdoc:${PORTSDIR}/textproc/ruby-rdoc
+.endif
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+.if !defined(NOPORTDOCS)
+USE_RUBY_RD=	yes
+.endif
 
 INSTALL_TARGET=	site-install
 
-DOCS=		Changes		README.en	mmap.html	mmap.rd
+DOCS=		Changes		README.en	mmap.html	mmap.rd	\
+		docs/doc
 EXAMPLES=	b.rb
+
+post-build:
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC}; ${RUBY_RD} mmap.rd > mmap.html
+	cd ${WRKSRC}/docs; ${RUBY} b.rb mmap; rdoc mmap.rb
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -30,7 +44,7 @@ post-install:
 .endfor
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+	${CP} -R ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
 .endfor
 .endif
 
