@@ -5,17 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	xquote
-PORTVERSION=	1.1
+PORTVERSION=	2.6.9
 CATEGORIES=	finance
-MASTER_SITES=	http://sunsite.dk/xinvest/	\
+MASTER_SITES=	http://xinvest.sunsite.dk/	\
 		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR= applications
 
 MAINTAINER=	mph@freebsd.org
 COMMENT=	A quote retrieval tool for X
 
+LIB_DEPENDS=	Xbae.4:${PORTSDIR}/x11-toolkits/xbae
+
 USE_MOTIF=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
+
+PLIST_FILES=	bin/Xquote lib/X11/app-defaults/Xquote
 
 .include <bsd.port.mk>
