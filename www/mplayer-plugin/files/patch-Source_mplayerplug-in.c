@@ -1,6 +1,6 @@
---- Source/mplayerplug-in.c.orig	Fri Feb 21 15:43:56 2003
-+++ Source/mplayerplug-in.c	Fri Feb 21 15:44:24 2003
-@@ -219,7 +219,7 @@
+--- Source/mplayerplug-in.c.orig	Sat Apr 12 15:07:47 2003
++++ Source/mplayerplug-in.c	Sat Apr 12 15:08:56 2003
+@@ -262,7 +262,7 @@
  	}
  
  	if (config == NULL) {
