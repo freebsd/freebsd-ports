@@ -4494,6 +4494,7 @@ luasocket	ports/net/luasocket
 luma		ports/sysutils/luma
 luna		ports/astro/luna
 lupe		ports/x11/lupe
+lush		ports/lang/lush
 lv		ports/misc/lv
 lwm		ports/x11-wm/lwm
 lwp		ports/devel/lwp
