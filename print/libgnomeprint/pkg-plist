@@ -2,8 +2,10 @@ bin/gnome-font-install
 etc/gnome/fonts/gnome-print-ghostscript.fontmap
 @exec touch %D/etc/gnome/fonts/gnome-print-x11.fontmap
 etc/gnome/fonts/gnome-print-x11.fontmap
+etc/gnome/fonts/gnome-print.fontmap
 etc/printConf.sh
 include/gnome-1.0/libgnomeprint/gnome-font-dialog.h
+include/gnome-1.0/libgnomeprint/gnome-font-face-private.h
 include/gnome-1.0/libgnomeprint/gnome-font-face.h
 include/gnome-1.0/libgnomeprint/gnome-font.h
 include/gnome-1.0/libgnomeprint/gnome-glyphlist.h
@@ -72,6 +74,7 @@ share/gnome/fonts/afms/adobe/putr8a.afm
 share/gnome/fonts/afms/adobe/putri8a.afm
 share/gnome/fonts/afms/adobe/pzcmi8a.afm
 share/gnome/fonts/afms/adobe/pzdr.afm
+share/gnome/fonts/defaults.fontmap
 share/gnome/gnome-print/%%VERSION%%/profiles/PostscriptOptimized.profile
 share/gnome/gnome-print/%%VERSION%%/profiles/fax-g3.profile
 share/gnome/gnome-print/%%VERSION%%/profiles/pdf.profile
@@ -105,6 +108,7 @@ share/locale/sl/LC_MESSAGES/gnome-print.mo
 share/locale/sv/LC_MESSAGES/gnome-print.mo
 share/locale/tr/LC_MESSAGES/gnome-print.mo
 share/locale/uk/LC_MESSAGES/gnome-print.mo
+share/locale/wa/LC_MESSAGES/gnome-print.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-print.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-print.mo
 @dirrm share/gnome/gnome-print/%%VERSION%%/profiles
