@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	jacal
-PORTVERSION=	1b2
+PORTVERSION=	1b4
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
-DISTNAME=	jacal1b2
+DISTNAME=	jacal1b4
 
 MAINTAINER=	markm@FreeBSD.org
 COMMENT=	Symbolic mathematics program written in Scheme
