@@ -4,16 +4,16 @@
 # Date created:		15 Mar 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.5 1998/03/16 07:50:41 steve Exp $
 #
 
 DISTNAME=       pine3.96
 PKGNAME=        ko-pine-3.96k.2
 CATEGORIES=     korean mail news
-MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
+MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/old/ \
 		ftp://ftp.kaist.ac.kr/pub/hangul/incoming/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/incoming/
-DISTFILES=	pine3.96.tar.gz pine396k2.tar.gz
+DISTFILES=	pine3.96.tar.Z pine396k2.tar.gz
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
