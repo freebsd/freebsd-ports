@@ -1,0 +1,22 @@
+*****************************************************************
+Please add the following to your apache config, and restart.
+
+#
+# Directives to allow use of AWStats as a CGI
+#
+Alias /awstatsclasses "/usr/local/www/awstats/classes/"
+Alias /awstatscss "/usr/local/www/awstats/css/"
+Alias /awstatsicons "/usr/local/www/awstats/icons/"
+ScriptAlias /awstats/ "/usr/local/www/awstats/cgi-bin/"
+
+#
+# This is to permit URL access to scripts/files in AWStats directory.
+#
+<Directory "/usr/local/www/awstats/">
+    Options None
+    AllowOverride None
+    Order allow,deny
+    Allow from all
+</Directory>
+
+*****************************************************************
