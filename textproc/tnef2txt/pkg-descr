@@ -1,0 +1,6 @@
+tnef2txt is an application/ms-tnef parser.  In addition to viewing the
+files, it can also dump them to disk.
+
+WWW:	http://www.fiction.net/blong/programs/#tnef2txt
+
+- jim <jim@FreeBSD.org>
