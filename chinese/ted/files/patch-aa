@@ -1,45 +1,28 @@
---- Makefile.orig	Thu Aug 12 09:53:41 1999
-+++ Makefile	Sat Oct  9 23:45:22 1999
-@@ -1,15 +1,15 @@
+--- Makefile.orig	Wed Feb  9 10:18:57 2000
++++ Makefile	Sun Apr  2 11:59:26 2000
+@@ -1,5 +1,5 @@
 -CHINESE=0
 -TEDDIR=/usr/local/lib/Ted
 +CHINESE=1
 +TEDDIR=/usr/X11R6/lib/X11/ted
  ########## GCC/Linux ......  ############
--#CC=gcc
--#XINC=-I/usr/X11R6/include
--#LDFLAGS=-L/usr/X11R6/lib
-+CC=gcc
-+XINC=-I/usr/X11R6/include
-+LDFLAGS=-L/usr/X11R6/lib
+ CC=gcc
+ XINC=-I/usr/X11R6/include
+@@ -28,7 +28,7 @@
+ #LDFLAGS=
  ###########################
- ###### HP-UX's ansi cc ####
--CC=cc -Ae
--LDFLAGS=-L/usr/lib/X11R5
-+#CC=cc -Ae
-+#LDFLAGS=-L/usr/lib/X11R5
- #LDFLAGS=-L/usr/lib/X11R6
--XINC=
-+#XINC=
- ###########################
- ########## IRIX ############
- #CC=cc -cckr
-@@ -31,20 +31,20 @@
- #CC=cc
+ ########## Solaris and SunOS 4.x ############
+-CC=cc
++#CC=cc
  #XINC=-I/usr/openwin/include
  #LDFLAGS= -L/usr/openwin/lib -lsocket
--CC=cc
--XINC=-I/usr/X11R6.3/include
--LDFLAGS= -L/usr/X11R6.3/lib -lsocket
--SUNKBD=-DSUNKBD
-+#CC=cc
-+#XINC=-I/usr/X11R6.3/include
-+#LDFLAGS= -L/usr/X11R6.3/lib -lsocket
-+#SUNKBD=-DSUNKBD
+ #CC=cc
+@@ -37,14 +37,14 @@
+ #SUNKBD=-DSUNKBD
  ###########################
  
 -CFLAGS = -O -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
-+CFLAGS = -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
++CFLAGS += -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
  #CFLAGS = -g -DCHINESE=$(CHINESE) $(XINC) -DDEBUG $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
  #CFLAGS = -g -DCHINESE=$(CHINESE) $(XINC) $(SUNKBD) -DTEDDIR=\"$(TEDDIR)\"
  
@@ -51,8 +34,8 @@
 +all:	ted tedrc #ref ctags
  ted:	$(OBJS)
  	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lX11
- #	$(CC) $(OBJS) -o $@ $(LDFLAGS) -lXmu -lX11 -lefence
-@@ -59,11 +59,18 @@
+ pur:	$(OBJS)
+@@ -63,11 +63,17 @@
  	$(CC) $(CFLAGS) ctags.c -o $@
  	strip $@
  install:
@@ -71,7 +54,6 @@
 +	install -c -o root -g wheel -m 0444 tedrc.grep $(TEDDIR)
 +	install -c -o root -g wheel -m 0444 tedrc.vi $(TEDDIR)
 +	install -c -o root -g wheel -m 0444 ted.help $(TEDDIR)
-+
  clean:
  	rm -f $(OBJS) ted core *~ *_
  clb5:

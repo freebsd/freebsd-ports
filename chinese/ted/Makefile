@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=		ted4.4a
-PKGNAME=		zh-ted-4.4a
+DISTNAME=		ted4.4d
+PKGNAME=		zh-ted-4.4d
 CATEGORIES=		chinese editors
 MASTER_SITES=		ftp://freebsd.ntu.edu.tw/freebsd/ntu/moon/X/ted/
 EXTRACT_SUFX=		.tgz
