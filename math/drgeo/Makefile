@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drgenius
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.ofset.org/drgenius/
 
