@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ui
-PORTVERSION=	0.93
+PORTVERSION=	0.95
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyui
@@ -25,15 +25,13 @@ RUN_DEPENDS=	\
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
-WRKSRC=		${WRKDIR}/pyui
-NO_BUILD=	yes
+USE_PYDISTUTILS= yes
 
-do-install:
-	@${MKDIR} ${PYTHON_SITELIBDIR}/pyui
-	${CP} -R ${WRKSRC}/pyui/* ${PYTHON_SITELIBDIR}/pyui
+post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
+	@${RM} -rf ${WRKSRC}/docs/CVS
+	@${MKDIR} ${PREFIX}/share/doc/py-ui
+	${CP} ${WRKSRC}/docs/* ${PREFIX}/share/doc/py-ui
 .endif
 
 .include <bsd.port.mk>
