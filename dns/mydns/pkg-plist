@@ -17,6 +17,7 @@ share/locale/pt_BR/LC_MESSAGES/mydns.mo
 %%PORTDOCS%%%%DOCSDIR%%/QUICKSTART.postgres
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/contrib/MyDNS.pm
 %%PORTDOCS%%%%DOCSDIR%%/contrib/README
 %%PORTDOCS%%%%DOCSDIR%%/contrib/admin.php
 %%PORTDOCS%%%%DOCSDIR%%/contrib/stats.php
