@@ -17,10 +17,10 @@
  * Copyright (C) 1998 Netscape Communications Corporation. All
  * Rights Reserved.
  *
- * Contributor(s): 
+ * Contributor(s):
  */
 
-// SYNTAX HINTS:  dashes are delimiters.  Use underscores instead. 
+// SYNTAX HINTS:  dashes are delimiters.  Use underscores instead.
 //  The first character after a period must be alphabetic.
 
 pref("network.search.url","http://cgi.netscape.com/cgi-bin/url_search.cgi?search=");
@@ -28,7 +28,7 @@ pref("network.search.url","http://cgi.netscape.com/cgi-bin/url_search.cgi?search
 pref("keyword.URL", "http://keyword.netscape.com/keyword/");
 pref("keyword.enabled", true);
 pref("general.useragent.locale", "chrome://navigator/locale/navigator.properties");
-pref("general.useragent.misc", "0.8");
+pref("general.useragent.misc", "0.8.1");
 
 pref("general.startup.browser",             true);
 pref("general.startup.mail",                false);
@@ -38,9 +38,10 @@ pref("general.startup.compose",             false);
 pref("general.startup.addressbook",         false);
 
 pref("general.open_location.last_url",      "");
+pref("general.open_location.last_window_choice", 0);
 
 // 0 = blank, 1 = home (browser.startup.homepage), 2 = last
-pref("browser.startup.page",                1);     
+pref("browser.startup.page",                1);
 pref("browser.startup.homepage",	   "chrome://navigator/locale/navigator.properties");
 // "browser.startup.homepage_override" was for 4.x
 pref("browser.startup.homepage_override.1", true);
@@ -72,6 +73,10 @@ pref("browser.toolbars.showbutton.mynetscape", true);
 pref("browser.toolbars.showbutton.net2phone", true);
 pref("browser.toolbars.showbutton.print",   true);
 pref("browser.toolbars.showbutton.search",  true);
+
+pref("accessibility.browsewithcaret", false);
+pref("accessibility.usetexttospeech", "");
+pref("accessibility.usebrailledisplay", "");
 
 // Dialog modality issues
 pref("browser.prefWindowModal", true);
@@ -268,7 +273,7 @@ pref("wallet.crypto",                       false);
 pref("imageblocker.enabled",                true);
 pref("intl.accept_languages",               "chrome://navigator/locale/navigator.properties");
 pref("intl.accept_charsets",                "iso-8859-1,*,utf-8");
-pref("intl.collationKeyAsCodePoint",        false);
+pref("intl.collationOption",                "chrome://navigator/locale/navigator.properties");
 
 pref("intl.charsetmenu.browser.static",     "chrome://navigator/locale/navigator.properties");
 pref("intl.charsetmenu.browser.more1",      "chrome://navigator/locale/navigator.properties");
@@ -355,6 +360,7 @@ pref("security.xpconnect.plugin.unrestricted", true);
 pref("ui.key.accelKey", 17);
 pref("ui.key.menuAccessKey", 18);
 pref("ui.key.menuAccessKeyFocuses", false);
+pref("ui.key.saveLink.shift", true); // true = shift, false = meta
 
 // Middle-mouse handling
 pref("middlemouse.paste", false);
@@ -388,5 +394,58 @@ pref("sidebar.customize.all_panels.url", "http://sidebar-rdf.netscape.com/%LOCAL
 pref("sidebar.customize.more_panels.url", "http://dmoz.org/Netscape/Sidebar/");
 
 pref("prefs.converted-to-utf8",false);
+// --------------------------------------------------
+// IBMBIDI 
+// --------------------------------------------------
+//
+// ------------------
+//  Text Direction
+// ------------------
+// 1 = directionLTRBidi *
+// 2 = directionRTLBidi
+pref("bidi.direction", 1);
+// ------------------
+//  Text Type
+// ------------------
+// 1 = charsettexttypeBidi *
+// 2 = logicaltexttypeBidi
+// 3 = visualtexttypeBidi
+pref("bidi.texttype", 1);
+// ------------------
+//  Controls Text Mode
+// ------------------
+// 1 = logicalcontrolstextmodeBidiCmd
+// 2 = visiualcontrolstextmodeBidi
+// 3 = containercontrolstextmodeBidi *
+pref("bidi.controlstextmode", 1);
+// ------------------
+//  Clipboard Text Mode
+// ------------------
+//  1 = logicalclipboardtextmodeBidi
+// 2 = visiualclipboardtextmodeBidi
+// 3 = sourceclipboardtextmodeBidi *
+pref("bidi.clipboardtextmode", 3);
+// ------------------
+//  Numeral Style
+// ------------------
+// 1 = regularcontextnumeralBidi *
+// 2 = hindicontextnumeralBidi
+// 3 = arabicnumeralBidi
+// 4 = hindinumeralBidi
+pref("bidi.numeral", 1);
+// ------------------
+//  Support Mode
+// ------------------
+// 1 = mozillaBidisupport *
+// 2 = OsBidisupport
+// 3 = disableBidisupport
+pref("bidi.support", 1);
+// ------------------
+//  Charset Mode
+// ------------------
+// 1 = doccharactersetBidi *
+// 2 = defaultcharactersetBidi
+pref("bidi.characterset", 1);
 
-pref("browser.throbber.url","chrome://navigator/locale/navigator.properties");
+
+pref("browser.throbber.url","chrome://navigator-region/locale/region.properties");
