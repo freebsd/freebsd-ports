@@ -1,0 +1,11 @@
+--- configure.orig	Wed Sep  8 00:22:53 1999
++++ configure	Tue Feb 15 21:54:21 2000
+@@ -4407,7 +4407,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="$all_libraries -lgif -lX11 $LIBSOCKET"
++LIBS="$all_libraries -lungif -lX11 $LIBSOCKET"
+ cat > conftest.$ac_ext <<EOF
+ #line 4413 "configure"
+ #include "confdefs.h"

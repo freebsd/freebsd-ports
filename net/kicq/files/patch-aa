@@ -1,5 +1,5 @@
---- configure.orig	Thu Dec  3 15:25:30 1998
-+++ configure	Sat Jul 31 12:17:24 1999
+--- configure.orig	Fri Dec  4 06:25:30 1998
++++ configure	Tue Feb 15 01:32:08 2000
 @@ -2373,7 +2373,7 @@
    ;;
    *)
@@ -9,3 +9,19 @@
      test -z "$ac_dir" && ac_dir=.
      if test -f $ac_dir/$ac_word; then
        ac_cv_path_MOC="$ac_dir/$ac_word"
+@@ -2709,6 +2709,7 @@
+   echo "$ac_t""no" 1>&6
+ fi
+  
++if false; then
+ echo $ac_n "checking for giflib""... $ac_c" 1>&6
+ echo "configure:2714: checking for giflib" >&5
+ if eval "test \"`echo '$''{'ac_cv_lib_gif'+set}'`\" = set"; then
+@@ -2755,6 +2756,7 @@
+ 
+ else
+   { echo "configure: error: You need giflib23. Please install the kdesupport package" 1>&2; exit 1; }
++fi
+ fi
+  echo $ac_n "checking for jpeglib""... $ac_c" 1>&6
+ echo "configure:2761: checking for jpeglib" >&5
