@@ -1,5 +1,5 @@
---- plgrenouille.pl.orig	Tue Nov  5 19:42:49 2002
-+++ plgrenouille.pl	Wed Nov 13 15:51:51 2002
+--- plgrenouille.pl.orig	Mon Mar 17 15:52:56 2003
++++ plgrenouille.pl	Wed Apr 30 22:56:55 2003
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -Tw
 +#!%%PERL%% -Tw
@@ -49,7 +49,7 @@
      print <<"EOUSAGE";
  Usage: $VERSION{'client'} [-c|--configure] [-b|--background] [-h|-?|--help]
                [[-l |--log=]priorité] [[-v |--verbose=]priorité]
-@@ -101,7 +105,7 @@
+@@ -109,7 +113,7 @@
  
  # for milliseconds; otherwise would use built-in time.
  
@@ -58,7 +58,7 @@
  
  sub microtime() {
      my ($timeval, $timezone, $sec, $usec);
-@@ -187,36 +191,21 @@
+@@ -205,36 +209,21 @@
    die "Priorité $level inconnue" unless $DISPLAY_LEVEL;
  }
  
@@ -103,7 +103,7 @@
      die "Pas d'interface $if_device ?";
  }
  
-@@ -332,6 +321,7 @@
+@@ -350,6 +339,7 @@
  }
  
  sub load_preferences() {
@@ -111,28 +111,15 @@
      eval {
  	if (open(CONFIG, "<$MYRC")) {
  	    while (<CONFIG>) {
-@@ -343,10 +333,12 @@
+@@ -360,6 +350,7 @@
+ 	    close(CONFIG);
  	}
      };
-     die if $@;
 +    swap_privileges();
+     die if $@;
  }
  
- sub store_preferences() {
-     my($oldumask) = umask 0177;
-+    swap_privileges();
-     eval {
- 	if(open(CONFIG, ">$MYRC")) {
- 	    map { print CONFIG "$_=$preferences{$_}\n"; } sort keys %preferences;
-@@ -355,6 +347,7 @@
- 	    display_and_log('WARNING', "Ecriture du fichier $MYRC impossible: vérifier les permissions");
- 	}
-     };
-+    swap_privileges();
-     umask $oldumask;
-     die if $@;
- }
-@@ -420,7 +413,7 @@
+@@ -442,7 +433,7 @@
  sub get_preferences() {
      load_preferences();
      
@@ -141,7 +128,7 @@
  	if not defined $preferences{'user'} or 
  	   not defined $preferences{'pass'} or
  	   not defined $preferences{'email'} or 
-@@ -434,20 +427,20 @@
+@@ -456,20 +447,20 @@
  # plgrenouille uses the default route interface
  sub autodetect_interface() {
      $vars{'ip'} = '';
@@ -171,7 +158,7 @@
      
      display_and_log('NOTICE', "$preferences{'interface'} sera utilisé pour les mesures") if $preferences{'interface'};
  }
-@@ -1160,8 +1153,6 @@
+@@ -1182,8 +1173,6 @@
  
  # --------------------------- MAIN ----------------------------
  
@@ -180,7 +167,7 @@
  Getopt::Long::Configure('bundling'); # 'no_ignore_case'
  eval {
    GetOptions(\%params,
-@@ -1169,6 +1160,7 @@
+@@ -1191,6 +1180,7 @@
               'verbose|v=s', \&set_verbose_level,
               'configure|setup|c',
               'background|b',
@@ -188,7 +175,7 @@
               'help|h|?');
  };
  if ($@) {
-@@ -1177,6 +1169,10 @@
+@@ -1199,6 +1189,10 @@
  }
  usage(1) if scalar @ARGV;
  usage(0) if $params{'help'};

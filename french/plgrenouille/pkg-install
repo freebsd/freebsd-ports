@@ -35,3 +35,5 @@ POST-DEINSTALL)
 	fi
 	;;
 esac
+
+exit 0
