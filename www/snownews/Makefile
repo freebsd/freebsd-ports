@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	snownews
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5.1
 CATEGORIES=	www
 MASTER_SITES=	http://kiza.kcore.de/software/snownews/download/
 
@@ -23,6 +23,7 @@ MAN1=		snownews.1
 MANLANG=	"" de nl fr it ru_RU.KOI8-R
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS =|CFLAGS +=|g' ${WRKSRC}/platform_settings
+	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS+=|g' ${WRKSRC}/platform_settings
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
