@@ -4,27 +4,32 @@
 #
 # $FreeBSD$
 
-PORTNAME=		swhplugins
-PORTVERSION=		0.3.6
-CATEGORIES=		audio
-MASTER_SITES=		http://plugin.org.uk/releases/${PORTVERSION}/
-DISTNAME=		swh-plugins-${PORTVERSION}
+PORTNAME=	swhplugins
+PORTVERSION=	0.4.0
+CATEGORIES=	audio
+MASTER_SITES=	http://plugin.org.uk/releases/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
+DISTNAME=	swh-plugins-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=	This is Steve Harris' huge Collection of LADSPA Plugins
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
 
-BUILD_DEPENDS=		${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=		fftw.2:${PORTSDIR}/math/fftw
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
+		fftw.2:${PORTSDIR}/math/fftw
 
-GNU_CONFIGURE=		yes
-INSTALLS_SHLIB=		yes
-USE_REINPLACE=		yes
-USE_GMAKE=		yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+INSTALLS_SHLIB=	yes
 
 post-patch:
-		${REINPLACE_CMD} -e "s,-O6,," ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g ; \
+		 s|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g ; \
+		 s|\\\$${top_builddir}/intl/libintl.a|-lintl|g ' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
