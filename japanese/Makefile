@@ -25,6 +25,7 @@
     SUBDIR += csrd
     SUBDIR += dbskkd-cdb
     SUBDIR += deepforest
+    SUBDIR += devil-fpw
     SUBDIR += diclookup-mule
     SUBDIR += dserver
     SUBDIR += dvi2dvi
