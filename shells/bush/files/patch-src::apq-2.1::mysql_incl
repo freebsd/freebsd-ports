@@ -1,0 +1,11 @@
+--- src/apq-2.1/mysql_incl.orig	Wed Sep 24 21:56:27 2003
++++ src/apq-2.1/mysql_incl	Fri Jan 21 23:43:18 2005
+@@ -1,7 +1,7 @@
+ #
+ 
+ if [ ! -f config.win32 ] ; then
+-	echo $(mysql_config --cflags) | sed "s|^.*'\(.*\)'.*$|\1|"
++	echo $(mysql_config --include) | sed 's|^-I||'
+ else
+ 	sed -n '/^MY_UINCL/p' <config.win32 | sed 's|^.*=||;s| *$||'
+ fi

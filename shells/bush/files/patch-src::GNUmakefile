@@ -1,0 +1,15 @@
+--- src/GNUmakefile.orig	Sat Jan  8 04:08:31 2005
++++ src/GNUmakefile	Fri Jan 21 22:52:36 2005
+@@ -5,9 +5,9 @@
+ # These are filled in by ./configure.  If they are incorrect, change them for
+ # your system...
+ 
+-CC=gcc
+-CPU=i686
+-MAKE=gmake
++#CC=gcc
++MAKE=${GMAKE}
++CPU=${CPUTYPE}
+ GNATMAKE=gnatmake
+ 
+ # RPM Directories For Building an RPM file
