@@ -1,15 +1,22 @@
 --------------------------------------------------------------------------
 
-The NetAMS package has been successfully installed.
+The NeTAMS package has been successfully installed.
 
 To use the programm, make a copy of %%PREFIX%%/etc/rc.d/netams.sh.sample under
-%%PREFIX%%/etc/rc.d/netams.sh and do: chmod +x %%PREFIX%%/etc/rc.d/netams.sh.
-Check %%EXAMPLESDIR%% for examples.
+%%PREFIX%%/etc/rc.d/netams.sh and do: 
+chmod +x %%PREFIX%%/etc/rc.d/netams.sh
+Check %%DATADIR%% and http://www.netams.com for examples.
 
 A sample configuration file has been installed to %%PREFIX%%/etc as
-"netams.conf.sample". This may be renamed to "netams.conf" and edited.
+"netams.cfg.sample". This may be renamed to "netams.cfg" and edited.
 
-In order to use the netamsctl programs, a user must copy 
-%%EXAMPLESDIR%%/.netamsctl.rc to home directory and edit.
+In order to use the netamsctl programs, you may copy 
+%%DATADIR%%/.netamsctl.rc to your home directory and edit it.
+
+By default, CGI scripts are NOT installed, as well as web server is NOT configured.
+You should do it yourself, and then copy entire %%DATADIR%%/cgi/ directory to appropriate place.
+
+And PLEASE READ THE DOCUMENTATION FIRST!
+http://www.netams.com
 
 --------------------------------------------------------------------------
