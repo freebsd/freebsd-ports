@@ -6,7 +6,7 @@
  SCAN = DLGLexer
 -PCCTS = ../..
 -ANTLR_H = $(PCCTS)/h
-+PCCTS = /usr/local
++PCCTS = ${PREFIX}
 +ANTLR_H = $(PCCTS)/include/pccts
  BIN = $(PCCTS)/bin
  ANTLR = $(BIN)/antlr

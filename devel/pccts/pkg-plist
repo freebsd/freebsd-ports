@@ -18,7 +18,6 @@ include/pccts/DLexerBase.h
 include/pccts/PBlackBox.h
 include/pccts/PCCTSAST.cpp
 include/pccts/PCCTSAST.h
-include/pccts/SList.cpp
 include/pccts/SList.h
 include/pccts/antlr.h
 include/pccts/ast.c
@@ -40,13 +39,13 @@ include/pccts/pccts_stdio.h
 include/pccts/pccts_stdlib.h
 include/pccts/pccts_string.h
 include/pccts/pcctscfg.h
+include/pccts/slist.cpp
 share/doc/pccts/CHANGES_FROM_131.txt
 share/doc/pccts/CHANGES_FROM_133.txt
 share/doc/pccts/CHANGES_FROM_133_BEFORE_MR13.txt
 share/doc/pccts/KNOWN_PROBLEMS.txt
 share/doc/pccts/README
 share/doc/pccts/RIGHTS
-share/doc/pccts/SERVICES
 share/doc/pccts/history.txt
 share/doc/pccts/history.ps
 share/doc/pccts/old_README
