@@ -1,13 +1,16 @@
-grace is an plotting tool for workstations or X-terminals using X and the
-successor of xmgr. A few of its features are:
+Grace is a WYSIWYG 2D plotting tool for the X Window System and M*tif,
+successor of ACE/gr (Xmgr). A few of its features are:
 
     * User defined scaling, tick marks, labels, symbols, line styles, colors.
     * Batch mode for unattended plotting.
     * Read and write parameters used during a session.
     * Polynomial regression, splines, running averages, DFT/FFT,
 	cross/auto-correlation.
-    * Hardcopy support for PostScript, HP-GL, and FrameMaker .mif format.
+    * Exports high-resolution graphics to (E)PS, PDF, MIF, and SVG formats
+    * Supports cross-platform PNM, JPEG and PNG formats
 
 While grace has a convenient point-and-click interface, most parameter settings
 and operations are available through a command line interface (found in
 Data/Commands).
+
+WWW: http://plasma-gate.weizmann.ac.il/Grace/ 
