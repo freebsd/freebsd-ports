@@ -13,6 +13,7 @@
     SUBDIR += eazel-themes
     SUBDIR += eel
     SUBDIR += engradient
+    SUBDIR += fl_editor
     SUBDIR += fltk
     SUBDIR += fltk-xunicode
     SUBDIR += flvw

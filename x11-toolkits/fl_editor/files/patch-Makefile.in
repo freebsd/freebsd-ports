@@ -1,0 +1,84 @@
+--- Makefile.in.orig	Wed Jan 10 00:11:24 2001
++++ Makefile.in	Sat Aug 18 09:03:39 2001
+@@ -30,8 +30,8 @@
+ #
+ 
+ ARFLAGS	=	crvs
+-CFLAGS	=	-I. -I$(FLTKROOT) @CFLAGS@ @ac_fltk2@
+-CXXFLAGS =	-I. -I$(FLTKROOT) @CXXFLAGS@ @ac_fltk2@
++CFLAGS	=	-I. @CFLAGS@ @ac_fltk2@
++CXXFLAGS =	-I. @CXXFLAGS@ @ac_fltk2@
+ LIBS	=	@ac_fltk_static@ -L$(FLTKROOT)/lib @LIBS@ -lXext -lX11 -lm @ac_fltk_dso@ $(GLLIB)
+ LDFLAGS	=	@LDFLAGS@
+ 
+@@ -40,14 +40,19 @@
+ #
+ 
+ .SILENT:
+-.SUFFIXES:	.c .cxx .h .o
++.SUFFIXES:	.c .cxx .h .o .lo
+ .c.o:
+ 	echo Compiling $<...
+ 	$(CC) $(CFLAGS) -c $< -o $(<D)/$(basename $(<F)).o 
+ .cxx.o:
+ 	echo Compiling $<...
+-	echo $(CXX) $(CXXFLAGS) -c $< -o $(<D)/$(basename $(<F)).o
+ 	$(CXX) $(CXXFLAGS) -c $< -o $(<D)/$(basename $(<F)).o
++.c.lo:
++	echo Compiling $<...
++	$(CC) $(CFLAGS) -fPIC -c $< -o $(<D)/$(basename $(<F)).lo
++.cxx.lo:
++	echo Compiling $<...
++	$(CXX) $(CXXFLAGS) -fPIC -c $< -o $(<D)/$(basename $(<F)).lo
+ 
+ 
+ #
+@@ -62,7 +67,7 @@
+ # Make all targets...
+ #
+ 
+-all:	libfleditor.a $(DSONAME) test
++all:	libfleditor.a $(DSONAME)
+ 
+ #
+ # Remove object and target files...
+@@ -86,7 +91,10 @@
+ 
+ install: libfleditor.a
+ 	echo "Installing library to $(FLTKLIBDIR)"
+-	cp libfleditor.a $(FLTKLIBDIR)	
++	rm -f $(FLTKLIBDIR)/libfleditor.*
++	cp libfleditor.a $(DSONAME) $(FLTKLIBDIR)	
++	echo "Installing headers to $(FLTKROOT)/include/FL"
++	cp FL/*.[Hh] $(FLTKROOT)/include/FL
+ 
+ #
+ # Make the test programs.
+@@ -122,6 +130,7 @@
+ EDITOR_OBJS = src/Fl_Editor.o src/Fl_FancyEditor.o src/Fl_FancyMultiEditor.o \
+         src/Fl_MultiEditor.o src/Fl_ProgressBox.o src/Fl_StatusPanel.o \
+         src/editengine.o src/lists.o src/wstring.o
++EDITOR_SHOBJS = $(EDITOR_OBJS:.o=.lo)
+ 
+ libfleditor.a:	$(EDITOR_OBJS)
+ 	echo Building library $@...
+@@ -129,15 +138,14 @@
+ 	$(AR) $(ARFLAGS) libfleditor.a $(EDITOR_OBJS)
+ 	$(RANLIB) libfleditor.a
+ 
+-libfleditor.so:	$(EDITOR_OBJS)
++$(DSONAME):	$(EDITOR_SHOBJS)
+ 	echo Building library $@...
+-	$(RM) libfleditor.so
+-	@DSOCOMMAND@ @DSOLIBNAME@@DSOEXT@ $(EDITOR_OBJS)
+-#        echo $(DSOCOMMAND) $(DSONAME)
+-#	$(LD) -shared $(LDFLAGS) -o $@ $^ 
++	$(RM) $(DSONAME)
++	@DSOCOMMAND@ $(DSONAME) $(EDITOR_SHOBJS)
+ 
+ 
+ $(EDITOR_OBJS):	$(INCLUDEDEPS)
++$(EDITOR_SHOBJS):	$(INCLUDEDEPS)
+ 
+ #
+ # End of Makefile.

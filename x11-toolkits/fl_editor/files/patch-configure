@@ -1,0 +1,167 @@
+--- configure.orig	Sat Aug 18 07:28:57 2001
++++ configure	Sat Aug 18 07:30:32 2001
+@@ -1406,27 +1406,31 @@
+ fi
+ 
+ 
+-echo $ac_n "checking for numericsort in -lfltk""... $ac_c" 1>&6
+-echo "configure:1411: checking for numericsort in -lfltk" >&5
+-ac_lib_var=`echo fltk'_'numericsort | sed 'y%./+-%__p_%'`
++
++
++GLLIB=
++echo $ac_n "checking for glXMakeCurrent in -lGL""... $ac_c" 1>&6
++echo "configure:1460: checking for glXMakeCurrent in -lGL" >&5
++ac_lib_var=`echo GL'_'glXMakeCurrent | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lfltk  $LIBS"
++LIBS="-lGL \
++    -lX11 -lXext $X_EXTRA_LIBS -lm $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 1419 "configure"
++#line 1469 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char numericsort();
++char glXMakeCurrent();
+ 
+ int main() {
+-numericsort()
++glXMakeCurrent()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:1430: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:1480: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -1441,31 +1445,24 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-    ac_tr_lib=HAVE_LIB`echo fltk | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+-    -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+-  cat >> confdefs.h <<EOF
+-#define $ac_tr_lib 1
++  cat >> confdefs.h <<\EOF
++#define HAVE_GL 1
+ EOF
+-
+-  LIBS="-lfltk $LIBS"
+-
++ GLLIB=" -lGLU -lGL"
+ else
+   echo "$ac_t""no" 1>&6
+-fi
+-
+-
+-GLLIB=
+-echo $ac_n "checking for glXMakeCurrent in -lGL""... $ac_c" 1>&6
+-echo "configure:1460: checking for glXMakeCurrent in -lGL" >&5
+-ac_lib_var=`echo GL'_'glXMakeCurrent | sed 'y%./+-%__p_%'`
++\
++    echo $ac_n "checking for glXMakeCurrent in -lMesaGL""... $ac_c" 1>&6
++echo "configure:1503: checking for glXMakeCurrent in -lMesaGL" >&5
++ac_lib_var=`echo MesaGL'_'glXMakeCurrent | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lGL \
+-    -lX11 -lXext $X_EXTRA_LIBS -lm $LIBS"
++LIBS="-lMesaGL \
++	-lX11 -lXext $X_EXTRA_LIBS -lm $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 1469 "configure"
++#line 1512 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+@@ -1476,7 +1473,7 @@
+ glXMakeCurrent()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:1480: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:1523: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -1494,32 +1491,36 @@
+   cat >> confdefs.h <<\EOF
+ #define HAVE_GL 1
+ EOF
+- GLLIB=" -lGLU -lGL"
++ GLLIB=" -lMesaGLU -lMesaGL"
+ else
+   echo "$ac_t""no" 1>&6
+-\
+-    echo $ac_n "checking for glXMakeCurrent in -lMesaGL""... $ac_c" 1>&6
+-echo "configure:1503: checking for glXMakeCurrent in -lMesaGL" >&5
+-ac_lib_var=`echo MesaGL'_'glXMakeCurrent | sed 'y%./+-%__p_%'`
++fi
++
++fi
++
++
++
++echo $ac_n "checking for numericsort in -lfltk""... $ac_c" 1>&6
++echo "configure:1411: checking for numericsort in -lfltk" >&5
++ac_lib_var=`echo fltk'_'numericsort | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lMesaGL \
+-	-lX11 -lXext $X_EXTRA_LIBS -lm $LIBS"
++LIBS="-lfltk $GLLIB $LIBS"
+ cat > conftest.$ac_ext <<EOF
+-#line 1512 "configure"
++#line 1419 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char glXMakeCurrent();
++char numericsort();
+ 
+ int main() {
+-glXMakeCurrent()
++numericsort()
+ ; return 0; }
+ EOF
+-if { (eval echo configure:1523: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
++if { (eval echo configure:1430: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+   rm -rf conftest*
+   eval "ac_cv_lib_$ac_lib_var=yes"
+ else
+@@ -1534,18 +1535,17 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  cat >> confdefs.h <<\EOF
+-#define HAVE_GL 1
++    ac_tr_lib=HAVE_LIB`echo fltk | sed -e 's/[^a-zA-Z0-9_]/_/g' \
++    -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
++  cat >> confdefs.h <<EOF
++#define $ac_tr_lib 1
+ EOF
+- GLLIB=" -lMesaGLU -lMesaGL"
++
++  LIBS="-lfltk $LIBS"
++
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+-
+-fi
+-
+-
+-
+ 
+ 
+ 
