@@ -1,0 +1,11 @@
+------------------------------------------------------------------
+
+ To get XFree86 to recognise your new fonts you will need to
+ add a line to your XF86Config file. XFree86 4 usually keeps its
+ XF86Config file in /etc or /etc/X11.
+
+ Add the following line to the "Files" section and restart XFree86.
+
+ FontPath "${X11BASE}/lib/X11/fonts/ppantsfonts"
+
+------------------------------------------------------------------

@@ -1,0 +1,4 @@
+lib/X11/fonts/ppantsfonts/fonts.dir
+lib/X11/fonts/ppantsfonts/moosefont.pcf.gz
+lib/X11/fonts/ppantsfonts/terminalpants.pcf.gz
+@dirrm lib/X11/fonts/ppantsfonts/
