@@ -625,6 +625,7 @@
     SUBDIR += tramp
     SUBDIR += tramp-emacs20
     SUBDIR += tridiavnc
+    SUBDIR += tsclient
     SUBDIR += ttcp
     SUBDIR += ttt
     SUBDIR += tund
