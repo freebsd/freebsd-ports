@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/xdaliclock
+man/man1/xdaliclock.1.gz
