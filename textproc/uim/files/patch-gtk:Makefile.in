@@ -1,0 +1,27 @@
+--- gtk/Makefile.in.orig	Wed Mar  2 02:29:13 2005
++++ gtk/Makefile.in	Wed Mar  2 02:37:44 2005
+@@ -308,15 +308,15 @@
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+ moduleLTLIBRARIES_INSTALL = $(INSTALL)
+ install-moduleLTLIBRARIES: $(module_LTLIBRARIES)
+-	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(moduledir)
+-	@list='$(module_LTLIBRARIES)'; for p in $$list; do \
+-	  if test -f $$p; then \
+-	    f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	    echo " $(LIBTOOL) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(moduledir)/$$f"; \
+-	    $(LIBTOOL) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(moduledir)/$$f; \
+-	  else :; fi; \
+-	done
++@GTK2_TRUE@	@$(NORMAL_INSTALL)
++@GTK2_TRUE@	$(mkinstalldirs) $(DESTDIR)$(moduledir)
++@GTK2_TRUE@	@list='$(module_LTLIBRARIES)'; for p in $$list; do \
++@GTK2_TRUE@	  if test -f $$p; then \
++@GTK2_TRUE@	    f="`echo $$p | sed -e 's|^.*/||'`"; \
++@GTK2_TRUE@	    echo " $(LIBTOOL) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(moduledir)/$$f"; \
++@GTK2_TRUE@	    $(LIBTOOL) --mode=install $(moduleLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(moduledir)/$$f; \
++@GTK2_TRUE@	  else :; fi; \
++@GTK2_TRUE@	done
+ 
+ uninstall-moduleLTLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)
