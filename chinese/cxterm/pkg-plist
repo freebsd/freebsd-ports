@@ -45,11 +45,11 @@ lib/X11/fonts/chinese/fonts.dir
 lib/X11/fonts/chinese/fonts.alias
 lib/X11/app-defaults/CXterm
 lib/X11/cxterm.dic/CXterm.ad
-share/doc/cxterm/CXTERM.FAQ
-share/doc/cxterm/input.doc
+%%PORTDOCS%%share/doc/cxterm/CXTERM.FAQ
+%%PORTDOCS%%share/doc/cxterm/input.doc
+%%PORTDOCS%%@dirrm share/doc/cxterm
 @dirrm lib/X11/cxterm.dic/big5
 @dirrm lib/X11/cxterm.dic/gb
 @dirrm lib/X11/cxterm.dic/jis
 @dirrm lib/X11/cxterm.dic/ks
 @dirrm lib/X11/cxterm.dic
-@dirrm share/doc/cxterm
