@@ -22,15 +22,6 @@
  include $(CORE_DEPTH)/coreconf/$(OS_CONFIG).mk
 --- security/psm/server/Makefile.orig	Tue Dec 19 17:24:58 2000
 +++ security/psm/server/Makefile	Fri Jan 19 03:49:36 2001
-@@ -39,7 +39,7 @@
- # The following don't need a CPLUSPLUSRUNTIME defined:  WINNT, HP-UX
- # so filter them out.
- ifeq (,$(filter WINNT HP-UX,$(OS_ARCH)))
--ifeq ($(OS_ARCH), Linux)
-+ifeq ($(OS_ARCH), FreeBSD)
- # On linux, we link with libstdc++ (we're always using egcs on linux, right?)
- CPLUSPLUSRUNTIME = -L /usr/lib -lstdc++ -lm
- else
 @@ -59,11 +59,11 @@
  endif
  endif
