@@ -17,6 +17,8 @@ COMMENT=	Chunked HTML templating engine
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/csiod:${PORTSDIR}/lang/siod
 
+BROKEN=		"Incomplete pkg-plist (installs files into nonstandard perl directory)"
+
 WRKSRC=		${WRKDIR}
 MAKEFILE=	makefile
 

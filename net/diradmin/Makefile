@@ -15,6 +15,8 @@ DISTNAME=	directory_administrator-${PORTVERSION}
 MAINTAINER=	purple@lewiz.net
 COMMENT=	A smart LDAP directory management tool
 
+BROKEN=		Incomplete pkg-plist
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

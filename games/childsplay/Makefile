@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR
 RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/pygame/pygame.h:${PORTSDIR}/devel/py-game
 LIB_DEPENDS=	assetml.0:${PORTSDIR}/devel/libassetml
 
+BROKEN=		Incomplete pkg-plist
+
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 

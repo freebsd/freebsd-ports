@@ -16,6 +16,8 @@ DISTNAME=	gq-${PORTVERSION:S/b/beta/}
 MAINTAINER=	ports@oven.org
 COMMENT=	GTK-based LDAP client
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GMAKE=		yes
 USE_ICONV=		yes
 USE_GETTEXT=	yes

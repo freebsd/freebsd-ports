@@ -15,6 +15,8 @@ COMMENT=	Beep Media Player do-this-on-song-change plugin
 
 LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 
+BROKEN=		Incomplete pkg-plist
+
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
 
