@@ -1,0 +1,8 @@
+#!/bin/sh
+
+FILE=/var/games/toppler/toppler.hsc
+[ "$2" != "POST-INSTALL" -o -f "$FILE" ] && exit 0
+
+echo "===>   Creating initial high score file $FILE"
+[ -d `dirname $FILE` ] || install -o root -g games -m 775 -d `dirname $FILE`
+install -o root -g games -m 664 /dev/null $FILE
