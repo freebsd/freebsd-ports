@@ -34,6 +34,7 @@
     SUBDIR += cfe
     SUBDIR += cheatah
     SUBDIR += chef
+    SUBDIR += chmlib
     SUBDIR += chord
     SUBDIR += chord2html
     SUBDIR += clex
