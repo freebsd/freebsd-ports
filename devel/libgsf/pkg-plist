@@ -1,6 +1,5 @@
 include/libgsf-1/gsf-win32/gsf-input-win32.h
 include/libgsf-1/gsf-win32/gsf-output-win32.h
-include/libgsf-1/gsf/gsf-doc-meta-data.h
 include/libgsf-1/gsf/gsf-impl-utils.h
 include/libgsf-1/gsf/gsf-infile-impl.h
 include/libgsf-1/gsf/gsf-infile-msole.h

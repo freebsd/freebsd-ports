@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgsf
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES?=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME?=	gnomehack glib20 libxml2
-USE_INC_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS?=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc --without-gnome --with-bz2
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include" \
