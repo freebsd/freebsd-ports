@@ -130,6 +130,12 @@ cat >>$exfile <<'EOF'
 */package
 */package/*
 */.cvsignore
+*/windows
+*/windows/*
+*/os2
+*/os2/*
+*/solaris
+*/solaris/*
 mozilla/apache
 mozilla/calendar
 mozilla/cck
