@@ -1,0 +1,54 @@
+--- ccdoc_dev/ccdoc/src/ccdocphase2.cpp	Mon Oct  9 08:28:09 2000
++++ ccdoc_dev/ccdoc/src/ccdocphase2.cpp.patched	Mon Oct  9 08:29:50 2000
+@@ -53,10 +53,10 @@
+   // TODO: After all of the files are processed, run through
+   //       and "fix" the "scoped" records that have comments.
+   if(m_ScopedNodeList.GetNumItems()) {
+-    ::fprintf(stderr,"DEBUG: %d scoped nodes found with comments.\n",
+-	      m_ScopedNodeList.GetNumItems());
+-    ::fprintf(stderr,"DEBUG: %d scoped node refs found for comment analysis.\n",
+-	      m_ClassMap.GetNumItems());
++    //::fprintf(stderr,"DEBUG: %d scoped nodes found with comments.\n",
++	      //m_ScopedNodeList.GetNumItems());
++    //::fprintf(stderr,"DEBUG: %d scoped node refs found for comment analysis.\n",
++	      //m_ClassMap.GetNumItems());
+     {for(uint i=0;i<m_ScopedNodeList.GetNumItems();i++) {
+       CCcDocParserNode* node = m_ScopedNodeList.Get(i);
+       CCcDocParserNode* parent = node->GetParent();
+@@ -89,15 +89,15 @@
+ 	}
+       }}
+       if(class_name) {
+-	::fprintf(stderr,"DEBUG: %s::%s\n",class_name,node->GetName());
++	//::fprintf(stderr,"DEBUG: %s::%s\n",class_name,node->GetName());
+ 	if(m_ClassMap.Contains(class_name)) {
+-	  ::fprintf(stderr,"DEBUG: found %s\n",class_name);
++	  //::fprintf(stderr,"DEBUG: found %s\n",class_name);
+ 	  CJdlVector<CCcDocParserNode*>* list = 0;
+ 	  list = (CJdlVector<CCcDocParserNode*>*) m_ClassMap.Get(class_name);
+ 	  assert(list);
+ 	  {for(ulong j=0;j<list->GetNumItems();j++) {
+ 	    CCcDocParserNode* cls = list->Get(j);
+-	    ::fprintf(stderr,"DEBUG: checking node %d/%d\n",j+1,list->GetNumItems());
++	    //::fprintf(stderr,"DEBUG: checking node %d/%d\n",j+1,list->GetNumItems());
+ 
+ 	    // Get arg list matching stuff.
+ 	    ulong x2 = 0; // starting paren
+@@ -109,7 +109,7 @@
+ 
+ 	    // Find the method:
+ 	    {for(ulong k=0;k<cls->GetNumChildren();k++) {
+-	      ::fprintf(stderr,"DEBUG: checking children %d/%d\n",k+1,cls->GetNumChildren());
++	      //::fprintf(stderr,"DEBUG: checking children %d/%d\n",k+1,cls->GetNumChildren());
+ 	      CCcDocParserNode* nd = cls->GetChild(k);
+ 	      assert(nd);
+ 	      if(CCcDocParserNode::STMT_FUNCTION == nd->GetType()) {
+@@ -125,7 +125,7 @@
+ 		  }}
+ 		  ulong diff1 = nd->GetNumItems() - x1;
+ 		  bool matched = false;
+-		  ::fprintf(stderr,"DEBUG: diff1=%d, diff2=%d\n",diff1,diff2);
++		  //::fprintf(stderr,"DEBUG: diff1=%d, diff2=%d\n",diff1,diff2);
+ 		  if(diff1 == diff2) {
+ 		    matched = true;
+ 		    for(;x2<node->GetNumItems() && x1<nd->GetNumItems();x1++,x2++) {

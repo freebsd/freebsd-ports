@@ -1,0 +1,20 @@
+--- doc/main.html	Tue Jun 15 19:12:06 1999
++++ doc/main.html.patched	Fri Oct  6 16:05:53 2000
+@@ -407,7 +407,7 @@
+         </tr>
+         <tr>
+             <td height="42">&nbsp;<a
+-            href="ccdoc_v07a_bin_taz.exe">ccdoc_v07a bin_taz.exe</a></td>
++            href="http://www.joelinoff.com/ccdoc/ccdoc_v07a_bin_taz.exe">ccdoc_v07a bin_taz.exe</a></td>
+             <td width="56%" height="42">The binary distribution
+             for Solaris 5.6, HP UX 10, and Windows 95/98/NT. It
+             is about 530K.</td>
+@@ -415,7 +415,7 @@
+         </tr>
+         <tr>
+             <td height="23">&nbsp;<a
+-            href="ccdoc_v07a_src_taz.exe">ccdoc_v07a src_taz.exe</a></td>
++            href="http://www.joelinoff.com/ccdoc/ccdoc_v07a_src_taz.exe">ccdoc_v07a src_taz.exe</a></td>
+             <td width="56%" height="23">The source code
+             distribution along with the binaries. It is about
+             834K.</td>

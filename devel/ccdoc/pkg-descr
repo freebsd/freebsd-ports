@@ -1,0 +1,17 @@
+Ccdoc is a tool for extracting comments from C++ source code and presenting it
+in HTML format, very similar to Java's JavaDoc tool. The tagging used in ccdoc
+is very similar to that of Javadoc, with adaptations for the C++ specifics, of
+course. Ccdoc supports extracting comments from both header and implementation
+files.
+
+In contrast to most other C++ doc'ing applications, ccdoc analyses the code
+before it has been run through the pre-processor, so things such as macros can
+actually be included in the documentation.
+
+It's usage is not quite as straight forward as JavaDoc's, but considering the
+quality of the output, it is well worth the effort.
+
+WWW: http://www.joelinoff.com/ccdoc/
+
+- LoneWolf
+lonewolf@flame.org
