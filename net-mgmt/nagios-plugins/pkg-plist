@@ -5,6 +5,7 @@ libexec/nagios/check_disk
 libexec/nagios/check_disk_smb
 libexec/nagios/check_dns
 libexec/nagios/check_dummy
+libexec/nagios/check_file_age
 libexec/nagios/check_flexlm
 %%SUB_FPING%%libexec/nagios/check_fping
 libexec/nagios/check_ftp
@@ -46,12 +47,20 @@ libexec/nagios/check_swap
 libexec/nagios/check_tcp
 libexec/nagios/check_time
 libexec/nagios/check_udp
+libexec/nagios/check_udp2
 libexec/nagios/check_ups
 libexec/nagios/check_users
-libexec/nagios/check_vsz
 libexec/nagios/check_wave
 libexec/nagios/negate
 libexec/nagios/urlize
 libexec/nagios/utils.pm
 libexec/nagios/utils.sh
 @unexec rmdir %D/libexec/nagios 2>/dev/null || true
+share/nagios/locale/de/LC_MESSAGES/nagios-plugins.mo
+share/nagios/locale/fr/LC_MESSAGES/nagios-plugins.mo
+@dirrm share/nagios/locale/de/LC_MESSAGES
+@dirrm share/nagios/locale/fr/LC_MESSAGES
+@dirrm share/nagios/locale/de
+@dirrm share/nagios/locale/fr
+@dirrm share/nagios/locale
+@unexec rmdir %D/share/nagios 2>/dev/null || true

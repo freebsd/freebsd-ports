@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.3.1
-PORTREVISION=	6
+PORTVERSION=	1.4.0.a1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	nagiosplug
+DISTNAME=	nagios-plugins-1.4.0alpha1
 
 MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Plugins for nagios
@@ -97,13 +97,13 @@ PLIST_SUB+=	SUB_LDAP="@comment "
 .endif
 
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
-USE_AUTOMAKE_VER=	14
-USE_AUTOCONF_VER=	213
+USE_AUTOMAKE_VER=	19
+USE_AUTOCONF_VER=	259
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
 pre-configure:
 	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} \
-		--acdir=${ACLOCAL_DIR})
+		--acdir=${ACLOCAL_DIR} -I lib)
 
 .include <bsd.port.post.mk>
