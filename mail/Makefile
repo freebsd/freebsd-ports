@@ -80,6 +80,7 @@
     SUBDIR += exim-monitor
     SUBDIR += exim-mysql
     SUBDIR += exim-postgresql
+    SUBDIR += exim-sa-exim
     SUBDIR += exmh2
     SUBDIR += ezmlm
     SUBDIR += ezmlm-idx
@@ -387,10 +388,10 @@
     SUBDIR += sccmilter
     SUBDIR += scmail
     SUBDIR += sendmail
-    SUBDIR += sendmail811
-    SUBDIR += sendmail812
     SUBDIR += sendmail-ldap
     SUBDIR += sendmail-sasl
+    SUBDIR += sendmail811
+    SUBDIR += sendmail812
     SUBDIR += sentinel
     SUBDIR += serialmail
     SUBDIR += sigit
