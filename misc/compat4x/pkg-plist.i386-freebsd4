@@ -1,5 +1,0 @@
-etc/rc.d/000.compat4x.sh
-%%FORBIDDEN:%%lib/compat/libcrypto.so.1
-lib/compat/libfetch.so.2
-%%FORBIDDEN:%%lib/compat/libssl.so.1
-@unexec rmdir %D/lib/compat 2>/dev/null || true
