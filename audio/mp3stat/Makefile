@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mp3stat
-PORTVERSION=	2.5.10
+PORTVERSION=	2.5.11
 CATEGORIES=	audio
 MASTER_SITES=	https://signal-lost.homeip.net/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
