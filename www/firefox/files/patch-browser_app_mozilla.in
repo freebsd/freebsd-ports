@@ -1,5 +1,5 @@
---- browser/app/mozilla.in.orig	Tue Oct 26 11:26:11 2004
-+++ browser/app/mozilla.in	Wed Feb 23 11:09:49 2005
+--- browser/app/mozilla.in.orig	Tue Oct 26 10:26:11 2004
++++ browser/app/mozilla.in	Mon Feb 28 02:14:53 2005
 @@ -28,52 +28,110 @@
  ## The script will setup all the environment voodoo needed to make
  ## the mozilla-bin binary to work.
@@ -151,7 +151,7 @@
  
  # Use run-mozilla.sh in the current dir if it exists
  # If not, then start resolving symlinks until we find run-mozilla.sh
-@@ -82,149 +140,224 @@
+@@ -82,149 +140,233 @@
  curdir=`dirname "$progname"`
  progbase=`basename "$progname"`
  run_moz="$curdir/run-mozilla.sh"
@@ -349,6 +349,15 @@
 +	    ALREADY_RUNNING=	# null
 +	    moreargs="${moreargs} $1"
 +	    shift
++	    ;;
++	-P)
++	    if [ -n "$2" ]; then
++		moreargs="${moreargs} $1 '$2'"
++		shift 2
++	    else
++		echo "$0: ERROR, -P needs an argument. Exiting" 1>&2
++		exit 1
++	    fi
 +	    ;;
 +	-*)
 +	    moreargs="${moreargs} $1"
