@@ -23,4 +23,3 @@ share/libtool/ltconfig
 share/libtool/ltmain.sh
 @dirrm share/libtool/libltdl
 @dirrm share/libtool
-@unexec rmdir %D/share/aclocal 2>/dev/null || true
