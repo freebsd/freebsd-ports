@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Apr  8 00:45:53 2002
-+++ Makefile	Sat Apr 27 03:25:35 2002
+--- Makefile.orig	Sun Jun 22 00:16:34 2003
++++ Makefile	Tue Jun 24 07:53:46 2003
 @@ -35,7 +35,7 @@
  
  # Installation sites (GNU conventions):
@@ -9,16 +9,18 @@
  bindir   = $(prefix)/bin
  includedir = $(prefix)/include
  mandir   = $(prefix)/man
-@@ -45,12 +45,12 @@
+@@ -45,14 +45,14 @@
  # CC and CFLAGS set for gcc, but any ANSI-C compiler should work.
  # For non-gcc compilers, simply set CFLAGS = -O (to start with)
  #
 -CC       = gcc
--CFLAGS	= -O2 -m486 -I/usr/X11R6/include $(DEFINES) $(EX_DEFS) -Wall -pedantic -Wuninitialized -Wunused -Wreturn-type -Wmissing-prototypes -Wstrict-prototypes  
+-CFLAGS	=  -O2 -g -I/usr/X11R6/include $(DEFINES) $(EX_DEFS) -Wall -pedantic -Wuninitialized -Wunused -Wreturn-type -Wmissing-prototypes -Wstrict-prototypes  
 +#CC       = gcc
-+#CFLAGS	= -O2 -I/usr/X11R6/include $(DEFINES) $(EX_DEFS) -Wall -pedantic -Wuninitialized -Wunused -Wreturn-type -Wmissing-prototypes -Wstrict-prototypes  
++#CFLAGS	=  -O2 -g -I/usr/X11R6/include $(DEFINES) $(EX_DEFS) -Wall -pedantic -Wuninitialized -Wunused -Wreturn-type -Wmissing-prototypes -Wstrict-prototypes  
+ LINT	= splint
+ LINTFLAGS = -weak -initallelements +posixlib -I/usr/X11R6/include $(DEFINES) $(EX_DEFS)
  
- #CFLAGS   = +O1 -Aa -D_HPUX_SOURCE -DSYSV -I/usr/include/X11R5 -I/usr/include/X11R4 $(DEFINES)
+ #CFLAGS   = +O1 -Aa -D_HPUX_SOURCE -DSYSV -I/usr/include/X11R5 -I/usr/include/X11R4 $(DEFINES) $(EX_DEFS)
  
 -LFLAGS   = -L/usr/X11R6/lib            # only sometimes needed; see below for examples
 +#LFLAGS   = -L/usr/X11R6/lib            # only sometimes needed; see below for examples
@@ -26,28 +28,45 @@
  BINDCMD  =                # only needed for EMX and DJGPP DOS extenders
  
 @@ -65,9 +65,9 @@
- # add -lpng -lz for PNG support
- # and/or -ltiff for TIFF
+ #
+ # Generic UNIX + X11 previewer (default)
  #
 -DEFINES   = -DUNIX -DHAS_UNIX_X11 
-+DEFINES   = -DUNIX -DHAS_UNIX_X11 -I${X11BASE}/include -I${LOCALBASE}/include
- PREVIEWER = to_x11
--ALL_LIBS  = -L/usr/lib/X11R6 -lpng -ltiff -ljpeg -lz -lX11 -lm     
-+ALL_LIBS  = -L${X11BASE}/lib -lX11 -lm -L${LOCALBASE}/lib -ltiff -lpng -lz
+-PREVIEWER = to_x11
+-ALL_LIBS  =  -L/usr/lib/X11R6 -lX11 -lm     
++#DEFINES   = -DUNIX -DHAS_UNIX_X11 
++#PREVIEWER = to_x11
++#ALL_LIBS  =  -L/usr/lib/X11R6 -lX11 -lm     
  #
- # Generic UNIX, no previewer
+ # for experimental truetype font support
  #
-@@ -228,7 +228,8 @@
+@@ -230,13 +230,13 @@
+ 
+ # $(SRCS) NOT USED YET:
+ SRCS	= clip.c fillpoly.c\
+-	  hp2xx.c hpgl.c picbuf.c bresnham.c murphy.c chardraw.c getopt.c getopt1.c \
++	  hp2xx.c hpgl.c picbuf.c bresnham.c murphy.c chardraw.c \
+ 	  $(ALL_INCS)\
+ 	  to_vec.c to_pcx.c to_pcl.c to_eps.c to_img.c to_pbm.c  \
+ 	  to_rgip.c to_fig.c std_main.c $(PREVIEWER).c pendef.c lindef.c $(EX_SRC)
+ 
+ OBJS	= clip.o fillpoly.o\
+-	  hp2xx.o hpgl.o picbuf.o bresnham.o murphy.o chardraw.o getopt.o getopt1.o \
++	  hp2xx.o hpgl.o picbuf.o bresnham.o murphy.o chardraw.o \
+ 	  to_vec.o to_pcx.o to_pcl.o  to_eps.o to_img.o to_pbm.o \
+ 	  to_rgip.o to_fig.o std_main.o $(PREVIEWER).o pendef.o lindef.o $(EX_OBJ)
+ 
+@@ -244,7 +244,8 @@
  
  $(PROGRAM): $(OBJS)
- 	$(CC) $(LFLAGS) $(OBJS) $(ALL_LIBS) -o $(PROGRAM)
+ 	$(CC) $(LFLAGS) $(OBJS) $(ALL_LIBS) $(EX_LIBS) -o $(PROGRAM)
 -	$(BINDCMD)
 +
 +all: $(PROGRAM) hp2xx.info
  
  default:
  	@echo "This makefile needs manual configuration! Edit it now!
-@@ -252,9 +253,9 @@
+@@ -268,9 +269,9 @@
  #									#
  #########################################################################
  
@@ -60,7 +79,7 @@
  
  
  #########################################################################
-@@ -311,15 +312,11 @@
+@@ -330,15 +331,11 @@
  install:	install-bin install-info install-man
  
  install-bin:	$(PROGRAM)
