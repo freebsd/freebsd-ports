@@ -1,5 +1,5 @@
---- ../dist/configure.orig	Tue May 29 10:55:53 2001
-+++ ../dist/configure	Tue May 29 11:07:37 2001
+--- ../dist/configure.orig	Tue Dec 25 12:41:16 2001
++++ ../dist/configure	Tue Dec 25 12:50:29 2001
 @@ -1626,9 +1626,9 @@
  	echo $ac_n "checking libtool configuration""... $ac_c" 1>&6
  echo "configure:1628: checking libtool configuration" >&5
@@ -7,8 +7,8 @@
 -	${CONFIG_SHELL-/bin/sh} $srcdir/ltconfig \
 -		--no-verify $srcdir/ltmain.sh \
 -		--output=./libtool $host_os \
-+	${CONFIG_SHELL-/bin/sh} %%LOCALBASE%%/share/libtool/ltconfig \
-+		--no-verify --disable-ltlibs %%LOCALBASE%%/share/libtool/ltmain.sh $target \
++	${CONFIG_SHELL-/bin/sh} /usr/local/share/libtool/ltconfig \
++		--no-verify --disable-ltlibs /usr/local/share/libtool/ltmain.sh $target \
 +		--output=./libtool \
  		--disable-static \
  	|| { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
@@ -22,3 +22,12 @@
  	SOFLAGS="-rpath \$(libdir)"
  	o=".lo"
  fi
+@@ -2093,7 +2093,7 @@
+ fi
+ 
+ if test "$db_cv_dump185" = "yes"; then
+-	ADDITIONAL_PROGS="db_dump185 $ADDITIONAL_PROGS"
++	ADDITIONAL_PROGS="db3_dump185 $ADDITIONAL_PROGS"
+ fi
+ 
+ echo $ac_n "checking for pthread_create in "-pthread"""... $ac_c" 1>&6
