@@ -40,6 +40,7 @@ CONFIGURE_ENV=	XLDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS!=	cd ${_RUBY_PORTDIR} && ${MAKE} -V CONFIGURE_ARGS
 CONFIGURE_ARGS:=	${CONFIGURE_ARGS:N--enable-shared:M-*} \
 			--with-static-linked-ext=yes \
+			--with-libc_r=no \
 			--with-opt-dir="${LOCALBASE}"
 
 do-fetch:
