@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.174 1998/08/07 23:58:37 asami Exp $
+# $Id: Makefile,v 1.175 1998/08/11 03:06:14 mph Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -19,6 +19,7 @@
     SUBDIR += cvsup
     SUBDIR += cvsup-bin
     SUBDIR += cvsup-mirror
+    SUBDIR += cvsupd-bin
     SUBDIR += delegate
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
