@@ -1,13 +1,13 @@
 # New ports collection makefile for:    skill
-# Version required:     3.7.7
+# Version required:     3.7.9
 # Date created:         20 Oct 1998
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	skill-3.7@P6
-PKGNAME=	skill-3.7.7
+DISTNAME=	skill-3.7@P8
+PKGNAME=	skill-3.7.9
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://fast.cs.utah.edu/pub/skill/
 EXTRACT_SUFX=	_tar.Z
