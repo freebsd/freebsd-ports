@@ -1,0 +1,133 @@
+# New ports collection makefile for:	courier-authdaemon
+# Date created:				19 Dec 2004
+# Whom:					Oliver Lehmann
+#
+# $FreeBSD$
+#
+
+PORTNAME=	courier-authlib
+PORTVERSION=	0.51
+CATEGORIES=	mail
+MASTER_SITES=	http://www.courier-mta.org/beta/courier-authlib/
+
+MAINTAINER=	oliver@FreeBSD.org
+COMMENT=	Authentication library used by courier ports
+
+USE_BZIP2=	yes
+USE_REINPLACE=	yes
+USE_PERL5=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+USE_RC_SUBR=	yes
+USE_LIBTOOL_VER=15
+USE_LIBLTDL=	yes
+
+#
+# options available:
+#
+# WITHOUT_PAM:			Don't build in PAM support
+# WITH_VPOPMAIL:		Build in vpopmail support
+# WITH_MYSQL:			Build in mysql support
+# WITH_POSTGRESQL:		Build in postgresql support
+# WITH_LDAP:			Build in ldap support with openldap
+# WITH_GDBM:			Use gdbm files instead of bdb
+#
+
+VPOPMAILDIR?=	${LOCALBASE}/vpopmail
+
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		CXXFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+		LIBS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--without-authshadow \
+		--enable-unicode \
+		--enable-ltdl-install=no
+
+.if defined(WITH_GDBM)
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+CONFIGURE_ARGS+=	--with-db=gdbm
+.else
+CONFIGURE_ARGS+=	--with-db=db
+.endif
+
+.if !defined(WITH_VPOPMAIL)
+CONFIGURE_ARGS+=--without-authvchkpw
+PLIST_SUB+=	VPOPMAILFLAG="@comment "
+.else
+CONFIGURE_ARGS+=--with-authvchkpw
+BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+PLIST_SUB+=	VPOPMAILFLAG=""
+.endif
+
+.if defined(WITH_LDAP)
+USE_OPENLDAP=	yes
+CONFIGURE_ARGS+=--with-authldap
+PLIST_SUB+=	LDAPFLAG=""
+.else
+CONFIGURE_ARGS+=--without-authldap
+PLIST_SUB+=	LDAPFLAG="@comment "
+.endif
+
+.if !defined(WITH_MYSQL)
+CONFIGURE_ARGS+=--without-authmysql
+PLIST_SUB+=	MYSQLFLAG="@comment "
+.else
+USE_MYSQL=	YES
+PLIST_SUB+=	MYSQLFLAG=""
+CONFIGURE_ARGS+=--with-authmysql \
+		--with-mysql-libs=${LOCALBASE}/lib/mysql \
+		--with-mysql-includes=${LOCALBASE}/include/mysql
+.endif
+
+.if !defined(WITH_POSTGRESQL)
+CONFIGURE_ARGS+=--without-authpgsql
+PLIST_SUB+=	PGSQLFLAG="@comment "
+.else
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+PLIST_SUB+=	PGSQLFLAG=""
+.endif
+
+.if !defined(WITHOUT_PAM)
+CONFIGURE_ARGS+=--with-authpam
+PLIST_SUB+=	PAMFLAG=""
+.else
+CONFIGURE_ARGS+=--without-authpam
+PLIST_SUB+=	PAMFLAG="@comment "
+.endif
+
+.include <bsd.port.pre.mk>
+
+RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+MAN1=		courierlogger.1
+
+MAN3=		authlib.3 auth_generic.3 auth_login.3 auth_getuserinfo.3 \
+		auth_enumerate.3 auth_passwd.3 auth_getoption.3 auth_sasl.3
+
+MAN8=		makeuserdb.8 userdb.8 userdbpw.8
+
+EXTRA_DOCS=	README INSTALL AUTHORS ChangeLog
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|%%INSTALL_MAN%%|${INSTALL_MAN}|' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in \
+		${WRKSRC}/liblog/Makefile.in ${WRKSRC}/userdb/Makefile.in
+
+post-install:
+	${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/courier-authdaemond.sh > ${WRKDIR}/courier-authdaemond.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/courier-authdaemond.sh ${PREFIX}/etc/rc.d/courier-authdaemond.sh
+	cd ${WRKSRC} && ( ${GMAKE} install-configure ; cd - )
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for a in ${EXTRA_DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${a} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,13 @@
+--- liblog/Makefile.in.orig	Sat Dec 18 18:31:57 2004
++++ liblog/Makefile.in	Sat Dec 18 18:32:18 2004
+@@ -346,8 +346,8 @@
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
+-	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
++	  echo " %%INSTALL_MAN%% '$$file' '$(DESTDIR)$(man1dir)/$$inst'"; \
++	  %%INSTALL_MAN%% "$$file" "$(DESTDIR)$(man1dir)/$$inst"; \
+ 	done
+ uninstall-man1:
+ 	@$(NORMAL_UNINSTALL)

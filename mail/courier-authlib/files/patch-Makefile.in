@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Sat Dec 18 17:25:16 2004
++++ Makefile.in	Sat Dec 18 17:27:50 2004
+@@ -992,8 +992,8 @@
+ 	  inst=`echo $$i | sed -e 's/\\.[0-9a-z]*$$//'`; \
+ 	  inst=`echo $$inst | sed -e 's/^.*\///'`; \
+ 	  inst=`echo $$inst | sed '$(transform)'`.$$ext; \
+-	  echo " $(INSTALL_DATA) '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
+-	  $(INSTALL_DATA) "$$file" "$(DESTDIR)$(man3dir)/$$inst"; \
++	  echo " %%INSTALL_MAN%% '$$file' '$(DESTDIR)$(man3dir)/$$inst'"; \
++	  %%INSTALL_MAN%% "$$file" "$(DESTDIR)$(man3dir)/$$inst"; \
+ 	done
+ uninstall-man3:
+ 	@$(NORMAL_UNINSTALL)
