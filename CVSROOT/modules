@@ -11032,6 +11032,7 @@ viewkit		ports/x11-toolkits/viewkit
 viewklass	ports/x11-toolkits/viewklass
 vifm		ports/misc/vifm
 vigor		ports/editors/vigor
+vigra		ports/graphics/vigra
 vile		ports/editors/vile
 vilearn		ports/editors/vilearn
 vim		ports/editors/vim
