@@ -50,7 +50,6 @@ CONFIGURE_ARGS=	--with-iconvlibdir=${LOCALBASE}/lib
 .endif
 
 post-patch:
-	@${INSTALL_SCRIPT} ${LOCALBASE}/bin/libtool ${WRKSRC}
 .if ${OSVERSION} >= 500032
 	@${PERL} -pi.orig -e 's|expr |expr -- |' ${WRKSRC}/libtool
 .endif

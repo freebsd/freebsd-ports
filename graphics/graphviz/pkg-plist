@@ -110,35 +110,23 @@ lib/graphviz/lefty/lefty.psp
 lib/graphviz/lefty/slides.lefty
 lib/graphviz/lefty/tree.lefty
 lib/graphviz/libgdtclft.a
-lib/graphviz/libgdtclft.la
+lib/graphviz/libgdtclft.so
 lib/graphviz/libgdtclft.so.0
-@unexec rm -f %D/lib/graphviz/libgdtclft.so
-@exec ln -fs libgdtclft.so.0 %D/lib/graphviz/libgdtclft.so
 lib/graphviz/libtcldgl.a
-lib/graphviz/libtcldgl.la
+lib/graphviz/libtcldgl.so
 lib/graphviz/libtcldgl.so.0
-@unexec rm -f %D/lib/graphviz/libtcldgl.so
-@exec ln -fs libtcldgl.so.0 %D/lib/graphviz/libtcldgl.so
 lib/graphviz/libtcldgr.a
-lib/graphviz/libtcldgr.la
+lib/graphviz/libtcldgr.so
 lib/graphviz/libtcldgr.so.0
-@unexec rm -f %D/lib/graphviz/libtcldgr.so
-@exec ln -fs libtcldgr.so.0 %D/lib/graphviz/libtcldgr.so
 lib/graphviz/libtcldot.a
-lib/graphviz/libtcldot.la
+lib/graphviz/libtcldot.so
 lib/graphviz/libtcldot.so.0
-@unexec rm -f %D/lib/graphviz/libtcldot.so
-@exec ln -fs libtcldot.so.0 %D/lib/graphviz/libtcldot.so
 lib/graphviz/libtclplan.a
-lib/graphviz/libtclplan.la
+lib/graphviz/libtclplan.so
 lib/graphviz/libtclplan.so.0
-@unexec rm -f %D/lib/graphviz/libtclplan.so
-@exec ln -fs libtclplan.so.0 %D/lib/graphviz/libtclplan.so
 lib/graphviz/libtkspline.a
-lib/graphviz/libtkspline.la
+lib/graphviz/libtkspline.so
 lib/graphviz/libtkspline.so.0
-@unexec rm -f %D/lib/graphviz/libtkspline.so
-@exec ln -fs libtkspline.so.0 %D/lib/graphviz/libtkspline.so
 lib/graphviz/pkgIndex.tcl
 %%PORTDOCS%%share/doc/graphviz/Dot.ref
 %%PORTDOCS%%share/doc/graphviz/FAQ.html
