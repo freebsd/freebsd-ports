@@ -65,7 +65,6 @@ MASTER_SITE_GNOME+=	\
 
 MASTER_SITE_GNU+=	\
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
-	ftp://ftp.freesoftware.com/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.digital.com/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.uu.net/archive/systems/gnu/%SUBDIR%/ \
 	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
@@ -78,7 +77,8 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,GNU/&,} \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/
+	ftp://sunsite.org.uk/Mirrors/ftp.gnu.org/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.freesoftware.com/pub/gnu/%SUBDIR%/
 
 MASTER_SITE_KDE+=	\
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
@@ -135,7 +135,6 @@ MASTER_SITE_NETBSD+=	\
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
-	ftp://ftp.freesoftware.com/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/mirrors/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://bioinfo.weizmann.ac.il/pub/software/perl/CPAN/modules/by-module/%SUBDIR%/ \
@@ -156,6 +155,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/perl/CPAN/modules/by-module/&,} \
 	ftp://ftp.mirror.ac.uk/sites/ftp.cpan.org/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://sunsite.org.uk/packages/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://ftp.freesoftware.com/pub/perl/CPAN/modules/by-module/%SUBDIR%/ \
 
 #
 # RingServers in Japan
@@ -200,7 +200,6 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.easynet.be/ruby/ruby/%SUBDIR%/
 
 MASTER_SITE_SOURCEWARE+= \
-	ftp://ftp.freesoftware.com/pub/sourceware/%SUBDIR%/ \
 	http://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
 	ftp://ftp.pvv.ntnu.no/pub/cygnus/sourceware.cygnus.com/%SUBDIR%/ \
@@ -212,7 +211,8 @@ MASTER_SITE_SOURCEWARE+= \
 	http://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
 	ftp://unix.hensa.ac.uk/mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
 	ftp://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
-	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/
+	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/ \
+	ftp://ftp.freesoftware.com/pub/sourceware/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
 	ftp://ftp3.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
@@ -231,7 +231,6 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.oit.unc.edu/pub/Linux/%SUBDIR%/ \
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.freesoftware.com/pub/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.nuri.net/pub/Linux/metalab/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/mirrors/metalab/Linux/%SUBDIR%/ \
 	ftp://ftp.unicamp.br/pub/systems/Linux/%SUBDIR%/ \
@@ -265,7 +264,8 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.nluug.nl/vol/3/metalab/%SUBDIR%/ \
 	ftp://software.anu.edu.au/pub/linux/metalab/%SUBDIR%/ \
 	ftp://ftp.is.co.za/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/
+	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/ \
+	ftp://ftp.freesoftware.com/pub/linux/sunsite/%SUBDIR%/
 
 MASTER_SITE_TCLTK+= \
 	ftp://ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
@@ -281,7 +281,6 @@ MASTER_SITE_TCLTK+= \
 	ftp://sunsite.org.uk/Mirrors/ftp.scriptics.com/pub/tcl/%SUBDIR%/
 
 MASTER_SITE_TEX_CTAN+=  \
-	ftp://ftp.freesoftware.com/pub/tex/ctan/%SUBDIR%/  \
 	ftp://wuarchive.wustl.edu/packages/TeX/%SUBDIR%/  \
 	ftp://ftp.funet.fi/pub/TeX/CTAN/%SUBDIR%/  \
 	ftp://ctan.unsw.edu.au/tex-archive/%SUBDIR%/ \
@@ -293,6 +292,7 @@ MASTER_SITE_TEX_CTAN+=  \
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/ \
 	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
+	ftp://ftp.freesoftware.com/pub/tex/ctan/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/CTAN/&,}
 
 MASTER_SITE_THEMES+= \
@@ -340,10 +340,10 @@ MASTER_SITE_XEMACS+= \
 
 MASTER_SITE_XFREE+= \
 	ftp://ftp.xfree86.org/pub/XFree86/%SUBDIR%/source/ \
-	ftp://ftp.freesoftware.com/pub/XFree86/%SUBDIR%/source/ \
 	ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-%SUBDIR%/source/ \
 	ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/%SUBDIR%/source/ \
 	ftp://sunsite.doc.ic.ac.uk/packages/XFree86/%SUBDIR%/source/ \
 	http://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.xfree86.org/XFree86/%SUBDIR%/source/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,XFree86/&/source,} \
-	ftp://ftp.chg.ru/pub/XFree86/%SUBDIR%/source/
+	ftp://ftp.chg.ru/pub/XFree86/%SUBDIR%/source/ \
+	ftp://ftp.freesoftware.com/pub/XFree86/%SUBDIR%/source/
