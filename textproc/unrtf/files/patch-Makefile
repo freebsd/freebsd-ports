@@ -1,14 +1,19 @@
---- Makefile.orig	Tue Mar 26 19:11:52 2002
-+++ Makefile	Tue Mar 26 19:46:29 2002
-@@ -25,7 +25,7 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Wed Oct  3 06:45:59 2001
++++ Makefile	Mon Oct 28 20:58:02 2002
+@@ -25,8 +25,8 @@
  #
  
  
 -CFLAGS=-g -Wall
+-CC=gcc
 +#CFLAGS=-g -Wall
- CC=gcc
++#CC=gcc
  
  OBJS=convert.o word.o error.o main.o hash.o \
+ 	parse.o malloc.o attr.o util.o \
 @@ -57,6 +57,6 @@
  	rm -f ${OBJS}
  
