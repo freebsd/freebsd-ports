@@ -43,7 +43,7 @@ MASTER_SITE_SUBDIR=	releases/x86/2004.3/stages/x86
 DISTNAME=		stage1-x86-2004.3
 .endif
 
-pre-install:
+do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${TAR} --exclude=./dev -xp -C ${WRKSRC} \
 		-f ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES}
@@ -51,7 +51,7 @@ pre-install:
 	@cd ${WRKSRC} && ${FIND} * -type f -o -type l >> ${PLIST} \
 		&& ${FIND} * -type d | ${SORT} -r | ${SED} -e 's:^:@dirrm :' \
 		>> ${PLIST}
-	@${RM} -r ${WRKSRC}
+	@${RM} -fr ${WRKSRC}
 
 do-install:
 	- ${MKDIR} ${PREFIX}
