@@ -21,6 +21,8 @@ LIB_DEPENDS=	gtkglext-x11-1.0.2:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/opengl.so:${PORTSDIR}/graphics/ruby-opengl
 
+BROKEN=		Broken dependency
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_XLIB=	yes
