@@ -1,0 +1,5 @@
+bin/led
+lib/led/c.so
+lib/led/mbox.so
+lib/led/sh.so
+@dirrm lib/led

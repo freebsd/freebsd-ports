@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- configure	2001/06/06 16:27:54	1.1
++++ configure	2001/06/06 16:28:19
+@@ -524,8 +524,8 @@
+ 
+ 
+ 
+-CFLAGS="${CFLAGS} -O2 -Wall -pipe -I/usr/local/include"
+-LDFLAGS="${LDFLAGS} -L/usr/local/lib"
++CFLAGS="${CFLAGS} -Wall"
++LDFLAGS="${LDFLAGS}"
+ 
+ ac_aux_dir=
+ for ac_dir in $srcdir $srcdir/.. $srcdir/../..; do
