@@ -71,7 +71,7 @@ IGNORE= :\n\
 Because of licensing restrictions, you must fetch the distribution\n\
 manually.  Please access\n\
 \n\
-  ${DOWNLOAD_URL},\n\
+  ${DOWNLOAD_URL}\n\
 \n\
 with a web browser and \"Accept\" the End User License Agreement for\n\
 \"Caffe Diablo ${JRE_VERSION}\".  Please place the downloaded\n\
