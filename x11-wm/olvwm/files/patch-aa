@@ -253,6 +253,16 @@
   
   /*-------------------------------------------------------------------------
    *	Local Data
+***************
+*** 281,286 ****
+--- 281,287 ----
+  		     	case StaticColor:
+  		     	case PseudoColor:
+  			case GrayScale:
++ 			case TrueColor:
+  		     	case DirectColor:
+  		    		return True;
+  				/*NOTREACHED*/
 *** st.c.orig	Thu Jan 13 14:36:18 1994
 --- st.c	Thu Oct 20 23:53:07 1994
 ***************
