@@ -7,7 +7,7 @@
 -#LIBRARIES	=	-ldl -lm
 -CFLAGS		=	$(INCLUDES) -Wall -Werror -O3 -fPIC
 -CXXFLAGS	=	$(CFLAGS)
-+CXXFLAGS	+=	-I${LOCALBASE}/include
++CXXFLAGS	+=	-I${LOCALBASE}/include -fPIC
  PLUGINS		=	aw.so
 -CC		=	cc
 -CPP		=	c++
