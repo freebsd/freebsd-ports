@@ -19,7 +19,7 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt/
+LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

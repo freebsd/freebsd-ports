@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
 MAINTAINER=	arved@FreeBSD.org
 
-LIB_DEPENDS=	mcrypt.7:${PORTSDIR}/security/libmcrypt \
+LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
 		mhash.2:${PORTSDIR}/security/mhash \
 		intl.4:${PORTSDIR}/devel/gettext
 
