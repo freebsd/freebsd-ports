@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 MASTER_SITE_SUBDIR=tgif
 DISTNAME=	${PORTNAME}-QPL-${PORTVERSION}
 
-MAINTAINER=	bmc@WillsCreek.COM
+MAINTAINER=	bmc@clapper.org
 COMMENT=	An Xlib-based two-dimensional drawing tool and hyper-object browser
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
