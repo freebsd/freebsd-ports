@@ -24,11 +24,10 @@ USE_PYTHON=	yes
 
 .include <bsd.port.pre.mk>
 
-WITH_GL!=	ldd ${X11BASE}/lib/libqt-mt.so | ${GREP} 'libGL' || ${TRUE}
-.if !empty(WITH_GL)
-PLIST_SUB+=	GL=""
-.else
+.if defined(WITHOUT_OPENGL)
 PLIST_SUB+=	GL="@comment "
+.else
+PLIST_SUB+=	GL=""
 .endif
 
 do-configure:
