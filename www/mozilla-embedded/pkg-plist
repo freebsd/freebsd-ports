@@ -1,5 +1,10 @@
+lib/mozilla-embedded/chrome/all-locales.rdf
+lib/mozilla-embedded/chrome/all-packages.rdf
+lib/mozilla-embedded/chrome/all-skins.rdf
 lib/mozilla-embedded/chrome/embed.jar
 lib/mozilla-embedded/chrome/installed-chrome.txt
+lib/mozilla-embedded/chrome/user-locales.rdf
+lib/mozilla-embedded/chrome/user-skins.rdf
 lib/mozilla-embedded/component.reg
 lib/mozilla-embedded/components/appshell.xpt
 lib/mozilla-embedded/components/caps.xpt
