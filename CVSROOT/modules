@@ -3941,6 +3941,7 @@ lib765		ports/emulators/lib765
 libIDL		ports/devel/libIDL
 libPropList	ports/devel/libPropList
 libU77		ports/devel/libU77
+libXau		ports/x11/libXau
 libXtrans	ports/x11/libXtrans
 liba52		ports/audio/liba52
 libafterbase	ports/devel/libafterbase
