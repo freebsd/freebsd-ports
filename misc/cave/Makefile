@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cave
-PORTVERSION=	0.7
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://cyclic.sourceforge.net/cave/ \
 		${MASTER_SITE_SUNSITE}
