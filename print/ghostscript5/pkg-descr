@@ -8,7 +8,7 @@ PostScript language.
 
 GNU Ghostscript comes with NO WARRANTY and NO SUPPORT.  
 
-Also included with this package is the hpdj driver written by Martin
+Also included with this package is the PCL3 driver written by Martin
 Lottermoser with defaults for a Deskjet 560C. See the man page for
 gs-hpdj(1) for details.
 

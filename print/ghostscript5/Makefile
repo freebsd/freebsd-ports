@@ -8,9 +8,9 @@
 
 DISTNAME=	ghostscript-5.10
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/ \
-		ftp://ftp.pdb.sni.de/pub/utilities/misc/
+MASTER_SITES= ftp://ftp.sbs.de/pub/graphics/ghostscript/pcl3/ \
+		${MASTER_SITE_GNU} \
+		ftp://ftp.cs.wisc.edu/ghost/gnu/gs510/
 MASTER_SITE_SUBDIR=	ghostscript
 DISTFILES=	${GS_SOURCES} ${PCL3_DRV}
 
@@ -32,14 +32,14 @@ MAN1=		gs.1 pdf2dsc.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 gs-hpdj.1
 GS_SOURCES=	ghostscript-5.10.tar.gz
 
 # Additional driver for HP PCL3 Printers
-PCL3_DRV=	hpdj-2.5.tar.gz
+PCL3_DRV=	hpdj-2.6.tar.gz
 
 post-extract:
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/png/work/libpng-1.0.3 ${WRKSRC}/libpng
 	# additional PCL3  driver
-	@${TAR} -xf ${WRKDIR}/hpdj-2.5/hpdj.tar -C ${WRKSRC}
-	@${PATCH} -d ${WRKSRC} --forward --quiet -E < ${WRKSRC}/devs.mak-5.10.diff
+	@${TAR} -xf ${WRKDIR}/hpdj-2.6/hpdj.tar -C ${WRKSRC}
+	@${CAT} ${WRKSRC}/devs.mak-5.10.add >> ${WRKSRC}/devs.mak
 	@${PATCH} -d ${WRKSRC} --forward --quiet -E < ${WRKSRC}/zmedia2.c-5.10.diff
 
 do-configure:
