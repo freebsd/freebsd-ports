@@ -32,6 +32,9 @@ bin/gftp-text
 %%NOX11:%%%%DATADIR%%/gftp/world.xpm
 %%NOX11:%%%%GNOME:%%share/gnome/pixmaps/gftp.png
 share/locale/bg/LC_MESSAGES/gftp.mo
+share/locale/am/LC_MESSAGES/gftp.mo
+share/locale/ar/LC_MESSAGES/gftp.mo
+share/locale/ca/LC_MESSAGES/gftp.mo
 share/locale/cs/LC_MESSAGES/gftp.mo
 share/locale/da/LC_MESSAGES/gftp.mo
 share/locale/de/LC_MESSAGES/gftp.mo
@@ -42,14 +45,20 @@ share/locale/hu/LC_MESSAGES/gftp.mo
 share/locale/it/LC_MESSAGES/gftp.mo
 share/locale/ja/LC_MESSAGES/gftp.mo
 share/locale/ko/LC_MESSAGES/gftp.mo
+share/locale/mk/LC_MESSAGES/gftp.mo
+share/locale/ms/LC_MESSAGES/gftp.mo
 share/locale/nl/LC_MESSAGES/gftp.mo
 share/locale/no/LC_MESSAGES/gftp.mo
 share/locale/pl/LC_MESSAGES/gftp.mo
+share/locale/pt/LC_MESSAGES/gftp.mo
 share/locale/pt_BR/LC_MESSAGES/gftp.mo
 share/locale/ro/LC_MESSAGES/gftp.mo
 share/locale/ru/LC_MESSAGES/gftp.mo
+share/locale/sr/LC_MESSAGES/gftp.mo
+share/locale/sr@Latn/LC_MESSAGES/gftp.mo
 share/locale/sv/LC_MESSAGES/gftp.mo
 share/locale/tr/LC_MESSAGES/gftp.mo
+share/locale/uk/LC_MESSAGES/gftp.mo
 share/locale/zh_CN/LC_MESSAGES/gftp.mo
 share/locale/zh_TW/LC_MESSAGES/gftp.mo
 %%NOX11:%%@dirrm %%DATADIR%%/gftp
