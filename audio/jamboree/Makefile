@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jamboree
-PORTVERSION=	0.4
-PORTREVISION=	3
+PORTVERSION=	0.5
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
@@ -15,34 +14,23 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	jylefort@brutele.be
 COMMENT=	A simple GNOME music player
 
-LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/libid3tag \
-		vorbis.3:${PORTSDIR}/audio/libvorbis \
-		gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libglade2
-GNU_CONFIGURE=	yes
+USE_GNOME=	gnomeprefix intlhack gnomehack libgnomeui libglade2 gstreamerplugins
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	--disable-dbus
 
-OPTIONS=	XINE "use xine instead of GStreamer" off
+OPTIONS=	DBUS "D-BUS support" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_XINE)
-LIB_DEPENDS+=		xine.9:${PORTSDIR}/multimedia/libxine
-CONFIGURE_ARGS+=	--enable-xine
-.else
-USE_GNOME+=		gstreamerplugins
+.if defined(WITH_DBUS)
+LIB_DEPENDS+=		dbus-1:${PORTSDIR}/devel/dbus
+CONFIGURE_ARGS+=	--enable-dbus
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -Ee \
-		's/GST_VER=0\.7\.4/GST_VER=0.8/; s/(gstreamer(-[a-z]+)?|gst-inspect)-0\.7/\1-0.8/g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
