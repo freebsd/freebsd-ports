@@ -36,12 +36,4 @@ PORTDOCS=	TIPS README.greek README.menu README.xvt \
 IGNORE=		Does not build
 .endif
 
-do-install:
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
-.endfor
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/mrxvt ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/doc/mrxvt.1 ${MAN1PREFIX}/man/man1
-
 .include <bsd.port.post.mk>
