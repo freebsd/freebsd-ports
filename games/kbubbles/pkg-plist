@@ -1,26 +1,26 @@
+bin/kbubbles
 share/applnk/Games/kbubbles.kdelnk
+share/apps/kbubbles/Trouble.lvl
 share/apps/kbubbles/bggrad.xpm
-share/apps/kbubbles/default.xpm
-share/apps/kbubbles/dots.xpm
-share/apps/kbubbles/orange.xpm
-share/apps/kbubbles/linux.xpm
 share/apps/kbubbles/bkg/roof.xpm
 share/apps/kbubbles/bkg/widbg.xpm
 share/apps/kbubbles/brick1.xpm
 share/apps/kbubbles/brick2.xpm
+share/apps/kbubbles/default.xpm
+share/apps/kbubbles/dots.xpm
 share/apps/kbubbles/hitech.xpm
+share/apps/kbubbles/linux.xpm
+share/apps/kbubbles/orange.xpm
 share/apps/kbubbles/puke.xpm
 share/apps/kbubbles/rocks.xpm
 share/apps/kbubbles/wave.xpm
 share/apps/kbubbles/wood.xpm
-share/apps/kbubbles/Trouble.lvl
+share/icons/kbubbles.xpm
 share/icons/kbubblesconf.xpm
 share/icons/kbubblesnew.xpm
 share/icons/kbubblesnext.xpm
 share/icons/kbubblesquit.xpm
 share/icons/kbubblesstop.xpm
-share/icons/kbubbles.xpm
 share/icons/mini/kbubbles.xpm
-bin/kbubbles
 @dirrm share/apps/kbubbles/bkg
 @dirrm share/apps/kbubbles
