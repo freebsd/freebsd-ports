@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += bblimage
     SUBDIR += chemtool
     SUBDIR += clhep
     SUBDIR += euler
