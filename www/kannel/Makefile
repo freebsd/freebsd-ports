@@ -11,6 +11,9 @@ MASTER_SITES=	http://www.kannel.org/download/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	gateway-${PORTVERSION}
 
+PATCH_SITES=		http://www.mbuni.org/
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WAP / SMS Gateway
 
@@ -24,6 +27,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-cflags="${CPPFLAGS}" --with-libs="${LDFLAGS}" \
 		--enable-pcre=yes --enable-docs=no --with-malloc=native \
 		--enable-start-stop-daemon=no
+
+.if defined(WITH_MBUNI_FULL)
+PATCHFILES+=	mbuni-kannel-patch-full
+.endif
+
+.if defined(WITH_MBUNI_MINIMAL)
+PATCHFILES+=	mbuni-kannel-patch-minimal
+.endif
 
 MAN1=		mtbatch.1 seewbmp.1 wmlsc.1 wmlsdasm.1
 MAN8=		kannel.8 run_kannel_box.8
@@ -43,8 +54,8 @@ post-patch:
 		 s|-lkse||g' ${WRKSRC}/configure
 
 post-install:
-.for file in gw/wapkannel.conf gw/smskannel.conf
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/etc
+.for file in wapkannel.conf smskannel.conf
+	${INSTALL_DATA} ${WRKSRC}/gw/${file} ${PREFIX}/etc/${file}.sample
 .endfor
 .for file in mtbatch seewbmp wmlsc wmlsdasm
 	@${STRIP_CMD} ${PREFIX}/bin/${file}

@@ -3,8 +3,8 @@ bin/mtbatch
 bin/seewbmp
 bin/wmlsc
 bin/wmlsdasm
-etc/smskannel.conf
-etc/wapkannel.conf
+etc/smskannel.conf.sample
+etc/wapkannel.conf.sample
 include/kannel/gw-config.h
 include/kannel/gwlib/accesslog.h
 include/kannel/gwlib/cfg.h
