@@ -1,0 +1,8 @@
+lib/common-lisp/lml/cmuclfasl/base.fasl
+lib/common-lisp/lml/cmuclfasl/downloads.fasl
+lib/common-lisp/lml/cmuclfasl/files.fasl
+lib/common-lisp/lml/cmuclfasl/package.fasl
+lib/common-lisp/lml/cmuclfasl/stdsite.fasl
+lib/common-lisp/lml/cmuclfasl/utils.fasl
+lib/common-lisp/lml/cmuclfasl/read-macro.fasl
+@dirrm lib/common-lisp/lml/cmuclfasl
