@@ -117,6 +117,7 @@
     SUBDIR += sablevm
     SUBDIR += shujit
     SUBDIR += simplicity
+    SUBDIR += sun-wtk
     SUBDIR += trove4j
     SUBDIR += tya
     SUBDIR += xdoclet

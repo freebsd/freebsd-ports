@@ -1,0 +1,13 @@
+The Sun JavaTM 2 Platform, Micro Edition (J2METM) Wireless Toolkit 
+supports the development of Java applications that run on devices 
+compliant with the Java Technology for the Wireless Industry 
+specification. The implementation included in version 2.1 is 
+compliant with Connected Limited Device Configuration 1.1 (CLDC), 
+Mobile Information Device Profile 2.0 (MIDP), Wireless Messaging 
+APIs (WMA), version 1.1, and Mobile Media APIs (MMAPI), version 1.1. 
+Support for J2ME Web Services (JSR-172), version 1.0 is also included.
+
+WWW: http://java.sun.com/j2me/
+
+- Panagiotis Astithas
+past@noc.ntua.gr

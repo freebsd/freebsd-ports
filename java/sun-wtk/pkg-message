@@ -1,0 +1,10 @@
+================================================================
+Documentation for the J2ME Wireless Toolkit version 2.1 is in 
+the file %%PREFIX%%/index.html
+
+In order to start using the J2ME Wireless Toolkit, please run 
+%%PREFIX%%/bin/ktoolbar. Please read the documentation for
+instructions on setting up ~/ktools.properties to use a local
+copy of the provided examples.
+================================================================
+
