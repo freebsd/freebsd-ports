@@ -22,6 +22,8 @@ arm-elf/lib/ldscripts/armelf.xn
 arm-elf/lib/ldscripts/armelf.xr
 arm-elf/lib/ldscripts/armelf.xs
 arm-elf/lib/ldscripts/armelf.xu
+arm-elf/lib/ldscripts/armelf.xc
+arm-elf/lib/ldscripts/armelf.xsc
 arm-elf/lib/libbfd.a
 arm-elf/lib/libiberty.a
 arm-elf/lib/libopcodes.a
