@@ -1,5 +1,14 @@
---- gnats/Makefile.in.orig	Sun Sep 26 07:43:30 1999
-+++ gnats/Makefile.in	Sun Sep 26 07:44:27 1999
+--- gnats/Makefile.in.orig	Tue Sep 21 16:18:39 1999
++++ gnats/Makefile.in	Fri Jan 21 10:06:19 2000
+@@ -465,7 +465,7 @@
+ 
+ getdate.c: getdate.y
+ 	@echo expect 10 shift/reduce conflicts
+-	$(BISON) $(srcdir)/getdate.y -o getdate.c
++	$(BISON) -o getdate.c $(srcdir)/getdate.y
+ 
+ config-send-pr:
+ 	@if [ ! -d ../send-pr ]; then \
 @@ -496,7 +496,7 @@
  	  echo "*** Warning: Must chown $(GNATS_USER) $(datadir)/gnats" ; \
  	fi

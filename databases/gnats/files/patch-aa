@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Nov  5 21:54:07 1998
-+++ Makefile.in	Sun Sep 26 07:45:19 1999
+--- Makefile.in.orig	Thu Nov  5 11:54:07 1998
++++ Makefile.in	Fri Jan 21 10:04:50 2000
 @@ -68,7 +68,7 @@
  HOST_PREFIX_1 = loser-
  
@@ -18,3 +18,12 @@
  
  MAKEINFO = `if [ -f $$r/texinfo/makeinfo/Makefile ] ; \
  	then echo $$r/texinfo/makeinfo/makeinfo ; \
+@@ -313,7 +313,7 @@
+ 	"AR_FLAGS=$(AR_FLAGS)" \
+ 	"AR_FOR_TARGET=$(AR_FOR_TARGET)" \
+ 	"AS_FOR_TARGET=$(AS_FOR_TARGET)" \
+-	"BISON=$(BISON)" \
++	"BISON=$(YACC)" \
+ 	"CC_FOR_BUILD=$(CC_FOR_BUILD)" \
+ 	"CC_FOR_TARGET=$(CC_FOR_TARGET)" \
+ 	"CFLAGS=$(CFLAGS)" \
