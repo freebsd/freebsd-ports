@@ -40,13 +40,8 @@ BLAS_LIBS=	"-L${LOCALBASE}/lib -lf77blas -lcblas -latlas"
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-CONIGURE_ARGS=	--host=${GNU_HOST} \
-		--with-fftw --with-blas=${BLAS_LIBS} --with-lapack=-lalapack
-.if ${ARCH} == "amd64"
-CONFIGURE_ARGS+= --disable-shared
-.else
-CONFIGURE_ARGS+= --enable-shared
-.endif
+CONIGURE_ARGS=	--host=${GNU_HOST} --with-fftw --with-blas=${BLAS_LIBS} \
+		--with-lapack=-lalapack --enable-shared
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
