@@ -41,6 +41,7 @@ do-install:
 	@if [ ! -f ${PREFIX}/sbin/thttpd_wrapper ]; then \
 		${ECHO} "Installing ${PREFIX}/sbin/thttpd_wrapper file."; \
 		${ECHO} "#!/bin/sh" > ${PREFIX}/sbin/thttpd_wrapper; \
+		${ECHO} "${ECHO} \$$\$$ > /var/run/thttpd_wrapper.pid" >> ${PREFIX}/sbin/thttpd_wrapper; \
 		${ECHO} "while true ; do" >> ${PREFIX}/sbin/thttpd_wrapper; \
 		${ECHO} "	${PREFIX}/sbin/thttpd -D -C ${PREFIX}/etc/thttpd.conf" >> ${PREFIX}/sbin/thttpd_wrapper; \
 		${ECHO} "	sleep 10" >> ${PREFIX}/sbin/thttpd_wrapper; \
