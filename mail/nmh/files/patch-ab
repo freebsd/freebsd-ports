@@ -1,13 +1,140 @@
---- configure.in-dist	Wed Jun  4 19:39:43 1997
-+++ configure.in	Sat Jun 21 10:13:11 1997
-@@ -424,8 +424,8 @@
-           [test -z "$CONFIG_HEADERS" || echo > stamp-h])
+diff -udr ../nmh-0.18.ORIG/Makefile.in ./Makefile.in
+--- ../nmh-0.18.ORIG/Makefile.in	Sat Jul 26 06:38:35 1997
++++ ./Makefile.in	Sun Dec 28 12:23:55 1997
+@@ -66,6 +66,7 @@
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA    = @INSTALL_DATA@
++INSTALL_SCRIPT  = @INSTALL_SCRIPT@
  
- eval "nmhbin=${bindir}"; eval "nmhbin2=${nmhbin}"
--eval "nmhetc=${etcdir}"; eval "nmhetc2=${nmhetc}"
--eval "nmhlib=${libdir}"; eval "nmhlib2=${nmhlib}"
-+eval "nmhetc=${sysconfdir}"; eval "nmhetc2=${nmhetc}"
-+eval "nmhlib=${libexecdir}"; eval "nmhlib2=${nmhlib}"
+ .SUFFIXES:
+ 
+diff -udr ../nmh-0.18.ORIG/configure ./configure
+--- ../nmh-0.18.ORIG/configure	Thu Dec 18 03:31:57 1997
++++ ./configure	Sun Dec 28 12:23:55 1997
+@@ -968,6 +968,8 @@
+ test -z "$INSTALL_PROGRAM" && INSTALL_PROGRAM='${INSTALL}'
+ 
+ test -z "$INSTALL_DATA" && INSTALL_DATA='${INSTALL} -m 644'
++
++test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -m 555'
+ 		# Extract the first word of "ranlib", so it can be a program name with args.
+ set dummy ranlib; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+@@ -3450,6 +3452,7 @@
+ s%@SET_MAKE@%$SET_MAKE%g
+ s%@INSTALL_PROGRAM@%$INSTALL_PROGRAM%g
+ s%@INSTALL_DATA@%$INSTALL_DATA%g
++s%@INSTALL_SCRIPT@%$INSTALL_SCRIPT%g
+ s%@RANLIB@%$RANLIB%g
+ s%@AWK@%$AWK%g
+ s%@LEX@%$LEX%g
+@@ -3692,7 +3695,7 @@
+ 
+ eval "nmhbin=${bindir}";         eval "nmhbin2=${nmhbin}"
+ eval "nmhsysconf=${sysconfdir}"; eval "nmhsysconf2=${nmhsysconf}"
+-eval "nmhlib=${libdir}";         eval "nmhlib2=${nmhlib}"
++eval "nmhlib=${libexecdir}";         eval "nmhlib2=${nmhlib}"
  eval "nmhman=${mandir}"
  
  echo "
+@@ -3705,7 +3708,7 @@
+ linker flags              : ${LDFLAGS}
+ source code location      : ${srcdir}
+ binary install path       : ${nmhbin2}
+-libary install path       : ${nmhlib2}
++libexec install path      : ${nmhlib2}
+ config files install path : ${nmhsysconf2}
+ man page install path     : ${nmhman}"
+ echo ""
+diff -udr ../nmh-0.18.ORIG/configure.in ./configure.in
+--- ../nmh-0.18.ORIG/configure.in	Wed Dec 17 01:18:12 1997
++++ ./configure.in	Sun Dec 28 12:23:55 1997
+@@ -400,7 +400,7 @@
+ 
+ eval "nmhbin=${bindir}";         eval "nmhbin2=${nmhbin}"
+ eval "nmhsysconf=${sysconfdir}"; eval "nmhsysconf2=${nmhsysconf}"
+-eval "nmhlib=${libdir}";         eval "nmhlib2=${nmhlib}"
++eval "nmhlib=${libexecdir}";         eval "nmhlib2=${nmhlib}"
+ eval "nmhman=${mandir}"
+ 
+ echo "
+@@ -413,7 +413,7 @@
+ linker flags              : ${LDFLAGS}
+ source code location      : ${srcdir}
+ binary install path       : ${nmhbin2}
+-libary install path       : ${nmhlib2}
++libexec install path      : ${nmhlib2}
+ config files install path : ${nmhsysconf2}
+ man page install path     : ${nmhman}"
+ echo ""
+diff -udr ../nmh-0.18.ORIG/support/general/Makefile.in ./support/general/Makefile.in
+--- ../nmh-0.18.ORIG/support/general/Makefile.in	Sat Jul 26 06:40:55 1997
++++ ./support/general/Makefile.in	Sun Dec 28 12:23:55 1997
+@@ -14,11 +14,13 @@
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+ libdir      = @libdir@
++libexecdir  = @libexecdir@
+ etcdir      = @sysconfdir@
+ 
+ INSTALL         = @INSTALL@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA    = @INSTALL_DATA@
++INSTALL_SCRIPT  = @INSTALL_SCRIPT@
+ 
+ # Path to search for programs to display content
+ # for mhn.  Used to create mhn.defaults
+@@ -77,9 +79,9 @@
+ 	done
+ 
+ install-scripts:
+-	$(top_srcdir)/mkinstalldirs $(libdir)
++	$(top_srcdir)/mkinstalldirs $(libexecdir)
+ 	for script in $(SCRIPTS); do \
+-	  $(INSTALL_PROGRAM) $(srcdir)/$$script $(libdir)/$$script; \
++	  $(INSTALL_SCRIPT) $(srcdir)/$$script $(libexecdir)/$$script; \
+ 	done
+ 
+ uninstall: uninstall-files uninstall-scripts
+@@ -91,7 +93,7 @@
+ 
+ uninstall-scripts:
+ 	for script in $(SCRIPTS); do \
+-	  rm -f $(libdir)/$$script; \
++	  rm -f $(libexecdir)/$$script; \
+ 	done
+ 
+ # ========== DEPENDENCIES FOR CLEANUP ==========
+diff -udr ../nmh-0.18.ORIG/uip/Makefile.in ./uip/Makefile.in
+--- ../nmh-0.18.ORIG/uip/Makefile.in	Thu Dec  4 02:16:04 1997
++++ ./uip/Makefile.in	Sun Dec 28 12:29:13 1997
+@@ -14,6 +14,7 @@
+ exec_prefix = @exec_prefix@
+ bindir      = @bindir@
+ libdir      = @libdir@
++libexecdir  = @libexecdir@
+ etcdir      = @sysconfdir@
+ 
+ CC       = @CC@
+@@ -235,9 +236,9 @@
+ 
+ # install misc support binaries
+ install-misc:
+-	$(top_srcdir)/mkinstalldirs $(libdir)
++	$(top_srcdir)/mkinstalldirs $(libexecdir)
+ 	for misc in $(MISC); do \
+-	  $(INSTALL_PROGRAM) $$misc $(libdir)/$$misc; \
++	  $(INSTALL_PROGRAM) $$misc $(libexecdir)/$$misc; \
+ 	done
+ 
+ uninstall:
+@@ -248,7 +249,7 @@
+ 	  rm -f $(bindir)/$$lcmd; \
+ 	done
+ 	for misc in $(MISC); do \
+-	  rm -f $(libdir)/$$misc; \
++	  rm -f $(libexecdir)/$$misc; \
+ 	done
+ 
+ # ========== DEPENDENCIES FOR CLEANUP ==========

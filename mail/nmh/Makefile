@@ -1,12 +1,12 @@
 # New ports collection makefile for:	nmh
-# Version required:     0.17
+# Version required:     0.18
 # Date created:		26 July 1997
 # Whom:			Scott Blachowicz <Scott.Blachowicz@seaslug.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/04 04:39:25 asami Exp $
+# $Id: Makefile,v 1.2 1997/08/04 06:51:28 markm Exp $
 #
 
-DISTNAME=	nmh-0.17
+DISTNAME=	nmh-0.18
 CATEGORIES=	mail
 MASTER_SITES=   ftp://ftp.math.gatech.edu/pub/nmh/
 

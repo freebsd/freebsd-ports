@@ -1,43 +1,37 @@
-diff -ur nmh-0.14-dist/acconfig.h nmh-0.14/acconfig.h
---- acconfig.h-dist	Wed Apr 16 21:25:42 1997
-+++ acconfig.h	Tue May 20 18:59:52 1997
-@@ -1,3 +1,9 @@
-+/* Define if you have the <sys/param.h> header file.  */
-+#undef HAVE_SYS_PARAM_H
-+#ifdef HAVE_SYS_PARAM_H
-+#include <sys/param.h>
-+#endif
-+
- 
- /****** BEGIN USER CONFIGURATION SECTION *****/
- 
-@@ -37,9 +40,11 @@
+--- ../nmh-0.18.ORIG/acconfig.h	Mon Dec  1 07:52:31 1997
++++ acconfig.h	Sun Dec 28 14:22:34 1997
+@@ -36,9 +36,9 @@
   *  OpenBSD 2.x
   *  BSD/OS 2.x
   */
 -/* #define BIND     1 */
 -/* #define BSD42    1 */
 -/* #define BSD44    1 */
-+#ifdef BSD4_4
-+#define BIND     1
-+#define BSD42    1
-+#define BSD44    1
-+#endif
++#define BIND     1 /**/
++#define BSD42    1 /**/
++#define BSD44    1 /**/
  
  /*
   *  SCO 4.x
-@@ -72,10 +77,14 @@
+@@ -71,10 +71,10 @@
   * other programs which may modify your maildrops.
   * Currently you can only use one type.
   */
-+#if defined(BSD44)
-+#define FCNTL_LOCKING 1
-+#else
- #define DOT_LOCKING   1
+-#define DOT_LOCKING   1
++/* #define DOT_LOCKING   1 */
  /* #define FCNTL_LOCKING 1 */
  /* #define LOCKF_LOCKING 1 */
- /* #define FLOCK_LOCKING 1 */
-+#endif
+-/* #define FLOCK_LOCKING 1 */
++#define FLOCK_LOCKING 1
  
  /*
   * If you have defined DOT_LOCKING, then the default is to
+@@ -154,7 +154,7 @@
+ /*
+  * The prefix to use when messages are "removed" by rmm.
+  */
+-#define BACKUP_PREFIX ","
++#define BACKUP_PREFIX "#"
+ 
+ /*
+  * Name of link to file to which you are replying.
