@@ -21,6 +21,7 @@ post-extract:
 		@${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -r
 
 do-install:
-		@${CP} -r ${WRKSRC}/Crystal /usr/local/share/icons/
+		@${CP} -r ${WRKSRC}/Crystal ${PREFIX}/share/icons/
+		@${CHMOD} -R a=rX,u+w ${PREFIX}/share/icons/Crystal
 
 .include <bsd.port.mk>
