@@ -1,0 +1,32 @@
+--- Makefile.vars.in.orig	Thu Nov 21 20:25:39 2002
++++ Makefile.vars.in	Thu Nov 21 20:33:44 2002
+@@ -14,14 +14,15 @@
+ BIN_DIR      = ${DESTDIR}@bindir@
+ LIB_DIR      = ${DESTDIR}@libdir@
+ DATA_DIR     = ${DESTDIR}@datadir@
+-CONFIG_DIR   = ${DESTDIR}@sysconfdir@
++ETC_DIR      = ${DESTDIR}@sysconfdir@
+ 
++CONFIG_DIR   = ${ETC_DIR}/panorama/
+ DOC_DIR      = ${TOPDIR}/share/doc/panorama/
+-PLUGIN_DIR   = ${LIB_DIR}/plugins/
+-TEXTURE_DIR  = ${DATA_DIR}/texture/
+-GRADIENT_DIR = ${DATA_DIR}/gradients/
+-SCENE_DIR    = ${DATA_DIR}/scenes/
+-INCLUDE_DIR  = ${DATA_DIR}/include/
++PLUGIN_DIR   = ${LIB_DIR}/panorama/plugins/
++TEXTURE_DIR  = ${DATA_DIR}/panorama/texture/
++GRADIENT_DIR = ${DATA_DIR}/panorama/gradients/
++SCENE_DIR    = ${DATA_DIR}/panorama/scenes/
++INCLUDE_DIR  = ${DATA_DIR}/panorama/include/
+ 
+ #
+ # Don't change anything below this line.
+@@ -64,5 +65,5 @@
+ PROF = -fomit-frame-pointer
+ endif
+ 
+-CXXFLAGS = ${OPT} ${STAT} ${PROF} -ansi -pedantic -fno-exceptions -fno-rtti \
+-	   -Wall -Wstrict-prototypes ${DEFS} ${INCLUDE}
++CXXFLAGS = @CXXFLAGS@ ${STAT} ${PROF} -ansi -pedantic -fno-exceptions -fno-rtti \
++	   -Wall -Wstrict-prototypes ${DEFS} ${INCLUDE}

@@ -1,71 +1,75 @@
 bin/render
-share/doc/panorama/AUTHORS
-share/doc/panorama/BUGS
-share/doc/panorama/CREDITS
-share/doc/panorama/EXPERIMENTAL
-share/doc/panorama/FAQ
-share/doc/panorama/INSTALL
-share/doc/panorama/LICENSE
-share/doc/panorama/NEWS
-share/doc/panorama/README
-share/doc/panorama/developers/C++_Coding_Style
-share/doc/panorama/developers/General
-share/doc/panorama/developers/PROJECTS
-share/doc/panorama/developers/README
-share/doc/panorama/developers/WRITING_A_PLUGIN
-share/doc/panorama/users/README
-share/doc/panorama/users/classes.html
-share/doc/panorama/users/language.html
+etc/panorama/config
+etc/panorama/pluginrc
+lib/libhlapi.so
+lib/libhlapi.so.0
+lib/libllapi.so
+lib/libllapi.so.0
+lib/panorama/plugins/atm_const.plg
+lib/panorama/plugins/bezier.plg
+lib/panorama/plugins/bsdf_cook_torrance.plg
+lib/panorama/plugins/bsdf_lambertian.plg
+lib/panorama/plugins/bsdf_phong.plg
+lib/panorama/plugins/bsdf_schlick.plg
+lib/panorama/plugins/bsdf_schlick_double.plg
+lib/panorama/plugins/bsdf_ward.plg
+lib/panorama/plugins/gif_io.plg
+lib/panorama/plugins/if_cartoon.plg
+lib/panorama/plugins/if_convert_to_grey.plg
+lib/panorama/plugins/if_fog.plg
+lib/panorama/plugins/if_lens_flare.plg
+lib/panorama/plugins/if_text.plg
+lib/panorama/plugins/jpeg_io.plg
+lib/panorama/plugins/mat_brick.plg
+lib/panorama/plugins/mat_checker.plg
+lib/panorama/plugins/mat_crackle.plg
+lib/panorama/plugins/mat_leopard.plg
+lib/panorama/plugins/mat_marble.plg
+lib/panorama/plugins/mat_noise.plg
+lib/panorama/plugins/mat_parquet.plg
+lib/panorama/plugins/mat_wood.plg
+lib/panorama/plugins/mat_worley.plg
+lib/panorama/plugins/of_cartoon.plg
+lib/panorama/plugins/of_convert_to_grey.plg
+lib/panorama/plugins/pinhole.plg
+lib/panorama/plugins/png_io.plg
+lib/panorama/plugins/point_light.plg
+lib/panorama/plugins/projector.plg
+lib/panorama/plugins/raytracer.plg
+lib/panorama/plugins/rt_io.plg
+lib/panorama/plugins/tga_io.plg
+lib/panorama/plugins/warn_light.plg
+%%PORTDOCS%%share/doc/panorama/AUTHORS
+%%PORTDOCS%%share/doc/panorama/BUGS
+%%PORTDOCS%%share/doc/panorama/CREDITS
+%%PORTDOCS%%share/doc/panorama/EXPERIMENTAL
+%%PORTDOCS%%share/doc/panorama/FAQ
+%%PORTDOCS%%share/doc/panorama/INSTALL
+%%PORTDOCS%%share/doc/panorama/LICENSE
+%%PORTDOCS%%share/doc/panorama/NEWS
+%%PORTDOCS%%share/doc/panorama/README
+%%PORTDOCS%%share/doc/panorama/config
+%%PORTDOCS%%share/doc/panorama/developers/C++_Coding_Style
+%%PORTDOCS%%share/doc/panorama/developers/General
+%%PORTDOCS%%share/doc/panorama/developers/PROJECTS
+%%PORTDOCS%%share/doc/panorama/developers/README
+%%PORTDOCS%%share/doc/panorama/developers/WRITING_A_PLUGIN
+%%PORTDOCS%%share/doc/panorama/pluginrc
+%%PORTDOCS%%share/doc/panorama/users/README
+%%PORTDOCS%%share/doc/panorama/users/classes.html
+%%PORTDOCS%%share/doc/panorama/users/language.html
+share/panorama/gradients/crackle1
+share/panorama/gradients/lrgold
+share/panorama/gradients/marble1
+share/panorama/gradients/marble2
+share/panorama/gradients/tropical
+share/panorama/gradients/wood1
+share/panorama/gradients/wood2
+share/panorama/gradients/wood3
+share/panorama/gradients/wood4
+share/panorama/gradients/wood5
 share/panorama/include/colors.inc
 share/panorama/include/materials.inc
-share/panorama/lib/libhlapi.so
-share/panorama/lib/libhlapi.so.0
-share/panorama/lib/libllapi.so
-share/panorama/lib/libllapi.so.0
-@exec /sbin/ldconfig -m %D/share/panorama/lib
-@unexec /sbin/ldconfig -R
-share/panorama/lib/gradients/crackle1
-share/panorama/lib/gradients/lrgold
-share/panorama/lib/gradients/marble1
-share/panorama/lib/gradients/marble2
-share/panorama/lib/gradients/tropical
-share/panorama/lib/gradients/wood1
-share/panorama/lib/gradients/wood2
-share/panorama/lib/gradients/wood3
-share/panorama/lib/gradients/wood4
-share/panorama/lib/gradients/wood5
-share/panorama/lib/plugins/atm_const.plg
-share/panorama/lib/plugins/bezier.plg
-share/panorama/lib/plugins/bsdf_cook_torrance.plg
-share/panorama/lib/plugins/bsdf_lambertian.plg
-share/panorama/lib/plugins/bsdf_phong.plg
-share/panorama/lib/plugins/bsdf_schlick.plg
-share/panorama/lib/plugins/bsdf_schlick_double.plg
-share/panorama/lib/plugins/bsdf_ward.plg
-share/panorama/lib/plugins/if_cartoon.plg
-share/panorama/lib/plugins/if_convert_to_grey.plg
-share/panorama/lib/plugins/if_fog.plg
-share/panorama/lib/plugins/if_lens_flare.plg
-share/panorama/lib/plugins/mat_brick.plg
-share/panorama/lib/plugins/mat_checker.plg
-share/panorama/lib/plugins/mat_crackle.plg
-share/panorama/lib/plugins/mat_leopard.plg
-share/panorama/lib/plugins/mat_marble.plg
-share/panorama/lib/plugins/mat_noise.plg
-share/panorama/lib/plugins/mat_parquet.plg
-share/panorama/lib/plugins/mat_wood.plg
-share/panorama/lib/plugins/mat_worley.plg
-share/panorama/lib/plugins/of_cartoon.plg
-share/panorama/lib/plugins/of_convert_to_grey.plg
-share/panorama/lib/plugins/pinhole.plg
-share/panorama/lib/plugins/point_light.plg
-share/panorama/lib/plugins/projector.plg
-share/panorama/lib/plugins/raytracer.plg
-share/panorama/lib/plugins/rt_io.plg
-share/panorama/lib/plugins/tga_io.plg
-share/panorama/lib/plugins/warn_light.plg
-share/panorama/lib/texture/f16.tga
-share/panorama/lib/texture/supernova.tga
 share/panorama/scenes/atmospheric/atmosphere.rt
 share/panorama/scenes/lights/projector.rt
 share/panorama/scenes/lights/warn.rt
@@ -94,21 +98,21 @@ share/panorama/scenes/objects/rectangle.rt
 share/panorama/scenes/objects/teapot.rt
 share/panorama/scenes/objects/torus.rt
 share/panorama/scenes/objects/triangle.rt
-share/panorama/etc/pluginrc
-share/panorama/etc/config
-@dirrm share/doc/panorama/developers
-@dirrm share/doc/panorama/users
-@dirrm share/doc/panorama
-@dirrm share/panorama/lib/gradients
-@dirrm share/panorama/lib/plugins
-@dirrm share/panorama/lib/texture
-@dirrm share/panorama/lib
-@dirrm share/panorama/include
-@dirrm share/panorama/scenes/atmospheric
-@dirrm share/panorama/scenes/lights
-@dirrm share/panorama/scenes/materials
-@dirrm share/panorama/scenes/misc
+share/panorama/texture/f16.tga
+share/panorama/texture/supernova.tga
+@dirrm share/panorama/texture
 @dirrm share/panorama/scenes/objects
+@dirrm share/panorama/scenes/misc
+@dirrm share/panorama/scenes/materials
+@dirrm share/panorama/scenes/lights
+@dirrm share/panorama/scenes/atmospheric
 @dirrm share/panorama/scenes
-@dirrm share/panorama/etc
+@dirrm share/panorama/include
+@dirrm share/panorama/gradients
 @dirrm share/panorama
+%%PORTDOCS%%@dirrm share/doc/panorama/users
+%%PORTDOCS%%@dirrm share/doc/panorama/developers
+%%PORTDOCS%%@dirrm share/doc/panorama
+@dirrm lib/panorama/plugins
+@dirrm lib/panorama
+@dirrm etc/panorama
