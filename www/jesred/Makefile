@@ -8,10 +8,9 @@
 PORTNAME=	jesred
 PORTVERSION=	1.2.1
 CATEGORIES=	www
-MASTER_SITES=	http://ivs.cs.uni-magdeburg.de/~elkner/webtools/src/ \
+MASTER_SITES=	http://www.linofee.org/~elkner/webtools/src/ \
 		http://www.scn.rain.com/pub/network/www/ \
 		http://www.cit.uws.edu.au/pub/unix/web/proxy/ \
-		http://www.csu.ac.ru/pub/OS/Unix/network/www/squid/Addition/ \
 		http://www.acad.bg/ftp/pub/src/misc/
 DISTNAME=	jesred-1.2pl1
 
