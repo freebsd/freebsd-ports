@@ -26,6 +26,9 @@ INSTALLS_SHLIB=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+# Supports only i386 FP operation
+ONLY_FOR_ARCHS=	i386
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-release \$$(LT_RELEASE)||g'
