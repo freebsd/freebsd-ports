@@ -6,19 +6,20 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xperfmon++
+DISTNAME=	xperfmon++v1.1
 PKGNAME=	xperfmon++-2.0
 CATEGORIES=     sysutils
 # In Germany try this
 MASTER_SITES=	ftp://ftp.uni-bielefeld.de/pub/systems/FreeBSD/lkoeller/ \
 		ftp://ftp.u-aizu.ac.jp/pub/misc/tools/xperfmon/ \
 		ftp://ftp.ibank.ru/pub/unix_src/benchmarks/
-DISTFILES=	xperfmon++v1.1.tar.Z
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
 
 USE_IMAKE=	yes
 MAN1=		xperfmon++.1
+WRKSRC=		${WRKDIR}/xperfmon++
 
 pre-configure:
 	if [ -e /usr/lib/libdevstat.a -o -e /usr/lib/aout/libdevstat.a ]; then \
