@@ -1,14 +1,3 @@
---- help-browser/gnome-info2html/utils.c.orig	Tue Dec 29 05:18:57 1998
-+++ help-browser/gnome-info2html/utils.c	Tue Dec 29 05:19:04 1998
-@@ -3,7 +3,7 @@
- #include <stdio.h>
- #include <string.h>
- #include <sys/types.h>
--#include <regex.h>
-+#include <gnuregex.h>
- 
- #include <glib.h>
- 
 --- help-browser/gnome-help-browser.c.orig	Tue Dec 29 05:19:41 1998
 +++ help-browser/gnome-help-browser.c	Tue Dec 29 05:20:50 1998
 @@ -72,13 +72,10 @@

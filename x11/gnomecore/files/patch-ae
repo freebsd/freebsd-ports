@@ -5,7 +5,7 @@
  l = @l@
  
 -always_built_SUBDIRS = applet-dirs gen_util asclock 	 fish dialer webcontrol 	 drivemount clockmail fifteen life battery charpick 	 gnome-pager mini-commander gkb jbc another_clock
-+always_built_SUBDIRS = applet-dirs gen_util asclock 	 fish dialer webcontrol 	 clockmail fifteen life battery charpick 	 gnome-pager mini-commander gkb jbc another_clock
++always_built_SUBDIRS = applet-dirs gen_util asclock 	 fish dialer webcontrol 	clockmail fifteen life battery charpick 	 gnome-pager mini-commander gkb jbc another_clock
  
  @FALSE_TRUE@@HAVE_LIBESD_TRUE@esdmanager = esd-manager
  @FALSE_TRUE@@HAVE_LIBESD_FALSE@esdmanager = 
@@ -372,13 +372,14 @@
  util_DATA = gnome-terminal.desktop
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../config.h
---- gsm/Makefile.in.orig	Tue Mar  2 01:52:17 1999
-+++ gsm/Makefile.in	Sat Mar  6 17:59:42 1999
+--- gsm/Makefile.in.orig	Sat Mar 27 00:09:08 1999
++++ gsm/Makefile.in	Wed Apr  7 19:01:24 1999
 @@ -154,9 +154,9 @@
  cxxflags_set = @cxxflags_set@
  l = @l@
-
- defaultdir = $(datadir)/gnome
+ 
+-defaultdir = $(datadir)/gnome
++defaultdir = $(datadir)
  
 -INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-DGNOMELOCALEDIR=\""$(datadir)/locale\"" 	-DDEFAULTDIR="\"$(defaultdir)\""
 +INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) 	-I$(top_srcdir)/intl -I$(top_builddir)/intl		-DGNOMELOCALEDIR=\""$(prefix)/share/locale\"" 	-DDEFAULTDIR="\"$(datadir)\""
@@ -457,6 +458,17 @@
  
 -help_browser_helpdir = $(datadir)/gnome/help/help-browser/it
 +help_browser_helpdir = $(datadir)/help/help-browser/it
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../../config.h
+ CONFIG_CLEAN_FILES = 
+--- help-browser/help/ko/Makefile.in.orig	Tue Mar  2 01:52:46 1999
++++ help-browser/help/ko/Makefile.in	Sat Mar  6 17:59:42 1999
+@@ -157,7 +157,7 @@
+ EXTRA_DIST = gnome-help-browser-help.html 	     gnome-help-browser-topic.dat 	     default-page.html 
+ 
+ 
+-help_browser_helpdir = $(datadir)/gnome/help/help-browser/ko
++help_browser_helpdir = $(datadir)/help/help-browser/ko
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
