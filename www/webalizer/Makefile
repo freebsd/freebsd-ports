@@ -3,7 +3,7 @@
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id: Makefile,v 1.6 1999/03/31 15:15:13 steve Exp $
+# $Id: Makefile,v 1.7 1999/06/10 08:15:16 steve Exp $
 
 DISTNAME=	webalizer-1.22-06-src
 PKGNAME=	webalizer-1.22.6
@@ -36,7 +36,7 @@ WEBALIZER_LANG=english
 CONFIGURE_ARGS+=	--with-language=${WEBALIZER_LANG}
 .endif
 
-pre-fetch:
+pre-configure:
 .if !defined(WEBALIZER_LANG)
 	@${ECHO_MSG} "You can customize the language by typing"
 .for i in ${SUPP_LANG}
