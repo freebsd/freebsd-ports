@@ -102,9 +102,9 @@ while [ "$1" ]; do
 			;;
 		\"SybaseDB\")
 			echo "LIB_DEPENDS+=	sybdb.1:\${PORTSDIR}/databases/freetds"
-			echo "LIB_DEPENDS+=	giconv.2:\${PORTSDIR}/converters/libiconv"
+			echo "LIB_DEPENDS+=	iconv.3:\${PORTSDIR}/converters/libiconv"
 			echo "CONFIGURE_ARGS+=--with-sybase=\${PREFIX}"
-			LIBS="${LIBS} -L\${LOCALBASE}/lib -lgiconv"
+			LIBS="${LIBS} -L\${LOCALBASE}/lib -liconv"
 			if [ "$SYBASECT" ]; then
 				echo "SybaseDB and SybaseCT are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
@@ -114,9 +114,9 @@ while [ "$1" ]; do
 			;;
 		\"SybaseCT\")
 			echo "LIB_DEPENDS+=	ct.0:\${PORTSDIR}/databases/freetds"
-			echo "LIB_DEPENDS+=	giconv.2:\${PORTSDIR}/converters/libiconv"
+			echo "LIB_DEPENDS+=	iconv.3:\${PORTSDIR}/converters/libiconv"
 			echo "CONFIGURE_ARGS+=--with-sybase-ct=\${PREFIX}"
-			LIBS="${LIBS} -L\${LOCALBASE}/lib -lgiconv"
+			LIBS="${LIBS} -L\${LOCALBASE}/lib -liconv"
 			if [ "$SYBASEDB" ]; then
 				echo "SybaseDB and SybaseCT are mutually exclusive." > /dev/stderr
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
