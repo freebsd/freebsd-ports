@@ -178,6 +178,7 @@
     SUBDIR += libmad
     SUBDIR += libmikmod
     SUBDIR += libmodplug
+    SUBDIR += libmusepack
     SUBDIR += libmusicbrainz
     SUBDIR += libogg
     SUBDIR += libsamplerate
