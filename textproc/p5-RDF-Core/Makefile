@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	RDF-Core
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RDF
@@ -20,7 +20,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-X
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
-PLIST_SUB+=	DOCSDIR="share/doc/${PORTNAME}"
 
 MAN3=		RDF::Core.3 RDF::Core::Constants.3 RDF::Core::Enumerator.3 \
 		RDF::Core::Enumerator::DB_File.3 \
@@ -34,7 +33,6 @@ MAN3=		RDF::Core.3 RDF::Core::Constants.3 RDF::Core::Enumerator.3 \
 		RDF::Core::Serializer.3 RDF::Core::Statement.3 \
 		RDF::Core::Storage.3 RDF::Core::Storage::DB_File.3 \
 		RDF::Core::Storage::Memory.3 RDF::Core::Storage::Postgres.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 DOCSUBDIR=	/ RDF RDF/Core RDF/Core/Enumerator RDF/Core/Model \
 		RDF/Core/Storage
