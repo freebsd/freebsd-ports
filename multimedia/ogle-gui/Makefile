@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ogle
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	0.9.2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 PKGNAMESUFFIX=	-gui
@@ -16,9 +15,9 @@ DISTNAME=	${PORTNAME}_gui-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An add-on graphical user interface for Ogle
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.10:${PORTSDIR}/multimedia/ogle
+BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
-		glade.4:${PORTSDIR}/devel/libglade \
+		glade-2.0:${PORTSDIR}/devel/libglade2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
@@ -26,7 +25,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack \
 		gnomehier \
 		gnomeprefix \
-		gtk12
+		gtk20
 WANT_GNOME=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
@@ -35,10 +34,10 @@ CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-dvd-includes=${LOCALBASE}/include \
 		--with-dvdcontrol=${LOCALBASE} \
 		--without-included-gettext \
+		--enable-gtk2 \
 		--with-gtk-prefix=${X11BASE} \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \
-		--with-libglade-config=${X11BASE}/bin/libglade-config \
 		--with-xml-prefix=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
