@@ -1863,6 +1863,7 @@ freedialog	ports/misc/freedialog
 freedroid	ports/games/freedroid
 freedt		ports/sysutils/freedt
 freefem		ports/math/freefem
+freefem++	ports/math/freefem++
 freefonts	ports/x11-fonts/freefonts
 freeglut	ports/x11-toolkits/freeglut
 freegrep	ports/textproc/freegrep
