@@ -8,7 +8,9 @@
 
 DISTNAME=	wemi-${WEMI_VER}
 CATEGORIES=	editors elisp
-MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/wemi/
+MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/wemi/ \
+		${MASTER_SITE_PORTS_JP} \
+		http://www.freebsd.org/~shige/ports/distfiles/
 
 MAINTAINER?=	shige@FreeBSD.org
 
