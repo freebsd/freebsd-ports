@@ -18,8 +18,8 @@ use vars qw(
 	@COMMIT_HOSTS $COMMITTER $DEBUG $EXCLUDE_FILE $FILE_PREFIX $IDHEADER
 	$LAST_FILE @LOG_FILE_MAP $MAILADDRS $MAILBANNER $MAILCMD
 	$MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION $MAIL_TRANSFORM $MINCVSVERSION
-	$MAX_DIFF_SIZE $PID $PROG_CVS $PROG_MV %TEMPLATE_HEADERS $TMPDIR
-	$UNEXPAND_RCSID $WARN_HEADERS
+	$MAX_DIFF_SIZE $NO_DOS_LINEBREAKS $PID $PROG_CVS $PROG_MV
+	%TEMPLATE_HEADERS $TMPDIR $UNEXPAND_RCSID $WARN_HEADERS
 );
 
 my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
@@ -139,6 +139,10 @@ $IDHEADER = 'CVSHeader';
 # This is useful because it means that expanded headers aren't stored in
 # the repository as part of the delta.
 $UNEXPAND_RCSID = 0;
+
+# Check for DOS/WINDOWS/MAC linebreaks in the file, bomb out if present.
+# Exclusions can be specified in the exclude file.
+$NO_DOS_LINEBREAKS = 0;
 
 
 ####################

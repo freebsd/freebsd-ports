@@ -71,6 +71,10 @@ my $BadVersion = "
     perform an update to get the current version, and then
     CAREFULLY merge your changes into that file.\n";
 
+my $DOSLineBreak = "%s - Dos/Windows/Mac linebreaks encountered (line %d).\n";
+my $DOSLineErr = "PLEASE use only UNIX linebreaks.\n";
+
+
 ############################################################
 #
 # Subroutines
@@ -125,6 +129,8 @@ sub check_version {
 	my $rcsid_info;		# The expanded values of the rcsid.
 	my $rname;		# The file pathname, parsed from the rcsid.
 	my $version;		# The file version, parsed from the rcsid.
+	my $dos_line_brk_found;	# True if we found a DOS line break in the file.
+	my $line_number;	# Keep track of where the line break is.
 
 	# not present - either removed or let cvs deal with it.
 	return 0 unless -f $filename;
@@ -133,13 +139,27 @@ sub check_version {
 	# NOTE: We stop after finding the first potential match.
 	open FILE, $filename or die "Cannot open $filename, stopped\n";
 	$found_rcsid = 0;
+	$dos_line_brk_found = 0;
+	$line_number = 0;
 	while (<FILE>) {
-		next unless /^.*(\$$HEADER.*)/;
-		$rcsid = $1;
-		$found_rcsid = 1;
-		last;
+		$line_number++;
+		if ( /^.*(\$$HEADER.*)/ ) {
+			$rcsid = $1;
+			$found_rcsid = 1;
+		} elsif ( m/\r/ ) {
+			# Found a DOS linebreak
+			printf($DOSLineBreak, "$directory/$filename",
+			    $line_number);
+			$dos_line_brk_found = 1;
+		}
 	}
 	close FILE;
+
+	# The file must NOT contain DOS linebreaks
+	if ($cfg::NO_DOS_LINEBREAKS and $dos_line_brk_found) {
+		print $DOSLineErr;
+		return(1);
+	}
 
 	# The file should have had an rcsid in it!
 	unless ($found_rcsid) {
