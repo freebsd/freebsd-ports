@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Sat Jan  8 17:25:22 2005
++++ Makefile.in	Sat Jan  8 17:26:18 2005
+@@ -178,6 +178,7 @@
+ 	done
+ resourceextdocDATA_INSTALL = $(INSTALL_DATA)
+ install-resourceextdocDATA: $(resourceextdoc_DATA)
++ifneq ($(resourceextdoc_DATA),)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(resourceextdocdir)
+ 	@list='$(resourceextdoc_DATA)'; for p in $$list; do \
+@@ -186,6 +187,7 @@
+ 	  echo " $(resourceextdocDATA_INSTALL) $$d$$p $(DESTDIR)$(resourceextdocdir)/$$f"; \
+ 	  $(resourceextdocDATA_INSTALL) $$d$$p $(DESTDIR)$(resourceextdocdir)/$$f; \
+ 	done
++endif
+ 
+ uninstall-resourceextdocDATA:
+ 	@$(NORMAL_UNINSTALL)
