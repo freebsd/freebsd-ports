@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	libchipcard
 
 MAINTAINER=	martin@libchipcard.de
-COMMENT=	"A library for easy access to chipcards."
+COMMENT=	"A library for easy access to chipcards"
 
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 
@@ -29,8 +29,14 @@ MAN1=		ctfstool.1 chipcardd.1 geldkarte.1 hbcicard.1 \
 
 MAN5=		libchipcard.conf.5 chipcardc.conf.5 chipcardd.conf.5
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/freebsd/chipcardd.sh ${PREFIX}/etc/rc.d
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
