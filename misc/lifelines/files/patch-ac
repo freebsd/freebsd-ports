@@ -1,0 +1,99 @@
+*** configure.orig	Thu Aug 10 01:48:28 2000
+--- configure	Thu Aug 10 01:51:21 2000
+***************
+*** 1141,1200 ****
+  
+  echo Looking for libraries
+  
+! echo Looking for ncurses
+! echo $ac_n "checking for tparm in -lncurses""... $ac_c" 1>&6
+! echo "configure:1147: checking for tparm in -lncurses" >&5
+! ac_lib_var=`echo ncurses'_'tparm | sed 'y%./+-%__p_%'`
+! if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+!   echo $ac_n "(cached) $ac_c" 1>&6
+! else
+!   ac_save_LIBS="$LIBS"
+! LIBS="-lncurses  $LIBS"
+! cat > conftest.$ac_ext <<EOF
+! #line 1155 "configure"
+! #include "confdefs.h"
+! /* Override any gcc2 internal prototype to avoid an error.  */
+! /* We use char because int might match the return type of a gcc2
+!     builtin and then its argument prototype would still apply.  */
+! char tparm();
+! 
+! int main() {
+! tparm()
+! ; return 0; }
+! EOF
+! if { (eval echo configure:1166: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+!   rm -rf conftest*
+!   eval "ac_cv_lib_$ac_lib_var=yes"
+! else
+!   echo "configure: failed program was:" >&5
+!   cat conftest.$ac_ext >&5
+!   rm -rf conftest*
+!   eval "ac_cv_lib_$ac_lib_var=no"
+! fi
+! rm -f conftest*
+! LIBS="$ac_save_LIBS"
+! 
+! fi
+! if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+!   echo "$ac_t""yes" 1>&6
+!     ac_tr_lib=HAVE_LIB`echo ncurses | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+!     -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+!   cat >> confdefs.h <<EOF
+! #define $ac_tr_lib 1
+! EOF
+! 
+!   LIBS="-lncurses $LIBS"
+! 
+! else
+!   echo "$ac_t""no" 1>&6
+! fi
+! 
+! 
+! if test "$ac_cv_lib_ncurses_tparm" = "yes"; then
+!    echo Using ncurses
+! else
+!    echo Looking for curses
+!    echo $ac_n "checking for main in -lcurses""... $ac_c" 1>&6
+  echo "configure:1199: checking for main in -lcurses" >&5
+  ac_lib_var=`echo curses'_'main | sed 'y%./+-%__p_%'`
+  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+--- 1141,1148 ----
+  
+  echo Looking for libraries
+  
+! echo Looking for curses
+! echo $ac_n "checking for main in -lcurses""... $ac_c" 1>&6
+  echo "configure:1199: checking for main in -lcurses" >&5
+  ac_lib_var=`echo curses'_'main | sed 'y%./+-%__p_%'`
+  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+***************
+*** 1237,1248 ****
+    echo "$ac_t""no" 1>&6
+  fi
+  
+! 
+!    if test "$ac_cv_lib_curses_main" = "yes"; then
+!       echo Using curses
+!    else
+!       echo "Didn't find ncurses or curses -- may have link problems!"
+!    fi
+  fi
+  
+  
+--- 1185,1195 ----
+    echo "$ac_t""no" 1>&6
+  fi
+  
+! if test "$ac_cv_lib_curses_main" = "yes"; then
+!   echo Using curses
+! else
+!   echo "Didn't find curses!"
+!   exit 1
+  fi
+  
+  
