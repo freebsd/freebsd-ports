@@ -12,6 +12,7 @@
     SUBDIR += mopac
     SUBDIR += ortep3
     SUBDIR += p5-AcePerl
+    SUBDIR += p5-bioperl
     SUBDIR += paml
     SUBDIR += phylip
     SUBDIR += platon
