@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
-
 MASTERDIR=	${.CURDIR}/../navi2ch-emacs20
 
 EMACS_PORT_NAME=	xemacs21-mule
