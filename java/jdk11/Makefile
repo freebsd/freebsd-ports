@@ -35,8 +35,10 @@ LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
 DISTFILES=	jdk${JDK_VERSION}_ELF.V1999-11-9.tar.gz
 .endif
 
+post-patch:
+	${FIND} ${WRKSRC} -name '*.orig' -delete
+
 do-install:
-	@${RM} -f ${WRKSRC}/include/freebsd/typedefs_md.h.orig
 	${MKDIR} ${PREFIX}/jdk${JDK_VERSION}
 	cd ${WRKSRC} && ${FIND} . \
 	   | ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${PREFIX}/jdk${JDK_VERSION}
