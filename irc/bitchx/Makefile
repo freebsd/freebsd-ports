@@ -61,7 +61,9 @@ PLIST_SUB+=	GNOME:="@comment " NOGNOME:=""
 USE_GNOME+=	esound
 CONFIGURE_ARGS+=--enable-sound
 .endif
+
 .include <bsd.port.pre.mk>
+
 .if defined(WITH_IPV6)
 USE_IPV6=	yes
 CONFIGURE_ARGS+=--enable-ipv6
@@ -73,7 +75,7 @@ CONFIGURE_ARGS+=--with-tcl \
 		--with-tcl-libs=${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3"
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/tcl8.3
-ONLY_FOR_ARCHS= i386
+ONLY_FOR_ARCHS=	i386
 .endif
 
 .if defined(WITH_SOCKS5)
@@ -81,10 +83,12 @@ BUILD_DEPENDS+=		${LOCALBASE}/lib/libsocks5.a:${PORTSDIR}/net/socks5
 CONFIGURE_ARGS+=	--with-socks5=${LOCALBASE}
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 .endif
+
 .if defined(WITH_SSL)
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-ssl
 .endif
+
 .if defined(WITH_PLUGINS)
 PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay
 PLIST_SUB+=	PLUGINS:=""
@@ -92,6 +96,7 @@ PLIST_SUB+=	PLUGINS:=""
 CONFIGURE_ARGS+=--without-plugins
 PLIST_SUB+=	PLUGINS:="@comment "
 .endif
+
 .if defined(WITH_XMMS)
 PLUGINS=	xmms
 PLIST_SUB+=	XMMS:=""
@@ -101,17 +106,23 @@ PLIST_SUB+=	XMMS:="@comment "
 .if (defined(WITH_XMMS) && defined(WITH_PLUGINS))
 PLUGINS=	abot,acro,aim,arcfour,autocycle,blowfish,cavlink,encrypt,fserv,hint,identd,nap,pkga,possum,qbx,qmail,scan,wavplay,xmms
 .endif
+
 .if (defined(WITH_PLUGINS) || defined(WITH_XMMS))
 INSTALLS_SHLIB=		yes
 CONFIGURE_ARGS+=	--with-plugins=${PLUGINS}
 .endif
 CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
 
-pre-patch:
-.if defined(WITH_LATIN)
-	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|g' ${WRKSRC}/include/config.h
-.endif
-	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
+.if defined(WITH_TCL)
+
+pre-fetch:
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+	/usr/bin/dialog --yesno "SECURITY NOTICE: TCL support is only \
+	available by linking a precompiled binary object into the Application. \
+	Do you really want to proceed building BitchX with TCL support?" 7 70 || ${FALSE} 
+.endif # BATCH
+
+.endif # WITH_TCL
 
 pre-extract:
 .if exists(${PREFIX}/bin/gpg)
@@ -124,7 +135,7 @@ pre-extract:
 		freebsd4-tcl83-bx1.0c19-tcl.o
 .endif
 .else
-	@${ECHO_CMD} "===> GnuPG not installed. Signatures can not be verified"	
+	@${ECHO_CMD} "===> GnuPG not installed. Signatures can not be verified"
 .endif
 	@${ECHO_CMD} "Available switches:"
 	@${ECHO_CMD} "-------------------"
@@ -160,6 +171,12 @@ post-extract:
 	@${CP} ${DISTDIR}/freebsd4-tcl83-bx1.0c19-tcl.o ${WRKSRC}/source/tcl.o
 
 .endif
+
+pre-patch:
+.if defined(WITH_LATIN)
+	${REINPLACE_CMD} -e 's|#undef LATIN1|#define LATIN1|g' ${WRKSRC}/include/config.h
+.endif
+	${REINPLACE_CMD} -e 's|bzip2|true|g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
