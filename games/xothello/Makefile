@@ -8,7 +8,8 @@
 PORTNAME=	xothello
 PORTVERSION=	0.01
 CATEGORIES=	games
-MASTER_SITES=	http://makosteszta.sote.hu/linux/othello/
+# mastersite disappeared in January 2002
+MASTER_SITES=	# http://makosteszta.sote.hu/linux/othello/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
