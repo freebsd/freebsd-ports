@@ -8,6 +8,7 @@ bin/mailtoe
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/costs.ps
 %%PORTDOCS%%%%DOCSDIR%%/dbacl.ps
 %%PORTDOCS%%%%DOCSDIR%%/email.html
 %%PORTDOCS%%%%DOCSDIR%%/tutorial.html
