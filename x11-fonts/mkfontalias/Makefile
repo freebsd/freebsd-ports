@@ -12,8 +12,11 @@ MASTER_SITES=   http://home.c2i.net/dark/
 DISTNAME=	mkfontalias.py
 EXTRACT_SUFX=
 
-MAINTAINER=	stijn@win.tue.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python script to make fonts.alias files for X
+
+DEPRECATED=	"No longer useful, master-site disappeared"
+EXPIRATION_DATE="2004-10-01"
 
 PLIST_FILES=	bin/mkfontalias
 USE_PYTHON=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blackboxwm
 DISTNAME=	blackbox-${PORTVERSION}
 
-MAINTAINER=	stijn@win.tue.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Style tools for the blackbox family of window managers
 
 MAN1=		bsetbg.1 bsetroot.1

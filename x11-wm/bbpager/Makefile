@@ -10,7 +10,7 @@ PORTVERSION=	0.3.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://bbtools.windsofstorm.net/sources/
 
-MAINTAINER=	stijn@win.tue.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pager for the Blackbox window manager
 
 USE_X_PREFIX=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	blackboxwm
 
-MAINTAINER=	stijn@win.tue.nl
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small and fast window manager for X11R6
 
 RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools
