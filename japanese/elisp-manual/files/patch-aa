@@ -1,0 +1,19 @@
+--- elisp.texi.~1~	Mon Mar  6 12:40:41 2000
++++ elisp.texi	Wed Mar 29 17:50:21 2000
+@@ -1,13 +1,13 @@
+ \input texinfo  @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename elisp
++@setfilename ../info/elisp-ja
+ @c @settitle GNU Emacs Lisp Reference Manual
+ @settitle GNU Emacs Lispリファレンスマニュアル
+ @c %**end of header
+ 
+-@dircategory Editors
++@dircategory Emacs Lisp programming
+ @direntry
+-* Elisp: (elisp).	The Emacs Lisp Reference Manual.
++* Elisp manual-ja: (elisp-ja).	The Emacs Lisp Reference Manual. (Japanese)
+ @end direntry
+ 
+ @smallbook
