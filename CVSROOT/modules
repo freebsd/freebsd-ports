@@ -8420,6 +8420,7 @@ xanim		ports/graphics/xanim
 xaniroc		ports/x11/xaniroc
 xantfarm	ports/x11/xantfarm
 xaos		ports/graphics/xaos
+xapply		ports/sysutils/xapply
 xarchie		ports/net/xarchie
 xargs		src/usr.bin/xargs
 xaric		ports/irc/xaric
