@@ -198,6 +198,7 @@
     SUBDIR += mypaedia-fpw-package
     SUBDIR += namazu
     SUBDIR += namazu2
+    SUBDIR += navi2ch-emacs20
     SUBDIR += ndtpd
     SUBDIR += ne
     SUBDIR += nethack

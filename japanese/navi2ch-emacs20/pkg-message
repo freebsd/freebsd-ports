@@ -1,0 +1,13 @@
+To use navi2ch, put the following into ~/.emacs.
+
+(require 'navi2ch)
+
+To use monafonts with Xemacs, put
+
+(require 'navi2ch-mona)
+(add-hook 'navi2ch-article-arrange-message-hook
+           'navi2ch-mona-arrange-message)
+
+into ~/.xemacs and set board name to be viewed with monafonts.
+
+(setq navi2ch-mona-enable-board-list '("mona" "prog"))
