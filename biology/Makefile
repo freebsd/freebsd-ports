@@ -2,6 +2,7 @@
 #
 
     SUBDIR += babel
+    SUBDIR += biojava
     SUBDIR += chemeq
     SUBDIR += clustalw
     SUBDIR += deft
