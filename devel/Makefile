@@ -262,6 +262,7 @@
     SUBDIR += i960-rtems-gcc
     SUBDIR += i960-rtems-gdb
     SUBDIR += icu
+    SUBDIR += icu2
     SUBDIR += id-utils
     SUBDIR += idlefork
     SUBDIR += ifd-test
