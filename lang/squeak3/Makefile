@@ -3,11 +3,11 @@
 # Date created:        			4 March 1999
 # Whom:                			jesse@cs.uni-magdeburg.de
 #
-# $Id: Makefile,v 1.9 1999/03/20 17:16:57 nectar Exp $
+# $Id: Makefile,v 1.10 1999/05/09 15:00:05 nectar Exp $
 #
 
-DISTNAME=	2.3
-PKGNAME=	squeak-2.3
+DISTNAME=	2.4
+PKGNAME=	squeak-2.4
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/unix/ \
 		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/unix/image/ \
@@ -35,9 +35,9 @@ do-build:
 
 do-install:
 	@(cd ${WRKSRC}/${VMBUILD} && \
-	${INSTALL_PROGRAM} SqueakVM-2.3-${VMBUILD} ${PREFIX}/bin/SqueakVM)
+	${INSTALL_PROGRAM} SqueakVM-2.4-${VMBUILD} ${PREFIX}/bin/SqueakVM)
 	${MKDIR} ${PREFIX}/share/squeak
-.for f in Squeak2.3.changes Squeak2.3.image
+.for f in Squeak2.4.changes Squeak2.4.image
 	(cd ${WRKSRC}/image && ${INSTALL_DATA} $f ${PREFIX}/share/squeak/$f)
 .endfor
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${SQUEAK_SRC} \
