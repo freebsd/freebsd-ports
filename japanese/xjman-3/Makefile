@@ -8,7 +8,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xjman-0.4
+DISTNAME=	xjman-0.5
 PKGNAME=	ja-${DISTNAME}
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
@@ -19,7 +19,7 @@ MAINTAINER=	sada@FreeBSD.org
 NO_MTREE=	yes
 PLIST=		${WRKDIR}/PLIST
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/man/ja_JP.ujis
+WRKSRC=		${WRKDIR}/man/ja_JP.eucJP
 SCRIPTS_ENV+=	MANSECS="${MANSECS}"
 
 MANSECS=	1 3 5
