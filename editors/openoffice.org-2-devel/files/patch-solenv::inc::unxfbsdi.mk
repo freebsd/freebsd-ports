@@ -1,6 +1,6 @@
 --- ../solenv/inc/unxfbsdi.mk.orig	Wed Oct 24 19:21:47 2001
-+++ ../solenv/inc/unxfbsdi.mk	Sat Mar  9 20:46:20 2002
-@@ -1,84 +1,146 @@
++++ ../solenv/inc/unxfbsdi.mk	Sat Mar  9 23:28:50 2002
+@@ -1,84 +1,145 @@
 -
  # mak file fuer unxfbsdi
  
@@ -24,7 +24,7 @@
 +
 +# options for C and C++ Compiler
 +CDEFS+=-D_USE_NAMESPACE=1 -DX86 -DNEW_SOLAR -DSTLPORT_VERSION=400 -DOSVERSION=$(OSVERSION)
-+CDEFS+=-pthread
++CDEFS+=$(PTHREAD_CFLAGS)
 +
 +# this is a platform with JAVA support
 +.IF "$(SOLAR_JAVA)"!=""
@@ -57,18 +57,6 @@
 +# Compiler flags for compiling static object in single threaded
 +# environment with character user interface
 +CFLAGSOBJCUIST=-fPIC
-+
-+# Compiler flags for compiling static object in multi threaded
-+# environment with graphical user interface
-+CFLAGSOBJGUIMT=-fPIC
-+
-+# Compiler flags for compiling static object in multi threaded
-+# environment with character user interface
-+CFLAGSOBJCUIMT=-fPIC
-+
-+# Compiler flags for compiling shared object in multi threaded
-+# environment with graphical user interface
-+CFLAGSSLOGUIMT=-fPIC
  
 -cc=				gcc
 -CC=				g++
@@ -88,6 +76,18 @@
 -CFLAGSSLOCUIMT=	-fPIC
 -CFLAGSPROF=     -pg
 -CFLAGSDEBUG=	-g
++# Compiler flags for compiling static object in multi threaded
++# environment with graphical user interface
++CFLAGSOBJGUIMT=-fPIC
++
++# Compiler flags for compiling static object in multi threaded
++# environment with character user interface
++CFLAGSOBJCUIMT=-fPIC
++
++# Compiler flags for compiling shared object in multi threaded
++# environment with graphical user interface
++CFLAGSSLOGUIMT=-fPIC
++
 +# Compiler flags for compiling shared object in multi threaded
 +# environment with character user interface
 +CFLAGSSLOCUIMT=-fPIC
@@ -162,16 +162,16 @@
 +# libraries for linking applications
 +STDLIBCUIST=-lm
 +STDLIBGUIST=-lXaw -lXt -lX11 -lm
-+STDLIBGUIMT=-lXaw -lXt -lX11 -pthread -lm -lstlport_gcc
-+STDLIBCUIMT=-pthread -lm -lstlport_gcc
++STDLIBGUIMT=-lXaw -lXt -lX11 $(PTHREAD_LIBS) -lm -lstlport_gcc
++STDLIBCUIMT=$(PTHREAD_LIBS) -lm -lstlport_gcc
 +
 +# libraries for linking shared libraries
-+STDSHLGUIMT=-lXaw -lXt -lX11 -lXext -pthread -lm -lstlport_gcc
-+STDSHLCUIMT=-pthread -lm -lstlport_gcc
++STDSHLGUIMT=-lXaw -lXt -lX11 -lXext $(PTHREAD_LIBS) -lm -lstlport_gcc
++STDSHLCUIMT=$(PTHREAD_LIBS) -lm -lstlport_gcc
 +
 +# STLport always needs pthread.
-+LIBSTLPORT=$(DYNAMIC) -lstlport_gcc -pthread
-+LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC) -pthread
++LIBSTLPORT=$(DYNAMIC) -lstlport_gcc $(PTHREAD_LIBS)
++LIBSTLPORTST=$(STATIC) -lstlport_gcc $(DYNAMIC) $(PTHREAD_LIBS)
  
 +# default objectfilenames to lin
  STDOBJGUI=
@@ -185,7 +185,7 @@
 -STDLIBCUIMT=-pthread -lm -lstlport_gcc
 -STDSHLGUIMT=-lX11 -lXext -pthread -lm -lstlport_gcc
 -STDSHLCUIMT=-pthread -lm -lstlport_gcc
- 
+-
 -LIBMGR=			ar
 -LIBFLAGS=		-r
 -LIBEXT=			.a
@@ -195,7 +195,7 @@
  
  IMPLIB=
  IMPLIBFLAGS=
-@@ -87,12 +149,12 @@
+@@ -87,12 +148,12 @@
  MAPSYMFLAGS=
  
  RC=irc
