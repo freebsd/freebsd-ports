@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	arpwatch
-PORTVERSION=	2.1.a6
+PORTVERSION=	2.1.a10
 CATEGORIES=	net
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
-		ftp://ftp.ee.lbl.gov/ \
-		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/arpwatch/
-DISTNAME=	arpwatch-2.1a6
+		ftp://ftp.ee.lbl.gov/
+DISTNAME=	arpwatch-2.1a10
 
 MAINTAINER=	brian@Awfulhak.org
 
@@ -23,8 +22,8 @@ MAN8=		arpwatch.8 arpsnmp.8
 post-install:
 	if [ ! -d ${PREFIX}/arpwatch ]; then				\
 		${MKDIR} ${PREFIX}/arpwatch;				\
-		${CHMOD} 775 ${PREFIX}/arpwatch;				\
-		${CHOWN} root.operator ${PREFIX}/arpwatch;			\
+		${CHMOD} 775 ${PREFIX}/arpwatch;			\
+		${CHOWN} root.operator ${PREFIX}/arpwatch;		\
 	fi
 	${TOUCH} ${PREFIX}/arpwatch/arp.dat
 	${CHMOD} 644 ${PREFIX}/arpwatch/arp.dat
