@@ -3,6 +3,11 @@ library.  If you are serious about performance, you may want to recompile
 it by yourself (the port will link static by default).
 
 -Satoshi (Nov 14, 1995)
+
+REMINDER: to use ftpaccess(5) you need to specify -a in command line,
+it is changed from previous versions.
+
+-Ache
 ---
 WASHINGTON UNIVERSITY FTP SERVER, RELEASE 2.4
 wu-ftpd is a replacement ftp server for Un*x systems.  Besides
