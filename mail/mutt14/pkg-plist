@@ -1,8 +1,6 @@
 @comment $FreeBSD$
-bin/flea
 bin/mutt
 bin/mutt_dotlock
-bin/muttbug
 bin/pgpewrap
 bin/pgpring
 @unexec if cmp -s %D/etc/Muttrc.dist %D/etc/Muttrc; then rm -f %D/etc/Muttrc; fi

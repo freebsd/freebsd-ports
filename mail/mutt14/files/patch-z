@@ -1,0 +1,22 @@
+--- Makefile.am.orig2	Thu Jan  6 15:45:58 2005
++++ Makefile.am	Thu Jan  6 15:47:48 2005
+@@ -11,7 +11,7 @@
+ 
+ SUBDIRS = m4 po intl doc contrib $(IMAP_SUBDIR)
+ 
+-bin_SCRIPTS = muttbug flea
++bin_SCRIPTS =
+ 
+ BUILT_SOURCES = keymap_defs.h patchlist.c Muttrc
+ 
+--- doc/Makefile.in.orig2	Thu Jan  6 15:45:57 2005
++++ doc/Makefile.in	Thu Jan  6 15:53:52 2005
+@@ -78,8 +78,6 @@
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
+ 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man5
+ 	./instdoc $(srcdir)/mutt.man $(DESTDIR)$(mandir)/man1/mutt.1
+-	./instdoc $(srcdir)/muttbug.man $(DESTDIR)$(mandir)/man1/flea.1
+-	echo ".so $(mandir)/man1/flea.1" > $(DESTDIR)$(mandir)/man1/muttbug.1
+ 	./instdoc $(srcdir)/dotlock.man \
+ 		$(DESTDIR)$(mandir)/man1/mutt_dotlock.1
+ 	./instdoc muttrc.man $(DESTDIR)$(mandir)/man5/muttrc.5
