@@ -1,0 +1,69 @@
+.\" $FreeBSD$
+.\" The following requests are required for all man pages.
+.Dd May 18, 1995
+.Os UNIX
+.Dt BONNIE 1
+.Sh NAME
+.Nm bonnie
+.Nd Performance Test of Filesystem I/O
+.Sh SYNOPSIS
+.Nm bonnie
+.Op Fl d Ar scratch-dir
+.Op Fl s Ar size-in-MB
+.Op Fl m Ar machine-label
+
+.Sh DESCRIPTION
+.Nm Bonnie 
+tests the speed of file I/O from standard C library calls.
+It reads and writes 8KB blocks to find the maximum sustained 
+data rate (usually limited by the drive or controller) and additionally 
+rewrites the file (better simulating normal operating conditions and 
+quite dependent on drive and OS optimisations).
+
+The per character read and write tests are generally limited by CPU speed
+only on current generation hardware. It takes some 35 SPECint92 to read
+or write a file at a rate of 1MB/s using getc() and putc().
+
+The seek test results depend on the buffer cache size, since the fraction
+of disk blocks that fits into the buffer cache will be found without any 
+disk operation and will contribute zero seek time samples.
+(See 
+.Sx BUGS 
+below.)
+
+.Sh OPTIONS
+.Bl -tag -width indent
+.It Fl d Ar scratch-dir
+Specify the directory where the test file gets written. The default 
+is the current directory. Make sure there is sufficient free space 
+available on the partition this directory resides in.
+.It Fl s Ar size-in-MB
+Specify the size of the test file in MByte. This much space must be 
+available for the tests to complete.
+.It Fl m Ar machine-label
+Specify a label to be written in the first column of the result table.
+.El
+
+.Sh SEE ALSO
+.Xr iozone 1 ,
+.Xr iostat 8
+
+.Sh AUTHOR
+.Nm Bonnie
+was written by Tim Bray <tbray@watsol.waterloo.edu>.
+
+.Sh BUGS
+.Nm Bonnie 
+tries hard to measure disk performance and not the quality of the 
+buffer cache implementation. In merged buffer caches common today,
+the buffer cache size is often only limited by total RAM on an otherwise
+unloaded system. Be sure to use a file at least twice at large as 
+available RAM to protect against artificially high results.
+
+There is no way to keep the buffer cache from increasing the reported
+seek rate. This is because the fraction of accesses corresponding to the 
+amount of the file cached, will be done without seeks.
+If your buffer cache is half the size of the file used, then half the 
+requests will be satisfied immediately, and and the seek rate printed 
+will be twice the actual value. 
+
