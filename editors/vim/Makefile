@@ -41,7 +41,7 @@ WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
 PATCH_DIST_ARGS=	-d ${WRKDIR}/${PORTNAME}${PORTVERSION:C/\.[0-9]*$//:S/.//g} --forward --quiet -E ${PATCH_DIST_STRIP}
 # consider
 #PATCH_DIST_ARGS=	-t
-MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib"
+MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib ${CSCOPE_ARG}"
 ALL_TARGET=	#
 PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
 MAN1=		evim.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
@@ -58,6 +58,11 @@ I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
 
 .if defined(NO_GUI)
 WITHOUT_X11=	yes
+.endif
+
+.if defined(WITH_CSCOPE)
+RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
+CSCOPE_ARG=	--enable-cscope
 .endif
 
 .if !defined(WITHOUT_X11)
