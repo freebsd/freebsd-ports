@@ -1,5 +1,5 @@
---- zvt/gnome-pty-helper.c.orig	Fri Jan  7 12:42:13 2000
-+++ zvt/gnome-pty-helper.c	Wed Jan 12 10:25:16 2000
+--- zvt/gnome-pty-helper.c.orig	Thu Jan  6 06:27:52 2000
++++ zvt/gnome-pty-helper.c	Thu Jan 20 16:40:32 2000
 @@ -319,7 +319,7 @@
  }
  
@@ -9,8 +9,25 @@
  {
  	char *term_name;
  	int status, master_pty, slave_pty;
-@@ -486,8 +486,13 @@
+@@ -454,7 +454,7 @@
+ 
+ 	/* These two may overlap so set them first */
+ 	term.c_cc[VTIME] =  0;
+-	term.c_cc[VMIN] = 0;
++	term.c_cc[VMIN] = 1;
+ 	
+ 	/*
+ 	 * Now set the characters. This is of course a religious matter
+@@ -496,10 +496,21 @@
+ #ifdef VEOL2	
+ 	term.c_cc[VEOL2] = 0;
  #endif
++#ifdef VSTATUS
++	term.c_cc[VSTATUS] = 'T'-64;
++#endif
++#ifdef VDSUSP
++	term.c_cc[VDSUSP] = 'Y'-64;
++#endif
  
  	status = openpty (&master_pty, &slave_pty, term_name, &term, NULL);
 +#ifdef HAVE_SETEUID
@@ -23,7 +40,7 @@
  
  	if (status == -1){
  		result = 0;
-@@ -509,8 +514,8 @@
+@@ -521,8 +532,8 @@
  		exit (0);
  	}
  
@@ -34,7 +51,7 @@
  	}
  	
  	return 1;
-@@ -664,19 +669,35 @@
+@@ -676,19 +687,35 @@
  
  		switch (op){
  		case GNOME_PTY_OPEN_PTY_UTMP:
