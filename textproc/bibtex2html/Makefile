@@ -10,7 +10,7 @@ PORTVERSION=	1.52
 CATEGORIES=	textproc print
 MASTER_SITES=	http://www.lri.fr/~filliatr/ftp/bibtex2html/
 
-MAINTAINER=	pfeifer@dbai.tuwien.ac.at
+MAINTAINER=	gerald@FreeBSD.org
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
