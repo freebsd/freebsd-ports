@@ -1,0 +1,24 @@
+bin/ekg
+include/libgadu-config.h
+include/libgadu.h
+lib/libgadu.so
+lib/libgadu.so.2
+libdata/pkgconfig/libgadu.pc
+share/ekg/vars.txt
+share/ekg/themes/arim.theme
+share/ekg/themes/dj.theme
+share/ekg/themes/eileen.theme
+share/ekg/themes/emers.theme
+share/ekg/themes/feeg.theme
+share/ekg/themes/irc.theme
+share/ekg/themes/jamzed.theme
+share/ekg/themes/klith.theme
+share/ekg/themes/krzyk.theme
+share/ekg/themes/lcamtuf.theme
+share/ekg/themes/leon.theme
+share/ekg/themes/matik.theme
+share/ekg/themes/old.theme
+share/ekg/themes/sic.theme
+share/ekg/themes/tohver.theme
+@dirrm share/ekg/themes
+@dirrm share/ekg
