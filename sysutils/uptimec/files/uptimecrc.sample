@@ -2,3 +2,4 @@
 HOSTID=2345
 PASSWORD=blabla
 #SERVER=uptimes.mreriksson.net
+#PORT=2050
