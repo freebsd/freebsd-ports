@@ -1,11 +1,14 @@
---- ../setup2/mow/source/loader/makefile.mk.orig	Sun Mar  3 01:45:18 2002
-+++ ../setup2/mow/source/loader/makefile.mk	Sun Mar  3 01:45:22 2002
-@@ -85,7 +85,7 @@
- APP1NOSAL=TRUE
- APP1TARGET= $(TARGET)
- APP1OBJS=  $(OBJFILES)
--APP1STDLIBS= $(SVUNZIPLIB) $(LOADERLIB)
-+APP1STDLIBS= $(SVUNZIPLIB) $(LOADERLIB) -lX11
+--- ../setup2/mow/source/loader/makefile.mk.orig	Fri Feb 14 15:32:23 2003
++++ ../setup2/mow/source/loader/makefile.mk	Wed Mar  5 20:28:12 2003
+@@ -95,7 +95,11 @@
+ 
+ APP1TARGET=	$(TARGET)
+ APP1OBJS=	$(OBJFILES)
++.IF "$(OS)"=="FREEBSD"
++APP1STDLIBS=$(SVUNZIPLIB) $(LOADERLIB) -lX11
++.ELSE
+ APP1STDLIBS=$(SVUNZIPLIB) $(LOADERLIB) -ldl
++.ENDIF
  
  .ENDIF			# "$(OS)"=="MACOSX"
  

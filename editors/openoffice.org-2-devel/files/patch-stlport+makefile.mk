@@ -1,9 +1,10 @@
---- ../stlport/makefile.mk.orig	Tue Aug 27 19:26:10 2002
-+++ ../stlport/makefile.mk	Fri Oct 18 22:33:22 2002
-@@ -107,16 +107,26 @@
+--- ../stlport/makefile.mk.orig	Thu Feb 20 16:13:40 2003
++++ ../stlport/makefile.mk	Wed Mar  5 19:41:42 2003
+@@ -104,16 +104,27 @@
  
  .IF "$(COM)"=="GCC"
  .IF "$(COMID)"=="gcc3"
++# FreeBSD needs a special makefile
 +.IF "$(OS)"=="FREEBSD"
 +BUILD_FLAGS=-f gcc-3.0-freebsd.mak
 +.ELSE
@@ -24,6 +25,6 @@
 +.ELSE
  BUILD_ACTION=make
 +.ENDIF
+ # build in parallel
+ BUILD_FLAGS+= -j$(MAXPROCESS)
  .ENDIF
- 
- .IF "$(COM)"=="C52"

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	643
+PORTVERSION=	644
 CATEGORIES+=	editors
 MASTER_SITES+=	http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/developer/%SUBDIR%/ \
@@ -15,29 +15,29 @@ MASTER_SITES+=	http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
 		http://ny1.mirror.openoffice.org/miscellaneous/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
 MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES+=	oo_${PORTVERSION}_src.tar.bz2 neon.tgz:moz \
+DISTFILES+=	oo_${PORTVERSION}_src.tar.bz2 \
 		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
 
-BROKEN=		"Does not work anymore. soffice.bin segfaults"
+BROKEN=		"Does not build"
 
 SORT?=	/usr/bin/sort
 FIND?=	/usr/bin/find
 CUT?=	/usr/bin/cut
 AWK?=	/usr/bin/awk
 GREP?=	/usr/bin/grep
-MOUNT?=	/sbin/mount
+ZIP?=	${PREFIX}/bin/zip
+UNZIP?=	${PREFIX}/bin/unzip
+ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
-ZIP?=	${LOCALBASE}/bin/zip
-UNZIP?=	${LOCALBASE}/bin/unzip
-ANT?=   ${LOCALBASE}/bin/ant
+PASTE?=	/usr/bin/paste
 
 .include <bsd.port.pre.mk>
 
-PROCFS!=		${MOUNT} | ${GREP} ^procfs | ${AWK} '{print $1}'
 INSTALLATION_BASEDIR=	OpenOffice.org-${PORTVERSION}
+BUILD_NR=		644
 DIST_SUBDIR=		openoffice
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 
@@ -48,13 +48,13 @@ DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 LANG_EXT=01
 .else
 #
-# Add pkg-comment and pkg-descr if available
+# Add pkg-descr and pkg-message if available
 #
-.if exists(${.CURDIR}/pkg-comment)
-COMMENTFILE=	${.CURDIR}/pkg-comment
-.endif
 .if exists(${.CURDIR}/pkg-descr)
 DESCR=	${.CURDIR}/pkg-descr
+.endif
+.if exists(${.CURDIR}/pkg-message)
+PKGMESSAGE=	${.CURDIR}/pkg-message
 .endif
 #
 # Set prefix and suffix
@@ -68,17 +68,30 @@ PKGNAMESUFFIX=	-${LANG_SUFFIX}
 #
 # LANG_CONFIGURE_ARG is missing for the german port
 #
-.if defined(LANG_EXT) && ${LANG_EXT}!=49
+.if defined(LANG_EXT)
 CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG},ENUS
 .endif
 .endif
+
+.if !defined (LANG) && !defined(USE_LANG)
+USE_LANG=	en_US.ISO8859-15
+LANG_LIST=	en_US.ISO8859-15 en_US.ISO8859-1 US-ASCII
+.else
+.if !defined(USE_LANG)
+USE_LANG=	${LANG}
+.endif
+.endif
+
+LANG_SORTED=`${ECHO} ${LANG_LIST} | ${TR} " " "\n" | ${PASTE} -d " " - -`
 
 .if ${OSVERSION} < 500000
 #
 # OO build is broken with the system gcc on STABLE.
 #
-USE_GCC=3.1
-.else
+BUILD_DEPENDS+= gcc32:${PORTSDIR}/lang/gcc32
+CC=		gcc32
+CXX=		g++32
+USE_GCC=3.2
 .endif
 
 .if ${OSVERSION} > 500000
@@ -95,16 +108,23 @@ CXX=		g++32
 EXTRACT_ONLY=	oo_${PORTVERSION}_src.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
-.if !defined(USE_GCC)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+.if !defined(COMMENT)
+COMMENT=	Integrated wordprocessor/dbase/spreadheet/drawing/chart/browser
 .endif
+#.if !defined(USE_GCC)
+#BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+#.endif
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS+= ${ANT}:${PORTSDIR}/devel/jakarta-ant
-BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
+BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
+.endif
+.if !defined(WITH_BSD_JDK)
+BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/linux-sun-jdk14
+.else
+BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk14
 .endif
 
 USE_PERL5=	yes
@@ -115,17 +135,21 @@ USE_GMAKE=	yes
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
-EXTRACT_REST=	gpc231.tar.Z neon.tgz
+EXTRACT_REST=	gpc231.tar.Z
 
-JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
-JAVAVM=         ${JDK13DIR}/bin/java
+.if !defined(WITH_BSD_JDK)
+JDKDIR?=	${LOCALBASE}/linux-sun-jdk1.4.1
+.else
+JDKDIR?=	${LOCALBASE}/jdk1.4.1
+.endif
+JAVAVM=         ${JDKDIR}/bin/java
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
-LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/${PORTVERSION}/unxfbsd.pro/lib/
+LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g
 .if ${WITH_DEBUG} == 2
@@ -144,12 +168,16 @@ DISPLAYHACK=localhost:1001
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 
-CONFIGURE_ARGS+=	--with-jdk-home=${JDK13DIR} \
+CONFIGURE_ARGS+=	--with-jdk-home=${JDKDIR} \
 			--with-os-version=${OSVERSION} \
-			--with-ant-home=${LOCALBASE}/jakarta-ant-1.5.1
+			--with-ant-home=${LOCALBASE}
 
-.if !defined(USE_GCC)
-CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
+#.if !defined(USE_GCC)
+#CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
+#.endif
+
+.if !defined(WITH_BSD_JDK)
+CONFIGURE_ARGS+=	--enable-linuxjdk=yes
 .endif
 
 .if defined(WITH_DEBUG)
@@ -168,33 +196,45 @@ CONFIGURE_ARGS+=	--enable-gcc3
 
 pre-fetch:
 	@${ECHO}
+.if !defined(LANG)
 	@${ECHO} "REQUIREMENTS:"
-.if ${PROCFS}
 	@${ECHO}
-	@${ECHO} Check if procfs is running: YES
-.else
-	@${ECHO} -----------------------------------------------------------
+	@${ECHO} "OO requires that the ENV variable LANG"
+	@${ECHO} "is set to a proper value. Dependent on"
+	@${ECHO} "which language port you use, OO does"
+	@${ECHO} "automatically set LANG to a suitable"
+	@${ECHO} "value. You can change this with:"
 	@${ECHO}
-	@${ECHO} OpenOffice setup still needs a running procfs, which may
-	@${ECHO} not be activated. Please read the procfs\(5\) manpage and
-	@${ECHO} ensure the the following line is in /etc/fstab:
+	@${ECHO} "USE_LANG=\"prefered language\""
 	@${ECHO}
-	@${ECHO} proc /proc procfs rw 0 0
+	@${ECHO} "and set a different language"
+	@${ECHO} "like:"
 	@${ECHO}
-	@${ECHO} -----------------------------------------------------------
+	@${ECHO} "${LANG_SORTED}"
+	@${ECHO}
+	@${ECHO} "Your current setting is:"
+	@${ECHO}
+	@${ECHO} "USE_LANG=${USE_LANG}"
+	@${ECHO}
+	@${ECHO}
 .endif
-.if !defined(USE_GCC) || !defined(WITH_DEBUG)
-	@${ECHO}
 	@${ECHO} "OPTIONS:"
-.endif
 .if !defined(USE_GCC)
 	@${ECHO}
 	@${ECHO} "You can compile OO with different"
 	@${ECHO} "gcc compiler versions:"
 	@${ECHO}
-	@${ECHO} "Add USE_GCC=2.95 or USE_GCC=3.1"
+	@${ECHO} "Add USE_GCC=2.95 or USE_GCC=3.2"
 	@${ECHO} "to compile openoffice with your"
 	@${ECHO} "prefered compiler."
+.endif
+.if !defined(WITH_BSD_JDK)
+	@${ECHO}
+	@${ECHO} "If you like to use the native BSD"
+	@${ECHO} "JDK for the build system, you can use"
+	@${ECHO} "WITH_BSD_JDK=TRUE to disable the"
+	@${ECHO} "usage of the linux-JDK and linux dependency."
+	@${ECHO}
 .endif
 .if !defined(WITH_DEBUG)
 	@${ECHO}
@@ -202,7 +242,7 @@ pre-fetch:
 	@${ECHO} "if you call make with WITH_DEBUG=1"
 	@${ECHO}
 	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
-	@${ECHO} "OO.org debug support.
+	@${ECHO} "OO.org debug support."
 	@${ECHO}
 .endif
 .if !defined(WITH_TTF_BYTECODE_ENABLED)
@@ -250,14 +290,18 @@ pre-fetch:
 	@${ECHO} "kern.maxssiz=\"268435456\""
 .endif
 	@${ECHO}
+.if ${OSVERSION} < 460002
 	@${ECHO} "REQUIRED SYSTEM PATCHES:"
 	@${ECHO}
+.endif
+.if ${OSVERSION} < 500000
 	@${ECHO} "OO.org can crash if you enter a non existing path"
 	@${ECHO} "or URL in the location bar. To fix these crashes"
 	@${ECHO} "you need a uncommitted system patch for rtld:"
 	@${ECHO}
 	@${ECHO} "http://people.freebsd.org/~mbr/ooo/rtld-symlookup.diff"
 	@${ECHO}
+.endif
 .if ${OSVERSION} < 460001
 	@${ECHO}
 	@${ECHO} "OO setup is broken on STABLE < 4.6"
@@ -305,9 +349,8 @@ post-extract:
 	done
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
-	@${CP} -r ${WRKDIR}/neon ${WRKSRC}/../
 	@${MAKE} extract-mozilla
-	@-${RM} ${WRKSRC}/../moz/zipped/*.zip
+	@-${RM} -f ${WRKSRC}/../moz/zipped/*.zip
 	@${CHMOD} +x ${WRKSRC}/../solenv/bin/zipdep.pl
 .if defined(L10NHELP)
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
@@ -365,9 +408,11 @@ extract-mozilla:
 	@${CP} -r ${PORTSDIR}/www/mozilla-vendor/files ${WRKDIR}/mozilla
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/Makefile ${WRKDIR}/mozilla
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/distinfo ${WRKDIR}/mozilla
+if exists(${PORTSDIR}/www/mozilla-vendor/pkg-comment)
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/pkg-comment ${WRKDIR}/mozilla
+.endif
 	@${CP} ${PORTSDIR}/www/mozilla-vendor/pkg-descr ${WRKDIR}/mozilla
-	@${CP} ${PORTSDIR}/www/mozilla/pkg-message ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla-vendor/pkg-message ${WRKDIR}/mozilla
 .endif
 	@cd ${WRKDIR}/mozilla && ${MAKE} extract WRKDIRPREFIX=""
 
@@ -387,11 +432,7 @@ build-mozilla:
 		< ${WRKDIR}/mozilla/Makefile.new > ${WRKDIR}/mozilla/Makefile
 .endif
 .if defined(USE_GCC)
-.if ${USE_GCC} == 3.1
 	@cd ${WRKDIR}/mozilla && ${MAKE} CXX=${CXX} CC=${CC} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
-.else
-	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" USE_GCC=${USE_GCC} build WRKDIRPREFIX=""
-.endif
 .else
 	@cd ${WRKDIR}/mozilla && ${MAKE} CFLAGS="${CFLAGS}" build WRKDIRPREFIX=""
 .endif
@@ -450,8 +491,8 @@ do-build:
 .endif
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
 .if defined(L10NHELP)
-	@${MKDIR} ${WRKSRC}/../solver/641/unxfbsd.pro/pck 
-	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/641/unxfbsd.pro/pck
+	@${MKDIR} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
+	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
 .endif
 .if !defined(DISPLAY)
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
@@ -464,7 +505,7 @@ do-build:
 .endif
 .if defined(LANG_PKGNAME)
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
-		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd instsetoo/util && ${BUILD} LANGEXT=${LANGEXT}'
+		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd instsetoo/util && ${BUILD} LANGEXT=${LANG_EXT}'
 .endif
 
 pre-install:
@@ -495,18 +536,20 @@ install-user:
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
-	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/openoffice-wrapper \
-	   > ${WRKDIR}/openoffice
-	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice ${PREFIX}/bin/openoffice-${PORTVERSION}
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sagenda-${PORTVERSION}
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-scalc-${PORTVERSION}
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sdraw-${PORTVERSION}
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-setup-${PORTVERSION}
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sfax-${PORTVERSION}
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-simpress-${PORTVERSION}
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-spadmin-${PORTVERSION}
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sweb-${PORTVERSION}
-	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-swriter-${PORTVERSION}
+	@${CP} ${FILESDIR}/openoffice-wrapper ${WRKDIR}/openoffice
+	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKDIR}/openoffice
+	@${SED} -i orig -e 's#%%LANG%%#${USE_LANG}#g' ${WRKDIR}/openoffice
+	@${SED} -i orig -e 's#%%BUILD_NR%%#${BUILD_NR}#g' ${WRKDIR}/openoffice
+	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice ${PREFIX}/bin/openoffice-${BUILD_NR}
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sagenda-${BUILD_NR}
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-scalc-${BUILD_NR}
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sdraw-${BUILD_NR}
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-setup-${BUILD_NR}
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sfax-${BUILD_NR}
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-simpress-${BUILD_NR}
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-spadmin-${BUILD_NR}
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-sweb-${BUILD_NR}
+	@${LN} -fs ${PREFIX}/bin/openoffice ${PREFIX}/bin/openoffice-swriter-${BUILD_NR}
 	@cd ${PREFIX} && ${FIND} -s bin -type f | ${GREP} openoffice > ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s bin -type l | ${GREP} openoffice >> ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}

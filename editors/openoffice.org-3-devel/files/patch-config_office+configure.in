@@ -1,48 +1,66 @@
---- configure.in.orig	Wed Oct  2 21:22:53 2002
-+++ configure.in	Sat Oct 19 00:09:27 2002
-@@ -356,6 +356,9 @@
- 
- dnl Set the include paths
-    _gcc_include_path=`$CC -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include 
-+   if test "$_gcc_include_path" = "/usr/libexec/(null)/include"; then
-+	_gcc_include_path="/usr/include"
-+   fi
- fi  
- 
- dnl ===================================================================
-@@ -374,20 +377,20 @@
- if test -z "$GNUMAKE"; then
-     AC_MSG_WARN([not found build may fail]) >> warn
- else
--    _make_version=`make --version | grep GNU | $SED -e "s@^[[^0-9]]*@@" -e "s@ .*\\$@@" -e "s@,@@"`;
-+    _make_version=`gmake --version | grep GNU | $SED -e "s@^[[^0-9]]*@@" -e "s@ .*\\$@@" -e "s@,@@"`;
-     _make_major=`echo $_make_version | $AWK -F. '{print $1;}'` 
-     _make_middle=`echo $_make_version | $AWK -F. '{ print $2; }'` 
-     _make_minor=`echo $_make_version | $AWK -F. '{ print $3; }'` 
-     if test "$_make_major" -gt "3" ; then
--       AC_MSG_RESULT([checked (make $_make_version)])
-+       AC_MSG_RESULT([checked (gmake $_make_version)])
-     else
-        if test "$_make_middle" -gt "79" ; then
--          AC_MSG_RESULT([checked (make $_make_version)])
-+          AC_MSG_RESULT([checked (gmake $_make_version)])
-        else
-           if test "$_make_minor" -ge "1" ; then
--             AC_MSG_RESULT([checked (make $_make_version)])
-+             AC_MSG_RESULT([checked (gmake $_make_version)])
-           else
--             AC_MSG_ERROR([failed (make $_make_version need 3.79.1+)])
-+             AC_MSG_ERROR([failed (gmake $_make_version need 3.79.1+)])
-           fi
-        fi
-     fi
-@@ -551,6 +554,9 @@
- dnl ===================================================================
- if test "$GXX" = "yes"; then
-    _gxx_include_path=`$CXX -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include 
-+   if test "$_gxx_include_path" = "/usr/libexec/(null)/include"; then
-+	_gxx_include_path="/usr/include"
-+   fi
+--- configure.in.orig	Thu Feb 20 15:49:32 2003
++++ configure.in	Wed Mar  5 21:22:34 2003
+@@ -95,6 +95,12 @@
+                           
+                           Usage: --enable-macos9
+ ],,)
++AC_ARG_ENABLE(linuxjdk,
++[  --enable-linuxjdk         Use this option option if you like to use
++                          the linux-jdk instead of the native jdk.
++
++                          Usage: --enable-linuxjdk
++],,)
+ AC_ARG_WITH(lang,
+ [  --with-lang             Use this option to build OpenOffice.org with
+                           additional language support. US English is always
+@@ -556,8 +562,19 @@
  fi
  
+ dnl ===================================================================
+-dnl Set the gxx include directories
++dnl Set the gcc/gxx include directories
+ dnl ===================================================================
++if test "$_os" = "FreeBSD" && test "$CC" != "cc"; then
++if test "$GXX" = "yes"; then
++   if test -n "$enable_gcc3"; then
++		_gccincname1="g++-v3"
++   else
++		_gccincname1="g++-3"
++   fi
++	_gcc_include_path=".."
++	_gxx_include_path="$_gcc_include_path/$_gccincname1"
++fi
++else
+ if test "$GXX" = "yes"; then
+    _gxx_include_path=`echo "#include <cstring>" | $CXX -E -xc++ - | $SED -n '/.*1*"\(.*\)\/cstring".*/s//\1/p' | head -1`
+    if test "$_gxx_include_path" = "/usr/libexec/(null)/include"; then
+@@ -566,7 +583,7 @@
+ dnl This is the original code...
+ dnl _gxx_include_path=`$CXX -print-search-dirs | grep instal |$AWK '{ print \$2 }'`/include 
+ fi
+-
++fi
+ 
+ dnl ===================================================================
+ dnl Extra checking for the SUN OS compiler
+@@ -1232,7 +1249,11 @@
+ if test -n "$enable_debug"; then
+    ENABLE_DEBUG="TRUE"
+ else
+-   ENABLE_DEBUG="FALSE"
++fi
++if test -n "$enable_linuxjdk"; then
++   USE_LINUXJDK="TRUE"
++else
++   USE_LINUXJDK="FALSE"
+ fi
+ 
+ dnl ===================================================================
+@@ -1278,6 +1299,7 @@
+ AC_SUBST(PTHREAD_CFLAGS)
+ AC_SUBST(PTHREAD_LIBS)
+ AC_SUBST(ENABLE_DEBUG)
++AC_SUBST(USE_LINUXJDK)
+ 
+ AC_OUTPUT([set_soenv])
  
