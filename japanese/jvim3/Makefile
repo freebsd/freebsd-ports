@@ -3,7 +3,7 @@
 # Date created:         98/11/17
 # Whom:                 Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.8 1999/01/26 01:01:52 asami Exp $
+# $Id: Makefile,v 1.9 1999/02/03 11:11:48 asami Exp $
 #
 
 DISTNAME=	vim
@@ -16,8 +16,6 @@ DISTFILES=	vim-3.0.tar.gz ${JPATCH}
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 
 USE_XLIB=	yes
-LIB_DEPENDS=	${LIB_INPUT_METHOD}
-BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 
 NO_LATEST_LINK=	YES	# waiting for jgrep, jfold, jcat
 PATCHDIR=	${.CURDIR}/../jvim3/patches
@@ -42,28 +40,30 @@ FEPOPT=		-DJP_DEF=\"EEE\"
 #  Direct connection to Canna
 #######
 .if defined(DIRECT_CANNA)
-INPUT_METHOD=		-direct_canna
-LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna
-FEPOPT+=		-DCANNA
-FEPLIBS=		-lcanna
-FEPOBJS=		fepcanna.o
+INPUT_METHOD=	direct_canna
+LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
+FEPOPT+=	-DCANNA
+FEPLIBS=	-lcanna
+FEPOBJS=	fepcanna.o
 .else # DIRECT_CANNA
 #######
 # Connection by using ONEW library
 #######
 .if defined(CANNA)
-INPUT_METHOD+=		canna
-LIB_INPUT_METHOD+=	canna.1:${PORTSDIR}/japanese/Canna
-FEPLIBS+=		-lcanna
+INPUT_METHOD+=	canna
+LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
+FEPLIBS+=	-lcanna
 .endif
 .if defined(WNN4)
-INPUT_METHOD+=		wnn4
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
-FEPLIBS+=		-L${X11BASE}/lib -ljd -lcrypt
+INPUT_METHOD+=	wnn4
+BUILD_DEPENDS+=	${X11BASE}/lib/libjd.a:${PORTSDIR}/japanese/Wnn
+RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk/2B_ROMKANA:${PORTSDIR}/japanese/Wnn
+FEPLIBS+=	-L${X11BASE}/lib -ljd -lcrypt
 .elif defined(WNN6)
-INPUT_METHOD+=		wnn6
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
-FEPLIBS+=		-L${X11BASE}/lib -ljd -lcrypt
+INPUT_METHOD+=	wnn6
+BUILD_DEPENDS+=	${X11BASE}/lib/libjd.a:${PORTSDIR}/japanese/Wnn
+RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/2B_ROMKANA:${PORTSDIR}/japanese/onew${INPUT_METHOD}
+FEPLIBS+=	-L${X11BASE}/lib -ljd -lcrypt
 .endif
 #
 # Make a value of INPUT_METHOD
@@ -74,7 +74,7 @@ INPUT_METHOD!=	echo ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
 #
 # For ONEW library
 .if defined(INPUT_METHOD)
-BUILD_INPUT_METHOD+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/onew${INPUT_METHOD}
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/onew${INPUT_METHOD}
 FEPOPT+=	-DONEW
 # If we use ONEW libray, then -lonew-* need appear
 # before the other libraries in ${FEPLIBS}.
