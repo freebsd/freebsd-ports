@@ -1,0 +1,8 @@
+bin/gtoaster
+share/locale/de/LC_MESSAGES/gtoaster.mo
+share/locale/ja/LC_MESSAGES/gtoaster.mo
+share/locale/no/LC_MESSAGES/gtoaster.mo
+share/locale/fr/LC_MESSAGES/gtoaster.mo
+share/locale/fi/LC_MESSAGES/gtoaster.mo
+share/locale/ro/LC_MESSAGES/gtoaster.mo
+share/locale/hu/LC_MESSAGES/gtoaster.mo
