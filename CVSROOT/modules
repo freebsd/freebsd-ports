@@ -10504,6 +10504,7 @@ sitebar		ports/www/sitebar
 sitecopy	ports/www/sitecopy
 sitescooper	ports/palm/sitescooper
 six		ports/games/six
+sixxs-aiccu	ports/net/sixxs-aiccu
 sixxs-heartbeatd	ports/net/sixxs-heartbeatd
 sjog		ports/sysutils/sjog
 sk-aspell	ports/textproc/sk-aspell
