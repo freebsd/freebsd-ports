@@ -4206,6 +4206,7 @@ messarge	ports/russian/messarge
 metacity	ports/x11-wm/metacity
 metacity-setup	ports/x11-wm/metacity-setup
 metakit		ports/databases/metakit
+metalog		ports/sysutils/metalog
 metamail	ports/mail/metamail
 metapixel	ports/graphics/metapixel
 metatheme2	ports/misc/metatheme2
