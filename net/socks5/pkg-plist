@@ -9,6 +9,20 @@ bin/rtelnet
 bin/rtraceroute
 bin/rwhois
 include/socks.h
-man/man5/socks5.passwd.5
 lib/libsocks5.a
 lib/libsocks5_sh.so
+%%PORTDOCS%%share/examples/socks5/README
+%%PORTDOCS%%share/examples/socks5/multiple_server.example
+%%PORTDOCS%%share/examples/socks5/server_2_multiple_server.example
+%%PORTDOCS%%share/examples/socks5/single_homed_host.example
+%%PORTDOCS%%share/examples/socks5/socks5.conf.dualhomed
+%%PORTDOCS%%share/examples/socks5/socks5.conf.gssapi
+%%PORTDOCS%%share/examples/socks5/socks5.conf.multipleservers
+%%PORTDOCS%%share/examples/socks5/socks5.conf.server2server
+%%PORTDOCS%%share/examples/socks5/socks5.conf.singlehomed
+%%PORTDOCS%%@dirrm share/examples/socks5
+%%PORTDOCS%%share/doc/socks5/rfc1928.txt
+%%PORTDOCS%%share/doc/socks5/rfc1929.txt
+%%PORTDOCS%%share/doc/socks5/rfc1961.txt
+%%PORTDOCS%%share/doc/socks5/socks.faq
+%%PORTDOCS%%@dirrm share/doc/socks5
