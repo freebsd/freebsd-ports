@@ -4,9 +4,9 @@
 #
 # $FreeBSD$
 
-PORTNAME=	QtPixmap
+PORTNAME=	qtpixmap
 PORTVERSION=	0.28
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.cpdrummond.freeuk.com/
 
@@ -14,15 +14,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modifed GTK pixmap engine to obtain Theme information from Qt
 
 USE_GNOME=	gtk20
+USE_X_PREFIX=	yes
+USE_LIBTOOL_VER=15
+WRKSRC=		${WRKDIR}/${DISTNAME:S/7043-//}
+
 .if !defined(WITHOUT_GTK1)
 USE_GNOME+=	gtk12 imlib
 PLIST_SUB=	GTK1=""
 .else
 PLIST_SUB=	GTK1="@comment "
 .endif
-USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
-WRKSRC=		${WRKDIR}/${DISTNAME:S/7043-//}
-GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
