@@ -1,44 +1,49 @@
-mpich/lib/freebsd/ch_p4/mpiman
-mpich/lib/freebsd/ch_p4/mpirun.anlspx
-mpich/lib/freebsd/ch_p4/mpirun.args
-mpich/lib/freebsd/ch_p4/mpirun.ch
-mpich/lib/freebsd/ch_p4/mpirun.ch_cenju3
-mpich/lib/freebsd/ch_p4/mpirun.ch_cmmd
-mpich/lib/freebsd/ch_p4/mpirun.ch_mpl
-mpich/lib/freebsd/ch_p4/mpirun.ch_p4
-mpich/lib/freebsd/ch_p4/mpirun.ch_shmem
-mpich/lib/freebsd/ch_p4/mpirun.ch_tcp
-mpich/lib/freebsd/ch_p4/mpirun.delta
-mpich/lib/freebsd/ch_p4/mpirun.djm
-mpich/lib/freebsd/ch_p4/mpirun.execer
-mpich/lib/freebsd/ch_p4/mpirun.i860
-mpich/lib/freebsd/ch_p4/mpirun.meiko
-mpich/lib/freebsd/ch_p4/mpirun.p4shmem
-mpich/lib/freebsd/ch_p4/mpirun.paragon
-mpich/lib/freebsd/ch_p4/mpirun.pg
-mpich/lib/freebsd/ch_p4/tarch
-mpich/lib/freebsd/ch_p4/mpirun.t3d
-mpich/lib/freebsd/ch_p4/tstmachines
-mpich/lib/freebsd/ch_p4/mpirun
-mpich/lib/freebsd/ch_p4/mpireconfig
-mpich/lib/freebsd/ch_p4/mpicc
-mpich/lib/freebsd/ch_p4/mpif77
-mpich/lib/freebsd/ch_p4/serv_p4
-mpich/lib/freebsd/ch_p4/chp4_servs
-mpich/lib/freebsd/ch_p4/chkserv
-mpich/lib/freebsd/ch_p4/server
-mpich/lib/freebsd/ch_p4/libampi.a
-mpich/lib/freebsd/ch_p4/libfmpi.a
-mpich/lib/freebsd/ch_p4/liblmpi.a
-mpich/lib/freebsd/ch_p4/libmpe.a
-mpich/lib/freebsd/ch_p4/libmpe_nompi.a
-mpich/lib/freebsd/ch_p4/libmpi.a
-mpich/lib/freebsd/ch_p4/libpmpi.a
-mpich/lib/freebsd/ch_p4/libtmpi.a
-mpich/lib/freebsd/ch_p4/config.status
-mpich/lib/freebsd/ch_p4/Makefile.sample
-mpich/lib/freebsd/mpich.En_US.cat
-mpich/lib/freebsd/mpich.cat
+mpich/bin/execer
+mpich/bin/mpicc
+mpich/bin/mpif77
+mpich/bin/mpif90
+mpich/bin/mpiman
+mpich/bin/mpireconfig
+mpich/bin/mpirun
+mpich/bin/mpirun.args
+mpich/bin/mpirun.ch_p4
+mpich/bin/mpirun.pg
+mpich/bin/serv_p4
+mpich/bin/server
+mpich/bin/tarch
+mpich/bin/tdevice
+mpich/bin/tstmachines
+mpich/bin/upshot
+mpich/examples/Makefile
+mpich/examples/Makefile.in
+mpich/examples/README
+mpich/examples/cpi
+mpich/examples/cpi.c
+mpich/examples/cpi.o
+mpich/examples/cpilog
+mpich/examples/cpilog.c
+mpich/examples/cpilog.o
+mpich/examples/hello++.cc
+mpich/examples/mpif.h
+mpich/examples/mpirun
+mpich/examples/pi3
+mpich/examples/pi3.f
+mpich/examples/pi3.o
+mpich/examples/simpleio
+mpich/examples/simpleio.c
+mpich/examples/simpleio.o
+mpich/include/basex11.h
+mpich/include/binding.h
+mpich/include/mpe.h
+mpich/include/mpe_graphics.h
+mpich/include/mpe_log.h
+mpich/include/mpeexten.h
+mpich/include/mpetools.h
+mpich/include/mpi.h
+mpich/include/mpi_errno.h
+mpich/include/mpif.h
+mpich/include/patchlevel.h
+mpich/include/protofix.h
 mpich/lib/bitmaps/2x2
 mpich/lib/bitmaps/black
 mpich/lib/bitmaps/boxes
@@ -58,82 +63,53 @@ mpich/lib/bitmaps/vlines2
 mpich/lib/bitmaps/vlines3
 mpich/lib/bitmaps/vlines4
 mpich/lib/bitmaps/white
-mpich/util/machines/README
-mpich/util/machines/machines.freebsd
-mpich/util/machines/machines.sample
-mpich/util/chp4_servs
-mpich/util/chkserv
-mpich/include/mpi.h
-mpich/include/mpi++.h
-mpich/include/mpi++P.h
-mpich/include/mpif.h
-mpich/include/mpi_errno.h
-mpich/include/binding.h
-mpich/include/protofix.h
-mpich/include/mpeexten.h
-mpich/include/patchlevel.h
-mpich/include/mpe.h
-mpich/include/mpe_graphics.h
-mpich/include/mpe_log.h
-mpich/include/mpetools.h
-mpich/include/basex11.h
-mpich/examples/mpif.h
-mpich/examples/Makefile.in
-mpich/examples/Makefile
-mpich/examples/cpi.c
-mpich/examples/pi3.f
-mpich/examples/cpilog.c
-mpich/examples/README
-mpich/examples/mpirun
-mpich/examples/pi3.o
-mpich/examples/pi3
-mpich/examples/cpi.o
-mpich/examples/cpi
-mpich/examples/cpilog2
-mpich/bin/tarch
-mpich/bin/tdevice
-mpich/bin/mpiman
-mpich/bin/upshot
-mpich/bin/mpirun.anlspx
-mpich/bin/mpirun.args
-mpich/bin/mpirun.ch
-mpich/bin/mpirun.ch_cenju3
-mpich/bin/mpirun.ch_cmmd
-mpich/bin/mpirun.ch_mpl
-mpich/bin/mpirun.ch_p4
-mpich/bin/mpirun.ch_shmem
-mpich/bin/mpirun.ch_tcp
-mpich/bin/mpirun.delta
-mpich/bin/mpirun.djm
-mpich/bin/mpirun.execer
-mpich/bin/mpirun.i860
-mpich/bin/mpirun.meiko
-mpich/bin/mpirun.p4shmem
-mpich/bin/mpirun.paragon
-mpich/bin/mpirun.pg
-mpich/bin/mpireconfig
-mpich/bin/mpirun.t3d
-mpich/bin/tstmachines
-mpich/bin/mpirun
-mpich/bin/execer
-mpich/bin/mpicc
-mpich/bin/mpif77
-mpich/bin/serv_p4
-mpich/bin/server
-mpich/man/mandesc
+mpich/lib/freebsd/ch_p4/Makefile.sample
+mpich/lib/freebsd/ch_p4/chkserv
+mpich/lib/freebsd/ch_p4/chp4_servs
+mpich/lib/freebsd/ch_p4/config.status
+mpich/lib/freebsd/ch_p4/libampi.a
+mpich/lib/freebsd/ch_p4/libfmpich.a
+mpich/lib/freebsd/ch_p4/liblmpi.a
+mpich/lib/freebsd/ch_p4/libmpe.a
+mpich/lib/freebsd/ch_p4/libmpe_nompi.a
+mpich/lib/freebsd/ch_p4/libmpich.a
+mpich/lib/freebsd/ch_p4/libpmpich.a
+mpich/lib/freebsd/ch_p4/libtmpi.a
+mpich/lib/freebsd/ch_p4/mpicc
+mpich/lib/freebsd/ch_p4/mpichconf.h
+mpich/lib/freebsd/ch_p4/mpidefs.h
+mpich/lib/freebsd/ch_p4/mpif77
+mpich/lib/freebsd/ch_p4/mpif90
+mpich/lib/freebsd/ch_p4/mpiman
+mpich/lib/freebsd/ch_p4/mpio.h
+mpich/lib/freebsd/ch_p4/mpiof.h
+mpich/lib/freebsd/ch_p4/mpireconfig
+mpich/lib/freebsd/ch_p4/mpirun
+mpich/lib/freebsd/ch_p4/mpirun.args
+mpich/lib/freebsd/ch_p4/mpirun.ch_p4
+mpich/lib/freebsd/ch_p4/mpirun.pg
+mpich/lib/freebsd/ch_p4/serv_p4
+mpich/lib/freebsd/ch_p4/server
+mpich/lib/freebsd/ch_p4/tarch
+mpich/lib/freebsd/ch_p4/tstmachines
+mpich/lib/freebsd/mpich.En_US.cat
+mpich/lib/freebsd/mpich.cat
 mpich/man/man1/MPI.1.gz
 mpich/man/man1/chp4_servs.1.gz
+mpich/man/man1/mpiCC.1.gz
 mpich/man/man1/mpicc.1.gz
 mpich/man/man1/mpif77.1.gz
+mpich/man/man1/mpif90.1.gz
 mpich/man/man1/mpiman.1.gz
 mpich/man/man1/mpireconfig.1.gz
 mpich/man/man1/mpirun.1.gz
 mpich/man/man1/tstmachines.1.gz
 mpich/man/man3/Constants.3.gz
-mpich/man/man3/MPIR_Breakpoint.3.gz
-mpich/man/man3/MPIR_cstr2fstr.3.gz
-mpich/man/man3/MPIR_fstr2cstr.3.gz
-mpich/man/man3/MPIR_trspace.3.gz
+mpich/man/man3/MPIO_Request_c2f.3.gz
+mpich/man/man3/MPIO_Request_f2c.3.gz
+mpich/man/man3/MPIO_Test.3.gz
+mpich/man/man3/MPIO_Wait.3.gz
+mpich/man/man3/MPIR_Init.3.gz
 mpich/man/man3/MPI_2COMPLEX.3.gz
 mpich/man/man3/MPI_2DOUBLE_COMPLEX.3.gz
 mpich/man/man3/MPI_2DOUBLE_PRECISION.3.gz
@@ -224,7 +200,6 @@ mpich/man/man3/MPI_ERR_IN_STATUS.3.gz
 mpich/man/man3/MPI_ERR_LASTCODE.3.gz
 mpich/man/man3/MPI_ERR_LIMIT.3.gz
 mpich/man/man3/MPI_ERR_NOMATCH.3.gz
-mpich/man/man3/MPI_FLOAT.3.gz
 mpich/man/man3/MPI_ERR_NULL.3.gz
 mpich/man/man3/MPI_ERR_OP.3.gz
 mpich/man/man3/MPI_ERR_OTHER.3.gz
@@ -243,11 +218,46 @@ mpich/man/man3/MPI_ERR_UNKNOWN.3.gz
 mpich/man/man3/MPI_Errhandler_create.3.gz
 mpich/man/man3/MPI_Errhandler_free.3.gz
 mpich/man/man3/MPI_Errhandler_get.3.gz
-mpich/man/man3/MPI_FLOAT_INT.3.gz
 mpich/man/man3/MPI_Errhandler_set.3.gz
 mpich/man/man3/MPI_Error_class.3.gz
 mpich/man/man3/MPI_Error_string.3.gz
+mpich/man/man3/MPI_FLOAT.3.gz
+mpich/man/man3/MPI_FLOAT_INT.3.gz
+mpich/man/man3/MPI_File_c2f.3.gz
+mpich/man/man3/MPI_File_close.3.gz
+mpich/man/man3/MPI_File_delete.3.gz
+mpich/man/man3/MPI_File_f2c.3.gz
+mpich/man/man3/MPI_File_get_amode.3.gz
+mpich/man/man3/MPI_File_get_atomicity.3.gz
+mpich/man/man3/MPI_File_get_byte_offset.3.gz
+mpich/man/man3/MPI_File_get_group.3.gz
+mpich/man/man3/MPI_File_get_info.3.gz
+mpich/man/man3/MPI_File_get_position.3.gz
+mpich/man/man3/MPI_File_get_size.3.gz
+mpich/man/man3/MPI_File_get_type_extent.3.gz
+mpich/man/man3/MPI_File_get_view.3.gz
+mpich/man/man3/MPI_File_iread.3.gz
+mpich/man/man3/MPI_File_iread_at.3.gz
+mpich/man/man3/MPI_File_iwrite.3.gz
+mpich/man/man3/MPI_File_iwrite_at.3.gz
+mpich/man/man3/MPI_File_open.3.gz
+mpich/man/man3/MPI_File_preallocate.3.gz
+mpich/man/man3/MPI_File_read.3.gz
+mpich/man/man3/MPI_File_read_all.3.gz
+mpich/man/man3/MPI_File_read_at.3.gz
+mpich/man/man3/MPI_File_read_at_all.3.gz
+mpich/man/man3/MPI_File_seek.3.gz
+mpich/man/man3/MPI_File_set_atomicity.3.gz
+mpich/man/man3/MPI_File_set_info.3.gz
+mpich/man/man3/MPI_File_set_size.3.gz
+mpich/man/man3/MPI_File_set_view.3.gz
+mpich/man/man3/MPI_File_sync.3.gz
+mpich/man/man3/MPI_File_write.3.gz
+mpich/man/man3/MPI_File_write_all.3.gz
+mpich/man/man3/MPI_File_write_at.3.gz
+mpich/man/man3/MPI_File_write_at_all.3.gz
 mpich/man/man3/MPI_Finalize.3.gz
+mpich/man/man3/MPI_Finalized.3.gz
 mpich/man/man3/MPI_GRAPH.3.gz
 mpich/man/man3/MPI_GROUP_EMPTY.3.gz
 mpich/man/man3/MPI_GROUP_NULL.3.gz
@@ -256,6 +266,7 @@ mpich/man/man3/MPI_Gatherv.3.gz
 mpich/man/man3/MPI_Get_count.3.gz
 mpich/man/man3/MPI_Get_elements.3.gz
 mpich/man/man3/MPI_Get_processor_name.3.gz
+mpich/man/man3/MPI_Get_version.3.gz
 mpich/man/man3/MPI_Graph_create.3.gz
 mpich/man/man3/MPI_Graph_get.3.gz
 mpich/man/man3/MPI_Graph_map.3.gz
@@ -275,7 +286,6 @@ mpich/man/man3/MPI_Group_size.3.gz
 mpich/man/man3/MPI_Group_translate_ranks.3.gz
 mpich/man/man3/MPI_Group_union.3.gz
 mpich/man/man3/MPI_HOST.3.gz
-mpich/man/man3/MPI_Handle2int.3.gz
 mpich/man/man3/MPI_Handler_function.3.gz
 mpich/man/man3/MPI_IDENT.3.gz
 mpich/man/man3/MPI_INT.3.gz
@@ -285,6 +295,17 @@ mpich/man/man3/MPI_INTEGER2.3.gz
 mpich/man/man3/MPI_INTEGER4.3.gz
 mpich/man/man3/MPI_IO.3.gz
 mpich/man/man3/MPI_Ibsend.3.gz
+mpich/man/man3/MPI_Info_c2f.3.gz
+mpich/man/man3/MPI_Info_create.3.gz
+mpich/man/man3/MPI_Info_delete.3.gz
+mpich/man/man3/MPI_Info_dup.3.gz
+mpich/man/man3/MPI_Info_f2c.3.gz
+mpich/man/man3/MPI_Info_free.3.gz
+mpich/man/man3/MPI_Info_get.3.gz
+mpich/man/man3/MPI_Info_get_nkeys.3.gz
+mpich/man/man3/MPI_Info_get_nthkey.3.gz
+mpich/man/man3/MPI_Info_get_valuelen.3.gz
+mpich/man/man3/MPI_Info_set.3.gz
 mpich/man/man3/MPI_Init.3.gz
 mpich/man/man3/MPI_Initialized.3.gz
 mpich/man/man3/MPI_Int2handle.3.gz
@@ -334,6 +355,7 @@ mpich/man/man3/MPI_Recv.3.gz
 mpich/man/man3/MPI_Recv_init.3.gz
 mpich/man/man3/MPI_Reduce.3.gz
 mpich/man/man3/MPI_Reduce_scatter.3.gz
+mpich/man/man3/MPI_Request_c2f.3.gz
 mpich/man/man3/MPI_Request_free.3.gz
 mpich/man/man3/MPI_Rsend.3.gz
 mpich/man/man3/MPI_Rsend_init.3.gz
@@ -354,6 +376,8 @@ mpich/man/man3/MPI_Ssend.3.gz
 mpich/man/man3/MPI_Ssend_init.3.gz
 mpich/man/man3/MPI_Start.3.gz
 mpich/man/man3/MPI_Startall.3.gz
+mpich/man/man3/MPI_Status_c2f.3.gz
+mpich/man/man3/MPI_Status_f2c.3.gz
 mpich/man/man3/MPI_TAG.3.gz
 mpich/man/man3/MPI_TAG_UB.3.gz
 mpich/man/man3/MPI_Test.3.gz
@@ -364,8 +388,14 @@ mpich/man/man3/MPI_Testsome.3.gz
 mpich/man/man3/MPI_Topo_test.3.gz
 mpich/man/man3/MPI_Type_commit.3.gz
 mpich/man/man3/MPI_Type_contiguous.3.gz
+mpich/man/man3/MPI_Type_count.3.gz
+mpich/man/man3/MPI_Type_create_darray.3.gz
+mpich/man/man3/MPI_Type_create_indexed_block.3.gz
+mpich/man/man3/MPI_Type_create_subarray.3.gz
 mpich/man/man3/MPI_Type_extent.3.gz
 mpich/man/man3/MPI_Type_free.3.gz
+mpich/man/man3/MPI_Type_get_contents.3.gz
+mpich/man/man3/MPI_Type_get_envelope.3.gz
 mpich/man/man3/MPI_Type_hindexed.3.gz
 mpich/man/man3/MPI_Type_hvector.3.gz
 mpich/man/man3/MPI_Type_indexed.3.gz
@@ -411,6 +441,9 @@ mpich/man/man4/MPE_Add_RGB_color.4.gz
 mpich/man/man4/MPE_CaptureFile.4.gz
 mpich/man/man4/MPE_Close_graphics.4.gz
 mpich/man/man4/MPE_Comm_global_rank.4.gz
+mpich/man/man4/MPE_Counter_create.4.gz
+mpich/man/man4/MPE_Counter_free.4.gz
+mpich/man/man4/MPE_Counter_nxtval.4.gz
 mpich/man/man4/MPE_Decomp1d.4.gz
 mpich/man/man4/MPE_Describe_event.4.gz
 mpich/man/man4/MPE_Describe_state.4.gz
@@ -420,6 +453,7 @@ mpich/man/man4/MPE_Draw_logic.4.gz
 mpich/man/man4/MPE_Draw_point.4.gz
 mpich/man/man4/MPE_Draw_points.4.gz
 mpich/man/man4/MPE_Draw_string.4.gz
+mpich/man/man4/MPE_Errors_call_debugger.4.gz
 mpich/man/man4/MPE_Fill_circle.4.gz
 mpich/man/man4/MPE_Fill_rectangle.4.gz
 mpich/man/man4/MPE_Finish_log.4.gz
@@ -427,13 +461,10 @@ mpich/man/man4/MPE_GetTags.4.gz
 mpich/man/man4/MPE_Get_mouse_press.4.gz
 mpich/man/man4/MPE_IO_Stdout_to_file.4.gz
 mpich/man/man4/MPE_Iget_mouse_press.4.gz
-mpich/man/man4/MPE_Ptime.4.gz
 mpich/man/man4/MPE_Init_log.4.gz
-mpich/man/man4/MPE_Initlog.4.gz
 mpich/man/man4/MPE_Line_thickness.4.gz
 mpich/man/man4/MPE_Log_event.4.gz
 mpich/man/man4/MPE_Log_get_event_number.4.gz
-mpich/man/man4/MPE_Log_message.4.gz
 mpich/man/man4/MPE_Log_receive.4.gz
 mpich/man/man4/MPE_Log_send.4.gz
 mpich/man/man4/MPE_Make_color_array.4.gz
@@ -441,37 +472,35 @@ mpich/man/man4/MPE_Num_colors.4.gz
 mpich/man/man4/MPE_Open_graphics.4.gz
 mpich/man/man4/MPE_Print_datatype_pack_action.4.gz
 mpich/man/man4/MPE_Print_datatype_unpack_action.4.gz
+mpich/man/man4/MPE_Ptime.4.gz
 mpich/man/man4/MPE_ReturnTags.4.gz
 mpich/man/man4/MPE_Seq_begin.4.gz
 mpich/man/man4/MPE_Seq_end.4.gz
+mpich/man/man4/MPE_Signals_call_debugger.4.gz
 mpich/man/man4/MPE_Start_log.4.gz
-mpich/man/man4/MPI.4.gz
 mpich/man/man4/MPE_Stop_log.4.gz
 mpich/man/man4/MPE_TagsEnd.4.gz
 mpich/man/man4/MPE_Update.4.gz
 mpich/man/man4/MPE_Wtime.4.gz
-mpich/man/man4/mpirun.4.gz
-mpich/doc/functions.ps.Z
-mpich/doc/guide.ps.Z
-mpich/doc/install.ps.Z
-mpich/doc/adiman.ps.Z
-mpich/doc/mpiman.ps.Z
-mpich/config.status
+mpich/man/mandesc
 mpich/mpiuninstall
-
-@dirrm mpich/lib/freebsd/ch_p4/
-@dirrm mpich/lib/freebsd/
-@dirrm mpich/lib/bitmaps/
-@dirrm mpich/lib/
-@dirrm mpich/util/machines/
-@dirrm mpich/util/
-@dirrm mpich/include/
-@dirrm mpich/examples/
-@dirrm mpich/bin/
-@dirrm mpich/doc/
-@dirrm mpich/man/man1/
-@dirrm mpich/man/man3/
-@dirrm mpich/man/man4/
-@dirrm mpich/man/man5/
-@dirrm mpich/man/
-@dirrm mpich/
+mpich/util/chkserv
+mpich/util/chp4_servs
+mpich/util/machines/machines.freebsd
+mpich/util/machines/machines.sample
+@dirrm mpich/bin
+@dirrm mpich/doc
+@dirrm mpich/examples
+@dirrm mpich/include
+@dirrm mpich/lib/bitmaps
+@dirrm mpich/lib/freebsd/ch_p4
+@dirrm mpich/lib/freebsd
+@dirrm mpich/lib
+@dirrm mpich/man/man1
+@dirrm mpich/man/man3
+@dirrm mpich/man/man4
+@dirrm mpich/man/man5
+@dirrm mpich/man
+@dirrm mpich/util/machines
+@dirrm mpich/util
+@dirrm mpich
