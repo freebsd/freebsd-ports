@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-unix
 
 MAINTAINER=	ports@FreeBSD.Org
 
+USE_REINPLACE=	yes
+
 MAN1=		ddup.1
 MANCOMPRESSED=	maybe
 
@@ -27,8 +29,8 @@ post-extract:
 	cd ${WRKSRC}; ${GUNZIP_CMD} ddup.1.gz
 
 post-patch:
-	${PERL} -i -pe 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/ddupcron.sh
-	${PERL} -i -pe 's,/etc\b,${PREFIX}$$&,' ${WRKSRC}/ddup.1
+	@${REINPLACE_CMD} -e 's,!!PREFIX!!,${PREFIX},' ${WRKSRC}/ddupcron.sh
+	@${REINPLACE_CMD} -e 's,/etc\b,${PREFIX}$$&,' ${WRKSRC}/ddup.1
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
