@@ -6,23 +6,22 @@
 #
 
 PORTNAME=		gvd
-PORTVERSION=		1.0.1
+PORTVERSION=		1.2.0
 CATEGORIES=		devel
 MASTER_SITES=		http://libre.act-europe.fr/gvd/
-MASTER_SITE_SUBDIR=	. old
+DISTFILES=		${PORTNAME}-${PORTVERSION}-src.tgz
 
 MAINTAINER=		sam@inf.enst.fr
 
 BUILD_DEPENDS=		adagcc:${PORTSDIR}/lang/gnat
 LIB_DEPENDS=		gtkada.12:${PORTSDIR}/x11-toolkits/gtkada
 
+WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
+
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CC=adagcc
 MAKE_ENV=		CC=adagcc
 USE_X_PREFIX=		yes
 USE_GMAKE=		yes
-
-post-extract:
-	${CP} ${FILESDIR}/freebsd.h ${WRKSRC}/gnat/system/
 
 .include <bsd.port.mk>

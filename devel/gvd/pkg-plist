@@ -1,2 +1,19 @@
 bin/gvd
+@unexec install-info --delete %D/info/gvd.info %D/info/dir
+info/gvd.info
+@exec install-info %D/info/gvd.info %D/info/dir
 share/locale/fr/LC_MESSAGES/gvd.mo
+share/doc/gvd/gvd.html
+share/doc/gvd/gvd.ps
+share/doc/gvd/gvd.txt
+share/doc/gvd/assembly.gif
+share/doc/gvd/canvas.gif
+share/doc/gvd/explorer.gif
+share/doc/gvd/memory-view.gif
+share/doc/gvd/tasks.gif
+share/doc/gvd/breakpoints.gif
+share/doc/gvd/colors.gif
+share/doc/gvd/main-window.gif
+share/doc/gvd/process.gif
+share/doc/gvd/tooltips.gif
+@dirrm share/doc/gvd
