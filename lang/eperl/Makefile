@@ -23,6 +23,9 @@ COMMENT=	Embedded Perl 5 Language
 
 .if defined(INSTALL_ALSO_AS_SSSL)
 RUN_DEPENDS=	${PREFIX}/etc/apache/srm.conf:${PORTSDIR}/${APACHE_PORT}
+PLIST_SUB=	SSSL=""
+.else
+PLIST_SUB=	SSSL="@comment "
 .endif
 
 USE_PERL5=	yes

@@ -1,8 +1,8 @@
 bin/eperl
-@comment www/cgi-bin/nph-eperl
-@exec echo "AddType  application/x-httpd-eperl  .phtml .eperl .epl" >>%D/etc/apache/srm.conf
-@exec echo "Action   application/x-httpd-eperl  /cgi-bin/nph-eperl" >>%D/etc/apache/srm.conf
-@unexec grep -v "application/x-httpd-eperl" %D/etc/apache/srm.conf >%D/etc/apache/srm.conf.bak; mv %D/etc/apache/srm.conf.bak %D/etc/apache/srm.conf
+%%SSSL%%www/cgi-bin/nph-eperl
+%%SSSL%%@exec echo "AddType  application/x-httpd-eperl  .phtml .eperl .epl" >>%D/etc/apache/srm.conf
+%%SSSL%%@exec echo "Action   application/x-httpd-eperl  /cgi-bin/nph-eperl" >>%D/etc/apache/srm.conf
+%%SSSL%%@unexec grep -v "application/x-httpd-eperl" %D/etc/apache/srm.conf >%D/etc/apache/srm.conf.bak; mv %D/etc/apache/srm.conf.bak %D/etc/apache/srm.conf
 share/examples/eperl/00README
 share/examples/eperl/demo.cgipm.phtml
 share/examples/eperl/demo.cgipm.iphtml
