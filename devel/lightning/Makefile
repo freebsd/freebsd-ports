@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lightning
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,5 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates assembly language code at run-time
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 .include <bsd.port.mk>
