@@ -115,10 +115,6 @@ Python_Include_MAINTAINER=	perky@FreeBSD.org
 _PYTHON_PORTBRANCH=		2.3
 _PYTHON_ALLBRANCHES=	2.3 2.2 2.1 2.0 1.5 2.4 # preferred first
 
-.if defined(USE_ZOPE)
-PYTHON_VERSION=		python2.3
-.endif
-
 .if defined(PYTHON_VERSION)
 _PYTHON_VERSION!=	echo "${PYTHON_VERSION}" | ${SED} 's/^python//'
 _PYTHON_CMD=		${LOCALBASE}/bin/${PYTHON_VERSION}
@@ -295,12 +291,9 @@ PYDISTUTILS_INSTALLARGS?=	-c -O1 --prefix=${PREFIX}
 
 # Zope specific variables
 .if defined(USE_ZOPE)
-# You can change this in the environment if you like
 SZOPEBASEDIR?=			www/Zope
-# Don't change these. You'll probably want to define ZOPEPRODUCTNAME,
-# too, but that is port-specific.
-ZOPEBASEDIR=			${PREFIX}/${SZOPEBASEDIR}
-ZOPEPRODUCTDIR=			lib/python/Products
+ZOPEBASEDIR?=			${PREFIX}/${SZOPEBASEDIR}
+ZOPEPRODUCTDIR?=		Products
 .endif
 
 .if defined(PYTHON_REL) && ${PYTHON_REL} < 200
