@@ -21,6 +21,7 @@ NEED_JAVAC=	yes
 NO_WRKSUBDIR=	yes
 
 PLIST_SUB=	JAVAJARDIR=${JAVAJARDIR:S|^${PREFIX}/||}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -34,8 +35,12 @@ do-build:
 
 do-install:
 	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.jar ${JAVAJARDIR}
+	@${SED} s:%%JAVAJARDIR%%:${JAVAJARDIR}: < ${PKGDIR}/pkg-message \
+		> ${PKGMESSAGE}
 
 post-install:
-	@${SED} s:JAVAJARDIR:${JAVAJARDIR}: < ${PKGMESSAGE}
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
