@@ -1,0 +1,14 @@
+--- clfdomainsplit.cpp.orig	Mon Jun  9 10:56:27 2003
++++ clfdomainsplit.cpp	Mon Jun  9 10:56:47 2003
+@@ -1,10 +1,6 @@
+ #include <stdio.h>
+ 
+-#if (__GNUC__ >= 3)
+-#include <ext/hash_map>
+-#else
+-#include <hash_map>
+-#endif
++#include <hash_map.h>
+ 
+ #include <unistd.h>
+ #include <string>

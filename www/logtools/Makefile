@@ -19,8 +19,4 @@ MAN1=		clfmerge.1 logprn.1 funnel.1 clfsplit.1 clfdomainsplit.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
 .include <bsd.port.post.mk>
