@@ -1,0 +1,21 @@
+--- plugins/Makefile.in.orig	Mon Nov  1 23:32:23 2004
++++ plugins/Makefile.in	Mon Nov  1 23:33:19 2004
+@@ -322,15 +322,15 @@
+ SUBDIRS_FUNCTIONS = numtheory fn-database fn-date fn-eng fn-erlang fn-financial fn-info \
+ 	fn-logical fn-complex fn-lookup fn-math fn-stat fn-string fn-random \
+ 	derivatives \
+-	$(PERL_DIR) $(GUILE_DIR) \
++	$(GUILE_DIR) \
+ 	$(GDA_DIR) $(GNOMEDB_DIR)
+ 
+ 
+-SUBDIRS_LOADERS = $(PERL_LOADER_DIR) $(PYTHON_LOADER_DIR) $(CORBA_DIR)
++SUBDIRS_LOADERS = $(PYTHON_LOADER_DIR) $(CORBA_DIR)
+ 
+ SUBDIRS_DATA_SOURCES = sample_datasource
+ 
+-SUBDIRS_EXAMPLES = $(GNOME_GLOSSARY_DIR) $(PERL_FUNC_DIR) $(PYFUNC_DIR) uihello
++SUBDIRS_EXAMPLES = $(GNOME_GLOSSARY_DIR) $(PYFUNC_DIR) uihello
+ @PLUGIN_LIST_GIVEN_FALSE@SUBDIRS = $(SUBDIRS_FILE_FORMATS) $(SUBDIRS_FUNCTIONS) $(SUBDIRS_LOADERS) $(SUBDIRS_DATA_SOURCES) $(SUBDIRS_EXAMPLES)
+ 
+ @PLUGIN_LIST_GIVEN_TRUE@SUBDIRS = @PLUGIN_LIST@
