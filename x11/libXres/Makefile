@@ -9,7 +9,7 @@ PORTNAME=	libXres
 PORTVERSION=	1.0.1
 PORTREVISION=	4
 CATEGORIES=	x11
-MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X Resource usage library
