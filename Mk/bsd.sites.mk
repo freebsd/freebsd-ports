@@ -98,6 +98,7 @@ MASTER_SITE_GNU+=	\
 MASTER_SITE_KDE+=	\
 	ftp://ftp.us.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
+	http://linux.dsi.internet2.edu/X11/kde/%SUBDIR%/ \
 	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/kde/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
@@ -242,6 +243,7 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.oit.unc.edu/pub/Linux/%SUBDIR%/ \
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
+	http://linux.dsi.internet2.edu/%SUBDIR%/ \
 	ftp://ftp.unicamp.br/pub/systems/Linux/%SUBDIR%/ \
 	ftp://ftp.tuwien.ac.at/z3/opsys/linux/ibiblio/%SUBDIR%/ \
 	ftp://ftp.univie.ac.at/systems/linux/metalab/%SUBDIR%/ \
