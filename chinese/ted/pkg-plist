@@ -1,7 +1,0 @@
-bin/ted
-lib/X11/ted/ted.help
-lib/X11/ted/tedrc
-lib/X11/ted/tedrc.filevisit
-lib/X11/ted/tedrc.grep
-lib/X11/ted/tedrc.vi
-@dirrm lib/X11/ted
