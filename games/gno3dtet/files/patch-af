@@ -1,0 +1,11 @@
+--- gno3dtet/cwmain.cc.orig	Wed Nov 17 18:07:46 1999
++++ gno3dtet/cwmain.cc	Sun Jan  2 08:57:42 2000
+@@ -136,7 +136,7 @@
+ 	GNOMEUIINFO_END
+ 	};	
+ 	GnomeUIInfo help_menu[] = {
+-	GNOMEUIINFO_HELP(GNO3DTET_EXENAME),
++	GNOMEUIINFO_HELP((gchar *)GNO3DTET_EXENAME),
+ 	GNOMEUIINFO_ITEM(N_("Show License"),N_("Show GNU Public License"),
+ 					 cb_menu_help_license_activate, NULL),
+ 	GNOMEUIINFO_MENU_ABOUT_ITEM(cb_menu_help_about_activate, this),
