@@ -1,0 +1,6 @@
+The XSP util: taglib seeks to add a short list of basic utility
+functions to the eXtesible Server Pages library. It trivializes the
+inclusion of external fragments and adds a few other useful bells and
+whistles.
+
+WWW: http://search.cpan.org/search?dist=AxKit-XSP-Util
