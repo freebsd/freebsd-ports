@@ -20,6 +20,12 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 MAN1=		xosview.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Configure fails on FreeBSD >= 6.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,iostream.h,iostream,' \
 		${WRKSRC}/xwin.h \
@@ -43,4 +49,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,-O4 -pipe,,' \
 		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
