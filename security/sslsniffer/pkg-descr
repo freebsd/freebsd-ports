@@ -1,0 +1,6 @@
+A SSLv3/TLS and SSLv2 proxy server that sniffs SSL/TLS packets and prints
+out the contents of packets in stdout.  It can also serve as a (not very
+efficient) proxy server.  Note that this tool does not decrypt or even
+attempt to decrypt the traffic that is routed through it.
+
+WWW: http://crypto.stanford.edu/~eujin/sslsniffer/

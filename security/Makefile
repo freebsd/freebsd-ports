@@ -323,6 +323,7 @@
     SUBDIR += ssh-multiadd
     SUBDIR += ssh2
     SUBDIR += sslproxy
+    SUBDIR += sslsniffer
     SUBDIR += sslwrap
     SUBDIR += sst
     SUBDIR += stegdetect
