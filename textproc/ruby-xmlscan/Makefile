@@ -6,27 +6,37 @@
 #
 
 PORTNAME=	xmlscan
-PORTVERSION=	0.0.10
+PORTVERSION=	0.2.1
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://www.blue.sky.or.jp/atelier/ruby/xmlscan/old/
+MASTER_SITES=	http://www.blue.sky.or.jp/atelier/ruby/xmlscan/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	racc:${PORTSDIR}/devel/ruby-racc
-
 USE_RUBY=	yes
-USE_RUBY_FEATURES=	racc-runtime
 
-do-build:
-	cd ${WRKSRC}; racc -v -g -c -o xmldtd.rb xmldtd.ry
+NO_BUILD=	yes
+
+DOCS_EN=	ChangeLog \
+		README \
+		THANKS \
+		doc/changes.* \
+		doc/en/*
+DOCS_JA=	doc/ja/*
 
 do-install:
-	cd ${WRKSRC}; ${INSTALL_DATA} [hx]*.rb ${RUBY_SITELIBDIR}/
+	${CP} -R ${WRKSRC}/lib/xmlscan ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${CP} -R ${WRKSRC}/samples/* ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
-	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/ja/
+.for f in ${DOCS_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
+.for f in ${DOCS_JA}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+.endfor
 .endif
 
 .include <bsd.port.mk>
