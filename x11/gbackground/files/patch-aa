@@ -1,0 +1,23 @@
+*** Makefile.in.orig	Sat May  6 14:00:46 2000
+--- Makefile.in	Sat May  6 14:01:49 2000
+***************
+*** 27,35 ****
+  
+  install:	$(TARGET) $(TARGET).gnorba $(TARGET).desktop
+  	strip -sv $(TARGET)
+! 	cp $(TARGET) $(BINDIR)
+! 	cp $(TARGET).gnorba $(GNORBADIR)
+! 	cp $(TARGET).desktop $(DESKTOPDIR)
+  
+  clean:
+  	@rm -f *.o core $(TARGET)
+--- 27,35 ----
+  
+  install:	$(TARGET) $(TARGET).gnorba $(TARGET).desktop
+  	strip -sv $(TARGET)
+! 	${INSTALL_PROGRAM} $(TARGET) $(BINDIR)
+! 	${INSTALL_DATA} $(TARGET).gnorba $(GNORBADIR)
+! 	${INSTALL_DATA} $(TARGET).desktop $(DESKTOPDIR)
+  
+  clean:
+  	@rm -f *.o core $(TARGET)
