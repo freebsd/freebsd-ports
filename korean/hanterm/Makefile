@@ -13,9 +13,13 @@ MASTER_SITES=	ftp://elf.kaist.ac.kr/pub/hanterm/ \
 
 MAINTAINER=	cjh@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
+RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES= yes
+
+post-install:
+	${MKDIR} ${PREFIX}/share/doc/hanterm
+	${INSTALL_DATA} ${WRKSRC}/hanterm.html ${PREFIX}/share/doc/hanterm/
 
 .include <bsd.port.mk>
