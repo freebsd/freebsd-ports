@@ -1,14 +1,13 @@
-*** all.c.orig	Fri Dec 22 04:05:56 1995
---- all.c	Thu Dec  5 14:08:46 1996
-***************
-*** 638,644 ****
---- 638,646 ----
-   */
-  {
-    extern int sys_nerr;
-+ #ifndef __FreeBSD__
-    extern char *sys_errlist[];
-+ #endif
-    
-    int   error;
-    
+--- all.c.orig	Fri Dec 22 13:05:56 1995
++++ all.c	Sat Oct 19 22:49:11 2002
+@@ -637,8 +637,10 @@
+  * returns the error string, or NULL
+  */
+ {
++#ifndef __FreeBSD__
+   extern int sys_nerr;
+   extern char *sys_errlist[];
++#endif
+   
+   int   error;
+   
