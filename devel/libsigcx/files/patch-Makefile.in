@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Sun Apr  6 15:08:21 2003
++++ Makefile.in	Sun Apr  6 15:08:35 2003
+@@ -142,8 +142,8 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = sigcx tests doc
+-DIST_SUBDIRS = sigcx tests examples doc scripts
++SUBDIRS = sigcx tests
++DIST_SUBDIRS = sigcx tests examples scripts
+ 
+ ACLOCAL_AMFLAGS = -I scripts
+ 
