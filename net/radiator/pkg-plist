@@ -29,10 +29,12 @@ bin/radpwtst
 %%SITE_PERL%%/Radius/AuthLogGeneric.pm
 %%SITE_PERL%%/Radius/AuthLogSQL.pm
 %%SITE_PERL%%/Radius/AuthLogSYSLOG.pm
+%%SITE_PERL%%/Radius/AuthLSA.pm
 %%SITE_PERL%%/Radius/AuthMOBILEIP.pm
 %%SITE_PERL%%/Radius/AuthNISPLUS.pm
 %%SITE_PERL%%/Radius/AuthNT.pm
 %%SITE_PERL%%/Radius/AuthOPIE.pm
+%%SITE_PERL%%/Radius/AuthOTP.pm
 %%SITE_PERL%%/Radius/AuthPAM.pm
 %%SITE_PERL%%/Radius/AuthPLATYPUS.pm
 %%SITE_PERL%%/Radius/AuthPOP3.pm
@@ -42,6 +44,7 @@ bin/radpwtst
 %%SITE_PERL%%/Radius/AuthRADMIN.pm
 %%SITE_PERL%%/Radius/AuthRODOPI.pm
 %%SITE_PERL%%/Radius/AuthROUNDROBIN.pm
+%%SITE_PERL%%/Radius/AuthSOAP.pm
 %%SITE_PERL%%/Radius/AuthSQL.pm
 %%SITE_PERL%%/Radius/AuthSQLRADIUS.pm
 %%SITE_PERL%%/Radius/AuthSYSTEM.pm
@@ -63,6 +66,8 @@ bin/radpwtst
 %%SITE_PERL%%/Radius/EAP_26.pm
 %%SITE_PERL%%/Radius/EAP_4.pm
 %%SITE_PERL%%/Radius/EAP_5.pm
+%%SITE_PERL%%/Radius/EAP_6.pm
+%%SITE_PERL%%/Radius/EAP_17.pm
 %%SITE_PERL%%/Radius/Finger.pm
 %%SITE_PERL%%/Radius/Handler.pm
 %%SITE_PERL%%/Radius/Log.pm
@@ -83,11 +88,14 @@ bin/radpwtst
 %%SITE_PERL%%/Radius/Nas/Bay8000SNMP.pm
 %%SITE_PERL%%/Radius/Nas/BayFinger.pm
 %%SITE_PERL%%/Radius/Nas/Cisco.pm
+%%SITE_PERL%%/Radius/Nas/CiscoSessionMIB.pm
 %%SITE_PERL%%/Radius/Nas/CiscoVPDN.pm
 %%SITE_PERL%%/Radius/Nas/Computone.pm
 %%SITE_PERL%%/Radius/Nas/Cyclades.pm
 %%SITE_PERL%%/Radius/Nas/Hiper.pm
 %%SITE_PERL%%/Radius/Nas/Livingston.pm
+%%SITE_PERL%%/Radius/Nas/NomadixSNMP.pm
+%%SITE_PERL%%/Radius/Nas/Redback.pm
 %%SITE_PERL%%/Radius/Nas/NortelCVX1800.pm
 %%SITE_PERL%%/Radius/Nas/Patton.pm
 %%SITE_PERL%%/Radius/Nas/Ping.pm
@@ -112,8 +120,10 @@ bin/radpwtst
 %%SITE_PERL%%/Radius/Realm.pm
 %%SITE_PERL%%/Radius/SNMP.pm
 %%SITE_PERL%%/Radius/SNMPAgent.pm
+%%SITE_PERL%%/Radius/SOAPRequest.pm
 %%SITE_PERL%%/Radius/Select.pm
 %%SITE_PERL%%/Radius/ServerConfig.pm
+%%SITE_PERL%%/Radius/ServerTACACSPLUS.pm
 %%SITE_PERL%%/Radius/SessDBM.pm
 %%SITE_PERL%%/Radius/SessGeneric.pm
 %%SITE_PERL%%/Radius/SessINTERNAL.pm
