@@ -305,7 +305,7 @@ pre-fetch:
 	@${ECHO}
 	@${FALSE}
 .endif
-	@${ECHO} "If you want SDK, please type make sdk"
+	@${ECHO} "If you want SDK and/or solver, please type make sdk and/or make solver"
 
 post-extract:
 	@for file in ${EXTRACT_REST}; do \
@@ -558,6 +558,11 @@ sdk:
 		${TCSH} -c 'source FreeBSDEnv.Set && unsetenv TOP && cd sdk_oo && build.pl && deliver.pl'
 .endif
 	${MV} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/OpenOffice.org${FRELEASE_NR}_SDK.tar.gz ${WRKDIR}/../OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_sdk.tar.gz 
+
+
+solver:
+	@${ECHO_MSG} "===>   Make Solver of OpenOffice.org"
+	@cd ${WRKSRC}/.. ; ${TAR} cfz ${WRKDIR}/../OOo_${FRELEASE_NR}_${OPSYS}${SIMPLEOSVER}Intel_solver.tar.gz solver
 
 update:
 	@${MAKE} fetch
