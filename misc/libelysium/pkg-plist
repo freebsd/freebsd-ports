@@ -1,7 +1,8 @@
-etc/libelysiumConf.sh
-include/libelysium/elysium-file.h
-include/libelysium/encompass-uri.h
+include/gnome-1.0/libelysium/elysium-file.h
+include/gnome-1.0/libelysium/encompass-uri.h
 lib/libelysium.a
 lib/libelysium.so
-lib/libelysium.so.0
-@dirrm include/libelysium
+lib/libelysium.so.3
+libdata/pkgconfig/libelysium.pc
+@dirrm include/gnome-1.0/libelysium
+@dirrm include/gnome-1.0
