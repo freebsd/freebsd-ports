@@ -78,6 +78,7 @@ lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.no
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.pl
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.ro
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.ru
+lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.se
 lib/xemacs-%%XEMACS_VER%%/etc/TUTORIAL.th
 lib/xemacs-%%XEMACS_VER%%/etc/XKeysymDB
 lib/xemacs-%%XEMACS_VER%%/etc/aliases.ksh
@@ -647,6 +648,7 @@ lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/bsdos4.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/cxux.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/cxux7.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/cygwin32.h
+lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/darwin.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/decosf1-2.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/decosf1-3.h
 lib/xemacs-%%XEMACS_VER%%/%%XEMACS_ARCH%%/include/s/decosf3-1.h
