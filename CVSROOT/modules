@@ -7239,6 +7239,7 @@ simage		ports/graphics/simage
 simgear		ports/devel/simgear
 simicq		ports/net/simicq
 simpack		ports/math/simpack
+simplemod	ports/audio/simplemod
 simulavr	ports/devel/simulavr
 since		ports/misc/since
 sing		ports/net/sing
