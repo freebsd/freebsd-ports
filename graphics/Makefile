@@ -56,6 +56,7 @@
     SUBDIR += epstool
     SUBDIR += eterm-bg
     SUBDIR += evas
+    SUBDIR += evolvotron
     SUBDIR += exiftags
     SUBDIR += fbm
     SUBDIR += feh
