@@ -1,5 +1,5 @@
 --- security/coreconf/FreeBSD.mk.orig	Wed Mar 26 20:17:25 2003
-+++ security/coreconf/FreeBSD.mk	Fri Mar 19 15:52:59 2004
++++ security/coreconf/FreeBSD.mk	Thu Jul  8 12:56:24 2004
 @@ -35,16 +35,18 @@
  
  include $(CORE_DEPTH)/coreconf/UNIX.mk
@@ -22,12 +22,27 @@
  
  OS_CFLAGS		= $(DSO_CFLAGS) -ansi -Wall -DFREEBSD -DHAVE_STRERROR -DHAVE_BSD_FLOCK
  
-@@ -71,7 +73,7 @@
+@@ -57,8 +59,8 @@
+ ifndef CLASSIC_NSPR
+ USE_PTHREADS		= 1
+ DEFINES			+= -D_THREAD_SAFE -D_REENTRANT
+-OS_LIBS			+= -pthread
+-DSO_LDOPTS		+= -pthread
++OS_LIBS			+= -lpthread
++DSO_LDOPTS		+= -lpthread
+ endif
+ 
+ ARCH			= freebsd
+@@ -71,7 +73,11 @@
  DLL_SUFFIX		= so.1.0
  endif
  
 -MKSHLIB			= $(CC) $(DSO_LDOPTS)
++ifneq (,$(filter alpha ia64,$(OS_TEST)))
++MKSHLIB			= $(CC) -Wl,-Bsymbolic -lc $(DSO_LDOPTS) -o $@
++else
 +MKSHLIB			= $(CC) -Wl,-Bsymbolic $(DSO_LDOPTS) -o $@
++endif
  ifdef MAPFILE
  # Add LD options to restrict exported symbols to those in the map file
  endif
