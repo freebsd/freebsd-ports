@@ -7,6 +7,7 @@
 
 PORTNAME=	qmail-conf
 PORTVERSION=	0.60
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.din.or.jp/~ushijima/qmail-conf/ \
 		http://cr.yp.to/djbdns/
@@ -25,6 +26,8 @@ NO_PACKAGE=	"borrows code from djbdns, thus falls under the same restrictions as
 # Note: this MUST be the same as the directory qmail is installed in!
 QMAIL_DIR?=	/var/qmail
 PREFIX?=	${QMAIL_DIR}
+
+NO_MTREE=	yes
 
 DJBDNS_VER=	1.05
 DJBDNS_NAME=	djbdns-${DJBDNS_VER}
