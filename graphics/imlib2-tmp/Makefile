@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.31 1998/09/19 01:33:45 steve Exp $
+# $Id: Makefile,v 1.32 1998/09/22 22:55:53 asami Exp $
 #
 
 DISTNAME=	imlib-1.7
@@ -29,6 +29,6 @@ CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 WRKSRC=		${WRKDIR}/imlib
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
