@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	1.3.12
+PORTVERSION=	1.4.3
 PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -112,8 +112,8 @@ post-install:
 .for a in ${EXTRA_DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${a} ${PREFIX}/share/doc/courier-imap/
 .endfor
-	@ln -s ${PREFIX}/libexec/courier-imap/imapd.rc ${PREFIX}/etc/rc.d/courier-imap-imapd.sh.sample
-	@ln -s ${PREFIX}/libexec/courier-imap/pop3d.rc ${PREFIX}/etc/rc.d/courier-imap-pop3d.sh.sample
+	ln -s ${PREFIX}/libexec/courier-imap/imapd.rc ${PREFIX}/etc/rc.d/courier-imap-imapd.sh.sample
+	ln -s ${PREFIX}/libexec/courier-imap/pop3d.rc ${PREFIX}/etc/rc.d/courier-imap-pop3d.sh.sample
 	@echo ""
 	@echo "You will have to run ${PREFIX}/share/courier-imap/mkimapdcert to create"
 	@echo "a self-signed certificate if you want to use imapd-ssl."
