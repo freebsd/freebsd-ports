@@ -1,6 +1,6 @@
 bin/playsound
 include/SDL11/SDL_sound.h
-lib/libSDL_sound-1.0.so.0
+lib/libSDL_sound-1.0.so.1
 lib/libSDL_sound.a
 lib/libSDL_sound.so
 @unexec rmdir %D/include/SDL11 2>/dev/null || true

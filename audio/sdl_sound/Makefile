@@ -6,31 +6,21 @@
 #
 
 PORTNAME=	sdl_sound
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.icculus.org/SDL_sound/downloads/
-DISTNAME=	SDL_sound-1.0.0
+DISTNAME=	SDL_sound-${PORTVERSION}
 
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A SDL audio library and player for some popular sound file formats
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
-GNU_CONFIGURE=	yes
-USE_LIBTOOL=	yes
+USE_SDL=	yes
 USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
-
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
-
-post-patch:
-	@${REINPLACE_CMD} -E -e \
-		's|^program_transform_name.+$$||' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -E -e \
-		's|\$$\(includedir\)/SDL|\$$(includedir)/SDL11|' \
-		${CONFIGURE_WRKSRC}/Makefile.in
 
 .include <bsd.port.pre.mk>
 
@@ -46,10 +36,22 @@ LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=	--disable-mikmod
 .endif
 
+.if !defined(WITHOUT_PHYSFS)
+LIB_DEPENDS+=	physfs-0.1.9:${PORTSDIR}/devel/physfs
+.else
+CONFIGURE_ARGS+=	--disable-physfs
+.endif
+
 .if !defined(WITHOUT_SMPEG)
 LIB_DEPENDS+=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 .else
 CONFIGURE_ARGS+=	--disable-smpeg
+.endif
+
+.if !defined(WITHOUT_SPEEX)
+LIB_DEPENDS+=	speex.2:${PORTSDIR}/audio/speex
+.else
+CONFIGURE_ARGS+=	--disable-speex
 .endif
 
 .if !defined(WITHOUT_MIDI)
@@ -72,8 +74,14 @@ pre-extract:
 .if !defined(WITHOUT_MIKMOD)
 	@${ECHO_MSG} "You can disable support for mikmod by defining WITHOUT_MIKMOD."
 .endif
+.if !defined(WITHOUT_PHYSFS)
+	@${ECHO_MSG} "You can disable support for physfs by defining WITHOUT_PHYSFS."
+.endif
 .if !defined(WITHOUT_SMPEG)
 	@${ECHO_MSG} "You can disable support for smpeg by defining WITHOUT_SMPEG."
+.endif
+.if !defined(WITHOUT_SPEEX)
+	@${ECHO_MSG} "You can disable support for speex by defining WITHOUT_SPEEX."
 .endif
 .if !defined(WITHOUT_MIDI)
 	@${ECHO_MSG} "You can disable support for midi by defining WITHOUT_MIDI."
@@ -81,5 +89,9 @@ pre-extract:
 .if !defined(WITHOUT_VORBIS)
 	@${ECHO_MSG} "You can disable support for vorbis by defining WITHOUT_VORBIS."
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(includedir)/SDL|$$(includedir)/SDL11|' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
