@@ -8,6 +8,6 @@ in a set of source code files.
 
 Supported languages include: Assembler, AWK, ASP, BETA, Bourne/Korn/Zsh 
 Shell, C, C++, COBOL, Eiffel, Fortran, Java, Lisp, Make, Pascal, Perl, 
-PHP, Python, REXX, Ruby, S-Lang, Scheme, Tcl, and Vim.
+PHP, Python, REXX, Ruby, S-Lang, Scheme, Tcl, Vim and Yacc.
 
 WWW:    http://ctags.sourceforge.net/
