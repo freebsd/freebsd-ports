@@ -13,6 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BROKEN=		"Remotely exploitable buffer overrun"
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
