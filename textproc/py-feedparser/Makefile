@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	feedparser
-PORTVERSION=	3.1
+PORTVERSION=	3.3
 CATEGORIES=	textproc python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	feedparser
@@ -17,13 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An RSS feed parser written in Python
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_ZIP=	yes
-
-PLIST_FILES=	${PYTHON_SITELIBDIR:S,^${PREFIX}/,,}/${PORTNAME}.py
-
-do-install:
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.py ${PYTHON_SITELIBDIR}
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
