@@ -14,7 +14,7 @@ MASTER_SITES=	http://smarden.org/socklog/
 MAINTAINER=	sergei@kolobov.com
 COMMENT=	Small and secure replacement for syslogd
 
-RUN_DEPENDS=	chpst:${PORTSDIR}/sysutils/runit
+RUN_DEPENDS=	${LOCALBASE}/sbin/chpst:${PORTSDIR}/sysutils/runit
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}
 ALL_TARGET=	default
