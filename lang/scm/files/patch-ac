@@ -1,9 +1,9 @@
---- build.orig	Tue Nov 26 04:04:53 2002
-+++ build	Sat Nov 30 13:11:28 2002
+--- build.orig	Mon Dec  1 07:29:36 2003
++++ build	Sun Dec  7 23:42:13 2003
 @@ -1,5 +1,5 @@
  #! /bin/sh
 -:;exec ./scmlit -no-init-file -f $0 -e"(bi)" build $*
 +:;exec $SCMLIT -no-init-file -f $0 -e"(bi)" build $*
  
- (require (in-vicinity (program-vicinity) "build.scm"))
  (require 'getopt)
+ (require 'getopt-parameters)
