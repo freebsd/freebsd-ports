@@ -1,0 +1,6 @@
+****************************************************************
+Nocc has been installed in %%PREFIX%%/www/nocc directory.
+Change into this directory and make changes to the config
+file (conf.php). The file is fairly well documented.
+Also be sure that register_globals = On in the Nocc directory.
+****************************************************************

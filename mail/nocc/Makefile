@@ -13,31 +13,36 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sysadmin@alexdupre.com
 
-LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+RUN_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/www/mod_php4
 
 NO_BUILD=	yes
 
+pre-everything:
+	@${ECHO} ""
+	@${ECHO} "You have to configure PHP with IMAP support in order"
+	@${ECHO} "to let Nocc connect to your POP3/IMAP server."
+	@${ECHO} ""
+	@${ECHO} "If you have already compiled PHP without IMAP,"
+	@${ECHO} "press CTRL+C now and rebuild it before installing Nocc."
+	@${ECHO} ""
+
 do-install:
-	${MKDIR} ${LOCALBASE}/www/nocc
+	${MKDIR} ${PREFIX}/www/nocc
 	${CP} -Rp ${WRKSRC}/html ${WRKSRC}/lang ${WRKSRC}/themes \
-	          ${LOCALBASE}/www/nocc
-	${CP} -p ${WRKSRC}/*.php ${LOCALBASE}/www/nocc
-	${CP} -p ${WRKSRC}/conf.php.dist ${LOCALBASE}/www/nocc/conf.php
-	${CHOWN} -R www:www ${LOCALBASE}/www/nocc
+	          ${PREFIX}/www/nocc
+	${CP} -p ${WRKSRC}/*.php ${PREFIX}/www/nocc
+	${CP} -p ${WRKSRC}/conf.php.dist ${PREFIX}/www/nocc
+	@if [ ! -f ${PREFIX}/www/nocc/conf.php ]; then \
+		${CP} ${PREFIX}/www/nocc/conf.php.dist \
+			${PREFIX}/www/nocc/conf.php; \
+	fi
+	${CHOWN} -R www:www ${PREFIX}/www/nocc
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o ${DOCOWN} -g ${DOCGRP} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
 
 post-install:
-	@${ECHO} "****************************************************************"
-	@${ECHO} "Nocc has been installed in ${LOCALBASE}/www/nocc directory."
-	@${ECHO} "Change into this directory and make changes to the config"
-	@${ECHO} "file (conf.php). The file is fairly well documented."
-.if !defined(NOPORTDOCS)
-	@${ECHO} "All documentation has been located in ${DOCSDIR}."
-.endif
-	@${ECHO} "****************************************************************"
+	@${SED} 's|%%PREFIX%%|${PREFIX}|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
