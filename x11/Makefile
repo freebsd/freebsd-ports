@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.213 1998/06/24 10:54:30 max Exp $
+# $Id: Makefile,v 1.214 1998/07/12 08:41:25 scrappy Exp $
 #
 
     SUBDIR += FWF
@@ -38,6 +38,7 @@
     SUBDIR += gwm
     SUBDIR += icewm
     SUBDIR += iv
+    SUBDIR += kb2mb2
     SUBDIR += kde
     SUBDIR += kdebase
     SUBDIR += kdelibs
