@@ -7,6 +7,7 @@
 
 PORTNAME=	wmmon
 PORTVERSION=	1.0b2
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://linux.tucows.com/files/x11/dock/
 
