@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Prune the failure and newfailure files of stale entries
+# Prune the failure files of stale entries
 #
 # This must be called via:
 #
@@ -14,7 +14,7 @@ pb=/var/portbuild
 
 cleanup() {
     echo "Problem writing new failure file!"
-    rm failure.new
+    rm -f failure.new
     exit 1
 }
 
@@ -47,10 +47,10 @@ echo "===> Pruning old failure file"
 
 rm -f failure.new
 IFS='|'
-while read dir name ver date count; do
+while read dir name ver olddate date count; do
 
-    if [ -z "$dir" -o -z "$name" -o -z "$ver" -o -z "$date" -o -z "$count" ]; then
-	echo Malformed entry "$dir|$name|$ver|$date|$count"
+    if [ -z "$dir" -o -z "$name" -o -z "$ver" -o -z "$olddate" -o -z "$date" -o -z "$count" ]; then
+	echo Malformed entry "$dir|$name|$ver|$olddate|$date|$count"
 	continue
     fi
 
@@ -72,43 +72,7 @@ while read dir name ver date count; do
 	continue
     fi
 
-    (echo "$dir|$name|$newver|$date|$count" >> $home/failure.new) || cleanup
+    (echo "$dir|$name|$newver|$olddate|$date|$count" >> $home/failure.new) || cleanup
 done < $home/failure
 
 mv failure.new failure
-
-echo "===> Pruning old newfailure file"
-
-rm -f newfailure.new
-IFS='|'
-while read dir name ver date; do
-    if [ -z "$dir" -o -z "$name" -o -z "$ver" -o -z "$date" ]; then
-	echo Malformed entry "$dir|$name|$ver|$date|$count"
-	continue
-    fi
-
-    entry=$(grep "|/usr/ports/$dir|" $index)
-
-    if [ -z "$entry" ]; then
-	echo $dir not in index
-	continue
-    fi
-
-    newver=$(echo $entry | awk '{print $1}')
-
-    if [ -e "$home/packages/All/$newver${PKGSUFFIX}" ]; then
-	echo "$newver package exists, should not still be here!"
-	continue
-    fi
-
-    if grep -q $newver $home/duds.orig; then
-	echo "$newver listed in duds, should not be here"
-	continue
-    fi
-
-    (echo "$dir|$name|$newver|$date" >> $home/newfailure.new) || cleanup
-done < $home/newfailure
-
-mv newfailure.new newfailure
-
-
