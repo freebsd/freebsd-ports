@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		p4v
-PORTVERSION=		2004.1.63016
+PORTVERSION=		2004.1.65538
 CATEGORIES=		devel
 MASTER_SITES=		\
 	http://www.perforce.com/downloads/perforce/r04.1/bin.freebsd4/ \
@@ -16,8 +16,6 @@ EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		bms@FreeBSD.org
 COMMENT=		Visual client for Perforce SCM
-
-BROKEN=			Unfetchable
 
 NO_CDROM=		yes
 RESTRICTED=		"Binary redistribution restrictions in effect"
