@@ -18,6 +18,8 @@ COMMENT=	PC/SC Lite driver for the GemPC 410 serial smart card reader
 BUILD_DEPENDS=	${LOCALBASE}/include/ifdhandler.h:${PORTSDIR}/security/ifd-devkit
 LIB_DEPENDS=	pcsclite.0:${PORTSDIR}/devel/pcsc-lite
 
+BROKEN=		"Does not fetch"
+
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
