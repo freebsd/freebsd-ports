@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=markm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD-modified "Standard" BSD games
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 
 MAN6=	\
@@ -50,5 +51,10 @@ IGNOREFILES=	freebsd-games-5.0.tar.bz2
 post-extract:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
+
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.c' -or -name '*.h' -or -name '*.6' -or \
+		-name 'index' | ${XARGS} ${REINPLACE_CMD} -e \
+		's|share/games|local/share/games|g' \
 
 .include <bsd.port.mk>
