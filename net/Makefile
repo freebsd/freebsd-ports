@@ -2,6 +2,7 @@
 #
 
     SUBDIR += SSLtelnet
+    SUBDIR += adns
     SUBDIR += archie
     SUBDIR += archie.el
     SUBDIR += argus
