@@ -6,7 +6,7 @@
 
 PORTNAME=	pam_smb
 PORTVERSION=	1.9.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=   http://www.csn.ul.ie/~airlied/pam_smb/devel/
 
