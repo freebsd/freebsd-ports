@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gcalctool
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.9
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/sources/gcalctool
+MASTER_SITE_SUBDIR=	2.0.1/sources/${PORTNAME}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -20,19 +20,19 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-MAN1=	calctool.1
+MAN1=	gcalctool.1
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-	@find ${WRKSRC} -name "*.[ch]" | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
 .include <bsd.port.mk>
