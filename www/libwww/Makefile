@@ -15,7 +15,7 @@ MAINTAINER=	jseger@FreeBSD.org
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-CONFIGURE_ARGS=	--enable-shared --enable-static
+CONFIGURE_ARGS=	--enable-shared --enable-static --with-zlib
 DOCDIR=		${PREFIX}/share/doc/libwww
 MAKE_ENV=	objformat=${PORTOBJFORMAT}
 

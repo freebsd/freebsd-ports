@@ -213,6 +213,9 @@ lib/libwwwutils.so.1
 lib/libwwwxml.a
 lib/libwwwxml.so
 lib/libwwwxml.so.1
+lib/libwwwzip.a
+lib/libwwwzip.so
+lib/libwwwzip.so.1
 lib/libxmlparse.a
 lib/libxmlparse.so
 lib/libxmlparse.so.1
