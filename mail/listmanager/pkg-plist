@@ -164,4 +164,5 @@ share/listmanager/help/verbose
 share/listmanager/help/verify
 share/listmanager/help/version
 @dirrm share/listmanager/help
+@dirrm share/listmanager
 @unexec rmdir %D/share/listmanager 2>/dev/null || true
