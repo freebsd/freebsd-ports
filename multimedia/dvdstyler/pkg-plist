@@ -1,51 +1,37 @@
 bin/dvdstyler
-share/dvdstyler/backgrounds/autobahn.jpg
-share/dvdstyler/backgrounds/bi_domrep.jpg
-share/dvdstyler/backgrounds/blue.jpg
-share/dvdstyler/backgrounds/creta.jpg
-share/dvdstyler/backgrounds/darkblue.jpg
-share/dvdstyler/backgrounds/kiel_kanal.jpg
-share/dvdstyler/backgrounds/lightblue.jpg
-share/dvdstyler/backgrounds/swans.jpg
-share/dvdstyler/bin/dvdstyler
-share/dvdstyler/bin/rc/dvdstyler.png
-share/dvdstyler/bin/rc/files.png
-share/dvdstyler/bin/rc/folder1.png
-share/dvdstyler/bin/rc/folder2.png
-share/dvdstyler/bin/rc/logo.png
-share/dvdstyler/bin/rc/logo_big.png
-share/dvdstyler/bin/rc/minus.png
-share/dvdstyler/bin/rc/move.cur
-share/dvdstyler/bin/rc/nesw.cur
-share/dvdstyler/bin/rc/new.png
-share/dvdstyler/bin/rc/nwse.cur
-share/dvdstyler/bin/rc/open.png
-share/dvdstyler/bin/rc/plus.png
-share/dvdstyler/bin/rc/run.png
-share/dvdstyler/bin/rc/save.png
-share/dvdstyler/buttons/simple.xml
-share/dvdstyler/locale/de/LC_MESSAGES/dvdstyler.mo
-share/dvdstyler/locale/es/LC_MESSAGES/dvdstyler.mo
-share/dvdstyler/locale/fr/LC_MESSAGES/dvdstyler.mo
-share/dvdstyler/locale/hu/LC_MESSAGES/dvdstyler.mo
-share/dvdstyler/locale/it/LC_MESSAGES/dvdstyler.mo
-share/dvdstyler/locale/ru/LC_MESSAGES/dvdstyler.mo
-share/dvdstyler/silence.mp2
-@dirrm share/dvdstyler/locale/ru/LC_MESSAGES
-@dirrm share/dvdstyler/locale/ru
-@dirrm share/dvdstyler/locale/it/LC_MESSAGES
-@dirrm share/dvdstyler/locale/it
-@dirrm share/dvdstyler/locale/hu/LC_MESSAGES
-@dirrm share/dvdstyler/locale/hu
-@dirrm share/dvdstyler/locale/fr/LC_MESSAGES
-@dirrm share/dvdstyler/locale/fr
-@dirrm share/dvdstyler/locale/es/LC_MESSAGES
-@dirrm share/dvdstyler/locale/es
-@dirrm share/dvdstyler/locale/de/LC_MESSAGES
-@dirrm share/dvdstyler/locale/de
-@dirrm share/dvdstyler/locale
-@dirrm share/dvdstyler/buttons
-@dirrm share/dvdstyler/bin/rc
-@dirrm share/dvdstyler/bin
-@dirrm share/dvdstyler/backgrounds
-@dirrm share/dvdstyler
+%%DATADIR%%/backgrounds/autobahn.jpg
+%%DATADIR%%/backgrounds/bi_domrep.jpg
+%%DATADIR%%/backgrounds/blue.jpg
+%%DATADIR%%/backgrounds/creta.jpg
+%%DATADIR%%/backgrounds/darkblue.jpg
+%%DATADIR%%/backgrounds/kiel_kanal.jpg
+%%DATADIR%%/backgrounds/lightblue.jpg
+%%DATADIR%%/backgrounds/swans.jpg
+%%DATADIR%%/buttons/simple.xml
+%%DATADIR%%/data/silence.mp2
+%%DATADIR%%/rc/dvdstyler.png
+%%DATADIR%%/rc/files.png
+%%DATADIR%%/rc/folder1.png
+%%DATADIR%%/rc/folder2.png
+%%DATADIR%%/rc/logo.png
+%%DATADIR%%/rc/logo_big.png
+%%DATADIR%%/rc/minus.png
+%%DATADIR%%/rc/move.cur
+%%DATADIR%%/rc/nesw.cur
+%%DATADIR%%/rc/new.png
+%%DATADIR%%/rc/nwse.cur
+%%DATADIR%%/rc/open.png
+%%DATADIR%%/rc/plus.png
+%%DATADIR%%/rc/run.png
+%%DATADIR%%/rc/save.png
+share/locale/de/LC_MESSAGES/dvdstyler.mo
+share/locale/es/LC_MESSAGES/dvdstyler.mo
+share/locale/fr/LC_MESSAGES/dvdstyler.mo
+share/locale/hu/LC_MESSAGES/dvdstyler.mo
+share/locale/it/LC_MESSAGES/dvdstyler.mo
+share/locale/ru/LC_MESSAGES/dvdstyler.mo
+@dirrm %%DATADIR%%/rc
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/buttons
+@dirrm %%DATADIR%%/backgrounds
+@dirrm %%DATADIR%%
