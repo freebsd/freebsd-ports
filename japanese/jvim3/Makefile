@@ -9,7 +9,7 @@
 DISTNAME=	vim
 PKGNAME?=	ja-jvim${INPUT_METHOD}-3.0.1.7j
 CATEGORIES=	japanese editors
-MASTER_SITES=	ftp://dutepp0.et.tudelft.nl/pub/Unix/Editors/ \
+MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
 		http://hp.vector.co.jp/authors/VA003457/vim/vim3/1.7/
 DISTFILES=	vim-3.0.tar.gz ${JPATCH}
 
