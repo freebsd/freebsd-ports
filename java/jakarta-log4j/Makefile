@@ -18,33 +18,38 @@ NO_BUILD=	YES
 
 PORT_JARFILE=		log4j-${PORTVERSION}.jar
 DEST_JARFILE=		log4j.jar
-JAVA_WRKLIBDIR=		${WRKSRC}/dist/lib
+JAVA_WRKJARDIR=		${WRKSRC}/dist/lib
 JAVA_WRKDOCSDIR=	${WRKSRC}/docs
 JAVA_WRKEXAMPLESDIR=	${WRKSRC}/examples
-JAVA_LIBDIR=		${PREFIX}/share/java/classes
-JAVA_EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
-INSTALL_JAR=		${INSTALL_DATA}
+PLIST_SUB+=		JAVAJARDIR=${JAVAJARDIR:S/^${PREFIX}\///}
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	FAQ.html HISTORY TODO TROUBLESHOOT.html api contactUs.html \
+		contributors.html critique.html deepExtension.html \
+		documentation.html download.html earlier.html history.html \
+		images index.html lf5 manual.html od.gif overview.html \
+		plan.html praise.html srtw.html
+.endif
 
 do-install:
 	@${ECHO_CMD} -n ">> Installing JAR file..."
-	@${MKDIR} ${JAVA_LIBDIR}
-	@cd ${JAVA_WRKLIBDIR} && ${INSTALL_JAR} ${PORT_JARFILE} ${JAVA_LIBDIR}/${DEST_JARFILE}
+	@${MKDIR} ${JAVAJARDIR}
+	@cd ${JAVA_WRKJARDIR} && ${INSTALL_DATA} ${PORT_JARFILE} ${JAVAJARDIR}/${DEST_JARFILE}
 	@${ECHO_CMD} " [DONE]"
-
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} -n ">> Installing documentation..."
-	@cd ${JAVA_WRKDOCSDIR}     && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} ";"
-	@cd ${JAVA_WRKDOCSDIR}     && ${FIND} . -type f -exec ${INSTALL_MAN} ${JAVA_WRKDOCSDIR}/{} ${DOCSDIR}/{} ";"
+	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} ";"
+	@cd ${JAVA_WRKDOCSDIR} && ${FIND} . -type f -exec ${INSTALL_MAN} ${JAVA_WRKDOCSDIR}/{} ${DOCSDIR}/{} ";"
 	@${ECHO_CMD} " [DONE]"
 
 	@${ECHO_CMD} -n ">> Installing examples..."
-	@cd ${JAVA_WRKEXAMPLESDIR} && ${FIND} . -type d -exec ${MKDIR} ${JAVA_EXAMPLESDIR}/{} ";"
-	@cd ${JAVA_WRKEXAMPLESDIR} && ${FIND} . -type f -exec ${INSTALL_DATA} ${JAVA_WRKEXAMPLESDIR}/{} ${JAVA_EXAMPLESDIR}/{} ";"
+	@cd ${JAVA_WRKEXAMPLESDIR} && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} ";"
+	@cd ${JAVA_WRKEXAMPLESDIR} && ${FIND} . -type f -exec ${INSTALL_DATA} ${JAVA_WRKEXAMPLESDIR}/{} ${EXAMPLESDIR}/{} ";"
 	@${ECHO_CMD} " [DONE]"
 .endif
 
 post-install:
-	@${ECHO_CMD} "${PORTNAME}-${PORTVERSION} installed as ${JAVA_LIBDIR}/${PORT_JARFILE}"
+	@${ECHO_CMD} "${PORTNAME}-${PORTVERSION} installed as ${JAVAJARDIR}/${DEST_JARFILE}"
 
 .include <bsd.port.mk>
