@@ -9734,6 +9734,7 @@ ruby-lua4	ports/lang/ruby-lua4
 ruby-lv		ports/converters/ruby-lv
 ruby-man	ports/lang/ruby-man
 ruby-mcrypt	ports/security/ruby-mcrypt
+ruby-memcache	ports/databases/ruby-memcache
 ruby-metaruby	ports/devel/ruby-metaruby
 ruby-mime-types	ports/mail/ruby-mime-types
 ruby-ming	ports/graphics/ruby-ming
