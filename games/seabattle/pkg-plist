@@ -1,0 +1,10 @@
+bin/seabattle
+share/seabattle/hit1.au
+share/seabattle/hit2.au
+share/seabattle/miss1.au
+share/seabattle/miss2.au
+share/seabattle/opening.au
+share/seabattle/sunkit.au
+share/doc/seabattle/readme.txt
+@dirrm share/seabattle
+@dirrm share/doc/seabattle

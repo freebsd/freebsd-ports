@@ -1,0 +1,55 @@
+*** bdb.c	Tue May 13 19:49:59 1997
+--- /home/andy/tmp/wrk/bdb.c	Mon Jun 30 14:41:23 1997
+***************
+*** 325,332 ****
+     char names[10][100],text[100];
+     int ch,scores[10],i;
+                                  /* If not there, create one */
+!    if( (fff=fopen("hiscore.sea","r+"))==NULL ){
+!         if ( (fff=fopen("hiscore.sea","a+"))!=NULL) {
+  	   fprintf(fff,"Vince\n50\nMarie\n55\nJohn\n56\n");
+  	   fprintf(fff,"Gus\n57\nLizann\n58\nKevin\n59\n");
+  	   fprintf(fff,"Hal\n60\nHairold\n61\nChipper\n62\nBob\n63\n");
+--- 325,332 ----
+     char names[10][100],text[100];
+     int ch,scores[10],i;
+                                  /* If not there, create one */
+!    if( (fff=fopen(PREFIX "/share/seabattle/hiscore.sea","r+"))==NULL ){
+!         if ( (fff=fopen(PREFIX "/share/seabattle/hiscore.sea","a+"))!=NULL) {
+  	   fprintf(fff,"Vince\n50\nMarie\n55\nJohn\n56\n");
+  	   fprintf(fff,"Gus\n57\nLizann\n58\nKevin\n59\n");
+  	   fprintf(fff,"Hal\n60\nHairold\n61\nChipper\n62\nBob\n63\n");
+***************
+*** 335,341 ****
+     }
+     else fclose(fff);
+     
+!    if ( (fff=fopen("hiscore.sea","r"))!=NULL) {
+     for(i=0;i<10;i++)
+       fscanf(fff,"%s%i",names[i],&scores[i]);
+       fclose(fff);
+--- 335,341 ----
+     }
+     else fclose(fff);
+     
+!    if ( (fff=fopen(PREFIX "/share/seabattle/hiscore.sea","r"))!=NULL) {
+     for(i=0;i<10;i++)
+       fscanf(fff,"%s%i",names[i],&scores[i]);
+       fclose(fff);
+***************
+*** 355,361 ****
+       set_color(C_WHITE,C_BOLD); 
+       sprintf(text,"%s got a new High Score, #%i",name,i+1);
+       printxy(20,1,text);
+!      if ( (fff=fopen("hiscore.sea","w+"))!=NULL) {
+         for(i=0;i<10;i++) fprintf(fff,"%s\n%i",names[i],scores[i]);
+         fclose(fff);
+       }
+--- 355,361 ----
+       set_color(C_WHITE,C_BOLD); 
+       sprintf(text,"%s got a new High Score, #%i",name,i+1);
+       printxy(20,1,text);
+!      if ( (fff=fopen(PREFIX "/share/seabattle/hiscore.sea","w+"))!=NULL) {
+         for(i=0;i<10;i++) fprintf(fff,"%s\n%i",names[i],scores[i]);
+         fclose(fff);
+       }
