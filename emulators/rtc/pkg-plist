@@ -4,7 +4,4 @@ modules/rtc.ko
 share/examples/rtc/test.c
 @dirrm share/examples/rtc
 @unexec rmdir %D/modules 2>/dev/null || true
-@exec rm -f %%DEVDIR%%/rtc
-@exec mkdir -p %%DEVDIR%%
-@exec mknod %%DEVDIR%%/rtc c %%CDEV_MAJOR%% 0
-@unexec rm -f %%DEVDIR%%/rtc
+@unexec rm -f /dev/rtc
