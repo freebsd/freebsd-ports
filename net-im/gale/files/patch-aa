@@ -1,0 +1,10 @@
+--- liboop/configure.orig	Sun Jul 16 04:58:10 2000
++++ liboop/configure	Sun Jul 16 04:57:48 2000
+@@ -7,6 +7,7 @@
+ # This configure script is free software; the Free Software Foundation
+ # gives unlimited permission to copy, distribute and modify it.
+ 
++INSTALL=
+ # Defaults:
+ ac_help=
+ ac_default_prefix=/usr/local
