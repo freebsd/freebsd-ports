@@ -9,7 +9,7 @@
 DISTNAME=	replay-source-dgtk_0.61
 PKGNAME=	replay-0.61
 CATEGORIES=	audio
-MASTER_SITES=	ftp://narayan.replicant.nu/pub/replay/ \
+MASTER_SITES=	http://replay.replicant.nu/files/ \
 		ftp://ftp.icemark.ch/pub/replay/ \
 		ftp://k2.lund.se/pub/replay/
 
