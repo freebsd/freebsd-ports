@@ -123,6 +123,10 @@
     SUBDIR += makedepend
     SUBDIR += mico
     SUBDIR += mime
+    SUBDIR += mingw
+    SUBDIR += mingw-bin-msvcrt
+    SUBDIR += mingw-binutils
+    SUBDIR += mingw-gcc
     SUBDIR += mkcmd
     SUBDIR += mkmf
     SUBDIR += mm
