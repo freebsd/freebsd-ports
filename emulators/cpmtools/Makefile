@@ -22,5 +22,4 @@ MAN1=		cpm.1
 do-build:
 	@(cd ${WRKSRC}; ${MAKE} PREFIX=${PREFIX} ${MAKE_FLAGS} ${MAKEFILE} all)
 
-
 .include <bsd.port.mk>
