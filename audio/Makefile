@@ -236,6 +236,7 @@
     SUBDIR += muse
     SUBDIR += musepack
     SUBDIR += musicbox
+    SUBDIR += musicbox-tag-editor
     SUBDIR += musicbrainz
     SUBDIR += musiccontrol
     SUBDIR += musicpd
