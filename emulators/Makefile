@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.13 1997/07/07 11:28:05 max Exp $
+# $Id: Makefile,v 1.14 1997/07/31 07:23:58 max Exp $
 #
 
     SUBDIR += aftp
+    SUBDIR += atari800
     SUBDIR += bsvc
     SUBDIR += cpmemu
     SUBDIR += cpmtools
