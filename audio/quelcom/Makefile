@@ -32,6 +32,10 @@ LDFLAGS=	-L../lib -L${LOCALBASE}/lib -lintl
 BROKEN=		"Linker error on alpha 4.x"
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Linker error on ia64"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|make |$$(MAKE) |g ; \
