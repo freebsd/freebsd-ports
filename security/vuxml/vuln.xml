@@ -32,6 +32,31 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="938f357c-16dd-11d9-bc4a-000c41e2cdad">
+    <topic>bmon -- unsafe set-user-ID application</topic>
+    <affects>
+      <package>
+	<name>bmon</name>
+	<range><lt>1.2.1_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Jon Nistor reported that the FreeBSD port of bmon was
+         installed set-user-ID root, and executes commands using
+         relative paths.  This could allow local user to easily obtain
+         root privileges.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/67340</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2004-05-29</discovery>
+      <entry>2004-10-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="84ab58cf-e4ac-11d8-9b0a-000347a4fa7d">
     <topic>gnutls -- certificate chain verification DoS</topic>
     <affects>
