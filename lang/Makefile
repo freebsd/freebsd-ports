@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.111 1998/09/24 00:31:19 vanilla Exp $
+# $Id: Makefile,v 1.112 1998/10/21 18:53:16 andreas Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -38,7 +38,6 @@
     SUBDIR += javac_netscape
     SUBDIR += jdk
     SUBDIR += kaffe
-    SUBDIR += kawk
     SUBDIR += lcc
     SUBDIR += libobjects
     SUBDIR += logo
