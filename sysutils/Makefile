@@ -338,6 +338,7 @@
     SUBDIR += xfce4-battery-plugin
     SUBDIR += xfce4-mcs-manager
     SUBDIR += xfce4-mcs-plugins
+    SUBDIR += xfce4-showdesktop-plugin
     SUBDIR += xfce4-systemload-plugin
     SUBDIR += xfce4-utils
     SUBDIR += xfsm

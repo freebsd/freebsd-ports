@@ -1,0 +1,3 @@
+lib/xfce4/panel-plugins/libshowdesktop.so
+@unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
+@unexec rmdir %D/lib/xfce4 2>/dev/null || true
