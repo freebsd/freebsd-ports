@@ -27,6 +27,9 @@ DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 #
 # configuration for language specific slave ports
 #
+.if !defined(LANG_EXT)
+LANG_EXT=01
+.endif
 .if defined(LANG_PKGNAME)
 PKGNAMEPREFIX=	${LANG_PKGNAME}-
 
