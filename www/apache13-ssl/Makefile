@@ -6,10 +6,10 @@
 #			and apache-ssl port by Mark Murray <mark@grondar.za>.
 #			Oh, and with a little bit of help from Ben :)
 #
-# $Id: Makefile,v 1.4 1999/04/05 19:19:45 addy Exp $
+# $Id: Makefile,v 1.56 1999/04/10 07:53:03 dirk Exp $
 
 APACHE= 	1.3.6
-APACHE-SSL=	1.32
+APACHE-SSL=	1.35
 
 DISTNAME=       apache_${APACHE}
 PKGNAME=        apache-${APACHE}+ssl_${APACHE-SSL}
@@ -45,6 +45,7 @@ BUILD_DEPENDS=	${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/openssl \
 RUN_DEPENDS=	openssl:${PORTSDIR}/security/openssl
 
 HAS_CONFIGURE=	yes
+CFLAGS+=	-I${PREFIX}/include/openssl
 CONFIGURE_ARGS=	\
 		--prefix=${PREFIX} \
 		--with-layout=GNU \
