@@ -14,6 +14,8 @@ MASTER_SITES=		http://jodrell.net/files/gresolver/
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A graphical DNS query tool using GTK+
 
+USE_GCC=	4.0
+
 RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext \
 			${SITE_PERL}/${PERL_ARCH}/Gtk2.pm:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 			${SITE_PERL}/${PERL_ARCH}/Gtk2/GladeXML.pm:${PORTSDIR}/x11-toolkits/p5-Glade2 \
