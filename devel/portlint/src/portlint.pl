@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.35 2004/01/02 02:14:06 marcus Exp $
+# $Id: portlint.pl,v 1.36 2004/01/07 06:41:26 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 5;
-my $micro = 5;
+my $micro = 6;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -894,7 +894,7 @@ sub checkpatch {
 	while (<IN>) {
 		$whole .= $_;
 	}
-	if ($committer && $whole =~ /\$([A-Za-z0-9]+)[:\$]/) {
+	if ($committer && $whole =~ /\$([A-Z][A-Za-z0-9]+)(:[^\n]+)?\$/) {
 		my $lineno = &linenumber($`);
 		&perror("WARN: $file [$lineno]: includes possible RCS tag \"\$$1\$\". ".
 			"use binary mode (-ko) on commit/import.") unless
@@ -1137,6 +1137,9 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 	# use of echo itself.
 	$j = $whole;
 	$j =~ s/([ \t][\@\-]{0,2})(echo|\$[\{\(]ECHO[\}\)]|\$[\{\(]ECHO_MSG[\}\)])[ \t]+("(\\'|\\"|[^"])*"|'(\\'|\\"|[^'])*')[ \t]*;?(\n?)/$1$2;$3/g; #"
+	# ignore variables names in .for loops, but not what's at the end
+	# of the for loop
+	$j =~ s/(\.for +)([^ ]*)( .*)/$1$3/;
 	foreach my $i (keys %cmdnames) {
 		# XXX This is a hack.  Really, we should break $j up into individual
 		# lines, and go through each one.
