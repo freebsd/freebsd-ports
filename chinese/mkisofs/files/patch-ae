@@ -1,0 +1,19 @@
+--- name.c.orig	Fri Mar  3 15:33:43 2000
++++ name.c	Fri Mar  3 15:45:25 2000
+@@ -213,6 +213,7 @@
+ 	    }
+ 	  if(current_length < 30) 
+ 	    {
++/*
+ 	      if( *pnt < 0 )
+ 		{
+ 		  *result++ = '_';
+@@ -221,6 +222,8 @@
+ 		{
+ 		  *result++ = (islower((unsigned char)*pnt) ? toupper((unsigned char)*pnt) : *pnt);
+ 		}
++*/
++	      *result++ = *pnt;
+ 	    }
+ 	}
+       else

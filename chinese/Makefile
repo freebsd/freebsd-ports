@@ -28,6 +28,7 @@
     SUBDIR += linux-netscape47-communicator
     SUBDIR += linux-netscape47-navigator
     SUBDIR += lunar
+    SUBDIR += mkisofs
     SUBDIR += moefonts-cid
     SUBDIR += moettf
     SUBDIR += mule-freewnn

@@ -1,0 +1,26 @@
+--- defaults.h.orig	Mon Oct 13 04:21:11 1997
++++ defaults.h	Thu Dec  4 21:14:16 1997
+@@ -39,6 +39,22 @@
+ #define  SYSTEM_ID_DEFAULT 	"AIX"
+ #endif
+ 
+-#ifndef SYSTEM_ID_DEFAULT
++#ifdef __linux__
+ #define  SYSTEM_ID_DEFAULT 	"LINUX"
++#endif
++
++#ifdef __FreeBSD__
++#define  SYSTEM_ID_DEFAULT 	"FreeBSD"
++#endif
++
++#ifdef __OpenBSD__
++#define  SYSTEM_ID_DEFAULT 	"OpenBSD"
++#endif
++
++#ifdef __NetBSD__
++#define  SYSTEM_ID_DEFAULT 	"NetBSD"
++#endif
++
++#ifndef SYSTEM_ID_DEFAULT
++#define  SYSTEM_ID_DEFAULT 	"Unknown"
+ #endif

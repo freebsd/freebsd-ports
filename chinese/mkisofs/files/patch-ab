@@ -1,0 +1,26 @@
+--- include/mconfig.h.orig	Mon Mar  1 18:42:26 1999
++++ include/mconfig.h	Sat May  8 17:00:07 1999
+@@ -28,6 +28,10 @@
+ #ifndef _MCONFIG_H
+ #define _MCONFIG_H
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#	include <sys/param.h>
++#endif
++
+ /*
+  * This hack that is needed as long as VMS has no POSIX shell.
+  */
+@@ -77,6 +81,12 @@
+ /*
+  * Some magic that cannot (yet) be figured out with autoconf.
+  */
++
++#if (defined(BSD) && (BSD >= 199103))
++#	ifndef	HAVE_FLOCK
++#		define	HAVE_FLOCK
++#	endif
++#endif
+ 
+ #ifdef sparc
+ #	ifndef	HAVE_LDSTUB
