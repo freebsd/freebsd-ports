@@ -17,7 +17,6 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 PLIST_SUB+=	DOCSDIR=${DOCSDIR:S,${PREFIX}/,,}
 
-WANT_GNOME=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -25,7 +24,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_GNOME) 
+.if defined(WITH_GNOME)
 USE_GNOME=	libgnomeui
 CONFIGURE_ARGS+=	"--with-gnome"
 PKGNAMESUFFIX=	-gnome
@@ -55,7 +54,7 @@ pre-install:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distcc ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-text ${PREFIX}/bin
-.if !defined(WITHOUT_GNOME) && ${HAVE_GNOME:Mlibgnomeui} != ""
+.if defined(WITH_GNOME) || defined(WITH_GTK)
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-gnome ${PREFIX}/bin
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccd ${PREFIX}/sbin
