@@ -125,19 +125,23 @@ pre-fetch:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	/usr/bin/dialog --yesno "SECURITY NOTICE: TCL support is only \
 	available by linking a precompiled binary object into the Application. \
-	Do you really want to proceed building BitchX with TCL support?" 7 70 || ${FALSE} 
+	Do you really want to proceed building BitchX with TCL support?" 7 70 || ${FALSE}
 .endif # BATCH
 
 .endif # WITH_TCL
 
 pre-extract:
 .if exists(${PREFIX}/bin/gpg)
+	@${MKDIR} ${WRKDIR}
 	@${ECHO_CMD} "===> Verifying GnuPG Signatures."
-	-gpg --keyserver pgp.mit.edu --recv-key 42D1F77C
-	cd ${DISTDIR}; gpg --verify ircii-pana-${PORTVERSION}${EXTRACT_SUFX}.sig \
+	-gpg --keyserver pgp.mit.edu --no-default-keyring \
+		--keyring ${WRKDIR}/keyring --recv-key 42D1F77C
+	cd ${DISTDIR}; gpg --keyring ${WRKDIR}/keyring --verify \
+		ircii-pana-${PORTVERSION}${EXTRACT_SUFX}.sig \
 		ircii-pana-${PORTVERSION}${EXTRACT_SUFX}
 .if defined(WITH_TCL)
-	cd ${DISTDIR}; gpg --verify freebsd4-tcl83-bx1.0c19-tcl.o.sig \
+	cd ${DISTDIR}; gpg --keyring ${WRKDIR}/keyring --verify \
+		freebsd4-tcl83-bx1.0c19-tcl.o.sig \
 		freebsd4-tcl83-bx1.0c19-tcl.o
 .endif
 .else
