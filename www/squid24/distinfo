@@ -1,6 +1,0 @@
-MD5 (squid2.4/squid-2.4.STABLE7-src.tar.gz) = 3b91136b8ddcc37196716fa6e85a14b2
-SIZE (squid2.4/squid-2.4.STABLE7-src.tar.gz) = 1087532
-MD5 (squid2.4/squid-2.4.STABLE7-url_port.patch) = 06c240335e8624f509ba09bbb3da9e0e
-SIZE (squid2.4/squid-2.4.STABLE7-url_port.patch) = 796
-MD5 (squid2.4/squid-2.4.STABLE7-url_escape.patch) = e638eb8fadf1c66adcc808cc9f253286
-SIZE (squid2.4/squid-2.4.STABLE7-url_escape.patch) = 821
