@@ -3,7 +3,7 @@
 # Date created:                         15th June 1996
 # Whom:                                 gpalmer
 #
-# $Id: Makefile,v 1.6 1996/11/18 11:39:24 asami Exp $
+# $Id: Makefile,v 1.7 1997/03/07 12:33:01 obrien Exp $
 #
 
 DISTNAME=	fwtk-1.3
@@ -29,7 +29,7 @@ SBIN_BINS=	authdump authload authmgr
 LIBEXEC_BINS=	authsrv ftp-gw http-gw netacl plug-gw rlogin-gw smap smapd \
 		tn-gw x-gw
 
-fetch:
+do-fetch:
 	@if [ ! -f ${DISTDIR}/fwtk-v1.3${EXTRACT_SUFX} ]; then \
 	  echo ""; \
 	  echo "Please read ftp://ftp.tis.com/pub/firewalls/toolkit/README"; \
