@@ -376,8 +376,8 @@ share/AbiSuite/AbiWord/strings/ca-ES.strings
 share/AbiSuite/AbiWord/strings/cs-CZ.strings
 share/AbiSuite/AbiWord/strings/cy-CY.strings
 share/AbiSuite/AbiWord/strings/da-DK.strings
+share/AbiSuite/AbiWord/strings/de-CH.strings
 share/AbiSuite/AbiWord/strings/de-DE.strings
-share/AbiSuite/AbiWord/strings/du-NL.strings
 share/AbiSuite/AbiWord/strings/en-AU.strings
 share/AbiSuite/AbiWord/strings/en-GB.strings
 share/AbiSuite/AbiWord/strings/en-IE.strings
@@ -391,6 +391,7 @@ share/AbiSuite/AbiWord/strings/id-ID.strings
 share/AbiSuite/AbiWord/strings/it-IT.strings
 share/AbiSuite/AbiWord/strings/lt-LT.strings
 share/AbiSuite/AbiWord/strings/nb-NO.strings
+share/AbiSuite/AbiWord/strings/nl-NL.strings
 share/AbiSuite/AbiWord/strings/nn-NO.strings
 share/AbiSuite/AbiWord/strings/pl-PL.strings
 share/AbiSuite/AbiWord/strings/pt-BR.strings
@@ -399,10 +400,12 @@ share/AbiSuite/AbiWord/strings/ru-RU.strings
 share/AbiSuite/AbiWord/strings/sk.strings
 share/AbiSuite/AbiWord/strings/sl-SI.strings
 share/AbiSuite/AbiWord/strings/sv-SE.strings
+share/AbiSuite/AbiWord/strings/tr-TR.strings
 share/AbiSuite/AbiWord/strings/uk-UA.strings
 share/AbiSuite/AbiWord/strings/zh-CN.strings
 share/AbiSuite/AbiWord/strings/zh-TW.strings
 share/AbiSuite/AbiWord/system.profile
+share/AbiSuite/AbiWord/system.profile-CP1254
 share/AbiSuite/AbiWord/system.profile-KOI8-R
 share/AbiSuite/AbiWord/system.profile-KOI8-U
 share/AbiSuite/AbiWord/system.profile-KOI8-UB
@@ -443,6 +446,11 @@ share/AbiSuite/AbiWord/system.profile-ru-RU
 share/AbiSuite/AbiWord/system.profile-sl
 share/AbiSuite/AbiWord/system.profile-sv
 share/AbiSuite/AbiWord/system.profile-sv-SE
+share/AbiSuite/AbiWord/system.profile-tr
+share/AbiSuite/AbiWord/system.profile-tr-TR
+share/AbiSuite/AbiWord/system.profile-tr-TR.CP1254
+share/AbiSuite/AbiWord/system.profile-zh-CN
+share/AbiSuite/AbiWord/system.profile-zh-TW
 share/AbiSuite/README
 share/AbiSuite/clipart/book.png
 share/AbiSuite/clipart/chip.png

@@ -10,8 +10,7 @@
 # AbiWord build system.
 
 PORTNAME=	AbiWord
-PORTVERSION=	0.9.6.1
-PORTREVISION=	1
+PORTVERSION=	0.99.1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.abisource.com/downloads/Version-${PORTVERSION}/lf/
@@ -21,14 +20,15 @@ DISTNAME=	abiword-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 
 # unzip is needed during the installation process
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
+		giconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		giconv.2:${PORTSDIR}/converters/libiconv \
 		psiconv.7:${PORTSDIR}/converters/psiconv
 
 DIST_SUBDIR=	AbiWord
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/abi
+WRKSRC=		${WRKDIR}/abiword/abi
 
 USE_AUTOMAKE=	yes
 USE_GMAKE=	yes
@@ -42,7 +42,9 @@ FIXME=		find ${WRKSRC} -name GNUmakefile.in | xargs ${PERL} -pi -e \
 		     s|\@DEFS\@|-I${WRKSRC}/../libiconv/include \@DEFS\@|g'
 
 post-patch:
-	@${RM} ${WRKSRC}/user/wp/strings/*.orig
+	@giconv -f cp1251 -t koi8-u ${WRKSRC}/user/wp/strings/uk-UA.strings > \
+		${WRKDIR}/.uk-UA.strings
+	@${MV} ${WRKDIR}/.uk-UA.strings ${WRKSRC}/user/wp/strings/uk-UA.strings
 
 pre-configure:
 	@cd ${WRKSRC} && ${TOUCH} NEWS README AUTHORS ChangeLog
