@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multitail
-PORTVERSION=	2.9.1
+PORTVERSION=	3.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/
 EXTRACT_SUFX=	.tgz
@@ -20,9 +20,17 @@ MAN1=		multitail.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CC/d ; /^CFLAGS/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's,/etc/multitail.conf,${PREFIX}/etc/multitail.conf,' \
+		${WRKSRC}/mt.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/multitail ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/multitail.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/multitail.conf ${PREFIX}/etc
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
