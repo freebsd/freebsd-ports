@@ -9,7 +9,8 @@ PORTNAME=	nab
 PORTVERSION=	4.5.2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.scripps.edu/pub/case/ \
-		http://www.scripps.edu/case/
+		http://www.scripps.edu/case/ \
+		http://siegfried.utmb.edu/bdodson/
 
 MAINTAINER=	bdodson@scms.utmb.edu
 COMMENT=	\
