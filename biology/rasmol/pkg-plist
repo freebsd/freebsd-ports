@@ -1,8 +1,0 @@
-bin/rasmol
-bin/rasmol-16
-bin/rasmol-32
-bin/rasmol-8
-lib/X11/rasmol/1crn.pdb
-lib/X11/rasmol/3cro.pdb
-lib/X11/rasmol/rasmol.hlp
-@dirrm lib/X11/rasmol
