@@ -18,6 +18,7 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_QT_VER=	2
+USE_REINPLACE=	yes
 
 QT_NONSTANDARD=	yes
 CONFIGURE_ARGS+=	--with-gcc=${CC} \
@@ -32,7 +33,7 @@ CONFIGURE_ARGS+=	--with-gcc=${CC} \
 DOCS=	BUGS LICENSE NEWS README TODO
 
 post-patch:
-	${PERL} -pi -e \
+	${REINPLACE_CMD} -E -e \
 		"s@^(my $$Libs.*)-lpthread -ldl\";\$$@\1 ${PTHREAD_LIBS}\";@; \
 		s@^(CFLAGS_GLOB.*)@\1 ${CFLAGS} ${PTHREAD_CFLAGS}@" \
 	${WRKSRC}/configure.pl
