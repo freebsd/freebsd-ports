@@ -187,6 +187,8 @@ MAN5+=	ldap.conf.5 \
 MAN8+=	slapadd.8 \
 	slapcat.8 \
 	slapd.8 \
+	slapdn.8 \
 	slapindex.8 \
 	slappasswd.8 \
+	slaptest.8 \
 	slurpd.8

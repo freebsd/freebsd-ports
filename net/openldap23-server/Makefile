@@ -40,7 +40,7 @@ BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 .endif
 
 .if defined(CLIENT_ONLY)
-OPENLDAP_PORTVERSION=	1
+OPENLDAP_PORTVERSION=	2
 OPENLDAP_PKGNAMESUFFIX?=-client
 OPENLDAP_PKGFILESUFX?=	.client
 
@@ -253,6 +253,8 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's,%LOCALSTATEDIR%/run/,${LDAP_RUN_DIR}/,g' \
 		${WRKSRC}/servers/slapd/slapd.conf
+	@${REINPLACE_CMD} -Ee 's,^(ol_api_lib=)2\.2\.([0-9]+)$$,\1202:\2:200,' \
+		${WRKSRC}/build/version.var
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind\(84\)\{0,1\}-base-8\.' 2>/dev/null`" ]; then \
