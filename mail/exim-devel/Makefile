@@ -3,7 +3,7 @@
 # Date created:		23 June 1996
 # Whom:			markm@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.32 1999/06/17 08:46:27 sheldonh Exp $
+# $Id: Makefile,v 1.33 1999/06/17 08:53:10 sheldonh Exp $
 #
 
 DISTNAME=	exim-3.02
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
 DISTFILES=	exim-3.02.tar.gz exim-texinfo-3.00.tar.gz
 
-MAINTAINER=	sheldonh@FreeBSD.ORG
+MAINTAINER=	sheldonh@FreeBSD.org
 
 # If USE_XLIB is defined, the eximon monitor, which requires X, will be
 # built.
