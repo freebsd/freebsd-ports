@@ -1,18 +1,25 @@
---- lib/Makefile.in.orig	Fri Dec  8 08:49:42 2000
-+++ lib/Makefile.in	Thu Feb  8 22:59:57 2001
-@@ -1,2 +1,2 @@
+
+$FreeBSD$
+
+--- lib/Makefile.in.orig	Sun Mar 11 16:37:52 2001
++++ lib/Makefile.in	Mon Apr  2 11:13:17 2001
+@@ -1,4 +1,4 @@
 -# Makefile for libiconv/lib
 +# Makefile for libgiconv/lib
  
-@@ -51,23 +51,23 @@
+ #### Start of system configuration section. ####
+ 
+@@ -49,27 +49,27 @@
+ 
+ LIBCHARSET_OBJECTS = ../libcharset/lib/localcharset.lo
  
 -all : libiconv.la @PLUGLIB@
 +all : libgiconv.la @PLUGLIB@
  
 -libiconv.la : $(OBJECTS)
--	$(LIBTOOL_LINK) $(CC) -o libiconv.la -rpath $(libdir) -version-info $(LIBICONV_VERSION_INFO) $(OBJECTS) $(LIBCHARSET_OBJECTS)
+-	$(LIBTOOL_LINK) $(CC) -o libiconv.la -rpath $(libdir) -version-info $(LIBICONV_VERSION_INFO) -no-undefined $(OBJECTS) $(LIBCHARSET_OBJECTS)
 +libgiconv.la : $(OBJECTS)
-+	$(LIBTOOL_LINK) $(CC) -o libgiconv.la -rpath $(libdir) -version-info $(LIBICONV_VERSION_INFO) $(OBJECTS) $(LIBCHARSET_OBJECTS)
++	$(LIBTOOL_LINK) $(CC) -o libgiconv.la -rpath $(libdir) -version-info $(LIBICONV_VERSION_INFO) -no-undefined $(OBJECTS) $(LIBCHARSET_OBJECTS)
  
 -libiconv_plug.so : libiconv_plug_@OS@.so
 -	$(RM) libiconv_plug.so
@@ -41,23 +48,39 @@
 -	  /bin/ld -shared -expect_unresolved \* -o libiconv_plug_osf.so iconv_plug.o; \
 +	  /bin/ld -shared -expect_unresolved \* -o libgiconv_plug_osf.so iconv_plug.o; \
  	fi
-@@ -81,3 +81,3 @@
+ 
+ iconv.lo : $(srcdir)/iconv.c $(srcdir)/converters.h $(srcdir)/encodings.def $(srcdir)/encodings_aix.def $(srcdir)/encodings_osf1.def $(srcdir)/encodings_dos.def $(srcdir)/encodings_local.def $(srcdir)/aliases.h $(srcdir)/aliases_aix.h $(srcdir)/aliases_osf1.h $(srcdir)/aliases_dos.h $(srcdir)/flags.h
+@@ -79,13 +79,13 @@
+ # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.
+ install-lib : all force
  	if [ ! -d $(libdir) ] ; then mkdir $(libdir) ; fi
 -	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libiconv.la $(libdir)/libiconv.la
 +	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libgiconv.la $(libdir)/libgiconv.la
  
-@@ -87,3 +87,3 @@
+ install : all force
+ 	if [ ! -d $(DESTDIR)$(prefix) ] ; then mkdir $(DESTDIR)$(prefix) ; fi
+ 	if [ ! -d $(DESTDIR)$(exec_prefix) ] ; then mkdir $(DESTDIR)$(exec_prefix) ; fi
  	if [ ! -d $(DESTDIR)$(libdir) ] ; then mkdir $(DESTDIR)$(libdir) ; fi
 -	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libiconv.la $(DESTDIR)$(libdir)/libiconv.la
 +	$(LIBTOOL_INSTALL) $(INSTALL_DATA) libgiconv.la $(DESTDIR)$(libdir)/libgiconv.la
  	if test -n "@PLUGLIB@"; then $(INSTALL_DATA) @PLUGLIB@ $(DESTDIR)$(libdir)/@PLUGLIB@.new && mv $(DESTDIR)$(libdir)/@PLUGLIB@.new $(DESTDIR)$(libdir)/@PLUGLIB@ ; fi
-@@ -96,3 +96,3 @@
+ 
+ installdirs : force
+@@ -94,7 +94,7 @@
+ 	if [ ! -d $(DESTDIR)$(libdir) ] ; then mkdir $(DESTDIR)$(libdir) ; fi
+ 
  uninstall : force
 -	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(libdir)/libiconv.la
 +	$(LIBTOOL_UNINSTALL) $(RM) $(DESTDIR)$(libdir)/libgiconv.la
  	if test -n "@PLUGLIB@"; then $(RM) $(DESTDIR)$(libdir)/@PLUGLIB@ ; fi
-@@ -104,3 +104,3 @@
+ 
+ check : all
+@@ -102,7 +102,7 @@
+ mostlyclean : clean
+ 
  clean : force
 -	$(RM) *.o *.lo *.a *.la libiconv_plug* core
 +	$(RM) *.o *.lo *.a *.la libgiconv_plug* core
  	$(RM) -r .libs _libs
+ 
+ distclean : clean

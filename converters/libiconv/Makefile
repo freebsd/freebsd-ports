@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	libiconv
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.1
 CATEGORIES=	converters devel
-MASTER_SITES=	ftp://ftp.ilog.fr/pub/Users/haible/gnu/
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		ftp://ftp.ilog.fr/pub/Users/haible/gnu/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
