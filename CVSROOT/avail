@@ -6,7 +6,6 @@
 #
 
 group|meisters|peter,jdp,markm,joe
-group|hack|imp
 
 unavail
 avail||CVSROOT
@@ -16,4 +15,3 @@ avail||ports
 avail||projects
 avail||src
 avail||www
-unavail|hack|ports
