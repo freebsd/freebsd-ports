@@ -9,7 +9,7 @@ for FreeBSD.  To get linux compat working you will need
 
 then run the linux binary. 
 
-the kernel option `COMAPT_LINUX' is not necessary anymore.
+the kernel option `COMPAT_LINUX' is not necessary anymore.
 
 eric.
 erich@FreeBSD.org
