@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 .if !exists(/usr/include/getopt.h)
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lgnugetopt"
 .endif
 
 USE_GMAKE=	yes
