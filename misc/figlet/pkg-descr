@@ -1,0 +1,18 @@
+Figlet is a program that creates large ASCII art characters out of ordinary
+screen characters
+
+      _ _ _          _   _     _       
+     | (_) | _____  | |_| |__ (_)___   
+     | | | |/ / _ \ | __| '_ \| / __|  
+     | | |   <  __/ | |_| | | | \__ \_ 
+     |_|_|_|\_\___|  \__|_| |_|_|___(_)
+
+
+Figlet can print in a variety of fonts, both left-to-right and right-to-left.
+Figlet comes with several fonts.  Also, many other fonts are avaiable,
+including Hebrew, Cyrillic (Russian), and Greek.
+
+There is also a "Figlet Home Page" on the Worldwide Web. The URL is
+http://www.math.uiuc.edu/~chappell/figlet
+
+-- David	(obrien@cs.ucdavis.edu)

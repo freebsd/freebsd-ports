@@ -1,0 +1,32 @@
+--- Makefile.orig	Fri Apr 28 15:10:36 1995
++++ Makefile	Sun Jul 21 04:36:14 1996
+@@ -10,14 +10,15 @@
+ SHELL = /bin/sh
+ 
+ # Where the executables should be put
+-DESTDIR = /usr/games
++###DESTDIR = /usr/games
++DESTDIR = $(PREFIX)/bin
+ 
+ # Where the man page should be put
+-MANDIR = /usr/man/man6
++MANDIR = $(PREFIX)/man/man6
+ 
+ # Where figlet will search first for fonts (the ".flf" files) and
+ #   control files (the ".flc" files).
+-DEFAULTFONTDIR = /usr/games/lib/figlet.dir
++DEFAULTFONTDIR = $(PREFIX)/share/figlet
+ 
+ # The filename of the font to be used if no other is specified
+ #   (standard.flf is recommended, but any other can be used).
+@@ -48,8 +49,10 @@
+ install: figlet chkfont
+ 	- mkdir $(DEFAULTFONTDIR)
+ 	chmod 755 $(DEFAULTFONTDIR)
++	strip figlet
+ 	cp figlet $(DESTDIR)
+ 	chmod 755 $(DESTDIR)/figlet
++	strip chkfont
+ 	cp chkfont $(DESTDIR)
+ 	chmod 755 $(DESTDIR)/chkfont
+ 	cp figlist $(DESTDIR)
