@@ -3695,6 +3695,7 @@ ja-t2ps		ports/japanese/t2ps
 ja-tcl76	ports/japanese/tcl76
 ja-tcl80	ports/japanese/tcl80
 ja-tdiary	ports/japanese/tdiary
+ja-texfamily	ports/japanese/texfamily
 ja-texinfo	ports/japanese/texinfo
 ja-tgif		ports/japanese/tgif
 ja-timidity++-slang	ports/japanese/timidity++-slang
