@@ -24,6 +24,12 @@ LDFLAGS+=	-lcompat
 USE_GMAKE=	yes
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CXXFLAGS|#CXXFLAGS|g" \
 		-e s"|LFLAGS|LDFLAGS|" -e "s|^LDFLAGS|#LDFLAGS|" \
@@ -33,4 +39,4 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/codeworker ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
