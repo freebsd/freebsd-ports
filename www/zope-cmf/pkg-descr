@@ -1,4 +1,5 @@
-The Zope Portal Toolkit contains most of what you need to set up and
-maintain a web portal using Zope.
+The Zope Content Management Framework (CMF) - previously known as the Portal
+Toolkit (PTK) - contains most of what you need to set up and maintain a web
+portal using Zope.
 
-WWW:	http://www.zope.org/Products/PTK/
+WWW:	http://cmf.zope.org/
