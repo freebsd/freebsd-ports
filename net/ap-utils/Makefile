@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ap-utils
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	http://ap-utils.polesye.net/files/ \
 		http://web.cs.cmu.edu/~dpelleg/download/
@@ -22,7 +22,7 @@ MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/uk
-	@cd ${WRKSRC}/Documentation && ${INSTALL_DATA} FAQ ${DOCSDIR}
+	@cd ${WRKSRC}/Documentation && ${INSTALL_DATA} FAQ Ovislink-HOWTO.html ${DOCSDIR}
 	@cd ${WRKSRC}/Documentation/uk && ${INSTALL_DATA} INSTALL README.atmel ${DOCSDIR}/uk
 .endif
 
