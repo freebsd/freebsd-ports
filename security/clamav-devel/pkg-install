@@ -29,6 +29,7 @@ if ! pw usershow "${CLAMAVUSER}" 2>/dev/null 1>&2; then
 		-c "Clam Antivirus"; \
         then
                 echo "===> Added user \"${CLAMAVUSER}\"."
+		pw groupmod mail -m ${CLAMAVUSER}
         else
                 echo "===> Adding user \"${CLAMAVUSER}\" failed..."
                 exit 1
