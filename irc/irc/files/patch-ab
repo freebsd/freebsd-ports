@@ -1,5 +1,5 @@
-*** include/config.h.orig	Tue Jan 31 19:46:22 1995
---- include/config.h	Tue Jan 31 19:53:55 1995
+*** include/config.h.orig	Wed Jun 15 15:58:12 1994
+--- include/config.h	Sun Jun 25 15:40:25 1995
 ***************
 *** 61,67 ****
    * If your host supports varargs and has vsprintf(), vprintf() and vscanf()
@@ -18,24 +18,21 @@
    *       be used in a chain of 3 or more funtions which all have a variable
    *       number of params.  If anyone has a solution to this, please notify
 ***************
-*** 90,96 ****
+*** 84,105 ****
+  #define	HAVECURSES		/* If you have curses, and want to use it.  */
+  #undef	HAVETERMCAP		/* If you have termcap, and want to use it. */
+  
+- #ifdef notdef
+  /* Define NPATH if you want to run NOTE system. Be sure that this file is
+   * either not present or non empty (result of previous size). If it is empty,
    * then remove it before starting the server.
    * The file is for request save/backup.
    */
 ! #define NPATH "/usr/lib/irc/.ircdnote"
-  #endif
+! #endif
   
   /*
---- 90,96 ----
-   * then remove it before starting the server.
-   * The file is for request save/backup.
-   */
-! #define NPATH "!!PREFIX!!/lib/ircd/.ircdnote"
-  #endif
-  
-  /*
-***************
-*** 98,105 ****
+   * Full pathnames and defaults of irc system's support files. Please note that
    * these are only the recommened names and paths. Change as needed.
    * You must define these to something, even if you don't really want them.
    */
@@ -44,7 +41,19 @@
   #define	CPATH	"ircd.conf"	/* server configuration file */
   #define	MPATH	"ircd.motd"	/* server MOTD file */
   #define	LPATH	"/tmp/ircd.log" /* Where the debug file lives, if DEBUGMODE */
---- 98,105 ----
+--- 84,103 ----
+  #define	HAVECURSES		/* If you have curses, and want to use it.  */
+  #undef	HAVETERMCAP		/* If you have termcap, and want to use it. */
+  
+  /* Define NPATH if you want to run NOTE system. Be sure that this file is
+   * either not present or non empty (result of previous size). If it is empty,
+   * then remove it before starting the server.
+   * The file is for request save/backup.
+   */
+! #define NPATH "!!PREFIX!!/lib/ircd/.ircdnote"
+  
+  /*
+   * Full pathnames and defaults of irc system's support files. Please note that
    * these are only the recommened names and paths. Change as needed.
    * You must define these to something, even if you don't really want them.
    */
@@ -63,7 +72,7 @@
   
   /* CHROOTDIR
    *
---- 112,119 ----
+--- 110,117 ----
    * FNAME_USERLOG just logs user connections, FNAME_OPERLOG logs every
    * successful use of /oper.  These are either full paths or files within DPATH.
    */
@@ -81,7 +90,7 @@
   
   /* OPER_KILL
    *
---- 150,156 ----
+--- 148,154 ----
    * mode "i" (i == invisible). Invisibility means people dont showup in
    * WHO or NAMES unless they are on the same channel as you.
    */
@@ -98,7 +107,7 @@
   
   /* R_LINES:  The conf file now allows the existence of R lines, or
    * restrict lines.  These allow more freedom in the ability to restrict
---- 211,217 ----
+--- 209,215 ----
    * to a leaf which just has 1 server (typically the uplink). Define this
    * correctly for performance reasons.
    */
@@ -115,7 +124,7 @@
   
   /*
    * If you wish to have the server send 'vital' messages about server
---- 252,258 ----
+--- 250,256 ----
    * The server will then call m4 each time it reads the ircd.conf file,
    * reading m4 output as the server's ircd.conf file.
    */
