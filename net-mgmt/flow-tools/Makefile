@@ -33,7 +33,7 @@ post-patch:
 	 -e 's|@localstatedir@/cfg/|${PREFIX}/etc/flow-tools/|' \
 	  ${WRKSRC}/docs/flow-*.1.in ${WRKSRC}/docs/flow-*.html.in
 
-pre-install:
+post-install:
 .for I in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/docs/${I} ${PREFIX}/man/man1/
 .endfor
