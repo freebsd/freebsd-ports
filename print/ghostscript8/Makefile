@@ -15,20 +15,20 @@ MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs601/ \
 		ftp://ftp.sbs.de/pub/graphics/ghostscript/pcl3/
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_DRV}
+EXTRACT_ONLY=	${GS_SOURCES} ${HPDJ_DRV}
 
 MAINTAINER=	andreas@FreeBSD.org
 
-Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html
-
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/graphics/jpeg:extract
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
-PLIST_SUB=	GS_VERSION=${PORTVERSION}
-USE_XLIB=	yes
-EXTRACT_ONLY=	${GS_SOURCES} ${HPDJ_DRV}
+Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html
+
 WRKSRC=		${WRKDIR}/gs${PORTVERSION}
+USE_XLIB=	yes
+USE_GMAKE=	yes
 MAKEFILE=	src/unix-gcc.mak
-CFLAGS+=	-I${PREFIX}/include
+PLIST_SUB=	GS_VERSION=${PORTVERSION}
 # Note: the order that the manpages are listed here matters because
 # some of them are symbolic links
 MAN1=		gs.1 dvipdf.1 font2c.1 eps2eps.1 gsbj.1 gsdj.1 gsdj500.1 \
@@ -58,12 +58,8 @@ HPDJ_DRV=	hpdj-2.6.tar.gz
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 		stc740ih.upp stc740p.upp stc740pl.upp
 
-# encrypted PDF support.  can't be packaged due to export control issues.
-.if defined(PDFENCRYPT)
-MASTER_SITES+=	http://www.ozemail.com.au/~geoffk/pdfencrypt/
-DISTFILES+=	pdf_sec.ps
-RESTRICTED=	"Crypto; export controlled, RC4 in PostScript code included"
-.endif
+# replacement for pdf_sec.ps, that allows you to read encrypted PDF files
+DECRYPT_PDF=	pdf_sec.ps
 
 .if defined(A4)
 CFLAGS+=	-DA4
@@ -79,10 +75,10 @@ pre-fetch:
 post-extract:
 	@${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b \
 		${WRKSRC}/jpeg
-	@cd ${WRKSRC}/src; ${TAR} -xzf ${DISTDIR}/${HP8XX_DRV}
-	@cd ${WRKSRC}/src; ${TAR} -xzf ${DISTDIR}/${HPDJ_DRV}
-	# additional HPDJ driver
-	@${TAR} -xf ${WRKDIR}/hpdj-2.6/hpdj.tar -C ${WRKSRC}/src
+	@${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${HP8XX_DRV}
+	@${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${HPDJ_DRV}
+# additional HPDJ driver
+	@${TAR} -C ${WRKSRC}/src -xf ${WRKDIR}/hpdj-2.6/hpdj.tar
 	@${CAT} ${WRKSRC}/src/contrib.mak-5.94.add >> ${WRKSRC}/src/contrib.mak
 	@${PATCH} -d ${WRKSRC}/src --forward --quiet -E \
 		< ${WRKSRC}/src/zmedia2.c-5.50.diff
@@ -100,31 +96,27 @@ pre-build:
 
 pre-install:
 	@${MKDIR} ${PREFIX}/share/ghostscript
-	@(cd ${PREFIX}/share/ghostscript ; \
-			${TAR} -xzf ${DISTDIR}/${GS_FONTS_STD})
-	@(cd ${PREFIX}/share/ghostscript ; \
-			${TAR} -xzf ${DISTDIR}/${GS_FONTS_OTHER})
+	${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
+	${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_OTHER}
 
 post-install:
 	@strip ${PREFIX}/bin/gs
-	@${INSTALL_SCRIPT} ${WRKSRC}/lib/unix-lpr.sh ${PREFIX}/bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/lib/lprsetup.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/unix-lpr.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/lprsetup.sh ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/libexec/lpr
-	@${INSTALL_SCRIPT} ${WRKSRC}/src/if-hpdj ${PREFIX}/libexec/lpr
-	@${INSTALL_DATA} ${WRKSRC}/src/gs-hpdj.1 ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/src/if-hpdj ${PREFIX}/libexec/lpr
+	${INSTALL_MAN} ${WRKSRC}/src/gs-hpdj.1 ${PREFIX}/man/man1
 .for i in ${CONTRIB_UPP}
-	@${INSTALL_DATA} ${FILESDIR}/$i \
+	${INSTALL_DATA} ${FILESDIR}/${i} \
 		${PREFIX}/share/ghostscript/${PORTVERSION}/lib
 .endfor
-.if defined(PDFENCRYPT)
-	@${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps \
+	${INSTALL_DATA} ${DISTDIR}/pdf_sec.ps \
 		${PREFIX}/share/ghostscript/${PORTVERSION}/lib
-.endif
-.if !defined(NOPORTDOC)
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/ghostscript/hpdj
 .for i in LGPL.txt NEWS README.hpdj example.mdf hpdj.html margins-A4.ps \
 	margins-A4Rotated.ps margins-Letter.ps margins-LetterRotated.ps
-	@ cd ${WRKSRC}/src; ${INSTALL_DATA} $i ${PREFIX}/share/ghostscript/hpdj
+	${INSTALL_DATA} ${WRKSRC}/src/${i} ${PREFIX}/share/ghostscript/hpdj
 
 .endfor
 .endif
