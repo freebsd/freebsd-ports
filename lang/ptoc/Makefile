@@ -3,7 +3,7 @@
 # Date created:				10 December 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.6 1998/11/09 01:21:38 steve Exp $
+# $Id: Makefile,v 1.7 1999/02/22 04:02:44 steve Exp $
 #
 
 DISTNAME=		ptoc-3.41
@@ -13,6 +13,8 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	devel/lang/pascal
 
 MAINTAINER=		andy@icc.surw.chel.su
+
+BROKEN= 'ptoc_3.34.tar.gz is all that is on the distsite'
 
 MAKEFILE=		makefile
 
