@@ -250,6 +250,7 @@
     SUBDIR += xmms-liveice
     SUBDIR += xmms-quix3dn
     SUBDIR += xmms-shn
+    SUBDIR += xmms-sndfile
     SUBDIR += xmms-sndstretch
     SUBDIR += xmms-tfmx
     SUBDIR += xmms-volnorm
