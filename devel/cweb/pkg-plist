@@ -3,10 +3,3 @@ bin/cweave
 share/doc/cweb/cwebman.tex
 share/emacs/site-lisp/cweb.el
 share/texmf/tex/generic/misc/cwebmac.tex
-@dirrm share/texmf/tex/generic/misc
-@dirrm share/texmf/tex/generic
-@dirrm share/texmf/tex
-@dirrm share/texmf
-@dirrm share/emacs/site-lisp
-@dirrm share/emacs
-@dirrm share/doc/cweb
