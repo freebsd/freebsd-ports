@@ -23,6 +23,8 @@ MAN1=		abut.1 anova.1 calc.1 colex.1 contab.1 desc.1 dm.1 dprime.1 \
 		rankrel.1 ranksort.1 regress.1 repeat.1 reverse.1 series.1 \
 		stats.1 transpose.1 ts.1 unixstat.1 validata.1
 
+.include <bsd.port.pre.mk>
+
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE="Gary Perlman requires that users agree to his license"\
 "before he will allow access to the distfile."\
@@ -46,4 +48,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/handbook/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
