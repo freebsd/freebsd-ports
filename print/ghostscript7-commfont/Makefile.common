@@ -24,13 +24,13 @@ PLIST=		${PKGDIR}/pkg-plist.common
 RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/${PORTVERSION}/lib/gs_init.ps.pre_sed:${PORTSDIR}/print/ghostscript-gnu-commfont
 PLIST_SUB+=	CIDFNMAP="${CIDFNMAP}"
 .if defined(JPNFONT)
-CATEGORIES+=	japanese
+CATEGORIES:=	japanese ${CATEGORIES}
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-jpnfont
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 CIDFNMAP=	CIDFnmap.jp
 .elif defined(KORFONT)
-CATEGORIES+=	korean
+CATEGORIES:=	korean ${CATEGORIES}
 PKGNAMEPREFIX=	ko-
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-korfont
 RUN_DEPENDS+=	${LOCALBASE}/share/ghostscript/fonts/Munhwa-Bold:${PORTSDIR}/korean/munhwafonts-cid
