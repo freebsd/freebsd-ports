@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyrex
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4
 CATEGORIES=	devel lang python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
@@ -22,10 +22,9 @@ USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
 
 post-patch:
-	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${FILESDIR}/setup.py \
-		> ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e 's|^PYINCLUDE =.*|PYINCLUDE=${PYTHON_INCLUDEDIR}|g' \
 		-e 's|\.\./py|${PREFIX}/bin/py|g' ${WRKSRC}/Demos/Makefile
+	@${REINPLACE_CMD} -e "s|'Plex'||g" ${WRKSRC}/setup.py
 	@${RM} -f ${WRKSRC}/Demos/Makefile.bak
 
 post-install:
