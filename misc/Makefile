@@ -218,7 +218,6 @@
     SUBDIR += kdeutils3
     SUBDIR += kenny
     SUBDIR += kfile-plugins
-    SUBDIR += kfile_torrent
     SUBDIR += kicker-applets
     SUBDIR += kile-i18n
     SUBDIR += knewsticker-scripts

@@ -1,9 +1,0 @@
-[ excerpt from developer's web site ]
-
-This is a KFilePlugin designed to extend Konqueror's meta info
-plugins to display meta information regarding the .torrent files
-used by BitTorrent.
-
-WWW: http://grammarian.homelinux.net/torrent/
-
--- lioux@FreeBSD.org

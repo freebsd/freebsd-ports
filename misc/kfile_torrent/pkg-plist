@@ -1,5 +1,0 @@
-lib/kde3/kfile_torrent.la
-lib/kde3/kfile_torrent.so
-share/services/kfile_torrent.desktop
-@unexec rmdir %D/share/services 2>/dev/null || true
-@unexec rmdir %D/lib/kde3 2>/dev/null || true
