@@ -1,0 +1,7 @@
+DROP TABLE qtrack\g
+
+CREATE TABLE qtrack (
+  qwords  text(63) NOT NULL,
+  qtime   int      NOT NULL,
+  found   int      NOT NULL
+) \g

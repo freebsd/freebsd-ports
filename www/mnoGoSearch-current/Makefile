@@ -53,6 +53,11 @@ pre-fetch:
 	@${ECHO}
 .endif
 
+# Add missing msql DB initialization files
+post-patch:
+	${CP} ${FILESDIR}/msql_ispell.txt ${WRKSRC}/create/msql/ispell.txt
+	${CP} ${FILESDIR}/msql_track.txt ${WRKSRC}/create/msql/track.txt
+
 pre-install:
 	@${MKDIR} ${PREFIX}/share/mnogosearch
 
