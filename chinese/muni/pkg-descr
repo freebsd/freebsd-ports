@@ -1,0 +1,24 @@
+Muni finds the Unicode value of the 7773 Chinese characters listed in Matthews'
+Chinese-English Dictionary.
+
+You enter the character number found in the dictionary, and it will give
+you the corresponding Unicode mapping, or tell you when no such mapping has
+been defined.
+
+Rather than just entering the number, you can type in a query, for example:
+
+	% muni
+	: What is Unicode mapping for "Yung", listed in Matthews' Dictionary
+	: as character 7589?
+	- Matthews(7589) = U+6C38
+	: Thank you. How about 3268, Matthews' number for "Kang"?
+	- Matthews(3268) = U+525B
+	: Thank you, Mr. Computer.
+	: ^D
+	%
+
+WWW: http://www.whizkidtech.net/i18n/muni/
+
+G. Adam Stanislav (a.k.a. Yung Kang)
+adam@whizkidtech.net
+http://www.whizkidtech.net/
