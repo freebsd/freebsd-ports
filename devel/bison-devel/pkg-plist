@@ -25,22 +25,7 @@ share/locale/ro/LC_MESSAGES/bison.mo
 share/locale/ru/LC_MESSAGES/bison.mo
 share/locale/sv/LC_MESSAGES/bison.mo
 share/locale/tr/LC_MESSAGES/bison.mo
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/ms/LC_MESSAGES
-@dirrm share/locale/ja/LC_MESSAGES
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/id/LC_MESSAGES
-@dirrm share/locale/hr/LC_MESSAGES
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/de/LC_MESSAGES
-@dirrm share/locale/da/LC_MESSAGES
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ro 2> /dev/null || true
 @dirrm %%DATADIR%%/m4sugar
 @dirrm %%DATADIR%%
