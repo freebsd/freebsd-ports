@@ -1,4 +1,4 @@
-The JavaMailTM API provides a set of abstract classes that model a mail
+The JavaMail(TM) API provides a set of abstract classes that model a mail
 system. The API provides a platform independent and protocol independent
 framework to build Java technology-based mail and messaging applications.
 The JavaMail API is implemented as a Java platform standard extension. Sun

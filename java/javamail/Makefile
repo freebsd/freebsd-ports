@@ -1,4 +1,4 @@
-# New ports collection makefile for:    JavaMail API Implementation Version 1.1.2
+# New ports collection makefile for:    JavaMail API Implementation
 # Date created:		1999/08/08
 # Whom:			Jose Marques
 #
@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	javamail
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2
 CATEGORIES=	java
-DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/g}
-EXTRACT_SUFX=	.zip
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
 MAINTAINER=	noway@nohow.demon.co.uk
 
@@ -33,7 +32,7 @@ IGNORE=	"You must manually fetch the distribution from http://www.javasoft.com/p
 do-install:
 	@cd ${WRKSRC}; \
 		${MKDIR} ${PREFIX}/share/java/classes/; \
-		${CP} ${WRKSRC}/mail.jar ${PREFIX}/share/java/classes/; \
+		${CP} ${WRKSRC}/*.jar ${PREFIX}/share/java/classes/; \
 		${MKDIR} ${PREFIX}/share/java/${PKGNAME}/; \
 		${CP} CHANGES.txt LICENSE.txt NOTES.txt README.txt ${PREFIX}/share/java/${PKGNAME}/; \
 		${CP} -R demo ${PREFIX}/share/java/${PKGNAME}/; \
