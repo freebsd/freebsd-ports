@@ -7,6 +7,7 @@
 
 PORTNAME=	gentoo
 PORTVERSION=	0.11.48
+PORTREVISION=	1
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,13 +16,24 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+ based, file manager inspired by DirectoryOpus
 
 USE_GNOME=	gtk12
+USE_ICONV=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		gentoo.1
 
 MYPORTDOCS=	BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
 		README.gtkrc TODO
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|icons|${DATADIR}/icons|g' ${WRKSRC}/gentoorc.in

@@ -1,7 +1,6 @@
 bin/gentoo
 etc/gentoogtkrc
 etc/gentoorc
-lib/charset.alias
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CONFIG-CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
@@ -213,19 +212,20 @@ share/gentoo/icons/xbm2.xpm
 share/gentoo/icons/xcf.xpm
 share/gentoo/icons/xpm.xpm
 share/gentoo/icons/xpm2.xpm
-share/locale/de/LC_MESSAGES/gentoo.mo
-share/locale/fr/LC_MESSAGES/gentoo.mo
-share/locale/locale.alias
-share/locale/pl/LC_MESSAGES/gentoo.mo
-share/locale/sv/LC_MESSAGES/gentoo.mo
-share/locale/ru_RU.CP1251/LC_MESSAGES/gentoo.mo
-share/locale/ru_RU.KOI8-R/LC_MESSAGES/gentoo.mo
-share/locale/ru_RU.UTF-8/LC_MESSAGES/gentoo.mo
-share/locale/ru_RU.cp1251/LC_MESSAGES/gentoo.mo
-share/locale/ru_RU.koi8r/LC_MESSAGES/gentoo.mo
-share/locale/ru_RU.utf8/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/ru_RU.CP1251/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/ru_RU.KOI8-R/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/ru_RU.UTF-8/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/ru_RU.cp1251/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/ru_RU.koi8r/LC_MESSAGES/gentoo.mo
+%%NLS%%share/locale/ru_RU.utf8/LC_MESSAGES/gentoo.mo
 @dirrm share/gentoo/icons
 @dirrm share/gentoo
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/de 2> /dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2> /dev/null || true
 @unexec rmdir %D/share/locale/fr 2> /dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2> /dev/null || true
