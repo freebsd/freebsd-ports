@@ -8165,6 +8165,7 @@ wu-ftpd		ports/ftp/wu-ftpd
 wu-ftpd+ipv6	ports/ftp/wu-ftpd+ipv6
 wump		src/games/wump
 wv		ports/textproc/wv
+www6to4		ports/www/www6to4
 www_en		www/en
 www_es		www/es
 www_ja		www/ja
