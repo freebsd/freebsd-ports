@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.950
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/webmin/updates/ \
 		http://www.webmin.com/webmin/download/
@@ -25,7 +25,8 @@ USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	status-0.950-1.wbm.gz sendmail-0.950-1.wbm.gz \
-		cluster-software-0.950-1.wbm.gz postfix-0.950-1.wbm.gz
+		cluster-software-0.950-1.wbm.gz postfix-0.950-1.wbm.gz \
+		samba-0.950-4.wbm.gz
 WEBMIN_THEMES=
 
 post-extract:
