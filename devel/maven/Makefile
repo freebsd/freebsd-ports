@@ -22,7 +22,7 @@ PLIST_SUB=	DIR=${DIR}
 
 do-install:
 	@cd ${WRKSRC} && ${FIND} . \! -name '*.bat' \! -name repository \
-	           | cpio -pduv -R ${LIBOWN}:${LIBGRP} ${PREFIX}/${DIR}
+		| cpio -pduv -R ${LIBOWN}:${LIBGRP} ${PREFIX}/${DIR}
 	${CHMOD} -R ${LIBMODE} ${PREFIX}/${DIR}
 	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/${DIR}/bin
 	${CHMOD} -R ${BINMODE} ${PREFIX}/${DIR}/bin
