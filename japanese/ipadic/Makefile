@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ipadic
-PORTVERSION=	2.4.4
+PORTVERSION=	2.5.1
 CATEGORIES=	japanese
 MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/ipadic/
 
