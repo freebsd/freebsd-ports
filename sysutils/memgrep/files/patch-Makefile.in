@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Sat Feb 22 00:41:31 2003
++++ Makefile.in	Sat Feb 22 14:04:54 2003
+@@ -6,13 +6,13 @@
+ 	cd examples && make
+ 
+ install:
+-	cp include/memgrep.h /usr/include
+-	cp libmemgrep.so /usr/lib
+-	cp libmemgrep.a /usr/lib
+-	cp memgrep /usr/bin
++	${INSTALL} include/memgrep.h ${PREFIX}/include
++	${INSTALL} libmemgrep.so ${PREFIX}/lib
++	${INSTALL} libmemgrep.a ${PREFIX}/lib
++	${INSTALL} memgrep ${PREFIX}/bin
+ 
+ uninstall:
+-	rm -f /usr/lib/libmemgrep.so /usr/lib/libmemgrep.a /usr/bin/memgrep /usr/include/memgrep.h
++	rm -f ${PREFIX}/lib/libmemgrep.so ${PREFIX}/lib/libmemgrep.a ${PREFIX}/bin/memgrep ${PREFIX}/include/memgrep.h
+ 
+ clean:
+ 	cd examples && make clean
