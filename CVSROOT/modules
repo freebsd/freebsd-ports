@@ -10634,6 +10634,7 @@ umix		ports/audio/umix
 ump		ports/www/ump
 unace		ports/archivers/unace
 unadf		ports/archivers/unadf
+unalz		ports/archivers/unalz
 unarj		ports/archivers/unarj
 unclutter	ports/misc/unclutter
 undernet-ircu	ports/irc/undernet-ircu
