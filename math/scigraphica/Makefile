@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scigraphica
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://scigraphica.sourceforge.net/src/ \
@@ -17,7 +17,7 @@ DISTNAME=	sg-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/numpy
-LIB_DEPENDS=	gtkextra.13:${PORTSDIR}/x11-toolkits/gtkextra \
+LIB_DEPENDS=	gtkextra.14:${PORTSDIR}/x11-toolkits/gtkextra \
 		xml.5:${PORTSDIR}/textproc/libxml
 RUN_DEPENDS=	${LOCALBASE}/include/${PYTHON_VERSION}/Numeric/arrayobject.h:${PORTSDIR}/math/numpy
 

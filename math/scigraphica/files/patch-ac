@@ -1,16 +1,14 @@
 
 $FreeBSD$
 
---- configure.orig	Fri Feb  9 20:58:03 2001
-+++ configure	Fri Feb  9 21:00:24 2001
-@@ -3546,8 +3546,8 @@
- 	  	  PY_VERSION=`python -c 'import sys ; print sys.version[0:3]'`
+--- configure.orig	Sun Mar 11 12:53:57 2001
++++ configure	Sun Mar 11 12:55:30 2001
+@@ -3708,7 +3708,7 @@
+           PY_VVERSION=`python -c 'import sys ; print sys.version[0:5]'`
  	  	  if test -f $PY_PREFIX/include/python$PY_VERSION/Python.h; then
  		  PY_LIBS="python$PY_VERSION"
 -		  PY_LIB_LOC="-L$PY_EXEC_PREFIX/lib/python$PY_VERSION/config"
--                  array_loc=`find $PY_PREFIX/include/python$PY_VERSION/ -name arrayobject.h -printf %h`
 +		  PY_LIB_LOC="-pthread -L$PY_EXEC_PREFIX/lib/python$PY_VERSION/config"
-+		  array_loc=`find $PY_PREFIX/include/python$PY_VERSION/ -name arrayobject.h -print | sed 's|/a.*\.h||'`
- 
+                   array_loc=`find $PY_PREFIX/include/python$PY_VERSION/ -name arrayobject.h | sed s/arrayobject\.h//`
                    echo arrayobject.h location: $array_loc
                    PY_CFLAGS="-I$PY_PREFIX/include/python$PY_VERSION"
