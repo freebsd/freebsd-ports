@@ -1205,6 +1205,7 @@ cups-lpr	ports/print/cups-lpr
 cups-pdf	ports/print/cups-pdf
 cups-pstoraster	ports/print/cups-pstoraster
 cups-samba	ports/print/cups-samba
+curator		ports/graphics/curator
 curl		ports/ftp/curl
 curlpp		ports/ftp/curlpp
 curly		ports/sysutils/curly
