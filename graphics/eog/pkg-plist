@@ -25,6 +25,18 @@ share/gnome/help/eog/C/intro.html
 share/gnome/help/eog/C/license.html
 share/gnome/help/eog/C/prefs-viewers.html
 share/gnome/help/eog/C/providing-feedback.html
+share/gnome/help/eog/C/stylesheet-images/caution.gif
+share/gnome/help/eog/C/stylesheet-images/home.gif
+share/gnome/help/eog/C/stylesheet-images/important.gif
+share/gnome/help/eog/C/stylesheet-images/next.gif
+share/gnome/help/eog/C/stylesheet-images/note.gif
+share/gnome/help/eog/C/stylesheet-images/prev.gif
+share/gnome/help/eog/C/stylesheet-images/tip.gif
+share/gnome/help/eog/C/stylesheet-images/toc-blank.gif
+share/gnome/help/eog/C/stylesheet-images/toc-minus.gif
+share/gnome/help/eog/C/stylesheet-images/toc-plus.gif
+share/gnome/help/eog/C/stylesheet-images/up.gif
+share/gnome/help/eog/C/stylesheet-images/warning.gif
 share/gnome/oaf/image-generic.oafinfo
 share/gnome/pixmaps/gnome-eog.png
 share/locale/ca/LC_MESSAGES/eog.mo
@@ -53,6 +65,7 @@ share/locale/sv/LC_MESSAGES/eog.mo
 share/locale/tr/LC_MESSAGES/eog.mo
 share/locale/uk/LC_MESSAGES/eog.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/eog.mo
+@dirrm share/gnome/help/eog/C/stylesheet-images
 @dirrm share/gnome/help/eog/C/fig
 @dirrm share/gnome/help/eog/C
 @dirrm share/gnome/help/eog
