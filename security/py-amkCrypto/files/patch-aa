@@ -1,0 +1,11 @@
+--- setup.py	Sun Apr 16 18:05:42 2000
++++ setup.py+	Sun Jun 11 22:07:33 2000
+@@ -25,7 +25,7 @@
+ # You may need to edit this script to point to the location of your
+ # OpenSSL installation.  It should be sufficient to change the value of
+ # the SSL_DIR variable below.
+-SSL_DIR = "/usr/local/ssl"
++SSL_DIR = "/usr/local"
+ SSL_INCLUDE_DIR = os.path.join(SSL_DIR, 'include')
+ SSL_LIB_DIR = os.path.join(SSL_DIR, 'lib')
+ 
