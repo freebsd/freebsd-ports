@@ -1,11 +1,11 @@
---- gnats/edit-pr.sh	Mon Aug 18 14:52:53 1997
-+++ gnats/edit-pr.sh	Tue Aug 26 14:15:19 1997
-@@ -20,7 +20,7 @@
- # the Free Software Foundation, 675 Mass Ave, Cambridge, MA 02139, USA.
+--- gnats/Makefile.in	Sun Jun 28 18:52:04 1998
++++ gnats/Makefile.in	Wed Jul 15 13:01:33 1998
+@@ -461,7 +461,7 @@
+ install-tools-arch-indep: all-tools
+ 	$(SHELL) $(srcdir)/../mkinstalldirs $(datadir)/gnats
+ 	$(INSTALL_DATA) gnats.el $(lispdir)/gnats.el
+-	$(INSTALL_DATA) gnats.elc $(lispdir)/gnats.elc
++#	$(INSTALL_DATA) gnats.elc $(lispdir)/gnats.elc
  
- debug_print=false # or echo to get output.
--DATE=`date`
-+DATE=`LC_TIME=C date`
- GNATS_ROOT=xGNATS_ROOTx
- LIBEXECDIR=xLIBEXECDIRx
- PATH=$PATH:$GNATS_ROOT/gnats-bin
+ install-tools-bin: all-tools
+ 	$(INSTALL_PROGRAM) query-pr $(bindir)/query-pr
