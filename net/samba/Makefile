@@ -3,7 +3,7 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.12 1997/03/05 01:35:15 pst Exp $
+# $Id: Makefile,v 1.13 1997/09/27 01:58:09 pst Exp $
 #
 
 DISTNAME=	samba-1.9.17p2
@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/samba/
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
-MAINTAINER=	gpalmer@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 MAN1=		smbstatus.1 smbclient.1 smbrun.1 smbtar.1 testparm.1 testprns.1
 MAN5=		smb.conf.5
