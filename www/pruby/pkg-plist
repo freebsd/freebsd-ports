@@ -1,0 +1,7 @@
+%%EXTENSION_DIR%%/pruby.so
+%%EXTENSION_DIR%%/pruby_ervi.rb
+%%EXTENSION_DIR%%/pruby_tops.rb
+@unexec rmdir -p %D/%%EXTENSION_DIR%% 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pruby/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/pruby/_htaccess
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pruby
