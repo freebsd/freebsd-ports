@@ -10,10 +10,14 @@ PORTNAME=	qt
 PORTVERSION=	3.3.2
 PORTREVISION=	2
 CATEGORIES?=	x11-toolkits
-MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
-		ftp://ftp.silug.org/pub/qt/		\
-		ftp://ftp.bero.org/pub/qt/		\
-		ftp://ftp.planetmirror.com.au/pub/trolltech/qt/
+MASTER_SITES=	ftp://sunsite.rediris.es/mirror/Qt/source/ \
+		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/sources/	\
+		ftp://ftp.ntua.gr/pub/X11/Qt/qt/source/		\
+		ftp://ftp.tu-chemnitz.de/pub/Qt/source/ \
+		ftp://ftp.silug.org/mirrors/ftp.trolltech.com/qt/source/ \
+		ftp://ftp.planetmirror.com.au/pub/trolltech/qt/source/ \
+		ftp://ftp.fu-berlin.de/unix/X11/gui/Qt/source/ \
+		ftp://ftp.trolltech.com/qt/source/
 DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
