@@ -2575,6 +2575,7 @@ gracetmpl	ports/math/gracetmpl
 gracula		ports/graphics/gracula
 grail		ports/www/grail
 gramofile	ports/audio/gramofile
+gramps		ports/science/gramps
 grande		ports/games/grande
 granulate	ports/misc/granulate
 grap		ports/textproc/grap
