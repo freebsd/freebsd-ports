@@ -1,14 +1,5 @@
---- makefile.orig	Sat Mar  2 20:14:12 2002
-+++ makefile	Mon Mar  4 23:34:48 2002
-@@ -222,7 +222,7 @@
- 	gcc  -O -Dunix -DHAVE_ANSIC_C -DASYNC_IO \
- 		-Dsolaris iozone_solaris7gcc.o libasync7.o libbif7.o \
- 		-D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -lthread 
--                -lpthread -lposix4 -lnsl -laio -lsocket -o iozone
-+		-lpthread -lposix4 -lnsl -laio -lsocket -o iozone
- 
- #
- # Solaris 2.6 (32 bit) build with no threads, no largefiles, and no async I/O
+--- makefile~	Tue Mar  5 00:09:11 2002
++++ makefile	Tue Mar  5 15:44:53 2002
 @@ -253,7 +253,7 @@
  #
  
