@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	grc
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.6
 CATEGORIES=	misc
 MASTER_SITES=	http://melkor.dnp.fmph.uniba.sk/~garabik/grc/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
