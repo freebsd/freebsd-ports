@@ -1,12 +1,14 @@
---- dbus/dbus-sysdeps.c.orig	Wed Mar 17 17:08:09 2004
-+++ dbus/dbus-sysdeps.c	Thu Jul 22 01:25:51 2004
-@@ -740,12 +740,38 @@
+--- dbus/dbus-sysdeps.c.orig	Mon Aug  9 23:03:37 2004
++++ dbus/dbus-sysdeps.c	Fri Dec 17 19:39:34 2004
+@@ -738,12 +738,40 @@
  {
    int bytes_written;
    char buf[1] = { '\0' };
 +#if defined(HAVE_CMSGCRED) && !defined(LOCAL_CREDS)
-+  char cmsgmem[CMSG_SPACE (sizeof (struct cmsgcred))];
-+  struct cmsghdr *cmsg = (struct cmsghdr *) cmsgmem;
++  struct {
++	  struct cmsghdr hdr;
++	  struct cmsgcred cred;
++  } cmsg;
 +  struct iovec iov;
 +  struct msghdr msg;
 +#endif
@@ -19,12 +21,12 @@
 +  msg.msg_iov = &iov;
 +  msg.msg_iovlen = 1;
 +
-+  msg.msg_control = cmsg;
-+  msg.msg_controllen = sizeof (cmsgmem);
-+  memset (cmsg, 0, sizeof (cmsgmem));
-+  cmsg->cmsg_len = sizeof (cmsgmem);
-+  cmsg->cmsg_level = SOL_SOCKET;
-+  cmsg->cmsg_type = SCM_CREDS;
++  msg.msg_control = &cmsg;
++  msg.msg_controllen = sizeof (cmsg);
++  memset (&cmsg, 0, sizeof (cmsg));
++  cmsg.hdr.cmsg_len = sizeof (cmsg);
++  cmsg.hdr.cmsg_level = SOL_SOCKET;
++  cmsg.hdr.cmsg_type = SCM_CREDS;
 +#endif
  
    _DBUS_ASSERT_ERROR_IS_CLEAR (error);
@@ -39,9 +41,38 @@
  
    if (bytes_written < 0 && errno == EINTR)
      goto again;
-@@ -862,7 +888,8 @@
+@@ -797,8 +825,10 @@
+   char buf;
+ 
+ #ifdef HAVE_CMSGCRED 
+-  char cmsgmem[CMSG_SPACE (sizeof (struct cmsgcred))];
+-  struct cmsghdr *cmsg = (struct cmsghdr *) cmsgmem;
++  struct {
++	  struct cmsghdr hdr;
++	  struct cmsgcred cred;
++  } cmsg;
+ #endif
+ 
+   _DBUS_ASSERT_ERROR_IS_CLEAR (error);
+@@ -833,9 +863,9 @@
+   msg.msg_iovlen = 1;
+ 
  #ifdef HAVE_CMSGCRED
-   if (cmsg->cmsg_len < sizeof (cmsgmem) || cmsg->cmsg_type != SCM_CREDS)
+-  memset (cmsgmem, 0, sizeof (cmsgmem));
+-  msg.msg_control = cmsgmem;
+-  msg.msg_controllen = sizeof (cmsgmem);
++  memset (&cmsg, 0, sizeof (cmsg));
++  msg.msg_control = &cmsg;
++  msg.msg_controllen = sizeof (cmsg);
+ #endif
+ 
+  again:
+@@ -858,9 +888,10 @@
+     }
+ 
+ #ifdef HAVE_CMSGCRED
+-  if (cmsg->cmsg_len < sizeof (cmsgmem) || cmsg->cmsg_type != SCM_CREDS)
++  if (cmsg.hdr.cmsg_len < sizeof (cmsg) || cmsg.hdr.cmsg_type != SCM_CREDS)
      {
 -      dbus_set_error (error, DBUS_ERROR_FAILED);
 +      dbus_set_error (error, DBUS_ERROR_FAILED,
@@ -49,7 +80,24 @@
        _dbus_verbose ("Message from recvmsg() was not SCM_CREDS\n");
        return FALSE;
      }
-@@ -3421,21 +3448,21 @@
+@@ -886,13 +917,9 @@
+ 		       cr_len, (int) sizeof (cr), _dbus_strerror (errno));
+       }
+ #elif defined(HAVE_CMSGCRED)
+-    struct cmsgcred *cred;
+-
+-    cred = (struct cmsgcred *) CMSG_DATA (cmsg);
+-
+-    credentials->pid = cred->cmcred_pid;
+-    credentials->uid = cred->cmcred_euid;
+-    credentials->gid = cred->cmcred_groups[0];
++    credentials->pid = cmsg.cred.cmcred_pid;
++    credentials->uid = cmsg.cred.cmcred_euid;
++    credentials->gid = cmsg.cred.cmcred_groups[0];
+ #else /* !SO_PEERCRED && !HAVE_CMSGCRED */
+     _dbus_verbose ("Socket credentials not supported on this OS\n");
+ #endif
+@@ -3417,21 +3444,21 @@
        exit (1);
      }
  
