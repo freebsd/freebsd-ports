@@ -9,16 +9,15 @@ PORTNAME=	libtar
 PORTVERSION=	1.2.11
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp-dev.cso.uiuc.edu/pub/libtar/
+MASTER_SITES=	ftp://ftp.feep.net/pub/software/libtar/
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A library for manipulating POSIX and GNU tar files
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A library for manipulating POSIX and GNU tar files
 
-GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
+GNU_CONFIGURE=		yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
+.include <bsd.port.pre.mk>
 .include "files/manpages"
-
-INSTALLS_SHLIB=		yes
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
