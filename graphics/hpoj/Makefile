@@ -28,6 +28,9 @@ OPTIONS=	CUPS "CUPS support" on \
 USE_QT_VER=	3
 USE_XLIB=	yes
 PLIST_SUB+=	X11=""
+.else
+PLIST_SUB+=	X11="@comment "
+CONFIGURE_ARGS+=--without-qt
 .endif
 
 .include <bsd.port.pre.mk>
@@ -96,7 +99,7 @@ pre-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/scripts/ptal-cups ${PREFIX}/sbin
 
 post-install:
-.ifndef(WITHOUT_X11)
+.ifdef(WITH_X11)
 	@${INSTALL_PROGRAM} ${WRKSRC}/apps/xojpanel/xojpanel ${X11BASE}/bin
 .endif
 	@${MV} ${PREFIX}/etc/rc.d/ptal-init.sh ${PREFIX}/etc/rc.d/020.ptal-init.sh.sample
