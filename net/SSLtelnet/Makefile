@@ -8,8 +8,12 @@ PORTNAME=		SSLtelnet
 PORTVERSION=		0.13
 PORTREVISION=		1
 CATEGORIES=		net security
-MASTER_SITES=		${MASTER_SITE_LOCAL} \
-			ftp://ftp.psy.uq.oz.au/pub/Crypto/SSLapps/
+MASTER_SITES=		http://munitions2.xs4all.nl/software/network/ssl/applications/ \
+			http://ftp.vc-graz.ac.at/mirror/crypto/ssl/SSLapps/ \
+			http://munitions.hands.com/software/network/ssl/applications/ \
+			http://munitions.ketelhot.de/software/network/ssl/applications/ \
+			http://opensores.thebunker.net/pub/mirrors/SSLapps/ \
+			${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=		ports@FreeBSD.org
