@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	upx
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	upx/
@@ -27,7 +27,6 @@ MAN1=		upx.1
 PLIST_FILES=	bin/upx
 
 post-patch:
-	@${CP} ${FILESDIR}/freebsd.h ${WRKSRC}/config_h
 	@${CP} ${FILESDIR}/l_b_n2?.h ${WRKSRC}/stub
 
 post-build:

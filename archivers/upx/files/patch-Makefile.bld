@@ -1,0 +1,40 @@
+--- Makefile.bld.orig	Fri Jun 25 01:35:14 2004
++++ Makefile.bld	Wed Jan  5 14:23:51 2005
+@@ -125,7 +125,7 @@
+ 
+ override tmp := -Wl,--rpath,
+ LDRPATH := $(addprefix $(tmp),$(LIBDIRS))
+-LIBDIRS += .
++LIBDIRS += . $(UCLDIR)/lib
+ LDLIBDIRS := $(addprefix -L,$(LIBDIRS))
+ 
+ ##LDFLAGS += $(LDRPATH)
+@@ -168,6 +168,28 @@
+ endif
+ CHMOD_EXE = chmod 755 $@
+ endif	# linux
++
++
++###
++### FreeBSD
++###
++
++ifeq ($(target),freebsd)
++include $(srcdir)/Makedefs.gcc
++override arch := $(shell uname -m | sed -e 's/^i[3456789]86$$/i386/')
++DEFS += -D_FILE_OFFSET_BITS=64
++##CFLAGS_WERROR = -Werror
++ifeq ($(DEBUG),1)
++else
++  ##LDFLAGS += -static
++  STUBEDIT_EXE = objcopy -S -R .comment -R .note $@
++  ifeq ($(arch),i386)
++##    STUBIFY_EXE = perl $(srcdir)/stub/scripts/brandelf.pl $@
++  endif
++CHMOD_EXE = chmod 755 $@
++endif
++
++endif # freebsd
+ 
+ 
+ ###

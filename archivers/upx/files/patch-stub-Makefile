@@ -1,5 +1,5 @@
---- stub/Makefile.orig	Wed Jan 28 03:28:03 2004
-+++ stub/Makefile	Tue Feb 17 07:22:01 2004
+--- stub/Makefile.orig	Fri Jun 25 01:35:35 2004
++++ stub/Makefile	Wed Jan  5 13:56:16 2005
 @@ -27,6 +27,7 @@
  	l_djgpp2.h stubify.h \
  	l_exe.h \
@@ -8,21 +8,25 @@
  	l_sys.h \
  	l_t_n2b.h l_t_n2bs.h l_t_n2d.h l_t_n2ds.h l_t_n2e.h l_t_n2es.h \
  	l_tmt.h \
-@@ -81,6 +82,13 @@
- CC_LINUX_I386 += -funsigned-char
- ###CC_LINUX_I386 += -fwritable-strings -save-temps
+@@ -103,6 +104,17 @@
  
-+# Compiler for the FreeBSD/386 stubs.
+ 
+ ###
++### FreeBSD/i386
++###
++
 +CC_FREEBSD_I386 = gcc -march=i386 -mcpu=i386 -Os -fno-strict-aliasing
 +CC_FREEBSD_I386 += -falign-functions=0 -falign-jumps=0 -falign-loops=0
 +CC_FREEBSD_I386 += -Werror
 +CC_FREEBSD_I386 += -Wall -W -Wcast-align -Wcast-qual -Wwrite-strings
 +CC_FREEBSD_I386 += -funsigned-char
 +
- # Preprocessor for the a68k 68000-assembler.
- CPP_M68K = gcc -I$(UCL_UPX) -E -x assembler-with-cpp -Wall -Wp,-P,-C,-traditional,-nostdinc -D__A68K__
- ASM_M68K = a68k -q -x
-@@ -255,6 +263,31 @@
++
++###
+ ### Motorola 68000
+ ###
+ 
+@@ -292,6 +304,31 @@
  
  
  # /***********************************************************************
@@ -54,7 +58,7 @@
  # // dependencies
  # ************************************************************************/
  
-@@ -274,10 +307,13 @@
+@@ -316,10 +353,13 @@
  l_djgpp2.h:     n2b_d32.asy  n2d_d32.asy  n2e_d32.asy  $(DEPS2)
  l_exe.h:        n2b_d8e.asy  n2d_d8e.asy  n2e_d8e.asy  $(DEPS2)
  l_lx_n2b.h:     n2b_d32.ash  $(DEPS1)
