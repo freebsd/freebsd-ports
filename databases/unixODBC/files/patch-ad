@@ -1,0 +1,13 @@
+--- sqp/lex.l	Thu Jun 21 23:30:52 2001
++++ ../../ports/databases/unixODBC/work/unixODBC-2.0.8/sqp/lex.l	Sat Jul 14 09:27:09 2001
+@@ -13,9 +13,9 @@
+ 
+ %{
+ 
++#include "sqp.h"
+ #include "yac.h"
+ #include <string.h>
+-#include "sqp.h"
+ 
+ #undef YY_INPUT
+ #define YY_INPUT(b, r, ms) (r = my_yyinput(b, ms))

@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	unixODBC
-PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTVERSION=	2.0.8
 CATEGORIES=	databases
 MASTER_SITES=	http://www.unixodbc.org/
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-static --enable-shared
 INSTALLS_SHLIB=	yes
 
@@ -47,14 +46,16 @@ pre-patch:
 .else
 	@${PERL} -pi -e 's|-lqt|-lqt2|g' ${WRKSRC}/configure
 .endif
-	@${PERL} -pi -e 's| -lc||g' ${WRKSRC}/ltmain.sh
+
+pre-build:
+	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}/libtool
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/unixODBC
+	@${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/doc --exclude '*Makefile*' -cf - . \
-		| ${TAR} -C ${PREFIX}/share/doc/unixODBC --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/unixODBC
+		| ${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
