@@ -1,13 +1,10 @@
-Hanterm-xf86-v32
-----------------
+hanterm-xf
+----------
 
 It is one of many variants of hanterm, a well-known program for managing
-Korean language in X11. This version is the best of all its variants now,
-such as automatic fonts detection, johab844 font support, and newly updated
-for XFree86-3.2(X11R6.1). In this version, there is no need to specifying
-hangul fonts for displaying(-ks and -kst, -jo8 options are deleted), existing
-in previous versions. In this version of hanterm, the scrollbar is displayed
-in right.
+Korean language in X11. This version supports the features
+such as automatic fonts detection, johab844 font support, and based on
+XFree86's xterm code. The scrollbar is displayed in right.
 
 --
-Choi Jun Ho <junker@jazz.snu.ac.kr>
+CHOI Junho <junker@jazz.snu.ac.kr>
