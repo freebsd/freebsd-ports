@@ -18,8 +18,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	chris_pressey@yahoo.ca
 COMMENT=	SLang binding for Erlang/OTP
 
-RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
+BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
+RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
