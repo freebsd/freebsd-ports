@@ -31,8 +31,12 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=avr-gcc PREFIX=${PREFIX}
 CONFIGURE_SCRIPT= doconf
 CONFIGURE_ARGS=	--enable-doc --disable-versioned-doc
-# Work around the braind*** introduced by <bsd.cpu.mk> in freebsd-current.
+# Work around the braind***ness introduced by <bsd.cpu.mk> in freebsd-5.
+# Sorry, the user is no longer be able to override the optimization and
+# debugging settings now.
 MAKE_ENV=	NO_CPU_CFLAGS=true
+CFLAGS=		-O
+CXXFLAGS=	-O
 
 do-build:
 		(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ./domake MAKE=${GMAKE})
