@@ -51,8 +51,7 @@ do-install:
 .endfor
 .endfor
 
-.include <bsd.port.post.mk>
-
+# this is special target which maintainer uses to make port's plist.
 plist:
 	@${ECHO_CMD} -n >${PLIST}
 .for item in 1 3
@@ -60,3 +59,5 @@ plist:
 	@${ECHO_CMD} man/ja/cat${item}/${file}.gz >>${PLIST}
 .endfor
 .endfor
+
+.include <bsd.port.post.mk>
