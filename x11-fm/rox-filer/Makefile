@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -17,13 +17,9 @@ MAINTAINER=	olgeni@FreeBSD.org
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	${LOCALBASE}/share/mime/mime-info/freedesktop-shared.mimeinfo:${PORTSDIR}/misc/shared-mime-info
+RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
 
 MAN1=		rox.1
-
-post-extract:
-	${CP} ${WRKSRC}/ROX-Filer/src/tasklist.c ${WRKSRC}/ROX-Filer/src/tasklist.c.orig
-	${CAT} ${WRKSRC}/ROX-Filer/src/tasklist.c.orig | ${SED} -e "s@images/iconified.png@iconified@" > ${WRKSRC}/ROX-Filer/src/tasklist.c
 
 do-build:
 	# Run the custom build procedure
@@ -34,7 +30,6 @@ do-install:
 	cd ${WRKSRC}/ROX-Filer && ${CP} -r .DirIcon Action.png AppInfo.xml AppRun FreeBSD-ix86 Help Messages Options.xml images style.css ${PREFIX}/apps/ROX-Filer
 	cd ${WRKSRC} && ${CP} -r Choices ${PREFIX}/share/
 	${MKDIR} ${PREFIX}/share/mime/mime-info
-	cd ${WRKSRC} && ${CP} rox.mimeinfo ${PREFIX}/share/mime/mime-info
 	${CAT} ${FILESDIR}/rox | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox
 	${CHMOD} 775 ${PREFIX}/bin/rox
 	${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1

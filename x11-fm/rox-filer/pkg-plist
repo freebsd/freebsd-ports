@@ -24,22 +24,15 @@ apps/ROX-Filer/Messages/zh_CN.gmo
 apps/ROX-Filer/Messages/zh_TW.gmo
 apps/ROX-Filer/Options.xml
 apps/ROX-Filer/images/application.png
-apps/ROX-Filer/images/close.png
-apps/ROX-Filer/images/details.png
 apps/ROX-Filer/images/dirs.png
 apps/ROX-Filer/images/error.png
 apps/ROX-Filer/images/help.png
-apps/ROX-Filer/images/hidden.png
-apps/ROX-Filer/images/home.png
 apps/ROX-Filer/images/iconified.png
 apps/ROX-Filer/images/mount.png
 apps/ROX-Filer/images/mounted.png
 apps/ROX-Filer/images/multiple.png
-apps/ROX-Filer/images/refresh.png
 apps/ROX-Filer/images/symlink.png
 apps/ROX-Filer/images/unknown.png
-apps/ROX-Filer/images/up.png
-apps/ROX-Filer/images/zoom.png
 apps/ROX-Filer/style.css
 bin/rox
 share/Choices/MIME-icons/application.png
@@ -62,6 +55,7 @@ share/Choices/MIME-icons/application_x-rpm.png
 share/Choices/MIME-icons/application_x-tar.png
 share/Choices/MIME-icons/application_zip.png
 share/Choices/MIME-icons/audio.png
+share/Choices/MIME-icons/audio_midi.png
 share/Choices/MIME-icons/audio_x-mod.png
 share/Choices/MIME-icons/image.png
 share/Choices/MIME-icons/image_gif.png
@@ -76,6 +70,7 @@ share/Choices/MIME-icons/text.png
 share/Choices/MIME-icons/text_html.png
 share/Choices/MIME-icons/text_plain.png
 share/Choices/MIME-icons/text_x-c++src.png
+share/Choices/MIME-icons/text_x-copying.png
 share/Choices/MIME-icons/text_x-csrc.png
 share/Choices/MIME-icons/text_x-java.png
 share/Choices/MIME-icons/text_x-makefile.png
@@ -85,7 +80,6 @@ share/Choices/MIME-icons/video.png
 share/Choices/MIME-icons/video_mpeg.png
 share/Choices/MIME-types/application_postscript
 share/Choices/MIME-types/text
-share/mime/mime-info/rox.mimeinfo
 @dirrm share/Choices/MIME-types
 @dirrm share/Choices/MIME-icons
 @dirrm share/Choices
