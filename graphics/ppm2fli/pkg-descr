@@ -1,0 +1,19 @@
+PPM2FLI can read directly PPM,PGM,PBM and FBM files. If necessary it
+performs a quantization. The filters of the NETPBM, PBMPLUS and FBM package
+can be used as read filters. Together with one of this packages
+a large number of image formats can be handled.
+
+UNFLICK writes images in PPM or FBM format. 
+
+In contrast to FBM2FLI no additional package is required to build 
+PPM2FLI and UNFLICK. So it can be used without any of the above mentioned 
+packages, if another source of PPM,PGM,PBM or FBM images is available.
+For example, PS images can be animated using ghostscript.
+
+The current version is call `beta' because some parts are relative new
+and not totally tested. I made tests on SUN sparc-stations (various versions
+of SUN-OS), on PC running LINUX and under MSDOS using the DJGPP DOS-extender.
+In all cases the GCC compiler was used. Under MSDOS I used a modified
+makefile. Anyway, in some environments changes in the makefile are necessary.
+
+-- Klaus Ehrenfried (klaus@es.go.dlr.de)
