@@ -1,6 +1,11 @@
 bin/barrier
 bin/barrierd
+bin/clustersed
 bin/dsh
+bin/dvt
+bin/jsd
+bin/jsh
+bin/rvt
 bin/seq
 bin/run
 bin/pcp
