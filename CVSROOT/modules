@@ -2093,6 +2093,7 @@ gdchart		ports/graphics/gdchart
 gdeskcal	ports/deskutils/gdeskcal
 gdeskcal-skins	ports/deskutils/gdeskcal-skins
 gdesklets	ports/deskutils/gdesklets
+gdesklets-calendar	ports/deskutils/gdesklets-calendar
 gdesklets-clock	ports/x11-clocks/gdesklets-clock
 gdesklets-cornerxmms	ports/audio/gdesklets-cornerxmms
 gdesklets-goodweather	ports/astro/gdesklets-goodweather
