@@ -1,0 +1,29 @@
+--- src/muh.c.orig	Sun Mar 19 04:08:27 2000
++++ src/muh.c	Sat Sep  9 21:32:15 2000
+@@ -575,7 +575,7 @@
+                 if( strcmp( param2 + 2, "USERINFO\1" ) == 0 )
+                     irc_notice( &c_server, nick, USERINFOREPLY );
+                 if( strncmp( param2 + 2, "PING", 4 ) == 0 ) {
+-                    if( strlen( param2 + 1 ) > 6 ) irc_notice( &c_server, nick, param2 + 1 );
++                    if( strlen( param2 + 1 ) > 6 ) irc_notice( &c_server, nick, "%s", param2 + 1 );
+                 }
+                 if( strcmp( param2 + 2, "CLIENTINFO\1" ) == 0 )
+                     irc_notice( &c_server, nick, CLIENTINFOREPLY );
+@@ -591,7 +591,7 @@
+         }
+         else { /* normale message/notice */
+             if( !is_ignore( hostname, IGNORE_MESSAGE ) && status.allowreply ) {
+-                if( cfg.awaynotice ) irc_notice( &c_server, nick, cfg.awaynotice );
++                if( cfg.awaynotice ) irc_notice( &c_server, nick, "%s", cfg.awaynotice );
+                 add_ignore( hostname, 120, IGNORE_MESSAGE );
+                 status.allowreply = 0;
+                 timers.reply = 0;
+@@ -841,7 +841,7 @@
+             s = ( char * )malloc( 1024 );
+             while( fgets( s, 1023, messagelog ) ) {
+                 if( s[ strlen( s ) - 1 ] == '\n' ) s[ strlen( s ) - 1 ] = 0;
+-                irc_notice( &c_client, status.nickname, s );
++                irc_notice( &c_client, status.nickname, "%s", s );
+             }
+             FREESTRING( s );
+             
