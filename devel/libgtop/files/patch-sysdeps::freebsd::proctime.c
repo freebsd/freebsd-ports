@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- sysdeps/freebsd/proctime.c.orig	Thu Feb 15 01:48:46 2001
-+++ sysdeps/freebsd/proctime.c	Tue Oct  2 10:58:26 2001
+--- sysdeps/freebsd/proctime.c.orig	Mon Nov 26 17:37:59 2001
++++ sysdeps/freebsd/proctime.c	Tue Feb 26 12:20:24 2002
 @@ -66,14 +66,17 @@
  {
  	quad_t totusec;
@@ -24,7 +21,7 @@ $FreeBSD$
  
  	tot = st + ut + it;
  	if (tot == 0) {
-@@ -81,12 +84,7 @@
+@@ -81,13 +84,12 @@
  		tot = 1;
  	}
  
@@ -35,10 +32,15 @@ $FreeBSD$
 -	 */
 -
 +#if (defined __FreeBSD__)
++#if __FreeBSD_version >= 500030
++	totusec = (u_quad_t) (p->p_runtime.sec * 1000000 + p->p_runtime.frac);
++#else
  	totusec = (u_quad_t) p->p_runtime;
++#endif
  #else
  	sec = p->p_rtime.tv_sec;
-@@ -157,10 +155,10 @@
+ 	usec = p->p_rtime.tv_usec;
+@@ -157,10 +159,10 @@
  	if ((pinfo == NULL) || (count != 1))
  		glibtop_error_io_r (server, "kvm_getprocs (%d)", pid);
  
@@ -52,7 +54,7 @@ $FreeBSD$
  #endif
  
  	buf->frequency = 1000000;
-@@ -192,6 +190,21 @@
+@@ -192,6 +194,21 @@
  
  	buf->flags |= _glibtop_sysdeps_proc_time_user;
  #else
@@ -74,7 +76,7 @@ $FreeBSD$
  	glibtop_suid_enter (server);
  
  	if ((pinfo [0].kp_proc.p_flag & P_INMEM) &&
-@@ -222,6 +235,7 @@
+@@ -222,6 +239,7 @@
  
  			buf->flags = _glibtop_sysdeps_proc_time_user;
  		}
