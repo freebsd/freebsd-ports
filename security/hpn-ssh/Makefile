@@ -38,7 +38,8 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 
 .if defined(OPENSSH_OVERWRITE_BASE)
 PREFIX=		/usr
-CONFIGURE_ARGS+=	--mandir=${PREFIX}/share/man \
+MANPREFIX=	${PREFIX}/share
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man \
 		--sysconfdir=/etc/ssh --localstatedir=/var
 .endif
 
