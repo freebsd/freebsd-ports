@@ -13,10 +13,11 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_QT_VER=	1
+USE_QT_VER=	3
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
+MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 pre-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e "s|`/usr/bin/printf '\r'`||g"
