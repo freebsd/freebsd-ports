@@ -5,4 +5,4 @@ This is a release of C-Kermit file transfer protocol utility.
 This version supports transfer of un-escaped control characters for
 very fast file transfers with high reliability.
 
-http://www.columbia.edu/kermit/
+WWW: http://www.columbia.edu/kermit/
