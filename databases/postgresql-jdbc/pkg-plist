@@ -1,0 +1,24 @@
+%%DOCSDIR%%/README-jdbc
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/ImageViewer.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/Unicode.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/basic.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/blobtest.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/corba/StockClient.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/corba/StockDB.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/corba/StockDispenserImpl.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/corba/StockItemImpl.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/corba/StockServer.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/corba/readme
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/corba/stock.idl
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/corba/stock.sql
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/datestyle.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/metadata.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/postgresql-examples.jar
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/psql.java
+%%PORTDOCS%%%%EXAMPLESDIR%%/jdbc/threadsafe.java
+share/java/classes/postgresql.jar
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/jdbc/corba
+%%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%%/jdbc 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/%%EXAMPLESDIR%% 2>/dev/null || true
+%%PORTDOCS%%@unexec rmdir %D/share/postgresql 2>/dev/null || true
+@unexec rmdir %D/%%DOCSDIR%% 2>/dev/null || true
