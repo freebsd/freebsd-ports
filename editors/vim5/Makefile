@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-PKGVER=		5.6
+PKGVER=		5.6.12
 DISTNAME=	vim-5.6
 PKGNAME?=	vim-${PKGVER}
 CATEGORIES=	editors
@@ -20,9 +20,9 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-#.for p in 01 
-#PATCHFILES+=	5.6.0${p}
-#.endfor
+.for p in 01 02 03 05 06 10 11 12
+PATCHFILES+=	5.6.0${p}
+.endfor
 
 MAINTAINER=	obrien@FreeBSD.org
 
