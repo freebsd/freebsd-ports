@@ -1,11 +1,22 @@
---- src/Makefile.orig	Sun May 30 12:04:56 1999
-+++ src/Makefile	Sun May 30 12:05:12 1999
-@@ -7,7 +7,7 @@
+--- src/Makefile.orig	Fri Dec  3 16:29:46 1999
++++ src/Makefile	Fri Dec  3 16:33:00 1999
+@@ -1,14 +1,14 @@
+-BINDIR = /usr/X11R6/bin
++BINDIR = ${X11BASE}/bin
  
- INCDIR = -I/usr/X11R6/include -I.
- LIBDIR = -L/usr/X11R6/lib
--CFLAGS = -O2 -m486 -s -fomit-frame-pointer -Wall
-+CFLAGS+= -s -fomit-frame-pointer -Wall
+ PROG = pclock
+ OBJS = Main.o Graphics.o getopt.o getopt1.o
+ 
+ DEFAULT_XPM = round-3d.xpm
+ 
+-INCDIR = -I/usr/X11R6/include -I.
+-LIBDIR = -L/usr/X11R6/lib
+-CC = gcc
+-CFLAGS = -O -s -Wall
++INCDIR = -I${X11BASE}/include -I.
++LIBDIR = -L${X11BASE}/lib
++CC ?= gcc
++CFLAGS = -s -fomit-frame-pointer -Wall
  LIBS = -lXpm -lXext -lX11 -lm
  
  ###############################################################################
