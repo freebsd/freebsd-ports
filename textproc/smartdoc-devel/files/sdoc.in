@@ -1,0 +1,12 @@
+#! /bin/sh
+
+INSTALLDIR=%%JAVALIBDIR%%/classes
+JAVA_VERSION=`javavm -version 2>&1 | grep "^java.* version" | sed -e 's/^.* version "\([0-9]*\.[0-9]*\)\..*"$/\1/'`
+
+if [ "$JAVA_VERSION" = '1.1' ]; then
+    echo "SmartDoc requires Java newer than 1.2."
+    echo "Fix %%LOCALBASE%%/etc/javavms properly, or set the environment variable JAVAVM to a correct JavaVM."
+    exit 1
+fi
+
+exec javavm -jar $INSTALLDIR/SmartDoc.jar $*
