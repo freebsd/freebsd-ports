@@ -37,6 +37,21 @@ CONFIGURE_ARGS=	--with-command-user=netsaint \
 		--sysconfdir=${PREFIX}/etc/netsaint \
 		--localstatedir=${PREFIX}/var/netsaint
 
+.if defined(WITH_MYSQL)
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+CONFIGURE_ARGS+=--with-mysql-lib=${LOCALBASE}/lib/mysql \
+		--with-mysql-inc=${LOCALBASE}/include/mysql \
+		--with-mysql-xdata
+.endif
+
+.if defined(WITH_POSTGRES)
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+CONFIGURE_ARGS+=--with-pgsql-lib=${LOCALBASE}/pgsql \
+		--with-pgsql-inc=${LOCALBASE}/pgsql \
+		--with-pgsql-xdata
+.endif
+
 INSTALL_TARGET=	all install config install-config install-daemoninit install-commandmode
 
 pre-fetch:
