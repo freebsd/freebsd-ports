@@ -3,7 +3,7 @@
 # Date created:         9 May 1997
 # Whom:                 Hironori Ikura <hikura@kaisei.org>
 #
-# $Id: Makefile,v 1.2 1998/06/27 05:19:04 asami Exp $
+# $Id: Makefile,v 1.3 1998/10/16 03:26:07 jseger Exp $
 #
 
 DISTNAME=	pgp263i-${PGP_LANGUAGE}
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	hikura@kaisei.org
 
-RESTRICTED=	"Crypto
+RESTRICTED=	"Crypto"
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
