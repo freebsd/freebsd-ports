@@ -1,0 +1,3 @@
+DBD::Sybase is DBI (Database Interface) driver for Perl, which uses the
+FreeTDS libraries to provide access to Sybase databases (including MSSQL
+7).
