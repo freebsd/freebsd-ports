@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	apps/editors/emacs/clones zile
 
-MAINTAINER=	jasone@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	2.6.4
 CATEGORIES=	devel
 MASTER_SITES=	http://www.canonware.com/download/libedit/
 
-MAINTAINER=	jasone@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--disable-readline

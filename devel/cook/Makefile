@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/cook/
 
-MAINTAINER=	jasone@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
