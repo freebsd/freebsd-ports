@@ -1888,6 +1888,7 @@ gomoku.app	ports/games/gomoku.app
 gone		ports/misc/gone
 gonvert		ports/misc/gonvert
 gopher		ports/net/gopher
+gotmail		ports/mail/gotmail
 gozer		ports/graphics/gozer
 gp		ports/print/gp
 gpa		ports/security/gpa
