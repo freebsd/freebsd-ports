@@ -23,6 +23,10 @@ CONFIGURE_ARGS=	--prefix=$(PREFIX)
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 pre-configure:
 	cd $(WRKDIR)/${PORTNAME}-bootstrap-$(PORTVERSION);\
 	./configure --prefix=$(WRKDIR);${MAKE};${MAKE} install

@@ -22,6 +22,12 @@ DISTNAME=	pgpsrc658unix
 MAINTAINER=	mike@fate.com
 COMMENT=	Public-Key encryption for the masses
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 WRKSRC=		${WRKDIR}/pgpsrc
 USE_GMAKE=	yes
 
@@ -48,4 +54,4 @@ do-install:
 	cd ${WRKSRC}/clients/pgp/cmdline ; ${GMAKE} install ; \
 	${INSTALL_MAN} packaging/pgp-6.0/man/man1/pgp.1 ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

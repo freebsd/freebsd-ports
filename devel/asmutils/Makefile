@@ -15,6 +15,12 @@ COMMENT=	A set of UNIX utilities written in assembly language
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not compile"
+.endif
+
 ONLY_FOR_ARCHS=	i386
 
 USE_GMAKE=	yes
@@ -61,4 +67,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
