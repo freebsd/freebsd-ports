@@ -8,19 +8,34 @@
 
 PORTNAME=	mhwaveedit
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile \
-		SDL-1.1:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	sndfile.0:${PORTSDIR}/audio/libsndfile
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
-		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--without-portaudio
+
+.if defined(WITH_SDL)
+LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
+CONFIGURE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
+.else
+CONFIGURE_ARGS+=	--without-sdl
+.endif
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
+		's|^CFLAGS =.*$$|CFLAGS = \@CFLAGS\@|g'
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mhwaveedit ${PREFIX}/bin
 
 .include <bsd.port.mk>
