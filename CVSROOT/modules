@@ -9278,6 +9278,7 @@ synce-rra	ports/palm/synce-rra
 synce-serial	ports/palm/synce-serial
 synce-trayicon	ports/palm/synce-trayicon
 syncmal		ports/palm/syncmal
+syndigator	ports/www/syndigator
 synergy 	ports/sysutils/synergy
 syntax_tools	ports/devel/syntax_tools
 sysconftool	ports/devel/sysconftool
