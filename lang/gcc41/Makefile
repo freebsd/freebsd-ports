@@ -6,11 +6,12 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-02-25
+SNAPDATE=	2002-03-10
 SNAPVER=	${SNAPDATE:S/-//g}
 
-PORTNAME=	gcc31
-PORTVERSION=	${SNAPVER}
+PORTNAME=	gcc
+PORTVERSION=	3.2
+PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}  \
 		ftp://ftp.netwinder.org/pub/build/gcc/i386/${SNAPVER}/ \
@@ -22,24 +23,16 @@ DISTFILES=	\
 		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
 		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
-#		gcc-ss-3.1-0_${SNAPVER}.src.rpm
+#		gcc-ss-3.2-0_${SNAPVER}.src.rpm
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BROKEN=		'snapshot not available at this time'
 NO_CDROM=	'dated material'
-LATEST_LINK=	gcc31
+LATEST_LINK=	gcc32
 
 USE_BZIP2=	yes
 
-.if defined(NETWINDER_SS)
-BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
-
-EXTRACT_CMD=		rpm2cpio
-EXTRACT_BEFORE_ARGS=
-EXTRACT_AFTER_ARGS=	|cpio -idum
-EXTRACT_ONLY=
-.endif
+CVS_DATE=	${SNAPDATE} 11:05 PST
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
@@ -52,7 +45,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
 #GCC_REV=	${PORTVERSION:C/\.0$//}
-GCC_REV=	3.1
+GCC_REV=	3.2
 #SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
 SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
 WRKSRC=		${WRKDIR}/build
@@ -77,19 +70,37 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-#MAN1=		cpp31.1 g++31.1 g77-31.1 gcc31.1 gcov31.1
-MAN1=		g++31.1
+#MAN1=		cpp32.1 g++32.1 g77-32.1 gcc32.1 gcov32.1
+MAN1=		g++32.1
 
 pre-fetch:
 	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${ARCH}-portbld-freebsd${OSREL}"
 
-.if defined(NETWINDER_SS)
-post-extract:
-.for F in ${DISTFILES}
-	cd ${WRKDIR} ; rpm2cpio ${DISTDIR}/$F |cpio -idum
-.endfor
-	cd ${WRKDIR} ; ${TAR} -xzf gcc-${SNAPVER}.tar.gz
-	cd ${WRKDIR} ; ${LN} -sf gcc gcc-${SNAPVER}
+.if defined(CVS_DATE)
+NO_CHECKSUM=	yes
+CVS_CMD?=	cvs -z3
+CVSROOT=	:pserver:anoncvs@subversions.gnu.org:/cvsroot/gcc
+STAMPFILE=	${DISTDIR}/${PKGNAME}/.timestamp
+do-fetch:
+	@if [ ! -e ${STAMPFILE} ] || \
+	    [ "X${CVS_DATE}" != "X$$(${CAT} ${STAMPFILE})" ]; then \
+		${MKDIR} ${DISTDIR}/${PKGNAME} && \
+		cd ${DISTDIR}/${PKGNAME} ; \
+		unset CVS_RSH CVS_SERVER || ${TRUE} ; \
+		${ECHO_MSG} ">> Attempting to CVS checkout from ${CVSROOT}." ;\
+		if ${CVS_CMD} -d ${CVSROOT} co -D "${CVS_DATE}" gcc ; \
+		then \
+			( ${ECHO} -n "${CVS_DATE}" > ${STAMPFILE} ) ; \
+			exit ; \
+		fi ; \
+		${ECHO_MSG} ">> Couldn't CVS checkout ${PKGNAME}." ; \
+		${ECHO_MSG} ">> Please try again later."; \
+		exit 1; \
+	fi
+
+do-extract:
+	${MKDIR} ${SRCDIR}
+	cd ${DISTDIR}/${PKGNAME}/gcc ; pax -pe -rwt . ${SRCDIR}
 .endif
 
 pre-configure:
@@ -122,27 +133,26 @@ post-install:
 		strip $$prog ; \
 	done )
 .for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jar grepjar
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}31
+	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}32
 	-( ${TEST} -e ${PREFIX}/man/man1/${file}.1 \
 		&& ${MV} -f ${PREFIX}/man/man1/${file}.1 \
-		${PREFIX}/man/man1/${file}31.1 )
+		${PREFIX}/man/man1/${file}32.1 )
 .endfor
 .for file in g77
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-31
-	#${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/${file}-31.1
+	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-32
+	#${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/${file}-32.1
 .endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
-	${MV} -f ${PREFIX}/lib/libiberty.a ${TARGLIB}
-	${MV} -f ${PREFIX}/lib/libstdc++.* ${PREFIX}/lib/libsupc++.* ${TARGLIB}
-	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
-#.if defined(WANT_SHAREDLIBS)
-#	${MV} -f ${PREFIX}/lib/libstdc++.so* ${TARGLIB}
-#.endif
-.for info in cpp cppinternals g77 gcc gcj
-	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
+.for file in libstdc++ libsupc++ libg2c libfrtbegin libobjc
+	${MV} -f ${PREFIX}/lib/${file}.* ${TARGLIB}
 .endfor
+	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
+	${RM} -f ${PREFIX}/lib/libiberty.a
+#.for info in cpp cppinternals g77 gcc gcj
+#	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
+#.endfor
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
 	    	>${WRKDIR}/PLIST.gcc-lib
