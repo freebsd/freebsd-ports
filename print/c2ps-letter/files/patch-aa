@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu Jul 18 14:43:18 1996
++++ Makefile	Wed Mar 19 13:19:33 1997
+@@ -1,10 +1,7 @@
+ # Makefile for c2ps ver3.0
+ 
+ RM	= 	rm -f
+-CC	=	gcc
+-CCFLAGS =       -O
+ 
+-PREFIX	=	/usr/local
+ BIN	=	$(PREFIX)/bin
+ MAN	=	$(PREFIX)/man/man1
+ 
