@@ -1,5 +1,78 @@
---- gdk-pixbuf/Makefile.in.orig	Mon May 22 13:52:31 2000
-+++ gdk-pixbuf/Makefile.in	Mon May 22 14:39:30 2000
+--- gdk-pixbuf/Makefile.in.orig	Mon May 22 21:52:31 2000
++++ gdk-pixbuf/Makefile.in	Fri Jul 14 16:11:07 2000
+@@ -119,63 +119,63 @@
+ #
+ libpixbufloader_png_la_SOURCES = io-png.c
+ libpixbufloader_png_la_LDFLAGS = -version-info 1:0:0 -module
+-libpixbufloader_png_la_LIBADD = $(LIBPNG)
++libpixbufloader_png_la_LIBADD = $(LIBPNG) libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+ 
+ #
+ # The JPEG loader
+ #
+ libpixbufloader_jpeg_la_SOURCES = io-jpeg.c
+ libpixbufloader_jpeg_la_LDFLAGS = -version-info 1:0:0 -module
+-libpixbufloader_jpeg_la_LIBADD = $(LIBJPEG)
++libpixbufloader_jpeg_la_LIBADD = $(LIBJPEG) libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+ 
+ #
+ # The XPM loader
+ #
+ libpixbufloader_xpm_la_SOURCES = io-xpm.c
+ libpixbufloader_xpm_la_LDFLAGS = -version-info 1:0:0 -module
+-libpixbufloader_xpm_la_LIBADD = 
++libpixbufloader_xpm_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+ 
+ #
+ # The GIF loader
+ #
+ libpixbufloader_gif_la_SOURCES = io-gif.c
+ libpixbufloader_gif_la_LDFLAGS = -version-info 1:0:0 -module
+-libpixbufloader_gif_la_LIBADD = 
++libpixbufloader_gif_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+ 
+ #
+ # The ICO loader
+ #
+ libpixbufloader_ico_la_SOURCES = io-ico.c
+ libpixbufloader_ico_la_LDFLAGS = -version-info 1:0:0 -module
+-libpixbufloader_ico_la_LIBADD = 
++libpixbufloader_ico_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+ 
+ #
+ # The RAS loader
+ #
+ libpixbufloader_ras_la_SOURCES = io-ras.c
+ libpixbufloader_ras_la_LDFLAGS = -version-info 1:0:0 -module
+-libpixbufloader_ras_la_LIBADD = 
++libpixbufloader_ras_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+ 
+ #
+ # The TIFF loader
+ #
+ libpixbufloader_tiff_la_SOURCES = io-tiff.c
+ libpixbufloader_tiff_la_LDFLAGS = -version-info 1:0:0 -module
+-libpixbufloader_tiff_la_LIBADD = $(LIBTIFF)
++libpixbufloader_tiff_la_LIBADD = $(LIBTIFF) libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+ 
+ #
+ # The PNM loader
+ #
+ libpixbufloader_pnm_la_SOURCES = io-pnm.c
+ libpixbufloader_pnm_la_LDFLAGS = -version-info 1:0:0 -module
+-libpixbufloader_pnm_la_LIBADD = 
++libpixbufloader_pnm_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+ 
+ #
+ # The BMP loader
+ #
+ libpixbufloader_bmp_la_SOURCES = io-bmp.c
+ libpixbufloader_bmp_la_LDFLAGS = -version-info 1:0:0 -module
+-libpixbufloader_bmp_la_LIBADD = 
++libpixbufloader_bmp_la_LIBADD = libgdk_pixbuf.la $(GLIB_LIBS) $(GTK_LIBS) $(STATIC_LIB_DEPS)
+ 
+ @HAVE_PNG_TRUE@PNG_LIB = libpixbufloader-png.la
+ 
 @@ -212,16 +212,16 @@
  AM_CPPFLAGS = "-DPIXBUF_LIBDIR=\"$(libexecdir)\""
  
