@@ -6,26 +6,27 @@
 # $FreeBSD$
 #
 
-DISTNAME=	s9x119asrc
-PKGNAME=	snes9x-119a
+DISTNAME=	s9xs125
+PKGNAME=	snes9x-1.25
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.snes9x.com/zips/
 
-MAINTAINER=	nacai@iname.com
+MAINTAINER=	green@FreeBSD.org
 
-BUILD_DEPENDS=	pgcc:${PORTSDIR}/lang/pgcc
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-
-ONLY_FOR_ARCHS=	i386
+.if ${MACHINE_ARCH} == i386
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+.elif ${MACHINE_ARCH} == alpha
+MAKEFILE=	Makefile.alpha
+.endif
 
 USE_GMAKE=	YES
 USE_X_PREFIX=	YES
-MAKEFILE=	Makefile.linux
-ALL_TARGET=	snes9x s9xserver
 
-USE_ZIP=	yes
+USE_ZIP=	YES
 
 WRKSRC=		${WRKDIR}/release
+
+ONLY_FOR_ARCHS=	i386 alpha
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/snes9x ${PREFIX}/bin
