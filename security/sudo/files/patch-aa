@@ -1,15 +1,15 @@
---- configure.orig	Mon Jan 12 20:45:09 1998
-+++ configure	Fri May 29 01:31:07 1998
-@@ -39,6 +39,8 @@
-   --with-libraries        additional libraries to link with"
+--- configure.orig	Sun Sep 20 04:25:10 1998
++++ configure	Fri Oct 23 00:17:09 1998
+@@ -48,6 +48,8 @@
  ac_help="$ac_help
    --with-csops            add CSOps standard options"
-+ac_help="$ac_help
+ ac_help="$ac_help
 +  --with-fbsdops          add FreeBSD standard options"
- 
- # Initialize some variables set by options.
- # The variables have the same names as the options, with
-@@ -565,8 +567,8 @@
++ac_help="$ac_help
+   --enable-log-host       Log the hostname in the log file
+   --disable-log-host      Do not log hostname in the log file (default)"
+ ac_help="$ac_help
+@@ -579,8 +581,8 @@
  
  test "$mandir" = '${prefix}/man' && mandir='$(prefix)/man'
  test "$bindir" = '${exec_prefix}/bin' && bindir='$(exec_prefix)/bin'
@@ -20,28 +20,29 @@
  
  
  # Check whether --with-CC or --without-CC was given.
-@@ -816,6 +818,20 @@
- esac
+@@ -940,7 +942,20 @@
+ 
  fi
  
+-
 +# Check whether --with-fbsdops or --without-fbsdops was given.
 +if test "${with_fbsdops+set}" = set; then
 +  withval="$with_fbsdops"
-+  case $with_fbsdops in  
-+    yes)	OPTIONS="${OPTIONS} -DIGNORE_DOT_PATH -DENV_EDITOR -DUSE_TTY_TICKETS"
-+		sbindir='$(exec_prefix)/sbin'
-+		echo 'fbsdops--adding options: IGNORE_DOT_PATH ENV_EDITOR USE_TTY_TICKETS'
-+		;;
-+    no)		;;
-+    *)		echo "Ignoring unknown argument to --with-csops: $with_csops"
-+		;;
-+esac
++  case $with_fbsdops in
++    yes)       OPTIONS="${OPTIONS} -DIGNORE_DOT_PATH -DENV_EDITOR -DUSE_TTY_TICKETS"
++               sbindir='$(exec_prefix)/sbin'
++	       echo 'fbsdops--adding options: IGNORE_DOT_PATH ENV_EDITOR USE_TTY_TICKETS'
++	       ;;
++    no)        ;;
++    *)         echo "Ignoring unknown argument to --with-csops: $with_csops"
++               ;;
++  esac
 +fi
-+
- 
++    
  # Extract the first word of "egrep", so it can be a program name with args.
  set dummy egrep; ac_word=$2
-@@ -4557,7 +4573,7 @@
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+@@ -5008,7 +5023,7 @@
  fi
  
  if test "$with_skey" = "yes"; then
