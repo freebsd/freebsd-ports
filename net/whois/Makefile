@@ -25,8 +25,11 @@ USE_GMAKE=	yes
 USE_GETOPT_LONG=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
+
 post-patch:
-	@${REINPLACE_CMD} -e "s|prefix\=/usr/local|prefix\=${PREFIX}|g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s|prefix\=/usr/local|prefix\=${PREFIX}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e "s|/usr/share|${PREFIX}/share|g" ${WRKSRC}/po/Makefile
 
 .include <bsd.port.mk>
