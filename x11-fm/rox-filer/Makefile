@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rox
-PORTVERSION=	1.3.8
+PORTVERSION=	1.3.9
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rox
@@ -20,6 +20,8 @@ LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
 RUN_DEPENDS=	${LOCALBASE}/share/mime/packages/freedesktop.org.xml:${PORTSDIR}/misc/shared-mime-info
+
+PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
 MAN1=		rox.1
 
@@ -46,5 +48,7 @@ do-install:
 	@${CAT} ${FILESDIR}/rox | ${SED} -e "s|%%PREFIX%%|${PREFIX}|" > ${PREFIX}/bin/rox
 	@${CHMOD} 755 ${PREFIX}/bin/rox
 	@${INSTALL_MAN} ${WRKSRC}/rox.1 ${PREFIX}/man/man1
+	@${INSTALL_DATA} ${WRKSRC}/rox.xml ${PREFIX}/share/mime/packages
+	@${LOCALBASE}/bin/update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.post.mk>
