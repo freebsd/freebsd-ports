@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgiwrap
-PORTVERSION=	3.7
+PORTVERSION=	3.7.1
 CATEGORIES=	www security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -38,7 +38,7 @@ CGIDIR?=		public_html/cgi-bin
 # Use these options for Apache:
 ###
 MAINCGIDIR?=	${PREFIX}/www/cgi-bin
-HTTPDUSER?=	nobody
+HTTPDUSER?=	www
 
 pre-install:
 	@${MKDIR} ${MAINCGIDIR}
@@ -46,14 +46,14 @@ pre-install:
 post-install:
 	strip ${MAINCGIDIR}/cgiwrap
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/cgiwrap
+	@${MKDIR} ${DOCSDIR}
 .for file in accesscontrol.html afs.html changes.html comments.html \
 		download.html faq.html index.html install.html intro.html \
 		maillist.html notes.html pubs.html quickref.html setup.html \
 		thanks.html todo.html tricks.html y2k.html
-	@${INSTALL_DATA} ${WRKSRC}/htdocs/${file} ${PREFIX}/share/doc/cgiwrap
+	@${INSTALL_DATA} ${WRKSRC}/htdocs/${file} ${DOCSDIR}
 .endfor
-	@${ECHO} "Documentation installed in ${PREFIX}/share/doc/cgiwrap"
+	@${ECHO} "Documentation installed in ${DOCSDIR}"
 .endif
 	@${CAT} ${PKGMESSAGE}
 
