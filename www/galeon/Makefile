@@ -59,6 +59,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 
 MAN1=		galeon.1
 
+FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
+
 .include <bsd.port.pre.mk>
 
 .if exists(${X11BASE}/lib/libnautilus.so.0)
@@ -103,6 +105,7 @@ post-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 			 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
 			 s|%%X11BASE%%|${X11BASE}|g ; \
+			 s|%%FLASHPLAYER%%|${FLASHPLAYER}|g ; \
 			 s|%%MOZILLA%%|${MOZILLA}|g' ${WRKSRC}/src/galeon \
 						     ${WRKSRC}/src/nautstub.c
 
