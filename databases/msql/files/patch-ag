@@ -4,8 +4,8 @@
  	}
  	else
  	{
--		sprintf(buf,"%s/msql.conf", INST_DIR);
-+		sprintf(buf,"%s/etc/msql2/msql.conf", INST_DIR);
+-		snprintf(buf,sizeof(buf),"%s/msql.conf", INST_DIR);
++		snprintf(buf,sizeof(buf),"%s/etc/msql2/msql.conf", INST_DIR);
  		fp = fopen(buf,"r");
  	}
  	if (!fp)

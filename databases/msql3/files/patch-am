@@ -4,8 +4,8 @@
  #endif
  
  	msqlTrace(TRACE_IN,"msqlListDBs()");
--	(void)sprintf(path,"%s/msqldb",msqlHomeDir);
-+	(void)sprintf(path,"/var/db/msqldb");
+-	(void)snprintf(path, MAXPATHLEN, "%s/msqldb",msqlHomeDir);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb");
  	dirp = opendir(path);
  	if (!dirp)
  	{
@@ -13,8 +13,8 @@
  #endif
  
  	msqlTrace(TRACE_IN,"msqlListTables()");
--	(void)sprintf(path,"%s/msqldb/%s",msqlHomeDir,db);
-+	(void)sprintf(path,"/var/db/msqldb/%s",db);
+-	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s",msqlHomeDir,db);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s",db);
  	dirp = opendir(path);
  	if (!dirp)
  	{
@@ -22,44 +22,48 @@
  	struct	stat buf;
  
  	msqlTrace(TRACE_IN,"msqlInit()");
--	(void)sprintf(path,"%s/msqldb/%s",msqlHomeDir,db);
-+	(void)sprintf(path,"/var/db/msqldb/%s",db);
+-	(void)snprintf(path, MAXPATHLEN, "%s/msqldb/%s",msqlHomeDir,db);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s",db);
  	if (stat(path,&buf) < 0)
  	{
- 		sprintf(errMsg,BAD_DB_ERROR,db);
-@@ -1165,7 +1165,7 @@
+ 		snprintf(errMsg,BAD_DB_ERROR,db);
+@@ -1165,8 +1165,7 @@
  	/*
  	** Write the catalog entry
  	*/
--	(void)sprintf(defPath,"%s/msqldb/%s/%s.def",msqlHomeDir,db,table);
-+	(void)sprintf(defPath,"/var/db/msqldb/%s/%s.def",db,table);
+-	(void)snprintf(defPath, MAXPATHLEN, "%s/msqldb/%s/%s.def",
+-		msqlHomeDir,db,table);
++	(void)snprintf(defPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.def",db,table);
  #ifdef OS2
  	fd = _sopen(defPath,O_RDONLY,SH_DENYNO, S_IREAD | S_IWRITE);
  #else
-@@ -1239,7 +1239,7 @@
+@@ -1239,8 +1239,7 @@
  	** Create an empty table
  	*/
  	
--	(void)sprintf(datPath,"%s/msqldb/%s/%s.dat",msqlHomeDir,db,table);
-+	(void)sprintf(datPath,"/var/db/msqldb/%s/%s.dat",db,table);
+-	(void)snprintf(datPath,MAXPATHLEN, "%s/msqldb/%s/%s.dat",
+-		msqlHomeDir,db,table);
++	(void)snprintf(datPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.dat",db,table);
  	(void)unlink(datPath);
  #ifdef OS2
          fd = _sopen(datPath,O_CREAT | O_WRONLY | O_BINARY, SH_DENYNO, 
-@@ -1279,7 +1279,7 @@
+@@ -1279,8 +1279,7 @@
  	** Create an empty index def file
  	*/
  	
--	(void)sprintf(idxPath,"%s/msqldb/%s/%s.idx",msqlHomeDir,db,table);
-+	(void)sprintf(idxPath,"/var/db/msqldb/%s/%s.idx",db,table);
+-	(void)snprintf(idxPath, MAXPATHLEN, "%s/msqldb/%s/%s.idx",
+-		msqlHomeDir,db,table);
++	(void)snprintf(idxPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx",db,table);
  	(void)unlink(idxPath);
  #ifdef OS2
          fd = _sopen(idxPath,O_CREAT | O_WRONLY | O_BINARY, SH_DENYNO, 
-@@ -1302,7 +1302,7 @@
+@@ -1302,8 +1302,7 @@
  	/*
  	** Create an empty overflow file
  	*/
--	(void)sprintf(oflPath,"%s/msqldb/%s/%s.ofl",msqlHomeDir,db,table);
-+	(void)sprintf(oflPath,"/var/db/msqldb/%s/%s.ofl",db,table);
+-	(void)snprintf(oflPath,MAXPATHLEN,"%s/msqldb/%s/%s.ofl",
+-		msqlHomeDir,db,table);
++	(void)snprintf(oflPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.ofl",db,table);
  	(void)unlink(oflPath);
  #ifdef OS2
          fd = _sopen(oflPath,O_CREAT | O_WRONLY | O_BINARY, SH_DENYNO, 
@@ -67,50 +71,57 @@
  	/*
  	** Can't clash with another index either
  	*/
--	(void)sprintf(defPath,"%s/msqldb/%s/%s.idx",msqlHomeDir,db,
-+	(void)sprintf(defPath,"/var/db/msqldb/%s/%s.idx",db,
- 		index->table);
+-	(void)snprintf(defPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx",msqlHomeDir,
++	(void)snprintf(defPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx",
+		db, index->table);
  
--	(void)sprintf(idxPath,"%s/msqldb/%s/%s.idx-%s",msqlHomeDir,db,
-+	(void)sprintf(idxPath,"/var/db/msqldb/%s/%s.idx-%s",db,
- 		index->table, index->name);
+-	(void)snprintf(idxPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx-%s",
+-		msqlHomeDir,db, index->table, index->name);
++	(void)snprintf(idxPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx-%s",
++ 		db, index->table, index->name);
  
  #ifdef OS2
-@@ -1718,7 +1718,7 @@
+@@ -1718,8 +1718,7 @@
  	/*
  	** Now blow away the table files
  	*/
--	(void)sprintf(path,"%s/msqldb/%s/%s.def",msqlHomeDir,db,table);
-+	(void)sprintf(path,"/var/db/msqldb/%s/%s.def",db,table);
+-	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s/%s.def",msqlHomeDir,
+-		db,table);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s/%s.def",db,table);
  #ifdef OS2
- 	fp = fopen(path,"rb");
+ 	fp = fopen(path, MAXPATHLEN, "rb");
  #else
-@@ -1733,15 +1733,15 @@
+@@ -1733,18 +1733,15 @@
  	}
  	(void)fclose(fp);
  	unlink(path);
--	(void)sprintf(path,"%s/msqldb/%s/%s.dat",msqlHomeDir,db,table);
-+	(void)sprintf(path,"/var/db/msqldb/%s/%s.dat",db,table);
+-	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s/%s.dat",msqlHomeDir,
+-		db,table);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s/%s.dat",db,table);
  	unlink(path);
--	(void)sprintf(path,"%s/msqldb/%s/%s.ofl",msqlHomeDir,db,table);
-+	(void)sprintf(path,"/var/db/msqldb/%s/%s.ofl",db,table);
+-	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s/%s.ofl",msqlHomeDir,
+-		db,table);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s/%s.ofl",db,table);
  	unlink(path);
  
  	/*
  	** Take care of the index files.
  	*/
--	(void)sprintf(defPath,"%s/msqldb/%s/%s.idx",msqlHomeDir,db,table);
-+	(void)sprintf(defPath,"/var/db/msqldb/%s/%s.idx",db,table);
+-	(void)snprintf(defPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx",msqlHomeDir,
+-		db,table);
++	(void)snprintf(defPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx",db,table);
  #ifdef OS2
          fd = _sopen(defPath,O_RDONLY | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE);
  #else
-@@ -1751,8 +1751,8 @@
+@@ -1751,9 +1751,9 @@
  	{
  		while(read(fd,&tmp,sizeof(tmp)) == sizeof(tmp))
  		{
--			(void)sprintf(path,"%s/msqldb/%s/%s.idx-%s",
+-			(void)snprintf(path,MAXPATHLEN,
+-				"%s/msqldb/%s/%s.idx-%s",
 -				msqlHomeDir,db,table,tmp.name);
-+			(void)sprintf(path,"/var/db/msqldb/%s/%s.idx-%s",
++			(void)snprintf(path, MAXPATHLEN,
++				"/var/db/msqldb/%s/%s.idx-%s",
 +				db,table,tmp.name);
  			unlink(path);
  		}
@@ -119,26 +130,27 @@
  		return(-1);
  	}
  
--	(void)sprintf(defPath,"%s/msqldb/%s/%s.idx",msqlHomeDir,db,
-+	(void)sprintf(defPath,"/var/db/msqldb/%s/%s.idx",db,
- 		index->table);
+-	(void)snprintf(defPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx",msqlHomeDir,
++	(void)snprintf(defPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx",
+ 		db, index->table);
  #ifdef OS2
          in = _sopen(defPath,O_RDONLY | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE);
 @@ -1804,7 +1804,7 @@
  		msqlTrace(TRACE_OUT,"msqlDropIndex()");
  		return(-1);
  	}
--	(void)sprintf(tmpPath,"%s/msqldb/%s/%s.idx-tmp",msqlHomeDir,db,
-+	(void)sprintf(tmpPath,"/var/db/msqldb/%s/%s.idx-tmp",db,
- 		index->table);
+-	(void)snprintf(tmpPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx-tmp",
+-		msqlHomeDir,db, index->table);
++	(void)snprintf(tmpPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx-tmp",
++ 		db, index->table);
  #ifdef OS2
          out = _sopen(tmpPath,O_RDWR | O_CREAT | O_BINARY, SH_DENYNO, 
 @@ -1855,7 +1855,7 @@
  	*/
  	unlink(defPath);
  	rename(tmpPath,defPath);
--	sprintf(tmpPath,"%s/msqldb/%s/%s.idx-%s",msqlHomeDir,db,
-+	sprintf(tmpPath,"/var/db/msqldb/%s/%s.idx-%s",db,
+-	snprintf(tmpPath,MAXPATHLEN,"%s/msqldb/%s/%s.idx-%s",msqlHomeDir,db,
++	snprintf(tmpPath, MAXPATHLEN, "/var/db/msqldb/%s/%s.idx-%s",db,
                  index->table, index->name);
  	unlink(tmpPath);
  
@@ -146,8 +158,8 @@
  	** See if the directory exists
  	*/
  
--	(void)sprintf(path,"%s/msqldb/%s", msqlHomeDir, db);
-+	(void)sprintf(path,"/var/db/msqldb/%s", db);
+-	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s", msqlHomeDir, db);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s", db);
  	dirp = opendir(path);
  	if (dirp)
  	{
@@ -155,8 +167,8 @@
  	** See if the directory exists
  	*/
  
--	(void)sprintf(path,"%s/msqldb/%s", msqlHomeDir, db);
-+	(void)sprintf(path,"/var/db/msqldb/%s", db);
+-	(void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s", msqlHomeDir, db);
++	(void)snprintf(path, MAXPATHLEN, "/var/db/msqldb/%s", db);
  	dirp = opendir(path);
  	if (!dirp)
  	{

@@ -1,14 +1,15 @@
 # New ports collection makefile for:	msql2
-# Version required:	2.0.1
+# Version required:	2.0.3
 # Date created:		December 17th 1996
 # Whom:			jfitz
 #
-# $Id: Makefile,v 1.22 1997/09/03 03:03:16 jfitz Exp $
+# $Id: Makefile,v 1.23 1997/11/26 23:30:11 jseger Exp $
 #
 
-DISTNAME=	msql-2.0.1
+DISTNAME=	msql-2.0.3
 CATEGORIES=	databases
-MASTER_SITES=	http://www2.nerosworld.com/msql/
+MASTER_SITES=	http://www2.nerosworld.com/msql/ \
+		http://hughes.com.au/software/msql2/
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
@@ -46,7 +47,7 @@ post-install:
 		@if [ ! -f ${PREFIX}/etc/rc.d/msql2.sh ]; then \
 			${ECHO} "Installing ${PREFIX}/etc/rc.d/msql2.sh startup file."; \
 			${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/msql2.sh; \
-			${ECHO} "[ -x ${PREFIX}/bin/msql2d ] && su -l msql -c '${PREFIX}/bin/msql2d' > /dev/null 2>&1 & && echo -n ' msql2'" >> ${PREFIX}/etc/rc.d/msql2.sh; \
+			${ECHO} "[ -x ${PREFIX}/bin/msql2d ] && su -l msql -c 'exec ${PREFIX}/bin/msql2d' > /dev/null 2>&1 & && echo -n ' msql2'" >> ${PREFIX}/etc/rc.d/msql2.sh; \
 			chmod 751 ${PREFIX}/etc/rc.d/msql2.sh; \
 		fi
 .if !defined(BATCH)

@@ -1,0 +1,8 @@
+--- src/conf/site.mm.in.orig	Wed Oct 15 01:43:58 1997
++++ src/conf/site.mm.in	Wed Oct 15 01:44:48 1997
+@@ -6 +6 @@
+-COMPILER= @CC@
++COMPILER:= $(CC)
+@@ -42 +42 @@
+-CFLAGS= -O -I$(TOP)/ $(EXTRA_CFLAGS)
++CFLAGS+= -I$(TOP)/ $(EXTRA_CFLAGS)

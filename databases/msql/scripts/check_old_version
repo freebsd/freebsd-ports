@@ -7,7 +7,7 @@ if( -d "/var/db/msqldb" ) {
 	chdir( "/var/db/pkg" );
 	opendir( DIR, "." );
 	@oldmsql = grep( /^msql-2.0b[1234]$/, readdir( DIR ) );
-	closedir( DIR );
+	closedir;
 	if( @oldmsql ) {
 		if( ! $ENV{OVERWRITE_DB} ) {
 			print <<END;
