@@ -1,0 +1,13 @@
+bin/grustibus
+etc/gnome/config/gRustibus.d/catver
+share/gnome/locale/no/LC_MESSAGES/grustibus.mo
+share/gnome/locale/fr/LC_MESSAGES/grustibus.mo
+share/gnome/gnome/apps/Games/grustibus.desktop
+share/gnome/pixmaps/grustibus.png
+share/gnome/pixmaps/mini-grustibus.xpm
+share/gnome/pixmaps/grustibus/defaultsnap.png
+share/gnome/pixmaps/grustibus/grustibus-logo.png
+share/gnome/pixmaps/grustibus/grustibus.png
+share/gnome/pixmaps/grustibus/mini-grustibus.xpm
+@dirrm share/gnome/pixmaps/grustibus
+@dirrm etc/gnome/config/gRustibus.d
