@@ -22,6 +22,7 @@
     SUBDIR += crossgo32-f77
     SUBDIR += cu-prolog
     SUBDIR += cyclone
+    SUBDIR += dice
     SUBDIR += dis
     SUBDIR += diveintopython
     SUBDIR += drscheme
