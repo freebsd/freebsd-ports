@@ -1,14 +1,16 @@
+%%RUBY_SITELIBDIR%%/connectiondiag.rb
 %%RUBY_SITELIBDIR%%/ctcpresponder.rb
 %%RUBY_SITELIBDIR%%/logholder.rb
 %%RUBY_SITELIBDIR%%/rica.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/erica.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/erica.txt
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/ricaco.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rica-example.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGES
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/classes_and_methods.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/event.lst
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rica-omt.png
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rica_uml.png
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rica_classes.png
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
