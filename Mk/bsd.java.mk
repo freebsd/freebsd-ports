@@ -15,7 +15,7 @@
 .if !defined(Java_Include)
 
 Java_Include=				bsd.java.mk
-Java_Include_MAINTAINER=	znerd@FreeBSD.org
+Java_Include_MAINTAINER=	glewis@FreeBSD.org
 
 #-------------------------------------------------------------------------------
 # Variables that each port can define:
@@ -107,6 +107,13 @@ Java_Include_MAINTAINER=	znerd@FreeBSD.org
 #					JDK 1.2 or later, this is ${JAVA_HOME}/jre/lib/rt.jar.
 #					Earlier JDK's use ${JAVA_HOME/lib/classes.zip.
 #
+# JAVASHAREDIR      The base directory for all shared Java resources.
+#
+# JAVAJARDIR        The directory where a port should install JAR files.
+#
+# JAVALIBDIR        The directory where JAR files installed by other ports
+#                   are located.
+#
 #-------------------------------------------------------------------------------
 # Porter's hints
 #
@@ -138,6 +145,7 @@ Java_Include_MAINTAINER=	znerd@FreeBSD.org
 #     in java/javavmwrapper/Makefile.
 JAVASHAREDIR?=	${PREFIX}/share/java
 JAVAJARDIR?=	${JAVASHAREDIR}/classes
+JAVALIBDIR?=	${LOCALBASE}/share/java/classes
 
 # Add appropriate substitutions to PLIST_SUB
 PLIST_SUB+=		JAVASHAREDIR="${JAVASHAREDIR:S,^${PREFIX}/,,}" \
