@@ -928,6 +928,7 @@ crawl		ports/www/crawl
 crescendo	ports/net/crescendo
 cribbage	src/games/cribbage
 cricket		ports/net/cricket
+crimap		ports/biology/crimap
 crimson		ports/textproc/crimson
 cron		src/usr.sbin/cron
 cronolog	ports/sysutils/cronolog
