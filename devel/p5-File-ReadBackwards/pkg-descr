@@ -1,0 +1,13 @@
+This module reads a file backwards line by line. It is simple to use,
+memory efficient and fast. It supports both an object and a tied handle
+interface.
+
+It is intended for processing log and other similar text files which
+typically have their newest entries appended to them. By default files
+are assumed to be plain text and have a line ending appropriate to the
+OS. But you can set the input record separator string on a per file
+basis.
+
+WWW: http://search.cpan.org/search?dist=File-ReadBackwards
+
+-Anton
