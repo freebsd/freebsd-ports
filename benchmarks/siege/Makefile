@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	siege
-PORTVERSION=	2.57
+PORTVERSION=	2.59
 CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://sid.joedog.org/pub/siege/ \
 		http://www.cus.org.uk/~dom/distfiles/siege/
@@ -15,7 +15,7 @@ MAINTAINER=	clement@FreeBSD.org
 COMMENT=	A http regression testing and benchmarking utility
 
 GNU_CONFIGURE=	yes
-USE_OPENSSL=	YES
+USE_OPENSSL=	yes
 
 CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --disable-shared
 
@@ -27,7 +27,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/utils/bombardment ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/utils/siege2csv.pl ${PREFIX}/bin/siege2csv
 .for F in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/doc/${F} ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/doc/${F} ${MAN1PREFIX}/man/man1
 .endfor
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/siegerc ${DATADIR}
