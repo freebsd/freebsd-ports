@@ -456,10 +456,12 @@ sub mail_notification {
 		print(MAIL $subject, "\n");
 	}
 
-	# Add a header to the mail msg showing which branches
-	# were modified during the commit.
-	%tags = map { $_ => 1 } &read_logfile("$TAGS_FILE.$PID");
-	print (MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n");
+	# If required add a header to the mail msg showing
+	# which branches were modified during the commit.
+	if ($X_BRANCH_HDR) {
+		my %tags = map { $_ => 1 } &read_logfile("$TAGS_FILE.$PID");
+		print  MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n";
+	}
 
 	print (MAIL "\n");
 
