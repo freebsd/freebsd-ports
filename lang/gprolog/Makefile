@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gprolog
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.16
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +16,11 @@ MAINTAINER=	yotta@dougdidit.com
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS=	--disable-linedit
-USE_AUTOCONF=	yes
+
+GNU_CONFIGURE=	yes
+AUTOCONF=	autoconf
+USE_AUTOCONF_VER=	253
+AUTOCONF_DIR=	${LOCALBASE}/share/autoconf
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_GMAKE=	yes
 

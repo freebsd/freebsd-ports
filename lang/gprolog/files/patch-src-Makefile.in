@@ -1,0 +1,11 @@
+--- Makefile.in.orig   Thu Oct 24 12:33:27 2002
++++ Makefile.in        Thu Oct 24 12:34:09 2002
+@@ -57,7 +57,7 @@
+ install-system:
+       ./mkinstalldirs $(INSTALL_DIR) $(INSTALL_DIR)/bin \
+       $(INSTALL_DIR)/include $(INSTALL_DIR)/lib
+-      for i in `echo "$(TXT_FILES)"`; do $(INSTALL_PROGRAM) ../$$i $(INSTALL_DIR);done
++      for i in `echo "$(TXT_FILES)"`; do $(INSTALL_DATA) ../$$i $(INSTALL_DIR);done
+       for i in $(BIN_FILES); do $(INSTALL_PROGRAM) */$$i $(INSTALL_DIR)/bin;done
+       for i in $(OBJ_FILES); do $(INSTALL_DATA) */$$i $(INSTALL_DIR)/lib;done
+       for i in $(LIB_FILES); do $(INSTALL_DATA) */$$i $(INSTALL_DIR)/lib;done
