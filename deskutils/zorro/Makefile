@@ -3,15 +3,15 @@
 # Date created:         03 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.6 1996/11/21 12:27:50 asami Exp $
+# $Id: Makefile,v 1.7 1997/04/20 13:19:37 wosch Exp $
 #
 
 DISTNAME=	zorro-1.1p8
 PKGNAME=	zorro-1.1.8
 CATEGORIES=	misc tk41
-MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
+MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/sorted/apps/zorro-1.1p8/
 
-MAINTAINER=	shanee@rabbit.augusta.de
+MAINTAINER=	shanee@augusta.de
 
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
