@@ -3,7 +3,7 @@
 # Date created:				31 May 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
-# $Id: Makefile,v 1.12 1999/05/30 21:13:45 mph Exp $
+# $Id: Makefile,v 1.13 1999/06/18 19:50:58 mph Exp $
 #
 
 DISTNAME=	crafty-16.10
@@ -27,7 +27,7 @@ MAN6=		crafty.6
 NO_WRKSUBDIR=	yes
 
 post-extract:
-	(cd ${WRKDIR}; gunzip <${DISTDIR}/${DIST_SUBDIR}/start.zip >${WRKDIR}/start.pgn)
+	(cd ${WRKDIR}; ${GUNZIP_CMD} <${DISTDIR}/${DIST_SUBDIR}/start.zip >${WRKDIR}/start.pgn)
 
 post-build:
 	(cd ${WRKDIR}; ./crafty <${FILESDIR}/books-building)
