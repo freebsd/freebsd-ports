@@ -376,6 +376,7 @@
     SUBDIR += snowlog
     SUBDIR += socket
     SUBDIR += socklog
+    SUBDIR += spassgen
     SUBDIR += spinner
     SUBDIR += srmt
     SUBDIR += ssync
