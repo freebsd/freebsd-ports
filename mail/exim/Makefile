@@ -57,11 +57,18 @@ POSTGRESQL_PORT?=	databases/postgresql7
 
 # Define WITH_TCP_WRAPPERS, WITH_MYSQL, and WITH_PGSQL to link against
 # libwrap, liblibmysqlclient and libpq respectively.  Define
-# WITH_PWCHECK to link against libsasl for SMTP AUTH authentication
-# via the Cyrus SASL pwcheck daemon.
+# WITH_SASLAUTHD to enable use of the Cyrus SASL authentication daemon.
 #WITH_TCP_WRAPPERS=	yes
 #WITH_MYSQL=		yes
 #WITH_PGSQL=		yes
+#WITH_SASLAUTHD=	yes
+
+# As an alternative to WITH_SASLAUTHD, you can define WITH_PWCHECK to
+# link against libsasl for SMTP AUTH authentication via the Cyrus SASL
+# pwcheck daemon.
+################################
+# THIS MECHANISM IS DEPRECATED #
+################################
 #WITH_PWCHECK=		yes
 
 # Define WITHOUT_IPV6 to exclude IPv6 support from the compiled exim
@@ -232,6 +239,11 @@ SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE}/lib/mysql -lmysqlclient,' \
 		-e 's,^\# LOOKUP_MYSQL=,LOOKUP_MYSQL=,'
 .else
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
+.endif
+
+.if defined(WITH_SASLAUTHD)
+RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
+SEDLIST+=     -e 's,^\# CYRUS_SASLAUTHD_SOCKET=,CYRUS_SASLAUTHD_SOCKET=,'
 .endif
 
 .if defined(WITH_PWCHECK)
