@@ -24,6 +24,7 @@
     SUBDIR += liece
     SUBDIR += liece-dcc
     SUBDIR += liece-emacs20
+    SUBDIR += lostirc
     SUBDIR += muh
     SUBDIR += nethirc
     SUBDIR += ninja
