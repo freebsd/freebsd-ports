@@ -15,7 +15,6 @@ MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/ \
 MASTER_SITE_SUBDIR=	science/cartography
 # This is ugly; sorry.
 DISTNAME=	${PORTNAME}_FreeBSD-${PORTVERSION}
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	david@catwhisker.org
@@ -23,6 +22,7 @@ COMMENT=	A Tcl/Tk-based GPS management utility
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 
