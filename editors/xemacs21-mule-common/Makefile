@@ -54,7 +54,6 @@ PKGDIR=		${.CURDIR}/../../editors/xemacs${XEMACS_MAJOR_VER}-mule-common/pkg
 
 INSTALL_TARGET=	install-arch-indep
 PLIST=		${PKGDIR}/PLIST
-PLIST_SUB=	XEMACS_VER=${XEMACS_VER}
 TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
 
 MULE_COMMON=		yes
