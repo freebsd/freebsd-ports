@@ -29,6 +29,7 @@ CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
 .undef WITHOUT_GNOME
+.undef WITHOUT_ALL
 WITH_GNOME=	yes
 .endif
 
