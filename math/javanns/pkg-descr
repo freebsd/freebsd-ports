@@ -1,0 +1,6 @@
+JavaNNS is the next generation of SNNS.  It consists of a Java wrapper
+around the SNNS kernel, and a Swing-based GUI for building, training and
+running neural networks.
+
+WWW: http://www-ra.informatik.uni-tuebingen.de/SNNS/
+

@@ -39,6 +39,7 @@
     SUBDIR += gsl
     SUBDIR += guppi
     SUBDIR += hexcalc
+    SUBDIR += javanns
     SUBDIR += kseg
     SUBDIR += lapack
     SUBDIR += libgmp
