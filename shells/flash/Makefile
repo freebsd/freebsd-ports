@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 # outdated version of ncurses in non-CURRENT
 .if ${OSVERSION} < 400000
-LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
+LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 
 GNU_CONFIGURE=	yes

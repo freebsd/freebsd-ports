@@ -47,8 +47,8 @@ LIB_DEPENDS=    intl.1:${PORTSDIR}/devel/gettext
 .if defined(WITH_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(WITH_NCURSES_PORT)
-LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
-CFLAGS+=	-I${PREFIX}/include/ncurses
+LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
+CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .endif
 .if defined(WITH_SSL)
 USE_OPENSSL=    YES

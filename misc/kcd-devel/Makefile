@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 400010
-LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
+LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 
 USE_NEWGCC=	yes
