@@ -1,0 +1,88 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/TrulyRandom/TrulyRandom.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/TrulyRandom/TrulyRandom.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/PRSG/PRSG.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/PRSG/PRSG.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInteger/BigInteger.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInteger/BigInteger.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SHA0/SHA0.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SHA0/SHA0.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SHA/SHA.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SHA/SHA.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/MD5/MD5.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/MD5/MD5.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA/IDEA.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA/IDEA.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES/DES.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES/DES.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/Blowfish.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish/Blowfish.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cryptix/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Stream/StringInput.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Stream/DataEncoding.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Stream/DataInput.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Stream/DataOutput.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Stream/Streamable.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Stream/FileOutput.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Stream/FileInput.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Stream/IO.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Stream/StringOutput.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/Random.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/PseudoRandomStream.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/TestPrime.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/PRSG.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/BigInteger.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/BigInteger.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/MPI.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/PRSG.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/TrulyRandom.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/TrulyRandom.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/RSAKey.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/RSAPublicKey.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/HashMD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DES.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/ECB.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/StreamCipher.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/IDEA.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/CFB.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/HashSHA.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/HashSHA0.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/Blowfish.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/CSRandomStream.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SHA0.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/MessageHash.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DES.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/MessageDigest.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/SHA.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/RSAKeyGen.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/IDEA.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/BlockCipher.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DES3EDE.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/Blowfish.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/CBC.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/RSASecretKeyPair.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DSA/PublicKey.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DSA/SecretKey.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DSA/KeyGen.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DSA/NOTES
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/ElGamal/NOTES
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/ElGamal/KeyGen.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/ElGamal/PublicKey.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/ElGamal/SecretKey.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/TrulyRandom
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/PRSG
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/BigInteger
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Cryptix
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SHA0
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/SHA
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/MD5
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/DES
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Blowfish
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Stream
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/ElGamal
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/DSA
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt
