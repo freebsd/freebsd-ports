@@ -5,7 +5,7 @@
  if test "x$LTSHARED" != xno  -o  "x$LTSTATIC" != xno; then
    USELIBTOOL="yes"
 -  LIBTOOL="./libtool"
-+  if test "x$LIBTOOL" == "x"; then
++  if test "x$LIBTOOL" = "x"; then
 +    LIBTOOL="./libtool"
 +  fi
    O="lo"
