@@ -3,7 +3,7 @@
 # Date created:         16 sept 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.9 1998/03/07 23:26:23 jmz Exp $
+# $Id: Makefile,v 1.10 1998/08/07 22:00:00 asami Exp $
 #
 
 DISTNAME=       viewfax-2.3
@@ -13,5 +13,7 @@ MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 USE_IMAKE=	yes
 
 MAINTAINER=	jmz@FreeBSD.org
+
+MAN1=		viewfax.1
 
 .include <bsd.port.mk>

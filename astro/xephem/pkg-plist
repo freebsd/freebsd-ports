@@ -1,5 +1,4 @@
 bin/xephem
-man/man1/xephem.1.gz
 lib/X11/app-defaults/XEphem
 lib/X11/xephem/auxil/README
 lib/X11/xephem/auxil/mars_db

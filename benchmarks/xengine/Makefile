@@ -3,7 +3,7 @@
 # Date created:		17 January 1997
 # Whom:			FURUSAWA,Kazuhisa <furusawa@com.cs.osakafu-u.ac.jp>
 #
-# $Id: Makefile,v 1.5 1998/02/07 09:18:23 andreas Exp $
+# $Id: Makefile,v 1.6 1998/07/27 23:23:58 asami Exp $
 #
 
 PKGNAME=	xengine-1.0.1
@@ -23,6 +23,8 @@ EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS= 
 EXTRACT_AFTER_ARGS=	| gunshar -d $(WRKDIR)
 PATCH_DIST_STRIP=	-p1	# no ${PATCHFILES} but used below
+
+MAN1=		xengine.1
 
 pre-patch:
 	@cd $(WRKSRC) ; ${PATCH} ${PATCH_DIST_ARGS} < xengine.patch1

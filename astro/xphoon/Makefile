@@ -3,7 +3,7 @@
 # Date created:		14 February 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.7 1997/05/29 01:53:20 fenner Exp $
+# $Id: Makefile,v 1.8 1997/12/25 22:29:12 asami Exp $
 #
 
 DISTNAME=	xphoon
@@ -15,5 +15,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
+
+MAN1=		xphoon.1
 
 .include <bsd.port.mk>

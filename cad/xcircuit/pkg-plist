@@ -7,7 +7,6 @@ lib/xcircuit/digital.lps
 lib/xcircuit/lgf.lps
 lib/xcircuit/signal.lps
 lib/xcircuit/musiclib.lps
-man/man1/xcircuit.1.gz
 share/examples/xcircuit/USAflag.ps
 share/examples/xcircuit/border.ps
 share/examples/xcircuit/prelude.ps

@@ -3,7 +3,7 @@
 # Date created:         29 October 1995
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.8 1996/11/15 22:35:02 obrien Exp $
+# $Id: Makefile,v 1.9 1998/05/04 03:00:52 vanilla Exp $
 #
 
 DISTNAME=	xearth-1.0
@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/
 MAINTAINER=	ports@FreeBSD.ORG
 
 USE_IMAKE=	yes
+
+MAN1=		xearth.1
 
 # Copy the list of FreeBSD sites
 post-install:
