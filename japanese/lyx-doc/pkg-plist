@@ -1,10 +1,9 @@
-share/doc/lyx/escher-lsd.eps
-share/doc/lyx/jp_Intro.lyx
-share/doc/lyx/jp_Tutorial-1-0-3.lyx
-share/doc/lyx/jp_UserGuide-1-0-3.lyx
-share/doc/lyx/jp_example_lyxified.lyx
-share/doc/lyx/jp_example_raw.lyx
-share/doc/lyx/jp_splash.lyx
-share/doc/lyx/mobius.eps
-share/doc/lyx/platypus.eps
-@dirrm share/doc/lyx
+share/lyx/doc/escher-lsd.eps
+share/lyx/doc/ja_Customization.lyx
+share/lyx/doc/ja_Customization_draft.lyx
+share/lyx/doc/ja_Intro.lyx
+share/lyx/doc/ja_Tutorial.lyx
+share/lyx/doc/ja_UserGuide.lyx
+share/lyx/doc/mobius.eps
+share/lyx/doc/platypus.eps
+@dirrm share/lyx/doc
