@@ -1,75 +1,147 @@
-*** Makefile.orig	Wed Oct 22 18:55:44 1997
---- Makefile	Thu Feb 17 16:07:45 2000
-***************
-*** 22,35 ****
-  
-  # Set the installation-directories & permissions here
-  
-! LIBDIR = /usr/local/lib/vtx
-! SPOOLDIR = /var/spool/vtx
-  
-! BINDIR = /usr/local/bin
-! XBINDIR = /usr/local/bin/X11
-! FONTDIR = /usr/lib/X11/fonts/local
-! MANDIR = /usr/local/man
-! XMANDIR = /usr/local/man
-  
-  DIRPERM = 755
-  SPOOLDIRPERM = 777
---- 22,42 ----
-  
-  # Set the installation-directories & permissions here
-  
-! #LIBDIR = /usr/local/lib/vtx
-! #SPOOLDIR = /var/spool/vtx
-! #BINDIR = /usr/local/bin
-! #XBINDIR = /usr/local/bin/X11
-! #FONTDIR = /usr/lib/X11/fonts/local
-! #MANDIR = /usr/local/man
-! #XMANDIR = /usr/local/man
-  
-! SPOOLDIR = /var/spool/vtx
-! LIBDIR = ${X11BASE}/lib/X11/vtx
-! BINDIR = ${X11BASE}/bin
-! XBINDIR = ${X11BASE}/bin
-! FONTDIR = ${X11BASE}/lib/X11/fonts/local
-! MANDIR = ${X11BASE}/man
-! XMANDIR = ${X11BASE}/man
-  
-  DIRPERM = 755
-  SPOOLDIRPERM = 777
-***************
-*** 73,88 ****
-  # useful if you want to distribute VideoteXt and want to avoid trouble with
-  # Unisys' stupid licensing conditions.
-  
-! GIF_SUPPORT = -DGIF_SUPPORT
-  
-  
-  # Uncomment the next lines if you want PNG support and have libpng and libz
-  # installed.
-  
-! #PNG_SUPPORT = -DPNG_SUPPORT
-! #PNG_LIBS = -lpng -lz -lm
-! #PNG_INCLUDEDIRS = -I/usr/local/include
-! #PNG_LIBDIRS = -L/usr/local/lib
-  
-  
-  # Uncomment the following line if you want to get coredumps when an
---- 80,95 ----
-  # useful if you want to distribute VideoteXt and want to avoid trouble with
-  # Unisys' stupid licensing conditions.
-  
-! #GIF_SUPPORT = -DGIF_SUPPORT
-  
-  
-  # Uncomment the next lines if you want PNG support and have libpng and libz
-  # installed.
-  
-! PNG_SUPPORT = -DPNG_SUPPORT
-! PNG_LIBS = -lpng -lz -lm
-! PNG_INCLUDEDIRS = -I/usr/local/include
-! PNG_LIBDIRS = -L/usr/local/lib
-  
-  
-  # Uncomment the following line if you want to get coredumps when an
+--- Makefile.orig	Fri Oct 29 07:06:32 1999
++++ Makefile	Wed Feb 16 03:23:53 2000
+@@ -22,14 +22,21 @@
+ 
+ # Set the installation-directories & permissions here
+ 
+-LIBDIR = /usr/local/lib/vtx
+-SPOOLDIR = /var/spool/vtx
++#LIBDIR = /usr/local/lib/vtx
++#SPOOLDIR = /var/spool/vtx
++#BINDIR = /usr/local/bin
++#XBINDIR = /usr/local/bin/X11
++#FONTDIR = /usr/lib/X11/fonts/local
++#MANDIR = /usr/local/man
++#XMANDIR = /usr/local/man
+ 
+-BINDIR = /usr/local/bin
+-XBINDIR = /usr/local/bin/X11
+-FONTDIR = /usr/lib/X11/fonts/local
+-MANDIR = /usr/local/man
+-XMANDIR = /usr/local/man
++SPOOLDIR = /var/spool/vtx
++LIBDIR = ${PREFIX}/lib/X11/vtx
++BINDIR = ${PREFIX}/bin
++XBINDIR = ${PREFIX}/bin
++FONTDIR = ${PREFIX}/lib/X11/fonts/local
++MANDIR = ${PREFIX}/man
++XMANDIR = ${PREFIX}/man
+ 
+ DIRPERM = 755
+ SPOOLDIRPERM = 777
+@@ -58,11 +65,11 @@
+ 
+ # Compiler options
+ 
+-INCLUDEDIRS = -I/usr/openwin/include -I/usr/X11R6/include
+-LIBDIRS = -L/usr/openwin/lib -L/usr/X11R6/lib
++INCLUDEDIRS = -I${X11BASE}/include
++LIBDIRS = -L${X11BASE}/lib
+ 
+-CC = gcc
+-CCFLAGS = -O2 -fomit-frame-pointer -pipe -Wall #-Wstrict-prototypes
++CC ?= gcc
++CCFLAGS = -fomit-frame-pointer -pipe -Wall #-Wstrict-prototypes
+ 
+ LDFLAGS =
+ CLIBS =
+@@ -79,10 +86,10 @@
+ # Uncomment the next lines if you want PNG support and have libpng and libz
+ # installed.
+ 
+-#PNG_SUPPORT = -DPNG_SUPPORT
+-#PNG_LIBS = -lpng -lz -lm
+-#PNG_INCLUDEDIRS = -I/usr/local/include
+-#PNG_LIBDIRS = -L/usr/local/lib
++PNG_SUPPORT = -DPNG_SUPPORT
++PNG_LIBS = -lpng -lz -lm
++PNG_INCLUDEDIRS = -I${LOCALBASE}/include
++PNG_LIBDIRS = -L${LOCALBASE}/lib
+ 
+ 
+ # Uncomment the following line if you want to get coredumps when an
+@@ -131,7 +138,7 @@
+ #####################################################################
+ 
+ DEFINES += -DVTX_LIBDIR=\"$(LIBDIR)\" -DVTX_SPOOLDIR=\"$(SPOOLDIR)\"
+-CFLAGS = $(DEFINES) $(GIF_SUPPORT) $(PNG_SUPPORT) $(CCFLAGS) $(INCLUDEDIRS) $(PNG_INCLUDEDIRS) \
++CFLAGS += $(DEFINES) $(GIF_SUPPORT) $(PNG_SUPPORT) $(CCFLAGS) $(INCLUDEDIRS) $(PNG_INCLUDEDIRS) \
+          -I. -Ibitmaps $(XCFLAGS)
+ LDFLAGS += $(XLDFLAGS)
+ 
+@@ -246,37 +253,33 @@
+ 	-install -d $(_MANDIRGRP) -m $(MANDIRPERM) $(DESTDIR)$(XMANDIR) \
+ 	  $(DESTDIR)$(XMANDIR)/man1
+ 	-install -d $(_LIBDIRGRP) -m $(LIBDIRPERM) $(DESTDIR)$(LIBDIR)
+-	install $(STRIP) $(_BINGRP) -m $(BINPERM) videotext $(DESTDIR)$(XBINDIR)
+-	install $(_MANGRP) -m $(MANPERM) videotext.1 $(DESTDIR)$(XMANDIR)/man1
+-	install $(_LIBGRP) -m $(LIBPERM) $(HELP) $(DESTDIR)$(LIBDIR)/videotext.info
++	${BSD_INSTALL_PROGRAM} videotext $(DESTDIR)$(XBINDIR)
++	${BSD_INSTALL_MAN} videotext.1 $(DESTDIR)$(XMANDIR)/man1
++	${BSD_INSTALL_DATA} $(HELP) $(DESTDIR)$(LIBDIR)/videotext.info
+ 
+ install.vtxget: vtxget vtxget.1
+ 	-install -d $(_BINDIRGRP) -m $(BINDIRPERM) $(DESTDIR)$(BINDIR)
+ 	-install -d $(_MANDIRGRP) -m $(MANDIRPERM) $(DESTDIR)$(MANDIR) \
+ 	  $(DESTDIR)$(MANDIR)/man1
+-	install $(STRIP) $(_BINGRP) -m $(BINPERM) vtxget $(DESTDIR)$(BINDIR)
+-	install $(_MANGRP) -m $(MANPERM) vtxget.1 $(DESTDIR)$(MANDIR)/man1
++	${BSD_INSTALL_PROGRAM} vtxget $(DESTDIR)$(BINDIR)
++	${BSD_INSTALL_MAN} vtxget.1 $(DESTDIR)$(MANDIR)/man1
+ 
+ install.tunerctl: tunerctl tunerctl.1
+ 	-install -d $(_BINDIRGRP) -m $(BINDIRPERM) $(DESTDIR)$(BINDIR)
+ 	-install -d $(_MANDIRGRP) -m $(MANDIRPERM) $(DESTDIR)$(MANDIR) \
+ 	  $(DESTDIR)$(MANDIR)/man1
+-	install $(STRIP) $(_BINGRP) -m $(BINPERM) tunerctl $(DESTDIR)$(BINDIR)
+-	install $(_MANGRP) -m $(MANPERM) tunerctl.1 $(DESTDIR)$(MANDIR)/man1
++	${BSD_INSTALL_PROGRAM} tunerctl $(DESTDIR)$(BINDIR)
++	${BSD_INSTALL_MAN} tunerctl.1 $(DESTDIR)$(MANDIR)/man1
+ 
+ install.xfonts: $(PCFFONTS)
+ 	-install -d $(_FONTDIRGRP) -m $(FONTDIRPERM) $(DESTDIR)$(FONTDIR)
+-	install $(_FONTGRP) -m $(FONTPERM) $(PCFFONTS) $(DESTDIR)$(FONTDIR)
++	${BSD_INSTALL_DATA} $(PCFFONTS) $(DESTDIR)$(FONTDIR)
+ 	mkfontdir $(DESTDIR)$(FONTDIR)
+-	chmod $(FONTPERM) $(DESTDIR)$(FONTDIR)/fonts.dir
+-ifneq ($(FONTGRP),)
+-	chgrp $(FONTGRP) $(DESTDIR)$(FONTDIR)/fonts.dir
+-endif
+ 	-xset fp rehash
+ 
+ install.fonts: $(VTXFONTS)
+ 	-install -d $(_LIBDIRGRP) -m $(LIBDIRPERM) $(DESTDIR)$(LIBDIR)
+-	install $(_LIBGRP) -m $(LIBPERM) $(VTXFONTS) $(DESTDIR)$(LIBDIR)
++	${BSD_INSTALL_DATA} $(VTXFONTS) $(DESTDIR)$(LIBDIR)
+ 
+ install.config:
+ 	-install -d $(_LIBDIRGRP) -m $(LIBDIRPERM) $(DESTDIR)$(LIBDIR)
+@@ -286,7 +289,7 @@
+ 	@echo Do a \'make install.forceconfig\' to overwrite old version.
+ 	@echo
+ else
+-	install $(_LIBGRP) -m $(LIBPERM) data/vtxrc $(DESTDIR)$(LIBDIR)
++	${BSD_INSTALL_DATA} data/vtxrc $(DESTDIR)$(LIBDIR)
+ endif
+ ifeq ($(DESTDIR)$(LIBDIR)/vtx-hotlist,$(wildcard $(DESTDIR)$(LIBDIR)/vtx-hotlist))
+ 	@echo
+@@ -295,16 +298,16 @@
+ 	@echo Or do a \'make install.forceconfig\' to overwrite old version.
+ 	@echo
+ else
+-	install $(_LIBGRP) -m $(LIBPERM) data/vtx-hotlist $(DESTDIR)$(LIBDIR)
++	${BSD_INSTALL_DATA} data/vtx-hotlist $(DESTDIR)$(LIBDIR)
+ endif
+ 
+ install.forceconfig:
+ 	-install -d $(_LIBDIRGRP) -m $(LIBDIRPERM) $(DESTDIR)$(LIBDIR)
+-	install $(_LIBGRP) -m $(LIBPERM) data/vtxrc data/vtx-hotlist $(DESTDIR)$(LIBDIR)
++	${BSD_INSTALL_DATA} data/vtxrc data/vtx-hotlist $(DESTDIR)$(LIBDIR)
+ 
+ install.lib:
+ 	-install -d $(_LIBDIRGRP) -m $(LIBDIRPERM) $(DESTDIR)$(LIBDIR)
+-	install $(_LIBGRP) -m $(LIBPERM) data/tv-channels $(DESTDIR)$(LIBDIR)
++	${BSD_INSTALL_DATA} data/tv-channels $(DESTDIR)$(LIBDIR)
+ 
+ install.spooldirs:
+ 	-install -d -m $(BASESPOOLDIRPERM) $(DESTDIR)$(SPOOLDIR)
