@@ -6,6 +6,7 @@
 #
 # Please view me with 4 column tabs!
 
+.if !defined(USE_GNOMENG)
 .if !defined(_POSTMKINCLUDED)
 
 # Please make sure all changes to this file are past through the maintainer. 
@@ -351,3 +352,6 @@ pre-install::
 
 .endif
 # End of use part.
+.else
+.include "${PORTSDIR}/Mk/bsd.gnomeng.mk"
+.endif
