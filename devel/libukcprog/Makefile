@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libukcprog
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
 		http://www.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/%SUBDIR%/ \
@@ -18,9 +18,10 @@ MAINTAINER=	tim@bishnet.net
 COMMENT=	Generally useful low level routines
 
 MAN3=		ukcprog.3
-DIST_SUBDIR=	iscream
+DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+USE_GNOME=	pkgconfig
 
 .include <bsd.port.mk>
