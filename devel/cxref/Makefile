@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cxref
-# Version required:	1.5a
+# Version required:	1.5b
 # Date created:		23 October 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cxref-1.5a
+DISTNAME=	cxref-1.5b
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://ftp.demon.co.uk/pub/unix/tools/
