@@ -87,7 +87,6 @@
     SUBDIR += minidom
     SUBDIR += mkcatalog
     SUBDIR += modlogan
-    SUBDIR += mswordview
     SUBDIR += nfbtrans
     SUBDIR += nicetext
     SUBDIR += nl-ispell
