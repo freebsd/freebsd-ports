@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smbfs
-PORTVERSION=	1.3.6
+PORTVERSION=	1.4.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.butya.kz/pub/smbfs/
 
@@ -17,7 +17,6 @@ NO_PACKAGE=     "Depends on kernel"
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=configure
 
-PLIST_SUB=	KMODDIR=${KMODDIR}
 
 .include <bsd.port.pre.mk>
 
@@ -25,9 +24,10 @@ PLIST_SUB=	KMODDIR=${KMODDIR}
 BROKEN=		"OS versions prior to 400000 is not supported"
 .endif
 
-.if defined(WITH_ICONV)
-LIB_DEPENDS= iconv.2:${PORTSDIR}/converters/iconv
-CONFIGURE_ARGS+= -DWITH_ICONV
+.if ${OSVERSION} < 500000
+PLIST_SUB=	KMODDIR=${KMODDIR}
+.else
+PLIST_SUB=	KMODDIR="@comment "
 .endif
 
 .if defined(SMP_SUPPORT)
@@ -35,11 +35,7 @@ CONFIGURE_ARGS+= -DSMP_SUPPORT
 .endif
 
 pre-fetch:
-.if !defined(WITH_ICONV)
-	@${ECHO_MSG} "NOTE: To enable support for various charsets "
-	@${ECHO_MSG} "add \"WITH_ICONV=yes\" to argument of make."
-.endif
-.if !defined(SMP_SUPPORT)
+.if !defined(SMP_SUPPORT) && ${OSVERSION} < 500000
 	@${ECHO_MSG} "NOTE: SMP suppport can be enabled by adding "
 	@${ECHO_MSG} "\"SMP_SUPPORT=yes\" to argument of make."
 .endif
