@@ -116,6 +116,8 @@ include/fox/FXPrintDialog.h
 include/fox/FXProgressBar.h
 include/fox/FXProgressDialog.h
 include/fox/FXQuat.h
+%%NEWFILE%%include/fox/FXRGBIcon.h
+%%NEWFILE%%include/fox/FXRGBImage.h
 include/fox/FXRadioButton.h
 include/fox/FXRange.h
 include/fox/FXRecentFiles.h
