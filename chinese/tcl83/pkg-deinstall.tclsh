@@ -1,0 +1,22 @@
+#! /bin/sh
+#
+# Remove the ${PREFIX}/bin/tclsh script that gets installed by INSTALL.tclsh
+# if we are the last tclsh installation to be pkg_delete'd.
+#
+# $FreeBSD: /tmp/pcvs/ports/chinese/tcl83/Attic/pkg-deinstall.tclsh,v 1.1 2001-02-22 03:53:30 kevlo Exp $
+#
+
+#
+# Explicitly listing /usr/X11R6/bin here is debatable.
+#
+BINDIR="${PKG_PREFIX}/bin /usr/X11R6/bin"
+TCLSH=${PKG_PREFIX}/bin/tclsh
+
+tclshs=$(/bin/ls ${BINDIR} 2> /dev/null | \
+    egrep '^(i?tclsh[0-9]+\.[0-9]+(\_r)?([a-z][a-z])?)|otclsh$')
+
+if [ "$tclshs" = "" -a -f ${TCLSH} ] && \
+    (head -3 ${TCLSH} | grep awieYJFnsuILOnfsYEW) > /dev/null 2>&1
+then
+	rm -f ${PKG_PREFIX}/bin/tclsh
+fi

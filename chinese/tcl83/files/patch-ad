@@ -1,0 +1,47 @@
+--- tcl.m4.orig	Thu Feb 10 11:09:57 2000
++++ tcl.m4	Wed Feb 21 20:48:23 2001
+@@ -1717,3 +1717,44 @@
+     AC_SUBST(TCL_LIBS)
+     AC_SUBST(MATH_LIBS)
+ ])
++
++#------------------------------------------------------------------------
++# SC_ENABLE_I18N_IMPROVE
++#
++#	Decide use i18n improved features or not.
++#
++# Arguments:
++#	none
++#
++# Results:
++#
++#	Adds the following arguments to configure:
++#		--enable-i18nImprove=yes|no
++#
++#	Defines the following vars:
++#		I18N_FLAGS	value of '-DI18N_IMPROVE' or ''
++#------------------------------------------------------------------------
++
++AC_DEFUN(SC_ENABLE_I18N_IMPROVE, [
++    AC_MSG_CHECKING([if i18n improvement features are enabled])
++    AC_ARG_ENABLE(i18nImprove,
++    [  --enable-i18nImprove    enable i18n improvement features [--enable-i18nImprove]],
++    [tcl_ok=$enableval], [tcl_ok=yes])
++
++    if test "${enable_i18nImprove+set}" = set; then
++	enableval="$enable_i18nImprove"
++	tcl_ok=$enableval
++    else
++	tcl_ok=yes
++    fi
++
++    if test "$tcl_ok" = "yes" ; then
++	AC_MSG_RESULT([enabled])
++	I18N_FLAGS='-DI18N_IMPROVE'
++    else
++	AC_MSG_RESULT([disabled])
++	I18N_FLAGS=''
++    fi
++
++    AC_SUBST(I18N_FLAGS)
++])

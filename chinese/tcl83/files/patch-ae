@@ -1,0 +1,21 @@
+--- tclConfig.sh.in.orig	Thu Feb 10 11:09:57 2000
++++ tclConfig.sh.in	Wed Feb 21 20:48:23 2001
+@@ -21,7 +21,7 @@
+ TCL_CC='@CC@'
+ 
+ # -D flags for use with the C compiler.
+-TCL_DEFS='@DEFS@'
++TCL_DEFS='@DEFS@ @I18N_FLAGS@'
+ 
+ # If TCL was built with debugging symbols, generated libraries contain
+ # this string at the end of the library name (before the extension).
+@@ -30,6 +30,9 @@
+ # Default flags used in an optimized and debuggable build, respectively.
+ TCL_CFLAGS_DEBUG='@CFLAGS_DEBUG@'
+ TCL_CFLAGS_OPTIMIZE='@CFLAGS_OPTIMIZE@'
++
++# I18n improvement flags
++TCL_I18N_IMPROVE_FLAGS='@I18N_FLAGS@'
+ 
+ # Default linker flags used in an optimized and debuggable build, respectively.
+ TCL_LDFLAGS_DEBUG='@LDFLAGS_DEBUG@'
