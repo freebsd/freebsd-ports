@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.webdav.org/mod_dav/
 DISTNAME=	mod_dav-${PORTVERSION}-${APACHE_VERSION}
 
 MAINTAINER=	patrick@mindstep.com
+COMMENT=	An Apache module that provides DAV capabilities
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.web2ldap.de/download/ \
 		http://www.tricknology.org/ports/
 
 MAINTAINER=	oddbjorn@tricknology.org
+COMMENT=	Python-based WWW gateway to LDAP servers
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_ldap.so:${PORTSDIR}/net/py-ldap2
 

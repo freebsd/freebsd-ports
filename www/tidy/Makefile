@@ -14,6 +14,7 @@ DISTNAME=	tidy4aug00
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	saken@hotel.rmta.org
+COMMENT=	Fixes and tidies up HTML files
 
 MAN1=		tidy.1
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.fukt.bth.se/~per/temperature/
 DISTNAME=	Temperature.app-${PORTVERSION}
 
 MAINTAINER=	pelle@fukt.bth.se
+COMMENT=	A dockable WindowMaker applet which displays the local temperature
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/projects/webredirect/
 
 MAINTAINER=	rasmus@kaj.se
+COMMENT=	Small web server serving "301 Moved Permanently" only
 
 ALL_TARGET=	depend all
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.mired.org/webcheck/
 EXTRACT_SUFX=	.bz2
 
 MAINTAINER=	mwm@mired.org
+COMMENT=	View structure of a web site, get a list of problems like broken links
 
 USE_PYTHON=	YES
 USE_BZIP2=	YES

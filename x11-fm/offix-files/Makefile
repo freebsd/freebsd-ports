@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 DISTNAME=	Files-${PORTVERSION}
 
 MAINTAINER=	ruslan@shevchenko.kiev.ua
+COMMENT=	File bar from OffiX
 
 RUN_DEPENDS=	execute:${PORTSDIR}/x11/offix-execute \
 		editor:${PORTSDIR}/editors/offix-editor

@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alex
 
 MAINTAINER=	gonza@techline.ru
+COMMENT=	ANSI C Library for CGI Programming
 
 MAKEFILE=	makefile
 

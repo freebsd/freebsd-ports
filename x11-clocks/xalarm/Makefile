@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 
 MAINTAINER=	desmo@bandwidth.org
+COMMENT=	An X based alarm clock
 
 USE_IMAKE=	yes
 IS_INTERACTIVE=	yes

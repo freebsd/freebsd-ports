@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.acme.com/software/http_load/
 DISTNAME=	${PORTNAME}-05apr2001
 
 MAINTAINER=	ask@valueclick.com
+COMMENT=	Multiprocessing http performance test client
 
 WRKSRC=		${WRKDIR}/http_load
 MAKEFILE=	${FILESDIR}/Makefile.bsd

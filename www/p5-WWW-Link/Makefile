@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIKEDLR
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Maintain information about the state of links
 
 PERL_CONFIGURE=	yes
 

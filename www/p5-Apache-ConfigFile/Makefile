@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	../by-authors/id/N/NW/NWIGER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Apache::ConfigFile - Parse Apache style httpd.conf configuration files
 
 PERL_CONFIGURE=	yes
 

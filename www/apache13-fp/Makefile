@@ -31,6 +31,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 DISTFILES=	${APACHE} powerlogo.gif:powerlogo fplogo.gif:fplogo
 
 MAINTAINER=	hetzels@westbend.net
+COMMENT=	The Apache webserver with MS Frontpage Module
 
 #PATCH_SITES=	http://www.apache.org/dist/patches/apply_to_${PORTVERSION}/
 #PATCHFILES=

@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
+COMMENT=	HTTP network traffic grabber and extractor
 
 LIB_DEPENDS=	ngrep.1:${PORTSDIR}/net/ngrep-lib
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://software.tangent.org/download/ \
 		ftp://ftp.tangent.org/pub/apache/
 
 MAINTAINER=	svenasse@polaris.ca
+COMMENT=	Apache module to launch triggers if certain actions occur
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${BUILD_DEPENDS}

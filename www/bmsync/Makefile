@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://web.cs.cmu.edu/~dpelleg/sw/
 
 MAINTAINER=	daniel+bmsync@pelleg.org
+COMMENT=	A bookmark converter and synchronizer for NN, KDE and MSIE
 
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}

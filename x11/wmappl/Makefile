@@ -15,6 +15,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	od@iclub.nsu.ru
+COMMENT=	An application launcher dockapp similar to wmbutton
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

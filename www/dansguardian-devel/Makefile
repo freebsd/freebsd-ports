@@ -12,6 +12,7 @@ MASTER_SITES=	# empty, see below
 DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
 
 MAINTAINER=	fcash@bigfoot.com
+COMMENT=	A fast, simple web content filter for Squid proxy servers
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24:install \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13:install

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Apache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	frank@exit.com
+COMMENT=	A persistence framework for session data
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=Apache
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leo@florida.sarang.net
+COMMENT=	A perl5 data debugging tool for the XS programmer
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/B/Graph.pm:${PORTSDIR}/devel/p5-B-Graph

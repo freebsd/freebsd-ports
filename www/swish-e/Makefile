@@ -11,6 +11,7 @@ CATEGORIES=	www textproc
 MASTER_SITES=	http://swish-e.org/Download/
 
 MAINTAINER=	doconnor@gsoft.com.au
+COMMENT=	Simple web indexing for humans - enhanced
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

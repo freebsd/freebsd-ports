@@ -10,6 +10,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
 MAINTAINER=	Janos.Mohacsi@dante.org.uk
+COMMENT=	Lightweight http proxy to help IPv4 only browsers
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/www6to4 ${PREFIX}/sbin

@@ -13,6 +13,7 @@ DISTNAME=	hjb3_0-linux.sfx
 EXTRACT_SUFX=
 
 MAINTAINER=	noway@nohow.demon.co.uk
+COMMENT=	Sun's Hotjava web browser
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java:${PORTSDIR}/java/jdk11
 

@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	-athena-3.0.tar.Z
 
 MAINTAINER=	shanee@augusta.de
+COMMENT=	Quick start up utility for applications on an X display
 
 USE_IMAKE=	yes
 USE_XPM=	yes

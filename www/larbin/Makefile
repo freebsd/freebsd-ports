@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/larbin/
 
 MAINTAINER=	hiten@uk.FreeBSD.org
+COMMENT=	A powerful HTTP crawler with an easy interface
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 

@@ -13,6 +13,7 @@ DISTNAME=	mkfontalias.py
 EXTRACT_SUFX=
 
 MAINTAINER=	stijn@win.tue.nl
+COMMENT=	Python script to make fonts.alias files for X
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes

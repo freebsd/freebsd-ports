@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES= 	http://largo.windowmaker.org/files/
 
 MAINTAINER=	adam-ports@blacktabby.org
+COMMENT=	A color vt102 terminal emulator with transparency support
 
 BUILD_DEPENDS=	${X11BASE}/lib/libWINGs.a:${PORTSDIR}/x11-wm/windowmaker
 

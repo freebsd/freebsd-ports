@@ -13,6 +13,7 @@ DISTNAME=	ws25_src
 EXTRACT_SUFX=	.tgz 
 
 MAINTAINER=	k_nishizawa@anet.ne.jp
+COMMENT=	World wide web server benchmarking
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/WebStone2.5/src

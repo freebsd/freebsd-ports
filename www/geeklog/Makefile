@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=geeklog
 
 MAINTAINER=	bob@fly.homeunix.org
+COMMENT=	GeekLog is a web content magagement system
 
 RUN_DEPENDS=    ${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql323-server
 RUN_DEPENDS+=   ${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4

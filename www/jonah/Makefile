@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://pompo.net/horde/jonah/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	Jonah is a portal and content collection system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

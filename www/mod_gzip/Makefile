@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	mod-gzip
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	An Internet Content Acceleration module for Apache
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}

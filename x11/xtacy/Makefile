@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/hacks/X
 DISTNAME=	${PORTNAME}114
 
 MAINTAINER=	matt@bdd.net
+COMMENT=	An X11 trippy color-cycling toy
 
 USE_IMAKE=	yes
 MAN1=		xtacy.1

@@ -12,6 +12,7 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA004959/xtimer/
 DISTNAME=	${PORTNAME}-8089
 
 MAINTAINER=	candy@kgc.co.jp
+COMMENT=	A simple digital timer for X11
 
 USE_IMAKE=	yes
 MAN1=		xtimer.1

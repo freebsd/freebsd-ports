@@ -11,6 +11,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	http://vide.sourceforge.net/
 
 MAINTAINER=	careilly@thecia.ie
+COMMENT=	Simple Gtk+ based filemanager with vi keybindings
 
 RUN_DEPENDS=    vim:${PORTSDIR}/editors/vim5
 

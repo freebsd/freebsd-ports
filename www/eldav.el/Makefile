@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.gz
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+COMMENT=	An interface to WebDAV servers for Emacs
 
 RUN_DEPENDS=	nd:${PORTSDIR}/www/nd
 

@@ -11,6 +11,7 @@ CATEGORIES=     x11
 MASTER_SITES=   http://www.finik.net/files/
 
 MAINTAINER=     bms@spc.org
+COMMENT=	General purpose LCD display for the WindowMaker dock
 
 WRKSRC=         ${WRKDIR}/${DISTNAME}/${PORTNAME}
 USE_X_PREFIX=	yes

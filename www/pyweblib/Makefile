@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.stroeder.com/pylib/PyWebLib/download/ \
 		http://www.tricknology.org/ports/
 
 MAINTAINER=	oddbjorn@tricknology.org
+COMMENT=	Yet another web programming framework for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

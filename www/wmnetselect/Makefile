@@ -11,6 +11,7 @@ CATEGORIES=	www windowmaker
 MASTER_SITES=	http://home.att.net/~apathos/code/
 
 MAINTAINER=	nugget@slacker.com
+COMMENT=	WindowMaker Netscape launcher to display urls from X selection
 
 USE_IMAKE=	yes
 USE_XPM=	yes

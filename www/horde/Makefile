@@ -12,6 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/
 
 MAINTAINER=	thierry@pompo.net
+COMMENT=	A common code-base used by Horde applications, written in PHP3
 
 #-----------------------------------------------------------------------
 # You may define these options:

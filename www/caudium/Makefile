@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.oav.net/caudium/source/	\
 DISTNAME=	caudium-${PORTVERSION}
 
 MAINTAINER=	kiwi@oav.net
+COMMENT=	A free webserver which is based on the Roxen Challenger 1.3 code base
 
 BUILD_DEPENDS=	pike:${PORTSDIR}/lang/pike70/
 LIB_DEPENDS=	sablot.69:${PORTSDIR}/textproc/sablotron/

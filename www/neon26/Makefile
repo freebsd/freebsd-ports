@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
 MAINTAINER=	rodrigc@attbi.com
+COMMENT=	An HTTP and WebDAV client library for Unix systems, with a C interface
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 

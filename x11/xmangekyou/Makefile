@@ -11,6 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/
 
 MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
+COMMENT=	A kaleidoscope on X
 
 ALL_TARGET=	xmangekyou
 

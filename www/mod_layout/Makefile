@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://software.tangent.org/download/
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
+COMMENT=	Apache module to wrap served pages with a header and/or footer
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13

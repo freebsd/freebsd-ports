@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/ \
 		http://www.people.or.jp/~hsakai/myfreesoft/
 
 MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
+COMMENT=	Record, repeat, and play key sequence from keyboard
 
 USE_X_PREFIX=	yes
 MAN1=		xkeywrap.1

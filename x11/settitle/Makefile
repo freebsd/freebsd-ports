@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/settitle/ \
 		http://ftp.megamirror.com/pub/ugh/unix/settitle/
 
 MAINTAINER=	andrew@ugh.net.au
+COMMENT=	A program for setting the title of terminal emulator windows
 
 WRKSRC=		${WRKDIR}/settitle
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.hut.fi/~mkivinie/X-Files/data/
 DISTNAME=	X-Files-${PORTVERSION}
 
 MAINTAINER=	dmaddox099@yahoo.com
+COMMENT=	A nice Tk-based filemanager
 
 BUILD_DEPENDS=	tclsh8.3:${PORTSDIR}/lang/tcl83
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83

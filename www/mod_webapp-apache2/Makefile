@@ -14,6 +14,7 @@ DISTNAME=	jakarta-tomcat-connectors-${CONNECTORS_RELEASE}-src
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gerweck@yahoo.com
+COMMENT=	Apache module mounts Tomcat web applications
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/apache2:extract \
 		${AUTOCONF}:${PORTSDIR}/devel/autoconf \

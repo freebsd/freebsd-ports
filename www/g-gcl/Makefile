@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
 		http://www.whizkidtech.net/gcl/
 
 MAINTAINER=	adam@whizkidtech.net
+COMMENT=	Sample counter scripts for Graphic Counter Language
 
 RUN_DEPENDS=	gracula:${PORTSDIR}/graphics/gracula
 

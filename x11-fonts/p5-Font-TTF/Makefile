@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Font
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl module for TrueType font hacking
 
 PERL_CONFIGURE=	yes
 

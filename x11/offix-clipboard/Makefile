@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 DISTNAME=	Clipboard-${PORTVERSION}
 
 MAINTAINER=	ruslan@shevchenko.kiev.ua
+COMMENT=	X clipboard with support of DND protocol
 
 LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 

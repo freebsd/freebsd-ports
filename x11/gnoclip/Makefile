@@ -11,6 +11,7 @@ CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.unikol.com.pl/~adolf/
 
 MAINTAINER=	edybsd@yahoo.com.ar
+COMMENT=	A simple workspace switcher for gnome environment
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

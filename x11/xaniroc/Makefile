@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.src.tar.Z
 
 MAINTAINER=	sec@42.org
+COMMENT=	Animate your root-cursor
 
 USE_IMAKE=	yes
 MAN1=		xaniroc.1

@@ -12,6 +12,7 @@ CATEGORIES=	x11-clocks
 MASTER_SITES=	ftp://ftp.noge.com/pub/EmiClock/X11/
 
 MAINTAINER=	koba@noge.com
+COMMENT=	Hyper-animated face analog clock for X11
 
 .if ${MACHINE_ARCH} != "i386"
 PLIST=		${PKGDIR}/pkg-plist.nosound

@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.seindal.dk/pub/rene/ \
 MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	bms@spc.org
+COMMENT=	GTK frontend for xset(1)
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 

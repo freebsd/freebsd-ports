@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.ntrnet.net/~jmknoble/WindowMaker/wmclock/
 
 MAINTAINER=	pelle@fukt.bth.se
+COMMENT=	A dockable clock applet for Windowmaker
 
 USE_IMAKE=	yes
 USE_XPM=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	ijbswa
 DISTNAME=	privoxy-3.0.0-stable-src
 
 MAINTAINER=	john@essenz.com
+COMMENT=	Privoxy is a web proxy with advanced filtering capabilities
 
 WRKSRC=		${WRKDIR}/privoxy-3.0.0-stable
 

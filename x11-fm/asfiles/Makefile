@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	apps/ASFiles
 DISTNAME=	ASFiles-${PORTVERSION}
 
 MAINTAINER=	lukin@okbmei.msk.su
+COMMENT=	X11 file manager. Dockable in WindowMaker
 
 LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
 
 MAINTAINER=	fuyuki@hadaly.org
+COMMENT=	Guile modules for WWW interaction
 
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 

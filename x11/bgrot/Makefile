@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/bgrot/ \
 		http://www.linc-it.com/~matt.fuller/mirrors/bgrot/
 
 MAINTAINER=	fullermd@over-yonder.net
+COMMENT=	A program to handle your X background to prevent boredom
 
 RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv
 

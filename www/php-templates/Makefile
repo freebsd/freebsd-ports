@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	php_templates-${PORTVERSION}
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A template framework for PHP
 
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf \

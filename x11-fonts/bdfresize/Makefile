@@ -11,6 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://openlab.ring.gr.jp/efont/dist/tools/bdfresize/
 
 MAINTAINER=	mistral@imasy.or.jp
+COMMENT=	A tool for resizing BDF format font
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes

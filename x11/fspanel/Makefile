@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.chatjunkies.org/fspanel/
 DISTNAME=	fspanel-0.8beta1
 
 MAINTAINER=	anarcat@anarcat.dyndns.org
+COMMENT=	Tiny panel listing opened windows for gnome-compliant WM
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/Xft
 

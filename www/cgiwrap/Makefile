@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jre@vineyard.net
+COMMENT=	Securely execute ~user CGI scripts
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-httpd-user=${HTTPDUSER} \

@@ -14,6 +14,7 @@ DISTNAME=	php_screw-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sysadmin@alexdupre.com
+COMMENT=	A PHP script encryption tool
 
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf \

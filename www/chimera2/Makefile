@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera-alpha/ \
 		ftp://ftp.uni-koeln.de/net/inet/WWW/
 
 MAINTAINER=	bgingery@gtcs.com
+COMMENT=	X/Athena World-Wide Web client - Wilbur (HTML3.2) compliant
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png

@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.kryltech.com/download/FreeBSD.x86.3/
 
 MAINTAINER=	support@kryltech.com
+COMMENT=	Adds the search capability to a Web site
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes

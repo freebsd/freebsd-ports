@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	p5-WWW-
 DISTNAME=	IMDb-current
 
 MAINTAINER=	mich@freebsdcluster.org
+COMMENT=	Perl interface to query the Internet Movie Database(IMDb)
 
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML

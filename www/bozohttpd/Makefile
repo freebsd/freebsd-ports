@@ -11,6 +11,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.eterna.com.au/bozohttpd/
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
+COMMENT=	The bozotic HTTP server
 
 USE_BZIP2=	YES
 

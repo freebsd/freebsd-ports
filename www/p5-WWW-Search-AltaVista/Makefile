@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	WWW/MTHURN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Perl WWW::Search class for searching AltaVista
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/WWW/Search.pm:${PORTSDIR}/www/p5-WWW-Search
 RUN_DEPENDS=	${BUILD_DEPENDS}

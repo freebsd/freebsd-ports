@@ -11,6 +11,7 @@ MASTER_SITES=	http://www.grubbybaby.com/mod_log_sql/
 DISTFILES=	mod_log_sql-${PORTVERSION}
 
 MAINTAINER=	lev@serebryakov.spb.ru
+COMMENT=	Allows Apache to log to a MySQL database
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/${AP_PORT}
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client

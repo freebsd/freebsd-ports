@@ -11,6 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.wohnheim.uni-ulm.de/allerlei/
 
 MAINTAINER=	nox@jelal.kn-bremen.de
+COMMENT=	CGI program to convert GNU .info files into html
 
 NO_WRKSUBDIR=	yes
 

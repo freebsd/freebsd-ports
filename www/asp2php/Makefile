@@ -12,6 +12,7 @@ MASTER_SITES=	http://65.108.58.129/asp2php/ \
 		http://dl.droso.net/ports/
 
 MAINTAINER=	erwin@lansing.dk
+COMMENT=	Converts ASP scripts to PHP
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}/src
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://java.apache.org/jserv/dist/
 DISTNAME=	ApacheJServ-${PORTVERSION}
 
 MAINTAINER=	greg@greg.rim.or.jp
+COMMENT=	Loadable servlet module for apache
 
 USE_JAVA=	1.1+
 NEED_JAVAC=	yes

@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/3./3_/}
 
 MAINTAINER=	dom@happygiraffe.net
+COMMENT=	Plugin for AxKit that provide utilities for building XSP web apps
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -11,6 +11,7 @@ CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 
 MAINTAINER=	rneswold@enteract.com
+COMMENT=	Time/Date applet for WindowMaker
 
 WRKSRC=		${WRKDIR}/wmtime.app/wmtime
 USE_IMAKE=	yes

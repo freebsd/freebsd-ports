@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.rehab.uiuc.edu/accessx/software/
 DISTNAME=	accessx${PORTVERSION:S/.//g}
 
 MAINTAINER=	stephen@math.missouri.edu
+COMMENT=	Customise accessibility features for X
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
