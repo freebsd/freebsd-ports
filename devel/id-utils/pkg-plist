@@ -1,15 +1,16 @@
-bin/mkid
-bin/lid
+bin/aid
+bin/defid
+bin/eid
 bin/fid
 bin/fnid
-bin/xtokid
-bin/eid
-bin/aid
 bin/gid
-bin/defid
+bin/lid
+bin/mkid
+bin/xtokid
 @unexec install-info --delete %D/info/id-utils.info %D/info/dir
 info/id-utils.info
 @exec install-info %D/info/id-utils.info %D/info/dir
+share/emacs/site-lisp/id-utils.el
 share/emacs/site-lisp/id-utils.elc
 share/id-lang.map
 share/locale/de/LC_MESSAGES/id-utils.mo
