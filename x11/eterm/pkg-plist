@@ -11,3 +11,4 @@ share/Eterm/RELNOTES.Eterm
 share/Eterm/MAIN.dist
 share/Eterm/colortest.sh
 share/Eterm/menu.sh
+@dirrm share/Eterm
