@@ -7,6 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.87
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
@@ -21,7 +22,7 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=
+WEBMIN_MODULES=	bind8-0.87-1.wbm.gz net-0.87-1.wbm.gz software-0.87-1.wbm.gz
 		
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
