@@ -6,6 +6,7 @@
 
 PORTNAME=	duke3d
 PORTVERSION=	20012306
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/
 
@@ -25,7 +26,7 @@ TARGET_DIR=	${LOCALBASE}/${PORTNAME}
 
 DATA_FILES=	defs.con game.con user.con
 PROG_FILES=	${WRKSRC}/source/${PORTNAME} ${WRKSRC}/source/buildengine/build
-DOC_FILES1=	README 	BUILDLIC.TXT CONTRIB TODO CHANGELOG ../../readme.txt ../../gnu.txt
+DOC_FILES=	README BUILDLIC.TXT CONTRIB TODO CHANGELOG ../../readme.txt ../../gnu.txt
 
 pre-everything::
 .ifndef(WITHOUT_DOSBOX)
@@ -66,15 +67,15 @@ do-install:
 	${LN} -s ${TARGET_DIR}/duke.sh ${LOCALBASE}/bin/duke3d
 
 post-install:
-.if !defined(NOPORTDOCS)
+.ifndef(NOPORTDOCS)
 	${INSTALL} -d ${DOCSDIR}
 
-.for file in ${DOC_FILES1}
+.for file in ${DOC_FILES}
 	${INSTALL_MAN} ${WRKSRC}/source/buildengine/${file} ${DOCSDIR}
 .endfor
 	${SED} -e 's|%%DUKEDIR%%|${PREFIX}/${PORTNAME}|g' ${FILESDIR}/README.bsd > \
 		${DOCSDIR}/README.bsd
 .endif
-	@${CAT} ${PKGMESSAGE}
+	@${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
