@@ -20,9 +20,9 @@ RESTRICTED=	"Gary Pearlman requires that users agree to his license to \
 
 MAN1=		abut.1 anova.1 calc.1 colex.1 contab.1 desc.1 dm.1 dprime.1 \
 		dsort.1 features.1 ff.1 fls.1 fpack.1 linex.1 maketrix.1 \
-		manstat.1 oneway.1 pair.1 perm.1 probdist.1 rakind.1 rankrel.1 \
-		ranksort.1 regress.1 repeat.1 reverse.1 series.1 stats.1 \
-		transpose.1 ts.1 unixstat.1 validata.1
+		manstat.1 oneway.1 pair.1 perm.1 probdist.1 rankind.1 \
+		rankrel.1 ranksort.1 regress.1 repeat.1 reverse.1 series.1 \
+		stats.1 transpose.1 ts.1 unixstat.1 validata.1
 
 do-fetch:
 	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then \
