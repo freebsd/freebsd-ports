@@ -31,14 +31,13 @@
 %%PGADMDIR%%/classes/Reports.php
 %%PGADMDIR%%/classes/class.select.php
 %%PGADMDIR%%/classes/database/ADODB_base.php
-%%PGADMDIR%%/classes/database/BaseDB.php
 %%PGADMDIR%%/classes/database/Connection.php
 %%PGADMDIR%%/classes/database/Postgres.php
 %%PGADMDIR%%/classes/database/Postgres71.php
 %%PGADMDIR%%/classes/database/Postgres72.php
 %%PGADMDIR%%/classes/database/Postgres73.php
 %%PGADMDIR%%/classes/database/Postgres74.php
-%%PGADMDIR%%/classes/database/Postgres75.php
+%%PGADMDIR%%/classes/database/Postgres80.php
 @unexec if cmp -s %D/%%PGADMDIR%%/conf/config.inc.php %D/%%PGADMDIR%%/conf/config.inc.php-dist; then rm -f %D/%%PGADMDIR%%/conf/config.inc.php; fi
 %%PGADMDIR%%/conf/config.inc.php-dist
 @exec [ -f %B/config.inc.php ] || cp %B/%f %B/config.inc.php
@@ -52,6 +51,13 @@
 %%PGADMDIR%%/domains.php
 %%PGADMDIR%%/functions.php
 %%PGADMDIR%%/groups.php
+%%PGADMDIR%%/help.php
+%%PGADMDIR%%/help/PostgresDoc70.php
+%%PGADMDIR%%/help/PostgresDoc71.php
+%%PGADMDIR%%/help/PostgresDoc72.php
+%%PGADMDIR%%/help/PostgresDoc73.php
+%%PGADMDIR%%/help/PostgresDoc74.php
+%%PGADMDIR%%/help/PostgresDoc80.php
 %%PGADMDIR%%/images/themes/default/database.png
 %%PGADMDIR%%/images/themes/default/domains.png
 %%PGADMDIR%%/images/themes/default/functions.png
@@ -78,10 +84,14 @@
 %%PGADMDIR%%/lang/english.php
 %%PGADMDIR%%/lang/french.php
 %%PGADMDIR%%/lang/german.php
+%%PGADMDIR%%/lang/hebrew.php
 %%PGADMDIR%%/lang/hungarian.php
 %%PGADMDIR%%/lang/italian.php
 %%PGADMDIR%%/lang/japanese.php
 %%PGADMDIR%%/lang/langcheck
+%%PGADMDIR%%/lang/mongol.php
+%%PGADMDIR%%/lang/php2po
+%%PGADMDIR%%/lang/po2php
 %%PGADMDIR%%/lang/polish.php
 %%PGADMDIR%%/lang/portuguese-br.php
 %%PGADMDIR%%/lang/recoded/README
@@ -94,22 +104,28 @@
 %%PGADMDIR%%/lang/recoded/english.php
 %%PGADMDIR%%/lang/recoded/french.php
 %%PGADMDIR%%/lang/recoded/german.php
+%%PGADMDIR%%/lang/recoded/hebrew.php
 %%PGADMDIR%%/lang/recoded/hungarian.php
 %%PGADMDIR%%/lang/recoded/italian.php
 %%PGADMDIR%%/lang/recoded/japanese.php
+%%PGADMDIR%%/lang/recoded/mongol.php
 %%PGADMDIR%%/lang/recoded/polish.php
 %%PGADMDIR%%/lang/recoded/portuguese-br.php
+%%PGADMDIR%%/lang/recoded/romanian.php
 %%PGADMDIR%%/lang/recoded/russian.php
 %%PGADMDIR%%/lang/recoded/slovak.php
 %%PGADMDIR%%/lang/recoded/spanish.php
 %%PGADMDIR%%/lang/recoded/swedish.php
 %%PGADMDIR%%/lang/recoded/turkish.php
+%%PGADMDIR%%/lang/recoded/ukrainian.php
+%%PGADMDIR%%/lang/romanian.php
 %%PGADMDIR%%/lang/russian.php
 %%PGADMDIR%%/lang/slovak.php
 %%PGADMDIR%%/lang/spanish.php
 %%PGADMDIR%%/lang/swedish.php
 %%PGADMDIR%%/lang/synch
 %%PGADMDIR%%/lang/turkish.php
+%%PGADMDIR%%/lang/ukrainian.php
 %%PGADMDIR%%/languages.php
 %%PGADMDIR%%/libraries/adodb/adodb-connection.inc.php
 %%PGADMDIR%%/libraries/adodb/adodb-cryptsession.php
@@ -167,6 +183,7 @@
 %%PGADMDIR%%/libraries/adodb/toexport.inc.php
 %%PGADMDIR%%/libraries/adodb/tohtml.inc.php
 %%PGADMDIR%%/libraries/errorhandler.inc.php
+%%PGADMDIR%%/libraries/highlight.php
 %%PGADMDIR%%/libraries/lib.inc.php
 %%PGADMDIR%%/links.js
 %%PGADMDIR%%/login.php
@@ -174,15 +191,16 @@
 %%PGADMDIR%%/opclasses.php
 %%PGADMDIR%%/operators.php
 %%PGADMDIR%%/privileges.php
+%%PGADMDIR%%/redirect.php
 %%PGADMDIR%%/reports.php
 %%PGADMDIR%%/robots.txt
 %%PGADMDIR%%/rules.php
-%%PGADMDIR%%/schema.php
 %%PGADMDIR%%/sequences.php
 %%PGADMDIR%%/sql.php
 %%PGADMDIR%%/sql/reports-pgsql.sql
 %%PGADMDIR%%/sqledit.php
 %%PGADMDIR%%/tables.php
+%%PGADMDIR%%/tablespaces.php
 %%PGADMDIR%%/tblproperties.php
 %%PGADMDIR%%/themes/default/global.css
 %%PGADMDIR%%/topbar.php
@@ -203,6 +221,7 @@
 @dirrm %%PGADMDIR%%/images/themes/default
 @dirrm %%PGADMDIR%%/images/themes
 @dirrm %%PGADMDIR%%/images
+@dirrm %%PGADMDIR%%/help
 @dirrm %%PGADMDIR%%/conf
 @dirrm %%PGADMDIR%%/classes/database
 @dirrm %%PGADMDIR%%/classes/HTML_TreeMenu/images
