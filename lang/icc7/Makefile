@@ -43,6 +43,11 @@ OBJCOPY?=	/usr/bin/objcopy
 IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, ${ICC_SITE}c60l/noncom.htm or https://premier.intel.com/ \(whichever has the file, to access premier.intel.com you have to register at http://www.intel.com/software/products/registrationcenter/index.htm\). With a little bit of luck it may also be available from ftp://download.intel.com/software/products/compilers/downloads/. Put it into ${DISTDIR} and run make again"
 .endif
 
+.if exists(${LINUXBASE}/boot/kernel.h) || \
+	exists(${PREFIX}/intel/compiler60/bin/ifc)
+BROKEN=	Can not coexist with linux_devtools or ifc
+.endif
+
 post-extract:
 .for i in \
 	intel-icc6-6.0.1-304.i386.rpm \
@@ -141,7 +146,7 @@ post-install:
 	@${ECHO_CMD} "in your kernel config (have a look at http://www.FreeBSD.org/handbook/"
 	@${ECHO_CMD} "if you do not know how to do this), else icc will hang forever."
 	@${ECHO_CMD}
-	@${ECHO_CMD} "WARNING: If you use icc while having linux-devtools installed, icc will use"
-	@${ECHO_CMD} "the wrong includes and therefore will generate bogus binaries!"
+	@${ECHO_CMD} "WARNING: If you use icc while having linux_devtools installed, icc will use"
+	@${ECHO_CMD} "the wrong includes and therefore will generate bogus (not working) binaries!"
 
 .include <bsd.port.post.mk>
