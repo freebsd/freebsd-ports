@@ -207,7 +207,6 @@
     SUBDIR += ptex-sjis
     SUBDIR += qkc
     SUBDIR += recjis
-    SUBDIR += recycler
     SUBDIR += rubytk
     SUBDIR += rxvt
     SUBDIR += sed
