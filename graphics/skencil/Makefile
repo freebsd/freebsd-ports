@@ -8,7 +8,7 @@
 
 DISTNAME=	sketch-0.6.3
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.online.de/home/sketch/
+MASTER_SITES=	http://download.sourceforge.net/sketch/
 
 MAINTAINER=	ports@FreeBSD.org
 
