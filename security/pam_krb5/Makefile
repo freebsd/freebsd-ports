@@ -6,9 +6,9 @@
 #
 
 PORTNAME=		pam_krb5
-PORTVERSION=		1.0.1
+PORTVERSION=		1.0.3
 CATEGORIES=		security
-MASTER_SITES=		http://www.nectar.com/distfiles/
+MASTER_SITES=		http://www.nectar.cc/distfiles/
 
 MAINTAINER=		nectar@FreeBSD.org
 
