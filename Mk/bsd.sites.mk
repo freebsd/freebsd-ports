@@ -199,6 +199,16 @@ MASTER_SITE_EXIM+=	\
 	http://exim.stanford.edu/ftp/pub/exim/%SUBDIR%/ \
 	ftp://ftp.fsckit.net/pub/exim/%SUBDIR%/
 
+MASTER_SITE_FEDORA_LINUX+= \
+	http://download.fedora.us/%SUBDIR%/ \
+	http://fedora.multikabel.nl/%SUBDIR%/ \
+	ftp://ftp-stud.fht-esslingen.de/fedora/%SUBDIR%/ \
+	http://mirrors.usc.edu/pub/linux/fedora/%SUBDIR%/ \
+	http://mirrors.kernel.org/fedora.us/%SUBDIR%/ \
+	http://sunsite.informatik.rwth-aachen.de/ftp/pub/Linux/%SUBDIR%/ \
+	http://wftp.tu-chemnitz.de/pub/linux/%SUBDIR%/ \
+	ftp://ftp.g-int.net/Mirrors/download.fedora.us/pub/%SUBDIR%/
+
 MASTER_SITE_FESTIVAL+= \
 	http://www.festvox.org/packed/festival/%SUBDIR%/ \
 	http://www.speech.cs.cmu.edu/festival/cstr/festival/%SUBDIR%/ \
