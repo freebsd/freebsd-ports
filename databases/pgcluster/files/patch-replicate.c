@@ -1,5 +1,14 @@
---- src/pgcluster/pgrp/replicate.c.orig	Tue Feb  3 23:36:49 2004
-+++ src/pgcluster/pgrp/replicate.c	Tue Feb  3 23:44:28 2004
+--- src/pgcluster/pgrp/replicate.c.orig	Fri Feb 20 11:38:40 2004
++++ src/pgcluster/pgrp/replicate.c	Sat Feb 21 20:50:01 2004
+@@ -133,7 +133,7 @@
+ 	ptr = Dbserver_Tbl_Begin;
+ 	while (ptr != NULL)
+ 	{
+-show_debug("search host(%d):port(%d):db(%s)",ptr->hostIP,ptr->port,ptr->dbName);
++show_debug("search host(%08x):port(%d):db(%s)",ptr->hostIP,ptr->port,ptr->dbName);
+ 		if ((ptr->useFlag == DB_TBL_USE) &&
+ 			(ptr->hostIP == host) &&
+ 			(ptr->port == host_ptr->port) &&
 @@ -165,7 +165,7 @@
  	hostName = host_ptr->hostName;
  
@@ -49,7 +58,15 @@
  	return conn;
  }
  
-@@ -451,12 +451,12 @@
+@@ -379,6 +379,7 @@
+ 		show_error("insertTransactionTbl failed");
+ 		return (TransactionTbl *)NULL;
+ 	}
++	show_debug("setTransactionTbl return %p (hostIP=%08x, port=%d, srcHostIP=%08x", ptr, work.hostIP, work.port, work.srcHostIP);
+ 	return ptr;
+ }
+ 
+@@ -451,12 +452,12 @@
  			(!memcmp(ptr->dbName,header->dbName,strlen(ptr->dbName))) &&
  			(ptr->pid == header->pid))
  		{
@@ -64,25 +81,95 @@
  	return (TransactionTbl * )NULL;
  }
  
-@@ -606,7 +606,7 @@
+@@ -561,8 +562,10 @@
+ 	set_function("PGRadd_HostTbl");
+ 
+ 	ptr = PGRget_HostTbl(conf_data->hostName, conf_data->port);
++	set_function("PGRadd_HostTbl");
+ 	if (ptr != (HostTbl*)NULL)
+ 	{
++		show_debug("found ptr");
+ 		PGRset_host_status(ptr,useFlag);
+ 		return ptr;
+ 	}
+@@ -586,6 +589,7 @@
+ 	{
+ 		(ptr + 1) -> useFlag = DB_TBL_END;
+ 	}
++	show_debug("not found, allocate new one");
+ 	ptr->hostNum = cnt;
+ 	memcpy(ptr->hostName,conf_data->hostName,sizeof(ptr->hostName));
+ 	ptr->port = conf_data->port;
+@@ -604,19 +608,22 @@
+ 	set_function("PGRget_master");
+ 
  	host_tbl = Host_Tbl_Begin;
++	show_debug("start get_master loop");
  	while(host_tbl->useFlag != DB_TBL_END)
  	{
 -		show_debug("name %s flg %d port %d recoveryPort %d \n",
-+		show_debug("name %s flg %d port %d recoveryPort %d",
++		show_debug("  %s:%d flg %d recoveryPort %d",
  			host_tbl->hostName,
- 			host_tbl->useFlag,
+-			host_tbl->useFlag,
  			host_tbl->port,
-@@ -763,7 +763,7 @@
++			host_tbl->useFlag,
+ 			host_tbl->recoveryPort);
+ 		if (host_tbl->useFlag == DB_TBL_USE)
+ 		{
++			show_debug("found master");
+ 			return host_tbl;
+ 		}
+ 		host_tbl ++;
+ 	}
++	show_debug("not found master");
+ 	return (HostTbl *)NULL;
+ }
+ 
+@@ -629,6 +636,9 @@
+ 	PGRsem_lock(SemID,SEM_NUM_OF_RECOVERY);
+ 	if (Recovery_Status_Inf != (RecoveryStatusInf *)NULL)
+ 	{
++		if (Recovery_Status_Inf->recovery_status != status) {
++			show_debug("status change %d -> %d", Recovery_Status_Inf->recovery_status, status);
++		}
+ 		Recovery_Status_Inf->recovery_status = status;
+ 	}
+ 	PGRsem_unlock(SemID,SEM_NUM_OF_RECOVERY);
+@@ -763,7 +773,7 @@
  	{
  		if (Recovery_Status_Inf->useFlag != DB_TBL_FREE)
  		{
 -			show_debug("check recovered host %d\n",Recovery_Status_Inf->useFlag);
-+			show_debug("check recovered host %d",Recovery_Status_Inf->useFlag);
++			show_debug("check recovered host (useFlag=%d)",Recovery_Status_Inf->useFlag);
  			ptr = PGRadd_HostTbl((HostTbl *)&(Recovery_Status_Inf->target_host),Recovery_Status_Inf->useFlag);
  			if (ptr == (HostTbl *) NULL)
  			{
-@@ -1144,7 +1144,7 @@
+@@ -792,6 +802,8 @@
+ 		if (target != (HostTbl*)NULL)
+ 		{
+ 			memcpy((HostTbl *)&(Recovery_Status_Inf->target_host),target,sizeof(HostTbl));
++			set_function("PGRset_recovered_host");
++			show_debug("status=%d", useFlag);
+ 			PGRset_host_status(target,useFlag);
+ 		}
+ 
+@@ -961,6 +973,7 @@
+ 		return STATUS_ERROR;
+ 	}
+ 	host_ptr->useFlag = status;
++	show_debug("hostName=%s, port=%d, recoveryPort=%d, hostNum=%d, useFlag=%d", host_ptr->hostName, host_ptr->port, host_ptr->recoveryPort, host_ptr->hostNum, host_ptr->useFlag);
+ 	switch( host_ptr->useFlag)
+ 	{
+ 		case DB_TBL_FREE:
+@@ -990,7 +1003,6 @@
+ 					host_ptr->hostName);
+ 			break;
+ 	}
+-
+ 	return STATUS_OK;
+ }
+ 
+@@ -1144,7 +1156,7 @@
  			/*
  			 * re-use the connection data
  			 */
@@ -91,7 +178,7 @@
  			if ((db_server_tbl->conn != (PGconn *)NULL) && 
  				(db_server_tbl->conn->sock <= 0) )
  			{
-@@ -1153,17 +1153,17 @@
+@@ -1153,17 +1165,18 @@
  			}
  		}
  		conn = db_server_tbl->conn;
@@ -99,6 +186,7 @@
 +		show_debug("send_replicate_packet_to_server query=%s",query);
  	}
  
++	set_function("PGRsend_replicate_packet_to_server");
  	if (conn == NULL)
  	{
 -		show_error("conn is null\n");
@@ -112,7 +200,7 @@
  	database,port,userName,host,query);
  	/*
  	 * execute query
-@@ -1184,7 +1184,7 @@
+@@ -1184,7 +1197,7 @@
  		(header->cmdType == CMD_TYPE_COPY_DATA_END))
  	{
  		/* copy data replication */
@@ -121,7 +209,7 @@
  		rtn =PQputnbytes(conn, query,header->query_size);
  		if (header->cmdType == CMD_TYPE_COPY_DATA_END)
  		{
-@@ -1201,11 +1201,11 @@
+@@ -1201,11 +1214,11 @@
  
  	if (res == NULL)
  	{
@@ -135,7 +223,7 @@
  
  	str = PQcmdStatus(res);
  	if ((str == NULL) || (*str == '\0'))
-@@ -1258,7 +1258,7 @@
+@@ -1258,7 +1271,7 @@
  			}
  		}
  	}
@@ -144,7 +232,7 @@
  	if ((! strcmp(database,"template1")) ||
  		(! strcmp(database,"template0")))
  	{
-@@ -1337,12 +1337,12 @@
+@@ -1337,12 +1350,12 @@
  	 * send header data to queue
  	 */
  	rtn = msgsnd(RecoveryMsgid, msg_header, sizeof(ReplicateHeader), IPC_NOWAIT);
@@ -159,3 +247,47 @@
  
  	/*
  	 * release memory
+@@ -1364,6 +1377,7 @@
+ 
+ 	len = strlen(hostName);
+ 	ptr = Host_Tbl_Begin;
++	show_debug("hostName=%s, port=%d", hostName, port);
+ 	if (len > sizeof(ptr->hostName))
+ 	{
+ 		len = sizeof(ptr->hostName);
+@@ -1379,10 +1393,12 @@
+ 	}
+ 	if (ptr->useFlag != DB_TBL_END)
+ 	{
++		show_debug("found: %s:%d", ptr->hostName, ptr->port);
+ 		return ptr;
+ 	}
+ 	else
+ 	{
++		show_debug("not found");
+ 		return (HostTbl*)NULL;
+ 	}
+ }
+@@ -1392,7 +1408,6 @@
+ {
+ 	char buf[256];
+ 	char log[288];
+-	int len1;
+ 	char * p;
+ 	va_list ap;
+ 	time_t t;
+@@ -1410,13 +1425,12 @@
+ 	{
+ 		*p = ' ';
+ 	}
+-	len1 = strlen(log);
+ 	va_start(ap,fmt);
+ 	vsnprintf(buf,sizeof(buf),fmt,ap);
+ 	va_end(ap);
+ 	strcat(log,buf);
+ 	strcat(log,"\n");
+-	if (fputs(log,LogFp) > 0)
++	if (fputs(log,LogFp) >= 0)
+ 	{
+ 		fflush(LogFp);
+ 	}
