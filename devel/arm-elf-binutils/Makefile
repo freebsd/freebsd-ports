@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	arm-elf-
 
 MAINTAINER=	esk@ira.uka.de
 
+BROKEN=		"Distinfo not yet updated"
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=arm-elf
