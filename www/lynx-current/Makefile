@@ -5,14 +5,15 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.38 1997/04/04 01:55:39 ache Exp $
+# $Id: Makefile,v 1.39 1997/05/28 22:21:48 fenner Exp $
 #
 
 DISTNAME=       lynx2-7-1
-PKGNAME=        lynx-2.7.1
+PKGNAME=        lynx-2.7.1+fotemods
 CATEGORIES=	www
-MASTER_SITES=   http://www.slcc.edu/lynx/fote/
-EXTRACT_SUFX=   .zip
+MASTER_SITES=   http://www.slcc.edu/lynx/fote/ \
+		http://www.slcc.edu/lynx/fote/patches/
+DISTFILES=      lynx2-7-1.zip fotemods.zip
 
 MAINTAINER=	ache@FreeBSD.ORG
 
