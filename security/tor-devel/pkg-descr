@@ -1,0 +1,11 @@
+Tor: an anonymizing overlay network for TCP
+
+Tor is a connection-based low-latency anonymous communication system which
+addresses many flaws in the original onion routing design.
+
+Remember that this is development code -- DON'T RELY ON THE CURRENT TOR
+NETWORK FOR ANONYMITY!
+
+WWW: http://freehaven.net/tor/
+- rik
+freebsd-ports@rikrose.net

@@ -1,0 +1,11 @@
+--- configure.orig      Fri May 28 18:55:36 2004
++++ configure   Fri May 28 18:57:37 2004
+@@ -1559,7 +1559,7 @@
+           ac_config_commands="$ac_config_commands default-1"
+
+
+-CFLAGS="$CFLAGS -Wall -g -O2 -I/usr/kerberos/include"
++CFLAGS="$CFLAGS -Wall -g -O2"
+
+ # Check whether --enable-debug or --disable-debug was given.
+ if test "${enable_debug+set}" = set; then

@@ -418,6 +418,7 @@
     SUBDIR += termlog
     SUBDIR += tinc
     SUBDIR += tinyca
+    SUBDIR += tor
     SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += tripwire-131
