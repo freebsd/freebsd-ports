@@ -16,6 +16,8 @@ COMMENT=	GNU Common Lisp
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
+ONLY_FOR_ARCHS=	i386 sparc64
+
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
