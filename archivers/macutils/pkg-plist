@@ -5,14 +5,14 @@ bin/macsave
 bin/macstream
 bin/macunpack
 bin/tomac
-share/doc/macutils/README
-share/doc/macutils/README.crc
-share/doc/macutils/README.crc.orig
-share/doc/macutils/README.hexbin
-share/doc/macutils/README.macget
-share/doc/macutils/README.macput
-share/doc/macutils/README.scan
-share/doc/macutils/README.unpit
-share/doc/macutils/README.unsit
-share/doc/macutils/README.zoom
-@dirrm share/doc/macutils
+%%PORTDOCS%%share/doc/macutils/README
+%%PORTDOCS%%share/doc/macutils/README.crc
+%%PORTDOCS%%share/doc/macutils/README.crc.orig
+%%PORTDOCS%%share/doc/macutils/README.hexbin
+%%PORTDOCS%%share/doc/macutils/README.macget
+%%PORTDOCS%%share/doc/macutils/README.macput
+%%PORTDOCS%%share/doc/macutils/README.scan
+%%PORTDOCS%%share/doc/macutils/README.unpit
+%%PORTDOCS%%share/doc/macutils/README.unsit
+%%PORTDOCS%%share/doc/macutils/README.zoom
+%%PORTDOCS%%@dirrm share/doc/macutils
