@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1a32e8ee-3edb-11d9-8699-00065be4b5b6">
+    <topic>ProZilla -- server response buffer overflow vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>prozilla</name>
+	<range><le>1.3.6_3</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Buffer overflow vulnerabilities have been reported to exist
+	  in this software package.  The vulnerabilities can be triggered by
+	  a remote server and can be used to inject malicious code in the
+	  ProZilla process.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.gentoo.org/security/en/glsa/glsa-200411-31.xml</url>
+      <url>http://bugs.gentoo.org/show_bug.cgi?id=70090</url>
+      <mlist msgid="41A411E0.2010907@gmx.net">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110136626320497</mlist>
+    </references>
+    <dates>
+      <discovery>2004-11-23</discovery>
+      <entry>2004-11-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="31952117-3d17-11d9-8818-008088034841">
     <topic>Cyrus IMAPd -- APPEND command uses undefined programming construct</topic>
     <affects>
