@@ -3086,6 +3086,7 @@ irssi		ports/irc/irssi
 isakmpd		ports/security/isakmpd
 isc-dhcp3	ports/net/isc-dhcp3
 isc-dhcp3-devel	ports/net/isc-dhcp3-devel
+isc-dhcp3-relay	ports/net/isc-dhcp3-relay
 isearch		ports/textproc/isearch
 iselect		ports/misc/iselect
 ish		ports/converters/ish
