@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ff00f2ce-c54c-11d8-b708-00061bc2ad93">
+    <topic>XFree86 opens a chooserFd TCP socket even when DisplayManager.requestPort is 0</topic>
+    <affects>
+      <package>
+        <name>xorg-clients</name>
+        <range><ge>6.7.0</ge></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>When the IPv6 code was added to xdm a critical
+          test to disable xdmcp was accidentally removed.  This
+          caused xdm to create the chooser socket regardless if
+          DisplayManager.requestPort was disabled in xdm-config
+          or not.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0419</cvename>
+      <url>http://bugs.xfree86.org/show_bug.cgi?id=1376</url>
+      <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=124900</url>
+    </references>
+    <dates>
+      <discovery>2004-05-19</discovery>
+      <entry>2004-06-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="da9e6438-bfc0-11d8-b00e-000347a4fa7d">
     <topic>MoinMoin administrative group name privilege escalation vulnerability</topic>
     <affects>
