@@ -250,6 +250,7 @@
     SUBDIR += upsd
     SUBDIR += upsmon
     SUBDIR += uptimed
+    SUBDIR += userinfo
     SUBDIR += userlist
     SUBDIR += usermin
     SUBDIR += uwatch
