@@ -1,6 +1,5 @@
 include/LeoArg.hh
 lib/libLeoArg.a
-lib/libLeoArg.la
 lib/libLeoArg.so
 lib/libLeoArg.so.2
 share/doc/LeoArg/example/Makefile
