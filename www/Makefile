@@ -361,7 +361,6 @@
     SUBDIR += web2ldap
     SUBDIR += web500gw
     SUBDIR += webalizer
-    SUBDIR += webcheck
     SUBDIR += webcopy
     SUBDIR += webcrawl
     SUBDIR += webfs
