@@ -41,6 +41,8 @@ OPTIONS=	PAM		"Build with PAM support"		on \
 		AUTHUSERDB	"Build with authuserdb"			on
 
 VPOPMAILDIR?=	${LOCALBASE}/vpopmail
+WITH_MAILUSER?=	daemon
+WITH_MAILGROUP?=daemon
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
@@ -50,7 +52,12 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--without-authshadow \
 		--without-authcustom \
 		--enable-unicode \
-		--enable-ltdl-install=no
+		--enable-ltdl-install=no \
+		--with-mailuser=${WITH_MAILUSER} \
+		--with-mailgroup=${WITH_MAILGROUP} \
+		--with-authdaemonvar=/var/run/authdaemond
+
+PLIST_SUB=	MAILUSER=${WITH_MAILUSER} MAILGROUP=${WITH_MAILGROUP}
 
 .include <bsd.port.pre.mk>
 
@@ -115,14 +122,6 @@ CONFIGURE_ARGS+=--without-authuserdb
 PLIST_SUB+=     AUTHUSERDBFLAG="@comment "
 .else
 PLIST_SUB+=     AUTHUSERDBFLAG=""
-.endif
-
-.if defined(WITH_MAILUSER)
-CONFIGURE_ARGS+=--with-mailuser=${WITH_MAILUSER}
-.endif
-
-.if defined(WITH_MAILGROUP)
-CONFIGURE_ARGS+=--with-mailgroup=${WITH_MAILGROUP}
 .endif
 
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
