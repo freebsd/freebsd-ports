@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	0.84.1
 PKGNAMESUFFIX=	-thunderbird
 
 COMMENT=	A GnuPG extension for the Thunderbird mail client

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	0.84.1
+PORTVERSION?=	0.84.2
 PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.brunschwig.net/enigmail/src/ \
@@ -80,7 +80,9 @@ do-install:
 	done
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
