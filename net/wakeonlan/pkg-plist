@@ -1,5 +1,5 @@
 bin/wakeonlan
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/wakeonlan/.packlist
-%%EXAMPLESDIR%%%/lab001.wol
+%%EXAMPLESDIR%%/lab001.wol
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/wakeonlan
-@dirrm %%EXAMPLESDIR%%%
+@dirrm %%EXAMPLESDIR%%
