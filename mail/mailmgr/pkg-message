@@ -1,4 +1,4 @@
 ---------------------------------------------------------------
-You need to configure the PREFIX/etc/mailmgr.conf before using it.
-See http://web.onda.com.br/orso/mailmgr.README.txt
+You need to configure the %%PREFIX%%/etc/mailmgr.conf before using it.
+See http://sarg.sourceforge.net/mailmgr.README.txt
 ---------------------------------------------------------------
