@@ -31,6 +31,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="bfb36941-84fa-11d8-a41f-0020ed76ef5a">
+    <topic>Incorrect cross-realm trust handling in Heimdal</topic>
+    <affects>
+      <package>
+	<name>heimdal</name>
+	<range><lt>0.6.1</lt></range>
+      </package>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>4.0</ge></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Heimdal does not correctly validate the `transited' field of
+	  Kerberos tickets when computing the authentication path.  This
+	  could allow a rogue KDC with which cross-realm relationships
+	  have been established to impersonate any KDC in the
+	  authentication path.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0371</cvename>
+      <url>http://www.pdc.kth.se/heimdal/advisory/2004-04-01/</url>
+    </references>
+    <dates>
+      <discovery>2004-04-01</discovery>
+      <entry>2004-04-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="98bd69c3-834b-11d8-a41f-0020ed76ef5a">
     <topic>Courier mail services: remotely exploitable buffer overflows</topic>
     <affects>
