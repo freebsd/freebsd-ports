@@ -3706,7 +3706,6 @@ ja-ptex-tetex	ports/japanese/ptex-tetex
 ja-py-kanjilib	ports/japanese/py-kanjilib
 ja-pycodec	ports/japanese/pycodec
 ja-qkc		ports/japanese/qkc
-ja-qt23		ports/japanese/qt23
 ja-quit		ports/japanese/quit
 ja-rbnamazu	ports/japanese/rbnamazu
 ja-recjis	ports/japanese/recjis
@@ -4445,7 +4444,6 @@ lgeneral	ports/games/lgeneral
 lgeneral-data	ports/games/lgeneral-data
 lgrind		ports/print/lgrind
 lha		ports/archivers/lha
-liamail		ports/mail/liamail
 lib3ds		ports/graphics/lib3ds
 lib765		ports/emulators/lib765
 libGL		ports/x11/libGL
@@ -5438,7 +5436,6 @@ monotone	ports/devel/monotone
 monster-masher	ports/games/monster-masher
 moon-buggy	ports/games/moon-buggy
 moonlander	ports/games/moonlander
-moonshine	ports/devel/moonshine
 mopac		ports/biology/mopac
 mopd		ports/net/mopd
 morebalance	ports/net/morebalance
@@ -5519,7 +5516,6 @@ mpqc-mpich	ports/science/mpqc-mpich
 mprime		ports/math/mprime
 mprof		ports/devel/mprof
 mpt		ports/audio/mpt
-mq3		ports/audio/mq3
 mreport		ports/mail/mreport
 mrsidviewer	ports/graphics/mrsidviewer
 mrt		ports/net/mrt
@@ -8681,11 +8677,8 @@ qt-odbc-plugin	ports/databases/qt-odbc-plugin
 qt-pgsql-plugin	ports/databases/qt-pgsql-plugin
 qt-sqlite-plugin	ports/databases/qt-sqlite-plugin
 qt145		ports/x11-toolkits/qt145
-qt2-static	ports/x11-toolkits/qt2-static
-qt23		ports/x11-toolkits/qt23
 qt33		ports/x11-toolkits/qt33
 qtella		ports/net/qtella
-qtez		ports/devel/qtez
 qtfw		ports/security/qtfw
 qtk		ports/devel/qtk
 qtools		ports/mail/qtools
@@ -10931,7 +10924,6 @@ xfishtank	ports/x11/xfishtank
 xflame		ports/games/xflame
 xfm		ports/x11-fm/xfm
 xfmail		ports/mail/xfmail
-xfontselector	ports/x11-fonts/xfontselector
 xforms		ports/x11-toolkits/xforms
 xfpovray	ports/graphics/xfpovray
 xfractint	ports/graphics/xfractint
@@ -11322,7 +11314,6 @@ xwelltris	ports/games/xwelltris
 xwhois		ports/net/xwhois
 xwipower	ports/sysutils/xwipower
 xwit		ports/x11/xwit
-xwmm		ports/x11-wm/xwmm
 xword		ports/games/xword
 xworld		ports/astro/xworld
 xworm		ports/games/xworm
