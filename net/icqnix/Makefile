@@ -19,8 +19,6 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_QT=		yes
 
-BROKEN=		"icqnix.install does not compile"
-
 post-install:
 	@strip ${PREFIX}/bin/icqnix
 	@strip ${PREFIX}/bin/icqnix.install
