@@ -1,0 +1,11 @@
+--- worm.cc~	Fri Jan 22 00:30:15 1999
++++ worm.cc	Wed Dec 26 02:31:17 2001
+@@ -141,7 +141,7 @@
+ 	return strerror (errno);
+ #else
+     shmptr = (char *)mmap (0, shm_size, PROT_READ|PROT_WRITE, 
+-		   MAP_ANON|MAP_INHERIT|MAP_SHARED, -1, 0);
++		   MAP_ANON|MAP_SHARED, -1, 0);
+     if (shmptr == MAP_FAILED)
+ 	return strerror (errno);
+ #if 0 // I always get ``Resource temporarily unavailable'' :-(
