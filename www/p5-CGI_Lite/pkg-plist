@@ -1,5 +1,17 @@
 %%SITE_PERL%%/CGI/Lite.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Lite/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%EXAMPLESDIR%%/cookies
+%%PORTDOCS%%%%EXAMPLESDIR%%/file
+%%PORTDOCS%%%%EXAMPLESDIR%%/get_post
+%%PORTDOCS%%%%EXAMPLESDIR%%/post
+%%PORTDOCS%%%%EXAMPLESDIR%%/print
+%%PORTDOCS%%%%EXAMPLESDIR%%/reference
+%%PORTDOCS%%%%EXAMPLESDIR%%/upload
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Lite
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/CGI 2>/dev/null || true
