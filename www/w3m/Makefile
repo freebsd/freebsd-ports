@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	w3m
-PORTVERSION=	0.1.9
+PORTVERSION=	0.1.11p
 CATEGORIES+=	www ipv6
-MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/ \
-		ftp://ftp.firedrake.org/w3m/ \
-		http://www.instinct.org/~pgl/w3m/ \
-		http://grilli.net/mirrors/w3m/download/
+MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/w3m/dev/ \
+		ftp://ftp.firedrake.org/w3m/dev/ \
+		http://www.instinct.org/w3m/dev/ \
+		http://grilli.net/mirrors/w3m/download/dev/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-pre/}
 
 MAINTAINER=	nobutaka@nobutaka.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgc.a:${PORTSDIR}/devel/boehm-gc
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		w3m.1
 MANLANG=	""
 CFLAGS=		-pipe
@@ -43,12 +43,11 @@ DOCS_JP=	${DOCS} HISTORY.kokb README.keymap README.kokb \
 .endif
 
 .if defined(USE_OPENSSL)
-SSL_CFLAGS=	-I${OPENSSLINC}/openssl -I${OPENSSLINC}
+SSL_CFLAGS=	-I${OPENSSLINC}/openssl -I${OPENSSLINC} ${OPENSSL_CFLAGS}
 SSL_LIBS=	-L${OPENSSLLIB} -lssl -lcrypto
 
 SED_CMD+=	-e "s,undef USE_SSL,define USE_SSL,g" \
 		-e "s,undef USE_SSL_VERIFY, define USE_SSL_VERIFY,g"
-
 .if defined(OPENSSL_RSAREF)
 EXTRA_SSL_LIBS=	-lRSAglue -lrsaref
 .endif
@@ -61,6 +60,9 @@ MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 post-configure:
 	@${CP} ${TARGET} ${TARGET}.in
 	@${SED} ${SED_CMD} < ${TARGET}.in > ${TARGET}
+	@${SED} -e "s,@PERL@,${PERL},g" \
+		-e "s,@CYGWIN@,0,g" \
+		< ${WRKSRC}/scripts/dirlist.in > ${WRKSRC}/scripts/dirlist.cgi
 
 post-install:
 .if !defined(NOPORTDOCS)
