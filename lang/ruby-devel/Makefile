@@ -47,7 +47,7 @@ WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared
 MAKE_ENV=	LANG=C	# prevent bison 1.33 w/ gettext 0.10.35 from coredumping
-#MAKE_ARGS=	-j3
+MAKE_ARGS=	-j3
 INSTALLS_SHLIB=	yes
 MAN1=		ruby${_RUBY_SUFFIX}.1
 
@@ -92,7 +92,7 @@ OBSOLETED_MODULES=	dl \
 
 post-extract:
 .if defined(WITH_ONIGURUMA)
-	cd ${WRKDIR}; ${TAR} zxvf ${_DISTDIR}/${ONIGURUMA_DISTFILE}
+	${TAR} -zxvf ${DISTDIR}/${DIST_SUBDIR}/${ONIGURUMA_DISTFILE} -C ${WRKDIR}
 .endif
 
 post-patch:
