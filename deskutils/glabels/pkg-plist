@@ -8,20 +8,22 @@ include/libglabels/xml-template.h
 include/libglabels/xml.h
 lib/libglabels.a
 lib/libglabels.so
-lib/libglabels.so.0
+lib/libglabels.so.1
 share/gnome/application-registry/glabels.applications
 share/gnome/applications/glabels.desktop
-share/gnome/glabels/avery-iso-templates.xml
-share/gnome/glabels/avery-us-templates.xml
-share/gnome/glabels/glabels-2.0.dtd
+share/gnome/glabels/dtd/glabels-2.0.dtd
 share/gnome/glabels/glade/object-editor.glade
 share/gnome/glabels/glade/prefs-dialog.glade
 share/gnome/glabels/glade/template-designer.glade
-share/gnome/glabels/misc-iso-templates.xml
-share/gnome/glabels/misc-us-templates.xml
-share/gnome/glabels/paper-sizes.xml
+share/gnome/glabels/templates/avery-iso-templates.xml
+share/gnome/glabels/templates/avery-other-templates.xml
+share/gnome/glabels/templates/avery-us-templates.xml
+share/gnome/glabels/templates/misc-iso-templates.xml
+share/gnome/glabels/templates/misc-other-templates.xml
+share/gnome/glabels/templates/misc-us-templates.xml
+share/gnome/glabels/templates/paper-sizes.xml
+share/gnome/glabels/templates/zweckform-iso-templates.xml
 share/gnome/glabels/ui/glabels-ui.xml
-share/gnome/glabels/zweckform-iso-templates.xml
 share/gnome/help/glabels/C/figures/glabels-template-cd.png
 share/gnome/help/glabels/C/figures/glabels-template-label.png
 share/gnome/help/glabels/C/figures/glabels-template-layout.png
@@ -54,13 +56,18 @@ share/locale/pl/LC_MESSAGES/glabels.mo
 share/locale/pt_BR/LC_MESSAGES/glabels.mo
 share/locale/ru/LC_MESSAGES/glabels.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/glabels.mo
+share/mime/packages/glabels.xml
 @dirrm share/gnome/pixmaps/glabels
 @dirrm share/gnome/omf/glabels
 @dirrm share/gnome/help/glabels/C/figures
 @dirrm share/gnome/help/glabels/C
 @dirrm share/gnome/help/glabels
 @dirrm share/gnome/glabels/ui
+@dirrm share/gnome/glabels/templates
 @dirrm share/gnome/glabels/glade
+@dirrm share/gnome/glabels/dtd
 @dirrm share/gnome/glabels
 @dirrm include/libglabels
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/glabels/glabels-C.omf 2>/dev/null || true
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime
