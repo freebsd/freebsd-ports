@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	1.5.28
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
 		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
@@ -56,7 +56,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-dbpath=${PREFIX}/etc/sasldb \
 		--includedir=${PREFIX}/include/sasl1 \
 		--enable-static \
-		--enable-login \
 		--with-saslauthd=/var/state/saslauthd1 \
 		--enable-auth-sasldb \
 		--with-pwcheck=/var/pwcheck \
@@ -76,17 +75,67 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 JAVADIR?=	jdk1.3.1
 JAVALIBDIR?=	${PREFIX}/${JAVADIR}/lib/i386/green_threads/
 
-.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+.if defined(WITHOUT_ANONYMOUS)
+CONFIGURE_ARGS+=	--disable-anon
+ANON=			"@comment "
+.endif
+
+.if defined(WITHOUT_CRAM)
+CONFIGURE_ARGS+=	--disable-cram
+CRAM=			"@comment "
+.endif
+
+.if defined(WITHOUT_DIGEST)
+CONFIGURE_ARGS+=	--disable-digest
+DIGEST=			"@comment "
+.endif
+
+# Outlook and Outlook Express requires the LOGIN mech
+.if defined(WITHOUT_LOGIN)
+CONFIGURE_ARGS+=	--disable-login
+LOGIN=			"@comment "
+.else
+CONFIGURE_ARGS+=	--enable-login
+.endif
+
+.if defined(WITHOUT_OTP)
+CONFIGURE_ARGS+=	--disable-otp
+OTP=			"@comment "
+.endif
+
+# Netscape requires the PLAIN mech
+.if defined(WITHOUT_PLAIN)
+CONFIGURE_ARGS+=	--disable-plain
+PLAIN=			"@comment "
+.endif
+
+.if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
 CONFIGURE_ARGS+=	--enable-gssapi=${KRB5_HOME}
-.elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME})
+.elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
 CONFIGURE_ARGS+=	--enable-gssapi=${HEIMDAL_HOME}
+.elif !defined(WITHOUT_GSSAPI) && defined(MAKE_KERBEROS5) && exists(/usr/lib/libkrb5.a)
+CONFIGURE_ARGS+=	--enable-gssapi
 .else
 CONFIGURE_ARGS+=	--disable-gssapi
 GSSAPI=	"@comment "
 .endif
 
-.if exists(/usr/lib/libkrb.a)
+.include <bsd.port.pre.mk>
+
+# KERBEROS 4 was removed in FreeBSD 5.0-CURRENT
+.if ${OSVERSION} > 500105
+.if defined(WITH_KERBEROS4)
+LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4
+CONFIGURE_ARGS+=	--enable-krb4=${LOCALBASE}/krb4
+.else
+CONFIGURE_ARGS+=	--disable-krb4
+EBONES=	"@comment "
+.endif
+.elif exists(/usr/lib/libkrb.a) && defined(MAKE_KERBEROS4) && !defined(WITHOUT_KERBEROS4)
 CONFIGURE_ARGS+=	--enable-krb4
+.elif !exists(/usr/lib/libkrb.a) && defined(WITH_KERBEROS4)
+LIB_DEPENDS+=	krb.2:${PORTSDIR}/security/krb4  
+CONFIGURE_ARGS+=	--enable-krb4=${LOCALBASE}/krb4 
 .else
 CONFIGURE_ARGS+=	--disable-krb4
 EBONES=	"@comment "
@@ -96,9 +145,18 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
 		OPENSSLINC=${OPENSSLINC} \
 		OPENSSLLIB=${OPENSSLLIB}
 
+CYRUS_USER?=	cyrus
+CYRUS_GROUP?=	cyrus
+
 DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 
 PLIST_SUB=	PREFIX=${PREFIX} \
+		ANON=${ANON} \
+		OTP=${OTP} \
+		CRAM=${CRAM} \
+		DIGEST=${DIGEST} \
+		LOGIN=${LOGIN} \
+		PLAIN=${PLAIN} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
@@ -110,7 +168,6 @@ PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-.include <bsd.port.pre.mk>
 .if ${OSVERSION} < 450000
 FMT=    /usr/bin/fmt
 .else
@@ -124,6 +181,21 @@ pre-fetch:
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
 
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		PWCHECK=${PWCHECK} \
+		ENABLE_PWCHECK=${ENABLE_PWCHECK} \
+		ENABLE_SASLAUTHD=${ENABLE_SASLAUTHD} \
+		MYSQL_REQ=${MYSQL_REQ}
+
+PKG_SCRIPTS_SUB=	PREFIX=${PREFIX} \
+		CYRUS_USER=${CYRUS_USER} \
+		CYRUS_GROUP=${CYRUS_GROUP} \
+		ENABLE_PWCHECK=${ENABLE_PWCHECK} \
+		ENABLE_SASLAUTHD=${ENABLE_SASLAUTHD} \
+		PWCHECK=${PWCHECK} \
+		PWCHECK_METHOD=${PWCHECK_METHOD} \
+		SASLDB=${SASLDB_NAME}
+
 post-extract:
 	@${CP} ${FILESDIR}/pwcheck_pam.c ${WRKSRC}/pwcheck
 
@@ -132,17 +204,9 @@ pre-patch:
 
 # Fix pkg-{install/deinstall/messages}
 post-patch:
-	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
-		-e "s;%%PWCHECK%%;${PWCHECK};g" \
-		-e "s;%%ENABLE_PWCHECK%%;${ENABLE_PWCHECK};g" \
-		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
-		-e "s;%%ENABLE_SASLAUTHD%%;${ENABLE_SASLAUTHD};g" \
+	@${SED} ${PKG_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${.CURDIR}/pkg-install > ${PKGINSTALL}
-	@${SED} -e "s;%%SASLDB%%;${SASLDB_NAME};g" \
-		-e "s;%%PWCHECK%%;${PWCHECK};g" \
-		-e "s;%%ENABLE_PWCHECK%%;${ENABLE_PWCHECK};g" \
-		-e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
-		-e "s;%%ENABLE_SASLAUTHD%%;${ENABLE_SASLAUTHD};g" \
+	@${SED} ${PKG_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${SED} -e "s;%%PWCHECK_METHOD%%;${PWCHECK_METHOD};g" \
 		-e "s;%%PREFIX%%;${PREFIX};g" \
@@ -182,8 +246,8 @@ post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/cyrus_sasl1 > ${PREFIX}/etc/rc.d/cyrus_sasl1
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/cyrus_sasl1
-	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/pwcheck
-	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/state/saslauthd1
+	${INSTALL} -d -m 770 -o ${CYRUS_USER} -g ${CYRUS_GROUP} /var/pwcheck
+	${INSTALL} -d -m 770 -o ${CYRUS_USER} -g ${CYRUS_GROUP} /var/state/saslauthd1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
@@ -213,9 +277,5 @@ post-install:
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
-
-#if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-#include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-#endif
 
 .include <bsd.port.post.mk>

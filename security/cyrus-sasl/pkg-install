@@ -13,13 +13,16 @@ PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
 SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
 
+CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
+CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
+
 #
 # create 'cyrus' user and group before installing
 #
 
 create_user() {
-	USER=cyrus
-	GROUP=cyrus
+	USER=${CYRUS_USER}
+	GROUP=${CYRUS_GROUP}
 	PW=/usr/sbin/pw 
 
 	if [ -x /sbin/nologin ]; then   
@@ -76,7 +79,7 @@ create_sasldb() {
                         echo "WARNING: Failed to create ${PKG_PREFIX}/etc/$SASLDB_NAME}"
                 else
 			${PKG_PREFIX}/sbin/saslpasswd -d cyrus
-			chown cyrus:mail ${SASLDB_NAME}
+			chown ${CYRUS_USER}:mail ${SASLDB_NAME}
 			chmod 640 ${SASLDB_NAME}
 		fi
 	fi
@@ -90,23 +93,6 @@ sendmail_conf() {
 	fi
 }
 
-create_rc_conf_d() {
-	PWCHECK_CONF=${PKG_PREFIX}/etc/rc.conf.d/cyrus_pwcheck
-	SASLAUTHD_CONF=${PKG_PREFIX}/etc/rc.conf.d/saslauthd1
-
-	if [ ! -d ${PKG_PREFIX}/etc/rc.conf.d ]; then
-		mkdir ${PKG_PREFIX}/etc/rc.conf.d
-	fi
-	if [ ! -f ${SASLAUTHD_CONF} ]; then
-		echo "saslauthd1_enable=%%ENABLE_SASLAUTHD%%" > ${SASLAUTHD_CONF}
-		echo "saslauthd1_flags=\"-a pam\"" >> ${SASLAUTHD_CONF}
-	fi
-	if [ ! -f ${PWCHECK_CONF} ]; then
-		echo "cyrus_pwcheck_enable=%%ENABLE_PWCHECK%%" > ${PWCHECK_CONF}
-		echo "cyrus_pwcheck_program=${PKG_PREFIX}/sbin/%%PWCHECK%%" >> ${PWCHECK_CONF}
-	fi
-}
-
 case $2 in
 	PRE-INSTALL)
 		create_user
@@ -114,7 +100,6 @@ case $2 in
 	POST-INSTALL)
 		if [ "${PKG_BATCH}" = "NO" ]; then
 			create_sasldb
-			create_rc_conf_d
 			sendmail_conf
 		fi
 		;;

@@ -12,6 +12,9 @@ PKG_PREFIX=${PKG_PREFIX:=/usr/local}
 
 SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
 
+CYRUS_USER=${CYRUS_USER:=%%CYRUS_USER%%}
+CYRUS_GROUP=${CYRUS_GROUP:=%%CYRUS_GROUP%%}
+
 remove_file()
 {
 	file=$1
@@ -20,22 +23,6 @@ remove_file()
 		rm -f ${file}
 	fi
 	rm -f ${file}.tmp
-}
-
-delete_rc_conf_d() {
-	PWCHECK_CONF=${PKG_PREFIX}/etc/rc.conf.d/cyrus_pwcheck
-	SASLAUTHD_CONF=${PKG_PREFIX}/etc/rc.conf.d/saslauthd1   
-
-	if [ -f ${SASLAUTHD_CONF} ]; then
-		echo "saslauthd1_enable=%%ENABLE_SASLAUTHD%%" >> ${SASLAUTHD_CONF}.tmp
-		echo "saslauthd1_flags=\"-a pam\"" >> ${SASLAUTHD_CONF}.tmp
-		remove_file ${SASLAUTHD_CONF}
-	fi
-	if [ -f ${PWCHECK_CONF} ]; then
-		echo "cyrus_pwcheck_enable=%%ENABLE_PWCHECK%%" > ${PWCHECK_CONF}.tmp
-		echo "cyrus_pwcheck_program=${PKG_PREFIX}/sbin/%%PWCHECK%%" >> ${PWCHECK_CONF}.tmp
-		remove_file ${PWCHECK_CONF}
-	fi
 }
 
 # delete sasldb database
@@ -51,11 +38,11 @@ delete_sasldb() {
 }
 
 delete_user() {
-	if pw usershow cyrus 2>/dev/null 1>&2; then
-		echo "To delete Cyrus user permanently, use 'pw userdel cyrus'"
+	if pw usershow ${CYRUS_USER} 2>/dev/null 1>&2; then
+		echo "To delete Cyrus user permanently, use 'pw userdel ${CYRUS_USER}'"
 	fi
-	if pw groupshow cyrus 2>/dev/null 1>&2; then
-		echo "To delete Cyrus group permanently, use 'pw groupdel cyrus'"
+	if pw groupshow ${CYRUS_GROUP} 2>/dev/null 1>&2; then
+		echo "To delete Cyrus group permanently, use 'pw groupdel ${CYRUS_GROUP}'"
 	fi
 
 }
@@ -72,7 +59,6 @@ sendmail_conf() {
 case $2 in
 	DEINSTALL)
 		delete_sasldb
-		delete_rc_conf_d
 		sendmail_conf
 		;;
 	POST-DEINSTALL)
