@@ -1,0 +1,3 @@
+bin/waccess
+%%PORTDOCS%%share/doc/waccess/waccess-license.txt
+%%PORTDOCS%%@dirrm share/doc/waccess
