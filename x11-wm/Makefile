@@ -115,7 +115,6 @@
     SUBDIR += xfce4-session
     SUBDIR += xfce4-systray
     SUBDIR += xfce4-wm
-    SUBDIR += xwmm
     SUBDIR += yawm
 
 .include <bsd.port.subdir.mk>

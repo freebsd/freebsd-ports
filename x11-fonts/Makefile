@@ -52,7 +52,6 @@
     SUBDIR += urwfonts-ttf
     SUBDIR += webfonts
     SUBDIR += xfed
-    SUBDIR += xfontselector
     SUBDIR += xmbdfed
     SUBDIR += xorg-fonts-100dpi
     SUBDIR += xorg-fonts-75dpi

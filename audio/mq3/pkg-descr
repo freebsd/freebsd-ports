@@ -1,7 +1,0 @@
-This is MQ3, a simple .mp3 and .ogg player using Qt.  It uses the
-decoding engine from Zinf (http://www.zinf.org/).
-         
-WWW: http://www.mq3.org/
-
-- Erich Zigler
-erich@tacni.net
