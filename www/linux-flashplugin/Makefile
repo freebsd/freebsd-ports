@@ -29,6 +29,7 @@ PLIST_SUB=	PLUGINSDIR="${PLUGINSDIR}"
 do-install:
 	${MKDIR} ${PREFIX}/lib/flash
 	${MKDIR} ${PREFIX}/share/doc/flash
+	${MKDIR} ${PREFIX}/${PLUGINSDIR}
 .for f in ${LIBFILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/flash/
 	${LN} -sf ${PREFIX}/lib/flash/${f} ${PREFIX}/${PLUGINSDIR}/
