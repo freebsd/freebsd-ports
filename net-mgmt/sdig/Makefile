@@ -7,6 +7,7 @@
 
 PORTNAME=	sdig
 PORTVERSION=	0.40
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.exploits.org/sdig/
 
