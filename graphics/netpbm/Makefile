@@ -32,6 +32,13 @@ NO_CDROM=	"Not allowed to sell"
 
 MAN1=		netpbm.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+# -O causes an ICE in converter/other/exif.c with gcc 3.3.3 on sparc64.
+CFLAGS+=	-O0
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|g ; \
@@ -48,4 +55,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/netpbm.1 ${MANPREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
