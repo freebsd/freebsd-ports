@@ -77,6 +77,7 @@ share/gnome/gok/Keyboard.kbd
 @dirrm share/gnome/help/gok/C/figures
 @dirrm share/gnome/help/gok/C
 @dirrm share/gnome/help/gok
+@dirrm share/doc/gok
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/goksound1
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/goksound2
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gok/feedbacks/key_flashing
