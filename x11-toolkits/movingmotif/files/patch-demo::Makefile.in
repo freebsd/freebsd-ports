@@ -1,0 +1,18 @@
+--- demo/Makefile.in.orig	Wed Sep 25 01:04:47 2002
++++ demo/Makefile.in	Sat Oct 12 15:10:51 2002
+@@ -114,12 +114,12 @@
+ bin_PROGRAMS = ezdrawtest Scrollingtest histbar Rottest
+ 
+ ezdrawtest_SOURCES = ezdrawtest.c
+-ezdrawtest_LDADD = -L$(top_builddir)/src -lmovingmotif 			-L$(top_builddir)/demo/mindsrc -lmindsrc
++ezdrawtest_LDADD = $(top_builddir)/src/libmovingmotif.la 			$(top_builddir)/demo/mindsrc/libmindsrc.la
+ 
+-LIBS = $(MOTIF_LIBS) $(X_LIBS) -lXm -lXpm -lXt -lX11 -lc -lm
++LIBS = $(MOTIF_LIBS) $(X_LIBS) -lXm -lXpm -lXt -lX11 -lm
+ INCLUDES = $(MOTIF_CFLAGS) $(X_CFLAGS) 			-I$(top_srcdir)/demo/mindsrc -I$(top_srcdir)/src
+ 
+-LDADD = -L$(top_builddir)/src -lmovingmotif 			-L$(top_builddir)/demo/mindsrc -lmindsrc
++LDADD = $(top_builddir)/src/libmovingmotif.la 			$(top_builddir)/demo/mindsrc/libmindsrc.la
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 
