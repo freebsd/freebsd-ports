@@ -22,7 +22,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/msntp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/msntp.1 ${PREFIX}/man/man1
 	${MKDIR} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
 	${INSTALL_DATA} ${WRKSRC}/Copyright ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

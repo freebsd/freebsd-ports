@@ -1,4 +1,4 @@
 bin/msntp
-%%DOCSDIR%%/Copyright
-%%DOCSDIR%%/README
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/Copyright
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
