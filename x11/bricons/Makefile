@@ -9,8 +9,8 @@
 DISTNAME=	bricons
 PKGNAME=	bricons-3.0
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.uni-paderborn.de/unix/X11/ftp.x.org/R5contrib/ \
-		ftp://ftp.pasteur.fr/pub/computing/unix/X11/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/ \
+		ftp://ftp.freesoftware.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	-athena-3.0.tar.gz
 
 MAINTAINER=     shanee@augusta.de
@@ -20,11 +20,13 @@ LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 USE_IMAKE=	yes
 MAN1=		bricons.1
 
+post-patch:
+	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/Xbricons
+
 post-install:
-	${INSTALL_DATA} $(WRKDIR)/bricons/Xbricons $(PREFIX)/lib/X11/app-defaults/
-	${INSTALL_DATA} $(WRKDIR)/bricons/bitmaps/* $(PREFIX)/include/X11/bitmaps/
-	${MKDIR} $(PREFIX)/include/X11/pixmaps
-	${INSTALL_DATA} $(WRKDIR)/bricons/*.xpm $(PREFIX)/include/X11/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/Xbricons ${PREFIX}/lib/X11/app-defaults
+	${INSTALL_DATA} ${WRKSRC}/bitmaps/* ${PREFIX}/include/X11/bitmaps
+	${INSTALL_DATA} ${WRKSRC}/*.xpm ${PREFIX}/include/X11/pixmaps
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "     Use ./files/DOTbriconsrc as an example. This  file"
 	@${ECHO_MSG} "     should  be  stored in the same directory as the"

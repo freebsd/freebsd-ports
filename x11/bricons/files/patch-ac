@@ -16,7 +16,7 @@
   ! B.R. Ingram 9th Sept 1991
   *no_of_cols: 			16
 ! *help_file:			bricons
-! *.bitmapFilePath:		/usr/X11R6/include/X11/bitmaps
+! *.bitmapFilePath:		%%PREFIX%%/include/X11/bitmaps
   *borderColor:			yellow
   *popup_layout*.borderColor:	black
   *background:			#ffd28e
