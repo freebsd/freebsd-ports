@@ -43,7 +43,7 @@ post-extract:
 	@${CHMOD} 644 ${WRKDIR}/webfonts/*
 
 do-build:
-	@ttmkfdir -d ${WRKDIR}/webfonts | \
+	@${X11BASE}/bin/ttmkfdir -d ${WRKDIR}/webfonts | \
 		${SED} -e "s,monotype,truetype,g;s,microsoft,truetype,g" > ${WRKDIR}/webfonts/fonts.scale
 	@head -1 ${WRKDIR}/webfonts/fonts.scale > ${WRKDIR}/webfonts/fonts.dir
 	@tail +2 ${WRKDIR}/webfonts/fonts.scale | ${CAT} -n | sort -r | cut -c8- >>${WRKDIR}/webfonts/fonts.dir
