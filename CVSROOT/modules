@@ -346,7 +346,7 @@ apsfilter	ports/print/apsfilter
 aqmoney		ports/finance/aqmoney
 aqsis		ports/graphics/aqsis
 ar-openoffice-1.0	ports/editors/openoffice-1.0-ar
-de-openoffice-1.1	ports/arabic/openoffice-1.1
+ar-openoffice-1.1	ports/arabic/openoffice-1.1
 arc		ports/archivers/arc
 arcexplorer	ports/databases/arcexplorer
 arch		ports/devel/arch
