@@ -1,0 +1,6 @@
+FireMIME is a library providing an easy to use, callback-based interface
+for parsing MIME-encoded messages. It parses messages in accordance with
+RFC2045 and RFC2046, attempting to follow all rules set out in those
+documents while still allowing leniency with some common errors. FireMIME
+uses libfirestring for string handling. This allows it to be completely
+8bit clean, including allowing \0 anywhere in messages.
