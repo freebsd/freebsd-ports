@@ -1,8 +1,0 @@
-bin/mei
-bin/moe
-%%PORTDOCS%%share/doc/mei/mdt.txt
-%%PORTDOCS%%share/doc/mei/mospec.txt
-%%PORTDOCS%%share/doc/mei/msdos.txt
-%%PORTDOCS%%share/doc/mei/readme.txt
-%%PORTDOCS%%share/doc/mei/unix.txt
-%%PORTDOCS%%@dirrm share/doc/mei
