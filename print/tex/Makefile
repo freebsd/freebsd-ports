@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.16 1995/04/21 00:21:27 jmz Exp $
+# $Id: Makefile,v 1.17 1995/10/03 21:19:24 jmz Exp $
 #
 
 DISTNAME=	web2c-6.1
@@ -26,7 +26,7 @@ CTAN?=		ftp.tex.ac.uk
 BASES=		mf.base cmmf.base 
 FORMATS=	tex.fmt 
 
-CFLAGS=		-O2 -L${X11BASE}/lib
+CFLAGS+=	-L${X11BASE}/lib
 
 
 web2c.tar.gz: 
