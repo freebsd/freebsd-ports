@@ -5,6 +5,7 @@ bin/mDNSProxyResponderPosix
 bin/mDNSResponderPosix
 etc/rc.d/mdns.sh
 include/dns_sd.h
-lib/libmdns.so
-lib/libmdns.so.1
+lib/libdns_sd.so
+lib/libdns_sd.so.1
+sbin/dnsextd
 sbin/mdnsd
