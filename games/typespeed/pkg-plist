@@ -1,0 +1,9 @@
+etc/typespeedrc
+bin/typespeed
+lib/typespeed/words.dos
+lib/typespeed/words.eng
+lib/typespeed/words.fin
+lib/typespeed/words.portuguese
+lib/typespeed/words.prog
+lib/typespeed/words.unix
+@dirrm lib/typespeed
