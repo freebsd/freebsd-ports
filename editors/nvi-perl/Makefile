@@ -7,7 +7,7 @@
 
 PORTNAME=	nvi
 PORTVERSION=	1.79
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.sleepycat.com/pub/
 PKGNAMESUFFIX=	-perl
