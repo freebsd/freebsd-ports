@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.153 1998/10/20 15:52:38 kuriyama Exp $
+# $Id: Makefile,v 1.154 1998/10/21 22:10:53 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -191,6 +191,7 @@
     SUBDIR += xklock
     SUBDIR += xnetmaj
     SUBDIR += xshodo
+    SUBDIR += xv
     SUBDIR += yatex
     SUBDIR += yatex-xemacs
     SUBDIR += zipcodes
