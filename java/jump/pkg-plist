@@ -1,0 +1,33 @@
+%%T%%/src/main/org/znerd/math/MandatoryArgumentChecker.java
+%%T%%/src/main/org/znerd/math/CanNotCompareException.java
+%%T%%/src/main/org/znerd/math/RationalNumber.java
+%%T%%/src/main/org/znerd/math/BasicIntegerNumber.java
+%%T%%/src/main/org/znerd/math/BasicRationalNumber.java
+%%T%%/src/main/org/znerd/math/CompositeNumber.java
+%%T%%/src/main/org/znerd/math/DefaultNumberFactory.java
+%%T%%/src/main/org/znerd/math/DigitSet.java
+%%T%%/src/main/org/znerd/math/IntegerNumber.java
+%%T%%/src/main/org/znerd/math/LongIntegerNumber.java
+%%T%%/src/main/org/znerd/math/Power.java
+%%T%%/src/main/org/znerd/math/Product.java
+%%T%%/src/main/org/znerd/math/NumberCentral.java
+%%T%%/src/main/org/znerd/math/NumberFactory.java
+%%T%%/src/main/org/znerd/math/RealNumber.java
+%%T%%/src/main/org/znerd/math/RoundingMode.java
+%%T%%/src/main/org/znerd/math/AbstractCompositeNumber.java
+%%T%%/src/main/org/znerd/math/Sum.java
+%%T%%/src/main/org/znerd/math/MissingArgumentException.java
+%%T%%/src/examples/org/znerd/math/examples/simple/SimpleExample.java
+%%T%%/build.xml
+@dirrm %%T%%/src/main/org/znerd/math
+@dirrm %%T%%/src/main/org/znerd
+@dirrm %%T%%/src/main/org
+@dirrm %%T%%/src/main
+@dirrm %%T%%/src/examples/org/znerd/math/examples/simple
+@dirrm %%T%%/src/examples/org/znerd/math/examples
+@dirrm %%T%%/src/examples/org/znerd/math
+@dirrm %%T%%/src/examples/org/znerd
+@dirrm %%T%%/src/examples/org
+@dirrm %%T%%/src/examples
+@dirrm %%T%%/src
+@dirrm %%T%%
