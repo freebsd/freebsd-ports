@@ -7,21 +7,22 @@
 
 PORTNAME=	mozillafirebird
 PORTVERSION=	0.7
-CATEGORIES=	www linux
+CATEGORIES?=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	firebird/releases/${PORTVERSION}
-PKGNAMEPREFIX=	linux-
-DISTNAME=	MozillaFirebird-${PORTVERSION}-i686-pc-linux-gnu
+MASTER_SITE_SUBDIR?=	firebird/releases/${PORTVERSION}
+PKGNAMEPREFIX?=	linux-
+DISTNAME?=	MozillaFirebird-${PORTVERSION}-i686-pc-linux-gnu
 
 MAINTAINER=	voisine@yahoo.com
-COMMENT=	Web browser branched from Mozilla
+COMMENT?=	Web browser branched from Mozilla
 
-RUN_DEPENDS=	\
+RUN_DEPENDS?=	\
 	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
 ONLY_FOR_ARCHS=	i386
+FIREBIRD_NAME=	${PKGNAMEPREFIX}${PORTNAME}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST=		${WRKDIR}/pkg-plist
 USE_LINUX=	yes
@@ -34,7 +35,7 @@ do-patch:
 	${ECHO_CMD} \
 	"# Run this after installing Beonex, Mozilla or Netscape plugins." \
 		>>${WRKDIR}/linkfarm
-	${ECHO_CMD} "cd ${PREFIX}/lib/linux-mozillafirebird/plugins" \
+	${ECHO_CMD} "cd ${PREFIX}/lib/${FIREBIRD_NAME}/plugins" \
 		>>${WRKDIR}/linkfarm
 .for ii in lib/linux-beonex/plugins lib/netscape-linux/plugins lib/flash \
 	lib/linux-mozilla/plugins lib/linux-netscape*/plugins \
@@ -48,29 +49,29 @@ linux-blackdown-jdk1.4.1/jre/plugin/i386/mozilla
 .endfor
 
 pre-install:
-	${ECHO_CMD} bin/linux-mozillafirebird > ${PLIST}
+	${ECHO_CMD} bin/${FIREBIRD_NAME} > ${PLIST}
 	${ECHO_CMD} \
-		"@unexec ${FIND} ${PREFIX}/lib/linux-mozillafirebird/plugins \
+		"@unexec ${FIND} ${PREFIX}/lib/${FIREBIRD_NAME}/plugins \
 		-type l -exec ${RM} {} \;" >> ${PLIST}
 	cd ${WRKSRC} && ${FIND} -s * -type f -o -type l | \
-		${SED} -e 's:^:lib/linux-mozillafirebird/:' >> ${PLIST} \
+		${SED} -e 's:^:lib/${FIREBIRD_NAME}/:' >> ${PLIST} \
 		&& ${FIND} -d * -type d | \
-		${SED} -e 's:^:@dirrm lib/linux-mozillafirebird/:' >> ${PLIST}
-	${ECHO_CMD} lib/linux-mozillafirebird/linkfarm >> ${PLIST}
-	${ECHO_CMD} @dirrm lib/linux-mozillafirebird >> ${PLIST}
-	${ECHO_CMD} "@exec ${PREFIX}/lib/linux-mozillafirebird/linkfarm" \
+		${SED} -e 's:^:@dirrm lib/${FIREBIRD_NAME}/:' >> ${PLIST}
+	${ECHO_CMD} lib/${FIREBIRD_NAME}/linkfarm >> ${PLIST}
+	${ECHO_CMD} @dirrm lib/${FIREBIRD_NAME} >> ${PLIST}
+	${ECHO_CMD} "@exec ${PREFIX}/lib/${FIREBIRD_NAME}/linkfarm" \
 		>> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/linux-mozillafirebird
-	${CHMOD} 755 ${PREFIX}/lib/linux-mozillafirebird
+	${MKDIR} ${PREFIX}/lib/${FIREBIRD_NAME}
+	${CHMOD} 755 ${PREFIX}/lib/${FIREBIRD_NAME}
 	cd ${WRKSRC} && ${FIND} * | \
 		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} \
-		${PREFIX}/lib/linux-mozillafirebird
-	${LN} -sf ${PREFIX}/lib/linux-mozillafirebird/MozillaFirebird \
-		${PREFIX}/bin/linux-mozillafirebird
+		${PREFIX}/lib/${FIREBIRD_NAME}
+	${LN} -sf ${PREFIX}/lib/${FIREBIRD_NAME}/MozillaFirebird \
+		${PREFIX}/bin/${FIREBIRD_NAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/linkfarm \
-		${PREFIX}/lib/linux-mozillafirebird
+		${PREFIX}/lib/${FIREBIRD_NAME}
 
 NEW_LIBSTDCXX=	${LINUXBASE}/usr/lib/libstdc++-libc6.2-2.so.3
 OLD_LIBSTDCXX=	libstdc++-libc6.1-1.so.2
@@ -84,11 +85,11 @@ post-install:
 	@${ECHO_CMD} \*\* After adding plugins to \(Linux\) Beonex,
 	@${ECHO_CMD} \*\* Mozilla or Netscape, run\
 		> ${PKGMESSAGE}
-	@${ECHO_CMD} \*\* ${PREFIX}/lib/linux-mozillafirebird/linkfarm as root \
+	@${ECHO_CMD} \*\* ${PREFIX}/lib/${FIREBIRD_NAME}/linkfarm as root \
 		>> ${PKGMESSAGE}
-	@${ECHO_CMD} \*\* to make them available to linux-mozillafirebird. \
+	@${ECHO_CMD} \*\* to make them available to ${FIREBIRD_NAME}. \
 		>> ${PKGMESSAGE}
-	@- ${SH} ${PREFIX}/lib/linux-mozillafirebird/linkfarm || true
+	@- ${SH} ${PREFIX}/lib/${FIREBIRD_NAME}/linkfarm || true
 	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
