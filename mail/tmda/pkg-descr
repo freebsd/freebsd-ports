@@ -1,8 +1,10 @@
 Tagged Message Delivery Agent (TMDA).
 
-TMDA is a OSI-certified python application designed to significantly
-reduce (or eliminate) the amount of SPAM/UCE you receive by using
-unique, cryptographically enhanced (tagged) e-mail addresses.  TMDA
-can both filter your incoming e-mail, and tag your outgoing address.
+TMDA is an OSI certified Python application for qmail systems
+designed to significantly reduce the amount of SPAM/UCE you receive.
+A "whitelist" filter allows known contacts immediately into your
+mailbox, and all others must reply to a simple confirmation to
+validate their message.  Once they respond to the confirmation,
+their original message is delivered to you.
 
 WWW: http://tmda.sourceforge.net/
