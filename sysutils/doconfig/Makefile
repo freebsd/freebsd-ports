@@ -3,7 +3,7 @@
 # Date created:				7/27/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/03 06:28:04 nectar Exp $
 #
 
 DISTNAME=		doconfig-1.1
@@ -21,7 +21,7 @@ do-build:
 	@ ${SED} 's#%%PREFIX%%#${PREFIX}#g' <${WRKSRC}/_doconfig \
 		>${WRKSRC}/doconfig
 	@ ${RM} ${WRKSRC}/_doconfig
-	
+
 do-install:
 .for f in autokernconf doconfig
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/sbin/${f}
