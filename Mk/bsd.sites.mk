@@ -108,6 +108,7 @@ MASTER_SITE_KDE+=	\
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,}
 
 MASTER_SITE_MOZILLA+= \
+	http://download.mozilla.org/pub/%SUBDIR%/ \
 	ftp://ftp.mozilla.org/pub/%SUBDIR%/ \
 	ftp://sunsite.utk.edu/pub/netscape-source/%SUBDIR%/ \
 	ftp://ftp.informatik.uni-bonn.de/pub/www/mozilla/%SUBDIR%/ \
