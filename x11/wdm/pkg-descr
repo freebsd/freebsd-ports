@@ -7,4 +7,4 @@ handling authentication and system login.  Most of xdm has been
 preserved (XFree86 3.3.2.3) with the Login interface based on a WINGs
 implementation using Tom Rothamel's "external greet" interface.
 
-WWW: http://www.tuffguy.net/~wdm/
+WWW: http://www.tcscs.com/wdm/

@@ -8,7 +8,7 @@
 PORTNAME=	wdm
 PORTVERSION= 	1.20
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://cortex.unice.fr/~jerome/WindowMaker/wdm/ \
+MASTER_SITES=	http://www.tcscs.com/wdm/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DAEMONPIC}
 
