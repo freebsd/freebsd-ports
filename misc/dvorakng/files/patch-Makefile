@@ -1,11 +1,28 @@
---- Makefile.orig	Wed Mar 26 16:27:35 2003
-+++ Makefile	Wed Mar 26 16:27:42 2003
-@@ -11,7 +11,7 @@
- CC       = gcc
- CXX      = g++
+--- Makefile.orig	Mon Mar 17 15:14:42 2003
++++ Makefile	Tue Apr 29 03:00:34 2003
+@@ -8,12 +8,10 @@
+ 
+ ### That's all ###
+ 
+-CC       = gcc
+-CXX      = g++
  PROF     = #-g0 -O2
 -CFLAGS   = $(PROF) -fmessage-length=0 -Wall $(LIMIT_LENGTH)
-+CFLAGS   = $(PROF) -Wall $(LIMIT_LENGTH)
- CXXFLAGS = $(CFLAGS)
- LDFLAGS  = $(PROF)
+-CXXFLAGS = $(CFLAGS)
+-LDFLAGS  = $(PROF)
++CFLAGS	+= $(PROF) -fmessage-length=0 -Wall $(LIMIT_LENGTH)
++CXXFLAGS?= $(CFLAGS)
++LDFLAGS	+= $(PROF)
  LIBS     = -lncurses
+ 
+ OBJECTS  = dvorakng.o lessons.o
+@@ -30,6 +28,9 @@
+ 
+ dvorakng: $(OBJECTS)
+ 	$(CXX) -s $(LDFLAGS) -o $(TARGET) $(OBJECTS) $(LIBS)
++
++.cpp.o:
++	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $>
+ 
+ clean:
+ 		rm -f $(OBJECTS) $(TARGET)
