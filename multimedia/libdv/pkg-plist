@@ -5,7 +5,7 @@ include/libdv/dv1394.h
 include/libdv/dv_types.h
 lib/libdv.a
 lib/libdv.so
-lib/libdv.so.1
+lib/libdv.so.2
 libdata/pkgconfig/libdv.pc
 %%PORTDOCS%%share/doc/libdv/AUTHORS
 %%PORTDOCS%%share/doc/libdv/COPYING
@@ -17,4 +17,5 @@ libdata/pkgconfig/libdv.pc
 %%PORTDOCS%%share/doc/libdv/README.encoder
 %%PORTDOCS%%share/doc/libdv/TODO
 %%PORTDOCS%%@dirrm share/doc/libdv
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
 @dirrm include/libdv
