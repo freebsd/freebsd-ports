@@ -36,6 +36,7 @@
     SUBDIR += tin
     SUBDIR += ve
     SUBDIR += xcin
+    SUBDIR += xcin25
     SUBDIR += xphotohunter
 
 .include <bsd.port.subdir.mk>
