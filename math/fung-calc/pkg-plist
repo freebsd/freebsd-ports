@@ -49,8 +49,13 @@ lib/libfungcalcui.so.1
 share/doc/HTML/en/fung-calc/animationparams.png
 share/doc/HTML/en/fung-calc/animationtoolbar.png
 share/doc/HTML/en/fung-calc/common
+share/doc/HTML/en/fung-calc/credits.docbook
+share/doc/HTML/en/fung-calc/functiongraph.png
 share/doc/HTML/en/fung-calc/index.cache.bz2
 share/doc/HTML/en/fung-calc/index.docbook
+share/doc/HTML/en/fung-calc/installation.docbook
+share/doc/HTML/en/fung-calc/introduction.docbook
+share/doc/HTML/en/fung-calc/newgraph.png
 share/fung-calc/AUTHORS
 share/fung-calc/COPYING
 share/fung-calc/ChangeLog
