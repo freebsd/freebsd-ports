@@ -3,7 +3,7 @@
 # Date created:         		26 November 1997
 # Whom:                 		Archie L. Cobbs <archie@whistle.com>
 #
-# $Id: Makefile,v 1.6 1999/02/26 01:01:19 archie Exp $
+# $Id: Makefile,v 1.7 1999/05/04 23:18:35 steve Exp $
 
 DISTNAME=		skip-1.0
 CATEGORIES=		security
@@ -55,5 +55,7 @@ post-patch:
 	  sed 's!@@PREFIX@@!${PREFIX}!g' < $$FILE > $$FILE.new ; \
 	  mv $$FILE.new $$FILE; \
 	done
+
+BROKEN=		Needs to be updated wrt. new device registration
 
 .include <bsd.port.mk>
