@@ -28,6 +28,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
+PKGMESSAGE=	${WRKDIR}/MESSAGE
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
@@ -65,14 +66,17 @@ post-configure:
 	${REINPLACE_CMD} -e 's/444/644/g' \
 		${WRKSRC}/kdesktop/init/Templates/Makefile
 
+post-build:
+	@${CAT} ${FILESDIR}/pkg-message | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
+		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g' > ${PKGMESSAGE}
+
 post-install:
 	${LOCALBASE}/bin/genkdmconf --no-old --in ${PREFIX}/share/config/kdm/default
 	${LOCALBASE}/bin/genkdmconf --no-backup --no-old-scripts --in ${PREFIX}/share/config/kdm
 	${RM} -f ${PREFIX}/share/apps/konsole/linux.desktop
 	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
-		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
-	@${CAT} ${PKGMESSAGE} | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		| ${SED} -e 's,%%X11BASE%%,${X11BASE},g'
+		${CHMOD} g+s ${PREFIX}/bin/ksysguard$d
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
