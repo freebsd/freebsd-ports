@@ -3,12 +3,12 @@
 # Date created:		30 October 1998
 # Whom:			John Saunders <john@nlc.net.au>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/02/11 07:23:16 kuriyama Exp $
 #
 
 DISTNAME=	rblsmtpd-0.70
 CATEGORIES=	mail
-MASTER_SITES=	ftp://koobera.math.uic.edu/pub/software/
+MASTER_SITES=	ftp://koobera.math.uic.edu/www/software/
 
 MAINTAINER=	john@nlc.net.au
 
