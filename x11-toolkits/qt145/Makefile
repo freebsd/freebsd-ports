@@ -25,7 +25,7 @@ MAKE_ENV+=	VERSION="${VERSION}" VER_MIN=${VER_MIN} VER_MAJ=${VER_MAJ}
 PLIST_SUB+=	VERSION="${VER_MAJ}"
 
 MAN1=	moc.1
-.include "files/man3"
+.include "${.CURDIR}/files/man3"
 
 post-configure:
 	@${PERL} -pi -e "s:g\+\+:${CXX}:g" ${WRKSRC}/configs/freebsd-g++-shared
