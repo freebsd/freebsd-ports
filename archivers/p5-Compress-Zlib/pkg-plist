@@ -5,4 +5,3 @@ lib/perl5/site_perl/i386-freebsd/auto/Compress/Zlib/Zlib.bs
 lib/perl5/site_perl/i386-freebsd/auto/Compress/Zlib/Zlib.so
 lib/perl5/site_perl/i386-freebsd/auto/Compress/Zlib/.packlist
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Compress/Zlib
-
