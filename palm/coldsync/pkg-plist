@@ -1,18 +1,27 @@
 bin/coldsync
-lib/perl5/site_perl/%%PERL_VER%%/ColdSync.pm
-lib/perl5/site_perl/%%PERL_VER%%/ColdSync/SPC.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/ColdSync
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ColdSync/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ColdSync
-libexec/coldsync/send-mail
-libexec/coldsync/todo-text
-@dirrm libexec/coldsync
 etc/sample.coldsync.rc
 @unexec install-info --delete %D/info/conduits.info %D/info/dir
 info/conduits.info
 info/conduits.info-1
 info/conduits.info-2
 @exec install-info %D/info/conduits.info %D/info/dir
+share/locale/cs/LC_MESSAGES/coldsync.mo
 share/locale/de/LC_MESSAGES/coldsync.mo
 share/locale/fr/LC_MESSAGES/coldsync.mo
 share/locale/it/LC_MESSAGES/coldsync.mo
+include/palm.h
+include/pdb.h
+include/pconn/util.h
+include/pconn/slp.h
+include/pconn/pconn.h
+include/pconn/palm_types.h
+include/pconn/palm_errno.h
+include/pconn/padp.h
+include/pconn/dlp_rpc.h
+include/pconn/dlp_cmd.h
+include/pconn/dlp.h
+include/pconn/cmp.h
+include/pconn/netsync.h
+include/pconn/PConnection.h
+include/pconn/spc_client.h
+@dirrm include/pconn
