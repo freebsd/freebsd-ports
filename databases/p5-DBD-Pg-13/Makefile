@@ -34,8 +34,6 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 .endif
 
-.include <bsd.port.post.mk>
-
 .if defined(WITH_OLD_LAYOUT)
 CONFIGURE_ENV+=	POSTGRES_INCLUDE=${LOCALBASE}/include/pgsql \
 		POSTGRES_LIB=${LOCALBASE}/lib
@@ -48,3 +46,5 @@ PG_CONFIG=	${LOCALBASE}/bin/pg_config
 CONFIGURE_ENV+=	POSTGRES_INCLUDE=`${PG_CONFIG} --includedir` \
 		POSTGRES_LIB=`${PG_CONFIG} --libdir`
 .endif
+
+.include <bsd.port.post.mk>
