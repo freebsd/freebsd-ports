@@ -1,0 +1,6 @@
+FontTools is an open source library for manipulating fonts, written
+in Python. It supports reading and writing of TrueType fonts,
+PostScript Type 1 fonts as well as AFM files and some MacOS-specific
+formats.
+
+WWW: 	http://sourceforge.net/projects/fonttools/
