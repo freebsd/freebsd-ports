@@ -7,6 +7,7 @@
 
 PORTNAME=	tvark
 PORTVERSION=	0.3
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://www.tvark.com/
 
