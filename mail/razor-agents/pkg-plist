@@ -1,0 +1,12 @@
+bin/razor-check
+bin/razor-discover
+bin/razor-report
+lib/perl5/site_perl/%%PERL_VER%%/Razor/Agent.pm
+lib/perl5/site_perl/%%PERL_VER%%/Razor/Client.pm
+lib/perl5/site_perl/%%PERL_VER%%/Razor/Config.pm
+lib/perl5/site_perl/%%PERL_VER%%/Razor/Errorhandler.pm
+lib/perl5/site_perl/%%PERL_VER%%/Razor/String.pm
+lib/perl5/site_perl/%%PERL_VER%%/Razor/Version.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/razor-agents/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/razor-agents
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Razor

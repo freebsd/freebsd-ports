@@ -173,6 +173,7 @@
     SUBDIR += qmailanalog
     SUBDIR += qpopper
     SUBDIR += qtools
+    SUBDIR += razor-agents
     SUBDIR += rblcheck
     SUBDIR += regm
     SUBDIR += rftp
