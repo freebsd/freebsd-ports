@@ -1,0 +1,11 @@
+--- dw_filter.c.bak	Mon Jul 30 05:12:02 2001
++++ dw_filter.c	Sat Aug 25 15:27:15 2001
+@@ -585,7 +585,7 @@
+         syslog( LOG_MAIL | LOG_ERR, "daemon return error (%s) - possible problem with daemon", getDaemonCode( status ) );
+         FAIL_EXIT( context, priv );
+     } /* else - normal message */
+-    syslog( LOG_MAIL | LOG_INFO, "Complite proccessing message from %s", priv->from );
++    syslog( LOG_MAIL | LOG_INFO, "Complete proccessing message from %s", priv->from );
+     free_private_data( priv );
+     if( set_private_data( context, NULL ) != MI_SUCCESS )
+     {
