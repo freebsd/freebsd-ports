@@ -1,14 +1,14 @@
---- lib/readline/terminal.c.orig	Tue Feb  6 12:39:22 2001
-+++ lib/readline/terminal.c	Wed Apr 11 09:43:44 2001
-@@ -297,7 +297,11 @@
+--- lib/readline/terminal.c.orig	Tue Mar  5 02:23:09 2002
++++ lib/readline/terminal.c	Wed Jul 24 05:57:59 2002
+@@ -313,7 +313,11 @@
+   { "ei", &_rl_term_ei },
+   { "ic", &_rl_term_ic },
    { "im", &_rl_term_im },
-   { "kd", &_rl_term_kd },
-   { "kh", &_rl_term_kh },	/* home */
 +#ifdef __FreeBSD__
-+  { "@7", &_rl_term_kH },	/* end */
++  { "@7", &_rl_term_kH },	/* home down ?? */
 +#else
-   { "kH", &_rl_term_kH },	/* end */
+   { "kH", &_rl_term_kH },	/* home down ?? */
 +#endif
-   { "kl", &_rl_term_kl },
-   { "kr", &_rl_term_kr },
-   { "ku", &_rl_term_ku },
+   { "kI", &_rl_term_kI },	/* insert */
+   { "kd", &_rl_term_kd },
+   { "ke", &_rl_term_ke },	/* end keypad mode */
