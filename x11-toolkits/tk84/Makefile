@@ -351,7 +351,9 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 
 .endif
 
-TCL_CHECK!=	( cd ${PORTSDIR}/${PKGCATEGORY}/${TCL84_PORT} && make WRKDIRPREFIX= -V WRKSRC | sed -e 's|/unix$$||' )
+TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
+TCLBASE!=	( cd ${PORTSDIR}/${TCL84_PORT} && make -V TCLBASE )
+TCLWRK!=	( cd ${PORTSDIR}/${TCL84_PORT} && make -V WRKDIR )
 
 pre-everything::
 	@if ${TEST} -e "${NONEXISTENT}"; then ${ECHO_MSG} "=== Aborted, please remove ${NONEXISTENT}"; exit 1; fi
@@ -362,13 +364,15 @@ post-patch:
 
 post-configure:
 	${REINPLACE_CMD} \
-		-e 's=${WRKDIRPREFIX}${.CURDIR}=$${WRKDIRPREFIX}${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}=' \
+		-e 's|${WRKDIRPREFIX}${.CURDIR}|$${WRKDIRPREFIX}${TKBASE}|' \
 		${WRKSRC}/tkConfig.sh
+	${REINPLACE_CMD} \
+		-e 's|$${WRKDIRPREFIX}${TCLBASE}/work|${TCLWRK}|' \
+		${WRKSRC}/Makefile
 .if defined(WITHOUT_TK84_MAN)
 	${REINPLACE_CMD} -e 's|^MAN_INSTALL_DIR.*$$|MAN_INSTALL_DIR = ${WRKDIR}|' \
 		${WRKSRC}/Makefile
 .endif
-	@if ! grep "TCL_SRC_DIR=.\$${WRKDIRPREFIX}${TCL_CHECK}" "${LOCALBASE}/lib/tcl8.4/tclConfig.sh"; then ${ECHO_MSG} "=== Aborted, this configuration is not supported, set PORTSDIR and rebuild tcl84"; exit 1; fi
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
