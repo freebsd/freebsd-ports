@@ -115,6 +115,7 @@
     SUBDIR += xaniroc
     SUBDIR += xantfarm
     SUBDIR += xautolock
+    SUBDIR += xautomation
     SUBDIR += xballoon
     SUBDIR += xbanner
     SUBDIR += xbindkeys

@@ -1,0 +1,8 @@
+Control X from the command line for scripts, and do "visual scraping" to find
+things on the screen. The conrol interface allows mouse movement, clicking,
+button up/down, key up/down, etc, and uses the XTest extension so you don't
+have the annoying problems that xse has when apps ignore sent events. The
+visgrep program find images inside of images and reports the coordinates,
+allowing progams to find buttons, etc, on the screen to click on.
+
+WWW: http://hoopajoo.net/projects/xautomation.html
