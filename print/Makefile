@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.33 1996/11/08 23:04:11 obrien Exp $
+# $Id: Makefile,v 1.34 1996/11/20 08:11:51 tg Exp $
 #
 
     SUBDIR += a2ps
@@ -17,6 +17,7 @@
     SUBDIR += latex
     SUBDIR += latex209
     SUBDIR += lout
+    SUBDIR += lprps
     SUBDIR += lyx
     SUBDIR += makeindex
     SUBDIR += mltex
