@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mencal
-PORTVERSION=	2.1
+PORTVERSION=	2.3
 CATEGORIES=	deskutils
-MASTER_SITES=	http://mencal.kyberdigi.cz/ \
-		http://unixpages.org/distfiles/
+MASTER_SITES=	http://kyberdigi.cz/projects/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A variation of the unix command cal
