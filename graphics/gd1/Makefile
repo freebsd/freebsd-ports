@@ -45,7 +45,7 @@ pre-everything::
 .endif
 
 post-extract:
-	@bzip2 -dc ${DISTDIR}/${DIST_SUBDIR}/gd_gif_in.c.bz2 \
+	@${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/gd_gif_in.c.bz2 \
 		> ${WRKSRC}/gd_gif_in.c
 
 post-patch:
