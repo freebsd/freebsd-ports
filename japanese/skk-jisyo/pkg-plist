@@ -1,1 +1,1 @@
-@unexec rmdir %%SKKDIR%% > /dev/null 2>&1 || true
+@unexec rmdir %D/%%SKKDIR%% > /dev/null 2>&1 || true
