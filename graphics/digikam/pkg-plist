@@ -1,0 +1,42 @@
+bin/digikam
+share/applnk/Graphics/digikam.desktop
+share/apps/digikam/digikam-splash.png
+share/apps/digikam/digikamui.rc
+share/doc/HTML/en/digikam/common
+share/doc/HTML/en/digikam/index.cache.bz2
+share/doc/HTML/en/digikam/index.docbook
+share/doc/HTML/en/digikam/index_en.pot
+share/doc/HTML/fr/digikam/common
+share/doc/HTML/fr/digikam/index.cache.bz2
+share/doc/HTML/fr/digikam/index.docbook
+share/doc/HTML/fr/digikam/index_fr.po
+share/icons/hicolor/16x16/apps/digikam.png
+share/icons/hicolor/22x22/apps/digikam.png
+share/icons/hicolor/32x32/apps/digikam.png
+share/icons/hicolor/48x48/apps/digikam.png
+share/icons/locolor/16x16/apps/digikam.png
+share/icons/locolor/22x22/apps/digikam.png
+share/icons/locolor/32x32/apps/digikam.png
+share/icons/locolor/48x48/apps/digikam.png
+share/locale/fr/LC_MESSAGES/digikam.mo
+@dirrm share/icons/locolor/48x48/apps
+@dirrm share/icons/locolor/48x48
+@dirrm share/icons/locolor/32x32/apps
+@dirrm share/icons/locolor/32x32
+@dirrm share/icons/locolor/22x22/apps
+@dirrm share/icons/locolor/22x22
+@dirrm share/icons/locolor/16x16/apps
+@dirrm share/icons/locolor/16x16
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/doc/HTML/fr/digikam
+@dirrm share/doc/HTML/fr
+@dirrm share/doc/HTML/en/digikam
+@dirrm share/apps/digikam
+@dirrm share/applnk/Graphics
