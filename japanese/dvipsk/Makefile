@@ -46,6 +46,7 @@ BUILD_WRKSRC=	${WRKDIR}/tetex-src-${VER_TETEX}/texk/dvipsk
 INSTALL_WRKSRC=	${WRKDIR}/tetex-src-${VER_TETEX}/texk/dvipsk
 
 PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--disable-multiplatform \
@@ -80,7 +81,7 @@ post-configure:
 	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${CHMOD} 0755 ${PKGINSTALL}
-	cd ${PATCH_WRKSRC} && ${RM} -rf udvipsk && ${CP} -pr dvipsk udvipsk
+	cd ${PATCH_WRKSRC} && ${RM} -rf udvipsk && ${CP} -R dvipsk udvipsk
 
 do-build:
 .for D in dvipsk odvipsk
