@@ -1,0 +1,9 @@
+bin/papaya
+share/locale/en/LC_MESSAGES/papaya.mo 
+share/locale/en_GB/LC_MESSAGES/papaya.mo 
+share/papaya/bitmaps/papaya.xpm
+share/papaya/mcw.dat
+share/papaya/mudlist.txt
+share/papaya/papayarc
+@dirrm share/papaya/bitmaps
+@dirrm share/papaya
