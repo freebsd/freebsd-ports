@@ -1,19 +1,20 @@
 bin/atari800
-share/atari/atari800.cfg
-share/atari/ataribas.rom
-share/atari/atariosb.rom
-share/atari/atarixl.rom
-share/atari/demos1.xfd
-share/atari/demos2.xfd
-share/atari/dos25.xfd
-share/atari/mydos45d.atr
-share/doc/atari/BUGS
-share/doc/atari/CHANGES
-share/doc/atari/CREDITS
-share/doc/atari/INSTALL
-share/doc/atari/README
-share/doc/atari/README.FreeBSD
-share/doc/atari/TODO
-share/doc/atari/USAGE
-@dirrm share/doc/atari
-@dirrm share/atari
+share/atari800/atari800.cfg
+share/atari800/ataribas.rom
+share/atari800/atariosb.rom
+share/atari800/atarixl.rom
+share/atari800/demos1.xfd
+share/atari800/demos2.xfd
+share/atari800/dos25.xfd
+share/atari800/mydos45d.atr
+%%PORTDOCS%%share/doc/atari800/BUGS
+%%PORTDOCS%%share/doc/atari800/CHANGES
+%%PORTDOCS%%share/doc/atari800/CREDITS
+%%PORTDOCS%%share/doc/atari800/FAQ
+%%PORTDOCS%%share/doc/atari800/INSTALL
+%%PORTDOCS%%share/doc/atari800/README
+%%PORTDOCS%%share/doc/atari800/README.FreeBSD
+%%PORTDOCS%%share/doc/atari800/TODO
+%%PORTDOCS%%share/doc/atari800/USAGE
+%%PORTDOCS%%@dirrm share/doc/atari800
+@dirrm share/atari800
