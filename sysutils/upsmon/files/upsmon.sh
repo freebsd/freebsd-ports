@@ -9,7 +9,7 @@ start)
 	fi
 	;;
 stop)
-	killall updmond && echo -n ' upsmond'
+	killall upsmond && echo -n ' upsmond'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
