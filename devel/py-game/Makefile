@@ -27,12 +27,12 @@ do-configure:
 
 .if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${PREFIX}/share/examples/py-game
+	${MKDIR} ${EXAMPLESDIR}
 	${TAR} -C ${WRKSRC}/examples -cf - . | \
-		${TAR} --unlink -C ${PREFIX}/share/examples/py-game -xf -
-	${MKDIR} ${PREFIX}/share/doc/py-game
+		${TAR} --unlink -C ${EXAMPLESDIR} -xf -
+	${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/docs -cf - . | \
-		${TAR} --unlink -C ${PREFIX}/share/doc/py-game -xf -
+		${TAR} --unlink -C ${DOCSDIR} -xf -
 .endif
 
 .include <bsd.port.mk>
