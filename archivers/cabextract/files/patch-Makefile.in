@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.in	2001/08/20 08:11:20	1.1
-+++ Makefile.in	2001/08/20 08:11:40
-@@ -83,7 +83,7 @@
- LDFLAGS = @LDFLAGS@
- LIBS = @LIBS@
- cabextract_OBJECTS =  cabextract.o
--cabextract_LDADD = $(LDADD)
-+cabextract_LDADD = $(LDADD) -lgnugetopt
- cabextract_DEPENDENCIES = 
- cabextract_LDFLAGS = 
- CFLAGS = @CFLAGS@
+--- Makefile.in.orig	Mon Aug 20 11:06:55 2001
++++ Makefile.in	Mon Aug 27 11:33:35 2001
+@@ -70,7 +70,7 @@
+ bin_PROGRAMS = cabextract
+ man_MANS = cabextract.1
+ cabextract_SOURCES = cabextract.c
+-cabextract_LDADD = @LIBOBJS@
++cabextract_LDADD = @LIBOBJS@ -lgnugetopt
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
