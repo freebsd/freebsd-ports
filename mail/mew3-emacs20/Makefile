@@ -6,16 +6,17 @@
 #
 
 MAINTAINER?=	kiri@FreeBSD.org
-COMMENT=	Message interface to Emacs Window (version 2) for emacs20
+COMMENT=	Message interface to Emacs Window (version 3) for emacs20
 
 # Mew major version
-MEW_MAJOR_VER?=	2
+MEW_MAJOR_VER?=	3
 
 # This is a slave port.
 MASTERDIR=	${.CURDIR}/../mew${MEW_MAJOR_VER}
 
-# use pkg-* files in ${.CURDIR}
+# use pkg-* files in ${.CURDIR} except for pkg-message
 PKGDIR=		${.CURDIR}
+PKGMESSAGE=	${MASTERDIR}/pkg-message
 
 # set emacs port
 EMACS_PORT_NAME=	emacs20

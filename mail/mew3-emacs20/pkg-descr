@@ -8,12 +8,12 @@ and to make it easy to view and compose them. With Mew you can send a
 picture of a birthday cake with the song "Happy Birthday to you" to your
 friend, which is encrypted by strong cryptograph.
 
-This port is the Mew2(Mew with version 2) for emacs-20.7(editors/emacs20). 
-The Mew2 port and corresponding Emacs port are listed bellow and elisp
+This port is the Mew3(Mew with version 3) for emacs-20.7(editors/emacs20). 
+The Mew3 port and corresponding Emacs port are listed bellow and elisp
 `site-lisp' directory(elisp load path), info path and etc directory(only
 effective for xemacs ports) are shown as well. 
 
-mail/mew2-emacs20(mew-emacs20-2.0) ===> editors/emacs20(emacs-20.7) 
+mail/mew3-emacs20(mew-emacs20-2.0) ===> editors/emacs20(emacs-20.7) 
 	Lisp directory : /usr/local/share/emacs/site-lisp/mew
 	Info directory : /usr/local/info
 	ETC directory  : /usr/local/share/emacs/etc/mew
