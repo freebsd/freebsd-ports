@@ -1,0 +1,11 @@
+SSM is an object orientated modular softsynth / sequencer / sampler.
+
+You can use it in a fairly straight forward way to make tracks with,
+or get very experimental. Audio or control data can be freely passed
+between the plugins, there is no difference. Data can also be fed
+back on itself for chaotic effects.
+
+WWW: http://www.pawfal.org/Software/SSM/
+
+- David
+dyeske@yahoo.com
