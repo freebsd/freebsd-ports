@@ -1,0 +1,17 @@
+--- src/Makefile.in.orig	Sun Aug  5 14:11:52 2001
++++ src/Makefile.in	Fri Aug 17 13:24:06 2001
+@@ -95,12 +95,12 @@
+ libnormvol_la_LDFLAGS = -module -avoid-version
+ libnormvol_la_LIBS = @GTK_LIBS@ @PTHREAD_LIBS@ @INTLLIBS@
+ 
+-COMMON_CFLAGS = -O2 -Wall -W 	-I$(top_builddir) -I$(top_srcdir) 	-D_REENTRANT @GTK_CFLAGS@
++COMMON_CFLAGS = -Wall -I$(top_builddir) -I$(top_srcdir) -D_REENTRANT @GTK_CFLAGS@
+ 
+ COMMON_SRC = normvol.c normvol.h smooth.c smooth.h cfg.c cfg.h 	about.c about.h config.h monitor.c monitor.h 	support.c support.h interface.c interface.h callbacks.c callbacks.h
+ 
+ 
+-CFLAGS = $(COMMON_CFLAGS)
++CFLAGS += $(COMMON_CFLAGS)
+ libnormvol_la_SOURCES = $(COMMON_SRC)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h

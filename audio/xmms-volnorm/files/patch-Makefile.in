@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Aug 17 13:47:34 2001
++++ Makefile.in	Fri Aug 17 13:47:50 2001
+@@ -87,7 +87,7 @@
+ XMMS_PATH = @XMMS_PATH@
+ plugindir = @plugindir@
+ 
+-SUBDIRS = src tests
++SUBDIRS = src
+ 
+ DISTCLEANFILES = *.orig *.rej *~ *.bak core
+ 
