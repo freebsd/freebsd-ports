@@ -1,4 +1,3 @@
-bin/query.py
 lib/%%PYTHON_VERSION%%/site-packages/SQLRelay/CSQLRelay.so
 lib/%%PYTHON_VERSION%%/site-packages/SQLRelay/PySQLRClient.py
 lib/%%PYTHON_VERSION%%/site-packages/SQLRelay/PySQLRDB.py
