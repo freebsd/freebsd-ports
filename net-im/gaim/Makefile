@@ -6,14 +6,16 @@
 
 PORTNAME=	gaim
 PORTVERSION=	0.70
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
+.if defined(WITH_JPPATCH)
 PATCH_SITES=		http://www.cc.rim.or.jp/~yaz/
 PATCHFILES=		gaim-0.70_jp.patch.gz
 PATCH_DIST_STRIP=	-p1
+.endif
 
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT=	Gtk+-2.0 open-source 'clone' of AOL's Instant Messenger client
@@ -85,6 +87,7 @@ pre-everything::
 	@${ECHO_MSG} "	WITHOUT_GTKSPELL	Turns off spell checking"
 	@${ECHO_MSG} "	WITHOUT_AUDIO		Disable audio support"
 	@${ECHO_MSG} "	WITH_GNUTLS		Enable TLS encryption support"
+	@${ECHO_MSG} "	WITH_JPPATCH		Enable Japanese character support"
 	@${ECHO_MSG} "	TCL_VER			Use Tcl/Tk (version)"
 	@${ECHO_MSG} ""
 
