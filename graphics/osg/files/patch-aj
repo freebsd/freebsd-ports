@@ -5,7 +5,7 @@
  
  C++FLAGS += -I. -I../../../include 
 -LDFLAGS += -L../../../lib
-+LDFLAGS += -L../../../lib -L/usr/local/lib -rpath /usr/local/lib
++LDFLAGS += -L../../../lib -L$(LOCALBASE)/lib -rpath $(LOCALBASE)/lib
  
  include ../../../Make/makerules
  
