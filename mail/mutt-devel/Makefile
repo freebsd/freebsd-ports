@@ -21,6 +21,11 @@
 # If you want to install the mutt documentation in html format define:
 #  WITH_MUTT_HTML
 #
+# If you do not want that the documentation is rebuilt using sgmlformat
+# define:
+#  WITHOUT_MUTT_SGMLFORMAT
+#    (this can't be stated if WITH_MUTT_HTML is defined)
+#
 # If you want to read news with mutt define:
 #  WITH_MUTT_NNTP
 #    (note that this implies building of the inn-stable port to be able to 
@@ -42,8 +47,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.3.27
-PORTREVISION=	1
-PATCH_VERSION=	1.3.26
+PORTREVISION=	2
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -124,7 +128,12 @@ WITH_MUTT_IMAP=	yes
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
 		giconv.2:${PORTSDIR}/converters/libiconv
 
+.if defined(NOPORTDOCS)
+WITHOUT_MUTT_SGMLFORMAT=	yes
+.endif
+.if !defined(WITHOUT_MUTT_SGMLFORMAT)
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
+.endif
 .if defined(USE_SLANG)
 LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 .elif defined(USE_NCURSES) && ${OSVERSION} < 400000
@@ -207,6 +216,14 @@ post-build:
 PLIST_SUB+=	SUB_NNTP=""
 .else
 PLIST_SUB+=	SUB_NNTP="@comment "
+.endif
+.if defined(WITHOUT_MUTT_SGMLFORMAT)
+.if defined(WITH_MUTT_HTML)
+.error You can't say both: WITH_MUTT_HTML and WITHOUT_MUTT_SGMLFORMAT
+.endif
+PLIST_SUB+=	SUB_SGML="@comment "
+.else
+PLIST_SUB+=	SUB_SGML=""
 .endif
 .if defined(WITH_MUTT_HTML)
 PLIST_SUB+=	SUB_HTML=""
@@ -827,6 +844,7 @@ PLIST_SUB+=	SUB_ADD_O="@comment "
 .else 	# NOPORTDOCS
 PLIST_SUB+=	SUB_HTML="@comment "
 PLIST_SUB+=	SUB_NNTP="@comment "
+PLIST_SUB+=	SUB_SGML="@comment "
 PLIST_SUB+=	SUB_ADD_A="@comment "
 PLIST_SUB+=	SUB_ADD_B="@comment "
 PLIST_SUB+=	SUB_ADD_C="@comment "
@@ -853,9 +871,13 @@ post-install:
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && \
 		${CHMOD} a+rx ${PREFIX}/share/doc/mutt
-	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt manual.latin1 \
+	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt \
 		PGP-Notes.txt ../ABOUT-NLS ../contrib/language* \
 		${PREFIX}/share/doc/mutt
+.if !defined(WITHOUT_MUTT_SGMLFORMAT)
+	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.latin1 \
+		${PREFIX}/share/doc/mutt
+.endif
 .if defined(WITH_MUTT_NNTP)
 	@cd ${WRKSRC} ; ${INSTALL_MAN} ChangeLog.nntp \
 		${PREFIX}/share/doc/mutt

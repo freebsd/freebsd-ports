@@ -50,7 +50,7 @@ share/locale/zh_TW/LC_MESSAGES/mutt.mo
 %%PORTDOCS%%share/doc/mutt/language.txt
 %%PORTDOCS%%share/doc/mutt/language50.txt
 %%PORTDOCS%%share/doc/mutt/manual.txt
-%%PORTDOCS%%share/doc/mutt/manual.latin1
+%%SUB_SGML%%share/doc/mutt/manual.latin1
 %%PORTDOCS%%share/doc/mutt/patch-notes.txt
 %%PORTDOCS%%share/doc/mutt/samples/iconv/iconv.aix-3.2.5.rc
 %%PORTDOCS%%share/doc/mutt/samples/iconv/iconv.aix-4.1.5.rc
