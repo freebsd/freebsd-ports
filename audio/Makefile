@@ -164,7 +164,6 @@
     SUBDIR += ifp-line
     SUBDIR += jack
     SUBDIR += jamboree
-    SUBDIR += juk
     SUBDIR += juke
     SUBDIR += jxm
     SUBDIR += klira
