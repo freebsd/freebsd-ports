@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	2.11.2
+PORTVERSION=	2.12
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -14,8 +14,6 @@ MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
-
-PLIST_SUB+=	DOCSDIR=${DOCSDIR:S,${PREFIX}/,,}
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -38,9 +36,10 @@ PLIST_SUB+=	WITH_GNOME=""
 PLIST_SUB+=	WITH_GNOME="@comment "
 .endif
 
-MAN1=	distcc.1 distccd.1
-DOC_FILES=	AUTHORS COPYING INSTALL NEWS README \
-		doc/protocol-1.txt doc/status-1.txt
+MAN1=		distcc.1 distccd.1
+DOC_FILES=	AUTHORS INSTALL NEWS README \
+		doc/protocol-1.txt doc/status-1.txt \
+		doc/protocol-2.txt doc/reporting-bugs.txt
 
 pre-everything::
 	@${ECHO_MSG} "Available knobs for ${PORTNAME}"
@@ -58,7 +57,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-gnome ${PREFIX}/bin
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccd ${PREFIX}/sbin
-	${INSTALL_SCRIPT} -m 751 ${FILESDIR}/distccd.sh.sample \
+	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/distccd.sh.sample \
 		${PREFIX}/etc/rc.d/distccd.sh.sample
 
 post-install: install-doc install-man
@@ -69,8 +68,8 @@ post-install: install-doc install-man
 install-doc:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for FILE in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
 
