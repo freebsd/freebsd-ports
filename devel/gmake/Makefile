@@ -3,13 +3,14 @@
 # Date created:		11 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.18 1998/07/02 10:43:18 vanilla Exp $
+# $Id: Makefile,v 1.19 1998/08/19 04:16:32 jseger Exp $
 #
 
 DISTNAME=       make-3.77
 PKGNAME=        gmake-3.77
 CATEGORIES=	devel
 MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	make
 
 MAINTAINER=	jseger@freebsd.org
 

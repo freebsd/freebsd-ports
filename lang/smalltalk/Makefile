@@ -3,12 +3,13 @@
 # Date created:		09 Feb 1995
 # Whom:			gpalmer
 #
-# $Id: Makefile,v 1.13 1996/12/08 01:44:46 max Exp $
+# $Id: Makefile,v 1.14 1997/11/29 14:15:01 jraynard Exp $
 #
 
 DISTNAME=	smalltalk-1.1.5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	smalltalk
 
 MAINTAINER=	jraynard@FreeBSD.ORG
 

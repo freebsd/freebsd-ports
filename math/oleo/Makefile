@@ -3,12 +3,13 @@
 # Date created:		3 September 1994
 # Whom:			mr
 #
-# $Id: Makefile,v 1.10 1996/11/18 10:24:49 asami Exp $
+# $Id: Makefile,v 1.11 1997/10/31 13:43:28 tg Exp $
 #
 
 DISTNAME=	oleo-1.6
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	oleo
 
 MAINTAINER=	ports@FreeBSD.ORG
 

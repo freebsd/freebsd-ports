@@ -4,12 +4,13 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.18 1998/11/11 05:37:24 asami Exp $
+# $Id: Makefile,v 1.19 1998/11/13 07:32:21 obrien Exp $
 #
 
 DISTNAME=	gcc-2.8.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	gcc
 
 MAINTAINER=	obrien@FreeBSD.org
 

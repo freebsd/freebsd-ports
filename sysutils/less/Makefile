@@ -3,12 +3,13 @@
 # Date created:         8 Nov 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.15 1996/11/18 14:06:45 asami Exp $
+# $Id: Makefile,v 1.16 1997/05/19 17:44:22 ache Exp $
 #
 
 DISTNAME=       less-332
 CATEGORIES=	misc
 MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	less
 
 MAINTAINER=	ache@FreeBSD.ORG
 

@@ -3,13 +3,14 @@
 # Date created:        9 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/01/03 11:33:00 obrien Exp $
+# $Id: Makefile,v 1.3 1999/01/12 16:50:41 vanilla Exp $
 #
 
 DISTNAME=	gnushogi-1.2p03
 PKGNAME=	gnushogi-1.2.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	gnushogi
 
 MAINTAINER=	nacai@iname.com
 

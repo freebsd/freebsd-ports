@@ -4,12 +4,13 @@
 # Date created:		21 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.26 1998/04/04 07:36:44 asami Exp $
+# $Id: Makefile,v 1.27 1998/08/13 21:30:06 obrien Exp $
 #
 
 DISTNAME=       bash-1.14.7
 CATEGORIES=	shells
 MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	bash
 
 MAINTAINER=	obrien@FreeBSD.org
 

@@ -3,12 +3,13 @@
 # Date created:         21 Jan 1998
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1996/12/07 10:54:06 max Exp $
+# $Id: Makefile,v 1.1.1.1 1998/01/21 07:05:20 ache Exp $
 #
 
 DISTNAME=       patch-2.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	patch
 
 MAINTAINER=     ache@FreeBSD.org
 

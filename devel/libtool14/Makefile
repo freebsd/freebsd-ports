@@ -3,12 +3,13 @@
 # Date created:		6 May 1998
 # Whom:			Motoyuki Kasahara <m-kasahr@sra.co.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/07 15:58:20 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/09/23 16:15:53 vanilla Exp $
 #
 
 DISTNAME=	libtool-1.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	libtool
 
 MAINTAINER=	m-kasahr@sra.co.jp
 

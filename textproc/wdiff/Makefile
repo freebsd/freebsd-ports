@@ -3,12 +3,13 @@
 # Date created:		Sep 15, 1997
 # Whom:			Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/01 07:05:08 max Exp $
 #
 
 DISTNAME=	wdiff-0.5
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	wdiff
 
 MAINTAINER=	sanpei@yy.cs.keio.ac.jp
 

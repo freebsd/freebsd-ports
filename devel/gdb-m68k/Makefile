@@ -3,13 +3,14 @@
 # Date created:         7 Jul 98
 # Whom:                 Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.5 1998/11/21 17:55:47 steve Exp $
+# $Id: Makefile,v 1.6 1998/11/24 03:36:50 steve Exp $
 #
 
 DISTNAME=	gdb-4.17
 PKGNAME=	m68kgdb-4.17
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	gdb
 
 MAINTAINER=	Jerry.Hicks@Glenayre.com
 

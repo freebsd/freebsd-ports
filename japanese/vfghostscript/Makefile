@@ -3,7 +3,7 @@
 # Date created:		14 May 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.14 1998/10/16 05:19:15 jseger Exp $
+# $Id: Makefile,v 1.15 1998/12/09 15:43:47 sada Exp $
 #
 
 DISTNAME=	ghostscript2.6.2
@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.ae.keio.ac.jp/pub/msdos/gnu/ghostscript/ \
 		ftp://i1nws2.fukui-u.ac.jp/pub/TeX/dvipr/ \
 		ftp://ftp.mei.co.jp/free/gnu/util/ghostscript/drivers/
+MASTER_SITE_SUBDIR=	ghostscript
 DISTFILES=	ghostscript-2.6.2.tar.gz ghostscript-fonts-2.6.2.tar.gz \
 		ghostscript-fonts-4.0.tar.gz gs261j10.tar.gz \
 		gs261d13.tar.gz \

@@ -4,7 +4,7 @@
 # Date created:		Sun June 08, 1997
 # Whom:			David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/26 09:41:56 obrien Exp $
+# $Id: Makefile,v 1.2 1998/11/11 05:37:23 asami Exp $
 #
 
 DISTNAME=	gcc-2.7.2
@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}  \
 		ftp://dse.doc.ic.ac.uk/pub/misc/bcc/  \
 		ftp://ftp.cs.yale.edu/WWW/pub/bradley/bcc/  \
 		ftp://ftp.cs.columbia.edu/archives/gnu/bcc/
+MASTER_SITE_SUBDIR=	gcc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} documentation-as-8x11-ps.tgz
 
 PATCH_SITES=	ftp://dse.doc.ic.ac.uk/pub/misc/bcc/  \

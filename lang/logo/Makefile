@@ -3,12 +3,13 @@
 # Date created:		22 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1996/11/18 10:24:26 asami Exp $
+# $Id: Makefile,v 1.12 1998/11/28 05:39:01 asami Exp $
 #
 
 DISTNAME=	ucblogo-3.3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	ucblogo
 
 MAINTAINER=	jmacd@FreeBSD.ORG
 

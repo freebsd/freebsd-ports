@@ -3,7 +3,7 @@
 # Date created:		7 March 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.13 1998/07/17 20:36:13 steve Exp $
+# $Id: Makefile,v 1.14 1998/10/10 04:01:45 steve Exp $
 #
 
 DISTNAME=	less-332
@@ -11,6 +11,7 @@ PKGNAME=	ja-less-332
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.big.or.jp/pub/usr2/jam/less/contrib/
+MASTER_SITE_SUBDIR=	less
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		regex_cs-lwp9k.shar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

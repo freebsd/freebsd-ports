@@ -3,12 +3,13 @@
 # Date created:		Sa   6 Jun 1998 10:24:51 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.2 1998/06/08 05:48:58 asami Exp $
+# $Id: Makefile,v 1.3 1998/12/24 19:16:27 asami Exp $
 #
 
 DISTNAME=	tar-1.12
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	tar
 
 MAINTAINER=	andreas@FreeBSD.ORG
 

@@ -3,12 +3,13 @@
 # Date created:		12 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.9 1997/10/07 08:56:30 tg Exp $
+# $Id: Makefile,v 1.10 1998/05/03 22:03:50 jseger Exp $
 #
 
 DISTNAME=	git-4.3.17
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	git
 
 MAINTAINER=	jseger@FreeBSD.ORG
 

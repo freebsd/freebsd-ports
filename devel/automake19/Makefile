@@ -3,12 +3,13 @@
 # Date created:		15 March 1997
 # Whom:			FUJIMOTO Kensaku <fujimoto@oscar.elec.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.7 1998/09/23 16:11:36 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/12/12 03:59:35 jseger Exp $
 #
 
 DISTNAME=	automake-1.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	automake
 
 MAINTAINER=	fujimoto@oscar.elec.waseda.ac.jp
 

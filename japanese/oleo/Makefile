@@ -3,7 +3,7 @@
 # Date created:		2 March 1997
 # Whom:			Yoshiro MIHIRA
 #
-# $Id: Makefile,v 1.4 1997/09/14 21:35:37 max Exp $
+# $Id: Makefile,v 1.5 1998/02/13 09:27:46 itojun Exp $
 #
 
 DISTNAME=	oleo-1.6
@@ -11,6 +11,7 @@ PKGNAME=	ja-oleo-1.6
 CATEGORIES=	japanese math
 MASTER_SITES=	http://www.hh.iij4u.or.jp/~hayasida/oleo/ \
 		${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	oleo
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} oleo-doc.tar.gz
 
 PATCH_SITES=	http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/

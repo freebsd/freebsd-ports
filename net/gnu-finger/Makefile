@@ -3,13 +3,14 @@
 # Date created:         20 June 1996
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.5 1996/12/01 01:22:49 obrien Exp $
+# $Id: Makefile,v 1.6 1997/01/06 07:24:39 max Exp $
 #
 
 DISTNAME=       finger-1.37
 PKGNAME=        gnu-finger-1.37
 CATEGORIES=     net
 MASTER_SITES=   ${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	finger
 
 MAINTAINER=     sanpei@yy.cs.keio.ac.jp
 
