@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	checkbot
-PORTVERSION=	1.72
+PORTVERSION=	1.73
 CATEGORIES=	www perl5
 MASTER_SITES=	http://degraaff.org/checkbot/ \
 		http://wolfram.schneider.org/src/
