@@ -1,12 +1,13 @@
 bin/thudboard
 %%DATADIR%%/battle.py
 %%DATADIR%%/battles/annotated.thud
-%%DATADIR%%/images.py
+%%DATADIR%%/skins.py
 %%DATADIR%%/img/banner.gif
 %%DATADIR%%/img/bcktile.gif
 %%DATADIR%%/img/board-grid.gif
 %%DATADIR%%/img/board.gif
 %%DATADIR%%/img/check.gif
+%%DATADIR%%/img/colors
 %%DATADIR%%/img/copy.gif
 %%DATADIR%%/img/dwarf.gif
 %%DATADIR%%/img/list.gif
@@ -24,7 +25,7 @@ bin/thudboard
 %%DATADIR%%/thud.ico
 %%DATADIR%%/thud.py
 %%DATADIR%%/battle.pyc
-%%DATADIR%%/images.pyc
+%%DATADIR%%/skins.pyc
 %%DATADIR%%/thud.pyc
 %%DATADIR%%/bugfix_askyesno.py
 %%DATADIR%%/bugfix_askyesno.pyc
