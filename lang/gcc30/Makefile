@@ -23,10 +23,7 @@ MAINTAINER=	obrien@FreeBSD.org
 
 USE_BZIP2=	yes
 
-PATCH_ARGS=	-d ${SRCDIR} -E ${PATCH_STRIP}
-.if !defined(PATCH_DEBUG)
-PATCH_ARGS+=	--forward --quiet
-.endif
+PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
 
 .include <bsd.port.pre.mk>
