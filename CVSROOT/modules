@@ -545,6 +545,7 @@ biew		ports/editors/biew
 biff		src/usr.bin/biff
 biffer		ports/mail/biffer
 biggles		ports/math/biggles
+bigloo		ports/lang/bigloo
 bigyear		ports/deskutils/bigyear
 bin		src/bin
 bin86		ports/devel/bin86
