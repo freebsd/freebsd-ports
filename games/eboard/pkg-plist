@@ -5,6 +5,7 @@ bin/eboard-config
 %%PORTDOCS%%share/doc/eboard/FICS-Timeseal.txt
 %%PORTDOCS%%share/doc/eboard/GNUChess4.txt
 %%PORTDOCS%%share/doc/eboard/GNUChess5.txt
+%%PORTDOCS%%share/doc/eboard/README
 %%PORTDOCS%%share/doc/eboard/Scripts.txt
 %%PORTDOCS%%share/doc/eboard/Sjeng.txt
 %%PORTDOCS%%share/doc/eboard/Themes.txt
