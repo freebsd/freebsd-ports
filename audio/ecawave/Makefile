@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecawave
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
