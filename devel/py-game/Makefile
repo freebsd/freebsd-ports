@@ -15,7 +15,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${PYDISTUTILS} \
 		${PYNUMERIC}
-LIB_DEPENDS=	SDL_ttf.2:${PORTSDIR}/graphics/sdl_ttf \
+LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		smpeg.1:${PORTSDIR}/graphics/smpeg
