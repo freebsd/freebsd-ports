@@ -17,6 +17,12 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 ALL_TARGET=	x11
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile on alpha 5.x"
+.endif
+
 do-configure:
 	@(cd ${WRKSRC} &&		\
 	${SETENV} CC="${CC}"		\
@@ -38,4 +44,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/*.pdf ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
