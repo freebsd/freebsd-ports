@@ -1,0 +1,71 @@
+--- src/vc.c.orig	Sat Mar 29 04:35:50 1997
++++ src/vc.c	Sun Jul 16 12:44:05 2000
+@@ -310,12 +310,23 @@
+ {
+     struct vt_mode vtm;
+ 
++#if defined(__FreeBSD__)
++    signal(SIGUSR1, SIG_IGN);
++    signal(SIGUSR2, SIG_IGN);
++#else   /* linux */
+     signal(SIGUSR1, SIG_DFL);
+     signal(SIGUSR2, SIG_DFL);
++#endif
+     vtm.mode = VT_AUTO;
+     vtm.waitv = 0;
++#if defined(__FreeBSD__)
++    vtm.relsig = SIGUSR1;
++    vtm.acqsig = SIGUSR2;
++    vtm.frsig = SIGUSR1;
++#else   /* linux */
+     vtm.relsig = 0;
+     vtm.acqsig = 0;
++#endif
+     ioctl(0, VT_SETMODE, &vtm);
+ #if defined(__FreeBSD__)
+     ioctl(0, VT_RELDISP, 1);
+@@ -341,6 +352,9 @@
+     vtm.waitv = 0;
+     vtm.relsig = SIGUSR1;
+     vtm.acqsig = SIGUSR2;
++#if defined(__FreeBSD__)
++    vtm.frsig = SIGUSR1;
++#endif
+     ioctl(0, VT_SETMODE, &vtm);
+     vInfo.graph_mode();
+     if (useHardScroll)
+@@ -859,20 +873,31 @@
+ 
+ static int	ConfigBeep(const char *confstr)
+ {
+-    beepCount = atoi(confstr) * 10000;
+ #if defined(linux)
+-    ioperm(COUNTER_ADDR, 1, TRUE);
++    beepCount = atoi(confstr) * 10000;
++    if (beepCount > 0)
++       ioperm(COUNTER_ADDR, 1, TRUE);
++#endif
++#if defined(__FreeBSD__)
++    beepCount = atoi(confstr) * 10;
+ #endif
+     return SUCCESS;
+ }
+ 
++#define BELL_PITCH     800
++
+ void	Beep(void)
+ {
+-    if (!con.active) return;
+ #ifdef linux
++    if (!con.active) return;
+     PortOutb(PortInb(COUNTER_ADDR)|3, COUNTER_ADDR);
+     usleep(beepCount);
+     PortOutb(PortInb(COUNTER_ADDR)&0xFC, COUNTER_ADDR);
++#endif
++#if defined(__FreeBSD__)
++    if(beepCount <= 0) return;
++    ioctl(fileno(stdout), KDMKTONE, (BELL_PITCH & 0xffff) |
++          ((beepCount & 0xffff) << 16));
+ #endif
+ }
+ 

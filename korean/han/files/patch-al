@@ -1,0 +1,159 @@
+--- src/vt.c.orig	Sat Jan 25 17:55:02 1997
++++ src/vt.c	Sat Aug  7 05:09:15 1999
+@@ -185,6 +185,11 @@
+ static void	VtSetMode(u_char mode, bool sw)
+ {
+     switch(mode) {
++#if defined(__FreeBSD__)
++    case 1:
++        con.cursor_key_mode = sw;
++        break;
++#endif
+     case 4:
+ 	con.ins = sw;
+ 	break;
+@@ -654,4 +659,144 @@
+     con.sb = lInfo.sb;
+     con.db = lInfo.db|LATCH_1;
+     con.active = cInfo.sw = TRUE;
++#if defined(__FreeBSD__)
++    con.cursor_key_mode = FALSE;
++#endif
+ }
++
++#if defined(__FreeBSD__)
++
++static int ReplaceString(char *sp, const int len, const int maxlen,
++                         const int oldlen, const char *newstr)
++{
++  int newlen, copylen, diff;
++
++  newlen = strlen(newstr);
++  diff = newlen - oldlen;
++  copylen = len - oldlen;
++
++  if(len + diff > maxlen){
++    diff -= (len + diff - maxlen);
++    copylen = maxlen - newlen;
++  }
++  if(copylen > 0)
++    memcpy(sp + newlen, sp + oldlen, copylen);
++
++  copylen = newlen;
++  if(newlen > maxlen){
++    copylen = maxlen;
++    diff = maxlen - len;
++  }
++  if(copylen > 0)
++    memcpy(sp, newstr, copylen);
++
++  return(diff);
++}
++
++int cons25tovt100(u_char *buff, int len, const int max)
++{
++  u_char *p;
++  int i;
++  int newlen = len;
++
++  p = buff;
++
++  for(i=0; i<newlen; i++, p++){
++    switch(*p){
++    case '\177':
++      newlen += ReplaceString(p, len-i, max-i, 1, "\x1b[3~");
++      i += 3; p += 3;
++      break;
++    case '\033':                  /* ESC */
++      if(i + 2 <= newlen && *(p+1) == '['){
++        switch(*(p+2)){
++        case 'A':               /* up arrow */
++          if(con.cursor_key_mode)
++            newlen += ReplaceString(p, len-i, max-i, 3, "\x1bOA");
++          break;
++        case 'B':               /* down arrow */
++          if(con.cursor_key_mode)
++            newlen += ReplaceString(p, len-i, max-i, 3, "\x1bOB");
++          break;
++        case 'C':               /* right arrow */
++          if(con.cursor_key_mode)
++            newlen += ReplaceString(p, len-i, max-i, 3, "\x1bOC");
++          break;
++        case 'D':               /* left arrow */
++          if(con.cursor_key_mode)
++            newlen += ReplaceString(p, len-i, max-i, 3, "\x1bOD");
++          break;
++        case 'L':               /* insert */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[2~");
++          i++; p++;
++          break;
++        case 'H':               /* home key */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[4~");
++          i++; p++;
++          break;
++        case 'I':               /* prev page */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[5~");
++          i++; p++;
++          break;
++        case 'G':               /* next page */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[6~");
++          i++; p++;
++          break;
++        case 'M':               /* F1 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[11~");
++          i += 2; p += 2;
++          break;
++        case 'N':               /* F2 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[12~");
++          i += 2; p += 2;
++          break;
++        case 'O':               /* F3 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[13~");
++          i += 2; p += 2;
++          break;
++        case 'P':               /* F4 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[14~");
++          i += 2; p += 2;
++          break;
++        case 'Q':               /* F5 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[15~");
++          i += 2; p += 2;
++          break;
++        case 'R':               /* F6 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[17~");
++          i += 2; p += 2;
++          break;
++        case 'S':               /* F7 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[18~");
++          i += 2; p += 2;
++          break;
++        case 'T':               /* F8 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[19~");
++          i += 2; p += 2;
++          break;
++        case 'U':               /* F9 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[20~");
++          i += 2; p += 2;
++          break;
++        case 'V':               /* F10 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[21~");
++          i += 2; p += 2;
++          break;
++        case 'W':               /* F11 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[23~");
++          i += 2; p += 2;
++          break;
++        case 'X':               /* F12 */
++          newlen += ReplaceString(p, len-i, max-i, 3, "\x1b[24~");
++          i += 2; p += 2;
++          break;
++        }
++        i += 2; p += 2;
++      }
++    }
++  }
++
++  return(newlen);
++}
++
++#endif

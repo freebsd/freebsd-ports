@@ -1,0 +1,21 @@
+--- src/term.c.orig	Sat Mar 29 04:36:54 1997
++++ src/term.c	Sun Jul 16 12:50:34 2000
+@@ -209,6 +209,9 @@
+ 	}
+ 	if (FD_ISSET(0, &readFds)) {
+ 	    i = read(0, buff, BUFSIZ);
++#if defined(__FreeBSD__)
++            i = cons25tovt100(buff, i, BUFSIZ);
++#endif
+ #if 1
+ {
+     int k, l;
+@@ -239,7 +242,7 @@
+ 	    PollCursor(TRUE);
+ 	}
+ 	if (FD_ISSET(sockFd, &readFds)) SocketInterface(sockFd);
+-	if (mInfo.has_mouse) {
++	if (mInfo.has_mouse && mouseFd > 0) {
+ 	    if (FD_ISSET(mouseFd, &readFds) && con.active) {
+ 		i = read(mouseFd, buff, BUFSIZ);
+ 		if (i > 0) MouseGetPacket(buff, i);
