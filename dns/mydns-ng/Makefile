@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTVERSION=	0.10.2
 CATEGORIES=	dns databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	DNS server designed to utilize the MySQL database
 
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
+USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_LIBTOOL=	yes
 USE_BZIP2=	yes
@@ -28,16 +26,18 @@ MAN8=		mydns.8 mydnscheck.8 mydnsexport.8 mydnsimport.8 mydns-conf.8
 
 DOCS=		AUTHORS COPYING ChangeLog NEWS QUICKSTART.mysql QUICKSTART.postgres README TODO
 
-.if defined (WITH_ALIAS)
+.if defined(WITH_ALIAS)
 CONFIGURE_ARGS+=--enable-alias
 .endif
 
-.if defined (WITH_OPENSSL)
+.if defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl
 .endif
 
-.if defined (WITH_PGSQL)
-LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql-client
+.if defined(WITH_PGSQL)
+POSTGRESQL_PORT?=	databases/postgresql-client
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=--without-mysql
 PKGNAMESUFFIX=	-pg
 .else
@@ -65,6 +65,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/contrib/*.php ${DOCSDIR}/contrib/
+	@${INSTALL_DATA} ${WRKSRC}/contrib/*.pm ${DOCSDIR}/contrib/
 	@${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/
 .endif
 	@${PREFIX}/sbin/mydns --dump-config >${PREFIX}/etc/mydns.conf.sample
