@@ -28,6 +28,13 @@ DIST_SUBDIR=	${PKGNAME}
 CVS_CMD?=	cvs -z3 -qR
 CVSROOT=	:pserver:anoncvs@libre.act-europe.fr:/anoncvs
 STAMPFILE=	${DISTDIR}/${DIST_SUBDIR}/.timestamp
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 do-fetch:
 	@if [ ! -e ${WRKDIR}/.extract_done ] ; then \
 		if [ ! -e ${STAMPFILE} ] ; then \
@@ -71,4 +78,4 @@ pre-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdbada
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
