@@ -1,12 +1,10 @@
-diff -ur work.orig/sablevm-1.0.4/configure work/sablevm-1.0.4/configure
---- work.orig/sablevm-1.0.4/configure	Wed Aug 14 22:34:00 2002
-+++ work/sablevm-1.0.4/configure	Sat Aug 17 21:14:52 2002
-@@ -7989,67 +7992,6 @@
-   echo -n
- else
+diff -ur work.orig/sablevm-1.0.5/configure work/sablevm-1.0.5/configure
+--- work.orig/sablevm-1.0.5/configure	Wed Aug 14 22:34:00 2002
++++ work/sablevm-1.0.5/configure	Sat Aug 17 21:14:52 2002
+@@ -8025,62 +8025,6 @@
    echo ***ERROR: libpopt is missing; exit 1
--fi
--
+ fi
+ 
 -echo "$as_me:$LINENO: checking for pthread_self in -lpthread" >&5
 -echo $ECHO_N "checking for pthread_self in -lpthread... $ECHO_C" >&6
 -if test "${ac_cv_lib_pthread_pthread_self+set}" = set; then
@@ -25,12 +23,6 @@ diff -ur work.orig/sablevm-1.0.4/configure work/sablevm-1.0.4/configure
 -/* We use char because int might match the return type of a gcc2
 -   builtin and then its argument prototype would still apply.  */
 -char pthread_self ();
--#ifdef F77_DUMMY_MAIN
--#  ifdef __cplusplus
--     extern "C"
--#  endif
--   int F77_DUMMY_MAIN() { return 1; }
--#endif
 -int
 -main ()
 -{
@@ -66,6 +58,9 @@ diff -ur work.orig/sablevm-1.0.4/configure work/sablevm-1.0.4/configure
 -  echo -n
 -else
 -  echo ***ERROR: libpthread is missing; exit 1
- fi
- 
- 
+-fi
+-
+-
+ echo "$as_me:$LINENO: checking for ANSI C header files" >&5
+ echo $ECHO_N "checking for ANSI C header files... $ECHO_C" >&6
+ if test "${ac_cv_header_stdc+set}" = set; then
