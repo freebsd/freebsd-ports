@@ -94,6 +94,7 @@
     SUBDIR += latex
     SUBDIR += latex-beamer
     SUBDIR += latex-caption
+    SUBDIR += latex-feynmf
     SUBDIR += latex-keystroke
     SUBDIR += latex-layouts
     SUBDIR += latex-mathabx

@@ -1,0 +1,5 @@
+This is feynmf, a combined LaTeX/Metafont package for easy drawing
+of professional quality Feynman diagrams.   feynmf lays out most
+diagrams satisfactorily from the structure of the graph without
+any need for manual intervention.  Nevertheless all the power of
+Metafont is available for more obscure cases.

@@ -1,0 +1,26 @@
+@comment $FreeBSD$
+bin/feynmf.pl
+%%PORTDOCS%%%%DOCSDIR%%/Announce
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Feynman.Diagrams
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial
+%%PORTDOCS%%%%DOCSDIR%%/manual.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/template.tex
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%CLASSDIR%%/feynmf.dtx
+%%CLASSDIR%%/feynmf.ins
+%%CLASSDIR%%/feynmf209.ins
+%%CLASSDIR%%/feynmf.sty
+%%CLASSDIR%%/feynmp.sty
+@dirrm %%CLASSDIR%%
+%%FONTDIR%%/feynmf.mf
+@dirrm %%FONTDIR%%
+%%MPDIR%%/feynmp.mp
+%%MPDIR%%/manpics.mp
+%%MPDIR%%/manpics.1
+%%MPDIR%%/manpics.2
+%%MPDIR%%/manpics.3
+@dirrm %%MPDIR%%
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
