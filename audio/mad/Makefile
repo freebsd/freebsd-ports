@@ -19,7 +19,9 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 WANT_ESOUND=	yes
 
+USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFILES=	configure libmad/configure libid3tag/configure
 CONFIGURE_ARGS=	--enable-shared \
@@ -38,5 +40,10 @@ USE_ESOUND=	yes
 .else
 CONFIGURE_ARGS+= --without-esd
 .endif
+
+post-patch:
+# fix weird @INSTALL@ behavior caused by USE_AUTOCONF
+	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} -n 10 \
+		${REINPLACE_CMD} -E -e 's|^(INSTALL[[:space:]]*=).*$$|\1 ${INSTALL_DATA}|'
 
 .include <bsd.port.post.mk>
