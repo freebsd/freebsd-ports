@@ -58,6 +58,10 @@ CONFIGURE_ARGS=	--with-bundled-sqlite
 BROKEN=		"Does not run on FreeBSD-4.x at this time"
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-patch:
 	${TOUCH} ${WRKDIR}/${DISTNAME}/configure
 	${TOUCH} ${WRKDIR}/${DISTNAME}/*.in
