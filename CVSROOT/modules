@@ -93,6 +93,7 @@ IglooFTP	ports/ftp/IglooFTP
 ImageMagick	ports/graphics/ImageMagick
 KnightCap	ports/games/KnightCap
 LPRng		ports/sysutils/LPRng
+LPRngTool	ports/sysutils/LPRngTool
 LibraryReport	src/tools/LibraryReport
 Maaate		ports/audio/Maaate
 Mesa3		ports/graphics/Mesa3
