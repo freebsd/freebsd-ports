@@ -1,7 +1,7 @@
-share/dict/wordnet-fpw/wordnet/data/honmon
 share/dict/wordnet-fpw/catalogs
-share/doc/wordnet-fpw/README
+share/dict/wordnet-fpw/wordnet/data/honmon
 @dirrm share/dict/wordnet-fpw/wordnet/data
 @dirrm share/dict/wordnet-fpw/wordnet
 @dirrm share/dict/wordnet-fpw
+share/doc/wordnet-fpw/readme
 @dirrm share/doc/wordnet-fpw
