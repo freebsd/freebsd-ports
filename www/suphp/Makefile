@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	suphp
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/
 
-MAINTAINER=	clement@FreeBSD.org
+MAINTAINER=	freebsd@jdc.parodius.com
 COMMENT=	A combination which provides a wrapper for PHP
 
-RUN_DEPENDS=	${LOCALBASE}/bin/php:${PORTSDIR}/www/php4-cgi
-
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USE_PHP=	yes
+WANT_PHP_CGI=	yes
 USE_APACHE=	yes
 CONFLICTS=	mod_php4-4* php-4.*
 
@@ -53,9 +52,10 @@ CONFIGURE_ARGS+=	--disable-checkgid
 .endif
 ##   WITH_SETID_MODE: Mode to use for setting UID/GID.
 CONFIGURE_ARGS+=	--with-setid-mode=${WITH_SETID_MODE}
-##   WITH_LOGPATH (formerly known as LOG_PATH): logging directory 
+##   WITH_LOGPATH (formerly known as LOG_PATH): logging directory
 ##   (default: /var/log)
 ##   WITH_LOGNAME: log file name (default suphp.log)
+
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/include/apache2/apr.h) || defined(WITH_APACHE2)
