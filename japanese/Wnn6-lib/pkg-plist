@@ -25,6 +25,6 @@ include/wnn6/wnn/wnnerror.h
 lib/libwnn6_fromsrc.a
 lib/libwnn6.a
 lib/libwnn6.so
-lib/libwnn6.so.1
+lib/libwnn6.so.2
 share/doc/ja-Wnn6-lib/README
 @dirrm share/doc/ja-Wnn6-lib

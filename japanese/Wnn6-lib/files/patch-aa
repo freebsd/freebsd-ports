@@ -1,6 +1,5 @@
-diff -ur src.orig/contrib/im/Xsi/Wnn/jlib/Imakefile Wnn/jlib/Imakefile
---- src.orig/contrib/im/Xsi/Wnn/jlib/Imakefile	Wed Oct 28 13:36:30 1998
-+++ Wnn/jlib/Imakefile	Fri Oct 30 03:42:54 1998
+--- Wnn/jlib/Imakefile.orig	Fri Sep  1 18:58:55 2000
++++ Wnn/jlib/Imakefile	Tue Oct 29 08:32:34 2002
 @@ -4,7 +4,7 @@
  
  #ifdef NEED_DEFINE_LIB
@@ -10,9 +9,9 @@ diff -ur src.orig/contrib/im/Xsi/Wnn/jlib/Imakefile Wnn/jlib/Imakefile
  #define DoDebugLib NO
  #define DoProfileLib NO
  #endif
-@@ -55,13 +55,29 @@
- 	$(WNNROMKANSRC)/rk_vars.o \
+@@ -56,14 +56,27 @@
  	$(WNNROMKANSRC)/rk_multi.o
+ 
  
 +UNSHARED_LOCAL_RKOBJS= $(WNNROMKANSRC)/unshared/rk_bltinfn.o \
 +	$(WNNROMKANSRC)/unshared/rk_main.o \
@@ -26,12 +25,10 @@ diff -ur src.orig/contrib/im/Xsi/Wnn/jlib/Imakefile Wnn/jlib/Imakefile
  SRCS= $(SRC1) $(LOCAL_ETCSRCS)
  OBJS= $(OBJ1) $(LOCAL_ETCOBJS) $(LOCAL_RKOBJS)
 +UNSHAREDOBJS= $(OBJ1) $(LOCAL_ETCOBJS) $(UNSHARED_LOCAL_RKOBJS)
-+
-+
-+SOWNN6LIBREV=1.0
+ 
++SOWNN6LIBREV=2.0
  
  LibraryObjectRule()
-+
 +#if DoSharedLib
 +AllTarget($(OBJS) libwnn6_fromsrc.a libwnn6.so.$(SOWNN6LIBREV))
 +#else
@@ -40,7 +37,7 @@ diff -ur src.orig/contrib/im/Xsi/Wnn/jlib/Imakefile Wnn/jlib/Imakefile
  
  
  js.o : js.c \
-@@ -72,10 +88,19 @@
+@@ -74,10 +87,19 @@
  
  SingleProgramTarget(kankana,kankana.o,$(WNNJLIB),)
  
@@ -59,5 +56,5 @@ diff -ur src.orig/contrib/im/Xsi/Wnn/jlib/Imakefile Wnn/jlib/Imakefile
 +InstallSharedLibrary(wnn6,$(SOWNN6LIBREV),$(WNNLIBDIR))
 +#endif
  
- InstallLibrary(wnn6_fromsrc,$(WNNLIBDIR))
  
+ InstallLibrary(wnn6_fromsrc,$(WNNLIBDIR))
