@@ -32,6 +32,7 @@ POSTGRESQL_PORT?=	databases/postgresql7
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500035
+BROKEN=		Does not build with gcc 2.95
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 RUN_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 CXXFLAGS+=	-I${LOCALBASE}/include/stlport
