@@ -4,7 +4,7 @@ information with your class (instead of as seperate objects).  This
 allows you to pass around just one object without worrying about a trail
 of DBI handles behind it.
 
-WWW: http://search.cpan.org/search?dist=Ima-DBI
+WWW: http://search.cpan.org/dist/Ima-DBI/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
