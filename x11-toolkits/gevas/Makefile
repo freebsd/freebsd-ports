@@ -21,6 +21,7 @@ USE_AUTOMAKE=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
+INSTALLS_SHLIB=	yes
 
 post-extract:
 .for a in install-sh missing mkinstalldirs
