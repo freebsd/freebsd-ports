@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.18";
+my $VERSION	= "2.7.19";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -422,8 +422,10 @@ sub find_port($) {
     my @suggest;		# Suggestions
 
     stderr("Can't find required port '$port'");
-    @suggest = grep(/^$port/i, keys(%ports));
-    if (@suggest == 1 && $suggest[0] =~ m/^$port[0-9.-]/) {
+    my $portre = $port;
+    $portre =~ s/([^\w])/\\$1/g;
+    @suggest = grep(/^$portre/i, keys(%ports));
+    if (@suggest == 1 && $suggest[0] =~ m/^$portre[0-9.-]/) {
 	$port = $ports{$suggest[0]};
 	stderr(", assuming you mean $pkgname{$port}.\n");
 	return $port;
