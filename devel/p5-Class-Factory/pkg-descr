@@ -1,0 +1,12 @@
+This is a simple module that factory classes can use to generate new
+types of objects on the fly, providing a consistent interface to common
+groups of objects.
+
+Factory classes are used when you have different implementations for the
+same set of tasks but may not know in advance what implementations you
+will be using.
+
+WWW: http://search.cpan.org/search?dist=Class-Factory
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
