@@ -10,6 +10,8 @@ bin/mktable
 bin/tcpsockets.pl
 man/man6/crossfire.6.gz
 man/man6/crossedit.6.gz
+crossfire/lib/players/.keep_me
+crossfire/lib/unique-items/.keep_me
 crossfire/doc/Crossedit.doc
 crossfire/doc/Imakefile
 crossfire/doc/PlayerStats
@@ -32,7 +34,6 @@ crossfire/doc/playbook-html/.bmaps
 crossfire/doc/playbook-html/2x2.ppm
 crossfire/doc/playbook-html/Imakefile
 crossfire/doc/playbook-html/Makefile
-crossfire/doc/playbook-html/Makefile.bak
 crossfire/doc/playbook-html/Pdragonmail.111.gif
 crossfire/doc/playbook-html/altar.111.gif
 crossfire/doc/playbook-html/altar.html
@@ -366,7 +367,6 @@ crossfire/doc/spoiler-html/DShield.111.gif
 crossfire/doc/spoiler-html/GreatDemon.111.gif
 crossfire/doc/spoiler-html/Imakefile
 crossfire/doc/spoiler-html/Makefile
-crossfire/doc/spoiler-html/Makefile.bak
 crossfire/doc/spoiler-html/Pdragonmail.111.gif
 crossfire/doc/spoiler-html/acid-pool.111.gif
 crossfire/doc/spoiler-html/acidsphere.111.gif
@@ -1045,6 +1045,7 @@ crossfire/lib/maps/city/shops/generalshop
 crossfire/lib/maps/city/shops/magicshop
 crossfire/lib/maps/city/shops/potionshop
 crossfire/lib/maps/city/shops/weaponshop
+crossfire/lib/maps/city/taverns/apartments
 crossfire/lib/maps/city/taverns/goths
 crossfire/lib/maps/city/taverns/goths0
 crossfire/lib/maps/city/taverns/goths2
