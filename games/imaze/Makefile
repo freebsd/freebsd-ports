@@ -19,7 +19,6 @@ LIB_DEPENDS=	xview\\.3\\.2:${PORTSDIR}/x11/xview-lib
 EXTRACT_ONLY=	imaze1.3.tar.Z
 NO_CONFIGURE=	yes
 USE_X11=	yes
-NO_CDROM=	yes
 
 post-extract:
 	@cp ${FILESDIR}/Makefile ${WRKDIR}/imaze/Makefile
