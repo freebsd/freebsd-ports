@@ -1,7 +1,4 @@
 bin/monster-masher
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/monster-masher.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/monster-masher.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/monster-masher.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/monster-masher.desktop
 share/gnome/monster-masher/glade/ui.glade
 share/gnome/monster-masher/pixmaps/block-24.png
