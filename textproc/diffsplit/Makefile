@@ -20,10 +20,17 @@ NO_WRKSUBDIR=	YES
 PLIST=		${WRKDIR}/pkg-plist
 USE_PERL5=	YES
 
+do-extract:
+	${MKDIR} ${WRKDIR}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/diffsplit ${WRKDIR}
+
+do-patch:
+	${PERL} -pi -e "s:/usr/bin/perl:${PERL5}:g" ${WRKDIR}/diffsplit
+
 pre-install:
 	${ECHO_CMD} bin/diffsplit > ${PLIST}
 
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/diffsplit ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/diffsplit ${PREFIX}/bin
 
 .include <bsd.port.mk>
