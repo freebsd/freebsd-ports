@@ -1,0 +1,4 @@
+lib/fpc/%%PORTVERSION%%/units/freebsd/inet/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/freebsd/inet/inet.o
+lib/fpc/%%PORTVERSION%%/units/freebsd/inet/inet.ppu
+@dirrm lib/fpc/%%PORTVERSION%%/units/freebsd/inet
