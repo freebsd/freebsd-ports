@@ -1,0 +1,23 @@
+--- Makefile.in.orig	Fri Aug  1 21:39:11 2003
++++ Makefile.in	Tue Nov  4 18:45:38 2003
+@@ -510,7 +510,7 @@
+ 
+ macros.html : $(M4_FILES) gendocs.pl $(EXTRA_DOCS)
+ 	for i in $(EMPTYDIRS) ; do test -d $$i || mkdir $$i ; done ; true
+-	$(PERL) ./gendocs.pl "--vers=$(VERSION)" $(EXTRA_DOCS) $(DOCS) $(OOO)
++	$(PERL) ./gendocs.pl --nospell "--vers=$(VERSION)" $(EXTRA_DOCS) $(DOCS) $(OOO)
+ 
+ index.html : $(M4_FILES:.m4=.html) macro2html.pl
+ 	@ $(PERL) ./genindex.pl
+@@ -582,10 +582,7 @@
+ 	 >$@
+ 
+ install-data-local: install-docs
+-install-docs : install-index $(PACKAGE)-doc.omf
+-	$(mkinstalldirs) $(DESTDIR)$(pkgomfdir)
+-	$(INSTALL_DATA) $(PACKAGE)-doc.omf $(DESTDIR)$(pkgomfdir)
+-	- test ".$(DESTDIR)" != "." || scrollkeeper-update -v
++install-docs : install-index 
+ install-index: $(PACKAGE_M4HTML_TAR) $(PACK).tar.gz $(PACKAGE)-INDEX.html
+ 	$(mkinstalldirs) $(DESTDIR)$(pkgdocdir)
+ 	p=`pwd` && cd $(DESTDIR)$(pkgdocdir) \
