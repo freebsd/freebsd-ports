@@ -1,23 +1,20 @@
---- form.c.orig	Sat Dec 11 21:04:22 1999
-+++ form.c	Sat Jul 22 01:49:24 2000
-@@ -3,10 +3,8 @@
- #include <slang.h>
- #include <stdarg.h>
- #include <stdlib.h>
--#include <sys/select.h>
+--- form.c.orig	Tue Jun 11 22:15:33 2002
++++ form.c	Sat Jun 22 06:36:12 2002
+@@ -10,7 +10,6 @@
+ #endif
  #include <sys/time.h>
--
+ 
 -#ifdef USE_GPM
-+#include <string.h>
  #include <ctype.h>
  #include <sys/time.h>      /* timeval */
- #include <sys/types.h>     /* socket() */
-@@ -16,11 +14,8 @@
+ #include <sys/socket.h>    /* socket() */
+@@ -19,11 +18,9 @@
  #include <sys/stat.h>      /* stat() */
  #include <termios.h>       /* winsize */
  #include <unistd.h>
 -#include <sys/kd.h>        /* KDGETMODE */
  #include <signal.h>
++#include <string.h>
  #include <stdio.h>
 -#endif
 -
