@@ -23,6 +23,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 CONFLICTS=	fox-1.0.*
 
+LATEST_LINK=	fox-devel
+
 MAJORVER=	1.1
 SHVER=		42
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}

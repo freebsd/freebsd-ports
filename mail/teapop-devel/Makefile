@@ -17,6 +17,8 @@ COMMENT=	Yet another RFC1939 compliant POP3 server
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-flock
 
+LATEST_LINK=	teapop-devel
+
 ##
 ## Available knobs:
 ## General options
