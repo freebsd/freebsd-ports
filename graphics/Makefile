@@ -46,6 +46,7 @@
     SUBDIR += enjoympeg
     SUBDIR += entice
     SUBDIR += eog
+    SUBDIR += eog2
     SUBDIR += eps2png
     SUBDIR += epstool
     SUBDIR += eterm-bg
