@@ -1,0 +1,9 @@
+mod_v2h is a mass virtual hosting module for Apache with support
+for referencing translation paths from MySQL.  mod_v2h also has
+the ability to cache translation rules into a memory image for
+faster performance.
+
+WWW: http://www.fractal.net/mod_v2h.tm
+
+- hikari-chan
+hikari@hikari.org.uk

@@ -1,0 +1,61 @@
+#!@@PERL@@
+
+# This was stolen from the Apache apxs script
+$CFG_SYSCONFDIR = "@@LOCAL@@/etc/apache2";
+$CFG_TARGET = "httpd";
+$name = "v2h";
+$dir = "libexec/apache2/";
+$t = "mod_v2h.so";
+
+push(@lmd, sprintf("LoadModule %-18s %s", "${name}_module", "$dir$t"));
+
+open(FP, "<$CFG_SYSCONFDIR/$CFG_TARGET.conf") || die("Couldn't open conf file");
+my $content = join('', <FP>);
+close(FP);
+
+if ($content !~ m|\n#?\s*LoadModule\s+|) {
+ error("Activation failed for custom $CFG_SYSCONFDIR/$CFG_TARGET.conf file.");
+ error("At least one `LoadModule' directive already has to exist.");
+ exit(1);
+}
+
+my $lmd;
+my $c = '';
+
+foreach $lmd (@lmd) {
+ if ($content !~ m|\n#?\s*$lmd|) {
+  $content =~ s|^(.*\n#?\s*LoadModule\s+[^\n]+\n)|$1$c$lmd\n|sg;
+ } else {
+  $content =~ s|^(.*\n)#?\s*$lmd[^\n]*\n|$1$c$lmd\n|sg;
+ }
+
+ $lmd =~ m|LoadModule\s+(.+?)_module.*|;
+ notice("[activating module `$1' in $CFG_SYSCONFDIR/$CFG_TARGET.conf]");
+}
+
+my $amd;
+
+foreach $amd (@amd) {
+ if ($content !~ m|\n#?\s*$amd|) {
+  $content =~ s|^(.*\n#?\s*AddModule\s+[^\n]+\n)|$1$c$amd\n|sg;
+ } else {
+  $content =~ s|^(.*\n)#?\s*$amd[^\n]*\n|$1$c$amd\n|sg;
+ }
+}
+
+if (@lmd or @amd) {
+ if (open(FP, ">$CFG_SYSCONFDIR/$CFG_TARGET.conf.new")) {
+  print FP $content;
+  close(FP);
+  system("cp $CFG_SYSCONFDIR/$CFG_TARGET.conf $CFG_SYSCONFDIR/$CFG_TARGET.conf.bak && " . "cp $CFG_SYSCONFDIR/$CFG_TARGET.conf.new $CFG_SYSCONFDIR/$CFG_TARGET.conf && " . "rm $CFG_SYSCONFDIR/$CFG_TARGET.conf.new");
+} else {
+ notice("unable to open configuration file");
+}
+
+}
+
+sub notice{
+    print STDERR "$_[0]\n";
+}
+
+
