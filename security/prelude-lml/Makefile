@@ -1,0 +1,23 @@
+# New ports collection makefile for:	prelude-lml
+# Date created:			Sun Aug 4 19:31:17 CEST 2002
+# Whom:				Clement Laforet <sheepkiller@cultdeadsheep.org>
+#
+# $FreeBSD$
+
+PORTNAME=	prelude-lml
+PORTVERSION=	0.8.3
+CATEGORIES=	security
+MASTER_SITES=   http://www.prelude-ids.org/download/releases/
+
+MAINTAINER=	sheepkiller@cultdeadsheep.org
+COMMENT=	Prelude Network Intrusion Detection System Log Monitoring Lackey
+
+LIB_DEPENDS+=	prelude.0:${PORTSDIR}/security/libprelude \
+		pcre.0:${PORTSDIR}/devel/pcre
+
+GNU_MAKE=		yes
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc \
+			--program-prefix=""
+
+.include <bsd.port.mk>

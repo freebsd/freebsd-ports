@@ -265,6 +265,7 @@
     SUBDIR += portscanner
     SUBDIR += portsentry
     SUBDIR += ppgen
+    SUBDIR += prelude-lml
     SUBDIR += proxycheck
     SUBDIR += proxytunnel
     SUBDIR += pscan

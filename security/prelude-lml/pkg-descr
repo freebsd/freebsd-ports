@@ -1,0 +1,7 @@
+Prelude is a new innovative hybrid Intrusion Detection system designed 
+to be very modular, distributed, rock solid and fast. 
+
+The Prelude Log Monitoring Lackey monitors local logfiles and sends 
+alerts to the manager if something suspicious is found. It is also a sensor
+
+WWW: http://www.prelude-ids.org/
