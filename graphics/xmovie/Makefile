@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-i586-${PORTVERSION}
 PATCH_SITES=	${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
 PATCHFILES=	${RPM_LIBPNG}
 
-MAINTAINER=	sanpei@sanpei.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
 RUN_DEPENDS=	${LINUX_BASE}/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \

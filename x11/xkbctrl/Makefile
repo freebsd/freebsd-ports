@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://core.ring.gr.jp/pub/X/opengroup/unsupported/test/Xkb/program
 		ftp://ring.nacsis.ac.jp/pub/X/opengroup/unsupported/test/Xkb/programs/
 DISTFILES=	Imakefile xkbctrl.c
 
-MAINTAINER=	sanpei@sanpei.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 DIST_SUBDIR=	xkbctrl
 USE_IMAKE=	yes

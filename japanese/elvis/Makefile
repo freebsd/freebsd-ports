@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-1.8
 PATCH_SITES=    ftp://ftp.foretune.co.jp/pub/tools/jelvis/
 PATCHFILES=     j${PORTNAME}1.8p4-j1.1.tar.Z
 
-MAINTAINER=     sanpei@sanpei.org
+MAINTAINER=     sanpei@FreeBSD.org
 
 LIB_DEPENDS=	canna.1:${PORTSDIR}/japanese/Canna
 

@@ -11,7 +11,7 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.ics.ele.tue.nl/pub/users/jos/poster/
 DISTNAME=	poster
 
-MAINTAINER=	sanpei@sanpei.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 ALL_TARGET=	poster
 NO_WRKSUBDIR=	yes

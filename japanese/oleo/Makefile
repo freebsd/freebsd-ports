@@ -18,7 +18,7 @@ PATCH_SITES=	http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/
 PATCHFILES=	${DISTNAME}-${PORTVERSION}jb2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=    sanpei@sanpei.org
+MAINTAINER=    sanpei@FreeBSD.org
 
 CONFIGURE_ENV= CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

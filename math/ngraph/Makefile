@@ -12,7 +12,7 @@ MASTER_SITES=   http://www2e.biglobe.ne.jp/~isizaka/bin/ \
 		${MASTER_SITE_PORTS_JP}
 DISTNAME=       Ngraph-${PORTVERSION}-src
 
-MAINTAINER=     sanpei@sanpei.org
+MAINTAINER=     sanpei@FreeBSD.org
 
 REQUIRES_MOTIF=	yes
 USE_GMAKE=	yes

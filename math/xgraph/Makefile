@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.utoronto.ca/pub/radford/
 DISTNAME=	xgraph-11
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	sanpei@sanpei.org
+MAINTAINER=	sanpei@FreeBSD.org
 
 USE_IMAKE=	yes
 MAN1=		xgraph.1

@@ -11,7 +11,7 @@ CATEGORIES=	japanese math x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 
-MAINTAINER=     sanpei@sanpei.org
+MAINTAINER=     sanpei@FreeBSD.org
 
 RUN_DEPENDS= \
 	${X11BASE}/lib/X11/fonts/local/kanji18.pcf.gz:${PORTSDIR}/japanese/kanji18 \
