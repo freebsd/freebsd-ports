@@ -1,7 +1,9 @@
-Note: This version of valgrind does not support some older AMD processors.
+Note: This version of valgrind does not support some older processors, 
+      e.g. AMD K6-III, some (?) Pentium II.
+
       If valgrind crashes immediately after it was started with the error
       message "Illegal hardware instruction", your processor is affected by
       this problem.
 
       As a workaround you can use the devel/valgrind-snapshot port, which is
-      based on a more recent snapshot
+      based on a more recent snapshot.
