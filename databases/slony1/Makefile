@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	slony1
-PORTVERSION=	1.0.0.b3
+PORTVERSION=	1.0.0.r1
 CATEGORIES=	databases
 MASTER_SITES=	http://developer.postgresql.org/~wieck/slony1/download/
-DISTNAME=	slony1-1.0.0.beta3
+DISTNAME=	slony1-1.0.0.rc1
 
 MAINTAINER=	hsn@netmag.cz
 COMMENT=	PostgreSQL master to multiple slaves replication system
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/databases/postgresql7:configure
+PGSQL_PORT=	${PORTSDIR}/databases/postgresql7
+BUILD_DEPENDS=	${NONEXISTENT}:${PGSQL_PORT}:configure
 .if ! defined(NOPORTDOCS)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/pnmtops:${PORTSDIR}/graphics/netpbm \
 		${LOCALBASE}/bin/djpeg:${PORTSDIR}/graphics/jpeg \
@@ -22,12 +23,12 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/pnmtops:${PORTSDIR}/graphics/netpbm \
 .else
 EXTRA_PATCHES=	${FILESDIR}/extra-GNUmakefile.in
 .endif
-RUN_DEPENDS=	${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql7
+RUN_DEPENDS=	${LOCALBASE}/bin/postmaster:${PGSQL_PORT}
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-PGSQL_SRC=	`cd ${PORTSDIR}/databases/postgresql7; make -V WRKSRC`
+PGSQL_SRC=	`cd ${PGSQL_PORT}; make -V WRKSRC`
 CONFIGURE_ARGS=	--with-pgsourcetree=${PGSQL_SRC}
 
 PLIST_FILES=	bin/slon bin/slonik bin/slony_setup.pl \
@@ -40,7 +41,7 @@ PLIST_FILES=	bin/slon bin/slonik bin/slony_setup.pl \
 		share/postgresql/slony1_funcs.v74.sql \
 		share/postgresql/xxid.v73.sql \
 		share/postgresql/xxid.v74.sql
-PORTDOCS=	*.pdf howto/*.txt COPYRIGHT README
+PORTDOCS=	*.pdf howto/*.txt COPYRIGHT README slonik_commands.html
 
 pre-configure:
 	cd ${PGSQL_SRC}/src/interfaces/libpq && ${GMAKE} all
@@ -56,6 +57,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/implementation/Slony-I-implementation.pdf ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/howto
 	${INSTALL_DATA} ${WRKSRC}/doc/howto/*.txt ${DOCSDIR}/howto
+	${INSTALL_DATA} ${WRKSRC}/src/slonik/slonik_commands.html ${DOCSDIR}
 .endif
 	${CAT} ${PKGMESSAGE}
 
