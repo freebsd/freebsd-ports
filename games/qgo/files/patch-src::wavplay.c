@@ -22,7 +22,7 @@
 +#if defined(__linux__)
  #include <linux/soundcard.h>
 +#endif
-+#if defined(__linux__)
++#if defined(__FreeBSD__)
 +#include <sys/soundcard.h>
 +#endif
  #include "wavplay.h"
