@@ -5,8 +5,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,6 +21,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
+WANT_GNOME=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
@@ -37,6 +37,14 @@ MAN1=		gaim.1 gaim-remote.1
 
 .if exists(${LOCALBASE}/lib/libgnutls.so) && !defined(WITHOUT_GNUTLS)
 WITH_GNUTLS=	yes
+.endif
+
+.if ${HAVE_GNOME:Mevolutiondataserver}!=""
+USE_GNOME+=	evolutiondataserver
+PLIST_SUB+=	EVO=""
+.else
+CONFIGURE_ARGS+=--disable-gevolution
+PLIST_SUB+=	EVO="@comment "
 .endif
 
 .if defined(WITH_GNUTLS)
