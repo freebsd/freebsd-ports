@@ -1,0 +1,4 @@
+lib/common-lisp/split-sequence/split-sequence.lisp
+lib/common-lisp/split-sequence/split-sequence.asd
+lib/common-lisp/system-registry/split-sequence.asd
+@dirrm lib/common-lisp/split-sequence
