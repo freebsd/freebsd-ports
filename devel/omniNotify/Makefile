@@ -39,6 +39,12 @@ CONFIGURE_ENV+=	CC=${CC} CFLAGS="${CFLAGS}" CXX=${CXX} CXXFLAGS="${CXXFLAGS}" \
 		CPP=${CPP} PYTHON=${PYTHON_CMD}
 CONFIGURE_ARGS=	--with-omniorb=${LOCALBASE}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 pre-configure:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@cd ${OMNIORB_WRKSRC} && ${FIND} idl | ${CPIO} --quiet -pdum ${WRKSRC}
@@ -54,4 +60,4 @@ post-install:
 	  | ${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -32,8 +32,8 @@ CONFIGURE_ENV=		OSTYPE=${OPSYS} CFLAGS="${CFLAGS}"
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=			"Does not compile on amd64"
+.if ${ARCH} != "i386"
+BROKEN=			"Does not compile on !i386"
 .endif
 
 post-patch:
