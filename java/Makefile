@@ -7,6 +7,7 @@
     SUBDIR += gnu-regexp
     SUBDIR += guavac
     SUBDIR += infobus
+    SUBDIR += jad
     SUBDIR += jaf
     SUBDIR += java-cup
     SUBDIR += javamail
