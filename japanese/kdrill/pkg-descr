@@ -1,0 +1,13 @@
+Kdrill is a program to quiz folks on
+   { English }       { English }
+   { Kanji   }  <->  { Kanji   }
+   { Kana    }       { Kana    }
+
+It will quiz you on either the whole dictionary [around 6000 Kanji?] 
+or specific Kanji, that you hand-pick. There are also other ways to
+narrow down which Kanji you are quizzed on.
+
+WWW: http://www.bolthole.com/kdrill/
+
+- Seth
+sethk@osd.bsdi.com

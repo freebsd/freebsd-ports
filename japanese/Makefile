@@ -107,6 +107,7 @@
     SUBDIR += kappa20
     SUBDIR += kbanner
     SUBDIR += kcc
+    SUBDIR += kdrill
     SUBDIR += kebook
     SUBDIR += kinput2-canna
     SUBDIR += kinput2-canna+freewnn

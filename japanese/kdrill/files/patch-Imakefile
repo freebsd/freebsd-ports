@@ -1,0 +1,13 @@
+--- Imakefile.orig	Sun Nov 12 00:57:27 2000
++++ Imakefile	Sun Nov 12 03:38:54 2000
+@@ -32,8 +32,8 @@
+ /* You can change these here, and KDrill.ad will 
+  * get created with the matching values. Yaaay!
+  */
+-DICTLOCATION= /usr/local/lib/kanjidic.gz
+-EDICTLOCATION= /usr/local/lib/edict.gz
++DICTLOCATION= $(LOCALBASE)/share/dict/edict/kanjidic
++EDICTLOCATION= $(LOCALBASE)/share/dict/edict/edict
+ 
+ # If for some reason, the user prefs stuff isn't working for you, 
+ # and you can't compile, uncomment this
