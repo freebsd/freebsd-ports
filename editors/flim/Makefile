@@ -3,7 +3,7 @@
 # Date created:		9 May 1999
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/05/09 16:34:24 shige Exp $
+# $Id: Makefile,v 1.2 1999/05/10 13:31:16 shige Exp $
 #
 
 DISTNAME=	flim-${FLIM_VER}
@@ -61,6 +61,10 @@ RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/custom.el:${PORTS
 # depends on apel
 BUILD_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
 RUN_DEPENDS+=	${PREFIX}/${EMACS_LIBDIR}/${EMACS_VER}/site-lisp/emu/emu.el:${PORTSDIR}/editors/apel-${EMACS_PORT}
+# depends on mmencode
+.if (${EMACS_NAME} != "xemacs")
+RUN_DEPENDS+=	mmencode:${PORTSDIR}/mail/metamail
+.endif
 .else
 .BEGIN:
 	@${ECHO} "Error: Bad port."
