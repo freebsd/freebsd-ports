@@ -388,6 +388,7 @@
     SUBDIR += nrpep
     SUBDIR += ns
     SUBDIR += nsc
+    SUBDIR += nsca
     SUBDIR += nss_ldap
     SUBDIR += nstreams
     SUBDIR += ntalk
