@@ -3,11 +3,11 @@
 # Date created:         20 Feb 1996
 # Whom:                 Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.11 1998/09/03 20:11:21 max Exp $
+# $Id: Makefile,v 1.12 1999/03/04 00:00:59 flathill Exp $
 #
 
-DISTNAME=	FD-1.03i
-PKGNAME=	fd-1.03i
+DISTNAME=	FD-1.03j
+PKGNAME=	fd-1.03j
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/FDclone/
 
