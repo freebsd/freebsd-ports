@@ -34,4 +34,10 @@ MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::SAX::Builder.3 XML::LibXML::SAX::Generator.3 \
 		XML::LibXML::Text.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
+.include <bsd.port.post.mk>
