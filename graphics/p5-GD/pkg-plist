@@ -1,9 +1,7 @@
+bin/bdf2gdfont.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/GD.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/GD/Polyline.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/GD.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/GD.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GD/autosplit.ix
-%%SITE_PERL%%/%%PERL_ARCH%%/qd.pl
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/GD 2>/dev/null || true
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/GD
