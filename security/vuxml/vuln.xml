@@ -153,7 +153,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <cvename>CAN-2004-0630</cvename>
-      <url>www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities</url>
+      <url>http://www.idefense.com/application/poi/display?id=124&amp;type=vulnerabilities</url>
     </references>
     <dates>
       <discovery>2004-08-12</discovery>
