@@ -1,8 +1,7 @@
-# $Id: Makefile,v 1.67 1996/04/18 16:42:12 ache Exp $
+# $Id: Makefile,v 1.68 1996/05/04 01:58:38 asami Exp $
 #
 
     SUBDIR += archie
-    SUBDIR += dhcp
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
     SUBDIR += dip
@@ -13,6 +12,7 @@
     SUBDIR += imm
     SUBDIR += irc
     SUBDIR += ircII
+    SUBDIR += isc-dhcp
     SUBDIR += ivs
     SUBDIR += mirror
     SUBDIR += moxftp
@@ -34,6 +34,7 @@
     SUBDIR += trafshow
     SUBDIR += vic
     SUBDIR += wais
+    SUBDIR += wide-dhcp
     SUBDIR += wu-ftpd
     SUBDIR += xarchie
     SUBDIR += xgopher
