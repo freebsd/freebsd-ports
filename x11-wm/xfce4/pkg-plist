@@ -20,6 +20,7 @@ bin/xfpager
 bin/xfplay
 bin/xfprint
 bin/xfrun
+bin/xfsamba
 bin/xfsound
 bin/xfterm
 bin/xftrash
@@ -170,6 +171,7 @@ share/xfce/backdrops/Wood2.xpm
 share/xfce/backdrops/Worm.xpm
 share/xfce/backdrops/Xfce.jpg
 share/xfce/backdrops/Xfce.xpm
+share/xfce/backdrops/Xfcelogo.xpm
 share/xfce/backdrops/Xfcemice.jpg
 share/xfce/fonts/cursor2.pcf
 share/xfce/fonts/fonts.dir
@@ -336,6 +338,7 @@ share/xfce/palettes/HiContrast
 share/xfce/palettes/HiTech
 share/xfce/palettes/HiTech2
 share/xfce/palettes/Iceland
+share/xfce/palettes/Jazza
 share/xfce/palettes/Liquid
 share/xfce/palettes/Liquid2
 share/xfce/palettes/Mauve
@@ -368,6 +371,7 @@ share/xfce/palettes/TBlue
 share/xfce/palettes/Teal
 share/xfce/palettes/Tiny
 share/xfce/palettes/Tommy
+share/xfce/palettes/Tradition
 share/xfce/palettes/Troica
 share/xfce/palettes/Typhoon
 share/xfce/palettes/Win
@@ -447,12 +451,12 @@ share/xfce/textures/oldwood.xpm
 share/xfce/textures/paper.xpm
 share/xfce/textures/silver.xpm
 share/xfce/textures/stripe.xpm
-@dirrm share/xfce/textures
-@dirrm share/xfce/sounds
-@dirrm share/xfce/palettes
-@dirrm share/xfce/icons
-@dirrm share/xfce/help
-@dirrm share/xfce/fonts
-@dirrm share/xfce/backdrops
-@dirrm share/xfce
 @dirrm etc/xfce
+@dirrm share/xfce/backdrops
+@dirrm share/xfce/fonts
+@dirrm share/xfce/help
+@dirrm share/xfce/icons
+@dirrm share/xfce/palettes
+@dirrm share/xfce/sounds
+@dirrm share/xfce/textures
+@dirrm share/xfce
