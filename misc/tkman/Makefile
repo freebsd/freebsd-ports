@@ -4,11 +4,9 @@
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
 
-DISTNAME=	tkman
+DISTNAME=	tkman-1.6
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
-LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
-EXEC_DEPENDS=	rman:${PORTSDIR}/utils/rman
+EXEC_DEPENDS=	wish:${PORTSDIR}/x11/tk rman:${PORTSDIR}/utils/rman
 EXTRACT_SUFX=	.tar.Z
-WRKSRC=		${WRKDIR}/tkman-1.6
 
 .include <bsd.port.mk>
