@@ -1,6 +1,6 @@
---- src/LYHistory.c.orig	Thu Aug  6 21:28:22 1998
-+++ src/LYHistory.c	Mon Aug 10 01:44:44 1998
-@@ -22,6 +22,10 @@
+--- src/LYHistory.c.orig	Thu Dec 24 20:27:23 1998
++++ src/LYHistory.c	Mon Feb 22 15:01:18 1999
+@@ -23,6 +23,10 @@
  #include <LYexit.h>
  #include <LYLeaks.h>
  
@@ -11,9 +11,9 @@
  PUBLIC HTList * Visited_Links = NULL;	/* List of safe popped docs. */
  
  /*
-@@ -415,6 +419,20 @@
+@@ -401,6 +405,20 @@
  	} else {
- 	    StrAllocCopy(Title, "(no title)");
+ 	    StrAllocCopy(Title, NO_TITLE);
  	}
 +	if (HTCJK == JAPANESE) {
 +	    char *tmp;
@@ -32,16 +32,16 @@
  	fprintf(fp0,
  		"%s<em>%d</em>. <tab id=t%d><a href=\"LYNXHIST:%d\">%s</a>\n",
  		(x > 99 ? "" : x < 10 ? "  " : " "),
-@@ -568,6 +586,20 @@
- 	    LYEntify(&Title, TRUE);
+@@ -552,6 +570,20 @@
+ 		StrAllocCopy(Title , NO_TITLE);
  	} else {
- 	    StrAllocCopy(Title , "(no title)");
+ 	    StrAllocCopy(Title , NO_TITLE);
 +	}
 +	if (HTCJK == JAPANESE) {
 +	    char *tmp;
 +
 +	    if ((tmp = (char *)calloc(strlen(Title)*2, sizeof(char *))) == NULL)
-+    		outofmem(__FILE__, "LYShowVisitedLinks");
++		outofmem(__FILE__, "LYShowVisitedLinks");
 +	    *tmp = '\0';
 +	    if (kanji_code == EUC) {
 +		TO_EUC(Title, tmp);
@@ -49,7 +49,7 @@
 +		TO_SJIS(Title, tmp);
 +	    }
 +	    if (*tmp) StrAllocCopy(Title, tmp);
-+	    FREE(tmp);
++		FREE(tmp);
  	}
  	if (vl->address != NULL && *vl->address != '\0') {
  	    StrAllocCopy(Address, vl->address);
