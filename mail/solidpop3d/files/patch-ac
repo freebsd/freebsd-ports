@@ -1,5 +1,5 @@
---- src/mailbox.c.orig	Sat May 13 16:18:33 2000
-+++ src/mailbox.c	Fri Jun  9 14:56:54 2000
+--- src/mailbox.c.orig	Sat May 13 21:18:33 2000
++++ src/mailbox.c	Tue Nov  7 08:59:40 2000
 @@ -45,6 +45,9 @@
  #endif
  #endif

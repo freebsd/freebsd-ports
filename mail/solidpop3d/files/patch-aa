@@ -1,5 +1,5 @@
---- src/const.h.orig	Tue Apr 18 19:04:05 2000
-+++ src/const.h	Fri Jun  9 14:12:51 2000
+--- src/const.h.orig	Wed Apr 19 00:04:05 2000
++++ src/const.h	Tue Nov  7 08:59:40 2000
 @@ -36,7 +36,7 @@
  #define DEFWCCOUNT 5
  
