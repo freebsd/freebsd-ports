@@ -15,6 +15,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/mpich/lib/libmpich.a:${PORTSDIR}/net/mpich
 
 # MPICH implimentation is not thread safe
 CONFIGURE_ARGS+=	--with-libdirs="-L${LOCALBASE}/lib -L${LOCALBASE}/mpich/lib" \
-		--with-include="-I${LOCALBASE}/mpich/include" \
+		--with-include="-I${LOCALBASE}/mpich/include -I${WRKDIR}" \
 		--enable-always-use-mpi \
 		--enable-threads=no
