@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Thu Feb  3 10:18:20 2005
+--- Makefile.in	Thu Feb  3 10:20:19 2005
+***************
+*** 213,219 ****
+  target_cpu = @target_cpu@
+  target_os = @target_os@
+  target_vendor = @target_vendor@
+! pkgconfigdir = $(libdir)/pkgconfig
+  pkgconfig_DATA = skstream-0.3.pc @SKSTREAM_UNIX_PC@
+  @HAVE_PROG_ZIP_FALSE@MSVC_SUPPORT = 
+  @HAVE_PROG_ZIP_TRUE@MSVC_SUPPORT = VisualC.zip
+--- 213,219 ----
+  target_cpu = @target_cpu@
+  target_os = @target_os@
+  target_vendor = @target_vendor@
+! pkgconfigdir = $(prefix)/libdata/pkgconfig
+  pkgconfig_DATA = skstream-0.3.pc @SKSTREAM_UNIX_PC@
+  @HAVE_PROG_ZIP_FALSE@MSVC_SUPPORT = 
+  @HAVE_PROG_ZIP_TRUE@MSVC_SUPPORT = VisualC.zip

@@ -1,0 +1,13 @@
+Skstream is an iostream based C++ socket library. It is ideally suited for use
+as the underlying transport for Atlas-C++, and has been well tested and
+debugged. It was first discovered for WorldForge when it was used in UClient
+and has since been packaged up as its own library for use on other WorldForge
+projects. The code was originally written by Rafael Guterres Jeffman who is
+not involved with the project but we have extensively rewritten it, and added
+new features such as IPv6 support and unix domain sockets. It now maintained
+for WorldForge by Al Riddoch and others.
+
+WWW: http://www.worldforge.org/dev/eng/libraries/skstream/
+
+- Janni
+jannisan@t-online.de
