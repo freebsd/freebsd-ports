@@ -3,7 +3,7 @@
 # Date created:		27 Jun 1999
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1999/07/26 18:17:00 sada Exp $
+# $Id: Makefile,v 1.3 1999/07/26 18:21:22 sada Exp $
 #
 
 DISTNAME=	cvsweb-1.0
@@ -31,7 +31,7 @@ do-install:
 .if !defined(PACKAGE_BUILDING)
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
 .endif
-	@${MKDIR} ${PREFIX}/www/cgi-bin
-	@${INSTALL_SCRIPT} ${WRKDIR}/cvsweb ${PREFIX}/www/cgi-bin/
+	@${MKDIR} ${PREFIX}/share/apache/cgi-bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/cvsweb ${PREFIX}/share/apache/cgi-bin/
 
 .include <bsd.port.mk>
