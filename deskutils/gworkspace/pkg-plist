@@ -1,14 +1,3 @@
-System/Applications/Backgrounder.app/Backgrounder
-System/Applications/Backgrounder.app/Resources/Backgrounder.desktop
-System/Applications/Backgrounder.app/Resources/Backgrounder.tiff
-System/Applications/Backgrounder.app/Resources/CVS/Entries
-System/Applications/Backgrounder.app/Resources/CVS/Repository
-System/Applications/Backgrounder.app/Resources/CVS/Root
-System/Applications/Backgrounder.app/Resources/Info-gnustep.plist
-System/Applications/Backgrounder.app/Resources/Resources/English.lproj/Localizable.strings
-System/Applications/Backgrounder.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Backgrounder
-System/Applications/Backgrounder.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
-System/Applications/Backgrounder.app/stamp.make
 System/Applications/GWorkspace.app/GWorkspace
 System/Applications/GWorkspace.app/Resources/AppViewer.inspector/Resources/Info-gnustep.plist
 System/Applications/GWorkspace.app/Resources/AppViewer.inspector/Resources/InspectorInfo.plist
@@ -47,6 +36,11 @@ System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Ital
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Portuguese.lproj/CVS/Entries
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Portuguese.lproj/CVS/Repository
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Portuguese.lproj/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/CVS/Root
@@ -143,6 +137,7 @@ System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.nib/
 System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.nib/classes.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.nib/info.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/DefSortOrderPref.nib/objects.nib
+System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.gorm/.gwdir
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.gorm/CVS/Root
@@ -154,6 +149,11 @@ System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.nib/CVS/R
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.nib/classes.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.nib/info.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.nib/objects.nib
+System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm/CVS/Entries
+System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm/CVS/Repository
+System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm/CVS/Root
+System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/FileOps.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/English.lproj/FileOps.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/English.lproj/FileOps.gorm/CVS/Root
@@ -190,17 +190,17 @@ System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.nib/C
 System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.nib/classes.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.nib/info.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.nib/objects.nib
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.nib/CVS/Entries
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.nib/CVS/Repository
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.nib/CVS/Root
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.nib/classes.nib
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.nib/info.nib
-System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.nib/objects.nib
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/CVS/Entries
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/CVS/Repository
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/CVS/Root
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.nib/CVS/Entries
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.nib/CVS/Repository
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.nib/CVS/Root
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.nib/classes.nib
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.nib/info.nib
+System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/InspectorsWin.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/English.lproj/InspectorsWin.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/English.lproj/InspectorsWin.gorm/CVS/Root
@@ -214,6 +214,11 @@ System/Applications/GWorkspace.app/Resources/English.lproj/InspectorsWin.nib/inf
 System/Applications/GWorkspace.app/Resources/English.lproj/InspectorsWin.nib/objects.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/English.lproj/MainMenu-OSX.gsmarkup
+System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/CVS/Entries
+System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/CVS/Repository
+System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/CVS/Root
+System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/PermissionsPanel.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/English.lproj/PermissionsPanel.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/English.lproj/PermissionsPanel.gorm/CVS/Root
@@ -236,6 +241,11 @@ System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.nib/CVS/Ro
 System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.nib/classes.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.nib/info.nib
 System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.nib/objects.nib
+System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/CVS/Entries
+System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/CVS/Repository
+System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/CVS/Root
+System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/CVS/Root
@@ -352,6 +362,11 @@ System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Portug
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Romanian.lproj/CVS/Entries
@@ -465,9 +480,19 @@ System/Applications/GWorkspace.app/Resources/RecyclerFull.tiff
 System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Localizable.strings
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/AttributesPanel.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/AttributesPanel.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/AttributesPanel.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/AttributesPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/AttributesPanel.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/CVS/Root
@@ -476,107 +501,239 @@ System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesP
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/ContentsPanel.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/ContentsPanel.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/ContentsPanel.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/ContentsPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/ContentsPanel.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/DefEditorPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/DefEditorPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/DefEditorPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/DefEditorPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/DefEditorPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/DefSortOrderPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/DefSortOrderPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/DefSortOrderPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/DefSortOrderPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/DefSortOrderPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/.gwdir
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/.gwdir
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/CVS/Entries
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/CVS/Repository
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/FileOpsPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/FileOpsPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/FileOpsPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/FileOpsPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/FileOpsPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/Finder.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/Finder.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/Finder.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/HiddenFilesPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/HiddenFilesPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/HiddenFilesPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/HiddenFilesPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/HiddenFilesPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/objects.gorm
-System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsAnimationPref.gorm/CVS/Entries
-System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsAnimationPref.gorm/CVS/Repository
-System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsAnimationPref.gorm/CVS/Root
-System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsAnimationPref.gorm/data.classes
-System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsAnimationPref.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/CVS/Entries
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/CVS/Repository
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/IconsPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/IconsPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/IconsPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/IconsPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/IconsPref.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/InspectorsWin.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/InspectorsWin.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/InspectorsWin.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/InspectorsWin.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/InspectorsWin.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Localizable.strings
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/CVS/Entries
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/CVS/Repository
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/OpenWith.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/OpenWith.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/OpenWith.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/OpenWith.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/OpenWith.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/PermissionsPanel.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/PermissionsPanel.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/PermissionsPanel.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/PermissionsPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/PermissionsPanel.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/PrefWindow.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/PrefWindow.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/PrefWindow.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/PrefWindow.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/PrefWindow.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/CVS/Entries
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/CVS/Repository
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/RunExternal.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/RunExternal.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/RunExternal.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/RunExternal.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/RunExternal.gorm/objects.gorm
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/data.classes
+System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/ShelfPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/ShelfPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/ShelfPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/ShelfPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/ShelfPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/ToolsPanel.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/ToolsPanel.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/ToolsPanel.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/ToolsPanel.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/ToolsPanel.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/XTermPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/XTermPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/XTermPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/XTermPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/XTermPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Localizable.strings
 System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/CVS/Entries
 System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/CVS/Repository
 System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/data.classes
 System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/objects.gorm
 System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Localizable.strings
@@ -666,21 +823,6 @@ System/Applications/GWorkspace.app/Resources/switchOn.tiff
 System/Applications/GWorkspace.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/GWorkspace
 System/Applications/GWorkspace.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
 System/Applications/GWorkspace.app/stamp.make
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/BNameEditor.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/BackgrounderProtocol.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/Browser2.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/ContentViewersProtocol.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/GWFunctions.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/GWLib.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/GWNotifications.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/GWProtocol.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/IconViewsProtocol.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/InspectorsProtocol.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/PreferencesProtocol.h
-%%SYSTEMLIBRARY%%/Headers/GWorkspace/ViewersProtocol.h
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGWorkspace.so
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGWorkspace.so.1
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGWorkspace.so.1.0.0
 System/Library/Bundles/AppViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/AppViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/AppViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/AppViewer
@@ -718,6 +860,11 @@ System/Library/Bundles/BrowserViewer.viewer/Resources/Italian.lproj/CVS/Root
 System/Library/Bundles/BrowserViewer.viewer/Resources/Portuguese.lproj/CVS/Entries
 System/Library/Bundles/BrowserViewer.viewer/Resources/Portuguese.lproj/CVS/Repository
 System/Library/Bundles/BrowserViewer.viewer/Resources/Portuguese.lproj/CVS/Root
+%%GNUSTEP_DEVEL%%System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/objects.gorm
 System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/CVS/Entries
 System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/CVS/Repository
 System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/CVS/Root
@@ -775,6 +922,11 @@ System/Library/Bundles/IconsViewer.viewer/Resources/Portuguese.lproj/CVS/Root
 System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/CVS/Entries
 System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/CVS/Repository
 System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/CVS/Entries
+%%GNUSTEP_DEVEL%%System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/CVS/Repository
+%%GNUSTEP_DEVEL%%System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/CVS/Root
+%%GNUSTEP_DEVEL%%System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/data.classes
+%%GNUSTEP_DEVEL%%System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/objects.gorm
 System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/data.classes
 System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/objects.gorm
 System/Library/Bundles/IconsViewer.viewer/Resources/Romanian.lproj/CVS/Entries
@@ -786,6 +938,9 @@ System/Library/Bundles/IconsViewer.viewer/Resources/Spanish.lproj/CVS/Root
 System/Library/Bundles/IconsViewer.viewer/Resources/miniwindow.tiff
 System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/IconsViewer
 System/Library/Bundles/IconsViewer.viewer/stamp.make
+System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/ImageThumbnailer
+System/Library/Bundles/ImageThumbnailer.thumb/Resources/Info-gnustep.plist
+System/Library/Bundles/ImageThumbnailer.thumb/stamp.make
 System/Library/Bundles/ImageViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/ImageViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/ImageViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/ImageViewer
@@ -837,9 +992,38 @@ System/Library/Bundles/StringsViewer.inspector/Resources/Info-gnustep.plist
 System/Library/Bundles/StringsViewer.inspector/Resources/InspectorInfo.plist
 System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/StringsViewer
 System/Library/Bundles/StringsViewer.inspector/stamp.make
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/BNameEditor.h
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/Browser2.h
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/ContentViewersProtocol.h
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/GWFunctions.h
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/GWLib.h
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/GWNotifications.h
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/GWProtocol.h
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/IconViewsProtocol.h
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/InspectorsProtocol.h
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/PreferencesProtocol.h
+%%SYSTEMLIBRARY%%/Headers/GWorkspace/ViewersProtocol.h
+%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGWorkspace.so
+%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGWorkspace.so.1
+%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libGWorkspace.so.1.0.0
+System/Library/Services/thumbnailer.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/thumbnailer
+System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/Resources/Info-gnustep.plist
+System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/ImageThumbnailer
+System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/stamp.make
+System/Library/Services/thumbnailer.service/Resources/Info-gnustep.plist
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/findfile
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/fopexec
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
+@dirrm System/Library/Services/thumbnailer.service/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/Services/thumbnailer.service/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/Services/thumbnailer.service/%%GNU_ARCH%%
+@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/%%GNU_ARCH%%
+@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb/Resources
+@dirrm System/Library/Services/thumbnailer.service/Resources/ImageThumbnailer.thumb
+@dirrm System/Library/Services/thumbnailer.service/Resources
+@dirrm System/Library/Services/thumbnailer.service
+@dirrm %%SYSTEMLIBRARY%%/Headers/GWorkspace
 @dirrm System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/Bundles/StringsViewer.inspector/%%GNU_ARCH%%
@@ -883,6 +1067,11 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Library/Bundles/ImageViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/ImageViewer.inspector/Resources
 @dirrm System/Library/Bundles/ImageViewer.inspector
+@dirrm System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+@dirrm System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%/%%OPSYS%%
+@dirrm System/Library/Bundles/ImageThumbnailer.thumb/%%GNU_ARCH%%
+@dirrm System/Library/Bundles/ImageThumbnailer.thumb/Resources
+@dirrm System/Library/Bundles/ImageThumbnailer.thumb
 @dirrm System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Library/Bundles/IconsViewer.viewer/%%GNU_ARCH%%
@@ -897,6 +1086,8 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/German.lproj
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/French.lproj
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/English.lproj
 @dirrm System/Library/Bundles/IconsViewer.viewer/Resources/Resources/Dutch.lproj
@@ -941,6 +1132,8 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/German.lproj
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/French.lproj
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/English.lproj
 @dirrm System/Library/Bundles/BrowserViewer.viewer/Resources/Resources/Dutch.lproj
@@ -969,7 +1162,6 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Library/Bundles/AppViewer.inspector/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/AppViewer.inspector/Resources
 @dirrm System/Library/Bundles/AppViewer.inspector
-@dirrm %%SYSTEMLIBRARY%%/Headers/GWorkspace
 @dirrm System/Applications/GWorkspace.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm System/Applications/GWorkspace.app/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm System/Applications/GWorkspace.app/%%GNU_ARCH%%
@@ -1007,55 +1199,111 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Romanian.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Spanish.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Romanian.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Portuguese.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Italian.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/German.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/German.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/French.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/French.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/XTermPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/XTermPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/XTermPref.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/ToolsPanel.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/ToolsPanel.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ToolsPanel.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/ShelfPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/ShelfPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ShelfPref.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/RunExternal.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/RunExternal.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm/CVS
+@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/RunExternal.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/PrefWindow.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/PrefWindow.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PrefWindow.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/PermissionsPanel.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/PermissionsPanel.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/PermissionsPanel.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/OpenWith.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/OpenWith.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm/CVS
+@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/OpenWith.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/InspectorsWin.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/InspectorsWin.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/InspectorsWin.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsAnimationPref.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsAnimationPref.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/IconsPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/IconsPref.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm/CVS
+@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/IconsPref.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/HiddenFilesPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/HiddenFilesPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/HiddenFilesPref.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/Finder.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/Finder.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/FileOpsPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/FileOpsPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOpsPref.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/FileOperationWin.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm/CVS
+@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/FileOperationWin.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/DeskTopPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DeskTopPref.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/DefSortOrderPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/DefSortOrderPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefSortOrderPref.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/DefEditorPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/DefEditorPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/DefEditorPref.gorm
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/ContentsPanel.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/ContentsPanel.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/ContentsPanel.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/AttributesPanel.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm/AttributesPanel.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj/AttributesPanel.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/English.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj/Finder.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/Resources/Dutch.lproj
@@ -1106,6 +1354,8 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/Italian.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/German.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/French.lproj
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/IconsViewerPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj/IconsViewerPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/IconsViewer.viewer/Resources/Resources/English.lproj
@@ -1161,6 +1411,8 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.nib
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/ShelfPref.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm/CVS
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/RunExternal.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.nib/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.nib
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/PrefWindow.gorm/CVS
@@ -1169,14 +1421,16 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/PermissionsPanel.nib
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/PermissionsPanel.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/PermissionsPanel.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm/CVS
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/OpenWith.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/InspectorsWin.nib/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/InspectorsWin.nib
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/InspectorsWin.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/InspectorsWin.gorm
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.nib/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.nib
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.gorm/CVS
-@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/IconsAnimationPref.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.nib/CVS
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.nib
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm/CVS
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/IconsPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.nib/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.nib
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/HiddenFilesPref.gorm/CVS
@@ -1191,6 +1445,8 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/FileOpsPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/FileOps.gorm/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/FileOps.gorm
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm/CVS
+@dirrm System/Applications/GWorkspace.app/Resources/English.lproj/FileOperationWin.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.nib/CVS
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.nib
 @dirrm System/Applications/GWorkspace.app/Resources/English.lproj/DeskTopPref.gorm/CVS
@@ -1234,6 +1490,8 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/German.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/French.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm/CVS
+%%GNUSTEP_DEVEL%%@dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm/BrowserViewerPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj/BrowserViewerPref.gorm
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/English.lproj
 @dirrm System/Applications/GWorkspace.app/Resources/BrowserViewer.viewer/Resources/Resources/Dutch.lproj
@@ -1264,14 +1522,6 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/wopen
 @dirrm System/Applications/GWorkspace.app/Resources/AppViewer.inspector
 @dirrm System/Applications/GWorkspace.app/Resources
 @dirrm System/Applications/GWorkspace.app
-@dirrm System/Applications/Backgrounder.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Applications/Backgrounder.app/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Applications/Backgrounder.app/%%GNU_ARCH%%
-@dirrm System/Applications/Backgrounder.app/Resources/Resources/English.lproj
-@dirrm System/Applications/Backgrounder.app/Resources/Resources
-@dirrm System/Applications/Backgrounder.app/Resources/CVS
-@dirrm System/Applications/Backgrounder.app/Resources
-@dirrm System/Applications/Backgrounder.app
 @exec mkdir -p %D/System/Library/Bundles/IconsViewer.viewer/Resources/Resources/Spanish.lproj
 @exec mkdir -p %D/System/Library/Bundles/IconsViewer.viewer/Resources/Resources/Romanian.lproj
 @exec mkdir -p %D/System/Library/Bundles/IconsViewer.viewer/Resources/Resources/Portuguese.lproj
