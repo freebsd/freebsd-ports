@@ -1,0 +1,66 @@
+--- Makefile.orig	Thu Sep 14 07:57:23 1995
++++ Makefile	Sat Feb 10 14:33:17 2001
+@@ -1,4 +1,4 @@
+-.SUFFIXES:	.src .bdf .snf .fb .pcf
++.SUFFIXES:	.src .bdf .snf .fb .pcf .pcf.Z
+ 
+ SHELL		= /bin/sh
+ ECHO		= echo $(TAB)
+@@ -18,15 +18,18 @@
+ F6              = etl24-viscii
+ F7              = vn6x13
+ F8              = vn16x30
+-F9              = etl16-viscii1
++F9              = etl16-viscii
++F10             = etl24-viscii1
+ BDF		= $(F1).bdf $(F2).bdf $(F3).bdf $(F4).bdf $(F5).bdf $(F6).bdf\
+-   		  $(F7).bdf $(F8).bdf
++   		  $(F7).bdf $(F8).bdf $(F9).bdf
+ SNF		= $(F1).snf $(F2).snf $(F3).snf $(F4).snf $(F5).snf $(F6).snf\
+-   		  $(F7).snf $(F8).snf
++   		  $(F7).snf $(F8).snf $(F9).snf
+ PCF		= $(F1).pcf $(F2).pcf $(F3).pcf $(F4).pcf $(F5).pcf $(F6).pcf\
+-   		  $(F7).pcf $(F8).pcf
++   		  $(F7).pcf $(F8).pcf $(F9).pcf
++PCFZ	= $(F1).pcf.Z $(F2).pcf.Z $(F3).pcf.Z $(F4).pcf.Z $(F5).pcf.Z \
++          $(F6).pcf.Z $(F7).pcf.Z $(F8).pcf.Z $(F9).pcf.Z
+ FB		= $(F1).fb $(F2).fb $(F3).fb $(F4).fb $(F5).fb $(F6).fb\
+-   		  $(F7).fb $(F8).fb
++   		  $(F7).fb $(F8).fb $(F9).fb
+ 
+ .src.bdf:
+ 		@echo -n "Generating $@ from $*.src... "
+@@ -35,6 +38,10 @@
+ .bdf.pcf:
+ 		$(BDFTOPCF) $*.bdf > $*.pcf
+ 
++.bdf.pcf.Z:
++		$(BDFTOPCF) $*.bdf > $*.pcf
++		compress -f -v $*.pcf
++
+ .bdf.snf:
+ 		$(BDFTOSNF) $*.bdf > $*.snf
+ 
+@@ -47,7 +54,7 @@
+ 		@echo $(TAB)We\'re going to do some font conversion.
+ 		@echo $(TAB)Depending on your system set-up, some of
+ 		@echo $(TAB)the conversion programs may not exist.
+-		@echo $(TAB)Don't worry about this; it means that
++		@echo "$(TAB)Don't worry about this; it means that"
+ 		@echo $(TAB)your font format is one of the others.
+ 		@echo $(TAB)We try to cover PCF, SNF, and FB formats.
+ 		@echo $(TAB)You're out of luck if NONE of these work.
+@@ -88,11 +95,11 @@
+ 		@touch $(MADEFLAG)
+ 		@echo Done! Run \"xset +fp `pwd`\" to install X fonts
+ 
+-allpcf:		$(PCF)
++allpcf:		$(PCFZ)
+ # The BDF files are generated anyway, and if they stick around
+ # MKFONTDIR will generate some confusing error messages for PCF systems.
+ # Well, we have to keep .bdf around for executable users
+-		@chmod go+r *.pcf
++		@chmod go+r *.pcf.Z
+ 
+ allsnf:		$(SNF)
+ 		chmod go+r *.snf
