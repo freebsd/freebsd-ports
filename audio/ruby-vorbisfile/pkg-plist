@@ -1,0 +1,6 @@
+%%RUBY_SITEARCHLIBDIR%%/vorbisfile.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/vorbisfile/test.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/vorbisfile
+%%PORTDOCS%%%%RUBY_DOCDIR%%/vorbisfile/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/vorbisfile/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/vorbisfile
