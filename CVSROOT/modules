@@ -8124,6 +8124,7 @@ terminality	ports/devel/terminality
 terminatorx	ports/audio/terminatorx
 terminus-font	ports/x11-fonts/terminus-font
 termlog		ports/security/termlog
+terraform	ports/misc/terraform
 test		src/bin/test
 tet		ports/misc/tet
 tethereal	ports/net/tethereal
