@@ -2,8 +2,13 @@ bin/gnome-font-install
 etc/printConf.sh
 include/libgnomeprint/gnome-font-dialog.h
 include/libgnomeprint/gnome-font.h
+include/libgnomeprint/gnome-print-copies.h
+include/libgnomeprint/gnome-print-dialog.h
 include/libgnomeprint/gnome-print-i18n.h
+include/libgnomeprint/gnome-print-master-preview.h
+include/libgnomeprint/gnome-print-master.h
 include/libgnomeprint/gnome-print-meta.h
+include/libgnomeprint/gnome-print-multipage.h
 include/libgnomeprint/gnome-print-pixbuf.h
 include/libgnomeprint/gnome-print-preview.h
 include/libgnomeprint/gnome-print-rgbp.h
@@ -14,28 +19,9 @@ include/libgnomeprint/gnome-printer.h
 include/libgnomeprint/gnome-text.h
 lib/libgnomeprint.a
 lib/libgnomeprint.so
-lib/libgnomeprint.so.2
+lib/libgnomeprint.so.5
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-share/gnome/fonts/fontmap
-share/gnome/gnome-print/profiles/Postscript.profile
-share/locale/da/LC_MESSAGES/gnome-print.mo
-share/locale/de/LC_MESSAGES/gnome-print.mo
-share/locale/el/LC_MESSAGES/gnome-print.mo
-share/locale/es/LC_MESSAGES/gnome-print.mo
-share/locale/et/LC_MESSAGES/gnome-print.mo
-share/locale/fr/LC_MESSAGES/gnome-print.mo
-share/locale/gl/LC_MESSAGES/gnome-print.mo
-share/locale/hu/LC_MESSAGES/gnome-print.mo
-share/locale/it/LC_MESSAGES/gnome-print.mo
-share/locale/nl/LC_MESSAGES/gnome-print.mo
-share/locale/no/LC_MESSAGES/gnome-print.mo
-share/locale/pl/LC_MESSAGES/gnome-print.mo
-share/locale/ru/LC_MESSAGES/gnome-print.mo
-share/locale/sv/LC_MESSAGES/gnome-print.mo
-share/locale/uk/LC_MESSAGES/gnome-print.mo
-@dirrm share/gnome/gnome-print/profiles
-@dirrm share/gnome/gnome-print
 share/gnome/fonts/afms/adobe/pagd8a.afm
 share/gnome/fonts/afms/adobe/pagdo8a.afm
 share/gnome/fonts/afms/adobe/pagk8a.afm
@@ -77,7 +63,30 @@ share/gnome/fonts/afms/adobe/putr8a.afm
 share/gnome/fonts/afms/adobe/putri8a.afm
 share/gnome/fonts/afms/adobe/pzcmi8a.afm
 share/gnome/fonts/afms/adobe/pzdr.afm
+share/gnome/fonts/fontmap
+share/gnome/gnome-print/profiles/Postscript.profile
+share/locale/da/LC_MESSAGES/gnome-print.mo
+share/locale/de/LC_MESSAGES/gnome-print.mo
+share/locale/el/LC_MESSAGES/gnome-print.mo
+share/locale/es/LC_MESSAGES/gnome-print.mo
+share/locale/et/LC_MESSAGES/gnome-print.mo
+share/locale/fi/LC_MESSAGES/gnome-print.mo
+share/locale/fr/LC_MESSAGES/gnome-print.mo
+share/locale/gl/LC_MESSAGES/gnome-print.mo
+share/locale/hu/LC_MESSAGES/gnome-print.mo
+share/locale/it/LC_MESSAGES/gnome-print.mo
+share/locale/ja/LC_MESSAGES/gnome-print.mo
+share/locale/ko/LC_MESSAGES/gnome-print.mo
+share/locale/nl/LC_MESSAGES/gnome-print.mo
+share/locale/no/LC_MESSAGES/gnome-print.mo
+share/locale/pl/LC_MESSAGES/gnome-print.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-print.mo
+share/locale/ru/LC_MESSAGES/gnome-print.mo
+share/locale/sv/LC_MESSAGES/gnome-print.mo
+share/locale/uk/LC_MESSAGES/gnome-print.mo
 @dirrm share/gnome/fonts/afms/adobe
 @dirrm share/gnome/fonts/afms
 @dirrm share/gnome/fonts
+@dirrm share/gnome/gnome-print/profiles
+@dirrm share/gnome/gnome-print
 @dirrm include/libgnomeprint
