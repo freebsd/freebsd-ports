@@ -2,40 +2,10 @@ diff -Nru a/PATCHES b/PATCHES
 --- a/PATCHES
 +++ b/PATCHES
 @@ -0,0 +1 @@
-+patch-1.5.7.tg.hcache.1
-diff -Nru a/hcache.c b/hcache.c
---- a/hcache.c	2005-02-03 21:24:02 +01:00
-+++ b/hcache.c	2005-02-03 21:49:22 +01:00
-@@ -662,7 +662,7 @@
-         safe_strcat (path, sizeof (path), filename);
- 
- 	key.dptr  = path;
--	key.dsize = keylen(path);
-+	key.dsize = strlen(h->folder) + keylen(path + strlen(h->folder));
- 
- 	data = gdbm_fetch(h->db, key);
- 
-@@ -691,7 +691,7 @@
-         safe_strcat (path, sizeof (path), filename);
- 
- 	key.dptr  = path;
--	key.dsize = keylen(path);
-+        key.dsize = strlen(h->folder) + keylen(path + strlen(h->folder));
- 
- 	data.dptr = mutt_hcache_dump(db, header, &data.dsize, uid_validity);
- 
-@@ -717,7 +717,7 @@
-         safe_strcat (path, sizeof (path), filename);
- 
- 	key.dptr  = path;
--	key.dsize = keylen(path);
-+        key.dsize = strlen(h->folder) + keylen(path + strlen(h->folder));
- 
- 	return gdbm_delete(h->db, key);
- }
++mutt-cvs-header-cache.28
 diff -Nru a/init.h b/init.h
---- a/init.h	2005-01-27 19:54:12 +01:00
-+++ b/init.h	2005-02-03 21:33:16 +01:00
+--- a/init.h	2005-01-27 20:54:24 +01:00
++++ b/init.h	2005-01-28 15:12:41 +01:00
 @@ -1032,6 +1032,13 @@
    ** global header cache for all folders is used. Per default it is unset and so
    ** no header caching will be used.
@@ -51,8 +21,8 @@ diff -Nru a/init.h b/init.h
    /*
    ** .pp
 diff -Nru a/mh.c b/mh.c
---- a/mh.c	2005-01-27 19:48:04 +01:00
-+++ b/mh.c	2005-02-03 21:35:59 +01:00
+--- a/mh.c	2005-01-27 20:45:37 +01:00
++++ b/mh.c	2005-02-03 09:09:50 +01:00
 @@ -787,6 +787,14 @@
    return r;
  }
@@ -223,8 +193,8 @@ diff -Nru a/mh.c b/mh.c
  
  static char *maildir_canon_filename (char *dest, const char *src, size_t l)
 diff -Nru a/mutt.h b/mutt.h
---- a/mutt.h	2005-01-27 19:53:51 +01:00
-+++ b/mutt.h	2005-02-03 21:32:14 +01:00
+--- a/mutt.h	2005-01-27 20:54:24 +01:00
++++ b/mutt.h	2005-01-28 15:12:54 +01:00
 @@ -353,6 +353,9 @@
    OPTFORCENAME,
    OPTFORWDECODE,
