@@ -1,11 +1,12 @@
-Generic Java library for validating data constraints.
+Jakarta Commons Logging library.
 
-A common issue when receiving data either electronically or from
-user input is verifying the integrity of the data. This work is
-repetitive and becomes even more complicated when different sets
-of validation rules need to be applied to the same set of data
-based on locale for example. Error messages may also vary by
-locale. This package attempts to address some of these issues and
-speed development and maintenance of validation rules.
+There is a great need for debugging and logging information inside of Commons
+components such as HTTPClient and DBCP. However, there are many logging APIs
+out there and it is difficult to choose among them.
 
-WWW: http://jakarta.apache.org/commons/validator/
+The Logging package is an ultra-thin bridge between different logging
+libraries. Commons components may use the Logging API to remove compile-time
+and run-time dependencies on any particular logging package, and contributors
+may write Log implementations for the library of their choice. 
+
+WWW: http://jakarta.apache.org/commons/logging/
