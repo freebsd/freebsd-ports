@@ -22,7 +22,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 .if defined(WITHOUT_GUILE)
 CONFIGURE_ARGS+=	--disable-script
 .else
-LIB_DEPENDS+=	guile:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.15:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=	--enable-script
 .endif
 
