@@ -1,8 +1,5 @@
---- doinstall.tcl.orig	Sun May  7 01:12:41 2000
-+++ doinstall.tcl	Mon Sep  4 17:06:32 2000
-@@ -4,1 +4,1 @@
--exec wish "$0" -- ${1+"$@"}
-+exec wish8.2 "$0" -- ${1+"$@"}
+--- doinstall.tcl.orig	Fri Sep 29 00:44:53 2000
++++ doinstall.tcl	Tue Dec  5 12:55:13 2000
 @@ -30,13 +30,9 @@
       set msg(5) [file join $MANDIR tkcvs.n]
    }
@@ -18,7 +15,7 @@
    }
  }
  
-@@ -94,11 +90,6 @@
+@@ -94,23 +90,10 @@
    }
    cd ..
    puts "Finished!"
@@ -29,11 +26,23 @@
 -  pack .bottom.done
  }
  
- #
-@@ -115,28 +106,6 @@
-   set TKDIFF "tkdiff"
- }
+ ################################################################################
  
+-# Check Tcl/TK version
+-if {$tk_version < 8.1} {
+-   tk_dialog .wrongversion "Tcl/Tk too old" \
+-   "TkCVS requires Tcl/Tk 8.1 or better!" \
+-   error 0 {Bye Bye}
+-   exit 1
+-}
+-
+ # Some rational and reasonable defaults.
+ 
+ if {$tcl_platform(platform) == "windows"} {
+@@ -127,28 +110,8 @@
+ if {[llength $argv] == 1} {
+   set INSTALLROOT [lindex $argv 0]
+ }
 -frame .title
 -label .title.lbl -text "TkCVS Installer" -font {Helvetica -14 bold}
 -pack .title -side top
@@ -50,14 +59,15 @@
 -pack .messages -side top -expand y -fill x
 -label .messages.adv -text "These files will be installed:"
 -pack .messages.adv -side top
- show_paths $INSTALLROOT
--
+-show_paths $INSTALLROOT
+ 
 -frame .bottom
 -button .bottom.do -text "Install" -command {doinstall $INSTALLROOT}
 -button .bottom.not -text "Cancel" -command {destroy .}
 -pack .bottom -side top
 -pack .bottom.do -side left
 -pack .bottom.not -side left
--
++show_paths $INSTALLROOT
 +doinstall $INSTALLROOT
 +exit 0
+ 

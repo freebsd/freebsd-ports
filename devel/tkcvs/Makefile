@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkcvs
-PORTVERSION=	6.3
+PORTVERSION=	6.4
 CATEGORIES=	devel tk82
 MASTER_SITES=	http://www.twobarleycorns.net/
 
@@ -23,6 +23,7 @@ TCLSH=		tclsh8\.2
 post-patch:
 	@${PERL} -pi -e 's|wish|${WISH}|g' ${WRKSRC}/tkcvs/tkcvs.blank
 	@${PERL} -pi -e 's|wish|${WISH}|g' ${WRKSRC}/tkdiff/tkdiff
+	@${PERL} -pi -e 's|wish|${WISH}|g' ${WRKSRC}/doinstall.tcl
 
 do-install:
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${TCLSH} doinstall.tcl)
