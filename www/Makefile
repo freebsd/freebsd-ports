@@ -174,7 +174,6 @@
     SUBDIR += jesred
     SUBDIR += jetspeed
     SUBDIR += jetty
-    SUBDIR += jonah
     SUBDIR += junkbuster
     SUBDIR += kannel
     SUBDIR += kazehakase
