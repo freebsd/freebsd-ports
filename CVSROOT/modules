@@ -8699,3 +8699,4 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
 p5-Search-Namazu	ports/databases/p5-Search-Namazu
+p5-Carp-Datum	ports/devel/p5-Carp-Datum
