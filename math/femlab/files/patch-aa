@@ -1,31 +1,23 @@
-*** source/Imakefile.orig	Tue Sep 19 02:22:29 1995
---- source/Imakefile	Fri Mar  6 22:03:52 1998
-***************
-*** 17,29 ****
+--- source/Imakefile.orig	Tue Sep 19 16:22:29 1995
++++ source/Imakefile	Sat Sep 22 01:04:55 2001
+@@ -17,18 +17,17 @@
+ 
+             OBJS = $(SRCS:.c=.o)
+ 
+-              CC = gcc -O
+      CDEBUGFLAGS = 
+   EXTRA_INCLUDES = -I../include
+ #
+ # Change next line to the location of the libsx library
+ #
+-EXTRA_LOAD_FLAGS = -L/users/math/martenl/projects/lib 
++EXTRA_LOAD_FLAGS = -L$(X11BASE)
+  LOCAL_LIBRARIES = -lfreq -lsx -lm XawClientLibs
+          DEPLIBS = XawClientDepLibs
   
-              OBJS = $(SRCS:.c=.o)
-  
-!               CC = gcc -O
-       CDEBUGFLAGS = 
-    EXTRA_INCLUDES = -I../include
-  #
-  # Change next line to the location of the libsx library
-  #
-! EXTRA_LOAD_FLAGS = -L/users/math/martenl/projects/lib 
-   LOCAL_LIBRARIES = -lfreq -lsx -lm XawClientLibs
-           DEPLIBS = XawClientDepLibs
-   
---- 17,29 ----
-  
-              OBJS = $(SRCS:.c=.o)
-  
-!               CC = gcc -O $(CFLAGS)
-       CDEBUGFLAGS = 
-    EXTRA_INCLUDES = -I../include
-  #
-  # Change next line to the location of the libsx library
-  #
-! EXTRA_LOAD_FLAGS = -L$(X11BASE)
-   LOCAL_LIBRARIES = -lfreq -lsx -lm XawClientLibs
-           DEPLIBS = XawClientDepLibs
-   
+         PROGRAMS = femlab
+ 
+-ComplexProgramTarget($(PROGRAMS))
++ComplexProgramTargetNoMan($(PROGRAMS))
+ DependTarget()
+ 
