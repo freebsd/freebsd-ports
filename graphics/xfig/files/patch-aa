@@ -1,5 +1,5 @@
---- Imakefile.orig	Fri Jul  3 03:37:09 1998
-+++ Imakefile	Mon Jul  6 17:27:55 1998
+--- Imakefile.orig	Thu Jul  2 12:37:09 1998
++++ Imakefile	Tue Dec 28 16:25:42 1999
 @@ -49,12 +49,12 @@
  XCOMM Uncomment the following definiton if you want to use the small icons
  XCOMM for the panel buttons.  Use this if you have a 800x600 or smaller screen.
@@ -49,12 +49,3 @@
  JPEGLIB = -L$(JPEGLIBDIR) -ljpeg
  #else
  JPEGCONF = configure
-@@ -226,7 +226,7 @@
- #endif
- #endif
- 
--DEFINES =             $(STRDEFINES) -DGSBIT $(USEINLINE) $(DUSEXPM) \
-+DEFINES =             $(STRDEFINES) $(USEINLINE) $(DUSEXPM) \
- 			$(DUSEXPMICON) $(DUSEGIF) $(DUSEJPEG) $(I18N_DEFS)
- 
- XFIGSRC =	d_arc.c d_arcbox.c d_box.c d_ellipse.c d_picobj.c \
