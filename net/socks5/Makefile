@@ -9,7 +9,6 @@ PORTNAME=	socks5
 PORTVERSION=	1.0.11
 CATEGORIES=	net security
 DISTNAME=	socks5-v1.0r11
-EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	imp@freebsd.org
 
