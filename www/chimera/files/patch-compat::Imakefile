@@ -1,0 +1,11 @@
+--- ./compat/Imakefile.org	Mon Mar 13 19:48:00 1995
++++ ./compat/Imakefile	Wed Jun 11 12:42:13 1997
+@@ -31,7 +31,7 @@
+ 
+ DependTarget()
+ #else
+-all:
++all::
+ 
+ depend::
+ #endif
