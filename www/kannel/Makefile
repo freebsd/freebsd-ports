@@ -10,7 +10,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.kannel.org/download/${PORTVERSION}/
 DISTNAME=	gateway-${PORTVERSION}
 
-MAINTAINER=	midom@dammit.lt
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	xml:${PORTSDIR}/textproc/libxml
 

@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	midom@dammit.lt
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/freetds
 
