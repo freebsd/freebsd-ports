@@ -25,7 +25,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GCC=	3.3
 USE_GNOME=	gnomehack lthack libgnome
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-static
 
