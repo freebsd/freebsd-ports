@@ -26,6 +26,7 @@ include/libnautilus/nautilus-bonobo-ui.h
 include/libnautilus/nautilus-clipboard.h
 include/libnautilus/nautilus-distributed-undo.h
 include/libnautilus/nautilus-idle-queue.h
+include/libnautilus/nautilus-scroll-positionable.h
 include/libnautilus/nautilus-undo-private.h
 include/libnautilus/nautilus-undo.h
 include/libnautilus/nautilus-view-component.h
@@ -59,14 +60,15 @@ libexec/nautilus-adapter
 libexec/nautilus-text-view
 libexec/nautilus-throbber
 share/gnome/applications/nautilus.desktop
-share/gnome/applications/nautilus-file-management-properties.desktop
 share/gnome/applications/network-scheme.desktop
+share/gnome/control-center-2.0/capplets/nautilus-file-management-properties.desktop
 share/gnome/gnome-2.0/ui/nautilus-clipboard-ui.xml
 share/gnome/gnome-2.0/ui/nautilus-desktop-icon-view-ui.xml
 share/gnome/gnome-2.0/ui/nautilus-directory-view-ui.xml
 share/gnome/gnome-2.0/ui/nautilus-icon-view-ui.xml
 share/gnome/gnome-2.0/ui/nautilus-search-list-view-ui.xml
 share/gnome/gnome-2.0/ui/nautilus-shell-ui.xml
+share/gnome/gnome-2.0/ui/nautilus-text-view-ui.xml
 share/gnome/idl/nautilus-distributed-undo.idl
 share/gnome/idl/nautilus-view-component.idl
 share/gnome/nautilus/browser.xml
@@ -289,6 +291,7 @@ share/locale/en_GB/LC_MESSAGES/nautilus.mo
 share/locale/es/LC_MESSAGES/nautilus.mo
 share/locale/et/LC_MESSAGES/nautilus.mo
 share/locale/eu/LC_MESSAGES/nautilus.mo
+share/locale/fa/LC_MESSAGES/nautilus.mo
 share/locale/fi/LC_MESSAGES/nautilus.mo
 share/locale/fr/LC_MESSAGES/nautilus.mo
 share/locale/ga/LC_MESSAGES/nautilus.mo
@@ -302,6 +305,7 @@ share/locale/ko/LC_MESSAGES/nautilus.mo
 share/locale/lt/LC_MESSAGES/nautilus.mo
 share/locale/lv/LC_MESSAGES/nautilus.mo
 share/locale/mk/LC_MESSAGES/nautilus.mo
+share/locale/ml/LC_MESSAGES/nautilus.mo
 share/locale/mn/LC_MESSAGES/nautilus.mo
 share/locale/ms/LC_MESSAGES/nautilus.mo
 share/locale/nl/LC_MESSAGES/nautilus.mo
@@ -320,7 +324,9 @@ share/locale/ta/LC_MESSAGES/nautilus.mo
 share/locale/th/LC_MESSAGES/nautilus.mo
 share/locale/tr/LC_MESSAGES/nautilus.mo
 share/locale/uk/LC_MESSAGES/nautilus.mo
+share/locale/wa/LC_MESSAGES/nautilus.mo
 share/locale/vi/LC_MESSAGES/nautilus.mo
+share/locale/yi/LC_MESSAGES/nautilus.mo
 share/locale/zh_CN/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 @dirrm share/gnome/pixmaps/nautilus/default
