@@ -1,9 +1,10 @@
 #!/bin/sh
+# $FreeBSD$
 # an installation script for linux_base
 
 case "$2" in
 PRE-INSTALL)
-	if [ -z "`kldstat -v | grep -E 'linux(aout|elf)'`" ]; then
+	if [ -z "`kldstat -v | grep linux`" ]; then
 		echo 'Linux mode is not enabled.'
 		echo 'Loading linux kernel module now...'
 		if ! kldload linux; then
@@ -26,7 +27,7 @@ POST-INSTALL)
 		echo 'Re-mounting linprocfs...'
 		mount linprocfs
 	fi
-	if [ -n "`grep -w ^linprocfs /etc/fstab`" ]; then
+	if [ -n "`grep -w ^linproc /etc/fstab`" ]; then
 		echo 'Re-mounting linproc...'
 		mount linproc
 	fi

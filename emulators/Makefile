@@ -57,6 +57,7 @@
     SUBDIR += linux_base-gentoo-stage1
     SUBDIR += linux_base-rh-9
     SUBDIR += linux_base-suse-9.1
+    SUBDIR += linux_base-suse-9.2
     SUBDIR += mastergear
     SUBDIR += minivmac
     SUBDIR += mips64emul
