@@ -1,0 +1,34 @@
+--- icb/strings.c.orig	Sun Sep 19 18:14:24 1999
++++ icb/strings.c	Sun Sep 19 18:20:05 1999
+@@ -3,7 +3,7 @@
+ 
+ #include "icb.h"
+ #include "externs.h"
+-#include <varargs.h>
++#include <stdarg.h>
+ 
+ extern char *charmap;
+ 
+@@ -334,19 +334,12 @@
+ /* call with strscat(dest, src, src, ...) */
+ 
+ char *
+-strscat(va_alist)
+-va_dcl
++strscat(char *dest, ...)
+ {
+-	char *dest, *src;
+ 	va_list args;
++	char *src;
+ 
+-	va_start(args);
+-
+-	/* get the dest pointer */
+-	if ((dest = va_arg(args, char *)) == 0) {
+-		puts("fatal error: strscat called without dest");
+-		exit(-1);
+-	}
++	va_start(args, dest);
+ 
+ 	/* copy strings */
+ 	while ((src = va_arg(args, char *)) != NULL) {

@@ -1,5 +1,14 @@
---- icb/protos.h-orig	Fri Feb 24 22:20:25 1995
-+++ icb/protos.h	Wed Apr 15 12:07:50 1998
+--- icb/protos.h.orig	Fri Feb 24 15:20:25 1995
++++ icb/protos.h	Sun Sep 19 18:17:21 1999
+@@ -15,7 +15,7 @@
+ char *idlestr(char *num);
+ char *nextword(char *s);
+ char *response(char *num);
+-char *strscat(int va_alist,...);
++char *strscat(char *dest, ...);
+ char *tildexpand(char *s);
+ int addusage(char *name, int type, char *args, char *usage);
+ sighandler askquit();
 @@ -64,7 +64,7 @@
  int inserttab(void);
  int ishushed(char *nick);
