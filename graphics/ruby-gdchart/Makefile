@@ -16,6 +16,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension to use the GDCHART library
 
+BROKEN=		Does not compile
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgdc.a:${PORTSDIR}/graphics/gdchart
 
 USE_RUBY=	yes
