@@ -118,12 +118,27 @@
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/__init__.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/pdutypes.py
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/pdutypes.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/pdutypes.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1155.py
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1155.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1155.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1157.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1157.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1157.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1905.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1905.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/rfc1905.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/v1.py
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/v1.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/v1.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/v2c.py
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/v2c.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/v2c.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/versions.py
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/versions.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha/versions.pyo
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/error.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/error.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/error.pyo
@@ -157,7 +172,32 @@
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/v2c.py
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/v2c.pyc
 %%PYTHON_SITELIBDIR%%/pysnmp/proto/v2c.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/test/__init__.py
+%%PYTHON_SITELIBDIR%%/pysnmp/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/test/base.py
+%%PYTHON_SITELIBDIR%%/pysnmp/test/base.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/test/base.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/test/getset.py
+%%PYTHON_SITELIBDIR%%/pysnmp/test/getset.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/test/getset.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/test/suite.py
+%%PYTHON_SITELIBDIR%%/pysnmp/test/suite.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/test/suite.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/test/trap.py
+%%PYTHON_SITELIBDIR%%/pysnmp/test/trap.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/test/trap.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/test/walk.py
+%%PYTHON_SITELIBDIR%%/pysnmp/test/walk.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/test/walk.pyo
+%%PYTHON_SITELIBDIR%%/pysnmp/version.py
+%%PYTHON_SITELIBDIR%%/pysnmp/version.pyc
+%%PYTHON_SITELIBDIR%%/pysnmp/version.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/test
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/generic
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/api/alpha
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto/api
+@dirrm %%PYTHON_SITELIBDIR%%/pysnmp/proto
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/mapping/udp
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/mapping
 @dirrm %%PYTHON_SITELIBDIR%%/pysnmp/compat/snmpy
