@@ -1,14 +1,13 @@
+dmjava/AbilityPanel.class
+dmjava/Action.class
 dmjava/Alcove.class
 dmjava/AlcoveData.class
-dmjava/AlcovePatch.class
 dmjava/AlcoveWizard.class
 dmjava/Altar.class
 dmjava/AltarData.class
-dmjava/AltarPatch.class
-dmjava/AltarWizard.class
 dmjava/Chest.class
+dmjava/Choice.class
 dmjava/Compass.class
-dmjava/CreateCharacter$1.class
 dmjava/CreateCharacter.class
 dmjava/DMEditor$1.class
 dmjava/DMEditor$ItemListen.class
@@ -20,24 +19,30 @@ dmjava/DarknessFilter.class
 dmjava/Decoration.class
 dmjava/DecorationData.class
 dmjava/DecorationWizard.class
+dmjava/DisplayModeModel.class
+dmjava/DisplayModeTest.class
 dmjava/Door.class
 dmjava/DoorData.class
 dmjava/DoorWizard.class
 dmjava/DungTheme.class
 dmjava/Dungeons/dungeon.dat
 dmjava/Endings/credits.gif
+dmjava/Endings/end0.gif
 dmjava/Endings/fuseend.gif
 dmjava/Endings/introa.gif
 dmjava/Endings/introb.gif
 dmjava/Endings/introc.gif
+dmjava/Endings/introc2.gif
 dmjava/Endings/introd.gif
 dmjava/Endings/stormend.gif
+dmjava/Endings/titleglow.png
+dmjava/Endings/titlenoglow.png
 dmjava/EnterName.class
-dmjava/Entrance.jpg
+dmjava/EventSquare$EventPanel.class
 dmjava/EventSquare.class
 dmjava/EventSquareData.class
-dmjava/EventWizard$Choice.class
 dmjava/EventWizard.class
+dmjava/Events/event pics go here -- delete me.txt
 dmjava/FDecoration.class
 dmjava/FDecorationData.class
 dmjava/FDecorationWizard.class
@@ -47,12 +52,10 @@ dmjava/Floor.class
 dmjava/FloorData.class
 dmjava/FloorSwitch.class
 dmjava/FloorSwitchData.class
-dmjava/FloorSwitchPatch.class
 dmjava/FloorSwitchWizard.class
 dmjava/FluxCageData.class
 dmjava/Fountain.class
 dmjava/FountainData.class
-dmjava/FountainPatch.class
 dmjava/FountainWizard.class
 dmjava/FulYaPit.class
 dmjava/FulYaPitData.class
@@ -68,8 +71,7 @@ dmjava/HeroPanel$ChampionEdit.class
 dmjava/HeroPanel$HeroSheet.class
 dmjava/HeroPanel$SheetClick.class
 dmjava/HeroPanel.class
-dmjava/Heroes/ANTMAN.GIF
-dmjava/Heroes/Bnarl.gif
+dmjava/HeroSpecials.class
 dmjava/Heroes/Csb/airwing.gif
 dmjava/Heroes/Csb/algor.gif
 dmjava/Heroes/Csb/aroc.gif
@@ -94,7 +96,30 @@ dmjava/Heroes/Csb/toadrot.gif
 dmjava/Heroes/Csb/tula.gif
 dmjava/Heroes/Csb/tunda.gif
 dmjava/Heroes/Csb/ven.gif
-dmjava/Heroes/Dm plus/dm
+dmjava/Heroes/Dm plus/alex.gif
+dmjava/Heroes/Dm plus/azizi.gif
+dmjava/Heroes/Dm plus/boris.gif
+dmjava/Heroes/Dm plus/chani.gif
+dmjava/Heroes/Dm plus/daroou.gif
+dmjava/Heroes/Dm plus/elija.gif
+dmjava/Heroes/Dm plus/gando.gif
+dmjava/Heroes/Dm plus/gothmog.gif
+dmjava/Heroes/Dm plus/halk.gif
+dmjava/Heroes/Dm plus/hawk.gif
+dmjava/Heroes/Dm plus/hissssa.gif
+dmjava/Heroes/Dm plus/iaido.gif
+dmjava/Heroes/Dm plus/leif.gif
+dmjava/Heroes/Dm plus/leyla.gif
+dmjava/Heroes/Dm plus/linflas.gif
+dmjava/Heroes/Dm plus/mophus.gif
+dmjava/Heroes/Dm plus/nabi.gif
+dmjava/Heroes/Dm plus/sonja.gif
+dmjava/Heroes/Dm plus/stamm.gif
+dmjava/Heroes/Dm plus/syra.gif
+dmjava/Heroes/Dm plus/tiggy.gif
+dmjava/Heroes/Dm plus/wutse.gif
+dmjava/Heroes/Dm plus/wuuf.gif
+dmjava/Heroes/Dm plus/zed.gif
 dmjava/Heroes/Dm/alex.gif
 dmjava/Heroes/Dm/azizi.gif
 dmjava/Heroes/Dm/boris.gif
@@ -119,18 +144,20 @@ dmjava/Heroes/Dm/tiggy.gif
 dmjava/Heroes/Dm/wutse.gif
 dmjava/Heroes/Dm/wuuf.gif
 dmjava/Heroes/Dm/zed.gif
-dmjava/Heroes/GROWLG.GIF
-dmjava/Heroes/MORG.GIF
-dmjava/Heroes/NAGLA.GIF
-dmjava/Heroes/Pantara.gif
-dmjava/Heroes/SANA.GIF
-dmjava/Heroes/SEPPO.GIF
-dmjava/Heroes/Torg.gif
-dmjava/Heroes/WARWICK.GIF
-dmjava/Heroes/WISHBONE.GIF
+dmjava/Heroes/antman.gif
 dmjava/Heroes/balaan.gif
+dmjava/Heroes/bnarl.gif
+dmjava/Heroes/growlg.gif
+dmjava/Heroes/morg.gif
+dmjava/Heroes/nagla.gif
+dmjava/Heroes/pantara.gif
+dmjava/Heroes/sana.gif
+dmjava/Heroes/seppo.gif
 dmjava/Heroes/syra_f.gif
+dmjava/Heroes/torg.gif
 dmjava/Heroes/vaag.gif
+dmjava/Heroes/warwick.gif
+dmjava/Heroes/wishbone.gif
 dmjava/Icons/additem.gif
 dmjava/Icons/addmon.gif
 dmjava/Icons/alcove-s.gif
@@ -138,6 +165,7 @@ dmjava/Icons/alcove.gif
 dmjava/Icons/altar-s.gif
 dmjava/Icons/altar.gif
 dmjava/Icons/antman.gif
+dmjava/Icons/automappic.png
 dmjava/Icons/back.gif
 dmjava/Icons/beholder.gif
 dmjava/Icons/chaos.gif
@@ -146,6 +174,9 @@ dmjava/Icons/decoration-s.gif
 dmjava/Icons/decoration.gif
 dmjava/Icons/demon.gif
 dmjava/Icons/demonlord.gif
+dmjava/Icons/dmjicon.gif
+dmjava/Icons/dmjicon.ico
+dmjava/Icons/dmjsicon.gif
 dmjava/Icons/door-s.gif
 dmjava/Icons/door.gif
 dmjava/Icons/down.gif
@@ -173,6 +204,7 @@ dmjava/Icons/ghost.gif
 dmjava/Icons/giggler.gif
 dmjava/Icons/goblin.gif
 dmjava/Icons/golem.gif
+dmjava/Icons/hellhound.gif
 dmjava/Icons/invisiblewall-s.gif
 dmjava/Icons/invisiblewall.gif
 dmjava/Icons/key.gif
@@ -200,6 +232,7 @@ dmjava/Icons/powergem.gif
 dmjava/Icons/question.gif
 dmjava/Icons/rat.gif
 dmjava/Icons/right.gif
+dmjava/Icons/rive.gif
 dmjava/Icons/rockpile.gif
 dmjava/Icons/sconce-s.gif
 dmjava/Icons/sconce.gif
@@ -208,6 +241,7 @@ dmjava/Icons/screamer.gif
 dmjava/Icons/skeleton.gif
 dmjava/Icons/slime.gif
 dmjava/Icons/sorcerer.gif
+dmjava/Icons/spellsheet.gif
 dmjava/Icons/spider.gif
 dmjava/Icons/stairsdown-s.gif
 dmjava/Icons/stairsdown.gif
@@ -220,17 +254,25 @@ dmjava/Icons/teleport.gif
 dmjava/Icons/tentacle.gif
 dmjava/Icons/turnleft.gif
 dmjava/Icons/turnright.gif
+dmjava/Icons/undo.gif
 dmjava/Icons/up.gif
+dmjava/Icons/vexirk.gif
 dmjava/Icons/wall-s.gif
 dmjava/Icons/wall.gif
 dmjava/Icons/wallswitch-s.gif
 dmjava/Icons/wallswitch.gif
 dmjava/Icons/waterel.gif
+dmjava/Icons/weaponsheet.gif
+dmjava/Icons/wephit.gif
+dmjava/Icons/wephit2.gif
+dmjava/Icons/wephit3.gif
+dmjava/Icons/wepmiss.gif
 dmjava/Icons/wingeye.gif
 dmjava/Icons/worm.gif
 dmjava/Icons/writing-s.gif
 dmjava/Icons/writing.gif
 dmjava/Icons/zoom.gif
+dmjava/Icons/zytaz.gif
 dmjava/ImageTilePanel.class
 dmjava/InvisibleWall.class
 dmjava/InvisibleWallData.class
@@ -254,7 +296,9 @@ dmjava/Items/axe.gif
 dmjava/Items/barbarian_hide.gif
 dmjava/Items/basinet.gif
 dmjava/Items/berserker_helm.gif
+dmjava/Items/biter.gif
 dmjava/Items/black_boots.gif
+dmjava/Items/blue_pants.gif
 dmjava/Items/bolt_blade-anim.gif
 dmjava/Items/bolt_blade-dead.gif
 dmjava/Items/bolt_blade.gif
@@ -319,6 +363,7 @@ dmjava/Items/dart-toward.gif
 dmjava/Items/dart.gif
 dmjava/Items/dashes.gif
 dmjava/Items/daxe.gif
+dmjava/Items/dberries.gif
 dmjava/Items/dblack_boots.gif
 dmjava/Items/dblack_clothes.gif
 dmjava/Items/dblue_clothes.gif
@@ -465,6 +510,7 @@ dmjava/Items/gem_orange.gif
 dmjava/Items/ghi.gif
 dmjava/Items/ghi_trousers.gif
 dmjava/Items/gold_key.gif
+dmjava/Items/good_berries.gif
 dmjava/Items/grapple.gif
 dmjava/Items/gunna.gif
 dmjava/Items/halter.gif
@@ -508,10 +554,12 @@ dmjava/Items/mirror_dawn.gif
 dmjava/Items/mithril_aketon.gif
 dmjava/Items/mithril_hosen.gif
 dmjava/Items/mithril_leg.gif
+dmjava/Items/moonstone-old.gif
 dmjava/Items/moonstone.gif
 dmjava/Items/morningstar.gif
 dmjava/Items/onyx_key.gif
 dmjava/Items/pendant_feral.gif
+dmjava/Items/potion_curse.gif
 dmjava/Items/potion_dex.gif
 dmjava/Items/potion_health.gif
 dmjava/Items/potion_int.gif
@@ -574,6 +622,7 @@ dmjava/Items/scroll-open.gif
 dmjava/Items/scroll.gif
 dmjava/Items/serpent_staff.gif
 dmjava/Items/shank.gif
+dmjava/Items/sidesplitter.gif
 dmjava/Items/silk_shirt.gif
 dmjava/Items/skeleton_key.gif
 dmjava/Items/slayer-away.gif
@@ -600,6 +649,7 @@ dmjava/Items/stone_club-toward.gif
 dmjava/Items/stone_club.gif
 dmjava/Items/storm_ring-dead.gif
 dmjava/Items/storm_ring.gif
+dmjava/Items/stormbringer-anim.gif
 dmjava/Items/stormbringer-away.gif
 dmjava/Items/stormbringer-left.gif
 dmjava/Items/stormbringer-right.gif
@@ -611,6 +661,7 @@ dmjava/Items/sword-right.gif
 dmjava/Items/sword-toward.gif
 dmjava/Items/sword.gif
 dmjava/Items/tabbard.gif
+dmjava/Items/tattered_pants.gif
 dmjava/Items/teowand.gif
 dmjava/Items/throwing_star-away.gif
 dmjava/Items/throwing_star-left.gif
@@ -653,12 +704,14 @@ dmjava/Items/zo_kath_sar.gif
 dmjava/Launcher.class
 dmjava/LauncherData.class
 dmjava/LauncherWizard.class
+dmjava/LevelDarkDialog.class
+dmjava/LevelPicDialog.class
+dmjava/LoopSound.class
 dmjava/MapData.class
 dmjava/MapObject.class
 dmjava/MapPanel$Target.class
 dmjava/MapPanel.class
 dmjava/MapPoint.class
-dmjava/MapSquare.class
 dmjava/Maps/alcove11.gif
 dmjava/Maps/alcove12.gif
 dmjava/Maps/alcove13.gif
@@ -693,15 +746,25 @@ dmjava/Maps/altwall23.gif
 dmjava/Maps/altwall31.gif
 dmjava/Maps/altwall32.gif
 dmjava/Maps/altwall33.gif
-dmjava/Maps/back-dif.gif
 dmjava/Maps/back.gif
-dmjava/Maps/backother.gif
+dmjava/Maps/blackdoor-brk1.gif
+dmjava/Maps/blackdoor-brk2.gif
+dmjava/Maps/blackdoor-brk3.gif
 dmjava/Maps/blackdoor-w1.gif
 dmjava/Maps/blackdoor-w2.gif
 dmjava/Maps/blackdoor-w3.gif
 dmjava/Maps/blackdoor1.gif
 dmjava/Maps/blackdoor2.gif
 dmjava/Maps/blackdoor3.gif
+dmjava/Maps/blockkey1.gif
+dmjava/Maps/blockkey2.gif
+dmjava/Maps/blockkey3.gif
+dmjava/Maps/blockkeycol11.gif
+dmjava/Maps/blockkeycol12.gif
+dmjava/Maps/blockkeycol13.gif
+dmjava/Maps/blockkeycol31.gif
+dmjava/Maps/blockkeycol32.gif
+dmjava/Maps/blockkeycol33.gif
 dmjava/Maps/bluegem1-p.gif
 dmjava/Maps/bluegem1.gif
 dmjava/Maps/bluegem2-p.gif
@@ -771,7 +834,34 @@ dmjava/Maps/cpit23.gif
 dmjava/Maps/cpit31.gif
 dmjava/Maps/cpit32.gif
 dmjava/Maps/cpit33.gif
+dmjava/Maps/crosskey1.gif
+dmjava/Maps/crosskey2.gif
+dmjava/Maps/crosskey3.gif
+dmjava/Maps/crosskeycol11.gif
+dmjava/Maps/crosskeycol12.gif
+dmjava/Maps/crosskeycol13.gif
+dmjava/Maps/crosskeycol31.gif
+dmjava/Maps/crosskeycol32.gif
+dmjava/Maps/crosskeycol33.gif
+dmjava/Maps/demon1.gif
+dmjava/Maps/demon2.gif
+dmjava/Maps/demon3.gif
+dmjava/Maps/demoncol11.gif
+dmjava/Maps/demoncol12.gif
+dmjava/Maps/demoncol13.gif
+dmjava/Maps/demoncol31.gif
+dmjava/Maps/demoncol32.gif
+dmjava/Maps/demoncol33.gif
 dmjava/Maps/doortrack.gif
+dmjava/Maps/doublekey1.gif
+dmjava/Maps/doublekey2.gif
+dmjava/Maps/doublekey3.gif
+dmjava/Maps/doublekeycol11.gif
+dmjava/Maps/doublekeycol12.gif
+dmjava/Maps/doublekeycol13.gif
+dmjava/Maps/doublekeycol31.gif
+dmjava/Maps/doublekeycol32.gif
+dmjava/Maps/doublekeycol33.gif
 dmjava/Maps/emeraldkey1.gif
 dmjava/Maps/emeraldkey2.gif
 dmjava/Maps/emeraldkey3.gif
@@ -790,12 +880,23 @@ dmjava/Maps/eyekeycol13.gif
 dmjava/Maps/eyekeycol31.gif
 dmjava/Maps/eyekeycol32.gif
 dmjava/Maps/eyekeycol33.gif
+dmjava/Maps/fancymetal-brk1.gif
 dmjava/Maps/fancymetal1.gif
 dmjava/Maps/fancymetal2.gif
 dmjava/Maps/fancymetal3.gif
+dmjava/Maps/fancywood-brk1.gif
 dmjava/Maps/fancywood1.gif
 dmjava/Maps/fancywood2.gif
 dmjava/Maps/fancywood3.gif
+dmjava/Maps/fgrate11.gif
+dmjava/Maps/fgrate12.gif
+dmjava/Maps/fgrate13.gif
+dmjava/Maps/fgrate21.gif
+dmjava/Maps/fgrate22.gif
+dmjava/Maps/fgrate23.gif
+dmjava/Maps/fgrate31.gif
+dmjava/Maps/fgrate32.gif
+dmjava/Maps/fgrate33.gif
 dmjava/Maps/fluxcage01.gif
 dmjava/Maps/fluxcage02.gif
 dmjava/Maps/fluxcage03.gif
@@ -808,6 +909,8 @@ dmjava/Maps/fluxcage23.gif
 dmjava/Maps/fluxcage31.gif
 dmjava/Maps/fluxcage32.gif
 dmjava/Maps/fluxcage33.gif
+dmjava/Maps/font.gif
+dmjava/Maps/font2.gif
 dmjava/Maps/fountain12.gif
 dmjava/Maps/fountain21.gif
 dmjava/Maps/fountain22.gif
@@ -902,6 +1005,21 @@ dmjava/Maps/greengemcol13.gif
 dmjava/Maps/greengemcol31.gif
 dmjava/Maps/greengemcol32.gif
 dmjava/Maps/greengemcol33.gif
+dmjava/Maps/iron2key1.gif
+dmjava/Maps/iron2key2.gif
+dmjava/Maps/iron2key3.gif
+dmjava/Maps/iron2keycol11.gif
+dmjava/Maps/iron2keycol12.gif
+dmjava/Maps/iron2keycol13.gif
+dmjava/Maps/iron2keycol31.gif
+dmjava/Maps/iron2keycol32.gif
+dmjava/Maps/iron2keycol33.gif
+dmjava/Maps/ironcrossdoor1.gif
+dmjava/Maps/ironcrossdoor2.gif
+dmjava/Maps/ironcrossdoor3.gif
+dmjava/Maps/ironfacedoor1.gif
+dmjava/Maps/ironfacedoor2.gif
+dmjava/Maps/ironfacedoor3.gif
 dmjava/Maps/ironkey1.gif
 dmjava/Maps/ironkey2.gif
 dmjava/Maps/ironkey3.gif
@@ -1115,11 +1233,8 @@ dmjava/Maps/scratch3.gif
 dmjava/Maps/scratchcol11.gif
 dmjava/Maps/scratchcol12.gif
 dmjava/Maps/scratchcol13.gif
-dmjava/Maps/scratchcol31-old.gif
 dmjava/Maps/scratchcol31.gif
-dmjava/Maps/scratchcol32-old.gif
 dmjava/Maps/scratchcol32.gif
-dmjava/Maps/scratchcol33-old.gif
 dmjava/Maps/scratchcol33.gif
 dmjava/Maps/seal02.gif
 dmjava/Maps/seal11.gif
@@ -1145,6 +1260,27 @@ dmjava/Maps/smallbutton1.gif
 dmjava/Maps/smallbutton2.gif
 dmjava/Maps/smallbuttoncol11.gif
 dmjava/Maps/smallbuttoncol31.gif
+dmjava/Maps/smiledoor1.gif
+dmjava/Maps/smiledoor2.gif
+dmjava/Maps/smiledoor3.gif
+dmjava/Maps/solidkey1.gif
+dmjava/Maps/solidkey2.gif
+dmjava/Maps/solidkey3.gif
+dmjava/Maps/solidkeycol11.gif
+dmjava/Maps/solidkeycol12.gif
+dmjava/Maps/solidkeycol13.gif
+dmjava/Maps/solidkeycol31.gif
+dmjava/Maps/solidkeycol32.gif
+dmjava/Maps/solidkeycol33.gif
+dmjava/Maps/squarekey1.gif
+dmjava/Maps/squarekey2.gif
+dmjava/Maps/squarekey3.gif
+dmjava/Maps/squarekeycol11.gif
+dmjava/Maps/squarekeycol12.gif
+dmjava/Maps/squarekeycol13.gif
+dmjava/Maps/squarekeycol31.gif
+dmjava/Maps/squarekeycol32.gif
+dmjava/Maps/squarekeycol33.gif
 dmjava/Maps/stairs01.gif
 dmjava/Maps/stairs03.gif
 dmjava/Maps/stairs21.gif
@@ -1203,6 +1339,15 @@ dmjava/Maps/teleport31.gif
 dmjava/Maps/teleport32.gif
 dmjava/Maps/teleport33.gif
 dmjava/Maps/teleport34.gif
+dmjava/Maps/topazkey1.gif
+dmjava/Maps/topazkey2.gif
+dmjava/Maps/topazkey3.gif
+dmjava/Maps/topazkeycol11.gif
+dmjava/Maps/topazkeycol12.gif
+dmjava/Maps/topazkeycol13.gif
+dmjava/Maps/topazkeycol31.gif
+dmjava/Maps/topazkeycol32.gif
+dmjava/Maps/topazkeycol33.gif
 dmjava/Maps/tourqkey1.gif
 dmjava/Maps/tourqkey2.gif
 dmjava/Maps/tourqkey3.gif
@@ -1321,7 +1466,6 @@ dmjava/MirrorWizard.class
 dmjava/MonCellRenderer.class
 dmjava/MonSpecials.class
 dmjava/MonsterData.class
-dmjava/MonsterPatch.class
 dmjava/MonsterWizard.class
 dmjava/Monsters/antman-attack.gif
 dmjava/Monsters/antman-away.gif
@@ -1360,6 +1504,7 @@ dmjava/Monsters/dragon-toward.gif
 dmjava/Monsters/fader.gif
 dmjava/Monsters/fireel-attack.gif
 dmjava/Monsters/fireel.gif
+dmjava/Monsters/fireel~2.gif
 dmjava/Monsters/ghost-attack.gif
 dmjava/Monsters/ghost.gif
 dmjava/Monsters/giggler-away.gif
@@ -1376,6 +1521,12 @@ dmjava/Monsters/golem-away.gif
 dmjava/Monsters/golem-left.gif
 dmjava/Monsters/golem-right.gif
 dmjava/Monsters/golem-toward.gif
+dmjava/Monsters/good-toward.gif
+dmjava/Monsters/hellhound-attack.gif
+dmjava/Monsters/hellhound-away.gif
+dmjava/Monsters/hellhound-left.gif
+dmjava/Monsters/hellhound-right.gif
+dmjava/Monsters/hellhound-toward.gif
 dmjava/Monsters/mondeath.png
 dmjava/Monsters/mummy-attack.gif
 dmjava/Monsters/mummy-away.gif
@@ -1392,6 +1543,8 @@ dmjava/Monsters/rat-away.gif
 dmjava/Monsters/rat-left.gif
 dmjava/Monsters/rat-right.gif
 dmjava/Monsters/rat-toward.gif
+dmjava/Monsters/rive-attack.gif
+dmjava/Monsters/rive-toward.gif
 dmjava/Monsters/rockpile-attack.gif
 dmjava/Monsters/rockpile.gif
 dmjava/Monsters/scorpion-attack.gif
@@ -1408,6 +1561,8 @@ dmjava/Monsters/skeleton-right.gif
 dmjava/Monsters/skeleton-toward.gif
 dmjava/Monsters/slime-attack.gif
 dmjava/Monsters/slime.gif
+dmjava/Monsters/slimedevil-attack.gif
+dmjava/Monsters/slimedevil-toward.gif
 dmjava/Monsters/sorcerer-attack.gif
 dmjava/Monsters/sorcerer-away.gif
 dmjava/Monsters/sorcerer-left.gif
@@ -1422,6 +1577,11 @@ dmjava/Monsters/tentaclemon-attack-old.gif
 dmjava/Monsters/tentaclemon-attack.gif
 dmjava/Monsters/tentaclemon-old.gif
 dmjava/Monsters/tentaclemon.gif
+dmjava/Monsters/vexirk-attack.gif
+dmjava/Monsters/vexirk-away.gif
+dmjava/Monsters/vexirk-left.gif
+dmjava/Monsters/vexirk-right.gif
+dmjava/Monsters/vexirk-toward.gif
 dmjava/Monsters/waterel-attack.gif
 dmjava/Monsters/waterel.gif
 dmjava/Monsters/wingeye-attack.gif
@@ -1431,23 +1591,23 @@ dmjava/Monsters/worm-away.gif
 dmjava/Monsters/worm-left.gif
 dmjava/Monsters/worm-right.gif
 dmjava/Monsters/worm-toward.gif
+dmjava/Monsters/zytaz-attack.gif
+dmjava/Monsters/zytaz-away.gif
+dmjava/Monsters/zytaz-left.gif
+dmjava/Monsters/zytaz-right.gif
+dmjava/Monsters/zytaz-toward.gif
 dmjava/MoverDialog.class
 dmjava/MultFloorSwitch2.class
 dmjava/MultFloorSwitchData.class
-dmjava/MultFloorSwitchPatch.class
 dmjava/MultFloorSwitchWizard.class
 dmjava/MultWallSwitch2.class
 dmjava/MultWallSwitchData.class
-dmjava/MultWallSwitchPatch.class
 dmjava/MultWallSwitchWizard.class
 dmjava/MyMapPanel.class
 dmjava/OneAlcove.class
 dmjava/OneAlcoveData.class
-dmjava/OneAlcovePatch.class
 dmjava/OptionsDialog.class
 dmjava/PartyInfoDialog.class
-dmjava/Patch3.class
-dmjava/Patcher.class
 dmjava/Pillar.class
 dmjava/PillarData.class
 dmjava/PillarWizard.class
@@ -1458,10 +1618,9 @@ dmjava/PoisonCloudData.class
 dmjava/PowerGem.class
 dmjava/PowerGemData.class
 dmjava/ProjectileData.class
-dmjava/Saves/saves.txt.txt
+dmjava/Saves/saved games go here -- delete me.txt
 dmjava/Sconce.class
 dmjava/SconceData.class
-dmjava/SconcePatch.class
 dmjava/SconceWizard.class
 dmjava/SideDialog.class
 dmjava/SidedWall.class
@@ -1475,13 +1634,20 @@ dmjava/Sounds/couatyl.wav
 dmjava/Sounds/demonlord.wav
 dmjava/Sounds/dink.wav
 dmjava/Sounds/door.wav
+dmjava/Sounds/doorbreak.wav
+dmjava/Sounds/drain.wav
+dmjava/Sounds/dripp.wav
 dmjava/Sounds/fball.wav
 dmjava/Sounds/flap.wav
 dmjava/Sounds/fuseend.wav
 dmjava/Sounds/giggler.wav
+dmjava/Sounds/gravel.wav
 dmjava/Sounds/gulp.wav
+dmjava/Sounds/horn.wav
 dmjava/Sounds/mummy.wav
+dmjava/Sounds/mummy2.wav
 dmjava/Sounds/oof.wav
+dmjava/Sounds/rats.wav
 dmjava/Sounds/roar.wav
 dmjava/Sounds/rockmon.wav
 dmjava/Sounds/scorpion.wav
@@ -1489,14 +1655,22 @@ dmjava/Sounds/scream.wav
 dmjava/Sounds/slime.wav
 dmjava/Sounds/spider.wav
 dmjava/Sounds/step.wav
+dmjava/Sounds/step1.wav
+dmjava/Sounds/step2.wav
+dmjava/Sounds/step3.wav
+dmjava/Sounds/step4.wav
+dmjava/Sounds/step5.wav
 dmjava/Sounds/stormend.wav
 dmjava/Sounds/swing.wav
 dmjava/Sounds/switch.wav
 dmjava/Sounds/teleport.wav
 dmjava/Sounds/thunk.wav
+dmjava/Sounds/unlock.wav
+dmjava/Sounds/warcry.wav
 dmjava/Sounds/waterel.wav
 dmjava/Sounds/worm.wav
 dmjava/Sounds/zap.wav
+dmjava/SpecialAbility.class
 dmjava/Spell.class
 dmjava/Spells/arcbolt.gif
 dmjava/Spells/arcboltend.gif
@@ -1532,6 +1706,7 @@ dmjava/Stairs.class
 dmjava/StairsData.class
 dmjava/Stormbringer.class
 dmjava/StormbringerData.class
+dmjava/SwitchFinder.class
 dmjava/TargetFrame.class
 dmjava/Teleport.class
 dmjava/TeleportData.class
@@ -1543,7 +1718,6 @@ dmjava/Wall.class
 dmjava/WallData.class
 dmjava/WallSwitch.class
 dmjava/WallSwitchData.class
-dmjava/WallSwitchPatch.class
 dmjava/WallSwitchWizard.class
 dmjava/Waterskin.class
 dmjava/Writing2.class
@@ -1553,9 +1727,6 @@ dmjava/alandale.gif
 dmjava/bluerock.gif
 dmjava/dead.gif
 dmjava/dmnew$1.class
-dmjava/dmnew$2.class
-dmjava/dmnew$3.class
-dmjava/dmnew$4.class
 dmjava/dmnew$ArrowSheet.class
 dmjava/dmnew$DungClick.class
 dmjava/dmnew$DungMove.class
@@ -1572,13 +1743,9 @@ dmjava/dmnew$Monster.class
 dmjava/dmnew$PoisonCloud.class
 dmjava/dmnew$Projectile.class
 dmjava/dmnew$SheetClick.class
-dmjava/dmnew$SpellCasterClick.class
-dmjava/dmnew$SpellClick.class
 dmjava/dmnew$SpellSheet.class
-dmjava/dmnew$SpellSymbolClick.class
-dmjava/dmnew$WeaponClick.class
-dmjava/dmnew$WeaponFunctClick.class
 dmjava/dmnew$WeaponSheet.class
+dmjava/dmnew.cfg
 dmjava/dmnew.class
 dmjava/downarrow.gif
 dmjava/entrance.jpg
@@ -1596,16 +1763,13 @@ dmjava/hurt_head.gif
 dmjava/hurt_legs.gif
 dmjava/hurt_torso.gif
 dmjava/hurt_weapon.gif
+dmjava/install.txt
 dmjava/leftarrow.gif
 dmjava/openchest.gif
-dmjava/patch1.txt
-dmjava/patch2.txt
-dmjava/patch3.txt
 dmjava/poisoned.gif
 dmjava/presents.gif
 dmjava/readme.txt
 dmjava/resreinc.gif
-dmjava/ressreinc.gif
 dmjava/rightarrow.gif
 dmjava/scroll.gif
 dmjava/scrollfont.ttf
@@ -1613,12 +1777,9 @@ dmjava/spell.gif
 dmjava/theend.gif
 dmjava/title.gif
 dmjava/uparrow.gif
-dmjava/wephit.gif
-dmjava/wephit2.gif
-dmjava/wephit3.gif
-dmjava/wepmiss.gif
 @dirrm dmjava/Dungeons
 @dirrm dmjava/Endings
+@dirrm dmjava/Events
 @dirrm dmjava/Heroes/Csb
 @dirrm dmjava/Heroes/Dm
 @dirrm dmjava/Heroes/Dm plus
@@ -1630,4 +1791,4 @@ dmjava/wepmiss.gif
 @dirrm dmjava/Saves
 @dirrm dmjava/Sounds
 @dirrm dmjava/Spells
-@dirrm dmjava/
+@dirrm dmjava
