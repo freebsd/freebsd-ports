@@ -14,7 +14,6 @@ CFLAGS+=	${INCLUDES} -DDTCL_VERSION="\"${DTCL_VERSION}\""
 SHLIB_NAME=	libmod_dtcl.so.1
 
 LDADD=	-L${PREFIX}/lib -ltcl${TCL_NDVER} -lm
-LDFLAGS=${LDADD}
 
 SRCS=	mod_dtcl.c
 SRCS+=	apache_cookie.c apache_multipart_buffer.c apache_request.c \
