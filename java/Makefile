@@ -20,6 +20,7 @@
     SUBDIR += jakarta-regexp
     SUBDIR += janosvm
     SUBDIR += java-cup
+    SUBDIR += java-tutorial
     SUBDIR += javamail
     SUBDIR += javavmwrapper
     SUBDIR += javel
@@ -29,7 +30,6 @@
     SUBDIR += jdbcpool
     SUBDIR += jde
     SUBDIR += jde-emacs20
-    SUBDIR += jdk-tutorial
     SUBDIR += jdk11
     SUBDIR += jdk11-doc
     SUBDIR += jdk12
