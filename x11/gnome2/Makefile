@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gnome
-PORTVERSION= 	1.0.53
+PORTVERSION=	1.0.53
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ade@FreeBSD.org
 
@@ -41,7 +42,6 @@ RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/startup.wav:${PORTSDIR}/audio/gnomeau
 		gmc:${PORTSDIR}/x11-fm/gnomemc \
 		gnumeric:${PORTSDIR}/math/gnumeric
 
-EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
 
 do-install:	# empty
