@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	kdrill
-PORTVERSION=	5.10
+PORTVERSION=	5.11.8
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.bolthole.com/kdrill/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	sethk@osd.bsdi.com
+MAINTAINER=	sethk@meowfishies.com
 
 MAN1=		kdrill.1 makedic.1 makeedict.1
 MANCOMPRESSED=	yes
