@@ -9632,6 +9632,7 @@ ruby-filemagic	ports/devel/ruby-filemagic
 ruby-format	ports/textproc/ruby-format
 ruby-formvalidator	ports/textproc/ruby-formvalidator
 ruby-fox	ports/x11-toolkits/ruby-fox
+ruby-fox-devel	ports/x11-toolkits/ruby-fox-devel
 ruby-freedb	ports/audio/ruby-freedb
 ruby-gconf2	ports/devel/ruby-gconf2
 ruby-gd		ports/graphics/ruby-gd
