@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-PKGNAME=	vim-lite-5.3
+PKGNAME=	vim-lite-${PKGVER}
 
 LITE=		yes
 
