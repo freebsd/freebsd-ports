@@ -8,6 +8,7 @@
 
 PORTNAME=	bochs
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -15,6 +16,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	clefevre@citeweb.net
+
+.if ${XFREE86_VERSION} == 4
+BUILD_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
 
 # Global variables
 #
