@@ -1,8 +1,8 @@
-diff -ru /home/green/ssh/Makefile.inc ./Makefile.inc
---- /home/green/ssh/Makefile.inc	Tue Oct 26 03:31:00 1999
-+++ ./Makefile.inc	Mon Nov  8 00:12:19 1999
+--- Makefile.inc.orig	Tue Oct 26 03:31:00 1999
++++ Makefile.inc	Tue Nov  9 06:45:18 1999
 @@ -1,11 +1,8 @@
- CFLAGS+=	-I${.CURDIR}/..
+-CFLAGS+=	-I${.CURDIR}/..
++CFLAGS+=	-I${.CURDIR}/.. -I${PREFIX}/include
  
 -.include <bsd.obj.mk>
 -
