@@ -9559,6 +9559,7 @@ zh-cle_base	ports/chinese/cle_base
 zh-cless	ports/chinese/cless
 zh-cmexfonts	ports/chinese/cmexfonts
 zh-cwtex	ports/chinese/cwtex
+zh-cwtexttf	ports/chinese/cwtexttf
 zh-cxterm	ports/chinese/cxterm
 zh-dia		ports/chinese/dia
 zh-dictd	ports/chinese/dictd
