@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	st
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://oss.sgi.com/projects/state-threads/download/ \
 		ftp://oss.sgi.com/www/projects/state-threads/download/ \
