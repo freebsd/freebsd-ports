@@ -24,11 +24,7 @@ USE_RUBY_SETUP=	yes
 DOCS_EN=	README.en
 DOCS_JA=	README.ja
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
+BROKEN=		"Does not compile"
 
 do-install:
 .if !defined(NOPORTDOCS)
@@ -44,4 +40,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
