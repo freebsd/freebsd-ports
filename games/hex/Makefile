@@ -13,25 +13,20 @@ MASTER_SITES=	http://www.nott.ac.uk/~psystrj/ \
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_X_PREFIX=	YES
-USE_GMAKE=	YES
-MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
+MAKE_ENV=	GRAPHICPATH="${GRAPHICPATH}" LEVELPATH="${LEVELPATH}"
+
+GRAPHICPATH=	${PREFIX}/share/hex/graphics
+LEVELPATH=	${PREFIX}/share/hex/levels
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hex ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/hex/graphics
-.for i in 0 1 2 3 4 5 6 7 8
-	${INSTALL_DATA} ${WRKSRC}/graphics/ball${i}.png \
-			 ${PREFIX}/share/hex/graphics/ball${i}.png
-.endfor
-	@${MKDIR} ${PREFIX}/share/hex/levels
-	${INSTALL_DATA} ${WRKSRC}/levels/Level1 \
-			 ${PREFIX}/share/hex/levels/Level1
+	@${MKDIR} ${GRAPHICPATH}
+	${INSTALL_DATA} ${WRKSRC}/graphics/*.png ${GRAPHICPATH}
+	@${MKDIR} ${LEVELPATH}
+	${INSTALL_DATA} ${WRKSRC}/levels/Level1 ${LEVELPATH}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/hex
 .for file in HISTORY README TODO
