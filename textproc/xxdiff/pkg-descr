@@ -1,0 +1,8 @@
+xxdiff is a graphical browser for viewing the differences between
+two or three files, or between two directories, and can be used to
+produce a merged version.
+
+WWW: http://xxdiff.sourceforge.net/
+
+- Pete
+petef@FreeBSD.org
