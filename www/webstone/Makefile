@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.mindcraft.com/webstone/ \
 DISTNAME=	ws25_src
 EXTRACT_SUFX=	.tgz 
 
-MAINTAINER=	sauber@netcom.com
+MAINTAINER=	k_nishizawa@anet.ne.jp
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/WebStone2.5/src
