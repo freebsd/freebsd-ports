@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.redhat.com/pub/redhat/current/SRPMS/SRPMS/ \
 		ftp://ftp.mpi-sb.mpg.de/pub/linux/mirror/ftp.redhat.com/redhat/current/SRPMS/SRPMS/ \
 		ftp://sunsite.Informatik.RWTH-Aachen.DE/pub/comp/Linux/redhat/current/SRPMS/SRPMS/
-EXTRACT_SUFX=	-14.src.rpm
+EXTRACT_SUFX=	-15.src.rpm
 
 PATCH_DIST_STRIP=	-p1
 
