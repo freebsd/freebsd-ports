@@ -1,0 +1,19 @@
+Perl has changed over time, gaining new features, new functions, increasing its
+flexibility, and reducing the impact on the C namespace environment (reduced
+pollution). The header file, typicaly ppport.h, written by this module attempts
+to bring some of the newer Perl features to older versions of Perl, so that you
+can worry less about keeping track of old releases, but users can still reap
+the benefit.
+
+Why you should use ppport.h in modern code: so that your code will work with
+the widest range of Perl interpreters possible, without significant additional
+work.
+
+Why you should attempt older code to fully use ppport.h: because the reduced
+pollution of newer Perl versions is an important thing, so important that the
+old polluting ways of original Perl modules will not be supported very far into
+the future, and your module will almost certainly break! By adapting to it now,
+you'll gain compatibility and a sense of having done the electronic ecology
+some good.
+
+WWW: http://search.cpan.org/dist/Devel-PPPort/
