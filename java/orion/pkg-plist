@@ -1,5 +1,5 @@
 etc/rc.d/orion.sh
-orion
+bin/orionctl
 orion1.4.5/config/database-schemas/hypersonic.xml
 orion1.4.5/config/database-schemas/ms-access.xml
 orion1.4.5/config/database-schemas/ms-sql.xml
