@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monkeybubble
-PORTVERSION=	0.1.8
+PORTVERSION=	0.1.9
 CATEGORIES=	games gnome
 MASTER_SITES=	http://monkey-bubble.tuxfamily.org/
 DISTNAME=	monkey-bubble-${PORTVERSION}
@@ -15,7 +15,6 @@ MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	GTK2 Puzzle Bobble clone with monkeys
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix librsvg2 libgnomeui \
