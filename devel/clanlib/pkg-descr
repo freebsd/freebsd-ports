@@ -1,0 +1,12 @@
+ClanLib delivers a platform independent interface to write games with. If a
+game is written with ClanLib, it should be possible to compile the game under
+any platform (supported by ClanLib, that is) without changes in the application
+sourcecode.
+
+But ClanLib is not just a wrapper library, providing an common interface to
+lowlevel libraries such as DirectX, Svgalib, X11, GGI, etc. While platform
+independency is ClanLib's primary goal, it also tries to be a service-minded
+game sdk. In other words, authors have put great effort in to designing the API,
+to ensure ClanLib's easy of use - while maintaining it's power.
+
+WWW: http://www.clanlib.org/

@@ -1,0 +1,178 @@
+bin/clanlib-config
+include/ClanLib/Core/Display/cliprect.h
+include/ClanLib/Core/Display/display.h
+include/ClanLib/Core/Display/display_events.h
+include/ClanLib/Core/Display/displaycard.h
+include/ClanLib/Core/Display/mousecursor.h
+include/ClanLib/Core/Display/mousecursor_provider.h
+include/ClanLib/Core/Display/palette.h
+include/ClanLib/Core/Display/pixelformat.h
+include/ClanLib/Core/Display/res_surface.h
+include/ClanLib/Core/Display/surface.h
+include/ClanLib/Core/Display/surfacepriority.h
+include/ClanLib/Core/Display/surfaceprovider.h
+include/ClanLib/Core/Display/target.h
+include/ClanLib/Core/Display/vidmode.h
+include/ClanLib/Core/Font/font.h
+include/ClanLib/Core/Font/font_description.h
+include/ClanLib/Core/IOData/cl_endian.h
+include/ClanLib/Core/IOData/inputsource.h
+include/ClanLib/Core/IOData/inputsource_memory.h
+include/ClanLib/Core/IOData/inputsource_provider.h
+include/ClanLib/Core/IOData/outputsource.h
+include/ClanLib/Core/IOData/outputsource_memory.h
+include/ClanLib/Core/IOData/outputsource_provider.h
+include/ClanLib/Core/Input/input.h
+include/ClanLib/Core/Input/input_events.h
+include/ClanLib/Core/Input/inputaxis.h
+include/ClanLib/Core/Input/inputaxis_basic.h
+include/ClanLib/Core/Input/inputaxis_group.h
+include/ClanLib/Core/Input/inputbuffer.h
+include/ClanLib/Core/Input/inputbutton.h
+include/ClanLib/Core/Input/inputbutton_basic.h
+include/ClanLib/Core/Input/inputbutton_group.h
+include/ClanLib/Core/Input/inputbutton_to_axis_analog.h
+include/ClanLib/Core/Input/inputbutton_to_axis_digital.h
+include/ClanLib/Core/Input/inputcursor.h
+include/ClanLib/Core/Input/inputdevice.h
+include/ClanLib/Core/Input/inputhat.h
+include/ClanLib/Core/Input/key.h
+include/ClanLib/Core/Input/keyboard.h
+include/ClanLib/Core/Input/mouse.h
+include/ClanLib/Core/Math/bezier.h
+include/ClanLib/Core/Math/cl_vector.h
+include/ClanLib/Core/Math/math.h
+include/ClanLib/Core/Math/matrix.h
+include/ClanLib/Core/NetObjects/netdata_controller.h
+include/ClanLib/Core/NetObjects/netobject.h
+include/ClanLib/Core/NetObjects/netobject_controller.h
+include/ClanLib/Core/NetObjects/netobject_creator.h
+include/ClanLib/Core/Network/netcomputer.h
+include/ClanLib/Core/Network/netgame.h
+include/ClanLib/Core/Network/netgroup.h
+include/ClanLib/Core/Network/netmessage.h
+include/ClanLib/Core/Network/network.h
+include/ClanLib/Core/Resources/resource.h
+include/ClanLib/Core/Resources/resource_manager.h
+include/ClanLib/Core/Resources/resource_manager_net.h
+include/ClanLib/Core/Resources/resourceoption.h
+include/ClanLib/Core/Resources/resourceoptions.h
+include/ClanLib/Core/Resources/resourcetype.h
+include/ClanLib/Core/Resources/resourcetype_boolean.h
+include/ClanLib/Core/Resources/resourcetype_integer.h
+include/ClanLib/Core/Resources/resourcetype_string.h
+include/ClanLib/Core/Sound/cd_audio.h
+include/ClanLib/Core/Sound/sound.h
+include/ClanLib/Core/Sound/soundbuffer.h
+include/ClanLib/Core/Sound/soundbuffer_session.h
+include/ClanLib/Core/Sound/soundformat.h
+include/ClanLib/Core/Sound/static_soundprovider.h
+include/ClanLib/Core/Sound/stream_soundprovider.h
+include/ClanLib/Core/SoundProviders/static_provider_raw.h
+include/ClanLib/Core/SoundProviders/static_provider_wave.h
+include/ClanLib/Core/SoundProviders/stream_provider_raw.h
+include/ClanLib/Core/SoundProviders/stream_provider_wave.h
+include/ClanLib/Core/SurfaceProviders/canvas.h
+include/ClanLib/Core/SurfaceProviders/generic_surfaceprovider.h
+include/ClanLib/Core/SurfaceProviders/provider_bmp.h
+include/ClanLib/Core/SurfaceProviders/provider_convpoly.h
+include/ClanLib/Core/SurfaceProviders/provider_convpoly_basics.h
+include/ClanLib/Core/SurfaceProviders/provider_dynamic.h
+include/ClanLib/Core/SurfaceProviders/provider_empty.h
+include/ClanLib/Core/SurfaceProviders/provider_fli.h
+include/ClanLib/Core/SurfaceProviders/provider_mpeg.h
+include/ClanLib/Core/SurfaceProviders/provider_pcx.h
+include/ClanLib/Core/SurfaceProviders/provider_ppm.h
+include/ClanLib/Core/SurfaceProviders/provider_targa.h
+include/ClanLib/Core/SurfaceProviders/sprite.h
+include/ClanLib/Core/SurfaceProviders/sprite2.h
+include/ClanLib/Core/SurfaceProviders/sprite_subarray_provider.h
+include/ClanLib/Core/SurfaceProviders/sprite_subsection_provider.h
+include/ClanLib/Core/SurfaceProviders/surface_manager.h
+include/ClanLib/Core/System/cl_assert.h
+include/ClanLib/Core/System/clanapp.h
+include/ClanLib/Core/System/clanstring.h
+include/ClanLib/Core/System/clanstring.h.orig
+include/ClanLib/Core/System/error.h
+include/ClanLib/Core/System/eventchain.h
+include/ClanLib/Core/System/keep_alive.h
+include/ClanLib/Core/System/mutex.h
+include/ClanLib/Core/System/setupcore.h
+include/ClanLib/Core/System/system.h
+include/ClanLib/Core/System/thread.h
+include/ClanLib/Core/System/types.h
+include/ClanLib/GL/bsp.h
+include/ClanLib/GL/opengl.h
+include/ClanLib/GL/setupgl.h
+include/ClanLib/GL/texture.h
+include/ClanLib/GUI/cl_gapplication.h
+include/ClanLib/GUI/cl_gbutton.h
+include/ClanLib/GUI/cl_gconnection.h
+include/ClanLib/GUI/cl_gevent.h
+include/ClanLib/GUI/cl_glabel.h
+include/ClanLib/GUI/cl_gmultifield.h
+include/ClanLib/GUI/cl_gobject.h
+include/ClanLib/GUI/cl_gpoint.h
+include/ClanLib/GUI/cl_gpushbutton.h
+include/ClanLib/GUI/cl_grect.h
+include/ClanLib/GUI/cl_grootwindow.h
+include/ClanLib/GUI/cl_gsldef.h
+include/ClanLib/GUI/cl_gtextfield.h
+include/ClanLib/GUI/cl_gtogglebutton.h
+include/ClanLib/GUI/cl_gwidget.h
+include/ClanLib/GUI/trace.h
+include/ClanLib/Lua/lua.h
+include/ClanLib/MIDI/cl_midi.h
+include/ClanLib/MPEG/mpeg.h
+include/ClanLib/MPEG/mpeg_soundprovider.h
+include/ClanLib/Magick/provider_magick.h
+include/ClanLib/MikMod/streamed_mikmod_sample.h
+include/ClanLib/PNG/provider_png.h
+include/ClanLib/core.h
+include/ClanLib/efence.h
+include/ClanLib/gl.h
+include/ClanLib/gui.h
+include/ClanLib/lua.h
+include/ClanLib/magick.h
+include/ClanLib/midi.h
+include/ClanLib/mikmod.h
+include/ClanLib/mpeg.h
+include/ClanLib/png.h
+include/ClanLib/stl.h
+lib/ClanLib/libclan-display-svgalib.so.0.4.4
+lib/ClanLib/libclan-display-x11.so.0.4.4
+lib/ClanLib/libclan-input-tty.so.0.4.4
+lib/ClanLib/libclan-network.so.0.4.4
+lib/ClanLib/libclan-sound.so.0.4.4
+lib/libclanCore.so
+lib/libclanCore.so.0
+lib/libclanCore.so.0.4.4
+lib/libclanGL.so
+lib/libclanGL.so.0
+lib/libclanGL.so.0.4.4
+lib/libclanPNG.so
+lib/libclanPNG.so.0
+lib/libclanPNG.so.0.4.4
+@dirrm lib/ClanLib
+@dirrm include/ClanLib/PNG
+@dirrm include/ClanLib/MikMod
+@dirrm include/ClanLib/Magick
+@dirrm include/ClanLib/MPEG
+@dirrm include/ClanLib/MIDI
+@dirrm include/ClanLib/Lua
+@dirrm include/ClanLib/GUI
+@dirrm include/ClanLib/GL
+@dirrm include/ClanLib/Core/System
+@dirrm include/ClanLib/Core/SurfaceProviders
+@dirrm include/ClanLib/Core/SoundProviders
+@dirrm include/ClanLib/Core/Sound
+@dirrm include/ClanLib/Core/Resources
+@dirrm include/ClanLib/Core/Network
+@dirrm include/ClanLib/Core/NetObjects
+@dirrm include/ClanLib/Core/Math
+@dirrm include/ClanLib/Core/Input
+@dirrm include/ClanLib/Core/IOData
+@dirrm include/ClanLib/Core/Font
+@dirrm include/ClanLib/Core/Display
+@dirrm include/ClanLib/Core
+@dirrm include/ClanLib

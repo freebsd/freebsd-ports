@@ -33,6 +33,7 @@
     SUBDIR += cdk
     SUBDIR += cervisia
     SUBDIR += cflow
+    SUBDIR += clanlib
     SUBDIR += clig
     SUBDIR += codecrusader
     SUBDIR += codemedic
