@@ -6,7 +6,7 @@ KISS is a software for playing Paper-doll on any computers.
 WWW: http://www.oersted.co.jp/~yav/soft/index.html#fkiss
 
 For example, type
-% fkiss /usr/X11R6/share/examples/fkiss/frkismi4.lzh
+% fkiss /usr/local/share/examples/fkiss/frkismi4.lzh
 
 - Seiichirou Hiraoka
 flathill@FreeBSD.ORG
