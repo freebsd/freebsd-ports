@@ -6631,6 +6631,7 @@ skill		ports/sysutils/skill
 skip		ports/security/skip
 skipstone	ports/www/skipstone
 sl		ports/games/sl
+slash		ports/www/slash
 slashem-tty	ports/games/slashem-tty
 slattach	src/sbin/slattach
 slay		ports/sysutils/slay
