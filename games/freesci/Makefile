@@ -8,9 +8,11 @@
 PORTNAME=		freesci
 PORTVERSION=		0.3.1
 CATEGORIES=		emulators
-MASTER_SITES=		ftp://ftp.linuxgames.com/freesci/
+MASTER_SITES=		ftp://ftp.task.gda.pl/pub/games/linuxgames/freesci/ \
+			ftp://ftp.shaftnet.org/pub/freesci/ \
+			http://pelit.saunalahti.fi/telenation/linuxgames/freesci/
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=		greid@FreeBSD.org
 
 LIB_DEPENDS=		ggi.2:${PORTSDIR}/graphics/libggi \
 			png.4:${PORTSDIR}/graphics/png
