@@ -8513,6 +8513,7 @@ tosvcd		ports/multimedia/tosvcd
 totd		ports/dns/totd
 totem		ports/multimedia/totem
 towitoko	ports/devel/towitoko
+tpad		ports/editors/tpad
 tpasm		ports/devel/tpasm
 tpg		ports/devel/tpg
 tpop3d		ports/mail/tpop3d
