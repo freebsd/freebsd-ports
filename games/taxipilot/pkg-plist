@@ -399,6 +399,8 @@ share/doc/HTML/en/taxipilot/index.docbook
 share/icons/locolor/16x16/apps/taxipilot.png
 share/icons/locolor/32x32/apps/taxipilot.png
 @dirrm share/doc/HTML/en/taxipilot
+@dirrm share/applnk/Games
+@dirrm share/applnk
 @dirrm share/apps/taxipilot/game_data/stefan/crashandburn/levels/sounds
 @dirrm share/apps/taxipilot/game_data/stefan/crashandburn/levels/objects
 @dirrm share/apps/taxipilot/game_data/stefan/crashandburn/levels
