@@ -33,6 +33,8 @@ CLASS_SUBDIRS=	base emulation emacs examples extensions lyx themes
 DOC_SUBDIRS=	AUTHORS ChangeLog FILES INSTALL README TODO \
 		doc solutions
 
+IGNORE=		is already included in the teTeX distribution
+
 pre-install:
 	${RM} -f ${PLIST}
 	${TOUCH} ${PLIST}
@@ -41,7 +43,6 @@ pre-install:
 		${SED} -e "s%^%${CLASSDIR:S,^${PREFIX}/,,}/%"; \
 		${FIND} ${CLASS_SUBDIRS} -type d | \
 		${SORT} -r | ${SED} -e "s,^,@dirrm ${CLASSDIR:S,^${PREFIX}/,,}/,"; \
-		${ECHO_CMD} "@dirrm ${CLASSDIR:S,^${PREFIX}/,,}"; \
 	) >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ( \
