@@ -102,6 +102,7 @@
     SUBDIR += npadmin
     SUBDIR += nut
     SUBDIR += nwclient
+    SUBDIR += nwclient602
     SUBDIR += obliterate
     SUBDIR += p5-Filesys-DiskSpace
     SUBDIR += p5-LJ-Cache
