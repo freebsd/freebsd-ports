@@ -16,6 +16,8 @@ PKGNAMESUFFIX?=	-portable
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The portable version of OpenBSD's OpenSSH
 
+FORBIDDEN=	Security Problem with PAM
+
 MAN1=	sftp.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh-keyscan.1 scp.1 ssh.1
 MLINKS=	ssh.1 slogin.1
 MAN5=	ssh_config.5 sshd_config.5
