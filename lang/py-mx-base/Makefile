@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mx-base
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.lemburg.com/files/python/ \
 		${MASTER_SITE_LOCAL}
@@ -21,13 +21,14 @@ BUILD_DEPENDS=	${PYDISTUTILS}
 USE_PYTHON=	yes
 
 DOCDIR=		${PREFIX}/share/doc/py-mx
-MXHDRDIR=	${PYTHON_SITELIBDIR}/mx/stdlib
+MXHDRDIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/mx/stdlib
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py build)
 
 do-install:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install \
+	--prefix=${PREFIX})
 
 post-install:
 	@${MKDIR} ${DOCDIR}
