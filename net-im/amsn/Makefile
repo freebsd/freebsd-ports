@@ -24,6 +24,8 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/msn
 
 BROKEN=		"Broken dependencies"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-21
 
 LIBDIR=		${PREFIX}/lib/msn
 DOCSDIR=	${PREFIX}/share/doc/amsn
