@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkhx
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gtkhx
@@ -20,6 +20,7 @@ LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf:install \
 USE_XLIB=	yes
 USE_GLIB=	yes
 USE_GTK=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
 
