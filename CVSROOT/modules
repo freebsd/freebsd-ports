@@ -10063,6 +10063,7 @@ sectar		ports/archivers/sectar
 sectok		ports/security/sectok
 security_hydra	ports/security/hydra
 sed_inplace	ports/textproc/sed_inplace
+seda		ports/net/seda
 sedsed		ports/devel/sedsed
 seejpeg		ports/graphics/seejpeg
 seizedesktop	ports/misc/seizedesktop
