@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellmvolume
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.4
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
 DISTNAME=	gkrellm-volume-${PORTVERSION}
@@ -16,7 +16,7 @@ MAINTAINER=	ume@FreeBSD.org
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-WRKSRC=		${WRKDIR}/gkrellm-volume2-${PORTVERSION}
+WRKSRC=		${WRKDIR}/gkrellm-volume
 
 USE_X_PREFIX=	yes
 
