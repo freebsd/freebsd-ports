@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	romp
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	net ruby
-MASTER_SITES=	http://rm-f.net/~cout/code/ruby/romp/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://rubystuff.org/romp/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} romp.html
 DIST_SUBDIR=	ruby
@@ -35,8 +32,7 @@ post-extract:
 .for f in romp.rb
 	${MV} ${WRKSRC}/${f} ${WRKSRC}/lib/
 .endfor
-	${CP} ${_DISTDIR}/romp.html ${WRKSRC}/
-	${RM} -f ${WRKSRC}/druby4*
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/romp.html ${WRKSRC}/
 
 post-patch:
 	${RUBY} -i~ -pe 'sub /^(#include\s*<stdint\.h>)/, "/*\\1*/"' ${WRKSRC}/*.c
