@@ -1,6 +1,6 @@
---- unarj.h.orig	Wed Jun 23 06:07:20 1993
-+++ unarj.h	Wed Jan 21 15:03:39 1998
-@@ -104,9 +104,13 @@
+--- unarj.h.orig	Mon Sep 29 14:00:24 1997
++++ unarj.h	Thu Feb 18 01:06:10 1999
+@@ -106,8 +106,12 @@
  #endif
  
  typedef unsigned char  uchar;   /*  8 bits or more */
@@ -13,4 +13,3 @@
  typedef unsigned long  ulong;   /* 32 bits or more */
  
  #define USHRT_BIT   (CHAR_BIT * sizeof(ushort))
- 
