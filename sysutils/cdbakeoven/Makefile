@@ -12,7 +12,7 @@ CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	michaelnottebrock@gmx.net
+MAINTAINER=	lofi@freebsd.org
 COMMENT=	KDE frontend for cdrecord and mkisofs/mkhybrid
 
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
