@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.12 1996/12/18 05:06:26 obrien Exp $
+# $Id: Makefile,v 1.13 1996/12/25 13:58:58 obrien Exp $
 
 DISTNAME=	${PKGNAME}-export
 PKGNAME=	mutt-0.55
@@ -15,21 +15,28 @@ MASTER_SITES=	ftp://cs.hmc.edu/pub/me/mutt/  \
 		ftp://ftp.teuto.de/pub/user/lmb/  \
 		ftp://ftp.funet.fi/pub/unix/mail/mutt/
 
-PATCH_SITES=	ftp://nuxi.cs.ucdavis.edu/pub/mutt/${PKGNAME:S/^mutt-//}/  \
-		http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
+PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
+		ftp://nuxi.cs.ucdavis.edu/pub/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.efrei.fr/~parmelan/mutt/${PKGNAME:S/^mutt-//}/  \
 		ftp://www.frmug.org/pub/mutt/mutt/${PKGNAME:S/^mutt-//}/
 PATCHFILES=	02.externally.PATCH  \
 		03.ispell.PATCH  \
-		04.savename.PATCH
+		04.savename.PATCH  \
+		05.hdrloop.PATCH  \
+		07.mboxhook.PATCH  \
+		08.keypad.PATCH  \
+		09.quote_regexp.PATCH  \
+		10.mark-as-new.PATCH  \
+		06.buffy.PATCH	# other patches need to be before this one
 
-MAINTAINER=     obrien@cs.ucdavis.edu
+MAINTAINER=     obrien@FreeBSD.org
 
 DIST_SUBDIR=	mutt
 WRKSRC=		${WRKDIR}/${PKGNAME}
 #PATCH_DIST_STRIP=	-p2
-PATCH_DIST_STRIP=	
+PATCH_DIST_STRIP=	-p1
+#PATCH_DIST_STRIP=	
 GNU_CONFIGURE=	yes
 MAN1=		mutt.1
 
@@ -40,7 +47,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Mutt documentation"
 	@${MKDIR} ${PREFIX}/share/doc/mutt && chmod a+rx ${PREFIX}/share/doc/mutt
-	@${INSTALL_DATA} ${WRKSRC}/doc/*  \
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.latin1 ${WRKSRC}/doc/*.html  \
 		${PREFIX}/share/doc/mutt
 .endif
 

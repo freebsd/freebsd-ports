@@ -1,0 +1,20 @@
+--- doc/makefile.orig	Thu Oct  3 16:40:44 1996
++++ doc/makefile	Tue Dec 31 05:40:21 1996
+@@ -1,10 +1,16 @@
++fbsd: manual.latin1 manual.html
++
+ all: manual.txt manual.html
+ 
+ manual.txt: manual.sgml
+ 	sgml2txt manual
+ 
+ manual.html: manual.sgml
+-	sgml2html manual
++	#sgml2html manual
++	sgmlfmt -f html manual
++
++manual.latin1: manual.sgml
++	sgmlfmt -f latin1 manual.sgml
+ 
+ clean:
+ 	rm -f *~
