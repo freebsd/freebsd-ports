@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.47 1997/08/26 16:34:04 wosch Exp $
+# $Id: Makefile,v 1.48 1997/09/12 08:14:34 tg Exp $
 #
 
     SUBDIR += a2ps
     SUBDIR += acroread
     SUBDIR += afm
     SUBDIR += apsfilter
+    SUBDIR += asprint
     SUBDIR += bibcard
     SUBDIR += bibview
     SUBDIR += c2ps
