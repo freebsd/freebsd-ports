@@ -1,0 +1,17 @@
+The ABA JCE is a clean room implementation of the Java Cryptography
+Extension (JCE) API as defined by Sun MicrosystemsTM, plus a provider of
+underlying crypto algorithms. This package does not include any native code.
+
+This JCE is based on the early access beta2 version of the JCE as available
+from the Java Developer ConnectionTM early access area. Since the Sun JCE is
+written for JDK 1.2, there are three versions of the library included. One
+which is compatible with JDK 1.02, one with JDK 1.1 and one with JDK 1.2
+(tested against JDK 1.2fcs).
+
+The source for each version of the libraries may be found in this package as
+src-1.x.zip. These archives may be unzipped using the jar tool or a zip
+compatible archiver.
+
+This package is covered by the ABA Public Licence. Please ensure you review
+this licence before making use of this package. Support contracts are also
+available.
