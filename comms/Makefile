@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.18 1996/09/25 20:39:03 max Exp $
+# $Id: Makefile,v 1.19 1996/11/03 04:52:10 obrien Exp $
 #
 
     SUBDIR += bpl+
@@ -10,5 +10,6 @@
     SUBDIR += minicom
     SUBDIR += rzsz
     SUBDIR += seyon
+    SUBDIR += xcept
 
 .include <bsd.port.subdir.mk>
