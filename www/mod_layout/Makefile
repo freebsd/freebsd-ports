@@ -6,32 +6,24 @@
 #
 
 PORTNAME=	mod_layout
-PORTVERSION=	2.8.2
+PORTVERSION=	2.10.6
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.tangent.org/pub/apache/ \
 		http://www.tangent.org/mod_layout/
 
-MAINTAINER=	mi@aldan.algebra.com
+MAINTAINER=	petef@databits.net
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 
-do-build:
-	cd ${WRKSRC} && ${LOCALBASE}/sbin/apxs -c *.c
-
-do-install:
-	cd ${WRKSRC} && ${LOCALBASE}/sbin/apxs -A -i ${PORTNAME}.so
-
-.if !defined(NOPORTDOCS)
-PLIST_SUB+=	DOC=''
+post-patch:
+	@${PERL} -pi -e 's!-i -a -n!-i -A -n!' ${WRKSRC}/Makefile
 
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/*.html \
-		${PREFIX}/share/doc/${PORTNAME}
-
-.else
-PLIST_SUB+=	DOC='@comment '
+	${INSTALL_DATA} ${WRKSRC}/faq.html ${PREFIX}/share/doc/${PORTNAME}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
