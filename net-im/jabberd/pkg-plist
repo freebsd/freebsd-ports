@@ -12,5 +12,6 @@ etc/jabberd/router.xml.dist
 etc/jabberd/s2s.xml.dist
 etc/jabberd/sm.xml.dist
 etc/jabberd/templates/roster.xml.dist
+etc/rc.d/jabberd.sh-dist
 @dirrm etc/jabberd/templates
 @dirrm etc/jabberd
