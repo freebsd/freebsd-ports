@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	offlineimap
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.6
 CATEGORIES=	mail
 MASTER_SITES=	http://gopher.quux.org:70/devel/offlineimap/
-DISTNAME=	offlineimap_3.2.2
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	nbm@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
@@ -23,7 +23,7 @@ MAN1=		offlineimap.1
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/offlineimap.py ${PREFIX}/bin/offlineimap
 	${INSTALL_MAN} ${WRKSRC}/offlineimap.1 ${MANPREFIX}/man/man1/
-	${MKDIR} ${PREFIX}/share/examples/offlineimap
-	${INSTALL_DATA} ${WRKSRC}/offlineimap.conf ${PREFIX}/share/examples/offlineimap
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/offlineimap.conf ${EXAMPLESDIR}
 
 .include <bsd.port.mk>
