@@ -1,34 +1,22 @@
-# New ports collection makefile for:   libPropListgnome
-# Version required:    2.6
-# Date Created:                6 December 1998
-# Whom:                        Glenn Johnson
+# New ports collection makefile for:	libPropList
+# Version required:			0.8.3
+# Date Created:				6 December 1998
+# Whom:					Glenn Johnson
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/09 05:11:56 vanilla Exp $
+# $Id: Makefile,v 1.2 1999/01/27 08:31:49 fenner Exp $
 #
 
-DISTNAME=	libPropList-0.7.1gnome
-PKGNAME=	libproplistgnome-0.7.1
-CATEGORIES=	devel
+DISTNAME=	libPropList-0.8.3
+PKGNAME=	libproplist-0.8.3
+CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	libPropList
 
 MAINTAINER=    gljohns@bellsouth.net
 
-WRKSRC=		${WRKDIR}/libPropList
-USE_X_PREFIX=	yes
-
-.include <bsd.port.pre.mk>
-
-pre-build:
-	${CP} ${FILESDIR}/makefile.lib ${WRKSRC}/Makefile
-	bison -d ${WRKSRC}/proplist.y -o ${WRKSRC}/proplist.tab.c
-	flex -t -B ${WRKSRC}/proplist.l > ${WRKSRC}/lex.pl.c
+GNU_CONFIGURE=	yes
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/proplist.h ${PREFIX}/include/proplistgnome.h
-	@if [ "${PORTOBJFORMAT}" = "aout" ]; then \
-	${LN} -sf libPropListgnome.so.1.0 ${PREFIX}/lib/libPropListgnome.so; \
-	fi
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
