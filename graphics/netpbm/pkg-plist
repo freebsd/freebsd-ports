@@ -25,6 +25,7 @@ bin/hpcdtoppm
 bin/icontopbm
 bin/ilbmtoppm
 bin/imgtoppm
+bin/infotopam
 bin/jbigtopnm
 bin/jpegtopnm
 bin/leaftoppm
@@ -43,13 +44,17 @@ bin/pamcomp
 bin/pamcut
 bin/pamdeinterlace
 bin/pamdice
+bin/pamditherbw
 bin/pamedge
 bin/pamendian
 bin/pamfile
 bin/pamflip
 bin/pamfunc
+bin/pamgauss
 bin/pamlookup
+bin/pammasksharpen
 bin/pamoil
+bin/pamperspective
 bin/pampop9
 bin/pamscale
 bin/pamseq
@@ -57,12 +62,15 @@ bin/pamsharpmap
 bin/pamsharpness
 bin/pamslice
 bin/pamstack
+bin/pamstereogram
 bin/pamstretch
 bin/pamstretch-gen
 bin/pamsumm
 bin/pamsummcol
+bin/pamtodjvurle
 bin/pamtohdiff
 bin/pamtohtmltbl
+bin/pamtopfm
 bin/pamtopnm
 bin/pamtotga
 bin/pamtouil
@@ -81,6 +89,7 @@ bin/pbmtoascii
 bin/pbmtoatk
 bin/pbmtobbnbg
 bin/pbmtocmuwm
+bin/pbmtodjvurle
 bin/pbmtoepsi
 bin/pbmtoepson
 bin/pbmtoescp2
@@ -110,8 +119,10 @@ bin/pbmtoxbm
 bin/pbmtoybm
 bin/pbmtozinc
 bin/pbmupc
+bin/pc1toppm
 bin/pcdovtoppm
 bin/pcxtoppm
+bin/pfmtopam
 bin/pgmabel
 bin/pgmbentley
 bin/pgmcrater
@@ -175,7 +186,6 @@ bin/pnmsplit
 bin/pnmstitch
 bin/pnmtile
 bin/pnmtoddif
-bin/ppmtodjvurle
 bin/pnmtofiasco
 bin/pnmtofits
 bin/pnmtojbig
@@ -184,6 +194,7 @@ bin/pnmtopalm
 bin/pnmtopclxl
 bin/pnmtoplainpnm
 bin/pnmtopng
+bin/pnmtopnm
 bin/pnmtops
 bin/pnmtorast
 bin/pnmtorle
