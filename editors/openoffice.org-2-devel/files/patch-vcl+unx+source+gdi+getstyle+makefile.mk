@@ -1,11 +1,13 @@
---- ../vcl/unx/source/gdi/getstyle/makefile.mk.orig	Sat Oct 19 19:11:55 2002
-+++ ../vcl/unx/source/gdi/getstyle/makefile.mk	Sat Oct 19 19:11:58 2002
-@@ -73,7 +73,7 @@
- 
- # --- Files --------------------------------------------------------
- 
--.IF "$(OS)$(CPU)"=="LINUXI"
-+.IF "$(OS)$(CPU)"=="LINUXI" || "$(OS)$(CPU)"=="FREEBSDI"
+--- ../vcl/unx/source/gdi/getstyle/makefile.mk.orig	Thu Feb 20 18:28:59 2003
++++ ../vcl/unx/source/gdi/getstyle/makefile.mk	Wed Mar  5 19:23:22 2003
+@@ -78,6 +78,10 @@
  GETSTYLE_GNOME=getstyle-gnome-linux-intel
+ HASGNOME2=TRUE
  .ENDIF
++.IF "$(OS)$(CPU)"=="FREEBSDI"
++GETSTYLE_GNOME=getstyle-gnome-freebsd-intel
++HASGNOME2=TRUE
++.ENDIF
  .IF "$(OS)$(CPU)"=="SOLARISS"
+ GETSTYLE_GNOME=getstyle-gnome-solaris-sparc
+ HASGNOME2=TRUE

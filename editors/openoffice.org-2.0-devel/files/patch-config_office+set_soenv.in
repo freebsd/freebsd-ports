@@ -1,23 +1,44 @@
---- set_soenv.in.orig	Sat Oct 19 12:16:51 2002
-+++ set_soenv.in	Sat Oct 19 12:17:36 2002
-@@ -933,6 +933,9 @@
- elsif ($platform eq "$FreeBSD")
- {  $LD_LIBRARY_PATH   = $cur_dir.
-                         $ps.'$SOLARENV'.$ds.'$INPATH'.$LIB.
-+                        $ps.$JRELIBDIR.
-+                        $ps.$JRETOOLKITDIR.
-+                        $ps.$JRETHREADDIR.
-                         $ps.$par_dir.$LIB.
- 			$ps_STLPORT_LIB.
-                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$LIB;
-@@ -1092,6 +1095,10 @@
-                         $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
-                         $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-                         $ps.'$SOLARENV'.$BIN;
-+   if ( $JAVA_HOME ne "" )
-+   {
-+      $PATH .=          $ps.'$JAVA_HOME'.$BIN;
-+   }
+--- set_soenv.in.orig	Thu Feb 27 15:12:36 2003
++++ set_soenv.in	Wed Mar  5 21:16:43 2003
+@@ -52,7 +52,7 @@
+ #-------------------------------------------------
+ #
+ # Platform independent constant values.
+-my @LANGUAGES = ("ARAB", "CHINSIM", "CHINTRAD", "DAN", "DTCH", "ENUS", "FREN", "GREEK", "ITAL",
++my @LANGUAGES = ("ARAB", "CHINSIM", "CHINTRAD", "DAN", "DTCH", "ENUS", "FREN", "GREEK", "ITAL", "GER",
+ "JAPN", "KOREAN", "POL", "PORT", "RUSS", "SPAN", "SWED", "TURK" ); 
+ my ( $CALL_CDECL, $COMMON_OUTDIR, $NO_SRS_PATCH, $PRODUCT, $PROFULLSWITCH, $BIG_GOODIES, $BMP_WRITES_FLAG, 
+      $common_build, $MK_UNROLL, $NO_REC_RES, $PROEXT, $SO3, $SOLAR_JAVA, 
+@@ -88,7 +88,7 @@
+      $SOLARINC, $LOCALINI, $MAC_LIB, $PATHEXTRA, $FRAMEWORKSHOME, $COMEX, $MULTITHREAD_OBJ, $PERL, 
+      $COMP_ENV, $IENV, $ILIB, $WIN_INCLUDE, $JAVAHOME, $WIN_LIB, $WIN_HOME, $PSDK_HOME, $USE_NEW_SDK, $NO_HIDS,
+      $BISON_HAIRY, $BISON_SIMPLE, $TEMP, $COMMON_BUILD_TOOLS, $WIN_GREP, $WIN_FIND, $WIN_LS,
+-     $WIN_GNUCOPY, $WIN_TOUCH, $STLPORT4, $USE_GCC3, $ENABLE_DEBUG );
++     $WIN_GNUCOPY, $WIN_TOUCH, $STLPORT4, $USE_GCC3, $ENABLE_DEBUG, $USE_LINUXJDK );
+ #
+ #-------------------------------------------
+ # IId. Declaring the aliases.
+@@ -140,7 +140,8 @@
+ $CC			= '@CC@';           # C compiler
+ $CXX		= '@CXX@';          # C++ compiler
+ $EXCEPTIONS	= '@EXCEPTIONS@';   # Exception handling type
+-$ENABLE_DEBUG	= '@ENABLE_DEBUG@';  # Enable a debug build
++$ENABLE_DEBUG	= '@ENABLE_DEBUG@'; # Enable a debug build
++$USE_LINUXJDK	= '@USE_LINUXJDK@'; # Use the Linux JDK
+ $WRAPCMD	= "";				# Wrapper (only for winnt)
  
-    $PATH             .= $ps.$oldPATH;
+ #
+@@ -1265,7 +1266,12 @@
+ {  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
  }
+ elsif ($platform eq "$FreeBSD")
+-{  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."freebsd";
++{
++   if ($USE_LINUXJDK eq "TRUE") {
++       $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
++   } else {
++       $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."freebsd";
++   }
+ }
+ elsif ($platform eq "$NetBSD")
+ {  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."netbsd";

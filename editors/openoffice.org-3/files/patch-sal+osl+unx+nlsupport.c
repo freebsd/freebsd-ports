@@ -1,11 +1,11 @@
---- ../sal/osl/unx/nlsupport.c.orig	Wed Apr 10 18:11:58 2002
-+++ ../sal/osl/unx/nlsupport.c	Fri Oct 18 23:31:19 2002
+--- ../sal/osl/unx/nlsupport.c.orig	Tue Jan 28 15:51:36 2003
++++ ../sal/osl/unx/nlsupport.c	Wed Mar  5 21:03:13 2003
 @@ -63,7 +63,7 @@
  #include <osl/diagnose.h>
  #include <osl/process.h>
  
--#if defined(LINUX) || defined(SOLARIS)
-+#if defined(LINUX) || defined(SOLARIS) || defined(NETBSD) || defined(FREEBSD) || defined(IRIX)
+-#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD)
++#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD)
  #include <pthread.h>
  #include <locale.h>
  #include <langinfo.h>
@@ -19,23 +19,26 @@
              lower = current + 1;
          else
              return base + current;
-@@ -241,12 +240,13 @@
+@@ -241,12 +240,14 @@
      return NULL;
  }
          
--#if defined(LINUX) || defined(SOLARIS)
-+#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(FREEBSD) || defined(NETBSD)
+-#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD)
++#if defined(LINUX) || defined(SOLARIS) || defined(IRIX) || defined(NETBSD) || defined(FREEBSD)
  
  /*
-  * This implementation of osl_getTextEncodingFromLocale maps 
-  * from nl_langinfo(CODESET) to rtl_textencoding defines. 
-- * nl_langinfo() is supported only on Linux and Solaris. 
+- * This implementation of osl_getTextEncodingFromLocale maps 
+- * from nl_langinfo(CODESET) to rtl_textencoding defines. 
+- * nl_langinfo() is supported only on Linux, Solaris and IRIX. 
++ * This implementation of osl_getTextEncodingFromLocale maps
++ * from nl_langinfo(CODESET) to rtl_textencoding defines.
++ * nl_langinfo() is supported only on Linux and Solaris.
 + * nl_langinfo() is supported only on Linux, Solaris and IRIX,
 + * >= NetBSD 1.6 and >= FreeBSD 4.4
   *
   * This routine is SLOW because of the setlocale call, so
   * grab the result and cache it.
-@@ -260,6 +260,12 @@
+@@ -260,6 +261,12 @@
  #endif
  #endif
  
@@ -48,17 +51,27 @@
  
  #if defined(SOLARIS)
  
-@@ -478,7 +484,79 @@
-     { "WIN-SAMI-2",                 RTL_TEXTENCODING_DONTKNOW }     /* WS2 */
- };
+@@ -300,23 +307,23 @@
+ #elif defined(IRIX)
  
--#endif /* ifdef LINUX */
-+#elif defined(IRIX)
-+
-+const _pair _nl_language_list[] = {
+ const _pair _nl_language_list[] = {
+-   { "ISO8859-1",  	RTL_TEXTENCODING_ISO_8859_1	}, /* Western */
+-   { "ISO8859-2",  	RTL_TEXTENCODING_ISO_8859_2     }, /* Central European */
+-   { "ISO8859-5",  	RTL_TEXTENCODING_ISO_8859_5     }, /* Cyrillic */
+-   { "ISO8859-7",  	RTL_TEXTENCODING_ISO_8859_7    	}, /* Greek */
+-   { "ISO8859-9",  	RTL_TEXTENCODING_ISO_8859_9     }, /* Turkish */
+-   { "ISO8859-15", 	RTL_TEXTENCODING_ISO_8859_15    }, /* Western Updated (w/Euro sign) */
+-   { "eucJP",		RTL_TEXTENCODING_EUC_JP 	}, /* Japan */
+-   { "eucKR",		RTL_TEXTENCODING_EUC_KR		}, /* Korea */
+-   { "eucCN",		RTL_TEXTENCODING_EUC_CN		}, /* China */
+-   { "eucTW",		RTL_TEXTENCODING_EUC_TW		}, /* Taiwan - Traditional Chinese */
+-   { "big5",		RTL_TEXTENCODING_BIG5		}, /* China - Traditional Chinese */
+-   { "eucgbk",		RTL_TEXTENCODING_DONTKNOW	}, /* China - Simplified Chinese */
+-   { "gbk",		RTL_TEXTENCODING_GBK		}, /* China - Simplified Chinese */
+-   { "sjis",		RTL_TEXTENCODING_SHIFT_JIS	}, /* Japan */
 +    { "BIG5",          RTL_TEXTENCODING_BIG5           }, /* China - Traditional Chinese */
 +    { "EUCCN",         RTL_TEXTENCODING_EUC_CN         }, /* China */
-+    { "EUCGBK",                RTL_TEXTENCODING_DONTKNOW       }, /* China - Simplified Chinese */
++    { "EUCGBK",        RTL_TEXTENCODING_DONTKNOW       }, /* China - Simplified Chinese */
 +    { "EUCJP",         RTL_TEXTENCODING_EUC_JP         }, /* Japan */
 +    { "EUCKR",         RTL_TEXTENCODING_EUC_KR         }, /* Korea */
 +    { "EUCTW",         RTL_TEXTENCODING_EUC_TW         }, /* Taiwan - Traditional Chinese */
@@ -70,14 +83,31 @@
 +    { "ISO8859-7",     RTL_TEXTENCODING_ISO_8859_7     }, /* Greek */
 +    { "ISO8859-9",     RTL_TEXTENCODING_ISO_8859_9     }, /* Turkish */
 +    { "SJIS",          RTL_TEXTENCODING_SHIFT_JIS      }  /* Japan */
-+  };
-+
+ };
+ 
+-#elif defined(LINUX) || defined(NETBSD)
++#elif defined(LINUX)
+ 
+ const _pair _nl_language_list[] = {
+     { "ANSI_X3.110-1983",           RTL_TEXTENCODING_DONTKNOW   },  /* ISO-IR-99 NAPLPS */
+@@ -491,13 +498,65 @@
+     { "T.101-G2",                   RTL_TEXTENCODING_DONTKNOW },    /* ISO-IR-128 */
+     { "T.61-7BIT",                  RTL_TEXTENCODING_DONTKNOW },    /* ISO-IR-102 */
+     { "T.61-8BIT",                  RTL_TEXTENCODING_DONTKNOW },    /* T.61 ISO-IR-103 */
+-    { "TIS-620",                     RTL_TEXTENCODING_MS_874 },     /* locale: th_TH */
++    { "TIS-620",                    RTL_TEXTENCODING_MS_874 },     /* locale: th_TH */
+     { "UTF-8",                      RTL_TEXTENCODING_UTF8 },        /* ISO-10646/UTF-8 */
+     { "VIDEOTEX-SUPPL",             RTL_TEXTENCODING_DONTKNOW },    /* ISO-IR-70 */
+     { "WIN-SAMI-2",                 RTL_TEXTENCODING_DONTKNOW }     /* WS2 */
+ };
+ 
+-#endif /* ifdef LINUX || NETBSD */
 +#elif defined(FREEBSD)
 +
 +const _pair _nl_language_list[] = {
 +    { "ASCII",         RTL_TEXTENCODING_ASCII_US       }, /* US-ASCII */
 +    { "BIG5",          RTL_TEXTENCODING_BIG5           }, /* China - Traditional Chinese */
-+    { "CP1251",                RTL_TEXTENCODING_MS_1251        }, /* MS-CYRL */
++    { "CP1251",        RTL_TEXTENCODING_MS_1251        }, /* MS-CYRL */
 +    { "CP866",         RTL_TEXTENCODING_IBM_866        }, /* CP866 866 */
 +    { "EUCCN",         RTL_TEXTENCODING_EUC_CN         }, /* China - Simplified Chinese */
 +    { "EUCJP",         RTL_TEXTENCODING_EUC_JP         }, /* Japan */
@@ -89,19 +119,19 @@
 +    { "ISO8859-5",     RTL_TEXTENCODING_ISO_8859_5     }, /* Cyrillic */
 +    { "ISO8859-7",     RTL_TEXTENCODING_ISO_8859_7     }, /* Greek */
 +    { "ISO8859-9",     RTL_TEXTENCODING_ISO_8859_9     }, /* Turkish */
-+    { "KOI-U",         RTL_TEXTENCODING_DONTKNOW       }, /* Not supported at the moment */
-+    { "KOI8-R",                RTL_TEXTENCODING_KOI8_R         }, /* KOI8 */
++    { "KOI8-R",        RTL_TEXTENCODING_KOI8_R         }, /* KOI8-R */
++    { "KOI8-U",        RTL_TEXTENCODING_KOI8_U         }, /* KOI8-U */
 +    { "SJIS",          RTL_TEXTENCODING_SHIFT_JIS      }, /* Japan */
 +    { "US-ASCII",      RTL_TEXTENCODING_ASCII_US       }, /* US-ASCII */
 +    { "UTF-8",         RTL_TEXTENCODING_UTF8           }  /* ISO-10646/UTF-8 */
-+ };
++};
 +
 +#elif defined(NETBSD)
 +
 +const _pair _nl_language_list[] = {
 +    { "ASCII",         RTL_TEXTENCODING_ASCII_US       }, /* US-ASCII */
 +    { "BIG5",          RTL_TEXTENCODING_BIG5           }, /* China - Traditional Chinese */
-+    { "CP1251",                RTL_TEXTENCODING_MS_1251        }, /* MS-CYRL */
++    { "CP1251",        RTL_TEXTENCODING_MS_1251        }, /* MS-CYRL */
 +    { "CP866",         RTL_TEXTENCODING_IBM_866        }, /* CP866 866 */
 +    { "CTEXT",         RTL_TEXTENCODING_ASCII_US       }, /* US-ASCII */
 +    { "EUCCN",         RTL_TEXTENCODING_EUC_CN         }, /* China - Simplified Chinese */
@@ -117,15 +147,14 @@
 +    { "ISO8859-5",     RTL_TEXTENCODING_ISO_8859_5     }, /* Cyrillic */
 +    { "ISO8859-7",     RTL_TEXTENCODING_ISO_8859_7     }, /* Greek */
 +    { "ISO8859-9",     RTL_TEXTENCODING_ISO_8859_9     }, /* Turkish */
-+    { "KOI-U",         RTL_TEXTENCODING_DONTKNOW       }, /* Not supported at the moment */
-+    { "KOI8-R",                RTL_TEXTENCODING_KOI8_R         }, /* KOI8 */
++    { "KOI8-R",        RTL_TEXTENCODING_KOI8_R         }, /* KOI8-R */
++    { "KOI8-U",        RTL_TEXTENCODING_KOI8_U         }, /* KOI8-U */
 +    { "SJIS",          RTL_TEXTENCODING_SHIFT_JIS      }, /* Japan */
 +    { "US-ASCII",      RTL_TEXTENCODING_ASCII_US       }, /* US-ASCII */
 +    { "UTF-8",         RTL_TEXTENCODING_UTF8           }  /* ISO-10646/UTF-8 */
 +};
 +
 +#endif /* ifdef SOLARIS IRIX LINUX FREEBSD NETBSD */
-+
  
  static pthread_mutex_t aLocalMutex = PTHREAD_MUTEX_INITIALIZER;
  

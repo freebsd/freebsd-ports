@@ -2,8 +2,12 @@
 #
 # $FreeBSD$
 
-oopath=%%PREFIX%%/OpenOffice.org-643/program/
+oopath=%%PREFIX%%/OpenOffice.org-%%BUILD_NR%%/program/
 program=`echo $0 | sed -e 's|.*-||'`
+
+if [ ! $LANG ]; then
+	export LANG=%%LANG%%
+fi
 
 case $program in
 $0)

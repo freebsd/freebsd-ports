@@ -1,15 +1,15 @@
---- ../stoc/source/javaloader/makefile.mk.orig	Tue Jan  1 14:12:02 2002
-+++ ../stoc/source/javaloader/makefile.mk
-@@ -83,9 +83,10 @@
+--- ../stoc/source/javaloader/makefile.mk.orig	Fri Dec  6 11:51:54 2002
++++ ../stoc/source/javaloader/makefile.mk	Wed Mar  5 19:35:11 2003
+@@ -83,10 +83,10 @@
  SHL1TARGET= $(TARGET)
  
  SHL1STDLIBS=\
-+		$(SALLIB)		\
++		$(SALLIB) \
  		$(CPPUHELPERLIB) 	\
--		$(CPPULIB)			\
--		$(SALLIB)
-+		$(CPPULIB)
-+
+ 		$(CPPULIB)			\
+-		$(SALLIB) \
+-        $(JVMACCESSLIB)
++		$(JVMACCESSLIB)
+ 
  SHL1VERSIONMAP=$(TARGET).map
  SHL1DEPN=		
- SHL1IMPLIB=		i$(TARGET)

@@ -1,15 +1,14 @@
---- ../eventattacher/source/makefile.mk.orig	Tue Jan  1 14:09:28 2002
-+++ ../eventattacher/source/makefile.mk
-@@ -110,10 +110,10 @@
+--- ../eventattacher/source/makefile.mk.orig	Tue Oct  1 09:45:21 2002
++++ ../eventattacher/source/makefile.mk	Wed Mar  5 21:06:11 2003
+@@ -104,9 +104,9 @@
  SHL1TARGET=	$(TARGET)
  
  SHL1STDLIBS= \
 +		$(SALLIB)					\
  		$(CPPULIB)					\
- 		$(CPPUHELPERLIB)				\
--		$(VOSLIB)					\
+-		$(CPPUHELPERLIB)				\
 -		$(SALLIB)
-+		$(VOSLIB)					
++		$(CPPUHELPERLIB)
  
  SHL1DEPN=
  SHL1IMPLIB=	i$(TARGET)
