@@ -39,13 +39,18 @@
 %%NAGDIR%%/locale/en_US/help.xml
 %%NAGDIR%%/locale/es_ES/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/fi_FI/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/fi_FI/help.xml
 %%NAGDIR%%/locale/fr_FR/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/hu_HU/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/it_IT/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/ko_KR/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/nl_NL/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/nn_NO/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/pt_BR/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ru_RU/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/sv_SE/LC_MESSAGES/nag.mo
+%%NAGDIR%%/locale/zh_CN/LC_MESSAGES/nag.mo
 %%NAGDIR%%/locale/zh_TW/LC_MESSAGES/nag.mo
 %%NAGDIR%%/menu.php
 %%NAGDIR%%/po/Makefile
@@ -56,12 +61,16 @@
 %%NAGDIR%%/po/extract.pl
 %%NAGDIR%%/po/fi_FI.po
 %%NAGDIR%%/po/fr_FR.po
+%%NAGDIR%%/po/hu_HU.po
 %%NAGDIR%%/po/it_IT.po
+%%NAGDIR%%/po/ko_KR.po
 %%NAGDIR%%/po/nl_NL.po
+%%NAGDIR%%/po/nn_NO.po
 %%NAGDIR%%/po/pt_BR.po
 %%NAGDIR%%/po/ru_RU.po
 %%NAGDIR%%/po/ru_RU.KOI8-R.po
 %%NAGDIR%%/po/sv_SE.po
+%%NAGDIR%%/po/zh_CN.po
 %%NAGDIR%%/po/zh_TW.po
 %%NAGDIR%%/po/shtool
 %%NAGDIR%%/po/xgettext.sh
@@ -109,10 +118,16 @@
 @dirrm %%NAGDIR%%/locale/fi_FI
 @dirrm %%NAGDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/fr_FR
+@dirrm %%NAGDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/hu_HU
 @dirrm %%NAGDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/it_IT
+@dirrm %%NAGDIR%%/locale/ko_KR/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/ko_KR
 @dirrm %%NAGDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/nl_NL
+@dirrm %%NAGDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/nn_NO
 @dirrm %%NAGDIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/pt_BR
 @dirrm %%NAGDIR%%/locale/ru_RU/LC_MESSAGES
@@ -121,6 +136,8 @@
 @dirrm %%NAGDIR%%/locale/ru_RU.KOI8-R
 @dirrm %%NAGDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/sv_SE
+@dirrm %%NAGDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%NAGDIR%%/locale/zh_CN
 @dirrm %%NAGDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%NAGDIR%%/locale/zh_TW
 @dirrm %%NAGDIR%%/locale
@@ -137,3 +154,4 @@
 @dirrm %%NAGDIR%%
 etc/horde/httpd.conf.nag
 %%PORTDOCS%%@dirrm share/doc/nag
+@unexec if cmp -s %D/www/horde/config/registry.php %D/www/horde/config/registry.php.afterNag; then rm -f %D/www/horde/config/registry.php.afterNag; mv %D/www/horde/config/registry.php.beforeNag %D/www/horde/config/registry.php; fi
