@@ -40,6 +40,16 @@ PLIST_SUB+=		X11="@comment "
 .else
 PLIST_SUB+=		X11=""
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (missing -fPIC)"
+.endif
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Hangs during configure"
+.endif
+
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 pre-configure:
 	@if "${X11BASE}/bin/rxvt" -h 2>&1 | ${GREP} -qi menubar; then \
@@ -57,4 +67,4 @@ post-configure:
 	${ECHO_MSG} 'CONFIG_MMAP=y' >> ${WRKSRC}/config
 	${GMAKE} -C ${WRKSRC} dep
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
