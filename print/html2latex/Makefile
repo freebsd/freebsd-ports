@@ -10,7 +10,7 @@ DISTNAME=	html2latex-0.9c
 PKGNAME=	html2latex-0.9
 CATEGORIES=	print
 # I can't seem to find the original dist site
-MASTER_SITES=	ftp://ftp.germany.eu.net/pub/infosystems/www/ncsa/Web/Mosaic/Contrib/
+MASTER_SITES=	ftp://ftp.interface-business.de/pub/outgoing/
 DISTFILES=	html2latex-0.9c.tar.Z
 
 MAINTAINER=	joerg@FreeBSD.org
