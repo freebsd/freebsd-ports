@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	biopython
-PORTVERSION=	1.00.a3
-PORTREVISION=	1
+PORTVERSION=	1.00.a4
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/Download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -73,6 +72,10 @@ PLIST_CORBA=	"@comment "
 PLIST_OMNIORB=	"@comment "
 PLIST_FNORB=	"@comment "
 .endif	# defined(WITH_CORBA)
+
+.if !defined(WITHOUT_REPORTLAB)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab
+.endif
 
 pre-fetch:
 .if !defined(BATCH) && !defined(WITH_CORBA)
