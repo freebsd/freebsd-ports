@@ -52,6 +52,44 @@ etc/apache/tables/czech/cp1250-cp437.tab
 etc/apache/tables/czech/cp1250-cp895.tab
 etc/apache/tables/czech/cp1250-koi8cs.tab
 etc/apache/tables/czech/cp1250-latin2.tab
+etc/apache/tables/ukrainian/alt-koi.tab
+etc/apache/tables/ukrainian/alt-mac.tab
+etc/apache/tables/ukrainian/alt-win.tab
+etc/apache/tables/ukrainian/koi-alt.tab
+etc/apache/tables/ukrainian/koi-mac.tab
+etc/apache/tables/ukrainian/koi-win.tab
+etc/apache/tables/ukrainian/mac-alt.tab
+etc/apache/tables/ukrainian/mac-koi.tab
+etc/apache/tables/ukrainian/mac-win.tab
+etc/apache/tables/ukrainian/win-alt.tab
+etc/apache/tables/ukrainian/win-koi.tab
+etc/apache/tables/ukrainian/win-mac.tab
+etc/apache/tables/ukrainian2/alt-koi8u.tab
+etc/apache/tables/ukrainian2/alt-ruscii.tab
+etc/apache/tables/ukrainian2/alt-trans.tab
+etc/apache/tables/ukrainian2/alt-win.tab
+etc/apache/tables/ukrainian2/koi-koi8u.tab
+etc/apache/tables/ukrainian2/koi8u-alt.tab
+etc/apache/tables/ukrainian2/koi8u-iso.tab
+etc/apache/tables/ukrainian2/koi8u-koi.tab
+etc/apache/tables/ukrainian2/koi8u-mac.tab
+etc/apache/tables/ukrainian2/koi8u-ruscii.tab
+etc/apache/tables/ukrainian2/koi8u-trans.tab
+etc/apache/tables/ukrainian2/koi8u-win.tab
+etc/apache/tables/ukrainian2/ruscii-alt.tab
+etc/apache/tables/ukrainian2/ruscii-iso.tab
+etc/apache/tables/ukrainian2/ruscii-koi.tab
+etc/apache/tables/ukrainian2/ruscii-koi8u.tab
+etc/apache/tables/ukrainian2/ruscii-mac.tab
+etc/apache/tables/ukrainian2/ruscii-trans.tab
+etc/apache/tables/ukrainian2/ruscii-win.tab
+etc/apache/tables/ukrainian2/win-alt.tab
+etc/apache/tables/ukrainian2/win-iso.tab
+etc/apache/tables/ukrainian2/win-koi.tab
+etc/apache/tables/ukrainian2/win-koi8u.tab
+etc/apache/tables/ukrainian2/win-mac.tab
+etc/apache/tables/ukrainian2/win-ruscii.tab
+etc/apache/tables/ukrainian2/win-trans.tab
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
@@ -61,6 +99,7 @@ include/apache/ap_config_auto.h
 include/apache/ap_ctype.h
 include/apache/ap_md5.h
 include/apache/ap_mmn.h
+include/apache/ap_sha1.h
 include/apache/buff.h
 include/apache/compat.h
 include/apache/conf.h
@@ -85,6 +124,18 @@ include/apache/util_date.h
 include/apache/util_md5.h
 include/apache/util_script.h
 include/apache/util_uri.h
+include/apache/xml/asciitab.h
+include/apache/xml/hashtable.h
+include/apache/xml/iasciitab.h
+include/apache/xml/latin1tab.h
+include/apache/xml/nametab.h
+include/apache/xml/utf8tab.h
+include/apache/xml/xmldef.h
+include/apache/xml/xmlparse.h
+include/apache/xml/xmlrole.h
+include/apache/xml/xmltok.h
+include/apache/xml/xmltok_impl.h
+libexec/apache/httpd.exp
 libexec/apache/libproxy.so
 libexec/apache/mod_auth_anon.so
 libexec/apache/mod_auth_db.so
@@ -98,6 +149,7 @@ libexec/apache/mod_rewrite.so
 libexec/apache/mod_speling.so
 libexec/apache/mod_unique_id.so
 libexec/apache/mod_usertrack.so
+libexec/apache/mod_vhost_alias.so
 sbin/ab
 sbin/apachectl
 sbin/apxs
@@ -173,6 +225,7 @@ share/doc/apache/manual/mod/mod_auth.html
 share/doc/apache/manual/mod/mod_auth_anon.html
 share/doc/apache/manual/mod/mod_auth_db.html
 share/doc/apache/manual/mod/mod_auth_dbm.html
+share/doc/apache/manual/mod/mod_auth_digest.html
 share/doc/apache/manual/mod/mod_autoindex.html
 share/doc/apache/manual/mod/mod_browser.html
 share/doc/apache/manual/mod/mod_cern_meta.html
@@ -207,6 +260,7 @@ share/doc/apache/manual/mod/mod_status.html
 share/doc/apache/manual/mod/mod_unique_id.html
 share/doc/apache/manual/mod/mod_userdir.html
 share/doc/apache/manual/mod/mod_usertrack.html
+share/doc/apache/manual/mod/mod_vhost_alias.html
 share/doc/apache/manual/multilogs.html
 share/doc/apache/manual/new_features_1_0.html
 share/doc/apache/manual/new_features_1_1.html
@@ -351,8 +405,11 @@ www/icons/world2.gif
 @dirrm etc/apache/tables/russian
 @dirrm etc/apache/tables/russian2
 @dirrm etc/apache/tables/czech
+@dirrm etc/apache/tables/ukrainian
+@dirrm etc/apache/tables/ukrainian2
 @dirrm etc/apache/tables
 @dirrm etc/apache
+@dirrm include/apache/xml
 @dirrm include/apache
 @dirrm libexec/apache
 @dirrm share/doc/apache/manual/images
