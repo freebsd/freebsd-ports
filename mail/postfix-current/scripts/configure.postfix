@@ -14,12 +14,12 @@ else
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
 PCRE		"Perl Compatible Regular Expressions" OFF \
-SASL		"Cyrus SASL (Simple Authentication and Security Layer)" OFF \
+SASL		"Cyrus SASLv1 (Simple Authentication and Security Layer)" OFF \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" OFF \
 MySQL		"MySQL map lookups" OFF \
 OpenLDAP	"OpenLDAP map lookups" OFF \
 Test		"SMTP/LMTP test server and generator" OFF \
-TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
+TLS		"SSL and Transport Layer Security (CURRENTLY BROKEN)" OFF \
 IPv6		"IPv6 support (CURRENTLY BROKEN)" OFF \
 2> $tempfile
 
@@ -79,8 +79,8 @@ while [ "$1" ]; do
 			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.7.15-1.1.0-0.9.6c.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.7.15-1.1.0-0.9.6c/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.8.7-1.1.6-0.9.6c.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.8.7-1.1.6-0.9.6c/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			SUB_TLS=""
 			;;

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	20020115
-PORTREVISION=	2
+PORTVERSION=	1.1.7-20020331
+PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -16,12 +16,13 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.samurai.com/pub/postfix/experimental/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/experimental/&,}
 MASTER_SITE_SUBDIR=	. old related/postfix
-DISTNAME=	snapshot-${PORTVERSION}
+DISTNAME=	postfix-${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	khera@kciLink.com
 
 USE_SUBMAKE=	yes
+IS_INTERACTIVE=	yes
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
