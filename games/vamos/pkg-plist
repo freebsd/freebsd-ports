@@ -1,0 +1,65 @@
+bin/trk-convert
+bin/vamos
+include/vamos/body/Aerodynamic_Device.h
+include/vamos/body/Body.h
+include/vamos/body/Brake.h
+include/vamos/body/Car.h
+include/vamos/body/Clutch.h
+include/vamos/body/Component.h
+include/vamos/body/Differential.h
+include/vamos/body/Drivetrain.h
+include/vamos/body/Engine.h
+include/vamos/body/Frame.h
+include/vamos/body/Fuel_Tank.h
+include/vamos/body/Gl_Car.h
+include/vamos/body/Particle.h
+include/vamos/body/Suspension.h
+include/vamos/body/Tire.h
+include/vamos/body/Transmission.h
+include/vamos/body/Wheel.h
+include/vamos/geometry/Conversions.h
+include/vamos/geometry/Inertia_Tensor.h
+include/vamos/geometry/Spline.h
+include/vamos/geometry/Surface.h
+include/vamos/geometry/Texture_Image.h
+include/vamos/geometry/Three_Matrix.h
+include/vamos/geometry/Three_Vector.h
+include/vamos/geometry/Two_Point.h
+include/vamos/track/Gl_Track.h
+include/vamos/track/Road_Segment.h
+include/vamos/track/Track.h
+include/vamos/world/Atmosphere.h
+include/vamos/world/Car_World.h
+include/vamos/world/Gl_Car_World.h
+include/vamos/world/World.h
+@dirrm include/vamos/body
+@dirrm include/vamos/geometry
+@dirrm include/vamos/track
+@dirrm include/vamos/world
+@dirrm include/vamos
+@unexec install-info --delete %D/info/vamos.info %D/info/dir
+info/vamos.info
+@exec install-info %D/info/vamos.info %D/info/dir
+lib/libvamos-body.a
+lib/libvamos-body.la
+lib/libvamos-body.so.0
+lib/libvamos-geometry.a
+lib/libvamos-geometry.la
+lib/libvamos-geometry.so.0
+lib/libvamos-track.a
+lib/libvamos-track.la
+lib/libvamos-track.so.0
+lib/libvamos-world.a
+lib/libvamos-world.la
+lib/libvamos-world.so.0
+share/vamos/sounds/engine.wav
+share/vamos/sounds/tire_squeal.wav
+share/vamos/textures/grass.ppm
+share/vamos/textures/gravel.ppm
+share/vamos/textures/rail.ppm
+share/vamos/textures/tires.ppm
+share/vamos/textures/track.ppm
+share/vamos/textures/wall.ppm
+@dirrm share/vamos/sounds
+@dirrm share/vamos/textures
+@dirrm share/vamos
