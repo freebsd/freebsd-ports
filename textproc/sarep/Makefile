@@ -16,7 +16,7 @@ MAINTAINER=     ache@freebsd.org
 
 EXTRACT_CMD=    $(SED)
 EXTRACT_BEFORE_ARGS= 's=^\#!/usr/bin/perl =\#!${PERL} =' <
-EXTRACT_AFTER_ARGS= > ${WRKSRC}/sarep
+EXTRACT_AFTER_ARGS= | tr -d '\r' > ${WRKSRC}/sarep
 
 NO_BUILD=       YES
 NO_WRKSUBDIR=   yes
