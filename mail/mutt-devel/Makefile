@@ -4,7 +4,7 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.8 1996/12/01 02:12:27 obrien Exp $
+# $Id: Makefile,v 1.9 1996/12/03 10:36:30 obrien Exp $
 
 DISTNAME=	${PKGNAME}-export
 PKGNAME=	mutt-0.53
@@ -26,7 +26,11 @@ PATCHFILES=	02.keys.PATCH  \
 		05.bind.PATCH  \
 		08.undisclosed.PATCH  \
 		09.attach.PATCH  \
-		10.noop.PATCH
+		10.noop.PATCH  \
+		11.external.PATCH  \
+		12.tagged.PATCH  \
+		13.random.PATCH
+#		don't apply cleanly:
 #		06.setgid.PATCH  \
 #		07.configure.in.PATCH  \
 
