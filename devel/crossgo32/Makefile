@@ -35,12 +35,6 @@ MAN1=	i386-go32-ar.1 i386-go32-nm.1 i386-go32-objdump.1\
 DOCDIR=		${PREFIX}/share/doc/crossgo32
 GO32DIR=	${PREFIX}/share/crossgo32
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile"
-.endif
-
 post-extract:
 	${MV} ${WRKDIR}/dosrel-1.0/ ${WRKSRC}
 
@@ -65,4 +59,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/dosrel-1.0/go32.exe ${GO32DIR}
 	${INSTALL_DATA} ${WRKSRC}/dosrel-1.0/emu387 ${GO32DIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
