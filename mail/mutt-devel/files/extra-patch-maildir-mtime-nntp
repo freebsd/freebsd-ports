@@ -2,8 +2,8 @@
 +++ PATCHES Feb 2004 13:19:42 -0000
 @@ -0,0 +1 @@
 +patch-1.5.6.dw.maildir-mtime.1
---- browser.c.orig	Wed Jun 23 12:55:45 2004
-+++ browser.c	Wed Jun 23 13:00:45 2004
+--- browser.c.orig	Mon Aug  2 18:54:46 2004
++++ browser.c	Mon Aug  2 19:00:01 2004
 @@ -30,6 +30,7 @@
  #ifdef USE_NNTP
  #include "nntp.h"
@@ -12,11 +12,13 @@
  
  #include <stdlib.h>
  #include <dirent.h>
-@@ -424,8 +425,10 @@
+@@ -423,9 +424,11 @@
+ #endif /* USE_NNTP */
  
  static void add_folder (MUTTMENU *m, struct browser_state *state,
- 			const char *name, const struct stat *s,
+-			const char *name, const struct stat *s,
 -			void *data, int new)
++			const char *name, struct stat *s,
 +			void *data, BUFFY *mbuf)
  {
 +  int new = (mbuf) ? mbuf->new : 0;

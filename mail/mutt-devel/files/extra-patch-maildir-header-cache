@@ -802,7 +802,7 @@ diff -Nru a/init.h b/init.h
 +  ** files when the header cache is in use.  This incurs one stat(2)
 +  ** per message every time the folder is opened.
 +  */
-+  { "maildir_cache_page_size", DT_NUM, R_NONE, UL &MaildirCachePageSize, 2048 },
++  { "maildir_cache_page_size", DT_NUM, R_NONE, UL &MaildirCachePageSize, 16384 },
 +  /*
 +  ** .pp
 +  ** Change the maildir header cache database page size.  Too large
@@ -1021,4 +1021,4 @@ diff -Nru a/protos.h b/protos.h
 --- PATCHES.orig    Tue Nov  6 19:59:33 2001
 +++ PATCHES     Tue Nov  6 19:59:42 2001
 @@ -1,0 +1 @@
-+maildir-header-cache.18
++maildir-header-cache.19
