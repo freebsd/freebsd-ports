@@ -1,0 +1,12 @@
+diff -urN src/form_field.cpp src/form_field.cpp
+--- src/form_field.cpp	Sun Oct 20 11:35:27 2002
++++ src/form_field.cpp	Sun Oct 20 11:35:39 2002
+@@ -133,7 +133,7 @@
+ }
+ 
+ 
+-Form::Form( Slots* slots = 0 ) : m_slots( slots ), m_form(0), m_visible( false )
++Form::Form( Slots* slots ) : m_slots( slots ), m_form(0), m_visible( false )
+ {
+ 	m_instances.push_back( this );
+ }
