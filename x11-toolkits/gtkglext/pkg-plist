@@ -12,7 +12,6 @@ include/gtkglext-1.0/gdk/gdkglfont.h
 include/gtkglext-1.0/gdk/gdkglglext.h
 include/gtkglext-1.0/gdk/gdkglinit.h
 include/gtkglext-1.0/gdk/gdkglpixmap.h
-include/gtkglext-1.0/gdk/gdkglprivate.h
 include/gtkglext-1.0/gdk/gdkglquery.h
 include/gtkglext-1.0/gdk/gdkglshapes.h
 include/gtkglext-1.0/gdk/gdkgltokens.h
@@ -25,7 +24,6 @@ include/gtkglext-1.0/gtk/gtkgl.h
 include/gtkglext-1.0/gtk/gtkgldebug.h
 include/gtkglext-1.0/gtk/gtkgldefs.h
 include/gtkglext-1.0/gtk/gtkglinit.h
-include/gtkglext-1.0/gtk/gtkglprivate.h
 include/gtkglext-1.0/gtk/gtkglversion.h
 include/gtkglext-1.0/gtk/gtkglwidget.h
 @dirrm include/gtkglext-1.0/gtk
