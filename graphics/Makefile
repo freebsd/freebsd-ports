@@ -127,6 +127,7 @@
     SUBDIR += glew
     SUBDIR += glfw
     SUBDIR += glide3
+    SUBDIR += glitz
     SUBDIR += gliv
     SUBDIR += gltk
     SUBDIR += gltt
