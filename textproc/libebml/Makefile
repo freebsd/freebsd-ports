@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	libebml
-PORTVERSION=	0.4.3
-PORTREVISION=	1
+PORTVERSION=	0.6.4
 CATEGORIES=	textproc
-MASTER_SITES=	http://matroska.sourceforge.net/downloads/
+MASTER_SITES=	http://dl.matroska.org/downloads/libebml/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	EBML (Extensible Binary Meta Language), sort of binary version of XML
 
-USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
