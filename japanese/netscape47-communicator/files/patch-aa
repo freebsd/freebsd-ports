@@ -1,5 +1,12 @@
---- Netscape.ad-ja_euc.orig	Fri Jul 23 19:14:48 1999
-+++ Netscape.ad-ja_euc	Fri Jul 23 19:15:19 1999
+--- Netscape.ad-ja_euc.orig	Sun Oct  3 07:11:33 1999
++++ Netscape.ad-ja_euc	Sun Oct  3 07:02:48 1999
+@@ -1,5 +1,5 @@
+ ! Insert copyright and license here 1994
+-! Netscape.ad --- app-defaults file for Netscape 4.61.
++! Netscape.ad --- app-defaults file for Netscape 4.7.
+ !
+ ! Bugs and commentary to x_cbug@netscape.com.
+ ! Created: Jamie Zawinski <use the bug address, please>, 23-Jun-94.
 @@ -42,8 +42,11 @@
  ! complaints from people who think they understand this stuff better than
  ! I do.
@@ -51,7 +58,16 @@
  
  ! This resource may be used to specify a default background image.  It should
  ! be a file name or URL pointing to a GIF, JPEG, or XBM image.  If it is blank,
-@@ -827,7 +830,15 @@
+@@ -441,6 +444,8 @@
+ 	 Alt ~Ctrl<Key>4:		xfeDoCommand(openCalendar)			\n\
+ 	Meta ~Ctrl<Key>5:		xfeDoCommand(openConference)		\n\
+ 	 Alt ~Ctrl<Key>5:		xfeDoCommand(openConference)		\n\
++	Meta ~Ctrl<Key>7:	xfeDoCommand(openRadio)				\n\
++	 Alt ~Ctrl<Key>7:	xfeDoCommand(openRadio)				\n\
+ 											\
+ 	~Meta ~Alt ~Ctrl<Key>Prior:		PageUp()					\n\
+ 	~Meta ~Alt ~Ctrl<Key>Next:		PageDown()					\n\
+@@ -827,7 +832,15 @@
  	<Btn2Motion>:			DisarmLinkIfMoved()		\n\
  	<Btn3Motion>:			DisarmLinkIfMoved()		\n\
  	<Motion>:			DescribeLink()			\n\
@@ -68,7 +84,7 @@
  
  *drawingArea*XmList.highlightThickness:	2
  
-@@ -1107,6 +1118,12 @@
+@@ -1107,6 +1120,12 @@
  ! in which case they ought to apply to the text in that text field instead.
  ! Doesn't all this crap just make you want to hurl?
  *globalNonTextTranslations:		#override			\n\
@@ -81,7 +97,18 @@
  	~Meta ~Alt ~Ctrl<Key>space:	xfeDoCommand(spacebar)		\n\
  									  \
  	~Meta ~Alt ~Ctrl<Key>Delete:	PageUp()			\n\
-@@ -2231,7 +2248,7 @@
+@@ -1304,8 +1323,8 @@
+ 	 Alt ~Ctrl<Key>4:		xfeDoCommand(openCalendar)			\n\
+ 	Meta ~Ctrl<Key>5:		xfeDoCommand(openConference)		\n\
+ 	 Alt ~Ctrl<Key>5:		xfeDoCommand(openConference)		\n\
+-	Meta ~Ctrl<Key>6:		xfeDoCommand(openCalendar)			\n\
+-	 Alt ~Ctrl<Key>6:		xfeDoCommand(openCalendar)			\n\
++	Meta ~Ctrl<Key>7:		xfeDoCommand(openRadio)			\n\
++	 Alt ~Ctrl<Key>7:		xfeDoCommand(openRadio)			\n\
+ 											\
+ 	~Meta ~Alt ~Ctrl<Key>Prior:		PageUp()					\n\
+ 	~Meta ~Alt ~Ctrl<Key>Next:		PageDown()					\n\
+@@ -2231,7 +2250,7 @@
  *decreaseFont.documentationString:	\
  このページの表示に使用するフォント サイズを小さくします。
  
@@ -90,7 +117,29 @@
  *reload.mnemonic:					R
  *reload.acceleratorText:			Alt+R
  ! In mail and news reply to sender uses this accelerator
-@@ -4526,7 +4543,7 @@
+@@ -3197,6 +3216,12 @@
+ *openCalendar.documentationString:	\
+ 個人用カレンダー ウィンドウを開きます。
+ 
++*menuBar*openRadio.labelString:		Radio
++*menuBar*openRadio.mnemonic:		d
++*menuBar*openRadio.acceleratorText:	Alt+7
++*openRadio.documentationString:		\
++ラジオプレーヤーを開きます。
++
+ *menuBar*toggleTaskbarShowing.labelString:	コンポーネント バー
+ *menuBar*toggleTaskbarShowing.mnemonic:	C
+ *toggleTaskbarShowing.documentationString:	\
+@@ -4488,7 +4513,7 @@
+ ! changed at runtime; these resources won't override that.
+ *title:					Netscape
+ *iconName:				Netscape
+-*Navigator.title:			Netscape Navigator 4.61
++*Navigator.title:			Netscape Navigator 4.7
+ *MailThread.title:			Netscape メール & ニュースグループ
+ *MailThread.iconName:		メール & ニュースグループ
+ 
+@@ -4526,7 +4551,7 @@
  !                                       ------------------------
  ! back
  ! forward
@@ -99,7 +148,7 @@
  *reloadWithFrameCmdString:				フレームの再読み込み(R)
  *popup.frameReload.mnemonic:			 R
  *popup.showImage.labelString:			画像の表示(G)
-@@ -5047,6 +5064,8 @@
+@@ -5047,6 +5072,8 @@
  !*openURLDialog.width:				500
  *openURLDialog*openInEditor.labelString: Composer で開く
  *openURLDialog*openInBrowser.labelString: Navigator で開く
@@ -108,7 +157,25 @@
  
  *message_popup.title:			Netscape
  *message_popup*OK.labelString:	OK
-@@ -6012,7 +6031,7 @@
+@@ -5416,7 +5443,7 @@
+ *drawingArea*XmScrolledWindow.spacing:			0
+ 
+ ! Do not under any circumstances change the following line:
+-Netscape.version: 		4.61
++Netscape.version: 		4.7
+ 
+ 
+ ! ============================================================================
+@@ -5942,6 +5969,8 @@
+ *destinations.documentationString:  パーソナルスタートページにジャンプします。
+ *guide.tipString:            インターネット上のおもしろい場所
+ *guide.documentationString:  インターネット上のおもしろい場所にジャンプします。
++*myshopping.tipString:			ショッピングのページにジャンプ
++*myshopping.documentationString:	ショッピングのページにジャンプします。
+ *showImages.tipString:              ページの画像を表示
+ *reload.tipString:                  サーバからページをもう一度読み込む
+ *stopLoading.tipString:             実行中の転送を中断
+@@ -6012,7 +6041,7 @@
  
  
  *urlLocationLabel.netsiteLabelString:		Netsite:
@@ -117,7 +184,15 @@
  *urlLocationLabel.editedLabelString:		ジャンプ:
  
  ! this must be the longer of the two...
-@@ -6423,10 +6442,10 @@
+@@ -6304,6 +6333,7 @@
+ *prefs*appearance*conference.labelString:	Conference
+ *prefs*appearance*netcaster.labelString:	Netcaster
+ *prefs*appearance*calendar.labelString:	Calendar
++*prefs*appearance*radio.labelString:	Radio
+ *prefs*appearance*frame2*toolbarBoxLabel.labelString:	ツールバーの表示
+ *prefs*appearance*frame2*picAndText.labelString:	絵と文字
+ *prefs*appearance*frame2*picOnly.labelString:		絵
+@@ -6423,10 +6453,10 @@
  
  *prefs*cache*cacheLabel.labelString:		\
  キャッシュは頻繁にアクセスされるドキュメントをコピーしておくことで、\n\
@@ -130,7 +205,7 @@
  ボタンをクリックします。
  *prefs*cache*cacheDirLabel.labelString:		キャッシュフォルダ:
  *prefs*cache*memoryLabel.labelString:		メモリ キャッシュ:
-@@ -6455,7 +6474,7 @@
+@@ -6455,7 +6485,7 @@
  *prefs*proxies*auto.labelString:			自動プロキシ設定
  *prefs*proxies*config.labelString:			設定ファイルの場所 (URL)
  *prefs*proxies*view.labelString:			表示...
@@ -139,7 +214,14 @@
  
  ! Preferences dialog - General - Proxies - View
  
-@@ -7410,7 +7429,7 @@
+@@ -7404,13 +7434,14 @@
+ *toolBar*search.labelString:	検索
+ *toolBar*destinations.labelString:	Netscape
+ *toolBar*guide.labelString:	ガイド
++*toolBar*myshopping.labelString:	買物
+ *toolBar*showImages.labelString:	画像
+ *toolBar*loadImages.labelString:	画像の読み込み
+ *toolBar*print.labelString:	印刷
  *print.tipString:                   このページを印刷
  *MailThread*print.tipString:        選択したメッセージを印刷
  *MailMsg*print.tipString:           選択したメッセージを印刷
@@ -148,7 +230,7 @@
  
  ! buttons specific to the compose frame.
  *toolBar*sendMessageNow.labelString:	送信
-@@ -7464,7 +7483,7 @@
+@@ -7464,7 +7495,7 @@
  *bccBtn.documentationString:          メッセージを作成してブラインドカーボン コピーを選択した項目宛に送信します
  !
  ! buttons used everywhere (it seems.)
@@ -157,7 +239,25 @@
  *toolBar*stopLoading.labelString:	停止
  
  *changeDocumentEncoding.documentationString: ドキュメントの文字コード セットを指定します。
-@@ -9000,7 +9019,7 @@
+@@ -7975,6 +8006,8 @@
+ 
+ *string .6776: (名前が指定されていません)
+ 
++*string .6775:	ユーザにより中断されました。
++
+ *strings.6764:データの送信中にネットワーク エラーが発生\nしました。\n(ネットワーク エラー: %s)\n\nもう一度接続してみてください。
+ 
+ *strings.6771:メールの送信中にエラーが発生しました:\nSMTP サーバに接続することができませんでした。\nサーバがダウンしているか、設定に誤りがあるようです。\n\nメールの設定に誤りがないか確認して、もう一度\nやり直してください。
+@@ -8243,6 +8276,8 @@
+ 
+ *strings.6524:メッセージの送信処理は完了しましたが、送信済みフォルダに\nメッセージをコピーすることができませんでした。メッセージ\nの作成ウィンドウに戻りますか？
+ 
++*strings.6523:文字「%s」はIMAPサーバで予約されています。別の名前を選んでください。
++
+ *strings.-1192:セキュリティの認証中に I/O エラーが発生しました。\n接続し直してみてください。
+ 
+ *strings.-1191:セキュリティ ライブラリでエラーが発生しました。\nサイトとの接続を保護できないかもしれません。
+@@ -9000,7 +9035,7 @@
  
  *strings.23715:新規/編集 ...
  
@@ -166,7 +266,18 @@
  
  *strings.23717:削除
  
-@@ -14545,3 +14564,7 @@
+@@ -12799,6 +12834,10 @@
+ 
+ *strings.22494:バックアップ用の Javascript 設定ファイルが存在しないか、エラーがあります。\n\n標準設定を使用します。
+ 
++*strings.22495:http://home.netscape.com/bookmark/4_7/tshop.html
++
++*strings.22496:http://home.netscape.com/bookmark/4_7/tradio.html
++
+ *strings.22501:サーバ ファイルを維持
+ 
+ *strings.22502:ローカル ファイルを維持
+@@ -14545,3 +14584,7 @@
  *textPropertiesDialog.ApplyLabelString:		フィルタ
  *tableCreateDialog.ApplyLabelString:		フィルタ
  *documentPropertiesDialog.ApplyLabelString:		フィルタ
