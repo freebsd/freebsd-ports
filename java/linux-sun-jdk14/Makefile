@@ -28,12 +28,13 @@ PLIST_SUB+=	T=${APP_HOME:S/^${PREFIX}\///} PORTVERSION=${PORTVERSION}
 
 NO_BUILD=	yes
 USE_LINUX=	yes
-DL_JDK_VERSION=	1.4.2
-INSTALL_JDK_VERSION=	1.4.2
+DL_JDK_VERSION=	1.4.2_01
+INSTALL_JDK_VERSION=	${DL_JDK_VERSION:S/_/./g}-linux-i586
 ONLY_FOR_ARCHS=	i386
-DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=8590&Referer=http://java.sun.com/j2se/1.4.2/download.html
-PORTTITLE=	Java 2 Development Kit ${INSTALL_JDK_VERSION} for Linux
-APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${INSTALL_JDK_VERSION}
+SUN_BUNDLE_ID=	8948
+DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=${SUN_BUNDLE_ID}&Referer=http://java.sun.com/j2se/1.4.2/download.html
+PORTTITLE=	Java 2 Development Kit ${DL_JDK_VERSION} for Linux
+APP_HOME=	${PREFIX}/${PKGNAMEPREFIX}${PORTNAME}${DL_JDK_VERSION}
 CPIO?=		/usr/bin/cpio
 PACKED_JARS=	lib/tools.jar jre/lib/rt.jar jre/lib/jsse.jar jre/lib/charsets.jar jre/lib/ext/localedata.jar jre/lib/plugin.jar jre/javaws/javaws.jar
 UNPACK_CMD=	${APP_HOME}/lib/unpack
@@ -50,7 +51,7 @@ pre-everything::
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@cd ${WRKDIR} \
-	&& ${TAIL} -n 135464 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
+	&& ${TAIL} -n 135743 ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} > ${WRKDIR}/install.sfx \
 	&& ${CHMOD} +x ${WRKDIR}/install.sfx \
 	&& ${WRKDIR}/install.sfx > /dev/null
 
