@@ -3,15 +3,17 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.18 1999/02/06 23:21:59 se Exp $
+# $Id: Makefile,v 1.19 1999/02/08 22:25:46 se Exp $
 #
 
 DISTNAME=	kdesupport-1.1
 CATEGORIES=	x11 kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= stable/1.1/distribution/tar/generic/source
+MASTER_SITE_SUBDIR= stable/1.1/distribution/tar/generic/source/bz2
 
 MAINTAINER=	se@freebsd.org
+
+USE_BZIP2=	yes
 
 USE_QT=		yes
 HAS_CONFIGURE=	yes
