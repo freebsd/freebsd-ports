@@ -61,12 +61,12 @@ USE_KDELIBS_VER=2
 # USE_KDELIBS_VER section
 .if defined(USE_KDELIBS_VER)
 .if ${USE_KDELIBS_VER} == CVS
-LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs
+BUILD_DEPENDS+=	kconfig_compiler:${PORTSDIR}/x11/kdelibs
 USE_QT_VER=		CVS
 PREFIX=			${KDE_CVS_PREFIX}
 .elif ${USE_KDELIBS_VER} == 3
 # kdelibs 3.x common stuff
-LIB_DEPENDS+=	kdecore:${PORTSDIR}/x11/kdelibs3
+BUILD_DEPENDS+=	kconfig_compiler:${PORTSDIR}/x11/kdelibs3
 USE_QT_VER=		3
 PREFIX=			${KDE_PREFIX}
 .else
