@@ -1,0 +1,20 @@
+************************************************************************
+
+This package includes the Marathon Infinity Demo files.  These files are
+sufficient to play AlephOne, but only contain four of Infinity's levels.
+
+There are two ways of getting a fully-playable version of AlephOne:
+
+  * Buy a copy of Marathon 2 or Marathon Infinity and convert those data
+    files into the appropriate AlephOne format (http://source.bungie.org
+    has more information).
+
+  * Go to http://www.pfhor.net/ei and download one of the new scenarios.
+    These scenarios have already been converted to AlephOne.  Demo files
+    for Marathon 2 in the AlephOne format are also available at this web
+    site.
+
+AlephOne works best with OpenGL; if you do not have an OpenGL-savvy card
+and the game is sluggish, try using the -g option to disable OpenGL.
+
+************************************************************************

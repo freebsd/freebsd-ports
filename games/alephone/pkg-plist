@@ -1,0 +1,46 @@
+bin/alephone
+share/AlephOne/Fonts
+share/AlephOne/Images
+share/AlephOne/MML/Interface_Rects.mml
+share/AlephOne/MML/Preferences.mml
+share/AlephOne/MML/Text_Strings.mml
+share/AlephOne/MML/Transparent_Liquids.mml
+share/AlephOne/MML/Transparent_Sprites.mml
+share/AlephOne/Map
+share/AlephOne/README
+share/AlephOne/Shapes
+share/AlephOne/Sounds
+share/AlephOne/Themes/Default/button_c.bmp
+share/AlephOne/Themes/Default/button_l.bmp
+share/AlephOne/Themes/Default/button_r.bmp
+share/AlephOne/Themes/Default/frame_b.bmp
+share/AlephOne/Themes/Default/frame_bl.bmp
+share/AlephOne/Themes/Default/frame_br.bmp
+share/AlephOne/Themes/Default/frame_l.bmp
+share/AlephOne/Themes/Default/frame_r.bmp
+share/AlephOne/Themes/Default/frame_t.bmp
+share/AlephOne/Themes/Default/frame_tl.bmp
+share/AlephOne/Themes/Default/frame_tr.bmp
+share/AlephOne/Themes/Default/list_b.bmp
+share/AlephOne/Themes/Default/list_bl.bmp
+share/AlephOne/Themes/Default/list_br.bmp
+share/AlephOne/Themes/Default/list_l.bmp
+share/AlephOne/Themes/Default/list_r.bmp
+share/AlephOne/Themes/Default/list_t.bmp
+share/AlephOne/Themes/Default/list_tl.bmp
+share/AlephOne/Themes/Default/list_tr.bmp
+share/AlephOne/Themes/Default/resources
+share/AlephOne/Themes/Default/slider.bmp
+share/AlephOne/Themes/Default/slider_c.bmp
+share/AlephOne/Themes/Default/slider_l.bmp
+share/AlephOne/Themes/Default/slider_r.bmp
+share/AlephOne/Themes/Default/theme.mml
+share/AlephOne/Themes/Default/thumb_b.bmp
+share/AlephOne/Themes/Default/thumb_bc.bmp
+share/AlephOne/Themes/Default/thumb_c.bmp
+share/AlephOne/Themes/Default/thumb_t.bmp
+share/AlephOne/Themes/Default/thumb_tc.bmp
+@dirrm share/AlephOne/Themes/Default
+@dirrm share/AlephOne/Themes
+@dirrm share/AlephOne/MML
+@dirrm share/AlephOne
