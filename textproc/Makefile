@@ -50,6 +50,7 @@
     SUBDIR += docproj
     SUBDIR += docproj-jadetex
     SUBDIR += docproj-nojadetex
+    SUBDIR += domc
     SUBDIR += dsssl-docbook-cygnus
     SUBDIR += dsssl-docbook-modular
     SUBDIR += dtd-catalogs
