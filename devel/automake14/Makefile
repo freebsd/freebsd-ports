@@ -17,8 +17,9 @@ MAINTAINER=	ade@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator (legacy version 1.4)
 
 DEPRECATED=	Please use devel/automake18 instead
-EXPIRATION_DATE=31st December 2004
 
+WANT_AUTOCONF_VER=213
+WANT_AUTOCONF_RUN=yes
 BUILD_VERSION=	14
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 LATEST_LINK=	automake${BUILD_VERSION}
@@ -29,16 +30,6 @@ USE_PERL5=	yes
 USE_REINPLACE=	yes
 
 STRIP=		# none
-
-.if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
-pre-everything::
-	@${ECHO} ===========================================================
-	@${ECHO} "You have 'USE_AUTOMAKE' or 'USE_AUTOMAKE_VER' variables"
-	@${ECHO} "defined either in environment or in make(1) arguments."
-	@${ECHO} "Please undefine them and try again."
-	@${ECHO} ===========================================================
-	@${FALSE}
-.endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
 
 post-patch:
 	@${MV} ${WRKSRC}/automake.texi ${WRKSRC}/automake${BUILD_VERSION}.texi

@@ -29,16 +29,6 @@ CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_REINPLACE=	yes
 
-.if defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
-pre-everything::
-	@${ECHO} ===========================================================
-	@${ECHO} "You have 'USE_AUTOMAKE' or 'USE_AUTOMAKE_VER' variables"
-	@${ECHO} "defined either in environment or in make(1) arguments."
-	@${ECHO} "Please undefine them and try again."
-	@${ECHO} ===========================================================
-	@${FALSE}
-.endif # defined(USE_AUTOMAKE) || defined(USE_AUTOMAKE_VER)
-
 post-patch:
 	@(cd ${WRKSRC}/doc && \
 		${RM} -f *.info && \

@@ -41,16 +41,6 @@ MAN1_PAGES=	autoconf autoheader autom4te autoreconf autoscan \
 		autoupdate config.guess config.sub ifnames
 MAN1=		${MAN1_PAGES:S/$/${BUILD_VERSION}.1/g}
 
-.if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
-pre-everything::
-	@${ECHO} ===========================================================
-	@${ECHO} "You have 'USE_AUTOCONF' or 'USE_AUTOCONF_VER' variables"
-	@${ECHO} "defined either in environment or in make(1) arguments."
-	@${ECHO} "Please undefine them and try again."
-	@${ECHO} ===========================================================
-	@${FALSE}
-.endif # defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
-
 post-patch:
 	@(cd ${WRKSRC} && ${REINPLACE_CMD} -E 's,(PACKAGE=autoconf),\1${BUILD_VERSION},' configure)
 	@(cd ${WRKSRC}/man && \

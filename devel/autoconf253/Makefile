@@ -16,7 +16,6 @@ MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms (version 2.53)
 
 DEPRECATED=	Please use devel/autoconf259 instead
-EXPIRATION_DATE=31st December 2004
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		help2man:${PORTSDIR}/misc/help2man
@@ -41,16 +40,6 @@ GENERIC_TOOLS=	config.guess config.sub	elisp-comp install-sh mdate-sh \
 MAN1_PAGES=	autoconf autoheader autom4te autoreconf autoscan \
 		autoupdate config.guess config.sub ifnames
 MAN1=		${MAN1_PAGES:S/$/${BUILD_VERSION}.1/g}
-
-.if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
-pre-everything::
-	@${ECHO} ===========================================================
-	@${ECHO} "You have 'USE_AUTOCONF' or 'USE_AUTOCONF_VER' variables"
-	@${ECHO} "defined either in environment or in make(1) arguments."
-	@${ECHO} "Please undefine them and try again."
-	@${ECHO} ===========================================================
-	@${FALSE}
-.endif # defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
 
 post-patch:
 	@(cd ${WRKSRC} && ${REINPLACE_CMD} -E 's,(PACKAGE=autoconf),\1${BUILD_VERSION},' configure)

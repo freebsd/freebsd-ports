@@ -17,7 +17,6 @@ MAINTAINER=	ade@FreeBSD.org
 COMMENT=	Automatically configure source code on many Un*x platforms (legacy 2.13 version)
 
 DEPRECATED=	Please use devel/autoconf259 instead
-EXPIRATION_DATE=31st December 2004
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
@@ -32,16 +31,6 @@ CONFIGURE_ENV=	CONFIG_SHELL=${SH} M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--program-suffix=${BUILD_VERSION}
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 WRKSRC=		${WRKDIR}/autoconf
-
-.if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
-pre-everything::
-	@${ECHO} ===========================================================
-	@${ECHO} "You have 'USE_AUTOCONF' or 'USE_AUTOCONF_VER' variables"
-	@${ECHO} "defined either in environment or in make(1) arguments."
-	@${ECHO} "Please undefine them and try again."
-	@${ECHO} ===========================================================
-	@${FALSE}
-.endif # defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
 
 post-patch:
 	@${RM} ${WRKSRC}/*.info* >/dev/null 2>&1 || true
