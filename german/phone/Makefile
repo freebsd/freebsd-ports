@@ -3,12 +3,12 @@
 # Date created:         1997-12-30
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.3 1997/12/31 22:43:27 asami Exp $
+# $Id: Makefile,v 1.4 1998/01/02 21:05:36 max Exp $
 #
 
 DISTNAME=	avon-1996
 PKGNAME=	de-phone-1.0
-CATEGORIES=	german missc
+CATEGORIES=	german misc
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.freebsd.org/~wosch/src/
 EXTRACT_SUFX=	.gz
