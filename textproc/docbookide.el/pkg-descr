@@ -1,0 +1,14 @@
+docbook-mode.el (aka: DocBook IDE) is an emacs major mode for editing
+DocBook documents.  DocBook IDE features:
+
+*) Font lock highlighting for DocBook elements and attributes
+*) 'docbook-complete' function for inserting elements and attribute
+   names
+*) 'docbook-insert-tag' function for inserting matching start- and
+   end-tags
+*) Automatic insertion of element context (e.g. firstname and surname
+   in author)
+*) Automatic completion of end-tags
+*) Comprehensive abbreviations table for further ease of typing
+
+WWW:	http://nwalsh.com/emacs/docbookide/
