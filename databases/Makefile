@@ -5,6 +5,7 @@
     SUBDIR += cdb
     SUBDIR += db
     SUBDIR += db3
+    SUBDIR += db3-latest
     SUBDIR += dbconnect
     SUBDIR += dbf2mysql
     SUBDIR += dbmetrix
