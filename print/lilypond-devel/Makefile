@@ -54,6 +54,10 @@ ALL_TARGET=	all
 USE_GCC=	3.3
 .endif
 
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Coredump during build on alpha 4.x"
+.endif
+
 SCRIPTS_ENV+=	PORTVERSION=${PORTVERSION}
 
 .if defined(NOPORTDOCS)
