@@ -8,11 +8,11 @@
 PORTNAME=	htmlsection
 PORTVERSION=	1.0
 CATEGORIES=	textproc www
-MASTER_SITES=	http://www.seki.ee.kagu.sut.ac.jp/~sakai/myfreesoft/ \
+MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/ \
 		http://hp.vector.co.jp/authors/VA014157/myfreesoft/ \
 		http://www.people.or.jp/~hsakai/myfreesoft/
 
-MAINTAINER=	sakai@seki.ee.kagu.sut.ac.jp
+MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
 
 MAN1=		htmlsection.1
 MANCOMPRESSED=	yes

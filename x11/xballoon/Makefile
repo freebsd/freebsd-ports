@@ -8,9 +8,9 @@
 PORTNAME=	xballoon
 PORTVERSION=	1.0
 CATEGORIES=	x11
-MASTER_SITES=	http://wwwmiya.ee.kagu.sut.ac.jp/~sakai/
+MASTER_SITES=	http://wwwmiya.ee.kagu.tus.ac.jp/~sakai/
 
-MAINTAINER=	sakai@miya.ee.kagu.sut.ac.jp
+MAINTAINER=	sakai@miya.ee.kagu.tus.ac.jp
 
 ALL_TARGET=	xballoon
 
