@@ -9,9 +9,9 @@
 DISTNAME=       jed0.98-7
 PKGNAME=        jed-0.98.7
 CATEGORIES=	editors
-MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/
+MASTER_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.98/
 
-PATCH_SITES=   ftp://space.mit.edu/pub/davis/jed/
+PATCH_SITES=   ftp://space.mit.edu/pub/davis/jed/v0.98/
 PATCHFILES=    BUGS
 PATCH_DIST_STRIP=	-p1
 

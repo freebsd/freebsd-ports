@@ -9,7 +9,7 @@
 DISTNAME=	slang1.2.2
 PKGNAME=	libslang-1.2.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v1.2/
 
 MAINTAINER=	xaa@xaa.iae.nl
 
