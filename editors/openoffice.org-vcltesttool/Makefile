@@ -39,7 +39,7 @@ BUILD_NR=		645
 RELEASE_NR=		1.1
 FRELEASE_NR=		1.1.0
 INSTALLATION_BASEDIR=	OpenOffice.org${FRELEASE_NR}
-DIST_SUBDIR=		openoffice
+DIST_SUBDIR=		openoffice1.1
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 
 #
