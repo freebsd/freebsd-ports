@@ -1,0 +1,9 @@
+--- exif.c.orig Tue Apr 15 14:50:52 2003
++++ exif.c      Tue Apr 15 14:50:57 2003
+@@ -10,7 +10,6 @@
+ #include "ruby.h"
+ #include <libexif/exif-ifd.h>
+ #include <libexif/exif-data.h>
+-#include <libexif/exif-note.h>
+ #include <libexif/exif-utils.h>
+ #include <libexif/exif-tag.h>
