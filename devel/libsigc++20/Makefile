@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsigc++
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		${MASTER_SITE_SOURCEFORGE}
@@ -24,7 +24,7 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 USE_GMAKE=	yes
 LATEST_LINK=	libsigc++12
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack gnometarget
 USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>
