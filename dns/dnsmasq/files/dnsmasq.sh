@@ -14,12 +14,12 @@
 dnsmasq_enable=NO
 
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name=dnsmasq
 rcvar=$(set_rcvar)
 
-command=/usr/local/sbin/${name}
+command=%%PREFIX%%/sbin/${name}
 pidfile=/var/run/${name}.pid
 required_files=${dnsmasq_conf}
 #start_precmd=${name}_precmd
