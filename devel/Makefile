@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.113 1998/07/01 19:28:10 julian Exp $
+# $Id: Makefile,v 1.114 1998/07/04 20:42:49 steve Exp $
 #
 
     SUBDIR += ElectricFence
@@ -99,6 +99,7 @@
     SUBDIR += portlint
     SUBDIR += prc-tools
     SUBDIR += prcs
+    SUBDIR += py-PyGreSQL
     SUBDIR += qtez
     SUBDIR += re2c
     SUBDIR += sawt
