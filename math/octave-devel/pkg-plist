@@ -3,9 +3,6 @@ bin/mkoctfile
 include/octave-2.0.13/config.h
 include/octave-2.0.13/f77-fcn.h
 include/octave-2.0.13/lo-error.h
-lib/libcruft.a
-lib/liboctave.a
-lib/liboctinterp.a
 include/octave-2.0.13/Bounds.h
 include/octave-2.0.13/CollocWt.h
 include/octave-2.0.13/DAE.h
@@ -227,6 +224,10 @@ include/octave-2.0.13/defaults.h
 include/octave-2.0.13/oct-conf.h
 include/octave-2.0.13/oct-gperf.h
 @dirrm include/octave-2.0.13
+lib/octave-2.0.13/libcruft.a
+lib/octave-2.0.13/liboctave.a
+lib/octave-2.0.13/liboctinterp.a
+@dirrm lib/octave-2.0.13
 share/octave/2.0.13/m/audio/lin2mu.m
 share/octave/2.0.13/m/audio/loadaudio.m
 share/octave/2.0.13/m/audio/mu2lin.m
@@ -312,6 +313,7 @@ share/octave/2.0.13/m/io/puts.m
 share/octave/2.0.13/m/linear-algebra/commutation_matrix.m
 share/octave/2.0.13/m/linear-algebra/cond.m
 share/octave/2.0.13/m/linear-algebra/cross.m
+share/octave/2.0.13/m/linear-algebra/dot.m
 share/octave/2.0.13/m/linear-algebra/duplication_matrix.m
 share/octave/2.0.13/m/linear-algebra/kron.m
 share/octave/2.0.13/m/linear-algebra/norm.m
@@ -441,6 +443,7 @@ share/octave/2.0.13/m/strings/findstr.m
 share/octave/2.0.13/m/strings/hex2dec.m
 share/octave/2.0.13/m/strings/index.m
 share/octave/2.0.13/m/strings/isletter.m
+share/octave/2.0.13/m/strings/lower.m
 share/octave/2.0.13/m/strings/rindex.m
 share/octave/2.0.13/m/strings/split.m
 share/octave/2.0.13/m/strings/str2mat.m
@@ -449,6 +452,7 @@ share/octave/2.0.13/m/strings/strcat.m
 share/octave/2.0.13/m/strings/strcmp.m
 share/octave/2.0.13/m/strings/strrep.m
 share/octave/2.0.13/m/strings/substr.m
+share/octave/2.0.13/m/strings/upper.m
 share/octave/2.0.13/m/time/asctime.m
 share/octave/2.0.13/m/time/clock.m
 share/octave/2.0.13/m/time/ctime.m
