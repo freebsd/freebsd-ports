@@ -10,7 +10,7 @@ PORTVERSION=   2.9
 CATEGORIES=    sysutils
 MASTER_SITES=  http://www.schweikhardt.net/
 
-MAINTAINER=    samefile@schweikhardt.net
+MAINTAINER=    schweikh@FreeBSD.org
 
 MAN1=          samefile.1
 GNU_CONFIGURE= yes
