@@ -8,7 +8,8 @@
 PORTNAME=	CommonC++
 PORTVERSION=	1.2.5.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	ftp://www.voxilla.org/pub/ape/ \
+		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	cplusplus
 
 MAINTAINER=	dyfet@gnu.org
