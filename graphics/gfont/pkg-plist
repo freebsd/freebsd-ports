@@ -1,0 +1,46 @@
+bin/gfont
+man/man1/gfont.1.gz
+lib/gfont/etc/Fontmap
+lib/gfont/exec/gfont_pktopx
+lib/gfont/exec/gfont_pxtogdf
+lib/gfont/exec/gfont_mkgdf
+lib/gfont/exec/gfont_mkgdf_all
+lib/gfont/gdf/CMBoldface-F.gdf.gz
+lib/gfont/gdf/CMBoldface-H.gdf.gz
+lib/gfont/gdf/CMBoldface-L.gdf.gz
+lib/gfont/gdf/CMBoldface-S.gdf.gz
+lib/gfont/gdf/CMBoldface-T.gdf.gz
+lib/gfont/gdf/CMBoldface-V.gdf.gz
+lib/gfont/gdf/CMBoldface.gdf.gz
+lib/gfont/gdf/CMItalic-F.gdf.gz
+lib/gfont/gdf/CMItalic-H.gdf.gz
+lib/gfont/gdf/CMItalic-L.gdf.gz
+lib/gfont/gdf/CMItalic-S.gdf.gz
+lib/gfont/gdf/CMItalic-T.gdf.gz
+lib/gfont/gdf/CMItalic-V.gdf.gz
+lib/gfont/gdf/CMItalic.gdf.gz
+lib/gfont/gdf/CMRoman-F.gdf.gz
+lib/gfont/gdf/CMRoman-H.gdf.gz
+lib/gfont/gdf/CMRoman-L.gdf.gz
+lib/gfont/gdf/CMRoman-S.gdf.gz
+lib/gfont/gdf/CMRoman-T.gdf.gz
+lib/gfont/gdf/CMRoman-V.gdf.gz
+lib/gfont/gdf/CMRoman.gdf.gz
+lib/gfont/gdf/CMSansSerif-F.gdf.gz
+lib/gfont/gdf/CMSansSerif-H.gdf.gz
+lib/gfont/gdf/CMSansSerif-L.gdf.gz
+lib/gfont/gdf/CMSansSerif-S.gdf.gz
+lib/gfont/gdf/CMSansSerif-T.gdf.gz
+lib/gfont/gdf/CMSansSerif-V.gdf.gz
+lib/gfont/gdf/CMSansSerif.gdf.gz
+lib/gfont/gdf/CMTeleType-F.gdf.gz
+lib/gfont/gdf/CMTeleType-H.gdf.gz
+lib/gfont/gdf/CMTeleType-L.gdf.gz
+lib/gfont/gdf/CMTeleType-S.gdf.gz
+lib/gfont/gdf/CMTeleType-T.gdf.gz
+lib/gfont/gdf/CMTeleType-V.gdf.gz
+lib/gfont/gdf/CMTeleType.gdf.gz
+@dirrm lib/gfont/etc
+@dirrm lib/gfont/exec
+@dirrm lib/gfont/gdf
+@dirrm lib/gfont
