@@ -89,6 +89,7 @@
     SUBDIR += gdtclft
     SUBDIR += geist
     SUBDIR += geomview
+    SUBDIR += geos
     SUBDIR += gfont
     SUBDIR += giblib
     SUBDIR += gif2png
