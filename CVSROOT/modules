@@ -7930,6 +7930,7 @@ smapi		ports/mail/smapi
 smartdoc	ports/textproc/smartdoc
 smartdoc-devel	ports/textproc/smartdoc-devel
 smarteiffel	ports/lang/smarteiffel
+smartmontools	ports/sysutils/smartmontools
 smarty		ports/www/smarty
 smb2www		ports/www/smb2www
 smb_auth	ports/www/smb_auth
