@@ -25,7 +25,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	kterm
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/ \
-		http://karin.ip.titech.ac.jp/~takagi/kterm/
+		http://www.asahi-net.or.jp/~hc3j-tkg/kterm/
 PATCHFILES=	${DISTNAME}.NFS-xauth.patch \
 		${DISTNAME}-wpr1.patch.gz
 PATCH_DIST_STRIP= -p1
