@@ -1,0 +1,11 @@
+--- configure.orig	Mon May 21 14:57:16 2001
++++ configure	Mon May 21 14:57:24 2001
+@@ -825,7 +825,7 @@
+ esac
+ 
+ 
+-ALL_LINGUAS="da de es fr nl pl pt sl sv"
++ALL_LINGUAS="da de es fr nl pl pt ru sl sv"
+ 
+ for ac_prog in mawk gawk nawk awk
+ do
