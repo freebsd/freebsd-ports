@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}
-PORTREVISION=	2 # cxia32131-20020622
+PORTREVISION=	3 # SR3
 CATEGORIES=	java
 MASTER_SITES=	#
 PKGNAMEPREFIX=	linux-ibm-
@@ -15,6 +15,7 @@ DISTNAME=	IBMJava2-SDK-131
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	znerd@FreeBSD.org
+COMMENT=	IBM Java Development Kit 1.3 for Linux
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${LOCALBASE}/bin/javavm:${PORTSDIR}/java/javavmwrapper
@@ -32,7 +33,7 @@ LINUX_SH?=	${LINUXBASE}/bin/sh
 NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 
-DOWNLOAD_URL=	http://www6.software.ibm.com/dl/dklx130/dklx130-i?S_PKG=ia32ww
+DOWNLOAD_URL=	http://www6.software.ibm.com/dl/lxdk/lxdk-h?S_PKG=ia32ww&S_TACT=&S_CMP=
 
 .if defined(WITH_JAPANESE_FONTS)
 PLIST_SUB+=	JAPANESE=""
@@ -42,11 +43,13 @@ RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/wadalab-gothic.ttf:${PORTSDIR}/j
 PLIST_SUB+=	JAPANESE="@comment "
 .endif
 
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=You must manually fetch the IBM Java SDK ${JDK_VERSION} for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again.
-.endif
+CPIO?=          /usr/bin/cpio
 
 .include <bsd.port.pre.mk>
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=You must manually fetch the IBM Java SDK ${JDK_VERSION} for Linux archive (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
+.endif
 
 post-patch:
 	@for shfn in `${GREP} -r '^#!/bin/sh' ${WRKSRC}|${AWK} -F: '{print $$1}'`; do \
@@ -59,7 +62,8 @@ post-patch:
 
 do-install:
 	${MKDIR} ${APP_HOME}
-	${TAR} -C ${WRKSRC} -cf- . | ${TAR} -C ${APP_HOME} -xpf-
+	cd ${WRKSRC} && ${FIND} . \
+		| ${CPIO} -pdmu -R ${LIBOWN}:${LIBGRP} ${APP_HOME}
 	${LOCALBASE}/bin/registervm "${APP_HOME}/bin/java # IBM-JDK${PORTVERSION}_${PORTREVISION}"
 
 post-install:

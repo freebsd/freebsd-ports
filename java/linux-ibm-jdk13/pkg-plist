@@ -1,10 +1,18 @@
 @exec %%LOCALBASE%%/bin/registervm "%D/%%T%%/bin/java"
 @unexec %%LOCALBASE%%/bin/unregistervm "%D/%%T%%/bin/java"
 %%T%%/bin/HtmlConverter
+%%T%%/bin/exe/jextract
+%%T%%/bin/exe/jextract_g
+%%T%%/bin/exe/jformat
+%%T%%/bin/exe/jformat_g
 %%T%%/bin/java
 %%T%%/bin/java_g
 %%T%%/bin/javaw
 %%T%%/bin/javaw_g
+%%T%%/bin/jextract
+%%T%%/bin/jextract_g
+%%T%%/bin/jformat
+%%T%%/bin/jformat_g
 %%T%%/bin/jvmtcf
 %%T%%/bin/jvmtcf_g
 %%T%%/bin/keytool
@@ -227,6 +235,8 @@
 %%T%%/jre/bin/libhprof.so
 %%T%%/jre/bin/libhpi_g.so
 %%T%%/jre/bin/libhpi.so
+%%T%%/jre/bin/libframe_g.so
+%%T%%/jre/bin/libframe.so
 %%T%%/jre/bin/libfontmanager_g.so
 %%T%%/jre/bin/libfontmanager.so
 %%T%%/jre/bin/libdt_socket_g.so
@@ -245,6 +255,8 @@
 %%T%%/jre/bin/keytool
 %%T%%/jre/bin/jvmtcf_g
 %%T%%/jre/bin/jvmtcf
+%%T%%/jre/bin/jvmdcf_g
+%%T%%/jre/bin/jvmdcf
 %%T%%/jre/bin/javaw_g
 %%T%%/jre/bin/javaw
 %%T%%/jre/bin/javaplugin_g.so
@@ -276,6 +288,7 @@
 %%T%%/jre/bin/awt_robot
 %%T%%/jre/bin/JavaPluginControlPanel
 %%T%%/src.jar
+%%T%%/include/jvmras.h
 %%T%%/include/jvmpi.h
 %%T%%/include/jvmdi.h
 %%T%%/include/jvmmi.h
@@ -283,7 +296,6 @@
 %%T%%/include/jni.h
 %%T%%/include/jawt_md.h
 %%T%%/include/jawt.h
-%%T%%/include/ras.h
 %%T%%/docs/COPYRIGHT
 %%T%%/docs/sdk/LICENSE_da.html
 %%T%%/docs/sdk/LICENSE_de.html
@@ -880,6 +892,7 @@
 @dirrm %%T%%/jre/lib/ext
 @dirrm %%T%%/jre/lib/cmm
 @dirrm %%T%%/jre/lib/audio
+@dirrm %%T%%/jre/lib/applet
 @dirrm %%T%%/jre/lib
 @dirrm %%T%%/jre/bin/exe
 @dirrm %%T%%/jre/bin/classic
