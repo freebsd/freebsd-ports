@@ -22,14 +22,14 @@ LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
 USE_GNOME=	glib12 gtk12
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
-GNU_CONFIGURE=  yes
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-docdir=${DOCSDIR}
 INSTALLS_SHLIB=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-MAN1=           fwbuilder.1 fwblookup.1 fwbedit.1 fwb_ipt.1 fwb_ipf.1 fwb_ipfw.1 fwb_pf.1 \
+MAN1=		fwbuilder.1 fwblookup.1 fwbedit.1 fwb_ipt.1 fwb_ipf.1 fwb_ipfw.1 fwb_pf.1 \
 		fwb_install.1 fwb_compile_all.1
 
 .include <bsd.port.mk>
