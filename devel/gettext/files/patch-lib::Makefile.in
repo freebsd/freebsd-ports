@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- lib/Makefile.in.orig	Tue Mar 12 21:04:16 2002
-+++ lib/Makefile.in	Tue Apr 30 11:06:26 2002
-@@ -220,7 +220,7 @@
+--- lib/Makefile.in.orig	Fri Jul 19 03:46:30 2002
++++ lib/Makefile.in	Fri Jul 19 03:47:55 2002
+@@ -227,7 +227,7 @@
  # Need @LTLIBICONV@ because linebreak.c uses iconv().
  libgettextlib_la_LDFLAGS = \
    -release @VERSION@ \
@@ -12,12 +12,12 @@ $FreeBSD$
  
  
  
-@@ -238,14 +238,14 @@
+@@ -245,14 +245,14 @@
  gen-lbrkprop.c 3level.h Combining.txt
  
  
--DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
-+DEFS = -DLIBDIR=\"$(prefix)/libdata\" @DEFS@
+-DEFS = -DLIBDIR=\"$(libdir)\" -DEXEEXT=\"$(EXEEXT)\" @DEFS@
++DEFS = -DLIBDIR=\"$(prefix)/libdata\" -DEXEEXT=\"$(EXEEXT)\" @DEFS@
  INCLUDES = -I. -I$(srcdir) -I.. -I../intl -I$(top_srcdir)/intl
  
  DISTCLEANFILES = fnmatch.h
@@ -30,7 +30,7 @@ $FreeBSD$
  
  SUFFIXES = .sed .sin
  
-@@ -475,7 +475,7 @@
+@@ -482,7 +482,7 @@
  
  install-data-am: install-gettextsrcDATA
  
@@ -39,7 +39,7 @@ $FreeBSD$
  
  install-info: install-info-am
  
-@@ -522,7 +522,7 @@
+@@ -534,7 +534,7 @@
  
  all-local: charset.alias ref-add.sed ref-del.sed
  install-exec-local: all-local

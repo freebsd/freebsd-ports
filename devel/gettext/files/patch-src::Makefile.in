@@ -1,18 +1,18 @@
 
 $FreeBSD$
 
---- src/Makefile.in.orig	Tue Mar 12 21:04:19 2002
-+++ src/Makefile.in	Tue Apr 30 00:01:24 2002
-@@ -173,7 +173,7 @@
- -I../lib -I$(top_srcdir)/lib -I../intl -I$(top_srcdir)/intl
+--- src/Makefile.in.orig	Wed Jul 17 20:46:11 2002
++++ src/Makefile.in	Fri Jul 19 03:51:12 2002
+@@ -181,7 +181,7 @@
  
- DEFS = -DLOCALEDIR=\"$(localedir)\" -DGETTEXTJAR=\"$(jardir)/gettext.jar\" \
+ DEFS = -DLOCALEDIR=\"$(localedir)\" -DUSEJEXE=$(USEJEXE) \
+ -DGETTEXTJEXEDIR=\"$(pkglibdir)\" -DGETTEXTJAR=\"$(jardir)/gettext.jar\" \
 --DLIBDIR=\"$(libdir)\" -DGETTEXTDATADIR=\"$(pkgdatadir)\" \
 +-DLIBDIR=\"$(prefix)/libdata\" -DGETTEXTDATADIR=\"$(pkgdatadir)\" \
  -DPROJECTSDIR=\"$(projectsdir)\" @DEFS@
  
  LDADD = ../lib/libgettextlib.la @LTLIBINTL@
-@@ -240,7 +240,7 @@
+@@ -248,7 +248,7 @@
  # use iconv().
  libgettextsrc_la_LDFLAGS = \
    -release @VERSION@ \
@@ -21,7 +21,7 @@ $FreeBSD$
  
  
  # Link dependencies.
-@@ -726,11 +726,11 @@
+@@ -747,11 +747,11 @@
  # Special rules for installation of auxiliary programs.
  
  install-exec-local:
