@@ -1,8 +1,20 @@
---- Makefile.orig	Sat Jul 31 22:51:43 1999
-+++ Makefile	Mon Aug 23 20:30:59 1999
-@@ -10,18 +10,18 @@
+--- Makefile.orig	Sat Oct 16 19:00:08 1999
++++ Makefile	Tue Nov  9 10:54:39 1999
+@@ -1,27 +1,27 @@
  #
- # Linux + Motif 2.1 (static link)
+ MAINVERSION = '"6.03"'
+ GUIVERSION = '".06"'
+-LIBDIR = '"/usr/local/lib/Ngraph"'
+-INSTALLDIR = /usr/local/lib/Ngraph
+-BINDIR = /usr/local/bin
++LIBDIR = '"${PREFIX}/lib/Ngraph"'
++INSTALLDIR = ${PREFIX}/lib/Ngraph
++BINDIR = ${PREFIX}/bin
+ #
+ #
+ ###############################################################################
+ #
+ # Linux + Motif 2.1 (RedHat) [static link]
  #
 -CC = gcc
 -CCOPTION = -O2 -m486
@@ -31,15 +43,21 @@
  #
  #
  ###############################################################################
-@@ -123,6 +123,21 @@
- #X11INCLUDE = -I/usr/dt/share/include/Dt
- #STATICLINK =
- #X11LIB = -L/usr/dt/lib -lm -lXm -lDtWidget -lXt -lX11
-+#
-+###############################################################################
-+#
-+# FreeBSD + Motif 2.1 (static link)
-+#
+@@ -132,17 +132,17 @@
+ #
+ # (Thanks to MIHIRA Sanpei Yoshiro <sanpei@sanpei.org>)
+ #
+-#CC = gcc
+-#CCOPTION = ${CFLAGS}
+-#MAKE = gmake
+-#AR = ar
+-#RANLIB = ranlib
+-#STRIP = strip
+-#DEFS = -DJAPANESE
+-#PLATFORM  = '"for X11 [FreeBSD+Motif2.1]"'
+-#X11INCLUDE = -I/usr/X11R6/include -I/usr/dt/include
+-#STATICLINK = /usr/dt/lib/libXm.a
+-#X11LIB = -L/usr/X11R6/lib -L/usr/dt/lib -lm -lXext -lXt -lXp -lX11 -lICE -lSM -lxpg4
 +CC = gcc
 +CCOPTION = ${CFLAGS}
 +MAKE = gmake
@@ -48,8 +66,9 @@
 +STRIP = strip
 +DEFS = -DJAPANESE
 +PLATFORM  = '"for X11 [FreeBSD+Motif2.1]"'
-+X11INCLUDE = -I/usr/X11R6/include
-+X11LIB = -L/usr/X11R6/lib -lm -lXext -lXt -lXp -lX11 -lICE -lSM -lxpg4 ${MOTIFLIB}
++X11INCLUDE = -I${X11BASE}/include -I/usr/dt/include
++STATICLINK =
++X11LIB = ${MOTIFLIB} -lm -L${X11BASE}/lib -lXext -lXt -lXp -lX11 -lICE -lSM -lxpg4
+ #
+ ###############################################################################
  
- export CC CCOPTION MAKE AR RANLIB STRIP INSTALL
- export MAINVERSION GUIVERSION LIBDIR

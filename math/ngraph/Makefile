@@ -6,10 +6,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=       Ngraph-6.3.05-src
-PKGNAME=        ngraph-6.3.05
+DISTNAME=       Ngraph-6.3.06-src
+PKGNAME=        ngraph-6.3.06
 CATEGORIES=	math
-MASTER_SITES=   ${MASTER_SITE_PORTS_JP}
+MASTER_SITES=   http://www2e.biglobe.ne.jp/~isizaka/bin/ \
+		${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=     sanpei@jp.FreeBSD.org
 
