@@ -1,0 +1,43 @@
+
+		scotty - network management extensions to tcl
+
+
+scotty is a tcl extension which allows to set up TCP and UDP
+connections, to send various ICMP packets, to query the domain name
+system (DNS), to check clock screw using the NTP protocol and to query
+various SUN RPC services (like rstat and mountd).
+
+Included in this package is an interface to SNMPv1 and SNMPv2. The
+SNMP stack was written from scratch to provide an efficient and
+portable tcl SNMP extension. MIB extensions can be written in tcl by
+running the scotty extension as an SNMP agent. This allows you to
+implement your own specific MIB without getting in contact with the
+lowlevel ASN.1/BER stuff.
+
+The scotty package includes scripts for the tkined network editor to
+troubleshoot your IP network (ping, traceroute, finger, query tcp
+services, query RPC services), for monitoring network status plus
+scripts to discover and layout the topology of your IP network. SNMP
+based scripts can be used to dump routing tables, to query interface
+status and to monitor SNMP variables. There is also a MIB browser to
+inspect the MIB hierarchy.
+
+More information is available via WWW under the URL:
+
+        http://www.cs.tu-bs.de/ibr/projects/nm/scotty/
+
+If you have problems installing scotty or if you have made any changes
+to run scotty on your hardware or if you have found any bugs, please
+contact us. Discussion about scotty is currently done on the tkined
+mailing list. To join, send a request to
+
+        tkined-request@ibr.cs.tu-bs.de.
+
+Messages to the list should be send to tkined@ibr.cs.tu-bs.de.
+
+						Juergen
+
+---
+Juergen Schoenwaelder (schoenw@ibr.cs.tu-bs.de) http://www.cs.tu-bs.de/~schoenw
+Technical University Braunschweig, Dept. Operating Systems & Computer Networks
+Bueltenweg 74/75, D-38106 Braunschweig, Germany.     (Tel. +49 531 / 391-3249)

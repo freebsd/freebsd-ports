@@ -1,0 +1,14 @@
+@cwd /usr/local
+@mode 755
+bin/scotty
+bin/scwish
+bin/straps
+bin/ntping
+@mode 444
+man/man1/scotty.1
+man/man1/scwish.1
+man/man8/ntping.8
+man/man8/straps.8
+@mode 644
+lib/tkined
+lib/scotty
