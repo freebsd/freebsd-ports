@@ -32,4 +32,8 @@
 %%LISPDIR%%/pure-pr-server.elc
 %%LISPDIR%%/pure-vs.el
 %%LISPDIR%%/pure-vs.elc
+%%PUREBIN%%/dccput
+%%PUREBIN%%/dccget
+%%PUREBIN%%/puresv
+%%XEMACS_ONLY%%@dirrm %%PUREBIN%%
 @dirrm %%LISPDIR%%
