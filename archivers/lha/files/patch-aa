@@ -84,8 +84,8 @@
   
     if (original_size == 0L)
       printf ("******");
-*** ./Makefile.old	Wed Sep 23 23:29:48 1992
---- ./Makefile	Mon Dec 26 11:52:27 1994
+*** Makefile.orig	Wed Sep 23 21:29:48 1992
+--- Makefile	Thu Sep 28 21:20:09 1995
 ***************
 *** 13,31 ****
   CC = cc
@@ -99,8 +99,8 @@
   #OPTIMIZE	= -g # -O -fstrength-reduce -fomit-frame-pointer
 ! OPTIMIZE	= -O
   
-  BINDIR = /usr/local/bin
-  MANDIR = /usr/local/man
+! BINDIR = /usr/local/bin
+! MANDIR = /usr/local/man
 ! MANSECT = n
   
 ! INSTALL = install
@@ -121,8 +121,8 @@
   #OPTIMIZE	= -g # -O -fstrength-reduce -fomit-frame-pointer
 ! OPTIMIZE        = -O2
   
-  BINDIR = /usr/local/bin
-  MANDIR = /usr/local/man
+! BINDIR = ${PREFIX}/bin
+! MANDIR = ${PREFIX}/man
 ! MANSECT = 1
   
 ! INSTALL = install -c -o bin -g bin
