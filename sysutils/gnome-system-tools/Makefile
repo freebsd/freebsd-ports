@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	gnomesystemtools
-PORTVERSION=	0.91.0
-PORTREVISION=	3
+PORTVERSION=	0.92.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-system-tools/0.91
+MASTER_SITE_SUBDIR=	sources/gnome-system-tools/0.92
 DISTNAME=	gnome-system-tools-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Tools to configure workstations
