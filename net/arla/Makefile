@@ -3,7 +3,7 @@
 # Date created:			09 Sep 1998
 # Whom:				Peter Hawkins <thepish@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/09/09 05:51:30 thepish Exp $
+# $Id: Makefile,v 1.2 1998/09/15 04:27:31 asami Exp $
 #
 
 DISTNAME=	arla-0.9
@@ -14,7 +14,6 @@ MAINTAINER=	thepish@freebsd.org
 
 #BUILD_DEPENDS=	/usr/lib/libkafs.a:/usr/src/kerberosIV/lib/libkafs
 
-CONFIGURE_ARGS=	--prefix=$(PREFIX)
-HAS_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
