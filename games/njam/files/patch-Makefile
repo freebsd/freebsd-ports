@@ -1,0 +1,65 @@
+--- Makefile.orig	Fri Oct 17 01:16:56 2003
++++ Makefile	Sat Nov 15 19:28:16 2003
+@@ -20,7 +20,7 @@
+ 
+ # directory where the games are installed (/usr, /usr/local, ... or something)
+ ifndef PREFIX
+-PREFIX=/usr
++PREFIX=/usr/local
+ endif
+ 
+ PROGRAM = njam
+@@ -29,15 +29,15 @@
+ 
+ # If you hate warnings under Cygwin use these flags instead
+ # MY_CFLAGS = -I/usr/local/include/SDL -Dmain=SDL_main -DWIN32 -Uunix -mno-cygwin
+-MY_CFLAGS = `sdl-config --cflags`
++MY_CFLAGS += `sdl11-config --cflags`
+ 
+ %.o:	%.cpp
+-	$(CC) -O3 -c $(MY_CFLAGS) $< -o $@
++	$(CC) -c $(MY_CFLAGS) $< -o $@
+ 
+ all:	$(PROGRAM)
+ 
+ $(PROGRAM):	$(OBJECTS)
+-	$(CC) `sdl-config --libs` -o$(PROGRAM) $(OBJECTS) -lSDL -lSDL_mixer -lSDL_net -lSDL_image
++	$(CC) `sdl11-config --libs` -o$(PROGRAM) $(OBJECTS) -lSDL_mixer -lSDL_net -lSDL_image
+ 
+ clean:
+ 	$(RM) *.o
+@@ -45,25 +45,15 @@
+ 	$(RM) $(PROGRAM).exe
+ 
+ install:
+-	mkdir -m 755 -p $(PREFIX)/games/njam
+-	mkdir -m 755 -p $(PREFIX)/games/njam/data
+-	mkdir -m 755 -p $(PREFIX)/games/njam/skins
+-	mkdir -m 755 -p $(PREFIX)/games/njam/html
+-	mkdir -m 755 -p $(PREFIX)/games/njam/levels
+-	install -o root -g games -m 755 njam 		$(PREFIX)/games/njam
+-	install -o root -g games -m 644 data/*  	$(PREFIX)/games/njam/data
+-	install -o root -g games -m 644 skins/* 	$(PREFIX)/games/njam/skins
+-	install -o root -g games -m 644 html/* 		$(PREFIX)/games/njam/html
+-	install -o root -g games -m 6777 levels/* 	$(PREFIX)/games/njam/levels
+-	echo '#!/bin/sh' > /usr/bin/njam
+-	echo '$(PREFIX)/games/njam/njam $$1' >> /usr/bin/njam
+-	chmod 755 /usr/bin/njam
+-	@echo
+-	@echo ------------------ Install completed ------------------------------
+-	@echo Type \"njam\" to play the game.
+-	@echo You can link \"$(PREFIX)/games/njam/njam\" into menus/toolbars.
+-	@echo -------------------------------------------------------------------
+-	@echo
++	mkdir -m 755 -p $(PREFIX)/share/njam
++	mkdir -m 755 -p $(PREFIX)/share/njam/data
++	mkdir -m 755 -p $(PREFIX)/share/njam/skins
++	mkdir -m 755 -p $(PREFIX)/share/njam/levels
++	install -o root -g games -m 755 njam 		$(PREFIX)/share/njam
++	install -o root -g games -m 644 data/*  	$(PREFIX)/share/njam/data
++	install -o root -g games -m 644 skins/* 	$(PREFIX)/share/njam/skins
++	install -o root -g games -m 644 levels/* 	$(PREFIX)/share/njam/levels
++	ln -s $(PREFIX)/share/njam/njam $(PREFIX)/bin/njam
+ 
+ uninstall:
+ 	rm -rf $(PREFIX)/games/njam
