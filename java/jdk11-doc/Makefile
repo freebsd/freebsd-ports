@@ -23,6 +23,7 @@ JDK_MAJOR_VER=	${JDK_VERSION:R}
 DOWNLOAD_URL=	http://java.sun.com/jdk/${JDK_MAJOR_VER}/docs.html
 
 NO_BUILD=	yes
+PLIST=		${WRKDIR}/PLIST
 
 .include <bsd.port.pre.mk>
 

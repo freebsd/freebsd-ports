@@ -25,6 +25,7 @@ JDK_VERSION=	1.2.2_006
 JDK_MAJOR_VER=	${JDK_VERSION:R}
 
 NO_BUILD=	yes
+PLIST=		${WRKDIR}/PLIST
 
 .include <bsd.port.pre.mk>
 
