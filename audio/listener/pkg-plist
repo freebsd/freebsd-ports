@@ -1,0 +1,5 @@
+bin/setlistener
+bin/listener
+etc/listener.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
