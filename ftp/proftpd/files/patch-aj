@@ -1,0 +1,11 @@
+--- include/glibc-glob.h.orig	Sun Oct 20 13:43:44 2002
++++ include/glibc-glob.h	Sun Oct 20 13:48:38 2002
+@@ -50,7 +50,7 @@
+ #endif
+ 
+ /* We need `size_t' for the following definitions.  */
+-#ifndef __size_t
++#if !defined(__size_t) && !defined(__FreeBSD__)
+ # if defined __GNUC__ && __GNUC__ >= 2
+ typedef __SIZE_TYPE__ __size_t;
+ #  ifdef _XOPEN_SOURCE
