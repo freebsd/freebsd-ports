@@ -1,0 +1,59 @@
+--- lib/gs_setpd.ps.orig	Mon Mar 31 22:02:22 2003
++++ lib/gs_setpd.ps	Sat May 17 06:57:49 2003
+@@ -323,21 +323,42 @@
+     } bind
+ .dicttomark readonly def
+ 
+-% Define the keys used in input attribute matching.
+-/.inputattrkeys [
+-  /PageSize /MediaColor /MediaWeight /MediaType /InsertSheet
+-	% The following are documented in Adobe's supplement for v2017.
+-  /LeadingEdge /MediaClass
+-] readonly def
+-% Define other keys used in media selection.
+-/.inputselectionkeys [
+-  /MediaPosition /Orientation
+-] readonly def
++% M. Sweet, Easy Software Products:
++%
++% Define NOMEDIAATTRS to turn the default (but unimplementable) media
++% selection policies for setpagedevice.  This is used by CUPS to
++% support the standard Adobe media attributes.
++currentdict /NOMEDIAATTRS known {
++  % Define the keys used in input attribute matching.
++  /.inputattrkeys [
++    /PageSize /MediaColor /MediaWeight /MediaType /InsertSheet
++	  % The following are documented in Adobe's supplement for v2017.
++    /LeadingEdge /MediaClass
++  ] readonly def
++  % Define other keys used in media selection.
++  /.inputselectionkeys [
++    /MediaPosition /Orientation
++  ] readonly def
+ 
+-% Define the keys used in output attribute matching.
+-/.outputattrkeys [
+-  /OutputType
+-] readonly def
++  % Define the keys used in output attribute matching.
++  /.outputattrkeys [
++    /OutputType
++  ] readonly def
++} {
++  % Define only PageSize for input attribute matching.
++  /.inputattrkeys [
++    /PageSize
++  ] readonly def
++  % Define no other keys used in media selection.
++  /.inputselectionkeys [
++    /noInputSelectionsKeys
++  ] readonly def
++
++  % Define no keys used in output attribute matching.
++  /.outputattrkeys [
++    /noOutputAttrKeys
++  ] readonly def
++} ifelse
+ 
+ % Define all the parameters that should always be copied to the merged
+ % dictionary.

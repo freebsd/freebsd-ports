@@ -51,6 +51,9 @@ bin/wftopfa
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/NEWS
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/hpdj/hpdj.html
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lips/Gdevlips.htm
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lxm3200/README
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lxm3200/RELEASE_NOTES
+%%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/lxm3200/Z12-Z31-QuickSetup
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/md2k/README.jis
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/MJ700V2C.FAQ
 %%PORTDOCS%%share/doc/ghostscript/%%GS_VERSION%%/mjc/README.mjc
@@ -547,6 +550,7 @@ share/ghostscript/fonts/z003034l.pfm
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/npdl
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/mjc
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/md2k
+%%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/lxm3200
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/lips
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/hpdj
 %%PORTDOCS%%@dirrm share/doc/ghostscript/%%GS_VERSION%%/gdi

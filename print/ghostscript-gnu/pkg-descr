@@ -15,8 +15,8 @@ This port includes add-on packages (not part of the official gs release)
 	  - http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
 	o Gimp-Print driver for Canon/Epson/Lexmark/HP printers
 	  - http://gimp-print.sourceforge.net/
-	o Spacial drivers for verious printer models mainly sold in Japan
-	  - Alps, Canon, Epson, NEC, Ricoh,...
+	o Special drivers for verious printer models
+	  - Alps, Canon, Epson, NEC, Lexmark, Ricoh,...
 	o Additional contributed uniprint driver profiles for
 	  - Epson Stylus Color 740 and Epson LQ-1170
 
