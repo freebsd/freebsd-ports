@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 COMMENT=	A portable NES/Famicom emulator based on Bero's original FCE
 
-USE_SDL=	yes
+USE_SDL=	sdl
 MAN6=		fceu.6
 WRKSRC=		${WRKDIR}/fceu
 USE_X_PREFIX=	yes

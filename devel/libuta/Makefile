@@ -29,6 +29,8 @@ INSTALLS_SHLIB=	yes
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
+WANT_SDL=	yes
+
 SDL11_FILES=	configure uta/color.h uta/event.h uta/keysym.h uta/mutex.h \
 		uta/pixelformat.h uta/rect.h uta/sge_blib.cc uta/sge_blib.h \
 		uta/sge_draw.cc uta/sge_draw.h uta/sound.h uta/surface_io.cc \
@@ -36,12 +38,12 @@ SDL11_FILES=	configure uta/color.h uta/event.h uta/keysym.h uta/mutex.h \
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libSDL_mixer.so.2)
+.if ${HAVE_SDL:Mmixer}!=""
 WITH_SDL_MIXER=	yes
 .endif
 
 .if defined(WITH_SDL_MIXER)
-USE_SDL=	mixer sdl
+USE_SDL+=	mixer
 .endif
 
 post-patch:

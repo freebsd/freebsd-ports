@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	lgames
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice clone of classical Breakout game
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

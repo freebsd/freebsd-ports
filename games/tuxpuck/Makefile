@@ -19,7 +19,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		vorbis.3:${PORTSDIR}/audio/libvorbis
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GMAKE=	yes
 ALL_TARGET=	tuxpuck
 

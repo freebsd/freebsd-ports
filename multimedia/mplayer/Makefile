@@ -216,6 +216,7 @@ CONFIGURE_ARGS+=--language=${WITH_LANG}
 .endif
 
 WANT_GNOME=	yes
+WANT_SDL=	yes
 USE_REINPLACE=	yes
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
@@ -271,7 +272,7 @@ WITH_SVGALIB=	yes
 WITH_AALIB=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
+.if ${HAVE_SDL:Msdl}!=""
 WITH_SDL=	yes
 WITH_AALIB=	yes
 .endif
@@ -418,7 +419,7 @@ LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 .endif
 
 .if defined(WITH_SDL)
-USE_SDL=	yes
+USE_SDL=	sdl
 .endif
 
 .if defined(WITH_ESOUND)

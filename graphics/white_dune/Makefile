@@ -22,7 +22,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_MOTIF=	yes
 USE_GL=		yes
-USE_SDL=	yes
+USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \

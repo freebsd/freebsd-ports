@@ -20,7 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 WRKSRC=		${WRKDIR}/VisualBoyAdvance-${PORTVERSION}
 
 TARGET_DIR=	${PREFIX}/bin/

@@ -15,7 +15,7 @@ DISTNAME=	GUIlib-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very simple GUI framework for use with SDL
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore

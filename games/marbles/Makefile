@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	lgames
 MAINTAINER=	verm@drunkmonk.net
 COMMENT=	A challenging puzzle game similar to Atomix
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-profile-path=/var/games

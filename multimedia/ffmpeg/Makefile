@@ -20,6 +20,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
+WANT_SDL=	yes
 CONFIGURE_ARGS=	--cc="${CC}" --prefix="${PREFIX}" \
 		--make="${GMAKE}" --enable-shared \
 		--extra-ldflags="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
@@ -59,7 +60,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
 ##
 ##
 ## SDL
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so)
+.if ${HAVE_SDL:Msdl}
 WITH_SDL=yes
 .endif
 ## freetype2
@@ -116,7 +117,7 @@ CONFIGURE_ARGS+=	--disable-mmx
 .endif
 ## SDL
 .ifdef(WITH_SDL)
-USE_SDL=	yes
+USE_SDL=	sdl
 
 PLIST_SUB+=	SDL=""
 .else

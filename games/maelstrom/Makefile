@@ -14,14 +14,10 @@ DISTNAME=	Maelstrom-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asteroids-style game for X Window System
 
-LIB_DEPENDS=	SDL_net.0:${PORTSDIR}/net/sdl_net
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	sdl net
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_ARGS+=--program-transform-name=\'\'
 
 .if !defined(NOPORTDOCS)

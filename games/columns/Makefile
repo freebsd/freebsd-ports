@@ -15,7 +15,7 @@ DISTNAME=	Columns-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nice little implementation of columns game for X Window System
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 

@@ -32,6 +32,7 @@ USE_GNOME=	gnomehack \
 USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_SIZE=	yes
+WANT_SDL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-alsa \
@@ -56,7 +57,6 @@ WANT_GNOME=	yes
 MAN1=	gst-launch-ext.1 gst-visualise.1
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
-SDL_CONFIG?="${LOCALBASE}/bin/sdl11-config"
 XMMS_CONFIG?="${LOCALBASE}/bin/xmms-config"
 
 # library minor number
@@ -258,7 +258,7 @@ WITH_PNG=yes
 .endif
 
 # sdl
-.if exists(${LOCALBASE}/lib/libSDL-1.1.a)
+.if ${HAVE_SDL:Msdl}
 WITH_SDL=yes
 .endif
 
@@ -582,11 +582,9 @@ CONFIGURE_ARGS+=	--disable-sdl \
 			--disable-sdltest
 PLIST_SUB+=	SDL="@comment "
 .else
-LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
+USE_SDL=	sdl
 CONFIGURE_ARGS+=	--with-sdl-prefix=${LOCALBASE}  \
 			--with-sdl-exec-prefix=${LOCALBASE}
-CONFIGURE_ENV+=		SDL_CONFIG=${SDL_CONFIG}
 PLIST_SUB+=	SDL=""
 .endif
 

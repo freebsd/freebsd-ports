@@ -16,7 +16,7 @@ DISTFILES=	wolf3d-20011028.tar.gz:wolf wolfdata.tar.gz:wolfdata
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	"Wolfenstein 3D Linux" by Steven Fuller (1992)
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GZIP=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes

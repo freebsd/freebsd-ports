@@ -57,7 +57,7 @@ CFLAGS+=	-O0
 CONFIGURE_ARGS+=	--disable-clanSDL
 PLIST_SUB+=	SDL="@comment "
 .else
-USE_SDL=	yes
+USE_SDL=	sdl
 CONFIGURE_ARGS+=	--disable-sdltest
 PLIST_SUB+=	SDL=""
 .endif

@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	lgeneral
 MAINTAINER=	filippo@widestore.net
 COMMENT=	A turn-based strategy engine inspired by Panzer General
 
-USE_SDL=	yes
+USE_SDL=	sdl
 
 .ifndef (WITHOUT_SOUND)
 USE_SDL=	mixer

@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drum machine compiler
 
 USE_REINPLACE=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 CFLAGS+=	`${SDL_CONFIG} --cflags`
 LIBS+=		`${SDL_CONFIG} --libs`
 PLIST_FILES=	bin/drumpiler

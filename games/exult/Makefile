@@ -18,7 +18,7 @@ COMMENT=	Ultima VII engine
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 USE_XLIB=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

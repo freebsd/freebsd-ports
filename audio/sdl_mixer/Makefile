@@ -18,7 +18,7 @@ COMMENT=	A sample multi-channel audio mixer library
 LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
 		smpeg.1:${PORTSDIR}/multimedia/smpeg
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

@@ -17,7 +17,7 @@ COMMENT=	An curses-based MP3 player
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GETOPT_LONG=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

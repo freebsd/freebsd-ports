@@ -16,12 +16,11 @@ EXTRACT_SUFX=	-source.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D worm game for two players for X Window System
 
-LIB_DEPENDS=	SDL_sound-1.0.1:${PORTSDIR}/audio/sdl_sound \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes
 USE_GL=		yes
-USE_SDL=	yes
+USE_SDL=	sdl sound
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -33,7 +32,7 @@ CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
 .if defined(WITH_SDL_NET)
-LIB_DEPENDS+=	SDL_net:${PORTSDIR}/net/sdl_net
+USE_SDL+=	net
 CONFIGURE_ARGS+=	--enable-network
 .endif
 

@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_PERL5_BUILD=yes
 USE_REINPLACE=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 
 MAN6=		scummvm.6
 

@@ -19,7 +19,7 @@ COMMENT=	A 2D - Jump'n'run shooter
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GMAKE=	yes
 
 DATAVERSION=	0.8.6

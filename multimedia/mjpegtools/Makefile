@@ -29,6 +29,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS:S/"//g}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS:S/"//g}"
 WANT_GNOME=	yes
+WANT_SDL=	yes
 
 MAN1=	divxdec.1 jpeg2yuv.1 lav2divx.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 \
 	lavpipe.1 lavplay.1 lavrec.1 lavtrans.1 mjpegtools.1 mp2enc.1 \
@@ -76,7 +77,7 @@ WITH_LIBMOVTAR=	yes
 WITH_QUICKTIME=	yes
 .endif
 # SDL
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
+.if ${HAVE_SDL}:Msdl}!=""
 WITH_SDL=	yes
 .endif
 
@@ -105,7 +106,7 @@ CONFIGURE_ARGS+=	--with-movtar-prefix=${LOCALBASE}
 .endif
 #
 .ifdef(WITH_SDL)
-USE_SDL=	yes
+USE_SDL=	sdl
 CONFIGURE_ARGS+=	--with-sdl
 .endif
 #

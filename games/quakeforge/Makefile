@@ -36,6 +36,7 @@ USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+WANT_SDL=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -56,7 +57,7 @@ CFLAGS+=	-ffast-math
 .endif
 .endif
 
-.if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
+.if ${HAVE_SDL:Msdl}!=""
 WITH_SDL=	yes
 .endif
 
@@ -127,7 +128,7 @@ PLIST_SUB+=	XMMS:="@comment "
 .endif
 
 .if !defined(WITHOUT_SDL) && defined(WITH_SDL)
-USE_SDL=	yes
+USE_SDL=	sdl
 CONFIGURE_ARGS+=--with-sdl=${LOCALBASE}
 PLIST_SUB+=	SDL:=""
 .else

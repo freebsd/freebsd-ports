@@ -15,7 +15,7 @@ DISTNAME=	tworld-${PORTVERSION}
 MAINTAINER=	sec@42.org
 COMMENT=	An emulation of the game "Chip's Challenge"
 
-USE_SDL=	yes
+USE_SDL=	sdl
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 USE_REINPLACE=	YES

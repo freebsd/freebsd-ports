@@ -15,7 +15,7 @@ COMMENT=	A wonderful Sega Genesis/MegaDrive emulator
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-USE_SDL=	yes
+USE_SDL=	sdl
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 
