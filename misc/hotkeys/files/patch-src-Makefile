@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Sun Dec  8 09:34:44 2002
++++ src/Makefile.in	Sun May 11 16:18:57 2003
+@@ -96,7 +96,7 @@
+ l = @l@
+ 
+ bin_PROGRAMS = hotkeys
+-hotkeys_SOURCES = hotkeys.c kbddef.c conf.c fixVMware.c apmlib.c xmalloc.c                   splash.c                   XF86keysym.h apm.h common.h conf.h hotkeys.h kbddef.h                   xmalloc.h splash.h
++hotkeys_SOURCES = hotkeys.c kbddef.c conf.c fixVMware.c xmalloc.c                   splash.c                   XF86keysym.h common.h conf.h hotkeys.h kbddef.h                   xmalloc.h splash.h
+ 
+ sysconf_DATA = hotkeys.conf
+ man_MANS = hotkeys.1
+@@ -120,7 +120,7 @@
+ X_LIBS = @X_LIBS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_PRE_LIBS = @X_PRE_LIBS@
+-hotkeys_OBJECTS =  hotkeys.o kbddef.o conf.o fixVMware.o apmlib.o \
++hotkeys_OBJECTS =  hotkeys.o kbddef.o conf.o fixVMware.o \
+ xmalloc.o splash.o
+ hotkeys_LDADD = $(LDADD)
+ hotkeys_DEPENDENCIES = 

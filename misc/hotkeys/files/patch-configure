@@ -1,0 +1,58 @@
+--- configure.orig	Sun Dec  8 09:34:24 2002
++++ configure	Sun May 11 22:17:53 2003
+@@ -251,6 +251,7 @@
+ # Initializations.
+ #
+ ac_default_prefix=/usr/local
++
+ ac_config_libobj_dir=.
+ cross_compiling=no
+ subdirs=
+@@ -648,6 +649,21 @@
+   esac
+ done
+ 
++#################################################################
++## Andy Pavlo
++## For some reason it wouldn't install in the right 
++## dir if we gave it a prefix
++## I hope this fixes it 
++#################################################################
++if test $prefix != "NONE"; then
++  ac_default_prefix=$prefix
++else
++  ac_default_prefix=$ac_default_prefix
++fi
++#################################################################
++## END FIX
++#################################################################
++
+ if test -n "$ac_prev"; then
+   ac_option=--`echo $ac_prev | sed 's/_/-/g'`
+   { echo "$as_me: error: missing argument to $ac_option" >&2
+@@ -4353,13 +4369,13 @@
+ fi
+ 
+ 
+-echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -4412,7 +4428,7 @@
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ fi
+ 
