@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		p4v
-PORTVERSION=		2004.1
+PORTVERSION=		2004.1.63016
 CATEGORIES=		devel
 MASTER_SITES=		\
 	http://www.perforce.com/downloads/perforce/r04.1/bin.freebsd4/ \
