@@ -1,10 +1,10 @@
 The Independent JPEG Group's JPEG software
 ==========================================
 
-README for release 5b of 15-Mar-95
-==================================
+README for release 6 of 2-Aug-95
+================================
 
-This distribution contains the fifth public release of the Independent JPEG
+This distribution contains the sixth public release of the Independent JPEG
 Group's free JPEG software.  You are welcome to redistribute this software and
 to use it for any purpose, subject to the conditions under LEGAL ISSUES, below.
 
@@ -14,7 +14,7 @@ our electronic mailing list.  Mailing list members are notified of updates
 and have a chance to participate in technical discussions, etc.
 
 This software is the work of Tom Lane, Philip Gladstone, Luis Ortiz, Jim
-Boucher, Lee Crocker, George Phillips, Davide Rossi, Ge' Weijers, and other
-members of the Independent JPEG Group.
+Boucher, Lee Crocker, Julian Minguillon, George Phillips, Davide Rossi,
+Ge' Weijers, and other members of the Independent JPEG Group.
 
-IJG is not associated with the official ISO JPEG standards committee.
+IJG is not affiliated with the official ISO JPEG standards committee.
