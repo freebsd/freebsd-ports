@@ -1,14 +1,16 @@
---- Makefile.common.orig	Sat Jun 26 14:00:42 2004
-+++ Makefile.common	Sat Jun 26 14:03:02 2004
-@@ -15,10 +15,9 @@
+--- Makefile.common.orig	Tue Dec 14 18:52:32 2004
++++ Makefile.common	Tue Dec 14 18:53:15 2004
+@@ -15,12 +15,10 @@
  endif
  endif
  
 -CC = gcc
 +CC ?= gcc
  LIBS = $(shell pkg-config --libs gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0) -L/usr/X11R6/lib  -lXmu
- INCS = $(shell pkg-config --cflags gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0)
--CFLAGS = -O2    # overwriten by command line or env. variable
- CFLAGS += -Wall # always nice to have 
+ INCS2 = $(shell pkg-config --cflags gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0)
+ INCS := $(INCS2:-I%=-isystem%)
+-# first = may be overwriten by command line or env. variable	
+-CFLAGS = -O2
+ # this one always applays
+ CFLAGS += -Wall
  ifneq (,$(DEVEL))
- CFLAGS := -g -Wall 
