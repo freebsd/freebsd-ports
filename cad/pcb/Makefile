@@ -17,8 +17,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		latex:${PORTSDIR}/print/teTeX
 
 USE_IMAKE=	yes
-MANN=		pcb.n
-MANCOMPRESSED=	no
+MAN1=		pcb.1
 
 pre-install:
 	-${MKDIR} ${DOCSDIR}
