@@ -1,14 +1,35 @@
-%%PORTDOCS%%%%HLDSDIR%%Heroes/LisezMoi.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/News1.0.1.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/README.TXT
-%%PORTDOCS%%%%HLDSDIR%%Heroes/README1.0.1.TXT
 %%HLDSDIR%%Heroes/Sprites/320hud1.spr
 %%HLDSDIR%%Heroes/Sprites/HLHWeapons.spr
 %%HLDSDIR%%Heroes/Sprites/MORTAR.SPR
+%%HLDSDIR%%Heroes/Sprites/PHradar.spr
+%%HLDSDIR%%Heroes/Sprites/PHradarOff_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradar_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln10_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln11_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln12_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln13_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln14_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln15_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln16_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln1_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln2_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln3_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln4_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln5_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln6_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln7_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln8_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHradln9_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHrspO_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHrspU_640.spr
+%%HLDSDIR%%Heroes/Sprites/PHrsp_320.spr
+%%HLDSDIR%%Heroes/Sprites/PHrsp_640.spr
 %%HLDSDIR%%Heroes/Sprites/TURRET.SPR
+%%HLDSDIR%%Heroes/Sprites/TurretR.spr
 %%HLDSDIR%%Heroes/Sprites/barehands.spr
 %%HLDSDIR%%Heroes/Sprites/bolters.spr
 %%HLDSDIR%%Heroes/Sprites/crosshairs.spr
+%%HLDSDIR%%Heroes/Sprites/fire2.spr
 %%HLDSDIR%%Heroes/Sprites/flamers.spr
 %%HLDSDIR%%Heroes/Sprites/hud.txt
 %%HLDSDIR%%Heroes/Sprites/monitor1.spr
@@ -19,87 +40,91 @@
 %%HLDSDIR%%Heroes/Sprites/sabre.spr
 %%HLDSDIR%%Heroes/Sprites/smokebomb.spr
 %%HLDSDIR%%Heroes/Sprites/vgrenade.spr
-%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_357.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_barehand.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_bolter.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_crowbar.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_flamer.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_mortar.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_smokebomb.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_turret.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/Sprites/weapon_variousg.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/Titles.txt
+%%HLDSDIR%%Heroes/Sprites/weapon_357.txt
+%%HLDSDIR%%Heroes/Sprites/weapon_barehand.txt
+%%HLDSDIR%%Heroes/Sprites/weapon_bolter.txt
+%%HLDSDIR%%Heroes/Sprites/weapon_crowbar.txt
+%%HLDSDIR%%Heroes/Sprites/weapon_flamer.txt
+%%HLDSDIR%%Heroes/Sprites/weapon_mortar.txt
+%%HLDSDIR%%Heroes/Sprites/weapon_smokebomb.txt
+%%HLDSDIR%%Heroes/Sprites/weapon_turret.txt
+%%HLDSDIR%%Heroes/Sprites/weapon_variousg.txt
+%%HLDSDIR%%Heroes/Titles.txt
 %%HLDSDIR%%Heroes/cl_dlls/client.dll
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_hunter.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_jet_man.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_magician.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_metamorph.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_pyros.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_shadow.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_spider.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_storm.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_the_shadow.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_the_spider.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes/short_weaponeer.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_hunter.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_jet_man.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_magician.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_metamorph.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_pyros.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_shadow.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_spider.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_storm.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_the_shadow.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/classes_en_francais/short_weaponeer.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/commandmenu.txt
-%%HLDSDIR%%Heroes/config.cfg
+%%HLDSDIR%%Heroes/classes/short_hunter.txt
+%%HLDSDIR%%Heroes/classes/short_jet_man.txt
+%%HLDSDIR%%Heroes/classes/short_magician.txt
+%%HLDSDIR%%Heroes/classes/short_metamorph.txt
+%%HLDSDIR%%Heroes/classes/short_pyros.txt
+%%HLDSDIR%%Heroes/classes/short_shadow.txt
+%%HLDSDIR%%Heroes/classes/short_spider.txt
+%%HLDSDIR%%Heroes/classes/short_storm.txt
+%%HLDSDIR%%Heroes/classes/short_weaponeer.txt
+%%HLDSDIR%%Heroes/classes/short_wolverine.txt
+%%HLDSDIR%%Heroes/commandmenu.txt
 %%HLDSDIR%%Heroes/custom.hpk
 %%HLDSDIR%%Heroes/dlls/mp.dll
+%%HLDSDIR%%Heroes/events/mp5sil.sc
 %%HLDSDIR%%Heroes/game.cfg
 %%HLDSDIR%%Heroes/gfx/Shell/Logo.bmp
 %%HLDSDIR%%Heroes/gfx/Shell/kb_act.lst
-%%HLDSDIR%%Heroes/gfx/Shell/kb_act_francais.lst
 %%HLDSDIR%%Heroes/gfx/Shell/kb_def.lst
 %%HLDSDIR%%Heroes/gfx/Shell/splash.bmp
 %%HLDSDIR%%Heroes/gfx/vgui/320_arrow.tga
 %%HLDSDIR%%Heroes/gfx/vgui/320_arrowdn.tga
 %%HLDSDIR%%Heroes/gfx/vgui/320_arrowup.tga
+%%HLDSDIR%%Heroes/gfx/vgui/320_hunter.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_armored_killer.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_arrow.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_arrowdn.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_arrowup.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_chooseclass.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_chooseteam.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_civilianblue.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_demomanblue.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_demomanred.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_engineerblue.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_engineerred.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_death_bringer.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_diablo.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_hud_health.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_hunter.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_hwguyblue.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_hwguyred.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_medicblue.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_medicred.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_pyroblue.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_pyrored.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_ironman.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_jet_man.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_magician.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_metamorph.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_night_stalker.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_predator.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_pyros.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_raging_man.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_randompcblue.tga
 %%HLDSDIR%%Heroes/gfx/vgui/640_randompcred.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_scoutblue.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_scoutred.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_sniperblue.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_sniperred.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_soldierblue.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_soldierred.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_spyblue.tga
-%%HLDSDIR%%Heroes/gfx/vgui/640_spyred.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_razor.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_shadow.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_spider.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_storm.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_tarentula.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_terrorist.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_warlock.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_weaponeer.tga
+%%HLDSDIR%%Heroes/gfx/vgui/640_wolverine.tga
 %%HLDSDIR%%Heroes/liblist.gam
+%%HLDSDIR%%Heroes/maps/DM_Shipyard.txt
+%%HLDSDIR%%Heroes/maps/DM_VortexArena.bsp
+%%HLDSDIR%%Heroes/maps/DM_vortexArena.txt
+%%HLDSDIR%%Heroes/maps/dm_Shipyard.bsp
+%%HLDSDIR%%Heroes/maps/ob_BellTower.bsp
+%%HLDSDIR%%Heroes/maps/ob_BellTower.txt
+%%HLDSDIR%%Heroes/maps/ob_DoomFactory.bsp
+%%HLDSDIR%%Heroes/maps/ob_doomfactory.txt
 %%HLDSDIR%%Heroes/media/logo.avi
+%%HLDSDIR%%Heroes/models/@ss@ssin.mdl
 %%HLDSDIR%%Heroes/models/V_MORTAR.MDL
 %%HLDSDIR%%Heroes/models/bow_bolt.mdl
-%%HLDSDIR%%Heroes/models/cprninja.mdl
 %%HLDSDIR%%Heroes/models/crowbar.mdl
 %%HLDSDIR%%Heroes/models/obi11.mdl
+%%HLDSDIR%%Heroes/models/p_barrel.mdl
 %%HLDSDIR%%Heroes/models/p_bolter.mdl
 %%HLDSDIR%%Heroes/models/p_bow.mdl
+%%HLDSDIR%%Heroes/models/p_crate.mdl
 %%HLDSDIR%%Heroes/models/p_egon.mdl
 %%HLDSDIR%%Heroes/models/p_flamer.mdl
 %%HLDSDIR%%Heroes/models/p_hand.mdl
@@ -109,135 +134,163 @@
 %%HLDSDIR%%Heroes/models/p_rock.mdl
 %%HLDSDIR%%Heroes/models/p_smokeb.mdl
 %%HLDSDIR%%Heroes/models/p_turret.mdl
+%%HLDSDIR%%Heroes/models/player/@ss@ssin/@ss@ssin.bmp
+%%HLDSDIR%%Heroes/models/player/@ss@ssin/@ss@ssin.mdl
+%%HLDSDIR%%Heroes/models/player/@ss@ssin/@ss@ssin.txt
 %%HLDSDIR%%Heroes/models/player/Alien/Alien.bmp
 %%HLDSDIR%%Heroes/models/player/Alien/Alien.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/Alien/Alien.txt
+%%HLDSDIR%%Heroes/models/player/Alien/Alien.txt
 %%HLDSDIR%%Heroes/models/player/Alien/alien_logo.bmp
-%%HLDSDIR%%Heroes/models/player/Aswat/ASwat.mdl
-%%HLDSDIR%%Heroes/models/player/Aswat/aswat.bmp
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/Aswat/aswat.txt
 %%HLDSDIR%%Heroes/models/player/Dreadstar/Dreadstar.bmp
 %%HLDSDIR%%Heroes/models/player/Dreadstar/Dreadstar.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/Dreadstar/Info.txt
+%%HLDSDIR%%Heroes/models/player/Dreadstar/Info.txt
 %%HLDSDIR%%Heroes/models/player/DrjMAUL/DrjMAUL.bmp
 %%HLDSDIR%%Heroes/models/player/DrjMAUL/DrjMAUL.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/DrjMAUL/DrjMAUL.txt
+%%HLDSDIR%%Heroes/models/player/DrjMAUL/DrjMAUL.txt
 %%HLDSDIR%%Heroes/models/player/Illemonati/Illemonati.bmp
 %%HLDSDIR%%Heroes/models/player/Illemonati/Illemonati.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/Illemonati/Illemonati_cultist_readme.txt
-%%HLDSDIR%%Heroes/models/player/Punisher/Punisher.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/Punisher/Punisher.txt
-%%HLDSDIR%%Heroes/models/player/Punisher/punisher.BMP
+%%HLDSDIR%%Heroes/models/player/Illemonati/Illemonati_cultist_readme.txt
+%%HLDSDIR%%Heroes/models/player/Marine/Readme.txt
+%%HLDSDIR%%Heroes/models/player/Marine/marine.bmp
+%%HLDSDIR%%Heroes/models/player/Marine/marine.mdl
 %%HLDSDIR%%Heroes/models/player/Spiderman/Spiderman.bmp
 %%HLDSDIR%%Heroes/models/player/Spiderman/Spiderman.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/Spiderman/Spiderman.txt
-%%HLDSDIR%%Heroes/models/player/barney/barney.bmp
-%%HLDSDIR%%Heroes/models/player/barney/barney.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/barney/barney.txt
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/bobafett/Readme.txt
+%%HLDSDIR%%Heroes/models/player/Spiderman/Spiderman.txt
+%%HLDSDIR%%Heroes/models/player/Swat/SWAT.MDL
+%%HLDSDIR%%Heroes/models/player/Swat/SWAT.txt
+%%HLDSDIR%%Heroes/models/player/Tarentula/Tarentula.mdl
+%%HLDSDIR%%Heroes/models/player/arm/arm.BMP
+%%HLDSDIR%%Heroes/models/player/arm/arm.mdl
+%%HLDSDIR%%Heroes/models/player/arm/arm.txt
+%%HLDSDIR%%Heroes/models/player/blindeye/Readme.txt
+%%HLDSDIR%%Heroes/models/player/blindeye/blindeye.bmp
+%%HLDSDIR%%Heroes/models/player/blindeye/blindeye.mdl
+%%HLDSDIR%%Heroes/models/player/bobafett/Readme.txt
 %%HLDSDIR%%Heroes/models/player/bobafett/bobafett.bmp
 %%HLDSDIR%%Heroes/models/player/bobafett/bobafett.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/cprninja/cpr.txt
-%%HLDSDIR%%Heroes/models/player/cprninja/cprninja.bmp
-%%HLDSDIR%%Heroes/models/player/cprninja/cprninja.mdl
+%%HLDSDIR%%Heroes/models/player/burn/Burn.bmp
+%%HLDSDIR%%Heroes/models/player/burn/Burn.mdl
+%%HLDSDIR%%Heroes/models/player/carvino/carvino.bmp
+%%HLDSDIR%%Heroes/models/player/carvino/carvino.mdl
+%%HLDSDIR%%Heroes/models/player/carvino/carvino_readme.txt
 %%HLDSDIR%%Heroes/models/player/ernie/ernie.bmp
 %%HLDSDIR%%Heroes/models/player/ernie/ernie.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/ernie/ernie.txt
+%%HLDSDIR%%Heroes/models/player/ernie/ernie.txt
 %%HLDSDIR%%Heroes/models/player/iron-man/Iron-Man.bmp
 %%HLDSDIR%%Heroes/models/player/iron-man/Iron-Man.mdl
 %%HLDSDIR%%Heroes/models/player/iron-man/Iron-Man.smd
 %%HLDSDIR%%Heroes/models/player/iron-man/Iron-Man.tga
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/iron-man/Iron-Man_README.txt
+%%HLDSDIR%%Heroes/models/player/iron-man/Iron-Man_README.txt
 %%HLDSDIR%%Heroes/models/player/iron-man/red_Chrome.bmp
 %%HLDSDIR%%Heroes/models/player/iron-man/shell.bmp
 %%HLDSDIR%%Heroes/models/player/iron-man/yellow_Chrome.bmp
+%%HLDSDIR%%Heroes/models/player/metamorph/metamorph.mdl
 %%HLDSDIR%%Heroes/models/player/michigan/Michigan.BMP
 %%HLDSDIR%%Heroes/models/player/michigan/Michigan.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/michigan/Michigan.txt
+%%HLDSDIR%%Heroes/models/player/michigan/Michigan.txt
 %%HLDSDIR%%Heroes/models/player/obi08/obi08.BMP
 %%HLDSDIR%%Heroes/models/player/obi08/obi08.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/obi08/obi08.txt
+%%HLDSDIR%%Heroes/models/player/obi08/obi08.txt
 %%HLDSDIR%%Heroes/models/player/obi11/obi11.bmp
 %%HLDSDIR%%Heroes/models/player/obi11/obi11.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/obi11/obi11.txt
+%%HLDSDIR%%Heroes/models/player/obi11/obi11.txt
 %%HLDSDIR%%Heroes/models/player/silencer/silencer.bmp
 %%HLDSDIR%%Heroes/models/player/silencer/silencer.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/silencer/silencer.txt
-%%HLDSDIR%%Heroes/models/player/snowcom/snowcom.bmp
-%%HLDSDIR%%Heroes/models/player/snowcom/snowcom.mdl
+%%HLDSDIR%%Heroes/models/player/silencer/silencer.txt
 %%HLDSDIR%%Heroes/models/player/spawn/Spawn.bmp
 %%HLDSDIR%%Heroes/models/player/spawn/Spawn.mdl
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/spawn/readme.txt
+%%HLDSDIR%%Heroes/models/player/spawn/readme.txt
 %%HLDSDIR%%Heroes/models/player/startroop/startroop.bmp
 %%HLDSDIR%%Heroes/models/player/startroop/startroop.mdl
 %%HLDSDIR%%Heroes/models/player/thor/Thor.bmp
 %%HLDSDIR%%Heroes/models/player/thor/Thor.mdl
-%%HLDSDIR%%Heroes/models/player/thor/Thor.smd
-%%PORTDOCS%%%%HLDSDIR%%Heroes/models/player/thor/Thor_README.txt
-%%HLDSDIR%%Heroes/models/player/thor/cape.bmp
-%%HLDSDIR%%Heroes/models/player/thor/face.bmp
+%%HLDSDIR%%Heroes/models/player/thor/Thor_README.txt
+%%HLDSDIR%%Heroes/models/player/wolverine/wolverine.bmp
+%%HLDSDIR%%Heroes/models/player/wolverine/wolverine.mdl
+%%HLDSDIR%%Heroes/models/player/wolverine/wolverine_README.txt
+%%HLDSDIR%%Heroes/models/player/wolverine/x-men1a.bmp
+%%HLDSDIR%%Heroes/models/spiderweb.mdl
 %%HLDSDIR%%Heroes/models/v_FLAMEG.mdl
-%%HLDSDIR%%Heroes/models/v_POISONG.mdl
+%%HLDSDIR%%Heroes/models/v_barrel.mdl
 %%HLDSDIR%%Heroes/models/v_bolter.mdl
 %%HLDSDIR%%Heroes/models/v_bouncingg.mdl
 %%HLDSDIR%%Heroes/models/v_bow.mdl
+%%HLDSDIR%%Heroes/models/v_crate.mdl
 %%HLDSDIR%%Heroes/models/v_flamer.mdl
 %%HLDSDIR%%Heroes/models/v_hand.mdl
 %%HLDSDIR%%Heroes/models/v_kawauso.mdl
+%%HLDSDIR%%Heroes/models/v_poisong.mdl
 %%HLDSDIR%%Heroes/models/v_rock.mdl
 %%HLDSDIR%%Heroes/models/v_smokeb.mdl
 %%HLDSDIR%%Heroes/models/v_turret.mdl
+%%HLDSDIR%%Heroes/models/v_wolfhands.mdl
+%%HLDSDIR%%Heroes/models/w_barrel.mdl
 %%HLDSDIR%%Heroes/models/w_bolter.mdl
 %%HLDSDIR%%Heroes/models/w_bolterT.mdl
 %%HLDSDIR%%Heroes/models/w_bow.mdl
-%%HLDSDIR%%Heroes/models/w_bowT.mdl
-%%HLDSDIR%%Heroes/models/w_bow_clip.mdl
+%%HLDSDIR%%Heroes/models/w_crate.mdl
 %%HLDSDIR%%Heroes/models/w_crowbar.mdl
 %%HLDSDIR%%Heroes/models/w_egon.mdl
 %%HLDSDIR%%Heroes/models/w_egonT.mdl
+%%HLDSDIR%%Heroes/models/w_flamer.mdl
+%%HLDSDIR%%Heroes/models/w_flamerT.mdl
 %%HLDSDIR%%Heroes/models/w_kawauso.mdl
 %%HLDSDIR%%Heroes/models/w_mortar.mdl
-%%HLDSDIR%%Heroes/models/w_sbowT.mdl
 %%HLDSDIR%%Heroes/models/w_smokeb.mdl
 %%HLDSDIR%%Heroes/models/w_turret.mdl
+%%HLDSDIR%%Heroes/models/w_variousg.mdl
+%%HLDSDIR%%Heroes/models/w_variousgT.mdl
 %%HLDSDIR%%Heroes/motd.txt
+%%HLDSDIR%%Heroes/news.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/old_news1.0.1.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/old_readme_1.0.1.txt
+%%PORTDOCS%%%%HLDSDIR%%Heroes/old_readme_1.0.txt
+%%HLDSDIR%%Heroes/pldecal.wad
+%%PORTDOCS%%%%HLDSDIR%%Heroes/readme_1.1_beta.txt
 %%HLDSDIR%%Heroes/settings.scr
+%%HLDSDIR%%Heroes/sound/heroes/BellTower.wav
 %%HLDSDIR%%Heroes/sound/heroes/b2.wav
+%%HLDSDIR%%Heroes/sound/heroes/gong.wav
+%%HLDSDIR%%Heroes/sound/heroes/timerbeep.wav
+%%HLDSDIR%%Heroes/sound/heroes/timertick.wav
+%%HLDSDIR%%Heroes/user.scr
 @dirrm %%HLDSDIR%%Heroes/sound/heroes
 @dirrm %%HLDSDIR%%Heroes/sound
+@dirrm %%HLDSDIR%%Heroes/models/player/wolverine
 @dirrm %%HLDSDIR%%Heroes/models/player/thor
 @dirrm %%HLDSDIR%%Heroes/models/player/startroop
 @dirrm %%HLDSDIR%%Heroes/models/player/spawn
-@dirrm %%HLDSDIR%%Heroes/models/player/snowcom
 @dirrm %%HLDSDIR%%Heroes/models/player/silencer
 @dirrm %%HLDSDIR%%Heroes/models/player/obi11
 @dirrm %%HLDSDIR%%Heroes/models/player/obi08
 @dirrm %%HLDSDIR%%Heroes/models/player/michigan
+@dirrm %%HLDSDIR%%Heroes/models/player/metamorph
 @dirrm %%HLDSDIR%%Heroes/models/player/iron-man
 @dirrm %%HLDSDIR%%Heroes/models/player/ernie
-@dirrm %%HLDSDIR%%Heroes/models/player/cprninja
+@dirrm %%HLDSDIR%%Heroes/models/player/carvino
+@dirrm %%HLDSDIR%%Heroes/models/player/burn
 @dirrm %%HLDSDIR%%Heroes/models/player/bobafett
-@dirrm %%HLDSDIR%%Heroes/models/player/barney
+@dirrm %%HLDSDIR%%Heroes/models/player/blindeye
+@dirrm %%HLDSDIR%%Heroes/models/player/arm
+@dirrm %%HLDSDIR%%Heroes/models/player/Tarentula
+@dirrm %%HLDSDIR%%Heroes/models/player/Swat
 @dirrm %%HLDSDIR%%Heroes/models/player/Spiderman
-@dirrm %%HLDSDIR%%Heroes/models/player/Punisher
+@dirrm %%HLDSDIR%%Heroes/models/player/Marine
 @dirrm %%HLDSDIR%%Heroes/models/player/Illemonati
 @dirrm %%HLDSDIR%%Heroes/models/player/DrjMAUL
 @dirrm %%HLDSDIR%%Heroes/models/player/Dreadstar
-@dirrm %%HLDSDIR%%Heroes/models/player/Aswat
 @dirrm %%HLDSDIR%%Heroes/models/player/Alien
+@dirrm %%HLDSDIR%%Heroes/models/player/@ss@ssin
 @dirrm %%HLDSDIR%%Heroes/models/player
 @dirrm %%HLDSDIR%%Heroes/models
 @dirrm %%HLDSDIR%%Heroes/media
+@dirrm %%HLDSDIR%%Heroes/maps
 @dirrm %%HLDSDIR%%Heroes/gfx/vgui
 @dirrm %%HLDSDIR%%Heroes/gfx/Shell
 @dirrm %%HLDSDIR%%Heroes/gfx
+@dirrm %%HLDSDIR%%Heroes/events
 @dirrm %%HLDSDIR%%Heroes/dlls
-%%PORTDOCS%%@dirrm %%HLDSDIR%%Heroes/classes_en_francais
-%%PORTDOCS%%@dirrm %%HLDSDIR%%Heroes/classes
+@dirrm %%HLDSDIR%%Heroes/classes
 @dirrm %%HLDSDIR%%Heroes/cl_dlls
 @dirrm %%HLDSDIR%%Heroes/Sprites
-@exec mkdir -p %D/%%HLDSDIR%%Heroes/maps
-@unexec rmdir %D/%%HLDSDIR%%Heroes/maps 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%Heroes/SAVE 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%Heroes/logs 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%Heroes 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%Heroes`` to remove any configuration files and logs left." | fmt
