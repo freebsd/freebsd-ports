@@ -93,8 +93,8 @@ share/locale/sk/LC_MESSAGES/mutt.mo
 share/locale/sv/LC_MESSAGES/mutt.mo
 share/locale/tr/LC_MESSAGES/mutt.mo
 share/locale/uk/LC_MESSAGES/mutt.mo
-share/locale/zh_CN.GB2312/LC_MESSAGES/mutt.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/mutt.mo
+share/locale/zh_CN/LC_MESSAGES/mutt.mo
+share/locale/zh_TW/LC_MESSAGES/mutt.mo
 @dirrm share/doc/mutt/html
 @dirrm share/doc/mutt/samples/iconv
 @dirrm share/doc/mutt/samples
