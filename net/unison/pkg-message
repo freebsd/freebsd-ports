@@ -1,0 +1,11 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	ATTENTION:
+
+1) Unison archive format has changed since 2.9.20. The old archive
+won't be deleted automatically in case you want to downgrade it.
+
+2) Merge functionality has seriously changed. Check the manual.
+
+3) Together with gtk-enabled version, a text-only unison-text binary
+is installed as it depends on a smaller number of libraries.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
