@@ -7,6 +7,7 @@
 
 PORTNAME=	kdevelop
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/2.1/distribution/tar/generic/src
