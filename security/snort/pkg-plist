@@ -16,6 +16,7 @@ etc/rc.d/snort.sh.sample
 %%PORTDOCS%%share/doc/snort/SnortUsersManual.pdf
 %%PORTDOCS%%share/doc/snort/README.PLUGINS
 %%PORTDOCS%%share/doc/snort/USAGE
+%%PORTDOCS%%share/doc/snort/README.thresholding
 share/snort/attack-responses.rules
 share/snort/backdoor.rules
 share/snort/bad-traffic.rules
