@@ -1,13 +1,13 @@
 # New ports collection makefile for:	socks5
-# Version required:			v1.0r5
+# Version required:			v1.0r6
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
-# $Id: Makefile,v 1.17 1998/04/07 17:08:16 imp Exp $
+# $Id: Makefile,v 1.18 1998/07/12 21:26:49 imp Exp $
 #
 
-DISTNAME=	socks5-v1.0r5
-PKGNAME=	socks5-1.0.5
+DISTNAME=	socks5-v1.0r6
+PKGNAME=	socks5-1.0.6
 CATEGORIES=	net security
 EXTRACT_SUFX=	.tar.gz
 
