@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python
 MASTER_SITES=	${MASTER_SITE_PYTHON}
 MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
@@ -39,8 +39,7 @@ SETUP_FILE=	Setup
 # If you don't want to use Python's thread module, you need to set
 # WITHOUT_THREADS.
 #
-LIBC_R!=	/sbin/ldconfig -r | grep c_r || true
-.if (${LIBC_R} != "") && !defined(WITHOUT_THREADS)
+.if !defined(NOLIBC_R) && !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--with-threads
 CFLAGS+=		${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=		LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
