@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	papercut
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.10
 CATEGORIES=	news python
-MASTER_SITES=	http://papercut.org/ \
-		http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
+MASTER_SITES=	http://papercut.org/
 
-MAINTAINER=	sheepkiller@cultdeadsheep.org
+MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Papercut is a news server written in Python, using a MySQL backend
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/MySQLdb/__init__.py:${PORTSDIR}/databases/py-MySQLdb
@@ -39,7 +38,7 @@ do-install:
 	@${MV} ${DATADIR}/settings.py ${DATADIR}/settings.py.sample
 
 post-install:
-	@${ECHO} "To use papercut you need to copy ${DATADIR}/settings.py.sample"
-	@${ECHO} "to ${DATADIR}/settings.py and edit it."
+	@${ECHO_MSG} "To use papercut you need to copy ${DATADIR}/settings.py.sample"
+	@${ECHO_MSG} "to ${DATADIR}/settings.py and edit it."
 
 .include <bsd.port.mk>
