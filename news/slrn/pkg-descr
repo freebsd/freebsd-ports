@@ -1,2 +1,7 @@
 slrn (not to be confused with slnr) is a SLang-based NNTP newsreader with a 
 nice interface.
+
+It now supports SSL (compile with -DWITH_SSL) and IPv6 (but that part is still
+under development)
+
+http://slrn.sourceforge.net/

@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	slrn
-PORTVERSION=	0.9.6.4
-CATEGORIES=	news
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ssl/ \
-		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/slrn/ssl/ \
-		ftp://ftp.ntua.gr/pub/lang/slang/ssl/ \
-		ftp://ftp.plig.org/pub/slrn/ssl/
+PORTVERSION=	0.9.7.0
+CATEGORIES=	news ipv6
+MASTER_SITES=	ftp://slrn.sourceforge.net/pub/slrn/
+DISTNAME=	slrn-0.9.7.0a
 
-MAINTAINER=	xaa+ports@madison-gurkha.com
+MAINTAINER=	xaa+ports@timewasters.nl
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
@@ -21,9 +19,11 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	all slrnpull
 MAN1=		slrn.1
 
+CONFIGURE_ARGS=	--enable-ipv6
+
 .if defined(WITH_SSL)
 USE_OPENSSL=	YES
-CONFIGURE_ARGS=	--with-ssl
+CONFIGURE_ARGS+=	--with-ssl
 .endif
 
 do-install:
