@@ -1,16 +1,19 @@
 # New ports collection makefile for:	xmcd
-# Date created:		16 Februar 1995
+# Date created:		16 February 1995
 # Whom:			Gennady Sorokopud <gena@NetVision.net.il>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	xmcd
-PORTVERSION=	3.2.1
+PORTVERSION=	3.3.1
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.2.1/src/
-DISTNAME=	xmcd-3.2.1
+MASTER_SITES=	http://www.ibiblio.org/tkan/download/xmcd/3.3.0/src/:xmcd \
+		http://www.ibiblio.org/tkan/xmcd/:xmcd_331_patch
+DISTFILES=	xmcd-3.3.0.tar.gz:xmcd \
+		xmcd-330_331.patch:xmcd_331_patch
+EXTRACT_ONLY=	xmcd-3.3.0.tar.gz
 
 MAINTAINER=	eischen@vigrid.com
 COMMENT=	Motif CD player
@@ -18,11 +21,12 @@ COMMENT=	Motif CD player
 LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
 
+USE_REINPLACE=	yes
 USE_MOTIF=	yes
 USE_IMAKE=	yes
-WRKSRC=		${WRKDIR}/xmcd-3.2.1
 PLIST_SUB+=	RELEASE=${OSREL:R:R} ARCH=${ARCH}
 
+WRKSRC= 	${WRKDIR}/xmcd-3.3.0
 MAN1=		cda.1 xmcd.1
 MANCOMPRESSED=	no
 RMAN=		${X11BASE}/bin/rman
@@ -36,10 +40,16 @@ post-extract:
 
 pre-patch:
 	@${CP} ${WRKSRC}/xmcd_d/XMcd.ad ${WRKSRC}/xmcd_d/XMcd.ad.in
+	@(cd ${WRKDIR}; ${PATCH} -p0 --quiet < ${DISTDIR}/xmcd-330_331.patch)
+	@${RM} -f ${WRKSRC}/docs_d/CHANGES.orig
 
 post-patch:
 	@${SED} -e "s;@PREFIX@;${PREFIX};g" ${WRKSRC}/xmcd_d/XMcd.ad.in \
 		> ${WRKSRC}/xmcd_d/XMcd.ad
+	@${FIND} ${WRKSRC} -name Makefile -o -name Imakefile | \
+		${XARGS} ${REINPLACE_CMD} \
+		-e 's|_CFLAGS= -pthread|_CFLAGS= ${PTHREAD_CFLAGS}|g; \
+		s|_LDFLAGS= -pthread|_LDFLAGS= ${PTHREAD_LIBS}|g'
 
 .if ${XFREE86_VERSION} == 4
 post-build:

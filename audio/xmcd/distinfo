@@ -1,2 +1,4 @@
-MD5 (xmcd-3.2.1.tar.gz) = 9a21bd7c6f2b92f6e36652c9540e2d98
-SIZE (xmcd-3.2.1.tar.gz) = 973419
+MD5 (xmcd-3.3.0.tar.gz) = 0108b6f99342e31a11f22d54b87f89f8
+SIZE (xmcd-3.3.0.tar.gz) = 1059012
+MD5 (xmcd-330_331.patch) = 17c7907bf3d9e395fac78d79dbb55b6f
+SIZE (xmcd-330_331.patch) = 18855

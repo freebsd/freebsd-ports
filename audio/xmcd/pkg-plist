@@ -1,9 +1,9 @@
 bin/.xmcd_start
 bin/cda
 bin/xmcd
+lib/X11/xmcd/app-defaults/XKeysymDB
 lib/X11/xmcd/app-defaults/XMcd
 lib/X11/xmcd/app-defaults/XMcd.sgi
-lib/X11/xmcd/app-defaults/XKeysymDB
 lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/README
 lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/cda
 lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%/gobrowser
@@ -38,9 +38,9 @@ lib/X11/xmcd/config/.tbl/Philips
 lib/X11/xmcd/config/.tbl/Pioneer
 lib/X11/xmcd/config/.tbl/Plextor
 lib/X11/xmcd/config/.tbl/Procom
-lib/X11/xmcd/config/.tbl/SGI
 lib/X11/xmcd/config/.tbl/Regal
 lib/X11/xmcd/config/.tbl/Ricoh
+lib/X11/xmcd/config/.tbl/SGI
 lib/X11/xmcd/config/.tbl/Samsung
 lib/X11/xmcd/config/.tbl/Sanyo
 lib/X11/xmcd/config/.tbl/Sony
@@ -50,12 +50,12 @@ lib/X11/xmcd/config/.tbl/Tatung
 lib/X11/xmcd/config/.tbl/Teac
 lib/X11/xmcd/config/.tbl/Toshiba
 lib/X11/xmcd/config/.tbl/Yamaha
+lib/X11/xmcd/config/config.sh
 lib/X11/xmcd/config/common.cfg
 lib/X11/xmcd/config/device.cfg
 lib/X11/xmcd/config/wwwwarp.cfg
-lib/X11/xmcd/config/config.sh
-lib/X11/xmcd/discog/Classical/General_Classical/index.html
 lib/X11/xmcd/discog/Blues/General_Blues/index.html
+lib/X11/xmcd/discog/Classical/General_Classical/index.html
 lib/X11/xmcd/discog/Country/General_Country/index.html
 lib/X11/xmcd/discog/Data/General_Data/index.html
 lib/X11/xmcd/discog/Folk/General_Folk/index.html
@@ -175,36 +175,39 @@ lib/X11/xmcd/help/Op/AddTag.btn
 lib/X11/xmcd/help/Op/Bal.scl
 lib/X11/xmcd/help/Op/BalCtr.btn
 lib/X11/xmcd/help/Op/Bitrate.opt
-lib/X11/xmcd/help/Op/CacheTo.txt
+lib/X11/xmcd/help/Op/CacheTo.txw
 lib/X11/xmcd/help/Op/Categ.lsw
+lib/X11/xmcd/help/Op/CddaAtt.scl
+lib/X11/xmcd/help/Op/ChanMode.opt
 lib/X11/xmcd/help/Op/ChRt.rbx
 lib/X11/xmcd/help/Op/Chgr.cbx
+lib/X11/xmcd/help/Op/CompAlgo.scl
 lib/X11/xmcd/help/Op/Done.cbx
 lib/X11/xmcd/help/Op/Eject.cbx
 lib/X11/xmcd/help/Op/Encode.opt
 lib/X11/xmcd/help/Op/Exit.rbx
 lib/X11/xmcd/help/Op/FileFmt.opt
-lib/X11/xmcd/help/Op/Filters.txt
+lib/X11/xmcd/help/Op/Filters.txw
 lib/X11/xmcd/help/Op/Flags.btn
-lib/X11/xmcd/help/Op/HbeatTo.txt
+lib/X11/xmcd/help/Op/HbeatTo.txw
 lib/X11/xmcd/help/Op/Jitter.btn
+lib/X11/xmcd/help/Op/LameOpts.txw
 lib/X11/xmcd/help/Op/Load.cbx
 lib/X11/xmcd/help/Op/Lookup.rbx
 lib/X11/xmcd/help/Op/Mbrowser.rbx
 lib/X11/xmcd/help/Op/Mode.cbx
-lib/X11/xmcd/help/Op/Mp3Algo.scl
-lib/X11/xmcd/help/Op/Mp3Mode.opt
 lib/X11/xmcd/help/Op/Ok.btn
-lib/X11/xmcd/help/Op/Path.txt
+lib/X11/xmcd/help/Op/OutPort.cbx
+lib/X11/xmcd/help/Op/Path.txw
 lib/X11/xmcd/help/Op/PathExp.btn
 lib/X11/xmcd/help/Op/PerfMon.btn
-lib/X11/xmcd/help/Op/Prog.txt
+lib/X11/xmcd/help/Op/Prog.txw
 lib/X11/xmcd/help/Op/Proxy.btn
 lib/X11/xmcd/help/Op/Qual.scl
 lib/X11/xmcd/help/Op/Reset.btn
 lib/X11/xmcd/help/Op/Save.btn
 lib/X11/xmcd/help/Op/Sched.rbx
-lib/X11/xmcd/help/Op/ServTo.txt
+lib/X11/xmcd/help/Op/ServTo.txw
 lib/X11/xmcd/help/Op/Subst.btn
 lib/X11/xmcd/help/Op/TrkFile.btn
 lib/X11/xmcd/help/Op/VolTpr.rbx
@@ -285,7 +288,7 @@ lib/X11/xmcd/pixmaps/xmcd.xpm
 lib/X11/xmcd/scripts/genidx
 @dirrm lib/X11/xmcd/app-defaults
 @dirrm lib/X11/xmcd/bin-FreeBSD_%%RELEASE%%-%%ARCH%%
-@unexec rm -rf %D/lib/X11/xmcd/lib-FreeBSD_%%RELEASE%%-%%ARCH%%
+@unexec rm -rf %D/lib/X11/xmcd/lib-FreeBSD_%%RELEASE%%-%%ARCH%% 2>&1 >/dev/null || true
 @dirrm lib/X11/xmcd/config/.tbl
 @dirrm lib/X11/xmcd/config
 @dirrm lib/X11/xmcd/discog/Blues/General_Blues
