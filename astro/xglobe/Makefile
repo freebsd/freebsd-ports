@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xglobe
-PORTVERSION=	0.3.1
+PORTVERSION=	0.5
 CATEGORIES=	astro
 MASTER_SITES=	http://www.uni-karlsruhe.de/~uddn/xglobe/
 
