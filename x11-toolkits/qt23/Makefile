@@ -61,13 +61,6 @@ PLIST_SUB+=	SHARED="" STATIC="@comment "
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500029
-NO_QT_OBJPRELINK=	yes
-.endif
-.if ${MACHINE_ARCH} == "i386" && !defined(NO_QT_OBJPRELINK)
-BUILD_DEPENDS=	objprelink:${PORTSDIR}/devel/objprelink
-.endif
-
 .if ${MACHINE_ARCH} == "alpha" && !defined(NO_ALPHA_UNOPTIMIZATION)
 CFLAGS+=	-O0
 .endif
@@ -94,17 +87,6 @@ pre-fetch:
 
 qt-pre-configure:
 	@true
-
-post-patch:
-.if ${MACHINE_ARCH} == "i386" && !defined(NO_QT_OBJPRELINK)
-.if !exists(${WRKDIR}/.${PKGNAME}.objprelink_patched)
-	@echo "Doing special objprelink patching..."
-	cd ${WRKSRC} ; ${PATCH} < ${FILESDIR}/objprelink.patch
-	${TOUCH} ${WRKDIR}/.${PKGNAME}.objprelink_patched
-.else
-	@echo "Already did the objprelink patching, skipping..."
-.endif
-.endif
 
 pre-configure: qt-pre-configure
 	${PERL} -pi -e "s,gcc,${CC},g; s,g\+\+,${CXX},g; \
