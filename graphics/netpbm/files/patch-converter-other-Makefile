@@ -1,0 +1,11 @@
+--- converter/other/Makefile.orig	Fri Jul 11 05:23:53 2003
++++ converter/other/Makefile	Tue Mar 30 06:59:13 2004
+@@ -7,6 +7,8 @@
+ 
+ include $(BUILDDIR)/Makefile.config
+ 
++LADD += -lm
++
+ SUBDIRS = jbig pnmtopalm
+ ifneq ($(BUILD_FIASCO), N)
+   SUBDIRS += fiasco
