@@ -13,25 +13,24 @@ DISTNAME=	MySQLdb-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
 
+USE_PYTHON=	yes
 ALL_TARGET=	_mysqlmodule.o
 
 pre-configure:
-	@${LN} -s ${LOCALBASE}/lib/python1.5/config/Makefile.pre.in ${WRKSRC}/
+	@${LN} -s ${LOCALBASE}/lib/${PYTHON_VERSION}/config/Makefile.pre.in ${WRKSRC}/
 
 do-configure:
 	@cd ${WRKSRC} && ${MAKE} -f Makefile.pre.in boot
 
 post-build:
 	@-${LOCALBASE}/bin/python \
-		${LOCALBASE}/lib/python1.5/compileall.py ${WRKSRC} 2>/dev/null
+		${LOCALBASE}/lib/${PYTHON_VERSION}/compileall.py ${WRKSRC} 2>/dev/null
 
 post-install:
 	@${INSTALL_DATA} \
-		${WRKSRC}/MySQLdb.pyc ${PREFIX}/lib/python1.5/site-packages
+		${WRKSRC}/MySQLdb.pyc ${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/py-MySQLdb/examples
 	@${INSTALL_MAN} ${WRKSRC}/doc/* ${PREFIX}/share/doc/py-MySQLdb
