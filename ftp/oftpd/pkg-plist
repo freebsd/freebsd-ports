@@ -1,4 +1,4 @@
-libexec/oftpd
+sbin/oftpd
 share/doc/oftpd/README
 share/doc/oftpd/AUTHORS
 share/doc/oftpd/ChangeLog

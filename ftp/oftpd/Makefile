@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oftpd
-PORTVERSION=	0.3.4
+PORTVERSION=	0.3.5
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://www.freenix.no/~anders/
@@ -18,11 +18,12 @@ GNU_CONFIGURE=	yes
 DOCFILES=	README AUTHORS ChangeLog NEWS TODO BUGS
 
 CFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV+=	LIBS="-pthread"
 
 MAN8=		oftpd.8
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/oftpd ${PREFIX}/libexec/oftpd
+	${INSTALL_PROGRAM} ${WRKSRC}/src/oftpd ${PREFIX}/sbin/oftpd
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -m 555 ${PREFIX}/share/doc/oftpd
 .for i in ${DOCFILES}

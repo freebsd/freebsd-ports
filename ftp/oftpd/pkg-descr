@@ -7,3 +7,5 @@ its own directory listing code (most FTP servers execute the system "ls"
 command to list files).
 
 WWW: http://www.time-travellers.org/oftpd/
+
+- Anders Nordby <anders@fix.no>
