@@ -9,15 +9,15 @@
 PORTNAME=	dirtree
 PORTVERSION=	1.2.0
 CATEGORIES=	misc
-MASTER_SITES=	http://members.chello.at/oberzalek/development/
+MASTER_SITES=	http://home.pages.at/kingleo/development/
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	LeoArg:${PORTSDIR}/devel/leoarg \
-		intl:${PORTSDIR}/devel/gettext
+LIB_DEPENDS=	LeoArg.2:${PORTSDIR}/devel/leoarg \
+		intl.1:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=	dirtree.1
