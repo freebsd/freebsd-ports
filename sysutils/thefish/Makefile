@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	thefish
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://energyhq.homeip.net/files/
 
@@ -18,7 +17,7 @@ COMMENT=	Gtk+/ncurses rc.conf editor/management tool
 NO_GUI=		yes
 MAKE_ENV+=	NO_GUI=yes
 .else
-LIB_DEPENDS=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
+USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 .endif
 
