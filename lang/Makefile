@@ -237,6 +237,7 @@
     SUBDIR += screamer
     SUBDIR += scriba
     SUBDIR += scsh
+    SUBDIR += sdcc
     SUBDIR += siod
     SUBDIR += sisc
     SUBDIR += slib
