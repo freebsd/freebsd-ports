@@ -105,7 +105,7 @@ MOC?=			${QT_PREFIX}/bin/moc
 BUILD_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt30
 RUN_DEPENDS+=	${QT_PREFIX}/bin/moc:${PORTSDIR}/x11-toolkits/qt30
 USE_NEWGCC=		yes
-QTCPPFLAGS+=	-I/usr/include -I${LOCALBASE}/include -I${PREFIX}/include \
+QTCPPFLAGS+=	-I${LOCALBASE}/include -I${PREFIX}/include \
 				-I${QT_PREFIX}/include
 QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg \
 				-L${QT_PREFIX}/lib
@@ -126,8 +126,8 @@ LIB_DEPENDS+=	qt2.4:${PORTSDIR}/x11-toolkits/qt23
 USE_NEWGCC=		yes
 QTNAME=			qt2
 MOC?=			${X11BASE}/bin/moc2
-QTCPPFLAGS+=	-I/usr/include -D_GETOPT_H -D_PTH_H_ -D_PTH_PTHREAD_H_ \
-				-I${LOCALBASE}/include -I${PREFIX}/include -I${X11BASE}/include/qt2
+QTCPPFLAGS+=	-D_GETOPT_H -I${LOCALBASE}/include -I${PREFIX}/include \
+				-I${X11BASE}/include/qt2
 QTCFGLIBS+=		-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -ljpeg -lgcc -lstdc++
 .if !defined(QT_NONSTANDARD)
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
