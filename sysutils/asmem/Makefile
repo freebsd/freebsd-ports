@@ -3,13 +3,14 @@
 # Date created:		4 June 1999
 # Whom:				jack
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/14 19:26:35 taoka Exp $
+# $Id: Makefile,v 1.1.1.1 1999/06/14 20:00:35 taoka Exp $
 
-DISTNAME=	asmem-1.2
+DISTNAME=	asmem-1.3
 CATEGORIES=	sysutils afterstep
-MASTER_SITES=	http://www.bewoner.dma.be/Albert/software/
+MASTER_SITES=	ftp://ftp.afterstep.org/apps/asmem/ \
+		http://www.bewoner.dma.be/Albert/software/
 
-MAINTAINER=	jack@germnaium.xtalwind.net
+MAINTAINER=	jack@germanium.xtalwind.net
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
