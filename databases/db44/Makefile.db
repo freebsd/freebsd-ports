@@ -44,4 +44,4 @@ post-install:
 	@${RMDIR} ${DOCSDIR}/ref/splash 2>/dev/null || :
 .endif
 	cd ${PREFIX}/bin/${PORTNAME} ; \
-	for i in * ; do ${LN} -s ${PORTNAME}/$$i ../$$i-${BDBVER} ; done
+	for i in * ; do ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBVER} ; done
