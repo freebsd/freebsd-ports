@@ -51,10 +51,6 @@ MAN1=	dns-terror.1 btree-dump.1 convert-dom-db.1 convert-ip-db.1 \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
