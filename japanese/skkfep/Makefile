@@ -8,8 +8,8 @@
 PORTNAME=	skkfep
 PORTVERSION=	0.86c
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ei5nazha.yz.yamagata-u.ac.jp/skkfep/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/s/skkfep/
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -21,6 +21,6 @@ MAN1=		skkfep.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/skkfep ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/skkfep.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/skkfep.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
