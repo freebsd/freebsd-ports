@@ -1,6 +1,6 @@
---- SEMI-CFG.orig	Wed Sep 16 15:48:58 1998
-+++ SEMI-CFG	Sun May  9 21:54:02 1999
-@@ -11,6 +11,8 @@
+--- SEMI-CFG.orig	Wed Oct 14 14:17:32 1998
++++ SEMI-CFG	Fri Oct 15 02:04:23 1999
+@@ -9,6 +9,8 @@
  (add-to-list 'load-path
  	     (expand-file-name "../../site-lisp/apel" data-directory))
  (add-to-list 'load-path
@@ -8,4 +8,15 @@
 +(add-to-list 'load-path
  	     (expand-file-name "." data-directory))
  
- (when (boundp 'LISPDIR)
+ (if (boundp 'LISPDIR)
+@@ -25,6 +27,10 @@
+ 
+ (condition-case nil
+     (require 'install)
++  (error (error "Please install APEL 8.7 or later.")))
++
++(condition-case nil
++    (require 'emu)
+   (error (error "Please install APEL 8.7 or later.")))
+ 
+ (add-path "bitmap-mule")
