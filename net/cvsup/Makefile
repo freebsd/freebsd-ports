@@ -34,11 +34,10 @@ TARGET=		FBSD_ALPHA
 .elif ${ARCH} == "amd64"
 MASTER_SITE_SUBDIR=	obrien
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-DISTNAME=	cvsup-static.i386
+DISTNAME=	cvsup-without-gui.amd64
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	binary-only
-PLIST_FILES=	libexec/cvsup-static.i386.bin
 .elif ${ARCH} == "i386"
 TARGET=		FreeBSD4
 .elif ${ARCH} == "sparc64"
@@ -87,13 +86,11 @@ post-install:
 PROGS=	bin/cvsup sbin/cvsupd bin/cvpasswd
 
 do-configure:
+	@${TOUCH} ${WRKSRC}/License
 	@${TOUCH} ${TOUCH_FLAGS} ${CONFIGURE_COOKIE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cvsup-static.i386.bin ${PREFIX}/libexec
-	@${ECHO} '#! /bin/sh'	> ${PREFIX}/bin/cvsup
-	@${ECHO} '${PREFIX}/libexec/cvsup-static.i386.bin @M3nogc $$*' \
-		>> ${PREFIX}/bin/cvsup
+	${INSTALL_PROGRAM} ${WRKSRC}/cvsup-without-gui.amd64 ${PREFIX}/bin/cvsup
 	@${ECHO} '#! /bin/sh'	> ${PREFIX}/sbin/cvsupd
 	@${ECHO} 'echo `basename $$0` not supported on `uname -m`' \
 		>> ${PREFIX}/sbin/cvsupd
