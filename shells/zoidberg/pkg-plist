@@ -1,0 +1,86 @@
+bin/zoid
+@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells ; rm -f /etc/shells.bak
+@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells ; rm -f /etc/shells.bak
+etc/zoidrc
+%%SITE_PERL%%/Bundle/Zoidberg.pm
+%%SITE_PERL%%/Zoidberg.pm
+%%SITE_PERL%%/Zoidberg/Contractor.pm
+%%SITE_PERL%%/Zoidberg/DispatchTable.pm
+%%SITE_PERL%%/Zoidberg/Eval.pm
+%%SITE_PERL%%/Zoidberg/Fish.pm
+%%SITE_PERL%%/Zoidberg/Fish/Commands.pm
+%%SITE_PERL%%/Zoidberg/Fish/Intel.pm
+%%SITE_PERL%%/Zoidberg/Fish/Log.pm
+%%SITE_PERL%%/Zoidberg/Fish/ReadLine.pm
+%%SITE_PERL%%/Zoidberg/PluginHash.pm
+%%SITE_PERL%%/Zoidberg/Shell.pm
+%%SITE_PERL%%/Zoidberg/StringParser.pm
+%%SITE_PERL%%/Zoidberg/Utils.pm
+%%SITE_PERL%%/Zoidberg/Utils/Error.pm
+%%SITE_PERL%%/Zoidberg/Utils/FileSystem.pm
+%%SITE_PERL%%/Zoidberg/Utils/GetOpt.pm
+%%SITE_PERL%%/Zoidberg/Utils/Output.pm
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/alias.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/autosplit.ix
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/bg.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/dirs.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/disown.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/eval.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/exec.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/export.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/false.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/fg.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/help.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/help_command.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/jobs.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/kill.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/newgrp.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/popd.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/pushd.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/pwd.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/read.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/set.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/setenv.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/source.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/symbols.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/true.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/type_command.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/umask.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/unalias.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/unsetenv.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/wait.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Commands/which.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/_subs.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/autosplit.ix
+%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/i__zoid.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/i_cdpath.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/i_cmd_make.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/i_cmd_man.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/i_env_vars.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/i_man_opts.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/i_users.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Intel/list_users.al
+%%SITE_PERL%%/auto/Zoidberg/Fish/Log/autosplit.ix
+%%SITE_PERL%%/auto/Zoidberg/Fish/Log/fc.al
+@dirrm %%SITE_PERL%%/Zoidberg/Fish
+@dirrm %%SITE_PERL%%/Zoidberg/Utils
+@dirrm %%SITE_PERL%%/Zoidberg
+@dirrm %%SITE_PERL%%/auto/Zoidberg/Fish/Commands
+@dirrm %%SITE_PERL%%/auto/Zoidberg/Fish/Intel
+@dirrm %%SITE_PERL%%/auto/Zoidberg/Fish/Log
+@dirrm %%SITE_PERL%%/auto/Zoidberg/Fish
+@dirrm %%SITE_PERL%%/auto/Zoidberg
+@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+%%DATADIR%%/AppInfo.xml
+%%DATADIR%%/pixmaps/zoid16.png
+%%DATADIR%%/pixmaps/zoid32.png
+%%DATADIR%%/pixmaps/zoid64.png
+%%DATADIR%%/pixmaps/zoid70.png
+%%DATADIR%%/plugins/CPAN.pm
+%%DATADIR%%/plugins/Commands.pl
+%%DATADIR%%/plugins/Intel.pl
+%%DATADIR%%/plugins/Log.pl
+%%DATADIR%%/plugins/ReadLine.pl
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%
