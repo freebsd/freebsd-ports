@@ -6731,6 +6731,7 @@ p5-IO-String	ports/devel/p5-IO-String
 p5-IO-Stty	ports/devel/p5-IO-Stty
 p5-IO-Tee	ports/devel/p5-IO-Tee
 p5-IO-Tty	ports/devel/p5-IO-Tty
+p5-IO-Util	ports/devel/p5-IO-Util
 p5-IO-Zlib	ports/archivers/p5-IO-Zlib
 p5-IO-stringy	ports/devel/p5-IO-stringy
 p5-IPC-Cache	ports/devel/p5-IPC-Cache
