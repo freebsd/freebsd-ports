@@ -1,19 +1,19 @@
 # New ports collection makefile for:	ja-tcsh NLS catalog (Ayanami Rei)
-# Version required:	6.07.09b5
+# Version required:	6.08.00
 # Date created:		19 August 1998
-# Whom:			issei <issei@jp.FreeBSD.ORG>
+# Whom:			Issei Suzuki <issei@jp.FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/30 21:28:42 max Exp $
 #
 
-DISTNAME=	tcsh-6.07.06.nls-ja.ayanami
-PKGNAME=	ja-tcsh-nls-ayanami-6.07.09b5
+DISTNAME=	tcsh-6.08.00.add
+PKGNAME=	ja-tcsh-nls-ayanami-6.08.00
 CATEGORIES=	japanese shells
-MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/catalogs/ja.ayanami/
+MASTER_SITES=	http://www2.wbs.ne.jp/~znc/tcsh/
 
 MAINTAINER=	issei@jp.FreeBSD.ORG
 
-NLSSRC=		ja.ayanami
 PLIST=		../tcsh-nls-generic/pkg/PLIST
+NLSSRC=		${DISTNAME}/nls/ja.ayanami
 
 .include "../tcsh-nls-generic/Makefile"

@@ -2,3 +2,6 @@ share/nls/ja_JP.EUC/tcsh.cat
 share/nls/ja_JP.EUC/tcsh.m
 share/nls/ja_JP.SJIS/tcsh.cat
 share/nls/ja_JP.SJIS/tcsh.m
+share/doc/tcsh/HISTORY.additional
+share/doc/tcsh/HowToMakeNLS.euc
+share/doc/tcsh/README.additional
