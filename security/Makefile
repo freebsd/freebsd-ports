@@ -357,6 +357,7 @@
     SUBDIR += rain
     SUBDIR += rats
     SUBDIR += rc5pipe
+    SUBDIR += rdigest
     SUBDIR += rid
     SUBDIR += rkhunter
     SUBDIR += rng_82802
