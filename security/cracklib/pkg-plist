@@ -4,6 +4,7 @@ bin/testlib
 bin/testnum
 bin/teststr
 bin/unpacker
+include/packer.h
 lib/libcrack.a
 libdata/cracklib/pw_dict.hwm
 libdata/cracklib/pw_dict.pwd
