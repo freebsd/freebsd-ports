@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	qgo
-PORTVERSION=	0.2.2
+PORTVERSION=	1.0.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,19 +19,16 @@ USE_QT_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	QTDIR=${QT_PREFIX}
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
 CONFIGURE_ARGS=	--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-pedantic||g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|/usr/share|$${prefix}/share|g'
-
-pre-build:
-	-@${RM} ${WRKSRC}/qgo/src/*_gui.cpp
-	-@${RM} ${WRKSRC}/qgo/src/*_gui.h
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|src templates|src|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|: install-includeHEADERS|:|g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
