@@ -13,6 +13,8 @@ DISTNAME=	GutenMark_source_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Does not compile"
+
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/GutenMark-source
 USE_GMAKE=	yes
