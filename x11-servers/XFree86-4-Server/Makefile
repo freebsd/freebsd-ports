@@ -158,7 +158,7 @@ HasXdmAuth?=		DEFAULT
 
 .if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-pre-fetch:
+pre-fetch::
 	@${ECHO}
 	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
 .else
