@@ -16,7 +16,8 @@ DISTFILES=	openh323_1.9.9.tar.gz \
 
 MAINTAINER=	roger@freebsd.org
 
-LIB_DEPENDS=	speex.0:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	speex.0:${PORTSDIR}/audio/speex \
+		expat.4:${PORTSDIR}/textproc/expat2
 # Check for telephony.h in the two places the source is hard coded to check
 # /usr/include/sys and /usr/local/include/sys
 # If it is not present, extract it from the comms/ixj port
