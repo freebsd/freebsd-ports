@@ -57,6 +57,7 @@
     SUBDIR += gnugo
     SUBDIR += gnushogi
     SUBDIR += golddig
+    SUBDIR += gru
     SUBDIR += gtkballs
     SUBDIR += hex
     SUBDIR += icbm3d
