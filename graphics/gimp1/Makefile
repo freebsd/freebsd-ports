@@ -27,6 +27,8 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+CONFLICTS=	gimp-2.* gimp-gnome-2.*
+
 #SHLIBVER?=	${PORTVERSION:S/1.2.//g}
 SHLIBVER?=	2
 
