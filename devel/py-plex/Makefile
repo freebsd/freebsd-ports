@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	plex
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.4.1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python/Plex/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,8 @@ COMMENT=	Lexical Analysis Module for Python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-DOCDIR=		share/doc/py-plex
-EXAMPLESDIR=	share/examples/py-plex
+DOCSDIR=	share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 post-extract:
 	${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|g' ${FILESDIR}/setup.py \
@@ -27,8 +27,8 @@ post-extract:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ./* ${PREFIX}/${DOCDIR}
+	${MKDIR} ${PREFIX}/${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ./* ${PREFIX}/${DOCSDIR}
 	${MKDIR} ${PREFIX}/${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${INSTALL_DATA} ./* ${PREFIX}/${EXAMPLESDIR}
 .endif

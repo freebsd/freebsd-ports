@@ -35,26 +35,26 @@
 %%PYTHON_SITELIBDIR%%/Plex/test_tm.pyc
 %%PYTHON_SITELIBDIR%%/Plex/test_tm.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/Plex
-%%PORTDOCS%%share/doc/py-plex/Reference.html
-%%PORTDOCS%%share/doc/py-plex/Tutorial.html
-%%PORTDOCS%%share/doc/py-plex/index.html
-%%PORTDOCS%%share/examples/py-plex/example1and2.in
-%%PORTDOCS%%share/examples/py-plex/example1and2.py
-%%PORTDOCS%%share/examples/py-plex/example3.in
-%%PORTDOCS%%share/examples/py-plex/example3.py
-%%PORTDOCS%%share/examples/py-plex/example4.in
-%%PORTDOCS%%share/examples/py-plex/example4.py
-%%PORTDOCS%%share/examples/py-plex/example5.in
-%%PORTDOCS%%share/examples/py-plex/example5.py
-%%PORTDOCS%%share/examples/py-plex/example6.in
-%%PORTDOCS%%share/examples/py-plex/example6.py
-%%PORTDOCS%%share/examples/py-plex/example7.in
-%%PORTDOCS%%share/examples/py-plex/example7.py
-%%PORTDOCS%%share/examples/py-plex/pascal.in
-%%PORTDOCS%%share/examples/py-plex/pascal.py
-%%PORTDOCS%%share/examples/py-plex/python.in
-%%PORTDOCS%%share/examples/py-plex/python.py
-%%PORTDOCS%%share/examples/py-plex/speedtest.in
-%%PORTDOCS%%share/examples/py-plex/speedtest.py
-%%PORTDOCS%%@dirrm share/examples/py-plex
-%%PORTDOCS%%@dirrm share/doc/py-plex
+%%PORTDOCS%%%%DOCSDIR%%/Reference.html
+%%PORTDOCS%%%%DOCSDIR%%/Tutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/example1and2.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/example1and2.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/example3.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/example3.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/example4.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/example4.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/example5.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/example5.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/example6.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/example6.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/example7.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/example7.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/pascal.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/pascal.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/python.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/python.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/speedtest.in
+%%PORTDOCS%%%%EXAMPLESDIR%%/speedtest.py
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
