@@ -126,6 +126,7 @@ share/locale/de/LC_MESSAGES/gaim.mo
 share/locale/es/LC_MESSAGES/gaim.mo
 share/locale/fr/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo
+share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 @dirrm %%DATADIR%%/pixmaps/gaim/gnome
 @dirrm %%DATADIR%%/pixmaps/gaim
