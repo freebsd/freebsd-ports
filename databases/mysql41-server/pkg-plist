@@ -48,6 +48,7 @@ include/mysql/ndb/ndbapi/NdbReceiver.hpp
 include/mysql/ndb/ndbapi/NdbResultSet.hpp
 include/mysql/ndb/ndbapi/NdbScanFilter.hpp
 include/mysql/ndb/ndbapi/NdbScanOperation.hpp
+include/mysql/ndb/ndbapi/ndb_cluster_connection.hpp
 include/mysql/ndb/ndbapi/ndbapi_limits.h
 include/mysql/ndb/ndbapi/ndberror.h
 lib/mysql/libdbug.a
