@@ -520,6 +520,7 @@
     SUBDIR += redland
     SUBDIR += replaceit
     SUBDIR += resume
+    SUBDIR += rfcdiff
     SUBDIR += rl
     SUBDIR += rman
     SUBDIR += ro-aspell
