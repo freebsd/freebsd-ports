@@ -85,7 +85,6 @@ CaribbeanStud	ports/games/CaribbeanStud
 Cgraph		ports/graphics/Cgraph
 Coin		ports/graphics/Coin
 DarwinStreamingServer	ports/net/DarwinStreamingServer
-ETHOberonV4	ports/lang/ETHOberonV4
 EZWGL		ports/graphics/EZWGL
 ElectricFence	ports/devel/ElectricFence
 FSViewer	ports/x11-fm/FSViewer
@@ -515,7 +514,6 @@ battfink	ports/sysutils/battfink
 battleball	ports/games/battleball
 baudline	ports/audio/baudline
 bayespam	ports/mail/bayespam
-bayonne		ports/comms/bayonne
 bb		ports/misc/bb
 bbapm		ports/sysutils/bbapm
 bbconf		ports/x11-wm/bbconf
@@ -544,7 +542,6 @@ bed		ports/editors/bed
 bedic-data	ports/textproc/bedic-data
 beecrypt	ports/security/beecrypt
 beep		ports/audio/beep
-beonex		ports/www/beonex
 bestfit		ports/misc/bestfit
 bf2c		ports/lang/bf2c
 bfbtester	ports/security/bfbtester
@@ -1792,7 +1789,6 @@ fortuneit	ports/misc/fortuneit
 fortunelock	ports/sysutils/fortunelock
 fox		ports/x11-toolkits/fox
 fox-devel		ports/x11-toolkits/fox-devel
-fox-xunicode	ports/x11-toolkits/fox-xunicode
 fpc		ports/lang/fpc
 fping		ports/net/fping
 fpl		ports/lang/fpl
@@ -1817,7 +1813,6 @@ fr-ooodict-FR	ports/french/ooodict-fr_FR
 fr-openoffice-1.0	ports/french/openoffice-1.0
 fr-php_doc	ports/french/php_doc
 fr-plgrenouille	ports/french/plgrenouille
-fr-spip		ports/french/spip
 fr-staroffice52	ports/french/staroffice52
 fr-xtel		ports/french/xtel
 frabs		ports/games/frabs
@@ -2197,7 +2192,6 @@ gmrun		ports/x11/gmrun
 gmsh		ports/cad/gmsh
 gmt		ports/graphics/gmt
 gmysql		ports/databases/gmysql
-gn		ports/www/gn
 gnapster	ports/audio/gnapster
 gnarr		ports/games/gnarr
 gnat		ports/lang/gnat
@@ -2819,7 +2813,6 @@ imgvtopgm	ports/palm/imgvtopgm
 imlib		ports/graphics/imlib
 imlib2		ports/graphics/imlib2
 imlib2_loaders	ports/graphics/imlib2_loaders
-imlib3d		ports/graphics/imlib3d
 imm		ports/mbone/imm
 imp3		ports/mail/imp3
 impress		ports/editors/impress
@@ -3648,7 +3641,6 @@ ko-hanyangfonts	ports/korean/hanyangfonts
 ko-hcode	ports/korean/hcode
 ko-helvis	ports/korean/helvis
 ko-hlatex	ports/korean/hlatex
-ko-hlatex-mffonts-wansung	ports/korean/hlatex-mffonts-wansung
 ko-hlatex-psfonts-uhc-extra	ports/korean/hlatex-psfonts-uhc-extra
 ko-hlatex-psfonts-wansung	ports/korean/hlatex-psfonts-wansung
 ko-hlatex-wansung	ports/korean/hlatex-wansung
@@ -3660,7 +3652,6 @@ ko-hlatexp-pkfonts600	ports/korean/hlatexp-pkfonts600
 ko-hmconv	ports/korean/hmconv
 ko-hpscat	ports/korean/hpscat
 ko-imhangul	ports/korean/imhangul
-ko-imhangul_status_applet	ports/korean/imhangul_status_applet
 ko-johabfonts	ports/korean/johabfonts
 ko-kaistfonts	ports/korean/kaistfonts
 ko-kde3-i18n	ports/korean/kde3-i18n
@@ -4646,7 +4637,6 @@ movemail	ports/mail/movemail
 moviedb		ports/misc/moviedb
 movingmotif	ports/x11-toolkits/movingmotif
 mowitz		ports/x11-toolkits/mowitz
-moxftp		ports/ftp/moxftp
 mozart		ports/lang/mozart
 mozilla		ports/www/mozilla
 mozilla-devel	ports/www/mozilla-devel
@@ -6429,7 +6419,6 @@ pcsc-lite	ports/devel/pcsc-lite
 pd		ports/audio/pd
 pdflib		ports/print/pdflib
 pdflib-perl	ports/print/pdflib-perl
-pdflib4		ports/print/pdflib4
 pdfmap		ports/misc/pdfmap
 pdftohtml	ports/textproc/pdftohtml
 pdksh		ports/shells/pdksh
@@ -7391,7 +7380,6 @@ robocode	ports/games/robocode
 robodoc		ports/devel/robodoc
 rockdodger	ports/games/rockdodger
 rocksndiamonds	ports/games/rocksndiamonds
-rollemup	ports/games/rollemup
 rolo		ports/deskutils/rolo
 romeo		ports/palm/romeo
 roottail	ports/sysutils/roottail
@@ -8779,8 +8767,6 @@ vshnu		ports/shells/vshnu
 vsound		ports/audio/vsound
 vtcl		ports/devel/vtcl
 vte		ports/x11-toolkits/vte
-vterrain-apps	ports/graphics/vterrain-apps
-vterrain-sdk	ports/graphics/vterrain-sdk
 vtk		ports/math/vtk
 vtun		ports/net/vtun
 vtwm		ports/x11-wm/vtwm
@@ -9020,7 +9006,6 @@ wy60		ports/comms/wy60
 wyvern		ports/www/wyvern
 wzip		ports/archivers/wzip
 x-files		ports/x11-fm/x-files
-x11_twin	ports/x11/twin
 x11amp		ports/audio/x11amp
 x2vnc		ports/x11-servers/x2vnc
 x2x		ports/x11-servers/x2x
@@ -9213,8 +9198,6 @@ ximp3		ports/audio/ximp3
 xin		ports/sysutils/xin
 xincluder	ports/textproc/xincluder
 xine		ports/multimedia/xine
-xine_d4d_plugin	ports/multimedia/xine_d4d_plugin
-xine_d5d_plugin	ports/multimedia/xine_d5d_plugin
 xinetd		ports/security/xinetd
 xinfocom	ports/games/xinfocom
 xinput		ports/x11/xinput
@@ -9416,7 +9399,6 @@ xphotohunter	ports/games/xphotohunter
 xpilot		ports/games/xpilot
 xpilot-ng	ports/games/xpilot-ng
 xpilotmon	ports/games/xpilotmon
-xpinmame	ports/emulators/xpinmame
 xpipeman	ports/games/xpipeman
 xpired		ports/games/xpired
 xpk		ports/archivers/xpk
@@ -9428,7 +9410,6 @@ xpostit		ports/deskutils/xpostit
 xpostitPlus	ports/deskutils/xpostitPlus
 xprobe		ports/net/xprobe
 xprompt		ports/x11/xprompt
-xpuyo		ports/games/xpuyo
 xpuyopuyo	ports/games/xpuyopuyo
 xpuzzletama	ports/games/xpuzzletama
 xpx		ports/graphics/xpx
@@ -9628,7 +9609,6 @@ zh-celvis	ports/chinese/celvis
 zh-chinput	ports/chinese/chinput
 zh-chinput2	ports/chinese/chinput2
 zh-chinput3	ports/chinese/chinput3
-zh-chitex	ports/chinese/chitex
 zh-cle_base	ports/chinese/cle_base
 zh-cless	ports/chinese/cless
 zh-cmexfonts	ports/chinese/cmexfonts
