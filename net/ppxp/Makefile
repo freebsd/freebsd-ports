@@ -19,7 +19,7 @@ MASTER_SITES=	http://www.dsl.gr.jp/~manabe/PPxP/packages/	\
 		http://www.linet.gr.jp/~manabe/PPxP/packages/	\
 		http://www.dsl.ics.tut.ac.jp/~manabe/PPxP/packages/
 
-MAINTAINER=	nosuzuki@e-mail.ne.jp
+MAINTAINER=	nosuzuki@postcard.st
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 .if defined(WITH_TCLJP)
