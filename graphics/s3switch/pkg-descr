@@ -1,0 +1,7 @@
+This is a utility used to enable the TV output on S3 Savage based cards,
+which I have ported to run under FreeBSD as well as Linux.
+
+It must be run as root, though I leave you to do this at your discretion.
+
+Bruce
+bms@spc.org
