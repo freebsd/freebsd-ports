@@ -22,6 +22,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnometarget
+USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--with-xkb-base=${X11BASE}/lib/X11/xkb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
