@@ -16,3 +16,5 @@ MD5 (squid2.5/squid-2.5.STABLE7-httpd_accel_vport.patch) = 2366a84e29fad439c2a48
 SIZE (squid2.5/squid-2.5.STABLE7-httpd_accel_vport.patch) = 843
 MD5 (squid2.5/squid-2.5.STABLE7-cachemgr_vmobjects.patch) = fdde57025dbfb8caf9154e24b4e1bf3e
 SIZE (squid2.5/squid-2.5.STABLE7-cachemgr_vmobjects.patch) = 6238
+MD5 (squid2.5/squid-2.5.STABLE7-empty_acls.patch) = 28423e8ee2359ec2537581fe2a79ecd6
+SIZE (squid2.5/squid-2.5.STABLE7-empty_acls.patch) = 4015
