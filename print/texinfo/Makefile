@@ -3,7 +3,7 @@
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.8 1995/11/22 13:18:28 asami Exp $
+# $Id: Makefile,v 1.9 1996/11/17 08:45:13 obrien Exp $
 #
 
 DISTNAME=	texinfo
@@ -19,11 +19,8 @@ MAINTAINER=     jmz@FreeBSD.org
 BUILD_DEPENDS=   tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=   tex:${PORTSDIR}/print/tex
 
-
 EXTRACT_ONLY=
 NO_WRKSUBDIR=	yes
-
-
 
 pre-fetch:
 	@if [ ! -x ${PREFIX}/bin/tex ]; then \
