@@ -26,14 +26,19 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
+PLIST_FILES=	share/java/classes/jdbc2_0-stdext.jar \
+		share/java/classes/jta-spec1_0_1.jar \
+		share/java/classes/mysql-connector-java.jar
+
 .if !defined(WITHOUT_COMPILE)
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
+BUILD_DEPENDS=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit
 USE_JAVA=	1.4+
 NEED_JAVAC=	YES
 
-ANT?=		${LOCALBASE}/bin/ant
+ANT_CMD?=	${LOCALBASE}/bin/ant
+ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 ANT_TARGET=	clean compile-driver
 BUILDDIR=	${WRKDIR}/build-mysql-jdbc/${DISTNAME}
 
@@ -56,14 +61,14 @@ PORTDOCS=	*
 .endif
 
 pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "    WITHOUT_COMPILE=yes    Install the pre-compiled .jar file"
-	@${ECHO} ""
-	@${ECHO} "This port requires JDK 1.4.x or better to compile, but the"
-	@${ECHO} "JDBC driver will operate with JVM 1.2.x or better"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "    WITHOUT_COMPILE=yes    Install the pre-compiled .jar file"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "This port requires JDK 1.4.x or better to compile, but the"
+	@${ECHO_MSG} "JDBC driver will operate with JVM 1.2.x or better"
+	@${ECHO_MSG} ""
 
 do-build:
 .if !defined(WITHOUT_COMPILE)
