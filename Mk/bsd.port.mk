@@ -720,8 +720,12 @@ MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
 
-# defaults to 3.3.6; will be changed to 4.0 when it is ready
+# defaults to 4.x for -CURRENT; and 3.3.6 for all other branches
+.if ${OSVERSION} > 500025
+XFREE86_VERSION?=	4
+.else
 XFREE86_VERSION?=	3
+.endif
 
 .endif
 # End of pre-makefile section.
