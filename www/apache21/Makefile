@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.58 1998/06/24 19:54:05 ache Exp $
+# $Id: Makefile,v 1.59 1998/07/23 13:15:57 ache Exp $
 #
 
 DISTNAME=       apache_1.3.1
@@ -41,7 +41,7 @@ OPTIM=-DHARD_SERVER_LIMIT=512 \
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
 CONFIGURE_ARGS+= --disable-rule=STATUS
 OPTIM+= -DBUFFERED_LOGS
-CFLAGS+= -O6 -fomit-frame-pointer -fexpensive-optimizations
+CFLAGS+= -O6 -fomit-frame-pointer
 .endif
 
 CONFIGURE_ENV= OPTIM='${OPTIM}'
