@@ -8,7 +8,7 @@
 PORTNAME=	tkcron
 PORTVERSION=	2.12
 CATEGORIES=	misc tk82
-MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/
+MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/misc/tkcron-2.12/
 EXTRACT_SUFX=	.tcl.gz
 
 MAINTAINER=	sander@haldjas.folklore.ee
