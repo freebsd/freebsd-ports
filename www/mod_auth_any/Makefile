@@ -13,13 +13,11 @@ MASTER_SITES=	http://www.itlab.musc.edu/webNIS/dist/
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Apache module to use any command line program to authenticate a user
 
-USE_APACHE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WANT_APACHE=	13
+AP_FAST_BUILD=	yes
+AP_GENPLIST=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-do-build:
-	@cd ${WRKSRC}/src && ${APXS} -c ${PORTNAME}.c
-
-do-install:
-	${APXS} -i -A -n ${PORTNAME:S/mod_//g} ${WRKSRC}/src/${PORTNAME}.so
-
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/www/apache2/Makefile.modules.3rd"
+.include <bsd.port.post.mk>

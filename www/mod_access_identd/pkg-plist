@@ -1,3 +1,0 @@
-libexec/apache/mod_access_identd.so
-@exec %D/sbin/apxs -e -A -n access_identd %D/%F
-@unexec %D/sbin/apxs -e -A -n access_identd %D/%F
