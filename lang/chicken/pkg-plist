@@ -6,15 +6,6 @@ bin/chicken-static
 bin/csc
 bin/csi
 bin/csi-static
-bin/rcsi
-bin/rcsi-static
-bin/scheme-chicken
-bin/scheme-chicken-hygienic
-bin/scheme-ieee-1178-1990
-bin/scheme-r4rs
-bin/scheme-r5rs
-bin/scheme-srfi-0
-bin/scheme-srfi-7
 include/c_defaults.h
 include/chicken-config.h
 include/chicken.h
@@ -60,7 +51,6 @@ lib/libustuffed-chicken.so.0
 %%PORTDOCS%%%%EXAMPLESDIR%%/makefile
 %%PORTDOCS%%%%EXAMPLESDIR%%/makefile.vc
 %%PORTDOCS%%%%EXAMPLESDIR%%/mandelbrot.scm
-%%PORTDOCS%%%%EXAMPLESDIR%%/mmcp.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/nqueens.prolog
 %%PORTDOCS%%%%EXAMPLESDIR%%/prolog.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/schelog-macros.scm
