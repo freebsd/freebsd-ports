@@ -8,7 +8,7 @@
 PORTNAME=	libnet
 PORTVERSION=	1.1.2.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.packetfactory.net/libnet/dist/
+MASTER_SITES=	http://voodoo.oberon.net/download/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	krion@FreeBSD.org
