@@ -21,6 +21,7 @@
     SUBDIR += java-cup
     SUBDIR += javamail
     SUBDIR += javavmwrapper
+    SUBDIR += javel
     SUBDIR += jce-aba
     SUBDIR += jdbcpool
     SUBDIR += jde
