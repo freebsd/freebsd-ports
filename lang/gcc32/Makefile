@@ -24,7 +24,7 @@ DISTFILES=	gcc-core-${PORTVERSION}${EXTRACT_SUFX} \
 #PATCH_SITES=	ftp://relay.nuxi.com/obrien/
 #PATCHFILES=	port_gcc32_${SNAPDATE}.diff
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.2.2
 
 LATEST_LINK=	gcc32
