@@ -232,6 +232,7 @@
     SUBDIR += ruby-drb
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
+    SUBDIR += ruby-pcap
     SUBDIR += ruby-snmp
     SUBDIR += ruby-uri
     SUBDIR += rwhois
