@@ -1,0 +1,9 @@
+FormValidator is a port of Perl's Data::FormValidator library.  It
+makes it easy to validate data coming in from HTML forms and provides
+a robust set of methods to handle dependent fields, filtering data,
+constraints, etc.  It's modular design allows you to easily add your
+own filters and constraints and also allows you to keep validation
+profiles outside of your CGI scripts.
+
+Author:	Travis Whitton <whitton@atlantic.net>
+WWW:	http://grub.ath.cx/formvalidator/

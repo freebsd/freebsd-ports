@@ -324,6 +324,7 @@
     SUBDIR += ruby-amrita
     SUBDIR += ruby-csv
     SUBDIR += ruby-format
+    SUBDIR += ruby-formvalidator
     SUBDIR += ruby-gdome
     SUBDIR += ruby-html-parser
     SUBDIR += ruby-htmlcompact
