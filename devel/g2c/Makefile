@@ -15,22 +15,21 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12 gnomehack
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mbonobo} != "" && ${HAVE_GNOME:Mgnomedb} != ""
+USE_GNOME=	gnomeprefix bonobo gnomedb
+PKGNAMESUFFIX=	-gnome
 .endif
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\$$(datadir)/gnome/|\$$(datadir)/|g ; \
-		 s|\$$(datadir)/locale|\$$(prefix)/share/locale|g'
 
 .include <bsd.port.post.mk>

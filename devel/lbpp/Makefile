@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomelibs
 
 post-patch:
 	@${GREP} -lR "malloc.h" ${WRKSRC} | ${XARGS} \
