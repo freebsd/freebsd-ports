@@ -1,19 +1,22 @@
 bin/kplayer
+lib/kde3/libkplayerpart.la
+lib/kde3/libkplayerpart.so
 share/applnk/Multimedia/kplayer.desktop
 share/apps/kplayer/icons/hicolor/16x16/actions/brightness.png
 share/apps/kplayer/icons/hicolor/16x16/actions/contrast.png
 share/apps/kplayer/icons/hicolor/16x16/actions/fileopen.png
 share/apps/kplayer/icons/hicolor/16x16/actions/fileopenurl.png
 share/apps/kplayer/icons/hicolor/16x16/actions/hue.png
+share/apps/kplayer/icons/hicolor/16x16/actions/lock.png
+share/apps/kplayer/icons/hicolor/16x16/actions/loop.png
 share/apps/kplayer/icons/hicolor/16x16/actions/mute.png
-share/apps/kplayer/icons/hicolor/16x16/actions/next.png
 share/apps/kplayer/icons/hicolor/16x16/actions/player_fwd.png
 share/apps/kplayer/icons/hicolor/16x16/actions/player_pause.png
 share/apps/kplayer/icons/hicolor/16x16/actions/player_play.png
 share/apps/kplayer/icons/hicolor/16x16/actions/player_rew.png
 share/apps/kplayer/icons/hicolor/16x16/actions/player_stop.png
-share/apps/kplayer/icons/hicolor/16x16/actions/previous.png
 share/apps/kplayer/icons/hicolor/16x16/actions/saturation.png
+share/apps/kplayer/icons/hicolor/16x16/actions/shuffle.png
 share/apps/kplayer/icons/hicolor/16x16/actions/viewmag+.png
 share/apps/kplayer/icons/hicolor/16x16/actions/viewmag-.png
 share/apps/kplayer/icons/hicolor/16x16/actions/viewmagfit.png
@@ -24,15 +27,16 @@ share/apps/kplayer/icons/hicolor/22x22/actions/contrast.png
 share/apps/kplayer/icons/hicolor/22x22/actions/fileopen.png
 share/apps/kplayer/icons/hicolor/22x22/actions/fileopenurl.png
 share/apps/kplayer/icons/hicolor/22x22/actions/hue.png
+share/apps/kplayer/icons/hicolor/22x22/actions/lock.png
+share/apps/kplayer/icons/hicolor/22x22/actions/loop.png
 share/apps/kplayer/icons/hicolor/22x22/actions/mute.png
-share/apps/kplayer/icons/hicolor/22x22/actions/next.png
 share/apps/kplayer/icons/hicolor/22x22/actions/player_fwd.png
 share/apps/kplayer/icons/hicolor/22x22/actions/player_pause.png
 share/apps/kplayer/icons/hicolor/22x22/actions/player_play.png
 share/apps/kplayer/icons/hicolor/22x22/actions/player_rew.png
 share/apps/kplayer/icons/hicolor/22x22/actions/player_stop.png
-share/apps/kplayer/icons/hicolor/22x22/actions/previous.png
 share/apps/kplayer/icons/hicolor/22x22/actions/saturation.png
+share/apps/kplayer/icons/hicolor/22x22/actions/shuffle.png
 share/apps/kplayer/icons/hicolor/22x22/actions/viewmag+.png
 share/apps/kplayer/icons/hicolor/22x22/actions/viewmag-.png
 share/apps/kplayer/icons/hicolor/22x22/actions/viewmagfit.png
@@ -43,30 +47,38 @@ share/apps/kplayer/icons/hicolor/32x32/actions/contrast.png
 share/apps/kplayer/icons/hicolor/32x32/actions/fileopen.png
 share/apps/kplayer/icons/hicolor/32x32/actions/fileopenurl.png
 share/apps/kplayer/icons/hicolor/32x32/actions/hue.png
+share/apps/kplayer/icons/hicolor/32x32/actions/lock.png
+share/apps/kplayer/icons/hicolor/32x32/actions/loop.png
 share/apps/kplayer/icons/hicolor/32x32/actions/mute.png
-share/apps/kplayer/icons/hicolor/32x32/actions/next.png
 share/apps/kplayer/icons/hicolor/32x32/actions/player_fwd.png
 share/apps/kplayer/icons/hicolor/32x32/actions/player_pause.png
 share/apps/kplayer/icons/hicolor/32x32/actions/player_play.png
 share/apps/kplayer/icons/hicolor/32x32/actions/player_rew.png
 share/apps/kplayer/icons/hicolor/32x32/actions/player_stop.png
-share/apps/kplayer/icons/hicolor/32x32/actions/previous.png
 share/apps/kplayer/icons/hicolor/32x32/actions/saturation.png
+share/apps/kplayer/icons/hicolor/32x32/actions/shuffle.png
 share/apps/kplayer/icons/hicolor/32x32/actions/viewmag+.png
 share/apps/kplayer/icons/hicolor/32x32/actions/viewmag-.png
 share/apps/kplayer/icons/hicolor/32x32/actions/viewmagfit.png
 share/apps/kplayer/icons/hicolor/32x32/actions/volume.png
 share/apps/kplayer/icons/hicolor/32x32/actions/window_fullscreen.png
 share/apps/kplayer/input.conf
+share/apps/kplayer/kplayerpartui.rc
 share/apps/kplayer/kplayerui.rc
 share/doc/HTML/en/kplayer/index.cache.bz2
 share/doc/HTML/en/kplayer/index.docbook
-share/icons/hicolor/16x16/apps/kplayer.png
-share/icons/hicolor/22x22/apps/kplayer.png
-share/icons/hicolor/32x32/apps/kplayer.png
-share/icons/locolor/16x16/apps/kplayer.png
-share/icons/locolor/32x32/apps/kplayer.png
-share/doc/HTML/en/kplayer/common
+share/locale/ca/LC_MESSAGES/kplayer.mo
+share/locale/da/LC_MESSAGES/kplayer.mo
+share/locale/de/LC_MESSAGES/kplayer.mo
+share/locale/es/LC_MESSAGES/kplayer.mo
+share/locale/fr/LC_MESSAGES/kplayer.mo
+share/locale/it/LC_MESSAGES/kplayer.mo
+share/locale/ru/LC_MESSAGES/kplayer.mo
+share/services/kplayerpart.desktop
+@exec ln -sf ../common %D/share/doc/HTML/en/kplayer/common
+@unexec rm -f %D/share/doc/HTML/en/kplayer/common
+@unexec rmdir %D/lib/kde3 >/dev/null 2>&1 || true
+@unexec rmdir %D/share/services >/dev/null 2>&1 || true
 @dirrm share/doc/HTML/en/kplayer
 @dirrm share/apps/kplayer/icons/hicolor/32x32/actions
 @dirrm share/apps/kplayer/icons/hicolor/32x32
