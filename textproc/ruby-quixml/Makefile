@@ -9,7 +9,7 @@ PORTNAME=	quixml
 PORTVERSION=	0.2.1
 PORTREVISION=	1
 CATEGORIES=	textproc ruby
-MASTER_SITES=	http://rubyforge.org/download.php/89/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/89/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 

@@ -8,7 +8,7 @@
 PORTNAME=	jabber4r
 PORTVERSION=	0.6.0
 CATEGORIES=	net ruby
-MASTER_SITES=	http://rubyforge.org/download.php/376/
+MASTER_SITES=	http://rubyforge.org/frs/download.php/376/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
