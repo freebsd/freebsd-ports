@@ -1,0 +1,7 @@
+Mp3Wrap is a command-line utility that wraps two or more mp3 files in one
+single large playable mp3, without losing filenames and ID3 informations (and
+without need of decoding/encoding). Also with the possibility of including
+other non mp3 files, such as PlayLists, info files, cover images, inside the
+mp3. 
+
+WWW: http://mp3wrap.sourceforge.net/
