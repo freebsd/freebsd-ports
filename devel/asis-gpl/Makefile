@@ -9,8 +9,8 @@ PORTNAME=	asis
 PORTVERSION=	3.12p
 CATEGORIES=	devel
 MASTER_SITES=	\
-	ftp://ftp.lip6.fr/pub/gnat/asis/ \
-	ftp://cs.nyu.edu/pub/gnat/asis/
+	ftp://ftp.lip6.fr/pub/gnat/${PORTVERSION}/asis/ \
+	ftp://cs.nyu.edu/pub/gnat/${PORTVERSION}/asis/
 DISTNAME=	asis-${PORTVERSION}-src
 
 MAINTAINER=	thomas@cuivre.fr.eu.org
