@@ -19,6 +19,7 @@ COMMENT=	The system Risa/Asir is a general computer algebra system
 WRKSRC=		${WRKDIR}/asir2000
 PREFIX?=	${LOCALBASE}
 USE_IMAKE=	YES
+USE_XLIB=	yes
 USE_REINPLACE=	yes
 XFREE86_HTML_MAN=	no
 USE_X_PREFIX =	no
