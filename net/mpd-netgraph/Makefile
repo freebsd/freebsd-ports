@@ -1,12 +1,12 @@
 # New ports collection makefile for:	mpd
-# Version required:			3.0b1
-# Date created:				9 Dec 1999
+# Version required:			3.0b2
+# Date created:				12 Jan 2000
 # Whom:					Archie Cobbs
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mpd-3.0b1
+DISTNAME=	mpd-3.0b2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/mpd/
 
