@@ -2724,6 +2724,7 @@ gnome-music-quiz	ports/games/gnome-music-quiz
 gnome-osd	ports/misc/gnome-osd
 gnome-password-generator	ports/security/gnome-password-generator
 gnome-pkgview	ports/sysutils/gnome-pkgview
+gnome-schedule	ports/sysutils/gnome-schedule
 gnome-ssh-askpass	ports/security/gnome-ssh-askpass
 gnome-swallow	ports/x11/gnome-swallow
 gnome-themes	ports/x11-themes/gnome-themes
