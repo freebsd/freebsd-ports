@@ -19,6 +19,7 @@
     SUBDIR += asp2php
     SUBDIR += aswedit
     SUBDIR += bacon
+    SUBDIR += bk2site
     SUBDIR += bkmrkconv
     SUBDIR += bluefish
     SUBDIR += bsdi-netscape47-communicator
