@@ -203,7 +203,7 @@
     SUBDIR += nl-aspell
     SUBDIR += nl-ispell
     SUBDIR += nltk
-    SUBDIR += no-aspell
+    SUBDIR += nn-aspell
     SUBDIR += ocaml-pxp
     SUBDIR += ocaml-yaxi
     SUBDIR += ocaml-yaxpo

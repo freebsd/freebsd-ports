@@ -1003,3 +1003,4 @@ net/memcached|databases/memcached|2004-03-27|remove duplicate port
 japanese/emacs21-emcws|japanese/emacs-emcws|2004-03-29|emacs 21.x moved to default port location
 x11-wm/9menu|x11/9menu|2004-03-29|accurate category
 japanese/postgresql-man|japanese/postgresql73-man|renamed
+textproc/no-aspell|2004-04-01|renamed to textproc/nn-aspell

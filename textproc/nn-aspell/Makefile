@@ -5,13 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	no-aspell
+PORTNAME=	nn-aspell
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Aspell with Norwegian dictionary
+COMMENT=	Aspell with Norwegian Nynorsk dictionary
 
 MASTERDIR=	${.CURDIR}/../aspell
 
-ASPELL_NO=	ja
+ASPELL_NN=	ja
 
 .include "${MASTERDIR}/Makefile"
