@@ -37,7 +37,7 @@ STLPORT_PORT?=	# empty
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000 && !empty(STLPORT_PORT)
+.if ${OSVERSION} >= 500000 && ${OSVERSION} < 501103 && !empty(STLPORT_PORT)
 RUN_DEPENDS=	${LOCALBASE}/lib/libstlport_${COMPILER}.so:${PORTSDIR}/${STLPORT_PORT}
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
