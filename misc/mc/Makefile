@@ -7,6 +7,7 @@
 
 PORTNAME=	mc
 PORTVERSION=	4.6.0
+PORTREVISION=	1
 CATEGORIES=	misc shells
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	utils/file/managers/mc/
@@ -48,7 +49,7 @@ CONFIGURE_ARGS+=--without-subshell
 MAN1=		mc.1 mcedit.1 mcview.1
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr/bin/zip|${LOCALBASE}/bin/zip|' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/zip|${LOCALBASE}/bin/zip|' \
 		-e 's|/usr/bin/unzip|${LOCALBASE}/bin/unzip|' \
 		${WRKSRC}/configure
 
