@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dtcpclient
-PORTVERSION=	20040525
+PORTVERSION=	20040601
 #PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.imasy.or.jp/~ume/ipv6/ \
