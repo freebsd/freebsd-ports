@@ -1,20 +1,45 @@
---- configure.orig	Wed Oct  2 03:46:38 1996
-+++ configure	Sun Dec 22 13:47:10 1996
-@@ -2946,7 +2946,7 @@
+--- configure.orig	Wed Dec 25 06:03:25 1996
++++ configure	Tue Dec 31 14:33:35 1996
+@@ -2592,11 +2592,11 @@
+     else
+         echo "$ac_t""$TCL75_SRC_DIR" 1>&6
  
- 	    # 1. Load the compilation flags for TCL 7.5
- 	    #
--	    file="$TCL75_SRC_DIR/unix/$TCL_CONFIG_INFO"
-+	    file=/usr/libdata/tcl/tclConfig.sh
- 	    . $file
- 	    
- 	    
-@@ -2965,7 +2965,7 @@
+-	if test ! -r "$TCL75_SRC_DIR/unix/tclConfig.sh"; then
+-	    echo "warning: $TCL75_SRC_DIR/unix/tclConfig.sh missing"
+-	    echo "         Please to configure tcl 7.5 first."
+-	    TCL75_SRC_DIR=""
+-        fi
++#	if test ! -r "$TCL75_SRC_DIR/unix/tclConfig.sh"; then
++#	    echo "warning: $TCL75_SRC_DIR/unix/tclConfig.sh missing"
++#	    echo "         Please to configure tcl 7.5 first."
++#	    TCL75_SRC_DIR=""
++#        fi
+     fi
  
- 	    # 2. Load the compilation flags for TK 4.1
- 	    #
--	    file="$TK41_SRC_DIR/unix/tkConfig.sh"
-+	    file=${PREFIX}/lib/tkConfig.sh
- 	    . $file
- 	    
- 
+     #
+@@ -2635,7 +2635,7 @@
+     if test "$TK41_SRC_DIR" != "" -a "$TCL75_SRC_DIR" != ""; then
+ 	# 1. Load the compilation flags for TCL 7.5
+ 	#
+-	file="$TCL75_SRC_DIR/unix/tclConfig.sh"
++	file=/usr/libdata/tcl/tclConfig.sh
+ 	. $file
+ 	
+ 	
+@@ -2646,14 +2646,14 @@
+ 	SHLIB_CFLAGS=$TCL_SHLIB_CFLAGS
+ 	SHLIB_LD=$TCL_SHLIB_LD
+ 	SHLIB_LD_LIBS=$TCL_SHLIB_LD_LIBS
+-	SHLIB_SUFFIX=$TCL_SHLIB_SUFFIX
+ 	SHLIB_VERSION=$TCL_SHLIB_VERSION
++	SHLIB_SUFFIX=${TCL_SHLIB_SUFFIX}.1.0
+ 	DL_LIBS=$TCL_DL_LIBS
+ 	LD_FLAGS=$TCL_LD_FLAGS
+ 	
+ 	# 2. Load the compilation flags for TK 4.1
+ 	#
+-	file="$TK41_SRC_DIR/unix/tkConfig.sh"
++	file="${PREFIX}/lib/tkConfig.sh"
+ 	. $file
+ 	
+ 	TIX_TARGETS="$TIX_TARGETS unix-tk4.1"

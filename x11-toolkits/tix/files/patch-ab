@@ -1,15 +1,15 @@
---- Makefile.in.orig	Wed Oct  2 03:46:30 1996
-+++ Makefile.in	Sun Dec 22 15:04:57 1996
-@@ -27,7 +27,7 @@
+--- Makefile.in.orig	Sat Dec 28 05:09:39 1996
++++ Makefile.in	Mon Dec 30 19:22:52 1996
+@@ -29,7 +29,7 @@
  # Directory in which to install the library of Tix scripts and demos
  # (note: you can set the TIX_LIBRARY environment variable at run-time to
  # override the compiled-in location):
--TIX_LIBRARY =	$(prefix)/lib/tix
-+TIX_LIBRARY =	$(prefix)/share/tix
+-TIX_LIBRARY =	$(prefix)/lib/tix$(TIX_VERSION)
++TIX_LIBRARY =	$(prefix)/share/tix$(TIX_VERSION)
  
  # Directory in which to install the archive libtix.a:
  LIB_DIR =	$(exec_prefix)/lib
-@@ -202,7 +202,7 @@
+@@ -201,7 +201,7 @@
  		fi; \
  	    done;
  	@echo "installing the tixindex program for builing tclIndex for Tix scripts"

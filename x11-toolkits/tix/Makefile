@@ -1,13 +1,13 @@
 # New ports collection makefile for:	tix
-# Version required:	1.4b1
+# Version required:	1.4b2
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/12/30 07:13:50 tg Exp $
 #
 
-DISTNAME=	Tix4.1b1
-PKGNAME=	tix-4.1b1
+DISTNAME=	Tix4.1b2
+PKGNAME=	tix-4.1b2
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.xpi.com/pub/
 
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.ORG
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-tk40 --enable-tk41 --enable-tk41_shared \
+CONFIGURE_ARGS=	--disable-tk40 --enable-tk41 --enable-tk41-shared \
 		--with-tcl75_src_dir=/usr/src/contrib/tcl \
 		--with-tk41_src_dir="${PORTSDIR}/x11/tk41/work/tk4.1" \
 		--with-extra_ldflags="-L${PREFIX}/lib"
@@ -45,6 +45,7 @@ pre-extract:
 post-install:
 	@${MKDIR} ${PREFIX}/man/man1
 	@mv ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
+	@ln -sf ${PREFIX}/bin/tixwish4.1.4.1 ${PREFIX}/bin/tixwish
 	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
