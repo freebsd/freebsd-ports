@@ -1,0 +1,12 @@
+MIME::Types provides the ability for detailed information about MIME
+entities to be determined and used programmatically.
+
+This is based on Perl MIME::Types and reflects this heritage in the
+existence of both MIME::Types and MIME::Type (which is the definition
+of a single MIME type).  As with the Perl version, this module is
+built to conform with MIME types in RFC 2045 and 2231.  This library
+follows the collection of MIME types at the USC Information Sciences
+Institute.
+
+Author:	Austin Ziegler <austin@halostatue.ca>
+WWW:	http://www.halostatue.ca/ruby/MIME__Types.html

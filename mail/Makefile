@@ -222,6 +222,7 @@
     SUBDIR += rlytest
     SUBDIR += rmime
     SUBDIR += rmoldmail
+    SUBDIR += ruby-mime-types
     SUBDIR += ruby-rmail
     SUBDIR += ruby-tmail
     SUBDIR += sendmail
