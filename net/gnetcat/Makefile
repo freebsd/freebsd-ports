@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netcat
 DISTNAME=	netcat-0.7.1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	liamfoy@sepulcrum.org
 COMMENT=	GPL'ed re-write of the well known networking tool netcat
 
 USE_BZIP2=	yes
