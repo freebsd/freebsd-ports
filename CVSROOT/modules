@@ -1137,6 +1137,7 @@ cy-aspell	ports/textproc/cy-aspell
 cybervrml97	ports/graphics/cybervrml97
 cyclone		ports/lang/cyclone
 cymbaline	ports/audio/cymbaline
+cyr-rfx		ports/x11-fonts/cyr-rfx
 cyrus		ports/mail/cyrus
 cyrus-imapd	ports/mail/cyrus-imapd
 cyrus-imapd2	ports/mail/cyrus-imapd2
