@@ -25,7 +25,7 @@ CONFIGURE_ARGS= --enable-transparency --enable-xpm-background \
 		--disable-delete-key --disable-backspace-key \
 		--enable-next-scrollbar --enable-utmp --enable-wtmp \
 		--enable-menubar --enable-graphics
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/WINGs"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/WINGs"
 
 MAN1=		wterm.1
 
