@@ -42,7 +42,6 @@
     SUBDIR += as80
     SUBDIR += asis
     SUBDIR += asl
-    SUBDIR += asm2html
     SUBDIR += asmutils
     SUBDIR += astyle
     SUBDIR += atk
