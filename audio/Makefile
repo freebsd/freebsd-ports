@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += afsp
     SUBDIR += amp
     SUBDIR += ascd
     SUBDIR += aumix

@@ -1,0 +1,23 @@
+Audio file utility programs and a library of routines for audio files.
+Audio File Utility Programs:
+  InfoAudio - display information about an audio file.
+  CompAudio - compare audio files, producing statistics and signal-to-noise
+              ratio figures.
+  CopyAudio - copy audio files.  This program combines samples from input audio
+              files (an arbitrary linear combination) and writes them to the
+              output file in a user selectable format.  One application is to
+              provide format conversion for an audio file; another is to
+              combine samples from multi-channel files.
+  ResampAudio - resample data from an audio file.  This process involves
+              interpolating between the samples in the original file to create
+              a new sequence of samples with a new spacing (sampling rate).
+   and FiltAudio, GenNoise, GenTone, LPanal, LPsyn
+The following file formats are supported for reading.
+  - Headerless, AU, RIFF WAVE, AIFF/AIFF-C, NIST SPHERE, IRCAM,
+    INRS-Telecom, ESPS, Text audio (NATO/ESPRIT CD-ROM format)
+The following file formats are supported for writing.
+  - Headerless, AU, RIFF WAVE, AIFF-C
+
+WWW: http://www.TSP.ECE.McGill.CA/software
+
+-- Kawaguti Ginga <ginga@athena.club.ne.jp>
