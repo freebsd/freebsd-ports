@@ -111,6 +111,7 @@
     SUBDIR += tocps
     SUBDIR += ttf2pt1
     SUBDIR += ttfm
+    SUBDIR += unrar
     SUBDIR += unzip
     SUBDIR += ve
     SUBDIR += vflib
