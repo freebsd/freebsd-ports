@@ -7,6 +7,7 @@
 
 PORTNAME=	ORBacus
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.2/
 DISTNAME=	OB-${PORTVERSION}
@@ -22,14 +23,8 @@ MAN1=		idl.1
 MLINKS=		idl.1 hidl.1	- irdel.1	- irfeed.1 \
 		- irgen.1	- irserv.1	- jidl.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/ORBacus
 	${INSTALL_DATA} ${WRKSRC}/ob/LICENSE ${PREFIX}/share/doc/ORBacus
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
