@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	ike-scan
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	security
-MASTER_SITES=	https://berlin.ccc.de/~cryx/
+MASTER_SITES=	http://berlin.ccc.de/~cryx/ike-scan/
 
 MAINTAINER=	Yonatan@xpert.com
 COMMENT=	VPN scanner and identifier
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	"--datadir=${DATADIR}"
+USE_GETOPT_LONG=yes
 
 post-install:
 .	if !defined(NOPORTDOCS)
