@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	libwww
-PORTVERSION= 	5.2.6
+PORTVERSION= 	5.2.8
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.w3.org/Library/Distribution/
 DISTNAME=	w3c-${PKGNAME}
 
 MAINTAINER=	jseger@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 DOCDIR=		${PREFIX}/share/doc/libwww
