@@ -119,6 +119,7 @@
     SUBDIR += superkaramba
     SUBDIR += taskjuggler
     SUBDIR += teapot
+    SUBDIR += timer-applet
     SUBDIR += treeline
     SUBDIR += tuxcards
     SUBDIR += vym
