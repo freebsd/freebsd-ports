@@ -12,10 +12,9 @@ PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.outguess.org/ \
 		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/www-sites/www.outguess.org/ \
-		http://www.physnet.uni-hamburg.de/provos/ \
 		http://munitions.vipul.net/software/steganography/
 
-MAINTAINER=	Trevor Johnson <trevor@FreeBSD.org>
+MAINTAINER=	trevor@FreeBSD.org
 
 DOCDIR=		share/doc/outguess
 DOCS=		ChangeLog README STIRMARK-README TODO
