@@ -13,10 +13,10 @@ Package
     extra_libraries = ["tcl83","tk83","HSTclHaskell_cbits"],
     include_dirs = ["$GHC_LIB/include"],
     c_includes = [],
-    package_deps = [ "rts","lang","concurrent" ],
+    package_deps = [ "rts","lang","concurrent","data" ],
     extra_ghc_opts = [ "-fglasgow-exts", "-fvia-C" ],
     extra_cc_opts = [],
-    extra_ld_opts = [ "-L$PKG_PREFIX/lib -lncurses"  ]
+    extra_ld_opts = [ "-L$PKG_PREFIX/lib", "-lncurses"  ]
 }
 CONFEOF
 fi
