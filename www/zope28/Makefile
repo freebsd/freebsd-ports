@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-based web application platform
 
+BROKEN=		Does not build
+
 USE_PYTHON=	yes
 PYTHON_VERSION?=python2.1
 

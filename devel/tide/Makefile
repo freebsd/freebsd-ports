@@ -15,6 +15,8 @@ DISTNAME=	tide-${PORTVERSION:S/.//g}
 MAINTAINER=	nmh@t3x.org
 COMMENT=	T3X Integrated Development Environment and T3X Tool classes
 
+BROKEN=		Does not build
+
 BUILD_DEPENDS=	tx:${PORTSDIR}/lang/t3x
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
