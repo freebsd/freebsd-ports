@@ -3,7 +3,7 @@
 # Date created:				28th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.17 1998/06/06 09:21:25 asami Exp $
+# $Id: Makefile,v 1.18 1998/06/29 06:42:09 cwt Exp $
 #
 
 DISTNAME=	amanda-2.4.0p1
@@ -14,6 +14,8 @@ MAINTAINER=	cwt@FreeBSD.ORG
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+
+BROKEN=		gtk11.m4
 
 WRKSRC=		${WRKDIR}/amanda-2.4.0p1
 NO_LATEST_LINK=	yes
