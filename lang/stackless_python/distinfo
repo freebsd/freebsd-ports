@@ -1,2 +1,4 @@
-MD5 (python/Python-2.2.3.tgz) = 169f89f318e252dac0c54dd1b165d229
-MD5 (python/stackless-021026.diff.bz2) = 72249d4d0422150ca9c8a6ff5f28fd63
+MD5 (python/Python-2.3.3.tgz) = 4d16732b1cfccc0ed250956d41463c61
+SIZE (python/Python-2.3.3.tgz) = 8491380
+MD5 (python/stackless-040225.diff.bz2) = 94c041d48294ee57bc9b83cf83fedffd
+SIZE (python/stackless-040225.diff.bz2) = 82214
