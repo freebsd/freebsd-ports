@@ -3,7 +3,7 @@
 # Date created:         Sat Nov 08 09:47:12 CET 1997
 # Whom:                 se
 #
-# $Id$
+# $Id: Makefile,v 1.3 1997/12/08 22:57:33 se Exp $
 #
 
 DISTNAME=       xblast-2.6.beta
@@ -13,7 +13,7 @@ CATEGORIES=	games
 # MASTER_SITES= ${MASTER_SITE_XCONTRIB}
 # MASTER_SITE_SUBDIR= games/multiplayer
 # but right now only available from:
-MASTER_SITES=	http://hamlet.ikp.uni-koeln.de/~vogel/archive/
+MASTER_SITES=	http://www.ikp.uni-koeln.de/~vogel/archive/
 
 MAINTAINER=	se@FreeBSD.ORG
 
