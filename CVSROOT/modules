@@ -7430,6 +7430,7 @@ sleuth		ports/net/sleuth
 slffea		ports/cad/slffea
 slib		ports/lang/slib
 sliderule	ports/deskutils/sliderule
+slideshow	ports/multimedia/slideshow
 slingshot	ports/x11-toolkits/slingshot
 sliplogin	src/usr.sbin/sliplogin
 slirc		ports/irc/slirc
