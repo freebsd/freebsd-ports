@@ -6,25 +6,31 @@
 #
 
 PORTNAME=	kdetoys
-PORTVERSION=	1.90
+PORTVERSION=	20000724A
 CATEGORIES=	x11-clocks kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	unstable/distribution/tar/src
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	will
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	kdecore.4:${PORTSDIR}/x11/kdelibs2
+LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22 \
+		kdecore.4:${PORTSDIR}/x11/kdelibs2
 
-BROKEN=		"Does not compile/run properly"
-
+WRKSRC=		${WRKDIR}/kdetoys
 MOC?=		${X11BASE}/bin/moc2
-USE_QT2=	yes
+USE_NEWGCC=	yes
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 CONFIGURE_ARGS+=--with-qt-dir=${X11BASE} \
 		--with-qt-includes=${X11BASE}/include/qt2 \
-		--with-qt-libraries=${X11BASE}/lib
-CONFIGURE_ENV+=	DO_NOT_COMPILE=mouse MOC="${MOC}"
+		--with-qt-libraries=${X11BASE}/lib \
+		--with-extra-libs=${LOCALBASE}/lib
+CONFIGURE_ENV+= LIBQT="-lqt2" MOC="${MOC}" DO_NOT_COMPILE=mouse LIBQTFILE="libqt2" \
+		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib -lqt2 -ljpeg -lgcc -lstdc++"
 USE_GMAKE=	yes
+
+pre-install:
+	@(find ${WRKSRC} -name CVS | xargs rm -rf)
 
 .include <bsd.port.mk>

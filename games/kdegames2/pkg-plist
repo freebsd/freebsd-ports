@@ -1,5 +1,4 @@
 bin/kabalone
-bin/kasteroids
 bin/katomic
 bin/kblackbox
 bin/kfouleggs
@@ -19,8 +18,9 @@ bin/ksokoban
 bin/kspaceduel
 bin/ktron
 bin/ktuberling
+bin/lskat
+bin/lskatproc
 share/applnk/Games/kabalone.desktop
-share/applnk/Games/kasteroids.desktop
 share/applnk/Games/katomic.desktop
 share/applnk/Games/kblackbox.desktop
 share/applnk/Games/kfouleggs.desktop
@@ -40,6 +40,7 @@ share/applnk/Games/ksokoban.desktop
 share/applnk/Games/kspaceduel.desktop
 share/applnk/Games/ktron.desktop
 share/applnk/Games/ktuberling.desktop
+share/applnk/Games/lskat.desktop
 share/apps/kabalone/kabaloneui.rc
 share/apps/kabalone/toolbar/edit.xpm
 share/apps/kabalone/toolbar/hint.xpm
@@ -56,298 +57,7 @@ share/apps/kabalone/toolbar/stop.xpm
 share/apps/kabalone/toolbar/undo.xpm
 share/apps/kabalone/toolbar/warning.xpm
 share/apps/kabalone/toolbar/yellowball.xpm
-share/apps/kasteroids/sprites/.pbm
-share/apps/kasteroids/sprites/bg.ppm
-share/apps/kasteroids/sprites/bits/bits0.pbm
-share/apps/kasteroids/sprites/bits/bits0.ppm
-share/apps/kasteroids/sprites/bits/bits1.pbm
-share/apps/kasteroids/sprites/bits/bits1.ppm
-share/apps/kasteroids/sprites/bits/bits10.pbm
-share/apps/kasteroids/sprites/bits/bits10.ppm
-share/apps/kasteroids/sprites/bits/bits11.pbm
-share/apps/kasteroids/sprites/bits/bits11.ppm
-share/apps/kasteroids/sprites/bits/bits12.pbm
-share/apps/kasteroids/sprites/bits/bits12.ppm
-share/apps/kasteroids/sprites/bits/bits13.pbm
-share/apps/kasteroids/sprites/bits/bits13.ppm
-share/apps/kasteroids/sprites/bits/bits14.pbm
-share/apps/kasteroids/sprites/bits/bits14.ppm
-share/apps/kasteroids/sprites/bits/bits15.pbm
-share/apps/kasteroids/sprites/bits/bits15.ppm
-share/apps/kasteroids/sprites/bits/bits2.pbm
-share/apps/kasteroids/sprites/bits/bits2.ppm
-share/apps/kasteroids/sprites/bits/bits3.pbm
-share/apps/kasteroids/sprites/bits/bits3.ppm
-share/apps/kasteroids/sprites/bits/bits4.pbm
-share/apps/kasteroids/sprites/bits/bits4.ppm
-share/apps/kasteroids/sprites/bits/bits5.pbm
-share/apps/kasteroids/sprites/bits/bits5.ppm
-share/apps/kasteroids/sprites/bits/bits6.pbm
-share/apps/kasteroids/sprites/bits/bits6.ppm
-share/apps/kasteroids/sprites/bits/bits7.pbm
-share/apps/kasteroids/sprites/bits/bits7.ppm
-share/apps/kasteroids/sprites/bits/bits8.pbm
-share/apps/kasteroids/sprites/bits/bits8.ppm
-share/apps/kasteroids/sprites/bits/bits9.pbm
-share/apps/kasteroids/sprites/bits/bits9.ppm
-share/apps/kasteroids/sprites/missile/missile0.pbm
-share/apps/kasteroids/sprites/missile/missile0.ppm
-share/apps/kasteroids/sprites/rock1/rock1-0.pbm
-share/apps/kasteroids/sprites/rock1/rock1-0.ppm
-share/apps/kasteroids/sprites/rock1/rock1-1.pbm
-share/apps/kasteroids/sprites/rock1/rock1-1.ppm
-share/apps/kasteroids/sprites/rock1/rock1-10.pbm
-share/apps/kasteroids/sprites/rock1/rock1-10.ppm
-share/apps/kasteroids/sprites/rock1/rock1-11.pbm
-share/apps/kasteroids/sprites/rock1/rock1-11.ppm
-share/apps/kasteroids/sprites/rock1/rock1-12.pbm
-share/apps/kasteroids/sprites/rock1/rock1-12.ppm
-share/apps/kasteroids/sprites/rock1/rock1-13.pbm
-share/apps/kasteroids/sprites/rock1/rock1-13.ppm
-share/apps/kasteroids/sprites/rock1/rock1-14.pbm
-share/apps/kasteroids/sprites/rock1/rock1-14.ppm
-share/apps/kasteroids/sprites/rock1/rock1-15.pbm
-share/apps/kasteroids/sprites/rock1/rock1-15.ppm
-share/apps/kasteroids/sprites/rock1/rock1-16.pbm
-share/apps/kasteroids/sprites/rock1/rock1-16.ppm
-share/apps/kasteroids/sprites/rock1/rock1-17.pbm
-share/apps/kasteroids/sprites/rock1/rock1-17.ppm
-share/apps/kasteroids/sprites/rock1/rock1-18.pbm
-share/apps/kasteroids/sprites/rock1/rock1-18.ppm
-share/apps/kasteroids/sprites/rock1/rock1-19.pbm
-share/apps/kasteroids/sprites/rock1/rock1-19.ppm
-share/apps/kasteroids/sprites/rock1/rock1-2.pbm
-share/apps/kasteroids/sprites/rock1/rock1-2.ppm
-share/apps/kasteroids/sprites/rock1/rock1-20.pbm
-share/apps/kasteroids/sprites/rock1/rock1-20.ppm
-share/apps/kasteroids/sprites/rock1/rock1-21.pbm
-share/apps/kasteroids/sprites/rock1/rock1-21.ppm
-share/apps/kasteroids/sprites/rock1/rock1-22.pbm
-share/apps/kasteroids/sprites/rock1/rock1-22.ppm
-share/apps/kasteroids/sprites/rock1/rock1-23.pbm
-share/apps/kasteroids/sprites/rock1/rock1-23.ppm
-share/apps/kasteroids/sprites/rock1/rock1-24.pbm
-share/apps/kasteroids/sprites/rock1/rock1-24.ppm
-share/apps/kasteroids/sprites/rock1/rock1-25.pbm
-share/apps/kasteroids/sprites/rock1/rock1-25.ppm
-share/apps/kasteroids/sprites/rock1/rock1-26.pbm
-share/apps/kasteroids/sprites/rock1/rock1-26.ppm
-share/apps/kasteroids/sprites/rock1/rock1-27.pbm
-share/apps/kasteroids/sprites/rock1/rock1-27.ppm
-share/apps/kasteroids/sprites/rock1/rock1-28.pbm
-share/apps/kasteroids/sprites/rock1/rock1-28.ppm
-share/apps/kasteroids/sprites/rock1/rock1-29.pbm
-share/apps/kasteroids/sprites/rock1/rock1-29.ppm
-share/apps/kasteroids/sprites/rock1/rock1-3.pbm
-share/apps/kasteroids/sprites/rock1/rock1-3.ppm
-share/apps/kasteroids/sprites/rock1/rock1-30.pbm
-share/apps/kasteroids/sprites/rock1/rock1-30.ppm
-share/apps/kasteroids/sprites/rock1/rock1-31.pbm
-share/apps/kasteroids/sprites/rock1/rock1-31.ppm
-share/apps/kasteroids/sprites/rock1/rock1-4.pbm
-share/apps/kasteroids/sprites/rock1/rock1-4.ppm
-share/apps/kasteroids/sprites/rock1/rock1-5.pbm
-share/apps/kasteroids/sprites/rock1/rock1-5.ppm
-share/apps/kasteroids/sprites/rock1/rock1-6.pbm
-share/apps/kasteroids/sprites/rock1/rock1-6.ppm
-share/apps/kasteroids/sprites/rock1/rock1-7.pbm
-share/apps/kasteroids/sprites/rock1/rock1-7.ppm
-share/apps/kasteroids/sprites/rock1/rock1-8.pbm
-share/apps/kasteroids/sprites/rock1/rock1-8.ppm
-share/apps/kasteroids/sprites/rock1/rock1-9.pbm
-share/apps/kasteroids/sprites/rock1/rock1-9.ppm
-share/apps/kasteroids/sprites/rock2/rock2-0.pbm
-share/apps/kasteroids/sprites/rock2/rock2-0.ppm
-share/apps/kasteroids/sprites/rock2/rock2-1.pbm
-share/apps/kasteroids/sprites/rock2/rock2-1.ppm
-share/apps/kasteroids/sprites/rock2/rock2-10.pbm
-share/apps/kasteroids/sprites/rock2/rock2-10.ppm
-share/apps/kasteroids/sprites/rock2/rock2-11.pbm
-share/apps/kasteroids/sprites/rock2/rock2-11.ppm
-share/apps/kasteroids/sprites/rock2/rock2-12.pbm
-share/apps/kasteroids/sprites/rock2/rock2-12.ppm
-share/apps/kasteroids/sprites/rock2/rock2-13.pbm
-share/apps/kasteroids/sprites/rock2/rock2-13.ppm
-share/apps/kasteroids/sprites/rock2/rock2-14.pbm
-share/apps/kasteroids/sprites/rock2/rock2-14.ppm
-share/apps/kasteroids/sprites/rock2/rock2-15.pbm
-share/apps/kasteroids/sprites/rock2/rock2-15.ppm
-share/apps/kasteroids/sprites/rock2/rock2-16.pbm
-share/apps/kasteroids/sprites/rock2/rock2-16.ppm
-share/apps/kasteroids/sprites/rock2/rock2-17.pbm
-share/apps/kasteroids/sprites/rock2/rock2-17.ppm
-share/apps/kasteroids/sprites/rock2/rock2-18.pbm
-share/apps/kasteroids/sprites/rock2/rock2-18.ppm
-share/apps/kasteroids/sprites/rock2/rock2-19.pbm
-share/apps/kasteroids/sprites/rock2/rock2-19.ppm
-share/apps/kasteroids/sprites/rock2/rock2-2.pbm
-share/apps/kasteroids/sprites/rock2/rock2-2.ppm
-share/apps/kasteroids/sprites/rock2/rock2-20.pbm
-share/apps/kasteroids/sprites/rock2/rock2-20.ppm
-share/apps/kasteroids/sprites/rock2/rock2-21.pbm
-share/apps/kasteroids/sprites/rock2/rock2-21.ppm
-share/apps/kasteroids/sprites/rock2/rock2-22.pbm
-share/apps/kasteroids/sprites/rock2/rock2-22.ppm
-share/apps/kasteroids/sprites/rock2/rock2-23.pbm
-share/apps/kasteroids/sprites/rock2/rock2-23.ppm
-share/apps/kasteroids/sprites/rock2/rock2-24.pbm
-share/apps/kasteroids/sprites/rock2/rock2-24.ppm
-share/apps/kasteroids/sprites/rock2/rock2-25.pbm
-share/apps/kasteroids/sprites/rock2/rock2-25.ppm
-share/apps/kasteroids/sprites/rock2/rock2-26.pbm
-share/apps/kasteroids/sprites/rock2/rock2-26.ppm
-share/apps/kasteroids/sprites/rock2/rock2-27.pbm
-share/apps/kasteroids/sprites/rock2/rock2-27.ppm
-share/apps/kasteroids/sprites/rock2/rock2-28.pbm
-share/apps/kasteroids/sprites/rock2/rock2-28.ppm
-share/apps/kasteroids/sprites/rock2/rock2-29.pbm
-share/apps/kasteroids/sprites/rock2/rock2-29.ppm
-share/apps/kasteroids/sprites/rock2/rock2-3.pbm
-share/apps/kasteroids/sprites/rock2/rock2-3.ppm
-share/apps/kasteroids/sprites/rock2/rock2-30.pbm
-share/apps/kasteroids/sprites/rock2/rock2-30.ppm
-share/apps/kasteroids/sprites/rock2/rock2-31.pbm
-share/apps/kasteroids/sprites/rock2/rock2-31.ppm
-share/apps/kasteroids/sprites/rock2/rock2-4.pbm
-share/apps/kasteroids/sprites/rock2/rock2-4.ppm
-share/apps/kasteroids/sprites/rock2/rock2-5.pbm
-share/apps/kasteroids/sprites/rock2/rock2-5.ppm
-share/apps/kasteroids/sprites/rock2/rock2-6.pbm
-share/apps/kasteroids/sprites/rock2/rock2-6.ppm
-share/apps/kasteroids/sprites/rock2/rock2-7.pbm
-share/apps/kasteroids/sprites/rock2/rock2-7.ppm
-share/apps/kasteroids/sprites/rock2/rock2-8.pbm
-share/apps/kasteroids/sprites/rock2/rock2-8.ppm
-share/apps/kasteroids/sprites/rock2/rock2-9.pbm
-share/apps/kasteroids/sprites/rock2/rock2-9.ppm
-share/apps/kasteroids/sprites/rock3/rock3-0.pbm
-share/apps/kasteroids/sprites/rock3/rock3-0.ppm
-share/apps/kasteroids/sprites/rock3/rock3-1.pbm
-share/apps/kasteroids/sprites/rock3/rock3-1.ppm
-share/apps/kasteroids/sprites/rock3/rock3-10.pbm
-share/apps/kasteroids/sprites/rock3/rock3-10.ppm
-share/apps/kasteroids/sprites/rock3/rock3-11.pbm
-share/apps/kasteroids/sprites/rock3/rock3-11.ppm
-share/apps/kasteroids/sprites/rock3/rock3-12.pbm
-share/apps/kasteroids/sprites/rock3/rock3-12.ppm
-share/apps/kasteroids/sprites/rock3/rock3-13.pbm
-share/apps/kasteroids/sprites/rock3/rock3-13.ppm
-share/apps/kasteroids/sprites/rock3/rock3-14.pbm
-share/apps/kasteroids/sprites/rock3/rock3-14.ppm
-share/apps/kasteroids/sprites/rock3/rock3-15.pbm
-share/apps/kasteroids/sprites/rock3/rock3-15.ppm
-share/apps/kasteroids/sprites/rock3/rock3-16.pbm
-share/apps/kasteroids/sprites/rock3/rock3-16.ppm
-share/apps/kasteroids/sprites/rock3/rock3-17.pbm
-share/apps/kasteroids/sprites/rock3/rock3-17.ppm
-share/apps/kasteroids/sprites/rock3/rock3-18.pbm
-share/apps/kasteroids/sprites/rock3/rock3-18.ppm
-share/apps/kasteroids/sprites/rock3/rock3-19.pbm
-share/apps/kasteroids/sprites/rock3/rock3-19.ppm
-share/apps/kasteroids/sprites/rock3/rock3-2.pbm
-share/apps/kasteroids/sprites/rock3/rock3-2.ppm
-share/apps/kasteroids/sprites/rock3/rock3-20.pbm
-share/apps/kasteroids/sprites/rock3/rock3-20.ppm
-share/apps/kasteroids/sprites/rock3/rock3-21.pbm
-share/apps/kasteroids/sprites/rock3/rock3-21.ppm
-share/apps/kasteroids/sprites/rock3/rock3-22.pbm
-share/apps/kasteroids/sprites/rock3/rock3-22.ppm
-share/apps/kasteroids/sprites/rock3/rock3-23.pbm
-share/apps/kasteroids/sprites/rock3/rock3-23.ppm
-share/apps/kasteroids/sprites/rock3/rock3-24.pbm
-share/apps/kasteroids/sprites/rock3/rock3-24.ppm
-share/apps/kasteroids/sprites/rock3/rock3-25.pbm
-share/apps/kasteroids/sprites/rock3/rock3-25.ppm
-share/apps/kasteroids/sprites/rock3/rock3-26.pbm
-share/apps/kasteroids/sprites/rock3/rock3-26.ppm
-share/apps/kasteroids/sprites/rock3/rock3-27.pbm
-share/apps/kasteroids/sprites/rock3/rock3-27.ppm
-share/apps/kasteroids/sprites/rock3/rock3-28.pbm
-share/apps/kasteroids/sprites/rock3/rock3-28.ppm
-share/apps/kasteroids/sprites/rock3/rock3-29.pbm
-share/apps/kasteroids/sprites/rock3/rock3-29.ppm
-share/apps/kasteroids/sprites/rock3/rock3-3.pbm
-share/apps/kasteroids/sprites/rock3/rock3-3.ppm
-share/apps/kasteroids/sprites/rock3/rock3-30.pbm
-share/apps/kasteroids/sprites/rock3/rock3-30.ppm
-share/apps/kasteroids/sprites/rock3/rock3-31.pbm
-share/apps/kasteroids/sprites/rock3/rock3-31.ppm
-share/apps/kasteroids/sprites/rock3/rock3-4.pbm
-share/apps/kasteroids/sprites/rock3/rock3-4.ppm
-share/apps/kasteroids/sprites/rock3/rock3-5.pbm
-share/apps/kasteroids/sprites/rock3/rock3-5.ppm
-share/apps/kasteroids/sprites/rock3/rock3-6.pbm
-share/apps/kasteroids/sprites/rock3/rock3-6.ppm
-share/apps/kasteroids/sprites/rock3/rock3-7.pbm
-share/apps/kasteroids/sprites/rock3/rock3-7.ppm
-share/apps/kasteroids/sprites/rock3/rock3-8.pbm
-share/apps/kasteroids/sprites/rock3/rock3-8.ppm
-share/apps/kasteroids/sprites/rock3/rock3-9.pbm
-share/apps/kasteroids/sprites/rock3/rock3-9.ppm
-share/apps/kasteroids/sprites/ship/ship0.pbm
-share/apps/kasteroids/sprites/ship/ship0.ppm
-share/apps/kasteroids/sprites/ship/ship1.pbm
-share/apps/kasteroids/sprites/ship/ship1.ppm
-share/apps/kasteroids/sprites/ship/ship10.pbm
-share/apps/kasteroids/sprites/ship/ship10.ppm
-share/apps/kasteroids/sprites/ship/ship11.pbm
-share/apps/kasteroids/sprites/ship/ship11.ppm
-share/apps/kasteroids/sprites/ship/ship12.pbm
-share/apps/kasteroids/sprites/ship/ship12.ppm
-share/apps/kasteroids/sprites/ship/ship13.pbm
-share/apps/kasteroids/sprites/ship/ship13.ppm
-share/apps/kasteroids/sprites/ship/ship14.pbm
-share/apps/kasteroids/sprites/ship/ship14.ppm
-share/apps/kasteroids/sprites/ship/ship15.pbm
-share/apps/kasteroids/sprites/ship/ship15.ppm
-share/apps/kasteroids/sprites/ship/ship16.pbm
-share/apps/kasteroids/sprites/ship/ship16.ppm
-share/apps/kasteroids/sprites/ship/ship17.pbm
-share/apps/kasteroids/sprites/ship/ship17.ppm
-share/apps/kasteroids/sprites/ship/ship18.pbm
-share/apps/kasteroids/sprites/ship/ship18.ppm
-share/apps/kasteroids/sprites/ship/ship19.pbm
-share/apps/kasteroids/sprites/ship/ship19.ppm
-share/apps/kasteroids/sprites/ship/ship2.pbm
-share/apps/kasteroids/sprites/ship/ship2.ppm
-share/apps/kasteroids/sprites/ship/ship20.pbm
-share/apps/kasteroids/sprites/ship/ship20.ppm
-share/apps/kasteroids/sprites/ship/ship21.pbm
-share/apps/kasteroids/sprites/ship/ship21.ppm
-share/apps/kasteroids/sprites/ship/ship22.pbm
-share/apps/kasteroids/sprites/ship/ship22.ppm
-share/apps/kasteroids/sprites/ship/ship23.pbm
-share/apps/kasteroids/sprites/ship/ship23.ppm
-share/apps/kasteroids/sprites/ship/ship24.pbm
-share/apps/kasteroids/sprites/ship/ship24.ppm
-share/apps/kasteroids/sprites/ship/ship25.pbm
-share/apps/kasteroids/sprites/ship/ship25.ppm
-share/apps/kasteroids/sprites/ship/ship26.pbm
-share/apps/kasteroids/sprites/ship/ship26.ppm
-share/apps/kasteroids/sprites/ship/ship27.pbm
-share/apps/kasteroids/sprites/ship/ship27.ppm
-share/apps/kasteroids/sprites/ship/ship28.pbm
-share/apps/kasteroids/sprites/ship/ship28.ppm
-share/apps/kasteroids/sprites/ship/ship29.pbm
-share/apps/kasteroids/sprites/ship/ship29.ppm
-share/apps/kasteroids/sprites/ship/ship3.pbm
-share/apps/kasteroids/sprites/ship/ship3.ppm
-share/apps/kasteroids/sprites/ship/ship30.pbm
-share/apps/kasteroids/sprites/ship/ship30.ppm
-share/apps/kasteroids/sprites/ship/ship31.pbm
-share/apps/kasteroids/sprites/ship/ship31.ppm
-share/apps/kasteroids/sprites/ship/ship4.pbm
-share/apps/kasteroids/sprites/ship/ship4.ppm
-share/apps/kasteroids/sprites/ship/ship5.pbm
-share/apps/kasteroids/sprites/ship/ship5.ppm
-share/apps/kasteroids/sprites/ship/ship6.pbm
-share/apps/kasteroids/sprites/ship/ship6.ppm
-share/apps/kasteroids/sprites/ship/ship7.pbm
-share/apps/kasteroids/sprites/ship/ship7.ppm
-share/apps/kasteroids/sprites/ship/ship8.pbm
-share/apps/kasteroids/sprites/ship/ship8.ppm
-share/apps/kasteroids/sprites/ship/ship9.pbm
-share/apps/kasteroids/sprites/ship/ship9.ppm
+share/apps/katomic/katomicui.rc
 share/apps/katomic/levels/level_1
 share/apps/katomic/levels/level_10
 share/apps/katomic/levels/level_11
@@ -462,6 +172,7 @@ share/apps/konquest/pics/planet7.xpm
 share/apps/konquest/pics/planet8.xpm
 share/apps/konquest/pics/planet9.xpm
 share/apps/konquest/pics/ruler.xpm
+share/apps/kpat/kpatui.rc
 share/apps/kpat/pics/1.png
 share/apps/kpat/pics/10.png
 share/apps/kpat/pics/11.png
@@ -514,6 +225,7 @@ share/apps/kpat/pics/6.png
 share/apps/kpat/pics/7.png
 share/apps/kpat/pics/8.png
 share/apps/kpat/pics/9.png
+share/apps/kpat/pics/back0.png
 share/apps/kpat/pics/back1.png
 share/apps/kpat/pics/back2.png
 share/apps/kpat/pics/back3.png
@@ -599,8 +311,8 @@ share/apps/kreversi/pics/zoomout.xpm
 share/apps/kreversi/sounds/reversi-click.wav
 share/apps/kreversi/sounds/reversi-lost.wav
 share/apps/kreversi/sounds/reversi-won.wav
+share/apps/ksame/ksameui.rc
 share/apps/ksame/stones.png
-share/apps/ksame/stones_mask.png
 share/apps/kshisen/kshisen.xpm
 share/apps/kshisen/kshisen_bgnd.xpm
 share/apps/kshisen/mask.xpm
@@ -654,16 +366,17 @@ share/apps/ksmiletris/data/cleared-c.bmp
 share/apps/ksmiletris/data/pause.bmp
 share/apps/ksmiletris/sounds/break.wav
 share/apps/ksmiletris/sounds/clear.wav
-share/apps/ksnake/backgrounds/Bark.xpm
-share/apps/ksnake/backgrounds/Blue_Carpet.xpm
-share/apps/ksnake/backgrounds/Dark_Wood.xpm
-share/apps/ksnake/backgrounds/Granite.xpm
-share/apps/ksnake/backgrounds/Green_Carpet.xpm
-share/apps/ksnake/backgrounds/Mystique.xpm
-share/apps/ksnake/backgrounds/Rope_Weave.xpm
-share/apps/ksnake/backgrounds/Volcanic.xpm
-share/apps/ksnake/backgrounds/Wood.xpm
+share/apps/ksnake/backgrounds/Bark.png
+share/apps/ksnake/backgrounds/Blue_Carpet.png
+share/apps/ksnake/backgrounds/Dark_Wood.png
+share/apps/ksnake/backgrounds/Granite.png
+share/apps/ksnake/backgrounds/Green_Carpet.png
+share/apps/ksnake/backgrounds/Mystique.png
+share/apps/ksnake/backgrounds/Rope_Weave.png
+share/apps/ksnake/backgrounds/Volcanic.png
+share/apps/ksnake/backgrounds/Wood.png
 share/apps/ksnake/highScores
+share/apps/ksnake/ksnakeui.rc
 share/apps/ksnake/levels/room01
 share/apps/ksnake/levels/room02
 share/apps/ksnake/levels/room03
@@ -689,25 +402,16 @@ share/apps/ksnake/levels/room22
 share/apps/ksnake/levels/room23
 share/apps/ksnake/levels/room24
 share/apps/ksnake/levels/room25
-share/apps/ksnake/pics/apples.xpm
-share/apps/ksnake/pics/ball.xpm
-share/apps/ksnake/pics/brick.xpm
-share/apps/ksnake/pics/down.xpm
-share/apps/ksnake/pics/left.xpm
-share/apps/ksnake/pics/right.xpm
-share/apps/ksnake/pics/samy.xpm
-share/apps/ksnake/pics/snake1.xpm
-share/apps/ksnake/pics/snake2.xpm
-share/apps/ksnake/pics/up.xpm
-share/apps/kspaceduel/icons/hicolor/22x22/actions/newgame.png
-share/apps/kspaceduel/icons/hicolor/22x22/actions/newround.png
-share/apps/kspaceduel/icons/hicolor/22x22/actions/pausegame.png
-share/apps/kspaceduel/icons/hicolor/32x32/actions/newgame.png
-share/apps/kspaceduel/icons/hicolor/32x32/actions/newround.png
-share/apps/kspaceduel/icons/hicolor/32x32/actions/pausegame.png
-share/apps/kspaceduel/icons/locolor/16x16/actions/newgame.png
-share/apps/kspaceduel/icons/locolor/16x16/actions/newround.png
-share/apps/kspaceduel/icons/locolor/16x16/actions/pausegame.png
+share/apps/ksnake/pics/apples.png
+share/apps/ksnake/pics/ball.png
+share/apps/ksnake/pics/brick.png
+share/apps/ksnake/pics/down.png
+share/apps/ksnake/pics/left.png
+share/apps/ksnake/pics/right.png
+share/apps/ksnake/pics/samy.png
+share/apps/ksnake/pics/snake1.png
+share/apps/ksnake/pics/snake2.png
+share/apps/ksnake/pics/up.png
 share/apps/kspaceduel/kspaceduelui.rc
 share/apps/kspaceduel/sprites/backgr.png
 share/apps/kspaceduel/sprites/explosion/explos00.pbm
@@ -1129,6 +833,77 @@ share/apps/ktuberling/sounds/en/spectacles.wav
 share/apps/ktuberling/sounds/en/sunglasses.wav
 share/apps/ktuberling/sounds/en/tuberling.wav
 share/apps/ktuberling/sounds/en/watch.wav
+share/apps/lskat/grafix/1.png
+share/apps/lskat/grafix/10.png
+share/apps/lskat/grafix/11.png
+share/apps/lskat/grafix/12.png
+share/apps/lskat/grafix/13.png
+share/apps/lskat/grafix/14.png
+share/apps/lskat/grafix/15.png
+share/apps/lskat/grafix/16.png
+share/apps/lskat/grafix/17.png
+share/apps/lskat/grafix/18.png
+share/apps/lskat/grafix/19.png
+share/apps/lskat/grafix/2.png
+share/apps/lskat/grafix/20.png
+share/apps/lskat/grafix/21.png
+share/apps/lskat/grafix/22.png
+share/apps/lskat/grafix/23.png
+share/apps/lskat/grafix/24.png
+share/apps/lskat/grafix/25.png
+share/apps/lskat/grafix/26.png
+share/apps/lskat/grafix/27.png
+share/apps/lskat/grafix/28.png
+share/apps/lskat/grafix/29.png
+share/apps/lskat/grafix/3.png
+share/apps/lskat/grafix/30.png
+share/apps/lskat/grafix/31.png
+share/apps/lskat/grafix/32.png
+share/apps/lskat/grafix/4.png
+share/apps/lskat/grafix/400000.png
+share/apps/lskat/grafix/400001.png
+share/apps/lskat/grafix/400002.png
+share/apps/lskat/grafix/400003.png
+share/apps/lskat/grafix/400004.png
+share/apps/lskat/grafix/400005.png
+share/apps/lskat/grafix/400006.png
+share/apps/lskat/grafix/400007.png
+share/apps/lskat/grafix/400008.png
+share/apps/lskat/grafix/400009.png
+share/apps/lskat/grafix/400010.png
+share/apps/lskat/grafix/400011.png
+share/apps/lskat/grafix/400012.png
+share/apps/lskat/grafix/400013.png
+share/apps/lskat/grafix/400014.png
+share/apps/lskat/grafix/400015.png
+share/apps/lskat/grafix/400016.png
+share/apps/lskat/grafix/400017.png
+share/apps/lskat/grafix/400018.png
+share/apps/lskat/grafix/400019.png
+share/apps/lskat/grafix/400020.png
+share/apps/lskat/grafix/400021.png
+share/apps/lskat/grafix/400022.png
+share/apps/lskat/grafix/400023.png
+share/apps/lskat/grafix/400024.png
+share/apps/lskat/grafix/5.png
+share/apps/lskat/grafix/6.png
+share/apps/lskat/grafix/7.png
+share/apps/lskat/grafix/8.png
+share/apps/lskat/grafix/9.png
+share/apps/lskat/grafix/background.png
+share/apps/lskat/grafix/deck1.png
+share/apps/lskat/grafix/deck2.png
+share/apps/lskat/grafix/deck3.png
+share/apps/lskat/grafix/deck4.png
+share/apps/lskat/grafix/t1.png
+share/apps/lskat/grafix/t2.png
+share/apps/lskat/grafix/t3.png
+share/apps/lskat/grafix/t4.png
+share/apps/lskat/grafix/t5.png
+share/apps/lskat/grafix/tback.png
+share/apps/lskat/grafix/type1.png
+share/apps/lskat/grafix/type2.png
+share/apps/lskat/grafix/type3.png
 share/doc/HTML/en/kabalone/.anchors
 share/doc/HTML/en/kabalone/authors.html
 share/doc/HTML/en/kabalone/commandlineoptions.html
@@ -1148,6 +923,9 @@ share/doc/HTML/en/kasteroids/index.cvlog
 share/doc/HTML/en/kasteroids/index.docbook
 share/doc/HTML/en/kasteroids/index.html
 share/doc/HTML/en/kasteroids/introduction.html
+share/doc/HTML/en/kasteroids/ship.html
+share/doc/HTML/en/kasteroids/tips.html
+share/doc/HTML/en/kasteroids/upgrades.html
 share/doc/HTML/en/kblackbox/.anchors
 share/doc/HTML/en/kblackbox/copyright.html
 share/doc/HTML/en/kblackbox/epilogue.html
@@ -1171,7 +949,6 @@ share/doc/HTML/en/kjumpingcube/playingkjumpingcube.html
 share/doc/HTML/en/kjumpingcube/questionsanswersandtips.html
 share/doc/HTML/en/kjumpingcube/requirements.html
 share/doc/HTML/en/kmahjongg/.anchors
-share/doc/HTML/en/kmahjongg/authors.html
 share/doc/HTML/en/kmahjongg/epilogue.html
 share/doc/HTML/en/kmahjongg/index.cvlog
 share/doc/HTML/en/kmahjongg/index.docbook
@@ -1209,15 +986,22 @@ share/doc/HTML/en/kpat/rulesofthegame.html
 share/doc/HTML/en/kpat/ten.html
 share/doc/HTML/en/kpat/the-idiot.html
 share/doc/HTML/en/kpoker/.anchors
+share/doc/HTML/en/kpoker/bet.html
 share/doc/HTML/en/kpoker/copyright.html
 share/doc/HTML/en/kpoker/epilogue.html
-share/doc/HTML/en/kpoker/gameplay.html
+share/doc/HTML/en/kpoker/exchange.html
+share/doc/HTML/en/kpoker/general-options.html
 share/doc/HTML/en/kpoker/hands.html
 share/doc/HTML/en/kpoker/index.cvlog
 share/doc/HTML/en/kpoker/index.docbook
 share/doc/HTML/en/kpoker/index.html
 share/doc/HTML/en/kpoker/introduction.html
+share/doc/HTML/en/kpoker/one-player-game.html
+share/doc/HTML/en/kpoker/options.html
+share/doc/HTML/en/kpoker/raise.html
 share/doc/HTML/en/kpoker/scoring.html
+share/doc/HTML/en/kpoker/see.html
+share/doc/HTML/en/kpoker/two-player-game.html
 share/doc/HTML/en/kpoker/where-do-i-get-the-latest-version-of-kpoker.html
 share/doc/HTML/en/kreversi/.anchors
 share/doc/HTML/en/kreversi/a-minute-to-learn.html
@@ -1231,22 +1015,26 @@ share/doc/HTML/en/kreversi/introduction.html
 share/doc/HTML/en/kreversi/rulesofthegame.html
 share/doc/HTML/en/kreversi/strategyhints.html
 share/doc/HTML/en/ksame/.anchors
-share/doc/HTML/en/ksame/authors.html
 share/doc/HTML/en/ksame/copyright.html
 share/doc/HTML/en/ksame/epilogue.html
 share/doc/HTML/en/ksame/index.cvlog
 share/doc/HTML/en/ksame/index.docbook
 share/doc/HTML/en/ksame/index.html
 share/doc/HTML/en/ksame/introduction.html
-share/doc/HTML/en/ksame/rulesofthegame.html
-share/doc/HTML/en/ksame/strategyhint.html
+share/doc/HTML/en/ksame/rules-of-the-game.html
+share/doc/HTML/en/ksame/strategy-hint.html
 share/doc/HTML/en/kshisen/.anchors
-share/doc/HTML/en/kshisen/authors.html
-share/doc/HTML/en/kshisen/epilogue.html
-share/doc/HTML/en/kshisen/index.cvlog
+share/doc/HTML/en/kshisen/compilation.html
+share/doc/HTML/en/kshisen/configuration.html
+share/doc/HTML/en/kshisen/credits.html
+share/doc/HTML/en/kshisen/game-menu.html
 share/doc/HTML/en/kshisen/index.docbook
 share/doc/HTML/en/kshisen/index.html
+share/doc/HTML/en/kshisen/installation.html
 share/doc/HTML/en/kshisen/introduction.html
+share/doc/HTML/en/kshisen/key-bindings.html
+share/doc/HTML/en/kshisen/playing-kshisen.html
+share/doc/HTML/en/kshisen/requirements.html
 share/doc/HTML/en/ksirtet/.anchors
 share/doc/HTML/en/ksirtet/authors.html
 share/doc/HTML/en/ksirtet/epilogue.html
@@ -1316,11 +1104,9 @@ share/doc/HTML/en/ktron/requirements.html
 share/doc/HTML/en/ktron/usingkeyboard.html
 share/doc/HTML/en/ktuberling/.anchors
 share/doc/HTML/en/ktuberling/compilation-and-installation.html
-share/doc/HTML/en/ktuberling/credits.html
 share/doc/HTML/en/ktuberling/epilogue.html
 share/doc/HTML/en/ktuberling/for-programmers.html
 share/doc/HTML/en/ktuberling/for-translators.html
-share/doc/HTML/en/ktuberling/index.cvlog
 share/doc/HTML/en/ktuberling/index.docbook
 share/doc/HTML/en/ktuberling/index.html
 share/doc/HTML/en/ktuberling/installation.html
@@ -1329,11 +1115,24 @@ share/doc/HTML/en/ktuberling/keyboard-usage.html
 share/doc/HTML/en/ktuberling/license.html
 share/doc/HTML/en/ktuberling/onscreenfundamentals.html
 share/doc/HTML/en/ktuberling/requirements.html
-share/doc/HTML/en/ktuberling/technicalreference.html
+share/doc/HTML/en/ktuberling/technical-reference.html
 share/doc/HTML/en/ktuberling/the-menu-items.html
 share/doc/HTML/en/ktuberling/the-tool-bar.html
+share/doc/HTML/en/lskat/.anchors
+share/doc/HTML/en/lskat/credits.html
+share/doc/HTML/en/lskat/index.docbook
+share/doc/HTML/en/lskat/index.html
+share/doc/HTML/en/lskat/menus.html
+share/doc/HTML/en/lskat/overview.html
+share/doc/HTML/en/lskat/remote-connections.html
+share/doc/HTML/en/lskat/rules.html
+share/icons/hicolor/22x22/actions/spnewgame.png
+share/icons/hicolor/22x22/actions/spnewround.png
+share/icons/hicolor/22x22/actions/sppausegame.png
+share/icons/hicolor/32x32/actions/spnewgame.png
+share/icons/hicolor/32x32/actions/spnewround.png
+share/icons/hicolor/32x32/actions/sppausegame.png
 share/icons/hicolor/32x32/apps/kabalone.png
-share/icons/hicolor/32x32/apps/kasteroids.png
 share/icons/hicolor/32x32/apps/kblackbox.png
 share/icons/hicolor/32x32/apps/kmahjongg.png
 share/icons/hicolor/32x32/apps/kmines.png
@@ -1347,8 +1146,8 @@ share/icons/hicolor/32x32/apps/ksirtet.png
 share/icons/hicolor/32x32/apps/ksmiletris.png
 share/icons/hicolor/32x32/apps/ksnake.png
 share/icons/hicolor/32x32/apps/ksokoban.png
+share/icons/hicolor/32x32/apps/lskat.png
 share/icons/hicolor/48x48/apps/kabalone.png
-share/icons/hicolor/48x48/apps/kasteroids.png
 share/icons/hicolor/48x48/apps/kblackbox.png
 share/icons/hicolor/48x48/apps/kmahjongg.png
 share/icons/hicolor/48x48/apps/kmines.png
@@ -1362,8 +1161,11 @@ share/icons/hicolor/48x48/apps/ksirtet.png
 share/icons/hicolor/48x48/apps/ksmiletris.png
 share/icons/hicolor/48x48/apps/ksnake.png
 share/icons/hicolor/48x48/apps/ksokoban.png
+share/icons/hicolor/48x48/apps/lskat.png
+share/icons/locolor/16x16/actions/spnewgame.png
+share/icons/locolor/16x16/actions/spnewround.png
+share/icons/locolor/16x16/actions/sppausegame.png
 share/icons/locolor/16x16/apps/kabalone.png
-share/icons/locolor/16x16/apps/kasteroids.png
 share/icons/locolor/16x16/apps/kblackbox.png
 share/icons/locolor/16x16/apps/kjumpingcube.png
 share/icons/locolor/16x16/apps/kmahjongg.png
@@ -1380,8 +1182,8 @@ share/icons/locolor/16x16/apps/ksnake.png
 share/icons/locolor/16x16/apps/ksokoban.png
 share/icons/locolor/16x16/apps/kspaceduel.png
 share/icons/locolor/16x16/apps/ktron.png
+share/icons/locolor/16x16/apps/lskat.png
 share/icons/locolor/32x32/apps/kabalone.png
-share/icons/locolor/32x32/apps/kasteroids.png
 share/icons/locolor/32x32/apps/katomic.png
 share/icons/locolor/32x32/apps/kblackbox.png
 share/icons/locolor/32x32/apps/kjumpingcube.png
@@ -1400,35 +1202,8 @@ share/icons/locolor/32x32/apps/ksokoban.png
 share/icons/locolor/32x32/apps/kspaceduel.png
 share/icons/locolor/32x32/apps/ktron.png
 share/icons/locolor/32x32/apps/ktuberling.png
-@unexec rm -f %D/share/doc/HTML/en/kabalone/common
-@unexec rm -f %D/share/doc/HTML/en/kasteroids/common
-@unexec rm -f %D/share/doc/HTML/en/kblackbox/common
-@unexec rm -f %D/share/doc/HTML/en/kjumpingcube/common
-@unexec rm -f %D/share/doc/HTML/en/kmahjongg/common
-@unexec rm -f %D/share/doc/HTML/en/kmines/common
-@unexec rm -f %D/share/doc/HTML/en/konquest/common
-@unexec rm -f %D/share/doc/HTML/en/kpat/common
-@unexec rm -f %D/share/doc/HTML/en/kpoker/common
-@unexec rm -f %D/share/doc/HTML/en/kreversi/common
-@unexec rm -f %D/share/doc/HTML/en/ksame/common
-@unexec rm -f %D/share/doc/HTML/en/kshisen/common
-@unexec rm -f %D/share/doc/HTML/en/ksirtet/common
-@unexec rm -f %D/share/doc/HTML/en/ksmiletris/common
-@unexec rm -f %D/share/doc/HTML/en/ksnake/common
-@unexec rm -f %D/share/doc/HTML/en/ksokoban/common
-@unexec rm -f %D/share/doc/HTML/en/kspaceduel/common
-@unexec rm -f %D/share/doc/HTML/en/ktron/common
-@unexec rm -f %D/share/doc/HTML/en/ktuberling/common
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/hicolor/48x48/apps
-@dirrm share/icons/hicolor/48x48
-@dirrm share/icons/hicolor/32x32/apps
-@dirrm share/icons/hicolor/32x32
-@dirrm share/icons/hicolor
+share/icons/locolor/32x32/apps/lskat.png
+@dirrm share/doc/HTML/en/lskat
 @dirrm share/doc/HTML/en/ktuberling
 @dirrm share/doc/HTML/en/ktron
 @dirrm share/doc/HTML/en/kspaceduel
@@ -1448,6 +1223,8 @@ share/icons/locolor/32x32/apps/ktuberling.png
 @dirrm share/doc/HTML/en/kblackbox
 @dirrm share/doc/HTML/en/kasteroids
 @dirrm share/doc/HTML/en/kabalone
+@dirrm share/apps/lskat/grafix
+@dirrm share/apps/lskat
 @dirrm share/apps/ktuberling/sounds/en
 @dirrm share/apps/ktuberling/sounds
 @dirrm share/apps/ktuberling/pics
@@ -1461,15 +1238,6 @@ share/icons/locolor/32x32/apps/ktuberling.png
 @dirrm share/apps/kspaceduel/sprites/playerinfo
 @dirrm share/apps/kspaceduel/sprites/explosion
 @dirrm share/apps/kspaceduel/sprites
-@dirrm share/apps/kspaceduel/icons/locolor/16x16/actions
-@dirrm share/apps/kspaceduel/icons/locolor/16x16
-@dirrm share/apps/kspaceduel/icons/locolor
-@dirrm share/apps/kspaceduel/icons/hicolor/32x32/actions
-@dirrm share/apps/kspaceduel/icons/hicolor/32x32
-@dirrm share/apps/kspaceduel/icons/hicolor/22x22/actions
-@dirrm share/apps/kspaceduel/icons/hicolor/22x22
-@dirrm share/apps/kspaceduel/icons/hicolor
-@dirrm share/apps/kspaceduel/icons
 @dirrm share/apps/kspaceduel
 @dirrm share/apps/ksnake/pics
 @dirrm share/apps/ksnake/levels
@@ -1502,13 +1270,5 @@ share/icons/locolor/32x32/apps/ktuberling.png
 @dirrm share/apps/katomic/pics
 @dirrm share/apps/katomic/levels
 @dirrm share/apps/katomic
-@dirrm share/apps/kasteroids/sprites/ship
-@dirrm share/apps/kasteroids/sprites/rock3
-@dirrm share/apps/kasteroids/sprites/rock2
-@dirrm share/apps/kasteroids/sprites/rock1
-@dirrm share/apps/kasteroids/sprites/missile
-@dirrm share/apps/kasteroids/sprites/bits
-@dirrm share/apps/kasteroids/sprites
-@dirrm share/apps/kasteroids
 @dirrm share/apps/kabalone/toolbar
 @dirrm share/apps/kabalone

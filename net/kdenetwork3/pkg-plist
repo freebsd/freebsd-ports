@@ -1,42 +1,50 @@
-bin/kbiff
+bin/dsirc
+bin/karchie
+bin/keystone
+bin/kit
 bin/kmail
+bin/knode
 bin/korn
+bin/kotalkd
 bin/kppp
 bin/kppplogview
-include/ftpsearch.h
+bin/ksirc
+bin/ksticker
+bin/ktalkd
+bin/ktalkdlg
+bin/mail.local
 include/kmailIface.h
-include/kping.h
-include/newssearch.h
-include/websearch.h
-lib/libsearch.la
-lib/libsearch.so.3
+include/ksearch/ftpsearch.h
+include/ksearch/peoplesearch.h
+include/ksearch/websearch.h
+lib/ksirc.la
+lib/ksirc.so
+lib/libkcm_ktalkd.la
+lib/libkcm_ktalkd.so
+lib/libksearch.la
+lib/libksearch.so.3
 share/applnk/Internet/KMail.desktop
+share/applnk/Internet/KNode.desktop
 share/applnk/Internet/KOrn.desktop
 share/applnk/Internet/Kppp.desktop
-share/applnk/Internet/kbiff.desktop
+share/applnk/Internet/karchie.desktop
+share/applnk/Internet/keystone.desktop
+share/applnk/Internet/kit.desktop
 share/applnk/Internet/kppplogview.desktop
-share/apps/kbiff/pics/delete.png
-share/apps/kbiff/pics/mailbox.png
-share/apps/kbiff/pics/mini-newmail.png
-share/apps/kbiff/pics/mini-noconn.png
-share/apps/kbiff/pics/mini-nomail.png
-share/apps/kbiff/pics/mini-oldmail.png
-share/apps/kbiff/pics/newmail.png
-share/apps/kbiff/pics/noconn.png
-share/apps/kbiff/pics/nomail.png
-share/apps/kbiff/pics/oldmail.png
-share/apps/kbiff/pics/playsound.png
+share/applnk/Internet/ksirc.desktop
+share/applnk/Settings/Network/kcmktalkd.desktop
+share/apps/keystone/keystoneui.rc
+share/apps/kit/eventsrc
+share/apps/kit/pics/kit_away.png
+share/apps/kit/pics/kit_group.png
+share/apps/kit/pics/kit_offline.png
+share/apps/kit/pics/kit_online.png
 share/apps/kmail/kmcomposerui.rc
+share/apps/kmail/kmmainwin.rc
 share/apps/kmail/pics/abdown.png
 share/apps/kmail/pics/abup.png
-share/apps/kmail/pics/attach.png
-share/apps/kmail/pics/checkmail.png
 share/apps/kmail/pics/closed.png
 share/apps/kmail/pics/feather_white.png
-share/apps/kmail/pics/filedel2.png
-share/apps/kmail/pics/fileforward.png
-share/apps/kmail/pics/filereply.png
-share/apps/kmail/pics/filereplyall.png
 share/apps/kmail/pics/green-bullet.png
 share/apps/kmail/pics/kdelogo.xpm
 share/apps/kmail/pics/kmfldin.png
@@ -57,10 +65,59 @@ share/apps/kmail/pics/kmtrash.png
 share/apps/kmail/pics/pgp-keys.png
 share/apps/kmail/pics/pub_key_red.png
 share/apps/kmail/pics/red-bullet.png
-share/apps/kmail/pics/send.png
 share/apps/kmail/pics/stopwatch.xbm
 share/apps/kmail/pics/stopwatchMask.xbm
-share/apps/kmail/pics/thumb_up.png
+share/apps/knode/filters/1.fltr
+share/apps/knode/filters/2.fltr
+share/apps/knode/filters/3.fltr
+share/apps/knode/filters/4.fltr
+share/apps/knode/filters/5.fltr
+share/apps/knode/filters/6.fltr
+share/apps/knode/filters/filters.rc
+share/apps/knode/headers.rc
+share/apps/knode/kncomposerui.rc
+share/apps/knode/knodeui.rc
+share/apps/knode/knreaderui.rc
+share/apps/knode/pics/accmail.png
+share/apps/knode/pics/arrow_left.png
+share/apps/knode/pics/arrow_right.png
+share/apps/knode/pics/ctlart.png
+share/apps/knode/pics/eyes.png
+share/apps/knode/pics/fltrblue.png
+share/apps/knode/pics/fltrgrey.png
+share/apps/knode/pics/folder.png
+share/apps/knode/pics/greyball.png
+share/apps/knode/pics/greyballchk.png
+share/apps/knode/pics/group.png
+share/apps/knode/pics/groupkat.png
+share/apps/knode/pics/mail.png
+share/apps/knode/pics/newsubs.png
+share/apps/knode/pics/pen.png
+share/apps/knode/pics/posting.png
+share/apps/knode/pics/redball.png
+share/apps/knode/pics/redballchk.png
+share/apps/knode/pics/server.png
+share/apps/knode/pics/smile.png
+share/apps/knode/pics/snderr.png
+share/apps/knode/pics/stat_cncl.png
+share/apps/knode/pics/stat_edit.png
+share/apps/knode/pics/stat_saved.png
+share/apps/knode/pics/stat_sent.png
+share/apps/knode/toolbar/delete.png
+share/apps/knode/toolbar/dlall.png
+share/apps/knode/toolbar/filter.png
+share/apps/knode/toolbar/fwd.png
+share/apps/knode/toolbar/grpdlg.png
+share/apps/knode/toolbar/newmsg.png
+share/apps/knode/toolbar/nextart.png
+share/apps/knode/toolbar/nextthr.png
+share/apps/knode/toolbar/remail.png
+share/apps/knode/toolbar/reply.png
+share/apps/knode/toolbar/save.png
+share/apps/knode/toolbar/search.png
+share/apps/knode/toolbar/sendnow.png
+share/apps/knode/toolbar/settings.png
+share/apps/knode/toolbar/signature.png
 share/apps/kppp/Provider/Austria/.directory
 share/apps/kppp/Provider/Austria/Simon%032Media
 share/apps/kppp/Provider/Denmark/.directory
@@ -70,6 +127,7 @@ share/apps/kppp/Provider/Germany/CityWeb
 share/apps/kppp/Provider/Germany/FH%032Rhein%032Sieg%032%040Informatik%041
 share/apps/kppp/Provider/Germany/Netsurf
 share/apps/kppp/Provider/NewZealand/.directory
+share/apps/kppp/Provider/NewZealand/OrconInternet
 share/apps/kppp/Provider/NewZealand/Paradise
 share/apps/kppp/Provider/NewZealand/Voyager
 share/apps/kppp/Provider/NewZealand/XTRA
@@ -119,9 +177,7 @@ share/apps/kppp/Rules/Croatia/iskon_lokalni_poziv.rst
 share/apps/kppp/Rules/Croatia/iskon_medjugradski_poziv.rst
 share/apps/kppp/Rules/Croatia/iskon_zagrebacka_zupanija.rst
 share/apps/kppp/Rules/Czechia/Czech_Telecom_City.rst
-share/apps/kppp/Rules/Czechia/Czech_Telecom_Tarifni_pasmo1.rst
-share/apps/kppp/Rules/Czechia/Czech_Telecom_Tarifni_pasmo2.rst
-share/apps/kppp/Rules/Czechia/Czech_Telecom_Tarifni_pasmo3.rst
+share/apps/kppp/Rules/Czechia/Czech_Telecom_Internet2000.rst
 share/apps/kppp/Rules/Denmark/12Move_Analog.rst
 share/apps/kppp/Rules/Denmark/12Move_ISDN.rst
 share/apps/kppp/Rules/Denmark/Cybercity_Friabonnement.rst
@@ -143,10 +199,13 @@ share/apps/kppp/Rules/Germany/AddCom_by_Call.rst
 share/apps/kppp/Rules/Germany/Addcom.rst
 share/apps/kppp/Rules/Germany/CallOkaynet.rst
 share/apps/kppp/Rules/Germany/City_Activ_Plus_Option.rst
+share/apps/kppp/Rules/Germany/Freenet_Enterprise.rst
 share/apps/kppp/Rules/Germany/Mobilcom_Freenet.rst
+share/apps/kppp/Rules/Germany/NGI_Call_By_Call.rst
 share/apps/kppp/Rules/Germany/Nikoma.rst
 share/apps/kppp/Rules/Germany/Nikoma_Internet_by_Call.rst
 share/apps/kppp/Rules/Germany/Nikoma_Study_and_Surf.rst
+share/apps/kppp/Rules/Germany/Planet-Interkom_Internet_by_call.rst
 share/apps/kppp/Rules/Germany/Telekom_City_Select_5_30.rst
 share/apps/kppp/Rules/Germany/knUUt-by-Call.rst
 share/apps/kppp/Rules/Germany/talkline_by_call.rst
@@ -191,16 +250,20 @@ share/apps/kppp/Rules/Luxembourg/Local.rst
 share/apps/kppp/Rules/Malaysia/TMNet_Jaring.rst
 share/apps/kppp/Rules/Malaysia/malaysia.rst
 share/apps/kppp/Rules/Netherlands/BelBasis_Lokaal.rst
+share/apps/kppp/Rules/Netherlands/BelBasis_Lokaal_Nummervoordeel.rst
 share/apps/kppp/Rules/Netherlands/BelBudget_Lokaal.rst
 share/apps/kppp/Rules/Netherlands/BelPlus_Lokaal.rst
+share/apps/kppp/Rules/Netherlands/BelPlus_Lokaal_Nummervoordeel.rst
 share/apps/kppp/Rules/Netherlands/NedpointBasis_Lokaal.rst
 share/apps/kppp/Rules/Netherlands/NedpointBelBespaar_Lokaal.rst
 share/apps/kppp/Rules/Norway/Local_Area.rst
 share/apps/kppp/Rules/Norway/Long_Distance.rst
+share/apps/kppp/Rules/Poland/Internetia.rst
 share/apps/kppp/Rules/Poland/Netia_100km_Niebieska.rst
 share/apps/kppp/Rules/Poland/Netia_100km_Zielona.rst
 share/apps/kppp/Rules/Poland/Netia_Lokalne_Niebieska.rst
 share/apps/kppp/Rules/Poland/Netia_Lokalne_Zielona.rst
+share/apps/kppp/Rules/Poland/TPSA.rst
 share/apps/kppp/Rules/Poland/TP_100km.rst
 share/apps/kppp/Rules/Poland/TP_Lokalne.rst
 share/apps/kppp/Rules/Portugal/PT_Local.rst
@@ -251,10 +314,69 @@ share/apps/kppp/pics/modemleft.png
 share/apps/kppp/pics/modemnone.png
 share/apps/kppp/pics/modemright.png
 share/apps/kppp/pics/phone.png
-share/apps/libsearch/ftp-sites/lycos
-share/apps/libsearch/news-search/deja
-share/apps/libsearch/www-sites/altavista
-share/apps/libsearch/www-sites/excite
+share/apps/ksirc/commands-handler.pl
+share/apps/ksirc/commands-perl.pl
+share/apps/ksirc/convert_commands.pl
+share/apps/ksirc/dcc_progress.pm
+share/apps/ksirc/dcc_status.pm
+share/apps/ksirc/filters.pl
+share/apps/ksirc/ksirc.pl
+share/apps/ksirc/ksirclistbox.pm
+share/apps/ksirc/load_all.pm
+share/apps/ksirc/palistbox.pm
+share/apps/ksirc/pbase.pm
+share/apps/ksirc/pboxlayout.pm
+share/apps/ksirc/pbutton.pm
+share/apps/ksirc/pframe.pm
+share/apps/ksirc/pics/arrow.png
+share/apps/ksirc/pics/blueball.png
+share/apps/ksirc/pics/bluepin.png
+share/apps/ksirc/pics/channel.xpm
+share/apps/ksirc/pics/channels.xpm
+share/apps/ksirc/pics/greenpin.png
+share/apps/ksirc/pics/info.png
+share/apps/ksirc/pics/info1.png
+share/apps/ksirc/pics/ksirc.png
+share/apps/ksirc/pics/ksirc_a.xpm
+share/apps/ksirc/pics/ksirc_b.xpm
+share/apps/ksirc/pics/ksirc_dock.xpm
+share/apps/ksirc/pics/madsmiley.png
+share/apps/ksirc/pics/mini-run.png
+share/apps/ksirc/pics/server.xpm
+share/apps/ksirc/pics/smiley.png
+share/apps/ksirc/pics/star.png
+share/apps/ksirc/pkfiledialog.pm
+share/apps/ksirc/plabel.pm
+share/apps/ksirc/plined.pm
+share/apps/ksirc/plistbox.pm
+share/apps/ksirc/pmenudta.pm
+share/apps/ksirc/pobjfinder.pm
+share/apps/ksirc/ppopmenu.pm
+share/apps/ksirc/pprogress.pm
+share/apps/ksirc/ppushbt.pm
+share/apps/ksirc/ptabdialog.pm
+share/apps/ksirc/ptablevw.pm
+share/apps/ksirc/puke.pl
+share/apps/ksirc/pwidget.pm
+share/apps/ksirc/relnotes
+share/apps/ksirc/servers.ini
+share/apps/ksirc/servers.txt
+share/apps/ksirc/sirc.help.gz
+share/apps/ksirc/small.pl
+share/apps/ksirc/test.pl
+share/apps/ksirc/tester.pl
+share/apps/libksearch/ftp-sites/lycos.columbo
+share/apps/libksearch/people-sites/bigfoot.columbo
+share/apps/libksearch/people-sites/humboldt.columbo
+share/apps/libksearch/people-sites/nldap.columbo
+share/apps/libksearch/web-sites/altavista.columbo
+share/apps/libksearch/web-sites/cnn.columbo
+share/apps/libksearch/web-sites/excite.columbo
+share/apps/libksearch/web-sites/google.columbo
+share/apps/libksearch/web-sites/raging.columbo
+share/config/karchierc
+share/config/ktalkdrc
+share/config/protocols/vnc.desktop
 share/doc/HTML/en/caitoo/.anchors
 share/doc/HTML/en/caitoo/addnew.html
 share/doc/HTML/en/caitoo/automation.html
@@ -291,6 +413,15 @@ share/doc/HTML/en/caitoo/toolbar.png
 share/doc/HTML/en/caitoo/transferconfigdlg.html
 share/doc/HTML/en/caitoo/transfermodes.html
 share/doc/HTML/en/caitoo/workingwithcaitoo.html
+share/doc/HTML/en/columbo/.anchors
+share/doc/HTML/en/columbo/credits.html
+share/doc/HTML/en/columbo/ftp-search.html
+share/doc/HTML/en/columbo/index.docbook
+share/doc/HTML/en/columbo/index.html
+share/doc/HTML/en/columbo/introduction.html
+share/doc/HTML/en/columbo/nic-search.html
+share/doc/HTML/en/columbo/plugins.html
+share/doc/HTML/en/columbo/web-search.html
 share/doc/HTML/en/karchie/.anchors
 share/doc/HTML/en/karchie/advancedconfiguring.html
 share/doc/HTML/en/karchie/authorsandrecendversions.html
@@ -354,22 +485,16 @@ share/doc/HTML/en/kfinger/setupw.png
 share/doc/HTML/en/kfinger/statusbar.html
 share/doc/HTML/en/kfinger/toolbar.html
 share/doc/HTML/en/kmail/.anchors
-share/doc/HTML/en/kmail/appearancetab.html
 share/doc/HTML/en/kmail/composertab.html
 share/doc/HTML/en/kmail/copyright.html
 share/doc/HTML/en/kmail/documentation.html
 share/doc/HTML/en/kmail/epilogue.html
+share/doc/HTML/en/kmail/faq.html
 share/doc/HTML/en/kmail/filters.html
-share/doc/HTML/en/kmail/howcanifindouthowmanyunreadmessagesihaveinam.html
-share/doc/HTML/en/kmail/howdoiautomaticallyinsertatextfooterwithinth.html
-share/doc/HTML/en/kmail/howdoileavemailontheserverfromthekdefaq.html
 share/doc/HTML/en/kmail/index.cvlog
 share/doc/HTML/en/kmail/index.docbook
 share/doc/HTML/en/kmail/index.html
 share/doc/HTML/en/kmail/misctab.html
-share/doc/HTML/en/kmail/networktab.html
-share/doc/HTML/en/kmail/pgptab.html
-share/doc/HTML/en/kmail/questionsandanswers.html
 share/doc/HTML/en/kmail/seccustomizing.html
 share/doc/HTML/en/kmail/secfolders.html
 share/doc/HTML/en/kmail/secgettingstarted.html
@@ -378,15 +503,14 @@ share/doc/HTML/en/kmail/secintro.html
 share/doc/HTML/en/kmail/secmenus.html
 share/doc/HTML/en/kmail/secmultipleaccounts.html
 share/doc/HTML/en/kmail/secpgp.html
-share/doc/HTML/en/kmail/secqasendmail.html
+share/doc/HTML/en/kmail/securitytab.html
 share/doc/HTML/en/kmail/secusingkmail.html
 share/doc/HTML/en/kmail/settingupyouraccount.html
+share/doc/HTML/en/kmail/team.html
 share/doc/HTML/en/kmail/testingyoursetup.html
 share/doc/HTML/en/kmail/theaddressbook.html
 share/doc/HTML/en/kmail/thecomposerwindow.html
 share/doc/HTML/en/kmail/thecomposerwindow2.html
-share/doc/HTML/en/kmail/whydoeskmailkeepaskingmeforthelocationofmysi.html
-share/doc/HTML/en/kmail/whydoesntwordwrapworkinthecomposerwindow.html
 share/doc/HTML/en/knu/.anchors
 share/doc/HTML/en/knu/author.html
 share/doc/HTML/en/knu/configuration.html
@@ -438,6 +562,7 @@ share/doc/HTML/en/kppp/autoconfigurehostname.html
 share/doc/HTML/en/kppp/cb.html
 share/doc/HTML/en/kppp/compilationandinstallation.html
 share/doc/HTML/en/kppp/configuringanaccount.html
+share/doc/HTML/en/kppp/costsgraphs.fig
 share/doc/HTML/en/kppp/costsgraphs.png
 share/doc/HTML/en/kppp/dns.html
 share/doc/HTML/en/kppp/gateway.html
@@ -450,6 +575,7 @@ share/doc/HTML/en/kppp/index.docbook
 share/doc/HTML/en/kppp/index.html
 share/doc/HTML/en/kppp/installation.html
 share/doc/HTML/en/kppp/introduction.html
+share/doc/HTML/en/kppp/kppp.faq.question
 share/doc/HTML/en/kppp/kppphasthesuidbitonwhataboutsecurity.html
 share/doc/HTML/en/kppp/kppprelatedfiles.html
 share/doc/HTML/en/kppp/licenseandwarranty.html
@@ -470,19 +596,9 @@ share/doc/HTML/en/kppp/reportingproblemswithkppp.html
 share/doc/HTML/en/kppp/requirements.html
 share/doc/HTML/en/kppp/security.html
 share/doc/HTML/en/kppp/settingupkppp.html
+share/doc/HTML/en/kppp/ttyS-cua.txt
 share/doc/HTML/en/kppp/volaccounting.html
 share/doc/HTML/en/kppp/windowsntrascallback.html
-share/doc/HTML/en/krn/.anchors
-share/doc/HTML/en/krn/connected.xpm
-share/doc/HTML/en/krn/disconnected.xpm
-share/doc/HTML/en/krn/groups.png
-share/doc/HTML/en/krn/howtoreadnewsoffline.html
-share/doc/HTML/en/krn/index.cvlog
-share/doc/HTML/en/krn/index.docbook
-share/doc/HTML/en/krn/index.html
-share/doc/HTML/en/krn/introduction.html
-share/doc/HTML/en/krn/usingkrn.html
-share/doc/HTML/en/krn/usingthearticlewindow.html
 share/doc/HTML/en/ksirc/.anchors
 share/doc/HTML/en/ksirc/addingfilehandlestothemainselectloop.html
 share/doc/HTML/en/ksirc/bots.html
@@ -526,38 +642,64 @@ share/doc/HTML/en/pws/index.html
 share/doc/HTML/en/pws/installation.html
 share/doc/HTML/en/pws/introduction.html
 share/doc/HTML/en/pws/requirements.html
-share/icons/hicolor/32x32/apps/kbiff.png
+share/icons/hicolor/22x22/actions/message_delete.png
+share/icons/hicolor/22x22/actions/message_forward.png
+share/icons/hicolor/22x22/actions/message_get.png
+share/icons/hicolor/22x22/actions/message_reply.png
+share/icons/hicolor/22x22/actions/message_replyall.png
+share/icons/hicolor/32x32/actions/message_delete.png
+share/icons/hicolor/32x32/actions/message_forward.png
+share/icons/hicolor/32x32/actions/message_get.png
+share/icons/hicolor/32x32/actions/message_reply.png
+share/icons/hicolor/32x32/actions/message_replyall.png
+share/icons/hicolor/32x32/apps/karchie.png
+share/icons/hicolor/32x32/apps/kit.png
 share/icons/hicolor/32x32/apps/kmail.png
 share/icons/hicolor/32x32/apps/korn.png
 share/icons/hicolor/32x32/apps/kppp.png
-share/icons/hicolor/48x48/apps/kbiff.png
+share/icons/hicolor/32x32/apps/ksirc.png
+share/icons/hicolor/32x32/apps/ktalkd.png
+share/icons/hicolor/48x48/apps/karchie.png
+share/icons/hicolor/48x48/apps/kit.png
 share/icons/hicolor/48x48/apps/kmail.png
 share/icons/hicolor/48x48/apps/korn.png
 share/icons/hicolor/48x48/apps/kppp.png
-share/icons/locolor/16x16/apps/kbiff.png
+share/icons/hicolor/48x48/apps/ksirc.png
+share/icons/hicolor/48x48/apps/ktalkd.png
+share/icons/locolor/16x16/actions/kit_anonwarning.png
+share/icons/locolor/16x16/actions/kit_bold.png
+share/icons/locolor/16x16/actions/kit_info.png
+share/icons/locolor/16x16/actions/kit_logging.png
+share/icons/locolor/16x16/actions/kit_sound.png
+share/icons/locolor/16x16/actions/kit_status.png
+share/icons/locolor/16x16/actions/kit_timestamping.png
+share/icons/locolor/16x16/actions/kit_warning.png
+share/icons/locolor/16x16/actions/message_delete.png
+share/icons/locolor/16x16/actions/message_forward.png
+share/icons/locolor/16x16/actions/message_get.png
+share/icons/locolor/16x16/actions/message_reply.png
+share/icons/locolor/16x16/actions/message_replyall.png
+share/icons/locolor/16x16/apps/karchie.png
+share/icons/locolor/16x16/apps/kit.png
 share/icons/locolor/16x16/apps/kmail.png
+share/icons/locolor/16x16/apps/knode.png
 share/icons/locolor/16x16/apps/korn.png
 share/icons/locolor/16x16/apps/kppp.png
-share/icons/locolor/32x32/apps/kbiff.png
+share/icons/locolor/16x16/apps/ksirc.png
+share/icons/locolor/16x16/apps/ktalkd.png
+share/icons/locolor/32x32/apps/karchie.png
+share/icons/locolor/32x32/apps/kit.png
 share/icons/locolor/32x32/apps/kmail.png
+share/icons/locolor/32x32/apps/knode.png
 share/icons/locolor/32x32/apps/korn.png
 share/icons/locolor/32x32/apps/kppp.png
-@unexec rm -f %D/share/doc/HTML/en/caitoo/common
-@unexec rm -f %D/share/doc/HTML/en/karchie/common
-@unexec rm -f %D/share/doc/HTML/en/kbiff/common
-@unexec rm -f %D/share/doc/HTML/en/kfinger/common
-@unexec rm -f %D/share/doc/HTML/en/kmail/common
-@unexec rm -f %D/share/doc/HTML/en/knu/common
-@unexec rm -f %D/share/doc/HTML/en/korn/common
-@unexec rm -f %D/share/doc/HTML/en/kppp/common
-@unexec rm -f %D/share/doc/HTML/en/krn/common
-@unexec rm -f %D/share/doc/HTML/en/ksirc/common
-@unexec rm -f %D/share/doc/HTML/en/ktalkd/common
-@unexec rm -f %D/share/doc/HTML/en/pws/common
+share/icons/locolor/32x32/apps/ksirc.png
+share/icons/locolor/32x32/apps/ktalkd.png
+share/mimelnk/application/x-columbo.desktop
+share/sounds/ktalkd.wav
 @dirrm share/doc/HTML/en/pws
 @dirrm share/doc/HTML/en/ktalkd
 @dirrm share/doc/HTML/en/ksirc
-@dirrm share/doc/HTML/en/krn
 @dirrm share/doc/HTML/en/kppp
 @dirrm share/doc/HTML/en/korn
 @dirrm share/doc/HTML/en/knu
@@ -565,11 +707,15 @@ share/icons/locolor/32x32/apps/kppp.png
 @dirrm share/doc/HTML/en/kfinger
 @dirrm share/doc/HTML/en/kbiff
 @dirrm share/doc/HTML/en/karchie
+@dirrm share/doc/HTML/en/columbo
 @dirrm share/doc/HTML/en/caitoo
-@dirrm share/apps/libsearch/www-sites
-@dirrm share/apps/libsearch/news-search
-@dirrm share/apps/libsearch/ftp-sites
-@dirrm share/apps/libsearch
+@dirrm share/doc/HTML/en
+@dirrm share/apps/libksearch/web-sites
+@dirrm share/apps/libksearch/people-sites
+@dirrm share/apps/libksearch/ftp-sites
+@dirrm share/apps/libksearch
+@dirrm share/apps/ksirc/pics
+@dirrm share/apps/ksirc
 @dirrm share/apps/kppp/pics
 @dirrm share/apps/kppp/Rules/Switzerland
 @dirrm share/apps/kppp/Rules/Sweden
@@ -622,7 +768,13 @@ share/icons/locolor/32x32/apps/kppp.png
 @dirrm share/apps/kppp/Provider/Austria
 @dirrm share/apps/kppp/Provider
 @dirrm share/apps/kppp
+@dirrm share/apps/knode/toolbar
+@dirrm share/apps/knode/pics
+@dirrm share/apps/knode/filters
+@dirrm share/apps/knode
 @dirrm share/apps/kmail/pics
 @dirrm share/apps/kmail
-@dirrm share/apps/kbiff/pics
-@dirrm share/apps/kbiff
+@dirrm share/apps/kit/pics
+@dirrm share/apps/kit
+@dirrm share/apps/keystone
+@dirrm include/ksearch
