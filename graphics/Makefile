@@ -454,6 +454,7 @@
     SUBDIR += rubyphoto
     SUBDIR += s10sh
     SUBDIR += s3switch
+    SUBDIR += sage
     SUBDIR += sam2p
     SUBDIR += sane-backends
     SUBDIR += sane-frontends

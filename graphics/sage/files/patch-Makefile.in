@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Fri Feb  4 05:47:36 2005
+--- Makefile.in	Fri Feb  4 05:47:48 2005
+***************
+*** 169,175 ****
+  
+  EXTRA_DIST = sage.spec sage.pc autogen.sh build_sage.pl
+  
+! pkgconfigdir = $(libdir)/pkgconfig
+  pkgconfig_DATA = sage.pc
+  subdir = .
+  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+--- 169,175 ----
+  
+  EXTRA_DIST = sage.spec sage.pc autogen.sh build_sage.pl
+  
+! pkgconfigdir = $(prefix)/libdata/pkgconfig
+  pkgconfig_DATA = sage.pc
+  subdir = .
+  ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
