@@ -3,7 +3,7 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1996/10/30 16:22:51 jfitz Exp $
+# $Id: Makefile,v 1.4 1996/11/18 11:24:56 asami Exp $
 #
 
 PKGNAME=	quakeserver-1.01
@@ -24,7 +24,7 @@ DISTFILES=	quake101.zip \
 
 MAINTAINER=	jfitz@freebsd.org
 
-FETCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha
 
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
