@@ -44,7 +44,7 @@ classes111_01.zip	ports/databases/jdbc-oracle816  This software is
 						under license and export 
 						controls.
 cli-*			ports/lang/cli		License is *very* restrictive -
-						please consult your lawier
+						please consult your lawyer
 						before using the software.
 clibpdf*		ports/print/clibpdf	License required for bundling
 						with other products.  Only
