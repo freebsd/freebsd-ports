@@ -1,7 +1,7 @@
 %%ASTERDIR%%/GPL.txt
 %%ASTERDIR%%/LICENSE.TERMS
-%%ASTERDIR%%/asterd.exe
-%%ASTERDIR%%/asteru.exe
+%%ASTERDIR%%/asterd
+%%ASTERDIR%%/asteru
 %%ASTERDIR%%/astest/adls102a.comm
 %%ASTERDIR%%/astest/adls102a.datg
 %%ASTERDIR%%/astest/adls102a.export
