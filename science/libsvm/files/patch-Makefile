@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Nov 16 00:45:06 2004
-+++ Makefile	Tue Nov 16 00:46:01 2004
+--- Makefile.orig	Sat Nov 20 09:35:29 2004
++++ Makefile	Sat Dec 18 02:14:59 2004
 @@ -1,5 +1,4 @@
 -CXXC = g++
 -CFLAGS = -Wall -O3 
@@ -7,3 +7,11 @@
  
  all: svm-train svm-predict svm-scale
  
+@@ -10,6 +9,6 @@
+ svm-scale: svm-scale.c
+ 	$(CXXC) $(CFLAGS) svm-scale.c -o svm-scale
+ svm.o: svm.cpp svm.h
+-	$(CXXC) $(CFLAGS) -c svm.cpp
++	$(CXXC) $(CFLAGS) %%AMD64%% -c svm.cpp
+ clean:
+ 	rm -f *~ svm.o svm-train svm-predict svm-scale

@@ -11,7 +11,7 @@
  
 -CFLAGS = -O3 -I$(PYTHON_INCLUDEDIR) -I..
 -LDFLAGS = -shared
-+CFLAGS += -I$(PYTHON_INCLUDEDIR) -I..
++CFLAGS += -I$(PYTHON_INCLUDEDIR) -I.. %%AMD64%%
 +LDFLAGS += -shared
  
  all: svmc.so

@@ -2,4 +2,3 @@
 Some useful tools are installed to %%DATADIR%%.
 Most of them are written in Python, please install
 lang/python before trying them.
-
