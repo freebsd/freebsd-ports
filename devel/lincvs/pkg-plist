@@ -1,14 +1,23 @@
-bin/LinCVS
-bin/set-ssh-commit-env.sh
-bin/set-ssh-env.sh
-bin/start-openssh-agent.sh
+bin/lincvs
 bin/start-ssh-agent.sh
-share/lincvs/AUTHORS
-share/lincvs/COPYING
-share/lincvs/ChangeLog
-share/lincvs/INSTALL
-share/lincvs/README
-share/lincvs/SSH.txt
-share/lincvs/THANKS
-share/lincvs/VERSION
-@dirrm share/lincvs
+bin/start-ssh.sh
+share/doc/lincvs/AUTHORS
+share/doc/lincvs/BUGS.txt
+share/doc/lincvs/COPYING
+share/doc/lincvs/FAQ.txt
+share/doc/lincvs/ChangeLog
+share/doc/lincvs/INSTALL
+share/doc/lincvs/INSTALL.html
+share/doc/lincvs/LICENSE
+share/doc/lincvs/NEWS
+share/doc/lincvs/PROXY-HOWTO.txt
+share/doc/lincvs/README
+share/doc/lincvs/README.html
+share/doc/lincvs/SSH-HOWTO.txt
+share/doc/lincvs/THANKS
+share/doc/lincvs/VERSION
+share/doc/lincvs/Translations/de/LIESMICH.txt
+share/doc/lincvs/Translations/de/LIESMICH.html
+@dirrm share/doc/lincvs/Translations/de
+@dirrm share/doc/lincvs/Translations
+@dirrm share/doc/lincvs
