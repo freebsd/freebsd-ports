@@ -385,6 +385,7 @@ argus		ports/net-mgmt/argus
 argus-clients	ports/net-mgmt/argus-clients
 ari-yahoo	ports/net/ari-yahoo
 aria		ports/www/aria
+ariadne		ports/biology/ariadne
 arirang		ports/security/arirang
 arj		ports/archivers/arj
 arla		ports/net/arla
