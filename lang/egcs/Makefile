@@ -4,24 +4,24 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.59 1999/08/09 15:50:58 obrien Exp $
+# $Id: Makefile,v 1.60 1999/08/16 00:21:03 obrien Exp $
 #
 
 DISTNAME=	gcc-2.95
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/releases/gcc-2.95/ \
-		ftp://egcs.cygnus.com/pub/egcs/releases/gcc-2.95/ \
+MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/releases/${DISTNAME}/ \
+		ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/ \
 		${MASTER_SITE_GNU} \
-		ftp://ftp.nluug.nl/pub/languages/egcs/releases/gcc-2.95/ \
-		ftp://ftp.iij.ad.jp/pub/egcs/releases/gcc-2.95/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/gcc-2.95/
+		ftp://ftp.nluug.nl/pub/languages/egcs/releases/${DISTNAME}/ \
+		ftp://ftp.iij.ad.jp/pub/egcs/releases/${DISTNAME}/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/${DISTNAME}/
 MASTER_SITE_SUBDIR=	gcc
-DISTFILES=	gcc-chill-2.95${EXTRACT_SUFX} \
-		gcc-core-2.95${EXTRACT_SUFX} \
-		gcc-g++-2.95${EXTRACT_SUFX} \
-		gcc-g77-2.95${EXTRACT_SUFX} \
-		gcc-java-2.95${EXTRACT_SUFX} \
-		gcc-objc-2.95${EXTRACT_SUFX}
+DISTFILES=	gcc-chill-${GCC_REV}${EXTRACT_SUFX} \
+		gcc-core-${GCC_REV}${EXTRACT_SUFX} \
+		gcc-g++-${GCC_REV}${EXTRACT_SUFX} \
+		gcc-g77-${GCC_REV}${EXTRACT_SUFX} \
+		gcc-java-${GCC_REV}${EXTRACT_SUFX} \
+		gcc-objc-${GCC_REV}${EXTRACT_SUFX}
 
 MAINTAINER=	obrien@FreeBSD.org
 
@@ -29,7 +29,7 @@ USE_BZIP2=	yes
 
 .include <bsd.port.pre.mk>
 
-EGCS_REV=	${DISTNAME:S/gcc-//g}
+GCC_REV=	${DISTNAME:S/gcc-//g}
 LIBSTDCPP_REV=	4
 
 .if ${PORTOBJFORMAT} == "elf"
@@ -41,11 +41,11 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
-PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${CONFIGURE_TARGET}
+PLIST_SUB=	EGCS_REV=${GCC_REV} GNU_HOST=${CONFIGURE_TARGET}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld \
-		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/include/g++
+		--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/include/g++
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .endif
@@ -83,12 +83,12 @@ post-install:
 		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
 		${PREFIX}/bin/protoize ${PREFIX}/bin/unprotoize \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1obj \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cc1plus \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/cpp \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/collect2 \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/f771 ; \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1 \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1obj \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cc1plus \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/cpp \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/collect2 \
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/f771 ; \
 	do \
 		strip $$prog ; \
 	done)
@@ -98,15 +98,15 @@ post-install:
 	${MV} ${PREFIX}/bin/g++filt ${PREFIX}/bin/g++filt295
 	${RM} -f ${PREFIX}/bin/cpp
 	${MV} ${PREFIX}/lib/libiberty.a  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 	${MV} -f ${PREFIX}/lib/libstdc++.a.${LIBSTDCPP_REV}  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}/libstdc++.a
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}/libstdc++.a
 	${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/gcc295.1
 	${MV} ${PREFIX}/man/man1/g++.1 ${PREFIX}/man/man1/g++295.1
 	${MV} ${PREFIX}/man/man1/g77.1 ${PREFIX}/man/man1/g77.1
 .if defined(WANT_SHAREDLIBS)
 	${MV} -f ${PREFIX}/lib/libstdc++.so*  \
-		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${EGCS_REV}
+		${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/${GCC_REV}
 .endif
 .for info in cpp g77 gcc
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
