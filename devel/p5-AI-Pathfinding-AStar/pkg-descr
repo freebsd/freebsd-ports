@@ -1,0 +1,10 @@
+This module implements the A* pathfinding algorithm. It acts as a base class
+from which a custom map object can be derived. It requires from the map object
+a subroutine named "getSurrounding" and provides to the object a routine called
+"findPath" which calculates the shortest (ie. least-expensive) path between two
+nodes.
+
+WWW: http://search.cpan.org/dist/AI-Pathfinding-AStar/
+
+- Aaron Dalton
+aaron@daltons.ca
