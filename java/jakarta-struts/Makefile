@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	jakarta-struts
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.4
 CATEGORIES=	java
-MASTER_SITES=	http://www.apache.org/dist/jakarta/struts/binaries/ \
-		http://apache.dnepr.net/jakarta/struts/binaries/
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=struts/binaries
 DIST_SUBDIR=	jakarta
 
 MAINTAINER=	toha@toha.org.ua
@@ -18,6 +17,7 @@ COMMENT=	Struts framework
 
 USE_JAVA=	1.3+
 NO_BUILD=	YES
+USE_ZIP=	YES
 
 JAVASHAREDIR=	share/java
 TDIR=		${JAVASHAREDIR}/${PKGNAME}
