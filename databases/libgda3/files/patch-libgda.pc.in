@@ -1,0 +1,11 @@
+--- libgda.pc.in.orig   Fri Oct 31 21:59:33 2003
++++ libgda.pc.in        Fri Oct 31 22:00:52 2003
+@@ -5,7 +5,7 @@
+  
+ Name: libgda
+ Description: GDA (GNOME Data Access) library
+-Requires: glib-2.0 libxml-2.0 libxslt
++Requires: glib-2.0 gthread-2.0 gmodule-2.0 libxml-2.0 libxslt
+ Version: @VERSION@
+ Libs: -L${libdir} -lgda-2
+ Cflags: -I${includedir}
