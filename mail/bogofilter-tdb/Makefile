@@ -16,9 +16,11 @@ LIB_DEPENDS=	tdb.1:${PORTSDIR}/databases/tdb
 
 CONFLICTS=	bogofilter-0*
 
-CONFIGURE_ARGS=	--with-tdb
+CONFIGURE_ARGS=	--with-database=tdb
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 DESCR=		${PKGDIR}/pkg-descr
+
+IGNORE=		"is currently broken. Fix it yourself or ask gyepi@users.sourceforge.net to fix TDB mode"
 
 .include "${MASTERDIR}/Makefile"
