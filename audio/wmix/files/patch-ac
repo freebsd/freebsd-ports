@@ -1,0 +1,29 @@
+*** config.c.orig	Sun Apr  1 22:43:30 2001
+--- config.c	Sun Apr  1 22:43:51 2001
+***************
+*** 135,141 ****
+  	free((struct var *) vars);
+  	vars = vp;
+      }
+!     if (vars)
+  	for (new = vars; new->v_next;)
+  	    if (!strcmp(new->v_next->v_name, name)) {
+  		vp = new->v_next->v_next;
+--- 135,141 ----
+  	free((struct var *) vars);
+  	vars = vp;
+      }
+!     if (vars) {
+  	for (new = vars; new->v_next;)
+  	    if (!strcmp(new->v_next->v_name, name)) {
+  		vp = new->v_next->v_next;
+***************
+*** 143,148 ****
+--- 143,149 ----
+  		new->v_next = vp;
+  	    } else
+  		new = new->v_next;
++     }
+  }
+  
+  char *vcopy(char *str)
