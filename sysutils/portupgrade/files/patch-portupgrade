@@ -1,0 +1,12 @@
+--- portupgrade.orig	Thu May 31 14:18:06 2001
++++ portupgrade	Fri Jun  1 00:10:54 2001
+@@ -571,8 +571,7 @@
+     File.chmod 0644, w.path
+ 
+     if File.writable? file
+-      File.delete file
+-      File.rename w.path, file
++      system '/bin/mv', '-f', w.path, file
+     else
+       sudo '/bin/mv', '-f', w.path, file
+     end
