@@ -12,13 +12,11 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	anders@FreeBSD.org
 COMMENT=	A player for many different Amiga and PC module formats
 
-BROKEN=		Incomplete pkg-plist
-
 USE_BZIP2=	yes
-USE_XLIB=	yes
+USE_X_PREFIX=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
