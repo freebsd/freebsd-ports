@@ -21,7 +21,6 @@ USE_LIBTOOL=	yes
 WANT_AUTOMAKE_VER=	15
 WANT_AUTOCONF_VER=	253
 LIBTOOLFILES=	# none
-WANT_PHP_CLI=	yes
 USE_PHPIZE=	yes
 USE_AUTOCONF=	no
 USE_GMAKE=	yes
@@ -31,6 +30,8 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/php4/bsd.php.mk"
+
+BUILD_DEPENDS+=	${PREFIX}/bin/php:${PORTSDIR}/lang/php4
 
 # Fix environment for self contained extensions
 ENVSCE=		-DHAVE_PHP_GTK=1 -DCOMPILE_DL_PHP_GTK=1	\
