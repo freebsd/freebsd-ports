@@ -106,6 +106,7 @@ share/vim/%%VIM_VER%%/ftplugin/README.txt
 share/vim/%%VIM_VER%%/ftplugin/c.vim
 share/vim/%%VIM_VER%%/ftplugin/changelog.vim
 share/vim/%%VIM_VER%%/ftplugin/cpp.vim
+share/vim/%%VIM_VER%%/ftplugin/debchangelog.vim
 share/vim/%%VIM_VER%%/ftplugin/fortran.vim
 share/vim/%%VIM_VER%%/ftplugin/kwt.vim
 share/vim/%%VIM_VER%%/ftplugin/mail.vim
@@ -194,6 +195,7 @@ share/vim/%%VIM_VER%%/syntax/btm.vim
 share/vim/%%VIM_VER%%/syntax/c.vim
 share/vim/%%VIM_VER%%/syntax/catalog.vim
 share/vim/%%VIM_VER%%/syntax/cf.vim
+share/vim/%%VIM_VER%%/syntax/cfg.vim
 share/vim/%%VIM_VER%%/syntax/ch.vim
 share/vim/%%VIM_VER%%/syntax/change.vim
 share/vim/%%VIM_VER%%/syntax/changelog.vim
@@ -257,6 +259,7 @@ share/vim/%%VIM_VER%%/syntax/gsp.vim
 share/vim/%%VIM_VER%%/syntax/haskell.vim
 share/vim/%%VIM_VER%%/syntax/hb.vim
 share/vim/%%VIM_VER%%/syntax/help.vim
+share/vim/%%VIM_VER%%/syntax/hercules.vim
 share/vim/%%VIM_VER%%/syntax/hitest.vim
 share/vim/%%VIM_VER%%/syntax/html.vim
 share/vim/%%VIM_VER%%/syntax/htmlm4.vim
@@ -467,6 +470,7 @@ share/vim/%%VIM_VER%%/vimrc_example.vim
 @dirrm share/vim/%%VIM_VER%%/doc
 @dirrm share/vim/%%VIM_VER%%/ftplugin
 @dirrm share/vim/%%VIM_VER%%/indent
+@dirrm share/vim/%%VIM_VER%%/keymap
 @dirrm share/vim/%%VIM_VER%%/lang
 @dirrm share/vim/%%VIM_VER%%/macros/hanoi
 @dirrm share/vim/%%VIM_VER%%/macros/life
