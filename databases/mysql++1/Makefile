@@ -18,7 +18,7 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -D_FIX_FOR_BSD_ "
-INSTALL_SHLIB=	yes
+INSTALLS_SHLIB=	yes
 
 pre-configure:
 	${RM} ${WRKSRC}/examples/Makefile.in
