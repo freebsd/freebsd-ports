@@ -4,7 +4,7 @@
  extern "C" {
  #endif
  
-+#ifdef __sparc64__ || __amd64__ || __alpha__
++#if defined(__sparc64__) || defined(__amd64__) || defined(__alpha__) || defined(__ia64__)
 +const char *inet_ntop(int af, const void *src, char *dst, socklen_t size);
 +#else
  const char *inet_ntop(int af, const void *src, char *dst, size_t size);
