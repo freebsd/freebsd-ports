@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	qmailadmin
-PORTVERSION=	0.45
+PORTVERSION=	1.0.1
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.inter7.com/qmailadmin/
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	roam@FreeBSD.org
 
 BUILD_DEPENDS= \
 	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
@@ -36,11 +36,19 @@ USE_GMAKE=	YES
 # WEBDATASUBDIR - subdirectory to place html files in (not working yet)
 #
 
-CGIBINDIR?=	${PREFIX}/www/cgi-bin.default
+CGIBINDIR?=	www/cgi-bin.default
 CGIBINSUBDIR?=	qmailadmin
 CGIBINURL?=	cgi-bin
-WEBDATADIR?=	${PREFIX}/www/data.default
+WEBDATADIR?=	www/data.default
 WEBDATASUBDIR?=
+
+# I'm working on this..
+.if ${WEBDATASUBDIR} != ""
+BROKEN=	do not set WEBDATASUBDIR: qmailadmin is a bit buggy in that respect
+.endif
+
+PLIST_SUB+=	CGIBINDIR="${CGIBINDIR}" CGIBINSUBDIR="${CGIBINSUBDIR}" \
+		WEBDATADIR="${WEBDATADIR}" WEBDATASUBDIR="${WEBDATASUBDIR}"
 
 #
 # QMAIL_DIR     - location of qmail directory
@@ -55,8 +63,8 @@ QMAIL_DIR?=	/var/qmail
 # End of user-configurable variables
 
 CONFIGURE_ARGS+=	\
-	--enable-htmldir=${WEBDATADIR}/${WEBDATASUBDIR} \
-	--enable-cgibindir=${CGIBINDIR}/${CGIBINSUBDIR} \
+	--enable-htmldir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
+	--enable-cgibindir=${PREFIX}/${CGIBINDIR}/${CGIBINSUBDIR} \
 	--with-htmllibdir=${PREFIX}/share/qmailadmin \
 	--enable-cgipath=/${CGIBINURL}/${CGIBINSUBDIR}/qmailadmin \
 	--enable-ezmlmidx=y
