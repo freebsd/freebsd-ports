@@ -7,12 +7,14 @@
 
 PORTNAME=	quixote
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/files/quixote/
 DISTNAME=	Quixote-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
 
+BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/compiler/__init__.py:${PORTSDIR}/lang/py-compiler
 
 USE_PYTHON=	yes
