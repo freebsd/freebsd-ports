@@ -1,23 +1,23 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Aug 13 11:48:19 2001
-+++ configure	Mon Aug 13 11:49:44 2001
-@@ -17257,7 +17257,7 @@
- 	fi
- fi
+--- configure.orig	Tue Oct 23 10:18:27 2001
++++ configure	Tue Oct 23 10:18:56 2001
+@@ -9234,7 +9234,7 @@
+ 
+ 
  
 -if test $perl_val == true; then
 +if [ $perl_val = true ]; then
    WITH_PERL_TRUE=
    WITH_PERL_FALSE='#'
  else
-@@ -17269,7 +17269,7 @@
- GNOMEDB_LIBS="`gda-config --libs client` `gnome-config --libs xml oaf bonobox print`"
- GNOMEDB_CFLAGS="${GNOMEDB_CFLAGS} -DGNOMELOCALEDIR=\\\"${datadir}/locale\\\""
+@@ -9249,7 +9249,7 @@
  
--GNOMEDB_oafdir=`oaf-config --prefix`/share/oaf
-+GNOMEDB_oafdir="${prefix}/share/gnome/oaf"
  
- ac_config_files="$ac_config_files Makefile gnome-db.spec macros/Makefile po/Makefile.in doc/Makefile doc/C/Makefile doc/C/reference/Makefile doc/es/Makefile doc/it/Makefile doc/pt_BR/Makefile intl/Makefile idl/Makefile lib/Makefile components/Makefile tools/Makefile tools/gnomedb-config tools/rolodex/Makefile manager/Makefile frontend/Makefile builder/Makefile ui/Makefile stamp.h"
- ac_config_commands="$ac_config_commands default"
+ #GNOMEDB_oafdir=`oaf-config --prefix`/share/oaf
+-GNOMEDB_oafdir=${prefix}/share/oaf
++GNOMEDB_oafdir=${prefix}/share/gnome/oaf
+ 
+ 
+ 

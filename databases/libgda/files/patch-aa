@@ -1,14 +1,13 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Tue Aug 14 10:29:18 2001
-+++ Makefile.in	Tue Aug 14 10:41:04 2001
-@@ -146,7 +146,7 @@
- XML_I18N_UPDATE = @XML_I18N_UPDATE@
- XML_LIBS = @XML_LIBS@
+--- Makefile.in.orig	Mon Oct 22 14:27:14 2001
++++ Makefile.in	Mon Oct 22 14:27:42 2001
+@@ -167,7 +167,6 @@
+ 	bindings \
+ 	providers \
+ 	tools \
+-	testing \
+ 	doc
  
--SUBDIRS =  	po 	intl 	macros 	idl 	lib 	bindings 	providers 	tools 	testing 	doc
-+SUBDIRS =  	po 	intl 	macros	idl 	lib 	bindings 	providers 	tools 	doc
  
- 
- EXTRA_DIST =  	COPYING 	libgda.spec.in 	xml-i18n-extract.in 	xml-i18n-merge.in 	xml-i18n-update.in
