@@ -7,12 +7,21 @@
 #
 
 PORTNAME=	cpp2latex
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.arnoldarts.de/
 
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/cpp2latex/cpp2latex ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
