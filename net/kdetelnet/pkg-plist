@@ -1,0 +1,31 @@
+bin/kdetelnet
+share/doc/HTML/en/ktelnet/index.html
+share/doc/HTML/de/ktelnet/index.html
+share/config/ktelnetrc
+share/apps/ktelnet/toolbar/dec.xpm
+share/apps/ktelnet/toolbar/next_ws.xpm
+share/apps/ktelnet/toolbar/panelize.xpm
+share/apps/ktelnet/toolbar/session1.xpm
+share/apps/ktelnet/toolbar/sgi.xpm
+share/apps/ktelnet/toolbar/smalldown.xpm
+share/apps/ktelnet/toolbar/smallup.xpm
+share/apps/ktelnet/toolbar/sun.xpm
+share/apps/ktelnet/pics/ktelnet.xpm
+share/apps/ktelnet/pics/ktname.xpm
+share/apps/ktelnet/pics/kdelogo.gif
+share/locale/de/LC_MESSAGES/ktelnet.mo
+share/locale/fr/LC_MESSAGES/ktelnet.mo
+share/locale/es/LC_MESSAGES/ktelnet.mo
+share/locale/it/LC_MESSAGES/ktelnet.mo
+share/locale/pt/LC_MESSAGES/ktelnet.mo
+share/locale/no/LC_MESSAGES/ktelnet.mo
+share/locale/hr/LC_MESSAGES/ktelnet.mo
+share/locale/sk/LC_MESSAGES/ktelnet.mo
+share/icons/mini/ktelnet.xpm
+share/icons/ktelnet.xpm
+share/applnk/Internet/ktelnet.kdelnk
+@dirrm share/apps/ktelnet/pics
+@dirrm share/apps/ktelnet/toolbar
+@dirrm share/apps/ktelnet
+@dirrm share/doc/HTML/de/ktelnet
+@dirrm share/doc/HTML/en/ktelnet
