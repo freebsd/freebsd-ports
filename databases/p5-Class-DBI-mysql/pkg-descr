@@ -1,0 +1,7 @@
+Class::DBI::mysql - Extensions to Class::DBI for MySQL
+
+This is an extension to Class::DBI, containing several functions and
+optimisations for the MySQL database. Instead of setting Class::DBI as
+your base class, use this instead.
+
+WWW: http://search.cpan.org/dist/Class-DBI-mysql/
