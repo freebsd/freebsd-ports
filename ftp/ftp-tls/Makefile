@@ -7,6 +7,7 @@
 
 PORTNAME=	ftp-tls
 PORTVERSION=	20030805
+PORTREVISION=	1
 CATEGORIES=	ftp security
 MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/ \
 		ftp://ftp.runestig.com/pub/ftp-tls/
