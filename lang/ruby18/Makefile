@@ -149,7 +149,7 @@ post-install:
 	${MKDIR} ${RUBY_DOCDIR}
 	${TOUCH} ${RUBY_DOCDIR}/.keep_me
 .if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}/
 	${MKDIR} ${RUBY_EXAMPLESDIR}/curses
 	${INSTALL_DATA} ${WRKSRC}/ext/curses/hello.rb ${WRKSRC}/ext/curses/rain.rb ${WRKSRC}/ext/curses/view.rb ${RUBY_EXAMPLESDIR}/curses
 	${MKDIR} ${RUBY_EXAMPLESDIR}/dl
