@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	quick-lounge-applet
-PORTVERSION=	1.1.4
+PORTVERSION=	2.0.0
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -23,10 +23,6 @@ USE_GNOME=	gnomeprefix gnomehack gnomepanel
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
