@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-libwww
-# Version required:                     5.10
+# Version required:                     5.12
 # Date created:				September 30th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.10 1997/06/21 12:47:42 ache Exp $
+#   $Id: Makefile,v 1.11 1997/06/24 18:43:34 jfitz Exp $
 #
 
-DISTNAME=       libwww-perl-5.10
-PKGNAME=        p5-libwww-5.10
+DISTNAME=       libwww-perl-5.12
+PKGNAME=        p5-libwww-5.12
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	URI
@@ -32,6 +32,7 @@ MAN3=           Bundle::LWP.3 File::CounterFile.3 File::Listing.3 Font::AFM.3 \
 		LWP::Debug.3 LWP::IO.3 LWP::MediaTypes.3 \
 		LWP::MemberMixin.3 LWP::Protocol.3 LWP::RobotUA.3 \
 		LWP::Simple.3 LWP::Socket.3 LWP::TkIO.3 LWP::UserAgent.3 \
+		LWP::SecureSocket.3 \
 		URI::Escape.3 URI::URL.3 WWW::RobotRules.3 \
 		WWW::RobotRules::AnyDBM_File.3 lwpcook.3
 MAN3PREFIX=	${PREFIX}/lib/perl5

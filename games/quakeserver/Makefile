@@ -3,12 +3,12 @@
 # Date created:				October 26th 1996
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.12 1997/06/02 00:16:36 jfitz Exp $
+# $Id: Makefile,v 1.13 1997/06/03 05:58:19 asami Exp $
 #
 
 PKGNAME=	quakeserver-1.0
-CATEGORIES=	games tk41
-MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/quakeworld/unix/ \
+CATEGORIES=	games
+MASTER_SITES=	ftp://ftp.cdrom.com/pub/quake/planetquake/threewave/unix/ \
 		ftp://ftp.idsoftware.com/idstuff/quake/
 DISTFILES=	unixded-1.0-i386-unknown-bsdi3.0.tar.gz \
 		quake106.zip

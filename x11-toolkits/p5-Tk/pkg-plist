@@ -2,12 +2,15 @@ bin/pgs
 bin/tkpod
 bin/tkweb
 bin/widget
+lib/perl5/man/man3/Bundle::Tk.3.gz
 lib/perl5/man/man3/Tk::Adjuster.3.gz
 lib/perl5/man/man3/Tk::After.3.gz
 lib/perl5/man/man3/Tk::Axis.3.gz
 lib/perl5/man/man3/Tk::Balloon.3.gz
 lib/perl5/man/man3/Tk::BrowseEntry.3.gz
+lib/perl5/man/man3/Tk::CmdLine.3.gz
 lib/perl5/man/man3/Tk::ColorEditor.3.gz
+lib/perl5/man/man3/Tk::Derived.3.gz
 lib/perl5/man/man3/Tk::Dial.3.gz
 lib/perl5/man/man3/Tk::DialogBox.3.gz
 lib/perl5/man/man3/Tk::DragDrop::Common.3.gz
@@ -19,14 +22,18 @@ lib/perl5/man/man3/Tk::Ghostscript.3.gz
 lib/perl5/man/man3/Tk::HTML::IO.3.gz
 lib/perl5/man/man3/Tk::IO.3.gz
 lib/perl5/man/man3/Tk::Internals.3.gz
+lib/perl5/man/man3/Tk::LabFrame.3.gz
 lib/perl5/man/man3/Tk::Menu::Item.3.gz
 lib/perl5/man/man3/Tk::NoteBook.3.gz
+lib/perl5/man/man3/Tk::OlWm.3.gz
 lib/perl5/man/man3/Tk::Parse.3.gz
 lib/perl5/man/man3/Tk::ROText.3.gz
+lib/perl5/man/man3/Tk::Scrolled.3.gz
 lib/perl5/man/man3/Tk::Submethods.3.gz
 lib/perl5/man/man3/Tk::Table.3.gz
 lib/perl5/man/man3/Tk::Tcl-perl.3.gz
 lib/perl5/man/man3/Tk::TextUndo.3.gz
+lib/perl5/man/man3/Tk::TiedListbox.3.gz
 lib/perl5/man/man3/Tk::UserGuide.3.gz
 lib/perl5/man/man3/Tk::WaitBox.3.gz
 lib/perl5/man/man3/Tk::X.3.gz
@@ -35,6 +42,7 @@ lib/perl5/man/man3/Tk::demos::widget_lib::WidgetDemo.3.gz
 lib/perl5/man/man3/Tk::pTk.3.gz
 lib/perl5/man/man3/Tk::widgets.3.gz
 lib/perl5/man/man3/blib.3.gz
+lib/perl5/site_perl/Bundle/Tk.pm
 lib/perl5/site_perl/Tk.pm
 lib/perl5/site_perl/Tk/Adjuster.pm
 lib/perl5/site_perl/Tk/After.pm
@@ -43,9 +51,11 @@ lib/perl5/site_perl/Tk/Balloon.pm
 lib/perl5/site_perl/Tk/Bitmap.pm
 lib/perl5/site_perl/Tk/BrowseEntry.pm
 lib/perl5/site_perl/Tk/Button.pm
+lib/perl5/site_perl/Tk/Camel.xpm
 lib/perl5/site_perl/Tk/Canvas.pm
 lib/perl5/site_perl/Tk/Checkbutton.pm
 lib/perl5/site_perl/Tk/Clipboard.pm
+lib/perl5/site_perl/Tk/CmdLine.pm
 lib/perl5/site_perl/Tk/ColorEdit.xpm
 lib/perl5/site_perl/Tk/ColorEditor.pm
 lib/perl5/site_perl/Tk/Configure.pm
@@ -82,6 +92,7 @@ lib/perl5/site_perl/Tk/Image.pm
 lib/perl5/site_perl/Tk/InputO.pm
 lib/perl5/site_perl/Tk/Internals.pod
 lib/perl5/site_perl/Tk/LabEntry.pm
+lib/perl5/site_perl/Tk/LabFrame.pm
 lib/perl5/site_perl/Tk/LabRadio.pm
 lib/perl5/site_perl/Tk/Label.pm
 lib/perl5/site_perl/Tk/Listbox.pm
@@ -96,6 +107,7 @@ lib/perl5/site_perl/Tk/Message.pm
 lib/perl5/site_perl/Tk/Mwm.pm
 lib/perl5/site_perl/Tk/NBFrame.pm
 lib/perl5/site_perl/Tk/NoteBook.pm
+lib/perl5/site_perl/Tk/OlWm.pm
 lib/perl5/site_perl/Tk/Optionmenu.pm
 lib/perl5/site_perl/Tk/Parse.pm
 lib/perl5/site_perl/Tk/Photo.pm
@@ -106,14 +118,18 @@ lib/perl5/site_perl/Tk/ROText.pm
 lib/perl5/site_perl/Tk/Radiobutton.pm
 lib/perl5/site_perl/Tk/Scale.pm
 lib/perl5/site_perl/Tk/Scrollbar.pm
+lib/perl5/site_perl/Tk/Scrolled.pod
 lib/perl5/site_perl/Tk/Stats.pm
 lib/perl5/site_perl/Tk/Submethods.pm
+lib/perl5/site_perl/Tk/TList.pm
 lib/perl5/site_perl/Tk/Table.pm
 lib/perl5/site_perl/Tk/Tcl-perl.pod
 lib/perl5/site_perl/Tk/Text.pm
 lib/perl5/site_perl/Tk/Text/Tag.pm
 lib/perl5/site_perl/Tk/TextUndo.pm
+lib/perl5/site_perl/Tk/TiedListbox.pm
 lib/perl5/site_perl/Tk/Tiler.pm
+lib/perl5/site_perl/Tk/TixGrid.pm
 lib/perl5/site_perl/Tk/Tk.xbm
 lib/perl5/site_perl/Tk/Toplevel.pm
 lib/perl5/site_perl/Tk/UserGuide.pod
@@ -178,6 +194,7 @@ lib/perl5/site_perl/Tk/demos/widget_lib/image2.pl
 lib/perl5/site_perl/Tk/demos/widget_lib/items.pl
 lib/perl5/site_perl/Tk/demos/widget_lib/labels.pl
 lib/perl5/site_perl/Tk/demos/widget_lib/menus.pl
+lib/perl5/site_perl/Tk/demos/widget_lib/menus2.pl
 lib/perl5/site_perl/Tk/demos/widget_lib/mkArrow.pl
 lib/perl5/site_perl/Tk/demos/widget_lib/mkBasic.pl
 lib/perl5/site_perl/Tk/demos/widget_lib/mkBitmaps.pl
@@ -217,6 +234,7 @@ lib/perl5/site_perl/Tk/demos/widget_lib/style.pl
 lib/perl5/site_perl/Tk/demos/widget_lib/texts.pl
 lib/perl5/site_perl/Tk/demos/widget_lib/twind.pl
 lib/perl5/site_perl/Tk/demos/widget_lib/vscale.pl
+lib/perl5/site_perl/Tk/demos/widtrib/HList.pl
 lib/perl5/site_perl/Tk/demos/widtrib/TEMPLATE.pl
 lib/perl5/site_perl/Tk/demos/widtrib/lib/npuz/Xcamel.npuz
 lib/perl5/site_perl/Tk/demos/widtrib/npuz.pl
@@ -238,9 +256,6 @@ lib/perl5/site_perl/Tk/textfile.xpm
 lib/perl5/site_perl/Tk/typemap
 lib/perl5/site_perl/Tk/widgets.pm
 lib/perl5/site_perl/Tk/win.xbm
-lib/perl5/site_perl/auto/MainWindow/CmdLine.al
-lib/perl5/site_perl/auto/MainWindow/SaveYourself.al
-lib/perl5/site_perl/auto/MainWindow/autosplit.ix
 lib/perl5/site_perl/auto/Tk/Adjuster/Restore.al
 lib/perl5/site_perl/auto/Tk/Adjuster/autosplit.ix
 lib/perl5/site_perl/auto/Tk/Adjuster/dHeight.al
@@ -267,6 +282,7 @@ lib/perl5/site_perl/auto/Tk/Entry/deleteSelected.al
 lib/perl5/site_perl/auto/Tk/Entry/wordend.al
 lib/perl5/site_perl/auto/Tk/Entry/wordstart.al
 lib/perl5/site_perl/auto/Tk/Error.al
+lib/perl5/site_perl/auto/Tk/Exists.al
 lib/perl5/site_perl/auto/Tk/FirstMenu.al
 lib/perl5/site_perl/auto/Tk/FocusChildren.al
 lib/perl5/site_perl/auto/Tk/FocusOK.al
@@ -310,7 +326,10 @@ lib/perl5/site_perl/auto/Tk/Listbox/SelectAll.al
 lib/perl5/site_perl/auto/Tk/Listbox/SetList.al
 lib/perl5/site_perl/auto/Tk/Listbox/UpDown.al
 lib/perl5/site_perl/auto/Tk/Listbox/autosplit.ix
+lib/perl5/site_perl/auto/Tk/Listbox/clipboardPaste.al
+lib/perl5/site_perl/auto/Tk/Listbox/deleteSelected.al
 lib/perl5/site_perl/auto/Tk/Listbox/xyIndex.al
+lib/perl5/site_perl/auto/Tk/MainWindow/autosplit.ix
 lib/perl5/site_perl/auto/Tk/Menu/ButtonDown.al
 lib/perl5/site_perl/auto/Tk/Menu/ClassInit.al
 lib/perl5/site_perl/auto/Tk/Menu/Enter.al
@@ -364,11 +383,13 @@ lib/perl5/site_perl/auto/Tk/Receive.al
 lib/perl5/site_perl/auto/Tk/RepeatId.al
 lib/perl5/site_perl/auto/Tk/Scale/Activate.al
 lib/perl5/site_perl/auto/Tk/Scale/ButtonDown.al
-lib/perl5/site_perl/auto/Tk/Scale/ClassInit.al
+lib/perl5/site_perl/auto/Tk/Scale/ButtonUp.al
 lib/perl5/site_perl/auto/Tk/Scale/ControlPress.al
 lib/perl5/site_perl/auto/Tk/Scale/Drag.al
 lib/perl5/site_perl/auto/Tk/Scale/EndDrag.al
+lib/perl5/site_perl/auto/Tk/Scale/Enter.al
 lib/perl5/site_perl/auto/Tk/Scale/Increment.al
+lib/perl5/site_perl/auto/Tk/Scale/Leave.al
 lib/perl5/site_perl/auto/Tk/Scale/autosplit.ix
 lib/perl5/site_perl/auto/Tk/Scrollbar/ButtonDown.al
 lib/perl5/site_perl/auto/Tk/Scrollbar/ButtonUp.al
@@ -395,14 +416,17 @@ lib/perl5/site_perl/auto/Tk/Table/totalRows.al
 lib/perl5/site_perl/auto/Tk/Text/AutoScan.al
 lib/perl5/site_perl/auto/Tk/Text/Backspace.al
 lib/perl5/site_perl/auto/Tk/Text/Button1.al
+lib/perl5/site_perl/auto/Tk/Text/Button2.al
 lib/perl5/site_perl/auto/Tk/Text/ClassInit.al
 lib/perl5/site_perl/auto/Tk/Text/Contents.al
 lib/perl5/site_perl/auto/Tk/Text/Delete.al
 lib/perl5/site_perl/auto/Tk/Text/Destroy.al
 lib/perl5/site_perl/auto/Tk/Text/Insert.al
 lib/perl5/site_perl/auto/Tk/Text/KeySelect.al
+lib/perl5/site_perl/auto/Tk/Text/Motion2.al
 lib/perl5/site_perl/auto/Tk/Text/NextPara.al
 lib/perl5/site_perl/auto/Tk/Text/PRINT.al
+lib/perl5/site_perl/auto/Tk/Text/PRINTF.al
 lib/perl5/site_perl/auto/Tk/Text/PrevPara.al
 lib/perl5/site_perl/auto/Tk/Text/ResetAnchor.al
 lib/perl5/site_perl/auto/Tk/Text/ScrollPages.al
@@ -444,6 +468,7 @@ lib/perl5/site_perl/auto/Tk/Widget/Darken.al
 lib/perl5/site_perl/auto/Tk/Widget/Descendants.al
 lib/perl5/site_perl/auto/Tk/Widget/EventWidget.al
 lib/perl5/site_perl/auto/Tk/Widget/FindMenu.al
+lib/perl5/site_perl/auto/Tk/Widget/ForwardEvent.al
 lib/perl5/site_perl/auto/Tk/Widget/Inherit.al
 lib/perl5/site_perl/auto/Tk/Widget/InheritThis.al
 lib/perl5/site_perl/auto/Tk/Widget/OnDestroy.al
@@ -461,7 +486,6 @@ lib/perl5/site_perl/auto/Tk/Widget/XEvent.al
 lib/perl5/site_perl/auto/Tk/Widget/XYscrollBind.al
 lib/perl5/site_perl/auto/Tk/Widget/XscrollBind.al
 lib/perl5/site_perl/auto/Tk/Widget/YscrollBind.al
-lib/perl5/site_perl/auto/Tk/Widget/_Destroyed.al
 lib/perl5/site_perl/auto/Tk/Widget/after.al
 lib/perl5/site_perl/auto/Tk/Widget/atom.al
 lib/perl5/site_perl/auto/Tk/Widget/atomname.al
@@ -470,8 +494,10 @@ lib/perl5/site_perl/auto/Tk/Widget/bisque.al
 lib/perl5/site_perl/auto/Tk/Widget/containing.al
 lib/perl5/site_perl/auto/Tk/Widget/focusCurrent.al
 lib/perl5/site_perl/auto/Tk/Widget/focusSave.al
+lib/perl5/site_perl/auto/Tk/Widget/form.al
 lib/perl5/site_perl/auto/Tk/Widget/grabSave.al
 lib/perl5/site_perl/auto/Tk/Widget/grid.al
+lib/perl5/site_perl/auto/Tk/Widget/gridAdjust.al
 lib/perl5/site_perl/auto/Tk/Widget/pack.al
 lib/perl5/site_perl/auto/Tk/Widget/packAdjust.al
 lib/perl5/site_perl/auto/Tk/Widget/place.al
@@ -485,6 +511,8 @@ lib/perl5/site_perl/auto/Tk/Wm/AnchorAdjust.al
 lib/perl5/site_perl/auto/Tk/Wm/Popup.al
 lib/perl5/site_perl/auto/Tk/Wm/Post.al
 lib/perl5/site_perl/auto/Tk/Wm/autosplit.ix
+lib/perl5/site_perl/auto/Tk/Wm/iconposition.al
+lib/perl5/site_perl/auto/Tk/X/autosplit.ix
 lib/perl5/site_perl/auto/Tk/autosplit.ix
 lib/perl5/site_perl/auto/Tk/break.al
 lib/perl5/site_perl/auto/Tk/catch.al
@@ -498,7 +526,6 @@ lib/perl5/site_perl/auto/Tk/interps.al
 lib/perl5/site_perl/auto/Tk/lsearch.al
 lib/perl5/site_perl/auto/Tk/tkinit.al
 lib/perl5/site_perl/auto/Tk/updateWidgets.al
-lib/perl5/site_perl/auto/X/autosplit.ix
 lib/perl5/site_perl/blib.pm
 lib/perl5/site_perl/i386-freebsd/Tk/Config.pm
 lib/perl5/site_perl/i386-freebsd/Tk/TkXSUB.def
@@ -506,24 +533,40 @@ lib/perl5/site_perl/i386-freebsd/Tk/leak_util.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/Lang.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/Lang.m
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/Lang.t
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/LangIO.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/Lang_f.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/Xlib.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/Xlib.m
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/Xlib.t
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/Xlib_f.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/compat/limits.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/compat/stdlib.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/compat/unistd.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/default.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/ks_names.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/patchlevel.h
-lib/perl5/site_perl/i386-freebsd/Tk/pTk/tclUnix.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tix.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tix.m
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tix.t
-lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixDefault.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixBitmaps.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixDef.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixForm.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixGrData.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixGrid.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixHList.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixImgXpm.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixImgXpm.m
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixImgXpm.t
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixImgXpm_f.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixInt.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixInt.m
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixInt.t
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixInt_f.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixItcl.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixPort.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixTList.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixUnixInt.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tixUnixPort.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tix_f.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tk.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tk.m
@@ -531,6 +574,7 @@ lib/perl5/site_perl/i386-freebsd/Tk/pTk/tk.t
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkCanvas.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkCanvases.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkConfig.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkFileFilter.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkImgPhoto.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkImgPhoto.m
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkImgPhoto.t
@@ -539,8 +583,17 @@ lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkInt.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkInt.m
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkInt.t
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkInt_f.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkOption.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkOption.m
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkOption.t
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkOption_f.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkPatch.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkPort.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkSelect.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkText.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkUnixDefault.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkUnixInt.h
+lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkUnixPort.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkVMacro.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tkXrm.h
 lib/perl5/site_perl/i386-freebsd/Tk/pTk/tk_f.h
@@ -579,14 +632,19 @@ lib/perl5/site_perl/i386-freebsd/auto/Tk/Scale/Scale.bs
 lib/perl5/site_perl/i386-freebsd/auto/Tk/Scale/Scale.so
 lib/perl5/site_perl/i386-freebsd/auto/Tk/Scrollbar/Scrollbar.bs
 lib/perl5/site_perl/i386-freebsd/auto/Tk/Scrollbar/Scrollbar.so
+lib/perl5/site_perl/i386-freebsd/auto/Tk/TList/TList.bs
+lib/perl5/site_perl/i386-freebsd/auto/Tk/TList/TList.so
 lib/perl5/site_perl/i386-freebsd/auto/Tk/Text/Text.bs
 lib/perl5/site_perl/i386-freebsd/auto/Tk/Text/Text.so
+lib/perl5/site_perl/i386-freebsd/auto/Tk/TixGrid/TixGrid.bs
+lib/perl5/site_perl/i386-freebsd/auto/Tk/TixGrid/TixGrid.so
 lib/perl5/site_perl/i386-freebsd/auto/Tk/Tk.bs
 lib/perl5/site_perl/i386-freebsd/auto/Tk/Tk.so
 lib/perl5/site_perl/i386-freebsd/auto/Tk/X/X.bs
 lib/perl5/site_perl/i386-freebsd/auto/Tk/X/X.so
 lib/perl5/site_perl/i386-freebsd/auto/Tk/Xlib/Xlib.bs
 lib/perl5/site_perl/i386-freebsd/auto/Tk/Xlib/Xlib.so
+lib/perl5/site_perl/i386-freebsd/auto/Tk/pTk/extralibs.ld
 lib/perl5/site_perl/i386-freebsd/auto/Tk/.packlist
 man/man1/tkweb.1.gz
 @dirrm lib/perl5/site_perl/Tk/DragDrop
@@ -595,11 +653,38 @@ man/man1/tkweb.1.gz
 @dirrm lib/perl5/site_perl/Tk/Text
 @dirrm lib/perl5/site_perl/Tk/demos/images
 @dirrm lib/perl5/site_perl/Tk/demos/widget_lib
+@dirrm lib/perl5/site_perl/Tk/demos/widtrib/lib/npuz
 @dirrm lib/perl5/site_perl/Tk/demos/widtrib/lib
-@dirrm lib/perl5/site_perl/Tk/demos/widtrib/npuz
 @dirrm lib/perl5/site_perl/Tk/demos/widtrib
 @dirrm lib/perl5/site_perl/Tk/demos
 @dirrm lib/perl5/site_perl/Tk
+@dirrm lib/perl5/site_perl/auto/Tk/Adjuster
+@dirrm lib/perl5/site_perl/auto/Tk/Button
+@dirrm lib/perl5/site_perl/auto/Tk/Checkbutton
+@dirrm lib/perl5/site_perl/auto/Tk/Entry
+@dirrm lib/perl5/site_perl/auto/Tk/Frame
+@dirrm lib/perl5/site_perl/auto/Tk/Ghostscript
+@dirrm lib/perl5/site_perl/auto/Tk/HTML/Form
+@dirrm lib/perl5/site_perl/auto/Tk/HTML
+@dirrm lib/perl5/site_perl/auto/Tk/Listbox
+@dirrm lib/perl5/site_perl/auto/Tk/MainWindow
+@dirrm lib/perl5/site_perl/auto/Tk/Menu
+@dirrm lib/perl5/site_perl/auto/Tk/Menubutton
+@dirrm lib/perl5/site_perl/auto/Tk/Message
+@dirrm lib/perl5/site_perl/auto/Tk/Pod
+@dirrm lib/perl5/site_perl/auto/Tk/Radiobutton
+@dirrm lib/perl5/site_perl/auto/Tk/Scale
+@dirrm lib/perl5/site_perl/auto/Tk/Scrollbar
+@dirrm lib/perl5/site_perl/auto/Tk/Table
+@dirrm lib/perl5/site_perl/auto/Tk/Text
+@dirrm lib/perl5/site_perl/auto/Tk/TextUndo
+@dirrm lib/perl5/site_perl/auto/Tk/Toplevel
+@dirrm lib/perl5/site_perl/auto/Tk/Web
+@dirrm lib/perl5/site_perl/auto/Tk/Widget
+@dirrm lib/perl5/site_perl/auto/Tk/Wm
+@dirrm lib/perl5/site_perl/auto/Tk/X
+@dirrm lib/perl5/site_perl/auto/Tk
+@dirrm lib/perl5/site_perl/i386-freebsd/Tk/pTk/compat
 @dirrm lib/perl5/site_perl/i386-freebsd/Tk/pTk
 @dirrm lib/perl5/site_perl/i386-freebsd/Tk
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk/Bitmap
@@ -617,31 +702,10 @@ man/man1/tkweb.1.gz
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk/Pixmap
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk/Scale
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk/Scrollbar
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk/TList
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk/Text
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk/TixGrid
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk/X
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk/Xlib
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk/pTk
 @dirrm lib/perl5/site_perl/i386-freebsd/auto/Tk
-@dirrm lib/perl5/site_perl/auto/Tk/Adjuster
-@dirrm lib/perl5/site_perl/auto/Tk/Button
-@dirrm lib/perl5/site_perl/auto/Tk/Checkbutton
-@dirrm lib/perl5/site_perl/auto/Tk/Entry
-@dirrm lib/perl5/site_perl/auto/Tk/Frame
-@dirrm lib/perl5/site_perl/auto/Tk/Ghostscript
-@dirrm lib/perl5/site_perl/auto/Tk/HTML/Form
-@dirrm lib/perl5/site_perl/auto/Tk/HTML
-@dirrm lib/perl5/site_perl/auto/Tk/Listbox
-@dirrm lib/perl5/site_perl/auto/Tk/Menu
-@dirrm lib/perl5/site_perl/auto/Tk/Menubutton
-@dirrm lib/perl5/site_perl/auto/Tk/Message
-@dirrm lib/perl5/site_perl/auto/Tk/Pod
-@dirrm lib/perl5/site_perl/auto/Tk/Radiobutton
-@dirrm lib/perl5/site_perl/auto/Tk/Scale
-@dirrm lib/perl5/site_perl/auto/Tk/Scrollbar
-@dirrm lib/perl5/site_perl/auto/Tk/Table
-@dirrm lib/perl5/site_perl/auto/Tk/Text
-@dirrm lib/perl5/site_perl/auto/Tk/TextUndo
-@dirrm lib/perl5/site_perl/auto/Tk/Toplevel
-@dirrm lib/perl5/site_perl/auto/Tk/Web
-@dirrm lib/perl5/site_perl/auto/Tk/Widget
-@dirrm lib/perl5/site_perl/auto/Tk/Wm
-@dirrm lib/perl5/site_perl/auto/Tk
