@@ -1,10 +1,15 @@
---- Makefile.orig	Sun Jul 22 10:49:39 2001
-+++ Makefile	Sat Jul 28 21:52:21 2001
-@@ -280,2 +280,3 @@
+--- Makefile.orig	Sun Mar 24 02:41:30 2002
++++ Makefile	Mon Jun 10 17:18:07 2002
+@@ -282,2 +282,3 @@
  # CONFIGURE - configure arguments {{{1
 +CONF_ARGS = --prefix=$(PREFIX)
  # You can give a lot of options to configure.
-@@ -1679,36 +1680,36 @@
+@@ -1651,3 +1652,3 @@
+ 	if test -d $(LANGSOURCE); then \
+-	   $(INSTALL_DATA) $(LANGSOURCE)/README.txt $(LANGSOURCE)/*.vim $(DEST_LANG); \
++	   $(INSTALL_DATA)                          $(LANGSOURCE)/*.vim $(DEST_LANG); \
+ 	   chmod $(FILEMOD) $(DEST_LANG)/*.vim; \
+@@ -1712,36 +1713,36 @@
  $(DEST_BIN)/$(EXTARGET):
 -	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EXTARGET)
 +	#cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EXTARGET)
@@ -53,7 +58,7 @@
 -	cd $(DEST_BIN); ln -s $(VIMTARGET) $(EVIEWTARGET)
 +	cd $(DEST_BIN); ln -sf $(VIMTARGET) $(EVIEWTARGET)
  
-@@ -1730,30 +1731,30 @@
+@@ -1763,30 +1764,30 @@
  $(DEST_MAN)/$(EXNAME).1:
 -	cd $(DEST_MAN); ln -s $(VIMNAME).1 $(EXNAME).1
 +	cd $(DEST_MAN); ln -sf $(VIMNAME).1 $(EXNAME).1
@@ -94,7 +99,7 @@
 -	cd $(DEST_MAN); ln -s $(EVIMNAME).1 $(EVIEWNAME).1
 +	cd $(DEST_MAN); ln -sf $(EVIMNAME).1 $(EVIEWNAME).1
  
-@@ -1939,3 +1940,4 @@
+@@ -1951,3 +1952,4 @@
  	-@echo 'char_u *default_vimruntime_dir = (char_u *)"$(VIMRUNTIMEDIR)";' >> $@
 -	-@echo 'char_u *all_cflags = (char_u *)"$(CC) -c -I$(srcdir) $(ALL_CFLAGS)";' >>  $@
 +	-@echo 'char_u *all_cflags = (char_u *)' >> $@
