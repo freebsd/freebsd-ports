@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	soap
-PORTVERSION=	1.4.4.1
+PORTVERSION=	1.4.5
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/SOAP4R/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,14 +18,20 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/application.rb:${PORTSDIR}/sysutils/ruby-devel-logger \
 		${RUBY_SITELIBDIR}/http-access2.rb:${PORTSDIR}/www/ruby-http-access \
 		${RUBY_SITELIBDIR}/GServer.rb:${PORTSDIR}/net/ruby-gserver \
-		${RUBY_SITELIBDIR}/date2.rb:${PORTSDIR}/devel/ruby-date2 \
-		${RUBY_SITELIBDIR}/nqxml/info.rb:${PORTSDIR}/textproc/ruby-nqxml
+		${RUBY_SITELIBDIR}/nqxml/info.rb:${PORTSDIR}/textproc/ruby-nqxml \
+		${DEPEND_RUBY_DATE2}
 
 USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS_EN=	RELEASE_en.html rubyStyle.css
+DOCS_EN=	RELEASE_en.html ToDo rubyStyle.css
+
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} < 1.7
+DEPEND_RUBY_DATE2=	${RUBY_SITELIBDIR}/date.rb:${PORTSDIR}/devel/ruby-date2
+.endif
 
 post-extract:
 	${CP} ${WRKSRC}/redist/soap/httpserver.rb ${WRKSRC}/sample/
@@ -41,4 +47,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

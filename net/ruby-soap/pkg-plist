@@ -33,11 +33,14 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/calc2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/client.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/client2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/server.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/server2.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/server2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/client.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/exchange.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/iExchange.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/server.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ICD/IICD.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ICD/icd.rb
@@ -54,6 +57,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/SampleStruct/client.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/SampleStruct/iSampleStruct.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/SampleStruct/sampleStruct.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/SampleStruct/server.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/SampleStruct/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/WSDemo/client.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/WSDemo/iSubscribeService.rb
@@ -74,7 +78,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/sampleStructClient.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/soaplet.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interop/clientSOAP::Lite.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/baseType_ut.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/README.txt
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/SOAP4R_SOAPBuildersInteropTest_R2GroupB.wsdl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/SOAP4R_SOAPBuildersInteropTest_R2base.wsdl
@@ -97,6 +101,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientMSSOAPToolkit3.0.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientNuSOAP.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientOpenLink.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientNuWave.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientPEAR.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientPhalanx.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientSIMACE.rb
@@ -106,6 +111,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientSilverStream.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientSoapRMI.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientSpray2001.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientVWOpentalkSoap.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWASP.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWASPC.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWhiteMesa.rb
@@ -121,6 +127,8 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/simonReg.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/test.sh
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/struct.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/xsd_ut.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/Calc
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/Exchange
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/ICD
@@ -130,9 +138,9 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/WSDemo
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/webrick
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test/interopR2
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test/interop
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap
 %%PORTDOCS%%%%RUBY_DOCDIR%%/soap/RELEASE_en.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/soap/ToDo
 %%PORTDOCS%%%%RUBY_DOCDIR%%/soap/rubyStyle.css
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/soap
