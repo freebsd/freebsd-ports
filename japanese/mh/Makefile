@@ -15,6 +15,7 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 DISTNAME=	${PORTNAME}-${VERSION}-JP-${JP_VERSION}
 
 MAINTAINER=	motoyuki@freebsd.org
+COMMENT=	Rand MH mail handling system + Japanese patches
 
 BUILD_DEPENDS=	jless:${PORTSDIR}/japanese/less
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
@@ -44,7 +45,7 @@ READMES=	00.READ.ME.1ST CHANGES.JP COMMANDS.JP FAQ.JP FEATURES.JP \
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCDIR}
-	(cd ${WRKSRC}/doc-JP; ${INSTALL_DATA} ${READMES} ${DOCDIR}) 
+	(cd ${WRKSRC}/doc-JP; ${INSTALL_DATA} ${READMES} ${DOCDIR})
 .endif
 
 .include <bsd.port.mk>
