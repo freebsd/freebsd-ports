@@ -1,13 +1,13 @@
 # New ports collection makefile for:	ja-lynx-current
-# Version required:     2.8.2dev.X
+# Version required:     2.8.2pre.5
 # Date created:         10 August 1998
-# Whom:                 Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
+# Whom:                 Shigeyuki FUKUSHIMA <shige@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/11/19 15:04:31 kuriyama Exp $
+# $Id: Makefile,v 1.6 1999/02/28 09:09:48 shige Exp $
 #
 
-DISTNAME=	lynx2.8.2dev.17
-PKGNAME=	ja-lynx-2.8.2.17
+DISTNAME=	lynx2.8.2pre.5
+PKGNAME=	ja-lynx-2.8.2.pre5
 CATEGORIES=	japanese www
 MASTER_SITES=	http://sol.slcc.edu/lynx/current/
 
@@ -16,8 +16,9 @@ MAINTAINER=	shige@FreeBSD.ORG
 NO_LATEST_LINK=	YES
 WRKSRC=		${WRKDIR}/lynx2-8-2
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib \
-		--libdir="${PREFIX}/etc" --disable-nls --enable-default-colors
+CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc" \
+		--disable-nls --enable-default-colors \
+		--enable-nsl-fork --enable-persistent-cookies
 MAKEFILE=	makefile
 INSTALL_TARGET=	install install-help
 MAN1=		lynx.1
