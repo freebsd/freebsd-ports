@@ -1,8 +1,3 @@
-System/Applications/md5Digest.app/Resources/Info-gnustep.plist
-System/Applications/md5Digest.app/Resources/md5Digest.desktop
-System/Applications/md5Digest.app/library_paths.openapp
-System/Applications/md5Digest.app/md5Digest
-System/Applications/md5Digest.app/stamp.make
 System/Library/Bundles/TextConverters/RTFConverter.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/TextConverters/RTFConverter.bundle/RTFConverter
 System/Library/Bundles/TextConverters/RTFConverter.bundle/stamp.make
@@ -44,6 +39,7 @@ System/Library/Headers/AppKit/GSLayoutManager.h
 System/Library/Headers/AppKit/GSLayoutManager_internal.h
 System/Library/Headers/AppKit/GSMemoryPanel.h
 System/Library/Headers/AppKit/GSMethodTable.h
+System/Library/Headers/AppKit/GSNibCompatibility.h
 System/Library/Headers/AppKit/GSNibTemplates.h
 System/Library/Headers/AppKit/GSPasteboardServer.h
 System/Library/Headers/AppKit/GSServicesManager.h
@@ -185,6 +181,7 @@ System/Library/Headers/GNUstepGUI/GSServicesManager.h
 System/Library/Headers/GNUstepGUI/GSTextConverter.h
 System/Library/Headers/GNUstepGUI/GSTrackingRect.h
 System/Library/Headers/GNUstepGUI/GSHelpManagerPanel.h
+System/Library/Headers/GNUstepGUI/GSNibCompatibility.h
 System/Library/Headers/GNUstepGUI/GSNibTemplates.h
 System/Library/Headers/GNUstepGUI/GSDisplayServer.h
 System/Library/Headers/GNUstepGUI/GSFusedSilica.h
@@ -211,6 +208,7 @@ System/Library/Headers/gnustep/gui/GSServicesManager.h
 System/Library/Headers/gnustep/gui/GSTextConverter.h
 System/Library/Headers/gnustep/gui/GSTrackingRect.h
 System/Library/Headers/gnustep/gui/GSHelpManagerPanel.h
+System/Library/Headers/gnustep/gui/GSNibCompatibility.h
 System/Library/Headers/gnustep/gui/GSNibTemplates.h
 System/Library/Headers/gnustep/gui/GSDisplayServer.h
 System/Library/Headers/gnustep/gui/GSFusedSilica.h
@@ -476,6 +474,7 @@ System/Library/Headers/gnustep/gui/IMLoading.h
 %%PORTDOCS%%System/Library/Documentation/User/Gui/GuiUser.igsdoc
 %%PORTDOCS%%System/Library/Documentation/User/Gui/LanguageSetup.html
 %%PORTDOCS%%System/Library/Documentation/man/man1/gopen.1.gz
+%%PORTDOCS%%System/Library/Documentation/man/man1/make_services.1.gz
 System/Library/Images/GNUstep.tiff
 System/Library/Images/GNUstepMenuImage.tiff
 System/Library/Images/GNUstep_Images_Copyright
@@ -886,8 +885,6 @@ System/Library/PostScript/PPD/Swedish.lproj/Linotronic_300.ppd
 System/Library/PostScript/Printers
 System/Library/Services/GSspell.service/Resources/Info-gnustep.plist
 System/Library/Services/GSspell.service/GSspell
-System/Library/Services/example.service/Resources/Info-gnustep.plist
-System/Library/Services/example.service/example
 System/Makefiles/Additional/gui.make
 System/Tools/gnustep_sndd
 System/Tools/gopen
