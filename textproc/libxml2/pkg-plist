@@ -65,6 +65,7 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/cutnpaste.py
 %%PYTHON:%%share/doc/libxml2-python/examples/error.py
 %%PYTHON:%%share/doc/libxml2-python/examples/inbuf.py
+%%PYTHON:%%share/doc/libxml2-python/examples/indexes.py
 %%PYTHON:%%share/doc/libxml2-python/examples/invalid.xml
 %%PYTHON:%%share/doc/libxml2-python/examples/outbuf.py
 %%PYTHON:%%share/doc/libxml2-python/examples/push.py
