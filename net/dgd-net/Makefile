@@ -8,7 +8,8 @@
 PORTNAME=	dgd-net
 PORTVERSION=	1.1.8
 CATEGORIES=	net lang
-MASTER_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/archive/
+MASTER_SITES=	http://dl.droso.net/ports/ \
+		http://ftp.dyu.edu.tw/FreeBSD/dgd/
 DISTFILES=	dgd-1.1p8.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -26,7 +27,7 @@ PATCH_DIST_ARGS=	-d ${WRKDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 
 pre-patch:
 	@${LN} -s dgd ${WRKDIR}/dgd+net
-	@mkdir ${WRKDIR}/dgd/bin
+	@${MKDIR} ${WRKDIR}/dgd/bin
 
 post-build:
 	@cd ${WRKSRC}; ${MAKE} install
@@ -38,8 +39,7 @@ post-build:
 
 do-install:
 	@-${MV} ${PREFIX}/dgd/bin/driver.net ${PREFIX}/dgd/bin/driver.net.old
-	@tar -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PLIST}` \
-		| tar -C ${PREFIX} -xpf -
+	@${TAR} -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PLIST}` \
+		| ${TAR} -C ${PREFIX} -xpf -
 
 .include <bsd.port.mk>
-
