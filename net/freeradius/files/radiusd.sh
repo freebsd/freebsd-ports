@@ -1,38 +1,27 @@
 #!/bin/sh
 
-# RADIUSD_FLAGS='-xxyzsf -l stdout'
-RADIUSD_FLAGS=
+# PROVIDE radiusd
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: FreeBSD shutdown
 
-if [ -r /etc/defaults/rc.conf ]; then
-	. /etc/defaults/rc.conf
-	source_rc_confs
-elif [ -r /etc/rc.conf ]; then
-	. /etc/rc.conf
-fi
+#
+# Add the following lines to /etc/rc.conf to enable radiusd:
+#
+# radiusd_enable="YES"
+#
 
-prog=$(realpath $0) || exit 1
-dir=${prog%/*}
-PREFIX=${dir%/etc/rc.d}
+. %%RC_SUBR%%
 
-if [ ."$dir" = ."$prog" -o ."$PREFIX" = ."$dir" ]
-then
-	echo "$0: Cannot determine the PREFIX" >&2
-	exit 1
-fi
+name=radiusd
+rcvar=`set_rcvar`
 
-case $1 in
-start)
-	"$PREFIX"/sbin/radiusd $RADIUSD_FLAGS && echo -n " radiusd"
-	;;
-stop)
-	if [ -f /var/run/radiusd/radiusd.pid ]; then
-		kill `cat /var/run/radiusd/radiusd.pid` && echo -n ' radiusd'
-	fi
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	exit 64
-	;;
-esac
+command=%%PREFIX%%/sbin/radiusd
+radiusd_config=${radiusd_config:-"%%PREFIX%%/etc/raddb/radiusd.conf"}
+required_files=${radiusd_config}
+pidfile=/var/run/radiusd/radiusd.pid
 
-exit 0
+radiusd_enable=${radiusd_enable:-"NO"}
+
+load_rc_config $name
+run_rc_command "$1"

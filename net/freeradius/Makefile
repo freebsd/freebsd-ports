@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.Awfulhak.org/pub/radius/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	andy@fud.org.nz
 COMMENT=	A free RADIUS server implementation
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
@@ -21,19 +20,32 @@ LOGDIR?=	/var/log
 
 CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
 
+USE_RC_SUBR=	yes
 USE_LIBLTDL=	yes
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
+USE_PERL5=	yes
+USE_OPENSSL=	yes
 USE_LIBTOOL_VER=13
 CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--localstatedir=/var \
 		--disable-ltdl-install \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib \
-		--with-large-files
+		--with-large-files --without-rlm_sql_unixodbc \
+		--without-rlm_sql_oracle --without-rlm_sql_iodbc \
+		--without-rlm_sql_db2 --without-rlm_krb5
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-.if defined(WITH_OPENLDAP)
+OPTIONS=	LDAP		"With LDAP user database" off \
+		MYSQL		"With MySQL user database" off \
+		PGSQL		"With PostgreSQL use database" off \
+		SNMP		"With SNMP support" off \
+		EXPERIMENTAL	"Build experimental modules" off
+
+.include <bsd.port.pre.mk>
+
+.ifdef(WITH_LDAP)
 USE_OPENLDAP=	YES
 PLIST_SUB+=	LDAP=""
 .else
@@ -41,7 +53,7 @@ CONFIGURE_ARGS+=--without-rlm_ldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
 
-.if defined(WITH_MYSQL)
+.ifdef(WITH_MYSQL)
 USE_MYSQL=	YES
 PLIST_SUB+=	MYSQL=""
 .else
@@ -49,7 +61,7 @@ CONFIGURE_ARGS+=--without-rlm_sql_mysql
 PLIST_SUB+=	MYSQL="@comment "
 .endif
 
-.if defined(WITH_PGSQL) || defined(WITH_POSTGRESQL)
+.ifdef(WITH_PGSQL)
 POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 PLIST_SUB+=	PGSQL=""
@@ -58,38 +70,66 @@ CONFIGURE_ARGS+=--without-rlm_sql_postgresql
 PLIST_SUB+=	PGSQL="@comment "
 .endif
 
+.ifdef(WITH_SNMP)
+LIB_DEPENDS+=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
+.else
+CONFIGURE_ARGS+=--without-snmp
+.endif
+
+.ifdef(WITH_EXPERIMENTAL)
+USE_PYTHON=	yes
+# hack to get the dependency
+.include "${PORTSDIR}/Mk/bsd.python.mk"
+CONFIGURE_ARGS+=--with-experimental-modules
+PLIST_SUB+=	EXPM=""
+.else
+PLIST_SUB+=	EXPM="@comment "
+.endif
+
 .if defined(NOPORTDOCS)
-MAKE_ENV+=		NOPORTDOCS=yes
+MAKE_ENV+=	NOPORTDOCS=yes
 .endif
 
 # rlm_x99_token seems broken
-CONFIGURE_ARGS+=--without-rlm_x99_token
-PLIST_SUB+=	TOKEN="@comment "
+#CONFIGURE_ARGS+=--without-rlm_x99_token
+PLIST_SUB+=	TOKEN=""
 
 INSTALLS_SHLIB=	yes
 
-MAN1=		radclient.1 radlast.1 radtest.1 radwho.1 radzap.1
+MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
+		radzap.1
 MAN5=		acct_users.5 clients.5 dictionary.5 naslist.5 radiusd.conf.5 \
-		users.5
+		rlm_acct_unique.5 rlm_always.5 rlm_attr_filter.5 \
+		rlm_attr_rewrite.5 rlm_chap.5 rlm_counter.5 rlm_detail.5 \
+		rlm_expr.5 rlm_files.5 rlm_mschap.5 rlm_pap.5 rlm_passwd.5 \
+		rlm_realm.5 rlm_sql.5 rlm_unix.5 users.5
 MAN8=		radiusd.8 radrelay.8 radwatch.8 rlm_ippool_tool.8
 
-DICTS=		dictionary.acc dictionary.alcatel dictionary.alteon \
-	       	dictionary.altiga dictionary.aptis dictionary.ascend \
-	       	dictionary.bay dictionary.cisco dictionary.cisco.bbsm \
+DICTS=		dictionary.3com dictionary.3gpp dictionary.3gpp2 dictionary.acc \
+		dictionary.alcatel dictionary.alteon dictionary.altiga \
+		dictionary.aptis dictionary.ascend dictionary.bay \
+		dictionary.bristol dictionary.cisco dictionary.cisco.bbsm \
 		dictionary.cisco.vpn3000 dictionary.cisco.vpn5000 \
 		dictionary.colubris dictionary.columbia_university \
 	       	dictionary.compat dictionary.erx dictionary.foundry \
-	       	dictionary.freeradius dictionary.juniper \
-	       	dictionary.livingston dictionary.microsoft \
-	       	dictionary.nomadix dictionary.quintum dictionary.redback \
-	       	dictionary.shasta dictionary.shiva dictionary.tunnel \
-	       	dictionary.usr dictionary.versanet
+	       	dictionary.freeradius dictionary.gandalf dictionary.juniper \
+	       	dictionary.karlnet dictionary.livingston dictionary.merit \
+		dictionary.microsoft dictionary.mikrotik dictionary.navini \
+	       	dictionary.nomadix dictionary.propel dictionary.quintum \
+		dictionary.redback dictionary.shasta dictionary.shiva \
+		dictionary.sonicwall dictionary.trapeze dictionary.tunnel \
+	       	dictionary.unix dictionary.usr dictionary.valemount \
+		dictionary.versanet
+
+post-patch:
+	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" -e "s|%%RC_SUBR%%|${RC_SUBR}|g" \
+		< ${FILESDIR}/radiusd.sh > ${WRKDIR}/radiusd.sh
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/raddb ${DATADIR}
 .for dict in ${DICTS}
 	${INSTALL_DATA} ${WRKSRC}/share/${dict} ${DATADIR}/${dict}
 .endfor
-	${INSTALL_SCRIPT} ${FILESDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/radiusd.sh ${PREFIX}/etc/rc.d/radiusd.sh
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
