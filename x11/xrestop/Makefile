@@ -14,8 +14,6 @@ MASTER_SITES=	http://www.freedesktop.org/Software/${PORTNAME}/
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	X11 server side resource usage statistics monitor
 
-LIB_DEPENDS=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget
