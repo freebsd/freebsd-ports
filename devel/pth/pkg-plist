@@ -1,0 +1,3 @@
+bin/nps-config
+include/nps.h
+lib/libnps.a
