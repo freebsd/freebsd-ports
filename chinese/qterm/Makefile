@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qterm
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.2
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,8 @@ USE_QT_VER=	3
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_ARGS+=	"--enable-mt"
+CONFIGURE_ARGS=	--enable-mt --with-pythondir=${LOCALBASE} --prefix=${PREFIX}
+USE_PYTHON=	-2.2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \

@@ -1,6 +1,6 @@
 bin/qterm
 share/qterm/address.cfg
-share/qterm/credits.txt
+share/qterm/credits
 share/qterm/cursor/end.xpm
 share/qterm/cursor/enter.xpm
 share/qterm/cursor/exit.xpm
@@ -19,7 +19,7 @@ share/qterm/pic/color-copy.png
 share/qterm/pic/connect.png
 share/qterm/pic/copy.png
 share/qterm/pic/disconnect.png
-share/qterm/pic/fonts.png
+share/qterm/pic/font.png
 share/qterm/pic/keys.png
 share/qterm/pic/message.png
 share/qterm/pic/mouse.png
@@ -34,10 +34,11 @@ share/qterm/pic/rect.png
 share/qterm/pic/refresh.png
 share/qterm/pic/sound.png
 share/qterm/pic/tabpad.png
-share/qterm/po/qterm_chs.qm
-share/qterm/po/qterm_cht.qm
 share/qterm/qterm.cfg
-@dirrm share/qterm/po
+share/qterm/script/continuous.py
+share/qterm/script/download.py
+share/qterm/script/system.py
+@dirrm share/qterm/script
 @dirrm share/qterm/cursor
 @dirrm share/qterm/pic
 @dirrm share/qterm
