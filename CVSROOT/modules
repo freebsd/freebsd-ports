@@ -7642,6 +7642,7 @@ txt2html	ports/textproc/txt2html
 txt2man		ports/textproc/txt2man
 txt2pdbdoc	ports/palm/txt2pdbdoc
 txt2regex	ports/misc/txt2regex
+txtbdf2ps	ports/print/txtbdf2ps
 txtmerge	ports/graphics/txtmerge
 tya		ports/java/tya
 tycoon		ports/x11/tycoon
