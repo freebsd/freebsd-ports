@@ -7,6 +7,7 @@
 
 PORTNAME=	qmailanalog
 PORTVERSION=	0.70
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cr.yp.to/software/
 
