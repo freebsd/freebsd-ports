@@ -1,0 +1,9 @@
+--- siod/ndbm.c	Thu Jun 24 05:18:57 1999
++++ siod/ndbm.c	Sun Apr  8 11:25:50 2001
+@@ -9,3 +9,6 @@
+ 
+ #include <ndbm.h>
++#if defined(GDBM) && defined(dbm_pagfno)
++#	undef dbm_pagfno
++#endif
+ 
