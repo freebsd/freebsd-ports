@@ -1,14 +1,5 @@
 --- Makefile.in~	Fri Sep 13 07:42:06 1996
 +++ Makefile.in	Fri Sep 13 09:28:45 1996
-@@ -469,7 +469,7 @@
- 	@$(INSTALL_PROGRAM) scotty $(BIN_INSTALL_DIR)/scotty$(TNM_VERSION)
- 	@$(INSTALL_DATA) tnm$(SHLIB_SUFFIX) $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION)$(SHLIB_SUFFIX)
- 	@chmod 555 $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION)$(SHLIB_SUFFIX)
--	@echo 'package ifneeded Tnm $(TNM_VERSION) "load $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION)[info sharedlibextension]"' > $(TNM_INSTALL_DIR)/pkgIndex.tcl
-+	@echo 'package ifneeded Tnm $(TNM_VERSION) "load $(LIB_RUNTIME_DIR)/tnm$(TNM_VERSION).so"' > $(TNM_INSTALL_DIR)/pkgIndex.tcl
- 
- tnm-install-mibs:
- 	@for i in $(TNM_INSTALL_DIR)/mibs ; \
 @@ -567,10 +567,14 @@
  		fi; \
  	    done;
