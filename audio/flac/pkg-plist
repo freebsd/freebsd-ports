@@ -1,9 +1,18 @@
 @comment $FreeBSD$
 bin/flac
 bin/metaflac
+include/FLAC/all.h
+include/FLAC/assert.h
+include/FLAC/file_decoder.h
+include/FLAC/format.h
+include/FLAC/ordinals.h
+include/FLAC/seek_table.h
+include/FLAC/stream_decoder.h
+include/FLAC/stream_encoder.h
+include/FLAC/utility.h
 lib/libFLAC.a
 lib/libFLAC.so
-lib/libFLAC.so.0
+lib/libFLAC.so.1
 %%PORTDOCS%%share/doc/flac/comparison.html
 %%PORTDOCS%%share/doc/flac/developers.html
 %%PORTDOCS%%share/doc/flac/documentation.html
