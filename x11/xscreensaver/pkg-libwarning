@@ -5,5 +5,7 @@ make clean
 pkg_delete -f pkgconfig*
 make install
 
-The conflict is being worked on, but until it's fixed this is your
-best chance of success.
+You may also want to upgrade your complete ports tree and
+then re-install glib12 and gtk12 which will also fix the
+pkg-config files for those two ports, and should offer a
+more permanent solution.
