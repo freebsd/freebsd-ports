@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	jabberd
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabberstudio.org/files/jabberd2/
-DISTNAME=	${PORTNAME}-2.0s3
+DISTNAME=	${PORTNAME}-2.0s4
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	kirk@strauser.com
@@ -22,7 +21,7 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_ICONV=	yes
 USE_RC_SUBR=	yes
-CONFIGURE_ARGS= --localstatedir=/var \
+CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-ssl \
 		--with-extra-include-path=${LOCALBASE}/include${EIP} \
 		--with-extra-library-path=${LOCALBASE}/lib${ELP}
