@@ -19,10 +19,10 @@ if [ ${arch} = "i386" ]; then
   chroot ${chroot} umount -f /compat/linux/proc
 fi
   
-umount -f ${chroot}/a/ports
-umount -f ${chroot}/usr/opt/doc
-umount -f ${chroot}/usr/src
-umount -f ${chroot}/dev
+umount -f ${chroot}/a/ports 2> /dev/null
+umount -f ${chroot}/usr/opt/doc 2> /dev/null
+umount -f ${chroot}/usr/src 2> /dev/null
+umount -f ${chroot}/dev 2> /dev/null
 
 if [ $noclean = 0 ]; then
   rm -rf ${chroot}/tmp/*
