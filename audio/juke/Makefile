@@ -8,8 +8,9 @@
 PORTNAME=		juke
 PORTVERSION=		0.7
 CATEGORIES=		audio
-MASTER_SITES=		http://johan.nocrew.org/unix/juke/archive/ \
-			http://www.initio.no/~oyvindmo/distfiles/
+MASTER_SITES=		http://www.initio.no/~oyvindmo/distfiles/
+# johan.nocrew.org is unreachable, informed maintainer - edwin 20021226
+#MASTER_SITES=		http://johan.nocrew.org/unix/juke/archive/
 
 MAINTAINER=		oyvindmo@initio.no
 
