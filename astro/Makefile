@@ -13,6 +13,7 @@
     SUBDIR += ksetiwatch
     SUBDIR += kstars
     SUBDIR += luna
+    SUBDIR += match
     SUBDIR += openuniverse
     SUBDIR += p5-Astro-MoonPhase
     SUBDIR += p5-Astro-SunTime
