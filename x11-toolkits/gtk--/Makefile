@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.11 1999/06/09 11:35:31 steve Exp $
+# $Id: Makefile,v 1.12 1999/08/15 06:50:01 cpiazza Exp $
 #
 
 DISTNAME=	Gtk---1.0.0
@@ -23,9 +23,9 @@ USE_X_PREFIX=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400004
-BUILD_DEPENDS=  eg++:${PORTSDIR}/lang/egcs
-CC=		egcc
-CXX=		eg++
+BUILD_DEPENDS=  g++295:${PORTSDIR}/lang/egcs
+CC=		gcc295
+CXX=		g++295
 .endif
 
 USE_GMAKE=	yes

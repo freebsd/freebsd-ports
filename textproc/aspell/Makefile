@@ -13,13 +13,13 @@ MASTER_SITES=	http://metalab.unc.edu/kevina/aspell/ \
 		ftp://ftp.kddlabs.co.jp/pub/Tools/aspell/ \
 		ftp://maroon.webmaster.com/pub/aspell/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	josh@quick.net
 
 .include <bsd.port.pre.mk>
-.if ${OSREL} < 4
-BUILD_DEPENDS=	eg++:${PORTSDIR}/lang/egcs
-CC=	egcc
-CXX=	eg++
+.if ${OSVERSION} < 400004
+BUILD_DEPENDS=	g++295:${PORTSDIR}/lang/egcs
+CC=	gcc295
+CXX=	g++295
 .endif
 
 GNU_CONFIGURE=	yes

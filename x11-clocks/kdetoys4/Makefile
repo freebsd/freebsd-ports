@@ -3,7 +3,7 @@
 # Date created:		18 may 1999
 # Whom:			imura@cs.titech.ac.jp
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/22 23:48:10 sada Exp $
+# $Id: Makefile,v 1.2 1999/08/12 00:47:33 taoka Exp $
 #
 
 DISTNAME=	kdetoys-1.1.1
@@ -34,9 +34,9 @@ CXXFLAGS?=	${CFLAGS}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400004
-CC=	egcc
-CXX=	eg++
-BUILD_DEPENDS= egcc:${PORTSDIR}/lang/egcs
+CC=	gcc295
+CXX=	g++295
+BUILD_DEPENDS= gcc295:${PORTSDIR}/lang/egcs
 .endif
 
 .if defined(QT_GIF_AVAILABLE)

@@ -3,7 +3,7 @@
 # Date created:        10 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.13 1999/05/12 22:45:03 asami Exp $
+# $Id: Makefile,v 1.14 1999/06/28 02:21:39 billf Exp $
 #
 
 DISTNAME=	guavac-1.2
@@ -15,9 +15,9 @@ MAINTAINER=	nacai@iname.com
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400004
-CC=		egcc
-CXX=		eg++
-BUILD_DEPENDS=	egcc:${PORTSDIR}/lang/egcs
+CC=		gcc295
+CXX=		g++295
+BUILD_DEPENDS=	gcc295:${PORTSDIR}/lang/egcs
 .endif
 
 USE_GMAKE=	yes
