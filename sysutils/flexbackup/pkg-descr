@@ -4,14 +4,14 @@ Features:
    o Easy to configure.
    o Uses dump, afio, tar, or cpio with the flick of a switch.
    o Backup, extract, compare, list modes.
+   o On-disk database support for TOC on tapes.
    o Compression and buffering options for all backup types.
    o Full (0) and 1-9 levels of incremental backup (ala "dump").
-   o Filesystem-oriented (won't traverse devices).
+   o Filesystem-oriented (won't traverse devices by default).
    o Does remote filesystems (over rsh/ssh; no special service).
    o Works with IDE/SCSI tapes
      or Linux ftape (allows table of contents support)
      or archive to normal files rather than device
    o Nice log files.
-
 
 WWW: http://members.home.com/edwinh/flexbackup/
