@@ -1,5 +1,5 @@
---- memtest.c.orig	Tue Jul 18 22:13:31 2000
-+++ memtest.c	Tue Jul 18 22:13:58 2000
+--- memtest.c.orig	Thu Dec 19 13:43:09 2002
++++ memtest.c	Thu Dec 19 13:42:49 2002
 @@ -20,6 +20,7 @@
  #include <stdio.h>
  #include <stdlib.h>
@@ -8,3 +8,14 @@
  #include <sys/mman.h>
  #include <signal.h>
  #include <unistd.h>
+@@ -249,6 +250,10 @@
+ 			if (!strcmp (argv[i], "all"))
+ 			{
+ 				membytes = 4095 << MB;
++				fprintf (stderr, "%s: ATTENTION: option '%s' might cause a segmentation"
++						 " fault crash on %s because it will try to test as much"
++						 " as 4G of memory even if your system does not have as much"
++						 " memory.\n", argv[0], argv[i], argv[0]);
+ 				continue;
+ 			}
+ 			t = (ui32) strtol (argv[i], &endptr, 0);
