@@ -225,7 +225,7 @@ STATIC_MODULE_CONFARG=	--enable-module=$${module}
 DSO_MODULE_CONFARG=	--enable-module=$${module} --enable-shared=$${module}
 .   else
 STATIC_MODULE_CONFARG=	--enable-$${module}
-DSO_MODULE_CONFARG=	--enable-$${module}-shared
+DSO_MODULE_CONFARG=	--enable-$${module}=shared
 .endif
 _CONFIGURE_ARGS!=	\
 			for module in ${APACHE_MODULES} ; do \
