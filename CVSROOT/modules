@@ -6173,6 +6173,7 @@ newvox		ports/games/newvox
 nexfontsel	ports/x11-fonts/nexfontsel
 nfbtrans	ports/textproc/nfbtrans
 nfdump		ports/net-mgmt/nfdump
+nfsshell	ports/net/nfsshell
 ng_daphne	ports/net/ng_daphne
 ng_netflow	ports/net/ng_netflow
 nget		ports/news/nget
