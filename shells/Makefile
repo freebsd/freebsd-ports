@@ -19,7 +19,6 @@
     SUBDIR += rc
     SUBDIR += sash
     SUBDIR += scponly
-    SUBDIR += tcsh
     SUBDIR += vshnu
     SUBDIR += wapsh
     SUBDIR += zsh
