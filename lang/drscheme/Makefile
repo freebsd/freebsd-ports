@@ -32,8 +32,6 @@ PLTHOME=	${PREFIX}/drscheme
 DRS_B=		drscheme mred mzc mzscheme tex2page help-desk
 MAN1=		drscheme.1 help-desk.1 mred.1 mzscheme.1 tex2page.1
 
-.include <bsd.port.pre.mk>
-
 ONLY_FOR_ARCHS=	i386
 
 post-install:
@@ -45,4 +43,4 @@ post-install:
 	${INSTALL_MAN} ${PLTHOME}/man/man1/$f ${PREFIX}/man/man1/
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
