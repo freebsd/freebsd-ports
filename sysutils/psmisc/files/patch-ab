@@ -1,0 +1,63 @@
+--- killall.c.orig	Tue Feb 17 15:05:21 1998
++++ killall.c	Sat Dec 19 22:01:20 1998
+@@ -12,6 +12,7 @@
+ #include <errno.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <sys/param.h>
+ 
+ #include "comm.h"
+ #include "signals.h"
+@@ -50,7 +51,6 @@
+     struct stat st,sts[MAX_NAMES];
+     int *name_len;
+     char path[PATH_MAX+1],comm[COMM_LEN];
+-    char command_buf[PATH_MAX+1];
+     char *command;
+     pid_t *pid_table,pid,self,*pid_killed;
+     int empty,i,j,okay,length,got_long,error;
+@@ -103,33 +103,15 @@
+ 	exit(1);
+     }
+     for (i = 0; i < pids; i++) {
+-	sprintf(path,"%s/%d/stat",PROC_BASE,pid_table[i]);
++	sprintf(path,"%s/%d/status",PROC_BASE,pid_table[i]);
+ 	if (!(file = fopen(path,"r"))) continue;
+ 	empty = 0;
+-	okay = fscanf(file,"%*d (%[^)]",comm) == 1;
++	okay = fscanf(file,"%s",comm) == 1;
+ 	(void) fclose(file);
+ 	if (!okay) continue;
+ 	got_long = 0;
+ 	command = NULL; /* make gcc happy */
+ 	length = strlen(comm);
+-	if (length == COMM_LEN-1) {
+-	    sprintf(path,"%s/%d/cmdline",PROC_BASE,pid_table[i]);
+-	    if (!(file = fopen(path,"r"))) continue;
+-	    okay = fscanf(file,"%s",command_buf) == 1;
+-	    (void) fclose(file);
+-	    if (exact && !okay) {
+-		if (verbose)
+-		    fprintf(stderr,"skipping partial match %s(%d)\n",comm,
+-		      pid_table[i]);
+-		continue;
+-	    }
+-	    got_long = okay;
+-	    if (okay) {
+-		command = strrchr(command_buf,'/');
+-		if (command) command++;
+-		else command = command_buf;
+-	    }
+-	}
+ 	for (j = 0; j < names; j++) {
+ 	    if (!sts[j].st_dev) {
+ 		if (length != COMM_LEN-1 || name_len[j] < COMM_LEN-1) {
+@@ -139,7 +121,7 @@
+ 		      strncmp(namelist[j],comm,COMM_LEN-1)) continue;
+ 	    }
+ 	    else {
+-		sprintf(path,"%s/%d/exe",PROC_BASE,pid_table[i]);
++		sprintf(path,"%s/%d/file",PROC_BASE,pid_table[i]);
+ 		if (stat(path,&st) < 0) continue;
+ 		if (sts[j].st_dev != st.st_dev || sts[j].st_ino != st.st_ino)
+ 		    continue;
