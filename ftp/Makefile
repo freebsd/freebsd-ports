@@ -45,7 +45,6 @@
     SUBDIR += lukemftpd
     SUBDIR += mget
     SUBDIR += mirror
-    SUBDIR += moxftp
     SUBDIR += muddleftpd
     SUBDIR += ncftp
     SUBDIR += ncftp2
