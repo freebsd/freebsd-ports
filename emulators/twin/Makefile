@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.willows.com/pub/development/
 MAINTAINER=	giffunip@asme.org
 
 WRKSRC=		$(WRKDIR)/twin
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	depend world
