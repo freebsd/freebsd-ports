@@ -334,15 +334,12 @@ lib/libDtPrint.so
 lib/libDtPrint.so.1
 lib/libUil.a
 lib/libUil.so
-lib/libUil.so.1
 lib/libUil.so.2
 lib/libMrm.a
 lib/libMrm.so
-lib/libMrm.so.1
 lib/libMrm.so.2
 lib/libXm.a
 lib/libXm.so
-lib/libXm.so.1
 lib/libXm.so.2
 @unexec rm -f %D/LessTif/doc/Lessdox
 @dirrm LessTif/doc/images
