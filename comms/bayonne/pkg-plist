@@ -20,7 +20,6 @@ libexec/tgi/sendmail.pl
 libexec/tgi/testtgi.pl
 libexec/tgi/tgigetdbval.pl
 libexec/tgi/tgisetdbval.pl
-man/man8/bayonne.8
 share/aascripts/cidlog.scr
 share/aascripts/playrec.scr
 share/aascripts/playrec1.scr
