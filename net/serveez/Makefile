@@ -9,9 +9,8 @@
 PORTNAME=	serveez
 PORTVERSION=	0.1.5
 CATEGORIES=	net devel
-MASTER_SITES=	${MASTER_SITE_GNU} \
+MASTER_SITES=	ftp://gatekeeper.dec.com/pub/GNU/serveez/ \
 		http://www.textsure.net/~ela/download/
-MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server framework
