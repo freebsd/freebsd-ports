@@ -47,11 +47,8 @@ pre-everything::
 	@${ECHO_MSG}
 .endif
 
-post-patch:
-	@${FIND} ${WRKSRC} -name 'Makefile.in*' | ${XARGS} ${REINPLACE_CMD} \
-		-E -e 's|(SUBDIRS[[:space:]]+=.*)intl|\1| ; \
-		s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ;'
 .if defined(WITH_MPG321)
+post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's/^(#define MPG123_BINARY "mpg)123"/\1321"/' \
 		${WRKSRC}/src/io_mpg123.c
