@@ -111,6 +111,7 @@
     SUBDIR += libdjvu++
     SUBDIR += libflash
     SUBDIR += libfpx
+    SUBDIR += libgdgeda
     SUBDIR += libggi
     SUBDIR += libgrass5
     SUBDIR += libimg
