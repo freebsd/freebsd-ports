@@ -25,7 +25,7 @@ RUN_DEPENDS=	${X11BASE}/lib/epiphany-1.4/extensions/libgesturesextension.so:${PO
 		cog:${PORTSDIR}/sysutils/cog \
 		gnome-blog-poster:${PORTSDIR}/deskutils/gnomeblog \
 		gnome-keyring-manager:${PORTSDIR}/security/gnomekeyringmanager \
-		gnomesu:${PORTSDIR}/sysutils/gnomesu
+		gnomesu:${PORTSDIR}/security/libgnomesu
 
 NO_BUILD=	yes
 
