@@ -1,26 +1,20 @@
---- Configure.orig	Sat Feb 10 04:41:40 1996
-+++ Configure	Sat Jan  9 18:33:14 1999
-@@ -159,9 +159,12 @@
- PROG = netris
- HEADERS = netris.h
+--- Configure.orig	Mon Dec 20 14:58:16 1999
++++ Configure	Mon Dec 20 15:00:24 1999
+@@ -85,7 +85,7 @@
+ echo "Checking for libraries"
+ echo 'main(){}' > test.c
+ LFLAGS=""
+-for lib in -lcurses -lncurses; do
++for lib in -lncurses -lcurses; do
+ 	if $CC $CFLAGS $LEXTRA test.c $lib > /dev/null 2>&1; then
+ 		LFLAGS="$lib"
+ 	fi
+@@ -285,7 +285,7 @@
  
-+PREFIX?=/usr/local
- SRCS = -SRCS-
- OBJS = -OBJS-
- DISTFILES = -DISTFILES-
-+DESTDIR= $(PREFIX)/bin
-+MANDIR=     $(PREFIX)/man
- 
- all: Makefile config.h proto.h $(PROG) sr
- 
-@@ -217,6 +220,10 @@
- 
- cleandir: clean
- 	rm -f .depend Makefile config.h
-+
-+install:
-+	install -c -o bin -g bin -s -m 755 $(PROG) $(DESTDIR)
-+	install -c -o bin -g bin -s -m 755 sr $(DESTDIR)/sample-robot
+ install:
+ 	$(INSTALL) -o bin -g bin -s -m 755 $(PROG) $(DESTDIR)
+-	$(INSTALL) -o bin -g bin -s -m 755 sr $(DESTDIR)
++	$(INSTALL) -o bin -g bin -s -m 755 sr $(DESTDIR)/sample-robot
  
  ##### DO NOT EDIT OR DELETE THIS LINE, it's needed by make depend #####
  END
