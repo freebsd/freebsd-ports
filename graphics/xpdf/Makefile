@@ -14,9 +14,11 @@ MASTER_SITE_SUBDIR=support/xpdf
 EXTRACT_SUFX=	.tgz
 
 .if defined(USA_RESIDENT) && !defined(PACKAGE_BUILDING)
+.if ${USA_RESIDENT} == YES || ${USA_RESIDENT} == yes
 PATCH_SITES=	http://www.fefe.de/
 PATCHFILES=	xpdf-0.90-fefe-diff.gz
 PATCH_DIST_STRIP= -p1
+.endif
 .endif
 
 MAINTAINER=	chuckr@freebsd.org
@@ -25,7 +27,9 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		t1.9:${PORTSDIR}/devel/t1lib
 
 .if defined(USA_RESIDENT) && !defined(PACKAGE_BUILDING)
+.if ${USA_RESIDENT} == YES || ${USA_RESIDENT} == yes
 RESTRICTED=     "Contains cryptography"
+.endif
 .endif
 USE_XLIB=	yes
 USE_X_PREFIX=	yes
