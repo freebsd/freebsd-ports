@@ -26,6 +26,7 @@ lib/libxml.so.5
 share/gnome-xml/DOM.gif
 share/gnome-xml/FAQ.html
 share/gnome-xml/book1.html
+share/gnome-xml/encoding.html
 share/gnome-xml/gnome-xml-debugxml.html
 share/gnome-xml/gnome-xml-encoding.html
 share/gnome-xml/gnome-xml-entities.html
