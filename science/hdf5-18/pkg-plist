@@ -67,7 +67,6 @@ include/mfhdf.h
 include/mstdio.h
 include/netcdf.h
 include/netcdf.inc
-include/patchlevel.h
 include/sys_dir_mac.h
 include/tbbt.h
 include/trace.h
