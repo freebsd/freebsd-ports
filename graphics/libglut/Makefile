@@ -17,6 +17,7 @@ COMMENT=	A graphics library similar to SGI's OpenGL
 
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
+USE_GL=		yes
 
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/src-glut
@@ -24,8 +25,4 @@ WRKSRC=		${WRKDIR}/Mesa-${PORTVERSION}/src-glut
 pre-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 
-.include <bsd.port.pre.mk>
-.if ${XFREE86_VERSION} == 3
-LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/mesagl
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
