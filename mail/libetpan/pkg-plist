@@ -7,8 +7,11 @@ include/libetpan/clist.h
 include/libetpan/generic_cache.h
 include/libetpan/imapdriver.h
 include/libetpan/imapdriver_cached.h
+include/libetpan/imapstorage.h
+include/libetpan/libetpan.h
 include/libetpan/mail.h
 include/libetpan/maildriver.h
+include/libetpan/maildriver_tools.h
 include/libetpan/maildriver_types.h
 include/libetpan/mailimap.h
 include/libetpan/mailimap_helper.h
@@ -23,6 +26,7 @@ include/libetpan/mailimf_write.h
 include/libetpan/mailmbox.h
 include/libetpan/mailmbox_types.h
 include/libetpan/mailmessage.h
+include/libetpan/mailmessage_tools.h
 include/libetpan/mailmessage_types.h
 include/libetpan/mailmh.h
 include/libetpan/mailmime.h
@@ -43,6 +47,7 @@ include/libetpan/mailsmtp_socket.h
 include/libetpan/mailsmtp_ssl.h
 include/libetpan/mailsmtp_types.h
 include/libetpan/mailstorage.h
+include/libetpan/mailstorage_types.h
 include/libetpan/mailstream.h
 include/libetpan/mailstream_helper.h
 include/libetpan/mailstream_low.h
@@ -53,8 +58,10 @@ include/libetpan/mailthread.h
 include/libetpan/mailthread_types.h
 include/libetpan/mboxdriver.h
 include/libetpan/mboxdriver_cached.h
+include/libetpan/mboxstorage.h
 include/libetpan/mhdriver.h
 include/libetpan/mhdriver_cached.h
+include/libetpan/mhstorage.h
 include/libetpan/mmapstring.h
 include/libetpan/newsnntp.h
 include/libetpan/newsnntp_socket.h
@@ -62,8 +69,11 @@ include/libetpan/newsnntp_ssl.h
 include/libetpan/newsnntp_types.h
 include/libetpan/nntpdriver.h
 include/libetpan/nntpdriver_cached.h
+include/libetpan/nntpdriver_tools.h
+include/libetpan/nntpstorage.h
 include/libetpan/pop3driver.h
 include/libetpan/pop3driver_cached.h
+include/libetpan/pop3storage.h
 lib/libetpan.a
 lib/libetpan.so
 lib/libetpan.so.0
