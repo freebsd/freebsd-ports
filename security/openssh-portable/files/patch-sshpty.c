@@ -1,12 +1,12 @@
---- sshpty.c.orig	Wed Jun 26 01:21:42 2002
-+++ sshpty.c	Fri Jun 28 07:09:38 2002
-@@ -30,6 +30,9 @@
- #ifdef HAVE_PTY_H
- # include <pty.h>
- #endif
+--- sshpty.c.orig	Wed Jan 21 07:07:17 2004
++++ sshpty.c	Wed Feb 25 11:58:54 2004
+@@ -17,6 +17,9 @@
+ #ifdef HAVE_UTIL_H
+ # include <util.h>
+ #endif /* HAVE_UTIL_H */
 +#ifdef HAVE_LIBUTIL_H
 +#include <libutil.h>
 +#endif
- #if defined(HAVE_DEV_PTMX) && defined(HAVE_SYS_STROPTS_H)
- # include <sys/stropts.h>
- #endif
+ 
+ #include "sshpty.h"
+ #include "log.h"
