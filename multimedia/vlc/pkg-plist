@@ -79,7 +79,6 @@ lib/vlc/demux/libdemuxdump_plugin.so
 lib/vlc/demux/libdemuxsub_plugin.so
 lib/vlc/demux/libdtssys_plugin.so
 lib/vlc/demux/libid3_plugin.so
-lib/vlc/demux/libid3tag_plugin.so
 lib/vlc/demux/libm3u_plugin.so
 lib/vlc/demux/libm4v_plugin.so
 lib/vlc/demux/libmp4_plugin.so
@@ -89,7 +88,6 @@ lib/vlc/demux/libmpgv_plugin.so
 lib/vlc/demux/libogg_plugin.so
 lib/vlc/demux/libps_plugin.so
 lib/vlc/demux/librawdv_plugin.so
-%%LIBDVBPSI%%lib/vlc/demux/libts_dvbpsi_plugin.so
 lib/vlc/demux/libts_plugin.so
 lib/vlc/demux/libwav_plugin.so
 lib/vlc/gui/libgtk_plugin.so
@@ -119,7 +117,6 @@ lib/vlc/mux/libmux_dummy_plugin.so
 lib/vlc/mux/libmux_mp4_plugin.so
 lib/vlc/mux/libmux_ogg_plugin.so
 lib/vlc/mux/libmux_ps_plugin.so
-%%LIBDVBPSI%%lib/vlc/mux/libmux_ts_dvbpsi_plugin.so
 lib/vlc/mux/libmux_ts_plugin.so
 lib/vlc/packetizer/libpacketizer_copy_plugin.so
 lib/vlc/packetizer/libpacketizer_mpeg4audio_plugin.so
