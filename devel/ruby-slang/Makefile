@@ -39,7 +39,11 @@ DOCS_JA=	README.euc
 
 .include <bsd.port.pre.mk>
 
+.if defined(PKGNAMEPREFIX)
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}ruby-
+.else
+PKGNAMEPREFIX=	ruby-
+.endif
 
 do-configure:
 	@cd ${WRKSRC}; \
