@@ -1,5 +1,5 @@
---- handlers.c.orig	Thu Sep 18 15:26:48 2003
-+++ handlers.c	Thu Oct 16 14:16:05 2003
+--- handlers.c.orig	Mon Oct 20 10:27:32 2003
++++ handlers.c	Tue Oct 21 00:13:59 2003
 @@ -24,6 +24,7 @@
  #endif
  
@@ -8,10 +8,10 @@
  extern int port;                     /* server port */
  extern char defaultFileName[MAX_PATH_LEN+1]; /* default name for index, default or similar file */
  
-@@ -262,12 +263,33 @@
-         newArgv[i] = NULL; /* we correctly terminate argv */
+@@ -263,6 +264,14 @@
          
          i = 0;
+ 	/* beware of not overfilling this array, check MAX_ENVP_LEN */
 +        if (req.contentLength != -1)
 +        {
 +            sprintf(newEnvp[i++], "CONTENT_LENGTH=%ld", req.contentLength);
@@ -23,33 +23,19 @@
          strcpy(newEnvp[i], "SERVER_SOFTWARE=");
          strcat(newEnvp[i], SERVER_SOFTWARE_STR);
          strcat(newEnvp[i], "/");
-         strcat(newEnvp[i++], SERVER_VERSION_STR);
-+        strcpy(newEnvp[i], "SERVER_PROTOCOL=");
-+        strcat(newEnvp[i++], req.protocolVersion);
-         strcpy(newEnvp[i], "REQUEST_METHOD=");
-         strcat(newEnvp[i++], req.method);
-+        strcpy(newEnvp[i], "REMOTE_ADDR=");
-+        strcat(newEnvp[i++], req.address);
-+        strcpy(newEnvp[i], "HTTP_USER_AGENT=");
-+        strcat(newEnvp[i++], req.userAgent);
+@@ -285,6 +294,11 @@
+ 	strcat(newEnvp[i++], req.userAgent);
+ 	strcpy(newEnvp[i], "SCRIPT_FILENAME=");
+ 	strcat(newEnvp[i++], completedPath);
 +        if (req.cookie[0] != '\0')
 +        {
 +            strcpy(newEnvp[i], "HTTP_COOKIE=");
 +            strcat(newEnvp[i++], req.cookie);
 +        }
-+        strcpy(newEnvp[i], "SCRIPT_FILENAME=");
-+        strcat(newEnvp[i++], completedPath);
-         strcpy(newEnvp[i], "SCRIPT_NAME=");
-         strcat(newEnvp[i++], req.documentAddress);
-         strcpy(newEnvp[i], "GATEWAY_INTERFACE=");
-@@ -302,13 +324,256 @@
-         execve(completedPath, newArgv, newEnvp);
- 	/* we reach this line only if an execution error occoured */
- 	/* logging will happen in the father */
--	printf("\n<HTML><HEAD><TITLE>CGI Error</TITLE></HEAD><BODY><H1>Cgi Exec error</H1></BODY></HTML>\n");
-+	printf("\n<HTML><HEAD><TITLE>CGI Error</TITLE></HEAD><BODY><H1>CGI Exec error</H1></BODY></HTML>\n");
-         exit(-1);        
-     }
+         newEnvp[i] = NULL;
+         
+         /* we change the current working directory to the scripts one */
+@@ -317,7 +331,244 @@
      return 0;
  }
  
@@ -228,33 +214,14 @@
 +        newArgv[i] = NULL; /* we correctly terminate argv */
 +
 +        i = 0;
-+        if (req.contentLength != -1)
-+        {
-+            sprintf(newEnvp[i++], "CONTENT_LENGTH=%ld", req.contentLength);
-+            strcpy(newEnvp[i], "CONTENT_TYPE=");
-+            strcat(newEnvp[i++], req.contentType);
-+        }
 +        strcpy(newEnvp[i], "SERVER_NAME=");
 +        strcat(newEnvp[i++], DEFAULT_SERVER_NAME);
 +        strcpy(newEnvp[i], "SERVER_SOFTWARE=");
 +        strcat(newEnvp[i], SERVER_SOFTWARE_STR);
 +        strcat(newEnvp[i], "/");
 +        strcat(newEnvp[i++], SERVER_VERSION_STR);
-+        strcpy(newEnvp[i], "SERVER_PROTOCOL=");
-+        strcat(newEnvp[i++], req.protocolVersion);
 +        strcpy(newEnvp[i], "REQUEST_METHOD=");
 +        strcat(newEnvp[i++], req.method);
-+        strcpy(newEnvp[i], "REMOTE_ADDR=");
-+        strcat(newEnvp[i++], req.address);
-+        strcpy(newEnvp[i], "HTTP_USER_AGENT=");
-+        strcat(newEnvp[i++], req.userAgent);
-+        if (req.cookie[0] != '\0')
-+        {
-+            strcpy(newEnvp[i], "HTTP_COOKIE=");
-+            strcat(newEnvp[i++], req.cookie);
-+        }
-+        strcpy(newEnvp[i], "SCRIPT_FILENAME=");
-+        strcat(newEnvp[i++], completedPath);
 +        strcpy(newEnvp[i], "SCRIPT_NAME=");
 +        strcat(newEnvp[i++], req.documentAddress);
 +        strcpy(newEnvp[i], "GATEWAY_INTERFACE=");
@@ -263,6 +230,19 @@
 +        strcpy(newEnvp[i++], envPath);
 +        strcpy(newEnvp[i], "QUERY_STRING=");
 +        strcat(newEnvp[i++], req.queryString);
++        strcpy(newEnvp[i], "SERVER_PROTOCOL=");
++        strcat(newEnvp[i++], req.protocolVersion);
++        strcpy(newEnvp[i], "REMOTE_ADDR=");
++        strcat(newEnvp[i++], req.address);
++        strcpy(newEnvp[i], "HTTP_USER_AGENT=");
++        strcat(newEnvp[i++], req.userAgent);
++        strcpy(newEnvp[i], "SCRIPT_FILENAME=");
++        strcat(newEnvp[i++], completedPath);
++        if (req.cookie[0] != '\0')
++        {
++            strcpy(newEnvp[i], "HTTP_COOKIE=");
++            strcat(newEnvp[i++], req.cookie);
++        }
 +        newEnvp[i] = NULL;
 +
 +        /* we change the current working directory to the scripts one */
@@ -301,7 +281,7 @@
  int sock;
  char filePath[];
  char mimeType[];
-@@ -351,11 +616,11 @@
+@@ -360,11 +611,11 @@
          return -1;
      }
      stat(filePath, &fileStats);
@@ -315,7 +295,7 @@
          fatal = NO;
          retry = NO;
          while(!feof(inFile) && !fatal)
-@@ -399,11 +664,11 @@
+@@ -408,11 +659,11 @@
              if (howMany > 0)
              {
  #ifdef ON_THE_FLY_CONVERSION
@@ -332,31 +312,3 @@
  #endif
                  if (send(sock, outBuff, howMany, 0) < 0)
                  {
-@@ -449,7 +714,7 @@
-     FILE *tempFile;
-     size_t generatedBytes;
-     char tempStr[MAX_PATH_LEN+1];
--    char linkStr[MAX_PATH_LEN+1];
-+    char linkStr[MAX_PATH_LEN+2];
-     time_t currTime;
-     char timeStr[256];
-     
-@@ -497,10 +762,16 @@
-         if (strcmp(dp->d_name, ".")) /* not self */
-         {
-             if (strcmp(dp->d_name, ".."))
-+            {
-                 strcpy(linkStr, dp->d_name);
--            else
-+                if (dp->d_type == DT_DIR)
-+                    strcat(linkStr, "/");
-+                sprintf(tempStr, "<A HREF=\"%s\">%s</A><BR>\n", linkStr, linkStr);
-+            } else
-+            {
-                 strcpy(linkStr, "Parent Directory");
--            sprintf(tempStr, "<A HREF=\"%s\">%s</A><BR>\n", dp->d_name, linkStr);
-+                sprintf(tempStr, "<A HREF=\"%s/\">%s</A><BR>\n", dp->d_name, linkStr);
-+            }
-             generatedBytes += strlen(tempStr);
-             fprintf(tempFile, "%s\n", tempStr);
-         }
