@@ -1,12 +1,12 @@
---- Makefile.in.orig	Sat May  3 22:37:14 2003
-+++ Makefile.in	Tue May 13 12:14:27 2003
+--- Makefile.in.orig	Sat Jun  7 03:31:46 2003
++++ Makefile.in	Sun Oct  5 12:51:37 2003
 @@ -16,7 +16,8 @@
  IBINDIR = $(RPM_BUILD_ROOT)$(BINDIR)
  sysconfdir = @sysconfdir@
  
--CPPFLAGS = -DSYSCONFDIR="\"$(sysconfdir)\""
-+CPPFLAGS = -DSYSCONFDIR="\"$(sysconfdir)\"" -I${prefix}/include
+-CPPFLAGS += -DSYSCONFDIR="\"$(sysconfdir)\""
++CPPFLAGS += -DSYSCONFDIR="\"$(sysconfdir)\"" -I${prefix}/include
 +LDFLAGS += -L${prefix}/lib
- LIBS = @LIBS@
+ LIBS += @LIBS@
  
  edit = sed \
