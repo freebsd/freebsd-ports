@@ -22,7 +22,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.if defined(WITH_GNOME)
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
 USE_GNOME=	yes
 .endif
 
@@ -40,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gqview
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
