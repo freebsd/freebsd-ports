@@ -1,0 +1,12 @@
+Net::Ping::External is a module which interfaces with the "ping"
+command on many systems. It presently provides a single function,
+ping(), that takes in a hostname and (optionally) a timeout and
+returns true if the host is alive, and false otherwise. Unless you
+have the ability (and willingness) to run your scripts as the
+superuser on your system, this module will probably provide more
+accurate results than Net::Ping will.
+
+WWW: http://search.cpan.org/dist/Net-Ping-External/
+
+- Douglas Thrift
+douglas@douglasthrift.net
