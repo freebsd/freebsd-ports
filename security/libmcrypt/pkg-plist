@@ -1,9 +1,5 @@
-bin/%%CONFIGURE_TARGET%%-libmcrypt-config
+bin/libmcrypt-config
 include/mcrypt.h
-lib/libmcrypt.a
-lib/libmcrypt.la
-lib/libmcrypt.so
-lib/libmcrypt.so.6
 lib/libmcrypt/arcfour.la
 lib/libmcrypt/arcfour.so
 lib/libmcrypt/blowfish-compat.la
@@ -28,6 +24,8 @@ lib/libmcrypt/gost.la
 lib/libmcrypt/gost.so
 lib/libmcrypt/loki97.la
 lib/libmcrypt/loki97.so
+lib/libmcrypt/ncfb.la
+lib/libmcrypt/ncfb.so
 lib/libmcrypt/nofb.la
 lib/libmcrypt/nofb.so
 lib/libmcrypt/ofb.la
@@ -62,5 +60,9 @@ lib/libmcrypt/wake.la
 lib/libmcrypt/wake.so
 lib/libmcrypt/xtea.la
 lib/libmcrypt/xtea.so
-@dirrm lib/libmcrypt
+lib/libmcrypt.a
+lib/libmcrypt.la
+lib/libmcrypt.so
+lib/libmcrypt.so.6
 share/aclocal/libmcrypt.m4
+@dirrm lib/libmcrypt
