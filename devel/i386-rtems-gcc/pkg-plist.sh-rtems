@@ -234,7 +234,6 @@ share/locale/sv/LC_MESSAGES/gcc.mo
 share/locale/da/LC_MESSAGES/gcc.mo
 share/locale/el/LC_MESSAGES/gcc.mo
 share/locale/nl/LC_MESSAGES/gcc.mo
-share/locale/locale.alias
 sh-rtems/bin/c++
 sh-rtems/bin/g++
 sh-rtems/bin/gcc

@@ -253,7 +253,6 @@ share/locale/sv/LC_MESSAGES/gcc.mo
 share/locale/da/LC_MESSAGES/gcc.mo
 share/locale/el/LC_MESSAGES/gcc.mo
 share/locale/nl/LC_MESSAGES/gcc.mo
-share/locale/locale.alias
 i386-rtems/bin/gcc
 i386-rtems/bin/c++
 i386-rtems/bin/g++
