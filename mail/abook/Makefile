@@ -22,5 +22,6 @@ LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 GNU_CONFIGURE=	yes
 
 MAN1=		abook.1
+MAN5=		abookrc.5
 
 .include <bsd.port.post.mk>
