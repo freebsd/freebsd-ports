@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skalibs
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	devel
 MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 
@@ -26,7 +26,8 @@ do-build:
 do-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/library/* ${PREFIX}/lib
+	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/library/* ${PREFIX}/lib/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
