@@ -17,7 +17,7 @@ MAINTAINER=	anton@urc.ac.ru
 NO_BUILD=	YES
 
 # Needed for update.pl
-RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/mach/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
+RUN_DEPENDS=    ${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/String/CRC32.pm:${PORTSDIR}/devel/p5-String-CRC32
 
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 
