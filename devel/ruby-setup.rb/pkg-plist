@@ -1,0 +1,9 @@
+%%RUBY_SITELIBDIR%%/setup.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/changes.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/usage.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/ja/changes.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/ja/index.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/setup.rb/ja/usage.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/setup.rb/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/setup.rb

@@ -444,6 +444,7 @@
     SUBDIR += ruby-rbison
     SUBDIR += ruby-rudl
     SUBDIR += ruby-sdl
+    SUBDIR += ruby-setup.rb
     SUBDIR += ruby-slang
     SUBDIR += ruby-strscan
     SUBDIR += ruby-sysvipc
