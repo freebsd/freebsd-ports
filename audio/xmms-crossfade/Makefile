@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmms-crossfade
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.netcologne.de/~nc-eisenlpe2/xmms-crossfade/ \
 		ftp://ftp.falsehope.com/pub/xmms-crossfade/
@@ -19,9 +19,6 @@ USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
-
-post-configure:
-	${PERL} -pi.bak -e 's:linkopts=\Z:linkopts=-nostartfiles:' \
-	  ${WRKSRC}/libtool
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
