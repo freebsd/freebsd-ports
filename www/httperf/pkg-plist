@@ -1,6 +1,0 @@
-bin/httperf
-%%PORTDOCS%%share/doc/httperf/ChangeLog
-%%PORTDOCS%%share/doc/httperf/NEWS
-%%PORTDOCS%%share/doc/httperf/README
-%%PORTDOCS%%share/doc/httperf/TODO
-%%PORTDOCS%%@dirrm share/doc/httperf

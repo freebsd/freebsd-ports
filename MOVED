@@ -1140,3 +1140,4 @@ net/samba-devel|net/samba3|2004-06-07|considered stable
 chinese/mkisofs|sysutils/cdrtools-cjk|2004-06-07|replaced by a superset
 chinese/cdrtools|sysutils/cdrtools-cjk|2004-06-07|replaced by a superset
 devel/libltdl|devel/libltdl15|2004-06-08|autotools cleanup
+www/httperf|benchmarks/httperf|2004-06-10|moved to more accurate category
