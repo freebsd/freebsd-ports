@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
@@ -20,8 +20,7 @@ RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla
 .endif
 
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack gconf2 libxml2 libgtkhtml \
-		gnomevfs2
+USE_GNOME=	gnomeprefix gnomehack libgtkhtml
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
@@ -42,8 +41,5 @@ post-patch:
 	${REINPLACE_CMD} -e 's,gtkmozembed,donttrythis,g' \
 		${WRKSRC}/configure
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
