@@ -8730,6 +8730,7 @@ sted		ports/editors/sted
 stegdetect	ports/security/stegdetect
 steghide	ports/security/steghide
 stella		ports/emulators/stella
+stellarium	ports/astro/stellarium
 sting		ports/net/sting
 stk		ports/lang/STk
 stklos		ports/lang/stklos
