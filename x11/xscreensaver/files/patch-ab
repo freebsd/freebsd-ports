@@ -20,4 +20,18 @@
 +#fi
  
  
+
+@@ -11658,8 +11658,12 @@
  
+ # M4 sucks!!
+ 
+-rpmv=`(rpm -qv xscreensaver) 2>&- | \
++case `uname` in
++[Ll]inux)
++  rpmv=`(rpm -qv xscreensaver) 2>&- | \
+       sed -n 's/^xscreensaver-\([0-9][0-9]*[.][0-9][0-9]*\)-.*$/\1/p'`
++  ;;
++esac
+ 
+ 
+ if test \! -z "$rpmv" ; then
