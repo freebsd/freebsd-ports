@@ -1,18 +1,18 @@
 # New ports collection makefile for:	Xaw3d
-# Version required:	1.1
+# Version required:	1.2
 # Date created:		18 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.7 1995/04/12 20:30:39 asami Exp $
+# $Id: Makefile,v 1.8 1995/06/24 11:42:13 asami Exp $
 #
 
-DISTNAME=	Xaw3d-1.1
+DISTNAME=	Xaw3d-1.2
 CATEGORIES+=	x11
 MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/widgets/Xaw3d/R6/
 
 MAINTAINER=	asami@FreeBSD.ORG
 
-WRKSRC=		${WRKDIR}/lib/Xaw3d
+WRKSRC=		${WRKDIR}/xc/lib/Xaw3d
 USE_IMAKE=	yes
 
 post-install:
