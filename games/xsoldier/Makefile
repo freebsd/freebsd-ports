@@ -9,7 +9,7 @@ PORTNAME=	xsoldier
 PORTVERSION=	0.96
 CATEGORIES=	games
 # mastersite disappeared in December 2002
-MASTER_SITES=	http://www.surfline.ne.jp/hachi/xsoldier/
+MASTER_SITES=	# http://www.surfline.ne.jp/hachi/xsoldier/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shooting game for x11
