@@ -14,6 +14,7 @@ mingw32/include/cguid.h
 mingw32/include/comcat.h
 mingw32/include/commctrl.h
 mingw32/include/commdlg.h
+mingw32/include/complex.h
 mingw32/include/conio.h
 mingw32/include/cpl.h
 mingw32/include/cplext.h
