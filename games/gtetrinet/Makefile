@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtetrinet
-PORTVERSION=	0.7.7
-PORTREVISION=	2
+PORTVERSION=	0.7.8
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -15,7 +14,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	A version of the popular TetriNET multiplayer tetris clone
 
-PATCH_STRIP=	-p1
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	esound gnomehack gnomeprefix gnometarget libgnomeui

@@ -31,6 +31,11 @@ share/locale/nl/LC_MESSAGES/gtetrinet.mo
 share/locale/no/LC_MESSAGES/gtetrinet.mo
 share/locale/pl/LC_MESSAGES/gtetrinet.mo
 share/locale/pt/LC_MESSAGES/gtetrinet.mo
+share/locale/it/LC_MESSAGES/gtetrinet.mo
+share/locale/ko/LC_MESSAGES/gtetrinet.mo
+share/locale/pa/LC_MESSAGES/gtetrinet.mo
+share/locale/nb/LC_MESSAGES/gtetrinet.mo
+share/locale/zh_CN/LC_MESSAGES/gtetrinet.mo
 share/locale/pt_BR/LC_MESSAGES/gtetrinet.mo
 share/locale/ru/LC_MESSAGES/gtetrinet.mo
 share/locale/sr/LC_MESSAGES/gtetrinet.mo
