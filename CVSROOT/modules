@@ -5918,7 +5918,6 @@ pkfonts400	ports/print/pkfonts400
 pkfonts600	ports/print/pkfonts600
 pkg_install	src/usr.sbin/pkg_install
 pkg_remove	ports/sysutils/pkg_remove
-pkg_tarup	ports/misc/pkg_tarup
 pkg_tree	ports/sysutils/pkg_tree
 pkgconfig	ports/devel/pkgconfig
 pks		ports/security/pks
