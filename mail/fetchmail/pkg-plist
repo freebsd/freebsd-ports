@@ -1,6 +1,12 @@
 bin/fetchmail
 bin/fetchmailconf
 libexec/fetchmailconf.bin
+share/locale/es/LC_MESSAGES/fetchmail.mo
+share/locale/fr/LC_MESSAGES/fetchmail.mo
+share/locale/pl/LC_MESSAGES/fetchmail.mo
+share/locale/pt_BR/LC_MESSAGES/fetchmail.mo
+share/locale/cs/LC_MESSAGES/fetchmail.mo
+share/locale/gl/LC_MESSAGES/fetchmail.mo
 share/doc/fetchmail/COPYING
 share/doc/fetchmail/FAQ
 share/doc/fetchmail/FEATURES
@@ -11,3 +17,6 @@ share/doc/fetchmail/fetchmail-FAQ.html
 share/doc/fetchmail/fetchmail-features.html
 share/doc/fetchmail/sample.rcfile
 @dirrm share/doc/fetchmail
+@unexec rmdir %D/share/locale/*/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/* 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true

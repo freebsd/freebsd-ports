@@ -17,9 +17,13 @@ MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
 MAINTAINER=	ve@sci.fi
 
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-OPIE --enable-RPA --enable-POP2 --enable-SDPS
-CONFIGURE_ENV=  LDFLAGS="${CFLAGS}"
+CONFIGURE_ARGS= --enable-OPIE --enable-RPA --enable-POP2 --enable-SDPS \
+		--enable-nls
+CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 MAN1=		fetchmail.1
 MLINKS=		fetchmail.1 fetchmailconf.1
 

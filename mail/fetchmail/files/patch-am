@@ -1,0 +1,11 @@
+--- configure~	Sat May 27 12:41:32 2000
++++ configure	Sat May 27 12:45:12 2000
+@@ -5010,7 +5010,7 @@
+ if test "$USE_NLS" = "yes"
+ then
+ 	echo 'Enabling internationalization support...'
+-	POMAKE='$(MAKE) -C po'
++	POMAKE='cd po ; $(MAKE)'
+   	if test "x$prefix" != xNONE; then
+ 		EXTRADEFS="$EXTRADEFS -DLOCALEDIR='\"$prefix/share/locale\"'"
+   	else
