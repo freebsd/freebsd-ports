@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	2.9.6
-PORTREVISION=	3
+PORTVERSION=	2.9.7
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,11 +18,10 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
-WANT_GNOME=	yes
-USE_GNOME=	gnometarget
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOCONF_VER=	257
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-qt-moc=${QT_PREFIX}/bin \
 		--with-qt-libs=${QT_PREFIX}/lib
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
@@ -41,14 +39,6 @@ USE_MYSQL=	yes
 
 .if ${OSVERSION} < 500035
 CXXFLAGS+=	-fpermissive
-.endif
-
-.if ${HAVE_GNOME:Mlibxml}!=""
-USE_GNOME+=	libxml
-CONFIGURE_ARGS+=	--enable-xml
-PLIST_SUB+=	LIBXML=""
-.else
-PLIST_SUB+=	LIBXML="@comment "
 .endif
 
 .if defined(WITH_MYSQL)
@@ -83,7 +73,6 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "QHacc has the following tunable option(s):"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "	WITHOUT_GNOME=libxml	Turns off LibXML support"
 	@${ECHO_MSG} "	WITH_MYSQL=yes		Turns on MySQL support"
 	@${ECHO_MSG} "	WITH_PGSQL=yes		Turns on PostgreSQL support"
 	@${ECHO_MSG} "	WITH_SQLITE=yes		Turns on SQLite support"
@@ -96,7 +85,6 @@ post-patch:
 		's| -O2||g ; \
 		 s| -g||g ; \
 		 s| -pedantic||g ; \
-		 s|contrib docs qm|contrib|g ; \
 		 s|$$(prefix)/plugins|$$(pkglibdir)/plugins|g'
 
 post-install:

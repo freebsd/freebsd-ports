@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Jan 31 10:47:17 2004
++++ Makefile.in	Mon Feb  9 01:03:14 2004
+@@ -158,7 +158,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = lib src plugins contrib docs qm
++SUBDIRS = lib src plugins
+ 
+ EXTRA_DIST = AUTHORS NEWS COPYING README ChangeLog THANKS FILE_FORMAT TODO \
+ 						 INSTALL UPGRADE
