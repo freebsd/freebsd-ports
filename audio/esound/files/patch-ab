@@ -1,11 +1,44 @@
---- ltconfig.orig	Sun Jul 19 12:15:10 1998
-+++ ltconfig	Sun Jul 19 12:15:37 1998
-@@ -778,7 +778,7 @@
+--- ltmain.sh.orig	Tue Sep 22 23:31:41 1998
++++ ltmain.sh	Tue Sep 22 23:35:18 1998
+@@ -967,6 +967,16 @@
+         versuffix="$current.$revision"
+         ;;
  
-   # FreeBSD 3, at last, uses gcc -shared to do shared libraries.
-   freebsd3*)
--    archive_cmds='$CC -shared -o $lib$libobjs'
-+    archive_cmds='$LD -Bshareable -o $lib$libobjs /usr/lib/aout/c++rt0.o'
-     hardcode_libdir_flag_spec='-R$libdir'
-     hardcode_direct=yes
-     hardcode_minus_L=yes
++      freebsd)
++        version_vars="$version_vars major versuffix"
++        major="$current"
++	if [ $PORTOBJFORMAT = elf ]; then
++        versuffix="$current";
++	else
++        versuffix="$current.$revision";
++	fi
++        ;;
++
+       *)
+         $echo "$modename: unknown library version type \`$version_type'" 1>&2
+         echo "Fatal configuration error.  See the $PACKAGE docs for more information." 1>&2
+--- ltconfig.orig	Tue Sep 22 23:31:38 1998
++++ ltconfig	Tue Sep 22 23:37:19 1998
+@@ -1123,10 +1123,21 @@
+   finish_eval='for lib in `ls $libdir/*.ixlibrary 2>/dev/null`; do libname=`$echo "X$lib" | $Xsed -e '\''s%^.*/\([^/]*\)\.ixlibrary$%\1%'\''`; test $rm /sys/libs/${libname}_ixlibrary.a; $show "(cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a)"; (cd /sys/libs && $LN_S $lib ${libname}_ixlibrary.a) || exit 1; done'
+   ;;
+ 
+-freebsd2* | freebsd3*)
++freebsd2*)
+   version_type=sunos
+   library_names_spec='${libname}${release}.so.$versuffix $libname.so'
+   finish_cmds='PATH="$PATH:/sbin" ldconfig -m $libdir'
++  shlibpath_var=LD_LIBRARY_PATH
++  ;;
++
++freebsd3*)
++  version_type=freebsd
++  library_names_spec='${libname}${release}.so.$versuffix $libname.so'
++  if [ $PORTOBJFORMAT = elf ]; then
++  finish_cmds='PATH="\$PATH:/sbin" OBJFORMAT="$PORTOBJFORMAT" ldconfig -m $libdir'
++  else
++  finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
++  fi
+   shlibpath_var=LD_LIBRARY_PATH
+   ;;
+ 

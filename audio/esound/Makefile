@@ -3,7 +3,7 @@
 # Date created:		19 July 1998
 # Whom:			Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/07/20 10:01:55 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/05 09:30:43 asami Exp $
 #
 
 DISTNAME=	esound-0.2.4
@@ -20,6 +20,6 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/esound
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

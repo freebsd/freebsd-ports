@@ -9,4 +9,6 @@ include/esd.h
 lib/libesd.a
 lib/libesd.la
 lib/libesd.so
-lib/libesd.so.0.0
+lib/libesd.so.0
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
