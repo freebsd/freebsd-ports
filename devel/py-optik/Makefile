@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Optik-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@geeksrus.net
 
 USE_PYTHON=	yes
 
@@ -25,5 +25,12 @@ do-build:
 
 do-install:
 	@${SETUP_CMD} install
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}/test
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/test/* ${DOCSDIR}/test
+.endif
 
 .include <bsd.port.mk>
