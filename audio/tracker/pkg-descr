@@ -1,0 +1,8 @@
+Tracker 4.3 - play soundtracker modules on a Unix machine
+
+Tracker plays soundtracker music modules on a Unix machine.
+Soundtracker modules originated on the amiga, where several composing
+playing programs are available, that give results mostly compatible
+with each other.  tracker just plays the specified files in sequence
+accord- ing with the current options.
+

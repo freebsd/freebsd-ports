@@ -1,0 +1,105 @@
+*** Unix/ui.c	Sun Oct  2 15:28:51 1994
+--- Unix/ui.c	Sun Oct  2 15:30:05 1994
+***************
+*** 82,88 ****
+--- 82,90 ----
+  #include <sys/termio.h>
+  #endif
+  #ifdef __386BSD__
++ #include <fcntl.h>
+  #include <sys/ioctl.h>
++ #define termio termios
+  #endif
+  #include <stdio.h>
+  #include <signal.h>
+***************
+*** 193,198 ****
+--- 195,201 ----
+     if (run_in_fg())
+        {
+  #ifdef __386BSD__
++       fcntl(fileno(stdin), F_SETFL, O_NONBLOCK);
+        tcgetattr(fileno(stdin), &zap);
+  #else
+        ioctl(fileno(stdin), TCGETA, &zap);
+***************
+*** 217,223 ****
+  #endif
+        zap.c_lflag &= ~(ICANON | ECHO);
+  #ifdef __386BSD__
+!       tcsetattr(fileno(stdin, TCSANOW, &zap);
+  #else
+        ioctl(fileno(stdin), TCSETA, &zap);
+  #endif
+--- 220,226 ----
+  #endif
+        zap.c_lflag &= ~(ICANON | ECHO);
+  #ifdef __386BSD__
+!       tcsetattr(fileno(stdin), TCSANOW, &zap);
+  #else
+        ioctl(fileno(stdin), TCSETA, &zap);
+  #endif
+***************
+*** 227,232 ****
+--- 230,244 ----
+        is_fg = FALSE;
+     }
+  
++ /* if_fg_sane_tty():
++  * restore tty modes, if running in foreground
++  */
++ LOCAL void if_fg_sane_tty()
++    {
++    if (run_in_fg())
++        sane_tty();
++    }
++ 
+  /* nonblocking_io():
+   * try to setup the keyboard to non blocking io
+   */
+***************
+*** 240,252 ****
+        {
+        psanity = &sanity;
+  #ifdef __386BSD__
+!       tcgetattr(fileno(stdin), &sanity);
+  #else
+        ioctl(fileno(stdin), TCGETA, psanity);
+  #endif
+        }
+     switch_mode();
+!    at_end(sane_tty);
+     }
+  
+  
+--- 252,264 ----
+        {
+        psanity = &sanity;
+  #ifdef __386BSD__
+!       tcgetattr(fileno(stdin), psanity);
+  #else
+        ioctl(fileno(stdin), TCGETA, psanity);
+  #endif
+        }
+     switch_mode();
+!    at_end(if_fg_sane_tty);
+     }
+  
+  
+***************
+*** 255,261 ****
+  LOCAL void sane_tty()
+     {
+  #ifdef __386BSD__
+!       tcsetattr(fileno(stdin), &sanity);
+  #else
+        ioctl(fileno(stdin), TCSETA, psanity);
+  #endif
+--- 267,273 ----
+  LOCAL void sane_tty()
+     {
+  #ifdef __386BSD__
+!       tcsetattr(fileno(stdin), TCSADRAIN, psanity);
+  #else
+        ioctl(fileno(stdin), TCSETA, psanity);
+  #endif
