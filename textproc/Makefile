@@ -268,7 +268,6 @@
     SUBDIR += perl2html
     SUBDIR += pl-aspell
     SUBDIR += prosper
-    SUBDIR += pspell
     SUBDIR += pspell-ispell
     SUBDIR += pt-aspell
     SUBDIR += py-4suite
