@@ -3,7 +3,7 @@
 # Date created:		7 Jan 1998
 # Whom:			giffunip@asme.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/12/13 13:52:58 jseger Exp $
 #
 
 DISTNAME=       type1inst-0.6.1
@@ -13,6 +13,8 @@ MASTER_SITES=	$(MASTER_SITE_SUNSITE)
 MASTER_SITE_SUBDIR=X11/xutils
 
 MAINTAINER=     giffunip@asme.org
+
+RUN_DEPENDS=	$(X11BASE)/bin/mkfontdir:${PORTSDIR}/x11/XFree86
 
 USE_PERL5=	yes
 NO_BUILD=	yes
