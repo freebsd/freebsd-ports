@@ -1,17 +1,17 @@
---- bttrack.py	Thu Dec 16 11:03:11 2004
-+++ bttrack.py	Thu Dec 16 11:15:33 2004
-@@ -3,6 +3,15 @@
+--- bttrack.py.orig	Fri Mar 11 23:17:26 2005
++++ bttrack.py	Fri Mar 11 23:17:31 2005
+@@ -12,6 +12,15 @@
+ 
  # Written by Bram Cohen
- # see LICENSE.txt for license information
  
 +from BitTorrent import PSYCO
 +if PSYCO.psyco:
 +    try:
-+	import psyco
-+	assert psyco.__version__ >= 0x010300f0
-+	psyco.full()
++       import psyco
++       assert psyco.__version__ >= 0x010300f0
++       psyco.full()
 +    except:
-+	pass
++       pass
 +
  from sys import argv
  from BitTorrent.track import track

@@ -1,18 +1,18 @@
---- btdownloadcurses.py	Thu Dec 16 11:03:11 2004
-+++ btdownloadcurses.py	Thu Dec 16 11:13:54 2004
-@@ -3,6 +3,15 @@
- # Written by Henry 'Pi' James
- # see LICENSE.txt for license information
+--- btdownloadcurses.py.orig	Fri Mar 11 23:12:10 2005
++++ btdownloadcurses.py	Fri Mar 11 23:13:08 2005
+@@ -15,6 +15,15 @@
+ 
+ from __future__ import division
  
 +from BitTorrent import PSYCO
 +if PSYCO.psyco:
 +    try:
-+	import psyco
-+	assert psyco.__version__ >= 0x010300f0
-+	psyco.full()
++       import psyco
++       assert psyco.__version__ >= 0x010300f0
++       psyco.full()
 +    except:
-+	pass
++       pass
 +
- from BitTorrent.download import download
- from threading import Event
- from os.path import abspath
+ SPEW_SCROLL_RATE = 1
+ 
+ import sys

@@ -1,18 +1,18 @@
---- btlaunchmanycurses.py	Thu Dec 16 11:03:11 2004
-+++ btlaunchmanycurses.py	Thu Dec 16 11:14:47 2004
-@@ -7,6 +7,15 @@
- # fmttime and fmtsize stolen from btdownloadcurses. 
- # see LICENSE.txt for license information
+--- btlaunchmanycurses.py.orig	Fri Mar 11 23:15:15 2005
++++ btlaunchmanycurses.py	Fri Mar 11 23:15:22 2005
+@@ -14,6 +14,15 @@
+ 
+ from __future__ import division
  
 +from BitTorrent import PSYCO
 +if PSYCO.psyco:
 +    try:
-+	import psyco
-+	assert psyco.__version__ >= 0x010300f0
-+	psyco.full()
++       import psyco
++       assert psyco.__version__ >= 0x010300f0
++       psyco.full()
 +    except:
-+	pass
++       pass
 +
- from BitTorrent.download import download
- from threading import Thread, Event, Lock
- from os import listdir
+ DOWNLOAD_SCROLL_RATE = 1
+ 
+ import sys, os

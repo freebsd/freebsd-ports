@@ -1,5 +1,5 @@
---- bttrack.py.orig	Fri Mar 11 23:17:26 2005
-+++ bttrack.py	Fri Mar 11 23:17:31 2005
+--- bttest.py.orig	Fri Mar 11 23:17:05 2005
++++ bttest.py	Fri Mar 11 23:17:12 2005
 @@ -12,6 +12,15 @@
  
  # Written by Bram Cohen
@@ -13,6 +13,6 @@
 +    except:
 +       pass
 +
- from sys import argv
- from BitTorrent.track import track
- 
+ from BitTorrent import testtest
+ import bttrack
+ import btmakemetafile
