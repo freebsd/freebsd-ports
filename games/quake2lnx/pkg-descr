@@ -1,0 +1,7 @@
+Quake2-LNX project aims to further develop and bug fix original Quake II
+code released by id Software in 1998, as well as support multiple
+architectures (currently i386, alpha, sparc64, and powerpc are supported).
+It also includes additional rendering drivers, eyecandy stuff from
+Quake2Max project, and experimental IPv6 support.
+
+WWW: http://www.icculus.org/quake2/
