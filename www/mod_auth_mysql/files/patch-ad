@@ -1,0 +1,32 @@
+--- mod_auth_mysql.c.orig	Sat Oct  3 13:41:41 1998
++++ mod_auth_mysql.c	Tue Nov  5 07:13:30 2002
+@@ -559,6 +559,10 @@
+ 
+ 	switch (mysql_check_user_password(r, c->user, sent_pw, sec)) {
+ 		case 0:
++			ap_log_rerror(APLOG_MARK, APLOG_NOERRNO|APLOG_ERR, r,
++				"user %s: authentication failure for \"%s\": %s",
++				c->user, r->uri);
++			ap_note_basic_auth_failure(r);
+ 			note_basic_auth_failure(r);
+ 			return AUTH_REQUIRED;
+ 			break;
+@@ -582,6 +586,7 @@
+ {
+ 	mysql_auth_config_rec *sec = (mysql_auth_config_rec *) get_module_config(r->per_dir_config, &auth_mysql_module);
+ 	char *user = r->connection->user;
++	conn_rec *c = r->connection;
+ 	int m = r->method_number;
+ 	int method_restricted = 0;
+ 	register int x;
+@@ -653,6 +658,10 @@
+ 	if (!(sec->assume_authoritative)) {
+ 		return DECLINED;
+ 	}
++	ap_log_rerror(APLOG_MARK, APLOG_NOERRNO|APLOG_ERR, r,
++		"user %s: authentication failure for \"%s\": %s",
++		c->user, r->uri);
++	ap_note_basic_auth_failure(r);
+ 	note_basic_auth_failure(r);
+ 	return AUTH_REQUIRED;
+ }
