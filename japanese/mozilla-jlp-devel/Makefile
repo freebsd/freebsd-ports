@@ -1,24 +1,22 @@
 # New ports collection makefile for:	ja-mozilla-jlp-devel
 # Date created:		02 Jul 2000
-# Whom:			Yoichi ASAI <yatt@msc.biglobe.ne.jp>
+# Whom:			Yoichi ASAI <yatt@luna2.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.2b
-#PORTREVISION=	1
+PORTVERSION=	1.3a
+PORTREVISION?=	0
 #PORTEPOCH=	1
 CATEGORIES=	japanese www
-MASTER_SITES=	http://www2.starcat.ne.jp/~unha/jlp/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	jlpmoz
+MASTER_SITES=	http://plaza25.mbn.or.jp/~snip/jlp/
+#MASTER_SITE_SUBDIR=	jlpmoz
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-kv0.4.xpi \
-		1.2b_langenus.xpi 1.2b_regus.xpi
-EXTRACT_SUFX=	# none
+DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-tm0.1.3
+EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	yatt@msc.biglobe.ne.jp
+MAINTAINER=	yatt@luna2.org
 
 BUILD_DEPENDS=	${X11BASE}/lib/mozilla-devel/regxpcom:${PORTSDIR}/www/mozilla-devel
 RUN_DEPENDS=	mozilla-devel:${PORTSDIR}/www/mozilla-devel \
@@ -45,7 +43,6 @@ LIBXPG4=	LD_PRELOAD=/usr/lib/libxpg4.so.2; export LD_PRELOAD
 post-extract:
 	${MKDIR} ${WRKSRC}/defaults/pref
 	${CP} ${FILESDIR}/unix.js ${WRKSRC}/defaults/pref
-	${RM} -r ${WRKSRC}/defaults/profile/US
 
 do-build:
 	${SED} -e "s^@PREFIX@^${PREFIX}^g" \
@@ -55,12 +52,7 @@ do-build:
 
 do-install:
 	(cd ${PREFIX}/lib/mozilla-devel/chrome; \
-	${MV} -f US.jar US.jar.orig; \
 	${MV} -f chrome.rdf chrome.rdf.orig; \
-	${MV} -f en-US.jar en-US.jar.orig; \
-	${MV} -f en-mac.jar en-mac.jar.orig; \
-	${MV} -f en-unix.jar en-unix.jar.orig; \
-	${MV} -f en-win.jar en-win.jar.orig; \
 	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla-devel/defaults/pref; \
 	${MV} -f unix.js unix.js.orig)
