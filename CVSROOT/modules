@@ -4309,6 +4309,7 @@ p5-Carp-Assert	ports/devel/p5-Carp-Assert
 p5-Cdk		ports/devel/p5-Cdk
 p5-Cflow	ports/net/p5-Cflow
 p5-Chart-PNGgraph	ports/graphics/p5-Chart-PNGgraph
+p5-Chatbot-Eliza	ports/misc/p5-Chatbot-Eliza
 p5-Class-Accessor	ports/devel/p5-Class-Accessor
 p5-Class-Contract	ports/devel/p5-Class-Contract
 p5-Class-Data-Inheritable	ports/devel/p5-Class-Data-Inheritable
