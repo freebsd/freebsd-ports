@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	libgnomedb
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/libgnomedb/0.9
+MASTER_SITE_SUBDIR=	sources/libgnomedb/0.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
 		gda-2.1:${PORTSDIR}/databases/libgda2
 
 USE_BZIP2=	yes

@@ -1,0 +1,11 @@
+--- po/de.po.orig	Fri Feb  7 01:56:00 2003
++++ po/de.po	Fri Feb  7 02:13:28 2003
+@@ -36,7 +36,7 @@
+ "Last-Translator: Christian Neumair <chris@gnome-de.org>\n"
+ "Language-Team: German <gnome-de@gnome.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=UTF-8\n"
++"Content-Type: text/plain; charset=ISO-8859-1\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: GNOME_Gnumeric.server.in.in.h:1

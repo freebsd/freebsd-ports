@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	gedit2
-PORTVERSION=	2.0.6
+PORTVERSION=	2.2.0.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.2
 DISTNAME=	gedit-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
-		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		eel-2.2:${PORTSDIR}/x11-toolkits/eel2
+LIB_DEPENDS=	gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
+		eel-2.4:${PORTSDIR}/x11-toolkits/eel2 \
+		pspell.15:${PORTSDIR}/textproc/aspell
 
 WRKSRC=	${WRKDIR}/gedit-${PORTVERSION}
 

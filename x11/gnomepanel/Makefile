@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	gnomepanel
-PORTVERSION=	2.0.11
+PORTVERSION=	2.2.0.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-panel/2.0
+MASTER_SITE_SUBDIR=	sources/gnome-panel/2.2
 DISTNAME=	gnome-panel-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	wnck-1.4:${PORTSDIR}/x11-toolkits/libwnck \
-		gnome-desktop-2.0:${PORTSDIR}/x11/gnomedesktop
+LIB_DEPENDS=	wnck-1.9:${PORTSDIR}/x11-toolkits/libwnck \
+		gnome-desktop-2.3:${PORTSDIR}/x11/gnomedesktop
 
 USE_BZIP2=	yes
-USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
+USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier

@@ -8,19 +8,16 @@ etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/general/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/listing/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/ui/%gconf.xml
 etc/gconf/schemas/file-roller.schemas
+lib/bonobo/libfile-roller-component.so
+libdata/bonobo/servers/File_Roller_Component.server
 %%PORTDOCS%%share/doc/fileroller/AUTHORS
 %%PORTDOCS%%share/doc/fileroller/NEWS
 %%PORTDOCS%%share/doc/fileroller/README
 %%PORTDOCS%%share/doc/fileroller/TODO
 share/gnome/application-registry/file-roller.applications
 share/gnome/applications/file-roller.desktop
-share/gnome/file-roller/glade/file_roller.glade2
-share/gnome/file-roller/glade/file_roller_prop.glade2
-share/gnome/file-roller/scripts/Add_to_archive
-share/gnome/file-roller/scripts/Extract_here
-share/gnome/file-roller/scripts/Extract_in_a_subfolder
-share/gnome/file-roller/scripts/Extract_to
-share/gnome/file-roller/scripts/README
+share/gnome/file-roller/glade/file_roller.glade
+share/gnome/file-roller/glade/file_roller_prop.glade
 share/gnome/help/file-roller/C/figures/fr-add-dialog.png
 share/gnome/help/file-roller/C/figures/fr-extract.png
 share/gnome/help/file-roller/C/figures/fr-mainwindow.png
@@ -36,32 +33,50 @@ share/gnome/help/file-roller/ru/legal.xml
 share/gnome/mime-info/file-roller.keys
 share/gnome/mime-info/file-roller.mime
 share/gnome/omf/file-roller/file-roller-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/file-roller/file-roller-ru.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/file-roller/file-roller-ru.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/file-roller.png
+share/locale/am/LC_MESSAGES/file-roller.mo
 share/locale/bg/LC_MESSAGES/file-roller.mo
 share/locale/ca/LC_MESSAGES/file-roller.mo
+share/locale/cs/LC_MESSAGES/file-roller.mo
+share/locale/da/LC_MESSAGES/file-roller.mo
 share/locale/de/LC_MESSAGES/file-roller.mo
+share/locale/el/LC_MESSAGES/file-roller.mo
 share/locale/es/LC_MESSAGES/file-roller.mo
+share/locale/et/LC_MESSAGES/file-roller.mo
+share/locale/fi/LC_MESSAGES/file-roller.mo
 share/locale/fr/LC_MESSAGES/file-roller.mo
+share/locale/hi/LC_MESSAGES/file-roller.mo
+share/locale/hu/LC_MESSAGES/file-roller.mo
 share/locale/it/LC_MESSAGES/file-roller.mo
 share/locale/ja/LC_MESSAGES/file-roller.mo
 share/locale/ko/LC_MESSAGES/file-roller.mo
+share/locale/lv/LC_MESSAGES/file-roller.mo
+share/locale/mk/LC_MESSAGES/file-roller.mo
+share/locale/mn/LC_MESSAGES/file-roller.mo
 share/locale/ms/LC_MESSAGES/file-roller.mo
 share/locale/nl/LC_MESSAGES/file-roller.mo
 share/locale/no/LC_MESSAGES/file-roller.mo
 share/locale/pl/LC_MESSAGES/file-roller.mo
+share/locale/pt/LC_MESSAGES/file-roller.mo
 share/locale/pt_BR/LC_MESSAGES/file-roller.mo
 share/locale/ro/LC_MESSAGES/file-roller.mo
 share/locale/ru/LC_MESSAGES/file-roller.mo
+share/locale/sk/LC_MESSAGES/file-roller.mo
+share/locale/sl/LC_MESSAGES/file-roller.mo
+share/locale/sq/LC_MESSAGES/file-roller.mo
 share/locale/sv/LC_MESSAGES/file-roller.mo
+share/locale/uk/LC_MESSAGES/file-roller.mo
 share/locale/vi/LC_MESSAGES/file-roller.mo
+share/locale/zh_CN/LC_MESSAGES/file-roller.mo
 @dirrm share/gnome/omf/file-roller
 @dirrm share/gnome/help/file-roller/ru/figures
 @dirrm share/gnome/help/file-roller/ru
 @dirrm share/gnome/help/file-roller/C/figures
 @dirrm share/gnome/help/file-roller/C
 @dirrm share/gnome/help/file-roller
-@dirrm share/gnome/file-roller/scripts
 @dirrm share/gnome/file-roller/glade
 @dirrm share/gnome/file-roller
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/ui
@@ -72,3 +87,5 @@ share/locale/vi/LC_MESSAGES/file-roller.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/listing
 @dirrm etc/gconf/gconf.xml.defaults/apps/file-roller/general
 @dirrm etc/gconf/gconf.xml.defaults/apps/file-roller
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-ru.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/file-roller/file-roller-C.omf 2>/dev/null || /usr/bin/true

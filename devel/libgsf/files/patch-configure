@@ -8,12 +8,3 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -8279,7 +8280,7 @@
-   echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
--need_posix=yes
-+need_posix=no
- fi
- rm -f conftest.$ac_objext conftest.$ac_ext
- CFLAGS="$saved_CFLAGS"

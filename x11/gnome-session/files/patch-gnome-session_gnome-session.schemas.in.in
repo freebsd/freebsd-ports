@@ -1,0 +1,11 @@
+--- gnome-session/gnome-session.schemas.in.in.orig	Mon Oct 14 17:18:15 2002
++++ gnome-session/gnome-session.schemas.in.in	Mon Oct 14 17:17:44 2002
+@@ -50,7 +50,7 @@
+          <applyto>/apps/gnome-session/options/splash_image</applyto>
+          <owner>gnome</owner>
+          <type>string</type>
+-         <default>@prefix@/share/pixmaps/splash/gnome-splash.png</default>
++         <default>@datadir@/pixmaps/splash/gnome-splash.png</default>
+          <locale name="C">
+             <short>Splash Screen Image</short>
+             <long>Preferred Image to use for the splash screen when logging in to the GNOME Desktop</long>

@@ -1,6 +1,6 @@
---- configure.orig	Mon Jan 13 06:31:59 2003
-+++ configure	Mon Jan 13 19:40:06 2003
-@@ -10323,7 +10323,7 @@
+--- configure.orig	Mon Nov 25 09:25:29 2002
++++ configure	Tue Nov 26 16:04:42 2002
+@@ -10347,7 +10347,7 @@
  
  
  cat >>confdefs.h <<_ACEOF

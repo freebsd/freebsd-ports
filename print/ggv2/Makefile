@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ggv2
-PORTVERSION=	1.99.97
+PORTVERSION=	1.99.98
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/1.99
@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 USE_BZIP2=	yes

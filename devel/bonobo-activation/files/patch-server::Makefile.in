@@ -1,5 +1,5 @@
---- server/Makefile.in.orig	Fri Nov  8 03:18:57 2002
-+++ server/Makefile.in	Fri Nov  8 03:19:22 2002
+--- server/Makefile.in.orig	Sat Oct 19 15:35:36 2002
++++ server/Makefile.in	Sat Oct 19 15:37:02 2002
 @@ -154,7 +154,7 @@
  	-I$(top_builddir) 			\
  	-I$(top_builddir)/bonobo-activation	\

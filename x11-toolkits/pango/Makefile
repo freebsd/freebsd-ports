@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pango
-PORTVERSION=	1.0.5
+PORTVERSION=	1.2.1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.0,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/${PORTNAME}/1.2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
 		http://www.ameth.org/gimp/gtk/v1.3/
@@ -17,8 +17,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
-LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
-		freetype.9:${PORTSDIR}/print/freetype2 \
+LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20 \
+		Xft2.2:${PORTSDIR}/x11-fonts/Xft \
 		intl.4:${PORTSDIR}/devel/gettext
 
 USE_BZIP2=	yes
@@ -26,9 +26,9 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
-GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qt=no \
 		--with-html-dir=${PREFIX}/share/doc \
 		--enable-static
@@ -42,7 +42,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			-I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-PLIST_SUB=	VERSION="1.0.0"
+PLIST_SUB=	VERSION="1.2.0"
 
 .include <bsd.port.pre.mk>
 
@@ -53,7 +53,7 @@ PLIST_SUB+=	XFREE4:=""
 .endif
 
 post-patch:
-	@find ${WRKSRC}/pango/opentype -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC}/pango/opentype -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
 		's|internal/tterrors\.h|fterrors.h| ; s|TT_Err_|FT_Err_|g'
 
 .include <bsd.port.post.mk>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	metacity
-PORTVERSION=	2.4.21
+PORTVERSION=	2.4.34
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.4
@@ -15,8 +15,8 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gconf-2:${PORTSDIR}/devel/gconf2 \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		glade-2.0.0:${PORTSDIR}/devel/libglade2
+		glade-2.0.0:${PORTSDIR}/devel/libglade2 \
+		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -25,6 +25,7 @@ USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier
+INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}

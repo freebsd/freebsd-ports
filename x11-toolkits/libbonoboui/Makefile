@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	libbonoboui
-PORTVERSION=	2.0.3.3
+PORTVERSION=	2.2.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.2
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomecanvas-2.0:${PORTSDIR}/graphics/libgnomecanvas \
-		gnome-2.0:${PORTSDIR}/x11/libgnome
+LIB_DEPENDS=	gnomecanvas-2.200:${PORTSDIR}/graphics/libgnomecanvas \
+		gnome-2.200:${PORTSDIR}/x11/libgnome
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

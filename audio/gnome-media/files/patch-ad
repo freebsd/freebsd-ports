@@ -1,5 +1,5 @@
---- gmix/gmix.c.orig	Tue May  7 00:43:15 2002
-+++ gmix/gmix.c	Tue May  7 00:47:38 2002
+--- gmix/gmix.c.orig	Tue Oct  8 19:40:43 2002
++++ gmix/gmix.c	Fri Oct 11 09:20:13 2002
 @@ -60,7 +60,7 @@
  #ifdef HAVE_LINUX_SOUNDCARD_H 
  #include <linux/soundcard.h>
@@ -9,21 +9,7 @@
  #endif
  #endif
  
-@@ -569,12 +569,7 @@
- 	/*
- 	 * open the mixer-device
- 	 */
--	if (num == 0) {
--		sprintf (device_name, "/dev/mixer");
--	} else {
--		sprintf (device_name, "/dev/mixer%i", num);
--	}
--
-+	sprintf(device_name, "/dev/mixer%i", num);
- 	new_device->fd = open (device_name, O_RDWR, 0);
- 	
- 	if (new_device->fd < 0) {
-@@ -689,6 +684,7 @@
+@@ -722,6 +722,7 @@
  	
  	cnt = 0;
  	devices = NULL;
@@ -31,7 +17,7 @@
  	device_by_name = g_hash_table_new (g_str_hash, g_str_equal);
  		
  	do {
-@@ -697,9 +693,8 @@
+@@ -730,9 +731,8 @@
  			devices = g_list_append (devices, new_device);
  			g_hash_table_insert (device_by_name, new_device->info.name, new_device);
  		}

@@ -24,6 +24,7 @@ share/gnome/help/gnome-system-monitor/C/figures/viewMenu.png
 share/gnome/help/gnome-system-monitor/C/gnome-system-monitor.xml
 share/gnome/help/gnome-system-monitor/C/legal.xml
 share/gnome/omf/gnome-system-monitor/gnome-system-monitor-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-system-monitor/gnome-system-monitor-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/procman.png
 share/locale/am/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ar/LC_MESSAGES/gnome-system-monitor.mo
@@ -75,3 +76,4 @@ share/locale/zh_TW/LC_MESSAGES/gnome-system-monitor.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/procman/memmapstree
 @dirrm etc/gconf/gconf.xml.defaults/apps/procman/disktree
 @dirrm etc/gconf/gconf.xml.defaults/apps/procman
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-system-monitor/gnome-system-monitor-C.omf 2>/dev/null || /usr/bin/true

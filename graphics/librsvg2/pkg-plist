@@ -1,8 +1,29 @@
+bin/rsvg
 include/librsvg-2/librsvg/librsvg-features.h
 include/librsvg-2/librsvg/rsvg.h
+lib/gtk-2.0/%%GTK_VERSION%%/engines/libsvg.so
+lib/gtk-2.0/%%GTK_VERSION%%/loaders/svg_loader.so
 lib/librsvg-2.a
 lib/librsvg-2.so
-lib/librsvg-2.so.2
+lib/librsvg-2.so.4
 libdata/pkgconfig/librsvg-2.0.pc
+share/doc/librsvg/html/home.png
+share/doc/librsvg/html/i909.html
+share/doc/librsvg/html/index.html
+share/doc/librsvg/html/index.sgml
+share/doc/librsvg/html/left.png
+share/doc/librsvg/html/r22.html
+share/doc/librsvg/html/r320.html
+share/doc/librsvg/html/r354.html
+share/doc/librsvg/html/right.png
+share/doc/librsvg/html/rsvg-convenience-functions.html
+share/doc/librsvg/html/rsvg-core-api.html
+share/doc/librsvg/html/rsvg-creating-a-svgz-reader.html
+share/doc/librsvg/html/rsvg.html
+share/doc/librsvg/html/up.png
+@dirrm share/doc/librsvg/html
+@dirrm share/doc/librsvg
 @dirrm include/librsvg-2/librsvg
 @dirrm include/librsvg-2
+@exec gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true
+@unexec gdk-pixbuf-query-loaders > %D/etc/gtk-2.0/gdk-pixbuf.loaders 2>/dev/null || /usr/bin/true

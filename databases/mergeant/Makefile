@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	mergeant
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.0
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.10
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomedb-2.1:${PORTSDIR}/databases/libgnomedb \
-		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

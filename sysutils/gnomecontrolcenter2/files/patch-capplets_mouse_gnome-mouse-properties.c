@@ -1,6 +1,6 @@
---- capplets/mouse/gnome-mouse-properties.c.orig	Wed May 29 00:14:19 2002
-+++ capplets/mouse/gnome-mouse-properties.c	Tue Jun 25 21:51:30 2002
-@@ -570,7 +570,7 @@
+--- capplets/mouse/gnome-mouse-properties.c.orig	Sat Nov  2 13:40:22 2002
++++ capplets/mouse/gnome-mouse-properties.c	Sun Dec 22 16:33:36 2002
+@@ -591,7 +591,7 @@
  	filename = gnome_program_locate_file (program, GNOME_FILE_DOMAIN_APP_PIXMAP, "mouse-cursor-white.png", TRUE, NULL);
  	pixbuf = gdk_pixbuf_new_from_file (filename, NULL);
  	g_free (filename);
@@ -9,7 +9,7 @@
  
  	gtk_list_store_append (GTK_LIST_STORE (model), &iter);
  	if (cursor_font && ! strcmp (cursor_font, font_path)) {
-@@ -591,7 +591,7 @@
+@@ -612,7 +612,7 @@
  	filename = gnome_program_locate_file (program, GNOME_FILE_DOMAIN_APP_PIXMAP, "mouse-cursor-normal-large.png", TRUE, NULL);
  	pixbuf = gdk_pixbuf_new_from_file (filename, NULL);
  	g_free (filename);
@@ -18,7 +18,7 @@
  
  	gtk_list_store_append (GTK_LIST_STORE (model), &iter);
  	if (cursor_font && ! strcmp (cursor_font, font_path)) {
-@@ -612,7 +612,7 @@
+@@ -633,7 +633,7 @@
  	filename = gnome_program_locate_file (program, GNOME_FILE_DOMAIN_APP_PIXMAP, "mouse-cursor-white-large.png", TRUE, NULL);
  	pixbuf = gdk_pixbuf_new_from_file (filename, NULL);
  	g_free (filename);

@@ -1,0 +1,11 @@
+--- libgnomeui/Makefile.in.orig	Sat Nov  9 02:37:09 2002
++++ libgnomeui/Makefile.in	Sat Nov  9 02:38:38 2002
+@@ -150,7 +150,7 @@
+         -DGNOMEUILIBDIR=\""$(libdir)"\" 		\
+         -DGNOMEUIDATADIR=\""$(datadir)"\" 		\
+         -DGNOMEUIPIXMAPDIR=\""$(datadir)/pixmaps"\"	\
+-        -DGNOMEUIICONDIR=\""$(datadir)/icons"\"	\
++        -DGNOMEUIICONDIR=\""$(prefix)/share/icons"\"	\
+         -DGNOMEUISERVERDIR=\""$(libexecdir)"\" 		\
+ 	-DGNOMEUILOCALSTATEDIR=\""$(localstatedir)"\" 	\
+         -DGNOMEUILOCALEDIR=\""$(gnomelocaledir)"\"	\

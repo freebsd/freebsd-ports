@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Fri Apr 26 12:49:10 2002
-+++ configure	Fri Apr 26 12:49:40 2002
-@@ -5591,6 +5591,7 @@
+--- configure.orig	Tue Dec 17 16:29:43 2002
++++ configure	Fri Dec 20 16:33:46 2002
+@@ -8161,6 +8161,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -11,12 +8,15 @@ $FreeBSD$
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -7180,7 +7181,7 @@
-   INSTALL_FONTS_TRUE='#'
-   INSTALL_FONTS_FALSE=
- fi
--FONTMAPDIR_STATIC=$datadir/gnome/libgnomeprint-2.0/fonts
-+FONTMAPDIR_STATIC=$datadir/libgnomeprint-2.0/fonts
- FONTMAPDIR_DYNAMIC=$sysconfdir/gnome/libgnomeprint-2.0/fonts
+@@ -10938,9 +10939,9 @@
  
+ 
+ if test "x${prefix}" = "xNONE"; then
+-	GNOME_PRINT_DATA_DIR='${ac_default_prefix}/${DATADIRNAME}/libgnomeprint/${VERSION}'
++	GNOME_PRINT_DATA_DIR='${ac_default_prefix}/share/gnome/libgnomeprint/${VERSION}'
+ else
+-	GNOME_PRINT_DATA_DIR='${prefix}/${DATADIRNAME}/libgnomeprint/${VERSION}'
++	GNOME_PRINT_DATA_DIR='${prefix}/share/gnome/libgnomeprint/${VERSION}'
+ fi
+ GNOME_PRINT_DATA_DIR=$GNOME_PRINT_DATA_DIR
  

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Sep 14 16:54:42 2002
-+++ Makefile.in	Sat Sep 14 16:55:17 2002
-@@ -161,7 +161,6 @@
+--- Makefile.in.orig	Tue Jan  7 12:28:34 2003
++++ Makefile.in	Tue Jan  7 12:29:48 2003
+@@ -153,7 +153,6 @@
  	libnautilus-private 	\
  	libnautilus-adapter	\
  	src 			\

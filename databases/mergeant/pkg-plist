@@ -1,12 +1,16 @@
 bin/mergeant
-share/doc/mergeant/C/topic.dat
+share/gnome/application-registry/mergeant.applications
 share/gnome/applications/mergeant.desktop
+share/gnome/help/mergeant/C/topic.dat
 share/gnome/mergeant/dtd/mergeant.dtd
 share/gnome/mergeant/plugins/libPnetaddr.so
 share/gnome/mergeant/plugins/libPpicts.so
 share/gnome/mergeant/plugins/libPsample.so
+share/gnome/mime-info/mergeant.keys
+share/gnome/mime-info/mergeant.mime
 share/gnome/omf/mergeant/mergeant-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/mergeant/mergeant-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/pixmaps/document-icons/gnome-application-x-mergeant.png
 share/gnome/pixmaps/mergeant/mergeant.png
 share/gnome/pixmaps/mergeant/mergeant_connect.png
 share/gnome/pixmaps/mergeant/mergeant_connect_small.png
@@ -19,6 +23,9 @@ share/gnome/pixmaps/mergeant/mergeant_rels.png
 share/gnome/pixmaps/mergeant/mergeant_rels_small.png
 share/gnome/pixmaps/mergeant/mergeant_sequences.png
 share/gnome/pixmaps/mergeant/mergeant_tables.png
+share/gnome/pixmaps/mergeant/query-view-query_16x16.png
+share/gnome/pixmaps/mergeant/query-view-table_16x16.png
+share/gnome/pixmaps/mergeant/query-view-view_16x16.png
 share/locale/cs/LC_MESSAGES/mergeant.mo
 share/locale/da/LC_MESSAGES/mergeant.mo
 share/locale/de/LC_MESSAGES/mergeant.mo
@@ -26,6 +33,8 @@ share/locale/es/LC_MESSAGES/mergeant.mo
 share/locale/fr/LC_MESSAGES/mergeant.mo
 share/locale/it/LC_MESSAGES/mergeant.mo
 share/locale/ms/LC_MESSAGES/mergeant.mo
+share/locale/nl/LC_MESSAGES/mergeant.mo
+share/locale/no/LC_MESSAGES/mergeant.mo
 share/locale/pl/LC_MESSAGES/mergeant.mo
 share/locale/pt_BR/LC_MESSAGES/mergeant.mo
 share/locale/ru/LC_MESSAGES/mergeant.mo
@@ -38,8 +47,8 @@ share/locale/vi/LC_MESSAGES/mergeant.mo
 @dirrm share/gnome/mergeant/plugins
 @dirrm share/gnome/mergeant/dtd
 @dirrm share/gnome/mergeant
-@dirrm share/doc/mergeant/C/stylesheet-images
-@dirrm share/doc/mergeant/C/images
-@dirrm share/doc/mergeant/C
-@dirrm share/doc/mergeant
+@dirrm share/gnome/help/mergeant/C/stylesheet-images
+@dirrm share/gnome/help/mergeant/C/images
+@dirrm share/gnome/help/mergeant/C
+@dirrm share/gnome/help/mergeant
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/mergeant/mergeant-C.omf 2>/dev/null || /usr/bin/true

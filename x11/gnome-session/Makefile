@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	gnomesession
-PORTVERSION=	2.0.9
+PORTVERSION=	2.2.0.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-session/2.0
+MASTER_SITE_SUBDIR=	sources/gnome-session/2.2
 DISTNAME=	gnome-session-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -28,8 +28,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
-MAN1=	gnome-session.1 gnome-smproxy.1 gnome-wm.1 save-session.1 \
-	session-properties.1
+MAN1=	gnome-session.1 gnome-smproxy.1 gnome-wm.1 session-properties.1 \
+	gnome-session-save.1
 MAN5=	default.session.5
 
 post-patch:

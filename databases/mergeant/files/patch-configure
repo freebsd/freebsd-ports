@@ -1,6 +1,6 @@
---- configure.orig	Mon Sep  9 17:46:33 2002
-+++ configure	Sun Sep 15 02:43:36 2002
-@@ -7596,6 +7596,7 @@
+--- configure.orig	Mon Jan 27 20:50:17 2003
++++ configure	Fri Feb  7 01:02:04 2003
+@@ -7948,6 +7948,7 @@
  
  # This can be used to rebuild libtool when needed
  LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
@@ -8,7 +8,7 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -10065,13 +10066,13 @@
+@@ -9405,13 +9406,13 @@
  
  MERGEANT_Pixmapdir=${datadir}/pixmaps/${PACKAGE}
  
@@ -19,8 +19,8 @@
  
  MERGEANT_Plugdir=${datadir}/${PACKAGE}/plugins
  
--MERGEANT_Helpdir=${datadir}/doc/${PACKAGE}
-+MERGEANT_Helpdir=${prefix}/share/doc/${PACKAGE}
+-MERGEANT_Helpdir=${datadir}/gnome/help/${PACKAGE}
++MERGEANT_Helpdir=${datadir}/help/${PACKAGE}
  
  
  

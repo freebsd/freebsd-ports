@@ -1,0 +1,11 @@
+--- libwindow-settings/Makefile.in.orig	Fri Jan 17 12:34:44 2003
++++ libwindow-settings/Makefile.in	Fri Jan 17 12:35:43 2003
+@@ -151,7 +151,7 @@
+ 
+ INCLUDES = \
+         -DGNOMELOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" 		\
+-	-DGNOME_ICONDIR=\""${prefix}/share/pixmaps"\"			\
++	-DGNOME_ICONDIR=\""${datadir}/pixmaps"\"			\
+ 	-DG_LOG_DOMAIN=\"capplet-common\"				\
+ 	-DGNOME_WINDOW_MANAGER_MODULE_PATH=\""$(WM_MODULE_DIR)"\" \
+ 	-I$(top_srcdir)/						\

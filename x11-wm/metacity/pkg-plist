@@ -112,6 +112,11 @@ share/gnome/themes/AgingGorilla/metacity-1/inactive-menu-button.png
 share/gnome/themes/AgingGorilla/metacity-1/inactive-minimize-button.png
 share/gnome/themes/AgingGorilla/metacity-1/metacity-theme-1.xml
 share/gnome/themes/Metabox/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Simple/metacity-1/close.png
+share/gnome/themes/Simple/metacity-1/maximize.png
+share/gnome/themes/Simple/metacity-1/maximized.png
+share/gnome/themes/Simple/metacity-1/metacity-theme-1.xml
+share/gnome/themes/Simple/metacity-1/minimize.png
 share/gnome/wm-properties/metacity.desktop
 share/locale/am/LC_MESSAGES/metacity.mo
 share/locale/az/LC_MESSAGES/metacity.mo
@@ -121,7 +126,9 @@ share/locale/cs/LC_MESSAGES/metacity.mo
 share/locale/da/LC_MESSAGES/metacity.mo
 share/locale/de/LC_MESSAGES/metacity.mo
 share/locale/el/LC_MESSAGES/metacity.mo
+share/locale/en_GB/LC_MESSAGES/metacity.mo
 share/locale/es/LC_MESSAGES/metacity.mo
+share/locale/et/LC_MESSAGES/metacity.mo
 share/locale/fi/LC_MESSAGES/metacity.mo
 share/locale/fr/LC_MESSAGES/metacity.mo
 share/locale/gl/LC_MESSAGES/metacity.mo
@@ -132,7 +139,9 @@ share/locale/ja/LC_MESSAGES/metacity.mo
 share/locale/ko/LC_MESSAGES/metacity.mo
 share/locale/lv/LC_MESSAGES/metacity.mo
 share/locale/mk/LC_MESSAGES/metacity.mo
+share/locale/mn/LC_MESSAGES/metacity.mo
 share/locale/ms/LC_MESSAGES/metacity.mo
+share/locale/nl/LC_MESSAGES/metacity.mo
 share/locale/no/LC_MESSAGES/metacity.mo
 share/locale/pl/LC_MESSAGES/metacity.mo
 share/locale/pt/LC_MESSAGES/metacity.mo
@@ -147,6 +156,8 @@ share/locale/uk/LC_MESSAGES/metacity.mo
 share/locale/vi/LC_MESSAGES/metacity.mo
 share/locale/zh_CN/LC_MESSAGES/metacity.mo
 share/locale/zh_TW/LC_MESSAGES/metacity.mo
+@dirrm share/gnome/themes/Simple/metacity-1
+@dirrm share/gnome/themes/Simple
 @dirrm share/gnome/themes/Metabox/metacity-1
 @dirrm share/gnome/themes/Metabox
 @dirrm share/gnome/themes/AgingGorilla/metacity-1
@@ -159,7 +170,6 @@ share/locale/zh_TW/LC_MESSAGES/metacity.mo
 @dirrm share/gnome/themes/Bright
 @dirrm share/gnome/themes/Atlanta/metacity-1
 @dirrm share/gnome/themes/Atlanta
-@dirrm share/gnome/themes
 @dirrm share/gnome/metacity/icons
 @dirrm share/gnome/metacity/glade
 @dirrm share/gnome/metacity
