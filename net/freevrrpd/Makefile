@@ -18,6 +18,8 @@ MAN8=		freevrrpd.8
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
+post-patch:
+	cd ${WRKSRC}; ${SED} -i.bak -e s/varargs/stdarg/ *.h 
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/freevrrpd ${PREFIX}/sbin
