@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freedt
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	sysutils
 MASTER_SITES=	http://azz.us-lot.org/files/
 
