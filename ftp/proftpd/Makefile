@@ -10,20 +10,12 @@ PORTVERSION=	1.2.10
 PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
-		ftp://ftp.stikman.com/pub/proftpd/ \
-		ftp://ftp.empora.de/pub/mirrors/ftp.proftpd.org/ \
-		ftp://ftp.fastorama.com/ \
-		ftp://ftp.middle-earth.it/proftpd/ \
-		ftp://ftp.dataguard.no/pub/proftpd/ \
-		ftp://spirit.bentel.sk/mirrors/Proftpd/ \
-		ftp://ftp.task.gda.pl/pub/proftpd/ \
-		ftp://mirror1.dataphone.se/pub/ProFTPD/ \
-		ftp://ftp.oss.eznetsols.org/proftpd/ \
-		ftp://ftp.ccp14.ac.uk/ccp14/ftp-mirror/programming/proftpd/ \
-		ftp://proftpd.networkedsystems.co.uk/ \
-		ftp://www.linuxceptional.com/proftpd/ \
-		ftp://ftp.ethereal.com/mirrors/ftp.proftpd.org/ \
-		ftp://mirror.cybercomm.nl/
+		ftp://ftp.fastorama.com/mirrors/ftp.proftpd.org/distrib/source/ \
+		ftp://ftp.dataguard.no/ftp/pub/proftpd/distrib/source/ \
+		ftp://spirit.bentel.sk/mirrors/Proftpd/distrib/source/ \
+		ftp://proftpd.networkedsystems.co.uk/distrib/source/ \
+		ftp://ftp.ethereal.com/mirrors/ftp.proftpd.org/distrib/source/ \
+		ftp://mirror.cybercomm.nl/pub/proftpd/distrib/source/
 DISTNAME=	${PORTNAME}-1.2.10
 
 MAINTAINER?=	mharo@FreeBSD.org
