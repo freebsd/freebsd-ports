@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.108 1996/11/15 19:30:58 erich Exp $
+# $Id: Makefile,v 1.109 1996/11/19 12:32:12 asami Exp $
 #
 
     SUBDIR += FWF
@@ -9,6 +9,7 @@
     SUBDIR += auis
     SUBDIR += blast
     SUBDIR += blt
+    SUBDIR += bricons
     SUBDIR += color_xterm
     SUBDIR += ctwm
     SUBDIR += dclock
