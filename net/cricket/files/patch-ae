@@ -1,0 +1,13 @@
+*** util/newsstats.orig	Sat Jan 22 12:41:06 2000
+--- util/newsstats	Sat Jan 22 12:41:12 2000
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl
+  
+  ##
+  # Get simple stats from INND with cleanfeed
+--- 1,4 ----
+! #!%%PATHPERLBIN%%
+  
+  ##
+  # Get simple stats from INND with cleanfeed

@@ -1,0 +1,44 @@
+*** grapher.cgi.orig	Mon Jan 24 08:47:49 2000
+--- grapher.cgi	Sun Feb 13 20:44:03 2000
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl -w 
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+--- 1,4 ----
+! #!%%PATHPERLBIN%% -w 
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+***************
+*** 27,39 ****
+  	# be prepended. Special care is taken to set $HOME right,
+  	# even when running as user nobody (see fixHome for info).
+  
+! 	$Common::global::gConfigRoot = 'cricket-config'; 	# i.e. $HOME/config
+  
+  	# This magic attempts to guess the install directory based
+  	# on how the script was called. If it fails for you, just
+  	# hardcode it.
+  
+! 	$Common::global::gInstallRoot = (($0 =~ m:^(.*/):)[0] || './') . '.';
+  
+  	# cached images are stored here... there will be no more than
+  	# 5 minutes worth of images, so it won't take too much space.
+--- 27,41 ----
+  	# be prepended. Special care is taken to set $HOME right,
+  	# even when running as user nobody (see fixHome for info).
+  
+! #	$Common::global::gConfigRoot = 'cricket-config'; 	# i.e. $HOME/config
+! 	$Common::global::gConfigRoot = '%%PREFIX%%/cricket/cricket-config';
+  
+  	# This magic attempts to guess the install directory based
+  	# on how the script was called. If it fails for you, just
+  	# hardcode it.
+  
+! #	$Common::global::gInstallRoot = (($0 =~ m:^(.*/):)[0] || './') . '.';
+! 	$Common::global::gInstallRoot = '%%PREFIX%%/cricket';
+  
+  	# cached images are stored here... there will be no more than
+  	# 5 minutes worth of images, so it won't take too much space.

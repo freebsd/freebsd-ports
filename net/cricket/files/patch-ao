@@ -1,0 +1,31 @@
+*** compile.orig	Fri Jul 16 08:07:25 1999
+--- compile	Sun Feb 13 20:42:54 2000
+***************
+*** 1,4 ****
+! #!/usr/local/bin/perl -w
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+--- 1,4 ----
+! #!%%PATHPERLBIN%% -w
+  # -*- perl -*-
+  
+  # Cricket: a configuration, polling and data display wrapper for RRD files
+***************
+*** 20,26 ****
+  #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  
+  BEGIN {
+! 	$Common::global::gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . ".";
+  }
+  
+  use lib "$Common::global::gInstallRoot/lib";
+--- 20,27 ----
+  #    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  
+  BEGIN {
+! #	$Common::global::gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . ".";
+! 	$Common::global::gInstallRoot = '%%PREFIX%%/cricket';
+  }
+  
+  use lib "$Common::global::gInstallRoot/lib";

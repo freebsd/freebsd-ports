@@ -1,0 +1,28 @@
+*** util/rrd-dump.orig	Wed Jun 16 04:28:02 1999
+--- util/rrd-dump	Sun Feb 13 20:49:13 2000
+***************
+*** 1,11 ****
+! #!/usr/local/bin/perl -w 
+  # -*- perl -*-
+  
+  # this is a little script to exercise RRD::File -- useful
+  # when I was developing it, and possibly useful now too
+  
+  BEGIN {
+!     $gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . "..";
+  }
+  
+  use lib "$gInstallRoot/lib";
+--- 1,12 ----
+! #!%%PATHPERLBIN%% -w 
+  # -*- perl -*-
+  
+  # this is a little script to exercise RRD::File -- useful
+  # when I was developing it, and possibly useful now too
+  
+  BEGIN {
+! #    $gInstallRoot = (($0 =~ m:^(.*/):)[0] || "./") . "..";
+!     $gInstallRoot = '%%PREFIX%%/cricket';
+  }
+  
+  use lib "$gInstallRoot/lib";
