@@ -18,13 +18,21 @@ LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -D_FIX_FOR_BSD_ "
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -D_FIX_FOR_BSD_ -Wno-deprecated"
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 500035
+PATCHFILES=	mysql++-gcc-3.0.patch.gz \
+	        mysql++-gcc-3.2.patch.gz
+PATCH_SITES=	${MASTER_SITES}
+PATCH_DIST_STRIP=-p1
+.endif
+
 pre-configure:
-	${RM} ${WRKSRC}/examples/Makefile.in
-	${ECHO} "all:" >${WRKSRC}/examples/Makefile.in
-	${ECHO} "install:" >>${WRKSRC}/examples/Makefile.in
+	@${RM} ${WRKSRC}/examples/Makefile.in
+	@${ECHO} "all:" >${WRKSRC}/examples/Makefile.in
+	@${ECHO} "install:" >>${WRKSRC}/examples/Makefile.in
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/sqlplusint/.libs/libsqlplus.so.1 ${PREFIX}/lib
@@ -40,4 +48,4 @@ do-install:
 	 ${INSTALL_DATA} mysql++ defs undef_short define_short *.hh ${PREFIX}/include/mysql)
 	@${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/examples/mysql++
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
