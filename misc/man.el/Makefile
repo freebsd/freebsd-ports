@@ -3,7 +3,7 @@
 # Date created:		10 September 1998
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/09 00:46:03 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/12/02 05:54:52 asami Exp $
 #
 
 DISTNAME=	i18n-man-1.1
@@ -15,19 +15,14 @@ MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
 RUN_DEPENDS=	jman:${PORTSDIR}/japanese/man
 
-EXTRACT_ONLY=	# empty
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}
 
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 
 do-install:
-	@${MKDIR} ${ELISPDIR};
-	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES} -C ${ELISPDIR}
-	@files=`${EXTRACT_CMD} tzf ${DISTDIR}/${DISTFILES}`; \
-	for f in $${files}; do \
-		chown ${SHAREOWN}:${SHAREGRP} ${ELISPDIR}/$${f}; \
-		chmod ${SHAREMODE} ${ELISPDIR}/$${f}; \
-	done
+	@${MKDIR} ${ELISPDIR}
+	@cd ${WRKSRC}; \
+	${INSTALL_DATA} `${EXTRACT_CMD} tzf ${DISTDIR}/${DISTFILES}` ${ELISPDIR}
 
 .include <bsd.port.mk>
