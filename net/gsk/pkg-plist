@@ -3,6 +3,13 @@ bin/gsk-make-iface-macros
 bin/gsk-make-memchunk
 bin/gsk-skeleton
 bin/gsk-skeleton-data-scan
+include/gsk/lisp/gsklispinput.h
+include/gsk/lisp/gsklispmarshals.h
+include/gsk/lisp/gsklispnamespace.h
+include/gsk/lisp/gsklispnamespaceglobal.h
+include/gsk/lisp/gsklispnode.h
+include/gsk/lisp/gsklispoutput.h
+include/gsk/lisp/gsklispparser.h
 include/gsk/gskactor.h
 include/gsk/gskactorbuffered.h
 include/gsk/gskactorcli.h
@@ -22,6 +29,7 @@ include/gsk/gskdaemonsettings.h
 include/gsk/gskdatagramsocket.h
 include/gsk/gskdebug.h
 include/gsk/gskdebugoptions.h
+include/gsk/gskghelpers.h
 include/gsk/gskgtk.h
 include/gsk/gskinterface.h
 include/gsk/gsklog.h
@@ -79,6 +87,7 @@ include/gsk/xml/gskxmlserialize.h
 include/gsk/xml/gskxmlservlet.h
 include/gsk/xml/gskxmltoken.h
 @dirrm include/gsk/gtk
+@dirrm include/gsk/lisp
 @dirrm include/gsk/protocols
 @dirrm include/gsk/xml
 @dirrm include/gsk
