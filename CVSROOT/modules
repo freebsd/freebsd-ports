@@ -3799,6 +3799,7 @@ jython		ports/lang/jython
 jzip		ports/games/jzip
 jzip.org	ports/archivers/jzip.org
 k3b		ports/sysutils/k3b
+kaddressbook-plugins	ports/misc/kaddressbook-plugins
 kadu		ports/polish/kadu
 kaffe		ports/java/kaffe
 kaffe-devel	ports/java/kaffe-devel
