@@ -26,6 +26,8 @@ PATCHFILES+=	${PORTVERSION:C/\.[0-9]*$//}.0${p}
 
 MAINTAINER?=	obrien@FreeBSD.org
 
+SLAVEDIRS=	editors/vim-lite
+
 .if defined(PACKAGE_BUILDING) && !defined(LITE)
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
@@ -84,6 +86,7 @@ MAKE_ARGS+=	CONF_OPT_PERL="--enable-perlinterp --enable-pythoninterp --enable-tc
 .endif
 
 .else	# LITE
+PKGNAMESUFFIX=	-lite
 MAKE_ARGS+=	CONF_OPT_GUI="--enable-gui=no --without-x --enable-multibyte"
 MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable-tclinterp"
 .endif	# LITE
