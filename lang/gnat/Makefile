@@ -59,8 +59,8 @@ have_boot!=	if [ -x ${PREFIX}/bin/adagcc -a -x ${PREFIX}/bin/gnatbind ]; then \
 have_boot=
 .endif
 .if empty(have_boot)
-have_boot!=	if [ -x {LOCALBASE}/bin/adagcc -a -x {LOCALBASE}/bin/gnatbind ]; then \
-			${ECHO} "{LOCALBASE}/bin"; \
+have_boot!=	if [ -x ${LOCALBASE}/bin/adagcc -a -x ${LOCALBASE}/bin/gnatbind ]; then \
+			${ECHO} "${LOCALBASE}/bin"; \
 		else \
 			${ECHO} ""; \
 		fi
