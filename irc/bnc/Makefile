@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bnc
-PORTVERSION=	2.8.2
+PORTVERSION=	2.8.4
 CATEGORIES=	irc
-MASTER_SITES=	http://www.psn.net/~andrews/dist/
+MASTER_SITES=	http://www.gotbnc.com/files/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	billf@FreeBSD.org
