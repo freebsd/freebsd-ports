@@ -5333,6 +5333,7 @@ rand		ports/textproc/rand
 random		src/games/random
 ranlib		src/usr.bin/ranlib
 raproxy		ports/audio/raproxy
+raptor		ports/textproc/raptor
 rar		ports/archivers/rar
 rarpd		src/usr.sbin/rarpd
 rascal		ports/math/rascal
