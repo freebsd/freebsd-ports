@@ -1,24 +1,31 @@
-EasyTAG is an utility for viewing, editing and writing easily and quickly the
-ID3 tags of your MP3 files, using a nice GTK+ interface under linux. It
-manages the ID3v1.x and ID3v2 tags (using id3lib) and offers a lot of
-functions to manipulate them.
+EasyTAG is an utility for viewing, editing and writing tags of your 
+MP3, MP2, FLAC and OGG files. Its simple and nice GTK+ interface makes 
+tagging easier.
 
-   - View, edit, write MP3 tags (supporting ID3v2 and ID3v1.x specifications)
-   - Auto tagging: parse filename and directory to complete automatically the
-     fields (using masks)
-   - Ability to rename mp3 file from tag (using masks)
-   - Process all mp3 of the selected directory and sub-directories
-   - Ability to browse subdirectories
-   - Recursion for tagging, removing, renaming, saving...
-   - Can set a field (artist, title,...) to all other files
-   - Read MP3 header informations (MPEG 1, 2, 2.5) and display them
-   - Auto completion of the date if a partial is entered
-   - Undo last changes
-   - Ability to process fields of tag and file name (convert letters into
-     uppercase, downcase, ...)
-   - Ability to load a file for character translation
-   - A tree based browser
-   - Simple and explicit interface!
-   - Menu bar and shortcuts
+Features (version 0.22) :
 
-WWW: http://easytag.sourceforge.net/
+  - View, edit, write tags of MP3, MP2, FLAC files (supporting ID3v2.3 
+and ID3v1.x specifications) and OGG files,
+  - Auto tagging: parse filename and directory to complete automatically 
+the fields (using masks),
+  - Ability to rename files from the tag (using masks) or by loading a 
+txt file,
+  - Process all files of the selected directory,
+  - Ability to browse subdirectories,
+  - Recursion for tagging, removing, renaming, saving...,
+  - Can set a field (artist, title,...) to all other files,
+  - Read file header informations (bitrate, time, ...) and display them,
+  - Auto completion of the date if a partial is entered,
+  - Undo last changes,
+  - Ability to process fields of tag and file name (convert letters into 
+uppercase, downcase, ...),
+  - A tree based browser,
+  - A list to select files,
+  - Simple and explicit interface!,
+  - Menu bar and shortcuts,
+  - A playlist generator window,
+  - A file searching window,
+  - French, German, Russian, Dutch, Hungarian, Swedish, Italian, 
+Japanese, Ukrainian, Czech and Spanish translation languages,
+  - Written in C and uses GTK+ 1.2 for the GUI.
+
