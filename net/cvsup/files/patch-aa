@@ -1,0 +1,12 @@
+--- suplib/src/m3makefile.orig	Sat May 15 14:41:27 1999
++++ suplib/src/m3makefile	Sun Feb 20 09:52:12 2000
+@@ -55,7 +55,8 @@
+ end
+ 
+ if equal(TARGET, "FreeBSD2") or equal(TARGET, "FreeBSD2p")
+-or equal(TARGET, "FreeBSD3") or equal(TARGET, "FBSD_ALPHA")
++or equal(TARGET, "FreeBSD3") or equal(TARGET, "FreeBSD4")
++or equal(TARGET, "FBSD_ALPHA")
+   include_dir("FreeBSD")
+   import_lib("md", "/usr/lib")
+ else
