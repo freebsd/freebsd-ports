@@ -2,6 +2,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/dirmon.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/famtest.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/AUTHORS
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/COPYING
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
@@ -23,6 +24,7 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000020.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Connection.src/M000021.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Debug.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Error.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.src/M000002.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.src/M000003.html
@@ -32,15 +34,13 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Request.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/Fam/Request.src/M000001.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/event_codes.txt
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/_/fam_c.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/fam_c.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/_
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/event_codes.txt
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Fam/Request.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/Fam/Event.src
