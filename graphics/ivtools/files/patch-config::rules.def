@@ -1,15 +1,15 @@
---- config/rules.def.orig	Tue Feb  5 09:12:01 2002
-+++ config/rules.def	Wed Mar 27 12:18:06 2002
-@@ -1056,35 +1056,17 @@
+--- config/rules.def.orig	Thu Jul 15 17:05:32 2004
++++ config/rules.def	Thu Jul 15 17:10:44 2004
+@@ -1055,71 +1055,15 @@
+  */
  
  #ifndef InstallIncludes
- #if InstallRelative
+-#if InstallRelative
 -#define InstallIncludes(dir)						@@\
 -install::								@@\
 -	-@if [ -h $(TOP)/include ]; then exit 0; else \                 @@\
 -        (cd $(TOP) && $(LN) src/include include); fi
-+#define InstallIncludes(dir) /**/
- #else
+-#else
 -#define InstallIncludes(dir)						@@\
 -install::								@@\
 -	MakeDir($(INCDIR)/dir)						@@\
@@ -17,18 +17,17 @@
 -									@@\
 -uninstall::								@@\
 -	(cd $(INCDIR)/dir;$(RM) *.h)
+-#endif
 +#define InstallIncludes(dir) /**/
- #endif
  #endif
  
  #ifndef InstallInclude
- #if InstallRelative
+-#if InstallRelative
 -#define InstallInclude(dir, file)					@@\
 -install::								@@\
 -	-@if [ -h $(TOP)/include ]; then exit 0; else \                 @@\
 -        (cd $(TOP) && $(LN) src/include include); fi
-+#define InstallInclude(dir, file) /**/
- #else
+-#else
 -#define InstallInclude(dir, file)					@@\
 -install::								@@\
 -	MakeDir($(INCDIR)/dir)						@@\
@@ -36,14 +35,24 @@
 -									@@\
 -uninstall::								@@\
 -	$(RM) $(INCDIR)/dir/file
+-#endif
 +#define InstallInclude(dir, file) /**/
  #endif
- #endif
  
-@@ -1093,21 +1075,9 @@
+ #ifndef InstallSymLink
+-#if InstallRelative
  #define InstallSymLink(dir, file) /**/
- #else
- #if !defined(SVR4)
+-#else
+-#if !defined(SVR4)
+-#if defined(DARWIN)
+-#define InstallSymLink(dir, file)					@@\
+-install::								@@\
+-	MakeDir(dir)							@@\
+-	cp -f file dir							@@\
+-									@@\
+-uninstall::								@@\
+-	$(RM) dir/file	
+-#else
 -#define InstallSymLink(dir, file)					@@\
 -install::								@@\
 -	MakeDir(dir)							@@\
@@ -51,8 +60,8 @@
 -									@@\
 -uninstall::								@@\
 -	$(RM) dir/file	
-+#define InstallSymLink(dir, file) /**/
- #else
+-#endif
+-#else
 -#define InstallSymLink(dir, file)					@@\
 -install::								@@\
 -	MakeDir(dir)							@@\
@@ -60,7 +69,8 @@
 -									@@\
 -uninstall::								@@\
 -	$(RM) dir/file	
-+#define InstallSymLink(dir, file) /**/
+-#endif
+-#endif	
  #endif
- #endif	
- #endif
+ 
+ /* 
