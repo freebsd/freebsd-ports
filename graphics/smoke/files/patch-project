@@ -1,0 +1,11 @@
+--- project.orig	Thu Feb  5 19:06:25 2004
++++ project	Thu Feb  5 19:08:56 2004
+@@ -2,6 +2,6 @@
+ HEADERS      = src/*.h
+ SOURCES      = src/bound.cc src/caches.cc src/colour.cc src/editing.h src/fill_types.cc src/geometry.cc src/gldisplaylist.cc src/load.cc src/main.cc src/scene.cc src/segments.cc src/store.h src/stroke.cc src/tesselate.cc src/test.cc src/tree.cc src/vecmat.cc src/viewport.cc src/usec_timer.cc src/utility.cc
+ TARGET       = smoke
+-INCLUDEPATH  = /usr/local/include
++INCLUDEPATH  = %%FREETYPE_INCLUDEPATH%% %%SDL_INCLUDEPATH%%
+ DEFINES      = _REENTRANT
+-LIBS         = `freetype-config --libs` -lSDL -lpthread -lXxf86dga -lXxf86vm -lXv
++LIBS         = `%%FREETYPE_CONFIG%% --libs` `%%SDL_CONFIG%% --libs` %%PTHREAD_LIBS%% -lXxf86dga -lXxf86vm -lXv

@@ -1,0 +1,12 @@
+Smoke is a development version of a vector graphics engine capable of storing,
+manipulating and rendering vector graphics.
+
+A vector graphic image is represented by sets of lines and implicit curves.
+These lines and curves are defined only by their coordinates on an imaginary
+canvas. Thus a vector graphics image is resolution independent and can be
+drawn into a pixmap of any size.
+
+WWW:	http://www.chem.pwf.cam.ac.uk/~jdh30/programming/opengl/smoke/
+
+- Igor Pokrovsky
+tiamat@comset.net

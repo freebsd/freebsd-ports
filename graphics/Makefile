@@ -396,6 +396,7 @@
     SUBDIR += showimg
     SUBDIR += simage
     SUBDIR += skencil
+    SUBDIR += smoke
     SUBDIR += sng
     SUBDIR += sodipodi
     SUBDIR += springgraph
