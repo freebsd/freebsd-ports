@@ -1,0 +1,13 @@
+Yahoo! Messenger for FreeBSD
+
+Features:
+
+  Friend List - See when your friends are online and ready to talk.    
+  Instant Messages - Send private, instant messages to all your friends.
+  Conferencing - Invite your friends to have private conversations
+  Ignore List - Ignore any unwanted messages that you receive. 
+  Invisible Mode - Check your alerts and no one will know you're online!
+
+For firewall support through SOCKS, use "runsocks" from the socks5 package.
+
+WWW:  http://messenger.yahoo.com/
