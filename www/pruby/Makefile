@@ -16,6 +16,9 @@ MAINTAINER=	knu@FreeBSD.org
 BUILD_DEPENDS=	php:${PHP4_PORTDIR} \
 		${LOCALBASE}/libexec/apache/libphp4.so:${MOD_PHP4_PORTDIR} \
 		${NONEXISTENT}:${MOD_PHP4_PORTDIR}:configure
+.if defined(PACKAGE_BUILDING)
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+.endif
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${MOD_PHP4_PORTDIR}
 
 USE_GMAKE=	yes
