@@ -1,14 +1,13 @@
---- Makefile.orig	Thu Nov 26 09:21:17 1998
-+++ Makefile	Sat Nov 28 15:33:23 1998
-@@ -4,15 +4,15 @@
- 
+--- Makefile.orig	Tue Dec  8 13:26:31 1998
++++ Makefile	Wed Dec  9 14:34:57 1998
+@@ -1,14 +1,12 @@
  # This enables a hack for those whose X servers are having problems with
  # shaped window skins (like X crashes) this may help, but is not perfect.
 -#SHAPED_HACK = -Dshaped_window_hack=1
 +SHAPED_HACK = -Dshaped_window_hack=1
  
- PREFIX=/usr/local
- 
+-PREFIX=/usr/local
+-
 -GTK_INCLUDE = `gtk-config --cflags`
 -GTK_LIB = `gtk-config --libs`
 +GTK_INCLUDE = `gtk11-config --cflags`
@@ -18,5 +17,5 @@
 -CFLAGS = $(GTK_INCLUDE) $(IMLIB_INCLUDE)
 +CFLAGS += $(GTK_INCLUDE) $(IMLIB_INCLUDE)
  LDFLAGS = $(GTK_LIB) $(IMLIB_LIB)
- CC = gcc -Wall $(CFLAGS) $(DEFS) $(SHAPED_HACK)
+ CC = gcc -Wall $(CFLAGS) $(SHAPED_HACK)
  
