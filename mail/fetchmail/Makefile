@@ -10,7 +10,7 @@
 # want fetchmailconf to work, define WITH_X11
 
 PORTNAME=	fetchmail
-PORTVERSION=	6.1.0
+PORTVERSION=	6.1.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://www.tuxedo.org/~esr/fetchmail/ \
 		ftp://ftp.ccil.org/pub/esr/fetchmail/
@@ -19,10 +19,12 @@ MAINTAINER=	ve@sci.fi
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 .if defined(WITH_X11)
-USE_PYTHON=	yes
 RUN_DEPENDS=	${LOCALBASE}/lib/${PYTHON_VERSION}/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
+.if defined(WITH_X11)
+USE_PYTHON=	yes
+.endif
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -36,7 +38,7 @@ MAN1=		fetchmail.1
 MLINKS=		fetchmail.1 fetchmailconf.1
 
 FDOC=		${PREFIX}/share/doc/fetchmail
-DOCS=		COPYING FAQ FEATURES NOTES README \
+DOCS=		COPYING FAQ FEATURES NEWS NOTES README \
 		design-notes.html fetchmail-FAQ.html fetchmail-features.html
 
 .include <bsd.port.pre.mk>
