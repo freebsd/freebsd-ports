@@ -1,11 +1,11 @@
---- src/common_macros.mak.orig	Sat Jul 28 23:44:30 2001
-+++ src/common_macros.mak	Fri Oct  5 09:05:56 2001
-@@ -14,7 +14,7 @@
+--- src/common_macros.mak.orig	Thu Nov 15 17:08:56 2001
++++ src/common_macros.mak	Mon Dec 24 10:37:02 2001
+@@ -10,7 +10,7 @@
  # We do not assume any binary compatibility for betas.
  BETA_SUFFIX=
  
 -VERSION_SUFFIX= .$(VERSION_MAJOR).$(VERSION_MINOR)$(BETA_SUFFIX)
 +VERSION_SUFFIX= _$(VERSION_MAJOR)_$(VERSION_MINOR)$(BETA_SUFFIX)
+ WIN_VERSION_SUFFIX= $(VERSION_MAJOR)$(VERSION_MINOR)$(BETA_SUFFIX)
  
- DYNAMIC_SUFFIX= $(VERSION_SUFFIX)$(PATCH_SUFFIX)
- 
+ # DYNAMIC_SUFFIX= $(VERSION_SUFFIX)$(PATCH_SUFFIX)
