@@ -789,7 +789,7 @@ PLIST_SUB+=	MJPEGTOOLS=""
 CONFIGURE_ARGS+=	--disable-musepack
 PLIST_SUB+=	MUSEPACK="@comment "
 .else
-LIB_DEPENDS+=	musepack.1:${PORTSDIR}/audio/musepack
+LIB_DEPENDS+=	musepack.1:${PORTSDIR}/audio/libmusepack
 
 PLIST_SUB+=	MUSEPACK=""
 .endif
