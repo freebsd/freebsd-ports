@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	nqc
-PORTVERSION=	2.4.r3
+PORTVERSION=	2.5.a5
 CATEGORIES=	lang
-MASTER_SITES=	http://www.baumfamily.org/nqc/release/
+MASTER_SITES=	http://www.baumfamily.org/nqc/beta/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kbyanc@FreeBSD.org
+MAINTAINER=	jhay@FreeBSD.org
+COMMENT=	A compiler for writing programs for the Lego RCX
 
 USE_GMAKE=	yes
 CC=		${CXX}
 
 MAN1=		nqc.1
+
+pre-configure:
+	${CP} ${FILESDIR}/RCX_USBTowerPipe_fbsd.cpp ${WRKSRC}/rcxlib/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/nqc ${PREFIX}/bin
