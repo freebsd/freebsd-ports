@@ -133,6 +133,7 @@
     SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += nttcp
+    SUBDIR += opengatekeeper
     SUBDIR += openh323
     SUBDIR += openldap
     SUBDIR += p5-Archie
