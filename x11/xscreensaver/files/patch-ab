@@ -1,0 +1,11 @@
+--- configure.orig	Wed Dec  9 22:36:50 1998
++++ configure	Wed Dec  9 22:37:30 1998
+@@ -2738,7 +2738,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  X_PRE_LIBS="$X_PRE_LIBS -lSM -lICE"
++  X_PRE_LIBS="$X_PRE_LIBS -lSM -lICE -lXmu -lXt"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
