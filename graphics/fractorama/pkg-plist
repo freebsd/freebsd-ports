@@ -401,3 +401,4 @@ bin/fractorama
 %%PORTDOCS%%@dirrm share/doc/fractorama
 %%PORTDOCS%%@dirrm share/examples/fractorama/jfd
 %%PORTDOCS%%@dirrm share/examples/fractorama/stevef
+%%PORTDOCS%%@dirrm share/examples/fractorama
