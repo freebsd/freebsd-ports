@@ -7,7 +7,7 @@
 
 PORTNAME=	ssh2
 PORTVERSION=	3.2.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 # The list of official mirror sites is at:
 # http://www.ssh.com/support/downloads/secureshellserver/non-commercial.html
@@ -43,7 +43,12 @@ DISTNAME=	ssh-${PORTVERSION}
 MAINTAINER=	marius@alchemy.franken.de
 COMMENT=	Secure shell client and server for V.2 SSH protocol
 
-CONFLICTS=	openssh-* openssh-portable-* openssh-gssapi-* ssh-1.*
+.if !defined(WITHOUT_X11)
+CONFLICTS=	openssh-* ssh-* ssh2-nox11-*
+.else
+PKGNAMESUFFIX=	-nox11
+CONFLICTS=	openssh-* ssh-* ssh2-[0-9]*
+.endif
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
@@ -86,13 +91,38 @@ EXTRA_PATCHES+=		${FILESDIR}/kerberos-patch-apps::ssh::ssh2_config \
 			${FILESDIR}/kerberos-patch-apps::ssh::sshd2_config
 .endif
 
-.if defined(WITH_X11) || (exists(${X11BASE}/lib/libX11.a) \
-	&& exists(${X11BASE}/bin/xauth) && !defined(WITHOUT_X11))
+.if !defined(WITHOUT_X11)
 USE_XLIB=		yes
 PLIST_SUB+=		WITH_X11:=""
 .else
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		WITH_X11:="@comment "
+.endif
+
+pre-everything::
+.if !defined(WITH_GROUP_WRITEABILITY) || (!defined(WITHOUT_KERBEROS) && \
+	defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libk5crypto.a)) || \
+	!defined(WITHOUT_X11)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build option(s):"
+	@${ECHO_MSG} ""
+.if !defined(WITH_GROUP_WRITEABILITY)
+	@${ECHO_MSG} "WITH_GROUP_WRITEABILITY=yes	builds with widened permissions check of home"
+	@${ECHO_MSG} "				directories in hostbased- and publickey-"
+	@${ECHO_MSG} "				authentication. May be usefull if all users"
+	@${ECHO_MSG} "				are in their own group."
+	@${ECHO_MSG} "				Beware the security implications!"
+.endif
+.if !defined(WITHOUT_KERBEROS) && defined(KRB5_HOME) && \
+	exists(${KRB5_HOME}/lib/libk5crypto.a)
+	@${ECHO_MSG} "WITHOUT_KERBEROS=yes		builds without MIT Kerberos support even when"
+	@${ECHO_MSG} "				security/krb5 is installed."
+.endif
+.if !defined(WITHOUT_X11)
+	@${ECHO_MSG} "WITHOUT_X11=yes			builds without X11 support. Same as compiling"
+	@${ECHO_MSG} "				security/ssh2-nox11."
+.endif
+	@${ECHO_MSG} ""
 .endif
 
 post-patch:
