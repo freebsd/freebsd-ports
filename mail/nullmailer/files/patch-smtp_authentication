@@ -1,6 +1,5 @@
-diff -u protocols/protocol.cc protocols/protocol.cc
---- protocols/protocol.cc	2003-01-03 13:00:29.000000000 -0800
-+++ protocols/protocol.cc	2004-08-04 12:20:34.000000000 -0700
+--- protocols/protocol.cc~	Sat Mar  5 09:38:23 2005
++++ protocols/protocol.cc	Sat Mar  5 09:39:42 2005
 @@ -30,10 +30,12 @@
  const char* cli_help_suffix = "";
  const char* cli_args_usage = "remote-address < mail-file";
@@ -11,13 +10,12 @@ diff -u protocols/protocol.cc protocols/protocol.cc
    { 'p', "port", cli_option::integer, 0, &port,
      "Set the port number on the remote host to connect to", 0 },
 +  { 'a', "auth", cli_option::string, 0, &auth,
-+    "Set the user and password for authentication (user,pass)", 0 } ,
-   {0}
++    "Set the user and password for authentication (user,pass)", 0 },
+   {0, 0, cli_option::flag, 0, 0, 0, 0}
  };
  
-diff -u protocols/protocol.h protocols/protocol.h
---- protocols/protocol.h	2002-12-23 10:14:53.000000000 -0800
-+++ protocols/protocol.h	2004-08-04 12:21:25.000000000 -0700
+--- protocols/protocol.h~	Sat Mar  5 09:40:15 2005
++++ protocols/protocol.h	Sat Mar  5 09:40:46 2005
 @@ -8,6 +8,7 @@
  
  // This must be provided by the protocol, but will be set by the lib.
@@ -26,9 +24,8 @@ diff -u protocols/protocol.h protocols/protocol.h
  
  extern void protocol_prep(fdibuf* in);
  extern void protocol_send(fdibuf* in, int fd);
-diff -u protocols/qmqp.cc protocols/qmqp.cc
---- protocols/qmqp.cc	2003-01-03 13:00:31.000000000 -0800
-+++ protocols/qmqp.cc	2004-08-04 12:21:13.000000000 -0700
+--- protocols/qmqp.cc~	Sat Mar  5 09:40:59 2005
++++ protocols/qmqp.cc	Sat Mar  5 09:41:21 2005
 @@ -31,6 +31,7 @@
  #include "protocol.h"
  
@@ -37,9 +34,8 @@ diff -u protocols/qmqp.cc protocols/qmqp.cc
  const char* cli_program = "qmqp";
  const char* cli_help_prefix = "Send an emal message via QMQP\n";
  
-diff -u protocols/smtp.cc protocols/smtp.cc
---- protocols/smtp.cc	2003-01-03 13:00:32.000000000 -0800
-+++ protocols/smtp.cc	2004-08-04 20:46:15.605469184 -0700
+--- protocols/smtp.cc~	Sat Mar  5 09:41:31 2005
++++ protocols/smtp.cc	Sat Mar  5 09:44:58 2005
 @@ -30,6 +30,7 @@
  #include "protocol.h"
  
@@ -60,7 +56,7 @@ diff -u protocols/smtp.cc protocols/smtp.cc
  void protocol_send(fdibuf* in, int fd)
  {
    mystring hh = getenv("HELOHOST");
-@@ -143,5 +149,67 @@
+@@ -143,5 +149,68 @@
    smtp conn(fd);
    conn.docmd("", 200);
    conn.docmd("HELO " + hh, 200);
@@ -75,6 +71,7 @@ diff -u protocols/smtp.cc protocols/smtp.cc
 +    to64(plain,encoded);
 +    conn.docmd(encoded,200);
 +  }
++
    conn.send(in);
  }
 +
@@ -86,17 +83,17 @@ diff -u protocols/smtp.cc protocols/smtp.cc
 +    int c1, c2, c3;
 +    size_t inpos = 0;
 +    while ((c1 = infile[inpos++])) {
-+        c2 = infile[inpos++];
-+        if (!c2) {
-+            output64chunk(c1, 0, 0, 2, outfile);
-+        } else {
-+            c3 = infile[inpos++];
-+            if (!c3) {
-+                output64chunk(c1, c2, 0, 1, outfile);
-+            } else {
-+                output64chunk(c1, c2, c3, 0, outfile);
-+            }
-+        }
++	c2 = infile[inpos++];
++	if (!c2) {
++	    output64chunk(c1, 0, 0, 2, outfile);
++	} else {
++	    c3 = infile[inpos++];
++	    if (!c3) {
++		output64chunk(c1, c2, 0, 1, outfile);
++	    } else {
++		output64chunk(c1, c2, c3, 0, outfile);
++	    }
++	}
 +    }
 +}
 +
@@ -127,4 +124,4 @@ diff -u protocols/smtp.cc protocols/smtp.cc
 +  out[4] = 0;
 +  outfile += out;
 +}
-+// vim:cin:si:ai:et:ts=2:sw=2:
++

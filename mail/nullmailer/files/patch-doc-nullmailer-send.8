@@ -1,0 +1,16 @@
+--- doc/nullmailer-send.8~	Sat Mar  5 10:13:38 2005
++++ doc/nullmailer-send.8	Sat Mar  5 10:16:51 2005
+@@ -57,10 +57,11 @@
+ The protocol name defaults to
+ .IR smtp ,
+ and may be followed by command-line arguments for that module.
+-For example, to connect to port 2525 on your SMTP smart host, use:
++For example, to connect to port 2525 on your SMTP smart host,
++which also requires SMTP authentication, use:
+ 
+ .EX
+-    smarthost.dom smtp --port=2525
++    smarthost.dom smtp --port=2525 --auth=user,pass
+ .EE
+ 
+ Blank lines and lines starting with a pound are ignored.

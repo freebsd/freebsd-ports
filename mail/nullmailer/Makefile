@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	nullmailer
-# PORTVERSION=	1.00RC7
-PORTVERSION=	1.00r7
-PORTREVISION=	2
+PORTEPOCH=	1
+PORTVERSION=	1.00
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
 		ftp://mirrors.dataloss.nl/mirrors/bgware/nullmailer/%SUBDIR%/
-# MASTER_SITE_SUBDIR=	${PORTVERSION}
-MASTER_SITE_SUBDIR=	1.00RC7
-DISTNAME=	${PORTNAME}-1.00RC7
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 
 MAINTAINER=	clive@FreeBSD.org
 COMMENT=	MTA for hosts which relay to a fixed set of smart relays
