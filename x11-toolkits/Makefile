@@ -6,6 +6,7 @@
     SUBDIR += Xaw3d
     SUBDIR += blt
     SUBDIR += fltk
+    SUBDIR += fox
     SUBDIR += gob
     SUBDIR += gtk--
     SUBDIR += gtk-engines
