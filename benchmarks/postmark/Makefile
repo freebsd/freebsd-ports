@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	postmark
-PORTVERSION=	1.13
+PORTVERSION=	1.5
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.netapp.com/ftp/  \
 		http://www.taronga.com/~nick/files/
