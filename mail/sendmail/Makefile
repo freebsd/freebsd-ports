@@ -10,7 +10,7 @@ PORTVERSION=	8.13.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
-PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${PKGNAMESUFFIX2}
+PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${LDAP_SUFFIX}${BERKELEYDB_SUFFIX}${PKGNAMESUFFIX2}
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -44,6 +44,11 @@ PKGMESSAGE=	${WRKSRC}/pkg-message
 # SENDMAIL_WITH_SASL=yes
 # SENDMAIL_WITH_SASL2=yes
 # SENDMAIL_WITH_LDAP=yes
+# SENDMAIL_WITH_BERKELEYDB_VER=2
+# SENDMAIL_WITH_BERKELEYDB_VER=3
+# SENDMAIL_WITH_BERKELEYDB_VER=4
+# SENDMAIL_WITH_BERKELEYDB_VER=41
+# SENDMAIL_WITH_BERKELEYDB_VER=42
 # SENDMAIL_WITH_SOCKETMAP=yes
 # SENDMAIL_WITH_CYRUSLOOKUP=yes
 # SENDMAIL_WITH_PICKY_HELO_CHECK=yes
@@ -57,13 +62,66 @@ SENDMAIL_WITH_SOCKETMAP=yes
 AUTO_ENABLED_SOCKETMAP=yes
 .endif
 
+.if defined(SENDMAIL_WITH_BERKELEYDB_VER)
+.if ${SENDMAIL_WITH_BERKELEYDB_VER} == "2"
+BERKELEYDB_SUFFIX=	+db2
+BERKELEYDB_PORT?=	databases/db2
+BERKELEYDB_LIB?=		db2
+BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db2
+.endif
+.if ${SENDMAIL_WITH_BERKELEYDB_VER} == "3"
+BERKELEYDB_SUFFIX=	+db3
+BERKELEYDB_PORT?=	databases/db3
+BERKELEYDB_LIB?=		db3
+BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db3
+.endif
+.if ${SENDMAIL_WITH_BERKELEYDB_VER} == "4"
+BERKELEYDB_SUFFIX=	+db4
+BERKELEYDB_PORT?=	databases/db4
+BERKELEYDB_LIB?=		db4
+BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db4
+.endif
+.if ${SENDMAIL_WITH_BERKELEYDB_VER} == "41"
+BERKELEYDB_SUFFIX=	+db41
+BERKELEYDB_PORT?=	databases/db41
+BERKELEYDB_LIB?=		db41
+BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db41
+.endif
+.if ${SENDMAIL_WITH_BERKELEYDB_VER} == "42"
+BERKELEYDB_SUFFIX=	+db42
+BERKELEYDB_PORT?=	databases/db42
+BERKELEYDB_LIB?=		db-4.2
+BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db42
+.endif
+LIB_DEPENDS+=		${BERKELEYDB_LIB}:${PORTSDIR}/${BERKLEYDB_PORT}
+CONFLICTS+=	sendmail+tls-8.* \
+		sendmail+tls+ldap-8.* \
+		sendmail+tls+sasl-8.* \
+		sendmail+tls+sasl+ldap-8.* \
+		sendmail+tls+sasl2-8.* \
+		sendmail+tls+sasl2+ldap-8.* \
+		sendmail+sasl-8.* \
+		sendmail+sasl+ldap-8.* \
+		sendmail+sasl2-8.* \
+		sendmail+sasl2+ldap-8.* \
+		sendmail+ldap-8.*
+CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.* 
+.else
+CONFLICTS+=	sendmail*+db*-8.*
+.endif
 .if defined(SENDMAIL_WITH_LDAP)
 LDAP_SUFFIX?=	+ldap
 CONFLICTS+=	sendmail+tls-8.* \
-		sendmail+tls+sasl1-8.* \
+		sendmail+tls+db*-8.* \
+		sendmail+tls+sasl-8.* \
+		sendmail+tls+sasl+db*-8.* \
 		sendmail+tls+sasl2-8.* \
-		sendmail+sasl1-8.* \
-		sendmail+sasl2-8.*
+		sendmail+tls+sasl2+db*-8.* \
+		sendmail+sasl-8.* \
+		sendmail+sasl+db*-8.* \
+		sendmail+sasl2-8.* \
+		sendmail+sasl2+db*-8.* \
+		sendmail+db*-8.*
 CONFLICTS+=	sendmail-sasl-8.* sendmail-sasl2-8.* sendmail-tls-8.*
 .if defined(LDAP_PORT)
 OPENLDAP_LIB?=	libldap.so.2
@@ -78,26 +136,42 @@ CONFLICTS+=	sendmail*+ldap*-8.*
 .if defined(SENDMAIL_WITH_SASL) && !defined(SENDMAIL_WITH_SASL2)
 SASL_SUFFIX?=	+sasl1
 CONFLICTS+=	sendmail+tls-8.* \
+		sendmail+tls+db*-8.* \
 		sendmail+tls+ldap-8.* \
+		sendmail+tls+ldap+db*-8.* \
 		sendmail+tls+sasl2-8.* \
+		sendmail+tls+sasl2+db*-8.* \
 		sendmail+tls+sasl2+ldap-8.* \
+		sendmail+tls+sasl2+ldap+db*-8.* \
 		sendmail+sasl2-8.* \
+		sendmail+sasl2+db*-8.* \
 		sendmail+sasl2+ldap-8.* \
-		sendmail+ldap-8.*
+		sendmail+sasl2+ldap+db*-8.* \
+		sendmail+ldap-8.* \
+		sendmail+ldap+db*-8.* \
+		sendmail+db*-8.*
 CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl2-8.* sendmail-tls-8.*
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .else
-CONFLICTS+=	sendmail*+sasl1*-8.*
+CONFLICTS+=	sendmail*+sasl-8.* sendmail*+sasl+*-8.*
 .endif
 .if defined(SENDMAIL_WITH_SASL2)
 SASL_SUFFIX?=	+sasl2
 CONFLICTS+=	sendmail+tls-8.* \
+		sendmail+tls+db*-8.* \
 		sendmail+tls+ldap-8.* \
+		sendmail+tls+ldap+db*-8.* \
 		sendmail+tls+sasl-8.* \
+		sendmail+tls+sasl+db*-8.* \
 		sendmail+tls+sasl+ldap-8.* \
+		sendmail+tls+sasl+ldap+db*-8.* \
 		sendmail+sasl-8.* \
+		sendmail+sasl+db*-8.* \
 		sendmail+sasl+ldap-8.* \
-		sendmail+ldap-8.*
+		sendmail+sasl+ldap+db*-8.* \
+		sendmail+ldap-8.* \
+		sendmail+ldap+db*-8.* \
+		sendmail+db*-8.*
 CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-tls-8.*
 LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 .if !defined(SENDMAIL_WITHOUT_SASLAUTHD)
@@ -112,10 +186,16 @@ EXTRA_PATCHES+=	${FILESDIR}/cyruslookup.patch
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 TLS_SUFFIX?=	+tls
 CONFLICTS+=	sendmail+sasl-8.* \
+		sendmail+sasl+db*-8.* \
 		sendmail+sasl+ldap-8.* \
+		sendmail+sasl+ldap+db*-8.* \
 		sendmail+sasl2-8.* \
+		sendmail+sasl2+db*-8.* \
 		sendmail+sasl2+ldap-8.* \
-		sendmail+ldap-8.*
+		sendmail+sasl2+ldap+db*-8.* \
+		sendmail+ldap-8.* \
+		sendmail+ldap+db*-8.* \
+		sendmail+db*-8.*
 CONFLICTS+=	sendmail-ldap-8.* sendmail-sasl-8.* sendmail-sasl2-8.*
 .else
 CONFLICTS+=	sendmail*+tls*-8.*
@@ -180,6 +260,19 @@ do-configure:
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=g" \
 		-e "s=%%LOCALBASE%%=${LOCALBASE}=g" \
 		${SITE} > ${WCONF}/site.config.m4
+.if defined(SENDMAIL_WITH_BERKELEYDB)
+	${ECHO_CMD} \
+	 'APPENDDEF(`confENVDEF'\'', `-I${BERKELEYDB_INCLUDE}'\'')' \
+		>> ${WCONF}/site.config.m4
+	${ECHO_CMD} \
+	 'APPENDDEF(`confLIBDIRS'\'', `-I${LOCALBASE}/lib'\'')' \
+		>> ${WCONF}/site.config.m4
+.for i in sendmail editmap makemap praliases vacation
+	${ECHO_CMD} \
+	 'APPENDDEF(`conf_${i}_LIBS'\'', `-l${BERKELEYDB_LIB}'\'')' \
+		>> ${WCONF}/site.config.m4
+.endfor
+.endif
 .if defined(SENDMAIL_WITH_SMTPS)
 	${ECHO_CMD} \
 	 'APPENDDEF(`conf_sendmail_ENVDEF'\'', `-D_FFR_SMTP_SSL'\'')' \
