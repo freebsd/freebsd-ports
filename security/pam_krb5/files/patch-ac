@@ -1,0 +1,40 @@
+--- pam_krb5_acct.c.orig	Tue Jan  4 19:08:51 2000
++++ pam_krb5_acct.c	Mon Nov  6 10:21:49 2000
+@@ -11,6 +11,7 @@
+ #include <security/pam_appl.h>
+ #include <security/pam_modules.h>
+ #include <krb5.h>
++#include <com_err.h>
+ #include "pam_krb5.h"
+ 
+ /* A useful logging macro */
+@@ -38,12 +39,12 @@
+     }
+ 
+     /* Get username */
+-    if (pam_get_item(pamh, PAM_USER, (void **) &name)) {
++    if (pam_get_item(pamh, PAM_USER, (const void **) &name)) {
+ 	return PAM_PERM_DENIED;;
+     }
+ 
+     /* Get service name */
+-    (void) pam_get_item(pamh, PAM_SERVICE, (void **) &service);
++    (void) pam_get_item(pamh, PAM_SERVICE, (const void **) &service);
+     if (!service)
+ 	service = "unknown";
+ 
+@@ -55,12 +56,12 @@
+ 	return PAM_SUCCESS;
+     }
+ 
+-    if (krb5_init_context(&pam_context)) {
++    if ((krbret = krb5_init_context(&pam_context)) != 0) {
+ 	DLOG("krb5_init_context()", error_message(krbret));
+ 	return PAM_PERM_DENIED;;
+     }
+ 
+-    if (krbret = krb5_cc_get_principal(pam_context, ccache, &princ)) {
++    if ((krbret = krb5_cc_get_principal(pam_context, ccache, &princ)) != 0) {
+ 	DLOG("krb5_cc_get_principal()", error_message(krbret));
+ 	pamret = PAM_PERM_DENIED;;
+ 	goto cleanup;

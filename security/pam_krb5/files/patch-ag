@@ -1,0 +1,52 @@
+--- pam_krb5.5.orig	Tue Jan  4 19:08:51 2000
++++ pam_krb5.5	Mon Nov  6 10:27:01 2000
+@@ -1,24 +1,24 @@
+ .\"
+ .\" $Id: pam_krb5.5,v 1.5 2000/01/05 00:59:56 fcusack Exp $
+-.TH pam_krb5 5 "15 Jan 1999"
++.TH pam_krb5 8 "15 Jan 1999"
+ .SH NAME
+ pam_krb5 \- Kerberos 5 PAM module
+ .SH SYNOPSIS
+ .LP
+-.B /usr/lib/security/pam_krb5.so.1
++.B /usr/lib/pam_krb5.so
+ .LP
+ .SH DESCRIPTION
+ .IX "pam_krb5" "" "\fLpam_krb5\fP \(em Kerberos 5 PAM module"
+ .PP
+ The Kerberos 5 service module for PAM, typically
+-.BR /usr/lib/security/pam_krb5.so.1 ,
++.BR /usr/lib/pam_krb5.so ,
+ provides functionality for three PAM categories:
+ authentication,
+ account management,
+ and password management.
+ It also provides null functions for session management.
+ The
+-.B pam_krb5.so.1
++.B pam_krb5.so
+ module is a shared object
+ that can be dynamically loaded to provide
+ the necessary functionality upon demand.
+@@ -177,10 +177,9 @@
+ .SH SEE ALSO
+ .BR kdestroy (1),
+ .BR passwd (1),
+-.BR pam (3),
++.BR pam (8),
+ .BR syslog (3),
+-.BR libpam (4),
+-.BR pam.conf (4).
++.BR pam.conf (5).
+ .SH NOTES
+ Applications should not call
+ .B pam_authenticate()
+@@ -189,7 +188,3 @@
+ and
+ .B pam_end()
+ when using the Kerberos 5 PAM module.
+-.LP
+-dtlogin will not successfully authenticate a user who enters a realm
+-name as part of their username (even if the authentication
+-module returns success).

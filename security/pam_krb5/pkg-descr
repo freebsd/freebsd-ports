@@ -1,0 +1,4 @@
+A Pluggable Authentication Module for Kerberos 5, which can
+be compiled for either Heimdal or MIT Kerberos.
+
+WWW: http://www.fcusack.com/

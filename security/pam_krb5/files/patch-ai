@@ -1,0 +1,24 @@
+--- compat_mit.c.orig	Mon Nov  6 10:21:49 2000
++++ compat_mit.c	Mon Nov  6 10:49:14 2000
+@@ -0,0 +1,21 @@
++#include <krb5.h>
++#include "krb5compat.h"
++
++const char *
++compat_princ_component(krb5_context context, krb5_principal princ, int n)
++{
++	return krb5_princ_component(context, princ, n)->data;
++}
++
++void
++compat_free_data_contents(krb5_context context, krb5_data *data)
++{
++	krb5_free_data_contents(context, data);
++}
++
++krb5_error_code
++compat_cc_next_cred(krb5_context context, const krb5_ccache id, 
++    krb5_cc_cursor *cursor, krb5_creds *creds)
++{
++	return krb5_cc_next_cred(context, id, cursor, creds);
++}
