@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	mnogosearch
-PORTVERSION=    3.1.21
+PORTVERSION=	3.1.21
+PORTREVISION=	1
 CATEGORIES=	www databases
-MASTER_SITES=   http://www.mnogosearch.org/Download/
+MASTER_SITES=	http://www.mnogosearch.org/Download/
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
