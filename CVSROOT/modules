@@ -6697,6 +6697,7 @@ python-doc-postscript-letter	ports/lang/python-doc-postscript-letter
 python15	ports/lang/python15
 python20	ports/lang/python20
 python21	ports/lang/python21
+python22	ports/lang/python22
 pythoong	ports/games/pythoong
 pyweather	ports/astro/pyweather
 pyweblib	ports/www/pyweblib
