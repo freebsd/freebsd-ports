@@ -1,0 +1,241 @@
+$FreeBSD$
+
+diff -N src/solaris/classes/sun/awt/motif/font.properties.zh_CN.bsd
+--- ../src/solaris/classes/sun/awt/motif/font.properties.zh_CN.bsd	1 Jan 1970 00:00:00 -0000
++++ ../src/solaris/classes/sun/awt/motif/font.properties.zh_CN.bsd	25 Oct 2002 04:30:51 -0000
+@@ -0,0 +1,235 @@
++#
++# @(#)font.properties.zh	1.0 00/06/20
++#
++# Copyright 2000 by Sun Microsystems, Inc.,
++# 901 San Antonio Road, Palo Alto, California, 94303, U.S.A.
++# All rights reserved.
++#
++# This software is the confidential and proprietary information
++# of Sun Microsystems, Inc. ("Confidential Information").  You
++# shall not disclose such Confidential Information and shall use
++# it only in accordance with the terms of the license agreement
++# you entered into with Sun.
++#
++
++#
++# AWT Font default Properties for Simplified Chinese TurboLinux 6.0 and higher
++#
++
++# Serif font definition
++#
++serif.0=-b&h-lucidabright-medium-r-normal--*-%d-*-*-p-*-iso8859-1
++serif.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++serif.italic.0=-b&h-lucidabright-medium-i-normal--*-%d-*-*-p-*-iso8859-1
++serif.italic.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++serif.bold.0=-b&h-lucidabright-demibold-r-normal--*-%d-*-*-p-*-iso8859-1
++serif.bold.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++serif.bolditalic.0=-b&h-lucidabright-demibold-i-normal--*-%d-*-*-p-*-iso8859-1
++serif.bolditalic.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++# SansSerif font definition
++#
++sansserif.0=-b&h-lucidasans-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1
++sansserif.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++sansserif.italic.0=-b&h-lucidasans-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1
++sansserif.italic.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++sansserif.bold.0=-b&h-lucidasans-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1
++sansserif.bold.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++sansserif.bolditalic.0=-b&h-lucidasans-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1
++sansserif.bolditalic.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++# Monospaced font definition
++#
++monospaced.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
++monospaced.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++monospaced.italic.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
++monospaced.italic.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++monospaced.bold.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
++monospaced.bold.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++monospaced.bolditalic.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
++monospaced.bolditalic.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++# Dialog font definition
++#
++dialog.0=-b&h-lucidasans-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1
++dialog.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++dialog.italic.0=-b&h-lucidasans-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1
++dialog.italic.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++dialog.bold.0=-b&h-lucidasans-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1
++dialog.bold.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++dialog.bolditalic.0=-b&h-lucidasans-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1
++dialog.bolditalic.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++# DialogInput font definition
++#
++dialoginput.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
++dialoginput.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++dialoginput.italic.0=-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1
++dialoginput.italic.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++dialoginput.bold.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
++dialoginput.bold.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++dialoginput.bolditalic.0=-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1
++dialoginput.bolditalic.1=-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++
++# Default font definition
++#
++default.char=274f
++
++# name aliases
++#
++# alias.timesroman=serif
++# alias.helvetica=sansserif
++# alias.courier=monospaced
++
++# for backward compatibility
++#
++#zapfdingbats.0=-monotype-monotype sorts-regular-r---*-%d-*-*-p-*-adobe-dingbats
++
++# Static FontCharset info.
++#
++# This information is used by the font which is not indexed by Unicode.
++# Such fonts can use their own subclass of FontCharset.
++#
++# This information can be overriden by describing more specific style.
++# For example
++#
++#  fontcharset.serif.plain.3=SpecialSymbols
++#  means serif.plain.3 font's index can be retrieved with the convert() method
++#  of instance of SpecialSymbols and what kind of characters serif.plain.3 font
++#  has can be judged with the isCovered() method of instance of SpecialSymbols.
++#
++fontcharset.serif.0=sun.io.CharToByteISO8859_1
++fontcharset.serif.1=sun.awt.motif.CharToByteX11GB2312
++
++fontcharset.sansserif.0=sun.io.CharToByteISO8859_1
++fontcharset.sansserif.1=sun.awt.motif.CharToByteX11GB2312
++
++fontcharset.monospaced.0=sun.io.CharToByteISO8859_1
++fontcharset.monospaced.1=sun.awt.motif.CharToByteX11GB2312
++
++fontcharset.dialog.0=sun.io.CharToByteISO8859_1
++fontcharset.dialog.1=sun.awt.motif.CharToByteX11GB2312
++
++fontcharset.dialoginput.0=sun.io.CharToByteISO8859_1
++fontcharset.dialoginput.1=sun.awt.motif.CharToByteX11GB2312
++
++# exclusion info.
++#
++# This information describe exclusion ranges for each fonts.
++#
++# 'exclusion.serif.plain.0' overrides 'exclusion.serif.0', and
++# 'exclusion.serif.0' overrides exclusion.0, and so on.
++#
++
++# XFontSet string
++# X11 only properties
++#
++fontset.serif.plain=\
++-b&h-lucidabright-medium-r-normal--*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.serif.italic=\
++-b&h-lucidabright-medium-i-normal--*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.serif.bold=\
++-b&h-lucidabright-demibold-r-normal--*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.serif.bolditalic=\
++-b&h-lucidabright-demibold-i-normal--*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++# SansSerif font definition 
++#
++
++fontset.sansserif.plain=\
++-b&h-lucida-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.sansserif.italic=\
++-b&h-lucida-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.sansserif.bold=\
++-b&h-lucida-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.sansserif.bolditalic=\
++-b&h-lucida-bold-i-normal-snas-*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++# Monospaced font definition 
++#
++fontset.monospaced.plain=\
++-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.monospaced.italic=\
++-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.monospaced.bold=\
++-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-,1\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.monospaced.bolditalic=\
++-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++# Dialog font definition 
++#
++fontset.dialog.italic=\
++-b&h-lucida-medium-i-normal-sans-*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.dialog.bold=\
++-b&h-lucida-bold-r-normal-sans-*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.dialog.bolditalic=\
++-b&h-lucida-bold-i-normal-sans-*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.dialog.plain=\
++-b&h-lucida-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++# DialogInput font definition 
++#
++fontset.dialoginput.italic=\
++-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.dialoginput.bold=\
++-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.dialoginput.bolditalic=\
++-b&h-lucidatypewriter-bold-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++fontset.dialoginput.plain=\
++-b&h-lucidatypewriter-medium-r-normal-sans-*-%d-*-*-m-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0
++
++#
++fontset.default=\
++-b&h-lucida-medium-r-normal-sans-*-%d-*-*-p-*-iso8859-1,\
++-arphic technology co.-ar pl sungtil gb-medium-r-normal--0-0-0-0-p-0-gb2312.1980-0

@@ -2,13 +2,15 @@ $FreeBSD$
 
 diff -u -r1.7 Makefile
 --- sun/awt/Makefile	13 Apr 2002 05:25:41 -0000	1.7
-+++ sun/awt/Makefile	18 Oct 2002 03:01:37 -0000
-@@ -406,6 +406,8 @@
++++ sun/awt/Makefile	25 Oct 2002 04:31:32 -0000
+@@ -406,7 +406,10 @@
  	font.properties			\
  	font.properties.ja		\
  	psfont.properties.ja		\
 +	font.properties.ru		\
 +	font.properties.uk		\
  	font.properties.zh		\
++	font.properties.zh_CN		\
  	font.properties.zh_TW
  
+ FONTPROPS_SRC_SUFFIX = .$(PLATFORM)
