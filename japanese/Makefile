@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.197 1999/05/06 14:30:10 taoka Exp $
+# $Id: Makefile,v 1.198 1999/05/10 17:10:22 flathill Exp $
 #
 
     SUBDIR += Canna
@@ -47,6 +47,7 @@
     SUBDIR += grep
     SUBDIR += groff
     SUBDIR += gtk
+    SUBDIR += gtkicq
     SUBDIR += gxditview
     SUBDIR += handbook
     SUBDIR += hex
