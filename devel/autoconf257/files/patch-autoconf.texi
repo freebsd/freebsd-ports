@@ -1,0 +1,23 @@
+--- doc/autoconf.texi.orig	Tue Dec  3 07:16:32 2002
++++ doc/autoconf.texi	Sun Jun  1 19:17:51 2003
+@@ -1,9 +1,9 @@
+ \input texinfo @c -*-texinfo-*-
+ @comment ========================================================
+ @comment %**start of header
+-@setfilename autoconf.info
++@setfilename autoconf257.info
+ @include version.texi
+-@settitle Autoconf
++@settitle Autoconf257
+ @setchapternewpage odd
+ @setcontentsaftertitlepage
+ @finalout
+@@ -97,7 +97,7 @@
+ 
+ @dircategory GNU programming tools
+ @direntry
+-* Autoconf: (autoconf).         Create source code configuration scripts
++* Autoconf257: (autoconf257).         Create source code configuration scripts
+ @end direntry
+ 
+ @dircategory Individual utilities
