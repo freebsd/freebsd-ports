@@ -1,11 +1,11 @@
---- mlcd/Makefile.in.orig	Sat May 24 08:03:14 2003
-+++ mlcd/Makefile.in	Sat May 24 08:03:37 2003
-@@ -35,7 +35,7 @@
- 		for link in $(LINKS) ; do ln -s . $$link ; done
+--- mlcd/Makefile.in.orig	Sat Dec 20 19:36:00 2003
++++ mlcd/Makefile.in	Sat Dec 20 19:36:10 2003
+@@ -31,7 +31,7 @@
+ all:		$(GOAL)
  
  $(GOAL):	$(OBJS)
--		$(CXX) -o $(GOAL) $(OBJS)
-+		$(CXX) -o $(GOAL) -lio $(OBJS)
+-		$(CXX) $(LFLAGS) -o $(GOAL) $(OBJS)
++		$(CXX) $(LFLAGS) -lio -o $(GOAL) $(OBJS)
  
  clean:
- 		rm -f $(OBJS) $(GOAL) $(LINKS)
+ 		rm -f $(OBJS) $(GOAL)

@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Jul 26 14:05:04 2002
-+++ Makefile.in	Mon May 19 12:12:29 2003
+--- Makefile.in.orig	Tue Sep 23 03:16:41 2003
++++ Makefile.in	Sat Dec 20 21:21:36 2003
 @@ -5,6 +5,9 @@
  SUBDIRS=@SUBDIRS@
  DISTCLEANS=Makefile config.cache config.log config.status scripts/ptal-init
@@ -31,3 +31,27 @@
  				fi ; \
  			done ; \
  		cd .. ; \
+@@ -164,11 +167,6 @@
+ 			fi ; \
+ 		fi ; \
+ 		echo ; \
+-		if ! grep $(libdir) /etc/ld.so.conf >/dev/null 2>/dev/null ; then \
+-			echo "Adding $(libdir) to /etc/ld.so.conf." ; \
+-			echo $(libdir) >>/etc/ld.so.conf ; \
+-		fi ; \
+-		ldconfig ; \
+ 	else \
+ 		if ! test -d /etc/profile.d || ! test -f /etc/profile.d/hpoj.sh || ! test -f /etc/profile.d/hpoj.csh ; then \
+ 			echo "You may need to add $(bindir) and $(sbindir) to your PATH." ; \
+@@ -193,11 +191,6 @@
+ 		fi ; \
+ 	fi
+ 	@ echo
+-	@ for file in /bin/bash /usr/bin/perl ; do \
+-		if ! test -x $$file ; then \
+-			echo "As root, please install and/or create a symlink to \"$$file\"." ; \
+-		fi ; \
+-	done
+ 	@ echo
+ 	@ for file in bin/hpo bin/ieee12844_print bin/ptal-printd bin/addpjl lib/ieee12844.o lib/ieee12844pp.o etc/ptal-start.conf etc/ptal-start.conf.new etc/ptal-stop.conf etc/ptal-stop.conf.new share/pixmaps/hpoj doc/hpoj ; do \
+ 		if test -f $(prefix)/$$file ; then \
