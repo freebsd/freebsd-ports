@@ -1,0 +1,17 @@
+--- Source-Tree/pipeclient/all-systems/pipeclient.c.orig	Sun Mar 19 13:19:42 2000
++++ Source-Tree/pipeclient/all-systems/pipeclient.c	Thu Nov 15 14:17:26 2001
+@@ -1059,7 +1059,14 @@
+ 	signal(SIGPIPE, catch_sigpipe);
+ 
+ 	do {
++#if HAS_BSD_PIPE
++		if (interconn () < 0) {
++			sal_dprintf(SAL_DEBUG_INFO, SAL_DEBUG_MSG_WARNING, "pipeclient: Unable to get a pipe to the local daemon.\n");
++			ourserexit (RCM_UNAFAILURE, (char *) 0);
++		}
++#else
+ 		interset(-1);
++#endif
+ 		interclear ();
+ 		interw32i (rawreq->orig_seqno);
+ 		interw32u (rawreq->orig_mid);

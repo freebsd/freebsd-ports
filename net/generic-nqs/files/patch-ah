@@ -1,0 +1,19 @@
+--- Source-Tree/nqsdaemon/all-systems/nqs_mai.c.orig	Sun Mar 19 13:19:21 2000
++++ Source-Tree/nqsdaemon/all-systems/nqs_mai.c	Sat Oct  6 10:21:00 2001
+@@ -247,8 +247,14 @@
+ 		argv [0] = "mail";
+ 		argv [1] = maildest;
+ 		argv [2] = (char *) 0;
+-		execve ("/bin/mail", argv,	/* Execve() mail program */
+-			envp);
++		{
++			struct stat stb;
++			if (stat("/bin/mail", &stb) != -1)
++				execve ("/bin/mail",/* Execve() mail program */
++					argv, envp);
++			else if (stat("/usr/bin/mail", &stb) != -1)
++				execve ("/usr/bin/mail", argv, envp);
++		}
+ 		_exit (1);
+ 	}
+ 	else if (pid == -1) return (-1);	/* Fork failed */
