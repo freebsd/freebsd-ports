@@ -1,6 +1,7 @@
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/Data.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/Error.pm
+lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/FAQ.pod
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/area.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/axestype.pm
 lib/perl5/site_perl/%%PERL_VER%%/GD/Graph/bars.pm
