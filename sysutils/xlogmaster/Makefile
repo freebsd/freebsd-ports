@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xlogmaster
-# Version required:	1.4.3
+# Version required:	1.4.4
 # Date created:		1 August 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id$
+# $Id: Makefile,v 1.5 1998/08/31 14:20:41 vanilla Exp $
 #
 
-DISTNAME=	xlogmaster-1.4.3
+DISTNAME=	xlogmaster-1.4.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://sunsite.doc.ic.ac.uk/packages/gnu/\
 		${MASTER_SITE_GNU}\
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://sunsite.doc.ic.ac.uk/packages/gnu/\
 
 MAINTAINER=	aw1@stade.co.uk
 
-LIB_DEPENDS=	gtk\\.1\\.5:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
