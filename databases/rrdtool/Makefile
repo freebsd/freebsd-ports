@@ -22,6 +22,8 @@ CONFIGURE_ENV=	PERL=${PERL}
 MAN1=		RRDp.1 RRDs.1 bin_dec_hex.1 rrdcgi.1 rrdcreate.1 rrddump.1 \
 		rrdfetch.1 rrdgraph.1 rrdlast.1 rrdresize.1 rrdrestore.1 \
 		rrdtool.1 rrdtune.1 rrdtutorial.1 rrdupdate.1
+MAN3=		RRDp.3 RRDs.3
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/rrdtool ${PREFIX}/bin
@@ -36,9 +38,8 @@ do-install:
 		${INSTALL_DATA} ${WRKSRC}/contrib/log2rrd/README ${PREFIX}/share/doc/rrdtool/README.log2rrd
 		${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/rrdtool
 .endif
-		${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-		for file in piped/RRDp.pm shared/RRDs.pm; do \
-			${INSTALL_DATA} ${WRKSRC}/perl-$$file ${PREFIX}/lib/perl5/site_perl/${PERL_VER}; \
+		for dir in piped shared; do \
+			cd ${WRKSRC}/perl-$$dir; ${MAKE} install; \
 		done
 
 post-install:
