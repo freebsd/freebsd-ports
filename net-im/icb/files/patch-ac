@@ -1,12 +1,42 @@
 --- icb/c_log.c.orig	Fri Feb 24 13:20:18 1995
-+++ icb/c_log.c	Mon May 25 15:04:35 1998
-@@ -46,7 +46,9 @@
++++ icb/c_log.c	Sat Aug 26 19:15:52 2000
+@@ -6,6 +6,7 @@
+ #include "icb.h"
+ #include "externs.h"
+ #include <time.h>
++#include <errno.h>
+ 
+ FILE *logfp = NULL;
+ 
+@@ -45,8 +46,10 @@
+ 	time_t time();
  	struct tm *t, *localtime();
  	time_t clock;
- 	extern int errno, sys_nerr;
 +#if !(defined(BSD) && BSD >= 199306)
+ 	extern int errno, sys_nerr;
  	extern char *sys_errlist[];
 +#endif
  
  	/* determine pathname to use */
  	if (path == NULL || *path == '\0')
+@@ -98,7 +101,8 @@
+ 	
+ 	/* timestamp it */
+ 	sprintf(mbuf, "Session log \"%s\" started at %d/%02d/%-2d %s.",
+-	  path, t->tm_mon+1, t->tm_mday, t->tm_year, aptr);
++	sprintf(mbuf, "Session log \"%s\" started at %d/%02d/%-4d %s.",
++	  path, t->tm_mon+1, t->tm_mday, 1900+t->tm_year, aptr);
+ 	putl(mbuf, PL_SCR | PL_LOG);
+ 
+ 	return(0);
+@@ -126,8 +130,8 @@
+ 		aptr++;
+ 	
+ 	/* timestamp it */
+-	sprintf(mbuf, "Session log closed at %d/%02d/%-2d %s.",
+-	  t->tm_mon+1, t->tm_mday, t->tm_year, aptr);
++	sprintf(mbuf, "Session log closed at %d/%02d/%-4d %s.",
++	  t->tm_mon+1, t->tm_mday, 1900+t->tm_year, aptr);
+ 	putl(mbuf, PL_SCR | PL_LOG);
+ 
+ 	/* close it */
