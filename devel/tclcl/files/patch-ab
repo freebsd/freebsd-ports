@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Mar 11 15:31:08 2002
++++ Makefile.in	Mon Mar 11 15:31:21 2002
+@@ -103,7 +103,7 @@
+ 	$(LIBRARY_TCL)/http2.1/http.tcl
+ TCL_83_LIBRARY_FILES = \
+ 	$(TCL_BASE_LIBRARY_FILES) \
+-	$(LIBRARY_TCL)/http2.3/http.tcl
++	$(LIBRARY_TCL)/http2.4/http.tcl
+ 
+ TCL_LIBRARY_FILES = \
+ 	@V_TCL_LIBRARY_FILES@
