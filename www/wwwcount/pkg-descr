@@ -3,7 +3,7 @@ program to record the number of raw hits on a web page.  It generates
 a GIF image of the number of hits and returns to the browser as an
 in-lined image. The program also has a run-time option not to show
 the digit images, this way the hits can be kept without being displayed.
-The hits can be be monitored without incrementing from a separate page
+The hits can be monitored without incrementing from a separate page
 as well. The program can also display the time and date of any timezone.
 It has a option to countdown to a specific date (past or future). Almost
 all of the features are run-time options.  The single program can be used

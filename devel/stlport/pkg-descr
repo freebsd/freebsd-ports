@@ -1,4 +1,4 @@
-STLport is an an adaptation of SGI's Standard Template Library.
+STLport is an adaptation of SGI's Standard Template Library.
 The goal of the STLport effort is to make SGI's STL
 implementation usable with most compilers while retaining full
 functionality.

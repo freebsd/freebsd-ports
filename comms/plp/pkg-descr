@@ -8,7 +8,7 @@ provided by rfsv.
 Before using this port it is necessary to either
 
     a) create a symbolic link form the serial port the psion is
-    connected to to /dev/psion eg ln -s /dev/cuaa0 /dev/psion
+    connected to /dev/psion eg ln -s /dev/cuaa0 /dev/psion
 
 or
 

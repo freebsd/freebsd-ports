@@ -1,6 +1,6 @@
 Litestream is an Open Source, infinitely scalable high-capacity MP3
 streaming system for Unix. Tests on Pentium II 400 single processor
-demonstrated the system is capable of at at least 4000 simultaneous 56 Kbit
+demonstrated the system is capable of at least 4000 simultaneous 56 Kbit
 streams. That's 244 Mbit per node!
 
 The Litestream system is a series of components which are compatible with
