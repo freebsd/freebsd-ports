@@ -1,25 +1,11 @@
---- src/Makefile.in.orig	Mon May 31 15:59:03 2004
-+++ src/Makefile.in	Thu Jun  3 16:22:14 2004
-@@ -464,14 +464,14 @@
- 	done
- install-pkgverlibLTLIBRARIES: $(pkgverlib_LTLIBRARIES)
- 	@$(NORMAL_INSTALL)
--	test -z "$(pkgverlibdir)" || $(mkdir_p) "$(DESTDIR)$(pkgverlibdir)"
--	@list='$(pkgverlib_LTLIBRARIES)'; for p in $$list; do \
--	  if test -f $$p; then \
--	    f="`echo $$p | sed -e 's|^.*/||'`"; \
--	    echo " $(LIBTOOL) --mode=install $(pkgverlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(pkgverlibdir)/$$f'"; \
--	    $(LIBTOOL) --mode=install $(pkgverlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(pkgverlibdir)/$$f"; \
--	  else :; fi; \
--	done
-+#	test -z "$(pkgverlibdir)" || $(mkdir_p) "$(DESTDIR)$(pkgverlibdir)"
-+#	@list='$(pkgverlib_LTLIBRARIES)'; for p in $$list; do \
-+#	  if test -f $$p; then \
-+#	    f="`echo $$p | sed -e 's|^.*/||'`"; \
-+#	    echo " $(LIBTOOL) --mode=install $(pkgverlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) '$$p' '$(DESTDIR)$(pkgverlibdir)/$$f'"; \
-+#	    $(LIBTOOL) --mode=install $(pkgverlibLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(pkgverlibdir)/$$f"; \
-+#	  else :; fi; \
-+#	done
+--- src/Makefile.in.orig	Thu Dec 23 15:03:41 2004
++++ src/Makefile.in	Thu Dec 23 15:06:20 2004
+@@ -834,7 +834,7 @@
  
- uninstall-pkgverlibLTLIBRARIES:
- 	@$(NORMAL_UNINSTALL)
+ info-am:
+ 
+-install-data-am: install-pkgdataSCRIPTS install-pkgverlibLTLIBRARIES
++install-data-am: install-pkgdataSCRIPTS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
