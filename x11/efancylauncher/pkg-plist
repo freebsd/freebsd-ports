@@ -11,6 +11,8 @@ share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/MAIN
 share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/bg.jpg
 share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/config_window.png
 share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT/verdana.ttf
+share/enlightenment/epplet_icons/E-FancyLauncher.icon
+@unexec rmdir %D/share/enlightenment/epplet_icons 2>/dev/null || true
 @dirrm share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT
 @dirrm share/enlightenment/epplet_data/E-FancyLauncher
-share/enlightenment/epplet_icons/E-FancyLauncher.icon
+@unexec rmdir %D/share/enlightenment/epplet_data 2>/dev/null || true
