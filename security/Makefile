@@ -96,6 +96,7 @@
     SUBDIR += hashish
     SUBDIR += heimdal
     SUBDIR += hlfl
+    SUBDIR += hostsentry
     SUBDIR += hping
     SUBDIR += hydra
     SUBDIR += ident2

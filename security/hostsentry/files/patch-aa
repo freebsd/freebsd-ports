@@ -1,0 +1,11 @@
+--- ../hostSentryConfig.py	Thu Mar 25 22:06:01 1999
++++ hostSentryConfig.py	Sun Feb  9 14:49:38 2003
+@@ -35,7 +35,7 @@
+ 
+ # This is the default config file. I'll make this more
+ # accessible in the future.
+-CONFIG='/usr/local/abacus/hostsentry/hostsentry.conf'
++CONFIG='/usr/local/etc/hostsentry.conf'
+ 
+ class hostSentryConfig(hostSentryCore):
+                 

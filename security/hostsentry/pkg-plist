@@ -1,0 +1,34 @@
+abacus/hostsentry/hostSentryConfig.py
+abacus/hostsentry/hostSentryCore.py
+abacus/hostsentry/hostSentryDB.py
+abacus/hostsentry/hostSentryLog.py
+abacus/hostsentry/hostSentryStat.py
+abacus/hostsentry/hostSentryTTY.py
+abacus/hostsentry/hostSentryTTYDB.py
+abacus/hostsentry/hostSentryUser.py
+abacus/hostsentry/hostSentryUtmp.py
+abacus/hostsentry/hostsentry.py
+abacus/hostsentry/modules/moduleExample.py
+abacus/hostsentry/modules/moduleFirstLogin.py
+abacus/hostsentry/modules/moduleForeignDomain.allow
+abacus/hostsentry/modules/moduleForeignDomain.py
+abacus/hostsentry/modules/moduleHistorySuspicious.py
+abacus/hostsentry/modules/moduleHistoryTruncated.py
+abacus/hostsentry/modules/moduleLoginLogout.py
+abacus/hostsentry/modules/moduleMultipleLogins.allow
+abacus/hostsentry/modules/moduleMultipleLogins.py
+abacus/hostsentry/modules/moduleOddDirnames.py
+abacus/hostsentry/modules/moduleRhostsCheck.py
+@dirrm abacus/hostsentry/modules
+@unexec rmdir %D/abacus/hostsentry 2>/dev/null || true
+@unexec rmdir %D/abacus 2>/dev/null || echo "If you are permanently removing this port, you should do a "rm -rf ${PKG_PREFIX}/abacus" to remove any binary, configuration and log files left." | fmt
+%%PORTDOCS%%share/doc/hostsentry/README.BUGS
+%%PORTDOCS%%share/doc/hostsentry/README.credits
+%%PORTDOCS%%share/doc/hostsentry/README.install
+%%PORTDOCS%%share/doc/hostsentry/README.intro
+%%PORTDOCS%%share/doc/hostsentry/README.modules
+%%PORTDOCS%%share/doc/hostsentry/README.paper
+%%PORTDOCS%%share/doc/hostsentry/README.technical
+%%PORTDOCS%%share/doc/hostsentry/README.why_python
+%%PORTDOCS%%share/doc/hostsentry/README.wtmp
+%%PORTDOCS%%@dirrm share/doc/hostsentry
