@@ -20,6 +20,7 @@
     SUBDIR += esound
     SUBDIR += extace
     SUBDIR += gdcd
+    SUBDIR += gkrellmvolume
     SUBDIR += gmixer
     SUBDIR += gnapster
     SUBDIR += gnomeaudio
