@@ -54,7 +54,7 @@ MODIFY=		conf/quiz.def \
 		conf/substitutions \
 		include/config.make
 
-NEWSBIN?=	${PREFIX}/news/cnewsbin
+NEWSBIN?=	${PREFIX}/libexec/cnews
 NEWSCTL?=	${PREFIX}/news/lib
 NEWSARTS?=	/var/news
 NEWSOV?=	/var/news/over.view
