@@ -1,0 +1,8 @@
+--- Makefile~	Wed Aug 21 17:19:11 1991
++++ Makefile	Thu Dec 30 17:22:01 1999
+@@ -1,5 +1,4 @@
+ 
+ CC = cc
+-CFLAGS = -O2
+ 
+ all:	Bonnie 

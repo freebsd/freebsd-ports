@@ -1,0 +1,73 @@
+--- Bonnie.c~	Wed Aug 21 17:18:50 1991
++++ Bonnie.c	Thu Dec 30 17:49:15 1999
+@@ -162,7 +162,7 @@
+   char   seek_tickets[Seeks + SeekProcCount];
+   double seeker_report[3];
+-  int    size;
++  quad_t size;
+   FILE * stream;
+-  int    words;
++  off_t  words;
+ 
+   fd = -1;
+@@ -195,5 +195,5 @@
+   size *= (1024 * 1024);
+   sprintf(name, "%s/Bonnie.%d", dir, getpid());
+-  fprintf(stderr, "File '%s', size: %d\n", name, size);
++  fprintf(stderr, "File '%s', size: %qd\n", name, size);
+ 
+   /* Fill up a file, writing it a char at a time with the stdio putc() call */
+@@ -228,5 +228,5 @@
+       bufindex = 0;
+     buf[bufindex++]++;
+-    if (lseek(fd, (off_t) -words, 1) == -1)
++    if (lseek(fd, -words, 1) == -1)
+       io_error("relative lseek(2)");
+     if (write(fd, (char *) buf, words) == -1)
+@@ -337,4 +337,5 @@
+ 
+       /* set up and wait for the go-ahead */
++      close(0);
+       close(seek_feedback[0]);
+       close(seek_control[1]);
+@@ -352,5 +353,11 @@
+       while(seek_tickets[0])
+       { /* until Mom says stop */
+-        doseek((long) (random() % size), fd,
++      off_t seekto;
++	if (size < ((off_t)1 << 32))
++	  seekto = random() % size;
++	else
++	  seekto = ((off_t)random() << 32 + random())  % size;
++
++	doseek(seekto, fd,
+ 	  ((lseek_count++ % UpdateSeek) == 0));
+ 	if (read(seek_control[0], seek_tickets, 1) != 1)
+@@ -422,5 +429,5 @@
+ static void
+ report(size)
+-  int   size;
++  quad_t   size;
+ {
+   printf("              ");
+@@ -434,5 +441,5 @@
+   printf("%%CPU  /sec %%CPU\n");
+ 
+-  printf("%-8.8s %4d ", machine, size / (1024 * 1024));
++  printf("%-8.8s %4qd ", machine, size / (1024 * 1024));
+   printf("%5d %4.1f %5d %4.1f %5d %4.1f ",
+     (int) (((double) size) / (delta[(int) Putc][Elapsed] * 1024.0)),
+@@ -551,5 +558,5 @@
+   char buf[Chunk];
+ 
+-  sprintf(buf, "Bonnie: drastic I/O error (%s)", message);
++  sprintf(buf, "\nBonnie: drastic I/O error (%s)", message);
+   perror(buf);
+   exit(1);
+@@ -593,5 +600,5 @@
+     /* touch a word */
+     buf[((int) random() % (size/IntSize - 2)) + 1]--;
+-    if (lseek(fd, (long) probe, 0) != probe)
++    if (lseek(fd, probe, 0) != probe)
+       io_error("lseek in doseek update");
+     if (write(fd, (char *) buf, size) == -1)

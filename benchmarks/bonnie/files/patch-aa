@@ -1,27 +1,3 @@
-diff -C2 Makefile~ Makefile
-*** Makefile~	Wed Aug 21 17:19:11 1991
---- Makefile	Thu May 18 20:27:19 1995
-***************
-*** 1,7 ****
-  
-! CC = cc
-! CFLAGS = -O2
-  
-! all:	Bonnie 
-! 
-! Bonnie:
---- 1,10 ----
-+ all:	bonnie
-  
-! bonnie:
-! 	$(CC) $(CFLAGS) -static -o bonnie Bonnie.c
-  
-! install:
-! 	-@mkdir -p ${PREFIX}/bin
-! 	-@mkdir -p ${PREFIX}/man/man1
-! 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} bonnie ${PREFIX}/bin
-! 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 bonnie.1 ${PREFIX}/man/man1
-diff -C2 /dev/null bonnie.1
 *** /dev/null	Thu May 18 20:25:21 1995
 --- bonnie.1	Thu May 18 20:26:47 1995
 ***************
