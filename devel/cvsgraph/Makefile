@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsgraph
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel graphics
 MASTER_SITES=	http://www.akhphd.au.dk/~bertho/cvsgraph/
 
@@ -19,8 +19,19 @@ LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd \
 
 ALL_TARGET=	cvsgraph
 DOCDIR=		share/doc/${PORTNAME}
-DOCS=		LICENCE README
+DOCS=		ChangeLog LICENCE README
 PLIST=		${WRKDIR}/pkg-plist
+USE_AUTOCONF=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS= --with-gd=${LOCALBASE} \
+		--with-png=${LOCALBASE} \
+		--with-z=/usr
+
+post-configure:
+	${PERL} -pi -e \
+		"s|CFLAGS	=|CFLAGS += -I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/gd|g" \
+		${WRKSRC}/Makefile
 
 pre-install:
 	${ECHO} bin/cvsgraph > ${PLIST}
