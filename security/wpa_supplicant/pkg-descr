@@ -1,0 +1,9 @@
+wpa_supplicant is a client (supplicant) for the WPA, 802.11i, and
+802.1x security protocols typically used over wireless networks.
+You must have a WPA, 802.11i, or 802.1x authenticator (server) to
+make use of this program.
+
+WWW: http://hostap.epitest.fi/wpa_supplicant/
+
+- Sam Leffler
+sam@FreeBSD.org
