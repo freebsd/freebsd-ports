@@ -12,7 +12,9 @@ libexec/nagios/gen_check_snmp_if_services
 %%EXPECTTOOLS%%libexec/nagios/pm3.exp
 %%EXPECTTOOLS%%libexec/nagios/tnt
 %%EXPECTTOOLS%%libexec/nagios/tnt.exp
+@unexec rmdir %D/libexec/nagios 2>/dev/null || true
 %%EXAMPLESDIR%%/services-check_snmp_if.template
+@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/check_snmp_counter-0.5.0.README
 %%PORTDOCS%%%%DOCSDIR%%/check_snmp_gauge-0.3.0.README
 %%PORTDOCS%%%%DOCSDIR%%/check_snmp_if-0.3.5.README
