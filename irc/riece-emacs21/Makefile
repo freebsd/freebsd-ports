@@ -6,6 +6,7 @@
 
 PORTNAME=	riece
 PORTVERSION=	1.0.4
+PORTEPOCH=	1
 CATEGORIES=	irc elisp
 MASTER_SITES=	http://wiliki.designflaw.org/riece/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
