@@ -1,13 +1,13 @@
 # New ports collection makefile for:	geda
-# Version required:		19990124
+# Version required:		19990327
 # Date created:			24 Nov 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gEDA-19990516
-PKGNAME=	geda-19990516
+DISTNAME=	gEDA-19990327
+PKGNAME=	geda-19990327
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geda.seul.org/dist/  \
 		ftp://ftp.geda.seul.org/pub/geda/dist/ \
