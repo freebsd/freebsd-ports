@@ -3689,6 +3689,7 @@ ja-rxvt		ports/japanese/rxvt
 ja-ryaku-fpw	ports/japanese/ryaku-fpw
 ja-samba	ports/japanese/samba
 ja-sazanami-ttf	ports/japanese/sazanami-ttf
+ja-scim-table	ports/japanese/scim-table
 ja-sdic		ports/japanese/sdic
 ja-sed		ports/japanese/sed
 ja-seizedesktop	ports/japanese/seizedesktop
@@ -4201,6 +4202,7 @@ ko-openoffice-1.0	ports/korean/openoffice-1.0
 ko-openoffice-1.1	ports/korean/openoffice-1.1
 ko-pgp.language	ports/korean/pgp.language
 ko-pinetreefonts	ports/korean/pinetreefonts
+ko-scim-table	ports/korean/scim-table
 ko-texinfo	ports/korean/texinfo
 ko-unfonts-ttf	ports/korean/unfonts-ttf
 ko-uniksc	ports/korean/uniksc
@@ -9054,6 +9056,7 @@ schemetoc	ports/lang/schemetoc
 scid		ports/games/scid
 scigraphica	ports/math/scigraphica
 scilab		ports/math/scilab
+scim		ports/textproc/scim
 scimark2	ports/benchmarks/scimark2
 scimark2c	ports/benchmarks/scimark2c
 scintilla	ports/x11-toolkits/scintilla
@@ -11239,6 +11242,8 @@ zh-pine4	ports/chinese/pine4
 zh-pyDict	ports/chinese/pyDict
 zh-qe		ports/chinese/qe
 zh-qterm	ports/chinese/qterm
+zh-scim-chinese	ports/chinese/scim-chinese
+zh-scim-table	ports/chinese/scim-table
 zh-tcl		ports/chinese/tcl83
 zh-tcl83	ports/chinese/tcl83
 zh-telnet	ports/chinese/telnet
