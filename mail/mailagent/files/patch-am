@@ -1,0 +1,19 @@
+*** agent/magent.sh.orig	Sat Sep 16 09:05:29 1995
+--- agent/magent.sh	Thu Jul 25 19:58:11 1996
+***************
+*** 17,23 ****
+  echo "Extracting agent/magent (with variable substitutions)"
+  $spitshell >magent <<!GROK!THIS!
+  $startperl
+! 	eval 'exec perl -S \$0 "\$@"'
+  		if \$running_under_some_shell;
+  
+  # You'll need to set up a .forward file that feeds your mail to this script,
+--- 17,23 ----
+  echo "Extracting agent/magent (with variable substitutions)"
+  $spitshell >magent <<!GROK!THIS!
+  $startperl
+! 	eval 'exec $perlpath -S \$0 "\$@"'
+  		if \$running_under_some_shell;
+  
+  # You'll need to set up a .forward file that feeds your mail to this script,
