@@ -11,6 +11,7 @@ lib/analog/lang/cza.lng
 lib/analog/lang/czh.lng
 lib/analog/lang/dea.lng
 lib/analog/lang/deadom.tab
+lib/analog/lang/deform.html
 lib/analog/lang/deh.lng
 lib/analog/lang/dehdom.tab
 lib/analog/lang/dka.lng
@@ -70,11 +71,15 @@ lib/analog/lang/trh.lng
 lib/analog/lang/uk.lng
 lib/analog/lang/ukdom.tab
 lib/analog/lang/us.lng
-lib/analog/lang/yu.lng
+lib/analog/lang/usform.html
+lib/analog/lang/yua.lng
+lib/analog/lang/yudom.tab
+lib/analog/lang/yuh.lng
 share/doc/analog/Licence.txt
 share/doc/analog/Readme.html
 share/doc/analog/acknow.html
 share/doc/analog/alias.html
+share/doc/analog/args.html
 share/doc/analog/bara8.gif
 share/doc/analog/barb1.gif
 share/doc/analog/barb32.gif
@@ -120,6 +125,7 @@ share/doc/analog/timereps.html
 share/doc/analog/update.html
 share/doc/analog/wasnew1.html
 share/doc/analog/wasnew2.html
+share/doc/analog/wasnew3.html
 share/doc/analog/webworks.html
 share/doc/analog/whatsnew.html
 share/doc/analog/whole.html
