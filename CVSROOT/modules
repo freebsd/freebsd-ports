@@ -4546,6 +4546,7 @@ mindfocus	ports/games/mindfocus
 mindguard	ports/games/mindguard
 mindterm-binary	ports/security/mindterm-binary
 ming		ports/graphics/ming
+mingplot	ports/graphics/mingplot
 mingw		ports/devel/mingw
 mingw-bin-msvcrt	ports/devel/mingw-bin-msvcrt
 mingw-binutils	ports/devel/mingw-binutils
