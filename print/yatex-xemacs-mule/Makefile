@@ -14,4 +14,8 @@ MASTERDIR=	${.CURDIR}/../yatex
 COMMENT=	${.CURDIR}/pkg/COMMENT
 PLIST=		${.CURDIR}/pkg/PLIST
 
+.if defined(PARALLEL_PACKAGE_BUILD)
+FORBIDDEN=	hang
+.endif
+
 .include	"${MASTERDIR}/Makefile"
