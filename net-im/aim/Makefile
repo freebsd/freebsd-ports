@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_XLIB=	yes
-
+INSTALLS_SHLIB=	yes
 # must not strip
 STRIP=
 
