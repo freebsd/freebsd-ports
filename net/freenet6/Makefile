@@ -7,7 +7,7 @@
 
 PORTNAME=	freenet6
 PORTVERSION=	2.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.hexago.com/files/
 DISTNAME=	tspc-${PORTVERSION}-src
@@ -31,7 +31,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 IGNORE=		This program might not be working on FreeBSD version below 4.0
 .endif
 .if ${OSVERSION} > 500000
-EXTRA_PATCHES=	patch5-template::freebsd.sh
+EXTRA_PATCHES=	${FILESDIR}/patch5-template::freebsd.sh
 .endif
 
 MAKE_ARGS=	target=freebsd installdir=${PREFIX}
