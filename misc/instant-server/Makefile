@@ -7,6 +7,7 @@
 
 PORTNAME=	instant-server
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.lemis.com/pub/
 MASTER_SITE_SUBDIR=	pub/instant-server
@@ -21,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/sbin/postfix:${PORTSDIR}/mail/postfix \
 		${LOCALBASE}/sbin/traceroute:${PORTSDIR}/net/traceroute \
 		cnewsdo:${PORTSDIR}/news/cnews \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/${APACHE_PORT} \
-		${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
+		${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
 # Don't let stupid programs ask for configuration.
 
