@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dnetc
-# Slave ports may try to override this
-PORTVERSION?=	2.9007.489
+PORTVERSION=	${VERSION}
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.distributed.net/pub/dcti/%SUBDIR%/ \
@@ -19,11 +18,11 @@ DISTNAME=	dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
 MAINTAINER=	tim@bishnet.net
 COMMENT=	Distributed.net distributed computing project client
 
-# This is architecture dependent
+# These are architecture dependent
 WRKSRC=		${WRKDIR}/dnetc${PORTVERSION:E}-freebsd-${ARCH:S/i386/x86/}-elf
+MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 
-# Slave ports may have set this
-ONLY_FOR_ARCHS?=	i386
+ONLY_FOR_ARCHS=	i386 alpha sparc64
 
 NO_BUILD=	yes
 
@@ -42,6 +41,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN1=		dnetc.1
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == sparc64 || ${ARCH} == alpha
+VERSION=	2.9003.481
+.else
+VERSION=	2.9007.489
+.endif
 
 .if ${OSVERSION} < 300000
 IGNORE=		"This port requires FreeBSD 3.X or greater."
