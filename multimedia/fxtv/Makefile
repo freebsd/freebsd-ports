@@ -1,12 +1,12 @@
 # New ports collection makefile for:	fxtv
-# Version required:	0.48
+# Version required:	1.00
 # Date created:		Sun Sep  7 17:55:07 EDT 1997
 # Whom:			Randall Hopper <aa8vb@ipass.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fxtv-0.48
+DISTNAME=	fxtv-1.00
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ipass.net/~dbhopper/aa8vb/fxtv/
 EXTRACT_SUFX=	.tgz
@@ -19,8 +19,8 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff34 \
 
 NOT_FOR_ARCHS=	alpha
 
-# This program does not actually require the programs below, but they are 
-# needed if you use digital video recording and playback.
+# This program does not actually require the programs below unless you
+#   use audio/video recording and/or playback and save to a non-raw format.
 #RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 #		mpg123:${PORTSDIR}/audio/mpg123 \
 #		mpeg_musicin:${PORTSDIR}/audio/mpegaudio \
@@ -30,5 +30,10 @@ NOT_FOR_ARCHS=	alpha
 USE_X_PREFIX=	yes
 USE_GMAKE=      yes
 MAKE_FLAGS=	-e
+MAN1=		fxtv.1
+
+pre-install:
+	${CP} ${WRKSRC}/fxtv.1 ${WRKSRC}/fxtv.man
+
 
 .include <bsd.port.mk>
