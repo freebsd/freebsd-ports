@@ -4205,6 +4205,7 @@ linux-bmrt	ports/graphics/linux-bmrt
 linux-divx4linux	ports/multimedia/linux-divx4linux
 linux-divx4linux4	ports/multimedia/linux-divx4linux4
 linux-divxplayer	ports/multimedia/linux-divxplayer
+linux-e2fsprogs	ports/sysutils/linux-e2fsprogs
 linux-ePSXe	ports/emulators/linux-ePSXe
 linux-eagle	ports/cad/linux-eagle
 linux-edonkey-gui-gtk	ports/net/linux-edonkey-gui-gtk
