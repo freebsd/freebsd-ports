@@ -1,4 +1,5 @@
 lib/pluginwrapper/flash6.so
+lib/pluginwrapper/flash7.so
 lib/pluginwrapper/acrobat.so
 lib/pluginwrapper/jai.so
 lib/pluginwrapper/java3d.so

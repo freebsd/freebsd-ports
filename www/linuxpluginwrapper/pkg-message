@@ -13,6 +13,21 @@ libpthread.so.0			pluginwrapper/flash6.so
 libm.so was version-bumped on 5.3-BETA7. Please change libm.so.2
 to libm.so.3.
 
+** PLEASE NOTE Macromedia Flash7 SUPPORT IS ALPHA VERSION. **
+If you find any problem,  please send me report(s) with debug
+information like 'make -DDEBUG install' or patch(es).
+
+Firefox has a double free problem wih Flash7.  So I don't
+support it.  Please don't send me a report about firefox.
+Of course, I always welcome to recieve fixed problems report.
+
+Please get and apply a dlsym(3) hook patch.
+	http://people.FreeBSD.org/~nork/rtld_dlsym_hack.diff
+This provides _dlsym(3) function to fix dynamic-link
+error "can't find gtk_major_version" ad-hoc-ly.
+
+I don't set default to use flash7.  Please set-up your
+enviroment(ln -s, apply patch to rtld,...).
 ================================================================
 
 
