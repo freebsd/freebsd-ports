@@ -14,10 +14,8 @@ MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/grafik/gimp/%SUBDIR%/ \
 		ftp://ftp.fh-heilbronn.de/mirrors/ftp.gimp.org/%SUBDIR%/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/gimp/%SUBDIR%,}
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/%SUBDIR%,}
 MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}
-#MASTER_SITE_SUBDIR=	gimp/v${PORTVERSION:R}/testing
-#DISTNAME=	${PORTNAME}-${PORTVERSION:S/.pre/pre/}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program (unstable development version)
