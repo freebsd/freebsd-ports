@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pyfltk
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyFltk-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	hsn@netmag.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to FLTK window toolkit
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
