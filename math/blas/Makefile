@@ -36,6 +36,6 @@ pre-build:
 
 pre-extract:
 	chmod +x scripts/uncomp
-	
+
 .include <bsd.port.mk>
 
