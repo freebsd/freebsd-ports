@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	m4
-PORTVERSION=	1.4
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	m4
@@ -22,9 +21,13 @@ CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ARGS+=	--enable-changeword
 .endif
 
+INFO=	m4
+
+EXAMPLESDIR=	share/examples/gm4
+
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/gm4
-	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/share/examples/gm4
+	@${MKDIR} ${PREFIX}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.m4 ${PREFIX}/${EXAMPLESDIR}
 	@install-info ${PREFIX}/info/m4.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
