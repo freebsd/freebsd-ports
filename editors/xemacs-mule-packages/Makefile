@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xemacs-mule-packages
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|kiri/xemacs|} \
 		${MASTER_SITE_XEMACS:S|%SUBDIR%|packages|}
@@ -17,7 +17,7 @@ DISTFILES=	\
 		leim-1.20-pkg.tar.gz \
 		locale-1.20-pkg.tar.gz \
 		lookup-1.13-pkg.tar.gz \
-		mule-base-1.42-pkg.tar.gz \
+		mule-base-1.43-pkg.tar.gz \
 		mule-ucs-1.04-pkg.tar.gz \
 		skk-1.23-pkg.tar.gz
 DIST_SUBDIR=	xemacs
@@ -34,7 +34,7 @@ PACKAGES_SUBDIR=	mule-packages
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}
-	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${f} \
+	-@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DIST_SUBDIR}/${f} \
 		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
 .endfor
 
