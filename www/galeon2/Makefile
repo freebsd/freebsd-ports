@@ -7,7 +7,7 @@
 
 PORTNAME=	galeon2
 PORTVERSION=	1.3.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://osdn.dl.sourceforge.net/sourceforge/galeon/
