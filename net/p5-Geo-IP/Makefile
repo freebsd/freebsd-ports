@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geo-IP
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.maxmind.com/download/geoip/api/perl/
@@ -16,12 +16,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	seanc@FreeBSD.org
 COMMENT=	Gets country name by IP or hostname
 
-LIB_DEPENDS=	GeoIP.2:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	GeoIP.3:${PORTSDIR}/net/GeoIP
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS=	LIBS='-L${PREFIX}/lib' INC='-I${PREFIX}/include'
+CONFIGURE_ARGS=	LIBS='-L${LOCALBASE}/lib' INC='-I${LOCALBASE}/include'
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Geo::Mirror.3 Geo::IP.3 Geo::IP::Record.3
+
+post-patch:
+	@${PERL} -pii -e 's/^our (.*),(.*);$$/use vars qw$$1$$2;/' ${WRKSRC}/lib/Geo/Mirror.pm
 
 .include <bsd.port.mk>
