@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+USEPK_MODE=	bitgraph
 RESOLUTION=	118
 MASTERDIR=	${.CURDIR}/../ptex-pkfonts300
 

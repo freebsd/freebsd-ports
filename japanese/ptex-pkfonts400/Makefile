@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+USEPK_MODE=	nexthi
 RESOLUTION=	400
 MASTERDIR=	${.CURDIR}/../ptex-pkfonts300
 

@@ -28,7 +28,7 @@ PKGREQ=		${WRKDIR}/REQ
 #  It is mode name of default at executing MetaFont. The default is ljfour.
 #  This needs not to be changed. It can be changed with an option or resource.
 # ******************
-USEPK_MODE?=	preview
+USEPK_MODE?=	cx
 MAKETEX_MODE?=	${USEPK_MODE}
 RESOLUTION?=	300
 
