@@ -1,0 +1,5 @@
+bin/quotes
+etc/sample.quotesrc
+share/doc/quotes/quotes.txt
+share/doc/quotes/QuExample.pm
+@dirrm share/doc/quotes
