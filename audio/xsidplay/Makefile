@@ -38,10 +38,6 @@ MAN1=		xsidplay.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
