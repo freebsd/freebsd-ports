@@ -422,8 +422,8 @@ mozilla:
 	@${MAKE} extract-mozilla
 	@${MAKE} patch-mozilla
 	@${MAKE} build-mozilla
-	@${MAKE} install-mozilla
 	@${MAKE} register-mozilla
+	@${MAKE} install-mozilla
 
 do-build:
 	@${MAKE} mozilla
