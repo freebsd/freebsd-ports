@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	gpsman
-PORTVERSION=	6.0.1
-PORTREVISION=	1
+PORTVERSION=	6.1.1
 CATEGORIES=	astro tk84
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.ncc.up.pt/gpsman/gpsmanhtml/ \
-		http://www.ncc.up.pt/~mig/
+MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/ \
+		${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	science/cartography
 EXTRACT_SUFX=	.tgz
 
