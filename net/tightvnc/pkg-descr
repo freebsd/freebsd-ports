@@ -1,0 +1,10 @@
+Enhanced version of VNC, called TightVNC (grown from the VNC Tight Encoder
+project), which is optimized to work over slow network connections such as
+low-speed modem links. While original VNC may be very slow when your
+connection is not fast enough, with TightVNC you can work remotely almost
+in real time in most environments. Besides bandwidth optimizations,TightVNC
+also includes many other improvements, optimizations and bugfixes over VNC.
+Note that TightVNC is free, cross-platform and compatible with the standard
+VNC.
+
+WWW: http://www.tightvnc.com/

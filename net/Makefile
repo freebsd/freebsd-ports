@@ -452,6 +452,7 @@
     SUBDIR += urlendec
     SUBDIR += vchat
     SUBDIR += vnc
+    SUBDIR += vnc-tight
     SUBDIR += vomit
     SUBDIR += vrrp
     SUBDIR += vtun
