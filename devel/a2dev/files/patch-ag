@@ -1,0 +1,39 @@
+diff -ur a2dev-1.2.orig/test/Makefile a2dev-1.2/test/Makefile
+--- a2dev-1.2.orig/test/Makefile	Mon Mar 27 22:16:25 1995
++++ a2dev-1.2/test/Makefile	Wed Jul  1 18:34:39 1998
+@@ -11,11 +11,12 @@
+ ### Default is to do nothing -- "make verify" runs the test.
+ ###
+ 
+-default:
++all:		verify
++	@echo
+ 
+ install:
+ 
+-verify:		clean all.exec *.CHECK
++verify:		all.exec *.CHECK
+ 	@echo
+ 
+ %.CHECK:	%
+@@ -25,16 +26,16 @@
+ 	@echo '***' $< is 'OK!'
+ 
+ all.o:		foo.o bar.o new.o
+-	a2link -o $@ $^
++	../link/a2link -o $@ $^
+ 
+ %.lst %.o:	%.s
+-	a2asm -l $< > $*.lst
++	../asm/a2asm -l $< > $*.lst
+ 
+ %.obj:		%.o
+-	a2load $< > $@
++	../load/a2load $< > $@
+ 
+ %.exec:		%.o
+-	a2load -e $< > $@
++	../load/a2load -e $< > $@
+ 
+ clean:
+ 	rm -f *.o *.obj *.lst *.exec

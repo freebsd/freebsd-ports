@@ -1,0 +1,23 @@
+diff -ur a2dev-1.2.orig/Make.defs a2dev-1.2/Make.defs
+--- a2dev-1.2.orig/Make.defs	Tue Mar 28 07:14:43 1995
++++ a2dev-1.2/Make.defs	Wed Jul  1 18:22:36 1998
+@@ -7,8 +7,8 @@
+ 
+ # Where are installation "bin" and "man" subdirectories?
+ 
+-INSTBIN		= /usr/local/bin
+-INSTMAN		= /usr/local/man
++INSTBIN		= ${PREFIX}/bin
++INSTMAN		= ${PREFIX}/man
+ 
+ # What utilities to use when making
+ 
+@@ -21,7 +21,7 @@
+ BISON		= bison
+ AR		= ar
+ RM		= rm -f
+-INSTALL		= ginstall
++INSTALL		= install
+ 
+ # Where our utility library is
+ 

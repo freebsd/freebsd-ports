@@ -1,0 +1,12 @@
+diff -ur a2dev-1.2.orig/load/Makefile a2dev-1.2/load/Makefile
+--- a2dev-1.2.orig/load/Makefile	Sun Mar 26 03:52:37 1995
++++ a2dev-1.2/load/Makefile	Wed Jul  1 18:23:25 1998
+@@ -16,7 +16,7 @@
+ ### Abstract rules
+ ###
+ 
+-default:	$(PROG)
++all:		$(PROG)
+ 
+ install:	installbin installman
+ 

@@ -1,0 +1,12 @@
+diff -ur a2dev-1.2.orig/Makefile a2dev-1.2/Makefile
+--- a2dev-1.2.orig/Makefile	Sun Mar 26 06:08:22 1995
++++ a2dev-1.2/Makefile	Wed Jul  1 18:27:21 1998
+@@ -13,7 +13,7 @@
+ 
+ include		Make.defs
+ 
+-GENERIC		= default install clean distclean
++GENERIC		= all default install clean distclean
+ SUBDIRS		= util asm link load objx test
+ 
+ ###
