@@ -16,6 +16,8 @@ COMMENT=	Ikaro.dk themes pack for fluxbox
 
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel
 
+CONFLICTS=	flux-art-*
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
