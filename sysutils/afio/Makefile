@@ -18,7 +18,6 @@ WRKSRC=		${WRKDIR}/afio.2.4.5
 ALL_TARGET=	afio
 MAN1=		afio.1
 
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/afio
