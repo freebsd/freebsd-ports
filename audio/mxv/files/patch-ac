@@ -1,30 +1,22 @@
-*** application.C.orig	Thu Apr 17 15:23:34 1997
---- application.C	Thu Apr 17 15:26:03 1997
+*** old/application.C	Mon Apr 27 05:41:31 1998
+--- application.C	Mon Jul 12 15:28:20 1999
 ***************
-*** 41,47 ****
+*** 41,46 ****
+--- 41,47 ----
   #include <iostream.h>
   #include "localdefs.h"
   
-! #ifndef NeXT
-  #include <errno.h>
-  extern char *sys_errlist[];
-  char *strerror(int errn) {
---- 41,48 ----
-  #include <iostream.h>
-  #include "localdefs.h"
-  
-! #if !defined(__FreeBSD__)
-! #if !defined(NeXT)
-  #include <errno.h>
-  extern char *sys_errlist[];
-  char *strerror(int errn) {
++ #if !defined(__FreeBSD__)
+  #ifdef NeXT 
+  extern "C" {
+  	char *strerror(int);
 ***************
-*** 53,58 ****
---- 54,60 ----
-  	int sleep(unsigned);
+*** 60,65 ****
+--- 61,67 ----
+  	return(sys_errlist[errn]);
   }
   #endif /* NeXT */
-+ #endif
++ #endif /* FreeBSD */
   
   class GlobalResourceList {
   	friend Application;

@@ -1,40 +1,37 @@
-*** Imakefile.orig	Wed Feb 28 16:16:02 1996
---- Imakefile	Thu Apr 17 15:14:45 1997
+*** /dev/null	Mon Jul 12 15:25:18 1999
+--- MiXViews.res	Mon Jul 12 14:54:19 1999
 ***************
-*** 139,144 ****
---- 139,159 ----
-  ARCH_OBJS = utils.o
-  #endif
-  
-+ #if defined(FreeBSDArchitecture)
-+ XCOMM Extra defines, include directories, loading flags, and libraries needed
-+ XCOMM for the FreeBSD version.  The assumption is that you are using Gnu gcc/g++
+*** 0 ****
+--- 1,32 ----
++ ! This file must be renamed "MiXViews", and installed either in your home
++ ! directory (if you are the only one using mxv) or in the X res dir
++ ! (/usr/lib/X11/app-defaults) or in the InterViews res dir
++ ! (<installed InterViews dir>/lib/app-defaults).
 + 
-+ ARCH_CCDEFINES = -DVOXWARE_DACS -DXDisplay=_XDisplay
-+ ARCH_CCFLAGS =
-+ ARCH_CCINCLUDES =
-+ ARCH_CCLDFLAGS = -L/usr/local/lib
-+ ARCH_CCLDLIBS = $(APP_FORTLIBS) -lm
-+ DEBUG_CCFLAGS = -Ddebug
++ MiXViews*font:                        -*-times-medium-r-normal--14-*   
++ MiXViews*PulldownCommandMenu*background:		light blue
++ MiXViews*Command*background:				lightskyblue2
++ MiXViews*PullrightCommandMenu*background:		lightskyblue
++ MiXViews*MenuBar*font:        -*-helvetica-bold-r-normal--17-*   
++ MiXViews*MenuItem*font:        -*-helvetica-medium-r-normal--14-*   
++ MiXViews*PullrightMenu*font:        -*-helvetica-medium-r-normal--14-*   
++ MiXViews*DialogBox*Title*font:        -*-helvetica-bold-r-normal--14-*   
++ MiXViews*DialogBox*Subtitle*font:        -*-helvetica-medium-r-normal--12-*   
++ MiXViews*Alert*Title*foreground:			Red
++ MiXViews*InputDialog*FileSelector*font: -*-times-medium-r-normal--14-*
++ MiXViews*PushButton*font:        -*-helvetica-medium-r-normal--14-*   
++ MiXViews*HorizontalScale*font:        -*-helvetica-medium-r-normal--8-*   
++ MiXViews*VerticalScale*font:        -*-helvetica-medium-r-normal--8-*   
++ MiXViews*StatusBar*font:        -*-helvetica-medium-r-normal--12-*   
++ MiXViews*FrameGraph*font:        -*-helvetica-medium-r-normal--8-*   
++ MiXViews*HorizontalScaleLabel*foreground:        White   
++ MiXViews*HorizontalScaleLabel*background:        Black   
++ MiXViews*VerticalScaleLabel*foreground:        White   
++ MiXViews*VerticalScaleLabel*background:        Black   
++ MiXViews*LPCWindowDisplayChannels:        4   
++ MiXViews*FFTWindowDisplayChannels:        4   
++ MiXViews*FFTWindow*PlotStyle:        Line   
++ MiXViews*PvocWindowDisplayChannels:        4   
++ MiXViews*PvocWindow*VerticalScaleLabel*font: -*-helvetica-medium-r-normal--10-*   
++ MiXViews*malloc_debug:	off
 + 
-+ DAC_OBJS = conv_config.o conv_device.o vw_converter.o
-+ ARCH_OBJS = utils.o
-+ #endif
-+ 
-  #if defined(i386SVR4Architecture)
-  XCOMM This assumes you have the SoundBlaster card on your machine
-  ARCH_CCDEFINES = -DSOUNDBLASTER
-***************
-*** 253,258 ****
---- 268,278 ----
-  MakeObjectFromSrcFlags(sgi_dac, $(OPTIMIZE_CCFLAGS))
-  #endif
-  #if defined(LinuxArchitecture)
-+ MakeObjectFromSrcFlags(utils, $(OPTIMIZE_CCFLAGS))
-+ MakeObjectFromSrcFlags(conv_device, $(OPTIMIZE_CCFLAGS))
-+ MakeObjectFromSrcFlags(vw_converter, $(OPTIMIZE_CCFLAGS))
-+ #endif
-+ #if defined(FreeBSDArchitecture)
-  MakeObjectFromSrcFlags(utils, $(OPTIMIZE_CCFLAGS))
-  MakeObjectFromSrcFlags(conv_device, $(OPTIMIZE_CCFLAGS))
-  MakeObjectFromSrcFlags(vw_converter, $(OPTIMIZE_CCFLAGS))
