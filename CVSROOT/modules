@@ -4634,6 +4634,7 @@ mp3_check	ports/audio/mp3_check
 mp3asm		ports/audio/mp3asm
 mp3blaster	ports/audio/mp3blaster
 mp3butler	ports/audio/mp3butler
+mp3c		ports/audio/mp3c
 mp3check	ports/audio/mp3check
 mp3chew		ports/audio/mp3chew
 mp3ck		ports/audio/mp3ck
