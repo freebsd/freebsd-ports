@@ -245,6 +245,7 @@
     SUBDIR += mod_jk
     SUBDIR += mod_jk-apache2
     SUBDIR += mod_jk2
+    SUBDIR += mod_jk2-apache2
     SUBDIR += mod_layout
     SUBDIR += mod_layout2
     SUBDIR += mod_limitipconn
