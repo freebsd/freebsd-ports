@@ -1,14 +1,14 @@
 Index: gkrellm.1
 diff -u gkrellm.1.orig gkrellm.1
---- gkrellm.1.orig	Sun Aug 11 08:23:17 2002
-+++ gkrellm.1	Thu Aug 29 16:41:57 2002
+--- gkrellm.1.orig	Mon Oct 13 13:01:37 2003
++++ gkrellm.1	Mon Oct 13 15:24:10 2003
 @@ -1,4 +1,4 @@
--.TH gkrellm 1 "March 14, 2002" "GNU/Linux" "User's Manual"
-+.TH gkrellm 1 "March 14, 2001" "FreeBSD" "User's Manual"
+-.TH gkrellm 1 "June 7, 2003" "GNU/Linux" "User's Manual"
++.TH gkrellm 1 "June 7, 2003" "FreeBSD" "User's Manual"
  
  .SH "NAME"
  gkrellm \- The GNU Krell Monitors
-@@ -399,7 +399,7 @@
+@@ -416,7 +416,7 @@
  ppp is connecting, and the on state is the ppp link connected.
  The phone line lock is determined by the existence of the modem
  lock file
@@ -17,7 +17,7 @@ diff -u gkrellm.1.orig gkrellm.1
  which assumes pppd is using
  .IR /dev/modem.
  However, if your pppd setup does not use
-@@ -408,11 +408,11 @@
+@@ -425,11 +425,11 @@
  .PP
  .RS
  .nf
@@ -31,16 +31,25 @@ diff -u gkrellm.1.orig gkrellm.1
  state is detected by the existence of
  .IR /var/run/pppX.pid
  and the time stamp of this file is the base for the on line time.
-@@ -1059,7 +1059,7 @@
+@@ -1007,7 +1007,7 @@
+ .nf
+ ~/.gkrellm2/themes
+ /usr/local/share/gkrellm2/themes
+-/usr/share/gkrellm2/themes
++/usr/X11R6/share/gkrellm2/themes
+ .fi
+ .RE
  .PP
- .B gkrellm
- also searches
--.IR /usr/share/gkrellm2/themes
-+.IR /usr/X11R6/share/gkrellm2/themes
- for any system wide themes installed as part of a distribution.
- Finally, a theme you simply want to check out can be untarred anywhere and
- used by running:
-@@ -1085,7 +1085,7 @@
+@@ -1018,7 +1018,7 @@
+ .RS
+ .nf
+ ~/.themes/THEME_NAME/gkrellm2
+-/usr/share/themes/THEME_NAME/gkrellm2
++/usr/X11R6/share/themes/THEME_NAME/gkrellm2
+ .fi
+ .RE
+ .PP
+@@ -1046,7 +1046,7 @@
  The directories
  .IR /usr/local/lib/gkrellm2/plugins
  and
@@ -49,7 +58,7 @@ diff -u gkrellm.1.orig gkrellm.1
  are also searched for plugins to install.
  .PP
  Some plugins may be available only as source files and they will
-@@ -1127,7 +1127,7 @@
+@@ -1082,7 +1082,7 @@
  .I ~/.gkrellm2/plugins
  User plugin directory.
  .TP
@@ -58,12 +67,19 @@ diff -u gkrellm.1.orig gkrellm.1
  System wide plugin directory.
  .TP
  .I /usr/local/lib/gkrellm2/plugins
-@@ -1136,7 +1136,7 @@
- .I ~/.gkrellm2/themes
- User theme directory.
+@@ -1094,13 +1094,13 @@
+ .I ~/.themes/THEME_NAME/gkrellm2
+ User theme packaged as part of a user Gtk theme.
  .TP
 -.I /usr/share/gkrellm2/themes
 +.I /usr/X11R6/share/gkrellm2/themes
  System wide theme directory.
  .TP
  .I /usr/local/share/gkrellm2/themes
+ Local theme directory.
+ .TP
+-.I /usr/share/themes/THEME_NAME/gkrellm2
++.I /usr/X11R6/share/themes/THEME_NAME/gkrellm2
+ System wide theme packaged as part of a system wide Gtk theme.
+ 
+ .SH "AUTHORS"
