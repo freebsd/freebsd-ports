@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.4.13
+PORTVERSION=	2.4.16
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/libxml
@@ -19,7 +19,6 @@ RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -27,6 +26,22 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		xml2-config.1 xmllint.1 xmlcatalog.1
 MAN4=		libxml.4
+
+.if !defined(WITHOUT_PYTHON)
+USE_PYTHON=	yes
+PLIST_SUB+=	PYTHON:=""
+.else
+CONFIGURE_ARGS+=	--without-python
+PLIST_SUB+=	PYTHON:="@comment "
+PKGNAMESUFFIX=	-nopython
+.endif
+
+.if !defined(WITHOUT_PYTHON)
+pre-extract:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you don't want Python support, add WITHOUT_PYTHON=yes to command line"
+	@${ECHO_MSG} ""
+.endif
 
 pre-patch:
 	@find ${WRKSRC} -name Makefile.in | xargs ${PERL} -pi -e \
