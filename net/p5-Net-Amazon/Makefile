@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
@@ -35,6 +35,7 @@ MAN3=		Net::Amazon.3 Net::Amazon::Attribute::Review.3 \
 		Net::Amazon::Request::Artist.3 \
 		Net::Amazon::Request::Blended.3 \
 		Net::Amazon::Request::BrowseNode.3 \
+		Net::Amazon::Request::Exchange.3 \
 		Net::Amazon::Request::Keyword.3 \
 		Net::Amazon::Request::Manufacturer.3 \
 		Net::Amazon::Request::Power.3 \
