@@ -27,6 +27,16 @@ share/htmldoc/fonts/Times-Italic.afm
 share/htmldoc/fonts/Times-Italic.pfa
 share/htmldoc/fonts/Times-Roman.afm
 share/htmldoc/fonts/Times-Roman.pfa
+share/htmldoc/data/cp-1250
+share/htmldoc/data/cp-874
+share/htmldoc/data/cp-1258
+share/htmldoc/data/cp-1257
+share/htmldoc/data/cp-1256
+share/htmldoc/data/cp-1255
+share/htmldoc/data/cp-1254
+share/htmldoc/data/cp-1253
+share/htmldoc/data/cp-1252
+share/htmldoc/data/cp-1251
 share/htmldoc/data/iso-8859-1
 share/htmldoc/data/iso-8859-2
 share/htmldoc/data/iso-8859-3
