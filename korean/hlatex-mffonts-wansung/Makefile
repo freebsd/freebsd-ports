@@ -16,6 +16,8 @@ EXTRACT_ONLY=
 MAINTAINER=	cjh@FreeBSD.org
 COMMENT?=	MF font collection of HLaTeX-wansung
 
+BROKEN=		Does not fetch
+
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/doc/latex/hlatex/wansung.ks:${PORTSDIR}/korean/hlatex-wansung
 
 NO_WRKSUBDIR=	YES
