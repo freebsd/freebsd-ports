@@ -14,13 +14,13 @@
 # Maxim Sobolev
 # ----------------------------------------------------------------------------
 #
-# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.4 2000-08-02 07:13:11 sobomax Exp $
+# $FreeBSD: /tmp/pcvs/ports/Tools/scripts/distclean.sh,v 1.5 2000-10-09 06:23:44 sobomax Exp $
 #
 # MAINTAINER= sobomax@FreeBSD.org
 
 PATH=/sbin:/bin:/usr/bin
 
-echo "Distfiles clean utility v0.40 by Maxim Sobolev <sobomax@altavista.net>."
+echo "Distfiles clean utility by Maxim Sobolev <sobomax@FreeBSD.org>."
 echo "Assumes that your ports in /usr/ports and distfiles in /usr/ports/distfiles."
 echo ""
 
@@ -31,7 +31,7 @@ FN_DISTFILES=`mktemp -t dclean` || exit 1
 FN_RESULTS_SCRIPT=`mktemp -t dclean` || exit 1
 
 echo -n "Building ports md5 index..."
-find /usr/ports/ -name "md5" -type f | xargs cat | grep "^MD5 ("| sort | uniq > $FN_PORTS
+find /usr/ports/ -name "distinfo" -type f | xargs cat | grep "^MD5 ("| sort | uniq > $FN_PORTS
 echo "Done."
 P_MD5_COUNT=`wc -l $FN_PORTS | sed "s| $FN_PORTS|| ; s| ||g"`
 echo "Found $P_MD5_COUNT md5 entries in your ports directory."
