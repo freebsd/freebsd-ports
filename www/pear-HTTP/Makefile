@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	HTTP
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 CATEGORIES=	www devel pear
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonio@php.net
 COMMENT=	PEAR miscellaneous HTTP utilities
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
