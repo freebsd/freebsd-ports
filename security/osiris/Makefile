@@ -77,6 +77,6 @@ do-install:
 	${CHOWN} -R osiris:osiris ${PREFIX}/osiris
 
 post-install:
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
