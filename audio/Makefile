@@ -269,11 +269,11 @@
     SUBDIR += p5-MusicBrainz-Client
     SUBDIR += p5-MusicBrainz-Queries
     SUBDIR += p5-MusicBrainz-TRM
+    SUBDIR += p5-Net-DAAP-Client
     SUBDIR += p5-Net-DAAP-Client-Auth
     SUBDIR += p5-Net-DAAP-DMAP
     SUBDIR += p5-Shout
     SUBDIR += p5-Xmms
-    SUBDIR += p5-dapple
     SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
     SUBDIR += pd
