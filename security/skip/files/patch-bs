@@ -245,6 +245,15 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_es.c work.
  	skip_param_t		params;
  	skip_hdr_t		skip_hdr;
  	skip_es_hash_t          *entry, **acl;
+@@ -1408,7 +1436,7 @@
+ 		panic("skip_ifinput:  mtod returned NULL!");
+ 	}
+ 	
+-	if (!SKIP_IF(ifp)) {
++	if (!ifp || !SKIP_IF(ifp)) {
+ 		/*
+ 		 * SKIP not present on this interface, pass the packet
+ 		 */
 @@ -1718,7 +1747,7 @@
  		 */
  		decryptbuf->m_data += iphlen;
