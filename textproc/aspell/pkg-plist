@@ -1,6 +1,8 @@
 bin/aspell
 bin/run-with-aspell
+bin/word-list-compress
 include/aspell/amanager.hh
+include/aspell/app_ostream.hh
 include/aspell/app_string.hh
 include/aspell/asuggest.hh
 include/aspell/bad_value.hh
@@ -34,6 +36,7 @@ include/aspell/hash_repl.hh
 include/aspell/hash_simple_string.hh
 include/aspell/hash_string.hh
 include/aspell/hash_string_s.hh
+include/aspell/invalid_flag.hh
 include/aspell/invalid_word.hh
 include/aspell/itr_equal.hh
 include/aspell/language.hh
@@ -59,6 +62,7 @@ include/aspell/skip-t.hh
 include/aspell/skip.hh
 include/aspell/split.hh
 include/aspell/str_repl.hh
+include/aspell/string_buffer.hh
 include/aspell/string_map.hh
 include/aspell/substr_repl-t.hh
 include/aspell/substr_repl.hh
@@ -78,17 +82,37 @@ include/aspell/vector_hash.hh
 include/aspell/weights.hh
 lib/libaspell.a
 lib/libaspell.so
-lib/libaspell.so.6
+lib/libaspell.so.7
 lib/libpspell_aspell.a
 lib/libpspell_aspell.so
 lib/libpspell_aspell.so.1
 share/aspell/ASCII.dat
 share/aspell/ASCII.map
 share/aspell/SGML.map
-share/aspell/american
-share/aspell/english
+share/aspell/american-lrg-only
+share/aspell/american-lrg.multi
+share/aspell/american-med-only
+share/aspell/american-med.multi
+share/aspell/american.multi
+share/aspell/british-lrg-only
+share/aspell/british-lrg.multi
+share/aspell/british-med-only
+share/aspell/british-med.multi
+share/aspell/british.multi
+share/aspell/canadian-lrg-only
+share/aspell/canadian-lrg.multi
+share/aspell/canadian-med-only
+share/aspell/canadian-med.multi
+share/aspell/canadian.multi
+share/aspell/cp1252.dat
+share/aspell/cp437.dat
+share/aspell/english-lrg-only
+share/aspell/english-med-only
 share/aspell/english.dat
+share/aspell/english.multi
 share/aspell/english_phonet.dat
+share/aspell/francais.dat
+share/aspell/francais_phonet.dat
 share/aspell/iso8859-1.dat
 share/aspell/iso8859-1.map
 share/aspell/iso8859-10.dat
@@ -159,9 +183,18 @@ share/doc/aspell/manual.aux
 share/doc/aspell/manual.dvi
 share/doc/aspell/manual.tex
 share/doc/aspell/manual2.lyx
+share/pspell/en-american-aspell-lrg.pwli
+share/pspell/en-american-aspell-med.pwli
 share/pspell/en-american-aspell.pwli
 share/pspell/en-aspell.pwli
+share/pspell/en-british-aspell-lrg.pwli
+share/pspell/en-british-aspell-med.pwli
+share/pspell/en-british-aspell.pwli
+share/pspell/en-canadian-aspell-lrg.pwli
+share/pspell/en-canadian-aspell-med.pwli
+share/pspell/en-canadian-aspell.pwli
 @dirrm include/aspell
+@dirrm share/pspell
 @dirrm share/aspell
 @dirrm share/doc/aspell/man-html
 @dirrm share/doc/aspell/man-text
