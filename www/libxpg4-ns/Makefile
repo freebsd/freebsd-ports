@@ -14,15 +14,14 @@ MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 
 MAINTAINER=	sada@FreeBSD.ORG
 
-MAKE_ENV+=	OBJFORMAT=aout SHLIB_MAJOR=2 SHLIB_MINOR=0 \
-		LDDESTDIRENV=LIBRARY_PATH=${PREFIX}/lib/aout
+MAKE_ENV+=	OBJFORMAT=aout SHLIB_MAJOR=2 SHLIB_MINOR=0
 PORTOBJFORMAT=	aout
 
 LIBDIR=		${PREFIX}/lib/aout
 SRCDIR=		/usr/src
 
 pre-build:
-.if !exists(/usr/lib/aout/crt0.o)
+.if !exists(/usr/lib/aout/c++rt0.o)
 	@${CAT} ${FILESDIR}/message.nolib
 	@${FALSE}
 .endif
