@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.173 1997/11/14 09:40:16 tg Exp $
+# $Id: Makefile,v 1.174 1997/11/14 13:15:54 tg Exp $
 #
 
     SUBDIR += FWF
@@ -71,6 +71,7 @@
     SUBDIR += wm2
     SUBDIR += x3270
     SUBDIR += xalarm
+    SUBDIR += xaniroc
     SUBDIR += xantfarm
     SUBDIR += xautolock
     SUBDIR += xbuffy
