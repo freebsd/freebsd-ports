@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.246 1999/04/13 17:11:22 taoka Exp $
+# $Id: Makefile,v 1.247 1999/04/14 06:01:55 mharo Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -110,6 +110,7 @@
     SUBDIR += netcat
     SUBDIR += netpipes
     SUBDIR += nettest
+    SUBDIR += ninja
     SUBDIR += nocol
     SUBDIR += nslint
     SUBDIR += ntimelord
