@@ -19,6 +19,16 @@ TGT_LIB		+= modules/unixpasswd/unixpasswd
 TGT_LIB		+= modules/radlogger/radlogger
 TGT_LIB		+= modules/delay/delay
 TGT_LIB		+= modules/radsql/radsql
+END
+
+if [ -f $LDAPINCLUDE/usr/local/include/ldap.h ]; then
+cat >> Makefile << END
+TGT_LIB		+= modules/radldap/radldap
+CF_RADLDAP	= -I$LDAPINCLUDE/usr/local/include
+END
+fi
+
+cat >> Makefile << END
 
 ### System compatibility flags, used in some targets' CF_TGT, LF_TGT or LL_TGT
 #
@@ -36,7 +46,6 @@ LL_ALL		=
 
 ### Module-specific build flags
 #
-CF_RADLDAP	= -I$LDAPINCLUDE/openldap
 LF_RADLDAP	= -L$LDAPLIB/usr/local/lib
 LL_RADLDAP	= -lldap -llber
 
