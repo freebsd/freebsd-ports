@@ -154,6 +154,7 @@
     SUBDIR += wmhm
     SUBDIR += wminet
     SUBDIR += wmlmmon
+    SUBDIR += wmmemmon
     SUBDIR += wmmon
     SUBDIR += wmmount
     SUBDIR += wmpccard
