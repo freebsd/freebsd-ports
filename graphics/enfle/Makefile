@@ -20,12 +20,10 @@ LIB_DEPENDS=	png.3:${PORTSDIR}/graphics/png \
 		arc.1:${PORTSDIR}/archivers/libarc
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-all-plugins \
 		--enable-plugins-dir \
-		--enable-archiver="-libarc" \
 		--disable-static
 
 MAN1=		enfle.1
