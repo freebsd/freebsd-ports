@@ -53,6 +53,7 @@
     SUBDIR += linpack
     SUBDIR += matrix
     SUBDIR += metis
+    SUBDIR += mtl
     SUBDIR += mtrxmath
     SUBDIR += mupad
     SUBDIR += naturalmath
