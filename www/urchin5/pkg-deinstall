@@ -1,0 +1,13 @@
+#!/bin/sh
+# $FreeBSD: ports/local/urchin5/pkg-deinstall
+#
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+if [ -d "${PKG_PREFIX}/urchin" ]; then
+	echo "To remove all Urchin files, including license and data files, delete the ${PKG_PREFIX}/urchin directory"
+fi
+
+exit 0
