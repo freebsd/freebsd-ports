@@ -100,6 +100,7 @@
     SUBDIR += qterm
     SUBDIR += stardict
     SUBDIR += stardict2-dict-zh_CN
+    SUBDIR += stardict2-dict-zh_TW
     SUBDIR += tcl83
     SUBDIR += telnet
     SUBDIR += tin
