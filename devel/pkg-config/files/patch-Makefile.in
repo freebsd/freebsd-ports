@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Wed Jan  3 11:39:15 2001
-+++ Makefile.in	Sun Apr 29 14:40:59 2001
+--- Makefile.in.orig	Sun Feb  3 20:23:27 2002
++++ Makefile.in	Thu Feb  7 11:46:04 2002
 @@ -35,7 +35,7 @@
  DESTDIR =
  
@@ -12,12 +12,12 @@ $FreeBSD$
  pkgincludedir = $(includedir)/@PACKAGE@
  
  top_builddir = .
-@@ -81,7 +81,7 @@
+@@ -91,7 +91,7 @@
  
  bin_PROGRAMS = pkg-config
  
--INCLUDES = -DPKGLIBDIR="\"$(pkglibdir)\"" -I./glib-1.2.8
-+INCLUDES = -DPKGLIBDIR="\"$(pkglibdir)\"" -DXPKGLIBDIR="\"$(X11BASE)/libdata/@PACKAGE@\"" -DLPKGLIBDIR="\"$(LOCALBASE)/libdata/@PACKAGE@\"" -I./glib-1.2.8
+-INCLUDES = -DPKGLIBDIR="\"$(pkglibdir)\"" $(included_glib_includes)
++INCLUDES = -DPKGLIBDIR="\"$(pkglibdir)\"" -DXPKGLIBDIR="\"$(X11BASE)/libdata/@PACKAGE@\"" -DLPKGLIBDIR="\"$(LOCALBASE)/libdata/@PACKAGE@\"" $(included_glib_includes)
  
- pkg_config_SOURCES = pkg.h pkg.c 							 partial-glib.h partial-glib.c 					 parse.h parse.c main.c						findme.c findme.h popt.c popt.h poptconfig.c popthelp.c poptint.h poptparse.c
- 
+ pkg_config_SOURCES = \
+ 	pkg.h \
