@@ -6,24 +6,25 @@
 #
 
 PORTNAME=	spamass-milter
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://freesoftware.fsf.org/download/spamass-milt/
 
 MAINTAINER=	ab@astralblue.net
 
-BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
+BUILD_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
+		autoconf:${PORTSDIR}/devel/autoconf
 RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 .if !exists(/usr/lib/libmilter.a)
 IGNORE=		requires Sendmail 8.12; upgrade the base system
 .endif
 
-USE_AUTOMAKE=	YES
-MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" PORT_CFLAGS="${CFLAGS}"
-PLIST_SUB=	DOCSDIR=${DOCSDIR}
+USE_AUTOMAKE_VER= 15
+AUTOCONF=	autoconf
+AUTOCONF_DIR=	${LOCALBASE}/share/autoconf
+
+MAN1=		spamass-milter.1
 
 post-patch:
 .for f in spamass-milter.sh.dist activation.txt
