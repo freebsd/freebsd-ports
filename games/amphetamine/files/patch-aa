@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.orig	Wed Mar 28 12:11:39 2001
-+++ Makefile	Fri Oct  5 19:43:34 2001
-@@ -3,8 +3,8 @@
+--- Makefile.orig	Mon Mar 25 21:11:27 2002
++++ Makefile	Tue Jul  2 14:46:57 2002
+@@ -3,13 +3,13 @@
  #===============
  
  # Install Paths
@@ -12,9 +12,6 @@ $FreeBSD$
 +PREFIX ?= /usr/local
 +INSTALL_DIR := ${PREFIX}/share/amph
  
- # Endianess:
- # LITTLE_ENDIAN    (for Intel) 
-@@ -14,7 +14,7 @@
  # Libraries
  USE_LIB_XPM := TRUE
  
@@ -23,7 +20,7 @@ $FreeBSD$
  SDL_HEADERS := $(shell $(SDL_CONFIG) --cflags)
  SDL_LIBS := $(shell $(SDL_CONFIG) --libs)
  
-@@ -27,7 +27,7 @@
+@@ -22,7 +22,7 @@
  
  # Directories to search for header files
  
@@ -32,25 +29,25 @@ $FreeBSD$
  
  # makemake variables
  
-@@ -37,13 +37,13 @@
+@@ -32,13 +32,13 @@
  
  # C
  
 -CC     := gcc
 -CFLAGS  = ${DEPENDFLAGS}
 +CC     ?= gcc
-+CFLAGS += ${DEPENDFLAGS}
++CFLAGS  += ${DEPENDFLAGS}
  
  # C++
  
--CXX      := g++ 
+-CXX      := g++
 -CXXFLAGS  = ${DEPENDFLAGS} -O9 -funroll-loops -fomit-frame-pointer -ffast-math -Wcast-align
-+CXX      ?= g++ 
-+CXXFLAGS += ${DEPENDFLAGS} -Wcast-align
++CXX      ?= g++
++CXXFLAGS  += ${DEPENDFLAGS} -Wcast-align
  
  %.o : %.cpp
  	${CXX} ${CPPFLAGS} -c $< ${CXXFLAGS} -o $@
-@@ -76,7 +76,7 @@
+@@ -66,7 +66,7 @@
      LOADLIBES := $(LOADLIBES) -lXpm -lXt
  endif
  
@@ -59,7 +56,7 @@ $FreeBSD$
  
  .PHONY : default
  default : amph
-@@ -84,9 +84,9 @@
+@@ -74,9 +74,9 @@
  .PHONY : install
  install: amph
  	@./mkinstalldirs ${INSTALL_DIR}
@@ -72,7 +69,7 @@ $FreeBSD$
  
  # This is what makemake added
  
-@@ -204,7 +204,7 @@
+@@ -194,7 +194,7 @@
  
  ./src/Surface.o: ./src/AmpHead.hpp ./src/Clut.hpp ./src/ConstVal.hpp ./src/Graphfil.hpp ./src/Shape.hpp ./src/ShapeLd.hpp ./src/Surface.hpp ./src/System.hpp /usr/include/limits.h /usr/include/math.h /usr/include/stdio.h /usr/include/stdlib.h
  
