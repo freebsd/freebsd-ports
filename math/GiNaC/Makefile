@@ -8,6 +8,7 @@
 
 PORTNAME=	GiNaC
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 		http://www.ginac.de/
@@ -15,12 +16,12 @@ MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library for symbolic mathematical calculations
 
-LIB_DEPENDS=	cln.2:${PORTSDIR}/math/cln
+LIB_DEPENDS=	cln.3:${PORTSDIR}/math/cln
 
 USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
 INSTALLS_SHLIB=	yes
