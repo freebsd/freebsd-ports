@@ -16,12 +16,19 @@ MAINTAINER=	dglo@SSEC.WISC.EDU
 BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
-MAKE_ENV+=	JAVAC=${LOCALBASE}/jdk1.1.8/bin/javac
-
 ALL_TARGET=	jar
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/java/classes
 	@${INSTALL_DATA} ${WRKSRC}/mysql_comp.jar ${LOCALBASE}/share/java/classes
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/mysql-jdbc
+	@(cd ${WRKSRC}/doc && ${TAR} -c -f - .) \
+		| (cd ${PREFIX}/share/doc/mysql-jdbc && ${TAR} --unlink -x -f -)
+	@(cd ${PREFIX} \
+		&& find share/doc/mysql-jdbc -type f -print >> ${TMPPLIST})
+.endif
 
 .include <bsd.port.mk>
