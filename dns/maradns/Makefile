@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	1.0.21
+PORTVERSION=	1.0.22
 CATEGORIES=	dns
 MASTER_SITES=	http://www.maradns.org/download/ \
-		http://maradns.glou.net/download/ \
-		http://maradns.3va.net/download/
+		http://maradns.3va.net/download/ \
+		http://kapranoff.ru/~kappa/files/
 
 MAINTAINER=	alex@kapranoff.ru
 COMMENT=	DNS server with focus on security and simplicity
