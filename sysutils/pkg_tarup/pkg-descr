@@ -1,0 +1,11 @@
+Script to tar up an already instaled package.
+
+The Script has still a problem, as the MTREE file is removed after
+a pkg_add/make install. As leaving the MTREE file will lead to a
+~10% increase in space needed for /var/db/pkg which I'm not sure
+we should do, esp. as the files are almost always the same again.
+(On my notebook with ~250 installed pkgs, the size increasement
+would be from 8.8MB to 10MB).
+
+Author:	Hubert Feyrer <hubert@feyrer.de>
+WWW:	http://cvsweb.netbsd.org/bsdweb.cgi/pkgsrc/pkgtools/pkg_tarup/

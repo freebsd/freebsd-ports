@@ -1,0 +1,62 @@
+--- pkg_tarup.orig	Wed May 17 01:02:05 2000
++++ pkg_tarup	Thu Sep 21 15:00:35 2000
+@@ -11,17 +11,20 @@
+ PKG_SUFX=${PKG_SUFX:-tgz}
+ 
+ PKG="$1"
+-rPKG="`pkg_info -e \"$PKG\"`"
+ 
+-if [ "$PKG" = "" -o "$rPKG" = "" -o -f "${PKG_DBDIR}/${rPKG}" ]
++if [ "$PKG" = "" ]
+ then
+-     echo Usage: $0 installed_pkg
++     echo Usage: $0 installed_package
+      exit 1
+ fi
+ 
+-PKG=$rPKG
+-echo "Taring up $PKG"
++if ! pkg_info -e "$PKG"
++then
++     echo $PKG is not installed.
++     exit 1
++fi
+ 
++echo "Taring up $PKG"
+ 
+ check_and_add() {
+ 	opt="$1"
+@@ -40,10 +43,10 @@
+ 
+ check_and_add -c ${PKG_DBDIR}/${PKG}/+COMMENT
+ check_and_add -d ${PKG_DBDIR}/${PKG}/+DESC
+-check_and_add -b ${PKG_DBDIR}/${PKG}/+BUILD_VERSION
+-check_and_add -B ${PKG_DBDIR}/${PKG}/+BUILD_INFO
++#check_and_add -b ${PKG_DBDIR}/${PKG}/+BUILD_VERSION
++#check_and_add -B ${PKG_DBDIR}/${PKG}/+BUILD_INFO
+ check_and_add -s ${PKG_DBDIR}/${PKG}/+SIZE_PKG
+-check_and_add -S ${PKG_DBDIR}/${PKG}/+SIZE_ALL
++#check_and_add -S ${PKG_DBDIR}/${PKG}/+SIZE_ALL
+ check_and_add -i ${PKG_DBDIR}/${PKG}/+INSTALL
+ check_and_add -k ${PKG_DBDIR}/${PKG}/+DEINSTALL
+ check_and_add -r ${PKG_DBDIR}/${PKG}/+REQUIRE
+@@ -54,7 +57,7 @@
+ sed -n \
+     -e '/^@comment MD5:/d' \
+     -e '/^@cwd \.$/,$d' \
+-    -e '/\$NetBSD/,$p' \
++    -e 'p' \
+     <${PKG_DBDIR}/${PKG}/+CONTENTS >$PLIST
+ 
+ # Duplicate first @cwd (work around pkg_create "feature" ...)
+@@ -80,10 +83,8 @@
+         ${PKG_ARGS} \
+ 	-v \
+ 	-f ${PLIST} \
+-	-l \
+ 	-p "`pkg_info -qp ${PKG} | head -1 | awk '{ print $2 }'`" \
+ 	-P "`pkg_info -qf ${PKG} | grep ^@pkgdep | awk '{ print $2 }'`" \
+-	-C "`pkg_info -qf ${PKG} | grep ^@pkgcfl | awk '{ print $2 }'`" \
+ 	${PKGREPOSITORY}/${PKG}.${PKG_SUFX}
+ 
+ rm -f ${PLIST}
