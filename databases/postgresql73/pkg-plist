@@ -1,0 +1,85 @@
+etc/rc.d/postgres95.sh
+postgres95/lib/libpq.a
+postgres95/bin/postgres
+postgres95/bin/postmaster
+postgres95/bin/pg_id
+postgres95/bin/pg_version
+postgres95/bin/psql
+postgres95/bin/pg_dump
+postgres95/bin/cleardbdir
+postgres95/bin/createdb
+postgres95/bin/createuser
+postgres95/bin/destroydb
+postgres95/bin/destroyuser
+postgres95/bin/initdb
+postgres95/data/files/global1.bki
+postgres95/data/files/global1.bki.source
+postgres95/data/files/local1_template1.bki
+postgres95/data/files/local1_template1.bki.source
+postgres95/data/pg_hba
+postgres95/data/base/template1/pg_proc
+postgres95/data/base/template1/pg_type
+postgres95/data/base/template1/pg_attribute
+postgres95/data/base/template1/pg_class
+postgres95/data/base/template1/pg_inherits
+postgres95/data/base/template1/pg_index
+postgres95/data/base/template1/pg_version
+postgres95/data/base/template1/pg_statistic
+postgres95/data/base/template1/pg_operator
+postgres95/data/base/template1/pg_opclass
+postgres95/data/base/template1/pg_am
+postgres95/data/base/template1/pg_amop
+postgres95/data/base/template1/pg_amproc
+postgres95/data/base/template1/pg_language
+postgres95/data/base/template1/pg_parg
+postgres95/data/base/template1/pg_aggregate
+postgres95/data/base/template1/pg_ipl
+postgres95/data/base/template1/pg_inheritproc
+postgres95/data/base/template1/pg_rewrite
+postgres95/data/base/template1/pg_listener
+postgres95/data/base/template1/pg_attnameind
+postgres95/data/base/template1/pg_attnumind
+postgres95/data/base/template1/pg_attrelidind
+postgres95/data/base/template1/pg_procidind
+postgres95/data/base/template1/pg_procnameind
+postgres95/data/base/template1/pg_procsrcind
+postgres95/data/base/template1/pg_typeidind
+postgres95/data/base/template1/pg_typenameind
+postgres95/data/base/template1/pg_classnameind
+postgres95/data/base/template1/pg_classoidind
+postgres95/data/base/template1/PG_VERSION
+postgres95/data/base/template1/pg_internal.init
+postgres95/data/pg_variable
+postgres95/data/pg_database
+postgres95/data/pg_demon
+postgres95/data/pg_magic
+postgres95/data/pg_defaults
+postgres95/data/pg_server
+postgres95/data/pg_user
+postgres95/data/pg_hosts
+postgres95/data/pg_group
+postgres95/data/pg_log
+postgres95/data/pg_time
+postgres95/data/PG_VERSION
+postgres95/include/fmgr.h
+postgres95/include/lib/dllist.h
+postgres95/include/libpq/pqcomm.h
+postgres95/include/libpq/libpq-fs.h
+postgres95/include/utils/geo-decls.h
+postgres95/include/libpq-fe.h
+postgres95/include/postgres.h
+postgres95/include/c.h
+postgres95/post-install-notes
+@dirrm postgres95/lib/
+@dirrm postgres95/include/utils/
+@dirrm postgres95/include/port/BSD44_derived/
+@dirrm postgres95/include/port/
+@dirrm postgres95/include/libpq/
+@dirrm postgres95/include/lib/
+@dirrm postgres95/include/
+@dirrm postgres95/data/files/
+@dirrm postgres95/data/base/template1/
+@dirrm postgres95/data/base/
+@dirrm postgres95/data/
+@dirrm postgres95/bin/
+@dirrm postgres95/
