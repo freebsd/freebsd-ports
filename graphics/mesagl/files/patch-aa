@@ -45,7 +45,7 @@
 +	"CFLAGS = -O3 -ffast-math -fPIC -pedantic -I/usr/X11R6/include -DSHM -DHZ=100 -DUSE_X86_ASM" \
 +	"MAKELIB = ../mklib.freebsd" \
 +	"XLIBS = -Wl,-rpath,${X11BASE}/lib -L${X11BASE}/lib -lXext -lXmu -lXi -lX11" \
-+	"ASM_SOURCES = asm-386.S"
++	"ASM_SOURCES = asm_386.S"
  
  gcc:
  	$(MAKE) $(MFLAGS) targets \
