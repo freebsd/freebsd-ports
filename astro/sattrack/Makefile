@@ -9,7 +9,7 @@ PORTNAME=	sattrack
 PORTVERSION=	3.1.6
 CATEGORIES=	astro
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
+MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time satellite tracking and orbit propagation program

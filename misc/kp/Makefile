@@ -9,7 +9,7 @@ PORTNAME=	kp
 PORTVERSION=	1.00
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	asami/kp
+MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Keyboard Practicer, touch-type training program
