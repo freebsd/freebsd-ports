@@ -3,7 +3,7 @@
 # Date created:				12 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/08/13 03:30:27 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/13 03:32:52 asami Exp $
 #
 
 DISTNAME=		cccc-2.1.1.src
@@ -16,6 +16,11 @@ MAINTAINER=		andy@icc.surw.chel.su
 
 BUILD_DEPENDS=		antlr:${PORTSDIR}/devel/pccts \
 			dlg:${PORTSDIR}/devel/pccts
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=		signal.h:163: syntax error
+.endif
 
 WRKSRC=			${WRKDIR}/usr/local/src/cccc-2.1.1
 USE_GMAKE=		yes
