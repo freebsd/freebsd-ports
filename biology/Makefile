@@ -7,6 +7,7 @@
     SUBDIR += clustalw
     SUBDIR += coalesce
     SUBDIR += deft
+    SUBDIR += dna-qc
     SUBDIR += emboss
     SUBDIR += fasta
     SUBDIR += fasta3
