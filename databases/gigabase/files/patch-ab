@@ -1,0 +1,11 @@
+--- cliproto.h.orig	Sat Sep  7 16:38:49 2002
++++ cliproto.h	Sat Sep  7 16:39:07 2002
+@@ -79,7 +79,7 @@
+ 
+ 
+ #if defined(__FreeBSD__)
+-#include <sys/param.h>
++#include <netinet/in.h>
+ #define USE_HTON_NTOH
+ #elif defined(__linux__)
+ //
