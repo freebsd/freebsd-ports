@@ -38,7 +38,13 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "      WITH_NONROOT=yes Use xcdroast w/o being root"
+	@${ECHO} "      WITH_NONROOT=yes"
+	@${ECHO} "         Use xcdroast w/o being root."
+	@${ECHO} "         Actually, that breaks all interactions with cdda2wav"
+	@${ECHO} "         (For example, you are not able to grab tracks, neither"
+	@${ECHO} "         as root, nor as a normal user). Think about WITH_NONROOT"
+	@${ECHO} "          - if you are really in need of it (with the attendant"
+	@${ECHO} "         circumstanceces noticed above) or not."
 	@${ECHO} ""
 
 post-patch:
