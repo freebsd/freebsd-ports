@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msgconvert
-PORTVERSION=	20020831
+PORTVERSION=	20040104
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://www.webonaut.com/distfiles/
 PKGNAMEPREFIX=	p5-
@@ -29,5 +29,6 @@ EXTRACT_AFTER_ARGS= > ${PORTNAME}.pl
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}.pl
+	${LN} -s ${PREFIX}/bin/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
