@@ -4375,6 +4375,7 @@ macopix		ports/games/macopix
 macutils	ports/archivers/macutils
 mad		ports/audio/mad
 madbomber	ports/games/madbomber
+madplay		ports/audio/madplay
 maelstrom	ports/games/maelstrom
 magic		ports/cad/magic
 magiccube4d	ports/games/magiccube4d
