@@ -156,6 +156,7 @@ bin/xscreensaver-hacks/zoom
 lib/X11/app-defaults/XScreenSaver
 share/gnome/apps/Settings/Desktop/screensaver-properties.desktop
 share/gnome/control-center/Desktop/screensaver-properties.desktop
+share/gnome/pixmaps/xscreensaver.xpm
 share/locale/ca/LC_MESSAGES/xscreensaver.mo
 share/locale/da/LC_MESSAGES/xscreensaver.mo
 share/locale/de/LC_MESSAGES/xscreensaver.mo

@@ -19,7 +19,7 @@ $FreeBSD$
               echo $(INSTALL_DIRS) "$(install_prefix)$(GNOME_CCDIR)"          ;\
                    $(INSTALL_DIRS) "$(install_prefix)$(GNOME_CCDIR)"          ;\
             fi                                                                ;\
-+	   /usr/bin/sed 's|xscreensaver-demo|screensaver-properties-capplet|' \
++	   /usr/bin/sed 's|xscreensaver-demo.*|screensaver-properties-capplet|'\
 +			screensaver-properties.desktop >                      \
 +				screensaver-properties.desktop1              ;\
  	                                                                      \

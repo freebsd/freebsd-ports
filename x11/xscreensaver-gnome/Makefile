@@ -7,7 +7,7 @@
 
 PORTNAME=	xscreensaver-gnome
 PORTVERSION=	4.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 DISTNAME=	xscreensaver-${PORTVERSION}
@@ -68,5 +68,9 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD}  -e 's|malloc[.]h|stdlib.h|g' \
 		${WRKSRC}/hacks/glx/extrusion.c
+
+post-install:
+	@${INSTALL_DATA} ${WRKSRC}/utils/images/logo-50.xpm \
+		${PREFIX}/share/gnome/pixmaps/xscreensaver.xpm
 
 .include <bsd.port.mk>
