@@ -1,14 +1,5 @@
---- Makefile.in.orig	Fri Feb 27 11:40:58 2004
-+++ Makefile.in	Thu Mar  4 01:28:16 2004
-@@ -12,7 +12,7 @@
- 
- CC= @CC@
- CXX= @CXX@
--CFLAGS= -Wall @CFLAGS@ -DXP_UNIX -DMOZ_X11 @MOZPLUG_CFLAGS@ -Iinclude -fPIC @X_CFLAGS@ @GECKO_DEFINES@ @GTK_CFLAGS@ @GTHREAD_CFLAGS@ @GTK_DEFINES@
-+CFLAGS= -Wall @CFLAGS@ @CPPFLAGS@ -DXP_UNIX -DMOZ_X11 @MOZPLUG_CFLAGS@ -Iinclude -fPIC @X_CFLAGS@ @GECKO_DEFINES@ @GTK_CFLAGS@ @GTHREAD_CFLAGS@ @GTK_DEFINES@
- LDFLAGS= @LIBS@ @X_LIBS@ @MOZPLUG_LIBS@ @GTK_LIBS@ @GTHREAD_LIBS@
- LIBOBJS= @LIBOBJS@
- OBJ= plugin.o nsScriptablePeer.o npp_gate.o np_entry.o npn_gate.o \
+--- Makefile.in.orig	Mon Mar 22 17:30:44 2004
++++ Makefile.in	Mon Mar 22 17:32:56 2004
 @@ -33,7 +33,7 @@
  default all: $(SHAREDTARGET)
  
