@@ -7,8 +7,8 @@
 
 PORTNAME=	cbview
 PORTVERSION=	0.06
-PORTREVISION=	1
-CATEGORIES=	graphics
+PORTREVISION=	2
+CATEGORIES=	graphics perl5
 MASTER_SITES=	http://elvine.org/code/cbview/
 
 MAINTAINER=	mezz@FreeBSD.org
@@ -21,9 +21,14 @@ RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	COPYING Changes INSTALL README TODO
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|perl -w|env perl -w|g' \
+		${WRKSRC}/${PORTNAME}
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
