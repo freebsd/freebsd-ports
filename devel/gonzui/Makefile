@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gonzui
-PORTVERSION=	0.2
+PORTVERSION=	0.4
 CATEGORIES=	devel
-MASTER_SITES=	http://namazu.org/~satoru/gonzui/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gonzui
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	A source code search engine
