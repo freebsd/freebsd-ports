@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cracksoft.kiev.ua/pub/linux/gtic/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/fido
+DISTNAME=	${PORTNAME}-1.3b
 
 MAINTAINER=	dsh@vlink.ru
 
