@@ -6,14 +6,12 @@
 #
 
 PORTNAME=	tinycobol
-PORTVERSION=	0.57
+PORTVERSION=	0.58
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tiny-cobol
 
 MAINTAINER=	patrick@freebsd.org
-
-BROKEN=		"Does not package correctly"
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
@@ -26,6 +24,8 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	"--with-readline"
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt ${LDFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" 
+
+MAN1=        htcobol.1 htcobf2f.1 htcobolpp.1
 
 pre-install:
 

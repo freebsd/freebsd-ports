@@ -1,8 +1,9 @@
 bin/htcobol
 lib/libhtcobol.a
 lib/libhtcobol2.a
-share/htcobol/cobopt
 share/htcobol/htcobolpp
+share/htcobol/htcobolrc
+share/htcobol/copybooks/screen.cpy
 @dirrm share/htcobol/copybooks
 @dirrm share/htcobol
 share/doc/tinycobol/Comments.old.txt
@@ -12,6 +13,3 @@ share/doc/tinycobol/ProgramHeaders.Info.txt
 share/doc/tinycobol/VarStructure.Info.txt
 share/doc/tinycobol/compiler-design-future.txt
 @dirrm share/doc/tinycobol
-man/man1/htcobol.1
-man/man1/htcobf2f.1
-man/man1/htcobolpp.1
