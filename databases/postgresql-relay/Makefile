@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql-relay
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	databases net
 MASTER_SITES=	http://www.mavetju.org/download/
 
