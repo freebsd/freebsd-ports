@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	lipsf
-PORTVERSION=	1.14a
+PORTVERSION=	1.14b
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/writing/print/
-EXTRACT_SUFX=	.tgz
-DISTNAME=	lpsf${PORTVERSION:S/.//}
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/lipsf/
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	mita@jp.FreeBSD.org
 
@@ -21,9 +20,9 @@ MAN1=		lipsf.1 pols.1
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/lipsf
+	@${MKDIR} ${DOCSDIR}
 .for file in HISTORY Install README TECHKNOW
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/lipsf
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
