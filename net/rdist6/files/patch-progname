@@ -1,0 +1,45 @@
+setprogname() is a standard library function. Instead of renaming
+rdist6' (incompatible) implementation, remove it entirely replacing with
+much simpler code.
+
+	-mi
+
+--- src/rdist.c	Mon Nov  9 23:13:50 1998
++++ src/rdist.c	Tue Jan 18 15:36:30 2005
+@@ -113,5 +113,5 @@
+ 	 * things in msgparseopts() need progname set.
+ 	 */
+-	setprogname(argv);
++	progname = basename(argv[0]);
+ 
+ 	if (cp = msgparseopts(localmsglist, TRUE)) {
+--- src/common.c	Mon Nov  9 23:09:01 1998
++++ src/common.c	Tue Jan 18 15:40:19 2005
+@@ -109,19 +109,4 @@
+ 
+ /*
+- * Set program name
+- */
+-extern void setprogname(argv)
+-	char **argv;
+-{
+-	register char *cp;
+-
+-	if (!progname) {
+-		progname = strdup(argv[0]);
+-		if (cp = strrchr(progname, '/'))
+-			progname = cp + 1;
+-	}
+-}
+-
+-/*
+  * Do run-time initialization
+  */
+@@ -138,5 +123,6 @@
+ 		(void) signal(SIGSEGV, sighandler);
+ 
+-	setprogname(argv);
++	if (progname == NULL)
++		progname = basename(argv[0]);
+ 
+ 	/*
