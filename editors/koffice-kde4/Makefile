@@ -32,7 +32,6 @@ RUN_DEPENDS=	wn:${PORTSDIR}/textproc/wordnet
 USE_KDELIBS_VER=	3
 PREFIX=			${KDE_PREFIX}
 
-KDE_BUILD_PLIST=	yes
 USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_ICONV=		yes
