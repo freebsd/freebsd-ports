@@ -2,44 +2,48 @@
 
 # prints out logs that are in dir1 but not in dir2
 
-if [ $# != 2 ]; then
-  echo "usage: $0 dir1 dir2"
+if [ $# -ne 3 ]; then
+  echo "usage: $0 arch dir1 dir2"
   exit 1
 fi
 
 here=$(pwd)
-dir1=$1
-dir2=$2
-fdir1=$here/$dir1
-fdir2=$here/$dir2
+arch=$1
+dir1=$2
+dir2=$3
+fdir1=$here/${arch}-$dir1
+fdir2=$here/${arch}-$dir2
 ldir2=$(cd $fdir2; pwd | sed -e 's/e\./a./')
 
-of=$here/$dir1-$dir2.html
+of=$here/$arch-$dir1-$dir2.html
 
 echo "<html><head><title>Logs that are in $dir1 but not in $dir2</title>" >$of
 echo "<h1>Logs that are in $dir1 but not in $dir2</h1>" >>$of
 echo "</head><body>" >>$of
 
 cd $fdir1
+logs=$(find . -name \*.log -o -name \*.log.bz2 | sed -e 's/\.log\.bz2/\.log/g')
+nlogs=$(echo $logs | wc -w)
 
-set *.log
-
-if [ $# = 1 -a "x$1" = "x*.log" ]; then
-  echo "No errors" >>$of
+if [ $nlogs -eq 0 ]; then
+  echo "No errors" >>$of;
 else
   num=0
   echo "<table border=1>" >>$of
   echo "<tr><th>Log</th></tr>" >>$of
-  while [ $# -gt 0 ]; do
-    if [ -f ${ldir2}/$1 -a ! -f ${fdir2}/$1 ]; then
+  for i in $logs; do
+    if [ -f ${fdir2}/${i}.bz2 -o -f ${fdir2}/${i} ]; then
+    # foo
+    else
+      fname1=$(basename $i .bz2)
+      fname=$(basename $fname1 .log)
       echo -n "<tr><td>" >>$of
-      echo -n "<a href=\"$dir1/index.html#$1\">" >>$of
-      echo -n $(basename $1 .log) >>$of
+      echo -n "<a href=\"$arch-$dir1/index.html#$fname\">" >>$of
+      echo -n $fname >>$of
       echo -n "</a>" >>$of
       echo "</td></tr>" >>$of
-      num=$(($num + 1))
+     num=$(($num + 1))
     fi
-    shift
   done
   echo "</table><br>" >> $of
   echo "$num errors<br>" >> $of
