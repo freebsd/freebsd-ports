@@ -3,7 +3,7 @@
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
-# $Id: Makefile,v 1.52 1999/02/21 21:51:01 billf Exp $
+# $Id: Makefile,v 1.54 1999/03/19 16:12:03 flathill Exp $
 
 DISTNAME=	WindowMaker-0.51.2
 PKGNAME=	windowmaker-i18n-0.51.2
@@ -13,7 +13,6 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 MASTER_SITE_SUBDIR=	beta/srcs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES} \
 		${JA_CATALOGFILE}${EXTRACT_SUFX}
-
 JA_CATALOGFILE= WindowMaker-0.51.2ja2
 
 MAINTAINER=	mac@jp.freebsd.org
