@@ -1,0 +1,5 @@
+Utility for ejecting media from CD or optical disk drive.
+
+This is a simple program that eject media from CD or optical disk
+drive.  This program work under FreeBSD 2.1.5-RELEASE or later
+version.
