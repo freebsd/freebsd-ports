@@ -1,15 +1,16 @@
 # New ports collection makefile for:	gqview
-# Version required:			0.6.0
+# Version required:			0.6.1
 # Date Created:				27 Oct 1998
 # Whom:					Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1999/03/15 18:30:04 nectar Exp $
+# $Id: Makefile,v 1.12 1999/05/29 04:10:28 steve Exp $
 #
 
-DISTNAME=	gqview-0.6.0.src
-PKGNAME=	gqview-0.6.0
+DISTNAME=	gqview-0.6.1.src
+PKGNAME=	gqview-0.6.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Haven/5235/
+MASTER_SITES=	http://gqview.netpedia.net/ \
+		http://www.geocities.com/SiliconValley/Haven/5235/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nacai@iname.com
