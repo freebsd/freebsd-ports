@@ -318,6 +318,7 @@
     SUBDIR += pgplot
     SUBDIR += pho
     SUBDIR += photopc
+    SUBDIR += php4-gd
     SUBDIR += phplot
     SUBDIR += picturebook
     SUBDIR += piddle
