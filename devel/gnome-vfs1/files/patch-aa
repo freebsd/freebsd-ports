@@ -54,33 +54,6 @@ $FreeBSD$
  		
  
  if true; then
-@@ -10559,14 +10559,14 @@
-    #
-    # Check for libiconv
-    #
--   echo $ac_n "checking for libiconv_open in -liconv""... $ac_c" 1>&6
--echo "configure:10564: checking for libiconv_open in -liconv" >&5
-+   echo $ac_n "checking for libiconv_open in -lgiconv""... $ac_c" 1>&6
-+echo "configure:10564: checking for libiconv_open in -lgiconv" >&5
- ac_lib_var=`echo iconv'_'libiconv_open | sed 'y%./+-%__p_%'`
- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-liconv  $LIBS"
-+LIBS="-lgiconv  $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 10572 "configure"
- #include "confdefs.h"
-@@ -10606,7 +10606,7 @@
- fi
- 
- if test "x$with_libiconv" = "xyes" ; then
--  ICONV_LIBS="-liconv"
-+  ICONV_LIBS="-lgiconv"
-   cat >> confdefs.h <<\EOF
- #define USE_LIBICONV 1
- EOF
 @@ -10897,7 +10897,7 @@
  s%@GTK_CFLAGS@%$GTK_CFLAGS%g
  s%@GTK_LIBS@%$GTK_LIBS%g
