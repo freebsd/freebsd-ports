@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmusic
-PORTVERSION=	1.4.9
+PORTVERSION=	1.4.10
 CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://home.jtan.com/~john/wmusic/downloads/
 DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}
@@ -16,22 +16,19 @@ MAINTAINER=	eric@FreeBSD.org
 BUILD_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PATH_GTKCONFIG=${PREFIX}/bin/gtk12-config
-
-USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	PATH_GTKCONFIG=${GTK_CONFIG}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmusic ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/wmusic ${PREFIX}/bin
 .ifndef(NOPORTDOCS)
-	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
-		${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
