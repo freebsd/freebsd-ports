@@ -1,0 +1,11 @@
+--- src/mkinstalldirs.orig	Thu Dec  7 19:54:47 2000
++++ src/mkinstalldirs	Fri Oct  5 01:03:31 2001
+@@ -19,7 +19,7 @@
+      esac
+ 
+      if test ! -d "$pathcomp"; then
+-        echo "mkdir $pathcomp" 1>&2
++#        echo "mkdir $pathcomp" 1>&2
+         mkdir "$pathcomp" || errstatus=$?
+      fi
+ 
