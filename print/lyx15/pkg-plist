@@ -2,6 +2,7 @@ bin/lyx
 lib/lyx/CREDITS
 lib/lyx/bind/emacs.bind
 lib/lyx/bind/pc-modern.bind
+lib/lyx/chkconfig.cls
 lib/lyx/chkconfig.ltx
 lib/lyx/clipart/platypus.eps
 lib/lyx/doc/Customization.lyx
@@ -12,6 +13,7 @@ lib/lyx/doc/LaTeXConfig.lyx
 lib/lyx/doc/Reference.lyx
 lib/lyx/doc/Tutorial.lyx
 lib/lyx/doc/UserGuide.lyx
+lib/lyx/examples/Bibliography.lyx
 lib/lyx/examples/Bilder.lyx
 lib/lyx/examples/Delimiters.lyx
 lib/lyx/examples/Formel.lyx
@@ -33,7 +35,9 @@ lib/lyx/kbd/french.kmap
 lib/lyx/kbd/german-2.kmap
 lib/lyx/kbd/german.kmap
 lib/lyx/kbd/iso8859-1.cdef
+lib/lyx/kbd/magyar-2.kmap
 lib/lyx/kbd/magyar.kmap
+lib/lyx/kbd/portuges.kmap
 lib/lyx/kbd/romanian.kmap
 lib/lyx/kbd/slovak.kmap
 lib/lyx/kbd/slovene.kmap
@@ -56,4 +60,5 @@ lib/lyx/templates/iletter.lyx
 lib/lyx/templates/latex_letter.lyx
 lib/lyx/templates/letter.lyx
 lib/lyx/tex/iletter.cls
+lib/lyx/texput.log
 man/man1/lyx.1.gz
