@@ -1,0 +1,10 @@
+PerForm is a large and complex taglib for AxKit XSP that facilitates
+creating large and complex HTML, WML, or other types of data-entry
+forms. PerForm tends to make life easier for you if your form data
+is coming from different data sources, such as DBI, or even XML.
+
+PerForm works as an XSP taglib, meaning you simply add some custom
+XML tags to your XSP page, and PerForm does the rest. Well, almost...
+PerForm works mainly by callbacks
+
+WWW: http://search.cpan.org/search?dist=AxKit-XSP-PerForm

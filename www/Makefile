@@ -239,6 +239,7 @@
     SUBDIR += p5-AxKit-XSP-Exception
     SUBDIR += p5-AxKit-XSP-IfParam
     SUBDIR += p5-AxKit-XSP-Param
+    SUBDIR += p5-AxKit-XSP-PerForm
     SUBDIR += p5-AxKit-XSP-Util
     SUBDIR += p5-CGI-Application
     SUBDIR += p5-CGI-ArgChecker
