@@ -1,0 +1,10 @@
+--- Makefile.orig	Mon Jan 11 09:15:47 1999
++++ Makefile	Mon Jan 11 09:16:07 1999
+@@ -8,7 +8,6 @@
+ # pick gcc if you'd rather , and/or do -g instead of -O if debugging
+ # debugging
+ # DFLAGS = -DTEST -DDEBUG
+-CFLAGS =-O -Wall
+ XFLAGS =        # xtra cflags, set by systype targets
+ XLIBS =         # xtra libs if necessary?
+ # -Bstatic for sunos,  -static for gcc, etc.  You want this, trust me.
