@@ -17,16 +17,18 @@ DIST_SUBDIR=	xemacs
 MAINTAINER=	gj@FreeBSD.org
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
+.if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
+USE_XLIB=	yes
+USE_XPM=	yes
+.endif
 
 XEMACS_REL=	21.4
 XEMACS_VER=	21.4.6
 XEMACS_ARCH=	${CONFIGURE_TARGET}
 
-USE_XLIB=	yes
-USE_XPM=	yes
 STRIP=
 USE_AUTOCONF_VER=213
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
@@ -35,8 +37,6 @@ CONFIGURE_ARGS?=--with-clash-detection \
 		--with-sound=native \
 		--site-includes=${LOCALBASE}/include \
 		--site-libraries=${LOCALBASE}/lib \
-		--with-png=yes \
-		--with-tiff=yes \
 		--with-ldap=no \
 		--with-site-lisp \
 		--with-database=berkdb \
@@ -50,7 +50,8 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 pre-fetch:
 .if !defined(WANT_GTK)
-	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK and recompile."
+	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK "
+	@${ECHO_MSG} "and recompile."
 .endif
 .if defined(HAVE_MOTIF)
 .if !defined(MOTIF_STATIC)
@@ -60,10 +61,23 @@ pre-fetch:
 	@${ECHO_MSG} "In this case, set the environment variable MOTIF_STATIC and recompile, "
 	@${ECHO_MSG} "which will force the use of athena widgets for dialogs."
 .endif
+.if !defined(WITHOUT_X11)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Set the environment variable WITHOUT_X11 if you "
+	@${ECHO_MSG} "do not want to use X11."
+CONFIG_ARGS+= --with-png=yes --with-tiff=yes
+.endif
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--without-x11
+.endif
 
 # hack to avoid shipping binaries linked with Motif
 .if defined(MOTIF_STATIC)
 WITH_DIALOGS=	--with-dialogs=athena
+.endif
+
+.if defined(WITH_XAW3D)
+LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
 .if defined(WANT_GTK)

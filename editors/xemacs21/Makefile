@@ -16,17 +16,19 @@ DIST_SUBDIR=	xemacs
 MAINTAINER?=	gj@FreeBSD.org
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs/xemacs-packages/etc/enriched.doc:${PORTSDIR}/editors/xemacs-packages
+.if !defined(WITHOUT_X11)
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
+USE_XLIB=	yes
+USE_XPM=	yes
+.endif
 
 XEMACS_REL=	21.1
 XEMACS_VER=	21.1.14
 XEMACS_ARCH=	${CONFIGURE_TARGET}
 
 SLAVEDIRS+=	editors/xemacs21-mule
-USE_XLIB=	yes
-USE_XPM=	yes
 STRIP=
 USE_AUTOCONF_VER=213
 CONFIGURE_TARGET=${MACHINE_ARCH}--freebsd
@@ -38,8 +40,6 @@ CONFIGURE_ARGS?=--with-clash-detection \
 		--site-includes=${LOCALBASE}/include \
 		--site-libraries=${LOCALBASE}/lib \
 		--gung-ho=yes \
-		--with-png=yes \
-		--with-tiff=yes \
 		--with-ldap=no \
 		--with-site-lisp \
 		--with-database=berkdb \
@@ -68,6 +68,21 @@ pre-fetch:
 .endif
 .endif
 
+.if !defined(WITHOUT_X11)
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Set the environment variable WITHOUT_X11 if you "
+	@${ECHO_MSG} "do not want to use X11."
+CONFIGURE_ARGS+=	--with-png=yes --with-tiff=yes
+.endif
+
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	--without-x11
+.endif
+
+.if defined(WITH_XAW3D)
+LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
+.endif
+
 # hack to avoid shipping binaries linked with Motif
 .if defined(MOTIF_STATIC)
 WITH_DIALOGS=	--with-dialogs=athena
@@ -79,6 +94,7 @@ WITH_DIALOGS=	--with-dialogs=athena
 WITH_XFACE?=	--with-xface=no
 WITH_OFFIX?=	--with-offix=no
 .endif
+# the next .endif belongs to !MULE_PORT
 .endif
 
 # fix .so references in a few man pages
