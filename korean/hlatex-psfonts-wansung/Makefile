@@ -33,7 +33,7 @@ HLATEX_PSFONTS_BASE     = pkmj.tar.bz2 pkgt.tar.bz2 \
 			  phsym.tar.bz2 ptaza.tar.bz2
 
 # it is a trick
-post-fetch:
+pre-extract:
 	${MKDIR} ${WRKDIR}
 
 # Installation according to readme.ks
