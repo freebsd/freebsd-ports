@@ -1,6 +1,14 @@
---- cxx/ncvalues.cpp.orig	Wed Dec 23 02:21:49 1998
-+++ cxx/ncvalues.cpp	Tue Oct  1 10:27:32 2002
-@@ -310,7 +310,11 @@
+--- cxx/ncvalues.cpp.orig	Tue Dec 22 19:21:49 1998
++++ cxx/ncvalues.cpp	Sat Feb  7 13:34:17 2004
+@@ -7,7 +7,6 @@
+  *   $Header: /upc/share/CVS/netcdf-3/cxx/ncvalues.cpp,v 1.3 1998/12/22 18:21:49 russ Exp $
+  *********************************************************************/
+ 
+-#include <iostream.h>		// for debugging
+ #include "ncvalues.h"
+ 
+ NcValues::NcValues( void ) : the_number(0), the_type(ncNoType)
+@@ -310,7 +309,11 @@
        os << the_values[i] << ", ";
      if (the_number > 0)
        os << the_values[the_number-1] ;
@@ -12,7 +20,7 @@
      return os;
  }
  
-@@ -322,6 +326,10 @@
+@@ -322,6 +325,10 @@
        os << the_values[i] << ", ";
      if (the_number > 0)
        os << the_values[the_number-1];
