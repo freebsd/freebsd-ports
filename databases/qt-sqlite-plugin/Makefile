@@ -7,13 +7,9 @@
 #
 
 PORTNAME=	qt-${DB}-plugin
-PORTVERSION=	3.3.3
-PORTREVISION=	1
+PORTVERSION=	3.3.4
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/      \
-		ftp://ftp.silug.org/pub/qt/             \
-		ftp://ftp.bero.org/pub/qt/              \
-		ftp://ftp.planetmirror.com.au/pub/trolltech/qt/
+MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 

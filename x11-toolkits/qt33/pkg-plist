@@ -415,7 +415,7 @@ lib/libqt-mt.prl
 lib/libqt-mt.so
 lib/libqt-mt.so.3
 lib/libqt-mt.so.3.3
-lib/libqt-mt.so.3.3.3
+lib/libqt-mt.so.3.3.4
 lib/libqui.prl
 lib/libqui.so
 lib/libqui.so.1
@@ -600,7 +600,6 @@ share/doc/qt/html/finddialog.png
 share/doc/qt/html/focus.html
 share/doc/qt/html/forever-example.html
 share/doc/qt/html/frames.png
-share/doc/qt/html/freeeditions.html
 share/doc/qt/html/ftpclient-example.html
 share/doc/qt/html/functions.html
 share/doc/qt/html/general.png
@@ -740,6 +739,7 @@ share/doc/qt/html/opengl-sharedbox-example.html
 share/doc/qt/html/opengl-texture-example.html
 share/doc/qt/html/opengl-x11-overlays.html
 share/doc/qt/html/opengl.html
+share/doc/qt/html/opensourceedition.html
 share/doc/qt/html/organizers.html
 share/doc/qt/html/outliner-example.html
 share/doc/qt/html/overviews-list.html
@@ -1563,9 +1563,6 @@ share/doc/qt/html/qplatinumstyle.html
 share/doc/qt/html/qpngimagepacker-members.html
 share/doc/qt/html/qpngimagepacker.html
 share/doc/qt/html/qpngio-h.html
-share/doc/qt/html/qpocketpcstyle-members.html
-share/doc/qt/html/qpocketpcstyle.html
-share/doc/qt/html/qpocketpcstyle_wce-h.html
 share/doc/qt/html/qpoint-h.html
 share/doc/qt/html/qpoint-members.html
 share/doc/qt/html/qpoint.html
@@ -2380,8 +2377,9 @@ translations/assistant_de.qm
 translations/qt_ar.qm
 translations/qt_cs.qm
 translations/qt_de.qm
+translations/qt_es.qm
 translations/qt_fr.qm
-translations/qt_iw.qm
+translations/qt_he.qm
 translations/qt_ru.qm
 translations/qt_sk.qm
 @dirrm translations
