@@ -130,12 +130,10 @@ share/doc/wanderlust/wl.texi
 %%EMACS_LIBDIR%%/site-lisp/wl/sha1.elc
 %%EMACS_LIBDIR%%/site-lisp/wl/sasl.el
 %%EMACS_LIBDIR%%/site-lisp/wl/sasl.elc
-%%EMACS_LIBDIR%%/site-lisp/wl/digest-md5.el
-%%EMACS_LIBDIR%%/site-lisp/wl/digest-md5.elc
-%%EMACS_LIBDIR%%/site-lisp/wl/scram-md5.el
-%%EMACS_LIBDIR%%/site-lisp/wl/scram-md5.elc
-%%EMACS_LIBDIR%%/site-lisp/wl/unique-id.el
-%%EMACS_LIBDIR%%/site-lisp/wl/unique-id.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/sasl-cram.el
+%%EMACS_LIBDIR%%/site-lisp/wl/sasl-cram.elc
+%%EMACS_LIBDIR%%/site-lisp/wl/sasl-digest.el
+%%EMACS_LIBDIR%%/site-lisp/wl/sasl-digest.elc
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/wanderlust-startup.el
 share/examples/wanderlust/en/dot.addresses
 share/examples/wanderlust/en/dot.folders
