@@ -1,5 +1,5 @@
---- fig2dev/Imakefile.orig	Fri Jul 21 01:38:53 2000
-+++ fig2dev/Imakefile	Sat Jul 29 00:55:31 2000
+--- fig2dev/Imakefile.orig	Fri Apr 20 02:19:38 2001
++++ fig2dev/Imakefile	Tue Jun  5 23:18:08 2001
 @@ -28,7 +28,7 @@
  XCOMM You should point XFIGLIBDIR to the same directory you did when you compiled
  XCOMM and installed xfig.  This will be made automatic in the future.
@@ -18,7 +18,18 @@
  
  XCOMM ****************
  XCOMM Change RGB if necessary, to point to your rgb.txt color database
-@@ -67,11 +67,11 @@
+@@ -65,8 +65,8 @@
+ #define USEPNG
+ 
+ #ifdef USEPNG
+-PNGLIBDIR = $(USRLIBDIR)
+-PNGINC = -I/usr/include/X11
++PNGLIBDIR = ${LOCALBASE}/lib
++PNGINC = -I${LOCALBASE}/include
+ #endif
+ 
+ XCOMM ****************
+@@ -78,11 +78,11 @@
  XCOMM Change XPMINC if necessary to point to the include file for xpm (xpm.h)
  XCOMM
  
@@ -32,7 +43,7 @@
  #endif
  
  XCOMM ****************
-@@ -91,8 +91,8 @@
+@@ -104,8 +104,8 @@
  
  #ifdef USEJPEG
  #ifdef USEINSTALLEDJPEG
@@ -43,12 +54,7 @@
  #else
  JPEGLIBDIR = ../jpeg
  JPEGINCDIR = $(JPEGLIBDIR)
-@@ -141,11 +141,11 @@
- XCOMM ****************
- XCOMM Uncomment the next line if you want use Japanese (i18n) on xfig.
- 
--XCOMM #define I18N
-+#define I18N
+@@ -158,7 +158,7 @@
  
  #ifdef I18N
  I18N_DEFS = -DI18N 
