@@ -34,7 +34,7 @@ RUN_DEPENDS=	pan:${PORTSDIR}/news/pan2 \
 		gnotime:${PORTSDIR}/deskutils/gnotime \
 		sound-juicer:${PORTSDIR}/audio/sound-juicer \
 		rhythmbox:${PORTSDIR}/audio/rhythmbox \
-		boot-admin:${PORTSDIR}/sysutils/gnomesystemtools \
+		network-admin:${PORTSDIR}/sysutils/gnomesystemtools \
 		jamboree:${PORTSDIR}/audio/jamboree
 
 .if !defined(PACKAGE_BUILDING) && !defined(PARALLEL_PACKAGE_BUILD)
