@@ -55,6 +55,7 @@
     SUBDIR += deleted
     SUBDIR += detach
     SUBDIR += di
+    SUBDIR += dialog
     SUBDIR += dim
     SUBDIR += dirdiff
     SUBDIR += diskcheckd
