@@ -1,0 +1,27 @@
+--- lib/ps2epsi.orig	Sat Jun 23 01:09:22 2001
++++ lib/ps2epsi	Tue Apr 23 05:18:24 2002
+@@ -1,5 +1,5 @@
+ #!/bin/sh
+-# $Id: ps2epsi,v 1.7 2001/06/22 16:09:22 lpd Exp $
++# $Id: ps2epsi,v 1.7.2.1 2002/04/22 20:18:24 giles Exp $
+ 
+ tmpfile=/tmp/ps2epsi$$
+ 
+@@ -58,7 +58,8 @@
+ cat << BEGINEPS
+ save countdictstack mark newpath /showpage {} def /setpagedevice {pop} def
+ %%EndProlog
+-%%Page 1 1
++%%Page: 1 1
++%%BeginDocument: ${infile}
+ BEGINEPS
+ 
+ cat "${infile}" |
+@@ -66,6 +67,7 @@
+ 	-e '/^%%[A-Za-z][A-Za-z]*[^!-~]*$/d' -e '/^%%[A-Za-z][A-Za-z]*: /d'
+ 
+ cat << ENDEPS
++%%EndDocument
+ %%Trailer
+ cleartomark countdictstack exch sub { end } repeat restore
+ %%EOF
