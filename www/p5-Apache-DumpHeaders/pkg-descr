@@ -1,0 +1,7 @@
+This module is used to watch an HTTP transaction,
+looking at the client and servers headers.  With
+Apache::ProxyPassThru configured, you are able to
+watch your browser talk to any server besides the
+one with this module living inside.
+
+Author:	Ask Bjoern Hansen <ask@develooper.com>
