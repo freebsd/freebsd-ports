@@ -362,6 +362,7 @@
     SUBDIR += tentakel
     SUBDIR += testdisk
     SUBDIR += thefish
+    SUBDIR += throttle
     SUBDIR += ticker.app
     SUBDIR += timelimit
     SUBDIR += tmpwatch
