@@ -8,22 +8,25 @@
 
 PORTNAME=	open-cobol
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext \
-		iconv:${PORTSDIR}/converters/libiconv \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt \
-		db4:${PORTSDIR}/databases/db4 \
+LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4 \
+		intl.4:${PORTSDIR}/devel/gettext \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
+		ltdl.1:${PORTSDIR}/devel/libtool \
 		gmp.6:${PORTSDIR}/math/libgmp4
 
-USE_REINPLACE=	yes
 USE_BISON=	yes
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt -lintl"
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt -lintl"
 CONFIGURE_ARGS=	--with-readline
 INSTALLS_SHLIB=	yes
 
