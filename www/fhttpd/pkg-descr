@@ -9,7 +9,7 @@ capability of running as non-root after binding to privileged
 ports. Not to mention that the code itself is not very 
 self-documenting... it is of a poor programming style.
 
-WWW: http://www.illtel.com/pub/fhttpd/
+WWW: http://www.fhttpd.org/
 Author: Alex Belits <abelits@phobos.illtel.denver.co.us>
 
 --Will <andrews@technologist.com>
