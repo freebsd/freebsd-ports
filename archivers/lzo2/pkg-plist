@@ -9,6 +9,7 @@ include/lzo1y.h
 include/lzo1z.h
 include/lzo2a.h
 include/lzoconf.h
+include/lzoutil.h
 lib/liblzo.a
 lib/liblzo.so
 lib/liblzo.so.1
