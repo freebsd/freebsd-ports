@@ -1,0 +1,239 @@
+--- spkit/spkit/Makefile.freebsd.orig	Wed Sep 16 09:26:42 1998
++++ spkit/spkit/Makefile.freebsd	Wed Sep 16 18:34:14 1998
+@@ -0,0 +1,164 @@
++CC      = gcc
++CXX     = g++
++FORMS   = /usr/X11R6/include
++SOUND   = ../../sound
++TOOLTIP = ../../tooltips
++BACKDIR = ../spkitbak
++MAINDIR = ../../main
++HOMEDIR = $(HOME)
++INCDIR  = -I. -I.. -I$(SOUND) -I$(FORMS) -I$(MAINDIR) -I$(TOOLTIP)
++CCFLAGS = $(CFLAGS) $(INCDIR) -DLINUX -DUSINGGCC
++
++.c.o:
++	$(CC) $(CCFLAGS) -c $*.c -o $*.o
++
++.cc.o:
++	$(CXX) $(CCFLAGS) -c $*.cc -o $*.o
++
++LIBNAME = libdsp.a
++
++OBJS = \
++	allpassi.o \
++	allpassn.o \
++	amp.o \
++	butterwo.o \
++	bwbandpa.o \
++	bwbandre.o \
++	bwhighpa.o \
++	bwlowpas.o \
++	comb.o \
++	combint.o \
++	comblowp.o \
++	complim.o \
++	compress.o \
++	delay.o \
++	delayint.o \
++	dist.o \
++	dpreader.o \
++	dpwriter.o \
++	dynamics.o \
++	fbdelay.o \
++	feedback.o \
++	gate.o \
++	inverter.o \
++	jamrever.o \
++	lfo.o \
++	limiter.o \
++	mult.o \
++	mux.o \
++	pan.o \
++	processo.o \
++	rectifie.o \
++	resonato.o \
++	schroede.o \
++	stdrever.o \
++	sum.o \
++	sumavg.o \
++	waveshap.o \
++	z1lpf.o
++
++all: libdsp.a
++
++libdsp.a: $(OBJS)
++	rm -f $(LIBNAME)
++	ar -ruv $(LIBNAME) $(OBJS)
++	ranlib $(LIBNAME)
++
++clean:
++	rm -f $(OBJS)
++
++empty:
++	rm -f $(OBJS) $(LIBNAME)
++
++back:
++	"cp" *.cc $(BACKDIR)
++	"cp" *.h $(BACKDIR)
++	"cp" Makefile.* $(BACKDIR)
++	lha a $(HOMEDIR)/tich1.lzh *.cc *.h Makefile.*
++
++restore:
++	lha x $(HOMEDIR)/tich1.lzh
++
++print:
++	a2ps \
++	allpassi.h \
++	allpassi.cc \
++	allpassn.h \
++	allpassn.cc \
++	amp.h \
++	amp.cc \
++	butterwo.h \
++	butterwo.cc \
++	bwbandpa.h \
++	bwbandpa.cc \
++	bwbandre.h \
++	bwbandre.cc \
++	bwhighpa.h \
++	bwhighpa.cc \
++	bwlowpas.h \
++	bwlowpas.cc \
++	comb.h \
++	comb.cc \
++	combint.h \
++	combint.cc \
++	comblowp.h \
++	comblowp.cc \
++	complim.h \
++	complim.cc \
++	compress.h \
++	compress.cc \
++	delay.h \
++	delay.cc \
++	delayint.h \
++	delayint.cc \
++	dist.h \
++	dist.cc \
++	dpreader.h \
++	dpreader.cc \
++	dpwriter.h \
++	dpwriter.cc \
++	dynamics.h \
++	dynamics.cc \
++	fbdelay.h \
++	fbdelay.cc \
++	feedback.h \
++	feedback.cc \
++	gate.h \
++	gate.cc \
++	inverter.h \
++	inverter.cc \
++	jamrever.h \
++	jamrever.cc \
++	lfo.h \
++	lfo.cc \
++	limiter.h \
++	limiter.cc \
++	mult.h \
++	mult.cc \
++	mux.h \
++	mux.cc \
++	pan.h \
++	pan.cc \
++	processo.h \
++	processo.cc \
++	rectifie.h \
++	rectifie.cc \
++	resonato.h \
++	resonato.cc \
++	schroede.h \
++	schroede.cc \
++	spkit.h \
++	stdrever.h \
++	stdrever.cc \
++	sum.h \
++	sum.cc \
++	sumavg.h \
++	sumavg.cc \
++	tube.h \
++	valve.h \
++	waveshap.h \
++	waveshap.cc \
++	z1lpf.h \
++	z1lpf.cc \
++	Makefile.* \
++	>$(HOMEDIR)/tich1.ps
+--- sound/Makefile.freebsd.orig	Wed Sep 16 18:45:52 1998
++++ sound/Makefile.freebsd	Wed Sep 16 18:46:18 1998
+@@ -0,0 +1,53 @@
++CC      = gcc
++CXX     = g++
++FORMS   = /usr/X11R6/include
++SPKIT   = ../spkit
++TOOLTIP = ../tooltips
++BACKDIR = ../soundbak
++MAINDIR = ../main
++HOMEDIR = $(HOME)
++INCDIR  = -I. -I$(SPKIT) -I$(FORMS) -I$(MAINDIR) -I$(TOOLTIP) -I/usr/include -I/usr/local/include
++LIBDIR  = -L$(SPKIT)/spkit -L$(FORMS) -L/usr/lib -L/usr/X11R6/lib
++CCFLAGS = $(CFLAGS) -DNOFORMS -DLINUX -DUSINGGCC
++LDFLAGS = $(LIBDIR) -ldsp -lforms -lXpm -lX11 -lm
++
++PROGS =	SampleTest
++OBJS  = DPSample.o DPResample.o DPMixPlay.o SampleTest.o
++LINUX = $(MAINDIR)/DPTich_linux_audio.o \
++        $(MAINDIR)/DPTich_linux_audiofile.o \
++        $(MAINDIR)/DPTich_linux_macros.o \
++        $(MAINDIR)/DPTich_linux_ieee.o
++
++.c.o:
++	$(CC) $(CCFLAGS) $(INCDIR) -c $*.c -o $*.o
++
++.cc.o:
++	$(CXX) $(CCFLAGS) $(INCDIR) -c $*.cc -o $*.o
++
++normal: DPSample.o DPResample.o DPMixPlay.o
++
++all: $(PROGS)
++
++SampleTest: $(OBJS)
++	$(CXX) $(CCFLAGS) $(OBJS) $(LINUX) -o SampleTest $(LDFLAGS)
++
++clean:
++	-rm -f $(OBJS) core
++
++empty:
++	-rm -f $(OBJS) $(PROGS) core
++
++back:
++	"cp" *.h $(BACKDIR)
++	"cp" *.cc $(BACKDIR)
++	"cp" *.inl $(BACKDIR)
++	"cp" Makefile.* $(BACKDIR)
++	lha a $(HOMEDIR)/tich2.lzh *.h *.cc *.inl Makefile.*
++
++restore:
++	lha x $(HOMEDIR)/tich2.lzh
++
++print:
++	a2ps DPDefs.h DPSample.h DPSample.inl DPSample.cc DPResample.h \
++	DPResample.cc DPMixPlay.h DPMixPlay.cc Makefile.* \
++	>$(HOMEDIR)/tich2.ps
+--- tooltips/Makefile.orig	Wed Sep 16 18:45:00 1998
++++ tooltips/Makefile	Wed Sep 16 18:45:19 1998
+@@ -36,11 +36,11 @@
+ 
+ # Uncomment out this line if you do not want debug information included.
+ # DEBUG = -g -Wall -ansi -pedantic
+-DEBUG = 
++#DEBUG = 
+ 
+ # Define the utilities to use for compilation.
+ CC         = gcc
+-CCOPTS     = $(DEBUG) -I$(XFORMS_INCLUDE_DIR) -I$(X11_INCLUDE_DIR) \
++CCOPTS     = $(CFLAGS) -I$(XFORMS_INCLUDE_DIR) -I$(X11_INCLUDE_DIR) \
+              -I$(OTHER_INCLUDE_DIR)
+ AR         = ar
+ AROPTS     = rc

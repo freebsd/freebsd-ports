@@ -1,0 +1,84 @@
+--- Makefile.orig	Wed Sep 16 09:26:41 1998
++++ Makefile	Wed Sep 16 09:26:41 1998
+@@ -0,0 +1,81 @@
++BACKDIR = ./bak
++HOMEDIR = $(HOME)
++
++all: DAP
++
++DAP: 
++	(cd tooltips; make -f Makefile);
++	(cd spkit/spkit; make -f Makefile.freebsd);
++	(cd main; make -f Makefile.freebsd);
++
++release: DAP
++	strip main/DAP
++	(cd ..; tar -cf $(HOMEDIR)/LinuxDAP.tar dap/main/DAP dap/main/effects \
++	dap/README dap/INSTALL dap/COPYING dap/CHANGES dap/TODO dap/THANKS);
++	gzip $(HOMEDIR)/LinuxDAP.tar
++
++source:
++	(cd ..; tar -cf $(HOMEDIR)/DAPSource.tar \
++	dap/README dap/INSTALL dap/COPYING dap/CHANGES dap/TODO dap/THANKS \
++	dap/Makefile.* dap/main/*.c dap/main/*.cc dap/main/*.h dap/main/*.fd \
++	dap/main/icons/*.gif dap/main/icons/*.xpm dap/main/Makefile.* \
++	dap/main/effects dap/sound/*.h dap/sound/*.cc dap/sound/*.inl \
++	dap/sound/Makefile.* dap/spkit/spkit/*.cc dap/spkit/spkit/*.h \
++	dap/spkit/spkit/Makefile.* dap/tooltips/CHANGES dap/tooltips/COPYING \
++    dap/tooltips/Makefile dap/tooltips/README dap/tooltips/THANKS \
++    dap/tooltips/TODO dap/tooltips/*.c  dap/tooltips/*.h dap/tooltips/*.fd \
++	dap/tooltips/examples/menu/Makefile dap/tooltips/examples/menu/*.c \
++	dap/tooltips/examples/menu/*.h dap/tooltips/examples/menu/*.fd);
++	gzip $(HOMEDIR)/DAPSource.tar
++
++cleanall:
++	(cd tooltips; make -f Makefile clean);
++	(cd main; make -f Makefile.freebsd clean);
++	(cd sound; make -f Makefile.freebsd clean);
++	(cd spkit/spkit; make -f Makefile.freebsd clean);
++
++emptyall:
++	(cd tooltips; make -f Makefile clean);
++	(cd main; make -f Makefile.freebsd empty);
++	(cd sound; make -f Makefile.freebsd empty);
++	(cd spkit/spkit; make -f Makefile.freebsd empty);
++
++backall: back
++	(cd main; make -f Makefile.freebsd back);
++	(cd sound; make -f Makefile.freebsd back);
++	(cd spkit/spkit; make -f Makefile.freebsd back);
++
++back:
++	"cp" README $(BACKDIR)
++	"cp" INSTALL $(BACKDIR)
++	"cp" COPYING $(BACKDIR)
++	"cp" CHANGES $(BACKDIR)
++	"cp" TODO $(BACKDIR)
++	"cp" THANKS $(BACKDIR)
++	"cp" Makefile.* $(BACKDIR)
++	lha a $(HOMEDIR)/tich4.lzh \
++	README INSTALL COPYING CHANGES TODO THANKS Makefile.*
++
++restoreall: restore
++	(cd main; make -f Makefile.freebsd restore);
++	(cd sound; make -f Makefile.freebsd restore);
++	(cd spkit/spkit; make -f Makefile.freebsd restore);
++
++restore:
++	lha x $(HOMEDIR)/tich4.lzh
++
++printall: print
++	(cd main; make -f Makefile.linux print);
++	(cd sound; make -f Makefile.linux print);
++	(cd spkit/spkit; make -f Makefile.linux print);
++
++print:
++	a2ps \
++	README \
++	INSTALL \
++	COPYING \
++	CHANGES \
++	TODO \
++	THANKS \
++	Makefile.* \
++	>$(HOMEDIR)/tich4.ps
