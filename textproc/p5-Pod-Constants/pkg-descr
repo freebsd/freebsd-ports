@@ -1,0 +1,8 @@
+This module allows you to specify those constants that should be
+documented in your POD, and pull them out a run time in a fairly
+arbitrary fashion.
+
+WWW: http://search.cpan.org/search?dist=Pod-Constants
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
