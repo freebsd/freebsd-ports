@@ -16,11 +16,16 @@ MAINTAINER=	nosuzuki@e-mail.ne.jp
 
 USE_GMAKE=	yes
 USE_IMLIB=	yes
+USE_X_PREFIX=	yes
 
 MAN1=		xzgv.1
 
+post-patch:
+	@${PERL} -pi -e "s:usr/local:${PREFIX}:g" ${WRKSRC}/config.mk
+
 post-install:
-	strip ${PREFIX}/bin/xzgv
+	${ECHO} ${PREFIX}
+	strip -s ${PREFIX}/bin/xzgv
 	install-info ${PREFIX}/info/xzgv ${PREFIX}/info/dir
 
 .include <bsd.port.mk>

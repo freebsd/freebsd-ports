@@ -1,7 +1,4 @@
 bin/xzgv
 @unexec install-info --delete %D/info/xzgv %D/info/dir
-info/xzgv.gz
-info/xzgv-1.gz
-info/xzgv-2.gz
-info/xzgv-3.gz
+info/xzgv
 @exec install-info %D/info/xzgv %D/info/dir
