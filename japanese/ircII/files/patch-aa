@@ -1,0 +1,19 @@
+*** include/config.h.orig	Mon Jul  3 23:42:29 1995
+--- include/config.h	Mon Jul  3 23:42:40 1995
+***************
+*** 123,129 ****
+   * set this is you want have debugging in the client... really pretty
+   * boring..
+   */
+! #define DEBUG
+  
+  /*
+   * define this if you are on a machine that dynamically changes ip
+--- 123,129 ----
+   * set this is you want have debugging in the client... really pretty
+   * boring..
+   */
+! #undef  DEBUG
+  
+  /*
+   * define this if you are on a machine that dynamically changes ip
