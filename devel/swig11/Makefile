@@ -42,7 +42,13 @@ PLIST_SUB=	VER="${VER}"
 
 NO_LATEST_LINK=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64 (needs -fPIC)"
+.endif
+
 post-install:
 	${LN} -f ${PREFIX}/bin/swig ${PREFIX}/bin/swig${VER}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
