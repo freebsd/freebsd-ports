@@ -231,9 +231,40 @@ MASTER_SITE_GCC+=	\
 	${MASTER_SITE_SOURCEWARE:S,%SUBDIR%,gcc/&,}  \
 	http://gcc.software-archive.net/%SUBDIR%/ \
 	http://gcc.get-software.com/%SUBDIR%/ \
+	http://mirrors.rcn.net/pub/sourceware/gcc/%SUBDIR%/ \
+	http://www.binarycode.org/gcc/%SUBDIR%/ \
 	ftp://gcc.gnu.org/pub/gcc/%SUBDIR%/ \
+	ftp://mirrors.rcn.net/pub/sourceware/gcc/%SUBDIR%/ \
+	ftp://mirrors.laffeycomputer.com/pub/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/gnu/gcc/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/mirrors/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
+	ftp://ftp.lip6.fr/pub/gcc/%SUBDIR%/ \
+	ftp://ftp.irisa.fr/pub/mirrors/gcc.gnu.org/gcc/%SUBDIR%/ \
+	ftp://ftp.uvsq.fr/pub/gcc/%SUBDIR%/ \
+	ftp://ftp.club-internet.fr/pub/gcc/%SUBDIR%/ \
+	ftp://ftp.fu-berlin.de/unix/gnu/gcc/%SUBDIR%/ \
+	ftp://ftp.gwdg.de/pub/misc/gcc/%SUBDIR%/ \
+	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
+	ftp://ftp.eos.hokudai.ac.jp/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.iij.ad.jp/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/
+	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/ \
+	ftp://ring.aist.go.jp/pub/GNU/gcc/%SUBDIR%/ \
+	ftp://ring.etl.go.jp/pub/lang/egcs/%SUBDIR%/ \
+	ftp://ring.crl.go.jp/pub/GNU/gcc/%SUBDIR%/ \
+	ftp://core.ring.gr.jp/pub/GNU/gcc/%SUBDIR%/ \
+	ftp://ftp.ring.gr.jp/pub/GNU/gcc/%SUBDIR%/ \
+	ftp://ftp.nluug.nl/mirror/languages/gcc%SUBDIR%/ \
+	ftp://ftp.task.gda.pl/pub/gnu/gcc/%SUBDIR%/ \
+	ftp://sunsite.icm.edu.pl/pub/gnu/gcc/%SUBDIR%/ \
+	ftp://ftp1.sinica.edu.tw/pub3/GNU/CYGNUS/gcc/%SUBDIR%/ \
+	ftp://ftp.nctu.edu.tw/computer-languages/C/gcc/%SUBDIR%/ \
+	ftp://ftp.mirror.ac.uk/sites/sources.redhat.com/pub/gcc/%SUBDIR%/ \
+	ftp://ftp.softaplic.com.br/pub/sourceware/gcc/%SUBDIR%/ \
+	ftp://linux.ihep.su/pub/cygnus/egcs/%SUBDIR%/ \
+	ftp://ftp.ntua.gr/pub/gnu/gcc/%SUBDIR%/ \
+	ftp://mirror.aarnet.edu.au/pub/gcc/%SUBDIR%/ \
+	ftp://linux.sarang.net/pub/mirror/gnu/gnu/gcc/%SUBDIR%/ \
+	ftp://ftp.sun.ac.za/mirrorsites/sourceware.cygnus.com/pub/gcc/%SUBDIR%/
 
 MASTER_SITE_GENTOO+=	\
 	http://www.ibiblio.org/pub/Linux/distributions/gentoo/%SUBDIR%/ \
