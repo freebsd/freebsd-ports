@@ -5,9 +5,11 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 MASTERDIR=	${.CURDIR}/../pips800
 COMMENT=	Photo Image Print System for Linux --- EPSON PM-3000C
 
+SUBDIR_SUFFIX=	.1
 PRTYPE=		3000
 
 .include "${MASTERDIR}/Makefile.pips"
