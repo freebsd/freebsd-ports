@@ -11,6 +11,7 @@
     SUBDIR += coalesce
     SUBDIR += crimap
     SUBDIR += deft
+    SUBDIR += distribfold
     SUBDIR += dna-qc
     SUBDIR += emboss
     SUBDIR += fasta
