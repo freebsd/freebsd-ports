@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VER}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -30,8 +30,23 @@ CONFIGURE_ARGS=	-sde -Dprefix=${PREFIX} \
 	-Dman3dir=${PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
 	-Dsitearch=${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH} \
 	-Dsitelib=${PREFIX}/lib/perl5/site_perl/${PERL_VER} \
-	-Ui_gdbm -Ui_malloc -Ui_iconv -Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
+	-Ui_malloc -Ui_iconv -Dccflags=-DAPPLLIB_EXP=\"${BSDPAN_DEST}\"
 INSTALLS_SHLIB=	yes
+
+.if defined(WITH_GDBM)
+CONFIGURE_ARGS+=	-Di_gdbm
+LIB_DEPENDS+=		gdbm.2:${PORTSDIR}/databases/gdbm
+PLIST_SUB+=		GDBM=""
+.else
+CONFIGURE_ARGS+=	-Ui_gdbm
+PLIST_SUB+=		GDBM="@comment "
+.endif
+
+.if defined(WITH_PERL_MALLOC)
+CONFIGURE_ARGS+=	-Dusemymalloc=y
+.else
+CONFIGURE_ARGS+=	-Dusemymalloc=n
+.endif
 
 INCLUDEDIR=	/usr/include
 
@@ -108,6 +123,9 @@ MAN3=	AnyDBM_File.3 AutoLoader.3 AutoSplit.3 B.3 B::Asmdata.3 \
 	diagnostics.3 fields.3 filetest.3 integer.3 less.3 lib.3 \
 	locale.3 open.3 ops.3 overload.3 re.3 sigtrap.3 strict.3 \
 	subs.3 utf8.3 vars.3 warnings.3 warnings::register.3
+.if defined(WITH_GDBM)
+MAN3+=	GDBM_File.3
+.endif
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 
