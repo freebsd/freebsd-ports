@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	wmmail
-PORTVERSION= 	0.63a
+PORTVERSION= 	0.64
 CATEGORIES=	mail windowmaker
-MASTER_SITES=	http://soupnazi.org/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://www.eecg.utoronto.ca/~chanb/WMMail.app/
 DISTNAME=	WMMail.app-${PORTVERSION}
 
 MAINTAINER=	jim@FreeBSD.org
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList
 
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-PL-libs="-L${LOCALBASE}/lib" \
 		--with-PL-incs="-I${LOCALBASE}/include"
-WRKSRC=	${WRKDIR}/WMMail.app-0.63a
-USE_X_PREFIX=	yes
-USE_XPM=	yes
 
 post-install:
 	@${ECHO} "		"
