@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.51 1998/09/17 00:50:47 asami Exp $
+# $Id: Makefile,v 1.52 1998/09/19 05:46:05 steve Exp $
 #
 
 DISTNAME=       ImageMagick-4.0.9
@@ -24,7 +24,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff34.1:${PORTSDIR}/graphics/tiff34 \
 		png.2:${PORTSDIR}/graphics/png \
 		jbig\\.1\\.:${PORTSDIR}/graphics/jbigkit \
-		ttf\\.2\\.:${PORTSDIR}/print/freetype
+		ttf.2:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		picttoppm:${PORTSDIR}/graphics/netpbm \
 		gs:${PORTSDIR}/print/ghostscript5

@@ -3,7 +3,7 @@
 # Date created:		Fri Mar 27 10:32:46 KST 1998
 # Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/29 14:55:44 kuriyama Exp $
 #
 # based on print/ghostscript5 and japanese/vfghostscript5
 # use Adobe's CID-keyed font sameple(korean) because there are no
@@ -30,7 +30,7 @@ MAINTAINER=	junker@jazz.snu.ac.kr
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=    ttf\\..\\.0:${PORTSDIR}/print/freetype
+LIB_DEPENDS=    ttf.2:${PORTSDIR}/print/freetype
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
 EXTRACT_ONLY=	${GS_SOURCES}

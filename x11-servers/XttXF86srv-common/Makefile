@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/11 15:04:09 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/09/01 13:41:10 asami Exp $
 #
 
 DISTNAME=	xc
@@ -20,7 +20,7 @@ PATCHFILES=	3.3.2-patch1 3.3.2-patch2 3.3.2-patch3
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-LIB_DEPENDS=	ttf\\.2\\.:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	ttf.2:${PORTSDIR}/print/freetype
 .if defined(SERVER)
 RUN_DEPENDS=	mkfontdir.pl:${PORTSDIR}/x11/XttXF86srv-common
 .endif
