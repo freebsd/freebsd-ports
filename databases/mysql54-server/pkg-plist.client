@@ -47,7 +47,6 @@ lib/mysql/libmysqlclient.so.14
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.14
-share/mysql/fill_help_tables.sql
 share/mysql/mysql_fix_privilege_tables.sql
 @dirrm include/mysql
 @dirrm lib/mysql

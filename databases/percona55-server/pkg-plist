@@ -118,6 +118,7 @@ share/mysql/english/errmsg.sys
 share/mysql/english/errmsg.txt
 share/mysql/estonian/errmsg.sys
 share/mysql/estonian/errmsg.txt
+share/mysql/fill_help_tables.sql
 share/mysql/french/errmsg.sys
 share/mysql/french/errmsg.txt
 share/mysql/german/errmsg.sys
