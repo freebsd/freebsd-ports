@@ -26,7 +26,8 @@ USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		GLBASE="${X11BASE}" \
-		CPPFLAGS="-I${X11BASE}/include"
+		CPPFLAGS="-I${X11BASE}/include" \
+		CC="${CXX}" REAL_CC="${CC}"
 
 #If you want to try the opengl player (which doesn't seem to work)
 #comment out the following line.
