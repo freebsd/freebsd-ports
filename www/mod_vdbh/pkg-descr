@@ -1,0 +1,6 @@
+mod_vdbh is an Apache Web Server module allowing mass virtual hosting without 
+the need for file based configuration. The virtual host paths are translated 
+from a MySQL database at request time, thus the configuration can be changed 
+without having to restart Apache Web Server.
+
+WWW: http://www.synthemesc.com/mod_vdbh/

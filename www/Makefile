@@ -268,6 +268,7 @@
     SUBDIR += mod_tsunami
     SUBDIR += mod_uid
     SUBDIR += mod_v2h
+    SUBDIR += mod_vdbh
     SUBDIR += mod_watch
     SUBDIR += mod_webapp
     SUBDIR += mod_zap
