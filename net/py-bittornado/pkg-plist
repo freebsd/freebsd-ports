@@ -75,9 +75,6 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/makemetafile.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/makemetafile.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/makemetafile.pyo
-%%PYTHON_SITELIBDIR%%/BitTornado/BT1/testtest.py
-%%PYTHON_SITELIBDIR%%/BitTornado/BT1/testtest.pyc
-%%PYTHON_SITELIBDIR%%/BitTornado/BT1/testtest.pyo
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/track.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/track.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/track.pyo
