@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	vobcopy
-PORTVERSION=	0.4.3
+PORTVERSION=	0.5.3
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	lin-prog-newbie
+MASTER_SITES=	http://lpn.rnbhq.org/download/
 
 MAINTAINER=	lioux@FreeBSD.org
 
-LIB_DEPENDS=	dvdread.2:${PORTSDIR}/graphics/libdvdread
+LIB_DEPENDS=	dvdread.2:${PORTSDIR}/graphics/libdvdread \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+
+HAS_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 ALL_TARGET=	${PORTNAME}
 
@@ -23,12 +26,13 @@ DOC_FILES=      COPYING Changelog README Release-Notes \
 		alternative_programs.txt
 
 post-patch:
-	@${PERL} -pi.orig -e 's|^CC.+||; s|^PREFIX.+||; \
-		s|/usr/local/|${LOCALBASE}/|; \
-		s|-D_LARGEFILE\d?\d?_SOURCE||g; \
-		s|-D_FILE_OFFSET_BITS=64||' ${WRKSRC}/Makefile
-	@${PERL} -pi.orig -e 's|(fopen\("/etc/)mtab|\1fstab|; \
+	@${REINPLACE_CMD} -E -e 's|(fopen\("/etc/)mtab|\1fstab|; \
 		s|iso9660|cd9660|' ${WRKSRC}/dvd.c
+
+post-configure:
+	@${REINPLACE_CMD} -E -e 's|^CC.+||; s|^PREFIX.+||; \
+		s|/usr/local/|${LOCALBASE}/|' \
+		${WRKSRC}/Makefile
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/vobcopy ${PREFIX}/bin/vobcopy
