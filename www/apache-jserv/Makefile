@@ -20,10 +20,12 @@ RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper\
 		${LOCALBASE}/sbin/apachectl:${PORTSDIR}/www/apache13\
 		${LOCALBASE}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
 
-USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+GMAKE=		${LOCALBASE}/bin/gmake # Must have the full path.
+USE_LIBTOOL=	yes
+USE_PERL5=	yes
 JAVAVM?=	${LOCALBASE}/bin/javavm
-CONFIGURE_ENV=	MAKE=${LOCALBASE}/bin/${GMAKE}
+CONFIGURE_ENV=	PERL=${PERL}
 CONFIGURE_ARGS=	--prefix=${PREFIX}\
 		--libexecdir=${LOCALBASE}/libexec/apache\
 		--libdir=${LOCALBASE}/libexec/apache\
