@@ -1,4 +1,5 @@
 etc/rc.d/big5fs.sh
 modules/big5cd9660.ko
 modules/big5msdos.ko
+modules/big5ntfs.ko
 @unexec rmdir %D/modules 2>/dev/null || true
