@@ -1,0 +1,11 @@
+--- gnome-vfs.applications.orig	Thu Sep 12 02:02:27 2002
++++ gnome-vfs.applications	Thu Sep 12 02:03:27 2002
+@@ -55,7 +55,7 @@
+ 	mime_types=application/x-deb
+ 
+ electric_eyes
+-	command=ee
++	command=ElectricEyes
+ 	name=Electric Eyes
+ 	can_open_multiple_files=true
+ 	expects_uris=false
