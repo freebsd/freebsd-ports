@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mod_security
-PORTVERSION=	1.7.5
-CATEGORIES=	www
+PORTVERSION=	1.7.6
+CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
@@ -33,8 +33,9 @@ PLIST_SUB=	APACHE=apache
 SO=		so
 .endif
 
-DOCS=		CHANGES INSTALL LICENSE README mod_security-manual-${PORTVERSION}.pdf
-PLIST_SUB+=	VER=${PORTVERSION}
+MANVER=		1.7.4
+DOCS=		CHANGES INSTALL LICENSE README modsecurity-manual-${MANVER}.pdf
+PLIST_SUB+=	VER=${MANVER}
 
 do-build:
 	@cd ${APWRKSRC} && ${APXS} -c mod_security.c
