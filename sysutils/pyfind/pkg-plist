@@ -24,6 +24,9 @@ share/gnome/pyFind/pyFind/config.pyo
 share/gnome/pyFind/pyFind/dlgPreferences.py
 share/gnome/pyFind/pyFind/dlgPreferences.pyc
 share/gnome/pyFind/pyFind/dlgPreferences.pyo
+share/gnome/pyFind/pyFind/dlgSaveAs.py
+share/gnome/pyFind/pyFind/dlgSaveAs.pyc
+share/gnome/pyFind/pyFind/dlgSaveAs.pyo
 share/gnome/pyFind/pyFind/file_srch_rep.py
 share/gnome/pyFind/pyFind/file_srch_rep.pyc
 share/gnome/pyFind/pyFind/file_srch_rep.pyo
