@@ -116,17 +116,24 @@ ExtendedInputDevices?=	YES
 # InstallXserverSetUID=NO : use Xwrapper.
 # End of XFree86 configrations
 
-.include <bsd.port.pre.mk>
-
 .if ${HasXdmAuth} == YES
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c) &&\
-    !exists(${FILESDIR}/Wraphelp.c)
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/Wraphelp.c)
 pre-everything::
 	@${ECHO_MSG} "You don't have Wraphelp.c: HasXdmAuth disabled."
 HasXdmAuth=	NO
-.endif
-.endif
-.endif
+.else
+pre-everything::
+	@${ECHO_MSG} "Assuming that you have fetched a USA-Legal Wraphelp.c."
+.endif	# ! having Wraphelp.c
+.else
+MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
+		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
+		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
+EXTRACT_ONLY=	X410src-1.tgz
+DISTFILES+=	Wraphelp.c
+IGNOREFILES=	Wraphelp.c
+.endif	# USA_RESIDENT
+.endif	# HasXdmAuth
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
