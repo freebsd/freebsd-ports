@@ -1,0 +1,8 @@
+bin/gq
+share/gnome/apps/Internet/gq.desktop
+share/gnome/pixmaps/gq/bomb.xpm
+share/gnome/pixmaps/gq/line.xpm
+share/gnome/pixmaps/gq/logo.xpm
+share/gnome/pixmaps/gq/textarea.xpm
+share/gnome/pixmaps/gq/warning.xpm
+@dirrm share/gnome/pixmaps/gq
