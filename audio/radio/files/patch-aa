@@ -1,5 +1,5 @@
-*** Makefile.orig	Mon May 17 01:46:21 1993
---- Makefile	Sat Jun 19 02:38:20 1999
+*** Makefile.orig	Mon May 17 17:46:21 1993
+--- Makefile	Wed Oct  2 07:08:32 2002
 ***************
 *** 26,38 ****
   default:
@@ -27,7 +27,7 @@
   # Platform-specific entries
   
 + FreeBSD:	# For FreeBSD 2.0.5
-+ 		make all CFLAGS='-DHAVE_MCAST -DDEFMCAST=\"radio.multicast\"'
++ 		$(MAKE) all CFLAGS='$(CFLAGS) -DHAVE_MCAST -DDEFMCAST=\"radio.multicast\"'
 + 
   sun4.0:		# For SunOS 4.x
   		make all LIBS=-lX11
@@ -39,10 +39,10 @@
   		LIBS="$(AFLIBDIRS) -lAF -lAFUtil -lm"
   
 + install:	all
-+ 		$(INSTALL) -c -s -o bin -g bin -m 755 broadcast ${PREFIX}/bin/broadcast
-+ 		$(INSTALL) -c -s -o bin -g bin -m 755 radio ${PREFIX}/bin/radio
-+ 		$(INSTALL) -c -o bin -g bin -m 644 broadcast.man ${PREFIX}/man/man1/broadcast.1
-+ 		$(INSTALL) -c -o bin -g bin -m 644 radio.man ${PREFIX}/man/man1/radio.1
++ 		$(BSD_INSTALL_PROGRAM) -o bin -g bin broadcast ${PREFIX}/bin/broadcast
++ 		$(BSD_INSTALL_PROGRAM) -o bin -g bin radio ${PREFIX}/bin/radio
++ 		$(BSD_INSTALL_MAN) broadcast.man ${PREFIX}/man/man1/broadcast.1
++ 		$(BSD_INSTALL_MAN) radio.man ${PREFIX}/man/man1/radio.1
   
   # Common programs:
   

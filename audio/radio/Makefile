@@ -7,19 +7,15 @@
 
 PORTNAME=	radio
 PORTVERSION=	2.0.4
+PORTREVISION=	1
 CATEGORIES=	audio net
-MASTER_SITES=	ftp://ftp.cwi.nl/pub/audio/
+MASTER_SITES=	http://ftp.yars.free.net/pub/software/unix/util/sound/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
-MAKE_FLAGS=	FreeBSD -f
+ALL_TARGET=	${OPSYS}
 MAN1=		radio.1 broadcast.1
-
-post-patch:
-	@${SED} -e 's,machine/soundcard.h,sys/soundcard.h,' < \
-		${WRKSRC}/radio.c > ${WRKSRC}/radio.c.new
-	@${MV} ${WRKSRC}/radio.c.new ${WRKSRC}/radio.c
 
 .include <bsd.port.mk>

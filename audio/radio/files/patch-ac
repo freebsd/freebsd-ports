@@ -1,5 +1,5 @@
-*** radio.c.orig	Mon May 17 01:46:23 1993
---- radio.c	Sat Jun 19 02:36:48 1999
+*** radio.c.orig	Mon May 17 17:46:23 1993
+--- radio.c	Wed Oct  2 07:02:27 2002
 ***************
 *** 102,107 ****
 --- 102,121 ----
@@ -8,7 +8,7 @@
   
 + #ifdef __FreeBSD__
 + #include <string.h>
-+ #include <machine/soundcard.h>
++ #include <sys/soundcard.h>
 + 
 + #define AUDIO_IODEV     "/dev/audio"
 + #define AUDIO_CTLDEV    "/dev/audioctl"
