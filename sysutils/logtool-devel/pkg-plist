@@ -1,0 +1,8 @@
+bin/logtool
+bin/logtail
+etc/logtool/exclude
+etc/logtool/green
+etc/logtool/include
+etc/logtool/logtool.conf
+etc/logtool/yellow
+@dirrm etc/logtool

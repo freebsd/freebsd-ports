@@ -57,6 +57,7 @@
     SUBDIR += libretto-config
     SUBDIR += lmmon
     SUBDIR += logrotate
+    SUBDIR += logtool
     SUBDIR += lsof
     SUBDIR += manck
     SUBDIR += medusa
