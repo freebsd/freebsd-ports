@@ -1,6 +1,7 @@
 bin/crimson
 share/pixmaps/crimson.png
 share/crimson/title.bmp
+share/crimson/levels/Anthill.lev
 share/crimson/levels/ArmsRace.lev
 share/crimson/levels/BeachRaid.lev
 share/crimson/levels/Foxhole.lev
