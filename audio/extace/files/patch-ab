@@ -1,38 +1,31 @@
---- extace/Makefile.in.orig	Tue Jan  2 11:26:24 2001
-+++ extace/Makefile.in	Tue Jan  2 11:33:29 2001
-@@ -101,7 +101,7 @@
- extace_LDADD = @GTK_LIBS@ @ESD_LIBS@ @EXTRA_LIBS@ @ALSA_LIBS@ -lgdk_imlib 
- #extace_LDADD = -lefence @GTK_LIBS@ @ESD_LIBS@ @EXTRA_LIBS@ @ALSA_LIBS@ -lgdk_imlib 
+--- src/Makefile.in.orig	Sun May 26 19:59:24 2002
++++ src/Makefile.in	Sat Aug  3 10:36:57 2002
+@@ -146,9 +146,9 @@
+ 	options.c 
+ 
+ 
+-extace_LDADD = @EFENCE@ @GTK_LIBS@ @ESD_LIBS@ @EXTRA_LIBS@ @ALSA_LIBS@ -lgdk_imlib 
++extace_LDADD = @EFENCE@ @GTK_LIBS@ @ESD_LIBS@ @EXTRA_LIBS@ @ALSA_LIBS@ @IMLIB_LIBS@ -lgdk_imlib 
  
 -LIBS = -lpthread
-+LIBS = #-lpthread
++#LIBS = -lpthread
  
  COMMON_FLAGS = @PFLAGS@ @DFLAGS@ 
  
-@@ -109,7 +109,9 @@
- 
- EXTRA_DIST = extace.desktop README NEWS TODO
- 
-+.ifdef HAVE_GNOME
- Multimedia_DATA = extace.desktop
-+.endif
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
- CONFIG_HEADER = ../config.h
- CONFIG_CLEAN_FILES = 
-@@ -239,7 +241,6 @@
- 
+@@ -321,7 +323,6 @@
+ uninstall-info-am:
  install-MultimediaDATA: $(Multimedia_DATA)
  	@$(NORMAL_INSTALL)
 -	$(mkinstalldirs) $(DESTDIR)$(Multimediadir)
  	@list='$(Multimedia_DATA)'; for p in $$list; do \
- 	  if test -f $(srcdir)/$$p; then \
- 	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(Multimediadir)/$$p"; \
-@@ -325,7 +326,7 @@
- install-strip:
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+@@ -395,7 +396,7 @@
+ all-am: Makefile $(PROGRAMS) $(DATA)
+ 
  installdirs:
--	$(mkinstalldirs)  $(DESTDIR)$(bindir) $(DESTDIR)$(Multimediadir)
+-	$(mkinstalldirs) $(DESTDIR)$(bindir) $(DESTDIR)$(Multimediadir)
 +	$(mkinstalldirs)  $(DESTDIR)$(bindir)
  
- 
- mostlyclean-generic:
+ install: install-am
+ install-exec: install-exec-am

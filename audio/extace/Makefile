@@ -6,36 +6,26 @@
 #
 
 PORTNAME=	extace
-PORTVERSION=	1.4.5
+PORTVERSION=	1.7.3
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	eXtace
+MASTER_SITE_SUBDIR=	extace
 
 MAINTAINER=	sobomax@FreeBSD.org
-
-BROKEN=		"Configure fails"
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
 
 USE_X_PREFIX=	yes
-USE_IMLIB=	yes
-USE_ESOUND=	yes
-WANT_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack gnomeprefix gtk12 imlib esound
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--disable-alsa
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DHAVE_LIBFFTW" \
 		LIBS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g"  \
+		-e "s|DATADIRNAME=lib|DATADIRNAME=share|g"  ${WRKSRC}/configure
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-.endif
-
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g'
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

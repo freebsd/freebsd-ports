@@ -1,6 +1,6 @@
---- extace/sound.c	2001/01/02 09:31:56	1.1
-+++ extace/sound.c	2001/01/02 09:32:16
-@@ -24,7 +24,9 @@
+--- src/sound.c.orig	Sat Aug  3 10:25:15 2002
++++ src/sound.c	Sat Aug  3 10:25:49 2002
+@@ -23,7 +23,9 @@
  #include <fcntl.h>
  #include <gtk/gtk.h>
  #include <esd.h>
