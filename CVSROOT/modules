@@ -4899,6 +4899,7 @@ nwclient602	ports/sysutils/nwclient602
 nwnusers	ports/games/nwnusers
 nwreckdum	ports/archivers/nwreckdum
 nwrite		ports/misc/nwrite
+nxtvepg		ports/multimedia/nxtvepg
 nylon		ports/net/nylon
 o2c		ports/lang/o2c
 oaf		ports/devel/oaf
