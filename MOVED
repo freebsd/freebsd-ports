@@ -1272,3 +1272,4 @@ www/zope-cmftransforms|www/zope-portaltransforms|2004-10-16|renamed by authors
 dns/bind9-sdb-mysql||2004-10-17|No longer maintained
 www/phpnuke||2004-10-17|security vulnerabilities and no longer maintained
 misc/bookcase|misc/tellico|2004-10-17|renamed
+audio/net-rhythmbox|audio/rhythmbox|2004-10-20|broken and audio/rhythmbox has more features
