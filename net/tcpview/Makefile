@@ -11,15 +11,26 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pub/noc-tools/tcpview/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	tung@turtle.ee.ncku.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 
 USE_BISON=	yes
 USE_MOTIF=	yes
+USE_REINPLACE=	yes
+
+#MAKE_ARGS=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+#		INSTALL_MAN="${INSTALL_MAN}" \
+#		INSTALL_DATA="${INSTALL_DATA}" \
+#		PREFIX="${PREFIX}" \
+#		X11BASE="${X11BASE}"
 
 MAN1=		tcpview.1
 
+post-patch:
+.for f in nametoaddr.c addrtoname.c print-nfs.c detail-tcp.c tv_addrtoname.c
+	@${REINPLACE_CMD} -e 's/NTOHL/ntohl/ ; s/NTOHS/ntohs/' ${WRKSRC}/${f}
+.endfor
+	
 post-install:
-	strip ${PREFIX}/bin/tcpview
 	${CP} ${WRKSRC}/DOC/Tcpview ${X11BASE}/lib/X11/app-defaults/
 
 .include <bsd.port.mk>
