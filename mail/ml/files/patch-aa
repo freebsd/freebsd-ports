@@ -1,0 +1,38 @@
+*** ../imap-4/src/osdep/unix/Makefile.orig	Sun Mar 15 18:36:06 1998
+--- ../imap-4/src/osdep/unix/Makefile	Sun Mar 15 18:37:26 1998
+***************
+*** 39,46 ****
+  	dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  	rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+! CC=cc
+! CFLAGS=$(EXTRACFLAGS)
+  EXTRADRIVERS=mbox
+  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf bezerk news phile dummy
+  LN=ln -s
+--- 39,46 ----
+  	dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+  	rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+  	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+! #CC=cc
+! #CFLAGS+=$(EXTRACFLAGS)
+  EXTRADRIVERS=mbox
+  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf bezerk news phile dummy
+  LN=ln -s
+***************
+*** 122,128 ****
+  		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
+  		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
+  		RSHPATH=/usr/bin/rsh \
+! 		CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)" \
+  		LDFLAGS="-lcrypt"
+  
+  bsi:	sigbsd	# BSD/i386
+--- 122,128 ----
+  		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
+  		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
+  		RSHPATH=/usr/bin/rsh \
+! 		CFLAGS="${CFLAGS} -DNFSKLUDGE $(EXTRACFLAGS)" \
+  		LDFLAGS="-lcrypt"
+  
+  bsi:	sigbsd	# BSD/i386
