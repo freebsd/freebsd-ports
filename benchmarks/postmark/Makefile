@@ -10,7 +10,8 @@
 DISTNAME=	postmark-1_11
 PKGNAME=	postmark-1.11
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.netapp.com/ftp/
+MASTER_SITES=	http://www.netapp.com/ftp/  \
+		http://www.taronga.com/~nick/files/
 EXTRACT_SUFX=	.c
 
 MAINTAINER=     obrien@FreeBSD.org
