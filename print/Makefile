@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.60 1998/05/17 20:15:24 andreas Exp $
+# $Id: Makefile,v 1.61 1998/05/25 14:28:02 tg Exp $
 #
 
 # the reversed ordering of a2ps43 and a2ps is intentional -- this
@@ -50,6 +50,7 @@
     SUBDIR += transfig
     SUBDIR += virtualpaper
     SUBDIR += xdvi
+    SUBDIR += xdvik
     SUBDIR += xmbibtex
     SUBDIR += xtem
 
