@@ -8,7 +8,8 @@
 PORTNAME=		celestia
 PORTVERSION=		1.3.1
 CATEGORIES=		astro
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=		http://fresh.t-systems-sfr.com/unix/src/misc/
+# ${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	celestia
 
 MAINTAINER=	trevor@FreeBSD.org
