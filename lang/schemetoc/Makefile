@@ -12,13 +12,12 @@ MASTER_SITES=	http://www.cs.indiana.edu/pub/scheme-repository/imp/Scheme-to-C/
 DISTNAME=	15mar93
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erik@smluc.org
 COMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
-
-BROKEN=		"last distfile dates from 1993.  Does not work on 5.x or non-i386"
 
 USE_REINPLACE=	yes
 USE_XLIB=	yes
+USE_GCC=	2.95
 INSTALLS_SHLIB=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		scc.1 sci.1
