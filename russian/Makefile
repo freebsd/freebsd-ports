@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.12 1996/10/13 14:26:40 ache Exp $
+# $Id: Makefile,v 1.13 1996/11/07 00:16:12 ache Exp $
 #
 
-    SUBDIR += d1489
     SUBDIR += X.language
+    SUBDIR += d1489
     SUBDIR += elm.language
     SUBDIR += netscape2.language
     SUBDIR += netscape3.language
