@@ -18,10 +18,26 @@ COMMENT=	Convert Type-2 DV codec-encoded AVI streams to mjpeg-encoded AVI
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
 
 USE_GNOME=	gdkpixbuf
+USE_REINPLACE=	yes
 MAKEFILE=	makefile
+
+.if defined(WITH_PAL_VIDEO)
+VID_FORMAT=	PAL
+.else
+VID_FORMAT=	NTSC
+.endif
+
+pre-everything::
+	@${ECHO_MSG} "===> The default video format is NTSC"
+	@${ECHO_MSG} "===> You can change this to PAL by defining"
+	@${ECHO_MSG} "===> WITH_PAL_VIDEO"
 
 post-extract:
 	${RM} ${WRKSRC}/avijoin ${WRKSRC}/dv2jpg ${WRKSRC}/*.o
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%VID_FORMAT%%|${VID_FORMAT}|' \
+		${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/avijoin ${PREFIX}/bin/

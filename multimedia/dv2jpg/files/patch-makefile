@@ -1,6 +1,6 @@
---- makefile.orig	Sun Jun 24 11:04:47 2001
-+++ makefile	Tue May  6 22:16:26 2003
-@@ -1,6 +1,6 @@
+--- makefile.orig	Sat Jun 23 22:04:47 2001
++++ makefile	Fri Sep 24 12:05:35 2004
+@@ -1,27 +1,27 @@
  
 -INC=-I/opt/gdk-pixbuf/lib -I/usr/include -I/usr/include/libdv 
 -LIBS=-ljpeg -lm -lgdk_pixbuf /usr/lib/libdv.a
@@ -8,8 +8,10 @@
 +LIBS=-ljpeg -lm -ldv `${GDK_PIXBUF_CONFIG} --libs` -L${LOCALBASE}/lib
  
  # what type of video do you want?
- VIDEO=NTSC
-@@ -9,19 +9,19 @@
+-VIDEO=NTSC
++VIDEO=%%VID_FORMAT%%
+ # VIDEO=PAL
+ 
  all: dv2jpg avijoin
  	
  dv2jpg: dv2jpg.o avilib.o dvavilib.o
