@@ -31,6 +31,8 @@
 %%ELISPDIR%%/egg/its.elc
 %%ELISPDIR%%/egg/its/ascii.el
 %%ELISPDIR%%/egg/its/ascii.elc
+%%ELISPDIR%%/egg/its/aynu.el
+%%ELISPDIR%%/egg/its/aynu.elc
 %%ELISPDIR%%/egg/its/bixing.el
 %%ELISPDIR%%/egg/its/bixing.elc
 %%ELISPDIR%%/egg/its/erpin.el
