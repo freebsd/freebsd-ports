@@ -60,7 +60,6 @@ bin/xfd
 bin/xfindproxy
 bin/xfontsel
 bin/xfsinfo
-bin/xftcache
 bin/xfwp
 bin/xgamma
 bin/xgc

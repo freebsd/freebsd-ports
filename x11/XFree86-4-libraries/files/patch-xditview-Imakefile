@@ -1,0 +1,11 @@
+--- programs/xditview/Imakefile.orig	Tue Feb 18 23:44:48 2003
++++ programs/xditview/Imakefile	Tue Feb 18 23:45:10 2003
+@@ -12,6 +12,8 @@
+        FONTLIBS = XftClientLibs
+        FONTDEFS = -DUSE_XFT
+ #endif
++       FONTLIBS = `pkg-config xft --libs`
++       FONTDEFS = -DUSE_XFT `pkg-config xft --cflags`
+ #if HasMkstemp
+        TEMPDEFS = -DHAS_MKSTEMP
+ #endif

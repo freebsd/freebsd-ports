@@ -1,0 +1,11 @@
+--- programs/x11perf/Imakefile.orig	Tue Feb 18 23:05:33 2003
++++ programs/x11perf/Imakefile	Tue Feb 18 23:06:18 2003
+@@ -17,6 +17,8 @@
+         XFTDEPS = XftClientDepLibs $(DEPXRENDERLIB)
+         XFTLIBS = XftClientLibs $(XRENDERLIB)
+ #endif
++        XFTDEFS = -DXFT `pkg-config xft --cflags`
++        XFTLIBS = `pkg-config xft --libs`
+         DEFINES = $(SIGNAL_DEFINES) $(SHMDEFS) $(XFTDEFS)
+         PERFLIB = X11perfcompLib
+         HEADERS = x11perf.h bitmaps.h
