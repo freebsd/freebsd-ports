@@ -1,44 +1,14 @@
---- main.cc.orig	Tue Mar 14 08:03:04 2000
-+++ main.cc	Tue Mar 21 15:13:59 2000
-@@ -15,7 +15,7 @@
- #include "findfile.h"
- #include "parsecfgfile.h"
+--- main.cc.orig	Sat Jan 20 20:04:03 2001
++++ main.cc	Sat Jan 20 20:04:19 2001
+@@ -16,10 +16,7 @@
+ #include "screen.h"
+ #include "MessageIdStore.h"
+ #include <strings.h>
+-
+-extern "C" {
+-#include <rxposix.h>
+-}
++#include <regex.h>
  
--#define		NNTP_PORT		119
-+unsigned NNTP_PORT = 119;
- 
- char *NNTP_SERVER = NULL;
- groupListPointer NNTP_GROUP = new groupList();
-@@ -282,6 +282,8 @@
-     fprintf(stderr,"grouplist     newsgroups to read\n");
-     fprintf(stderr,"-S name       name of the news server\n");
-     fprintf(stderr,"              (if not specified, environ. var. NNTPSERVER is used )\n");
-+    fprintf(stderr,"-P port       number of the port on the news server to connect to\n");
-+    fprintf(stderr,"              (if not specified, environ. var. NNTPPORT is used, or 119)\n");
-     fprintf(stderr,"-n            don't output to stdout\n");
-     fprintf(stderr,"-f            fork to background.  use only with -n\n");
-     fprintf(stderr,"-s num        consider messages posted to more than\n");
-@@ -321,6 +323,14 @@
- 		}
- 		NNTP_SERVER = argv[i];
- 		break;
-+	    case 'P':
-+		i++;
-+		if (i > argc) {
-+		    usage_error(argv[0]);
-+		    break;
-+		}
-+		NNTP_PORT = atoi(argv[i]);
-+		break;
-  	    case 's':	i++; 
- 		if (i == argc) {
- 		    usage_error(argv[0]);
-@@ -366,6 +376,8 @@
- 	missing_helper();
- 
-     if (getenv("NNTPGROUP")) NNTP_GROUP->addGroup( getenv("NNTPGROUP") ); // Check env for group to be checked
-+
-+    if (getenv("NNTP_PORT")) NNTP_PORT = atoi(getenv("NNTPPORT"));
- 
-     process_command_line(argc, argv);
-     if ( cfgfilename ) // Parse the config file
+ /* Prototype for signal handler */
+ void cleanUp(int);

@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	bgrab
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.6
 CATEGORIES=	news
 MASTER_SITES=	http://www.student.dtu.dk/~c960941/bgrab/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kbyanc@posi.net
 
