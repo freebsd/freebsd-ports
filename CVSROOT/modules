@@ -4576,6 +4576,7 @@ mod_csacek	ports/www/mod_csacek
 mod_cvs		ports/www/mod_cvs
 mod_dav		ports/www/mod_dav
 mod_dtcl	ports/www/mod_dtcl
+mod_encoding	ports/www/mod_encoding
 mod_extract_forwarded	ports/www/mod_extract_forwarded
 mod_fastcgi	ports/www/mod_fastcgi
 mod_filter	ports/www/mod_filter
