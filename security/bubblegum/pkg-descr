@@ -1,0 +1,5 @@
+Bubblegum is a daemon which watches a file for changes in access, modification
+and inode change times and MD5 checksums. It can run a command upon a change
+a specified number of times, read from a file list and more.
+
+WWW: http://arbornet.org/~bjk/bubblegum/
