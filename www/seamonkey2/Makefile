@@ -29,6 +29,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+IGNORE=		"Out-of-date, use www/mozilla instead for now"
+
 MOZILLA?=	mozilla-devel
 MOZ_SUFX=	-devel
 
