@@ -6058,6 +6058,7 @@ popt		ports/devel/popt
 poptop		ports/net/poptop
 pork		ports/net/pork
 pornview	ports/graphics/pornview
+portaudio	ports/audio/portaudio
 portcheckout	ports/devel/portcheckout
 porteasy	ports/misc/porteasy
 portell		ports/misc/portell
