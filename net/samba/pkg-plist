@@ -16,6 +16,7 @@ bin/tdbbackup
 bin/testparm
 bin/testprns
 %%WINBIND_AUTH_CHALLENGE%%bin/wbinfo
+%%WINBIND_NSS%%lib/nss_winbind.so.1
 %%WINBIND%%sbin/winbindd
 etc/codepages/codepage.1125
 etc/codepages/unicode_map.1125
