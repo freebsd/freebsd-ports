@@ -3,7 +3,7 @@
 # Date created:		Fri Mar 27 10:32:46 KST 1998
 # Whom:			CHOI Junho <cjh@kr.freebsd.org>
 #
-# $Id: Makefile,v 1.6 1999/02/13 00:34:44 asami Exp $
+# $Id: Makefile,v 1.7 1999/04/02 03:48:47 steve Exp $
 #
 # based on print/ghostscript5 and japanese/vfghostscript5
 # use Adobe's CID-keyed font sameple(korean) because there are no
@@ -28,6 +28,7 @@ DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 
 MAINTAINER=	cjh@kr.freebsd.org
 
+BROKEN=		fetch
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
 		/nonexistent:${PORTSDIR}/graphics/png:extract \
