@@ -18,8 +18,15 @@ COMMENT=	A perl5 interface to Gd Graphics Library
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 PERL_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		GD.3
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's,@@LOCALBASE@@,${LOCALBASE},g' \
+		-e 's,@@LOCALBASE@@,${LOCALBASE},g' \
+		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
