@@ -32,6 +32,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0201.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0201.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0213.el
+@unexec rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0213.elc || true
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisyo-edit-mode.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisyo-edit-mode.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-kakasi.el
@@ -43,6 +44,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-look.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-look.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-lookup.el
+@unexec rm -f %D/%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-lookup.elc || true
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-macs.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-macs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-num.el
@@ -52,6 +54,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-setup.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-study.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-study.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-tut.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-tut.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-vars.el
@@ -73,15 +77,16 @@ info/skk.info-4
 share/skk/NICOLA-SKK.tut
 share/skk/SKK.tut
 share/skk/SKK.tut.E
+share/skk/skk.xpm
 @dirrm share/skk
 share/examples/ddskk/Emacs.ad
 share/examples/ddskk/dot.emacs
 share/examples/ddskk/dot.skk
 @dirrm share/examples/ddskk
-%%PORTDOCS%%share/doc/ddskk/AUTHORS
-%%PORTDOCS%%share/doc/ddskk/Codename
+%%PORTDOCS%%share/doc/ddskk/AUTHORS.ja
+%%PORTDOCS%%share/doc/ddskk/CODENAME.ja
 %%PORTDOCS%%share/doc/ddskk/Contributors
-%%PORTDOCS%%share/doc/ddskk/FAQ.txt
-%%PORTDOCS%%share/doc/ddskk/NEWS
+%%PORTDOCS%%share/doc/ddskk/FAQ.ja
+%%PORTDOCS%%share/doc/ddskk/NEWS.ja
 %%PORTDOCS%%share/doc/ddskk/README
 %%PORTDOCS%%@dirrm share/doc/ddskk
