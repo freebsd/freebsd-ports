@@ -1,0 +1,10 @@
+--- ecg2png/imageio.cpp	Sun Oct 17 20:29:21 1999
++++ ecg2png/imageio.cpp.new	Tue Jul  4 00:51:57 2000
+@@ -19,7 +19,6 @@
+ #include <stdio.h>
+ #include "my_imageio.h"
+ #include <qimage.h>
+-#include <qimageio.h>
+ #include <qpixmap.h>
+ #include <qpngio.h>
+ 

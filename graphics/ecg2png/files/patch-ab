@@ -1,0 +1,10 @@
+--- ecg2png/smooth_image.cpp	Sun Oct 17 12:00:50 1999
++++ ecg2png/smooth_image.cpp.new	Tue Jul  4 00:52:14 2000
+@@ -18,7 +18,6 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <qimage.h>
+-#include <qimageio.h>
+ #include "my_imageio.h"
+  
+ extern QImageIO iio;

@@ -1,0 +1,19 @@
+This program is designed to convert scanned 12-lead
+electrocardiograms into PNG format and a web-friendly
+image size. It assumes that the electrocardiogram (ECG)
+is printed with a black line on white paper with a red grid.
+
+The problems this program is designed to solve are (1) an
+ECG scanned at relatively high resolution (300 to 600 dots
+per inch) imposes a substantial load on the web browser
+because it contains about 6 million pixels which may require
+18 to 24 MB of RAM to store for display. Also, (2) typical
+scanners convert a clean paper ECG into a multitude of colors,
+include green and blue. The resulting file cannot be compressed
+efficiently because it does not contain as much redundancy, and
+thus takes more time to transmit over low-speed network connections.
+
+WWW: http://www.cardiothink.com/downloads/ecg2png/
+Author: Lawrence Widman <widman@cardiothink.com>
+
+- Will <andrews@technologist.com>

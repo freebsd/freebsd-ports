@@ -1,0 +1,11 @@
+--- ecg2png/Makefile.in	Sun Oct 17 20:32:52 1999
++++ ecg2png/Makefile.in.new	Tue Jul  4 00:55:18 2000
+@@ -70,7 +70,7 @@
+ ####### kdevelop will overwrite this part!!! (end)############
+ bin_PROGRAMS = ecg2png
+ ecg2png_SOURCES = smooth_image.cpp imageio.cpp main.cpp 
+-ecg2png_LDADD = -lpng -lgd -lqt
++ecg2png_LDADD = -lpng -lgd -lqt2
+ 
+ SUBDIRS = docs 
+ 
