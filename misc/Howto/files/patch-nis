@@ -1,36 +1,32 @@
---- NIS-HOWTO.sgml.orig	Thu May  6 23:21:26 1999
-+++ NIS-HOWTO.sgml	Fri May  7 22:46:26 1999
-@@ -1,21 +1,20 @@
- <!doctype linuxdoc system>
+--- NIS-HOWTO.sgml.orig	Wed Dec 25 09:56:09 2002
++++ NIS-HOWTO.sgml	Wed Dec 25 10:53:26 2002
+@@ -4,9 +4,10 @@
  
--<!-- This is the Linux NIS-HOWTO. It describes how to install and configure
--        Linux as NIS client and server and as NIS+ client.
-+<!-- This is the FreeBSD NIS-HOWTO. It describes how to install and configure
-+        FreeBSD as NIS client and server.
-  -->
+ <ArtHeader>
  
- <article>
- 
--<title>The Linux NIS(YP)/NYS/NIS+ HOWTO
--<author>Thorsten Kukuk
-+<title>The FreeBSD NIS(YP) HOWTO
-+<author>Linux version by Thorsten Kukuk
- <date>v1.0, 9 March 1999
- 
- <abstract>
- <nidx>HOWTOs!NIS</nidx>
- <nidx>HOWTOs!YP</nidx>
--<nidx>HOWTOs!NYS</nidx>
- <nidx>HOWTOs!NIS+</nidx>
+-<Title>The Linux NIS(YP)/NYS/NIS+ HOWTO</Title>
++<Title>The FreeBSD NIS(YP)/NYS/NIS+ HOWTO</Title>
+ <AUTHOR
+ >
++Linux version by 
+ <FirstName>Thorsten Kukuk</FirstName>
+ </AUTHOR
+ >
+@@ -17,9 +18,8 @@
+ <Para>
+ <IndexTerm><Primary>HOWTOs!NIS</Primary></IndexTerm>
+ <IndexTerm><Primary>HOWTOs!YP</Primary></IndexTerm>
+-<IndexTerm><Primary>HOWTOs!NYS</Primary></IndexTerm>
+ <IndexTerm><Primary>HOWTOs!NIS+</Primary></IndexTerm>
 -This document describes how to configure Linux as NIS(YP) or NIS+ client
-+This document describes how to configure FreeBSD as a NIS(YP) client
++This document describes how to configure FreeBSD as NIS(YP) client
  and how to install as NIS server.
- </abstract>
+ </Para>
  
-@@ -25,18 +24,17 @@
- <sect>Introduction
+@@ -30,22 +30,21 @@
+ <Title>Introduction</Title>
  
- <p>
+ <Para>
 -More and more, Linux machines are installed as part of a network of
 +More and more, FreeBSD machines are installed as part of a network of
  computers. To simplify network administration, most networks (mostly
@@ -40,140 +36,156 @@
 -themselves. Linux machines can also act as full NIS+ clients, this
 -support is in beta stage.
 +themselves.
+ </Para>
  
+ <Para>
 -This document tries to answer questions about setting up NIS(YP) and NIS+
--on your Linux machine. Don't forget to read the section
+-on your Linux machine. Don't forget to read
 +This document tries to answer questions about setting up NIS(YP)
-+on your FreeBSD machine. Don't forget to read the section
- <ref id="portmapper" name="The RPC Portmapper">.
++on your FreeBSD machine. Don't forget to read
+ <XRef LinkEnd="portmapper">.
+ </Para>
  
+ <Para>
 -The NIS-Howto is edited and maintained by
 +The Linux version of the NIS-Howto is edited and maintained by
+ </Para>
  
- <tscreen><verb>
-         Thorsten Kukuk, <kukuk@suse.de>
-@@ -61,10 +59,7 @@
- URL <url url="http://www.suse.de/~kukuk/linux/HOWTO/NIS-HOWTO.html"
-             name="http://www.suse.de/~kukuk/linux/HOWTO/NIS-HOWTO.html">.
+ <Para>
+@@ -88,12 +87,7 @@
+ </Para>
  
+ <Para>
 -New versions of this document will also be uploaded to various
 -Linux WWW and FTP sites, including the LDP home page.
+-</Para>
 -
+-<Para>
 -Links to translations of this document could be found at
-+Links to translations of the Linux document can be found at
- <url url="http://www.suse.de/~kukuk/linux/nis-howto.html"
-             name="http://www.suse.de/~kukuk/linux/nis-howto.html">.
- <sect1>Disclaimer
-@@ -87,9 +82,9 @@
- document, please let me know so I can correct it in the next
- version. Thanks.
++Links to translations of the Linux document could be found at
+ <ULink
+ URL="http://www.linux-nis.org/nis-howto/"
+ >http://www.linux-nis.org/nis-howto/</ULink
+@@ -131,9 +125,9 @@
+ </Para>
  
--Please do <em/not/ mail me questions about special problems with your Linux
+ <Para>
+-Please do <Emphasis>not</Emphasis> mail me questions about special problems with your Linux
 -Distribution! I don't know every Linux Distribution. But I will try to add
 -every solution you send me.
-+Please do <em/not/ mail Thorsten questions about special problems with FreeBSD.
++Please do <Emphasis>not</Emphasis> mail Thorsten questions about special problems with FreeBSD.
 +The FreeBSD changes to the Linux document were done by the FreeBSD
 +Documentation Project.  Please send comments to docs@freebsd.org
+ </Para>
  
- <sect1>Acknowledgements
+ </Sect2>
+@@ -160,10 +154,6 @@
  
-@@ -104,25 +99,20 @@
- </verb></tscreen>
- 
+ <Para>
  Theo de Raadt is responsible for the original yp-clients code.
 -Swen Thuemmler ported the yp-clients code to Linux and also ported
 -the yp-routines in libc (again based on Theo's work).
 -Thorsten Kukuk has written the NIS(YP) and NIS+ routines for
 -GNU libc 2.x from scratch.
+ </Para>
  
- <sect>Glossary and General Information
+ </Sect2>
+@@ -177,9 +167,8 @@
+ <Title>Glossary of Terms
+ <IndexTerm><Primary>NIS!glossary</Primary></IndexTerm>
+ <IndexTerm><Primary>YP!glossary</Primary></IndexTerm>
+-<IndexTerm><Primary>NYS!glossary</Primary></IndexTerm>
+ <IndexTerm><Primary>NIS+!glossary</Primary></IndexTerm>
+-<IndexTerm><Primary>glossary!NIS/NYS/YP/NIS+</Primary></IndexTerm>
++<IndexTerm><Primary>glossary!NIS/YP/NIS+</Primary></IndexTerm>
+ </Title>
  
- <sect1>Glossary of Terms
- <nidx>NIS!glossary</nidx>
- <nidx>YP!glossary</nidx>
--<nidx>NYS!glossary</nidx>
- <nidx>NIS+!glossary</nidx>
--<nidx>glossary!NIS/NYS/YP/NIS+</nidx>
-+<nidx>glossary!NIS/YP/NIS+</nidx>
- <p>
- In this document a lot of acronyms are used. Here are the most
- important acronyms and a brief explanation:
+ <Para>
+@@ -191,7 +180,7 @@
+ <VariableList>
  
- <descrip>
--<tag/DBM/DataBase Management, a library of functions which
-+<tag/DB/DataBase Management, a library of functions which
- 	maintain key-content pairs in a data base.
+ <VarListEntry>
+-<Term>DBM</Term>
++<Term>DB</Term>
+ <ListItem>
+ <Para>
+ DataBase Management, a library of functions which
+@@ -234,8 +223,7 @@
+ <ListItem>
+ <Para>
+ Name services library, a library of name service calls
+-(getpwnam, getservbyname, etc...) on SVR4 Unixes. GNU libc
+-uses this for the NIS (YP) and NIS+ functions.
++(getpwnam, getservbyname, etc...) on SVR4 Unixes.
+ </Para>
+ </ListItem>
+ </VarListEntry>
+@@ -272,21 +260,10 @@
+ </ListItem>
+ </VarListEntry>
+ <VarListEntry>
+-<Term>NYS</Term>
+-<ListItem>
+-<Para>
+-This is the name of a project and stands for NIS+, YP and Switch
+-and is managed by Peter Eriksson &lt;peter@ifm.liu.se&#62;. It contains
+-among other things a complete reimplementation of the NIS (= YP) code
+-that uses the Name Services Switch functionality of the NYS library.
+-</Para>
+-</ListItem>
+-</VarListEntry>
+-<VarListEntry>
+ <Term>NSS</Term>
+ <ListItem>
+ <Para>
+-Name Service Switch. The /etc/nsswitch.conf file determines the order
++Name Service Switch. On Solaris, the /etc/nsswitch.conf file determines the order
+ of lookups performed when a certain piece of information is requested.
+ </Para>
+ </ListItem>
+@@ -329,7 +306,6 @@
+ <Title>Some General Information
+ <IndexTerm><Primary>NIS!general information</Primary></IndexTerm>
+ <IndexTerm><Primary>YP!general information</Primary></IndexTerm>
+-<IndexTerm><Primary>NYS!general information</Primary></IndexTerm>
+ <IndexTerm><Primary>NIS+!general information</Primary></IndexTerm>
+ </Title>
  
- <tag/DLL/Dynamically Linked Library, a library linked to an
-@@ -138,8 +128,7 @@
- 	files between two computers.
- 
- <tag/libnsl/Name services library, a library of name service calls
--	(getpwnam, getservbyname, etc...) on SVR4 Unixes. GNU libc
--        uses this for the NIS (YP) and NIS+ functions.
-+	(getpwnam, getservbyname, etc...) on SVR4 Unixes.
- 
- <tag/libsocket/Socket services library, a library for the socket
- 	service calls (socket, bind, listen, etc...) on SVR4 Unixes.
-@@ -155,12 +144,7 @@
- 	replacement for NIS with better security and better handling
- 	of _large_ installations.
- 
--<tag/NYS/This is the name of a project and stands for NIS+, YP and Switch
--	and is managed by Peter Eriksson &lt;peter@ifm.liu.se>. It contains
--	among other things a complete reimplementation of the NIS (= YP) code
--	that uses the Name Services Switch functionality of the NYS library.
--
--<tag/NSS/Name Service Switch. The /etc/nsswitch.conf file determines the order
-+<tag/NSS/Name Service Switch. On Solaris, the /etc/nsswitch.conf file determines the order
-         of lookups performed when a certain piece of information is requested.
- 
- <tag/RPC/Remote Procedure Call. RPC routines allow C programs to
-@@ -179,7 +163,6 @@
- <sect1>Some General Information
- <nidx>NIS!general information</nidx>
- <nidx>YP!general information</nidx>
--<nidx>NYS!general information</nidx>
- <nidx>NIS+!general information</nidx>
- 
- <p>
-@@ -199,7 +182,7 @@
- distributed by NIS is:
- 
- <itemize>
--<item>login names/passwords/home directories (/etc/passwd)
-+<item>login names/passwords/home directories (/etc/master.passwd)
- <item>group information (/etc/group)
- </itemize>
- 
-@@ -252,10 +235,8 @@
- use NIS+ or have severe security needs. NIS+ is _much_ more problematic
+@@ -358,7 +334,7 @@
+ <ItemizedList>
+ <ListItem>
+ <Para>
+-login names/passwords/home directories (/etc/passwd)
++login names/passwords/home directories (/etc/master.passwd)
+ </Para>
+ </ListItem>
+ <ListItem>
+@@ -454,7 +430,8 @@
+ severe security needs. NIS+ is &lowbar;much&lowbar; more problematic
  to administer (it's pretty easy to handle on the client side, but the
  server side is horrible). Another problem is that the support for NIS+
--under Linux is still under developement - you need the latest glibc 2.1.
--There is an unsupported port of the glibc NIS+ support for libc5 as
--dropin replacement.
--
+-under Linux contains a lot of bugs and that the development has stopped.
 +under FreeBSD is still under developement, and is not ready for Alpha testing
 +yet.
+ </Para>
  
- <sect>How it works
+ </Sect2>
+@@ -560,10 +537,10 @@
  
-@@ -324,10 +305,9 @@
- 
- <p>
+ <Para>
  To run any of the software mentioned below you will need to run the
 -program /usr/sbin/portmap. Some Linux distributions already have
 -the code in the /sbin/init.d/ or /etc/rc.d/ files to start up this
 -daemon. All you have to do is to activate it and reboot your Linux
 -machine. Read your Linux Distribution Documentation how to do this.
-+program /usr/sbin/portmap. In FreeBSD you specify your desire to run the
++program /usr/sbin/portmap.
++In FreeBSD you specify your desire to run the
 +Portmapper in /etc/rc.conf.
 +All you have to do is to activate it and reboot your FreeBSD machine.
+ </Para>
  
- The RPC portmapper (portmap(8)) is a server that converts RPC program
- numbers into TCP/IP (or UDP/IP) protocol port numbers. It must be
-@@ -374,57 +354,23 @@
+ <Para>
+@@ -645,15 +622,15 @@
  ypcat, yppoll, ypmatch). The most important program is ypbind. This
  program must be running at all times, which means, it should always appear
  in the list of processes. It is a daemon process and needs to
@@ -182,133 +194,156 @@
 +be started from the system's startup file (eg. /etc/rc.network).
 +You specify your desire to run ypbind in /etc/rc.conf.
  As soon as ypbind is running your system has become a NIS client.
+ </Para>
  
+ <Para>
  In the second case, if you don't have NIS servers, then you will also
- need a NIS server program (usually called ypserv). Section
- <ref id="ypserv" name="Setting up a NIS Server">  describes
--how to set up a NIS server on your Linux machine using the "ypserv"
--implementation by Peter Eriksson and Thorsten Kukuk.
--Note that from version 0.14 this implementation supports the
--master-slave concept talked about in section 4.1.
--
--There is also another free NIS server available, called "yps", written
--by Tobias Reber in Germany which does support the master-slave concept,
--but has other limitations and isn't supported since a long time.
-+how to set up a NIS server on your FreeBSD machine using "ypserv".
+ need a NIS server program (usually called ypserv). <XRef LinkEnd="ypserv">
+-describes how to set up a NIS server on your Linux machine using the
++how to set up a NIS server on your FreeBSD machine using
+ <Command>ypserv</Command>
+ daemon.
+ </Para>
+@@ -667,44 +644,9 @@
+ </Title>
  
- 
- <sect1>The Software
- <nidx>NIS!library requirements</nidx>
- 
- <p>
+ <Para>
 -The system library "/usr/lib/libc.a" (version 4.4.2 and better) or the
 -shared library "/lib/libc.so.x" contain all necessary system calls to
 -succesfully compile the NIS client and server software. For the
 -GNU C Library 2 (glibc 2.x), you also need /lib/libnsl.so.1.
+-</Para>
 -
+-<Para>
 -Some people reported that NIS only works with "/usr/lib/libc.a" version
 -4.5.21 and better so if you want to play it safe don't use older
 -libc's.  The NIS client software can be obtained from:
+-</Para>
 -
--<tscreen><verb>
+-<Para>
+-
+-<Screen>
 -  Site                  Directory                        File Name
 -
--  ftp.kernel.org        /pub/linux/utils/net/NIS         yp-tools-2.2.tar.gz
--  ftp.kernel.org        /pub/linux/utils/net/NIS         ypbind-mt-1.4.tar.gz
+-  ftp.kernel.org        /pub/linux/utils/net/NIS         yp-tools-2.7.tar.gz
+-  ftp.kernel.org        /pub/linux/utils/net/NIS         ypbind-mt-1.12.tar.gz
 -  ftp.kernel.org        /pub/linux/utils/net/NIS         ypbind-3.3.tar.gz
 -  ftp.kernel.org        /pub/linux/utils/net/NIS         ypbind-3.3-glibc5.diff.gz
--  ftp.uni-paderborn.de  /linux/local/yp                  yp-clients-2.2.tar.gz
--</verb></tscreen>
+-</Screen>
 -
+-</Para>
+-
+-<Para>
 -Once you obtained the software, please follow the instructions which
 -come with the software. yp-clients 2.2 are for use with libc4 and libc5
 -until 5.4.20. libc 5.4.21 and glibc 2.x needs yp-tools 1.4.1 or later.
--The new yp-tools 2.2 should work with every Linux libc. Since there was
+-The new yp-tools 2.4 should work with every Linux libc. Since there was
 -a bug in the NIS code, you shouldn't use libc 5.4.21-5.4.35. Use libc
 -5.4.36 or later instead, or the most YP programs will not work.
 -ypbind 3.3 will work with all libraries, too. If you use gcc 2.8.x or
 -greater, egcs or glibc 2.x, you should add the ypbind-3.3-glibc5.diff
--patch to ypbind 3.3. Please never use the ypbind from yp-clients 2.2.
--ypbind-mt is a new, multithreaded daemon. It needs a Linux 2.2 kernel,
+-patch to ypbind 3.3. If possible you should avoid the use of ypbind 3.3
+-for security reasons.
+-ypbind-mt is a new, multithreaded daemon. It needs a Linux 2.2 kernel
 -and glibc 2.1 or later.
 +The system libraries "/usr/lib/libc.so.x" and "/usr/lib/libc.a"
 +contain all necessary system calls to
 +succesfully compile the NIS client and server software.
+ </Para>
  
- <sect1>The ypbind daemon
- <nidx>NIS!ypbind daemon</nidx>
-@@ -432,25 +378,9 @@
- <nidx>daemon!ypbind</nidx>
+ </Sect2>
+@@ -726,31 +668,9 @@
+ </Title>
  
- <p>
+ <Para>
 -After you have succesfully compiled the software you are now ready
 -to install it. A suitable place for the ypbind daemon is the directory
 -/usr/sbin. Some people may tell you that you don't need
 -ypbind on a system with NYS. This is wrong. ypwhich and ypcat need it
 -always.
+-</Para>
 -
+-<Para>
 -You must do this as root of course. The other binaries (ypwhich,
 -ypcat, yppasswd, yppoll, ypmatch) should go in a directory accessible
 -by all users, normally /usr/bin.
+-</Para>
 -
+-<Para>
 -Newer ypbind versions have a configuration file called /etc/yp.conf. You can
 -hardcode a NIS server there - for more info see the manual page for ypbind(8).
 -You also need this file for NYS.
 -An example:
--<tscreen><verb>
--  ypserver voyager
--  ypserver defiant
--  ypserver ds9
--</verb></tscreen>
+-
+-<Screen>
+-  ypserver 10.10.0.1
+-  ypserver 10.0.100.8
+-  ypserver 10.3.1.1
+-</Screen>
+-
 +The ypbind process can be forced to bind to a specific NIS server by specifing
 +the server in /etc/rc.conf.
 +For more info see the manual page for ypbind(8).
+ </Para>
  
- If the system cam resolv the hostnames without NIS, you may use
- the name, otherwise you have to use the IP address. ypbind 3.3 has a bug
-@@ -539,11 +469,6 @@
+ <Para>
+@@ -904,14 +824,6 @@
+ </Para>
  
- This directory MUST exist for ypbind to start up succesfully.
- 
--To check if the domainname is set correct, use the /bin/ypdomainname from
--yp-tools 2.2. It uses the yp_get_default_domain() function which is more
+ <Para>
+-To check if the domainname is set correct, use the
+-<Command>/bin/ypdomainname</Command> from
+-yp-tools 2.2. It uses the yp&lowbar;get&lowbar;default&lowbar;domain() function which is more
 -restrict. It doesn't allow for example the "(none)" domainname, which
 -is the default under Linux and makes a lot of problems.
+-</Para>
 -
+-<Para>
  If the test worked you may now want to change your startupd files
  so that ypbind will be started at boot time and your system will
  act as a NIS client. Make sure that the domainname will
-@@ -558,20 +483,20 @@
+@@ -933,19 +845,15 @@
  
- <p>
+ <Para>
  For host lookups you must set (or add) "nis" to the lookup order line
--in your /etc/host.conf file. Please read the manpage "resolv+.8" for
-+in your /etc/host.conf file. Please see the comments in /etc/host.conf
- more details.
+-in your <filename>/etc/host.conf</filename> file. Please read the
+-manpage "resolv+.8" for more details.
+-</Para>
+-
+-<Para>
+-Add the following line to <filename>/etc/passwd</filename>
+-on your NIS clients:
++in your <filename>/etc/host.conf</filename> file. Please see the
++comments in /etc/host.conf for more details.
+ </Para>
  
--Add the following line to /etc/passwd on your NIS clients:
+ <Para>
 +Add the following line to /etc/master.passwd using vipw on your NIS clients:
  
- <tscreen><verb>
+ <Screen>
 -+::::::
 ++:::::::::
- </verb></tscreen>
+ </Screen>
  
+ </Para>
+@@ -953,10 +861,10 @@
+ <Para>
  You can also use the + and - characters to include/exclude or change
  users. If you want to exclude the user guest just add -guest to your
--/etc/passwd file.  You want to use a different shell (e.g. ksh) for
+-<filename>/etc/passwd</filename> file.
++<filename>/etc/master.passwd</filename> file.
+ You want to use a different shell (e.g. ksh) for
 -the user "linux"?  No problem, just add "+linux::::::/bin/ksh"
--(without the quotes) to your /etc/passwd. Fields that you don't want
-+/etc/master.passwd file.  You want to use a different shell (e.g. sh) for
+-(without the quotes) to your <filename>/etc/passwd</filename>. Fields
 +the user "ken"?  No problem, just add "+ken:::::::::/usr/local/bin/bash"
-+(without the quotes) to your /etc/master.passwd using vipw. Fields that you don't want
++(without the quotes) to your <filename>/etc/master.passwd</filename>. Fields
+ that you don't want
  to change have to be left empty. You could also use Netgroups for
  user control.
+@@ -971,487 +879,19 @@
+ <Para>
  
-@@ -580,376 +505,22 @@
- of all other users available use:
- 
- <tscreen><verb>
+ <Screen>
 -      +miquels:::::::
 -      +ed:::::::
 -      +dth:::::::
@@ -316,82 +351,124 @@
 -      -ftp
 -      +:*::::::/etc/NoShell
 +      +dennis:::::::::
-+	  +@sysadmins:::::::::
++      +@sysadmins:::::::::
 +      -ftp:::::::::
-+	  +@rejected-users::32767:32767::::::/bin/false
- </verb></tscreen>
++      +@rejected-users::32767:32767::::::/bin/false
+ </Screen>
  
+ </Para>
+ 
+ <Para>
 -Note that in Linux you can also override the password field, as we did
 +Note that in FreeBSD you can also override the password field, as we did
  in this example. We also remove the login "ftp", so it isn't known any
  longer, and anonymous ftp will not work.
-+See the ``man 5 passwd'' for further explantion and more examples.
- 
- The netgroup would look like
- <tscreen><verb>
- sysadmins (-,software,) (-,kukuk,)
- </verb></tscreen>
- 
+-</Para>
+-
+-<Para>
+-The netgroup would look like
+-
+-<Screen>
+-sysadmins (-,software,) (-,kukuk,)
+-</Screen>
+-
+-</Para>
+-
+-<Para>
 -IMPORTANT: The netgroup  feature is implemented starting from libc 4.5.26.
 -If you have a version of libc earlier than 4.5.26, every user in the
 -NIS password database can access your linux machine if you run "ypbind" !
+-</Para>
 -
+-</Sect2>
 -
--<sect1>Setting up a NIS Client using NYS
--<nidx>NYS!client setup</nidx>
+-<Sect2>
+-<Title>Setting up a NIS Client using NYS
+-<IndexTerm><Primary
+->NYS!client setup</Primary></IndexTerm>
+-</Title>
 -
--<p>
+-<Para>
 -All that is required is that the NIS configuration file
 -(/etc/yp.conf) points to the correct server(s) for its information.
 -Also, the Name Services Switch configuration file (/etc/nsswitch.conf)
 -must be correctly set up.
+-</Para>
 -
+-<Para>
 -You should install ypbind. It isn't needed by the libc, but the NIS(YP)
 -tools need it.
+-</Para>
 -
+-<Para>
 -If you wish to use the include/exclude user feature (+/-guest/+@admins),
 -you have to use "passwd: compat" and "group: compat" in nsswitch.conf.
 -Note that there is no "shadow: compat"! You have to
 -use "shadow: files nis" in this case.
+-</Para>
 -
+-<Para>
 -The NYS sources are part of the libc 5 sources. When run configure,
 -say the first time "NO" to the "Values correct" question,
 -then say "YES" to "Build a NYS libc from nys".
+-</Para>
 -
--<sect1>Setting up a NIS Client using glibc 2.x
--<nidx>NIS!client setup!using glibc 2.x</nidx>
+-</Sect2>
 -
--<p>
+-<Sect2>
+-<Title>Setting up a NIS Client using glibc 2.x
+-<IndexTerm><Primary
+->NIS!client setup!using glibc 2.x</Primary></IndexTerm>
+-</Title>
+-
+-<Para>
 -The glibc uses "traditional NIS", so you need to start ypbind. The
 -Name Services Switch configuration file (/etc/nsswitch.conf) must be
 -correctly set up. If you use the compat mode for passwd, shadow or group,
 -you have to add the "+" at the end of this files and you can use
 -the include/exclude user feature. The configuration is excatly the same
 -as under Solaris 2.x.
+-</Para>
 -
--<sect1>The nsswitch.conf File
--<nidx>nsswitch.conf file</nidx>
--<nidx>NIS!nsswitch.conf file</nidx>
+-</Sect2>
 -
--<p>
+-<Sect2>
+-<Title>The nsswitch.conf File
+-<IndexTerm><Primary
+->nsswitch.conf file</Primary></IndexTerm>
+-
+-<IndexTerm><Primary
+->NIS!nsswitch.conf file</Primary></IndexTerm>
+-</Title>
+-
+-<Para>
 -The Network Services switch file /etc/nsswitch.conf determines the
 -order of lookups performed when a certain piece of information is
 -requested, just like the /etc/host.conf file which determines the way
 -host lookups are performed. For example, the line
+-</Para>
 -
--<tscreen><verb>
+-<Para>
+-
+-<Screen>
 -    hosts: files nis dns
--</verb></tscreen>
+-</Screen>
 -
+-</Para>
+-
+-<Para>
 -specifies that host lookup functions should first look in the local
 -/etc/hosts file, followed by a NIS lookup and finally through the domain
 -name service (/etc/resolv.conf and named), at which point if no match
 -is found an error is returned. This file must be readable for every
 -user! You can find more information in the man-page nsswitch.5
 -or nsswitch.conf.5.
+-</Para>
 -
+-<Para>
 -A good /etc/nsswitch.conf file for NIS is:
--<tscreen><verb>
+-
+-<Screen>
 -#
 -# /etc/nsswitch.conf
 -#
@@ -436,16 +513,26 @@
 -publickey:  nis [NOTFOUND=return] files
 -automount:  files
 -aliases:    nis [NOTFOUND=return] files
--</verb></tscreen>
+-</Screen>
 -
--passwd_compat, group_compat and shadow_compat are only supported by glibc 2.x.
+-</Para>
+-
+-<Para>
+-passwd&lowbar;compat, group&lowbar;compat and shadow&lowbar;compat are only supported by glibc 2.x.
 -If there are no shadow rules in /etc/nsswitch.conf, glibc will use the passwd
 -rule for lookups. There are some more lookup module for glibc like hesoid.
 -For more information, read the glibc documentation.
+-</Para>
 -
--<sect1> Shadow Passwords with NIS
--<nidx>NIS!shadow passwords</nidx>
--<p>
+-</Sect2>
+-
+-<Sect2>
+-<Title>Shadow Passwords with NIS
+-<IndexTerm><Primary
+->NIS!shadow passwords</Primary></IndexTerm>
+-</Title>
+-
+-<Para>
 -Shadow passwords over NIS are always a bad idea. You loose the security,
 -which shadow gives you, and it is supported by only some few Linux C
 -Libraries. A good way to avoid shadow passwords over NIS is,
@@ -453,187 +540,251 @@
 -entries from the shadow database, and put the password back in passwd.
 -So you can use shadow for the root login, and normal passwd for NIS
 -user. This has the advantage that it will work with every NIS client.
+-</Para>
 -
--<sect2>Linux
--<p>
+-<Sect3>
+-<Title>Linux</Title>
+-
+-<Para>
 -The only Linux libc which supports shadow passwords over NIS, is the
 -GNU C Library 2.x. Linux libc5 has no support for it. Linux
 -libc5 compiled with NYS enabled has some code for it. But this code
 -is badly broken in some cases and doesn't work with all correct
 -shadow entries.
+-</Para>
 -
--<sect2>Solaris
--<p>
+-</Sect3>
+-
+-<Sect3>
+-<Title>Solaris</Title>
+-
+-<Para>
 -Solaris does not support shadow passwords over NIS.
+-</Para>
 -
--<sect2>PAM
--<nidx>PAM!shadow passwords</nidx
--<p>
--PAM does not support Shadow passwords over NIS, especially
--pam_pwdb/libpwdb. This is a big problem for RedHat 5.x users. If you
--have glibc and PAM, you need to change the /etc/pam.d/* entries.
--Replace all pam_pwdb rules through pam_unix_*
--modules. Due a bug in the pam_unix_auth.so module this will not always
--work.
+-</Sect3>
 -
+-<Sect3>
+-<Title>PAM
+-<IndexTerm><Primary
+->PAM!shadow passwords</Primary></IndexTerm>
+-</Title>
+-
+-<Para>
+-Linux-PAM 0.75 and newr does support Shadow passwords over NIS if you
+-use the pam_unix.so Module or if you install the extra pam_unix2.so
+-Module. Old systems using pam&lowbar;pwdb/libpwdb (for example Red Hat
+-Linux 5.x)
+-need to change the /etc/pam.d/* entries. All pam&lowbar;pwdb rules should
+-be replaced through a pam&lowbar;unix&lowbar;* module.
+-</Para>
+-
+-<Para>
 -An example /etc/pam.d/login file looks like:
+-</Para>
 -
--<tscreen><verb>
+-<Para>
+-
+-<Screen>
 -#%PAM-1.0
--auth       required	/lib/security/pam_securetty.so
--auth       required	/lib/security/pam_unix_auth.so
--auth       required	/lib/security/pam_nologin.so
--account    required	/lib/security/pam_unix_acct.so
--password   required	/lib/security/pam_unix_passwd.so
--session    required	/lib/security/pam_unix_session.so
--</verb></tscreen>
+-auth     requisite      pam_unix2.so            nullok #set_secrpc
+-auth     required       pam_securetty.so
+-auth     required       pam_nologin.so
+-auth     required       pam_env.so
+-auth     required       pam_mail.so
+-account  required       pam_unix2.so
+-password required       pam_pwcheck.so          nullok
+-password required       pam_unix2.so            nullok use_first_pass use_authtok
+-session  required       pam_unix2.so            none # debug or trace
+-session  required       pam_limits.so
+-</Screen>
 -
--For auth you need to use the pam_unix_auth.so module, for account the
--pam_unix_acct.so, for password the pam_unix_passwd.so and for
--session the pam_unix_session.so module.
+-</Para>
 -
--<sect> What do you need to set up NIS+ ?
+-</Sect3>
 -
--<sect1>The Software
--<nidx>NIS+!software required</nidx>
+-</Sect2>
 -
--<p>
+-</Sect1>
+-
+-<Sect1 id="nisplus">
+-<Title>What do you need to set up NIS+ ?</Title>
+-
+-<Sect2>
+-<Title>The Software
+-<IndexTerm><Primary
+->NIS+!software required</Primary></IndexTerm>
+-</Title>
+-
+-<Para>
 -The Linux NIS+ client code was developed for the GNU C library 2.
 -There is also a port for Linux libc5, since most commercial Applications
--are linked against this library, and you cannot recompile them for
--using glibc. There are problems with libc5 and NIS+:
+-where linked against this library in the past, and you cannot recompile
+-them for using glibc. There are problems with libc5 and NIS+:
 -static programs cannot be linked with it, and programs compiled
--with this library will
--not work with other libc5 versions.
+-with this library will not work with other libc5 versions.
+-</Para>
 -
+-<Para>
+-As base System you need a glibc based Distribution like Debian,
+-Red Hat Linux or SuSE Linux. If you have a Linux Distribution, which
+-does not have glibc 2.1.1 or later, you need to update to a newer
+-version.
+-</Para>
 -
--You need to retrieve and compile the GNU C Library 2.1 for Intel
--based platforms, or GNU C Library 2.1.1 for 64bit platforms.
--As base System you need a glibc based Distribution like Debian 2.x,
--RedHat 5.x or SuSE Linux 6.x.
--
--For every distribution, you need to recompile the gcc/g++ compiler,
--libstdc++ and ncures. For Redhat, you need to make a lot of
--changes of the PAM configuration. For SuSE Linux 6.0, you need
--to recompile the shadow package.
--
+-<Para>
 -The NIS+ client software can be obtained from:
--<tscreen><verb>
+-
+-<Screen>
 -  Site             Directory                     File Name
 -
--  ftp.funet.fi     /pub/gnu/funet                libc-*, glibc-crypt-*,
--                                                 glibc-linuxthreads-*
--  ftp.kernel.org   /pub/linux/utils/net/NIS+     nis-utils-19990223.tar.gz
--  ftp.kernel.org   /pub/linux/utils/net/NIS+     pam_keylogin-1.2.tar.gz
--</verb></tscreen>
+-  ftp.gnu.org     /pub/gnu/glibc                 glibc-2.2.5.tar.gz,
+-                                                 glibc-linuxthreads-2.2.5.tar.gz
+-  ftp.kernel.org   /pub/linux/utils/net/NIS+     nis-utils-1.4.1.tar.gz
+-</Screen>
 -
--Distributions based on glibc can be fetched from:
--<tscreen><verb>
--  Site                   Directory
+-</Para>
 -
--  ftp.debian.org         /pub/debian/dists/slink
--  ftp.redhat.com         /pub/redhat/redhat-5.2
--  ftp.suse.de            /pub/SuSE-Linux/6.0
--</verb></tscreen>
--
--For compilation of the GNU C Library please follow the instructions
--which come with the software. You cam find the patched libc5,
--based on NYS, and the sources as drop in replacement for the
--standart libc5 at:
--
--<tscreen><verb>
--  Site               Directory                  File Name
--
--  ftp.kernel.org     /pub/linux/utils/net/NIS+  libc-5.4.44-nsl-0.4.10.tar.gz
--</verb></tscreen>
--
+-<Para>
 -You should also have a look at
--  <url url="http://www.suse.de/~kukuk/linux/nisplus.html"
--      name="http://www.suse.de/~kukuk/linux/nisplus.html">
+-<ULink
+-URL="http://www.linux-nis.org/nisplus/"
+->http://www.linux-nis.org/nisplus/</ULink
+->
 -for more information and the latest sources.
+-</Para>
 -
--<sect1>Setting up a NIS+ client
--<nidx>NIS+!client setup</nidx>
+-</Sect2>
 -
--<p>
+-<Sect2>
+-<Title>Setting up a NIS+ client
+-<IndexTerm><Primary
+->NIS+!client setup</Primary></IndexTerm>
+-</Title>
+-
+-<Para>
 -IMPORTANT: For setting up a NIS+ client read your Solaris NIS+ docs
 -what to do on the server side! This document only describes what to do
 -on the client side!
+-</Para>
 -
+-<Para>
 -After installing the new libc and nis-tools, create the credentials for
 -the new client on the NIS+ server. Make sure portmap is running. Then
 -check if your Linux PC has the same time as the NIS+ Server. For secure RPC,
 -you have only a small window from about 3 minutes, in which the credentials
 -are valid. A good idea is to run xntpd on every host. After this, run
+-</Para>
 -
--<tscreen><verb>
+-<Para>
+-
+-<Screen>
 -domainname nisplus.domain.
--nisinit -c -H <NIS+ server>
--</verb></tscreen>
+-nisinit -c -H &#60;NIS+ server&#62;
+-</Screen>
 -
+-</Para>
+-
+-<Para>
 -to initialize the cold start file. Read the nisinit man page for more
 -options. Make sure that the domainname will always be set after a reboot.
 -If you don't know what the NIS+ domain name is on your network, ask
 -your system/network administrator.
+-</Para>
 -
--Now you should change your /etc/nsswitch.conf file. Make sure that the
+-<Para>
+-Now you should change your <filename>/etc/nsswitch.conf</filename>
+-file. Make sure that the
 -only service after publickey is nisplus ("publickey: nisplus"), and nothing
 -else!
+-</Para>
 -
+-<Para>
 -Then start keyserv and make sure, that it will always be started
 -as first daemon after portmap at boot time. Run
--<tscreen><verb>
+-
+-<Screen>
 -keylogin -r
--</verb></tscreen>
+-</Screen>
+-
 -to store the root secretkey on your system. (I hope you have added the
 -publickey for the new host on the NIS+ Server?).
+-</Para>
 -
--"niscat passwd.org_dir" should now show you all entries in the passwd database.
+-<Para>
+-<Command>niscat passwd.org&lowbar;dir</Command>
+-should now show you all entries in the passwd database.
+-</Para>
 -
+-</Sect2>
 -
--<sect1>NIS+, keylogin, login and PAM
--<nidx>NIS+!use of PAM with</nidx>
+-<Sect2>
+-<Title>NIS+, keylogin, login and PAM
+-<IndexTerm><Primary
+->NIS+!use of PAM with</Primary></IndexTerm>
+-</Title>
 -
--<p>
+-<Para>
 -When the user logs in, he need to set his secretkey to keyserv. This is done
 -by calling "keylogin". The login from the shadow package will do this for the
 -user, if it was compiled against glibc 2.1. For a PAM aware login, you have
--to install pam_keylogin-1.2.tar.gz and change the /etc/pam.d/login file to
--use pam_unix_auth, not pwdb, which doesn't support NIS+. An example:
+-to change the /etc/pam.d/login file to
+-use pam&lowbar;unix2, not pwdb, which doesn't support NIS+. An example:
+-</Para>
 -
--<tscreen><verb>
+-<Para>
+-
+-<Screen>
 -#%PAM-1.0
 -auth       required	/lib/security/pam_securetty.so
--auth	   required	/lib/security/pam_keylogin.so
--auth       required	/lib/security/pam_unix_auth.so
+-auth       required	/lib/security/pam_unix2.so       set_secrpc
 -auth       required	/lib/security/pam_nologin.so
--account    required	/lib/security/pam_unix_acct.so
--password   required	/lib/security/pam_unix_passwd.so
--session    required	/lib/security/pam_unix_session.so
--</verb></tscreen>
+-account    required	/lib/security/pam_unix2.so
+-password   required	/lib/security/pam_unix2.so
+-session    required	/lib/security/pam_unix2.so
+-</Screen>
 -
+-</Para>
 -
--<sect1>The nsswitch.conf File
--<nidx>nsswitch.conf file</nidx>
--<nidx>NIS+!nsswitch.conf file</nidx>
+-</Sect2>
 -
--<p>
--The Network Services switch file /etc/nsswitch.conf determines the
--order of lookups performed when a certain piece of information is
--requested, just like the /etc/host.conf file which determines the way
+-<Sect2>
+-<Title>The nsswitch.conf File
+-<IndexTerm><Primary
+->nsswitch.conf file</Primary></IndexTerm>
+-
+-<IndexTerm><Primary
+->NIS+!nsswitch.conf file</Primary></IndexTerm>
+-</Title>
+-
+-<Para>
+-The Network Services switch file <filename>/etc/nsswitch.conf</filename>
+-determines the order of lookups performed when a certain piece of
+-information is requested, just like the
+-<filename>/etc/host.conf</filename> file which determines the way
 -host lookups are performed. For example, the line
+-</Para>
 -
--<tscreen><verb>
+-<Para>
+-
+-<Screen>
 -    hosts: files nisplus dns
--</verb></tscreen>
+-</Screen>
 -
+-</Para>
+-
+-<Para>
 -specifies that host lookup functions should first look in the local
--/etc/hosts file, followed by a NIS+ lookup and finally through the domain
--name service (/etc/resolv.conf and named), at which point if no match
--is found an error is returned.
+-<filename>/etc/hosts</filename> file, followed by a NIS+ lookup and
+-finally through the domain
+-name service (<filename>/etc/resolv.conf</filename> and named), at
+-which point if no match is found an error is returned.
+-</Para>
 -
--A good /etc/nsswitch.conf file for NIS+ is:
--<tscreen><verb>
+-<Para>
+-A good <filename>/etc/nsswitch.conf</filename> file for NIS+ is:
+-
+-<Screen>
 -#
 -# /etc/nsswitch.conf
 -#
@@ -657,11 +808,8 @@
 -#
 -
 -passwd:     compat
--# for libc5: passwd: files nisplus
 -group:      compat
--# for libc5: group: files nisplus
 -shadow:     compat
--# for libc5: shadow: files nisplus
 -
 -passwd_compat: nisplus
 -group_compat:  nisplus
@@ -680,194 +828,248 @@
 -publickey:  nisplus
 -automount:  files
 -aliases:    nisplus [NOTFOUND=return] files
--</verb></tscreen>
+-</Screen>
 -
--
--
--
- <sect>Setting up a NIS Server<label id=ypserv>
- <nidx>NIS!server setup</nidx>
++See the ``man 5 passwd'' for further explantion and more examples.
+ </Para>
  
-@@ -960,28 +531,7 @@
- <p>
- This document only describes how to set up the "ypserv" NIS server.
+ </Sect2>
+@@ -1478,41 +918,6 @@
+ </Para>
  
+ <Para>
 -The NIS server software can be found on:
+-</Para>
 -
--<tscreen><verb>
+-<Para>
+-
+-<Screen>
 -  Site               Directory                    File Name
 -
--  ftp.kernel.org     /pub/linux/utils/net/NIS     ypserv-1.3.6.tar.gz
--</verb></tscreen>
+-  ftp.kernel.org     /pub/linux/utils/net/NIS     ypserv-2.4.tar.gz
+-  ftp.kernel.org     /pub/linux/utils/net/NIS     ypserv-2.4.tar.bz2
+-</Screen>
 -
+-</Para>
+-
+-<Para>
 -You could also look at
--  <url url="http://www.suse.de/~kukuk/linux/nis.html"
--      name="http://www.suse.de/~kukuk/linux/nis.html">
+-<ULink
+-URL="http://www.linux-nis.org/nis/"
+->http://www.linux-nis.org/nis/</ULink
+->
 -for more information.
+-</Para>
 -
+-<Para>
 -The server setup is the same for both traditional NIS and NYS.
+-</Para>
 -
--Compile the software to generate the <tt>ypserv</tt> and <tt>makedbm</tt>
--programs. You can configure ypserv to use the securenets file or
--the tcp_wrappers. The tcp_wrapper is much more flexible, but a lot of
--people have big problems with it. And some configuration files for
--tcp_wrappers may cause a memory leak. If you have problems with
--ypserv compiled for tcp_wrapper, recompile it using the securenets file.
--ypserv --version tells you, which version you have.
-+The NIS server software can be found as /usr/sbin/ypserv.
- 
+-<Para>
+-Compile the software to generate the <Command>ypserv</Command> and
+-<Command>makedbm</Command>
+-programs. ypserv-2.x only supports the securenets file for access
+-restrictions.
+-</Para>
+-
+-<Para>
  If you run your server as master, determine what files you require to be
  available via NIS and then add or remove the appropriate
-@@ -989,16 +539,8 @@
- should look at the Makefile and edit the Options at the beginning of
- the file.
+ entries to the "all" rule in <filename>/var/yp/Makefile</filename>.
+@@ -1521,19 +926,9 @@
+ </Para>
  
+ <Para>
 -There was one big change between ypserv 1.1 and ypserv 1.2. Since
 -version 1.2, the file handles are cached. This means you have to
 -call makedbm always with the -c option if you create new maps. Make
 -sure, you are using the
--new <tt>/var/yp/Makefile</tt> from ypserv 1.2 or later, or add the -c flag
--to makedbm in the Makefile. If you don't do that, ypserv will continue to
--use the old maps, and not the updated one.
+-new <filename>/var/yp/Makefile</filename> from ypserv 1.2 or later,
+-or add the -c flag to makedbm in the Makefile. If you don't do that,
+-ypserv will continue to use the old maps, and not the updated one.
+-</Para>
 -
--Now edit <tt>/var/yp/securenets</tt> and <tt>/etc/ypserv.conf</tt>.
+-<Para>
+ Now edit <filename>/var/yp/securenets</filename> and
+-<filename>/etc/ypserv.conf</filename>.
 -For more information, read the ypserv(8) and ypserv.conf(5) manual pages.
-+Now edit <tt>/var/yp/securenets</tt> and <tt>/etc/rc.conf</tt>.
++<filename>/etc/rc.conf</filename>.
 +For more information, read the ypserv(8) manual page and /etc/rc.conf comments.
+ </Para>
  
- Make sure the portmapper (portmap(8)) is running, and start the
- server <tt>ypserv</tt>. The command
-@@ -1021,14 +563,14 @@
- Now generate the NIS (YP) database. On the master, run
+ <Para>
+@@ -1575,7 +970,7 @@
+ <Para>
  
- <tscreen><verb>
+ <Screen>
 -    % /usr/lib/yp/ypinit -m
 +    % /usr/sbin/ypinit -m
- </verb></tscreen>
+ </Screen>
  
- On a slave make sure that <tt>ypwhich -m</tt> works. This means,
- that your slave
+ </Para>
+@@ -1586,7 +981,7 @@
  must be configured as NIS client before you could run
- <tscreen><verb>
+ 
+ <Screen>
 -    % /usr/lib/yp/ypinit -s masterhost
 +    % /usr/sbin/ypinit -s masterhost
- </verb></tscreen>
+ </Screen>
+ 
  to install the host as NIS slave.
+@@ -1612,16 +1007,16 @@
+ </Para>
  
-@@ -1045,13 +587,13 @@
- is newer, and push the files to the slave servers. Please don't use
- <tt>ypinit</tt> for updating a map.
- 
+ <Para>
 -You might want to edit root's crontab *on the slave* server and add the
 +You might want to edit the system crontab (/etc/crontab) *on the slave* server and add the
  following lines:
+ </Para>
  
- <tscreen><verb>
+ <Para>
+ 
+ <Screen>
 -      20 *    * * *    /usr/lib/yp/ypxfr_1perhour
 -      40 6    * * *    /usr/lib/yp/ypxfr_1perday
 -      55 6,18 * * *    /usr/lib/yp/ypxfr_2perday
 +      20 *  * * *    root   /usr/libexec/ypxfr passwd.byname
-+	  21 *  * * *    root   /usr/libexec/ypxfr passwd.byuid
++      21 *  * * *    root   /usr/libexec/ypxfr passwd.byuid
 +      55 19 * * *    root   /usr/libexec/ypxfr hosts.ypname
- </verb></tscreen>
+ </Screen>
+ 
  This will ensure that most NIS maps are kept up-to-date, even if an
- update is missed because the slave was down at the time the update was
-@@ -1060,7 +602,7 @@
- You can add a slave at every time later. At first, make sure that
+@@ -1634,7 +1029,7 @@
  the new slave server has permissions to contact the NIS master. Then run
- <tscreen><verb>
+ 
+ <Screen>
 -    % /usr/lib/yp/ypinit -s masterhost
 +    % /usr/sbin/ypinit -s masterhost
- </verb></tscreen>
- on the new slave. On the master server, add the new slave server name
- to <tt>/var/yp/ypservers</tt> and run <tt>make</tt> in <tt>/var/yp</tt>
-@@ -1069,7 +611,7 @@
+ </Screen>
  
+ on the new slave. On the master server, add the new slave server name
+@@ -1646,7 +1041,7 @@
+ <Para>
  If you want to restrict access for users to your NIS server, you'll have
  to setup the NIS server as a client as well by running ypbind and adding the
--plus-entries to /etc/passwd _halfway_ the password file. The library
-+plus-entries to /etc/master.passwd _halfway_ the password file. The library
+-plus-entries to <filename>/etc/passwd</filename> &lowbar;halfway&lowbar;
++plus-entries to <filename>/etc/master.passwd</filename> &lowbar;halfway&lowbar;
+ the password file. The library
  functions will ignore all normal entries after the first NIS entry, and
  will get the rest of the info through NIS. This way the NIS access rules
- are maintained. An example:
-@@ -1087,20 +629,20 @@
+@@ -1668,17 +1063,17 @@
       news:*:9:9:news:/var/spool/news:
       uucp:*:10:50:uucp:/var/spool/uucp:
       nobody:*:65534:65534:noone at all,,,,:/dev/null:
 -     +miquels::::::
 -     +:*:::::/etc/NoShell
 +     +dennis:::::::::
-+	 +*:::::::::/bin/false
++     +*:::::::::/bin/false
       [ All normal users AFTER this line! ]
       tester:*:299:10:Just a test account:/tmp:
 -     miquels:1234567890123:101:10:Miquel van Smoorenburg:/home/miquels:/bin/zsh
 +     obrien:1765:01:10::0:0:David O'Brien:/home/obrien:/bin/sh
- </verb></tscreen>
+ </Screen>
  
+ </Para>
+ 
+ <Para>
 -Thus the user "tester" will exist, but have a shell of /etc/NoShell. miquels
 +Thus the user "tester" will exist, but have a shell of /bin/false. obrien
  will have normal access.
+ </Para>
  
- Alternatively, you could edit the <tt>/var/yp/Makefile</tt> file
+@@ -1686,7 +1081,7 @@
+ Alternatively, you could edit the <filename>/var/yp/Makefile</filename> file
  and set NIS to use
  another source password file. On large systems the NIS password and group
--files are usually stored in <tt>/etc/yp/</tt>. If you do this the normal
-+files are sometimes stored in <tt>/etc/yp/</tt>. If you do this the normal
- tools to administrate the password file such as <tt>passwd</tt>, <tt>chfn</tt>,
- <tt>adduser</tt> will not work anymore and you need special homemade tools
+-files are usually stored in <Literal remap="tt">/etc/yp/</Literal>. If you do this the normal
++files are sometimes stored in <Literal remap="tt">/etc/yp/</Literal>. If you do this the normal
+ tools to administrate the password file such as <Literal remap="tt">passwd</Literal>, <Literal remap="tt">chfn</Literal>,
+ <Literal remap="tt">adduser</Literal> will not work anymore and you need special homemade tools
  for this.
-@@ -1108,89 +650,8 @@
- However, <tt>yppasswd</tt>, <tt>ypchsh</tt> and <tt>ypchfn</tt> will
- work of course.
+@@ -1699,137 +1094,6 @@
  
--<sect1>The Server Program yps
--<nidx>NIS!yps server</nidx>
--<nidx>yps NIS server</nidx>
--<p>
+ </Sect2>
+ 
+-<Sect2>
+-<Title>The Server Program yps
+-<IndexTerm><Primary
+->NIS!yps server</Primary></IndexTerm>
+-
+-<IndexTerm><Primary
+->yps NIS server</Primary></IndexTerm>
+-</Title>
+-
+-<Para>
 -To set up the "yps" NIS server please refer to the previous paragraph.
--The "yps" server setup is similar, _but_ not exactly the same so
+-The "yps" server setup is similar, &lowbar;but&lowbar; not exactly the same so
 -beware if you try to apply the "ypserv" instructions to "yps"!
 -"yps" is not supported by any author, and contains some security leaks.
 -You really shouldn't use it !
+-</Para>
 -
+-<Para>
 -The "yps" NIS server software can be found on:
+-</Para>
 -
--<tscreen><verb>
+-<Para>
+-
+-<Screen>
 -  Site                  Directory                   File Name
 -
 -  ftp.lysator.liu.se    /pub/NYS/servers            yps-0.21.tar.gz
 -  ftp.kernel.org        /pub/linux/utils/net/NIS    yps-0.21.tar.gz
--</verb></tscreen>
+-</Screen>
 -
--<sect1>The Program rpc.ypxfrd
--<nidx>NIS|rpc.ypxfrd daemon</nidx>
--<nidx>rpc.ypxfrd daemon</nidx>
--<p>
+-</Para>
+-
+-</Sect2>
+-
+-<Sect2>
+-<Title>The Program rpc.ypxfrd
+-<IndexTerm><Primary
+->NIS&verbar;rpc.ypxfrd daemon</Primary></IndexTerm>
+-
+-<IndexTerm><Primary
+->rpc.ypxfrd daemon</Primary></IndexTerm>
+-</Title>
+-
+-<Para>
 -rpc.ypxfrd is used for speed up the transfer of very large
 -NIS  maps  from a NIS master to NIS slave servers. If a
 -NIS slave server receives a message that there is  a  new
 -map,  it  will  start  ypxfr  for transfering the new map.
 -ypxfr will read the contents of  a  map  from  the  master
--server  using the yp_all() function. This process can take
+-server  using the yp&lowbar;all() function. This process can take
 -several minutes when there are very large maps which  have
 -to store by the database library.
+-</Para>
 -
--
+-<Para>
 -The  rpc.ypxfrd  server  speeds up the transfer process by
 -allowing NIS slave  servers  to  simply  copy  the  master
 -server's  map  files  rather  than building their own from
 -scratch.  rpc.ypxfrd uses an RPC-based file transfer  protocol,
 -so that there is no need for building a new map.
+-</Para>
 -
--
+-<Para>
 -rpc.ypxfrd can be started by inetd. But since it starts
 -very slow, it should be started with ypserv. You need to start
 -rpc.ypxfrd only on the NIS master server.
+-</Para>
 -
--<sect1>The Program rpc.yppasswdd
--<nidx>NIS!rpc.yppasswdd daemon</nidx>
--<nidx>rpc.yppasswdd daemon</nidx>
--<p>
+-</Sect2>
+-
+-<Sect2>
+-<Title>The Program rpc.yppasswdd
+-<IndexTerm><Primary
+->NIS!rpc.yppasswdd daemon</Primary></IndexTerm>
+-
+-<IndexTerm><Primary
+->rpc.yppasswdd daemon</Primary></IndexTerm>
+-</Title>
+-
+-<Para>
 -Whenever users change their passwords, the NIS password database and
 -probably other NIS databases, which depend on the NIS password
 -database, should be updated.  The program "rpc.yppasswdd" is a server that
@@ -876,101 +1078,171 @@
 -don't need the older, separate yppasswd-0.9.tar.gz or yppasswd-0.10.tar.gz,
 -and you shouldn't use them any longer. The rpc.yppasswdd in ypserv 1.3.2
 -has full shadow support. yppasswd is now part of yp-tools-2.2.tar.gz.
+-</Para>
 -
+-<Para>
 -You need to start rpc.yppasswdd only on the NIS master server. By default,
 -users are not allowed to change their full name or the login shell.
 -You can allow this with the -e chfn or -e chsh option.
+-</Para>
 -
+-<Para>
 -If your passwd and shadow files are not in another directory then
 -/etc, you need to add the -D option. For example, if you have put
 -all source files in /etc/yp and wish to allow the user to change
 -his shell, you need to start rpc.yppasswdd with the following parameters:
+-</Para>
 -
--<tscreen><verb>
+-<Para>
+-
+-<Screen>
 -   rpc.yppasswdd -D /etc/yp -e chsh
--</verb></tscreen>
+-</Screen>
 -
+-</Para>
+-
+-<Para>
 -or
+-</Para>
 -
--<tscreen><verb>
+-<Para>
+-
+-<Screen>
 -   rpc.yppasswdd -s /etc/yp/shadow -p /etc/yp/passwd -e chsh
--</verb></tscreen>
+-</Screen>
 -
+-</Para>
+-
+-<Para>
 -There is nothing more to do. You just need to make sure, that
--<tt>rpc.yppasswdd</tt> uses the same files as <tt>/var/yp/Makefile</tt>.
+-<Literal remap="tt">rpc.yppasswdd</Literal> uses the same files as <Literal remap="tt">/var/yp/Makefile</Literal>.
 -Errors will be logged using syslog.
+-</Para>
 -
- <sect>Verifying the NIS/NYS Installation
- <nidx>NIS!verification of operation</nidx>
--<nidx>NYS!verification of operation</nidx>
+-</Sect2>
+-
+ </Sect1>
  
- <p>
- If everything is fine (as it should be), you should be able to verify
-@@ -1208,9 +669,7 @@
- </verb></tscreen>
+ <Sect1 id="verification">
+@@ -1837,8 +1101,6 @@
+ <IndexTerm><Primary
+ >NIS!verification of operation</Primary></IndexTerm>
  
+-<IndexTerm><Primary
+->NYS!verification of operation</Primary></IndexTerm>
+ </Title>
+ 
+ <Para>
+@@ -1869,9 +1131,7 @@
+ 
+ <Para>
  (where userid is the login name of an arbitrary user) should give you
 -the user's entry in the NIS passwd file. The "ypcat" and "ypmatch"
 -programs should be included with your distribution of traditional
 -NIS or NYS.
 +the user's entry in the NIS passwd file.
+ </Para>
  
- If a user cannot log in, run the following program on the client:
- <tscreen><verb>
-@@ -1267,47 +726,6 @@
- <nidx>NIS!troubleshooting</nidx>
- <nidx>NIS!problems with</nidx>
+ <Para>
+@@ -2172,92 +1432,6 @@
+ >NIS!problems with</Primary></IndexTerm>
+ </Title>
  
--<p>
+-<Para>
 -Here are some common problems reported by various users:
+-</Para>
 -
--<enum>
--<item>The libraries for 4.5.19 are broken. NIS won't work with it.
+-<Para>
 -
--<item>If you upgrade the libraries from 4.5.19 to 4.5.24 then the
--       su command breaks. You need to get the su command from the
--       slackware 1.2.0 distribution. Incidentally that's where you
--       can get the updated libraries.
+-<OrderedList>
+-<ListItem>
 -
--<item>When a NIS server goes down and comes up again ypbind starts
--       complaining with messages like:
+-<Para>
+-The libraries for 4.5.19 are broken. NIS won't work with it.
 -
--	<verb>
--         yp_match: clnt_call:
--                     RPC: Unable to receive; errno = Connection refused
--	</verb>
+-</Para>
+-</ListItem>
+-<ListItem>
 -
--       and logins are refused for those who are registered in the
--       NIS database. Try to login as root and kill
--       ypbind and start it up again. An update to ypbind 3.3 or higher
--       should also help.
+-<Para>
+-If you upgrade the libraries from 4.5.19 to 4.5.24 then the
+-su command breaks. You need to get the su command from the
+-slackware 1.2.0 distribution. Incidentally that's where you
+-can get the updated libraries.
 -
--<item>After upgrading the libc to a version greater then 5.4.20, the YP tools
--       will not work any longer. You need yp-tools 1.2 or later for
--       libc >= 5.4.21 and glibc 2.x. For earlier libc version you need
--       yp-clients 2.2. yp-tools 2.x should work for all libraries.
+-</Para>
+-</ListItem>
+-<ListItem>
 -
--<item>In libc 5.4.21 - 5.4.35 yp_maplist is broken, you need 5.4.36 or later,
--      or some YP programs like ypwhich will segfault.
+-<Para>
+-When a NIS server goes down and comes up again ypbind starts
+-complaining with messages like:
 -
--<item>libc 5 with traditional NIS doesn't support shadow passwords over NIS.
--      You need libc5 + NYS or glibc 2.x.
--<item>ypcat shadow doesn't show the shadow map. This is correct, the name of
--      the shadow map is shadow.byname, not shadow.
--<item>Solaris doesn't use always privileged ports. So don't use password
--      mangling if you have a Solaris client.
--</enum>
+-<screen>
+-    yp_match: clnt_call:
+-    RPC: Unable to receive; errno = Connection refused
+-</screen>
 -
+-and logins are refused for those who are registered in the
+-NIS database. Try to login as root and kill
+-ypbind and start it up again. An update to ypbind 3.3 or higher
+-should also help.
 -
- <sect>Frequently Asked Questions
- <nidx>NIS!frequently asked questions</nidx>
+-</Para>
+-</ListItem>
+-<ListItem>
+-
+-<Para>
+-After upgrading the libc to a version greater then 5.4.20, the YP tools
+-will not work any longer. You need yp-tools 1.2 or later for
+-libc &#62;= 5.4.21 and glibc 2.x. For earlier libc version you need
+-yp-clients 2.2. yp-tools 2.x should work for all libraries.
+-
+-</Para>
+-</ListItem>
+-<ListItem>
+-
+-<Para>
+-In libc 5.4.21 - 5.4.35 yp&lowbar;maplist is broken, you need 5.4.36 or later,
+-or some YP programs like ypwhich will segfault.
+-
+-</Para>
+-</ListItem>
+-<ListItem>
+-
+-<Para>
+-libc 5 with traditional NIS doesn't support shadow passwords over NIS.
+-You need libc5 + NYS or glibc 2.x.
+-</Para>
+-</ListItem>
+-<ListItem>
+-
+-<Para>
+-ypcat shadow doesn't show the shadow map. This is correct, the name of
+-the shadow map is shadow.byname, not shadow.
+-</Para>
+-</ListItem>
+-<ListItem>
+-
+-<Para>
+-Solaris doesn't use always privileged ports. So don't use password
+-mangling if you have a Solaris client.
+-</Para>
+-</ListItem>
+-
+-</OrderedList>
+-
+-</Para>
+-
+ </Sect1>
  
-@@ -1316,7 +734,7 @@
- questions unanswered you might want to post a message to
+ <Sect1 id="faq">
+@@ -2274,7 +1448,7 @@
+ <Para>
  
- <tscreen><verb>
+ <Screen>
 -    comp.os.linux.networking
 +    hackers@FreeBSD.org
- </verb></tscreen>
+ </Screen>
  
- </article>
+ </Para>
