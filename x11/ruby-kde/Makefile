@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kde
-PORTVERSION=	0.13
+PORTVERSION=	0.14a
 CATEGORIES=	x11 kde ruby
 MASTER_SITES=	http://sfns.u-shizuoka-ken.ac.jp/geneng/horie_hp/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
