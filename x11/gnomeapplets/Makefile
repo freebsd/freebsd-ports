@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeapplets
-PORTVERSION= 	1.2.0
+PORTVERSION= 	1.2.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-applets
