@@ -20,7 +20,6 @@ DIST_SUBDIR=	epic4
 
 EXTRACT_ONLY=	epic4-2000.tar.gz
 GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/epic4-2000
 
 MAN1=		epic.1
 
