@@ -4,7 +4,7 @@ purposes, from CGI to IRC to sockets, and so on.
 It's sort of an addendum to the standard C
 libraries.
 
-WWW: http://projects.simplemente.net/flux/
+WWW: http://www.fluxlib.org/
 Author: Hans Petter K. Jansson <hpj@styx.net>
 
 --Will <andrews@technologist.com>
