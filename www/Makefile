@@ -733,6 +733,7 @@
     SUBDIR += zope-epoz
     SUBDIR += zope-exuserfolder
     SUBDIR += zope-formulator
+    SUBDIR += zope-generator
     SUBDIR += zope-groupuserfolder
     SUBDIR += zope-guf
     SUBDIR += zope-i18nlayer
