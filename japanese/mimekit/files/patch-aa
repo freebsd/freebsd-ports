@@ -1,0 +1,33 @@
+--- ./Makefile.org	Fri Dec  1 23:55:07 1995
++++ ./Makefile	Fri Apr 26 01:15:07 1996
+@@ -12,7 +12,7 @@
+ MMDIR =		../../../src
+ MMSDIR =	../
+ DGDIR =		../src
+-INSTDIR =	/usr/local/lib
++INSTDIR =	${PREFIX}/lib
+ 
+ LOCALFILES =	README \
+ 		README.jp \
+@@ -52,7 +52,7 @@
+ ALL =		toMime fromMime enMime deMime test.out bench
+ 
+ CC =		cc
+-CFLAGS =	-O
++CFLAGS +=	-O
+ RM =		rm -f
+ RANLIB =	`./mkranlib`
+ TAR =		tar
+@@ -98,9 +98,9 @@
+ 		enMime deMime bench.o test.out
+ 
+ install:	fromMime toMime $(LIBMKIT)
+-		install -o bin -g bin -m 755 fromMime $(INSTDIR)
+-		install -o bin -g bin -m 755 toMime $(INSTDIR)
+-		install -o root -g staff -m 644 $(LIBMKIT) $(INSTDIR)
++		install -cs -o bin -g bin -m 755 fromMime $(INSTDIR)
++		install -cs -o bin -g bin -m 755 toMime $(INSTDIR)
++		install -o bin -g bin -m 644 $(LIBMKIT) $(INSTDIR)
+ 		$(RANLIB) $(INSTDIR)/$(LIBMKIT)
+ 
+ config.h:;	ln -s $(MMDIR)/config.h .

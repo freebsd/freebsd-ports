@@ -1,0 +1,6 @@
+This library contains functions to encode/decode MIME header.
+
+It provides functions ``MIME_strHeaderEncode'' and
+``MIME_strHeaderEncode''.
+
+- Masafumi
