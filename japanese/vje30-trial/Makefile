@@ -50,6 +50,7 @@ BINSTUFF=	vje	\
 post-patch:
 	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar
 	@find ${WRKSRC} -name '*.orig' -delete
+	@${CP} ${FILESDIR}/vje.sh ${WRKSRC}/etc/rc.d/
 
 do-install:
 	@cd ${WRKSRC} && tar cf - . | tar xf - -C ${PREFIX}
