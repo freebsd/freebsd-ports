@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- configure.orig	Sat Jun 30 14:59:19 2001
++++ configure	Tue Aug 14 19:19:21 2001
+@@ -1180,7 +1180,7 @@
+ fi
+ 
+ 
+-ALL_LINGUAS="zh_TW.Big5 ru ro pt_BR pl hu de cs"
++ALL_LINGUAS="zh_TW.Big5 ru ro pt_BR pl hu de cs uk"
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+ echo "configure:1186: checking how to run the C preprocessor" >&5
+ # On Suns, sometimes $CPP names a directory.

@@ -12,5 +12,6 @@ share/locale/pl/LC_MESSAGES/centericq.mo
 share/locale/pt_BR/LC_MESSAGES/centericq.mo
 share/locale/ro/LC_MESSAGES/centericq.mo
 share/locale/ru/LC_MESSAGES/centericq.mo
+share/locale/uk/LC_MESSAGES/centericq.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/centericq.mo
 @dirrm share/centericq
