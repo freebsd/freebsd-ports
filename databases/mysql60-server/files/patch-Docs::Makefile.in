@@ -1,21 +1,29 @@
---- Docs/Makefile.in.orig	Fri Mar  5 15:59:43 2004
-+++ Docs/Makefile.in	Fri Mar  5 16:00:00 2004
-@@ -446,7 +446,7 @@
+--- Docs/Makefile.in.orig	Wed Dec  1 01:08:19 2004
++++ Docs/Makefile.in	Mon Jan 10 11:44:27 2005
+@@ -331,7 +331,7 @@
+ 	check-recursive installcheck-recursive
+ DIST_COMMON = Makefile.am Makefile.in
+ DIST_SUBDIRS = $(SUBDIRS)
+-all: $(BUILT_SOURCES)
++all:
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
  
- all:			$(targets) txt_files
+ .SUFFIXES:
+@@ -599,7 +599,7 @@
+ installdirs-am:
+ 	$(mkinstalldirs) $(DESTDIR)$(infodir)
  
--txt_files:		../INSTALL-SOURCE ../COPYING ../INSTALL-WIN-SOURCE \
-+txt_files:		../INSTALL-SOURCE ../COPYING \
+-install: $(BUILT_SOURCES)
++install:
+ 	$(MAKE) $(AM_MAKEFLAGS) install-recursive
+ install-exec: install-exec-recursive
+ install-data: install-data-recursive
+@@ -718,7 +718,7 @@
+ 	uninstall-info-am uninstall-info-recursive uninstall-recursive
+ 
+ 
+-all:			$(targets) txt_files
++all:
+ 
+ txt_files:		../INSTALL-SOURCE ../COPYING ../INSTALL-WIN-SOURCE ../EXCEPTIONS-CLIENT \
  			INSTALL-BINARY ../support-files/MacOSX/ReadMe.txt
- 
- CLEAN_FILES:		$(BUILD_SOURCES)
-@@ -609,9 +609,6 @@
- 
- ../INSTALL-SOURCE:	mysql.info $(GT)
- 	perl -w $(GT) mysql.info "Installing" "Tutorial" > $@
--
--../INSTALL-WIN-SOURCE:	mysql.info $(GT)
--	perl -w $(GT) mysql.info "Windows source build" "Post-installation" > $@
- 
- # We put the description for the binary installation here so that
- # people who download source wont have to see it. It is moved up to

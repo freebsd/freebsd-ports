@@ -6,23 +6,13 @@
 #
 
 PORTNAME?=	mysql
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 PORTREVISION?=	0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://planetmirror.com/pub/mysql/Downloads/%SUBDIR%/ \
-		http://www.softagency.co.jp/MySQL/Downloads/%SUBDIR%/ \
-		ftp://sunsite.dk/mirrors/mysql/Downloads/%SUBDIR%/ \
-		http://mysql.mediatraffic.fi/Downloads/%SUBDIR%/ \
-		ftp://filepile.tiscali.de/mirror/mysql/Downloads/%SUBDIR%/ \
-		http://mirrors.tilian.co.uk/mysql.com/Downloads/%SUBDIR%/ \
-		ftp://ftp.rtfm.no/pub/mysql/Downloads/%SUBDIR%/ \
-		http://www.mysql.cz/Downloads/%SUBDIR%/ \
-		ftp://ftp.u-paris10.fr/mysql.com/Downloads/%SUBDIR%/ \
-		http://mysql.proserve.nl/Downloads/%SUBDIR%/ \
-		ftp://ftp.free.fr/pub/MySQL/Downloads/%SUBDIR%/
-MASTER_SITE_SUBDIR=	MySQL-5.0.1-snapshot
+MASTER_SITES=	${MASTER_SITE_MYSQL}
+MASTER_SITE_SUBDIR=	MySQL-5.0
 PKGNAMESUFFIX?=	-server
-DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha-snapshot
+DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
@@ -46,7 +36,6 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-mysqlfs \
 		--with-vio \
 		--with-low-memory \
-		--with-ndbcluster \
 		--with-comment='FreeBSD port: ${PKGNAME}' \
 		--enable-thread-safe-client
 
@@ -62,10 +51,16 @@ CONFIGURE_ARGS+=--with-extra-charsets=${WITH_XCHARSET}
 .endif
 .if defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-openssl
+CONFIGURE_ARGS+=--with-openssl=${OPENSSLBASE}
 .endif
 .if defined(BUILD_STATIC)
 CONFIGURE_ARGS+=--with-mysqld-ldflags=-all-static
+.endif
+.if defined(WITHOUT_INNODB)
+CONFIGURE_ARGS+=--without-innodb
+.endif
+.if defined(WITH_NDB)
+CONFIGURE_ARGS+=--with-ndbcluster
 .endif
 
 .include <bsd.port.pre.mk>
@@ -115,11 +110,18 @@ CONFLICTS=	mysql-server-3.* mysql-server-4.*
 
 PLIST_SUB=	DB_DIR=${DB_DIR} \
 		VER=${PORTVERSION}-alpha
+.if defined(WITH_NDB)
+PLIST_SUB+=	NDB=""
+.else
+PLIST_SUB+=	NDB="@comment "
+.endif
 
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
 
-DOCS=		manual.html manual.txt manual_toc.html
+.if !defined(NOPORTDOCS)
+PORTDOCS=	manual.html manual.txt manual_toc.html
+.endif
 
 INFO=		mysql
 
@@ -140,6 +142,8 @@ pre-fetch:
 	@${ECHO} "				(use it if you need speed)."
 	@${ECHO} "	BUILD_STATIC=yes	Build a static version of mysqld."
 	@${ECHO} "				(use it if you need even more speed)."
+	@${ECHO} "	WITHOUT_INNODB=yes	Disable support for InnoDB table handler."
+	@${ECHO} "	WITH_NDB=yes		Disable support for NDB Cluster."
 	@${ECHO} ""
 
 post-patch:
@@ -176,11 +180,10 @@ post-install:
 		${FILESDIR}/mysql-server.sh > ${PREFIX}/etc/rc.d/mysql-server.sh
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/mysql-server.sh
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/Flags
-.for doc in ${DOCS}
+	@${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/Docs/${doc} ${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/Docs/Flags/*.gif ${DOCSDIR}/Flags
 .endif
 
 .else
@@ -198,7 +201,8 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib/mysql
 CONFIGURE_ARGS+=--without-server
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ tests scripts man|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|SUBDIRS =|SUBDIRS = include @sql_client_dirs@ scripts man|g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|install-exec-am: install-pkglibLIBRARIES|install-exec-am:|g" ${WRKSRC}/strings/Makefile.in
 	@${REINPLACE_CMD} -e "s|all: config.h|all: config.h all-local|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|bin_SCRIPTS =|bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug|g" ${WRKSRC}/scripts/Makefile.in
 	@${REINPLACE_CMD} -e "s|dist_pkgdata_DATA =|dist_pkgdata_DATA = mysql_fix_privilege_tables.sql|g" ${WRKSRC}/scripts/Makefile.in
@@ -217,8 +221,11 @@ USE_MYSQL=	yes
 WANT_MYSQL_VER=	50
 USE_PERL5=	yes
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql50 \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql50
+.if ${PERL_LEVEL} <= 500800
+RUN_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
 
 LATEST_LINK=	mysql50-scripts
 
@@ -238,5 +245,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|man_MANS =|man_MANS = ${MAN1}|g" ${WRKSRC}/man/Makefile.in
 .endif
 .endif
+# Common part
+post-extract:
+	@${CP} /usr/include/tcpd.h ${WRKSRC}/sql/mytcpd.h
 
 .include <bsd.port.post.mk>
