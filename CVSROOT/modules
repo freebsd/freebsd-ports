@@ -738,6 +738,7 @@ bsdiff		ports/misc/bsdiff
 bsdproxy	ports/net/bsdproxy
 bsdsar		ports/sysutils/bsdsar
 bsdtris		ports/games/bsdtris
+bsfilter	ports/mail/bsfilter
 bsh		ports/java/bsh
 bsmtp		ports/mail/bsmtp
 bsp		ports/games/bsp
