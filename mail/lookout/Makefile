@@ -8,7 +8,7 @@
 PORTNAME=	lookout
 PORTVERSION=	1.2
 CATEGORIES=	mail
-MASTER_SITES=	http://tuxedo.org/~esr/lookout/
+MASTER_SITES=	http://catb.org/~esr/lookout/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Convert Outlook97 addressbook export files to KDE KAB/GNOME gnomecard
