@@ -74,3 +74,4 @@ share/doc/libungif/raw2gif.html
 share/doc/libungif/rgb2gif.html
 share/doc/libungif/rle2gif.html
 share/doc/libungif/text2gif.html
+@dirrm share/doc/libungif
