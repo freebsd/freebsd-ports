@@ -17,7 +17,7 @@ DISTNAME=	wxGTK-${PORTVERSION}
 MAINTAINER?=	fjoe@FreeBSD.org
 COMMENT?=	The wxWidgets GUI toolkit with GTK+ bindings (devel version)
 
-LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
+LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		expat.5:${PORTSDIR}/textproc/expat2
@@ -60,14 +60,9 @@ INSTALL_TARGET=	install-common
 INSTALLS_SHLIB=	yes
 .endif # *-common
 
-.if ${WXGTK_FLAVOR:M*-contrib*} != "" || ${WXGTK_FLAVOR:M*-utils*} != ""
-.if ${WXGTK_FLAVOR:M*-utils*} != ""
-BUILD_WRKSRC=	${WRKSRC}/contrib/utils
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
-.else
+.if ${WXGTK_FLAVOR:M*-contrib*} != ""
 BUILD_WRKSRC=	${WRKSRC}/contrib
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-.endif # *-utils*
 
 .if ${WXGTK_FLAVOR} != "gtk2-contrib-common"
 RUN_DEPENDS=	${X11BASE}/include/wx/stc/stc.h:${PORTSDIR}/x11-toolkits/wxgtk2-contrib-common-devel
@@ -78,13 +73,14 @@ LIB_DEPENDS+=	wx_baseu-2.5.2:${PORTSDIR}/x11-toolkits/wxgtk2-unicode-devel
 LIB_DEPENDS+=	wx_base-2.5.2:${PORTSDIR}/x11-toolkits/wxgtk2-devel
 .endif
 
+.endif # !gtk2-contrib-common
+.endif # *-contrib*
+
 pre-configure:
 	@${FIND} ${WRKSRC}/contrib -name Makefile.in -print0 | ${XARGS} -0 ${REINPLACE_CMD} \
 		-e "s,@CXXFLAGS@,${CFLAGS} `${WXGTK_CONFIG} --cxxflags`," \
 		-e "s,@CFLAGS@,${CFLAGS} `${WXGTK_CONFIG} --cflags`," \
 		-e "s,@CPPFLAGS@,,"
-.endif # !gtk2-contrib-common
-.endif # *-contrib* || *-utils*
 
 .include <bsd.port.pre.mk>
 
