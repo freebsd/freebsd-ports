@@ -1,9 +1,9 @@
---- Makefile.orig	Sun Oct 22 02:34:42 2000
-+++ Makefile	Sat Apr 28 21:42:17 2001
+--- Makefile.orig	Sun Jul  7 00:47:14 2002
++++ Makefile	Tue Aug 27 21:34:22 2002
 @@ -1,26 +1,26 @@
  #
  MAINVERSION = '"6.03"'
- GUIVERSION = '".14"'
+ GUIVERSION = '".16"'
 -LIBDIR = '"/usr/local/lib/Ngraph"'
 -INSTALLDIR = /usr/local/lib/Ngraph
 -BINDIR = /usr/local/bin
@@ -23,7 +23,7 @@
 -RANLIB = ranlib
 -STRIP = strip
 -DEFS = -DJAPANESE
--PLATFORM  = '"for X11 [Linux(glibc2)+Open Motif 2.1]"'
+-PLATFORM  = '"for X11 [Linux(glibc2) + Open Motif]"'
 -X11INCLUDE = -I/usr/X11R6/include
 -STATICLINK = /usr/X11R6/lib/libXm.a 
 -X11LIB = -L/usr/X11R6/lib -lm -lXext -lXt -lXp -lX11 -lICE -lSM
@@ -34,7 +34,7 @@
 +#RANLIB = ranlib
 +#STRIP = strip
 +#DEFS = -DJAPANESE
-+#PLATFORM  = '"for X11 [Linux(glibc2)+Open Motif 2.1]"'
++#PLATFORM  = '"for X11 [Linux(glibc2) + Open Motif]"'
 +#X11INCLUDE = -I/usr/X11R6/include
 +#STATICLINK = /usr/X11R6/lib/libXm.a 
 +#X11LIB = -L/usr/X11R6/lib -lm -lXext -lXt -lXp -lX11 -lICE -lSM
