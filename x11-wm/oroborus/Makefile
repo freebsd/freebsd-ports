@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oroborus
-PORTVERSION=	1.3.1
+PORTVERSION=	1.10
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.kensden.pwp.blueyonder.co.uk/Oroborus/
 DISTNAME=	${PORTNAME}-src-v${PORTVERSION}
@@ -20,7 +20,11 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
 do-install:
+	${MKDIR} ${PREFIX}/share/${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${WRKSRC}/install_rc ${PREFIX}/share/${PORTNAME}/pixmaps/default > \
+		${WRKDIR}/${PORTNAME}rc
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}rc ${PREFIX}/share/${PORTNAME}
 .for dir in agua default defold mac next win95
 	${MKDIR} ${PREFIX}/share/${PORTNAME}/pixmaps/${dir}
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/${dir}/[^.]* \

@@ -1,4 +1,5 @@
 bin/oroborus
+share/oroborus/oroborusrc
 share/oroborus/pixmaps/agua/bottom-active.xpm
 share/oroborus/pixmaps/agua/bottom-inactive.xpm
 share/oroborus/pixmaps/agua/bottom-left-active.xpm
@@ -103,12 +104,19 @@ share/oroborus/pixmaps/next/resize-active.xpm
 share/oroborus/pixmaps/next/resize-inactive.xpm
 share/oroborus/pixmaps/next/right-active.xpm
 share/oroborus/pixmaps/next/right-inactive.xpm
+share/oroborus/pixmaps/next/themerc
 share/oroborus/pixmaps/next/title-active.xpm
 share/oroborus/pixmaps/next/title-inactive.xpm
+share/oroborus/pixmaps/next/title-shaded-active.xpm
+share/oroborus/pixmaps/next/title-shaded-inactive.xpm
 share/oroborus/pixmaps/next/top-left-active.xpm
 share/oroborus/pixmaps/next/top-left-inactive.xpm
+share/oroborus/pixmaps/next/top-left-shaded-active.xpm
+share/oroborus/pixmaps/next/top-left-shaded-inactive.xpm
 share/oroborus/pixmaps/next/top-right-active.xpm
 share/oroborus/pixmaps/next/top-right-inactive.xpm
+share/oroborus/pixmaps/next/top-right-shaded-active.xpm
+share/oroborus/pixmaps/next/top-right-shaded-inactive.xpm
 share/oroborus/pixmaps/win95/bottom-active.xpm
 share/oroborus/pixmaps/win95/bottom-inactive.xpm
 share/oroborus/pixmaps/win95/bottom-left-active.xpm
