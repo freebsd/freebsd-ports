@@ -36,7 +36,7 @@
     SUBDIR += mytop
     SUBDIR += p5-ApacheDBILogConfig
     SUBDIR += p5-ApacheDBILogger
-    SUBDIR += p5-AsciiDB-TagFile-1.06
+    SUBDIR += p5-AsciiDB-TagFile
     SUBDIR += p5-BerkeleyDB
     SUBDIR += p5-DBD-CSV
     SUBDIR += p5-DBD-Pg
