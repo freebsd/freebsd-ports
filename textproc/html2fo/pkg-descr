@@ -1,0 +1,5 @@
+html2fo is a converter from html to xsl:fo. The html code could be written
+with StarOffice or other WYSIWYM editors and must not be 100% valid html code.
+html2fo is designed to produce a valid xsl:fo for using FOP from Apache.
+
+WWW: http://html2fo.sourceforge.net/
