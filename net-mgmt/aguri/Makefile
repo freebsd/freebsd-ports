@@ -10,7 +10,7 @@ PORTVERSION=	0.7
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 
-MAINTAINER=	yb@sainte-barbe.org
+MAINTAINER=	yb@bashibuzuk.net
 COMMENT=	An Aggregation-based Traffic Profiler
 
 .if defined(WITH_X11)
