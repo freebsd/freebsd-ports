@@ -5868,6 +5868,7 @@ ruby-graph	ports/graphics/ruby-graph
 ruby-gserver	ports/net/ruby-gserver
 ruby-gsl	ports/math/ruby-gsl
 ruby-gtk	ports/x11-toolkits/ruby-gtk
+ruby-hmac	ports/security/ruby-hmac
 ruby-html-parser	ports/textproc/ruby-html-parser
 ruby-htmlcompact	ports/textproc/ruby-htmlcompact
 ruby-htmlrepair	ports/textproc/ruby-htmlrepair
