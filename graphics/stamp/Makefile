@@ -3,7 +3,7 @@
 # Date created:	11 August 1998
 # Whom:		Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/24 01:59:56 steve Exp $
+# $Id: Makefile,v 1.2 1998/09/15 11:45:58 asami Exp $
 #
 
 DISTNAME=	stamp
@@ -11,7 +11,7 @@ PKGNAME=	stamp-0.61
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.telepath.com/booger/
 
-MAINTAINER=	billf@chc-chimes.com
+MAINTAINER=	billf@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 

@@ -3,14 +3,14 @@
 # Date created:        27 July 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.3 1998/09/20 23:26:49 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/23 22:59:23 hoek Exp $
 #
 
 DISTNAME=	clig-1.0.2
 CATEGORIES=	devel tcl80
 MASTER_SITES=	http://wsd.iitb.fhg.de/~kir/clighome/
 
-MAINTAINER=	billf@chc-chimes.com
+MAINTAINER=	billf@FreeBSD.org
 
 # This should work with any version of tcl.  See also ${MAKE_ENV}.
 BUILD_DEPENDS=	${PREFIX}/bin/tclsh8.0:${PORTSDIR}/lang/tcl80

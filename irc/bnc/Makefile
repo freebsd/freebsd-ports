@@ -3,7 +3,7 @@
 # Date created:        06 July 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/07/11 18:32:05 steve Exp $
 #
 
 DISTNAME=	bnc-web
@@ -11,7 +11,7 @@ PKGNAME=	bnc-2.4.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.bridgenet.net/bnc/
 
-MAINTAINER=	billf@chc-chimes.com
+MAINTAINER=	billf@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/bnc2.4.3
 HAS_CONFIGURE=	YES
