@@ -1,0 +1,484 @@
+share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/class-use/Main.html
+share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/doc-files/screen_01.png
+share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/Main.html
+share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/Appender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/AppenderSkeleton.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/AsyncAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/BasicConfigurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/Category.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/ConsoleAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/DailyRollingFileAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/FileAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/Hierarchy.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/HTMLLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/Layout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/Level.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/Logger.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/LogManager.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/MDC.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/NDC.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/PatternLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/Priority.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/TTCCLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/PropertyConfigurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/RollingFileAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/SimpleLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/class-use/WriterAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/class-use/PropertyGetter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/class-use/PropertyGetter.PropertyCallback.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/class-use/PropertyPrinter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/class-use/PropertySetter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/class-use/PropertySetterException.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/PropertyGetter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/PropertyGetter.PropertyCallback.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/PropertyPrinter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/PropertySetter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/config/PropertySetterException.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/AbsoluteTimeDateFormat.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/AppenderAttachableImpl.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/BoundedFIFO.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/CountingQuietWriter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/CyclicBuffer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/DateLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/DateTimeDateFormat.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/FileWatchdog.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/FormattingInfo.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/ISO8601DateFormat.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/Loader.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/LogLog.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/NullEnumeration.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/OnlyOnceErrorHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/OptionConverter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/PatternConverter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/PatternParser.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/QuietWriter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/RelativeTimeDateFormat.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/SyslogQuietWriter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/SyslogWriter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/ThreadLocalMap.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use/Transform.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/AbsoluteTimeDateFormat.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/AppenderAttachableImpl.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/BoundedFIFO.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/CountingQuietWriter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/CyclicBuffer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/DateLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/DateTimeDateFormat.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/FileWatchdog.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/FormattingInfo.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/ISO8601DateFormat.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/Loader.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/LogLog.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/NullEnumeration.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/OnlyOnceErrorHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/OptionConverter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/PatternConverter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/PatternParser.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/QuietWriter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/RelativeTimeDateFormat.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/SyslogQuietWriter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/SyslogWriter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/ThreadLocalMap.html
+share/doc/jakarta-log4j/api/org/apache/log4j/helpers/Transform.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jdbc/class-use/JDBCAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jdbc/JDBCAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jdbc/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jdbc/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jdbc/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jdbc/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/class-use/AbstractDynamicMBean.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/class-use/Agent.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/class-use/AppenderDynamicMBean.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/class-use/HierarchyDynamicMBean.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/class-use/LayoutDynamicMBean.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/class-use/LoggerDynamicMBean.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/AbstractDynamicMBean.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/Agent.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/AppenderDynamicMBean.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/HierarchyDynamicMBean.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/LayoutDynamicMBean.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/LoggerDynamicMBean.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/jmx/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use/AppenderFinalizer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use/DefaultLF5Configurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use/LF5Appender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use/Log4JLogRecord.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use/LogLevel.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use/LogLevelFormatException.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use/LogRecord.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use/LogRecordFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use/PassingLogRecordFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use/StartLogFactor5.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/AppenderFinalizer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/DefaultLF5Configurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/LF5Appender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/Log4JLogRecord.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/LogLevel.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/LogLevelFormatException.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/LogRecord.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/LogRecordFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/PassingLogRecordFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/lf5/StartLogFactor5.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/JMSAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/JMSSink.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/SimpleSocketServer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/SMTPAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/SocketAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/SocketHubAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/SocketNode.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/SocketServer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/SyslogAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/TelnetAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use/TelnetAppender.SocketHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/JMSAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/JMSSink.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/SimpleSocketServer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/SMTPAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/SocketAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/SocketHubAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/SocketNode.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/SocketServer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/SyslogAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/TelnetAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/net/TelnetAppender.SocketHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/nt/class-use/NTEventLogAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/nt/NTEventLogAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/nt/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/nt/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/nt/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/nt/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/class-use/ObjectRenderer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/class-use/RendererMap.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/class-use/ThreadGroupRenderer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/jms/class-use/MessageRenderer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/jms/MessageRenderer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/jms/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/jms/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/jms/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/jms/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/sax/class-use/AttributesRenderer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/sax/AttributesRenderer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/sax/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/sax/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/sax/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/sax/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/ObjectRenderer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/RendererMap.html
+share/doc/jakarta-log4j/api/org/apache/log4j/or/ThreadGroupRenderer.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/class-use/ConcatVsArray.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/class-use/ListVsVector.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/class-use/Logging.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/class-use/NewVsSetLen.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/class-use/NOPWriter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/class-use/NotLogging.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/class-use/NullAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/class-use/SystemTime.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/ConcatVsArray.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/ListVsVector.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/Logging.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/NewVsSetLen.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/NOPWriter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/NotLogging.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/NullAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/performance/SystemTime.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/AppenderAttachable.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/Configurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/DefaultRepositorySelector.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/ErrorCode.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/ErrorHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/Filter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/HierarchyEventListener.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/LocationInfo.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/LoggerFactory.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/LoggerRepository.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/LoggingEvent.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/OptionHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/RendererSupport.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/RepositorySelector.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/RootCategory.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/ThrowableInformation.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use/TriggeringEventEvaluator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/AppenderAttachable.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/Configurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/DefaultRepositorySelector.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/ErrorCode.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/ErrorHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/Filter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/HierarchyEventListener.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/LocationInfo.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/LoggerFactory.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/LoggerRepository.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/LoggingEvent.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/OptionHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/RendererSupport.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/RepositorySelector.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/RootCategory.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/ThrowableInformation.html
+share/doc/jakarta-log4j/api/org/apache/log4j/spi/TriggeringEventEvaluator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/class-use/DenyAllFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/class-use/ExternallyRolledFileAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/class-use/FallbackErrorHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/class-use/LevelMatchFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/class-use/LevelRangeFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/class-use/NullAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/class-use/ReloadingPropertyConfigurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/class-use/Roller.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/class-use/StringMatchFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/DenyAllFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/ExternallyRolledFileAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/FallbackErrorHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/LevelMatchFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/LevelRangeFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/NullAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/ReloadingPropertyConfigurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/Roller.html
+share/doc/jakarta-log4j/api/org/apache/log4j/varia/StringMatchFilter.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/class-use/DOMConfigurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/class-use/SAXErrorHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/class-use/XMLLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/class-use/ReportParserError.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/class-use/XMLSample.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/ReportParserError.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/XMLSample.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/DOMConfigurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/SAXErrorHandler.html
+share/doc/jakarta-log4j/api/org/apache/log4j/xml/XMLLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/Appender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/AppenderSkeleton.html
+share/doc/jakarta-log4j/api/org/apache/log4j/AsyncAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/BasicConfigurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/Category.html
+share/doc/jakarta-log4j/api/org/apache/log4j/ConsoleAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/DailyRollingFileAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/FileAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/Hierarchy.html
+share/doc/jakarta-log4j/api/org/apache/log4j/HTMLLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/Layout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/Level.html
+share/doc/jakarta-log4j/api/org/apache/log4j/Logger.html
+share/doc/jakarta-log4j/api/org/apache/log4j/LogManager.html
+share/doc/jakarta-log4j/api/org/apache/log4j/MDC.html
+share/doc/jakarta-log4j/api/org/apache/log4j/NDC.html
+share/doc/jakarta-log4j/api/org/apache/log4j/package-frame.html
+share/doc/jakarta-log4j/api/org/apache/log4j/package-summary.html
+share/doc/jakarta-log4j/api/org/apache/log4j/package-tree.html
+share/doc/jakarta-log4j/api/org/apache/log4j/package-use.html
+share/doc/jakarta-log4j/api/org/apache/log4j/PatternLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/Priority.html
+share/doc/jakarta-log4j/api/org/apache/log4j/PropertyConfigurator.html
+share/doc/jakarta-log4j/api/org/apache/log4j/RollingFileAppender.html
+share/doc/jakarta-log4j/api/org/apache/log4j/SimpleLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/TTCCLayout.html
+share/doc/jakarta-log4j/api/org/apache/log4j/WriterAppender.html
+share/doc/jakarta-log4j/api/allclasses-frame.html
+share/doc/jakarta-log4j/api/deprecated-list.html
+share/doc/jakarta-log4j/api/help-doc.html
+share/doc/jakarta-log4j/api/index-all.html
+share/doc/jakarta-log4j/api/index.html
+share/doc/jakarta-log4j/api/overview-frame.html
+share/doc/jakarta-log4j/api/overview-summary.html
+share/doc/jakarta-log4j/api/overview-tree.html
+share/doc/jakarta-log4j/api/package-list
+share/doc/jakarta-log4j/api/packages.html
+share/doc/jakarta-log4j/api/serialized-form.html
+share/doc/jakarta-log4j/api/stylesheet.css
+share/doc/jakarta-log4j/images/coverSmall.png
+share/doc/jakarta-log4j/images/cyberlab15.gif
+share/doc/jakarta-log4j/images/ecaward_finalist_logo.gif
+share/doc/jakarta-log4j/images/logo.jpg
+share/doc/jakarta-log4j/lf5/images/blue_on_white.gif
+share/doc/jakarta-log4j/lf5/images/console_window.gif
+share/doc/jakarta-log4j/lf5/images/lf5.gif
+share/doc/jakarta-log4j/lf5/images/lf5_about.gif
+share/doc/jakarta-log4j/lf5/images/lf5_category_explorer.gif
+share/doc/jakarta-log4j/lf5/images/lf5_collapseall.gif
+share/doc/jakarta-log4j/lf5/images/lf5_colorchooser.gif
+share/doc/jakarta-log4j/lf5/images/lf5_compactview.gif
+share/doc/jakarta-log4j/lf5/images/lf5_configure.gif
+share/doc/jakarta-log4j/lf5/images/lf5_deselectall.gif
+share/doc/jakarta-log4j/lf5/images/lf5_detailedview.gif
+share/doc/jakarta-log4j/lf5/images/lf5_expandall.gif
+share/doc/jakarta-log4j/lf5/images/lf5_loglevels.gif
+share/doc/jakarta-log4j/lf5/images/lf5_logo.gif
+share/doc/jakarta-log4j/lf5/images/lf5_logo_small.gif
+share/doc/jakarta-log4j/lf5/images/lf5_logtable.gif
+share/doc/jakarta-log4j/lf5/images/lf5_ndc_filtering.gif
+share/doc/jakarta-log4j/lf5/images/lf5_openfile.gif
+share/doc/jakarta-log4j/lf5/images/lf5_openurl.gif
+share/doc/jakarta-log4j/lf5/images/lf5_properties.gif
+share/doc/jakarta-log4j/lf5/images/lf5_recorddetail.gif
+share/doc/jakarta-log4j/lf5/images/lf5_remove_categories.gif
+share/doc/jakarta-log4j/lf5/images/lf5_search.gif
+share/doc/jakarta-log4j/lf5/images/lf5_selectall.gif
+share/doc/jakarta-log4j/lf5/images/lf5_small.gif
+share/doc/jakarta-log4j/lf5/images/lf5_standardview.gif
+share/doc/jakarta-log4j/lf5/images/lf5_view.gif
+share/doc/jakarta-log4j/lf5/images/small_right_arrow.gif
+share/doc/jakarta-log4j/lf5/configuration.html
+share/doc/jakarta-log4j/lf5/examples.html
+share/doc/jakarta-log4j/lf5/faq.html
+share/doc/jakarta-log4j/lf5/features.html
+share/doc/jakarta-log4j/lf5/library.html
+share/doc/jakarta-log4j/lf5/overview.html
+share/doc/jakarta-log4j/lf5/readingfiles.html
+share/doc/jakarta-log4j/lf5/splash.html
+share/doc/jakarta-log4j/lf5/trouble.html
+share/doc/jakarta-log4j/contactUs.html
+share/doc/jakarta-log4j/contributors.html
+share/doc/jakarta-log4j/critique.html
+share/doc/jakarta-log4j/deepExtension.html
+share/doc/jakarta-log4j/documentation.html
+share/doc/jakarta-log4j/download.html
+share/doc/jakarta-log4j/earlier.html
+share/doc/jakarta-log4j/FAQ.html
+share/doc/jakarta-log4j/HISTORY
+share/doc/jakarta-log4j/history.html
+share/doc/jakarta-log4j/index.html
+share/doc/jakarta-log4j/manual.html
+share/doc/jakarta-log4j/od.gif
+share/doc/jakarta-log4j/overview.html
+share/doc/jakarta-log4j/plan.html
+share/doc/jakarta-log4j/praise.html
+share/doc/jakarta-log4j/srtw.html
+share/doc/jakarta-log4j/TODO
+share/doc/jakarta-log4j/TROUBLESHOOT.html
+share/examples/jakarta-log4j/customLevel/XLevel.java
+share/examples/jakarta-log4j/lf5/InitUsingDefaultConfigurator/InitUsingDefaultConfigurator.java
+share/examples/jakarta-log4j/lf5/InitUsingLog4JProperties/InitUsingLog4JProperties.java
+share/examples/jakarta-log4j/lf5/InitUsingLog4JProperties/log4j.properties
+share/examples/jakarta-log4j/lf5/InitUsingMultipleAppenders/example.properties
+share/examples/jakarta-log4j/lf5/InitUsingMultipleAppenders/InitUsingMultipleAppenders.java
+share/examples/jakarta-log4j/lf5/InitUsingPropertiesFile/example.properties
+share/examples/jakarta-log4j/lf5/InitUsingPropertiesFile/InitUsingPropertiesFile.java
+share/examples/jakarta-log4j/lf5/InitUsingXMLPropertiesFile/example.xml
+share/examples/jakarta-log4j/lf5/InitUsingXMLPropertiesFile/InitUsingXMLPropertiesFile.java
+share/examples/jakarta-log4j/lf5/OpeningLogFiles/sample.log
+share/examples/jakarta-log4j/lf5/UsingLogMonitorAdapter/CustomizedLogLevels.java
+share/examples/jakarta-log4j/lf5/UsingLogMonitorAdapter/UsingLogMonitorAdapter.java
+share/examples/jakarta-log4j/lf5/UsingSocketAppenders/socketclient.properties
+share/examples/jakarta-log4j/lf5/UsingSocketAppenders/socketserver.properties
+share/examples/jakarta-log4j/lf5/UsingSocketAppenders/UsingSocketAppenders.java
+share/examples/jakarta-log4j/lf5/index.html
+share/examples/jakarta-log4j/subclass/MyLogger.java
+share/examples/jakarta-log4j/subclass/MyLoggerFactory.java
+share/examples/jakarta-log4j/subclass/MyLoggerTest.java
+share/examples/jakarta-log4j/factor.html
+share/examples/jakarta-log4j/factor.lcf
+share/examples/jakarta-log4j/mycat.bad
+share/examples/jakarta-log4j/mycat.good
+share/examples/jakarta-log4j/MyPatternLayout.java
+share/examples/jakarta-log4j/MyPatternParser.java
+share/examples/jakarta-log4j/NumberCruncher.java
+share/examples/jakarta-log4j/NumberCruncherClient.java
+share/examples/jakarta-log4j/NumberCruncherServer.java
+share/examples/jakarta-log4j/package.html
+share/examples/jakarta-log4j/rolling_log_file.log
+share/examples/jakarta-log4j/Sort.java
+share/examples/jakarta-log4j/sort1.properties
+share/examples/jakarta-log4j/sort2.properties
+share/examples/jakarta-log4j/sort3.properties
+share/examples/jakarta-log4j/sort4.properties
+share/examples/jakarta-log4j/SortAlgo.java
+share/examples/jakarta-log4j/Trivial.java
+share/java/classes/log4j-1.2.7.jar
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw/doc-files
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/chainsaw
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/config/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/config
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/helpers/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/helpers
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/jdbc/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/jdbc
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/jmx/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/jmx
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/lf5/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/lf5
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/net/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/net
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/nt/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/nt
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/or/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/or/jms/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/or/jms
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/or/sax/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/or/sax
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/or
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/performance/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/performance
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/spi/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/spi
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/varia/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/varia
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/xml/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples/class-use
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/xml/examples
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j/xml
+@dirrm share/doc/jakarta-log4j/api/org/apache/log4j
+@dirrm share/doc/jakarta-log4j/api/org/apache
+@dirrm share/doc/jakarta-log4j/api/org
+@dirrm share/doc/jakarta-log4j/api
+@dirrm share/doc/jakarta-log4j/images
+@dirrm share/doc/jakarta-log4j/lf5/images
+@dirrm share/doc/jakarta-log4j/lf5
+@dirrm share/doc/jakarta-log4j
+@dirrm share/examples/jakarta-log4j/customLevel
+@dirrm share/examples/jakarta-log4j/lf5/InitUsingDefaultConfigurator
+@dirrm share/examples/jakarta-log4j/lf5/InitUsingLog4JProperties
+@dirrm share/examples/jakarta-log4j/lf5/InitUsingMultipleAppenders
+@dirrm share/examples/jakarta-log4j/lf5/InitUsingPropertiesFile
+@dirrm share/examples/jakarta-log4j/lf5/InitUsingXMLPropertiesFile
+@dirrm share/examples/jakarta-log4j/lf5/OpeningLogFiles
+@dirrm share/examples/jakarta-log4j/lf5/UsingLogMonitorAdapter
+@dirrm share/examples/jakarta-log4j/lf5/UsingSocketAppenders
+@dirrm share/examples/jakarta-log4j/lf5
+@dirrm share/examples/jakarta-log4j/subclass
+@dirrm share/examples/jakarta-log4j
