@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	1.5.5
+PORTVERSION=	1.6.0
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	netatalk
 
 MAINTAINER=	marcus@FreeBSD.org
 
-.if defined(WITH_CNID)
+.if !defined(WITHOUT_CNID)
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 .endif
 .if defined(WITH_SRVLOC)
@@ -44,19 +44,18 @@ CONFIGURE_ARGS+=	--enable-srvloc=${LOCALBASE}
 # Quark Express save issues.
 CONFIGURE_ARGS+=	--with-flock-locks
 .endif
-.if defined(WITH_CNID)
-# Configure EXPERIMENTAL CNID DID support.  This is an attmept to make
-# DIDs more persistent by using a Berkeley database to store the DID values.
-# This should hopefully allow aliases to work between restarts of afpd.
-# This has been tested on MacOS 9.2.x and OS X.
-CONFIGURE_ARGS+=	--with-did=cnid \
-			--with-db3=${LOCALBASE}
-PLIST_SUB+=	NETATALKCNID=""
+.if !defined(WITHOUT_CNID)
+# Configure old LAST DID support.  By default, the new CNID persistent DID
+# calculation scheme is used.  However, if you wish to revert back to the old
+# 1.5.x default scheme, specify WITHOUT_CNID
+CONFIGURE_ARGS+=	--with-did=last
+PLIST_SUB+=	NETATALKCNID="@comment "
 .else
 # This method of DID calculation is not persistent, but has been tested to
 # work with MacOS X (10.0.3-10.1.3) as well as MacOS 7-9.2.2.
-CONFIGURE_ARGS+=	--with-did=last
-PLIST_SUB+=	NETATALKCNID="@comment "
+CONFIGURE_ARGS+=	--with-did=cnid \
+			--with-db3=${LOCALBASE}
+PLIST_SUB+=	NETATALKCNID=""
 .endif
 .if defined (WITH_TIMELORD)
 CONFIGURE_ARGS+=	--enable-timelord
@@ -82,7 +81,7 @@ MAN3=		atalk_aton.3 nbp_name.3
 MAN4=		atalk.4
 MAN5=		AppleVolumes.default.5 afpd.conf.5 atalkd.conf.5 \
 		netatalk.conf.5 papd.conf.5
-MAN8=		afpd.8 atalkd.8 pap.8 papd.8 papstatus.8 psf.8 timelord.8
+MAN8=		afpd.8 atalkd.8 papd.8 papstatus.8 psf.8 timelord.8
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=g" ${FILESDIR}/netatalk.sh \
