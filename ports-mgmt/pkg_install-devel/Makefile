@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		pkg_install
-PORTVERSION=		20040629
+PORTVERSION=		20040811
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	eik
@@ -23,8 +23,6 @@ MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
 			pkg_info.1 pkg_version.1
 
 PKGREQ=			${WRKDIR}/pkg-req
-
-SED_SCRIPT=		-e "s|%%PORTVERSION%%|${PORTVERSION}|g"
 
 .if defined(PREFIX)
 .if ${PREFIX} == "/usr"
@@ -45,6 +43,14 @@ PLIST_SUB+=		OPENSSL="@comment "
 
 .include <bsd.port.pre.mk>
 
+.if defined(DFOSVERSION)
+PKG_OSVERSION=		${DFOSVERSION}
+SED_SCRIPT=		-e 's/%%OSVERSIONCHK%%/"$$OSVERSION" -ge 110000/g'
+.else
+PKG_OSVERSION=		${OSVERSION}
+SED_SCRIPT=		-e 's/%%OSVERSIONCHK%%/"$$OSVERSION" -ge 491101 -a "$$OSVERSION" -lt 500000 -o "$$OSVERSION" -ge 502120/g'
+.endif
+
 pre-everything::
 	@${ECHO} "======================================================================================="
 	@${ECHO}
@@ -52,7 +58,7 @@ pre-everything::
 	@${ECHO}
 	@${ECHO} "======================================================================================="
 
-.if ${OSVERSION} < 460102
+.if !defined(DFOSVERSION) && ${OSVERSION} < 460102
 check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
 	@if [ -d ${PKG_DBDIR}/${PKGNAME} ]; then \
@@ -70,12 +76,12 @@ check-already-installed:
 .endif
 
 pre-configure:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%MANPREFIX%%,${MANPREFIX},g' \
+	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%MANPREFIX%%|${MANPREFIX}|g' \
 		${FILESDIR}/Makefile.inc > ${WRKDIR}/Makefile.inc
 
-# __FBSDID is undefied for old FreeBSD versions
-.if ${OSVERSION} < 440001 || ( ${OSVERSION} >= 500000 && ${OSVERSION} < 500024 )
+# __FBSDID is undefied for old FreeBSD versions and DragonFlyBSD
+.if defined(DFOSVERSION) || ${OSVERSION} < 440001 || ${OSVERSION} >= 500000 && ${OSVERSION} < 500024
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.c' \
 		| ${XARGS} ${PERL} -pi.orig -e 's/__FBSDID\(("[^"]*")\)/static const char rcsid[] = $$1/'
@@ -86,13 +92,13 @@ post-build:
 
 .if !defined(PACKAGE_BUILDING)
 pre-install:
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGREQ} ${PKGNAME} INSTALL
+	@${SETENV} PKG_PREFIX=${PREFIX:Q} OSVERSION=${PKG_OSVERSION:Q} ${SH} ${PKGREQ} ${PKGNAME} INSTALL
 .endif
 
 # Call pkg-install in `do-install:' instead of `pre-install:' because it might
 # deinstall pkg_info, which is fatal during `check-already-installed:'.
 do-install:
-	${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	${SETENV} PKG_PREFIX=${PREFIX:Q} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
 test: build
