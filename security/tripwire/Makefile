@@ -47,6 +47,8 @@ TRIPWIRE_CLOBBER?=	NO
 
 .include <bsd.port.pre.mk>
 
+PLIST_SUB+=	TWCFG=${TWCFG} TWDB=${TWDB}
+
 pre-configure:
 	@ ${CP} ${TWPOL_TXT} ${WRKSRC}/policy/twpol.txt
 	@ ${MV} ${WRKSRC}/src/core/stdcore.h ${WRKSRC}/src/core/stdcore.h.orig
