@@ -1,0 +1,6 @@
+Eagle needs to be run as "root" first, in order to have write access 
+to %%PREFIX%%/share/eagle to write a program key file.
+
+Once this has been done, you can delete the "eagle" directory in your 
+/root directory, which is created during the initially startup, and 
+run it as a normal user.
