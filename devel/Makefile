@@ -569,6 +569,7 @@
     SUBDIR += omniNotify
     SUBDIR += omniORB
     SUBDIR += oniguruma
+    SUBDIR += openorb
     SUBDIR += openthreads
     SUBDIR += opentop
     SUBDIR += openzz

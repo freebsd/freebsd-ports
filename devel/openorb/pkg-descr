@@ -1,0 +1,19 @@
+This is a community fork of the open source project OpenORB
+(openorb.exolab.org). The goal of this initiative is to make the evolution of
+the OpenORB project more transparent and to allow the community to take part in
+making decisions about its future.
+
+OpenORB provides a Java implementation of the OMG CORBA 2.4.2 specification.
+Along with the ORB, the following OMG Services are provided:
+
+  * Concurrency Control Service
+  * Event Service
+  * Interoperable Naming Service
+  * Notification Service
+  * Persistent State Service
+  * Property Service
+  * Time Service
+  * Trading Service
+  * Transaction Service
+
+WWW:	http://openorb.sourceforge.net/
