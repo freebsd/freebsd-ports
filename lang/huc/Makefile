@@ -10,35 +10,31 @@ PORTVERSION=	3.20
 PORTREVISION=	1
 CATEGORIES=	lang emulators
 MASTER_SITES=	http://www.zeograd.com/download/
-DISTNAME=	huc_src_320
+DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC Engine C compiler which can create ROMs (hucard) or CD images
 
-WRKSRC=		${WRKDIR}/huc
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
-
-pre-build:
-		@${RM} -rf ${WRKSRC}/include/CVS ${WRKSRC}/include/pce/CVS
-		@${RM} -rf ${WRKSRC}/doc/CVS ${WRKSRC}/doc/huc/CVS \
-		${WRKSRC}/doc/nes/CVS ${WRKSRC}/doc/pce/CVS
+MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/bin/huc ${PREFIX}/bin/huc
-		${INSTALL_PROGRAM} ${WRKSRC}/bin/isolink ${PREFIX}/bin/isolink
-		${INSTALL_PROGRAM} ${WRKSRC}/bin/nesasm ${PREFIX}/bin/nesasm
-		${INSTALL_PROGRAM} ${WRKSRC}/bin/pceas ${PREFIX}/bin/pceas
-		${INSTALL_PROGRAM} ${WRKSRC}/bin/pcxtool ${PREFIX}/bin/pcxtool
-		@${MKDIR} ${PREFIX}/include/${PORTNAME}
-		@${CP} -r ${WRKSRC}/include/ ${PREFIX}/include/${PORTNAME}
-
-post-install:
+.for file in huc isolink nesasm pceas pcxtool
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/bin
+.endfor
+	@${MKDIR} ${PREFIX}/include/${PORTNAME}
+	${TAR} -C ${WRKSRC}/include --exclude "CVS" -cf - . | \
+		${TAR} -C ${PREFIX}/include/${PORTNAME} --unlink -xf -
+	@${CHOWN} ${SHAREOWN}:${SHAREMODE} ${PREFIX}/include/${PORTNAME}
 .if !defined(NOPORTDOCS)
-		@${MKDIR} ${DOCSDIR}
-		@${CP} -r ${WRKSRC}/doc/ ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
+	${TAR} -C ${WRKSRC}/doc --exclude "CVS" -cf - . | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -
+	@${CHOWN} ${SHAREOWN}:${SHAREMODE} ${DOCSDIR}
 .endif
-	        @${CAT} ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -33,8 +33,6 @@ include/huc/pce/startup.inc
 include/huc/pce/system.inc
 include/huc/pce/vdc.inc
 include/huc/overlay.h
-@dirrm include/huc/pce
-@dirrm include/huc
 %%DOCSDIR%%/huc/random.txt
 %%DOCSDIR%%/huc/clibref.txt
 %%DOCSDIR%%/huc/clibref_fr.htm
@@ -60,7 +58,9 @@ include/huc/overlay.h
 %%DOCSDIR%%/pce/usage.txt
 %%DOCSDIR%%/pce/vce.txt
 %%DOCSDIR%%/pce/concepts.txt
-@dirrm %%DOCSDIR%%/huc
 @dirrm %%DOCSDIR%%/pce
 @dirrm %%DOCSDIR%%/nes
+@dirrm %%DOCSDIR%%/huc
 @dirrm %%DOCSDIR%%
+@dirrm include/huc/pce
+@dirrm include/huc
