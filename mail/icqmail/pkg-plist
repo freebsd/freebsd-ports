@@ -1,0 +1,13 @@
+bin/icqmail
+share/icqmail/aliases.cfg
+share/icqmail/contacts_template.txt
+share/icqmail/email_template.txt
+share/icqmail/message_template.txt
+share/icqmail/offline_template.txt
+share/icqmail/one_contact_template.txt
+share/icqmail/online_template.txt
+share/icqmail/sample.cfg
+share/icqmail/sample.scm
+share/icqmail/status_change_template.txt
+share/icqmail/url_template.txt
+@dirrm share/icqmail
