@@ -56,4 +56,3 @@ share/doc/Xtt/MISCNOTES.eng
 share/doc/Xtt/MISCNOTES.jis
 @dirrm share/doc/Xtt
 @dirrm include/X11/fonts/codeconv
-@dirrm lib/modules/codeconv
