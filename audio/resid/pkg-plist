@@ -1,0 +1,14 @@
+include/resid/envelope.h
+include/resid/extfilt.h
+include/resid/filter.h
+include/resid/pot.h
+include/resid/sid.h
+include/resid/siddefs.h
+include/resid/spline.h
+include/resid/voice.h
+include/resid/wave.h
+lib/libresid.a
+lib/libresid.la
+lib/libresid.so
+lib/libresid.so.2
+@dirrm include/resid

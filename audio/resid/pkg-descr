@@ -1,0 +1,8 @@
+Since June 1998, a cycle-based SID emulator engine is available and is
+distributed under the GNU General Public License (GPL). It's called reSID, is
+programmed in C++, and so far has been developed by Dag Lem.
+
+Requirement for processor power is huge (don't expect a complex SID emulator
+like this to run on a machine with less than 233-300 MHz).
+
+WWW: http://www.geocities.com/SiliconValley/Lakes/5147/resid/
