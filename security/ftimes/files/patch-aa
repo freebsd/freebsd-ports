@@ -1,0 +1,57 @@
+diff -urP configure.orig configure
+--- configure.orig   Mon Mar 17 19:24:44 2003
++++ configure       Mon May  5 14:14:32 2003
+@@ -1412,6 +1412,13 @@
+ _ACEOF
+ 
+ 	;;
++ia64*)
++
++cat >>confdefs.h <<\_ACEOF
++#define K_CPU_IA64 1
++_ACEOF
++
++	;;
+ i?86*)
+ 
+ cat >>confdefs.h <<\_ACEOF
+diff -urP configure.in.orig configure.in
+--- configure.in.orig	Mon Mar 17 19:24:44 2003
++++ configure.in	Mon May  5 14:14:32 2003
+@@ -80,6 +80,9 @@
+ alpha*)
+         AC_DEFINE(K_CPU_ALPHA, 1, Define to 1 if the host cpu is alpha.)
+ 	;;
++ia64*)
++        AC_DEFINE(K_CPU_IA64, 1, Define to 1 if the host cpu is ia64.)
++	;;
+ i?86*)
+         AC_DEFINE(K_CPU_I386, 1, Define to 1 if the host cpu is iX86.)
+ 	;;
+diff -urP src/config.h.in.orig src/config.h.in
+--- src/config.h.in.orig	Thu Mar 27 15:19:11 2003
++++ src/config.h.in	Mon May  5 14:14:32 2003
+@@ -161,6 +161,9 @@
+ /* Define to 1 if the host cpu is iX86. */
+ #undef K_CPU_I386
+ 
++/* Define to 1 if the host cpu is ia64. */
++#undef K_CPU_IA64
++
+ /* Define to 1 if the host cpu is powerpc. */
+ #undef K_CPU_POWERPC
+ 
+diff -urP src/md5.h.orig src/md5.h
+--- src/md5.h.orig	Sun Feb 23 17:40:08 2003
++++ src/md5.h	Mon May  5 14:14:45 2003
+@@ -16,7 +16,7 @@
+ #define MD5_READ_BUFSIZE    0x8000
+ #define MD5_BYTES_PER_BLOCK (512/8)
+ 
+-#ifdef K_CPU_ALPHA
++#if defined(K_CPU_ALPHA) || defined(K_CPU_IA64) 
+ typedef unsigned int  MD5_UINT32;
+ #else
+ typedef unsigned long MD5_UINT32;
+
+
