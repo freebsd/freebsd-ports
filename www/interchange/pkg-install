@@ -10,7 +10,7 @@ fi
 
 USER=interch
 GROUP=${USER}
-UID=94
+UID=95
 GID=${UID}
 
 pw groupshow ${GROUP} >/dev/null 2>&1 \
