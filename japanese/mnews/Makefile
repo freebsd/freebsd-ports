@@ -13,6 +13,8 @@ DISTNAME=	mnews${PORTVERSION:S/.//}
 
 MAINTAINER=	seiken@ARGV.AC
 
+FORBIDDEN=	"Remotely exploitable buffer overflows. http://online.securityfocus.com/archive/1/275012"
+
 WRKSRC=		${WRKDIR}/mnews-${PORTVERSION}/build
 MAN1=		mnews.1
 MANLANG=	ja
