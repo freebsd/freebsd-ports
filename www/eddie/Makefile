@@ -19,4 +19,6 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 
+BROKEN=	does not build with Erlang 9.0
+
 .include <bsd.port.mk>
