@@ -7,7 +7,7 @@
 
 PORTNAME=	agsatellite
 PORTVERSION=	0.520
-CATEGORIES=	audio net
+CATEGORIES=	audio net linux
 MASTER_SITES=	http://www.audiogalaxy.com/downloads/
 DISTNAME=	AGSatellite${PORTVERSION:S/.//}-glibc21
 
