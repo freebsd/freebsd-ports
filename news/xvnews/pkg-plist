@@ -1,0 +1,4 @@
+bin/xvnews
+lib/libguide.a
+lib/libguidexv.a
+man/man1/xvnews.1.gz

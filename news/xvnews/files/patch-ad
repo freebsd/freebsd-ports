@@ -1,0 +1,14 @@
+*** xv_regex.c.orig	Wed Nov 20 19:28:51 1996
+--- xv_regex.c	Wed Nov 20 19:21:09 1996
+***************
+*** 57,62 ****
+--- 57,65 ----
+  
+  #if defined(POSIX_REGEX)
+  #include <regex.h>
++ #ifndef REG_NOERROR
++ #define REG_NOERROR 0
++ #endif
+  #else
+  #include <regexp.h>
+  #endif

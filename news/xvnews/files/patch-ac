@@ -1,0 +1,21 @@
+*** config.h.orig	Wed Nov 20 19:15:27 1996
+--- config.h	Wed Nov 20 19:15:15 1996
+***************
+*** 120,127 ****
+     SVR4_REGEX. On other systems you might try first
+     to see whether POSIX is supported. */
+  
+! #undef POSIX_REGEX
+! #define SVR4_REGEX
+  #undef BSD_REGEX
+  
+  /* xvnews needs to know the timezone you are in in order to present dates
+--- 120,127 ----
+     SVR4_REGEX. On other systems you might try first
+     to see whether POSIX is supported. */
+  
+! #define POSIX_REGEX
+! #undef SVR4_REGEX
+  #undef BSD_REGEX
+  
+  /* xvnews needs to know the timezone you are in in order to present dates
