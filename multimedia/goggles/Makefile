@@ -14,7 +14,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
-LIB_DEPENDS=	FOX-1.2.5:${PORTSDIR}/x11-toolkits/fox-devel
+LIB_DEPENDS=	FOX-1.2.6:${PORTSDIR}/x11-toolkits/fox-devel
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 
 USE_BZIP2=	yes
