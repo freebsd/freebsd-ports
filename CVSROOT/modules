@@ -7100,6 +7100,7 @@ xemacs-devel-canna+freewnn	ports/japanese/xemacs-devel-canna+freewnn
 xemacs-devel-canna+wnn6	ports/japanese/xemacs-devel-canna+wnn6
 xemacs-devel-freewnn	ports/japanese/xemacs-devel-freewnn
 xemacs-devel-mule	ports/editors/xemacs-devel-mule
+xemacs-devel-wnn6	ports/japanese/xemacs-devel-wnn6
 xemacs-games-packages	ports/editors/xemacs-games-packages
 xemacs-libs-packages	ports/editors/xemacs-libs-packages
 xemacs-mule-packages	ports/editors/xemacs-mule-packages
