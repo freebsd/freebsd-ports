@@ -280,6 +280,7 @@ include/wx/wxprec.h
 include/wx/xpmhand.h
 include/wx/zipstrm.h
 include/wx/zstream.h
+lib/wx/include/wx/gtk/setup.h
 lib/libwx_gtk.so
 lib/libwx_gtk.so.1
 share/wx/afm/Cour.afm
@@ -312,6 +313,10 @@ share/wx/gs_afm/TimesRo.afm
 @dirrm include/wx/protocol
 @dirrm include/wx/unix
 @dirrm include/wx
+@dirrm lib/wx/include/wx/gtk
+@dirrm lib/wx/include/wx
+@dirrm lib/wx/include
+@dirrm lib/wx
 @dirrm share/wx/afm
 @dirrm share/wx/gs_afm
 @dirrm share/wx
