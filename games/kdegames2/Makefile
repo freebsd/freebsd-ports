@@ -13,8 +13,7 @@ MASTER_SITE_SUBDIR= stable/1.1.2/distribution/tar/generic/source/bz2
 
 MAINTAINER=	se@freebsd.org
 
-LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		kdecore.2:${PORTSDIR}/x11/kdelibs11 \
 		QwSpriteField.6:${PORTSDIR}/converters/kdesupport11
 

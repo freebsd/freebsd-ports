@@ -1,0 +1,18 @@
+--- configure.orig	Tue Aug 17 23:39:05 1999
++++ configure	Tue Feb 15 01:38:49 2000
+@@ -4164,6 +4164,7 @@
+   echo "$ac_t""no" 1>&6
+ fi
+  
++if false; then
+ echo $ac_n "checking for giflib""... $ac_c" 1>&6
+ echo "configure:4169: checking for giflib" >&5
+ if eval "test \"`echo '$''{'ac_cv_lib_gif'+set}'`\" = set"; then
+@@ -4210,6 +4211,7 @@
+ 
+ else
+   { echo "configure: error: You need giflib23. Please install the kdesupport package" 1>&2; exit 1; }
++fi
+ fi
+  echo $ac_n "checking for jpeglib""... $ac_c" 1>&6
+ echo "configure:4216: checking for jpeglib" >&5

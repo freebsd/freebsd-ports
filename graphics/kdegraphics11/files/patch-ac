@@ -1,0 +1,11 @@
+--- kpaint/Makefile.in.orig	Wed Sep  8 00:22:50 1999
++++ kpaint/Makefile.in	Tue Feb 15 21:57:27 2000
+@@ -161,7 +161,7 @@
+ 
+ INCLUDES = $(all_includes)
+ LDFLAGS = $(all_libraries) $(KDE_RPATH)
+-LDADD = $(LIB_KIMGIO) -lgif -lm $(LIB_KFILE)
++LDADD = $(LIB_KIMGIO) -lungif -lm $(LIB_KFILE)
+ 
+ appsdir = $(kde_appsdir)/Graphics
+ apps_DATA = kpaint.kdelnk
