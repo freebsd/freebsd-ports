@@ -20,6 +20,7 @@
     SUBDIR += cooledit
     SUBDIR += custom-emacs
     SUBDIR += custom-mule
+    SUBDIR += dedit
     SUBDIR += e93
     SUBDIR += elvis
     SUBDIR += emacs
