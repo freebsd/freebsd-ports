@@ -7,7 +7,7 @@
 
 PORTNAME=	ortep3
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/ortep/ \
 		ftp://ftp.ornl.gov/pub/ortep/src/
@@ -22,31 +22,33 @@ LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 
 WRKSRC=		${WRKDIR}/ortep/src
 
+MAKE_ARGS=	FFLAGS="${FFLAGS}" LFLAGS="${LFLAGS}"
+
+.if defined(WITH_PGPLOT)
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-aa
+LFLAGS=		-L${LOCALBASE}/lib -lpgplot -L${X11BASE}/lib -lX11
+.endif
+
 post-extract:
 	${MV} ${WRKSRC}/ortep.f ${WRKSRC}/ortep.f-1.0
 	${CP} ${DISTDIR}/ortep.f ${WRKSRC}/ortep.f
 
-pre-patch:
+pre-build:
 	${CP} ${FILESDIR}/Makefile.ortep3 ${WRKSRC}/Makefile
-.if defined(USEPGPLOT)
-	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/extra-patch-aa
-.endif
-  
-pre-install:
-	${MKDIR} ${PREFIX}/share/doc/ortep3
-	${MKDIR} ${PREFIX}/share/doc/ortep3/examples
-	${MKDIR} ${PREFIX}/share/doc/ortep3/man
-	${MKDIR} ${PREFIX}/share/doc/ortep3/src
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ortep3 ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/ortep/examples/* \
-	      ${PREFIX}/share/doc/ortep3/examples
-	${INSTALL_DATA} ${WRKDIR}/ortep/man/* \
-	      ${PREFIX}/share/doc/ortep3/man
-	${INSTALL_DATA} ${WRKDIR}/ortep/src/000readme.txt \
-	      ${PREFIX}/share/doc/ortep3/src
-	${INSTALL_DATA} ${WRKDIR}/ortep/README.1st \
-	      ${PREFIX}/share/doc/ortep3
+	@${MKDIR} ${PREFIX}/share/doc/ortep3
+	${INSTALL_DATA} ${WRKSRC}/../README.1st \
+		${PREFIX}/share/doc/ortep3
+	@${MKDIR} ${PREFIX}/share/doc/ortep3/examples
+	${INSTALL_DATA} ${WRKSRC}/../examples/* \
+		${PREFIX}/share/doc/ortep3/examples
+	@${MKDIR} ${PREFIX}/share/doc/ortep3/man
+	${INSTALL_DATA} ${WRKSRC}/../man/* \
+		${PREFIX}/share/doc/ortep3/man
+	@${MKDIR} ${PREFIX}/share/doc/ortep3/src
+	${INSTALL_DATA} ${WRKSRC}/000readme.txt \
+		${PREFIX}/share/doc/ortep3/src
 
 .include <bsd.port.mk>
