@@ -2,10 +2,18 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.102
-retrieving revision 1.108
-diff -u -r1.102 -r1.108
+retrieving revision 1.111
+diff -u -r1.102 -r1.111
 --- webmagick.in	21 Aug 2002 20:36:28 -0000	1.102
-+++ webmagick.in	7 Sep 2002 09:26:20 -0000	1.108
++++ webmagick.in	7 Sep 2002 15:57:27 -0000	1.111
+@@ -1,6 +1,6 @@
+ #! @PERL@
+ #
+-# $Id: webmagick.in,v 1.102 2002/08/21 20:36:28 clindell Exp $
++# $Id: webmagick.in,v 1.111 2002/09/07 15:57:27 ache Exp $
+ #
+ # You are looking at the main PERL script for WebMagick, a package to
+ # intelligently create HTML and JavaScript index files and imagemaps
 @@ -122,7 +122,6 @@
      $opt_lowresformat,
      $opt_lowresgeom,
@@ -64,7 +72,7 @@ diff -u -r1.102 -r1.108
  	 'coloralink'		=> $opt_coloralink,
  	 'colorback'		=> $opt_colorback,
  	 'colorfore'		=> $opt_colorfore,
-@@ -1903,17 +1902,16 @@
+@@ -1903,38 +1902,40 @@
      #
      # Clean up cached thumbnails
      #
@@ -85,9 +93,14 @@ diff -u -r1.102 -r1.108
 -        grep( $tarray{$_}++, @imgfiles );
 +	grep( $tarray{"$_.\L${opt_cacheformat}"}++, @imgfiles );
          @extra = grep( $_ = "$opt_cachedir/$_", grep( ! $tarray{$_}, @cacheFiles ));
-         print( STDERR "Removing extra cache files @extra\n") if $opt_debug;
-         unlink( @extra );
-@@ -1922,16 +1920,15 @@
+-        print( STDERR "Removing extra cache files @extra\n") if $opt_debug;
+-        unlink( @extra );
++	if ($#extra >= 0) {
++	    print( STDERR "Removing extra cache files @extra\n") if $opt_debug;
++	    unlink( @extra );
++	}
+     }
+     #
      # Clean up cached low resolution images
      #
      if( $opt_lowres && -d $opt_lowresdir ) {
@@ -106,9 +119,25 @@ diff -u -r1.102 -r1.108
 -        grep( $tarray{$_}++, @imgfiles );
 +	grep( $tarray{"$_.\L${opt_lowresformat}"}++, @imgfiles );
          @extra = grep( $_ = "$opt_lowresdir/$_", grep( ! $tarray{$_}, @lowresFiles ));
-         print( STDERR "Removing extra lowres files @extra\n") if $opt_debug;
-         unlink( @extra );
-@@ -2889,12 +2886,12 @@
+-        print( STDERR "Removing extra lowres files @extra\n") if $opt_debug;
+-        unlink( @extra );
++	if ($#extra >= 0) {
++	    print( STDERR "Removing extra lowres files @extra\n") if $opt_debug;
++	    unlink( @extra );
++	}
+     }
+ 
+     #
+@@ -2597,7 +2598,7 @@
+ 			# TODO: make sure the thumbnails are created, and get some image sizes
+ 			# TODO: save the labels in a new array, maybe same with sizes
+ 			if ( $thumbImageSizes{$pic}) {
+-				print (INDEX "<IMG SRC=\"", $opt_cachedir, "/", escapeurl($pic), "\" $thumbImageSizes{$pic} BORDER=0>");				
++				print (INDEX "<IMG SRC=\"", $opt_cachedir, "/", escapeurl($pic), ".\L${opt_cacheformat}", "\" $thumbImageSizes{$pic} BORDER=0>");
+ 			} else {
+ 				print (INDEX "<IMG SRC=\"", escapeurl($pic), "\" BORDER=0>");
+ 			}
+@@ -2889,12 +2890,12 @@
      #
      # If caching thumbnails then ensure that directory exists
      #
@@ -123,7 +152,7 @@ diff -u -r1.102 -r1.108
  
      # Read images into PerlMagick object
      print( STDERR "\nReading images: ", join(' ', @{$imageNames[$pageNumber - 1]}), "\n" )
-@@ -2919,217 +2916,38 @@
+@@ -2919,217 +2920,37 @@
  READ:       
  	foreach $imagename (@{$imageNames[$pageNumber - 1]}) {
  
@@ -352,8 +381,7 @@ diff -u -r1.102 -r1.108
 +	    #then do the thumbnail
 +	    ($rc, $filesize, $width, $height, $magick) =
 +		&createLowResolutionImage ($image, $opt_cachedir, $imagename, $opt_cache, 0, $opt_tables,
-+					   $opt_forcecache,
-+					   $opt_cache ? $opt_cachegeom : $opt_thumbgeometry,
++					   $opt_forcecache, $opt_thumbgeometry,
 +					   $opt_cacheformat, $opt_cachemin,
 +					   $opt_thumbprehook, $opt_thumbposthook);
 +	    if ($rc == -1) {
@@ -364,7 +392,25 @@ diff -u -r1.102 -r1.108
  	    #
  	    # Add thumbnail to thumbs array
  	    #
-@@ -3845,29 +3663,29 @@
+@@ -3205,9 +3026,6 @@
+ 		    print( STDERR "Montage directory = $directory\n" ) if $opt_debug;
+ 		    for (split(/\n/,$directory))
+ 		    {
+-			# Eliminate cache dir from path HACK! HACK!
+-			s%$opt_cachedir/%% if $opt_cache;
+-			my $img = $_;
+ 			my $x1 = $x;
+ 			my $y1 = $y;
+ 			my $x2 = $x+$thumbWidth-1;
+@@ -3215,7 +3033,6 @@
+ 	
+ 			push(@thumbCoords, "$x1,$y1,$x2,$y2");
+ 	
+-			#print "  <area href=", escapeurl($_), " shape=rect coords=$x1,$y1,", $x2,',', $y2, ">\n";
+ 			$x+=$thumbWidth;
+ 			if ($x >= $montageWidth)
+ 			{
+@@ -3845,29 +3662,29 @@
  #returns 0 if everything went fine, -1 if the image does not exist
  sub createLowResolutionImage () {
  	my ($image, $a_dir, $imagename, $a_cache, $a_lowres, $a_tables,
@@ -412,19 +458,18 @@ diff -u -r1.102 -r1.108
  
  	$newthumb = 1;								# Start presuming that thumbnail is new
  	# If we are caching, and cache thumbnail exists and is newer then use it
-@@ -3910,7 +3728,10 @@
- 		# the size specified (it returns a number of standard
- 		# scaled sizes) but not smaller.
- 		# This uses a feature available in PerlMagick 1.12 and beyond
--		$status = $image->Set(size=>$a_geometry);
-+
-+		# subrange 1: read only first image from animated GIFs, etc.
-+
-+		$status = $image->Set(size=>$a_geometry,subrange=>1);
+@@ -3914,8 +3731,8 @@
  		handleMagickError( __FILE__, __LINE__, "$a_geometry", $status) if "$status";
  		
  		# Read image
-@@ -3930,20 +3751,20 @@
+-		print( STDERR "Reading ${imagename} ...\n" ) if $opt_debug;
+-		$status = $image->Read("${imagename}");
++		print( STDERR "Reading ${imagename}\[0\] with geometry ${a_geometry}...\n" ) if $opt_debug;
++		$status = $image->Read("${imagename}\[0\]");
+ 		if ("$status" && handleMagickError( __FILE__, __LINE__, $imagename, $status)) {
+ 			undef @$image;						# Only delete image data, not object
+ 			print("Trying next image ...\n" );
+@@ -3930,20 +3747,20 @@
  			#
  			if ( $a_prehook ) {
  				print("Evaluating thumbnail pre-hook ...\n$a_prehook\n" )
@@ -453,7 +498,7 @@ diff -u -r1.102 -r1.108
  			if ( $opt_debug ) {
  				print("Image: ${width}x${height} $class $filesize bytes $magick $depth bits\n");
  			}
-@@ -3957,30 +3778,21 @@
+@@ -3957,30 +3774,28 @@
  				$width = $base_columns;
  				$height = $base_rows;
  				print("Saving original image size ${base_columns}x${base_rows}\n")
@@ -461,7 +506,7 @@ diff -u -r1.102 -r1.108
 +				    if $opt_debug;
  			}
  
--			my $geometry;
+ 			my $geometry;
 -#			if ( $a_cache ) {
 -#				$geometry = $opt_cachegeom;
 -#			} else {
@@ -469,30 +514,32 @@ diff -u -r1.102 -r1.108
 -#			}
 -			#PMF: I simplified this calculation of the geometry
 -			$geometry = $a_geometry;
--
++			if ($a_cache && !$a_tables && !$a_lowres) {
++				$geometry = $opt_cachegeom;
++			} else {
++				$geometry = $a_geometry;
++			}
+ 
  			my $a_sampling = 0;			# Set to 1 to enable sampling
  			if ( $class eq 'PseudoClass' && $a_sampling ) {
--				print( STDERR "Sampling $imagename to geometry \"${geometry}>\" ...\n")
+ 				print( STDERR "Sampling $imagename to geometry \"${geometry}>\" ...\n")
 -			    if $opt_debug;
--				$status = $image->Sample(geometry=>"${geometry}>");
-+				print( STDERR "Sampling $imagename to geometry \"${a_geometry}>\" ...\n")
 +				    if $opt_debug;
-+				$status = $image->Sample(geometry=>"${a_geometry}>");
+ 				$status = $image->Sample(geometry=>"${geometry}>");
  			
  			} else {
--				print( STDERR "Zooming $imagename with geometry \"${geometry}>\" ...\n")
+ 				print( STDERR "Zooming $imagename with geometry \"${geometry}>\" ...\n")
 -			    if $opt_debug;
-+				print( STDERR "Zooming $imagename with geometry \"${a_geometry}>\" ...\n")
 +				    if $opt_debug;
  				$status = $image->Zoom(filter=>"${opt_zoomfilter}",
 -															 blur=>0.6,
 -															 geometry=>"${geometry}>" );
 +						       blur=>0.6,
-+						       geometry=>"${a_geometry}>" );
++						       geometry=>"${geometry}>" );
  			}
  		    
  			if ("$status") {
-@@ -4000,9 +3812,8 @@
+@@ -4000,9 +3815,8 @@
  
  		# If we are caching, thumbnail is new, and image is
  		# large enough, then write it to thumbnail cache
@@ -504,7 +551,7 @@ diff -u -r1.102 -r1.108
  
  			my $comment="IMGINFO:${width}x${height} ${magick} file  (${filesize} bytes)";
  			print( STDERR "Applying image comment:\n${comment}\n") if $opt_debug;
-@@ -4011,21 +3822,21 @@
+@@ -4011,21 +3825,21 @@
  			$status = $image->Comment( $comment );
  			handleMagickError( __FILE__, __LINE__, $cachename, $status) if "$status";
  		    
@@ -534,7 +581,7 @@ diff -u -r1.102 -r1.108
  			}
  			handleMagickError( __FILE__, __LINE__, $cachename, $status) if "$status";
  			if (! $a_lowres) {
-@@ -4036,73 +3847,73 @@
+@@ -4036,73 +3850,73 @@
  	}
  	
  	#
@@ -671,7 +718,7 @@ diff -u -r1.102 -r1.108
  	return 0;
  }
  ######################################################################
-@@ -4274,12 +4085,11 @@
+@@ -4274,12 +4088,11 @@
    --cachemin         Smallest image to cache in pixels. (default 300*200)
  
  Low resolution images:
