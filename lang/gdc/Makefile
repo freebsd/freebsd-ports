@@ -26,7 +26,7 @@ BUILD_DEPENDS=	gcc34:${PORTSDIR}/lang/gcc34 \
 		bison:${PORTSDIR}/devel/bison
 RUN_DEPENDS=	gcc34:${PORTSDIR}/lang/gcc34
 
-ONLY_FOR_ARCHS=	i386 amd64 alpha
+ONLY_FOR_ARCHS=	i386 alpha
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
