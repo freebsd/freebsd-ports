@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gftp
-PORTVERSION=	2.0.15.r2
+PORTVERSION=	2.0.15
 PORTREVISION=	0
 CATEGORIES=	ftp
 MASTER_SITES=	http://gftp.seul.org/ \
