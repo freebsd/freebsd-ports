@@ -1,0 +1,11 @@
+--- output-swf.h.orig	Thu Mar  8 09:27:39 2001
++++ output-swf.h	Thu Apr 12 11:48:40 2001
+@@ -9,7 +9,7 @@
+ #include <stdio.h>
+ #include "types.h"
+ #include "spline.h"
+-#include <ming.h>
++#include <ming/ming.h>
+ 
+ int output_swf_writer(FILE* file, string name,
+ 		      int llx, int lly, int urx, int ury,
