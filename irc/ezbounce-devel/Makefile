@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A highly configurable IRC Proxy
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		ezbounce.1
 
@@ -48,7 +47,6 @@ pre-everything::
 post-patch:
 	@${SED} -e "s:/path/to:${PREFIX}/sbin:" ${WRKSRC}/sample.conf > \
 		${WRKSRC}/ezb.conf.default
-	${REINPLACE_CMD} -e "s,-O2,${CFLAGS}," ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ezbounce ${PREFIX}/sbin
