@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
+# $Id: Makefile,v 1.122 1997/11/24 00:26:35 fenner Exp $
 #
 
+    SUBDIR += acron
     SUBDIR += amanda
     SUBDIR += astrolog
     SUBDIR += buffer
