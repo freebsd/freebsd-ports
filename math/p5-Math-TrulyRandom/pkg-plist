@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/TrulyRandom/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/TrulyRandom.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Math/TrulyRandom.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/TrulyRandom/TrulyRandom.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/TrulyRandom/TrulyRandom.so
+%%PORTDOCS%%share/doc/Math-TrulyRandom/COPYRIGHT
+%%PORTDOCS%%share/doc/Math-TrulyRandom/truerand.c
+%%PORTDOCS%%share/doc/Math-TrulyRandom/truerand.h
+%%PORTDOCS%%@dirrm share/doc/Math-TrulyRandom
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/TrulyRandom 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Math 2>/dev/null || true
