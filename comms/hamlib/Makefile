@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hamlib
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.2
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,13 +16,12 @@ MAINTAINER=	esn@x123.info
 COMMENT=	Shared libraries for Amateur Radio Equipment Control Applications
 
 USE_PERL5=	yes
-USE_INC_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	15
 USE_GNOME=	pkgconfig gnomehack
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--with-perl-binding
 
-MAN1=		rigctl.1 rigmem.1 rotctl.1
+MAN1=		rigctl.1 rigmem.1 rigswr.1 rotctl.1
 MAN8=		rpc.rigd.8 rpc.rotd.8
 
 .if defined(WITH_PYTHON)
