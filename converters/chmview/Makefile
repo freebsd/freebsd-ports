@@ -7,7 +7,7 @@
 
 PORTNAME=	chmview
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	converters textproc
 MASTER_SITES=	http://trexinc.narod.ru/myprogs/files/
 DISTNAME=	chmview
@@ -18,15 +18,18 @@ COMMENT=	Extractor from .chm files
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/src
+PLIST_FILES=	bin/chmview
+PORTDOCS=	chmformat.html
 
 pre-patch:
 	@${SH} ${FILESDIR}/convert.sh ${WRKSRC}
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
-	-@${MKDIR} ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/chmview ${PREFIX}/bin/chmview
+	@${INSTALL_PROGRAM} ${WRKSRC}/chmview ${PREFIX}/bin/
+.if !defined(NOPORTDOCS)
 	-@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/chmformat.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
+.endif
 
 .include <bsd.port.mk>
