@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Graph/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Graph.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graph/Directed.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graph/HeapElem.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graph/DFS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graph/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graph/Traversal.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graph/BFS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Graph/Undirected.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Graph 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Graph 2>/dev/null || true
