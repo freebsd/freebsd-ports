@@ -13,3 +13,4 @@ lib/chimera/mailto.pl
 lib/chimera/playaudio
 lib/chimera/pstopxm
 man/man1/chimera.1.gz
+@dirrm lib/chimera
