@@ -32,6 +32,6 @@ MAN3=		Bundle::DBD::mysql.3 \
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 pre-configure:
-		@${PERL} -i -e 's| -lgz||' ${WRKSRC}/lib/DBD/mysql/Install.pm
+		@${PERL} -p -i -e 's| -lgz||' ${WRKSRC}/lib/DBD/mysql/Install.pm
 
 .include <bsd.port.mk>
