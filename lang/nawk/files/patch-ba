@@ -32,7 +32,7 @@
 +}
 +#endif
 +
- fa *makedfa(char *s, int anchor)	/* returns dfa for reg expr s */
+ fa *makedfa(const char *s, int anchor)	/* returns dfa for reg expr s */
  {
  	int i, use, nuse;
 @@ -287,6 +308,9 @@
