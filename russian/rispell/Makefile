@@ -9,7 +9,7 @@ PORTNAME=	ispell
 PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	russian textproc
-MASTER_SITES=	http://www.ispras.ru/~knizhnik/
+MASTER_SITES=   http://www.garret.ru/~knizhnik/
 DISTNAME=	rispell
 
 MAINTAINER=	ports@FreeBSD.org
