@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	scigraphica
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	math gnome
 MASTER_SITES=	http://scigraphica.sourceforge.net/src/ \
 		${MASTER_SITE_SOURCEFORGE} \
 		http://magnet.fsu.edu/~feiguin/scigraphica/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	sg-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	${PYNUMERIC}
-LIB_DEPENDS=	gtkextra.16:${PORTSDIR}/x11-toolkits/gtkextra
+LIB_DEPENDS=	gtkextra.17:${PORTSDIR}/x11-toolkits/gtkextra
 RUN_DEPENDS=	${PYNUMERIC} \
 		${PYTHON_SITELIBDIR}/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk
 
@@ -25,9 +24,10 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 USE_PYTHON=	yes
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 
 .include <bsd.port.pre.mk>
 

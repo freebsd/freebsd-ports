@@ -1,14 +1,14 @@
 
 $FreeBSD$
 
---- src/Makefile.in	2001/07/04 14:09:22	1.1
-+++ src/Makefile.in	2001/07/04 14:10:08
-@@ -139,7 +139,7 @@
- INCLUDES = -Ipython 	$(GTK_CFLAGS) $(GTK_EXTRA_CFLAGS) $(XML_CFLAGS) $(PY_CFLAGS)         $(BONOBO_CFLAGS) $(OAF_CFLAGS)
+--- src/Makefile.in.orig	Wed Dec  5 11:13:00 2001
++++ src/Makefile.in	Wed Dec  5 11:14:40 2001
+@@ -148,7 +148,7 @@
+ INCLUDES = -Ipython 	$(GTK_CFLAGS) $(GTK_EXTRA_CFLAGS) $(XML_CFLAGS) $(PY_CFLAGS)         $(BONOBO_CFLAGS) $(OAF_CFLAGS) $(LIBART_CFLAGS) 	$(GNOME_PRINT_CFLAGS)
  
  
--sga_LDADD = -L./python python/libpint.a 	$(GTK_LIBS) $(GTK_EXTRA_LIBS) $(XML_LIBS)         $(BONOBO_LIBS) $(OAF_LIBS) 	-L$(PY_LIB_LOC)/config -l$(PY_LIBS) $(PY_EXTRA_LIBS)         $(UTIL_LIBS) $(READLINE_LIB)
-+sga_LDADD = -L./python python/libpint.a 	$(GTK_LIBS) $(GTK_EXTRA_LIBS) $(XML_LIBS)         $(BONOBO_LIBS) $(OAF_LIBS) 	-L$(PY_LIB_LOC)/config -pthread -l$(PY_LIBS) $(PY_EXTRA_LIBS)         $(UTIL_LIBS) $(READLINE_LIB)
+-scigraphica_LDADD = -L./python python/libpint.a 	$(GTK_LIBS) $(GTK_EXTRA_LIBS) $(XML_LIBS)         $(BONOBO_LIBS) $(OAF_LIBS) 	-L$(PY_LIB_LOC)/config -l$(PY_LIBS) $(PY_EXTRA_LIBS)         $(UTIL_LIBS) $(READLINE_LIB) $(LIBART_LIBS) 	$(GNOME_PRINT_LIBS)
++scigraphica_LDADD = -L./python python/libpint.a 	$(GTK_LIBS) $(GTK_EXTRA_LIBS) $(XML_LIBS)         $(BONOBO_LIBS) $(OAF_LIBS) 	-L$(PY_LIB_LOC)/config $(PTHREAD_LIBS) -l$(PY_LIBS) $(PY_EXTRA_LIBS)         $(UTIL_LIBS) $(READLINE_LIB) $(LIBART_LIBS) 	$(GNOME_PRINT_LIBS)
  
  
  LIBS = @LIBS@
