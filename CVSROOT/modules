@@ -5636,6 +5636,7 @@ nagios		ports/net-mgmt/nagios
 nagios-plugins	ports/net-mgmt/nagios-plugins
 nagios-snmp-plugins	ports/net-mgmt/nagios-snmp-plugins
 nagios-statd	ports/sysutils/nagios-statd
+nagiostat	ports/net-mgmt/nagiostat
 nail		ports/mail/nail
 naim		ports/net/naim
 nakenchat	ports/net/nakenchat
