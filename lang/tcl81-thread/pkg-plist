@@ -1,4 +1,5 @@
 bin/tclsh8.1_r
+include/tcl8.1/tcl.h
 include/tcl8.1/generic/regcustom.h
 include/tcl8.1/generic/regerrs.h
 include/tcl8.1/generic/regex.h
@@ -12,6 +13,7 @@ include/tcl8.1/generic/tclPort.h
 include/tcl8.1/generic/tclRegexp.h
 include/tcl8.1/unix/tclUnixPort.h
 lib/libtcl81_r.a
+lib/libtcl81_r.so
 lib/libtcl81_r.so.1
 lib/tcl8.1/auto.tcl
 lib/tcl8.1/encoding/ascii.enc
