@@ -1,19 +1,19 @@
---- Makefile.in.orig	Fri Jan  3 06:02:41 2003
-+++ Makefile.in	Sat Jan 11 19:09:30 2003
-@@ -8,9 +8,12 @@
- mandir      = @mandir@
+--- Makefile.in.orig	Fri May  2 10:29:14 2003
++++ Makefile.in	Fri May  2 10:29:51 2003
+@@ -9,9 +9,11 @@
+ 
  CC          = @CC@
- CFLAGS      = -I. -Wall @CFLAGS@
+ CFLAGS      = -I. @CFLAGS@
 +CPPFLAGS    = @CPPFLAGS@
  LDFLAGS     = @LDFLAGS@
  LIBS        = @LIBS@
- INSTALL     = @INSTALL@
+-INSTALL     = @INSTALL@
 +INSTALL_PROGRAM = @INSTALL_PROGRAM@
 +INSTALL_DATA = @INSTALL_DATA@
- OBJS        = wmwork.o wmgeneral.o
  
  all: wmwork
-@@ -22,8 +25,8 @@
+ 
+@@ -22,8 +24,8 @@
  wmgeneral.o: wmgeneral.c wmgeneral.h
  
  install: wmwork wmwork.1
