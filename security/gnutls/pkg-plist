@@ -1,21 +1,23 @@
 @comment $FreeBSD$
-bin/gnutls-serv
 bin/gnutls-cli
-bin/gnutls-srpcrypt
 bin/gnutls-cli-debug
+bin/gnutls-serv
+bin/gnutls-srpcrypt
 bin/libgnutls-config
 bin/libgnutls-extra-config
-include/gnutls/extra.h
 include/gnutls/compat4.h
-include/gnutls/openssl.h
+include/gnutls/extra.h
 include/gnutls/gnutls.h
+include/gnutls/openssl.h
 @dirrm include/gnutls
-lib/libgnutls.so.7
-lib/libgnutls.so
-lib/libgnutls.a
-lib/libgnutls-extra.so.7
-lib/libgnutls-extra.so
 lib/libgnutls-extra.a
+lib/libgnutls-extra.la
+lib/libgnutls-extra.so
+lib/libgnutls-extra.so.7
+lib/libgnutls.a
+lib/libgnutls.la
+lib/libgnutls.so
+lib/libgnutls.so.7
 share/aclocal/libgnutls.m4
 share/aclocal/libgnutls-extra.m4
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
