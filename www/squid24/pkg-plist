@@ -1,5 +1,7 @@
 etc/rc.d/squid.sh
 etc/squid/errors/ERR_ACCESS_DENIED
+etc/squid/errors/ERR_CACHE_ACCESS_DENIED
+etc/squid/errors/ERR_CACHE_MGR_ACCESS_DENIED
 etc/squid/errors/ERR_CANNOT_FORWARD
 etc/squid/errors/ERR_CLIENT_ABORT
 etc/squid/errors/ERR_CONNECT_FAIL
@@ -7,6 +9,9 @@ etc/squid/errors/ERR_DNS_FAIL
 etc/squid/errors/ERR_FORWARDING_DENIED
 etc/squid/errors/ERR_FTP_DISABLED
 etc/squid/errors/ERR_FTP_FAILURE
+etc/squid/errors/ERR_FTP_PUT_CREATED
+etc/squid/errors/ERR_FTP_PUT_ERROR
+etc/squid/errors/ERR_FTP_PUT_MODIFIED
 etc/squid/errors/ERR_INVALID_REQ
 etc/squid/errors/ERR_INVALID_URL
 etc/squid/errors/ERR_LIFETIME_EXP
