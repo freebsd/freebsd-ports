@@ -1,20 +1,10 @@
---- gtk-config.in.orig	Fri Dec 18 10:47:52 1998
-+++ gtk-config.in	Fri Jan  1 01:24:08 1999
-@@ -8,7 +8,7 @@
- exec_prefix_set=no
- 
- usage="\
--Usage: gtk-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--version] [--libs] [--cflags]"
-+Usage: gtk11d-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--version] [--libs] [--cflags]"
- 
- if test $# -eq 0; then
-       echo "${usage}" 1>&2
-@@ -64,7 +64,7 @@
-           fi
+--- gtk-config.in.orig	Thu Feb  4 17:06:44 1999
++++ gtk-config.in	Wed Feb 17 21:22:48 1999
+@@ -115,6 +115,6 @@
          fi
        done
+ 
 -      echo $libdirs @x_ldflags@ -lgtk -lgdk $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
 +      echo $libdirs @x_ldflags@ -lgtk11d -lgdk11d $my_glib_libs @INTLLIBS@ @x_libs@ @GDK_WLIBS@ -lm
-       ;;
-     *)
-       echo "${usage}" 1>&2
+ fi      
+ 

@@ -1,0 +1,11 @@
+--- configure.orig	Thu Feb 18 01:35:07 1999
++++ configure	Thu Feb 18 01:35:27 1999
+@@ -4444,7 +4444,7 @@
+ 
+ # AM_GTK_GNU_GETTEXT above substs $DATADIRNAME
+ # this is the directory where the *.{mo,gmo} files are installed
+-gtklocaledir='${prefix}/${DATADIRNAME}/locale'
++gtklocaledir='${prefix}/share/locale'
+ 
+ 
+ echo $ac_n "checking for extra flags to get ANSI library prototypes""... $ac_c" 1>&6
