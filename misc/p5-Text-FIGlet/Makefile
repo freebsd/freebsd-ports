@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Text
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	dan@spot.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to provide FIGlet abilities, akin to banner
 
 RUN_DEPENDS=	${LOCALBASE}/bin/figlet:${PORTSDIR}/misc/figlet
