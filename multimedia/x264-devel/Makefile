@@ -16,10 +16,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/0.0.//}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Multimedia library and tool for encoding H.264/AVC video streams
 
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-
-ONLY_FOR_ARCHS=	i386
-
 USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -42,15 +38,16 @@ OPTIONS=	DEBUG "Enable Debugging" Off \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH}=="i386"
-CFLAGS+=-DARCH_X86
-.endif
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 
+CFLAGS+=	-DARCH_X86
+MAKE_ENV+=	ARCH_X86="1"
 .if ${MACHINE_CPU:Mmmx}
-CFLAGS+=-DHAVE_MMXEXT
+CFLAGS+=	-DHAVE_MMXEXT
 .endif
-
 .if ${MACHINE_CPU:Msse}
-CFLAGS+=-DHAVE_SSE2
+CFLAGS+=	-DHAVE_SSE2
+.endif
 .endif
 
 .if !defined(WITH_DEBUG)
