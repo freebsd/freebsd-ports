@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Aug 20 00:23:35 1999
-+++ Makefile	Tue Jan 25 02:01:41 2000
+--- Makefile.orig	Thu Aug 19 15:23:35 1999
++++ Makefile	Tue Jul 24 15:30:22 2001
 @@ -1,5 +1,5 @@
 -ELISP_DIR   = /usr/share/emacs/site-lisp
 -ISPELL_DIR  = /usr/lib/ispell
@@ -8,9 +8,12 @@
  
  KITDIR      = ../save-kostya-dict
  
-@@ -17,7 +17,7 @@
+@@ -15,9 +15,9 @@
+ 	buildhash russian.sml russian.aff russian.hash
+ 
  russian.sml: russian.sq.gz
- 	gzip -dc russian.sq.gz | unsq > russian.sml
+-	gzip -dc russian.sq.gz | unsq > russian.sml
++	gzip -dc russian.sq.gz | uniq > russian.sml
  
 -install: unsq russian.hash
 +install: russian.hash
