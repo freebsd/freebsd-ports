@@ -15,8 +15,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
-LIB_DEPENDS+=	ogg.3:${PORTSDIR}/audio/libogg \
-		vorbis.1:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	ogg.4:${PORTSDIR}/audio/libogg \
+		vorbis.2:${PORTSDIR}/audio/libvorbis
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
