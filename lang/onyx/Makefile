@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	onyx
-PORTVERSION=	4.3.0
+PORTVERSION=	4.4.3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
@@ -17,6 +17,7 @@ BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
 LIB_DEPENDS=	edit.5:${PORTSDIR}/devel/libedit \
 		pcre.0:${PORTSDIR}/devel/pcre
 
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
