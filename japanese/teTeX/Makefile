@@ -24,8 +24,6 @@ RUN_DEPENDS=	${TETEX_MODESW}:${PORTSDIR}/print/tex-texmflocal \
 		jtex:${PORTSDIR}/japanese/texfamily \
 		#${JTEXVF}:${PORTSDIR}/japanese/texfamily-vfn2a
 
-CONFLICTS=	dvips* xdvi* ptex-base*
-
 TETEX_MODESW=	${LOCALBASE}/bin/tetex-modesw
 JTEXVF=		${LOCALBASE}/share/texmf-local/fonts/vf/n2a/dmjsy5.vf
 
