@@ -22,7 +22,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CPP="${CC} -E"
+MAKE_ENV=	CPP="${CC} -E" CC="${CC}"
 
 CFLAGS+=	-DDATADIR=\\\"${DATADIR}\\\"
 

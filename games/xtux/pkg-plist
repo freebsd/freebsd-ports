@@ -1,10 +1,10 @@
 bin/tux_serv
 bin/xtux
-%%PORTDOCS%%share/doc/xtux/entities
-%%PORTDOCS%%share/doc/xtux/images
-%%PORTDOCS%%share/doc/xtux/mapformat
-%%PORTDOCS%%share/doc/xtux/weapons
-%%PORTDOCS%%share/doc/xtux/README
+%%PORTDOCS%%%%DOCSDIR%%/entities
+%%PORTDOCS%%%%DOCSDIR%%/images
+%%PORTDOCS%%%%DOCSDIR%%/mapformat
+%%PORTDOCS%%%%DOCSDIR%%/weapons
+%%PORTDOCS%%%%DOCSDIR%%/README
 share/xtux/ascii.txt
 share/xtux/bios
 share/xtux/default.table
@@ -566,7 +566,7 @@ share/xtux/street.table
 share/xtux/trashed.table
 share/xtux/weapons
 share/xtux/wwt.table
-%%PORTDOCS%%@dirrm share/doc/xtux
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/xtux/demos
 @dirrm share/xtux/images/entities
 @dirrm share/xtux/images/events
