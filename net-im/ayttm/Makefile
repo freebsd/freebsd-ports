@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	everybuddy
-PORTVERSION=	0.2.1b5
+PORTVERSION=	0.2.1b6
 CATEGORIES=	net
 MASTER_SITES=	http://www.everybuddy.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/beta/}
