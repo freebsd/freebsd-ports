@@ -43,7 +43,6 @@ include/opencl/haval.h
 include/opencl/hex.h
 include/opencl/hmac.h
 include/opencl/idea.h
-include/opencl/ieee1363.h
 include/opencl/init.h
 include/opencl/isaac.h
 include/opencl/kdf1.h
@@ -80,7 +79,6 @@ include/opencl/pipe.h
 include/opencl/pk_filts.h
 include/opencl/pk_keys.h
 include/opencl/pk_misc.h
-include/opencl/pk_types.h
 include/opencl/pkcs1.h
 include/opencl/primes.h
 include/opencl/pubkey.h
