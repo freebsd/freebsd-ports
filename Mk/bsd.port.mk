@@ -3461,10 +3461,8 @@ fake-pkg:
 		done; \
 	fi
 .if !defined(NO_MTREE)
-	@if [ ! -d ${PKG_DBDIR}/${PKGNAME} ]; then \
-		if [ -f ${MTREE_FILE} ]; then \
-			${CP} ${MTREE_FILE} ${PKG_DBDIR}/${PKGNAME}/+MTREE_DIRS; \
-		fi; \
+	@if [ -f ${MTREE_FILE} ]; then \
+		${CP} ${MTREE_FILE} ${PKG_DBDIR}/${PKGNAME}/+MTREE_DIRS; \
 	fi
 .endif
 	@if [ -e /tmp/${PKGNAME}-required-by ]; then \
