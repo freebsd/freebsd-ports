@@ -2,9 +2,9 @@ bin/gtkballs
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.russian
 %%PORTDOCS%%%%DOCSDIR%%/TODO
-%%DATADIR%%/gtkballs-logo.xpm
+%%DATADIR%%/gtkballs-logo.png
 %%DATADIR%%/gtkballs-scores
-%%DATADIR%%/gtkballs_16x16.xpm
+%%DATADIR%%/gtkballs_16x16.png
 %%DATADIR%%/themes/Default/blue_ball.xpm
 %%DATADIR%%/themes/Default/blue_ball_destroy1.xpm
 %%DATADIR%%/themes/Default/blue_ball_destroy10.xpm
