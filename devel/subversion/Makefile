@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	r2376	# 0.13.2
-PORTREVISION=	1
+PORTVERSION=	r2667	# 0.14.0
 CATEGORIES=	devel
-MASTER_SITES=	http://subversion.tigris.org/files/documents/15/340/
+MASTER_SITES=	http://subversion.tigris.org/files/documents/15/578/
 
 MAINTAINER=	rooneg@electricjellyfish.net
 
@@ -18,8 +17,6 @@ LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4 \
 		apr:${PORTSDIR}/devel/apr
 RUN_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
 BUILD_DEPENDS=	gdiff3:${PORTSDIR}/textproc/diffutils
-
-MAN1=		svn.1
 
 WRKSRC=	${WRKDIR}/subversion-${PORTVERSION}
 GNU_CONFIGURE=	yes
@@ -40,5 +37,6 @@ post-extract:
 post-configure:
 	@${REINPLACE_CMD} 's/install-swig-py-lib//g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's/swig-py-lib//g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's/install-man install-info//g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
 bin/svn
+bin/svn-config
 bin/svnadmin
 bin/svnlook
 include/subversion-1/svn_auth.h
@@ -23,15 +24,10 @@ include/subversion-1/svn_string.h
 include/subversion-1/svn_test.h
 include/subversion-1/svn_time.h
 include/subversion-1/svn_types.h
+include/subversion-1/svn_utf.h
 include/subversion-1/svn_version.h
 include/subversion-1/svn_wc.h
 include/subversion-1/svn_xml.h
-info/svn-design.info
-info/svn-design.info-1
-info/svn-design.info-2
-info/svn-design.info-3
-info/svn-manual.info
-info/svn_for_cvs_users.info
 lib/libsvn_auth-1.a
 lib/libsvn_auth-1.la
 lib/libsvn_auth-1.so
