@@ -1,0 +1,10 @@
+--- configure.in.orig	Sun Mar 18 11:17:30 2001
++++ configure.in	Sun Mar 18 11:17:44 2001
+@@ -33,6 +33,7 @@
+ 		src/Makefile	\
+ 		src/libFLAC/Makefile	\
+ 		src/flac/Makefile	\
++		src/metaflac/Makefile	\
+ 		src/plugin_xmms/Makefile	\
+ 		src/test_streams/Makefile	\
+ 		src/test_unit/Makefile	\

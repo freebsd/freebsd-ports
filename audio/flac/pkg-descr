@@ -1,0 +1,24 @@
+FLAC stands for Free Lossless Audio Codec. The FLAC project consists of: 
+
+   - the stream format 
+   - libFLAC, a library which implements a reference encoder, stream decoder,
+     and file decoder 
+   - flac, which is a command-line wrapper around libFLAC to encode and
+     decode .flac files 
+   - input plugins for various music players (Winamp, XMMS, and more in the
+     works) 
+
+What FLAC is:
+   - FLAC is patent free
+   - FLAC is lossless
+   - FLAC is designed to compress audio data
+   - The compression capabilities of FLAC are extendable
+   - The currently implemented compression methods in the reference encoder
+     yield streams smaller than shorten
+   - FLAC is asymmetric in favor of decode speed
+   - FLAC is suitable for archiving
+   - FLAC is suitable for streaming
+   - FLAC supports fast sample-accurate seeking
+   - FLAC has an extendable metadata system
+
+WWW: http://flac.sourceforge.net/
