@@ -1,0 +1,14 @@
+Index: config.h.in
+diff -u config.h.in.orig config.h.in
+--- config.h.in.orig	Wed Oct 29 02:24:49 2003
++++ config.h.in	Sat Nov 22 18:43:54 2003
+@@ -100,6 +100,9 @@
+ /* Does SASL support APOP? */
+ #undef HAVE_APOP
+ 
++/* the Dynamic Relay Authorization Control package */
++#undef DRAC_AUTH
++
+ /* Define to 1 if you have the `daemon' function. */
+ #undef HAVE_DAEMON
+ 
