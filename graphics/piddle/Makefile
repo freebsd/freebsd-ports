@@ -9,7 +9,8 @@ PORTNAME=	piddle
 PORTVERSION=	1.0b1
 CATEGORIES=	graphics python
 MASTER_SITES=	http://download.sourceforge.net/piddle/
-DISTFILES=	piddle-1.0b1-5.tgz
+DISTNAME=	${PORTNAME}-${PORTVERSION}-5
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 
@@ -32,8 +33,11 @@ post-extract:
 .endfor
 
 do-install:
-	${MKDIR} ${PIDDLEDIR}
+	${MKDIR} ${PIDDLEDIR}/pilfonts
 	${INSTALL_DATA} ${WRKSRC}/*.py ${PIDDLEDIR}
+	${INSTALL_DATA} ${WRKSRC}/pilfonts/*.pil ${PIDDLEDIR}/pilfonts
+	${INSTALL_DATA} ${WRKSRC}/pilfonts/*.pbm ${PIDDLEDIR}/pilfonts
+	${INSTALL_DATA} ${WRKSRC}/pilfonts/metrics.dat ${PIDDLEDIR}/pilfonts
 	${ECHO} 'piddle' > ${PIDDLEDIR}.pth
 	@${PYTHON} ${PYTHONLIBDIR}/compileall.py ${PIDDLEDIR}
 	@${PYTHON} -O ${PYTHONLIBDIR}/compileall.py ${PIDDLEDIR}
