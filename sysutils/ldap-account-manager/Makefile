@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	LDAP-Account-Manager
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.4
 CATEGORIES=	sysutils www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lam
@@ -31,9 +31,8 @@ MOD_DIR=	libexec/apache
 WWW_ROOT?=	www/lam
 PLIST_SUB+=	WWWROOT=${WWW_ROOT}
 WWW_DIR=	config graphics help lib locale sess style templates
-MYPORTDOCS=	HISTORY README TODO docs/README.fpdf docs/README.openldap \
-		docs/README.shells docs/README.hosts docs/README.security \
-		docs/README.lamdaemon.pl
+MYPORTDOCS=	HISTORY README TODO docs/README.fpdf.htm docs/README.openldap.txt \
+		docs/README.hosts.txt docs/README.security.txt docs/README.lamdaemon.txt
 WWW_OWNED=	sess tmp config config config/profiles config/profiles/groups \
 		config/profiles/groups/default.prg config/profiles/hosts \
 		config/profiles/hosts/default.prh config/profiles/users \
