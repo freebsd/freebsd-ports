@@ -21,7 +21,7 @@ MAINTAINER=	taguchi@tohoku.iij.ad.jp
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 
 PREFIX?=	${X11BASE}
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 MTREE_FILE=	/etc/mtree/BSD.x11.dist
 DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/xc

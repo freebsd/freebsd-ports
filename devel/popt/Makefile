@@ -15,7 +15,7 @@ MAINTAINER=	ycheng@sinica.edu.tw
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 USE_LIBTOOL=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 

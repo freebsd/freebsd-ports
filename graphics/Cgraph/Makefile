@@ -15,7 +15,7 @@ MAINTAINER=	tobez@plab.ku.dk
 
 WRKSRC=		${WRKDIR}/Cgraph/source
 
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile

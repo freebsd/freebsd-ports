@@ -18,7 +18,7 @@ LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/blt2.4s
 GNU_CONFIGURE=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 MANN=		BLT.n barchart.n beep.n bgexec.n bitmap.n \
 		bltdebug.n busy.n cutbuffer.n dragdrop.n eps.n \

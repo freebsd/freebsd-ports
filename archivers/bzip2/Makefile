@@ -17,7 +17,7 @@ MAINTAINER=	obrien@FreeBSD.org
 
 FETCH_BEFORE_ARGS=	-b
 
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 MAN1=		bzip2.1
 MLINKS=		bzip2.1 bunzip2.1   bzip2.1 bzcat.1   bzip2.1 bz2cat.1 \

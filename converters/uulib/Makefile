@@ -15,7 +15,7 @@ DISTNAME=	uudeview-${PORTVERSION}
 MAINTAINER=	hoek@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 MAN3=		uulib.3
 

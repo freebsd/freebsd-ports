@@ -16,7 +16,7 @@ MASTER_SITES=	http://tzo.linux.tucows.com/files/x11/dev/ \
 MAINTAINER=	will@FreeBSD.org
 
 USE_LIBTOOL=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 USE_GMAKE=	yes
 
 post-install:

@@ -17,7 +17,7 @@ MAINTAINER=	sec@42.org
 WRKSRC=		${WRKDIR}/lib${PKGNAME}
 USE_XLIB=	yes
 USE_LIBTOOL=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>

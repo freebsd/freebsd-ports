@@ -17,7 +17,7 @@ MAINTAINER=	torstenb@FreeBSD.org
 FORBIDDEN=	tcp_wrappers is in the base system
 .endif
 
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 ALL_TARGET=	freebsd
 MAN3=		hosts_access.3

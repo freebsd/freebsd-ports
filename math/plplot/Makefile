@@ -17,7 +17,7 @@ DISTNAME=       plplot4p99j
 MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-gcc=yes --with-double=yes
 

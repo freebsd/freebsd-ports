@@ -14,7 +14,7 @@ DISTNAME=       ${PORTNAME}${PORTVERSION}
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_XLIB=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 WRKSRC=		${WRKDIR}/pgplot
 
 .include <bsd.port.pre.mk>

@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.engelschall.com/sw/str/ \
 MAINTAINER=	rse@engelschall.com
 
 HAS_CONFIGURE=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 MAN1=		str-config.1

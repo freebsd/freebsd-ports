@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/python:${PORTSDIR}/lang/python \
 		${LOCALBASE}/bin/tclsh8.2:${PORTSDIR}/lang/tcl82
 
 USE_PERL5=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 WRKSRC=		${WRKDIR}/SWIG${PORTVERSION}
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-tclincl=${PREFIX}/include/tcl8.2/ \

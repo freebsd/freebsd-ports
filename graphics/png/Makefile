@@ -21,7 +21,7 @@ PATCHFILES=     libpng-1.0.6-patch-a.txt.gz \
 
 MAINTAINER=     ache@FreeBSD.org
 
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 MAN3=           libpng.3 libpngpf.3
 MAN5=           png.5

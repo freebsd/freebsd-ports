@@ -25,7 +25,7 @@ USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 LIBTOOLFILES=	configure libefs/configure
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome

@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@FreeBSD.org
 
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile

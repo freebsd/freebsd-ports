@@ -15,7 +15,7 @@ MAINTAINER=	adam@whizkidtech.net
 
 BUILD_DEPENDS=	tuc:${PORTSDIR}/converters/tuc
 
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 USE_ZIP=	yes
 DIST_SUBDIR=	tifmerge
 MAN3=		tifmerge.3

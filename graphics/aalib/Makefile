@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_AUTOCONF=	yes
 USE_LIBTOOL=	yes
-INSTALL_SHLIBS=	yes
+INSTALLS_SHLIBS=	yes
 
 .include <bsd.port.pre.mk>
 
