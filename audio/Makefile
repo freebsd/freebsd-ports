@@ -50,6 +50,7 @@
     SUBDIR += dagrab
     SUBDIR += dap
     SUBDIR += darkice
+    SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += discid
     SUBDIR += easytag
