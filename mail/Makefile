@@ -120,6 +120,7 @@
     SUBDIR += nbsmtp
     SUBDIR += newmail
     SUBDIR += nmh
+    SUBDIR += noattach
     SUBDIR += nullmailer
     SUBDIR += p5-Email-Find
     SUBDIR += p5-Email-Valid
