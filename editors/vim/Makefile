@@ -44,7 +44,7 @@ PATCH_DIST_ARGS= -d ${WRKSRC:S/src$//} --batch --forward --quiet -E ${PATCH_DIST
 #PATCH_DIST_ARGS=	-t
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib ${CSCOPE_ARG}"
 ALL_TARGET=	#
-_DATADIR=	${DISTNAME:C/.[0-9]*$//:S/-//g:S/.//g}
+_DATADIR=	${DISTNAME:S/-//g:S/.//g}
 DATADIR=	${PREFIX}/share/vim/${_DATADIR}
 PLIST_SUB=	VIM_VER=${_DATADIR}
 MAN1=		evim.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
