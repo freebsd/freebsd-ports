@@ -1,0 +1,11 @@
+--- src/Configure.bak	Thu Sep 16 03:45:17 2004
++++ src/Configure	Mon Oct 25 17:59:48 2004
+@@ -456,7 +456,7 @@
+     	PLATOSVERS=`echo $PLAT | sed 's/^.*freebsd//'`
+ 	OS="FreeBSD $PLATOSVERS"
+ 	case "$PLATOSVERS" in
+-	    [2345]*)
++	    [2-9]*)
+ 		DEF_WANTHSREGEX=no
+ 		CFLAGS="$CFLAGS -funsigned-char"
+ 		;;
