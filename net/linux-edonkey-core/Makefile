@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	0.2000.15.16.58.0.2
+PORTVERSION=	0.2000.16.16.59
 CATEGORIES=	net linux
-MASTER_SITES=	http://users.aber.ac.uk/tpm01/
+MASTER_SITES=	http://www.edonkey2000.com/files/
 PKGNAMESUFFIX=	-core
-DISTNAME=	donkey_s_58test-2
+DISTNAME=	donkey_s
 EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
 
