@@ -2,7 +2,7 @@
 # Date created:		11 Mar 2000
 # Whom:			Jing-Tang Keith Jang <keith@FreeBSD.org>
 #
-# $FreeBSD: /tmp/pcvs/ports/chinese/netscape47-communicator/Attic/Makefile,v 1.4 2001-02-04 08:06:51 keith Exp $
+# $FreeBSD: /tmp/pcvs/ports/chinese/netscape47-communicator/Attic/Makefile,v 1.5 2001-06-22 13:05:50 keith Exp $
 #
 
 PORTNAME=	netscape-${BROWSER_ARC}
@@ -16,7 +16,6 @@ MAINTAINER=	keith@FreeBSD.org
 # ?= is for ports that include this Makefile.
 # We need Arphic because there's no font with all sizes to deal with Java.
 RUN_DEPENDS?=	\
-		${X11BASE}/lib/aout/zh-XFree86-aoutlibs-3.3.6:${.CURDIR}/../XFree86-aoutlibs \
 		${LOCALBASE}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER} \
 		${LOCALBASE}/lib/aout/libxpg4-ns.so.2.0:${PORTSDIR}/www/libxpg4-ns \
 		${X11BASE}/lib/X11/fonts/TrueType/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf
