@@ -6,23 +6,22 @@
 #
 
 PORTNAME=	mosfet-liquid
-PORTVERSION=	0.9.5
-PORTREVISION=	2
+PORTVERSION=	0.9.6
 CATEGORIES=	x11-wm kde
-MASTER_SITES=	http://www.mosfet.org/ \
-		http://virtual-estates.net/~mi/port-stuff/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	http://www.mosfet.org/
+DISTNAME=	${PORTNAME}${PORTVERSION}-pre3
 
 MAINTAINER=	kde@freebsd.org
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf
 
-BROKEN=	It breaks some KDE 3.1 functionality
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_KDEBASE_VER=3
 INSTALLS_SHLIB=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}pre3
 
 pre-configure:
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} -f Makefile.cvs
