@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	balsa
-PORTVERSION= 	0.9.5
-PORTREVISION=	1
+PORTVERSION= 	1.0.pre1
+#PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -47,5 +47,7 @@ pre-patch:
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g ; \
 		 s|\$\(gnomedatadir\)/gnome|\$\(gnomedatadir\)|g'
+	@find ${WRKSRC}/help -name "*.html" | xargs ${PERL} -pi -e \
+		's|\.gif|.png|g'
 
 .include <bsd.port.mk>
