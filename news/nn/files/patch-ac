@@ -1,0 +1,22 @@
+--- inst.sh.orig	Fri Apr 28 22:34:49 1995
++++ inst.sh	Fri Apr 16 01:30:09 1999
+@@ -1,8 +1,8 @@
+ 
+ # (Large) prefix inserted above by Make
+ 
+-# BSD systems keep chown in /etc
+-PATH="$PATH:/etc"
++# BSD systems keep chown in /usr/sbin
++PATH="$PATH:/usr/sbin"
+ 
+ case "$1" in
+ mkdir)
+@@ -55,7 +55,7 @@
+ 	;;
+ esac
+ 
+-set -u
++#set -u
+ 
+ (
+ if $NNTP

@@ -1,0 +1,29 @@
+--- nn.c.orig	Fri Jul 17 08:32:08 1998
++++ nn.c	Fri Apr 16 01:41:04 1999
+@@ -394,7 +394,7 @@
+     fl;
+     mode = 0;
+ 
+-    if (gets(answer1)) {
++    if (fgets(answer1, sizeof(answer1), stdin)) {
+ 	if (strncmp(answer1, "auto", 4) == 0) {
+ 	    tprintf("\nUPDATING .newsrc FILE....");
+ 	    fl;
+@@ -437,7 +437,7 @@
+ 	       (long)(gh->last_db_article - gh->last_article));
+ 	fl;
+ 
+-	if (gets(answer1) == NULL || s_keyboard)
++	if (fgets(answer1, sizeof(answer1), stdin) == NULL || s_keyboard)
+ 	    *answer1 = 'q';
+ 
+ 	switch (*answer1) {
+@@ -446,7 +446,7 @@
+ 	    tputc(NL);
+ 	    tprintf("Update rest? (yn) n\b");
+ 	    fl;
+-	    if (gets(answer1) == NULL || *answer1 != 'y')
++	    if (fgets(answer1, sizeof(answer1), stdin) == NULL || *answer1 != 'y')
+ 		return;
+ 
+ 	    mode = -1;
