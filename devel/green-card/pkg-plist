@@ -1,0 +1,26 @@
+bin/green-card
+lib/green-card/StdDIS.gc
+lib/green-card/StdDIS.hi
+lib/green-card/StdDIS.hs
+lib/green-card/StdDIS.o
+lib/green-card/libHSgreencard.a
+%%PORTDOCS%%share/doc/green-card/directives.html
+%%PORTDOCS%%share/doc/green-card/dis-std.html
+%%PORTDOCS%%share/doc/green-card/dis.html
+%%PORTDOCS%%share/doc/green-card/docbook.css
+%%PORTDOCS%%share/doc/green-card/extensions.html
+%%PORTDOCS%%share/doc/green-card/fill-in.html
+%%PORTDOCS%%share/doc/green-card/goals.html
+%%PORTDOCS%%share/doc/green-card/green-card.dvi.gz
+%%PORTDOCS%%share/doc/green-card/green-card.ps.gz
+%%PORTDOCS%%share/doc/green-card/greencard.html
+%%PORTDOCS%%share/doc/green-card/import.html
+%%PORTDOCS%%share/doc/green-card/invoking.html
+%%PORTDOCS%%share/doc/green-card/motivation.html
+%%PORTDOCS%%share/doc/green-card/overview.html
+%%PORTDOCS%%share/doc/green-card/proc-spec.html
+%%PORTDOCS%%share/doc/green-card/related.html
+%%PORTDOCS%%share/doc/green-card/type-sig.html
+%%PORTDOCS%%share/doc/green-card/using.html
+%%PORTDOCS%%@dirrm share/doc/green-card
+@dirrm lib/green-card
