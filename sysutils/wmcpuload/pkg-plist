@@ -1,4 +1,4 @@
 bin/wmcpuload
+%%PORTDOCS%%share/doc/wmcpuload/ChangeLog
 %%PORTDOCS%%share/doc/wmcpuload/README
-%%PORTDOCS%%share/doc/wmcpuload/TODO
 %%PORTDOCS%%@dirrm share/doc/wmcpuload

@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	wmcpuload
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
-DISTNAME=	WMCPULoad-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
 
@@ -19,10 +18,16 @@ USE_XPM=	yes
 
 MAN1=		wmcpuload.1
 
+pre-patch:
+.for dir in src doc .
+	@${PERL} -pi -e 's|\@program_transform_name\@||' \
+		${WRKSRC}/${dir}/Makefile.in
+.endfor
+
 .ifndef(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-.for file in README TODO
+.for file in ChangeLog README
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif # !NOPORTDOCS
