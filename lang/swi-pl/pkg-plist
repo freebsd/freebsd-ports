@@ -81,7 +81,6 @@ lib/%%DISTNAME%%/library/threadutil.pl
 lib/%%DISTNAME%%/library/tty.pl
 lib/%%DISTNAME%%/library/url.pl
 lib/%%DISTNAME%%/swipl
-@dirrm lib/%%DISTNAME%%/man
 @dirrm lib/%%DISTNAME%%/library/clp
 @dirrm lib/%%DISTNAME%%/library
 @dirrm lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%
