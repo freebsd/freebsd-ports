@@ -7,7 +7,7 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.0.0
-CATEGORIES=	editors
+CATEGORIES+=	editors
 MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 		http://niihau.student.utwente.nl/openoffice/${PORTVERSION}/ \
 		http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
@@ -17,7 +17,37 @@ MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
 		oo_moz1.0RC3_includes.tgz ${MOZILLADIST}
 
+SORT?=	/usr/bin/sort
+
 .include <bsd.port.pre.mk>
+
+#
+# configuration for language specific slave ports
+#
+.if defined(LANG_PKGNAME)
+PKGNAMEPREFIX=	${LANG_PKGNAME}-
+
+#
+# LANG_CONFIGURE_ARG is missing for the german port
+#
+.if defined(LANG_EXT) && LANG_EXT!=49
+CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG}
+.endif
+
+INSTALLATION_BASEDIR=	OpenOffice.org1.0
+
+.if exists(${.CURDIR}/pkg-comment)
+COMMENT=	${.CURDIR}/pkg-comment
+.endif
+
+.if exists(${.CURDIR}/pkg-descr)
+DESCR=	${.CURDIR}/pkg-descr
+.endif
+.endif
+
+.if !defined(LANG_EXT)
+LANG_EXT=01
+.endif
 
 .if ${OSVERSION} > 500000
 #
@@ -253,10 +283,14 @@ do-build:
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
 		tcsh -c 'source FreeBSDEnv.Set && ${DMAKE}'
 .endif
+.if defined(LANG_PKGNAME)
+	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+		tcsh -c 'source FreeBSDEnv.Set && cd instsetoo/util && ${DMAKE} LANGEXT=${LANGEXT}'
+.endif
 
 pre-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/oo_setup.resp \
-	    > ${WRKSRC}/../instsetoo/unxfbsd.pro/01/normal/oo_setup.resp
+	    > ${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
 
 do-install:
 .if !defined(DISPLAY)
@@ -267,17 +301,25 @@ do-install:
 	@sleep 5
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
 		TEMP=${WRKDIR} DISPLAY=${DISPLAYHACK} \
-		${WRKSRC}/../instsetoo/*.pro/01/normal/setup -r:oo_setup.resp
+		${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/setup -r:oo_setup.resp
 	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
 		TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
-		${WRKSRC}/../instsetoo/*.pro/01/normal/setup -r:oo_setup.resp
+		${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/setup -r:oo_setup.resp
 .endif
 
 install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" \
 		${PREFIX}/OpenOffice.org1.0/program/setup
+
+# configuration for language specific slave ports
+.if defined(LANG_PKGNAME)
+post-install:
+	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type f > ${TMPPLIST}
+	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type d > ${WRKDIR}/dir.tmp
+	@${SORT} -r ${WRKDIR}/dir.tmp | ${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
+.endif
 
 .include <bsd.port.post.mk>
