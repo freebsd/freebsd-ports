@@ -2,27 +2,27 @@
 bin/bochs
 bin/bxcommit
 bin/bximage
-share/bochs/BIOS-bochs-2-processors
-share/bochs/BIOS-bochs-4-processors
-share/bochs/BIOS-bochs-8-processors
-share/bochs/BIOS-bochs-latest
-share/bochs/VGABIOS-elpin-2.40
-share/bochs/VGABIOS-elpin-LICENSE
-share/bochs/VGABIOS-lgpl-README
-share/bochs/VGABIOS-lgpl-latest
-share/bochs/VGABIOS-lgpl-latest-debug
-share/bochs/keymaps/convertmap.pl
-share/bochs/keymaps/sdl-pc-de.map
-share/bochs/keymaps/sdl-pc-us.map
-share/bochs/keymaps/x11-pc-be.map
-share/bochs/keymaps/x11-pc-da.map
-share/bochs/keymaps/x11-pc-de.map
-share/bochs/keymaps/x11-pc-es.map
-share/bochs/keymaps/x11-pc-fr.map
-share/bochs/keymaps/x11-pc-it.map
-share/bochs/keymaps/x11-pc-se.map
-share/bochs/keymaps/x11-pc-uk.map
-share/bochs/keymaps/x11-pc-us.map
+%%DATADIR%%/BIOS-bochs-2-processors
+%%DATADIR%%/BIOS-bochs-4-processors
+%%DATADIR%%/BIOS-bochs-8-processors
+%%DATADIR%%/BIOS-bochs-latest
+%%DATADIR%%/VGABIOS-elpin-2.40
+%%DATADIR%%/VGABIOS-elpin-LICENSE
+%%DATADIR%%/VGABIOS-lgpl-README
+%%DATADIR%%/VGABIOS-lgpl-latest
+%%DATADIR%%/VGABIOS-lgpl-latest-debug
+%%DATADIR%%/keymaps/convertmap.pl
+%%DATADIR%%/keymaps/sdl-pc-de.map
+%%DATADIR%%/keymaps/sdl-pc-us.map
+%%DATADIR%%/keymaps/x11-pc-be.map
+%%DATADIR%%/keymaps/x11-pc-da.map
+%%DATADIR%%/keymaps/x11-pc-de.map
+%%DATADIR%%/keymaps/x11-pc-es.map
+%%DATADIR%%/keymaps/x11-pc-fr.map
+%%DATADIR%%/keymaps/x11-pc-it.map
+%%DATADIR%%/keymaps/x11-pc-se.map
+%%DATADIR%%/keymaps/x11-pc-uk.map
+%%DATADIR%%/keymaps/x11-pc-us.map
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/README
@@ -41,6 +41,6 @@ share/bochs/keymaps/x11-pc-us.map
 %%PORTDOCS%%%%DOCSDIR%%/random.txt
 %%PORTDOCS%%%%DOCSDIR%%/release-prep.txt
 %%PORTDOCS%%@dirrm share/doc/bochs/html
-@dirrm share/bochs/keymaps
-@dirrm share/bochs
+@dirrm %%DATADIR%%/keymaps
+@dirrm %%DATADIR%%
 @dirrm %%DOCSDIR%%

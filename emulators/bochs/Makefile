@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	2.1
-PORTREVISION=	2
+PORTVERSION=	2.1.1
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -119,11 +118,17 @@ pre-patch::
 post-patch:
 	@${REINPLACE_CMD} -E ' \
 		s|file=bios/|file=${DATADIR}/|; \
-		s|bios/VGABIOS|file=${DATADIR}/VGABIOS|; \
+		s|bios/VGABIOS|${DATADIR}/VGABIOS|; \
 		' ${WRKSRC}/.bochsrc
+	@${REINPLACE_CMD} -E ' \
+		s|(^sharedir.+=).+|\1 ${DATADIR}|; \
+		s|(^docdir.+=).+|\1 ${DOCSDIR}|; \
+		' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e ' \
+		s|/usr/local/share/bochs|${DATADIR}|; \
 		s|/usr/local/share/doc/bochs|${DOCSDIR}|; \
-		' ${WRKSRC}/doc/man/*.1 ${WRKSRC}/doc/man/*.5
+		' ${WRKSRC}/doc/docbook/user/user.dbk ${WRKSRC}/doc/man/*.1 \
+		${WRKSRC}/doc/man/*.5
 	@${SED} 's|%%DOCSDIR%%|${DOCSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 # Post-install
