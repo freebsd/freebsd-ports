@@ -1,0 +1,23 @@
+--- topaz/Makefile.freebsd.orig	Tue Oct 26 20:29:25 1999
++++ topaz/Makefile.freebsd	Sat Oct 30 16:22:05 1999
+@@ -2,16 +2,16 @@
+ clean: cleantopaz cleanview cleanps
+ 
+ # compiler
+-CXX=g++
++CXX?=g++
+ 
+ # Where are include files kept
+ INCLUDE=.
+ 
+ # for FreeBSD
+-CFLAGS= -I/usr/local/include -I/usr/local/include/ncurses -I/usr/X11R6/include -O2 -Wall -DTOPAZLINUX -DTOPAZ_NCURSES -DTOPAZ_EUC
+-TOPAZLIB=  -L/usr/local/lib -lm -lncurses -lgnugetopt
++CFLAGS+= -I$(PREFIX)/include -I$(PREFIX)/include/ncurses -I$(X11BASE)/include -O2 -Wall -DTOPAZLINUX -DTOPAZ_NCURSES -DTOPAZ_EUC
++TOPAZLIB=  -L$(PREFIX)/lib -lm -lncurses -lgnugetopt
+ PSLIB=  -lm
+-VIEWLIB= -lm -L/usr/X11R6/lib -lX11
++VIEWLIB= -lm -L$(X11BASE)/lib -lX11
+ 
+ # obj
+ OBJ=topaz.o plobj.o graph.o axis.o frame.o frame2.o valbuff.o script.o funcs.o\

@@ -1,0 +1,73 @@
+--- Makefile.freebsd.orig	Tue Oct 26 20:29:25 1999
++++ Makefile.freebsd	Sat Oct 30 16:51:41 1999
+@@ -1,50 +1,28 @@
+-INSTALLDIR=/usr/local/lib/topaz
++INSTALLDIR=$(PREFIX)/lib/topaz
+ 
+ ###############################################
+ # do not change following lines
+ all:
+-	cd ./topaz; make -f Makefile.freebsd; cd ..
++	cd ./topaz; ${MAKE} -f Makefile.freebsd; cd ..
+ .PHONY: clean
+ clean:
+-	cd ./topaz; make -f Makefile.freebsd clean; cd ..
++	cd ./topaz; ${MAKE} -f Makefile.freebsd clean; cd ..
+ .PHONY: install
+ install:
+-#checking $(INSTALLDIR)
+-	@if  test ! -d $(INSTALLDIR) \
+-	; then  \
+-		echo "install directory does not exist!!"; \
+-		exit 1  \
+-	; fi
+-	strip ./topaz/topaz
+-	strip ./topaz/tpv2ps
+-	strip ./topaz/tpvview
+-	cp ./topaz.sh $(INSTALLDIR)
+-	cp ./head.ps $(INSTALLDIR)
+-	cp ./HISTORY $(INSTALLDIR)
+-	cp ./LICENSE $(INSTALLDIR)
+-	cp ./README.euc $(INSTALLDIR)/README
+-	cp ./INSTALL.euc $(INSTALLDIR)/INSTALL
+-	cp ./topaz/topaz $(INSTALLDIR)
+-	cp ./topaz/tpv2ps $(INSTALLDIR)
+-	cp ./topaz/tpvview $(INSTALLDIR)
+-	chmod 755 $(INSTALLDIR)/topaz.sh
+-	chmod 755 $(INSTALLDIR)/topaz
+-	chmod 755 $(INSTALLDIR)/tpv2ps
+-	chmod 755 $(INSTALLDIR)/tpvview
+-#checking $(INSTALLDIR)/_topaz
+-	@if  test ! -d $(INSTALLDIR)/_topaz \
+-        ; then  \
+-           mkdir $(INSTALLDIR)/_topaz \
+-        ; fi
+-	cp ./_topaz/* $(INSTALLDIR)/_topaz
+-	cp ./cuirc.lnx $(INSTALLDIR)/_topaz/cui.rc
+-	cp ./topazfontmap $(INSTALLDIR)/_topaz
+-	cp ./topazkfontmap $(INSTALLDIR)/_topaz
+-	chmod 755 $(INSTALLDIR)/_topaz/*
+-#checking $(INSTALLDIR)/sample
+-	@if  test ! -d $(INSTALLDIR)/sample \
+-        ; then  \
+-           mkdir $(INSTALLDIR)/sample \
+-        ; fi
+-	cp ./sample/* $(INSTALLDIR)/sample
+-
++	-mkdir -p $(INSTALLDIR)
++	$(BSD_INSTALL_SCRIPT) ./topaz.sh $(INSTALLDIR)
++	$(BSD_INSTALL_DATA) ./head.ps $(INSTALLDIR)
++	$(BSD_INSTALL_DATA) ./HISTORY $(INSTALLDIR)
++	$(BSD_INSTALL_DATA) ./LICENSE $(INSTALLDIR)
++	$(BSD_INSTALL_DATA) ./README.euc $(INSTALLDIR)/README
++	$(BSD_INSTALL_DATA) ./INSTALL.euc $(INSTALLDIR)/INSTALL
++	$(BSD_INSTALL_PROGRAM) ./topaz/topaz $(INSTALLDIR)
++	$(BSD_INSTALL_PROGRAM) ./topaz/tpv2ps $(INSTALLDIR)
++	$(BSD_INSTALL_PROGRAM) ./topaz/tpvview $(INSTALLDIR)
++	-mkdir -p $(INSTALLDIR)/_topaz
++	$(BSD_INSTALL_SCRIPT) ./_topaz/* $(INSTALLDIR)/_topaz
++	$(BSD_INSTALL_DATA) ./cuirc.lnx $(INSTALLDIR)/_topaz/cui.rc
++	$(BSD_INSTALL_DATA) ./topazfontmap $(INSTALLDIR)/_topaz
++	$(BSD_INSTALL_DATA) ./topazkfontmap $(INSTALLDIR)/_topaz
++	-mkdir -p $(PREFIX)/share/examples/topaz
++	cp ./sample/* $(PREFIX)/share/examples/topaz

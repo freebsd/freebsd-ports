@@ -1,0 +1,15 @@
+Topaz is a graph plotting system for scientists and engineers.
+
+1. Topaz has a powerful graph expression and functions such as least square
+   method.  Topaz provides almost all functions that you need to make
+   a 2D scattering graph.
+
+2. Topaz has a polished character based user interface.
+
+3. Topaz has powerful macro language of "Topaz script", which is like
+   Perl.  You can expand topaz itself or you can perform batch jobs using
+   topaz scripts.
+
+Topaz official Web Page.
+
+WWW: http://hp.vector.co.jp/authors/VA007663/topaz/

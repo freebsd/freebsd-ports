@@ -1,0 +1,39 @@
+bin/topaz
+lib/topaz/HISTORY
+lib/topaz/INSTALL
+lib/topaz/LICENSE
+lib/topaz/README
+lib/topaz/_topaz/2eps
+lib/topaz/_topaz/2ps
+lib/topaz/_topaz/2tpv
+lib/topaz/_topaz/README
+lib/topaz/_topaz/cui.rc
+lib/topaz/_topaz/d
+lib/topaz/_topaz/g
+lib/topaz/_topaz/initaxisx
+lib/topaz/_topaz/initaxisy
+lib/topaz/_topaz/initdata
+lib/topaz/_topaz/initframe
+lib/topaz/_topaz/initparams
+lib/topaz/_topaz/initparts
+lib/topaz/_topaz/inittopaz
+lib/topaz/_topaz/opencui
+lib/topaz/_topaz/p
+lib/topaz/_topaz/topazfontmap
+lib/topaz/_topaz/topazkfontmap
+lib/topaz/_topaz/updatehistory
+lib/topaz/head.ps
+lib/topaz/topaz
+lib/topaz/topaz.sh
+lib/topaz/tpv2ps
+lib/topaz/tpvview
+share/examples/topaz/fit.tpz
+share/examples/topaz/parts.tpz
+share/examples/topaz/sample.txt
+share/examples/topaz/stdfontset.tpz
+share/examples/topaz/step.tpz
+share/examples/topaz/symbolfontset.tpz
+share/examples/topaz/text.tpz
+@dirrm lib/topaz/_topaz
+@dirrm lib/topaz
+@dirrm share/examples/topaz
