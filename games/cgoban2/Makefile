@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	cgoban2
-PORTVERSION=	2.6.4
+PORTVERSION=	2.6.8
 CATEGORIES=	games
 MASTER_SITES=	http://kgs.kiseido.com/
 DISTNAME=	cgoban-unix-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	philip.reynolds@rfc-networks.ie
 COMMENT=	Internet Go Server client and game editor
 
 WRKSRC=		${WRKDIR}/cgoban
