@@ -19,6 +19,7 @@
     SUBDIR += jakarta-oro
     SUBDIR += jakarta-regexp
     SUBDIR += janosvm
+    SUBDIR += java-checkstyle
     SUBDIR += java-cup
     SUBDIR += java-tutorial
     SUBDIR += javamail
