@@ -1,162 +1,172 @@
 etc/rc.d/postgresql.sh
-pgsql/lib/global1.bki.source
-pgsql/lib/local1_template1.bki.source
-pgsql/lib/pg_hba.conf.sample
-pgsql/lib/libpq.a
-pgsql/bin/postgres
-pgsql/bin/postmaster
-pgsql/bin/pg_id
-pgsql/bin/pg_version
-pgsql/bin/psql
-pgsql/bin/pg_dump
-pgsql/bin/pg_dumpall
+pgsql/.profile
 pgsql/bin/cleardbdir
 pgsql/bin/createdb
 pgsql/bin/createuser
 pgsql/bin/destroydb
 pgsql/bin/destroyuser
 pgsql/bin/initdb
-pgsql/include/fmgr.h
-pgsql/include/lib/dllist.h
-pgsql/include/libpq/pqcomm.h
-pgsql/include/libpq/libpq-fs.h
-pgsql/include/utils/geo-decls.h
-pgsql/include/utils/elog.h
-pgsql/include/utils/palloc.h
-pgsql/include/access/attnum.h
-pgsql/include/config.h
-pgsql/include/postgres.h
-pgsql/include/postgres_ext.h
-pgsql/include/libpq-fe.h
-pgsql/include/c.h
-pgsql/man/man1/createdb.1.gz
-pgsql/man/man1/psql.1.gz
-pgsql/man/man1/unix.1.gz
-pgsql/man/man1/postgres.1.gz
-pgsql/man/man1/pg_dumpall.1.gz
-pgsql/man/man1/monitor.1.gz
-pgsql/man/man1/initdb.1.gz
-pgsql/man/man1/ipcclean.1.gz
-pgsql/man/man1/destroydb.1.gz
-pgsql/man/man1/cleardbdir.1.gz
-pgsql/man/man1/createuser.1.gz
-pgsql/man/man1/destroyuser.1.gz
-pgsql/man/man1/pg_dump.1.gz
-pgsql/man/man1/postmaster.1.gz
-pgsql/man/man3/libpq.3.gz
-pgsql/man/man3/large_objects.3.gz
-pgsql/man/man3/built-in.3.gz
-pgsql/man/man3/catalogs.3.gz
-pgsql/man/man5/pg_hba.conf.5.gz
-pgsql/man/man5/bki.5.gz
-pgsql/man/man5/page.5.gz
-pgsql/man/manl/vacuum.l.gz
-pgsql/man/manl/sql.l.gz
-pgsql/man/manl/select.l.gz
-pgsql/man/manl/update.l.gz
-pgsql/man/manl/revoke.l.gz
-pgsql/man/manl/rename.l.gz
-pgsql/man/manl/purge.l.gz
-pgsql/man/manl/load.l.gz
-pgsql/man/manl/listen.l.gz
-pgsql/man/manl/insert.l.gz
-pgsql/man/manl/fetch.l.gz
-pgsql/man/manl/end.l.gz
-pgsql/man/manl/grant.l.gz
-pgsql/man/manl/drop_rule.l.gz
-pgsql/man/manl/drop_type.l.gz
-pgsql/man/manl/drop_index.l.gz
-pgsql/man/manl/drop_function.l.gz
-pgsql/man/manl/create_aggregate.l.gz
-pgsql/man/manl/drop.l.gz
-pgsql/man/manl/delete.l.gz
-pgsql/man/manl/destroydb.l.gz
-pgsql/man/manl/create_view.l.gz
-pgsql/man/manl/create_rule.l.gz
-pgsql/man/manl/create_index.l.gz
-pgsql/man/manl/copy.l.gz
-pgsql/man/manl/commit.l.gz
-pgsql/man/manl/cluster.l.gz
-pgsql/man/manl/create_database.l.gz
-pgsql/man/manl/create_function.l.gz
-pgsql/man/manl/begin.l.gz
-pgsql/man/manl/abort.l.gz
-pgsql/man/manl/alter_table.l.gz
-pgsql/man/manl/close.l.gz
-pgsql/man/manl/create_operator.l.gz
-pgsql/man/manl/create_table.l.gz
-pgsql/man/manl/create_type.l.gz
-pgsql/man/manl/create_version.l.gz
-pgsql/man/manl/drop_aggregate.l.gz
-pgsql/man/manl/drop_operator.l.gz
-pgsql/man/manl/explain.l.gz
-pgsql/man/manl/notify.l.gz
-pgsql/man/manl/remove_view.l.gz
-pgsql/man/manl/rollback.l.gz
-pgsql/.profile
-pgsql/data/base/template1/pg_proc
-pgsql/data/base/template1/pg_type
-pgsql/data/base/template1/pg_attribute
-pgsql/data/base/template1/pg_class
-pgsql/data/base/template1/pg_inherits
-pgsql/data/base/template1/pg_index
-pgsql/data/base/template1/pg_version
-pgsql/data/base/template1/pg_statistic
-pgsql/data/base/template1/pg_operator
-pgsql/data/base/template1/pg_opclass
+pgsql/bin/pg_dump
+pgsql/bin/pg_dumpall
+pgsql/bin/pg_id
+pgsql/bin/pg_version
+pgsql/bin/postgres
+pgsql/bin/postmaster
+pgsql/bin/psql
+pgsql/data/PG_VERSION
+pgsql/data/base/template1/PG_VERSION
+pgsql/data/base/template1/pg_aggregate
 pgsql/data/base/template1/pg_am
 pgsql/data/base/template1/pg_amop
 pgsql/data/base/template1/pg_amproc
-pgsql/data/base/template1/pg_language
-pgsql/data/base/template1/pg_parg
-pgsql/data/base/template1/pg_aggregate
-pgsql/data/base/template1/pg_ipl
-pgsql/data/base/template1/pg_inheritproc
-pgsql/data/base/template1/pg_rewrite
-pgsql/data/base/template1/pg_listener
 pgsql/data/base/template1/pg_attnameind
 pgsql/data/base/template1/pg_attnumind
 pgsql/data/base/template1/pg_attrelidind
+pgsql/data/base/template1/pg_attribute
+pgsql/data/base/template1/pg_class
+pgsql/data/base/template1/pg_classnameind
+pgsql/data/base/template1/pg_classoidind
+pgsql/data/base/template1/pg_index
+pgsql/data/base/template1/pg_inheritproc
+pgsql/data/base/template1/pg_inherits
+pgsql/data/base/template1/pg_internal.init
+pgsql/data/base/template1/pg_ipl
+pgsql/data/base/template1/pg_language
+pgsql/data/base/template1/pg_listener
+pgsql/data/base/template1/pg_opclass
+pgsql/data/base/template1/pg_operator
+pgsql/data/base/template1/pg_parg
+pgsql/data/base/template1/pg_proc
 pgsql/data/base/template1/pg_procidind
 pgsql/data/base/template1/pg_procnameind
 pgsql/data/base/template1/pg_procsrcind
+pgsql/data/base/template1/pg_rewrite
+pgsql/data/base/template1/pg_statistic
+pgsql/data/base/template1/pg_type
 pgsql/data/base/template1/pg_typeidind
 pgsql/data/base/template1/pg_typenameind
-pgsql/data/base/template1/pg_classnameind
-pgsql/data/base/template1/pg_classoidind
-pgsql/data/base/template1/PG_VERSION
-pgsql/data/base/template1/pg_internal.init
-pgsql/data/pg_variable
+pgsql/data/base/template1/pg_version
 pgsql/data/pg_database
-pgsql/data/pg_demon
-pgsql/data/pg_magic
 pgsql/data/pg_defaults
-pgsql/data/pg_server
-pgsql/data/pg_user
-pgsql/data/pg_hosts
+pgsql/data/pg_demon
+pgsql/data/pg_geqo.sample
 pgsql/data/pg_group
-pgsql/data/pg_log
-pgsql/data/pg_time
-pgsql/data/PG_VERSION
 pgsql/data/pg_hba.conf
-pgsql/errlog
+pgsql/data/pg_hosts
+pgsql/data/pg_log
+pgsql/data/pg_magic
+pgsql/data/pg_server
+pgsql/data/pg_time
+pgsql/data/pg_user
+pgsql/data/pg_variable
+pgsql/include/access/attnum.h
+pgsql/include/c.h
+pgsql/include/config.h
+pgsql/include/fmgr.h
+pgsql/include/lib/dllist.h
+pgsql/include/libpq-fe.h
+pgsql/include/libpq/libpq-fs.h
+pgsql/include/libpq/pqcomm.h
+pgsql/include/os.h
+pgsql/include/postgres.h
+pgsql/include/postgres_ext.h
+pgsql/include/utils/elog.h
+pgsql/include/utils/geo_decls.h
+pgsql/include/utils/palloc.h
+pgsql/lib/global1.bki.source
+pgsql/lib/libpq.a
+pgsql/lib/libpq.so
+pgsql/lib/libpq.so.1.0
+pgsql/lib/local1_template1.bki.source
+pgsql/lib/pg_geqo.sample
+pgsql/lib/pg_hba.conf.sample
+pgsql/man/man1/cleardbdir.1.gz
+pgsql/man/man1/createdb.1.gz
+pgsql/man/man1/createuser.1.gz
+pgsql/man/man1/destroydb.1.gz
+pgsql/man/man1/destroyuser.1.gz
+pgsql/man/man1/initdb.1.gz
+pgsql/man/man1/ipcclean.1.gz
+pgsql/man/man1/monitor.1.gz
+pgsql/man/man1/pg_dump.1.gz
+pgsql/man/man1/pg_dumpall.1.gz
+pgsql/man/man1/postgres.1.gz
+pgsql/man/man1/postmaster.1.gz
+pgsql/man/man1/psql.1.gz
+pgsql/man/man1/unix.1.gz
+pgsql/man/man3/built-in.3.gz
+pgsql/man/man3/catalogs.3.gz
+pgsql/man/man3/large_objects.3.gz
+pgsql/man/man3/libpq.3.gz
+pgsql/man/man3/oracle_compat.3.gz
+pgsql/man/man5/bki.5.gz
+pgsql/man/man5/page.5.gz
+pgsql/man/man5/pg_hba.conf.5.gz
+pgsql/man/manl/abort.l.gz
+pgsql/man/manl/alter_table.l.gz
+pgsql/man/manl/begin.l.gz
+pgsql/man/manl/close.l.gz
+pgsql/man/manl/cluster.l.gz
+pgsql/man/manl/commit.l.gz
+pgsql/man/manl/copy.l.gz
+pgsql/man/manl/create_aggregate.l.gz
+pgsql/man/manl/create_database.l.gz
+pgsql/man/manl/create_function.l.gz
+pgsql/man/manl/create_index.l.gz
+pgsql/man/manl/create_operator.l.gz
+pgsql/man/manl/create_rule.l.gz
+pgsql/man/manl/create_sequence.l.gz
+pgsql/man/manl/create_table.l.gz
+pgsql/man/manl/create_type.l.gz
+pgsql/man/manl/create_version.l.gz
+pgsql/man/manl/create_view.l.gz
+pgsql/man/manl/delete.l.gz
+pgsql/man/manl/drop.l.gz
+pgsql/man/manl/drop_aggregate.l.gz
+pgsql/man/manl/drop_database.l.gz
+pgsql/man/manl/drop_function.l.gz
+pgsql/man/manl/drop_index.l.gz
+pgsql/man/manl/drop_operator.l.gz
+pgsql/man/manl/drop_rule.l.gz
+pgsql/man/manl/drop_sequence.l.gz
+pgsql/man/manl/drop_type.l.gz
+pgsql/man/manl/drop_view.l.gz
+pgsql/man/manl/end.l.gz
+pgsql/man/manl/explain.l.gz
+pgsql/man/manl/fetch.l.gz
+pgsql/man/manl/grant.l.gz
+pgsql/man/manl/insert.l.gz
+pgsql/man/manl/listen.l.gz
+pgsql/man/manl/load.l.gz
+pgsql/man/manl/notify.l.gz
+pgsql/man/manl/purge.l.gz
+pgsql/man/manl/rename.l.gz
+pgsql/man/manl/reset.l.gz
+pgsql/man/manl/revoke.l.gz
+pgsql/man/manl/rollback.l.gz
+pgsql/man/manl/select.l.gz
+pgsql/man/manl/set.l.gz
+pgsql/man/manl/show.l.gz
+pgsql/man/manl/sql.l.gz
+pgsql/man/manl/update.l.gz
+pgsql/man/manl/vacuum.l.gz
 pgsql/post-install-notes
-@dirrm pgsql/man/man1/
-@dirrm pgsql/man/man3/
-@dirrm pgsql/man/man5/
-@dirrm pgsql/man/manl/
-@dirrm pgsql/man/
-@dirrm pgsql/lib/
-@dirrm pgsql/include/utils/
-@dirrm pgsql/include/port/BSD44_derived/
-@dirrm pgsql/include/port/
-@dirrm pgsql/include/libpq/
-@dirrm pgsql/include/lib/
-@dirrm pgsql/include/include/
-@dirrm pgsql/include/access/
-@dirrm pgsql/include/
-@dirrm pgsql/data/base/template1/
-@dirrm pgsql/data/base/
-@dirrm pgsql/data/
-@dirrm pgsql/bin/
-@dirrm pgsql/
+@dirrm pgsql/lib
+@dirrm pgsql/bin
+@dirrm pgsql/include/port/BSD44_derived
+@dirrm pgsql/include/port
+@dirrm pgsql/include/include
+@dirrm pgsql/include/lib
+@dirrm pgsql/include/libpq
+@dirrm pgsql/include/utils
+@dirrm pgsql/include/access
+@dirrm pgsql/include
+@dirrm pgsql/man/man1
+@dirrm pgsql/man/man3
+@dirrm pgsql/man/man5
+@dirrm pgsql/man/manl
+@dirrm pgsql/man
+@dirrm pgsql/data/base/template1
+@dirrm pgsql/data/base
+@dirrm pgsql/data
+@dirrm pgsql
