@@ -13,9 +13,8 @@ MASTER_SITE_SUBDIR=	winfingerprint
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Generates packets to match a list of Cisco PIX access lists
 
-BROKEN=		Does not configure
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel \
+		${LOCALBASE}/share/automake14/install-sh:${PORTSDIR}/devel/automake14
 
 WRKSRC=		${WRKDIR}/pixilate
 
@@ -27,6 +26,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${LIBS}" CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=		pixilate.1
+
+pre-configure:
+.for i in install-sh missing mkinstalldirs
+	@${LN} -sf ${LOCALBASE}/share/automake14/${i} ${WRKSRC}
+.endfor
+	@${RM} -f ${WRKSRC}/config.cache
 
 post-install:
 .if !defined(NOPORTDOCS)
