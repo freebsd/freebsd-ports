@@ -1,14 +1,14 @@
-lib/X11/fonts/korean/pinetree/ptpB08.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpB10.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpB12.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpB14.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpB18.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpB24.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpR08.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpR10.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpR12.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpR14.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpR18.pcf.Z
-lib/X11/fonts/korean/pinetree/ptpR24.pcf.Z
-lib/X11/fonts/korean/pinetree/fonts.dir
-@dirrm lib/X11/fonts/korean/pinetree
+lib/X11/fonts/misc/ptpB08.pcf.gz
+lib/X11/fonts/misc/ptpB10.pcf.gz
+lib/X11/fonts/misc/ptpB12.pcf.gz
+lib/X11/fonts/misc/ptpB14.pcf.gz
+lib/X11/fonts/misc/ptpB18.pcf.gz
+lib/X11/fonts/misc/ptpB24.pcf.gz
+lib/X11/fonts/misc/ptpR08.pcf.gz
+lib/X11/fonts/misc/ptpR10.pcf.gz
+lib/X11/fonts/misc/ptpR12.pcf.gz
+lib/X11/fonts/misc/ptpR14.pcf.gz
+lib/X11/fonts/misc/ptpR18.pcf.gz
+lib/X11/fonts/misc/ptpR24.pcf.gz
+@exec cd %D/lib/X11/fonts/misc ; mkfontdir
+@unexec cd %D/lib/X11/fonts/misc ; mkfontdir
