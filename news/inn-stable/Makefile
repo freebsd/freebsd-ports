@@ -3,7 +3,7 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.4 1995/05/04 22:39:46 torstenb Exp $
+# $Id: Makefile,v 1.5 1995/05/05 09:21:43 asami Exp $
 #
 
 DISTNAME=	inn1.4sec
@@ -36,6 +36,7 @@ post-install:
 	${PREFIX}/man/man5/newsfeeds.5 ${PREFIX}/man/man5/newslog.5 \
 	${PREFIX}/man/man5/nnrp.access.5 ${PREFIX}/man/man5/nntpsend.ctl.5 \
 	${PREFIX}/man/man5/overview.fmt.5 \
+	${PREFIX}/man/man5/distrib.pats.5 ${PREFIX}/man/man5/passwd.nntp.5 \
 	${PREFIX}/man/man8/archive.8 ${PREFIX}/man/man8/batcher.8 \
 	${PREFIX}/man/man8/buffchan.8 ${PREFIX}/man/man8/ctlinnd.8 \
 	${PREFIX}/man/man8/cvtbatch.8 ${PREFIX}/man/man8/expire.8 \
