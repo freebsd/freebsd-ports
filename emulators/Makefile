@@ -50,6 +50,7 @@
     SUBDIR += linux-vmware-toolbox2
     SUBDIR += linux-vmware-toolbox4
     SUBDIR += linux-winetools
+    SUBDIR += linux-zsnes
     SUBDIR += linux_base
     SUBDIR += linux_base-6
     SUBDIR += linux_base-8

@@ -1,0 +1,13 @@
+An x86 only Super Nintendo Entertainment System (SNES) Emulator,
+with higher compatibility rates than snes9x.
+
+This is the Linux binary version.
+
+Note: This port exists due to performance issues (sound) with our native 
+version that remain unfixed. When these issues are fixed, this port should 
+be removed. 
+
+WWW: http://www.zsnes.com/
+
+- Travis Poppe
+tlp@liquidx.org
