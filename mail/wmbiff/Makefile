@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmbiff
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.7
 CATEGORIES=	mail windowmaker afterstep
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,6 +21,9 @@ USE_XPM=	yes
 MAN1=		wmbiff.1
 MAN5=		wmbiffrc.5
 
+MAKE_ARGS=	OSTYPE="FreeBSD" MANDIR=${PREFIX}/man \
+		WITHOUT_CRYPTO=yes LIBDIR="-L${X11BASE}/lib" \
+		INSTALL_USER=${BINOWN} INSTALL_GROUP=${BINGRP}
 post-install:
 	@${ECHO} "===>   Installing sample.wmbiffrc to ${PREFIX}/share/wmbiff"
 	@${ECHO} "===>   Modify it to suit your needs and copy to ~/.wmbiffrc"
