@@ -27,6 +27,7 @@ BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 ALL_TARGET+=	pdf
 PLIST_SUB+=	HAVE_LATEX=""
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
+MAKE_ARGS+=	HAVE_LATEX=yes
 .else # !defined(HAVE_LATEX)
 PLIST_SUB+=	HAVE_LATEX="@comment "
 .endif # !defined(HAVE_LATEX)

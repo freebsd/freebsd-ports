@@ -1,0 +1,18 @@
+--- doc/Makefile.in.orig	Mon Jul  8 15:59:59 2002
++++ doc/Makefile.in	Tue Oct 22 23:02:24 2002
+@@ -18,12 +18,14 @@
+         VERSION=$(VERSION) ; \
+ 	export VERSION; \
+ 	$(DOXYGEN)/bin/doxygen
+-	@rm -f ../latex/refman.tex
+ 	@cp doxygen_logo*.gif ../html
++ifdef HAVE_LATEX
++	@rm -f ../latex/refman.tex
+ 	@cp Makefile.latex ../latex/Makefile
+ 	@sed -e "s/\$$VERSION/$(VERSION)/g" doxygen_manual.tex >../latex/doxygen_manual.tex
+ 	@sed -e "s/\$$VERSION/$(VERSION)/g" doxygen.sty >../latex/doxygen.sty 
+ 	@epstopdf doxygen_logo.eps --outfile=../latex/doxygen_logo.pdf
++endif # HAVE_LATEX
+ 
+ clean: 
+ 	rm -rf ../html ../latex *.bak translator_report.txt
