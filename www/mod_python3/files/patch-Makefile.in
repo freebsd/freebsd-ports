@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Nov 15 05:33:51 2000
-+++ Makefile.in	Wed Nov 15 05:40:52 2000
-@@ -90,13 +90,10 @@
+--- Makefile.in.orig	Wed Dec 27 13:49:54 2000
++++ Makefile.in	Wed Dec 27 13:52:28 2000
+@@ -82,13 +82,10 @@
  	@echo
  	@echo "Performing DSO installation."
  	@echo
@@ -15,4 +15,4 @@
 +	@echo "  ## Apache has to be restarted."
  	@echo
  
- 
+ install_static:	static
