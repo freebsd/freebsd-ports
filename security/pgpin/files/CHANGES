@@ -1,0 +1,94 @@
+20010322:
+  - Protect against the Czech attack of modified secret key files. (Cool!)
+  - Protect against MPI computing errors. (more programm errors than Bellcore)
+
+20001006:
+  - Alter the ARJ signature to the current version.
+  - Prevent automatic renaming of command line arguments
+    used for file names (+batchmode).
+
+199990902:
+  - Up to 32bit KeyID can be selected.
+  - Allow batchmode to revoke certificates (and keys :-{).
+
+199971007:
+  - Bugfix of the previous bugfix. I'm an idiot unable to program in C.
+  - language.txt (German part) brushed up.
+
+199971006:
+  - Bugfix of ordinary PGP: -kc failed to deal correctly w/ DSS signatures.
+
+199970905:
+  - Bugfix: Compile under MSDOS and OSF.
+  - Corrected some spelling errors.
+  - ESC is plain text, too.
+  - Somewhat more verbose output.
+  - 8192 bit RSA support
+
+199970828:
+  - Certificates of unknown pubkeys are suppressed.
+    (New Option UNKNOWN_CERTS (On/Off))
+  - pgp -kvv shows the quality of user identification.
+
+199970729:
+  - Bugfix: Validity period is read correctly from the key ring.
+
+199970529:
+  - Certificates from revoked keys are invalid.
+
+199970513:
+  - Certificates from unknown users are handled correctly.
+
+199970512:
+  - Certificate revocations are correctly handled and displayed.
+
+199970418:
+  - support of a separate "encrypt to self" id
+  - certificates signed with compromised keys are invalid now
+  - support of certificate revocation certificates:
+    You can revoke your ID without loosing your key.
+
+199970404:
+  - try the corresponding key, if the key of the wrong purpose is used,
+    so 'pgp -se file myname -u myname' will automatically choose the right
+    keys.
+  - SIGN keys can be used to decrypt, but PGP will warn the user.
+  - The language modul could not distinguish two strings, so changed them.
+  - Recommendations for key generating changed: Larger keys, userid options.
+
+199970403:
+  - 2.6.3ia patch included
+  - bugfixes
+
+199970402:
+  - While certifying a key the certifier can specify how (s)he checked
+    the user's real identity. (This question is quite different to
+    the question whether the key was presented by this person or not!)
+  - SIGN keys cannot encrypt.
+  - SIGN keys cannot decrypt (so you can't read it!)
+  - ENCR keys cannot sign or certify.
+  - Signatures or certificates by ENCR keys are invalid. (even self signed)
+  - Signatures or certificates are invalid, if their timestamp is not covered
+    by the validity period of the public key. (too young or too old)
+  - Expired keys are kept but marked. (same for keys valid in future)
+  - Purpose and expire of a key are set while generating the key.
+    It is derived from the userid as described in the policy of the IN-CH.
+
+References:
+  http://www.in-ca.individual.net/
+  ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/
+    Diffs and full source (tgz)
+    *.asc are detached signatures.
+
+Contributors:
+  Matthias Bruestle for the myetsid feature.
+  Lutz Donnerhacke for the pgp2.6.3in development.
+  Ingmar Camphausen, Thomas Roessler, a.o. for extensive testing.
+
+Todo:
+  - New trust models for revoked certificates.
+  - Time stamping features (using the Eternity Logfile:
+                            http://www.iks-jena.de/mitarb/lutz/logfile/)
+  - Support of EBP and PGP5.0 features.
+  - Better internal key management for faster access.
+  - Direct support for keyserver issues.
