@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.27 1997/02/14 08:52:19 asami Exp $
+# $Id: Makefile,v 1.28 1997/02/24 21:56:16 jmz Exp $
 #
 
 DISTNAME=	web2c-7.0
@@ -14,7 +14,7 @@ DISTFILES=	web2c-7.0.tar.gz web-7.0.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 
 MAINTAINER=	jmz@FreeBSD.org
 
-IGNOREFILES=	${DISTFILES}
+IGNOREFILES=	tex_base.tar.gz cm_tfm.tar.gz mf_lib.tar.gz cm_mf.tar.gz
 EXTRACT_ONLY=	web2c-7.0.tar.gz web-7.0.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz
 
