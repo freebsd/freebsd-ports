@@ -1,0 +1,21 @@
+--- Makefile.old	Sun Sep 22 19:03:43 2002
++++ Makefile	Sun Sep 22 19:04:30 2002
+@@ -52,7 +52,7 @@
+ .endif
+ 	@echo Installing files...
+ 	-install -o ${BINOWN} -g ${BINGRP} -m ${FILEMODE} -c ${INSTALLFILES} ${BINDIR}
+-	-install -o ${BINOWN} -g ${BINGRP} -m ${FILEMODE} -c bgrot.conf ${CONFDIR}
++	-install -o ${BINOWN} -g ${BINGRP} -m ${FILEMODE} -c bgrot.conf.skel ${CONFDIR}
+ 	@echo Compressing manpage...
+ 	@gzip -c bgrot.1 > bgrot.1.gz
+ 	@echo Installing manpage...
+@@ -88,7 +88,7 @@
+ 		rm -f ${BINDIR}/$${entry}; \
+ 	done
+ 	@echo Uninstalling configuration...
+-	@rm -f ${CONFDIR}/bgrot.conf
++	@rm -f ${CONFDIR}/bgrot.conf.skel
+ 	@echo Uninstalling manpage...
+ 	@rm -f ${MANDIR}/man1/bgrot.1.gz
+ 	@echo Done.
+
