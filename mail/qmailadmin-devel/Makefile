@@ -82,6 +82,7 @@ QMAIL_DIR?=	/var/qmail
 # End of user-configurable variables
 
 CONFIGURE_ARGS+=	\
+	--enable-qmaildir=${QMAIL_DIR} \
 	--enable-htmldir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR} \
 	--enable-imagedir=${PREFIX}/${WEBDATADIR}/${WEBDATASUBDIR}/images \
 	--enable-imageurl=${WEBDATAURL}/${WEBDATASUBDIR}/images \
