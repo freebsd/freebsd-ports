@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	ac3d
-PORTVERSION=	4.0a
+PORTVERSION=	4.0f
 CATEGORIES=	graphics linux
 MASTER_SITES=	http://inivis.swmirror.com/
 PKGNAMEPREFIX=	linux-
-DISTNAME=	ac3dlx${PORTVERSION:R}
+DISTNAME=	${PORTNAME}lx${PORTVERSION:R}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	tiamat@comset.net
@@ -23,7 +23,7 @@ LIB_DEPENDS=	${LINUXBASE}/usr/X11R6/libGLU.so.1:${PORTSDIR}/graphics/linux_mesa3
 USE_LINUX=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
-WRKSRC=		${WRKDIR}/ac3dlx
+WRKSRC=		${WRKDIR}/${PORTNAME}lx
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -51,9 +51,10 @@ pre-everything::
 .endif
 
 post-patch:
-	@${CAT} pkg-message | ${SED} -e 's|%%PORTNAME%%|${PORTNAME}|; \
-		s|%%PREFIX%%|${PREFIX}|; \
-		s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|' > ${PKGMESSAGE}
+	@${CAT} pkg-message | \
+		${SED} -e 's|%%PORTNAME%%|${PORTNAME}|; \
+			   s|%%PREFIX%%|${PREFIX}|; \
+			   s|%%EXAMPLESDIR%%|${EXAMPLESDIR}|' > ${PKGMESSAGE}
 
 pre-install:
 # Generate startup script
@@ -83,6 +84,12 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/lib/tk8.4/*.tcl ${DATADIR}/lib/tk8.4
 	@${MKDIR} ${DATADIR}/tcl
 	@${INSTALL_DATA} ${WRKSRC}/tcl/*.tcl ${DATADIR}/tcl
+
+# fonts
+.for i in font fontwire
+	${INSTALL_DATA} ${WRKSRC}/${i}.ac ${DATADIR}
+.endfor
+
 .ifndef	(NOPORTDOCS)
 # docs
 	@${MKDIR} ${DOCSDIR}
