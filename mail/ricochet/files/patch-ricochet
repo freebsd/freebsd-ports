@@ -1,23 +1,27 @@
---- ricochet.old	Thu Feb  8 22:23:19 2001
-+++ ricochet	Wed Mar  6 06:29:48 2002
-@@ -233,7 +233,15 @@
+--- ricochet.orig	Thu Feb  8 22:23:19 2001
++++ ricochet	Thu Mar  7 03:31:11 2002
+@@ -227,13 +227,19 @@
+ 
+      
+     $self->debug (0, "\nANALYZING HEADERS...\n"); 
++    my $ip = $header->get ('X-Originating-IP');
+     grep { 
+         my $header_text = $_;
+         my $hdata = $header->get ($header_text); 
          unless ($hdata eq '') {
              $hdata =~ s/\n*$//; 
              $self->debug (1,"o [$_] -- $hdata"); 
 -            my $host = _host ($hdata); my ($NS, $MX); 
 +	    my $host = _host ($hdata);
-+	    if ($host =~ /^(.*\.)?hotmail\.(msn\.)?com$/i) {
-+		my $ip = $header->get ('X-Originating-IP');
-+		if ($ip eq '') {
-+		    $self->debug (2,"- FAKE hotmail.com, NO X-Originating-IP.\n");
-+		    goto EXTFAKE;
-+		}
++	    if ($host =~ /^(.*\.)?hotmail\.(msn\.)?com$/i && $ip eq '') {
++		$self->debug (2,"- FAKE hotmail.com, NO X-Originating-IP.\n");
++		goto EXTFAKE;
 +	    }
 +	    my ($NS, $MX);
              if ((_nslookup ($host) && ($NS = 1)) || (_mxlookup ($host) && ($MX = 1))) { 
                  $self->debug (2,"+ $host EXISTS.\n") if $NS; 
                  $self->debug (2,"+ $host HAS A MX RECORD.\n") if $MX; 
-@@ -244,6 +252,7 @@
+@@ -244,6 +250,7 @@
                  }  
              } else { $self->debug (2,"- POSSIBLY FAKED HEADER. $host DOESN'T EXIST.\n") } 
          }
@@ -25,26 +29,63 @@
      } @{$self->{EXTRA_HEADERS}}; 
  
      while ($match == 0) {
-@@ -406,6 +415,18 @@
+@@ -406,8 +413,14 @@
      my @transmit_hosts = $by =~ /($HOSTRE)/gs; 
  
      my @ips = $by =~ /($IPRE)/gs; 
 +
-+    grep {
-+	if (/^(.*\.)?hotmail\.(msn\.)?com$/i) {
-+	    my $header = $self->{MAIL}->head;
-+	    my $ip = $header->get ('X-Originating-IP');
-+	    if ($ip eq '') {
-+		$self->debug (2,"- FAKE hotmail.com, NO X-Originating-IP.\n");
-+		return undef;
-+	    }
-+	}
-+    } (@transmit_hosts, @orig_hosts);
++    my $header = $self->{MAIL}->head;
++    my $ip = $header->get ('X-Originating-IP');
 +
      grep { 
-         if (_nslookup ($_)) { 
+-        if (_nslookup ($_)) { 
++	if (/^(.*\.)?hotmail\.(msn\.)?com$/i && $ip eq '') {
++	    $self->debug (2, "- FAKE originating hotmail.com, NO X-Originating-IP.");
++	} elsif (_nslookup ($_)) {
              $auth = 1;
-@@ -574,7 +595,8 @@
+             $self->{ORIG_HOSTS}->add ($_); 
+             $self->debug (2,"+ $_ EXISTS."); 
+@@ -417,15 +430,21 @@
+     my $host; 
+     grep { 
+         if ($host = _ptrquery ($_)) { 
+-            $auth = 1;
+             $self->debug (2,"+ $_ RESOLVES TO $host."); 
+-            $self->{ORIG_HOSTS}->add ($host); 
++	    if ($host =~ /^(.*\.)?hotmail\.(msn\.)?com$/i && $ip eq '') {
++		$self->debug (2, "- FAKE originating IP of hotmail.com, NO X-Originating-IP.");
++	    } else {
++		$auth = 1;
++		$self->{ORIG_HOSTS}->add ($host);
++	    }
+         }
+     } @orig_ips;
+ 
+     if ($self->relaxed == 1) {  ## Check the transmit headers too.
+         grep { 
+-            if (_nslookup ($_)) { 
++	    if (/^(.*\.)?hotmail\.(msn\.)?com$/i && $ip eq '') {
++		$self->debug (2, "- FAKE transmitting hotmail.com, NO X-Originating-IP.");
++	    } elsif (_nslookup ($_)) {
+                 $auth = 1; 
+                 $self->{TRANSMIT_HOSTS}->add ($_); 
+                 $self->debug (2,"+ $_ EXISTS.");
+@@ -439,7 +458,13 @@
+     }
+ 
+     unless ($self->relaxed == 1) {    
+-        $self->{TRANSMIT_HOSTS}->add (@transmit_hosts); 
++	grep {
++	    if (/^(.*\.)?hotmail\.(msn\.)?com$/i && $ip eq '') {
++		$self->debug (2, "- FAKE transmitting hotmail.com, NO X-Originating-IP.");
++	    } else {
++                $self->{TRANSMIT_HOSTS}->add ($_); 
++	    }
++	} @transmit_hosts;
+     }
+     
+     $self->debug (2, "+ Seems Authentic.\n"); 
+@@ -574,7 +599,8 @@
  
  sub initialize { 
      my $self = shift; 
