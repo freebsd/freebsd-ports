@@ -1,78 +1,302 @@
---- README.orig	Mon Jun 12 15:28:41 2000
-+++ README	Mon Jun 12 21:15:54 2000
-@@ -27,30 +27,31 @@
-   
- Background:
+patch to version 1.8.test9
+
+- mention the FreeBSD port
+- mention that BSD make, not just GNU make, is adequate
+- some rewording for clarity, not intended to change meaning
+- reformatting of white space, mostly done with "fmt 79 80"
+- spelling changes, mostly suggested by ispell
+
+--- README.old	Thu Nov 22 16:37:28 2001
++++ README	Wed Jan  9 12:10:53 2002
+@@ -18,17 +18,17 @@
+ Project Status
+ --------------
+ 
+-  As for today, this packet is hosted and maintained by William Stearns
+-  <wstearns@pobox.com>. Original code comes from Michal Zalewski
+-  <lcamtuf@coredump.cx>. Feel free to mail William or both of us with
+-  bugfixes, ideas, etc =)
++  This program is now hosted and maintained by William Stearns
++  <wstearns@pobox.com>.  It was originally written by Michal Zalewski
++  <lcamtuf@coredump.cx>.  Feel free to mail William or both of us with
++  bug-fixes, ideas, etc. =)
+ 
+ 
+ -----------------
+ Special thanks to
+ -----------------
+ 
+-  * Lance Spitzner for whitepaper on passive OS fingerprinting:
++  * Lance Spitzner for white paper on passive OS fingerprinting:
+     http://www.enteract.com/~lspitz/finger.html
+ 
+   * tf8 for initial piece of libpcap support and packet parsing
+@@ -36,7 +36,7 @@
+   * teso/security.is/b0f/#hax for ideas and testing
+ 
+   * Jeremy Weatherford, Chris Wilson and Szilveszter Adam for
+-    portability testing/patches, bugfixes and ideas,
++    portability testing/patches, bug-fixes and ideas,
+ 
+   * other BUGTRAQ readers for OS fingerprints and useful patches
+ 
+@@ -49,126 +49,127 @@
+ Background
+ ----------
  
 -  *  What is passive OS fingerprinting?
+-  
+-  Passive OS fingerprinting technique is based on information coming
+-  from remote host when it tries to establish a connection to your system. 
+-  Captured packet parameters contain enough information to determine
+-  remote OS - and, unlike active scanners (nmap, queSO) - this is done
+-  without sending anything to this host.
+-  
+-  If you're looking for more information on this approach, read Spitzner's 
+-  whitepaper at http://www.enteract.com/~lspitz/finger.html :)
+-      
 +  * What is passive OS fingerprinting?
-   
--  Passive OS fingerprinting technique bases on information coming
--  from remote host when it establishes connection to our system. Captured
--  packets contains enough information to determine OS - and, unlike
--  active scanners (nmap, queSO) - without sending anything to this host.
-+  Passive OS fingerprinting is based on information coming from a remote host
-+  when it establishes a connection to our system.  Captured packets contain
-+  enough information to identify the operating system.  In contrast to active
-+  scanners such as nmap and QueSO, p0f does not send anything to the host being
-+  identified.
-   
-   If you're looking for more information, read Spitzner's text at:
-   http://www.enteract.com/~lspitz/finger.html
-       
--  * How it works?
-+  * How does it work?
-   
-   Well, there are some TCP/IP flag settings specific for given systems.
-   Usually initial TTL (8 bits), window size (16 bits), maximum segment size
-   (16 bits), don't fragment flag (1 bit), sackOK option (1 bit), nop option
--  (1 bit) and window scaling option (8 bits) combined together gives unique,
-+  (1 bit) and window scaling option (8 bits) combined together give a unique,
-   51-bit signature for every system.
-   
++
++  The passive OS fingerprinting technique is based on information coming from a
++  remote host when it tries to establish a connection to your system.  Captured
++  packet parameters contain enough information to identify the remote OS.  In
++  contrast to active scanners such as nmap and queSO, p0f does this without
++  sending anything to the remote host.
++
++  If you're looking for more information on this approach, read Spitzner's white
++  paper (mentioned above). :)
++
+   In short, there are certain TCP/IP flag settings specific for given systems.
+-  Usually initial TTL (8 bits), window size (16 bits), maximum segment size
+-  (16 bits), don't fragment flag (1 bit), sackOK option (1 bit), nop option
+-  (1 bit), window scaling option (8 bits), initial packet size (16 bits)
+-  vary from one TCP stack implementation to another, and, combined together, 
+-  give unique, 67-bit signature for every system.
+-
+-  Some portions of p0f code are currently used by IDS systems and 
+-  sniffer software.
+-  
 -  * What are main advantages?
-+  * What are the main advantages?
-   
+-  
 -  Passive OS fingerprinting can be done on huge portions of input data - eg.
 -  information gathered on firewall, proxy, routing device or Internet server,
 -  without causing any network activity. You can launch passive OS detection
 -  software on such machine and leave it for days, weeks or months, collecting
-+  Passive OS fingerprinting can be done on huge amounts of input data -
-+  gathered on a firewall, proxy, routing device or Internet server - without
-+  causing any network activity.  You can launch passive OS detection
-+  software on such a machine and leave it for days or months, collecting
-   really interesting statistical and - *erm* - just interesting information. 
-   What's really funny - packet filtering firewalls, network address
-   translation and so on are transparent to p0f-alike software, so you're able
-@@ -62,7 +63,7 @@
+-  really interesting statistical information about your customers, about
+-  attackers, other servers, etc. What's really funny - packet filtering 
+-  firewalls, network address translation and so on are almost always 
+-  transparent to p0f-alike software, so you're able to obtain information 
+-  about systems behind the firewall. Also, such software can determine 
+-  distance between remote host and your system, allowing you to generate 
+-  network structure maps for firewalled/structural networks. And all without 
+-  sending a single packet. Nice, especially for IDSes.
++  Usually initial TTL (8 bits), window size (16 bits), maximum segment size (16
++  bits), don't fragment flag (1 bit), sackOK option (1 bit), nop option (1 bit),
++  window scaling option (8 bits), and initial packet size (16 bits) vary from
++  one TCP stack implementation to another.  Together, they give a unique, 67-bit
++  signature for every system.
++
++  Some portions of the p0f code are currently used by IDS systems and sniffer
++  software.
++
++  * What are the main advantages?
++
++  Passive OS fingerprinting can be done on huge amounts of input data - for
++  example, information gathered on a firewall, proxy, routing device or Internet
++  server - without causing any network activity.  You can launch passive OS
++  detection software on such a machine and leave it for days, weeks or months,
++  collecting really interesting statistical information about your customers,
++  attackers, other servers, etc.  Since packet filtering firewalls, network
++  address translation and so on are almost always transparent to p0f-alike
++  software, you're able to obtain information about systems behind the firewall.
++  Also, such software can determine the distance between a remote host and your
++  system, allowing you to generate network structure maps for
++  firewalled/structural networks. All this can be done without sending a single
++  packet.  It is especially nice for IDSes.
+ 
+ 
+ -----------  
  Limitations
+ -----------
  
-   Proxy firewalls and other high-level proxy devices are not transparent to
--  any tcp fingerprinting software. It applies to p0f, as well.
-+  any TCP fingerprinting software. It applies to p0f, as well.
-   
+-  Proxy firewalls and other high-level proxy devices are not transparent to
+-  any TCP-level fingerprinting software. The device itself will be
+-  fingerprinted, not actual source hosts.
+-  
++  Proxy firewalls and other high-level proxy devices are not transparent to any
++  TCP-level fingerprinting software. The device itself will be fingerprinted,
++  not actual source hosts.
++
    In order to obtain information required for fingerprinting, you have to
-   receive at least one SYN packet initializing TCP connection to your
-@@ -78,9 +79,9 @@
-   window size are constant for initial TCP/IP packet, but changing rapidly
-   later).
-   
--Why our bubble gum is better?
-+Why is our bubble gum better?
- 
+-  receive at least one SYN packet initializing TCP connection to your
+-  machine or network. Note: you don't have to respond to particular SYN.
+-  Of course, it's impossible to perform any kind of OS detection witout
+-  receiving any information.
+-  
+-  It is possible to perform passive fingerprinting on live TCP connection, or
+-  on a connection established by you to a remote host. However, these
+-  techniques are less reliable (many implementations copy parameters from
+-  the first SYN packet; other parameters change rapidly with time).
+-  
+-
+------------------------------------------
+-Is there anything special about this one?
+------------------------------------------
+-
 -  There is another passive OS detection utility, called 'siphon'. It's
-+  There is another passive OS detection utility, called 'siphon'. It's a
-   pretty good piece of proof-of-concept software, but it isn't perfect. Well,
-   p0f isn't perfect for sure, but has several improvements:
-   
-@@ -128,8 +129,8 @@
-   
- Files:
+-  pretty good piece of proof-of-concept software, but it isn't perfect. Well,
+-  p0f isn't perfect for sure, but features some improvements:
+-  
++  receive at least one SYN packet initializing TCP connection to your machine or
++  network.  Note: you don't have to respond to this particular SYN.  Of course,
++  it's impossible to perform any kind of OS detection without receiving any
++  information.
++
++  It is possible to perform passive fingerprinting on a live TCP connection, or
++  on a connection established by you to a remote host. However, these techniques
++  are less reliable (many implementations copy parameters from the first SYN
++  packet; other parameters change rapidly with time).
++
++
++---------------------------------------------
++Is there anything special about this program?
++---------------------------------------------
++
++  There is another passive OS detection utility, called 'siphon'.  It's a pretty
++  good piece of proof-of-concept software, but it isn't perfect.  Well, p0f
++  isn't perfect for sure, but features some improvements:
++
+   - it's single-threaded and pretty clean,
+-  
++
+   - works properly on Linuxes (siphon has a problem with bpf on 2.2), as
+     well as on BSD systems and SunOS/Solaris,
+-  
++
+   - has pretty large and detailed fingerprints database,
+-  
++
+   - uses more information for fingerprinting (42 extra bits),
+-  
++
+   - it's more accurate,
+-  
++
+   - you can define your own filtering rules in the tcpdump flavour:
+-    p0f 'src host 1.2.3.4' or p0f 'gateway 1.2.3.4 and port 80', and
+-    listening interface (using option -i).
+-    
+-  What more? Dunno :) Simply, check it out.
++    p0f 'src host 1.2.3.4' or p0f 'gateway 1.2.3.4 and port 80', and listening
++    interface (using option -i).
++
++  What more?  Dunno. :) Simply, check it out.
+ 
+ 
+ ------------
+ Not working!
+ ------------
+ 
+-  Probably p0f isn't working well on every platform in the world; first
+-  of all, you'll need libpcap 0.4 or newer; sometimes pcap.h is placed in
+-  /usr/include/pcap instead of /usr/include/ (eg. in broken RH 6.1 package). 
+-  In this case, simply issue:
+-  
+-  ln -s /usr/include/pcap/pcap.h /usr/include/
+-  ln -s /usr/include/pcap/net/bpf.h /usr/include/net/
+-  
+-  NOTE: if p0f recognized system incorrectly or cannot recognize it at all,
+-  please send OS signature and system description to author. Thanks :)
+-  
++  Probably p0f isn't working well on every platform in the world.  First of all,
++  you'll need libpcap 0.4 or newer; sometimes pcap.h is placed in
++  /usr/include/pcap instead of /usr/include/ (for example, in the broken Red Hat
++  6.1 package).  In this case, simply issue:
++
++  	ln -s /usr/include/pcap/pcap.h /usr/include/
++  	ln -s /usr/include/pcap/net/bpf.h /usr/include/net/
++
++  NOTE:  if p0f recognized the system incorrectly or cannot recognize it at all,
++  please send the OS signature and system description to the author.  Thanks. :)
++
+   Tested platforms:
+ 
+   - NetBSD  
+   - FreeBSD
++    in the ports collection
+   - OpenBSD
+   - Linux 2.0/2.2/2.4
+     http://www.stearns.org/p0f/
+   - Solaris 2.6-2.7
+   - LinuxPPC
+     http://rpmfind.net/linux/RPM/linuxPPC/contrib/software/Applications/Networking/p0f-1.7-0.ppc.html
+-  
+-  Requires: libpcap 0.4 or newer; GNU cc 2.7.x or newer; GNU make 3.7x;
+-            GNU egrep (for proper Makefile processing)
+ 
+-  
++  Requires: libpcap 0.4 or newer; GNU cc 2.7.x or newer; GNU make 3.7x or BSD
++	    make; GNU egrep (for proper Makefile processing)
++
++
+ -------------
+ Configuration
+ -------------
  
 -  /etc/p0f.fp or ./p0f.fp - OS fingerprints database. Format is described
 -  inside:
-+  /etc/p0f.fp or ./p0f.fp - OS fingerprints database.
-+  The format is described inside:
-   
-   # Valid entry describes the way server starts TCP handshake (first SYN).
-   # Important options are: window size (wss), maximum segment size (mss),
+-  
++  The database of OS fingerprints is usually kept in /etc/p0f.fp or ./p0f.fp .
++  Its format is described below:
++
+   #
+   # p0f - passive OS fingerprinting
+   # -------------------------------
+@@ -208,9 +209,9 @@
+   # W    - window scaling (-1=not present, other=value)
+   # S    - sackOK flag (0=unset, 1=set)
+   # N    - nop flag (0=unset, 1=set)
+-  # I    - declared packet size (-1 = irrevelant)
++  # I    - declared packet size (-1 = irrelevant)
+   #
+-  
++
+ 
+ --------------------
+ What should be done?
+@@ -218,22 +219,22 @@
+ 
+   - Colorful interface, of course ;)
+   - Packet sizes added for old fingerprints
+-  - Manpage and other user-friendly features
++  - Man page and other user-friendly features
+ 
+ 
+ -------------------
+ License, disclaimer
+ -------------------
+ 
+-  The p0f utility and related utilities are free software; you can
+-  redistribute it and/or modify it under the terms of the GNU Library
+-  General Public License as published by the Free Software Foundation;
+-  either version 2 of the License, or (at your option) any later version.
+-   
+-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+-  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+-  MICHAL ZALEWSKI, OR ANY OTHER CONTRIBUTORS BE LIABLE FOR ANY CLAIM,
+-  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+-  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+-  OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
++  The p0f utility and related utilities are free software; you can redistribute
++  it and/or modify it under the terms of the GNU Library General Public License
++  as published by the Free Software Foundation; either version 2 of the License,
++  or (at your option) any later version.
++
++  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.  IN NO EVENT SHALL
++  MICHAL ZALEWSKI, OR ANY OTHER CONTRIBUTORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
++  OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
++  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
++  IN THE SOFTWARE.
