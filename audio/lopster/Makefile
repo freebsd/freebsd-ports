@@ -7,9 +7,9 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://lopster.sourceforge.net/download/
 
 MAINTAINER=	ports@oven.org
 COMMENT=	GTK+ client for Napster
