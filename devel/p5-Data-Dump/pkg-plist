@@ -1,5 +1,5 @@
 %%SITE_PERL%%/Data/Dump.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Dump
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
-@dirrm %%SITE_PERL%%/Data
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Data 2>/dev/null || true
