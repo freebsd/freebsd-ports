@@ -10635,7 +10635,6 @@ tank		ports/games/tank
 tap-plugins	ports/audio/tap-plugins
 tardy		ports/archivers/tardy
 tas		ports/net-mgmt/tas
-task		ports/sysutils/task
 taskjuggler	ports/deskutils/taskjuggler
 tasks		ports/www/tasks
 taucs		ports/math/taucs
