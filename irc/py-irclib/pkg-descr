@@ -4,4 +4,4 @@ a fairly thorough support for the basic IRC protocol and CTCP, but DCC
 connection support is not yet implemented. It actually does CTCP
 parsing exactly as the CTCP specifications describe it.
 
-WWW: http://joel.rosdahl.net/hacks/
+WWW: http://sourceforge.net/projects/python-irclib/
