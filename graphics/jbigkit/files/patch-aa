@@ -1,6 +1,36 @@
---- Makefile.orig	Tue Jan  9 16:26:33 1996
-+++ Makefile	Tue Dec  3 18:33:09 1996
-@@ -30,3 +30,18 @@
+--- Makefile.orig	Sat Apr 11 09:34:54 1998
++++ Makefile	Thu Jun 25 13:54:14 1998
+@@ -2,13 +2,13 @@
+ # $Id: Makefile,v 1.5 1998-04-11 02:34:53+01 mgk25 Rel $
+ 
+ # Select an ANSI/ISO C compiler here, GNU gcc is recommended
+-CC = gcc
++#CC = gcc
+ 
+ # Options for the compiler: A high optimization level is suggested
+-CCFLAGS = -O2 -W
++#CCFLAGS = -O2 -W
+ #CCFLAGS = -O -g -W -Wall -ansi -pedantic #-DDEBUG  # developer only
+ 
+-CFLAGS = $(CCFLAGS) -I../libjbig
++CFLAGS += -I../libjbig
+ 
+ all: lib pbm
+ 	@echo "Enter 'make test' in order to start some automatic tests."
+@@ -19,9 +19,9 @@
+ pbm: lib
+ 	(cd pbmtools; make "CC=$(CC)" "CFLAGS=$(CFLAGS)")
+ 
+-test:
+-	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)" test)
+-	(cd pbmtools; make "CC=$(CC)" "CFLAGS=$(CFLAGS)" test)
++#test:
++#	(cd libjbig;  make "CC=$(CC)" "CFLAGS=$(CFLAGS)" test)
++#	(cd pbmtools; make "CC=$(CC)" "CFLAGS=$(CFLAGS)" test)
+ 
+ clean:
+ 	rm -f *~ core
+@@ -31,3 +31,19 @@
  distribution: clean
  	rm -f libjbig/libjbig.a
  	(cd ..; tar -c -v --exclude RCS -f jbigkit.tar jbigkit)
@@ -14,8 +44,9 @@
 +	install -c -m 644 -o bin -g bin pbmtools/jbgtopbm.1 ${PREFIX}/man/man1
 +	mkdir -p ${PREFIX}/man/man5
 +	install -c -m 644 -o bin -g bin pbmtools/pbm.5 ${PREFIX}/man/man5
++	install -c -m 644 -o bin -g bin pbmtools/pgm.5 ${PREFIX}/man/man5
 +	mkdir -p ${PREFIX}/include
 +	install -c -m 644 -o bin -g bin libjbig/jbig.h ${PREFIX}/include
 +	mkdir -p ${PREFIX}/lib
 +	install -c -m 644 -o bin -g bin libjbig/libjbig.a ${PREFIX}/lib
-+	install -c -m 644 -o bin -g bin libjbig/libjbig.so.0.9 ${PREFIX}/lib
++	install -c -m 644 -o bin -g bin libjbig/libjbig.so.1.0 ${PREFIX}/lib

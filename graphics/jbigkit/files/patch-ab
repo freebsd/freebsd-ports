@@ -1,30 +1,31 @@
---- libjbig/Makefile.orig	Tue Jan  9 16:18:50 1996
-+++ libjbig/Makefile	Sat Dec 21 17:41:00 1996
-@@ -7,7 +7,7 @@
+--- libjbig/Makefile.orig	Thu Jun 25 13:26:01 1998
++++ libjbig/Makefile	Thu Jun 25 13:29:44 1998
+@@ -5,9 +5,9 @@
+ CC = gcc
+ 
  # Options for the compiler: A high optimization level is suggested
- CFLAGS = -O -Wall -ansi -pedantic
+-CFLAGS = -O -Wall -ansi -pedantic
++CFLAGS += -Wall -ansi -pedantic
  
 -all: libjbig.a tstcodec
-+all: libjbig.a libjbig.so.0.9 tstcodec
++all: libjbig.a libjbig.so.1.0
  
  tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
  	$(CC) $(CFLAGS) -o tstcodec -DTEST_CODEC tstcodec.c jbig.c \
-@@ -18,7 +18,19 @@
+@@ -18,7 +18,17 @@
  	ar rc libjbig.a jbig.o jbig_tab.o
  	ranlib libjbig.a
  
-+libjbig.so.0.9: jbig.so jbig_tab.so
-+	rm -f ${.TARGET}
++libjbig.so.1.0: jbig.so jbig_tab.so
++	rm -f libjbig.so.1.0
 +	ld -Bshareable -o ${.TARGET} ${.ALLSRC}
-+
++	
  jbig.o: jbig.c jbig.h
 +
 +.SUFFIXES: .c .so
 +.c.so:
 +	${CC} -c -fpic -DPIC ${CFLAGS} ${.IMPSRC} -o ${.TARGET}
-+
 +jbig.so: jbig.c jbig.h
-+
 +jbig_tab.so: jbig_tab.c
  
  test: tstcodec
