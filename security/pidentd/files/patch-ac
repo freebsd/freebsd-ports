@@ -1,124 +1,67 @@
-*** src/kernel/freebsd.c.orig	Fri Oct 21 01:07:37 1994
---- src/kernel/freebsd.c	Sun Apr 16 21:21:02 1995
+*** identd.8.orig	Thu Jul 27 21:18:14 1995
+--- identd.8	Thu Jul 27 21:16:53 1995
 ***************
-*** 53,58 ****
---- 53,61 ----
-  #include "identd.h"
-  #include "error.h"
-  
-+ #ifdef INPLOOKUP_SETLOCAL
-+ #define	_HAVE_OLD_INPCB
-+ #endif
-  
-  extern void *calloc();
-  extern void *malloc();
+*** 6,12 ****
+  .SH NAME
+  identd, in.identd \- TCP/IP IDENT protocol server
+  .SH SYNOPSIS
+! .B /usr/sbin/in.identd
+  .RB [ \-i | \-w | \-b ]
+  .RB [ \-t<seconds> ]
+  .RB [ \-u<uid> ]
+--- 6,12 ----
+  .SH NAME
+  identd, in.identd \- TCP/IP IDENT protocol server
+  .SH SYNOPSIS
+! .B !!PREFIX!!/sbin/identd
+  .RB [ \-i | \-w | \-b ]
+  .RB [ \-t<seconds> ]
+  .RB [ \-u<uid> ]
 ***************
-*** 76,82 ****
---- 79,89 ----
-  
-  static int nfile;
-  
-+ #ifdef _HAVE_OLD_INPCB
-  static struct inpcb tcb;
-+ #else
-+ static struct inpcbhead tcb;
-+ #endif
-  
-  int k_open()
-  {
+*** 234,247 ****
+  mode of operation.
+  .SH EXAMPLES
+  Assuming the server is located in
+! .B /usr/etc/in.identd
+  one can put either:
+  .PP
+! ident stream tcp wait sys /usr/etc/in.identd in.identd -w -t120
+  .PP
+  or:
+  .PP
+! ident stream tcp nowait sys /usr/etc/in.identd in.identd -i
+  .PP
+  into the
+  .B /etc/inetd.conf
+--- 234,247 ----
+  mode of operation.
+  .SH EXAMPLES
+  Assuming the server is located in
+! .B !!PREFIX!!/sbin/identd
+  one can put either:
+  .PP
+! ident stream tcp wait sys !!PREFIX!!/sbin/identd identd -w -t120
+  .PP
+  or:
+  .PP
+! ident stream tcp nowait sys !!PREFIX!!/sbin/identd identd -i
+  .PP
+  into the
+  .B /etc/inetd.conf
 ***************
-*** 127,148 ****
-  ** Returns NULL if no match.
-  */
-  static struct socket *
-      getlist(pcbp, faddr, fport, laddr, lport)
-    struct inpcb *pcbp;
-    struct in_addr *faddr;
-    int fport;
-    struct in_addr *laddr;
-    int lport;
-  {
-    struct inpcb *head;
-  
-    if (!pcbp)
-      return NULL;
-  
-!   
-    head = pcbp->inp_prev;
-    do 
-    {
-      if ( pcbp->inp_faddr.s_addr == faddr->s_addr &&
-  	 pcbp->inp_laddr.s_addr == laddr->s_addr &&
-  	 pcbp->inp_fport        == fport &&
---- 134,173 ----
-  ** Returns NULL if no match.
-  */
-  static struct socket *
-+ #ifdef _HAVE_OLD_INPCB
-      getlist(pcbp, faddr, fport, laddr, lport)
-    struct inpcb *pcbp;
-+ #else
-+     getlist(pcbhead, faddr, fport, laddr, lport)
-+   struct inpcbhead *pcbhead;
-+ #endif
-    struct in_addr *faddr;
-    int fport;
-    struct in_addr *laddr;
-    int lport;
-  {
-+ #ifdef _HAVE_OLD_INPCB
-    struct inpcb *head;
-+ #else
-+   struct inpcb *head, pcbp;
-+ #endif
-  
-+ #ifdef _HAVE_OLD_INPCB
-    if (!pcbp)
-      return NULL;
-+ #else
-+   head = pcbhead->lh_first;
-+   if (!head)
-+     return NULL;
-+ #endif
-+  
-  
-! #ifdef _HAVE_OLD_INPCB
-    head = pcbp->inp_prev;
-+ #endif
-    do 
-    {
-+ #ifdef _HAVE_OLD_INPCB
-      if ( pcbp->inp_faddr.s_addr == faddr->s_addr &&
-  	 pcbp->inp_laddr.s_addr == laddr->s_addr &&
-  	 pcbp->inp_fport        == fport &&
-***************
-*** 153,158 ****
---- 178,193 ----
-  		  pcbp,
-  		  sizeof(struct inpcb),
-  		  "tcblist"));
-+ #else
-+     if (!getbuf((long) head, &pcbp, sizeof(struct inpcb), "tcblist"))
-+        break;
-+     if (pcbp.inp_faddr.s_addr == faddr->s_addr &&
-+ 	pcbp.inp_fport        == fport &&
-+ 	pcbp.inp_lport        == lport )
-+ 	return(pcbp.inp_socket);
-+     head = pcbp.inp_list.le_next;
-+   } while (head != NULL);
-+ #endif
-  
-    return NULL;
-  }
-***************
-*** 186,192 ****
---- 221,229 ----
-    if (!getbuf(nl[N_TCB].n_value, &tcb, sizeof(tcb), "tcb"))
-      return -1;
-    
-+ #ifdef _HAVE_OLD_INPCB
-    tcb.inp_prev = (struct inpcb *) nl[N_TCB].n_value;
-+ #endif
-    sockp = getlist(&tcb, faddr, fport, laddr, lport);
-   
-    if (!sockp)
+*** 254,260 ****
+  .B /etc/rc.local
+  file:
+  .PP
+! /usr/etc/in.identd -b -u2 -g2
+  .PP
+  This will make it run in the background as user 2, group 2 (user "sys",
+  group "kmem" on SunOS 4.1.1).
+--- 254,260 ----
+  .B /etc/rc.local
+  file:
+  .PP
+! !!PREFIX!!/sbin/identd -b -u2 -g2
+  .PP
+  This will make it run in the background as user 2, group 2 (user "sys",
+  group "kmem" on SunOS 4.1.1).
