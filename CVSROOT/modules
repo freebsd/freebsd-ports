@@ -3783,6 +3783,7 @@ lifelines	ports/misc/lifelines
 lightning	ports/devel/lightning
 lile		ports/misc/lile
 lilypond	ports/print/lilypond
+limewire	ports/net/limewire
 limits		src/usr.bin/limits
 linalg		ports/math/linalg
 linbot		ports/www/linbot
