@@ -1,0 +1,19 @@
+bin/adjacency
+bin/argus
+bin/connections
+bin/dnstats
+bin/ra
+bin/raservices
+bin/rasort
+include/cons_def.h
+include/cons_out.h
+share/doc/argus/CA-95.01
+share/doc/argus/CA-95.01.scan.sh
+share/doc/argus/README
+share/doc/argus/configs
+share/doc/argus/dailyscan.sh
+share/doc/argus/policy.conf
+share/doc/argus/policy.test
+share/doc/argus/ra.conf
+share/doc/argus/services
+@dirrm share/doc/argus
