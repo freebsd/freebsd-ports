@@ -55,19 +55,19 @@ AUTO_START?=	NO
 PID_FILE=	/var/run/orion.pid
 
 pre-install:
-	@${ECHO} "Installation settings:"
-	@${ECHO} "   Destination directory:   ${APP_HOME}"
-	@${ECHO} "   Control script location: ${CONTROL_SCRIPT}"
-	@${ECHO} "   Startup script location: ${STARTUP_SCRIPT}"
-	@${ECHO} "   Location of JDK:         ${JAVA_HOME}"
-	@${ECHO} "   Location of Java port:   ${JAVA_PORT}"
-	@${ECHO} "   Using Jikes:             ${WITH_JIKES}"
-	@${ECHO} "   Running as (user/group): ${USER}/${GROUP}"
-	@${ECHO} "   HTTP port:               ${HTTP_PORT}"
-	@${ECHO} "   RMI port:                ${RMI_PORT}"
-	@${ECHO} "   Starting after install:  ${AUTO_START}"
-	@${ECHO} "   Password for 'admin':    ${ADMIN_PASSWORD}"
-	@${ECHO} "   Password for 'user':     ${DEFAULT_USER_PASSWORD}"
+	@${ECHO_CMD} "Installation settings:"
+	@${ECHO_CMD} "   Destination directory:   ${APP_HOME}"
+	@${ECHO_CMD} "   Control script location: ${CONTROL_SCRIPT}"
+	@${ECHO_CMD} "   Startup script location: ${STARTUP_SCRIPT}"
+	@${ECHO_CMD} "   Location of JDK:         ${JAVA_HOME}"
+	@${ECHO_CMD} "   Location of Java port:   ${JAVA_PORT}"
+	@${ECHO_CMD} "   Using Jikes:             ${WITH_JIKES}"
+	@${ECHO_CMD} "   Running as (user/group): ${USER}/${GROUP}"
+	@${ECHO_CMD} "   HTTP port:               ${HTTP_PORT}"
+	@${ECHO_CMD} "   RMI port:                ${RMI_PORT}"
+	@${ECHO_CMD} "   Starting after install:  ${AUTO_START}"
+	@${ECHO_CMD} "   Password for 'admin':    ${ADMIN_PASSWORD}"
+	@${ECHO_CMD} "   Password for 'user':     ${DEFAULT_USER_PASSWORD}"
 	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
@@ -103,7 +103,7 @@ do-install:
 
 	@# Apply all text replacements
 .for f in ${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT_NAME}.1 ${STARTUP_SCRIPT_NAME} principals.xml
-	@${ECHO} -n "Applying text replacements to $f..."
+	@${ECHO_CMD} -n "Applying text replacements to $f..."
 	@${SED} \
 	-e "/%%ADMIN_PASSWORD%%/s//${ADMIN_PASSWORD}/" \
 	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/" \
@@ -124,7 +124,7 @@ do-install:
 	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/" \
 	-e "/%%USER%%/s//${USER}/" \
 	${FILESDIR}/$f > ${WRKDIR}/$f
-	@${ECHO} " [ DONE ]"
+	@${ECHO_CMD} " [ DONE ]"
 .endfor
 
 	@# Install the control script
@@ -159,9 +159,9 @@ do-install:
 	${CHMOD} 0600 ${PID_FILE}
 
 post-install:
-	@${ECHO} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
+	@${ECHO_CMD} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
 .if !defined(NOPORTDOCS)
-	@${ECHO} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${APP_TITLE}."
+	@${ECHO_CMD} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${APP_TITLE}."
 .endif
 .if ${AUTO_START} == "YES"
 	@${CONTROL_SCRIPT} start || true
