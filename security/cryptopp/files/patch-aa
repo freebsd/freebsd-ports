@@ -1,0 +1,37 @@
+--- GNUmakefile.orig	Thu Jan 18 11:46:13 2001
++++ GNUmakefile	Thu Jan 18 12:36:40 2001
+@@ -1,4 +1,4 @@
+-CXXFLAGS = -O2 -w
++CXXFLAGS += -w
+ ARFLAGS = cr
+ RANLIB = ranlib
+ UNAME = $(shell uname)
+@@ -6,7 +6,7 @@
+ ifeq ($(UNAME),)	# for DJGPP, where uname doesn't exist
+ CXXFLAGS := $(CXXFLAGS) -mbnu210
+ else
+-CXXFLAGS := $(CXXFLAGS) -pipe
++CXXFLAGS := $(CXXFLAGS)
+ endif
+ 
+ ifeq ($(UNAME),SunOS)
+@@ -28,16 +28,16 @@
+ TESTOBJS = bench.o test.o validat1.o validat2.o validat3.o
+ LIBOBJS = $(filter-out $(TESTOBJS),$(OBJS))
+ 
+-all: cryptest.exe
++all: cryptest
+ 
+ clean:
+-	$(RM) cryptest.exe libcryptopp.a $(LIBOBJS) $(TESTOBJS)
++	$(RM) cryptest libcryptopp.a $(LIBOBJS) $(TESTOBJS)
+ 
+ libcryptopp.a: $(LIBOBJS)
+ 	$(AR) $(ARFLAGS) $@ $(LIBOBJS)
+ 	$(RANLIB) $@
+ 
+-cryptest.exe: libcryptopp.a $(TESTOBJS)
++cryptest: libcryptopp.a $(TESTOBJS)
+ 	$(CXX) -o $@ $(CXXFLAGS) $(TESTOBJS) -L. -lcryptopp $(LDFLAGS) $(LDLIBS)
+ 
+ .SUFFIXES: .cpp
