@@ -21,8 +21,9 @@ Local/Applications/Gomoku.app/Resources/EmptyTopLeft.png
 Local/Applications/Gomoku.app/Resources/EmptyTopRight.png
 Local/Applications/Gomoku.app/Resources/English.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/French.lproj/Localizable.strings
-Local/Applications/Gomoku.app/Resources/Gomoku.png
+Local/Applications/Gomoku.app/Resources/German.lproj/Localizable.strings
 Local/Applications/Gomoku.app/Resources/Gomoku.desktop
+Local/Applications/Gomoku.app/Resources/Gomoku.png
 Local/Applications/Gomoku.app/Resources/Human.png
 Local/Applications/Gomoku.app/Resources/HumanBottom.png
 Local/Applications/Gomoku.app/Resources/HumanBottomLeft.png
@@ -34,10 +35,17 @@ Local/Applications/Gomoku.app/Resources/HumanTopLeft.png
 Local/Applications/Gomoku.app/Resources/HumanTopRight.png
 Local/Applications/Gomoku.app/Resources/Info-gnustep.plist
 Local/Applications/Gomoku.app/Resources/Italian.lproj/Localizable.strings
+Local/Applications/Gomoku.app/Resources/Spanish.lproj/Localizable.strings
+Local/Applications/Gomoku.app/Resources/Swedish.lproj/Localizable.strings
+Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj/Localizable.strings
 @dirrm Local/Applications/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 @dirrm Local/Applications/Gomoku.app/%%GNU_ARCH%%/%%OPSYS%%
 @dirrm Local/Applications/Gomoku.app/%%GNU_ARCH%%
+@dirrm Local/Applications/Gomoku.app/Resources/TraditionalChinese.lproj
+@dirrm Local/Applications/Gomoku.app/Resources/Swedish.lproj
+@dirrm Local/Applications/Gomoku.app/Resources/Spanish.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/Italian.lproj
+@dirrm Local/Applications/Gomoku.app/Resources/German.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/French.lproj
 @dirrm Local/Applications/Gomoku.app/Resources/English.lproj
 @dirrm Local/Applications/Gomoku.app/Resources
