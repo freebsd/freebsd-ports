@@ -15,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"

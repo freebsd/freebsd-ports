@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.brettnacher.org/users/dominik/FreeBSD/
 MAINTAINER=	domi@saargate.de
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 MAN1=		grun.1x

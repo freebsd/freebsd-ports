@@ -15,7 +15,7 @@ MAINTAINER=	stijn@win.tue.nl
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -24,8 +24,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
+.if ${HAVE_GNOME:Mgtk12}!=""
+USE_GNOME+=	gtk12
+PKGNAMESUFFIX=	-gtk
 .else
 CONFIGURE_ARGS=	--disable-gnome
 .endif

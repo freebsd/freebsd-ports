@@ -19,7 +19,8 @@ BROKEN=		"Missing dependency on xterm"
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 MAN1=		gtkfind.1 mktmp.1
