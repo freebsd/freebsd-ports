@@ -336,7 +336,7 @@
 + /*----------------------------------------------------------------------
 +    If no nntp-servers are defined, this program will be used to post news.
 +  ----*/
-+ #define SENDNEWS     "/usr/local/lib/news/inews -h"       /* news posting cmd */
++ #define SENDNEWS     "/usr/local/news/lib/inews -h"       /* news posting cmd */
 + 
 + 
 + /*--------- Program employed by users to change their password ---------*/
