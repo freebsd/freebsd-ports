@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.48 1998/11/14 09:43:34 asami Exp $
+# $Id: Makefile,v 1.49 1998/11/23 21:51:08 jmz Exp $
 #
 
 DISTNAME=	xc
@@ -61,7 +61,7 @@ pre-install:
 
 post-install:
 .if ${PORTOBJFORMAT} == "aout"
-.for lib in PEX5 SM X11 XIE Xi Xmu Xt oldX
+.for lib in PEX5 SM XIE Xi Xmu Xt oldX
 	${LN} -sf lib${lib}.so.6.0 ${PREFIX}/lib/lib${lib}.so
 .endfor
 .for lib in X11 Xaw Xtst
