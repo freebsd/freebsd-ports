@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	8.0.055.p057
+PORTVERSION=	8.0.058
 CATEGORIES=	lang linux devel
 MASTER_SITES=
-DISTNAME=	l_cc_p_${PORTVERSION:C/\.p.+$//}
+DISTNAME=	l_cc_pc_${PORTVERSION:C/\.p.+$//}
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
@@ -46,6 +46,7 @@ ICC_SITE=	http://www.intel.com/software/products/compilers/
 .include <bsd.port.pre.mk>
 
 EXTRACT_AFTER_ARGS=	| tar -xf - \
+			--exclude intel-iidb\*.rpm \
 			--exclude intel-isubh\*.rpm \
 			--exclude \*ia64.rpm \
 			--exclude flexlm64
@@ -67,19 +68,17 @@ BROKEN=	Cannot coexist with linux_devtools
 .endif
 
 post-extract:
-.for i in \
-	intel-icc8-8.0-44.i386.rpm \
-#	intel-iidb7-7.3.1-85.i386.rpm
-	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null ${i} | ${CPIO} -idu --quiet
-.endfor
+	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null *.rpm | ${CPIO} -idu --quiet
 
-pre-patch:
+intel-patch: extract
 # Apply patches from Intel.
 .if ${PORTVERSION} != ${PATCHLEVEL}
 	@${BRANDELF} -t Linux ${WRKSRC}_${PATCHLEVEL}/papply
 	@${WRKSRC}_${PATCHLEVEL}/papply ${WRKSRC}_${PATCHLEVEL}/icc.rtp \
 		${WRKSRC}/opt/${COMPILERDIR}
 .endif
+
+pre-patch: intel-patch
 # Remove files we do not neet on FreeBSD.
 	@for i in `${CAT} ${FILESDIR}/exclude`; do \
 		${RM} -rf ${WRKSRC}/opt/${COMPILERDIR}/$$i; \
