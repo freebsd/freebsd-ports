@@ -37,6 +37,7 @@ world		-a .
 ADMsnmp		ports/security/ADMsnmp
 CVSROOT		CVSROOT
 access		CVSROOT access
+authpf		ports/security/authpf
 avail		CVSROOT avail
 commit_prep	CVSROOT commit_prep.pl
 commitcheck	CVSROOT commitcheck
