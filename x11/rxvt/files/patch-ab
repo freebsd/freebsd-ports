@@ -1,12 +1,19 @@
 --- ./src/utmp.c.org	Thu Jan 23 10:46:02 1997
 +++ ./src/utmp.c	Thu Apr 24 15:20:49 1997
-@@ -84,6 +84,9 @@
+@@ -80,6 +80,8 @@
+ #include <stdio.h>
+ #include <string.h>
+ 
++#include <sys/types.h>
++
+ #ifdef HAVE_UTMPX_H
  # include <utmpx.h>
  # define USE_SYSV_UTMP
- #else
-+# if defined(__FreeBSD__) && __FreeBSD__ >= 3
-+#  include <sys/types.h>
-+# endif
- # include <utmp.h>
- # ifdef HAVE_SETUTENT
- #  define USE_SYSV_UTMP
+@@ -90,7 +92,6 @@
+ # endif
+ #endif
+ 
+-#include <sys/types.h>
+ #include <sys/stat.h>
+ 
+ #ifdef TIME_WITH_SYS_TIME
