@@ -13,7 +13,7 @@ MAINTAINER=	matt@mattsnetwork.co.uk
 COMMENT=	Amateur Radio logging application
 
 USE_X_PREFIX=	yes
-USE_GNOME=	pkgconfig libgnomeprint
+USE_GNOME=	libgnomeprint
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
