@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_vhs
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.oav.net/projects/mod_vhs/
 DIST_SUBDIR=	apache2
