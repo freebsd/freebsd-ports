@@ -700,6 +700,7 @@
     SUBDIR += pharmacy
     SUBDIR += php-dbg
     SUBDIR += picasm
+    SUBDIR += picp
     SUBDIR += picprog
     SUBDIR += pinstall
     SUBDIR += pkgconfig
