@@ -12,6 +12,7 @@ MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 
 MAINTAINER=	pat@FreeBSD.org
 
+ONLY_FOR_ARCHS=	i386
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
@@ -19,8 +20,8 @@ CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		${PORTNAME}.1
 
-BINMODE=        2755
-BINGRP=         operator
+BINMODE=	2755
+BINGRP=		operator
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmapmload ${PREFIX}/bin
