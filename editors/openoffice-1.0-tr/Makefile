@@ -10,6 +10,6 @@ CATEGORIES=	editors
 LANG_PKGNAME=	tr
 LANG_EXT=	90
 LANG_CONFIGURE_ARG=	TURK
-MASTERDIR=	${.CURDIR}/../openoffice
+MASTERDIR=	${.CURDIR}/../openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"

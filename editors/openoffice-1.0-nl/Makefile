@@ -10,6 +10,6 @@ CATEGORIES=	editors
 LANG_PKGNAME=	nl
 LANG_EXT=	31
 LANG_CONFIGURE_ARG=	DTCH
-MASTERDIR=	${.CURDIR}/../openoffice
+MASTERDIR=	${.CURDIR}/../openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"
