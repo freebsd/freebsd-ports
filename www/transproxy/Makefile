@@ -8,7 +8,10 @@
 PORTNAME=	transproxy
 PORTVERSION=	1.5
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.nlc.net.au/pub/unix/transproxy/
+MASTER_SITES=	http://sf.gds.tuwien.ac.at/t/tr/transproxy/ \
+		http://www.nlc.net.au/pub/unix/transproxy/ \
+		http://www.saunders.id.au:9080/transproxy/software/
+
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sem@FreeBSD.org
