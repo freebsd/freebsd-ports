@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xinetd
-PORTVERSION=	2.3.5
+PORTVERSION=	2.3.7
 PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://www.xinetd.org/
@@ -23,7 +23,7 @@ CONFIGURE_ARGS+=	--with-inet6
 .endif
 
 MAN5=		xinetd.conf.5
-MAN8=		xinetd.8 xinetd.log.8
+MAN8=		xconv.8 xinetd.8 xinetd.log.8
 
 post-patch:
 	${FIND} ${WRKSRC}/libs/src -name Makefile.in | ${XARGS} \
