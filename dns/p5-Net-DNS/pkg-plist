@@ -1,53 +1,53 @@
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/FAQ.pod
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Header.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Nameserver.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Packet.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Question.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/A.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/AAAA.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/AFSDB.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/CERT.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/CNAME.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/DNAME.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/EID.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/HINFO.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/ISDN.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/LOC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/MB.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/MG.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/MINFO.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/MR.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/MX.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/NAPTR.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/NIMLOC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/NS.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/NSAP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/NULL.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/OPT.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/PTR.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/PX.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/RP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/RT.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/SOA.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/SRV.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/TKEY.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/TSIG.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/TXT.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/X25.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Resolver/Recurse.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Resolver.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Select.pm
-lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Update.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS/.packlist
-%%PORTDOCS%%share/doc/p5-Net-DNS/Changes
-%%PORTDOCS%%share/doc/p5-Net-DNS/README
-%%PORTDOCS%%share/doc/p5-Net-DNS/TODO
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Resolver
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Net/DNS
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net 2>/dev/null || true
-%%PORTDOCS%%@dirrm share/doc/p5-Net-DNS/
+%%SITE_PERL%%/Net/DNS.pm
+%%SITE_PERL%%/Net/DNS/FAQ.pod
+%%SITE_PERL%%/Net/DNS/Header.pm
+%%SITE_PERL%%/Net/DNS/Nameserver.pm
+%%SITE_PERL%%/Net/DNS/Packet.pm
+%%SITE_PERL%%/Net/DNS/Question.pm
+%%SITE_PERL%%/Net/DNS/RR.pm
+%%SITE_PERL%%/Net/DNS/RR/A.pm
+%%SITE_PERL%%/Net/DNS/RR/AAAA.pm
+%%SITE_PERL%%/Net/DNS/RR/AFSDB.pm
+%%SITE_PERL%%/Net/DNS/RR/CERT.pm
+%%SITE_PERL%%/Net/DNS/RR/CNAME.pm
+%%SITE_PERL%%/Net/DNS/RR/DNAME.pm
+%%SITE_PERL%%/Net/DNS/RR/EID.pm
+%%SITE_PERL%%/Net/DNS/RR/HINFO.pm
+%%SITE_PERL%%/Net/DNS/RR/ISDN.pm
+%%SITE_PERL%%/Net/DNS/RR/LOC.pm
+%%SITE_PERL%%/Net/DNS/RR/MB.pm
+%%SITE_PERL%%/Net/DNS/RR/MG.pm
+%%SITE_PERL%%/Net/DNS/RR/MINFO.pm
+%%SITE_PERL%%/Net/DNS/RR/MR.pm
+%%SITE_PERL%%/Net/DNS/RR/MX.pm
+%%SITE_PERL%%/Net/DNS/RR/NAPTR.pm
+%%SITE_PERL%%/Net/DNS/RR/NIMLOC.pm
+%%SITE_PERL%%/Net/DNS/RR/NS.pm
+%%SITE_PERL%%/Net/DNS/RR/NSAP.pm
+%%SITE_PERL%%/Net/DNS/RR/NULL.pm
+%%SITE_PERL%%/Net/DNS/RR/OPT.pm
+%%SITE_PERL%%/Net/DNS/RR/PTR.pm
+%%SITE_PERL%%/Net/DNS/RR/PX.pm
+%%SITE_PERL%%/Net/DNS/RR/RP.pm
+%%SITE_PERL%%/Net/DNS/RR/RT.pm
+%%SITE_PERL%%/Net/DNS/RR/SOA.pm
+%%SITE_PERL%%/Net/DNS/RR/SRV.pm
+%%SITE_PERL%%/Net/DNS/RR/TKEY.pm
+%%SITE_PERL%%/Net/DNS/RR/TSIG.pm
+%%SITE_PERL%%/Net/DNS/RR/TXT.pm
+%%SITE_PERL%%/Net/DNS/RR/X25.pm
+%%SITE_PERL%%/Net/DNS/Resolver.pm
+%%SITE_PERL%%/Net/DNS/Resolver/Recurse.pm
+%%SITE_PERL%%/Net/DNS/Select.pm
+%%SITE_PERL%%/Net/DNS/Update.pm
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
+@dirrm %%SITE_PERL%%/Net/DNS/RR
+@dirrm %%SITE_PERL%%/Net/DNS/Resolver
+@dirrm %%SITE_PERL%%/Net/DNS
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
