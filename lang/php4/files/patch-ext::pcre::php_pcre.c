@@ -1,10 +1,30 @@
---- ext/pcre/php_pcre.c.orig	Fri Apr 16 09:21:14 2004
-+++ ext/pcre/php_pcre.c	Fri Apr 16 09:23:36 2004
-@@ -106,15 +106,6 @@
- 	REGISTER_LONG_CONSTANT("PREG_SPLIT_DELIM_CAPTURE", PREG_SPLIT_DELIM_CAPTURE, CONST_CS | CONST_PERSISTENT);
+--- ext/pcre/php_pcre.c.orig	Sun Feb  1 20:56:16 2004
++++ ext/pcre/php_pcre.c	Sat May  8 00:50:32 2004
+@@ -47,20 +47,6 @@
+ 
+ ZEND_DECLARE_MODULE_GLOBALS(pcre)
+ 
+-
+-static void *php_pcre_malloc(size_t size)
+-{
+-	return pemalloc(size, 1);
+-}
+-
+-
+-static void php_pcre_free(void *ptr)
+-{
+-	if (ptr)
+-	pefree(ptr, 1);
+-}
+-
+-
+ static void php_free_pcre_cache(void *data)
+ {
+ 	pcre_cache_entry *pce = (pcre_cache_entry *) data;
+@@ -107,14 +93,6 @@
  	REGISTER_LONG_CONSTANT("PREG_SPLIT_OFFSET_CAPTURE", PREG_SPLIT_OFFSET_CAPTURE, CONST_CS | CONST_PERSISTENT);
  	REGISTER_LONG_CONSTANT("PREG_GREP_INVERT", PREG_GREP_INVERT, CONST_CS | CONST_PERSISTENT);
--
+ 
 -	pcre_malloc = php_pcre_malloc;
 -	pcre_free = php_pcre_free;
 -
@@ -16,29 +36,12 @@
  	return SUCCESS;
  }
  /* }}} */
-@@ -130,6 +121,16 @@
- }
- /* }}} */
+@@ -548,7 +526,7 @@
+ 					}
+ 				}
  
-+/* {{{ PHP_RINIT_FUNCTION(pcre) */
-+static PHP_RINIT_FUNCTION(pcre)
-+{
-+	pcre_malloc = php_pcre_malloc;
-+	pcre_free = php_pcre_free;
-+
-+	return SUCCESS;
-+}
-+/* }}} */
-+
- /* {{{ pcre_get_compiled_regex
-  */
- PHPAPI pcre* pcre_get_compiled_regex(char *regex, pcre_extra **extra, int *preg_options) {
-@@ -1527,7 +1528,7 @@
- 	pcre_functions,
- 	PHP_MINIT(pcre),
- 	PHP_MSHUTDOWN(pcre),
--	NULL,
-+	PHP_RINIT(pcre),
- 	NULL,
- 	PHP_MINFO(pcre),
- 	NO_VERSION_YET,
+-				php_pcre_free((void *) stringlist);
++				pcre_free((void *) stringlist);
+ 			}
+ 		}
+ 		else { /* Failed to match */
