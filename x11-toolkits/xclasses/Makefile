@@ -16,6 +16,7 @@ MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	C++ layout library for X
 
 INSTALLS_SHLIB=	yes
+NOT_FOR_ARCHS=	alpha amd64 ia64 sparc64
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_SUB=	VERSION="${PORTVERSION}"
 USE_GMAKE=	yes
@@ -23,12 +24,6 @@ USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 WRKSRC=		${WRKDIR}/xclasses
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-BROKEN=		"Does not build on FreeBSD >=5.x"
-.endif
 
 post-patch:
 .for file in build System/ARules.FreeBSD
@@ -68,4 +63,4 @@ do-install:
 	@cd ${WRKSRC} && ${SH} build install
 	@${INSTALL_SCRIPT} ${WRKSRC}/setenvxc ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
