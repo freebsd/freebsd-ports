@@ -23,10 +23,8 @@ GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^doc_DATA = .*|#&|g ; \
-		s|\(^pkgconfigdir =\) .*|\1 ${PREFIX}/libdata/pkgconfig|g ; \
-		s|\$$(mkinstalldirs) \$$(DESTDIR)\$$(docdir)$$|| ; \
-		s|\$$(mkinstalldirs) \$$(DESTDIR)\$$(docdir) |\$$(mkinstalldirs)|g' \
+	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g ; \
+		s|\(^pkgconfigdir =\) .*|\1 ${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
 
 post-install:
