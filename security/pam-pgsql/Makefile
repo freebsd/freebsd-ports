@@ -7,7 +7,7 @@
 
 PORTNAME=	pam-pgsql
 PORTVERSION=	0.5.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security databases
 MASTER_SITES=	${MASTER_SITE_DEBIAN} \
 		http://libpam-pgsql.codecastle.com/${PORTNAME}-${PORTVERSION}-${PORTREVISION}/
@@ -19,7 +19,9 @@ PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	m@absolight.fr
 
-LIB_DEPENDS=	pq:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+
+POSTGRESQL_PORT?=	databases/postgresql7
 
 PATCH_DIST_STRIP=	-p1
 # When the family of Debian mirrors is added to bsd.port.mk,

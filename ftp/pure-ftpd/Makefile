@@ -7,6 +7,7 @@
 
 PORTNAME=	pure-ftpd
 PORTVERSION=	1.0.13a
+PORTREVISION=	1
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -30,7 +31,8 @@ LIB_DEPENDS+=	mysqlclient:${PORTSDIR}/databases/mysql323-client
 .endif
 
 .if defined(WITH_PGSQL)
-LIB_DEPENDS+=	pq:${PORTSDIR}/databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 .endif
 
 GNU_CONFIGURE=	yes

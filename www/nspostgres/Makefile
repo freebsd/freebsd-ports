@@ -15,8 +15,10 @@ DISTNAME=	nspostgres3_0
 MAINTAINER=	jkoshy@freebsd.org
 
 BUILD_DEPENDS=	${LOCALBASE}/aolserver/bin/nsd:${PORTSDIR}/www/aolserver \
-		${LOCALBASE}/bin/postmaster:${PORTSDIR}/databases/postgresql7
+		${LOCALBASE}/bin/postmaster:${PORTSDIR}/${POSTGRESQL_PORT}
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+POSTGRESQL_PORT?=	databases/postgresql7
 
 WRKSRC=		${WRKDIR}/nspostgres
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	udmsearch
 PORTVERSION=	3.0.23
+PORTREVISION=	1
 CATEGORIES=	www databases
 MASTER_SITES=	http://mysearch.udm.net/Download/	\
 		ftp://ftp.izhcom.ru/pub/unix/UdmSearch/	\
@@ -25,7 +26,8 @@ CONFIGURE_ARGS=	--enable-charset-guesser \
 		--localstatedir=/var/udmsearch
 
 .if defined(WITH_PGSQL)
-LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql7
+POSTGRESQL_PORT?=	databases/postgresql7
+LIB_DEPENDS=		pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}/pgsql
 
 .elif defined(WITH_MSQL)
