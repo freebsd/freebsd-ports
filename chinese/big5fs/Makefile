@@ -5,117 +5,68 @@
 # $FreeBSD$
 #
 
-PORTNAME=		big5fs
-PORTVERSION=		2.2
-CATEGORIES=		chinese
-MASTER_SITES=		ftp://freebsd.csie.ntu.edu.tw/pub/users/rafan/
+PORTNAME=	big5fs
+PORTVERSION=	2.3
+CATEGORIES=	chinese
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/big5fs/
 
-MAINTAINER=		keith@FreeBSD.org
-COMMENT=		Reads Big5 filenames on Joliet, VFAT and NTFS filesystems
+MAINTAINER=	statue@freebsd.sinica.edu.tw
+COMMENT=	Reads Big5 filenames on Joliet, VFAT and NTFS filesystems
 
-NO_PACKAGE=		"Different versions definitely cause crash"
+NO_PACKAGE=	"Different versions definitely cause crash"
 
-SYSDIR=			/usr/src/sys
-KMODDIR=		${PREFIX}/modules
-PLIST_SUB=		MSDOSFSKO=${MSDOSFSKO}
+SYSDIR=		/usr/src/sys
+KMODDIR=	${PREFIX}/modules
+PLIST_SUB=	MSDOSFSKO=${MSDOSFSKO}
+USE_REINPLACE=	yes
+NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500027
-WITHOUT_NTFS=		yes
-MSDOSFSDIR=		${SYSDIR}/fs/msdosfs
-MSDOSFSKO=		msdosfs.ko
-MSDOSFSKODIR=		${SYSDIR}/modules/msdosfs
-.elif ${OSVERSION} > 500018 && ${OSVERSION} < 500027
-MSDOSFSDIR=		${SYSDIR}/fs/msdosfs
-MSDOSFSKO=		msdosfs.ko
-MSDOSFSKODIR=		${SYSDIR}/modules/msdosfs
-NTFSDIR=		${SYSDIR}/fs/ntfs
-NTFSPATCH=		ntfs_big5.diff.440000
-.elif ${OSVERSION} <= 500018 && ${OSVERSION} < 440001
-MSDOSFSDIR=		${SYSDIR}/msdosfs
-MSDOSFSKO=		msdos.ko
-MSDOSFSKODIR=		${SYSDIR}/modules/msdos
-NTFSDIR=		${SYSDIR}/ntfs
-NTFSPATCH=		ntfs_big5.diff.440000
+.if ${OSVERSION} >= 500000
+MSDOSFSDIR=	${SYSDIR}/fs/msdosfs
+MSDOSFSKO=	msdosfs.ko
+MSDOSFSKODIR=	${SYSDIR}/modules/msdosfs
+NTFSDIR=	${SYSDIR}/fs/ntfs
+NTFSPATCH=	ntfs_big5.diff.5
 .else
-MSDOSFSDIR=		${SYSDIR}/msdosfs
-MSDOSFSKO=		msdos.ko
-MSDOSFSKODIR=		${SYSDIR}/modules/msdos
-NTFSDIR=		${SYSDIR}/ntfs
-NTFSPATCH=		ntfs_big5.diff.440001
+MSDOSFSDIR=	${SYSDIR}/msdosfs
+MSDOSFSKO=	msdos.ko
+MSDOSFSKODIR=	${SYSDIR}/modules/msdos
+NTFSDIR=	${SYSDIR}/ntfs
+NTFSPATCH=	ntfs_big5.diff.440001
 .endif
 
-.if defined(WITHOUT_NTFS)
-PLIST_SUB+=             NTFSKMOD="@comment "
-.else
-PLIST_SUB+=             NTFSKMOD=""
+.if !exists (${SYSDIR})
+IGNORE=	"You need to extract kernel source tree before you build this package"
 .endif
-
-.if defined(WITHOUT_NTFS)
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "NTFS big5 patch is broken on this version."
-	@${ECHO_MSG} "I will NOT build and install NTFS big5fs."
-	@${ECHO_MSG}
-.endif
-
-pre-extract:
-	@if [ ! -d /sys -o ! -d /usr/src/sys ]; then \
-		${ECHO} "****************************************" ; \
-		${ECHO} " You need to extract kernel source tree" ; \
-		${ECHO} " before you build this package..." ; \
-		${ECHO} "****************************************" ; \
-		${FALSE} ; \
-	fi
 
 do-extract:
-	@${MKDIR} ${WRKDIR}/msdos ${WRKDIR}/cd9660
-	@${CP} -R ${MSDOSFSDIR}/*.[ch] ${WRKDIR}/msdos
-	@${CP} ${MSDOSFSKODIR}/Makefile ${WRKDIR}/msdos/Makefile.orig
-	@${CP} -R ${SYSDIR}/isofs/cd9660/*.[ch] ${WRKDIR}/cd9660
-	@${CP} ${SYSDIR}/modules/cd9660/Makefile ${WRKDIR}/cd9660/Makefile.orig
-.if !defined(WITHOUT_NTFS)
-		@${MKDIR} ${WRKDIR}/ntfs
-		@${CP} -R ${NTFSDIR}/*.[ch] ${WRKDIR}/ntfs
-		@${CP} ${SYSDIR}/modules/ntfs/Makefile ${WRKDIR}/ntfs/Makefile.orig
-.endif
-	@(cd ${WRKDIR}; ${TAR} xzf ${DISTDIR}/${DISTFILES} )
+	@${MKDIR} ${WRKSRC}/msdos ${WRKSRC}/cd9660 ${WRKSRC}/ntfs
+	@${CP} ${MSDOSFSDIR}/* ${MSDOSFSKODIR}/Makefile ${WRKSRC}/msdos
+	@${CP} ${SYSDIR}/isofs/cd9660/* ${SYSDIR}/modules/cd9660/Makefile ${WRKSRC}/cd9660
+	@${CP} ${NTFSDIR}/* ${SYSDIR}/modules/ntfs/Makefile ${WRKSRC}/ntfs
+	@(cd ${WRKSRC}; ${TAR} xzf ${DISTDIR}/${DISTFILES} )
+	@${REINPLACE_CMD} -e "/^\.PATH/d" ${WRKSRC}/*/Makefile
 .if ${OSVERSION} > 500041
-# Guess a number when FreeBSD finished de __P
-	@(cd ${WRKDIR}; ${CP} cd9660_big5.diff cd9660_big5.diff.orig; \
-			${CP} msdos_big5.diff msdos_big5.diff.orig; \
-	${SED} -e 's/ __P(\(.*\))/\1/' msdos_big5.diff.orig > msdos_big5.diff; \
-	${SED} -e 's/ __P(\(.*\))/\1/' cd9660_big5.diff.orig > cd9660_big5.diff)
+	@${REINPLACE_CMD} -e 's/ __P(\(.*\))/\1/g' ${WRKSRC}/*.diff
 .endif
-	@${SED} -e 's,@@PREFIX@@,${PREFIX},' ${FILESDIR}/big5fs.sh > ${WRKDIR}/big5fs.sh
 
 do-patch:
-	@${SED} -e "/^\.PATH/d" ${WRKDIR}/msdos/Makefile.orig > ${WRKDIR}/msdos/Makefile
-	@(cd ${WRKDIR}/msdos; ${PATCH} --quiet < ${WRKDIR}/msdos_big5.diff )
-	@${SED} -e "/^\.PATH/d" ${WRKDIR}/cd9660/Makefile.orig > ${WRKDIR}/cd9660/Makefile
-	@(cd ${WRKDIR}/cd9660; ${PATCH} --quiet < ${WRKDIR}/cd9660_big5.diff )
-.if !defined(WITHOUT_NTFS)
-	@${SED} -e "/^\.PATH/d" ${WRKDIR}/ntfs/Makefile.orig > ${WRKDIR}/ntfs/Makefile
-	@(cd ${WRKDIR}/ntfs; ${PATCH} --quiet < ${WRKDIR}/${NTFSPATCH} )
-.endif
+	@(cd ${WRKSRC}/msdos; ${PATCH} --quiet < ${WRKSRC}/msdos_big5.diff )
+	@(cd ${WRKSRC}/cd9660; ${PATCH} --quiet < ${WRKSRC}/cd9660_big5.diff )
+	@(cd ${WRKSRC}/ntfs; ${PATCH} --quiet < ${WRKSRC}/${NTFSPATCH} )
+	@${REINPLACE_CMD} -e 's,<isofs/cd9660/iso.h>,"iso.h",g' ${WRKSRC}/cd9660/*.c
+	@${REINPLACE_CMD} -Ee 's,<(fs/)?ntfs/ntfs_subr.h>,"ntfs_subr.h",g' ${WRKSRC}/ntfs/*.c
 
 do-build:
-	@(cd ${WRKDIR}/msdos; make all)
-	@(cd ${WRKDIR}/cd9660; make all)
-.if !defined(WITHOUT_NTFS)
-	@(cd ${WRKDIR}/ntfs; make all)
-.endif
-
-pre-install:
-	@${MKDIR} ${KMODDIR}
+	@(cd ${WRKSRC}/msdos; make all)
+	@(cd ${WRKSRC}/cd9660; make all)
+	@(cd ${WRKSRC}/ntfs; make all)
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/big5fs.sh ${PREFIX}/etc/rc.d
-	@${INSTALL_SCRIPT} ${WRKDIR}/msdos/${MSDOSFSKO} ${KMODDIR}/${MSDOSFSKO}
-	@${INSTALL_SCRIPT} ${WRKDIR}/cd9660/cd9660.ko ${KMODDIR}/cd9660.ko
-.if !defined(WITHOUT_NTFS)
-	@${INSTALL_SCRIPT} ${WRKDIR}/ntfs/ntfs.ko ${KMODDIR}/ntfs.ko
-.endif
+	@${MKDIR} ${KMODDIR}
+	@${INSTALL_SCRIPT} ${FILESDIR}/big5fs.sh ${PREFIX}/etc/rc.d
+	@${INSTALL_SCRIPT} ${WRKSRC}/*/*.ko ${KMODDIR}
 
 .include <bsd.port.post.mk>
