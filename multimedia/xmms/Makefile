@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	xmms
-PORTVERSION=	1.2.7
-PORTREVISION=	3
+PORTVERSION=	1.2.8
 CATEGORIES+=	multimedia audio
-MASTER_SITES=	ftp://ftp.xmms.org/xmms/1.2.x/ \
+MASTER_SITES=	ftp://ftp.xmms.org/pub/xmms/1.2.x/ \
 		http://www.xmms.org/files/1.2.x/ \
 		ftp://ftp.sunet.se/pub/multimedia/xmms/1.2.x/
 
 MAINTAINER?=	esk@ira.uka.de
 COMMENT?=	X Multimedia System --- An audio player with a Winamp GUI
+
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -31,7 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		VISUALIZATION_PLUGINS="${VISUALIZATION_PLUGINS}"
 MAN1=		gnomexmms.1 wmxmms.1 xmms.1
 
-INPUT_PLUGINS=	cdaudio,idcin,mpg123,tonegen,wav
+INPUT_PLUGINS=	cdaudio,mpg123,tonegen,wav
 OUTPUT_PLUGINS=	OSS,disk_writer
 VISUALIZATION_PLUGINS=	blur_scope,sanalyzer
 
@@ -109,6 +110,10 @@ pre-extract:
 post-patch:
 	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
 		 's|\(datadir\)/aclocal|(prefix)/share/aclocal|g'
+	@${REINPLACE_CMD} -e 's|{datadir}/locale|{prefix}/share/locale|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},g' \
+		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/xmms/Skins

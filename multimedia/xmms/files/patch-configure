@@ -1,18 +1,6 @@
-
-$FreeBSD$
-
---- configure.orig	Mon Mar  4 23:57:01 2002
-+++ configure	Tue May 14 09:06:50 2002
-@@ -10576,7 +10576,7 @@
- GMSGFMT="OLD_PO_FILE_INPUT=yes $GMSGFMT"
- MSGFMT="OLD_PO_FILE_INPUT=yes $MSGFMT"
- 
--localedir=${datadir}/locale
-+localedir=${prefix}/share/locale
- 
- 
- 
-@@ -12673,10 +12673,6 @@
+--- configure.orig	Fri Sep  5 20:28:38 2003
++++ configure	Fri Sep  5 20:28:51 2003
+@@ -13928,10 +13928,6 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
