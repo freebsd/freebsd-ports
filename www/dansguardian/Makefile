@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	dansguardian
-PORTVERSION=	2.2.8.0
+PORTVERSION=	2.2.9.1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
-DISTNAME=	DansGuardian-2.2.8-0.source
+DISTNAME=	DansGuardian-${PORTVERSION:R}-${PORTVERSION:E}.source
 
 MAINTAINER=	fcash@bigfoot.com
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24:install \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13:install
 
-WRKSRC=		${WRKDIR}/DansGuardian-2.2.8
+WRKSRC=		${WRKDIR}/DansGuardian-${PORTVERSION:R}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--bindir=/sbin/ \
