@@ -99,6 +99,7 @@
     SUBDIR += simpack
     SUBDIR += slsc
     SUBDIR += snns
+    SUBDIR += spar
     SUBDIR += spin
     SUBDIR += ss
     SUBDIR += superlu
