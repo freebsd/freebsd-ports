@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.45
+PORTVERSION=	2.0.46
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 DISTNAME=	httpd-${PORTVERSION}
@@ -117,7 +117,7 @@ PLIST_SUB+=	EXPERIMENTAL="@comment "
 CONFIGURE_ARGS+= --enable-mods-shared="${SHARED_MODULES}" ${CONFIGURE_TARGET}
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
-MAN8=		ab.8 apxs.8 logresolve.8 rotatelogs.8 suexec.8
+MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8
 
 post-extract:
 	@${INSTALL_DATA} ${DISTDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
