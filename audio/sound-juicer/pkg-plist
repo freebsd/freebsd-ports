@@ -1,7 +1,5 @@
 bin/sound-juicer
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/sound-juicer.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/sound-juicer.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/sound-juicer.schemas > /dev/null || /usr/bin/true
 share/gnome/applications/sound-juicer.desktop
 share/gnome/help/sound-juicer/C/fdl-appendix.xml
 share/gnome/help/sound-juicer/C/figures/prefs.png
