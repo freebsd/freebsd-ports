@@ -3,7 +3,7 @@
 # Date created:                         December 3 1997
 # Whom:                                 ache@freebsd.org
 #
-# $Id: Makefile,v 1.4 1998/05/14 08:18:32 vanilla Exp $
+# $Id: Makefile,v 1.5 1998/08/19 09:47:25 asami Exp $
 #
 
 DISTNAME=       MLDBM-2.00
@@ -20,7 +20,7 @@ BUILD_DEPENDS= 	${PREFIX}/lib/perl5/site_perl/FreezeThaw.pm:${PORTSDIR}/devel/p5
 USE_PERL5=	YES
 
 MAN3=           MLDBM.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
