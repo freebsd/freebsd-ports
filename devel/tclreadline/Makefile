@@ -8,7 +8,7 @@
 PORTNAME=	tclreadline
 PORTVERSION=	1.0.3
 CATEGORIES=	tcl80 tcl82
-MASTER_SITES=	http://www.zellner.org/tclreadline/download/
+MASTER_SITES=	ftp://tclreadline.sourceforge.net/pub/tclreadline/
 
 MAINTAINER=	darius@dons.net.au
 
