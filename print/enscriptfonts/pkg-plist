@@ -264,3 +264,4 @@ share/enscript/xenscript/UrsaSerifBold.readme
 share/enscript/xenscript/roughbrush.readme
 share/enscript/xenscript/README
 @dirrm share/enscript/xenscript
+@dirrm share/enscript
