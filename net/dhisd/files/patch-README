@@ -1,30 +1,49 @@
---- README.orig	Sun Apr 30 18:51:47 2000
-+++ README	Mon Feb 26 00:55:38 2001
-@@ -29,7 +29,8 @@
- 	would result in non-existent host. Thus, the presence of 
- 	an IP address, even while offline, is essencial. 
- 
--	The DHIS server dhisd runs a database file (/etc/dhis/db/dhis.db)
-+	The DHIS server dhisd runs a database file 
-+        (__PREFIX__/db/dhis.db)
- 	and loads the current list of dynamic hosts into memory. 
- 	Furthermore it expects datagram packets to be received on
- 	port 58800 from the connecting clients running dhid.
-@@ -91,7 +92,7 @@
+--- README.orig	Sun Nov  4 21:47:55 2001
++++ README	Sun Nov  4 22:15:04 2001
+@@ -146,7 +146,7 @@
  	dhisd accepts HUP and TERM signals. A kill -HUP will
  	make it reload the hosts database and kill -TERM
- 	will terminate it. Its pid number is recorded on the
--	text file /etc/dhis/pid/dhisd.pid.
-+	text file __PREFIX__/pid/dhisd.pid.
+ 	will terminate it. Its pid number is recorded a the
+-	text file (default: /etc/dhis/pid/dhisd.pid)
++	text file (default: /var/pid/dhisd.pid)
  
- 	The current DHIS server is expected to perform well
- 	on a 100Mhz machine with up to 5000 dynamic hosts.
-@@ -99,7 +100,7 @@
- 	users.
+ 	Before terminating with SIGTERM dhisd will attempt to bring all 
+ 	online clients offline.
+@@ -155,7 +155,7 @@
+ ========
  
- 	dhisd logs online and offline transitions at
--	/etc/dhis/log/dhisd.log
-+	__PREFIX__/log/dhisd.log
+ 	dhisd logs online and offline transitions on a text file
+-	(default: /etc/dhis/log/dhisd.log)
++	(default: /var/log/dhisd.log)
+ 
+ Command Line Options:
+ =====================
+@@ -175,12 +175,12 @@
+ 	
+ 	-d <dbase_file> allows specifying a path for the database file
+ 
+-		      e.g. dhisd -d /usr/local/etc/dhis.db
++		      e.g. dhisd -d /usr/local/etc/dhis/dhis.db
+ 
+ 	-s <service_file> allows specifying a path for the services 
+                           file.
+ 
+-                      e.g. dhisd -s /usr/local/etc/services.db
++                      e.g. dhisd -s /usr/local/etc/dhis/services.db
+ 
+ 	All options may be used in conjunction.
+ 
+@@ -327,11 +327,11 @@
+ 
+ 	1000 {
+ 		hostpass something
+-		oncmd /etc/oncmd
++		oncmd /usr/local/etc/dhis/oncmd
+ 	}
  
  
- 	Firewall considerations:
+-	# /etc/oncmd
++	# /usr/local/etc/dhis/oncmd
+ 	#!/bin/sh	
+ 	#
+ 	echo I am $1 online now at $2

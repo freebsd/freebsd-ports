@@ -1,0 +1,59 @@
+
+Install instructions for DHIS server rel5.1 for FreeBSD
+=======================================================
+
+dhisd is the DHIS server, meant to permit updating external 
+databases with dynamically assiged IP addresses to clients.
+
+In order to build the dhisd server the following requirements must
+be met:
+
+	The machine must be permanently connected to the internet
+	with a static IP address.
+
+	The machine which will act as a server should be running
+	a distribution of UNIX or similar system.
+
+
+For full information, read the INSTALL file in /usr/local/share/doc/dhisd
+
+Setting up the server
+
+	Create the database file which will hold information for
+	current dynamic hosts:
+
+	Change directory to /usr/local/etc/dhis
+	
+	Create a text file named dhis.db with a text editor.
+	You can copy the dhis.db.sample to dhis.db as a starting point.
+
+	Change the permissions as you wish. In particular dhis.db
+	should not be readable by anyone. Suggested example:
+
+	chmod 700 /usr/local/etc/dhis /usr/local/etc/dhis/*
+	chmod 600 /usr/local/etc/dhis/dhis.db
+
+	Now create /usr/local/etc/dhis/services.db
+
+	As before, you can copy the included services.db.sample as a
+	starting point.
+	
+	Insert one line	per module implemented. See MODULES for	a
+	detailed description of	the modular architecture and
+	services.db format.
+
+	See the README file for more information on the server
+	and MODULES for information on the new modular structure 
+	of the server.
+
+	For starting the server, you can use the following script:
+
+	/usr/local/etc/rc.d/dhis.sh
+
+	It has the following options:
+	start		start the server
+	restart 	restart the server (after changing the db)
+	stop		stop the server
+
+	And that's it. The DHIS server is installed.
+
