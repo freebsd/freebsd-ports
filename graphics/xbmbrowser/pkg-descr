@@ -1,4 +1,3 @@
-XbmBrowser (version 5.1)
    A program to allow the user to view a complete directory of X bitmaps
 and X pixmaps all in one go, and to perform user defined actions on
 these images. If you don't think this is usful, you have never dealt with
@@ -18,10 +17,3 @@ the next release.
 
 This software comes with NO warranty whatsoever and no responsibility for
 any damages, losses or problems that the program may cause will be taken.
-
-Please also send any interesting user menu additions you come up with to
-the current programmer :-
-
-                              Anthony Thyssen  <anthony@cit.gu.edu.au>
-                            http://www.cit.gu.edu.au/~anthony/anthony.html
-                            http://www.cit.gu.edu.au/~anthony/
