@@ -61,6 +61,7 @@
     SUBDIR += ktagebuch
     SUBDIR += kuake
     SUBDIR += ljcharm
+    SUBDIR += ljclive
     SUBDIR += logjam
     SUBDIR += logjam2
     SUBDIR += mcal
