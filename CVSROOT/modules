@@ -106,6 +106,7 @@ R-a4		ports/math/R-a4
 R-letter	ports/math/R-letter
 SETIsupport	ports/astro/SETIsupport
 SN		ports/devel/SN
+SSLtelnet	ports/net/SSLtelnet
 STk		ports/lang/STk
 SWIG		ports/devel/SWIG
 SWIG-devel	ports/devel/SWIG-devel
