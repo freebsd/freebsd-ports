@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=--disable-djview
 .endif
 
 .if !defined(WITH_OPTIMIZED_CFLAGS)
-pre-everything:
+pre-everything::
 	@${ECHO_MSG} "You can enable additional compilation optimizations"
 	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
 .endif
