@@ -1,0 +1,38 @@
+share/dict/wdc001-fpw/catalogs
+share/dict/wdc001-fpw/comm/data/honmon
+share/dict/wdc001-fpw/dev/data/honmon
+share/dict/wdc001-fpw/elec/data/honmon
+share/dict/wdc001-fpw/info/data/honmon
+share/dict/wdc001-fpw/know/data/honmon
+share/dict/wdc001-fpw/moe_rail/data/honmon
+share/dict/wdc001-fpw/org/data/honmon
+share/dict/wdc001-fpw/soft/data/honmon
+share/dict/wdc001-fpw/std/data/honmon
+share/dict/wdc001-fpw/tech/data/honmon
+share/dict/wdc001-fpw/tran/data/honmon
+share/dict/wdc001-fpw/yogopaso/data/honmon
+@dirrm share/dict/wdc001-fpw/yogopaso/data
+@dirrm share/dict/wdc001-fpw/yogopaso
+@dirrm share/dict/wdc001-fpw/tran/data
+@dirrm share/dict/wdc001-fpw/tran
+@dirrm share/dict/wdc001-fpw/tech/data
+@dirrm share/dict/wdc001-fpw/tech
+@dirrm share/dict/wdc001-fpw/std/data
+@dirrm share/dict/wdc001-fpw/std
+@dirrm share/dict/wdc001-fpw/soft/data
+@dirrm share/dict/wdc001-fpw/soft
+@dirrm share/dict/wdc001-fpw/org/data
+@dirrm share/dict/wdc001-fpw/org
+@dirrm share/dict/wdc001-fpw/moe_rail/data
+@dirrm share/dict/wdc001-fpw/moe_rail
+@dirrm share/dict/wdc001-fpw/know/data
+@dirrm share/dict/wdc001-fpw/know
+@dirrm share/dict/wdc001-fpw/info/data
+@dirrm share/dict/wdc001-fpw/info
+@dirrm share/dict/wdc001-fpw/elec/data
+@dirrm share/dict/wdc001-fpw/elec
+@dirrm share/dict/wdc001-fpw/dev/data
+@dirrm share/dict/wdc001-fpw/dev
+@dirrm share/dict/wdc001-fpw/comm/data
+@dirrm share/dict/wdc001-fpw/comm
+@dirrm share/dict/wdc001-fpw
