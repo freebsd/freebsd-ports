@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_backhand
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cnds.jhu.edu/pub/backhand/
 
