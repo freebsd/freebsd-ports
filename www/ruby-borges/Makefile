@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	borges
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	www ruby
 MASTER_SITES=	http://segment7.net/ruby-code/borges/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
