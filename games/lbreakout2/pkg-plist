@@ -69,6 +69,39 @@ share/lbreakout2/sounds/wontgiveup.wav
 share/lbreakout2/levels/Original
 share/lbreakout2/levels/AddOn-1
 share/lbreakout2/levels/AddOn-2
+%%PORTDOCS%%share/doc/lbreakout2/b0.jpg
+%%PORTDOCS%%share/doc/lbreakout2/b1.jpg
+%%PORTDOCS%%share/doc/lbreakout2/b2.jpg
+%%PORTDOCS%%share/doc/lbreakout2/b3.jpg
+%%PORTDOCS%%share/doc/lbreakout2/b4.jpg
+%%PORTDOCS%%share/doc/lbreakout2/b5.jpg
+%%PORTDOCS%%share/doc/lbreakout2/b6.jpg
+%%PORTDOCS%%share/doc/lbreakout2/index.html
+%%PORTDOCS%%share/doc/lbreakout2/x0.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x1.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x10.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x11.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x12.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x13.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x14.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x15.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x16.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x17.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x18.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x19.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x2.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x20.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x21.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x22.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x23.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x3.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x4.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x5.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x6.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x7.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x8.jpg
+%%PORTDOCS%%share/doc/lbreakout2/x9.jpg
+%%PORTDOCS%%@dirrm share/doc/lbreakout2
 @dirrm share/lbreakout2/gfx
 @dirrm share/lbreakout2/sounds
 @dirrm share/lbreakout2/levels
