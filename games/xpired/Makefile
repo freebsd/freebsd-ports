@@ -8,7 +8,8 @@
 PORTNAME=	xpired
 PORTVERSION=	1.22
 CATEGORIES=	games
-MASTER_SITES=	http://xpired.temnet.org/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	xpired
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux_source
 
 MAINTAINER=	edwin@mavetju.org
