@@ -6932,6 +6932,7 @@ php5-cli	ports/lang/php5-cli
 phpSysInfo	ports/www/phpSysInfo
 php_doc		ports/lang/php_doc
 phpbb		ports/www/phpbb
+phpeclipse	ports/java/phpeclipse
 phpgroupware	ports/deskutils/phpgroupware
 phplot		ports/graphics/phplot
 phpmyadmin	ports/databases/phpmyadmin
