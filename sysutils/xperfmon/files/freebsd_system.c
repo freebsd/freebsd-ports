@@ -5,7 +5,7 @@
  * Copyright 1989, PCS Computer Systeme GmbH, West Germany
  * Copyright 1994, Sterling Software @ NASA-Ames Research Center
  * Copyright 1995, Regents of the University of California,
- *                 Lars Köller <Lars_Koeller@odie.physik2.uni-rostock.de
+ *                 Lars Köller <Lars.Koeller@Uni-Bielefeld.DE>
  *
  * Permission to use, copy, modify, distribute, and sell this software and its
  * documentation for any purpose is hereby granted without fee, provided that
@@ -21,7 +21,7 @@
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL PCS & STERLING SOFTWARE
  * BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
  * WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION
- * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+ * OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
  * CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  *
  * Original Author:  Emanuel Jay Berkenbilt, MIT Project Athena
@@ -30,15 +30,15 @@
  * 1994 Revision
  * Author:           Roger Smith, Sterling Software @ NASA-Ames Research Center
  *                   Moffett Field, California, rsmith@proteus.arc.nasa.gov
- * 1995 FreeBSD 2.x Version
- * Author:           Lars Koeller, Univerity of Rostock, Germany
- *                   Lars_Koeller@odie.physik2.uni-rostock.de
+ * 1995, ... FreeBSD 2.x, 3.x Version
+ * Author:           Lars Köller, Univerity of Bielefeld, Germany
+ *                   Lars.Koeller@Uni-Bielefeld.DE
  */
 
 /* This file contains only system functions - that is the functions that
  * get the information the performance monitor is monitoring.  No calls
  * to any X routines should be made here.  The reason for doing this is
- * so that as the X toolkit becomes available and the X window system 
+ * so that as the X toolkit becomes available and the X window system
  * improves no changes will have to be made to this file, and as this
  * program is made available for a new type of machine, only this file
  * will need to be changed.
@@ -79,16 +79,16 @@
 #include <vm/vm.h>
 #include <sys/time.h>
 #include <net/if.h>
-#if __FreeBSD_version >= 300000
-# include <net/if_var.h>
+#if defined(__FreeBSD__) && __FreeBSD__ >= 3
+#include <net/if_var.h>
 #endif
 #include <netinet/in.h>
 #include <sys/stat.h>
 #include <sys/conf.h>
 #include <sys/rlist.h>
 #include <sys/mount.h>
-#include <nfs/nfsv2.h>
 #include <nfs/rpcv2.h>
+#include <nfs/nfsv2.h>
 #include <nfs/nfs.h>
 
 #ifndef CTL_FS
@@ -298,7 +298,7 @@ collect_stats()
     nintr = nl[X_EINTRCNT].n_value - nl[X_INTRCNT].n_value;
     if ((intrcnt = (unsigned long *) malloc((size_t) nintr)) == NULL)
       err(1, "xperfmon++ malloc in collect_stats");
-    nintr /= sizeof(long);    
+    nintr /= sizeof(long);
     kread(X_INTRCNT, intrcnt, (size_t) nintr*sizeof(long));
     s1.interrupts = s.interrupts;
     s.interrupts = 0;
@@ -390,7 +390,7 @@ collect_stats()
     else {
         old_nfsStats = nfsStats;
 
-        nfsStats.nfsClient = nfsstats.rpccnt[NFSPROC_GETATTR] + 
+        nfsStats.nfsClient = nfsstats.rpccnt[NFSPROC_GETATTR] +
                              nfsstats.rpccnt[NFSPROC_SETATTR] +
                              nfsstats.rpccnt[NFSPROC_LOOKUP] +
                              nfsstats.rpccnt[NFSPROC_READLINK] +
@@ -402,7 +402,7 @@ collect_stats()
                              nfsstats.rpccnt[NFSPROC_LINK] +
                              nfsstats.rpccnt[NFSPROC_SYMLINK] +
                              nfsstats.rpccnt[NFSPROC_MKDIR] +
-                             nfsstats.rpccnt[NFSPROC_RMDIR] + 
+                             nfsstats.rpccnt[NFSPROC_RMDIR] +
                              nfsstats.rpccnt[NFSPROC_READDIR] +
 #ifndef HAS_NFS_V3
                              nfsstats.rpccnt[NFSPROC_STATFS] +
@@ -418,7 +418,7 @@ collect_stats()
                              nfsstats.rpccnt[NQNFSPROC_VACATED] +
                              nfsstats.rpccnt[NQNFSPROC_EVICTED];
 
-        nfsStats.nfsServer = nfsstats.srvrpccnt[NFSPROC_GETATTR] + 
+        nfsStats.nfsServer = nfsstats.srvrpccnt[NFSPROC_GETATTR] +
                              nfsstats.srvrpccnt[NFSPROC_SETATTR] +
                              nfsstats.srvrpccnt[NFSPROC_LOOKUP] +
                              nfsstats.srvrpccnt[NFSPROC_READLINK] +
@@ -430,7 +430,7 @@ collect_stats()
                              nfsstats.srvrpccnt[NFSPROC_LINK] +
                              nfsstats.srvrpccnt[NFSPROC_SYMLINK] +
                              nfsstats.srvrpccnt[NFSPROC_MKDIR] +
-                             nfsstats.srvrpccnt[NFSPROC_RMDIR] + 
+                             nfsstats.srvrpccnt[NFSPROC_RMDIR] +
                              nfsstats.srvrpccnt[NFSPROC_READDIR] +
 #ifndef HAS_NFS_V3
                              nfsstats.srvrpccnt[NFSPROC_STATFS] +
@@ -504,7 +504,7 @@ kread(nlx, addr, size)
         size_t size;
 {
         char *sym;
-        
+
         if (nl[nlx].n_type == 0 || nl[nlx].n_value == 0) {
                 sym = nl[nlx].n_name;
                 if (*sym == '_')

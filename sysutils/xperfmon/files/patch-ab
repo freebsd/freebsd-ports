@@ -1,6 +1,6 @@
-diff -c -N ../xperfmon++/Imakefile ./Imakefile
+diff -ca ../xperfmon++/Imakefile ./Imakefile
 *** ../xperfmon++/Imakefile	Wed Jul 27 22:29:29 1994
---- ./Imakefile	Fri Mar 14 13:29:51 1997
+--- ./Imakefile	Sun Dec 21 23:03:44 1997
 ***************
 *** 17,31 ****
   SYS_MODULE=	sgi_system
@@ -41,22 +41,23 @@ diff -c -N ../xperfmon++/Imakefile ./Imakefile
   
   ComplexProgramTarget(xperfmon++)
   
-diff -c -N ../xperfmon++/README ./README
+diff -ca ../xperfmon++/README ./README
 *** ../xperfmon++/README	Wed Jul 27 22:29:30 1994
---- ./README	Fri Mar 14 13:59:13 1997
+--- ./README	Sun Dec 21 23:03:44 1997
 ***************
 *** 18,20 ****
---- 18,61 ----
+--- 18,52 ----
   		Research Center, rsmith@proteus.arc.nasa.gov. Imake will build for correct
   		O/S if x11r5 is fully installed in all the right places.
   
-+ 3-15-95		Completely new port of systemdependent file (freebsd_system.c) for FreeBSD-2.X
++ 
++ 3-15-95		Completely new port of systemdependent file (bsd_system.c) for FreeBSD-2.X
 + 		by Lars Köller @University of Rostock, Germany.
 + 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
 + 
 + 8-16-95		Quick and dirty workaround of -geometry option bug.
 + 		But there are still some side effects when changing the geometry. 
-+ 		Fix memory leak in freebsd_system.c
++ 		Fix memory leak in bsd_system.c
 + 		by Lars Köller @University of Rostock, Germany.
 + 		E-Mail: <lars.koeller@odie.physik2.uni-rostock.de>
 + 
@@ -81,19 +82,9 @@ diff -c -N ../xperfmon++/README ./README
 + 		FreeBSD-current (2.2, changes in get_swapspace)
 + 		by Lars Köller @University of Rostock, Germany.
 + 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
-+ 
-+ 3-14-97		Fix some problems with changed structures in 3.0,
-+ 		clean up the FreeBSD version numbers #if's.
-+ 		Now xperfmon++ should compile from FreeBSD-2.0 up to 3.0-current
-+ 		by Lars Köller @University of Rostock, Germany.
-+ 		E-Mail: <Lars_Koeller@odie.physik2.uni-rostock.de>
-+ 		Jörg Wunsch, FreeBSD core team menber, Germany
-+ 		E-Mail: <joerg_wunsch@uriah.heep.sax.de>
-+ 		        <joerg@FreeBSD.ORG>
-+ 
-diff -c -N ../xperfmon++/XPerfmon++.ad ./XPerfmon++.ad
+diff -ca ../xperfmon++/XPerfmon++.ad ./XPerfmon++.ad
 *** ../xperfmon++/XPerfmon++.ad	Wed Jul 27 22:29:32 1994
---- ./XPerfmon++.ad	Tue Dec  5 09:32:54 1995
+--- ./XPerfmon++.ad	Sun Dec 21 23:03:45 1997
 ***************
 *** 4,27 ****
   ! commented out, the "NFS Server" graph background will be the application
@@ -158,9 +149,93 @@ diff -c -N ../xperfmon++/XPerfmon++.ad ./XPerfmon++.ad
 ! *perfChartNFSServer.highAlarm:	200
   *font:				6x13
 + 
-diff -c -N ../xperfmon++/xperfmon++.man ./xperfmon++.man
+ diff -ca ../xperfmon++/xperfmon++.man ./xperfmon++.man
 *** ../xperfmon++/xperfmon++.man	Wed Jul 27 22:29:39 1994
---- ./xperfmon++.man	Fri Mar 14 14:02:29 1997
+--- ./xperfmon++.man	Sun Dec 21 23:03:45 1997
+***************
+*** 20,51 ****
+  The program can produce a filled graph or a line graph and the update interval can be set in
+  seconds or 100-millisecond intervals.
+  .PP
+! While 
+  .I xperfmon++
+  is running, it is possible to perform certain tasks by pressing keys over
+  the window:
+  .PP
+  .br
+! .B Q/q: 
+  Quit... Exit gracefully
+  .br
+! .B l | L: 
+  Print out a chart of all current limit settings. This chart will appear in the
+  window from which xperfmon++ was invoked.
+  .br
+! .B s: 
+  Decrease update interval (slower) by a small amount
+  .br
+! .B S: 
+  Decrease update interval (slower) by a large amount
+  .br
+! .B f: 
+  Increase update interval (faster) by a small amount
+  .br
+! .B F: 
+  Increase update interval (faster) by a large amount
+  .br
+! .B ?: 
+  Help
+  .SH OPTIONS
+  .PP
+--- 20,51 ----
+  The program can produce a filled graph or a line graph and the update interval can be set in
+  seconds or 100-millisecond intervals.
+  .PP
+! While
+  .I xperfmon++
+  is running, it is possible to perform certain tasks by pressing keys over
+  the window:
+  .PP
+  .br
+! .B Q/q:
+  Quit... Exit gracefully
+  .br
+! .B l | L:
+  Print out a chart of all current limit settings. This chart will appear in the
+  window from which xperfmon++ was invoked.
+  .br
+! .B s:
+  Decrease update interval (slower) by a small amount
+  .br
+! .B S:
+  Decrease update interval (slower) by a large amount
+  .br
+! .B f:
+  Increase update interval (faster) by a small amount
+  .br
+! .B F:
+  Increase update interval (faster) by a large amount
+  .br
+! .B ?:
+  Help
+  .SH OPTIONS
+  .PP
+***************
+*** 79,85 ****
+  .PP
+  The following options specify the list of statistics to be displayed.
+  If none are present on the command line, then all statistics are displayed.
+! If any "+" options are listed the default list is cleared and only those 
+  listed as "+" options are displayed.
+  If any "-" options are listed, then they are taken away from the
+  default list. Specifying both "-" and "+" options will produce unpredictable
+--- 79,85 ----
+  .PP
+  The following options specify the list of statistics to be displayed.
+  If none are present on the command line, then all statistics are displayed.
+! If any "+" options are listed the default list is cleared and only those
+  listed as "+" options are displayed.
+  If any "-" options are listed, then they are taken away from the
+  default list. Specifying both "-" and "+" options will produce unpredictable
 ***************
 *** 94,101 ****
   .B \-idlecpu | \+idlecpu
@@ -181,6 +256,65 @@ diff -c -N ../xperfmon++/xperfmon++.man ./xperfmon++.man
   .B \-diskxfr | \+diskxfr
   Graph \fIDisk Transfers\fP per interval period.
 ***************
+*** 122,132 ****
+  .sp
+  \fIxperfmon++\fP will accept a number of \fIlimit\fP options. When a data point
+  exceeds a high or low limit the background of that graph changes color to visually reflect
+! the condition. The background color is an indication of the min (low limit) or max (high limit) 
+  value currently contained
+  in the graph. When no limit has been exceeded the background color is set to green. If no limits have
+! been set for that graph its background color remains the same as the applications default color, 
+! which is usually white. 
+  .PP
+  WARNING: High and Low limits are mutually exclusive, i.e., you can set high limits or low limits, but
+  not both. If both are inadvertently set, the high limits are checked first, and the low limit will be
+--- 122,132 ----
+  .sp
+  \fIxperfmon++\fP will accept a number of \fIlimit\fP options. When a data point
+  exceeds a high or low limit the background of that graph changes color to visually reflect
+! the condition. The background color is an indication of the min (low limit) or max (high limit)
+  value currently contained
+  in the graph. When no limit has been exceeded the background color is set to green. If no limits have
+! been set for that graph its background color remains the same as the applications default color,
+! which is usually white.
+  .PP
+  WARNING: High and Low limits are mutually exclusive, i.e., you can set high limits or low limits, but
+  not both. If both are inadvertently set, the high limits are checked first, and the low limit will be
+***************
+*** 135,141 ****
+  There are four possible \fIlimit\fP conditions:
+  .TP 16
+  .B High Warning
+! When any value in the current graph exceeds the  \fIhigh warning\fP limit 
+  the background color of that graph is changed to \fIyellow\fP.
+  .TP 16
+  .B Low Warning
+--- 135,141 ----
+  There are four possible \fIlimit\fP conditions:
+  .TP 16
+  .B High Warning
+! When any value in the current graph exceeds the  \fIhigh warning\fP limit
+  the background color of that graph is changed to \fIyellow\fP.
+  .TP 16
+  .B Low Warning
+***************
+*** 164,170 ****
+  .TP 26
+  .B \-high*Warn \fIvalue\fP
+  Set high Warning value for *.
+! .PP 
+  Where "*" is one of the following:
+  .TP 12
+  .B user
+--- 164,170 ----
+  .TP 26
+  .B \-high*Warn \fIvalue\fP
+  Set high Warning value for *.
+! .PP
+  Where "*" is one of the following:
+  .TP 12
+  .B user
+***************
 *** 176,183 ****
   .B idle
   Set \fIlimit\fP value for Idle CPU Percentage.
@@ -199,6 +333,23 @@ diff -c -N ../xperfmon++/xperfmon++.man ./xperfmon++.man
   .TP 12
   .B disk
   Set \fIlimit\fP value for Disk Transfers.
+***************
+*** 206,212 ****
+  Set \fIlow user Alarm\fP value to 25.
+  .PP
+  As with any X-based command line specification you only need specify the minimum number of
+! characters required to make the string unique. 
+  See below for a description of setting \fIlimit\fP values using application resource specifications.
+  .SH TOOLKIT OPTIONS
+  .PP
+--- 206,212 ----
+  Set \fIlow user Alarm\fP value to 25.
+  .PP
+  As with any X-based command line specification you only need specify the minimum number of
+! characters required to make the string unique.
+  See below for a description of setting \fIlimit\fP values using application resource specifications.
+  .SH TOOLKIT OPTIONS
+  .PP
 ***************
 *** 313,320 ****
   .B System
@@ -219,11 +370,90 @@ diff -c -N ../xperfmon++/xperfmon++.man ./xperfmon++.man
   .B Disk
   Set Disk Transfer count resource.
 ***************
-*** 395,398 ****
---- 395,421 ----
+*** 354,366 ****
+  .SH BUGS
+  .I xperfmon++
+  requires the ability to open and read the special system file
+! .I /dev/kmem. 
+  On most systems, this requires the
+  .I suid
+  (set user id) bit to be set with root ownership, or the
+  .I sgid
+! (set group id) bit to be set and membership in the same group as 
+! .I /dev/kmem. 
+  .PP
+  Reading /dev/kmem is inherently non-portable.  Therefore, the widget upon
+  which this application is based must be ported to each new operating system.
+--- 354,366 ----
+  .SH BUGS
+  .I xperfmon++
+  requires the ability to open and read the special system file
+! .I /dev/kmem.
+  On most systems, this requires the
+  .I suid
+  (set user id) bit to be set with root ownership, or the
+  .I sgid
+! (set group id) bit to be set and membership in the same group as
+! .I /dev/kmem.
+  .PP
+  Reading /dev/kmem is inherently non-portable.  Therefore, the widget upon
+  which this application is based must be ported to each new operating system.
+***************
+*** 371,377 ****
+  by fully covering the xperfmon++ window and then exposing it, or by iconifying the
+  xperfmon++ window and then de-iconifying it.
+  .SH AUTHORS
+! The X11 version of 
+  .I xperfmon
+  was written by Emanuel Jay Berkenbilt, Project Athena on
+  1/21/1988.
+--- 371,377 ----
+  by fully covering the xperfmon++ window and then exposing it, or by iconifying the
+  xperfmon++ window and then de-iconifying it.
+  .SH AUTHORS
+! The X11 version of
+  .I xperfmon
+  was written by Emanuel Jay Berkenbilt, Project Athena on
+  1/21/1988.
+***************
+*** 381,387 ****
+  was modified by Thomas Bagli, PCS Computer Systeme GmbH, West Germany, to
+  be a toolkit-based client.
+  .PP
+! .I xperfmon++ 
+  was created from \fIxperfmon\fP, and the Athena StripChart Widget,
+  by Roger Smith, Sterling Software @ NASA-Ames Research Center, Moffett Field, California. Version 1.0
+  was released in January, 1994.
+--- 381,387 ----
+  was modified by Thomas Bagli, PCS Computer Systeme GmbH, West Germany, to
+  be a toolkit-based client.
+  .PP
+! .I xperfmon++
+  was created from \fIxperfmon\fP, and the Athena StripChart Widget,
+  by Roger Smith, Sterling Software @ NASA-Ames Research Center, Moffett Field, California. Version 1.0
+  was released in January, 1994.
+***************
+*** 389,398 ****
+  If you like this program, or if you have difficulties, I would like to hear your comments.
+  E-Mail me at rsmith@proteus.arc.nasa.gov.
+  .PP
+! .I xperfmon++ 
+  was written for Suns running SunOs and X11R5 Windows software. If some energetic soul
+  out there would like to port this program to any other operating system or architecture I would be
   glad to incorporate the modifications into this master copy. Send me your changes via E-Mail at the
   above address.
   .PP
+  Enjoy!
+--- 389,418 ----
+  If you like this program, or if you have difficulties, I would like to hear your comments.
+  E-Mail me at rsmith@proteus.arc.nasa.gov.
+  .PP
+! .I xperfmon++
+  was written for Suns running SunOs and X11R5 Windows software. If some energetic soul
+  out there would like to port this program to any other operating system or architecture I would be
+  glad to incorporate the modifications into this master copy. Send me your changes via E-Mail at the
+  above address.
++ .PP
 + .I xperfmon++ V1.2 for FreeBSD
 + was written by Lars Koeller with a lot of helpful notes by Joerg Wunsch.
 + .PP
@@ -233,18 +463,15 @@ diff -c -N ../xperfmon++/xperfmon++.man ./xperfmon++.man
 + .PP
 + .I xperfmon++ V1.33 for FreeBSD
 + contains some fixes due to event problems and compiles fine under
-+ FreeBSD 2.2 (changes in get_swapspace). 
++ FreeBSD 2.2 (changes in get_swapspace).
 + Now the -geometry switch works well!
-+ Please E-Mail any bugs or comments with the subject
-+ "xperfmon++: ..." to Lars_Koeller@odie.physik2.uni-rostock.de.
 + .PP
 + .I xperfmon++ V1.40 for FreeBSD
 + contains some fixes due to changes in the networking structs and
 + cleans up the FreeBSD version number #if's. Now it should compile fine
-+ from FreeBSD 2.0 up to FreeBSD-3.0-current. 
-+ Please E-Mail any bugs or comments with the subject
-+ "xperfmon++: ..." to Lars_Koeller@odie.physik2.uni-rostock.de.
++ from FreeBSD 2.0 up to FreeBSD-3.0-current.
 + .PP
++ Please E-Mail any bugs or comments with the subject
++ "xperfmon++: ..." to Lars.Koeller@Uni-Bielefeld.DE.
+  .PP
   Enjoy!
-+ 
-+ 

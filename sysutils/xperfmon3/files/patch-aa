@@ -1,6 +1,6 @@
-diff -c -N ../xperfmon++/StripCharP.h ./StripCharP.h
+diff -ca ../xperfmon++/StripCharP.h ./StripCharP.h
 *** ../xperfmon++/StripCharP.h	Wed Jul 27 22:29:30 1994
---- ./StripCharP.h	Tue Dec  5 09:31:56 1995
+--- ./StripCharP.h	Sun Dec 21 23:03:44 1997
 ***************
 *** 62,71 ****
   #define HIGHLIGHT  1 << 1
@@ -26,9 +26,9 @@ diff -c -N ../xperfmon++/StripCharP.h ./StripCharP.h
       Pixel	fgpixel;	/* color index for graph */
       Pixel	hipixel;	/* color index for lines */
       Pixel       warnColor;
-diff -c -N ../xperfmon++/StripChart.c ./StripChart.c
+diff -ca ../xperfmon++/StripChart.c ./StripChart.c
 *** ../xperfmon++/StripChart.c	Wed Jul 27 22:29:30 1994
---- ./StripChart.c	Fri Mar 14 13:31:42 1997
+--- ./StripChart.c	Sun Dec 21 23:03:44 1997
 ***************
 *** 53,58 ****
 --- 53,70 ----
@@ -251,9 +251,9 @@ diff -c -N ../xperfmon++/StripChart.c ./StripChart.c
   	    x = 4;
   	    XDS(w->strip_chart.botLabel);
   	}
-diff -c -N ../xperfmon++/TimeChart.c ./TimeChart.c
+diff -ca ../xperfmon++/TimeChart.c ./TimeChart.c
 *** ../xperfmon++/TimeChart.c	Wed Jul 27 22:29:31 1994
---- ./TimeChart.c	Fri Mar 14 13:30:16 1997
+--- ./TimeChart.c	Sun Dec 21 23:03:44 1997
 ***************
 *** 47,52 ****
 --- 47,62 ----
@@ -273,9 +273,9 @@ diff -c -N ../xperfmon++/TimeChart.c ./TimeChart.c
   #include <stdio.h>
   #include <X11/IntrinsicP.h>
   #include <X11/StringDefs.h>
-diff -c -N ../xperfmon++/TimeChart.h ./TimeChart.h
+diff -ca ../xperfmon++/TimeChart.h ./TimeChart.h
 *** ../xperfmon++/TimeChart.h	Wed Jul 27 22:29:31 1994
---- ./TimeChart.h	Mon Oct 30 12:53:59 1995
+--- ./TimeChart.h	Sun Dec 21 23:03:45 1997
 ***************
 *** 88,99 ****
   #define XtCFillRect "FillRect"
@@ -303,9 +303,9 @@ diff -c -N ../xperfmon++/TimeChart.h ./TimeChart.h
   #define XtNvmunix "vmunix"
    
   typedef struct _TimeChartRec *TimeChartWidget;
-diff -c -N ../xperfmon++/misc.c ./misc.c
+diff -ca ../xperfmon++/misc.c ./misc.c
 *** ../xperfmon++/misc.c	Wed Jul 27 22:29:33 1994
---- ./misc.c	Fri Mar 14 13:31:48 1997
+--- ./misc.c	Sun Dec 21 23:03:45 1997
 ***************
 *** 22,27 ****
 --- 22,38 ----
@@ -343,9 +343,9 @@ diff -c -N ../xperfmon++/misc.c ./misc.c
       switch (keycode) {
       case 'Q':
       case 'q':
-diff -c -N ../xperfmon++/system.h ./system.h
+diff -ca ../xperfmon++/system.h ./system.h
 *** ../xperfmon++/system.h	Wed Jul 27 22:29:34 1994
---- ./system.h	Fri Mar 14 13:16:19 1997
+--- ./system.h	Sun Dec 21 23:03:45 1997
 ***************
 *** 151,168 ****
 --- 151,182 ----
@@ -413,9 +413,9 @@ diff -c -N ../xperfmon++/system.h ./system.h
       "Calls",
 + #endif
   };
-diff -c -N ../xperfmon++/xperfmon.c ./xperfmon.c
+diff -ca ../xperfmon++/xperfmon.c ./xperfmon.c
 *** ../xperfmon++/xperfmon.c	Wed Jul 27 22:29:39 1994
---- ./xperfmon.c	Fri Mar 14 13:30:50 1997
+--- ./xperfmon.c	Sun Dec 21 23:03:45 1997
 ***************
 *** 58,63 ****
 --- 58,73 ----
@@ -536,7 +536,7 @@ diff -c -N ../xperfmon++/xperfmon.c ./xperfmon.c
   usage()
   {
 + #if (defined(BSD) && (BSD >= 199306))
-+     fprintf(stderr, "\nxperfmon++ V1.33 for FreeBSD-2.X\n");
++     fprintf(stderr, "\nxperfmon++ V1.40 for FreeBSD-2.X and 3.X\n");
 + #endif
       fprintf(stderr, "\nusage: xperfmon++ option option option .....\n");
       fprintf(stderr, "options:\n");
